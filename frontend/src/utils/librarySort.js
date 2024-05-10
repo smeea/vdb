@@ -28,17 +28,9 @@ const librarySort = (cards, sortMethod) => {
       case 'Quantity':
         return cards.toSorted(byName).toSorted(byQuantity);
       case 'Clan / Discipline':
-        return cards
-          .toSorted(byName)
-          .toSorted(byType)
-          .toSorted(byDiscipline)
-          .toSorted(byClanOpt);
+        return cards.toSorted(byName).toSorted(byType).toSorted(byDiscipline).toSorted(byClanOpt);
       case 'Type':
-        return cards
-          .toSorted(byName)
-          .toSorted(byDiscipline)
-          .toSorted(byClanOpt)
-          .toSorted(byType);
+        return cards.toSorted(byName).toSorted(byDiscipline).toSorted(byClanOpt).toSorted(byType);
       case 'Type ': // SPACE SUFFIX IS INTENTIONAL
         return cards.toSorted(byName).toSorted(byType);
       case 'GroupedType':
@@ -62,10 +54,7 @@ const librarySort = (cards, sortMethod) => {
           .toSorted(byPoolCost)
           .toSorted(byBloodCost);
       case 'Cost - Max to Min ': // SPACE SUFFIX IS INTENTIONAL
-        return cards
-          .toSorted(byName)
-          .toSorted(byPoolCost)
-          .toSorted(byBloodCost);
+        return cards.toSorted(byName).toSorted(byPoolCost).toSorted(byBloodCost);
       case 'Cost - Min to Max ': // SPACE SUFFIX IS INTENTIONAL
         return cards
           .toSorted(byName)

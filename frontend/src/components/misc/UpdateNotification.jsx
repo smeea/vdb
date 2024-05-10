@@ -15,11 +15,7 @@ const UpdateNotification = () => {
   return (
     <>
       {update && (
-        <Modal
-          handleClose={() => setUpdate(null)}
-          title="Update available!"
-          centered
-        >
+        <Modal handleClose={() => setUpdate(null)} title="Update available!" centered>
           <div className="flex flex-col gap-4 sm:gap-5">
             <div className="flex flex-col gap-1.5">
               <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
@@ -43,9 +39,8 @@ const UpdateNotification = () => {
               text="Apply Update"
             />
             <div className="text-sm text-fgRed dark:text-fgRedDark">
-              If this window show up again after clicking Apply Update, please
-              refresh the page (Ctrl+F5 on Windows/Linux, Command+Shift+R on
-              MacOS, swipe down on mobile)
+              If this window show up again after clicking Apply Update, please refresh the page
+              (Ctrl+F5 on Windows/Linux, Command+Shift+R on MacOS, swipe down on mobile)
             </div>
           </div>
         </Modal>

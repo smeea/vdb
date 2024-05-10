@@ -6,17 +6,14 @@ import { useApp } from '@/context';
 import { ButtonIconed } from '@/components';
 
 const DeckReviewButton = ({ deck }) => {
-  const { isDesktop, setShowFloatingButtons, setShowMenuButtons, publicName } =
-    useApp();
+  const { isDesktop, setShowFloatingButtons, setShowMenuButtons, publicName } = useApp();
   const navigate = useNavigate();
 
   const handleClick = () => {
     deckServices
       .deckSnapshot({
         ...deck,
-        description: `Review of ${import.meta.env.VITE_BASE_URL}/decks/${
-          deck.deckid
-        }`,
+        description: `Review of ${import.meta.env.VITE_BASE_URL}/decks/${deck.deckid}`,
         author: publicName ? `review by ${publicName}` : '',
       })
       .then((deckid) => {

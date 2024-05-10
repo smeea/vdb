@@ -17,18 +17,9 @@ import {
 } from '@/context';
 
 const Library = () => {
-  const {
-    showLibrarySearch,
-    addMode,
-    toggleAddMode,
-    isMobile,
-    isDesktop,
-    lastDeckId,
-  } = useApp();
-  const deck = useSnapshot(deckStore).deck;
-  const decks = useSnapshot(deckStore).decks;
-  const libraryResults = useSnapshot(searchResults).library;
-  const libraryCompare = useSnapshot(searchResults).libraryCompare;
+  const { showLibrarySearch, addMode, toggleAddMode, isMobile, isDesktop, lastDeckId } = useApp();
+  const { deck, decks } = useSnapshot(deckStore);
+  const { libraryResults, libraryCompare } = useSnapshot(searchResults);
   const showSearchForm = useMemo(() => {
     return (
       isDesktop ||
@@ -58,29 +49,20 @@ const Library = () => {
               showSearchForm ? 'lg:basis-1/12' : 'sm:basis-5/12 lg:basis-6/12'
             } ${deck && addMode ? 'xl:basis-4/12' : 'xl:basis-2/12'}`}
           >
-            {decks !== undefined &&
-              (isDesktop || (!isDesktop && !showSearchForm)) && (
-                <DeckSelectorAndDisplay />
-              )}
+            {decks !== undefined && (isDesktop || (!isDesktop && !showSearchForm)) && (
+              <DeckSelectorAndDisplay />
+            )}
           </div>
         )}
         {showResultCol && (
           <div className="basis-full sm:basis-7/12 lg:basis-6/12 xl:basis-5/12">
-            {((isMobile && libraryCompare && libraryResults) ||
-              (!isMobile && libraryCompare)) && (
+            {((isMobile && libraryCompare && libraryResults) || (!isMobile && libraryCompare)) && (
               <div>
-                <ResultLibrary
-                  cards={libraryCompare}
-                  setCards={setLibraryCompare}
-                  inCompare
-                />
+                <ResultLibrary cards={libraryCompare} setCards={setLibraryCompare} inCompare />
               </div>
             )}
             {libraryResults !== undefined && (
-              <ResultLibrary
-                cards={libraryResults}
-                setCards={setLibraryResults}
-              />
+              <ResultLibrary cards={libraryResults} setCards={setLibraryResults} />
             )}
           </div>
         )}
@@ -89,19 +71,12 @@ const Library = () => {
             <div className="basis-full p-2 sm:basis-5/12 sm:p-0 lg:basis-4/12 xl:basis-3/12">
               <LibrarySearchForm />
             </div>
-            <div
-              className={
-                deck && addMode ? 'hidden' : 'hidden lg:flex lg:basis-1/12'
-              }
-            />
+            <div className={deck && addMode ? 'hidden' : 'hidden lg:flex lg:basis-1/12'} />
           </>
         )}
       </FlexGapped>
       {showToggleAddMode && (
-        <ButtonFloatDeckOrSearch
-          addMode={addMode}
-          toggleAddMode={toggleAddMode}
-        />
+        <ButtonFloatDeckOrSearch addMode={addMode} toggleAddMode={toggleAddMode} />
       )}
     </div>
   );

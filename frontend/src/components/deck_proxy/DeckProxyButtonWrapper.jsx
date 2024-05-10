@@ -8,11 +8,7 @@ const DeckProxyButtonWrapper = ({ deck }) => {
   const { missingCrypt, missingLibrary } = useDeckMissing(deck, !inventoryMode);
 
   return (
-    <DeckProxyButton
-      missingCrypt={missingCrypt}
-      missingLibrary={missingLibrary}
-      deck={deck}
-    />
+    <DeckProxyButton missingCrypt={missingCrypt} missingLibrary={missingLibrary} deck={deck} />
   );
 };
 

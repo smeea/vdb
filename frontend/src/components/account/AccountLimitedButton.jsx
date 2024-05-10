@@ -42,9 +42,7 @@ const AccountLimitedButton = () => {
         icon={<UiChecksGrid />}
         text="Manage Limited Format"
       />
-      {showModal && (
-        <AccountLimitedModal setShow={setShowModal} setFormat={setFormat} />
-      )}
+      {showModal && <AccountLimitedModal setShow={setShowModal} setFormat={setFormat} />}
     </>
   );
 };

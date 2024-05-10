@@ -7,13 +7,7 @@ import {
   ResultCryptTableRowCommon,
 } from '@/components';
 import { getSoftMax, getHardTotal } from '@/utils';
-import {
-  useApp,
-  usedStore,
-  inventoryStore,
-  deckStore,
-  deckCardChange,
-} from '@/context';
+import { useApp, usedStore, inventoryStore, deckStore, deckCardChange } from '@/context';
 
 const DiffCryptTableRow = ({
   cardChange,
@@ -42,9 +36,7 @@ const DiffCryptTableRow = ({
   return (
     <tr
       className={`h-[38px] border-y border-bgSecondary dark:border-bgSecondaryDark ${
-        idx % 2
-          ? 'bg-bgThird dark:bg-bgThirdDark'
-          : 'bg-bgPrimary dark:bg-bgPrimaryDark'
+        idx % 2 ? 'bg-bgThird dark:bg-bgThirdDark' : 'bg-bgPrimary dark:bg-bgPrimaryDark'
       }`}
     >
       <DeckCardQuantityTd
@@ -69,12 +61,7 @@ const DiffCryptTableRow = ({
       />
       {showInfo && (
         <td className="w-9 text-right text-fgSecondary dark:text-fgSecondaryDark">
-          <DeckDrawProbability
-            cardName={card.c.Name}
-            N={cryptTotal}
-            n={4}
-            k={card.q}
-          />
+          <DeckDrawProbability cardName={card.c.Name} N={cryptTotal} n={4} k={card.q} />
         </td>
       )}
     </tr>

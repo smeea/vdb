@@ -12,11 +12,7 @@ const NavMobileToggleSwitch = ({ text, isOn, onToggle }) => {
           <ToggleOff height="26" width="26" viewBox="0 0 16 16" />
         )}
       </div>
-      <div
-        className={`whitespace-nowrap ${
-          isOn ? '' : 'text-midGray dark:text-midGrayDark'
-        }`}
-      >
+      <div className={`whitespace-nowrap ${isOn ? '' : 'text-midGray dark:text-midGrayDark'}`}>
         {text}
       </div>
     </div>

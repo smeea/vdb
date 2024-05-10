@@ -1,13 +1,7 @@
 import React, { useState } from 'react';
 import Check2 from '@/assets/images/icons/check2.svg?react';
 import PenFill from '@/assets/images/icons/pen-fill.svg?react';
-import {
-  Spinner,
-  Input,
-  ConditionalTooltipOrModal,
-  ErrorOverlay,
-  Button,
-} from '@/components';
+import { Spinner, Input, ConditionalTooltipOrModal, ErrorOverlay, Button } from '@/components';
 import { useApp } from '@/context';
 import { userServices } from '@/services';
 
@@ -15,16 +9,12 @@ const TooltipText = () => {
   return (
     <div className="flex flex-col gap-1">
       <div>Public name is default author name for new decks.</div>
-      <div>
-        Author name is per-deck and can be changed anytime for each deck.
-      </div>
+      <div>Author name is per-deck and can be changed anytime for each deck.</div>
       <div>Public names are not unique.</div>
+      <div>Changing public name will not change author name of your existing decks.</div>
       <div>
-        Changing public name will not change author name of your existing decks.
-      </div>
-      <div>
-        Public name is <b>not</b> your account username (the one you login with,
-        which cannot be changed).
+        Public name is <b>not</b> your account username (the one you login with, which cannot be
+        changed).
       </div>
     </div>
   );
@@ -75,11 +65,7 @@ const AccountChangeName = () => {
           <PenFill />
         </div>
         <div className="flex">Change public name</div>
-        <ConditionalTooltipOrModal
-          title="Public name"
-          isModal={isMobile}
-          overlay={<TooltipText />}
-        >
+        <ConditionalTooltipOrModal title="Public name" isModal={isMobile} overlay={<TooltipText />}>
           <div className="text-fgThird dark:text-fgThirdDark">[?]</div>
         </ConditionalTooltipOrModal>
       </div>

@@ -1,9 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import {
-  ConditionalTooltip,
-  UsedPopover,
-  ButtonCardChange,
-} from '@/components';
+import { ConditionalTooltip, UsedPopover, ButtonCardChange } from '@/components';
 import { useApp } from '@/context';
 
 const DeckCardQuantity = ({
@@ -42,23 +38,22 @@ const DeckCardQuantity = ({
     if (inventoryMode && !inMissing) {
       if (inventoryType) {
         if (inProxy) {
-          return inInventory + (isSelected ? q : 0) <
-            softUsedMax + hardUsedTotal
+          return inInventory + (isSelected ? q : 0) < softUsedMax + hardUsedTotal
             ? 'bg-bgError dark:bg-bgErrorDark text-white dark:text-whiteDark'
             : '';
         } else {
           return inInventory >= softUsedMax + hardUsedTotal
             ? ''
             : inInventory < q
-            ? 'bg-bgError dark:bg-bgErrorDark text-white dark:text-whiteDark'
-            : 'bg-bgWarning dark:bg-bgWarningDark';
+              ? 'bg-bgError dark:bg-bgErrorDark text-white dark:text-whiteDark'
+              : 'bg-bgWarning dark:bg-bgWarningDark';
         }
       } else {
         return inInventory - softUsedMax - hardUsedTotal >= q
           ? ''
           : inInventory < q
-          ? 'bg-bgError dark:bg-bgErrorDark text-white dark:text-whiteDark'
-          : 'bg-bgWarning dark:bg-bgWarningDark';
+            ? 'bg-bgError dark:bg-bgErrorDark text-white dark:text-whiteDark'
+            : 'bg-bgWarning dark:bg-bgWarningDark';
       }
     } else {
       return '';
@@ -73,36 +68,20 @@ const DeckCardQuantity = ({
         <div className="flex items-center justify-between text-lg">
           {isMobile ? (
             <>
-              <ButtonCardChange
-                onClick={() => cardChange(deckid, card, q - 1)}
-                isLink
-                isNegative
-              />
-              <div
-                className={`mx-1 flex w-full justify-center ${inventoryColor}`}
-              >
+              <ButtonCardChange onClick={() => cardChange(deckid, card, q - 1)} isLink isNegative />
+              <div className={`mx-1 flex w-full justify-center ${inventoryColor}`}>
                 {q == 0 ? '' : q}
               </div>
-              <ButtonCardChange
-                onClick={() => cardChange(deckid, card, q + 1)}
-                isLink
-              />
+              <ButtonCardChange onClick={() => cardChange(deckid, card, q + 1)} isLink />
             </>
           ) : (
             <>
               {!manual && (
-                <ButtonCardChange
-                  onClick={() => cardChange(deckid, card, q - 1)}
-                  isNegative
-                />
+                <ButtonCardChange onClick={() => cardChange(deckid, card, q - 1)} isNegative />
               )}
               <div
                 tabIndex={0}
-                className={
-                  manual
-                    ? ''
-                    : `mx-1 flex w-full justify-center ${inventoryColor}`
-                }
+                className={manual ? '' : `mx-1 flex w-full justify-center ${inventoryColor}`}
                 onFocus={() => setManual(true)}
               >
                 <ConditionalTooltip
@@ -127,11 +106,7 @@ const DeckCardQuantity = ({
                   )}
                 </ConditionalTooltip>
               </div>
-              {!manual && (
-                <ButtonCardChange
-                  onClick={() => cardChange(deckid, card, q + 1)}
-                />
-              )}
+              {!manual && <ButtonCardChange onClick={() => cardChange(deckid, card, q + 1)} />}
             </>
           )}
         </div>
@@ -141,9 +116,7 @@ const DeckCardQuantity = ({
           overlay={<UsedPopover cardid={card.Id} />}
           disabled={!inventoryMode || isMobile}
         >
-          <div className={`flex justify-center text-lg ${inventoryColor}`}>
-            {q || null}
-          </div>
+          <div className={`flex justify-center text-lg ${inventoryColor}`}>{q || null}</div>
         </ConditionalTooltip>
       )}
     </>

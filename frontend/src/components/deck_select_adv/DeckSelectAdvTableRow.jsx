@@ -35,14 +35,15 @@ const DeckSelectAdvTableRow = ({
   revFilter,
   short,
 }) => {
-  const { limitedMode, inventoryMode, isMobile, isNarrow, isDesktop } =
-    useApp();
+  const { limitedMode, inventoryMode, isMobile, isNarrow, isDesktop } = useApp();
   const limitedCards = useSnapshot(limitedStore);
   const navigate = useNavigate();
   const [showDeck, setShowDeck] = useState();
 
-  const { hasBanned, hasLimited, hasPlaytest, hasIllegalDate } =
-    getRestrictions(deck, limitedCards);
+  const { hasBanned, hasLimited, hasPlaytest, hasIllegalDate } = getRestrictions(
+    deck,
+    limitedCards,
+  );
 
   const handleClick = () => {
     if (onClick) {
@@ -58,9 +59,7 @@ const DeckSelectAdvTableRow = ({
   return (
     <tr
       className={`h-[41px] border-y border-bgSecondary dark:border-bgSecondaryDark ${
-        idx % 2
-          ? 'bg-bgThird dark:bg-bgThirdDark'
-          : 'bg-bgPrimary dark:bg-bgPrimaryDark'
+        idx % 2 ? 'bg-bgThird dark:bg-bgThirdDark' : 'bg-bgPrimary dark:bg-bgPrimaryDark'
       }`}
     >
       {!(short || isMobile) && (
@@ -99,16 +98,12 @@ const DeckSelectAdvTableRow = ({
       )}
       {(short || !isMobile) && (
         <td className="min-w-[60px] sm:min-w-[70px]" onClick={handleClick}>
-          <div className="flex justify-center">
-            {clan && <ResultClanImage value={clan} />}
-          </div>
+          <div className="flex justify-center">{clan && <ResultClanImage value={clan} />}</div>
         </td>
       )}
 
       <td
-        className={`${
-          short ? 'w-full' : 'min-w-[45vw]'
-        } cursor-pointer sm:min-w-[340px]`}
+        className={`${short ? 'w-full' : 'min-w-[45vw]'} cursor-pointer sm:min-w-[340px]`}
         onClick={handleClick}
       >
         <div
@@ -120,15 +115,12 @@ const DeckSelectAdvTableRow = ({
             {hasBanned && <ResultLegalIcon type={BANNED} />}
             {limitedMode && hasLimited && <ResultLegalIcon />}
             {hasPlaytest && <ResultLegalIcon type={PLAYTEST} />}
-            {hasIllegalDate && (
-              <ResultLegalIcon type={LEGAL} value={hasIllegalDate} />
+            {hasIllegalDate && <ResultLegalIcon type={LEGAL} value={hasIllegalDate} />}
+            {deck.branchName && (deck.master || (deck.branches && deck.branches.length > 0)) && (
+              <div className="inline" title={deck.branchName}>
+                {deck.branchName}
+              </div>
             )}
-            {deck.branchName &&
-              (deck.master || (deck.branches && deck.branches.length > 0)) && (
-                <div className="inline" title={deck.branchName}>
-                  {deck.branchName}
-                </div>
-              )}
           </div>
         </div>
       </td>
@@ -175,9 +167,7 @@ const DeckSelectAdvTableRow = ({
                 <>
                   <DeckPublicToggleButton deck={deck} inAdv />
                   <DeckCopyUrlButton deck={deck} noText isAuthor />
-                  {revFilter &&
-                  (deck.master ||
-                    (deck.branches && deck.branches.length > 0)) ? (
+                  {revFilter && (deck.master || (deck.branches && deck.branches.length > 0)) ? (
                     <DeckBranchDeleteButton noText deck={deck} />
                   ) : (
                     <DeckDeleteButton noText deck={deck} />

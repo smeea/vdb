@@ -53,12 +53,7 @@ const Tooltip = ({
   const hover = useHover(context);
   const focus = useFocus(context);
   const dismiss = useDismiss(context);
-  const { getReferenceProps, getFloatingProps } = useInteractions([
-    click,
-    hover,
-    focus,
-    dismiss,
-  ]);
+  const { getReferenceProps, getFloatingProps } = useInteractions([click, hover, focus, dismiss]);
 
   const arrowOffset = {
     bottom: 'top-[-7px]',
@@ -76,11 +71,7 @@ const Tooltip = ({
 
   return (
     <>
-      <div
-        className={className}
-        ref={refs.setReference}
-        {...getReferenceProps()}
-      >
+      <div className={className} ref={refs.setReference} {...getReferenceProps()}>
         {children}
       </div>
       <FloatingPortal>

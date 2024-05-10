@@ -53,9 +53,7 @@ const ResultLibrary = ({ cards, setCards, inCompare }) => {
   return (
     <>
       {!isMobile && (cards === null || cards.length === 0) && (
-        <ErrorMessage>
-          {cards === null ? 'CONNECTION PROBLEM' : 'NO CARDS FOUND'}
-        </ErrorMessage>
+        <ErrorMessage>{cards === null ? 'CONNECTION PROBLEM' : 'NO CARDS FOUND'}</ErrorMessage>
       )}
       {cards && cards.length > 0 && (
         <>
@@ -69,9 +67,7 @@ const ResultLibrary = ({ cards, setCards, inCompare }) => {
           {table}
         </>
       )}
-      {isMobile && showFloatingButtons && (
-        <ButtonFloatClose handleClose={handleClear} />
-      )}
+      {isMobile && showFloatingButtons && <ButtonFloatClose handleClose={handleClear} />}
       {isMobile && isEditable && <ButtonFloatAdd />}
     </>
   );

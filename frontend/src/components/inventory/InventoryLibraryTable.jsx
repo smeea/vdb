@@ -1,23 +1,12 @@
 import React from 'react';
 import { FixedSizeList } from 'react-window';
 import AutoSizer from 'react-virtualized-auto-sizer';
-import {
-  WindowRows,
-  ResultModal,
-  InventoryLibraryTableRow,
-} from '@/components';
+import { WindowRows, ResultModal, InventoryLibraryTableRow } from '@/components';
 import { librarySort } from '@/utils';
 import { useApp } from '@/context';
 import { useModalCardController } from '@/hooks';
 
-const InventoryLibraryTable = ({
-  cards,
-  sortMethod,
-  compact,
-  withCompact,
-  newFocus,
-  inShared,
-}) => {
+const InventoryLibraryTable = ({ cards, sortMethod, compact, withCompact, newFocus, inShared }) => {
   const { playtestMode, setShowFloatingButtons } = useApp();
   const sortedCards = librarySort(cards, sortMethod);
 

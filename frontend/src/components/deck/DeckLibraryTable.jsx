@@ -12,9 +12,7 @@ const DeckLibraryTable = ({
   inMissing,
   shouldShowModal,
 }) => {
-  const sortedCards = cards.toSorted(
-    (a, b) => a.c[ASCII_NAME] - b.c[ASCII_NAME],
-  );
+  const sortedCards = cards.toSorted((a, b) => a.c[ASCII_NAME] - b.c[ASCII_NAME]);
 
   return (
     <table className="w-full border-bgSecondary dark:border-bgSecondaryDark sm:border">

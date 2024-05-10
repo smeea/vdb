@@ -23,9 +23,7 @@ export const search = (query, inPda = false) => {
 };
 
 export const getNewDecks = (q, inPda = false) => {
-  const url = `${import.meta.env.VITE_API_URL}/${
-    inPda ? 'pda' : 'twd'
-  }/new/${q}`;
+  const url = `${import.meta.env.VITE_API_URL}/${inPda ? 'pda' : 'twd'}/new/${q}`;
   const options = {};
 
   return fetch(url, { ...DEFAULT_OPTIONS, ...options })
@@ -43,9 +41,7 @@ export const getNewDecks = (q, inPda = false) => {
 };
 
 export const getRandomDecks = (q, inPda = false) => {
-  const url = `${import.meta.env.VITE_API_URL}/${
-    inPda ? 'pda' : 'twd'
-  }/random/${q}`;
+  const url = `${import.meta.env.VITE_API_URL}/${inPda ? 'pda' : 'twd'}/random/${q}`;
   const options = {};
 
   return fetch(url, { ...DEFAULT_OPTIONS, ...options })

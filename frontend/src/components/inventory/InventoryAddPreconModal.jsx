@@ -15,19 +15,17 @@ const TooltipText = () => {
   return (
     <div className="flex flex-col gap-1">
       <div>
-        Numbers below represent maximum quantity of particular precon you can
-        assemble from your inventory.
+        Numbers below represent maximum quantity of particular precon you can assemble from your
+        inventory.
       </div>
       <div>
-        Every precon calculated separately using your entire inventory, meaning
-        real number of precons you will be able to assemble is smaller as every
-        other precon will consume some cards and they will not be available
-        anymore.
+        Every precon calculated separately using your entire inventory, meaning real number of
+        precons you will be able to assemble is smaller as every other precon will consume some
+        cards and they will not be available anymore.
       </div>
       <div>
-        VDB does not track particular precons you added, and calculation
-        performed from just card numbers in the inventory regardless of how they
-        appeared there.
+        VDB does not track particular precons you added, and calculation performed from just card
+        numbers in the inventory regardless of how they appeared there.
       </div>
     </div>
   );
@@ -55,19 +53,14 @@ const InventoryAddPreconModal = ({ handleClose }) => {
 
       if (nameFilter) {
         filtered = filtered.filter((deck) => {
-          if (deck.name.toLowerCase().indexOf(nameFilter.toLowerCase()) >= 0)
-            return true;
+          if (deck.name.toLowerCase().indexOf(nameFilter.toLowerCase()) >= 0) return true;
         });
       }
 
       if (setFilter) {
         filtered = filtered.filter((deck) => {
           const set = deck.deckid.split(':')[0];
-          if (
-            setsAndPrecons[set].name
-              .toLowerCase()
-              .indexOf(setFilter.toLowerCase()) >= 0
-          )
+          if (setsAndPrecons[set].name.toLowerCase().indexOf(setFilter.toLowerCase()) >= 0)
             return true;
         });
       }
@@ -79,11 +72,7 @@ const InventoryAddPreconModal = ({ handleClose }) => {
   }, [preconDecks, nameFilter, setFilter, sortMethod]);
 
   return (
-    <Modal
-      handleClose={handleClose}
-      size="xl"
-      title="Import Precon to Inventory"
-    >
+    <Modal handleClose={handleClose} size="xl" title="Import Precon to Inventory">
       <div>
         <table className="inv-import-precons-table border-bgSecondary dark:border-bgSecondaryDark sm:border">
           <thead>
@@ -131,13 +120,7 @@ const InventoryAddPreconModal = ({ handleClose }) => {
           </thead>
           <tbody>
             {sortedDecks.map((deck, idx) => {
-              return (
-                <InventoryAddPreconRow
-                  key={deck.deckid}
-                  deck={deck}
-                  idx={idx}
-                />
-              );
+              return <InventoryAddPreconRow key={deck.deckid} deck={deck} idx={idx} />;
             })}
           </tbody>
         </table>

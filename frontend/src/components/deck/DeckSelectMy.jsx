@@ -23,15 +23,12 @@ const DeckSelectMy = ({ deckid, handleSelect }) => {
       .toSorted(byTimestamp)
       .map((i, idx) => {
         const diffDays = Math.round(
-          (new Date() - new Date(decks[i]['timestamp'])) /
-            (1000 * 60 * 60 * 24),
+          (new Date() - new Date(decks[i]['timestamp'])) / (1000 * 60 * 60 * 24),
         );
 
         let lastEdit;
         if (diffDays > 90) {
-          lastEdit = new Date(decks[i]['timestamp'])
-            .toISOString()
-            .split('T')[0];
+          lastEdit = new Date(decks[i]['timestamp']).toISOString().split('T')[0];
         } else if (diffDays > 30) {
           lastEdit = `${Math.round(diffDays / 30)}mo`;
         } else if (diffDays > 5) {
@@ -47,8 +44,10 @@ const DeckSelectMy = ({ deckid, handleSelect }) => {
         let hasPlaytest;
         let hasIllegalDate;
         if (idx < 15 || diffDays < 90) {
-          ({ hasBanned, hasLimited, hasPlaytest, hasIllegalDate } =
-            getRestrictions(decks[i], limitedCards));
+          ({ hasBanned, hasLimited, hasPlaytest, hasIllegalDate } = getRestrictions(
+            decks[i],
+            limitedCards,
+          ));
         }
 
         return {
@@ -60,10 +59,7 @@ const DeckSelectMy = ({ deckid, handleSelect }) => {
                   {clan && <ResultPreconClan clan={clan} />}
                 </div>
                 <div className="inline">
-                  {decks[i]['name'].slice(
-                    0,
-                    inventoryMode ? (isWide ? 28 : 23) : 32,
-                  )}
+                  {decks[i]['name'].slice(0, inventoryMode ? (isWide ? 28 : 23) : 32)}
                 </div>
               </div>
 
@@ -72,9 +68,7 @@ const DeckSelectMy = ({ deckid, handleSelect }) => {
                   {hasBanned && <ResultLegalIcon type={BANNED} />}
                   {limitedMode && hasLimited && <ResultLegalIcon />}
                   {hasPlaytest && <ResultLegalIcon type={PLAYTEST} />}
-                  {hasIllegalDate && (
-                    <ResultLegalIcon type={LEGAL} value={hasIllegalDate} />
-                  )}
+                  {hasIllegalDate && <ResultLegalIcon type={LEGAL} value={hasIllegalDate} />}
                 </div>
                 {inventoryMode && (
                   <div>
@@ -126,11 +120,7 @@ const DeckSelectMy = ({ deckid, handleSelect }) => {
                   </div>
                 )}
                 <div className="text-sm">
-                  {
-                    new Date(decks[deckid]['timestamp'])
-                      .toISOString()
-                      .split('T')[0]
-                  }
+                  {new Date(decks[deckid]['timestamp']).toISOString().split('T')[0]}
                 </div>
               </div>
             </div>

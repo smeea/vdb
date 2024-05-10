@@ -12,16 +12,12 @@ const useFiltersDecks = (decks = {}) => {
       if (filter.rank && missingRank(filter.rank, deck)) return false;
       if (filter.crypt && missingCrypt(filter.crypt, deck)) return false;
       if (filter.library && missingLibrary(filter.library, deck)) return false;
-      if (filter.libraryTotal && missingLibraryTotal(filter.libraryTotal, deck))
-        return false;
+      if (filter.libraryTotal && missingLibraryTotal(filter.libraryTotal, deck)) return false;
       if (filter.clan && missingClan(filter.clan, deck)) return false;
       if (filter.sect && missingSect(filter.sect, deck)) return false;
-      if (filter.capacity && missingCapacity(filter.capacity, deck))
-        return false;
-      if (filter.disciplines && missingDisciplines(filter.disciplines, deck))
-        return false;
-      if (filter.cardtypes && missingCardtypes(filter.cardtypes, deck))
-        return false;
+      if (filter.capacity && missingCapacity(filter.capacity, deck)) return false;
+      if (filter.disciplines && missingDisciplines(filter.disciplines, deck)) return false;
+      if (filter.cardtypes && missingCardtypes(filter.cardtypes, deck)) return false;
       if (filter.traits && missingTraits(filter.traits, deck)) return false;
 
       return true;

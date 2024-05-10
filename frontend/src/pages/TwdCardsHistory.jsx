@@ -1,10 +1,6 @@
 import React, { useMemo } from 'react';
 import { Tab } from '@headlessui/react';
-import {
-  TabButton,
-  TwdCardsHistoryCrypt,
-  TwdCardsHistoryLibrary,
-} from '@/components';
+import { TabButton, TwdCardsHistoryCrypt, TwdCardsHistoryLibrary } from '@/components';
 import { useApp } from '@/context';
 import { byName } from '@/utils';
 import { useFetch } from '@/hooks';
@@ -32,14 +28,9 @@ const TwdCardsHistory = () => {
           .filter((set) => set !== POD)
           .forEach((set) => {
             const d =
-              set === PROMO
-                ? Object.keys(cardBase[cardid].Set.Promo)[0]
-                : setsAndPrecons[set].date;
+              set === PROMO ? Object.keys(cardBase[cardid].Set.Promo)[0] : setsAndPrecons[set].date;
 
-            if (
-              !target[cardid].release_date ||
-              target[cardid].release_date > d
-            ) {
+            if (!target[cardid].release_date || target[cardid].release_date > d) {
               target[cardid].release_date = d;
             }
           });
@@ -75,13 +66,9 @@ const TwdCardsHistory = () => {
           <TabButton>Library</TabButton>
         </Tab.List>
         <Tab.Panels>
+          <Tab.Panel>{crypt && <TwdCardsHistoryCrypt cards={crypt} players={players} />}</Tab.Panel>
           <Tab.Panel>
-            {crypt && <TwdCardsHistoryCrypt cards={crypt} players={players} />}
-          </Tab.Panel>
-          <Tab.Panel>
-            {library && (
-              <TwdCardsHistoryLibrary cards={library} players={players} />
-            )}
+            {library && <TwdCardsHistoryLibrary cards={library} players={players} />}
           </Tab.Panel>
         </Tab.Panels>
       </Tab.Group>

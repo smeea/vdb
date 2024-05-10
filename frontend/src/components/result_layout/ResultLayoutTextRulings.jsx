@@ -1,12 +1,7 @@
 import React from 'react';
 import reactStringReplace from 'react-string-replace';
 import { useApp } from '@/context';
-import {
-  CardPopover,
-  ResultName,
-  ResultMiscImage,
-  ConditionalTooltip,
-} from '@/components';
+import { CardPopover, ResultName, ResultMiscImage, ConditionalTooltip } from '@/components';
 
 const Refs = ({ refs }) => {
   return (
@@ -25,13 +20,7 @@ const Refs = ({ refs }) => {
 };
 
 const Text = ({ text }) => {
-  const {
-    nativeCrypt,
-    nativeLibrary,
-    cryptCardBase,
-    libraryCardBase,
-    isMobile,
-  } = useApp();
+  const { nativeCrypt, nativeLibrary, cryptCardBase, libraryCardBase, isMobile } = useApp();
 
   let textWithIcons = reactStringReplace(text, /\[(\w+?)\]/g, (match, idx) => {
     return (
@@ -41,35 +30,24 @@ const Text = ({ text }) => {
     );
   });
 
-  textWithIcons = reactStringReplace(
-    textWithIcons,
-    /{(.*?)}/g,
-    (match, idx) => {
-      const cardBase = { ...nativeCrypt, ...nativeLibrary };
-      const cardid = Object.keys(cardBase).find(
-        (j) => cardBase[j]['Name'] == match,
+  textWithIcons = reactStringReplace(textWithIcons, /{(.*?)}/g, (match, idx) => {
+    const cardBase = { ...nativeCrypt, ...nativeLibrary };
+    const cardid = Object.keys(cardBase).find((j) => cardBase[j]['Name'] == match);
+
+    const card = cardid > 200000 ? cryptCardBase[cardid] : libraryCardBase[cardid];
+
+    if (card) {
+      return (
+        <span key={`${match}-${idx}`}>
+          <ConditionalTooltip overlay={<CardPopover card={card} />} disabled={isMobile} noPadding>
+            <ResultName card={card} />
+          </ConditionalTooltip>
+        </span>
       );
-
-      const card =
-        cardid > 200000 ? cryptCardBase[cardid] : libraryCardBase[cardid];
-
-      if (card) {
-        return (
-          <span key={`${match}-${idx}`}>
-            <ConditionalTooltip
-              overlay={<CardPopover card={card} />}
-              disabled={isMobile}
-              noPadding
-            >
-              <ResultName card={card} />
-            </ConditionalTooltip>
-          </span>
-        );
-      } else {
-        return <React.Fragment key={idx}>&#123;{match}&#125;</React.Fragment>;
-      }
-    },
-  );
+    } else {
+      return <React.Fragment key={idx}>&#123;{match}&#125;</React.Fragment>;
+    }
+  });
 
   return <>{textWithIcons}</>;
 };
@@ -87,9 +65,7 @@ const ResultLayoutTextRulings = ({ rulings }) => {
             })}
             <div
               className={
-                Object.keys(k['refs']).length > 2
-                  ? 'flex flex-wrap gap-1'
-                  : 'inline space-x-1'
+                Object.keys(k['refs']).length > 2 ? 'flex flex-wrap gap-1' : 'inline space-x-1'
               }
             >
               <Refs refs={k['refs']} />

@@ -50,13 +50,7 @@ const AnalyzeSearchForm = () => {
   }, []);
 
   useEffect(() => {
-    if (
-      isMobile &&
-      query &&
-      analyzeFormState &&
-      cryptCardBase &&
-      libraryCardBase
-    ) {
+    if (isMobile && query && analyzeFormState && cryptCardBase && libraryCardBase) {
       processSearch();
     }
   }, [analyzeFormState, cryptCardBase, libraryCardBase]);
@@ -97,11 +91,7 @@ const AnalyzeSearchForm = () => {
       return;
     }
 
-    navigate(
-      `/tournament_analyze?q=${encodeURIComponent(
-        JSON.stringify(sanitizedForm)
-      )}`
-    );
+    navigate(`/tournament_analyze?q=${encodeURIComponent(JSON.stringify(sanitizedForm))}`);
 
     const filteredDecks = filterDecks(sanitizedForm);
     setAnalyzeResults(filteredDecks);
@@ -122,17 +112,11 @@ const AnalyzeSearchForm = () => {
   return (
     <div className="space-y-2">
       <div className="flex gap-2">
-        <AnalyzeSearchFormRank
-          value={analyzeFormState.rank}
-          onChange={handleChangeWithOpt}
-        />
+        <AnalyzeSearchFormRank value={analyzeFormState.rank} onChange={handleChangeWithOpt} />
         <ButtonClose title="Clear Forms & Results" handleClick={handleClear} />
       </div>
       {cryptCardBase && (
-        <TwdSearchFormCrypt
-          value={analyzeFormState.crypt}
-          form={searchAnalyzeForm.crypt}
-        />
+        <TwdSearchFormCrypt value={analyzeFormState.crypt} form={searchAnalyzeForm.crypt} />
       )}
       <div className="flex justify-end">
         <Checkbox
@@ -144,19 +128,13 @@ const AnalyzeSearchForm = () => {
         />
       </div>
       {libraryCardBase && (
-        <TwdSearchFormLibrary
-          value={analyzeFormState.library}
-          form={searchAnalyzeForm.library}
-        />
+        <TwdSearchFormLibrary value={analyzeFormState.library} form={searchAnalyzeForm.library} />
       )}
       <TwdSearchFormLibraryTotal
         value={analyzeFormState.libraryTotal}
         onChange={handleMultiChange}
       />
-      <TwdSearchFormClan
-        value={analyzeFormState.clan}
-        onChange={handleChange}
-      />
+      <TwdSearchFormClan value={analyzeFormState.clan} onChange={handleChange} />
       <div className="flex justify-end">
         <Checkbox
           name="traits"
@@ -166,22 +144,13 @@ const AnalyzeSearchForm = () => {
           onChange={handleMultiChange}
         />
       </div>
-      <TwdSearchFormSect
-        value={analyzeFormState.sect}
-        onChange={handleChange}
-      />
-      <TwdSearchFormCapacity
-        value={analyzeFormState.capacity}
-        onChange={handleMultiChange}
-      />
+      <TwdSearchFormSect value={analyzeFormState.sect} onChange={handleChange} />
+      <TwdSearchFormCapacity value={analyzeFormState.capacity} onChange={handleMultiChange} />
       <TwdSearchFormDisciplines
         value={analyzeFormState.disciplines}
         onChange={handleDisciplinesChange}
       />
-      <TwdSearchFormCardtypes
-        value={analyzeFormState.cardtypes}
-        onChange={handleChangeWithOpt}
-      />
+      <TwdSearchFormCardtypes value={analyzeFormState.cardtypes} onChange={handleChangeWithOpt} />
       {isMobile && (
         <>
           <ButtonFloatClose handleClose={handleClear} position="middle" />

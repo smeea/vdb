@@ -1,11 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { useSnapshot } from 'valtio';
-import {
-  useNavigate,
-  useLocation,
-  useParams,
-  useLoaderData,
-} from 'react-router-dom';
+import { useNavigate, useLocation, useParams, useLoaderData } from 'react-router-dom';
 import {
   ButtonFloatMenu,
   DeckButtons,
@@ -43,8 +38,7 @@ const Decks = () => {
     cryptCardBase,
     libraryCardBase,
   } = useApp();
-  const deck = useSnapshot(deckStore).deck;
-  const decks = useSnapshot(deckStore).decks;
+  const { deck, decks } = useSnapshot(deckStore);
   const navigate = useNavigate();
   const { deckid } = useParams();
   const { hash } = useLocation();
@@ -80,11 +74,9 @@ const Decks = () => {
     const cardsData = useDeck(deckData.cards, cryptCardBase, libraryCardBase);
     if (deckid.length !== 32 || deckData.publicParent) {
       deckData.tags = [];
-      Object.values(useTags(cardsData.crypt, cardsData.library)).forEach(
-        (v) => {
-          deckData.tags = deckData.tags.concat(v);
-        },
-      );
+      Object.values(useTags(cardsData.crypt, cardsData.library)).forEach((v) => {
+        deckData.tags = deckData.tags.concat(v);
+      });
     }
     const d = {
       author: deckData.author,
@@ -190,15 +182,7 @@ const Decks = () => {
         setDeck(decks[lastDeckId]);
       }
     }
-  }, [
-    deckid,
-    loaderData,
-    lastDeckId,
-    decks,
-    preconDecks,
-    cryptCardBase,
-    libraryCardBase,
-  ]);
+  }, [deckid, loaderData, lastDeckId, decks, preconDecks, cryptCardBase, libraryCardBase]);
 
   useEffect(() => {
     if (deck) {
@@ -280,8 +264,8 @@ const Decks = () => {
             <div className="flex flex-col gap-4 text-center text-lg">
               <div>You do not have any decks in your collection yet</div>
               <div>
-                Start by creating new one, import from Lackey / Amaranth / Text
-                or browse official preconstructed decks
+                Start by creating new one, import from Lackey / Amaranth / Text or browse official
+                preconstructed decks
               </div>
             </div>
             <DeckImport isOnlyNew={true} />
@@ -290,16 +274,8 @@ const Decks = () => {
       )}
       {isEditable && isMobile && showFloatingButtons && (
         <>
-          <DeckNewCardFloating
-            target="crypt"
-            deckid={deckid}
-            cards={deck.crypt}
-          />
-          <DeckNewCardFloating
-            target="library"
-            deckid={deckid}
-            cards={deck.library}
-          />
+          <DeckNewCardFloating target="crypt" deckid={deckid} cards={deck.crypt} />
+          <DeckNewCardFloating target="library" deckid={deckid} cards={deck.library} />
         </>
       )}
       <ButtonFloatMenu />
@@ -323,16 +299,11 @@ const Decks = () => {
         </Modal>
       )}
       {showDeckSelectAdv && (
-        <DeckSelectAdvModal
-          setShow={setShowDeckSelectAdv}
-          allTagsOptions={allTagsOptions}
-        />
+        <DeckSelectAdvModal setShow={setShowDeckSelectAdv} allTagsOptions={allTagsOptions} />
       )}
       {showDraw && <DeckDraw setShow={setShowDraw} deck={deck} />}
       {showSeating && <Seating setShow={setShowSeating} />}
-      {showRecommendation && (
-        <DeckRecommendation deck={deck} setShow={setShowRecommendation} />
-      )}
+      {showRecommendation && <DeckRecommendation deck={deck} setShow={setShowRecommendation} />}
       {qrUrl && <DeckQrModal qrUrl={qrUrl} setQrUrl={setQrUrl} deck={deck} />}
     </div>
   );

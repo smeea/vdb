@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
 import Cart4 from '@/assets/images/icons/cart4.svg?react';
-import {
-  ButtonIconed,
-  DiffMissingModalWrapper,
-  DeckMissingModalWrapper,
-} from '@/components';
+import { ButtonIconed, DiffMissingModalWrapper, DeckMissingModalWrapper } from '@/components';
 import { useApp } from '@/context';
 
 const DeckMissingButton = ({ deck, deckTo }) => {
@@ -33,11 +29,7 @@ const DeckMissingButton = ({ deck, deckTo }) => {
       {showModal && (
         <>
           {deckTo ? (
-            <DiffMissingModalWrapper
-              deckFrom={deck}
-              deckTo={deckTo}
-              handleClose={handleClose}
-            />
+            <DiffMissingModalWrapper deckFrom={deck} deckTo={deckTo} handleClose={handleClose} />
           ) : (
             <DeckMissingModalWrapper deck={deck} handleClose={handleClose} />
           )}

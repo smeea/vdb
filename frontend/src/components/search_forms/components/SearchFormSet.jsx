@@ -41,8 +41,7 @@ const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
   Object.keys(setsAndPrecons)
     .filter((set) => playtestMode || set !== PLAYTEST)
     .map((set) => {
-      const year =
-        set === PLAYTEST ? null : setsAndPrecons[set].date.slice(2, 4);
+      const year = set === PLAYTEST ? null : setsAndPrecons[set].date.slice(2, 4);
       const fullName = setsAndPrecons[set].name;
 
       options.push({
@@ -77,19 +76,13 @@ const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
     <div className="space-y-1">
       <div className="flex items-center">
         <div className="flex w-1/4 items-center justify-between">
-          <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
-            Set:
-          </div>
+          <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Set:</div>
           {value.value[0] !== 'any' && (
             <div className="flex justify-end space-x-1 px-1">
               {value.value.length == 1 ? (
                 <SearchFormButtonAdd searchForm={searchForm} name={name} />
               ) : (
-                <SearchFormButtonDel
-                  searchForm={searchForm}
-                  i={0}
-                  name={name}
-                />
+                <SearchFormButtonDel searchForm={searchForm} i={0} name={name} />
               )}
             </div>
           )}
@@ -104,9 +97,7 @@ const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
             name={0}
             maxMenuHeight={maxMenuHeight}
             value={options.find((obj) => obj.value === value.value[0])}
-            onChange={(e, id) =>
-              e ? onChange(e, id) : onChange({ name: name, value: 'any' }, id)
-            }
+            onChange={(e, id) => (e ? onChange(e, id) : onChange({ name: name, value: 'any' }, id))}
           />
         </div>
       </div>
@@ -126,14 +117,12 @@ const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
             {
               value: 'or-newer',
               label: 'Or Newer',
-              title:
-                'Printed in selected set or any newer (can be in older sets too)',
+              title: 'Printed in selected set or any newer (can be in older sets too)',
             },
             {
               value: 'or-older',
               label: 'Or Older',
-              title:
-                'Printed in selected set or any older (can be in newer sets too)',
+              title: 'Printed in selected set or any older (can be in newer sets too)',
             },
             {
               value: 'not-newer',
@@ -193,9 +182,7 @@ const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
                 label={i.label}
                 title={i.title}
                 disabled={
-                  (value.value[0] === BCP ||
-                    value.value[0] === PROMO ||
-                    value.value[0] === POD) &&
+                  (value.value[0] === BCP || value.value[0] === PROMO || value.value[0] === POD) &&
                   i.value === 'reprint'
                 }
                 checked={value['print'] === i.value}

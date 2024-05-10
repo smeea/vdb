@@ -41,10 +41,7 @@ const DeckLibraryHeader = ({
           <div className="flex basis-full items-center justify-between gap-2 px-2 font-bold">
             <div className="flex">
               Library [{libraryTotal}
-              {!inMissing &&
-                (libraryTotal < 60 || libraryTotal > 90) &&
-                ' of 60-90'}
-              ]
+              {!inMissing && (libraryTotal < 60 || libraryTotal > 90) && ' of 60-90'}]
             </div>
             <div className="flex gap-2">
               {!inMissing && (
@@ -52,25 +49,17 @@ const DeckLibraryHeader = ({
                   {hasBanned && <Warning type={BANNED} />}
                   {limitedMode && hasLimited && <Warning type={LIMITED} />}
                   {hasPlaytest && <Warning type={PLAYTEST} />}
-                  {hasIllegalDate && (
-                    <Warning value={hasIllegalDate} type={LEGAL} />
-                  )}
+                  {hasIllegalDate && <Warning value={hasIllegalDate} type={LEGAL} />}
                 </>
               )}
             </div>
             {!inMissing && (
               <div className="flex gap-3">
-                <div
-                  className="flex items-center gap-1"
-                  title="Total Blood Cost"
-                >
+                <div className="flex items-center gap-1" title="Total Blood Cost">
                   <ResultLibraryCost valueBlood="X" className="h-[30px] pb-1" />
                   <b>{bloodTotal}</b>
                 </div>
-                <div
-                  className="flex items-center gap-1"
-                  title="Total Pool Cost"
-                >
+                <div className="flex items-center gap-1" title="Total Pool Cost">
                   <ResultLibraryCost valuePool="X" className="h-[30px]" />
                   <b>{poolTotal}</b>
                 </div>
@@ -101,11 +90,7 @@ const DeckLibraryHeader = ({
       </Header>
       {showInfo && (
         <div className="bg-bgSecondary p-2 dark:bg-bgSecondaryDark">
-          <DeckLibraryTotalInfo
-            byDisciplines={byDisciplines}
-            byTypes={byTypes}
-            byClans={byClans}
-          />
+          <DeckLibraryTotalInfo byDisciplines={byDisciplines} byTypes={byTypes} byClans={byClans} />
         </div>
       )}
       {showAdd && (

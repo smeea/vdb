@@ -1,14 +1,7 @@
 import React from 'react';
 import { Tooltip } from '@/components';
 
-const ConditionalTooltip = ({
-  children,
-  className,
-  noPadding,
-  placement,
-  overlay,
-  disabled,
-}) => {
+const ConditionalTooltip = ({ children, className, noPadding, placement, overlay, disabled }) => {
   return (
     <>
       {!disabled ? (

@@ -12,17 +12,12 @@ import { useApp } from '@/context';
 const DeckDetails = ({ deck, allTagsOptions, folded, setFolded }) => {
   const { isMobile } = useApp();
 
-  const playtestPrecon =
-    deck.deckid.includes('PLAYTEST:') && deck.deckid.replace('PLAYTEST:', '');
+  const playtestPrecon = deck.deckid.includes('PLAYTEST:') && deck.deckid.replace('PLAYTEST:', '');
 
   return (
     <div className="flex w-full flex-col gap-2">
       <div className="flex gap-2 max-sm:flex-col">
-        <div
-          className={`basis-full ${
-            deck.isBranches ? 'sm:basis-6/12' : 'sm:basis-8/12'
-          }`}
-        >
+        <div className={`basis-full ${deck.isBranches ? 'sm:basis-6/12' : 'sm:basis-8/12'}`}>
           <DeckChangeName deck={deck} />
         </div>
         <div
@@ -40,11 +35,7 @@ const DeckDetails = ({ deck, allTagsOptions, folded, setFolded }) => {
           </div>
         </div>
       </div>
-      <div
-        className={`flex ${
-          !folded || isMobile ? 'flex-col' : 'flex-row'
-        } gap-2`}
-      >
+      <div className={`flex ${!folded || isMobile ? 'flex-col' : 'flex-row'} gap-2`}>
         {playtestPrecon ? (
           <div className="basis-full">
             <PlaytestReportForm id={playtestPrecon} isPrecon />
@@ -52,19 +43,11 @@ const DeckDetails = ({ deck, allTagsOptions, folded, setFolded }) => {
         ) : (
           <>
             <div className="basis-full sm:basis-6/12">
-              <DeckChangeDescription
-                deck={deck}
-                folded={folded}
-                setFolded={setFolded}
-              />
+              <DeckChangeDescription deck={deck} folded={folded} setFolded={setFolded} />
             </div>
             {(deck.tags?.length > 0 || deck.isAuthor || !deck.isPublic) && (
               <div className="sm:z-20 basis-full sm:basis-6/12">
-                <DeckTags
-                  deck={deck}
-                  allTagsOptions={allTagsOptions}
-                  isBordered
-                />
+                <DeckTags deck={deck} allTagsOptions={allTagsOptions} isBordered />
               </div>
             )}
           </>

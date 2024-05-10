@@ -18,34 +18,22 @@ const AnalyzeTournamentInfo = ({ info, decks }) => {
       {!isMobile && <Title>General Info</Title>}
       <table>
         <tbody>
-          <TwdResultDescriptionTextTr
-            title={isMobile ? <TrophyFill /> : <>Event:</>}
-          >
+          <TwdResultDescriptionTextTr title={isMobile ? <TrophyFill /> : <>Event:</>}>
             {info.event}
           </TwdResultDescriptionTextTr>
-          <TwdResultDescriptionTextTr
-            title={isMobile ? <GeoAltFill /> : <>Place:</>}
-          >
+          <TwdResultDescriptionTextTr title={isMobile ? <GeoAltFill /> : <>Place:</>}>
             {info.location}
           </TwdResultDescriptionTextTr>
-          <TwdResultDescriptionTextTr
-            title={isMobile ? <CalendarEvent /> : <>Date:</>}
-          >
+          <TwdResultDescriptionTextTr title={isMobile ? <CalendarEvent /> : <>Date:</>}>
             {info.date}
           </TwdResultDescriptionTextTr>
-          <TwdResultDescriptionTextTr
-            title={isMobile ? <TagFill /> : <>Format:</>}
-          >
+          <TwdResultDescriptionTextTr title={isMobile ? <TagFill /> : <>Format:</>}>
             {info.rounds - 1} Rounds + Final
           </TwdResultDescriptionTextTr>
-          <TwdResultDescriptionTextTr
-            title={isMobile ? <PersonFill /> : <>Players:</>}
-          >
+          <TwdResultDescriptionTextTr title={isMobile ? <PersonFill /> : <>Players:</>}>
             {info.players}
           </TwdResultDescriptionTextTr>
-          <TwdResultDescriptionTextTr
-            title={isMobile ? <PersonCheckFill /> : <>Reported Decks:</>}
-          >
+          <TwdResultDescriptionTextTr title={isMobile ? <PersonCheckFill /> : <>Reported Decks:</>}>
             <>
               {Object.keys(decks).length}{' '}
               <div className="inline text-midGray dark:text-midGrayDark">
@@ -61,9 +49,7 @@ const AnalyzeTournamentInfo = ({ info, decks }) => {
               &quot;
             </div>
           </TwdResultDescriptionTextTr>
-          <TwdResultDescriptionTextTr
-            title={isMobile ? <Repeat /> : <>Total Matches:</>}
-          >
+          <TwdResultDescriptionTextTr title={isMobile ? <Repeat /> : <>Total Matches:</>}>
             {info.matches}
           </TwdResultDescriptionTextTr>
           <TwdResultDescriptionTextTr>
@@ -71,9 +57,7 @@ const AnalyzeTournamentInfo = ({ info, decks }) => {
               avg per match: {info.avgMatchGw}GW + {info.avgMatchVp}VP
             </div>
           </TwdResultDescriptionTextTr>
-          <TwdResultDescriptionTextTr
-            title={isMobile ? <TicketPerforated /> : <>Total Score:</>}
-          >
+          <TwdResultDescriptionTextTr title={isMobile ? <TicketPerforated /> : <>Total Score:</>}>
             {info.totalGw}GW + {info.totalVp}VP{' '}
           </TwdResultDescriptionTextTr>
           <TwdResultDescriptionTextTr>

@@ -1,20 +1,9 @@
 import { useMemo } from 'react';
 import { useSnapshot } from 'valtio';
-import {
-  countCards,
-  containCard,
-  getGroups,
-  cryptSort,
-  getRestrictions,
-} from '@/utils';
+import { countCards, containCard, getGroups, cryptSort, getRestrictions } from '@/utils';
 import { limitedStore } from '@/context';
 
-const useDeckCrypt = (
-  cardsList,
-  sortMethod = 'byName',
-  timer,
-  cardsToList = {},
-) => {
+const useDeckCrypt = (cardsList, sortMethod = 'byName', timer, cardsToList = {}) => {
   const limitedCards = useSnapshot(limitedStore);
 
   const cryptFrom = Object.values(cardsList).filter((card) => card.q > 0);
@@ -26,17 +15,11 @@ const useDeckCrypt = (
     (card) => card.q <= 0 && !containCard(cryptTo, card),
   );
   const cryptToSide = Object.values(cardsToList).filter(
-    (card) =>
-      card.q <= 0 &&
-      !containCard(cryptFrom, card) &&
-      !containCard(cryptFromSide, card),
+    (card) => card.q <= 0 && !containCard(cryptFrom, card) && !containCard(cryptFromSide, card),
   );
 
   const crypt = [...cryptFrom, ...cryptTo.map((card) => ({ q: 0, c: card.c }))];
-  const cryptSide = [
-    ...cryptFromSide,
-    ...cryptToSide.map((card) => ({ q: 0, c: card.c })),
-  ];
+  const cryptSide = [...cryptFromSide, ...cryptToSide.map((card) => ({ q: 0, c: card.c }))];
 
   const sortedState = useMemo(() => {
     return cryptSort(crypt, sortMethod).map((c) => c.c.Id);
@@ -55,8 +38,10 @@ const useDeckCrypt = (
   });
 
   const value = useMemo(() => {
-    const { hasBanned, hasLimited, hasPlaytest, hasIllegalDate } =
-      getRestrictions({ crypt: cryptFrom, library: {} }, limitedCards);
+    const { hasBanned, hasLimited, hasPlaytest, hasIllegalDate } = getRestrictions(
+      { crypt: cryptFrom, library: {} },
+      limitedCards,
+    );
 
     const cryptTotal = countCards(cryptFrom);
     const { hasWrongGroups, cryptGroups } = getGroups(cryptFrom);

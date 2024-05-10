@@ -36,10 +36,7 @@ const TwdSearchFormCardtypes = ({ value, onChange }) => {
 
     min = min === 'any' || !min ? 0 : min;
     max = max === 'any' || !max ? 100 : max;
-    onChange(
-      { name: e.target.name, value: `${min},${max}` },
-      { name: 'cardtypes' },
-    );
+    onChange({ name: e.target.name, value: `${min},${max}` }, { name: 'cardtypes' });
   };
 
   const formsLeft = [];
@@ -101,9 +98,7 @@ const TwdSearchFormCardtypes = ({ value, onChange }) => {
       });
 
     const [min, max] =
-      value[i[0].toLowerCase()] == 'any'
-        ? [0, 100]
-        : value[i[0].toLowerCase()].split(',');
+      value[i[0].toLowerCase()] == 'any' ? [0, 100] : value[i[0].toLowerCase()].split(',');
 
     const form = (
       <div className="flex items-center space-x-1" key={i[0]}>
@@ -137,9 +132,7 @@ const TwdSearchFormCardtypes = ({ value, onChange }) => {
               isSearchable={false}
               name={name}
               maxMenuHeight={maxMenuHeight}
-              value={options.find(
-                (obj) => obj.value === value[i[0].toLowerCase()],
-              )}
+              value={options.find((obj) => obj.value === value[i[0].toLowerCase()])}
               onChange={onChange}
             />
           )}

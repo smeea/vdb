@@ -50,10 +50,8 @@ const SelectAsync = React.forwardRef(
               : 'px-2 text-borderSecondary dark:text-borderSecondaryDark',
           indicatorsContainer: () => `rounded
             ${noDropdown ? 'max-h-[0px] max-w-[0px]' : 'py-1.5 '}`,
-          indicatorSeparator: () =>
-            'bg-borderSecondary dark:bg-borderSecondaryDark',
-          menu: () =>
-            'my-2 rounded border border-borderThird dark:border-borderThirdDark',
+          indicatorSeparator: () => 'bg-borderSecondary dark:bg-borderSecondaryDark',
+          menu: () => 'my-2 rounded border border-borderThird dark:border-borderThirdDark',
           menuList: () => 'rounded bg-bgPrimary dark:bg-bgPrimaryDark',
           option: (state) => `p-2 text-fgPrimary dark:text-fgPrimaryDark
           ${

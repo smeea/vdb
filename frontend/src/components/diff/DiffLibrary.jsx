@@ -90,12 +90,8 @@ const DiffLibrary = ({ cardsFrom, cardsTo, deckid, isEditable }) => {
   return (
     <>
       <DeckLibraryHeader
-        libraryTotal={
-          <LibraryTotalDifference qTo={libraryToTotal} qFrom={libraryTotal} />
-        }
-        bloodTotal={
-          <BloodPoolDifference qTo={bloodToTotal} qFrom={bloodTotal} />
-        }
+        libraryTotal={<LibraryTotalDifference qTo={libraryToTotal} qFrom={libraryTotal} />}
+        bloodTotal={<BloodPoolDifference qTo={bloodToTotal} qFrom={bloodTotal} />}
         poolTotal={<BloodPoolDifference qTo={poolToTotal} qFrom={poolTotal} />}
         hasBanned={hasBanned}
         isEditable={isEditable}

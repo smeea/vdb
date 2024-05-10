@@ -33,8 +33,7 @@ const DeckButtons = ({
   const { isPlaytestAdmin, playtestMode, inventoryMode, username } = useApp();
   const { publicChild, isPublic, isAuthor, isBranches } = { ...deck };
 
-  const playtestPrecon =
-    deck?.deckid.includes('PLAYTEST:') && deck.deckid.replace('PLAYTEST:', '');
+  const playtestPrecon = deck?.deckid.includes('PLAYTEST:') && deck.deckid.replace('PLAYTEST:', '');
 
   return (
     <div className="flex flex-col gap-1">
@@ -56,21 +55,15 @@ const DeckButtons = ({
             <DeckExportButton deck={deck} />
             {isAuthor && !isPublic && <DeckDeleteButton deck={deck} />}
             {isAuthor && !isPublic && <DeckBranchCreateButton deck={deck} />}
-            {isAuthor && !isPublic && isBranches && (
-              <DeckBranchDeleteButton deck={deck} />
-            )}
-            {(isPublic || publicChild) && (
-              <DeckPublicSwitchButton deck={deck} />
-            )}
+            {isAuthor && !isPublic && isBranches && <DeckBranchDeleteButton deck={deck} />}
+            {(isPublic || publicChild) && <DeckPublicSwitchButton deck={deck} />}
             {isPublic && <DeckPublicSyncButton deck={deck} />}
             {isAuthor && !publicChild && <DeckPublicToggleButton deck={deck} />}
             <DeckDiffButton deckid={deck.deckid} />
             <DeckReviewButton deck={deck} />
             <DeckCopyUrlButton setQrUrl={setQrUrl} deck={deck} />
             <DeckProxyButtonWrapper deck={deck} />
-            <DeckRecommendationButton
-              setShowRecommendation={setShowRecommendation}
-            />
+            <DeckRecommendationButton setShowRecommendation={setShowRecommendation} />
             <DeckSearchSimilarButton deck={deck} />
             <DeckDrawButton setShow={setShowDraw} />
             {inventoryMode && <DeckMissingButton deck={deck} />}

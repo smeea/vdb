@@ -84,10 +84,7 @@ const DeckExportButton = ({ deck, inMissing, inInventory }) => {
           };
         });
 
-        exportText = useDeckExport(
-          { ...deck, crypt: enCrypt, library: enLibrary },
-          format,
-        );
+        exportText = useDeckExport({ ...deck, crypt: enCrypt, library: enLibrary }, format);
       } else {
         exportText = useDeckExport(deck, format);
       }
@@ -146,18 +143,15 @@ const DeckExportButton = ({ deck, inMissing, inInventory }) => {
                 <ExportDropdown action="copy" format="jol" />
               </>
             )}
-            {!inMissing &&
-              username &&
-              decks &&
-              Object.keys(decks).length > 1 && (
-                <>
-                  <MenuItemDivider />
-                  <ExportDropdown action="exportAll" format="text" />
-                  <ExportDropdown action="exportAll" format="lackey" />
-                  <ExportDropdown action="exportAll" format="jol" />
-                  <ExportDropdown action="exportAll" format="xlsx" />
-                </>
-              )}
+            {!inMissing && username && decks && Object.keys(decks).length > 1 && (
+              <>
+                <MenuItemDivider />
+                <ExportDropdown action="exportAll" format="text" />
+                <ExportDropdown action="exportAll" format="lackey" />
+                <ExportDropdown action="exportAll" format="jol" />
+                <ExportDropdown action="exportAll" format="xlsx" />
+              </>
+            )}
           </>
         )}
       </MenuItems>

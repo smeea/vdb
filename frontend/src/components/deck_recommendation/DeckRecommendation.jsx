@@ -6,11 +6,9 @@ import { useFetch } from '@/hooks';
 const DeckRecommendation = ({ setShow, deck }) => {
   const { cryptCardBase, libraryCardBase, setShowFloatingButtons } = useApp();
   const cards = {};
-  [...Object.values(deck.crypt), ...Object.values(deck.library)].forEach(
-    (card) => {
-      if (card.q) cards[card.c.Id] = card.q;
-    },
-  );
+  [...Object.values(deck.crypt), ...Object.values(deck.library)].forEach((card) => {
+    if (card.q) cards[card.c.Id] = card.q;
+  });
 
   const url = `${import.meta.env.VITE_API_URL}/deck/recommendation`;
   const { value } = useFetch(
@@ -39,13 +37,7 @@ const DeckRecommendation = ({ setShow, deck }) => {
     setShowFloatingButtons(true);
   };
 
-  return (
-    <DeckRecommendationModal
-      handleClose={handleCloseModal}
-      crypt={crypt}
-      library={library}
-    />
-  );
+  return <DeckRecommendationModal handleClose={handleCloseModal} crypt={crypt} library={library} />;
 };
 
 export default DeckRecommendation;

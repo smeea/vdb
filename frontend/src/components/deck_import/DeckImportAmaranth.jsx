@@ -15,9 +15,7 @@ const DeckImportAmaranth = ({ handleClose }) => {
   const ref = useRef();
 
   const VERSION = '2022-07-22';
-  const url = `${
-    import.meta.env.VITE_BASE_URL
-  }/data/amaranth_ids.json?v=${VERSION}`;
+  const url = `${import.meta.env.VITE_BASE_URL}/data/amaranth_ids.json?v=${VERSION}`;
   const { value: idReference } = useFetch(url, {}, []);
 
   const handleImport = () => {
@@ -176,18 +174,10 @@ const DeckImportAmaranth = ({ handleClose }) => {
             onChange={(event) => setDeckUrl(event.target.value)}
             ref={ref}
           />
-          {emptyError && (
-            <ErrorOverlay placement="bottom">ERROR IN URL</ErrorOverlay>
-          )}
-          {importError && (
-            <ErrorOverlay placement="bottom">ERROR DURING IMPORT</ErrorOverlay>
-          )}
+          {emptyError && <ErrorOverlay placement="bottom">ERROR IN URL</ErrorOverlay>}
+          {importError && <ErrorOverlay placement="bottom">ERROR DURING IMPORT</ErrorOverlay>}
         </div>
-        <Button
-          className="min-w-[72px] rounded-l-none"
-          variant="primary"
-          onClick={handleImport}
-        >
+        <Button className="min-w-[72px] rounded-l-none" variant="primary" onClick={handleImport}>
           {isLoading ? <Spinner className="size-5" /> : 'Import'}
         </Button>
       </div>

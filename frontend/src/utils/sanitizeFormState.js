@@ -35,14 +35,7 @@ const sanitizeFormState = (target, state) => {
       forms = ['traits'];
       break;
     case 'pda':
-      forms = [
-        'disciplines',
-        'traits',
-        'cardtypes',
-        'date',
-        'capacity',
-        'libraryTotal',
-      ];
+      forms = ['disciplines', 'traits', 'cardtypes', 'date', 'capacity', 'libraryTotal'];
       break;
     case 'twd':
       forms = [
@@ -57,14 +50,7 @@ const sanitizeFormState = (target, state) => {
       ];
       break;
     case 'analyze':
-      forms = [
-        'disciplines',
-        'traits',
-        'cardtypes',
-        'rank',
-        'capacity',
-        'libraryTotal',
-      ];
+      forms = ['disciplines', 'traits', 'cardtypes', 'rank', 'capacity', 'libraryTotal'];
       break;
     default:
       forms = [];

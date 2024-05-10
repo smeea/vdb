@@ -1,10 +1,5 @@
 import React, { useState } from 'react';
-import {
-  InventoryLibraryTable,
-  InventoryFilterForm,
-  SortButton,
-  Header,
-} from '@/components';
+import { InventoryLibraryTable, InventoryFilterForm, SortButton, Header } from '@/components';
 import { useInventoryLibrary } from '@/hooks';
 
 const InventoryLibrary = ({
@@ -41,14 +36,7 @@ const InventoryLibrary = ({
     cardsFilteredByDisciplineUnique,
     missingFiltered,
     missingFilteredTotal,
-  } = useInventoryLibrary(
-    cards,
-    category,
-    compact,
-    type,
-    discipline,
-    onlyNotes,
-  );
+  } = useInventoryLibrary(cards, category, compact, type, discipline, onlyNotes);
 
   return (
     <>
@@ -81,8 +69,7 @@ const InventoryLibrary = ({
               <div className="flex justify-end font-bold  text-midGray dark:text-midGrayDark">
                 {missingFilteredTotal ? (
                   <>
-                    {missingFilteredTotal} (
-                    {Object.values(missingFiltered).length} uniq) miss
+                    {missingFilteredTotal} ({Object.values(missingFiltered).length} uniq) miss
                   </>
                 ) : null}
               </div>

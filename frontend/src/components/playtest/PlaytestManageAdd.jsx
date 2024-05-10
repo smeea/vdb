@@ -3,11 +3,7 @@ import Check2 from '@/assets/images/icons/check2.svg?react';
 import { Spinner, Input, Button, ErrorOverlay } from '@/components';
 import { playtestServices } from '@/services';
 
-const PlaytestManageAdd = ({
-  playtesters,
-  newPlaytesters,
-  setNewPlaytesters,
-}) => {
+const PlaytestManageAdd = ({ playtesters, newPlaytesters, setNewPlaytesters }) => {
   const [username, setUsername] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(false);

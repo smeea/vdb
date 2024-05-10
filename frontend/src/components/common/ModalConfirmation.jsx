@@ -39,12 +39,7 @@ const ModalConfirmation = ({
   };
 
   return (
-    <Modal
-      handleClose={handleClose}
-      centered={centered ?? isMobile}
-      size={size}
-      title={title}
-    >
+    <Modal handleClose={handleClose} centered={centered ?? isMobile} size={size} title={title}>
       <FlexGapped className="flex-col">
         {children && children}
         <div className="flex justify-end gap-2">
@@ -58,18 +53,12 @@ const ModalConfirmation = ({
                 autoFocus
               />
               {errorConfirmation && (
-                <ErrorOverlay placement="bottom">
-                  Type &apos;YES&apos; to confirm
-                </ErrorOverlay>
+                <ErrorOverlay placement="bottom">Type &apos;YES&apos; to confirm</ErrorOverlay>
               )}
             </form>
           )}
           <div className="flex justify-between gap-2">
-            <Button
-              disabled={disabled}
-              variant={buttonVariant}
-              onClick={handleClick}
-            >
+            <Button disabled={disabled} variant={buttonVariant} onClick={handleClick}>
               {buttonText}
             </Button>
             <Button variant="primary" onClick={handleClose}>

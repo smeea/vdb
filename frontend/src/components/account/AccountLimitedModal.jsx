@@ -12,11 +12,9 @@ import {
 import { limitedFullStore } from '@/context';
 
 const AccountLimitedModal = ({ setShow, setFormat }) => {
-  const limitedAllowedCrypt = useSnapshot(limitedFullStore).allowed.crypt;
-  const limitedAllowedLibrary = useSnapshot(limitedFullStore).allowed.library;
-  const limitedBannedCrypt = useSnapshot(limitedFullStore).banned.crypt;
-  const limitedBannedLibrary = useSnapshot(limitedFullStore).banned.library;
-  const limitedSets = useSnapshot(limitedFullStore).sets;
+  const { allowed, banned, sets: limitedSets } = useSnapshot(limitedFullStore);
+  const { crypt: limitedAllowedCrypt, library: limitedAllowedLibrary } = allowed;
+  const { crypt: limitedBannedCrypt, library: limitedBannedLibrary } = banned;
   const fileInput = useRef();
 
   const handleFileInputClick = () => {
@@ -62,9 +60,7 @@ const AccountLimitedModal = ({ setShow, setFormat }) => {
 
   const exportFormat = async () => {
     let { saveAs } = await import('file-saver');
-    const fileName = `Limited Format [${
-      new Date().toISOString().split('T')[0]
-    }].txt`;
+    const fileName = `Limited Format [${new Date().toISOString().split('T')[0]}].txt`;
     const formatText = JSON.stringify(minifyFormat(), null, '  ');
     const file = new File([formatText], fileName, {
       type: 'text/plain;charset=utf-8',
@@ -73,11 +69,7 @@ const AccountLimitedModal = ({ setShow, setFormat }) => {
   };
 
   return (
-    <Modal
-      handleClose={() => setShow(false)}
-      size="lg"
-      title="Manage Limited Format"
-    >
+    <Modal handleClose={() => setShow(false)} size="lg" title="Manage Limited Format">
       <div className="flex flex-col gap-5">
         <AccountLimitedSetSelection />
         <AccountLimitedCardSelection />

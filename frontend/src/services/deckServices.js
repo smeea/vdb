@@ -172,9 +172,7 @@ export const branchDelete = (deckid, decks) => {
 
   return fetch(url, { ...DEFAULT_OPTIONS, ...options }).then(() => {
     let masterId = decks[deckid].master || null;
-    const branches = masterId
-      ? [...decks[masterId].branches]
-      : [...decks[deckid].branches];
+    const branches = masterId ? [...decks[masterId].branches] : [...decks[deckid].branches];
 
     if (masterId) {
       branches.splice(branches.indexOf(deckid), 1);
@@ -218,9 +216,7 @@ export const branchCreate = (deck, branch) => {
       deckStore.decks[data[0].deckid] = {
         ...deck,
         deckid: data[0].deckid,
-        description: `[${now.toISOString().split('T')[0]}] \n${
-          branch.description
-        }`,
+        description: `[${now.toISOString().split('T')[0]}] \n${branch.description}`,
         tags: branch.tags,
         crypt: { ...branch.crypt },
         library: { ...branch.library },
@@ -313,9 +309,7 @@ export const exportDecks = async (decks, format) => {
         deckName += ` [${deck['branchName']}]`;
       }
 
-      zip
-        .folder(`Decks ${date} [${format}]`)
-        .file(`${deckName}.txt`, useDeckExport(deck, format));
+      zip.folder(`Decks ${date} [${format}]`).file(`${deckName}.txt`, useDeckExport(deck, format));
     });
 
     zip

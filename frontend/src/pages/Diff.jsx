@@ -29,8 +29,7 @@ const Diff = () => {
     showMenuButtons,
     setShowMenuButtons,
   } = useApp();
-  const deck = useSnapshot(deckStore).deck;
-  const decks = useSnapshot(deckStore).decks;
+  const { deck, decks } = useSnapshot(deckStore);
   const { deckidFrom, deckidTo } = useParams();
 
   const [errorFrom, setErrorFrom] = useState(false);
@@ -46,11 +45,7 @@ const Diff = () => {
     deckServices
       .getDeck(id)
       .then((deckData) => {
-        const cardsData = useDeck(
-          deckData.cards,
-          cryptCardBase,
-          libraryCardBase,
-        );
+        const cardsData = useDeck(deckData.cards, cryptCardBase, libraryCardBase);
 
         const d = {
           author: deckData.author,
@@ -161,9 +156,7 @@ const Diff = () => {
                   <div className="basis-full sm:basis-5/9">
                     <DiffCrypt
                       deckid={deck.deckid}
-                      isEditable={
-                        deck.isAuthor && !deck.isPublic && !deck.isFrozen
-                      }
+                      isEditable={deck.isAuthor && !deck.isPublic && !deck.isFrozen}
                       cardsFrom={deck.crypt}
                       cardsTo={deckTo.crypt}
                     />
@@ -171,9 +164,7 @@ const Diff = () => {
                   <div className="basis-full sm:basis-4/9">
                     <DiffLibrary
                       deckid={deck.deckid}
-                      isEditable={
-                        deck.isAuthor && !deck.isPublic && !deck.isFrozen
-                      }
+                      isEditable={deck.isAuthor && !deck.isPublic && !deck.isFrozen}
                       cardsFrom={deck.library}
                       cardsTo={deckTo.library}
                     />
@@ -195,16 +186,8 @@ const Diff = () => {
       </FlexGapped>
       {isEditable && isMobile && showFloatingButtons && (
         <>
-          <DeckNewCardFloating
-            target="crypt"
-            deckid={deck.deckid}
-            cards={deck.crypt}
-          />
-          <DeckNewCardFloating
-            target="library"
-            deckid={deck.deckid}
-            cards={deck.library}
-          />
+          <DeckNewCardFloating target="crypt" deckid={deck.deckid} cards={deck.crypt} />
+          <DeckNewCardFloating target="library" deckid={deck.deckid} cards={deck.library} />
         </>
       )}
       <ButtonFloatMenu />

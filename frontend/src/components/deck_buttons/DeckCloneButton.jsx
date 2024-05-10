@@ -24,13 +24,7 @@ const DeckCloneButton = ({ deck, inTwdPda, noText }) => {
   return (
     <ButtonIconed
       className="w-full"
-      variant={
-        success
-          ? 'success'
-          : inTwdPda || noText || !isDesktop
-            ? 'primary'
-            : 'secondary'
-      }
+      variant={success ? 'success' : inTwdPda || noText || !isDesktop ? 'primary' : 'secondary'}
       onClick={handleClick}
       title="Clone Deck to your account for editing"
       icon={<Files />}

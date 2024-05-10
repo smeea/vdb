@@ -2,12 +2,7 @@ import React from 'react';
 import { SortButton, Header } from '@/components';
 import { useApp } from '@/context';
 
-const TwdResultTotal = ({
-  results,
-  sortMethods,
-  sortMethod,
-  setSortMethod,
-}) => {
+const TwdResultTotal = ({ results, sortMethods, sortMethod, setSortMethod }) => {
   const { isMobile } = useApp();
   const byYear = {};
   let total = 0;
@@ -24,9 +19,7 @@ const TwdResultTotal = ({
 
   return (
     <Header
-      className={`sm:space-x-2${
-        isMobile && Object.keys(byYear).length > 10 ? 'block' : 'flex'
-      }`}
+      className={`sm:space-x-2${isMobile && Object.keys(byYear).length > 10 ? 'block' : 'flex'}`}
     >
       <div className="whitespace-nowrap p-2 font-bold">TOTAL: {total}</div>
       <div>

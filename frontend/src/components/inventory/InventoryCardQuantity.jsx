@@ -2,13 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { ButtonCardChange } from '@/components';
 import { useApp, inventoryCardChange } from '@/context';
 
-const InventoryCardQuantity = ({
-  card,
-  softUsedMax,
-  hardUsedTotal,
-  compact,
-  newFocus,
-}) => {
+const InventoryCardQuantity = ({ card, softUsedMax, hardUsedTotal, compact, newFocus }) => {
   const { isMobile } = useApp();
   const [manual, setManual] = useState(false);
   const [state, setState] = useState(card.q ?? '');
@@ -41,11 +35,7 @@ const InventoryCardQuantity = ({
     <div className="flex w-full items-center justify-between text-lg">
       {isMobile ? (
         <>
-          <ButtonCardChange
-            onClick={() => handleQuantityChange(-1)}
-            isLink
-            isNegative
-          />
+          <ButtonCardChange onClick={() => handleQuantityChange(-1)} isLink isNegative />
           <div
             className={`flex w-full justify-center mx-1 ${
               state < softUsedMax + hardUsedTotal
@@ -61,12 +51,7 @@ const InventoryCardQuantity = ({
         </>
       ) : (
         <>
-          {!manual && (
-            <ButtonCardChange
-              onClick={() => handleQuantityChange(-1)}
-              isNegative
-            />
-          )}
+          {!manual && <ButtonCardChange onClick={() => handleQuantityChange(-1)} isNegative />}
           <div
             tabIndex={0}
             className={
@@ -100,9 +85,7 @@ const InventoryCardQuantity = ({
               </>
             )}
           </div>
-          {!manual && (
-            <ButtonCardChange onClick={() => handleQuantityChange(1)} />
-          )}
+          {!manual && <ButtonCardChange onClick={() => handleQuantityChange(1)} />}
         </>
       )}
     </div>

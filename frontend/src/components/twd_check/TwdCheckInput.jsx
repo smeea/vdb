@@ -32,9 +32,7 @@ const TwdCheckInput = ({ deckData, setDeckData }) => {
   const refreshDeckData = async (text) => {
     const lines = text.split('\n');
     const url = text.match(/.*vekn.net\/event-calendar\/event\/\d+/g);
-    const id = url
-      ? url[0].replace(/.*vekn.net\/event-calendar\/event\/(\d+)/g, '$1')
-      : null;
+    const id = url ? url[0].replace(/.*vekn.net\/event-calendar\/event\/(\d+)/g, '$1') : null;
 
     const d = await useDeckImport(text, cryptCardBase, libraryCardBase);
     setDeckData({
@@ -156,9 +154,7 @@ const TwdCheckInput = ({ deckData, setDeckData }) => {
         </div>
       </div>
       {emptyError && <ErrorOverlay placement="bottom">NO DECK</ErrorOverlay>}
-      {importError && (
-        <ErrorOverlay placement="bottom">ERROR DURING IMPORT</ErrorOverlay>
-      )}
+      {importError && <ErrorOverlay placement="bottom">ERROR DURING IMPORT</ErrorOverlay>}
       <input
         ref={fileInput}
         accept=".txt, .dek"

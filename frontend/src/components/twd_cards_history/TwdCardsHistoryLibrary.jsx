@@ -50,12 +50,7 @@ const TwdCardsHistoryLibrary = ({ cards, players }) => {
     'Striga',
   ].toSorted();
 
-  [
-    'All',
-    'None',
-    ...disciplinesExtendedList,
-    ...Object.keys(virtuesList),
-  ].forEach((i) => {
+  ['All', 'None', ...disciplinesExtendedList, ...Object.keys(virtuesList)].forEach((i) => {
     cardsByDiscipline[i] = {};
     cardsByDisciplineTotal[i] = 0;
   });
@@ -221,10 +216,7 @@ const TwdCardsHistoryLibrary = ({ cards, players }) => {
         >
           {isMobile ? 'Y' : 'YtW'}
         </div>
-        <div
-          className="flex min-w-[90px] items-center sm:min-w-[250px]"
-          title="First Winner"
-        >
+        <div className="flex min-w-[90px] items-center sm:min-w-[250px]" title="First Winner">
           Player
         </div>
         <div className="flex min-w-[45px] items-center justify-center sm:min-w-[110px]">

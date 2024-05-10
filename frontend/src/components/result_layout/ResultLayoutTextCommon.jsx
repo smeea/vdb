@@ -23,15 +23,11 @@ const ResultLayoutTextCommon = ({
   return (
     <div className="flex flex-col gap-3">
       <div className="flex gap-2">
-        <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
-          Sets:
-        </div>
+        <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Sets:</div>
         <ResultLayoutTextSets setImageSet={setImageSet} sets={card['Set']} />
       </div>
       <div className="flex gap-2">
-        <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
-          Artist:
-        </div>
+        <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Artist:</div>
         <div className="flex flex-wrap gap-x-2.5 gap-y-0.5">
           <ResultLayoutTextArtist
             handleClose={handleClose}
@@ -42,9 +38,7 @@ const ResultLayoutTextCommon = ({
       </div>
       {Object.keys(card['Rulings']).length > 0 && (
         <div className="flex flex-col gap-1">
-          <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
-            Rulings:
-          </div>
+          <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Rulings:</div>
           <ResultLayoutTextRulings rulings={card['Rulings']} />
         </div>
       )}
@@ -52,9 +46,7 @@ const ResultLayoutTextCommon = ({
         <>
           <Hr />
           <div className="flex flex-col gap-1">
-            <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
-              Inventory:
-            </div>
+            <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Inventory:</div>
             <ResultLayoutTextInventory card={card} inPopover={inPopover} />
           </div>
         </>
@@ -62,10 +54,7 @@ const ResultLayoutTextCommon = ({
       {!inPopover && isPlaytester && isPlaytest && (
         <>
           <Hr />
-          <PlaytestReportForm
-            id={card.Id}
-            setIsHotkeysDisabled={setIsHotkeysDisabled}
-          />
+          <PlaytestReportForm id={card.Id} setIsHotkeysDisabled={setIsHotkeysDisabled} />
         </>
       )}
     </div>

@@ -4,8 +4,7 @@ import { ButtonFloat } from '@/components';
 import { useApp } from '@/context';
 
 const ButtonFloatMenu = () => {
-  const { showFloatingButtons, setShowFloatingButtons, setShowMenuButtons } =
-    useApp();
+  const { showFloatingButtons, setShowFloatingButtons, setShowMenuButtons } = useApp();
 
   return (
     <>

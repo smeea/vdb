@@ -1,12 +1,4 @@
-import {
-  ANY,
-  POD,
-  PLAYTEST,
-  PROMO,
-  CARD_TEXT,
-  MASTER,
-  ID,
-} from '@/utils/constants';
+import { ANY, POD, PLAYTEST, PROMO, CARD_TEXT, MASTER, ID } from '@/utils/constants';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 
 export const getCardProperty = (card, property) => {
@@ -46,9 +38,7 @@ export const isTrifle = (card) => {
   const text = card[CARD_TEXT].toLowerCase();
   return (
     card.Type === MASTER &&
-    (text.includes('trifle') ||
-      text.includes('nimiedad') ||
-      text.includes('triviale'))
+    (text.includes('trifle') || text.includes('nimiedad') || text.includes('triviale'))
   );
 };
 
@@ -57,29 +47,26 @@ export const getRestrictions = (deck, limitedCards) => {
   let hasIllegalDate;
   let hasBanned;
   let hasLimited;
-  [...Object.values(deck.crypt), ...Object.values(deck.library)].forEach(
-    (card) => {
-      if (card.q < 1) return;
-      if (card.c.Banned) hasBanned = true;
-      if (
-        limitedCards &&
-        ![
-          ...Object.keys(limitedCards.crypt),
-          ...Object.keys(limitedCards.library),
-        ].includes(card.c.Id)
-      ) {
-        hasLimited = true;
-      }
+  [...Object.values(deck.crypt), ...Object.values(deck.library)].forEach((card) => {
+    if (card.q < 1) return;
+    if (card.c.Banned) hasBanned = true;
+    if (
+      limitedCards &&
+      ![...Object.keys(limitedCards.crypt), ...Object.keys(limitedCards.library)].includes(
+        card.c.Id,
+      )
+    ) {
+      hasLimited = true;
+    }
 
-      const legalRestriction = getLegality(card.c);
-      if (legalRestriction && legalRestriction === PLAYTEST) {
-        hasPlaytest = true;
-      }
-      if (legalRestriction && legalRestriction !== PLAYTEST) {
-        hasIllegalDate = legalRestriction;
-      }
-    },
-  );
+    const legalRestriction = getLegality(card.c);
+    if (legalRestriction && legalRestriction === PLAYTEST) {
+      hasPlaytest = true;
+    }
+    if (legalRestriction && legalRestriction !== PLAYTEST) {
+      hasIllegalDate = legalRestriction;
+    }
+  });
 
   return {
     hasBanned: hasBanned,
@@ -137,9 +124,7 @@ export const getCardsGroupedBy = (cards, property) => {
 };
 
 export const containCard = (cards, card) => {
-  return cards
-    .map((c) => getCardProperty(c, ID))
-    .includes(getCardProperty(card, ID));
+  return cards.map((c) => getCardProperty(c, ID)).includes(getCardProperty(card, ID));
 };
 
 export const getHardTotal = (hardList) => {

@@ -46,9 +46,7 @@ const CryptSearchForm = () => {
   const usedCrypt = useSnapshot(usedStore).crypt;
   const limitedCrypt = useSnapshot(limitedStore).crypt;
   const cryptFormState = useSnapshot(searchCryptForm);
-  const { filterCrypt } = useFilters(
-    limitedMode ? limitedCrypt : cryptCardBase,
-  );
+  const { filterCrypt } = useFilters(limitedMode ? limitedCrypt : cryptCardBase);
   const [error, setError] = useState(false);
   const [preresults, setPreresults] = useState();
   const showLimit = 250;
@@ -78,8 +76,7 @@ const CryptSearchForm = () => {
   const handleTextCheckboxesChange = (event) => {
     const { name, value } = event.currentTarget;
     if (['name', 'text'].includes(value)) {
-      searchCryptForm.text[name]['in'] =
-        searchCryptForm.text[name]['in'] === value ? false : value;
+      searchCryptForm.text[name]['in'] = searchCryptForm.text[name]['in'] === value ? false : value;
     } else {
       searchCryptForm.text[name][value] = !searchCryptForm.text[name][value];
     }
@@ -109,11 +106,9 @@ const CryptSearchForm = () => {
     const { name, value } = event.currentTarget;
 
     if (['or-newer', 'or-older', 'not-newer', 'not-older'].includes(value)) {
-      searchCryptForm[name]['age'] =
-        searchCryptForm[name]['age'] === value ? false : value;
+      searchCryptForm[name]['age'] = searchCryptForm[name]['age'] === value ? false : value;
     } else if (['only', 'first', 'reprint'].includes(value)) {
-      searchCryptForm[name]['print'] =
-        searchCryptForm[name]['print'] === value ? false : value;
+      searchCryptForm[name]['print'] = searchCryptForm[name]['print'] === value ? false : value;
     } else {
       searchCryptForm[name][value] = !searchCryptForm[name][value];
     }
@@ -156,11 +151,7 @@ const CryptSearchForm = () => {
       if (searchInventoryMode && inventoryMode) {
         setPreresults(
           filteredCards.filter((card) => {
-            return (
-              inventoryCrypt[card.Id] ||
-              usedCrypt.soft[card.Id] ||
-              usedCrypt.hard[card.Id]
-            );
+            return inventoryCrypt[card.Id] || usedCrypt.soft[card.Id] || usedCrypt.hard[card.Id];
           }),
         );
       } else {
@@ -170,11 +161,7 @@ const CryptSearchForm = () => {
       if (searchInventoryMode && inventoryMode) {
         setPreresults(
           filteredCards.filter((card) => {
-            return (
-              inventoryCrypt[card.Id] ||
-              usedCrypt.soft[card.Id] ||
-              usedCrypt.hard[card.Id]
-            );
+            return inventoryCrypt[card.Id] || usedCrypt.soft[card.Id] || usedCrypt.hard[card.Id];
           }),
         );
       } else {
@@ -204,10 +191,7 @@ const CryptSearchForm = () => {
           setPreresults(undefined);
           navigate('/crypt');
         }
-      } else if (
-        !cryptFormState.text[0].value ||
-        cryptFormState.text[0].value.length > 2
-      ) {
+      } else if (!cryptFormState.text[0].value || cryptFormState.text[0].value.length > 2) {
         processSearch();
       }
     }
@@ -291,22 +275,10 @@ const CryptSearchForm = () => {
         onChange={handleMultiSelectChange}
         searchForm={searchCryptForm}
       />
-      <CryptSearchFormVotes
-        value={cryptFormState.votes}
-        onChange={handleSelectChange}
-      />
-      <CryptSearchFormTitles
-        value={cryptFormState.titles}
-        onChange={handleMultiChange}
-      />
-      <CryptSearchFormGroup
-        value={cryptFormState.group}
-        onChange={handleMultiChange}
-      />
-      <CryptSearchFormTraits
-        value={cryptFormState.traits}
-        onChange={handleMultiChange}
-      />
+      <CryptSearchFormVotes value={cryptFormState.votes} onChange={handleSelectChange} />
+      <CryptSearchFormTitles value={cryptFormState.titles} onChange={handleMultiChange} />
+      <CryptSearchFormGroup value={cryptFormState.group} onChange={handleMultiChange} />
+      <CryptSearchFormTraits value={cryptFormState.traits} onChange={handleMultiChange} />
       <SearchFormSet
         value={cryptFormState.set}
         onChange={handleMultiSelectChange}

@@ -32,9 +32,7 @@ const TwdCardsHistoryCryptRow = ({ card, players, handleClick }) => {
         </div>
       )}
       <div
-        className={`flex w-full items-center justify-start ${
-          card.deckid ? '' : 'font-bold'
-        } `}
+        className={`flex w-full items-center justify-start ${card.deckid ? '' : 'font-bold'} `}
         onClick={() => handleClick(card)}
       >
         <ConditionalTooltip
@@ -60,10 +58,7 @@ const TwdCardsHistoryCryptRow = ({ card, players, handleClick }) => {
           </div>
         </div>
       )}
-      <TwdCardsHistoryCardAppearance
-        card={card}
-        byPlayer={players[card.player]}
-      />
+      <TwdCardsHistoryCardAppearance card={card} byPlayer={players[card.player]} />
     </>
   );
 };

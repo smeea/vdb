@@ -37,9 +37,7 @@ const probability = (children, m, p) => {
   if (children.length == 0) {
     return p;
   }
-  return (
-    p * probability(children[m[0]]['children'], m.slice(1), children[m[0]]['p'])
-  );
+  return p * probability(children[m[0]]['children'], m.slice(1), children[m[0]]['p']);
 };
 
 const evaluateItem = (cards) => {

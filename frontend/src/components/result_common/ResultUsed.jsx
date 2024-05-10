@@ -6,10 +6,8 @@ import { useApp, inventoryStore, usedStore } from '@/context';
 
 const ResultUsed = ({ card }) => {
   const { isDesktop } = useApp();
-  const inventoryCrypt = useSnapshot(inventoryStore).crypt;
-  const inventoryLibrary = useSnapshot(inventoryStore).library;
-  const usedCrypt = useSnapshot(usedStore).crypt;
-  const usedLibrary = useSnapshot(usedStore).library;
+  const { crypt: inventoryCrypt, library: inventoryLibrary } = useSnapshot(inventoryStore);
+  const { crypt: usedCrypt, library: usedLibrary } = useSnapshot(usedStore);
 
   const used = card.Id > 200000 ? usedCrypt : usedLibrary;
   const inventory = card.Id > 200000 ? inventoryCrypt : inventoryLibrary;
@@ -21,10 +19,7 @@ const ResultUsed = ({ card }) => {
   const isInventoryNote = inventory[card.Id]?.t;
 
   return (
-    <Tooltip
-      placement={isDesktop ? 'left' : 'bottom'}
-      overlay={<UsedPopover cardid={card.Id} />}
-    >
+    <Tooltip placement={isDesktop ? 'left' : 'bottom'} overlay={<UsedPopover cardid={card.Id} />}>
       {(inInventory > 0 || softUsedMax + hardUsedTotal > 0) && (
         <div
           className={`mx-1 flex items-center px-0.5 ${

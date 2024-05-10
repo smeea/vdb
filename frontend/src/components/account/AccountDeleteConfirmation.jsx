@@ -1,14 +1,7 @@
 import React, { useState } from 'react';
 import EyeFill from '@/assets/images/icons/eye-fill.svg?react';
 import EyeSlashFill from '@/assets/images/icons/eye-slash-fill.svg?react';
-import {
-  FlexGapped,
-  Spinner,
-  Input,
-  Modal,
-  Button,
-  ErrorOverlay,
-} from '@/components';
+import { FlexGapped, Spinner, Input, Modal, Button, ErrorOverlay } from '@/components';
 import { useApp } from '@/context';
 import { userServices } from '@/services';
 
@@ -57,14 +50,9 @@ const AccountDeleteConfirmation = ({ setShow }) => {
 
   return (
     <>
-      <Modal
-        handleClose={() => setShow(false)}
-        centered={isMobile}
-        title="Delete Account"
-      >
+      <Modal handleClose={() => setShow(false)} centered={isMobile} title="Delete Account">
         <FlexGapped className="flex-col">
-          This will also delete all your decks and they will not be available
-          via URL anymore.
+          This will also delete all your decks and they will not be available via URL anymore.
           <div className="flex justify-end space-x-2">
             <form onSubmit={handleSubmit}>
               <div className="flex">
@@ -79,15 +67,9 @@ const AccountDeleteConfirmation = ({ setShow }) => {
                     autoFocus
                     required
                   />
-                  {passwordError && (
-                    <ErrorOverlay placement="bottom">
-                      WRONG PASSWORD
-                    </ErrorOverlay>
-                  )}
+                  {passwordError && <ErrorOverlay placement="bottom">WRONG PASSWORD</ErrorOverlay>}
                   {connectionError && (
-                    <ErrorOverlay placement="bottom">
-                      CONNECTION PROBME
-                    </ErrorOverlay>
+                    <ErrorOverlay placement="bottom">CONNECTION PROBME</ErrorOverlay>
                   )}
                 </div>
                 <div className="flex space-x-2">
@@ -99,11 +81,7 @@ const AccountDeleteConfirmation = ({ setShow }) => {
                   >
                     {hidePassword ? <EyeFill /> : <EyeSlashFill />}
                   </Button>
-                  <Button
-                    className="min-w-[72px]"
-                    variant="danger"
-                    type="submit"
-                  >
+                  <Button className="min-w-[72px]" variant="danger" type="submit">
                     {isLoading ? <Spinner /> : 'Delete'}
                   </Button>
                 </div>

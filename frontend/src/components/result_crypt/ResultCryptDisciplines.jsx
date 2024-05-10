@@ -8,16 +8,10 @@ const ResultCryptDisciplines = ({ value }) => {
         <tr>
           {Object.keys(value).map((d, idx) => {
             return (
-              <td
-                className="min-w-[25px] max-w-[25px] sm:min-w-[28px] sm:max-w-[28px]"
-                key={idx}
-              >
+              <td className="min-w-[25px] max-w-[25px] sm:min-w-[28px] sm:max-w-[28px]" key={idx}>
                 {value[d] && (
                   <div className="flex items-center justify-center">
-                    <ResultDisciplineImage
-                      value={d}
-                      superior={value[d] === 2}
-                    />
+                    <ResultDisciplineImage value={d} superior={value[d] === 2} />
                   </div>
                 )}
               </td>

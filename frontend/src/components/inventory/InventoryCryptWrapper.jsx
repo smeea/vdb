@@ -3,13 +3,7 @@ import { useSnapshot } from 'valtio';
 import { NewCardSelect, InventoryCrypt } from '@/components';
 import { useApp, inventoryStore } from '@/context';
 
-const InventoryCryptWrapper = ({
-  sharedCrypt,
-  category,
-  onlyNotes,
-  clan,
-  setClan,
-}) => {
+const InventoryCryptWrapper = ({ sharedCrypt, category, onlyNotes, clan, setClan }) => {
   const { cryptCardBase } = useApp();
   const inventoryCrypt = useSnapshot(inventoryStore).crypt;
   const [newCardId, setNewCardId] = useState();

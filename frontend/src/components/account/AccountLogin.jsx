@@ -14,8 +14,7 @@ const LoginTooltipText = () => {
     <div className="flex flex-col gap-1">
       <div>Account is required for Deck Building and Inventory.</div>
       <div>
-        Decks and Inventory are stored on the server and you can access them
-        from any device.
+        Decks and Inventory are stored on the server and you can access them from any device.
       </div>
     </div>
   );
@@ -32,9 +31,7 @@ const PasswordTooltipText = () => {
         </a>{' '}
         with your username and I will generate temporary password.
       </div>
-      <div>
-        Usually I do it within a day, but sometimes it takes a bit more.
-      </div>
+      <div>Usually I do it within a day, but sometimes it takes a bit more.</div>
     </div>
   );
 };
@@ -96,14 +93,8 @@ const AccountLogin = () => {
       </div>
       <form className="space-y-2" onSubmit={handleSubmit}>
         <div className="relative flex w-full">
-          <AccountUsernameForm
-            value={formUsername}
-            setValue={setFormUsername}
-            autoFocus
-          />
-          {usernameError && (
-            <ErrorOverlay placement="bottom">{usernameError}</ErrorOverlay>
-          )}
+          <AccountUsernameForm value={formUsername} setValue={setFormUsername} autoFocus />
+          {usernameError && <ErrorOverlay placement="bottom">{usernameError}</ErrorOverlay>}
         </div>
         <div className="relative flex w-full">
           <AccountPasswordForm
@@ -111,9 +102,7 @@ const AccountLogin = () => {
             setValue={setFormPassword}
             isLoading={isLoading}
           />
-          {passwordError && (
-            <ErrorOverlay placement="bottom">{passwordError}</ErrorOverlay>
-          )}
+          {passwordError && <ErrorOverlay placement="bottom">{passwordError}</ErrorOverlay>}
         </div>
         <div className="flex">
           <ConditionalTooltipOrModal

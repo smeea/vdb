@@ -12,12 +12,7 @@ import {
 import { useApp, limitedStore, inventoryStore, usedStore } from '@/context';
 import { getHardTotal } from '@/utils';
 
-const TwdResultLibraryKeyCardsTableRow = ({
-  card,
-  idx,
-  handleClick,
-  shouldShowModal,
-}) => {
+const TwdResultLibraryKeyCardsTableRow = ({ card, idx, handleClick, shouldShowModal }) => {
   const { limitedMode, inventoryMode, isMobile } = useApp();
   const inventoryLibrary = useSnapshot(inventoryStore).library;
   const limitedLibrary = useSnapshot(limitedStore).library;
@@ -30,17 +25,12 @@ const TwdResultLibraryKeyCardsTableRow = ({
     <tr
       key={card.c.Id}
       className={`border-y border-bgSecondary dark:border-bgSecondaryDark ${
-        idx % 2
-          ? 'bg-bgThird dark:bg-bgThirdDark'
-          : 'bg-bgPrimary dark:bg-bgPrimaryDark'
+        idx % 2 ? 'bg-bgThird dark:bg-bgThirdDark' : 'bg-bgPrimary dark:bg-bgPrimaryDark'
       }`}
     >
       <td className="min-w-[28px] border-r border-bgSecondary bg-blue/5 dark:border-bgSecondaryDark sm:min-w-[35px]">
         {inventoryMode ? (
-          <ConditionalTooltip
-            overlay={<UsedPopover cardid={card.c.Id} />}
-            disabled={isMobile}
-          >
+          <ConditionalTooltip overlay={<UsedPopover cardid={card.c.Id} />} disabled={isMobile}>
             <div
               className={`flex justify-center text-lg ${
                 inInventory < card.q
@@ -74,14 +64,9 @@ const TwdResultLibraryKeyCardsTableRow = ({
         </ConditionalTooltip>
       </td>
       {!isMobile && (
-        <td
-          className="min-w-[62px] 2xl:min-w-[85px]"
-          onClick={() => handleClick(card.c)}
-        >
+        <td className="min-w-[62px] 2xl:min-w-[85px]" onClick={() => handleClick(card.c)}>
           <div className="flex items-center justify-center">
-            {card.c.Discipline && (
-              <ResultLibraryDisciplines value={card.c.Discipline} />
-            )}
+            {card.c.Discipline && <ResultLibraryDisciplines value={card.c.Discipline} />}
             {card.c.Discipline && card.c.Clan && '+'}
             {card.c.Clan && <ResultLibraryClan value={card.c.Clan} />}
           </div>

@@ -7,8 +7,7 @@ const ResultLibraryType = ({ cardtype, total, trifleTotal }) => {
       <ResultLibraryTypeImage value={cardtype} />
       {total > 0 ? (
         <div className="inline">
-          {cardtype} [{total}]
-          {trifleTotal ? <> - {trifleTotal} trifle</> : null}
+          {cardtype} [{total}]{trifleTotal ? <> - {trifleTotal} trifle</> : null}
         </div>
       ) : (
         <div className="inline">{cardtype}</div>

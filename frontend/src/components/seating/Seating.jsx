@@ -1,10 +1,7 @@
 import React, { useEffect, useLayoutEffect, useState } from 'react';
 import { useImmer } from 'use-immer';
 import { SeatingModal } from '@/components';
-import {
-  initFromStorage,
-  setLocalStorage,
-} from '@/services/storageServices.js';
+import { initFromStorage, setLocalStorage } from '@/services/storageServices.js';
 import { useApp } from '@/context';
 import standardDecksData from '@/assets/data/standardDecks.json';
 
@@ -29,9 +26,7 @@ const Seating = ({ setShow }) => {
   const [customDecks, setCustomDecks] = useImmer([]);
   const [standardDecks, setStandardDecks] = useImmer(
     Object.keys(standardDecksData)
-      .toSorted((a, b) =>
-        standardDecksData[a].localeCompare(standardDecksData[b]),
-      )
+      .toSorted((a, b) => standardDecksData[a].localeCompare(standardDecksData[b]))
       .map((deckid) => ({
         deckid: deckid,
         name: standardDecksData[deckid],

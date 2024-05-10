@@ -1,9 +1,5 @@
 import React from 'react';
-import {
-  ReviewApplyButton,
-  ReviewCopyUrlButton,
-  DiffBackButton,
-} from '@/components';
+import { ReviewApplyButton, ReviewCopyUrlButton, DiffBackButton } from '@/components';
 
 const ReviewButtons = ({ parentId, deck, urlDiff }) => {
   return (

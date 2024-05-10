@@ -47,13 +47,8 @@ const ResultCryptTotal = ({
               </div>
               {byGroups[k]}
               {!inHoF && (
-                <div
-                  className="flex justify-center text-sm"
-                  title="Average Capacity"
-                >
-                  ~
-                  {Math.round((byGroupsCapacityTotal[k] / byGroups[k]) * 10) /
-                    10}
+                <div className="flex justify-center text-sm" title="Average Capacity">
+                  ~{Math.round((byGroupsCapacityTotal[k] / byGroups[k]) * 10) / 10}
                 </div>
               )}
             </div>
@@ -75,11 +70,7 @@ const ResultCryptTotal = ({
           <div className="space-y-1">
             {!inHoF && (
               <div className=" flex justify-end">
-                <Button
-                  title="Additional Info"
-                  variant="primary"
-                  onClick={() => toggleShowInfo()}
-                >
+                <Button title="Additional Info" variant="primary" onClick={() => toggleShowInfo()}>
                   <InfoCircle />
                 </Button>
               </div>

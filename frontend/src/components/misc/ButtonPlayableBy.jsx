@@ -31,9 +31,7 @@ const ButtonPlayableBy = ({ card, handleClose }) => {
 
     if (isClan.length > 0) {
       const values = isClan.map((i) => `"${i.toLowerCase()}"`);
-      queries.push(
-        `"clan"%3A{"value"%3A[${values.join('%2C')}]%2C"logic"%3A"or"}`,
-      );
+      queries.push(`"clan"%3A{"value"%3A[${values.join('%2C')}]%2C"logic"%3A"or"}`);
     }
     if (isTitle.length > 0) {
       const values = isTitle.map((i) => `"${i}"%3Atrue`);
@@ -69,11 +67,7 @@ const ButtonPlayableBy = ({ card, handleClose }) => {
   };
 
   return (
-    <Button
-      title="Search Who Can Play It"
-      variant="primary"
-      onClick={handleClick}
-    >
+    <Button title="Search Who Can Play It" variant="primary" onClick={handleClick}>
       <Bullseye />
     </Button>
   );

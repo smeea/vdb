@@ -15,12 +15,7 @@ const DeckMissingModal = ({ deck, missAllVtes, handleClose, inInventory }) => {
   const [showMissAll, setShowMissAll] = useState();
 
   return (
-    <Modal
-      handleClose={handleClose}
-      size="lg"
-      title={deck.name}
-      noPadding={isMobile}
-    >
+    <Modal handleClose={handleClose} size="lg" title={deck.name} noPadding={isMobile}>
       <FlexGapped className="flex-col">
         <FlexGapped className="max-sm:flex-col">
           <div className="basis-full md:basis-5/9">

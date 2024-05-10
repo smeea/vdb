@@ -2,11 +2,7 @@ import React, { useState } from 'react';
 import { useSnapshot } from 'valtio';
 import { DiffCryptTable, ResultModal, DeckCryptHeader } from '@/components';
 import { deckStore, useApp } from '@/context';
-import {
-  useModalCardController,
-  useKeyDisciplines,
-  useDeckCrypt,
-} from '@/hooks';
+import { useModalCardController, useKeyDisciplines, useDeckCrypt } from '@/hooks';
 
 const ReviewCrypt = ({ cardChange, cardsFrom, cardsTo }) => {
   const { cryptDeckSort, changeCryptDeckSort, isMobile } = useApp();
@@ -22,8 +18,12 @@ const ReviewCrypt = ({ cardChange, cardsFrom, cardsTo }) => {
     Sect: 'S',
   };
 
-  const { crypt, cryptSide, cryptTotal, sortedCards, sortedCardsSide } =
-    useDeckCrypt(cardsFrom, cryptDeckSort, changeTimer, cardsTo);
+  const { crypt, cryptSide, cryptTotal, sortedCards, sortedCardsSide } = useDeckCrypt(
+    cardsFrom,
+    cryptDeckSort,
+    changeTimer,
+    cardsTo,
+  );
 
   const { disciplinesSet, keyDisciplines } = useKeyDisciplines(crypt);
 
@@ -37,11 +37,7 @@ const ReviewCrypt = ({ cardChange, cardsFrom, cardsTo }) => {
   } = useModalCardController(sortedCards, sortedCardsSide);
 
   return (
-    <div
-      className={
-        isMobile ? null : 'top-[32px] z-10 bg-bgPrimary dark:bg-bgPrimaryDark'
-      }
-    >
+    <div className={isMobile ? null : 'top-[32px] z-10 bg-bgPrimary dark:bg-bgPrimaryDark'}>
       <DeckCryptHeader
         sortMethods={sortMethods}
         sortMethod={cryptDeckSort}
@@ -66,9 +62,7 @@ const ReviewCrypt = ({ cardChange, cardsFrom, cardsTo }) => {
       />
       {Object.keys(cryptSide).length > 0 && (
         <div className="opacity-60 dark:opacity-50">
-          <div className="flex items-center justify-between font-bold">
-            Side Crypt
-          </div>
+          <div className="flex items-center justify-between font-bold">Side Crypt</div>
           <DiffCryptTable
             isEditable
             cardChange={cardChange}

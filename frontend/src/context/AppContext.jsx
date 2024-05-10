@@ -2,10 +2,7 @@ import React, { useState, useLayoutEffect, useEffect, useMemo } from 'react';
 import { useImmer } from 'use-immer';
 import { useSnapshot } from 'valtio';
 import { set, setMany, getMany, update } from 'idb-keyval';
-import {
-  initFromStorage,
-  setLocalStorage,
-} from '@/services/storageServices.js';
+import { initFromStorage, setLocalStorage } from '@/services/storageServices.js';
 import { userServices, cardServices } from '@/services';
 import { useDeck, useWindowSize } from '@/hooks';
 import { byTimestamp } from '@/utils';
@@ -66,10 +63,10 @@ export const AppProvider = (props) => {
   const [localizedLibrary, setLocalizedLibrary] = useState();
   const [preconDecks, setPreconDecks] = useState();
 
-  const deck = useSnapshot(deckStore).deck;
-  const decks = useSnapshot(deckStore).decks;
-  const lastDeckArray = (decks &&
-    Object.values(decks).toSorted(byTimestamp)) ?? [{ deckid: undefined }];
+  const { deck, decks } = useSnapshot(deckStore);
+  const lastDeckArray = (decks && Object.values(decks).toSorted(byTimestamp)) ?? [
+    { deckid: undefined },
+  ];
   const lastDeckId = lastDeckArray[0]?.deckid;
   const [recentDecks, setRecentDecks] = useState([]);
 
@@ -96,12 +93,10 @@ export const AppProvider = (props) => {
       setLocalizedCrypt({ 'en-EN': data.nativeCrypt });
       setLocalizedLibrary({ 'en-EN': data.nativeLibrary });
 
-      cardServices
-        .getPreconDecks(data.crypt, data.library)
-        .then((preconData) => {
-          if (isIndexedDB) set('preconDecks', preconData);
-          setPreconDecks(preconData);
-        });
+      cardServices.getPreconDecks(data.crypt, data.library).then((preconData) => {
+        if (isIndexedDB) set('preconDecks', preconData);
+        setPreconDecks(preconData);
+      });
     });
   };
 
@@ -224,11 +219,7 @@ export const AppProvider = (props) => {
     setLocalStorage('lang', lang);
   };
 
-  const changeBaseTextToLocalizedText = (
-    setCardBase,
-    localizedInfo,
-    nativeInfo,
-  ) => {
+  const changeBaseTextToLocalizedText = (setCardBase, localizedInfo, nativeInfo) => {
     setCardBase((draft) => {
       Object.keys(draft).forEach((k) => {
         const newInfo = localizedInfo[k] ? localizedInfo[k] : nativeInfo[k];
@@ -257,11 +248,7 @@ export const AppProvider = (props) => {
         [lang]: data.library,
       }));
       changeBaseTextToLocalizedText(setCryptCardBase, data.crypt, nativeCrypt);
-      changeBaseTextToLocalizedText(
-        setLibraryCardBase,
-        data.library,
-        nativeLibrary,
-      );
+      changeBaseTextToLocalizedText(setLibraryCardBase, data.library, nativeLibrary);
     });
   };
 
@@ -270,16 +257,8 @@ export const AppProvider = (props) => {
       if (!localizedCrypt[lang] || !localizedLibrary[lang]) {
         await initializeLocalizedInfo(lang);
       } else {
-        changeBaseTextToLocalizedText(
-          setCryptCardBase,
-          localizedCrypt[lang],
-          nativeCrypt,
-        );
-        changeBaseTextToLocalizedText(
-          setLibraryCardBase,
-          localizedLibrary[lang],
-          nativeLibrary,
-        );
+        changeBaseTextToLocalizedText(setCryptCardBase, localizedCrypt[lang], nativeCrypt);
+        changeBaseTextToLocalizedText(setLibraryCardBase, localizedLibrary[lang], nativeLibrary);
       }
     }
     if (cryptCardBase && libraryCardBase) {
@@ -294,12 +273,7 @@ export const AppProvider = (props) => {
       localizedLibrary?.[lang] &&
       Object.keys(localizedCrypt).length > 1
     ) {
-      deckLocalize(
-        localizedCrypt[lang],
-        nativeCrypt,
-        localizedLibrary[lang],
-        nativeLibrary,
-      );
+      deckLocalize(localizedCrypt[lang], nativeCrypt, localizedLibrary[lang], nativeLibrary);
     }
   }, [deck?.deckid, lang, localizedCrypt, localizedLibrary]);
 
@@ -360,8 +334,7 @@ export const AppProvider = (props) => {
   };
 
   const addRecentDeck = (deck) => {
-    const src =
-      deck.deckid.length != 32 ? 'twd' : deck.publicParent ? 'pda' : 'shared';
+    const src = deck.deckid.length != 32 ? 'twd' : deck.publicParent ? 'pda' : 'shared';
     let d = [...recentDecks];
     const idx = recentDecks.map((v) => v.deckid).indexOf(deck.deckid);
     if (idx !== -1) d.splice(idx, 1);
@@ -391,20 +364,12 @@ export const AppProvider = (props) => {
   }, []);
 
   useLayoutEffect(() => {
-    initFromStorage(
-      'cryptSearchSort',
-      'Capacity - Min to Max',
-      setCryptSearchSort,
-    );
+    initFromStorage('cryptSearchSort', 'Capacity - Min to Max', setCryptSearchSort);
     initFromStorage('cryptDeckSort', 'Quantity ', setCryptDeckSort);
     initFromStorage('librarySearchSort', 'Type', setLibrarySearchSort);
     initFromStorage('twdSearchSort', 'Date - New to Old', setTwdSearchSort);
     initFromStorage('pdaSearchSort', 'Date - New to Old', setPdaSearchSort);
-    initFromStorage(
-      'analyzeSearchSort',
-      'Rank - High to Low',
-      setAnalyzeSearchSort,
-    );
+    initFromStorage('analyzeSearchSort', 'Rank - High to Low', setAnalyzeSearchSort);
     initFromStorage('lang', 'en-EN', setLang);
     initFromStorage('addMode', isDesktop, setAddMode);
     initFromStorage('inventoryMode', false, setInventoryMode);
@@ -417,31 +382,24 @@ export const AppProvider = (props) => {
   // DECKS
   const parseDecksData = (decksData) => {
     Object.keys(decksData).forEach((deckid) => {
-      const cardsData = useDeck(
-        decksData[deckid].cards,
-        cryptCardBase,
-        libraryCardBase,
-      );
+      const cardsData = useDeck(decksData[deckid].cards, cryptCardBase, libraryCardBase);
 
       decksData[deckid] = { ...decksData[deckid], ...cardsData };
       if (decksData[deckid].usedInInventory) {
         Object.keys(decksData[deckid].usedInInventory).forEach((cardid) => {
           if (cardid > 200000) {
             if (decksData[deckid].crypt[cardid]) {
-              decksData[deckid].crypt[cardid].i =
-                decksData[deckid].usedInInventory[cardid];
+              decksData[deckid].crypt[cardid].i = decksData[deckid].usedInInventory[cardid];
             }
           } else {
             if (decksData[deckid].library[cardid]) {
-              decksData[deckid].library[cardid].i =
-                decksData[deckid].usedInInventory[cardid];
+              decksData[deckid].library[cardid].i = decksData[deckid].usedInInventory[cardid];
             }
           }
         });
       }
       decksData[deckid].isAuthor = true;
-      decksData[deckid].master =
-        decksData[deckid].master !== '' ? decksData[deckid].master : null;
+      decksData[deckid].master = decksData[deckid].master !== '' ? decksData[deckid].master : null;
       decksData[deckid].isBranches = !!(
         decksData[deckid].master || decksData[deckid].branches?.length > 0
       );
@@ -453,9 +411,7 @@ export const AppProvider = (props) => {
 
   useEffect(() => {
     if (decks || username === null) {
-      const d = recentDecks.filter(
-        (v) => username === null || !decks[v.deckid],
-      );
+      const d = recentDecks.filter((v) => username === null || !decks[v.deckid]);
       if (d.length < recentDecks.length) {
         updateRecentDecks(d);
       }

@@ -9,14 +9,7 @@ const useLibraryRequirements = (card) => {
   let isBlackHand;
   let isSeraph;
 
-  const sects = [
-    'camarilla',
-    'sabbat',
-    'laibon',
-    'independent',
-    'anarch',
-    'imbued',
-  ];
+  const sects = ['camarilla', 'sabbat', 'laibon', 'independent', 'anarch', 'imbued'];
 
   const nonSects = [
     'non-camarilla',

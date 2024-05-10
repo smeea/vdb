@@ -119,10 +119,7 @@ const Inventory = () => {
               isSharedInventory={isSharedInventory}
             />
             <div>
-              <InventoryShowSelect
-                category={category}
-                setCategory={setCategory}
-              />
+              <InventoryShowSelect category={category} setCategory={setCategory} />
             </div>
             <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">
               <Checkbox
@@ -138,9 +135,7 @@ const Inventory = () => {
               position="middle"
               variant="primary"
             >
-              <div className="text-[28px]">
-                {showCryptOnMobile ? 'LIB' : 'CR'}
-              </div>
+              <div className="text-[28px]">{showCryptOnMobile ? 'LIB' : 'CR'}</div>
             </ButtonFloat>
           )}
         </FlexGapped>
@@ -178,10 +173,7 @@ const Inventory = () => {
               isSharedInventory={isSharedInventory}
             />
             <div>
-              <InventoryShowSelect
-                category={category}
-                setCategory={setCategory}
-              />
+              <InventoryShowSelect category={category} setCategory={setCategory} />
             </div>
           </div>
         </Modal>
@@ -204,12 +196,7 @@ const Inventory = () => {
           }}
         />
       )}
-      {showShareModal && (
-        <InventoryShareModal
-          show={showShareModal}
-          setShow={setShowShareModal}
-        />
-      )}
+      {showShareModal && <InventoryShareModal show={showShareModal} setShow={setShowShareModal} />}
     </div>
   );
 };

@@ -1,15 +1,6 @@
 import React from 'react';
 
-const Checkbox = ({
-  checked,
-  prefix,
-  name,
-  value,
-  onChange,
-  label,
-  id,
-  className = '',
-}) => {
+const Checkbox = ({ checked, prefix, name, value, onChange, label, id, className = '' }) => {
   const htmlId = id ?? `${prefix ?? ''}-${name}-${value}`;
 
   return (

@@ -2,12 +2,7 @@ import { DEFAULT_OPTIONS } from '@/utils/constants';
 const accountUrl = `${import.meta.env.VITE_API_URL}/account`;
 const loginUrl = `${import.meta.env.VITE_API_URL}/login`;
 
-export const login = (
-  username,
-  password,
-  onSuccess = () => {},
-  onError = () => {},
-) => {
+export const login = (username, password, onSuccess = () => {}, onError = () => {}) => {
   const options = {
     method: 'POST',
     body: JSON.stringify({
@@ -17,12 +12,7 @@ export const login = (
     }),
   };
 
-  fetchWithCallbacks(
-    loginUrl,
-    { ...DEFAULT_OPTIONS, ...options },
-    onSuccess,
-    onError,
-  );
+  fetchWithCallbacks(loginUrl, { ...DEFAULT_OPTIONS, ...options }, onSuccess, onError);
 };
 
 export const whoAmI = () => {
@@ -42,13 +32,7 @@ export const logout = () => {
   fetch(loginUrl, { ...DEFAULT_OPTIONS, ...options });
 };
 
-export const register = (
-  username,
-  password,
-  email,
-  onSuccess = () => {},
-  onError = () => {},
-) => {
+export const register = (username, password, email, onSuccess = () => {}, onError = () => {}) => {
   const options = {
     method: 'POST',
     body: JSON.stringify({
@@ -58,20 +42,10 @@ export const register = (
     }),
   };
 
-  fetchWithCallbacks(
-    accountUrl,
-    { ...DEFAULT_OPTIONS, ...options },
-    onSuccess,
-    onError,
-  );
+  fetchWithCallbacks(accountUrl, { ...DEFAULT_OPTIONS, ...options }, onSuccess, onError);
 };
 
-export const changePassword = (
-  password,
-  newPassword,
-  onSuccess = () => {},
-  onError = () => {},
-) => {
+export const changePassword = (password, newPassword, onSuccess = () => {}, onError = () => {}) => {
   const options = {
     method: 'PUT',
     body: JSON.stringify({
@@ -80,20 +54,10 @@ export const changePassword = (
     }),
   };
 
-  fetchWithCallbacks(
-    accountUrl,
-    { ...DEFAULT_OPTIONS, ...options },
-    onSuccess,
-    onError,
-  );
+  fetchWithCallbacks(accountUrl, { ...DEFAULT_OPTIONS, ...options }, onSuccess, onError);
 };
 
-export const changeEmail = (
-  password,
-  email,
-  onSuccess = () => {},
-  onError = () => {},
-) => {
+export const changeEmail = (password, email, onSuccess = () => {}, onError = () => {}) => {
   const options = {
     method: 'PUT',
     body: JSON.stringify({
@@ -102,19 +66,10 @@ export const changeEmail = (
     }),
   };
 
-  fetchWithCallbacks(
-    accountUrl,
-    { ...DEFAULT_OPTIONS, ...options },
-    onSuccess,
-    onError,
-  );
+  fetchWithCallbacks(accountUrl, { ...DEFAULT_OPTIONS, ...options }, onSuccess, onError);
 };
 
-export const changeName = (
-  publicName,
-  onSuccess = () => {},
-  onError = () => {},
-) => {
+export const changeName = (publicName, onSuccess = () => {}, onError = () => {}) => {
   const options = {
     method: 'PUT',
     body: JSON.stringify({
@@ -122,19 +77,10 @@ export const changeName = (
     }),
   };
 
-  fetchWithCallbacks(
-    accountUrl,
-    { ...DEFAULT_OPTIONS, ...options },
-    onSuccess,
-    onError,
-  );
+  fetchWithCallbacks(accountUrl, { ...DEFAULT_OPTIONS, ...options }, onSuccess, onError);
 };
 
-export const deleteAccount = (
-  password,
-  onSuccess = () => {},
-  onError = () => {},
-) => {
+export const deleteAccount = (password, onSuccess = () => {}, onError = () => {}) => {
   const options = {
     method: 'DELETE',
     body: JSON.stringify({
@@ -142,21 +88,11 @@ export const deleteAccount = (
     }),
   };
 
-  fetchWithCallbacks(
-    accountUrl,
-    { ...DEFAULT_OPTIONS, ...options },
-    onSuccess,
-    onError,
-  );
+  fetchWithCallbacks(accountUrl, { ...DEFAULT_OPTIONS, ...options }, onSuccess, onError);
 };
 
 // Performs a fetch and call onSuccess or onError callbacks
-const fetchWithCallbacks = (
-  url,
-  options,
-  onSuccessCallBack,
-  onErrorCallBack,
-) => {
+const fetchWithCallbacks = (url, options, onSuccessCallBack, onErrorCallBack) => {
   fetch(url, options)
     .then((response) => {
       if (!response.ok) throw Error(response.status);

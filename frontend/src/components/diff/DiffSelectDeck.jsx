@@ -12,14 +12,7 @@ import {
 } from '@/components';
 import { useApp } from '@/context';
 
-const DiffSelectDeck = ({
-  decks,
-  deck,
-  deckidFrom,
-  deckidTo,
-  target,
-  title,
-}) => {
+const DiffSelectDeck = ({ decks, deck, deckidFrom, deckidTo, target, title }) => {
   const { recentDecks, inventoryMode, username, isMobile } = useApp();
   const deckid = target === 'from' ? deckidFrom : deckidTo;
   const navigate = useNavigate();
@@ -61,15 +54,9 @@ const DiffSelectDeck = ({
 
   return (
     <>
-      <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
-        {title}
-      </div>
+      <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">{title}</div>
       {source === `${target}-url` ? (
-        <form
-          name={target}
-          onSubmit={handleUrlSubmit}
-          className="min-w-[270px]"
-        >
+        <form name={target} onSubmit={handleUrlSubmit} className="min-w-[270px]">
           <div className="flex">
             <Input
               roundedStyle="rounded rounded-r-none"
@@ -85,28 +72,14 @@ const DiffSelectDeck = ({
           </div>
         </form>
       ) : (
-        <div
-          className={
-            inventoryMode || !isMobile ? 'flex' : 'flex justify-between'
-          }
-        >
-          <div
-            className={
-              deck?.isBranches && source == `${target}-my` ? 'w-3/4' : 'w-full'
-            }
-          >
+        <div className={inventoryMode || !isMobile ? 'flex' : 'flex justify-between'}>
+          <div className={deck?.isBranches && source == `${target}-my` ? 'w-3/4' : 'w-full'}>
             {source == `${target}-my` && decks ? (
               <DeckSelectMy handleSelect={handleSelect} deckid={deck?.deckid} />
             ) : source == `${target}-recent` ? (
-              <DeckSelectRecent
-                handleSelect={handleSelect}
-                deckid={deck?.deckid}
-              />
+              <DeckSelectRecent handleSelect={handleSelect} deckid={deck?.deckid} />
             ) : (
-              <DeckSelectPrecon
-                handleSelect={handleSelect}
-                deckid={deck?.deckid}
-              />
+              <DeckSelectPrecon handleSelect={handleSelect} deckid={deck?.deckid} />
             )}
           </div>
           {source == `${target}-my` && decks && deck?.isBranches && (

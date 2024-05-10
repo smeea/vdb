@@ -14,9 +14,7 @@ const Radio = ({ id, name, checked, value, onChange }) => {
         id={htmlId}
       />
       <label htmlFor={htmlId}>
-        <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
-          {value}
-        </div>
+        <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">{value}</div>
       </label>
     </div>
   );

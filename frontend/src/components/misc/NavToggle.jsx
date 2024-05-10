@@ -6,9 +6,7 @@ const NavToggle = ({ text, isOn, onToggle }) => {
   return (
     <div
       className={`flex h-full items-center space-x-1 ${
-        isOn
-          ? 'text-white dark:text-whiteDark'
-          : 'text-lightGray dark:text-lightGrayDark'
+        isOn ? 'text-white dark:text-whiteDark' : 'text-lightGray dark:text-lightGrayDark'
       }`}
       onClick={onToggle}
     >

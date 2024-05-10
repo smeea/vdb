@@ -9,17 +9,13 @@ import { getHardTotal, getSoftMax } from '@/utils';
 
 const UsedPopover = ({ cardid }) => {
   const decks = useSnapshot(deckStore).decks;
-  const usedCrypt = useSnapshot(usedStore).crypt;
-  const usedLibrary = useSnapshot(usedStore).library;
-  const inventoryCrypt = useSnapshot(inventoryStore).crypt;
-  const inventoryLibrary = useSnapshot(inventoryStore).library;
+  const { crypt: usedCrypt, library: usedLibrary } = useSnapshot(usedStore);
+  const { crypt: inventoryCrypt, library: inventoryLibrary } = useSnapshot(inventoryStore);
   const usedCards = cardid > 200000 ? usedCrypt : usedLibrary;
   const softUsedMax = getSoftMax(usedCards.soft[cardid]);
   const hardUsedTotal = getHardTotal(usedCards.hard[cardid]);
-  let inInventory =
-    cardid > 200000 ? inventoryCrypt[cardid]?.q : inventoryLibrary[cardid]?.q;
-  const text =
-    cardid > 200000 ? inventoryCrypt[cardid]?.t : inventoryLibrary[cardid]?.t;
+  let inInventory = cardid > 200000 ? inventoryCrypt[cardid]?.q : inventoryLibrary[cardid]?.q;
+  const text = cardid > 200000 ? inventoryCrypt[cardid]?.t : inventoryLibrary[cardid]?.t;
   if (!inInventory) inInventory = 0;
 
   return (
@@ -27,18 +23,10 @@ const UsedPopover = ({ cardid }) => {
       {(softUsedMax !== 0 || hardUsedTotal !== 0) && (
         <>
           {softUsedMax > 0 && (
-            <UsedDescription
-              usedCards={usedCards.soft[cardid]}
-              decks={decks}
-              inventoryType="s"
-            />
+            <UsedDescription usedCards={usedCards.soft[cardid]} decks={decks} inventoryType="s" />
           )}
           {hardUsedTotal > 0 && (
-            <UsedDescription
-              usedCards={usedCards.hard[cardid]}
-              decks={decks}
-              inventoryType="h"
-            />
+            <UsedDescription usedCards={usedCards.hard[cardid]} decks={decks} inventoryType="h" />
           )}
           <Hr />
         </>

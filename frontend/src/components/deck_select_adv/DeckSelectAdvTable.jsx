@@ -1,10 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { getClan, decksSort } from '@/utils';
-import {
-  DeckSelectAdvTableRow,
-  DeckSelectAdvTableHeader,
-  ResultClanImage,
-} from '@/components';
+import { DeckSelectAdvTableRow, DeckSelectAdvTableHeader, ResultClanImage } from '@/components';
 
 const DeckSelectAdvTable = ({
   allTagsOptions,
@@ -121,15 +117,7 @@ const DeckSelectAdvTable = ({
 
       return decksSort(filtered, sortMethod);
     } else return [];
-  }, [
-    decks,
-    invFilter,
-    clanFilter,
-    nameFilter,
-    tagsFilter,
-    revFilter,
-    sortMethod,
-  ]);
+  }, [decks, invFilter, clanFilter, nameFilter, tagsFilter, revFilter, sortMethod]);
 
   const toggleSelect = (deckid) => {
     setSelectedDecks((prevState) => ({

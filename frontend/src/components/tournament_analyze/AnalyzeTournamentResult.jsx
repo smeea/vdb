@@ -1,8 +1,5 @@
 import React, { useMemo } from 'react';
-import {
-  AnalyzeTournamentDeck,
-  AnalyzeTournamentResultTotal,
-} from '@/components';
+import { AnalyzeTournamentDeck, AnalyzeTournamentResultTotal } from '@/components';
 import { useApp } from '@/context';
 import { decksSort } from '@/utils';
 

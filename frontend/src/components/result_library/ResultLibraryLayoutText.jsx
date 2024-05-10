@@ -30,15 +30,11 @@ const ResultLibraryLayoutText = ({ card, handleClose, noClose, inPopover }) => {
         </div>
         <div className="flex items-center space-x-3">
           <div className="flex items-center">
-            {card.Discipline && (
-              <ResultLibraryDisciplines value={card.Discipline} />
-            )}
+            {card.Discipline && <ResultLibraryDisciplines value={card.Discipline} />}
             {card.Discipline && card.Clan && '+'}
             {card.Clan && <ResultLibraryClan value={card.Clan} />}
           </div>
-          {card['Burn Option'] && (
-            <div>{card['Burn Option'] && <ResultLibraryBurn />}</div>
-          )}
+          {card['Burn Option'] && <div>{card['Burn Option'] && <ResultLibraryBurn />}</div>}
           {isTrifle(card) && (
             <div>
               <ResultLibraryTrifle />
@@ -63,19 +59,13 @@ const ResultLibraryLayoutText = ({ card, handleClose, noClose, inPopover }) => {
       {(card['Blood Cost'] || card['Pool Cost']) && (
         <>
           <div className="flex items-center justify-between">
-            <ResultLibraryCost
-              valuePool={card['Pool Cost']}
-              valueBlood={card['Blood Cost']}
-            />
+            <ResultLibraryCost valuePool={card['Pool Cost']} valueBlood={card['Blood Cost']} />
           </div>
           <Hr />
         </>
       )}
       {card.Banned && (
-        <div
-          className="text-fgRed dark:text-fgRedDark"
-          title={`Banned in ${card.Banned}`}
-        >
+        <div className="text-fgRed dark:text-fgRedDark" title={`Banned in ${card.Banned}`}>
           Banned in {card.Banned}
         </div>
       )}

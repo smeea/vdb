@@ -13,20 +13,7 @@ const CryptSearchFormCapacity = ({ value, searchForm, onChange }) => {
   const maxMenuHeight = isXWide ? 500 : 350;
   const name = 'capacity';
 
-  const options = [
-    'ANY',
-    '1',
-    '2',
-    '3',
-    '4',
-    '5',
-    '6',
-    '7',
-    '8',
-    '9',
-    '10',
-    '11',
-  ].map((i) => ({
+  const options = ['ANY', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11'].map((i) => ({
     value: i.toLowerCase(),
     name: name,
     label: <div className="flex justify-center">{i}</div>,
@@ -46,9 +33,7 @@ const CryptSearchFormCapacity = ({ value, searchForm, onChange }) => {
     <>
       <div className="flex items-center">
         <div className="w-1/4">
-          <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
-            Capacity:
-          </div>
+          <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Capacity:</div>
           {value.value[0][name] !== 'any' && (
             <div className="flex justify-end space-x-1 px-1">
               <SearchFormButtonLogicToggle
@@ -57,17 +42,9 @@ const CryptSearchFormCapacity = ({ value, searchForm, onChange }) => {
                 searchForm={searchForm}
               />
               {value.value.length == 1 ? (
-                <SearchFormButtonAdd
-                  searchForm={searchForm}
-                  name={name}
-                  withMoreless
-                />
+                <SearchFormButtonAdd searchForm={searchForm} name={name} withMoreless />
               ) : (
-                <SearchFormButtonDel
-                  searchForm={searchForm}
-                  i={0}
-                  name={name}
-                />
+                <SearchFormButtonDel searchForm={searchForm} i={0} name={name} />
               )}
             </div>
           )}
@@ -78,9 +55,7 @@ const CryptSearchFormCapacity = ({ value, searchForm, onChange }) => {
               options={morelessOptions}
               isSearchable={false}
               name={0}
-              value={morelessOptions.find(
-                (obj) => obj.value === value.value[0].moreless,
-              )}
+              value={morelessOptions.find((obj) => obj.value === value.value[0].moreless)}
               onChange={onChange}
             />
           </div>

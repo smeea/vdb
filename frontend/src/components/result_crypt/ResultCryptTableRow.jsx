@@ -69,12 +69,7 @@ const ResultCryptTableRow = ({
       ) : (
         (inRecommendation ? isEditable : isEditable && addMode) && (
           <td className="min-w-[22px]">
-            <ButtonAddCard
-              cardid={card.Id}
-              deckid={deck.deckid}
-              card={card}
-              inDeck={inDeck}
-            />
+            <ButtonAddCard cardid={card.Id} deckid={deck.deckid} card={card} inDeck={inDeck} />
           </td>
         )
       )}

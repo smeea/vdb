@@ -7,13 +7,7 @@ import {
   ResultLibraryTableRowCommon,
 } from '@/components';
 import { getHardTotal, getSoftMax } from '@/utils';
-import {
-  useApp,
-  deckStore,
-  usedStore,
-  inventoryStore,
-  deckCardChange,
-} from '@/context';
+import { useApp, deckStore, usedStore, inventoryStore, deckCardChange } from '@/context';
 
 const DiffLibraryTableRow = ({
   cardChange,
@@ -40,9 +34,7 @@ const DiffLibraryTableRow = ({
   return (
     <tr
       className={`border-y border-bgSecondary dark:border-bgSecondaryDark ${
-        idx % 2
-          ? 'bg-bgThird dark:bg-bgThirdDark'
-          : 'bg-bgPrimary dark:bg-bgPrimaryDark'
+        idx % 2 ? 'bg-bgThird dark:bg-bgThirdDark' : 'bg-bgPrimary dark:bg-bgPrimaryDark'
       }`}
     >
       <DeckCardQuantityTd
@@ -58,19 +50,10 @@ const DiffLibraryTableRow = ({
         softUsedMax={softUsedMax}
       />
       <DiffQuantityDiffCard qFrom={qFrom} qTo={qTo} />
-      <ResultLibraryTableRowCommon
-        card={card.c}
-        handleClick={handleClick}
-        inDeck
-      />
+      <ResultLibraryTableRowCommon card={card.c} handleClick={handleClick} inDeck />
       {showInfo && (
         <td className="w-9 text-right text-fgSecondary dark:text-fgSecondaryDark">
-          <DeckDrawProbability
-            cardName={card.c.Name}
-            N={libraryTotal}
-            n={7}
-            k={card.q}
-          />
+          <DeckDrawProbability cardName={card.c.Name} N={libraryTotal} n={7} k={card.q} />
         </td>
       )}
     </tr>

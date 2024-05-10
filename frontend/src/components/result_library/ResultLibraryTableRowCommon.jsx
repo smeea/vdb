@@ -17,10 +17,7 @@ import { useApp } from '@/context';
 
 const Type = ({ card, handleClick }) => {
   return (
-    <td
-      className="min-w-[50px] sm:min-w-[60px]"
-      onClick={() => handleClick(card)}
-    >
+    <td className="min-w-[50px] sm:min-w-[60px]" onClick={() => handleClick(card)}>
       <div className="flex justify-center">
         <ResultLibraryTypeImage value={card.Type} />
       </div>
@@ -30,16 +27,10 @@ const Type = ({ card, handleClick }) => {
 
 const Cost = ({ card, handleClick }) => {
   return (
-    <td
-      className="min-w-[25px] sm:min-w-[30px]"
-      onClick={() => handleClick(card)}
-    >
+    <td className="min-w-[25px] sm:min-w-[30px]" onClick={() => handleClick(card)}>
       <div className={`{card[BLOOD_COST] ? 'pb-2' : ''} flex justify-center`}>
         {(card[BLOOD_COST] || card[POOL_COST]) && (
-          <ResultLibraryCost
-            valueBlood={card[BLOOD_COST]}
-            valuePool={card[POOL_COST]}
-          />
+          <ResultLibraryCost valueBlood={card[BLOOD_COST]} valuePool={card[POOL_COST]} />
         )}
       </div>
     </td>
@@ -66,16 +57,11 @@ const Name = ({ card, handleClick, shouldShowModal, isBanned }) => {
 
 const Requirements = ({ card, handleClick }) => {
   return (
-    <td
-      className="min-w-[60px] sm:min-w-[90px]"
-      onClick={() => handleClick(card)}
-    >
+    <td className="min-w-[60px] sm:min-w-[90px]" onClick={() => handleClick(card)}>
       <div className="flex items-center justify-center">
         {card.Clan && <ResultLibraryClan value={card.Clan} />}
         {card.Discipline && card.Clan && '+'}
-        {card.Discipline && (
-          <ResultLibraryDisciplines value={card.Discipline} />
-        )}
+        {card.Discipline && <ResultLibraryDisciplines value={card.Discipline} />}
         {(card.Discipline || card.Clan) && card.Requirement && <>&nbsp;</>}
         {card.Requirement && <ResultRequirements value={card.Requirement} />}
       </div>
@@ -115,13 +101,9 @@ const ResultLibraryTableRowCommon = ({
             shouldShowModal={shouldShowModal}
             isBanned={isBanned}
           />
-          {(!inSearch || !isNarrow) && (
-            <Cost card={card} handleClick={handleClick} />
-          )}
+          {(!inSearch || !isNarrow) && <Cost card={card} handleClick={handleClick} />}
           <Requirements card={card} handleClick={handleClick} />
-          {(!inSearch || !isNarrow) && (
-            <Burn card={card} handleClick={handleClick} />
-          )}
+          {(!inSearch || !isNarrow) && <Burn card={card} handleClick={handleClick} />}
         </>
       ) : (
         <>

@@ -25,13 +25,7 @@ import {
 } from '@/context';
 // import { useDebounce } from '@/hooks';
 
-const InventoryLibraryTableRow = ({
-  card,
-  compact,
-  newFocus,
-  inShared,
-  handleClick,
-}) => {
+const InventoryLibraryTableRow = ({ card, compact, newFocus, inShared, handleClick }) => {
   const { isMobile, isNarrow, limitedMode } = useApp();
   const usedLibrary = useSnapshot(usedStore).library;
   const limitedLibrary = useSnapshot(limitedStore).library;
@@ -97,10 +91,7 @@ const InventoryLibraryTableRow = ({
           />
         </div>
       )}
-      <div
-        className="flex min-w-[40px] justify-center"
-        onClick={() => handleClick(card.c)}
-      >
+      <div className="flex min-w-[40px] justify-center" onClick={() => handleClick(card.c)}>
         <ResultLibraryTypeImage value={card.c.Type} />
       </div>
       <div className="flex w-full" onClick={() => handleClick(card.c)}>
@@ -116,66 +107,40 @@ const InventoryLibraryTableRow = ({
         </ConditionalTooltip>
       </div>
       {isMobile ? (
-        <div
-          className="flex min-w-[82px] justify-between"
-          onClick={() => handleClick(card.c)}
-        >
+        <div className="flex min-w-[82px] justify-between" onClick={() => handleClick(card.c)}>
           {(card.c[BLOOD_COST] || card.c[POOL_COST]) && (
             <div
-              className={`flex min-w-[22px] justify-center ${
-                card.c[BLOOD_COST] && 'pb-1'
-              }`}
+              className={`flex min-w-[22px] justify-center ${card.c[BLOOD_COST] && 'pb-1'}`}
               onClick={() => handleClick(card.c)}
             >
-              <ResultLibraryCost
-                valueBlood={card.c[BLOOD_COST]}
-                valuePool={card.c[POOL_COST]}
-              />
+              <ResultLibraryCost valueBlood={card.c[BLOOD_COST]} valuePool={card.c[POOL_COST]} />
             </div>
           )}
-          <div
-            className="flex w-full items-center justify-end"
-            onClick={() => handleClick(card.c)}
-          >
+          <div className="flex w-full items-center justify-end" onClick={() => handleClick(card.c)}>
             {card.c.Clan && <ResultLibraryClan value={card.c.Clan} />}
             {card.c.Discipline && card.c.Clan && '+'}
-            {card.c.Discipline && (
-              <ResultLibraryDisciplines value={card.c.Discipline} />
-            )}
+            {card.c.Discipline && <ResultLibraryDisciplines value={card.c.Discipline} />}
           </div>
         </div>
       ) : (
         <>
           <div
-            className={`flex min-w-[30px] justify-center ${
-              card.c[BLOOD_COST] && 'pb-1'
-            }`}
+            className={`flex min-w-[30px] justify-center ${card.c[BLOOD_COST] && 'pb-1'}`}
             onClick={() => handleClick(card.c)}
           >
             {(card.c[BLOOD_COST] || card.c[POOL_COST]) && (
-              <ResultLibraryCost
-                valueBlood={card.c[BLOOD_COST]}
-                valuePool={card.c[POOL_COST]}
-              />
+              <ResultLibraryCost valueBlood={card.c[BLOOD_COST]} valuePool={card.c[POOL_COST]} />
             )}
           </div>
-          <div
-            className="flex min-w-[82px] justify-center"
-            onClick={() => handleClick(card.c)}
-          >
+          <div className="flex min-w-[82px] justify-center" onClick={() => handleClick(card.c)}>
             {card.c.Clan && <ResultLibraryClan value={card.c.Clan} />}
             {card.c.Discipline && card.c.Clan && '+'}
-            {card.c.Discipline && (
-              <ResultLibraryDisciplines value={card.c.Discipline} />
-            )}
+            {card.c.Discipline && <ResultLibraryDisciplines value={card.c.Discipline} />}
           </div>
         </>
       )}
       {!isNarrow && (
-        <div
-          className="flex min-w-[30px] justify-center"
-          onClick={() => handleClick(card.c)}
-        >
+        <div className="flex min-w-[30px] justify-center" onClick={() => handleClick(card.c)}>
           {card.c[BURN_OPTION] && <ResultLibraryBurn />}
           {isTrifle(card.c) && <ResultLibraryTrifle />}
         </div>

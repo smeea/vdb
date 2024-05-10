@@ -7,12 +7,7 @@ import { Toggle } from '@/components';
 const SeatingDeck = ({ toggle, i, deck, disabled, remove }) => {
   return (
     <div className="flex items-center">
-      <Toggle
-        isOn={deck.state}
-        toggle={() => toggle(i)}
-        size="sm"
-        disabled={disabled}
-      >
+      <Toggle isOn={deck.state} toggle={() => toggle(i)} size="sm" disabled={disabled}>
         <div className="inline">{deck.name}</div>
       </Toggle>
       {deck.deckid ? (

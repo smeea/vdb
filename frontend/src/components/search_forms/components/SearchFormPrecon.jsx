@@ -43,9 +43,7 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
     .filter((set) => playtestMode || set !== PLAYTEST)
     .map((set) => {
       if (setsAndPrecons[set].precons) {
-        const year = setsAndPrecons[set].date
-          ? setsAndPrecons[set].date.slice(2, 4)
-          : null;
+        const year = setsAndPrecons[set].date ? setsAndPrecons[set].date.slice(2, 4) : null;
 
         Object.keys(setsAndPrecons[set].precons).map((precon) => {
           const fullName = setsAndPrecons[set].precons[precon].name;
@@ -59,9 +57,7 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
                 <div className="flex items-center">
                   <div
                     className={
-                      clans.length == 1
-                        ? 'flex w-[40px] items-center justify-center'
-                        : 'inline'
+                      clans.length == 1 ? 'flex w-[40px] items-center justify-center' : 'inline'
                     }
                   >
                     {clans.map((clan) => (
@@ -85,9 +81,7 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
       ? label.props.children[1]
       : label.props.children[0].props.children[1];
 
-    const set = ['any', BCP].includes(value)
-      ? null
-      : label.props.children[1].props.children;
+    const set = ['any', BCP].includes(value) ? null : label.props.children[1].props.children;
 
     if (name) return `${name} ${set}`.toLowerCase().includes(string);
     return true;
@@ -97,19 +91,13 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
     <div className="space-y-1">
       <div className="flex items-center">
         <div className="flex w-1/4 items-center justify-between">
-          <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
-            Precon:
-          </div>
+          <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Precon:</div>
           {value.value[0] !== 'any' && (
             <div className="flex justify-end space-x-1 px-1">
               {value.value.length == 1 ? (
                 <SearchFormButtonAdd searchForm={searchForm} name={name} />
               ) : (
-                <SearchFormButtonDel
-                  searchForm={searchForm}
-                  i={0}
-                  name={name}
-                />
+                <SearchFormButtonDel searchForm={searchForm} i={0} name={name} />
               )}
             </div>
           )}
@@ -124,9 +112,7 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
             name={0}
             maxMenuHeight={maxMenuHeight}
             value={options.find((obj) => obj.value === value.value[0])}
-            onChange={(e, id) =>
-              e ? onChange(e, id) : onChange({ name: name, value: 'any' }, id)
-            }
+            onChange={(e, id) => (e ? onChange(e, id) : onChange({ name: name, value: 'any' }, id))}
           />
         </div>
       </div>

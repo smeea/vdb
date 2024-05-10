@@ -22,9 +22,7 @@ const DeckProxyTableSetSelect = ({ card, value, handleSetSelector }) => {
         label: (
           <div className="text-sm">
             {setsAndPrecons[i].name}
-            {setsAndPrecons[i].date
-              ? ` '${setsAndPrecons[i].date.slice(2, 4)}`
-              : null}
+            {setsAndPrecons[i].date ? ` '${setsAndPrecons[i].date.slice(2, 4)}` : null}
           </div>
         ),
       });
@@ -39,17 +37,12 @@ const DeckProxyTableSetSelect = ({ card, value, handleSetSelector }) => {
           isSearchable={false}
           name="set"
           placeholder="Set"
-          value={setOptions.find(
-            (obj) => value && obj.value === value.toLowerCase,
-          )}
+          value={setOptions.find((obj) => value && obj.value === value.toLowerCase)}
           onChange={handleSetSelector}
         />
       </td>
       <td className="proxy-set-image">
-        <Tooltip
-          overlay={<CardImage card={card} set={value ?? null} />}
-          noPadding
-        >
+        <Tooltip overlay={<CardImage card={card} set={value ?? null} />} noPadding>
           <div>
             <EyeFill />
           </div>

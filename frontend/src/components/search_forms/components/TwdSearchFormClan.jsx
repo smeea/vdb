@@ -42,9 +42,7 @@ const TwdSearchFormClan = ({ value, onChange }) => {
   return (
     <div className="flex items-center">
       <div className="w-1/4">
-        <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
-          Clan:
-        </div>
+        <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Clan:</div>
       </div>
       <div className="w-3/4">
         <Select

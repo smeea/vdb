@@ -70,9 +70,7 @@ const TwdCheckEvent = ({ deckData }) => {
   const country = countriesFixes[value?.venue_country] ?? value?.venue_country;
   const city = value?.venue_city;
   const venue = value?.venue_name;
-  const location = country
-    ? `${venue ? `${venue}, ` : ''}${city}, ${country}` || ''
-    : 'Unknown';
+  const location = country ? `${venue ? `${venue}, ` : ''}${city}, ${country}` || '' : 'Unknown';
 
   const [year, m, d] = value?.event_enddate.split('-') || [];
 
@@ -110,9 +108,7 @@ const TwdCheckEvent = ({ deckData }) => {
     cryptTotal,
   } = useDeckCrypt(deckData.deck.crypt);
 
-  const { hasBanned: libraryHasBanned, libraryTotal } = useDeckLibrary(
-    deckData.deck.library
-  );
+  const { hasBanned: libraryHasBanned, libraryTotal } = useDeckLibrary(deckData.deck.library);
 
   const cryptQtyError = cryptTotal < 12;
   const libraryQtyError = libraryTotal > 90 || libraryTotal < 60;
@@ -120,67 +116,36 @@ const TwdCheckEvent = ({ deckData }) => {
   const deckLocation = deckData.location.split(', ');
   const deckCountry = deckLocation.at(-1);
   const deckCity = deckLocation.at(-2);
-  const isUniqueCity =
-    deckCity && cities && !cities.includes(`${deckCity}, ${deckCountry}`);
+  const isUniqueCity = deckCity && cities && !cities.includes(`${deckCity}, ${deckCountry}`);
   const isUniqueCountry = countries && !countries.includes(deckCountry);
 
   return (
     <>
       {value && value.event_id === deckData.id ? (
         <div className="pt-[5px] font-mono text-sm">
-          <div
-            className={
-              deckData.event === veknEvent.name
-                ? ''
-                : 'underline decoration-fgRed'
-            }
-          >
+          <div className={deckData.event === veknEvent.name ? '' : 'underline decoration-fgRed'}>
             {veknEvent.name}
           </div>
           <div
-            className={
-              deckData.location === veknEvent.location
-                ? ''
-                : 'underline decoration-fgRed'
-            }
+            className={deckData.location === veknEvent.location ? '' : 'underline decoration-fgRed'}
           >
             {veknEvent.location}
           </div>
-          <div
-            className={
-              deckData.date === veknEvent.date
-                ? ''
-                : 'underline decoration-fgRed'
-            }
-          >
+          <div className={deckData.date === veknEvent.date ? '' : 'underline decoration-fgRed'}>
             {veknEvent.date}
           </div>
-          <div
-            className={
-              deckData.format === veknEvent.format
-                ? ''
-                : 'underline decoration-fgRed'
-            }
-          >
+          <div className={deckData.format === veknEvent.format ? '' : 'underline decoration-fgRed'}>
             {veknEvent.format}
           </div>
           <div
-            className={
-              deckData.players === veknEvent.players
-                ? ''
-                : 'underline decoration-fgRed'
-            }
+            className={deckData.players === veknEvent.players ? '' : 'underline decoration-fgRed'}
           >
             {veknEvent.players}
           </div>
           <br />
           <div>
             <a
-              className={
-                deckData.url === veknEvent.url
-                  ? ''
-                  : 'underline decoration-fgRed'
-              }
+              className={deckData.url === veknEvent.url ? '' : 'underline decoration-fgRed'}
               href={veknEvent.url}
               rel="noreferrer"
               target="_blank"
@@ -191,14 +156,10 @@ const TwdCheckEvent = ({ deckData }) => {
           <br />
           <div className="flex flex-col gap-3">
             {hasWrongGroups && (
-              <div className="text-fgRed dark:text-fgRedDark">
-                Crypt has non-matching groups
-              </div>
+              <div className="text-fgRed dark:text-fgRedDark">Crypt has non-matching groups</div>
             )}
             {cryptQtyError && (
-              <div className="text-fgRed dark:text-fgRedDark">
-                Crypt has &lt;12 cards
-              </div>
+              <div className="text-fgRed dark:text-fgRedDark">Crypt has &lt;12 cards</div>
             )}
             {libraryQtyError && (
               <div className="text-fgRed dark:text-fgRedDark">
@@ -207,14 +168,10 @@ const TwdCheckEvent = ({ deckData }) => {
             )}
 
             {cryptHasBanned && (
-              <div className="text-fgRed dark:text-fgRedDark">
-                Crypt has banned cards
-              </div>
+              <div className="text-fgRed dark:text-fgRedDark">Crypt has banned cards</div>
             )}
             {libraryHasBanned && (
-              <div className="text-fgRed dark:text-fgRedDark">
-                Library has banned cards
-              </div>
+              <div className="text-fgRed dark:text-fgRedDark">Library has banned cards</div>
             )}
             {isUniqueCity && (
               <div className="text-fgRed dark:text-fgRedDark">

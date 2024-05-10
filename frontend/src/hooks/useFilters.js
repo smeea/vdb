@@ -9,18 +9,12 @@ import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 const useFilters = (cards = {}) => {
   const filterCrypt = (filter) => {
     return Object.values(cards).filter((card) => {
-      if (
-        filter.disciplines &&
-        missingDisciplinesCrypt(filter.disciplines, card)
-      )
-        return false;
+      if (filter.disciplines && missingDisciplinesCrypt(filter.disciplines, card)) return false;
       if (filter.text && missingTextQueries(filter.text, card)) return false;
-      if (filter.traits && missingTraitsCrypt(filter.traits, card))
-        return false;
+      if (filter.traits && missingTraitsCrypt(filter.traits, card)) return false;
       if (filter.titles && missingTitleCrypt(filter.titles, card)) return false;
       if (filter.votes && missingVotes(filter.votes, card)) return false;
-      if (filter.capacity && missingCapacityCrypt(filter.capacity, card))
-        return false;
+      if (filter.capacity && missingCapacityCrypt(filter.capacity, card)) return false;
       if (filter.clan && missingClan(filter.clan, card)) return false;
       if (filter.sect && missingSectCrypt(filter.sect, card)) return false;
       if (filter.group && missingGroup(filter.group, card)) return false;
@@ -36,21 +30,15 @@ const useFilters = (cards = {}) => {
   const filterLibrary = (filter) => {
     return Object.values(cards).filter((card) => {
       if (filter.text && missingTextQueries(filter.text, card)) return false;
-      if (
-        filter.discipline &&
-        missingDisciplinesLibrary(filter.discipline, card)
-      )
-        return false;
+      if (filter.discipline && missingDisciplinesLibrary(filter.discipline, card)) return false;
       if (filter.clan && missingClan(filter.clan, card)) return false;
       if (filter.title && missingTitleLibrary(filter.title, card)) return false;
       if (filter.type && missingType(filter.type, card)) return false;
       if (filter.sect && missingSectLibrary(filter.sect, card)) return false;
       if (filter.blood && missingBloodCost(filter.blood, card)) return false;
       if (filter.pool && missingPoolCost(filter.pool, card)) return false;
-      if (filter.traits && missingTraitsLibrary(filter.traits, card))
-        return false;
-      if (filter.capacity && missingCapacityLibrary(filter.capacity, card))
-        return false;
+      if (filter.traits && missingTraitsLibrary(filter.traits, card)) return false;
+      if (filter.capacity && missingCapacityLibrary(filter.capacity, card)) return false;
       if (filter.set && missingSet(filter.set, card)) return false;
       if (filter.precon && missingPrecon(filter.precon, card)) return false;
       if (filter.artist && missingArtist(filter.artist, card)) return false;
@@ -72,9 +60,7 @@ const missingDisciplinesCrypt = (filter, card) => {
   return Object.keys(filter).some(
     (name) =>
       filter[name] > 0 &&
-      (!card.Disciplines ||
-        !card.Disciplines[name] ||
-        card.Disciplines[name] < filter[name]),
+      (!card.Disciplines || !card.Disciplines[name] || card.Disciplines[name] < filter[name]),
   );
 };
 
@@ -123,8 +109,7 @@ const missingTextQuery = (query, card) => {
     } catch {}
 
     match =
-      (query.in !== 'text' &&
-        (cardName.match(regexExp) || cardASCII.match(regexExp))) ||
+      (query.in !== 'text' && (cardName.match(regexExp) || cardASCII.match(regexExp))) ||
       (query.in !== 'name' && cardText.match(regexExp));
   } else {
     match =
@@ -153,8 +138,7 @@ const missingTrait = (trait, card, traitsRegexMap) => {
   switch (trait) {
     case 'playtest':
       return (
-        (card['Id'] > 200000 && card['Id'] < 210000) ||
-        (card['Id'] > 100000 && card['Id'] < 110000)
+        (card['Id'] > 200000 && card['Id'] < 210000) || (card['Id'] > 100000 && card['Id'] < 110000)
       );
     case 'advancement':
       return !card['Adv'];
@@ -163,9 +147,7 @@ const missingTrait = (trait, card, traitsRegexMap) => {
     case 'non-twd':
       return card['Twd'];
     case 'multi-discipline':
-      return !(
-        card['Discipline'].includes('/') || card['Discipline'].includes('&')
-      );
+      return !(card['Discipline'].includes('/') || card['Discipline'].includes('&'));
     case 'multi-type':
       return !card['Type'].includes('/');
     case 'burn':
@@ -178,10 +160,9 @@ const missingTrait = (trait, card, traitsRegexMap) => {
         RegExp(/requires a/i, 'i').test(card['Card Text'])
       );
     default:
-      return !RegExp(
-        traitsRegexMap[trait] ? traitsRegexMap[trait](card) : trait,
-        'i',
-      ).test(card['Card Text']);
+      return !RegExp(traitsRegexMap[trait] ? traitsRegexMap[trait](card) : trait, 'i').test(
+        card['Card Text'],
+      );
   }
 };
 
@@ -212,8 +193,7 @@ const CryptTraitsRegexMap = {
 const LibraryTraitsRegexMap = {
   intercept: () =>
     /-[0-9]+ stealth(?! \(d\))(?! \w)(?! action)|\+[0-9]+ intercept|gets -([0-9]|x)+ stealth|stealth to 0/i,
-  stealth: () =>
-    /\+[0-9]+ stealth(?! \(d\))(?! \w)(?! action)|-[0-9]+ intercept/i,
+  stealth: () => /\+[0-9]+ stealth(?! \(d\))(?! \w)(?! action)|-[0-9]+ intercept/i,
   bleed: () => /\+([0-9]+|X) bleed/i,
   strength: () => /\+[0-9]+ strength/i,
   embrace: () => /becomes a.*(\d[ -]|same.*)capacity/i,
@@ -221,12 +201,10 @@ const LibraryTraitsRegexMap = {
   unlock: () => /(?!not )unlock(?! phase|ed)|wakes/i,
   'votes-title': () =>
     /receive .* title|gains . vote|\+. vote|additional vote|represent the .* title/i,
-  'reduce bleed': () =>
-    /reduce (a|the)(.*) bleed (amount)?|bleed amount is reduced/i,
+  'reduce bleed': () => /reduce (a|the)(.*) bleed (amount)?|bleed amount is reduced/i,
   aggravated: () => /(?:[^non-])aggravated/i,
   prevent: () => /(?:[^un])prevent(?:[^able])/i,
-  bloat: () =>
-    /(move|add) .* blood (from the blood bank )?to .* in your uncontrolled region/i,
+  bloat: () => /(move|add) .* blood (from the blood bank )?to .* in your uncontrolled region/i,
 };
 
 const missingTitleCrypt = (filter, card) => {
@@ -239,11 +217,7 @@ const missingTitleCrypt = (filter, card) => {
     card['Adv']?.[0] &&
     RegExp(
       `\\[MERGED\\].*(${titles
-        .map((t) =>
-          t
-            .replace('1 vote', '1 vote (titled)')
-            .replace('2 votes', '2 votes (titled)'),
-        )
+        .map((t) => t.replace('1 vote', '1 vote (titled)').replace('2 votes', '2 votes (titled)'))
         .join('|')})`,
       'i',
     ).test(card['Card Text'])
@@ -256,16 +230,9 @@ const missingTitleCrypt = (filter, card) => {
 
 const missingTitleLibrary = (filter, card) => {
   const requirements = card.Requirement.toLowerCase();
-  const hasNoTitleRequirement = !requiredTitleList.some((title) =>
-    requirements.includes(title),
-  );
+  const hasNoTitleRequirement = !requiredTitleList.some((title) => requirements.includes(title));
 
-  return missingRequirementsCheck(
-    filter.logic,
-    filter.value,
-    requirements,
-    hasNoTitleRequirement,
-  );
+  return missingRequirementsCheck(filter.logic, filter.value, requirements, hasNoTitleRequirement);
 };
 
 const requiredTitleList = [
@@ -355,11 +322,9 @@ const missingCapacityLibrary = (filter, card) => {
 
   return !(
     (moreless === 'le' &&
-      ((match1 && match1[1] <= capacity + 1) ||
-        (match2 && match2[1] <= capacity))) ||
+      ((match1 && match1[1] <= capacity + 1) || (match2 && match2[1] <= capacity))) ||
     (moreless === 'ge' &&
-      ((match1 && match1[1] >= capacity) ||
-        (match2 && match2[1] >= capacity - 1)))
+      ((match1 && match1[1] >= capacity) || (match2 && match2[1] >= capacity - 1)))
   );
 };
 
@@ -389,36 +354,17 @@ const missingClan = (filterClan, card) => {
 };
 
 const missingSectCrypt = (filter, card) => {
-  return missingRequirementsCheck(
-    filter.logic,
-    filter.value,
-    card.Sect.toLowerCase(),
-    false,
-  );
+  return missingRequirementsCheck(filter.logic, filter.value, card.Sect.toLowerCase(), false);
 };
 
 const missingSectLibrary = (filter, card) => {
   const requirements = card.Requirement.toLowerCase();
-  const hasNoTitleRequirement = !requiredSectList.some((sect) =>
-    requirements.includes(sect),
-  );
+  const hasNoTitleRequirement = !requiredSectList.some((sect) => requirements.includes(sect));
 
-  return missingRequirementsCheck(
-    filter.logic,
-    filter.value,
-    requirements,
-    hasNoTitleRequirement,
-  );
+  return missingRequirementsCheck(filter.logic, filter.value, requirements, hasNoTitleRequirement);
 };
 
-const requiredSectList = [
-  'camarilla',
-  'sabbat',
-  'laibon',
-  'independent',
-  'anarch',
-  'imbued',
-];
+const requiredSectList = ['camarilla', 'sabbat', 'laibon', 'independent', 'anarch', 'imbued'];
 
 const missingGroup = (filter, card) => {
   return !Object.keys(filter).includes(card['Group']);
@@ -468,8 +414,7 @@ const missingSet = (filter, card) => {
 
   return !sets.some((set) => {
     if (set === BCP) {
-      if ((print === 'only' || print === 'first') && dates.min >= BCP_START)
-        return true;
+      if ((print === 'only' || print === 'first') && dates.min >= BCP_START) return true;
       else if (dates.max >= BCP_START) return true;
     } else {
       const setDate = setsAndPrecons[set].date ?? FUTURE;
@@ -497,12 +442,7 @@ const missingSet = (filter, card) => {
           break;
 
         case 'first':
-          if (
-            !(
-              (set === PROMO && dates.minPromo <= dates.min) ||
-              dates.min === setDate
-            )
-          )
+          if (!((set === PROMO && dates.minPromo <= dates.min) || dates.min === setDate))
             return false;
           break;
         case 'reprint':
@@ -527,25 +467,15 @@ const missingPrecon = (filter, card) => {
     if (setAndSub === BCP) {
       if (print) {
         if (print === 'only' && dates.min >= BCP_START) return true;
-        else if (
-          print === 'first' &&
-          dates.min >= BCP_START &&
-          dates.min <= dates.minPromo
-        )
+        else if (print === 'first' && dates.min >= BCP_START && dates.min <= dates.minPromo)
           return true;
       } else if (dates.max >= BCP_START) return true;
-    } else if (
-      Object.keys(card.Set).includes(set) &&
-      Object.keys(card.Set[set]).includes(subSet)
-    ) {
+    } else if (Object.keys(card.Set).includes(set) && Object.keys(card.Set[set]).includes(subSet)) {
       if (print) {
         const setDate = set !== BCP ? setsAndPrecons[set].date : null;
         switch (print) {
           case 'only':
-            return (
-              Object.keys(card.Set).length === 1 &&
-              Object.keys(card.Set[set]).length === 1
-            );
+            return Object.keys(card.Set).length === 1 && Object.keys(card.Set[set]).length === 1;
           case 'first':
             return dates.min === setDate && dates.min < dates.minPromo;
           case 'reprint':
@@ -622,21 +552,15 @@ const missingCostCheck = (logic, filter, cardCost) => {
 };
 
 const cardDates = (card, addPromo = false) => {
-  const cardSets = Object.keys(card.Set).filter(
-    (set) => set !== PROMO && set !== PLAYTEST,
-  );
+  const cardSets = Object.keys(card.Set).filter((set) => set !== PROMO && set !== PLAYTEST);
   const setsDates = cardSets
     .map((key) => setsAndPrecons[key].date)
     .filter((date) => date)
     .toSorted();
-  const promoDates = card.Set.Promo
-    ? Object.keys(card.Set.Promo).toSorted()
-    : [];
+  const promoDates = card.Set.Promo ? Object.keys(card.Set.Promo).toSorted() : [];
 
   const allDates =
-    addPromo && promoDates
-      ? setsDates.concat(promoDates).toSorted()
-      : setsDates.toSorted();
+    addPromo && promoDates ? setsDates.concat(promoDates).toSorted() : setsDates.toSorted();
 
   const minDate = allDates.length > 0 ? allDates[0] : FUTURE;
   const maxDate = allDates.length > 0 ? allDates.at(-1) : FUTURE;

@@ -2,15 +2,10 @@ import React, { useState } from 'react';
 import { useSnapshot } from 'valtio';
 import { DiffCryptTable, ResultModal, DeckCryptHeader } from '@/components';
 import { useApp, deckStore } from '@/context';
-import {
-  useModalCardController,
-  useKeyDisciplines,
-  useDeckCrypt,
-} from '@/hooks';
+import { useModalCardController, useKeyDisciplines, useDeckCrypt } from '@/hooks';
 
 const DiffCrypt = ({ cardsFrom, cardsTo, deckid, isEditable }) => {
-  const { cryptDeckSort, changeCryptDeckSort, setShowFloatingButtons } =
-    useApp();
+  const { cryptDeckSort, changeCryptDeckSort, setShowFloatingButtons } = useApp();
   const changeTimer = useSnapshot(deckStore).cryptTimer;
   const [showInfo, setShowInfo] = useState(false);
 
@@ -23,8 +18,12 @@ const DiffCrypt = ({ cardsFrom, cardsTo, deckid, isEditable }) => {
     Sect: 'S',
   };
 
-  const { crypt, cryptSide, cryptTotal, sortedCards, sortedCardsSide } =
-    useDeckCrypt(cardsFrom, cryptDeckSort, changeTimer, cardsTo);
+  const { crypt, cryptSide, cryptTotal, sortedCards, sortedCardsSide } = useDeckCrypt(
+    cardsFrom,
+    cryptDeckSort,
+    changeTimer,
+    cardsTo,
+  );
 
   const { disciplinesSet, keyDisciplines } = useKeyDisciplines(crypt);
 
@@ -78,9 +77,7 @@ const DiffCrypt = ({ cardsFrom, cardsTo, deckid, isEditable }) => {
       />
       {Object.keys(cryptSide).length > 0 && (
         <div className=" opacity-60 dark:opacity-50">
-          <div className="flex items-center justify-between font-bold">
-            Side Crypt
-          </div>
+          <div className="flex items-center justify-between font-bold">Side Crypt</div>
           <DiffCryptTable
             handleClick={handleClickSide}
             deckid={deckid}

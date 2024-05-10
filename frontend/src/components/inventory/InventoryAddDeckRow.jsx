@@ -25,9 +25,7 @@ const InventoryAddDeckRow = ({ deck, allTagsOptions, idx }) => {
   return (
     <tr
       className={`border-y border-bgSecondary dark:border-bgSecondaryDark ${
-        idx % 2
-          ? 'bg-bgThird dark:bg-bgThirdDark'
-          : 'bg-bgPrimary dark:bg-bgPrimaryDark'
+        idx % 2 ? 'bg-bgThird dark:bg-bgThirdDark' : 'bg-bgPrimary dark:bg-bgPrimaryDark'
       }`}
     >
       {!isMobile && (
@@ -51,9 +49,7 @@ const InventoryAddDeckRow = ({ deck, allTagsOptions, idx }) => {
       )}
       {!isMobile && (
         <td className="min-w-[50px]">
-          <div className="flex justify-center">
-            {clan && <ResultClanImage value={clan} />}
-          </div>
+          <div className="flex justify-center">{clan && <ResultClanImage value={clan} />}</div>
         </td>
       )}
       <td className="min-w-[230px] sm:min-w-[250px]">
@@ -62,12 +58,11 @@ const InventoryAddDeckRow = ({ deck, allTagsOptions, idx }) => {
           title={deck.name}
         >
           {deck.name}
-          {deck.branchName &&
-            (deck.master || (deck.branches && deck.branches.length > 0)) && (
-              <div className="inline" title={deck.branchName}>
-                {deck.branchName}
-              </div>
-            )}
+          {deck.branchName && (deck.master || (deck.branches && deck.branches.length > 0)) && (
+            <div className="inline" title={deck.branchName}>
+              {deck.branchName}
+            </div>
+          )}
         </div>
       </td>
       {isDesktop && (
@@ -94,12 +89,7 @@ const InventoryAddDeckRow = ({ deck, allTagsOptions, idx }) => {
       )}
       {!isMobile && (
         <td className="w-full">
-          <DeckTags
-            deck={deck}
-            allTagsOptions={allTagsOptions}
-            isBordered
-            noAutoTags
-          />
+          <DeckTags deck={deck} allTagsOptions={allTagsOptions} isBordered noAutoTags />
         </td>
       )}
       <td className="min-w-[110px]">

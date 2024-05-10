@@ -60,10 +60,7 @@ const TwdSearchFormQuantityButtons = ({ value, form, id }) => {
         isNegative
       />
       <div>{value[id].q}</div>
-      <ButtonCardChange
-        onClick={() => handleChangeQ(value[id].q + 1)}
-        isLink={isMobile}
-      />
+      <ButtonCardChange onClick={() => handleChangeQ(value[id].q + 1)} isLink={isMobile} />
     </div>
   );
 };

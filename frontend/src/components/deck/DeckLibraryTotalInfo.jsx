@@ -1,9 +1,5 @@
 import React from 'react';
-import {
-  ResultLibraryTypeImage,
-  ResultLibraryDisciplines,
-  ResultLibraryClan,
-} from '@/components';
+import { ResultLibraryTypeImage, ResultLibraryDisciplines, ResultLibraryClan } from '@/components';
 
 const DeckLibraryTotalInfo = ({ byClans, byTypes, byDisciplines }) => {
   const total = Object.values(byTypes).reduce((a, b) => a + b, 0);
@@ -39,9 +35,7 @@ const DeckLibraryTotalInfo = ({ byClans, byTypes, byDisciplines }) => {
         })}
       </div>
       <div className="flex flex-col gap-1">
-        <div className="text-fgSecondary dark:text-fgSecondaryDark">
-          Excluding Master / Event:
-        </div>
+        <div className="text-fgSecondary dark:text-fgSecondaryDark">Excluding Master / Event:</div>
         <div>
           {byDisciplinesSorted.map((d, idx) => {
             return (

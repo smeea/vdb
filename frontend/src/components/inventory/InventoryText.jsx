@@ -25,12 +25,7 @@ const InventoryText = ({ card, text, inPopover }) => {
       {inPopover ? (
         <div className="text-sm">{newText}</div>
       ) : (
-        <Textarea
-          className="text-sm"
-          rows={lines}
-          onChange={handleChange}
-          value={newText}
-        />
+        <Textarea className="text-sm" rows={lines} onChange={handleChange} value={newText} />
       )}
     </div>
   );

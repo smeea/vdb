@@ -16,12 +16,7 @@ const LibrarySearchFormClan = ({ value, searchForm, onChange }) => {
   const maxMenuHeight = isXWide ? 500 : 350;
   const name = 'clan';
 
-  const options = [
-    'ANY',
-    'Not Required',
-    ...vampireClansList,
-    ...imbuedClansList,
-  ]
+  const options = ['ANY', 'Not Required', ...vampireClansList, ...imbuedClansList]
     .filter((clan) => playtestMode || clan !== 'Hecata')
     .map((i) => {
       if (i == 'ANY' || i == 'Not Required') {
@@ -55,9 +50,7 @@ const LibrarySearchFormClan = ({ value, searchForm, onChange }) => {
     <>
       <div className="flex items-center">
         <div className="flex w-1/4 items-center justify-between">
-          <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
-            Clan:
-          </div>
+          <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Clan:</div>
           {value.value[0] !== 'any' && (
             <div className="flex justify-end space-x-1 px-1">
               <SearchFormButtonLogicToggle
@@ -68,11 +61,7 @@ const LibrarySearchFormClan = ({ value, searchForm, onChange }) => {
               {value.value.length == 1 ? (
                 <SearchFormButtonAdd searchForm={searchForm} name={name} />
               ) : (
-                <SearchFormButtonDel
-                  searchForm={searchForm}
-                  i={0}
-                  name={name}
-                />
+                <SearchFormButtonDel searchForm={searchForm} i={0} name={name} />
               )}
             </div>
           )}
@@ -84,12 +73,8 @@ const LibrarySearchFormClan = ({ value, searchForm, onChange }) => {
             isClearable={value.value[0] !== 'any'}
             name={0}
             maxMenuHeight={maxMenuHeight}
-            value={options.find(
-              (obj) => obj.value === value.value[0].toLowerCase(),
-            )}
-            onChange={(e, id) =>
-              e ? onChange(e, id) : onChange({ name: name, value: 'any' }, id)
-            }
+            value={options.find((obj) => obj.value === value.value[0].toLowerCase())}
+            onChange={(e, id) => (e ? onChange(e, id) : onChange({ name: name, value: 'any' }, id))}
           />
         </div>
       </div>

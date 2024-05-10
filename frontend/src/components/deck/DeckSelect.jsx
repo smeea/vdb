@@ -24,13 +24,7 @@ const DeckSelect = ({
   showInfo,
   setShowInfo,
 }) => {
-  const {
-    inventoryMode,
-    isMobile,
-    recentDecks,
-    setShowFloatingButtons,
-    username,
-  } = useApp();
+  const { inventoryMode, isMobile, recentDecks, setShowFloatingButtons, username } = useApp();
 
   const [selectFrom, setSelectFrom] = useState();
 
@@ -51,15 +45,9 @@ const DeckSelect = ({
           {selectFrom == 'my' && decks ? (
             <DeckSelectMy handleSelect={handleSelect} deckid={deck?.deckid} />
           ) : selectFrom == 'recent' ? (
-            <DeckSelectRecent
-              handleSelect={handleSelect}
-              deckid={deck?.deckid}
-            />
+            <DeckSelectRecent handleSelect={handleSelect} deckid={deck?.deckid} />
           ) : (
-            <DeckSelectPrecon
-              handleSelect={handleSelect}
-              deckid={deck?.deckid}
-            />
+            <DeckSelectPrecon handleSelect={handleSelect} deckid={deck?.deckid} />
           )}
         </div>
         {selectFrom == 'my' && decks && deck?.isBranches && (
@@ -125,9 +113,7 @@ const DeckSelect = ({
                 setShowFloatingButtons(false);
                 setShowDeckSelectAdv(true);
               }}
-              icon={
-                <BinocularsFill width="16" height="22" viewBox="0 0 16 18" />
-              }
+              icon={<BinocularsFill width="16" height="22" viewBox="0 0 16 18" />}
             />
           )}
           {isMobile && deck && (

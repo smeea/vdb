@@ -4,14 +4,7 @@ import EyeSlashFill from '@/assets/images/icons/eye-slash-fill.svg?react';
 import Check2 from '@/assets/images/icons/check2.svg?react';
 import { Spinner, Input, Button } from '@/components';
 
-const AccountPasswordForm = ({
-  value,
-  setValue,
-  success,
-  isLoading,
-  isOld,
-  isNew,
-}) => {
+const AccountPasswordForm = ({ value, setValue, success, isLoading, isOld, isNew }) => {
   const [hidePassword, setHidePassword] = useState(true);
 
   return (

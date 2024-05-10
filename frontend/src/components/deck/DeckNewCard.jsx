@@ -9,8 +9,7 @@ const DeckNewCard = ({ target, cards, deckid, handleClose, cardChange }) => {
   const handleChange = (event) => {
     const cardid = event.value;
     if (!(cards[cardid] && cards[cardid].q > 0)) {
-      const card =
-        target === 'crypt' ? cryptCardBase[cardid] : libraryCardBase[cardid];
+      const card = target === 'crypt' ? cryptCardBase[cardid] : libraryCardBase[cardid];
 
       changeAction(deckid, card, 1);
     }

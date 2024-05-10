@@ -2,7 +2,8 @@
 - Modal opening new window instead of closing when click outside on mobile (touch)
 - Swipes in inventory to change bg-colors (swipes disabled until fixes)
 - Snapshot url in iOS
-- Inventory changes in popovers for newly opened deck
+- Inventory changes for newly opened deck
+- Inventory icon for newly opened deck
 
 # FEATURES
 - TWD search with % V5-compatibility - after BCP clarify V5

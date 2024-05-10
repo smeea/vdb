@@ -8,9 +8,7 @@ const DiffCopyUrlButton = ({ deckFromId, deckToId }) => {
   const [success, setSuccess] = useState(false);
 
   const handleStandard = () => {
-    const deckUrl = `${
-      import.meta.env.VITE_BASE_URL
-    }/diff/${deckFromId}/${deckToId}`;
+    const deckUrl = `${import.meta.env.VITE_BASE_URL}/diff/${deckFromId}/${deckToId}`;
 
     navigator.clipboard.writeText(deckUrl);
     setSuccess(true);

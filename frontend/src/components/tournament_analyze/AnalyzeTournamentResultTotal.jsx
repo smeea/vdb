@@ -2,12 +2,7 @@ import React from 'react';
 import { SortButton } from '@/components';
 import { useApp } from '@/context';
 
-const AnalyzeTournamentResultTotal = ({
-  results,
-  sortMethods,
-  sortMethod,
-  setSortMethod,
-}) => {
+const AnalyzeTournamentResultTotal = ({ results, sortMethods, sortMethod, setSortMethod }) => {
   const { isMobile } = useApp();
   const byRank = {};
   const byTags = {};
@@ -39,9 +34,7 @@ const AnalyzeTournamentResultTotal = ({
       } items-center justify-between bg-bgSecondary dark:bg-bgSecondaryDark sm:space-x-2`}
     >
       <div className="flex flex-col gap-1 p-2">
-        <div className="whitespace-nowrap font-bold">
-          TOTAL: {results.length}
-        </div>
+        <div className="whitespace-nowrap font-bold">TOTAL: {results.length}</div>
         <div className="sm:whitespace-nowrap font-bold">
           AVG. PLACE: {Math.round((totalRank / results.length) * 10) / 10}
         </div>
@@ -67,9 +60,7 @@ const AnalyzeTournamentResultTotal = ({
           {Object.keys(byTags).map((i) => {
             return (
               <div key={i} className="inline-block whitespace-nowrap px-2">
-                <div className="inline pr-0.5 text-fgSecondary dark:text-fgSecondaryDark">
-                  {i}:
-                </div>
+                <div className="inline pr-0.5 text-fgSecondary dark:text-fgSecondaryDark">{i}:</div>
                 {byTags[i]}
               </div>
             );

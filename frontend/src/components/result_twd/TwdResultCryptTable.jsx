@@ -7,8 +7,10 @@ import { BANNED, GROUPS, CAPACITY } from '@/utils/constants';
 
 const TwdResultCryptTable = ({ crypt }) => {
   const { cryptDeckSort, setShowFloatingButtons } = useApp();
-  const { cryptGroups, hasBanned, hasWrongGroups, cryptTotal, sortedCards } =
-    useDeckCrypt(crypt, cryptDeckSort);
+  const { cryptGroups, hasBanned, hasWrongGroups, cryptTotal, sortedCards } = useDeckCrypt(
+    crypt,
+    cryptDeckSort,
+  );
 
   const {
     currentModalCard,

@@ -20,10 +20,7 @@ const AnalyzeTournamentChartsClan = ({ decks }) => {
     return Object.keys(result)
       .map((c) => {
         return {
-          name:
-            isMobile && c.includes('antitribu')
-              ? '!' + c.replace(' antitribu', '')
-              : c,
+          name: isMobile && c.includes('antitribu') ? '!' + c.replace(' antitribu', '') : c,
           value: result[c],
         };
       })

@@ -23,15 +23,9 @@ const DeckCryptTotalInfo = ({ cards, disciplinesDetailed }) => {
 
       if (i > 0) {
         return (
-          <div
-            className="inline"
-            key={idx}
-            title="Chance to draw X unique vampires"
-          >
-            <span className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
-              {idx}:
-            </span>{' '}
-            {i}%
+          <div className="inline" key={idx} title="Chance to draw X unique vampires">
+            <span className="font-bold text-fgSecondary dark:text-fgSecondaryDark">{idx}:</span> {i}
+            %
           </div>
         );
       }
@@ -51,14 +45,8 @@ const DeckCryptTotalInfo = ({ cards, disciplinesDetailed }) => {
           <div>: {cryptAvg}</div>
         </div>
         <div className="flex gap-3">
-          <div className="text-fgSecondary dark:text-fgSecondaryDark">
-            Uniq:
-          </div>
-          <div
-            className={`flex flex-row ${
-              isMobile && uniqueDraw.length > 2 ? 'gap-2' : 'gap-3'
-            }`}
-          >
+          <div className="text-fgSecondary dark:text-fgSecondaryDark">Uniq:</div>
+          <div className={`flex flex-row ${isMobile && uniqueDraw.length > 2 ? 'gap-2' : 'gap-3'}`}>
             {uniqueDraw}
           </div>
         </div>

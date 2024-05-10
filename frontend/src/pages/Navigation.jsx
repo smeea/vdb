@@ -4,12 +4,7 @@ import { useSnapshot } from 'valtio';
 import LightningFill from '@/assets/images/icons/lightning-fill.svg?react';
 import PersonFill from '@/assets/images/icons/person-fill.svg?react';
 import { useApp } from '@/context';
-import {
-  NavToggle,
-  NavMobileMenu,
-  LanguageSelectButton,
-  ThemeSelect,
-} from '@/components';
+import { NavToggle, NavMobileMenu, LanguageSelectButton, ThemeSelect } from '@/components';
 import cryptDefaults from '@/components/search_forms/forms_data/defaultsCryptForm.json';
 import libraryDefaults from '@/components/search_forms/forms_data/defaultsLibraryForm.json';
 import twdDefaults from '@/components/search_forms/forms_data/defaultsTwdForm.json';
@@ -76,9 +71,7 @@ const Navigation = () => {
   let cardsUrl = '/cards';
 
   const isLimited =
-    Object.keys(limitedStoreState.crypt).length +
-      Object.keys(limitedStoreState.library).length >
-    0;
+    Object.keys(limitedStoreState.crypt).length + Object.keys(limitedStoreState.library).length > 0;
 
   if (!isMobile) {
     if (JSON.stringify(cryptFormState) != JSON.stringify(cryptDefaults)) {
@@ -110,17 +103,10 @@ const Navigation = () => {
       <div className="navbar-container mx-auto flex h-10 justify-between">
         <div className="flex items-center space-x-6">
           {isMobile ? (
-            <NavMobileMenu
-              isLimited={isLimited}
-              showMenu={showMenu}
-              setShowMenu={setShowMenu}
-            />
+            <NavMobileMenu isLimited={isLimited} showMenu={showMenu} setShowMenu={setShowMenu} />
           ) : (
             <>
-              <LanguageSelectButton
-                showMenu={showMenu}
-                setShowMenu={setShowMenu}
-              />
+              <LanguageSelectButton showMenu={showMenu} setShowMenu={setShowMenu} />
               <ThemeSelect />
             </>
           )}
@@ -138,11 +124,7 @@ const Navigation = () => {
                   />
                 )}
                 {(isLimited || limitedMode) && (
-                  <NavToggle
-                    isOn={limitedMode}
-                    onToggle={toggleLimitedMode}
-                    text="Limited Mode"
-                  />
+                  <NavToggle isOn={limitedMode} onToggle={toggleLimitedMode} text="Limited Mode" />
                 )}
                 {isPlaytester && (
                   <NavToggle
@@ -159,11 +141,7 @@ const Navigation = () => {
             <>
               <Link
                 to="/account"
-                icon={
-                  username ? (
-                    <PersonFill width="21" height="21" viewBox="0 1 16 16" />
-                  ) : null
-                }
+                icon={username ? <PersonFill width="21" height="21" viewBox="0 1 16 16" /> : null}
                 text={username ? null : 'Login'}
                 ariaLabel="Login"
               />

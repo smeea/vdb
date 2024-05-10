@@ -6,11 +6,7 @@ const DiffProxyButtonWrapper = ({ deckFrom, deckTo }) => {
   const { missingCrypt, missingLibrary } = useDiffMissing(deckFrom, deckTo);
 
   return (
-    <DeckProxyButton
-      missingCrypt={missingCrypt}
-      missingLibrary={missingLibrary}
-      deck={deckFrom}
-    />
+    <DeckProxyButton missingCrypt={missingCrypt} missingLibrary={missingLibrary} deck={deckFrom} />
   );
 };
 

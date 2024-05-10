@@ -83,15 +83,11 @@ const SeatingModal = ({
                 variant="primary"
                 onClick={() => setShowSelectRandom(!showSelectRandom)}
                 title="Reshuffle"
-                icon={
-                  <PencilSquare width="18" height="18" viewBox="0 0 16 16" />
-                }
+                icon={<PencilSquare width="18" height="18" viewBox="0 0 16 16" />}
                 text="Select Random"
               />
               {withRandom && !haveRandomSelected && (
-                <div className="text-fgRed dark:text-fgRedDark">
-                  No random source selected
-                </div>
+                <div className="text-fgRed dark:text-fgRedDark">No random source selected</div>
               )}
             </div>
           </div>

@@ -12,9 +12,7 @@ const getCryptTitle = (crypt) => {
   });
   capacityList.sort((a, b) => a - b);
   const cryptTotalCards = capacityList.length;
-  const cryptAvg = cryptTotalCards
-    ? Math.round((cryptTotalCap / cryptTotalCards) * 100) / 100
-    : 0;
+  const cryptAvg = cryptTotalCards ? Math.round((cryptTotalCap / cryptTotalCards) * 100) / 100 : 0;
   let cryptMin = 0;
   let cryptMax = 0;
 
@@ -117,10 +115,7 @@ const getLibraryText = (library, format) => {
     libraryTotal += card.q;
     const cardType = card.c.Type;
     const cardName = card.c.Name;
-    if (
-      card.c.Type === 'Master' &&
-      card.c['Card Text'].toLowerCase().includes('trifle')
-    ) {
+    if (card.c.Type === 'Master' && card.c['Card Text'].toLowerCase().includes('trifle')) {
       triflesTotal += card.q;
     }
 

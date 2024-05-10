@@ -3,12 +3,7 @@ import { useImmer } from 'use-immer';
 import { useApp, deckCardChange, inventoryCardChange } from '@/context';
 import { Modal, DeckCardQuantity, CardSelect } from '@/components';
 
-const DeckImportBadCardsModal = ({
-  deckid,
-  badCards,
-  setBadCards,
-  inInventory,
-}) => {
+const DeckImportBadCardsModal = ({ deckid, badCards, setBadCards, inInventory }) => {
   const { cryptCardBase, libraryCardBase, isMobile } = useApp();
 
   const [cards, setCards] = useImmer(
@@ -32,8 +27,7 @@ const DeckImportBadCardsModal = ({
   };
 
   const handleSetCard = (v, idx) => {
-    const card =
-      v.value > 200000 ? cryptCardBase[v.value] : libraryCardBase[v.value];
+    const card = v.value > 200000 ? cryptCardBase[v.value] : libraryCardBase[v.value];
 
     setCards((draft) => {
       draft[idx].c = card;
@@ -41,11 +35,7 @@ const DeckImportBadCardsModal = ({
   };
 
   return (
-    <Modal
-      handleClose={() => setBadCards([])}
-      title="Fix Bad Import"
-      noPadding={isMobile}
-    >
+    <Modal handleClose={() => setBadCards([])} title="Fix Bad Import" noPadding={isMobile}>
       {badCards.map((c, idx) => {
         return (
           <div key={idx} className="flex flex-row items-center gap-1 sm:gap-3">

@@ -34,17 +34,12 @@ const SelectLabelLibrary = ({ cardid, inInventory }) => {
         </div>
         <div className="flex items-center space-x-2">
           <div>
-            {card.Discipline && (
-              <ResultLibraryDisciplines value={card.Discipline} />
-            )}
+            {card.Discipline && <ResultLibraryDisciplines value={card.Discipline} />}
             {card.Discipline && card.Clan && '+'}
             {card.Clan && <ResultLibraryClan value={card.Clan} />}
           </div>
           {(card['Blood Cost'] || card['Pool Cost']) && (
-            <ResultLibraryCost
-              valuePool={card['Pool Cost']}
-              valueBlood={card['Blood Cost']}
-            />
+            <ResultLibraryCost valuePool={card['Pool Cost']} valueBlood={card['Blood Cost']} />
           )}
         </div>
       </div>

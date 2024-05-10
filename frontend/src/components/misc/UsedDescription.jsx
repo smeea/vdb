@@ -27,12 +27,7 @@ const UsedDescription = ({ usedCards, decks, inventoryType }) => {
     <>
       {Object.keys(usedCards).map((id) => {
         return (
-          <UsedDescriptionDeck
-            key={id}
-            q={usedCards[id]}
-            deck={decks[id]}
-            t={inventoryType}
-          />
+          <UsedDescriptionDeck key={id} q={usedCards[id]} deck={decks[id]} t={inventoryType} />
         );
       })}
     </>

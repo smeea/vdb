@@ -10,10 +10,7 @@ const DiffButtons = ({ deckFrom, deckTo }) => {
   return (
     <div className="flex flex-col space-y-1">
       <DiffBackButton deckid={deckFrom?.deckid} />
-      <DiffCopyUrlButton
-        deckFromId={deckFrom?.deckid}
-        deckToId={deckTo?.deckid}
-      />
+      <DiffCopyUrlButton deckFromId={deckFrom?.deckid} deckToId={deckTo?.deckid} />
       {deckFrom && deckTo && (
         <>
           <DiffProxyButtonWrapper deckFrom={deckFrom} deckTo={deckTo} />

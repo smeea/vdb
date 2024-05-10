@@ -11,11 +11,7 @@ import {
   inventoryStore,
   limitedStore,
 } from '@/context';
-import {
-  DeckCardQuantityTd,
-  ResultCryptTableRowCommon,
-  DeckDrawProbability,
-} from '@/components';
+import { DeckCardQuantityTd, ResultCryptTableRowCommon, DeckDrawProbability } from '@/components';
 import { getSoftMax, getHardTotal } from '@/utils';
 import { useDebounce } from '@/hooks';
 
@@ -47,11 +43,7 @@ const DeckCryptTableRow = ({
   const swipeHandlers = useSwipeable({
     swipeDuration: 250,
     onSwipedLeft: (e) => {
-      if (
-        e.initial[0] > SWIPE_IGNORED_LEFT_EDGE &&
-        e.absX > SWIPE_THRESHOLD &&
-        isEditable
-      ) {
+      if (e.initial[0] > SWIPE_IGNORED_LEFT_EDGE && e.absX > SWIPE_THRESHOLD && isEditable) {
         setIsSwiped('left');
         deckCardChange(deckid, card.c, card.q - 1);
       }
@@ -82,24 +74,20 @@ const DeckCryptTableRow = ({
       {...swipeHandlers}
       className={`h-[38px] border-y border-bgSecondary dark:border-bgSecondaryDark ${trBg}`}
     >
-      {inventoryMode &&
-        deck.inventoryType &&
-        !inMissing &&
-        !inSearch &&
-        isDesktop && (
-          <td className="max-w-0">
-            <div className="relative flex items-center">
-              <div
-                className={`inventory-card-custom absolute left-[-24px]
+      {inventoryMode && deck.inventoryType && !inMissing && !inSearch && isDesktop && (
+        <td className="max-w-0">
+          <div className="relative flex items-center">
+            <div
+              className={`inventory-card-custom absolute left-[-24px]
                         ${card.i ? '' : 'not-selected opacity-0'}
                       `}
-                onClick={() => cardToggleInventoryState(deckid, card.c.Id)}
-              >
-                {deck.inventoryType == 's' ? <PinAngleFill /> : <Shuffle />}
-              </div>
+              onClick={() => cardToggleInventoryState(deckid, card.c.Id)}
+            >
+              {deck.inventoryType == 's' ? <PinAngleFill /> : <Shuffle />}
             </div>
-          </td>
-        )}
+          </div>
+        </td>
+      )}
       <DeckCardQuantityTd
         card={card.c}
         cardChange={deckCardChange}
@@ -127,12 +115,7 @@ const DeckCryptTableRow = ({
       {showInfo && (
         <td className="min-w-[40px]">
           <div className="flex justify-end">
-            <DeckDrawProbability
-              cardName={card.c.Name}
-              N={cryptTotal}
-              n={4}
-              k={card.q}
-            />
+            <DeckDrawProbability cardName={card.c.Name} N={cryptTotal} n={4} k={card.q} />
           </div>
         </td>
       )}

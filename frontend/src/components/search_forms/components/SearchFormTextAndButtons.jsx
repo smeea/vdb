@@ -110,9 +110,7 @@ const SearchFormTextAndButtons = ({
                   onChange={onChangeOptions}
                   label={opt.label}
                   checked={
-                    opt.value === 'regex'
-                      ? value[0].regex || false
-                      : value[0].in === opt.value
+                    opt.value === 'regex' ? value[0].regex || false : value[0].in === opt.value
                   }
                 />
               );

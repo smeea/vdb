@@ -1,10 +1,5 @@
 import React, { useState } from 'react';
-import {
-  InventoryCryptTable,
-  InventoryFilterForm,
-  SortButton,
-  Header,
-} from '@/components';
+import { InventoryCryptTable, InventoryFilterForm, SortButton, Header } from '@/components';
 import { useInventoryCrypt } from '@/hooks';
 
 const InventoryCrypt = ({
@@ -28,13 +23,8 @@ const InventoryCrypt = ({
     'Capacity - Max to Min': 'C↓',
   };
 
-  const {
-    cardsByClan,
-    cardsByClanTotal,
-    cardsByClanUnique,
-    missingByClan,
-    missingByClanTotal,
-  } = useInventoryCrypt(cards, category, compact, onlyNotes);
+  const { cardsByClan, cardsByClanTotal, cardsByClanUnique, missingByClan, missingByClanTotal } =
+    useInventoryCrypt(cards, category, compact, onlyNotes);
 
   return (
     <>
@@ -54,8 +44,7 @@ const InventoryCrypt = ({
             <div className="flex justify-end font-bold text-midGray dark:text-midGrayDark">
               {missingByClanTotal[clan] ? (
                 <>
-                  {missingByClanTotal[clan]} (
-                  {Object.values(missingByClan[clan]).length} uniq) miss
+                  {missingByClanTotal[clan]} ({Object.values(missingByClan[clan]).length} uniq) miss
                 </>
               ) : null}
             </div>
@@ -71,11 +60,7 @@ const InventoryCrypt = ({
         sortMethod={sortMethod}
         compact={compact}
         withCompact={withCompact}
-        cards={
-          compact
-            ? Object.values(cardsByClan['All'])
-            : Object.values(cardsByClan[clan])
-        }
+        cards={compact ? Object.values(cardsByClan['All']) : Object.values(cardsByClan[clan])}
         newFocus={newFocus}
         inShared={inShared}
       />

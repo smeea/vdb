@@ -5,9 +5,7 @@ const WindowRows = ({ index, style, data }) => {
     <div
       style={style}
       className={`flex border-b border-bgSecondary dark:border-bgSecondaryDark ${
-        index % 2
-          ? 'bg-bgThird dark:bg-bgThirdDark'
-          : 'bg-bgPrimary dark:bg-bgPrimaryDark'
+        index % 2 ? 'bg-bgThird dark:bg-bgThirdDark' : 'bg-bgPrimary dark:bg-bgPrimaryDark'
       }`}
     >
       {data[index]}

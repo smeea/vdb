@@ -1,9 +1,5 @@
 import React from 'react';
-import {
-  ResultLibraryType,
-  DeckRecommendationLibraryTable,
-  ResultModal,
-} from '@/components';
+import { ResultLibraryType, DeckRecommendationLibraryTable, ResultModal } from '@/components';
 import { librarySort } from '@/utils';
 import { useModalCardController } from '@/hooks';
 import { GROUPED_TYPE, TYPE } from '@/utils/constants';

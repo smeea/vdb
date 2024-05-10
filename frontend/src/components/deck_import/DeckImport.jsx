@@ -15,13 +15,8 @@ import { useDeckImport } from '@/hooks';
 import { deckServices } from '@/services';
 
 const DeckImport = ({ setShowInfo, isOnlyNew }) => {
-  const {
-    setShowMenuButtons,
-    setShowFloatingButtons,
-    cryptCardBase,
-    libraryCardBase,
-    publicName,
-  } = useApp();
+  const { setShowMenuButtons, setShowFloatingButtons, cryptCardBase, libraryCardBase, publicName } =
+    useApp();
   const deck = useSnapshot(deckStore).deck;
   const navigate = useNavigate();
   const [error, setError] = useState(false);
@@ -33,9 +28,7 @@ const DeckImport = ({ setShowInfo, isOnlyNew }) => {
   const fileInputAnonymous = useRef();
 
   const handleFileInputClick = (isAnonymous) => {
-    isAnonymous
-      ? fileInputAnonymous.current.click()
-      : fileInput.current.click();
+    isAnonymous ? fileInputAnonymous.current.click() : fileInput.current.click();
   };
 
   const handleCloseImportModal = () => {
@@ -89,10 +82,8 @@ const DeckImport = ({ setShowInfo, isOnlyNew }) => {
       } else {
         const parser = new DOMParser();
         const xmlDoc = parser.parseFromString(reader.result, 'text/xml');
-        const xmlCrypt =
-          xmlDoc.getElementsByTagName('deck')[0].childNodes[5].children;
-        const xmlLibrary =
-          xmlDoc.getElementsByTagName('deck')[0].childNodes[3].children;
+        const xmlCrypt = xmlDoc.getElementsByTagName('deck')[0].childNodes[5].children;
+        const xmlLibrary = xmlDoc.getElementsByTagName('deck')[0].childNodes[3].children;
 
         const crypt = {};
         Object.values(xmlCrypt).forEach((i) => {
@@ -173,9 +164,7 @@ const DeckImport = ({ setShowInfo, isOnlyNew }) => {
               setBadCards={setBadCards}
             />
           )}
-          {showAmaranthModal && (
-            <DeckImportAmaranth handleClose={handleCloseImportModal} />
-          )}
+          {showAmaranthModal && <DeckImportAmaranth handleClose={handleCloseImportModal} />}
           <input
             ref={fileInput}
             accept=".txt, .dek"

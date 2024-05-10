@@ -57,9 +57,7 @@ const PlaytestReportExportAllWrapper = ({ setShow }) => {
             ? cryptCardBase[id].Name
             : libraryCardBase[id].Name;
 
-        exportText += `${
-          isPrecon ? 'Precon' : id > 200000 ? 'Crypt' : 'Library'
-        }: ${name}\n\n`;
+        exportText += `${isPrecon ? 'Precon' : id > 200000 ? 'Crypt' : 'Library'}: ${name}\n\n`;
         Object.keys(value[id]).forEach((user, uIdx) => {
           exportText += `User: <${user}>\n`;
           exportText += `Score: ${value[id][user].score}\n`;
@@ -73,13 +71,9 @@ const PlaytestReportExportAllWrapper = ({ setShow }) => {
         }
       });
 
-    const file = new File(
-      [exportText],
-      `Reports - ${isPrecon ? 'Precons' : 'Cards'}.txt`,
-      {
-        type: 'text/plain;charset=utf-8',
-      },
-    );
+    const file = new File([exportText], `Reports - ${isPrecon ? 'Precons' : 'Cards'}.txt`, {
+      type: 'text/plain;charset=utf-8',
+    });
 
     let { saveAs } = await import('file-saver');
     saveAs(file);
@@ -89,11 +83,7 @@ const PlaytestReportExportAllWrapper = ({ setShow }) => {
   const { value } = useFetch(url, {}, []);
 
   return (
-    <Modal
-      size="card"
-      title="Playtest Reports"
-      handleClose={() => setShow(false)}
-    >
+    <Modal size="card" title="Playtest Reports" handleClose={() => setShow(false)}>
       <div className="flex flex-col gap-3 sm:gap-4">
         <div className="flex justify-between gap-3 sm:gap-4">
           <ButtonIconed
@@ -117,43 +107,38 @@ const PlaytestReportExportAllWrapper = ({ setShow }) => {
             setSortMethod={setSortMethod}
           />
         </div>
-        {[...playtestCrypt, ...playtestLibrary, ...playtestPrecons].map(
-          (i, idx) => {
-            const playtestPrecon =
-              i.deckid &&
-              i.deckid.includes('PLAYTEST:') &&
-              i.deckid.replace('PLAYTEST:', '');
-            const id = playtestPrecon ?? i.Id;
+        {[...playtestCrypt, ...playtestLibrary, ...playtestPrecons].map((i, idx) => {
+          const playtestPrecon =
+            i.deckid && i.deckid.includes('PLAYTEST:') && i.deckid.replace('PLAYTEST:', '');
+          const id = playtestPrecon ?? i.Id;
 
-            return (
-              <React.Fragment key={id}>
-                <FlexGapped className="max-sm:flex-col">
-                  <div className="flex flex-col gap-2 sm:gap-4">
-                    {!isMobile && (
-                      <>
-                        {playtestPrecon ? (
-                          <div className="flex flex-col w-[358px] gap-1">
-                            <div className="flex text-fgSecondary dark:text-fgSecondaryDark font-bold">
-                              {i.name}
-                            </div>
-                            <DeckCrypt deck={i} noDisciplines />
+          return (
+            <React.Fragment key={id}>
+              <FlexGapped className="max-sm:flex-col">
+                <div className="flex flex-col gap-2 sm:gap-4">
+                  {!isMobile && (
+                    <>
+                      {playtestPrecon ? (
+                        <div className="flex flex-col w-[358px] gap-1">
+                          <div className="flex text-fgSecondary dark:text-fgSecondaryDark font-bold">
+                            {i.name}
                           </div>
-                        ) : (
-                          <CardImage card={i} onClick={() => setShow(false)} />
-                        )}
-                      </>
-                    )}
-                  </div>
-                  {value?.[id] && <PlaytestReportExport value={value[id]} />}
-                </FlexGapped>
-                {idx + 1 <
-                  playtestCrypt.length +
-                    playtestLibrary.length +
-                    playtestPrecons.length && <Hr isThick />}
-              </React.Fragment>
-            );
-          },
-        )}
+                          <DeckCrypt deck={i} noDisciplines />
+                        </div>
+                      ) : (
+                        <CardImage card={i} onClick={() => setShow(false)} />
+                      )}
+                    </>
+                  )}
+                </div>
+                {value?.[id] && <PlaytestReportExport value={value[id]} />}
+              </FlexGapped>
+              {idx + 1 < playtestCrypt.length + playtestLibrary.length + playtestPrecons.length && (
+                <Hr isThick />
+              )}
+            </React.Fragment>
+          );
+        })}
       </div>
     </Modal>
   );

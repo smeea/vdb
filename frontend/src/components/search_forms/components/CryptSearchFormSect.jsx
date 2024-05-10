@@ -12,32 +12,24 @@ const CryptSearchFormSect = ({ value, searchForm, onChange }) => {
   const { isXWide } = useApp();
   const maxMenuHeight = isXWide ? 500 : 350;
   const name = 'sect';
-  const options = [
-    'ANY',
-    'Camarilla',
-    'Sabbat',
-    'Laibon',
-    'Independent',
-    'Anarch',
-    'Imbued',
-  ].map((i) => ({
-    value: i.toLowerCase(),
-    name: name,
-    label: (
-      <div className="flex items-center">
-        <div className="flex w-[40px]" />
-        {i}
-      </div>
-    ),
-  }));
+  const options = ['ANY', 'Camarilla', 'Sabbat', 'Laibon', 'Independent', 'Anarch', 'Imbued'].map(
+    (i) => ({
+      value: i.toLowerCase(),
+      name: name,
+      label: (
+        <div className="flex items-center">
+          <div className="flex w-[40px]" />
+          {i}
+        </div>
+      ),
+    }),
+  );
 
   return (
     <>
       <div className="flex items-center">
         <div className="flex w-1/4 items-center justify-between">
-          <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
-            Sect:
-          </div>
+          <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Sect:</div>
           {value.value[0] !== 'any' && (
             <div className="flex justify-end space-x-1 px-1">
               <div>
@@ -50,11 +42,7 @@ const CryptSearchFormSect = ({ value, searchForm, onChange }) => {
               {value.value.length == 1 ? (
                 <SearchFormButtonAdd searchForm={searchForm} name={name} />
               ) : (
-                <SearchFormButtonDel
-                  searchForm={searchForm}
-                  i={0}
-                  name={name}
-                />
+                <SearchFormButtonDel searchForm={searchForm} i={0} name={name} />
               )}
             </div>
           )}
@@ -66,12 +54,8 @@ const CryptSearchFormSect = ({ value, searchForm, onChange }) => {
             isClearable={value.value[0] !== 'any'}
             name={0}
             maxMenuHeight={maxMenuHeight}
-            value={options.find(
-              (obj) => obj.value === value.value[0].toLowerCase(),
-            )}
-            onChange={(e, id) =>
-              e ? onChange(e, id) : onChange({ name: name, value: 'any' }, id)
-            }
+            value={options.find((obj) => obj.value === value.value[0].toLowerCase())}
+            onChange={(e, id) => (e ? onChange(e, id) : onChange({ name: name, value: 'any' }, id))}
           />
         </div>
       </div>

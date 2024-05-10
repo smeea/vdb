@@ -15,32 +15,24 @@ const urlLocalizedLibrary = (lang) =>
 const urlPreconDecks = `${BASE_URL}/data/precon_decks.json?v=${CARD_VERSION}`;
 
 export const getCardBase = async () => {
-  const crypt = await fetch(urlCrypt, DEFAULT_OPTIONS).then((response) =>
-    response.json(),
-  );
-  const library = await fetch(urlLibrary, DEFAULT_OPTIONS).then((response) =>
-    response.json(),
-  );
+  const crypt = await fetch(urlCrypt, DEFAULT_OPTIONS).then((response) => response.json());
+  const library = await fetch(urlLibrary, DEFAULT_OPTIONS).then((response) => response.json());
 
-  const cryptPlaytest = await fetch(urlCryptPlaytest, DEFAULT_OPTIONS).then(
-    (response) => {
-      if (response.headers.get('content-type') === 'application/json') {
-        return response.json();
-      } else {
-        return {};
-      }
-    },
-  );
+  const cryptPlaytest = await fetch(urlCryptPlaytest, DEFAULT_OPTIONS).then((response) => {
+    if (response.headers.get('content-type') === 'application/json') {
+      return response.json();
+    } else {
+      return {};
+    }
+  });
 
-  const libraryPlaytest = await fetch(urlLibraryPlaytest, DEFAULT_OPTIONS).then(
-    (response) => {
-      if (response.headers.get('content-type') === 'application/json') {
-        return response.json();
-      } else {
-        return {};
-      }
-    },
-  );
+  const libraryPlaytest = await fetch(urlLibraryPlaytest, DEFAULT_OPTIONS).then((response) => {
+    if (response.headers.get('content-type') === 'application/json') {
+      return response.json();
+    } else {
+      return {};
+    }
+  });
 
   const nativeCrypt = {};
   const nativeLibrary = {};
@@ -66,11 +58,11 @@ export const getCardBase = async () => {
 };
 
 export const getLocalizedCardBase = async (lang) => {
-  const crypt = await fetch(urlLocalizedCrypt(lang), DEFAULT_OPTIONS).then(
-    (response) => response.json(),
+  const crypt = await fetch(urlLocalizedCrypt(lang), DEFAULT_OPTIONS).then((response) =>
+    response.json(),
   );
-  const library = await fetch(urlLocalizedLibrary(lang), DEFAULT_OPTIONS).then(
-    (response) => response.json(),
+  const library = await fetch(urlLocalizedLibrary(lang), DEFAULT_OPTIONS).then((response) =>
+    response.json(),
   );
 
   return {
@@ -80,8 +72,8 @@ export const getLocalizedCardBase = async (lang) => {
 };
 
 export const getPreconDecks = async (cryptCardBase, libraryCardBase) => {
-  const preconDecksData = await fetch(urlPreconDecks, DEFAULT_OPTIONS).then(
-    (response) => response.json(),
+  const preconDecksData = await fetch(urlPreconDecks, DEFAULT_OPTIONS).then((response) =>
+    response.json(),
   );
 
   const preconDecks = {};
@@ -101,22 +93,13 @@ export const getPreconDecks = async (cryptCardBase, libraryCardBase) => {
         library: {},
       };
 
-      const cardsData = useDeck(
-        preconDecksData[set][precon],
-        cryptCardBase,
-        libraryCardBase,
-      );
+      const cardsData = useDeck(preconDecksData[set][precon], cryptCardBase, libraryCardBase);
 
       let tags = [];
-      if (
-        set !== PLAYTEST ||
-        (cryptCardBase[210001] && libraryCardBase[110001])
-      ) {
-        Object.values(useTags(cardsData.crypt, cardsData.library)).forEach(
-          (v) => {
-            tags = tags.concat(v);
-          },
-        );
+      if (set !== PLAYTEST || (cryptCardBase[210001] && libraryCardBase[110001])) {
+        Object.values(useTags(cardsData.crypt, cardsData.library)).forEach((v) => {
+          tags = tags.concat(v);
+        });
       }
 
       preconDecks[deckid].crypt = cardsData.crypt;

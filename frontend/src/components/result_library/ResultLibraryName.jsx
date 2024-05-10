@@ -12,11 +12,7 @@ const ResultLibraryName = ({ card, colored = true, isBanned }) => {
         colored ? 'text-fgName dark:text-fgNameDark' : ''
       }`}
     >
-      <div
-        className={`inline whitespace-normal ${
-          card.Banned || isBanned ? 'line-through' : ''
-        }`}
-      >
+      <div className={`inline whitespace-normal ${card.Banned || isBanned ? 'line-through' : ''}`}>
         {card['Name']}
       </div>
       {card.Banned && <ResultLegalIcon type={BANNED} value={card.Banned} />}

@@ -11,8 +11,7 @@ const DeckDrawLibraryTable = ({
 }) => {
   const { isMobile } = useApp();
 
-  const N =
-    restCards && resultCards ? restCards.length + resultCards.length : 0;
+  const N = restCards && resultCards ? restCards.length + resultCards.length : 0;
   const n = resultCards ? resultCards.length : 0;
   const nonPlayed = {};
 
@@ -34,9 +33,7 @@ const DeckDrawLibraryTable = ({
             <tr
               key={`${idx}-${card.Id}`}
               className={`h-[38px] border-y border-bgSecondary dark:border-bgSecondaryDark ${
-                idx % 2
-                  ? 'bg-bgThird dark:bg-bgThirdDark'
-                  : 'bg-bgPrimary dark:bg-bgPrimaryDark'
+                idx % 2 ? 'bg-bgThird dark:bg-bgThirdDark' : 'bg-bgPrimary dark:bg-bgPrimaryDark'
               }`}
             >
               <ResultLibraryTableRowCommon
@@ -47,12 +44,7 @@ const DeckDrawLibraryTable = ({
               {(!ashHeap || !isMobile) && (
                 <td className="min-w-[45px] p-1 text-right text-fgSecondary  dark:text-fgSecondaryDark">
                   {!ashHeap && (
-                    <DeckDrawProbability
-                      cardName={card.Name}
-                      N={N}
-                      n={n}
-                      k={nonPlayed[card.Id]}
-                    />
+                    <DeckDrawProbability cardName={card.Name} N={N} n={n} k={nonPlayed[card.Id]} />
                   )}
                 </td>
               )}

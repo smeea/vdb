@@ -25,9 +25,7 @@ const DeckSelectAdvTableHeader = ({
   const { inventoryMode, isMobile, isNarrow, isDesktop } = useApp();
 
   const [debouncedNameFilter, setDebouncedNameFilter] = useState('');
-  useDebounce(() => setNameFilter(debouncedNameFilter), 250, [
-    debouncedNameFilter,
-  ]);
+  useDebounce(() => setNameFilter(debouncedNameFilter), 250, [debouncedNameFilter]);
 
   const invOptions = [
     {
@@ -90,9 +88,7 @@ const DeckSelectAdvTableHeader = ({
             <Select
               options={clanOptions}
               onChange={(e) => setClanFilter(e.value)}
-              value={clanOptions.find(
-                (obj) => obj.value === clanFilter.toLowerCase(),
-              )}
+              value={clanOptions.find((obj) => obj.value === clanFilter.toLowerCase())}
               isSearchable
               noDropdown
             />
@@ -110,9 +106,7 @@ const DeckSelectAdvTableHeader = ({
           />
         </th>
         {!short && isDesktop && <th className="min-w-[30px] sm:min-w-[45px]" />}
-        {!short && !isNarrow && (
-          <th className="min-w-[100px] sm:min-w-[105px]" />
-        )}
+        {!short && !isNarrow && <th className="min-w-[100px] sm:min-w-[105px]" />}
         {!short && (
           <th className="w-full">
             <DeckSelectAdvTagsFilter

@@ -23,14 +23,10 @@ const PdaResultDescriptionText = ({ deck }) => {
     <>
       <table>
         <tbody>
-          <TwdResultDescriptionTextTr
-            title={isMobile ? <TagFill /> : <>Deck:</>}
-          >
+          <TwdResultDescriptionTextTr title={isMobile ? <TagFill /> : <>Deck:</>}>
             {deck.name}
           </TwdResultDescriptionTextTr>
-          <TwdResultDescriptionTextTr
-            title={isMobile ? <PersonFill /> : <>Author:</>}
-          >
+          <TwdResultDescriptionTextTr title={isMobile ? <PersonFill /> : <>Author:</>}>
             <div
               className="text-fgSecondary hover:underline dark:text-fgSecondaryDark"
               onClick={() => handleClick(deck['author'])}
@@ -38,23 +34,17 @@ const PdaResultDescriptionText = ({ deck }) => {
               {deck['author']}
             </div>
           </TwdResultDescriptionTextTr>
-          <TwdResultDescriptionTextTr
-            title={isMobile ? <CalendarEvent /> : <>Created:</>}
-          >
+          <TwdResultDescriptionTextTr title={isMobile ? <CalendarEvent /> : <>Created:</>}>
             {deck['creation_date']}
           </TwdResultDescriptionTextTr>
           {lastUpdated !== deck['creation_date'] && (
-            <TwdResultDescriptionTextTr
-              title={isMobile ? <CalendarEvent /> : <>Updated:</>}
-            >
+            <TwdResultDescriptionTextTr title={isMobile ? <CalendarEvent /> : <>Updated:</>}>
               {lastUpdated}
             </TwdResultDescriptionTextTr>
           )}
         </tbody>
       </table>
-      {(tags.superior.length > 0 || tags.base.length > 0) && (
-        <TwdResultTags tags={tags} />
-      )}
+      {(tags.superior.length > 0 || tags.base.length > 0) && <TwdResultTags tags={tags} />}
     </>
   );
 };

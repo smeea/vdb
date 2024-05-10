@@ -3,22 +3,9 @@ import { BubbleChart } from '@/components';
 import { getClan } from '@/utils';
 import { useApp } from '@/context';
 
-const AnalyzeTournamentChartsRankingStyle = ({
-  info,
-  decks,
-  searchResults,
-}) => {
+const AnalyzeTournamentChartsRankingStyle = ({ info, decks, searchResults }) => {
   const { isMobile, isDesktop, isWide } = useApp();
-  const allowedTags = [
-    'bleed',
-    'stealth',
-    'block',
-    'rush',
-    'combat',
-    'ally',
-    'swarm',
-    'vote',
-  ];
+  const allowedTags = ['bleed', 'stealth', 'block', 'rush', 'combat', 'ally', 'swarm', 'vote'];
 
   const data = useMemo(() => {
     const d = {};
@@ -32,9 +19,7 @@ const AnalyzeTournamentChartsRankingStyle = ({
 
     Object.values(decks).forEach((deck) => {
       const position = info.players - deck.score.rank;
-      const inSearch = Object.values(searchResults).some(
-        (d) => d.author === deck.author,
-      );
+      const inSearch = Object.values(searchResults).some((d) => d.author === deck.author);
       const def = {
         clan: getClan(deck.crypt) || 'Multi',
         crypt: deck.crypt,

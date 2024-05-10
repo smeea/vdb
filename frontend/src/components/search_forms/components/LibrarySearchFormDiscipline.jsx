@@ -22,12 +22,7 @@ const LibrarySearchFormDiscipline = ({ value, onChange, searchForm }) => {
     'Striga',
   ].toSorted();
 
-  const options = [
-    'ANY',
-    'Not Required',
-    ...disciplinesExtendedList,
-    ...Object.keys(virtuesList),
-  ]
+  const options = ['ANY', 'Not Required', ...disciplinesExtendedList, ...Object.keys(virtuesList)]
     .filter((discipline) => playtestMode || discipline !== 'Oblivion')
     .map((i) => {
       if (i == 'ANY' || i == 'Not Required') {
@@ -61,9 +56,7 @@ const LibrarySearchFormDiscipline = ({ value, onChange, searchForm }) => {
     <>
       <div className="flex items-center">
         <div className="w-1/4">
-          <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
-            Discipline:
-          </div>
+          <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Discipline:</div>
           {value.value[0] !== 'any' && (
             <div className="flex justify-end space-x-1 px-1">
               <SearchFormButtonLogicToggle
@@ -75,11 +68,7 @@ const LibrarySearchFormDiscipline = ({ value, onChange, searchForm }) => {
               {value.value.length == 1 ? (
                 <SearchFormButtonAdd searchForm={searchForm} name={name} />
               ) : (
-                <SearchFormButtonDel
-                  searchForm={searchForm}
-                  i={0}
-                  name={name}
-                />
+                <SearchFormButtonDel searchForm={searchForm} i={0} name={name} />
               )}
             </div>
           )}
@@ -91,12 +80,8 @@ const LibrarySearchFormDiscipline = ({ value, onChange, searchForm }) => {
             isClearable={value.value[0] !== 'any'}
             name={0}
             maxMenuHeight={maxMenuHeight}
-            value={options.find(
-              (obj) => obj.value === value.value[0].toLowerCase(),
-            )}
-            onChange={(e, id) =>
-              e ? onChange(e, id) : onChange({ name: name, value: 'any' }, id)
-            }
+            value={options.find((obj) => obj.value === value.value[0].toLowerCase())}
+            onChange={(e, id) => (e ? onChange(e, id) : onChange({ name: name, value: 'any' }, id))}
           />
         </div>
       </div>

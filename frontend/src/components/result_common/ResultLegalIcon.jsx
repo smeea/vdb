@@ -12,25 +12,9 @@ const ResultLegalIcon = ({ value, type = 'default', className = '' }) => {
   };
 
   const icons = {
-    PLAYTEST: (
-      <LightningChargeFill
-        className="inline"
-        width="15"
-        height="15"
-        viewBox="0 0 16 16"
-      />
-    ),
-    BANNED: (
-      <Hammer className="inline" width="15" height="15" viewBox="0 0 16 16" />
-    ),
-    LEGAL: (
-      <HourglassSplit
-        className="inline"
-        width="14"
-        height="14"
-        viewBox="0 0 16 16"
-      />
-    ),
+    PLAYTEST: <LightningChargeFill className="inline" width="15" height="15" viewBox="0 0 16 16" />,
+    BANNED: <Hammer className="inline" width="15" height="15" viewBox="0 0 16 16" />,
+    LEGAL: <HourglassSplit className="inline" width="14" height="14" viewBox="0 0 16 16" />,
   };
 
   return (
@@ -38,9 +22,7 @@ const ResultLegalIcon = ({ value, type = 'default', className = '' }) => {
       className={`inline-flex items-center whitespace-nowrap text-fgRed dark:text-fgRedDark ${className}`}
       title={title[type] ?? ''}
     >
-      {icons[type] ?? (
-        <Exclamation width="15" height="15" viewBox="0 0 16 16" />
-      )}
+      {icons[type] ?? <Exclamation width="15" height="15" viewBox="0 0 16 16" />}
     </div>
   );
 };

@@ -6,14 +6,7 @@ import { cryptSort } from '@/utils';
 import { useApp } from '@/context';
 import { useModalCardController } from '@/hooks';
 
-const InventoryCryptTable = ({
-  cards,
-  sortMethod,
-  compact,
-  withCompact,
-  newFocus,
-  inShared,
-}) => {
+const InventoryCryptTable = ({ cards, sortMethod, compact, withCompact, newFocus, inShared }) => {
   const { playtestMode, setShowFloatingButtons } = useApp();
   const sortedCards = cryptSort(cards, sortMethod);
 

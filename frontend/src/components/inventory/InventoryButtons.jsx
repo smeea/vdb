@@ -37,8 +37,8 @@ const InventoryButtons = ({
     isNarrow,
     isDesktop,
   } = useApp();
-  const inventoryCrypt = useSnapshot(inventoryStore).crypt;
-  const inventoryLibrary = useSnapshot(inventoryStore).library;
+
+  const { crypt: inventoryCrypt, library: inventoryLibrary } = useSnapshot(inventoryStore);
   const decks = useSnapshot(deckStore).decks;
   const navigate = useNavigate();
   const crypt = isSharedInventory ? sharedCrypt : inventoryCrypt;

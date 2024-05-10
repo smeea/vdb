@@ -21,9 +21,7 @@ const InventoryAddPreconRow = ({ deck, idx }) => {
   return (
     <tr
       className={`border-y border-bgSecondary dark:border-bgSecondaryDark ${
-        idx % 2
-          ? 'bg-bgThird dark:bg-bgThirdDark'
-          : 'bg-bgPrimary dark:bg-bgPrimaryDark'
+        idx % 2 ? 'bg-bgThird dark:bg-bgThirdDark' : 'bg-bgPrimary dark:bg-bgPrimaryDark'
       }`}
     >
       {!isMobile && (
@@ -68,9 +66,7 @@ const InventoryAddPreconRow = ({ deck, idx }) => {
         {isMobile ? (
           <>
             <div>{setsAndPrecons[set].name}</div>
-            <div className="flex justify-end text-sm">
-              {setsAndPrecons[set].date.slice(0, 4)}
-            </div>
+            <div className="flex justify-end text-sm">{setsAndPrecons[set].date.slice(0, 4)}</div>
           </>
         ) : (
           <>

@@ -27,10 +27,7 @@ const TwdCardsHistoryLibraryRow = ({ card, players, handleClick }) => {
             onClick={() => handleClick(card)}
           >
             {(card[BLOOD_COST] || card[POOL_COST]) && (
-              <ResultLibraryCost
-                valueBlood={card[BLOOD_COST]}
-                valuePool={card[POOL_COST]}
-              />
+              <ResultLibraryCost valueBlood={card[BLOOD_COST]} valuePool={card[POOL_COST]} />
             )}
           </div>
           <div
@@ -47,14 +44,10 @@ const TwdCardsHistoryLibraryRow = ({ card, players, handleClick }) => {
       >
         {card.Clan && <ResultLibraryClan value={card.Clan} />}
         {card.Discipline && card.Clan && '+'}
-        {card.Discipline && (
-          <ResultLibraryDisciplines value={card.Discipline} />
-        )}
+        {card.Discipline && <ResultLibraryDisciplines value={card.Discipline} />}
       </div>
       <div
-        className={`flex w-full items-center justify-start ${
-          card.deckid ? '' : 'font-bold'
-        } `}
+        className={`flex w-full items-center justify-start ${card.deckid ? '' : 'font-bold'} `}
         onClick={() => handleClick(card)}
       >
         <ConditionalTooltip
@@ -73,10 +66,7 @@ const TwdCardsHistoryLibraryRow = ({ card, players, handleClick }) => {
           {card[BURN_OPTION] && <ResultLibraryBurn />}
         </div>
       )}
-      <TwdCardsHistoryCardAppearance
-        card={card}
-        byPlayer={players[card.player]}
-      />
+      <TwdCardsHistoryCardAppearance card={card} byPlayer={players[card.player]} />
     </>
   );
 };

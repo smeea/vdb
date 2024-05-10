@@ -1,9 +1,7 @@
 import { DEFAULT_OPTIONS } from '@/utils/constants';
 
 export const submitReport = (id, value, isPrecon) => {
-  const url = `${import.meta.env.VITE_API_URL}/playtest/${
-    isPrecon ? 'precons' : 'cards'
-  }/${id}`;
+  const url = `${import.meta.env.VITE_API_URL}/playtest/${isPrecon ? 'precons' : 'cards'}/${id}`;
   const options = {
     method: 'PUT',
     body: JSON.stringify(value),

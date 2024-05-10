@@ -8,11 +8,7 @@ const PlaytestManageModal = ({ setShow }) => {
   const { value } = useFetch(url, {}, []);
 
   return (
-    <Modal
-      handleClose={() => setShow(false)}
-      title="Manage Playtesters"
-      size="sm"
-    >
+    <Modal handleClose={() => setShow(false)} title="Manage Playtesters" size="sm">
       <div className="flex flex-col gap-3">
         <PlaytestManageAdd
           playtesters={value}
@@ -21,10 +17,7 @@ const PlaytestManageModal = ({ setShow }) => {
         />
         <div>
           {value &&
-            [
-              ...newPlaytesters.toReversed(),
-              ...Object.keys(value).toSorted(),
-            ].map((u) => (
+            [...newPlaytesters.toReversed(), ...Object.keys(value).toSorted()].map((u) => (
               <PlaytestManagePlayer key={u} username={u} lang={value[u]} />
             ))}
         </div>

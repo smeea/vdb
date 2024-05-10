@@ -142,11 +142,7 @@ const testCryptCombat = (card) => {
 };
 
 const testCryptMmpa = (card) => {
-  if (
-    ['Anson', 'Cybele', 'Nana Buruku', 'Huitzilopochtli', 'Isanwayen'].includes(
-      card['Name'],
-    )
-  )
+  if (['Anson', 'Cybele', 'Nana Buruku', 'Huitzilopochtli', 'Isanwayen'].includes(card['Name']))
     return true;
 };
 
@@ -164,8 +160,7 @@ const testCryptStealth = (card) => {
 
 const testLibraryAlly = (card) => {
   if (card['Type'].split('/').includes('Ally')) return true;
-  if (['FBI Special Affairs Division', 'Unmasking, The'].includes(card['Name']))
-    return true;
+  if (['FBI Special Affairs Division', 'Unmasking, The'].includes(card['Name'])) return true;
 };
 
 const testLibraryBleed = (card) => {
@@ -211,8 +206,7 @@ const testLibraryCombat = (card) => {
 };
 
 const testLibraryMmpa = (card) => {
-  if (['Parthenon, The', 'Rumors of Gehenna'].includes(card['Name']))
-    return true;
+  if (['Parthenon, The', 'Rumors of Gehenna'].includes(card['Name'])) return true;
 };
 
 const testLibraryRush = (card) => {
@@ -262,8 +256,7 @@ const LibraryTraitsRegexMap = {
   'enter combat': () => /enter combat/i,
   intercept: () =>
     /-[0-9]+ stealth(?! \(d\))(?! \w)(?! action)|\+[0-9]+ intercept|gets -([0-9]|x)+ stealth|stealth to 0/i,
-  stealth: () =>
-    /\+[0-9]+ stealth(?! \(d\))(?! \w)(?! action)|-[0-9]+ intercept/i,
+  stealth: () => /\+[0-9]+ stealth(?! \(d\))(?! \w)(?! action)|-[0-9]+ intercept/i,
   bleed: () => /\+[0-9]+ bleed/i,
   strength: () => /\+[0-9]+ strength/i,
   embrace: () => /becomes a.*(\d[ -]|same.*)capacity/i,
@@ -271,6 +264,5 @@ const LibraryTraitsRegexMap = {
   'votes-title': () => /\+. vote|additional vote|represent the .* title/i,
   aggravated: () => /(?:[^non-])aggravated/i,
   prevent: () => /(?:[^un])prevent(?:[^able])/i,
-  'put-blood': () =>
-    /add .* blood (from the blood bank )?to .* in your uncontrolled region/i,
+  'put-blood': () => /add .* blood (from the blood bank )?to .* in your uncontrolled region/i,
 };

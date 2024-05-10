@@ -2,13 +2,7 @@ import React from 'react';
 import { Button } from '@/components';
 import Exclamation from '@/assets/images/icons/exclamation.svg?react';
 
-const SearchFormButtonLogicToggle = ({
-  name,
-  i,
-  value,
-  searchForm,
-  withAnd,
-}) => {
+const SearchFormButtonLogicToggle = ({ name, i, value, searchForm, withAnd }) => {
   const handleToggleForm = () => {
     if (name === 'text') {
       switch (value) {

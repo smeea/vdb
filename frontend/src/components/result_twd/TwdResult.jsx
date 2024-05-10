@@ -1,17 +1,11 @@
 import React, { useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
-import {
-  TwdDeck,
-  TwdResultTotal,
-  Button,
-  ButtonFloatClose,
-} from '@/components';
+import { TwdDeck, TwdResultTotal, Button, ButtonFloatClose } from '@/components';
 import { decksSort } from '@/utils';
 import { useApp } from '@/context';
 
 const TwdResult = ({ results, setResults }) => {
-  const { isMobile, showFloatingButtons, twdSearchSort, changeTwdSearchSort } =
-    useApp();
+  const { isMobile, showFloatingButtons, twdSearchSort, changeTwdSearchSort } = useApp();
   const navigate = useNavigate();
   const showCounterStep = 10;
   const deckCounter = results.length || 0;
@@ -56,18 +50,13 @@ const TwdResult = ({ results, setResults }) => {
         })}
         {deckCounter > showCounter && (
           <div className="flex justify-center ">
-            <Button
-              variant="primary"
-              onClick={() => setShowCounter(showCounter + showCounterStep)}
-            >
+            <Button variant="primary" onClick={() => setShowCounter(showCounter + showCounterStep)}>
               Show More ({deckCounter - showCounter} left)
             </Button>
           </div>
         )}
       </div>
-      {isMobile && showFloatingButtons && (
-        <ButtonFloatClose handleClose={handleClear} />
-      )}
+      {isMobile && showFloatingButtons && <ButtonFloatClose handleClose={handleClear} />}
     </>
   );
 };

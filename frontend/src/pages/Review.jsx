@@ -1,10 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import {
-  useNavigate,
-  useLocation,
-  useParams,
-  useLoaderData,
-} from 'react-router-dom';
+import { useNavigate, useLocation, useParams, useLoaderData } from 'react-router-dom';
 import { useSnapshot } from 'valtio';
 import { useImmer } from 'use-immer';
 import {
@@ -62,11 +57,9 @@ const Review = () => {
     const cardsData = useDeck(deckData.cards, cryptCardBase, libraryCardBase);
     if (deckid.length !== 32 || deckData.publicParent) {
       deckData.tags = [];
-      Object.values(useTags(cardsData.crypt, cardsData.library)).forEach(
-        (v) => {
-          deckData.tags = deckData.tags.concat(v);
-        },
-      );
+      Object.values(useTags(cardsData.crypt, cardsData.library)).forEach((v) => {
+        deckData.tags = deckData.tags.concat(v);
+      });
     }
     const d = {
       author: deckData.author,
@@ -231,21 +224,13 @@ const Review = () => {
         </FlexGapped>
         <div className="min-w-[175px] max-lg:hidden">
           <div className="sticky z-20 w-full bg-bgPrimary dark:bg-bgPrimaryDark lg:top-10">
-            <ReviewButtons
-              deck={deckFrom}
-              urlDiff={urlDiff}
-              parentId={inDecks ? parentId : null}
-            />
+            <ReviewButtons deck={deckFrom} urlDiff={urlDiff} parentId={inDecks ? parentId : null} />
           </div>
         </div>
       </FlexGapped>
       {isMobile && showFloatingButtons && (
         <>
-          <DeckNewCardFloating
-            target="crypt"
-            deckid={deckFrom?.deckid}
-            cards={deckFrom?.crypt}
-          />
+          <DeckNewCardFloating target="crypt" deckid={deckFrom?.deckid} cards={deckFrom?.crypt} />
           <DeckNewCardFloating
             target="library"
             deckid={deckFrom?.deckid}
@@ -263,11 +248,7 @@ const Review = () => {
           centered
           size="sm"
         >
-          <ReviewButtons
-            deck={deckFrom}
-            urlDiff={urlDiff}
-            parentId={inDecks ? parentId : null}
-          />
+          <ReviewButtons deck={deckFrom} urlDiff={urlDiff} parentId={inDecks ? parentId : null} />
         </Modal>
       )}
     </div>

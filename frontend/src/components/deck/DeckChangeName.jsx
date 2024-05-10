@@ -48,9 +48,7 @@ const DeckChangeName = ({ deck }) => {
           isAuthor ||
           isNonEditable ||
           isPublic ||
-          (deck.deckid !== 'deck' &&
-            deck.deckid.length !== 32 &&
-            !deck.deckid.includes(':'))
+          (deck.deckid !== 'deck' && deck.deckid.length !== 32 && !deck.deckid.includes(':'))
             ? ''
             : 'rounded-r'
         }
@@ -59,21 +57,14 @@ const DeckChangeName = ({ deck }) => {
             isAuthor ||
             isNonEditable ||
             isPublic ||
-            (deck.deckid !== 'deck' &&
-              deck.deckid.length !== 32 &&
-              !deck.deckid.includes(':'))
+            (deck.deckid !== 'deck' && deck.deckid.length !== 32 && !deck.deckid.includes(':'))
               ? ''
               : 'border-r'
           }`}
       />
       {(isPublic ||
-        (deck.deckid !== 'deck' &&
-          deck.deckid.length !== 32 &&
-          !deck.deckid.includes(':'))) && (
-        <InputLabel
-          title={isPublic ? 'Public Deck' : 'Tournament Winning Deck'}
-          isEnd
-        >
+        (deck.deckid !== 'deck' && deck.deckid.length !== 32 && !deck.deckid.includes(':'))) && (
+        <InputLabel title={isPublic ? 'Public Deck' : 'Tournament Winning Deck'} isEnd>
           {isPublic ? <PeopleFill /> : <TrophyFill />}
         </InputLabel>
       )}

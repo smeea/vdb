@@ -1,22 +1,14 @@
 import React, { useState } from 'react';
 import { useImmer } from 'use-immer';
 import { useSnapshot } from 'valtio';
-import {
-  FlexGapped,
-  Modal,
-  Button,
-  DeckProxyCrypt,
-  DeckProxyLibrary,
-} from '@/components';
+import { FlexGapped, Modal, Button, DeckProxyCrypt, DeckProxyLibrary } from '@/components';
 import { useApp, usedStore, inventoryStore } from '@/context';
 import { getHardTotal, getSoftMax } from '@/utils';
 
 const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
   const { isMobile, inventoryMode } = useApp();
-  const inventoryCrypt = useSnapshot(inventoryStore).crypt;
-  const inventoryLibrary = useSnapshot(inventoryStore).library;
-  const usedCrypt = useSnapshot(usedStore).crypt;
-  const usedLibrary = useSnapshot(usedStore).library;
+  const { crypt: inventoryCrypt, library: inventoryLibrary } = useSnapshot(inventoryStore);
+  const { crypt: usedCrypt, library: usedLibrary } = useSnapshot(usedStore);
 
   const [proxySelected, setProxySelected] = useImmer(() => {
     const cards = {};
@@ -160,11 +152,7 @@ const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
           <div className="basis-full sm:basis-5/9">
             {deck.crypt && (
               <div
-                className={
-                  isMobile
-                    ? null
-                    : 'top-[22px] z-10 bg-bgPrimary dark:bg-bgPrimaryDark'
-                }
+                className={isMobile ? null : 'top-[22px] z-10 bg-bgPrimary dark:bg-bgPrimaryDark'}
               >
                 <DeckProxyCrypt
                   deck={deck}

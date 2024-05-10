@@ -6,13 +6,8 @@ import { useApp } from '@/context';
 import { inventoryServices } from '@/services';
 
 const InventoryShareModal = ({ setShow }) => {
-  const {
-    isMobile,
-    setShowFloatingButtons,
-    setShowMenuButtons,
-    inventoryKey,
-    setInventoryKey,
-  } = useApp();
+  const { isMobile, setShowFloatingButtons, setShowMenuButtons, inventoryKey, setInventoryKey } =
+    useApp();
 
   const [success, setSuccess] = useState();
   const [shareUrl, setShareUrl] = useState(
@@ -48,11 +43,7 @@ const InventoryShareModal = ({ setShow }) => {
   };
 
   return (
-    <Modal
-      handleClose={handleClose}
-      centered={isMobile}
-      title="Inventory Share"
-    >
+    <Modal handleClose={handleClose} centered={isMobile} title="Inventory Share">
       <FlexGapped className="flex-col">
         <div>
           {inventoryKey ? (
@@ -64,14 +55,12 @@ const InventoryShareModal = ({ setShow }) => {
               >
                 <ClipboardFill className="inline" viewBox="0 0 18 18" />
               </div>
-              <div>
-                Only this URL will work (old become obsolete after creating new)
-              </div>
+              <div>Only this URL will work (old become obsolete after creating new)</div>
             </>
           ) : (
             <div>
-              After creating Share URL people can view (not edit!) your
-              inventory by opening the link
+              After creating Share URL people can view (not edit!) your inventory by opening the
+              link
             </div>
           )}
         </div>

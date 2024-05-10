@@ -20,23 +20,12 @@ import {
   TwdSearchFormSect,
 } from '@/components';
 import { sanitizeFormState } from '@/utils';
-import {
-  useApp,
-  setPdaResults,
-  searchPdaForm,
-  clearSearchForm,
-} from '@/context';
+import { useApp, setPdaResults, searchPdaForm, clearSearchForm } from '@/context';
 import { archiveServices } from '@/services';
 
 const PdaSearchForm = ({ error, setError }) => {
-  const {
-    username,
-    cryptCardBase,
-    libraryCardBase,
-    showFloatingButtons,
-    inventoryMode,
-    isMobile,
-  } = useApp();
+  const { username, cryptCardBase, libraryCardBase, showFloatingButtons, inventoryMode, isMobile } =
+    useApp();
   const pdaFormState = useSnapshot(searchPdaForm);
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
@@ -171,12 +160,7 @@ const PdaSearchForm = ({ error, setError }) => {
         getRandom={getRandomPda}
         inPda
       />
-      {username && (
-        <PdaSearchFormSrcSelector
-          value={pdaFormState.src}
-          onChange={handleChange}
-        />
-      )}
+      {username && <PdaSearchFormSrcSelector value={pdaFormState.src} onChange={handleChange} />}
       {inventoryMode && (
         <>
           <TwdSearchFormMatchInventory
@@ -207,16 +191,9 @@ const PdaSearchForm = ({ error, setError }) => {
           </div>
         </>
       )}
-      <TwdSearchFormDate
-        value={pdaFormState.date}
-        onChange={handleChangeWithOpt}
-        inPda
-      />
+      <TwdSearchFormDate value={pdaFormState.date} onChange={handleChangeWithOpt} inPda />
       {cryptCardBase && (
-        <TwdSearchFormCrypt
-          value={pdaFormState.crypt}
-          form={searchPdaForm.crypt}
-        />
+        <TwdSearchFormCrypt value={pdaFormState.crypt} form={searchPdaForm.crypt} />
       )}
       <div className="flex justify-end">
         <Checkbox
@@ -228,15 +205,9 @@ const PdaSearchForm = ({ error, setError }) => {
         />
       </div>
       {libraryCardBase && (
-        <TwdSearchFormLibrary
-          value={pdaFormState.library}
-          form={searchPdaForm.library}
-        />
+        <TwdSearchFormLibrary value={pdaFormState.library} form={searchPdaForm.library} />
       )}
-      <TwdSearchFormLibraryTotal
-        value={pdaFormState.libraryTotal}
-        onChange={handleMultiChange}
-      />
+      <TwdSearchFormLibraryTotal value={pdaFormState.libraryTotal} onChange={handleMultiChange} />
       <TwdSearchFormClan value={pdaFormState.clan} onChange={handleChange} />
       <div className="flex justify-end">
         <Checkbox
@@ -248,31 +219,17 @@ const PdaSearchForm = ({ error, setError }) => {
         />
       </div>
       <TwdSearchFormSect value={pdaFormState.sect} onChange={handleChange} />
-      <TwdSearchFormCapacity
-        value={pdaFormState.capacity}
-        onChange={handleMultiChange}
-      />
+      <TwdSearchFormCapacity value={pdaFormState.capacity} onChange={handleMultiChange} />
       <TwdSearchFormDisciplines
         value={pdaFormState.disciplines}
         onChange={handleDisciplinesChange}
       />
-      <TwdSearchFormCardtypes
-        value={pdaFormState.cardtypes}
-        onChange={handleChangeWithOpt}
-      />
-      <TwdSearchFormPlayer
-        value={pdaFormState.author}
-        form={searchPdaForm}
-        inPda
-      />
+      <TwdSearchFormCardtypes value={pdaFormState.cardtypes} onChange={handleChangeWithOpt} />
+      <TwdSearchFormPlayer value={pdaFormState.author} form={searchPdaForm} inPda />
       {isMobile && showFloatingButtons && (
         <>
           <ButtonFloatClose handleClose={handleClear} position="middle" />
-          <ButtonFloatSearch
-            handleSearch={processSearch}
-            error={error}
-            isLoading={isLoading}
-          />
+          <ButtonFloatSearch handleSearch={processSearch} error={error} isLoading={isLoading} />
         </>
       )}
     </div>

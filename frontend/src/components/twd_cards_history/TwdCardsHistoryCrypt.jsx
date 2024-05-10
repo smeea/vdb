@@ -118,10 +118,7 @@ const TwdCardsHistoryCrypt = ({ cards, players }) => {
         >
           {isMobile ? 'Y' : 'YtW'}
         </div>
-        <div
-          className="flex min-w-[90px] items-center sm:min-w-[250px]"
-          title="First Winner"
-        >
+        <div className="flex min-w-[90px] items-center sm:min-w-[250px]" title="First Winner">
           Player
         </div>
         <div className="flex min-w-[45px] items-center justify-center sm:min-w-[110px]">

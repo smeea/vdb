@@ -46,9 +46,7 @@ const LibrarySearchForm = () => {
   const usedLibrary = useSnapshot(usedStore).library;
   const limitedLibrary = useSnapshot(limitedStore).library;
   const libraryFormState = useSnapshot(searchLibraryForm);
-  const { filterLibrary } = useFilters(
-    limitedMode ? limitedLibrary : libraryCardBase,
-  );
+  const { filterLibrary } = useFilters(limitedMode ? limitedLibrary : libraryCardBase);
   const [error, setError] = useState(false);
   const [preresults, setPreresults] = useState();
   const showLimit = 250;
@@ -81,8 +79,7 @@ const LibrarySearchForm = () => {
       searchLibraryForm.text[name]['in'] =
         searchLibraryForm.text[name]['in'] === value ? false : value;
     } else {
-      searchLibraryForm.text[name][value] =
-        !searchLibraryForm.text[name][value];
+      searchLibraryForm.text[name][value] = !searchLibraryForm.text[name][value];
     }
   };
 
@@ -110,11 +107,9 @@ const LibrarySearchForm = () => {
     const { name, value } = event.target;
 
     if (['or-newer', 'or-older', 'not-newer', 'not-older'].includes(value)) {
-      searchLibraryForm[name]['age'] =
-        searchLibraryForm[name]['age'] === value ? false : value;
+      searchLibraryForm[name]['age'] = searchLibraryForm[name]['age'] === value ? false : value;
     } else if (['only', 'first', 'reprint'].includes(value)) {
-      searchLibraryForm[name]['print'] =
-        searchLibraryForm[name]['print'] === value ? false : value;
+      searchLibraryForm[name]['print'] = searchLibraryForm[name]['print'] === value ? false : value;
     } else {
       searchLibraryForm[name][value] = !searchLibraryForm[name][value];
     }
@@ -150,9 +145,7 @@ const LibrarySearchForm = () => {
         setLibraryResults(
           filteredCards.filter((card) => {
             return (
-              inventoryLibrary[card.Id] ||
-              usedLibrary.soft[card.Id] ||
-              usedLibrary.hard[card.Id]
+              inventoryLibrary[card.Id] || usedLibrary.soft[card.Id] || usedLibrary.hard[card.Id]
             );
           }),
         );
@@ -164,9 +157,7 @@ const LibrarySearchForm = () => {
         setLibraryResults(
           filteredCards.filter((card) => {
             return (
-              inventoryLibrary[card.Id] ||
-              usedLibrary.soft[card.Id] ||
-              usedLibrary.hard[card.Id]
+              inventoryLibrary[card.Id] || usedLibrary.soft[card.Id] || usedLibrary.hard[card.Id]
             );
           }),
         );
@@ -197,10 +188,7 @@ const LibrarySearchForm = () => {
           setPreresults(undefined);
           navigate('/library');
         }
-      } else if (
-        !libraryFormState.text[0].value ||
-        libraryFormState.text[0].value.length > 2
-      ) {
+      } else if (!libraryFormState.text[0].value || libraryFormState.text[0].value.length > 2) {
         processSearch();
       }
     }
@@ -271,18 +259,12 @@ const LibrarySearchForm = () => {
         value={libraryFormState.blood}
         onChange={handleMultiSelectChange}
       />
-      <LibrarySearchFormPoolCost
-        value={libraryFormState.pool}
-        onChange={handleMultiSelectChange}
-      />
+      <LibrarySearchFormPoolCost value={libraryFormState.pool} onChange={handleMultiSelectChange} />
       <LibrarySearchFormCapacity
         value={libraryFormState.capacity}
         onChange={handleMultiSelectChange}
       />
-      <LibrarySearchFormTraits
-        value={libraryFormState.traits}
-        onChange={handleMultiChange}
-      />
+      <LibrarySearchFormTraits value={libraryFormState.traits} onChange={handleMultiChange} />
       <SearchFormSet
         value={libraryFormState.set}
         onChange={handleMultiSelectChange}

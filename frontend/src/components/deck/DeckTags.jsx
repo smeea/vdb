@@ -4,13 +4,7 @@ import { SelectCreatable, ButtonIconed } from '@/components';
 import { deckUpdate } from '@/context';
 import { useTags } from '@/hooks';
 
-const DeckTags = ({
-  deck,
-  tagsSuperior,
-  noAutotags,
-  isBordered,
-  allTagsOptions,
-}) => {
+const DeckTags = ({ deck, tagsSuperior, noAutotags, isBordered, allTagsOptions }) => {
   const { deckid, tags, isPublic, isAuthor, isFrozen } = deck;
   const isEditable = isAuthor && !isPublic && !isFrozen;
 

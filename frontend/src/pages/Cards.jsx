@@ -16,14 +16,8 @@ import { useApp, searchResults } from '@/context';
 
 const Cards = () => {
   const params = useParams();
-  const {
-    cryptCardBase,
-    libraryCardBase,
-    showImage,
-    toggleShowImage,
-    isMobile,
-    playtestMode,
-  } = useApp();
+  const { cryptCardBase, libraryCardBase, showImage, toggleShowImage, isMobile, playtestMode } =
+    useApp();
 
   const card = useSnapshot(searchResults).quickCard;
   const [imageSet, setImageSet] = useState(null);
@@ -42,10 +36,8 @@ const Cards = () => {
       Math.floor(
         Math.random() *
           Math.floor(
-            Object.keys(cryptCardBase).filter(
-              (cardid) => playtestMode || cardid < 210000
-            ).length
-          )
+            Object.keys(cryptCardBase).filter((cardid) => playtestMode || cardid < 210000).length,
+          ),
       ) + 200000;
     navigate(`/cards/${cardid}`);
   };
@@ -55,10 +47,8 @@ const Cards = () => {
       Math.floor(
         Math.random() *
           Math.floor(
-            Object.keys(libraryCardBase).filter(
-              (cardid) => playtestMode || cardid < 110000
-            ).length
-          )
+            Object.keys(libraryCardBase).filter((cardid) => playtestMode || cardid < 110000).length,
+          ),
       ) + 100000;
     navigate(`/cards/${cardid}`);
   };
@@ -66,9 +56,7 @@ const Cards = () => {
   useEffect(() => {
     if (cryptCardBase && libraryCardBase) {
       searchResults.quickCard =
-        params.cardid > 200000
-          ? cryptCardBase[params.cardid]
-          : libraryCardBase[params.cardid];
+        params.cardid > 200000 ? cryptCardBase[params.cardid] : libraryCardBase[params.cardid];
     }
   }, [params.cardid, cryptCardBase, libraryCardBase]);
 
@@ -79,16 +67,10 @@ const Cards = () => {
           <>
             {card && (
               <>
-                {playtestMode ||
-                card.Id < 110000 ||
-                (card.Id > 200000 && card.Id < 210000) ? (
+                {playtestMode || card.Id < 110000 || (card.Id > 200000 && card.Id < 210000) ? (
                   <div className="pb-[59px]">
                     {showImage ? (
-                      <CardImage
-                        className="w-full"
-                        card={card}
-                        set={imageSet}
-                      />
+                      <CardImage className="w-full" card={card} set={imageSet} />
                     ) : (
                       <div className="p-3 pb-0">
                         <ResultLayoutText
@@ -101,11 +83,7 @@ const Cards = () => {
                     )}
                     <div className="fixed z-30">
                       <ButtonFloat onClick={toggleShowImage} variant="primary">
-                        <ArrowRepeat
-                          width="40"
-                          height="40"
-                          viewBox="0 0 16 16"
-                        />
+                        <ArrowRepeat width="40" height="40" viewBox="0 0 16 16" />
                       </ButtonFloat>
                     </div>
                   </div>
@@ -126,30 +104,12 @@ const Cards = () => {
               </div>
             </div>
             <div className="fixed z-10">
-              <ButtonFloat
-                onClick={randomCrypt}
-                position="top"
-                variant="secondary"
-              >
-                <Dice3
-                  width="22"
-                  height="22"
-                  className="pr-1"
-                  viewBox="0 0 16 16"
-                />
+              <ButtonFloat onClick={randomCrypt} position="top" variant="secondary">
+                <Dice3 width="22" height="22" className="pr-1" viewBox="0 0 16 16" />
                 <b>C</b>
               </ButtonFloat>
-              <ButtonFloat
-                onClick={randomLibrary}
-                position="middle"
-                variant="secondary"
-              >
-                <Dice3
-                  width="22"
-                  height="22"
-                  className="pr-1"
-                  viewBox="0 0 16 16"
-                />
+              <ButtonFloat onClick={randomLibrary} position="middle" variant="secondary">
+                <Dice3 width="22" height="22" className="pr-1" viewBox="0 0 16 16" />
                 <b>L</b>
               </ButtonFloat>
             </div>
@@ -169,9 +129,7 @@ const Cards = () => {
               )}
               {card && (
                 <>
-                  {playtestMode ||
-                  card.Id < 110000 ||
-                  (card.Id > 200000 && card.Id < 210000) ? (
+                  {playtestMode || card.Id < 110000 || (card.Id > 200000 && card.Id < 210000) ? (
                     <div className="flex brder border-bgSecondary dark:border-bgSecondaryDark">
                       <div>
                         <CardImage card={card} set={imageSet} />

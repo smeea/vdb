@@ -15,13 +15,7 @@ import {
 import { getLegality } from '@/utils';
 import { PLAYTEST } from '@/utils/constants';
 
-const ResultCryptLayoutText = ({
-  card,
-  setCard,
-  handleClose,
-  noClose,
-  inPopover,
-}) => {
+const ResultCryptLayoutText = ({ card, setCard, handleClose, noClose, inPopover }) => {
   const { isNarrow, isMobile, cryptCardBase } = useApp();
   const legalRestriction = getLegality(card);
 
@@ -49,9 +43,7 @@ const ResultCryptLayoutText = ({
                           [has
                           <img
                             className="inline-flex items-center ml-1"
-                            src={`${
-                              import.meta.env.VITE_BASE_URL
-                            }/images/misc/advanced.svg`}
+                            src={`${import.meta.env.VITE_BASE_URL}/images/misc/advanced.svg`}
                             title="Advanced"
                             width="12"
                           />
@@ -91,10 +83,7 @@ const ResultCryptLayoutText = ({
       </div>
       <Hr />
       {card.Banned && (
-        <div
-          className="text-fgRed dark:text-fgRedDark"
-          title={`Banned in ${card.Banned}`}
-        >
+        <div className="text-fgRed dark:text-fgRedDark" title={`Banned in ${card.Banned}`}>
           Banned in {card.Banned}
         </div>
       )}

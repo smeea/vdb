@@ -1,24 +1,13 @@
 import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import {
-  FlexGapped,
-  Textarea,
-  Modal,
-  Button,
-  ErrorOverlay,
-} from '@/components';
+import { FlexGapped, Textarea, Modal, Button, ErrorOverlay } from '@/components';
 import { useApp, deckAdd } from '@/context';
 import { useDeckImport } from '@/hooks';
 import { deckServices } from '@/services';
 
 const DeckImportText = ({ isAnonymous, setBadCards, handleCloseModal }) => {
-  const {
-    isMobile,
-    setShowFloatingButtons,
-    setShowMenuButtons,
-    cryptCardBase,
-    libraryCardBase,
-  } = useApp();
+  const { isMobile, setShowFloatingButtons, setShowMenuButtons, cryptCardBase, libraryCardBase } =
+    useApp();
   const navigate = useNavigate();
   const [deckText, setDeckText] = useState('');
   const [emptyError, setEmptyError] = useState(false);
@@ -81,12 +70,7 @@ It will skip other (useless) lines, you don't have to remove it yourself.
 `;
 
   return (
-    <Modal
-      initialFocus={ref}
-      handleClose={handleClose}
-      size="lg"
-      title="Import from Text"
-    >
+    <Modal initialFocus={ref} handleClose={handleClose} size="lg" title="Import from Text">
       <FlexGapped className="flex-col">
         <div className="relative">
           <Textarea
@@ -97,12 +81,8 @@ It will skip other (useless) lines, you don't have to remove it yourself.
             onChange={handleChange}
             ref={ref}
           />
-          {emptyError && (
-            <ErrorOverlay placement="bottom">ENTER DECK LIST</ErrorOverlay>
-          )}
-          {importError && (
-            <ErrorOverlay placement="bottom">ERROR DURING IMPORT</ErrorOverlay>
-          )}
+          {emptyError && <ErrorOverlay placement="bottom">ENTER DECK LIST</ErrorOverlay>}
+          {importError && <ErrorOverlay placement="bottom">ERROR DURING IMPORT</ErrorOverlay>}
         </div>
         <div className="flex justify-end">
           <Button variant="primary" onClick={importDeckFromText}>

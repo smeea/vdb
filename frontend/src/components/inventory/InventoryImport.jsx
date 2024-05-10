@@ -1,9 +1,5 @@
 import React, { useState, useRef } from 'react';
-import {
-  ErrorOverlay,
-  InventoryImportButton,
-  DeckImportBadCardsModal,
-} from '@/components';
+import { ErrorOverlay, InventoryImportButton, DeckImportBadCardsModal } from '@/components';
 import { useApp, inventoryCardsAdd } from '@/context';
 import { useDeckImport } from '@/hooks';
 
@@ -26,11 +22,7 @@ const InventoryImport = () => {
     reader.readAsText(file);
     reader.onload = async () => {
       const deckText = reader.result;
-      const deck = await useDeckImport(
-        deckText,
-        cryptCardBase,
-        libraryCardBase,
-      );
+      const deck = await useDeckImport(deckText, cryptCardBase, libraryCardBase);
 
       setBadCards(deck.badCards);
       inventoryCardsAdd({ ...deck.crypt, ...deck.library });
@@ -41,11 +33,7 @@ const InventoryImport = () => {
     <>
       <InventoryImportButton handleClick={handleFileInputClick} />
       {badCards.length > 0 && (
-        <DeckImportBadCardsModal
-          badCards={badCards}
-          setBadCards={setBadCards}
-          inInventory
-        />
+        <DeckImportBadCardsModal badCards={badCards} setBadCards={setBadCards} inInventory />
       )}
       <input
         ref={fileInput}
@@ -54,11 +42,7 @@ const InventoryImport = () => {
         onChange={() => importDeckFromFile(fileInput)}
         style={{ display: 'none' }}
       />
-      {importError && (
-        <ErrorOverlay placement="left">
-          CANNOT IMPORT THIS INVENTORY
-        </ErrorOverlay>
-      )}
+      {importError && <ErrorOverlay placement="left">CANNOT IMPORT THIS INVENTORY</ErrorOverlay>}
     </>
   );
 };

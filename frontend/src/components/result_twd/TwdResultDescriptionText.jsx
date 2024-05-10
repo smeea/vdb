@@ -20,28 +20,20 @@ const TwdResultDescriptionText = ({ deck }) => {
       value = { city: value };
     }
     searchTwdForm[target] = value;
-    navigate(
-      `/twd?q=${encodeURIComponent(JSON.stringify({ [target]: value }))}`,
-    );
+    navigate(`/twd?q=${encodeURIComponent(JSON.stringify({ [target]: value }))}`);
   };
 
   return (
     <>
       <table>
         <tbody>
-          <TwdResultDescriptionTextTr
-            title={isMobile ? <CalendarEvent /> : <>Date:</>}
-          >
+          <TwdResultDescriptionTextTr title={isMobile ? <CalendarEvent /> : <>Date:</>}>
             {deck['creation_date']}
           </TwdResultDescriptionTextTr>
-          <TwdResultDescriptionTextTr
-            title={isMobile ? <TrophyFill /> : <>Event:</>}
-          >
+          <TwdResultDescriptionTextTr title={isMobile ? <TrophyFill /> : <>Event:</>}>
             {deck['event']}
           </TwdResultDescriptionTextTr>
-          <TwdResultDescriptionTextTr
-            title={isMobile ? <GeoAltFill /> : <>Place:</>}
-          >
+          <TwdResultDescriptionTextTr title={isMobile ? <GeoAltFill /> : <>Place:</>}>
             <div
               className="text-fgSecondary hover:underline dark:text-fgSecondaryDark"
               onClick={() => handleClick('location', deck['location'])}
@@ -49,9 +41,7 @@ const TwdResultDescriptionText = ({ deck }) => {
               {deck['location']}
             </div>
           </TwdResultDescriptionTextTr>
-          <TwdResultDescriptionTextTr
-            title={isMobile ? <PersonFill /> : <>Player:</>}
-          >
+          <TwdResultDescriptionTextTr title={isMobile ? <PersonFill /> : <>Player:</>}>
             <div
               className="text-fgSecondary hover:underline dark:text-fgSecondaryDark"
               onClick={() => handleClick('author', deck['author'])}
@@ -59,16 +49,12 @@ const TwdResultDescriptionText = ({ deck }) => {
               {deck['author']}
             </div>
           </TwdResultDescriptionTextTr>
-          <TwdResultDescriptionTextTr
-            title={isMobile ? <TagFill /> : <>Deck:</>}
-          >
+          <TwdResultDescriptionTextTr title={isMobile ? <TagFill /> : <>Deck:</>}>
             {deck['name']}
           </TwdResultDescriptionTextTr>
         </tbody>
       </table>
-      {(tags.superior.length > 0 || tags.base.length > 0) && (
-        <TwdResultTags tags={tags} />
-      )}
+      {(tags.superior.length > 0 || tags.base.length > 0) && <TwdResultTags tags={tags} />}
     </>
   );
 };

@@ -22,22 +22,11 @@ import {
   TwdSearchFormSect,
 } from '@/components';
 import { sanitizeFormState } from '@/utils';
-import {
-  useApp,
-  setTwdResults,
-  searchTwdForm,
-  clearSearchForm,
-} from '@/context';
+import { useApp, setTwdResults, searchTwdForm, clearSearchForm } from '@/context';
 import { archiveServices } from '@/services';
 
 const TwdSearchForm = ({ error, setError }) => {
-  const {
-    cryptCardBase,
-    libraryCardBase,
-    showFloatingButtons,
-    inventoryMode,
-    isMobile,
-  } = useApp();
+  const { cryptCardBase, libraryCardBase, showFloatingButtons, inventoryMode, isMobile } = useApp();
   const twdFormState = useSnapshot(searchTwdForm);
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
@@ -170,11 +159,7 @@ const TwdSearchForm = ({ error, setError }) => {
 
   return (
     <div className="space-y-2">
-      <TwdSearchFormButtons
-        handleClear={handleClear}
-        getNew={getNewTwd}
-        getRandom={getRandomTwd}
-      />
+      <TwdSearchFormButtons handleClear={handleClear} getNew={getNewTwd} getRandom={getRandomTwd} />
       {inventoryMode && (
         <>
           <TwdSearchFormMatchInventory
@@ -205,19 +190,10 @@ const TwdSearchForm = ({ error, setError }) => {
           </div>
         </>
       )}
-      <TwdSearchFormDate
-        value={twdFormState.date}
-        onChange={handleChangeWithOpt}
-      />
-      <TwdSearchFormPlayers
-        value={twdFormState.players}
-        onChange={handleChangeWithOpt}
-      />
+      <TwdSearchFormDate value={twdFormState.date} onChange={handleChangeWithOpt} />
+      <TwdSearchFormPlayers value={twdFormState.players} onChange={handleChangeWithOpt} />
       {cryptCardBase && (
-        <TwdSearchFormCrypt
-          value={twdFormState.crypt}
-          form={searchTwdForm.crypt}
-        />
+        <TwdSearchFormCrypt value={twdFormState.crypt} form={searchTwdForm.crypt} />
       )}
       <div className="flex justify-end">
         <Checkbox
@@ -229,15 +205,9 @@ const TwdSearchForm = ({ error, setError }) => {
         />
       </div>
       {libraryCardBase && (
-        <TwdSearchFormLibrary
-          value={twdFormState.library}
-          form={searchTwdForm.library}
-        />
+        <TwdSearchFormLibrary value={twdFormState.library} form={searchTwdForm.library} />
       )}
-      <TwdSearchFormLibraryTotal
-        value={twdFormState.libraryTotal}
-        onChange={handleMultiChange}
-      />
+      <TwdSearchFormLibraryTotal value={twdFormState.libraryTotal} onChange={handleMultiChange} />
       <TwdSearchFormClan value={twdFormState.clan} onChange={handleChange} />
       <div className="flex justify-end">
         <Checkbox
@@ -249,35 +219,19 @@ const TwdSearchForm = ({ error, setError }) => {
         />
       </div>
       <TwdSearchFormSect value={twdFormState.sect} onChange={handleChange} />
-      <TwdSearchFormCapacity
-        value={twdFormState.capacity}
-        onChange={handleMultiChange}
-      />
+      <TwdSearchFormCapacity value={twdFormState.capacity} onChange={handleMultiChange} />
       <TwdSearchFormDisciplines
         value={twdFormState.disciplines}
         onChange={handleDisciplinesChange}
       />
-      <TwdSearchFormCardtypes
-        value={twdFormState.cardtypes}
-        onChange={handleChangeWithOpt}
-      />
-      <TwdSearchFormEvent
-        value={twdFormState.event}
-        onChange={handleEventChange}
-      />
-      <TwdSearchFormLocation
-        value={twdFormState.location}
-        form={searchTwdForm}
-      />
+      <TwdSearchFormCardtypes value={twdFormState.cardtypes} onChange={handleChangeWithOpt} />
+      <TwdSearchFormEvent value={twdFormState.event} onChange={handleEventChange} />
+      <TwdSearchFormLocation value={twdFormState.location} form={searchTwdForm} />
       <TwdSearchFormPlayer value={twdFormState.author} form={searchTwdForm} />
       {isMobile && showFloatingButtons && (
         <>
           <ButtonFloatClose handleClose={handleClear} position="middle" />
-          <ButtonFloatSearch
-            handleSearch={processSearch}
-            error={error}
-            isLoading={isLoading}
-          />
+          <ButtonFloatSearch handleSearch={processSearch} error={error} isLoading={isLoading} />
         </>
       )}
     </div>

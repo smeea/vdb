@@ -1,14 +1,7 @@
 import React, { useState } from 'react';
 import InfoCircle from '@/assets/images/icons/info-circle.svg?react';
 import PlusLg from '@/assets/images/icons/plus-lg.svg?react';
-import {
-  DeckCryptTotalInfo,
-  DeckNewCard,
-  Warning,
-  Button,
-  SortButton,
-  Header,
-} from '@/components';
+import { DeckCryptTotalInfo, DeckNewCard, Warning, Button, SortButton, Header } from '@/components';
 import { useApp } from '@/context';
 import { useKeyDisciplines, useDeckCrypt } from '@/hooks';
 import { GROUPS, LIMITED, BANNED, LEGAL, PLAYTEST } from '@/utils/constants';
@@ -45,8 +38,7 @@ const DeckCryptHeader = ({
           <div className="flex basis-full items-center justify-between gap-2 px-2 font-bold">
             <div className="flex">
               Crypt [{cryptTotal}
-              {!inMissing && cryptTotal < 12 && ' of 12+'}]{' '}
-              {cryptGroups && <>G{cryptGroups}</>}
+              {!inMissing && cryptTotal < 12 && ' of 12+'}] {cryptGroups && <>G{cryptGroups}</>}
             </div>
             <div className="flex gap-2">
               {!inMissing && (
@@ -55,9 +47,7 @@ const DeckCryptHeader = ({
                   {hasBanned && <Warning type={BANNED} />}
                   {limitedMode && hasLimited && <Warning type={LIMITED} />}
                   {hasPlaytest && <Warning type={PLAYTEST} />}
-                  {hasIllegalDate && (
-                    <Warning value={hasIllegalDate} type={LEGAL} />
-                  )}
+                  {hasIllegalDate && <Warning value={hasIllegalDate} type={LEGAL} />}
                 </>
               )}
             </div>
@@ -95,10 +85,7 @@ const DeckCryptHeader = ({
       </Header>
       {showInfo && (
         <div className="bg-bgSecondary p-2 dark:bg-bgSecondaryDark">
-          <DeckCryptTotalInfo
-            disciplinesDetailed={disciplinesDetailed}
-            cards={cards}
-          />
+          <DeckCryptTotalInfo disciplinesDetailed={disciplinesDetailed} cards={cards} />
         </div>
       )}
       {showAdd && (

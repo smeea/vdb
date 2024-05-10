@@ -24,13 +24,7 @@ import {
 } from '@/context';
 // import { useDebounce } from '@/hooks';
 
-const InventoryCryptTableRow = ({
-  card,
-  compact,
-  newFocus,
-  inShared,
-  handleClick,
-}) => {
+const InventoryCryptTableRow = ({ card, compact, newFocus, inShared, handleClick }) => {
   const { isMobile, isNarrow, isWide, limitedMode } = useApp();
   const usedCrypt = useSnapshot(usedStore).crypt;
   const limitedCrypt = useSnapshot(limitedStore).crypt;
@@ -103,10 +97,7 @@ const InventoryCryptTableRow = ({
         <ResultCryptCapacity card={card.c} />
       </div>
       {!isMobile && !isNarrow && (
-        <div
-          className="flex min-w-[170px] lg:min-w-[180px]"
-          onClick={() => handleClick(card.c)}
-        >
+        <div className="flex min-w-[170px] lg:min-w-[180px]" onClick={() => handleClick(card.c)}>
           <ResultCryptDisciplines value={card.c.Disciplines} />
         </div>
       )}
@@ -124,22 +115,13 @@ const InventoryCryptTableRow = ({
       </div>
       {isWide ? (
         <>
-          <div
-            className="flex min-w-[25px] justify-center"
-            onClick={() => handleClick(card.c)}
-          >
+          <div className="flex min-w-[25px] justify-center" onClick={() => handleClick(card.c)}>
             {card.c.Title && <ResultCryptTitle value={card.c.Title} />}
           </div>
-          <div
-            className="flex min-w-[35px] justify-center"
-            onClick={() => handleClick(card.c)}
-          >
+          <div className="flex min-w-[35px] justify-center" onClick={() => handleClick(card.c)}>
             <ResultClanImage value={card.c.Clan} />
           </div>
-          <div
-            className="flex min-w-[30px] justify-center"
-            onClick={() => handleClick(card.c)}
-          >
+          <div className="flex min-w-[30px] justify-center" onClick={() => handleClick(card.c)}>
             <ResultCryptGroup value={card.c.Group} />
           </div>
         </>

@@ -7,12 +7,7 @@ import {
   SearchAdditionalFormsTextForm,
 } from '@/components';
 
-const SearchAdditionalFormsText = ({
-  value,
-  onChange,
-  onChangeOptions,
-  searchForm,
-}) => {
+const SearchAdditionalFormsText = ({ value, onChange, onChangeOptions, searchForm }) => {
   const options = [
     {
       value: 'name',
@@ -36,11 +31,7 @@ const SearchAdditionalFormsText = ({
         const i = idx + 1;
         return (
           <div className="space-y-1" key={i}>
-            <SearchAdditionalFormsTextForm
-              id={i}
-              value={value[i]}
-              onChange={onChange}
-            />
+            <SearchAdditionalFormsTextForm id={i} value={value[i]} onChange={onChange} />
             <div className="flex">
               <div className="flex w-1/5 space-x-1">
                 <SearchFormButtonLogicToggle

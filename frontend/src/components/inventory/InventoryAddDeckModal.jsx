@@ -1,13 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { useSnapshot } from 'valtio';
 import { SelectCreatable } from '@/components';
-import {
-  DeckSortButton,
-  InventoryAddDeckRow,
-  Modal,
-  Checkbox,
-  Input,
-} from '@/components';
+import { DeckSortButton, InventoryAddDeckRow, Modal, Checkbox, Input } from '@/components';
 import { decksSort } from '@/utils';
 import { useApp, deckStore } from '@/context';
 
@@ -48,8 +42,7 @@ const InventoryAddDeckModal = ({ handleClose }) => {
 
       if (nameFilter) {
         filtered = filtered.filter((deck) => {
-          if (deck.name.toLowerCase().indexOf(nameFilter.toLowerCase()) >= 0)
-            return true;
+          if (deck.name.toLowerCase().indexOf(nameFilter.toLowerCase()) >= 0) return true;
         });
       }
 

@@ -11,10 +11,7 @@ const DeckCryptDisciplines = ({ value, disciplinesSet, keyDisciplines }) => {
         <tr>
           {disciplinesSet.slice(0, keyDisciplines).map((d, index) => {
             return (
-              <td
-                className="min-w-[24px] max-w-[24px] sm:min-w-[28px] sm:max-w-[28px]"
-                key={index}
-              >
+              <td className="min-w-[24px] max-w-[24px] sm:min-w-[28px] sm:max-w-[28px]" key={index}>
                 {value?.[d] && (
                   <div className="flex items-center justify-center">
                     <ResultDisciplineImage

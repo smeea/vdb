@@ -10,13 +10,9 @@ const DeckSelectPrecon = ({ deckid, handleSelect }) => {
   const options = useMemo(() => {
     const opts = [];
     Object.keys(setsAndPrecons)
-      .filter(
-        (i) => (playtestMode || i !== PLAYTEST) && setsAndPrecons[i].precons,
-      )
+      .filter((i) => (playtestMode || i !== PLAYTEST) && setsAndPrecons[i].precons)
       .forEach((set) => {
-        const year = setsAndPrecons[set].date
-          ? setsAndPrecons[set].date.slice(2, 4)
-          : null;
+        const year = setsAndPrecons[set].date ? setsAndPrecons[set].date.slice(2, 4) : null;
 
         Object.keys(setsAndPrecons[set].precons).forEach((precon) => {
           const fullName = setsAndPrecons[set].precons[precon].name;
@@ -30,9 +26,7 @@ const DeckSelectPrecon = ({ deckid, handleSelect }) => {
                 <div className="flex items-center">
                   <div
                     className={
-                      clans.length == 1
-                        ? 'flex w-[40px] items-center justify-center'
-                        : 'inline'
+                      clans.length == 1 ? 'flex w-[40px] items-center justify-center' : 'inline'
                     }
                   >
                     {clans.map((clan) => (

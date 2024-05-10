@@ -34,10 +34,7 @@ const TwdHallOfFameCards = () => {
         Object.keys(card.Set)
           .filter((set) => set !== POD)
           .forEach((set) => {
-            const d =
-              set === PROMO
-                ? Object.keys(card.Set.Promo)[0]
-                : setsAndPrecons[set].date;
+            const d = set === PROMO ? Object.keys(card.Set.Promo)[0] : setsAndPrecons[set].date;
 
             if (!releaseDate || releaseDate > d) {
               releaseDate = d;
@@ -75,8 +72,7 @@ const TwdHallOfFameCards = () => {
   };
 
   const isInnovation = (card) => {
-    const twdAppearanceDelay =
-      (new Date(card.twdDate) - new Date(card.releaseDate)) / MS_TO_DAYS;
+    const twdAppearanceDelay = (new Date(card.twdDate) - new Date(card.releaseDate)) / MS_TO_DAYS;
 
     if (card.twdDate < IGNORED_BEFORE_DATE) return false;
     return twdAppearanceDelay > INNOVATION_PERIOD;
@@ -115,10 +111,7 @@ const TwdHallOfFameCards = () => {
                   .toSorted(byTotal)
                   .map((player) => (
                     <Disclosure key={player}>
-                      <TwdHallFameCardsPlayer
-                        name={player}
-                        cards={players[player]}
-                      />
+                      <TwdHallFameCardsPlayer name={player} cards={players[player]} />
                     </Disclosure>
                   ))}
             </div>
@@ -126,19 +119,15 @@ const TwdHallOfFameCards = () => {
           <Tab.Panel>
             <div className="flex flex-col gap-1.5">
               <div className="rounded border border-borderPrimary p-3 dark:border-borderPrimaryDark">
-                Only counts cards first appeared in TWD{' '}
-                {INNOVATION_PERIOD / 365} years after card print, and excluding
-                cards from first 2 years of active tournaments (till{' '}
+                Only counts cards first appeared in TWD {INNOVATION_PERIOD / 365} years after card
+                print, and excluding cards from first 2 years of active tournaments (till{' '}
                 {IGNORED_BEFORE_DATE})
               </div>
               {players &&
                 Object.keys(players)
                   .toSorted(byName)
                   .toSorted(byInnovation)
-                  .filter(
-                    (player) =>
-                      Object.keys(getInnovationCards(players[player])).length,
-                  )
+                  .filter((player) => Object.keys(getInnovationCards(players[player])).length)
                   .map((player) => (
                     <Disclosure key={player}>
                       <TwdHallFameCardsPlayer

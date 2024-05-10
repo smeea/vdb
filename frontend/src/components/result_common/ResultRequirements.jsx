@@ -9,10 +9,7 @@ const TitlesReq = ({ value }) => {
     .join(', ');
 
   return (
-    <div
-      title={titles}
-      className="text-fg-fgSecondary dark:text-fgSecondaryDark"
-    >
+    <div title={titles} className="text-fg-fgSecondary dark:text-fgSecondaryDark">
       <ResultCryptTitle value={value[0]} noTitle />
       {value.length > 1 && '+'}
     </div>

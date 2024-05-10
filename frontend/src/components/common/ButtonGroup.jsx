@@ -1,24 +1,11 @@
 import React from 'react';
 import { Button } from '@/components';
 
-const ButtonGroup = ({
-  name,
-  onClick,
-  title,
-  isFirst,
-  isLast,
-  isSelected,
-  value,
-  children,
-}) => {
+const ButtonGroup = ({ name, onClick, title, isFirst, isLast, isSelected, value, children }) => {
   return (
     <Button
-      className={`w-full ${!isFirst ? 'rounded-l-none' : ''} ${
-        !isLast ? 'rounded-r-none' : ''
-      } ${
-        isSelected
-          ? ''
-          : 'hover:bg-borderSecondary dark:hover:bg-borderSecondaryDark'
+      className={`w-full ${!isFirst ? 'rounded-l-none' : ''} ${!isLast ? 'rounded-r-none' : ''} ${
+        isSelected ? '' : 'hover:bg-borderSecondary dark:hover:bg-borderSecondaryDark'
       }`}
       name={name}
       variant={isSelected ? 'fourth' : 'outline-primary'}

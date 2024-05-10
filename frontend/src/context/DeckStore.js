@@ -163,11 +163,7 @@ export const deckToggleInventoryState = (deckid) => {
 export const cardToggleInventoryState = (deckid, cardid) => {
   const deck = deckStore.decks[deckid];
   const target = cardid > 200000 ? 'crypt' : 'library';
-  const value = deck[target][cardid].i
-    ? ''
-    : deck.inventoryType === 's'
-      ? 'h'
-      : 's';
+  const value = deck[target][cardid].i ? '' : deck.inventoryType === 's' ? 'h' : 's';
   deckUpdate(deckid, 'usedInInventory', {
     [cardid]: value,
   });
@@ -194,12 +190,7 @@ export const deckAdd = (deck) => {
   deckStore.decks[deck.deckid] = d;
 };
 
-export const deckLocalize = (
-  localizedCrypt,
-  nativeCrypt,
-  localizedLibrary,
-  nativeLibrary,
-) => {
+export const deckLocalize = (localizedCrypt, nativeCrypt, localizedLibrary, nativeLibrary) => {
   Object.values(deckStore.deck.crypt).forEach((card) => {
     const id = card.c.Id;
     const newInfo = localizedCrypt[id] ? localizedCrypt[id] : nativeCrypt[id];
@@ -208,9 +199,7 @@ export const deckLocalize = (
   });
   Object.values(deckStore.deck.library).forEach((card) => {
     const id = card.c.Id;
-    const newInfo = localizedLibrary[id]
-      ? localizedLibrary[id]
-      : nativeLibrary[id];
+    const newInfo = localizedLibrary[id] ? localizedLibrary[id] : nativeLibrary[id];
     deckStore.deck.library[id].c['Name'] = newInfo['Name'];
     deckStore.deck.library[id].c['Card Text'] = newInfo['Card Text'];
   });
@@ -221,9 +210,7 @@ const changeMaster = (deckid) => {
   const oldMasterDeckid = deckStore.decks[deckid].master;
 
   if (oldMasterDeckid) {
-    const branches = deckStore.decks[oldMasterDeckid].branches.filter(
-      (i) => i !== deckid,
-    );
+    const branches = deckStore.decks[oldMasterDeckid].branches.filter((i) => i !== deckid);
     branches.push(oldMasterDeckid);
 
     branches.forEach((b) => {

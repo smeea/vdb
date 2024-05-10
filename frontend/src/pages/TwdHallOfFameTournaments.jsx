@@ -24,10 +24,7 @@ const TwdHallOfFameTournaments = () => {
             .toSorted(byWins)
             .map((player) => (
               <Disclosure key={player}>
-                <TwdHallFameTournamentsPlayer
-                  name={player}
-                  decks={value[player]}
-                />
+                <TwdHallFameTournamentsPlayer name={player} decks={value[player]} />
               </Disclosure>
             ))}
         </>

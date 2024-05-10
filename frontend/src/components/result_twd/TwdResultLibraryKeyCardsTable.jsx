@@ -36,8 +36,7 @@ const TwdResultLibraryKeyCardsTable = ({ library, withHeader }) => {
     setShowFloatingButtons(true);
   };
 
-  const { libraryTotal, hasBanned, poolTotal, bloodTotal } =
-    useDeckLibrary(library);
+  const { libraryTotal, hasBanned, poolTotal, bloodTotal } = useDeckLibrary(library);
 
   return (
     <div>
@@ -48,13 +47,7 @@ const TwdResultLibraryKeyCardsTable = ({ library, withHeader }) => {
               {isMobile ? 'Lib' : 'Library'} [{libraryTotal}], Keys:
             </div>
             {hasBanned && (
-              <>
-                {isMobile ? (
-                  <ResultLegalIcon type={BANNED} />
-                ) : (
-                  <Warning type={BANNED} />
-                )}
-              </>
+              <>{isMobile ? <ResultLegalIcon type={BANNED} /> : <Warning type={BANNED} />}</>
             )}
             <div className="flex gap-1.5 sm:gap-3">
               <div className="flex items-center gap-1" title="Total Blood Cost">

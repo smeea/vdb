@@ -25,16 +25,8 @@ const Modal = ({
   };
 
   return (
-    <Dialog
-      initialFocus={initialFocus}
-      onClose={handleClose}
-      className="relative z-50"
-      open
-    >
-      <div
-        className="fixed inset-0 bg-black bg-opacity-50"
-        aria-hidden="true"
-      />
+    <Dialog initialFocus={initialFocus} onClose={handleClose} className="relative z-50" open>
+      <div className="fixed inset-0 bg-black bg-opacity-50" aria-hidden="true" />
       <div className="fixed inset-0 overflow-y-auto">
         <div
           className={`flex min-h-full justify-center p-0 sm:p-8 ${
@@ -43,9 +35,7 @@ const Modal = ({
         >
           <Dialog.Panel
             className={`border-bgSecondary dark:border-bgSecondaryDark
-            ${widthClass[size]} rounded ${
-              noBorder ? '' : 'border'
-            } bg-bgPrimary ${
+            ${widthClass[size]} rounded ${noBorder ? '' : 'border'} bg-bgPrimary ${
               noPadding ? '' : 'p-3 sm:p-5'
             } dark:bg-bgPrimaryDark`}
           >

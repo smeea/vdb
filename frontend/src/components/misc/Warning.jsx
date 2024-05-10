@@ -17,9 +17,7 @@ const Warning = ({ type, value = 'WARNING', title = '' }) => {
     PLAYTEST: {
       text: 'PLAYTEST',
       title: 'Playtest',
-      icon: (
-        <ResultLegalIcon type={PLAYTEST} value={PLAYTEST} className="flex" />
-      ),
+      icon: <ResultLegalIcon type={PLAYTEST} value={PLAYTEST} className="flex" />,
     },
     LEGAL: {
       text: 'LEGAL',
@@ -37,9 +35,7 @@ const Warning = ({ type, value = 'WARNING', title = '' }) => {
       className="flex items-center gap-0.5 dark:text-fgedDark whitespace-nowrap text-fgRed"
       title={types?.[type]?.title ?? title}
     >
-      {types?.[type]?.icon ?? (
-        <Exclamation width="15" height="15" viewBox="0 0 16 16" />
-      )}
+      {types?.[type]?.icon ?? <Exclamation width="15" height="15" viewBox="0 0 16 16" />}
       <div className="flex items-center">{types?.[type]?.text ?? value}</div>
     </div>
   );

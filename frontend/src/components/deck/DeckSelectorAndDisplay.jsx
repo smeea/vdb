@@ -16,12 +16,9 @@ import { setDeck, deckStore, useApp } from '@/context';
 
 const DeckSelectorAndDisplay = () => {
   const { playtestMode, isDesktop, addMode, toggleAddMode } = useApp();
-  const deck = useSnapshot(deckStore).deck;
-  const decks = useSnapshot(deckStore).decks;
+  const { deck, decks } = useSnapshot(deckStore);
 
-  const isBranches = deck
-    ? deck.master || (deck.branches && deck.branches.length > 0)
-    : null;
+  const isBranches = deck ? deck.master || (deck.branches && deck.branches.length > 0) : null;
 
   const handleSelect = (e) => {
     setDeck(decks[e.value]);
@@ -33,19 +30,14 @@ const DeckSelectorAndDisplay = () => {
         {addMode && (
           <>
             <div className={isBranches ? 'w-3/4' : 'w-full'}>
-              <DeckSelectMy
-                handleSelect={handleSelect}
-                deckid={deck?.deckid ?? null}
-              />
+              <DeckSelectMy handleSelect={handleSelect} deckid={deck?.deckid ?? null} />
             </div>
             {isBranches && (
               <div className="w-1/4">
                 <DeckBranchSelect deck={deck ?? null} />
               </div>
             )}
-            {deck?.isAuthor && !deck?.isPublic && (
-              <DeckFreezeButton deck={deck} />
-            )}
+            {deck?.isAuthor && !deck?.isPublic && <DeckFreezeButton deck={deck} />}
           </>
         )}
         {isDesktop && (

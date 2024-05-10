@@ -1,13 +1,7 @@
 import React, { useState } from 'react';
 import { Menu } from '@headlessui/react';
 import Printer from '@/assets/images/icons/printer.svg?react';
-import {
-  Spinner,
-  MenuButton,
-  MenuItems,
-  MenuItem,
-  DeckProxySelectModal,
-} from '@/components';
+import { Spinner, MenuButton, MenuItems, MenuItem, DeckProxySelectModal } from '@/components';
 import { countCards, cryptSort, librarySort } from '@/utils';
 import { useCardImageUrl } from '@/hooks';
 import { GROUPED_TYPE } from '@/utils/constants';
@@ -148,13 +142,7 @@ const DeckProxyButton = ({ missingCrypt, missingLibrary, deck, inDiff }) => {
       <Menu as="div" className="relative">
         <MenuButton
           title="Create PDF with Cards"
-          icon={
-            isLoading ? (
-              <Spinner />
-            ) : (
-              <Printer width="18" height="18" viewBox="0 0 18 16" />
-            )
-          }
+          icon={isLoading ? <Spinner /> : <Printer width="18" height="18" viewBox="0 0 18 16" />}
           variant={isDesktop ? 'secondary' : 'primary'}
           text="PDF Proxy"
         />

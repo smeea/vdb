@@ -11,10 +11,7 @@ const DeckCopyUrlButton = ({ deck, noText, setQrUrl }) => {
   const [success, setSuccess] = useState(false);
 
   const handleStandard = () => {
-    const url = `${import.meta.env.VITE_BASE_URL}/decks/${deck.deckid.replace(
-      ' ',
-      '_',
-    )}`;
+    const url = `${import.meta.env.VITE_BASE_URL}/decks/${deck.deckid.replace(' ', '_')}`;
     navigator.clipboard.writeText(url);
     setSuccess(true);
     setTimeout(() => {
@@ -25,10 +22,7 @@ const DeckCopyUrlButton = ({ deck, noText, setQrUrl }) => {
   };
 
   const handleStandardQr = () => {
-    const url = `${import.meta.env.VITE_BASE_URL}/decks/${deck.deckid.replace(
-      ' ',
-      '_',
-    )}`;
+    const url = `${import.meta.env.VITE_BASE_URL}/decks/${deck.deckid.replace(' ', '_')}`;
 
     setShowMenuButtons(false);
     setShowFloatingButtons(false);
@@ -70,16 +64,8 @@ const DeckCopyUrlButton = ({ deck, noText, setQrUrl }) => {
     <Menu as="div" className="relative">
       <MenuButton
         title="Copy URL"
-        icon={
-          <Link45Deg
-            width={noText ? 19 : 21}
-            height={noText ? 19 : 21}
-            viewBox="0 0 15 15"
-          />
-        }
-        variant={
-          success ? 'success' : noText || !isDesktop ? 'primary' : 'secondary'
-        }
+        icon={<Link45Deg width={noText ? 19 : 21} height={noText ? 19 : 21} viewBox="0 0 15 15" />}
+        variant={success ? 'success' : noText || !isDesktop ? 'primary' : 'secondary'}
         text={noText ? null : success ? 'Copied' : 'Copy URL'}
       />
       <MenuItems divided>

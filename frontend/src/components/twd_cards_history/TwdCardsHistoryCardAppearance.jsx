@@ -11,9 +11,7 @@ const TwdCardsHistoryCardAppearance = ({ card, byPlayer }) => {
   if (card.twd_date) {
     yearsToWin =
       Math.round(
-        (new Date(card.twd_date) - new Date(card.release_date)) /
-          (1000 * 60 * 60 * 24) /
-          365,
+        (new Date(card.twd_date) - new Date(card.release_date)) / (1000 * 60 * 60 * 24) / 365,
       ) || 1;
   } else {
     const date = new Date();
@@ -23,18 +21,14 @@ const TwdCardsHistoryCardAppearance = ({ card, byPlayer }) => {
   const handleClick = (author) => {
     clearSearchForm('twd');
     searchTwdForm.author = author;
-    navigate(
-      `/twd?q=${encodeURIComponent(JSON.stringify({ author: author }))}`,
-    );
+    navigate(`/twd?q=${encodeURIComponent(JSON.stringify({ author: author }))}`);
   };
 
   return (
     <>
       <div
         className={`flex min-w-[45px] items-center justify-center sm:min-w-[60px] ${
-          card.deckid
-            ? ''
-            : 'font-bold text-fgSecondary dark:text-fgSecondaryDark'
+          card.deckid ? '' : 'font-bold text-fgSecondary dark:text-fgSecondaryDark'
         }`}
       >
         {card.release_date.slice(0, 4)}
@@ -46,9 +40,7 @@ const TwdCardsHistoryCardAppearance = ({ card, byPlayer }) => {
       )}
       <div
         className={`flex min-w-[25px] items-center justify-center sm:min-w-[60px] ${
-          card.deckid
-            ? ''
-            : 'font-bold text-fgSecondary dark:text-fgSecondaryDark'
+          card.deckid ? '' : 'font-bold text-fgSecondary dark:text-fgSecondaryDark'
         }`}
       >
         {yearsToWin}
@@ -72,9 +64,7 @@ Library: ${byPlayer.library}`}
         )}
       </div>
       <div className="flex min-w-[45px] items-center justify-end sm:min-w-[110px]">
-        {card.deckid && (
-          <TwdOpenDeckButton deckid={card.deckid} noText={isMobile} />
-        )}
+        {card.deckid && <TwdOpenDeckButton deckid={card.deckid} noText={isMobile} />}
       </div>
     </>
   );

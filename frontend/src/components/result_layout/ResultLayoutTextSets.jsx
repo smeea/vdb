@@ -33,8 +33,7 @@ const PopoverText = ({ sets, set }) => {
   return (
     <div className="max-w-[400px] space-y-1">
       <b>{setsAndPrecons[set].name}</b>
-      {![POD, PROMO, PLAYTEST].includes(set) &&
-        ' - ' + setsAndPrecons[set].date.slice(0, 4)}
+      {![POD, PROMO, PLAYTEST].includes(set) && ' - ' + setsAndPrecons[set].date.slice(0, 4)}
       {![POD, PROMO].includes(set) && (
         <ul className="space-y-1">
           <PreconsDetailed sets={sets} set={set} />
@@ -90,19 +89,10 @@ const ResultLayoutTextSets = ({ sets, setImageSet }) => {
   return (
     <>
       <div className="flex flex-wrap gap-x-2.5 gap-y-0.5">
-        <Sets
-          sets={sets}
-          setImageSet={setImageSet}
-          setSelectedSet={setSelectedSet}
-        />
+        <Sets sets={sets} setImageSet={setImageSet} setSelectedSet={setSelectedSet} />
       </div>
       {selectedSet && (
-        <Modal
-          size="xs"
-          handleClose={() => setSelectedSet(null)}
-          title="Sets"
-          centered
-        >
+        <Modal size="xs" handleClose={() => setSelectedSet(null)} title="Sets" centered>
           <PopoverText sets={sets} set={selectedSet} />
         </Modal>
       )}

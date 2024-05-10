@@ -1,13 +1,7 @@
 import React from 'react';
 import virtuesList from '@/assets/data/virtuesList.json';
 
-const ResultDisciplineImage = ({
-  value,
-  superior,
-  name,
-  size = 'md',
-  title,
-}) => {
+const ResultDisciplineImage = ({ value, superior, name, size = 'md', title }) => {
   const sizeStyle = {
     xs: 'min-w-[20px] max-w-[20px]',
     sm: 'min-w-[22px] max-w-[22px]',

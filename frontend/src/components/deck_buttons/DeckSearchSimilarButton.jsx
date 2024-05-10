@@ -3,12 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Menu } from '@headlessui/react';
 import SymmetryVertical from '@/assets/images/icons/symmetry-vertical.svg?react';
 import { MenuItems, MenuItem, MenuButton } from '@/components';
-import {
-  useApp,
-  clearSearchForm,
-  searchTwdForm,
-  searchPdaForm,
-} from '@/context';
+import { useApp, clearSearchForm, searchTwdForm, searchPdaForm } from '@/context';
 
 const DeckSearchSimilarButton = ({ deck }) => {
   const { isDesktop, setShowFloatingButtons, setShowMenuButtons } = useApp();

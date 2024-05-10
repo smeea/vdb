@@ -26,11 +26,8 @@ import {
 import { useDeckImport, useTags } from '@/hooks';
 
 const TournamentAnalyze = () => {
-  const { username, cryptCardBase, libraryCardBase, isMobile, isDesktop } =
-    useApp();
-  const decks = useSnapshot(analyzeStore).all;
-  const results = useSnapshot(analyzeStore).results;
-  const info = useSnapshot(analyzeStore).info;
+  const { username, cryptCardBase, libraryCardBase, isMobile, isDesktop } = useApp();
+  const { decks, results, info } = useSnapshot(analyzeStore).all;
   const params = useParams();
   const navigate = useNavigate();
 
@@ -123,8 +120,7 @@ const TournamentAnalyze = () => {
     dataInfo.forEach((n) => {
       const array = n.split(',');
       if (array[0] === 'Number of Players:') totalPlayers = array[1];
-      if (array[0] === 'Number of Rounds (including final):')
-        totalRounds = array[1];
+      if (array[0] === 'Number of Rounds (including final):') totalRounds = array[1];
       if (array[0] === 'Number of Event Matches:') totalMatches = array[1];
       if (array[0] === 'Event Name:') event = array[1];
       if (array[0] === 'Event Date (DD-MON-YY):') date = array[1];
@@ -216,12 +212,7 @@ const TournamentAnalyze = () => {
   }, [tempDecks, tempArchon]);
 
   useEffect(() => {
-    if (
-      params.tournamentid &&
-      !(decks || info) &&
-      cryptCardBase &&
-      libraryCardBase
-    ) {
+    if (params.tournamentid && !(decks || info) && cryptCardBase && libraryCardBase) {
       loadPrepared(params.tournamentid);
     }
   }, [params.tournamentid, cryptCardBase, libraryCardBase]);
@@ -271,28 +262,18 @@ const TournamentAnalyze = () => {
           <div className="flex justify-center basis-9/12 max-sm:order-last">
             {error && (
               <div className="w-full">
-                <ErrorMessage>
-                  NO DATA AVAILABLE FOR EVENT #{error}
-                </ErrorMessage>
+                <ErrorMessage>NO DATA AVAILABLE FOR EVENT #{error}</ErrorMessage>
               </div>
             )}
             {decks && info && (
-              <AnalyzeTournamentCharts
-                info={info}
-                decks={decks}
-                searchResults={results ?? {}}
-              />
+              <AnalyzeTournamentCharts info={info} decks={decks} searchResults={results ?? {}} />
             )}
           </div>
           <FlexGapped className="basis-3/12 flex-col">
             {info && decks && (
               <>
                 {isDesktop ? (
-                  <ButtonClose
-                    handleClick={handleClear}
-                    title="Clear Data"
-                    text="Clear"
-                  />
+                  <ButtonClose handleClick={handleClear} title="Clear Data" text="Clear" />
                 ) : (
                   <ButtonFloatClose handleClose={handleClear} />
                 )}
@@ -304,9 +285,7 @@ const TournamentAnalyze = () => {
         {decks && info && (
           <FlexGapped>
             <div className="flex flex-col gap-4 sm:basis-7/12 sm:p-0 lg:basis-8/12 xl:basis-9/12">
-              <AnalyzeTournamentResult
-                decks={results ?? Object.values(decks)}
-              />
+              <AnalyzeTournamentResult decks={results ?? Object.values(decks)} />
             </div>
             {!(isMobile && decks && info) && (
               <div className="basis-full p-2 sm:basis-5/12 sm:p-0 lg:basis-4/12 xl:basis-3/12">

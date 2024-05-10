@@ -48,8 +48,7 @@ const SelectCreatable = React.forwardRef(
           `,
           dropdownIndicator: () => 'max-w-[0px] max-h-[0px]',
           indicatorsContainer: () => 'rounded max-h-[0px] max-w-[0px]',
-          menu: () =>
-            'my-2 rounded border border-borderThird dark:border-borderThirdDark',
+          menu: () => 'my-2 rounded border border-borderThird dark:border-borderThirdDark',
           menuList: () => 'rounded bg-bgPrimary dark:bg-bgPrimaryDark',
           option: (state) => `p-2
           ${

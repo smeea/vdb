@@ -36,13 +36,7 @@ const AccountRegister = () => {
   const registerUser = () => {
     setConnectionError(false);
     setIsLoading(true);
-    userServices.register(
-      formUsername,
-      formPassword,
-      formEmail,
-      onSuccess,
-      onError,
-    );
+    userServices.register(formUsername, formPassword, formEmail, onSuccess, onError);
   };
 
   const handleSubmit = (event) => {
@@ -60,13 +54,8 @@ const AccountRegister = () => {
       </div>
       <form className="space-y-2" onSubmit={handleSubmit}>
         <div className="relative flex w-full">
-          <AccountUsernameForm
-            value={formUsername}
-            setValue={setFormUsername}
-          />
-          {usernameError && (
-            <ErrorOverlay placement="bottom">{usernameError}</ErrorOverlay>
-          )}
+          <AccountUsernameForm value={formUsername} setValue={setFormUsername} />
+          {usernameError && <ErrorOverlay placement="bottom">{usernameError}</ErrorOverlay>}
         </div>
         <div className="relative flex w-full">
           <AccountEmailForm value={formEmail} setValue={setFormEmail} />
@@ -77,9 +66,7 @@ const AccountRegister = () => {
             setValue={setFormPassword}
             isLoading={isLoading}
           />
-          {connectionError && (
-            <ErrorOverlay placement="bottom">{connectionError}</ErrorOverlay>
-          )}
+          {connectionError && <ErrorOverlay placement="bottom">{connectionError}</ErrorOverlay>}
         </div>
       </form>
     </div>

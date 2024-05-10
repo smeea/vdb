@@ -13,9 +13,7 @@ const drawProbability = (x, N, n, k) => {
   };
 
   const exactProbability = (i, N, n, k) => {
-    return (
-      (combinations(k, i) * combinations(N - k, n - i)) / combinations(N, n)
-    );
+    return (combinations(k, i) * combinations(N - k, n - i)) / combinations(N, n);
   };
 
   let prob = 0;

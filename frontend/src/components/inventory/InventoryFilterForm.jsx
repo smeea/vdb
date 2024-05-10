@@ -1,19 +1,8 @@
 import React from 'react';
-import {
-  ResultLibraryTypeImage,
-  ResultDisciplineImage,
-  ResultClanImage,
-} from '@/components';
+import { ResultLibraryTypeImage, ResultDisciplineImage, ResultClanImage } from '@/components';
 import { Select } from '@/components';
 
-const InventoryFilterForm = ({
-  value,
-  setValue,
-  values,
-  target,
-  byTotal,
-  byUnique,
-}) => {
+const InventoryFilterForm = ({ value, setValue, values, target, byTotal, byUnique }) => {
   const options = [];
 
   values.map((i) => {

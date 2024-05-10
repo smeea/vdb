@@ -1,9 +1,5 @@
 import React from 'react';
-import {
-  TwdResultCryptTable,
-  TwdResultLibraryKeyCardsTable,
-  TwdResultTags,
-} from '@/components';
+import { TwdResultCryptTable, TwdResultLibraryKeyCardsTable, TwdResultTags } from '@/components';
 
 const BubbleChartTooltip = ({ active, payload }) => {
   const value = payload?.[0]?.payload;
@@ -15,15 +11,11 @@ const BubbleChartTooltip = ({ active, payload }) => {
       {active && (
         <div className="flex flex-col gap-2 p-1">
           <div className="flex items-center justify-between">
-            <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
-              {value.clan}
-            </div>
+            <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">{value.clan}</div>
             <div className="flex gap-2">
-              {value.tags &&
-                (value.tags.superior.length > 0 ||
-                  value.tags.base.length > 0) && (
-                  <TwdResultTags tags={value.tags} />
-                )}
+              {value.tags && (value.tags.superior.length > 0 || value.tags.base.length > 0) && (
+                <TwdResultTags tags={value.tags} />
+              )}
               <div className="flex items-center rounded-lg border px-2 py-0.5 font-bold text-fgSecondary dark:text-fgSecondaryDark">
                 # {value.rank}
               </div>

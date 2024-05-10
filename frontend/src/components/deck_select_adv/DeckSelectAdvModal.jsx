@@ -72,20 +72,12 @@ const DeckSelectAdvModal = ({ onClick, setShow, allTagsOptions, short }) => {
         {!(short || isMobile) && (
           <div className="flex justify-end max-sm:flex-col max-sm:p-2 max-sm:pt-0">
             <Menu as="div" className="relative">
-              <MenuButton
-                title="Export Selected"
-                icon={<Download />}
-                text="Export Selected"
-              />
+              <MenuButton title="Export Selected" icon={<Download />} text="Export Selected" />
               <MenuItems>
                 <MenuItem onClick={() => exportSelected('text')}>Text</MenuItem>
-                <MenuItem onClick={() => exportSelected('lackey')}>
-                  Lackey
-                </MenuItem>
+                <MenuItem onClick={() => exportSelected('lackey')}>Lackey</MenuItem>
                 <MenuItem onClick={() => exportSelected('jol')}>JOL</MenuItem>
-                <MenuItem onClick={() => exportSelected('xlsx')}>
-                  Excel
-                </MenuItem>
+                <MenuItem onClick={() => exportSelected('xlsx')}>Excel</MenuItem>
               </MenuItems>
             </Menu>
           </div>

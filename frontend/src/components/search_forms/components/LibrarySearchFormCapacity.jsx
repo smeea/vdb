@@ -6,20 +6,7 @@ const LibrarySearchFormCapacity = ({ value, onChange }) => {
   const { isXWide } = useApp();
   const maxMenuHeight = isXWide ? 500 : 350;
   const name = 'capacity';
-  const options = [
-    'ANY',
-    '1',
-    '2',
-    '3',
-    '4',
-    '5',
-    '6',
-    '7',
-    '8',
-    '9',
-    '10',
-    '11',
-  ].map((i) => ({
+  const options = ['ANY', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11'].map((i) => ({
     value: i.toLowerCase(),
     name: name,
     label: <div className="flex justify-center">{i}</div>,
@@ -37,9 +24,7 @@ const LibrarySearchFormCapacity = ({ value, onChange }) => {
   return (
     <div className="flex items-center">
       <div className="w-1/4">
-        <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
-          Capacity:
-        </div>
+        <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Capacity:</div>
       </div>
       <div className="flex w-3/4 space-x-1">
         <div className="w-1/2">
@@ -59,9 +44,7 @@ const LibrarySearchFormCapacity = ({ value, onChange }) => {
             name={0}
             maxMenuHeight={maxMenuHeight}
             value={options.find((obj) => obj.value === value[name])}
-            onChange={(e, id) =>
-              e ? onChange(e, id) : onChange({ name: name, value: 'any' }, id)
-            }
+            onChange={(e, id) => (e ? onChange(e, id) : onChange({ name: name, value: 'any' }, id))}
           />
         </div>
       </div>

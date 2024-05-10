@@ -51,31 +51,21 @@ const DeckDrawModal = ({
   } = useModalCardController(burnedCrypt, burnedLibrary);
 
   return (
-    <Modal
-      size="lg"
-      handleClose={handleClose}
-      title="Deck Draw"
-      noPadding={isMobile}
-    >
+    <Modal size="lg" handleClose={handleClose} title="Deck Draw" noPadding={isMobile}>
       <FlexGapped className="flex-col">
         <FlexGapped className="max-md:flex-col">
           <div className="basis-full sm:basis-5/9">
             <div>
               <Header>
                 <div className="flex w-full justify-between px-2">
-                  <div className="flex items-center font-bold">
-                    Uncontrolled
-                  </div>
+                  <div className="flex items-center font-bold">Uncontrolled</div>
                   <div
                     className="flex items-center font-bold"
                     title="In Uncontrolled + Remaining in Crypt"
                   >
                     {drawedCrypt.length} + {restCrypt.length}
                   </div>
-                  <div
-                    className="flex items-center font-bold"
-                    title="Initial Transfers"
-                  >
+                  <div className="flex items-center font-bold" title="Initial Transfers">
                     {initialTransfers}t
                   </div>
                 </div>
@@ -114,9 +104,7 @@ const DeckDrawModal = ({
                   </Button>
                 </div>
               </Header>
-              {cryptTotal < 4 && (
-                <ErrorMessage>NOT ENOUGH CARDS FOR INITIAL DRAW</ErrorMessage>
-              )}
+              {cryptTotal < 4 && <ErrorMessage>NOT ENOUGH CARDS FOR INITIAL DRAW</ErrorMessage>}
               <DeckDrawCryptTable
                 crypt={crypt}
                 handleClick={burnCrypt}
@@ -129,10 +117,7 @@ const DeckDrawModal = ({
             <Header>
               <div className="flex w-full justify-between px-2">
                 <div className="flex items-center font-bold">Hand</div>
-                <div
-                  className="flex items-center font-bold"
-                  title="In Hand + Remaining in Library"
-                >
+                <div className="flex items-center font-bold" title="In Hand + Remaining in Library">
                   {drawedLibrary.length} + {restLibrary.length}
                 </div>
                 <div />
@@ -172,9 +157,7 @@ const DeckDrawModal = ({
                 </Button>
               </div>
             </Header>
-            {libraryTotal < 7 && (
-              <ErrorMessage>NOT ENOUGH CARDS FOR INITIAL DRAW</ErrorMessage>
-            )}
+            {libraryTotal < 7 && <ErrorMessage>NOT ENOUGH CARDS FOR INITIAL DRAW</ErrorMessage>}
             <DeckDrawLibraryTable
               handleClick={burnLibrary}
               restCards={restLibrary}
@@ -189,16 +172,9 @@ const DeckDrawModal = ({
               {burnedCrypt.length > 0 && (
                 <div>
                   <div className="flex h-10 justify-between bg-bgSecondary px-2 dark:bg-bgSecondaryDark text-fgSecondary dark:text-fgPrimaryDark">
-                    <div className="flex items-center font-bold">
-                      Controlled
-                    </div>
-                    <div className="flex items-center font-bold">
-                      {burnedCrypt.length}
-                    </div>
-                    <div
-                      className="flex gap-1 items-center"
-                      title="Total Capacity"
-                    >
+                    <div className="flex items-center font-bold">Controlled</div>
+                    <div className="flex items-center font-bold">{burnedCrypt.length}</div>
+                    <div className="flex gap-1 items-center" title="Total Capacity">
                       <ResultCryptCapacity card={{ Capacity: 'X' }} />
                       <b>{burnedCapacityTotal}</b>
                     </div>
@@ -217,24 +193,13 @@ const DeckDrawModal = ({
                 <div>
                   <div className="flex h-10 justify-between bg-bgSecondary px-2 dark:bg-bgSecondaryDark text-fgSecondary dark:text-fgPrimaryDark">
                     <div className="flex items-center font-bold">Ash Heap</div>
-                    <div className="flex items-center font-bold">
-                      {burnedLibrary.length}
-                    </div>
+                    <div className="flex items-center font-bold">{burnedLibrary.length}</div>
                     <div className="flex gap-3">
-                      <div
-                        className="flex items-center gap-1"
-                        title="Total Blood Cost"
-                      >
-                        <ResultLibraryCost
-                          valueBlood="X"
-                          className="h-[30px] pb-1"
-                        />
+                      <div className="flex items-center gap-1" title="Total Blood Cost">
+                        <ResultLibraryCost valueBlood="X" className="h-[30px] pb-1" />
                         <b>{burnedBloodTotal}</b>
                       </div>
-                      <div
-                        className="flex items-center gap-1"
-                        title="Total Pool Cost"
-                      >
+                      <div className="flex items-center gap-1" title="Total Pool Cost">
                         <ResultLibraryCost valuePool="X" className="h-[30px]" />
                         <b>{burnedPoolTotal}</b>
                       </div>

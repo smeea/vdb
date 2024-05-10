@@ -24,9 +24,7 @@ export const inventoryCardsAdd = (cards) => {
 
   const filteredCards = {};
   Object.keys(cards)
-    .filter(
-      (cardid) => !(cardid > 210000 || (cardid < 200000 && cardid > 110000)),
-    )
+    .filter((cardid) => !(cardid > 210000 || (cardid < 200000 && cardid > 110000)))
     .forEach((cardid) => {
       filteredCards[cardid] = cards[cardid];
     });
@@ -58,11 +56,8 @@ export const inventoryCardsAdd = (cards) => {
 
 export const inventoryCardChange = (card, q) => {
   if (card.Id > 210000 || (card.Id < 200000 && card.Id > 110000)) return;
-  const initialState = deepClone(
-    card.Id > 200000 ? inventoryStore.crypt : inventoryStore.library,
-  );
-  const store =
-    card.Id > 200000 ? inventoryStore.crypt : inventoryStore.library;
+  const initialState = deepClone(card.Id > 200000 ? inventoryStore.crypt : inventoryStore.library);
+  const store = card.Id > 200000 ? inventoryStore.crypt : inventoryStore.library;
 
   inventoryServices.setCard(card.Id, q).catch(() => {
     if (card.Id > 200000) {
@@ -88,11 +83,8 @@ export const inventoryCardChange = (card, q) => {
 
 export const inventoryCardTextChange = (card, text) => {
   if (card.Id > 210000 || (card.Id < 200000 && card.Id > 110000)) return;
-  const initialState = deepClone(
-    card.Id > 200000 ? inventoryStore.crypt : inventoryStore.library,
-  );
-  const store =
-    card.Id > 200000 ? inventoryStore.crypt : inventoryStore.library;
+  const initialState = deepClone(card.Id > 200000 ? inventoryStore.crypt : inventoryStore.library);
+  const store = card.Id > 200000 ? inventoryStore.crypt : inventoryStore.library;
 
   inventoryServices.setCardText(card.Id, text).catch(() => {
     if (card.Id > 200000) {

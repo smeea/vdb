@@ -24,11 +24,7 @@ const ConditionalTooltipOrModal = ({
         </Tooltip>
       )}
       {showModal && (
-        <Modal
-          title={title}
-          handleClose={() => setShowModal(false)}
-          centered={centered}
-        >
+        <Modal title={title} handleClose={() => setShowModal(false)} centered={centered}>
           {overlay}
         </Modal>
       )}

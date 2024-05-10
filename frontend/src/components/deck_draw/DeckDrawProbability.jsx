@@ -1,8 +1,5 @@
 import React from 'react';
-import {
-  ConditionalTooltipOrModal,
-  DeckDrawProbabilityText,
-} from '@/components';
+import { ConditionalTooltipOrModal, DeckDrawProbabilityText } from '@/components';
 import { useApp } from '@/context';
 import { drawProbability } from '@/utils';
 

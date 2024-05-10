@@ -1,11 +1,6 @@
 import React from 'react';
 import { useSnapshot } from 'valtio';
-import {
-  DeckProxyCryptTable,
-  ResultModal,
-  Header,
-  FlexGapped,
-} from '@/components';
+import { DeckProxyCryptTable, ResultModal, Header, FlexGapped } from '@/components';
 import { countCards } from '@/utils';
 import { useApp, deckStore } from '@/context';
 import { useModalCardController, useDeckCrypt } from '@/hooks';
@@ -28,10 +23,7 @@ const DeckProxyCrypt = ({
 
   const proxiesToPrint = Object.keys(proxySelected)
     .filter(
-      (cardid) =>
-        cardid > 200000 &&
-        proxySelected[cardid].print &&
-        proxySelected[cardid].q > 0,
+      (cardid) => cardid > 200000 && proxySelected[cardid].print && proxySelected[cardid].q > 0,
     )
     .map((cardid) => proxySelected[cardid]);
 

@@ -30,9 +30,7 @@ const SelectLabelCrypt = ({ cardid, inInventory }) => {
           )}
           <ResultCryptCapacity card={card} />
           <ResultName card={card} colored={false} />
-          <div className="text-midGray dark:text-midGrayDark">
-            [G{card.Group}]
-          </div>
+          <div className="text-midGray dark:text-midGrayDark">[G{card.Group}]</div>
           <ResultClanImage value={card.Clan} />
         </div>
         <div className="flex whitespace-nowrap">

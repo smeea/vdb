@@ -6,14 +6,7 @@ import { cardtypeSorted } from '@/utils/constants';
 import { getHardTotal, getSoftMax } from '@/utils';
 import { useApp, usedStore } from '@/context';
 
-const useInventoryLibrary = (
-  cards = {},
-  category = 'ok',
-  compact,
-  type,
-  discipline,
-  onlyNotes,
-) => {
+const useInventoryLibrary = (cards = {}, category = 'ok', compact, type, discipline, onlyNotes) => {
   const usedLibrary = useSnapshot(usedStore).library;
   const { libraryCardBase } = useApp();
 
@@ -36,12 +29,7 @@ const useInventoryLibrary = (
       'Striga',
     ].toSorted();
 
-    [
-      'All',
-      'None',
-      ...disciplinesExtendedList,
-      ...Object.keys(virtuesList),
-    ].forEach((i) => {
+    ['All', 'None', ...disciplinesExtendedList, ...Object.keys(virtuesList)].forEach((i) => {
       cardsByDiscipline[i] = {};
       missingByDiscipline[i] = {};
     });

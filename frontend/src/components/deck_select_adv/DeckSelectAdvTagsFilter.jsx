@@ -2,11 +2,7 @@ import React from 'react';
 import { SelectCreatable } from '@/components';
 import { useApp } from '@/context';
 
-const DeckSelectAdvTagsFilter = ({
-  tagsFilter,
-  handleChangeTagsFilter,
-  allTagsOptions,
-}) => {
+const DeckSelectAdvTagsFilter = ({ tagsFilter, handleChangeTagsFilter, allTagsOptions }) => {
   const { isMobile } = useApp();
 
   const tags = tagsFilter

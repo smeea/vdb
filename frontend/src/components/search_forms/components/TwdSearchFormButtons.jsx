@@ -1,11 +1,6 @@
 import React from 'react';
 import { useApp } from '@/context';
-import {
-  ButtonClose,
-  TwdMoreButton,
-  TwdNewDecksButton,
-  TwdRandomButton,
-} from '@/components';
+import { ButtonClose, TwdMoreButton, TwdNewDecksButton, TwdRandomButton } from '@/components';
 
 const TwdSearchFormButtons = ({ getRandom, getNew, handleClear, inPda }) => {
   const { isMobile } = useApp();
@@ -18,12 +13,7 @@ const TwdSearchFormButtons = ({ getRandom, getNew, handleClear, inPda }) => {
       </div>
       <div className="flex gap-1">
         {!inPda && <TwdMoreButton />}
-        {!isMobile && (
-          <ButtonClose
-            title="Clear Forms & Results"
-            handleClick={handleClear}
-          />
-        )}
+        {!isMobile && <ButtonClose title="Clear Forms & Results" handleClick={handleClear} />}
       </div>
     </div>
   );

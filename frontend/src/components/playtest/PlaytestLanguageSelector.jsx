@@ -47,9 +47,7 @@ const PlaytestReportLanguageSelector = () => {
         <div className="flex min-w-[23px] justify-center">
           <Globe />
         </div>
-        <div className="flex font-bold whitespace-nowrap">
-          Playtest Language
-        </div>
+        <div className="flex font-bold whitespace-nowrap">Playtest Language</div>
       </div>
       <div className="basis-full">
         <Select

@@ -18,9 +18,7 @@ const TwdSearchFormLibrary = ({ value, form }) => {
     handleModalCardOpen,
     handleModalCardChange,
     handleModalCardClose,
-  } = useModalCardController(
-    Object.keys(value).map((id) => libraryCardBase[id]),
-  );
+  } = useModalCardController(Object.keys(value).map((id) => libraryCardBase[id]));
 
   const handleAdd = (event) => {
     form[event.value] = {
@@ -41,9 +39,7 @@ const TwdSearchFormLibrary = ({ value, form }) => {
 
   return (
     <div className="space-y-2">
-      <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
-        Library:
-      </div>
+      <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Library:</div>
       <NewCardSelect target="library" onChange={handleAdd} placement="bottom" />
       <div className="space-y-1">
         {Object.keys(value)
@@ -52,21 +48,14 @@ const TwdSearchFormLibrary = ({ value, form }) => {
             const card = libraryCardBase[id];
             return (
               <div key={id} className="flex items-center space-x-2">
-                <TwdSearchFormQuantityButtons
-                  value={value}
-                  form={form}
-                  id={id}
-                />
+                <TwdSearchFormQuantityButtons value={value} form={form} id={id} />
                 <ConditionalTooltip
                   placement="left"
                   overlay={<CardPopover card={card} />}
                   disabled={isMobile}
                   noPadding
                 >
-                  <div
-                    className="flex cursor-pointer"
-                    onClick={() => handleClick(card)}
-                  >
+                  <div className="flex cursor-pointer" onClick={() => handleClick(card)}>
                     <ResultName card={card} />
                   </div>
                 </ConditionalTooltip>

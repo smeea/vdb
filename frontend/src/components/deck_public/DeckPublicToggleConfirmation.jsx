@@ -2,11 +2,7 @@ import React from 'react';
 import { ModalConfirmation } from '@/components';
 import { countCards } from '@/utils';
 
-const DeckPublicToggleConfirmation = ({
-  deck,
-  handleConfirmation,
-  setShow,
-}) => {
+const DeckPublicToggleConfirmation = ({ deck, handleConfirmation, setShow }) => {
   const isPublished = !!(deck.publicParent || deck.publicChild);
 
   const isWrongQtyCards =

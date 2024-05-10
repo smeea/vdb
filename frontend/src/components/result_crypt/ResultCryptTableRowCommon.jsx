@@ -29,19 +29,14 @@ const ResultCryptTableRowCommon = ({
 
   return (
     <>
-      <td
-        className="min-w-[25px] md:min-w-[35px]"
-        onClick={() => handleClick(card)}
-      >
+      <td className="min-w-[25px] md:min-w-[35px]" onClick={() => handleClick(card)}>
         <div className="flex items-center justify-center">
           <ResultCryptCapacity card={card} />
         </div>
       </td>
       {!noDisciplines && (!inSearch || !isNarrow) && (
         <td className="sm:min-w-[170px]" onClick={() => handleClick(card)}>
-          {inDeck &&
-          keyDisciplines &&
-          disciplinesSet.length < ALIGN_DISCIPLINES_THRESHOLD ? (
+          {inDeck && keyDisciplines && disciplinesSet.length < ALIGN_DISCIPLINES_THRESHOLD ? (
             <DeckCryptDisciplines
               value={card.Disciplines}
               disciplinesSet={disciplinesSet}

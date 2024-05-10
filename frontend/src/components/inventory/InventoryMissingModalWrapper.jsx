@@ -15,14 +15,8 @@ const InventoryMissingModalWrapper = ({
   handleClose,
 }) => {
   const { cryptCardBase, libraryCardBase, publicName } = useApp();
-  const inventoryCrypt = useSnapshot(inventoryStore).crypt;
-  const inventoryLibrary = useSnapshot(inventoryStore).library;
-  const { missingByClan } = useInventoryCrypt(
-    crypt,
-    category,
-    false,
-    onlyNotes,
-  );
+  const { crypt: inventoryCrypt, library: inventoryLibrary } = useSnapshot(inventoryStore);
+  const { missingByClan } = useInventoryCrypt(crypt, category, false, onlyNotes);
   const { missingByType, missingByDiscipline } = useInventoryLibrary(
     library,
     category,
@@ -55,27 +49,15 @@ const InventoryMissingModalWrapper = ({
 
   Object.keys(cryptCardBase)
     .filter((cardid) => {
-      return (
-        cardid < 210000 &&
-        (!inventoryCrypt[cardid] || !inventoryCrypt[cardid]?.q)
-      );
+      return cardid < 210000 && (!inventoryCrypt[cardid] || !inventoryCrypt[cardid]?.q);
     })
-    .map(
-      (cardid) =>
-        (missAllVtesCrypt[cardid] = { q: 1, c: cryptCardBase[cardid] }),
-    );
+    .map((cardid) => (missAllVtesCrypt[cardid] = { q: 1, c: cryptCardBase[cardid] }));
 
   Object.keys(libraryCardBase)
     .filter((cardid) => {
-      return (
-        cardid < 110000 &&
-        (!inventoryLibrary[cardid] || !inventoryLibrary[cardid]?.q)
-      );
+      return cardid < 110000 && (!inventoryLibrary[cardid] || !inventoryLibrary[cardid]?.q);
     })
-    .map(
-      (cardid) =>
-        (missAllVtesLibrary[cardid] = { q: 1, c: libraryCardBase[cardid] }),
-    );
+    .map((cardid) => (missAllVtesLibrary[cardid] = { q: 1, c: libraryCardBase[cardid] }));
 
   return (
     <DeckMissingModal

@@ -10,9 +10,7 @@ const AnalyzeTournamentChartsRankingClan = ({ info, decks, searchResults }) => {
 
     Object.values(decks).forEach((deck) => {
       const position = info.players - deck.score.rank;
-      const inSearch = Object.values(searchResults).some(
-        (d) => d.author === deck.author,
-      );
+      const inSearch = Object.values(searchResults).some((d) => d.author === deck.author);
       const clan = getClan(deck.crypt) || 'Multi';
 
       if (!d[clan]) {
@@ -42,10 +40,7 @@ const AnalyzeTournamentChartsRankingClan = ({ info, decks, searchResults }) => {
       {Object.keys(data)
         .toSorted((a, b) => a.localeCompare(b))
         .map((s) => {
-          const clan =
-            isMobile && s.includes('antitribu')
-              ? '!' + s.replace(' antitribu', '')
-              : s;
+          const clan = isMobile && s.includes('antitribu') ? '!' + s.replace(' antitribu', '') : s;
 
           return (
             <BubbleChart

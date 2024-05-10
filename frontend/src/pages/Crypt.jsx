@@ -17,18 +17,9 @@ import {
 } from '@/context';
 
 const Crypt = () => {
-  const {
-    showCryptSearch,
-    addMode,
-    toggleAddMode,
-    isMobile,
-    isDesktop,
-    lastDeckId,
-  } = useApp();
-  const deck = useSnapshot(deckStore).deck;
-  const decks = useSnapshot(deckStore).decks;
-  const cryptResults = useSnapshot(searchResults).crypt;
-  const cryptCompare = useSnapshot(searchResults).cryptCompare;
+  const { showCryptSearch, addMode, toggleAddMode, isMobile, isDesktop, lastDeckId } = useApp();
+  const { deck, decks } = useSnapshot(deckStore);
+  const { crypt: cryptResults, cryptCompare } = useSnapshot(searchResults);
   const showSearchForm = useMemo(() => {
     return (
       isDesktop ||
@@ -58,22 +49,16 @@ const Crypt = () => {
               showSearchForm ? 'lg:basis-1/12' : 'sm:basis-5/12 lg:basis-6/12'
             } ${deck && addMode ? 'xl:basis-4/12' : 'xl:basis-2/12'}`}
           >
-            {decks !== undefined &&
-              (isDesktop || (!isDesktop && !showSearchForm)) && (
-                <DeckSelectorAndDisplay />
-              )}
+            {decks !== undefined && (isDesktop || (!isDesktop && !showSearchForm)) && (
+              <DeckSelectorAndDisplay />
+            )}
           </div>
         )}
         {showResultCol && (
           <div className="basis-full sm:basis-7/12 lg:basis-6/12 xl:basis-5/12">
-            {((isMobile && cryptCompare && cryptResults) ||
-              (!isMobile && cryptCompare)) && (
+            {((isMobile && cryptCompare && cryptResults) || (!isMobile && cryptCompare)) && (
               <div>
-                <ResultCrypt
-                  cards={cryptCompare}
-                  setCards={setCryptCompare}
-                  inCompare
-                />
+                <ResultCrypt cards={cryptCompare} setCards={setCryptCompare} inCompare />
               </div>
             )}
             {cryptResults !== undefined && (
@@ -86,19 +71,12 @@ const Crypt = () => {
             <div className="basis-full p-2 sm:basis-5/12 sm:p-0 lg:basis-4/12 xl:basis-3/12">
               <CryptSearchForm />
             </div>
-            <div
-              className={
-                deck && addMode ? 'hidden' : 'hidden lg:flex lg:basis-1/12'
-              }
-            />
+            <div className={deck && addMode ? 'hidden' : 'hidden lg:flex lg:basis-1/12'} />
           </>
         )}
       </FlexGapped>
       {showToggleAddMode && (
-        <ButtonFloatDeckOrSearch
-          addMode={addMode}
-          toggleAddMode={toggleAddMode}
-        />
+        <ButtonFloatDeckOrSearch addMode={addMode} toggleAddMode={toggleAddMode} />
       )}
     </div>
   );

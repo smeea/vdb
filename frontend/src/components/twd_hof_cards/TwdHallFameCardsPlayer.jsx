@@ -68,10 +68,8 @@ const TwdHallFameCardsPlayer = ({ name, cards }) => {
   let firstCardDate = null;
   let lastCardDate = null;
   Object.values(cards).map((card) => {
-    if (!firstCardDate || card.twdDate < firstCardDate)
-      firstCardDate = card.twdDate;
-    if (!lastCardDate || card.twdDate > lastCardDate)
-      lastCardDate = card.twdDate;
+    if (!firstCardDate || card.twdDate < firstCardDate) firstCardDate = card.twdDate;
+    if (!lastCardDate || card.twdDate > lastCardDate) lastCardDate = card.twdDate;
   });
 
   return (
@@ -125,10 +123,7 @@ const TwdHallFameCardsPlayer = ({ name, cards }) => {
                   Print
                 </th>
               )}
-              <th
-                className="text-center font-bold"
-                title="First TWD Appearance Date"
-              >
+              <th className="text-center font-bold" title="First TWD Appearance Date">
                 Win
               </th>
               <th className="text-center font-bold" title="Years to Win">
@@ -171,10 +166,7 @@ const TwdHallFameCardsPlayer = ({ name, cards }) => {
                   Print
                 </th>
               )}
-              <th
-                className="text-center font-bold"
-                title="First TWD Appearance Date"
-              >
+              <th className="text-center font-bold" title="First TWD Appearance Date">
                 Win
               </th>
               <th

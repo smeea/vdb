@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
 import EnvelopeFill from '@/assets/images/icons/envelope-fill.svg?react';
-import {
-  AccountEmailForm,
-  AccountPasswordForm,
-  ErrorOverlay,
-} from '@/components';
+import { AccountEmailForm, AccountPasswordForm, ErrorOverlay } from '@/components';
 import { useApp } from '@/context';
 import { userServices } from '@/services';
 
@@ -69,9 +65,7 @@ const AccountChangeEmail = () => {
             isLoading={isLoading}
             success={success}
           />
-          {passwordError && (
-            <ErrorOverlay placement="bottom">{passwordError}</ErrorOverlay>
-          )}
+          {passwordError && <ErrorOverlay placement="bottom">{passwordError}</ErrorOverlay>}
         </div>
       </form>
     </div>

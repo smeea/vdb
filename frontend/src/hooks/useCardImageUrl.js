@@ -9,9 +9,7 @@ const useCardImageUrl = (card, set, language) => {
       isPlaytest ? 'playtest' : 'en-EN'
     }/${card['ASCII Name']
       .toLowerCase()
-      .replace(/[\s,:!?'".\-()/]/g, '')}g${card.Group.toLowerCase()}${
-      card.Adv[0] ? 'adv' : ''
-    }`;
+      .replace(/[\s,:!?'".\-()/]/g, '')}g${card.Group.toLowerCase()}${card.Adv[0] ? 'adv' : ''}`;
   } else {
     baseUrl = `${import.meta.env.VITE_BASE_URL}/images/cards/${
       isPlaytest ? 'playtest' : 'en-EN'
@@ -24,9 +22,7 @@ const useCardImageUrl = (card, set, language) => {
         set ? `set/${set}` : language
       }/${card['ASCII Name']
         .toLowerCase()
-        .replace(/[\s,:!?'".\-()/]/g, '')}g${card.Group.toLowerCase()}${
-        card.Adv[0] ? 'adv' : ''
-      }`;
+        .replace(/[\s,:!?'".\-()/]/g, '')}g${card.Group.toLowerCase()}${card.Adv[0] ? 'adv' : ''}`;
     } else {
       otherUrl = `${import.meta.env.VITE_BASE_URL}/images/cards/${
         set ? `set/${set}` : language

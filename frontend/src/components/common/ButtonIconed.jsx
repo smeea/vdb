@@ -19,8 +19,7 @@ const ButtonIconed = ({
     third: 'text-black dark:text-fgPrimaryDark',
     fourth: 'text-black dark:text-fgPrimaryDark',
     danger: 'text-white dark:text-whiteDark',
-    success:
-      'bg-bgSuccess dark:bg-bgSuccessDark border-bgSuccess dark:border-borderSuccessDark',
+    success: 'bg-bgSuccess dark:bg-bgSuccessDark border-bgSuccess dark:border-borderSuccessDark',
   };
 
   return (

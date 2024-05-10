@@ -35,12 +35,7 @@ const AccountChangePassword = () => {
 
     if (formPassword && formNewPassword) {
       setIsLoading(true);
-      userServices.changePassword(
-        formPassword,
-        formNewPassword,
-        onSuccess,
-        onError,
-      );
+      userServices.changePassword(formPassword, formNewPassword, onSuccess, onError);
     }
   };
 
@@ -59,11 +54,7 @@ const AccountChangePassword = () => {
       </div>
       <form className="space-y-2" onSubmit={handleSubmit}>
         <div className="relative flex w-full">
-          <AccountPasswordForm
-            value={formPassword}
-            setValue={setFormPassword}
-            isOld
-          />
+          <AccountPasswordForm value={formPassword} setValue={setFormPassword} isOld />
         </div>
         <div className="relative flex w-full">
           <AccountPasswordForm
@@ -73,9 +64,7 @@ const AccountChangePassword = () => {
             isLoading={isLoading}
             isNew
           />
-          {passwordError && (
-            <ErrorOverlay placement="bottom">{passwordError}</ErrorOverlay>
-          )}
+          {passwordError && <ErrorOverlay placement="bottom">{passwordError}</ErrorOverlay>}
         </div>
       </form>
     </div>

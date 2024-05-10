@@ -2,18 +2,9 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import StarFill from '@/assets/images/icons/star-fill.svg?react';
 import { Spinner, ButtonIconed } from '@/components';
-import {
-  setAnalyzeDecks,
-  setAnalyzeInfo,
-  setAnalyzeResults,
-  clearAnalyzeForm,
-} from '@/context';
+import { setAnalyzeDecks, setAnalyzeInfo, setAnalyzeResults, clearAnalyzeForm } from '@/context';
 
-const AnalyzeLoadPreparedButtons = ({
-  setTempDecks,
-  setTempArchon,
-  setError,
-}) => {
+const AnalyzeLoadPreparedButtons = ({ setTempDecks, setTempArchon, setError }) => {
   const navigate = useNavigate();
   const [loadingDeck, setLoadingDeck] = useState();
 
@@ -64,9 +55,7 @@ const AnalyzeLoadPreparedButtons = ({
             onClick={() => handlePrepared(v.id)}
             title={v.title}
             text={`${v.title} [${v.date}]`}
-            icon={
-              loadingDeck == v.id ? <Spinner /> : v.isNC ? <StarFill /> : null
-            }
+            icon={loadingDeck == v.id ? <Spinner /> : v.isNC ? <StarFill /> : null}
           />
         );
       })}

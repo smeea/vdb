@@ -39,9 +39,7 @@ const TwdSearchFormCrypt = ({ value, form }) => {
 
   return (
     <div className="space-y-2">
-      <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
-        Crypt:
-      </div>
+      <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Crypt:</div>
       <NewCardSelect target="crypt" onChange={handleAdd} placement="bottom" />
       <div className="space-y-1">
         {Object.keys(value)
@@ -50,26 +48,17 @@ const TwdSearchFormCrypt = ({ value, form }) => {
             const card = cryptCardBase[id];
             return (
               <div key={id} className="flex items-center space-x-2">
-                <TwdSearchFormQuantityButtons
-                  value={value}
-                  form={form}
-                  id={id}
-                />
+                <TwdSearchFormQuantityButtons value={value} form={form} id={id} />
                 <ConditionalTooltip
                   placement="left"
                   overlay={<CardPopover card={card} />}
                   disabled={isMobile}
                   noPadding
                 >
-                  <div
-                    className="flex cursor-pointer gap-1"
-                    onClick={() => handleClick(card)}
-                  >
+                  <div className="flex cursor-pointer gap-1" onClick={() => handleClick(card)}>
                     <ResultName card={card} />
                     {card.New && (
-                      <div className="text-midGray  dark:text-midGrayDark">
-                        [G{card.Group}]
-                      </div>
+                      <div className="text-midGray  dark:text-midGrayDark">[G{card.Group}]</div>
                     )}
                   </div>
                 </ConditionalTooltip>

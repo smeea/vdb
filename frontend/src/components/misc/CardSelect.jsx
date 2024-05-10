@@ -1,19 +1,9 @@
 import React from 'react';
 import { useApp } from '@/context';
-import {
-  SelectAsync,
-  SelectLabelCrypt,
-  SelectLabelLibrary,
-} from '@/components';
+import { SelectAsync, SelectLabelCrypt, SelectLabelLibrary } from '@/components';
 import { useFilters } from '@/hooks';
 
-const getMatches = (
-  inputValue,
-  filterAction,
-  playtestId,
-  playtestMode,
-  inInventory,
-) => {
+const getMatches = (inputValue, filterAction, playtestId, playtestMode, inInventory) => {
   const input = { name: inputValue };
 
   const startingWith = [];
@@ -49,24 +39,12 @@ const getAllMatches = (
 
   const cryptMatches =
     target !== 'library'
-      ? getMatches(
-          inputValue,
-          filterCrypt,
-          cryptPlaytestId,
-          playtestMode,
-          inInventory,
-        )
+      ? getMatches(inputValue, filterCrypt, cryptPlaytestId, playtestMode, inInventory)
       : [];
 
   const libraryMatches =
     target !== 'crypt'
-      ? getMatches(
-          inputValue,
-          filterLibrary,
-          libraryPlaytestId,
-          playtestMode,
-          inInventory,
-        )
+      ? getMatches(inputValue, filterLibrary, libraryPlaytestId, playtestMode, inInventory)
       : [];
 
   return {
@@ -77,15 +55,7 @@ const getAllMatches = (
 
 const CardSelect = React.forwardRef(
   (
-    {
-      target,
-      value,
-      inInventory,
-      placeholder = 'Enter Card Name',
-      autoFocus,
-      onChange,
-      placement,
-    },
+    { target, value, inInventory, placeholder = 'Enter Card Name', autoFocus, onChange, placement },
     ref,
   ) => {
     const { isMobile, cryptCardBase, libraryCardBase, playtestMode } = useApp();
@@ -103,14 +73,8 @@ const CardSelect = React.forwardRef(
     };
 
     const byTwd = (a, b) => {
-      const aInTwd =
-        a.value > 200000
-          ? cryptCardBase[a.value].Twd
-          : libraryCardBase[a.value].Twd;
-      const bInTwd =
-        b.value > 200000
-          ? cryptCardBase[b.value].Twd
-          : libraryCardBase[b.value].Twd;
+      const aInTwd = a.value > 200000 ? cryptCardBase[a.value].Twd : libraryCardBase[a.value].Twd;
+      const bInTwd = b.value > 200000 ? cryptCardBase[b.value].Twd : libraryCardBase[b.value].Twd;
 
       return bInTwd - aInTwd;
     };
@@ -142,10 +106,7 @@ const CardSelect = React.forwardRef(
           ];
         }
         return [
-          ...[
-            ...cryptMatches.startingWith,
-            ...libraryMatches.startingWith,
-          ].toSorted(byTwd),
+          ...[...cryptMatches.startingWith, ...libraryMatches.startingWith].toSorted(byTwd),
           ...[...cryptMatches.other, ...libraryMatches.other].toSorted(byTwd),
         ];
       }

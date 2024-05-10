@@ -1,14 +1,5 @@
 import React from 'react';
-import {
-  Cell,
-  ScatterChart,
-  Scatter,
-  XAxis,
-  YAxis,
-  ZAxis,
-  Tooltip,
-  ReferenceLine,
-} from 'recharts';
+import { Cell, ScatterChart, Scatter, XAxis, YAxis, ZAxis, Tooltip, ReferenceLine } from 'recharts';
 
 import { BubbleChartTooltip } from '@/components';
 
@@ -24,11 +15,7 @@ const BubbleChart = ({ data, name, width, titleWidth, refLine }) => {
         left: 0,
       }}
     >
-      <XAxis
-        dataKey="rank"
-        tick={{ fontSize: 12 }}
-        tickLine={{ transform: 'translate(0, -6)' }}
-      />
+      <XAxis dataKey="rank" tick={{ fontSize: 12 }} tickLine={{ transform: 'translate(0, -6)' }} />
       <YAxis
         dataKey="index"
         name={name}
@@ -55,10 +42,7 @@ const BubbleChart = ({ data, name, width, titleWidth, refLine }) => {
       />
       <Scatter data={data}>
         {data.map((d, idx) => (
-          <Cell
-            key={`{name}-${idx}`}
-            fill={d.inSearch ? '#ff4040' : '#8884d8'}
-          />
+          <Cell key={`{name}-${idx}`} fill={d.inSearch ? '#ff4040' : '#8884d8'} />
         ))}
       </Scatter>
     </ScatterChart>

@@ -3,21 +3,10 @@ import { useSwipeable } from 'react-swipeable';
 import ArrowRepeat from '@/assets/images/icons/arrow-repeat.svg?react';
 import ChevronCompactLeft from '@/assets/images/icons/chevron-compact-left.svg?react';
 import ChevronCompactRight from '@/assets/images/icons/chevron-compact-right.svg?react';
-import {
-  ButtonFloat,
-  ButtonFloatClose,
-  CardImage,
-  ResultLayoutText,
-  Modal,
-} from '@/components';
+import { ButtonFloat, ButtonFloatClose, CardImage, ResultLayoutText, Modal } from '@/components';
 import { useApp } from '@/context';
 
-const ResultModal = ({
-  card,
-  handleModalCardChange,
-  handleClose,
-  forceInventoryMode,
-}) => {
+const ResultModal = ({ card, handleModalCardChange, handleClose, forceInventoryMode }) => {
   const { showImage, toggleShowImage, isMobile, isNarrow } = useApp();
 
   const [imageSet, setImageSet] = useState(null);
@@ -104,11 +93,7 @@ const ResultModal = ({
         ) : (
           <div className="flex">
             <div className="bg-black border-y border-l border-bgSecondaryDark dark:border-bgSecondaryDark">
-              <CardImage
-                card={activeCard}
-                set={imageSet}
-                onClick={handleClose}
-              />
+              <CardImage card={activeCard} set={imageSet} onClick={handleClose} />
             </div>
             <div className="w-full p-5 border-y border-r rounded-r border-bgSecondary dark:border-bgSecondaryDark">
               <ResultLayoutText
@@ -135,11 +120,7 @@ const ResultModal = ({
           <ChevronCompactRight width="48" height="64" viewBox="0 0 12 16" />
         </div>
         {isMobile && (
-          <ButtonFloat
-            onClick={toggleShowImage}
-            variant="primary"
-            position="middle"
-          >
+          <ButtonFloat onClick={toggleShowImage} variant="primary" position="middle">
             <ArrowRepeat width="40" height="40" viewBox="0 0 16 16" />
           </ButtonFloat>
         )}

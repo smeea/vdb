@@ -29,19 +29,13 @@ const TwdHallFameDeckHeader = ({ deck, isStar }) => {
             <div>{`${deck.event}: ${deck.location}`}</div>
           </div>
         </div>
-        <div className="whitespace-nowrap ">
-          {isMobile ? deck.date.slice(0, 4) : deck.date}
-        </div>
+        <div className="whitespace-nowrap ">{isMobile ? deck.date.slice(0, 4) : deck.date}</div>
       </div>
       {showDeck && (
         <>
           <Hr />
           <div className="p-2.5">
-            {showDeck && (
-              <TwdHallFameDeckBody
-                deck={{ ...deck, creation_date: deck.date }}
-              />
-            )}
+            {showDeck && <TwdHallFameDeckBody deck={{ ...deck, creation_date: deck.date }} />}
           </div>
         </>
       )}

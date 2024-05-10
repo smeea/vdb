@@ -4,12 +4,7 @@ import { useDebounce } from '@/hooks';
 import { ButtonAddCard, ResultLibraryTableRowCommon } from '@/components';
 import { deckCardChange } from '@/context';
 
-const DeckRecommendationLibraryTableRow = ({
-  card,
-  idx,
-  handleClick,
-  deck,
-}) => {
+const DeckRecommendationLibraryTableRow = ({ card, idx, handleClick, deck }) => {
   const [isSwiped, setIsSwiped] = useState();
   const isEditable = deck?.isAuthor && !deck?.isPublic && !deck?.isFrozen;
   const inDeck = deck.library[card.Id]?.q || 0;
@@ -20,11 +15,7 @@ const DeckRecommendationLibraryTableRow = ({
   const swipeHandlers = useSwipeable({
     swipeDuration: 250,
     onSwipedLeft: (e) => {
-      if (
-        e.initial[0] > SWIPE_IGNORED_LEFT_EDGE &&
-        e.absX > SWIPE_THRESHOLD &&
-        isEditable
-      ) {
+      if (e.initial[0] > SWIPE_IGNORED_LEFT_EDGE && e.absX > SWIPE_THRESHOLD && isEditable) {
         setIsSwiped('left');
         deckCardChange(deck.deckid, card, inDeck - 1);
       }
@@ -52,19 +43,10 @@ const DeckRecommendationLibraryTableRow = ({
     >
       {isEditable && (
         <td>
-          <ButtonAddCard
-            cardid={card.Id}
-            deckid={deck.deckid}
-            card={card}
-            inDeck={inDeck}
-          />
+          <ButtonAddCard cardid={card.Id} deckid={deck.deckid} card={card} inDeck={inDeck} />
         </td>
       )}
-      <ResultLibraryTableRowCommon
-        card={card}
-        handleClick={handleClick}
-        inDeck
-      />
+      <ResultLibraryTableRowCommon card={card} handleClick={handleClick} inDeck />
     </tr>
   );
 };

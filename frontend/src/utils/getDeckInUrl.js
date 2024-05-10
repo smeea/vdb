@@ -22,10 +22,7 @@ const getDeckInUrl = (deck) => {
   const url = `${import.meta.env.VITE_BASE_URL}/decks/deck?${info
     .toString()
     .replace(/,/g, '&')
-    .replace('#', '№')}#${cards
-    .toString()
-    .replace(/,/g, '')
-    .replace(/;$/, '')}`;
+    .replace('#', '№')}#${cards.toString().replace(/,/g, '').replace(/;$/, '')}`;
 
   return url;
 };

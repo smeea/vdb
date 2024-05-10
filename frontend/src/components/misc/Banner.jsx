@@ -6,10 +6,7 @@ const Banner = () => {
 
   return (
     <div className="flex w-full items-center justify-between border border-borderSecondary bg-bgSecondary p-2 dark:border-borderSecondaryDark dark:bg-bgSecondaryDark">
-      <div
-        onClick={() => navigate('/')}
-        className="flex items-center cursor-pointer"
-      >
+      <div onClick={() => navigate('/')} className="flex items-center cursor-pointer">
         <img
           className="dark:brightness-150"
           src={`${import.meta.env.VITE_BASE_URL}/images/misc/logo.svg`}

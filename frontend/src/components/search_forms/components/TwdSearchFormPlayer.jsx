@@ -6,9 +6,7 @@ import { useFetch } from '@/hooks';
 const TwdSearchFormPlayer = ({ inPda, value, form }) => {
   const { isXWide } = useApp();
   const maxMenuHeight = isXWide ? 500 : 350;
-  const url = `${import.meta.env.VITE_API_URL}/${
-    inPda ? 'pda' : 'twd'
-  }/authors`;
+  const url = `${import.meta.env.VITE_API_URL}/${inPda ? 'pda' : 'twd'}/authors`;
   const { value: players } = useFetch(url, {}, []);
 
   const handleChange = (v) => {
@@ -20,11 +18,7 @@ const TwdSearchFormPlayer = ({ inPda, value, form }) => {
       const { default: unidecode } = await import('unidecode');
 
       return players
-        .filter((v) =>
-          unidecode(v)
-            .toLowerCase()
-            .includes(unidecode(inputValue).toLowerCase()),
-        )
+        .filter((v) => unidecode(v).toLowerCase().includes(unidecode(inputValue).toLowerCase()))
         .map((v) => {
           return {
             label: v,

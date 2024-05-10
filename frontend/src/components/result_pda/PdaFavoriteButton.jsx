@@ -15,9 +15,7 @@ const PdaFavoriteButton = ({ deck }) => {
 
     miscServices.pdaToggle(isFavorited).then(() => {
       setIsFavorited(!isFavorited);
-      setFavoritedBy((prevState) =>
-        isFavorited ? prevState - 1 : prevState + 1,
-      );
+      setFavoritedBy((prevState) => (isFavorited ? prevState - 1 : prevState + 1));
     });
   };
 

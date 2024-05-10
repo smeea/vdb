@@ -17,17 +17,9 @@ const Toggle = ({ isOn, toggle, size = 'md', disabled = false, children }) => {
       onClick={() => !disabled && toggle()}
     >
       {isOn ? (
-        <ToggleOn
-          width={customSize[size]}
-          height={customSize[size]}
-          viewBox="0 0 16 16"
-        />
+        <ToggleOn width={customSize[size]} height={customSize[size]} viewBox="0 0 16 16" />
       ) : (
-        <ToggleOff
-          width={customSize[size]}
-          height={customSize[size]}
-          viewBox="0 0 16 16"
-        />
+        <ToggleOff width={customSize[size]} height={customSize[size]} viewBox="0 0 16 16" />
       )}
       {children && <div className="flex items-center">{children}</div>}
     </div>
