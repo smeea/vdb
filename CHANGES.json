@@ -1,5 +1,13 @@
 [
   {
+    "version": "2024-05-10",
+    "changes": [
+      "Update rulings",
+      "Update TWDA",
+      "Small other fixes and improvements"
+    ]
+  },
+  {
     "version": "2024-04-24",
     "changes": [
       "Update card images (mostly for V5C)",
