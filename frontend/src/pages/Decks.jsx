@@ -79,23 +79,11 @@ const Decks = () => {
       });
     }
     const d = {
-      author: deckData.author,
+      ...deckData,
       crypt: cardsData.crypt,
-      deckid: deckData.deckid,
-      description: deckData.description,
-      isFrozen: deckData.isFrozen,
-      isAuthor: deckData.isAuthor,
       isBranches: !!(deckData.master || deckData.branches?.length > 0),
-      isNonEditable: deckData.isNonEditable,
       isPublic: !!deckData.publicParent,
       library: cardsData.library,
-      branches: deckData.branches,
-      master: deckData.master,
-      name: deckData.name,
-      publicChild: deckData.publicChild,
-      publicParent: deckData.publicParent,
-      tags: deckData.tags,
-      timestamp: deckData.timestamp,
     };
     addRecentDeck(d);
     setDeck(d);

@@ -48,20 +48,11 @@ const Diff = () => {
         const cardsData = useDeck(deckData.cards, cryptCardBase, libraryCardBase);
 
         const d = {
-          author: deckData.author,
+          ...deckData,
           crypt: cardsData.crypt,
-          deckid: deckData.deckid,
-          description: deckData.description,
-          isAuthor: deckData.isAuthor,
-          isBranches: !!(deckData.master || deckData.branches?.length > 0),
-          isNonEditable: deckData.isNonEditable,
-          isPublic: !!deckData.publicParent,
           library: cardsData.library,
-          name: deckData.name,
-          publicChild: deckData.publicChild,
-          publicParent: deckData.publicParent,
-          tags: deckData.tags,
-          timestamp: deckData.timestamp,
+          isBranches: !!(deckData.master || deckData.branches?.length > 0),
+          isPublic: !!deckData.publicParent,
         };
 
         addRecentDeck(d);

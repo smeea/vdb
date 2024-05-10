@@ -62,20 +62,12 @@ const Review = () => {
       });
     }
     const d = {
-      author: deckData.author,
+      ...deckData,
       crypt: cardsData.crypt,
-      deckid: deckData.deckid,
-      description: deckData.description,
-      isAuthor: deckData.isAuthor,
-      isBranches: !!(deckData.master || deckData.branches?.length > 0),
-      isNonEditable: false,
-      isPublic: !!deckData.publicParent,
       library: cardsData.library,
-      name: deckData.name,
-      publicChild: deckData.publicChild,
-      publicParent: deckData.publicParent,
-      tags: deckData.tags,
-      timestamp: deckData.timestamp,
+      isBranches: !!(deckData.master || deckData.branches?.length > 0),
+      isPublic: !!deckData.publicParent,
+      isNonEditable: false,
     };
     setDeckTo(d);
     setDeckFrom(d);
@@ -98,7 +90,7 @@ const Review = () => {
   useEffect(() => {
     const diff = getDiff(
       { ...deckFrom?.crypt, ...deckFrom?.library },
-      { ...deckTo?.crypt, ...deckTo?.library },
+      { ...deckTo?.crypt, ...deckTo?.library }
     );
 
     if (Object.keys(diff).length) {
@@ -129,7 +121,7 @@ const Review = () => {
   useEffect(() => {
     if (hash && deckTo) {
       const deckWithHash = JSON.parse(
-        JSON.stringify({ crypt: deckTo.crypt, library: deckTo.library }),
+        JSON.stringify({ crypt: deckTo.crypt, library: deckTo.library })
       );
       hash
         .slice(1)
@@ -186,7 +178,7 @@ const Review = () => {
 
   const parentId = deckFrom?.description.replace(
     `Review of ${import.meta.env.VITE_BASE_URL}/decks/`,
-    '',
+    ''
   );
   const inDecks = decks ? Object.keys(decks).includes(parentId) : null;
 
