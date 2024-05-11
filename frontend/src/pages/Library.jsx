@@ -19,7 +19,7 @@ import {
 const Library = () => {
   const { showLibrarySearch, addMode, toggleAddMode, isMobile, isDesktop, lastDeckId } = useApp();
   const { deck, decks } = useSnapshot(deckStore);
-  const { libraryResults, libraryCompare } = useSnapshot(searchResults);
+  const { library: libraryResults, libraryCompare } = useSnapshot(searchResults);
   const showSearchForm = useMemo(() => {
     return (
       isDesktop ||
@@ -32,7 +32,7 @@ const Library = () => {
     return deck && libraryResults && !isMobile && !isDesktop;
   }, [deck?.deckid, isMobile, isDesktop, libraryResults]);
 
-  const showResultCol = !(isMobile && showLibrarySearch);
+  const showResultCol = useMemo(() => !(isMobile && showLibrarySearch));
 
   useEffect(() => {
     if (!deck && decks !== undefined && lastDeckId) {
@@ -45,9 +45,9 @@ const Library = () => {
       <FlexGapped>
         {!isMobile && (
           <div
-            className={`${
-              showSearchForm ? 'lg:basis-1/12' : 'sm:basis-5/12 lg:basis-6/12'
-            } ${deck && addMode ? 'xl:basis-4/12' : 'xl:basis-2/12'}`}
+            className={`${showSearchForm ? 'lg:basis-1/12' : 'sm:basis-5/12 lg:basis-6/12'} ${
+              deck && addMode ? 'xl:basis-4/12' : 'xl:basis-2/12'
+            }`}
           >
             {decks !== undefined && (isDesktop || (!isDesktop && !showSearchForm)) && (
               <DeckSelectorAndDisplay />

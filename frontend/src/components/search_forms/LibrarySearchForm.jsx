@@ -49,7 +49,7 @@ const LibrarySearchForm = () => {
   const { filterLibrary } = useFilters(limitedMode ? limitedLibrary : libraryCardBase);
   const [error, setError] = useState(false);
   const [preresults, setPreresults] = useState();
-  const showLimit = 250;
+  const showLimit = 300;
   const navigate = useNavigate();
   const query = JSON.parse(new URLSearchParams(useLocation().search).get('q'));
 
@@ -137,7 +137,7 @@ const LibrarySearchForm = () => {
     navigate(`/library?q=${encodeURIComponent(JSON.stringify(sanitizedForm))}`);
 
     const filteredCards = filterLibrary(sanitizedForm).filter(
-      (card) => playtestMode || card.Id < 110000,
+      (card) => playtestMode || card.Id < 110000
     );
 
     if (!isMobile) {
@@ -147,7 +147,7 @@ const LibrarySearchForm = () => {
             return (
               inventoryLibrary[card.Id] || usedLibrary.soft[card.Id] || usedLibrary.hard[card.Id]
             );
-          }),
+          })
         );
       } else {
         setPreresults(filteredCards);
@@ -159,7 +159,7 @@ const LibrarySearchForm = () => {
             return (
               inventoryLibrary[card.Id] || usedLibrary.soft[card.Id] || usedLibrary.hard[card.Id]
             );
-          }),
+          })
         );
       } else {
         setLibraryResults(filteredCards);
@@ -203,12 +203,12 @@ const LibrarySearchForm = () => {
       limitedMode,
       playtestMode,
       libraryCardBase,
-    ],
+    ]
   );
 
   useEffect(() => {
     if (!isMobile && preresults) {
-      if (preresults.length < showLimit) {
+      if (preresults.length <= showLimit) {
         setLibraryResults(preresults);
       } else {
         setLibraryResults(undefined);
