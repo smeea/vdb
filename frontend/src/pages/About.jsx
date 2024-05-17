@@ -74,7 +74,9 @@ const About = () => {
           <Title>TROUBLESHOOTING</Title>
           <div>
             If you experience problems like white screen or strange behavior, reload the page
-            (Ctrl+F5 on Windows/Linux, Command+Shift+R on MacOS, swipe down on mobile)
+            (Ctrl+F5 on Windows/Linux, Command+Shift+R on MacOS, swipe down on mobile). On mobile
+            app try to delete it and reinstall from{' '}
+            <a href={import.meta.env.VITE_BASE_URL}>{import.meta.env.VITE_BASE_URL}</a>
           </div>
           <div>If this does not help, please contact me (see below)</div>
         </div>
