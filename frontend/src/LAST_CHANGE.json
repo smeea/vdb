@@ -1,8 +1,6 @@
 {
-  "version": "2024-05-11",
+  "version": "2024-05-18",
   "changes": [
-    "Update rulings",
-    "Update TWDA",
-    "Small other fixes and improvements"
+    "Update TWDA"
   ]
 }
