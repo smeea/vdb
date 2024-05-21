@@ -21,7 +21,7 @@ import {
 
 export const AppContext = React.createContext();
 
-export const AppProvider = (props) => {
+export const AppProvider = ({ children }) => {
   const screenSize = useWindowSize();
   const isMobile = useMemo(() => screenSize <= 767, [screenSize]);
   const isNarrow = useMemo(() => screenSize <= 1024, [screenSize]);
@@ -420,7 +420,7 @@ export const AppProvider = (props) => {
 
   useEffect(() => {
     if (decks && inventoryMode) setupUsedInventory(decks);
-  }, [deck, inventoryMode]);
+  }, [deck, decks, inventoryMode]);
 
   return (
     <AppContext.Provider
@@ -505,7 +505,7 @@ export const AppProvider = (props) => {
         changeCryptDeckSort,
       }}
     >
-      {props.children}
+      {children}
     </AppContext.Provider>
   );
 };

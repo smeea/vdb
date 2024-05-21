@@ -78,6 +78,8 @@ const Decks = () => {
         deckData.tags = deckData.tags.concat(v);
       });
     }
+    delete deckData.cards;
+
     const d = {
       ...deckData,
       crypt: cardsData.crypt,
