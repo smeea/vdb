@@ -38,7 +38,7 @@ const AnalyzeTournamentChartsRankingClan = ({ info, decks, searchResults }) => {
   return (
     <div className="flex basis-full items-center flex-col">
       {Object.keys(data)
-        .toSorted((a, b) => a.localeCompare(b))
+        .toSorted((a, b) => a.localeCompare(b, 'en'))
         .map((s) => {
           const clan = isMobile && s.includes('antitribu') ? '!' + s.replace(' antitribu', '') : s;
 

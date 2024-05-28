@@ -5,6 +5,7 @@
 # FEATURES
 - TWD search with % V5-compatibility - after BCP clarify V5
 - Deck details show % V5-compatibility - after BCP clarify V5
+- Card played indicator for playtest
 
 # TECH IMPROVEMENTS
 - Update to SQLAlchemy 3

@@ -13,7 +13,7 @@ const TwdHallOfFameCards = () => {
   const MS_TO_DAYS = 1000 * 60 * 60 * 24;
 
   const byName = (a, b) => {
-    return a.localeCompare(b);
+    return a.localeCompare(b, 'en');
   };
 
   const url = `${import.meta.env.VITE_BASE_URL}/data/twd_cards_history.json`;
@@ -108,6 +108,7 @@ const TwdHallOfFameCards = () => {
               {players &&
                 Object.keys(players)
                   .toSorted(byName)
+                  .toSorted((a, b) => a.localeCompare(b, 'en'))
                   .toSorted(byTotal)
                   .map((player) => (
                     <Disclosure key={player}>

@@ -12,7 +12,7 @@ const TwdHallOfFameTournaments = () => {
   };
 
   const byName = (a, b) => {
-    return a.localeCompare(b);
+    return a.localeCompare(b, 'en');
   };
 
   return (

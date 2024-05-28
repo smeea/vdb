@@ -2,14 +2,14 @@ export const byName = (a, b) => {
   const nameA = a.c ? a.c['ASCII Name'] : a['ASCII Name'];
   const nameB = b.c ? b.c['ASCII Name'] : b['ASCII Name'];
 
-  return nameA.localeCompare(nameB);
+  return nameA.localeCompare(nameB, 'en');
 };
 
 export const byClan = (a, b) => {
   const clanA = a.c ? a.c.Clan : a.Clan;
   const clanB = b.c ? b.c.Clan : b.Clan;
 
-  return clanA.localeCompare(clanB);
+  return clanA.localeCompare(clanB, 'en');
 };
 
 export const byClanOpt = (a, b) => {
@@ -98,7 +98,7 @@ export const byPlayer = (a, b) => {
   if (a.player && !b.player) return -1;
   if (!a.player && b.player) return 1;
   if (!a.player && !b.player) return 0;
-  return a.player.localeCompare(b.player);
+  return a.player.localeCompare(b.player, 'en');
 };
 
 export const byDateWin = (a, b) => {
