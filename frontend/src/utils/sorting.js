@@ -8,32 +8,26 @@ export const byName = (a, b) => {
 export const byClan = (a, b) => {
   const clanA = a.c ? a.c.Clan : a.Clan;
   const clanB = b.c ? b.c.Clan : b.Clan;
-
   return clanA.localeCompare(clanB, 'en');
 };
 
 export const byClanOpt = (a, b) => {
   const clanA = a.c ? a.c.Clan : a.Clan;
   const clanB = b.c ? b.c.Clan : b.Clan;
-
   if (clanA && !clanB) return -1;
   if (!clanA && clanB) return 1;
-  if (clanA < clanB) return -1;
-  if (clanA > clanB) return 1;
-  return 0;
+  return clanA.localeCompare(clanB, 'en');
 };
 
 export const byGroup = (a, b) => {
   const groupA = a.c ? a.c.Group : a.Group;
   const groupB = b.c ? b.c.Group : b.Group;
-
   return groupA - groupB;
 };
 
 export const byCapacity = (a, b) => {
   const capacityA = a.c ? a.c.Capacity : a.Capacity;
   const capacityB = b.c ? b.c.Capacity : b.Capacity;
-
   return capacityB - capacityA;
 };
 
@@ -44,10 +38,7 @@ export const byQuantity = (a, b) => {
 export const byType = (a, b) => {
   const typeA = a.c ? a.c.Type : a.Type;
   const typeB = b.c ? b.c.Type : b.Type;
-
-  if (typeA < typeB) return -1;
-  if (typeA > typeB) return 1;
-  return 0;
+  return typeA.localeCompare(typeB, 'en');
 };
 
 export const byDiscipline = (a, b) => {
@@ -56,15 +47,12 @@ export const byDiscipline = (a, b) => {
 
   if (disciplineA && !disciplineB) return -1;
   if (!disciplineA && disciplineB) return 1;
-  if (disciplineA < disciplineB) return -1;
-  if (disciplineA > disciplineB) return 1;
-  return 0;
+  return disciplineA.localeCompare(disciplineB, 'en');
 };
 
 export const byBloodCost = (a, b) => {
   const costA = a.c ? a.c['Blood Cost'] : a['Blood Cost'];
   const costB = b.c ? b.c['Blood Cost'] : b['Blood Cost'];
-
   if (!isNaN(costA) && isNaN(costB)) return -1;
   if (!isNaN(costB) && isNaN(costA)) return 1;
   if (isNaN(costA) && isNaN(costB)) return 0;
@@ -74,7 +62,6 @@ export const byBloodCost = (a, b) => {
 export const byPoolCost = (a, b) => {
   const costA = a.c ? a.c['Pool Cost'] : a['Pool Cost'];
   const costB = b.c ? b.c['Pool Cost'] : b['Pool Cost'];
-
   if (!isNaN(costA) && isNaN(costB)) return -1;
   if (!isNaN(costB) && isNaN(costA)) return 1;
   if (isNaN(costA) && isNaN(costB)) return 0;
@@ -84,10 +71,7 @@ export const byPoolCost = (a, b) => {
 export const bySect = (a, b) => {
   const sectA = a.c ? a.c.Sect : a.Sect;
   const sectB = b.c ? b.c.Sect : b.Sect;
-
-  if (sectA < sectB) return -1;
-  if (sectA > sectB) return 1;
-  return 0;
+  return sectA.localeCompare(sectB, 'en');
 };
 
 export const byTimestamp = (a, b) => {
