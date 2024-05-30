@@ -24,20 +24,18 @@ const InventoryAddPreconRow = ({ deck, idx }) => {
         idx % 2 ? 'bg-bgThird dark:bg-bgThirdDark' : 'bg-bgPrimary dark:bg-bgPrimaryDark'
       }`}
     >
-      {!isMobile && (
-        <td className="min-w-[50px] sm:min-w-[70px]">
-          <div className="flex justify-center">
-            {clans.length > 0 && (
-              <>
-                {clans.map((clan) => (
-                  <ResultPreconClan key={clan} clan={clan} />
-                ))}
-              </>
-            )}
-          </div>
-        </td>
-      )}
-      <td className="w-[135px] sm:w-[250px]">
+      <td className="min-w-[50px] sm:min-w-[70px]">
+        <div className="flex justify-center">
+          {clans.length > 0 && (
+            <>
+              {clans.map((clan) => (
+                <ResultPreconClan key={clan} clan={clan} />
+              ))}
+            </>
+          )}
+        </div>
+      </td>
+      <td className="max-sm:w-full sm:min-w-[250px] lg:min-w-[400px]">
         <div
           className="text-overflow flex justify-between text-fgName dark:text-fgNameDark"
           title={deck.name}

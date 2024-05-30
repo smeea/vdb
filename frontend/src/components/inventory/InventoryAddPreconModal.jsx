@@ -72,59 +72,62 @@ const InventoryAddPreconModal = ({ handleClose }) => {
   }, [preconDecks, nameFilter, setFilter, sortMethod]);
 
   return (
-    <Modal handleClose={handleClose} size="xl" title="Import Precon to Inventory">
-      <div>
-        <table className="inv-import-precons-table border-bgSecondary dark:border-bgSecondaryDark sm:border">
-          <thead>
-            <tr>
-              {!isMobile && <th className="min-w-[50px]"></th>}
-              <th className="min-w-[230px] sm:min-w-[250px]">
-                <Input
-                  placeholder="Filter by Name"
-                  type="text"
-                  name="text"
-                  autoComplete="off"
-                  spellCheck="false"
-                  value={nameFilter}
-                  onChange={handleChangeNameFilter}
-                />
-              </th>
-              {isDesktop && <th className="min-w-[40px]"></th>}
-              <th className="w-full">
-                <Input
-                  placeholder="Filter by Set"
-                  type="text"
-                  name="text"
-                  autoComplete="off"
-                  spellCheck="false"
-                  value={setFilter}
-                  onChange={handleChangeSetFilter}
-                />
-              </th>
-              <th className="min-w-[110px]">
-                <div className="flex items-center justify-end gap-1">
-                  <ConditionalTooltipOrModal
-                    className="basis-full"
-                    title="Precon Quantity"
-                    isModal={isMobile}
-                    overlay={<TooltipText />}
-                  >
-                    <div className="flex basis-full justify-center text-fgThird dark:text-fgThirdDark">
-                      [?]
-                    </div>
-                  </ConditionalTooltipOrModal>
-                  <DeckSortButton onChange={setSortMethod} />
-                </div>
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {sortedDecks.map((deck, idx) => {
-              return <InventoryAddPreconRow key={deck.deckid} deck={deck} idx={idx} />;
-            })}
-          </tbody>
-        </table>
-      </div>
+    <Modal
+      noPadding={isMobile}
+      handleClose={handleClose}
+      size="xl"
+      title="Import Precon to Inventory"
+    >
+      <table className="inv-import-precons-table border-bgSecondary dark:border-bgSecondaryDark sm:border">
+        <thead>
+          <tr>
+            <th className="min-w-[50px]"></th>
+            <th className="max-sm:w-full sm:min-w-[250px] lg:min-w-[400px]">
+              <Input
+                placeholder="Filter by Name"
+                type="text"
+                name="text"
+                autoComplete="off"
+                spellCheck="false"
+                value={nameFilter}
+                onChange={handleChangeNameFilter}
+              />
+            </th>
+            {isDesktop && <th className="min-w-[40px]"></th>}
+            <th className="w-full">
+              <Input
+                placeholder="Filter by Set"
+                type="text"
+                name="text"
+                autoComplete="off"
+                spellCheck="false"
+                value={setFilter}
+                onChange={handleChangeSetFilter}
+              />
+            </th>
+            <th className="min-w-[110px]">
+              <div className="flex items-center justify-end gap-1">
+                <ConditionalTooltipOrModal
+                  className="basis-full"
+                  title="Precon Quantity"
+                  isModal={isMobile}
+                  overlay={<TooltipText />}
+                >
+                  <div className="flex basis-full justify-center text-fgThird dark:text-fgThirdDark">
+                    [?]
+                  </div>
+                </ConditionalTooltipOrModal>
+                <DeckSortButton onChange={setSortMethod} />
+              </div>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          {sortedDecks.map((deck, idx) => {
+            return <InventoryAddPreconRow key={deck.deckid} deck={deck} idx={idx} />;
+          })}
+        </tbody>
+      </table>
     </Modal>
   );
 };

@@ -10,5 +10,4 @@
 # TECH IMPROVEMENTS
 - Update to SQLAlchemy 3
 - Update to TailwindCSS 4 (migrate from isWidth to container queries)
-- Explicit image width/height
 - Remove legacy polyfills when Safari adopts groupBy

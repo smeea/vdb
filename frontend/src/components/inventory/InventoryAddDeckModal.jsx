@@ -69,13 +69,18 @@ const InventoryAddDeckModal = ({ handleClose }) => {
   }, [decks, nameFilter, tagsFilter, revFilter, sortMethod]);
 
   return (
-    <Modal handleClose={handleClose} size="xl" title="Import Deck to Inventory">
+    <Modal
+      noPadding={isMobile}
+      handleClose={handleClose}
+      size="xl"
+      title="Import Deck to Inventory"
+    >
       <table className="border-y border-bgSecondary dark:border-bgSecondaryDark sm:border-x">
         <thead>
           <tr>
-            {!isMobile && <th className="min-w-[45px]"></th>}
+            <th className="min-w-[45px]"></th>
             {!isMobile && <th className="min-w-[50px]"></th>}
-            <th className="min-w-[230px] sm:min-w-[250px]">
+            <th className="max-sm:w-full sm:min-w-[250px] lg:min-w-[400px]">
               <Input
                 placeholder="Filter by Name"
                 type="text"

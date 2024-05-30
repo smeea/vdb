@@ -36,8 +36,8 @@ const InventoryAddDeckRow = ({ deck, allTagsOptions, idx }) => {
                 deck.inventoryType === 's'
                   ? 'Flexible'
                   : deck.inventoryType === 'h'
-                    ? 'Fixed'
-                    : 'Virtual'
+                  ? 'Fixed'
+                  : 'Virtual'
               }
             >
               {deck.inventoryType == 's' && <Shuffle />}
@@ -47,12 +47,10 @@ const InventoryAddDeckRow = ({ deck, allTagsOptions, idx }) => {
           </Button>
         </td>
       )}
-      {!isMobile && (
-        <td className="min-w-[50px]">
-          <div className="flex justify-center">{clan && <ResultClanImage value={clan} />}</div>
-        </td>
-      )}
-      <td className="min-w-[230px] sm:min-w-[250px]">
+      <td className="min-w-[50px]">
+        <div className="flex justify-center">{clan && <ResultClanImage value={clan} />}</div>
+      </td>
+      <td className="max-sm:w-full sm:min-w-[250px] lg:min-w-[400px]">
         <div
           className="flex justify-between truncate text-fgName dark:text-fgNameDark"
           title={deck.name}
