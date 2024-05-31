@@ -62,8 +62,12 @@ const Requirements = ({ card, handleClick }) => {
         {card.Clan && <ResultLibraryClan value={card.Clan} />}
         {card.Discipline && card.Clan && '+'}
         {card.Discipline && <ResultLibraryDisciplines value={card.Discipline} />}
-        {(card.Discipline || card.Clan) && card.Requirement && <>&nbsp;</>}
-        {card.Requirement && <ResultRequirements value={card.Requirement} />}
+        {card.Requirement && (
+          <ResultRequirements
+            withClanDiscipline={card.Discipline || card.Clan}
+            value={card.Requirement}
+          />
+        )}
       </div>
     </td>
   );

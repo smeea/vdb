@@ -27,7 +27,7 @@ const CapacityReq = ({ value }) => {
   );
 };
 
-const ResultRequirements = ({ value }) => {
+const ResultRequirements = ({ value, withClanDiscipline }) => {
   const requirements = value.split(',');
   const validTitles = [
     'primogen',
@@ -47,9 +47,11 @@ const ResultRequirements = ({ value }) => {
 
   const capacityReq = requirements.find((i) => i.includes('capacity'));
   const titleReq = requirements.filter((i) => validTitles.includes(i));
+  const withTrailingSpace = withClanDiscipline && (capacityReq || titleReq.length > 0);
 
   return (
     <>
+      {withTrailingSpace && <>&nbsp;</>}
       {capacityReq && <CapacityReq value={capacityReq} />}
       {titleReq.length > 0 && <TitlesReq value={titleReq} />}
     </>
