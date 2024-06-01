@@ -34,7 +34,7 @@ const LibrarySearchForm = () => {
   const {
     libraryCardBase,
     searchInventoryMode,
-    setSearchInventoryMode,
+    searchMissingInventoryMode,
     setShowLibrarySearch,
     showFloatingButtons,
     inventoryMode,
@@ -140,30 +140,21 @@ const LibrarySearchForm = () => {
       (card) => playtestMode || card.Id < 110000
     );
 
-    if (!isMobile) {
-      if (searchInventoryMode && inventoryMode) {
-        setLibraryResults(
-          filteredCards.filter((card) => {
-            return (
-              inventoryLibrary[card.Id] || usedLibrary.soft[card.Id] || usedLibrary.hard[card.Id]
-            );
-          })
-        );
-      } else {
-        setPreresults(filteredCards);
-      }
+    const setResults = isMobile ? setLibraryResults : setPreresults;
+    if (searchInventoryMode && inventoryMode) {
+      setResults(
+        filteredCards.filter((card) => {
+          return (
+            inventoryLibrary[card.Id] || usedLibrary.soft[card.Id] || usedLibrary.hard[card.Id]
+          );
+        })
+      );
+    } else if (searchMissingInventoryMode && inventoryMode) {
+      setResults(filteredCards.filter((card) => !inventoryLibrary[card.Id]?.q));
     } else {
-      if (searchInventoryMode && inventoryMode) {
-        setLibraryResults(
-          filteredCards.filter((card) => {
-            return (
-              inventoryLibrary[card.Id] || usedLibrary.soft[card.Id] || usedLibrary.hard[card.Id]
-            );
-          })
-        );
-      } else {
-        setLibraryResults(filteredCards);
-      }
+      setResults(filteredCards);
+    }
+    if (isMobile) {
       if (filteredCards.length == 0) {
         navigate('/library');
         setError('NO CARDS FOUND');
@@ -199,6 +190,7 @@ const LibrarySearchForm = () => {
     [
       libraryFormState,
       searchInventoryMode,
+      searchMissingInventoryMode,
       inventoryMode,
       limitedMode,
       playtestMode,
@@ -227,8 +219,6 @@ const LibrarySearchForm = () => {
         handleClear={handleClear}
         preresults={preresults?.length}
         showLimit={showLimit}
-        searchInventoryMode={searchInventoryMode}
-        setSearchInventoryMode={setSearchInventoryMode}
       />
       <LibrarySearchFormType
         value={libraryFormState.type}

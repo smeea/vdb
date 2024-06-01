@@ -22,10 +22,15 @@ const SearchFormTextAndButtons = ({
   onChangeOptions,
   handleShowResults,
   handleClear,
-  searchInventoryMode,
-  setSearchInventoryMode,
 }) => {
-  const { inventoryMode, isMobile } = useApp();
+  const {
+    searchInventoryMode,
+    setSearchInventoryMode,
+    searchMissingInventoryMode,
+    setSearchMissingInventoryMode,
+    inventoryMode,
+    isMobile,
+  } = useApp();
   const [text, setText] = useState('');
 
   useEffect(() => {
@@ -81,7 +86,7 @@ const SearchFormTextAndButtons = ({
           )}
         </div>
         <div className="flex justify-between">
-          <div className="flex w-1/5 space-x-1">
+          <div className="flex w-1/5 gap-1">
             {value[0].value !== '' && (
               <>
                 <SearchFormButtonLogicToggle
@@ -98,7 +103,7 @@ const SearchFormTextAndButtons = ({
               </>
             )}
           </div>
-          <div className="flex items-center justify-end space-x-4">
+          <div className="flex items-center justify-end gap-4">
             {options.map((opt, idx) => {
               return (
                 <Checkbox
@@ -125,13 +130,28 @@ const SearchFormTextAndButtons = ({
         searchForm={searchForm}
       />
       {inventoryMode && (
-        <Checkbox
-          name={0}
-          value="searchInventoryMode"
-          label="Search In Inventory"
-          checked={!!searchInventoryMode}
-          onChange={() => setSearchInventoryMode(!searchInventoryMode)}
-        />
+        <div className="flex justify-between gap-2">
+          <Checkbox
+            name={0}
+            value="searchInventoryMode"
+            label="Search In Inventory"
+            checked={!!searchInventoryMode}
+            onChange={() => {
+              setSearchInventoryMode(!searchInventoryMode);
+              if (searchMissingInventoryMode) setSearchMissingInventoryMode(false);
+            }}
+          />
+          <Checkbox
+            name={0}
+            value="missingInventoryMode"
+            label="Missing In Inventory"
+            checked={!!searchMissingInventoryMode}
+            onChange={() => {
+              setSearchMissingInventoryMode(!searchMissingInventoryMode);
+              if (searchInventoryMode) setSearchInventoryMode(false);
+            }}
+          />
+        </div>
       )}
     </div>
   );

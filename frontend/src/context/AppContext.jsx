@@ -44,6 +44,7 @@ export const AppProvider = ({ children }) => {
   const [inventoryMode, setInventoryMode] = useState();
   const [limitedMode, setLimitedMode] = useState();
   const [searchInventoryMode, setSearchInventoryMode] = useState();
+  const [searchMissingInventoryMode, setSearchMissingInventoryMode] = useState();
   const [cryptDeckSort, setCryptDeckSort] = useState();
   const [cryptSearchSort, setCryptSearchSort] = useState();
   const [librarySearchSort, setLibrarySearchSort] = useState();
@@ -439,6 +440,8 @@ export const AppProvider = ({ children }) => {
         togglePlaytestMode,
         searchInventoryMode,
         setSearchInventoryMode,
+        searchMissingInventoryMode,
+        setSearchMissingInventoryMode,
         inventoryMode,
         toggleInventoryMode,
         limitedMode,

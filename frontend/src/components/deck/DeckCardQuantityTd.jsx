@@ -1,6 +1,5 @@
 import React from 'react';
 import { DeckCardQuantity } from '@/components';
-import { useApp } from '@/context';
 
 const DeckCardQuantityTd = ({
   card,

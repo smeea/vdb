@@ -34,7 +34,7 @@ const CryptSearchForm = () => {
   const {
     cryptCardBase,
     searchInventoryMode,
-    setSearchInventoryMode,
+    searchMissingInventoryMode,
     setShowCryptSearch,
     showFloatingButtons,
     inventoryMode,
@@ -147,26 +147,19 @@ const CryptSearchForm = () => {
       (card) => playtestMode || card.Id < 210000
     );
 
-    if (!isMobile) {
-      if (searchInventoryMode && inventoryMode) {
-        setPreresults(
-          filteredCards.filter((card) => {
-            return inventoryCrypt[card.Id] || usedCrypt.soft[card.Id] || usedCrypt.hard[card.Id];
-          })
-        );
-      } else {
-        setPreresults(filteredCards);
-      }
+    const setResults = isMobile ? setCryptResults : setPreresults;
+    if (searchInventoryMode && inventoryMode) {
+      setResults(
+        filteredCards.filter((card) => {
+          return inventoryCrypt[card.Id] || usedCrypt.soft[card.Id] || usedCrypt.hard[card.Id];
+        })
+      );
+    } else if (searchMissingInventoryMode && inventoryMode) {
+      setResults(filteredCards.filter((card) => !inventoryCrypt[card.Id]?.q));
     } else {
-      if (searchInventoryMode && inventoryMode) {
-        setPreresults(
-          filteredCards.filter((card) => {
-            return inventoryCrypt[card.Id] || usedCrypt.soft[card.Id] || usedCrypt.hard[card.Id];
-          })
-        );
-      } else {
-        setCryptResults(filteredCards);
-      }
+      setResults(filteredCards);
+    }
+    if (isMobile) {
       if (filteredCards.length == 0) {
         navigate('/crypt');
         setError('NO CARDS FOUND');
@@ -200,6 +193,7 @@ const CryptSearchForm = () => {
   useEffect(
     () => testInputsAndSearch(),
     [
+      cryptFormState.text,
       cryptFormState.artist,
       cryptFormState.capacity,
       cryptFormState.clan,
@@ -211,6 +205,7 @@ const CryptSearchForm = () => {
       cryptFormState.traits,
       cryptFormState.votes,
       searchInventoryMode,
+      searchMissingInventoryMode,
       inventoryMode,
       limitedMode,
       playtestMode,
@@ -220,8 +215,8 @@ const CryptSearchForm = () => {
 
   useDebounce(() => testInputsAndSearch(), 300, [
     cryptFormState.disciplines,
-    cryptFormState.text,
     searchInventoryMode,
+    searchMissingInventoryMode,
     inventoryMode,
     limitedMode,
     playtestMode,
@@ -249,8 +244,6 @@ const CryptSearchForm = () => {
         handleClear={handleClear}
         preresults={preresults?.length}
         showLimit={showLimit}
-        searchInventoryMode={searchInventoryMode}
-        setSearchInventoryMode={setSearchInventoryMode}
       />
       <CryptSearchFormDisciplines
         value={cryptFormState.disciplines}
