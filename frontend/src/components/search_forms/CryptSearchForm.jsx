@@ -144,7 +144,7 @@ const CryptSearchForm = () => {
     navigate(`/crypt?q=${encodeURIComponent(JSON.stringify(sanitizedForm))}`);
 
     const filteredCards = filterCrypt(sanitizedForm).filter(
-      (card) => playtestMode || card.Id < 210000
+      (card) => playtestMode || card.Id < 210000,
     );
 
     const setResults = isMobile ? setCryptResults : setPreresults;
@@ -152,7 +152,7 @@ const CryptSearchForm = () => {
       setResults(
         filteredCards.filter((card) => {
           return inventoryCrypt[card.Id] || usedCrypt.soft[card.Id] || usedCrypt.hard[card.Id];
-        })
+        }),
       );
     } else if (searchMissingInventoryMode && inventoryMode) {
       setResults(filteredCards.filter((card) => !inventoryCrypt[card.Id]?.q));
@@ -210,7 +210,7 @@ const CryptSearchForm = () => {
       limitedMode,
       playtestMode,
       cryptCardBase,
-    ]
+    ],
   );
 
   useDebounce(() => testInputsAndSearch(), 300, [

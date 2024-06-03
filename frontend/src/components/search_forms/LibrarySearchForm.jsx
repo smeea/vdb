@@ -137,7 +137,7 @@ const LibrarySearchForm = () => {
     navigate(`/library?q=${encodeURIComponent(JSON.stringify(sanitizedForm))}`);
 
     const filteredCards = filterLibrary(sanitizedForm).filter(
-      (card) => playtestMode || card.Id < 110000
+      (card) => playtestMode || card.Id < 110000,
     );
 
     const setResults = isMobile ? setLibraryResults : setPreresults;
@@ -147,7 +147,7 @@ const LibrarySearchForm = () => {
           return (
             inventoryLibrary[card.Id] || usedLibrary.soft[card.Id] || usedLibrary.hard[card.Id]
           );
-        })
+        }),
       );
     } else if (searchMissingInventoryMode && inventoryMode) {
       setResults(filteredCards.filter((card) => !inventoryLibrary[card.Id]?.q));
@@ -195,7 +195,7 @@ const LibrarySearchForm = () => {
       limitedMode,
       playtestMode,
       libraryCardBase,
-    ]
+    ],
   );
 
   useEffect(() => {

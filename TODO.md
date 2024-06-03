@@ -12,3 +12,4 @@
 - Update to SQLAlchemy 3
 - Update to TailwindCSS 4 (migrate from isWidth to container queries)
 - Remove legacy polyfills when Safari adopts groupBy
+- Test Class Variance Authority?
