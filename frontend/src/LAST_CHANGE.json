@@ -1,6 +1,8 @@
 {
-  "version": "2024-05-18",
+  "version": "2024-06-04",
   "changes": [
-    "Update TWDA"
+    "Update TWDA",
+    "Add 'Missing in Inventory' checkbox to Crypt and Library to search cards by criteria that are missing in your inventory",
+    "Small other fixes and improvements"
   ]
 }
