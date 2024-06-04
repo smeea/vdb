@@ -53,7 +53,7 @@ const DiffSelectDeck = ({ decks, deck, deckidFrom, deckidTo, target, title }) =>
   }, [deckid, decks]);
 
   return (
-    <>
+    <div className="flex flex-col gap-1 sm:gap-2">
       <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">{title}</div>
       {source === `${target}-url` ? (
         <form name={target} onSubmit={handleUrlSubmit} className="min-w-[270px]">
@@ -72,7 +72,7 @@ const DiffSelectDeck = ({ decks, deck, deckidFrom, deckidTo, target, title }) =>
           </div>
         </form>
       ) : (
-        <div className={inventoryMode || !isMobile ? 'flex' : 'flex justify-between'}>
+        <div className={`flex gap-1 ${!inventoryMode && isMobile ? 'justify-between' : ''}`}>
           <div className={deck?.isBranches && source == `${target}-my` ? 'w-3/4' : 'w-full'}>
             {source == `${target}-my` && decks ? (
               <DeckSelectMy handleSelect={handleSelect} deckid={deck?.deckid} />
@@ -121,7 +121,7 @@ const DiffSelectDeck = ({ decks, deck, deckidFrom, deckidTo, target, title }) =>
           />
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

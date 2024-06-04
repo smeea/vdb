@@ -1,8 +1,6 @@
 # FIX
 - Swipes in inventory to change bg-colors (swipes disabled until fixes)
 - Snapshot url in iOS
-- Deck crypt quantity not to trigger immediate re-render
-- Library line height in Deck Compare
 
 # FEATURES
 - TWD search with % V5-compatibility - after BCP clarify V5
