@@ -23,11 +23,11 @@ const useDeckCrypt = (cardsList, sortMethod = 'byName', timer, cardsToList = {})
 
   const sortedState = useMemo(() => {
     return cryptSort(crypt, sortMethod).map((c) => c.c.Id);
-  }, [timer, cardsToList, sortMethod]);
+  }, [timer, sortMethod]);
 
   const sortedSideState = useMemo(() => {
     return cryptSort(cryptSide, sortMethod).map((c) => c.c.Id);
-  }, [timer, cardsToList, sortMethod]);
+  }, [timer, sortMethod]);
 
   const sortedCards = crypt.toSorted((a, b) => {
     return sortedState.indexOf(a.c.Id) - sortedState.indexOf(b.c.Id);
