@@ -44,7 +44,6 @@ artist_fixes = {
     "Gin\u00e9s Qui\u00f1onero-Santiago": "Gin\u00e9s Qui\u00f1onero",
     "Glenn Osterberger": "Glen Osterberger",
     "Heather V. Kreiter": "Heather Kreiter",
-    'Jeff "el jefe" Holt': "Jeff Holt",
     "L. Snelly": "Lawrence Snelly",
     "Mathias Tapia": "Matias Tapia",
     "Mattias Tapia": "Matias Tapia",
@@ -58,7 +57,6 @@ artist_fixes = {
     "Sandra Chang": "Sandra Chang-Adair",
     "T. Bradstreet": "Tim Bradstreet",
     "Tom Baxa": "Thomas Baxa",
-    "zelgaris": "Tomáš Zahradníček",
 }
 
 # Groups are not integers because of ANY-group vampires (e.g. Anarch Convert)

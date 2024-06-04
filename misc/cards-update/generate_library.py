@@ -31,10 +31,9 @@ artist_fixes = {
     "Dimple": "Nicolas Bigot",
     "EM Gist": "Erik Gist",
     "G. Goleash": "Grant Goleash",
-    "Gin\u00e9s Qui\u00f1onero-Santiago": "Gin\u00e9s Qui\u00f1onero",
+    "Ginés Quiñonero-Santiago": "Ginés Quiñonero",
     "Glenn Osterberger": "Glen Osterberger",
     "Heather V. Kreiter": "Heather Kreiter",
-    'Jeff "el jefe" Holt': "Jeff Holt",
     "L. Snelly": "Lawrence Snelly",
     "Mathias Tapia": "Matias Tapia",
     "Mattias Tapia": "Matias Tapia",
@@ -48,12 +47,10 @@ artist_fixes = {
     "Sandra Chang": "Sandra Chang-Adair",
     "T. Bradstreet": "Tim Bradstreet",
     "Tom Baxa": "Thomas Baxa",
-    "zelgaris": "Tomáš Zahradníček",
 }
 
 integer_fields = ["Id"]
 useless_fields = ["Aka", "Flavor Text"]
-
 
 def generate_artists(csv_cards, artists_file, artists_file_min):
     artists = set()
