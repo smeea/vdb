@@ -216,7 +216,7 @@ export const branchCreate = (deck, branch) => {
       deckStore.decks[data[0].deckid] = {
         ...deck,
         deckid: data[0].deckid,
-        description: `[${now.toISOString().split('T')[0]}] \n${branch.description}`,
+        description: `[${now.toISOString().split('T')[0]}]\n${branch.description}`,
         tags: branch.tags,
         crypt: { ...branch.crypt },
         library: { ...branch.library },

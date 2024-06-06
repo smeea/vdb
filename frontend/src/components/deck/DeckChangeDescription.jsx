@@ -15,7 +15,7 @@ const DeckDescription = ({ deck, folded, setFolded }) => {
   }, [description]);
 
   const handleChange = (event) => {
-    setValue(event.target.value);
+    setValue(folded ? value.replace(/.*/, event.target.value) : event.target.value);
   };
 
   const deckChangeDescription = () => {
@@ -40,7 +40,7 @@ const DeckDescription = ({ deck, folded, setFolded }) => {
       </InputLabel>
       {folded ? (
         <Input
-          value={value}
+          value={value.split('\n', 1)[0]}
           onChange={handleChange}
           onBlur={handleOnBlur}
           readOnly={!isEditable}
