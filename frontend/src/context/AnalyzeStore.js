@@ -6,7 +6,7 @@ export const searchAnalyzeForm = proxy({
 });
 
 export const analyzeStore = proxy({
-  all: undefined,
+  decks: undefined,
   results: undefined,
   info: undefined,
 });
@@ -16,7 +16,7 @@ export const setAnalyzeInfo = (v) => {
 };
 
 export const setAnalyzeDecks = (v) => {
-  analyzeStore.all = v;
+  analyzeStore.decks = v;
 };
 
 export const setAnalyzeResults = (v) => {

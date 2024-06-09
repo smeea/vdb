@@ -29,7 +29,7 @@ import {
 const AnalyzeSearchForm = () => {
   const { cryptCardBase, libraryCardBase, isMobile } = useApp();
   const analyzeFormState = useSnapshot(searchAnalyzeForm);
-  const decks = useSnapshot(analyzeStore).all;
+  const decks = useSnapshot(analyzeStore).decks;
   const { filterDecks } = useFiltersDecks(decks);
   const [error, setError] = useState(false);
   const navigate = useNavigate();

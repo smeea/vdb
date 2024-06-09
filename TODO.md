@@ -1,6 +1,7 @@
 # FIX
 - Swipes in inventory to change bg-colors (swipes disabled until fixes)
 - Snapshot url in iOS
+- PR with artist to vtescsv
 
 # FEATURES
 - TWD search with % V5-compatibility - after BCP clarify V5
@@ -8,6 +9,7 @@
 - Card played indicator for playtest
 - Only modifier for discipline search in library
 - Portuguese translation Estel
+- Extra pdf cut guides
 
 # TECH IMPROVEMENTS
 - Update to SQLAlchemy 3

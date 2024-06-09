@@ -27,7 +27,7 @@ import { useDeckImport, useTags } from '@/hooks';
 
 const TournamentAnalyze = () => {
   const { username, cryptCardBase, libraryCardBase, isMobile, isDesktop } = useApp();
-  const { decks, results, info } = useSnapshot(analyzeStore).all;
+  const { decks, results, info } = useSnapshot(analyzeStore);
   const params = useParams();
   const navigate = useNavigate();
 
@@ -137,8 +137,8 @@ const TournamentAnalyze = () => {
         parseInt(array[20]) > 5
           ? parseInt(array[20])
           : wb.Sheets['Final Round']
-            ? getFinalPlace(playerNumber)
-            : parseInt(array[17]);
+          ? getFinalPlace(playerNumber)
+          : parseInt(array[17]);
 
       const name = `${array[1]} ${array[2]}`;
 
