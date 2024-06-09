@@ -45,24 +45,26 @@ const ResultLayoutText = ({
   };
 
   return (
-    <div className="w-full space-y-3">
-      {card.Id > 200000 ? (
-        <ResultCryptLayoutText
-          card={card}
-          setCard={setCard}
+    <div className="grid content-between h-full w-full gap-3">
+      <div className="flex flex-col gap-3">
+        {card.Id > 200000 ? (
+          <ResultCryptLayoutText
+            card={card}
+            setCard={setCard}
+            handleClose={handleClose}
+            noClose={noClose}
+          />
+        ) : (
+          <ResultLibraryLayoutText card={card} handleClose={handleClose} noClose={noClose} />
+        )}
+        <ResultLayoutTextCommon
           handleClose={handleClose}
-          noClose={noClose}
+          card={card}
+          setImageSet={setImageSet}
+          forceInventoryMode={forceInventoryMode}
+          setIsHotkeysDisabled={setIsHotkeysDisabled}
         />
-      ) : (
-        <ResultLibraryLayoutText card={card} handleClose={handleClose} noClose={noClose} />
-      )}
-      <ResultLayoutTextCommon
-        handleClose={handleClose}
-        card={card}
-        setImageSet={setImageSet}
-        forceInventoryMode={forceInventoryMode}
-        setIsHotkeysDisabled={setIsHotkeysDisabled}
-      />
+      </div>
       <div className="flex justify-between">
         <div className="flex flex-row gap-1">
           <ButtonCardCopyUrl cardid={card.Id} />

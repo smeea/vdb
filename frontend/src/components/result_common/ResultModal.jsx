@@ -124,7 +124,6 @@ const ResultModal = ({ card, handleModalCardChange, handleClose, forceInventoryM
             <ArrowRepeat width="40" height="40" viewBox="0 0 16 16" />
           </ButtonFloat>
         )}
-        {isNarrow && <ButtonFloatClose handleClose={handleClose} />}
       </div>
     </Modal>
   );
