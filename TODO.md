@@ -8,7 +8,6 @@
 - Deck details show % V5-compatibility - after BCP clarify V5
 - Card played indicator for playtest
 - Only modifier for discipline search in library
-- Portuguese translation Estel
 
 # TECH IMPROVEMENTS
 - Update to SQLAlchemy 3
