@@ -68,11 +68,35 @@ const DeckProxyButton = ({ missingCrypt, missingLibrary, deck, inDiff }) => {
       pdf.line(cutLineGap, marginTop, sheetW - cutLineGap, marginTop);
       pdf.line(
         cutLineGap,
+        marginTop + h * 1 + gap * 0.5,
+        sheetW - cutLineGap,
+        marginTop + h * 1 + gap * 0.5,
+      );
+      pdf.line(
+        cutLineGap,
+        marginTop + h * 2 + gap * 1.5,
+        sheetW - cutLineGap,
+        marginTop + h * 2 + gap * 1.5,
+      );
+      pdf.line(
+        cutLineGap,
         marginTop + h * 3 + gap * 2,
         sheetW - cutLineGap,
         marginTop + h * 3 + gap * 2,
       );
       pdf.line(marginLeft, cutLineGap, marginLeft, sheetH - cutLineGap);
+      pdf.line(
+        marginLeft + w * 1 + gap * 0.5,
+        cutLineGap,
+        marginLeft + w * 1 + gap * 0.5,
+        sheetH - cutLineGap,
+      );
+      pdf.line(
+        marginLeft + w * 2 + gap * 1.5,
+        cutLineGap,
+        marginLeft + w * 2 + gap * 1.5,
+        sheetH - cutLineGap,
+      );
       pdf.line(
         marginLeft + w * 3 + gap * 2,
         cutLineGap,

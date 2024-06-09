@@ -9,7 +9,6 @@
 - Card played indicator for playtest
 - Only modifier for discipline search in library
 - Portuguese translation Estel
-- Extra pdf cut guides
 
 # TECH IMPROVEMENTS
 - Update to SQLAlchemy 3
