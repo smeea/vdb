@@ -38,16 +38,16 @@ def letters_to_ascii(text):
 artist_fixes = {
     "Alejandro Collucci": "Alejandro Colucci",
     "Chet Masterz": "Chet Masters",
-    "Dimple": "Nicolas Bigot",
-    "EM Gist": "Erik Gist",
+    "Dimple": "Nicolas \"Dimple\" Bigot",
+    "EM Gist": "E.M. Gist",
     "G. Goleash": "Grant Goleash",
-    "Gin\u00e9s Qui\u00f1onero-Santiago": "Gin\u00e9s Qui\u00f1onero",
+    "Ginés Quiñonero-Santiago": "Ginés Quiñonero",
     "Glenn Osterberger": "Glen Osterberger",
-    "Heather V. Kreiter": "Heather Kreiter",
+    "Heather Kreiter": "Heather V. Kreiter",
     "L. Snelly": "Lawrence Snelly",
     "Mathias Tapia": "Matias Tapia",
     "Mattias Tapia": "Matias Tapia",
-    "Matt Mitchell": "Matthew Mitchell",
+    "Matthew Mitchell": "Matt Mitchell",
     "Mike Gaydos": "Michael Gaydos",
     "Mike Weaver": "Michael Weaver",
     'Nicolas "Dimple" Bigot': "Nicolas Bigot",
@@ -56,7 +56,7 @@ artist_fixes = {
     "Sam Araya": "Samuel Araya",
     "Sandra Chang": "Sandra Chang-Adair",
     "T. Bradstreet": "Tim Bradstreet",
-    "Tom Baxa": "Thomas Baxa",
+    "Thomas Baxa": "Tom Baxa",
 }
 
 # Groups are not integers because of ANY-group vampires (e.g. Anarch Convert)
