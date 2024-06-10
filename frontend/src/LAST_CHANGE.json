@@ -1,8 +1,10 @@
 {
-  "version": "2024-06-04",
+  "version": "2024-06-09",
   "changes": [
-    "Update TWDA",
-    "Add 'Missing in Inventory' checkbox to Crypt and Library to search cards by criteria that are missing in your inventory",
+    "Update Brazilian Portuguese crypt translation (ALL vampires are now translated!). Thanks to Estel Matiazi for outstanding contribution!",
+    "Add extra cut lines to PDF proxy (full grid)",
+    "Fix Tournament Analyze",
+    "Fix deck description to only show first line when folded",
     "Small other fixes and improvements"
   ]
 }

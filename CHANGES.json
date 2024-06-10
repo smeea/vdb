@@ -1,5 +1,15 @@
 [
   {
+    "version": "2024-06-09",
+    "changes": [
+      "Update Brazilian Portuguese crypt translation (ALL vampires are now translated!). Thanks to Estel Matiazi for outstanding contribution!",
+      "Add extra cut lines to PDF proxy (full grid)",
+      "Fix Tournament Analyze",
+      "Fix deck description to only show first line when folded",
+      "Small other fixes and improvements"
+    ]
+  },
+  {
     "version": "2024-06-04",
     "changes": [
       "Update TWDA",
