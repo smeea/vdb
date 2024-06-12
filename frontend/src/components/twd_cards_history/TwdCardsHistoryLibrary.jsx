@@ -160,7 +160,7 @@ const TwdCardsHistoryLibrary = ({ cards, players }) => {
   });
 
   return (
-    <div className="h-[calc(100vh-174px)] sm:h-[calc(100vh-240px)]">
+    <div className="h-[calc(100dvh-174px)] sm:h-[calc(100dvh-240px)]">
       <div className="flex items-center justify-between bg-bgSecondary dark:bg-bgSecondaryDark">
         <div className="w-3/4">
           <div className="flex flex-col space-y-1">

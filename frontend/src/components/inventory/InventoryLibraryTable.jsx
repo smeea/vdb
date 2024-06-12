@@ -48,8 +48,8 @@ const InventoryLibraryTable = ({ cards, sortMethod, compact, withCompact, newFoc
         <div
           className={
             withCompact
-              ? 'h-[calc(100vh-251px)] sm:h-[calc(100vh-291px)] lg:h-[calc(100vh-304px)] xl:h-[calc(100vh-326px)]'
-              : 'h-[calc(100vh-206px)] sm:h-[calc(100vh-237px)] lg:h-[calc(100vh-250px)] xl:h-[calc(100vh-272px)]'
+              ? 'h-[calc(100dvh-252px)] sm:h-[calc(100dvh-291px)] lg:h-[calc(100dvh-306px)] xl:h-[calc(100dvh-332px)]'
+              : 'h-[calc(100dvh-206px)] sm:h-[calc(100dvh-237px)] lg:h-[calc(100dvh-250px)] xl:h-[calc(100dvh-272px)]'
           }
         >
           <AutoSizer>

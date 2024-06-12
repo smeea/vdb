@@ -74,7 +74,7 @@ const TwdCardsHistoryCrypt = ({ cards, players }) => {
   });
 
   return (
-    <div className="h-[calc(100vh-132px)] sm:h-[calc(100vh-195px)]">
+    <div className="h-[calc(100dvh-132px)] sm:h-[calc(100dvh-195px)]">
       <div className="flex items-center justify-between bg-bgSecondary dark:bg-bgSecondaryDark">
         <div className="w-3/4">
           <InventoryFilterForm

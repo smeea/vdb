@@ -48,8 +48,8 @@ const InventoryCryptTable = ({ cards, sortMethod, compact, withCompact, newFocus
         <div
           className={
             withCompact
-              ? 'h-[calc(100vh-209px)] sm:h-[calc(100vh-249px)] lg:h-[calc(100vh-262px)] xl:h-[calc(100vh-284px)]'
-              : 'h-[calc(100vh-164px)] sm:h-[calc(100vh-195px)] lg:h-[calc(100vh-208px)] xl:h-[calc(100vh-230px)]'
+              ? 'h-[calc(100dvh-206px)] sm:h-[calc(100dvh-245px)] lg:h-[calc(100dvh-261px)] xl:h-[calc(100dvh-288px)]'
+              : 'h-[calc(100dvh-159px)] sm:h-[calc(100dvh-192px)] lg:h-[calc(100dvh-204px)] xl:h-[calc(100dvh-225px)]'
           }
         >
           <AutoSizer>
