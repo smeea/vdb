@@ -14,3 +14,4 @@
 - Update to TailwindCSS 4 (migrate from isWidth to container queries)
 - Remove legacy polyfills when Safari adopts groupBy
 - Update Buttons/MenuButton to use class-variance-authority
+- Refactor to replace TwdSearchFormClan/Sect with CryptSearchForm

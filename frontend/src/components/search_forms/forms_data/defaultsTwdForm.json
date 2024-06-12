@@ -22,8 +22,18 @@
     "76-83": false,
     "84-90": false
   },
-  "clan": "any",
-  "sect": "any",
+  "clan": {
+    "value": [
+      "any"
+    ],
+    "logic": "or"
+  },
+  "sect": {
+    "value": [
+      "any"
+    ],
+    "logic": "or"
+  },
   "capacity": {
     "1-4": false,
     "4-6": false,

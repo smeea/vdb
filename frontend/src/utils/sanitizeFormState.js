@@ -127,6 +127,7 @@ const sanitizeFormState = (target, state) => {
   });
 
   switch (target) {
+    case 'twd':
     case 'crypt':
       forms = ['clan', 'sect'];
       forms.forEach((i) => {
@@ -149,7 +150,6 @@ const sanitizeFormState = (target, state) => {
       break;
     case 'analyze':
     case 'pda':
-    case 'twd':
       forms = ['crypt', 'library'];
       forms.forEach((i) => {
         Object.keys(input[i]).forEach((k) => {

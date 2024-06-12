@@ -8,7 +8,8 @@ import {
   TwdSearchFormButtons,
   TwdSearchFormCapacity,
   TwdSearchFormCardtypes,
-  TwdSearchFormClan,
+  CryptSearchFormClan,
+  CryptSearchFormSect,
   TwdSearchFormCrypt,
   TwdSearchFormDate,
   TwdSearchFormDisciplines,
@@ -19,7 +20,6 @@ import {
   TwdSearchFormMatchInventory,
   TwdSearchFormPlayer,
   TwdSearchFormPlayers,
-  TwdSearchFormSect,
 } from '@/components';
 import { sanitizeFormState } from '@/utils';
 import { useApp, setTwdResults, searchTwdForm, clearSearchForm } from '@/context';
@@ -56,9 +56,10 @@ const TwdSearchForm = ({ error, setError }) => {
     searchTwdForm.event = event.target.value;
   };
 
-  const handleChange = (event) => {
+  const handleMultiSelectChange = (event, id) => {
+    const i = id.name;
     const { name, value } = event;
-    searchTwdForm[name] = value;
+    searchTwdForm[name].value[i] = value;
   };
 
   const handleChangeWithOpt = (event, id) => {
@@ -208,7 +209,11 @@ const TwdSearchForm = ({ error, setError }) => {
         <TwdSearchFormLibrary value={twdFormState.library} form={searchTwdForm.library} />
       )}
       <TwdSearchFormLibraryTotal value={twdFormState.libraryTotal} onChange={handleMultiChange} />
-      <TwdSearchFormClan value={twdFormState.clan} onChange={handleChange} />
+      <CryptSearchFormClan
+        value={twdFormState.clan}
+        onChange={handleMultiSelectChange}
+        searchForm={searchTwdForm}
+      />
       <div className="flex justify-end">
         <Checkbox
           name="traits"
@@ -218,7 +223,11 @@ const TwdSearchForm = ({ error, setError }) => {
           onChange={handleMultiChange}
         />
       </div>
-      <TwdSearchFormSect value={twdFormState.sect} onChange={handleChange} />
+      <CryptSearchFormSect
+        value={twdFormState.sect}
+        onChange={handleMultiSelectChange}
+        searchForm={searchTwdForm}
+      />
       <TwdSearchFormCapacity value={twdFormState.capacity} onChange={handleMultiChange} />
       <TwdSearchFormDisciplines
         value={twdFormState.disciplines}

@@ -148,20 +148,34 @@ def get_decks_by_players(request, decks):
     return match_decks
 
 
-def get_decks_by_clan(clan, decks):
+def get_decks_by_clan(value, decks):
+    clans = value['value']
+    logic = value['logic']
     match_decks = []
     for deck in decks:
-        if deck["clan"] and deck["clan"].lower() == clan:
-            match_decks.append(deck)
+        for clan in clans:
+            if logic == 'or':
+                if deck["clan"] and deck["clan"].lower() == clan:
+                    match_decks.append(deck)
+            if logic == 'not':
+                if not deck["clan"] or deck["clan"].lower() != clan:
+                    match_decks.append(deck)
 
     return match_decks
 
 
-def get_decks_by_sect(sect, decks):
+def get_decks_by_sect(value, decks):
+    sects = value['value']
+    logic = value['logic']
     match_decks = []
     for deck in decks:
-        if deck["sect"] and deck["sect"].lower() == sect:
-            match_decks.append(deck)
+        for sect in sects:
+            if logic == 'or':
+                if deck["sect"] and deck["sect"].lower() == sect:
+                    match_decks.append(deck)
+            if logic == 'not':
+                if not deck["sect"] or deck["sect"].lower() != sect:
+                    match_decks.append(deck)
 
     return match_decks
 
