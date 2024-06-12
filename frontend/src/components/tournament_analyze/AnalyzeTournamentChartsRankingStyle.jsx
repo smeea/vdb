@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import { BubbleChart } from '@/components';
-import { getClan } from '@/utils';
+import { capitalize, getClan } from '@/utils';
 import { useApp } from '@/context';
 
 const AnalyzeTournamentChartsRankingStyle = ({ info, decks, searchResults }) => {
@@ -57,7 +57,7 @@ const AnalyzeTournamentChartsRankingStyle = ({ info, decks, searchResults }) => 
           <BubbleChart
             key={s}
             data={data[s]}
-            name={s[0].toUpperCase() + s.slice(1)}
+            name={capitalize(s)}
             refLine={info.medianReportedRank}
             titleWidth={80}
             width={isMobile || (isDesktop && !isWide) ? 370 : 600}

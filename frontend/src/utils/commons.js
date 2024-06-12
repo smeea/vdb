@@ -217,3 +217,4 @@ export const getSect = (crypt) => {
 };
 
 export const deepClone = (v) => JSON.parse(JSON.stringify(v));
+export const capitalize = (v) => v.charAt(0).toUpperCase() + v.slice(1);

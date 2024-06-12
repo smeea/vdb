@@ -1,12 +1,9 @@
 import React from 'react';
 import { ResultCryptTitle } from '@/components';
+import { capitalize } from '@/utils';
 
 const TitlesReq = ({ value }) => {
-  const titles = value
-    .map((v) => {
-      return v.charAt(0).toUpperCase() + v.slice(1);
-    })
-    .join(', ');
+  const titles = value.map((v) => capitalize(v)).join(', ');
 
   return (
     <div title={titles} className="text-fg-fgSecondary dark:text-fgSecondaryDark">

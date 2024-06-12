@@ -1,5 +1,6 @@
 import React from 'react';
 import { Select } from '@/components';
+import { capitalize } from '@/utils';
 
 const TwdSearchFormMatchInventory = ({ value, target, onChange }) => {
   const name = 'matchInventory';
@@ -25,7 +26,7 @@ const TwdSearchFormMatchInventory = ({ value, target, onChange }) => {
     <div className="flex items-center">
       <div className="w-full">
         <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
-          In Inventory by {`${target[0].toUpperCase()}${target.slice(1)}`}:
+          In Inventory by {capitalize(target)}:
         </div>
       </div>
       <div className="w-full">
