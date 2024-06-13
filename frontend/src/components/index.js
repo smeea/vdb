@@ -54,6 +54,7 @@ export { default as DisciplinesCryptSummary } from './crypt/DisciplinesCryptSumm
 export { default as DeckBranchSelect } from './deck/DeckBranchSelect.jsx';
 export { default as DeckCardQuantity } from './deck/DeckCardQuantity.jsx';
 export { default as DeckCardQuantityTd } from './deck/DeckCardQuantityTd.jsx';
+export { default as DeckCardToggleInventoryStateTd } from './deck/DeckCardToggleInventoryStateTd.jsx';
 export { default as DeckChangeAuthor } from './deck/DeckChangeAuthor.jsx';
 export { default as DeckChangeBranchName } from './deck/DeckChangeBranchName.jsx';
 export { default as DeckChangeDescription } from './deck/DeckChangeDescription.jsx';

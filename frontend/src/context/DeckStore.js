@@ -71,54 +71,57 @@ export const deckUpdate = (deckid, field, value) => {
   const initialDeckState = deepClone(deckStore.deck);
   const initialDecksState = deepClone(deckStore.decks[deckid]);
 
-  if (field === 'usedInInventory') {
-    Object.keys(value).forEach((cardid) => {
-      if (cardid > 200000) {
-        deckStore.decks[deckid].crypt[cardid].i = value[cardid];
-      } else {
-        deckStore.decks[deckid].library[cardid].i = value[cardid];
-      }
-    });
-
-    if (deckid === deckStore.deck.deckid) {
+  switch (field) {
+    case 'usedInInventory':
       Object.keys(value).forEach((cardid) => {
         if (cardid > 200000) {
-          deckStore.deck.crypt[cardid].i = value[cardid];
+          deckStore.decks[deckid].crypt[cardid].i = value[cardid];
         } else {
-          deckStore.deck.library[cardid].i = value[cardid];
+          deckStore.decks[deckid].library[cardid].i = value[cardid];
         }
       });
-    }
-  } else if (field === 'cards') {
-    deckStore.decks[deckid].crypt = value.crypt;
-    deckStore.decks[deckid].library = value.library;
 
-    if (deckid === deckStore.deck.deckid) {
-      deckStore.deck.crypt = value.crypt;
-      deckStore.deck.library = value.library;
-    }
-  } else {
-    deckStore.decks[deckid][field] = value;
-    if (field === 'inventoryType') {
-      Object.keys(deckStore.decks[deckid].crypt).forEach((cardid) => {
-        deckStore.decks[deckid].crypt[cardid].i = '';
-      });
-      Object.keys(deckStore.decks[deckid].library).forEach((cardid) => {
-        deckStore.decks[deckid].library[cardid].i = '';
-      });
-    }
-
-    if (deckid === deckStore.deck.deckid) {
-      deckStore.deck[field] = value;
-      if (field === 'inventoryType') {
-        Object.keys(deckStore.deck.crypt).forEach((cardid) => {
-          deckStore.deck.crypt[cardid].i = '';
-        });
-        Object.keys(deckStore.deck.library).forEach((cardid) => {
-          deckStore.deck.library[cardid].i = '';
+      if (deckid === deckStore.deck.deckid) {
+        Object.keys(value).forEach((cardid) => {
+          if (cardid > 200000) {
+            deckStore.deck.crypt[cardid].i = value[cardid];
+          } else {
+            deckStore.deck.library[cardid].i = value[cardid];
+          }
         });
       }
-    }
+      break;
+    case 'cards':
+      deckStore.decks[deckid].crypt = value.crypt;
+      deckStore.decks[deckid].library = value.library;
+
+      if (deckid === deckStore.deck.deckid) {
+        deckStore.deck.crypt = value.crypt;
+        deckStore.deck.library = value.library;
+      }
+      break;
+    default:
+      deckStore.decks[deckid][field] = value;
+      if (field === 'inventoryType') {
+        Object.keys(deckStore.decks[deckid].crypt).forEach((cardid) => {
+          deckStore.decks[deckid].crypt[cardid].i = '';
+        });
+        Object.keys(deckStore.decks[deckid].library).forEach((cardid) => {
+          deckStore.decks[deckid].library[cardid].i = '';
+        });
+      }
+
+      if (deckid === deckStore.deck.deckid) {
+        deckStore.deck[field] = value;
+        if (field === 'inventoryType') {
+          Object.keys(deckStore.deck.crypt).forEach((cardid) => {
+            deckStore.deck.crypt[cardid].i = '';
+          });
+          Object.keys(deckStore.deck.library).forEach((cardid) => {
+            deckStore.deck.library[cardid].i = '';
+          });
+        }
+      }
   }
 
   const branchesUpdateFields = ['name', 'author'];

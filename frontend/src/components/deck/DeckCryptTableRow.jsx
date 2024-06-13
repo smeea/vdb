@@ -1,17 +1,13 @@
 import React, { useState } from 'react';
 import { useSwipeable } from 'react-swipeable';
 import { useSnapshot } from 'valtio';
-import Shuffle from '@/assets/images/icons/shuffle.svg?react';
-import PinAngleFill from '@/assets/images/icons/pin-angle-fill.svg?react';
+import { deckCardChange, useApp, usedStore, inventoryStore, limitedStore } from '@/context';
 import {
-  deckCardChange,
-  cardToggleInventoryState,
-  useApp,
-  usedStore,
-  inventoryStore,
-  limitedStore,
-} from '@/context';
-import { DeckCardQuantityTd, ResultCryptTableRowCommon, DeckDrawProbability } from '@/components';
+  DeckCardToggleInventoryStateTd,
+  DeckCardQuantityTd,
+  ResultCryptTableRowCommon,
+  DeckDrawProbability,
+} from '@/components';
 import { getSoftMax, getHardTotal } from '@/utils';
 import { useDebounce } from '@/hooks';
 
@@ -66,8 +62,8 @@ const DeckCryptTableRow = ({
       ? 'bg-bgSuccess dark:bg-bgSuccessDark'
       : 'bg-bgErrorSecondary dark:bg-bgErrorSecondaryDark'
     : idx % 2
-      ? 'bg-bgThird dark:bg-bgThirdDark'
-      : 'bg-bgPrimary dark:bg-bgPrimaryDark';
+    ? 'bg-bgThird dark:bg-bgThirdDark'
+    : 'bg-bgPrimary dark:bg-bgPrimaryDark';
 
   return (
     <tr
@@ -75,18 +71,7 @@ const DeckCryptTableRow = ({
       className={`h-[38px] border-y border-bgSecondary dark:border-bgSecondaryDark ${trBg}`}
     >
       {inventoryMode && deck.inventoryType && !inMissing && !inSearch && isDesktop && (
-        <td className="max-w-0">
-          <div className="relative flex items-center">
-            <div
-              className={`inventory-card-custom absolute left-[-24px]
-                        ${card.i ? '' : 'not-selected opacity-0'}
-                      `}
-              onClick={() => cardToggleInventoryState(deckid, card.c.Id)}
-            >
-              {deck.inventoryType == 's' ? <PinAngleFill /> : <Shuffle />}
-            </div>
-          </div>
-        </td>
+        <DeckCardToggleInventoryStateTd card={card} deck={deck} />
       )}
       <DeckCardQuantityTd
         card={card.c}

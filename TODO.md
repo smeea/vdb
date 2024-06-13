@@ -2,6 +2,7 @@
 - Swipes in inventory to change bg-colors (swipes disabled until fixes)
 - Snapshot url in iOS
 - PWA auto-reload in Chrome/iOS
+- Fix partially used in inventory
 
 # FEATURES
 - TWD search with % V5-compatibility - after BCP clarify V5
@@ -12,7 +13,8 @@
 
 # TECH IMPROVEMENTS
 - Update to SQLAlchemy 3
+- Update to React 19
 - Update to TailwindCSS 4 (migrate from isWidth to container queries)
 - Remove legacy polyfills when Safari adopts groupBy
-- Refactor with cva, clsx, twMerge
+- Refactor with cva, twMerge
 - Refactor to replace TwdSearchFormClan/Sect with CryptSearchForm
