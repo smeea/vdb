@@ -127,39 +127,40 @@ const sanitizeFormState = (target, state) => {
   });
 
   switch (target) {
-    case 'twd':
     case 'crypt':
+    case 'analyze':
+    case 'pda':
+    case 'twd':
       forms = ['clan', 'sect'];
-      forms.forEach((i) => {
-        input[i].value.forEach((j, idx) => {
-          if (j === 'any') {
-            input[i].value.splice(idx, 1);
-          }
-        });
-      });
       break;
     case 'library':
       forms = ['clan', 'sect', 'title'];
-      forms.forEach((i) => {
-        input[i].value.forEach((j, idx) => {
-          if (j === 'any') {
-            input[i].value.splice(idx, 1);
-          }
-        });
-      });
-      break;
-    case 'analyze':
-    case 'pda':
-      forms = ['crypt', 'library'];
-      forms.forEach((i) => {
-        Object.keys(input[i]).forEach((k) => {
-          input[i][k] == -1 && delete input[i][k];
-        });
-      });
       break;
     default:
       forms = [];
   }
+  forms.forEach((i) => {
+    input[i].value.forEach((j, idx) => {
+      if (j === 'any') {
+        input[i].value.splice(idx, 1);
+      }
+    });
+  });
+
+  switch (target) {
+    case 'analyze':
+    case 'pda':
+    case 'twd':
+      forms = ['crypt', 'library'];
+      break;
+    default:
+      forms = [];
+  }
+  forms.forEach((i) => {
+    Object.keys(input[i]).forEach((k) => {
+      input[i][k] == -1 && delete input[i][k];
+    });
+  });
 
   Object.keys(input).forEach((k) => {
     if (

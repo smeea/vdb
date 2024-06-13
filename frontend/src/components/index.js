@@ -362,8 +362,6 @@ export { default as TwdSearchFormDisciplines } from './search_forms/components/T
 export { default as TwdSearchFormMatchInventory } from './search_forms/components/TwdSearchFormMatchInventory.jsx';
 export { default as TwdSearchFormCardtypes } from './search_forms/components/TwdSearchFormCardtypes.jsx';
 export { default as TwdSearchFormEvent } from './search_forms/components/TwdSearchFormEvent.jsx';
-export { default as TwdSearchFormClan } from './search_forms/components/TwdSearchFormClan.jsx';
-export { default as TwdSearchFormSect } from './search_forms/components/TwdSearchFormSect.jsx';
 export { default as TwdSearchFormLibrary } from './search_forms/components/TwdSearchFormLibrary.jsx';
 export { default as TwdSearchFormPlayer } from './search_forms/components/TwdSearchFormPlayer.jsx';
 export { default as TwdRandomButton } from './search_forms/components/TwdRandomButton.jsx';

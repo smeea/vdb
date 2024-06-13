@@ -9,7 +9,8 @@ import {
   TwdSearchFormButtons,
   TwdSearchFormCapacity,
   TwdSearchFormCardtypes,
-  TwdSearchFormClan,
+  CryptSearchFormClan,
+  CryptSearchFormSect,
   TwdSearchFormCrypt,
   TwdSearchFormDate,
   TwdSearchFormDisciplines,
@@ -17,7 +18,6 @@ import {
   TwdSearchFormLibraryTotal,
   TwdSearchFormMatchInventory,
   TwdSearchFormPlayer,
-  TwdSearchFormSect,
 } from '@/components';
 import { sanitizeFormState } from '@/utils';
 import { useApp, setPdaResults, searchPdaForm, clearSearchForm } from '@/context';
@@ -51,10 +51,15 @@ const PdaSearchForm = ({ error, setError }) => {
     }
   }, [pdaFormState, cryptCardBase, libraryCardBase]);
 
+  const handleMultiSelectChange = (event, id) => {
+    const i = id.name;
+    const { name, value } = event;
+    searchPdaForm[name].value[i] = value;
+  };
+
   const handleChange = (event) => {
     const { name, value, id } = event.target ?? event;
     const i = id ?? value;
-
     searchPdaForm[name] = i;
   };
 
@@ -208,7 +213,11 @@ const PdaSearchForm = ({ error, setError }) => {
         <TwdSearchFormLibrary value={pdaFormState.library} form={searchPdaForm.library} />
       )}
       <TwdSearchFormLibraryTotal value={pdaFormState.libraryTotal} onChange={handleMultiChange} />
-      <TwdSearchFormClan value={pdaFormState.clan} onChange={handleChange} />
+      <CryptSearchFormClan
+        value={pdaFormState.clan}
+        onChange={handleMultiSelectChange}
+        searchForm={searchPdaForm}
+      />
       <div className="flex justify-end">
         <Checkbox
           name="traits"
@@ -218,7 +227,11 @@ const PdaSearchForm = ({ error, setError }) => {
           onChange={handleMultiChange}
         />
       </div>
-      <TwdSearchFormSect value={pdaFormState.sect} onChange={handleChange} />
+      <CryptSearchFormSect
+        value={pdaFormState.sect}
+        onChange={handleMultiSelectChange}
+        searchForm={searchPdaForm}
+      />
       <TwdSearchFormCapacity value={pdaFormState.capacity} onChange={handleMultiChange} />
       <TwdSearchFormDisciplines
         value={pdaFormState.disciplines}

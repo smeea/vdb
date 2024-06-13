@@ -8,12 +8,12 @@ import {
   Checkbox,
   TwdSearchFormCapacity,
   TwdSearchFormCardtypes,
-  TwdSearchFormClan,
+  CryptSearchFormClan,
+  CryptSearchFormSect,
   TwdSearchFormCrypt,
   TwdSearchFormDisciplines,
   TwdSearchFormLibrary,
   TwdSearchFormLibraryTotal,
-  TwdSearchFormSect,
   AnalyzeSearchFormRank,
 } from '@/components';
 import { useFiltersDecks } from '@/hooks';
@@ -55,9 +55,10 @@ const AnalyzeSearchForm = () => {
     }
   }, [analyzeFormState, cryptCardBase, libraryCardBase]);
 
-  const handleChange = (event) => {
+  const handleMultiSelectChange = (event, id) => {
+    const i = id.name;
     const { name, value } = event;
-    searchAnalyzeForm[name] = value;
+    searchAnalyzeForm[name].value[i] = value;
   };
 
   const handleChangeWithOpt = (event, id) => {
@@ -134,7 +135,11 @@ const AnalyzeSearchForm = () => {
         value={analyzeFormState.libraryTotal}
         onChange={handleMultiChange}
       />
-      <TwdSearchFormClan value={analyzeFormState.clan} onChange={handleChange} />
+      <CryptSearchFormClan
+        value={analyzeFormState.clan}
+        onChange={handleMultiSelectChange}
+        searchForm={searchAnalyzeForm}
+      />
       <div className="flex justify-end">
         <Checkbox
           name="traits"
@@ -144,7 +149,11 @@ const AnalyzeSearchForm = () => {
           onChange={handleMultiChange}
         />
       </div>
-      <TwdSearchFormSect value={analyzeFormState.sect} onChange={handleChange} />
+      <CryptSearchFormSect
+        value={analyzeFormState.sect}
+        onChange={handleMultiSelectChange}
+        searchForm={searchAnalyzeForm}
+      />
       <TwdSearchFormCapacity value={analyzeFormState.capacity} onChange={handleMultiChange} />
       <TwdSearchFormDisciplines
         value={analyzeFormState.disciplines}

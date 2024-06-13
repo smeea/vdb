@@ -102,15 +102,37 @@ const missingLibraryTotal = (filter, deck) => {
 };
 
 const missingClan = (filter, deck) => {
+  const { value, logic } = filter;
   const clan = getClan(deck.crypt);
-  if (clan && clan.toLowerCase() === filter) return false;
+
+  switch (logic) {
+    case 'or':
+      return !value.some((i) => {
+        if (clan && clan.toLowerCase() === i) return true;
+      });
+    case 'not':
+      return value.some((i) => {
+        if (clan && clan.toLowerCase() === i) return true;
+      });
+  }
 
   return true;
 };
 
 const missingSect = (filter, deck) => {
+  const { value, logic } = filter;
   const sect = getSect(deck.crypt);
-  if (sect && sect.toLowerCase() === filter) return false;
+
+  switch (logic) {
+    case 'or':
+      return !value.some((i) => {
+        if (sect && sect.toLowerCase() === i) return true;
+      });
+    case 'not':
+      return value.some((i) => {
+        if (sect && sect.toLowerCase() === i) return true;
+      });
+  }
 
   return true;
 };
