@@ -13,7 +13,7 @@
     },
     "100018":{
         "Name":"Belleza dolorosa",
-        "Card Text":"\nPonle esta carta a un Toreador. Si este Toreador es bloqueado, el controlador del siervo bloqueador quema 1 de reserva sangu\u00ednea antes de la resoluci\u00f3n del bloqueo."
+        "Card Text":"Ponle esta carta a un Toreador. Si este Toreador es bloqueado, el controlador del siervo bloqueador quema 1 de reserva sangu\u00ednea antes de la resoluci\u00f3n del bloqueo."
     },
     "100029":{
         "Name":"Ayuda de murci\u00e9lagos",
@@ -129,7 +129,7 @@
     },
     "100199":{
         "Name":"Mu\u00f1eca de sangre",
-        "Card Text":"\nPonle esta carta a un vampiro que controles. Durante su fase heril, el controlador de este vampiro puede pasar 1 de sangre de este vampiro a su reserva sangu\u00ednea o de su reserva sangu\u00ednea a este vampiro."
+        "Card Text":"Ponle esta carta a un vampiro que controles. Durante su fase heril, el controlador de este vampiro puede pasar 1 de sangre de este vampiro a su reserva sangu\u00ednea o de su reserva sangu\u00ednea a este vampiro."
     },
     "100208":{
         "Name":"Rabia sangrienta",
@@ -437,7 +437,7 @@
     },
     "100800":{
         "Name":"Juego de Malkav",
-        "Card Text":"\nCada uno de los dem\u00e1s Matusalenes elige en secreto un n\u00famero entre 1 y 5 inclusive; t\u00fa eliges un n\u00famero entre 1 y 6 inclusive. Cada Matusal\u00e9n extiende el pu\u00f1o cerrado con el n\u00famero de fichas elegido dentro. Revela las elecciones simult\u00e1neamente. Cada Matusal\u00e9n gana la cantidad de reserva sangu\u00ednea que haya elegido, a no ser que otro Matusal\u00e9n haya elegido exactamente una ficha menos que \u00e9l, en cuyo caso, quema esa cantidad de reserva sangu\u00ednea en vez de ganarla."
+        "Card Text":"Cada uno de los dem\u00e1s Matusalenes elige en secreto un n\u00famero entre 1 y 5 inclusive; t\u00fa eliges un n\u00famero entre 1 y 6 inclusive. Cada Matusal\u00e9n extiende el pu\u00f1o cerrado con el n\u00famero de fichas elegido dentro. Revela las elecciones simult\u00e1neamente. Cada Matusal\u00e9n gana la cantidad de reserva sangu\u00ednea que haya elegido, a no ser que otro Matusal\u00e9n haya elegido exactamente una ficha menos que \u00e9l, en cuyo caso, quema esa cantidad de reserva sangu\u00ednea en vez de ganarla."
     },
     "100824":{
         "Name":"Sangre del gigante",
@@ -641,7 +641,7 @@
     },
     "101225":{
         "Name":"Direcci\u00f3n incorrecta",
-        "Card Text":"\nGira a un siervo."
+        "Card Text":"Gira a un siervo."
     },
     "101235":{
         "Name":"C\u00f3ctel m\u00f3lotov",
@@ -1025,7 +1025,7 @@
     },
     "102092":{
         "Name":"Gran riqueza",
-        "Card Text":"\nPonle esta carta a un siervo preparado que controles. Si controlas a este siervo, puede equiparse con el primer equipo que encuentres en tu biblioteca con una acci\u00f3n con +1 de sigilo (procediendo de arriba hacia abajo; los requisitos y el coste se aplican normalmente; baraja despu\u00e9s)."
+        "Card Text":"Ponle esta carta a un siervo preparado que controles. Si controlas a este siervo, puede equiparse con el primer equipo que encuentres en tu biblioteca con una acci\u00f3n con +1 de sigilo (procediendo de arriba hacia abajo; los requisitos y el coste se aplican normalmente; baraja despu\u00e9s)."
     },
     "102097":{
         "Name":"Legiones veladas",

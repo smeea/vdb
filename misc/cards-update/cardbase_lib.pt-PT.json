@@ -29,7 +29,7 @@
     },
     "100727":{
         "Name":"A Quinta Tradi\u00e7\u00e3o: Hospitalidade",
-        "Card Text":"A\u00e7\u00e3o com +1 de furtividade. Requer um Pr\u00edncipe ou Justicar.\nAdicione 4 de sangue a um outro vampiro. "
+        "Card Text":"A\u00e7\u00e3o com +1 de furtividade. Requer um Pr\u00edncipe ou Justicar.\nAdicione 4 de sangue a um outro vampiro."
     },
     "101706":{
         "Name":"A Segunda Tradi\u00e7\u00e3o: O Dom\u00ednio",
@@ -117,7 +117,7 @@
     },
     "100414":{
         "Name":"Agita\u00e7\u00e3o dos Conservadores",
-        "Card Text":"Aloque X pontos entre dois ou mais Matusal\u00e9ns, onde X \u00e9 a quantidade de Matusal\u00e9ns em jogo. Referendo bem-sucedido significa que cada Matusal\u00e9m perde 1 de recurso para cada ponto alocado. "
+        "Card Text":"Aloque X pontos entre dois ou mais Matusal\u00e9ns, onde X \u00e9 a quantidade de Matusal\u00e9ns em jogo. Referendo bem-sucedido significa que cada Matusal\u00e9m perde 1 de recurso para cada ponto alocado."
     },
     "101567":{
         "Name":"Agita\u00e7\u00e3o Imprudente",
@@ -149,7 +149,7 @@
     },
     "101411":{
         "Name":"Aliado Pol\u00edtico",
-        "Card Text":"Mortal \u00fanico com 1 de vida. 0 de for\u00e7a, 3 de sangrar. "
+        "Card Text":"Mortal \u00fanico com 1 de vida. 0 de for\u00e7a, 3 de sangrar."
     },
     "100436":{
         "Name":"Alian\u00e7a de Sangue",
@@ -317,7 +317,7 @@
     },
     "100359":{
         "Name":"Beijo de Clio",
-        "Card Text":"A\u00e7\u00e3o com +1 de furtividade.\n[dom] (D) Queime 1 de recurso de um Matusal\u00e9m que est\u00e1 contestando uma carta com voc\u00ea.\n[tem] Troque uma carta em sua m\u00e3o por qualquer carta n\u00e3o-mestra, n\u00e3o-\u00fanica em sua biblioteca ou pilha de cinzas.\n[TEM] (D) Escolha uma carta de vampiro pronto que outro Matusal\u00e9m est\u00e1 contestando com voc\u00ea. Aquele Matusal\u00e9m desiste daquela c\u00f3pia. Se n\u00e3o existirem outros Matusal\u00e9ns contestando aquele vampiro, coloque sua c\u00f3pia do vampiro em sua regi\u00e3o controlada com a face virada para cima, destravada. "
+        "Card Text":"A\u00e7\u00e3o com +1 de furtividade.\n[dom] (D) Queime 1 de recurso de um Matusal\u00e9m que est\u00e1 contestando uma carta com voc\u00ea.\n[tem] Troque uma carta em sua m\u00e3o por qualquer carta n\u00e3o-mestra, n\u00e3o-\u00fanica em sua biblioteca ou pilha de cinzas.\n[TEM] (D) Escolha uma carta de vampiro pronto que outro Matusal\u00e9m est\u00e1 contestando com voc\u00ea. Aquele Matusal\u00e9m desiste daquela c\u00f3pia. Se n\u00e3o existirem outros Matusal\u00e9ns contestando aquele vampiro, coloque sua c\u00f3pia do vampiro em sua regi\u00e3o controlada com a face virada para cima, destravada."
     },
     "101061":{
         "Name":"Beijo de Lachesis",
@@ -353,7 +353,7 @@
     },
     "100607":{
         "Name":"Bilion\u00e1rio Exc\u00eantrico",
-        "Card Text":"Mortal com 1 de vida. 0 de for\u00e7a, 2 de sangrar.\nBilion\u00e1rio pode travar para reduzir o custo de um equipamento ou local que voc\u00ea ou qualquer um de seus servos jogar em 1 recurso. Somente um bilion\u00e1rio pode ser usado para reduzir o custo de uma carta. "
+        "Card Text":"Mortal com 1 de vida. 0 de for\u00e7a, 2 de sangrar.\nBilion\u00e1rio pode travar para reduzir o custo de um equipamento ou local que voc\u00ea ou qualquer um de seus servos jogar em 1 recurso. Somente um bilion\u00e1rio pode ser usado para reduzir o custo de uma carta."
     },
     "100160":{
         "Name":"Bima",
@@ -417,7 +417,7 @@
     },
     "100276":{
         "Name":"Caiaphas Smith",
-        "Card Text":"Mortal unico com 2 de vida. 1 de for\u00e7a, 0 de sangrar.\nCaiaphas pode golpear por 1Di de dano. Caiaphas recebe uma manobra opcional a cada combate. Qualquer vampiro que queime Caiaphas \u00e9 queimado ap\u00f3s o combate (se houver). Caiaphas n\u00e3o pode sangrar. Se ele est\u00e1 destravado no in\u00edcio de seu turno, seu predador toma controle dele. "
+        "Card Text":"Mortal unico com 2 de vida. 1 de for\u00e7a, 0 de sangrar.\nCaiaphas pode golpear por 1Di de dano. Caiaphas recebe uma manobra opcional a cada combate. Qualquer vampiro que queime Caiaphas \u00e9 queimado ap\u00f3s o combate (se houver). Caiaphas n\u00e3o pode sangrar. Se ele est\u00e1 destravado no in\u00edcio de seu turno, seu predador toma controle dele."
     },
     "101000":{
         "Name":"Caindo no Fogo",
@@ -641,7 +641,7 @@
     },
     "100278":{
         "Name":"Chamado, O",
-        "Card Text":"A\u00e7\u00e3o com +1 de furtividade.\n[aus][dem] Mova 2 de sangue do banco de sangue para um vampiro mais jovem com Dem\u00eancia[dem] em sua regi\u00e3o incontrolada.\n[AUS][DEM] Como acima, mas mova 3 de sangue. "
+        "Card Text":"A\u00e7\u00e3o com +1 de furtividade.\n[aus][dem] Mova 2 de sangue do banco de sangue para um vampiro mais jovem com Dem\u00eancia[dem] em sua regi\u00e3o incontrolada.\n[AUS][DEM] Como acima, mas mova 3 de sangue."
     },
     "100280":{
         "Name":"Chamar a Grande Besta",
@@ -649,7 +649,7 @@
     },
     "100331":{
         "Name":"Charigger, O Machado",
-        "Card Text":"Apari\u00e7\u00e3o. \u00danica. 1 de vida.\nEsse Giovanni recebe +1 de furtividade quando ca\u00e7ar. Se um servo controlado por sua presa fosse ser queimado, ao inv\u00e9s disso remova aquele servo do jogo e ponha um contador de alma em Charigger. Este Giovanni recebe +1 de sangrar para cada contador de alma em Charigger. "
+        "Card Text":"Apari\u00e7\u00e3o. \u00danica. 1 de vida.\nEsse Giovanni recebe +1 de furtividade quando ca\u00e7ar. Se um servo controlado por sua presa fosse ser queimado, ao inv\u00e9s disso remova aquele servo do jogo e ponha um contador de alma em Charigger. Este Giovanni recebe +1 de sangrar para cada contador de alma em Charigger."
     },
     "101134":{
         "Name":"Charme da Serpente",
@@ -721,7 +721,7 @@
     },
     "100102":{
         "Name":"Como um Corvo",
-        "Card Text":"Only usable after resolution of a successful action. A minion can play only one As the Crow each turn.\n[FLIGHT] Unlock this minion.\"Somente utiliz\u00e1vel ap\u00f3s a resolu\u00e7\u00e3o de uma a\u00e7\u00e3o bem-sucedida. Um servo pode jogar somente um Como um Corvo por turno.\n[FLIGHT] Destrave este servo.\"\t"
+        "Card Text":"Only usable after resolution of a successful action. A minion can play only one As the Crow each turn.\n[FLIGHT] Unlock this minion.\"Somente utiliz\u00e1vel ap\u00f3s a resolu\u00e7\u00e3o de uma a\u00e7\u00e3o bem-sucedida. Um servo pode jogar somente um Como um Corvo por turno.\n[FLIGHT] Destrave este servo.\""
     },
     "102191":{
         "Name":"Companheiro Lobo",
@@ -797,7 +797,7 @@
     },
     "101948":{
         "Name":"Contragolpe Telep\u00e1tico",
-        "Card Text":"[aus] Reduza um sangrar contra voc\u00ea em 1.\n[AUS] Reduza um sangrar contra voc\u00ea em 2. "
+        "Card Text":"[aus] Reduza um sangrar contra voc\u00ea em 1.\n[AUS] Reduza um sangrar contra voc\u00ea em 2."
     },
     "101487":{
         "Name":"Contrato Priorit\u00e1rio",
@@ -1105,7 +1105,7 @@
     },
     "100594":{
         "Name":"Empresa Fantasma",
-        "Card Text":"Local \u00fanico.\nVoc\u00ea pode queimar esta carta se um servo estiver sangrando voc\u00ea para reduzir o total do sangrar em 2. "
+        "Card Text":"Local \u00fanico.\nVoc\u00ea pode queimar esta carta se um servo estiver sangrando voc\u00ea para reduzir o total do sangrar em 2."
     },
     "101401":{
         "Name":"Encantador",
@@ -1133,7 +1133,7 @@
     },
     "101914":{
         "Name":"Enxame",
-        "Card Text":"Animal com 1 de vida. Requer um Laibon pronto.\nPonha o enxame em qualquer servo pronto (empregar o Enxame \u00e9 uma a\u00e7\u00e3o (D) com +1 de furtividade se o servo for controlado por outro Matusal\u00e9m). Se essa a\u00e7\u00e3o for bloqueada, ponha o Enxame no servo agente ao inv\u00e9s disso (nenhum custo \u00e9 pago). Durante a fase de desvirar deste servo, se o Enxame possui mais que 1 de vida, ele queima 1 de vida, se n\u00e3o, ele rouba 1 de sangue deste servo. Um srevo s\u00f3 pode ter um Enxame. "
+        "Card Text":"Animal com 1 de vida. Requer um Laibon pronto.\nPonha o enxame em qualquer servo pronto (empregar o Enxame \u00e9 uma a\u00e7\u00e3o (D) com +1 de furtividade se o servo for controlado por outro Matusal\u00e9m). Se essa a\u00e7\u00e3o for bloqueada, ponha o Enxame no servo agente ao inv\u00e9s disso (nenhum custo \u00e9 pago). Durante a fase de desvirar deste servo, se o Enxame possui mais que 1 de vida, ele queima 1 de vida, se n\u00e3o, ele rouba 1 de sangue deste servo. Um srevo s\u00f3 pode ter um Enxame."
     },
     "100655":{
         "Name":"Epifania",
@@ -1153,7 +1153,7 @@
     },
     "100391":{
         "Name":"Esconder",
-        "Card Text":"[obf] (D) Queime um equipamento.\n[OBF] (D) Queime um local. "
+        "Card Text":"[obf] (D) Queime um equipamento.\n[OBF] (D) Queime um local."
     },
     "101552":{
         "Name":"Esconderijo Ravnos",
@@ -1317,7 +1317,7 @@
     },
     "100476":{
         "Name":"Filhos de Crypt",
-        "Card Text":"Mortal. \u00danico. 3 de vida. Requer um anarquista.\nSempre que esse anarquista for bloqueado, ele ou ela pode queimar 1 de vida dos filhos para cancelar o combate e continuar a a\u00e7\u00e3o como se ela n\u00e3o houvesse sido bloqueada. Os filhos podem infligir 1Di de dano em cada round de combate durante a resolu\u00e7\u00e3o normal de golpes. "
+        "Card Text":"Mortal. \u00danico. 3 de vida. Requer um anarquista.\nSempre que esse anarquista for bloqueado, ele ou ela pode queimar 1 de vida dos filhos para cancelar o combate e continuar a a\u00e7\u00e3o como se ela n\u00e3o houvesse sido bloqueada. Os filhos podem infligir 1Di de dano em cada round de combate durante a resolu\u00e7\u00e3o normal de golpes."
     },
     "101864":{
         "Name":"Firmeza",
@@ -1729,7 +1729,7 @@
     },
     "101154":{
         "Name":"Justicar Malkaviano",
-        "Card Text":"T\u00edtulo.\nEscolha um Malkavinao da Camarilla pronto.  Referendo bem-sucedido significa que esta carta \u00e9 colocada no Malkaviano escolhido para representar o t\u00edtulo \u00fanico de Justicar Malkaviano da Camarilla. Neste referendo, cada Malkaviano recebe +1 voto. "
+        "Card Text":"T\u00edtulo.\nEscolha um Malkavinao da Camarilla pronto.  Referendo bem-sucedido significa que esta carta \u00e9 colocada no Malkaviano escolhido para representar o t\u00edtulo \u00fanico de Justicar Malkaviano da Camarilla. Neste referendo, cada Malkaviano recebe +1 voto."
     },
     "101990":{
         "Name":"Justicar Toreador",
@@ -1945,7 +1945,7 @@
     },
     "102178":{
         "Name":"Massacre da Noite Branca",
-        "Card Text":"Transiente.\nDurante sua pr\u00f3xima fase de descarte, voc\u00ea precisa queimar esta carta, e voc\u00ea pode ou queimar um vampiro em torpor ou, travando um lobisomem pronto que voc\u00ea controla ou descartando um Massacre da Noite Branca de sua m\u00e3o, queimar todos os vampiros em torpor. "
+        "Card Text":"Transiente.\nDurante sua pr\u00f3xima fase de descarte, voc\u00ea precisa queimar esta carta, e voc\u00ea pode ou queimar um vampiro em torpor ou, travando um lobisomem pronto que voc\u00ea controla ou descartando um Massacre da Noite Branca de sua m\u00e3o, queimar todos os vampiros em torpor."
     },
     "100568":{
         "Name":"Matilha",
@@ -2017,7 +2017,7 @@
     },
     "101195":{
         "Name":"Mistura",
-        "Card Text":"[aus] +1 de percep\u00e7\u00e3o.\n[AUS] Como acima e, se este vampiro bloquear, coloque esta carta no servo agente; voc\u00ea ainda controla esta carta. Durante uma a\u00e7\u00e3o de sangrar contra o controlador do servo portador, este vampiro reagente pode queimar esta carta para ganhar +1 de sangrar. "
+        "Card Text":"[aus] +1 de percep\u00e7\u00e3o.\n[AUS] Como acima e, se este vampiro bloquear, coloque esta carta no servo agente; voc\u00ea ainda controla esta carta. Durante uma a\u00e7\u00e3o de sangrar contra o controlador do servo portador, este vampiro reagente pode queimar esta carta para ganhar +1 de sangrar."
     },
     "102240":{
         "Name":"Mithraeum, Londres, O",
@@ -2025,7 +2025,7 @@
     },
     "101231":{
         "Name":"Moise Kasavubu",
-        "Card Text":"Mortal unico com 1 de vida. 0 de for\u00e7a, 0 de sangrar. Requer um imbuido pronto.\nMoise pode golpear por 2Di de dano. Ele pode fazer uma a\u00e7\u00e3o com +1 de furtividade para procurar em sua biblioteca (embaralhe ap\u00f3s isso) ou m\u00e3o por um equipamento e mov\u00ea-lo para um imbuido pronto que voc\u00ea controla (aquele imbuido precisa cumprir os requerimentos e pagar o custo normalmente). "
+        "Card Text":"Mortal unico com 1 de vida. 0 de for\u00e7a, 0 de sangrar. Requer um imbuido pronto.\nMoise pode golpear por 2Di de dano. Ele pode fazer uma a\u00e7\u00e3o com +1 de furtividade para procurar em sua biblioteca (embaralhe ap\u00f3s isso) ou m\u00e3o por um equipamento e mov\u00ea-lo para um imbuido pronto que voc\u00ea controla (aquele imbuido precisa cumprir os requerimentos e pagar o custo normalmente)."
     },
     "101238":{
         "Name":"Monast\u00e9rio das Sombras",
@@ -2157,7 +2157,7 @@
     },
     "100785":{
         "Name":"O Fragmento do Livro de Nod",
-        "Card Text":"Fragmento \u00fanico de Nod.\nColoque esta carta em jogo. Voc\u00ea pode travar esta carta para comprar 2 cartas (descarte em seguida). Vampiros podem roubar esta carta como uma a\u00e7\u00e3o (D). "
+        "Card Text":"Fragmento \u00fanico de Nod.\nColoque esta carta em jogo. Voc\u00ea pode travar esta carta para comprar 2 cartas (descarte em seguida). Vampiros podem roubar esta carta como uma a\u00e7\u00e3o (D)."
     },
     "101042":{
         "Name":"O Khabar: Comunidade",
@@ -2481,7 +2481,7 @@
     },
     "102189":{
         "Name":"R\u00e1dio WMRH",
-        "Card Text":"Local \u00fanico.\nVoc\u00ea pode travar esta carta para dar +1 de percep\u00e7\u00e3o a um servo. Depois da resolu\u00e7\u00e3o da a\u00e7\u00e3o, queime 1 de recurso se aquele servo n\u00e3o bloqueou a a\u00e7\u00e3o. "
+        "Card Text":"Local \u00fanico.\nVoc\u00ea pode travar esta carta para dar +1 de percep\u00e7\u00e3o a um servo. Depois da resolu\u00e7\u00e3o da a\u00e7\u00e3o, queime 1 de recurso se aquele servo n\u00e3o bloqueou a a\u00e7\u00e3o."
     },
     "100312":{
         "Name":"Rapidez",
@@ -2625,7 +2625,7 @@
     },
     "101625":{
         "Name":"Revela\u00e7\u00f5es do Senhor",
-        "Card Text":"Requer um vampiro pronto n\u00e3o-est\u00e9ril que n\u00e3o \u00e9 Caitiff.\nColoque essa carta em um Caitiff mais jovem. O vampiro com essa carta agora \u00e9 considerado um membro do mesmo cl\u00e3 que o vampiro agente. Ele ou ela n\u00e3o \u00e9 mais considerado um Caitiff. Sua capacidade aumenta em 1. "
+        "Card Text":"Requer um vampiro pronto n\u00e3o-est\u00e9ril que n\u00e3o \u00e9 Caitiff.\nColoque essa carta em um Caitiff mais jovem. O vampiro com essa carta agora \u00e9 considerado um membro do mesmo cl\u00e3 que o vampiro agente. Ele ou ela n\u00e3o \u00e9 mais considerado um Caitiff. Sua capacidade aumenta em 1."
     },
     "100484":{
         "Name":"Revenante D'habi",
@@ -2653,7 +2653,7 @@
     },
     "101173":{
         "Name":"Ritus Marcial",
-        "Card Text":"A\u00e7\u00e3o com +1 de furtividade. Requer um vampiro pronto do Sab\u00e1.\nColoque essa carta em um vampiro do Sab\u00e1 mais jovem e destrave o vampiro agente. O vampiro do Sab\u00e1 com essa carta recebe +1 de for\u00e7a. Durante sua fase de destravar, queime essa carta. "
+        "Card Text":"A\u00e7\u00e3o com +1 de furtividade. Requer um vampiro pronto do Sab\u00e1.\nColoque essa carta em um vampiro do Sab\u00e1 mais jovem e destrave o vampiro agente. O vampiro do Sab\u00e1 com essa carta recebe +1 de for\u00e7a. Durante sua fase de destravar, queime essa carta."
     },
     "100576":{
         "Name":"Rixa",
@@ -3077,7 +3077,7 @@
     },
     "100743":{
         "Name":"Vela Flamejante ",
-        "Card Text":"Somente uma Vela Flamejante pode ser jogada ou equipada em uma partida.\nEste vampiro pode queimar 1 de sangue e a Vela Flamejante assim que anunciar a a\u00e7\u00e3o para fazer esta a\u00e7\u00e3o imbloque\u00e1vel por vampiros. "
+        "Card Text":"Somente uma Vela Flamejante pode ser jogada ou equipada em uma partida.\nEste vampiro pode queimar 1 de sangue e a Vela Flamejante assim que anunciar a a\u00e7\u00e3o para fazer esta a\u00e7\u00e3o imbloque\u00e1vel por vampiros."
     },
     "101318":{
         "Name":"Velhos Amigos",

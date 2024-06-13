@@ -7,9 +7,7 @@ const ResultLayoutTextText = ({ cardid }) => {
   const { nativeCrypt, nativeLibrary, cryptCardBase, libraryCardBase, isMobile } = useApp();
 
   const cardBase = { ...nativeCrypt, ...nativeLibrary };
-
   const cardNative = cardid > 200000 ? nativeCrypt[cardid] : nativeLibrary[cardid];
-
   const cardTextNative = cardNative['Card Text'].replace(/\(D\)/g, '\u24B9').split('\n');
 
   const refCards = [];
