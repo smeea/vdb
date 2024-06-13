@@ -1,26 +1,26 @@
 {
     "100001":{
-        "Name":".44 Magnum",
+        "Name":"Magnum .44",
         "Card Text":"Arma: arma de fuego.\nAtaque: 2 de da\u00f1o a distancia, con una maniobra opcional por combate."
     },
     "102217":{
-        "Name":"47th Street Royals",
+        "Name":"La Realeza de la calle 47",
         "Card Text":"Mortal \u00fanico con 2 de vida. 1 de fuerza, 0 de sangrado.\nPuedes quemar esta carta para reducir un sangrado contra ti en 3."
     },
     "100015":{
-        "Name":"Academic Hunting Ground",
+        "Name":"Zona de caza: Academia",
         "Card Text":"Lugar \u00fanico. Zona de caza.\nDurante tu fase de enderezamiento, un vampiro preparado que controles puede ganar 1 de sangre. Un vampiro puede ganar sangre de s\u00f3lo una zona de caza por turno."
     },
     "100018":{
-        "Name":"Aching Beauty",
+        "Name":"Belleza dolorosa",
         "Card Text":"\nPonle esta carta a un Toreador. Si este Toreador es bloqueado, el controlador del siervo bloqueador quema 1 de reserva sangu\u00ednea antes de la resoluci\u00f3n del bloqueo."
     },
     "100029":{
-        "Name":"Aid from Bats",
+        "Name":"Ayuda de murci\u00e9lagos",
         "Card Text":"[ani] Ataque: 1 de da\u00f1o a distancia, con 1 maniobra opcional.\n[ANI] Como antes, con 1 acoso opcional."
     },
     "100031":{
-        "Name":"Aire of Elation",
+        "Name":"Aires de euforia",
         "Card Text":"S\u00f3lo utilizable durante una acci\u00f3n de sangrado.\n[pre] +1 de sangrado, con +1 de sangrado adicional si este vampiro es Toreador (limitada).\n[PRE] +2 de sangrado, con +1 de sangrado adicional si este vampiro es Toreador (limitada)."
     },
     "100037":{
@@ -28,131 +28,131 @@
         "Card Text":"Lugar \u00fanico.\nDespu\u00e9s de que un Assamita que controles sangre con \u00e9xito a un Matusal\u00e9n, pon en esta carta la reserva sangu\u00ednea perdida por ese Matusal\u00e9n. Quema X de sangre de esta carta durante la fase de votaci\u00f3n de una acci\u00f3n pol\u00edtica para darle +X votos a un vampiro que controles."
     },
     "100046":{
-        "Name":"Ambush",
+        "Name":"Emboscada",
         "Card Text":"(D) Entra en combate con un siervo girado. Este siervo activo obtiene 1 maniobra opcional durante ese combate."
     },
     "100052":{
-        "Name":"Anarch Free Press, The",
+        "Name":"La Prensa Libre Anarquista",
         "Card Text":"\u00danica. Requiere a un Anarquista preparado.\nPon esta carta en juego. G\u00edrala para darle +1 de intercepci\u00f3n a un Anarquista que controles. G\u00edrala despu\u00e9s de que un Anarquista cace con \u00e9xito para a\u00f1adir 1 de sangre a ese Anarquista."
     },
     "100054":{
-        "Name":"Anarch Railroad",
+        "Name":"Ferrocarril Anarquista",
         "Card Text":"Lugar \u00fanico.\nG\u00edrala para darle +1 de sigilo a un Anarquista."
     },
     "100058":{
-        "Name":"Anarch Troublemaker",
+        "Name":"Alborotador anarquista",
         "Card Text":"\u00danica.\nPon esta carta en juego. Durante tu fase de enderezamiento, puedes darle el control del /Alborotador anarquista/ a tu presa y girar hasta dos vampiros que controle o bien quemar un equipo de uno de sus siervos."
     },
     "100059":{
-        "Name":"Anarchist Uprising",
+        "Name":"Alzamiento Anarquista",
         "Card Text":"Si el refer\u00e9ndum prospera, cada Matusal\u00e9n quema 1 de reserva sangu\u00ednea por cada siervo que controle."
     },
     "100064":{
-        "Name":"Ancient Influence",
+        "Name":"Influencia de los Ancianos",
         "Card Text":"S\u00f3lo se puede jugar o proponer un ejemplar de esta carta por partida.\nSi el refer\u00e9ndum prospera, cada Matusal\u00e9n puede elegir a un vampiro preparado que controle; cada Matusal\u00e9n gana tanta reserva sangu\u00ednea como capacidad tenga el vampiro elegido, y luego quema 5 de reserva sangu\u00ednea."
     },
     "100065":{
-        "Name":"Ancilla Empowerment",
+        "Name":"Fortalecer a los Ancilla",
         "Card Text":"Si el refer\u00e9ndum prospera, cada Matusal\u00e9n quema 1 de reserva sangu\u00ednea por cada siervo que controle."
     },
     "100070":{
-        "Name":"Animalism",
+        "Name":"Animalismo",
         "Card Text":"Disciplina.\nPonle esta carta a un vampiro. Este vampiro obtiene +1 nivel de Animalismo [ani] y +1 de capacidad. No se le puede poner a un vampiro con Animalismo superior [ANI]."
     },
     "100071":{
-        "Name":"Ankara Citadel, Turkey, The",
+        "Name":"La Ciudadela de Ankara, Turqu\u00eda",
         "Card Text":"Mientras est\u00e9 en juego, esta carta de equipo representa un lugar y no cuenta como equipo. \u00danica.\nJugar cartas que cuesten sangre y no sean modificadores de acci\u00f3n le cuesta a este vampiro la mitad de sangre, redondeando hacia abajo (primero va la multiplicaci\u00f3n y la divisi\u00f3n, y luego la suma y la resta)."
     },
     "100077":{
-        "Name":"Apportation",
+        "Name":"Aportaci\u00f3n",
         "Card Text":"[tha] Acoso, s\u00f3lo utilizable para continuar el combate.\n[THA] Maniobra."
     },
     "100081":{
-        "Name":"Arcane Library",
+        "Name":"Biblioteca arcana",
         "Card Text":"Lugar \u00fanico.\nG\u00edrala durante tu fase de influencia para a\u00f1adir 1 de sangre a un Tremere de tu zona incontrolada."
     },
     "100093":{
-        "Name":"Army of Rats",
+        "Name":"Ej\u00e9rcito de ratas",
         "Card Text":"Acci\u00f3n con +1 de sigilo.\n[ani] Pon esta carta en juego. Durante tu fase de enderezamiento, tu presa quema 1 de reserva sangu\u00ednea. Puedes quemar s\u00f3lo 1 de reserva sangu\u00ednea por turno a causa de cartas /Ej\u00e9rcito de ratas/. Cualquier siervo puede quemar esta carta con una acci\u00f3n (D)."
     },
     "100095":{
-        "Name":"Art Museum",
+        "Name":"Museo de arte",
         "Card Text":"Lugar \u00fanico.\nG\u00edrala durante tu fase de influencia para a\u00f1adir 1 de sangre a un Toreador de tu zona incontrolada."
     },
     "100099":{
-        "Name":"Art Scam",
+        "Name":"Fraude art\u00edstico",
         "Card Text":"Acci\u00f3n con +1 de sigilo.\nGana 2 de reserva sangu\u00ednea."
     },
     "100108":{
-        "Name":"Asylum Hunting Ground",
+        "Name":"Zona de caza: Manicomio",
         "Card Text":"Lugar \u00fanico. Zona de caza.\nDurante tu fase de enderezamiento, un vampiro preparado que controles puede ganar 1 de sangre. Un vampiro puede ganar sangre de s\u00f3lo una zona de caza por turno."
     },
     "100126":{
-        "Name":"Backways",
+        "Name":"Atajo",
         "Card Text":"Lugar \u00fanico.\nG\u00edrala para darle +1 de sigilo a un Gangrel que controles."
     },
     "102218":{
-        "Name":"Bait and Switch",
+        "Name":"T\u00e1cticas enga\u00f1osas",
         "Card Text":"Requiere a un bar\u00f3n. S\u00f3lo utilizable si un siervo te est\u00e1 sangrando, tras renunciar a bloquear.\nGira a este vampiro reactivo. Cambia el objetivo del sangrado por otro Matusal\u00e9n que no sea el controlador del siervo activo (ese Matusal\u00e9n puede intentar bloquear)."
     },
     "100131":{
-        "Name":"Banishment",
+        "Name":"Destierro",
         "Card Text":"Elige a un vampiro menor. Si el refer\u00e9ndum prospera, el vampiro elegido pasa a la zona incontrolada (rompiendo cualquier efecto de control temporal); las cartas y fichas que tenga el vampiro elegido permanecen con \u00e9l pero est\u00e1n fuera de juego mientras el vampiro elegido siga incontrolado"
     },
     "100135":{
-        "Name":"Barrens, The",
+        "Name":"Tierra inf\u00e9rtil",
         "Card Text":"Lugar \u00fanico.\nG\u00edrala para descartate de una carta (roba despu\u00e9s)."
     },
     "100145":{
-        "Name":"Bear's Skin",
+        "Name":"Piel del oso",
         "Card Text":"S\u00f3lo utilizable antes de determinar la distancia. Un vampiro s\u00f3lo puede jugar un ejemplar de esta carta por combate.\n[ani][pro] En este asalto, este vampiro obtiene +1 de fuerza y puede prevenirse de 1 de da\u00f1o.\n[ANI][PRO] En este combate, este vampiro obtiene +1 de fuerza y puede prevenirse de 1 de da\u00f1o por asalto."
     },
     "100146":{
-        "Name":"Beast Meld",
+        "Name":"Fusi\u00f3n bestial",
         "Card Text":"[ani][pro] +1 de sigilo. Si este vampiro es bloqueado, puede prevenirse de 1 de da\u00f1o en el combate resultante.\n[ANI][PRO] S\u00f3lo utilizable al anunciar una acci\u00f3n que no sea de sangrado. Los vampiros no pueden bloquear esta acci\u00f3n."
     },
     "100157":{
-        "Name":"Bewitching Oration",
+        "Name":"Oraci\u00f3n fascinante",
         "Card Text":"S\u00f3lo utilizable durante la fase de votaci\u00f3n de una acci\u00f3n pol\u00edtica.\n[pre] Este vampiro consigue +2 votos.\n[PRE] Este vampiro consigue +4 votos."
     },
     "100162":{
-        "Name":"Biothaumaturgic Experiment",
+        "Name":"Experimento biotaumat\u00fargico",
         "Card Text":"Acci\u00f3n con +1 de sigilo.\n[tha] Emplea a un criado animal de tu mano ignorando los requisitos (paga el costo normalmente).\n[THA] Ponle esta carta a un siervo que controles. El siervo adherido obtiene 1 maniobra opcional por combate y +1 de fuerza."
     },
     "100169":{
-        "Name":"Black Metamorphosis",
+        "Name":"Metamorfosis negra",
         "Card Text":"Acci\u00f3n con +1 de sigilo.\n[obt] Ponle esta carta a este vampiro. Este vampiro obtiene 1 ataque adicional opcional (limitado) por combate. Un vampiro puede tener s\u00f3lo un ejemplar de esta carta.\n[OBT] Como antes, y este vampiro obtiene 1 acoso opcional por combate."
     },
     "100177":{
-        "Name":"Blanket of Night",
+        "Name":"Capa de noche",
         "Card Text":"[obt] +1 de sigilo.\n[OBT] S\u00f3lo utilizable por un vampiro preparado que no sea el siervo activo si un siervo intenta bloquear. Gira a este vampiro modificador para hacer que ese intento fracase; ese siervo bloqueador no puede volver a intentar bloquear esta acci\u00f3n."
     },
     "100199":{
-        "Name":"Blood Doll",
+        "Name":"Mu\u00f1eca de sangre",
         "Card Text":"\nPonle esta carta a un vampiro que controles. Durante su fase heril, el controlador de este vampiro puede pasar 1 de sangre de este vampiro a su reserva sangu\u00ednea o de su reserva sangu\u00ednea a este vampiro."
     },
     "100208":{
-        "Name":"Blood Rage",
+        "Name":"Rabia sangrienta",
         "Card Text":"S\u00f3lo utilizable de cerca.\n[tha] Ataque: ataca con la mano. El da\u00f1o de este ataque no se puede prevenir con cartas que requieran Fortaleza [for]. Los ataques del vampiro oponente con armas no infligen ning\u00fan da\u00f1o en este asalto.\n[THA] Como antes, y este ataque con la mano se realiza con +1 de da\u00f1o."
     },
     "100236":{
-        "Name":"Bonding",
+        "Name":"V\u00ednculo afectivo",
         "Card Text":"S\u00f3lo utilizable durante una acci\u00f3n de sangrado.\n[dom] +1 de sangrado (limitada).\n[DOM] +1 de sigilo y +1 de sangrado (limitada)."
     },
     "100243":{
-        "Name":"Bowl of Convergence",
+        "Name":"Cuenco de la Convergencia",
         "Card Text":"\u00danico.\nEl portador con \u00c1uspex [aus] obtiene +1 de intercepci\u00f3n. El portador con \u00c1uspex superior [AUS] puede quemar 1 de sangre durante una acci\u00f3n para obtener +1 de intercepci\u00f3n adicional."
     },
     "100250":{
-        "Name":"Breath of the Dragon",
+        "Name":"Aliento del drag\u00f3n",
         "Card Text":"[vic] Ataque: 1 de da\u00f1o agravado a distancia. Si este ataque se usa de cerca, este vampiro tambi\u00e9n recibe el da\u00f1o.\n[VIC] Como antes, pero 2 de da\u00f1o agravado a distancia."
     },
     "100286":{
-        "Name":"Camarilla Vitae Slave",
+        "Name":"Esclavo de Vitae de la Camarilla",
         "Card Text":"Criado con 1 de vida.\nEl empleador obtiene +1 de capacidad. Durante su fase heril, puede elegir una Disciplina de nivel b\u00e1sico que posea y obtener el nivel superior de dicha Disciplina hasta su pr\u00f3xima fase heril."
     },
     "100297":{
-        "Name":"Carfax Abbey",
+        "Name":"Abad\u00eda de Carfax",
         "Card Text":"Requiere a un Anarquista preparado. Lugar \u00fanico. Zona de caza.\nDurante tu fase de enderezamiento, un Anarquista preparado que controles puede ganar 1 de sangre, y, si controlas a un bar\u00f3n preparado, otro Anarquista preparado que controles tambi\u00e9n puede ganar 1 de sangre. Un vampiro puede ganar sangre de s\u00f3lo una zona de caza por turno."
     },
     "100298":{
@@ -160,47 +160,47 @@
         "Card Text":"Mortal \u00fanico con 2 de vida. 0 de fuerza, 0 de sangrado.\nCarlton puede atacar a distancia infligiendo 1 de da\u00f1o. Una vez por combate, puede atacar esquivando. Carlton obtiene +1 de intercepci\u00f3n contra vampiros. Durante tu fase de descarte, puedes quemar a Carlton para quemar a un vampiro que haya cometido Diablerie desde tu \u00faltimo turno."
     },
     "100301":{
-        "Name":"Carrion Crows",
+        "Name":"Cornejas negras",
         "Card Text":"S\u00f3lo utilizable antes de determinar la distancia. Un vampiro puede jugar s\u00f3lo un ejemplar de esta carta por combate.\n[ani] El siervo oponente recibe 1 de da\u00f1o ambiental a distancia por asalto en este combate durante la resoluci\u00f3n normal de ataques.\n[ANI] Como antes, pero recibe 2 de da\u00f1o ambiental a distancia."
     },
     "100303":{
-        "Name":"Carver's Meat Packing and Storage",
+        "Name":"C\u00e1rnicas Carver",
         "Card Text":"Lugar \u00fanico.\nDespu\u00e9s de que un vampiro con capacidad 3 o menos entre en letargo, ponle una ficha de reh\u00e9n a \u00e9l. Los vampiros con fichas de reh\u00e9n no se pueden pasar a la zona preparada ni ser diabolizados. G\u00edrala durante tu fase heril para a\u00f1adir X de sangre a un vampiro preparado que controles, donde X es el n\u00famero de vampiros en letargo con fichas de reh\u00e9n. Durante cualquier fase de enderezamiento, cualquier vampiro preparado puede quemar 2 de sangre para quemar las fichas de reh\u00e9n de cualquier vampiro. Despu\u00e9s de que esta carta deje el juego, quema todas las fichas de reh\u00e9n."
     },
     "100308":{
-        "Name":"Cats' Guidance",
+        "Name":"Guiado por gatos",
         "Card Text":"[ani] S\u00f3lo utilizable por un vampiro girado que ha bloqueado, tras la resoluci\u00f3n del bloqueo. Endereza a este vampiro.\n[ANI] +1 de intercepci\u00f3n."
     },
     "100323":{
-        "Name":"Change of Target",
+        "Name":"Cambio de objetivo",
         "Card Text":"S\u00f3lo utilizable si este siervo es bloqueado, antes de la resoluci\u00f3n del bloqueo.\nEndereza a este siervo, y la acci\u00f3n termina (sin \u00e9xito). Este siervo no puede volver a realizar la misma acci\u00f3n en este turno."
     },
     "100324":{
-        "Name":"Changeling",
+        "Name":"Metamorfo",
         "Card Text":"[vic] S\u00f3lo utilizable durante una acci\u00f3n de sangrado. +1 de sangrado (limitada).\n[VIC] +1 de sigilo."
     },
     "100327":{
-        "Name":"Channel 10",
+        "Name":"Canal 10",
         "Card Text":"Lugar \u00fanico.\nG\u00edrala para darle a un siervo que controles +2 de intercepci\u00f3n. No se puede usar durante la primera acci\u00f3n de una fase servil."
     },
     "100329":{
-        "Name":"Chantry",
+        "Name":"Capilla",
         "Card Text":"Lugar \u00fanico.\nGira esta carta y quema 1 de reserva sangu\u00ednea o 1 de sangre de un Tremere preparado que controles durante tu fase heril para pasar un Tremere del letargo a la zona preparada de su controlador."
     },
     "100335":{
-        "Name":"Charnas the Imp",
+        "Name":"Charnas, el Diablillo",
         "Card Text":"Demonio \u00fanico con 1 de vida.\nPon a Charnas en cualquier siervo (\u00e9sta es una acci\u00f3n (D) con +1 de sigilo si el siervo objetivo est\u00e1 controlado por otro Matusal\u00e9n). Charnas inflige 1 de da\u00f1o al empleador durante su fase de enderezamiento. Charnas es inmune al da\u00f1o procedente del empleador. Si el empleador est\u00e1 a punto de ser quemado, su controlador puede poner a Charnas en cualquier siervo."
     },
     "100344":{
-        "Name":"Chiropteran Marauder",
+        "Name":"Merodeador quir\u00f3ptero",
         "Card Text":"[vic] Maniobra.\n[VIC] Quema 1 de sangre para convertir el da\u00f1o de los ataques con la mano de este vampiro en agravado este asalto."
     },
     "100356":{
-        "Name":"Claws of the Dead",
+        "Name":"Garras letales",
         "Card Text":"[pro] El da\u00f1o de los ataques con la mano de este vampiro es agravado en este asalto.\n[PRO] Maniobra."
     },
     "100362":{
-        "Name":"Cloak the Gathering",
+        "Name":"Encubrir la concurrencia",
         "Card Text":"[obf] +1 de sigilo.\n[OBF] S\u00f3lo utilizable por un vampiro preparado que no sea el siervo activo. El siervo activo obtiene +1 de sigilo."
     },
     "100366":{
@@ -208,7 +208,7 @@
         "Card Text":"Lugar \u00fanico.\nUn Anarquista puede quemar 1 de sangre una vez al anunciar una acci\u00f3n de sangrado para conseguir +1 de sangrado durante la misma."
     },
     "100374":{
-        "Name":"Codex of the Edenic Groundskeepers",
+        "Name":"C\u00f3dice de los Guardas Ed\u00e9nicos",
         "Card Text":"\u00danica.\nEl portador obtiene -2 de sigilo cuando sangra. Este vampiro puede sangrar con una acci\u00f3n (D) que cuesta 1 de sangre; esta acci\u00f3n obtiene +3 de sangrado si el Matusal\u00e9n objetivo no controla vampiros preparados enderezados."
     },
     "100378":{
@@ -216,59 +216,59 @@
         "Card Text":"[dem] Ataque: env\u00eda al vampiro oponente al letargo.\n[DEM] Como antes, y ese vampiro oponente no se endereza normalmente durante su pr\u00f3xima fase de enderezamiento."
     },
     "100390":{
-        "Name":"Computer Hacking",
+        "Name":"Pirateo inform\u00e1tico",
         "Card Text":"(D) Sangra con +1 de sangrado."
     },
     "100401":{
-        "Name":"Conditioning",
+        "Name":"Condicionamiento",
         "Card Text":"S\u00f3lo utilizable durante una acci\u00f3n de sangrado.\n[dom] +2 de sangrado (limitada).\n[DOM] +3 de sangrado (limitada)."
     },
     "100405":{
-        "Name":"Confusion",
+        "Name":"Confusi\u00f3n",
         "Card Text":"S\u00f3lo utilizable durante una acci\u00f3n de sangrado.\n[dem] +1 de sangrado (limitada).\n[DEM] +1 de sigilo y +1 de sangrado (limitada)."
     },
     "100410":{
-        "Name":"Consanguineous Boon",
+        "Name":"Favor consangu\u00edneo",
         "Card Text":"Favor.\nElige un clan. Si el refer\u00e9ndum prospera, cada Matusal\u00e9n gana 1 de reserva sangu\u00ednea por cada vampiro del clan elegido que controle."
     },
     "100416":{
-        "Name":"Constant Revolution",
+        "Name":"Revoluci\u00f3n constante",
         "Card Text":"Acci\u00f3n con +1 de sigilo. Requiere a un Anarquista. \u00danica.\nPon esta carta en juego con 1 ficha. Durante tu fase de enderezamiento, a\u00f1ade 1 ficha a esta carta. Durante la fase de enderezamiento de cada uno de los dem\u00e1s Matusalenes, ese Matusal\u00e9n quema X de reserva sangu\u00ednea o cartas de la mano al azar, donde X es la cantidad de fichas que haya en esta carta. Cualquier vampiro puede quemar esta carta con una acci\u00f3n (D) que cuesta 1 de reserva sangu\u00ednea."
     },
     "100435":{
-        "Name":"Coven, The",
+        "Name":"La cofrad\u00eda",
         "Card Text":"\u00danica. Nimiedad.\nPon esta carta en juego. G\u00edrala para a\u00f1adir 2 de sangre a un vampiro preparado que controles. Durante tu fase de descarte, tu depredador toma el control de /La cofrad\u00eda/."
     },
     "102213":{
-        "Name":"Creeping Sabotage",
+        "Name":"Sabotaje progresivo",
         "Card Text":"Acci\u00f3n con +1 de sigilo.\nX es el n\u00famero de /Sabotajes progresivos/ que controles. Pon esta carta en juego. Durante tu fase de enderezamiento, tu presa quema 1 de reserva sangu\u00ednea. Cualquier siervo puede quemar esta carta con una acci\u00f3n (D)."
     },
     "100444":{
-        "Name":"Creepshow Casino",
+        "Name":"Casino de los Horrores",
         "Card Text":"Lugar \u00fanico.\nG\u00edrala cuando un vampiro que controlas anuncia una acci\u00f3n indirecta para dar a dicho vampiro +1 de sigilo, aunque el sigilo no sea necesario."
     },
     "100450":{
-        "Name":"Crocodile's Tongue",
+        "Name":"Lengua de cocodrilo",
         "Card Text":"S\u00f3lo utilizable si un aliado o vampiro menor intenta bloquear.\n[aus] Ese intento fracasa y el controlador de ese siervo bloqueador no puede volver a intentar bloquear esta acci\u00f3n. Ese siervo bloqueador puede quemar 1 de sangre o vida para cancelar esta carta al ser jugada.\n[AUS] Como antes, pero cancelar esta carta requiere 1 m\u00e1s de sangre o vida."
     },
     "100492":{
-        "Name":"Daring the Dawn",
+        "Name":"Desafiar al alba",
         "Card Text":"[for] Los vampiros no pueden bloquear esta acci\u00f3n. Este vampiro recibe 2 de da\u00f1o agravado ambiental imprevenible tras la resoluci\u00f3n de la acci\u00f3n.\n[FOR] Como antes, pero este vampiro recibe 1 de da\u00f1o agravado ambiental imprevenible."
     },
     "102219":{
-        "Name":"Deep Ecology",
+        "Name":"Ecolog\u00eda profunda",
         "Card Text":"Requiere a un Anarquista.\n[ani] S\u00f3lo utilizable durante una acci\u00f3n directa contra ti (o una carta que controles). +2 de intercepci\u00f3n.\n[for] Reduce un sangrado contra ti en 2.\n[pro] S\u00f3lo utilizable por un vampiro girado. Este vampiro quema 1 de sangre para enderezarse."
     },
     "100515":{
-        "Name":"Deep Song",
+        "Name":"Canci\u00f3n profunda",
         "Card Text":"[ani] (D) Sangra con +1 de sangrado.\n[ANI] Frenes\u00ed. (D) Entra en combate con y gira a un vampiro. El vampiro objetivo se considera el siervo activo en ese combate."
     },
     "100518":{
-        "Name":"Deflection",
+        "Name":"Desviaci\u00f3n",
         "Card Text":"S\u00f3lo utilizable si un siervo te est\u00e1 sangrando, tras renunciar a bloquear.\n[dom] Gira a este vampiro reactivo. Cambia el objetivo del sangrado por otro Matusal\u00e9n que no sea el controlador del siervo activo (ese Matusal\u00e9n puede intentar bloquear).\n[DOM] Como antes, pero no gires a este vampiro."
     },
     "100519":{
-        "Name":"Delaying Tactics",
+        "Name":"T\u00e1cticas dilatorias",
         "Card Text":"S\u00f3lo utilizable durante la fase de votaci\u00f3n de una acci\u00f3n pol\u00edtica.\nCancela el refer\u00e9ndum. Endereza al vampiro activo. Si se ha jugado una carta de acci\u00f3n pol\u00edtica para proponer este refer\u00e9ndum, devu\u00e9lvela a la mano de su propietario (descart\u00e1ndose despu\u00e9s). Los siervos controlados por el Matusal\u00e9n activo no pueden volver a realizar la misma acci\u00f3n pol\u00edtica este turno."
     },
     "100541":{
@@ -276,179 +276,179 @@
         "Card Text":"S\u00f3lo se puede jugar un ejemplar de esta carta por partida.\nEl primer refer\u00e9ndum que un vampiro Sabbat que controles proponga este turno prospera autom\u00e1ticamente (s\u00e1ltate la fase de votaci\u00f3n)."
     },
     "100573":{
-        "Name":"Dominate Kine",
+        "Name":"Dominar al ganado",
         "Card Text":"[dom] Acci\u00f3n con +1 de sigilo. (D) Sangra con +1 de sangrado.\n[DOM] (D) Roba un lugar controlado por otro Matusal\u00e9n."
     },
     "102220":{
-        "Name":"Double Deuce",
+        "Name":"Peineta Doble",
         "Card Text":"Hombre lobo \u00fanico con 3 de vida. 1 de fuerza, 1 de sangrado.\nPeineta Doble tiene +1 de sigilo. Si Peineta Doble tiene 2 de vida o menos durante tu fase de enderezamiento, gana 1 de vida."
     },
     "100581":{
-        "Name":"Dragonbound",
+        "Name":"Encadenado al Drag\u00f3n",
         "Card Text":"Gehenna. No la reemplaces mientras esta carta est\u00e9 en juego.\nDurante la fase de descarte de cada Matusal\u00e9n, ese Matusal\u00e9n quema 1 de reserva sangu\u00ednea por cada vampiro en letargo que controle."
     },
     "100588":{
-        "Name":"Dreams of the Sphinx",
+        "Name":"Sue\u00f1os de la Esfinge",
         "Card Text":"\u00danica.\nPon esta carta en juego. A\u00f1ade 1 ficha a esta carta cada vez que la gires. G\u00edrala para obtener +2 a la mano hasta el final de este turno. G\u00edrala durante tu fase de enderezamiento para ganar 1 de reserva sangu\u00ednea si tienes la Ventaja. G\u00edrala para a\u00f1adir 1 de sangre a un vampiro de tu zona incontrolada. Quema esta carta si tiene 3 fichas."
     },
     "100597":{
-        "Name":"Dust Up",
+        "Name":"Pelea",
         "Card Text":"Requiere a un Anarquista.\n[ani] Ataque: ataca con la mano con +1 de da\u00f1o. Este ataque no se puede esquivar.\n[cel] Ataque: esquiva, con 1 ataque adicional (limitada).\n[pot] Ataque: ataca con la mano con +2 de da\u00f1o."
     },
     "100598":{
-        "Name":"Eagle's Sight",
+        "Name":"Vista de \u00e1guila",
         "Card Text":"[aus] +1 de intercepci\u00f3n.\n[AUS] Este vampiro intenta bloquear la acci\u00f3n en curso, ignorando las restricciones normales de presa, depredador u objetivo para bloquear acciones."
     },
     "100600":{
-        "Name":"Earth Control",
+        "Name":"Control de la tierra",
         "Card Text":"[pro] +1 de sigilo.\n[PRO] +2 de sigilo."
     },
     "100601":{
-        "Name":"Earth Meld",
+        "Name":"Fusi\u00f3n con la tierra",
         "Card Text":"[pro] Ataque: el combate termina.\n[PRO] Como antes, y endereza a este vampiro antes de que el combate termine."
     },
     "100609":{
-        "Name":"Ecoterrorists",
+        "Name":"Ecoterroristas",
         "Card Text":"Lugar \u00fanico.\nG\u00edrala durante tu fase de influencia para a\u00f1adir 1 de sangre a un Gangrel de tu zona incontrolada."
     },
     "100617":{
-        "Name":"Elder Impersonation",
+        "Name":"Suplantar a un Antiguo",
         "Card Text":"[obf] +1 de sigilo.\n[OBF] S\u00f3lo utilizable si un siervo intenta bloquear. Ese intento fracasa y el siervo bloqueador no puede volver a intentar bloquear esta acci\u00f3n."
     },
     "100620":{
-        "Name":"Elder Library",
+        "Name":"Biblioteca antigua",
         "Card Text":"Lugar \u00fanico.\n+1 a la mano."
     },
     "100632":{
-        "Name":"Elysium: The Palace of Versailles",
+        "Name":"El\u00edseo: Palacio de Versalles",
         "Card Text":"Lugar \u00fanico.\nG\u00edrala durante la fase de votaci\u00f3n de una acci\u00f3n pol\u00edtica para dar +1 voto a cada vampiro Camarilla titulado preparado que controles."
     },
     "100633":{
-        "Name":"Embrace, The",
+        "Name":"Abrazo, El",
         "Card Text":"Acci\u00f3n con +1 de sigilo. Requiere a un vampiro que no sea est\u00e9ril.\nPon esta carta en juego. Se convierte en un vampiro no \u00fanico con 1 de capacidad del mismo clan y secta que el vampiro activo, y debe cazar este turno."
     },
     "100640":{
-        "Name":"Enchant Kindred",
+        "Name":"Encantar a los V\u00e1stagos",
         "Card Text":"[pre] (D) Sangra con +1 de sangrado.\n[PRE] Acci\u00f3n con +1 de sigilo. A\u00f1ade 2 de sangre a un vampiro menor de tu zona incontrolada."
     },
     "102221":{
-        "Name":"Enchanting Gaze",
+        "Name":"Mirada cautivadora",
         "Card Text":"[pre][pro] +1 de sigilo.\n[PRE][PRO] Como antes, y una vez en esta acci\u00f3n puedes quemar 1 de tus fichas de corrupci\u00f3n de un siervo bloqueador para hacer que su intento de bloqueo fracase, y no pueda intentar bloquear esta acci\u00f3n de nuevo."
     },
     "100644":{
-        "Name":"Enhanced Senses",
+        "Name":"Sentidos agudizados",
         "Card Text":"[aus] +1 de intercepci\u00f3n.\n[AUS] +2 de intercepci\u00f3n."
     },
     "100645":{
-        "Name":"Enkil Cog",
+        "Name":"Vasallo de Enkil",
         "Card Text":"\u00danica. Requiere a un vampiro con capacidad 10 o m\u00e1s. S\u00f3lo utilizable tras la resoluci\u00f3n de un sangrado exitoso contra tu presa.\nPonle esta carta a este vampiro. Este vampiro obtiene +1 de sangrado. Durante la fase servil de cualquier Matusal\u00e9n, este vampiro puede girar esta carta para realizar una acci\u00f3n."
     },
     "100646":{
-        "Name":"Ennoia's Theater",
+        "Name":"Teatro de Ennoia",
         "Card Text":"Lugar \u00fanico.\nG\u00edrala para obtener +1 a la mano este turno. G\u00edrala durante tu fase de influencia para obtener +1 transferencia."
     },
     "100651":{
-        "Name":"Entombment",
+        "Name":"Sepultura",
         "Card Text":"[obt] Ataque: quema al aliado oponente.\n[OBT] Ataque: env\u00eda al vampiro oponente al letargo."
     },
     "100652":{
-        "Name":"Entrancement",
+        "Name":"Trance",
         "Card Text":"[pre] (D) Sangra con +1 de sangrado.\n[PRE] Acci\u00f3n (D) con +1 de sigilo. Roba un aliado controlado por otro Matusal\u00e9n."
     },
     "100680":{
-        "Name":"Eyes of Argus",
+        "Name":"Ojos de Argos",
         "Card Text":"[aus] S\u00f3lo utilizable durante una acci\u00f3n directa contra ti (o una carta que controles). +2 de intercepci\u00f3n.\n[AUS] S\u00f3lo utilizable por un vampiro girado. Este vampiro se despierta (ignora el requisito de estar enderezado para jugar cartas de reacci\u00f3n e intentar bloquear hasta el final de la acci\u00f3n)."
     },
     "100682":{
-        "Name":"Eyes of Chaos",
+        "Name":"Ojos del caos",
         "Card Text":"S\u00f3lo utilizable durante una acci\u00f3n de sangrado.\n[dem] +1 de sangrado (limitada).\n[DEM] +2 de sangrado (limitada)."
     },
     "102222":{
-        "Name":"Eyes of the Wild",
+        "Name":"Ojos de la naturaleza",
         "Card Text":"S\u00f3lo utilizable por un Gangrel girado.\nEste Gangrel se endereza e intenta bloquear. Durante esta acci\u00f3n, este Gangrel puede quemar 1 de sangre para obtener +1 de intercepci\u00f3n. Gira a este Gangrel tras la resoluci\u00f3n de la acci\u00f3n si no bloque\u00f3 esta acci\u00f3n."
     },
     "100687":{
-        "Name":"Faceless Night",
+        "Name":"Noche sin rostro",
         "Card Text":"[obf] +1 de sigilo.\n[OBF] Como antes, y cualquier siervo que intente bloquear esta acci\u00f3n y fracase se gira antes de la resoluci\u00f3n de la acci\u00f3n."
     },
     "100698":{
-        "Name":"Fame",
+        "Name":"Fama",
         "Card Text":"\u00danica.\nPonle esta carta a un vampiro preparado. El controlador de este vampiro quema 3 de reserva sangu\u00ednea despu\u00e9s de que este vampiro entre en letargo. Durante la fase de enderezamiento de cada Matusal\u00e9n, si este vampiro est\u00e1 en letargo, ese Matusal\u00e9n quema 1 de reserva sangu\u00ednea."
     },
     "100710":{
-        "Name":"Fear of Mekhet",
+        "Name":"Miedo a Mekhet",
         "Card Text":"Ponle esta carta a un justicar o miembro del C\u00edrculo Interior preparado y g\u00edralo. Durante la fase de enderezamiento de este vampiro, \u00e9ste quema 5 de sangre. Si no puede quemar la sangre, se quema; de lo contrario, su controlador pasa esta carta a otro justicar o miembro del C\u00edrculo Interior, o quema esta carta si no hay m\u00e1s."
     },
     "100720":{
-        "Name":"Femur of Toomler",
+        "Name":"F\u00e9mur de Toomler",
         "Card Text":"Arma blanca \u00fanica.\nAtaque: fuerza+1 de da\u00f1o agravado."
     },
     "100744":{
-        "Name":"Flash",
+        "Name":"Como una centella",
         "Card Text":"[cel] Maniobra o acoso.\n[CEL] Maniobra con 1 acoso opcional."
     },
     "100747":{
-        "Name":"Fleetness",
+        "Name":"Presteza",
         "Card Text":"Acci\u00f3n con +1 de sigilo.\n[cel] (D) Sangra.\n[CEL] (D) Entra en combate con un siervo girado. Este vampiro obtiene 1 maniobra opcional durante ese combate."
     },
     "100760":{
-        "Name":"Forced Awakening",
+        "Name":"Despertar forzado",
         "Card Text":"S\u00f3lo utilizable por un vampiro girado.\nEste vampiro se despierta (ignora el requisito de estar enderezado para jugar cartas de reacci\u00f3n e intentar bloquear hasta el final de la acci\u00f3n). Si no bloquea esta acci\u00f3n, quema 1 de sangre antes de la resoluci\u00f3n de la acci\u00f3n."
     },
     "100761":{
-        "Name":"Forced March",
+        "Name":"Marcha forzada",
         "Card Text":"Un vampiro puede jugar s\u00f3lo un ejemplar de esta carta por turno.\n[cel][for] S\u00f3lo utilizable tras la resoluci\u00f3n de una acci\u00f3n exitosa. Endereza a este vampiro.\n[CEL][FOR] +1 de sigilo. Tras la resoluci\u00f3n de la acci\u00f3n, si ha tenido \u00e9xito, este vampiro puede quemar 1 de sangre para enderezarse."
     },
     "100765":{
-        "Name":"Foreshadowing Destruction",
+        "Name":"Presagiar la destrucci\u00f3n",
         "Card Text":"S\u00f3lo utilizable durante una acci\u00f3n de sangrado.\n[dom] +1 de sangrado (limitada).\n[DOM] +3 de sangrado si el Matusal\u00e9n objetivo tiene 9 o menos de reserva sangu\u00ednea (limitada)."
     },
     "100770":{
-        "Name":"Form of Corruption",
+        "Name":"Forma de corrupci\u00f3n",
         "Card Text":"[ser] Pon esta carta en juego. Cada vez que tu presa obtenga la Ventaja, a\u00f1ade 1 ficha a esta carta. Si el n\u00famero de fichas de esta carta iguala o supera la cantidad de sangre de un vampiro controlado por tu presa durante tu fase heril, puedes quemar esta carta para robar ese vampiro. Un Matusal\u00e9n puede tener s\u00f3lo una /Forma de corrupci\u00f3n/.\n[SER] Como antes, y tu presa quema 1 de reserva sangu\u00ednea despu\u00e9s de que quemes esta carta."
     },
     "100771":{
-        "Name":"Form of Mist",
+        "Name":"Forma de niebla",
         "Card Text":"[pro] Ataque: esquiva.\n[PRO] Ataque: el combate termina. Si este vampiro est\u00e1 actuando y la acci\u00f3n fue bloqueada, puede quemar 1 de sangre despu\u00e9s de que termine el combate para continuar la acci\u00f3n con +1 de sigilo como si no hubiera sido bloqueada, aunque el sigilo no sea necesario. Un vampiro puede jugar s\u00f3lo un ejemplar de esta carta a superior por acci\u00f3n."
     },
     "102223":{
-        "Name":"Form of the Bat",
+        "Name":"Forma del murci\u00e9lago",
         "Card Text":"[pro] [ACTIONMODIFIER] S\u00f3lo utilizable si un siervo intenta bloquear. El siervo bloqueador obtiene -1 de intercepci\u00f3n. Si esta acci\u00f3n es bloqueada, este vampiro obtiene 1 maniobra opcional y no puede usar equipo durante el combate resultante.\n[PRO] [REACTION] +1 de intercepci\u00f3n. Si este vampiro bloquea, obtiene 1 maniobra opcional y no puede usar equipo durante el combate resultante."
     },
     "102224":{
-        "Name":"Form of the Cobra",
+        "Name":"Forma de la cobra",
         "Card Text":"[pro] [COMBAT] Ataque: roba 1 de sangre o vida (convirti\u00e9ndose en sangre).\n[PRO] [ACTIONMODIFIER] S\u00f3lo utilizable al anunciar la acci\u00f3n. +1 de sigilo, aunque el sigilo no sea necesario."
     },
     "102225":{
-        "Name":"Form of the Wolf",
+        "Name":"Forma del lobo",
         "Card Text":"S\u00f3lo utilizable antes de determinar la distancia. Un vampiro puede jugar s\u00f3lo un ejemplar de esta carta por combate.\n[pro] Este vampiro obtiene +1 de fuerza en este combate.\n[PRO] Como antes, y este vampiro obtiene 1 acoso opcional en este combate."
     },
     "100779":{
-        "Name":"Foundation Exhibit",
+        "Name":"Exposici\u00f3n de la Fundaci\u00f3n",
         "Card Text":"Lugar \u00fanico.\nCada Toreador antitribu no titulado que controles consigue +1 voto. Cualquier vampiro puede quemar esta carta con una acci\u00f3n (D) que cuesta 1 de sangre."
     },
     "100788":{
-        "Name":"Freak Drive",
+        "Name":"Impulso sobrenatural",
         "Card Text":"S\u00f3lo utilizable tras la resoluci\u00f3n de la acci\u00f3n.\n[for] S\u00f3lo utilizable si la acci\u00f3n tuvo \u00e9xito. Endereza a este vampiro.\n[FOR] S\u00f3lo utilizable si la acci\u00f3n fue bloqueada. Endereza a este vampiro."
     },
     "100794":{
-        "Name":"Frontal Assault",
+        "Name":"Ataque frontal",
         "Card Text":"Pon esta carta en juego. Cada siervo preparado que controles puede entrar en combate con un siervo controlado por tu presa con una acci\u00f3n (D). Ganas 1 de reserva sangu\u00ednea despu\u00e9s de que un siervo preparado controlado por tu presa se queme o sea enviado al letargo. Durante tu fase de influencia, quema esta carta y quema 1 de reserva sangu\u00ednea por cada siervo preparado controlado por tu presa."
     },
     "100800":{
-        "Name":"Game of Malkav",
+        "Name":"Juego de Malkav",
         "Card Text":"\nCada uno de los dem\u00e1s Matusalenes elige en secreto un n\u00famero entre 1 y 5 inclusive; t\u00fa eliges un n\u00famero entre 1 y 6 inclusive. Cada Matusal\u00e9n extiende el pu\u00f1o cerrado con el n\u00famero de fichas elegido dentro. Revela las elecciones simult\u00e1neamente. Cada Matusal\u00e9n gana la cantidad de reserva sangu\u00ednea que haya elegido, a no ser que otro Matusal\u00e9n haya elegido exactamente una ficha menos que \u00e9l, en cuyo caso, quema esa cantidad de reserva sangu\u00ednea en vez de ganarla."
     },
     "100824":{
-        "Name":"Giant's Blood",
+        "Name":"Sangre del gigante",
         "Card Text":"S\u00f3lo se puede jugar un ejemplar de esta carta por partida.\nRellena a un vampiro hasta su plena capacidad con sangre del banco de sangre."
     },
     "100834":{
-        "Name":"Glancing Blow",
+        "Name":"Golpe de refil\u00f3n",
         "Card Text":"No la reemplaces hasta tu fase de enderezamiento.\nPrevente de 1 de da\u00f1o del ataque del siervo oponente."
     },
     "100845":{
-        "Name":"Govern the Unaligned",
+        "Name":"Regir a los no alineados",
         "Card Text":"[dom] (D) Sangra con +2 de sangrado.\n[DOM] Acci\u00f3n con +1 de sigilo. A\u00f1ade 3 de sangre a un vampiro menor de tu zona incontrolada."
     },
     "100855":{
@@ -456,103 +456,103 @@
         "Card Text":"Ghoul \u00fanico con 4 de vida. 1 de fuerza, 1 de sangrado.\nGregory puede robarle 1 de sangre (convirti\u00e9ndose en vida) a un vampiro controlado por otro Matusal\u00e9n con una acci\u00f3n (D) con +1 de sigilo. \u00c9l puede quemar a un vampiro en letargo para ganar 2 de vida con una acci\u00f3n (D). Durante tu fase de enderezamiento, Gregory quema 1 de vida."
     },
     "100863":{
-        "Name":"Guard Dogs",
+        "Name":"Perros guardianes",
         "Card Text":"S\u00f3lo utilizable por un vampiro girado durante un sangrado contra ti.\n[ani] Endereza a este vampiro.\n[ANI] Como antes, con 1 maniobra opcional en el combate resultante si este vampiro bloquea."
     },
     "100866":{
-        "Name":"Guardian Angel",
+        "Name":"\u00c1ngel guardi\u00e1n",
         "Card Text":"Ponle esta carta a un vampiro preparado que controles. Este vampiro obtiene +1 de intercepci\u00f3n durante acciones de sangrado contra ti. Este vampiro puede prevenirse de 1 de da\u00f1o por combate. Quema esta carta si este vampiro entra en letargo."
     },
     "100882":{
-        "Name":"Hand of Conrad",
+        "Name":"Mano de Conrad",
         "Card Text":"\u00danico.\nEste vampiro obtiene Potencia superior [POT]. Este vampiro puede pasar a un vampiro de tu mont\u00f3n de ceniza a tu zona incontrolada con una acci\u00f3n."
     },
     "102226":{
-        "Name":"Haqim's Law: Retribution",
+        "Name":"Ley de Haqim: Castigo",
         "Card Text":"Pon esta carta en juego. Durante una acci\u00f3n de sangrado, un Banu Haqim que controles puede descartarse de una carta de combate para obtener +1 de sangrado."
     },
     "100886":{
-        "Name":"Harass",
+        "Name":"Hostigar",
         "Card Text":"(D) Entra en combate con un vampiro que tenga 3 o menos de sangre o con un siervo girado. Este siervo activo obtiene 1 acoso opcional, s\u00f3lo utilizable para continuar el combate, durante ese combate."
     },
     "100897":{
-        "Name":"Haven Uncovered",
+        "Name":"Refugio descubierto",
         "Card Text":"Ponle esta carta a un vampiro preparado. Cualquier siervo puede entrar en combate con este vampiro con una acci\u00f3n (D) con +1 de sigilo. Este vampiro puede quemar esta carta con una acci\u00f3n (D) con +1 de sigilo."
     },
     "100903":{
-        "Name":"Heart of Nizchetus",
+        "Name":"Coraz\u00f3n de Nizchetus",
         "Card Text":"\u00danico.\nSi el portador est\u00e1 preparado durante tu fase de enderezamiento, puedes robar hasta 3 cartas sin descartarte y luego pasar la misma cantidad de cartas de tu mano al fondo de tu biblioteca."
     },
     "100904":{
-        "Name":"Heart of the City",
+        "Name":"Coraz\u00f3n de la ciudad",
         "Card Text":"Acci\u00f3n con +1 de sigilo.\n[pre] Ponle esta carta a este vampiro. Este vampiro obtiene +1 de sangrado. Un vampiro puede tener s\u00f3lo un ejemplar de esta carta.\n[PRE] Como antes, pero este vampiro obtiene +2 de sangrado."
     },
     "100908":{
-        "Name":"Heidelberg Castle, Germany",
+        "Name":"Castillo de Heidelberg, Alemania",
         "Card Text":"Lugar \u00fanico.\nG\u00edrala para pasar sangre, equipo o criados entre dos vampiros preparados que controles. No se puede usar durante una acci\u00f3n."
     },
     "100913":{
-        "Name":"Heroic Might",
+        "Name":"El poder de un h\u00e9roe",
         "Card Text":"Acci\u00f3n con +3 de sigilo.\n[pot] Ponle esta carta a este vampiro. Este vampiro obtiene +1 de fuerza. Este vampiro puede atacar quemando equipo. Quema esta carta si este vampiro est\u00e1 en letargo. Un vampiro puede tener s\u00f3lo un ejemplar de esta carta.\n[POT] Como antes, con +1 de fuerza adicional, y este vampiro puede atacar con 2 de da\u00f1o a distancia."
     },
     "100918":{
-        "Name":"Hidden Strength",
+        "Name":"Fuerza oculta",
         "Card Text":"[for] Prevente de X+1 de da\u00f1o.\n[FOR] Como antes, con 1 acoso opcional."
     },
     "100932":{
-        "Name":"Homunculus",
+        "Name":"Hom\u00fanculo",
         "Card Text":"Criado con 1 de vida.\n[pro] Durante la fase de enderezamiento de cualquier Matusal\u00e9n, este vampiro puede quemar 1 de sangre para enderezarse.\n[PRO] Como antes, pero el /Hom\u00fanculo/ tiene 2 de vida."
     },
     "100934":{
-        "Name":"Horrid Form",
+        "Name":"Forma horrenda",
         "Card Text":"S\u00f3lo utilizable antes de determinar la distancia.\n[vic] Este vampiro obtiene +1 de fuerza en este combate.\n[VIC] Como antes, y este vampiro puede prevenirse de 1 de da\u00f1o por asalto."
     },
     "102227":{
-        "Name":"Hunger of Marduk",
+        "Name":"El hambre de Marduk",
         "Card Text":"S\u00f3lo utilizable antes de determinar la distancia.\n[tha] En este asalto, este vampiro puede atacar a distancia robando 1 de sangre o vida (convirti\u00e9ndose en sangre).\n[THA] Como antes, pero 2 de sangre o vida (convirti\u00e9ndose en sangre)."
     },
     "100945":{
-        "Name":"Hungry Coyote, The",
+        "Name":"Coyote Hambriento, El",
         "Card Text":"Lugar \u00fanico.\nLos vampiros Sabbat que controles obtienen +1 a la caza."
     },
     "102228":{
-        "Name":"Hunter's Mark",
+        "Name":"La marca del cazador",
         "Card Text":"[cel][tha] (D) Entra en combate con un siervo. Este vampiro activo obtiene 1 acoso opcional durante ese combate.\n[CEL][THA] Como antes, y el siervo oponente no puede atacar terminando el combate durante el primer asalto de ese combate."
     },
     "100959":{
-        "Name":"Immortal Grapple",
+        "Name":"Agarre inmortal",
         "Card Text":"Agarre. S\u00f3lo utilizable de cerca antes de elegir ataques. Un vampiro puede jugar s\u00f3lo un ejemplar de esta carta por asalto.\n[pot] Los ataques que no sean con la mano no se pueden usar en este asalto (por parte de ninguno de los dos combatientes).\n[POT] Como antes, con 1 acoso opcional. Si hay otro asalto de combate, ser\u00e1 de cerca (s\u00e1ltate la etapa de determinar la distancia de ese asalto)."
     },
     "100973":{
-        "Name":"Indomitability",
+        "Name":"Indomabilidad",
         "Card Text":"[for] Prevente de 1 de da\u00f1o.\n[FOR] Acoso, o prevente de 1 de da\u00f1o con 1 acoso opcional."
     },
     "100984":{
-        "Name":"Information Highway",
+        "Name":"Autopista de la informaci\u00f3n",
         "Card Text":"Lugar \u00fanico.\n+2 transferencias."
     },
     "100986":{
-        "Name":"Inner Essence",
+        "Name":"Esencia interior",
         "Card Text":"S\u00f3lo utilizable antes de determinar la distancia. Un vampiro puede jugar s\u00f3lo un ejemplar de esta carta por combate.\n[vic] Una vez durante este combate, este vampiro puede reducir el costo de una carta de combate que juegue en 1 de sangre.\n[VIC] Como antes, y este vampiro gana 1 de sangre."
     },
     "100994":{
-        "Name":"Instantaneous Transformation",
+        "Name":"Transformaci\u00f3n instant\u00e1nea",
         "Card Text":"[cel][pro] +1 de sigilo.\n[CEL][PRO] S\u00f3lo utilizable tras la resoluci\u00f3n de una acci\u00f3n exitosa. Endereza a este vampiro. Un vampiro puede jugar s\u00f3lo un ejemplar de esta carta a superior por turno."
     },
     "100995":{
-        "Name":"Instinctive Reaction",
+        "Name":"Reacci\u00f3n instintiva",
         "Card Text":"S\u00f3lo utilizable si un siervo controlado por tu depredador est\u00e1 actuando.\n[ani] +1 de intercepci\u00f3n.\n[ANI] Como antes, con 1 maniobra opcional durante el combate resultante si este vampiro bloquea."
     },
     "100999":{
-        "Name":"Intimidation",
+        "Name":"Intimidaci\u00f3n",
         "Card Text":"[pre] (D) Sangra con +1 de sangrado.\n[PRE] Sangra con +2 de sangrado."
     },
     "101014":{
-        "Name":"Ivory Bow",
+        "Name":"Arco de marfil",
         "Card Text":"Arma \u00fanica.\nAtaque: 1 de da\u00f1o agravado a distancia."
     },
     "101015":{
-        "Name":"J. S. Simmons, Esq.",
+        "Name":"Don J. S. Simmons",
         "Card Text":"Mortal \u00fanico con 1 de vida.\nEl empleador obtiene +1 de sangrado."
     },
     "101019":{
@@ -560,111 +560,111 @@
         "Card Text":"\u00danica.\nPon esta carta en juego; se convierte en un aliado mortal \u00fanico con 1 de vida, 0 de fuerza y 0 de sangrado y no cuenta como carta heril mientras est\u00e9 en juego. Durante tu fase de enderezamiento, puedes quemar a Jake para a\u00f1adir hasta 4 de sangre a un vampiro preparado sin sangre."
     },
     "101040":{
-        "Name":"Kevlar Vest",
+        "Name":"Chaleco de kevlar",
         "Card Text":"Una vez por combate, el portador puede prevenirse de 2 de da\u00f1o procedente de ataques con armas de fuego o de 1 de da\u00f1o procedente de otras fuentes. Un siervo puede tener s\u00f3lo un /Chaleco de kevlar/."
     },
     "101048":{
-        "Name":"Khobar Towers, Al-Khubar",
+        "Name":"Torres Jobar, Al Jubar",
         "Card Text":"Lugar \u00fanico.\nG\u00edrala durante tu fase de enderezamiento para retirar de la partida a un siervo preparado que controles y ganar X de reserva sangu\u00ednea, donde X es la capacidad de ese vampiro o el costo de sangre o reserva sangu\u00ednea de ese aliado."
     },
     "101055":{
-        "Name":"Kindred Spirits",
+        "Name":"Almas gemelas",
         "Card Text":"[dem] (D) Sangra a cualquier Matusal\u00e9n. Gana 1 de reserva sangu\u00ednea si este sangrado tiene \u00e9xito (de 1 o m\u00e1s).\n[DEM] Como antes, con +1 de sangrado."
     },
     "101056":{
-        "Name":"Kine Resources Contested",
+        "Name":"Disputa de recursos ganaderos",
         "Card Text":"Asigna 4 puntos entre dos o m\u00e1s Matusalenes. Si el refer\u00e9ndum prospera, cada Matusal\u00e9n quema 1 de reserva sangu\u00ednea por cada punto asignado."
     },
     "101067":{
-        "Name":"KRCG News Radio",
+        "Name":"Radio de noticias KRCG",
         "Card Text":"Lugar \u00fanico.\nG\u00edrala para darle a un siervo que controles +1 de intercepci\u00f3n. G\u00edrala y quema 1 de reserva sangu\u00ednea para darle a un siervo controlado por otro Matusal\u00e9n +1 de intercepci\u00f3n."
     },
     "101070":{
-        "Name":"Labyrinth, The",
+        "Name":"El laberinto",
         "Card Text":"Lugar \u00fanico.\nG\u00edrala para darle +1 de sigilo a un Nosferatu que controles."
     },
     "101073":{
-        "Name":"Laptop Computer",
+        "Name":"Ordenador port\u00e1til",
         "Card Text":"Electr\u00f3nico.\nEl portador obtiene +1 de sangrado. Un siervo puede tener s\u00f3lo un ejemplar de esta carta."
     },
     "101089":{
-        "Name":"Legal Manipulations",
+        "Name":"Manipulaciones legales",
         "Card Text":"[pre] (D) Sangra con +2 de sangrado.\n[PRE] Como antes, y gana 1 de reserva sangu\u00ednea si el sangrado tiene \u00e9xito (de 1 o m\u00e1s)."
     },
     "101091":{
-        "Name":"Legendary Vampire",
+        "Name":"Vampiro legendario",
         "Card Text":"\u00danica.\nPonle esta carta a un vampiro con capacidad 7 o m\u00e1s que haya entrado en tu zona preparada durante tu \u00faltima fase de influencia. Este vampiro obtiene +2 de sangrado y +2 votos. Cualquier vampiro puede proponer un refer\u00e9ndum para quemar esta carta con una acci\u00f3n pol\u00edtica con +1 de sigilo."
     },
     "101102":{
-        "Name":"Library Hunting Ground",
+        "Name":"Zona de caza: Biblioteca",
         "Card Text":"Lugar \u00fanico. Zona de caza.\nDurante tu fase de enderezamiento, un vampiro preparado que controles puede ganar 1 de sangre. Un vampiro puede ganar sangre de s\u00f3lo una zona de caza por turno."
     },
     "101103":{
-        "Name":"Life Boon",
+        "Name":"Favor de por vida",
         "Card Text":"Fuera de turno. Favor.\nDale reserva sangu\u00ednea a un Matusal\u00e9n sin reserva sangu\u00ednea para mantenerlo en la partida, y pon esta carta en juego. Durante cada una de sus fases de enderezamiento, puedes robarle 1 de reserva sangu\u00ednea a ese Matusal\u00e9n. Cualquier punto de victoria que gane ese Matusal\u00e9n lo ganas t\u00fa en su lugar, hasta que seas eliminado o hasta que hayas ganado 1 punto de victoria por esta carta. Quema esta carta despu\u00e9s de que hayas ganado 1 punto de victoria por ella."
     },
     "101104":{
-        "Name":"Life in the City",
+        "Name":"Vida en la ciudad",
         "Card Text":"Nimiedad.\nA\u00f1ade 1 de sangre a un vampiro preparado."
     },
     "102229":{
-        "Name":"Line Brawl",
+        "Name":"Pelea entre bandas",
         "Card Text":"Requiere a un Anarquista.\n[cel] (D) Roba 1 de reserva sangu\u00ednea a otro Matusal\u00e9n.\n[pot] (D) Entra en combate con un siervo.\n[pre] (D) Sangra con +1 de sangrado."
     },
     "101114":{
-        "Name":"Living Manse",
+        "Name":"Mansi\u00f3n viviente",
         "Card Text":"Mientras est\u00e9 en juego, esta carta de equipo representa un lugar y no cuenta como equipo.\nEste vampiro obtiene +1 de sangrado. Puede quemar esta carta antes de determinar la distancia para terminar el combate. Un vampiro puede tener s\u00f3lo un ejemplar de esta carta."
     },
     "101125":{
-        "Name":"Lost in Crowds",
+        "Name":"Perdido en multitudes",
         "Card Text":"[obf] +1 de sigilo. /Desaparecer/ y /Perdido en multitudes/ no se pueden jugar en la misma acci\u00f3n.\n[OBF] Como antes, pero +2 de sigilo."
     },
     "101143":{
-        "Name":"Magic of the Smith",
+        "Name":"Magia del herrero",
         "Card Text":"Acci\u00f3n con +1 de sigilo.\n[tha] Busca en tu biblioteca una carta de equipo y equipa a este vampiro activo con ella (los requisitos y el coste se aplican normalmente; baraja despu\u00e9s).\n[THA] Como antes, pero \u00e9sta es una acci\u00f3n con +3 de sigilo."
     },
     "101144":{
-        "Name":"Majesty",
+        "Name":"Majestad",
         "Card Text":"[pre] Ataque: el combate termina.\n[PRE] Como antes, y endereza a este vampiro antes de que el combate termine."
     },
     "101171":{
-        "Name":"Market Square",
+        "Name":"Mercado",
         "Card Text":"Lugar \u00fanico.\nG\u00edrala para darle a un Banu Haqim que controles +1 de intercepci\u00f3n."
     },
     "101216":{
-        "Name":"Mind Tricks",
+        "Name":"Trucos mentales",
         "Card Text":"[dem] +1 de sigilo.\n[DEM] Como antes, con 1 maniobra o acoso opcionales durante el combate resultante si esta acci\u00f3n es bloqueada."
     },
     "101223":{
-        "Name":"Mirror Walk",
+        "Name":"Atravesar el espejo",
         "Card Text":"No la reemplaces hasta tu fase de descarte.\n[tha] +1 de sigilo.\n[THA] Como antes, y si esta acci\u00f3n es bloqueada, gira al siervo bloqueador y termina la acci\u00f3n antes de la resoluci\u00f3n de bloqueos."
     },
     "101225":{
-        "Name":"Misdirection",
+        "Name":"Direcci\u00f3n incorrecta",
         "Card Text":"\nGira a un siervo."
     },
     "101235":{
-        "Name":"Molotov Cocktail",
+        "Name":"C\u00f3ctel m\u00f3lotov",
         "Card Text":"Ataque a distancia: ponle esta carta a este siervo; se convierte en un equipo arma con el se que puede atacar a distancia infligiendo 2 de da\u00f1o agravado, no utilizable en el asalto en el que se pone en juego. Qu\u00e9mala tras usarla o al final del combate."
     },
     "101238":{
-        "Name":"Monastery of Shadows",
+        "Name":"Monasterio de las Sombras",
         "Card Text":"Lugar \u00fanico.\n+1 a la mano. G\u00edrala para darle a un vampiro con capacidad 8 o m\u00e1s +1 de sigilo."
     },
     "101239":{
-        "Name":"Monkey Wrench",
+        "Name":"Planes frustrados",
         "Card Text":"Requiere a un Anarquista. S\u00f3lo utilizable durante una acci\u00f3n de sangrado.\n+X de sangrado (limitada). X debe ser 1, 2 o 3."
     },
     "101249":{
-        "Name":"Mr. Winthrop",
+        "Name":"Sr. Winthrop",
         "Card Text":"Mortal \u00fanico con 1 de vida.\nEl empleador obtiene +1 de intercepci\u00f3n."
     },
     "101254":{
-        "Name":"Murder of Crows",
+        "Name":"Bandada de cuervos",
         "Card Text":"Animal con 1 de vida.\n[ani] La /Bandada de cuervos/ inflige 1 de da\u00f1o a distancia al siervo oponente en cada asalto de combate durante la resoluci\u00f3n de ataques normal.\n[ANI] Como antes, pero la /Bandada de cuervos/ tiene 2 de vida."
     },
     "101256":{
-        "Name":"Murmur of the False Will",
+        "Name":"Murmullo de la falsa voluntad",
         "Card Text":"[dom] [ACTIONMODIFIER] S\u00f3lo utilizable durante una acci\u00f3n de sangrado. +1 de sangrado (limitada).\n[DOM] [REACTION] S\u00f3lo utilizable si un vampiro menor te est\u00e1 sangrando, tras renunciar a bloquear. Gira a este vampiro reactivo. Cambia el objetivo del sangrado por otro Matusal\u00e9n que no sea el controlador del vampiro activo (ese Matusal\u00e9n puede intentar bloquear)."
     },
     "101261":{
@@ -672,35 +672,35 @@
         "Card Text":"Changeling \u00fanico con 1 de vida. 0 de fuerza, 1 de sangrado.\nUna vez por combate, Mylan puede atacar esquivando. Puede enderezar a un vampiro preparado que no sea Camarilla con capacidad 8 o m\u00e1s con una acci\u00f3n con +1 de sigilo. Mylan no puede bloquear vampiros."
     },
     "101271":{
-        "Name":"Neonate Breach",
+        "Name":"Infracci\u00f3n de los Neonatos",
         "Card Text":"Elige a uno o m\u00e1s Matusalenes. Si el refer\u00e9ndum prospera, cada Matusal\u00e9n elegido quema 1 de reserva sangu\u00ednea, m\u00e1s 3 de reserva sangu\u00ednea adicionales si controla a un vampiro con capacidad 4 o menos."
     },
     "101272":{
-        "Name":"Nephandus",
+        "Name":"Nefando",
         "Card Text":"Mago con 2 de vida. 0 de fuerza, 1 de sangrado.\nEl Nefando puede atacar a distancia infligiendo 1 de da\u00f1o. El Nefando obtiene 1 acoso opcional por combate. El Nefando puede quemar a un vampiro en letargo para ganar 1 de vida con una acci\u00f3n (D). Cada ataque o efecto da\u00f1ino efectuado por el siervo oponente contra el Nefando en combate inflige 1 menos de da\u00f1o."
     },
     "101292":{
-        "Name":"No Trace",
+        "Name":"Sin rastro",
         "Card Text":"[obf] S\u00f3lo utilizable de lejos. Ataque: el combate termina.\n[OBF] Ataque: el combate termina."
     },
     "101309":{
-        "Name":"Obedience",
+        "Name":"Obediencia",
         "Card Text":"S\u00f3lo utilizable si este vampiro est\u00e1 a punto de entrar en combate con un vampiro activo menor.\n[dom] Endereza al vampiro activo y termina la acci\u00f3n. (No gires a este vampiro si est\u00e1 bloqueando). El vampiro activo no puede realizar la misma acci\u00f3n este turno.\n[DOM] Como antes, pero no endereces al vampiro activo."
     },
     "101321":{
-        "Name":"On the Qui Vive",
+        "Name":"En estado de alerta",
         "Card Text":"S\u00f3lo utilizable por un siervo girado. Un siervo puede jugar s\u00f3lo un ejemplar de esta carta entre sus fases de enderezamiento.\nEste siervo se despierta (ignora el requisito de estar enderezado para jugar cartas de reacci\u00f3n e intentar bloquear hasta el final de la acci\u00f3n). Si este siervo es un aliado, no se endereza normalmente durante su siguiente fase de enderezamiento."
     },
     "101326":{
-        "Name":"Opium Den",
+        "Name":"Fumadero de opio",
         "Card Text":"Lugar \u00fanico.\nG\u00edrala para darle a un Ministro que controles +1 de sigilo."
     },
     "102230":{
-        "Name":"Organized Resistance",
+        "Name":"Resistencia organizada",
         "Card Text":"Requiere a un bar\u00f3n. Utilizable por un bar\u00f3n girado.\nUn Anarquista que controles obtiene +1 de intercepci\u00f3n. Tambi\u00e9n utilizable para enderezar a un Anarquista girado que controles; ese Anarquista intenta bloquear con +1 de intercepci\u00f3n, aunque la intercepci\u00f3n no sea necesaria."
     },
     "101334":{
-        "Name":"Oubliette",
+        "Name":"Mazmorra",
         "Card Text":"[obt] Ataque: el combate termina.\n[OBT] Como antes, y el siervo oponente quema 1 de sangre o vida despu\u00e9s de que el combate termine (incluso de lejos)."
     },
     "101346":{
@@ -712,255 +712,255 @@
         "Card Text":"Lugar \u00fanico. Zona de caza. Requiere a un vampiro preparado con un t\u00edtulo de ciudad.\nDurante tu fase de enderezamiento, un vampiro titulado preparado que controles puede ganar 2 de sangre. Un vampiro puede ganar sangre de s\u00f3lo una zona de caza por turno."
     },
     "101353":{
-        "Name":"Parity Shift",
+        "Name":"Cambio de paridad",
         "Card Text":"Requiere a un pr\u00edncipe o justicar.\nElige a un Matusal\u00e9n que tenga m\u00e1s reserva sangu\u00ednea que t\u00fa, y asigna 3 de su reserva sangu\u00ednea entre 1 o m\u00e1s de los dem\u00e1s Matusalenes (incluy\u00e9ndote a ti). Si el refer\u00e9ndum prospera, el Matusal\u00e9n elegido pierde esa reserva sangu\u00ednea, que es asignada como hayas elegido."
     },
     "102231":{
-        "Name":"Party Out Of Bounds",
+        "Name":"Fiesta privada",
         "Card Text":"Requiere a un Anarquista.\n[obf] Reduce un sangrado contra ti en 2.\n[pre] S\u00f3lo utilizable durante la fase de votaci\u00f3n de una acci\u00f3n pol\u00edtica. Este vampiro consigue +2 votos.\n[pro] +1 de intercepci\u00f3n."
     },
     "101384":{
-        "Name":"Pentex(TM) Subversion",
+        "Name":"La subversi\u00f3n de Pentex(TM)",
         "Card Text":"\u00danica.\nPonle esta carta a un siervo preparado. Este siervo no puede bloquear. Cualquier otro siervo puede quemar esta carta con una acci\u00f3n (D)."
     },
     "101387":{
-        "Name":"Perfect Paragon",
+        "Name":"Ejemplo de perfecci\u00f3n",
         "Card Text":"[pre] S\u00f3lo utilizable durante la fase de votaci\u00f3n de una acci\u00f3n pol\u00edtica. Este vampiro consigue +3 votos.\n[PRE] Los aliados y vampiros menores obtienen -1 de intercepci\u00f3n."
     },
     "101388":{
-        "Name":"Perfectionist",
+        "Name":"Perfeccionista",
         "Card Text":"Arquetipo.\nPonle esta carta a un vampiro que controles. Una vez por turno, este vampiro puede ganar 1 de sangre tras realizar una acci\u00f3n exitosa durante la cual no se hayan jugado cartas de reacci\u00f3n."
     },
     "101390":{
-        "Name":"Permanent Vacation",
+        "Name":"Vacaciones permanentes",
         "Card Text":"Elige a un aliado preparado. Si el refer\u00e9ndum prospera, el aliado elegido se retira de la partida."
     },
     "102232":{
-        "Name":"Platinum Protocol, The",
+        "Name":"El protocolo de platino",
         "Card Text":"Requiere a un Anarquista. Se puede usar m\u00e1s de una disciplina para jugar esta carta. (D) Sangra.\n[obf] \u00c9sta es una acci\u00f3n con +1 de sigilo.\n[pre] \u00c9sta es una acci\u00f3n con +1 de sangrado.\n[pro] Ponle 1 ficha de corrupci\u00f3n a un siervo controlado por el Matusal\u00e9n objetivo si el sangrado tiene \u00e9xito (1 o m\u00e1s)."
     },
     "101415":{
-        "Name":"Political Hunting Ground",
+        "Name":"Zona de caza: \u00c1mbito pol\u00edtico",
         "Card Text":"Lugar \u00fanico. Zona de caza.\nDurante tu fase de enderezamiento, un vampiro preparado que controles puede ganar 1 de sangre. Un vampiro puede ganar sangre de s\u00f3lo una zona de caza por turno."
     },
     "101417":{
-        "Name":"Political Stranglehold",
+        "Name":"Control pol\u00edtico absoluto",
         "Card Text":"S\u00f3lo se puede jugar o proponer un ejemplar de esta carta por partida.\nSi el refer\u00e9ndum prospera, cada Matusal\u00e9n gana 3 de reserva sangu\u00ednea por cada vampiro que controle con capacidad 8 o m\u00e1s."
     },
     "101430":{
-        "Name":"Power Structure",
+        "Name":"Estructura de poder",
         "Card Text":"\u00danica.\nPon esta carta en juego. G\u00edrala durante la fase de votaci\u00f3n de una acci\u00f3n pol\u00edtica para darle a cada Lasombra que controles +1 voto."
     },
     "101437":{
-        "Name":"Powerbase: Madrid",
+        "Name":"Base de poder: Madrid",
         "Card Text":"Lugar \u00fanico.\nSi esta carta tiene 3 o menos fichas durante tu fase de enderezamiento, puedes a\u00f1adirle 1 ficha. G\u00edrala durante la fase de votaci\u00f3n de cualquier refer\u00e9ndum para darle a un vampiro Sabbat titulado +1 voto por cada ficha de esta carta. Cualquier vampiro controlado por otro Matusal\u00e9n puede quemar todas las fichas de esta carta con una acci\u00f3n (D)."
     },
     "101439":{
-        "Name":"Powerbase: Montreal",
+        "Name":"Base de poder: Montreal",
         "Card Text":"Lugar \u00fanico.\nDurante tu fase de influencia, puedes a\u00f1adir 1 de sangre a un vampiro de tu zona incontrolada. Cualquier vampiro puede robar este lugar con una acci\u00f3n (D)."
     },
     "101475":{
-        "Name":"Precognition",
+        "Name":"Precognici\u00f3n",
         "Card Text":"[aus] +1 de intercepci\u00f3n.\n[AUS] Como antes, y este vampiro puede prevenirse de 1 de da\u00f1o durante el primer asalto del combate resultante si bloquea."
     },
     "101483":{
-        "Name":"Preternatural Strength",
+        "Name":"Fuerza sobrenatural",
         "Card Text":"Acci\u00f3n con +2 de sigilo.\n[pot] Ponle esta carta a este vampiro. Este vampiro obtiene +1 de fuerza, y no puede jugar /Poste arrancado/. Un vampiro puede tener s\u00f3lo un ejemplar de esta carta.\n[POT] Como antes, pero este vampiro obtiene +2 de fuerza."
     },
     "101487":{
-        "Name":"Priority Contract",
+        "Name":"Contrato prioritario",
         "Card Text":"Contrato \u00fanico. Nimiedad.\nElige a un Banu Haqim preparado que controles y ponle esta carta a un siervo controlado por tu presa. El Banu Haqim elegido puede entrar en combate con el siervo adherido con una acci\u00f3n (D) con +1 de sigilo. Si el siervo adherido est\u00e1 a punto de dejar la zona preparada, puedes quemar esta carta para ganar 3 de reserva sangu\u00ednea."
     },
     "102214":{
-        "Name":"Protected District",
+        "Name":"Distrito protegido",
         "Card Text":"Requiere a un primog\u00e9nito. S\u00f3lo utilizable durante una acci\u00f3n de sangrado contra ti o durante la fase de votaci\u00f3n de una acci\u00f3n pol\u00edtica.\nReduce la cantidad de sangrado en 3 o este vampiro consigue +3 votos contra el refer\u00e9ndum."
     },
     "101501":{
-        "Name":"Protection Racket",
+        "Name":"Chantaje a comerciantes",
         "Card Text":"Requiere a un Anarquista.\n+1 de intercepci\u00f3n, con +1 de intercepci\u00f3n adicional si el vampiro activo tiene t\u00edtulo."
     },
     "101523":{
-        "Name":"Pursuit",
+        "Name":"Persecuci\u00f3n",
         "Card Text":"[cel] Maniobra.\n[CEL] Ataque adicional (limitada)."
     },
     "101532":{
-        "Name":"Quickness",
+        "Name":"Rapidez",
         "Card Text":"Un vampiro puede jugar s\u00f3lo un ejemplar de esta carta por asalto.\n[cel] Ataque adicional (limitada).\n[CEL] Ataque adicional que no se toma en cuenta para el l\u00edmite."
     },
     "101536":{
-        "Name":"Rack, The",
+        "Name":"Coto, El",
         "Card Text":"Lugar \u00fanico.\nAl jugar esta carta o cuando el controlador de la misma cambie, el controlador elige a un vampiro preparado que controle. Durante la fase de enderezamiento del controlador, el vampiro elegido puede ganar 2 de sangre. Un vampiro controlado por otro Matusal\u00e9n puede robar este lugar con una acci\u00f3n (D)."
     },
     "101542":{
-        "Name":"Rapid Change",
+        "Name":"Cambio r\u00e1pido",
         "Card Text":"[pro] [ACTIONMODIFIER] +1 de sigilo.\n[PRO] [COMBAT] Ataque: el combate termina."
     },
     "101550":{
-        "Name":"Raven Spy",
+        "Name":"Cuervo esp\u00eda",
         "Card Text":"Animal con 1 de vida.\n[ani] El empleador obtiene +1 de intercepci\u00f3n.\n[ANI] Como antes, pero el /Cuervo esp\u00eda/ tiene 2 de vida."
     },
     "101559":{
-        "Name":"Read the Winds",
+        "Name":"Leer los vientos",
         "Card Text":"No la reemplaces hasta despu\u00e9s de esta acci\u00f3n.\n[ani][aus] +1 de intercepci\u00f3n. Este vampiro no se gira por el bloqueo.\n[ANI][AUS] S\u00f3lo utilizable por un vampiro girado. Este vampiro se endereza e intenta bloquear con +1 de intercepci\u00f3n, aunque la intercepci\u00f3n no sea necesaria."
     },
     "101564":{
-        "Name":"Rebel",
+        "Name":"Rebelde",
         "Card Text":"Arquetipo. Nimiedad.\nPonle esta carta a un vampiro que controles. Una vez por turno, si bloquea a un vampiro titulado o una acci\u00f3n pol\u00edtica, este vampiro gana 1 de sangre antes de la resoluci\u00f3n del bloqueo. Un vampiro puede tener s\u00f3lo un arquetipo."
     },
     "101588":{
-        "Name":"Rego Motum",
+        "Name":"Rego motum",
         "Card Text":"Un vampiro puede jugar s\u00f3lo un ejemplar de esta carta por asalto.\n[tha] Prevente de 2 de da\u00f1o del ataque del siervo oponente.\n[THA] Prevente de 4 de da\u00f1o del ataque del siervo oponente."
     },
     "101591":{
-        "Name":"Reins of Power",
+        "Name":"Riendas del poder",
         "Card Text":"S\u00f3lo se puede jugar o proponer un ejemplar de esta carta por partida.\nSi el refer\u00e9ndum prospera, cada Matusal\u00e9n puede elegir a un vampiro preparado que controle. Cada Matusal\u00e9n gana 6 de reserva sangu\u00ednea, y luego quema tanta reserva sangu\u00ednea como capacidad tenga el vampiro elegido por su depredador."
     },
     "101610":{
-        "Name":"Resist Earth's Grasp",
+        "Name":"Resistir la gravedad",
         "Card Text":"[cel] [COMBAT] Acoso, o maniobra con 1 acoso opcional.\n[CEL] [ACTIONMODIFIER] +1 de sigilo."
     },
     "102233":{
-        "Name":"Revelation of the Serpent",
+        "Name":"Revelaci\u00f3n de la serpiente",
         "Card Text":"S\u00f3lo utilizable durante una acci\u00f3n de sangrado.\n[pre][pro] +1 de sangrado (limitada), o +1 de sigilo y +1 de sangrado (limitada).\n[PRE][PRO] Como antes, y si el sangrado tiene \u00e9xito, este vampiro puede quemar 2 de tus fichas de corrupci\u00f3n de un siervo controlado por el Matusal\u00e9n objetivo para enderezarse."
     },
     "101627":{
-        "Name":"Revelations",
+        "Name":"Revelaciones",
         "Card Text":"Acci\u00f3n con +1 de sigilo.\n[aus] (D) Mira la mano de tu presa y descarta de ella una carta de tu elecci\u00f3n.\n[AUS] Pon esta carta en juego. Tu presa juega con la mano abierta. Cualquier siervo puede quemar esta carta con una acci\u00f3n (D)."
     },
     "101632":{
-        "Name":"Rewilding",
+        "Name":"Retorno a la vida silvestre",
         "Card Text":"(D) Quema un lugar y quema 2 de reserva sangu\u00ednea de su controlador."
     },
     "101649":{
-        "Name":"Rolling with the Punches",
+        "Name":"Encajar los golpes",
         "Card Text":"[for] Prevente de 1 de da\u00f1o.\n[FOR] Quema 1 de sangre para prevenirte de todo el da\u00f1o procedente de los ataques del siervo oponente este asalto."
     },
     "102215":{
-        "Name":"Roundhouse",
+        "Name":"Gancho lateral",
         "Card Text":"[pot] Ataque: ataca con la mano con +2 de da\u00f1o.\n[POT] Ataque: ataca con la mano con +3 de da\u00f1o."
     },
     "101664":{
-        "Name":"Rutor's Hand",
+        "Name":"La mano de Rutor",
         "Card Text":"Acci\u00f3n con +1 de sigilo.\n[tha] Ponle esta carta a este vampiro, y este vampiro recibe 1 de da\u00f1o agravado ambiental imprevenible. A partir de tu pr\u00f3ximo turno, este vampiro puede enderezarse durante tu fase servil. Un vampiro puede tener s\u00f3lo un ejemplar de esta carta.\n[THA] Como antes, y este vampiro puede quemar 3 de sangre para ser inmune a este da\u00f1o agravado."
     },
     "101681":{
-        "Name":"Sargon Fragment, The",
+        "Name":"El fragmento de Sarg\u00f3n",
         "Card Text":"\u00danico.\nEste vampiro obtiene Nigromancia superior [NEC]. Este vampiro puede pasar una carta de biblioteca de tu mont\u00f3n de ceniza a tu mano con una acci\u00f3n que cuesta 1 de sangre (desc\u00e1rtate despu\u00e9s)."
     },
     "101686":{
-        "Name":"Scalpel Tongue",
+        "Name":"Lengua de escalpelo",
         "Card Text":"S\u00f3lo utilizable durante la fase de votaci\u00f3n de una acci\u00f3n pol\u00edtica.\n[cel][pre] Elige a un vampiro que haya emitido votos en este refer\u00e9ndum. El vampiro elegido se gira y se abstiene (esto cancela los votos y papeletas del vampiro elegido).\n[CEL][PRE] Como antes, y el vampiro elegido quema 1 de sangre."
     },
     "101692":{
-        "Name":"Scorn of Adonis",
+        "Name":"El desprecio de Adonis",
         "Card Text":"S\u00f3lo utilizable durante la fase de votaci\u00f3n de una acci\u00f3n pol\u00edtica.\nCualquier Matusal\u00e9n que emita (incluso que tenga a un vampiro que emita) al menos 1 voto o papeleta contra el refer\u00e9ndum quema 1 de reserva sangu\u00ednea una vez se cuenten los resultados."
     },
     "101706":{
-        "Name":"Second Tradition: Domain",
+        "Name":"Segunda tradici\u00f3n: El Dominio",
         "Card Text":"Requiere a un pr\u00edncipe o justicar.\n+2 de intercepci\u00f3n. Tambi\u00e9n utilizable por un pr\u00edncipe o justicar girado, aunque a\u00fan no se necesite intercepci\u00f3n, para quemar 1 de sangre para enderezarse e intentar bloquear con +2 de intercepci\u00f3n."
     },
     "101712":{
-        "Name":"Seduction",
+        "Name":"Seducci\u00f3n",
         "Card Text":"S\u00f3lo utilizable al anunciar la acci\u00f3n.\n[dom] Elige a un vampiro menor. El vampiro elegido no puede bloquear esta acci\u00f3n.\n[DOM] Como antes, pero elige a cualquier vampiro."
     },
     "101735":{
-        "Name":"Shadow Body",
+        "Name":"Cuerpo sombr\u00edo",
         "Card Text":"[obt] Ataque: el combate termina.\n[OBT] Como antes, y si este vampiro fue bloqueado mientras realizaba una acci\u00f3n que no era de sangrado ni pol\u00edtica, la acci\u00f3n contin\u00faa como si no hubiera sido bloqueada."
     },
     "101743":{
-        "Name":"Shadow Play",
+        "Name":"Juego de sombras",
         "Card Text":"[obt] +1 de sigilo.\n[OBT] +2 de sigilo."
     },
     "101772":{
-        "Name":"Show of Force",
+        "Name":"Demostraci\u00f3n de fuerza",
         "Card Text":"[pot][pre] (D) Sangra con +1 de sangrado. Si esta acci\u00f3n es bloqueada, antes de determinar la distancia durante el primer asalto del combate resultante, este vampiro puede obtener +1 de fuerza en ese combate.\n[POT][PRE] Como antes, pero con +2 de sangrado y este vampiro puede obtener +2 de fuerza."
     },
     "101774":{
-        "Name":"Shroud of Absence",
+        "Name":"Velo de ausencia",
         "Card Text":"[dom][obt] +1 de sigilo.\n[DOM][OBT] Como antes, y este vampiro puede atacar terminando el combate durante el primer asalto del combate resultante si esta acci\u00f3n es bloqueada."
     },
     "101775":{
-        "Name":"Shroud of Night",
+        "Name":"Sudario de la noche",
         "Card Text":"[obt] +1 de sigilo, no utilizable durante una acci\u00f3n de sangrado.\n[OBT] +1 de sigilo."
     },
     "101781":{
-        "Name":"Signet of King Saul, The",
+        "Name":"El sello del rey Sa\u00fal",
         "Card Text":"\u00danico.\nLos vampiros con capacidad 8 o m\u00e1s no pueden intentar bloquear al portador."
     },
     "101798":{
-        "Name":"Slam",
+        "Name":"Golpear",
         "Card Text":"[pot] Ataque: ataca con la mano con +2 de da\u00f1o.\n[POT] Como antes, con 1 maniobra opcional, s\u00f3lo utilizable para acercarse."
     },
     "101808":{
-        "Name":"Slum Hunting Ground",
+        "Name":"Zona de caza: Suburbio",
         "Card Text":"Lugar \u00fanico. Zona de caza.\nDurante tu fase de enderezamiento, un vampiro preparado que controles puede ganar 1 de sangre. Un vampiro puede ganar sangre de s\u00f3lo una zona de caza por turno."
     },
     "101811":{
-        "Name":"Smiling Jack, The Anarch",
+        "Name":"Jack Sonrisas, el Anarquista",
         "Card Text":"\u00danica.\nPon esta carta en juego. Durante tu fase de enderezamiento, pasa 1 ficha de tu reserva sangu\u00ednea a esta carta. Durante la fase de enderezamiento de cada uno de los dem\u00e1s Matusalenes, por cada ficha de esta carta, ese Matusal\u00e9n quema 1 de reserva sangu\u00ednea o quema 1 de sangre de un vampiro que controle. Cualquier vampiro puede quemar esta carta con una acci\u00f3n (D)."
     },
     "101817":{
-        "Name":"Soak",
+        "Name":"Absorber",
         "Card Text":"Un vampiro puede jugar s\u00f3lo un ejemplar de esta carta por asalto.\n[for] Prevente de 2 de da\u00f1o no agravado.\n[FOR] Prevente de 4 de da\u00f1o no agravado."
     },
     "101821":{
-        "Name":"Society Hunting Ground",
+        "Name":"Zona de caza: Alta sociedad",
         "Card Text":"Lugar \u00fanico. Zona de caza.\nDurante tu fase de enderezamiento, un vampiro preparado que controles puede ganar 1 de sangre. Un vampiro puede ganar sangre de s\u00f3lo una zona de caza por turno."
     },
     "101829":{
-        "Name":"Soul Burn",
+        "Name":"Quemadura del alma",
         "Card Text":"[tha] Ataque: 1 de da\u00f1o a distancia. Este da\u00f1o no se puede prevenir con cartas que requieran Fortaleza [for]. Los ataques del vampiro oponente con armas no infligen ning\u00fan da\u00f1o en este asalto.\n[THA] Como antes, pero 2 de da\u00f1o a distancia."
     },
     "101850":{
-        "Name":"Spirit's Touch",
+        "Name":"Toque del esp\u00edritu",
         "Card Text":"[aus] +1 de intercepci\u00f3n.\n[AUS] Como antes, con 1 maniobra opcional durante el combate resultante si este vampiro bloquea."
     },
     "101856":{
-        "Name":"Sport Bike",
+        "Name":"Moto deportiva",
         "Card Text":"Veh\u00edculo.\nEste siervo obtiene +1 de intercepci\u00f3n. Un siervo puede tener s\u00f3lo un veh\u00edculo."
     },
     "101857":{
-        "Name":"Spying Mission",
+        "Name":"Misi\u00f3n de espionaje",
         "Card Text":"[obf] +1 de sigilo.\n[OBF] S\u00f3lo utilizable si un sangrado va a tener \u00e9xito. En vez de eso, el sangrado no quema reserva sangu\u00ednea, no tiene \u00e9xito, y esta carta se le pone a este vampiro. La pr\u00f3xima vez que este vampiro vaya a sangrar con \u00e9xito al mismo Matusal\u00e9n, quema esta carta y este vampiro obtiene +2 de sangrado."
     },
     "101896":{
-        "Name":"Sudden Reversal",
+        "Name":"Rev\u00e9s repentino",
         "Card Text":"Fuera de turno.\nCancela una carta heril jugada por otro Matusal\u00e9n al ser jugada, y su costo no se paga."
     },
     "101913":{
-        "Name":"Swallowed by the Night",
+        "Name":"Tragado por la noche",
         "Card Text":"[obf] [ACTIONMODIFIER] +1 de sigilo.\n[OBF] [COMBAT] Maniobra."
     },
     "101931":{
-        "Name":"Talbot's Chainsaw",
+        "Name":"La motosierra de Talbot",
         "Card Text":"Arma \u00fanica.\nAtaque: 3 de da\u00f1o. Si el portador est\u00e1 preparado durante tu fase de enderezamiento, esta arma inflige 3 de da\u00f1o imprevenible a un siervo preparado que controles. El portador no puede cazar. El portador puede entrar en combate con un siervo con una acci\u00f3n (D) con +1 de sigilo. El portador obtiene 1 acoso (obligatorio), s\u00f3lo utilizable para continuar el combate durante el primer asalto, y puede prevenirse de 1 de da\u00f1o por combate."
     },
     "101942":{
-        "Name":"Target Vitals",
+        "Name":"Apuntar a los puntos vitales",
         "Card Text":"Punter\u00eda. S\u00f3lo utilizable cuando este siervo elija un ataque. Un siervo puede jugar s\u00f3lo una punter\u00eda por ataque.\nSi este ataque inflige da\u00f1o con \u00e9xito al siervo oponente, este \u00faltimo recibe +2 de da\u00f1o de este ataque, y no puede acosar en este asalto. El siervo oponente puede descartarse de dos cartas de combate para cancelar esta carta al ser jugada."
     },
     "101945":{
-        "Name":"Taste of Vitae",
+        "Name":"Saborear la Vitae",
         "Card Text":"S\u00f3lo utilizable al final de un asalto de combate. No utilizable por un vampiro que se est\u00e9 quemando o entrando en letargo. Un vampiro puede jugar s\u00f3lo un ejemplar de esta carta por asalto.\nEste vampiro gana tanta sangre como sangre haya perdido el vampiro oponente debido al da\u00f1o en este asalto."
     },
     "101949":{
-        "Name":"Telepathic Misdirection",
+        "Name":"Distracci\u00f3n telep\u00e1tica",
         "Card Text":"[aus] +1 de intercepci\u00f3n.\n[AUS] S\u00f3lo utilizable si un siervo te est\u00e1 sangrando, tras renunciar a bloquear. Gira a este vampiro reactivo. Cambia el objetivo del sangrado por otro Matusal\u00e9n que no sea el controlador del siervo activo (ese Matusal\u00e9n puede intentar bloquear)."
     },
     "101950":{
-        "Name":"Telepathic Tracking",
+        "Name":"Rastreo telep\u00e1tico",
         "Card Text":"[aus] Acoso, s\u00f3lo utilizable para continuar el combate. Si hay otro asalto de combate, este vampiro obtiene 1 maniobra opcional en ese asalto.\n[AUS] S\u00f3lo utilizable si ambos combatientes a\u00fan est\u00e1n preparados y el combate est\u00e1 a punto de terminar. En lugar de eso, un nuevo asalto comienza."
     },
     "101953":{
-        "Name":"Temple Hunting Ground",
+        "Name":"Zona de caza: Templo",
         "Card Text":"Lugar \u00fanico. Zona de caza.\nDurante tu fase de enderezamiento, un vampiro preparado que controles puede ganar 1 de sangre. Un vampiro puede ganar sangre de s\u00f3lo una zona de caza por turno."
     },
     "101957":{
-        "Name":"Tenebrous Form",
+        "Name":"Forma tenebrosa",
         "Card Text":"[obt] +1 de sigilo.\n[OBT] Como antes, y los siervos sin Obtenebraci\u00f3n [obt] deben quemar 1 de sangre para intentar bloquear"
     },
     "101958":{
-        "Name":"Tension in the Ranks",
+        "Name":"Tensi\u00f3n en la tropa",
         "Card Text":"\u00danica.\nPon esta carta en juego. Cualquier Matusal\u00e9n quema 1 de reserva sangu\u00ednea despu\u00e9s de que un siervo preparado que controle se queme o sea enviado al letargo. Cualquier Matusal\u00e9n puede usar una acci\u00f3n de fase heril y descartarse de dos cartas heriles para quemar esta carta."
     },
     "101963":{
@@ -968,7 +968,7 @@
         "Card Text":"Mago \u00fanico con 2 de vida. 0 de fuerza, 2 de sangrado.\nThadius Zho puede atacar: 2 de da\u00f1o a distancia. Obtiene 1 maniobra opcional por combate. Puede quemarle 1 de sangre a cualquier vampiro con una acci\u00f3n (D) con +1 de sigilo."
     },
     "101966":{
-        "Name":"Theft of Vitae",
+        "Name":"Robo de Vitae",
         "Card Text":"[tha] Ataque a distancia: roba 1 de sangre o vida (convirti\u00e9ndose en sangre).\n[THA] Ataque a distancia: roba 2 de sangre o vida (convirti\u00e9ndose en sangre)."
     },
     "101972":{
@@ -976,123 +976,123 @@
         "Card Text":"Acci\u00f3n con +1 de sigilo.\nA\u00f1ade 2 de sangre a un Gangrel de tu zona incontrolada."
     },
     "101989":{
-        "Name":"Toreador Grand Ball",
+        "Name":"Gran baile Toreador",
         "Card Text":"Elige a dos Toreadores preparados que controles, pon esta carta en juego, y gira a uno de los dos. El Toreador girado no se endereza normalmente. Las acciones que no sean de sangrado del otro Toreador no se pueden bloquear. Cualquier siervo puede quemar esta carta con una acci\u00f3n (D); los Nosferatu obtienen -1 de sigilo en esa acci\u00f3n."
     },
     "101990":{
-        "Name":"Toreador Justicar",
+        "Name":"Justicar Toreador",
         "Card Text":"T\u00edtulo.\nElige a un Toreador preparado. Si el refer\u00e9ndum prospera, esta carta se pone en el Toreador elegido para representar el t\u00edtulo Camarilla \u00fanico de Justicar Toreador. En este refer\u00e9ndum, cada Toreador preparado obtiene +1 voto."
     },
     "101993":{
-        "Name":"Torn Signpost",
+        "Name":"Poste arrancado",
         "Card Text":"S\u00f3lo utilizable antes de determinar la distancia.\n[pot] Este vampiro obtiene una fuerza de 2 en este combate.\n[POT] Este vampiro obtiene una fuerza de 3 en este combate."
     },
     "102012":{
-        "Name":"Trap",
+        "Name":"Trampa",
         "Card Text":"S\u00f3lo utilizable antes de determinar la distancia durante el primer asalto del combate.\nPon esta carta en juego con 3 fichas. Cada vez que se juegue una carta en este combate, restaura el n\u00famero de fichas de esta carta a 3. Durante la etapa de acosos de cada asalto de este combate, esta /Trampa/ autom\u00e1ticamente quema 1 de sus fichas para proporcionar un acoso para continuar el combate (cualquiera de los dos combatientes puede acosar para terminar el combate). Quema esta carta al final del combate."
     },
     "102041":{
-        "Name":"True Love's Face",
+        "Name":"Rostro del amor verdadero",
         "Card Text":"[obf][pre] S\u00f3lo utilizable durante una acci\u00f3n de sangrado. +1 de sangrado (limitada).\n[OBF][PRE] S\u00f3lo utilizable si un siervo intenta bloquear. Ese intento fracasa y el siervo bloqueador no puede intentar bloquear esta acci\u00f3n de nuevo. El controlador del siervo bloqueador puede quemar 1 de reserva sangu\u00ednea para cancelar esta carta al ser jugada."
     },
     "102063":{
-        "Name":"Under Siege",
+        "Name":"Bajo asedio",
         "Card Text":"Acci\u00f3n con +1 de sigilo. Requiere a un vampiro Sabbat titulado. \u00danica.\nPon esta carta en juego con 3 fichas. Una vez por acci\u00f3n, un vampiro Sabbat que controles puede quemar 1 ficha de esta carta para enderezarse e intentar bloquear con +1 de intercepci\u00f3n, aunque la intercepci\u00f3n no sea necesaria. Quema esta carta cuando ya no tenga fichas."
     },
     "102065":{
-        "Name":"Underbridge Stray",
+        "Name":"Perro callejero",
         "Card Text":"Animal con 1 de vida. 0 de fuerza, 0 de sangrado.\n[ani] Este aliado puede quemar 1 de vida para dar 1 acoso a un siervo que controles. Durante una acci\u00f3n directa contra ti (o una carta que controles), puedes quemar a este aliado, si no est\u00e1 bloqueando, para enderezar a un siervo preparado que controles.\n[ANI] Como antes, pero este aliado tiene 2 de vida y 1 de fuerza."
     },
     "102066":{
-        "Name":"Underworld Hunting Ground",
+        "Name":"Zona de caza: Submundo",
         "Card Text":"Lugar \u00fanico. Zona de caza.\nDurante tu fase de enderezamiento, un vampiro preparado que controles puede ganar 1 de sangre. Un vampiro puede ganar sangre de s\u00f3lo una zona de caza por turno."
     },
     "102071":{
-        "Name":"Unflinching Persistence",
+        "Name":"Persistencia inquebrantable",
         "Card Text":"[for] Prevente de 1 de da\u00f1o.\n[FOR] Maniobra, y este vampiro puede prevenirse de 1 de da\u00f1o m\u00e1s tarde en este asalto."
     },
     "102075":{
-        "Name":"University Hunting Ground",
+        "Name":"Zona de caza: Universidad",
         "Card Text":"Lugar \u00fanico. Zona de caza.\nDurante tu fase de enderezamiento, un vampiro preparado que controles puede ganar 1 de sangre. Un vampiro puede ganar sangre de s\u00f3lo una zona de caza por turno."
     },
     "102079":{
-        "Name":"Unmasking, The",
+        "Name":"Desenmascaramiento, El",
         "Card Text":"Gehenna. No la reemplaces hasta tu siguiente fase de descarte.\nLos aliados obtienen +1 de intercepci\u00f3n contra vampiros."
     },
     "102084":{
-        "Name":"Uptown Hunting Ground",
+        "Name":"Zona de caza: Parte alta",
         "Card Text":"Lugar \u00fanico. Zona de caza.\nDurante tu fase de enderezamiento, un vampiro preparado que controles puede ganar 1 de sangre. Un vampiro puede ganar sangre de s\u00f3lo una zona de caza por turno."
     },
     "102092":{
-        "Name":"Vast Wealth",
+        "Name":"Gran riqueza",
         "Card Text":"\nPonle esta carta a un siervo preparado que controles. Si controlas a este siervo, puede equiparse con el primer equipo que encuentres en tu biblioteca con una acci\u00f3n con +1 de sigilo (procediendo de arriba hacia abajo; los requisitos y el coste se aplican normalmente; baraja despu\u00e9s)."
     },
     "102097":{
-        "Name":"Veil the Legions",
+        "Name":"Legiones veladas",
         "Card Text":"S\u00f3lo utilizable por un vampiro enderezado preparado que no sea el siervo activo. S\u00f3lo se puede jugar un ejemplar de esta carta por acci\u00f3n.\n[obf] El siervo activo obtiene +1 de sigilo.\n[OBF] Como antes, y este vampiro puede quemar X de sangre para dar +1 de sigilo a las siguientes X acciones que los siervos que controlas realicen en este turno. S\u00f3lo se puede jugar un ejemplar de esta carta a superior por turno."
     },
     "102109":{
-        "Name":"Ventrue Headquarters",
+        "Name":"Cuartel general Ventrue",
         "Card Text":"Lugar \u00fanico.\nG\u00edrala durante la fase de votaci\u00f3n de cualquier refer\u00e9ndum para conseguir +3 votos."
     },
     "102113":{
-        "Name":"Vessel",
+        "Name":"Recipiente",
         "Card Text":"Nimiedad.\nPonle esta carta a cualquier vampiro, y puedes quemar una /Mu\u00f1eca de sangre/ (si la hay). Durante su fase de enderezamiento, el controlador de este vampiro puede pasar 1 de sangre de este vampiro a su reserva sangu\u00ednea o de su reserva sangu\u00ednea a este vampiro."
     },
     "102121":{
-        "Name":"Villein",
+        "Name":"Villano",
         "Card Text":"Nimiedad.\nPonle esta carta a un vampiro que controles que tenga cualquier cantidad de sangre y pasa de 2 a 5 de sangre de ese vampiro a tu reserva sangu\u00ednea. /Drenar al siervo/ te cuesta 1 m\u00e1s de reserva sangu\u00ednea. Jugarle un /Villano/ a este vampiro cuesta 1 m\u00e1s de reserva sangu\u00ednea."
     },
     "102126":{
-        "Name":"Visit from the Capuchin",
+        "Name":"Visita del Capuchino",
         "Card Text":"\u00danica.\nPon esta carta en juego con 4 fichas. Obtienes +1 a la mano por cada ficha de esta carta. Cada vez que vayas a reemplazar una carta que no sea \u00e9sta, en vez de eso quema 1 ficha de esta carta. Quema esta carta cuando ya no tenga fichas."
     },
     "102131":{
-        "Name":"Voter Captivation",
+        "Name":"Cautivar al votante",
         "Card Text":"S\u00f3lo utilizable tras la resoluci\u00f3n de una acci\u00f3n pol\u00edtica cuyo refer\u00e9ndum haya prosperado.\n[pre] Este vampiro gana 1 de sangre por cada voto de diferencia por el cual el refer\u00e9ndum haya prosperado.\n[PRE] Como antes, pero pasa hasta 2 de esa sangre a tu reserva sangu\u00ednea en vez de a este vampiro."
     },
     "102137":{
-        "Name":"Wake with Evening's Freshness",
+        "Name":"Despertar con frescura",
         "Card Text":"S\u00f3lo utilizable por un vampiro girado. No la reemplaces hasta tu fase de enderezamiento.\nEste vampiro se despierta (ignora el requisito de estar enderezado para jugar cartas de reacci\u00f3n e intentar bloquear hasta el final de la acci\u00f3n)."
     },
     "102139":{
-        "Name":"Walk of Flame",
+        "Name":"Paseo por las llamas",
         "Card Text":"No utilizable durante el primer asalto del combate.\n[tha] Ataque: 1 de da\u00f1o agravado a distancia.\n[THA] Ataque: 2 de da\u00f1o agravado a distancia."
     },
     "102216":{
-        "Name":"Warrens, The",
+        "Name":"Entramado de t\u00faneles",
         "Card Text":"S\u00f3lo utilizable durante una acci\u00f3n directa contra ti (o una carta que controles).\n+2 de intercepci\u00f3n, con +1 de intercepci\u00f3n adicional si este Nosferatu tiene t\u00edtulo."
     },
     "102149":{
-        "Name":"Warsaw Station",
+        "Name":"Estaci\u00f3n Varsovia",
         "Card Text":"Lugar \u00fanico.\nPuedes girar esta carta cuando un Nosferatu anuncie una acci\u00f3n indirecta. Tras resolverse la acci\u00f3n, si \u00e9sta ha tenido \u00e9xito, endereza al Nosferatu activo. Puedes quemar esta carta (aunque est\u00e9 girada) para pasar a un Nosferatu en letargo a tu zona preparada."
     },
     "102150":{
-        "Name":"Warzone Hunting Ground",
+        "Name":"Zona de caza: Barrio violento",
         "Card Text":"Lugar \u00fanico. Zona de caza.\nDurante tu fase de enderezamiento, un vampiro preparado que controles puede ganar 1 de sangre. Un vampiro puede ganar sangre de s\u00f3lo una zona de caza por turno."
     },
     "102151":{
-        "Name":"Wash",
+        "Name":"Eliminar",
         "Card Text":"Fuera de turno. Nimiedad. No la reemplaces hasta tu fase de enderezamiento.\nCancela una carta heril jugada por tu depredador o presa al ser jugada, y su coste no se paga. Ese Matusal\u00e9n obtiene +1 acci\u00f3n de fase heril inmediatamente, o al principio de su siguiente fase heril si la carta cancelada es una heril fuera de turno."
     },
     "102152":{
-        "Name":"Wasserschloss Anif, Austria",
+        "Name":"Palacio del Agua Anif, Austria",
         "Card Text":"Lugar \u00fanico.\nDurante tu fase heril, un Tremere que controles puede pasar 1 de sangre de s\u00ed mismo a esta carta. G\u00edrala durante tu fase de influencia para pasar todas las fichas de esta carta a un Tremere de tu zona incontrolada. Cualquier siervo puede quemar esta carta con una acci\u00f3n (D); los Malkavian obtienen +1 de sigilo en esa acci\u00f3n."
     },
     "102169":{
-        "Name":"Weighted Walking Stick",
+        "Name":"Bast\u00f3n lastrado",
         "Card Text":"S\u00f3lo utilizable antes de determinar la distancia durante el primer asalto del combate.\nPonle esta carta a este siervo y pon 5 fichas en esta carta; se convierte en un arma blanca (equipo) que puede atacar: fuerza+1 de da\u00f1o. Por cada punto de da\u00f1o infligido por este ataque (incluso si es prevenido), quema 1 ficha de esta carta. Quema esta carta cuando no tenga fichas. Un siervo puede tener s\u00f3lo un ejemplar de esta carta."
     },
     "102180":{
-        "Name":"Wider View",
+        "Name":"Perspectiva m\u00e1s amplia",
         "Card Text":"Nimiedad.\nPon esta carta en juego. Puedes usar 1 transferencia para robar 1 carta de tu cripta y luego retirar del juego una carta de cripta de tu zona incontrolada. Puedes usar 4 transferencias para quemar esta carta y ganar 2 de reserva sangu\u00ednea."
     },
     "102207":{
-        "Name":"Zillah's Valley",
+        "Name":"Valle de Zillah, El",
         "Card Text":"A\u00f1ade 4 de sangre a un vampiro de tu zona incontrolada con capacidad 8 o m\u00e1s."
     },
     "102212":{
-        "Name":"Zoo Hunting Ground",
+        "Name":"Zona de caza: Zoo",
         "Card Text":"Lugar \u00fanico. Zona de caza.\nDurante tu fase de enderezamiento, un vampiro preparado que controles puede ganar 1 de sangre. Un vampiro puede ganar sangre de s\u00f3lo una zona de caza por turno."
     }
 }

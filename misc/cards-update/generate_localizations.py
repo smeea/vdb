@@ -26,7 +26,7 @@ for lang in languages:
                 )
 
                 cards_localized[card["Id"]] = {
-                    "Name": card["Name"],
+                    "Name": card[f"Name {lang}"] if card[f"Name {lang}"] else card['Name'],
                     "Card Text": card["Card Text"],
                 }
 
