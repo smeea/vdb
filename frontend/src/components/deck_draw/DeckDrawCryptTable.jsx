@@ -35,7 +35,7 @@ const DeckDrawCryptTable = ({
           return (
             <tr
               key={`${idx}-${card.Id}`}
-              className="h-[38px] border-y border-bgSecondary dark:border-bgSecondaryDark bg-bgPrimary dark:bg-bgPrimaryDark even:bg-bgThird even:dark:bg-bgThirdDark"
+              className="h-[38px] border-y border-bgSecondary dark:border-bgSecondaryDark row-bg"
             >
               <ResultCryptTableRowCommon
                 card={card}

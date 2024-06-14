@@ -52,7 +52,7 @@ const ResultCryptTableRow = ({
     ? isSwiped === 'right'
       ? 'bg-bgSuccess dark:bg-bgSuccessDark'
       : 'bg-bgErrorSecondary dark:bg-bgErrorSecondaryDark'
-    : 'bg-bgPrimary dark:bg-bgPrimaryDark even:bg-bgThird even:dark:bg-bgThirdDark';
+    : 'row-bg';
 
   return (
     <tr

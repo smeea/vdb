@@ -22,10 +22,7 @@ const TwdResultLibraryKeyCardsTableRow = ({ card, handleClick, shouldShowModal }
   const hardUsedTotal = getHardTotal(usedLibrary.hard[card.c.Id]);
 
   return (
-    <tr
-      key={card.c.Id}
-      className="border-y border-bgSecondary dark:border-bgSecondaryDark bg-bgPrimary dark:bg-bgPrimaryDark even:bg-bgThird even:dark:bg-bgThirdDark"
-    >
+    <tr key={card.c.Id} className="border-y border-bgSecondary dark:border-bgSecondaryDark row-bg">
       <td className="min-w-[28px] border-r border-bgSecondary bg-blue/5 dark:border-bgSecondaryDark sm:min-w-[35px]">
         {inventoryMode ? (
           <ConditionalTooltip overlay={<UsedPopover cardid={card.c.Id} />} disabled={isMobile}>
@@ -34,8 +31,8 @@ const TwdResultLibraryKeyCardsTableRow = ({ card, handleClick, shouldShowModal }
                 inInventory < card.q
                   ? 'bg-bgError text-white dark:bg-bgErrorDark dark:text-whiteDark'
                   : inInventory - hardUsedTotal < card.q
-                    ? 'bg-bgWarning dark:bg-bgWarningDark'
-                    : ''
+                  ? 'bg-bgWarning dark:bg-bgWarningDark'
+                  : ''
               }`}
             >
               {card.q}

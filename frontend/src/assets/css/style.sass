@@ -16,6 +16,9 @@
   th
     @apply font-normal
 
+.row-bg
+  @apply odd:bg-bgPrimary odd:dark:bg-bgPrimaryDark even:bg-bgThird even:dark:bg-bgThirdDark
+
 .account-container
   max-width: 550px
 .about-container
@@ -53,8 +56,3 @@
     padding: 24px
   @media (min-width: 1440px)
     padding: 32px
-
-.inventory-container
-  padding-bottom: 40px
-  @media (min-width: 768px)
-    padding-bottom: 0px

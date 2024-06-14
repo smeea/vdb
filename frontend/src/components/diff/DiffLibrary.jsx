@@ -135,7 +135,6 @@ const DiffLibrary = ({ cardsFrom, cardsTo, deckid, isEditable }) => {
             </div>
           );
         })}
-        ;
       </div>
       {Object.keys(librarySide).length > 0 && (
         <div className=" opacity-60 dark:opacity-50">

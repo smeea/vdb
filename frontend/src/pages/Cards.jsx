@@ -155,14 +155,14 @@ const Cards = () => {
               <div className="sticky z-30 flex w-full flex-col space-y-1 bg-bgPrimary dark:bg-bgPrimaryDark lg:top-10">
                 <ButtonIconed
                   variant="secondary"
-                  onClick={() => randomCrypt()}
+                  onClick={randomCrypt}
                   title="Random Crypt Card"
                   icon={<Dice3 />}
                   text="Crypt"
                 />
                 <ButtonIconed
                   variant="secondary"
-                  onClick={() => randomLibrary()}
+                  onClick={randomLibrary}
                   title="Random Library Card"
                   icon={<Dice3 />}
                   text="Library"

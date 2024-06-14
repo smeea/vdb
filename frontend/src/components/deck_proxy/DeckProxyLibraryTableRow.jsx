@@ -26,10 +26,7 @@ const DeckProxyLibraryTableRow = ({
   const hardUsedTotal = getHardTotal(usedLibrary.hard[card.c.Id]) ?? 0;
 
   return (
-    <tr
-      key={card.c.Id}
-      className="border-y border-bgSecondary dark:border-bgSecondaryDark bg-bgPrimary dark:bg-bgPrimaryDark even:bg-bgThird even:dark:bg-bgThirdDark"
-    >
+    <tr key={card.c.Id} className="border-y border-bgSecondary dark:border-bgSecondaryDark row-bg">
       <td className="min-w-[25px]">
         <div className="flex items-center justify-center">
           <Checkbox
