@@ -66,12 +66,11 @@ const TwdResultLibraryKeyCardsTable = ({ library, withHeader }) => {
       </div>
       <table className="border-x border-bgSecondary dark:border-bgSecondaryDark">
         <tbody>
-          {keyCards.map((card, idx) => {
+          {keyCards.map((card) => {
             return (
               <TwdResultLibraryKeyCardsTableRow
                 key={card.c.Id}
                 card={card}
-                idx={idx}
                 handleClick={handleClick}
                 shouldShowModal={shouldShowModal}
               />

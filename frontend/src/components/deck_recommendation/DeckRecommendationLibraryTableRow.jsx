@@ -4,7 +4,7 @@ import { useDebounce } from '@/hooks';
 import { ButtonAddCard, ResultLibraryTableRowCommon } from '@/components';
 import { deckCardChange } from '@/context';
 
-const DeckRecommendationLibraryTableRow = ({ card, idx, handleClick, deck }) => {
+const DeckRecommendationLibraryTableRow = ({ card, handleClick, deck }) => {
   const [isSwiped, setIsSwiped] = useState();
   const isEditable = deck?.isAuthor && !deck?.isPublic && !deck?.isFrozen;
   const inDeck = deck.library[card.Id]?.q || 0;
@@ -32,9 +32,7 @@ const DeckRecommendationLibraryTableRow = ({ card, idx, handleClick, deck }) => 
     ? isSwiped === 'right'
       ? 'bg-bgSuccess dark:bg-bgSuccessDark'
       : 'bg-bgErrorSecondary dark:bg-bgErrorSecondaryDark'
-    : idx % 2
-      ? 'bg-bgThird dark:bg-bgThirdDark'
-      : 'bg-bgPrimary dark:bg-bgPrimaryDark';
+    : 'bg-bgPrimary dark:bg-bgPrimaryDark even:bg-bgThird even:dark:bg-bgThirdDark';
 
   return (
     <tr

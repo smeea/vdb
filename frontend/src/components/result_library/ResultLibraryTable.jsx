@@ -27,13 +27,12 @@ const ResultLibraryTable = ({ resultCards, inLimited }) => {
     <>
       <table className="w-full border-bgSecondary dark:border-bgSecondaryDark sm:border">
         <tbody>
-          {resultCards.map((card, idx) => {
+          {resultCards.map((card) => {
             return (
               <ResultLibraryTableRow
                 key={card.Id}
                 card={card}
                 handleClick={handleClick}
-                idx={idx}
                 inLimited={inLimited}
                 shouldShowModal={shouldShowModal}
               />

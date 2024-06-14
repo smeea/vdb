@@ -26,7 +26,6 @@ import { getClan, getRestrictions } from '@/utils';
 
 const DeckSelectAdvTableRow = ({
   deck,
-  idx,
   onClick,
   handleClose,
   allTagsOptions,
@@ -57,11 +56,7 @@ const DeckSelectAdvTableRow = ({
   const clan = getClan(deck.crypt);
 
   return (
-    <tr
-      className={`h-[41px] border-y border-bgSecondary dark:border-bgSecondaryDark ${
-        idx % 2 ? 'bg-bgThird dark:bg-bgThirdDark' : 'bg-bgPrimary dark:bg-bgPrimaryDark'
-      }`}
-    >
+    <tr className="h-[41px] border-y border-bgSecondary dark:border-bgSecondaryDark bg-bgPrimary dark:bg-bgPrimaryDark even:bg-bgThird even:dark:bg-bgThirdDark">
       {!(short || isMobile) && (
         <td className="min-w-[30px]">
           <Checkbox
@@ -81,8 +76,8 @@ const DeckSelectAdvTableRow = ({
                 deck.inventoryType === 's'
                   ? 'Flexible'
                   : deck.inventoryType === 'h'
-                    ? 'Fixed'
-                    : 'Virtual'
+                  ? 'Fixed'
+                  : 'Virtual'
               }
             >
               {deck.inventoryType == 's' ? (

@@ -11,7 +11,7 @@ import { useDeckInInventory } from '@/hooks';
 import { useApp } from '@/context';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 
-const InventoryAddPreconRow = ({ deck, idx }) => {
+const InventoryAddPreconRow = ({ deck }) => {
   const { isDesktop, isMobile } = useApp();
   const [showDeck, setShowDeck] = useState();
   const inInventory = useDeckInInventory(deck);
@@ -19,11 +19,7 @@ const InventoryAddPreconRow = ({ deck, idx }) => {
   const clans = setsAndPrecons[set].precons[precon].clan.split('/');
 
   return (
-    <tr
-      className={`border-y border-bgSecondary dark:border-bgSecondaryDark ${
-        idx % 2 ? 'bg-bgThird dark:bg-bgThirdDark' : 'bg-bgPrimary dark:bg-bgPrimaryDark'
-      }`}
-    >
+    <tr className="border-y border-bgSecondary dark:border-bgSecondaryDark bg-bgPrimary dark:bg-bgPrimaryDark even:bg-bgThird even:dark:bg-bgThirdDark">
       <td className="min-w-[50px] sm:min-w-[70px]">
         <div className="flex justify-center">
           {clans.length > 0 && (

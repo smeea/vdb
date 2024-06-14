@@ -17,11 +17,10 @@ const DeckCryptTable = ({
   return (
     <table className="w-full border-bgSecondary dark:border-bgSecondaryDark sm:border">
       <tbody>
-        {cards.map((card, idx) => {
+        {cards.map((card) => {
           return (
             <DeckCryptTableRow
               key={card.c.Id}
-              idx={idx}
               handleClick={handleClick}
               card={card}
               deck={deck}

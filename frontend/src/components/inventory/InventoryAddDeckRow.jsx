@@ -16,18 +16,14 @@ import { getClan } from '@/utils';
 import { useDeckInInventory } from '@/hooks';
 import { useApp, deckToggleInventoryState } from '@/context';
 
-const InventoryAddDeckRow = ({ deck, allTagsOptions, idx }) => {
+const InventoryAddDeckRow = ({ deck, allTagsOptions }) => {
   const { isDesktop, isMobile } = useApp();
   const [showDeck, setShowDeck] = useState();
   const inInventory = useDeckInInventory(deck);
   const clan = getClan(deck.crypt);
 
   return (
-    <tr
-      className={`border-y border-bgSecondary dark:border-bgSecondaryDark ${
-        idx % 2 ? 'bg-bgThird dark:bg-bgThirdDark' : 'bg-bgPrimary dark:bg-bgPrimaryDark'
-      }`}
-    >
+    <tr className="border-y border-bgSecondary dark:border-bgSecondaryDark bg-bgPrimary dark:bg-bgPrimaryDark even:bg-bgThird even:dark:bg-bgThirdDark">
       {!isMobile && (
         <td>
           <Button onClick={() => deckToggleInventoryState(deck.deckid)}>
@@ -36,8 +32,8 @@ const InventoryAddDeckRow = ({ deck, allTagsOptions, idx }) => {
                 deck.inventoryType === 's'
                   ? 'Flexible'
                   : deck.inventoryType === 'h'
-                    ? 'Fixed'
-                    : 'Virtual'
+                  ? 'Fixed'
+                  : 'Virtual'
               }
             >
               {deck.inventoryType == 's' && <Shuffle />}

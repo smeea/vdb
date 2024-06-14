@@ -13,13 +13,12 @@ const DeckProxyLibraryTable = ({
   return (
     <table className="w-full border-bgSecondary dark:border-bgSecondaryDark sm:border">
       <tbody>
-        {cards.map((card, idx) => {
+        {cards.map((card) => {
           return (
             <DeckProxyLibraryTableRow
               key={card.c.Id}
               inventoryType={inventoryType}
               card={card}
-              idx={idx}
               handleClick={handleClick}
               proxySelected={proxySelected}
               handleProxySelector={handleProxySelector}

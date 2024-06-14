@@ -17,7 +17,7 @@ const DiffCryptTable = ({
   return (
     <table className="w-full border-bgSecondary dark:border-bgSecondaryDark sm:border">
       <tbody>
-        {cards.map((card, idx) => {
+        {cards.map((card) => {
           return (
             <DiffCryptTableRow
               cardChange={cardChange}
@@ -28,7 +28,6 @@ const DiffCryptTable = ({
               showInfo={showInfo}
               key={card.c.Id}
               card={card}
-              idx={idx}
               handleClick={handleClick}
               cryptTotal={cryptTotal}
               disciplinesSet={disciplinesSet}

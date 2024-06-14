@@ -11,7 +11,7 @@ import {
 import { getHardTotal } from '@/utils';
 import { useApp, limitedStore, inventoryStore, usedStore } from '@/context';
 
-const TwdResultCryptTableRow = ({ card, idx, handleClick, shouldShowModal }) => {
+const TwdResultCryptTableRow = ({ card, handleClick, shouldShowModal }) => {
   const { limitedMode, inventoryMode, isMobile } = useApp();
   const inventoryCrypt = useSnapshot(inventoryStore).crypt;
   const limitedCrypt = useSnapshot(limitedStore).crypt;
@@ -23,9 +23,7 @@ const TwdResultCryptTableRow = ({ card, idx, handleClick, shouldShowModal }) => 
   return (
     <tr
       key={card.c.Id}
-      className={`border-y border-bgSecondary dark:border-bgSecondaryDark ${
-        idx % 2 ? 'bg-bgThird dark:bg-bgThirdDark' : 'bg-bgPrimary dark:bg-bgPrimaryDark'
-      }`}
+      className="border-y border-bgSecondary dark:border-bgSecondaryDark bg-bgPrimary dark:bg-bgPrimaryDark even:bg-bgThird even:dark:bg-bgThirdDark"
     >
       <td className="min-w-[28px] border-r border-bgSecondary bg-blue/5 dark:border-bgSecondaryDark sm:min-w-[35px]">
         {inventoryMode ? (
@@ -35,8 +33,8 @@ const TwdResultCryptTableRow = ({ card, idx, handleClick, shouldShowModal }) => 
                 inInventory < card.q
                   ? 'bg-bgError text-white dark:bg-bgErrorDark dark:text-whiteDark'
                   : inInventory - hardUsedTotal < card.q
-                    ? 'bg-bgWarning dark:bg-bgWarningDark'
-                    : ''
+                  ? 'bg-bgWarning dark:bg-bgWarningDark'
+                  : ''
               }`}
             >
               {card.q}

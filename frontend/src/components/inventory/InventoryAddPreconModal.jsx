@@ -123,8 +123,8 @@ const InventoryAddPreconModal = ({ handleClose }) => {
           </tr>
         </thead>
         <tbody>
-          {sortedDecks.map((deck, idx) => {
-            return <InventoryAddPreconRow key={deck.deckid} deck={deck} idx={idx} />;
+          {sortedDecks.map((deck) => {
+            return <InventoryAddPreconRow key={deck.deckid} deck={deck} />;
           })}
         </tbody>
       </table>

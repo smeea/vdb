@@ -17,7 +17,6 @@ const DeckProxyLibraryTableRow = ({
   handleSetSelector,
   inventoryType,
   card,
-  idx,
 }) => {
   const { isMobile } = useApp();
   const inventoryLibrary = useSnapshot(inventoryStore).library;
@@ -29,9 +28,7 @@ const DeckProxyLibraryTableRow = ({
   return (
     <tr
       key={card.c.Id}
-      className={`border-y border-bgSecondary dark:border-bgSecondaryDark ${
-        idx % 2 ? 'bg-bgThird dark:bg-bgThirdDark' : 'bg-bgPrimary dark:bg-bgPrimaryDark'
-      }`}
+      className="border-y border-bgSecondary dark:border-bgSecondaryDark bg-bgPrimary dark:bg-bgPrimaryDark even:bg-bgThird even:dark:bg-bgThirdDark"
     >
       <td className="min-w-[25px]">
         <div className="flex items-center justify-center">

@@ -10,11 +10,7 @@ const TwdHallFameCardsCard = ({ card, idx, handleClick }) => {
   const { isMobile } = useApp();
 
   return (
-    <tr
-      className={`border-y border-bgSecondary dark:border-bgSecondaryDark ${
-        idx % 2 ? 'bg-bgThird dark:bg-bgThirdDark' : 'bg-bgPrimary dark:bg-bgPrimaryDark'
-      }`}
-    >
+    <tr className="border-y border-bgSecondary dark:border-bgSecondaryDark bg-bgPrimary dark:bg-bgPrimaryDark even:bg-bgThird even:dark:bg-bgThirdDark">
       {card.Id > 200000 ? (
         <ResultCryptTableRowCommon card={card} handleClick={handleClick} noDisciplines={isMobile} />
       ) : (

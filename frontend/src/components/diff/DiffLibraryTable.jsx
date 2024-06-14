@@ -15,7 +15,7 @@ const DiffLibraryTable = ({
   return (
     <table className="w-full border-bgSecondary dark:border-bgSecondaryDark sm:border">
       <tbody>
-        {cards.map((card, idx) => {
+        {cards.map((card) => {
           return (
             <DiffLibraryTableRow
               cardChange={cardChange}
@@ -27,7 +27,6 @@ const DiffLibraryTable = ({
               libraryTotal={libraryTotal}
               key={card.c.Id}
               card={card}
-              idx={idx}
               handleClick={handleClick}
             />
           );

@@ -162,12 +162,11 @@ const DeckSelectAdvTable = ({
         short={short}
       />
       <tbody>
-        {sortedDecks.map((deck, idx) => {
+        {sortedDecks.map((deck) => {
           return (
             <DeckSelectAdvTableRow
               key={deck.deckid}
               deck={deck}
-              idx={idx}
               onClick={onClick}
               handleClose={handleClose}
               allTagsOptions={allTagsOptions}

@@ -32,9 +32,7 @@ const DeckDrawLibraryTable = ({
           return (
             <tr
               key={`${idx}-${card.Id}`}
-              className={`h-[38px] border-y border-bgSecondary dark:border-bgSecondaryDark ${
-                idx % 2 ? 'bg-bgThird dark:bg-bgThirdDark' : 'bg-bgPrimary dark:bg-bgPrimaryDark'
-              }`}
+              className="h-[38px] border-y border-bgSecondary dark:border-bgSecondaryDark bg-bgPrimary dark:bg-bgPrimaryDark even:bg-bgThird even:dark:bg-bgThirdDark"
             >
               <ResultLibraryTableRowCommon
                 card={card}

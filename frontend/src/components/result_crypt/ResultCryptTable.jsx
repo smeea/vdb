@@ -27,13 +27,12 @@ const ResultCryptTable = ({ resultCards, inRecommendation, inLimited }) => {
     <>
       <table className="w-full border-bgSecondary dark:border-bgSecondaryDark sm:border">
         <tbody>
-          {resultCards.map((card, idx) => {
+          {resultCards.map((card) => {
             return (
               <ResultCryptTableRow
                 key={card.Id}
                 card={card}
                 handleClick={handleClick}
-                idx={idx}
                 inRecommendation={inRecommendation}
                 inLimited={inLimited}
                 shouldShowModal={shouldShowModal}

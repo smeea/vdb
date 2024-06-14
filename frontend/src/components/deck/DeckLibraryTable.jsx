@@ -17,11 +17,10 @@ const DeckLibraryTable = ({
   return (
     <table className="w-full border-bgSecondary dark:border-bgSecondaryDark sm:border">
       <tbody>
-        {sortedCards.map((card, idx) => {
+        {sortedCards.map((card) => {
           return (
             <DeckLibraryTableRow
               key={card.c.Id}
-              idx={idx}
               handleClick={handleClick}
               card={card}
               deck={deck}

@@ -9,14 +9,13 @@ const DeckRecommendationLibraryTable = ({ handleClick, cards }) => {
   return (
     <table className="w-full border-bgSecondary dark:border-bgSecondaryDark sm:border">
       <tbody>
-        {cards.map((card, idx) => {
+        {cards.map((card) => {
           return (
             <DeckRecommendationLibraryTableRow
               key={card.Id}
               card={card}
               deck={deck}
               handleClick={handleClick}
-              idx={idx}
             />
           );
         })}

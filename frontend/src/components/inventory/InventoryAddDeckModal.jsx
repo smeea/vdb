@@ -120,13 +120,12 @@ const InventoryAddDeckModal = ({ handleClose }) => {
           </tr>
         </thead>
         <tbody>
-          {sortedDecks.map((deck, idx) => {
+          {sortedDecks.map((deck) => {
             return (
               <InventoryAddDeckRow
                 key={deck.deckid}
                 deck={deck}
                 allTagsOptions={defaultTagsOptions}
-                idx={idx}
               />
             );
           })}

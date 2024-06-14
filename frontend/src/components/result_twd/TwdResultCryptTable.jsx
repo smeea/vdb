@@ -48,12 +48,11 @@ const TwdResultCryptTable = ({ crypt }) => {
       </div>
       <table className="border-x border-bgSecondary dark:border-bgSecondaryDark">
         <tbody>
-          {sortedCards.map((card, idx) => {
+          {sortedCards.map((card) => {
             return (
               <TwdResultCryptTableRow
                 key={card.c.Id}
                 handleClick={handleClick}
-                idx={idx}
                 card={card}
                 shouldShowModal={shouldShowModal}
               />

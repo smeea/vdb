@@ -16,7 +16,7 @@ const DeckProxyCryptTable = ({
   return (
     <table className="w-full border-bgSecondary dark:border-bgSecondaryDark sm:border">
       <tbody>
-        {cards.map((card, idx) => {
+        {cards.map((card) => {
           return (
             <DeckProxyCryptTableRow
               key={card.c.Id}
@@ -24,7 +24,6 @@ const DeckProxyCryptTable = ({
               disciplinesSet={disciplinesSet}
               keyDisciplines={keyDisciplines}
               card={card}
-              idx={idx}
               handleClick={handleClick}
               proxySelected={proxySelected}
               handleProxySelector={handleProxySelector}

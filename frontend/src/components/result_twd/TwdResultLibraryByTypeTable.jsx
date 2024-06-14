@@ -81,15 +81,11 @@ const TwdResultLibraryByTypeTable = ({ library }) => {
         <tbody>
           {cardtypeSortedFull
             .filter((cardtype) => libraryByType[cardtype] !== undefined)
-            .map((cardtype, idx) => {
+            .map((cardtype) => {
               return (
                 <tr
                   key={cardtype}
-                  className={`border-y border-bgSecondary dark:border-bgSecondaryDark ${
-                    idx % 2
-                      ? 'bg-bgThird dark:bg-bgThirdDark'
-                      : 'bg-bgPrimary dark:bg-bgPrimaryDark'
-                  }`}
+                  className="border-y border-bgSecondary dark:border-bgSecondaryDark bg-bgPrimary dark:bg-bgPrimaryDark even:bg-bgThird even:dark:bg-bgThirdDark"
                 >
                   <td className="min-w-[55px]">
                     <div className="flex justify-center">

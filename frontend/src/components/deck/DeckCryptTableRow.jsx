@@ -12,7 +12,6 @@ import { getSoftMax, getHardTotal } from '@/utils';
 import { useDebounce } from '@/hooks';
 
 const DeckCryptTableRow = ({
-  idx,
   handleClick,
   card,
   deck,
@@ -61,9 +60,7 @@ const DeckCryptTableRow = ({
     ? isSwiped === 'right'
       ? 'bg-bgSuccess dark:bg-bgSuccessDark'
       : 'bg-bgErrorSecondary dark:bg-bgErrorSecondaryDark'
-    : idx % 2
-    ? 'bg-bgThird dark:bg-bgThirdDark'
-    : 'bg-bgPrimary dark:bg-bgPrimaryDark';
+    : 'bg-bgPrimary dark:bg-bgPrimaryDark even:bg-bgThird even:dark:bg-bgThirdDark';
 
   return (
     <tr

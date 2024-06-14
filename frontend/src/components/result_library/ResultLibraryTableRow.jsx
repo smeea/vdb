@@ -10,7 +10,7 @@ import {
 import { useApp, deckStore, deckCardChange } from '@/context';
 import { useDebounce } from '@/hooks';
 
-const ResultLibraryTableRow = ({ card, handleClick, idx, inLimited, shouldShowModal }) => {
+const ResultLibraryTableRow = ({ card, handleClick, inLimited, shouldShowModal }) => {
   const { addMode, inventoryMode } = useApp();
   const deck = useSnapshot(deckStore).deck;
   const inDeck = deck?.library[card.Id]?.q || 0;
@@ -46,9 +46,7 @@ const ResultLibraryTableRow = ({ card, handleClick, idx, inLimited, shouldShowMo
     ? isSwiped === 'right'
       ? 'bg-bgSuccess dark:bg-bgSuccessDark'
       : 'bg-bgErrorSecondary dark:bg-bgErrorSecondaryDark'
-    : idx % 2
-      ? 'bg-bgThird dark:bg-bgThirdDark'
-      : 'bg-bgPrimary dark:bg-bgPrimaryDark';
+    : 'bg-bgPrimary dark:bg-bgPrimaryDark even:bg-bgThird even:dark:bg-bgThirdDark';
 
   return (
     <tr
