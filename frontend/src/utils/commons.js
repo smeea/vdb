@@ -1,4 +1,4 @@
-import { ANY, POD, PLAYTEST, PROMO, CARD_TEXT, MASTER, ID } from '@/utils/constants';
+import { ANY, POD, PLAYTEST, PROMO, ID } from '@/utils/constants';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 
 export const getCardProperty = (card, property) => {
@@ -32,14 +32,6 @@ export const countTotalCost = (cardsList, type) => {
   return cardsList
     .filter((card) => !isNaN(card.c[type]))
     .reduce((acc, card) => acc + card.q * card.c[type], 0);
-};
-
-export const isTrifle = (card) => {
-  const text = card[CARD_TEXT].toLowerCase();
-  return (
-    card.Type === MASTER &&
-    (text.includes('trifle') || text.includes('nimiedad') || text.includes('triviale'))
-  );
 };
 
 export const getRestrictions = (deck, limitedCards) => {

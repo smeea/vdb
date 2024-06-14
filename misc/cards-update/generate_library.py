@@ -304,6 +304,7 @@ def generate_card(card):
     if card["Pool Cost"] == "0":
         card["Pool Cost"] = ""
 
+
     card_ready = {
         "ASCII Name": card["ASCII Name"],
         "Artist": card["Artist"],
@@ -323,6 +324,8 @@ def generate_card(card):
         "Twd": card["Twd"],
         "Type": card["Type"],
     }
+    if card["Type"] == 'Master' and ('trifle' in card["Card Text"].lower()):
+        card_ready["Trifle"] = True
 
     return card_ready
 

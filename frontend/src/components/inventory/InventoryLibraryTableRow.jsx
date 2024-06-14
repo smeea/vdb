@@ -16,7 +16,7 @@ import {
   ConditionalTooltip,
 } from '@/components';
 import { POOL_COST, BLOOD_COST, BURN_OPTION } from '@/utils/constants';
-import { isTrifle, getHardTotal, getSoftMax } from '@/utils';
+import { getHardTotal, getSoftMax } from '@/utils';
 import {
   useApp,
   usedStore,
@@ -142,7 +142,7 @@ const InventoryLibraryTableRow = ({ card, compact, newFocus, inShared, handleCli
       {!isNarrow && (
         <div className="flex min-w-[30px] justify-center" onClick={() => handleClick(card.c)}>
           {card.c[BURN_OPTION] && <ResultLibraryBurn />}
-          {isTrifle(card.c) && <ResultLibraryTrifle />}
+          {card.c.Trifle && <ResultLibraryTrifle />}
         </div>
       )}
     </div>

@@ -11,7 +11,7 @@ import {
   ResultLibraryTrifle,
   ResultLibraryTypeImage,
 } from '@/components';
-import { getLegality, isTrifle } from '@/utils';
+import { getLegality } from '@/utils';
 import { useApp } from '@/context';
 import { PLAYTEST } from '@/utils/constants';
 
@@ -35,7 +35,7 @@ const ResultLibraryLayoutText = ({ card, handleClose, noClose, inPopover }) => {
             {card.Clan && <ResultLibraryClan value={card.Clan} />}
           </div>
           {card['Burn Option'] && <div>{card['Burn Option'] && <ResultLibraryBurn />}</div>}
-          {isTrifle(card) && (
+          {card.Trifle && (
             <div>
               <ResultLibraryTrifle />
             </div>

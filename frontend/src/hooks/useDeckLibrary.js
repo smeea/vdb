@@ -3,7 +3,6 @@ import { useSnapshot } from 'valtio';
 import {
   countCards,
   countTotalCost,
-  isTrifle,
   librarySort,
   getTotalCardsGroupedBy,
   containCard,
@@ -53,7 +52,7 @@ const useDeckLibrary = (cardsList, cardsToList = {}) => {
       limitedCards,
     );
 
-    const trifleTotal = countCards(library.filter((card) => isTrifle(card.c)));
+    const trifleTotal = countCards(library.filter((card) => card.c.Trifle));
     const libraryTotal = countCards(cardsFrom);
     const libraryToTotal = countCards(cardsTo);
     const poolTotal = countTotalCost(cardsFrom, POOL_COST);

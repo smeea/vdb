@@ -396,7 +396,8 @@
             }
         },
         "Twd":22,
-        "Type":"Master"
+        "Type":"Master",
+        "Trifle":true
     },
     "100010":{
         "ASCII Name":"Abomination",
@@ -1035,7 +1036,8 @@
             }
         },
         "Twd":22,
-        "Type":"Master"
+        "Type":"Master",
+        "Trifle":true
     },
     "100026":{
         "ASCII Name":"Aggressive Tactics",
@@ -4940,7 +4942,8 @@
             }
         },
         "Twd":7,
-        "Type":"Master"
+        "Type":"Master",
+        "Trifle":true
     },
     "100121":{
         "ASCII Name":"Baal's Bloody Talons",
@@ -7950,7 +7953,8 @@
             }
         },
         "Twd":3,
-        "Type":"Master"
+        "Type":"Master",
+        "Trifle":true
     },
     "100197":{
         "ASCII Name":"Blood Clots",
@@ -11180,7 +11184,8 @@
             }
         },
         "Twd":2,
-        "Type":"Master"
+        "Type":"Master",
+        "Trifle":true
     },
     "100276":{
         "ASCII Name":"Caiaphas Smith",
@@ -17160,7 +17165,8 @@
             }
         },
         "Twd":17,
-        "Type":"Master"
+        "Type":"Master",
+        "Trifle":true
     },
     "100426":{
         "ASCII Name":"Corporate Hunting Ground",
@@ -17543,7 +17549,8 @@
             }
         },
         "Twd":485,
-        "Type":"Master"
+        "Type":"Master",
+        "Trifle":true
     },
     "100436":{
         "ASCII Name":"Covenant of Blood",
@@ -17785,7 +17792,8 @@
             }
         },
         "Twd":6,
-        "Type":"Master"
+        "Type":"Master",
+        "Trifle":true
     },
     "100443":{
         "ASCII Name":"Creeping Infection",
@@ -19060,7 +19068,8 @@
             }
         },
         "Twd":4,
-        "Type":"Master"
+        "Type":"Master",
+        "Trifle":true
     },
     "100483":{
         "ASCII Name":"Curse of Nitocris",
@@ -19187,7 +19196,8 @@
             }
         },
         "Twd":40,
-        "Type":"Master"
+        "Type":"Master",
+        "Trifle":true
     },
     "100486":{
         "ASCII Name":"Daemonic Possession",
@@ -21425,7 +21435,8 @@
             }
         },
         "Twd":0,
-        "Type":"Master"
+        "Type":"Master",
+        "Trifle":true
     },
     "100536":{
         "ASCII Name":"Deviki Prasanta",
@@ -26865,7 +26876,8 @@
             }
         },
         "Twd":2,
-        "Type":"Master"
+        "Type":"Master",
+        "Trifle":true
     },
     "100663":{
         "ASCII Name":"Esprit de Corps",
@@ -28003,7 +28015,8 @@
             }
         },
         "Twd":43,
-        "Type":"Master"
+        "Type":"Master",
+        "Trifle":true
     },
     "100692":{
         "ASCII Name":"Faithful Servant",
@@ -29633,7 +29646,8 @@
             }
         },
         "Twd":21,
-        "Type":"Master"
+        "Type":"Master",
+        "Trifle":true
     },
     "100729":{
         "ASCII Name":"Fillip",
@@ -32598,7 +32612,8 @@
             }
         },
         "Twd":22,
-        "Type":"Master"
+        "Type":"Master",
+        "Trifle":true
     },
     "100799":{
         "ASCII Name":"Gambit Accepted",
@@ -35871,7 +35886,8 @@
             }
         },
         "Twd":6,
-        "Type":"Master"
+        "Type":"Master",
+        "Trifle":true
     },
     "100881":{
         "ASCII Name":"Hand Intervention",
@@ -36005,7 +36021,8 @@
             }
         },
         "Twd":0,
-        "Type":"Master"
+        "Type":"Master",
+        "Trifle":true
     },
     "100885":{
         "ASCII Name":"Haqim's Law: Leadership",
@@ -40630,7 +40647,8 @@
             }
         },
         "Twd":1,
-        "Type":"Master"
+        "Type":"Master",
+        "Trifle":true
     },
     "101001":{
         "ASCII Name":"Into Thin Air",
@@ -44838,7 +44856,8 @@
             }
         },
         "Twd":171,
-        "Type":"Master"
+        "Type":"Master",
+        "Trifle":true
     },
     "101105":{
         "ASCII Name":"Lifeless Tongues",
@@ -46750,7 +46769,8 @@
             }
         },
         "Twd":11,
-        "Type":"Master"
+        "Type":"Master",
+        "Trifle":true
     },
     "101150":{
         "ASCII Name":"Malkavian Dementia",
@@ -49962,7 +49982,8 @@
             }
         },
         "Twd":1,
-        "Type":"Master"
+        "Type":"Master",
+        "Trifle":true
     },
     "101229":{
         "ASCII Name":"Mob Connections",
@@ -52780,7 +52801,8 @@
             }
         },
         "Twd":2,
-        "Type":"Master"
+        "Type":"Master",
+        "Trifle":true
     },
     "101296":{
         "ASCII Name":"Nose of the Hound",
@@ -54291,7 +54313,8 @@
             }
         },
         "Twd":5,
-        "Type":"Master"
+        "Type":"Master",
+        "Trifle":true
     },
     "101332":{
         "ASCII Name":"Osebo Kholo",
@@ -54508,7 +54531,8 @@
             }
         },
         "Twd":0,
-        "Type":"Master"
+        "Type":"Master",
+        "Trifle":true
     },
     "101337":{
         "ASCII Name":"Outcast Mage",
@@ -60082,7 +60106,8 @@
             }
         },
         "Twd":25,
-        "Type":"Master"
+        "Type":"Master",
+        "Trifle":true
     },
     "101488":{
         "ASCII Name":"Priority Shift",
@@ -63143,7 +63168,8 @@
             }
         },
         "Twd":13,
-        "Type":"Master"
+        "Type":"Master",
+        "Trifle":true
     },
     "101565":{
         "ASCII Name":"Rebirth",
@@ -66350,7 +66376,8 @@
             }
         },
         "Twd":0,
-        "Type":"Master"
+        "Type":"Master",
+        "Trifle":true
     },
     "101648":{
         "ASCII Name":"Roll",
@@ -69474,7 +69501,8 @@
             }
         },
         "Twd":6,
-        "Type":"Master"
+        "Type":"Master",
+        "Trifle":true
     },
     "101720":{
         "ASCII Name":"Sense Vitality",
@@ -70775,7 +70803,8 @@
             }
         },
         "Twd":3,
-        "Type":"Master"
+        "Type":"Master",
+        "Trifle":true
     },
     "101750":{
         "ASCII Name":"Shaman",
@@ -76149,7 +76178,8 @@
             }
         },
         "Twd":3,
-        "Type":"Master"
+        "Type":"Master",
+        "Trifle":true
     },
     "101885":{
         "ASCII Name":"Strike at the True Flesh",
@@ -76384,7 +76414,8 @@
             }
         },
         "Twd":3,
-        "Type":"Master"
+        "Type":"Master",
+        "Trifle":true
     },
     "101891":{
         "ASCII Name":"Submachine Gun",
@@ -81402,7 +81433,8 @@
             }
         },
         "Twd":2,
-        "Type":"Master"
+        "Type":"Master",
+        "Trifle":true
     },
     "102006":{
         "ASCII Name":"Tragic Love Affair",
@@ -83001,7 +83033,8 @@
             }
         },
         "Twd":25,
-        "Type":"Master"
+        "Type":"Master",
+        "Trifle":true
     },
     "102053":{
         "ASCII Name":"Tye Cooper",
@@ -85535,7 +85568,8 @@
             }
         },
         "Twd":1166,
-        "Type":"Master"
+        "Type":"Master",
+        "Trifle":true
     },
     "102114":{
         "ASCII Name":"Vial of Elder Vitae",
@@ -85844,7 +85878,8 @@
             }
         },
         "Twd":1178,
-        "Type":"Master"
+        "Type":"Master",
+        "Trifle":true
     },
     "102122":{
         "ASCII Name":"Violation of Trust",
@@ -87246,7 +87281,8 @@
             }
         },
         "Twd":514,
-        "Type":"Master"
+        "Type":"Master",
+        "Trifle":true
     },
     "102152":{
         "ASCII Name":"Wasserschloss Anif, Austria",
@@ -88304,7 +88340,8 @@
             }
         },
         "Twd":748,
-        "Type":"Master"
+        "Type":"Master",
+        "Trifle":true
     },
     "102181":{
         "ASCII Name":"Wildebeest, The",

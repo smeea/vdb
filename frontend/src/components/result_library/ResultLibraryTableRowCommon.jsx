@@ -12,7 +12,6 @@ import {
   ConditionalTooltip,
 } from '@/components';
 import { POOL_COST, BLOOD_COST, BURN_OPTION } from '@/utils/constants';
-import { isTrifle } from '@/utils';
 import { useApp } from '@/context';
 
 const Type = ({ card, handleClick }) => {
@@ -78,7 +77,7 @@ const Burn = ({ card, handleClick }) => {
     <td className="min-w-[30px]" onClick={() => handleClick(card)}>
       <div className="flex justify-center">
         {card[BURN_OPTION] && <ResultLibraryBurn />}
-        {isTrifle(card) && <ResultLibraryTrifle />}
+        {card.Trifle && <ResultLibraryTrifle />}
       </div>
     </td>
   );
