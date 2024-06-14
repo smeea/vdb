@@ -18,7 +18,7 @@ const sanitizeFormState = (target, state) => {
       Object.entries(j).forEach(([key, value]) => {
         switch (key) {
           case 'value':
-            if (value === '') input[i].splice(idx, 1);
+            input[i] = input[i].filter((i) => i.value !== '');
             break;
           default:
             if (input[i][idx] && !value) delete input[i][idx][key];
@@ -140,10 +140,8 @@ const sanitizeFormState = (target, state) => {
       forms = [];
   }
   forms.forEach((i) => {
-    input[i].value.forEach((j, idx) => {
-      if (j === 'any') {
-        input[i].value.splice(idx, 1);
-      }
+    input[i].value = input[i].value.filter((i) => {
+      return i !== 'any';
     });
   });
 
