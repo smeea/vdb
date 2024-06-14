@@ -1,10 +1,8 @@
 {
-  "version": "2024-06-09",
+  "version": "2024-06-13",
   "changes": [
-    "Update Brazilian Portuguese crypt translation (ALL vampires are now translated!). Thanks to Estel Matiazi for outstanding contribution!",
-    "Add extra cut lines to PDF proxy (full grid)",
-    "Fix Tournament Analyze",
-    "Fix deck description to only show first line when folded",
+    "Fix issues with Braziliant Portuguese translations",
+    "Add multiple clan and sect options to TWD, PDA and Tournament Analyze search with 'or' and 'not' logic",
     "Small other fixes and improvements"
   ]
 }

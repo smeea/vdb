@@ -1,5 +1,13 @@
 [
   {
+    "version": "2024-06-13",
+    "changes": [
+      "Fix issues with Braziliant Portuguese translations",
+      "Add multiple clan and sect options to TWD, PDA and Tournament Analyze search with 'or' and 'not' logic",
+      "Small other fixes and improvements"
+    ]
+  },
+  {
     "version": "2024-06-09",
     "changes": [
       "Update Brazilian Portuguese crypt translation (ALL vampires are now translated!). Thanks to Estel Matiazi for outstanding contribution!",
