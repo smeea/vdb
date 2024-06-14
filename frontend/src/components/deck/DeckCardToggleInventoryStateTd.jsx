@@ -8,11 +8,12 @@ const DeckCardToggleInventoryStateTd = ({ card, deck }) => {
   const isEditable = isAuthor && !isPublic && !isFrozen;
 
   return (
-    <td className="max-w-0">
+    <td className="group max-w-0">
       <div className="relative flex items-center">
         <div
-          className={`${isEditable ? 'inventory-card-custom' : ''} absolute left-[-24px]
-                        ${card.i ? '' : 'not-selected opacity-0'}
+          className={`absolute left-[-24px] ${
+            card.i ? '' : isEditable ? 'group-hover:opacity-[0.35] opacity-0' : 'opacity-0'
+          }
                       `}
           onClick={() => isEditable && cardToggleInventoryState(deckid, card.c.Id)}
         >
