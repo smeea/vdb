@@ -3,11 +3,11 @@ import { useSwipeable } from 'react-swipeable';
 import ArrowRepeat from '@/assets/images/icons/arrow-repeat.svg?react';
 import ChevronCompactLeft from '@/assets/images/icons/chevron-compact-left.svg?react';
 import ChevronCompactRight from '@/assets/images/icons/chevron-compact-right.svg?react';
-import { ButtonFloat, ButtonFloatClose, CardImage, ResultLayoutText, Modal } from '@/components';
+import { ButtonFloat, CardImage, ResultLayoutText, Modal } from '@/components';
 import { useApp } from '@/context';
 
 const ResultModal = ({ card, handleModalCardChange, handleClose, forceInventoryMode }) => {
-  const { showImage, toggleShowImage, isMobile, isNarrow } = useApp();
+  const { showImage, toggleShowImage, isMobile } = useApp();
 
   const [imageSet, setImageSet] = useState(null);
   const [activeCard, setActiveCard] = useState(card);

@@ -33,8 +33,8 @@ const TwdResultCryptTableRow = ({ card, handleClick, shouldShowModal }) => {
                 inInventory < card.q
                   ? 'bg-bgError text-white dark:bg-bgErrorDark dark:text-whiteDark'
                   : inInventory - hardUsedTotal < card.q
-                  ? 'bg-bgWarning dark:bg-bgWarningDark'
-                  : ''
+                    ? 'bg-bgWarning dark:bg-bgWarningDark'
+                    : ''
               }`}
             >
               {card.q}

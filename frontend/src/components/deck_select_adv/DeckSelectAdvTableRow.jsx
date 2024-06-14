@@ -76,8 +76,8 @@ const DeckSelectAdvTableRow = ({
                 deck.inventoryType === 's'
                   ? 'Flexible'
                   : deck.inventoryType === 'h'
-                  ? 'Fixed'
-                  : 'Virtual'
+                    ? 'Fixed'
+                    : 'Virtual'
               }
             >
               {deck.inventoryType == 's' ? (
