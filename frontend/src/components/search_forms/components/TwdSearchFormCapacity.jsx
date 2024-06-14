@@ -13,15 +13,7 @@ const TwdSearchFormCapacity = ({ value, onChange }) => {
       <div className="flex w-3/4 justify-end">
         {options.map((i, idx) => {
           return (
-            <ButtonGroup
-              isFirst={idx == 0}
-              isLast={idx == options.length - 1}
-              isSelected={value[i]}
-              key={idx}
-              name={name}
-              onClick={onChange}
-              value={i}
-            >
+            <ButtonGroup isSelected={value[i]} key={idx} name={name} onClick={onChange} value={i}>
               {i}
             </ButtonGroup>
           );

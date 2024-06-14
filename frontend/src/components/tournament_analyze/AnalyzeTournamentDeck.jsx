@@ -7,9 +7,9 @@ import {
   Hr,
 } from '@/components';
 
-const AnalyzeTournamentDeck = ({ deck, isLast }) => {
+const AnalyzeTournamentDeck = ({ deck }) => {
   return (
-    <div className="flex flex-col gap-6" key={deck.author}>
+    <div className="group flex flex-col gap-6" key={deck.author}>
       <div className="flex gap-2 max-lg:flex-col">
         <div className="basis-full lg:basis-1/4">
           <AnalyzeTournamentDeckDescription deck={deck} />
@@ -26,7 +26,9 @@ const AnalyzeTournamentDeck = ({ deck, isLast }) => {
           </div>
         </div>
       </div>
-      {!isLast && <Hr isThick />}
+      <div className="group-last:hidden">
+        <Hr isThick />
+      </div>
     </div>
   );
 };

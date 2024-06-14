@@ -10,7 +10,7 @@ import {
 import { useApp } from '@/context';
 import { useFetch, useDeck } from '@/hooks';
 
-const TwdDeck = ({ deck, inPda, withHr }) => {
+const TwdDeck = ({ deck, inPda }) => {
   const { cryptCardBase, libraryCardBase, isNarrow } = useApp();
   if (deck.cards) {
     deck = { ...deck, ...useDeck(deck.cards, cryptCardBase, libraryCardBase) };
@@ -29,7 +29,7 @@ const TwdDeck = ({ deck, inPda, withHr }) => {
   return (
     <>
       {deck.crypt && deck.library && (
-        <div className="space-y-6">
+        <div className="group space-y-6">
           <div className="flex gap-2 max-lg:flex-col">
             <div className="basis-full lg:basis-1/4">
               {inPda ? <PdaResultDescription deck={deck} /> : <TwdResultDescription deck={deck} />}
@@ -46,7 +46,9 @@ const TwdDeck = ({ deck, inPda, withHr }) => {
               </div>
             </div>
           </div>
-          {withHr && <Hr isThick />}
+          <div className="group-last:hidden">
+            <Hr isThick />
+          </div>
         </div>
       )}
     </>

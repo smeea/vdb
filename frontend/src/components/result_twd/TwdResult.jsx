@@ -32,22 +32,20 @@ const TwdResult = ({ results, setResults }) => {
 
   return (
     <>
-      <TwdResultTotal
-        results={results}
-        sortMethods={sortMethods}
-        sortMethod={twdSearchSort}
-        setSortMethod={changeTwdSearchSort}
-      />
       <div className="space-y-4">
-        {showedDecks.map((d, idx) => {
-          return (
-            <TwdDeck
-              key={d.deckid}
-              deck={d}
-              withHr={idx + 1 < showCounter && idx + 1 < showedDecks.length}
-            />
-          );
-        })}
+        <div>
+          <TwdResultTotal
+            results={results}
+            sortMethods={sortMethods}
+            sortMethod={twdSearchSort}
+            setSortMethod={changeTwdSearchSort}
+          />
+          <div className="space-y-4">
+            {showedDecks.map((d) => {
+              return <TwdDeck key={d.deckid} deck={d} />;
+            })}
+          </div>
+        </div>
         {deckCounter > showCounter && (
           <div className="flex justify-center ">
             <Button variant="primary" onClick={() => setShowCounter(showCounter + showCounterStep)}>
