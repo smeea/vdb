@@ -2,7 +2,6 @@
 - Swipes in inventory to change bg-colors (swipes disabled until fixes)
 - Snapshot url in iOS
 - PWA auto-reload in Chrome/iOS
-- Inventory state for cards in your deck opened from url (including page refresh)
 
 # FEATURES
 - TWD search with % V5-compatibility - after BCP clarify V5

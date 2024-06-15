@@ -86,6 +86,7 @@ const Decks = () => {
       isBranches: !!(deckData.master || deckData.branches?.length > 0),
       isPublic: !!deckData.publicParent,
       library: cardsData.library,
+      isFromUrl: true,
     };
     addRecentDeck(d);
     setDeck(d);
@@ -167,6 +168,8 @@ const Decks = () => {
           } else if (loaderData) {
             getDeck();
           }
+        } else if (deck.isFromUrl && decks?.[deckid]) {
+          setDeck(decks[deckid]);
         }
       } else if (decks?.[lastDeckId]) {
         setDeck(decks[lastDeckId]);

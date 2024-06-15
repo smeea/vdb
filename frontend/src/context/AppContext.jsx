@@ -421,7 +421,7 @@ export const AppProvider = ({ children }) => {
 
   useEffect(() => {
     if (decks && inventoryMode) setupUsedInventory(decks);
-  }, [deck, decks, inventoryMode]);
+  }, [decks, decks?.[deck?.deckid]?.crypt, decks?.[deck?.deckid]?.library, inventoryMode]);
 
   return (
     <AppContext.Provider
