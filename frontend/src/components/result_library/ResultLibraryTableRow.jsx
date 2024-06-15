@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useSnapshot } from 'valtio';
-import { useSwipeable } from 'react-swipeable';
 import {
   AccountLimitedDelCard,
   ButtonAddCard,
@@ -8,7 +7,7 @@ import {
   ResultUsed,
 } from '@/components';
 import { useApp, deckStore, deckCardChange } from '@/context';
-import { useDebounce } from '@/hooks';
+import { useSwipe, useDebounce } from '@/hooks';
 
 const ResultLibraryTableRow = ({ card, handleClick, inLimited, shouldShowModal }) => {
   const { addMode, inventoryMode } = useApp();
@@ -18,29 +17,20 @@ const ResultLibraryTableRow = ({ card, handleClick, inLimited, shouldShowModal }
 
   const [isSwiped, setIsSwiped] = useState();
   useDebounce(() => setIsSwiped(false), 500, [isSwiped]);
-  const SWIPE_THRESHOLD = 50;
-  const SWIPE_IGNORED_LEFT_EDGE = 30;
-  const swipeHandlers = useSwipeable({
-    swipeDuration: 250,
-    onSwipedLeft: (e) => {
-      if (
-        e.initial[0] > SWIPE_IGNORED_LEFT_EDGE &&
-        e.absX > SWIPE_THRESHOLD &&
-        isEditable &&
-        addMode &&
-        inDeck > 0
-      ) {
+  const swipeHandlers = useSwipe(
+    () => {
+      if (isEditable && addMode && inDeck > 0) {
         setIsSwiped('left');
         deckCardChange(deck.deckid, card, inDeck - 1);
       }
     },
-    onSwipedRight: (e) => {
-      if (e.absX > SWIPE_THRESHOLD && isEditable && addMode) {
+    () => {
+      if (isEditable && addMode) {
         setIsSwiped('right');
         deckCardChange(deck.deckid, card, inDeck + 1);
       }
     },
-  });
+  );
 
   const trBg = isSwiped
     ? isSwiped === 'right'

@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useSwipeable } from 'react-swipeable';
 import { useSnapshot } from 'valtio';
 import {
   DeckCardQuantityTd,
@@ -9,7 +8,7 @@ import {
 } from '@/components';
 import { getSoftMax, getHardTotal } from '@/utils';
 import { useApp, usedStore, inventoryStore, deckStore, deckCardChange } from '@/context';
-import { useDebounce } from '@/hooks';
+import { useSwipe, useDebounce } from '@/hooks';
 
 const DiffCryptTableRow = ({
   cardChange,
@@ -36,23 +35,20 @@ const DiffCryptTableRow = ({
 
   const [isSwiped, setIsSwiped] = useState();
   useDebounce(() => setIsSwiped(false), 500, [isSwiped]);
-  const SWIPE_THRESHOLD = 50;
-  const SWIPE_IGNORED_LEFT_EDGE = 30;
-  const swipeHandlers = useSwipeable({
-    swipeDuration: 250,
-    onSwipedLeft: (e) => {
-      if (e.initial[0] > SWIPE_IGNORED_LEFT_EDGE && e.absX > SWIPE_THRESHOLD && isEditable) {
+  const swipeHandlers = useSwipe(
+    () => {
+      if (isEditable) {
         setIsSwiped('left');
         deckCardChange(deckid, card.c, card.q - 1);
       }
     },
-    onSwipedRight: (e) => {
-      if (e.absX > SWIPE_THRESHOLD && isEditable) {
+    () => {
+      if (isEditable) {
         setIsSwiped('right');
         deckCardChange(deckid, card.c, card.q + 1);
       }
     },
-  });
+  );
 
   const trBg = isSwiped
     ? isSwiped === 'right'

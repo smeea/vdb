@@ -1,7 +1,6 @@
 import React from 'react';
 // import React, { useState } from 'react';
 import { useSnapshot } from 'valtio';
-// import { useSwipeable } from 'react-swipeable';
 import {
   CardPopover,
   InventoryCardQuantity,
@@ -22,7 +21,7 @@ import {
   limitedStore,
   // inventoryCardChange,
 } from '@/context';
-// import { useDebounce } from '@/hooks';
+// import { useSwipe, useDebounce } from '@/hooks';
 
 const InventoryCryptTableRow = ({ card, compact, newFocus, inShared, handleClick }) => {
   const { isMobile, isNarrow, isWide, limitedMode } = useApp();
@@ -37,29 +36,22 @@ const InventoryCryptTableRow = ({ card, compact, newFocus, inShared, handleClick
   //
   // const [isSwiped, setIsSwiped] = useState();
   // useDebounce(() => setIsSwiped(false), 500, [isSwiped]);
-  // const SWIPE_THRESHOLD = 50;
-  // const SWIPE_IGNORED_LEFT_EDGE = 30;
-  // const swipeHandlers = useSwipeable({
-  //   swipeDuration: 250,
-  //   onSwipedLeft: (e) => {
-  //     if (e.initial[0] > SWIPE_IGNORED_LEFT_EDGE && e.absX > SWIPE_THRESHOLD) {
-  //       setIsSwiped('left');
-  //       inventoryCardChange(card.c, card.q - 1);
-  //     }
+  // const swipeHandlers = useSwipe(
+  //   () => {
+  //     setIsSwiped('left');
+  //     inventoryCardChange(card.c, card.q - 1);
   //   },
-  //   onSwipedRight: (e) => {
-  //     if (e.absX > SWIPE_THRESHOLD) {
-  //       setIsSwiped('right');
-  //       inventoryCardChange(card.c, card.q + 1);
-  //     }
+  //   () => {
+  //     setIsSwiped('right');
+  //     inventoryCardChange(card.c, card.q + 1);
   //   },
-  // });
-
+  // );
+  //
   // const trBg = isSwiped
-  //       ? isSwiped === 'right'
-  //       ? 'bg-bgSuccess dark:bg-bgSuccessDark'
-  //       : 'bg-bgErrorSecondary dark:bg-bgErrorSecondaryDark'
-  //       : '';
+  //   ? isSwiped === 'right'
+  //     ? 'bg-bgSuccess dark:bg-bgSuccessDark'
+  //     : 'bg-bgErrorSecondary dark:bg-bgErrorSecondaryDark'
+  //   : '';
 
   return (
     // <div className={`flex w-full items-center ${trBg}`} {...swipeHandlers}>

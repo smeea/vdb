@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { useSwipeable } from 'react-swipeable';
 import ArrowRepeat from '@/assets/images/icons/arrow-repeat.svg?react';
 import ChevronCompactLeft from '@/assets/images/icons/chevron-compact-left.svg?react';
 import ChevronCompactRight from '@/assets/images/icons/chevron-compact-right.svg?react';
 import { ButtonFloat, CardImage, ResultLayoutText, Modal } from '@/components';
 import { useApp } from '@/context';
+import { useSwipe } from '@/hooks';
 
 const ResultModal = ({ card, handleModalCardChange, handleClose, forceInventoryMode }) => {
   const { showImage, toggleShowImage, isMobile } = useApp();
@@ -40,21 +40,10 @@ const ResultModal = ({ card, handleModalCardChange, handleClose, forceInventoryM
     }
   }, [card, isHotkeysDisabled]);
 
-  const SWIPE_THRESHOLD = 50;
-  const SWIPE_IGNORED_LEFT_EDGE = 30;
-  const swipeHandlers = useSwipeable({
-    swipeDuration: 250,
-    onSwipedRight: (e) => {
-      if (e.initial[0] > SWIPE_IGNORED_LEFT_EDGE && e.absX > SWIPE_THRESHOLD) {
-        handleModalCardChange(-1);
-      }
-    },
-    onSwipedLeft: (e) => {
-      if (e.absX > SWIPE_THRESHOLD) {
-        handleModalCardChange(1);
-      }
-    },
-  });
+  const swipeHandlers = useSwipe(
+    () => handleModalCardChange(1),
+    () => handleModalCardChange(-1),
+  );
 
   return (
     <Modal
