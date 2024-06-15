@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useSnapshot } from 'valtio';
 import { deckCardChange, useApp, usedStore, inventoryStore, limitedStore } from '@/context';
 import {
@@ -8,7 +8,7 @@ import {
   DeckDrawProbability,
 } from '@/components';
 import { getSoftMax, getHardTotal } from '@/utils';
-import { useSwipe, useDebounce } from '@/hooks';
+import { useSwipe } from '@/hooks';
 
 const DeckLibraryTableRow = ({
   handleClick,
@@ -27,21 +27,10 @@ const DeckLibraryTableRow = ({
   const { deckid, isPublic, isAuthor, isFrozen } = deck;
   const isEditable = isAuthor && !isPublic && !isFrozen;
 
-  const [isSwiped, setIsSwiped] = useState();
-  useDebounce(() => setIsSwiped(false), 500, [isSwiped]);
-  const swipeHandlers = useSwipe(
-    () => {
-      if (isEditable) {
-        setIsSwiped('left');
-        deckCardChange(deckid, card.c, card.q - 1);
-      }
-    },
-    () => {
-      if (isEditable) {
-        setIsSwiped('right');
-        deckCardChange(deckid, card.c, card.q + 1);
-      }
-    },
+  const { isSwiped, swipeHandlers } = useSwipe(
+    () => deckCardChange(deckid, card.c, card.q - 1),
+    () => deckCardChange(deckid, card.c, card.q + 1),
+    isEditable,
   );
 
   const inLimited = limitedLibrary[card.c.Id];

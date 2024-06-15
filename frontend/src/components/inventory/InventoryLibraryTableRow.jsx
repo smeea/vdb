@@ -1,5 +1,4 @@
 import React from 'react';
-// import React, { useState } from 'react';
 import { useSnapshot } from 'valtio';
 import {
   CardPopover,
@@ -22,7 +21,7 @@ import {
   limitedStore,
   // inventoryCardChange,
 } from '@/context';
-// import { useSwipe, useDebounce } from '@/hooks';
+// import { useSwipe } from '@/hooks';
 
 const InventoryLibraryTableRow = ({ card, compact, newFocus, inShared, handleClick }) => {
   const { isMobile, isNarrow, limitedMode } = useApp();
@@ -35,17 +34,9 @@ const InventoryLibraryTableRow = ({ card, compact, newFocus, inShared, handleCli
   // TODO fix bg-color changes on swipes (not working probably because of virtualized as same code work in Decks)
   // removed as without bg-color it is very easy to mistakenly swipe and not even notice
   //
-  // const [isSwiped, setIsSwiped] = useState();
-  // useDebounce(() => setIsSwiped(false), 500, [isSwiped]);
-  // const swipeHandlers = useSwipe(
-  //   () => {
-  //     setIsSwiped('left');
-  //     inventoryCardChange(card.c, card.q - 1);
-  //   },
-  //   () => {
-  //     setIsSwiped('right');
-  //     inventoryCardChange(card.c, card.q + 1);
-  //   },
+  // const { isSwiped, swipeHandlers } = useSwipe(
+  //   () => inventoryCardChange(card.c, card.q - 1),
+  //   () => inventoryCardChange(card.c, card.q + 1),
   // );
   //
   // const trBg = isSwiped

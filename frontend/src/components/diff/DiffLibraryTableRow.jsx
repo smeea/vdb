@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useSnapshot } from 'valtio';
 import {
   DeckCardQuantityTd,
@@ -8,7 +8,7 @@ import {
 } from '@/components';
 import { getHardTotal, getSoftMax } from '@/utils';
 import { useApp, deckStore, usedStore, inventoryStore, deckCardChange } from '@/context';
-import { useSwipe, useDebounce } from '@/hooks';
+import { useSwipe } from '@/hooks';
 
 const DiffLibraryTableRow = ({
   cardChange,
@@ -31,21 +31,10 @@ const DiffLibraryTableRow = ({
   const qFrom = cardsFrom[card.c.Id]?.q ?? 0;
   const qTo = cardsTo[card.c.Id]?.q ?? 0;
 
-  const [isSwiped, setIsSwiped] = useState();
-  useDebounce(() => setIsSwiped(false), 500, [isSwiped]);
-  const swipeHandlers = useSwipe(
-    () => {
-      if (isEditable) {
-        setIsSwiped('left');
-        deckCardChange(deckid, card.c, card.q - 1);
-      }
-    },
-    () => {
-      if (isEditable) {
-        setIsSwiped('right');
-        deckCardChange(deckid, card.c, card.q + 1);
-      }
-    },
+  const { isSwiped, swipeHandlers } = useSwipe(
+    () => deckCardChange(deckid, card.c, card.q - 1),
+    () => deckCardChange(deckid, card.c, card.q + 1),
+    isEditable,
   );
 
   const trBg = isSwiped

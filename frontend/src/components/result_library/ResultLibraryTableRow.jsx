@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useSnapshot } from 'valtio';
 import {
   AccountLimitedDelCard,
@@ -7,7 +7,7 @@ import {
   ResultUsed,
 } from '@/components';
 import { useApp, deckStore, deckCardChange } from '@/context';
-import { useSwipe, useDebounce } from '@/hooks';
+import { useSwipe } from '@/hooks';
 
 const ResultLibraryTableRow = ({ card, handleClick, inLimited, shouldShowModal }) => {
   const { addMode, inventoryMode } = useApp();
@@ -15,21 +15,11 @@ const ResultLibraryTableRow = ({ card, handleClick, inLimited, shouldShowModal }
   const inDeck = deck?.library[card.Id]?.q || 0;
   const isEditable = deck?.isAuthor && !deck?.isPublic && !deck?.isFrozen;
 
-  const [isSwiped, setIsSwiped] = useState();
-  useDebounce(() => setIsSwiped(false), 500, [isSwiped]);
-  const swipeHandlers = useSwipe(
-    () => {
-      if (isEditable && addMode && inDeck > 0) {
-        setIsSwiped('left');
-        deckCardChange(deck.deckid, card, inDeck - 1);
-      }
-    },
-    () => {
-      if (isEditable && addMode) {
-        setIsSwiped('right');
-        deckCardChange(deck.deckid, card, inDeck + 1);
-      }
-    },
+  const { isSwiped, swipeHandlers } = useSwipe(
+    () => deckCardChange(deck.deckid, card, inDeck - 1),
+    () => deckCardChange(deck.deckid, card, inDeck + 1),
+    isEditable && addMode,
+    inDeck > 0,
   );
 
   const trBg = isSwiped
