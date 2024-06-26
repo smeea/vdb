@@ -336,7 +336,7 @@ def match_inventory(request, inventory, decks):
 def get_decks_by_similar(deckid, decks):
     cards = {}
 
-    if len(deckid) == 32:
+    if len(deckid) == 9:
         deck = Deck.query.get(deckid)
         if deck:
             cards = deck.cards

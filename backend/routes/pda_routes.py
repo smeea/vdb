@@ -2,7 +2,7 @@ from flask import jsonify, request, abort
 from flask_login import current_user, login_required
 from datetime import date, datetime
 import json
-import uuid
+from nanoid import non_secure_generate
 from random import random
 
 from search_decks import search_decks
@@ -281,7 +281,10 @@ def new_public_deck_route(parent_id):
     if parent.public_child:
         abort(400)
 
-    new_child_id = uuid.uuid4().hex
+    new_child_id = non_secure_generate('1234567890abcdef', 9)
+    while Deck.query.get(new_child_id):
+        new_child_id = non_secure_generate('1234567890abcdef', 9)
+
     m = get_missing_fields(parent)
     if m["crypt_total"] > 35 or m["library_total"] > 90:
         abort(400)

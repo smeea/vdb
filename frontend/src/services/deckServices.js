@@ -1,5 +1,5 @@
 import { useDeckExport } from '@/hooks';
-import { defer } from 'react-router-dom';
+import { redirect, defer } from 'react-router-dom';
 import { deckStore } from '@/context';
 import { DEFAULT_OPTIONS } from '@/utils/constants';
 
@@ -347,8 +347,14 @@ const saveFile = async (file, name) => {
 };
 
 export const deckLoader = ({ params }) => {
-  if (params.deckid === 'deck' || params.deckid.includes(':')) return null;
-  const response = getDeck(params.deckid);
+  const deckid = params.deckid;
+
+  if (deckid === 'deck' || deckid.includes(':')) return null;
+  if (deckid.length == 32) {
+    return redirect(`/decks/${deckid.substring(0, 9)}`);
+  }
+
+  const response = getDeck(deckid);
   return defer({ deckData: response });
 };
 

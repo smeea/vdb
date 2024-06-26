@@ -9,34 +9,44 @@ import json
 changes = {
 }
 
-with open("../frontend/public/data/cardbase_crypt.json", "r") as crypt_file, open("../frontend/public/data/cardbase_lib.json", "r") as library_file, open("../frontend/public/data/cardbase_lib_playtest.json", "r") as library_playtest_file, open("../frontend/public/data/cardbase_crypt_playtest.json", "r") as crypt_playtest_file:
-    cardlist = sorted([*json.load(crypt_file).keys(), *json.load(library_file).keys(), *json.load(crypt_playtest_file).keys(),*json.load(library_playtest_file).keys(),])
+# with open("../frontend/public/data/cardbase_crypt.json", "r") as crypt_file, open("../frontend/public/data/cardbase_lib.json", "r") as library_file, open("../frontend/public/data/cardbase_lib_playtest.json", "r") as library_playtest_file, open("../frontend/public/data/cardbase_crypt_playtest.json", "r") as crypt_playtest_file:
+#     cardlist = sorted([*json.load(crypt_file).keys(), *json.load(library_file).keys(), *json.load(crypt_playtest_file).keys(),*json.load(library_playtest_file).keys(),])
 
 
 with app.app_context():
     for deck in Deck.query.all():
-        new_cards = {}
-        new_used_cards = {}
+        short_deckid = deck.deckid[:9]
+        d = Deck.query.get(short_deckid)
+        if d:
+            print('COLLISION: ', deck.deckid, d.deckid)
+        deck.deckid = short_deckid
 
-        for k, v in deck.cards.items():
-            if k in changes.keys():
-                new_cards[changes[k]] = v
-                print(f"{k} to {changes[k]} in deck")
-                if k in deck.used_in_inventory:
-                    print(f"{k} to {changes[k]} in used")
-                    new_used_cards[changes[k]] = deck.used_in_inventory[k]
+        for i in [deck.master, deck.public_child, deck.public_parent]:
+            if i:
+                i = i[:9]
 
-            elif str(k) not in cardlist:
-                print(f"{k} deleted from deck")
-                continue
+        # new_cards = {}
+        # new_used_cards = {}
 
-            else:
-                new_cards[k] = v
-                if k in deck.used_in_inventory:
-                    new_used_cards[k] = deck.used_in_inventory[k]
+        # for k, v in deck.cards.items():
+        #     if k in changes.keys():
+        #         new_cards[changes[k]] = v
+        #         print(f"{k} to {changes[k]} in deck")
+        #         if k in deck.used_in_inventory:
+        #             print(f"{k} to {changes[k]} in used")
+        #             new_used_cards[changes[k]] = deck.used_in_inventory[k]
+
+        #     elif str(k) not in cardlist:
+        #         print(f"{k} deleted from deck")
+        #         continue
+
+        #     else:
+        #         new_cards[k] = v
+        #         if k in deck.used_in_inventory:
+        #             new_used_cards[k] = deck.used_in_inventory[k]
 
 
-        deck.used_in_inventory = new_used_cards
-        deck.cards = new_cards
+        # deck.used_in_inventory = new_used_cards
+        # deck.cards = new_cards
 
     db.session.commit()

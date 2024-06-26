@@ -335,7 +335,7 @@ export const AppProvider = ({ children }) => {
   };
 
   const addRecentDeck = (deck) => {
-    const src = deck.deckid.length != 32 ? 'twd' : deck.publicParent ? 'pda' : 'shared';
+    const src = deck.deckid.length != 9 ? 'twd' : deck.publicParent ? 'pda' : 'shared';
     let d = [...recentDecks];
     const idx = recentDecks.map((v) => v.deckid).indexOf(deck.deckid);
     if (idx !== -1) d.splice(idx, 1);

@@ -86,7 +86,7 @@ const DeckCopyUrlButton = ({ deck, noText, setQrUrl }) => {
               </MenuItem>
             </div>
           )}
-          {(deck.deckid.length === 32 || deck.deckid === 'deck') && (
+          {(deck.deckid.length === 9 || deck.deckid === 'deck') && (
             <div>
               <div className="px-3 pt-2 text-sm text-midGray dark:text-midGrayDark">
                 Non-modifiable:
@@ -103,7 +103,7 @@ const DeckCopyUrlButton = ({ deck, noText, setQrUrl }) => {
               >
                 Deck-in-QR
               </MenuItem>
-              {deck.deckid.length === 32 && (
+              {deck.deckid.length === 9 && (
                 <MenuItem
                   title="Copy URL to snapshot of the deck (will not follow deck changes)"
                   onClick={handleSnapshot}

@@ -1,7 +1,7 @@
 from flask import jsonify, request, abort
 from flask_login import current_user, login_required
 from datetime import date, datetime, timedelta
-import uuid
+from nanoid import non_secure_generate
 import json
 from deck_recommendation import deck_recommendation
 from api import app, db, login
@@ -80,7 +80,10 @@ def new_deck_route():
     if not current_user.is_authenticated and not anonymous:
         return abort(401)
 
-    new_deckid = uuid.uuid4().hex
+    new_deckid = non_secure_generate('1234567890abcdef', 9)
+    while Deck.query.get(new_deckid):
+        new_deckid = non_secure_generate('1234567890abcdef', 9)
+
     name = request.json["name"] if "name" in request.json else "New deck"
     author_public_name = request.json["author"] if "author" in request.json else ""
     description = request.json["description"] if "description" in request.json else ""
@@ -110,7 +113,7 @@ def new_deck_route():
 
 @app.route("/api/deck/<string:deckid>", methods=["GET"])
 def get_deck_route(deckid):
-    if len(deckid) == 32:
+    if len(deckid) == 8:
         d = Deck.query.get(deckid)
         if not d:
             abort(400)
@@ -385,7 +388,9 @@ def create_branch_route(deckid):
             if master.branches
             else f"#{len(new_branches) - i}"
         )
-        new_deckid = uuid.uuid4().hex
+        new_deckid = non_secure_generate('1234567890abcdef', 9)
+        while Deck.query.get(new_deckid):
+            new_deckid = non_secure_generate('1234567890abcdef', 9)
 
         cards = {}
         for k, v in b["cards"].items():

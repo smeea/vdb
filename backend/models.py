@@ -36,7 +36,7 @@ class User(UserMixin, db.Model):
 
 
 class Deck(db.Model):
-    deckid = db.Column(db.String(32), primary_key=True)
+    deckid = db.Column(db.String(9), primary_key=True)
     author_public_name = db.Column(db.String(64))
     branch_name = db.Column(db.String(32), default="#0")
     branches = db.Column(db.PickleType, default=[])
@@ -45,7 +45,7 @@ class Deck(db.Model):
     hidden = db.Column(db.Boolean, default=False)
     frozen = db.Column(db.Boolean, default=False)
     inventory_type = db.Column(db.String(1), default="")
-    master = db.Column(db.String(32))
+    master = db.Column(db.String(9))
     name = db.Column(db.String(64), default="New Deck")
     tags = db.Column(db.PickleType, default=[])
     timestamp = db.Column(db.DateTime, default=datetime.utcnow)
@@ -53,8 +53,8 @@ class Deck(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"))
 
     # Used only for Public Deck Archive
-    public_child = db.Column(db.String(32))
-    public_parent = db.Column(db.String(32))
+    public_child = db.Column(db.String(9))
+    public_parent = db.Column(db.String(9))
     capacity = db.Column(db.Integer)
     cardtypes_ratio = db.Column(db.PickleType, default={})
     clan = db.Column(db.String(32))

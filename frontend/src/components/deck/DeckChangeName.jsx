@@ -10,6 +10,7 @@ const DeckChangeName = ({ deck }) => {
   const { isPublic, isAuthor, isFrozen, isNonEditable } = deck;
   const [value, setValue] = useState(deck.name || '');
   const isEditable = isAuthor && !isPublic && !isFrozen && !isNonEditable;
+  const isTwd = deck.deckid !== 'deck' && deck.deckid.length !== 9 && !deck.deckid.includes(':');
 
   useEffect(() => {
     if (value !== deck.name) setValue(deck.name ?? '');
@@ -44,26 +45,11 @@ const DeckChangeName = ({ deck }) => {
         onChange={handleChange}
         onBlur={handleOnBlur}
         readOnly={!isEditable}
-        roundedStyle={
-          isAuthor ||
-          isNonEditable ||
-          isPublic ||
-          (deck.deckid !== 'deck' && deck.deckid.length !== 32 && !deck.deckid.includes(':'))
-            ? ''
-            : 'rounded-r'
-        }
+        roundedStyle={isAuthor || isNonEditable || isPublic || isTwd ? '' : 'rounded-r'}
         borderStyle={`border-y
-          ${
-            isAuthor ||
-            isNonEditable ||
-            isPublic ||
-            (deck.deckid !== 'deck' && deck.deckid.length !== 32 && !deck.deckid.includes(':'))
-              ? ''
-              : 'border-r'
-          }`}
+          ${isAuthor || isNonEditable || isPublic || isTwd ? '' : 'border-r'}`}
       />
-      {(isPublic ||
-        (deck.deckid !== 'deck' && deck.deckid.length !== 32 && !deck.deckid.includes(':'))) && (
+      {(isPublic || isTwd) && (
         <InputLabel title={isPublic ? 'Public Deck' : 'Tournament Winning Deck'} isEnd>
           {isPublic ? <PeopleFill /> : <TrophyFill />}
         </InputLabel>

@@ -55,7 +55,7 @@ const Review = () => {
 
     setError(false);
     const cardsData = useDeck(deckData.cards, cryptCardBase, libraryCardBase);
-    if (deckid.length !== 32 || deckData.publicParent) {
+    if (deckid.length !== 9 || deckData.publicParent) {
       deckData.tags = [];
       Object.values(useTags(cardsData.crypt, cardsData.library)).forEach((v) => {
         deckData.tags = deckData.tags.concat(v);

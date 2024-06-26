@@ -114,7 +114,6 @@ def generate_twd(i):
 
 
 with open("twda.json", "r") as twd_input, open("twd_decks.json", "w") as twd_decks_file:
-
     decks = []
     decks_by_id = {}
 
@@ -125,7 +124,8 @@ with open("twda.json", "r") as twd_input, open("twd_decks.json", "w") as twd_dec
     decks = pool.map(generate_twd, twda)
 
     for deck in decks:
-        decks_by_id[deck["deckid"]] = deck
+        deckid = deck["deckid"] if len(deck["deckid"]) != 9 else f'{deck["deckid"]}0'
+        decks_by_id[deckid] = deck
 
     json.dump(decks_by_id, twd_decks_file, indent=4, separators=(",", ":"))
 
