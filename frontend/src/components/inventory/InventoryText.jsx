@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ChatLeftQuoteFill from '@/assets/images/icons/chat-left-quote-fill.svg?react';
 import { useDebounce } from '@/hooks';
 import { inventoryCardTextChange } from '@/context';
@@ -8,6 +8,10 @@ const InventoryText = ({ card, text, inPopover }) => {
   const [newText, setNewText] = useState(text || '');
   const handleChange = (event) => setNewText(event.target.value);
   const lines = newText.split('\n').length;
+
+  useEffect(() => {
+    if (newText !== text) setNewText(text ?? '');
+  }, [text]);
 
   useDebounce(
     () => {
