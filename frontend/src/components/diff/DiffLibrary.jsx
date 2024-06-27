@@ -41,9 +41,13 @@ const LibraryTotalDifference = ({ qTo, qFrom }) => {
   );
 };
 
-const DiffLibrary = ({ cardsFrom, cardsTo, deckid, isEditable }) => {
+const DiffLibrary = ({ cardsTo, deck }) => {
   const { setShowFloatingButtons } = useApp();
   const [showInfo, setShowInfo] = useState(false);
+
+  const cardsFrom = deck.library;
+  const { deckid, isPublic, isAuthor, isFrozen } = deck;
+  const isEditable = isAuthor && !isPublic && !isFrozen;
 
   const {
     library,

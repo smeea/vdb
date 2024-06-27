@@ -145,20 +145,10 @@ const Diff = () => {
               ) ? (
                 <>
                   <div className="basis-full sm:basis-5/9">
-                    <DiffCrypt
-                      deckid={deck.deckid}
-                      isEditable={deck.isAuthor && !deck.isPublic && !deck.isFrozen}
-                      cardsFrom={deck.crypt}
-                      cardsTo={deckTo.crypt}
-                    />
+                    <DiffCrypt deck={deck} cardsTo={deckTo.crypt} />
                   </div>
                   <div className="basis-full sm:basis-4/9">
-                    <DiffLibrary
-                      deckid={deck.deckid}
-                      isEditable={deck.isAuthor && !deck.isPublic && !deck.isFrozen}
-                      cardsFrom={deck.library}
-                      cardsTo={deckTo.library}
-                    />
+                    <DiffLibrary deck={deck} cardsTo={deckTo.library} />
                   </div>
                 </>
               ) : (

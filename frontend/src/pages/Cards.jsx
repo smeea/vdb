@@ -130,7 +130,7 @@ const Cards = () => {
               {card && (
                 <>
                   {playtestMode || card.Id < 110000 || (card.Id > 200000 && card.Id < 210000) ? (
-                    <div className="flex brder border-bgSecondary dark:border-bgSecondaryDark">
+                    <div className="flex border-bgSecondary dark:border-bgSecondaryDark">
                       <div>
                         <CardImage card={card} set={imageSet} />
                       </div>

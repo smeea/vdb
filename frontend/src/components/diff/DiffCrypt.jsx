@@ -4,10 +4,14 @@ import { DiffCryptTable, ResultModal, DeckCryptHeader } from '@/components';
 import { useApp, deckStore } from '@/context';
 import { useModalCardController, useKeyDisciplines, useDeckCrypt } from '@/hooks';
 
-const DiffCrypt = ({ cardsFrom, cardsTo, deckid, isEditable }) => {
+const DiffCrypt = ({ cardsTo, deck }) => {
   const { cryptDeckSort, changeCryptDeckSort, setShowFloatingButtons } = useApp();
   const changeTimer = useSnapshot(deckStore).cryptTimer;
   const [showInfo, setShowInfo] = useState(false);
+
+  const cardsFrom = deck.crypt;
+  const { deckid, isPublic, isAuthor, isFrozen } = deck;
+  const isEditable = isAuthor && !isPublic && !isFrozen;
 
   const sortMethods = {
     Capacity: 'C',

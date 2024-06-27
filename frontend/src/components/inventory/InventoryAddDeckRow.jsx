@@ -32,8 +32,8 @@ const InventoryAddDeckRow = ({ deck, allTagsOptions }) => {
                 deck.inventoryType === 's'
                   ? 'Flexible'
                   : deck.inventoryType === 'h'
-                  ? 'Fixed'
-                  : 'Virtual'
+                    ? 'Fixed'
+                    : 'Virtual'
               }
             >
               {deck.inventoryType == 's' && <Shuffle />}

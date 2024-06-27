@@ -40,7 +40,7 @@ const ReviewLibrary = ({ cardChange, cardsFrom, cardsTo }) => {
 
   return (
     <>
-      <div className={isMobile ? null : 'top-[32px] z-10 bg-bgPrimary dark:bg-bgPrimaryDark'}>
+      <div className={isMobile ? '' : 'top-[32px] z-10 bg-bgPrimary dark:bg-bgPrimaryDark'}>
         <DeckLibraryHeader
           libraryTotal={libraryTotal}
           bloodTotal={bloodTotal}
