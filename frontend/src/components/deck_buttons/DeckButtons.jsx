@@ -53,12 +53,16 @@ const DeckButtons = ({
             )}
             {username && <DeckCloneButton deck={deck} />}
             <DeckExportButton deck={deck} />
-            {isAuthor && !isPublic && <DeckDeleteButton deck={deck} />}
-            {isAuthor && !isPublic && <DeckBranchCreateButton deck={deck} />}
-            {isAuthor && !isPublic && isBranches && <DeckBranchDeleteButton deck={deck} />}
-            {(isPublic || publicChild) && <DeckPublicSwitchButton deck={deck} />}
-            {isPublic && <DeckPublicSyncButton deck={deck} />}
-            {isAuthor && !publicChild && <DeckPublicToggleButton deck={deck} />}
+            {isAuthor && (
+              <>
+                {!isPublic && <DeckDeleteButton deck={deck} />}
+                {!isPublic && <DeckBranchCreateButton deck={deck} />}
+                {!isPublic && isBranches && <DeckBranchDeleteButton deck={deck} />}
+                {(isPublic || publicChild) && <DeckPublicSwitchButton deck={deck} />}
+                {isPublic && <DeckPublicSyncButton deck={deck} />}
+                {!publicChild && <DeckPublicToggleButton deck={deck} />}
+              </>
+            )}
             <DeckDiffButton deckid={deck.deckid} />
             <DeckReviewButton deck={deck} />
             <DeckCopyUrlButton setQrUrl={setQrUrl} deck={deck} />

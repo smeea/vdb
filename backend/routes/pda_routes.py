@@ -152,42 +152,6 @@ def minify_pda(d):
 
     return deck
 
-@app.route("/api/pda/<string:deckid>", methods=["GET"])
-def get_pda(deckid):
-    d = Deck.query.get(deckid)
-    if not d:
-        abort(400)
-
-    is_author = current_user == d.author
-
-    deck = {
-        "author": d.author_public_name,
-        "cards": d.cards,
-        "deckid": d.deckid,
-        "description": d.description,
-        "favorited": d.favorited,
-        "isAuthor": is_author,
-        "isNonEditable": bool(not d.author),
-        "name": d.name,
-        "publicChild": d.public_child if is_author else bool(d.public_child),
-        "publicParent": d.public_parent if is_author else bool(d.public_parent),
-        "tags": d.tags,
-        "timestamp": d.timestamp,
-    }
-
-    if is_author:
-        deck = {
-            **deck,
-            "branches": d.branches,
-            "master": d.master,
-            "branchName": d.branch_name,
-            "inventoryType": d.inventory_type,
-            "isFrozen": d.frozen,
-            "isHidden": d.hidden,
-        }
-
-    return jsonify(deck)
-
 @app.route("/api/pda/authors", methods=["GET"])
 def get_pda_authors_route():
     authors = []
