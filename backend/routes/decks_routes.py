@@ -113,7 +113,7 @@ def new_deck_route():
 
 @app.route("/api/deck/<string:deckid>", methods=["GET"])
 def get_deck_route(deckid):
-    if len(deckid) == 8:
+    if len(deckid) == 9:
         d = Deck.query.get(deckid)
         if not d:
             abort(400)
