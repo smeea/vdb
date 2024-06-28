@@ -25,6 +25,11 @@ with app.app_context():
             if i:
                 i = i[:9]
 
+        branches = deck.branches
+        if branches:
+            for idx, i in enumerate(branches):
+                branches[idx] = i[:9]
+
         # new_cards = {}
         # new_used_cards = {}
 
