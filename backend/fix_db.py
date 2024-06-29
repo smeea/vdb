@@ -21,14 +21,18 @@ with app.app_context():
             print('COLLISION: ', deck.deckid, d.deckid)
         deck.deckid = short_deckid
 
-        for i in [deck.master, deck.public_child, deck.public_parent]:
-            if i:
-                i = i[:9]
+        if deck.master:
+            deck.master = deck.master[:9]
+        if deck.public_child:
+            deck.public_child = deck.public_child[:9]
+        if deck.public_parent:
+            deck.public_parent = deck.public_parent[:9]
 
-        branches = deck.branches
-        if branches:
+        if deck.branches:
+            branches = deck.branches.copy()
             for idx, i in enumerate(branches):
                 branches[idx] = i[:9]
+            deck.branches = branches
 
         # new_cards = {}
         # new_used_cards = {}
