@@ -22,15 +22,15 @@ const useSwipe = (
         e.initial[0] > SWIPE_IGNORED_LEFT_EDGE &&
         e.absX > SWIPE_THRESHOLD &&
         condition &&
-        conditionLeft
+        conditionRight
       ) {
-        setIsSwiped('left');
+        setIsSwiped('right');
         actionRight();
       }
     },
     onSwipedLeft: (e) => {
-      if (e.absX > SWIPE_THRESHOLD && condition && conditionRight) {
-        setIsSwiped('right');
+      if (e.absX > SWIPE_THRESHOLD && condition && conditionLeft) {
+        setIsSwiped('left');
         actionLeft();
       }
     },

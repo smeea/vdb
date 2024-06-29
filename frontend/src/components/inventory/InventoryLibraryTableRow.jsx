@@ -15,13 +15,8 @@ import {
 } from '@/components';
 import { POOL_COST, BLOOD_COST, BURN_OPTION } from '@/utils/constants';
 import { getHardTotal, getSoftMax } from '@/utils';
-import {
-  useApp,
-  usedStore,
-  limitedStore,
-  // inventoryCardChange,
-} from '@/context';
-// import { useSwipe } from '@/hooks';
+import { useApp, usedStore, limitedStore, inventoryCardChange } from '@/context';
+import { useSwipe } from '@/hooks';
 
 const InventoryLibraryTableRow = ({ card, compact, newFocus, inShared, handleClick }) => {
   const { isMobile, isNarrow, limitedMode } = useApp();
@@ -31,23 +26,19 @@ const InventoryLibraryTableRow = ({ card, compact, newFocus, inShared, handleCli
   const softUsedMax = getSoftMax(usedLibrary.soft[card.c.Id]);
   const hardUsedTotal = getHardTotal(usedLibrary.hard[card.c.Id]);
 
-  // TODO fix bg-color changes on swipes (not working probably because of virtualized as same code work in Decks)
-  // removed as without bg-color it is very easy to mistakenly swipe and not even notice
-  //
-  // const { isSwiped, swipeHandlers } = useSwipe(
-  //   () => inventoryCardChange(card.c, card.q - 1),
-  //   () => inventoryCardChange(card.c, card.q + 1),
-  // );
-  //
-  // const trBg = isSwiped
-  //   ? isSwiped === 'right'
-  //     ? 'bg-bgSuccess dark:bg-bgSuccessDark'
-  //     : 'bg-bgErrorSecondary dark:bg-bgErrorSecondaryDark'
-  //   : '';
+  const { isSwiped, swipeHandlers } = useSwipe(
+    () => inventoryCardChange(card.c, card.q - 1),
+    () => inventoryCardChange(card.c, card.q + 1),
+  );
+
+  const trBg = isSwiped
+    ? isSwiped === 'right'
+      ? 'bg-bgSuccess dark:bg-bgSuccessDark'
+      : 'bg-bgErrorSecondary dark:bg-bgErrorSecondaryDark'
+    : '';
 
   return (
-    // <div className={`flex w-full items-center ${trBg}`} {...swipeHandlers}>
-    <div className="flex w-full items-center">
+    <div className={`flex w-full items-center ${trBg}`} {...swipeHandlers}>
       {inShared ? (
         <div
           className={`flex h-full min-w-[45px] items-center justify-center border-r border-bgSecondary bg-blue/5 text-lg dark:border-bgSecondaryDark`}

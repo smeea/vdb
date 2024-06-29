@@ -40,7 +40,7 @@ const ResultModal = ({ card, handleModalCardChange, handleClose, forceInventoryM
     }
   }, [card, isHotkeysDisabled]);
 
-  const swipeHandlers = useSwipe(
+  const { swipeHandlers } = useSwipe(
     () => handleModalCardChange(1),
     () => handleModalCardChange(-1),
   );

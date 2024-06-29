@@ -1,5 +1,4 @@
 # FIX
-- Swipes in inventory to change bg-colors (swipes disabled until fixes)
 - Snapshot url in iOS
 - Page update in iOS
 
