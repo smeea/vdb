@@ -119,14 +119,6 @@ def get_random_twd_route(quantity):
 
     return jsonify(decks)
 
-@app.route("/api/twd/<string:deckid>", methods=["GET"])
-def get_twd(deckid):
-    with open("twd_decks.json", "r") as twd_decks_file:
-        twd_decks = json.load(twd_decks_file)
-        deck = sanitize_twd(twd_decks[deckid])
-
-        return jsonify(deck)
-
 @app.route("/api/search/twd", methods=["POST"])
 def search_twd_route():
     query_priority = [
