@@ -10,8 +10,7 @@ import {
 import { useApp } from '@/context';
 
 const DeckDetails = ({ deck, allTagsOptions, folded, setFolded }) => {
-  const { isMobile } = useApp();
-
+  const { isPlaytester, isMobile } = useApp();
   const playtestPrecon = deck.deckid.includes('PLAYTEST:') && deck.deckid.replace('PLAYTEST:', '');
 
   return (
@@ -36,7 +35,7 @@ const DeckDetails = ({ deck, allTagsOptions, folded, setFolded }) => {
         </div>
       </div>
       <div className={`flex ${!folded || isMobile ? 'flex-col' : 'flex-row'} gap-2`}>
-        {playtestPrecon ? (
+        {isPlaytester && playtestPrecon ? (
           <div className="basis-full">
             <PlaytestReportForm id={playtestPrecon} isPrecon />
           </div>
