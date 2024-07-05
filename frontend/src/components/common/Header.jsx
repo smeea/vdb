@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Header = ({ height = 'min-h-[38px]', className = '', children }) => {
+const Header = ({ className = '', children }) => {
   return (
     <div
-      className={`flex ${height} items-center justify-between bg-bgSecondary dark:bg-bgSecondaryDark text-fgSecondary dark:text-fgPrimaryDark ${className}`}
+      className={`flex min-h-[38px] items-center justify-between bg-bgSecondary dark:bg-bgSecondaryDark text-fgSecondary dark:text-fgPrimaryDark ${className}`}
     >
       {children}
     </div>

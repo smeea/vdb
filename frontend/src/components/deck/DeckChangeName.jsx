@@ -50,12 +50,12 @@ const DeckChangeName = ({ deck }) => {
           ${isAuthor || isNonEditable || isPublic || isTwd ? '' : 'border-r'}`}
       />
       {(isPublic || isTwd) && (
-        <InputLabel title={isPublic ? 'Public Deck' : 'Tournament Winning Deck'} isEnd>
+        <InputLabel title={isPublic ? 'Public Deck' : 'Tournament Winning Deck'} isLast>
           {isPublic ? <PeopleFill /> : <TrophyFill />}
         </InputLabel>
       )}
       {isNonEditable && (
-        <InputLabel title="Deck is non-editable and will never change" isEnd>
+        <InputLabel title="Deck is non-editable and will never change" isLast>
           <Snow width="16" height="23" viewBox="0 0 16 16" />
         </InputLabel>
       )}

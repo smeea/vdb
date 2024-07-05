@@ -14,5 +14,3 @@
 - Update to React 19
 - Update to TailwindCSS 4 (migrate from isWidth to container queries)
 - Remove legacy polyfills when Safari adopts groupBy
-- Refactor with cva, twMerge
-- Refactor with css @apply for repeating styles

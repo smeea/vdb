@@ -1,7 +1,6 @@
 import React from 'react';
 import { Dialog } from '@headlessui/react';
 import { ButtonCloseModal, ButtonFloatClose } from '@/components';
-import { useApp } from '@/context';
 
 const Modal = ({
   handleClose,
@@ -13,8 +12,6 @@ const Modal = ({
   initialFocus,
   noBorder,
 }) => {
-  const { isNarrow } = useApp();
-
   const widthClass = {
     sm: 'min-w-full sm:min-w-[500px] sm:max-w-[550px]',
     md: 'min-w-full sm:min-w-[650px] sm:max-w-[725px]',
@@ -49,7 +46,9 @@ const Modal = ({
                   <div className="text-lg font-bold text-fgSecondary dark:text-fgSecondaryDark">
                     {title}
                   </div>
-                  {!isNarrow && <ButtonCloseModal handleClick={handleClose} />}
+                  <div className="max-md:hidden">
+                    <ButtonCloseModal handleClick={handleClose} />
+                  </div>
                 </>
               )}
             </Dialog.Title>
@@ -60,7 +59,9 @@ const Modal = ({
           </Dialog.Panel>
         </div>
       </div>
-      {isNarrow && <ButtonFloatClose handleClose={handleClose} />}
+      <div className="md:hidden">
+        <ButtonFloatClose handleClose={handleClose} />
+      </div>
     </Dialog>
   );
 };

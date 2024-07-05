@@ -17,8 +17,11 @@ const Button = ({
   noPadding,
   noOutline,
 }) => {
-  const outlineStyle =
-    'focus:outline outline-1 outline-bgCheckboxSelected dark:outline-bgCheckboxSelectedDark';
+  const outlineStyle = `focus:outline ${
+    noOutline
+      ? 'outline-0'
+      : 'outline-1 outline-bgCheckboxSelected dark:outline-bgCheckboxSelectedDark'
+  }`;
 
   const paddingStyle = noPadding ? '' : 'px-3 py-1.5';
 
@@ -39,11 +42,7 @@ const Button = ({
 
   return (
     <button
-      className={`${roundedStyle} ${
-        noOutline ? 'focus:outline outline-0' : outlineStyle
-      } ${borderStyle} ${
-        customStyle[variant]
-      } flex items-center justify-center font-normal ${paddingStyle} ${className}`}
+      className={`${roundedStyle} ${outlineStyle} ${borderStyle} ${customStyle[variant]} flex items-center justify-center font-normal ${paddingStyle} ${className}`}
       onClick={onClick}
       title={title}
       disabled={disabled}
