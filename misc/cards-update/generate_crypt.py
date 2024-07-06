@@ -182,7 +182,7 @@ def generate_card(card):
         if card["Type"] == "Imbued":
             card["Sect"] = "Imbued"
         else:
-            text = re.split("\W+", card["Card Text"])
+            text = re.split("\\W+", card["Card Text"])
             if text[0] == "Advanced":
                 card["Sect"] = text[1]
             else:
