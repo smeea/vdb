@@ -61,10 +61,12 @@ const Decks = () => {
     const deckData = await loaderData.deckData;
 
     if (deckData.error) {
-      if (deckData.error == 400) {
-        setError('NO DECK WITH THIS ID');
-      } else {
-        setError('CONNECTION PROBLEM');
+      switch (deckData.error) {
+        case 400:
+          setError('NO DECK WITH THIS ID');
+          break;
+        default:
+          setError('CONNECTION PROBLEM');
       }
       setDeck(undefined);
       return;

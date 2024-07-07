@@ -7,6 +7,41 @@ from deck_recommendation import deck_recommendation
 from api import app, db, login
 from models import Deck
 
+def get_twd_deck(deckid):
+    with open("twd_decks.json", "r") as twd_decks_file:
+        twd_decks = json.load(twd_decks_file)
+
+        if deckid in twd_decks:
+            deck = twd_decks[deckid]
+            comments = (
+                deck["description"] if deck["description"] != "Unknown" else ""
+            )
+            deck["description"] = "Date: " + deck["creation_date"] + "\n"
+            deck["description"] += "Players: " + str(deck["players"]) + "\n"
+            deck["description"] += "Event: " + deck["event"] + "\n"
+            deck["description"] += "Location: " + deck["location"] + "\n"
+            if comments:
+                deck["description"] += "\n" + comments
+
+            del deck["disciplines"]
+            del deck["format"]
+            del deck["event"]
+            del deck["link"]
+            del deck["location"]
+            del deck["players"]
+            del deck["score"]
+            del deck["traits"]
+            del deck["clan"]
+            del deck["capacity"]
+            del deck["cardtypes_ratio"]
+            del deck["crypt_total"]
+            del deck["library_total"]
+
+            return deck
+
+        else:
+            return None
+
 def parse_user_decks(user_decks):
     decks = {}
     for deck in user_decks:
@@ -113,76 +148,45 @@ def new_deck_route():
 
 @app.route("/api/deck/<string:deckid>", methods=["GET"])
 def get_deck_route(deckid):
-    if len(deckid) == 9:
-        d = Deck.query.get(deckid)
-        if not d:
+    d = Deck.query.get(deckid)
+    if not d:
+        # fallback for old twd urls length of 0
+        # now twd deckids of length 9 have trailing 0 to avoid collision with user deck ids
+        deck = get_twd_deck(f"{deckid}0")
+        if not deck:
             abort(400)
-
-        is_author = current_user == d.author
-
-        deck = {
-            "author": d.author_public_name,
-            "cards": d.cards,
-            "deckid": d.deckid,
-            "description": d.description,
-            "favorited": d.favorited,
-            "isAuthor": is_author,
-            "isNonEditable": bool(not d.author),
-            "name": d.name,
-            "publicChild": d.public_child if is_author else bool(d.public_child),
-            "publicParent": d.public_parent if is_author else bool(d.public_parent),
-            "tags": d.tags,
-            "timestamp": d.timestamp,
-        }
-
-        if is_author:
-            deck = {
-                **deck,
-                "branches": d.branches,
-                "master": d.master,
-                "branchName": d.branch_name,
-                "inventoryType": d.inventory_type,
-                "isFrozen": d.frozen,
-                "isHidden": d.hidden,
-            }
 
         return jsonify(deck)
 
-    else:
-        with open("twd_decks.json", "r") as twd_decks_file:
-            twd_decks = json.load(twd_decks_file)
+    is_author = current_user == d.author
 
-            try:
-                deck = twd_decks[deckid]
-                comments = (
-                    deck["description"] if deck["description"] != "Unknown" else ""
-                )
-                deck["description"] = "Date: " + deck["creation_date"] + "\n"
-                deck["description"] += "Players: " + str(deck["players"]) + "\n"
-                deck["description"] += "Event: " + deck["event"] + "\n"
-                deck["description"] += "Location: " + deck["location"] + "\n"
-                if comments:
-                    deck["description"] += "\n" + comments
+    deck = {
+        "author": d.author_public_name,
+        "cards": d.cards,
+        "deckid": d.deckid,
+        "description": d.description,
+        "favorited": d.favorited,
+        "isAuthor": is_author,
+        "isNonEditable": bool(not d.author),
+        "name": d.name,
+        "publicChild": d.public_child if is_author else bool(d.public_child),
+        "publicParent": d.public_parent if is_author else bool(d.public_parent),
+        "tags": d.tags,
+        "timestamp": d.timestamp,
+    }
 
-                del deck["disciplines"]
-                del deck["format"]
-                del deck["event"]
-                del deck["link"]
-                del deck["location"]
-                del deck["players"]
-                del deck["score"]
-                del deck["traits"]
-                del deck["clan"]
-                del deck["capacity"]
-                del deck["cardtypes_ratio"]
-                del deck["crypt_total"]
-                del deck["library_total"]
+    if is_author:
+        deck = {
+            **deck,
+            "branches": d.branches,
+            "master": d.master,
+            "branchName": d.branch_name,
+            "inventoryType": d.inventory_type,
+            "isFrozen": d.frozen,
+            "isHidden": d.hidden,
+        }
 
-                return jsonify(deck)
-
-            except KeyError:
-                abort(400)
-
+    return jsonify(deck)
 
 @app.route("/api/deck/<string:deckid>", methods=["DELETE"])
 @login_required
