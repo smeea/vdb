@@ -29,12 +29,12 @@ const DeckSelectorAndDisplay = () => {
       <div className="sticky z-10 flex space-x-1 bg-bgPrimary dark:bg-bgPrimaryDark sm:top-10">
         {addMode && (
           <>
-            <div className={isBranches ? 'w-3/4' : 'w-full'}>
+            <div className="w-full">
               <DeckSelectMy handleSelect={handleSelect} deckid={deck?.deckid ?? null} />
             </div>
             {isBranches && (
-              <div className="w-1/4">
-                <DeckBranchSelect deck={deck ?? null} />
+              <div className="min-w-[90px]">
+                <DeckBranchSelect handleSelect={handleSelect} deck={deck} />
               </div>
             )}
             {deck?.isAuthor && !deck?.isPublic && <DeckFreezeButton deck={deck} />}
