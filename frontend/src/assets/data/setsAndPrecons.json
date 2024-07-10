@@ -19,14 +19,6 @@
         "name": "Lasombra",
         "clan": "Lasombra"
       },
-      "30th": {
-        "name": "30th Anniversary: Deck",
-        "clan": "Toreador"
-      },
-      "30thE": {
-        "name": "30th Anniversary: Extra",
-        "clan": "Bundle"
-      },
       "NR": {
         "name": "New Blood: Ravnos",
         "clan": "Ravnos"
@@ -46,6 +38,16 @@
       "NL": {
         "name": "New Blood: Lasombra",
         "clan": "Lasombra"
+      }
+    }
+  },
+  "30th": {
+    "name": "30th Anniversary",
+    "date": "2024-07-20",
+    "precons": {
+      "": {
+        "name": "30th Anniversary (Toreador)",
+        "clan": "Toreador"
       }
     }
   },

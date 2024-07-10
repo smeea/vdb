@@ -4315,6 +4315,37 @@
         "Title":"primogen",
         "Twd":5
     },
+    "201693":{
+        "ASCII Name":"Annabelle Triabell",
+        "Adv":"",
+        "Artist":[
+            "Amy Wilkins"
+        ],
+        "Banned":"",
+        "Capacity":9,
+        "Card Text":"Camarilla primogen: While Annabelle is locked, other Toreador you control get +1 stealth.",
+        "Clan":"Toreador",
+        "Disciplines":{
+            "Dominate":1,
+            "Fortitude":1,
+            "Auspex":2,
+            "Celerity":2,
+            "Presence":2
+        },
+        "Group":"6",
+        "Id":201693,
+        "Name":"Annabelle Triabell",
+        "New":true,
+        "Rulings":[],
+        "Sect":"Camarilla",
+        "Set":{
+            "30th":{
+                "":"2"
+            }
+        },
+        "Title":"primogen",
+        "Twd":0
+    },
     "200104":{
         "ASCII Name":"Annazir",
         "Adv":"",
@@ -13813,6 +13844,36 @@
         "Title":"",
         "Twd":2
     },
+    "201694":{
+        "ASCII Name":"Diana Iadanza",
+        "Adv":"",
+        "Artist":[
+            "Carmen Cornet"
+        ],
+        "Banned":"",
+        "Capacity":9,
+        "Card Text":"Camarilla Toreador Justicar: During a referendum she calls, Diana can burn 1 blood to cancel a reaction card as it is played (cost is still paid). +1 bleed.",
+        "Clan":"Toreador",
+        "Disciplines":{
+            "Auspex":2,
+            "Celerity":2,
+            "Fortitude":2,
+            "Presence":2
+        },
+        "Group":"7",
+        "Id":201694,
+        "Name":"Diana Iadanza",
+        "New":false,
+        "Rulings":[],
+        "Sect":"Camarilla",
+        "Set":{
+            "30th":{
+                "":"3"
+            }
+        },
+        "Title":"justicar",
+        "Twd":0
+    },
     "200342":{
         "ASCII Name":"Diana Vick",
         "Adv":"",
@@ -14719,6 +14780,35 @@
         },
         "Title":"prince",
         "Twd":52
+    },
+    "201695":{
+        "ASCII Name":"Donal O'Connor",
+        "Adv":"",
+        "Artist":[
+            "Lawrence Snelly"
+        ],
+        "Banned":"",
+        "Capacity":8,
+        "Card Text":"Camarilla Prince of Dublin: During your minion phase, D\u00f3nal can burn 1 blood to unlock.",
+        "Clan":"Brujah",
+        "Disciplines":{
+            "Celerity":2,
+            "Dominate":2,
+            "Potence":2
+        },
+        "Group":"6",
+        "Id":201695,
+        "Name":"D\u00f3nal O'Connor",
+        "New":true,
+        "Rulings":[],
+        "Sect":"Camarilla",
+        "Set":{
+            "30th":{
+                "":"1"
+            }
+        },
+        "Title":"prince",
+        "Twd":0
     },
     "200365":{
         "ASCII Name":"Donald Cargill",
@@ -19061,6 +19151,38 @@
         },
         "Title":"prince",
         "Twd":81
+    },
+    "201696":{
+        "ASCII Name":"Francois Villon",
+        "Adv":"",
+        "Artist":[
+            "Carmen Cornet"
+        ],
+        "Banned":"",
+        "Capacity":10,
+        "Card Text":"Camarilla Prince of Paris: If Fran\u00e7ois is ready during your unlock phase, he can burn 2 blood to lock a younger vampire. +1 bleed.",
+        "Clan":"Toreador",
+        "Disciplines":{
+            "Animalism":1,
+            "Obfuscate":1,
+            "Potence":1,
+            "Auspex":2,
+            "Celerity":2,
+            "Presence":2
+        },
+        "Group":"6",
+        "Id":201696,
+        "Name":"Fran\u00e7ois Villon",
+        "New":true,
+        "Rulings":[],
+        "Sect":"Camarilla",
+        "Set":{
+            "30th":{
+                "":"3"
+            }
+        },
+        "Title":"prince",
+        "Twd":0
     },
     "200479":{
         "ASCII Name":"Francois \"Warden\" Loehr",
@@ -24283,6 +24405,37 @@
         "Title":"",
         "Twd":2
     },
+    "201697":{
+        "ASCII Name":"Ian Carfax",
+        "Adv":"",
+        "Artist":[
+            "Gin\u00e9s Qui\u00f1onero"
+        ],
+        "Banned":"",
+        "Capacity":9,
+        "Card Text":"Camarilla Tremere Justicar: Once each turn after a combat involving Ian ends, he can unlock if the opposing minion is not ready. +1 intercept.",
+        "Clan":"Tremere",
+        "Disciplines":{
+            "Fortitude":1,
+            "Protean":1,
+            "Auspex":2,
+            "Dominate":2,
+            "Blood Sorcery":2
+        },
+        "Group":"7",
+        "Id":201697,
+        "Name":"Ian Carfax",
+        "New":false,
+        "Rulings":[],
+        "Sect":"Camarilla",
+        "Set":{
+            "30th":{
+                "":"2"
+            }
+        },
+        "Title":"justicar",
+        "Twd":0
+    },
     "200616":{
         "ASCII Name":"Ian Forestal",
         "Adv":"",
@@ -28608,6 +28761,37 @@
         "Title":"",
         "Twd":6
     },
+    "201698":{
+        "ASCII Name":"Juliet Parr",
+        "Adv":"",
+        "Artist":[
+            "Mark Kelly"
+        ],
+        "Banned":"",
+        "Capacity":9,
+        "Card Text":"Camarilla Malkavian Justicar: After a referendum called by Juliet passes, you get +2 hand size until your next unlock phase. Juliet gets 1 optional maneuver each combat.",
+        "Clan":"Malkavian",
+        "Disciplines":{
+            "Celerity":1,
+            "Potence":1,
+            "Auspex":2,
+            "Dominate":2,
+            "Obfuscate":2
+        },
+        "Group":"7",
+        "Id":201698,
+        "Name":"Juliet Parr",
+        "New":false,
+        "Rulings":[],
+        "Sect":"Camarilla",
+        "Set":{
+            "30th":{
+                "":"2"
+            }
+        },
+        "Title":"justicar",
+        "Twd":0
+    },
     "200736":{
         "ASCII Name":"Julio Martinez",
         "Adv":"",
@@ -29558,7 +29742,7 @@
         ],
         "Banned":"",
         "Capacity":9,
-        "Card Text":"Camarilla Banu Haqim Justicar: Once each combat, Kasim can discard a political action card [POLITICALACTION] before range is determined to get +2 strength that combat. +1 bleed.",
+        "Card Text":"Camarilla /Banu Haqim Justicar/: Once each combat, Kasim can discard a political action card [POLITICALACTION] before range is determined to get +2 strength that combat. +1 bleed.",
         "Clan":"Banu Haqim",
         "Disciplines":{
             "Auspex":1,
@@ -29906,6 +30090,33 @@
         },
         "Title":"",
         "Twd":24
+    },
+    "201699":{
+        "ASCII Name":"Kazuki Hanabira",
+        "Adv":"",
+        "Artist":[
+            "Ken Meyer, Jr."
+        ],
+        "Banned":"",
+        "Capacity":2,
+        "Card Text":"Camarilla.",
+        "Clan":"Toreador",
+        "Disciplines":{
+            "Auspex":1
+        },
+        "Group":"7",
+        "Id":201699,
+        "Name":"Kazuki Hanabira",
+        "New":false,
+        "Rulings":[],
+        "Sect":"Camarilla",
+        "Set":{
+            "30th":{
+                "":"1"
+            }
+        },
+        "Title":"",
+        "Twd":0
     },
     "201659":{
         "ASCII Name":"Keegan",
@@ -34228,6 +34439,38 @@
         "Title":"justicar",
         "Twd":56
     },
+    "201700":{
+        "ASCII Name":"Lucinde, Alastor",
+        "Adv":"",
+        "Artist":[
+            "Mark Kelly"
+        ],
+        "Banned":"",
+        "Capacity":10,
+        "Card Text":"Camarilla Ventrue Justicar: During your master phase, Lucinde can burn 1 blood to choose a vampire; this turn, Camarilla vampires you control can enter combat with the chosen vampire as a (D) action. +1 bleed.",
+        "Clan":"Ventrue",
+        "Disciplines":{
+            "Obfuscate":1,
+            "Potence":1,
+            "Blood Sorcery":1,
+            "Dominate":2,
+            "Fortitude":2,
+            "Presence":2
+        },
+        "Group":"7",
+        "Id":201700,
+        "Name":"Lucinde, Alastor",
+        "New":true,
+        "Rulings":[],
+        "Sect":"Camarilla",
+        "Set":{
+            "30th":{
+                "":"2"
+            }
+        },
+        "Title":"justicar",
+        "Twd":0
+    },
     "200874":{
         "ASCII Name":"Lucita",
         "Adv":[
@@ -35800,6 +36043,36 @@
         },
         "Title":"archbishop",
         "Twd":17
+    },
+    "201702":{
+        "ASCII Name":"Marcos Belegrad",
+        "Adv":"",
+        "Artist":[
+            "Gin\u00e9s Qui\u00f1onero"
+        ],
+        "Banned":"",
+        "Capacity":8,
+        "Card Text":"Camarilla Prince of Bogota: Methuselahs casting (including controlling a minion casting) votes or ballots against a referendum called by Marcos burn 1 pool once results are tallied.",
+        "Clan":"Toreador",
+        "Disciplines":{
+            "Animalism":1,
+            "Auspex":2,
+            "Celerity":2,
+            "Presence":2
+        },
+        "Group":"7",
+        "Id":201702,
+        "Name":"Marcos Belegrad",
+        "New":false,
+        "Rulings":[],
+        "Sect":"Camarilla",
+        "Set":{
+            "30th":{
+                "":"1"
+            }
+        },
+        "Title":"prince",
+        "Twd":0
     },
     "200915":{
         "ASCII Name":"Marcus Vitel",
@@ -39424,6 +39697,66 @@
         "Title":"prince",
         "Twd":9
     },
+    "201703":{
+        "ASCII Name":"Modius",
+        "Adv":"",
+        "Artist":[
+            "Carmen Cornet"
+        ],
+        "Banned":"",
+        "Capacity":8,
+        "Card Text":"Camarilla Prince of Gary: During the polling step of any referendum, Modius can discard a master card to get +1 vote.",
+        "Clan":"Toreador",
+        "Disciplines":{
+            "Obfuscate":1,
+            "Auspex":2,
+            "Celerity":2,
+            "Presence":2
+        },
+        "Group":"7",
+        "Id":201703,
+        "Name":"Modius",
+        "New":false,
+        "Rulings":[],
+        "Sect":"Camarilla",
+        "Set":{
+            "30th":{
+                "":"2"
+            }
+        },
+        "Title":"prince",
+        "Twd":0
+    },
+    "201704":{
+        "ASCII Name":"Molly MacDonald",
+        "Adv":"",
+        "Artist":[
+            "Carmen Cornet"
+        ],
+        "Banned":"",
+        "Capacity":10,
+        "Card Text":"Camarilla Nosferatu Justicar: Molly gets +1 vote and +1 bleed if your prey controls a non-Camarilla vampire. +1 strength.",
+        "Clan":"Nosferatu",
+        "Disciplines":{
+            "Animalism":2,
+            "Obfuscate":2,
+            "Potence":2,
+            "Protean":2
+        },
+        "Group":"7",
+        "Id":201704,
+        "Name":"Molly MacDonald",
+        "New":false,
+        "Rulings":[],
+        "Sect":"Camarilla",
+        "Set":{
+            "30th":{
+                "":"2"
+            }
+        },
+        "Title":"justicar",
+        "Twd":0
+    },
     "201003":{
         "ASCII Name":"Monica Chang",
         "Adv":"",
@@ -41776,6 +42109,36 @@
         },
         "Title":"prince",
         "Twd":63
+    },
+    "201705":{
+        "ASCII Name":"Nikolaus Vermeulen",
+        "Adv":"",
+        "Artist":[
+            "Noora Hirvonen"
+        ],
+        "Banned":"",
+        "Capacity":7,
+        "Card Text":"Camarilla Prince of Brussels: During your influence phase, you can burn the Edge to add 1 blood to a Nosferatu in your uncontrolled region.",
+        "Clan":"Nosferatu",
+        "Disciplines":{
+            "Fortitude":1,
+            "Obfuscate":1,
+            "Animalism":2,
+            "Potence":2
+        },
+        "Group":"6",
+        "Id":201705,
+        "Name":"Nikolaus Vermeulen",
+        "New":true,
+        "Rulings":[],
+        "Sect":"Camarilla",
+        "Set":{
+            "30th":{
+                "":"2"
+            }
+        },
+        "Title":"prince",
+        "Twd":0
     },
     "201061":{
         "ASCII Name":"Nitidas",
@@ -50774,6 +51137,34 @@
         "Title":"",
         "Twd":3
     },
+    "201706":{
+        "ASCII Name":"Silvian Popescu",
+        "Adv":"",
+        "Artist":[
+            "Mar\u00eda Lor\u00e9n"
+        ],
+        "Banned":"",
+        "Capacity":4,
+        "Card Text":"Camarilla: During your unlock phase, you can move 1 blood from a prince you control to Silvian.",
+        "Clan":"Toreador",
+        "Disciplines":{
+            "Celerity":1,
+            "Presence":2
+        },
+        "Group":"7",
+        "Id":201706,
+        "Name":"Silvian Popescu",
+        "New":false,
+        "Rulings":[],
+        "Sect":"Camarilla",
+        "Set":{
+            "30th":{
+                "":"1"
+            }
+        },
+        "Title":"",
+        "Twd":0
+    },
     "201289":{
         "ASCII Name":"Sir Henry Johnson",
         "Adv":"",
@@ -53296,7 +53687,7 @@
         ],
         "Banned":"",
         "Capacity":9,
-        "Card Text":"Camarilla: While Tegyrius is ready, each Camarilla Banu Haqim can burn 1 blood to get +1 vote during the polling step of any referendum. Blood cursed.\n[MERGED] Banu Haqim Justicar.",
+        "Card Text":"Camarilla: While Tegyrius is ready, each Camarilla Banu Haqim can burn 1 blood to get +1 vote during the polling step of any referendum. Blood cursed.\n[MERGED] /Banu Haqim Justicar/.",
         "Clan":"Banu Haqim",
         "Disciplines":{
             "Auspex":2,
@@ -55786,6 +56177,33 @@
         },
         "Title":"",
         "Twd":24
+    },
+    "201707":{
+        "ASCII Name":"Valentina Osako",
+        "Adv":"",
+        "Artist":[
+            "Lawrence Snelly"
+        ],
+        "Banned":"",
+        "Capacity":3,
+        "Card Text":"Camarilla.",
+        "Clan":"Toreador",
+        "Disciplines":{
+            "Presence":2
+        },
+        "Group":"7",
+        "Id":201707,
+        "Name":"Valentina Osako",
+        "New":false,
+        "Rulings":[],
+        "Sect":"Camarilla",
+        "Set":{
+            "30th":{
+                "":"1"
+            }
+        },
+        "Title":"",
+        "Twd":0
     },
     "201653":{
         "ASCII Name":"Valerius",

@@ -3,8 +3,6 @@ from deck_import import deck_import
 
 
 playtest_files = {
-    "precon-30th-round2.txt": "30th",
-    "precon-30th-extra-round2.txt": "30thE",
     "precon-nb-ravnos-round2.txt": "NR",
     "precon-nb-salubri-round2.txt": "NSal",
     "precon-nb-tzimisce-round2.txt": "NTz",

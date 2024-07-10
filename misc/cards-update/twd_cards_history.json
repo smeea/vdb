@@ -592,6 +592,9 @@
         "twd_date":"2003-08-30",
         "player":"Robyn Tatu"
     },
+    "201693":{
+        "deckid":null
+    },
     "200104":{
         "deckid":"2010vicqual",
         "twd_date":"2010-05-22",
@@ -1921,6 +1924,9 @@
         "twd_date":"2021-05-16",
         "player":"Dayvisson Magalh\u00e3es Alves"
     },
+    "201694":{
+        "deckid":null
+    },
     "200342":{
         "deckid":"2k4auscc",
         "twd_date":"2004-10-03",
@@ -2048,6 +2054,9 @@
         "deckid":"rdz-leg",
         "twd_date":"1998-09-19",
         "player":"Legbiter"
+    },
+    "201695":{
+        "deckid":null
     },
     "200365":{
         "deckid":"2k9oktoberfest",
@@ -2646,6 +2655,9 @@
         "deckid":"dallas",
         "twd_date":"1998-03-14",
         "player":"Dallas Card"
+    },
+    "201696":{
+        "deckid":null
     },
     "200479":{
         "deckid":"2k6slcqual",
@@ -3377,6 +3389,9 @@
         "twd_date":"2021-07-18",
         "player":"Bruno Patr\u00edcio Silva Pontes"
     },
+    "201697":{
+        "deckid":null
+    },
     "200616":{
         "deckid":"rob2",
         "twd_date":"1998-09-07",
@@ -4005,6 +4020,9 @@
         "twd_date":"2002-05-04",
         "player":"Johan Carlsson"
     },
+    "201698":{
+        "deckid":null
+    },
     "200736":{
         "deckid":"2k4dcqualifier",
         "twd_date":"2004-06-12",
@@ -4187,6 +4205,9 @@
         "deckid":"2k4genconst",
         "twd_date":"2004-08-21",
         "player":"Ankur Gupta"
+    },
+    "201699":{
+        "deckid":null
     },
     "201659":{
         "deckid":"10986",
@@ -4777,6 +4798,9 @@
         "twd_date":"2003-01-19",
         "player":"Cameron Domer"
     },
+    "201700":{
+        "deckid":null
+    },
     "200874":{
         "deckid":"edmonton2k1",
         "twd_date":"2001-03-17",
@@ -4993,6 +5017,9 @@
         "deckid":"2k2orccon1",
         "twd_date":"2002-02-16",
         "player":"Niki Stewart"
+    },
+    "201702":{
+        "deckid":null
     },
     "200915":{
         "deckid":"2k2tabriz",
@@ -5485,6 +5512,12 @@
         "twd_date":"2021-04-25",
         "player":"Mois\u00e9s Ferrer Gallegos"
     },
+    "201703":{
+        "deckid":null
+    },
+    "201704":{
+        "deckid":null
+    },
     "201003":{
         "deckid":"2018cmbno",
         "twd_date":"2018-03-25",
@@ -5804,6 +5837,9 @@
         "deckid":"todd",
         "twd_date":"1998-08-01",
         "player":"Todd Banister"
+    },
+    "201705":{
+        "deckid":null
     },
     "201061":{
         "deckid":"2012g3lac",
@@ -7059,6 +7095,9 @@
         "twd_date":"2003-06-25",
         "player":"Nick Smith"
     },
+    "201706":{
+        "deckid":null
+    },
     "201289":{
         "deckid":"2k2shadowslengthen",
         "twd_date":"2002-10-12",
@@ -7752,6 +7791,9 @@
         "deckid":"2k2castrovalley",
         "twd_date":"2002-03-30",
         "player":"Ian Lee"
+    },
+    "201707":{
+        "deckid":null
     },
     "201653":{
         "deckid":null
@@ -8878,6 +8920,9 @@
         "twd_date":"2007-05-12",
         "player":"Sebesty\u00e9n Bal\u00e1zs"
     },
+    "102268":{
+        "deckid":null
+    },
     "100134":{
         "deckid":"2013hnqbhj",
         "twd_date":"2013-06-29",
@@ -9580,10 +9625,16 @@
         "twd_date":"2019-10-27",
         "player":"Ivan Chebunin"
     },
+    "102269":{
+        "deckid":null
+    },
     "100284":{
         "deckid":"willlee",
         "twd_date":"1999-02-13",
         "player":"William Lee"
+    },
+    "102270":{
+        "deckid":null
     },
     "100285":{
         "deckid":"ennjsc",
@@ -10149,6 +10200,9 @@
         "player":"Ian Lee"
     },
     "100404":{
+        "deckid":null
+    },
+    "102271":{
         "deckid":null
     },
     "100405":{
@@ -13390,6 +13444,9 @@
         "twd_date":"1999-11-20",
         "player":"Stuart Pieloch"
     },
+    "102272":{
+        "deckid":null
+    },
     "101074":{
         "deckid":"2k4poitiers",
         "twd_date":"2004-05-16",
@@ -13645,6 +13702,9 @@
         "deckid":"2k7capetownnovember",
         "twd_date":"2007-11-17",
         "player":"Daniel Boud"
+    },
+    "102273":{
+        "deckid":null
     },
     "101127":{
         "deckid":"2013nunui",

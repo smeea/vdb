@@ -1502,7 +1502,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Requires a justicar or Inner Circle member.\nChoose a ready Camarilla vampire. If this referendum is successful, search your library for an equipment card and place this card and the equipment on the chosen vampire. Pay half the cost (round down) of the equipment. This vampire may enter combat with any vampire controlled by another Methuselah as a +1 stealth (D) action. This vampire cannot commit diablerie. A vampire may have only one Alastor.",
+        "Card Text":"Requires a justicar or Inner Circle member.\nChoose a ready Camarilla vampire. Successful referendum means you search your library for an equipment card and put this card and the equipment on the chosen vampire (ignore requirements; shuffle afterward); pay half the cost rounded down of the equipment. The attached vampire can enter combat with a vampire as a +1 stealth (D) action. The attached vampire cannot commit diablerie. A vampire can have only one Alastor.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -1535,8 +1535,8 @@
             "KoT":{
                 "R":true
             },
-            "PLAYTEST":{
-                "30thE":2
+            "30th":{
+                "":"1"
             }
         },
         "Twd":68,
@@ -2398,7 +2398,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Requires a prince or justicar.\nChoose a ready vampire. If the referendum is successful, put this card on that vampire. If the vampire with this card is reduced to zero blood in combat, he or she is burned, and the Methuselah controlling the opposing minion gains pool equal to the burned vampire's capacity.",
+        "Card Text":"Requires a prince or justicar.\nChoose a ready vampire. Successful referendum means this card is put on the chosen vampire. If the attached vampire's blood is reduced to 0 in combat, the attached vampire is burned and the Methuselah controlling the opposing minion gains pool equal to the attached vampire's capacity.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -2462,8 +2462,8 @@
             "KMW":{
                 "PAl":"2"
             },
-            "PLAYTEST":{
-                "30thE":2
+            "30th":{
+                "":"1"
             }
         },
         "Twd":51,
@@ -2573,7 +2573,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Only one Ancient Influence can be played or called in a game.\nSuccessful referendum means each Methuselah can choose a ready vampire they control; each Methuselah gains pool equal to their chosen vampire's capacity, then burns 5 pool.",
+        "Card Text":"Only one Ancient Influence can be played or called in a game.\nSuccessful referendum means each Methuselah can choose a ready vampire they control. Each Methuselah gains pool equal to their chosen vampire's capacity, then burns 5 pool.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -2624,8 +2624,8 @@
             "25th":{
                 "":"1"
             },
-            "PLAYTEST":{
-                "30th":1
+            "30th":{
+                "":"1"
             }
         },
         "Twd":405,
@@ -2678,8 +2678,10 @@
             "V5":{
                 "PV":"1"
             },
+            "30th":{
+                "":"1"
+            },
             "PLAYTEST":{
-                "30th":1,
                 "PL":1
             }
         },
@@ -3906,7 +3908,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique location.\nYou can lock this card during your influence phase to add 1 blood to a Toreador in your uncontrolled region.",
+        "Card Text":"Unique location.\nYou can lock this location during your influence phase to add 1 blood to a Toreador in your uncontrolled region.",
         "Clan":"Toreador",
         "Conviction Cost":"",
         "Discipline":"",
@@ -3937,8 +3939,8 @@
             "NB":{
                 "PTo":"1"
             },
-            "PLAYTEST":{
-                "30th":1
+            "30th":{
+                "":"1"
             }
         },
         "Twd":101,
@@ -4857,7 +4859,7 @@
         "Banned":"",
         "Blood Cost":"X",
         "Burn Option":"",
-        "Card Text":"Only usable during a referendum.\n[pre] This vampire gets X+1 votes.\n[PRE] As above, but this vampire gets 2X+1 votes.",
+        "Card Text":"Only usable during the polling step of a political action.\n[pre] This vampire gets +X+1 votes.\n[PRE] This vampire gets +2X+1 votes.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Presence",
@@ -4896,8 +4898,8 @@
             "Third":{
                 "R":true
             },
-            "PLAYTEST":{
-                "30th":2
+            "30th":{
+                "":"2"
             }
         },
         "Twd":208,
@@ -5481,8 +5483,8 @@
             "NB2":{
                 "PBH":"1"
             },
-            "PLAYTEST":{
-                "30th":2
+            "30th":{
+                "":"2"
             }
         },
         "Twd":527,
@@ -5553,6 +5555,31 @@
         },
         "Twd":8,
         "Type":"Equipment"
+    },
+    "102268":{
+        "ASCII Name":"Banu Haqim Justicar",
+        "Artist":[
+            "Gin\u00e9s Qui\u00f1onero"
+        ],
+        "Banned":"",
+        "Blood Cost":"",
+        "Burn Option":"",
+        "Card Text":"Title.\nChoose a ready Camarilla Banu Haqim. Successful referendum means this card is put on the chosen Banu Haqim to represent the unique Camarilla title of Banu Haqim Justicar. During this referendum, each Banu Haqim gets +1 vote.",
+        "Clan":"",
+        "Conviction Cost":"",
+        "Discipline":"",
+        "Id":102268,
+        "Name":"Banu Haqim Justicar",
+        "Pool Cost":"",
+        "Requirement":"",
+        "Rulings":[],
+        "Set":{
+            "30th":{
+                "":"1"
+            }
+        },
+        "Twd":0,
+        "Type":"Political Action"
     },
     "100134":{
         "ASCII Name":"Barrenness",
@@ -11109,12 +11136,13 @@
     "100274":{
         "ASCII Name":"Business Pressure",
         "Artist":[
-            "N\u00e9 N\u00e9 Thomas"
+            "N\u00e9 N\u00e9 Thomas",
+            "Randy Gallegos"
         ],
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Only usable during a referendum.\n[pre] Each Methuselah can burn pool to gain votes during the resolution of this card (resolve this card before moving on). A Methuselah gains 2 votes for each pool he or she burns.\n[PRE] As above, but you gain 3 votes for each pool you burn.",
+        "Card Text":"Only usable during the polling step of a political action.\n[pre] Methuselahs can burn pool to get votes during the resolution of this card (resolve this card before moving on). A Methuselah gets +2 votes for each pool they burn.\n[PRE] As above, but you get +3 votes for each pool you burn.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Presence",
@@ -11147,8 +11175,8 @@
             "Tenth":{
                 "B":1
             },
-            "PLAYTEST":{
-                "30th":2
+            "30th":{
+                "":"2"
             }
         },
         "Twd":4,
@@ -11472,6 +11500,31 @@
         "Twd":2,
         "Type":"Reaction"
     },
+    "102269":{
+        "ASCII Name":"Camarilla Conclave",
+        "Artist":[
+            "Gin\u00e9s Qui\u00f1onero"
+        ],
+        "Banned":"",
+        "Blood Cost":"",
+        "Burn Option":"",
+        "Card Text":"Unique. Requires a justicar or Inner Circle member.\nPut this card in play with 4 counters. During a political action performed by a Camarilla vampire you control or its polling step, you can burn 1 counter from this card to give the acting vampire +1 stealth or to give each non-Camarilla vampire -1 vote. If this card has no counters, burn it.",
+        "Clan":"",
+        "Conviction Cost":"",
+        "Discipline":"",
+        "Id":102269,
+        "Name":"Camarilla Conclave",
+        "Pool Cost":"",
+        "Requirement":"",
+        "Rulings":[],
+        "Set":{
+            "30th":{
+                "":"2"
+            }
+        },
+        "Twd":0,
+        "Type":"Master"
+    },
     "100284":{
         "ASCII Name":"Camarilla Exemplary",
         "Artist":[
@@ -11521,6 +11574,31 @@
             }
         },
         "Twd":9,
+        "Type":"Political Action"
+    },
+    "102270":{
+        "ASCII Name":"Camarilla's Iron Fist",
+        "Artist":[
+            "Anastasiia Horbunova"
+        ],
+        "Banned":"",
+        "Blood Cost":"1",
+        "Burn Option":"",
+        "Card Text":"Requires a titled Camarilla vampire.\nChoose a Methuselah and allocate 5 points among two or more other Methuselahs. Successful referendum means the chosen Methuselah gains 1 pool and each Methuselah burns 1 pool for each point allocated.",
+        "Clan":"",
+        "Conviction Cost":"",
+        "Discipline":"",
+        "Id":102270,
+        "Name":"Camarilla's Iron Fist",
+        "Pool Cost":"",
+        "Requirement":"",
+        "Rulings":[],
+        "Set":{
+            "30th":{
+                "":"5"
+            }
+        },
+        "Twd":0,
         "Type":"Political Action"
     },
     "100285":{
@@ -11832,7 +11910,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Requires a ready anarch.\nOnly usable before any block attempts are made. Lock this reacting minion. If the acting minion has a vehicle, the action fails, the vehicle is burned, and the acting minion takes 2 damage (not preventable). Otherwise, the action gets -1 stealth.",
+        "Card Text":"Requires a ready anarch. Only usable as the action is announced.\nLock this reacting minion. If the acting minion has a vehicle, the action fails, the vehicle is burned, and the acting minion takes 2 damage (not preventable). Otherwise, the action gets -1 stealth.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -13572,7 +13650,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"[aus][pre] Burn 1 blood to cancel the opposing minion's strike card (the minion chooses another strike) or grapple card as it is played, and its cost is not paid. A vampire can play only one Charismatic Aura at basic each round.\n[AUS][PRE] Strike: combat ends.",
+        "Card Text":"[aus][pre] Burn 1 blood to cancel a strike card (the minion chooses a strike again) or a grapple card as it is played by the opposing minion, and its cost is not paid. A vampire can play only one Charismatic Aura at basic each round.\n[AUS][PRE] Strike: combat ends.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Auspex & Presence",
@@ -13607,8 +13685,8 @@
             "KoT":{
                 "U":true
             },
-            "PLAYTEST":{
-                "30th":2
+            "30th":{
+                "":"2"
             }
         },
         "Twd":34,
@@ -16383,6 +16461,31 @@
         },
         "Twd":0,
         "Type":"Reaction"
+    },
+    "102271":{
+        "ASCII Name":"Confiscation",
+        "Artist":[
+            "Gin\u00e9s Qui\u00f1onero"
+        ],
+        "Banned":"",
+        "Blood Cost":"",
+        "Burn Option":"",
+        "Card Text":"Requires a titled vampire.\nChoose an equipment and a vampire. Successful referendum means the chosen vampire takes control of the chosen equipment.",
+        "Clan":"",
+        "Conviction Cost":"",
+        "Discipline":"",
+        "Id":102271,
+        "Name":"Confiscation",
+        "Pool Cost":"",
+        "Requirement":"",
+        "Rulings":[],
+        "Set":{
+            "30th":{
+                "":"1"
+            }
+        },
+        "Twd":0,
+        "Type":"Political Action"
     },
     "100405":{
         "ASCII Name":"Confusion",
@@ -23679,7 +23782,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique.\nPut this card in play. Add 1 counter to this card each time you lock it. Lock to get +2 hand size until the end of the turn. Lock during your unlock phase to gain 1 pool if you have the Edge. Lock to add 1 blood to a vampire in your uncontrolled region. Burn this card if it has 3 counters.",
+        "Card Text":"Unique.\nPut this card in play. Add 1 counter to this card each time you lock it. You can lock this card to get +2 hand size until the end of the turn. You can lock this card during your unlock phase to gain 1 pool if you have the Edge. You can lock this card to add 1 blood to a vampire in your uncontrolled region. Burn this card if it has 3 counters.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -23748,8 +23851,10 @@
             "V5A":{
                 "PMin":"1"
             },
+            "30th":{
+                "":"1"
+            },
             "PLAYTEST":{
-                "30th":1,
                 "NH":1
             }
         },
@@ -25542,7 +25647,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique location.\nYou can lock this card during the polling step of a political action to give each ready titled Camarilla vampire you control +1 vote.",
+        "Card Text":"Unique location.\nYou can lock this location during the polling step of a political action to give each titled Camarilla vampire you control +1 vote.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -25567,8 +25672,8 @@
             "NB":{
                 "PM":"1"
             },
-            "PLAYTEST":{
-                "30th":1
+            "30th":{
+                "":"1"
             }
         },
         "Twd":52,
@@ -27556,8 +27661,10 @@
             "V5C":{
                 "PSal":"4"
             },
+            "30th":{
+                "":"2"
+            },
             "PLAYTEST":{
-                "30th":2,
                 "NSal":3,
                 "NH":2,
                 "PH":3
@@ -33682,8 +33789,10 @@
             "NB2":{
                 "PG":"1"
             },
+            "30th":{
+                "":"1"
+            },
             "PLAYTEST":{
-                "30th":1,
                 "NH":1
             }
         },
@@ -40056,8 +40165,10 @@
             "V5":{
                 "PV":"1"
             },
+            "30th":{
+                "":"2"
+            },
             "PLAYTEST":{
-                "30th":2,
                 "PL":1
             }
         },
@@ -41815,8 +41926,8 @@
             "NB2":{
                 "PBH":"1"
             },
-            "PLAYTEST":{
-                "30th":1
+            "30th":{
+                "":"1"
             }
         },
         "Twd":73,
@@ -42954,8 +43065,10 @@
                 "PM":"4",
                 "PTo":"3"
             },
+            "30th":{
+                "":"2"
+            },
             "PLAYTEST":{
-                "30th":2,
                 "PL":6
             }
         },
@@ -43620,6 +43733,31 @@
         },
         "Twd":91,
         "Type":"Equipment"
+    },
+    "102272":{
+        "ASCII Name":"Lasombra Justicar",
+        "Artist":[
+            "Riccardo Fabiani"
+        ],
+        "Banned":"",
+        "Blood Cost":"",
+        "Burn Option":"",
+        "Card Text":"Title.\nChoose a ready Camarilla Lasombra. Successful referendum means this card is put on the chosen Lasombra to represent the unique Camarilla title of Lasombra Justicar. During this referendum, each Lasombra gets +1 vote.",
+        "Clan":"",
+        "Conviction Cost":"",
+        "Discipline":"",
+        "Id":102272,
+        "Name":"Lasombra Justicar",
+        "Pool Cost":"",
+        "Requirement":"",
+        "Rulings":[],
+        "Set":{
+            "30th":{
+                "":"1"
+            }
+        },
+        "Twd":0,
+        "Type":"Political Action"
     },
     "101074":{
         "ASCII Name":"Last Stand",
@@ -45744,6 +45882,31 @@
         "Twd":75,
         "Type":"Reaction"
     },
+    "102273":{
+        "ASCII Name":"Loup",
+        "Artist":[
+            "Raquel Cornejo"
+        ],
+        "Banned":"",
+        "Blood Cost":"",
+        "Burn Option":"",
+        "Card Text":"Only one Loup can be played each turn.\nPut this card in play. Toreador get +1 stealth. Burn this card at the end of the turn or after a Toreador performs a successful action.",
+        "Clan":"Toreador",
+        "Conviction Cost":"",
+        "Discipline":"",
+        "Id":102273,
+        "Name":"Loup",
+        "Pool Cost":"",
+        "Requirement":"",
+        "Rulings":[],
+        "Set":{
+            "30th":{
+                "":"6"
+            }
+        },
+        "Twd":0,
+        "Type":"Action Modifier"
+    },
     "101127":{
         "ASCII Name":"Louvre, Paris, The",
         "Artist":[
@@ -45752,7 +45915,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Master: unique location.\nYou may lock this card to lock any Toreador. If you control the Prince of Paris, you may lock this card to lock any minion in play. Any minion can steal this location for his or her controller as a (D) action.",
+        "Card Text":"Unique location.\nYou can lock this location to lock a Toreador. If you control the Prince of Paris, you can lock this location to lock a minion. Minions can steal this location as a (D) action.",
         "Clan":"Toreador",
         "Conviction Cost":"",
         "Discipline":"",
@@ -45775,8 +45938,8 @@
             "CE":{
                 "PTo":1
             },
-            "PLAYTEST":{
-                "30th":1
+            "30th":{
+                "":"1"
             }
         },
         "Twd":1,
@@ -46564,8 +46727,8 @@
             "V5C":{
                 "PR":"4"
             },
-            "PLAYTEST":{
-                "30th":6
+            "30th":{
+                "":"6"
             }
         },
         "Twd":699,
@@ -51340,8 +51503,10 @@
             "V5C":{
                 "PSal":"2"
             },
+            "30th":{
+                "":"2"
+            },
             "PLAYTEST":{
-                "30th":2,
                 "NSal":2,
                 "NH":1
             }
@@ -53846,8 +54011,10 @@
                 "PSal":"2",
                 "PTz":"4"
             },
+            "30th":{
+                "":"2"
+            },
             "PLAYTEST":{
-                "30th":2,
                 "NR":3,
                 "PH":3
             }
@@ -55201,8 +55368,10 @@
             "NB2":{
                 "PBH":"2"
             },
+            "30th":{
+                "":"6"
+            },
             "PLAYTEST":{
-                "30th":6,
                 "NL":2,
                 "PL":2
             }
@@ -56390,8 +56559,8 @@
             "V5":{
                 "PTo":"4"
             },
-            "PLAYTEST":{
-                "30th":2
+            "30th":{
+                "":"2"
             }
         },
         "Twd":191,
@@ -57527,8 +57696,8 @@
             "25th":{
                 "":"1"
             },
-            "PLAYTEST":{
-                "30th":1
+            "30th":{
+                "":"1"
             }
         },
         "Twd":359,
@@ -60529,13 +60698,13 @@
     "101500":{
         "ASCII Name":"Protected Resources",
         "Artist":[
-            "Chris Stevens",
-            "Richard Thomas"
+            "Richard Thomas",
+            "Chris Stevens"
         ],
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Master.\nPut this card in play. You do not burn more than 2 pool when a minion bleeds you, regardless of the amount of the bleed. Burn this card if a minion you control successfully bleeds.",
+        "Card Text":"Put this card in play. If you would burn more than 2 pool to a bleed, you burn 2 pool instead. After a minion you control successfully bleeds, burn this card.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -60576,8 +60745,8 @@
             "KoT":{
                 "R":true
             },
-            "PLAYTEST":{
-                "30thE":1
+            "30th":{
+                "":"1"
             }
         },
         "Twd":71,
@@ -61175,7 +61344,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Only usable at close range at the end of a round of combat in which this minion successfully inflicted more damage than the opposing vampire. Not usable by a minion being burned or going into torpor.\nPut this card on the opposing vampire, and this minion inflicts 1 point of damage on them. The attached vampire cannot hunt. Any vampire(s) can burn this card with two +1 stealth actions. If the attached vampire must hunt and cannot, they go into torpor. A vampire can have only 1 Pulled Fangs.",
+        "Card Text":"Only usable at close range at the end of a round during which this minion successfully inflicted more damage than the opposing vampire. Not usable by a minion being burned or going to torpor.\nPut this card on the opposing vampire; this minion inflicts 1 damage on them. The attached vampire cannot hunt; if they must hunt, they go to torpor instead. Any vampire(s) can burn this card with two +1 stealth actions. A vampire can have only one Pulled Fangs.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -61227,6 +61396,9 @@
             },
             "Anarchs":{
                 "PAG":1
+            },
+            "30th":{
+                "":"1"
             }
         },
         "Twd":69,
@@ -64112,7 +64284,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Requires a titled vampire.\nChoose one or more Methuselahs. Successful referendum means each chosen Methuselah selects up to 3 library cards from his or her ash heap and shuffles them into his or her library. Remove this card from the game, even if the action is canceled or blocked or the referendum fails.",
+        "Card Text":"Requires a titled vampire.\nChoose one or more Methuselahs. Successful referendum means each chosen Methuselah chooses up to three library cards in their ash heap and shuffles them into their library. Remove this card from the game, even if the action or the referendum fails or is canceled.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -64128,8 +64300,8 @@
             "Third":{
                 "PB":1
             },
-            "PLAYTEST":{
-                "30th":1
+            "30th":{
+                "":"1"
             }
         },
         "Twd":42,
@@ -64191,8 +64363,8 @@
             "25th":{
                 "":"1"
             },
-            "PLAYTEST":{
-                "30th":1
+            "30th":{
+                "":"1"
             }
         },
         "Twd":390,
@@ -68938,8 +69110,10 @@
             "NB2":{
                 "PBH":"4"
             },
+            "30th":{
+                "":"2"
+            },
             "PLAYTEST":{
-                "30th":2,
                 "NL":3,
                 "PL":6
             }
@@ -79019,8 +79193,10 @@
             "V5C":{
                 "PSal":"4"
             },
+            "30th":{
+                "":"4"
+            },
             "PLAYTEST":{
-                "30th":4,
                 "NH":3,
                 "PH":3
             }
@@ -80062,12 +80238,13 @@
         "ASCII Name":"Third Tradition: Progeny",
         "Artist":[
             "L. A. Williams",
-            "Julie Collins"
+            "Julie Collins",
+            "Randy\u00a0Gallegos"
         ],
         "Banned":"",
         "Blood Cost":"1",
         "Burn Option":"",
-        "Card Text":"+1 stealth action. Requires a ready non-Sterile prince or justicar.\nPut this card in play; it becomes a non-unique 1-capacity Camarilla vampire of the same clan as the acting vampire. You may go through your library (shuffle afterward), ash heap or hand to find a Discipline card for this vampire. Move up to 2 blood from the acting vampire to this vampire. This vampire cannot take any actions this turn.",
+        "Card Text":"+1 stealth action. Requires a non-sterile prince or justicar.\nPut this card in play. It becomes a 1-capacity (non-unique) Camarilla vampire of the same clan as the acting vampire and cannot perform actions this turn. You can search your library (shuffle afterward), hand and/or ash heap for a Discipline master card and put it on this new vampire. Move up to 2 blood from the acting vampire to this new vampire.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -80114,8 +80291,8 @@
             "KoT":{
                 "U":true
             },
-            "PLAYTEST":{
-                "30thE":1
+            "30th":{
+                "":"1"
             }
         },
         "Twd":46,
@@ -80772,8 +80949,8 @@
             "NB":{
                 "PTo":"4"
             },
-            "PLAYTEST":{
-                "30th":6
+            "30th":{
+                "":"6"
             }
         },
         "Twd":55,
@@ -85871,8 +86048,10 @@
                 "PB":"2",
                 "PMi":"2"
             },
+            "30th":{
+                "":"6"
+            },
             "PLAYTEST":{
-                "30th":6,
                 "PH":3,
                 "PL":3
             }
@@ -86366,8 +86545,8 @@
             "NB2":{
                 "PMi":"2"
             },
-            "PLAYTEST":{
-                "30th":6
+            "30th":{
+                "":"6"
             }
         },
         "Twd":468,
@@ -88335,8 +88514,8 @@
             "V5A":{
                 "PMin":"1"
             },
-            "PLAYTEST":{
-                "30th":1
+            "30th":{
+                "":"1"
             }
         },
         "Twd":748,
@@ -89458,8 +89637,8 @@
             "25th":{
                 "":"4"
             },
-            "PLAYTEST":{
-                "30th":6
+            "30th":{
+                "":"6"
             }
         },
         "Twd":358,

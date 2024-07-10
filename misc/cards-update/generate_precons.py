@@ -1,6 +1,9 @@
 import json
 
 bundles = {
+    "30th": {
+        "": {},
+    },
     "V5C": {
         "PR": {},
         "PSal": {},
@@ -162,8 +165,6 @@ bundles = {
 
 playtest_bundles = {
     "PLAYTEST": {
-        "30th": {},
-        "30thE": {},
         "NR": {},
         "NSal": {},
         "NTz": {},
