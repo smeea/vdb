@@ -1,8 +1,8 @@
 {
-  "version": "2024-06-28",
+  "version": "2024-07-19",
   "changes": [
-    "Shortened decks id (url) to 9 symbols, should make urls much nicer in messengers. Old urls should continue to work (they will redirect to shortened version)",
-    "Fix disciplines highlighting border in dark theme in iOS, should make basic/superior more distinguishable (especially under direct sunlight)",
-    "Small other fixes and improvements"
+    "Add 30th Anniversary precon",
+    "Update Brazilian Portuguese translation",
+    "Small fixes"
   ]
 }

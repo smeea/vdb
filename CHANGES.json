@@ -1,5 +1,13 @@
 [
   {
+    "version": "2024-07-19",
+    "changes": [
+      "Add 30th Anniversary precon",
+      "Update Brazilian Portuguese translation",
+      "Small fixes"
+    ]
+  },
+  {
     "version": "2024-06-28",
     "changes": [
       "Shortened decks id (url) to 9 symbols, should make urls much nicer in messengers. Old urls should continue to work (they will redirect to shortened version)",
