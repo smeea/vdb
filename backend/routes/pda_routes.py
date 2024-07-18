@@ -131,7 +131,7 @@ def sanitize_pda(d):
         "author": d.author_public_name,
         "isFavorited": False,
         "favoritedBy": len(d.favorited),
-        "creation_date": d.creation_date,
+        "creation_date": d.creation_date if d.creation_date else d.timestamp.strftime('%Y-%m-%d'),
         "timestamp": d.timestamp,
         "cards": d.cards,
     }
@@ -144,7 +144,7 @@ def sanitize_pda(d):
 def minify_pda(d):
     deck = {
         "deckid": d.deckid,
-        "creation_date": d.creation_date,
+        "creation_date": d.creation_date if d.creation_date else d.timestamp.strftime('%Y-%m-%d'),
     }
 
     if current_user.is_authenticated and current_user.id in d.favorited:
@@ -165,11 +165,8 @@ def get_pda_authors_route():
 @app.route("/api/search/pda", methods=["POST"])
 def search_pda_route():
     pda_decks = []
-    for d in (
-        Deck.query.filter(Deck.public_parent != None)
-        .order_by(Deck.creation_date.desc())
-        .all()
-    ):
+    decks = Deck.query.filter(Deck.public_parent != None).order_by(Deck.creation_date.desc()).all() if request.json["src"] != 'my-nonpublic' else Deck.query.filter(Deck.author == current_user).order_by(Deck.creation_date.desc()).all()
+    for d in decks:
         deck = {
             "deckid": d.deckid,
             "capacity": d.capacity,
@@ -178,7 +175,7 @@ def search_pda_route():
             "sect": d.sect,
             "crypt": {},
             "crypt_total": d.crypt_total,
-            "creation_date": d.creation_date,
+            "creation_date": d.creation_date if d.creation_date else d.timestamp.strftime('%Y-%m-%d'),
             "disciplines": d.disciplines,
             "library": {},
             "library_total": d.library_total,
@@ -232,7 +229,6 @@ def search_pda_route():
     if not result:
         abort(400)
 
-    # return jsonify([sanitize_pda(d) for d in result[0:10]] + [minify_pda(d) for d in result[10:]])
     return jsonify([sanitize_pda(Deck.query.get(d["deckid"])) for d in result[0:10]] + [minify_pda(Deck.query.get(d["deckid"])) for d in result[10:]])
 
 

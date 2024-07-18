@@ -257,6 +257,9 @@ def get_decks_by_traits(traits, decks):
 
 
 def get_decks_by_src(src, decks):
+    if src == 'my-nonpublic':
+        return decks
+
     match_decks = []
     for deck in decks:
         if src == "my":

@@ -8,6 +8,7 @@ const PdaSearchFormSrcSelector = ({ value, onChange }) => {
         ['any', 'All'],
         ['favorites', 'Favorites'],
         ['my', 'My'],
+        ['my-nonpublic', 'My Non-Public']
       ].map((i) => {
         return (
           <Radio
