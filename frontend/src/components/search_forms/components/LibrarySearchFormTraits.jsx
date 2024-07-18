@@ -9,7 +9,7 @@ const LibrarySearchFormTraits = ({ value, onChange }) => {
     <div className="space-y-1">
       <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Traits:</div>
       <div className="flex">
-        <div className="flex flex-col basis-5/9 gap-0.5">
+        <div className="flex basis-5/9 flex-col gap-0.5">
           {[
             ['intercept', '+Intercept / -Stealth'],
             ['stealth', '+Stealth / -Intercept'],
@@ -36,7 +36,7 @@ const LibrarySearchFormTraits = ({ value, onChange }) => {
             />
           ))}
         </div>
-        <div className="flex flex-col basis-4/9 gap-0.5">
+        <div className="flex basis-4/9 flex-col gap-0.5">
           {[
             ['enter combat', 'Enter Combat'],
             ['embrace', 'Create Vampire'],

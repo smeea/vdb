@@ -79,8 +79,7 @@ const Tooltip = ({
           <div
             className={`z-50 rounded-md border border-bgSecondary bg-bgPrimary text-fgPrimary dark:border-bgSecondaryDark dark:bg-bgPrimaryDark dark:text-fgPrimaryDark ${
               noPadding ? '' : 'p-3'
-            } ${widthClass[size]}
-`}
+            } ${widthClass[size]} `}
             ref={refs.setFloating}
             style={{
               position: strategy,

@@ -74,7 +74,7 @@ const AccountLimitedModal = ({ setShow, setFormat }) => {
         <AccountLimitedSetSelection />
         <AccountLimitedCardSelection />
         <AccountLimitedCardSelection inBanned />
-        <div className="flex max-sm:flex-col justify-end gap-2">
+        <div className="flex justify-end gap-2 max-sm:flex-col">
           <AccountLimitedUrlButton
             format={JSON.stringify(minifyFormat(), null, '').replace(/\n/g, '')}
           />

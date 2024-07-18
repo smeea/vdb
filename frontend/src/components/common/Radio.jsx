@@ -6,7 +6,7 @@ const Radio = ({ id, name, checked, value, onChange }) => {
   return (
     <div className="flex items-center space-x-1.5">
       <input
-        className="form-radio focus:ring-offset-0 focus:ring-0 w-3.5 h-3.5 text-bgCheckboxSelected dark:text-bgCheckboxSelectedDark"
+        className="form-radio h-3.5 w-3.5 text-bgCheckboxSelected focus:ring-0 focus:ring-offset-0 dark:text-bgCheckboxSelectedDark"
         checked={checked}
         name={name}
         onChange={onChange}

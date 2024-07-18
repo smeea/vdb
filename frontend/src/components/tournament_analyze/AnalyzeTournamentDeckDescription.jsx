@@ -31,7 +31,7 @@ const AnalyzeTournamentDeckDescription = ({ deck }) => {
           <TwdResultTags tags={deck.tags} />
         )}
       </div>
-      <div className="flex max-lg:p-1 max-lg:flex-col justify-between lg:basis-full max-lg:flex-col gap-1">
+      <div className="flex justify-between gap-1 max-lg:flex-col max-lg:p-1 lg:basis-full">
         <div className="basis-full">
           <TwdOpenDeckButton url={deckInUrl} />
         </div>

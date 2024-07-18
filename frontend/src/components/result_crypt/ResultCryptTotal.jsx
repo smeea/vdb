@@ -69,7 +69,7 @@ const ResultCryptTotal = ({
         ) : (
           <div className="space-y-1">
             {!inHoF && (
-              <div className=" flex justify-end">
+              <div className="flex justify-end">
                 <Button title="Additional Info" variant="primary" onClick={() => toggleShowInfo()}>
                   <InfoCircle />
                 </Button>

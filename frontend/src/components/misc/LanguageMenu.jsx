@@ -21,7 +21,7 @@ const LanguageMenu = ({ setShowMenu }) => {
               key={l}
               className={`${
                 lang == l
-                  ? 'rounded-full border-double border-4 border-fgSecondary dark:border-fgSecondaryDark'
+                  ? 'rounded-full border-4 border-double border-fgSecondary dark:border-fgSecondaryDark'
                   : ''
               }`}
               onClick={() => handleClick(l)}

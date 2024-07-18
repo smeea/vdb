@@ -8,7 +8,7 @@ const ResultCryptName = ({ card, colored = true, isBanned }) => {
 
   return (
     <div
-      className={`inline whitespace-nowrap space-x-1 ${
+      className={`inline space-x-1 whitespace-nowrap ${
         colored ? 'text-fgName dark:text-fgNameDark' : ''
       }`}
     >
@@ -18,7 +18,7 @@ const ResultCryptName = ({ card, colored = true, isBanned }) => {
       {card.Adv[0] && (
         <div className="inline whitespace-nowrap">
           <img
-            className="inline mb-1"
+            className="mb-1 inline"
             src={`${import.meta.env.VITE_BASE_URL}/images/misc/advanced.svg`}
             title="Advanced"
             width="12"

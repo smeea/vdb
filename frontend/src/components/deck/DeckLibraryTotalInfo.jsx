@@ -25,7 +25,7 @@ const DeckLibraryTotalInfo = ({ byClans, byTypes, byDisciplines }) => {
             <div key={idx} className="inline-block whitespace-nowrap pr-5">
               <div className="flex items-center space-x-1">
                 <ResultLibraryTypeImage value={t} />
-                <div className="flex ">{byTypes[t]}</div>
+                <div className="flex">{byTypes[t]}</div>
                 <div className="text-midGray dark:text-midGrayDark">
                   ({Math.round((byTypes[t] / total) * 100)}%)
                 </div>

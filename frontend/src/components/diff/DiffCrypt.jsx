@@ -80,7 +80,7 @@ const DiffCrypt = ({ cardsTo, deck }) => {
         keyDisciplines={keyDisciplines}
       />
       {Object.keys(cryptSide).length > 0 && (
-        <div className=" opacity-60 dark:opacity-50">
+        <div className="opacity-60 dark:opacity-50">
           <div className="flex items-center justify-between font-bold">Side Crypt</div>
           <DiffCryptTable
             handleClick={handleClickSide}

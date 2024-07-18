@@ -220,7 +220,7 @@ const TournamentAnalyze = () => {
   return (
     <div className="twd-container mx-auto space-y-2">
       <Header>
-        <div className="flex flex-col w-full max-sm:gap-2 p-2 text-lg">
+        <div className="flex w-full flex-col p-2 text-lg max-sm:gap-2">
           <div className="flex justify-center">
             Want more Tournaments here? Help your organizer to collect the data!
           </div>
@@ -259,7 +259,7 @@ const TournamentAnalyze = () => {
           </div>
         )}
         <FlexGapped className="max-sm:flex-col">
-          <div className="flex justify-center basis-9/12 max-sm:order-last">
+          <div className="flex basis-9/12 justify-center max-sm:order-last">
             {error && (
               <div className="w-full">
                 <ErrorMessage>NO DATA AVAILABLE FOR EVENT #{error}</ErrorMessage>

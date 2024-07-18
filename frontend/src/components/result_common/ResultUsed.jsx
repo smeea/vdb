@@ -26,8 +26,7 @@ const ResultUsed = ({ card }) => {
             inInventory < softUsedMax + hardUsedTotal
               ? 'bg-bgError text-white dark:bg-bgErrorDark dark:text-whiteDark'
               : ''
-          }
-                  `}
+          } `}
         >
           <div className="flex basis-3/5 justify-center text-lg">
             {isInventoryNote && <div className="min-w-[4px]"></div>}

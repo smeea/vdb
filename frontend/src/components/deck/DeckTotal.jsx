@@ -28,7 +28,7 @@ const DeckSelectAdvTotal = ({ tagsFilter, setTagsFilter }) => {
 
   const totalOutput = Object.keys(byTags).map((k) => {
     return (
-      <span key={k} onClick={() => handleClick(k)} className="inline-block whitespace-nowrap ">
+      <span key={k} onClick={() => handleClick(k)} className="inline-block whitespace-nowrap">
         <span className="font-bold text-fgSecondary dark:text-fgSecondaryDark">{k}:</span>
         {byTags[k]}
       </span>

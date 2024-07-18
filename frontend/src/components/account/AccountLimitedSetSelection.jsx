@@ -14,7 +14,7 @@ const AccountLimitedSetSelection = () => {
       <div className="text-lg font-bold text-fgSecondary underline dark:text-fgSecondaryDark">
         Sets:
       </div>
-      <div className="flex max-sm:flex-col gap-2">
+      <div className="flex gap-2 max-sm:flex-col">
         <div className="flex basis-full flex-col gap-2 sm:basis-1/2">
           {Object.keys(setsAndPrecons)
             .filter((i) => i !== PLAYTEST && setsAndPrecons[i].date > BCP_START)

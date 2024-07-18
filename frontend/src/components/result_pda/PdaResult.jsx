@@ -44,7 +44,7 @@ const PdaResult = ({ results, setResults }) => {
         })}
 
         {deckCounter > showCounter && (
-          <div className="flex justify-center ">
+          <div className="flex justify-center">
             <Button variant="primary" onClick={() => setShowCounter(showCounter + showCounterStep)}>
               Show More ({deckCounter - showCounter} left)
             </Button>

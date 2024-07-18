@@ -54,7 +54,7 @@ const ThemeSelect = ({ setShowMenu }) => {
           onClick={handleClick}
         >
           <div className="flex min-w-[30px] justify-center">{themeVisual[theme]?.icon}</div>
-          <div className="whitespace-nowrap ">{themeVisual[theme]?.name}</div>
+          <div className="whitespace-nowrap">{themeVisual[theme]?.name}</div>
         </div>
       ) : (
         <div

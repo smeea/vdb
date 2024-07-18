@@ -20,7 +20,7 @@ const ResultLayoutTextInventory = ({ card, inPopover }) => {
   return (
     <div className="flex flex-col gap-1.5">
       <div className={`flex ${inPopover ? 'flex-col' : 'max-md:flex-col'} gap-1.5`}>
-        <div className="flex flex-col basis-full md:basis-1/3 gap-0.5">
+        <div className="flex basis-full flex-col gap-0.5 md:basis-1/3">
           <div className="flex items-center gap-1.5">
             <div className="opacity-40">
               <CalculatorFill width="14" height="14" viewBox="0 0 16 16" />
@@ -38,7 +38,7 @@ const ResultLayoutTextInventory = ({ card, inPopover }) => {
         </div>
         {(softUsedMax > 0 || hardUsedTotal > 0) && (
           <>
-            <div className="flex flex-col basis-full md:basis-2/3 gap-0.5">
+            <div className="flex basis-full flex-col gap-0.5 md:basis-2/3">
               {softUsedMax > 0 && (
                 <UsedDescription
                   usedCards={usedCards.soft[card.Id]}

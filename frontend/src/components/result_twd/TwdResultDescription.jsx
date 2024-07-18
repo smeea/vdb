@@ -13,16 +13,16 @@ const TwdResultDescription = ({ deck }) => {
   return (
     <div className="flex justify-between lg:flex-col lg:gap-2">
       <div>
-        <div className="max-lg:hidden py-1.5">
+        <div className="py-1.5 max-lg:hidden">
           <TwdResultDescriptionPlayers players={deck.players} />
         </div>
         <TwdResultDescriptionText deck={deck} />
       </div>
-      <div className="flex max-lg:p-1 max-lg:flex-col gap-2">
+      <div className="flex gap-2 max-lg:flex-col max-lg:p-1">
         <div className="lg:hidden">
           <TwdResultDescriptionPlayers players={deck.players} />
         </div>
-        <div className="flex justify-between lg:basis-full max-lg:flex-col gap-1">
+        <div className="flex justify-between gap-1 max-lg:flex-col lg:basis-full">
           <div className="basis-full">
             <TwdOpenDeckButton deckid={deck.deckid} />
           </div>

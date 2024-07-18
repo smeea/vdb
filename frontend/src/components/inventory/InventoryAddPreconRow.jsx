@@ -19,7 +19,7 @@ const InventoryAddPreconRow = ({ deck }) => {
   const clans = setsAndPrecons[set].precons[precon].clan.split('/');
 
   return (
-    <tr className="border-y border-bgSecondary dark:border-bgSecondaryDark row-bg">
+    <tr className="row-bg border-y border-bgSecondary dark:border-bgSecondaryDark">
       <td className="min-w-[50px] sm:min-w-[70px]">
         <div className="flex justify-center">
           {clans.length > 0 && (

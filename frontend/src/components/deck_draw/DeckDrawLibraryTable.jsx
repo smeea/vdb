@@ -32,7 +32,7 @@ const DeckDrawLibraryTable = ({
           return (
             <tr
               key={`${idx}-${card.Id}`}
-              className="h-[38px] border-y border-bgSecondary dark:border-bgSecondaryDark row-bg"
+              className="row-bg h-[38px] border-y border-bgSecondary dark:border-bgSecondaryDark"
             >
               <ResultLibraryTableRowCommon
                 card={card}
@@ -40,7 +40,7 @@ const DeckDrawLibraryTable = ({
                 shouldShowModal={shouldShowModal}
               />
               {(!ashHeap || !isMobile) && (
-                <td className="min-w-[45px] p-1 text-right text-fgSecondary  dark:text-fgSecondaryDark">
+                <td className="min-w-[45px] p-1 text-right text-fgSecondary dark:text-fgSecondaryDark">
                   {!ashHeap && (
                     <DeckDrawProbability cardName={card.Name} N={N} n={n} k={nonPlayed[card.Id]} />
                   )}

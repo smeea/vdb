@@ -118,7 +118,7 @@ const DeckSelect = ({
           )}
           {isMobile && deck && (
             <Button variant="primary" onClick={() => setShowInfo(!showInfo)}>
-              <div className="flex ">
+              <div className="flex">
                 <ChatLeftQuoteFill width="16" height="18" viewBox="0 0 16 18" />
               </div>
             </Button>

@@ -27,7 +27,7 @@ const DeckRecommendationModal = ({ handleClose, crypt, library }) => {
             </div>
           )}
         </div>
-        <div className="basis-full sm:basis-5/12 space-y-2">
+        <div className="basis-full space-y-2 sm:basis-5/12">
           <Header>
             <div className="px-2 font-bold">Library</div>
           </Header>

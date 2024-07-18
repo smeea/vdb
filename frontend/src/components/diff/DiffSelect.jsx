@@ -11,7 +11,7 @@ const DiffSelect = ({ decks, deck, deckTo, deckidFrom, deckidTo }) => {
   };
 
   return (
-    <FlexGapped className="max-sm:gap-1 max-sm:flex-col max-sm:px-2 max-sm:pt-1">
+    <FlexGapped className="max-sm:flex-col max-sm:gap-1 max-sm:px-2 max-sm:pt-1">
       <div className="basis-full sm:basis-1/2">
         <DiffSelectDeck
           target="from"

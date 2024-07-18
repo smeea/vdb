@@ -22,7 +22,7 @@ const ResultDisciplineImage = ({ value, superior, name, size = 'md', title }) =>
 
   return (
     <img
-      className={`inline dark:brightness-[0.85] drop-shadow-[0px_0px_1px_#a0a0a0] dark:drop-shadow-[0px_0px_1px_#d0d0d0] ${sizeStyle[size]}`}
+      className={`inline drop-shadow-[0px_0px_1px_#a0a0a0] dark:brightness-[0.85] dark:drop-shadow-[0px_0px_1px_#d0d0d0] ${sizeStyle[size]}`}
       src={`${import.meta.env.VITE_BASE_URL}/images/disciplines/${value
         .toLowerCase()
         .replace(/[\s,:!?'.-]/g, '')}${superior ? 'sup' : ''}.svg`}

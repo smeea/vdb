@@ -134,7 +134,7 @@ const Cards = () => {
                       <div>
                         <CardImage card={card} set={imageSet} />
                       </div>
-                      <div className="w-full pt-1 pl-5">
+                      <div className="w-full pl-5 pt-1">
                         <ResultLayoutText
                           card={card}
                           setImageSet={setImageSet}

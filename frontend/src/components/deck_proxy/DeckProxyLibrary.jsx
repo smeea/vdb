@@ -70,7 +70,7 @@ const DeckProxyLibrary = ({
         {Object.keys(libraryByType).map((cardtype) => {
           return (
             <div key={cardtype}>
-              <div className="flex justify-between ">
+              <div className="flex justify-between">
                 <ResultLibraryType
                   cardtype={cardtype}
                   total={libraryByTypeTotal[cardtype]}
@@ -92,7 +92,7 @@ const DeckProxyLibrary = ({
         ;
       </div>
       {librarySide.length > 0 && (
-        <div className="opacity-60 dark:opacity-50 space-y-2">
+        <div className="space-y-2 opacity-60 dark:opacity-50">
           <Header>
             <div className="px-2 font-bold">Side Library</div>
           </Header>

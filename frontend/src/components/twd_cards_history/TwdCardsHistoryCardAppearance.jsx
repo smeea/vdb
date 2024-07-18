@@ -47,7 +47,7 @@ const TwdCardsHistoryCardAppearance = ({ card, byPlayer }) => {
       </div>
       <div className="flex min-w-[90px] items-center justify-between sm:min-w-[250px]">
         <div
-          className="inline max-sm:text-sm text-fgSecondary hover:underline dark:text-fgSecondaryDark"
+          className="inline text-fgSecondary hover:underline dark:text-fgSecondaryDark max-sm:text-sm"
           onClick={() => handleClick(card.player)}
         >
           {card.player}

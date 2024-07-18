@@ -59,7 +59,7 @@ const ReviewLibrary = ({ cardChange, cardsFrom, cardsTo }) => {
       {Object.keys(libraryByType).map((cardtype) => {
         return (
           <div key={cardtype}>
-            <div className="flex justify-between ">
+            <div className="flex justify-between">
               <ResultLibraryType
                 cardtype={cardtype}
                 total={libraryByTypeTotal[cardtype]}

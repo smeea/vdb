@@ -23,7 +23,7 @@ const InventoryAddDeckRow = ({ deck, allTagsOptions }) => {
   const clan = getClan(deck.crypt);
 
   return (
-    <tr className="border-y border-bgSecondary dark:border-bgSecondaryDark row-bg">
+    <tr className="row-bg border-y border-bgSecondary dark:border-bgSecondaryDark">
       {!isMobile && (
         <td>
           <Button onClick={() => deckToggleInventoryState(deck.deckid)}>

@@ -28,7 +28,7 @@ const DeckProxyCryptTableRow = ({
   const hardUsedTotal = getHardTotal(usedCrypt.hard[card.c.Id]) ?? 0;
 
   return (
-    <tr key={card.c.Id} className="border-y border-bgSecondary dark:border-bgSecondaryDark row-bg">
+    <tr key={card.c.Id} className="row-bg border-y border-bgSecondary dark:border-bgSecondaryDark">
       <td className="min-w-[25px]">
         <div className="flex items-center justify-center">
           <Checkbox

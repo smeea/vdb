@@ -19,7 +19,7 @@ const Title = ({ isPrecon }) => {
   const { isMobile } = useApp();
 
   return (
-    <div className="flex whitespace-nowrap gap-3 font-bold text-fgSecondary dark:text-fgSecondaryDark">
+    <div className="flex gap-3 whitespace-nowrap font-bold text-fgSecondary dark:text-fgSecondaryDark">
       Playtest Report:
       <ConditionalTooltipOrModal
         title="Public name"
@@ -107,7 +107,7 @@ const PlaytestReportForm = ({ id, setIsHotkeysDisabled, isPrecon = false }) => {
   return (
     <div className="flex flex-col gap-2">
       {!isPrecon && <Title isPrecon={isPrecon} />}
-      <div className="flex w-full items-center gap-3 justify-between">
+      <div className="flex w-full items-center justify-between gap-3">
         {isPrecon && <Title isPrecon={isPrecon} />}
         <PlaytestScores value={score} handleClick={handleScoreChange} />
         <ButtonClose title="Clear Score" handleClick={() => handleScoreChange(0)} />

@@ -81,10 +81,10 @@ const ResultModal = ({ card, handleModalCardChange, handleClose, forceInventoryM
           </div>
         ) : (
           <div className="flex">
-            <div className="bg-black border-y border-l border-bgSecondaryDark dark:border-bgSecondaryDark">
+            <div className="border-y border-l border-bgSecondaryDark bg-black dark:border-bgSecondaryDark">
               <CardImage card={activeCard} set={imageSet} onClick={handleClose} />
             </div>
-            <div className="w-full p-5 border-y border-r rounded-r border-bgSecondary dark:border-bgSecondaryDark">
+            <div className="w-full rounded-r border-y border-r border-bgSecondary p-5 dark:border-bgSecondaryDark">
               <ResultLayoutText
                 card={activeCard}
                 setCard={setActiveCard}

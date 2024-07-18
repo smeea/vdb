@@ -66,7 +66,7 @@ const DeckLibraryHeader = ({
               </div>
             )}
           </div>
-          <div className="flex items-center gap-1 min-h-10">
+          <div className="flex min-h-10 items-center gap-1">
             <Button
               className="min-h-10"
               title="Additional Info"

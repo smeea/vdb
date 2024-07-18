@@ -14,7 +14,7 @@ const CardPopover = ({ card }) => {
     return <CardImage card={card} className="max-w-[320px]" />;
   } else {
     return (
-      <div className="flex flex-col w-[375px] gap-3 p-4">
+      <div className="flex w-[375px] flex-col gap-3 p-4">
         {card.Id > 200000 ? (
           <ResultCryptLayoutText card={card} inPopover />
         ) : (

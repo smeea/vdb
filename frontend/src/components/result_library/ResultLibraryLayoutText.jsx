@@ -24,7 +24,7 @@ const ResultLibraryLayoutText = ({ card, handleClose, noClose, inPopover }) => {
       <div className="flex items-center justify-between whitespace-nowrap">
         <div className="flex items-center justify-between space-x-2 whitespace-nowrap">
           <ResultLibraryTypeImage value={card.Type} />
-          <div className="space-x-1 font-bold text-fgName  dark:text-fgNameDark">
+          <div className="space-x-1 font-bold text-fgName dark:text-fgNameDark">
             <ResultName card={card} />
           </div>
         </div>

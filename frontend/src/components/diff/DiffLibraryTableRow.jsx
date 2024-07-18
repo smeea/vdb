@@ -46,7 +46,7 @@ const DiffLibraryTableRow = ({
   return (
     <tr
       {...swipeHandlers}
-      className={`h-[38px] border-y border-bgSecondary dark:border-bgSecondaryDark  ${trBg}`}
+      className={`h-[38px] border-y border-bgSecondary dark:border-bgSecondaryDark ${trBg}`}
     >
       <DeckCardQuantityTd
         card={card.c}

@@ -90,11 +90,11 @@ const TwdHallFameCardsPlayer = ({ name, cards }) => {
                 ? `'${firstCardDate.slice(2, 4)}-'${lastCardDate.slice(2, 4)}`
                 : `${firstCardDate.slice(0, 4)} - ${lastCardDate.slice(0, 4)}`}
             </div>
-            <div className=" flex whitespace-nowrap ">
+            <div className="flex whitespace-nowrap">
               {isMobile ? 'C:' : 'Crypt: '}
               {cryptSorted.length}
             </div>
-            <div className=" flex whitespace-nowrap ">
+            <div className="flex whitespace-nowrap">
               {isMobile ? 'L:' : 'Library: '}
               {librarySorted.length}
             </div>

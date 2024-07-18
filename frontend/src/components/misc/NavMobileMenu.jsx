@@ -44,7 +44,7 @@ const NavMobileMenu = ({ isLimited, showMenu, setShowMenu }) => {
     >
       <List width="30" height="30" viewBox="0 0 16 16" />
       {showMenu && (
-        <div className="absolute bottom-10 space-y-0 rounded-lg border border-borderPrimary text-fgPrimary dark:text-fgPrimaryDark bg-bgPrimary text-lg dark:border-borderPrimaryDark dark:bg-bgPrimaryDark">
+        <div className="absolute bottom-10 space-y-0 rounded-lg border border-borderPrimary bg-bgPrimary text-lg text-fgPrimary dark:border-borderPrimaryDark dark:bg-bgPrimaryDark dark:text-fgPrimaryDark">
           <LinkItem
             target="/account"
             text={username ? 'Account' : 'Login'}

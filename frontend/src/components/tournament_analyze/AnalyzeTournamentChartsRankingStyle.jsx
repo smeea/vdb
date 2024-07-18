@@ -51,7 +51,7 @@ const AnalyzeTournamentChartsRankingStyle = ({ info, decks, searchResults }) => 
   }, [searchResults, decks, info]);
 
   return (
-    <div className="flex basis-full items-center flex-col">
+    <div className="flex basis-full flex-col items-center">
       {Object.keys(data).map((s) => {
         return (
           <BubbleChart

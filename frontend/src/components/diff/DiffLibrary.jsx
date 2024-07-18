@@ -111,7 +111,7 @@ const DiffLibrary = ({ cardsTo, deck }) => {
         {Object.keys(libraryByType).map((cardtype) => {
           return (
             <div key={cardtype}>
-              <div className="flex justify-between ">
+              <div className="flex justify-between">
                 <ResultLibraryType
                   cardtype={cardtype}
                   total={libraryByTypeTotal[cardtype]}
@@ -141,7 +141,7 @@ const DiffLibrary = ({ cardsTo, deck }) => {
         })}
       </div>
       {Object.keys(librarySide).length > 0 && (
-        <div className=" opacity-60 dark:opacity-50">
+        <div className="opacity-60 dark:opacity-50">
           <b>Side Library</b>
           {Object.keys(librarySideByType).map((cardtype) => {
             return (

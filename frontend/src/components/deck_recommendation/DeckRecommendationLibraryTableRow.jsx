@@ -22,7 +22,7 @@ const DeckRecommendationLibraryTableRow = ({ card, handleClick, deck }) => {
   return (
     <tr
       {...swipeHandlers}
-      className={`h-[38px] border-y border-bgSecondary dark:border-bgSecondaryDark  ${trBg}`}
+      className={`h-[38px] border-y border-bgSecondary dark:border-bgSecondaryDark ${trBg}`}
     >
       {isEditable && (
         <td>

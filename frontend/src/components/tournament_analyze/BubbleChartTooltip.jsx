@@ -21,7 +21,7 @@ const BubbleChartTooltip = ({ active, payload }) => {
               </div>
             </div>
           </div>
-          <div className="flex text-sm gap-2">
+          <div className="flex gap-2 text-sm">
             <TwdResultCryptTable crypt={value.crypt} />
             <TwdResultLibraryKeyCardsTable withHeader library={value.library} />
           </div>

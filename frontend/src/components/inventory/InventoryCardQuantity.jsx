@@ -37,7 +37,7 @@ const InventoryCardQuantity = ({ card, softUsedMax, hardUsedTotal, compact, newF
         <>
           <ButtonCardChange onClick={() => handleQuantityChange(-1)} isLink isNegative />
           <div
-            className={`flex w-full justify-center mx-1 ${
+            className={`mx-1 flex w-full justify-center ${
               state < softUsedMax + hardUsedTotal
                 ? 'bg-bgError text-white dark:bg-bgErrorDark dark:text-whiteDark'
                 : ''

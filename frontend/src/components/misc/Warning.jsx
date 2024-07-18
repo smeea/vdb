@@ -32,7 +32,7 @@ const Warning = ({ type, value = 'WARNING', title = '' }) => {
 
   return (
     <div
-      className="flex items-center gap-0.5 dark:text-fgedDark whitespace-nowrap text-fgRed"
+      className="dark:text-fgedDark flex items-center gap-0.5 whitespace-nowrap text-fgRed"
       title={types?.[type]?.title ?? title}
     >
       {types?.[type]?.icon ?? <Exclamation width="15" height="15" viewBox="0 0 16 16" />}

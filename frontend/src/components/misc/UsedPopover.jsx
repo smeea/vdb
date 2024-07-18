@@ -19,7 +19,7 @@ const UsedPopover = ({ cardid }) => {
   if (!inInventory) inInventory = 0;
 
   return (
-    <div className="flex flex-col max-w-[250px] gap-1">
+    <div className="flex max-w-[250px] flex-col gap-1">
       {(softUsedMax !== 0 || hardUsedTotal !== 0) && (
         <>
           {softUsedMax > 0 && (
@@ -48,8 +48,8 @@ const UsedPopover = ({ cardid }) => {
       {text && (
         <>
           <Hr />
-          <div className="flex items-top gap-1.5">
-            <div className="opacity-40 pt-1">
+          <div className="items-top flex gap-1.5">
+            <div className="pt-1 opacity-40">
               <ChatLeftQuoteFill width="14" height="14" viewBox="0 0 16 16" />
             </div>
             <div className="text-sm">{text}</div>

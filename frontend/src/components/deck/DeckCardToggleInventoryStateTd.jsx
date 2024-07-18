@@ -12,9 +12,8 @@ const DeckCardToggleInventoryStateTd = ({ card, deck }) => {
       <div className="relative flex items-center">
         <div
           className={`absolute left-[-24px] ${
-            card.i ? '' : isEditable ? 'group-hover:opacity-[0.35] opacity-0' : 'opacity-0'
-          }
-                      `}
+            card.i ? '' : isEditable ? 'opacity-0 group-hover:opacity-[0.35]' : 'opacity-0'
+          } `}
           onClick={() => isEditable && cardToggleInventoryState(deckid, card.c.Id)}
         >
           {deck.inventoryType == 's' ? <PinAngleFill /> : <Shuffle />}

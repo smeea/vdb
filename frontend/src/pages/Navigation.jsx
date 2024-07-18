@@ -98,7 +98,7 @@ const Navigation = () => {
     <nav
       className={`bg-bgNav dark:bg-bgNavDark ${
         isMobile ? 'fixed bottom-0 w-full' : 'sticky top-0'
-      } z-50 `}
+      } z-50`}
     >
       <div className="navbar-container mx-auto flex h-10 justify-between">
         <div className="flex items-center space-x-6">

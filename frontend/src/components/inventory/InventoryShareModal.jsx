@@ -50,7 +50,7 @@ const InventoryShareModal = ({ setShow }) => {
             <>
               <a href={shareUrl}>{shareUrl}</a>
               <div
-                className="inline pl-1 text-fgSecondary hover:text-fgPrimary dark:text-fgSecondaryDark dark:hover:text-fgPrimaryDark  "
+                className="inline pl-1 text-fgSecondary hover:text-fgPrimary dark:text-fgSecondaryDark dark:hover:text-fgPrimaryDark"
                 onClick={() => navigator.clipboard.writeText(shareUrl)}
               >
                 <ClipboardFill className="inline" viewBox="0 0 18 18" />

@@ -66,7 +66,7 @@ const InventoryLibrary = ({
                   target="discipline"
                 />
               </div>
-              <div className="flex justify-end font-bold  text-midGray dark:text-midGrayDark">
+              <div className="flex justify-end font-bold text-midGray dark:text-midGrayDark">
                 {missingFilteredTotal ? (
                   <>
                     {missingFilteredTotal} ({Object.values(missingFiltered).length} uniq) miss

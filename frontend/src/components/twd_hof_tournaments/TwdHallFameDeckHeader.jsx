@@ -29,7 +29,7 @@ const TwdHallFameDeckHeader = ({ deck, isStar }) => {
             <div>{`${deck.event}: ${deck.location}`}</div>
           </div>
         </div>
-        <div className="whitespace-nowrap ">{isMobile ? deck.date.slice(0, 4) : deck.date}</div>
+        <div className="whitespace-nowrap">{isMobile ? deck.date.slice(0, 4) : deck.date}</div>
       </div>
       {showDeck && (
         <>

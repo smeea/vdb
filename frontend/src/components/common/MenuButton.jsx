@@ -20,7 +20,7 @@ const MenuButton = ({ title, icon, variant = 'primary', className = '', text }) 
       className={`${mainStyle} ${customStyle[variant]} flex min-h-[41px] w-full items-center justify-center gap-2 rounded px-3 py-1.5 ${outlineStyle} ${className}`}
       title={title}
     >
-      <div className="flex text-fgFourth dark:text-fgPrimaryDark items-center">{icon}</div>
+      <div className="flex items-center text-fgFourth dark:text-fgPrimaryDark">{icon}</div>
       {text && <div>{text}</div>}
     </Menu.Button>
   );

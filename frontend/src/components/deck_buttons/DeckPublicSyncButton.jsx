@@ -37,7 +37,7 @@ const DeckPublicSyncButton = ({ deck }) => {
           handleCancel={() => setShowConfirmation(false)}
         >
           <div>
-            <div className="font-bold text-fgSecondary  dark:text-fgSecondaryDark">
+            <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
               Changes from currently published version:
             </div>
             <DeckPublicDiff deckTo={deck} deckFrom={decks[deck.publicParent]} />

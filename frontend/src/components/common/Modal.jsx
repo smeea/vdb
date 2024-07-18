@@ -31,13 +31,12 @@ const Modal = ({
           }`}
         >
           <Dialog.Panel
-            className={`border-bgSecondary dark:border-bgSecondaryDark
-            ${widthClass[size]} rounded ${noBorder ? '' : 'border'} bg-bgPrimary ${
+            className={`border-bgSecondary dark:border-bgSecondaryDark ${widthClass[size]} rounded ${noBorder ? '' : 'border'} bg-bgPrimary ${
               noPadding ? '' : 'p-3 sm:p-5'
             } dark:bg-bgPrimaryDark`}
           >
             <Dialog.Title
-              className={`flex items-center justify-between border-none  ${
+              className={`flex items-center justify-between border-none ${
                 title ? (noPadding ? 'p-1.5' : 'pb-1.5 sm:pb-3') : ''
               }`}
             >

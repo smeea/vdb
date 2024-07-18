@@ -4,7 +4,7 @@ import { Spinner, Hr, PlaytestScores } from '@/components';
 const Report = ({ id, text, score }) => {
   return (
     <div className="flex flex-col gap-3">
-      <div className="flex w-full justify-between items-center">
+      <div className="flex w-full items-center justify-between">
         <div title={id} className="text-fgName dark:text-fgNameDark">
           &lt;{id.substring(0, 15)}
           {id.length > 15 && '...'}&gt;

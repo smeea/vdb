@@ -56,7 +56,7 @@ const DeckSelectAdvTableRow = ({
   const clan = getClan(deck.crypt);
 
   return (
-    <tr className="h-[41px] border-y border-bgSecondary dark:border-bgSecondaryDark row-bg">
+    <tr className="row-bg h-[41px] border-y border-bgSecondary dark:border-bgSecondaryDark">
       {!(short || isMobile) && (
         <td className="min-w-[30px]">
           <Checkbox

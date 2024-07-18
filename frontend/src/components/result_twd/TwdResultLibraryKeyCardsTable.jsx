@@ -40,7 +40,7 @@ const TwdResultLibraryKeyCardsTable = ({ library, withHeader }) => {
 
   return (
     <div>
-      <div className="flex h-[30px] items-center justify-between gap-1.5 px-1 text-fgSecondary dark:text-whiteDark font-bold">
+      <div className="flex h-[30px] items-center justify-between gap-1.5 px-1 font-bold text-fgSecondary dark:text-whiteDark">
         {withHeader ? (
           <>
             <div className="whitespace-nowrap">

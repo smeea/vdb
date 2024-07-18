@@ -119,8 +119,8 @@ const PlaytestReportExportAllWrapper = ({ setShow }) => {
                   {!isMobile && (
                     <>
                       {playtestPrecon ? (
-                        <div className="flex flex-col w-[358px] gap-1">
-                          <div className="flex text-fgSecondary dark:text-fgSecondaryDark font-bold">
+                        <div className="flex w-[358px] flex-col gap-1">
+                          <div className="flex font-bold text-fgSecondary dark:text-fgSecondaryDark">
                             {i.name}
                           </div>
                           <DeckCrypt deck={i} noDisciplines />

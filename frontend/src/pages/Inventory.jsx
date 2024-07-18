@@ -121,7 +121,7 @@ const Inventory = () => {
             <div>
               <InventoryShowSelect category={category} setCategory={setCategory} />
             </div>
-            <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">
+            <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
               <Checkbox
                 label="Only with Notes"
                 checked={onlyNotes}

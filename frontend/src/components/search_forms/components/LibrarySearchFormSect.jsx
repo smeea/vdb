@@ -35,8 +35,8 @@ const LibrarySearchFormSect = ({ value, searchForm, onChange }) => {
 
   return (
     <>
-      <div className=" flex flex-row items-center  ">
-        <div className="flex w-1/4 items-center justify-between ">
+      <div className="flex flex-row items-center">
+        <div className="flex w-1/4 items-center justify-between">
           <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Sect:</div>
           {value.value[0] !== 'any' && (
             <div className="flex justify-end space-x-1 px-1">

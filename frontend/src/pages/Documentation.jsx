@@ -381,21 +381,21 @@ const Documentation = () => {
             </SubTitle>
             <ul>
               <li>
-                <div className="inline ">
+                <div className="inline">
                   <At className="inline" />
                 </div>
                 Virtual (default). These decks are excluded from inventory management tracking, like
                 you want for virtual Lackey decks or your in-progress projects
               </li>
               <li>
-                <div className="inline ">
+                <div className="inline">
                   <Shuffle className="inline" />
                 </div>
                 Flexible. These decks can share cards between them, like you want for your temporary
                 test decks or if your card pool is not big (yet)
               </li>
               <li>
-                <div className="inline ">
+                <div className="inline">
                   <PinAngleFill className="inline" />
                 </div>
                 Fixed. These decks each use unique cards like for your permanent decks you dont want
