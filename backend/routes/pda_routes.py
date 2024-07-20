@@ -165,7 +165,12 @@ def get_pda_authors_route():
 @app.route("/api/search/pda", methods=["POST"])
 def search_pda_route():
     pda_decks = []
-    decks = Deck.query.filter(Deck.public_parent != None).order_by(Deck.creation_date.desc()).all() if request.json["src"] != 'my-nonpublic' else Deck.query.filter(Deck.author == current_user).order_by(Deck.creation_date.desc()).all()
+    decks = []
+    if 'src' in request.json and request.json["src"] == 'my-nonpublic':
+        decks = Deck.query.filter(Deck.author == current_user).order_by(Deck.creation_date.desc()).all()
+    else:
+        decks = Deck.query.filter(Deck.public_parent != None).order_by(Deck.creation_date.desc()).all()
+
     for d in decks:
         deck = {
             "deckid": d.deckid,
