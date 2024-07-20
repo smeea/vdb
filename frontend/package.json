@@ -16,8 +16,8 @@
     "@floating-ui/react": "^0.26.19",
     "@headlessui/react": "^2.1.2",
     "@tailwindcss/forms": "^0.5.7",
-    "@vitejs/plugin-react-swc": "^3.7.0",
     "@vitejs/plugin-legacy": "^5.4.1",
+    "@vitejs/plugin-react-swc": "^3.7.0",
     "autoprefixer": "^10.4.19",
     "browserslist": "^4.23.2",
     "dotenv": "^16.4.5",
@@ -53,5 +53,8 @@
     "vite-plugin-pwa": "^0.20.0",
     "vite-plugin-svgr": "^4.2.0",
     "xlsx": "^0.18.5"
+  },
+  "dependencies": {
+    "sass": "^1.77.8"
   }
 }
