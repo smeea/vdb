@@ -280,8 +280,9 @@ def get_decks_by_libraryTotal(total_input, decks):
 
     match_cards = []
     for deck in decks:
+        library_size = deck["library_total"] if deck["library_total"] else 0
         for b in total_brackets:
-            if b[0] <= deck["library_total"] <= b[1]:
+            if b[0] <= library_size <= b[1]:
                 match_cards.append(deck)
                 break
 
