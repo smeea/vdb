@@ -11515,7 +11515,7 @@
         "Id":102269,
         "Name":"Camarilla Conclave",
         "Pool Cost":"",
-        "Requirement":"",
+        "Requirement":"justicar,inner circle,camarilla",
         "Rulings":[],
         "Set":{
             "30th":{
@@ -11591,7 +11591,7 @@
         "Id":102270,
         "Name":"Camarilla's Iron Fist",
         "Pool Cost":"",
-        "Requirement":"",
+        "Requirement":"camarilla,titled",
         "Rulings":[],
         "Set":{
             "30th":{
@@ -16477,7 +16477,7 @@
         "Id":102271,
         "Name":"Confiscation",
         "Pool Cost":"",
-        "Requirement":"",
+        "Requirement":"titled",
         "Rulings":[],
         "Set":{
             "30th":{
