@@ -152,11 +152,13 @@ def get_deck_route(deckid):
     if not d:
         # fallback for old twd urls length of 0
         # now twd deckids of length 9 have trailing 0 to avoid collision with user deck ids
-        deck = get_twd_deck(f"{deckid}0")
-        if not deck:
-            abort(400)
+        d = get_twd_deck(deckid)
+        if not d:
+            d = get_twd_deck(f"{deckid}0")
+            if not d:
+                abort(400)
 
-        return jsonify(deck)
+        return jsonify(d)
 
     is_author = current_user == d.author
 
