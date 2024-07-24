@@ -9,6 +9,7 @@
 - Only modifier for discipline search in library
 - Card q-ty change in autocompletion
 - Old-school image layout by Thiago Sousa
+- Sect and titled to library card
 
 # TECH IMPROVEMENTS
 - Update to React 19
