@@ -29742,7 +29742,7 @@
         ],
         "Banned":"",
         "Capacity":9,
-        "Card Text":"Camarilla /Banu Haqim Justicar/: Once each combat, Kasim can discard a political action card [POLITICALACTION] before range is determined to get +2 strength that combat. +1 bleed.",
+        "Card Text":"Camarilla Banu Haqim Justicar: Once each combat, Kasim can discard a political action card [POLITICALACTION] before range is determined to get +2 strength that combat. +1 bleed.",
         "Clan":"Banu Haqim",
         "Disciplines":{
             "Auspex":1,
@@ -53687,7 +53687,7 @@
         ],
         "Banned":"",
         "Capacity":9,
-        "Card Text":"Camarilla: While Tegyrius is ready, each Camarilla Banu Haqim can burn 1 blood to get +1 vote during the polling step of any referendum. Blood cursed.\n[MERGED] /Banu Haqim Justicar/.",
+        "Card Text":"Camarilla: While Tegyrius is ready, each Camarilla Banu Haqim can burn 1 blood to get +1 vote during the polling step of any referendum. Blood cursed.\n[MERGED] Banu Haqim Justicar.",
         "Clan":"Banu Haqim",
         "Disciplines":{
             "Auspex":2,

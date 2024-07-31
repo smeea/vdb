@@ -14,7 +14,8 @@ with open("cardbase_crypt.json", "r+") as crypt_file, open(
         'Red List', 'Seraph',
         'Imperator', 'Regent', 'Brujah Justicar', 'Gangrel Justicar',
         'Malkavian Justicar', 'Nosferatu Justicar', 'Toreador Justicar',
-        'Tremere Justicar', 'Ventrue Justicar', 'Inflict', 'Circle', 'Frenzy',
+        'Tremere Justicar', 'Ventrue Justicar', 'Lasombra Justicar',
+        'Banu Haqim Justicar', 'Inflict', 'Circle', 'Frenzy',
         'Dodge', 'Lock', 'Determine', 'Guru', 'Changeling', 'Zombie', 'Wash',
         'Nod', 'Crow', 'Contract', 'Luc', 'Monster', 'Inquisition', 'Angel'
     ] + disciplines + virtues

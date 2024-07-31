@@ -1,7 +1,6 @@
 # FIX
 - Snapshot url in iOS
 - Page update in iOS
-- Lasombra and Banu justicars to exclude from detected cards
 - Change horizontal vertical force layout failure
 
 # FEATURES
