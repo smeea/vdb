@@ -9,7 +9,6 @@ playtest_files = {
     "precon-nb-hecata-round4.txt": "NH",
     "precon-nb-lasombra-round4.txt": "NL",
     "precon-hecata-round4.txt": "PH",
-    "precon-lasombra-round4.txt": "PL",
 }
 
 playtest_cards = {}

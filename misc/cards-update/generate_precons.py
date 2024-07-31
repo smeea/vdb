@@ -171,7 +171,6 @@ playtest_bundles = {
         "NH": {},
         "NL": {},
         "PH": {},
-        "PL": {},
     },
 }
 
