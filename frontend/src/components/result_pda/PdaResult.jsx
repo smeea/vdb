@@ -32,17 +32,20 @@ const PdaResult = ({ results, setResults }) => {
 
   return (
     <>
-      <TwdResultTotal
-        results={results}
-        sortMethods={sortMethods}
-        sortMethod={pdaSearchSort}
-        setSortMethod={changePdaSearchSort}
-      />
       <div className="space-y-4">
-        {showedDecks.map((d, idx) => {
-          return <TwdDeck key={d.deckid} deck={d} withHr={idx + 1 < showCounter} inPda />;
-        })}
-
+        <div>
+          <TwdResultTotal
+            results={results}
+            sortMethods={sortMethods}
+            sortMethod={pdaSearchSort}
+            setSortMethod={changePdaSearchSort}
+          />
+          <div className="space-y-4">
+            {showedDecks.map((d) => {
+              return <TwdDeck key={d.deckid} deck={d} inPda />;
+            })}
+          </div>
+        </div>
         {deckCounter > showCounter && (
           <div className="flex justify-center">
             <Button variant="primary" onClick={() => setShowCounter(showCounter + showCounterStep)}>
