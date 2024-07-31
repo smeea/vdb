@@ -3,13 +3,13 @@ from deck_import import deck_import
 
 
 playtest_files = {
-    "precon-nb-ravnos-round2.txt": "NR",
-    "precon-nb-salubri-round2.txt": "NSal",
-    "precon-nb-tzimisce-round2.txt": "NTz",
-    "precon-nb-hecata-round2.txt": "NH",
-    "precon-nb-lasombra-round2.txt": "NL",
-    "precon-hecata-round3.txt": "PH",
-    "precon-lasombra-round3.txt": "PL",
+    "precon-nb-ravnos-round4.txt": "NR",
+    "precon-nb-salubri-round4.txt": "NSal",
+    "precon-nb-tzimisce-round4.txt": "NTz",
+    "precon-nb-hecata-round4.txt": "NH",
+    "precon-nb-lasombra-round4.txt": "NL",
+    "precon-hecata-round4.txt": "PH",
+    "precon-lasombra-round4.txt": "PL",
 }
 
 playtest_cards = {}
