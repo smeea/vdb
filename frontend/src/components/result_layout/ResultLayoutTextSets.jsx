@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Modal, ConditionalTooltip } from '@/components';
+import { CardImage, Modal, ConditionalTooltip } from '@/components';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 import { useApp } from '@/context';
 import { POD, PLAYTEST, PROMO } from '@/utils/constants';
@@ -29,71 +29,72 @@ const PreconsDetailed = ({ sets, set }) => {
   });
 };
 
-const PopoverText = ({ sets, set }) => {
+const PopoverText = ({ card, set, handleClose }) => {
   return (
-    <div className="max-w-[400px] space-y-1">
-      <b>{setsAndPrecons[set].name}</b>
-      {![POD, PROMO, PLAYTEST].includes(set) && ' - ' + setsAndPrecons[set].date.slice(0, 4)}
-      {![POD, PROMO].includes(set) && (
-        <ul className="space-y-1">
-          <PreconsDetailed sets={sets} set={set} />
-        </ul>
-      )}
+    <div className="flex max-w-[400px] flex-col">
+      <div className="flex flex-col gap-1 p-3">
+        <div>
+          <b>{setsAndPrecons[set].name}</b>
+          {![POD, PROMO, PLAYTEST].includes(set) && ' - ' + setsAndPrecons[set].date.slice(0, 4)}
+        </div>
+        {![POD, PROMO].includes(set) && (
+          <ul className="space-y-1">
+            <PreconsDetailed sets={card.Set} set={set} />
+          </ul>
+        )}
+      </div>
+      <CardImage
+        className="h-auto w-full"
+        card={card}
+        set={set !== POD && set.toLowerCase()}
+        onClick={handleClose}
+      />
     </div>
   );
 };
 
-const Sets = ({ sets, setImageSet, setSelectedSet }) => {
+const ResultLayoutTextSets = ({ card }) => {
   const { playtestMode, isMobile } = useApp();
+  const [selectedSet, setSelectedSet] = useState();
+  const handleClose = () => setSelectedSet(null);
   const byDate = (a, b) => {
     return setsAndPrecons[a].date > setsAndPrecons[b].date;
   };
 
-  return Object.keys(sets)
-    .filter((set) => playtestMode || set !== PLAYTEST)
-    .toSorted(byDate)
-    .map((set, index) => {
-      const preconsShort = Object.keys(sets[set]).join('/');
-
-      return (
-        <div
-          className="inline-block whitespace-nowrap"
-          onClick={() => {
-            if (set !== POD) setImageSet(set.toLowerCase());
-          }}
-          key={index}
-        >
-          <ConditionalTooltip
-            disabled={isMobile}
-            overlay={<PopoverText sets={sets} set={set} />}
-            placement="bottom"
-          >
-            <div
-              className="inline text-fgSecondary dark:text-fgPrimaryDark"
-              onClick={() => isMobile && setSelectedSet(set)}
-            >
-              {set}
-              <div className="inline text-midGray dark:text-midGrayDark">
-                {preconsShort ? `:${preconsShort}` : null}
-              </div>
-            </div>
-          </ConditionalTooltip>
-        </div>
-      );
-    });
-};
-
-const ResultLayoutTextSets = ({ sets, setImageSet }) => {
-  const [selectedSet, setSelectedSet] = useState();
-
   return (
     <>
       <div className="flex flex-wrap gap-x-2.5 gap-y-0.5">
-        <Sets sets={sets} setImageSet={setImageSet} setSelectedSet={setSelectedSet} />
+        {Object.keys(card.Set)
+          .filter((set) => playtestMode || set !== PLAYTEST)
+          .toSorted(byDate)
+          .map((set) => {
+            const preconsShort = Object.keys(card.Set[set]).join('/');
+
+            return (
+              <div className="inline-block whitespace-nowrap" key={set}>
+                <ConditionalTooltip
+                  disabled={isMobile}
+                  overlay={<PopoverText card={card} set={set} handleClose={handleClose} />}
+                  placement="bottom"
+                  noPadding
+                >
+                  <div
+                    className="inline text-fgSecondary dark:text-fgPrimaryDark"
+                    onClick={() => isMobile && setSelectedSet(set)}
+                  >
+                    {set}
+                    <div className="inline text-midGray dark:text-midGrayDark">
+                      {preconsShort ? `:${preconsShort}` : null}
+                    </div>
+                  </div>
+                </ConditionalTooltip>
+              </div>
+            );
+          })}
       </div>
       {selectedSet && (
-        <Modal size="xs" handleClose={() => setSelectedSet(null)} title="Sets" centered>
-          <PopoverText sets={sets} set={selectedSet} />
+        <Modal size="xs" noPadding handleClose={handleClose} title="Sets" centered>
+          <PopoverText card={card} set={selectedSet} handleClose={handleClose} />
         </Modal>
       )}
     </>

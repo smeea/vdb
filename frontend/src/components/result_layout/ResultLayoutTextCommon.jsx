@@ -12,7 +12,6 @@ import {
 const ResultLayoutTextCommon = ({
   handleClose,
   card,
-  setImageSet,
   forceInventoryMode,
   inPopover,
   setIsHotkeysDisabled,
@@ -24,7 +23,7 @@ const ResultLayoutTextCommon = ({
     <div className="flex flex-col gap-3">
       <div className="flex gap-2">
         <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Sets:</div>
-        <ResultLayoutTextSets setImageSet={setImageSet} sets={card['Set']} />
+        <ResultLayoutTextSets card={card} />
       </div>
       <div className="flex gap-2">
         <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Artist:</div>

@@ -19,7 +19,6 @@ const ResultLayoutText = ({
   card,
   setCard,
   handleClose,
-  setImageSet,
   forceInventoryMode,
   noClose,
   setIsHotkeysDisabled,
@@ -60,7 +59,6 @@ const ResultLayoutText = ({
         <ResultLayoutTextCommon
           handleClose={handleClose}
           card={card}
-          setImageSet={setImageSet}
           forceInventoryMode={forceInventoryMode}
           setIsHotkeysDisabled={setIsHotkeysDisabled}
         />

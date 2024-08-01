@@ -20,7 +20,6 @@ const Cards = () => {
     useApp();
 
   const card = useSnapshot(searchResults).quickCard;
-  const [imageSet, setImageSet] = useState(null);
   const navigate = useNavigate();
 
   const handleSetCard = (card) => {
@@ -70,15 +69,10 @@ const Cards = () => {
                 {playtestMode || card.Id < 110000 || (card.Id > 200000 && card.Id < 210000) ? (
                   <div className="pb-[59px]">
                     {showImage ? (
-                      <CardImage className="w-full" card={card} set={imageSet} />
+                      <CardImage className="w-full" card={card} />
                     ) : (
                       <div className="p-3 pb-0">
-                        <ResultLayoutText
-                          card={card}
-                          setImageSet={setImageSet}
-                          setCard={handleSetCard}
-                          noClose
-                        />
+                        <ResultLayoutText card={card} setCard={handleSetCard} noClose />
                       </div>
                     )}
                     <div className="fixed z-30">
@@ -132,15 +126,10 @@ const Cards = () => {
                   {playtestMode || card.Id < 110000 || (card.Id > 200000 && card.Id < 210000) ? (
                     <div className="flex border-bgSecondary dark:border-bgSecondaryDark">
                       <div>
-                        <CardImage card={card} set={imageSet} />
+                        <CardImage card={card} />
                       </div>
                       <div className="w-full pl-5 pt-1">
-                        <ResultLayoutText
-                          card={card}
-                          setImageSet={setImageSet}
-                          setCard={handleSetCard}
-                          noClose
-                        />
+                        <ResultLayoutText card={card} setCard={handleSetCard} noClose />
                       </div>
                     </div>
                   ) : (

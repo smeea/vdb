@@ -12,7 +12,6 @@
 - Old-school image layout by Thiago Sousa
 - Sect and titled to library card
 - Open precon from card view
-- Show image on precon click on mobile
 
 # TECH IMPROVEMENTS
 - Update to React 19

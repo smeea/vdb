@@ -9,18 +9,15 @@ import { useSwipe } from '@/hooks';
 const ResultModal = ({ card, handleModalCardChange, handleClose, forceInventoryMode }) => {
   const { showImage, toggleShowImage, isMobile } = useApp();
 
-  const [imageSet, setImageSet] = useState(null);
   const [activeCard, setActiveCard] = useState(card);
   const [isHotkeysDisabled, setIsHotkeysDisabled] = useState(false);
 
   const handleKeyDown = (event) => {
     switch (event.key) {
       case 'ArrowLeft':
-        setImageSet(null);
         handleModalCardChange(-1);
         break;
       case 'ArrowRight':
-        setImageSet(null);
         handleModalCardChange(1);
         break;
       default:
@@ -60,19 +57,13 @@ const ResultModal = ({ card, handleModalCardChange, handleClose, forceInventoryM
         {isMobile ? (
           <div {...swipeHandlers}>
             {showImage ? (
-              <CardImage
-                className="h-auto w-full"
-                card={activeCard}
-                set={imageSet}
-                onClick={handleClose}
-              />
+              <CardImage className="h-auto w-full" card={activeCard} onClick={handleClose} />
             ) : (
               <div className="w-full p-3">
                 <ResultLayoutText
                   card={activeCard}
                   setCard={setActiveCard}
                   handleClose={handleClose}
-                  setImageSet={setImageSet}
                   forceInventoryMode={forceInventoryMode}
                   setIsHotkeysDisabled={setIsHotkeysDisabled}
                 />
@@ -82,14 +73,13 @@ const ResultModal = ({ card, handleModalCardChange, handleClose, forceInventoryM
         ) : (
           <div className="flex">
             <div className="border-y border-l border-bgSecondaryDark bg-black dark:border-bgSecondaryDark">
-              <CardImage card={activeCard} set={imageSet} onClick={handleClose} />
+              <CardImage card={activeCard} onClick={handleClose} />
             </div>
             <div className="w-full rounded-r border-y border-r border-bgSecondary p-5 dark:border-bgSecondaryDark">
               <ResultLayoutText
                 card={activeCard}
                 setCard={setActiveCard}
                 handleClose={handleClose}
-                setImageSet={setImageSet}
                 forceInventoryMode={forceInventoryMode}
                 setIsHotkeysDisabled={setIsHotkeysDisabled}
               />
