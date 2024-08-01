@@ -33,9 +33,9 @@ const PreconsDetailed = ({ sets, set }) => {
   });
 };
 
-const PopoverText = ({ card, set, handleClose }) => {
+const PopoverSet = ({ card, set, handleClose }) => {
   return (
-    <div className="flex flex-col sm:max-w-[400px]">
+    <div className="flex max-sm:flex-col sm:gap-2">
       <div className="flex flex-col gap-1 p-3">
         <div>
           <b>{setsAndPrecons[set].name}</b>
@@ -47,12 +47,14 @@ const PopoverText = ({ card, set, handleClose }) => {
           </ul>
         )}
       </div>
-      <CardImage
-        className="h-auto w-full"
-        card={card}
-        set={set !== POD && set.toLowerCase()}
-        onClick={handleClose}
-      />
+      <div className="sm:max-w-[320px]">
+        <CardImage
+          className="h-auto w-full"
+          card={card}
+          set={set !== POD && set.toLowerCase()}
+          onClick={handleClose}
+        />
+      </div>
     </div>
   );
 };
@@ -78,8 +80,9 @@ const ResultLayoutTextSets = ({ card }) => {
               <div className="inline-block whitespace-nowrap" key={set}>
                 <ConditionalTooltip
                   disabled={isMobile}
-                  overlay={<PopoverText card={card} set={set} handleClose={handleClose} />}
+                  overlay={<PopoverSet card={card} set={set} handleClose={handleClose} />}
                   placement="bottom"
+                  size="lg"
                   noPadding
                 >
                   <div
@@ -97,8 +100,8 @@ const ResultLayoutTextSets = ({ card }) => {
           })}
       </div>
       {selectedSet && (
-        <Modal size="sm" noPadding handleClose={handleClose} title="Sets" centered>
-          <PopoverText card={card} set={selectedSet} handleClose={handleClose} />
+        <Modal size="sm" noPadding handleClose={handleClose} centered>
+          <PopoverSet card={card} set={selectedSet} handleClose={handleClose} />
         </Modal>
       )}
     </>

@@ -20,9 +20,7 @@ const CardPopover = ({ card }) => {
         ) : (
           <ResultLibraryLayoutText card={card} inPopover />
         )}
-        {/* <div className="border"> */}
         <ResultLayoutTextCommon card={card} inPopover />
-        {/* </div> */}
       </div>
     );
   }
