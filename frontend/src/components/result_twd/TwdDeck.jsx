@@ -35,13 +35,13 @@ const TwdDeck = ({ deck, inPda }) => {
               {inPda ? <PdaResultDescription deck={deck} /> : <TwdResultDescription deck={deck} />}
             </div>
             <div className="flex basis-full gap-2 lg:basis-3/4">
-              <div className="basis-1/2 md:basis-1/3">
+              <div className="basis-1/2 md:basis-4/12">
                 <TwdResultCryptTable crypt={deck.crypt} />
               </div>
-              <div className="max-md:hidden md:basis-1/3">
+              <div className="max-md:hidden md:basis-3/12">
                 <TwdResultLibraryByTypeTable library={deck.library} />
               </div>
-              <div className="basis-1/2 md:basis-1/3">
+              <div className="basis-1/2 md:basis-5/12">
                 <TwdResultLibraryKeyCardsTable withHeader={isNarrow} library={deck.library} />
               </div>
             </div>

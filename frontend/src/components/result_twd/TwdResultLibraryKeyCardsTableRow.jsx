@@ -6,6 +6,7 @@ import {
   ResultName,
   ResultLibraryTypeImage,
   ResultLibraryDisciplines,
+  ResultLibraryRequirements,
   ResultLibraryClan,
   ConditionalTooltip,
 } from '@/components';
@@ -59,11 +60,11 @@ const TwdResultLibraryKeyCardsTableRow = ({ card, handleClick, shouldShowModal }
         </ConditionalTooltip>
       </td>
       {!isMobile && (
-        <td className="min-w-[62px] 2xl:min-w-[85px]" onClick={() => handleClick(card.c)}>
-          <div className="flex items-center justify-center">
-            {card.c.Discipline && <ResultLibraryDisciplines value={card.c.Discipline} />}
-            {card.c.Discipline && card.c.Clan && '+'}
+        <td className="min-w-[90px]" onClick={() => handleClick(card.c)}>
+          <div className="flex items-center justify-center gap-1">
             {card.c.Clan && <ResultLibraryClan value={card.c.Clan} />}
+            {card.c.Discipline && <ResultLibraryDisciplines value={card.c.Discipline} />}
+            {card.c.Requirement && <ResultLibraryRequirements value={card.c.Requirement} />}
           </div>
         </td>
       )}

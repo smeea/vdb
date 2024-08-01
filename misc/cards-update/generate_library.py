@@ -318,7 +318,7 @@ def generate_card(card):
         "Id": card["Id"],
         "Name": card["Name"],
         "Pool Cost": card["Pool Cost"],
-        "Requirement": card["Requirement"],
+        "Requirement": card["Requirement"].lower(),
         "Rulings": card["Rulings"],
         "Set": card["Set"],
         "Twd": card["Twd"],

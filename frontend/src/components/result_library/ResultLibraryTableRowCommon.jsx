@@ -5,7 +5,7 @@ import {
   ResultLibraryClan,
   ResultLibraryCost,
   ResultLibraryDisciplines,
-  ResultRequirements,
+  ResultLibraryRequirements,
   ResultName,
   ResultLibraryTrifle,
   ResultLibraryTypeImage,
@@ -57,16 +57,10 @@ const Name = ({ card, handleClick, shouldShowModal, isBanned }) => {
 const Requirements = ({ card, handleClick }) => {
   return (
     <td className="min-w-[60px] sm:min-w-[90px]" onClick={() => handleClick(card)}>
-      <div className="flex items-center justify-center">
+      <div className="flex items-center justify-center gap-1">
         {card.Clan && <ResultLibraryClan value={card.Clan} />}
-        {card.Discipline && card.Clan && '+'}
         {card.Discipline && <ResultLibraryDisciplines value={card.Discipline} />}
-        {card.Requirement && (
-          <ResultRequirements
-            withClanDiscipline={card.Discipline || card.Clan}
-            value={card.Requirement}
-          />
-        )}
+        {card.Requirement && <ResultLibraryRequirements value={card.Requirement} />}
       </div>
     </td>
   );

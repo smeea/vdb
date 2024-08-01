@@ -7,6 +7,7 @@ import {
   ResultLibraryClan,
   ResultLibraryCost,
   ResultLibraryDisciplines,
+  ResultLibraryRequirements,
   ResultName,
   ResultLibraryTrifle,
   ResultLibraryTypeImage,
@@ -29,9 +30,9 @@ const ResultLibraryLayoutText = ({ card, handleClose, noClose, inPopover }) => {
           </div>
         </div>
         <div className="flex items-center space-x-3">
-          <div className="flex items-center">
+          <div className="flex items-center gap-1">
+            {card.Requirement && <ResultLibraryRequirements value={card.Requirement} />}
             {card.Discipline && <ResultLibraryDisciplines value={card.Discipline} />}
-            {card.Discipline && card.Clan && '+'}
             {card.Clan && <ResultLibraryClan value={card.Clan} />}
           </div>
           {card['Burn Option'] && <div>{card['Burn Option'] && <ResultLibraryBurn />}</div>}

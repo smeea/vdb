@@ -461,7 +461,7 @@
         "Id":100011,
         "Name":"Absimiliard's Army",
         "Pool Cost":"",
-        "Requirement":"1 Gehenna",
+        "Requirement":"1 gehenna",
         "Rulings":[
             {
                 "text":"Putting the top card of your library in play as a ghoul does not count as playing the card. ",
@@ -1557,7 +1557,7 @@
         "Id":100039,
         "Name":"Alia, God's Messenger",
         "Pool Cost":"",
-        "Requirement":"2 Gehenna",
+        "Requirement":"2 gehenna",
         "Rulings":[
             {
                 "text":"If it uses its last life to play an action modifier, the action fails. If it uses its last life to play a strike, combat ends before strike resolution. ",
@@ -5502,7 +5502,7 @@
         "Id":100132,
         "Name":"Banner of Neutrality",
         "Pool Cost":"",
-        "Requirement":"Independent,anarch",
+        "Requirement":"independent,anarch",
         "Rulings":[],
         "Set":{
             "FN":{
@@ -6150,7 +6150,7 @@
         "Id":100148,
         "Name":"Becoming of Ennoia",
         "Pool Cost":"",
-        "Requirement":"2 Gehenna",
+        "Requirement":"2 gehenna",
         "Rulings":[
             {
                 "text":"The \"other Gehenna cards in play\" requirement is only checked when playing the card. ",
@@ -15739,7 +15739,7 @@
         "Id":100387,
         "Name":"Community Justice",
         "Pool Cost":"",
-        "Requirement":"Independent,anarch",
+        "Requirement":"independent,anarch",
         "Rulings":[
             {
                 "text":"\"Since your last turn\" means between the end of your last turn and now. Your last turn does not qualify, your current turn does. ",
@@ -16626,7 +16626,7 @@
         "Id":100409,
         "Name":"Conquest of Humanity",
         "Pool Cost":"",
-        "Requirement":"2 Gehenna",
+        "Requirement":"2 gehenna",
         "Rulings":[
             {
                 "text":"The \"other Gehenna cards in play\" requirement is only checked when playing the card. ",
@@ -24877,7 +24877,7 @@
         "Id":100612,
         "Name":"Edge Explosion",
         "Pool Cost":"",
-        "Requirement":"1 Gehenna",
+        "Requirement":"1 gehenna",
         "Rulings":[
             {
                 "text":"The \"other Gehenna cards in play\" requirement is only checked when playing the card. ",
@@ -28252,7 +28252,7 @@
         "Id":100695,
         "Name":"Fall of the Camarilla",
         "Pool Cost":"",
-        "Requirement":"3 Gehenna",
+        "Requirement":"3 gehenna",
         "Rulings":[
             {
                 "text":"Cards that change a vampire's sect to Camarilla can still be played, but he becomes Independent until the Fall is removed from play. ",
@@ -28314,7 +28314,7 @@
         "Id":100696,
         "Name":"Fall of the Sabbat",
         "Pool Cost":"",
-        "Requirement":"3 Gehenna",
+        "Requirement":"3 gehenna",
         "Rulings":[
             {
                 "text":"Cards that change a vampire's sect to Sabbat can still be played, but he becomes Independent until the Fall is removed from play. ",
@@ -32026,7 +32026,7 @@
         "Id":100781,
         "Name":"Fourth Cycle, The",
         "Pool Cost":"",
-        "Requirement":"2 Gehenna",
+        "Requirement":"2 gehenna",
         "Rulings":[],
         "Set":{
             "Promo":{
@@ -32404,7 +32404,7 @@
         "Id":100790,
         "Name":"Free States Rant",
         "Pool Cost":"",
-        "Requirement":"Independent,anarch",
+        "Requirement":"independent,anarch",
         "Rulings":[
             {
                 "text":"If there are insuffient targets to which to allocate all of the points allowed, then the card cannot be played. ",
@@ -52246,7 +52246,7 @@
         "Id":101279,
         "Name":"New Inquisition, The",
         "Pool Cost":"",
-        "Requirement":"1 Gehenna",
+        "Requirement":"1 gehenna",
         "Rulings":[
             {
                 "text":"When a vampire goes to torpor, the card is replaced before any other effect (eg. before losing pool to {Fame}). ",
@@ -63382,7 +63382,7 @@
         "Id":101566,
         "Name":"Recalled to the Founder",
         "Pool Cost":"",
-        "Requirement":"2 Gehenna",
+        "Requirement":"2 gehenna",
         "Rulings":[
             {
                 "text":"The \"other Gehenna cards in play\" requirement is only checked when playing the card. ",
@@ -63417,7 +63417,7 @@
         "Id":101567,
         "Name":"Reckless Agitation",
         "Pool Cost":"",
-        "Requirement":"Independent,anarch,capacity 5 or more",
+        "Requirement":"independent,anarch,capacity 5 or more",
         "Rulings":[
             {
                 "text":"Cannot allocate 6 points to a single Methuselah, nor any point to yourself. Cannot be played if there is only one opponent left. ",
@@ -66188,7 +66188,7 @@
         "Id":101639,
         "Name":"Rise of the Nephtali",
         "Pool Cost":"",
-        "Requirement":"1 Gehenna",
+        "Requirement":"1 gehenna",
         "Rulings":[
             {
                 "text":"Is not replaced until the condition is met, even if it is burned. ",
@@ -66229,7 +66229,7 @@
         "Id":101640,
         "Name":"Rising, The",
         "Pool Cost":"",
-        "Requirement":"2 Gehenna",
+        "Requirement":"2 gehenna",
         "Rulings":[
             {
                 "text":"Anything that would increase the pool amount is considered \"gaining pool\". ",
@@ -73193,7 +73193,7 @@
         "Id":101807,
         "Name":"Slow Withering, The",
         "Pool Cost":"",
-        "Requirement":"1 Gehenna",
+        "Requirement":"1 gehenna",
         "Rulings":[
             {
                 "text":"The additional cost is paid at the same time the normal cost is paid. ",
@@ -87647,7 +87647,7 @@
         "Id":102158,
         "Name":"Watchtower: The Wolves Feed",
         "Pool Cost":"1",
-        "Requirement":"1 Gehenna,seraph",
+        "Requirement":"1 gehenna,seraph",
         "Rulings":[],
         "Set":{
             "SoC":{
@@ -89056,7 +89056,7 @@
         "Id":102194,
         "Name":"Wormwood",
         "Pool Cost":"",
-        "Requirement":"1 Gehenna",
+        "Requirement":"1 gehenna",
         "Rulings":[
             {
                 "text":"Ceils the vampire's capacity, including effects that have changed it, to X. {Orun} adds to that X, or the vampire's capacity if it is lower, for cards played by other players. ",

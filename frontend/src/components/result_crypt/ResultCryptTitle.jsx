@@ -15,6 +15,7 @@ const ResultCryptTitle = ({ value, noTitle }) => {
     cardinal: ['Cardinal', 'Cr'],
     regent: ['Regent', 'Rg'],
     magaji: ['Magaji', 'Mj'],
+    titled: ['Titled', 'T'],
   };
 
   return (

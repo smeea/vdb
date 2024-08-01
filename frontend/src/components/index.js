@@ -246,7 +246,6 @@ export { default as ResultMiscImage } from './result_common/ResultMiscImage.jsx'
 export { default as ResultModal } from './result_common/ResultModal.jsx';
 export { default as ResultName } from './result_common/ResultName.jsx';
 export { default as ResultPreconClan } from './result_common/ResultPreconClan.jsx';
-export { default as ResultRequirements } from './result_common/ResultRequirements.jsx';
 export { default as ResultUsed } from './result_common/ResultUsed.jsx';
 
 export { default as ResultCrypt } from './result_crypt/ResultCrypt.jsx';
@@ -278,6 +277,7 @@ export { default as ResultLibraryCost } from './result_library/ResultLibraryCost
 export { default as ResultLibraryDisciplines } from './result_library/ResultLibraryDisciplines.jsx';
 export { default as ResultLibraryLayoutText } from './result_library/ResultLibraryLayoutText.jsx';
 export { default as ResultLibraryName } from './result_library/ResultLibraryName.jsx';
+export { default as ResultLibraryRequirements } from './result_library/ResultLibraryRequirements.jsx';
 export { default as ResultLibraryTable } from './result_library/ResultLibraryTable.jsx';
 export { default as ResultLibraryTableRow } from './result_library/ResultLibraryTableRow.jsx';
 export { default as ResultLibraryTableRowCommon } from './result_library/ResultLibraryTableRowCommon.jsx';
