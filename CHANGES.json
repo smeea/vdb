@@ -1,5 +1,16 @@
 [
   {
+    "version": "2024-08-01",
+    "changes": [
+      "Add sect and 'titled' requirements to library cards",
+      "Show more library requirements (other than clan/discipline) in TWD/PDA cards",
+      "Change card scans from different set to show in popoup when hover over set name in card view instead of replacing current card image",
+      "Make precons card presented in ('Sets' section in card view) clickable to open that precon deck(on desktop click on Set name first to freeze popup)",
+      "Update Playtest to Round 4",
+      "Fix 'Show More' in TWD and PDA"
+    ]
+  },
+  {
     "version": "2024-07-21",
     "changes": [
       "Bug fixes"
