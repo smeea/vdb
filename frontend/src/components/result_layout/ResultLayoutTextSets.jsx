@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { CardImage, Modal, ConditionalTooltip } from '@/components';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 import { useApp } from '@/context';
@@ -16,7 +17,10 @@ const PreconsDetailed = ({ sets, set }) => {
     if (setsAndPrecons[set].precons?.[i]) {
       return (
         <li key={idx}>
-          {setsAndPrecons[set].precons[i].name} - {sets[set][i]}x
+          <Link target="_blank" rel="noreferrer" to={`/decks/${set}:${i}`}>
+            {setsAndPrecons[set].precons[i].name}
+          </Link>{' '}
+          - {sets[set][i]}x
         </li>
       );
     } else {
@@ -31,7 +35,7 @@ const PreconsDetailed = ({ sets, set }) => {
 
 const PopoverText = ({ card, set, handleClose }) => {
   return (
-    <div className="flex max-w-[400px] flex-col">
+    <div className="flex flex-col sm:max-w-[400px]">
       <div className="flex flex-col gap-1 p-3">
         <div>
           <b>{setsAndPrecons[set].name}</b>
@@ -93,7 +97,7 @@ const ResultLayoutTextSets = ({ card }) => {
           })}
       </div>
       {selectedSet && (
-        <Modal size="xs" noPadding handleClose={handleClose} title="Sets" centered>
+        <Modal size="sm" noPadding handleClose={handleClose} title="Sets" centered>
           <PopoverText card={card} set={selectedSet} handleClose={handleClose} />
         </Modal>
       )}

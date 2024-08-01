@@ -11,7 +11,6 @@
 - Card q-ty change in autocompletion
 - Old-school image layout by Thiago Sousa
 - Sect and titled to library card
-- Open precon from card view
 
 # TECH IMPROVEMENTS
 - Update to React 19
