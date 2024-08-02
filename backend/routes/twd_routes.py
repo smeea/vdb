@@ -123,7 +123,9 @@ def get_random_twd_route(quantity):
 def get_twd(deckid):
     with open("twd_decks.json", "r") as twd_decks_file:
         twd_decks = json.load(twd_decks_file)
-        deck = sanitize_twd(twd_decks[deckid])
+        deck = sanitize_twd(twd_decks[deckid if len(deckid) == 9 else f"{deckid}0"])
+        if not deck:
+            abort(400)
 
         return jsonify(deck)
 
