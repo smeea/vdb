@@ -9,7 +9,6 @@
 - Only modifier for discipline search in library
 - Card q-ty change in autocompletion
 - Old-school image layout by Thiago Sousa
-- Card played indicator for playtest
 
 # TECH IMPROVEMENTS
 - Update to React 19

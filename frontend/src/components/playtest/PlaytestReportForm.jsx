@@ -10,6 +10,7 @@ import {
   Textarea,
   ConditionalTooltipOrModal,
   PlaytestScores,
+  Checkbox,
 } from '@/components';
 import { useFetch } from '@/hooks';
 import { useApp } from '@/context';
@@ -58,8 +59,10 @@ const Title = ({ isPrecon }) => {
 };
 
 const PlaytestReportForm = ({ id, setIsHotkeysDisabled, isPrecon = false }) => {
+  const { isMobile } = useApp();
   const [text, setText] = useState('');
   const [score, setScore] = useState(0);
+  const [isPlayed, setIsPlayed] = useState(false);
   const [isFolded, setIsFolded] = useState(true);
 
   const url = `${import.meta.env.VITE_API_URL}/playtest/${isPrecon ? 'precons' : 'cards'}/${id}`;
@@ -69,6 +72,7 @@ const PlaytestReportForm = ({ id, setIsHotkeysDisabled, isPrecon = false }) => {
     if (dataValue) {
       setScore(dataValue.score);
       setText(dataValue.text);
+      setIsPlayed(!!dataValue.isPlayed);
     }
   }, [id, dataValue]);
 
@@ -76,12 +80,13 @@ const PlaytestReportForm = ({ id, setIsHotkeysDisabled, isPrecon = false }) => {
     setText(event.target.value);
   };
 
-  const submit = (t, s) => {
+  const submit = (t, s, i) => {
     playtestServices.submitReport(
       id,
       {
         text: t,
         score: s,
+        isPlayed: i,
       },
       isPrecon,
     );
@@ -89,26 +94,36 @@ const PlaytestReportForm = ({ id, setIsHotkeysDisabled, isPrecon = false }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    submit(text, score);
+    submit(text, score, isPlayed);
   };
 
   const handleOnBlur = () => {
     if (setIsHotkeysDisabled) setIsHotkeysDisabled(false);
     if (text !== dataValue.text) {
-      submit(text, score);
+      submit(text, score, isPlayed);
     }
   };
 
-  const handleScoreChange = (value) => {
-    setScore(value);
-    submit(text, value);
+  const handleIsPlayedChange = (event) => {
+    setIsPlayed(event.target.checked);
+    submit(text, score, event.target.checked);
+  };
+
+  const handleScoreChange = (score) => {
+    setScore(score);
+    submit(text, score, isPlayed);
   };
 
   return (
     <div className="flex flex-col gap-2">
-      {!isPrecon && <Title isPrecon={isPrecon} />}
+      {!isPrecon && (
+        <div className="flex justify-between">
+          <Title />
+          <Checkbox label="was seen in play" checked={isPlayed} onChange={handleIsPlayedChange} />
+        </div>
+      )}
       <div className="flex w-full items-center justify-between gap-3">
-        {isPrecon && <Title isPrecon={isPrecon} />}
+        <div className="flex flex-col">{isPrecon && <Title isPrecon={isPrecon} />}</div>
         <PlaytestScores value={score} handleClick={handleScoreChange} />
         <ButtonClose title="Clear Score" handleClick={() => handleScoreChange(0)} />
       </div>

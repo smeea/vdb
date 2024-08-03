@@ -61,6 +61,7 @@ const PlaytestReportExportAllWrapper = ({ setShow }) => {
         Object.keys(value[id]).forEach((user, uIdx) => {
           exportText += `User: <${user}>\n`;
           exportText += `Score: ${value[id][user].score}\n`;
+          exportText += `Seen in Play: ${value[id][user].isPlayed ? 'Yes' : 'No'}\n`;
           exportText += `${value[id][user].text}\n`;
           if (uIdx + 1 < Object.keys(value[id]).length) {
             exportText += '\n-----\n\n';

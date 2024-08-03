@@ -93,7 +93,7 @@ def report_route(target, id):
 
     if request.method == "GET":
             if not id in current_user.playtest_report[target]:
-                return {'text': '', 'score': 0}
+                return {'text': '', 'score': 0, 'isPlayed': False}
             return current_user.playtest_report[target][id]
 
     if request.method == "PUT":
@@ -101,6 +101,7 @@ def report_route(target, id):
         report[target][id] = {
             'text': request.json["text"],
             'score': request.json["score"],
+            'isPlayed': request.json["isPlayed"],
         }
         current_user.playtest_report = report
         db.session.commit()

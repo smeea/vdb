@@ -1,16 +1,21 @@
 import React from 'react';
+import EyeFill from '@/assets/images/icons/eye-fill.svg?react';
+import EyeSlashFill from '@/assets/images/icons/eye-slash-fill.svg?react';
 import { Spinner, Hr, PlaytestScores } from '@/components';
 
-const Report = ({ id, text, score }) => {
+const Report = ({ id, text, score, isPlayed }) => {
   return (
     <div className="flex flex-col gap-3">
       <div className="flex w-full items-center justify-between">
         <div title={id} className="text-fgName dark:text-fgNameDark">
           &lt;{id.substring(0, 15)}
-          {id.length > 15 && '...'}&gt;
+          {id.length > 15 && '…'}&gt;
         </div>{' '}
-        <div className="flex justify-end">
+        <div className="flex items-center justify-end gap-4">
           <PlaytestScores value={score} isSmall />
+          <div title={`Was ${isPlayed ? '' : 'not '}seen in play`}>
+            {isPlayed ? <EyeFill /> : <EyeSlashFill />}
+          </div>
         </div>
       </div>
       <div>
@@ -29,7 +34,12 @@ const PlaytestReportExport = ({ value }) => {
         Object.keys(value).map((id, idx) => {
           return (
             <React.Fragment key={id}>
-              <Report id={id} text={value[id].text} score={value[id].score} />
+              <Report
+                id={id}
+                text={value[id].text}
+                score={value[id].score}
+                isPlayed={value[id].isPlayed}
+              />
               {idx + 1 < Object.keys(value).length && <Hr />}
             </React.Fragment>
           );
