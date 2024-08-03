@@ -1,14 +1,15 @@
-export const byName = (a, b) => {
+export const byName = (a, b) => a.localeCompare(b, 'en');
+
+export const byCardName = (a, b) => {
   const nameA = a.c ? a.c['ASCII Name'] : a['ASCII Name'];
   const nameB = b.c ? b.c['ASCII Name'] : b['ASCII Name'];
-
-  return nameA.localeCompare(nameB, 'en');
+  return byName(nameA, nameB);
 };
 
 export const byClan = (a, b) => {
   const clanA = a.c ? a.c.Clan : a.Clan;
   const clanB = b.c ? b.c.Clan : b.Clan;
-  return clanA.localeCompare(clanB, 'en');
+  return byName(clanA, clanB);
 };
 
 export const byClanOpt = (a, b) => {
@@ -16,7 +17,7 @@ export const byClanOpt = (a, b) => {
   const clanB = b.c ? b.c.Clan : b.Clan;
   if (clanA && !clanB) return -1;
   if (!clanA && clanB) return 1;
-  return clanA.localeCompare(clanB, 'en');
+  return byName(clanA, clanB);
 };
 
 export const byGroup = (a, b) => {
@@ -31,14 +32,12 @@ export const byCapacity = (a, b) => {
   return capacityB - capacityA;
 };
 
-export const byQuantity = (a, b) => {
-  return b.q - a.q;
-};
+export const byQuantity = (a, b) => b.q - a.q;
 
 export const byType = (a, b) => {
   const typeA = a.c ? a.c.Type : a.Type;
   const typeB = b.c ? b.c.Type : b.Type;
-  return typeA.localeCompare(typeB, 'en');
+  return byName(typeA, typeB);
 };
 
 export const byDiscipline = (a, b) => {
@@ -47,7 +46,7 @@ export const byDiscipline = (a, b) => {
 
   if (disciplineA && !disciplineB) return -1;
   if (!disciplineA && disciplineB) return 1;
-  return disciplineA.localeCompare(disciplineB, 'en');
+  return byName(disciplineA, disciplineB);
 };
 
 export const byBloodCost = (a, b) => {
@@ -71,7 +70,7 @@ export const byPoolCost = (a, b) => {
 export const bySect = (a, b) => {
   const sectA = a.c ? a.c.Sect : a.Sect;
   const sectB = b.c ? b.c.Sect : b.Sect;
-  return sectA.localeCompare(sectB, 'en');
+  return byName(sectA, sectB);
 };
 
 export const byTimestamp = (a, b) => {
@@ -82,7 +81,7 @@ export const byPlayer = (a, b) => {
   if (a.player && !b.player) return -1;
   if (!a.player && b.player) return 1;
   if (!a.player && !b.player) return 0;
-  return a.player.localeCompare(b.player, 'en');
+  return byName(a.player, b.player);
 };
 
 export const byDateWin = (a, b) => {

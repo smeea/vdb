@@ -1,5 +1,6 @@
 import React from 'react';
 import { Disclosure } from '@headlessui/react';
+import { byName } from '@/utils';
 import { TwdHallFameTournamentsPlayer } from '@/components';
 import { useFetch } from '@/hooks';
 
@@ -9,10 +10,6 @@ const TwdHallOfFameTournaments = () => {
 
   const byWins = (a, b) => {
     return Object.keys(value[b]).length - Object.keys(value[a]).length;
-  };
-
-  const byName = (a, b) => {
-    return a.localeCompare(b, 'en');
   };
 
   return (

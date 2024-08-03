@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import { Tab } from '@headlessui/react';
 import { TabButton, TwdCardsHistoryCrypt, TwdCardsHistoryLibrary } from '@/components';
 import { useApp } from '@/context';
-import { byName } from '@/utils';
+import { byCardName } from '@/utils';
 import { useFetch } from '@/hooks';
 import { POD, PROMO } from '@/utils/constants';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
@@ -47,8 +47,8 @@ const TwdCardsHistory = () => {
         }
       });
 
-      const crypt = Object.values(c).toSorted(byName);
-      const library = Object.values(l).toSorted(byName);
+      const crypt = Object.values(c).toSorted(byCardName);
+      const library = Object.values(l).toSorted(byCardName);
 
       return {
         crypt,

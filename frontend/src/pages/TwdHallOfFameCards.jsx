@@ -3,6 +3,7 @@ import { Disclosure, Tab } from '@headlessui/react';
 import { TabButton, TwdHallFameCardsPlayer } from '@/components';
 import { useApp } from '@/context';
 import { useFetch } from '@/hooks';
+import { byName } from '@/utils';
 import { POD, PROMO } from '@/utils/constants';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 
@@ -11,10 +12,6 @@ const TwdHallOfFameCards = () => {
   const INNOVATION_PERIOD = 2 * 365;
   const IGNORED_BEFORE_DATE = '1999-04-11'; // first was 1997-04-11
   const MS_TO_DAYS = 1000 * 60 * 60 * 24;
-
-  const byName = (a, b) => {
-    return a.localeCompare(b, 'en');
-  };
 
   const url = `${import.meta.env.VITE_BASE_URL}/data/twd_cards_history.json`;
   const { value } = useFetch(url, {}, []);
@@ -108,7 +105,6 @@ const TwdHallOfFameCards = () => {
               {players &&
                 Object.keys(players)
                   .toSorted(byName)
-                  .toSorted((a, b) => a.localeCompare(b, 'en'))
                   .toSorted(byTotal)
                   .map((player) => (
                     <Disclosure key={player}>

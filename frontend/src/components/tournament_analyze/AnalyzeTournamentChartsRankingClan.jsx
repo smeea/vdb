@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import { BubbleChart } from '@/components';
-import { getClan } from '@/utils';
+import { byName, getClan } from '@/utils';
 import { useApp } from '@/context';
 
 const AnalyzeTournamentChartsRankingClan = ({ info, decks, searchResults }) => {
@@ -38,7 +38,7 @@ const AnalyzeTournamentChartsRankingClan = ({ info, decks, searchResults }) => {
   return (
     <div className="flex basis-full flex-col items-center">
       {Object.keys(data)
-        .toSorted((a, b) => a.localeCompare(b, 'en'))
+        .toSorted(byName)
         .map((s) => {
           const clan = isMobile && s.includes('antitribu') ? '!' + s.replace(' antitribu', '') : s;
 

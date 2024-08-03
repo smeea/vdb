@@ -5,7 +5,7 @@ import {
   byDiscipline,
   byQuantity,
   byType,
-  byName,
+  byCardName,
   byClanOpt,
   byPlayer,
   byDateWin,
@@ -24,20 +24,28 @@ const librarySort = (cards, sortMethod) => {
   if (cards) {
     switch (sortMethod) {
       case 'Name':
-        return cards.toSorted(byName);
+        return cards.toSorted(byCardName);
       case 'Quantity':
-        return cards.toSorted(byName).toSorted(byQuantity);
+        return cards.toSorted(byCardName).toSorted(byQuantity);
       case 'Clan / Discipline':
-        return cards.toSorted(byName).toSorted(byType).toSorted(byDiscipline).toSorted(byClanOpt);
+        return cards
+          .toSorted(byCardName)
+          .toSorted(byType)
+          .toSorted(byDiscipline)
+          .toSorted(byClanOpt);
       case 'Type':
-        return cards.toSorted(byName).toSorted(byDiscipline).toSorted(byClanOpt).toSorted(byType);
+        return cards
+          .toSorted(byCardName)
+          .toSorted(byDiscipline)
+          .toSorted(byClanOpt)
+          .toSorted(byType);
       case 'Type ': // SPACE SUFFIX IS INTENTIONAL
-        return cards.toSorted(byName).toSorted(byType);
+        return cards.toSorted(byCardName).toSorted(byType);
       case 'GroupedType':
-        return cards.toSorted(byName).toSorted(byGroupedType);
+        return cards.toSorted(byCardName).toSorted(byGroupedType);
       case 'Cost - Min to Max':
         return cards
-          .toSorted(byName)
+          .toSorted(byCardName)
           .toReversed()
           .toSorted(byDiscipline)
           .toSorted(byClanOpt)
@@ -47,27 +55,27 @@ const librarySort = (cards, sortMethod) => {
           .toReversed();
       case 'Cost - Max to Min':
         return cards
-          .toSorted(byName)
+          .toSorted(byCardName)
           .toSorted(byDiscipline)
           .toSorted(byClanOpt)
           .toSorted(byType)
           .toSorted(byPoolCost)
           .toSorted(byBloodCost);
       case 'Cost - Max to Min ': // SPACE SUFFIX IS INTENTIONAL
-        return cards.toSorted(byName).toSorted(byPoolCost).toSorted(byBloodCost);
+        return cards.toSorted(byCardName).toSorted(byPoolCost).toSorted(byBloodCost);
       case 'Cost - Min to Max ': // SPACE SUFFIX IS INTENTIONAL
         return cards
-          .toSorted(byName)
+          .toSorted(byCardName)
           .toReversed()
           .toSorted(byPoolCost)
           .toSorted(byBloodCost)
           .toReversed();
       case 'Player':
-        return cards.toSorted(byName).toSorted(byPlayer);
+        return cards.toSorted(byCardName).toSorted(byPlayer);
       case 'Date - Print':
-        return cards.toSorted(byName).toSorted(byDatePrint);
+        return cards.toSorted(byCardName).toSorted(byDatePrint);
       case 'Date - Win':
-        return cards.toSorted(byName).toSorted(byDateWin);
+        return cards.toSorted(byCardName).toSorted(byDateWin);
       default:
         return cards;
     }
