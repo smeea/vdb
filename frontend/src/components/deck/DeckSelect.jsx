@@ -38,6 +38,9 @@ const DeckSelect = ({
     }
   }, [deckid, decks]);
 
+  const { isPublic, isAuthor, isFrozen, isNonEditable } = deck;
+  const isEditable = isAuthor && !isPublic && !isFrozen && !isNonEditable;
+
   return (
     <div className="space-y-2">
       <div className="z-20 flex gap-1">
@@ -55,7 +58,7 @@ const DeckSelect = ({
             <DeckBranchSelect handleSelect={handleSelect} deck={deck} />
           </div>
         )}
-        {inventoryMode && deck?.isAuthor && (
+        {inventoryMode && isAuthor && (
           <div className="flex">
             <Button
               title={`Inventory Type: ${
@@ -66,6 +69,7 @@ const DeckSelect = ({
                     : 'FIXED\nUse unique copies of cards from Inventory'
               }`}
               variant="primary"
+              disabled={!isEditable}
               onClick={() => deckToggleInventoryState(deck?.deckid)}
             >
               <div className="flex items-center">
