@@ -2,11 +2,16 @@ import React from 'react';
 import cardtextIcons from '@/assets/data/cardtextIcons.json';
 
 const ResultMiscImage = ({ value, title }) => {
+  const isSuperiorDiscipline =
+    cardtextIcons[value].includes('disciplines/') && value == value.toUpperCase();
+
+  const size = isSuperiorDiscipline ? 'h-[25px] w-[25px]' : 'h-[22px] w-[22px]';
+
   return (
     <img
       src={`${import.meta.env.VITE_BASE_URL}/images/${cardtextIcons[value]}.svg`}
       title={title}
-      className="inline h-[22px] w-[22px] drop-shadow-[0px_0px_0.8px_#9a9a9a] dark:brightness-[0.85] dark:drop-shadow-[0px_0px_0.8px_#e0e0e0]"
+      className={`inline ${size} drop-shadow-[0px_0px_1px_#a0a0a0] dark:brightness-[0.85] dark:drop-shadow-[0px_0px_1px_#d0d0d0]`}
     />
   );
 };
