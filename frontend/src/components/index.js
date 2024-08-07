@@ -271,7 +271,6 @@ export { default as ResultLayoutTextSets } from './result_layout/ResultLayoutTex
 export { default as ResultLayoutTextText } from './result_layout/ResultLayoutTextText.jsx';
 
 export { default as ResultLibrary } from './result_library/ResultLibrary.jsx';
-export { default as ResultLibraryBurn } from './result_library/ResultLibraryBurn.jsx';
 export { default as ResultLibraryClan } from './result_library/ResultLibraryClan.jsx';
 export { default as ResultLibraryCost } from './result_library/ResultLibraryCost.jsx';
 export { default as ResultLibraryDisciplines } from './result_library/ResultLibraryDisciplines.jsx';
@@ -282,7 +281,6 @@ export { default as ResultLibraryTable } from './result_library/ResultLibraryTab
 export { default as ResultLibraryTableRow } from './result_library/ResultLibraryTableRow.jsx';
 export { default as ResultLibraryTableRowCommon } from './result_library/ResultLibraryTableRowCommon.jsx';
 export { default as ResultLibraryTotal } from './result_library/ResultLibraryTotal.jsx';
-export { default as ResultLibraryTrifle } from './result_library/ResultLibraryTrifle.jsx';
 export { default as ResultLibraryType } from './result_library/ResultLibraryType.jsx';
 export { default as ResultLibraryTypeImage } from './result_library/ResultLibraryTypeImage.jsx';
 

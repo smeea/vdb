@@ -99,12 +99,14 @@ const DeckLibrary = ({ inSearch, inPreview, inMissing, deck }) => {
                     trifleTotal={cardtype === MASTER && trifleTotal}
                   />
                   {showInfo && (
-                    <DeckDrawProbability
-                      cardName={cardtype}
-                      N={libraryTotal}
-                      n={7}
-                      k={libraryByTypeTotal[cardtype]}
-                    />
+                    <div className="sm:p-1">
+                      <DeckDrawProbability
+                        cardName={cardtype}
+                        N={libraryTotal}
+                        n={7}
+                        k={libraryByTypeTotal[cardtype]}
+                      />
+                    </div>
                   )}
                 </div>
                 <DeckLibraryTable

@@ -73,10 +73,8 @@ const DeckLibraryTableRow = ({
         inDeck
       />
       {showInfo && (
-        <td className="min-w-[40px]">
-          <div className="flex justify-end">
-            <DeckDrawProbability cardName={card.c.Name} N={libraryTotal} n={7} k={card.q} />
-          </div>
+        <td className="min-w-[40px] text-right sm:p-1">
+          <DeckDrawProbability cardName={card.c.Name} N={libraryTotal} n={7} k={card.q} />
         </td>
       )}
     </tr>

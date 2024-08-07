@@ -3,7 +3,7 @@ import {
   TwdCardsHistoryCardAppearance,
   CardPopover,
   ConditionalTooltip,
-  ResultLibraryBurn,
+  ResultMiscImage,
   ResultLibraryClan,
   ResultLibraryCost,
   ResultName,
@@ -63,7 +63,7 @@ const TwdCardsHistoryLibraryRow = ({ card, players, handleClick }) => {
           className="flex min-w-[30px] items-center justify-center"
           onClick={() => handleClick(card)}
         >
-          {card[BURN_OPTION] && <ResultLibraryBurn />}
+          {card[BURN_OPTION] && <ResultMiscImage value={BURN_OPTION} />}
         </div>
       )}
       <TwdCardsHistoryCardAppearance card={card} byPlayer={players[card.player]} />

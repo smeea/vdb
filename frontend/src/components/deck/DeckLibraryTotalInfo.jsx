@@ -23,7 +23,7 @@ const DeckLibraryTotalInfo = ({ byClans, byTypes, byDisciplines }) => {
         {Object.keys(byTypes).map((t, idx) => {
           return (
             <div key={idx} className="inline-block whitespace-nowrap pr-5">
-              <div className="flex items-center space-x-1">
+              <div className="flex items-center gap-0.5">
                 <ResultLibraryTypeImage value={t} />
                 <div className="flex">{byTypes[t]}</div>
                 <div className="text-midGray dark:text-midGrayDark">
@@ -40,7 +40,7 @@ const DeckLibraryTotalInfo = ({ byClans, byTypes, byDisciplines }) => {
           {byDisciplinesSorted.map((d, idx) => {
             return (
               <div key={idx} className="inline-block whitespace-nowrap pr-5">
-                <div className="flex items-center space-x-1">
+                <div className="flex items-center gap-0.5">
                   <ResultLibraryDisciplines value={d} />
                   <div className="flex">{byDisciplines[d]}</div>
                   <div className="text-midGray dark:text-midGrayDark">
@@ -58,7 +58,7 @@ const DeckLibraryTotalInfo = ({ byClans, byTypes, byDisciplines }) => {
           {byClansSorted.map((d, idx) => {
             return (
               <div key={idx} className="inline-block whitespace-nowrap pr-5">
-                <div className="flex items-center space-x-1">
+                <div className="flex items-center gap-0.5">
                   <ResultLibraryClan value={d} />
                   <div className="flex">{byClans[d]}</div>
                   <div className="text-midGray dark:text-midGrayDark">

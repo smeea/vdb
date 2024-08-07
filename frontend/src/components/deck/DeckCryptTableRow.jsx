@@ -80,10 +80,8 @@ const DeckCryptTableRow = ({
         inDeck
       />
       {showInfo && (
-        <td className="min-w-[40px]">
-          <div className="flex justify-end">
-            <DeckDrawProbability cardName={card.c.Name} N={cryptTotal} n={4} k={card.q} />
-          </div>
+        <td className="min-w-[40px] text-right sm:p-1">
+          <DeckDrawProbability cardName={card.c.Name} N={cryptTotal} n={4} k={card.q} />
         </td>
       )}
     </tr>

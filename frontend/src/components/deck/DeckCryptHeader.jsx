@@ -84,7 +84,7 @@ const DeckCryptHeader = ({
         </div>
       </Header>
       {showInfo && (
-        <div className="bg-bgSecondary p-2 dark:bg-bgSecondaryDark">
+        <div className="flex flex-col gap-2 bg-bgSecondary p-2 dark:bg-bgSecondaryDark">
           <DeckCryptTotalInfo disciplinesDetailed={disciplinesDetailed} cards={cards} />
         </div>
       )}

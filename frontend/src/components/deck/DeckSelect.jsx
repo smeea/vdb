@@ -38,7 +38,7 @@ const DeckSelect = ({
     }
   }, [deckid, decks]);
 
-  const { isPublic, isAuthor, isFrozen, isNonEditable } = deck;
+  const { isPublic, isAuthor, isFrozen, isNonEditable } = deck || {};
   const isEditable = isAuthor && !isPublic && !isFrozen && !isNonEditable;
 
   return (

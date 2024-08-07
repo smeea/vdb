@@ -66,3 +66,4 @@ export const LIMITED = 'LIMITED';
 export const POD = 'POD';
 export const PROMO = 'Promo';
 export const BCP = 'bcp';
+export const TRIFLE = 'Trifle';

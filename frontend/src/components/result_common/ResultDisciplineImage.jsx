@@ -1,7 +1,7 @@
 import React from 'react';
 import virtuesList from '@/assets/data/virtuesList.json';
 
-const ResultDisciplineImage = ({ value, superior, name, size = 'md', title }) => {
+const ResultDisciplineImage = ({ value, isSuperior, name, size = 'md' }) => {
   const sizeStyle = {
     xs: 'min-w-[20px] max-w-[20px]',
     sm: 'min-w-[22px] max-w-[22px]',
@@ -10,7 +10,7 @@ const ResultDisciplineImage = ({ value, superior, name, size = 'md', title }) =>
     xl: 'min-w-[37px] max-w-[37px]',
   };
 
-  if (!(superior || virtuesList[value])) {
+  if (!(isSuperior || virtuesList[value])) {
     const s = {
       sm: 'xs',
       md: 'sm',
@@ -25,10 +25,10 @@ const ResultDisciplineImage = ({ value, superior, name, size = 'md', title }) =>
       className={`inline drop-shadow-[0px_0px_1px_#a0a0a0] dark:brightness-[0.85] dark:drop-shadow-[0px_0px_1px_#d0d0d0] ${sizeStyle[size]}`}
       src={`${import.meta.env.VITE_BASE_URL}/images/disciplines/${value
         .toLowerCase()
-        .replace(/[\s,:!?'.-]/g, '')}${superior ? 'sup' : ''}.svg`}
+        .replace(/\s/g, '')}${isSuperior ? 'sup' : ''}.svg`}
       name={name}
-      id={title ?? value}
-      title={title ?? value}
+      id={value}
+      title={`${isSuperior ? 'Superior ' : ''}${value}`}
     />
   );
 };

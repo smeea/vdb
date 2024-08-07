@@ -63,7 +63,7 @@ const DiffLibraryTableRow = ({
       <DiffQuantityDiffCard qFrom={qFrom} qTo={qTo} />
       <ResultLibraryTableRowCommon card={card.c} handleClick={handleClick} inDeck />
       {showInfo && (
-        <td className="w-9 text-right text-fgSecondary dark:text-fgSecondaryDark">
+        <td className="min-w-[40px] text-right sm:p-1">
           <DeckDrawProbability cardName={card.c.Name} N={libraryTotal} n={7} k={card.q} />
         </td>
       )}

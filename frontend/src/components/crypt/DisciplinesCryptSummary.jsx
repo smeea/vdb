@@ -15,7 +15,7 @@ const DisciplinesCryptSummary = ({ disciplinesDetailed }) => {
   );
 
   return (
-    <div className="space-y-2">
+    <div>
       {withDisciplines &&
         disciplinesSorted
           .filter((d) => !virtuesList[d] && disciplinesDetailed[d][0] > 0)
@@ -25,7 +25,7 @@ const DisciplinesCryptSummary = ({ disciplinesDetailed }) => {
                 <div className="flex items-center space-x-1">
                   <ResultDisciplineImage
                     title={`${d} Superior | Inferior`}
-                    superior={true}
+                    isSuperior={true}
                     value={d}
                   />
                   <div>{disciplinesDetailed[d][2]}</div>

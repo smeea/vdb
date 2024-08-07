@@ -17,7 +17,7 @@ const DeckCryptDisciplines = ({ value, disciplinesSet, keyDisciplines }) => {
                     <ResultDisciplineImage
                       value={d}
                       size={isMobile ? 'sm' : 'md'}
-                      superior={value[d] === 2}
+                      isSuperior={value[d] === 2}
                     />
                   </div>
                 )}
@@ -39,7 +39,7 @@ const DeckCryptDisciplines = ({ value, disciplinesSet, keyDisciplines }) => {
                         <ResultDisciplineImage
                           size={isMobile ? 'sm' : 'md'}
                           value={d}
-                          superior={value[d] === 2}
+                          isSuperior={value[d] === 2}
                         />
                       </div>
                     )}

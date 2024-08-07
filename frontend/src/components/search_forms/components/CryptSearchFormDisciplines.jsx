@@ -18,7 +18,7 @@ const CryptSearchFormDisciplines = ({ value, onChange }) => {
             }`}
             onClick={() => onChange(i, 2)}
           >
-            <ResultDisciplineImage size="xl" value={i} superior={value[i] === 2} />
+            <ResultDisciplineImage size="xl" value={i} isSuperior={value[i] === 2} />
           </div>
         ))}
     </div>

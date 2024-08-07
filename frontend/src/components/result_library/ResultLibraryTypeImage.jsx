@@ -1,21 +1,13 @@
 import React from 'react';
+import { ResultMiscImage } from '@/components';
 
-const ResultLibraryTypeImage = ({ value, className = '' }) => {
+const ResultLibraryTypeImage = ({ value, size }) => {
   const cardtypes = value.split('/');
 
   return (
     <>
-      {cardtypes.map((cardtype, index) => {
-        return (
-          <img
-            key={index}
-            className={`inline h-[25px] drop-shadow-[0px_0px_0.8px_#9a9a9a] dark:brightness-[0.85] dark:drop-shadow-[0px_0px_0.8px_#e0e0e0] ${className}`}
-            src={`${import.meta.env.VITE_BASE_URL}/images/types/${cardtype
-              .toLowerCase()
-              .replace(/[\s,:!?'.-]/g, '')}.svg`}
-            title={cardtype}
-          />
-        );
+      {cardtypes.map((i) => {
+        return <ResultMiscImage key={i} value={i.toUpperCase()} title={i} size={size} />;
       })}
     </>
   );

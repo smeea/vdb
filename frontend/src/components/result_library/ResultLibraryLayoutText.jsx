@@ -3,18 +3,17 @@ import {
   ButtonCloseModal,
   Hr,
   ResultLayoutTextText,
-  ResultLibraryBurn,
   ResultLibraryClan,
   ResultLibraryCost,
   ResultLibraryDisciplines,
   ResultLibraryRequirements,
+  ResultMiscImage,
   ResultName,
-  ResultLibraryTrifle,
   ResultLibraryTypeImage,
 } from '@/components';
 import { getLegality } from '@/utils';
 import { useApp } from '@/context';
-import { PLAYTEST } from '@/utils/constants';
+import { BURN_OPTION, TRIFLE, PLAYTEST } from '@/utils/constants';
 
 const ResultLibraryLayoutText = ({ card, handleClose, noClose, inPopover }) => {
   const { isNarrow } = useApp();
@@ -35,12 +34,8 @@ const ResultLibraryLayoutText = ({ card, handleClose, noClose, inPopover }) => {
             {card.Discipline && <ResultLibraryDisciplines value={card.Discipline} />}
             {card.Clan && <ResultLibraryClan value={card.Clan} />}
           </div>
-          {card['Burn Option'] && <div>{card['Burn Option'] && <ResultLibraryBurn />}</div>}
-          {card.Trifle && (
-            <div>
-              <ResultLibraryTrifle />
-            </div>
-          )}
+          {card[BURN_OPTION] && <ResultMiscImage value={BURN_OPTION} />}
+          {card[TRIFLE] && <ResultMiscImage value={TRIFLE} />}
           <div
             className={
               noClose || inPopover || isNarrow

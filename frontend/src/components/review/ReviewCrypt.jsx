@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useSnapshot } from 'valtio';
-import { DiffCryptTable, ResultModal, DeckCryptHeader } from '@/components';
+import { FlexGapped, DiffCryptTable, ResultModal, DeckCryptHeader } from '@/components';
 import { deckStore, useApp } from '@/context';
 import { useModalCardController, useKeyDisciplines, useDeckCrypt } from '@/hooks';
 
@@ -37,29 +37,35 @@ const ReviewCrypt = ({ cardChange, cardsFrom, cardsTo }) => {
   } = useModalCardController(sortedCards, sortedCardsSide);
 
   return (
-    <div className={isMobile ? '' : 'top-[32px] z-10 bg-bgPrimary dark:bg-bgPrimaryDark'}>
-      <DeckCryptHeader
-        sortMethods={sortMethods}
-        sortMethod={cryptDeckSort}
-        setSortMethod={changeCryptDeckSort}
-        showInfo={showInfo}
-        setShowInfo={setShowInfo}
-        cards={crypt}
-        cardChange={cardChange}
-        isEditable
-      />
-      <DiffCryptTable
-        isEditable
-        cardChange={cardChange}
-        handleModalCardOpen={handleModalCardOpen}
-        cards={sortedCards}
-        cardsFrom={cardsFrom}
-        cardsTo={cardsTo}
-        showInfo={showInfo}
-        cryptTotal={cryptTotal}
-        disciplinesSet={disciplinesSet}
-        keyDisciplines={keyDisciplines}
-      />
+    <FlexGapped
+      className={`flex-col ${
+        !isMobile ? 'sticky bg-bgPrimary dark:bg-bgPrimaryDark sm:top-10' : ''
+      }`}
+    >
+      <div>
+        <DeckCryptHeader
+          sortMethods={sortMethods}
+          sortMethod={cryptDeckSort}
+          setSortMethod={changeCryptDeckSort}
+          showInfo={showInfo}
+          setShowInfo={setShowInfo}
+          cards={crypt}
+          cardChange={cardChange}
+          isEditable
+        />
+        <DiffCryptTable
+          isEditable
+          cardChange={cardChange}
+          handleModalCardOpen={handleModalCardOpen}
+          cards={sortedCards}
+          cardsFrom={cardsFrom}
+          cardsTo={cardsTo}
+          showInfo={showInfo}
+          cryptTotal={cryptTotal}
+          disciplinesSet={disciplinesSet}
+          keyDisciplines={keyDisciplines}
+        />
+      </div>
       {Object.keys(cryptSide).length > 0 && (
         <div className="opacity-60 dark:opacity-50">
           <div className="flex items-center justify-between font-bold">Side Crypt</div>
@@ -82,7 +88,7 @@ const ReviewCrypt = ({ cardChange, cardsFrom, cardsTo }) => {
           handleClose={handleModalCardClose}
         />
       )}
-    </div>
+    </FlexGapped>
   );
 };
 

@@ -1,17 +1,16 @@
 import React from 'react';
 import {
   CardPopover,
-  ResultLibraryBurn,
   ResultLibraryClan,
   ResultLibraryCost,
   ResultLibraryDisciplines,
   ResultLibraryRequirements,
   ResultName,
-  ResultLibraryTrifle,
+  ResultMiscImage,
   ResultLibraryTypeImage,
   ConditionalTooltip,
 } from '@/components';
-import { POOL_COST, BLOOD_COST, BURN_OPTION } from '@/utils/constants';
+import { TRIFLE, POOL_COST, BLOOD_COST, BURN_OPTION } from '@/utils/constants';
 import { useApp } from '@/context';
 
 const Type = ({ card, handleClick }) => {
@@ -70,8 +69,8 @@ const Burn = ({ card, handleClick }) => {
   return (
     <td className="min-w-[30px]" onClick={() => handleClick(card)}>
       <div className="flex justify-center">
-        {card[BURN_OPTION] && <ResultLibraryBurn />}
-        {card.Trifle && <ResultLibraryTrifle />}
+        {card[BURN_OPTION] && <ResultMiscImage value={BURN_OPTION} />}
+        {card[TRIFLE] && <ResultMiscImage value={TRIFLE} />}
       </div>
     </td>
   );

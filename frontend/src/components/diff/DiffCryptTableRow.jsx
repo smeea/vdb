@@ -71,7 +71,7 @@ const DiffCryptTableRow = ({
         inDeck
       />
       {showInfo && (
-        <td className="w-9 text-right text-fgSecondary dark:text-fgSecondaryDark">
+        <td className="min-w-[40px] text-right sm:p-1">
           <DeckDrawProbability cardName={card.c.Name} N={cryptTotal} n={4} k={card.q} />
         </td>
       )}

@@ -9,7 +9,7 @@ import {
 import { MASTER } from '@/utils/constants';
 import { useApp } from '@/context';
 import { useModalCardController, useDeckLibrary } from '@/hooks';
-import { DiffQuantityDiff } from '@/components';
+import { FlexGapped, DiffQuantityDiff } from '@/components';
 
 const BloodPoolDifference = ({ qTo, qFrom }) => {
   return (
@@ -42,7 +42,7 @@ const LibraryTotalDifference = ({ qTo, qFrom }) => {
 };
 
 const DiffLibrary = ({ cardsTo, deck }) => {
-  const { setShowFloatingButtons } = useApp();
+  const { isMobile, setShowFloatingButtons } = useApp();
   const [showInfo, setShowInfo] = useState(false);
 
   const cardsFrom = deck.library;
@@ -92,69 +92,53 @@ const DiffLibrary = ({ cardsTo, deck }) => {
   };
 
   return (
-    <>
-      <DeckLibraryHeader
-        libraryTotal={<LibraryTotalDifference qTo={libraryToTotal} qFrom={libraryTotal} />}
-        bloodTotal={<BloodPoolDifference qTo={bloodToTotal} qFrom={bloodTotal} />}
-        poolTotal={<BloodPoolDifference qTo={poolToTotal} qFrom={poolTotal} />}
-        hasBanned={hasBanned}
-        isEditable={isEditable}
-        showInfo={showInfo}
-        setShowInfo={setShowInfo}
-        cards={library}
-        deckid={deckid}
-        byTypes={libraryByTypeTotal}
-        byClan={libraryByClansTotal}
-        byDisciplines={libraryByDisciplinesTotal}
-      />
-      <div className="space-y-2">
-        {Object.keys(libraryByType).map((cardtype) => {
-          return (
-            <div key={cardtype}>
-              <div className="flex justify-between">
-                <ResultLibraryType
-                  cardtype={cardtype}
-                  total={libraryByTypeTotal[cardtype]}
-                  trifleTotal={cardtype === MASTER && trifleTotal}
-                />
-                {showInfo && (
-                  <DeckDrawProbability
-                    cardName={cardtype}
-                    N={libraryTotal}
-                    n={7}
-                    k={libraryByTypeTotal[cardtype]}
-                  />
-                )}
-              </div>
-              <DiffLibraryTable
-                handleClick={handleClick}
-                libraryTotal={libraryTotal}
-                showInfo={showInfo}
-                deckid={deckid}
-                cards={libraryByType[cardtype]}
-                cardsFrom={cardsFrom}
-                cardsTo={cardsTo}
-                isEditable={isEditable}
-              />
-            </div>
-          );
-        })}
-      </div>
-      {Object.keys(librarySide).length > 0 && (
-        <div className="opacity-60 dark:opacity-50">
-          <b>Side Library</b>
-          {Object.keys(librarySideByType).map((cardtype) => {
+    <FlexGapped className="flex-col">
+      <div className="flex flex-col gap-2">
+        <div
+          className={!isMobile ? 'sticky z-10 bg-bgPrimary dark:bg-bgPrimaryDark sm:top-10' : ''}
+        >
+          <DeckLibraryHeader
+            libraryTotal={<LibraryTotalDifference qTo={libraryToTotal} qFrom={libraryTotal} />}
+            bloodTotal={<BloodPoolDifference qTo={bloodToTotal} qFrom={bloodTotal} />}
+            poolTotal={<BloodPoolDifference qTo={poolToTotal} qFrom={poolTotal} />}
+            hasBanned={hasBanned}
+            isEditable={isEditable}
+            showInfo={showInfo}
+            setShowInfo={setShowInfo}
+            cards={library}
+            deckid={deckid}
+            byTypes={libraryByTypeTotal}
+            byClan={libraryByClansTotal}
+            byDisciplines={libraryByDisciplinesTotal}
+          />
+        </div>
+        <div className="flex flex-col gap-2">
+          {Object.keys(libraryByType).map((cardtype) => {
             return (
               <div key={cardtype}>
-                <ResultLibraryType
-                  cardtype={cardtype}
-                  total={0}
-                  trifleTotal={cardtype === MASTER && trifleTotal}
-                />
+                <div className="flex justify-between">
+                  <ResultLibraryType
+                    cardtype={cardtype}
+                    total={libraryByTypeTotal[cardtype]}
+                    trifleTotal={cardtype === MASTER && trifleTotal}
+                  />
+                  {showInfo && (
+                    <div className="sm:p-1">
+                      <DeckDrawProbability
+                        cardName={cardtype}
+                        N={libraryTotal}
+                        n={7}
+                        k={libraryByTypeTotal[cardtype]}
+                      />
+                    </div>
+                  )}
+                </div>
                 <DiffLibraryTable
-                  handleClick={handleClickSide}
+                  handleClick={handleClick}
+                  libraryTotal={libraryTotal}
+                  showInfo={showInfo}
                   deckid={deckid}
-                  cards={librarySideByType[cardtype]}
+                  cards={libraryByType[cardtype]}
                   cardsFrom={cardsFrom}
                   cardsTo={cardsTo}
                   isEditable={isEditable}
@@ -162,6 +146,34 @@ const DiffLibrary = ({ cardsTo, deck }) => {
               </div>
             );
           })}
+        </div>
+      </div>
+      {Object.keys(librarySide).length > 0 && (
+        <div className="flex flex-col gap-2 opacity-60 dark:opacity-50">
+          <div className="flex h-[42px] items-center bg-bgSecondary p-2 font-bold dark:bg-bgSecondaryDark">
+            Side Library
+          </div>
+          <div className="flex flex-col gap-2">
+            {Object.keys(librarySideByType).map((cardtype) => {
+              return (
+                <div key={cardtype}>
+                  <ResultLibraryType
+                    cardtype={cardtype}
+                    total={0}
+                    trifleTotal={cardtype === MASTER && trifleTotal}
+                  />
+                  <DiffLibraryTable
+                    handleClick={handleClickSide}
+                    deckid={deckid}
+                    cards={librarySideByType[cardtype]}
+                    cardsFrom={cardsFrom}
+                    cardsTo={cardsTo}
+                    isEditable={isEditable}
+                  />
+                </div>
+              );
+            })}
+          </div>
         </div>
       )}
       {shouldShowModal && (
@@ -171,7 +183,7 @@ const DiffLibrary = ({ cardsTo, deck }) => {
           handleClose={handleClose}
         />
       )}
-    </>
+    </FlexGapped>
   );
 };
 

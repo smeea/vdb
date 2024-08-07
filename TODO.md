@@ -15,5 +15,4 @@
 - Update to TailwindCSS 4 (migrate from isWidth to container queries)
 - Remove legacy polyfills when Safari adopts groupBy
 - Use ky instead of fetch
-- Refactor ResultMiscImage and ResultDisciplineImage
-- Refactor components using old drop-shadow
+- Refactor to use constants
