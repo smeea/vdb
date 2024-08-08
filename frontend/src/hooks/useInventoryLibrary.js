@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 import { useSnapshot } from 'valtio';
 import disciplinesList from '@/assets/data/disciplinesList.json';
 import virtuesList from '@/assets/data/virtuesList.json';
-import { cardtypeSorted } from '@/utils/constants';
+import { ALL, NONE, cardtypeSorted } from '@/utils/constants';
 import { getHardTotal, getSoftMax } from '@/utils';
 import { useApp, usedStore } from '@/context';
 
@@ -16,7 +16,7 @@ const useInventoryLibrary = (cards = {}, category = 'ok', compact, type, discipl
     const missingByType = {};
     const missingByDiscipline = {};
 
-    const typesSorted = ['All', ...cardtypeSorted];
+    const typesSorted = [ALL, ...cardtypeSorted];
     typesSorted.forEach((i) => {
       cardsByType[i] = {};
       missingByType[i] = {};
@@ -29,17 +29,17 @@ const useInventoryLibrary = (cards = {}, category = 'ok', compact, type, discipl
       'Striga',
     ].toSorted();
 
-    ['All', 'None', ...disciplinesExtendedList, ...Object.keys(virtuesList)].forEach((i) => {
+    [ALL, NONE, ...disciplinesExtendedList, ...Object.keys(virtuesList)].forEach((i) => {
       cardsByDiscipline[i] = {};
       missingByDiscipline[i] = {};
     });
 
     if (compact) {
       Object.keys(cards).forEach((card) => {
-        cardsByType['All'] = {
+        cardsByType[ALL] = {
           [card]: cards[card],
         };
-        cardsByDiscipline['All'] = {
+        cardsByDiscipline[ALL] = {
           [card]: cards[card],
         };
       });
@@ -52,7 +52,7 @@ const useInventoryLibrary = (cards = {}, category = 'ok', compact, type, discipl
         .forEach((cardid) => {
           const types = cards[cardid].c.Type.split('/');
           const d = libraryCardBase[cardid].Discipline;
-          let disciplines = ['None'];
+          let disciplines = [NONE];
           if (d.includes('/')) {
             disciplines = d.split('/');
           } else if (d.includes(' & ')) {
@@ -72,7 +72,7 @@ const useInventoryLibrary = (cards = {}, category = 'ok', compact, type, discipl
                 c: cards[cardid].c,
               };
             });
-            missingByType['All'][cardid] = {
+            missingByType[ALL][cardid] = {
               q: miss,
               c: cards[cardid].c,
             };
@@ -83,7 +83,7 @@ const useInventoryLibrary = (cards = {}, category = 'ok', compact, type, discipl
                   q: miss,
                   c: cards[cardid].c,
                 };
-                missingByDiscipline['All'][cardid] = {
+                missingByDiscipline[ALL][cardid] = {
                   q: miss,
                   c: cards[cardid].c,
                 };
@@ -96,30 +96,30 @@ const useInventoryLibrary = (cards = {}, category = 'ok', compact, type, discipl
               types.forEach((t) => {
                 cardsByType[t][cardid] = cards[cardid];
               });
-              cardsByType['All'][cardid] = cards[cardid];
-              cardsByDiscipline['All'][cardid] = cards[cardid];
+              cardsByType[ALL][cardid] = cards[cardid];
+              cardsByDiscipline[ALL][cardid] = cards[cardid];
 
               if (disciplines) {
                 disciplines.forEach((i) => {
                   cardsByDiscipline[i][cardid] = cards[cardid];
                 });
               } else {
-                cardsByDiscipline['None'][cardid] = cards[cardid];
+                cardsByDiscipline[NONE][cardid] = cards[cardid];
               }
             }
           } else {
             types.forEach((t) => {
               cardsByType[t][cardid] = cards[cardid];
             });
-            cardsByType['All'][cardid] = cards[cardid];
-            cardsByDiscipline['All'][cardid] = cards[cardid];
+            cardsByType[ALL][cardid] = cards[cardid];
+            cardsByDiscipline[ALL][cardid] = cards[cardid];
 
             if (disciplines) {
               disciplines.forEach((i) => {
                 cardsByDiscipline[i][cardid] = cards[cardid];
               });
             } else {
-              cardsByDiscipline['None'][cardid] = cards[cardid];
+              cardsByDiscipline[NONE][cardid] = cards[cardid];
             }
           }
         });
@@ -129,7 +129,7 @@ const useInventoryLibrary = (cards = {}, category = 'ok', compact, type, discipl
         .forEach((cardid) => {
           const types = libraryCardBase[cardid].Type.split('/');
           const d = libraryCardBase[cardid].Discipline;
-          let disciplines = ['None'];
+          let disciplines = [NONE];
           if (d.includes('/')) {
             disciplines = d.split('/');
           } else if (d.includes(' & ')) {
@@ -142,8 +142,8 @@ const useInventoryLibrary = (cards = {}, category = 'ok', compact, type, discipl
             types.forEach((t) => {
               cardsByType[t][cardid] = { q: 0, c: libraryCardBase[cardid] };
             });
-            cardsByType['All'][cardid] = { q: 0, c: libraryCardBase[cardid] };
-            cardsByDiscipline['All'][cardid] = {
+            cardsByType[ALL][cardid] = { q: 0, c: libraryCardBase[cardid] };
+            cardsByDiscipline[ALL][cardid] = {
               q: 0,
               c: libraryCardBase[cardid],
             };
@@ -156,7 +156,7 @@ const useInventoryLibrary = (cards = {}, category = 'ok', compact, type, discipl
                 };
               });
             } else {
-              cardsByDiscipline['None'][cardid] = {
+              cardsByDiscipline[NONE][cardid] = {
                 q: 0,
                 c: libraryCardBase[cardid],
               };
@@ -171,7 +171,7 @@ const useInventoryLibrary = (cards = {}, category = 'ok', compact, type, discipl
               c: libraryCardBase[cardid],
             };
           });
-          missingByType['All'][cardid] = {
+          missingByType[ALL][cardid] = {
             q: softUsedMax,
             c: libraryCardBase[cardid],
           };
@@ -182,7 +182,7 @@ const useInventoryLibrary = (cards = {}, category = 'ok', compact, type, discipl
                 q: softUsedMax,
                 c: libraryCardBase[cardid],
               };
-              missingByDiscipline['All'][cardid] = {
+              missingByDiscipline[ALL][cardid] = {
                 q: softUsedMax,
                 c: libraryCardBase[cardid],
               };
@@ -195,7 +195,7 @@ const useInventoryLibrary = (cards = {}, category = 'ok', compact, type, discipl
         .forEach((cardid) => {
           const types = libraryCardBase[cardid].Type.split('/');
           const d = libraryCardBase[cardid].Discipline;
-          let disciplines = ['None'];
+          let disciplines = [NONE];
           if (d.includes('/')) {
             disciplines = d.split('/');
           } else if (d.includes(' & ')) {
@@ -208,8 +208,8 @@ const useInventoryLibrary = (cards = {}, category = 'ok', compact, type, discipl
             types.forEach((t) => {
               cardsByType[t][cardid] = { q: 0, c: libraryCardBase[cardid] };
             });
-            cardsByType['All'][cardid] = { q: 0, c: libraryCardBase[cardid] };
-            cardsByDiscipline['All'][cardid] = {
+            cardsByType[ALL][cardid] = { q: 0, c: libraryCardBase[cardid] };
+            cardsByDiscipline[ALL][cardid] = {
               q: 0,
               c: libraryCardBase[cardid],
             };
@@ -222,7 +222,7 @@ const useInventoryLibrary = (cards = {}, category = 'ok', compact, type, discipl
                 };
               });
             } else {
-              cardsByDiscipline['None'][cardid] = {
+              cardsByDiscipline[NONE][cardid] = {
                 q: 0,
                 c: libraryCardBase[cardid],
               };
@@ -241,7 +241,7 @@ const useInventoryLibrary = (cards = {}, category = 'ok', compact, type, discipl
               };
             }
           });
-          missingByType['All'][cardid] = {
+          missingByType[ALL][cardid] = {
             q: hardUsedTotal,
             c: libraryCardBase[cardid],
           };
@@ -258,7 +258,7 @@ const useInventoryLibrary = (cards = {}, category = 'ok', compact, type, discipl
               }
             });
           }
-          missingByDiscipline['All'][cardid] = {
+          missingByDiscipline[ALL][cardid] = {
             q: hardUsedTotal,
             c: libraryCardBase[cardid],
           };

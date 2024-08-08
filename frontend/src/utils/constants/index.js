@@ -37,6 +37,8 @@ export const cardtypeSorted = [
   'Reflex',
 ];
 
+export const ALL = 'All';
+export const NONE = 'None';
 export const ANY = 'ANY';
 export const ASCII_NAME = 'ASCII Name';
 export const BANNED = 'BANNED';
@@ -53,9 +55,7 @@ export const CLAN = 'Clan';
 export const CLAN_DISCIPLINE = 'Clan / Discipline';
 export const CLANx = 'Clan ';
 export const COST_MAX_MIN = 'Cost - Max to Min';
-export const COST_MAX_MINx = 'Cost - Max to Min ';
 export const COST_MIN_MAX = 'Cost - Min to Max';
-export const COST_MIN_MAXx = 'Cost - Min to Max ';
 export const DATE_NEW_OLD = 'Date - New to Old';
 export const DATE_OLD_NEW = 'Date - Old to New';
 export const DATE_PRINT = 'Date - Print';
@@ -86,3 +86,7 @@ export const SECT = 'Sect';
 export const TRIFLE = 'Trifle';
 export const TYPE = 'Type';
 export const TYPEx = 'Type ';
+export const EN = 'en-EN';
+export const FR = 'fr-FR';
+export const ES = 'es-es';
+export const PT = 'br-PT';

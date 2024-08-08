@@ -1,6 +1,11 @@
 import React from 'react';
-import { ResultLibraryTypeImage, ResultDisciplineImage, ResultClanImage } from '@/components';
-import { Select } from '@/components';
+import {
+  Select,
+  ResultLibraryTypeImage,
+  ResultDisciplineImage,
+  ResultClanImage,
+} from '@/components';
+import { ALL, NONE } from '@/utils/constants';
 
 const InventoryFilterForm = ({ value, setValue, values, target, byTotal, byUnique }) => {
   const options = [];
@@ -12,7 +17,7 @@ const InventoryFilterForm = ({ value, setValue, values, target, byTotal, byUniqu
         <div className="flex justify-between">
           {target === 'crypt' && (
             <div>
-              {i === 'All' ? (
+              {i === ALL ? (
                 <div className="flex items-center">
                   <div className="flex w-[40px]" />
                   All Clans
@@ -30,7 +35,7 @@ const InventoryFilterForm = ({ value, setValue, values, target, byTotal, byUniqu
 
           {target === 'type' && (
             <div>
-              {i === 'All' ? (
+              {i === ALL ? (
                 <div className="flex items-center">
                   <div className="flex w-[40px]" />
                   All Types
@@ -48,10 +53,10 @@ const InventoryFilterForm = ({ value, setValue, values, target, byTotal, byUniqu
 
           {target === 'discipline' && (
             <div>
-              {['All', 'None'].includes(i) ? (
+              {[ALL, NONE].includes(i) ? (
                 <div className="flex items-center">
                   <div className="flex w-[40px]" />
-                  {i === 'All' ? 'All Disciplines' : 'None'}
+                  {i === ALL ? 'All Disciplines' : NONE}
                 </div>
               ) : (
                 <div className="flex items-center">

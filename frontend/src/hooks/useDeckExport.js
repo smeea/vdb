@@ -1,6 +1,7 @@
 import disciplinesList from '@/assets/data/disciplinesList.json';
 import virtuesList from '@/assets/data/virtuesList.json';
 import { cryptSort, librarySort } from '@/utils';
+import { NAME, QUANTITY, CAPACITY } from '@/utils/constants';
 
 const getCryptTitle = (crypt) => {
   let cryptTotalCap = 0;
@@ -54,7 +55,7 @@ const getCryptText = (crypt) => {
   crypt.forEach((card) => {
     const c = card.c;
     const q = card.q;
-    let name = c['Name'];
+    let name = c.Name;
     if (c['Adv'] && c['Adv'][0]) {
       name += ' (ADV)';
     }
@@ -81,8 +82,8 @@ const getCryptText = (crypt) => {
     const q = card.q;
     const c = card.c;
 
-    let name = c['Name'];
-    if (c['Adv'] && c['Adv'][0]) {
+    let name = c.Name;
+    if (c.Adv && c.Adv[0]) {
       name += ' (ADV)';
     }
     const disciplines = getDisciplines(c.Disciplines);
@@ -188,8 +189,8 @@ const getLibraryText = (library, format) => {
 
 const exportJol = (deck) => {
   let result = '';
-  const sortedCrypt = cryptSort(Object.values(deck.crypt), 'Name');
-  const sortedLibrary = librarySort(Object.values(deck.library), 'Name');
+  const sortedCrypt = cryptSort(Object.values(deck.crypt), NAME);
+  const sortedLibrary = librarySort(Object.values(deck.library), NAME);
 
   sortedCrypt.forEach((card) => {
     let name = card.c['ASCII Name'];
@@ -212,8 +213,8 @@ const exportJol = (deck) => {
 
 const exportLackey = (deck) => {
   let result = '';
-  const sortedCrypt = cryptSort(Object.values(deck.crypt), 'Name');
-  const sortedLibrary = librarySort(Object.values(deck.library), 'Name');
+  const sortedCrypt = cryptSort(Object.values(deck.crypt), NAME);
+  const sortedLibrary = librarySort(Object.values(deck.library), NAME);
 
   sortedLibrary.forEach((card) => {
     const spaces = 8 - card.q.toString().length;
@@ -242,7 +243,7 @@ const exportLackey = (deck) => {
 
 const exportTwd = (deck, withHints) => {
   let result = '';
-  const sortedCrypt = cryptSort(Object.values(deck.crypt), 'Quantity');
+  const sortedCrypt = cryptSort(Object.values(deck.crypt), QUANTITY);
 
   if (withHints) {
     result += `# REPLACE BELOW LINES WITH YOUR EVENT DATA
@@ -301,7 +302,7 @@ Description:
 
 const exportText = (deck) => {
   let result = '';
-  const sortedCrypt = cryptSort(Object.values(deck.crypt), 'Capacity');
+  const sortedCrypt = cryptSort(Object.values(deck.crypt), CAPACITY);
 
   result += `Deck Name: ${deck.name}\n`;
   result += `Author: ${deck.author}\n`;

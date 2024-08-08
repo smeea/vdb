@@ -8,34 +8,46 @@ import {
   SortButton,
   ResultModal,
 } from '@/components';
-import { cardtypeSorted } from '@/utils/constants';
-import disciplinesList from '@/assets/data/disciplinesList.json';
-import virtuesList from '@/assets/data/virtuesList.json';
+import {
+  ALL,
+  NONE,
+  CLAN_DISCIPLINE,
+  COST_MAX_MIN,
+  COST_MIN_MAX,
+  DATE_PRINT,
+  DATE_WIN,
+  NAME,
+  PLAYER,
+  TYPE,
+  cardtypeSorted,
+} from '@/utils/constants';
 import { librarySort } from '@/utils';
 import { useApp } from '@/context';
 import { useModalCardController } from '@/hooks';
+import disciplinesList from '@/assets/data/disciplinesList.json';
+import virtuesList from '@/assets/data/virtuesList.json';
 
 const TwdCardsHistoryLibrary = ({ cards, players }) => {
   const { isMobile } = useApp();
 
-  const [type, setType] = useState('All');
-  const [discipline, setDiscipline] = useState('All');
+  const [type, setType] = useState(ALL);
+  const [discipline, setDiscipline] = useState(ALL);
 
-  const [sortMethod, setSortMethod] = useState('Name');
+  const [sortMethod, setSortMethod] = useState(NAME);
   const sortMethods = {
-    Name: 'N',
-    Player: 'P',
-    'Date - Print': 'DP',
-    'Date - Win': 'DW',
-    Type: 'T',
-    'Clan / Discipline': 'C/D',
-    'Cost - Min to Max': 'C↑',
-    'Cost - Max to Min': 'C↓',
+    [NAME]: 'N',
+    [PLAYER]: 'P',
+    [DATE_PRINT]: 'DP',
+    [DATE_WIN]: 'DW',
+    [TYPE]: 'T',
+    [CLAN_DISCIPLINE]: 'C/D',
+    [COST_MIN_MAX]: 'C↑',
+    [COST_MAX_MIN]: 'C↓',
   };
 
   const cardsByType = {};
   const cardsByTypeTotal = {};
-  const typesSorted = ['All', ...cardtypeSorted];
+  const typesSorted = [ALL, ...cardtypeSorted];
   typesSorted.forEach((i) => {
     cardsByType[i] = {};
     cardsByTypeTotal[i] = 0;
@@ -50,7 +62,7 @@ const TwdCardsHistoryLibrary = ({ cards, players }) => {
     'Striga',
   ].toSorted();
 
-  ['All', 'None', ...disciplinesExtendedList, ...Object.keys(virtuesList)].forEach((i) => {
+  [ALL, NONE, ...disciplinesExtendedList, ...Object.keys(virtuesList)].forEach((i) => {
     cardsByDiscipline[i] = {};
     cardsByDisciplineTotal[i] = 0;
   });
@@ -58,7 +70,7 @@ const TwdCardsHistoryLibrary = ({ cards, players }) => {
   cards.forEach((card) => {
     const types = card.Type.split('/');
     const d = card.Discipline;
-    let disciplines = ['None'];
+    let disciplines = [NONE];
     if (d.includes('/')) {
       disciplines = d.split('/');
     } else if (d.includes(' & ')) {
@@ -70,29 +82,29 @@ const TwdCardsHistoryLibrary = ({ cards, players }) => {
     types.forEach((t) => {
       cardsByTypeTotal[t] += 1;
     });
-    cardsByTypeTotal['All'] += 1;
-    cardsByDisciplineTotal['All'] += 1;
+    cardsByTypeTotal[ALL] += 1;
+    cardsByDisciplineTotal[ALL] += 1;
 
     if (disciplines) {
       disciplines.forEach((i) => {
         cardsByDisciplineTotal[i] += 1;
       });
     } else {
-      cardsByDisciplineTotal['None'] += 1;
+      cardsByDisciplineTotal[NONE] += 1;
     }
 
     types.forEach((t) => {
       cardsByType[t][card.Id] = card;
     });
-    cardsByType['All'][card.Id] = card;
-    cardsByDiscipline['All'][card.Id] = card;
+    cardsByType[ALL][card.Id] = card;
+    cardsByDiscipline[ALL][card.Id] = card;
 
     if (disciplines) {
       disciplines.forEach((i) => {
         cardsByDiscipline[i][card.Id] = card;
       });
     } else {
-      cardsByDiscipline['None'][card.Id] = card;
+      cardsByDiscipline[NONE][card.Id] = card;
     }
   });
 

@@ -13,13 +13,14 @@ import {
 import { cryptSort, librarySort } from '@/utils';
 import { useFetch } from '@/hooks';
 import { useApp } from '@/context';
+import { NAME, CLAN, CLAN_DISCIPLINE } from '@/utils/constants';
 
 const PlaytestReportExportAllWrapper = ({ setShow }) => {
   const { isMobile, preconDecks, cryptCardBase, libraryCardBase } = useApp();
-  const [sortMethod, setSortMethod] = useState('Name');
+  const [sortMethod, setSortMethod] = useState(NAME);
   const sortMethods = {
-    Name: 'N',
-    Clan: 'C/D',
+    [NAME]: 'N',
+    [CLAN]: 'C/D',
   };
 
   const playtestCrypt = cryptSort(
@@ -33,7 +34,7 @@ const PlaytestReportExportAllWrapper = ({ setShow }) => {
     Object.values(libraryCardBase).filter((i) => {
       return i.Id > 110000;
     }),
-    sortMethod == 'Clan' ? 'Clan / Discipline' : sortMethod,
+    sortMethod == CLAN ? CLAN_DISCIPLINE : sortMethod,
   );
 
   const playtestPrecons = Object.values(preconDecks).filter((i) => {

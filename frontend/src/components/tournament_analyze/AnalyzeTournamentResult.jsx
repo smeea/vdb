@@ -2,13 +2,14 @@ import React, { useMemo } from 'react';
 import { AnalyzeTournamentDeck, AnalyzeTournamentResultTotal } from '@/components';
 import { useApp } from '@/context';
 import { decksSort } from '@/utils';
+import { RANK_HIGH_LOW, RANK_LOW_HIGH } from '@/utils/constants';
 
 const AnalyzerTournamentResult = ({ decks }) => {
   const { analyzeSearchSort, changeAnalyzeSearchSort } = useApp();
 
   const sortMethods = {
-    'Rank - High to Low': 'R↓',
-    'Rank - Low to High': 'R↑',
+    [RANK_HIGH_LOW]: 'R↓',
+    [RANK_LOW_HIGH]: 'R↑',
   };
 
   const sortedDecks = useMemo(() => {

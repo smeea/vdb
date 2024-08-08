@@ -3,6 +3,7 @@ import { useSnapshot } from 'valtio';
 import imbuedClansList from '@/assets/data/imbuedClansList.json';
 import vampireClansList from '@/assets/data/vampireClansList.json';
 import { getHardTotal, getSoftMax } from '@/utils';
+import { ALL } from '@/utils/constants';
 import { useApp, usedStore } from '@/context';
 
 const useInventoryCrypt = (cards = {}, category = 'ok', compact, onlyNotes) => {
@@ -16,7 +17,7 @@ const useInventoryCrypt = (cards = {}, category = 'ok', compact, onlyNotes) => {
     const missingByClan = {};
     const missingByClanTotal = {};
 
-    const clansSorted = ['All', ...vampireClansList, ...imbuedClansList];
+    const clansSorted = [ALL, ...vampireClansList, ...imbuedClansList];
     clansSorted.forEach((clan) => {
       cardsByClan[clan] = {};
       cardsByClanTotal[clan] = 0;
@@ -27,7 +28,7 @@ const useInventoryCrypt = (cards = {}, category = 'ok', compact, onlyNotes) => {
 
     if (compact) {
       Object.keys(cards).forEach((cardid) => {
-        cardsByClan['All'] = {
+        cardsByClan[ALL] = {
           card: cards[cardid],
         };
       });
@@ -45,7 +46,7 @@ const useInventoryCrypt = (cards = {}, category = 'ok', compact, onlyNotes) => {
 
           if (miss > 0) {
             missingByClan[clan][cardid] = { q: miss, c: cards[cardid].c };
-            missingByClan['All'][cardid] = {
+            missingByClan[ALL][cardid] = {
               q: miss,
               c: cards[cardid].c,
             };
@@ -54,11 +55,11 @@ const useInventoryCrypt = (cards = {}, category = 'ok', compact, onlyNotes) => {
           if (category === 'nok') {
             if (miss > 0) {
               cardsByClan[clan][cardid] = cards[cardid];
-              cardsByClan['All'][cardid] = cards[cardid];
+              cardsByClan[ALL][cardid] = cards[cardid];
             }
           } else {
             cardsByClan[clan][cardid] = cards[cardid];
-            cardsByClan['All'][cardid] = cards[cardid];
+            cardsByClan[ALL][cardid] = cards[cardid];
           }
         });
 
@@ -72,7 +73,7 @@ const useInventoryCrypt = (cards = {}, category = 'ok', compact, onlyNotes) => {
               q: 0,
               c: cryptCardBase[cardid],
             };
-            cardsByClan['All'][cardid] = {
+            cardsByClan[ALL][cardid] = {
               q: 0,
               c: cryptCardBase[cardid],
             };
@@ -84,7 +85,7 @@ const useInventoryCrypt = (cards = {}, category = 'ok', compact, onlyNotes) => {
             q: softUsedMax,
             c: cryptCardBase[cardid],
           };
-          missingByClan['All'][cardid] = {
+          missingByClan[ALL][cardid] = {
             q: softUsedMax,
             c: cryptCardBase[cardid],
           };
@@ -100,7 +101,7 @@ const useInventoryCrypt = (cards = {}, category = 'ok', compact, onlyNotes) => {
               q: cards[cardid] ? cards[cardid].q : 0,
               c: cryptCardBase[cardid],
             };
-            cardsByClan['All'][cardid] = {
+            cardsByClan[ALL][cardid] = {
               q: cards[cardid] ? cards[cardid].q : 0,
               c: cryptCardBase[cardid],
             };
@@ -110,13 +111,13 @@ const useInventoryCrypt = (cards = {}, category = 'ok', compact, onlyNotes) => {
 
           if (missingByClan[clan][cardid]) {
             missingByClan[clan][cardid].q += hardUsedTotal;
-            missingByClan['All'][cardid].q += hardUsedTotal;
+            missingByClan[ALL][cardid].q += hardUsedTotal;
           } else {
             missingByClan[clan][cardid] = {
               q: hardUsedTotal,
               c: cryptCardBase[cardid],
             };
-            missingByClan['All'][cardid] = {
+            missingByClan[ALL][cardid] = {
               q: hardUsedTotal,
               c: cryptCardBase[cardid],
             };

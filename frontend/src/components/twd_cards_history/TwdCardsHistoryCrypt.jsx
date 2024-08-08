@@ -8,41 +8,51 @@ import {
   SortButton,
   ResultModal,
 } from '@/components';
-import imbuedClansList from '@/assets/data/imbuedClansList.json';
-import vampireClansList from '@/assets/data/vampireClansList.json';
+import {
+  ALL,
+  CAPACITY_MAX_MIN,
+  CAPACITY_MIN_MAX,
+  CLAN,
+  DATE_PRINT,
+  DATE_WIN,
+  GROUP,
+  NAME,
+  PLAYER,
+} from '@/utils/constants';
 import { cryptSort } from '@/utils';
 import { useApp } from '@/context';
 import { useModalCardController } from '@/hooks';
+import imbuedClansList from '@/assets/data/imbuedClansList.json';
+import vampireClansList from '@/assets/data/vampireClansList.json';
 
 const TwdCardsHistoryCrypt = ({ cards, players }) => {
   const { isMobile } = useApp();
 
-  const [clan, setClan] = useState('All');
+  const [clan, setClan] = useState(ALL);
 
   const [sortMethod, setSortMethod] = useState('Name');
   const sortMethods = {
-    Name: 'N',
-    Player: 'P',
-    'Date - Print': 'DP',
-    'Date - Win': 'DW',
-    Clan: 'CL',
-    Group: 'G',
-    'Capacity - Min to Max': 'C↑',
-    'Capacity - Max to Min': 'C↓',
+    [NAME]: 'N',
+    [PLAYER]: 'P',
+    [DATE_PRINT]: 'DP',
+    [DATE_WIN]: 'DW',
+    [CLAN]: 'CL',
+    [GROUP]: 'G',
+    [CAPACITY_MIN_MAX]: 'C↑',
+    [CAPACITY_MAX_MIN]: 'C↓',
   };
 
   const cardsByClan = {};
   const cardsByClanTotal = {};
-  const clansSorted = ['All', ...vampireClansList, ...imbuedClansList];
+  const clansSorted = [ALL, ...vampireClansList, ...imbuedClansList];
   clansSorted.forEach((i) => {
     cardsByClan[i] = {};
     cardsByClanTotal[i] = 0;
   });
 
   cards.forEach((card) => {
-    const i = card.Clan;
-    cardsByClan[i][card.Id] = card;
-    cardsByClan['All'][card.Id] = card;
+    cardsByClan[card.Clan][card.Id] = card;
+    cardsByClan[ALL][card.Id] = card;
   });
 
   Object.keys(cardsByClan).forEach((c) => {

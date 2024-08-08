@@ -18,6 +18,7 @@ import {
 } from '@/components';
 import { useApp } from '@/context';
 import { inventoryServices } from '@/services';
+import { ALL } from '@/utils/constants';
 
 const Inventory = () => {
   const {
@@ -65,9 +66,9 @@ const Inventory = () => {
   const [category, setCategory] = useState('all');
   const [showAddDeck, setShowAddDeck] = useState(false);
   const [showAddPrecon, setShowAddPrecon] = useState(false);
-  const [clan, setClan] = useState('All');
-  const [type, setType] = useState('All');
-  const [discipline, setDiscipline] = useState('All');
+  const [clan, setClan] = useState(ALL);
+  const [type, setType] = useState(ALL);
+  const [discipline, setDiscipline] = useState(ALL);
   const [onlyNotes, setOnlyNotes] = useState(false);
 
   return (

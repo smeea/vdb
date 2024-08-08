@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { InventoryLibraryTable, InventoryFilterForm, SortButton, Header } from '@/components';
 import { useInventoryLibrary } from '@/hooks';
+import { ALL, CLAN_DISCIPLINE, NAME, QUANTITY, TYPE } from '@/utils/constants';
 
 const InventoryLibrary = ({
   compact,
@@ -15,14 +16,12 @@ const InventoryLibrary = ({
   inShared,
   onlyNotes,
 }) => {
-  const [sortMethod, setSortMethod] = useState('Name');
+  const [sortMethod, setSortMethod] = useState(NAME);
   const sortMethods = {
-    Name: 'N',
-    Quantity: 'Q',
-    'Type ': 'T',
-    'Clan / Discipline': 'C/D',
-    'Cost - Min to Max ': 'C↑ ', // SPACE SUFFIX IS INTENTIONAL
-    'Cost - Max to Min ': 'C↓ ', // SPACE SUFFIX IS INTENTIONAL
+    [NAME]: 'N',
+    [QUANTITY]: 'Q',
+    [TYPE]: 'T',
+    [CLAN_DISCIPLINE]: 'C/D',
   };
 
   const {
@@ -88,7 +87,7 @@ const InventoryLibrary = ({
         withCompact={withCompact}
         cards={
           compact
-            ? Object.values(cardsByType['All'])
+            ? Object.values(cardsByType[ALL])
             : Object.values(cardsByType[type]).filter((i) => {
                 return cardsByDiscipline[discipline][i.c.Id];
               })

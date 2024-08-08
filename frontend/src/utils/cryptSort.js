@@ -13,7 +13,6 @@ import {
   QUANTITY,
   QUANTITYx,
   SECT,
-  cardtypeSortedFull,
 } from '@/utils/constants';
 
 import {

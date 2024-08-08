@@ -27,7 +27,7 @@ const AccountChangeName = () => {
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
 
-  const onError = (e) => {
+  const onError = () => {
     setIsLoading(false);
     setError('CONNECTION PROBLEM');
   };

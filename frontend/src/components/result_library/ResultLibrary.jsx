@@ -10,6 +10,7 @@ import {
 } from '@/components';
 import { librarySort } from '@/utils';
 import { useApp, deckStore } from '@/context';
+import { CLAN_DISCIPLINE, COST_MAX_MIN, COST_MIN_MAX, NAME, TYPE } from '@/utils/constants';
 
 const ResultLibrary = ({ cards, setCards, inCompare }) => {
   const {
@@ -26,11 +27,11 @@ const ResultLibrary = ({ cards, setCards, inCompare }) => {
   const isEditable = deck?.isAuthor && !deck?.isPublic && !deck?.isFrozen;
 
   const sortMethods = {
-    'Clan / Discipline': 'C/D',
-    'Cost - Max to Min': 'C↓',
-    'Cost - Min to Max': 'C↑',
-    Name: 'N',
-    Type: 'T',
+    [CLAN_DISCIPLINE]: 'C/D',
+    [COST_MAX_MIN]: 'C↓',
+    [COST_MIN_MAX]: 'C↑',
+    [NAME]: 'N',
+    [TYPE]: 'T',
   };
 
   const handleClear = () => {

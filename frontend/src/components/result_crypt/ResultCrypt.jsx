@@ -9,6 +9,7 @@ import {
   ButtonFloatAdd,
   ErrorMessage,
 } from '@/components';
+import { CAPACITY_MAX_MIN, CAPACITY_MIN_MAX, CLAN, GROUP, NAME, SECT } from '@/utils/constants';
 import { cryptSort } from '@/utils';
 import { useApp, deckStore } from '@/context';
 
@@ -25,14 +26,13 @@ const ResultCrypt = ({ cards, setCards, inCompare }) => {
   const navigate = useNavigate();
   const deck = useSnapshot(deckStore).deck;
   const isEditable = deck?.isAuthor && !deck?.isPublic && !deck?.isFrozen;
-
   const sortMethods = {
-    'Capacity - Max to Min': 'C↓',
-    'Capacity - Min to Max': 'C↑',
-    Clan: 'CL',
-    Group: 'G',
-    Name: 'N',
-    Sect: 'S',
+    [CAPACITY_MAX_MIN]: 'C↓',
+    [CAPACITY_MIN_MAX]: 'C↑',
+    [CLAN]: 'CL',
+    [GROUP]: 'G',
+    [NAME]: 'N',
+    [SECT]: 'S',
   };
 
   const [showInfo, setShowInfo] = useState(false);

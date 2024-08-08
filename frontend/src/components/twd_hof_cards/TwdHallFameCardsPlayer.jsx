@@ -10,6 +10,18 @@ import {
 import { cryptSort, librarySort } from '@/utils';
 import { useModalCardController } from '@/hooks';
 import { useApp } from '@/context';
+import {
+  CAPACITY_MAX_MIN,
+  CAPACITY_MIN_MAX,
+  CLAN,
+  CLAN_DISCIPLINE,
+  COST_MAX_MIN,
+  COST_MIN_MAX,
+  GROUP,
+  NAME,
+  SECT,
+  TYPE,
+} from '@/utils/constants';
 
 const TwdHallFameCardsPlayer = ({ name, cards }) => {
   const {
@@ -49,20 +61,20 @@ const TwdHallFameCardsPlayer = ({ name, cards }) => {
   } = useModalCardController([...cryptSorted, ...librarySorted]);
 
   const cryptSortMethods = {
-    'Capacity - Max to Min': 'C↓',
-    'Capacity - Min to Max': 'C↑',
-    Clan: 'CL',
-    Group: 'G',
-    Name: 'N',
-    Sect: 'S',
+    [CAPACITY_MAX_MIN]: 'C↓',
+    [CAPACITY_MIN_MAX]: 'C↑',
+    [CLAN]: 'CL',
+    [GROUP]: 'G',
+    [NAME]: 'N',
+    [SECT]: 'S',
   };
 
   const librarySortMethods = {
-    'Clan / Discipline': 'C/D',
-    'Cost - Max to Min': 'C↓',
-    'Cost - Min to Max': 'C↑',
-    Name: 'N',
-    Type: 'T',
+    [CLAN_DISCIPLINE]: 'C/D',
+    [COST_MAX_MIN]: 'C↓',
+    [COST_MIN_MAX]: 'C↑',
+    [NAME]: 'N',
+    [TYPE]: 'T',
   };
 
   let firstCardDate = null;

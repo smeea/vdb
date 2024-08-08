@@ -1,6 +1,15 @@
 import React, { useState } from 'react';
 import { InventoryCryptTable, InventoryFilterForm, SortButton, Header } from '@/components';
 import { useInventoryCrypt } from '@/hooks';
+import {
+  ALL,
+  CAPACITY_MAX_MIN,
+  CAPACITY_MIN_MAX,
+  CLANx,
+  GROUPx,
+  NAME,
+  QUANTITY,
+} from '@/utils/constants';
 
 const InventoryCrypt = ({
   compact,
@@ -15,12 +24,12 @@ const InventoryCrypt = ({
 }) => {
   const [sortMethod, setSortMethod] = useState('Name');
   const sortMethods = {
-    Name: 'N',
-    Quantity: 'Q',
-    'Clan ': 'CL', // SPACE SUFFIX IS INTENTIONAL
-    'Group ': 'G', // SPACE SUFFIX IS INTENTIONAL
-    'Capacity - Min to Max': 'C↑',
-    'Capacity - Max to Min': 'C↓',
+    [NAME]: 'N',
+    [QUANTITY]: 'Q',
+    [CLANx]: 'CL',
+    [GROUPx]: 'G',
+    [CAPACITY_MIN_MAX]: 'C↑',
+    [CAPACITY_MAX_MIN]: 'C↓',
   };
 
   const { cardsByClan, cardsByClanTotal, cardsByClanUnique, missingByClan, missingByClanTotal } =
@@ -60,7 +69,7 @@ const InventoryCrypt = ({
         sortMethod={sortMethod}
         compact={compact}
         withCompact={withCompact}
-        cards={compact ? Object.values(cardsByClan['All']) : Object.values(cardsByClan[clan])}
+        cards={compact ? Object.values(cardsByClan[ALL]) : Object.values(cardsByClan[clan])}
         newFocus={newFocus}
         inShared={inShared}
       />

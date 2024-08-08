@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useSnapshot } from 'valtio';
 import ArrowRepeat from '@/assets/images/icons/arrow-repeat.svg?react';

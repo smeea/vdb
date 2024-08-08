@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { CardImage, Modal, ConditionalTooltipOrModal } from '@/components';
+import { CardImage, ConditionalTooltipOrModal } from '@/components';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 import { useApp } from '@/context';
 import { POD, PLAYTEST, PROMO } from '@/utils/constants';

@@ -2,10 +2,17 @@ import React, { useState, useLayoutEffect, useEffect, useMemo } from 'react';
 import { useImmer } from 'use-immer';
 import { useSnapshot } from 'valtio';
 import { set, setMany, getMany, update } from 'idb-keyval';
-import { initFromStorage, setLocalStorage } from '@/services/storageServices.js';
-import { userServices, cardServices } from '@/services';
+import { storageServices, userServices, cardServices } from '@/services';
 import { useDeck, useWindowSize } from '@/hooks';
 import { byTimestamp } from '@/utils';
+import {
+  CAPACITY_MIN_MAX,
+  QUANTITYx,
+  TYPE,
+  DATE_NEW_OLD,
+  RANK_HIGH_LOW,
+  EN,
+} from '@/utils/constants';
 import {
   setLimitedSets,
   setLimitedAllowedCrypt,
@@ -217,7 +224,7 @@ export const AppProvider = ({ children }) => {
   // LANGUAGE
   const changeLang = (lang) => {
     setLang(lang);
-    setLocalStorage('lang', lang);
+    storageServices.setLocalStorage('lang', lang);
   };
 
   const changeBaseTextToLocalizedText = (setCardBase, localizedInfo, nativeInfo) => {
@@ -281,57 +288,57 @@ export const AppProvider = ({ children }) => {
   // APP DATA
   const toggleShowImage = () => {
     setShowImage(!showImage);
-    setLocalStorage('showImage', !showImage);
+    storageServices.setLocalStorage('showImage', !showImage);
   };
 
   const toggleInventoryMode = () => {
     setInventoryMode(!inventoryMode);
-    setLocalStorage('inventoryMode', !inventoryMode);
+    storageServices.setLocalStorage('inventoryMode', !inventoryMode);
   };
 
   const toggleLimitedMode = () => {
     setLimitedMode(!limitedMode);
-    setLocalStorage('limitedMode', !limitedMode);
+    storageServices.setLocalStorage('limitedMode', !limitedMode);
   };
 
   const togglePlaytestMode = () => {
     setPlaytestMode(!playtestMode);
-    setLocalStorage('playtestMode', !playtestMode);
+    storageServices.setLocalStorage('playtestMode', !playtestMode);
   };
 
   const toggleAddMode = () => {
     setAddMode(!addMode);
-    setLocalStorage('addMode', !addMode);
+    storageServices.setLocalStorage('addMode', !addMode);
   };
 
   const changeCryptDeckSort = (method) => {
     setCryptDeckSort(method);
-    setLocalStorage('cryptDeckSort', method);
+    storageServices.setLocalStorage('cryptDeckSort', method);
   };
 
   const changeCryptSearchSort = (method) => {
     setCryptSearchSort(method);
-    setLocalStorage('cryptSearchSort', method);
+    storageServices.setLocalStorage('cryptSearchSort', method);
   };
 
   const changeLibrarySearchSort = (method) => {
     setLibrarySearchSort(method);
-    setLocalStorage('librarySearchSort', method);
+    storageServices.setLocalStorage('librarySearchSort', method);
   };
 
   const changeTwdSearchSort = (method) => {
     setTwdSearchSort(method);
-    setLocalStorage('twdSearchSort', method);
+    storageServices.setLocalStorage('twdSearchSort', method);
   };
 
   const changePdaSearchSort = (method) => {
     setPdaSearchSort(method);
-    setLocalStorage('pdaSearchSort', method);
+    storageServices.setLocalStorage('pdaSearchSort', method);
   };
 
   const changeAnalyzeSearchSort = (method) => {
     setAnalyzeSearchSort(method);
-    setLocalStorage('analyzeSearchSort', method);
+    storageServices.setLocalStorage('analyzeSearchSort', method);
   };
 
   const addRecentDeck = (deck) => {
@@ -346,12 +353,12 @@ export const AppProvider = ({ children }) => {
     });
     if (d.length > 10) d = d.slice(0, 10);
     setRecentDecks(d);
-    setLocalStorage('recentDecks', d);
+    storageServices.setLocalStorage('recentDecks', d);
   };
 
   const updateRecentDecks = (decks) => {
     setRecentDecks(decks);
-    setLocalStorage('recentDecks', decks);
+    storageServices.setLocalStorage('recentDecks', decks);
   };
 
   useEffect(() => {
@@ -365,19 +372,19 @@ export const AppProvider = ({ children }) => {
   }, []);
 
   useLayoutEffect(() => {
-    initFromStorage('cryptSearchSort', 'Capacity - Min to Max', setCryptSearchSort);
-    initFromStorage('cryptDeckSort', 'Quantity ', setCryptDeckSort);
-    initFromStorage('librarySearchSort', 'Type', setLibrarySearchSort);
-    initFromStorage('twdSearchSort', 'Date - New to Old', setTwdSearchSort);
-    initFromStorage('pdaSearchSort', 'Date - New to Old', setPdaSearchSort);
-    initFromStorage('analyzeSearchSort', 'Rank - High to Low', setAnalyzeSearchSort);
-    initFromStorage('lang', 'en-EN', setLang);
-    initFromStorage('addMode', isDesktop, setAddMode);
-    initFromStorage('inventoryMode', false, setInventoryMode);
-    initFromStorage('limitedMode', false, setLimitedMode);
-    initFromStorage('showImage', true, setShowImage);
-    initFromStorage('recentDecks', [], setRecentDecks);
-    initFromStorage('playtestMode', false, setPlaytestMode);
+    storageServices.initFromStorage('cryptSearchSort', CAPACITY_MIN_MAX, setCryptSearchSort);
+    storageServices.initFromStorage('cryptDeckSort', QUANTITYx, setCryptDeckSort);
+    storageServices.initFromStorage('librarySearchSort', TYPE, setLibrarySearchSort);
+    storageServices.initFromStorage('twdSearchSort', DATE_NEW_OLD, setTwdSearchSort);
+    storageServices.initFromStorage('pdaSearchSort', DATE_NEW_OLD, setPdaSearchSort);
+    storageServices.initFromStorage('analyzeSearchSort', RANK_HIGH_LOW, setAnalyzeSearchSort);
+    storageServices.initFromStorage('lang', EN, setLang);
+    storageServices.initFromStorage('addMode', isDesktop, setAddMode);
+    storageServices.initFromStorage('inventoryMode', false, setInventoryMode);
+    storageServices.initFromStorage('limitedMode', false, setLimitedMode);
+    storageServices.initFromStorage('showImage', true, setShowImage);
+    storageServices.initFromStorage('recentDecks', [], setRecentDecks);
+    storageServices.initFromStorage('playtestMode', false, setPlaytestMode);
   }, []);
 
   // DECKS

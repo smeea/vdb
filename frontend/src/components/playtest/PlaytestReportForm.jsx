@@ -59,7 +59,6 @@ const Title = ({ isPrecon }) => {
 };
 
 const PlaytestReportForm = ({ id, setIsHotkeysDisabled, isPrecon = false }) => {
-  const { isMobile } = useApp();
   const [text, setText] = useState('');
   const [score, setScore] = useState(0);
   const [isPlayed, setIsPlayed] = useState(false);

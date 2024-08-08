@@ -12,10 +12,6 @@ export const changeLang = (value) => {
 
 export const changePlaytester = (user, isAdd = true) => {
   const url = `${import.meta.env.VITE_API_URL}/playtest/users`;
-  const options = {
-    body: JSON.stringify({ username: user }),
-  };
-
   return ky(url, {
     method: isAdd ? 'PUT' : 'DELETE',
     json: { username: user },
@@ -23,7 +19,6 @@ export const changePlaytester = (user, isAdd = true) => {
 };
 
 export const getReports = async (value, isPrecon) => {
-  const options = {};
   const url = `${import.meta.env.VITE_API_URL}/playtest/export/${
     isPrecon ? 'precons' : 'cards'
   }/${value.Id}`;

@@ -147,7 +147,8 @@ export const branchDelete = (deckid, decks) => {
 };
 
 export const branchCreate = (deck, branch) => {
-  const url = `${import.meta.env.VITE_API_URL}/deck/${deck.master ?? deck.deckid}/branch`;
+  const master = deck.master ?? deck.deckid;
+  const url = `${import.meta.env.VITE_API_URL}/deck/${master}/branch`;
 
   return ky
     .post(url, { json: { deckid: branch.deckid } })
@@ -180,10 +181,6 @@ export const branchCreate = (deck, branch) => {
 
 export const publicSync = (deck, decks) => {
   const url = `${import.meta.env.VITE_API_URL}/pda/${deck.deckid}`;
-  const options = {
-    method: 'PUT',
-  };
-
   return ky
     .put(url)
     .json()

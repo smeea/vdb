@@ -1,13 +1,12 @@
 import {
   CLAN_DISCIPLINE,
   COST_MAX_MIN,
-  COST_MAX_MINx,
   COST_MIN_MAX,
-  COST_MIN_MAXx,
   DATE_PRINT,
   DATE_WIN,
   GROUPED_TYPE,
   NAME,
+  PLAYER,
   QUANTITY,
   TYPE,
   TYPEx,
@@ -76,15 +75,6 @@ const librarySort = (cards, sortMethod) => {
           .toSorted(byType)
           .toSorted(byPoolCost)
           .toSorted(byBloodCost);
-      case COST_MAX_MINx:
-        return cards.toSorted(byCardName).toSorted(byPoolCost).toSorted(byBloodCost);
-      case COST_MIN_MAXx:
-        return cards
-          .toSorted(byCardName)
-          .toReversed()
-          .toSorted(byPoolCost)
-          .toSorted(byBloodCost)
-          .toReversed();
       case PLAYER:
         return cards.toSorted(byCardName).toSorted(byPlayer);
       case DATE_PRINT:
