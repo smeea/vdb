@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import ky from 'ky';
 import { useParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { useSnapshot } from 'valtio';
@@ -47,7 +48,7 @@ const TournamentAnalyze = () => {
 
     const url = `${import.meta.env.VITE_BASE_URL}/tournaments/${id}.zip`;
 
-    fetch(url)
+    ky.get(url)
       .then(function (response) {
         if (response.status === 200 || response.status === 0) {
           return Promise.resolve(response.blob());

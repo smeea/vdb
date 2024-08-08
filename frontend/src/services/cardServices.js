@@ -1,5 +1,6 @@
+import ky from 'ky';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
-import { DEFAULT_OPTIONS, PLAYTEST } from '@/utils/constants';
+import { PLAYTEST } from '@/utils/constants';
 import { useDeck, useTags } from '@/hooks';
 
 const CARD_VERSION = import.meta.env.VITE_CARD_VERSION;
@@ -15,24 +16,10 @@ const urlLocalizedLibrary = (lang) =>
 const urlPreconDecks = `${BASE_URL}/data/precon_decks.json?v=${CARD_VERSION}`;
 
 export const getCardBase = async () => {
-  const crypt = await fetch(urlCrypt, DEFAULT_OPTIONS).then((response) => response.json());
-  const library = await fetch(urlLibrary, DEFAULT_OPTIONS).then((response) => response.json());
-
-  const cryptPlaytest = await fetch(urlCryptPlaytest, DEFAULT_OPTIONS).then((response) => {
-    if (response.headers.get('content-type') === 'application/json') {
-      return response.json();
-    } else {
-      return {};
-    }
-  });
-
-  const libraryPlaytest = await fetch(urlLibraryPlaytest, DEFAULT_OPTIONS).then((response) => {
-    if (response.headers.get('content-type') === 'application/json') {
-      return response.json();
-    } else {
-      return {};
-    }
-  });
+  const crypt = await ky.get(urlCrypt).json();
+  const library = await ky.get(urlLibrary).json();
+  const cryptPlaytest = await ky.get(urlCryptPlaytest, { throwHttpErrors: false }).json();
+  const libraryPlaytest = await ky.get(urlLibraryPlaytest, { throwHttpErrors: false }).json();
 
   const nativeCrypt = {};
   const nativeLibrary = {};
@@ -58,12 +45,8 @@ export const getCardBase = async () => {
 };
 
 export const getLocalizedCardBase = async (lang) => {
-  const crypt = await fetch(urlLocalizedCrypt(lang), DEFAULT_OPTIONS).then((response) =>
-    response.json(),
-  );
-  const library = await fetch(urlLocalizedLibrary(lang), DEFAULT_OPTIONS).then((response) =>
-    response.json(),
-  );
+  const crypt = await ky.get(urlLocalizedCrypt(lang)).json();
+  const library = await ky.get(urlLocalizedLibrary(lang)).json();
 
   return {
     crypt: crypt,
@@ -72,9 +55,7 @@ export const getLocalizedCardBase = async (lang) => {
 };
 
 export const getPreconDecks = async (cryptCardBase, libraryCardBase) => {
-  const preconDecksData = await fetch(urlPreconDecks, DEFAULT_OPTIONS).then((response) =>
-    response.json(),
-  );
+  const preconDecksData = await ky.get(urlPreconDecks).json();
 
   const preconDecks = {};
   Object.keys(preconDecksData).forEach((set) => {

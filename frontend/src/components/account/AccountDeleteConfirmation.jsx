@@ -17,7 +17,7 @@ const AccountDeleteConfirmation = ({ setShow }) => {
 
   const onError = (e) => {
     setIsLoading(false);
-    if (e.message == 401) {
+    if (e.status == 401) {
       setPasswordError(true);
       setPassword('');
     } else {

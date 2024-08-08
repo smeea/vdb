@@ -19,8 +19,7 @@ const InventoryShareModal = ({ setShow }) => {
 
     inventoryServices
       .createSharedInventory(key)
-      .then((response) => {
-        if (!response.ok) throw Error(response.status);
+      .then(() => {
         setInventoryKey(key);
         const u = `${import.meta.env.VITE_BASE_URL}/inventory?key=${key}`;
         setShareUrl(u);

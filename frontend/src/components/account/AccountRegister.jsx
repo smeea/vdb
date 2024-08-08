@@ -20,7 +20,7 @@ const AccountRegister = () => {
 
   const onError = (e) => {
     setIsLoading(false);
-    if (e.message == 409) {
+    if (e.status == 409) {
       setUsernameError('USER ALREADY EXIST');
     } else {
       setConnectionError('CONNECTION ERROR');

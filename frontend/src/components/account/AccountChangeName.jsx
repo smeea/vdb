@@ -29,9 +29,7 @@ const AccountChangeName = () => {
 
   const onError = (e) => {
     setIsLoading(false);
-    if (e.message != 401) {
-      setError('CONNECTION PROBLEM');
-    }
+    setError('CONNECTION PROBLEM');
   };
 
   const onSuccess = () => {

@@ -14,5 +14,4 @@
 - Update to React 19
 - Update to TailwindCSS 4 (migrate from isWidth to container queries)
 - Remove legacy polyfills when Safari adopts groupBy
-- Use ky instead of fetch
 - Refactor to use constants

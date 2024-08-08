@@ -1,7 +1,9 @@
+import ky from 'ky';
 import { inventoryStore } from '@/context';
-import { DEFAULT_OPTIONS } from '@/utils/constants';
 
 export const addCards = (cards) => {
+  const url = `${import.meta.env.VITE_API_URL}/inventory`;
+
   const c = {};
   Object.values(cards).forEach((card) => {
     if (card.q !== 0) {
@@ -9,41 +11,25 @@ export const addCards = (cards) => {
     }
   });
 
-  const url = `${import.meta.env.VITE_API_URL}/inventory`;
-  const options = {
-    method: 'PATCH',
-    body: JSON.stringify(c),
-  };
-  return fetch(url, { ...DEFAULT_OPTIONS, ...options });
+  return ky.patch(url, { json: c });
 };
 
 export const setCard = (cardid, count) => {
   const url = `${import.meta.env.VITE_API_URL}/inventory`;
-  const options = {
-    method: 'PUT',
-    body: JSON.stringify({ [cardid]: { q: count } }),
-  };
-  return fetch(url, { ...DEFAULT_OPTIONS, ...options });
+  return ky.put(url, { json: { [cardid]: { q: count } } });
 };
 
 export const setCardText = (cardid, text) => {
   const url = `${import.meta.env.VITE_API_URL}/inventory`;
-  const options = {
-    method: 'PUT',
-    body: JSON.stringify({ [cardid]: { t: text } }),
-  };
-  return fetch(url, { ...DEFAULT_OPTIONS, ...options });
+  return ky.put(url, { json: { [cardid]: { t: text } } });
 };
 
 export const getSharedInventory = (key, cryptCardBase, libraryCardBase) => {
   const url = `${import.meta.env.VITE_API_URL}/inventory/${key}`;
-  const options = {};
 
-  return fetch(url, { ...DEFAULT_OPTIONS, ...options })
-    .then((response) => {
-      if (!response.ok) throw Error(response.status);
-      return response.json();
-    })
+  return ky
+    .get(url)
+    .json()
     .then((data) => {
       const crypt = {};
       const library = {};
@@ -59,21 +45,12 @@ export const getSharedInventory = (key, cryptCardBase, libraryCardBase) => {
 
 export const createSharedInventory = (key) => {
   const url = `${import.meta.env.VITE_API_URL}/account`;
-  const options = {
-    method: 'PUT',
-    body: JSON.stringify({ inventoryKey: key }),
-  };
-
-  return fetch(url, { ...DEFAULT_OPTIONS, ...options });
+  return ky.put(url, { json: { inventoryKey: key } });
 };
 
 export const deleteInventory = () => {
   const url = `${import.meta.env.VITE_API_URL}/inventory`;
-  const options = {
-    method: 'DELETE',
-  };
-
-  fetch(url, { ...DEFAULT_OPTIONS, ...options }).then(() => {
+  ky.delete(url).then(() => {
     inventoryStore.crypt = {};
     inventoryStore.library = {};
   });

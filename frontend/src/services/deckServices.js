@@ -1,93 +1,61 @@
+import ky from 'ky';
 import { useDeckExport } from '@/hooks';
 import { redirect, defer } from 'react-router-dom';
 import { deckStore } from '@/context';
-import { DEFAULT_OPTIONS } from '@/utils/constants';
 
 export const update = (deckid, field, value) => {
   const url = `${import.meta.env.VITE_API_URL}/deck/${deckid}`;
-  const options = {
-    method: 'PUT',
-    body: JSON.stringify({ [field]: value }),
-  };
-
-  return fetch(url, { ...DEFAULT_OPTIONS, ...options }).then((response) => {
-    if (!response.ok) throw response;
-    return response.json();
-  });
+  return ky.put(url, { json: { [field]: value } }).json();
 };
 
 export const cardChange = (deckid, cardid, q) => {
   const url = `${import.meta.env.VITE_API_URL}/deck/${deckid}`;
-  const options = {
-    method: 'PUT',
-    body: JSON.stringify({ cardChange: { [cardid]: q } }),
-  };
-
-  return fetch(url, { ...DEFAULT_OPTIONS, ...options }).then((response) => {
-    if (!response.ok) throw response;
-    return response.json();
-  });
+  return ky.put(url, { json: { cardChange: { [cardid]: q } } }).json();
 };
 
 export const deckImport = (deck) => {
+  const url = `${import.meta.env.VITE_API_URL}/deck`;
   const cards = {};
   Object.values({ ...deck.crypt, ...deck.library }).forEach((card) => {
     cards[card.c.Id] = card.q;
   });
 
-  const url = `${import.meta.env.VITE_API_URL}/deck`;
-  const options = {
-    method: 'POST',
-    body: JSON.stringify({
-      name: deck.name,
-      description: deck.description,
-      author: deck.author,
-      cards: cards,
-      anonymous: deck.anonymous,
-    }),
-  };
-
-  return fetch(url, { ...DEFAULT_OPTIONS, ...options }).then((response) => {
-    if (!response.ok) throw response;
-    return response.json();
-  });
+  return ky
+    .post(url, {
+      json: {
+        name: deck.name,
+        description: deck.description,
+        author: deck.author,
+        cards: cards,
+        anonymous: deck.anonymous,
+      },
+    })
+    .json();
 };
 
 export const deckDelete = (deck) => {
   const url = `${import.meta.env.VITE_API_URL}/deck/${deck.deckid}`;
-  const options = {
-    method: 'DELETE',
-  };
-
-  return fetch(url, { ...DEFAULT_OPTIONS, ...options }).then(() => {
-    delete deckStore.decks[deck.master ?? deck.deckid];
-  });
+  return ky.delete(url).then(() => delete deckStore.decks[deck.master ?? deck.deckid]);
 };
 
 export const deckClone = (deck) => {
+  const url = `${import.meta.env.VITE_API_URL}/deck`;
   const name = `${deck.name} [by ${deck.author}]`;
   const cards = {};
-  Object.keys(deck.crypt).forEach((cardid) => {
-    cards[cardid] = deck.crypt[cardid].q;
-  });
-  Object.keys(deck.library).forEach((cardid) => {
-    cards[cardid] = deck.library[cardid].q;
-  });
+  Object.keys(deck.crypt).forEach((cardid) => (cards[cardid] = deck.crypt[cardid].q));
+  Object.keys(deck.library).forEach((cardid) => (cards[cardid] = deck.library[cardid].q));
 
-  const url = `${import.meta.env.VITE_API_URL}/deck`;
-  const options = {
-    method: 'POST',
-    body: JSON.stringify({
-      name: name,
-      description: deck.description,
-      author: deck.author,
-      cards: cards,
-      tags: deck.tags,
-    }),
-  };
-
-  return fetch(url, { ...DEFAULT_OPTIONS, ...options })
-    .then((response) => response.json())
+  return ky
+    .post(url, {
+      json: {
+        name: name,
+        description: deck.description,
+        author: deck.author,
+        cards: cards,
+        tags: deck.tags,
+      },
+    })
+    .json()
     .then((data) => {
       if (data.error === undefined) {
         const now = new Date();
@@ -114,46 +82,34 @@ export const deckClone = (deck) => {
 };
 
 export const deckSnapshot = (deck) => {
-  const cards = {};
-  Object.keys(deck.crypt).forEach((cardid) => {
-    cards[cardid] = deck.crypt[cardid].q;
-  });
-  Object.keys(deck.library).forEach((cardid) => {
-    cards[cardid] = deck.library[cardid].q;
-  });
-
   const url = `${import.meta.env.VITE_API_URL}/deck`;
-  const options = {
-    method: 'POST',
-    body: JSON.stringify({
-      name: deck.name,
-      description: deck.description,
-      author: deck.author,
-      cards: cards,
-      tags: deck.tags,
-      anonymous: true,
-    }),
-  };
+  const cards = {};
+  Object.keys(deck.crypt).forEach((cardid) => (cards[cardid] = deck.crypt[cardid].q));
+  Object.keys(deck.library).forEach((cardid) => (cards[cardid] = deck.library[cardid].q));
 
-  return fetch(url, { ...DEFAULT_OPTIONS, ...options })
-    .then((response) => response.json())
+  return ky
+    .post(url, {
+      json: {
+        name: deck.name,
+        description: deck.description,
+        author: deck.author,
+        cards: cards,
+        tags: deck.tags,
+        anonymous: true,
+      },
+    })
+    .json()
     .then((data) => data.deckid);
 };
 
 export const branchesImport = (masterId, branches) => {
   const url = `${import.meta.env.VITE_API_URL}/deck/${masterId}/branch`;
-  const options = {
-    method: 'POST',
-    body: JSON.stringify({
-      branches: branches,
-    }),
-  };
 
-  return fetch(url, { ...DEFAULT_OPTIONS, ...options })
-    .then((response) => {
-      if (!response.ok) throw response;
-      return response.json();
+  return ky
+    .post(url, {
+      json: { branches: branches },
     })
+    .json()
     .then((data) => {
       data.forEach((branch, idx) => {
         branches[idx].deckid = branch.deckid;
@@ -166,11 +122,8 @@ export const branchesImport = (masterId, branches) => {
 
 export const branchDelete = (deckid, decks) => {
   const url = `${import.meta.env.VITE_API_URL}/deck/${deckid}/branch`;
-  const options = {
-    method: 'DELETE',
-  };
 
-  return fetch(url, { ...DEFAULT_OPTIONS, ...options }).then(() => {
+  return ky.delete(url).then(() => {
     let masterId = decks[deckid].master || null;
     const branches = masterId ? [...decks[masterId].branches] : [...decks[deckid].branches];
 
@@ -194,17 +147,11 @@ export const branchDelete = (deckid, decks) => {
 };
 
 export const branchCreate = (deck, branch) => {
-  const master = deck.master ?? deck.deckid;
-  const url = `${import.meta.env.VITE_API_URL}/deck/${master}/branch`;
-  const options = {
-    method: 'POST',
-    body: JSON.stringify({
-      deckid: branch.deckid,
-    }),
-  };
+  const url = `${import.meta.env.VITE_API_URL}/deck/${deck.master ?? deck.deckid}/branch`;
 
-  return fetch(url, { ...DEFAULT_OPTIONS, ...options })
-    .then((response) => response.json())
+  return ky
+    .post(url, { json: { deckid: branch.deckid } })
+    .json()
     .then((data) => {
       const now = new Date();
       deckStore.decks[master].master = null;
@@ -237,8 +184,9 @@ export const publicSync = (deck, decks) => {
     method: 'PUT',
   };
 
-  return fetch(url, { ...DEFAULT_OPTIONS, ...options })
-    .then((response) => response.json())
+  return ky
+    .put(url)
+    .json()
     .then(() => {
       deckStore.deck.crypt = { ...decks[deck.publicParent].crypt };
       deckStore.deck.library = { ...decks[deck.publicParent].library };
@@ -246,15 +194,15 @@ export const publicSync = (deck, decks) => {
 };
 
 export const publicCreateOrDelete = (deck) => {
+  const url = `${import.meta.env.VITE_API_URL}/pda/${deck.deckid}`;
+
   const isPublished = !!(deck.publicParent || deck.publicChild);
   const parentId = deck.publicParent ?? deck.deckid;
-  const url = `${import.meta.env.VITE_API_URL}/pda/${deck.deckid}`;
-  const options = {
-    method: isPublished ? 'DELETE' : 'POST',
-  };
 
-  return fetch(url, { ...DEFAULT_OPTIONS, ...options })
-    .then((response) => response.json())
+  return ky(url, {
+    method: isPublished ? 'DELETE' : 'POST',
+  })
+    .json()
     .then((data) => {
       deckStore.decks[parentId].publicChild = isPublished ? null : data.deckid;
       return data.deckid;
@@ -264,13 +212,12 @@ export const publicCreateOrDelete = (deck) => {
 export const getDeckFromAmaranth = async (deckUrl) => {
   const url = `${import.meta.env.VITE_AMARANTH_API_URL}/deck`;
   const id = deckUrl.replace(/.*#deck\//i, '');
-  const options = {
-    method: 'POST',
-    body: `id=${id}`,
-  };
 
-  const response = await fetch(url, options);
-  const deck = await response.json();
+  const deck = await ky
+    .post(url, {
+      body: `id=${id}`,
+    })
+    .json();
 
   return deck.result;
 };
@@ -360,10 +307,5 @@ export const deckLoader = ({ params }) => {
 
 export const getDeck = (deckid) => {
   const url = `${import.meta.env.VITE_API_URL}/deck/${deckid}`;
-  const options = {};
-
-  return fetch(url, { ...DEFAULT_OPTIONS, ...options }).then((response) => {
-    if (!response.ok) return { error: response.status };
-    return response.json();
-  });
+  return ky.get(url).json();
 };

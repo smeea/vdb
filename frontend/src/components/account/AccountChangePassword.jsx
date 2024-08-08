@@ -12,7 +12,7 @@ const AccountChangePassword = () => {
 
   const onError = (e) => {
     setIsLoading(false);
-    if (e.message == 401) {
+    if (e.status == 401) {
       setPasswordError('WRONG OLD PASSWORD');
     } else {
       setPasswordError('CONNECTION PROBLEM');

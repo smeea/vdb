@@ -14,7 +14,7 @@ const AccountChangeEmail = () => {
 
   const onError = (e) => {
     setIsLoading(false);
-    if (e.message == 401) {
+    if (e.status == 401) {
       setPasswordError('WRONG PASSWORD');
     } else {
       setPasswordError('CONNECTION PROBLEM');

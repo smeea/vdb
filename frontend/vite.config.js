@@ -6,6 +6,11 @@ import svgr from 'vite-plugin-svgr';
 import { VitePWA } from 'vite-plugin-pwa';
 
 export default defineConfig({
+  server: {
+    proxy: {
+      '/api': 'http://localhost:5000',
+    },
+  },
   plugins: [
     legacy({
       targets: ['defaults', 'not IE 11'],
@@ -21,8 +26,7 @@ export default defineConfig({
       manifest: {
         name: 'VDB',
         short_name: 'VDB',
-        description:
-          'Card search and deck building app for Vampire the Eternal Struggle (VTES).',
+        description: 'Card search and deck building app for Vampire the Eternal Struggle (VTES).',
         lang: 'en-US',
         start_url: '/decks',
         display: 'standalone',

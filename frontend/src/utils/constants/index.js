@@ -1,10 +1,3 @@
-export const DEFAULT_OPTIONS = {
-  mode: 'cors',
-  credentials: 'include',
-  headers: { 'Content-Type': 'application/json' },
-  method: 'GET',
-};
-
 export const cardtypeSortedFull = [
   'Master',
   'Conviction',

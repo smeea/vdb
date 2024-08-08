@@ -46,12 +46,15 @@ const AccountLogin = () => {
 
   const onError = (e) => {
     setIsLoading(false);
-    if (e.message == 401) {
-      setPasswordError('WRONG PASSWORD');
-    } else if (e.message == 400) {
-      setUsernameError('USER DOES NOT EXIST');
-    } else {
-      setPasswordError('CONNECTION PROBLEM');
+    switch (e.status) {
+      case 401:
+        setPasswordError('WRONG PASSWORD');
+        break;
+      case 400:
+        setUsernameError('USER DOES NOT EXIST');
+        break;
+      default:
+        setPasswordError('CONNECTION PROBLEM');
     }
   };
 
