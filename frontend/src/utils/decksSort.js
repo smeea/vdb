@@ -1,4 +1,14 @@
 import { byTimestamp } from '@/utils';
+import {
+  BY_DATE,
+  BY_NAME,
+  DATE_NEW_OLD,
+  DATE_OLD_NEW,
+  FAVORITES,
+  PLAYERS,
+  RANK_HIGH_LOW,
+  RANK_LOW_HIGH,
+} from '@/utils/constants';
 
 const decksSort = (decks, sortMethod) => {
   const byRank = (a, b) => a.score.rank - b.score.rank;
@@ -10,21 +20,21 @@ const decksSort = (decks, sortMethod) => {
   if (decks) {
     decks = [...decks];
     switch (sortMethod) {
-      case 'Rank - High to Low':
+      case RANK_HIGH_LOW:
         return decks.toSorted(byRank);
-      case 'Rank - Low to High':
+      case RANK_LOW_HIGH:
         return decks.toSorted(byRank).toReversed();
-      case 'byName':
+      case BY_NAME:
         return decks.toSorted(byName);
-      case 'byDate':
+      case BY_DATE:
         return decks.toSorted(byTimestamp);
-      case 'Date - New to Old':
+      case DATE_NEW_OLD:
         return decks.toSorted(byDate);
-      case 'Date - Old to New':
+      case DATE_OLD_NEW:
         return decks.toSorted(byDate).toReversed();
-      case 'Favorites':
+      case FAVORITES:
         return decks.toSorted(byDate).toSorted(byFavorites);
-      case 'Players':
+      case PLAYERS:
         return decks.toSorted(byDate).toSorted(byPlayers);
       default:
         return decks;

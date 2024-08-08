@@ -1,4 +1,22 @@
 import {
+  CAPACITY,
+  CAPACITY_MAX_MIN,
+  CAPACITY_MIN_MAX,
+  CLAN,
+  CLANx,
+  DATE_PRINT,
+  DATE_WIN,
+  GROUP,
+  GROUPx,
+  NAME,
+  PLAYER,
+  QUANTITY,
+  QUANTITYx,
+  SECT,
+  cardtypeSortedFull,
+} from '@/utils/constants';
+
+import {
   bySect,
   byCardName,
   byClan,
@@ -13,33 +31,33 @@ import {
 const cryptSort = (cards, sortMethod) => {
   if (cards) {
     switch (sortMethod) {
-      case 'Name':
+      case NAME:
         return cards.toSorted(byCardName);
-      case 'Capacity - Min to Max':
+      case CAPACITY_MIN_MAX:
         return cards.toSorted(byCardName).toReversed().toSorted(byCapacity).toReversed();
-      case 'Capacity - Max to Min':
+      case CAPACITY_MAX_MIN:
         return cards.toSorted(byCardName).toSorted(byCapacity);
-      case 'Capacity':
+      case CAPACITY:
         return cards.toSorted(byCardName).toSorted(byQuantity).toSorted(byCapacity);
-      case 'Quantity':
+      case QUANTITY:
         return cards.toSorted(byCardName).toSorted(byQuantity);
-      case 'Quantity ': // SPACE SUFFIX IS INTENTIONAL
+      case QUANTITYx:
         return cards.toSorted(byCardName).toSorted(byCapacity).toSorted(byQuantity);
-      case 'Clan':
+      case CLAN:
         return cards.toSorted(byCardName).toSorted(byCapacity).toSorted(byClan);
-      case 'Clan ': // SPACE SUFFIX IS INTENTIONAL
+      case CLANx:
         return cards.toSorted(byCardName).toSorted(byCapacity).toSorted(byGroup).toSorted(byClan);
-      case 'Group':
+      case GROUP:
         return cards.toSorted(byCardName).toSorted(byCapacity).toSorted(byGroup);
-      case 'Group ': // SPACE SUFFIX IS INTENTIONAL
+      case GROUPx:
         return cards.toSorted(byCardName).toSorted(byCapacity).toSorted(byClan).toSorted(byGroup);
-      case 'Sect':
+      case SECT:
         return cards.toSorted(byCardName).toSorted(byCapacity).toSorted(bySect);
-      case 'Player':
+      case PLAYER:
         return cards.toSorted(byCardName).toSorted(byPlayer);
-      case 'Date - Print':
+      case DATE_PRINT:
         return cards.toSorted(byCardName).toSorted(byDatePrint);
-      case 'Date - Win':
+      case DATE_WIN:
         return cards.toSorted(byCardName).toSorted(byDateWin);
       default:
         return cards;
