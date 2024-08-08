@@ -3,10 +3,10 @@ import Globe from '@/assets/images/icons/globe.svg?react';
 import { Flag, Select } from '@/components';
 import { useFetch } from '@/hooks';
 import { playtestServices } from '@/services';
+import { EN, ES, FR, PT } from '@/utils/constants';
 
 const PlaytestReportLanguageSelector = () => {
   const [lang, setLang] = useState();
-
   const url = `${import.meta.env.VITE_API_URL}/playtest/lang`;
   const { value } = useFetch(url, {}, []);
 
@@ -15,10 +15,10 @@ const PlaytestReportLanguageSelector = () => {
   }, [value]);
 
   const languages = {
-    'en-EN': 'English',
-    'es-ES': 'Spanish',
-    'fr-FR': 'French',
-    'pt-PT': 'Portuguese',
+    [EN]: 'English',
+    [ES]: 'Spanish',
+    [FR]: 'French',
+    [PT]: 'Portuguese',
   };
 
   const options = Object.keys(languages).map((i) => {

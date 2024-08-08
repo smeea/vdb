@@ -15,6 +15,7 @@ import {
 import { useApp, deckStore, setDeck } from '@/context';
 import { useDeck } from '@/hooks';
 import { deckServices } from '@/services';
+import { CRYPT, LIBRARY } from '@/utils/constants';
 
 const Diff = () => {
   const {
@@ -167,8 +168,8 @@ const Diff = () => {
       </FlexGapped>
       {isEditable && isMobile && showFloatingButtons && (
         <>
-          <DeckNewCardFloating target="crypt" deckid={deck.deckid} cards={deck.crypt} />
-          <DeckNewCardFloating target="library" deckid={deck.deckid} cards={deck.library} />
+          <DeckNewCardFloating target={CRYPT} deckid={deck.deckid} cards={deck.crypt} />
+          <DeckNewCardFloating target={LIBRARY} deckid={deck.deckid} cards={deck.library} />
         </>
       )}
       <ButtonFloatMenu />

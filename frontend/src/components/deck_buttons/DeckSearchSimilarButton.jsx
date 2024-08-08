@@ -4,6 +4,7 @@ import { Menu } from '@headlessui/react';
 import SymmetryVertical from '@/assets/images/icons/symmetry-vertical.svg?react';
 import { MenuItems, MenuItem, MenuButton } from '@/components';
 import { useApp, clearSearchForm, searchTwdForm, searchPdaForm } from '@/context';
+import { TWD, PDA } from '@/utils/constants';
 
 const DeckSearchSimilarButton = ({ deck }) => {
   const { isDesktop, setShowFloatingButtons, setShowMenuButtons } = useApp();
@@ -11,7 +12,7 @@ const DeckSearchSimilarButton = ({ deck }) => {
 
   const handleClick = (target) => {
     clearSearchForm(target);
-    if (target === 'pda') {
+    if (target === PDA) {
       searchPdaForm.similar = deck.deckid;
     } else {
       searchTwdForm.similar = deck.deckid;
@@ -32,13 +33,13 @@ const DeckSearchSimilarButton = ({ deck }) => {
       <MenuItems>
         <MenuItem
           title="Search similar Decks in Tournament Winning Decks Archive"
-          onClick={() => handleClick('twd')}
+          onClick={() => handleClick(TWD)}
         >
           Search in TWD
         </MenuItem>
         <MenuItem
           title="Search similar Decks in Public Decks Archive"
-          onClick={() => handleClick('pda')}
+          onClick={() => handleClick(PDA)}
         >
           Search in PDA
         </MenuItem>

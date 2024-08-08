@@ -22,6 +22,7 @@ import {
 import { sanitizeFormState } from '@/utils';
 import { useApp, setPdaResults, searchPdaForm, clearSearchForm } from '@/context';
 import { archiveServices } from '@/services';
+import { PDA, CRYPT, LIBRARY } from '@/utils/constants';
 
 const PdaSearchForm = ({ error, setError }) => {
   const { username, cryptCardBase, libraryCardBase, showFloatingButtons, inventoryMode, isMobile } =
@@ -87,7 +88,7 @@ const PdaSearchForm = ({ error, setError }) => {
   };
 
   const handleClear = () => {
-    clearSearchForm('pda');
+    clearSearchForm(PDA);
     setPdaResults(undefined);
     setError(false);
   };
@@ -109,7 +110,7 @@ const PdaSearchForm = ({ error, setError }) => {
 
   const processSearch = () => {
     setError(false);
-    const sanitizedForm = sanitizeFormState('pda', pdaFormState);
+    const sanitizedForm = sanitizeFormState(PDA, pdaFormState);
     if (Object.entries(sanitizedForm).length === 0) {
       setError('EMPTY REQUEST');
       return;
@@ -125,7 +126,7 @@ const PdaSearchForm = ({ error, setError }) => {
 
   const getNewPda = (q) => {
     setError(false);
-    clearSearchForm('pda');
+    clearSearchForm(PDA);
 
     setIsLoading(true);
     archiveServices
@@ -136,7 +137,7 @@ const PdaSearchForm = ({ error, setError }) => {
 
   const getRandomPda = (q) => {
     setError(false);
-    clearSearchForm('pda');
+    clearSearchForm(PDA);
 
     setIsLoading(true);
     archiveServices
@@ -147,7 +148,7 @@ const PdaSearchForm = ({ error, setError }) => {
 
   useEffect(() => {
     if (!isMobile && cryptCardBase && libraryCardBase) {
-      const sanitizedForm = sanitizeFormState('pda', pdaFormState);
+      const sanitizedForm = sanitizeFormState(PDA, pdaFormState);
       if (Object.keys(sanitizedForm).length === 0) {
         if (query) {
           setPdaResults(undefined);
@@ -170,12 +171,12 @@ const PdaSearchForm = ({ error, setError }) => {
         <>
           <TwdSearchFormMatchInventory
             value={pdaFormState.matchInventory.crypt}
-            target={'crypt'}
+            target={CRYPT}
             onChange={handleChangeWithOpt}
           />
           <TwdSearchFormMatchInventory
             value={pdaFormState.matchInventory.library}
-            target={'library'}
+            target={LIBRARY}
             onChange={handleChangeWithOpt}
           />
           <div className="flex justify-end space-x-6">

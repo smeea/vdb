@@ -4,6 +4,7 @@ import { Button } from '@/components';
 import PeopleFill from '@/assets/images/icons/people-fill.svg?react';
 import TrophyFill from '@/assets/images/icons/trophy-fill.svg?react';
 import { clearSearchForm, searchTwdForm, searchPdaForm } from '@/context';
+import { PDA } from '@/utils/constants';
 
 const ButtonSearchCardInDecks = ({ cardid, target, handleClose }) => {
   const navigate = useNavigate();
@@ -11,7 +12,7 @@ const ButtonSearchCardInDecks = ({ cardid, target, handleClose }) => {
 
   const handleClick = () => {
     clearSearchForm(target);
-    if (target === 'pda') {
+    if (target === PDA) {
       searchPdaForm[cardid > 200000 ? 'crypt' : 'library'] = value;
     } else {
       searchTwdForm[cardid > 200000 ? 'crypt' : 'library'] = value;
@@ -27,7 +28,7 @@ const ButtonSearchCardInDecks = ({ cardid, target, handleClose }) => {
 
   return (
     <Button title={`Search in ${target.toUpperCase()}`} variant="primary" onClick={handleClick}>
-      {target === 'pda' ? <PeopleFill /> : <TrophyFill />}
+      {target === PDA ? <PeopleFill /> : <TrophyFill />}
     </Button>
   );
 };

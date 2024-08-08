@@ -6,6 +6,11 @@ import { MenuItems, MenuItem, MenuItemDivider, MenuButton } from '@/components';
 import { useDeckExport } from '@/hooks';
 import { useApp, deckStore } from '@/context';
 import { deckServices } from '@/services';
+import { TWD, TWD_HINTS, TEXT, LACKEY, JOL, XLSX, EN } from '@/utils/constants';
+
+const SAVE = 'save';
+const COPY = 'copy';
+const EXPORT_ALL = 'exportAll';
 
 const DeckExportButton = ({ deck, inMissing, inInventory }) => {
   const {
@@ -21,18 +26,18 @@ const DeckExportButton = ({ deck, inMissing, inInventory }) => {
 
   const ExportDropdown = ({ action, format }) => {
     const formats = {
-      twd: 'TWD',
-      twdHints: 'TWD (w/ hints)',
-      text: 'Text',
-      lackey: 'Lackey',
-      jol: 'JOL',
-      xlsx: 'Excel',
+      [TWD]: 'TWD',
+      [TWD_HINTS]: 'TWD (w/ hints)',
+      [TEXT]: 'Text',
+      [LACKEY]: 'Lackey',
+      [JOL]: 'JOL',
+      [XLSX]: 'Excel',
     };
 
     const actions = {
-      save: [saveDeck, 'Save as File'],
-      copy: [copyDeck, 'Clipboard'],
-      exportAll: [exportAll, 'Export all Decks'],
+      [SAVE]: [saveDeck, 'Save as File'],
+      [COPY]: [copyDeck, 'Clipboard'],
+      [EXPORT_ALL]: [exportAll, 'Export all Decks'],
     };
 
     return (
@@ -61,14 +66,14 @@ const DeckExportButton = ({ deck, inMissing, inInventory }) => {
     }
     let file;
 
-    if (format === 'xlsx') {
+    if (format === XLSX) {
       const data = await deckServices.exportXlsx(deck);
       file = new File([data], `${deckName}.xlsx`, {
         type: 'application/octet-stream',
       });
     } else {
       let exportText = null;
-      if ((format === 'twd' || format === 'twdHints') && lang !== 'en-EN') {
+      if ((format === TWD || format === TWD_HINTS) && lang !== EN) {
         const enCrypt = {};
         const enLibrary = {};
         Object.keys(deck.crypt).forEach((cardid) => {
@@ -114,42 +119,42 @@ const DeckExportButton = ({ deck, inMissing, inInventory }) => {
       <MenuItems>
         {inInventory ? (
           <>
-            <ExportDropdown action="save" format="text" />
-            <ExportDropdown action="save" format="lackey" />
-            <ExportDropdown action="save" format="xlsx" />
+            <ExportDropdown action={SAVE} format={TEXT} />
+            <ExportDropdown action={SAVE} format={LACKEY} />
+            <ExportDropdown action={SAVE} format={XLSX} />
             <MenuItemDivider />
-            <ExportDropdown action="copy" format="text" />
-            <ExportDropdown action="copy" format="lackey" />
+            <ExportDropdown action={COPY} format={TEXT} />
+            <ExportDropdown action={COPY} format={LACKEY} />
           </>
         ) : (
           <>
-            <ExportDropdown action="save" format="text" />
+            <ExportDropdown action={SAVE} format={TEXT} />
             {!inMissing && (
               <>
-                <ExportDropdown action="save" format="twd" />
-                <ExportDropdown action="save" format="twdHints" />
-                <ExportDropdown action="save" format="lackey" />
-                <ExportDropdown action="save" format="jol" />
+                <ExportDropdown action={SAVE} format={TWD} />
+                <ExportDropdown action={SAVE} format={TWD_HINTS} />
+                <ExportDropdown action={SAVE} format={LACKEY} />
+                <ExportDropdown action={SAVE} format={JOL} />
               </>
             )}
-            <ExportDropdown action="save" format="xlsx" />
+            <ExportDropdown action={SAVE} format={XLSX} />
             <MenuItemDivider />
-            <ExportDropdown action="copy" format="text" />
+            <ExportDropdown action={COPY} format={TEXT} />
             {!inMissing && (
               <>
-                <ExportDropdown action="copy" format="twd" />
-                <ExportDropdown action="copy" format="twdHints" />
-                <ExportDropdown action="copy" format="lackey" />
-                <ExportDropdown action="copy" format="jol" />
+                <ExportDropdown action={COPY} format={TWD} />
+                <ExportDropdown action={COPY} format={TWD_HINTS} />
+                <ExportDropdown action={COPY} format={LACKEY} />
+                <ExportDropdown action={COPY} format={JOL} />
               </>
             )}
             {!inMissing && username && decks && Object.keys(decks).length > 1 && (
               <>
                 <MenuItemDivider />
-                <ExportDropdown action="exportAll" format="text" />
-                <ExportDropdown action="exportAll" format="lackey" />
-                <ExportDropdown action="exportAll" format="jol" />
-                <ExportDropdown action="exportAll" format="xlsx" />
+                <ExportDropdown action={EXPORT_ALL} format={TEXT} />
+                <ExportDropdown action={EXPORT_ALL} format={LACKEY} />
+                <ExportDropdown action={EXPORT_ALL} format={JOL} />
+                <ExportDropdown action={EXPORT_ALL} format={XLSX} />
               </>
             )}
           </>

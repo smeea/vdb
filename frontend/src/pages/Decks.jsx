@@ -22,6 +22,7 @@ import {
 } from '@/components';
 import { deckStore, useApp, setDeck } from '@/context';
 import { useDeck, useTags } from '@/hooks';
+import { CRYPT, LIBRARY } from '@/utils/constants';
 
 const Decks = () => {
   const {
@@ -270,8 +271,8 @@ const Decks = () => {
       )}
       {isEditable && isMobile && showFloatingButtons && (
         <>
-          <DeckNewCardFloating target="crypt" deckid={deckid} cards={deck.crypt} />
-          <DeckNewCardFloating target="library" deckid={deckid} cards={deck.library} />
+          <DeckNewCardFloating target={CRYPT} deckid={deckid} cards={deck.crypt} />
+          <DeckNewCardFloating target={LIBRARY} deckid={deckid} cards={deck.library} />
         </>
       )}
       <ButtonFloatMenu />

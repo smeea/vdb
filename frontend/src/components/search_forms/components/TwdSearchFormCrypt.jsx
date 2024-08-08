@@ -9,6 +9,7 @@ import {
 } from '@/components';
 import { useApp } from '@/context';
 import { useModalCardController } from '@/hooks';
+import { CRYPT } from '@/utils/constants';
 
 const TwdSearchFormCrypt = ({ value, form }) => {
   const { cryptCardBase, setShowFloatingButtons, isMobile } = useApp();
@@ -40,7 +41,7 @@ const TwdSearchFormCrypt = ({ value, form }) => {
   return (
     <div className="space-y-2">
       <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Crypt:</div>
-      <NewCardSelect target="crypt" onChange={handleAdd} placement="bottom" />
+      <NewCardSelect target={CRYPT} onChange={handleAdd} placement="bottom" />
       <div className="space-y-1">
         {Object.keys(value)
           .filter((id) => value[id].q >= 0)

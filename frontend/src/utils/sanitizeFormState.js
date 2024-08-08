@@ -1,12 +1,13 @@
 import { deepClone } from '@/utils';
+import { VALUE, CRYPT, LIBRARY, TWD, PDA, ANALYZE } from '@/utils/constants';
 
 const sanitizeFormState = (target, state) => {
   const input = deepClone(state);
   let forms = [];
 
   switch (target) {
-    case 'crypt':
-    case 'library':
+    case CRYPT:
+    case LIBRARY:
       forms = ['text'];
       break;
     default:
@@ -17,7 +18,7 @@ const sanitizeFormState = (target, state) => {
     input[i].forEach((j, idx) => {
       Object.entries(j).forEach(([key, value]) => {
         switch (key) {
-          case 'value':
+          case VALUE:
             input[i] = input[i].filter((i) => i.value !== '');
             break;
           default:
@@ -28,16 +29,16 @@ const sanitizeFormState = (target, state) => {
   });
 
   switch (target) {
-    case 'crypt':
+    case CRYPT:
       forms = ['disciplines', 'titles', 'group', 'traits'];
       break;
-    case 'library':
+    case LIBRARY:
       forms = ['traits'];
       break;
-    case 'pda':
+    case PDA:
       forms = ['disciplines', 'traits', 'cardtypes', 'date', 'capacity', 'libraryTotal'];
       break;
-    case 'twd':
+    case TWD:
       forms = [
         'disciplines',
         'traits',
@@ -49,7 +50,7 @@ const sanitizeFormState = (target, state) => {
         'libraryTotal',
       ];
       break;
-    case 'analyze':
+    case ANALYZE:
       forms = ['disciplines', 'traits', 'cardtypes', 'rank', 'capacity', 'libraryTotal'];
       break;
     default:
@@ -62,8 +63,8 @@ const sanitizeFormState = (target, state) => {
   });
 
   switch (target) {
-    case 'pda':
-    case 'twd':
+    case PDA:
+    case TWD:
       forms = ['matchInventory'];
       break;
     default:
@@ -77,10 +78,10 @@ const sanitizeFormState = (target, state) => {
   });
 
   switch (target) {
-    case 'crypt':
+    case CRYPT:
       forms = ['set', 'precon'];
       break;
-    case 'library':
+    case LIBRARY:
       forms = ['discipline', 'type', 'set', 'precon'];
       break;
     default:
@@ -98,7 +99,7 @@ const sanitizeFormState = (target, state) => {
   });
 
   switch (target) {
-    case 'library':
+    case LIBRARY:
       forms = ['blood', 'pool', 'capacity'];
       break;
     default:
@@ -111,7 +112,7 @@ const sanitizeFormState = (target, state) => {
   });
 
   switch (target) {
-    case 'crypt':
+    case CRYPT:
       forms = ['capacity'];
       break;
     default:
@@ -127,10 +128,10 @@ const sanitizeFormState = (target, state) => {
   });
 
   switch (target) {
-    case 'crypt':
-    case 'analyze':
-    case 'pda':
-    case 'twd':
+    case CRYPT:
+    case ANALYZE:
+    case PDA:
+    case TWD:
       forms = ['clan', 'sect'];
       break;
     case 'library':
@@ -146,9 +147,9 @@ const sanitizeFormState = (target, state) => {
   });
 
   switch (target) {
-    case 'analyze':
-    case 'pda':
-    case 'twd':
+    case ANALYZE:
+    case PDA:
+    case TWD:
       forms = ['crypt', 'library'];
       break;
     default:

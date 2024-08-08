@@ -1,10 +1,11 @@
 import React from 'react';
 import { Flag } from '@/components';
 import { useApp } from '@/context';
+import { EN, ES, FR, PT } from '@/utils/constants';
 
 const LanguageMenu = ({ setShowMenu }) => {
   const { lang, changeLang } = useApp();
-  const languages = ['en-EN', 'es-ES', 'fr-FR', 'pt-PT'];
+  const languages = [EN, ES, FR, PT];
 
   const handleClick = (l) => {
     changeLang(l);

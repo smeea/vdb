@@ -7,6 +7,7 @@ import {
   CAPACITY_MIN_MAX,
   CLANx,
   GROUPx,
+  CRYPT,
   NAME,
   QUANTITY,
 } from '@/utils/constants';
@@ -48,7 +49,7 @@ const InventoryCrypt = ({
               })}
               byTotal={cardsByClanTotal}
               byUnique={cardsByClanUnique}
-              target="crypt"
+              target={CRYPT}
             />
             <div className="flex justify-end font-bold text-midGray dark:text-midGrayDark">
               {missingByClanTotal[clan] ? (

@@ -10,7 +10,7 @@ import {
   Header,
 } from '@/components';
 import { useApp } from '@/context';
-import { LIMITED, BANNED, LEGAL, PLAYTEST } from '@/utils/constants';
+import { LIBRARY, LIMITED, BANNED, LEGAL, PLAYTEST } from '@/utils/constants';
 
 const DeckLibraryHeader = ({
   libraryTotal,
@@ -98,7 +98,7 @@ const DeckLibraryHeader = ({
           handleClose={() => setShowAdd(false)}
           cards={cards}
           deckid={deckid}
-          target="library"
+          target={LIBRARY}
           cardChange={cardChange}
         />
       )}

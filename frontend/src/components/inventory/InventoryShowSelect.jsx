@@ -1,11 +1,12 @@
 import React from 'react';
 import { Radio } from '@/components';
+import { ALL, OK, NOK } from '@/utils/constants';
 
 const InventoryShowSelect = ({ category, setCategory }) => {
   const options = [
-    ['all', 'Show All'],
-    ['ok', 'Only Owned'],
-    ['nok', 'Only Problems'],
+    [ALL, 'Show All'],
+    [OK, 'Only Owned'],
+    [NOK, 'Only Problems'],
   ];
 
   return (

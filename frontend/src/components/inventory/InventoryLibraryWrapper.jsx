@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import { useSnapshot } from 'valtio';
 import { NewCardSelect, InventoryLibrary } from '@/components';
 import { useApp, inventoryStore } from '@/context';
+import { LIBRARY, OK } from '@/utils/constants';
 
 const InventoryLibraryWrapper = ({
   sharedLibrary,
@@ -26,7 +27,7 @@ const InventoryLibraryWrapper = ({
             <NewCardSelect
               onChange={(e) => setNewCardId(e.value)}
               ref={newCardRef}
-              target="library"
+              target={LIBRARY}
               inInventory
             />
           </div>
@@ -46,7 +47,7 @@ const InventoryLibraryWrapper = ({
       <div>
         <InventoryLibrary
           cards={sharedLibrary ?? inventoryLibrary}
-          category={sharedLibrary ? 'ok' : category}
+          category={sharedLibrary ? OK : category}
           discipline={discipline}
           setDiscipline={setDiscipline}
           type={type}

@@ -8,6 +8,7 @@ import GeoAltFill from '@/assets/images/icons/geo-alt-fill.svg?react';
 import { TwdResultTags, TwdResultDescriptionTextTr } from '@/components';
 import { useApp, searchTwdForm, clearSearchForm } from '@/context';
 import { useTags } from '@/hooks';
+import { TWD } from '@/utils/constants';
 
 const TwdResultDescriptionText = ({ deck }) => {
   const { isMobile } = useApp();
@@ -15,7 +16,7 @@ const TwdResultDescriptionText = ({ deck }) => {
   const tags = useTags(deck.crypt, deck.library);
 
   const handleClick = (target, value) => {
-    clearSearchForm('twd');
+    clearSearchForm(TWD);
     if (target === 'location') {
       value = { city: value };
     }

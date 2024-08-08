@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button } from '@/components';
 import { limitedCardChange } from '@/context';
+import { ALLOWED } from '@/utils/constants';
 
 const AccountLimitedDelCard = ({ cardid, target }) => {
   const card = { Id: cardid };
@@ -17,7 +18,7 @@ const AccountLimitedDelCard = ({ cardid, target }) => {
     <Button
       className="h-[33px] w-[24px]"
       variant="primary"
-      onClick={() => (target === 'allowed' ? allowedDel() : bannedDel())}
+      onClick={() => (target === ALLOWED ? allowedDel() : bannedDel())}
       title="Remove card"
       noPadding
     >

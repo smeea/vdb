@@ -19,6 +19,7 @@ import {
   NAME,
   PLAYER,
   TYPE,
+  DISCIPLINE,
   cardtypeSorted,
 } from '@/utils/constants';
 import { librarySort } from '@/utils';
@@ -183,7 +184,7 @@ const TwdCardsHistoryLibrary = ({ cards, players }) => {
                 return Object.keys(cardsFilteredByDiscipline[i]).length;
               })}
               byTotal={cardsFilteredByDisciplineTotal}
-              target="type"
+              target={TYPE}
             />
             <InventoryFilterForm
               value={discipline}
@@ -192,7 +193,7 @@ const TwdCardsHistoryLibrary = ({ cards, players }) => {
                 return Object.keys(cardsFilteredByType[i]).length;
               })}
               byTotal={cardsFilteredByTypeTotal}
-              target="discipline"
+              target={DISCIPLINE}
             />
           </div>
         </div>

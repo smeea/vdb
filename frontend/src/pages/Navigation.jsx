@@ -10,6 +10,7 @@ import libraryDefaults from '@/components/search_forms/forms_data/defaultsLibrar
 import twdDefaults from '@/components/search_forms/forms_data/defaultsTwdForm.json';
 import pdaDefaults from '@/components/search_forms/forms_data/defaultsPdaForm.json';
 import { sanitizeFormState } from '@/utils';
+import { CRYPT, LIBRARY, TWD, PDA } from '@/utils/constants';
 import {
   searchCryptForm,
   searchLibraryForm,
@@ -75,19 +76,19 @@ const Navigation = () => {
 
   if (!isMobile) {
     if (JSON.stringify(cryptFormState) != JSON.stringify(cryptDefaults)) {
-      const input = sanitizeFormState('crypt', cryptFormState);
+      const input = sanitizeFormState(CRYPT, cryptFormState);
       cryptUrl = `/crypt?q=${encodeURIComponent(JSON.stringify(input))}`;
     }
     if (JSON.stringify(libraryFormState) != JSON.stringify(libraryDefaults)) {
-      const input = sanitizeFormState('library', libraryFormState);
+      const input = sanitizeFormState(LIBRARY, libraryFormState);
       libraryUrl = `/library?q=${encodeURIComponent(JSON.stringify(input))}`;
     }
     if (JSON.stringify(twdFormState) != JSON.stringify(twdDefaults)) {
-      const input = sanitizeFormState('twd', twdFormState);
+      const input = sanitizeFormState(TWD, twdFormState);
       twdUrl = `/twd?q=${encodeURIComponent(JSON.stringify(input))}`;
     }
     if (JSON.stringify(pdaFormState) != JSON.stringify(pdaDefaults)) {
-      const input = sanitizeFormState('pda', pdaFormState);
+      const input = sanitizeFormState(PDA, pdaFormState);
       pdaUrl = `/pda?q=${encodeURIComponent(JSON.stringify(input))}`;
     }
   }

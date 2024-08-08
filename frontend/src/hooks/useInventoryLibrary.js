@@ -2,11 +2,11 @@ import { useMemo } from 'react';
 import { useSnapshot } from 'valtio';
 import disciplinesList from '@/assets/data/disciplinesList.json';
 import virtuesList from '@/assets/data/virtuesList.json';
-import { ALL, NONE, cardtypeSorted } from '@/utils/constants';
+import { ALL, NONE, OK, NOK, cardtypeSorted } from '@/utils/constants';
 import { getHardTotal, getSoftMax } from '@/utils';
 import { useApp, usedStore } from '@/context';
 
-const useInventoryLibrary = (cards = {}, category = 'ok', compact, type, discipline, onlyNotes) => {
+const useInventoryLibrary = (cards = {}, category = OK, compact, type, discipline, onlyNotes) => {
   const usedLibrary = useSnapshot(usedStore).library;
   const { libraryCardBase } = useApp();
 
@@ -91,7 +91,7 @@ const useInventoryLibrary = (cards = {}, category = 'ok', compact, type, discipl
             }
           }
 
-          if (category == 'nok') {
+          if (category == NOK) {
             if (miss > 0) {
               types.forEach((t) => {
                 cardsByType[t][cardid] = cards[cardid];
@@ -138,7 +138,7 @@ const useInventoryLibrary = (cards = {}, category = 'ok', compact, type, discipl
             disciplines = [d];
           }
 
-          if (category !== 'ok' && !onlyNotes) {
+          if (category !== OK && !onlyNotes) {
             types.forEach((t) => {
               cardsByType[t][cardid] = { q: 0, c: libraryCardBase[cardid] };
             });
@@ -204,7 +204,7 @@ const useInventoryLibrary = (cards = {}, category = 'ok', compact, type, discipl
             disciplines = [d];
           }
 
-          if (category !== 'ok' && !onlyNotes) {
+          if (category !== OK && !onlyNotes) {
             types.forEach((t) => {
               cardsByType[t][cardid] = { q: 0, c: libraryCardBase[cardid] };
             });

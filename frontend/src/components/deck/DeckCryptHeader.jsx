@@ -4,7 +4,7 @@ import PlusLg from '@/assets/images/icons/plus-lg.svg?react';
 import { DeckCryptTotalInfo, DeckNewCard, Warning, Button, SortButton, Header } from '@/components';
 import { useApp } from '@/context';
 import { useKeyDisciplines, useDeckCrypt } from '@/hooks';
-import { GROUPS, LIMITED, BANNED, LEGAL, PLAYTEST } from '@/utils/constants';
+import { CRYPT, GROUPS, LIMITED, BANNED, LEGAL, PLAYTEST } from '@/utils/constants';
 
 const DeckCryptHeader = ({
   deckid,
@@ -93,7 +93,7 @@ const DeckCryptHeader = ({
           handleClose={() => setShowAdd(false)}
           cards={cards}
           deckid={deckid}
-          target="crypt"
+          target={CRYPT}
           cardChange={cardChange}
         />
       )}

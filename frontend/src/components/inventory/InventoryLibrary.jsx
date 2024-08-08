@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { InventoryLibraryTable, InventoryFilterForm, SortButton, Header } from '@/components';
 import { useInventoryLibrary } from '@/hooks';
-import { ALL, CLAN_DISCIPLINE, NAME, QUANTITY, TYPE } from '@/utils/constants';
+import { ALL, CLAN_DISCIPLINE, NAME, QUANTITY, TYPE, DISCIPLINE } from '@/utils/constants';
 
 const InventoryLibrary = ({
   compact,
@@ -52,7 +52,7 @@ const InventoryLibrary = ({
                   })}
                   byTotal={cardsFilteredByDisciplineTotal}
                   byUnique={cardsFilteredByDisciplineUnique}
-                  target="type"
+                  target={TYPE}
                 />
                 <InventoryFilterForm
                   value={discipline}
@@ -62,7 +62,7 @@ const InventoryLibrary = ({
                   })}
                   byTotal={cardsFilteredByTypeTotal}
                   byUnique={cardsFilteredByTypeUnique}
-                  target="discipline"
+                  target={DISCIPLINE}
                 />
               </div>
               <div className="flex justify-end font-bold text-midGray dark:text-midGrayDark">

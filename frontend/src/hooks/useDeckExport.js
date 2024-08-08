@@ -1,7 +1,7 @@
 import disciplinesList from '@/assets/data/disciplinesList.json';
 import virtuesList from '@/assets/data/virtuesList.json';
 import { cryptSort, librarySort } from '@/utils';
-import { NAME, QUANTITY, CAPACITY } from '@/utils/constants';
+import { TWD, NAME, QUANTITY, CAPACITY } from '@/utils/constants';
 
 const getCryptTitle = (crypt) => {
   let cryptTotalCap = 0;
@@ -295,7 +295,7 @@ Description:
   result += '\n';
   result += getCryptText(sortedCrypt);
   result += '\n';
-  result += getLibraryText(deck.library, 'twd');
+  result += getLibraryText(deck.library, TWD);
 
   return result;
 };
@@ -344,7 +344,7 @@ const useDeckExport = (deck, format) => {
       return exportJol(d);
     case 'lackey':
       return exportLackey(d);
-    case 'twd':
+    case TWD:
       return exportTwd(d, false);
     case 'twdHints':
       return exportTwd(d, true);

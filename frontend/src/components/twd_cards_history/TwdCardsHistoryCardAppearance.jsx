@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { TwdOpenDeckButton } from '@/components';
 import { useApp, clearSearchForm, searchTwdForm } from '@/context';
+import { TWD } from '@/utils/constants';
 
 const TwdCardsHistoryCardAppearance = ({ card, byPlayer }) => {
   const { isMobile } = useApp();
@@ -19,7 +20,7 @@ const TwdCardsHistoryCardAppearance = ({ card, byPlayer }) => {
   }
 
   const handleClick = (author) => {
-    clearSearchForm('twd');
+    clearSearchForm(TWD);
     searchTwdForm.author = author;
     navigate(`/twd?q=${encodeURIComponent(JSON.stringify({ author: author }))}`);
   };

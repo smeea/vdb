@@ -18,6 +18,7 @@ import {
   GROUP,
   NAME,
   PLAYER,
+  CRYPT,
 } from '@/utils/constants';
 import { cryptSort } from '@/utils';
 import { useApp } from '@/context';
@@ -94,7 +95,7 @@ const TwdCardsHistoryCrypt = ({ cards, players }) => {
               return Object.keys(cardsByClan[i]).length;
             })}
             byTotal={cardsByClanTotal}
-            target="crypt"
+            target={CRYPT}
           />
         </div>
         <SortButton

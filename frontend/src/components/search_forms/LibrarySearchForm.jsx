@@ -29,6 +29,7 @@ import {
   usedStore,
   limitedStore,
 } from '@/context';
+import { LIBRARY } from '@/utils/constants';
 
 const LibrarySearchForm = () => {
   const {
@@ -270,7 +271,7 @@ const LibrarySearchForm = () => {
       <SearchFormArtist
         value={libraryFormState.artist}
         onChange={handleSelectChange}
-        target="library"
+        target={LIBRARY}
       />
       {isMobile && showFloatingButtons && (
         <>

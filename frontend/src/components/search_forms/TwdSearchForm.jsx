@@ -24,6 +24,7 @@ import {
 import { sanitizeFormState } from '@/utils';
 import { useApp, setTwdResults, searchTwdForm, clearSearchForm } from '@/context';
 import { archiveServices } from '@/services';
+import { TWD, CRYPT, LIBRARY } from '@/utils/constants';
 
 const TwdSearchForm = ({ error, setError }) => {
   const { cryptCardBase, libraryCardBase, showFloatingButtons, inventoryMode, isMobile } = useApp();
@@ -86,7 +87,7 @@ const TwdSearchForm = ({ error, setError }) => {
   };
 
   const handleClear = () => {
-    clearSearchForm('twd');
+    clearSearchForm(TWD);
     setTwdResults(undefined);
     setError(false);
   };
@@ -108,7 +109,7 @@ const TwdSearchForm = ({ error, setError }) => {
 
   const processSearch = () => {
     setError(false);
-    const sanitizedForm = sanitizeFormState('twd', twdFormState);
+    const sanitizedForm = sanitizeFormState(TWD, twdFormState);
     if (Object.entries(sanitizedForm).length === 0) {
       setError('EMPTY REQUEST');
       return;
@@ -124,7 +125,7 @@ const TwdSearchForm = ({ error, setError }) => {
 
   const getNewTwd = (q) => {
     setError(false);
-    clearSearchForm('twd');
+    clearSearchForm(TWD);
 
     setIsLoading(true);
     archiveServices
@@ -135,7 +136,7 @@ const TwdSearchForm = ({ error, setError }) => {
 
   const getRandomTwd = (q) => {
     setError(false);
-    clearSearchForm('twd');
+    clearSearchForm(TWD);
 
     setIsLoading(true);
     archiveServices
@@ -146,7 +147,7 @@ const TwdSearchForm = ({ error, setError }) => {
 
   useEffect(() => {
     if (!isMobile && cryptCardBase && libraryCardBase) {
-      const sanitizedForm = sanitizeFormState('twd', twdFormState);
+      const sanitizedForm = sanitizeFormState(TWD, twdFormState);
       if (Object.keys(sanitizedForm).length === 0) {
         if (query) {
           setTwdResults(undefined);
@@ -165,12 +166,12 @@ const TwdSearchForm = ({ error, setError }) => {
         <>
           <TwdSearchFormMatchInventory
             value={twdFormState.matchInventory.crypt}
-            target={'crypt'}
+            target={CRYPT}
             onChange={handleChangeWithOpt}
           />
           <TwdSearchFormMatchInventory
             value={twdFormState.matchInventory.library}
-            target={'library'}
+            target={LIBRARY}
             onChange={handleChangeWithOpt}
           />
           <div className="flex justify-end space-x-6">

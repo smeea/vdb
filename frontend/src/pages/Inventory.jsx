@@ -18,7 +18,7 @@ import {
 } from '@/components';
 import { useApp } from '@/context';
 import { inventoryServices } from '@/services';
-import { ALL } from '@/utils/constants';
+import { ALL, OK } from '@/utils/constants';
 
 const Inventory = () => {
   const {
@@ -63,7 +63,7 @@ const Inventory = () => {
     }
   }, [sharedKey, cryptCardBase, libraryCardBase]);
 
-  const [category, setCategory] = useState('all');
+  const [category, setCategory] = useState(ALL);
   const [showAddDeck, setShowAddDeck] = useState(false);
   const [showAddPrecon, setShowAddPrecon] = useState(false);
   const [clan, setClan] = useState(ALL);
@@ -115,7 +115,7 @@ const Inventory = () => {
               clan={clan}
               discipline={discipline}
               type={type}
-              category={isSharedInventory ? 'ok' : category}
+              category={isSharedInventory ? OK : category}
               onlyNotes={onlyNotes}
               isSharedInventory={isSharedInventory}
             />
@@ -169,7 +169,7 @@ const Inventory = () => {
               clan={clan}
               discipline={discipline}
               type={type}
-              category={isSharedInventory ? 'ok' : category}
+              category={isSharedInventory ? OK : category}
               onlyNotes={onlyNotes}
               isSharedInventory={isSharedInventory}
             />

@@ -3,10 +3,10 @@ import { useSnapshot } from 'valtio';
 import imbuedClansList from '@/assets/data/imbuedClansList.json';
 import vampireClansList from '@/assets/data/vampireClansList.json';
 import { getHardTotal, getSoftMax } from '@/utils';
-import { ALL } from '@/utils/constants';
+import { ALL, OK, NOK } from '@/utils/constants';
 import { useApp, usedStore } from '@/context';
 
-const useInventoryCrypt = (cards = {}, category = 'ok', compact, onlyNotes) => {
+const useInventoryCrypt = (cards = {}, category = OK, compact, onlyNotes) => {
   const usedCrypt = useSnapshot(usedStore).crypt;
   const { cryptCardBase } = useApp();
 
@@ -52,7 +52,7 @@ const useInventoryCrypt = (cards = {}, category = 'ok', compact, onlyNotes) => {
             };
           }
 
-          if (category === 'nok') {
+          if (category === NOK) {
             if (miss > 0) {
               cardsByClan[clan][cardid] = cards[cardid];
               cardsByClan[ALL][cardid] = cards[cardid];
@@ -68,7 +68,7 @@ const useInventoryCrypt = (cards = {}, category = 'ok', compact, onlyNotes) => {
         .forEach((cardid) => {
           const clan = cryptCardBase[cardid].Clan;
 
-          if (category !== 'ok' && !onlyNotes) {
+          if (category !== OK && !onlyNotes) {
             cardsByClan[clan][cardid] = {
               q: 0,
               c: cryptCardBase[cardid],
@@ -96,7 +96,7 @@ const useInventoryCrypt = (cards = {}, category = 'ok', compact, onlyNotes) => {
         .forEach((cardid) => {
           const clan = cryptCardBase[cardid].Clan;
 
-          if (category !== 'ok' && !onlyNotes) {
+          if (category !== OK && !onlyNotes) {
             cardsByClan[clan][cardid] = {
               q: cards[cardid] ? cards[cardid].q : 0,
               c: cryptCardBase[cardid],

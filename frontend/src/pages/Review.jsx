@@ -15,6 +15,7 @@ import {
 } from '@/components';
 import { useApp, deckStore } from '@/context';
 import { useDeck, useTags } from '@/hooks';
+import { CRYPT, LIBRARY } from '@/utils/constants';
 
 const Review = () => {
   const {
@@ -222,9 +223,9 @@ const Review = () => {
       </FlexGapped>
       {isMobile && showFloatingButtons && (
         <>
-          <DeckNewCardFloating target="crypt" deckid={deckFrom?.deckid} cards={deckFrom?.crypt} />
+          <DeckNewCardFloating target={CRYPT} deckid={deckFrom?.deckid} cards={deckFrom?.crypt} />
           <DeckNewCardFloating
-            target="library"
+            target={LIBRARY}
             deckid={deckFrom?.deckid}
             cards={deckFrom?.library}
           />

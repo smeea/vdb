@@ -3,6 +3,7 @@ import defaultsPdaForm from '@/components/search_forms/forms_data/defaultsPdaFor
 import defaultsTwdForm from '@/components/search_forms/forms_data/defaultsTwdForm.json';
 import defaultsCryptForm from '@/components/search_forms/forms_data/defaultsCryptForm.json';
 import defaultsLibraryForm from '@/components/search_forms/forms_data/defaultsLibraryForm.json';
+import { TWD, PDA } from '@/utils/constants';
 
 export const searchResults = proxy({});
 
@@ -71,12 +72,12 @@ export const clearSearchForm = (target) => {
         });
       });
       break;
-    case 'twd':
+    case TWD:
       Object.keys(defaultsTwdForm).forEach((k) => {
         searchTwdForm[k] = structuredClone(defaultsTwdForm[k]);
       });
       break;
-    case 'pda':
+    case PDA:
       Object.keys(defaultsPdaForm).forEach((k) => {
         searchPdaForm[k] = structuredClone(defaultsPdaForm[k]);
       });

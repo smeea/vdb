@@ -12,6 +12,8 @@ import {
   DATE_NEW_OLD,
   RANK_HIGH_LOW,
   EN,
+  TWD,
+  PDA,
 } from '@/utils/constants';
 import {
   setLimitedSets,
@@ -41,7 +43,7 @@ export const AppProvider = ({ children }) => {
   const [publicName, setPublicName] = useState();
   const [email, setEmail] = useState();
   const [inventoryKey, setInventoryKey] = useState();
-  const [lang, setLang] = useState('en-EN');
+  const [lang, setLang] = useState(EN);
   const [isOnline, setIsOnline] = useState(navigator.onLine);
   const [isPlaytestAdmin, setIsPlaytestAdmin] = useState();
   const [isPlaytester, setIsPlaytester] = useState();
@@ -89,8 +91,8 @@ export const AppProvider = ({ children }) => {
           ['libraryCardBase', data.library],
           ['nativeCrypt', data.nativeCrypt],
           ['nativeLibrary', data.nativeLibrary],
-          ['localizedCrypt', { 'en-EN': data.nativeCrypt }],
-          ['localizedLibrary', { 'en-EN': data.nativeLibrary }],
+          ['localizedCrypt', { EN: data.nativeCrypt }],
+          ['localizedLibrary', { EN: data.nativeLibrary }],
         ]);
       }
 
@@ -98,8 +100,8 @@ export const AppProvider = ({ children }) => {
       setLibraryCardBase(data.library);
       setNativeCrypt(data.nativeCrypt);
       setNativeLibrary(data.nativeLibrary);
-      setLocalizedCrypt({ 'en-EN': data.nativeCrypt });
-      setLocalizedLibrary({ 'en-EN': data.nativeLibrary });
+      setLocalizedCrypt({ EN: data.nativeCrypt });
+      setLocalizedLibrary({ EN: data.nativeLibrary });
 
       cardServices.getPreconDecks(data.crypt, data.library).then((preconData) => {
         if (isIndexedDB) set('preconDecks', preconData);
@@ -342,7 +344,7 @@ export const AppProvider = ({ children }) => {
   };
 
   const addRecentDeck = (deck) => {
-    const src = deck.deckid.length != 9 ? 'twd' : deck.publicParent ? 'pda' : 'shared';
+    const src = deck.deckid.length != 9 ? TWD : deck.publicParent ? PDA : 'shared';
     let d = [...recentDecks];
     const idx = recentDecks.map((v) => v.deckid).indexOf(deck.deckid);
     if (idx !== -1) d.splice(idx, 1);

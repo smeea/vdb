@@ -11,16 +11,17 @@ import {
   Input,
 } from '@/components';
 import { useApp } from '@/context';
+import { FROM } from '@/utils/constants';
 
 const DiffSelectDeck = ({ decks, deck, deckidFrom, deckidTo, target, title }) => {
   const { recentDecks, inventoryMode, username, isMobile } = useApp();
-  const deckid = target === 'from' ? deckidFrom : deckidTo;
+  const deckid = target === FROM ? deckidFrom : deckidTo;
   const navigate = useNavigate();
   const [url, setUrl] = useState('');
   const [source, setSource] = useState('from-my');
 
   const handleSelect = (e) => {
-    if (target == 'from') {
+    if (target == FROM) {
       navigate(`/diff/${e.value}/${deckidTo}`);
     } else {
       navigate(`/diff/${deckidFrom}/${e.value}`);
@@ -35,7 +36,7 @@ const DiffSelectDeck = ({ decks, deck, deckidFrom, deckidTo, target, title }) =>
     e.preventDefault();
     const newId = url.replace(`${import.meta.env.VITE_BASE_URL}/decks/`, '');
 
-    if (target === 'from') {
+    if (target === FROM) {
       navigate(`/diff/${newId}/${deckidTo}`);
     } else {
       navigate(`/diff/${deckidFrom}/${newId}`);

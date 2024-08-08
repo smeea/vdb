@@ -29,6 +29,7 @@ import {
   usedStore,
   limitedStore,
 } from '@/context';
+import { CRYPT } from '@/utils/constants';
 
 const CryptSearchForm = () => {
   const {
@@ -287,7 +288,7 @@ const CryptSearchForm = () => {
       <SearchFormArtist
         value={cryptFormState.artist}
         onChange={handleSelectChange}
-        target="crypt"
+        target={CRYPT}
       />
       {isMobile && showFloatingButtons && (
         <>

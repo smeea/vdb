@@ -25,6 +25,7 @@ import {
   clearAnalyzeForm,
   analyzeStore,
 } from '@/context';
+import { ANALYZE } from '@/utils/constants';
 
 const AnalyzeSearchForm = () => {
   const { cryptCardBase, libraryCardBase, isMobile } = useApp();
@@ -85,7 +86,7 @@ const AnalyzeSearchForm = () => {
 
   const processSearch = () => {
     setError(false);
-    const sanitizedForm = sanitizeFormState('analyze', analyzeFormState);
+    const sanitizedForm = sanitizeFormState(ANALYZE, analyzeFormState);
 
     if (Object.entries(sanitizedForm).length === 0) {
       setError('EMPTY REQUEST');
@@ -100,7 +101,7 @@ const AnalyzeSearchForm = () => {
 
   useEffect(() => {
     if (!isMobile && cryptCardBase && libraryCardBase) {
-      const sanitizedForm = sanitizeFormState('analyze', analyzeFormState);
+      const sanitizedForm = sanitizeFormState(ANALYZE, analyzeFormState);
       if (Object.keys(sanitizedForm).length === 0) {
         if (query) {
           setAnalyzeResults();

@@ -1,3 +1,5 @@
+import { EN } from '@/utils/constants';
+
 const useCardImageUrl = (card, set, language) => {
   const isPlaytest = card.Id > 210000 || (card.Id < 200000 && card.Id > 110000);
 
@@ -5,18 +7,18 @@ const useCardImageUrl = (card, set, language) => {
   let otherUrl = null;
 
   if (card.Id > 200000) {
-    baseUrl = `${import.meta.env.VITE_BASE_URL}/images/cards/${
-      isPlaytest ? 'playtest' : 'en-EN'
-    }/${card['ASCII Name']
+    baseUrl = `${import.meta.env.VITE_BASE_URL}/images/cards/${isPlaytest ? 'playtest' : EN}/${card[
+      'ASCII Name'
+    ]
       .toLowerCase()
       .replace(/[\s,:!?'".\-()/]/g, '')}g${card.Group.toLowerCase()}${card.Adv[0] ? 'adv' : ''}`;
   } else {
     baseUrl = `${import.meta.env.VITE_BASE_URL}/images/cards/${
-      isPlaytest ? 'playtest' : 'en-EN'
+      isPlaytest ? 'playtest' : EN
     }/${card['ASCII Name'].toLowerCase().replace(/[\s,:!?'".\-()/]/g, '')}`;
   }
 
-  if (language !== 'en-EN' || set) {
+  if (language !== EN || set) {
     if (card.Id > 200000) {
       otherUrl = `${import.meta.env.VITE_BASE_URL}/images/cards/${
         set ? `set/${set}` : language

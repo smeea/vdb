@@ -1,6 +1,7 @@
 import React from 'react';
 import { useApp } from '@/context';
 import { useCardImageUrl } from '@/hooks';
+import { EN } from '@/utils/constants';
 
 const CardImage = ({ card, set, className = 'min-w-[358px]', onClick }) => {
   const { lang } = useApp();
@@ -14,7 +15,7 @@ const CardImage = ({ card, set, className = 'min-w-[358px]', onClick }) => {
 
   return (
     <>
-      {lang !== 'en-EN' || set ? (
+      {lang !== EN || set ? (
         <img
           className={className}
           src={`${otherUrl}.jpg?v=${import.meta.env.VITE_CARD_VERSION}`}

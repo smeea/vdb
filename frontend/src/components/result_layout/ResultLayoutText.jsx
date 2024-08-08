@@ -14,6 +14,7 @@ import {
   PlaytestReportExportButton,
 } from '@/components';
 import { searchResults, setCryptCompare, setLibraryCompare, useApp } from '@/context';
+import { TWD, PDA } from '@/utils/constants';
 
 const ResultLayoutText = ({
   card,
@@ -68,12 +69,12 @@ const ResultLayoutText = ({
           <ButtonCardCopyUrl cardid={card.Id} />
           <ButtonSearchCardInDecks
             cardid={card.Id}
-            target="twd"
+            target={TWD}
             handleClose={noClose ? null : handleClose}
           />
           <ButtonSearchCardInDecks
             cardid={card.Id}
-            target="pda"
+            target={PDA}
             handleClose={noClose ? null : handleClose}
           />
           {card.Id < 200000 && card?.Type !== 'Master' && (

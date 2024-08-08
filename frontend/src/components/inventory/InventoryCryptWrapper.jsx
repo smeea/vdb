@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import { useSnapshot } from 'valtio';
 import { NewCardSelect, InventoryCrypt } from '@/components';
 import { useApp, inventoryStore } from '@/context';
+import { CRYPT, OK } from '@/utils/constants';
 
 const InventoryCryptWrapper = ({ sharedCrypt, category, onlyNotes, clan, setClan }) => {
   const { cryptCardBase } = useApp();
@@ -18,7 +19,7 @@ const InventoryCryptWrapper = ({ sharedCrypt, category, onlyNotes, clan, setClan
             <NewCardSelect
               onChange={(e) => setNewCardId(e.value)}
               ref={newCardRef}
-              target="crypt"
+              target={CRYPT}
               inInventory
             />
           </div>
@@ -38,7 +39,7 @@ const InventoryCryptWrapper = ({ sharedCrypt, category, onlyNotes, clan, setClan
       <div>
         <InventoryCrypt
           cards={sharedCrypt ?? inventoryCrypt}
-          category={sharedCrypt ? 'ok' : category}
+          category={sharedCrypt ? OK : category}
           clan={clan}
           setClan={setClan}
           inShared={!!sharedCrypt}
