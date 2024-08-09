@@ -70,7 +70,9 @@ const TwdCheckEvent = ({ deckData }) => {
   const country = countriesFixes[value?.venue_country] ?? value?.venue_country;
   const city = value?.venue_city;
   const venue = value?.venue_name;
-  const location = country ? `${venue ? `${venue}, ` : ''}${city}, ${country}` || '' : 'Unknown';
+
+  let location = country ? `${city}, ${country}` : 'Unknown';
+  if (venue) location = `${venue}, ${location}`;
 
   const [year, m, d] = value?.event_enddate.split('-') || [];
 
