@@ -7,6 +7,7 @@ import {
   SearchFormButtonDel,
 } from '@/components';
 import { useApp } from '@/context';
+import { ANY } from '@/utils/constants';
 
 const CryptSearchFormCapacity = ({ value, searchForm, onChange }) => {
   const { isXWide } = useApp();
@@ -34,7 +35,7 @@ const CryptSearchFormCapacity = ({ value, searchForm, onChange }) => {
       <div className="flex items-center">
         <div className="w-1/4">
           <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Capacity:</div>
-          {value.value[0][name] !== 'any' && (
+          {value.value[0][name] !== ANY && (
             <div className="flex justify-end space-x-1 px-1">
               <SearchFormButtonLogicToggle
                 name={name}
@@ -63,13 +64,11 @@ const CryptSearchFormCapacity = ({ value, searchForm, onChange }) => {
             <Select
               options={options}
               isSearchable={false}
-              isClearable={value.value[0][name] !== 'any'}
+              isClearable={value.value[0][name] !== ANY}
               name={0}
               maxMenuHeight={maxMenuHeight}
               value={options.find((obj) => obj.value === value.value[0][name])}
-              onChange={(e, id) =>
-                e ? onChange(e, id) : onChange({ name: name, value: 'any' }, id)
-              }
+              onChange={(e, id) => (e ? onChange(e, id) : onChange({ name: name, value: ANY }, id))}
             />
           </div>
         </div>

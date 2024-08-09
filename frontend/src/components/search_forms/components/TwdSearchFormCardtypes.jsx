@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Select } from '@/components';
 import { Toggle, ResultLibraryTypeImage } from '@/components';
 import { useApp } from '@/context';
+import { ANY } from '@/utils/constants';
 
 const TwdSearchFormCardtypes = ({ value, onChange }) => {
   const [isManual, setIsManual] = useState();
@@ -34,8 +35,8 @@ const TwdSearchFormCardtypes = ({ value, onChange }) => {
       }
     }
 
-    min = min === 'any' || !min ? 0 : min;
-    max = max === 'any' || !max ? 100 : max;
+    min = min === ANY || !min ? 0 : min;
+    max = max === ANY || !max ? 100 : max;
     onChange({ name: e.target.name, value: `${min},${max}` }, { name: 'cardtypes' });
   };
 
@@ -45,7 +46,7 @@ const TwdSearchFormCardtypes = ({ value, onChange }) => {
   types.map((i, idx) => {
     const options = [
       {
-        value: 'any',
+        value: ANY,
         name: i[0].toLowerCase(),
         label: <div className="flex justify-center">ANY</div>,
       },
@@ -98,7 +99,7 @@ const TwdSearchFormCardtypes = ({ value, onChange }) => {
       });
 
     const [min, max] =
-      value[i[0].toLowerCase()] == 'any' ? [0, 100] : value[i[0].toLowerCase()].split(',');
+      value[i[0].toLowerCase()] == ANY ? [0, 100] : value[i[0].toLowerCase()].split(',');
 
     const form = (
       <div className="flex items-center space-x-1" key={i[0]}>

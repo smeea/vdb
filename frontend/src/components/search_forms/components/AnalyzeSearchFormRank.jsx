@@ -1,7 +1,7 @@
 import React from 'react';
 import { Select } from '@/components';
 import { useApp } from '@/context';
-import { FROM, TO } from '@/utils/constants';
+import { ANY, FROM, TO } from '@/utils/constants';
 
 const AnalyzeSearchFormRank = ({ value, onChange }) => {
   const { isXWide } = useApp();
@@ -12,28 +12,28 @@ const AnalyzeSearchFormRank = ({ value, onChange }) => {
 
   ['ANY', '5', '10', '15', '25%', '33%', '50%', '66%', '75%'].map((i) => {
     if (
-      i === 'ANY' ||
-      value.to === 'any' ||
+      i.toLowerCase() === ANY ||
+      value.to === ANY ||
       parseInt(i) > value.to ||
       (value.to.includes('%') && i.includes('%') && i > value.to)
     ) {
       fromOptions.push({
         value: i.toLowerCase(),
         name: FROM,
-        label: <div className="flex justify-center">{i == 'ANY' ? i : `Top ${i}`}</div>,
+        label: <div className="flex justify-center">{i.toLowerCase == ANY ? i : `Top ${i}`}</div>,
       });
     }
 
     if (
-      i === 'ANY' ||
-      value.from === 'any' ||
+      i.toLowerCase() === ANY ||
+      value.from === ANY ||
       parseInt(i) < value.from ||
       (value.from.includes('%') && i.includes('%') && i < value.from)
     ) {
       toOptions.push({
         value: i.toLowerCase(),
         name: TO,
-        label: <div className="flex justify-center">{i == 'ANY' ? i : `Top ${i}`}</div>,
+        label: <div className="flex justify-center">{i.toLowerCase() == ANY ? i : `Top ${i}`}</div>,
       });
     }
   });

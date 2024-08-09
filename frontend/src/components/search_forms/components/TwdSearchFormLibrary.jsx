@@ -41,7 +41,7 @@ const TwdSearchFormLibrary = ({ value, form }) => {
   return (
     <div className="space-y-2">
       <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Library:</div>
-      <NewCardSelect target={LIBRARY} onChange={handleAdd} placement="bottom" />
+      <NewCardSelect target={LIBRARY} onChange={handleAdd} />
       <div className="space-y-1">
         {Object.keys(value)
           .filter((id) => value[id].q >= 0)

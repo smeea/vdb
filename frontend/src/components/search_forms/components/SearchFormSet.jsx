@@ -7,7 +7,7 @@ import {
   Checkbox,
 } from '@/components';
 import { useApp } from '@/context';
-import { PLAYTEST, POD, BCP, PROMO } from '@/utils/constants';
+import { ANY, PLAYTEST, POD, BCP, PROMO } from '@/utils/constants';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 
 const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
@@ -17,7 +17,7 @@ const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
 
   const options = [
     {
-      value: 'any',
+      value: ANY,
       name: name,
       label: (
         <div className="flex items-center">
@@ -59,7 +59,7 @@ const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
   const filterOption = ({ label, value }, string) => {
     let name;
     let year;
-    if (['any', BCP, PROMO, POD, PLAYTEST].includes(value)) {
+    if ([ANY, BCP, PROMO, POD, PLAYTEST].includes(value)) {
       name = label.props.children[1];
     } else {
       name = label.props.children[0].props.children;
@@ -77,7 +77,7 @@ const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
       <div className="flex items-center">
         <div className="flex w-1/4 items-center justify-between">
           <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Set:</div>
-          {value.value[0] !== 'any' && (
+          {value.value[0] !== ANY && (
             <div className="flex justify-end space-x-1 px-1">
               {value.value.length == 1 ? (
                 <SearchFormButtonAdd searchForm={searchForm} name={name} />
@@ -91,12 +91,12 @@ const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
           <Select
             options={options}
             isSearchable={!isMobile}
-            isClearable={value.value[0] !== 'any'}
+            isClearable={value.value[0] !== ANY}
             filterOption={filterOption}
             name={0}
             maxMenuHeight={maxMenuHeight}
             value={options.find((obj) => obj.value === value.value[0])}
-            onChange={(e, id) => (e ? onChange(e, id) : onChange({ name: name, value: 'any' }, id))}
+            onChange={(e, id) => (e ? onChange(e, id) : onChange({ name: name, value: ANY }, id))}
           />
         </div>
       </div>

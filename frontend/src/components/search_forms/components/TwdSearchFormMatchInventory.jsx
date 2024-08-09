@@ -1,12 +1,13 @@
 import React from 'react';
 import { Select } from '@/components';
 import { capitalize } from '@/utils';
+import { ANY } from '@/utils/constants';
 
 const TwdSearchFormMatchInventory = ({ value, target, onChange }) => {
   const name = 'matchInventory';
 
   const options = [
-    ['any', 'ANY'],
+    [ANY, 'ANY'],
     ['0.7', '70%+'],
     ['0.8', '80%+'],
     ['0.9', '90%+'],

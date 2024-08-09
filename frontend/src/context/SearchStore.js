@@ -3,7 +3,7 @@ import defaultsPdaForm from '@/components/search_forms/forms_data/defaultsPdaFor
 import defaultsTwdForm from '@/components/search_forms/forms_data/defaultsTwdForm.json';
 import defaultsCryptForm from '@/components/search_forms/forms_data/defaultsCryptForm.json';
 import defaultsLibraryForm from '@/components/search_forms/forms_data/defaultsLibraryForm.json';
-import { TWD, PDA } from '@/utils/constants';
+import { ANY, TWD, PDA } from '@/utils/constants';
 
 export const searchResults = proxy({});
 
@@ -51,8 +51,8 @@ export const clearSearchForm = (target) => {
   switch (target) {
     case 'crypt':
       searchCryptForm.text = structuredClone(defaultsCryptForm.text);
-      searchCryptForm.votes = 'any';
-      searchCryptForm.artist = 'any';
+      searchCryptForm.votes = ANY;
+      searchCryptForm.artist = ANY;
 
       Object.keys(defaultsCryptForm).forEach((k) => {
         if (['text', 'votes', 'artist'].includes(k)) return;
@@ -63,7 +63,7 @@ export const clearSearchForm = (target) => {
       break;
     case 'library':
       searchLibraryForm.text = structuredClone(defaultsLibraryForm.text);
-      searchLibraryForm.artist = 'any';
+      searchLibraryForm.artist = ANY;
 
       Object.keys(defaultsLibraryForm).forEach((k) => {
         if (['text', 'artist'].includes(k)) return;

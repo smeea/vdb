@@ -1,6 +1,7 @@
 import React from 'react';
 import { Select, SearchFormButtonAdd, SearchFormButtonDel } from '@/components';
 import { useApp } from '@/context';
+import { ANY } from '@/utils/constants';
 
 const SearchAdditionalForms = ({
   value,
@@ -54,7 +55,7 @@ const SearchAdditionalForms = ({
                     Object.keys(value.value[i]).filter((k) => {
                       return k !== 'moreless';
                     })[0]
-                  ] === 'any'
+                  ] === ANY
                 }
                 maxMenuHeight={maxMenuHeight ? maxMenuHeight - 45 : isMobile ? 350 : 450}
                 menuPlacement={menuPlacement}
@@ -70,15 +71,13 @@ const SearchAdditionalForms = ({
             <Select
               options={options}
               isSearchable={!isMobile}
-              isClearable={isClearable && value.value[i] !== 'any'}
-              defaultMenuIsOpen={value.value[i] === 'any'}
+              isClearable={isClearable && value.value[i] !== ANY}
+              defaultMenuIsOpen={value.value[i] === ANY}
               menuPlacement={menuPlacement}
               maxMenuHeight={maxMenuHeight ? maxMenuHeight - 45 : isMobile ? 350 : 450}
               name={i}
               value={options.find((obj) => obj.value === value.value[i])}
-              onChange={(e, id) =>
-                e ? onChange(e, id) : onChange({ name: name, value: 'any' }, id)
-              }
+              onChange={(e, id) => (e ? onChange(e, id) : onChange({ name: name, value: ANY }, id))}
               autoFocus
             />
           </div>

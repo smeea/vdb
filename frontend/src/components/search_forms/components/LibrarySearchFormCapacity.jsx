@@ -1,6 +1,7 @@
 import React from 'react';
 import { Select } from '@/components';
 import { useApp } from '@/context';
+import { ANY } from '@/utils/constants';
 
 const LibrarySearchFormCapacity = ({ value, onChange }) => {
   const { isXWide } = useApp();
@@ -40,11 +41,11 @@ const LibrarySearchFormCapacity = ({ value, onChange }) => {
           <Select
             options={options}
             isSearchable={false}
-            isClearable={value[name] !== 'any'}
+            isClearable={value[name] !== ANY}
             name={0}
             maxMenuHeight={maxMenuHeight}
             value={options.find((obj) => obj.value === value[name])}
-            onChange={(e, id) => (e ? onChange(e, id) : onChange({ name: name, value: 'any' }, id))}
+            onChange={(e, id) => (e ? onChange(e, id) : onChange({ name: name, value: ANY }, id))}
           />
         </div>
       </div>

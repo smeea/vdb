@@ -312,7 +312,7 @@ def generate_card(card):
             "Card Text": card["Card Text"],
             "Clan": card["Clan"],
             "Disciplines": card["Disciplines"],
-            "Group": card["Group"],
+            "Group": card["Group"].lower(),
             "Id": card["Id"],
             "Name": card["Name"],
             "New": card["New"],

@@ -10,6 +10,7 @@ import {
 import imbuedClansList from '@/assets/data/imbuedClansList.json';
 import vampireClansList from '@/assets/data/vampireClansList.json';
 import { useApp } from '@/context';
+import { ANY } from '@/utils/constants';
 
 const CryptSearchFormClan = ({ value, searchForm, onChange }) => {
   const { playtestMode, isXWide, isMobile } = useApp();
@@ -18,7 +19,7 @@ const CryptSearchFormClan = ({ value, searchForm, onChange }) => {
   const options = ['ANY', ...vampireClansList, ...imbuedClansList]
     .filter((clan) => playtestMode || clan !== 'Hecata')
     .map((i) => {
-      if (i == 'ANY') {
+      if (i.toLowerCase() == ANY) {
         return {
           value: i.toLowerCase(),
           name: name,
@@ -50,7 +51,7 @@ const CryptSearchFormClan = ({ value, searchForm, onChange }) => {
       <div className="flex items-center">
         <div className="flex w-1/4 items-center justify-between">
           <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Clan:</div>
-          {value.value[0] !== 'any' && (
+          {value.value[0] !== ANY && (
             <div className="flex justify-end space-x-1 px-1">
               <SearchFormButtonLogicToggle
                 name={name}
@@ -69,11 +70,11 @@ const CryptSearchFormClan = ({ value, searchForm, onChange }) => {
           <Select
             options={options}
             isSearchable={!isMobile}
-            isClearable={value.value[0] !== 'any'}
+            isClearable={value.value[0] !== ANY}
             name={0}
             maxMenuHeight={maxMenuHeight}
             value={options.find((obj) => obj.value === value.value[0].toLowerCase())}
-            onChange={(e, id) => (e ? onChange(e, id) : onChange({ name: name, value: 'any' }, id))}
+            onChange={(e, id) => (e ? onChange(e, id) : onChange({ name: name, value: ANY }, id))}
           />
         </div>
       </div>

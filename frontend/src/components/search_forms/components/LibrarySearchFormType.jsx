@@ -9,13 +9,14 @@ import {
 } from '@/components';
 import { cardtypeSorted } from '@/utils/constants';
 import { useApp } from '@/context';
+import { ANY } from '@/utils/constants';
 
 const LibrarySearchFormType = ({ value, onChange, searchForm }) => {
   const { isXWide } = useApp();
   const maxMenuHeight = isXWide ? 500 : 350;
   const name = 'type';
   const options = ['ANY', ...cardtypeSorted].map((i) => {
-    if (i == 'ANY') {
+    if (i.toLowerCase() == ANY) {
       return {
         value: i.toLowerCase(),
         name: name,
@@ -47,7 +48,7 @@ const LibrarySearchFormType = ({ value, onChange, searchForm }) => {
       <div className="flex items-center">
         <div className="flex w-1/4 items-center justify-between">
           <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Type:</div>
-          {value.value[0] !== 'any' && (
+          {value.value[0] !== ANY && (
             <div className="flex justify-end space-x-1 px-1">
               <SearchFormButtonLogicToggle
                 name={name}
@@ -67,11 +68,11 @@ const LibrarySearchFormType = ({ value, onChange, searchForm }) => {
           <Select
             options={options}
             isSearchable={false}
-            isClearable={value.value[0] !== 'any'}
+            isClearable={value.value[0] !== ANY}
             name={0}
             maxMenuHeight={maxMenuHeight}
             value={options.find((obj) => obj.value === value.value[0].toLowerCase())}
-            onChange={(e, id) => (e ? onChange(e, id) : onChange({ name: name, value: 'any' }, id))}
+            onChange={(e, id) => (e ? onChange(e, id) : onChange({ name: name, value: ANY }, id))}
           />
         </div>
       </div>

@@ -7,6 +7,7 @@ import {
   SearchFormButtonDel,
 } from '@/components';
 import { useApp } from '@/context';
+import { ANY } from '@/utils/constants';
 
 const LibrarySearchFormSect = ({ value, searchForm, onChange }) => {
   const { isXWide } = useApp();
@@ -38,7 +39,7 @@ const LibrarySearchFormSect = ({ value, searchForm, onChange }) => {
       <div className="flex flex-row items-center">
         <div className="flex w-1/4 items-center justify-between">
           <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Sect:</div>
-          {value.value[0] !== 'any' && (
+          {value.value[0] !== ANY && (
             <div className="flex justify-end space-x-1 px-1">
               <SearchFormButtonLogicToggle
                 name={name}
@@ -57,11 +58,11 @@ const LibrarySearchFormSect = ({ value, searchForm, onChange }) => {
           <Select
             options={options}
             isSearchable={false}
-            isClearable={value.value[0] !== 'any'}
+            isClearable={value.value[0] !== ANY}
             name={0}
             maxMenuHeight={maxMenuHeight}
             value={options.find((obj) => obj.value === value.value[0].toLowerCase())}
-            onChange={(e, id) => (e ? onChange(e, id) : onChange({ name: name, value: 'any' }, id))}
+            onChange={(e, id) => (e ? onChange(e, id) : onChange({ name: name, value: ANY }, id))}
           />
         </div>
       </div>

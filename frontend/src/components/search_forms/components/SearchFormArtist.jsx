@@ -3,6 +3,7 @@ import { Select } from '@/components';
 import cryptArtists from '@/assets/data/artistsCrypt.json';
 import libraryArtists from '@/assets/data/artistsLib.json';
 import { useApp } from '@/context';
+import { ANY } from '@/utils/constants';
 
 const SearchFormArtist = ({ target, value, onChange }) => {
   const { isXWide } = useApp();
@@ -20,7 +21,7 @@ const SearchFormArtist = ({ target, value, onChange }) => {
 
   options.unshift({
     name: name,
-    value: 'any',
+    value: ANY,
     label: (
       <div className="flex items-center">
         <div className="flex w-[40px]" />
@@ -37,12 +38,12 @@ const SearchFormArtist = ({ target, value, onChange }) => {
       <div className="w-3/4">
         <Select
           options={options}
-          isClearable={value !== 'any'}
+          isClearable={value !== ANY}
           maxMenuHeight={maxMenuHeight}
           name={name}
           placeholder="Artist"
           value={options.find((obj) => obj.value === value)}
-          onChange={(e) => onChange(e ?? { name: name, value: 'any' })}
+          onChange={(e) => onChange(e ?? { name: name, value: ANY })}
         />
       </div>
     </div>

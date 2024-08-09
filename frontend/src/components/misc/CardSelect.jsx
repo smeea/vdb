@@ -55,10 +55,18 @@ const getAllMatches = (
 
 const CardSelect = React.forwardRef(
   (
-    { target, value, inInventory, placeholder = 'Enter Card Name', autoFocus, onChange, placement },
+    {
+      target,
+      value,
+      inInventory,
+      placeholder = 'Enter Card Name',
+      autoFocus,
+      onChange,
+      menuPlacement,
+    },
     ref,
   ) => {
-    const { isMobile, cryptCardBase, libraryCardBase, playtestMode } = useApp();
+    const { cryptCardBase, libraryCardBase, playtestMode } = useApp();
     const { filterCrypt } = useFilters(cryptCardBase);
     const { filterLibrary } = useFilters(libraryCardBase);
 
@@ -118,6 +126,7 @@ const CardSelect = React.forwardRef(
         getOptionLabel={getOptionLabel}
         loadOptions={loadOptions}
         onChange={onChange}
+        menuPlacement={menuPlacement}
         placeholder={placeholder}
         ref={ref}
         value={value}

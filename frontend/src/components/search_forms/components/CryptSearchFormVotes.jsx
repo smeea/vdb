@@ -1,6 +1,7 @@
 import React from 'react';
 import { Select } from '@/components';
 import { useApp } from '@/context';
+import { ANY } from '@/utils/constants';
 
 const CryptSearchFormVotes = ({ value, onChange }) => {
   const { isXWide } = useApp();
@@ -8,7 +9,7 @@ const CryptSearchFormVotes = ({ value, onChange }) => {
   const maxMenuHeight = isXWide ? 500 : 350;
 
   const options = [
-    ['any', 'ANY'],
+    [ANY, 'ANY'],
     ['0', 'None'],
     ['1', '1+'],
     ['2', '2+'],
@@ -34,11 +35,11 @@ const CryptSearchFormVotes = ({ value, onChange }) => {
         <Select
           options={options}
           isSearchable={false}
-          isClearable={value !== 'any'}
+          isClearable={value !== ANY}
           name={name}
           maxMenuHeight={maxMenuHeight}
           value={options.find((obj) => obj.value === value.toLowerCase())}
-          onChange={(e) => onChange(e ?? { name: name, value: 'any' })}
+          onChange={(e) => onChange(e ?? { name: name, value: ANY })}
         />
       </div>
     </div>

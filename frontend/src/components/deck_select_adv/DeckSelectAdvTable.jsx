@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { getClan, decksSort } from '@/utils';
 import { DeckSelectAdvTableRow, DeckSelectAdvTableHeader, ResultClanImage } from '@/components';
+import { ANY } from '@/utils/constants';
 
 const DeckSelectAdvTable = ({
   allTagsOptions,
@@ -16,10 +17,10 @@ const DeckSelectAdvTable = ({
   isSelectedAll,
   setIsSelectedAll,
 }) => {
-  const [invFilter, setInvFilter] = useState('any');
+  const [invFilter, setInvFilter] = useState(ANY);
   const [revFilter, setRevFilter] = useState(false);
   const [nameFilter, setNameFilter] = useState('');
-  const [clanFilter, setClanFilter] = useState('any');
+  const [clanFilter, setClanFilter] = useState(ANY);
 
   const allDecksClans = [];
   Object.values(decks).forEach((deck) => {
@@ -32,7 +33,7 @@ const DeckSelectAdvTable = ({
 
   const clanOptions = [
     {
-      value: 'any',
+      value: ANY,
       name: 'clan',
       label: 'ANY',
     },
@@ -83,11 +84,11 @@ const DeckSelectAdvTable = ({
     if (Object.values(decks).length > 0) {
       let filtered = Object.values(decks);
 
-      if (invFilter !== 'any') {
+      if (invFilter !== ANY) {
         filtered = filtered.filter((deck) => deck.inventoryType === invFilter);
       }
 
-      if (clanFilter !== 'any') {
+      if (clanFilter !== ANY) {
         filtered = filtered.filter((deck) => {
           const clan = getClan(deck.crypt) || '';
           return clan.toLowerCase() === clanFilter;

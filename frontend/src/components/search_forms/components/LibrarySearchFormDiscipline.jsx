@@ -10,6 +10,7 @@ import {
 import disciplinesList from '@/assets/data/disciplinesList.json';
 import virtuesList from '@/assets/data/virtuesList.json';
 import { useApp } from '@/context';
+import { ANY } from '@/utils/constants';
 
 const LibrarySearchFormDiscipline = ({ value, onChange, searchForm }) => {
   const { playtestMode, isXWide, isMobile } = useApp();
@@ -25,7 +26,7 @@ const LibrarySearchFormDiscipline = ({ value, onChange, searchForm }) => {
   const options = ['ANY', 'Not Required', ...disciplinesExtendedList, ...Object.keys(virtuesList)]
     .filter((discipline) => playtestMode || discipline !== 'Oblivion')
     .map((i) => {
-      if (i == 'ANY' || i == 'Not Required') {
+      if (['ANY', 'Not Required'].includes(i)) {
         return {
           value: i.toLowerCase(),
           name: name,
@@ -57,7 +58,7 @@ const LibrarySearchFormDiscipline = ({ value, onChange, searchForm }) => {
       <div className="flex items-center">
         <div className="w-1/4">
           <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Discipline:</div>
-          {value.value[0] !== 'any' && (
+          {value.value[0] !== ANY && (
             <div className="flex justify-end space-x-1 px-1">
               <SearchFormButtonLogicToggle
                 name={name}
@@ -77,11 +78,11 @@ const LibrarySearchFormDiscipline = ({ value, onChange, searchForm }) => {
           <Select
             options={options}
             isSearchable={!isMobile}
-            isClearable={value.value[0] !== 'any'}
+            isClearable={value.value[0] !== ANY}
             name={0}
             maxMenuHeight={maxMenuHeight}
             value={options.find((obj) => obj.value === value.value[0].toLowerCase())}
-            onChange={(e, id) => (e ? onChange(e, id) : onChange({ name: name, value: 'any' }, id))}
+            onChange={(e, id) => (e ? onChange(e, id) : onChange({ name: name, value: ANY }, id))}
           />
         </div>
       </div>

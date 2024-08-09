@@ -1,5 +1,5 @@
 import { deepClone } from '@/utils';
-import { VALUE, CRYPT, LIBRARY, TWD, PDA, ANALYZE } from '@/utils/constants';
+import { ANY, VALUE, CRYPT, LIBRARY, TWD, PDA, ANALYZE } from '@/utils/constants';
 
 const sanitizeFormState = (target, state) => {
   const input = deepClone(state);
@@ -58,7 +58,7 @@ const sanitizeFormState = (target, state) => {
   }
   forms.forEach((i) => {
     Object.keys(input[i]).forEach((k) => {
-      (input[i][k] == 0 || input[i][k] == 'any') && delete input[i][k];
+      (input[i][k] == 0 || input[i][k] == ANY) && delete input[i][k];
     });
   });
 
@@ -72,7 +72,7 @@ const sanitizeFormState = (target, state) => {
   }
   forms.forEach((i) => {
     Object.keys(input[i]).forEach((k) => {
-      (input[i][k] == 0 || input[i][k] == 'any') && delete input[i][k];
+      (input[i][k] == 0 || input[i][k] == ANY) && delete input[i][k];
     });
     if (!input[i].crypt && !input[i].library) delete input[i];
   });
@@ -91,7 +91,7 @@ const sanitizeFormState = (target, state) => {
     Object.keys(input[i]).forEach((k) => {
       input[i][k] === false && delete input[i][k];
       input[i].value.forEach((j, idx) => {
-        if (j === 'any') {
+        if (j === ANY) {
           input[i].value.splice(idx, 1);
         }
       });
@@ -106,7 +106,7 @@ const sanitizeFormState = (target, state) => {
       forms = [];
   }
   forms.forEach((i) => {
-    if (input[i][i] == 'any') {
+    if (input[i][i] == ANY) {
       delete input[i];
     }
   });
@@ -121,7 +121,7 @@ const sanitizeFormState = (target, state) => {
   }
   forms.forEach((i) => {
     input[i].value.forEach((j, idx) => {
-      if (j[i] === 'any') {
+      if (j[i] === ANY) {
         input[i].value.splice(idx, 1);
       }
     });
@@ -142,7 +142,7 @@ const sanitizeFormState = (target, state) => {
   }
   forms.forEach((i) => {
     input[i].value = input[i].value.filter((i) => {
-      return i !== 'any';
+      return i !== ANY;
     });
   });
 
@@ -163,7 +163,7 @@ const sanitizeFormState = (target, state) => {
 
   Object.keys(input).forEach((k) => {
     if (
-      input[k] == 'any' ||
+      input[k] == ANY ||
       !input[k] ||
       input[k].length === 0 ||
       (input[k].value && input[k].value.length === 0) ||

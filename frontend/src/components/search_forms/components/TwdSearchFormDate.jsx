@@ -1,7 +1,7 @@
 import React from 'react';
 import { Select } from '@/components';
 import { useApp } from '@/context';
-import { FROM, TO } from '@/utils/constants';
+import { ANY, FROM, TO } from '@/utils/constants';
 
 const TwdSearchFormDate = ({ inPda, value, onChange }) => {
   const { isXWide } = useApp();
@@ -27,7 +27,7 @@ const TwdSearchFormDate = ({ inPda, value, onChange }) => {
   const toOptions = [];
 
   years.map((i) => {
-    if (i === 'ANY' || value.to === 'any' || parseInt(i) <= value.to) {
+    if (i.toLowerCase() === ANY || value.to === ANY || parseInt(i) <= value.to) {
       fromOptions.push({
         value: i.toLowerCase(),
         name: FROM,
@@ -35,7 +35,7 @@ const TwdSearchFormDate = ({ inPda, value, onChange }) => {
       });
     }
 
-    if (i === 'ANY' || value.from === 'any' || parseInt(i) >= value.from) {
+    if (i.toLowerCase() === ANY || value.from === ANY || parseInt(i) >= value.from) {
       toOptions.push({
         value: i.toLowerCase(),
         name: TO,

@@ -10,6 +10,7 @@ import {
 import { useApp } from '@/context';
 import { PLAYTEST, BCP } from '@/utils/constants';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
+import { ANY } from '@/utils/constants';
 
 const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
   const { playtestMode, isMobile, isXWide } = useApp();
@@ -18,7 +19,7 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
 
   const options = [
     {
-      value: 'any',
+      value: ANY,
       name: name,
       label: (
         <div className="flex items-center">
@@ -77,11 +78,11 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
     });
 
   const filterOption = ({ label, value }, string) => {
-    const name = ['any', BCP].includes(value)
+    const name = [ANY, BCP].includes(value)
       ? label.props.children[1]
       : label.props.children[0].props.children[1];
 
-    const set = ['any', BCP].includes(value) ? null : label.props.children[1].props.children;
+    const set = [ANY, BCP].includes(value) ? null : label.props.children[1].props.children;
 
     if (name) return `${name} ${set}`.toLowerCase().includes(string);
     return true;
@@ -92,7 +93,7 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
       <div className="flex items-center">
         <div className="flex w-1/4 items-center justify-between">
           <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Precon:</div>
-          {value.value[0] !== 'any' && (
+          {value.value[0] !== ANY && (
             <div className="flex justify-end space-x-1 px-1">
               {value.value.length == 1 ? (
                 <SearchFormButtonAdd searchForm={searchForm} name={name} />
@@ -106,12 +107,12 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
           <Select
             options={options}
             isSearchable={!isMobile}
-            isClearable={value.value[0] !== 'any'}
+            isClearable={value.value[0] !== ANY}
             filterOption={filterOption}
             name={0}
             maxMenuHeight={maxMenuHeight}
             value={options.find((obj) => obj.value === value.value[0])}
-            onChange={(e, id) => (e ? onChange(e, id) : onChange({ name: name, value: 'any' }, id))}
+            onChange={(e, id) => (e ? onChange(e, id) : onChange({ name: name, value: ANY }, id))}
           />
         </div>
       </div>
