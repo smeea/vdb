@@ -1,7 +1,7 @@
 import React from 'react';
-
 import { Select } from '@/components';
 import { useApp } from '@/context';
+import { FROM, TO } from '@/utils/constants';
 
 const AnalyzeSearchFormRank = ({ value, onChange }) => {
   const { isXWide } = useApp();
@@ -19,13 +19,8 @@ const AnalyzeSearchFormRank = ({ value, onChange }) => {
     ) {
       fromOptions.push({
         value: i.toLowerCase(),
-        name: 'from',
-        label: (
-          <div className="flex justify-center">
-            {i !== 'ANY' && 'Top '}
-            {i}
-          </div>
-        ),
+        name: FROM,
+        label: <div className="flex justify-center">{i == 'ANY' ? i : `Top ${i}`}</div>,
       });
     }
 
@@ -37,13 +32,8 @@ const AnalyzeSearchFormRank = ({ value, onChange }) => {
     ) {
       toOptions.push({
         value: i.toLowerCase(),
-        name: 'to',
-        label: (
-          <div className="flex justify-center">
-            {i !== 'ANY' && 'Top '}
-            {i}
-          </div>
-        ),
+        name: TO,
+        label: <div className="flex justify-center">{i == 'ANY' ? i : `Top ${i}`}</div>,
       });
     }
   });

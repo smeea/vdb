@@ -1,6 +1,7 @@
 import React from 'react';
 import { Select } from '@/components';
 import { useApp } from '@/context';
+import { FROM, TO } from '@/utils/constants';
 
 const TwdSearchFormPlayers = ({ value, onChange }) => {
   const { isXWide } = useApp();
@@ -13,7 +14,7 @@ const TwdSearchFormPlayers = ({ value, onChange }) => {
     if (i === 'ANY' || value.to === 'any' || parseInt(i) < value.to) {
       fromOptions.push({
         value: i.toLowerCase(),
-        name: 'from',
+        name: FROM,
         label: <div className="flex justify-center">{i}</div>,
       });
     }
@@ -21,7 +22,7 @@ const TwdSearchFormPlayers = ({ value, onChange }) => {
     if (i === 'ANY' || value.from === 'any' || parseInt(i) > value.from) {
       toOptions.push({
         value: i.toLowerCase(),
-        name: 'to',
+        name: TO,
         label: <div className="flex justify-center">{i}</div>,
       });
     }

@@ -5,6 +5,12 @@ import { initFromStorage, setLocalStorage } from '@/services/storageServices.js'
 import { useApp } from '@/context';
 import standardDecksData from '@/assets/data/standardDecks.json';
 
+const CUSTOM_DECKS = 'seatingCustomDecks';
+const STANDARD_DECKS = 'seatingStandardDecks';
+const WITH_CUSTOM = 'seatingWithCustom';
+const WITH_STANDARD = 'seatingWithStandard';
+const PLAYERS = 'seatingPlayers';
+
 const getRandomDeck = (players) => {
   return players[Math.floor(Math.random() * Math.floor(players.length))];
 };
@@ -177,23 +183,23 @@ const Seating = ({ setShow }) => {
   };
 
   useLayoutEffect(() => {
-    initFromStorage('seatingCustomDecks', [], initCustomDecks);
-    initFromStorage('seatingPlayers', undefined, (val) => {
+    initFromStorage(CUSTOM_DECKS, [], initCustomDecks);
+    initFromStorage(PLAYERS, undefined, (val) => {
       if (val) initPlayers(val);
     });
-    initFromStorage('seatingStandardDecks', undefined, (val) => {
+    initFromStorage(STANDARD_DECKS, undefined, (val) => {
       if (val) setStandardDecks(val);
     });
-    initFromStorage('seatingWithCustom', true, setWithCustom);
-    initFromStorage('seatingWithStandard', true, setWithStandard);
+    initFromStorage(WITH_CUSTOM, true, setWithCustom);
+    initFromStorage(WITH_STANDARD, true, setWithStandard);
   }, []);
 
   useEffect(() => {
-    setLocalStorage('seatingCustomDecks', customDecks);
-    setLocalStorage('seatingPlayers', players);
-    setLocalStorage('seatingStandardDecks', standardDecks);
-    setLocalStorage('seatingWithCustom', withCustom);
-    setLocalStorage('seatingWithStandard', withStandard);
+    setLocalStorage(CUSTOM_DECKS, customDecks);
+    setLocalStorage(PLAYERS, players);
+    setLocalStorage(STANDARD_DECKS, standardDecks);
+    setLocalStorage(WITH_CUSTOM, withCustom);
+    setLocalStorage(WITH_STANDARD, withStandard);
   }, [customDecks, standardDecks, withCustom, withStandard, players]);
 
   return (

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Select } from '@/components';
 import { useApp } from '@/context';
+import { FROM, TO } from '@/utils/constants';
 
 const TwdSearchFormDate = ({ inPda, value, onChange }) => {
   const { isXWide } = useApp();
@@ -29,7 +30,7 @@ const TwdSearchFormDate = ({ inPda, value, onChange }) => {
     if (i === 'ANY' || value.to === 'any' || parseInt(i) <= value.to) {
       fromOptions.push({
         value: i.toLowerCase(),
-        name: 'from',
+        name: FROM,
         label: <div className="flex justify-center">{i}</div>,
       });
     }
@@ -37,7 +38,7 @@ const TwdSearchFormDate = ({ inPda, value, onChange }) => {
     if (i === 'ANY' || value.from === 'any' || parseInt(i) >= value.from) {
       toOptions.push({
         value: i.toLowerCase(),
-        name: 'to',
+        name: TO,
         label: <div className="flex justify-center">{i}</div>,
       });
     }

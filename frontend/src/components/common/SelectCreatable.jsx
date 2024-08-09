@@ -8,7 +8,7 @@ const SelectCreatable = React.forwardRef(
       isClearable = false,
       isDisabled = false,
       isMulti,
-      menuPlacement,
+      menuPlacement = 'auto',
       noBorder,
       noOptionsMessage,
       noRemove,

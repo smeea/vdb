@@ -11,7 +11,7 @@ const Select = React.forwardRef(
       isDisabled = false,
       isSearchable,
       maxMenuHeight,
-      menuPlacement,
+      menuPlacement = 'auto',
       name,
       noBorder,
       noDropdown,

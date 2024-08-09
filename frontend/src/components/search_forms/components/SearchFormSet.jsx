@@ -106,7 +106,7 @@ const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
         value={value}
         name={name}
         searchForm={searchForm}
-        menuPlacement={isMobile ? 'top' : 'bottom'}
+        menuPlacement="top"
         options={options}
         onChange={onChange}
         maxMenuHeight={maxMenuHeight}

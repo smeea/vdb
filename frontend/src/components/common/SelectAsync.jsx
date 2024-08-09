@@ -10,7 +10,7 @@ const SelectAsync = React.forwardRef(
       isClearable = false,
       isDisabled = false,
       loadOptions,
-      menuPlacement,
+      menuPlacement = 'auto',
       noBorder,
       noDropdown,
       onChange,

@@ -37,7 +37,6 @@ const SearchFormArtist = ({ target, value, onChange }) => {
       <div className="w-3/4">
         <Select
           options={options}
-          menuPlacement="top"
           isClearable={value !== 'any'}
           maxMenuHeight={maxMenuHeight}
           name={name}
