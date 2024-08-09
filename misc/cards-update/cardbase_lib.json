@@ -56,7 +56,7 @@
                 "PTr":"1"
             }
         },
-        "Twd":367,
+        "Twd":369,
         "Type":"Equipment"
     },
     "100002":{
@@ -777,7 +777,7 @@
                 "2021-10-15":true
             }
         },
-        "Twd":37,
+        "Twd":38,
         "Type":"Master"
     },
     "100019":{
@@ -855,7 +855,7 @@
                 "SKB":"2"
             }
         },
-        "Twd":30,
+        "Twd":31,
         "Type":"Combat"
     },
     "100021":{
@@ -1264,7 +1264,7 @@
                 "PTo":"2"
             }
         },
-        "Twd":262,
+        "Twd":263,
         "Type":"Action Modifier"
     },
     "100032":{
@@ -1955,7 +1955,7 @@
                 "R":true
             }
         },
-        "Twd":1,
+        "Twd":2,
         "Type":"Equipment"
     },
     "100049":{
@@ -2118,7 +2118,7 @@
                 "PTz":"1"
             }
         },
-        "Twd":122,
+        "Twd":124,
         "Type":"Master"
     },
     "100053":{
@@ -2174,7 +2174,7 @@
                 "PMi":"1"
             }
         },
-        "Twd":136,
+        "Twd":141,
         "Type":"Master"
     },
     "100055":{
@@ -2231,7 +2231,7 @@
                 "PTz":"1"
             }
         },
-        "Twd":174,
+        "Twd":175,
         "Type":"Master"
     },
     "100056":{
@@ -2336,7 +2336,7 @@
                 "PSal":"1"
             }
         },
-        "Twd":464,
+        "Twd":465,
         "Type":"Master"
     },
     "100059":{
@@ -2387,7 +2387,7 @@
                 "PM":"1"
             }
         },
-        "Twd":348,
+        "Twd":350,
         "Type":"Political Action"
     },
     "100060":{
@@ -2628,7 +2628,7 @@
                 "":"1"
             }
         },
-        "Twd":405,
+        "Twd":407,
         "Type":"Political Action"
     },
     "100065":{
@@ -2682,7 +2682,7 @@
                 "":"1"
             }
         },
-        "Twd":358,
+        "Twd":360,
         "Type":"Political Action"
     },
     "100066":{
@@ -3216,7 +3216,7 @@
                 "PT":"4"
             }
         },
-        "Twd":104,
+        "Twd":105,
         "Type":"Action Modifier"
     },
     "100079":{
@@ -3250,7 +3250,7 @@
                 "NR":1
             }
         },
-        "Twd":484,
+        "Twd":486,
         "Type":"Action"
     },
     "100080":{
@@ -3526,7 +3526,7 @@
                 "PR":"1"
             }
         },
-        "Twd":671,
+        "Twd":678,
         "Type":"Master"
     },
     "100086":{
@@ -3551,7 +3551,7 @@
                 "2007-06-01":true
             }
         },
-        "Twd":3,
+        "Twd":4,
         "Type":"Equipment"
     },
     "100087":{
@@ -3940,7 +3940,7 @@
                 "":"1"
             }
         },
-        "Twd":101,
+        "Twd":102,
         "Type":"Master"
     },
     "100096":{
@@ -4395,7 +4395,7 @@
                 "":"3"
             }
         },
-        "Twd":415,
+        "Twd":420,
         "Type":"Master"
     },
     "100107":{
@@ -4485,7 +4485,7 @@
                 "PM":"1"
             }
         },
-        "Twd":83,
+        "Twd":85,
         "Type":"Master"
     },
     "100109":{
@@ -4899,7 +4899,7 @@
                 "":"2"
             }
         },
-        "Twd":208,
+        "Twd":209,
         "Type":"Action Modifier"
     },
     "100120":{
@@ -5165,7 +5165,7 @@
                 "PG":"1"
             }
         },
-        "Twd":130,
+        "Twd":131,
         "Type":"Master"
     },
     "102218":{
@@ -5206,7 +5206,7 @@
                 "PTz":"3"
             }
         },
-        "Twd":109,
+        "Twd":113,
         "Type":"Reaction"
     },
     "100127":{
@@ -5484,7 +5484,7 @@
                 "":"2"
             }
         },
-        "Twd":527,
+        "Twd":528,
         "Type":"Political Action"
     },
     "100132":{
@@ -5685,7 +5685,7 @@
                 "PTz":"1"
             }
         },
-        "Twd":451,
+        "Twd":452,
         "Type":"Master"
     },
     "100136":{
@@ -6526,7 +6526,7 @@
                 "PTo":"2"
             }
         },
-        "Twd":242,
+        "Twd":243,
         "Type":"Action Modifier"
     },
     "100158":{
@@ -6748,7 +6748,7 @@
                 "R":true
             }
         },
-        "Twd":68,
+        "Twd":69,
         "Type":"Event"
     },
     "100164":{
@@ -6874,7 +6874,7 @@
                 "R":true
             }
         },
-        "Twd":9,
+        "Twd":10,
         "Type":"Action"
     },
     "100168":{
@@ -6899,7 +6899,7 @@
                 "C":true
             }
         },
-        "Twd":9,
+        "Twd":10,
         "Type":"Action"
     },
     "100169":{
@@ -8152,7 +8152,7 @@
                 "NL":2
             }
         },
-        "Twd":1264,
+        "Twd":1265,
         "Type":"Master"
     },
     "100200":{
@@ -8681,7 +8681,7 @@
                 "PG":"2"
             }
         },
-        "Twd":16,
+        "Twd":17,
         "Type":"Equipment"
     },
     "100213":{
@@ -9212,7 +9212,7 @@
                 "PBH":"2"
             }
         },
-        "Twd":213,
+        "Twd":214,
         "Type":"Combat"
     },
     "100228":{
@@ -9286,7 +9286,7 @@
                 "C":true
             }
         },
-        "Twd":0,
+        "Twd":1,
         "Type":"Equipment"
     },
     "100230":{
@@ -9902,7 +9902,7 @@
                 "PSal":"1"
             }
         },
-        "Twd":509,
+        "Twd":514,
         "Type":"Equipment"
     },
     "100244":{
@@ -10088,7 +10088,7 @@
                 "PR":"8"
             }
         },
-        "Twd":7,
+        "Twd":9,
         "Type":"Action"
     },
     "100248":{
@@ -10417,7 +10417,7 @@
                 "":"1"
             }
         },
-        "Twd":10,
+        "Twd":11,
         "Type":"Master"
     },
     "100256":{
@@ -10602,7 +10602,7 @@
                 "PB":"3"
             }
         },
-        "Twd":21,
+        "Twd":22,
         "Type":"Master"
     },
     "100261":{
@@ -11833,7 +11833,7 @@
                 "SKTz":"1"
             }
         },
-        "Twd":278,
+        "Twd":279,
         "Type":"Combat"
     },
     "100291":{
@@ -12069,7 +12069,7 @@
                 "PB":"1"
             }
         },
-        "Twd":113,
+        "Twd":117,
         "Type":"Master"
     },
     "100298":{
@@ -12119,7 +12119,7 @@
                 "PwN":"1"
             }
         },
-        "Twd":762,
+        "Twd":764,
         "Type":"Ally"
     },
     "100299":{
@@ -12248,7 +12248,7 @@
                 "NR":3
             }
         },
-        "Twd":398,
+        "Twd":399,
         "Type":"Combat"
     },
     "100302":{
@@ -12593,7 +12593,7 @@
                 "PTz":"4"
             }
         },
-        "Twd":375,
+        "Twd":376,
         "Type":"Reaction"
     },
     "100309":{
@@ -13372,7 +13372,7 @@
                 "R":true
             }
         },
-        "Twd":19,
+        "Twd":20,
         "Type":"Equipment"
     },
     "100326":{
@@ -14653,7 +14653,7 @@
                 "PG":"2"
             }
         },
-        "Twd":140,
+        "Twd":142,
         "Type":"Combat"
     },
     "100357":{
@@ -14810,7 +14810,7 @@
                 "2008-02-03":true
             }
         },
-        "Twd":1,
+        "Twd":2,
         "Type":"Equipment"
     },
     "100362":{
@@ -14902,7 +14902,7 @@
                 "PR":"4"
             }
         },
-        "Twd":647,
+        "Twd":650,
         "Type":"Action Modifier"
     },
     "100363":{
@@ -15049,7 +15049,7 @@
                 "NTz":1
             }
         },
-        "Twd":93,
+        "Twd":96,
         "Type":"Master"
     },
     "100367":{
@@ -15290,7 +15290,7 @@
                 "NR":1
             }
         },
-        "Twd":59,
+        "Twd":61,
         "Type":"Equipment"
     },
     "100375":{
@@ -15959,7 +15959,7 @@
                 "PM":"1"
             }
         },
-        "Twd":30,
+        "Twd":31,
         "Type":"Action"
     },
     "100392":{
@@ -16039,7 +16039,7 @@
                 "PT":"2"
             }
         },
-        "Twd":217,
+        "Twd":219,
         "Type":"Combat"
     },
     "100393":{
@@ -16108,7 +16108,7 @@
                 "PTr":1
             }
         },
-        "Twd":2,
+        "Twd":3,
         "Type":"Equipment"
     },
     "100395":{
@@ -16364,7 +16364,7 @@
                 "PV":"4"
             }
         },
-        "Twd":1010,
+        "Twd":1014,
         "Type":"Action Modifier"
     },
     "100402":{
@@ -16526,7 +16526,7 @@
                 "PM":"4"
             }
         },
-        "Twd":141,
+        "Twd":142,
         "Type":"Action Modifier"
     },
     "100406":{
@@ -16710,7 +16710,7 @@
                 "PB":"3"
             }
         },
-        "Twd":237,
+        "Twd":240,
         "Type":"Political Action"
     },
     "100411":{
@@ -16888,7 +16888,7 @@
                 "PTo":"1"
             }
         },
-        "Twd":199,
+        "Twd":200,
         "Type":"Political Action"
     },
     "100415":{
@@ -16970,7 +16970,7 @@
                 "PTz":"1"
             }
         },
-        "Twd":87,
+        "Twd":88,
         "Type":"Action"
     },
     "100417":{
@@ -17648,7 +17648,7 @@
                 "":"1"
             }
         },
-        "Twd":485,
+        "Twd":488,
         "Type":"Master",
         "Trifle":true
     },
@@ -17979,7 +17979,7 @@
                 "PTo":"1"
             }
         },
-        "Twd":234,
+        "Twd":235,
         "Type":"Master"
     },
     "100445":{
@@ -18053,7 +18053,7 @@
                 "DTC":true
             }
         },
-        "Twd":35,
+        "Twd":37,
         "Type":"Action Modifier"
     },
     "100447":{
@@ -19298,7 +19298,7 @@
                 "PMi":"2"
             }
         },
-        "Twd":40,
+        "Twd":43,
         "Type":"Master",
         "Trifle":true
     },
@@ -19620,7 +19620,7 @@
                 "PV":"1"
             }
         },
-        "Twd":276,
+        "Twd":277,
         "Type":"Action Modifier"
     },
     "100493":{
@@ -20579,7 +20579,7 @@
                 "PG":"3"
             }
         },
-        "Twd":59,
+        "Twd":61,
         "Type":"Reaction"
     },
     "100515":{
@@ -20647,7 +20647,7 @@
                 "NR":5
             }
         },
-        "Twd":252,
+        "Twd":253,
         "Type":"Action"
     },
     "100516":{
@@ -20824,7 +20824,7 @@
                 "NL":3
             }
         },
-        "Twd":1433,
+        "Twd":1438,
         "Type":"Reaction"
     },
     "100519":{
@@ -20912,7 +20912,7 @@
                 "PSal":"2"
             }
         },
-        "Twd":959,
+        "Twd":963,
         "Type":"Reaction"
     },
     "100520":{
@@ -20980,7 +20980,7 @@
                 "PM":1
             }
         },
-        "Twd":55,
+        "Twd":56,
         "Type":"Master"
     },
     "100522":{
@@ -21083,7 +21083,7 @@
                 "PM":"2"
             }
         },
-        "Twd":93,
+        "Twd":94,
         "Type":"Action Modifier/Combat"
     },
     "100525":{
@@ -22010,7 +22010,7 @@
                 "DTC":true
             }
         },
-        "Twd":1223,
+        "Twd":1231,
         "Type":"Master"
     },
     "100546":{
@@ -22178,7 +22178,7 @@
                 "NL":1
             }
         },
-        "Twd":191,
+        "Twd":192,
         "Type":"Combat"
     },
     "100550":{
@@ -22528,7 +22528,7 @@
                 "PB":"1"
             }
         },
-        "Twd":189,
+        "Twd":190,
         "Type":"Political Action"
     },
     "100558":{
@@ -23019,7 +23019,7 @@
                 "PTo":"1"
             }
         },
-        "Twd":164,
+        "Twd":165,
         "Type":"Political Action"
     },
     "100571":{
@@ -23174,7 +23174,7 @@
                 "PV":"2"
             }
         },
-        "Twd":175,
+        "Twd":176,
         "Type":"Action"
     },
     "100574":{
@@ -23269,7 +23269,7 @@
                 "AU":"3"
             }
         },
-        "Twd":47,
+        "Twd":49,
         "Type":"Combat"
     },
     "102220":{
@@ -23363,7 +23363,6 @@
             {
                 "text":"If another Methuselah is the target, he must declare whether he attempts or declines to block before Draba can be used ([chi]) or played ([CHI]). ",
                 "refs":{
-                    "[PIB 20150820]":"http://www.vekn.net/forum/rules-questions/72462-hide-the-heart-timing-questions#72626",
                     "[ANK 20200607]":"http://www.vekn.net/forum/rules-questions/78676-draba-timing#100043"
                 }
             }
@@ -23507,7 +23506,7 @@
                 "DoF":"1"
             }
         },
-        "Twd":284,
+        "Twd":285,
         "Type":"Event"
     },
     "100582":{
@@ -23857,7 +23856,7 @@
                 "NH":1
             }
         },
-        "Twd":1865,
+        "Twd":1877,
         "Type":"Master"
     },
     "100589":{
@@ -23955,7 +23954,7 @@
                 "PB":1
             }
         },
-        "Twd":6,
+        "Twd":7,
         "Type":"Equipment"
     },
     "100592":{
@@ -24257,7 +24256,7 @@
                 "PB":"4"
             }
         },
-        "Twd":31,
+        "Twd":32,
         "Type":"Combat"
     },
     "100598":{
@@ -24322,7 +24321,7 @@
                 "PSal":"2"
             }
         },
-        "Twd":514,
+        "Twd":515,
         "Type":"Reaction"
     },
     "100599":{
@@ -24404,7 +24403,7 @@
                 "NTz":2
             }
         },
-        "Twd":211,
+        "Twd":212,
         "Type":"Action Modifier"
     },
     "100601":{
@@ -24452,7 +24451,7 @@
                 "PG":"3"
             }
         },
-        "Twd":313,
+        "Twd":317,
         "Type":"Combat"
     },
     "100602":{
@@ -24576,7 +24575,7 @@
                 "AU":"2"
             }
         },
-        "Twd":22,
+        "Twd":23,
         "Type":"Political Action"
     },
     "100606":{
@@ -24764,7 +24763,7 @@
                 "PG":"1"
             }
         },
-        "Twd":165,
+        "Twd":167,
         "Type":"Master"
     },
     "100610":{
@@ -25035,7 +25034,7 @@
                 "PGar":"2"
             }
         },
-        "Twd":231,
+        "Twd":233,
         "Type":"Master"
     },
     "100617":{
@@ -25087,7 +25086,7 @@
                 "PMi":"1"
             }
         },
-        "Twd":694,
+        "Twd":699,
         "Type":"Action Modifier"
     },
     "100618":{
@@ -25298,7 +25297,7 @@
                 "DTC":true
             }
         },
-        "Twd":14,
+        "Twd":15,
         "Type":"Action Modifier/Reaction"
     },
     "100623":{
@@ -25723,7 +25722,7 @@
                 "LB":"9"
             }
         },
-        "Twd":166,
+        "Twd":168,
         "Type":"Action"
     },
     "100634":{
@@ -25994,7 +25993,7 @@
                 "PV":"4"
             }
         },
-        "Twd":254,
+        "Twd":256,
         "Type":"Action"
     },
     "100641":{
@@ -26067,7 +26066,7 @@
                 "PMi":"2"
             }
         },
-        "Twd":36,
+        "Twd":37,
         "Type":"Action Modifier"
     },
     "100642":{
@@ -26166,7 +26165,7 @@
                 "":"2"
             }
         },
-        "Twd":2,
+        "Twd":3,
         "Type":"Equipment"
     },
     "100644":{
@@ -26245,7 +26244,7 @@
                 "PH":3
             }
         },
-        "Twd":480,
+        "Twd":481,
         "Type":"Reaction"
     },
     "100645":{
@@ -26296,7 +26295,7 @@
                 "":"1"
             }
         },
-        "Twd":415,
+        "Twd":417,
         "Type":"Action Modifier"
     },
     "100646":{
@@ -26340,7 +26339,7 @@
                 "":"1"
             }
         },
-        "Twd":66,
+        "Twd":67,
         "Type":"Master"
     },
     "100647":{
@@ -26610,7 +26609,7 @@
                 "PR":"1"
             }
         },
-        "Twd":599,
+        "Twd":606,
         "Type":"Action"
     },
     "100653":{
@@ -27666,7 +27665,7 @@
                 "PH":3
             }
         },
-        "Twd":658,
+        "Twd":664,
         "Type":"Reaction"
     },
     "100681":{
@@ -27746,7 +27745,7 @@
                 "PM":"4"
             }
         },
-        "Twd":139,
+        "Twd":140,
         "Type":"Action Modifier"
     },
     "100683":{
@@ -27897,7 +27896,7 @@
                 "PG":"3"
             }
         },
-        "Twd":51,
+        "Twd":52,
         "Type":"Reaction"
     },
     "100687":{
@@ -27973,7 +27972,7 @@
                 "PMi":"1"
             }
         },
-        "Twd":739,
+        "Twd":745,
         "Type":"Action Modifier"
     },
     "100688":{
@@ -28488,7 +28487,7 @@
                 "NTz":1
             }
         },
-        "Twd":701,
+        "Twd":702,
         "Type":"Master"
     },
     "100699":{
@@ -28876,7 +28875,7 @@
                 "DTC":true
             }
         },
-        "Twd":37,
+        "Twd":38,
         "Type":"Action Modifier"
     },
     "100708":{
@@ -28954,7 +28953,7 @@
                 "":"1"
             }
         },
-        "Twd":200,
+        "Twd":201,
         "Type":"Event"
     },
     "100710":{
@@ -29519,7 +29518,7 @@
                 "PMi":"1"
             }
         },
-        "Twd":30,
+        "Twd":31,
         "Type":"Master"
     },
     "100723":{
@@ -30288,7 +30287,7 @@
                 "PTr":"1"
             }
         },
-        "Twd":7,
+        "Twd":8,
         "Type":"Equipment"
     },
     "100744":{
@@ -30783,7 +30782,7 @@
             {
                 "text":"[MYT] If another Methuselah is the target, he must declare whether he attempts or declines to block before Folderol can be played. ",
                 "refs":{
-                    "[PIB 20150820]":"http://www.vekn.net/forum/rules-questions/72462-hide-the-heart-timing-questions#72626"
+                    "[ANK 20200607]":"http://www.vekn.net/forum/rules-questions/78676-draba-timing#100043"
                 }
             }
         ],
@@ -30917,7 +30916,7 @@
                 "C":true
             }
         },
-        "Twd":82,
+        "Twd":83,
         "Type":"Action Modifier/Combat"
     },
     "100759":{
@@ -31321,7 +31320,7 @@
                 "PTz":"3"
             }
         },
-        "Twd":394,
+        "Twd":395,
         "Type":"Action Modifier"
     },
     "100766":{
@@ -31472,7 +31471,7 @@
                 "PM":"2"
             }
         },
-        "Twd":423,
+        "Twd":426,
         "Type":"Action Modifier"
     },
     "100770":{
@@ -31606,7 +31605,7 @@
                 "NTz":2
             }
         },
-        "Twd":308,
+        "Twd":311,
         "Type":"Combat"
     },
     "102223":{
@@ -31654,7 +31653,7 @@
                 "NTz":3
             }
         },
-        "Twd":73,
+        "Twd":76,
         "Type":"Action Modifier/Reaction"
     },
     "102224":{
@@ -31850,7 +31849,7 @@
                 "R":true
             }
         },
-        "Twd":205,
+        "Twd":206,
         "Type":"Master"
     },
     "100776":{
@@ -31913,7 +31912,7 @@
                 "PR":"1"
             }
         },
-        "Twd":40,
+        "Twd":43,
         "Type":"Master"
     },
     "100778":{
@@ -32354,7 +32353,7 @@
                 "PH":4
             }
         },
-        "Twd":638,
+        "Twd":639,
         "Type":"Action Modifier"
     },
     "100789":{
@@ -33044,7 +33043,7 @@
                 "PG":"1"
             }
         },
-        "Twd":34,
+        "Twd":35,
         "Type":"Master"
     },
     "100808":{
@@ -33122,7 +33121,7 @@
                 "PR":"1"
             }
         },
-        "Twd":94,
+        "Twd":100,
         "Type":"Master"
     },
     "100810":{
@@ -33798,7 +33797,7 @@
                 "NH":1
             }
         },
-        "Twd":1504,
+        "Twd":1511,
         "Type":"Master"
     },
     "100825":{
@@ -34148,7 +34147,7 @@
                 "PwN":"3"
             }
         },
-        "Twd":90,
+        "Twd":91,
         "Type":"Combat"
     },
     "100835":{
@@ -34607,7 +34606,7 @@
                 "NTz":4
             }
         },
-        "Twd":1040,
+        "Twd":1042,
         "Type":"Action"
     },
     "100846":{
@@ -34683,7 +34682,7 @@
                 "2006-11-26":true
             }
         },
-        "Twd":65,
+        "Twd":67,
         "Type":"Equipment"
     },
     "100848":{
@@ -35221,7 +35220,7 @@
                 "PBH":"2"
             }
         },
-        "Twd":52,
+        "Twd":53,
         "Type":"Master"
     },
     "100861":{
@@ -35393,7 +35392,7 @@
                 "PR":"4"
             }
         },
-        "Twd":141,
+        "Twd":142,
         "Type":"Reaction"
     },
     "100864":{
@@ -35469,7 +35468,7 @@
                 "R":true
             }
         },
-        "Twd":32,
+        "Twd":33,
         "Type":"Equipment"
     },
     "100866":{
@@ -35519,7 +35518,7 @@
                 "NSal":1
             }
         },
-        "Twd":192,
+        "Twd":193,
         "Type":"Master"
     },
     "100867":{
@@ -35889,7 +35888,7 @@
                 "PSam":1
             }
         },
-        "Twd":6,
+        "Twd":7,
         "Type":"Action Modifier"
     },
     "100878":{
@@ -36904,7 +36903,7 @@
                 "PMin":"1"
             }
         },
-        "Twd":797,
+        "Twd":802,
         "Type":"Equipment"
     },
     "100904":{
@@ -37118,7 +37117,7 @@
                 "":"1"
             }
         },
-        "Twd":248,
+        "Twd":250,
         "Type":"Master"
     },
     "100909":{
@@ -37197,7 +37196,7 @@
                 "DTC":true
             }
         },
-        "Twd":40,
+        "Twd":41,
         "Type":"Combat"
     },
     "100911":{
@@ -37718,7 +37717,7 @@
                 "NR":1
             }
         },
-        "Twd":66,
+        "Twd":67,
         "Type":"Action Modifier/Combat"
     },
     "100922":{
@@ -38077,7 +38076,7 @@
                 "PTz":"1"
             }
         },
-        "Twd":120,
+        "Twd":121,
         "Type":"Retainer"
     },
     "100933":{
@@ -38229,7 +38228,7 @@
                 "PG":1
             }
         },
-        "Twd":13,
+        "Twd":14,
         "Type":"Action Modifier"
     },
     "100937":{
@@ -38669,7 +38668,7 @@
                 "DTC":true
             }
         },
-        "Twd":79,
+        "Twd":81,
         "Type":"Action Modifier"
     },
     "100948":{
@@ -38692,7 +38691,6 @@
             {
                 "text":"If another Methuselah is the target, he must declare whether he attempts or declines to block before Ignis Fatuus can be played. ",
                 "refs":{
-                    "[PIB 20150820]":"http://www.vekn.net/forum/rules-questions/72462-hide-the-heart-timing-questions#72626",
                     "[ANK 20200607]":"http://www.vekn.net/forum/rules-questions/78676-draba-timing#100043"
                 }
             }
@@ -39222,7 +39220,7 @@
                 "NL":6
             }
         },
-        "Twd":299,
+        "Twd":301,
         "Type":"Combat"
     },
     "100960":{
@@ -39948,7 +39946,7 @@
                 "PTr":1
             }
         },
-        "Twd":18,
+        "Twd":20,
         "Type":"Master"
     },
     "100980":{
@@ -40170,7 +40168,7 @@
                 "":"2"
             }
         },
-        "Twd":981,
+        "Twd":987,
         "Type":"Master"
     },
     "100985":{
@@ -40514,7 +40512,7 @@
                 "":"3"
             }
         },
-        "Twd":105,
+        "Twd":106,
         "Type":"Action Modifier"
     },
     "100995":{
@@ -40795,7 +40793,7 @@
                 "PM":"6"
             }
         },
-        "Twd":175,
+        "Twd":177,
         "Type":"Action Modifier"
     },
     "101002":{
@@ -41331,7 +41329,7 @@
                 "PSal":"1"
             }
         },
-        "Twd":672,
+        "Twd":675,
         "Type":"Equipment"
     },
     "101015":{
@@ -41561,7 +41559,7 @@
                 "PoS":"1"
             }
         },
-        "Twd":541,
+        "Twd":545,
         "Type":"Master"
     },
     "101020":{
@@ -41808,7 +41806,7 @@
                 "R":true
             }
         },
-        "Twd":6,
+        "Twd":7,
         "Type":"Equipment"
     },
     "101026":{
@@ -42171,7 +42169,7 @@
                 "DTC":true
             }
         },
-        "Twd":36,
+        "Twd":37,
         "Type":"Equipment"
     },
     "101036":{
@@ -42339,7 +42337,7 @@
                 "PTr":"1"
             }
         },
-        "Twd":122,
+        "Twd":123,
         "Type":"Equipment"
     },
     "101041":{
@@ -42889,7 +42887,7 @@
                 "U":true
             }
         },
-        "Twd":22,
+        "Twd":23,
         "Type":"Political Action"
     },
     "101054":{
@@ -42975,7 +42973,7 @@
                 "PM":"8"
             }
         },
-        "Twd":165,
+        "Twd":166,
         "Type":"Action"
     },
     "101056":{
@@ -43067,7 +43065,7 @@
                 "":"2"
             }
         },
-        "Twd":735,
+        "Twd":739,
         "Type":"Political Action"
     },
     "101057":{
@@ -44042,7 +44040,7 @@
                 "PM":"2"
             }
         },
-        "Twd":14,
+        "Twd":15,
         "Type":"Equipment"
     },
     "101081":{
@@ -44093,7 +44091,7 @@
                 "SKM":"2"
             }
         },
-        "Twd":164,
+        "Twd":165,
         "Type":"Equipment"
     },
     "101082":{
@@ -44806,7 +44804,7 @@
                 "PB":"1"
             }
         },
-        "Twd":23,
+        "Twd":24,
         "Type":"Master"
     },
     "101101":{
@@ -44946,7 +44944,7 @@
                 "":"1"
             }
         },
-        "Twd":69,
+        "Twd":70,
         "Type":"Master"
     },
     "101104":{
@@ -45309,7 +45307,7 @@
                 "":"1"
             }
         },
-        "Twd":256,
+        "Twd":258,
         "Type":"Master"
     },
     "101113":{
@@ -45835,7 +45833,7 @@
                 "PR":"4"
             }
         },
-        "Twd":894,
+        "Twd":900,
         "Type":"Action Modifier"
     },
     "101126":{
@@ -46652,7 +46650,7 @@
                 "PTr":"1"
             }
         },
-        "Twd":226,
+        "Twd":229,
         "Type":"Action"
     },
     "101144":{
@@ -46726,7 +46724,7 @@
                 "":"6"
             }
         },
-        "Twd":699,
+        "Twd":704,
         "Type":"Combat"
     },
     "101145":{
@@ -47448,7 +47446,7 @@
                 "DTC":true
             }
         },
-        "Twd":0,
+        "Twd":1,
         "Type":"Action Modifier"
     },
     "101163":{
@@ -47849,7 +47847,7 @@
                 "DTC":true
             }
         },
-        "Twd":4,
+        "Twd":5,
         "Type":"Equipment"
     },
     "101175":{
@@ -48897,7 +48895,7 @@
                 "AU":"2"
             }
         },
-        "Twd":19,
+        "Twd":20,
         "Type":"Action Modifier"
     },
     "101200":{
@@ -49572,7 +49570,7 @@
                 "PM":"3"
             }
         },
-        "Twd":47,
+        "Twd":48,
         "Type":"Action Modifier"
     },
     "101217":{
@@ -49673,7 +49671,7 @@
                 "C":true
             }
         },
-        "Twd":7,
+        "Twd":8,
         "Type":"Reaction"
     },
     "101219":{
@@ -49904,7 +49902,7 @@
                 "PTr":"6"
             }
         },
-        "Twd":217,
+        "Twd":220,
         "Type":"Action Modifier"
     },
     "101224":{
@@ -49991,7 +49989,7 @@
                 "PV":"1"
             }
         },
-        "Twd":256,
+        "Twd":257,
         "Type":"Master"
     },
     "101226":{
@@ -50583,7 +50581,7 @@
                 "":"1"
             }
         },
-        "Twd":461,
+        "Twd":464,
         "Type":"Master"
     },
     "101239":{
@@ -50614,7 +50612,7 @@
                 "PG":"1"
             }
         },
-        "Twd":66,
+        "Twd":67,
         "Type":"Action Modifier"
     },
     "101240":{
@@ -50678,7 +50676,7 @@
                 "R":true
             }
         },
-        "Twd":12,
+        "Twd":13,
         "Type":"Equipment"
     },
     "101241":{
@@ -51031,7 +51029,7 @@
                 "DTC":true
             }
         },
-        "Twd":14,
+        "Twd":15,
         "Type":"Action"
     },
     "101249":{
@@ -51072,7 +51070,7 @@
                 "PBh":"1"
             }
         },
-        "Twd":402,
+        "Twd":404,
         "Type":"Retainer"
     },
     "101250":{
@@ -51191,7 +51189,7 @@
                 "DTC":true
             }
         },
-        "Twd":0,
+        "Twd":1,
         "Type":"Equipment"
     },
     "101253":{
@@ -51386,7 +51384,7 @@
                 "2020-05-11":true
             }
         },
-        "Twd":161,
+        "Twd":162,
         "Type":"Action Modifier/Reaction"
     },
     "101257":{
@@ -51503,7 +51501,7 @@
                 "NH":2
             }
         },
-        "Twd":621,
+        "Twd":623,
         "Type":"Reaction"
     },
     "101260":{
@@ -51710,7 +51708,7 @@
                 "":"1"
             }
         },
-        "Twd":171,
+        "Twd":174,
         "Type":"Event"
     },
     "101266":{
@@ -51922,7 +51920,7 @@
                 "PB":"1"
             }
         },
-        "Twd":165,
+        "Twd":166,
         "Type":"Political Action"
     },
     "101272":{
@@ -51995,7 +51993,7 @@
                 "PwN":"8"
             }
         },
-        "Twd":107,
+        "Twd":109,
         "Type":"Ally"
     },
     "101273":{
@@ -52196,7 +52194,7 @@
                 "PB":"1"
             }
         },
-        "Twd":55,
+        "Twd":56,
         "Type":"Master"
     },
     "101278":{
@@ -52475,7 +52473,6 @@
             {
                 "text":"If another Methuselah is the target, he must declare whether he attempts or declines to block before Night Terrors can be played. ",
                 "refs":{
-                    "[PIB 20150820]":"http://www.vekn.net/forum/rules-questions/72462-hide-the-heart-timing-questions#72626",
                     "[ANK 20200607]":"http://www.vekn.net/forum/rules-questions/78676-draba-timing#100043"
                 }
             },
@@ -52849,7 +52846,7 @@
                 "PM":"2"
             }
         },
-        "Twd":99,
+        "Twd":100,
         "Type":"Combat"
     },
     "101293":{
@@ -52957,7 +52954,7 @@
                 "PB":1
             }
         },
-        "Twd":2,
+        "Twd":3,
         "Type":"Master",
         "Trifle":true
     },
@@ -53321,7 +53318,7 @@
                 "R":true
             }
         },
-        "Twd":50,
+        "Twd":51,
         "Type":"Event"
     },
     "101306":{
@@ -53678,7 +53675,7 @@
                 "DTC":true
             }
         },
-        "Twd":34,
+        "Twd":35,
         "Type":"Action Modifier/Combat"
     },
     "101314":{
@@ -54011,7 +54008,7 @@
                 "PH":3
             }
         },
-        "Twd":1817,
+        "Twd":1828,
         "Type":"Reaction"
     },
     "102256":{
@@ -54165,7 +54162,7 @@
                 "PB":"1"
             }
         },
-        "Twd":23,
+        "Twd":24,
         "Type":"Action"
     },
     "101325":{
@@ -54246,7 +54243,7 @@
                 "PMin":"1"
             }
         },
-        "Twd":119,
+        "Twd":120,
         "Type":"Master"
     },
     "101327":{
@@ -54310,7 +54307,7 @@
                 "DTC":true
             }
         },
-        "Twd":17,
+        "Twd":18,
         "Type":"Equipment"
     },
     "101329":{
@@ -54381,7 +54378,7 @@
                 "PTz":"3"
             }
         },
-        "Twd":86,
+        "Twd":90,
         "Type":"Reaction"
     },
     "101330":{
@@ -55367,7 +55364,7 @@
                 "NL":2
             }
         },
-        "Twd":521,
+        "Twd":522,
         "Type":"Political Action"
     },
     "101354":{
@@ -55405,7 +55402,7 @@
                 "PR":"1"
             }
         },
-        "Twd":33,
+        "Twd":35,
         "Type":"Master"
     },
     "101355":{
@@ -55442,7 +55439,7 @@
                 "":"1"
             }
         },
-        "Twd":622,
+        "Twd":627,
         "Type":"Master"
     },
     "102231":{
@@ -55470,7 +55467,7 @@
                 "PMi":"4"
             }
         },
-        "Twd":35,
+        "Twd":37,
         "Type":"Reaction"
     },
     "101356":{
@@ -56431,7 +56428,7 @@
                 "PTr":"1"
             }
         },
-        "Twd":1706,
+        "Twd":1712,
         "Type":"Master"
     },
     "101385":{
@@ -56517,7 +56514,7 @@
                 "R":true
             }
         },
-        "Twd":29,
+        "Twd":30,
         "Type":"Action Modifier"
     },
     "101387":{
@@ -56554,7 +56551,7 @@
                 "":"2"
             }
         },
-        "Twd":191,
+        "Twd":193,
         "Type":"Action Modifier"
     },
     "101388":{
@@ -56619,7 +56616,7 @@
                 "NTz":1
             }
         },
-        "Twd":500,
+        "Twd":501,
         "Type":"Master"
     },
     "101389":{
@@ -57160,7 +57157,7 @@
                 "PMi":"5"
             }
         },
-        "Twd":33,
+        "Twd":34,
         "Type":"Action"
     },
     "101403":{
@@ -57309,7 +57306,7 @@
                 "PM":"2"
             }
         },
-        "Twd":76,
+        "Twd":77,
         "Type":"Reaction"
     },
     "101407":{
@@ -57688,7 +57685,7 @@
                 "":"1"
             }
         },
-        "Twd":359,
+        "Twd":361,
         "Type":"Political Action"
     },
     "101418":{
@@ -58447,7 +58444,7 @@
                 "PR":"1"
             }
         },
-        "Twd":76,
+        "Twd":80,
         "Type":"Master"
     },
     "101436":{
@@ -58472,7 +58469,7 @@
                 "R":true
             }
         },
-        "Twd":62,
+        "Twd":63,
         "Type":"Master"
     },
     "101437":{
@@ -58576,7 +58573,7 @@
                 "PSal":"1"
             }
         },
-        "Twd":844,
+        "Twd":849,
         "Type":"Master"
     },
     "101440":{
@@ -59657,7 +59654,7 @@
                 "R":true
             }
         },
-        "Twd":3,
+        "Twd":4,
         "Type":"Action"
     },
     "101475":{
@@ -60552,7 +60549,7 @@
                 "AU":"3"
             }
         },
-        "Twd":18,
+        "Twd":19,
         "Type":"Action Modifier"
     },
     "101497":{
@@ -60677,7 +60674,7 @@
                 "PN":"2"
             }
         },
-        "Twd":10,
+        "Twd":11,
         "Type":"Reaction"
     },
     "101500":{
@@ -60734,7 +60731,7 @@
                 "":"1"
             }
         },
-        "Twd":71,
+        "Twd":72,
         "Type":"Master"
     },
     "101501":{
@@ -60781,7 +60778,7 @@
                 "NR":2
             }
         },
-        "Twd":52,
+        "Twd":54,
         "Type":"Reaction"
     },
     "101502":{
@@ -61082,7 +61079,7 @@
                 "PT":"3"
             }
         },
-        "Twd":182,
+        "Twd":183,
         "Type":"Combat"
     },
     "101508":{
@@ -61472,7 +61469,7 @@
                 "U":true
             }
         },
-        "Twd":96,
+        "Twd":97,
         "Type":"Action"
     },
     "101518":{
@@ -62215,7 +62212,7 @@
                 "NR":1
             }
         },
-        "Twd":602,
+        "Twd":604,
         "Type":"Master"
     },
     "101537":{
@@ -62774,7 +62771,7 @@
                 "PN":"2"
             }
         },
-        "Twd":354,
+        "Twd":355,
         "Type":"Retainer"
     },
     "101551":{
@@ -62904,7 +62901,7 @@
                 "NR":1
             }
         },
-        "Twd":21,
+        "Twd":22,
         "Type":"Master"
     },
     "101554":{
@@ -63448,7 +63445,7 @@
                 "PMi":"2"
             }
         },
-        "Twd":102,
+        "Twd":104,
         "Type":"Political Action"
     },
     "101568":{
@@ -63539,7 +63536,7 @@
                 "DM":"4"
             }
         },
-        "Twd":14,
+        "Twd":15,
         "Type":"Action"
     },
     "101571":{
@@ -63759,7 +63756,7 @@
                 "AU":"2"
             }
         },
-        "Twd":4,
+        "Twd":5,
         "Type":"Action Modifier"
     },
     "101576":{
@@ -64358,7 +64355,7 @@
                 "":"1"
             }
         },
-        "Twd":390,
+        "Twd":392,
         "Type":"Political Action"
     },
     "101592":{
@@ -64668,7 +64665,7 @@
                 "C":true
             }
         },
-        "Twd":16,
+        "Twd":17,
         "Type":"Master"
     },
     "101602":{
@@ -65035,7 +65032,7 @@
                 "PBH":"3"
             }
         },
-        "Twd":146,
+        "Twd":147,
         "Type":"Action Modifier/Combat"
     },
     "101611":{
@@ -65414,7 +65411,7 @@
                 "C":true
             }
         },
-        "Twd":31,
+        "Twd":32,
         "Type":"Action"
     },
     "101622":{
@@ -65553,7 +65550,7 @@
                 "PMi":"3"
             }
         },
-        "Twd":34,
+        "Twd":35,
         "Type":"Action Modifier"
     },
     "101625":{
@@ -65688,7 +65685,7 @@
                 "PM":"4"
             }
         },
-        "Twd":109,
+        "Twd":111,
         "Type":"Action"
     },
     "101628":{
@@ -65831,7 +65828,7 @@
                 "PMi":"1"
             }
         },
-        "Twd":38,
+        "Twd":40,
         "Type":"Political Action"
     },
     "101632":{
@@ -65874,7 +65871,7 @@
                 "PG":"1"
             }
         },
-        "Twd":46,
+        "Twd":47,
         "Type":"Action"
     },
     "101633":{
@@ -66332,7 +66329,7 @@
                 "":"1"
             }
         },
-        "Twd":2,
+        "Twd":4,
         "Type":"Equipment"
     },
     "101642":{
@@ -66904,7 +66901,7 @@
                 "PN":"6"
             }
         },
-        "Twd":16,
+        "Twd":17,
         "Type":"Combat"
     },
     "101655":{
@@ -67087,7 +67084,7 @@
                 "R":true
             }
         },
-        "Twd":32,
+        "Twd":33,
         "Type":"Equipment"
     },
     "101659":{
@@ -67373,7 +67370,7 @@
                 "TUB":"1"
             }
         },
-        "Twd":41,
+        "Twd":42,
         "Type":"Ally"
     },
     "101666":{
@@ -67989,7 +67986,7 @@
                 "DTC":true
             }
         },
-        "Twd":99,
+        "Twd":100,
         "Type":"Equipment"
     },
     "101682":{
@@ -68446,7 +68443,6 @@
             {
                 "text":"If another Methuselah is the target, he must declare whether he attempts or declines to block before Scobax can be played. ",
                 "refs":{
-                    "[PIB 20150820]":"http://www.vekn.net/forum/rules-questions/72462-hide-the-heart-timing-questions#72626",
                     "[ANK 20200607]":"http://www.vekn.net/forum/rules-questions/78676-draba-timing#100043"
                 }
             }
@@ -68692,7 +68688,7 @@
                 "R":true
             }
         },
-        "Twd":271,
+        "Twd":272,
         "Type":"Event"
     },
     "101698":{
@@ -68959,7 +68955,7 @@
                 "R":true
             }
         },
-        "Twd":43,
+        "Twd":44,
         "Type":"Equipment"
     },
     "101704":{
@@ -69108,7 +69104,7 @@
                 "NL":3
             }
         },
-        "Twd":491,
+        "Twd":492,
         "Type":"Reaction"
     },
     "101707":{
@@ -69335,7 +69331,7 @@
                 "PM":"1"
             }
         },
-        "Twd":500,
+        "Twd":503,
         "Type":"Master"
     },
     "101712":{
@@ -69600,7 +69596,7 @@
                 "NTz":3
             }
         },
-        "Twd":216,
+        "Twd":217,
         "Type":"Reaction"
     },
     "101718":{
@@ -69751,7 +69747,7 @@
                 "DTC":true
             }
         },
-        "Twd":38,
+        "Twd":39,
         "Type":"Action"
     },
     "101722":{
@@ -69851,7 +69847,7 @@
                 "R":true
             }
         },
-        "Twd":20,
+        "Twd":21,
         "Type":"Action Modifier"
     },
     "101725":{
@@ -71195,7 +71191,7 @@
                 "":"1"
             }
         },
-        "Twd":1,
+        "Twd":3,
         "Type":"Master"
     },
     "101755":{
@@ -71676,7 +71672,7 @@
                 "PR":"1"
             }
         },
-        "Twd":34,
+        "Twd":35,
         "Type":"Equipment"
     },
     "101768":{
@@ -72132,7 +72128,7 @@
                 "PI":"2"
             }
         },
-        "Twd":152,
+        "Twd":153,
         "Type":"Combat"
     },
     "101780":{
@@ -72204,7 +72200,7 @@
                 "":"1"
             }
         },
-        "Twd":63,
+        "Twd":65,
         "Type":"Equipment"
     },
     "101782":{
@@ -72353,7 +72349,7 @@
                 "R":true
             }
         },
-        "Twd":30,
+        "Twd":31,
         "Type":"Equipment"
     },
     "101786":{
@@ -72891,7 +72887,7 @@
                 "PB":"4"
             }
         },
-        "Twd":56,
+        "Twd":57,
         "Type":"Combat"
     },
     "101799":{
@@ -73394,7 +73390,7 @@
                 "PG":"1"
             }
         },
-        "Twd":452,
+        "Twd":453,
         "Type":"Master"
     },
     "101812":{
@@ -73600,7 +73596,7 @@
                 "PTr":"1"
             }
         },
-        "Twd":265,
+        "Twd":269,
         "Type":"Equipment"
     },
     "101817":{
@@ -73825,7 +73821,7 @@
                 "PTo":"1"
             }
         },
-        "Twd":59,
+        "Twd":60,
         "Type":"Master"
     },
     "101822":{
@@ -74267,7 +74263,7 @@
                 "R":true
             }
         },
-        "Twd":31,
+        "Twd":32,
         "Type":"Equipment"
     },
     "101833":{
@@ -75238,7 +75234,7 @@
                 "PTr":"1"
             }
         },
-        "Twd":189,
+        "Twd":190,
         "Type":"Equipment"
     },
     "101857":{
@@ -75345,7 +75341,7 @@
                 "PN":"1"
             }
         },
-        "Twd":476,
+        "Twd":478,
         "Type":"Action Modifier"
     },
     "101858":{
@@ -76504,7 +76500,7 @@
                 "C":true
             }
         },
-        "Twd":25,
+        "Twd":26,
         "Type":"Combat"
     },
     "101889":{
@@ -76891,7 +76887,7 @@
                 "PM":"1"
             }
         },
-        "Twd":671,
+        "Twd":674,
         "Type":"Master"
     },
     "101897":{
@@ -77569,7 +77565,7 @@
                 "PR":"4"
             }
         },
-        "Twd":727,
+        "Twd":733,
         "Type":"Action Modifier/Combat"
     },
     "101914":{
@@ -78962,7 +78958,7 @@
                 "NL":3
             }
         },
-        "Twd":755,
+        "Twd":758,
         "Type":"Combat"
     },
     "101946":{
@@ -79000,7 +78996,7 @@
                 "C":true
             }
         },
-        "Twd":31,
+        "Twd":32,
         "Type":"Action"
     },
     "101947":{
@@ -79101,7 +79097,7 @@
                 "PTo":"2"
             }
         },
-        "Twd":140,
+        "Twd":141,
         "Type":"Reaction"
     },
     "101949":{
@@ -79188,7 +79184,7 @@
                 "PH":3
             }
         },
-        "Twd":1110,
+        "Twd":1115,
         "Type":"Reaction"
     },
     "101950":{
@@ -79325,7 +79321,7 @@
                 "PM":"2"
             }
         },
-        "Twd":47,
+        "Twd":48,
         "Type":"Action Modifier"
     },
     "101952":{
@@ -79822,7 +79818,7 @@
                 "DTC":true
             }
         },
-        "Twd":4,
+        "Twd":5,
         "Type":"Equipment"
     },
     "101963":{
@@ -80218,7 +80214,7 @@
                 "PG":"5"
             }
         },
-        "Twd":55,
+        "Twd":57,
         "Type":"Action"
     },
     "101973":{
@@ -80317,7 +80313,7 @@
                 "":"1"
             }
         },
-        "Twd":45,
+        "Twd":46,
         "Type":"Event"
     },
     "101975":{
@@ -80700,7 +80696,7 @@
                 "PO":"5"
             }
         },
-        "Twd":76,
+        "Twd":77,
         "Type":"Combat"
     },
     "101984":{
@@ -81154,7 +81150,7 @@
                 "NL":6
             }
         },
-        "Twd":197,
+        "Twd":198,
         "Type":"Combat"
     },
     "101994":{
@@ -81423,7 +81419,7 @@
                 "NSal":3
             }
         },
-        "Twd":0,
+        "Twd":1,
         "Type":"Action/Combat"
     },
     "102000":{
@@ -81984,7 +81980,7 @@
                 "PR":"1"
             }
         },
-        "Twd":38,
+        "Twd":41,
         "Type":"Equipment"
     },
     "102016":{
@@ -82992,7 +82988,7 @@
                 "DTC":true
             }
         },
-        "Twd":16,
+        "Twd":17,
         "Type":"Action"
     },
     "102047":{
@@ -83352,7 +83348,7 @@
                 "":"1"
             }
         },
-        "Twd":138,
+        "Twd":139,
         "Type":"Event"
     },
     "102058":{
@@ -83606,7 +83602,7 @@
                 "PSam":"2"
             }
         },
-        "Twd":16,
+        "Twd":17,
         "Type":"Action Modifier"
     },
     "102063":{
@@ -84231,7 +84227,7 @@
                 "DTC":true
             }
         },
-        "Twd":169,
+        "Twd":170,
         "Type":"Action"
     },
     "102077":{
@@ -84362,7 +84358,7 @@
                 "PwN":"1"
             }
         },
-        "Twd":484,
+        "Twd":486,
         "Type":"Event"
     },
     "102080":{
@@ -85125,7 +85121,7 @@
                 "PR":"3"
             }
         },
-        "Twd":260,
+        "Twd":262,
         "Type":"Action Modifier"
     },
     "102098":{
@@ -85294,7 +85290,7 @@
                 "R":true
             }
         },
-        "Twd":0,
+        "Twd":1,
         "Type":"Equipment"
     },
     "102103":{
@@ -85570,7 +85566,7 @@
                 "PV":"1"
             }
         },
-        "Twd":144,
+        "Twd":145,
         "Type":"Master"
     },
     "102110":{
@@ -85731,7 +85727,7 @@
                 "NSal":2
             }
         },
-        "Twd":1166,
+        "Twd":1172,
         "Type":"Master",
         "Trifle":true
     },
@@ -85760,7 +85756,7 @@
                 "U":true
             }
         },
-        "Twd":1,
+        "Twd":2,
         "Type":"Equipment"
     },
     "102115":{
@@ -86042,7 +86038,7 @@
                 "PH":3
             }
         },
-        "Twd":1178,
+        "Twd":1189,
         "Type":"Master",
         "Trifle":true
     },
@@ -86200,7 +86196,7 @@
                 "PR":"4"
             }
         },
-        "Twd":4,
+        "Twd":6,
         "Type":"Action Modifier"
     },
     "102265":{
@@ -86225,7 +86221,7 @@
                 "PR":"4"
             }
         },
-        "Twd":11,
+        "Twd":13,
         "Type":"Reaction"
     },
     "102126":{
@@ -86444,7 +86440,7 @@
                 "PR":"2"
             }
         },
-        "Twd":3,
+        "Twd":4,
         "Type":"Combat"
     },
     "102131":{
@@ -86535,7 +86531,7 @@
                 "":"6"
             }
         },
-        "Twd":468,
+        "Twd":471,
         "Type":"Action Modifier"
     },
     "102132":{
@@ -87369,7 +87365,7 @@
                 "PB":"1"
             }
         },
-        "Twd":50,
+        "Twd":51,
         "Type":"Master"
     },
     "102151":{
@@ -87445,7 +87441,7 @@
                 "LB":"1"
             }
         },
-        "Twd":514,
+        "Twd":517,
         "Type":"Master",
         "Trifle":true
     },
@@ -87654,7 +87650,7 @@
                 "R":true
             }
         },
-        "Twd":15,
+        "Twd":16,
         "Type":"Master"
     },
     "102159":{
@@ -87975,7 +87971,7 @@
                 "PR":"1"
             }
         },
-        "Twd":55,
+        "Twd":58,
         "Type":"Master"
     },
     "102167":{
@@ -88003,7 +87999,7 @@
                 "DTC":true
             }
         },
-        "Twd":15,
+        "Twd":16,
         "Type":"Master"
     },
     "102168":{
@@ -88207,7 +88203,7 @@
                 "R":true
             }
         },
-        "Twd":49,
+        "Twd":50,
         "Type":"Action"
     },
     "102173":{
@@ -88504,7 +88500,7 @@
                 "":"1"
             }
         },
-        "Twd":748,
+        "Twd":755,
         "Type":"Master",
         "Trifle":true
     },
@@ -89627,7 +89623,7 @@
                 "":"6"
             }
         },
-        "Twd":358,
+        "Twd":360,
         "Type":"Master"
     },
     "102208":{
@@ -89826,7 +89822,7 @@
                 "PG":"1"
             }
         },
-        "Twd":94,
+        "Twd":95,
         "Type":"Master"
     }
 }

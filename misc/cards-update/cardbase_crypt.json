@@ -357,7 +357,7 @@
             }
         },
         "Title":"",
-        "Twd":11
+        "Twd":12
     },
     "200009":{
         "ASCII Name":"Abu Nuwasi",
@@ -460,7 +460,7 @@
             }
         },
         "Title":"inner circle",
-        "Twd":75
+        "Twd":76
     },
     "200012":{
         "ASCII Name":"Adelaide Davis",
@@ -677,7 +677,7 @@
             }
         },
         "Title":"",
-        "Twd":2
+        "Twd":3
     },
     "201664":{
         "ASCII Name":"Adrino Manauara",
@@ -2294,7 +2294,7 @@
             }
         },
         "Title":"baron",
-        "Twd":28
+        "Twd":29
     },
     "200055":{
         "ASCII Name":"Allanyan Serata",
@@ -3167,7 +3167,7 @@
         "Card Text":"Anarch: As the convert enters play, you can remove him from the game to make a non-titled vampire you control Anarch and either gain 1 pool or draw 1 card from your crypt.",
         "Clan":"Caitiff",
         "Disciplines":{},
-        "Group":"ANY",
+        "Group":"any",
         "Id":200076,
         "Name":"Anarch Convert",
         "New":false,
@@ -3203,7 +3203,7 @@
             }
         },
         "Title":"",
-        "Twd":364
+        "Twd":366
     },
     "200077":{
         "ASCII Name":"Anastasia Grey",
@@ -3341,7 +3341,7 @@
             }
         },
         "Title":"prince",
-        "Twd":17
+        "Twd":18
     },
     "200080":{
         "ASCII Name":"Andre LeRoux",
@@ -3402,7 +3402,7 @@
             }
         },
         "Title":"",
-        "Twd":54
+        "Twd":55
     },
     "200081":{
         "ASCII Name":"Andre the Manipulator",
@@ -3433,7 +3433,7 @@
             }
         },
         "Title":"",
-        "Twd":23
+        "Twd":24
     },
     "200082":{
         "ASCII Name":"Andrea Giovanni",
@@ -3713,7 +3713,7 @@
             }
         },
         "Title":"",
-        "Twd":4
+        "Twd":5
     },
     "201665":{
         "ASCII Name":"Angel Guerrero",
@@ -4080,7 +4080,7 @@
             }
         },
         "Title":"",
-        "Twd":1
+        "Twd":2
     },
     "200097":{
         "ASCII Name":"Anjalika Underwood",
@@ -4475,7 +4475,7 @@
             }
         },
         "Title":"justicar",
-        "Twd":91
+        "Twd":92
     },
     "200107":{
         "ASCII Name":"Anson",
@@ -4821,7 +4821,7 @@
             }
         },
         "Title":"",
-        "Twd":93
+        "Twd":95
     },
     "200117":{
         "ASCII Name":"Antonio Delgado",
@@ -5043,7 +5043,7 @@
             }
         },
         "Title":"",
-        "Twd":48
+        "Twd":49
     },
     "200123":{
         "ASCII Name":"Apolonia Czarnecki",
@@ -5418,7 +5418,7 @@
             }
         },
         "Title":"",
-        "Twd":20
+        "Twd":21
     },
     "200133":{
         "ASCII Name":"Arianne, The Conqueror",
@@ -5528,7 +5528,7 @@
             }
         },
         "Title":"inner circle",
-        "Twd":119
+        "Twd":120
     },
     "200136":{
         "ASCII Name":"Arishat",
@@ -5593,7 +5593,7 @@
             }
         },
         "Title":"1 vote",
-        "Twd":51
+        "Twd":52
     },
     "200137":{
         "ASCII Name":"Aristotle de Laurent",
@@ -5990,7 +5990,7 @@
             }
         },
         "Title":"",
-        "Twd":8
+        "Twd":9
     },
     "201620":{
         "ASCII Name":"Ashlesha",
@@ -6046,7 +6046,7 @@
             }
         },
         "Title":"",
-        "Twd":14
+        "Twd":15
     },
     "201578":{
         "ASCII Name":"Asmin Kobane",
@@ -6191,7 +6191,7 @@
             }
         },
         "Title":"baron",
-        "Twd":35
+        "Twd":36
     },
     "200149":{
         "ASCII Name":"Augustus Giovanni",
@@ -7857,7 +7857,7 @@
             }
         },
         "Title":"prince",
-        "Twd":14
+        "Twd":15
     },
     "200191":{
         "ASCII Name":"Bernard, the Scourge",
@@ -8253,7 +8253,7 @@
             }
         },
         "Title":"",
-        "Twd":5
+        "Twd":6
     },
     "200201":{
         "ASCII Name":"Black Cat",
@@ -8857,7 +8857,7 @@
             }
         },
         "Title":"",
-        "Twd":5
+        "Twd":6
     },
     "201667":{
         "ASCII Name":"Branimira",
@@ -8980,7 +8980,7 @@
             }
         },
         "Title":"",
-        "Twd":0
+        "Twd":1
     },
     "200219":{
         "ASCII Name":"Brigitte Mandisa",
@@ -9701,7 +9701,7 @@
             }
         },
         "Title":"",
-        "Twd":7
+        "Twd":8
     },
     "200238":{
         "ASCII Name":"Calvin Cleaver",
@@ -10069,7 +10069,7 @@
             }
         },
         "Title":"",
-        "Twd":6
+        "Twd":7
     },
     "200247":{
         "ASCII Name":"Carmine Giovanni",
@@ -10302,7 +10302,7 @@
             }
         },
         "Title":"baron",
-        "Twd":60
+        "Twd":62
     },
     "200252":{
         "ASCII Name":"Casino Reeds",
@@ -10403,7 +10403,7 @@
             }
         },
         "Title":"",
-        "Twd":22
+        "Twd":23
     },
     "201668":{
         "ASCII Name":"Castellan",
@@ -10531,7 +10531,7 @@
             }
         },
         "Title":"",
-        "Twd":84
+        "Twd":85
     },
     "200257":{
         "ASCII Name":"Cedric",
@@ -11394,7 +11394,7 @@
             }
         },
         "Title":"",
-        "Twd":2
+        "Twd":3
     },
     "200278":{
         "ASCII Name":"Claudio Severino",
@@ -11725,7 +11725,7 @@
             }
         },
         "Title":"",
-        "Twd":16
+        "Twd":17
     },
     "200286":{
         "ASCII Name":"Colin Flynn",
@@ -12447,7 +12447,7 @@
             }
         },
         "Title":"",
-        "Twd":29
+        "Twd":31
     },
     "200305":{
         "ASCII Name":"Cybele",
@@ -13067,7 +13067,7 @@
             }
         },
         "Title":"",
-        "Twd":10
+        "Twd":11
     },
     "200320":{
         "ASCII Name":"Darius Styx",
@@ -13596,7 +13596,7 @@
             }
         },
         "Title":"",
-        "Twd":11
+        "Twd":12
     },
     "200335":{
         "ASCII Name":"Democritus",
@@ -13804,7 +13804,7 @@
             }
         },
         "Title":"",
-        "Twd":9
+        "Twd":10
     },
     "200341":{
         "ASCII Name":"Dhita Choudhair",
@@ -14109,7 +14109,7 @@
             }
         },
         "Title":"",
-        "Twd":11
+        "Twd":12
     },
     "200349":{
         "ASCII Name":"Dmitra Ilyanova",
@@ -14210,7 +14210,7 @@
             }
         },
         "Title":"",
-        "Twd":5
+        "Twd":7
     },
     "201584":{
         "ASCII Name":"Doctor Morocco",
@@ -14987,7 +14987,7 @@
             }
         },
         "Title":"",
-        "Twd":48
+        "Twd":49
     },
     "200369":{
         "ASCII Name":"Doris McMillon",
@@ -15807,7 +15807,7 @@
             }
         },
         "Title":"bishop",
-        "Twd":7
+        "Twd":8
     },
     "200390":{
         "ASCII Name":"Drusilla Euphemia",
@@ -16180,7 +16180,7 @@
             }
         },
         "Title":"",
-        "Twd":29
+        "Twd":30
     },
     "200401":{
         "ASCII Name":"Edith Blount",
@@ -16438,7 +16438,7 @@
             }
         },
         "Title":"",
-        "Twd":24
+        "Twd":25
     },
     "200407":{
         "ASCII Name":"Elena Gutierrez",
@@ -16501,7 +16501,7 @@
             }
         },
         "Title":"",
-        "Twd":13
+        "Twd":15
     },
     "200409":{
         "ASCII Name":"Elihu",
@@ -16675,7 +16675,7 @@
             }
         },
         "Title":"baron",
-        "Twd":41
+        "Twd":43
     },
     "200413":{
         "ASCII Name":"Elizabeth Conde",
@@ -16886,7 +16886,7 @@
             }
         },
         "Title":"",
-        "Twd":84
+        "Twd":86
     },
     "200419":{
         "ASCII Name":"Emerson Bridges",
@@ -17100,7 +17100,7 @@
             }
         },
         "Title":"",
-        "Twd":47
+        "Twd":48
     },
     "200425":{
         "ASCII Name":"Enzo Giovanni, Pentex Board of Directors",
@@ -18540,7 +18540,7 @@
             }
         },
         "Title":"",
-        "Twd":36
+        "Twd":37
     },
     "200462":{
         "ASCII Name":"Feo Ramos",
@@ -19678,7 +19678,7 @@
             }
         },
         "Title":"",
-        "Twd":3
+        "Twd":4
     },
     "200493":{
         "ASCII Name":"Ganhuru",
@@ -19803,7 +19803,7 @@
             }
         },
         "Title":"",
-        "Twd":6
+        "Twd":8
     },
     "200496":{
         "ASCII Name":"Gatjil Munyarryun",
@@ -19903,7 +19903,7 @@
             }
         },
         "Title":"",
-        "Twd":12
+        "Twd":13
     },
     "200498":{
         "ASCII Name":"Gem Ghastly",
@@ -20297,7 +20297,7 @@
             }
         },
         "Title":"",
-        "Twd":2
+        "Twd":3
     },
     "200508":{
         "ASCII Name":"Gerald Windham",
@@ -20438,7 +20438,7 @@
             }
         },
         "Title":"",
-        "Twd":6
+        "Twd":7
     },
     "200512":{
         "ASCII Name":"Ghede",
@@ -20668,7 +20668,7 @@
             }
         },
         "Title":"baron",
-        "Twd":15
+        "Twd":16
     },
     "200518":{
         "ASCII Name":"Gillespi Giovanni",
@@ -21445,7 +21445,7 @@
             }
         },
         "Title":"prince",
-        "Twd":73
+        "Twd":74
     },
     "200539":{
         "ASCII Name":"Grendel the Worm-Eaten",
@@ -22457,7 +22457,7 @@
             }
         },
         "Title":"",
-        "Twd":39
+        "Twd":41
     },
     "200564":{
         "ASCII Name":"Hanna Redmonds",
@@ -23619,7 +23619,7 @@
             }
         },
         "Title":"",
-        "Twd":6
+        "Twd":7
     },
     "200595":{
         "ASCII Name":"Hester Reed",
@@ -25047,7 +25047,7 @@
             }
         },
         "Title":"",
-        "Twd":47
+        "Twd":49
     },
     "201551":{
         "ASCII Name":"Ines Tristao",
@@ -25400,7 +25400,7 @@
             }
         },
         "Title":"",
-        "Twd":4
+        "Twd":5
     },
     "200641":{
         "ASCII Name":"Iris Bennett",
@@ -25460,7 +25460,7 @@
             }
         },
         "Title":"",
-        "Twd":133
+        "Twd":134
     },
     "200643":{
         "ASCII Name":"Isabel Giovanni",
@@ -25995,7 +25995,7 @@
             }
         },
         "Title":"",
-        "Twd":42
+        "Twd":43
     },
     "200659":{
         "ASCII Name":"Jacko",
@@ -26208,7 +26208,7 @@
             }
         },
         "Title":"baron",
-        "Twd":14
+        "Twd":15
     },
     "200665":{
         "ASCII Name":"Jaggedy Andy",
@@ -27028,7 +27028,7 @@
             }
         },
         "Title":"",
-        "Twd":5
+        "Twd":7
     },
     "200686":{
         "ASCII Name":"Jefferson Foster",
@@ -27214,7 +27214,7 @@
             }
         },
         "Title":"",
-        "Twd":28
+        "Twd":29
     },
     "200691":{
         "ASCII Name":"Jephta Hester",
@@ -27840,7 +27840,7 @@
             }
         },
         "Title":"",
-        "Twd":36
+        "Twd":37
     },
     "200708":{
         "ASCII Name":"Joaquin Murietta",
@@ -29195,7 +29195,7 @@
             }
         },
         "Title":"",
-        "Twd":14
+        "Twd":15
     },
     "200747":{
         "ASCII Name":"Kamaria",
@@ -29283,7 +29283,7 @@
             }
         },
         "Title":"",
-        "Twd":50
+        "Twd":52
     },
     "200749":{
         "ASCII Name":"Kamiri wa Itherero",
@@ -31329,7 +31329,7 @@
             }
         },
         "Title":"baron",
-        "Twd":47
+        "Twd":49
     },
     "200797":{
         "ASCII Name":"Kyle Strathcona, Cardinal of Canada",
@@ -31587,7 +31587,7 @@
             }
         },
         "Title":"archbishop",
-        "Twd":37
+        "Twd":39
     },
     "200804":{
         "ASCII Name":"Lady Constancia",
@@ -32578,7 +32578,7 @@
             }
         },
         "Title":"",
-        "Twd":15
+        "Twd":17
     },
     "200828":{
         "ASCII Name":"Legba",
@@ -32867,7 +32867,7 @@
             }
         },
         "Title":"baron",
-        "Twd":34
+        "Twd":35
     },
     "200834":{
         "ASCII Name":"Lia Milliner",
@@ -32963,7 +32963,7 @@
             }
         },
         "Title":"",
-        "Twd":24
+        "Twd":25
     },
     "200837":{
         "ASCII Name":"Lin Jun",
@@ -33902,7 +33902,7 @@
             }
         },
         "Title":"cardinal",
-        "Twd":10
+        "Twd":11
     },
     "200861":{
         "ASCII Name":"Louis de Maisonneuve",
@@ -34437,7 +34437,7 @@
             }
         },
         "Title":"justicar",
-        "Twd":56
+        "Twd":57
     },
     "201700":{
         "ASCII Name":"Lucinde, Alastor",
@@ -35073,7 +35073,7 @@
             }
         },
         "Title":"inner circle",
-        "Twd":121
+        "Twd":122
     },
     "200891":{
         "ASCII Name":"Lydia, Grand Praetor",
@@ -35822,7 +35822,7 @@
             }
         },
         "Title":"",
-        "Twd":30
+        "Twd":31
     },
     "200909":{
         "ASCII Name":"Marcel de Breau",
@@ -36116,7 +36116,7 @@
             }
         },
         "Title":"prince",
-        "Twd":81
+        "Twd":82
     },
     "200916":{
         "ASCII Name":"Marcus Vitel",
@@ -36471,7 +36471,7 @@
             }
         },
         "Title":"",
-        "Twd":57
+        "Twd":58
     },
     "200925":{
         "ASCII Name":"Marianna",
@@ -36807,7 +36807,7 @@
             }
         },
         "Title":"",
-        "Twd":8
+        "Twd":9
     },
     "200934":{
         "ASCII Name":"Marion \"Teacher193\" Perks",
@@ -37076,7 +37076,7 @@
             }
         },
         "Title":"",
-        "Twd":17
+        "Twd":18
     },
     "200942":{
         "ASCII Name":"Marthe Dizier",
@@ -37162,7 +37162,7 @@
             }
         },
         "Title":"",
-        "Twd":59
+        "Twd":61
     },
     "201601":{
         "ASCII Name":"Martina Srnankova",
@@ -37191,7 +37191,7 @@
             }
         },
         "Title":"",
-        "Twd":43
+        "Twd":44
     },
     "200944":{
         "ASCII Name":"Martino della Passaglia",
@@ -37439,7 +37439,7 @@
             }
         },
         "Title":"primogen",
-        "Twd":19
+        "Twd":20
     },
     "200951":{
         "ASCII Name":"Masika",
@@ -37631,7 +37631,7 @@
             }
         },
         "Title":"baron",
-        "Twd":50
+        "Twd":52
     },
     "201558":{
         "ASCII Name":"Massimo Falconi",
@@ -38921,7 +38921,7 @@
             }
         },
         "Title":"",
-        "Twd":16
+        "Twd":17
     },
     "200984":{
         "ASCII Name":"Mictlantecuhtli",
@@ -38994,7 +38994,7 @@
             }
         },
         "Title":"",
-        "Twd":54
+        "Twd":55
     },
     "200986":{
         "ASCII Name":"Miguel Cordovera",
@@ -40154,7 +40154,7 @@
             }
         },
         "Title":"",
-        "Twd":40
+        "Twd":41
     },
     "201014":{
         "ASCII Name":"Mouse",
@@ -40918,7 +40918,7 @@
             }
         },
         "Title":"",
-        "Twd":112
+        "Twd":113
     },
     "201036":{
         "ASCII Name":"Nangila Were",
@@ -40949,7 +40949,7 @@
             }
         },
         "Title":"",
-        "Twd":28
+        "Twd":29
     },
     "201562":{
         "ASCII Name":"Naomi Stewart",
@@ -41110,7 +41110,7 @@
             }
         },
         "Title":"",
-        "Twd":47
+        "Twd":49
     },
     "201632":{
         "ASCII Name":"Nathaniel Bordruff",
@@ -41260,7 +41260,7 @@
             }
         },
         "Title":"",
-        "Twd":4
+        "Twd":5
     },
     "201042":{
         "ASCII Name":"Nefertiti",
@@ -41778,7 +41778,7 @@
         "Disciplines":{
             "Sanguinus":1
         },
-        "Group":"ANY",
+        "Group":"any",
         "Id":201052,
         "Name":"New Blood",
         "New":false,
@@ -41977,7 +41977,7 @@
             }
         },
         "Title":"",
-        "Twd":43
+        "Twd":44
     },
     "201058":{
         "ASCII Name":"Nigel the Shunned",
@@ -42322,7 +42322,7 @@
             }
         },
         "Title":"",
-        "Twd":22
+        "Twd":23
     },
     "201065":{
         "ASCII Name":"Normal",
@@ -42603,7 +42603,7 @@
             }
         },
         "Title":"",
-        "Twd":9
+        "Twd":10
     },
     "201072":{
         "ASCII Name":"Ogwon",
@@ -42750,7 +42750,7 @@
             }
         },
         "Title":"",
-        "Twd":5
+        "Twd":7
     },
     "201075":{
         "ASCII Name":"Olga Triminov",
@@ -44220,7 +44220,7 @@
             }
         },
         "Title":"",
-        "Twd":68
+        "Twd":69
     },
     "201112":{
         "ASCII Name":"Petaniqua",
@@ -44559,7 +44559,7 @@
             }
         },
         "Title":"",
-        "Twd":5
+        "Twd":7
     },
     "201120":{
         "ASCII Name":"Pherydima",
@@ -45330,7 +45330,7 @@
             }
         },
         "Title":"prince",
-        "Twd":76
+        "Twd":77
     },
     "201647":{
         "ASCII Name":"Queen Anne",
@@ -45791,7 +45791,7 @@
             }
         },
         "Title":"inner circle",
-        "Twd":95
+        "Twd":96
     },
     "201152":{
         "ASCII Name":"Rafaele Giovanni",
@@ -46337,7 +46337,7 @@
             }
         },
         "Title":"",
-        "Twd":4
+        "Twd":5
     },
     "201167":{
         "ASCII Name":"Rashiel",
@@ -46427,7 +46427,7 @@
             }
         },
         "Title":"",
-        "Twd":8
+        "Twd":9
     },
     "201169":{
         "ASCII Name":"Raziya Samater",
@@ -47362,7 +47362,7 @@
             }
         },
         "Title":"",
-        "Twd":4
+        "Twd":6
     },
     "201193":{
         "ASCII Name":"Robin Withers",
@@ -47973,7 +47973,7 @@
             }
         },
         "Title":"",
-        "Twd":2
+        "Twd":3
     },
     "201208":{
         "ASCII Name":"Royce",
@@ -48131,7 +48131,7 @@
             }
         },
         "Title":"",
-        "Twd":30
+        "Twd":32
     },
     "201211":{
         "ASCII Name":"Rusticus",
@@ -50044,7 +50044,7 @@
             }
         },
         "Title":"",
-        "Twd":73
+        "Twd":75
     },
     "201262":{
         "ASCII Name":"Selma the Repugnant",
@@ -50123,7 +50123,7 @@
             }
         },
         "Title":"",
-        "Twd":20
+        "Twd":21
     },
     "201264":{
         "ASCII Name":"Sennuwy, The Promoter",
@@ -50353,7 +50353,7 @@
             }
         },
         "Title":"baron",
-        "Twd":12
+        "Twd":13
     },
     "201268":{
         "ASCII Name":"Servius Marius Pustula",
@@ -51034,7 +51034,7 @@
             }
         },
         "Title":"",
-        "Twd":9
+        "Twd":10
     },
     "201286":{
         "ASCII Name":"Sigrid Bekker",
@@ -51988,7 +51988,7 @@
             }
         },
         "Title":"",
-        "Twd":4
+        "Twd":6
     },
     "201652":{
         "ASCII Name":"Sri Sansa",
@@ -52084,7 +52084,7 @@
             }
         },
         "Title":"priscus",
-        "Twd":47
+        "Twd":48
     },
     "201314":{
         "ASCII Name":"Stefano Giovanni",
@@ -52452,7 +52452,7 @@
             }
         },
         "Title":"",
-        "Twd":13
+        "Twd":14
     },
     "201324":{
         "ASCII Name":"Sundervere, The Devil Brahmin",
@@ -53483,7 +53483,7 @@
             }
         },
         "Title":"prince",
-        "Twd":38
+        "Twd":39
     },
     "201348":{
         "ASCII Name":"Tatiana Stepanova, Alastor",
@@ -55124,7 +55124,7 @@
             }
         },
         "Title":"",
-        "Twd":3
+        "Twd":4
     },
     "201390":{
         "ASCII Name":"Tryphosa",
@@ -55165,7 +55165,7 @@
             }
         },
         "Title":"prince",
-        "Twd":23
+        "Twd":24
     },
     "201391":{
         "ASCII Name":"Tsigane",
@@ -55229,7 +55229,7 @@
             }
         },
         "Title":"magaji",
-        "Twd":12
+        "Twd":13
     },
     "201393":{
         "ASCII Name":"Tupdog",
@@ -55765,7 +55765,7 @@
             }
         },
         "Title":"",
-        "Twd":71
+        "Twd":72
     },
     "201409":{
         "ASCII Name":"Undele",
@@ -55831,7 +55831,7 @@
             }
         },
         "Title":"justicar",
-        "Twd":31
+        "Twd":32
     },
     "201411":{
         "ASCII Name":"unnamed, The",
@@ -55868,7 +55868,7 @@
             }
         },
         "Title":"",
-        "Twd":59
+        "Twd":60
     },
     "201412":{
         "ASCII Name":"Unre, Keeper of Golgotha",
@@ -56348,7 +56348,7 @@
             }
         },
         "Title":"baron",
-        "Twd":29
+        "Twd":30
     },
     "201423":{
         "ASCII Name":"Valkyrie",
@@ -57631,7 +57631,7 @@
             }
         },
         "Title":"baron",
-        "Twd":40
+        "Twd":42
     },
     "201456":{
         "ASCII Name":"Vlad Tepes",
@@ -58899,7 +58899,7 @@
             }
         },
         "Title":"",
-        "Twd":15
+        "Twd":17
     },
     "201484":{
         "ASCII Name":"Yavu Matebo",
@@ -59512,7 +59512,7 @@
             }
         },
         "Title":"",
-        "Twd":5
+        "Twd":7
     },
     "201500":{
         "ASCII Name":"Zahir, Hand of the Silsila",

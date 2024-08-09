@@ -14,5 +14,5 @@
 - Update to React 19
 - Update to TailwindCSS 4 (migrate from isWidth to container queries)
 - Remove legacy polyfills when Safari adopts groupBy
-- Refactor to use constants (card properties)
+- Refactor Card properties to constants
 - Refactor to use clxs + twMerge
