@@ -117,7 +117,6 @@ const CardSelect = React.forwardRef(
         autoFocus={autoFocus}
         getOptionLabel={getOptionLabel}
         loadOptions={loadOptions}
-        menuPlacement={placement ? placement : isMobile ? 'top' : 'bottom'}
         onChange={onChange}
         placeholder={placeholder}
         ref={ref}

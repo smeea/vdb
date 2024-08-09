@@ -38,7 +38,6 @@ const TwdSearchFormPlayer = ({ inPda, value, form }) => {
       <div className="w-3/4">
         <SelectAsync
           cacheOptions
-          menuPlacement="top"
           maxMenuHeight={maxMenuHeight}
           autoFocus={false}
           placeholder="Name"

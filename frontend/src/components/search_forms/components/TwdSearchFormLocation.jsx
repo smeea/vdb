@@ -58,7 +58,6 @@ const TwdSearchFormLocation = ({ value, form }) => {
         <div className="w-3/4">
           <SelectAsync
             cacheOptions
-            menuPlacement="top"
             maxMenuHeight={maxMenuHeight}
             autoFocus={false}
             placeholder="Country"
@@ -81,7 +80,6 @@ const TwdSearchFormLocation = ({ value, form }) => {
         <div className="w-3/4">
           <SelectAsync
             cacheOptions
-            menuPlacement="top"
             maxMenuHeight={maxMenuHeight}
             autoFocus={false}
             placeholder="City"

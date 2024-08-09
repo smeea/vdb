@@ -92,7 +92,6 @@ const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
             options={options}
             isSearchable={!isMobile}
             isClearable={value.value[0] !== 'any'}
-            menuPlacement="top"
             filterOption={filterOption}
             name={0}
             maxMenuHeight={maxMenuHeight}
@@ -106,7 +105,6 @@ const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
         value={value}
         name={name}
         searchForm={searchForm}
-        menuPlacement="top"
         options={options}
         onChange={onChange}
         maxMenuHeight={maxMenuHeight}

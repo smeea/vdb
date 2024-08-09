@@ -39,7 +39,7 @@ const SearchAdditionalForms = ({
               <Select
                 options={morelessOptions}
                 isSearchable={false}
-                menuPlacement={menuPlacement ? menuPlacement : 'bottom'}
+                menuPlacement={menuPlacement}
                 name={i}
                 value={morelessOptions.find((obj) => obj.value === value.value[i].moreless)}
                 onChange={onChange}
@@ -57,7 +57,7 @@ const SearchAdditionalForms = ({
                   ] === 'any'
                 }
                 maxMenuHeight={maxMenuHeight ? maxMenuHeight - 45 : isMobile ? 350 : 450}
-                menuPlacement={menuPlacement ? menuPlacement : 'bottom'}
+                menuPlacement={menuPlacement}
                 name={i}
                 value={options.find((obj) => obj.value === value.value[i].capacity)}
                 onChange={onChange}
@@ -72,7 +72,7 @@ const SearchAdditionalForms = ({
               isSearchable={!isMobile}
               isClearable={isClearable && value.value[i] !== 'any'}
               defaultMenuIsOpen={value.value[i] === 'any'}
-              menuPlacement={menuPlacement ? menuPlacement : 'bottom'}
+              menuPlacement={menuPlacement}
               maxMenuHeight={maxMenuHeight ? maxMenuHeight - 45 : isMobile ? 350 : 450}
               name={i}
               value={options.find((obj) => obj.value === value.value[i])}
