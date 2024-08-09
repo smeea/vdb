@@ -28,6 +28,22 @@ import {
   deckLocalize,
 } from '@/context';
 
+const CRYPT_SEARCH_SORT = 'cryptSearchSort';
+const CRYPT_DECK_SORT = 'cryptDeckSort';
+const LIBRARY_SEARCH_SORT = 'librarySearchSort';
+const TWD_SEARCH_SORT = 'twdSearchSort';
+const PDA_SEARCH_SORT = 'pdaSearchSort';
+const ANALYZE_SEARCH_SORT = 'analyzeSearchSort';
+const LANG = 'lang';
+const ADD_MODE = 'addMode';
+const INVENTORY_MODE = 'inventoryMode';
+const LIMITED_MODE = 'limitedMode';
+const PLAYTEST_MODE = 'playtestMode';
+const SHOW_IMAGE = 'showImage';
+const RECENT_DECKS = 'recentDecks';
+const ONLINE = 'online';
+const OFFLINE = 'offline';
+
 export const AppContext = React.createContext();
 
 export const AppProvider = ({ children }) => {
@@ -226,7 +242,7 @@ export const AppProvider = ({ children }) => {
   // LANGUAGE
   const changeLang = (lang) => {
     setLang(lang);
-    storageServices.setLocalStorage('lang', lang);
+    storageServices.setLocalStorage(LANG, lang);
   };
 
   const changeBaseTextToLocalizedText = (setCardBase, localizedInfo, nativeInfo) => {
@@ -290,57 +306,57 @@ export const AppProvider = ({ children }) => {
   // APP DATA
   const toggleShowImage = () => {
     setShowImage(!showImage);
-    storageServices.setLocalStorage('showImage', !showImage);
+    storageServices.setLocalStorage(SHOW_IMAGE, !showImage);
   };
 
   const toggleInventoryMode = () => {
     setInventoryMode(!inventoryMode);
-    storageServices.setLocalStorage('inventoryMode', !inventoryMode);
+    storageServices.setLocalStorage(INVENTORY_MODE, !inventoryMode);
   };
 
   const toggleLimitedMode = () => {
     setLimitedMode(!limitedMode);
-    storageServices.setLocalStorage('limitedMode', !limitedMode);
+    storageServices.setLocalStorage(LIMITED_MODE, !limitedMode);
   };
 
   const togglePlaytestMode = () => {
     setPlaytestMode(!playtestMode);
-    storageServices.setLocalStorage('playtestMode', !playtestMode);
+    storageServices.setLocalStorage(PLAYTEST_MODE, !playtestMode);
   };
 
   const toggleAddMode = () => {
     setAddMode(!addMode);
-    storageServices.setLocalStorage('addMode', !addMode);
+    storageServices.setLocalStorage(ADD_MODE, !addMode);
   };
 
   const changeCryptDeckSort = (method) => {
     setCryptDeckSort(method);
-    storageServices.setLocalStorage('cryptDeckSort', method);
+    storageServices.setLocalStorage(CRYPT_DECK_SORT, method);
   };
 
   const changeCryptSearchSort = (method) => {
     setCryptSearchSort(method);
-    storageServices.setLocalStorage('cryptSearchSort', method);
+    storageServices.setLocalStorage(CRYPT_SEARCH_SORT, method);
   };
 
   const changeLibrarySearchSort = (method) => {
     setLibrarySearchSort(method);
-    storageServices.setLocalStorage('librarySearchSort', method);
+    storageServices.setLocalStorage(LIBRARY_SEARCH_SORT, method);
   };
 
   const changeTwdSearchSort = (method) => {
     setTwdSearchSort(method);
-    storageServices.setLocalStorage('twdSearchSort', method);
+    storageServices.setLocalStorage(TWD_SEARCH_SORT, method);
   };
 
   const changePdaSearchSort = (method) => {
     setPdaSearchSort(method);
-    storageServices.setLocalStorage('pdaSearchSort', method);
+    storageServices.setLocalStorage(PDA_SEARCH_SORT, method);
   };
 
   const changeAnalyzeSearchSort = (method) => {
     setAnalyzeSearchSort(method);
-    storageServices.setLocalStorage('analyzeSearchSort', method);
+    storageServices.setLocalStorage(ANALYZE_SEARCH_SORT, method);
   };
 
   const addRecentDeck = (deck) => {
@@ -355,38 +371,38 @@ export const AppProvider = ({ children }) => {
     });
     if (d.length > 10) d = d.slice(0, 10);
     setRecentDecks(d);
-    storageServices.setLocalStorage('recentDecks', d);
+    storageServices.setLocalStorage(RECENT_DECKS, d);
   };
 
   const updateRecentDecks = (decks) => {
     setRecentDecks(decks);
-    storageServices.setLocalStorage('recentDecks', decks);
+    storageServices.setLocalStorage(RECENT_DECKS, decks);
   };
 
   useEffect(() => {
-    window.addEventListener('offline', () => setIsOnline(false));
-    window.addEventListener('online', () => setIsOnline(true));
+    window.addEventListener(OFFLINE, () => setIsOnline(false));
+    window.addEventListener(ONLINE, () => setIsOnline(true));
 
     return () => {
-      window.removeEventListener('offline', () => setIsOnline(false));
-      window.removeEventListener('online', () => setIsOnline(true));
+      window.removeEventListener(OFFLINE, () => setIsOnline(false));
+      window.removeEventListener(ONLINE, () => setIsOnline(true));
     };
   }, []);
 
   useLayoutEffect(() => {
-    storageServices.initFromStorage('cryptSearchSort', CAPACITY_MIN_MAX, setCryptSearchSort);
-    storageServices.initFromStorage('cryptDeckSort', QUANTITYx, setCryptDeckSort);
-    storageServices.initFromStorage('librarySearchSort', TYPE, setLibrarySearchSort);
-    storageServices.initFromStorage('twdSearchSort', DATE_NEW_OLD, setTwdSearchSort);
-    storageServices.initFromStorage('pdaSearchSort', DATE_NEW_OLD, setPdaSearchSort);
-    storageServices.initFromStorage('analyzeSearchSort', RANK_HIGH_LOW, setAnalyzeSearchSort);
-    storageServices.initFromStorage('lang', EN, setLang);
-    storageServices.initFromStorage('addMode', isDesktop, setAddMode);
-    storageServices.initFromStorage('inventoryMode', false, setInventoryMode);
-    storageServices.initFromStorage('limitedMode', false, setLimitedMode);
-    storageServices.initFromStorage('showImage', true, setShowImage);
-    storageServices.initFromStorage('recentDecks', [], setRecentDecks);
-    storageServices.initFromStorage('playtestMode', false, setPlaytestMode);
+    storageServices.initFromStorage(CRYPT_SEARCH_SORT, CAPACITY_MIN_MAX, setCryptSearchSort);
+    storageServices.initFromStorage(CRYPT_DECK_SORT, QUANTITYx, setCryptDeckSort);
+    storageServices.initFromStorage(LIBRARY_SEARCH_SORT, TYPE, setLibrarySearchSort);
+    storageServices.initFromStorage(TWD_SEARCH_SORT, DATE_NEW_OLD, setTwdSearchSort);
+    storageServices.initFromStorage(PDA_SEARCH_SORT, DATE_NEW_OLD, setPdaSearchSort);
+    storageServices.initFromStorage(ANALYZE_SEARCH_SORT, RANK_HIGH_LOW, setAnalyzeSearchSort);
+    storageServices.initFromStorage(LANG, EN, setLang);
+    storageServices.initFromStorage(ADD_MODE, isDesktop, setAddMode);
+    storageServices.initFromStorage(INVENTORY_MODE, false, setInventoryMode);
+    storageServices.initFromStorage(LIMITED_MODE, false, setLimitedMode);
+    storageServices.initFromStorage(SHOW_IMAGE, true, setShowImage);
+    storageServices.initFromStorage(RECENT_DECKS, [], setRecentDecks);
+    storageServices.initFromStorage(PLAYTEST_MODE, false, setPlaytestMode);
   }, []);
 
   // DECKS
