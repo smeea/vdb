@@ -33,6 +33,7 @@ const DeckNewCardFloating = ({ deckid, cards, cardChange, target }) => {
               deckid={deckid}
               target={target}
               cardChange={cardChange}
+              menuPlacement="top"
             />
           </div>
         </div>
