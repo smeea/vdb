@@ -1,3 +1,5 @@
+import { CARD_TEXT } from '@/utils/constants';
+
 const useTags = (crypt, library) => {
   const deckTags = {
     accel: 0,
@@ -231,7 +233,7 @@ const testLibraryVote = (card) => {
 const haveTraits = (traits, card, traitsRegexMap) => {
   return traits.some((trait) => {
     const regex = traitsRegexMap[trait] ? traitsRegexMap[trait](card) : trait;
-    return RegExp(regex, 'i').test(card['Card Text']);
+    return RegExp(regex, 'i').test(card[CARD_TEXT]);
   });
 };
 

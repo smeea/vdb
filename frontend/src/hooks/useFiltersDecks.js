@@ -4,7 +4,8 @@
 // if the filter is present and the deck dont match it the method returns true meaning the criteria is missing.
 // if some criteria is missing the main method return false and exits that deck check.
 
-import { countCards, getClan, getSect } from '@/utils';
+import { countCards, countTotalCost, getClan, getSect } from '@/utils';
+import { CAPACITY } from '@/utils/constants';
 
 const useFiltersDecks = (decks = {}) => {
   const filterDecks = (filter) => {
@@ -138,13 +139,9 @@ const missingSect = (filter, deck) => {
 };
 
 const missingCapacity = (filter, deck) => {
-  let capacityTotal = 0;
-  let cryptTotal = 0;
-  Object.values(deck.crypt).forEach((card) => {
-    cryptTotal += card.q;
-    capacityTotal += card.q * card.c.Capacity;
-  });
-  const avgCapacity = capacityTotal / cryptTotal;
+  const cryptTotal = countCards(Object.values(deck.crypt));
+  const cryptTotalCap = countTotalCost(Object.values(deck.crypt), CAPACITY);
+  const avgCapacity = cryptTotalCap / cryptTotal;
 
   if (
     Object.keys(filter).some((i) => {

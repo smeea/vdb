@@ -13,7 +13,7 @@ import {
 } from '@/components';
 import { getLegality } from '@/utils';
 import { useApp } from '@/context';
-import { BURN_OPTION, TRIFLE, PLAYTEST } from '@/utils/constants';
+import { BLOOD_COST, POOL_COST, BURN_OPTION, TRIFLE, PLAYTEST } from '@/utils/constants';
 
 const ResultLibraryLayoutText = ({ card, handleClose, noClose, inPopover }) => {
   const { isNarrow } = useApp();
@@ -52,10 +52,10 @@ const ResultLibraryLayoutText = ({ card, handleClose, noClose, inPopover }) => {
         <ResultLayoutTextText cardid={card.Id} />
       </div>
       <Hr />
-      {(card['Blood Cost'] || card['Pool Cost']) && (
+      {(card[BLOOD_COST] || card[POOL_COST]) && (
         <>
           <div className="flex items-center justify-between">
-            <ResultLibraryCost valuePool={card['Pool Cost']} valueBlood={card['Blood Cost']} />
+            <ResultLibraryCost valuePool={card[POOL_COST]} valueBlood={card[BLOOD_COST]} />
           </div>
           <Hr />
         </>

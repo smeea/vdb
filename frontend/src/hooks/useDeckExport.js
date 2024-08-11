@@ -1,7 +1,16 @@
 import disciplinesList from '@/assets/data/disciplinesList.json';
 import virtuesList from '@/assets/data/virtuesList.json';
 import { cryptSort, librarySort } from '@/utils';
-import { TWD, NAME, QUANTITY, CAPACITY } from '@/utils/constants';
+import {
+  cardtypeSortedFull,
+  MASTER,
+  TRIFLE,
+  CARD_TEXT,
+  TWD,
+  NAME,
+  QUANTITY,
+  CAPACITY,
+} from '@/utils/constants';
 
 const getCryptTitle = (crypt) => {
   let cryptTotalCap = 0;
@@ -116,7 +125,7 @@ const getLibraryText = (library, format) => {
     libraryTotal += card.q;
     const cardType = card.c.Type;
     const cardName = card.c.Name;
-    if (card.c.Type === 'Master' && card.c['Card Text'].toLowerCase().includes('trifle')) {
+    if (card.c.Type === MASTER && card.c[CARD_TEXT].toLowerCase().includes(TRIFLE.toLowerCase())) {
       triflesTotal += card.q;
     }
 
@@ -130,29 +139,6 @@ const getLibraryText = (library, format) => {
     }
   });
 
-  const byTypeOrder = [
-    'Master',
-    'Conviction',
-    'Action',
-    'Action/Reaction',
-    'Action/Combat',
-    'Ally',
-    'Equipment',
-    'Political Action',
-    'Retainer',
-    'Power',
-    'Action Modifier',
-    'Action Modifier/Combat',
-    'Action Modifier/Reaction',
-    'Reaction',
-    'Reaction/Action Modifier',
-    'Reaction/Combat',
-    'Combat',
-    'Combat/Action Modifier',
-    'Combat/Reaction',
-    'Event',
-  ];
-
   const libraryTitle = `Library (${libraryTotal} cards)`;
   result += `${libraryTitle}\n`;
   if (format === 'text') {
@@ -160,10 +146,10 @@ const getLibraryText = (library, format) => {
     result += '\n';
   }
 
-  byTypeOrder.forEach((type) => {
+  cardtypeSortedFull.forEach((type) => {
     if (byType[type]) {
       let typeTitle = `${type} (${byTypeTotal[type]}`;
-      if (type === 'Master' && triflesTotal) {
+      if (type === MASTER && triflesTotal) {
         typeTitle += `; ${triflesTotal} trifle`;
       }
       typeTitle += ')\n';

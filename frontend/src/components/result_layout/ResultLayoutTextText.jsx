@@ -2,13 +2,14 @@ import React from 'react';
 import reactStringReplace from 'react-string-replace';
 import { useApp } from '@/context';
 import { CardPopover, ResultName, ResultMiscImage, ConditionalTooltip } from '@/components';
+import { CARD_TEXT } from '@/utils/constants';
 
 const ResultLayoutTextText = ({ cardid }) => {
   const { nativeCrypt, nativeLibrary, cryptCardBase, libraryCardBase, isMobile } = useApp();
 
   const cardBase = { ...nativeCrypt, ...nativeLibrary };
   const cardNative = cardid > 200000 ? nativeCrypt[cardid] : nativeLibrary[cardid];
-  const cardTextNative = cardNative['Card Text'].replace(/\(D\)/g, '\u24B9').split('\n');
+  const cardTextNative = cardNative[CARD_TEXT].replace(/\(D\)/g, '\u24B9').split('\n');
 
   const refCards = [];
   cardTextNative.map((i) => {
@@ -20,7 +21,7 @@ const ResultLayoutTextText = ({ cardid }) => {
   });
 
   const c = cardid > 200000 ? cryptCardBase[cardid] : libraryCardBase[cardid];
-  const cardText = c['Card Text'].replace(/\(D\)/g, '\u24B9').split('\n');
+  const cardText = c[CARD_TEXT].replace(/\(D\)/g, '\u24B9').split('\n');
 
   return (
     <>

@@ -1,3 +1,5 @@
+import { BLOOD_COST, POOL_COST } from '@/utils/constants';
+
 export const byName = (a, b) => a.localeCompare(b, 'en');
 
 export const byCardName = (a, b) => {
@@ -50,8 +52,8 @@ export const byDiscipline = (a, b) => {
 };
 
 export const byBloodCost = (a, b) => {
-  const costA = a.c ? a.c['Blood Cost'] : a['Blood Cost'];
-  const costB = b.c ? b.c['Blood Cost'] : b['Blood Cost'];
+  const costA = a.c ? a.c[BLOOD_COST] : a[BLOOD_COST];
+  const costB = b.c ? b.c[BLOOD_COST] : b[BLOOD_COST];
   if (!isNaN(costA) && isNaN(costB)) return -1;
   if (!isNaN(costB) && isNaN(costA)) return 1;
   if (isNaN(costA) && isNaN(costB)) return 0;
@@ -59,8 +61,8 @@ export const byBloodCost = (a, b) => {
 };
 
 export const byPoolCost = (a, b) => {
-  const costA = a.c ? a.c['Pool Cost'] : a['Pool Cost'];
-  const costB = b.c ? b.c['Pool Cost'] : b['Pool Cost'];
+  const costA = a.c ? a.c[POOL_COST] : a[POOL_COST];
+  const costB = b.c ? b.c[POOL_COST] : b[POOL_COST];
   if (!isNaN(costA) && isNaN(costB)) return -1;
   if (!isNaN(costB) && isNaN(costA)) return 1;
   if (isNaN(costA) && isNaN(costB)) return 0;

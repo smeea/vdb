@@ -3,7 +3,15 @@
 // in case of missing filter or matching them the method returns false, meaning there's no missing criteria
 // if the filter is present and the card dont match it the method returns true meaning the criteria is missing.
 // if some criteria is missing the main method return false and exits that card check.
-import { PLAYTEST, BCP, PROMO } from '@/utils/constants';
+import {
+  CARD_TEXT,
+  BURN_OPTION,
+  BLOOD_COST,
+  POOL_COST,
+  PLAYTEST,
+  BCP,
+  PROMO,
+} from '@/utils/constants';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 
 const useFilters = (cards = {}) => {
@@ -96,7 +104,7 @@ const missingTextQuery = (query, card) => {
   const search = query.value.toLowerCase();
   const hasToMatch = query.logic === 'and';
 
-  const cardText = card['Card Text'].toLowerCase().replace('\n', ' ');
+  const cardText = card[CARD_TEXT].toLowerCase().replace('\n', ' ');
   const cardName = card['Name'].toLowerCase();
   const cardASCII = card['ASCII Name'].toLowerCase();
 
@@ -151,17 +159,17 @@ const missingTrait = (trait, card, traitsRegexMap) => {
     case 'multi-type':
       return !card['Type'].includes('/');
     case 'burn':
-      return !card['Burn Option'];
+      return !card[BURN_OPTION];
     case 'no-requirements':
       return (
         card['Requirement'] ||
         card['Discipline'] ||
         card['Clan'] ||
-        RegExp(/requires a/i, 'i').test(card['Card Text'])
+        RegExp(/requires a/i, 'i').test(card[CARD_TEXT])
       );
     default:
       return !RegExp(traitsRegexMap[trait] ? traitsRegexMap[trait](card) : trait, 'i').test(
-        card['Card Text'],
+        card[CARD_TEXT],
       );
   }
 };
@@ -220,7 +228,7 @@ const missingTitleCrypt = (filter, card) => {
         .map((t) => t.replace('1 vote', '1 vote (titled)').replace('2 votes', '2 votes (titled)'))
         .join('|')})`,
       'i',
-    ).test(card['Card Text'])
+    ).test(card[CARD_TEXT])
   ) {
     return false;
   }
@@ -315,8 +323,8 @@ const missingCapacityLibrary = (filter, card) => {
   const capacity = parseInt(filter.capacity);
   const moreless = filter.moreless;
 
-  const match1 = capacityRegex[moreless + '1'].exec(card['Card Text']);
-  const match2 = capacityRegex[moreless + '2'].exec(card['Card Text']);
+  const match1 = capacityRegex[moreless + '1'].exec(card[CARD_TEXT]);
+  const match2 = capacityRegex[moreless + '2'].exec(card[CARD_TEXT]);
 
   if (!match1 && !match2) return true;
 
@@ -371,18 +379,18 @@ const missingGroup = (filter, card) => {
 };
 
 const missingPoolCost = (filter, card) => {
-  if (card['Pool Cost'] === 'X') return false;
-  return missingCostCheck(filter.moreless, filter.pool, card['Pool Cost']);
+  if (card[POOL_COST] === 'X') return false;
+  return missingCostCheck(filter.moreless, filter.pool, card[POOL_COST]);
 };
 
 const missingBloodCost = (filter, card) => {
-  if (card['Blood Cost'] === 'X') return false;
-  return missingCostCheck(filter.moreless, filter.blood, card['Blood Cost']);
+  if (card[BLOOD_COST] === 'X') return false;
+  return missingCostCheck(filter.moreless, filter.blood, card[BLOOD_COST]);
 };
 
 const testType = (card, type) => {
   if (type === 'reflex') {
-    return card['Card Text'].includes('[REFLEX]');
+    return card[CARD_TEXT].includes('[REFLEX]');
   } else {
     return card['Type'].toLowerCase().split('/').includes(type);
   }

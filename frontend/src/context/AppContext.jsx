@@ -14,6 +14,7 @@ import {
   EN,
   TWD,
   PDA,
+  CARD_TEXT,
 } from '@/utils/constants';
 import {
   setLimitedSets,
@@ -250,7 +251,7 @@ export const AppProvider = ({ children }) => {
       Object.keys(draft).forEach((k) => {
         const newInfo = localizedInfo[k] ? localizedInfo[k] : nativeInfo[k];
         draft[k]['Name'] = newInfo['Name'];
-        draft[k]['Card Text'] = newInfo['Card Text'];
+        draft[k][CARD_TEXT] = newInfo[CARD_TEXT];
       });
     });
   };

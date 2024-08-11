@@ -1,6 +1,6 @@
 import ky from 'ky';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
-import { PLAYTEST } from '@/utils/constants';
+import { CARD_TEXT, PLAYTEST } from '@/utils/constants';
 import { useDeck, useTags } from '@/hooks';
 
 const CARD_VERSION = import.meta.env.VITE_CARD_VERSION;
@@ -32,7 +32,7 @@ export const getCardBase = async () => {
     const target = card.Id > 200000 ? nativeCrypt : nativeLibrary;
     target[card.Id] = {
       Name: card['Name'],
-      'Card Text': card['Card Text'],
+      [CARD_TEXT]: card[CARD_TEXT],
     };
   });
 

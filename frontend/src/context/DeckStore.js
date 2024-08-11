@@ -1,5 +1,6 @@
 import { proxy } from 'valtio';
 import { deepClone } from '@/utils';
+import { CARD_TEXT } from '@/utils/constants';
 import { deckServices } from '@/services';
 
 export const deckStore = proxy({
@@ -206,13 +207,13 @@ export const deckLocalize = (localizedCrypt, nativeCrypt, localizedLibrary, nati
     const id = card.c.Id;
     const newInfo = localizedCrypt[id] ? localizedCrypt[id] : nativeCrypt[id];
     deckStore.deck.crypt[id].c['Name'] = newInfo['Name'];
-    deckStore.deck.crypt[id].c['Card Text'] = newInfo['Card Text'];
+    deckStore.deck.crypt[id].c[CARD_TEXT] = newInfo[CARD_TEXT];
   });
   Object.values(deckStore.deck.library).forEach((card) => {
     const id = card.c.Id;
     const newInfo = localizedLibrary[id] ? localizedLibrary[id] : nativeLibrary[id];
     deckStore.deck.library[id].c['Name'] = newInfo['Name'];
-    deckStore.deck.library[id].c['Card Text'] = newInfo['Card Text'];
+    deckStore.deck.library[id].c[CARD_TEXT] = newInfo[CARD_TEXT];
   });
 };
 
