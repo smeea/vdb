@@ -73,7 +73,7 @@ const DiffSelectDeck = ({ decks, deck, deckidFrom, deckidTo, target, title }) =>
           </div>
         </form>
       ) : (
-        <div className={`flex gap-1 ${!inventoryMode && isMobile ? 'justify-between' : ''}`}>
+        <div className={`z-20 flex gap-1 ${!inventoryMode && isMobile ? 'justify-between' : ''}`}>
           <div className={deck?.isBranches && source == `${target}-my` ? 'w-3/4' : 'w-full'}>
             {source == `${target}-my` && decks ? (
               <DeckSelectMy handleSelect={handleSelect} deckid={deck?.deckid} />

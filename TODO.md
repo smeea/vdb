@@ -2,7 +2,6 @@
 - Snapshot url in iOS
 - Page update in iOS
 - Change horizontal vertical force layout failure
-- Diff select deck under library header
 
 # FEATURES
 - TWD search with % V5-compatibility - after BCP clarify V5
