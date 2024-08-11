@@ -3,7 +3,7 @@ import { useApp } from '@/context';
 import { useCardImageUrl } from '@/hooks';
 import { EN } from '@/utils/constants';
 
-const CardImage = ({ card, set, className = 'min-w-[358px]', onClick }) => {
+const CardImage = ({ card, set, className = 'min-w-[358px] max-w-[358px]', onClick }) => {
   const { lang, showLegacyImage } = useApp();
   const { baseUrl, otherUrl, legacyUrl } = useCardImageUrl(card, set, lang);
 
@@ -15,10 +15,14 @@ const CardImage = ({ card, set, className = 'min-w-[358px]', onClick }) => {
 
   return (
     <>
-      {lang !== EN || set || showLegacyImage ? (
+      {lang !== EN ||
+      set ||
+      (showLegacyImage &&
+        card.Id > 200000 &&
+        ['Abomination', 'Ahrimane', 'Baali', 'Tzimisce'].includes(card.Clan)) ? (
         <img
           className={className}
-          src={`${set ? otherUrl : showLegacyImage && card.Id > 200000 ? legacyUrl : otherUrl}.jpg?v=${import.meta.env.VITE_CARD_VERSION}`}
+          src={`${set ? otherUrl : showLegacyImage ? legacyUrl : otherUrl}.jpg?v=${import.meta.env.VITE_CARD_VERSION}`}
           alt={card.Name}
           onClick={onClick}
           onError={resetImgSrc}
