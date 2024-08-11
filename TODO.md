@@ -8,7 +8,6 @@
 - Deck details show % V5-compatibility - after BCP clarify V5
 - Only modifier for discipline search in library
 - Card q-ty change in autocompletion
-- Old-school image layout by Thiago Sousa
 
 # TECH IMPROVEMENTS
 - Update to React 19
