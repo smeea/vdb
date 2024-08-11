@@ -1,5 +1,5 @@
 {
-  "version": "2024-08-11",
+  "version": "2024-08-12",
   "changes": [
     "Update TWDA",
     "Add Legacy Crypt images feature, which will show Jyhad-styled crypt images but with modern card text. Only few clans are available now (Abomination, Ahrimanes, Baali, Tzimisce) but more will come with the goal of having full crypt. To enable it switch Legacy Crypt toggle in https://vdb.im/account page. Thanks to Thiago Sousa for that fantastic contribution!",
