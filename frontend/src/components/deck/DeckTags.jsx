@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import Spellcheck from '@/assets/images/icons/spellcheck.svg?react';
-import { SelectCreatable, ButtonIconed } from '@/components';
+import { Select, ButtonIconed } from '@/components';
 import { deckUpdate } from '@/context';
 import { useTags } from '@/hooks';
 
@@ -43,7 +43,8 @@ const DeckTags = ({ deck, tagsSuperior, noAutotags, isBordered, allTagsOptions }
 
   return (
     <div className="flex">
-      <SelectCreatable
+      <Select
+        variant="creatable"
         className="w-full"
         noBorder={!isBordered}
         noRemove={!isEditable}

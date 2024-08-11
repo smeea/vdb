@@ -1,6 +1,6 @@
 import React from 'react';
 import { useApp } from '@/context';
-import { SelectAsync, SelectLabelCrypt, SelectLabelLibrary } from '@/components';
+import { Select, SelectLabelCrypt, SelectLabelLibrary } from '@/components';
 import { useFilters } from '@/hooks';
 
 const getMatches = (inputValue, filterAction, playtestId, playtestMode, inInventory) => {
@@ -121,7 +121,8 @@ const CardSelect = React.forwardRef(
     };
 
     return (
-      <SelectAsync
+      <Select
+        variant="async"
         autoFocus={autoFocus}
         getOptionLabel={getOptionLabel}
         loadOptions={loadOptions}

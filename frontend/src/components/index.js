@@ -40,8 +40,6 @@ export { default as Modal } from './common/Modal.jsx';
 export { default as ModalConfirmation } from './common/ModalConfirmation.jsx';
 export { default as Radio } from './common/Radio.jsx';
 export { default as Select } from './common/Select.jsx';
-export { default as SelectAsync } from './common/SelectAsync.jsx';
-export { default as SelectCreatable } from './common/SelectCreatable.jsx';
 export { default as TabButton } from './common/TabButton.jsx';
 export { default as Textarea } from './common/Textarea.jsx';
 export { default as Title } from './common/Title.jsx';

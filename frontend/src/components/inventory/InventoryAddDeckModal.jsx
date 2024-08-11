@@ -1,7 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { useSnapshot } from 'valtio';
-import { SelectCreatable } from '@/components';
-import { DeckSortButton, InventoryAddDeckRow, Modal, Checkbox, Input } from '@/components';
+import { Select, DeckSortButton, InventoryAddDeckRow, Modal, Checkbox, Input } from '@/components';
 import { decksSort } from '@/utils';
 import { useApp, deckStore } from '@/context';
 
@@ -95,7 +94,8 @@ const InventoryAddDeckModal = ({ handleClose }) => {
             {!isMobile && <th className="min-w-[100px]"></th>}
             {!isMobile && (
               <th className="w-full">
-                <SelectCreatable
+                <Select
+                  variant="creatable"
                   isMulti
                   options={defaultTagsOptions}
                   onChange={handleChangeTagsFilter}

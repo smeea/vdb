@@ -1,5 +1,5 @@
 import React from 'react';
-import { SelectAsync } from '@/components';
+import { Select } from '@/components';
 import { useApp } from '@/context';
 import { useFetch } from '@/hooks';
 
@@ -36,7 +36,8 @@ const TwdSearchFormPlayer = ({ inPda, value, form }) => {
         </div>
       </div>
       <div className="w-3/4">
-        <SelectAsync
+        <Select
+          variant="async"
           cacheOptions
           maxMenuHeight={maxMenuHeight}
           autoFocus={false}

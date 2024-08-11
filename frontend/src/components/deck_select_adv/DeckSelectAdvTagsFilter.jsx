@@ -1,5 +1,5 @@
 import React from 'react';
-import { SelectCreatable } from '@/components';
+import { Select } from '@/components';
 import { useApp } from '@/context';
 
 const DeckSelectAdvTagsFilter = ({ tagsFilter, handleChangeTagsFilter, allTagsOptions }) => {
@@ -13,7 +13,8 @@ const DeckSelectAdvTagsFilter = ({ tagsFilter, handleChangeTagsFilter, allTagsOp
     : undefined;
 
   return (
-    <SelectCreatable
+    <Select
+      variant="creatable"
       isMulti
       options={allTagsOptions}
       onChange={handleChangeTagsFilter}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { SelectAsync } from '@/components';
+import { Select } from '@/components';
 import { useApp } from '@/context';
 import { useFetch } from '@/hooks';
 
@@ -56,7 +56,8 @@ const TwdSearchFormLocation = ({ value, form }) => {
           <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Location:</div>
         </div>
         <div className="w-3/4">
-          <SelectAsync
+          <Select
+            variant="async"
             cacheOptions
             maxMenuHeight={maxMenuHeight}
             autoFocus={false}
@@ -78,7 +79,8 @@ const TwdSearchFormLocation = ({ value, form }) => {
       <div className="flex items-center">
         <div className="w-1/4" />
         <div className="w-3/4">
-          <SelectAsync
+          <Select
+            variant="async"
             cacheOptions
             maxMenuHeight={maxMenuHeight}
             autoFocus={false}
