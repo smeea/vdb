@@ -11,6 +11,7 @@ export { default as AccountLimitedModal } from './account/AccountLimitedModal';
 export { default as AccountLimitedSet } from './account/AccountLimitedSet';
 export { default as AccountLimitedSetSelection } from './account/AccountLimitedSetSelection';
 export { default as AccountLimitedUrlButton } from './account/AccountLimitedUrlButton';
+export { default as AccountLegacyToggle } from './account/AccountLegacyToggle';
 export { default as AccountLogin } from './account/AccountLogin';
 export { default as AccountLogoutButton } from './account/AccountLogoutButton';
 export { default as AccountPasswordForm } from './account/AccountPasswordForm';

@@ -4,7 +4,7 @@ import Printer from '@/assets/images/icons/printer.svg?react';
 import { Spinner, MenuButton, MenuItems, MenuItem, DeckProxySelectModal } from '@/components';
 import { countCards, cryptSort, librarySort } from '@/utils';
 import { useCardImageUrl } from '@/hooks';
-import { GROUPED_TYPE } from '@/utils/constants';
+import { EN, GROUPED_TYPE } from '@/utils/constants';
 import { useApp } from '@/context';
 
 const DeckProxyButton = ({ missingCrypt, missingLibrary, deck, inDiff }) => {
@@ -15,6 +15,7 @@ const DeckProxyButton = ({ missingCrypt, missingLibrary, deck, inDiff }) => {
     cryptDeckSort,
     isDesktop,
     lang,
+    showLegacyImage,
   } = useApp();
 
   const [isLoading, setIsLoading] = useState(false);
@@ -35,7 +36,7 @@ const DeckProxyButton = ({ missingCrypt, missingLibrary, deck, inDiff }) => {
 
     const cardsTotal = countCards([...cryptSorted, ...librarySorted]);
     const cards = [...cryptSorted, ...librarySorted].map((card) => {
-      return { url: useCardImageUrl(card.c, card.set, lang), q: card.q };
+      return { Id: card.c.Id, url: useCardImageUrl(card.c, card.set, lang), q: card.q };
     });
 
     const sheetW = format.isLetter ? 215.9 : 210;
@@ -119,16 +120,26 @@ const DeckProxyButton = ({ missingCrypt, missingLibrary, deck, inDiff }) => {
         );
 
         try {
-          if (!card.url.otherUrl) throw null;
-          img.src = `${card.url.otherUrl}.jpg`;
-          pdf.addImage(
-            img,
-            'JPEG',
-            (w + gap) * counterX + marginLeft,
-            (h + gap) * counterY + marginTop,
-            w,
-            h,
-          );
+          if (lang !== EN || card.Set || showLegacyImage) {
+            const url = card.Set
+              ? card.url.otherUrl
+              : showLegacyImage && card.Id > 200000
+                ? card.url.legacyUrl
+                : card.url.otherUrl;
+
+            if (!url) throw null;
+            img.src = `${url}.jpg`;
+            pdf.addImage(
+              img,
+              'JPEG',
+              (w + gap) * counterX + marginLeft,
+              (h + gap) * counterY + marginTop,
+              w,
+              h,
+            );
+          } else {
+            throw null;
+          }
         } catch {
           img.src = `${card.url.baseUrl}.jpg`;
           pdf.addImage(

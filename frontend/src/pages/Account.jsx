@@ -8,6 +8,7 @@ import {
   AccountChangeName,
   AccountDeleteButton,
   AccountLimitedButton,
+  AccountLegacyToggle,
   PlaytestReportExportAllButton,
   PlaytestManageButton,
   PlaytestLanguageSelector,
@@ -36,6 +37,7 @@ const Account = () => {
             <AccountChangePassword />
             <AccountChangeEmail />
             <div className="flex flex-col gap-3 sm:gap-4">
+              <AccountLegacyToggle />
               {isPlaytester && <PlaytestLanguageSelector />}
               {isPlaytestAdmin && (
                 <div className="flex gap-3 max-sm:flex-col sm:gap-4">

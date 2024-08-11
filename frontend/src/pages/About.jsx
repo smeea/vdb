@@ -181,6 +181,7 @@ const About = () => {
               <a href="https://ccggamez.com">CCGAMEZ.COM</a>
             </li>
             <li>Andrey &quot;Vaughnad&quot; Davino for multiple development contributions</li>
+            <li>Legacy crypt images by Thiago Sousa</li>
           </ul>
         </div>
 

@@ -4,8 +4,8 @@ import { useCardImageUrl } from '@/hooks';
 import { EN } from '@/utils/constants';
 
 const CardImage = ({ card, set, className = 'min-w-[358px]', onClick }) => {
-  const { lang } = useApp();
-  const { baseUrl, otherUrl } = useCardImageUrl(card, set, lang);
+  const { lang, showLegacyImage } = useApp();
+  const { baseUrl, otherUrl, legacyUrl } = useCardImageUrl(card, set, lang);
 
   const resetImgSrc = (event) => {
     if (event.target.src != `${baseUrl}.jpg`) {
@@ -15,10 +15,10 @@ const CardImage = ({ card, set, className = 'min-w-[358px]', onClick }) => {
 
   return (
     <>
-      {lang !== EN || set ? (
+      {lang !== EN || set || showLegacyImage ? (
         <img
           className={className}
-          src={`${otherUrl}.jpg?v=${import.meta.env.VITE_CARD_VERSION}`}
+          src={`${set ? otherUrl : showLegacyImage && card.Id > 200000 ? legacyUrl : otherUrl}.jpg?v=${import.meta.env.VITE_CARD_VERSION}`}
           alt={card.Name}
           onClick={onClick}
           onError={resetImgSrc}

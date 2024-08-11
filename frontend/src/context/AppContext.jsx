@@ -41,6 +41,7 @@ const INVENTORY_MODE = 'inventoryMode';
 const LIMITED_MODE = 'limitedMode';
 const PLAYTEST_MODE = 'playtestMode';
 const SHOW_IMAGE = 'showImage';
+const SHOW_LEGACY_IMAGE = 'showLegacyImage';
 const RECENT_DECKS = 'recentDecks';
 const ONLINE = 'online';
 const OFFLINE = 'offline';
@@ -66,6 +67,7 @@ export const AppProvider = ({ children }) => {
   const [isPlaytester, setIsPlaytester] = useState();
   const [playtestMode, setPlaytestMode] = useState();
   const [showImage, setShowImage] = useState();
+  const [showLegacyImage, setShowLegacyImage] = useState(true);
   const [addMode, setAddMode] = useState();
   const [inventoryMode, setInventoryMode] = useState();
   const [limitedMode, setLimitedMode] = useState();
@@ -310,6 +312,11 @@ export const AppProvider = ({ children }) => {
     storageServices.setLocalStorage(SHOW_IMAGE, !showImage);
   };
 
+  const toggleShowLegacyImage = () => {
+    setShowLegacyImage(!showLegacyImage);
+    storageServices.setLocalStorage(SHOW_LEGACY_IMAGE, !showLegacyImage);
+  };
+
   const toggleInventoryMode = () => {
     setInventoryMode(!inventoryMode);
     storageServices.setLocalStorage(INVENTORY_MODE, !inventoryMode);
@@ -477,8 +484,9 @@ export const AppProvider = ({ children }) => {
         addMode,
         toggleAddMode,
         showImage,
-        setShowImage,
         toggleShowImage,
+        showLegacyImage,
+        toggleShowLegacyImage,
         showFloatingButtons,
         setShowFloatingButtons,
         showMenuButtons,
