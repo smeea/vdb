@@ -108,8 +108,8 @@ export const AppProvider = ({ children }) => {
           ['libraryCardBase', data.library],
           ['nativeCrypt', data.nativeCrypt],
           ['nativeLibrary', data.nativeLibrary],
-          ['localizedCrypt', { EN: data.nativeCrypt }],
-          ['localizedLibrary', { EN: data.nativeLibrary }],
+          ['localizedCrypt', { [EN]: data.nativeCrypt }],
+          ['localizedLibrary', { [EN]: data.nativeLibrary }],
         ]);
       }
 
@@ -117,8 +117,8 @@ export const AppProvider = ({ children }) => {
       setLibraryCardBase(data.library);
       setNativeCrypt(data.nativeCrypt);
       setNativeLibrary(data.nativeLibrary);
-      setLocalizedCrypt({ EN: data.nativeCrypt });
-      setLocalizedLibrary({ EN: data.nativeLibrary });
+      setLocalizedCrypt({ [EN]: data.nativeCrypt });
+      setLocalizedLibrary({ [EN]: data.nativeLibrary });
 
       cardServices.getPreconDecks(data.crypt, data.library).then((preconData) => {
         if (isIndexedDB) set('preconDecks', preconData);
@@ -249,7 +249,7 @@ export const AppProvider = ({ children }) => {
   const changeBaseTextToLocalizedText = (setCardBase, localizedInfo, nativeInfo) => {
     setCardBase((draft) => {
       Object.keys(draft).forEach((k) => {
-        const newInfo = localizedInfo[k] ? localizedInfo[k] : nativeInfo[k];
+        const newInfo = localizedInfo[k] ?? nativeInfo[k];
         draft[k].Name = newInfo.Name;
         draft[k][CARD_TEXT] = newInfo[CARD_TEXT];
       });
@@ -281,7 +281,7 @@ export const AppProvider = ({ children }) => {
 
   useEffect(() => {
     async function triggerLangChange() {
-      if (!localizedCrypt[lang] || !localizedLibrary[lang]) {
+      if ((!localizedCrypt[lang] || !localizedLibrary[lang]) && lang !== EN) {
         await initializeLocalizedInfo(lang);
       } else {
         changeBaseTextToLocalizedText(setCryptCardBase, localizedCrypt[lang], nativeCrypt);
