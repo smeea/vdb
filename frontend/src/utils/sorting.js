@@ -1,10 +1,10 @@
-import { BLOOD_COST, POOL_COST } from '@/utils/constants';
+import { ASCII_NAME, BLOOD_COST, POOL_COST } from '@/utils/constants';
 
 export const byName = (a, b) => a.localeCompare(b, 'en');
 
 export const byCardName = (a, b) => {
-  const nameA = a.c ? a.c['ASCII Name'] : a['ASCII Name'];
-  const nameB = b.c ? b.c['ASCII Name'] : b['ASCII Name'];
+  const nameA = a.c ? a.c[ASCII_NAME] : a[ASCII_NAME];
+  const nameB = b.c ? b.c[ASCII_NAME] : b[ASCII_NAME];
   return byName(nameA, nameB);
 };
 

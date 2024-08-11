@@ -31,7 +31,7 @@ export const getCardBase = async () => {
   }).forEach((card) => {
     const target = card.Id > 200000 ? nativeCrypt : nativeLibrary;
     target[card.Id] = {
-      Name: card['Name'],
+      Name: card.Name,
       [CARD_TEXT]: card[CARD_TEXT],
     };
   });

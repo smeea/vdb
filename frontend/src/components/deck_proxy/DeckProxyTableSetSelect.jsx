@@ -15,7 +15,7 @@ const DeckProxyTableSetSelect = ({ card, value, handleSetSelector }) => {
   ];
 
   Object.keys(setsAndPrecons).map((i) => {
-    if (card['Set'][i] && i !== POD) {
+    if (card.Set[i] && i !== POD) {
       setOptions.push({
         value: i.toLowerCase(),
         id: card.Id,

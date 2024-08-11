@@ -58,7 +58,7 @@ const useTags = (crypt, library) => {
     let masterTotal = 0;
     Object.values(library).forEach((card) => {
       libraryTotal += card.q;
-      if (card.c['Type'] === 'Master') masterTotal += card.q;
+      if (card.c.Type === 'Master') masterTotal += card.q;
     });
 
     const librarySizeFactor = 90 / libraryTotal;
@@ -144,7 +144,7 @@ const testCryptCombat = (card) => {
 };
 
 const testCryptMmpa = (card) => {
-  if (['Anson', 'Cybele', 'Nana Buruku', 'Huitzilopochtli', 'Isanwayen'].includes(card['Name']))
+  if (['Anson', 'Cybele', 'Nana Buruku', 'Huitzilopochtli', 'Isanwayen'].includes(card.Name))
     return true;
 };
 
@@ -161,8 +161,8 @@ const testCryptStealth = (card) => {
 };
 
 const testLibraryAlly = (card) => {
-  if (card['Type'].split('/').includes('Ally')) return true;
-  if (['FBI Special Affairs Division', 'Unmasking, The'].includes(card['Name'])) return true;
+  if (card.Type.split('/').includes('Ally')) return true;
+  if (['FBI Special Affairs Division', 'Unmasking, The'].includes(card.Name)) return true;
 };
 
 const testLibraryBleed = (card) => {
@@ -182,7 +182,7 @@ const testLibraryBlock = (card) => {
   }
   if (
     haveTraits(['unlock'], card, LibraryTraitsRegexMap) &&
-    card['Type'].split('/').includes('Reaction')
+    card.Type.split('/').includes('Reaction')
   ) {
     return true;
   }
@@ -195,7 +195,7 @@ const testLibrarySwarm = (card) => {
 };
 
 const testLibraryCombat = (card) => {
-  if (card['Type'].split('/').includes('Combat')) return true;
+  if (card.Type.split('/').includes('Combat')) return true;
   if (
     haveTraits(
       ['strength', 'aggravated', 'prevent', 'press', 'additional strike'],
@@ -208,7 +208,7 @@ const testLibraryCombat = (card) => {
 };
 
 const testLibraryMmpa = (card) => {
-  if (['Parthenon, The', 'Rumors of Gehenna'].includes(card['Name'])) return true;
+  if (['Parthenon, The', 'Rumors of Gehenna'].includes(card.Name)) return true;
 };
 
 const testLibraryRush = (card) => {
@@ -224,7 +224,7 @@ const testLibraryStealth = (card) => {
 };
 
 const testLibraryVote = (card) => {
-  if (card['Type'].split('/').includes('Political Action')) return true;
+  if (card.Type.split('/').includes('Political Action')) return true;
   if (haveTraits(['votes-title'], card, LibraryTraitsRegexMap)) {
     return true;
   }
@@ -240,7 +240,7 @@ const haveTraits = (traits, card, traitsRegexMap) => {
 const CryptTraitsRegexMap = {
   'enter combat': (card) =>
     '(he|she|it|they|' +
-    card['Name'].match(/^\S+/i)[0].replace(/,/, '') +
+    card.Name.match(/^\S+/i)[0].replace(/,/, '') +
     ') (can|may)( .* to)? enter combat',
   'optional press': () => /gets (.*)?optional press/i,
   '1 bleed': () => /[:.] \+[1-9] bleed./i,

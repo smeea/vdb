@@ -3,6 +3,7 @@ import virtuesList from '@/assets/data/virtuesList.json';
 import { cryptSort, librarySort } from '@/utils';
 import {
   cardtypeSortedFull,
+  ASCII_NAME,
   MASTER,
   TRIFLE,
   CARD_TEXT,
@@ -17,8 +18,8 @@ const getCryptTitle = (crypt) => {
   const capacityList = [];
 
   Object.values(crypt).forEach((card) => {
-    cryptTotalCap += card.c['Capacity'] * card.q;
-    for (let i = 0; i < card.q; i++) capacityList.push(card.c['Capacity']);
+    cryptTotalCap += card.c.Capacity * card.q;
+    for (let i = 0; i < card.q; i++) capacityList.push(card.c.Capacity);
   });
   capacityList.sort((a, b) => a - b);
   const cryptTotalCards = capacityList.length;
@@ -65,7 +66,7 @@ const getCryptText = (crypt) => {
     const c = card.c;
     const q = card.q;
     let name = c.Name;
-    if (c['Adv'] && c['Adv'][0]) {
+    if (c.Adv && c.Adv[0]) {
       name += ' (ADV)';
     }
     const disciplines = getDisciplines(c.Disciplines);
@@ -76,11 +77,11 @@ const getCryptText = (crypt) => {
     if (name.length > maxNameLength) {
       maxNameLength = name.length;
     }
-    if (c['Title'].length > maxTitleLength) {
-      maxTitleLength = c['Title'].length;
+    if (c.Title.length > maxTitleLength) {
+      maxTitleLength = c.Title.length;
     }
-    if (c['Capacity'].toString().length > maxCapacityLength) {
-      maxCapacityLength = c['Capacity'].toString().length;
+    if (c.Capacity.toString().length > maxCapacityLength) {
+      maxCapacityLength = c.Capacity.toString().length;
     }
     if (disciplines.length > maxDisciplinesLength) {
       maxDisciplinesLength = disciplines.length;
@@ -100,15 +101,15 @@ const getCryptText = (crypt) => {
     const quantitySpaces = maxQtyLength - q.toString().length;
     const nameSpaces = maxNameLength - name.length + 3;
     const disSpaces = maxDisciplinesLength - disciplines.length + 3;
-    const capacitySpaces = maxCapacityLength - c['Capacity'].toString().length;
-    const titleSpaces = maxTitleLength - c['Title'].length + 3;
+    const capacitySpaces = maxCapacityLength - c.Capacity.toString().length;
+    const titleSpaces = maxTitleLength - c.Title.length + 3;
 
     result += `${q}x${' '.repeat(quantitySpaces)} `;
     result += `${name}${' '.repeat(nameSpaces)}`;
-    result += `${' '.repeat(capacitySpaces)}${c['Capacity']} `;
+    result += `${' '.repeat(capacitySpaces)}${c.Capacity} `;
     result += `${disciplines}${' '.repeat(disSpaces)}`;
-    result += `${c['Title']}${' '.repeat(titleSpaces)}`;
-    result += `${c['Clan']}:${c['Group']}\n`;
+    result += `${c.Title}${' '.repeat(titleSpaces)}`;
+    result += `${c.Clan}:${c['Group']}\n`;
   });
 
   return result;
@@ -179,8 +180,8 @@ const exportJol = (deck) => {
   const sortedLibrary = librarySort(Object.values(deck.library), NAME);
 
   sortedCrypt.forEach((card) => {
-    let name = card.c['ASCII Name'];
-    if (card.c['Adv'] && card.c['Adv'][0]) {
+    let name = card.c[ASCII_NAME];
+    if (card.c.Adv && card.c.Adv[0]) {
       name += ' (ADV)';
     }
     if (card.c['New']) {
@@ -190,7 +191,7 @@ const exportJol = (deck) => {
   });
 
   sortedLibrary.forEach((card) => {
-    const name = card.c['ASCII Name'];
+    const name = card.c[ASCII_NAME];
     result += `${card.q}x${name}\n`;
   });
 
@@ -205,15 +206,15 @@ const exportLackey = (deck) => {
   sortedLibrary.forEach((card) => {
     const spaces = 8 - card.q.toString().length;
     result += `${card.q}${' '.repeat(spaces)}`;
-    result += `${card.c['ASCII Name'].replace(/\//g, '')}\n`;
+    result += `${card.c[ASCII_NAME].replace(/\//g, '')}\n`;
   });
 
   result += 'Crypt:\n';
 
   sortedCrypt.forEach((card) => {
     const spaces = 8 - card.q.toString().length;
-    let name = card.c['ASCII Name'];
-    if (card.c['Adv'] && card.c['Adv'][0]) {
+    let name = card.c[ASCII_NAME];
+    if (card.c.Adv && card.c.Adv[0]) {
       name += ' (ADV)';
     }
     if (card.c['New']) {

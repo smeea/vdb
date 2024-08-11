@@ -19,7 +19,7 @@ const CardImage = ({ card, set, className = 'min-w-[358px]', onClick }) => {
         <img
           className={className}
           src={`${otherUrl}.jpg?v=${import.meta.env.VITE_CARD_VERSION}`}
-          alt={card['Name']}
+          alt={card.Name}
           onClick={onClick}
           onError={resetImgSrc}
         />
@@ -33,7 +33,7 @@ const CardImage = ({ card, set, className = 'min-w-[358px]', onClick }) => {
           <img
             className={className}
             src={`${baseUrl}.jpg?v=${import.meta.env.VITE_CARD_VERSION}`}
-            alt={card['Name']}
+            alt={card.Name}
             onClick={onClick}
           />
         </picture>

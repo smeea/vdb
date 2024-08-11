@@ -1,10 +1,12 @@
+import { ASCII_NAME } from '@/utils/constants';
+
 const useDeckImport = async (deckText, cryptCardBase, libraryCardBase) => {
   const { default: unidecode } = await import('unidecode');
 
   const cardbase = {};
   Object.values(cryptCardBase).forEach((card) => {
     const adv = !!card?.Adv[0];
-    const name = card['ASCII Name'].toLowerCase().replace(/\W/g, '');
+    const name = card[ASCII_NAME].toLowerCase().replace(/\W/g, '');
 
     if (!Object.keys(cardbase).includes(name)) {
       cardbase[name] = { base: card.Id, [card.Group]: card.Id };
@@ -16,7 +18,7 @@ const useDeckImport = async (deckText, cryptCardBase, libraryCardBase) => {
   });
 
   Object.values(libraryCardBase).forEach((card) => {
-    const name = card['ASCII Name'].toLowerCase().replace(/\W/g, '');
+    const name = card[ASCII_NAME].toLowerCase().replace(/\W/g, '');
     cardbase[name] = { base: card.Id };
   });
 

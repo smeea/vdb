@@ -32,7 +32,7 @@ const Text = ({ text }) => {
 
   textWithIcons = reactStringReplace(textWithIcons, /{(.*?)}/g, (match, idx) => {
     const cardBase = { ...nativeCrypt, ...nativeLibrary };
-    const cardid = Object.keys(cardBase).find((j) => cardBase[j]['Name'] == match);
+    const cardid = Object.keys(cardBase).find((j) => cardBase[j].Name == match);
 
     const card = cardid > 200000 ? cryptCardBase[cardid] : libraryCardBase[cardid];
 

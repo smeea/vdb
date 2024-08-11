@@ -250,7 +250,7 @@ export const AppProvider = ({ children }) => {
     setCardBase((draft) => {
       Object.keys(draft).forEach((k) => {
         const newInfo = localizedInfo[k] ? localizedInfo[k] : nativeInfo[k];
-        draft[k]['Name'] = newInfo['Name'];
+        draft[k].Name = newInfo.Name;
         draft[k][CARD_TEXT] = newInfo[CARD_TEXT];
       });
     });

@@ -4,6 +4,7 @@
 // if the filter is present and the card dont match it the method returns true meaning the criteria is missing.
 // if some criteria is missing the main method return false and exits that card check.
 import {
+  ASCII_NAME,
   CARD_TEXT,
   BURN_OPTION,
   BLOOD_COST,
@@ -79,19 +80,19 @@ const missingDisciplinesLibrary = (filter, card) => {
   switch (logic) {
     case 'and':
       return !disciplines.every((discipline) => {
-        if (discipline === 'not required' && !card['Discipline']) return true;
-        if (card['Discipline'].toLowerCase().includes(discipline)) return true;
+        if (discipline === 'not required' && !card.Discipline) return true;
+        if (card.Discipline.toLowerCase().includes(discipline)) return true;
       });
 
     case 'or':
       return !disciplines.some((discipline) => {
-        if (discipline === 'not required' && !card['Discipline']) return true;
-        if (card['Discipline'].toLowerCase().includes(discipline)) return true;
+        if (discipline === 'not required' && !card.Discipline) return true;
+        if (card.Discipline.toLowerCase().includes(discipline)) return true;
       });
     case 'not':
       return disciplines.some((discipline) => {
-        if (discipline === 'not required' && !card['Discipline']) return true;
-        if (card['Discipline'].toLowerCase().includes(discipline)) return true;
+        if (discipline === 'not required' && !card.Discipline) return true;
+        if (card.Discipline.toLowerCase().includes(discipline)) return true;
       });
   }
 };
@@ -105,8 +106,8 @@ const missingTextQuery = (query, card) => {
   const hasToMatch = query.logic === 'and';
 
   const cardText = card[CARD_TEXT].toLowerCase().replace('\n', ' ');
-  const cardName = card['Name'].toLowerCase();
-  const cardASCII = card['ASCII Name'].toLowerCase();
+  const cardName = card.Name.toLowerCase();
+  const cardASCII = card[ASCII_NAME].toLowerCase();
 
   let match;
 
@@ -145,26 +146,24 @@ const missingTraits = (filter, card, traitsRegexMap) => {
 const missingTrait = (trait, card, traitsRegexMap) => {
   switch (trait) {
     case 'playtest':
-      return (
-        (card['Id'] > 200000 && card['Id'] < 210000) || (card['Id'] > 100000 && card['Id'] < 110000)
-      );
+      return (card.Id > 200000 && card.Id < 210000) || (card.Id > 100000 && card.Id < 110000);
     case 'advancement':
-      return !card['Adv'];
+      return !card.Adv;
     case 'banned':
-      return !card['Banned'];
+      return !card.Banned;
     case 'non-twd':
-      return card['Twd'];
+      return card.Twd;
     case 'multi-discipline':
-      return !(card['Discipline'].includes('/') || card['Discipline'].includes('&'));
+      return !(card.Discipline.includes('/') || card.Discipline.includes('&'));
     case 'multi-type':
-      return !card['Type'].includes('/');
+      return !card.Type.includes('/');
     case 'burn':
       return !card[BURN_OPTION];
     case 'no-requirements':
       return (
-        card['Requirement'] ||
-        card['Discipline'] ||
-        card['Clan'] ||
+        card.Requirement ||
+        card.Discipline ||
+        card.Clan ||
         RegExp(/requires a/i, 'i').test(card[CARD_TEXT])
       );
     default:
@@ -177,7 +176,7 @@ const missingTrait = (trait, card, traitsRegexMap) => {
 const CryptTraitsRegexMap = {
   'enter combat': (card) =>
     '(he|she|it|they|' +
-    card['Name'].match(/^\S+/i)[0].replace(/,/, '') +
+    card.Name.match(/^\S+/i)[0].replace(/,/, '') +
     ') (can|may)( .* to)? enter combat',
   'optional press': () => /gets (.*)?optional press/i,
   '1 bleed': () => /[:.] \+[1-9] bleed./i,
@@ -216,13 +215,13 @@ const LibraryTraitsRegexMap = {
 };
 
 const missingTitleCrypt = (filter, card) => {
-  const cardTitle = card['Title'].toLowerCase() || 'none';
+  const cardTitle = card.Title.toLowerCase() || 'none';
   const titles = Object.keys(filter);
 
   if (titles.includes(cardTitle)) return false;
 
   if (
-    card['Adv']?.[0] &&
+    card.Adv?.[0] &&
     RegExp(
       `\\[MERGED\\].*(${titles
         .map((t) => t.replace('1 vote', '1 vote (titled)').replace('2 votes', '2 votes (titled)'))
@@ -258,7 +257,7 @@ const requiredTitleList = [
 ];
 
 const missingVotes = (filter, card) => {
-  const cardTitle = card['Title'].toLowerCase() || 'none';
+  const cardTitle = card.Title.toLowerCase() || 'none';
   if (parseInt(filter) === 0) return !(cardTitle === 'none');
 
   return !(titleWorth[cardTitle] >= parseInt(filter));
@@ -295,11 +294,11 @@ const missingCapacityCrypt = (filter, card) => {
 
         switch (moreless) {
           case 'ge':
-            return card['Capacity'] >= capacity;
+            return card.Capacity >= capacity;
           case 'le':
-            return card['Capacity'] <= capacity;
+            return card.Capacity <= capacity;
           case 'eq':
-            return card['Capacity'] == capacity;
+            return card.Capacity == capacity;
         }
       });
     case 'not':
@@ -309,11 +308,11 @@ const missingCapacityCrypt = (filter, card) => {
 
         switch (moreless) {
           case 'ge':
-            return card['Capacity'] < capacity;
+            return card.Capacity < capacity;
           case 'le':
-            return card['Capacity'] > capacity;
+            return card.Capacity > capacity;
           case 'eq':
-            return card['Capacity'] != capacity;
+            return card.Capacity != capacity;
         }
       });
   }
@@ -350,13 +349,13 @@ const missingClan = (filterClan, card) => {
   switch (logic) {
     case 'or':
       return !clans.some((clan) => {
-        if (card['Clan'].toLowerCase().split('/').includes(clan)) return true;
-        if (clan === 'not required' && !card['Clan']) return true;
+        if (card.Clan.toLowerCase().split('/').includes(clan)) return true;
+        if (clan === 'not required' && !card.Clan) return true;
       });
     case 'not':
       return clans.some((clan) => {
-        if (card['Clan'].toLowerCase().split('/').includes(clan)) return true;
-        if (clan === 'not required' && !card['Clan']) return true;
+        if (card.Clan.toLowerCase().split('/').includes(clan)) return true;
+        if (clan === 'not required' && !card.Clan) return true;
       });
   }
 };
@@ -375,7 +374,7 @@ const missingSectLibrary = (filter, card) => {
 const requiredSectList = ['camarilla', 'sabbat', 'laibon', 'independent', 'anarch', 'imbued'];
 
 const missingGroup = (filter, card) => {
-  return !Object.keys(filter).includes(card['Group']);
+  return !Object.keys(filter).includes(card.Group);
 };
 
 const missingPoolCost = (filter, card) => {
@@ -392,7 +391,7 @@ const testType = (card, type) => {
   if (type === 'reflex') {
     return card[CARD_TEXT].includes('[REFLEX]');
   } else {
-    return card['Type'].toLowerCase().split('/').includes(type);
+    return card.Type.toLowerCase().split('/').includes(type);
   }
 };
 
@@ -495,7 +494,7 @@ const missingPrecon = (filter, card) => {
 };
 
 const missingArtist = (filter, card) => {
-  return !card['Artist'].includes(filter);
+  return !card.Artist.includes(filter);
 };
 
 const missingNameOrInitials = (filter, card) => {
@@ -506,8 +505,8 @@ const missingNameOrInitials = (filter, card) => {
     checkInitials = RegExp(charRegExp, 'i');
   } catch {}
 
-  let name = card['Name'].toLowerCase();
-  let nameASCII = card['ASCII Name'].toLowerCase();
+  let name = card.Name.toLowerCase();
+  let nameASCII = card[ASCII_NAME].toLowerCase();
   filter = filter.toLowerCase();
   if (/^the .*/.test(filter) && /, the$/.test(name)) {
     name = `the ${name.replace(/, the$/, '')}`;

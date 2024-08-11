@@ -31,14 +31,14 @@ const ResultLayoutTextCommon = ({
           <ResultLayoutTextArtist
             handleClose={handleClose}
             inCrypt={card.Id > 200000}
-            artists={card['Artist']}
+            artists={card.Artist}
           />
         </div>
       </div>
-      {Object.keys(card['Rulings']).length > 0 && (
+      {Object.keys(card.Rulings).length > 0 && (
         <div className="flex flex-col gap-1">
           <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Rulings:</div>
-          <ResultLayoutTextRulings rulings={card['Rulings']} />
+          <ResultLayoutTextRulings rulings={card.Rulings} />
         </div>
       )}
       {!isPlaytest && (forceInventoryMode || inventoryMode) && (

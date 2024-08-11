@@ -13,7 +13,7 @@ const ResultCryptName = ({ card, colored = true, isBanned }) => {
       }`}
     >
       <div className={`inline whitespace-normal ${card.Banned || isBanned ? 'line-through' : ''}`}>
-        {card['Name']}
+        {card.Name}
       </div>
       {card.Adv[0] && (
         <div className="inline whitespace-nowrap">

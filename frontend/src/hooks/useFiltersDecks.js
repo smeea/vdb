@@ -174,7 +174,7 @@ const missingCardtypes = (filter, deck) => {
 
   Object.values(deck.library).forEach((card) => {
     libraryTotal += card.q;
-    const type = card.c['Type'].toLowerCase();
+    const type = card.c.Type.toLowerCase();
     if (cardTypes[type]) {
       cardTypes[type] += card.q;
     } else {
