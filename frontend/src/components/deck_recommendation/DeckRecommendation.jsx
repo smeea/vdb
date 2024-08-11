@@ -15,7 +15,7 @@ const DeckRecommendation = ({ setShow, deck }) => {
     url,
     {
       method: 'POST',
-      body: JSON.stringify({ cards: cards }),
+      json: { cards: cards },
     },
     [deck],
   );
