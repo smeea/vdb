@@ -77,7 +77,10 @@ export const deckCardChange = (deckid, card, q) => {
 };
 
 export const deckUpdate = (deckid, field, value) => {
-  const initialDeckState = deepClone(deckStore.deck);
+  let initialDeckState;
+  if (deckStore?.deck?.deckid === deckid) {
+    initialDeckState = deepClone(deckStore.deck);
+  }
   const initialDecksState = deepClone(deckStore.decks[deckid]);
 
   switch (field) {
@@ -90,7 +93,7 @@ export const deckUpdate = (deckid, field, value) => {
         }
       });
 
-      if (deckid === deckStore.deck.deckid) {
+      if (deckid === deckStore?.deck?.deckid) {
         Object.keys(value).forEach((cardid) => {
           if (cardid > 200000) {
             deckStore.deck.crypt[cardid].i = value[cardid];
@@ -104,7 +107,7 @@ export const deckUpdate = (deckid, field, value) => {
       deckStore.decks[deckid].crypt = value.crypt;
       deckStore.decks[deckid].library = value.library;
 
-      if (deckid === deckStore.deck.deckid) {
+      if (deckid === deckStore?.deck?.deckid) {
         deckStore.deck.crypt = value.crypt;
         deckStore.deck.library = value.library;
       }
@@ -120,7 +123,7 @@ export const deckUpdate = (deckid, field, value) => {
         });
       }
 
-      if (deckid === deckStore.deck.deckid) {
+      if (deckid === deckStore?.deck?.deckid) {
         deckStore.deck[field] = value;
         if (field === 'inventoryType') {
           Object.keys(deckStore.deck.crypt).forEach((cardid) => {
@@ -153,7 +156,7 @@ export const deckUpdate = (deckid, field, value) => {
   const now = new Date();
   deckStore.decks[deckid].timestamp = now.toUTCString();
 
-  deckServices.update(deckid, field, value).catch(() => {
+  return deckServices.update(deckid, field, value).catch(() => {
     deckStore.deck = initialDeckState;
     deckStore.decks[deckid] = initialDecksState;
   });

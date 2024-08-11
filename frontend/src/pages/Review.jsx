@@ -41,13 +41,16 @@ const Review = () => {
   const [urlDiff, setUrlDiff] = useState();
 
   const getDeck = async () => {
-    const deckData = await loaderData.deckData;
-
-    if (deckData.error) {
-      if (deckData.error == 400) {
-        setError('NO DECK WITH THIS ID');
-      } else {
-        setError('CONNECTION PROBLEM');
+    let deckData;
+    try {
+      deckData = await loaderData.deckData;
+    } catch (e) {
+      switch (e.response.status) {
+        case 400:
+          setError('NO DECK WITH THIS ID');
+          break;
+        default:
+          setError('CONNECTION PROBLEM');
       }
       setDeckTo(undefined);
       setDeckFrom(undefined);
@@ -70,6 +73,8 @@ const Review = () => {
       isPublic: !!deckData.publicParent,
       isNonEditable: false,
     };
+    delete d.cards;
+
     setDeckTo(d);
     setDeckFrom(d);
   };
@@ -89,12 +94,12 @@ const Review = () => {
   };
 
   useEffect(() => {
-    const diff = getDiff(
-      { ...deckFrom?.crypt, ...deckFrom?.library },
-      { ...deckTo?.crypt, ...deckTo?.library },
-    );
+    if (deckFrom && deckTo) {
+      const diff = getDiff(
+        { ...deckFrom?.crypt, ...deckFrom?.library },
+        { ...deckTo?.crypt, ...deckTo?.library },
+      );
 
-    if (Object.keys(diff).length) {
       const cards = [];
       Object.keys(diff).forEach((card) => {
         cards.push(`${card}=${diff[card]};`);
@@ -104,7 +109,7 @@ const Review = () => {
       setUrlDiff(u);
       navigate(`/review/${deckid}#${u}`);
     }
-  }, [deckFrom]);
+  }, [deckFrom, deckTo]);
 
   const cardChange = (_, card, count) => {
     if (count >= 0) {
@@ -156,19 +161,7 @@ const Review = () => {
   useEffect(() => {
     if (cryptCardBase && libraryCardBase && deckid) {
       if (!deckFrom || deckFrom.deckid != deckid) {
-        if (decks?.[deckid]) {
-          setDeckFrom(decks[deckid]);
-        } else if (deckid.includes(':') && preconDecks) {
-          const deckidFixed = deckid.replace('_', ' ');
-          if (preconDecks[deckidFixed]) {
-            setDeckFrom(preconDecks[deckidFixed]);
-          } else {
-            setDeckFrom(undefined);
-            setError('NO DECK WITH THIS ID');
-          }
-        } else if (loaderData) {
-          getDeck();
-        }
+        getDeck();
       }
     }
   }, [deckid, loaderData, decks, preconDecks, cryptCardBase, libraryCardBase]);
@@ -195,7 +188,11 @@ const Review = () => {
               setFolded={setFoldedDescription}
             />
           )}
-          {error && <ErrorMessage>{error}</ErrorMessage>}
+          {error && (
+            <div>
+              <ErrorMessage>{error}</ErrorMessage>
+            </div>
+          )}
           {deckFrom && (
             <FlexGapped className="max-sm:flex-col">
               <div className="basis-full sm:basis-5/9">

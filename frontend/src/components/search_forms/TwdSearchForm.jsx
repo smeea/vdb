@@ -92,15 +92,16 @@ const TwdSearchForm = ({ error, setError }) => {
     setError(false);
   };
 
-  const handleError = (error) => {
-    setTwdResults(null);
-
-    if (error.message == 400) {
-      setError('NO DECKS FOUND');
-    } else {
-      setError('CONNECTION PROBLEM');
+  const handleError = (e) => {
+    switch (e.response.status) {
+      case 400:
+        setError('NO DECKS FOUND');
+        break;
+      default:
+        setError('CONNECTION PROBLEM');
     }
 
+    setTwdResults(null);
     if (isMobile) {
       setIsLoading(false);
       navigate('/twd');

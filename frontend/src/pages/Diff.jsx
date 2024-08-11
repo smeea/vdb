@@ -41,32 +41,33 @@ const Diff = () => {
   const isEditable = isAuthor && !isPublic && !isFrozen;
 
   const getDeck = async (id, setD, setE) => {
-    setE(false);
-
-    deckServices
-      .getDeck(id)
-      .then((deckData) => {
-        const cardsData = useDeck(deckData.cards, cryptCardBase, libraryCardBase);
-
-        const d = {
-          ...deckData,
-          crypt: cardsData.crypt,
-          library: cardsData.library,
-          isBranches: !!(deckData.master || deckData.branches?.length > 0),
-          isPublic: !!deckData.publicParent,
-        };
-
-        addRecentDeck(d);
-        setD(d);
-      })
-      .catch((error) => {
-        if (error.message == 400) {
+    let deckData;
+    try {
+      deckData = await deckServices.getDeck(id);
+    } catch (e) {
+      switch (e.response.status) {
+        case 400:
           setE('NO DECK WITH THIS ID');
-        } else {
+          break;
+        default:
           setE('CONNECTION PROBLEM');
-        }
-        setD(undefined);
-      });
+      }
+      setD(undefined);
+      return;
+    }
+
+    setE(false);
+    const cardsData = useDeck(deckData.cards, cryptCardBase, libraryCardBase);
+    const d = {
+      ...deckData,
+      crypt: cardsData.crypt,
+      library: cardsData.library,
+      isBranches: !!(deckData.master || deckData.branches?.length > 0),
+      isPublic: !!deckData.publicParent,
+    };
+
+    addRecentDeck(d);
+    setD(d);
   };
 
   useEffect(() => {

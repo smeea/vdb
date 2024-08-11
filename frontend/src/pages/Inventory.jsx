@@ -40,21 +40,23 @@ const Inventory = () => {
   const [showCryptOnMobile, setShowCryptOnMobile] = useState(true);
   const isSharedInventory = sharedCrypt && sharedLibrary;
 
-  const getInventory = (key) => {
+  const getInventory = async (key) => {
     setInventoryError(false);
-    inventoryServices
-      .getSharedInventory(key, cryptCardBase, libraryCardBase)
-      .then(({ crypt, library }) => {
-        setSharedCrypt(crypt);
-        setSharedLibrary(library);
-      })
-      .catch((error) => {
-        if (error.message == 401) {
+    let response;
+    try {
+      response = await inventoryServices.getSharedInventory(key, cryptCardBase, libraryCardBase);
+    } catch (e) {
+      switch (e.response.status) {
+        case 401:
           setInventoryError('NO INVENTORY WITH THIS KEY');
-        } else {
+          break;
+        default:
           setInventoryError('CONNECTION PROBLEM');
-        }
-      });
+      }
+      return;
+    }
+    setSharedCrypt(response.crypt);
+    setSharedLibrary(response.library);
   };
 
   useEffect(() => {

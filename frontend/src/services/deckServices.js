@@ -290,7 +290,7 @@ const saveFile = async (file, name) => {
   saveAs(file, name);
 };
 
-export const deckLoader = ({ params }) => {
+export const deckLoader = async ({ params }) => {
   const deckid = params.deckid;
 
   if (deckid === 'deck' || deckid.includes(':')) return null;

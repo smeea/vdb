@@ -59,10 +59,11 @@ const Decks = () => {
   const isEditable = isAuthor && !isPublic && !isFrozen;
 
   const getDeck = async () => {
-    const deckData = await loaderData.deckData;
-
-    if (deckData.error) {
-      switch (deckData.error) {
+    let deckData;
+    try {
+      deckData = await loaderData.deckData;
+    } catch (e) {
+      switch (e.response.status) {
         case 400:
           setError('NO DECK WITH THIS ID');
           break;
@@ -169,7 +170,7 @@ const Decks = () => {
               setDeck(undefined);
               setError('NO DECK WITH THIS ID');
             }
-          } else if (loaderData) {
+          } else {
             getDeck();
           }
         } else if (deck.isFromUrl && decks?.[deckid]) {
