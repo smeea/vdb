@@ -1,13 +1,14 @@
 # FIX
 - Snapshot url in iOS
 - Page update in iOS
-- Change horizontal vertical force layout failure
 
 # FEATURES
 - TWD search with % V5-compatibility - after BCP clarify V5
 - Deck details show % V5-compatibility - after BCP clarify V5
 - Only modifier for discipline search in library
 - Card q-ty change in autocompletion
+- Detailed excel export
+- Legacy style in PDF select card
 
 # TECH IMPROVEMENTS
 - Update to React 19

@@ -67,7 +67,7 @@ export const AppProvider = ({ children }) => {
   const [isPlaytester, setIsPlaytester] = useState();
   const [playtestMode, setPlaytestMode] = useState();
   const [showImage, setShowImage] = useState();
-  const [showLegacyImage, setShowLegacyImage] = useState(true);
+  const [showLegacyImage, setShowLegacyImage] = useState();
   const [addMode, setAddMode] = useState();
   const [inventoryMode, setInventoryMode] = useState();
   const [limitedMode, setLimitedMode] = useState();
