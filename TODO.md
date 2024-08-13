@@ -1,6 +1,7 @@
 # FIX
 - Snapshot url in iOS
 - Page update in iOS
+- Patreon note for iOS
 
 # FEATURES
 - TWD search with % V5-compatibility - after BCP clarify V5

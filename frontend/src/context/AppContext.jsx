@@ -411,6 +411,7 @@ export const AppProvider = ({ children }) => {
     storageServices.initFromStorage(SHOW_IMAGE, true, setShowImage);
     storageServices.initFromStorage(RECENT_DECKS, [], setRecentDecks);
     storageServices.initFromStorage(PLAYTEST_MODE, false, setPlaytestMode);
+    storageServices.initFromStorage(SHOW_LEGACY_IMAGE, false, setShowLegacyImage);
   }, []);
 
   // DECKS
