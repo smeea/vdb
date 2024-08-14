@@ -86,7 +86,7 @@ const PlaytestReportExportAllWrapper = ({ setShow }) => {
 
   return (
     <Modal size="card" title="Playtest Reports" handleClose={() => setShow(false)}>
-      <div className="flex flex-col gap-3 sm:gap-4">
+      <div className="flex flex-col gap-3 overflow-y-auto sm:gap-4">
         <div className="flex justify-between gap-3 sm:gap-4">
           <ButtonIconed
             className="w-full"
@@ -113,22 +113,27 @@ const PlaytestReportExportAllWrapper = ({ setShow }) => {
           const playtestPrecon =
             i.deckid && i.deckid.includes('PLAYTEST:') && i.deckid.replace('PLAYTEST:', '');
           const id = playtestPrecon ?? i.Id;
+          const name = playtestPrecon ? i.name : i.Name;
 
           return (
             <React.Fragment key={id}>
               <FlexGapped className="max-sm:flex-col">
                 <div className="flex flex-col gap-2 sm:gap-4">
-                  {!isMobile && (
+                  {isMobile ? (
+                    <div className="flex font-bold text-fgSecondary dark:text-fgSecondaryDark">
+                      {name}
+                    </div>
+                  ) : (
                     <>
                       {playtestPrecon ? (
-                        <div className="flex w-[358px] flex-col gap-1">
+                        <div className="flex w-[320px] flex-col gap-1">
                           <div className="flex font-bold text-fgSecondary dark:text-fgSecondaryDark">
                             {i.name}
                           </div>
-                          <DeckCrypt deck={i} noDisciplines />
+                          <DeckCrypt deck={i} noDisciplines inMissing />
                         </div>
                       ) : (
-                        <CardImage card={i} onClick={() => setShow(false)} />
+                        <CardImage card={i} onClick={() => setShow(false)} size="sm" />
                       )}
                     </>
                   )}
