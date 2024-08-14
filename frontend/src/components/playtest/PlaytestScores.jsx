@@ -5,7 +5,7 @@ import { useApp } from '@/context';
 
 const PlaytestScores = ({ value, handleClick, isSmall }) => {
   const { isMobile } = useApp();
-  const SIZE = isSmall ? (isMobile ? '16' : '20') : isMobile ? '22' : '24';
+  const SIZE = isSmall ? (isMobile ? '16' : '20') : '24';
 
   const titles = [
     'Useless / Unplayable',

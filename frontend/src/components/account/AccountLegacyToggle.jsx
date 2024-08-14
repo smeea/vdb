@@ -14,6 +14,11 @@ const TooltipText = () => {
         Will overwrite card text language settings (legacy images only available in English).
       </div>
       <div>Not all images are available, will fallback to standard image.</div>
+      <div className="text-fgRed dark:text-fgRedDark">
+        Proxies from those images DO NOT fulfill VEKN requirements of a Proxy for proxy-allowed
+        tournaments (must be copy of a card as it was released and most card were never released
+        with legacy layout).
+      </div>
     </div>
   );
 };

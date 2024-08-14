@@ -10,6 +10,8 @@
 - Card q-ty change in autocompletion
 - Detailed excel export
 - Legacy style in PDF select card
+- Indicator of missing card in deck selector
+- Lock inventory
 
 # TECH IMPROVEMENTS
 - Update to React 19

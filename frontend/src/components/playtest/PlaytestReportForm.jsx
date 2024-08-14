@@ -4,7 +4,6 @@ import ChevronBarContract from '@/assets/images/icons/chevron-bar-contract.svg?r
 import ChatLeftQuoteFill from '@/assets/images/icons/chat-left-quote-fill.svg?react';
 import {
   Button,
-  ButtonClose,
   Input,
   InputLabel,
   Textarea,
@@ -59,6 +58,8 @@ const Title = ({ isPrecon }) => {
 };
 
 const PlaytestReportForm = ({ id, setIsHotkeysDisabled, isPrecon = false }) => {
+  const { isMobile } = useApp();
+
   const [text, setText] = useState('');
   const [score, setScore] = useState(0);
   const [isPlayed, setIsPlayed] = useState(false);
@@ -108,23 +109,25 @@ const PlaytestReportForm = ({ id, setIsHotkeysDisabled, isPrecon = false }) => {
     submit(text, score, event.target.checked);
   };
 
-  const handleScoreChange = (score) => {
-    setScore(score);
-    submit(text, score, isPlayed);
+  const handleScoreChange = (value) => {
+    const result = value == score ? 0 : value;
+    setScore(result);
+    submit(text, result, isPlayed);
   };
 
   return (
-    <div className="flex flex-col gap-2">
-      {!isPrecon && (
-        <div className="flex justify-between">
-          <Title />
-          <Checkbox label="was seen in play" checked={isPlayed} onChange={handleIsPlayedChange} />
-        </div>
-      )}
-      <div className="flex w-full items-center justify-between gap-3">
-        <div className="flex flex-col">{isPrecon && <Title isPrecon={isPrecon} />}</div>
+    <div className="flex flex-col gap-3">
+      <div className="flex justify-between">
+        <Title />
+        {isMobile && (
+          <Checkbox label="seen in play" checked={isPlayed} onChange={handleIsPlayedChange} />
+        )}
+      </div>
+      <div className="flex w-full items-center justify-between gap-4">
         <PlaytestScores value={score} handleClick={handleScoreChange} />
-        <ButtonClose title="Clear Score" handleClick={() => handleScoreChange(0)} />
+        {!isMobile && (
+          <Checkbox label="seen in play" checked={isPlayed} onChange={handleIsPlayedChange} />
+        )}
       </div>
       <form className="flex" onSubmit={handleSubmit}>
         <InputLabel title="Description">
