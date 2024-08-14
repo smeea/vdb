@@ -5,7 +5,7 @@ import {
   ResultDisciplineImage,
   ResultClanImage,
 } from '@/components';
-import { ALL, NONE } from '@/utils/constants';
+import { ALL, CRYPT, TYPE, DISCIPLINE, NONE } from '@/utils/constants';
 
 const InventoryFilterForm = ({ value, setValue, values, target, byTotal, byUnique }) => {
   const options = [];
@@ -15,7 +15,7 @@ const InventoryFilterForm = ({ value, setValue, values, target, byTotal, byUniqu
       value: i,
       label: (
         <div className="flex justify-between">
-          {target === 'crypt' && (
+          {target === CRYPT && (
             <div>
               {i === ALL ? (
                 <div className="flex items-center">
@@ -33,7 +33,7 @@ const InventoryFilterForm = ({ value, setValue, values, target, byTotal, byUniqu
             </div>
           )}
 
-          {target === 'type' && (
+          {target === TYPE && (
             <div>
               {i === ALL ? (
                 <div className="flex items-center">
@@ -51,7 +51,7 @@ const InventoryFilterForm = ({ value, setValue, values, target, byTotal, byUniqu
             </div>
           )}
 
-          {target === 'discipline' && (
+          {target === DISCIPLINE && (
             <div>
               {[ALL, NONE].includes(i) ? (
                 <div className="flex items-center">
