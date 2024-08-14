@@ -175,12 +175,14 @@ export { default as InventoryDeckAddButton } from './inventory/InventoryDeckAddB
 export { default as InventoryDeckDeleteButton } from './inventory/InventoryDeckDeleteButton.jsx';
 export { default as InventoryDeleteButton } from './inventory/InventoryDeleteButton.jsx';
 export { default as InventoryFilterForm } from './inventory/InventoryFilterForm.jsx';
+export { default as InventoryFreezeButton } from './inventory/InventoryFreezeButton.jsx';
 export { default as InventoryImport } from './inventory/InventoryImport.jsx';
 export { default as InventoryImportButton } from './inventory/InventoryImportButton.jsx';
 export { default as InventoryLibrary } from './inventory/InventoryLibrary.jsx';
 export { default as InventoryLibraryWrapper } from './inventory/InventoryLibraryWrapper.jsx';
 export { default as InventoryLibraryTable } from './inventory/InventoryLibraryTable.jsx';
 export { default as InventoryLibraryTableRow } from './inventory/InventoryLibraryTableRow.jsx';
+export { default as InventoryMenu } from './inventory/InventoryMenu.jsx';
 export { default as InventoryMissingButton } from './inventory/InventoryMissingButton.jsx';
 export { default as InventoryMissingModalWrapper } from './inventory/InventoryMissingModalWrapper.jsx';
 export { default as InventoryShareButton } from './inventory/InventoryShareButton.jsx';

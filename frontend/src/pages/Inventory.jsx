@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useSnapshot } from 'valtio';
 import { useLocation } from 'react-router-dom';
 import {
   LoginBlock,
@@ -6,8 +7,7 @@ import {
   InventoryAddPreconModal,
   InventoryCryptWrapper,
   InventoryLibraryWrapper,
-  InventoryButtons,
-  InventoryShowSelect,
+  InventoryMenu,
   InventoryShareModal,
   Modal,
   ButtonFloat,
@@ -16,7 +16,7 @@ import {
   Checkbox,
   FlexGapped,
 } from '@/components';
-import { useApp } from '@/context';
+import { inventoryStore, useApp } from '@/context';
 import { inventoryServices } from '@/services';
 import { ALL, OK } from '@/utils/constants';
 
@@ -31,6 +31,7 @@ const Inventory = () => {
     cryptCardBase,
     libraryCardBase,
   } = useApp();
+
   const [inventoryError, setInventoryError] = useState();
   const query = new URLSearchParams(useLocation().search);
   const sharedKey = query.get('key');
@@ -105,8 +106,8 @@ const Inventory = () => {
               setType={setType}
             />
           </div>
-          <div className="flex basis-full flex-col space-y-6 max-lg:hidden lg:basis-2/12">
-            <InventoryButtons
+          <div className="max-lg:hidden lg:basis-2/12">
+            <InventoryMenu
               sharedCrypt={sharedCrypt}
               sharedLibrary={sharedLibrary}
               setSharedCrypt={setSharedCrypt}
@@ -117,20 +118,11 @@ const Inventory = () => {
               clan={clan}
               discipline={discipline}
               type={type}
-              category={isSharedInventory ? OK : category}
+              category={category}
               onlyNotes={onlyNotes}
+              setOnlyNotes={setOnlyNotes}
               isSharedInventory={isSharedInventory}
             />
-            <div>
-              <InventoryShowSelect category={category} setCategory={setCategory} />
-            </div>
-            <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
-              <Checkbox
-                label="Only with Notes"
-                checked={onlyNotes}
-                onChange={() => setOnlyNotes(!onlyNotes)}
-              />
-            </div>
           </div>
           {isMobile && showFloatingButtons && (
             <ButtonFloat
@@ -159,26 +151,22 @@ const Inventory = () => {
           centered
           size="sm"
         >
-          <div className="space-y-3">
-            <InventoryButtons
-              sharedCrypt={sharedCrypt}
-              sharedLibrary={sharedLibrary}
-              setSharedCrypt={setSharedCrypt}
-              setSharedLibrary={setSharedLibrary}
-              setShowAddDeck={setShowAddDeck}
-              setShowAddPrecon={setShowAddPrecon}
-              setShowShareModal={setShowShareModal}
-              clan={clan}
-              discipline={discipline}
-              type={type}
-              category={isSharedInventory ? OK : category}
-              onlyNotes={onlyNotes}
-              isSharedInventory={isSharedInventory}
-            />
-            <div>
-              <InventoryShowSelect category={category} setCategory={setCategory} />
-            </div>
-          </div>
+          <InventoryMenu
+            sharedCrypt={sharedCrypt}
+            sharedLibrary={sharedLibrary}
+            setSharedCrypt={setSharedCrypt}
+            setSharedLibrary={setSharedLibrary}
+            setShowAddDeck={setShowAddDeck}
+            setShowAddPrecon={setShowAddPrecon}
+            setShowShareModal={setShowShareModal}
+            clan={clan}
+            discipline={discipline}
+            type={type}
+            category={category}
+            setCategory={setCategory}
+            onlyNotes={onlyNotes}
+            setOnlyNotes={setOnlyNotes}
+          />
         </Modal>
       )}
       {showAddDeck && (

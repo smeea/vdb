@@ -5,6 +5,7 @@ import { inventoryServices } from '@/services';
 export const inventoryStore = proxy({
   crypt: {},
   library: {},
+  isFrozen: false,
 });
 
 export const usedStore = proxy({
@@ -103,6 +104,14 @@ export const inventoryCardTextChange = (card, text) => {
       t: text,
     };
   }
+};
+
+export const inventoryUpdate = (field, value) => {
+  const initialState = inventoryStore[field];
+  inventoryStore[field] = value;
+  inventoryServices.update(field, value).catch(() => {
+    inventoryStore[field] = initialState;
+  });
 };
 
 export const setupUsedInventory = (decks) => {

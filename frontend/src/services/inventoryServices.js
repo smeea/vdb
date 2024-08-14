@@ -24,6 +24,11 @@ export const setCardText = (cardid, text) => {
   return ky.put(url, { json: { [cardid]: { t: text } } });
 };
 
+export const update = (field, value) => {
+  const url = `${import.meta.env.VITE_API_URL}/inventory`;
+  return ky.put(url, { json: { [field]: value } });
+};
+
 export const getSharedInventory = (key, cryptCardBase, libraryCardBase) => {
   const url = `${import.meta.env.VITE_API_URL}/inventory/${key}`;
 

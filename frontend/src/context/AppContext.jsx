@@ -198,7 +198,7 @@ export const AppProvider = ({ children }) => {
       }
     });
 
-    return { crypt: inventoryData.crypt, library: inventoryData.library };
+    return inventoryData;
   };
 
   const initializeUserData = (data) => {
@@ -209,7 +209,8 @@ export const AppProvider = ({ children }) => {
     setIsPlaytester(data.playtester);
     setIsPlaytestAdmin(data.playtest_admin);
     if (!data.playtester && !data.playtest_admin) setPlaytestMode(false);
-    const { crypt, library } = parseInventoryData(data.inventory);
+    const { isFrozen, crypt, library } = parseInventoryData(data.inventory);
+    inventoryStore.isFrozen = isFrozen;
     inventoryStore.crypt = crypt;
     inventoryStore.library = library;
     deckStore.decks = parseDecksData(data.decks);

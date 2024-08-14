@@ -12,6 +12,8 @@ def parse_user_inventory(user_inventory):
 
     if user_inventory:
         for k, v in user_inventory.items():
+            if k == 'frozen':
+                continue
             k = int(k)
             if k > 200000:
                 crypt[k] = v
@@ -21,6 +23,7 @@ def parse_user_inventory(user_inventory):
     return {
         "crypt": crypt,
         "library": library,
+        "isFrozen": user_inventory.get("frozen")
     }
 
 
@@ -53,6 +56,8 @@ def inventory_add_cards_route():
     new_cards = request.json
     merged_cards = copy.deepcopy(current_user.inventory)
     for k, v in new_cards.items():
+        if k == 'frozen':
+            continue
         k = int(k)
         if k in merged_cards:
             if merged_cards[k]['q'] + v <= 0:
@@ -69,29 +74,39 @@ def inventory_add_cards_route():
 
 @app.route("/api/inventory", methods=["PUT"])
 @login_required
-def inventory_change_card_route():
-    new_cards = request.json
-    merged_cards = copy.deepcopy(current_user.inventory)
-    for k, v in new_cards.items():
-        k = int(k)
-        if 'q' in v:
-            if v['q'] >= 0:
+def inventory_update_route():
+    if "isFrozen" in request.json:
+        merged_cards = copy.deepcopy(current_user.inventory)
+        merged_cards['frozen'] = request.json["isFrozen"]
+        current_user.inventory = merged_cards
+    elif current_user.inventory.get("frozen"):
+        abort(409)
+    else:
+        new_cards = request.json
+        merged_cards = copy.deepcopy(current_user.inventory)
+        for k, v in new_cards.items():
+            if k == 'frozen':
+                continue
+            k = int(k)
+            if 'q' in v:
+                if v['q'] >= 0:
+                    if k in merged_cards:
+                        merged_cards[k]['q'] = v['q']
+                    else:
+                        merged_cards[k] = v
+                elif k in merged_cards:
+                    del merged_cards[k]
+
+            if 't' in v:
                 if k in merged_cards:
-                    merged_cards[k]['q'] = v['q']
+                    merged_cards[k]['t'] = v['t']
                 else:
-                    merged_cards[k] = v
-            elif k in merged_cards:
-                del merged_cards[k]
+                    merged_cards[k] = {
+                        'q': 0,
+                        't' : v['t']
+                    }
 
-        if 't' in v:
-            if k in merged_cards:
-                merged_cards[k]['t'] = v['t']
-            else:
-                merged_cards[k] = {
-                    'q': 0,
-                    't' : v['t']
-                }
+        current_user.inventory = merged_cards
 
-    current_user.inventory = merged_cards
     db.session.commit()
     return jsonify(success=True)

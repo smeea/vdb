@@ -14,7 +14,7 @@ import {
 } from '@/components';
 import { TRIFLE, POOL_COST, BLOOD_COST, BURN_OPTION } from '@/utils/constants';
 import { getHardTotal, getSoftMax } from '@/utils';
-import { useApp, usedStore, limitedStore, inventoryCardChange } from '@/context';
+import { useApp, inventoryStore, usedStore, limitedStore, inventoryCardChange } from '@/context';
 import { useSwipe } from '@/hooks';
 
 const InventoryLibraryTableRow = ({ card, compact, newFocus, inShared, handleClick }) => {
@@ -24,6 +24,7 @@ const InventoryLibraryTableRow = ({ card, compact, newFocus, inShared, handleCli
   const inLimited = limitedLibrary[card.c.Id];
   const softUsedMax = getSoftMax(usedLibrary.soft[card.c.Id]);
   const hardUsedTotal = getHardTotal(usedLibrary.hard[card.c.Id]);
+  const isEditable = !useSnapshot(inventoryStore).isFrozen;
 
   const { isSwiped, swipeHandlers } = useSwipe(
     () => inventoryCardChange(card.c, card.q - 1),
@@ -39,13 +40,13 @@ const InventoryLibraryTableRow = ({ card, compact, newFocus, inShared, handleCli
   return (
     <div className={`flex w-full items-center ${trBg}`} {...swipeHandlers}>
       {inShared ? (
-        <div
-          className={`flex h-full min-w-[45px] items-center justify-center border-r border-bgSecondary bg-blue/5 text-lg dark:border-bgSecondaryDark`}
-        >
+        <div className="flex h-full min-w-[42px] border-r border-bgSecondary bg-blue/5 dark:border-bgSecondaryDark sm:min-w-[48px]">
           {card.q || null}
         </div>
       ) : (
-        <div className="flex min-w-[80px] px-0.5">
+        <div
+          className={`flex ${isEditable ? 'min-w-[84px]' : 'h-full min-w-[42px] border-r border-bgSecondary bg-blue/5 dark:border-bgSecondaryDark sm:min-w-[48px]'}`}
+        >
           <InventoryCardQuantity
             card={card}
             softUsedMax={softUsedMax}

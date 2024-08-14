@@ -38,7 +38,11 @@ const InventoryButtons = ({
     isDesktop,
   } = useApp();
 
-  const { crypt: inventoryCrypt, library: inventoryLibrary } = useSnapshot(inventoryStore);
+  const {
+    isFrozen,
+    crypt: inventoryCrypt,
+    library: inventoryLibrary,
+  } = useSnapshot(inventoryStore);
   const decks = useSnapshot(deckStore).decks;
   const navigate = useNavigate();
   const crypt = isSharedInventory ? sharedCrypt : inventoryCrypt;
@@ -78,34 +82,38 @@ const InventoryButtons = ({
         />
         {!isSharedInventory && (
           <>
-            <InventoryImport />
-            {decks && (
-              <ButtonIconed
-                variant={isDesktop ? 'secondary' : 'primary'}
-                onClick={() => {
-                  setShowAddDeck(true);
-                  setShowMenuButtons(false);
-                  setShowFloatingButtons(false);
-                }}
-                title="Add from your Deck"
-                icon={<FolderPlus />}
-                text="Add from Deck"
-              />
+            {!isFrozen && (
+              <>
+                <InventoryImport />
+                {decks && (
+                  <ButtonIconed
+                    variant={isDesktop ? 'secondary' : 'primary'}
+                    onClick={() => {
+                      setShowAddDeck(true);
+                      setShowMenuButtons(false);
+                      setShowFloatingButtons(false);
+                    }}
+                    title="Add from your Deck"
+                    icon={<FolderPlus />}
+                    text="Add from Deck"
+                  />
+                )}
+                {preconDecks && (
+                  <ButtonIconed
+                    variant={isDesktop ? 'secondary' : 'primary'}
+                    onClick={() => {
+                      setShowAddPrecon(true);
+                      setShowMenuButtons(false);
+                      setShowFloatingButtons(false);
+                    }}
+                    title="Add from Preconstructed Deck"
+                    icon={<FolderPlus />}
+                    text="Add from Precon"
+                  />
+                )}
+                <InventoryDeleteButton />
+              </>
             )}
-            {preconDecks && (
-              <ButtonIconed
-                variant={isDesktop ? 'secondary' : 'primary'}
-                onClick={() => {
-                  setShowAddPrecon(true);
-                  setShowMenuButtons(false);
-                  setShowFloatingButtons(false);
-                }}
-                title="Add from Preconstructed Deck"
-                icon={<FolderPlus />}
-                text="Add from Precon"
-              />
-            )}
-            <InventoryDeleteButton />
             <InventoryMissingButton
               crypt={crypt}
               library={library}
