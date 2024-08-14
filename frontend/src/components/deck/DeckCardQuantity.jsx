@@ -116,7 +116,9 @@ const DeckCardQuantity = ({
           overlay={<UsedPopover cardid={card.Id} />}
           disabled={!inventoryMode || isMobile}
         >
-          <div className={`flex justify-center text-lg ${inventoryColor}`}>{q || null}</div>
+          <div className={`mx-1 flex items-center justify-center text-lg ${inventoryColor}`}>
+            {q || null}
+          </div>
         </ConditionalTooltip>
       )}
     </>
