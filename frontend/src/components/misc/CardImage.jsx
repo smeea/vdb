@@ -3,7 +3,7 @@ import { useApp } from '@/context';
 import { useCardImageUrl } from '@/hooks';
 import { EN } from '@/utils/constants';
 
-const CardImage = ({ card, set, className = '', size = 'md', onClick }) => {
+const CardImage = ({ card, set, className = 'max-sm:w-full', size = 'md', onClick }) => {
   const { lang, showLegacyImage } = useApp();
   const { baseUrl, otherUrl, legacyUrl } = useCardImageUrl(card, set, lang);
 
@@ -14,8 +14,8 @@ const CardImage = ({ card, set, className = '', size = 'md', onClick }) => {
   };
 
   const sizeStyle = {
-    sm: 'min-w-[320px] max-w-[320px]',
-    md: 'min-w-[358px] max-w-[358px]',
+    sm: 'sm:min-w-[320px] sm:max-w-[320px]',
+    md: 'sm:min-w-[358px] sm:max-w-[358px]',
   };
 
   return (

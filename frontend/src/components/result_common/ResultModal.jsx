@@ -57,7 +57,7 @@ const ResultModal = ({ card, handleModalCardChange, handleClose, forceInventoryM
         {isMobile ? (
           <div {...swipeHandlers}>
             {showImage ? (
-              <CardImage className="h-auto w-full" card={activeCard} onClick={handleClose} />
+              <CardImage card={activeCard} onClick={handleClose} />
             ) : (
               <div className="w-full p-3">
                 <ResultLayoutText

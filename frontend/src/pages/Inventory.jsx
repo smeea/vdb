@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { useSnapshot } from 'valtio';
 import { useLocation } from 'react-router-dom';
 import {
   LoginBlock,
@@ -13,12 +12,11 @@ import {
   ButtonFloat,
   ButtonFloatMenu,
   ErrorMessage,
-  Checkbox,
   FlexGapped,
 } from '@/components';
-import { inventoryStore, useApp } from '@/context';
+import { useApp } from '@/context';
 import { inventoryServices } from '@/services';
-import { ALL, OK } from '@/utils/constants';
+import { ALL } from '@/utils/constants';
 
 const Inventory = () => {
   const {

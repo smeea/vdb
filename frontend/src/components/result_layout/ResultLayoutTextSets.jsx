@@ -47,14 +47,7 @@ const PopoverSet = ({ card, set, handleClose }) => {
           </ul>
         )}
       </div>
-      <div className="sm:min-w-[320px]">
-        <CardImage
-          className="h-auto w-full"
-          card={card}
-          set={set !== POD && set.toLowerCase()}
-          onClick={handleClose}
-        />
-      </div>
+      <CardImage card={card} set={set !== POD && set.toLowerCase()} onClick={handleClose} />
     </div>
   );
 };

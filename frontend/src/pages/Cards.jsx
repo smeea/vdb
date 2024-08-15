@@ -69,7 +69,7 @@ const Cards = () => {
                 {playtestMode || card.Id < 110000 || (card.Id > 200000 && card.Id < 210000) ? (
                   <div className="pb-[59px]">
                     {showImage ? (
-                      <CardImage className="w-full" card={card} />
+                      <CardImage card={card} />
                     ) : (
                       <div className="p-3 pb-0">
                         <ResultLayoutText card={card} setCard={handleSetCard} noClose />

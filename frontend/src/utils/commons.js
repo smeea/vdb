@@ -218,7 +218,6 @@ export const getTextDisciplines = (disciplines) => {
 
   const baseDisciplines = [];
   const supDisciplines = [];
-  console.log(disciplines);
   Object.keys(disciplines).forEach((d) => {
     if (disciplines[d] === 1) {
       baseDisciplines.push(disciplinesAndVirtues[d].toLowerCase());

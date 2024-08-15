@@ -8,6 +8,7 @@ const ConditionalTooltipOrModal = ({
   overlay,
   isModal,
   noPadding,
+  size,
   className = '',
   centered = true,
 }) => {
@@ -24,6 +25,7 @@ const ConditionalTooltipOrModal = ({
           noPadding={noPadding}
           className={className}
           placement={placement}
+          size={size}
           overlay={overlay}
         >
           {children}
@@ -33,6 +35,7 @@ const ConditionalTooltipOrModal = ({
         <Modal
           noPadding={noPadding}
           title={title}
+          size={size}
           handleClose={() => setShowModal(false)}
           centered={centered}
         >
