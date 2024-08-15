@@ -48,6 +48,7 @@ const Title = ({ isPrecon }) => {
               You can leave many different thoughts (&apos;reports&apos;) in the text field. Please
               separate them by empty line to make it easier for coordinators to understand.
             </div>
+            <div>To clear Scores click same Star again. It will not clear text form.</div>
           </div>
         }
       >

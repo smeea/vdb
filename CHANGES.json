@@ -1,5 +1,13 @@
 [
   {
+    "version": "2024-08-15",
+    "changes": [
+      "Add Inventory lock button (disable/enable changes)",
+      "Add more card details to inventory export to xlsx",
+      "Other fixes and improvements"
+    ]
+  },
+  {
     "version": "2024-08-12",
     "changes": [
       "Update TWDA",
