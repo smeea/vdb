@@ -1,6 +1,4 @@
-import disciplinesList from '@/assets/data/disciplinesList.json';
-import virtuesList from '@/assets/data/virtuesList.json';
-import { cryptSort, librarySort } from '@/utils';
+import { getTextDisciplines, cryptSort, librarySort } from '@/utils';
 import {
   cardtypeSortedFull,
   ASCII_NAME,
@@ -33,29 +31,11 @@ const getCryptTitle = (crypt) => {
     cryptMax += capacityList.at(-1 - i);
   }
 
-  const title = `Crypt (${cryptTotalCards} cards, min=${cryptMin} max=${cryptMax} avg=${cryptAvg})`;
-  return title;
+  return `Crypt (${cryptTotalCards} cards, min=${cryptMin} max=${cryptMax} avg=${cryptAvg})`;
 };
 
 const getCryptText = (crypt) => {
   let result = '';
-
-  const disciplinesAndVirtues = { ...disciplinesList, ...virtuesList };
-
-  const getDisciplines = (disciplines) => {
-    const baseDisciplines = [];
-    const supDisciplines = [];
-    Object.keys(disciplines).forEach((d) => {
-      if (disciplines[d] === 1) {
-        baseDisciplines.push(disciplinesAndVirtues[d].toLowerCase());
-      } else {
-        supDisciplines.push(disciplinesAndVirtues[d].toUpperCase());
-      }
-    });
-
-    return [...supDisciplines, ...baseDisciplines].join(' ');
-  };
-
   let maxQtyLength = 0;
   let maxNameLength = 0;
   let maxTitleLength = 0;
@@ -69,7 +49,7 @@ const getCryptText = (crypt) => {
     if (c.Adv && c.Adv[0]) {
       name += ' (ADV)';
     }
-    const disciplines = getDisciplines(c.Disciplines);
+    const disciplines = getTextDisciplines(c.Disciplines);
 
     if (q.toString().length > maxQtyLength) {
       maxQtyLength = q.toString().length;
@@ -96,7 +76,7 @@ const getCryptText = (crypt) => {
     if (c.Adv && c.Adv[0]) {
       name += ' (ADV)';
     }
-    const disciplines = getDisciplines(c.Disciplines);
+    const disciplines = getTextDisciplines(c.Disciplines);
 
     const quantitySpaces = maxQtyLength - q.toString().length;
     const nameSpaces = maxNameLength - name.length + 3;

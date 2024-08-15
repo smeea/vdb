@@ -8,9 +8,8 @@
 - Deck details show % V5-compatibility - after BCP clarify V5
 - Only modifier for discipline search in library
 - Card q-ty change in autocompletion
-- Detailed excel export
 - Legacy style in PDF select card
-- Indicator of missing card in deck selector
+- Indicator of "complete" decks in selector
 
 # TECH IMPROVEMENTS
 - Update to React 19

@@ -1,6 +1,8 @@
 import ky from 'ky';
-import { useDeckExport } from '@/hooks';
 import { redirect, defer } from 'react-router-dom';
+import { useDeckExport } from '@/hooks';
+import { getTextDisciplines } from '@/utils';
+import { POOL_COST, BLOOD_COST, CARD_TEXT } from '@/utils/constants';
 import { deckStore } from '@/context';
 
 export const update = (deckid, field, value) => {
@@ -265,15 +267,33 @@ export const exportDecks = async (decks, format) => {
 export const exportXlsx = async (deck) => {
   const XLSX = await import('xlsx');
   const crypt = Object.values(deck.crypt).map((card) => {
-    let name = card.c.Name;
-    if (card.c.Adv && card.c.Adv[0]) name += ' (ADV)';
-    if (card.c.New) name += ` (G${card.c.Group})`;
+    const c = card.c;
+    let name = c.Name;
+    if (c.Adv && c.Adv[0]) name += ' (ADV)';
+    if (c.New) name += ` (G${c.Group})`;
 
-    return { Quantity: card.q, Card: name };
+    return {
+      Quantity: card.q,
+      Card: name,
+      Disciplines: getTextDisciplines(c.Disciplines),
+      Capacity: c.Capacity,
+      Group: c.Group,
+      Clan: c.Clan,
+      Text: c[CARD_TEXT].replace(/ ?\[\w+\]/g, ''),
+    };
   });
 
   const library = Object.values(deck.library).map((card) => {
-    return { Quantity: card.q, Card: card.c.Name };
+    const c = card.c;
+    return {
+      Quantity: card.q,
+      Card: c.Name,
+      Type: c.Type,
+      Clan: c.Clan,
+      'Blood Cost': c[BLOOD_COST],
+      'Pool Cost': c[POOL_COST],
+      Text: c[CARD_TEXT].replace(/ ?\[\w+\]/g, ''),
+    };
   });
 
   const cryptSheet = XLSX.utils.json_to_sheet(crypt);

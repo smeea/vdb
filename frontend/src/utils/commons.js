@@ -1,5 +1,7 @@
 import { ANY, POD, PLAYTEST, PROMO, ID } from '@/utils/constants';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
+import disciplinesList from '@/assets/data/disciplinesList.json';
+import virtuesList from '@/assets/data/virtuesList.json';
 
 export const getCardProperty = (card, property) => {
   return card.c ? card.c[property] : card[property];
@@ -210,3 +212,20 @@ export const getSect = (crypt) => {
 
 export const deepClone = (v) => JSON.parse(JSON.stringify(v));
 export const capitalize = (v) => v.charAt(0).toUpperCase() + v.slice(1);
+
+export const getTextDisciplines = (disciplines) => {
+  const disciplinesAndVirtues = { ...disciplinesList, ...virtuesList };
+
+  const baseDisciplines = [];
+  const supDisciplines = [];
+  console.log(disciplines);
+  Object.keys(disciplines).forEach((d) => {
+    if (disciplines[d] === 1) {
+      baseDisciplines.push(disciplinesAndVirtues[d].toLowerCase());
+    } else {
+      supDisciplines.push(disciplinesAndVirtues[d].toUpperCase());
+    }
+  });
+
+  return [...supDisciplines, ...baseDisciplines].join(' ');
+};
