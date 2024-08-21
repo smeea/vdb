@@ -2,7 +2,6 @@
 - Snapshot url in iOS
 - Page update in iOS
 - Patreon note for iOS
-- Striga maleficia icons in card text (rulings?)
 
 # FEATURES
 - TWD search with % V5-compatibility - after BCP clarify V5

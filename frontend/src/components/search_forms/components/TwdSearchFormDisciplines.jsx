@@ -7,7 +7,7 @@ const TwdSearchFormDisciplines = ({ value, onChange }) => {
       <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
         Library Disciplines:
       </div>
-      <CryptSearchFormDisciplines value={value} onChange={onChange} />
+      <CryptSearchFormDisciplines value={value} onChange={onChange} withMalStr />
       <CryptSearchFormVirtues value={value} onChange={onChange} />
     </div>
   );

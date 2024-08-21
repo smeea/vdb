@@ -98,15 +98,15 @@ def generate_twd(i):
             discipline_entry = library_db[str(card["id"])]["Discipline"]
             if "&" in discipline_entry:
                 for d in discipline_entry.split(" & "):
-                    if d in crypt_disciplines:
+                    if d in [*crypt_disciplines, 'Flight', 'Maleficia', 'Striga']:
                         disciplines.add(d)
 
             elif "/" in discipline_entry:
                 for d in discipline_entry.split("/"):
-                    if d in crypt_disciplines:
+                    if d in [*crypt_disciplines, 'Flight', 'Maleficia', 'Striga']:
                         disciplines.add(d)
 
-            elif discipline_entry in crypt_disciplines:
+            elif discipline_entry in [*crypt_disciplines, 'Flight', 'Maleficia', 'Striga']:
                 disciplines.add(discipline_entry)
 
     deck["disciplines"] = sorted(list(disciplines))

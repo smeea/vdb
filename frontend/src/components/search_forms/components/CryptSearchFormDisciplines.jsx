@@ -3,12 +3,16 @@ import { ResultDisciplineImage } from '@/components';
 import disciplinesList from '@/assets/data/disciplinesList.json';
 import { useApp } from '@/context';
 
-const CryptSearchFormDisciplines = ({ value, onChange }) => {
+const CryptSearchFormDisciplines = ({ value, onChange, withMalStr }) => {
   const { playtestMode } = useApp();
+
+  const disciplines = withMalStr
+    ? [...Object.keys(disciplinesList), 'Flight', 'Maleficia', 'Striga'].toSorted()
+    : Object.keys(disciplinesList);
 
   return (
     <div className="flex flex-wrap">
-      {Object.keys(disciplinesList)
+      {disciplines
         .filter((discipline) => playtestMode || discipline !== 'Oblivion')
         .map((i) => (
           <div

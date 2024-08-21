@@ -105,16 +105,16 @@ def get_missing_fields(source):
 
         if "&" in c["Discipline"]:
             for d in c["Discipline"].split(" & "):
-                if d in crypt_disciplines:
+                if d in [*crypt_disciplines, 'Flight', 'Maleficia', 'Striga']:
                     disciplines.add(d)
 
         elif "/" in c["Discipline"]:
             for d in c["Discipline"].split("/"):
-                if d in crypt_disciplines:
+                if d in [*crypt_disciplines, 'Flight', 'Maleficia', 'Striga']:
                     disciplines.add(d)
 
-        elif c["Discipline"] in crypt_disciplines:
-            disciplines.add(c["Discipline"])
+        elif c["Discipline"] in [*crypt_disciplines, 'Flight', 'Maleficia', 'Striga']:
+                disciplines.add(c["Discipline"])
 
     for ct, q in card_types.items():
         deck["cardtypes_ratio"][ct.lower()] = q / deck["library_total"]
