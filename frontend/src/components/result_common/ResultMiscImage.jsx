@@ -4,7 +4,11 @@ import cardtextIcons from '@/assets/data/cardtextIcons.json';
 import disciplinesList from '@/assets/data/disciplinesList.json';
 
 const ResultMiscImage = ({ value, title, size = 'md' }) => {
-  const discipline = Object.entries(disciplinesList).find((i) => i[1] == value.toLowerCase());
+  const discipline = [
+    ...Object.entries(disciplinesList),
+    ['Maleficia', 'mal'],
+    ['Striga', 'str'],
+  ].find((i) => i[1] == value.toLowerCase());
   const isSuperior = discipline && value !== value.toLowerCase();
 
   const sizeStyle = {
