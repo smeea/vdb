@@ -4,13 +4,15 @@
 - Patreon note for iOS
 
 # FEATURES
-- TWD search with % V5-compatibility - after BCP clarify V5
-- Deck details show % V5-compatibility - after BCP clarify V5
 - Only modifier for discipline search in library
 - Card q-ty change in autocompletion
 - Legacy style in PDF select card
-- Indicator of "complete" decks in selector
 - More fields to playtest report form
+
+# FEATURES ON HOLD
+- TWD search with % V5-compatibility -> after BCP clarify V5
+- Deck details show % V5-compatibility -> after BCP clarify V5
+- Indicator of inventory-perfect decks in selector -> performance issue for many decks
 
 # TECH IMPROVEMENTS
 - Update to React 19

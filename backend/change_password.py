@@ -16,7 +16,11 @@ with app.app_context():
     if len(argv) == 2:
         print(f"Username: '{user.username}'")
         print(f"Email: '{user.email}'")
-        print(f"Decks: {sorted([deck.name for deck in user.decks.all()])}")
+        if len(user.decks.all()) < 15:
+            print(f"Decks: {sorted([deck.name for deck in user.decks.all()])}", sep="\n")
+        else:
+            print(f"Decks: {len(user.decks.all())}")
+            print("\n".join(sorted([f"{deck.name} {deck.branch_name if deck.master or len(deck.branches) else ''}" for deck in user.decks.all()])))
         print(f"Inventory: '{len(user.inventory)}'")
 
     elif argv[2] == "x":
