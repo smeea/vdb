@@ -306,6 +306,7 @@ export { default as TwdResultTags } from './result_twd/TwdResultTags.jsx';
 export { default as TwdResultTotal } from './result_twd/TwdResultTotal.jsx';
 
 export { default as ReviewButtons } from './review/ReviewButtons.jsx';
+export { default as ReviewCopyTextButton } from './review/ReviewCopyTextButton.jsx';
 export { default as ReviewCopyUrlButton } from './review/ReviewCopyUrlButton.jsx';
 export { default as ReviewApplyButton } from './review/ReviewApplyButton.jsx';
 export { default as ReviewCrypt } from './review/ReviewCrypt.jsx';
