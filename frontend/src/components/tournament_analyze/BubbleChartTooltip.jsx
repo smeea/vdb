@@ -16,8 +16,12 @@ const BubbleChartTooltip = ({ active, payload }) => {
               {value.tags && (value.tags.superior.length > 0 || value.tags.base.length > 0) && (
                 <TwdResultTags tags={value.tags} />
               )}
-              <div className="flex items-center rounded-lg border px-2 py-0.5 font-bold text-fgSecondary dark:text-fgSecondaryDark">
-                # {value.rank}
+              <div className="flex items-center">
+                <div
+                  className={`flex items-center whitespace-nowrap rounded-lg ${value.rank > 5 ? 'border border-borderPrimary dark:border-borderPrimaryDark' : 'border-2'} px-2.5 py-1 font-bold text-fgSecondary dark:text-fgSecondaryDark`}
+                >
+                  # {value.rank}
+                </div>
               </div>
             </div>
           </div>

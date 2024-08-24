@@ -1,37 +1,13 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import StarFill from '@/assets/images/icons/star-fill.svg?react';
+import tournaments from '@/assets/data/etda.json';
 import { Spinner, ButtonIconed } from '@/components';
 import { setAnalyzeDecks, setAnalyzeInfo, setAnalyzeResults, clearAnalyzeForm } from '@/context';
 
 const AnalyzeLoadPreparedButtons = ({ setTempDecks, setTempArchon, setError }) => {
   const navigate = useNavigate();
   const [loadingDeck, setLoadingDeck] = useState();
-
-  const tournaments = [
-    {
-      id: 11196,
-      title: 'Salut Brie! - Norwich, United Kingdom',
-      date: '2024-03-09',
-    },
-    {
-      id: 11192,
-      title: 'White Turtle - Vác, Hungary',
-      date: '2024-01-27',
-    },
-    {
-      id: 11023,
-      title: 'Finnish Nationals 2023 - Espoo, Finland',
-      date: '2023-11-04',
-      isNC: true,
-    },
-    {
-      id: 10367,
-      title: 'Finnish Nationals 2022 - Espoo, Finland',
-      date: '2022-11-05',
-      isNC: true,
-    },
-  ];
 
   const handlePrepared = (id) => {
     setLoadingDeck(id);

@@ -1,0 +1,29 @@
+[
+  {
+    "id": 11480,
+    "title": "Ropecon 2024 Grand Prix - Helsinki, Finland",
+    "date": "2024-07-20"
+  },
+  {
+    "id": 11196,
+    "title": "Salut Brie! - Norwich, United Kingdom",
+    "date": "2024-03-09"
+  },
+  {
+    "id": 11192,
+    "title": "White Turtle - Vác, Hungary",
+    "date": "2024-01-27"
+  },
+  {
+    "id": 11023,
+    "title": "Finnish Nationals 2023 - Espoo, Finland",
+    "date": "2023-11-04",
+    "isNC": true
+  },
+  {
+    "id": 10367,
+    "title": "Finnish Nationals 2022 - Espoo, Finland",
+    "date": "2022-11-05",
+    "isNC": true
+  }
+]
