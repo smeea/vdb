@@ -11,7 +11,6 @@
 - Legacy style in PDF select card
 - Indicator of "complete" decks in selector
 - More fields to playtest report form
-- Ropecon to ETDA
 
 # TECH IMPROVEMENTS
 - Update to React 19

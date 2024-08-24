@@ -71,6 +71,7 @@ const DeckSelectAdvTableRow = ({
           <div className="flex justify-center">
             <Button
               variant="primary"
+              disabled={deck.isFrozen}
               onClick={() => deckToggleInventoryState(deck.deckid)}
               title={
                 deck.inventoryType === 's'
