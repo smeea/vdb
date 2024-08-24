@@ -2,12 +2,13 @@ import React, { useState, useMemo } from 'react';
 import { useSnapshot } from 'valtio';
 import { Select, DeckSortButton, InventoryAddDeckRow, Modal, Checkbox, Input } from '@/components';
 import { decksSort } from '@/utils';
+import { NAME } from '@/utils/constants';
 import { useApp, deckStore } from '@/context';
 
 const InventoryAddDeckModal = ({ handleClose }) => {
   const { isDesktop, isMobile } = useApp();
   const decks = useSnapshot(deckStore).decks;
-  const [sortMethod, setSortMethod] = useState('byName');
+  const [sortMethod, setSortMethod] = useState(NAME);
   const [revFilter, setRevFilter] = useState(false);
   const [nameFilter, setNameFilter] = useState('');
   const [tagsFilter, setTagsFilter] = useState([]);
@@ -113,7 +114,7 @@ const InventoryAddDeckModal = ({ handleClose }) => {
                   onChange={() => setRevFilter(!revFilter)}
                 />
                 <div className="flex items-center">
-                  <DeckSortButton onChange={setSortMethod} />
+                  <DeckSortButton onChange={setSortMethod} noText />
                 </div>
               </div>
             </th>

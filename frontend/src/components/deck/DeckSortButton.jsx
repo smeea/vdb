@@ -1,10 +1,18 @@
 import React from 'react';
 import { SortButton } from '@/components';
+import { NAME, DATE } from '@/utils/constants';
 
-const DeckSortButton = ({ onChange }) => {
-  const sortMethods = { Name: 'byName', Date: 'byDate' };
+const DeckSortButton = ({ sortMethod, onChange, noText }) => {
+  const sortMethods = { [NAME]: 'Name', [DATE]: 'Date' };
 
-  return <SortButton sortMethods={sortMethods} setSortMethod={onChange} />;
+  return (
+    <SortButton
+      sortMethod={sortMethod}
+      sortMethods={sortMethods}
+      setSortMethod={onChange}
+      noText={noText}
+    />
+  );
 };
 
 export default DeckSortButton;

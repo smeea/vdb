@@ -1,7 +1,7 @@
 import { byTimestamp } from '@/utils';
 import {
-  BY_DATE,
-  BY_NAME,
+  DATE,
+  NAME,
   DATE_NEW_OLD,
   DATE_OLD_NEW,
   FAVORITES,
@@ -24,9 +24,9 @@ const decksSort = (decks, sortMethod) => {
         return decks.toSorted(byRank);
       case RANK_LOW_HIGH:
         return decks.toSorted(byRank).toReversed();
-      case BY_NAME:
+      case NAME:
         return decks.toSorted(byName);
-      case BY_DATE:
+      case DATE:
         return decks.toSorted(byTimestamp);
       case DATE_NEW_OLD:
         return decks.toSorted(byDate);

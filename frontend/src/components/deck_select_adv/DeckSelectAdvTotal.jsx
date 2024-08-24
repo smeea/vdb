@@ -3,7 +3,7 @@ import { useSnapshot } from 'valtio';
 import { deckStore } from '@/context';
 import { DeckSortButton } from '@/components';
 
-const DeckSelectAdvTotal = ({ setSortMethod, tagsFilter, setTagsFilter }) => {
+const DeckSelectAdvTotal = ({ sortMethod, setSortMethod, tagsFilter, setTagsFilter }) => {
   const decks = useSnapshot(deckStore).decks;
   const byTags = {};
   let total = 0;
@@ -50,7 +50,7 @@ const DeckSelectAdvTotal = ({ setSortMethod, tagsFilter, setTagsFilter }) => {
             );
           })}
       </div>
-      <DeckSortButton onChange={setSortMethod} />
+      <DeckSortButton sortMethod={sortMethod} onChange={setSortMethod} />
     </div>
   );
 };

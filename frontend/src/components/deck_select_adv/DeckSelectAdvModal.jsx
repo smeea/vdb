@@ -13,11 +13,12 @@ import {
 } from '@/components';
 import { useApp, deckStore } from '@/context';
 import { deckServices } from '@/services';
+import { NAME } from '@/utils/constants';
 
 const DeckSelectAdvModal = ({ onClick, setShow, allTagsOptions, short }) => {
   const { isMobile, setShowFloatingButtons } = useApp();
   const decks = useSnapshot(deckStore).decks;
-  const [sortMethod, setSortMethod] = useState('byName');
+  const [sortMethod, setSortMethod] = useState(NAME);
   const [isSelectedAll, setIsSelectedAll] = useState(false);
   const [selectedDecks, setSelectedDecks] = useState({});
   const [tagsFilter, setTagsFilter] = useState([]);
@@ -51,6 +52,7 @@ const DeckSelectAdvModal = ({ onClick, setShow, allTagsOptions, short }) => {
             <DeckSelectAdvTotal
               tagsFilter={tagsFilter}
               setTagsFilter={setTagsFilter}
+              sortMethod={sortMethod}
               setSortMethod={setSortMethod}
             />
           )}

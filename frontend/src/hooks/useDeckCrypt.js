@@ -1,9 +1,10 @@
 import { useMemo } from 'react';
 import { useSnapshot } from 'valtio';
 import { countCards, containCard, getGroups, cryptSort, getRestrictions } from '@/utils';
+import { NAME } from '@/utils/constants';
 import { limitedStore } from '@/context';
 
-const useDeckCrypt = (cardsList, sortMethod = 'byName', timer, cardsToList = {}) => {
+const useDeckCrypt = (cardsList, sortMethod = NAME, timer, cardsToList = {}) => {
   const limitedCards = useSnapshot(limitedStore);
 
   const cryptFrom = Object.values(cardsList).filter((card) => card.q > 0);

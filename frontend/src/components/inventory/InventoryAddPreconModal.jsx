@@ -7,7 +7,7 @@ import {
   Input,
 } from '@/components';
 import { decksSort } from '@/utils';
-import { PLAYTEST } from '@/utils/constants';
+import { DATE, PLAYTEST } from '@/utils/constants';
 import { useApp } from '@/context';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 
@@ -33,7 +33,7 @@ const TooltipText = () => {
 
 const InventoryAddPreconModal = ({ handleClose }) => {
   const { preconDecks, isDesktop, isMobile } = useApp();
-  const [sortMethod, setSortMethod] = useState('byDate');
+  const [sortMethod, setSortMethod] = useState(DATE);
   const [nameFilter, setNameFilter] = useState('');
   const [setFilter, setSetFilter] = useState('');
 
@@ -117,7 +117,7 @@ const InventoryAddPreconModal = ({ handleClose }) => {
                     [?]
                   </div>
                 </ConditionalTooltipOrModal>
-                <DeckSortButton onChange={setSortMethod} />
+                <DeckSortButton sortMethod={sortMethod} onChange={setSortMethod} noText />
               </div>
             </th>
           </tr>
