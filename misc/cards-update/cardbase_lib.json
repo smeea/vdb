@@ -21168,7 +21168,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"This is a +1 stealth action.\n(D) Put this card on a younger vampire. The vampire with this card is considered to be the same clan as the acting vampire. The vampire with this card does not unlock as normal. During his or her controller's unlock phase, he or she may burn 1 blood to unlock. The vampire with this card may move it to another vampire as a (D) action. This card cannot be placed on a Malkavian or Malkavian antitribu.",
+        "Card Text":"This is a +1 stealth action.\n(D) Put this card on a younger vampire. The vampire with this card is considered to be the same clan and sect as the acting vampire. The vampire with this card does not unlock as normal. During his or her controller's unlock phase, he or she may burn 1 blood to unlock. The vampire with this card may move it to another vampire as a (D) action. This card cannot be placed on a Malkavian or Malkavian antitribu.",
         "Clan":"Malkavian/Malkavian antitribu",
         "Conviction Cost":"",
         "Discipline":"",
@@ -21250,7 +21250,7 @@
         "Banned":"",
         "Blood Cost":"1",
         "Burn Option":"",
-        "Card Text":"+1 stealth action.\n[obt] Put this vampire and any cards and counters on them out of play (breaking any temporary control effects) and put this card in play. During your influence phase, this vampire can gain 2 blood and you can choose to burn this card to return the vampire to play (in the same region as they were before), locked.\n[OBT] As above, but the vampire is unlocked as they return to play.",
+        "Card Text":"+1 stealth action.\n[obt] Put this card on this vampire, then put this vampire and any other cards and counters on them out of play (breaking any temporary control effects; this card remains in play). During your influence phase, this vampire can gain 2 blood and you can choose to burn this card to return the vampire to play (in the same region as they were before), locked.\n[OBT] As above, but the vampire is unlocked as they return to play.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Obtenebration",
@@ -48330,7 +48330,7 @@
         "Banned":"",
         "Blood Cost":"2",
         "Burn Option":"",
-        "Card Text":"[chi] Put this card in play. Strikes with weapons made by minions you control inflict +1 damage. Any minion can burn this card as a (D) action.\n[CHI] As above, but they inflict +2 damage.",
+        "Card Text":"[chi] Put this card in play. Minions you control inflict +1 damage with weapons each strike. Any minion can burn this card as a (D) action.\n[CHI] As above, but they inflict +2 damage each strike.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Chimerstry",
@@ -78792,7 +78792,8 @@
     "101943":{
         "ASCII Name":"Tasha Morgan",
         "Artist":[
-            "Chris McLoughlin"
+            "Chris McLoughlin",
+            "Christopher Rush"
         ],
         "Banned":"",
         "Blood Cost":"",
@@ -81260,7 +81261,7 @@
         "Banned":"",
         "Blood Cost":"1",
         "Burn Option":"",
-        "Card Text":"Only usable when the opposing vampire goes into torpor; not usable by a vampire going into torpor. Combat ends. You may look at the opposing vampire's controller's hand.",
+        "Card Text":"Only usable when the opposing vampire goes into torpor. Not usable by a vampire being burned or going to torpor.\nCombat ends. You may look at the opposing vampire's controller's hand.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",

@@ -1,4 +1,4 @@
-﻿"Id","Name","Aka","Type","Clan","Discipline","Pool Cost","Blood Cost","Conviction Cost","Burn Option","Card Text","Flavor Text","Set","Banned","Artist","Capacity"
+"Id","Name","Aka","Type","Clan","Discipline","Pool Cost","Blood Cost","Conviction Cost","Burn Option","Card Text","Flavor Text","Set","Banned","Artist","Capacity"
 "100001",".44 Magnum","","Equipment","","","2","","","","Weapon: gun.
 Strike: 2R damage, with 1 optional maneuver each combat.","","Jyhad:C, VTES:C, Sabbat:C, SW:PB, CE:PTo3, LoB:PO3, FB:PTr2, V5:PTr1","","Né Né Thomas; Greg Simanson",""
 "100002","419 Operation","","Action","Osebo","","","","","","+1 stealth action.
@@ -1368,9 +1368,9 @@ Choose one or more Methuselahs who do not have a target counter. Successful refe
 "100526","Depravity","","Master","","","1","","","","Unique master.
 Put this card on a ready vampire you control. This vampire has +1 strength, and he or she gets +1 stealth on diablerie actions. He or she cannot recruit allies or employ retainers.","","AH:V3, FN:PG, KMW:PAl, Third:U, HttB:PGar","","Scott Kirschner; Gary Chatterton",""
 "100527","Derange","","Action","Malkavian/Malkavian antitribu","","","","","","This is a +1 stealth action.
-(D) Put this card on a younger vampire. The vampire with this card is considered to be the same clan as the acting vampire. The vampire with this card does not unlock as normal. During his or her controller's unlock phase, he or she may burn 1 blood to unlock. The vampire with this card may move it to another vampire as a (D) action. This card cannot be placed on a Malkavian or Malkavian antitribu.","","Sabbat:R, CE:R, Third:R","","Eric LaCombe",""
+(D) Put this card on a younger vampire. The vampire with this card is considered to be the same clan {and sect} as the acting vampire. The vampire with this card does not unlock as normal. During his or her controller's unlock phase, he or she may burn 1 blood to unlock. The vampire with this card may move it to another vampire as a (D) action. This card cannot be placed on a Malkavian or Malkavian antitribu.","","Sabbat:R, CE:R, Third:R","","Eric LaCombe",""
 "100528","Descent into Darkness","","Action","","Obtenebration","","1","","","+1 stealth action.
-[obt] Put this vampire and any cards and counters on them out of play (breaking any temporary control effects) and put this card in play. During your influence phase, this vampire can gain 2 blood and you can choose to burn this card to return the vampire to play (in the same region as they were before), locked.
+[obt] Put {this card on this vampire, then put} this vampire and any {other} cards and counters on them out of play (breaking any temporary control effects{; this card remains in play}){}. During your influence phase, this vampire can gain 2 blood and you can choose to burn this card to return the vampire to play (in the same region as they were before), locked.
 [OBT] As above, but the vampire is unlocked as they return to play.","","Gehenna:C, POD:DTC","","David Day",""
 "100529","Desert Eagle","","Equipment","","","1","","","","Weapon, gun.
 Strike: 2R damage.","Mike raised a pistol that, from Beckett's angle, appeared to be roughly the size of a howitzer.","Gehenna:C, KoT:C/PT3","","Steve Prescott",""
@@ -3101,8 +3101,8 @@ Put this card on the acting Laibon. This Laibon may burn this card as a +1 steal
 Put this card on a vampire who successfully hunts. This vampire does not gain any blood from the hunt. This vampire doesn't unlock as normal during his or her unlock phase. During this vampire's next unlock phase, burn this card.","","Jyhad:U, VTES:U, CE:U","","William O'Connor",""
 "101184","Masquerade Enforcement","","Political Action","","","","","","","Requires a prince or justicar.
 If this referendum is successful, put this card in play. While in play, when any Methuselah moves a vampire from uncontrolled to controlled, he or she burns 1 additional pool. Any Camarilla vampire can call a referendum to burn this card as a +1 stealth political action.","","Jyhad:V, VTES:V, CE:U","","Mark Poole",""
-"101185","Mass Reality","","Action","","Chimerstry","","2","","","[chi] Put this card in play. Strikes with weapons made by minions you control inflict +1 damage. Any minion can burn this card as a (D) action.
-[CHI] As above, but they inflict +2 damage.","","AH:C2, FN:PR, POD:DTC","","Greg Simanson",""
+"101185","Mass Reality","","Action","","Chimerstry","","2","","","[chi] Put this card in play. Minions you control inflict +1 damage with weapons {each strike}. Any minion can burn this card as a (D) action.
+[CHI] As above, but they inflict +2 damage {each strike}.","","AH:C2, FN:PR, POD:DTC","","Greg Simanson",""
 "101186","Massassi's Honor","","Action Modifier","Osebo","","","","","","Only usable when this Osebo is blocked (play before combat, if any). Choose a ready unlocked Osebo you control who could take that action, put this card in play, and move any other cards this Osebo played this action from your ash heap to this card. After this action, the chosen Osebo must attempt the same action (with the same target, if any). He or she may play cards from this card as if from your hand. Burn this card at the end of that action or if the action is not possible.","","LoB:C","","Brian LeBlanc",""
 "101187","Mausoleum, Venice, The","","Master","Giovanni","","1","","","","Unique location.
 Lock during the polling step of a political action to get +1 vote, with an additional +1 vote if the card named /Ventrue Headquarters/ is not in play.","...even the spectres have beads of sweat.
@@ -5044,7 +5044,7 @@ You can target a retainer on the opposing minion with this strike (instead of th
 "101942","Target Vitals","","Combat","","","","","","","Aim. Only usable as this minion chooses a strike. A minion can play only one aim each strike.
 If any damage from this strike is successfully inflicted on the opposing minion, they take +2 damage from this strike, and they cannot press this round. They can discard two combat cards to cancel this card as it is played.","","LotN:U, HttB:PSal3, Anthology:3, SP:PwN3","","Imaginary Friends Studios; Javier Santos; Imaginary Friends Studios",""
 "101943","Tasha Morgan","","Retainer","","","","","","","Unique mortal with 1 life.
-The minion with this retainer gets +1 bleed.","","Jyhad:R2, VTES:R, SW:R, CE:R2","","Chris McLoughlin",""
+The minion with this retainer gets +1 bleed.","","Jyhad:R2, VTES:R, SW:R, CE:R2","","Chris McLoughlin; Christopher Rush",""
 "101944","Taste of Death","","Combat","","Quietus","","1","","","Only usable at long range.
 [qui] Strike: 1R aggravated damage.
 [QUI] Strike: 2R aggravated damage.","","AH:C2, FN:PA4, LotN:PA3, POD:DTC","","Ron Spencer; Brad Williams",""
@@ -5178,7 +5178,8 @@ Actions performed by vampires in torpor cost +1 blood. Rescuing an older vampire
 Anonymous Malkavian, ""Das Buch vom Grabkrieg""","Gehenna:R, KoT:R, EoG:1","","matrix von z",""
 "101995","Torrent","","Combat","","Celerity","","2","","","[cel] Additional strike {(limited)}.
 [CEL] Strike: combat ends. If this vampire was blocked while performing an action, the action continues as if unblocked.","","KoT:C/B2","","John Bridges",""
-"101996","Tortured Confession","","Combat","","","","1","","","Only usable when the opposing vampire goes into torpor; not usable by a vampire going into torpor. Combat ends. You may look at the opposing vampire's controller's hand.","To chase one's victim, to prepare one's plan minutely, to slake an implacable vengeance, and then to go to bed... There is nothing sweeter in the world.
+"101996","Tortured Confession","","Combat","","","","1","","","Only usable when the opposing vampire goes into torpor. Not usable by a vampire {being burned or} going to torpor.
+Combat ends. You may look at the opposing vampire's controller's hand.","To chase one's victim, to prepare one's plan minutely, to slake an implacable vengeance, and then to go to bed... There is nothing sweeter in the world.
 Josef Stalin","FN:C2/PG2","","Steve Prescott",""
 "101997","Total Insanity","","Action","","Dementation","","","","","[dem] (D) Put this card on an ally or a younger vampire. The minion with this card has -1 stealth. During this minion's unlock phase, add a counter to this card. Burn this card when it has 3 counters on it.
 [DEM] As above, and the minion with this card cannot play action cards.","","SW:C, Third:C","","William O'Connor",""
