@@ -24,7 +24,18 @@ const CardImage = ({ card, set, className = 'max-sm:w-full', size = 'md', onClic
       set ||
       (showLegacyImage &&
         card.Id > 200000 &&
-        ['Abomination', 'Ahrimane', 'Baali', 'Tzimisce'].includes(card.Clan)) ? (
+        [
+          'Abomination',
+          'Ahrimane',
+          'Baali',
+          'Blood Brother',
+          'Caitiff',
+          'Daughter of Cacophony',
+          'Gargoyle',
+          'Nagaraja',
+          'Ravnos',
+          'Tzimisce',
+        ].includes(card.Clan)) ? (
         <img
           className={`${sizeStyle[size]} ${className}`}
           src={`${set ? otherUrl : showLegacyImage ? legacyUrl : otherUrl}.jpg?v=${import.meta.env.VITE_CARD_VERSION}`}

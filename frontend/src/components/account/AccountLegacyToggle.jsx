@@ -6,8 +6,8 @@ const TooltipText = () => {
   return (
     <div className="flex flex-col gap-1">
       <div className="text-fgRed dark:text-fgRedDark">
-        Contains only images of Abomination, Ahrimanes, Baali and Tzimisce. More will come in the
-        future (target is to have all crypt images).
+        Contains only images of Abomination, Ahrimane, Baali, Blood Brother, Caitiff, Daughter of
+        Cacophony, Gargoyle, Nagraja, Ravnos and Tzimisce. More will come in the future.
       </div>
       <div>Uses modern card text.</div>
       <div>
@@ -16,8 +16,7 @@ const TooltipText = () => {
       <div>Not all images are available, will fallback to standard image.</div>
       <div className="text-fgRed dark:text-fgRedDark">
         Proxies from those images DO NOT fulfill VEKN requirements of a Proxy for proxy-allowed
-        tournaments (must be copy of a card as it was released and most card were never released
-        with legacy layout).
+        tournaments (must be copy of a card as it was released).
       </div>
     </div>
   );
