@@ -2,7 +2,6 @@
 - Snapshot url in iOS
 - Page update in iOS
 - Patreon note for iOS
-- or-newer+, le+ to constants
 
 # FEATURES
 - Card q-ty change in autocompletion

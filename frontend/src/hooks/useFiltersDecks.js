@@ -5,7 +5,7 @@
 // if some criteria is missing the main method return false and exits that deck check.
 
 import { countCards, countTotalCost, getClan, getSect } from '@/utils';
-import { NOT, OR, CAPACITY } from '@/utils/constants';
+import { LT, LT0, GT, EQ, NOT, OR, CAPACITY } from '@/utils/constants';
 
 const useFiltersDecks = (decks = {}) => {
   const filterDecks = (filter) => {
@@ -226,13 +226,13 @@ const missingTraits = (filter, deck) => {
 
 const compareQty = (cardQty, q, m) => {
   switch (m) {
-    case 'eq':
+    case EQ:
       return cardQty == q;
-    case 'gt':
+    case GT:
       return cardQty >= q;
-    case 'lt':
+    case LT:
       return cardQty > 0 && cardQty <= q;
-    case 'lt0':
+    case LT0:
       return cardQty <= q;
     default:
       return false;

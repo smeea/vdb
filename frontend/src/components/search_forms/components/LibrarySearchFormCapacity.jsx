@@ -1,7 +1,7 @@
 import React from 'react';
 import { Select } from '@/components';
 import { useApp } from '@/context';
-import { ANY } from '@/utils/constants';
+import { ANY, LE, GE } from '@/utils/constants';
 
 const LibrarySearchFormCapacity = ({ value, onChange }) => {
   const { isXWide } = useApp();
@@ -14,8 +14,8 @@ const LibrarySearchFormCapacity = ({ value, onChange }) => {
   }));
 
   const morelessOptions = [
-    ['le', '<='],
-    ['ge', '>='],
+    [LE, '<='],
+    [GE, '>='],
   ].map((i) => ({
     value: i[0],
     name: name,

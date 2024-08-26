@@ -1,12 +1,12 @@
 import React from 'react';
 import { Button } from '@/components';
 import Plus from '@/assets/images/icons/plus.svg?react';
-import { ANY } from '@/utils/constants';
+import { ANY, LE } from '@/utils/constants';
 
 const SearchFormButtonAdd = ({ name, searchForm, withMoreless }) => {
   const addForm = () => {
     if (withMoreless) {
-      searchForm[name].value.push({ capacity: ANY, moreless: 'le' });
+      searchForm[name].value.push({ capacity: ANY, moreless: LE });
     } else {
       searchForm[name].value.push(ANY);
     }

@@ -18,6 +18,13 @@ import {
   ONLY,
   FIRST,
   REPRINT,
+  GE,
+  LE,
+  EQ,
+  OR_NEWER,
+  OR_OLDER,
+  NOT_NEWER,
+  NOT_OLDER,
 } from '@/utils/constants';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 
@@ -307,11 +314,11 @@ const missingCapacityCrypt = (filter, card) => {
         const moreless = value.moreless;
 
         switch (moreless) {
-          case 'ge':
+          case GE:
             return card.Capacity >= capacity;
-          case 'le':
+          case LE:
             return card.Capacity <= capacity;
-          case 'eq':
+          case EQ:
             return card.Capacity == capacity;
         }
       });
@@ -321,11 +328,11 @@ const missingCapacityCrypt = (filter, card) => {
         const moreless = value.moreless;
 
         switch (moreless) {
-          case 'ge':
+          case GE:
             return card.Capacity < capacity;
-          case 'le':
+          case LE:
             return card.Capacity > capacity;
-          case 'eq':
+          case EQ:
             return card.Capacity != capacity;
         }
       });
@@ -342,9 +349,9 @@ const missingCapacityLibrary = (filter, card) => {
   if (!match1 && !match2) return true;
 
   return !(
-    (moreless === 'le' &&
+    (moreless === LE &&
       ((match1 && match1[1] <= capacity + 1) || (match2 && match2[1] <= capacity))) ||
-    (moreless === 'ge' &&
+    (moreless === GE &&
       ((match1 && match1[1] >= capacity) || (match2 && match2[1] >= capacity - 1)))
   );
 };
@@ -441,16 +448,16 @@ const missingSet = (filter, card) => {
       const setDate = setsAndPrecons[set].date ?? FUTURE;
 
       switch (age) {
-        case 'or-newer':
+        case OR_NEWER:
           if (setDate > dates.max) return false;
           break;
-        case 'or-older':
+        case OR_OLDER:
           if (setDate < dates.min) return false;
           break;
-        case 'not-newer':
+        case NOT_NEWER:
           if (setDate < dates.max) return false;
           break;
-        case 'not-older':
+        case NOT_OLDER:
           if (setDate > dates.min) return false;
           break;
         default:
@@ -565,10 +572,10 @@ const missingRequirementsCheck = (logic, array, value, hasNoRequirement) => {
 
 const missingCostCheck = (logic, filter, cardCost) => {
   return !(
-    (logic === 'le' && cardCost <= filter) ||
-    (logic !== 'le' && !cardCost && filter === '0') ||
-    (logic === 'ge' && cardCost >= filter) ||
-    (logic === 'eq' && cardCost === filter)
+    (logic === LE && cardCost <= filter) ||
+    (logic !== LE && !cardCost && filter === '0') ||
+    (logic === GE && cardCost >= filter) ||
+    (logic === EQ && cardCost === filter)
   );
 };
 

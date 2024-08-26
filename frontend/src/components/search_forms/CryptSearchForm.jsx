@@ -29,7 +29,20 @@ import {
   usedStore,
   limitedStore,
 } from '@/context';
-import { PRINT, REPRINT, FIRST, ONLY, CRYPT } from '@/utils/constants';
+import {
+  GE,
+  LE,
+  EQ,
+  OR_NEWER,
+  OR_OLDER,
+  NOT_NEWER,
+  NOT_OLDER,
+  PRINT,
+  REPRINT,
+  FIRST,
+  ONLY,
+  CRYPT,
+} from '@/utils/constants';
 
 const CryptSearchForm = () => {
   const {
@@ -93,7 +106,7 @@ const CryptSearchForm = () => {
     const { name, value } = event;
 
     if (['capacity'].includes(name)) {
-      if (['le', 'ge', 'eq'].includes(value)) {
+      if ([LE, GE, EQ].includes(value)) {
         searchCryptForm[name].value[i].moreless = value;
       } else {
         searchCryptForm[name].value[i][name] = value;
@@ -106,7 +119,7 @@ const CryptSearchForm = () => {
   const handleMultiChange = (event) => {
     const { name, value } = event.currentTarget;
 
-    if (['or-newer', 'or-older', 'not-newer', 'not-older'].includes(value)) {
+    if ([OR_NEWER, OR_OLDER, NOT_NEWER, NOT_OLDER].includes(value)) {
       searchCryptForm[name]['age'] = searchCryptForm[name]['age'] === value ? false : value;
     } else if ([ONLY, FIRST, REPRINT].includes(value)) {
       searchCryptForm[name][PRINT] = searchCryptForm[name][PRINT] === value ? false : value;

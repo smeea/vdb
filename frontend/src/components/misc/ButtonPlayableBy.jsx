@@ -4,6 +4,7 @@ import Bullseye from '@/assets/images/icons/bullseye.svg?react';
 import { Button } from '@/components';
 import { clearSearchForm } from '@/context';
 import { useLibraryRequirements } from '@/hooks';
+import { LE, GE } from '@/utils/constants';
 
 const ButtonPlayableBy = ({ card, handleClose }) => {
   const navigate = useNavigate();
@@ -41,7 +42,7 @@ const ButtonPlayableBy = ({ card, handleClose }) => {
       const [v, logic] = isCapacity.split(' or ');
       queries.push(
         `"capacity"%3A{"value"%3A[{"capacity"%3A"${v}"%2C"moreless"%3A"${
-          logic === 'more' ? 'ge' : 'le'
+          logic === 'more' ? GE : LE
         }"}]%2C"logic"%3A"or"}`,
       );
     }

@@ -4,11 +4,11 @@ import { Button } from '@/components';
 import PeopleFill from '@/assets/images/icons/people-fill.svg?react';
 import TrophyFill from '@/assets/images/icons/trophy-fill.svg?react';
 import { clearSearchForm, searchTwdForm, searchPdaForm } from '@/context';
-import { PDA } from '@/utils/constants';
+import { PDA, GT } from '@/utils/constants';
 
 const ButtonSearchCardInDecks = ({ cardid, target, handleClose }) => {
   const navigate = useNavigate();
-  const value = { [cardid]: { q: 1, m: 'gt' } };
+  const value = { [cardid]: { q: 1, m: GT } };
 
   const handleClick = () => {
     clearSearchForm(target);

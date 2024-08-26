@@ -7,7 +7,21 @@ import {
   Checkbox,
 } from '@/components';
 import { useApp } from '@/context';
-import { FIRST, REPRINT, PRINT, ONLY, ANY, PLAYTEST, POD, BCP, PROMO } from '@/utils/constants';
+import {
+  OR_NEWER,
+  OR_OLDER,
+  NOT_NEWER,
+  NOT_OLDER,
+  FIRST,
+  REPRINT,
+  PRINT,
+  ONLY,
+  ANY,
+  PLAYTEST,
+  POD,
+  BCP,
+  PROMO,
+} from '@/utils/constants';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 
 const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
@@ -113,22 +127,22 @@ const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
         <div className="flex items-center justify-end space-x-4">
           {[
             {
-              value: 'or-newer',
+              value: OR_NEWER,
               label: 'Or Newer',
               title: 'Printed in selected set or any newer (can be in older sets too)',
             },
             {
-              value: 'or-older',
+              value: OR_OLDER,
               label: 'Or Older',
               title: 'Printed in selected set or any older (can be in newer sets too)',
             },
             {
-              value: 'not-newer',
+              value: NOT_NEWER,
               label: 'Not Newer',
               title: 'Not printed in newer set',
             },
             {
-              value: 'not-older',
+              value: NOT_OLDER,
               label: 'Not Older',
               title: 'Not printed in older set',
             },

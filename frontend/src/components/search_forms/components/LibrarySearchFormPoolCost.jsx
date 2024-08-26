@@ -1,7 +1,7 @@
 import React from 'react';
 import { Select } from '@/components';
 import { useApp } from '@/context';
-import { ANY } from '@/utils/constants';
+import { ANY, LE, GE, EQ } from '@/utils/constants';
 
 const LibrarySearchFormPoolCost = ({ value, onChange }) => {
   const { isXWide } = useApp();
@@ -14,9 +14,9 @@ const LibrarySearchFormPoolCost = ({ value, onChange }) => {
   }));
 
   const morelessOptions = [
-    ['le', '<='],
-    ['eq', '=='],
-    ['ge', '>='],
+    [LE, '<='],
+    [EQ, '=='],
+    [GE, '>='],
   ].map((i) => ({
     value: i[0],
     name: name,

@@ -7,7 +7,7 @@ import {
   SearchFormButtonDel,
 } from '@/components';
 import { useApp } from '@/context';
-import { ANY } from '@/utils/constants';
+import { ANY, LE, GE, EQ } from '@/utils/constants';
 
 const CryptSearchFormCapacity = ({ value, searchForm, onChange }) => {
   const { isXWide } = useApp();
@@ -21,9 +21,9 @@ const CryptSearchFormCapacity = ({ value, searchForm, onChange }) => {
   }));
 
   const morelessOptions = [
-    ['le', '<='],
-    ['eq', '=='],
-    ['ge', '>='],
+    [LE, '<='],
+    [EQ, '=='],
+    [GE, '>='],
   ].map((i) => ({
     value: i[0],
     name: name,

@@ -29,7 +29,20 @@ import {
   usedStore,
   limitedStore,
 } from '@/context';
-import { ONLY, PRINT, REPRINT, FIRST, LIBRARY } from '@/utils/constants';
+import {
+  GE,
+  LE,
+  EQ,
+  OR_NEWER,
+  OR_OLDER,
+  NOT_NEWER,
+  NOT_OLDER,
+  ONLY,
+  PRINT,
+  REPRINT,
+  FIRST,
+  LIBRARY,
+} from '@/utils/constants';
 
 const LibrarySearchForm = () => {
   const {
@@ -94,7 +107,7 @@ const LibrarySearchForm = () => {
     const { name, value } = event;
 
     if (['blood', 'pool', 'capacity'].includes(name)) {
-      if (['le', 'ge', 'eq'].includes(value)) {
+      if ([LE, GE, EQ].includes(value)) {
         searchLibraryForm[name].moreless = value;
       } else {
         searchLibraryForm[name][name] = value;
@@ -107,7 +120,7 @@ const LibrarySearchForm = () => {
   const handleMultiChange = (event) => {
     const { name, value } = event.target;
 
-    if (['or-newer', 'or-older', 'not-newer', 'not-older'].includes(value)) {
+    if ([OR_NEWER, OR_OLDER, NOT_NEWER, NOT_OLDER].includes(value)) {
       searchLibraryForm[name]['age'] = searchLibraryForm[name]['age'] === value ? false : value;
     } else if ([ONLY, FIRST, REPRINT].includes(value)) {
       searchLibraryForm[name][PRINT] = searchLibraryForm[name][PRINT] === value ? false : value;
