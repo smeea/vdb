@@ -1,8 +1,11 @@
 {
-  "version": "2024-08-15",
+  "version": "2024-08-26",
   "changes": [
-    "Add Inventory lock button (disable/enable changes)",
-    "Add more card details to inventory export to xlsx",
-    "Other fixes and improvements"
+    "Add Blood Brother, Caitiff, Daughter of Cacophony, Gargoyle, Nagaraja, Ravnos to Legacy Crypt images",
+    "Add Ropecon 2024 event in Helsinki, Finland to Tournament Analyze - https://vdb.im/tournament_analyze/11480",
+    "Add 'only' modifier to discipline search in Library to only shows card exactly matching selected disciplines (will exclude double-triple disciplines requirements)",
+    "Add copy text changes button in deck Review",
+    "Add Maleficia/Striga/Flight to TWD/PDA discipline search",
+    "Small fixes and improvements"
   ]
 }
