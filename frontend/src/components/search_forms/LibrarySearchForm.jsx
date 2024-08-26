@@ -29,7 +29,7 @@ import {
   usedStore,
   limitedStore,
 } from '@/context';
-import { LIBRARY } from '@/utils/constants';
+import { ONLY, PRINT, REPRINT, FIRST, LIBRARY } from '@/utils/constants';
 
 const LibrarySearchForm = () => {
   const {
@@ -109,8 +109,8 @@ const LibrarySearchForm = () => {
 
     if (['or-newer', 'or-older', 'not-newer', 'not-older'].includes(value)) {
       searchLibraryForm[name]['age'] = searchLibraryForm[name]['age'] === value ? false : value;
-    } else if (['only', 'first', 'reprint'].includes(value)) {
-      searchLibraryForm[name]['print'] = searchLibraryForm[name]['print'] === value ? false : value;
+    } else if ([ONLY, FIRST, REPRINT].includes(value)) {
+      searchLibraryForm[name][PRINT] = searchLibraryForm[name][PRINT] === value ? false : value;
     } else {
       searchLibraryForm[name][value] = !searchLibraryForm[name][value];
     }

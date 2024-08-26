@@ -2,11 +2,10 @@
 - Snapshot url in iOS
 - Page update in iOS
 - Patreon note for iOS
+- or-newer+, le+ to constants
 
 # FEATURES
-- Only modifier for discipline search in library
 - Card q-ty change in autocompletion
-- Add new Legacy crypt batch
 
 # FEATURES ON HOLD
 - TWD search with % V5-compatibility -> after BCP clarify V5

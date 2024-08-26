@@ -8,9 +8,8 @@ import {
   Select,
 } from '@/components';
 import { useApp } from '@/context';
-import { PLAYTEST, BCP } from '@/utils/constants';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
-import { ANY } from '@/utils/constants';
+import { FIRST, REPRINT, PRINT, BCP, PLAYTEST, ANY, ONLY } from '@/utils/constants';
 
 const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
   const { playtestMode, isMobile, isXWide } = useApp();
@@ -128,17 +127,17 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
       <div className="flex items-center justify-end space-x-4">
         {[
           {
-            value: 'only',
+            value: ONLY,
             label: 'Only In',
             title: 'Printed only in selected Set',
           },
           {
-            value: 'first',
+            value: FIRST,
             label: 'First Print',
             title: 'Printed first in selected Set',
           },
           {
-            value: 'reprint',
+            value: REPRINT,
             label: 'Reprint',
             title: 'Reprinted in selected Set',
           },
@@ -151,8 +150,8 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
               value={i.value}
               label={i.label}
               title={i.title}
-              disabled={value.value[0] === BCP && i.value === 'reprint'}
-              checked={value['print'] === i.value}
+              disabled={value.value[0] === BCP && i.value === REPRINT}
+              checked={value[PRINT] === i.value}
               onChange={onChangeOptions}
             />
           );

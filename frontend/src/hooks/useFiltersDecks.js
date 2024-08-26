@@ -5,7 +5,7 @@
 // if some criteria is missing the main method return false and exits that deck check.
 
 import { countCards, countTotalCost, getClan, getSect } from '@/utils';
-import { CAPACITY } from '@/utils/constants';
+import { NOT, OR, CAPACITY } from '@/utils/constants';
 
 const useFiltersDecks = (decks = {}) => {
   const filterDecks = (filter) => {
@@ -107,11 +107,11 @@ const missingClan = (filter, deck) => {
   const clan = getClan(deck.crypt);
 
   switch (logic) {
-    case 'or':
+    case OR:
       return !value.some((i) => {
         if (clan && clan.toLowerCase() === i) return true;
       });
-    case 'not':
+    case NOT:
       return value.some((i) => {
         if (clan && clan.toLowerCase() === i) return true;
       });
@@ -125,11 +125,11 @@ const missingSect = (filter, deck) => {
   const sect = getSect(deck.crypt);
 
   switch (logic) {
-    case 'or':
+    case OR:
       return !value.some((i) => {
         if (sect && sect.toLowerCase() === i) return true;
       });
-    case 'not':
+    case NOT:
       return value.some((i) => {
         if (sect && sect.toLowerCase() === i) return true;
       });

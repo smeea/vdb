@@ -12,6 +12,12 @@ import {
   PLAYTEST,
   BCP,
   PROMO,
+  AND,
+  NOT,
+  OR,
+  ONLY,
+  FIRST,
+  REPRINT,
 } from '@/utils/constants';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 
@@ -78,19 +84,27 @@ const missingDisciplinesLibrary = (filter, card) => {
   const logic = filter.logic;
 
   switch (logic) {
-    case 'and':
+    case AND:
       return !disciplines.every((discipline) => {
         if (discipline === 'not required' && !card.Discipline) return true;
         if (card.Discipline.toLowerCase().includes(discipline)) return true;
       });
 
-    case 'or':
+    case OR:
       return !disciplines.some((discipline) => {
         if (discipline === 'not required' && !card.Discipline) return true;
         if (card.Discipline.toLowerCase().includes(discipline)) return true;
       });
-    case 'not':
+
+    case NOT:
       return disciplines.some((discipline) => {
+        if (discipline === 'not required' && !card.Discipline) return true;
+        if (card.Discipline.toLowerCase().includes(discipline)) return true;
+      });
+
+    case ONLY:
+      if (card.Discipline.split(/[/&]/).length > disciplines.length) return true;
+      return !disciplines.every((discipline) => {
         if (discipline === 'not required' && !card.Discipline) return true;
         if (card.Discipline.toLowerCase().includes(discipline)) return true;
       });
@@ -103,7 +117,7 @@ const missingTextQueries = (filter, card) => {
 
 const missingTextQuery = (query, card) => {
   const search = query.value.toLowerCase();
-  const hasToMatch = query.logic === 'and';
+  const hasToMatch = query.logic === AND;
 
   const cardText = card[CARD_TEXT].toLowerCase().replace('\n', ' ');
   const cardName = card.Name.toLowerCase();
@@ -287,7 +301,7 @@ const missingCapacityCrypt = (filter, card) => {
   const logic = filter.logic;
 
   switch (logic) {
-    case 'or':
+    case OR:
       return !values.some((value) => {
         const capacity = parseInt(value.capacity);
         const moreless = value.moreless;
@@ -301,7 +315,7 @@ const missingCapacityCrypt = (filter, card) => {
             return card.Capacity == capacity;
         }
       });
-    case 'not':
+    case NOT:
       return !values.every((value) => {
         const capacity = parseInt(value.capacity);
         const moreless = value.moreless;
@@ -399,12 +413,12 @@ const missingType = (filter, card) => {
   const types = filter.value;
 
   switch (filter.logic) {
-    case 'and':
+    case AND:
       return !types.every((type) => testType(card, type));
 
-    case 'or':
+    case OR:
       return !types.some((type) => testType(card, type));
-    case 'not':
+    case NOT:
       return types.some((type) => testType(card, type));
   }
 };
@@ -421,7 +435,7 @@ const missingSet = (filter, card) => {
 
   return !sets.some((set) => {
     if (set === BCP) {
-      if ((print === 'only' || print === 'first') && dates.min >= BCP_START) return true;
+      if ((print === ONLY || print === FIRST) && dates.min >= BCP_START) return true;
       else if (dates.max >= BCP_START) return true;
     } else {
       const setDate = setsAndPrecons[set].date ?? FUTURE;
@@ -444,15 +458,15 @@ const missingSet = (filter, card) => {
       }
 
       switch (print) {
-        case 'only':
+        case ONLY:
           if (Object.keys(card.Set).length !== 1) return false;
           break;
 
-        case 'first':
+        case FIRST:
           if (!((set === PROMO && dates.minPromo <= dates.min) || dates.min === setDate))
             return false;
           break;
-        case 'reprint':
+        case REPRINT:
           if (dates.min >= setDate) return false;
           break;
       }
@@ -473,19 +487,19 @@ const missingPrecon = (filter, card) => {
 
     if (setAndSub === BCP) {
       if (print) {
-        if (print === 'only' && dates.min >= BCP_START) return true;
-        else if (print === 'first' && dates.min >= BCP_START && dates.min <= dates.minPromo)
+        if (print === ONLY && dates.min >= BCP_START) return true;
+        else if (print === FIRST && dates.min >= BCP_START && dates.min <= dates.minPromo)
           return true;
       } else if (dates.max >= BCP_START) return true;
     } else if (Object.keys(card.Set).includes(set) && Object.keys(card.Set[set]).includes(subSet)) {
       if (print) {
         const setDate = set !== BCP ? setsAndPrecons[set].date : null;
         switch (print) {
-          case 'only':
+          case ONLY:
             return Object.keys(card.Set).length === 1 && Object.keys(card.Set[set]).length === 1;
-          case 'first':
+          case FIRST:
             return dates.min === setDate && dates.min < dates.minPromo;
-          case 'reprint':
+          case REPRINT:
             return dates.min < setDate || dates.minPromo < setDate;
         }
       } else return true;
@@ -526,7 +540,7 @@ const missingNameOrInitials = (filter, card) => {
 
 const missingRequirementsCheck = (logic, array, value, hasNoRequirement) => {
   switch (logic) {
-    case 'and':
+    case AND:
       return array.some(
         (name) =>
           !(
@@ -534,13 +548,13 @@ const missingRequirementsCheck = (logic, array, value, hasNoRequirement) => {
             (name === 'not required' && hasNoRequirement)
           ),
       );
-    case 'or':
+    case OR:
       return !array.some(
         (name) =>
           RegExp('(^|[, ])' + name, 'i').test(value) ||
           (name === 'not required' && hasNoRequirement),
       );
-    case 'not':
+    case NOT:
       return array.some(
         (name) =>
           RegExp('(^|[, ])' + name, 'i').test(value) ||

@@ -65,6 +65,7 @@ const LibrarySearchFormDiscipline = ({ value, onChange, searchForm }) => {
                 value={value.logic}
                 searchForm={searchForm}
                 withAnd
+                withOnly
               />
               {value.value.length == 1 ? (
                 <SearchFormButtonAdd searchForm={searchForm} name={name} />

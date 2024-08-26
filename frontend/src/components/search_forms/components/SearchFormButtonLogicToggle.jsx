@@ -1,28 +1,32 @@
 import React from 'react';
 import { Button } from '@/components';
+import { AND, NOT, OR, ONLY } from '@/utils/constants';
 import Exclamation from '@/assets/images/icons/exclamation.svg?react';
 
-const SearchFormButtonLogicToggle = ({ name, i, value, searchForm, withAnd }) => {
+const SearchFormButtonLogicToggle = ({ name, i, value, searchForm, withAnd, withOnly }) => {
   const handleToggleForm = () => {
     if (name === 'text') {
       switch (value) {
-        case 'and':
-          searchForm[name][i].logic = 'not';
+        case AND:
+          searchForm[name][i].logic = NOT;
           break;
-        case 'not':
-          searchForm[name][i].logic = 'and';
+        case NOT:
+          searchForm[name][i].logic = AND;
           break;
       }
     } else {
       switch (value) {
-        case 'or':
-          searchForm[name].logic = withAnd ? 'and' : 'not';
+        case OR:
+          searchForm[name].logic = withAnd ? AND : NOT;
           break;
-        case 'and':
-          searchForm[name].logic = 'not';
+        case AND:
+          searchForm[name].logic = NOT;
           break;
-        case 'not':
-          searchForm[name].logic = 'or';
+        case NOT:
+          searchForm[name].logic = withOnly ? ONLY : OR;
+          break;
+        case ONLY:
+          searchForm[name].logic = OR;
           break;
       }
     }
@@ -32,17 +36,21 @@ const SearchFormButtonLogicToggle = ({ name, i, value, searchForm, withAnd }) =>
   let title = '';
 
   switch (value) {
-    case 'and':
+    case AND:
       icon = '&';
       title = 'Logic: AND';
       break;
-    case 'or':
+    case OR:
       icon = '//';
       title = 'Logic: OR';
       break;
-    case 'not':
+    case NOT:
       icon = <Exclamation />;
       title = 'Logic: NOT';
+      break;
+    case ONLY:
+      icon = '≡';
+      title = 'Logic: ONLY';
       break;
   }
 

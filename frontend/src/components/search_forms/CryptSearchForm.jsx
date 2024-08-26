@@ -29,7 +29,7 @@ import {
   usedStore,
   limitedStore,
 } from '@/context';
-import { CRYPT } from '@/utils/constants';
+import { PRINT, REPRINT, FIRST, ONLY, CRYPT } from '@/utils/constants';
 
 const CryptSearchForm = () => {
   const {
@@ -108,8 +108,8 @@ const CryptSearchForm = () => {
 
     if (['or-newer', 'or-older', 'not-newer', 'not-older'].includes(value)) {
       searchCryptForm[name]['age'] = searchCryptForm[name]['age'] === value ? false : value;
-    } else if (['only', 'first', 'reprint'].includes(value)) {
-      searchCryptForm[name]['print'] = searchCryptForm[name]['print'] === value ? false : value;
+    } else if ([ONLY, FIRST, REPRINT].includes(value)) {
+      searchCryptForm[name][PRINT] = searchCryptForm[name][PRINT] === value ? false : value;
     } else {
       searchCryptForm[name][value] = !searchCryptForm[name][value];
     }
