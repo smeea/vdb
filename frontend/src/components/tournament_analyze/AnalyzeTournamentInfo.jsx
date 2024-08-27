@@ -14,7 +14,7 @@ const AnalyzeTournamentInfo = ({ info, decks }) => {
   const { isMobile } = useApp();
 
   return (
-    <div className="flex flex-col max-sm:px-1">
+    <div className="flex flex-col">
       {!isMobile && <Title>General Info</Title>}
       <table>
         <tbody>
@@ -33,16 +33,24 @@ const AnalyzeTournamentInfo = ({ info, decks }) => {
           <TwdResultDescriptionTextTr title={isMobile ? <PersonFill /> : <>Players:</>}>
             {info.players}
           </TwdResultDescriptionTextTr>
-          <TwdResultDescriptionTextTr title={isMobile ? <PersonCheckFill /> : <>Reported Decks:</>}>
-            <>
+          <TwdResultDescriptionTextTr
+            title={
+              isMobile ? (
+                <div className="pl-0.5">
+                  <PersonCheckFill />
+                </div>
+              ) : (
+                <>Reported Decks:</>
+              )
+            }
+          >
+            <div>
               {Object.keys(decks).length}{' '}
               <div className="inline text-midGray dark:text-midGrayDark">
                 ({Math.round((Object.keys(decks).length / info.players) * 100)}
                 %)
               </div>
-            </>
-          </TwdResultDescriptionTextTr>
-          <TwdResultDescriptionTextTr>
+            </div>
             <div className="text-midGray dark:text-midGrayDark">
               median reported place: {info.medianReportedRank}, &quot;
               <div className="inline text-sm font-bold text-[#ff00aa]">|</div>
@@ -50,17 +58,15 @@ const AnalyzeTournamentInfo = ({ info, decks }) => {
             </div>
           </TwdResultDescriptionTextTr>
           <TwdResultDescriptionTextTr title={isMobile ? <Repeat /> : <>Total Matches:</>}>
-            {info.matches}
-          </TwdResultDescriptionTextTr>
-          <TwdResultDescriptionTextTr>
+            <div>{info.matches}</div>
             <div className="text-midGray dark:text-midGrayDark">
               avg per match: {info.avgMatchGw}GW + {info.avgMatchVp}VP
             </div>
           </TwdResultDescriptionTextTr>
           <TwdResultDescriptionTextTr title={isMobile ? <TicketPerforated /> : <>Total Score:</>}>
-            {info.totalGw}GW + {info.totalVp}VP{' '}
-          </TwdResultDescriptionTextTr>
-          <TwdResultDescriptionTextTr>
+            <div>
+              {info.totalGw}GW + {info.totalVp}VP{' '}
+            </div>
             <div className="text-midGray dark:text-midGrayDark">
               median per player: {info.medianPlayerGw}GW + {info.medianPlayerVp}
               VP
