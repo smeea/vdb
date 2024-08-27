@@ -5,6 +5,7 @@
 
 # FEATURES
 - Card q-ty change in autocompletion
+- Update ETDA - Rise of the new bloods, AU
 
 # FEATURES ON HOLD
 - TWD search with % V5-compatibility -> after BCP clarify V5

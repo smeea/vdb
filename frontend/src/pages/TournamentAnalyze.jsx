@@ -146,8 +146,8 @@ const TournamentAnalyze = () => {
       const score = {
         name: name,
         rank: rank,
-        gw: parseInt(array[7]),
-        vp: parseInt(array[8]),
+        gw: Number(array[7]),
+        vp: Number(array[8]),
         players: totalPlayers,
       };
 
