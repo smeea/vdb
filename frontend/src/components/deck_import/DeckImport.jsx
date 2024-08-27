@@ -15,8 +15,14 @@ import { useDeckImport } from '@/hooks';
 import { deckServices } from '@/services';
 
 const DeckImport = ({ setShowInfo, isOnlyNew }) => {
-  const { setShowMenuButtons, setShowFloatingButtons, cryptCardBase, libraryCardBase, publicName } =
-    useApp();
+  const {
+    isPlaytester,
+    setShowMenuButtons,
+    setShowFloatingButtons,
+    cryptCardBase,
+    libraryCardBase,
+    publicName,
+  } = useApp();
   const deck = useSnapshot(deckStore).deck;
   const navigate = useNavigate();
   const [error, setError] = useState(false);
@@ -114,7 +120,7 @@ const DeckImport = ({ setShowInfo, isOnlyNew }) => {
         });
       }
 
-      const d = await useDeckImport(deckText, cryptCardBase, libraryCardBase);
+      const d = await useDeckImport(deckText, cryptCardBase, libraryCardBase, isPlaytester);
 
       deckServices
         .deckImport({ ...d, anonymous: isAnonymous })

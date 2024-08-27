@@ -6,8 +6,14 @@ import { useDeckImport } from '@/hooks';
 import { deckServices } from '@/services';
 
 const DeckImportText = ({ isAnonymous, setBadCards, handleCloseModal }) => {
-  const { isMobile, setShowFloatingButtons, setShowMenuButtons, cryptCardBase, libraryCardBase } =
-    useApp();
+  const {
+    isPlaytester,
+    isMobile,
+    setShowFloatingButtons,
+    setShowMenuButtons,
+    cryptCardBase,
+    libraryCardBase,
+  } = useApp();
   const navigate = useNavigate();
   const [deckText, setDeckText] = useState('');
   const [emptyError, setEmptyError] = useState(false);
@@ -27,7 +33,7 @@ const DeckImportText = ({ isAnonymous, setBadCards, handleCloseModal }) => {
     setImportError(false);
 
     if (deckText) {
-      const d = await useDeckImport(deckText, cryptCardBase, libraryCardBase);
+      const d = await useDeckImport(deckText, cryptCardBase, libraryCardBase, isPlaytester);
 
       deckServices
         .deckImport({ ...d, anonymous: isAnonymous })

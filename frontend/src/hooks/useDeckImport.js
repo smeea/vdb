@@ -1,6 +1,6 @@
 import { ASCII_NAME } from '@/utils/constants';
 
-const useDeckImport = async (deckText, cryptCardBase, libraryCardBase) => {
+const useDeckImport = async (deckText, cryptCardBase, libraryCardBase, isPlaytester) => {
   const { default: unidecode } = await import('unidecode');
 
   const cardbase = {};
@@ -110,7 +110,9 @@ const useDeckImport = async (deckText, cryptCardBase, libraryCardBase) => {
     }
 
     const [id, q] = parseCard(i);
-    if (id && q) {
+    const isPlaytest = id > 210000 || (id < 200000 && id > 110000);
+
+    if (id && q && (!isPlaytest || isPlaytester)) {
       if (id > 200000) {
         deck.crypt[id] = {
           c: cryptCardBase[id],
