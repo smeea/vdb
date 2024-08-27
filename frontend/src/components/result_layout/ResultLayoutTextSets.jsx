@@ -36,7 +36,7 @@ const PreconsDetailed = ({ sets, set }) => {
 const PopoverSet = ({ card, set, handleClose }) => {
   return (
     <div className="flex max-sm:flex-col sm:gap-2">
-      <div className="flex flex-col gap-1 p-3">
+      <div className="flex flex-col gap-1 p-3 sm:min-w-[220px] sm:p-4">
         <div className="whitespace-nowrap">
           <b>{setsAndPrecons[set].name}</b>
           {![POD, PROMO, PLAYTEST].includes(set) && ' - ' + setsAndPrecons[set].date.slice(0, 4)}
