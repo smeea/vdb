@@ -227,16 +227,15 @@ Deck Name: ${deck.name}${' '.repeat(39 - deck.name.length)} # OPTIONAL
 Created by: Author Name                            # OPTIONAL, only if different from Winner
 Description:                                       # OPTIONAL
 ${
-  deck.description
+  deck.description.replace(/\n|\s/g, '').length > 0
     ? deck.description
-    : `Put your descriptiopn here, like how deck   # Don't format text width with line breaks
-worked, what would you like to change, say hello   # Example on the left is how NOT TO DO
-to your grandma or anything else.                  # Break line only to start new paragraph/list item/etc
-
-Empty lines in description are OK. One empty line between Description and Crypt is necessary.
+    : `Put your descriptiopn here.
+Empty lines in description are OK. Can take multiple lines.
+Each line can be as long as you need it.
+One empty line between Description and Crypt is necessary.
 
 # Comments on particular cards are possible in the end on the same line using ' -- ' like this:
-# 4x Dummy Corporation -- will increase to 8x, saved me in every round and twice in finals'`
+# 4x Dummy Corporation -- will increase to 8x, saved me in every round and twice in finals`
 }
 `;
   } else {

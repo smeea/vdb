@@ -15,5 +15,7 @@
 
 # TECH IMPROVEMENTS
 - Update to React 19
-- Update to TailwindCSS 4 (migrate from isWidth to container queries)
+- Update to TailwindCSS 4
+- Update to Valtio 2 (use utils/deepClone?)
+- Migrate from isWidth to container queries
 - Remove legacy polyfills when Safari adopts groupBy
