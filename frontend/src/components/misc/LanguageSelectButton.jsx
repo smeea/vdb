@@ -9,6 +9,7 @@ const LanguageSelectButton = ({ showMenu, setShowMenu }) => {
     <div
       className="relative flex h-full min-w-[40px] items-center justify-center"
       onClick={() => setShowMenu(!showMenu)}
+      title="Select Language"
     >
       <Flag value={lang} />
       {showMenu && (

@@ -60,6 +60,7 @@ const ThemeSelect = ({ setShowMenu }) => {
         <div
           className="flex h-full min-w-[40px] items-center justify-center sm:text-white sm:dark:text-white"
           onClick={handleClick}
+          title="Switch Theme"
         >
           {themeVisual[theme]?.icon}
         </div>
