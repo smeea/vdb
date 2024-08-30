@@ -30,25 +30,11 @@ const Cards = () => {
     handleSetCard({ Id: event.value });
   };
 
-  const randomCrypt = () => {
-    const cardid =
-      Math.floor(
-        Math.random() *
-          Math.floor(
-            Object.keys(cryptCardBase).filter((cardid) => playtestMode || cardid < 210000).length,
-          ),
-      ) + 200000;
-    navigate(`/cards/${cardid}`);
-  };
-
-  const randomLibrary = () => {
-    const cardid =
-      Math.floor(
-        Math.random() *
-          Math.floor(
-            Object.keys(libraryCardBase).filter((cardid) => playtestMode || cardid < 110000).length,
-          ),
-      ) + 100000;
+  const openRandomCard = (isCrypt) => {
+    const cardbase = isCrypt ? cryptCardBase : libraryCardBase;
+    const playtestId = isCrypt ? 210000 : 110000;
+    const cards = Object.keys(cardbase).filter((cardid) => playtestMode || cardid < playtestId);
+    const cardid = cards[Math.floor(Math.random() * cards.length)];
     navigate(`/cards/${cardid}`);
   };
 
@@ -98,11 +84,15 @@ const Cards = () => {
               </div>
             </div>
             <div className="fixed z-10">
-              <ButtonFloat onClick={randomCrypt} position="top" variant="secondary">
+              <ButtonFloat onClick={() => openRandomCard(true)} position="top" variant="secondary">
                 <Dice3 width="22" height="22" className="pr-1" viewBox="0 0 16 16" />
                 <b>C</b>
               </ButtonFloat>
-              <ButtonFloat onClick={randomLibrary} position="middle" variant="secondary">
+              <ButtonFloat
+                onClick={() => openRandomCard(false)}
+                position="middle"
+                variant="secondary"
+              >
                 <Dice3 width="22" height="22" className="pr-1" viewBox="0 0 16 16" />
                 <b>L</b>
               </ButtonFloat>
@@ -144,14 +134,14 @@ const Cards = () => {
               <div className="sticky z-30 flex w-full flex-col space-y-1 bg-bgPrimary dark:bg-bgPrimaryDark lg:top-10">
                 <ButtonIconed
                   variant="secondary"
-                  onClick={randomCrypt}
+                  onClick={() => openRandomCard(true)}
                   title="Random Crypt Card"
                   icon={<Dice3 />}
                   text="Crypt"
                 />
                 <ButtonIconed
                   variant="secondary"
-                  onClick={randomLibrary}
+                  onClick={() => openRandomCard(false)}
                   title="Random Library Card"
                   icon={<Dice3 />}
                   text="Library"
