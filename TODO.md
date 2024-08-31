@@ -5,6 +5,8 @@
 
 # FEATURES
 - Card q-ty change in autocompletion
+- Playtest management UI
+- Playtest user details form
 
 # FEATURES ON HOLD
 - TWD search with % V5-compatibility -> after BCP clarify V5
