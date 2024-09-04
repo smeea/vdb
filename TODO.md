@@ -2,6 +2,7 @@
 - Snapshot url in iOS
 - Page update in iOS
 - Patreon note for iOS
+- Jol export ascii names
 
 # FEATURES
 - Card q-ty change in autocompletion
