@@ -11,6 +11,22 @@
     "name": "PLAYTEST",
     "date": "",
     "precons": {
+      "SCai": {
+        "name": "Path of Caine",
+        "clan": "Bundle"
+      },
+      "SCat": {
+        "name": "Path of Cathari",
+        "clan": "Bundle"
+      },
+      "SDS": {
+        "name": "Path of Death and the Soul",
+        "clan": "Bundle"
+      },
+      "SPIV": {
+        "name": "Path of Power and the Inner Voice",
+        "clan": "Bundle"
+      },
       "PH": {
         "name": "Hecata",
         "clan": "Hecata"
