@@ -1,5 +1,5 @@
 {
-  "version": "2024-09-08",
+  "version": "2024-09-09",
   "changes": [
     "Add Rise of New Bloods in Melbourne, Australia event to Tournament Analyze - http://vdb.im/tournament_analyze/11259",
     "Fix export to JOL for non-ascii card names",
