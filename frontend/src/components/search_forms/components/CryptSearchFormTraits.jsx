@@ -22,16 +22,19 @@ const CryptSearchFormTraits = ({ value, onChange }) => {
             ['aggravated', 'Aggravated'],
             ['prevent', 'Prevent'],
             ['press', 'Press'],
-          ].map((i, index) => (
-            <Checkbox
-              key={index}
-              name="traits"
-              value={i[0]}
-              label={i[1]}
-              checked={value[i[0]]}
-              onChange={onChange}
-            />
-          ))}
+            ['path-caine', 'Path of Caine'],
+            ['path-cathari', 'Path of Cathari'],
+          ].filter((i) => !['path-caine', 'path-cathari'].includes(i[0]) || playtestMode)
+            .map((i, index) => (
+              <Checkbox
+                key={index}
+                name="traits"
+                value={i[0]}
+                label={i[1]}
+                checked={value[i[0]]}
+                onChange={onChange}
+              />
+            ))}
         </div>
         <div className="w-5/12 space-y-0.5">
           {[
@@ -46,8 +49,10 @@ const CryptSearchFormTraits = ({ value, onChange }) => {
             ['banned', 'Banned'],
             ['non-twd', 'Not in TWD'],
             ['playtest', 'Playtest'],
+            ['path-death', 'Path of Death'],
+            ['path-power', 'Path of Power'],
           ]
-            .filter((i) => i[0] !== 'playtest' || playtestMode)
+           .filter((i) => !['playtest', 'path-death', 'path-power'].includes(i[0]) || playtestMode)
             .map((i, index) => {
               return (
                 <Checkbox

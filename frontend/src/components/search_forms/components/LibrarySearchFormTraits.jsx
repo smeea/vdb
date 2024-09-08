@@ -25,7 +25,10 @@ const LibrarySearchFormTraits = ({ value, onChange }) => {
             ['combat ends', 'Combat Ends'],
             ['multi-type', 'Multi-Type'],
             ['multi-discipline', 'Multi-Discipline'],
-          ].map((i, index) => (
+            ['path-caine', 'Path of Caine'],
+            ['path-cathari', 'Path of Cathari'],
+          ].filter((i) => !['path-caine', 'path-cathari'].includes(i[0]) || playtestMode)
+          .map((i, index) => (
             <Checkbox
               key={index}
               name="traits"
@@ -52,8 +55,10 @@ const LibrarySearchFormTraits = ({ value, onChange }) => {
             ['non-twd', 'Not in TWD'],
             ['no-requirements', 'No Requirement'],
             ['playtest', 'Playtest'],
+            ['path-death', 'Path of Death'],
+            ['path-power', 'Path of Power'],
           ]
-            .filter((i) => i[0] !== 'playtest' || playtestMode)
+            .filter((i) => !['playtest', 'path-death', 'path-power'].includes(i[0]) || playtestMode)
             .map((i, index) => (
               <Checkbox
                 key={index}

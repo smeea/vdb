@@ -216,6 +216,10 @@ const CryptTraitsRegexMap = {
   'additional strike': () => /additional strike/i,
   aggravated: () => /(?:[^non-])aggravated/i,
   prevent: () => /(?:[^un])prevent(?:[^able])/i,
+  'path-caine': () => /Path of Caine/i,
+  'path-cathari': () => /Path of Cathari/i,
+  'path-death': () => /Path of Death/i,
+  'path-power': () => /Path of Power/i,
 };
 
 const LibraryTraitsRegexMap = {
@@ -233,6 +237,10 @@ const LibraryTraitsRegexMap = {
   aggravated: () => /(?:[^non-])aggravated/i,
   prevent: () => /(?:[^un])prevent(?:[^able])/i,
   bloat: () => /(move|add) .* blood (from the blood bank )?to .* in your uncontrolled region/i,
+  'path-caine': () => /Path of Caine/i,
+  'path-cathari': () => /Path of Cathari/i,
+  'path-death': () => /Path of Death/i,
+  'path-power': () => /Path of Power/i,
 };
 
 const missingTitleCrypt = (filter, card) => {
