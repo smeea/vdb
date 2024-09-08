@@ -13,19 +13,19 @@
     "precons": {
       "SCai": {
         "name": "Path of Caine",
-        "clan": "Bundle"
+        "clan": "Mix"
       },
       "SCat": {
         "name": "Path of Cathari",
-        "clan": "Bundle"
+        "clan": "Mix"
       },
       "SDS": {
-        "name": "Path of Death and the Soul",
-        "clan": "Bundle"
+        "name": "Path of Death",
+        "clan": "Mix"
       },
       "SPIV": {
-        "name": "Path of Power and the Inner Voice",
-        "clan": "Bundle"
+        "name": "Path of Power",
+        "clan": "Mix"
       },
       "PH": {
         "name": "Hecata",
