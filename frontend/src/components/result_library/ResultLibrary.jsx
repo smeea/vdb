@@ -54,7 +54,7 @@ const ResultLibrary = ({ cards, setCards, inCompare }) => {
   return (
     <>
       {!isMobile && (cards === null || cards.length === 0) && (
-        <ErrorMessage>{cards === null ? 'CONNECTION PROBLEM' : 'NO CARDS FOUND'}</ErrorMessage>
+        <ErrorMessage sticky>{cards === null ? 'CONNECTION PROBLEM' : 'NO CARDS FOUND'}</ErrorMessage>
       )}
       {cards && cards.length > 0 && (
         <>
