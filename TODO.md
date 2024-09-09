@@ -1,11 +1,9 @@
 # FIX
 - Snapshot url in iOS
 - Page update in iOS
-- Patreon note for iOS
 
 # FEATURES
 - Card q-ty change in autocompletion
-- More Legacy images
 
 # FEATURES ON HOLD
 - TWD search with % V5-compatibility -> after BCP clarify V5

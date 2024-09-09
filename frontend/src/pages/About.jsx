@@ -6,7 +6,8 @@ import Discord from '@/assets/images/icons/discord.svg?react';
 import EnvelopeFill from '@/assets/images/icons/envelope-fill.svg?react';
 import Globe2 from '@/assets/images/icons/globe2.svg?react';
 import ClipboardFill from '@/assets/images/icons/clipboard-fill.svg?react';
-import { Title, Banner, TextWithLinks } from '@/components';
+import { Title, Banner, TextWithLinks, ConditionalTooltipOrModal } from '@/components';
+import { useApp } from '@/context';
 import lastChange from '@/LAST_CHANGE.json';
 
 const ContactLi = ({ icon, children }) => {
@@ -19,6 +20,7 @@ const ContactLi = ({ icon, children }) => {
 };
 
 const About = () => {
+  const { isMobile } = useApp();
   const BTC_WALLET = 'bc1qcj6zs57xskca9cua2lj5la6l2yz368j0wxdeap';
 
   return (
@@ -187,10 +189,25 @@ const About = () => {
 
         <div className="space-y-1.5">
           <Title>DONATIONS</Title>
-          <div>
+          <div className="flex gap-1">
             Patreon: <a href="https://patreon.com/smeea">patreon.com/smeea</a>
+            <ConditionalTooltipOrModal title="MacOS/iOS warning" isModal={isMobile} overlay={
+              <div className="flex flex-col gap-1">
+                <div>
+                Starting from November 2024 Apple will charge 30% fee from users who subsribes using Patreon app from App Store (in addition to Patreon fees!).
+                </div>
+                <div>
+                  Please consider subscribing using patreon website in standard browser (Chrome, Firefox, Safari, etc).
+                </div>
+                <div>
+                  Read more: <a href="https://news.patreon.com/articles/understanding-apple-requirements-for-patreon">https://news.patreon.com/articles/understanding-apple-requirements-for-patreon</a>
+                </div>
+              </div>
+            }>
+              <div className="flex font-bold text-fgThird dark:text-fgThirdDark">[MacOS/iOS warning]</div>
+            </ConditionalTooltipOrModal>
           </div>
-          <div>
+          <div className="flex gap-1">
             Bitcoin (BTC):{' '}
             <a href={`https://www.blockchain.com/btc/address/${BTC_WALLET}`}>
               <div className="inline font-mono text-sm">{BTC_WALLET}</div>
