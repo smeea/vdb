@@ -2,12 +2,31 @@ import React from 'react';
 import { Toggle, ConditionalTooltipOrModal } from '@/components';
 import { useApp } from '@/context';
 
+
+const legacyImagesClans = [
+  'Abomination',
+  'Ahrimane',
+  'Baali',
+  'Blood Brother',
+  'Caitiff',
+  'Daughter of Cacophony',
+  'Gargoyle',
+  'Harbinger of Skulls',
+  'Kiasyd',
+  'Nagaraja',
+  'Pander',
+  'Ravnos',
+  'Salubri',
+  'Salubri antitribu',
+  'Samedi',
+  'Tzimisce',
+]
+
 const TooltipText = () => {
   return (
     <div className="flex flex-col gap-1">
-      <div className="text-fgRed dark:text-fgRedDark">
-        Contains only images of Abomination, Ahrimane, Baali, Blood Brother, Caitiff, Daughter of
-        Cacophony, Gargoyle, Nagraja, Ravnos and Tzimisce. More will come in the future.
+      <div>
+        Contains only images of {legacyImagesClans.join(', ')}. More will come in the future.
       </div>
       <div>Uses modern card text.</div>
       <div>
