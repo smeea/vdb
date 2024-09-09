@@ -5,6 +5,7 @@
 
 # FEATURES
 - Card q-ty change in autocompletion
+- More Legacy images
 
 # FEATURES ON HOLD
 - TWD search with % V5-compatibility -> after BCP clarify V5
