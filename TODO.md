@@ -2,7 +2,7 @@
 - Snapshot url in iOS
 - Page update in iOS
 - Orpheus horizontal layout on mobile
-- Resorting in inventory by q-ty
+- Inventory sort to localStorage
 
 # FEATURES
 - Card q-ty change in autocompletion

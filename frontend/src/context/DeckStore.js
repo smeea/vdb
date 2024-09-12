@@ -2,17 +2,16 @@ import { proxy } from 'valtio';
 import { deepClone } from '@/utils';
 import { CARD_TEXT } from '@/utils/constants';
 import { deckServices } from '@/services';
+import { startCryptTimer, miscStore } from '@/context';
 
 export const deckStore = proxy({
   deck: undefined,
   decks: undefined,
-  cryptTimer: undefined,
-  cryptTimers: [],
 });
 
 export const setDeck = (v) => {
   deckStore.deck = v;
-  deckStore.cryptTimer = !deckStore.cryptTimer;
+  miscStore.cryptTimer = !miscStore.cryptTimer;
 };
 
 export const deckCardChange = (deckid, card, q) => {
@@ -50,25 +49,7 @@ export const deckCardChange = (deckid, card, q) => {
 
   changeMaster(deckid);
 
-  const startTimer = () => {
-    let counter = 1;
-    deckStore.cryptTimers.forEach((timerId) => {
-      clearInterval(timerId);
-    });
-    deckStore.cryptTimers = [];
-
-    const timerId = setInterval(() => {
-      if (counter > 0) {
-        counter = counter - 1;
-      } else {
-        clearInterval(timerId);
-        deckStore.cryptTimer = !deckStore.cryptTimer;
-      }
-    }, 500);
-
-    deckStore.cryptTimers = [...deckStore.cryptTimers, timerId];
-  };
-  if (cardSrc === 'crypt') startTimer();
+  if (cardSrc === 'crypt') startCryptTimer();
 
   deckServices.cardChange(deckid, card.Id, q).catch(() => {
     deckStore.deck = initialDeckState;

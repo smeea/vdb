@@ -34,7 +34,7 @@ const InventoryCrypt = ({
   };
 
   const { cardsByClan, cardsByClanTotal, cardsByClanUnique, missingByClan, missingByClanTotal } =
-    useInventoryCrypt(cards, category, compact, onlyNotes);
+        useInventoryCrypt(cards, category, compact, onlyNotes);
 
   return (
     <>

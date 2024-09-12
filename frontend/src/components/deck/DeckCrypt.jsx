@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { useSnapshot } from 'valtio';
 import { DeckCryptTable, DeckCryptHeader, ResultModal, FlexGapped } from '@/components';
-import { useApp, deckStore } from '@/context';
+import { useApp, miscStore } from '@/context';
 import { useModalCardController, useKeyDisciplines, useDeckCrypt } from '@/hooks';
 
 const DeckCrypt = ({ inSearch, inPreview, inMissing, noDisciplines, deck }) => {
   const { setShowFloatingButtons, cryptDeckSort, changeCryptDeckSort, isMobile } = useApp();
-  const changeTimer = useSnapshot(deckStore).cryptTimer;
+  const changeTimer = useSnapshot(miscStore).cryptTimer;
   const { deckid, isPublic, isAuthor, isFrozen } = deck;
   const isEditable = isAuthor && !isPublic && !isFrozen;
   const [showInfo, setShowInfo] = useState(false);

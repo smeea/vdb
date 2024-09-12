@@ -1,13 +1,12 @@
 import { proxy } from 'valtio';
 import { deepClone } from '@/utils';
 import { inventoryServices } from '@/services';
+import { startCryptTimer } from '@/context';
 
 export const inventoryStore = proxy({
   crypt: {},
   library: {},
   isFrozen: false,
-  cryptTimer: undefined,
-  cryptTimers: [],
 });
 
 export const usedStore = proxy({
@@ -63,10 +62,6 @@ export const inventoryCardChange = (card, q) => {
   const initialState = deepClone(inventoryStore[cardSrc])
   const store = inventoryStore[cardSrc]
 
-  inventoryServices.setCard(card.Id, q).catch(() => {
-    inventoryStore[cardSrc] = initialState;
-  });
-
   if (q >= 0) {
     if (store[card.Id]) {
       store[card.Id].q = q;
@@ -79,6 +74,12 @@ export const inventoryCardChange = (card, q) => {
   } else {
     delete store[card.Id];
   }
+
+  if (cardSrc === 'crypt') startCryptTimer();
+
+  inventoryServices.setCard(card.Id, q).catch(() => {
+    inventoryStore[cardSrc] = initialState;
+  });
 };
 
 export const inventoryCardTextChange = (card, text) => {

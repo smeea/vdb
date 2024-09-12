@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { useSnapshot } from 'valtio';
 import { FlexGapped, DiffCryptTable, ResultModal, DeckCryptHeader } from '@/components';
-import { deckStore, useApp } from '@/context';
+import { miscStore, useApp } from '@/context';
 import { useModalCardController, useKeyDisciplines, useDeckCrypt } from '@/hooks';
 
 const ReviewCrypt = ({ cardChange, cardsFrom, cardsTo }) => {
   const { cryptDeckSort, changeCryptDeckSort, isMobile } = useApp();
-  const changeTimer = useSnapshot(deckStore).cryptTimer;
+  const changeTimer = useSnapshot(miscStore).cryptTimer;
   const [showInfo, setShowInfo] = useState(false);
 
   const sortMethods = {

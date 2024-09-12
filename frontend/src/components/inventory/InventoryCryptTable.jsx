@@ -1,14 +1,16 @@
 import React from 'react';
+import { useSnapshot } from 'valtio';
 import { FixedSizeList } from 'react-window';
 import AutoSizer from 'react-virtualized-auto-sizer';
 import { WindowRows, ResultModal, InventoryCryptTableRow } from '@/components';
-import { cryptSort } from '@/utils';
-import { useApp } from '@/context';
+import { cryptSortWithTimer } from '@/utils';
+import { miscStore, useApp } from '@/context';
 import { useModalCardController } from '@/hooks';
 
 const InventoryCryptTable = ({ cards, sortMethod, compact, withCompact, newFocus, inShared }) => {
   const { playtestMode, setShowFloatingButtons } = useApp();
-  const sortedCards = cryptSort(cards, sortMethod);
+  const changeTimer = useSnapshot(miscStore).cryptTimer;
+  const sortedCards = cryptSortWithTimer(cards, sortMethod, changeTimer);
 
   const {
     currentModalCard,
@@ -25,8 +27,7 @@ const InventoryCryptTable = ({ cards, sortMethod, compact, withCompact, newFocus
 
   const cardRows = sortedCards
     .filter((card) => playtestMode || card.c.Id < 210000)
-    .map((card) => {
-      return (
+    .map((card) => {return (
         <InventoryCryptTableRow
           key={card.c.Id}
           card={card}
