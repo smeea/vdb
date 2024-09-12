@@ -1,9 +1,12 @@
 # FIX
 - Snapshot url in iOS
 - Page update in iOS
+- Orpheus horizontal layout on mobile
+- Resorting in inventory by q-ty
 
 # FEATURES
 - Card q-ty change in autocompletion
+- Add German NC, Atlantic Cup to Analyze
 
 # FEATURES ON HOLD
 - TWD search with % V5-compatibility -> after BCP clarify V5
@@ -17,4 +20,5 @@
 - Update to TailwindCSS 4
 - Update to Valtio 2 (use utils/deepClone?)
 - Migrate from isWidth to container queries
+- Migrate forms to useActionState
 - Remove legacy polyfills when Safari adopts groupBy

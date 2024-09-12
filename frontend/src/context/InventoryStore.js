@@ -6,6 +6,8 @@ export const inventoryStore = proxy({
   crypt: {},
   library: {},
   isFrozen: false,
+  cryptTimer: undefined,
+  cryptTimers: [],
 });
 
 export const usedStore = proxy({
@@ -57,15 +59,12 @@ export const inventoryCardsAdd = (cards) => {
 
 export const inventoryCardChange = (card, q) => {
   if (card.Id > 210000 || (card.Id < 200000 && card.Id > 110000)) return;
-  const initialState = deepClone(card.Id > 200000 ? inventoryStore.crypt : inventoryStore.library);
-  const store = card.Id > 200000 ? inventoryStore.crypt : inventoryStore.library;
+  const cardSrc = card.Id > 200000 ? 'crypt' : 'library';
+  const initialState = deepClone(inventoryStore[cardSrc])
+  const store = inventoryStore[cardSrc]
 
   inventoryServices.setCard(card.Id, q).catch(() => {
-    if (card.Id > 200000) {
-      inventoryStore.crypt = initialState;
-    } else {
-      inventoryStore.library = initialState;
-    }
+    inventoryStore[cardSrc] = initialState;
   });
 
   if (q >= 0) {
@@ -84,15 +83,12 @@ export const inventoryCardChange = (card, q) => {
 
 export const inventoryCardTextChange = (card, text) => {
   if (card.Id > 210000 || (card.Id < 200000 && card.Id > 110000)) return;
-  const initialState = deepClone(card.Id > 200000 ? inventoryStore.crypt : inventoryStore.library);
-  const store = card.Id > 200000 ? inventoryStore.crypt : inventoryStore.library;
+  const cardSrc = card.Id > 200000 ? 'crypt' : 'library';
+  const initialState = deepClone(inventoryStore[cardSrc])
+  const store = inventoryStore[cardSrc]
 
   inventoryServices.setCardText(card.Id, text).catch(() => {
-    if (card.Id > 200000) {
-      inventoryStore.crypt = initialState;
-    } else {
-      inventoryStore.library = initialState;
-    }
+    inventoryStore[cardSrc] = initialState;
   });
 
   if (store[card.Id]) {
