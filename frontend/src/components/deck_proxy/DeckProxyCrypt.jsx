@@ -1,8 +1,7 @@
 import React from 'react';
-import { useSnapshot } from 'valtio';
 import { DeckProxyCryptTable, ResultModal, Header, FlexGapped } from '@/components';
 import { countCards } from '@/utils';
-import { useApp, miscStore } from '@/context';
+import { useApp } from '@/context';
 import { useModalCardController, useDeckCrypt } from '@/hooks';
 
 const DeckProxyCrypt = ({
@@ -13,12 +12,9 @@ const DeckProxyCrypt = ({
   handleProxyCounter,
 }) => {
   const { cryptDeckSort, setShowFloatingButtons } = useApp();
-  const changeTimer = useSnapshot(miscStore).cryptTimer;
-
   const { cryptSide, sortedCards, sortedCardsSide } = useDeckCrypt(
     deck.crypt,
     cryptDeckSort,
-    changeTimer,
   );
 
   const proxiesToPrint = Object.keys(proxySelected)

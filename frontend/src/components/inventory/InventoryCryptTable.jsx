@@ -1,16 +1,14 @@
 import React from 'react';
-import { useSnapshot } from 'valtio';
 import { FixedSizeList } from 'react-window';
 import AutoSizer from 'react-virtualized-auto-sizer';
 import { WindowRows, ResultModal, InventoryCryptTableRow } from '@/components';
 import { cryptSortWithTimer } from '@/utils';
-import { miscStore, useApp } from '@/context';
+import { useApp } from '@/context';
 import { useModalCardController } from '@/hooks';
 
 const InventoryCryptTable = ({ cards, sortMethod, compact, withCompact, newFocus, inShared }) => {
   const { playtestMode, setShowFloatingButtons } = useApp();
-  const changeTimer = useSnapshot(miscStore).cryptTimer;
-  const sortedCards = cryptSortWithTimer(cards, sortMethod, changeTimer);
+  const sortedCards = cryptSortWithTimer(cards, sortMethod);
 
   const {
     currentModalCard,
