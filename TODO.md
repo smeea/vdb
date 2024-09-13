@@ -5,7 +5,6 @@
 
 # FEATURES
 - Card q-ty change in autocompletion
-- Atlantic Cup to Analyze
 
 # FEATURES ON HOLD
 - TWD search with % V5-compatibility -> after BCP clarify V5
