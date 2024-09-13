@@ -8,6 +8,7 @@ import { byTimestamp } from '@/utils';
 import {
   CAPACITY_MIN_MAX,
   QUANTITYx,
+  NAME,
   TYPE,
   DATE_NEW_OLD,
   RANK_HIGH_LOW,
@@ -31,7 +32,9 @@ import {
 
 const CRYPT_SEARCH_SORT = 'cryptSearchSort';
 const CRYPT_DECK_SORT = 'cryptDeckSort';
-const LIBRARY_SEARCH_SORT = 'librarySearchSort';
+const CRYPT_INVENTORY_SORT = 'cryptInventorySort';
+const LIBRARY_SEARCH_SORT = 'libraryInventorySort';
+const LIBRARY_INVENTORY_SORT = 'libraryInventorySort';
 const TWD_SEARCH_SORT = 'twdSearchSort';
 const PDA_SEARCH_SORT = 'pdaSearchSort';
 const ANALYZE_SEARCH_SORT = 'analyzeSearchSort';
@@ -75,7 +78,9 @@ export const AppProvider = ({ children }) => {
   const [searchMissingInventoryMode, setSearchMissingInventoryMode] = useState();
   const [cryptDeckSort, setCryptDeckSort] = useState();
   const [cryptSearchSort, setCryptSearchSort] = useState();
+  const [cryptInventorySort, setCryptInventorySort] = useState();
   const [librarySearchSort, setLibrarySearchSort] = useState();
+  const [libraryInventorySort, setLibraryInventorySort] = useState();
   const [twdSearchSort, setTwdSearchSort] = useState();
   const [pdaSearchSort, setPdaSearchSort] = useState();
   const [analyzeSearchSort, setAnalyzeSearchSort] = useState();
@@ -348,9 +353,19 @@ export const AppProvider = ({ children }) => {
     storageServices.setLocalStorage(CRYPT_SEARCH_SORT, method);
   };
 
+  const changeCryptInventorySort = (method) => {
+    setCryptInventorySort(method);
+    storageServices.setLocalStorage(CRYPT_INVENTORY_SORT, method);
+  };
+
   const changeLibrarySearchSort = (method) => {
     setLibrarySearchSort(method);
     storageServices.setLocalStorage(LIBRARY_SEARCH_SORT, method);
+  };
+
+  const changeLibraryInventorySort = (method) => {
+    setLibraryInventorySort(method);
+    storageServices.setLocalStorage(LIBRARY_INVENTORY_SORT, method);
   };
 
   const changeTwdSearchSort = (method) => {
@@ -401,7 +416,9 @@ export const AppProvider = ({ children }) => {
   useLayoutEffect(() => {
     storageServices.initFromStorage(CRYPT_SEARCH_SORT, CAPACITY_MIN_MAX, setCryptSearchSort);
     storageServices.initFromStorage(CRYPT_DECK_SORT, QUANTITYx, setCryptDeckSort);
+    storageServices.initFromStorage(CRYPT_INVENTORY_SORT, NAME, setCryptInventorySort);
     storageServices.initFromStorage(LIBRARY_SEARCH_SORT, TYPE, setLibrarySearchSort);
+    storageServices.initFromStorage(LIBRARY_INVENTORY_SORT, NAME, setLibraryInventorySort);
     storageServices.initFromStorage(TWD_SEARCH_SORT, DATE_NEW_OLD, setTwdSearchSort);
     storageServices.initFromStorage(PDA_SEARCH_SORT, DATE_NEW_OLD, setPdaSearchSort);
     storageServices.initFromStorage(ANALYZE_SEARCH_SORT, RANK_HIGH_LOW, setAnalyzeSearchSort);
@@ -542,6 +559,10 @@ export const AppProvider = ({ children }) => {
         changeAnalyzeSearchSort,
         cryptDeckSort,
         changeCryptDeckSort,
+        cryptInventorySort,
+        changeCryptInventorySort,
+        libraryInventorySort,
+        changeLibraryInventorySort,
       }}
     >
       {children}

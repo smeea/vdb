@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { InventoryCryptTable, InventoryFilterForm, SortButton, Header } from '@/components';
+import { useApp } from '@/context';
 import { useInventoryCrypt } from '@/hooks';
 import {
   ALL,
@@ -23,7 +24,7 @@ const InventoryCrypt = ({
   inShared,
   onlyNotes,
 }) => {
-  const [sortMethod, setSortMethod] = useState('Name');
+  const { cryptInventorySort, changeCryptInventorySort } = useApp();
   const sortMethods = {
     [NAME]: 'N',
     [QUANTITY]: 'Q',
@@ -61,13 +62,13 @@ const InventoryCrypt = ({
           </div>
           <SortButton
             sortMethods={sortMethods}
-            sortMethod={sortMethod}
-            setSortMethod={setSortMethod}
+            sortMethod={cryptInventorySort}
+            setSortMethod={changeCryptInventorySort}
           />
         </Header>
       )}
       <InventoryCryptTable
-        sortMethod={sortMethod}
+        sortMethod={cryptInventorySort}
         compact={compact}
         withCompact={withCompact}
         cards={compact ? Object.values(cardsByClan[ALL]) : Object.values(cardsByClan[clan])}
