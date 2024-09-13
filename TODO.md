@@ -1,11 +1,11 @@
 # FIX
 - Snapshot url in iOS
 - Page update in iOS
-- Orpheus horizontal layout on mobile
+- Switching back from horizontal layout on mobile chrome
 
 # FEATURES
 - Card q-ty change in autocompletion
-- Add German NC, Atlantic Cup to Analyze
+- Atlantic Cup to Analyze
 
 # FEATURES ON HOLD
 - TWD search with % V5-compatibility -> after BCP clarify V5
