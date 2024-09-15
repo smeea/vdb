@@ -14,7 +14,7 @@ const Pda = () => {
         {!(isMobile && (error || !pdaResults)) && (
           <div className="basis-full sm:basis-7/12 lg:basis-8/12 xl:basis-9/12">
             {pdaResults && <PdaResult results={pdaResults} setResults={setPdaResults} />}
-            {error && <ErrorMessage>{error}</ErrorMessage>}
+            {error && <ErrorMessage sticky>{error}</ErrorMessage>}
           </div>
         )}
         {!(isMobile && pdaResults) && (

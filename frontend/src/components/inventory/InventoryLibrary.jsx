@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { InventoryLibraryTable, InventoryFilterForm, SortButton, Header } from '@/components';
+import { useApp } from '@/context';
 import { useInventoryLibrary } from '@/hooks';
 import { ALL, CLAN_DISCIPLINE, NAME, QUANTITY, TYPE, DISCIPLINE } from '@/utils/constants';
 
@@ -16,7 +17,7 @@ const InventoryLibrary = ({
   inShared,
   onlyNotes,
 }) => {
-  const [sortMethod, setSortMethod] = useState(NAME);
+  const { libraryInventorySort, changeLibraryInventorySort } = useApp();
   const sortMethods = {
     [NAME]: 'N',
     [QUANTITY]: 'Q',
@@ -75,14 +76,14 @@ const InventoryLibrary = ({
             </div>
             <SortButton
               sortMethods={sortMethods}
-              sortMethod={sortMethod}
-              setSortMethod={setSortMethod}
+            sortMethod={libraryInventorySort}
+            setSortMethod={changeLibraryInventorySort}
             />
           </Header>
         </>
       )}
       <InventoryLibraryTable
-        sortMethod={sortMethod}
+            sortMethod={libraryInventorySort}
         compact={compact}
         withCompact={withCompact}
         cards={

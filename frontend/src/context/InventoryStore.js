@@ -1,6 +1,7 @@
 import { proxy } from 'valtio';
 import { deepClone } from '@/utils';
 import { inventoryServices } from '@/services';
+import { startCryptTimer } from '@/context';
 
 export const inventoryStore = proxy({
   crypt: {},
@@ -57,16 +58,9 @@ export const inventoryCardsAdd = (cards) => {
 
 export const inventoryCardChange = (card, q) => {
   if (card.Id > 210000 || (card.Id < 200000 && card.Id > 110000)) return;
-  const initialState = deepClone(card.Id > 200000 ? inventoryStore.crypt : inventoryStore.library);
-  const store = card.Id > 200000 ? inventoryStore.crypt : inventoryStore.library;
-
-  inventoryServices.setCard(card.Id, q).catch(() => {
-    if (card.Id > 200000) {
-      inventoryStore.crypt = initialState;
-    } else {
-      inventoryStore.library = initialState;
-    }
-  });
+  const cardSrc = card.Id > 200000 ? 'crypt' : 'library';
+  const initialState = deepClone(inventoryStore[cardSrc])
+  const store = inventoryStore[cardSrc]
 
   if (q >= 0) {
     if (store[card.Id]) {
@@ -80,19 +74,22 @@ export const inventoryCardChange = (card, q) => {
   } else {
     delete store[card.Id];
   }
+
+  if (cardSrc === 'crypt') startCryptTimer();
+
+  inventoryServices.setCard(card.Id, q).catch(() => {
+    inventoryStore[cardSrc] = initialState;
+  });
 };
 
 export const inventoryCardTextChange = (card, text) => {
   if (card.Id > 210000 || (card.Id < 200000 && card.Id > 110000)) return;
-  const initialState = deepClone(card.Id > 200000 ? inventoryStore.crypt : inventoryStore.library);
-  const store = card.Id > 200000 ? inventoryStore.crypt : inventoryStore.library;
+  const cardSrc = card.Id > 200000 ? 'crypt' : 'library';
+  const initialState = deepClone(inventoryStore[cardSrc])
+  const store = inventoryStore[cardSrc]
 
   inventoryServices.setCardText(card.Id, text).catch(() => {
-    if (card.Id > 200000) {
-      inventoryStore.crypt = initialState;
-    } else {
-      inventoryStore.library = initialState;
-    }
+    inventoryStore[cardSrc] = initialState;
   });
 
   if (store[card.Id]) {

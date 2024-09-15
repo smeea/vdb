@@ -194,6 +194,10 @@ def generate_card(card):
                 card["ASCII Name"] = "Boleslaw Gutowski"
             case 201669:
                 card["ASCII Name"] = "Clara Hjortshoj"
+            case 250014:
+                card["ASCII Name"] = "Przemyslaw, War Beast"
+            case 250018:
+                card["ASCII Name"] = "Aelswith, The Irresistible"
             case _:
                 card["ASCII Name"] = letters_to_ascii(card["Name"])
 

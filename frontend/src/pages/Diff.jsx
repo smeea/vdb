@@ -169,8 +169,8 @@ const Diff = () => {
       </FlexGapped>
       {isEditable && isMobile && showFloatingButtons && (
         <>
-          <DeckNewCardFloating target={CRYPT} deckid={deck.deckid} cards={deck.crypt} />
-          <DeckNewCardFloating target={LIBRARY} deckid={deck.deckid} cards={deck.library} />
+          <DeckNewCardFloating target={CRYPT} deckid={deck.deckid} cards={Object.values(deck.crypt)} />
+          <DeckNewCardFloating target={LIBRARY} deckid={deck.deckid} cards={Object.value(deck.library)} />
         </>
       )}
       <ButtonFloatMenu />

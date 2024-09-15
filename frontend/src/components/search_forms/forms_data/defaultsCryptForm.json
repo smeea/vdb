@@ -114,7 +114,11 @@
     "advancement": false,
     "banned": false,
     "non-twd": false,
-    "playtest": false
+    "playtest": false,
+    "path-caine": false,
+    "path-cathari": false,
+    "path-death": false,
+    "path-power": false
   },
   "set": {
     "value": [

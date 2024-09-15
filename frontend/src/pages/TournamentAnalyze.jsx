@@ -96,11 +96,10 @@ const TournamentAnalyze = () => {
     const getFinalPlace = (playerNumber) => {
       const wsFinalTable = wb.Sheets['Final Round'];
       const dataFinalTable = utils.sheet_to_csv(wsFinalTable).split('\n');
-
       const finalPlace = dataFinalTable
         .filter((i) => {
           const array = i.split(',');
-          return array[0] == playerNumber && array[21];
+          return parseInt(array[0]) == playerNumber && array[21];
         })[0]
         .split(',')[21];
       return parseInt(finalPlace);
@@ -135,11 +134,13 @@ const TournamentAnalyze = () => {
       if (!veknId) return;
 
       const rank =
-        parseInt(array[20]) > 5
-          ? parseInt(array[20])
-          : wb.Sheets['Final Round']
-            ? getFinalPlace(playerNumber)
-            : parseInt(array[17]);
+        array[20] == 'DQ'
+          ? 'DQ'
+          : parseInt(array[20]) > 5
+            ? parseInt(array[20])
+            : wb.Sheets['Final Round']
+              ? getFinalPlace(playerNumber)
+              : parseInt(array[17]);
 
       const name = `${array[1]} ${array[2]}`;
 

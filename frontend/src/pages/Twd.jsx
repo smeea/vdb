@@ -14,7 +14,7 @@ const Twd = () => {
         {!(isMobile && (error || !twdResults)) && (
           <div className="basis-full sm:basis-7/12 lg:basis-8/12 xl:basis-9/12">
             {twdResults && <TwdResult results={twdResults} setResults={setTwdResults} />}
-            {error && <ErrorMessage>{error}</ErrorMessage>}
+            {error && <ErrorMessage sticky>{error}</ErrorMessage>}
           </div>
         )}
         {!(isMobile && twdResults) && (

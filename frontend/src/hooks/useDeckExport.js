@@ -160,7 +160,7 @@ const exportJol = (deck) => {
   const sortedLibrary = librarySort(Object.values(deck.library), NAME);
 
   sortedCrypt.forEach((card) => {
-    let name = card.c[ASCII_NAME];
+    let name = card.c[NAME];
     if (card.c.Adv && card.c.Adv[0]) {
       name += ' (ADV)';
     }
@@ -171,7 +171,7 @@ const exportJol = (deck) => {
   });
 
   sortedLibrary.forEach((card) => {
-    const name = card.c[ASCII_NAME];
+    const name = card.c[NAME];
     result += `${card.q}x${name}\n`;
   });
 

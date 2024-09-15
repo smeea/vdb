@@ -78,7 +78,11 @@
     "multi-discipline": false,
     "multi-type": false,
     "no-requirements": false,
-    "playtest": false
+    "playtest": false,
+    "path-caine": false,
+    "path-cathari": false,
+    "path-death": false,
+    "path-power": false
   },
   "set": {
     "value": [

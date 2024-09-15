@@ -1,7 +1,7 @@
 # FIX
 - Snapshot url in iOS
 - Page update in iOS
-- Patreon note for iOS
+- Switching back from horizontal layout on mobile chrome
 
 # FEATURES
 - Card q-ty change in autocompletion
@@ -20,4 +20,5 @@
 - Update to TailwindCSS 4
 - Update to Valtio 2 (use utils/deepClone?)
 - Migrate from isWidth to container queries
+- Migrate forms to useActionState
 - Remove legacy polyfills when Safari adopts groupBy

@@ -272,8 +272,8 @@ const Decks = () => {
       )}
       {isEditable && isMobile && showFloatingButtons && (
         <>
-          <DeckNewCardFloating target={CRYPT} deckid={deckid} cards={deck.crypt} />
-          <DeckNewCardFloating target={LIBRARY} deckid={deckid} cards={deck.library} />
+          <DeckNewCardFloating target={CRYPT} deckid={deckid} cards={Object.values(deck.crypt)} />
+          <DeckNewCardFloating target={LIBRARY} deckid={deckid} cards={Object.values(deck.library)} />
         </>
       )}
       <ButtonFloatMenu />

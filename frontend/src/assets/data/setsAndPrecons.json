@@ -11,6 +11,22 @@
     "name": "PLAYTEST",
     "date": "",
     "precons": {
+      "SCai": {
+        "name": "Path of Caine",
+        "clan": "Mix"
+      },
+      "SCat": {
+        "name": "Path of Cathari",
+        "clan": "Mix"
+      },
+      "SDS": {
+        "name": "Path of Death",
+        "clan": "Mix"
+      },
+      "SPIV": {
+        "name": "Path of Power",
+        "clan": "Mix"
+      },
       "PH": {
         "name": "Hecata",
         "clan": "Hecata"

@@ -3,6 +3,25 @@ import { useApp } from '@/context';
 import { useCardImageUrl } from '@/hooks';
 import { EN } from '@/utils/constants';
 
+const legacyImagesClans = [
+  'Abomination',
+  'Ahrimane',
+  'Baali',
+  'Blood Brother',
+  'Caitiff',
+  'Daughter of Cacophony',
+  'Gargoyle',
+  'Harbinger of Skulls',
+  'Kiasyd',
+  'Nagaraja',
+  'Pander',
+  'Ravnos',
+  'Salubri',
+  'Salubri antitribu',
+  'Samedi',
+  'Tzimisce',
+]
+
 const CardImage = ({ card, set, className = 'max-sm:w-full', size = 'md', onClick }) => {
   const { lang, showLegacyImage } = useApp();
   const { baseUrl, otherUrl, legacyUrl } = useCardImageUrl(card, set, lang);
@@ -24,18 +43,7 @@ const CardImage = ({ card, set, className = 'max-sm:w-full', size = 'md', onClic
       set ||
       (showLegacyImage &&
         card.Id > 200000 &&
-        [
-          'Abomination',
-          'Ahrimane',
-          'Baali',
-          'Blood Brother',
-          'Caitiff',
-          'Daughter of Cacophony',
-          'Gargoyle',
-          'Nagaraja',
-          'Ravnos',
-          'Tzimisce',
-        ].includes(card.Clan)) ? (
+       legacyImagesClans.includes(card.Clan)) ? (
         <img
           className={`${sizeStyle[size]} ${className}`}
           src={`${set ? otherUrl : showLegacyImage ? legacyUrl : otherUrl}.jpg?v=${import.meta.env.VITE_CARD_VERSION}`}

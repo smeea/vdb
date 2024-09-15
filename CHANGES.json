@@ -1,5 +1,20 @@
 [
   {
+    "version": "2024-09-10",
+    "changes": [
+      "Add legacy card images for Harbingers, Kiasyd, Pander, Salubri, Salubri antitribu, Samedi",
+      "Fix add new card to deck on mobile"
+    ]
+  },
+  {
+    "version": "2024-09-08",
+    "changes": [
+      "Add Rise of New Bloods in Melbourne, Australia event to Tournament Analyze - http://vdb.im/tournament_analyze/11259",
+      "Fix export to JOL for non-ascii card names",
+      "Small other fixes and improvements"
+    ]
+  },
+  {
     "version": "2024-08-26",
     "changes": [
       "Add Blood Brother, Caitiff, Daughter of Cacophony, Gargoyle, Nagaraja, Ravnos to Legacy Crypt images",
