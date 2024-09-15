@@ -1,5 +1,5 @@
 import { proxy } from 'valtio';
-import { derive } from 'valtio/utils';
+import { derive } from 'derive-valtio';
 import { update } from 'idb-keyval';
 
 export const limitedFullStore = proxy({
