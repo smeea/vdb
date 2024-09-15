@@ -42,7 +42,7 @@ const LibraryTotalDifference = ({ qTo, qFrom }) => {
 };
 
 const DiffLibrary = ({ cardsTo, deck }) => {
-  const { isMobile, setShowFloatingButtons } = useApp();
+  const { setShowFloatingButtons } = useApp();
   const [showInfo, setShowInfo] = useState(false);
 
   const cardsFrom = deck.library;
@@ -94,9 +94,7 @@ const DiffLibrary = ({ cardsTo, deck }) => {
   return (
     <FlexGapped className="flex-col">
       <div className="flex flex-col gap-2">
-        <div
-          className={!isMobile ? 'sticky z-10 bg-bgPrimary dark:bg-bgPrimaryDark sm:top-10' : ''}
-        >
+        <div className="sm:sticky sm:top-10 sm:z-10 sm:bg-bgPrimary sm:dark:bg-bgPrimaryDark">
           <DeckLibraryHeader
             libraryTotal={<LibraryTotalDifference qTo={libraryToTotal} qFrom={libraryTotal} />}
             bloodTotal={<BloodPoolDifference qTo={bloodToTotal} qFrom={bloodTotal} />}

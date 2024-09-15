@@ -54,6 +54,7 @@ const Navigation = () => {
     playtestMode,
     togglePlaytestMode,
   } = useApp();
+
   const [showMenu, setShowMenu] = useState(false);
   const location = useLocation();
   const deck = useSnapshot(deckStore).deck;
@@ -96,11 +97,7 @@ const Navigation = () => {
   if (quickCard) cardsUrl = `/cards/${quickCard.Id}`;
 
   return (
-    <nav
-      className={`bg-bgNav dark:bg-bgNavDark ${
-        isMobile ? 'fixed bottom-0 w-full' : 'sticky top-0'
-      } z-50`}
-    >
+    <nav className="z-50 bg-bgNav dark:bg-bgNavDark max-sm:fixed max-sm:bottom-0 max-sm:w-full sm:sticky sm:top-0">
       <div className="navbar-container mx-auto flex h-10 justify-between">
         <div className="flex items-center space-x-6">
           {isMobile ? (

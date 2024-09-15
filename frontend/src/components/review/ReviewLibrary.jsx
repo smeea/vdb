@@ -8,11 +8,9 @@ import {
   FlexGapped,
 } from '@/components';
 import { MASTER } from '@/utils/constants';
-import { useApp } from '@/context';
 import { useModalCardController, useDeckLibrary } from '@/hooks';
 
 const ReviewLibrary = ({ cardChange, cardsFrom, cardsTo }) => {
-  const { isMobile } = useApp();
   const [showInfo, setShowInfo] = useState(false);
 
   const {
@@ -42,9 +40,7 @@ const ReviewLibrary = ({ cardChange, cardsFrom, cardsTo }) => {
   return (
     <FlexGapped className="flex-col">
       <div className="flex flex-col gap-2">
-        <div
-          className={!isMobile ? 'sticky z-10 bg-bgPrimary dark:bg-bgPrimaryDark sm:top-10' : ''}
-        >
+        <div className="sm:sticky sm:top-10 sm:z-10 sm:bg-bgPrimary sm:dark:bg-bgPrimaryDark">
           <DeckLibraryHeader
             libraryTotal={libraryTotal}
             bloodTotal={bloodTotal}

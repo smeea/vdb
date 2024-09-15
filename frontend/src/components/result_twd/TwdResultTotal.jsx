@@ -19,7 +19,7 @@ const TwdResultTotal = ({ results, sortMethods, sortMethod, setSortMethod }) => 
 
   return (
     <Header
-      className={`sm:space-x-2${isMobile && Object.keys(byYear).length > 10 ? 'block' : 'flex'}`}
+      className={`sm:space-x-2 ${isMobile && Object.keys(byYear).length > 10 ? 'block' : 'flex'}`}
     >
       <div className="whitespace-nowrap p-2 font-bold">TOTAL: {total}</div>
       <div>

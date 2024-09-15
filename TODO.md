@@ -1,7 +1,6 @@
 # FIX
 - Snapshot url in iOS
 - Page update in iOS
-- Switching back from horizontal layout on mobile chrome
 
 # FEATURES
 - Card q-ty change in autocompletion
