@@ -252,8 +252,12 @@ def generate_card(card):
     card["Rulings"] = []
     for c in krcg_cards:
         if c["id"] == card["Id"] and "rulings" in c:
-            for rule in c["rulings"]["text"]:
-                if match := re.match(r"(.*?)\[... \S+\].*", rule):
+            for r in c["rulings"]:
+                references = {}
+                for ref in r["references"]:
+                    references[ref['text']] = ref['url']
+
+                if match := re.match(r"(.*?)\[... \S+\].*", r["text"]):
                     text = match.group(1)
                     text = re.sub(r"{The (.+?)}", r"{\1, The}", text)
                     text = text.replace("Thaumaturgy", "Blood Sorcery")
@@ -265,14 +269,9 @@ def generate_card(card):
                     card["Rulings"].append(
                         {
                             "text": text,
-                            "refs": {},
+                            "refs": references,
                         }
                     )
-
-            for id in c["rulings"]["links"].keys():
-                for i, rule in enumerate(c["rulings"]["text"]):
-                    if id in rule:
-                        card["Rulings"][i]["refs"][id] = c["rulings"]["links"][id]
 
     # Add twda info
     card["Twd"] = 0
