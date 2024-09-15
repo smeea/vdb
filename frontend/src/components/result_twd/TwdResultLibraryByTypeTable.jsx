@@ -4,7 +4,7 @@ import {
   DeckLibraryTable,
   ResultModal,
   Tooltip,
-  Warning,
+  ResultLegalIcon,
   ResultLibraryCost,
 } from '@/components';
 import { useApp } from '@/context';
@@ -65,7 +65,7 @@ const TwdResultLibraryByTypeTable = ({ library }) => {
     <div>
       <div className="flex h-[30px] items-center justify-between gap-2 px-1 font-bold text-fgSecondary dark:text-whiteDark">
         <div className="flex items-center gap-1.5 whitespace-nowrap">Library [{libraryTotal}]</div>
-        <div className="flex">{hasBanned && <Warning type={BANNED} />}</div>
+        <div className="flex">{hasBanned && <ResultLegalIcon type={BANNED} />}</div>
         <div className="flex gap-1.5 sm:gap-3">
           <div className="flex items-center gap-1" title="Total Blood Cost">
             <ResultLibraryCost valueBlood="X" className="h-[30px] pb-1" />
