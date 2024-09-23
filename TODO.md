@@ -8,6 +8,7 @@
 - Card q-ty change in autocompletion
 - Playtest management UI
 - Playtest user details form
+- Playtest reports export to csv
 - Show user playtest reports in Account
 - Ministry, Assamite to Legacy
 

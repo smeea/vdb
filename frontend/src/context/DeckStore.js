@@ -10,7 +10,7 @@ export const deckStore = proxy({
 });
 
 export const setDeck = (v) => {
-  deckStore.deck = v;
+  deckStore.deck = deepClone(v);
   miscStore.cryptTimer = !miscStore.cryptTimer;
 };
 
@@ -20,24 +20,16 @@ export const deckCardChange = (deckid, card, q) => {
   const initialDecksState = deepClone(deckStore.decks[deckid]);
 
   if (q >= 0) {
-    if (deckStore.decks[deckid][cardSrc][card.Id]) {
-      deckStore.decks[deckid][cardSrc][card.Id].q = q;
-    } else {
-      deckStore.decks[deckid][cardSrc][card.Id] = {
+    deckStore.decks[deckid][cardSrc][card.Id] = {
+      c: card,
+      q: q,
+    };
+
+    if (deckid === deckStore.deck.deckid) {
+      deckStore.deck[cardSrc][card.Id] = {
         c: card,
         q: q,
       };
-    }
-
-    if (deckid === deckStore.deck.deckid) {
-      if (deckStore.deck[cardSrc][card.Id]) {
-        deckStore.deck[cardSrc][card.Id].q = q;
-      } else {
-        deckStore.deck[cardSrc][card.Id] = {
-          c: card,
-          q: q,
-        };
-      }
     }
   } else {
     delete deckStore.decks[deckid][cardSrc][card.Id];
