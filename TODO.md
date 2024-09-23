@@ -2,7 +2,7 @@
 - Snapshot url in iOS
 - Page update in iOS
 - Move playtest-lang to playtest profile
-- Unnamed in legacy
+- Memory Rift image (see discord)
 
 # FEATURES
 - Card q-ty change in autocompletion
