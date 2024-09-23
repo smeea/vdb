@@ -36,7 +36,12 @@ const DeckProxyButton = ({ missingCrypt, missingLibrary, deck, inDiff }) => {
 
     const cardsTotal = countCards([...cryptSorted, ...librarySorted]);
     const cards = [...cryptSorted, ...librarySorted].map((card) => {
-      return { Id: card.c.Id, url: useCardImageUrl(card.c, card.set, lang), q: card.q };
+      return {
+        Id: card.c.Id,
+        set: card.set,
+        url: useCardImageUrl(card.c, card.set, lang),
+        q: card.q,
+      };
     });
 
     const sheetW = format.isLetter ? 215.9 : 210;
@@ -120,8 +125,8 @@ const DeckProxyButton = ({ missingCrypt, missingLibrary, deck, inDiff }) => {
         );
 
         try {
-          if (lang !== EN || card.Set || showLegacyImage) {
-            const url = card.Set
+          if (lang !== EN || card.set || showLegacyImage) {
+            const url = card.set
               ? card.url.otherUrl
               : showLegacyImage && card.Id > 200000
                 ? card.url.legacyUrl

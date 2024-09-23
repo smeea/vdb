@@ -89,7 +89,6 @@ const DeckProxyLibrary = ({
             </div>
           );
         })}
-        ;
       </div>
       {librarySide.length > 0 && (
         <div className="space-y-2 opacity-60 dark:opacity-50">
@@ -116,7 +115,6 @@ const DeckProxyLibrary = ({
               </div>
             );
           })}
-          ;
         </div>
       )}
       {shouldShowModal && (

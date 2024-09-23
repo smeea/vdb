@@ -2,7 +2,6 @@
 - Snapshot url in iOS
 - Page update in iOS
 - Move playtest-lang to playtest profile
-- Memory Rift image (see discord)
 
 # FEATURES
 - Card q-ty change in autocompletion
@@ -10,7 +9,6 @@
 - Playtest user details form
 - Playtest reports export to csv
 - Show user playtest reports in Account
-- Ministry, Assamite to Legacy
 
 # FEATURES ON HOLD
 - TWD search with % V5-compatibility -> after BCP clarify V5
