@@ -2,17 +2,17 @@ import React, { useState } from 'react';
 import Download from '@/assets/images/icons/download.svg?react';
 import InboxesFill from '@/assets/images/icons/inboxes-fill.svg?react';
 import {
-  CardImage,
-  FlexGapped,
   ButtonIconed,
-  Modal,
-  PlaytestReportExportWrapper,
+  CardImage,
   DeckCrypt,
+  FlexGapped,
+  Modal,
+  PlaytestReportEntryWrapper,
 } from '@/components';
 import { useApp } from '@/context';
 import { playtestServices } from '@/services';
 
-const PlaytestReportExportButton = ({ value, isPrecon = false }) => {
+const PlaytestReportsOneButton = ({ value, isPrecon = false }) => {
   const { isMobile, isDesktop } = useApp();
   const [show, setShow] = useState();
 
@@ -72,7 +72,7 @@ const PlaytestReportExportButton = ({ value, isPrecon = false }) => {
                 icon={<Download />}
               />
             </div>
-            <PlaytestReportExportWrapper id={value.Id} isPrecon={isPrecon} />
+            <PlaytestReportEntryWrapper id={value.Id} isPrecon={isPrecon} />
           </FlexGapped>
         </Modal>
       )}
@@ -80,4 +80,4 @@ const PlaytestReportExportButton = ({ value, isPrecon = false }) => {
   );
 };
 
-export default PlaytestReportExportButton;
+export default PlaytestReportsOneButton;

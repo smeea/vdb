@@ -1,10 +1,8 @@
 import React from 'react';
-import {
-  PlaytestReportExportAllButton,
-  PlaytestManageButton,
-  PlaytestUserCard,
-  ErrorMessage,
-} from '@/components';
+import { Link } from 'react-router-dom';
+import Wrench from '@/assets/images/icons/wrench.svg?react';
+import InboxesFill from '@/assets/images/icons/inboxes-fill.svg?react';
+import { PlaytestUserCard, ErrorMessage, ButtonIconed } from '@/components';
 import PersonFill from '@/assets/images/icons/person-fill.svg?react';
 import { useApp } from '@/context';
 
@@ -24,8 +22,22 @@ const Playtest = () => {
             <PlaytestUserCard />
             {isPlaytestAdmin && (
               <div className="flex gap-3 max-sm:flex-col sm:gap-4">
-                <PlaytestManageButton />
-                <PlaytestReportExportAllButton />
+                <Link to="/playtest/manage" className="w-full hover:no-underline">
+                  <ButtonIconed
+                    className="w-full"
+                    title="Manage Playtesters"
+                    icon={<Wrench />}
+                    text="Manage Playtesters"
+                  />
+                </Link>
+                <Link to="/playtest/reports" className="w-full hover:no-underline">
+                  <ButtonIconed
+                    className="w-full"
+                    title="Show Playtest Reports"
+                    icon={<InboxesFill />}
+                    text="Reports"
+                  />
+                </Link>
               </div>
             )}
           </div>

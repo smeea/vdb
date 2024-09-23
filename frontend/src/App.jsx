@@ -20,6 +20,8 @@ const Documentation = lazy(() => import('./pages/Documentation.jsx'));
 const Inventory = lazy(() => import('./pages/Inventory.jsx'));
 const Pda = lazy(() => import('./pages/Pda.jsx'));
 const Playtest = lazy(() => import('./pages/Playtest.jsx'));
+const PlaytestManage = lazy(() => import('./components/playtest/PlaytestManage.jsx'));
+const PlaytestReportsAll = lazy(() => import('./components/playtest/PlaytestReportsAll.jsx'));
 const Review = lazy(() => import('./pages/Review.jsx'));
 const TournamentAnalyze = lazy(() => import('./pages/TournamentAnalyze.jsx'));
 const Twd = lazy(() => import('./pages/Twd.jsx'));
@@ -96,6 +98,22 @@ const App = () => {
           element={
             <Suspense fallback={<div />}>
               <Playtest />
+            </Suspense>
+          }
+        />
+        <Route
+          path="playtest/manage"
+          element={
+            <Suspense fallback={<div />}>
+              <PlaytestManage />
+            </Suspense>
+          }
+        />
+        <Route
+          path="playtest/reports"
+          element={
+            <Suspense fallback={<div />}>
+              <PlaytestReportsAll />
             </Suspense>
           }
         />

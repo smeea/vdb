@@ -228,19 +228,17 @@ export { default as UsedPopover } from './misc/UsedPopover.jsx';
 export { default as Warning } from './misc/Warning.jsx';
 export { default as WindowRows } from './misc/WindowRows.jsx';
 
+export { default as PlaytestLanguageSelector } from './playtest/PlaytestLanguageSelector.jsx';
+export { default as PlaytestManage } from './playtest/PlaytestManage';
 export { default as PlaytestManageAdd } from './playtest/PlaytestManageAdd';
-export { default as PlaytestManageButton } from './playtest/PlaytestManageButton';
-export { default as PlaytestManageModal } from './playtest/PlaytestManageModal';
 export { default as PlaytestManagePlayer } from './playtest/PlaytestManagePlayer';
+export { default as PlaytestReportEntry } from './playtest/PlaytestReportEntry.jsx';
+export { default as PlaytestReportEntryWrapper } from './playtest/PlaytestReportEntryWrapper.jsx';
+export { default as PlaytestReportForm } from './playtest/PlaytestReportForm.jsx';
+export { default as PlaytestReportsAll } from './playtest/PlaytestReportsAll.jsx';
+export { default as PlaytestReportsOneButton } from './playtest/PlaytestReportsOneButton.jsx';
 export { default as PlaytestScores } from './playtest/PlaytestScores.jsx';
 export { default as PlaytestUserCard } from './playtest/PlaytestUserCard.jsx';
-export { default as PlaytestReportExportAllButton } from './playtest/PlaytestReportExportAllButton.jsx';
-export { default as PlaytestReportExportAllWrapper } from './playtest/PlaytestReportExportAllWrapper.jsx';
-export { default as PlaytestReportExportButton } from './playtest/PlaytestReportExportButton.jsx';
-export { default as PlaytestReportExport } from './playtest/PlaytestReportExport.jsx';
-export { default as PlaytestReportExportWrapper } from './playtest/PlaytestReportExportWrapper.jsx';
-export { default as PlaytestReportForm } from './playtest/PlaytestReportForm.jsx';
-export { default as PlaytestLanguageSelector } from './playtest/PlaytestLanguageSelector.jsx';
 
 export { default as ResultClanImage } from './result_common/ResultClanImage.jsx';
 export { default as ResultDisciplineImage } from './result_common/ResultDisciplineImage.jsx';

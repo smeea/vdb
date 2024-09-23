@@ -27,7 +27,7 @@ const Report = ({ id, text, score, isPlayed }) => {
   );
 };
 
-const PlaytestReportExport = ({ value }) => {
+const PlaytestReportEntry = ({ value }) => {
   return (
     <div className="flex basis-full flex-col gap-4">
       {value ? (
@@ -53,4 +53,4 @@ const PlaytestReportExport = ({ value }) => {
   );
 };
 
-export default PlaytestReportExport;
+export default PlaytestReportEntry;

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { useSnapshot } from 'valtio';
 import LightningFill from '@/assets/images/icons/lightning-fill.svg?react';
 import PersonFill from '@/assets/images/icons/person-fill.svg?react';
@@ -56,7 +56,6 @@ const Navigation = () => {
   } = useApp();
 
   const [showMenu, setShowMenu] = useState(false);
-  const location = useLocation();
   const deck = useSnapshot(deckStore).deck;
   const quickCard = useSnapshot(searchResults).quickCard;
   const cryptFormState = useSnapshot(searchCryptForm);
@@ -108,32 +107,23 @@ const Navigation = () => {
               <ThemeSelect />
             </>
           )}
-          {!isMobile &&
-            location.pathname !== '/account' &&
-            location.pathname !== '/playtest' &&
-            location.pathname !== '/' &&
-            location.pathname !== '/changelog' &&
-            location.pathname !== '/documentation' && (
-              <>
-                {username && (
-                  <NavToggle
-                    isOn={inventoryMode}
-                    onToggle={toggleInventoryMode}
-                    text="Inventory Mode"
-                  />
-                )}
-                {(isLimited || limitedMode) && (
-                  <NavToggle isOn={limitedMode} onToggle={toggleLimitedMode} text="Limited Mode" />
-                )}
-                {isPlaytester && (
-                  <NavToggle
-                    isOn={playtestMode}
-                    onToggle={togglePlaytestMode}
-                    text="Playtest Mode"
-                  />
-                )}
-              </>
-            )}
+          {!isMobile && (
+            <>
+              {username && (
+                <NavToggle
+                  isOn={inventoryMode}
+                  onToggle={toggleInventoryMode}
+                  text="Inventory Mode"
+                />
+              )}
+              {(isLimited || limitedMode) && (
+                <NavToggle isOn={limitedMode} onToggle={toggleLimitedMode} text="Limited Mode" />
+              )}
+              {isPlaytester && (
+                <NavToggle isOn={playtestMode} onToggle={togglePlaytestMode} text="Playtest Mode" />
+              )}
+            </>
+          )}
         </div>
         <div className="flex items-center">
           {!isMobile && (

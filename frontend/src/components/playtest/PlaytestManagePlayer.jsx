@@ -5,7 +5,7 @@ import { useApp } from '@/context';
 
 const PlaytestManagePlayer = ({ value }) => {
   const { isMobile } = useApp();
-  const { username, lang, liaison, timestamp, add_by } = value;
+  const { username, lang, liaison, timestamp, added_by, is_admin } = value;
   const [state, setState] = useState(true);
 
   const handleClick = () => {
@@ -14,11 +14,15 @@ const PlaytestManagePlayer = ({ value }) => {
   };
 
   return (
-    <tr className="row-bg h-8 border-y border-bgSecondary dark:border-bgSecondaryDark">
+    <tr className="row-bg h-9 border-y border-bgSecondary dark:border-bgSecondaryDark">
       <td>
-        <div className="flex justify-between">
-          <Toggle isOn={state} toggle={handleClick}>
-            <div className="flex items-center gap-2">{username}</div>
+        <div className="flex justify-between px-1">
+          <Toggle isOn={state} toggle={handleClick} disabled={is_admin}>
+            <div
+              className={`flex items-center gap-2 ${is_admin ? 'font-bold text-fgSecondary dark:text-fgSecondaryDark' : ''}`}
+            >
+              {username}
+            </div>
           </Toggle>
         </div>
       </td>
@@ -27,7 +31,7 @@ const PlaytestManagePlayer = ({ value }) => {
         <>
           <td className="text-center">{timestamp}</td>
           <td className="text-center">{liaison}</td>
-          <td className="text-center">{add_by}</td>
+          <td className="text-center">{added_by}</td>
         </>
       )}
     </tr>

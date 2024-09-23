@@ -23,9 +23,10 @@ def playtesters_route():
         for i in playtesters:
             result[i.username] = {
                 'lang': i.playtest_profile['lang'] if 'lang' in i.playtest_profile else None,
-                'add_by': i.playtest_profile['add_by'] if 'add_by' in i.playtest_profile else None,
+                'added_by': i.playtest_profile['added_by'] if 'added_by' in i.playtest_profile else None,
                 'timestamp': i.playtest_profile['timestamp'] if 'timestamp' in i.playtest_profile else None,
                 'liaison': i.playtest_profile['liaison'] if 'liaison' in i.playtest_profile else None,
+                'is_admin': i.playtest_admin,
             }
 
         return jsonify(result)
@@ -37,7 +38,7 @@ def playtesters_route():
 
         if request.method == "PUT":
             user.playtester = True
-            user.playtest_profile = { 'add_by': current_user.username }
+            user.playtest_profile = { 'added_by': current_user.username }
         else:
             user.playtester = False
 

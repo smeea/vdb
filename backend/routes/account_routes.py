@@ -48,8 +48,8 @@ def who_am_i_route():
             'is_admin': current_user.playtest_admin,
             'profile': current_user.playtest_profile
         }
-        if 'add_by' in playtest['profile']:
-            del playtest['profile']['add_by']
+        if 'added_by' in playtest['profile']:
+            del playtest['profile']['added_by']
 
         return jsonify(
             {

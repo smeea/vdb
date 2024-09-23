@@ -18,7 +18,7 @@ import {
   DeckPublicSyncButton,
   DeckPublicToggleButton,
   SeatingButton,
-  PlaytestReportExportButton,
+  PlaytestReportsOneButton,
 } from '@/components';
 import { useApp } from '@/context';
 
@@ -48,7 +48,7 @@ const DeckButtons = ({
       {deck && isPlaytestSafe && (
         <>
           {playtestMode && playtestPrecon && isPlaytestAdmin && (
-            <PlaytestReportExportButton
+            <PlaytestReportsOneButton
               value={{ deck: deck, Name: deck.name, Id: playtestPrecon }}
               isPrecon
             />

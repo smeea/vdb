@@ -6,8 +6,7 @@ import {
   DeckCrypt,
   FlexGapped,
   Hr,
-  Modal,
-  PlaytestReportExport,
+  PlaytestReportEntry,
   SortButton,
 } from '@/components';
 import { cryptSort, librarySort } from '@/utils';
@@ -15,7 +14,7 @@ import { useFetch } from '@/hooks';
 import { useApp } from '@/context';
 import { NAME, CLAN, CLAN_DISCIPLINE } from '@/utils/constants';
 
-const PlaytestReportExportAllWrapper = ({ setShow }) => {
+const PlaytestReportsAll = () => {
   const { isMobile, preconDecks, cryptCardBase, libraryCardBase } = useApp();
   const [sortMethod, setSortMethod] = useState(NAME);
   const sortMethods = {
@@ -84,8 +83,8 @@ const PlaytestReportExportAllWrapper = ({ setShow }) => {
   const { value } = useFetch(url, {}, []);
 
   return (
-    <Modal size="card" title="Playtest Reports" handleClose={() => setShow(false)}>
-      <div className="flex flex-col gap-3 overflow-y-auto sm:gap-4">
+    <div className="playtest-manage-container mx-auto">
+      <div className="flex flex-col gap-3 sm:gap-4">
         <div className="flex justify-between gap-3 sm:gap-4">
           <ButtonIconed
             className="w-full"
@@ -132,12 +131,12 @@ const PlaytestReportExportAllWrapper = ({ setShow }) => {
                           <DeckCrypt deck={i} noDisciplines inMissing />
                         </div>
                       ) : (
-                        <CardImage card={i} onClick={() => setShow(false)} size="sm" />
+                        <CardImage card={i} size="sm" />
                       )}
                     </>
                   )}
                 </div>
-                {value?.[id] && <PlaytestReportExport value={value[id]} />}
+                {value?.[id] && <PlaytestReportEntry value={value[id]} />}
               </FlexGapped>
               {idx + 1 < playtestCrypt.length + playtestLibrary.length + playtestPrecons.length && (
                 <Hr isThick />
@@ -146,8 +145,8 @@ const PlaytestReportExportAllWrapper = ({ setShow }) => {
           );
         })}
       </div>
-    </Modal>
+    </div>
   );
 };
 
-export default PlaytestReportExportAllWrapper;
+export default PlaytestReportsAll;
