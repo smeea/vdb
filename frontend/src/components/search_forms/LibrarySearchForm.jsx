@@ -83,8 +83,6 @@ const LibrarySearchForm = () => {
 
   const handleTextChange = (formId, value) => {
     searchLibraryForm.text[formId].value = value;
-    // TODO idk why multiforms dont work without this:
-    if (libraryFormState.text[formId].value) null;
   };
 
   const handleTextCheckboxesChange = (event) => {

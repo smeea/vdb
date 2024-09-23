@@ -5,11 +5,6 @@ export const submitReport = (id, value, isPrecon) => {
   return ky.put(url, { json: value }).json();
 };
 
-export const changeLang = (value) => {
-  const url = `${import.meta.env.VITE_API_URL}/playtest/lang`;
-  return ky.put(url, { json: { lang: value } }).json();
-};
-
 export const changePlaytester = (user, isAdd = true) => {
   const url = `${import.meta.env.VITE_API_URL}/playtest/users`;
   return ky(url, {
@@ -27,6 +22,6 @@ export const getReports = async (value, isPrecon) => {
 };
 
 export const updateProfile = (target, value) => {
-  // TODO
-  console.log(target, value);
+  const url = `${import.meta.env.VITE_API_URL}/playtest/profile`;
+  return ky.put(url, { json: { [target]: value } }).json();
 };

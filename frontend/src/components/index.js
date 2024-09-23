@@ -234,7 +234,6 @@ export { default as PlaytestManageModal } from './playtest/PlaytestManageModal';
 export { default as PlaytestManagePlayer } from './playtest/PlaytestManagePlayer';
 export { default as PlaytestScores } from './playtest/PlaytestScores.jsx';
 export { default as PlaytestUserCard } from './playtest/PlaytestUserCard.jsx';
-export { default as PlaytestRoundReport } from './playtest/PlaytestRoundReport.jsx';
 export { default as PlaytestReportExportAllButton } from './playtest/PlaytestReportExportAllButton.jsx';
 export { default as PlaytestReportExportAllWrapper } from './playtest/PlaytestReportExportAllWrapper.jsx';
 export { default as PlaytestReportExportButton } from './playtest/PlaytestReportExportButton.jsx';

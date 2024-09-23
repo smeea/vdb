@@ -11,38 +11,50 @@ with open("../frontend/public/data/cardbase_crypt.json", "r") as crypt_file, ope
 with app.app_context():
     # REMOVE OLD PLAYTEST CARDS FROM DECKS
     # REPLACE CARDID FOR PLAYTEST CARDS AFTER RELEASE
-    changes = {
-    }
-    for deck in Deck.query.all():
-        new_cards = {}
-        new_used_cards = {}
+    # changes = {
+    # }
+    # for deck in Deck.query.all():
+    #     new_cards = {}
+    #     new_used_cards = {}
 
-        for k, v in deck.cards.items():
-            if k in changes.keys():
-                new_cards[changes[k]] = v
-                print(f"{k} to {changes[k]} in deck")
-                if k in deck.used_in_inventory:
-                    print(f"{k} to {changes[k]} in used")
-                    new_used_cards[changes[k]] = deck.used_in_inventory[k]
+    #     for k, v in deck.cards.items():
+    #         if k in changes.keys():
+    #             new_cards[changes[k]] = v
+    #             print(f"{k} to {changes[k]} in deck")
+    #             if k in deck.used_in_inventory:
+    #                 print(f"{k} to {changes[k]} in used")
+    #                 new_used_cards[changes[k]] = deck.used_in_inventory[k]
 
-            elif str(k) not in cardlist:
-                print(f"{k} deleted from deck")
-                continue
+    #         elif str(k) not in cardlist:
+    #             print(f"{k} deleted from deck")
+    #             continue
 
-            else:
-                new_cards[k] = v
-                if k in deck.used_in_inventory:
-                    new_used_cards[k] = deck.used_in_inventory[k]
+    #         else:
+    #             new_cards[k] = v
+    #             if k in deck.used_in_inventory:
+    #                 new_used_cards[k] = deck.used_in_inventory[k]
 
 
-        deck.used_in_inventory = new_used_cards
-        deck.cards = new_cards
+    #     deck.used_in_inventory = new_used_cards
+    #     deck.cards = new_cards
 
     # CLEAR PLAYTEST REPORTS
-    for playtester in User.query.filter_by(playtester=True).all():
-        if 'lang' in playtester.playtest_report:
-            playtester.playtest_report = { 'lang': playtester.playtest_report['lang']}
+    # for playtester in User.query.filter_by(playtester=True).all():
+    #     if 'lang' in playtester.playtest_report:
+    #         playtester.playtest_report = { 'lang': playtester.playtest_report['lang']}
+    #     else:
+    #         playtester.playtest_report = {}
+
+    # db.session.commit()
+
+    # UPDATE PLAYTEST PROFILE
+    for u in User.query.all():
+        if 'lang' in u.playtest_report:
+            u.playtest_profile = {
+                'lang': u.playtest_report['lang']
+            }
+            del u.playtest_report['lang']
         else:
-            playtester.playtest_report = {}
+            u.playtest_profile = {}
 
     db.session.commit()

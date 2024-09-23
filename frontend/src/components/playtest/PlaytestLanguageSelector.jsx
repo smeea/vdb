@@ -1,18 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Globe from '@/assets/images/icons/globe.svg?react';
 import { ListEntry, Flag, Select } from '@/components';
-import { useFetch } from '@/hooks';
-import { playtestServices } from '@/services';
-import { EN, ES, FR, PT } from '@/utils/constants';
+import { useApp } from '@/context';
+import { LANG, EN, ES, FR, PT } from '@/utils/constants';
 
 const PlaytestReportLanguageSelector = () => {
-  const [lang, setLang] = useState();
-  const url = `${import.meta.env.VITE_API_URL}/playtest/lang`;
-  const { value } = useFetch(url, {}, []);
-
-  useEffect(() => {
-    if (value?.value) setLang(value.value);
-  }, [value]);
+  const { playtestProfile, updatePlaytestProfile } = useApp();
 
   const languages = {
     [EN]: 'English',
@@ -36,16 +29,13 @@ const PlaytestReportLanguageSelector = () => {
     };
   });
 
-  const handleChange = (e) => {
-    setLang(e.value);
-    playtestServices.changeLang(e.value);
-  };
+  const handleChange = (e) => updatePlaytestProfile(LANG, e.value);
 
   return (
     <ListEntry icon={<Globe />} title="Language">
       <Select
         options={options}
-        value={options.find((obj) => obj.value === lang)}
+        value={options.find((obj) => obj.value === playtestProfile?.[LANG])}
         onChange={handleChange}
       />
     </ListEntry>

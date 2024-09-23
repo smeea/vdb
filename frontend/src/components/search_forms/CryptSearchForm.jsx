@@ -83,8 +83,6 @@ const CryptSearchForm = () => {
 
   const handleTextChange = (formId, value) => {
     searchCryptForm.text[formId].value = value;
-    // TODO idk why multiforms dont work without this:
-    if (cryptFormState.text[formId].value) null;
   };
 
   const handleTextCheckboxesChange = (event) => {

@@ -1,7 +1,7 @@
 # FIX
 - Snapshot url in iOS
 - Page update in iOS
-- Move playtest-lang to playtest profile
+- Move playtest-lang to playtest profile (check backend everywhere)
 
 # FEATURES
 - Card q-ty change in autocompletion

@@ -35,7 +35,6 @@ const App = () => {
         <Route index element={<About />} />
         <Route path="about" element={<Navigate to="/" />} />
         <Route path="account" element={<Account />} />
-        <Route path="playtest" element={<Playtest />} />
         <Route path="cards" element={<Cards />}>
           <Route path=":cardid" element={<Cards />} />
         </Route>
@@ -89,6 +88,14 @@ const App = () => {
           element={
             <Suspense fallback={<div />}>
               <Pda />
+            </Suspense>
+          }
+        />
+        <Route
+          path="playtest"
+          element={
+            <Suspense fallback={<div />}>
+              <Playtest />
             </Suspense>
           }
         />
