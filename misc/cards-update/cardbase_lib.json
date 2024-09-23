@@ -1831,7 +1831,8 @@
     "100046":{
         "ASCII Name":"Ambush",
         "Artist":[
-            "Mark Poole"
+            "Mark Poole",
+            "Mitch Mueller"
         ],
         "Banned":"",
         "Blood Cost":"",
@@ -1876,6 +1877,9 @@
             },
             "FB":{
                 "PN":"3"
+            },
+            "Promo":{
+                "2024-04-23":true
             }
         },
         "Twd":93,
@@ -2976,7 +2980,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique master.\nPut this card in play. During each Methuselah's unlock phase, he or she burns 1 pool, or he or she may burn a vampire he or she controls with a capacity 4 or more to burn this card.",
+        "Card Text":"Unique.\nPut this card in play. During each Methuselah's unlock phase, that Methuselah burns 1 pool unless they burn a vampire they control with capacity 4 or more to burn this card.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -2994,6 +2998,9 @@
             },
             "HttB":{
                 "PGar":1
+            },
+            "Promo":{
+                "2024-06-22":true
             }
         },
         "Twd":60,
@@ -4403,6 +4410,9 @@
             },
             "Anthology I":{
                 "":"3"
+            },
+            "Promo":{
+                "2024-01-01":true
             }
         },
         "Twd":429,
@@ -16746,12 +16756,13 @@
     "100408":{
         "ASCII Name":"Conquer the Beast",
         "Artist":[
-            "Melissa Benson"
+            "Melissa Benson",
+            "Francisco T\u00e9bar"
         ],
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Only usable before before range is determined on the first round.\n[ani] This vampire gets one press each round, only usable to continue combat. He or she is obliged to use this press and cannot use equipment. This continues until 3 rounds pass with no cards played.\n[ANI] As above, but the presses are optional.",
+        "Card Text":"Only usable before range is determined during the first round.\n[ani] Put this card in play with 3 counters. This vampire cannot use equipment this combat. Each time a card is played this combat, reset the number of counters on this card to 3. During the press step of each round this combat, this card automatically burns 1 of those counters to give this vampire 1 mandatory press to continue combat. Burn this card at the end of combat.\n[ANI] As above, but the presses are optional.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Animalism",
@@ -16766,6 +16777,9 @@
             },
             "VTES":{
                 "R":true
+            },
+            "Promo":{
+                "2024-04-23":true
             }
         },
         "Twd":7,
@@ -21344,12 +21358,13 @@
         "ASCII Name":"Depravity",
         "Artist":[
             "Scott Kirschner",
-            "Gary Chatterton"
+            "Gary Chatterton",
+            "Cos Koniotis"
         ],
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique master.\nPut this card on a ready vampire you control. This vampire has +1 strength, and he or she gets +1 stealth on diablerie actions. He or she cannot recruit allies or employ retainers.",
+        "Card Text":"Unique.\nPut this card on a ready vampire you control. This vampire gets +1 strength. This vampire gets +1 stealth during diablerie actions. This vampire cannot recruit allies or employ retainers.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -21373,6 +21388,9 @@
             },
             "HttB":{
                 "PGar":1
+            },
+            "Promo":{
+                "2024-04-23":true
             }
         },
         "Twd":66,
@@ -26113,6 +26131,9 @@
         "Set":{
             "LK":{
                 "":"4"
+            },
+            "Promo":{
+                "2024-01-01":true
             }
         },
         "Twd":80,
@@ -26475,7 +26496,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth action.\n[for] The acting vampire gains 2 blood.\n[spi] As [for] above, and this vampire unlocks at the end of the turn.\n[SPI] The acting vampire gains 2 blood and unlocks.",
+        "Card Text":"+1 stealth action.\n[for] This vampire gains 2 blood.\n[spi] As [for] above, and unlock this vampire during the next discard phase.\n[SPI] This vampire gains 2 blood and unlocks.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Fortitude/Spiritus",
@@ -26490,6 +26511,9 @@
             },
             "LoB":{
                 "R":true
+            },
+            "Promo":{
+                "2024-06-01":true
             }
         },
         "Twd":39,
@@ -36386,7 +36410,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Only usable on an equip action.\n[obf] +2 stealth.\n[thn] Unlock this acting vampire if the action is successful.\n[THN] As [thn] above, but with +1 stealth.",
+        "Card Text":"Only usable during an equip action.\n[obf] +2 stealth.\n[thn] Unlock this vampire after action resolution if this action is successful.\n[THN] As [thn] above, but with +1 stealth.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Obfuscate/Thanatosis",
@@ -36404,6 +36428,9 @@
             },
             "HttB":{
                 "PSam":1
+            },
+            "Promo":{
+                "2023-07-01":true
             }
         },
         "Twd":7,
@@ -42153,12 +42180,13 @@
     "101019":{
         "ASCII Name":"Jake Washington",
         "Artist":[
-            "Steve Ellis"
+            "Steve Ellis",
+            "Marta Ruiz Anguera"
         ],
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique.\nPut this card in play; it becomes a unique mortal ally with 1 life, 0 strength and 0 bleed and does not count as a master card while in play. During your unlock phase, you can burn Jake to add up to 4 blood to a ready vampire with no blood.",
+        "Card Text":"Unique.\nPut this card in play; it becomes a unique mortal ally with 1 life, 0 strength and 0 bleed. During your unlock phase, you can burn Jake to add up to 4 blood to a ready vampire with no blood.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -42191,6 +42219,9 @@
             },
             "SP":{
                 "PoS":"1"
+            },
+            "Promo":{
+                "2024-04-23":true
             }
         },
         "Twd":551,
@@ -44161,6 +44192,9 @@
             },
             "V5C":{
                 "PSal":"1"
+            },
+            "Promo":{
+                "2023-12-13":true
             },
             "PLAYTEST":{
                 "SDS":1
@@ -49259,7 +49293,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Choose another Methuselah. If this referendum is successful, put this card in play. Your hand size is one card smaller. The chosen Methuselah doesn't draw to replace cards during any Methuselah's minion phase. After each minion phase, he or she draws back up to his or her hand size. Any vampire may call a referendum to burn this card as a +1 stealth political action.",
+        "Card Text":"Choose another Methuselah. Successful referendum means this card is put in play. You get -1 hand size. The chosen Methuselah does not replace cards during any Methuselah's minion phase. Vampires can call a referendum to burn this card as a +1 stealth political action.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -49296,7 +49330,8 @@
         ],
         "Set":{
             "Promo":{
-                "2002-02-01":true
+                "2002-02-01":true,
+                "2024-04-23":true
             }
         },
         "Twd":35,
@@ -50178,7 +50213,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"[ani][aus] If this action is blocked, this vampire gets an optional maneuver in the first round of the resulting combat, and the blocking minion cannot strike to end combat.\n[ANI][AUS] As above, with +1 stealth.",
+        "Card Text":"[ani][aus] If this action is blocked, this vampire gets 1 optional maneuver during the first round of the resulting combat and the blocking minion cannot strike: combat ends.\n[ANI][AUS] As above, with +1 stealth.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Animalism & Auspex",
@@ -50197,6 +50232,9 @@
         "Set":{
             "HttB":{
                 "C":true
+            },
+            "Promo":{
+                "2024-04-23":true
             }
         },
         "Twd":31,
@@ -52419,7 +52457,7 @@
         "Banned":"",
         "Blood Cost":"3",
         "Burn Option":"",
-        "Card Text":"[pro] Play before range is determined on the first round. For the remainder of this combat, this vampire gets +1 strength and can prevent 1 non-aggravated damage each round. A vampire can play only one Mythic Form each combat.\n[PRO] As above, but with an optional maneuver, and this vampire can inflict 2R aggravated damage as a strike once each round this combat.",
+        "Card Text":"Only usable before range is determined during the first round. A vampire can play only one Mythic Form each combat.\n[pro] This combat, this vampire gets +1 strength and can prevent 1 non-aggravated damage each round.\n[PRO] As above, but with 1 optional maneuver this round, and this vampire can strike: 2R aggravated damage once each round this combat.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Protean",
@@ -52431,6 +52469,9 @@
         "Set":{
             "FN":{
                 "R":true
+            },
+            "Promo":{
+                "2024-02-29":true
             }
         },
         "Twd":0,
@@ -57964,6 +58005,9 @@
             },
             "V5C":{
                 "PTz":"2"
+            },
+            "Promo":{
+                "2023-10-14":true
             },
             "PLAYTEST":{
                 "NTz":1
@@ -70623,7 +70667,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Requires a vampire with capacity above 6.\n[ani] +1 intercept.\n[ANI] Only usable by a locked vampire. This vampire unlocks and attempts to block.",
+        "Card Text":"Requires a vampire with capacity 7 or more.\n[ani] +1 intercept.\n[ANI] Only usable by a locked vampire. This vampire unlocks and attempts to block.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Animalism",
@@ -70663,6 +70707,9 @@
             },
             "KoT":{
                 "C":true
+            },
+            "Promo":{
+                "2024-09-12":true
             },
             "PLAYTEST":{
                 "SCai":4,
@@ -83659,12 +83706,13 @@
     "102023":{
         "ASCII Name":"Tribute to the Master",
         "Artist":[
-            "Jeremy C. Bills"
+            "Jeremy C. Bills",
+            "Gin\u00e9s Qui\u00f1onero"
         ],
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Master.\nMove 1 blood from each of your ready vampires to your pool.",
+        "Card Text":"Move 1 blood from each ready vampire you control to your pool.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -83691,6 +83739,9 @@
             },
             "Third":{
                 "C":true
+            },
+            "Promo":{
+                "2023-12-13":true
             }
         },
         "Twd":146,

@@ -8274,7 +8274,8 @@
         "Set":{
             "Promo":{
                 "2019-10-27":true,
-                "2020-05-11":true
+                "2020-05-11":true,
+                "2023-09-30":true
             }
         },
         "Title":"baron",
@@ -8698,7 +8699,7 @@
         ],
         "Banned":"",
         "Capacity":6,
-        "Card Text":"Anarch: During an action he performs, Boles\u0142aw can burn 1 blood to reveal the top card of your crypt and then shuffle your crypt. If the revealed card is a copy of Boles\u0142aw, Boles\u0142aw gets +1 stealth for this action; otherwise, he gets +1 strength for this action.",
+        "Card Text":"Anarch: During an action he performs, Boles\u0142aw can burn 1 blood to reveal the top card of your crypt, then shuffle your crypt. If it is a copy of Boles\u0142aw, he gets +1 stealth; otherwise, he gets +1 strength.",
         "Clan":"Malkavian",
         "Disciplines":{
             "Animalism":1,
@@ -8716,7 +8717,8 @@
         "Sect":"Anarch",
         "Set":{
             "Promo":{
-                "2020-10-30":true
+                "2020-10-30":true,
+                "2024-04-23":true
             }
         },
         "Title":"",
@@ -19626,7 +19628,8 @@
         "Sect":"Anarch",
         "Set":{
             "Promo":{
-                "2023-05-31":true
+                "2023-05-31":true,
+                "2024-04-23":true
             }
         },
         "Title":"",
@@ -31466,7 +31469,8 @@
         "Sect":"Anarch",
         "Set":{
             "Promo":{
-                "2021-11-13":true
+                "2021-11-13":true,
+                "2024-04-23":true
             },
             "NB2":{
                 "PG":"1"
@@ -35628,7 +35632,7 @@
         ],
         "Banned":"",
         "Capacity":6,
-        "Card Text":"Camarilla primogen: If Maila is ready during your turn, you can discard a political action card to give a minion you control +1 stealth for the current action.",
+        "Card Text":"Camarilla primogen: If Maila is ready during your turn, you can discard a political action card [POLITICALACTION] to give a minion you control +1 stealth for the current action.",
         "Clan":"Toreador",
         "Disciplines":{
             "Celerity":1,
@@ -35652,7 +35656,8 @@
         "Set":{
             "Promo":{
                 "2022-07-30":true,
-                "2022-11-05":true
+                "2022-11-05":true,
+                "2024-04-23":true
             }
         },
         "Title":"primogen",
@@ -54049,7 +54054,8 @@
         "Sect":"Camarilla",
         "Set":{
             "Promo":{
-                "2023-05-01":true
+                "2023-05-01":true,
+                "2024-04-23":true
             }
         },
         "Title":"2 votes",
