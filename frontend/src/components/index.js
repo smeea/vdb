@@ -211,6 +211,7 @@ export { default as Flag } from './misc/Flag.jsx';
 export { default as GlobalNotification } from './misc/GlobalNotification.jsx';
 export { default as LanguageMenu } from './misc/LanguageMenu.jsx';
 export { default as LanguageSelectButton } from './misc/LanguageSelectButton.jsx';
+export { default as ListEntry } from './misc/ListEntry.jsx';
 export { default as NavMobileMenu } from './misc/NavMobileMenu.jsx';
 export { default as NavMobileToggle } from './misc/NavMobileToggle.jsx';
 export { default as NavToggle } from './misc/NavToggle.jsx';
@@ -232,6 +233,8 @@ export { default as PlaytestManageButton } from './playtest/PlaytestManageButton
 export { default as PlaytestManageModal } from './playtest/PlaytestManageModal';
 export { default as PlaytestManagePlayer } from './playtest/PlaytestManagePlayer';
 export { default as PlaytestScores } from './playtest/PlaytestScores.jsx';
+export { default as PlaytestUserCard } from './playtest/PlaytestUserCard.jsx';
+export { default as PlaytestRoundReport } from './playtest/PlaytestRoundReport.jsx';
 export { default as PlaytestReportExportAllButton } from './playtest/PlaytestReportExportAllButton.jsx';
 export { default as PlaytestReportExportAllWrapper } from './playtest/PlaytestReportExportAllWrapper.jsx';
 export { default as PlaytestReportExportButton } from './playtest/PlaytestReportExportButton.jsx';

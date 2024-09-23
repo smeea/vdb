@@ -122,3 +122,6 @@ export const EQ = 'eq';
 export const LT = 'lt';
 export const LT0 = 'lt0';
 export const GT = 'gt';
+export const ROUND = 'round';
+export const LIAISON = 'liaison';
+export const GAMES_PLAYED = 'gamesPlayed';

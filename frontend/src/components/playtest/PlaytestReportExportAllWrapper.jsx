@@ -20,7 +20,7 @@ const PlaytestReportExportAllWrapper = ({ setShow }) => {
   const [sortMethod, setSortMethod] = useState(NAME);
   const sortMethods = {
     [NAME]: 'N',
-    [CLAN]: 'C/D',
+    [CLAN_DISCIPLINE]: 'C/D',
   };
 
   const playtestCrypt = cryptSort(
@@ -47,9 +47,8 @@ const PlaytestReportExportAllWrapper = ({ setShow }) => {
       .filter((id) => {
         if (isPrecon) {
           return isNaN(id);
-        } else {
-          return !isNaN(id);
         }
+        return !isNaN(id);
       })
       .forEach((id, idx) => {
         const name = isPrecon

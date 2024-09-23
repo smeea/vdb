@@ -11,21 +11,22 @@ import RootLayout from './pages/RootLayout.jsx';
 import About from './pages/About.jsx';
 import Account from './pages/Account.jsx';
 import Cards from './pages/Cards.jsx';
-import Crypt from './pages/Crypt.jsx';
-import Library from './pages/Library.jsx';
-import Decks from './pages/Decks.jsx';
 import Changelog from './pages/Changelog.jsx';
+import Crypt from './pages/Crypt.jsx';
+import Decks from './pages/Decks.jsx';
+import Library from './pages/Library.jsx';
 const Diff = lazy(() => import('./pages/Diff.jsx'));
-const Inventory = lazy(() => import('./pages/Inventory.jsx'));
-const Review = lazy(() => import('./pages/Review.jsx'));
-const Pda = lazy(() => import('./pages/Pda.jsx'));
-const Twd = lazy(() => import('./pages/Twd.jsx'));
 const Documentation = lazy(() => import('./pages/Documentation.jsx'));
+const Inventory = lazy(() => import('./pages/Inventory.jsx'));
+const Pda = lazy(() => import('./pages/Pda.jsx'));
+const Playtest = lazy(() => import('./pages/Playtest.jsx'));
+const Review = lazy(() => import('./pages/Review.jsx'));
 const TournamentAnalyze = lazy(() => import('./pages/TournamentAnalyze.jsx'));
-const TwdHallOfFameCards = lazy(() => import('./pages/TwdHallOfFameCards.jsx'));
-const TwdHallOfFameTournaments = lazy(() => import('./pages/TwdHallOfFameTournaments.jsx'));
+const Twd = lazy(() => import('./pages/Twd.jsx'));
 const TwdCardsHistory = lazy(() => import('./pages/TwdCardsHistory.jsx'));
 const TwdCheck = lazy(() => import('./pages/TwdCheck.jsx'));
+const TwdHallOfFameCards = lazy(() => import('./pages/TwdHallOfFameCards.jsx'));
+const TwdHallOfFameTournaments = lazy(() => import('./pages/TwdHallOfFameTournaments.jsx'));
 
 const App = () => {
   const router = createBrowserRouter(
@@ -34,6 +35,7 @@ const App = () => {
         <Route index element={<About />} />
         <Route path="about" element={<Navigate to="/" />} />
         <Route path="account" element={<Account />} />
+        <Route path="playtest" element={<Playtest />} />
         <Route path="cards" element={<Cards />}>
           <Route path=":cardid" element={<Cards />} />
         </Route>

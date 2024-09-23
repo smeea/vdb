@@ -110,6 +110,7 @@ const Navigation = () => {
           )}
           {!isMobile &&
             location.pathname !== '/account' &&
+            location.pathname !== '/playtest' &&
             location.pathname !== '/' &&
             location.pathname !== '/changelog' &&
             location.pathname !== '/documentation' && (
@@ -143,6 +144,7 @@ const Navigation = () => {
                 text={username ? null : 'Login'}
                 ariaLabel="Login"
               />
+              {isPlaytester && <Link to="/playtest" text="Playtest" />}
               <Link to="/" text="About" end />
             </>
           )}

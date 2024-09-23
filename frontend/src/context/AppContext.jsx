@@ -2,7 +2,7 @@ import React, { useState, useLayoutEffect, useEffect, useMemo } from 'react';
 import { useImmer } from 'use-immer';
 import { useSnapshot } from 'valtio';
 import { set, setMany, getMany, update } from 'idb-keyval';
-import { storageServices, userServices, cardServices } from '@/services';
+import { playtestServices, storageServices, userServices, cardServices } from '@/services';
 import { useDeck, useWindowSize } from '@/hooks';
 import { byTimestamp } from '@/utils';
 import {
@@ -68,6 +68,7 @@ export const AppProvider = ({ children }) => {
   const [isOnline, setIsOnline] = useState(navigator.onLine);
   const [isPlaytestAdmin, setIsPlaytestAdmin] = useState();
   const [isPlaytester, setIsPlaytester] = useState();
+  const [playtestProfile, setPlaytestProfile] = useState();
   const [playtestMode, setPlaytestMode] = useState();
   const [showImage, setShowImage] = useState();
   const [showLegacyImage, setShowLegacyImage] = useState();
@@ -88,6 +89,14 @@ export const AppProvider = ({ children }) => {
   const [showLibrarySearch, setShowLibrarySearch] = useState(true);
   const [showFloatingButtons, setShowFloatingButtons] = useState(true);
   const [showMenuButtons, setShowMenuButtons] = useState();
+
+  const updatePlaytestProfile = (target, value) => {
+    setPlaytestProfile((prevState) => ({
+      ...prevState,
+      [target]: value,
+    }));
+    playtestServices.updateProfile(target, value);
+  };
 
   const [cryptCardBase, setCryptCardBase] = useImmer();
   const [libraryCardBase, setLibraryCardBase] = useImmer();
@@ -213,6 +222,7 @@ export const AppProvider = ({ children }) => {
     setInventoryKey(data.inventory_key);
     setIsPlaytester(data.playtester);
     setIsPlaytestAdmin(data.playtest_admin);
+    setPlaytestProfile(data.playtest_profile);
     if (!data.playtester && !data.playtest_admin) setPlaytestMode(false);
     const { isFrozen, crypt, library } = parseInventoryData(data.inventory);
     inventoryStore.isFrozen = isFrozen;
@@ -486,8 +496,6 @@ export const AppProvider = ({ children }) => {
         isDesktop,
         lang,
         changeLang,
-        isPlaytester,
-        isPlaytestAdmin,
         playtestMode,
         togglePlaytestMode,
         searchInventoryMode,
@@ -523,6 +531,10 @@ export const AppProvider = ({ children }) => {
         setInventoryKey,
         initializeUserData,
         initializeUnauthenticatedUser,
+        isPlaytester,
+        isPlaytestAdmin,
+        playtestProfile,
+        updatePlaytestProfile,
 
         // CARDBASE Context
         cryptCardBase,

@@ -1,11 +1,15 @@
 # FIX
 - Snapshot url in iOS
 - Page update in iOS
+- Move playtest-lang to playtest profile
+- Unnamed in legacy
 
 # FEATURES
 - Card q-ty change in autocompletion
 - Playtest management UI
 - Playtest user details form
+- Show user playtest reports in Account
+- Ministry, Assamite to Legacy
 
 # FEATURES ON HOLD
 - TWD search with % V5-compatibility -> after BCP clarify V5

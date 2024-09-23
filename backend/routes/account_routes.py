@@ -49,6 +49,7 @@ def who_am_i_route():
                 "email": current_user.email,
                 "playtester": current_user.playtester,
                 "playtest_admin": current_user.playtest_admin,
+                "playtest_profile": current_user.playtest_profile,
                 "public_name": current_user.public_name,
                 "decks": parse_user_decks(current_user.decks.all()),
                 "inventory": parse_user_inventory(current_user.inventory),

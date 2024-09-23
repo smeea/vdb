@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import PersonFill from '@/assets/images/icons/person-fill.svg?react';
 import InfoCircleFill from '@/assets/images/icons/info-circle-fill.svg?react';
 import List from '@/assets/images/icons/list.svg?react';
+import StoplightsFill from '@/assets/images/icons/stoplights-fill.svg?react';
 import { NavMobileToggle, LanguageMenu, ThemeSelect, Hr } from '@/components';
 import { useApp } from '@/context';
 
@@ -51,6 +52,14 @@ const NavMobileMenu = ({ isLimited, showMenu, setShowMenu }) => {
             icon={<PersonFill height="20" width="20" viewBox="0 0 16 16" />}
             setShowMenu={setShowMenu}
           />
+          {isPlaytester && (
+            <LinkItem
+              target="/playtest"
+              text="Playtest"
+              icon={<StoplightsFill height="20" width="20" viewBox="0 0 16 16" />}
+              setShowMenu={setShowMenu}
+            />
+          )}
           <LinkItem
             target="/"
             text="About"

@@ -20,6 +20,7 @@ class User(UserMixin, db.Model):
     playtester = db.Column(db.Boolean, default=False)
     playtest_admin = db.Column(db.Boolean, default=False)
     playtest_report = db.Column(db.PickleType, default={})
+    playtest_profile = db.Column(db.PickleType, default={})
     decks = db.relationship("Deck", backref="author", lazy="dynamic")
     favorites = db.Column(db.PickleType, default=[])
     inventory = db.Column(db.PickleType, default={})

@@ -25,3 +25,8 @@ export const getReports = async (value, isPrecon) => {
 
   return ky.get(url).json();
 };
+
+export const updateProfile = (target, value) => {
+  // TODO
+  console.log(target, value);
+};
