@@ -9,15 +9,12 @@ import {
   AccountDeleteButton,
   AccountLimitedButton,
   AccountLegacyToggle,
-  PlaytestReportExportAllButton,
-  PlaytestManageButton,
-  PlaytestLanguageSelector,
 } from '@/components';
 import PersonFill from '@/assets/images/icons/person-fill.svg?react';
 import { useApp } from '@/context';
 
 const Account = () => {
-  const { username, isPlaytestAdmin, isPlaytester } = useApp();
+  const { username } = useApp();
   return (
     <div
       className={`account-container mx-auto grid place-items-center ${

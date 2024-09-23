@@ -43,13 +43,19 @@ def logout_route():
 @app.route("/api/account", methods=["GET"])
 def who_am_i_route():
     if current_user.is_authenticated:
+        playtest = {
+            'is_playtester': current_user.playtester,
+            'is_admin': current_user.playtest_admin,
+            'profile': current_user.playtest_profile
+        }
+        if 'add_by' in playtest['profile']:
+            del playtest['profile']['add_by']
+
         return jsonify(
             {
                 "username": current_user.username,
                 "email": current_user.email,
-                "playtester": current_user.playtester,
-                "playtest_admin": current_user.playtest_admin,
-                "playtest_profile": current_user.playtest_profile,
+                "playtest": playtest,
                 "public_name": current_user.public_name,
                 "decks": parse_user_decks(current_user.decks.all()),
                 "inventory": parse_user_inventory(current_user.inventory),

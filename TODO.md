@@ -1,14 +1,10 @@
 # FIX
 - Snapshot url in iOS
 - Page update in iOS
-- Move playtest-lang to playtest profile (check backend everywhere)
 
 # FEATURES
 - Card q-ty change in autocompletion
-- Playtest management UI
-- Playtest user details form
 - Playtest reports export to csv
-- Show user playtest reports in Account
 
 # FEATURES ON HOLD
 - TWD search with % V5-compatibility -> after BCP clarify V5

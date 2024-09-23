@@ -1,6 +1,7 @@
 from api import app, db
 from models import Deck, User
 import json
+import copy
 
 # NOT REQUIRED; USE ONLY AS TEMPLATE FOR FUTURE FIXES
 
@@ -39,11 +40,11 @@ with app.app_context():
     #     deck.cards = new_cards
 
     # CLEAR PLAYTEST REPORTS
-    # for playtester in User.query.filter_by(playtester=True).all():
-    #     if 'lang' in playtester.playtest_report:
-    #         playtester.playtest_report = { 'lang': playtester.playtest_report['lang']}
-    #     else:
-    #         playtester.playtest_report = {}
+    # for u in User.query.filter_by(playtester=True).all():
+    #     u.playtest_report = {}
+    #     profile = copy.deepcopy(u.playtest_prfile)
+    #     del profile['games']
+    #     u.playtest_profile = profile
 
     # db.session.commit()
 

@@ -32,7 +32,7 @@ const PlaytestReportLanguageSelector = () => {
   const handleChange = (e) => updatePlaytestProfile(LANG, e.value);
 
   return (
-    <ListEntry icon={<Globe />} title="Language">
+    <ListEntry icon={<Globe />} title="Language" basis={3}>
       <Select
         options={options}
         value={options.find((obj) => obj.value === playtestProfile?.[LANG])}

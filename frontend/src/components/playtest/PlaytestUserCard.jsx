@@ -37,7 +37,7 @@ const PlaytestUserCard = () => {
   return (
     <div className="flex flex-col gap-5 sm:gap-6 sm:p-0">
       <PlaytestLanguageSelector />
-      <ListEntry icon={<PersonFillExclamation />} title="Liaison">
+      <ListEntry icon={<PersonFillExclamation />} title="Liaison" basis={3}>
         <form className="flex" onSubmit={handleLiaisonSubmit}>
           <Input
             onChange={handleLiaisonChange}
@@ -50,13 +50,21 @@ const PlaytestUserCard = () => {
       </ListEntry>
       <ListEntry
         icon={<EightCircleFill width="22" heigh="22" viewBox="0 0 16 16" />}
-        title="Games this round"
+        title="Games played"
+        basis={3}
       >
         <Select
           options={gamesOptions}
           value={gamesOptions.find((obj) => obj.value === playtestProfile?.[GAMES])}
           onChange={handleGamesChange}
         />
+      </ListEntry>
+      <ListEntry
+        icon={<EightCircleFill width="22" heigh="22" viewBox="0 0 16 16" />}
+        title="Last Activity"
+        basis={3}
+      >
+        {playtestProfile.timestamp}
       </ListEntry>
     </div>
   );

@@ -1,5 +1,6 @@
 from flask import jsonify, request, abort
 from flask_login import current_user, login_required
+from datetime import date, datetime, timedelta
 from api import app, db, login
 from models import User
 import copy
@@ -20,8 +21,12 @@ def playtesters_route():
         playtesters = User.query.filter_by(playtester=True).all()
         result = {}
         for i in playtesters:
-            lang = i.playtest_report['lang'] if 'lang' in i.playtest_report else None
-            result[i.username] = lang
+            result[i.username] = {
+                'lang': i.playtest_profile['lang'] if 'lang' in i.playtest_profile else None,
+                'add_by': i.playtest_profile['add_by'] if 'add_by' in i.playtest_profile else None,
+                'timestamp': i.playtest_profile['timestamp'] if 'timestamp' in i.playtest_profile else None,
+                'liaison': i.playtest_profile['liaison'] if 'liaison' in i.playtest_profile else None,
+            }
 
         return jsonify(result)
 
@@ -30,7 +35,12 @@ def playtesters_route():
         if not user:
             abort(400)
 
-        user.playtester = True if request.method == "PUT" else False
+        if request.method == "PUT":
+            user.playtester = True
+            user.playtest_profile = { 'add_by': current_user.username }
+        else:
+            user.playtester = False
+
         db.session.commit()
         return jsonify(success=True)
 
@@ -42,18 +52,18 @@ def report_export_route(target, id):
     if not current_user.playtest_admin:
         abort(401)
 
-    lang = current_user.playtest_report['lang'] if 'lang' in current_user.playtest_report else 'en-EN'
+    lang = current_user.playtest_profile['lang'] if 'lang' in current_user.playtest_profile else 'en-EN'
     reports = {}
     playtesters = User.query.filter_by(playtester=True).all()
     targets = ['cards', 'precons'] if target == 'all' else [target]
 
     for p in playtesters:
         # defaulting lang to English if not specified
-        report = copy.deepcopy(p.playtest_report)
-        report_lang = report['lang'] if 'lang' in report else 'en-EN'
-        if report_lang != lang:
+        user_lang = p.playtest_profile['lang'] if 'lang' in p.playtest_profile else 'en-EN'
+        if user_lang != lang:
             continue
 
+        report = copy.deepcopy(p.playtest_report)
 
         for t in targets:
             if t in report:
@@ -79,52 +89,47 @@ def report_export_route(target, id):
 @login_required
 @app.route("/api/playtest/<string:target>/<string:id>", methods=["GET", "PUT"])
 def report_route(target, id):
-    # TODO remove later, only when 'lang' was in 'playtest_report'
-    if target not in ['cards', 'precons']:
-        abort(400)
     if not current_user.playtester:
         abort(401)
 
-    if not 'precons' in current_user.playtest_report and not 'cards' in current_user.playtest_report:
-        report = copy.deepcopy(current_user.playtest_report)
-        report['precons'] = {}
-        report['cards'] = {}
-        current_user.playtest_report = report
-        db.session.commit()
-
     if request.method == "GET":
-            if not id in current_user.playtest_report[target]:
-                return {'text': '', 'score': 0, 'isPlayed': False}
-            return current_user.playtest_report[target][id]
+        if not id in current_user.playtest_report[target]:
+            return {'text': '', 'score': 0, 'isPlayed': False}
+        return current_user.playtest_report[target][id]
 
     if request.method == "PUT":
         report = copy.deepcopy(current_user.playtest_report)
+        if target not in report:
+            report[target] = {}
+
         report[target][id] = {
             'text': request.json["text"],
             'score': request.json["score"],
             'isPlayed': request.json["isPlayed"],
         }
+
         current_user.playtest_report = report
+
+        profile = copy.deepcopy(current_user.playtest_profile)
+        profile['timestamp'] = date.today().strftime("%Y-%m-%d"),
+        current_user.playtest_profile = profile
+
         db.session.commit()
         return jsonify(success=True)
 
 @login_required
-@app.route("/api/playtest/profile", methods=["GET", "PUT"])
-def profile_route():
+@app.route("/api/playtest/profile", methods=["PUT"])
+def update_profile_route():
     if not current_user.playtester:
         abort(401)
 
-    if request.method == "GET":
-        return jsonify({'value': current_user.playtest_profile})
-
-    if request.method == "PUT":
-        profile = copy.deepcopy(current_user.playtest_profile)
-        if 'liaison' in request.json:
-            profile['liaison'] = request.json['liaison']
-        if 'lang' in request.json:
-            profile['lang'] = request.json['lang']
-        if 'games' in request.json:
-            profile['games'] = request.json['games']
-        current_user.playtest_profile = profile
-        db.session.commit()
-        return jsonify(success=True)
+    profile = copy.deepcopy(current_user.playtest_profile)
+    if 'liaison' in request.json:
+        profile['liaison'] = request.json['liaison']
+    if 'lang' in request.json:
+        profile['lang'] = request.json['lang']
+    if 'games' in request.json:
+        profile['games'] = request.json['games']
+    current_user.playtest_profile = profile
+    db.session.commit()
+    return jsonify(success=True)

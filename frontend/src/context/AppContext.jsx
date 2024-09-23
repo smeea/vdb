@@ -220,10 +220,10 @@ export const AppProvider = ({ children }) => {
     setPublicName(data.public_name);
     setEmail(data.email);
     setInventoryKey(data.inventory_key);
-    setIsPlaytester(data.playtester);
-    setIsPlaytestAdmin(data.playtest_admin);
-    setPlaytestProfile(data.playtest_profile);
-    if (!data.playtester && !data.playtest_admin) setPlaytestMode(false);
+    setIsPlaytester(data.playtest.is_playtester);
+    setIsPlaytestAdmin(data.playtest.is_admin);
+    setPlaytestProfile(data.playtest.profile);
+    if (!data.playtest.is_playtester && !data.playtest.is_admin) setPlaytestMode(false);
     const { isFrozen, crypt, library } = parseInventoryData(data.inventory);
     inventoryStore.isFrozen = isFrozen;
     inventoryStore.crypt = crypt;
