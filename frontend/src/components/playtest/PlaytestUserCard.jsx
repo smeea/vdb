@@ -49,7 +49,6 @@ const PlaytestUserCard = () => {
             onChange={handleLiaisonChange}
             onBlur={handleLiaisonOnBlur}
             value={liaison}
-            onChange={handleLiaisonChange}
             placeholder="Enter your liaison name"
           />
         </form>

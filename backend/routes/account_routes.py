@@ -20,12 +20,26 @@ def login_route():
         abort(401)
 
     login_user(user, remember=request.json["remember"])
+    cards_reports = len(current_user.playtest_report['cards'].keys()) if 'cards' in current_user.playtest_report else 0
+    precons_reports = len(current_user.playtest_report['precons'].keys()) if 'precons' in current_user.playtest_report else 0
+    total_reports = cards_reports + precons_reports
+    playtest = {
+        'is_playtester': current_user.playtester,
+        'is_admin': current_user.playtest_admin,
+        'profile': {
+            **current_user.playtest_profile,
+            'reports': total_reports
+        }
+    }
+    if 'added_by' in playtest['profile']:
+        del playtest['profile']['added_by']
+
+
     return jsonify(
         {
             "username": current_user.username,
             "email": current_user.email,
-            "playtester": current_user.playtester,
-            "playtest_admin": current_user.playtest_admin,
+            "playtest": playtest,
             "public_name": current_user.public_name,
             "decks": parse_user_decks(current_user.decks.all()),
             "inventory": parse_user_inventory(current_user.inventory),
