@@ -223,12 +223,12 @@ const Review = () => {
           <DeckNewCardFloating
             target={CRYPT}
             deckid={deckFrom?.deckid}
-            cards={Object.values(deckFrom?.crypt)}
+            cards={Object.values(deckFrom?.crypt ?? {})}
           />
           <DeckNewCardFloating
             target={LIBRARY}
             deckid={deckFrom?.deckid}
-            cards={Object.values(deckFrom?.library)}
+            cards={Object.values(deckFrom?.library ?? {})}
           />
         </>
       )}
