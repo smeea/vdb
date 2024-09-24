@@ -5,7 +5,7 @@ import { useApp } from '@/context';
 import { LANG, EN, ES, FR, PT } from '@/utils/constants';
 
 const PlaytestReportLanguageSelector = () => {
-  const { playtestProfile, updatePlaytestProfile } = useApp();
+  const { isMobile, playtestProfile, updatePlaytestProfile } = useApp();
 
   const languages = {
     [EN]: 'English',
@@ -32,8 +32,9 @@ const PlaytestReportLanguageSelector = () => {
   const handleChange = (e) => updatePlaytestProfile(LANG, e.value);
 
   return (
-    <ListEntry icon={<Globe />} title="Language" basis={3}>
+    <ListEntry icon={<Globe />} title="Language" basis={isMobile ? 2 : 3} forceOneLine>
       <Select
+        className="w-full"
         options={options}
         value={options.find((obj) => obj.value === playtestProfile?.[LANG])}
         onChange={handleChange}

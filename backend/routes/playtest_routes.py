@@ -20,13 +20,20 @@ def playtesters_route():
     if request.method == "GET":
         playtesters = User.query.filter_by(playtester=True).all()
         result = {}
-        for i in playtesters:
-            result[i.username] = {
-                'lang': i.playtest_profile['lang'] if 'lang' in i.playtest_profile else None,
-                'added_by': i.playtest_profile['added_by'] if 'added_by' in i.playtest_profile else None,
-                'timestamp': i.playtest_profile['timestamp'] if 'timestamp' in i.playtest_profile else None,
-                'liaison': i.playtest_profile['liaison'] if 'liaison' in i.playtest_profile else None,
-                'is_admin': i.playtest_admin,
+        for u in playtesters:
+            cards_reports = len(u.playtest_report['cards'].keys()) if 'cards' in u.playtest_report else 0
+            precons_reports = len(u.playtest_report['precons'].keys()) if 'precons' in u.playtest_report else 0
+            total_reports = cards_reports + precons_reports
+
+            result[u.username] = {
+                'lang': u.playtest_profile['lang'] if 'lang' in u.playtest_profile else None,
+                'added_by': u.playtest_profile['added_by'] if 'added_by' in u.playtest_profile else None,
+                'added_date': u.playtest_profile['added_date'] if 'added_date' in u.playtest_profile else None,
+                'timestamp': u.playtest_profile['timestamp'] if 'timestamp' in u.playtest_profile else None,
+                'liaison': u.playtest_profile['liaison'] if 'liaison' in u.playtest_profile else None,
+                'games': u.playtest_profile['games'] if 'games' in u.playtest_profile else None,
+                'reports': total_reports,
+                'is_admin': u.playtest_admin,
             }
 
         return jsonify(result)
@@ -38,7 +45,11 @@ def playtesters_route():
 
         if request.method == "PUT":
             user.playtester = True
-            user.playtest_profile = { 'added_by': current_user.username }
+            user.playtest_profile = {
+                'added_by': current_user.username,
+                'added_date': date.today().strftime("%Y-%m-%d"),
+            }
+
         else:
             user.playtester = False
 
@@ -112,7 +123,7 @@ def report_route(target, id):
         current_user.playtest_report = report
 
         profile = copy.deepcopy(current_user.playtest_profile)
-        profile['timestamp'] = date.today().strftime("%Y-%m-%d"),
+        profile['timestamp'] = date.today().strftime("%Y-%m-%d")
         current_user.playtest_profile = profile
 
         db.session.commit()

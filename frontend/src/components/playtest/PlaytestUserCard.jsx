@@ -1,12 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import PersonFillExclamation from '@/assets/images/icons/person-fill-exclamation.svg?react';
 import EightCircleFill from '@/assets/images/icons/8-circle-fill.svg?react';
-import { Input, Select, ListEntry, PlaytestLanguageSelector } from '@/components';
+import {
+  Input,
+  Select,
+  ListEntry,
+  ConditionalTooltipOrModal,
+  PlaytestLanguageSelector,
+} from '@/components';
 import { useApp } from '@/context';
 import { GAMES, LIAISON } from '@/utils/constants';
 
 const PlaytestUserCard = () => {
-  const { playtestProfile, updatePlaytestProfile } = useApp();
+  const { isMobile, playtestProfile, updatePlaytestProfile } = useApp();
   const [liaison, setLiaison] = useState(playtestProfile?.[LIAISON] || '');
 
   const gamesBrackets = ['0', '1-3', '4-6', '7+'];
@@ -38,22 +44,24 @@ const PlaytestUserCard = () => {
     <div className="flex flex-col gap-5 sm:gap-6 sm:p-0">
       <PlaytestLanguageSelector />
       <ListEntry icon={<PersonFillExclamation />} title="Liaison" basis={3}>
-        <form className="flex" onSubmit={handleLiaisonSubmit}>
+        <form className="flex w-full" onSubmit={handleLiaisonSubmit}>
           <Input
             onChange={handleLiaisonChange}
             onBlur={handleLiaisonOnBlur}
             value={liaison}
             onChange={handleLiaisonChange}
-            placeholder="Your playtest liaison name"
+            placeholder="Enter your liaison name"
           />
         </form>
       </ListEntry>
       <ListEntry
         icon={<EightCircleFill width="22" heigh="22" viewBox="0 0 16 16" />}
         title="Games played"
-        basis={3}
+        basis={isMobile ? 2 : 3}
+        forceOneLine
       >
         <Select
+          className="w-full"
           options={gamesOptions}
           value={gamesOptions.find((obj) => obj.value === playtestProfile?.[GAMES])}
           onChange={handleGamesChange}
@@ -61,8 +69,33 @@ const PlaytestUserCard = () => {
       </ListEntry>
       <ListEntry
         icon={<EightCircleFill width="22" heigh="22" viewBox="0 0 16 16" />}
+        title={
+          <div className="flex gap-2">
+            Reports
+            <ConditionalTooltipOrModal
+              title="Public name"
+              isModal={isMobile}
+              overlay={
+                <div className="flex flex-col gap-1">
+                  <div>Only count reports from current round</div>
+                  <div>Updated on page refresh</div>
+                </div>
+              }
+            >
+              <div className="text-fgThird dark:text-fgThirdDark">[?]</div>
+            </ConditionalTooltipOrModal>
+          </div>
+        }
+        basis={isMobile ? 2 : 3}
+        forceOneLine
+      >
+        {playtestProfile.reports}
+      </ListEntry>
+      <ListEntry
+        icon={<EightCircleFill width="22" heigh="22" viewBox="0 0 16 16" />}
         title="Last Activity"
-        basis={3}
+        basis={isMobile ? 2 : 3}
+        forceOneLine
       >
         {playtestProfile.timestamp}
       </ListEntry>

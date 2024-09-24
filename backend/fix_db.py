@@ -54,7 +54,10 @@ with app.app_context():
             u.playtest_profile = {
                 'lang': u.playtest_report['lang']
             }
-            del u.playtest_report['lang']
+
+            report = copy.deepcopy(u.playtest_report)
+            del report['lang']
+            u.playtest_report = report
         else:
             u.playtest_profile = {}
 

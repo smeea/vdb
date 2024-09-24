@@ -26,9 +26,11 @@ const PlaytestManage = () => {
               <th />
               {!isMobile && (
                 <>
+                  <th className="text-center font-bold">Reports</th>
                   <th className="text-center font-bold">Last Activity</th>
-                  <th className="text-center font-bold">Liaison</th>
+                  <th className="text-center font-bold">Added Date</th>
                   <th className="text-center font-bold">Added By</th>
+                  <th className="text-center font-bold">Liaison</th>
                 </>
               )}
             </tr>
