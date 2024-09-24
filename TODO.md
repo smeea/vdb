@@ -16,7 +16,6 @@
 # TECH IMPROVEMENTS
 - Update to React 19
 - Update to TailwindCSS 4
-- Update to Legacy JS API to Dart Sass 2
 - Migrate from isWidth to container queries
 - Migrate forms to useActionState
 - Remove legacy polyfills when Safari adopts groupBy
