@@ -1,5 +1,16 @@
 [
   {
+    "version": "2024-09-24",
+    "changes": [
+      "Add legacy card images for Banu Haqim, Ministry, Giovanni, True Brujah",
+      "Add German NC (https://vdb.im/tournament_analyze/11398) and Atlantic Cup (https://vdb.im/tournament_analyze/11184)",
+      "Fix inventory crypt to have small delay after q-ty change before it is re-sorted when sorting by q-ty",
+      "Fix switching from horizontal to vertical screen in Chrome on mobile",
+      "Fix PDF proxy from scans",
+      "Small other fixes and improvements"
+    ]
+  },
+  {
     "version": "2024-09-10",
     "changes": [
       "Add legacy card images for Harbingers, Kiasyd, Pander, Salubri, Salubri antitribu, Samedi",
@@ -9,7 +20,7 @@
   {
     "version": "2024-09-08",
     "changes": [
-      "Add Rise of New Bloods in Melbourne, Australia event to Tournament Analyze - http://vdb.im/tournament_analyze/11259",
+      "Add Rise of New Bloods in Melbourne, Australia event to Tournament Analyze - https://vdb.im/tournament_analyze/11259",
       "Fix export to JOL for non-ascii card names",
       "Small other fixes and improvements"
     ]
