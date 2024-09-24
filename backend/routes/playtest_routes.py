@@ -105,7 +105,7 @@ def report_route(target, id):
         abort(401)
 
     if request.method == "GET":
-        if not id in current_user.playtest_report[target]:
+        if not target in current_user.playtest_report or not id in current_user.playtest_report[target]:
             return {'text': '', 'score': 0, 'isPlayed': False}
         return current_user.playtest_report[target][id]
 
