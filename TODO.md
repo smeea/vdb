@@ -5,6 +5,7 @@
 # FEATURES
 - Card q-ty change in autocompletion
 - Playtest reports export to csv
+- Playtest overall impression of tested materials
 
 # FEATURES ON HOLD
 - TWD search with % V5-compatibility -> after BCP clarify V5
@@ -13,8 +14,8 @@
 - Legacy style in PDF select card -> all legacy to be available
 
 # TECH IMPROVEMENTS
-- Update to React 19
+- Update to React 19 (useOptimistic, useMemo/useCallback, context, use, ref)
 - Update to TailwindCSS 4
 - Migrate from isWidth to container queries
-- Migrate forms to useActionState
+- Migrate forms to useFormStatus+useActionState
 - Remove legacy polyfills when Safari adopts groupBy

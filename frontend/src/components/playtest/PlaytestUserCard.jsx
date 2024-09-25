@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import PersonFillExclamation from '@/assets/images/icons/person-fill-exclamation.svg?react';
 import EightCircleFill from '@/assets/images/icons/8-circle-fill.svg?react';
+import Calendar2EventFill from '@/assets/images/icons/calendar2-event-fill.svg?react';
+import PostcardHeartFill from '@/assets/images/icons/postcard-heart-fill.svg?react';
 import {
   Input,
   Select,
@@ -43,7 +45,11 @@ const PlaytestUserCard = () => {
   return (
     <div className="flex flex-col gap-5 sm:gap-6 sm:p-0">
       <PlaytestLanguageSelector />
-      <ListEntry icon={<PersonFillExclamation />} title="Liaison" basis={3}>
+      <ListEntry
+        icon={<PersonFillExclamation width="20" height="20" viewBox="0 0 16 16" />}
+        title="Liaison"
+        basis={3}
+      >
         <form className="flex w-full" onSubmit={handleLiaisonSubmit}>
           <Input
             onChange={handleLiaisonChange}
@@ -55,7 +61,23 @@ const PlaytestUserCard = () => {
       </ListEntry>
       <ListEntry
         icon={<EightCircleFill width="22" heigh="22" viewBox="0 0 16 16" />}
-        title="Games played"
+        title={
+          <div className="flex gap-2">
+            Games
+            <ConditionalTooltipOrModal
+              title="Games Played"
+              isModal={isMobile}
+              overlay={
+                <div className="flex flex-col gap-1">
+                  <div>During playtest of this round</div>
+                  <div>Online or offline does not matter</div>
+                </div>
+              }
+            >
+              <div className="text-fgThird dark:text-fgThirdDark">[?]</div>
+            </ConditionalTooltipOrModal>
+          </div>
+        }
         basis={isMobile ? 2 : 3}
         forceOneLine
       >
@@ -67,16 +89,16 @@ const PlaytestUserCard = () => {
         />
       </ListEntry>
       <ListEntry
-        icon={<EightCircleFill width="22" heigh="22" viewBox="0 0 16 16" />}
+        icon={<PostcardHeartFill width="22" heigh="22" viewBox="0 0 16 16" />}
         title={
           <div className="flex gap-2">
             Reports
             <ConditionalTooltipOrModal
-              title="Public name"
+              title="Total Reports"
               isModal={isMobile}
               overlay={
                 <div className="flex flex-col gap-1">
-                  <div>Only count reports from current round</div>
+                  <div>Only count reports (cards + precons) from current round</div>
                   <div>Updated on page refresh</div>
                 </div>
               }
@@ -91,7 +113,7 @@ const PlaytestUserCard = () => {
         {playtestProfile.reports}
       </ListEntry>
       <ListEntry
-        icon={<EightCircleFill width="22" heigh="22" viewBox="0 0 16 16" />}
+        icon={<Calendar2EventFill width="22" heigh="22" viewBox="0 0 16 16" />}
         title="Last Activity"
         basis={isMobile ? 2 : 3}
         forceOneLine

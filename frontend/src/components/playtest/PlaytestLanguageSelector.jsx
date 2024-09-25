@@ -1,6 +1,6 @@
 import React from 'react';
 import Globe from '@/assets/images/icons/globe.svg?react';
-import { ListEntry, Flag, Select } from '@/components';
+import { ConditionalTooltipOrModal, ListEntry, Flag, Select } from '@/components';
 import { useApp } from '@/context';
 import { LANG, EN, ES, FR, PT } from '@/utils/constants';
 
@@ -32,7 +32,31 @@ const PlaytestReportLanguageSelector = () => {
   const handleChange = (e) => updatePlaytestProfile(LANG, e.value);
 
   return (
-    <ListEntry icon={<Globe />} title="Language" basis={isMobile ? 2 : 3} forceOneLine>
+    <ListEntry
+      icon={<Globe />}
+      title={
+        <div className="flex gap-2">
+          Language
+          <ConditionalTooltipOrModal
+            title="Playtest Language"
+            isModal={isMobile}
+            overlay={
+              <div className="flex flex-col gap-1">
+                <div>
+                  Language of playtest reports (only affects which of the coordinators will receive
+                  it)
+                </div>
+                <div>Independent from selected language of card text</div>
+              </div>
+            }
+          >
+            <div className="text-fgThird dark:text-fgThirdDark">[?]</div>
+          </ConditionalTooltipOrModal>
+        </div>
+      }
+      basis={isMobile ? 2 : 3}
+      forceOneLine
+    >
       <Select
         className="w-full"
         options={options}
