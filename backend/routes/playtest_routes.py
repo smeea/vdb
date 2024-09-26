@@ -142,6 +142,8 @@ def update_profile_route():
         profile['lang'] = request.json['lang']
     if 'games' in request.json:
         profile['games'] = request.json['games']
+    if 'opinion' in request.json:
+        profile['opinion'] = request.json['opinion']
     current_user.playtest_profile = profile
     db.session.commit()
     return jsonify(success=True)

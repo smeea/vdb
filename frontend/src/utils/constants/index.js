@@ -125,4 +125,5 @@ export const GT = 'gt';
 export const ROUND_REPORTED = 'roundReported';
 export const LIAISON = 'liaison';
 export const GAMES = 'games';
+export const OPINION = 'opinion';
 export const LANG = 'lang';

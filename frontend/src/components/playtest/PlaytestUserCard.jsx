@@ -11,11 +11,12 @@ import {
   PlaytestLanguageSelector,
 } from '@/components';
 import { useApp } from '@/context';
-import { GAMES, LIAISON } from '@/utils/constants';
+import { OPINION, GAMES, LIAISON } from '@/utils/constants';
 
 const PlaytestUserCard = () => {
   const { isMobile, playtestProfile, updatePlaytestProfile } = useApp();
   const [liaison, setLiaison] = useState(playtestProfile?.[LIAISON] || '');
+  const [opinion, setOpinion] = useState(playtestProfile?.[OPINION] || '');
 
   const gamesBrackets = ['0', '1-3', '4-6', '7+'];
   const gamesOptions = gamesBrackets.map((i) => ({
@@ -33,11 +34,22 @@ const PlaytestUserCard = () => {
     event.preventDefault();
     changeLiaison();
   };
-
   const handleLiaisonOnBlur = () => {
-    if (liaison != playtestProfile?.[LIAISON]) {
-      changeLiaison();
-    }
+    if (liaison != playtestProfile?.[LIAISON]) changeLiaison();
+  };
+
+  useEffect(() => {
+    if (opinion !== playtestProfile?.[OPINION]) setOpinion(playtestProfile?.[OPINION] ?? '');
+  }, [playtestProfile?.[OPINION]]);
+
+  const handleOpinionChange = (e) => setOpinion(e.target.value);
+  const changeOpinion = () => updatePlaytestProfile(OPINION, opinion);
+  const handleOpinionSubmit = (event) => {
+    event.preventDefault();
+    changeOpinion();
+  };
+  const handleOpinionOnBlur = () => {
+    if (opinion != playtestProfile?.[OPINION]) changeOpinion();
   };
 
   const handleGamesChange = (e) => updatePlaytestProfile(GAMES, e.value);
@@ -119,6 +131,20 @@ const PlaytestUserCard = () => {
         forceOneLine
       >
         {playtestProfile.timestamp}
+      </ListEntry>
+      <ListEntry
+        icon={<Calendar2EventFill width="22" heigh="22" viewBox="0 0 16 16" />}
+        title="General Opinion on the Expansion"
+        forceNewLine
+      >
+        <form className="flex w-full" onSubmit={handleOpinionSubmit}>
+          <Input
+            onChange={handleOpinionChange}
+            onBlur={handleOpinionOnBlur}
+            value={opinion}
+            placeholder="Enter your general opinion on the Expansion"
+          />
+        </form>
       </ListEntry>
     </div>
   );
