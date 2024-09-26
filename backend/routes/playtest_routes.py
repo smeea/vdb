@@ -67,7 +67,7 @@ def report_export_route(target, id):
     lang = current_user.playtest_profile['lang'] if 'lang' in current_user.playtest_profile else 'en-EN'
     reports = {}
     playtesters = User.query.filter_by(playtester=True).all()
-    targets = ['cards', 'precons'] if target == 'all' else [target]
+    targets = ['general', 'cards', 'precons'] if target == 'all' else [target]
 
     for p in playtesters:
         # defaulting lang to English if not specified
@@ -78,7 +78,17 @@ def report_export_route(target, id):
         report = copy.deepcopy(p.playtest_report)
 
         for t in targets:
-            if t in report:
+            if t == 'general':
+                general = p.playtest_profile['general'] if 'general' in p.playtest_profile else None
+                if not general:
+                    continue
+
+                if 'general' in reports:
+                    reports['general'][p.username] = general
+                else:
+                    reports['general'] = { p.username: general }
+
+            elif t in report:
                 if id == 'all':
                     for k, v in report[t].items():
                         if v['score'] == 0 and v['text'] == '':
@@ -87,9 +97,7 @@ def report_export_route(target, id):
                         if k in reports:
                             reports[k][p.username] = v
                         else:
-                            reports[k] = {
-                                p.username: v
-                            }
+                            reports[k] = { p.username: v }
 
                 elif id in report[t]:
                     if report[t][id]['score'] == 0 and report[t][id]['text'] == '':
@@ -142,8 +150,8 @@ def update_profile_route():
         profile['lang'] = request.json['lang']
     if 'games' in request.json:
         profile['games'] = request.json['games']
-    if 'opinion' in request.json:
-        profile['opinion'] = request.json['opinion']
+    if 'general' in request.json:
+        profile['general'] = request.json['general']
     current_user.playtest_profile = profile
     db.session.commit()
     return jsonify(success=True)

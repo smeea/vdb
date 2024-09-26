@@ -12,7 +12,7 @@ import {
 import { cryptSort, librarySort } from '@/utils';
 import { useFetch } from '@/hooks';
 import { useApp } from '@/context';
-import { NAME, CLAN, CLAN_DISCIPLINE } from '@/utils/constants';
+import { GENERAL, PRECONS, CARDS, NAME, CLAN, CLAN_DISCIPLINE } from '@/utils/constants';
 
 const PlaytestReportsAll = () => {
   const { isMobile, preconDecks, cryptCardBase, libraryCardBase } = useApp();
@@ -40,40 +40,53 @@ const PlaytestReportsAll = () => {
     return i.deckid.includes('PLAYTEST:');
   });
 
-  const exportReports = async (isPrecon) => {
+  const exportReports = async (target) => {
     let exportText = '';
-    Object.keys(value)
-      .filter((id) => {
-        if (isPrecon) {
-          return isNaN(id);
-        }
-        return !isNaN(id);
-      })
-      .forEach((id, idx) => {
-        const name = isPrecon
-          ? preconDecks[`PLAYTEST:${id}`].name
-          : id > 200000
-            ? cryptCardBase[id].Name
-            : libraryCardBase[id].Name;
+    Object.keys(value).forEach((id, idx) => {
+      let name;
+      switch (target) {
+        case PRECONS:
+          if (id == GENERAL || !isNaN(id)) return;
+          name = preconDecks[`PLAYTEST:${id}`].name;
+          exportText += `Precon: ${name}\n\n`;
+          break;
+        case CARDS:
+          if (isNaN(id)) return;
+          name = id > 200000 ? cryptCardBase[id].Name : libraryCardBase[id].Name;
+          exportText += `${id > 200000 ? 'Crypt' : 'Library'}: ${name}\n\n`;
+          break;
+        default:
+          if (id != GENERAL) return;
+          exportText += 'General Opinions\n\n';
+      }
 
-        exportText += `${isPrecon ? 'Precon' : id > 200000 ? 'Crypt' : 'Library'}: ${name}\n\n`;
-        Object.keys(value[id]).forEach((user, uIdx) => {
-          exportText += `User: <${user}>\n`;
-          exportText += `Score: ${value[id][user].score}\n`;
-          exportText += `Seen in Play: ${value[id][user].isPlayed ? 'Yes' : 'No'}\n`;
-          exportText += `${value[id][user].text}\n`;
-          if (uIdx + 1 < Object.keys(value[id]).length) {
-            exportText += '\n-----\n\n';
-          }
-        });
-        if (idx + 1 < Object.keys(value).length) {
-          exportText += '\n=====\n\n';
+      Object.keys(value[id]).forEach((user, uIdx) => {
+        exportText += `User: <${user}>\n`;
+        switch (target) {
+          case GENERAL:
+            if (value[id][user]) exportText += `${value[id][user]}\n`;
+            break;
+          default:
+            exportText += `Score: ${value[id][user].score}\n`;
+            exportText += `Seen in Play: ${value[id][user].isPlayed ? 'Yes' : 'No'}\n`;
+            if (value[id][user].text) exportText += `${value[id][user].text}\n`;
+        }
+        if (uIdx + 1 < Object.keys(value[id]).length) {
+          exportText += '\n-----\n\n';
         }
       });
-
-    const file = new File([exportText], `Reports - ${isPrecon ? 'Precons' : 'Cards'}.txt`, {
-      type: 'text/plain;charset=utf-8',
+      if (idx + 1 < Object.keys(value).length) {
+        exportText += '\n=====\n\n';
+      }
     });
+
+    const file = new File(
+      [exportText],
+      `Reports - ${target == PRECONS ? 'Precons' : 'Cards'}.txt`,
+      {
+        type: 'text/plain;charset=utf-8',
+      },
+    );
 
     let { saveAs } = await import('file-saver');
     saveAs(file);
@@ -84,22 +97,31 @@ const PlaytestReportsAll = () => {
 
   return (
     <div className="playtest-manage-container mx-auto">
-      <div className="flex flex-col gap-3 sm:gap-4">
-        <div className="flex justify-between gap-3 sm:gap-4">
-          <ButtonIconed
-            className="w-full"
-            onClick={() => exportReports(true)}
-            title="Save Precons"
-            text="Save Precons"
-            icon={<Download />}
-          />
-          <ButtonIconed
-            className="w-full"
-            onClick={() => exportReports()}
-            title="Save Cards"
-            text="Save Cards"
-            icon={<Download />}
-          />
+      <div className="flex flex-col gap-3 max-sm:p-2 sm:gap-4">
+        <div className="flex justify-between gap-1 sm:gap-4">
+          <div className="flex w-full justify-between gap-1 max-sm:flex-col sm:gap-4">
+            <ButtonIconed
+              className="w-full"
+              onClick={() => exportReports(PRECONS)}
+              title="Save Precons"
+              text="Save Precons"
+              icon={<Download />}
+            />
+            <ButtonIconed
+              className="w-full"
+              onClick={() => exportReports(CARDS)}
+              title="Save Cards"
+              text="Save Cards"
+              icon={<Download />}
+            />
+            <ButtonIconed
+              className="w-full"
+              onClick={() => exportReports(GENERAL)}
+              title="Save General Opinions"
+              text="Save General Opinions"
+              icon={<Download />}
+            />
+          </div>
           <SortButton
             className="min-w-[80px]"
             sortMethods={sortMethods}
@@ -144,6 +166,36 @@ const PlaytestReportsAll = () => {
             </React.Fragment>
           );
         })}
+        <Hr isThick />
+        <FlexGapped className="max-sm:flex-col">
+          <div className="flex font-bold text-fgSecondary dark:text-fgSecondaryDark sm:min-w-[320px]">
+            GENERAL OPINIONS
+          </div>
+          <div className="flex basis-full flex-col gap-4">
+            {value &&
+              Object.entries(value?.[GENERAL])
+                .filter((i) => i[1])
+                .map((i, idx) => {
+                  const name = i[0];
+                  const text = i[1];
+                  return (
+                    <React.Fragment key={name}>
+                      <div className="flex flex-col gap-3">
+                        <div className="flex w-full items-center text-fgName dark:text-fgNameDark">
+                          &lt;{name}&gt;
+                        </div>
+                        <div>
+                          {text.split('\n').map((line, lineIdx) => (
+                            <div key={lineIdx}>{line}</div>
+                          ))}
+                        </div>
+                      </div>
+                      {idx + 1 < Object.keys(value?.[GENERAL]).length && <Hr />}
+                    </React.Fragment>
+                  );
+                })}
+          </div>
+        </FlexGapped>
       </div>
     </div>
   );

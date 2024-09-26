@@ -5,18 +5,19 @@ import Calendar2EventFill from '@/assets/images/icons/calendar2-event-fill.svg?r
 import PostcardHeartFill from '@/assets/images/icons/postcard-heart-fill.svg?react';
 import {
   Input,
+  Textarea,
   Select,
   ListEntry,
   ConditionalTooltipOrModal,
   PlaytestLanguageSelector,
 } from '@/components';
 import { useApp } from '@/context';
-import { OPINION, GAMES, LIAISON } from '@/utils/constants';
+import { GENERAL, GAMES, LIAISON } from '@/utils/constants';
 
 const PlaytestUserCard = () => {
   const { isMobile, playtestProfile, updatePlaytestProfile } = useApp();
   const [liaison, setLiaison] = useState(playtestProfile?.[LIAISON] || '');
-  const [opinion, setOpinion] = useState(playtestProfile?.[OPINION] || '');
+  const [general, setGeneral] = useState(playtestProfile?.[GENERAL] || '');
 
   const gamesBrackets = ['0', '1-3', '4-6', '7+'];
   const gamesOptions = gamesBrackets.map((i) => ({
@@ -39,17 +40,17 @@ const PlaytestUserCard = () => {
   };
 
   useEffect(() => {
-    if (opinion !== playtestProfile?.[OPINION]) setOpinion(playtestProfile?.[OPINION] ?? '');
-  }, [playtestProfile?.[OPINION]]);
+    if (general !== playtestProfile?.[GENERAL]) setGeneral(playtestProfile?.[GENERAL] ?? '');
+  }, [playtestProfile?.[GENERAL]]);
 
-  const handleOpinionChange = (e) => setOpinion(e.target.value);
-  const changeOpinion = () => updatePlaytestProfile(OPINION, opinion);
-  const handleOpinionSubmit = (event) => {
+  const handleGeneralChange = (e) => setGeneral(e.target.value);
+  const changeGeneral = () => updatePlaytestProfile(GENERAL, general);
+  const handleGeneralSubmit = (event) => {
     event.preventDefault();
-    changeOpinion();
+    changeGeneral();
   };
-  const handleOpinionOnBlur = () => {
-    if (opinion != playtestProfile?.[OPINION]) changeOpinion();
+  const handleGeneralOnBlur = () => {
+    if (general != playtestProfile?.[GENERAL]) changeGeneral();
   };
 
   const handleGamesChange = (e) => updatePlaytestProfile(GAMES, e.value);
@@ -137,12 +138,13 @@ const PlaytestUserCard = () => {
         title="General Opinion on the Expansion"
         forceNewLine
       >
-        <form className="flex w-full" onSubmit={handleOpinionSubmit}>
-          <Input
-            onChange={handleOpinionChange}
-            onBlur={handleOpinionOnBlur}
-            value={opinion}
-            placeholder="Enter your general opinion on the Expansion"
+        <form className="flex w-full" onSubmit={handleGeneralSubmit}>
+          <Textarea
+            rows={5}
+            onChange={handleGeneralChange}
+            onBlur={handleGeneralOnBlur}
+            value={general}
+            placeholder="Enter your general general on the Expansion"
           />
         </form>
       </ListEntry>
