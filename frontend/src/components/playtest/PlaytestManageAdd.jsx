@@ -38,7 +38,7 @@ const PlaytestManageAdd = ({ playtesters, newPlaytesters, setNewPlaytesters }) =
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="w-full" onSubmit={handleSubmit}>
       <div className="flex">
         <div className="relative flex w-full">
           <Input

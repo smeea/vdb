@@ -1,22 +1,31 @@
 import React, { useState } from 'react';
-import { PlaytestManagePlayer, PlaytestManageAdd } from '@/components';
+import { useNavigate } from 'react-router-dom';
+import Arrow90DegLeft from '@/assets/images/icons/arrow-90deg-left.svg?react';
+import { ButtonIconed, PlaytestManagePlayer, PlaytestManageAdd } from '@/components';
 import { useFetch } from '@/hooks';
 import { useApp } from '@/context';
 
 const PlaytestManage = () => {
   const { isMobile } = useApp();
+  const navigate = useNavigate();
   const [newPlaytesters, setNewPlaytesters] = useState([]);
   const url = `${import.meta.env.VITE_API_URL}/playtest/users`;
   const { value } = useFetch(url, {}, []);
 
   return (
     <div className="playtest-manage-container mx-auto">
-      <div className="flex flex-col gap-3 sm:gap-4">
-        <div className="max-sm:px-2">
+      <div className="flex flex-col sm:gap-4">
+        <div className="flex w-full justify-between gap-2 max-sm:p-2">
           <PlaytestManageAdd
             playtesters={value}
             newPlaytesters={newPlaytesters}
             setNewPlaytesters={setNewPlaytesters}
+          />
+          <ButtonIconed
+            onClick={() => navigate('/playtest')}
+            title="Back"
+            icon={<Arrow90DegLeft />}
+            text="Back"
           />
         </div>
         <table className="w-full border-bgSecondary dark:border-bgSecondaryDark sm:border">

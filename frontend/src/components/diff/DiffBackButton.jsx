@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import Folder2Open from '@/assets/images/icons/folder2-open.svg?react';
+import Arrow90DegLeft from '@/assets/images/icons/arrow-90deg-left.svg?react';
 import { useApp } from '@/context';
 import { ButtonIconed } from '@/components';
 
@@ -17,7 +17,7 @@ const DiffBackButton = ({ deckid }) => {
         navigate(deckid ? `/decks/${deckid}` : '/decks');
       }}
       title="Back to Decks"
-      icon={<Folder2Open />}
+      icon={<Arrow90DegLeft />}
       text="Back to Decks"
     />
   );

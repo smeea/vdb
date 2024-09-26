@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Download from '@/assets/images/icons/download.svg?react';
+import Arrow90DegLeft from '@/assets/images/icons/arrow-90deg-left.svg?react';
 import {
   ButtonIconed,
   CardImage,
@@ -16,6 +18,7 @@ import { GENERAL, PRECONS, CARDS, NAME, CLAN, CLAN_DISCIPLINE } from '@/utils/co
 
 const PlaytestReportsAll = () => {
   const { isMobile, preconDecks, cryptCardBase, libraryCardBase } = useApp();
+  const navigate = useNavigate();
   const [sortMethod, setSortMethod] = useState(NAME);
   const sortMethods = {
     [NAME]: 'N',
@@ -23,20 +26,20 @@ const PlaytestReportsAll = () => {
   };
 
   const playtestCrypt = cryptSort(
-    Object.values(cryptCardBase).filter((i) => {
+    Object.values(cryptCardBase || {}).filter((i) => {
       return i.Id > 210000;
     }),
     sortMethod,
   );
 
   const playtestLibrary = librarySort(
-    Object.values(libraryCardBase).filter((i) => {
+    Object.values(libraryCardBase || {}).filter((i) => {
       return i.Id > 110000;
     }),
     sortMethod == CLAN ? CLAN_DISCIPLINE : sortMethod,
   );
 
-  const playtestPrecons = Object.values(preconDecks).filter((i) => {
+  const playtestPrecons = Object.values(preconDecks || {}).filter((i) => {
     return i.deckid.includes('PLAYTEST:');
   });
 
@@ -99,35 +102,43 @@ const PlaytestReportsAll = () => {
     <div className="playtest-manage-container mx-auto">
       <div className="flex flex-col gap-3 max-sm:p-2 sm:gap-4">
         <div className="flex justify-between gap-1 sm:gap-4">
-          <div className="flex w-full justify-between gap-1 max-sm:flex-col sm:gap-4">
+          <div className="flex justify-between gap-1 max-sm:w-full max-sm:flex-col sm:gap-4">
             <ButtonIconed
-              className="w-full"
+              className="w-full whitespace-nowrap"
               onClick={() => exportReports(PRECONS)}
               title="Save Precons"
               text="Save Precons"
               icon={<Download />}
             />
             <ButtonIconed
-              className="w-full"
+              className="w-full whitespace-nowrap"
               onClick={() => exportReports(CARDS)}
               title="Save Cards"
               text="Save Cards"
               icon={<Download />}
             />
             <ButtonIconed
-              className="w-full"
+              className="w-full whitespace-nowrap"
               onClick={() => exportReports(GENERAL)}
-              title="Save General Opinions"
-              text="Save General Opinions"
+              title="Save General"
+              text="Save General"
               icon={<Download />}
             />
           </div>
-          <SortButton
-            className="min-w-[80px]"
-            sortMethods={sortMethods}
-            sortMethod={sortMethod}
-            setSortMethod={setSortMethod}
-          />
+          <div className="flex justify-between gap-1 max-sm:flex-col sm:gap-4">
+            <ButtonIconed
+              onClick={() => navigate('/playtest')}
+              title="Back"
+              icon={<Arrow90DegLeft />}
+              text="Back"
+            />
+            <SortButton
+              className="h-full min-w-[80px]"
+              sortMethods={sortMethods}
+              sortMethod={sortMethod}
+              setSortMethod={setSortMethod}
+            />
+          </div>
         </div>
         {[...playtestCrypt, ...playtestLibrary, ...playtestPrecons].map((i, idx) => {
           const playtestPrecon =
