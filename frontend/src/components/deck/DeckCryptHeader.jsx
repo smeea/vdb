@@ -3,33 +3,31 @@ import InfoCircle from '@/assets/images/icons/info-circle.svg?react';
 import PlusLg from '@/assets/images/icons/plus-lg.svg?react';
 import { DeckCryptTotalInfo, DeckNewCard, Warning, Button, SortButton, Header } from '@/components';
 import { useApp } from '@/context';
-import { useKeyDisciplines, useDeckCrypt } from '@/hooks';
+import { useKeyDisciplines } from '@/hooks';
 import { CRYPT, GROUPS, LIMITED, BANNED, LEGAL, PLAYTEST } from '@/utils/constants';
 
 const DeckCryptHeader = ({
-  deckid,
-  showInfo,
-  setShowInfo,
-  inMissing,
-  isEditable,
-  sortMethods,
-  sortMethod,
-  setSortMethod,
   cardChange,
   cards,
+  cryptGroups,
+  cryptTotal,
+  deckid,
+  hasBanned,
+  hasIllegalDate,
+  hasLimited,
+  hasPlaytest,
+  hasWrongGroups,
+  inMissing,
+  isEditable,
+  setShowInfo,
+  setSortMethod,
+  showInfo,
+  sortMethod,
+  sortMethods,
 }) => {
   const { limitedMode, isMobile } = useApp();
   const [showAdd, setShowAdd] = useState(false);
   const { disciplinesDetailed } = useKeyDisciplines(cards);
-  const {
-    hasBanned,
-    hasLimited,
-    hasPlaytest,
-    hasIllegalDate,
-    cryptTotal,
-    hasWrongGroups,
-    cryptGroups,
-  } = useDeckCrypt(cards);
 
   return (
     <>

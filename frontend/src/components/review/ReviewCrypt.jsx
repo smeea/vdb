@@ -16,11 +16,19 @@ const ReviewCrypt = ({ cardChange, cardsFrom, cardsTo }) => {
     Sect: 'S',
   };
 
-  const { crypt, cryptSide, cryptTotal, sortedCards, sortedCardsSide } = useDeckCrypt(
-    cardsFrom,
-    cryptDeckSort,
-    cardsTo,
-  );
+  const {
+    crypt,
+    cryptSide,
+    sortedCards,
+    sortedCardsSide,
+    hasBanned,
+    hasLimited,
+    hasPlaytest,
+    hasIllegalDate,
+    hasWrongGroups,
+    cryptGroups,
+    cryptTotal,
+  } = useDeckCrypt(cardsFrom, cryptDeckSort, cardsTo);
 
   const { disciplinesSet, keyDisciplines } = useKeyDisciplines(crypt);
 
@@ -41,14 +49,21 @@ const ReviewCrypt = ({ cardChange, cardsFrom, cardsTo }) => {
     >
       <div>
         <DeckCryptHeader
-          sortMethods={sortMethods}
-          sortMethod={cryptDeckSort}
+          cardChange={cardChange}
+          cards={crypt}
+          cryptGroups={cryptGroups}
+          cryptTotal={cryptTotal}
+          hasBanned={hasBanned}
+          hasIllegalDate={hasIllegalDate}
+          hasLimited={hasLimited}
+          hasPlaytest={hasPlaytest}
+          hasWrongGroups={hasWrongGroups}
+          isEditable
+          setShowInfo={setShowInfo}
           setSortMethod={changeCryptDeckSort}
           showInfo={showInfo}
-          setShowInfo={setShowInfo}
-          cards={crypt}
-          cardChange={cardChange}
-          isEditable
+          sortMethod={cryptDeckSort}
+          sortMethods={sortMethods}
         />
         <DiffCryptTable
           isEditable

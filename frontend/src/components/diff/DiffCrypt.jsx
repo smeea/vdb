@@ -20,11 +20,19 @@ const DiffCrypt = ({ cardsTo, deck }) => {
     Sect: 'S',
   };
 
-  const { crypt, cryptSide, cryptTotal, sortedCards, sortedCardsSide } = useDeckCrypt(
-    cardsFrom,
-    cryptDeckSort,
-    cardsTo,
-  );
+  const {
+    crypt,
+    cryptSide,
+    sortedCards,
+    sortedCardsSide,
+    hasBanned,
+    hasLimited,
+    hasPlaytest,
+    hasIllegalDate,
+    hasWrongGroups,
+    cryptGroups,
+    cryptTotal,
+  } = useDeckCrypt(cardsFrom, cryptDeckSort, cardsTo);
 
   const { disciplinesSet, keyDisciplines } = useKeyDisciplines(crypt);
 
@@ -60,14 +68,21 @@ const DiffCrypt = ({ cardsTo, deck }) => {
     >
       <div>
         <DeckCryptHeader
+          cards={crypt}
+          cryptGroups={cryptGroups}
+          cryptTotal={cryptTotal}
+          deckid={deckid}
+          hasBanned={hasBanned}
+          hasIllegalDate={hasIllegalDate}
+          hasLimited={hasLimited}
+          hasPlaytest={hasPlaytest}
+          hasWrongGroups={hasWrongGroups}
           isEditable={isEditable}
-          sortMethods={sortMethods}
-          sortMethod={cryptDeckSort}
+          setShowInfo={setShowInfo}
           setSortMethod={changeCryptDeckSort}
           showInfo={showInfo}
-          setShowInfo={setShowInfo}
-          cards={crypt}
-          deckid={deckid}
+          sortMethod={cryptDeckSort}
+          sortMethods={sortMethods}
         />
         <DiffCryptTable
           handleClick={handleClick}

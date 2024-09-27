@@ -18,10 +18,19 @@ const DeckCrypt = ({ inSearch, inPreview, inMissing, noDisciplines, deck }) => {
     Sect: 'S',
   };
 
-  const { crypt, cryptSide, cryptTotal, sortedCards, sortedCardsSide } = useDeckCrypt(
-    deck.crypt,
-    cryptDeckSort,
-  );
+  const {
+    crypt,
+    cryptSide,
+    sortedCards,
+    sortedCardsSide,
+    hasBanned,
+    hasLimited,
+    hasPlaytest,
+    hasIllegalDate,
+    hasWrongGroups,
+    cryptGroups,
+    cryptTotal,
+  } = useDeckCrypt(deck.crypt, cryptDeckSort);
 
   const { disciplinesSet, keyDisciplines } = useKeyDisciplines(deck.crypt);
 
@@ -59,20 +68,27 @@ const DeckCrypt = ({ inSearch, inPreview, inMissing, noDisciplines, deck }) => {
     >
       <div>
         <DeckCryptHeader
+          cards={crypt}
+          cryptGroups={cryptGroups}
+          cryptTotal={cryptTotal}
+          deckid={deckid}
+          hasBanned={hasBanned}
+          hasIllegalDate={hasIllegalDate}
+          hasLimited={hasLimited}
+          hasPlaytest={hasPlaytest}
+          hasWrongGroups={hasWrongGroups}
           inMissing={inMissing}
           isEditable={isEditable}
-          sortMethods={sortMethods}
-          sortMethod={cryptDeckSort}
+          setShowInfo={setShowInfo}
           setSortMethod={changeCryptDeckSort}
           showInfo={showInfo}
-          setShowInfo={setShowInfo}
-          deckid={deckid}
-          cards={crypt}
+          sortMethod={cryptDeckSort}
+          sortMethods={sortMethods}
         />
         <DeckCryptTable
           deck={deck}
           handleClick={handleClick}
-          cards={inMissing ? useDeckCrypt(deck.crypt, 'Name')['sortedCards'] : sortedCards}
+          cards={sortedCards}
           cryptTotal={cryptTotal}
           showInfo={showInfo}
           disciplinesSet={disciplinesSet}
