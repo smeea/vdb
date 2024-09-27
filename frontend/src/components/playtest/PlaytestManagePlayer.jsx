@@ -26,7 +26,13 @@ const PlaytestManagePlayer = ({ value }) => {
           </Toggle>
         </div>
       </td>
-      <td>{lang && <Flag value={lang} />}</td>
+      <td>
+        {lang && (
+          <div className="flex items-center justify-center">
+            <Flag value={lang} />
+          </div>
+        )}
+      </td>
       {!isMobile && (
         <>
           <td className="text-center">{reports ? reports : ''}</td>

@@ -8,7 +8,7 @@ const PlaytestReportEntryWrapper = ({ id, isPrecon }) => {
   }/${id}`;
   const { value } = useFetch(url, {}, [id]);
 
-  return <PlaytestReportEntry value={value} />;
+  return <>{value && <PlaytestReportEntry value={value} />}</>;
 };
 
 export default PlaytestReportEntryWrapper;

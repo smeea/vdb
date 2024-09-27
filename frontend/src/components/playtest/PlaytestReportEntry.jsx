@@ -2,16 +2,20 @@ import React from 'react';
 import EyeFill from '@/assets/images/icons/eye-fill.svg?react';
 import EyeSlashFill from '@/assets/images/icons/eye-slash-fill.svg?react';
 import { Hr, PlaytestScores } from '@/components';
+import { useApp } from '@/context';
 
 const Report = ({ id, text, score, isPlayed }) => {
+  const { isMobile } = useApp();
+  const maxLength = isMobile ? 10 : 25;
+
   return (
-    <div className="flex flex-col gap-3">
+    <div className="flex flex-col gap-2 sm:gap-3">
       <div className="flex w-full items-center justify-between">
         <div title={id} className="text-fgName dark:text-fgNameDark">
-          &lt;{id.substring(0, 15)}
-          {id.length > 15 && '…'}&gt;
+          &lt;{id.substring(0, maxLength)}
+          {id.length > maxLength && '…'}&gt;
         </div>{' '}
-        <div className="flex items-center justify-end gap-4">
+        <div className="flex items-center justify-end gap-2 sm:gap-4">
           <PlaytestScores value={score} isSmall />
           <div
             className={isPlayed ? '' : 'text-fgRed dark:text-fgRedDark'}
@@ -21,11 +25,13 @@ const Report = ({ id, text, score, isPlayed }) => {
           </div>
         </div>
       </div>
-      <div>
-        {text.split('\n').map((line, idx) => (
-          <div key={idx}>{line}</div>
-        ))}
-      </div>
+      {text && (
+        <div>
+          {text.split('\n').map((line, idx) => (
+            <div key={idx}>{line}</div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };

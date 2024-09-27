@@ -3,9 +3,9 @@ import { CardImage, DeckCrypt, FlexGapped, Hr, PlaytestReportEntry } from '@/com
 import { useApp } from '@/context';
 
 const PlaytestReportsAllCardOrPrecon = ({ product, isPrecon, report, withHr }) => {
+  const { isMobile } = useApp();
   const name = isPrecon ? product.name : product.Name;
 
-  const { isMobile } = useApp();
   return (
     <>
       <FlexGapped className="max-sm:flex-col">

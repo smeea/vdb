@@ -79,7 +79,7 @@ const PlaytestReportsAll = () => {
   const { value } = useFetch(url, {}, []);
 
   return (
-    <div className="playtest-manage-container mx-auto">
+    <div className="playtest-reports-container mx-auto">
       <div className="flex flex-col gap-3 max-sm:p-2 sm:gap-4">
         <div className="flex justify-between gap-1 sm:gap-4">
           <div className="flex justify-between gap-1 max-sm:w-full max-sm:flex-col sm:gap-4">
