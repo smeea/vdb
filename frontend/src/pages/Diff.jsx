@@ -183,7 +183,7 @@ const Diff = () => {
           <DeckNewCardFloating
             target={LIBRARY}
             deckid={deck.deckid}
-            cards={Object.value(deck.library)}
+            cards={Object.values(deck.library)}
           />
         </>
       )}
