@@ -4,6 +4,7 @@ import { useSnapshot } from 'valtio';
 import { useImmer } from 'use-immer';
 import {
   ButtonFloatMenu,
+  ButtonFloatClose,
   DeckNewCardFloating,
   DeckDetails,
   ErrorMessage,
@@ -176,6 +177,11 @@ const Review = () => {
   );
   const inDecks = decks ? Object.keys(decks).includes(parentId) : null;
 
+  const handleClose = () => {
+    setShowMenuButtons(false);
+    setShowFloatingButtons(true);
+  };
+
   return (
     <div className="deck-container mx-auto">
       <FlexGapped className="w-full">
@@ -232,17 +238,15 @@ const Review = () => {
           />
         </>
       )}
-      <ButtonFloatMenu />
+      <div className="lg:hidden">
+        <ButtonFloatMenu />
+      </div>
       {showMenuButtons && (
-        <Modal
-          handleClose={() => {
-            setShowMenuButtons(false);
-            setShowFloatingButtons(true);
-          }}
-          centered
-          size="sm"
-        >
+        <Modal handleClose={handleClose} centered size="sm">
           <ReviewButtons deck={deckFrom} urlDiff={urlDiff} parentId={inDecks ? parentId : null} />
+          <div className="lg:hidden">
+            <ButtonFloatClose handleClose={handleClose} />
+          </div>
         </Modal>
       )}
     </div>

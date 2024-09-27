@@ -10,7 +10,6 @@ const ButtonFloatMenu = () => {
     <>
       {showFloatingButtons && (
         <ButtonFloat
-          className="lg:hidden"
           onClick={() => {
             setShowMenuButtons(true);
             setShowFloatingButtons(false);

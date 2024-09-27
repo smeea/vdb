@@ -7,7 +7,7 @@ import { deckStore, useApp } from '@/context';
 import { deckServices } from '@/services';
 
 const DeckBranchDeleteButton = ({ deck, noText }) => {
-  const { isDesktop } = useApp();
+  const { isDesktop, setShowMenuButtons } = useApp();
   const [showConfirmation, setShowConfirmation] = useState(false);
   const navigate = useNavigate();
   const decks = useSnapshot(deckStore).decks;
@@ -15,6 +15,7 @@ const DeckBranchDeleteButton = ({ deck, noText }) => {
   const handleClick = () => {
     deckServices.branchDelete(deck.deckid, decks).then((deckid) => {
       navigate(`/decks/${deckid}`);
+      setShowMenuButtons(false);
       setShowConfirmation(false);
     });
   };

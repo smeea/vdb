@@ -11,6 +11,7 @@ import {
   Modal,
   ButtonFloat,
   ButtonFloatMenu,
+  ButtonFloatClose,
   ErrorMessage,
   FlexGapped,
 } from '@/components';
@@ -71,6 +72,11 @@ const Inventory = () => {
   const [type, setType] = useState(ALL);
   const [discipline, setDiscipline] = useState(ALL);
   const [onlyNotes, setOnlyNotes] = useState(false);
+
+  const handleClose = () => {
+    setShowMenuButtons(false);
+    setShowFloatingButtons(true);
+  };
 
   return (
     <div className="inventory-container mx-auto">
@@ -139,16 +145,11 @@ const Inventory = () => {
           <LoginBlock>Login to manage your inventory</LoginBlock>
         </div>
       )}
-      <ButtonFloatMenu />
+      <div className="lg:hidden">
+        <ButtonFloatMenu />
+      </div>
       {showMenuButtons && (
-        <Modal
-          handleClose={() => {
-            setShowMenuButtons(false);
-            setShowFloatingButtons(true);
-          }}
-          centered
-          size="sm"
-        >
+        <Modal handleClose={handleClose} centered size="sm">
           <InventoryMenu
             sharedCrypt={sharedCrypt}
             sharedLibrary={sharedLibrary}
@@ -165,6 +166,9 @@ const Inventory = () => {
             onlyNotes={onlyNotes}
             setOnlyNotes={setOnlyNotes}
           />
+          <div className="lg:hidden">
+            <ButtonFloatClose handleClose={handleClose} />
+          </div>
         </Modal>
       )}
       {showAddDeck && (

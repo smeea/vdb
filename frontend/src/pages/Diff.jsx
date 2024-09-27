@@ -2,15 +2,16 @@ import React, { useState, useEffect } from 'react';
 import { useSnapshot } from 'valtio';
 import { useParams } from 'react-router-dom';
 import {
+  ButtonFloatClose,
+  ButtonFloatMenu,
+  DeckNewCardFloating,
   DiffButtons,
   DiffCrypt,
   DiffLibrary,
   DiffSelect,
-  DeckNewCardFloating,
-  ButtonFloatMenu,
+  ErrorMessage,
   FlexGapped,
   Modal,
-  ErrorMessage,
 } from '@/components';
 import { useApp, deckStore, setDeck } from '@/context';
 import { useDeck } from '@/hooks';
@@ -116,6 +117,11 @@ const Diff = () => {
     if (deckTo) setErrorTo(false);
   }, [deckTo?.deckid]);
 
+  const handleClose = () => {
+    setShowMenuButtons(false);
+    setShowFloatingButtons(true);
+  };
+
   return (
     <div className="deck-container mx-auto">
       <FlexGapped>
@@ -181,17 +187,15 @@ const Diff = () => {
           />
         </>
       )}
-      <ButtonFloatMenu />
+      <div className="lg:hidden">
+        <ButtonFloatMenu />
+      </div>
       {showMenuButtons && (
-        <Modal
-          handleClose={() => {
-            setShowMenuButtons(false);
-            setShowFloatingButtons(true);
-          }}
-          centered
-          size="sm"
-        >
+        <Modal handleClose={handleClose} centered size="sm">
           <DiffButtons deckFrom={deck} deckTo={deckTo} />
+          <div className="lg:hidden">
+            <ButtonFloatClose handleClose={handleClose} />
+          </div>
         </Modal>
       )}
     </div>

@@ -3,6 +3,7 @@ import { useSnapshot } from 'valtio';
 import { useNavigate, useLocation, useParams, useLoaderData } from 'react-router-dom';
 import {
   ButtonFloatMenu,
+  ButtonFloatClose,
   DeckButtons,
   DeckCrypt,
   DeckDetails,
@@ -189,6 +190,11 @@ const Decks = () => {
     }
   }, [deck?.deckid]);
 
+  const handleClose = () => {
+    setShowMenuButtons(false);
+    setShowFloatingButtons(true);
+  };
+
   return (
     <div className="deck-container mx-auto">
       <FlexGapped>
@@ -273,27 +279,31 @@ const Decks = () => {
       {isEditable && isMobile && showFloatingButtons && (
         <>
           <DeckNewCardFloating target={CRYPT} deckid={deckid} cards={Object.values(deck.crypt)} />
-          <DeckNewCardFloating target={LIBRARY} deckid={deckid} cards={Object.values(deck.library)} />
+          <DeckNewCardFloating
+            target={LIBRARY}
+            deckid={deckid}
+            cards={Object.values(deck.library)}
+          />
         </>
       )}
-      <ButtonFloatMenu />
+      <div className="lg:hidden">
+        <ButtonFloatMenu />
+      </div>
       {showMenuButtons && (
-        <Modal
-          handleClose={() => {
-            setShowMenuButtons(false);
-            setShowFloatingButtons(true);
-          }}
-          centered
-          size="sm"
-        >
-          <DeckButtons
-            deck={deck}
-            setShowInfo={setShowInfo}
-            setShowDraw={setShowDraw}
-            setShowSeating={setShowSeating}
-            setShowRecommendation={setShowRecommendation}
-            setQrUrl={setQrUrl}
-          />
+        <Modal handleClose={handleClose} centered size="sm" withCloseButton>
+          <>
+            <DeckButtons
+              deck={deck}
+              setShowInfo={setShowInfo}
+              setShowDraw={setShowDraw}
+              setShowSeating={setShowSeating}
+              setShowRecommendation={setShowRecommendation}
+              setQrUrl={setQrUrl}
+            />
+            <div className="lg:hidden">
+              <ButtonFloatClose handleClose={handleClose} />
+            </div>
+          </>
         </Modal>
       )}
       {showDeckSelectAdv && (
