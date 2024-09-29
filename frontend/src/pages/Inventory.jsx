@@ -112,20 +112,21 @@ const Inventory = () => {
           </div>
           <div className="max-lg:hidden lg:basis-2/12">
             <InventoryMenu
-              sharedCrypt={sharedCrypt}
-              sharedLibrary={sharedLibrary}
+              category={category}
+              clan={clan}
+              discipline={discipline}
+              isSharedInventory={isSharedInventory}
+              onlyNotes={onlyNotes}
+              setCategory={setCategory}
+              setOnlyNotes={setOnlyNotes}
               setSharedCrypt={setSharedCrypt}
               setSharedLibrary={setSharedLibrary}
               setShowAddDeck={setShowAddDeck}
               setShowAddPrecon={setShowAddPrecon}
               setShowShareModal={setShowShareModal}
-              clan={clan}
-              discipline={discipline}
+              sharedCrypt={sharedCrypt}
+              sharedLibrary={sharedLibrary}
               type={type}
-              category={category}
-              onlyNotes={onlyNotes}
-              setOnlyNotes={setOnlyNotes}
-              isSharedInventory={isSharedInventory}
             />
           </div>
           {isMobile && showFloatingButtons && (
@@ -151,20 +152,21 @@ const Inventory = () => {
       {showMenuButtons && (
         <Modal handleClose={handleClose} centered size="sm">
           <InventoryMenu
-            sharedCrypt={sharedCrypt}
-            sharedLibrary={sharedLibrary}
+            category={category}
+            clan={clan}
+            discipline={discipline}
+            isSharedInventory={isSharedInventory}
+            onlyNotes={onlyNotes}
+            setCategory={setCategory}
+            setOnlyNotes={setOnlyNotes}
             setSharedCrypt={setSharedCrypt}
             setSharedLibrary={setSharedLibrary}
             setShowAddDeck={setShowAddDeck}
             setShowAddPrecon={setShowAddPrecon}
             setShowShareModal={setShowShareModal}
-            clan={clan}
-            discipline={discipline}
+            sharedCrypt={sharedCrypt}
+            sharedLibrary={sharedLibrary}
             type={type}
-            category={category}
-            setCategory={setCategory}
-            onlyNotes={onlyNotes}
-            setOnlyNotes={setOnlyNotes}
           />
           <div className="lg:hidden">
             <ButtonFloatClose handleClose={handleClose} />
