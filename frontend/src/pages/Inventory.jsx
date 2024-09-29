@@ -21,6 +21,8 @@ import { ALL } from '@/utils/constants';
 
 const Inventory = () => {
   const {
+    inventoryMode,
+    setInventoryMode,
     username,
     isMobile,
     showMenuButtons,
@@ -39,6 +41,10 @@ const Inventory = () => {
   const [showShareModal, setShowShareModal] = useState(false);
   const [showCryptOnMobile, setShowCryptOnMobile] = useState(true);
   const isSharedInventory = sharedCrypt && sharedLibrary;
+
+  useEffect(() => {
+    if (!inventoryMode) setInventoryMode(true);
+  }, [inventoryMode]);
 
   const getInventory = async (key) => {
     setInventoryError(false);

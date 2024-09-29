@@ -12,7 +12,7 @@ const Toggle = ({ isOn, toggle, size = 'md', disabled = false, children }) => {
   return (
     <div
       className={`flex items-center gap-2 ${
-        !disabled && isOn ? '' : 'text-midGray dark:text-midGrayDark'
+        !disabled || !isOn ? 'text-midGray dark:text-midGrayDark' : ''
       }`}
       onClick={() => !disabled && toggle()}
     >

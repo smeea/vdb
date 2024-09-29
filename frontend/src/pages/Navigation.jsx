@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import { useSnapshot } from 'valtio';
 import LightningFill from '@/assets/images/icons/lightning-fill.svg?react';
 import PersonFill from '@/assets/images/icons/person-fill.svg?react';
@@ -56,6 +56,7 @@ const Navigation = () => {
   } = useApp();
 
   const [showMenu, setShowMenu] = useState(false);
+  const location = useLocation();
   const deck = useSnapshot(deckStore).deck;
   const quickCard = useSnapshot(searchResults).quickCard;
   const cryptFormState = useSnapshot(searchCryptForm);
@@ -114,6 +115,7 @@ const Navigation = () => {
                   isOn={inventoryMode}
                   onToggle={toggleInventoryMode}
                   text="Inventory Mode"
+                  disabled={location.pathname == '/inventory'}
                 />
               )}
               {(isLimited || limitedMode) && (
