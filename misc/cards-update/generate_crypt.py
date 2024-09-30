@@ -61,7 +61,6 @@ artist_fixes = {
 
 # Groups are not integers because of ANY-group vampires (e.g. Anarch Convert)
 integer_fields = ["Id", "Capacity"]
-useless_fields = ["Aka"]
 
 
 def generate_artists(csv_cards, artists_file, artists_file_min):
@@ -78,255 +77,254 @@ def generate_artists(csv_cards, artists_file, artists_file_min):
 
 
 def generate_card(card):
-        # Convert some fields values to integers
-        for k in integer_fields:
-            try:
-                card[k] = int(card[k])
-            except (ValueError):
-                pass
+    # Convert some fields values to integers
+    for k in integer_fields:
+        try:
+            card[k] = int(card[k])
+        except (ValueError):
+            pass
 
-        # Remove {} and spaces in []
-        card["Card Text"] = re.sub("[{}]", "", card["Card Text"])
-        card["Card Text"] = re.sub(r"\[(\w+)\s*(\w*)\]", r"[\1\2]", card["Card Text"])
+    # Remove {} and spaces in []
+    card["Card Text"] = re.sub("[{}]", "", card["Card Text"])
+    card["Card Text"] = re.sub(r"\[(\w+)\s*(\w*)\]", r"[\1\2]", card["Card Text"])
 
-        # Convert sets to dict
-        if not card["Set"]:
-            card["Set"] = {"PLAYTEST": {}}
+    # Convert sets to dict
+    if not card["Set"]:
+        card["Set"] = {"PLAYTEST": {}}
 
-        else:
-            sets = card["Set"].split(", ")
-            card["Set"] = {}
+    else:
+        sets = card["Set"].split(", ")
+        card["Set"] = {}
 
-            for set in sets:
-                if "-" in set:
-                    set = set.split("-")
-                elif ":" in set:
-                    set = set.split(":")
+        for set in sets:
+            if "-" in set:
+                set = set.split("-")
+            elif ":" in set:
+                set = set.split(":")
 
-                precons = set[1].split("/")
+            precons = set[1].split("/")
 
-                # Fix for KoT, HttB Reprints (marked in CSV as KoT, but have only
-                # bundles named "A" or "B" not existing in original KoT)
-                if set[0] in ["KoT", "HttB"]:
-                    counter = 0
-                    for precon in precons:
-                        if re.match(r"(A|B)[0-9]?", precon):
-                            counter += 1
+            # Fix for KoT, HttB Reprints (marked in CSV as KoT, but have only
+            # bundles named "A" or "B" not existing in original KoT)
+            if set[0] in ["KoT", "HttB"]:
+                counter = 0
+                for precon in precons:
+                    if re.match(r"(A|B)[0-9]?", precon):
+                        counter += 1
 
-                    if counter > 0:
-                        card["Set"][f"{set[0]}R"] = {}
-                    if counter < len(precons):
-                        card["Set"][set[0]] = {}
-
-                elif set[0] == "Anthology":
-                    for precon in precons:
-                        if "LARP" in precon:
-                            card["Set"]["Anthology"] = {}
-                        else:
-                            card["Set"]["Anthology"] = {}
-                            card["Set"]["Anthology I"] = {}
-
-                elif set[0] not in ["AU", "DM", "TU"] and set[0] not in card["Set"]:
+                if counter > 0:
+                    card["Set"][f"{set[0]}R"] = {}
+                if counter < len(precons):
                     card["Set"][set[0]] = {}
 
-                # Fix for DM, TU, AU Kickstarter Unleashed
-                # (merge into Kickstarter Unleashed set)
-                if set[0] in ["DM", "TU", "AU"]:
-                    for precon in precons:
-                        if precon == "C":
-                            card["Set"][set[0]] = {"C": True}
+            elif set[0] == "Anthology":
+                for precon in precons:
+                    if "LARP" in precon:
+                        card["Set"]["Anthology"] = {}
+                    else:
+                        card["Set"]["Anthology"] = {}
+                        card["Set"]["Anthology I"] = {}
+
+            elif set[0] not in ["AU", "DM", "TU"] and set[0] not in card["Set"]:
+                card["Set"][set[0]] = {}
+
+            # Fix for DM, TU, AU Kickstarter Unleashed
+            # (merge into Kickstarter Unleashed set)
+            if set[0] in ["DM", "TU", "AU"]:
+                for precon in precons:
+                    if precon == "C":
+                        card["Set"][set[0]] = {"C": True}
+                    else:
+                        if "KSU" not in card["Set"]:
+                            card["Set"]["KSU"] = {}
+
+                        if m := re.match(r"^(A|B)([0-9]+)?", precon):
+                            card["Set"]["KSU"][f"{set[0]}{m.group(1)}"] = m.group(2)
                         else:
-                            if "KSU" not in card["Set"]:
-                                card["Set"]["KSU"] = {}
+                            card["Set"]["KSU"][set[0]] = precon
 
-                            if m := re.match(r"^(A|B)([0-9]+)?", precon):
-                                card["Set"]["KSU"][f"{set[0]}{m.group(1)}"] = m.group(2)
-                            else:
-                                card["Set"]["KSU"][set[0]] = precon
+            elif set[0] == "Anthology":
+                for precon in precons:
+                    if "LARP" in precon:
+                        m = re.match(r"^LARP([0-9]+)", precon)
+                        card["Set"]["Anthology"][""] = m.group(1)
+                    else:
+                        card["Set"]["Anthology I"][""] = precon
+                        card["Set"]["Anthology"][""] = precon
 
-                elif set[0] == "Anthology":
-                    for precon in precons:
-                        if "LARP" in precon:
-                            m = re.match(r"^LARP([0-9]+)", precon)
-                            card["Set"]["Anthology"][""] = m.group(1)
+            else:
+                for precon in precons:
+                    if set[0] in ["KoT", "HttB"] and (
+                            m := re.match(r"^(A|B)([0-9]+)?", precon)
+                    ):
+                        s = f"{set[0]}R"
+                        if m.group(2):
+                            card["Set"][s][m.group(1)] = m.group(2)
                         else:
-                            card["Set"]["Anthology I"][""] = precon
-                            card["Set"]["Anthology"][""] = precon
+                            card["Set"][s][m.group(1)] = 1
 
-                else:
-                    for precon in precons:
-                        if set[0] in ["KoT", "HttB"] and (
-                                m := re.match(r"^(A|B)([0-9]+)?", precon)
-                        ):
-                            s = f"{set[0]}R"
-                            if m.group(2):
-                                card["Set"][s][m.group(1)] = m.group(2)
+                    else:
+                        if m := re.match(r"^(\D+)([0-9]+)?", precon):
+                            if m.group(1) in ["C", "U", "R", "V", "DTC"]:
+                                card["Set"][set[0]][m.group(1)] = True
+                            elif m.group(2):
+                                card["Set"][set[0]][m.group(1)] = m.group(2)
                             else:
-                                card["Set"][s][m.group(1)] = 1
-
+                                card["Set"][set[0]][m.group(1)] = 1
+                        elif m := re.match(r"^[0-9][0-9]?$", precon):
+                            card["Set"][set[0]][""] = precon
                         else:
-                            if m := re.match(r"^(\D+)([0-9]+)?", precon):
-                                if m.group(1) in ["C", "U", "R", "V", "DTC"]:
-                                    card["Set"][set[0]][m.group(1)] = True
-                                elif m.group(2):
-                                    card["Set"][set[0]][m.group(1)] = m.group(2)
-                                else:
-                                    card["Set"][set[0]][m.group(1)] = 1
-                            elif m := re.match(r"^[0-9][0-9]?$", precon):
-                                card["Set"][set[0]][""] = precon
-                            else:
-                                date = f"{precon[0:4]}-{precon[4:6]}-{precon[6:8]}"
-                                card["Set"][set[0]][date] = True
+                            date = f"{precon[0:4]}-{precon[4:6]}-{precon[6:8]}"
+                            card["Set"][set[0]][date] = True
 
-        # Add Sect
-        if card["Type"] == "Imbued":
-            card["Sect"] = "Imbued"
+    # Add Sect
+    if card["Type"] == "Imbued":
+        card["Sect"] = "Imbued"
+    else:
+        text = re.split("\\W+", card["Card Text"])
+        if text[0] == "Advanced":
+            card["Sect"] = text[1]
         else:
-            text = re.split("\\W+", card["Card Text"])
-            if text[0] == "Advanced":
-                card["Sect"] = text[1]
-            else:
-                card["Sect"] = text[0]
+            card["Sect"] = text[0]
 
-        # ASCII-fication of name
-        match card["Id"]:
-            case 201528:
-                card["ASCII Name"] = "Boleslaw Gutowski"
-            case 201669:
-                card["ASCII Name"] = "Clara Hjortshoj"
-            case 250014:
-                card["ASCII Name"] = "Przemyslaw, War Beast"
-            case 250018:
-                card["ASCII Name"] = "Aelswith, The Irresistible"
-            case _:
-                card["ASCII Name"] = letters_to_ascii(card["Name"])
+    # ASCII-fication of name
+    match card["Id"]:
+        case 201528:
+            card["ASCII Name"] = "Boleslaw Gutowski"
+        case 201669:
+            card["ASCII Name"] = "Clara Hjortshoj"
+        case 250014:
+            card["ASCII Name"] = "Przemyslaw, War Beast"
+        case 250018:
+            card["ASCII Name"] = "Aelswith, The Irresistible"
+        case _:
+            card["ASCII Name"] = letters_to_ascii(card["Name"])
 
-        # Remove useless fields
-        for k in useless_fields:
-            del card[k]
+    # Remove empty disciplines/virtues
+    if card["Type"] == "Imbued":
+        card_disciplines_letters = card["Disciplines"].split()
+        card_disciplines = {}
+        for d in card_disciplines_letters:
+            if d in virtues:
+                card_disciplines[virtues[d]] = 1
 
-        # Remove empty disciplines/virtues
-        if card["Type"] == "Imbued":
-            card_disciplines_letters = card["Disciplines"].split()
-            card_disciplines = {}
-            for d in card_disciplines_letters:
-                if d in virtues:
-                    card_disciplines[virtues[d]] = 1
+        card["Disciplines"] = card_disciplines
 
-            card["Disciplines"] = card_disciplines
+    elif card["Type"] == "Vampire":
+        card_disciplines_letters = card["Disciplines"].split()
+        card_disciplines = {}
+        for d in card_disciplines_letters:
+            if d in disciplines:
+                card_disciplines[disciplines[d]['name']] = disciplines[d]['value']
 
-        elif card["Type"] == "Vampire":
-            card_disciplines_letters = card["Disciplines"].split()
-            card_disciplines = {}
-            for d in card_disciplines_letters:
-                if d in disciplines:
-                    card_disciplines[disciplines[d]['name']] = disciplines[d]['value']
+        card["Disciplines"] = card_disciplines
 
-            card["Disciplines"] = card_disciplines
+    artists = []
+    for artist in re.split("; | & ", card["Artist"]):
+        if artist in artist_fixes.keys():
+            artists.append(artist_fixes[artist])
+        else:
+            artists.append(artist)
 
-        artists = []
-        for artist in re.split("; | & ", card["Artist"]):
-            if artist in artist_fixes.keys():
-                artists.append(artist_fixes[artist])
-            else:
-                artists.append(artist)
+    card["Artist"] = artists
 
-        card["Artist"] = artists
+    # Add rules to card
+    card["Rulings"] = []
+    for c in krcg_cards:
+        if c["id"] == card["Id"] and "rulings" in c:
+            for r in c["rulings"]:
+                references = {}
+                for ref in r["references"]:
+                    references[ref['text']] = ref['url']
 
-        # Add rules to card
-        card["Rulings"] = []
-        for c in krcg_cards:
-            if c["id"] == card["Id"] and "rulings" in c:
-                for r in c["rulings"]:
-                    references = {}
-                    for ref in r["references"]:
-                        references[ref['text']] = ref['url']
+                if match := re.match(r"(.*?)\[... \S+\].*", r["text"]):
+                    text = match.group(1)
+                    text = re.sub(r"{The (.+?)}", r"{\1, The}", text)
+                    text = text.replace("Thaumaturgy", "Blood Sorcery")
+                    text = text.replace("Assamites", "Banu Haqim")
+                    text = text.replace("Assamite", "Banu Haqim")
+                    text = text.replace("Followers of Set", "Ministers")
+                    text = text.replace("Follower of Set", "Minister")
+                    text = re.sub(r"\[(\w+)\s*(\w*)\]", r"[\1\2]", text)
+                    card["Rulings"].append(
+                        {
+                            "text": text,
+                            "refs": references,
+                        }
+                    )
 
-                    if match := re.match(r"(.*?)\[... \S+\].*", r["text"]):
-                        text = match.group(1)
-                        text = re.sub(r"{The (.+?)}", r"{\1, The}", text)
-                        text = text.replace("Thaumaturgy", "Blood Sorcery")
-                        text = text.replace("Assamites", "Banu Haqim")
-                        text = text.replace("Assamite", "Banu Haqim")
-                        text = text.replace("Followers of Set", "Ministers")
-                        text = text.replace("Follower of Set", "Minister")
-                        text = re.sub(r"\[(\w+)\s*(\w*)\]", r"[\1\2]", text)
-                        card["Rulings"].append(
-                            {
-                                "text": text,
-                                "refs": references,
-                            }
-                        )
+    # Add twda info
+    card["Twd"] = 0
+    for i in twda:
+        for c in i["crypt"]["cards"]:
+            if c["id"] == card["Id"]:
+                card["Twd"] += 1
 
-        # Add twda info
-        card["Twd"] = 0
-        for i in twda:
-            for c in i["crypt"]["cards"]:
-                if c["id"] == card["Id"]:
-                    card["Twd"] += 1
+    # Add Advancement info
+    card["Advancement"] = ""
+    for c in csv_cards_main:
+        if (
+                c["Name"] == card["Name"]
+                and int(c["Id"]) != card["Id"]
+                and c["Group"] == card["Group"]
+        ):
+            isAdv = bool(card["Adv"])
+            card["Advancement"] = [isAdv, int(c["Id"])]
 
-        # Add Advancement info
-        card["Advancement"] = ""
-        for c in csv_cards_main:
-            if (
-                    c["Name"] == card["Name"]
-                    and int(c["Id"]) != card["Id"]
-                    and c["Group"] == card["Group"]
-            ):
-                isAdv = bool(card["Adv"])
-                card["Advancement"] = [isAdv, int(c["Id"])]
+    # Add new revision info
+    card["New"] = False
 
-        # Add new revision info
-        card["New"] = False
+    for c in csv_cards_main:
+        if (
+                c["Name"] == card["Name"]
+                and int(c["Id"]) < card["Id"]
+                and c["Group"] != card["Group"]
+        ):
+            card["New"] = True
 
-        for c in csv_cards_main:
-            if (
-                    c["Name"] == card["Name"]
-                    and int(c["Id"]) < card["Id"]
-                    and c["Group"] != card["Group"]
-            ):
-                card["New"] = True
+    # Rename Assamite and Follower of Set
+    if card["Clan"] == "Assamite":
+        card["Clan"] = "Banu Haqim"
 
-        # Rename Assamite and Follower of Set
-        if card["Clan"] == "Assamite":
-            card["Clan"] = "Banu Haqim"
+    if card["Clan"] == "Follower of Set":
+        card["Clan"] = "Ministry"
 
-        if card["Clan"] == "Follower of Set":
-            card["Clan"] = "Ministry"
+    card["Card Text"] = (
+        card["Card Text"]
+        .replace("Assamites", "Banu Haqim")
+        .replace("Assamite", "Banu Haqim")
+    )
 
-        card["Card Text"] = (
-            card["Card Text"]
-            .replace("Assamites", "Banu Haqim")
-            .replace("Assamite", "Banu Haqim")
-        )
+    card["Card Text"] = card["Card Text"].replace("Followers of Set", "Ministers")
+    card["Card Text"] = card["Card Text"].replace("Follower of Set", "Minister")
 
-        card["Card Text"] = card["Card Text"].replace("Followers of Set", "Ministers")
-        card["Card Text"] = card["Card Text"].replace("Follower of Set", "Minister")
+    # Rename Thaumaturgy
+    card["Card Text"] = card["Card Text"].replace("Thaumaturgy", "Blood Sorcery")
 
-        # Rename Thaumaturgy
-        card["Card Text"] = card["Card Text"].replace("Thaumaturgy", "Blood Sorcery")
+    card_ready = {
+        "ASCII Name": card["ASCII Name"],
+        "Adv": card["Advancement"],
+        "Artist": card["Artist"],
+        "Banned": card["Banned"],
+        "Capacity": card["Capacity"],
+        "Card Text": card["Card Text"],
+        "Clan": card["Clan"],
+        "Disciplines": card["Disciplines"],
+        "Group": card["Group"].lower(),
+        "Id": card["Id"],
+        "Name": card["Name"],
+        "New": card["New"],
+        "Rulings": card["Rulings"],
+        "Sect": card["Sect"],
+        "Set": card["Set"],
+        "Title": card["Title"].lower(),
+        "Twd": card["Twd"],
+    }
 
-        card_ready = {
-            "ASCII Name": card["ASCII Name"],
-            "Adv": card["Advancement"],
-            "Artist": card["Artist"],
-            "Banned": card["Banned"],
-            "Capacity": card["Capacity"],
-            "Card Text": card["Card Text"],
-            "Clan": card["Clan"],
-            "Disciplines": card["Disciplines"],
-            "Group": card["Group"].lower(),
-            "Id": card["Id"],
-            "Name": card["Name"],
-            "New": card["New"],
-            "Rulings": card["Rulings"],
-            "Sect": card["Sect"],
-            "Set": card["Set"],
-            "Title": card["Title"].lower(),
-            "Twd": card["Twd"],
-        }
+    if card['Aka']:
+        card_ready["Aka"] = card['Aka']
 
-        return card_ready
+    return card_ready
 
 def generate_cards(csv_cards, cardbase_file, cardbase_file_min):
     pool = multiprocessing.Pool(processes=4)

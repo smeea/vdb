@@ -9,11 +9,12 @@ import {
   ResultLibraryRequirements,
   ResultMiscImage,
   ResultName,
+  ResultNameAka,
   ResultLibraryTypeImage,
 } from '@/components';
 import { getLegality } from '@/utils';
 import { useApp } from '@/context';
-import { BLOOD_COST, POOL_COST, BURN_OPTION, TRIFLE, PLAYTEST } from '@/utils/constants';
+import { AKA, BLOOD_COST, POOL_COST, BURN_OPTION, TRIFLE, PLAYTEST } from '@/utils/constants';
 
 const ResultLibraryLayoutText = ({ card, handleClose, noClose, inPopover }) => {
   const { isNarrow } = useApp();
@@ -22,11 +23,14 @@ const ResultLibraryLayoutText = ({ card, handleClose, noClose, inPopover }) => {
   return (
     <div className="space-y-3">
       <div className="flex items-center justify-between whitespace-nowrap">
-        <div className="flex items-center justify-between space-x-2 whitespace-nowrap">
-          <ResultLibraryTypeImage value={card.Type} />
-          <div className="space-x-1 font-bold text-fgName dark:text-fgNameDark">
-            <ResultName card={card} />
+        <div className="flex items-center justify-between gap-3 whitespace-nowrap">
+          <div className="flex items-center gap-2 whitespace-nowrap">
+            <ResultLibraryTypeImage value={card.Type} />
+            <div className="space-x-1 font-bold text-fgName dark:text-fgNameDark">
+              <ResultName card={card} />
+            </div>
           </div>
+          {card[AKA] && <ResultNameAka card={card} />}
         </div>
         <div className="flex items-center space-x-3">
           <div className="flex items-center gap-1">

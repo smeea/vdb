@@ -1360,7 +1360,8 @@
             }
         },
         "Twd":4,
-        "Type":"Ally"
+        "Type":"Ally",
+        "Aka":"Akhenaten, The Sun Pharaoh (Mummy)"
     },
     "100034":{
         "ASCII Name":"Akunanse Kholo",
@@ -1690,7 +1691,8 @@
             }
         },
         "Twd":13,
-        "Type":"Ally"
+        "Type":"Ally",
+        "Aka":"Amam the Devourer (Bane Mummy)"
     },
     "100043":{
         "ASCII Name":"Amaranth",
@@ -1782,7 +1784,8 @@
             }
         },
         "Twd":34,
-        "Type":"Ally"
+        "Type":"Ally",
+        "Aka":"Ambrosius, The Ferryman (Wraith)"
     },
     "100045":{
         "ASCII Name":"Ambulance",
@@ -5454,7 +5457,8 @@
             }
         },
         "Twd":1,
-        "Type":"Equipment"
+        "Type":"Equipment",
+        "Aka":"Bang Nakh -- Tiger's Claws"
     },
     "100131":{
         "ASCII Name":"Banishment",
@@ -8436,7 +8440,8 @@
             }
         },
         "Twd":12,
-        "Type":"Action"
+        "Type":"Action",
+        "Aka":"Bloodhunt"
     },
     "100203":{
         "ASCII Name":"Blood of Acid",
@@ -10520,7 +10525,8 @@
             }
         },
         "Twd":4,
-        "Type":"Ally"
+        "Type":"Ally",
+        "Aka":"Brigitte Gebauer (Wraith)"
     },
     "100255":{
         "ASCII Name":"Brinksmanship",
@@ -12294,7 +12300,8 @@
             }
         },
         "Twd":768,
-        "Type":"Ally"
+        "Type":"Ally",
+        "Aka":"Carlton Van Wyk (Hunter)"
     },
     "100299":{
         "ASCII Name":"Carnivale",
@@ -20227,7 +20234,8 @@
             }
         },
         "Twd":1,
-        "Type":"Ally"
+        "Type":"Ally",
+        "Aka":"Dauntain Black Magician (Changeling)"
     },
     "100501":{
         "ASCII Name":"Dawn Operation",
@@ -23604,7 +23612,8 @@
             }
         },
         "Twd":177,
-        "Type":"Action"
+        "Type":"Action",
+        "Aka":"Kine Dominance"
     },
     "100574":{
         "ASCII Name":"Dominion",
@@ -23843,7 +23852,8 @@
             }
         },
         "Twd":15,
-        "Type":"Ally"
+        "Type":"Ally",
+        "Aka":"Draeven Softfoot (Changeling)"
     },
     "100580":{
         "ASCII Name":"Dragon's Breath Rounds",
@@ -25202,7 +25212,8 @@
             }
         },
         "Twd":176,
-        "Type":"Master"
+        "Type":"Master",
+        "Aka":"Eco Terrorists"
     },
     "100610":{
         "ASCII Name":"Ecstasy",
@@ -29974,7 +29985,8 @@
             }
         },
         "Twd":29,
-        "Type":"Ally"
+        "Type":"Ally",
+        "Aka":"Felix \"Fix\" Hessian (Wraith)"
     },
     "100720":{
         "ASCII Name":"Femur of Toomler",
@@ -30324,7 +30336,8 @@
             }
         },
         "Twd":77,
-        "Type":"Action"
+        "Type":"Action",
+        "Aka":"Fifth Tradition: Hospitality, The"
     },
     "100728":{
         "ASCII Name":"Filchware's Pawn Shop",
@@ -30655,7 +30668,8 @@
             }
         },
         "Twd":43,
-        "Type":"Political Action"
+        "Type":"Political Action",
+        "Aka":"First Tradition: The Masquerade, The"
     },
     "100738":{
         "ASCII Name":"Fists of Death",
@@ -30843,7 +30857,8 @@
             }
         },
         "Twd":30,
-        "Type":"Equipment"
+        "Type":"Equipment",
+        "Aka":"Flame Thrower"
     },
     "100743":{
         "ASCII Name":"Flaming Candle",
@@ -32680,7 +32695,8 @@
             }
         },
         "Twd":56,
-        "Type":"Action"
+        "Type":"Action",
+        "Aka":"Fourth Tradition: The Accounting, The"
     },
     "100783":{
         "ASCII Name":"Fractura",
@@ -33545,7 +33561,8 @@
             }
         },
         "Twd":1,
-        "Type":"Master"
+        "Type":"Master",
+        "Aka":"Gangrel De-evolution"
     },
     "100805":{
         "ASCII Name":"Gangrel Conspiracy",
@@ -34710,7 +34727,8 @@
             }
         },
         "Twd":5,
-        "Type":"Retainer"
+        "Type":"Retainer",
+        "Aka":"Guiseppe, Gravedigger"
     },
     "100834":{
         "ASCII Name":"Glancing Blow",
@@ -35521,7 +35539,8 @@
             }
         },
         "Twd":188,
-        "Type":"Action"
+        "Type":"Action",
+        "Aka":"Grave Robbing"
     },
     "100853":{
         "ASCII Name":"Great Symposium",
@@ -37787,7 +37806,8 @@
             }
         },
         "Twd":254,
-        "Type":"Master"
+        "Type":"Master",
+        "Aka":"Heidelburg Castle, Germany"
     },
     "100909":{
         "ASCII Name":"Helicopter",
@@ -37905,7 +37925,8 @@
             }
         },
         "Twd":2,
-        "Type":"Ally"
+        "Type":"Ally",
+        "Aka":"Hell Hound"
     },
     "100912":{
         "ASCII Name":"Herald of Topheth",
@@ -42309,7 +42330,8 @@
             }
         },
         "Twd":551,
-        "Type":"Master"
+        "Type":"Master",
+        "Aka":"Jake Washington (Hunter)"
     },
     "101020":{
         "ASCII Name":"Jar of Skin Eaters",
@@ -43414,7 +43436,8 @@
             }
         },
         "Twd":2,
-        "Type":"Ally"
+        "Type":"Ally",
+        "Aka":"Kherebutu (Bane Mummy)"
     },
     "101048":{
         "ASCII Name":"Khobar Towers, Al-Khubar",
@@ -46758,7 +46781,8 @@
             }
         },
         "Twd":1,
-        "Type":"Master"
+        "Type":"Master",
+        "Aka":"Louvre, Paris, Le"
     },
     "101128":{
         "ASCII Name":"Loving Agony",
@@ -49057,7 +49081,8 @@
             }
         },
         "Twd":3,
-        "Type":"Retainer"
+        "Type":"Retainer",
+        "Aka":"Masquer (Wraith)"
     },
     "101183":{
         "ASCII Name":"Masquerade Endangered",
@@ -49568,7 +49593,8 @@
             }
         },
         "Twd":1,
-        "Type":"Ally"
+        "Type":"Ally",
+        "Aka":"Mehemet of the Ahl-i-Batin (Mage)"
     },
     "101195":{
         "ASCII Name":"Melange",
@@ -52546,7 +52572,8 @@
             }
         },
         "Twd":377,
-        "Type":"Ally"
+        "Type":"Ally",
+        "Aka":"Mylan Horseed (Goblin)"
     },
     "101262":{
         "ASCII Name":"Mythic Form",
@@ -52858,7 +52885,8 @@
             }
         },
         "Twd":33,
-        "Type":"Ally"
+        "Type":"Ally",
+        "Aka":"Neighborhood Watch Commander (Hunter)"
     },
     "101271":{
         "ASCII Name":"Neonate Breach",
@@ -52975,7 +53003,8 @@
             }
         },
         "Twd":111,
-        "Type":"Ally"
+        "Type":"Ally",
+        "Aka":"Nephandus (Mage)"
     },
     "101273":{
         "ASCII Name":"Nephren-Ka",
@@ -57502,7 +57531,8 @@
             }
         },
         "Twd":0,
-        "Type":"Master"
+        "Type":"Master",
+        "Aka":"Pere Lachaise, France"
     },
     "101386":{
         "ASCII Name":"Perfect Clarity",
@@ -62313,7 +62343,8 @@
             }
         },
         "Twd":2,
-        "Type":"Action"
+        "Type":"Action",
+        "Aka":"Physchic Projection"
     },
     "101510":{
         "ASCII Name":"Psychic Veil",
@@ -62710,7 +62741,8 @@
             }
         },
         "Twd":9,
-        "Type":"Ally"
+        "Type":"Ally",
+        "Aka":"Puppeteer (Wraith)"
     },
     "101520":{
         "ASCII Name":"Purchase Pact",
@@ -63042,7 +63074,8 @@
             }
         },
         "Twd":6,
-        "Type":"Ally"
+        "Type":"Ally",
+        "Aka":"Qetu the Evil Doer (Bane Mummy)"
     },
     "101528":{
         "ASCII Name":"Quick Exit",
@@ -65414,7 +65447,8 @@
             }
         },
         "Twd":99,
-        "Type":"Combat"
+        "Type":"Combat",
+        "Aka":"Rego Motus"
     },
     "101589":{
         "ASCII Name":"Reindoctrination",
@@ -65892,7 +65926,8 @@
             }
         },
         "Twd":47,
-        "Type":"Ally"
+        "Type":"Ally",
+        "Aka":"Renagade Garou"
     },
     "101603":{
         "ASCII Name":"Renewed Vigor",
@@ -68390,7 +68425,8 @@
             }
         },
         "Twd":2,
-        "Type":"Equipment"
+        "Type":"Equipment",
+        "Aka":"Ruins of Villars Abbey, Belgium"
     },
     "101661":{
         "ASCII Name":"Rumble",
@@ -68596,7 +68632,8 @@
             }
         },
         "Twd":43,
-        "Type":"Ally"
+        "Type":"Ally",
+        "Aka":"Saatet-ta (Bane Mummy)"
     },
     "101666":{
         "ASCII Name":"Sabbat Inquisitor",
@@ -68810,7 +68847,8 @@
             }
         },
         "Twd":9,
-        "Type":"Equipment"
+        "Type":"Equipment",
+        "Aka":"Sacre-Cour Cathedral, France"
     },
     "101671":{
         "ASCII Name":"Sacrifice",
@@ -70373,7 +70411,8 @@
             }
         },
         "Twd":496,
-        "Type":"Reaction"
+        "Type":"Reaction",
+        "Aka":"Second Tradition: Domain, The"
     },
     "101707":{
         "ASCII Name":"Secret Horde",
@@ -71813,7 +71852,8 @@
             }
         },
         "Twd":12,
-        "Type":"Ally"
+        "Type":"Ally",
+        "Aka":"Shadow Court Satyr (Changeling)"
     },
     "101738":{
         "ASCII Name":"Shadow Feint",
@@ -73779,7 +73819,8 @@
             }
         },
         "Twd":3,
-        "Type":"Action"
+        "Type":"Action",
+        "Aka":"Sixth Tradition: Destruction, The"
     },
     "101789":{
         "ASCII Name":"Skaald",
@@ -80031,7 +80072,8 @@
             }
         },
         "Twd":0,
-        "Type":"Ally"
+        "Type":"Ally",
+        "Aka":"Tara, The Hollow One (Mage)"
     },
     "101938":{
         "ASCII Name":"Target Hand",
@@ -81374,7 +81416,8 @@
             }
         },
         "Twd":13,
-        "Type":"Ally"
+        "Type":"Ally",
+        "Aka":"Thadius Zho, Mage"
     },
     "101964":{
         "ASCII Name":"Thanks for the Donation",
@@ -81799,7 +81842,8 @@
             }
         },
         "Twd":46,
-        "Type":"Action"
+        "Type":"Action",
+        "Aka":"Third Tradition: Progeny, The"
     },
     "101974":{
         "ASCII Name":"Thirst",
@@ -84704,7 +84748,8 @@
             }
         },
         "Twd":11,
-        "Type":"Ally"
+        "Type":"Ally",
+        "Aka":"Tutu the Doubly Evil One (Bane Mummy)"
     },
     "102049":{
         "ASCII Name":"Twilight Camp",
@@ -86977,7 +87022,8 @@
             }
         },
         "Twd":84,
-        "Type":"Ally"
+        "Type":"Ally",
+        "Aka":"Veneficti (Mage)"
     },
     "102104":{
         "ASCII Name":"Venenation",
@@ -87289,7 +87335,8 @@
             }
         },
         "Twd":34,
-        "Type":"Political Action"
+        "Type":"Political Action",
+        "Aka":"Venture Justicar"
     },
     "102112":{
         "ASCII Name":"Vermin Channel",
@@ -89925,7 +89972,8 @@
             }
         },
         "Twd":44,
-        "Type":"Ally"
+        "Type":"Ally",
+        "Aka":"Wendell Delburton (Hunter)"
     },
     "102174":{
         "ASCII Name":"Werewolf Pack",
@@ -90702,7 +90750,8 @@
             }
         },
         "Twd":6,
-        "Type":"Equipment"
+        "Type":"Equipment",
+        "Aka":"Stake"
     },
     "102193":{
         "ASCII Name":"World's a Canvas, The",

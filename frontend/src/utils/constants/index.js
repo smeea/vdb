@@ -37,6 +37,7 @@ export const cardtypeSorted = [
   'Reflex',
 ];
 
+export const AKA = 'Aka';
 export const ALL = 'All';
 export const ALLOWED = 'ALLOWED';
 export const ANALYZE = 'analyze';

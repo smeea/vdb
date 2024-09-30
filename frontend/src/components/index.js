@@ -249,6 +249,7 @@ export { default as ResultLegalIcon } from './result_common/ResultLegalIcon.jsx'
 export { default as ResultMiscImage } from './result_common/ResultMiscImage.jsx';
 export { default as ResultModal } from './result_common/ResultModal.jsx';
 export { default as ResultName } from './result_common/ResultName.jsx';
+export { default as ResultNameAka } from './result_common/ResultNameAka.jsx';
 export { default as ResultPreconClan } from './result_common/ResultPreconClan.jsx';
 export { default as ResultUsed } from './result_common/ResultUsed.jsx';
 

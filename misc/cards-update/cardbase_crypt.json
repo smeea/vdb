@@ -3552,7 +3552,8 @@
             }
         },
         "Title":"",
-        "Twd":10
+        "Twd":10,
+        "Aka":"Andrei Puxton"
     },
     "200085":{
         "ASCII Name":"Andrew Emory",
@@ -7545,7 +7546,8 @@
             }
         },
         "Title":"",
-        "Twd":26
+        "Twd":26,
+        "Aka":"Beatrice \"Oracle171\" Tremblay"
     },
     "200182":{
         "ASCII Name":"Beauregard Krueller",
@@ -9863,7 +9865,8 @@
             }
         },
         "Title":"",
-        "Twd":23
+        "Twd":23,
+        "Aka":"Camille Devereux; Raven"
     },
     "200241":{
         "ASCII Name":"Cao Nguyen",
@@ -10711,7 +10714,8 @@
             }
         },
         "Title":"",
-        "Twd":64
+        "Twd":64,
+        "Aka":"C\u00e9l\u00e8ste Lamontagne"
     },
     "200260":{
         "ASCII Name":"Celine Chevalier",
@@ -17738,7 +17742,8 @@
             }
         },
         "Title":"",
-        "Twd":3
+        "Twd":3,
+        "Aka":"Etienne Fauberge"
     },
     "200440":{
         "ASCII Name":"Etrius",
@@ -19297,7 +19302,8 @@
             }
         },
         "Title":"",
-        "Twd":70
+        "Twd":70,
+        "Aka":"Francois \"Warden\" Loehr"
     },
     "200480":{
         "ASCII Name":"Frank Litzpar",
@@ -31636,7 +31642,8 @@
             }
         },
         "Title":"",
-        "Twd":13
+        "Twd":13,
+        "Aka":"L'Epuisette"
     },
     "200801":{
         "ASCII Name":"La Viuda Blanca",
@@ -50209,7 +50216,8 @@
             }
         },
         "Title":"",
-        "Twd":14
+        "Twd":14,
+        "Aka":"S\u00e9bastian Goulet"
     },
     "201258":{
         "ASCII Name":"Sebastien Goulet",
@@ -50243,7 +50251,8 @@
             }
         },
         "Title":"",
-        "Twd":13
+        "Twd":13,
+        "Aka":"S\u00e9bastian Goulet"
     },
     "201259":{
         "ASCII Name":"Sela",

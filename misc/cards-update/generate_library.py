@@ -50,7 +50,6 @@ artist_fixes = {
 }
 
 integer_fields = ["Id"]
-useless_fields = ["Aka", "Flavor Text"]
 
 def generate_artists(csv_cards, artists_file, artists_file_min):
     artists = set()
@@ -231,10 +230,6 @@ def generate_card(card):
                             date = f"{precon[0:4]}-{precon[4:6]}-{precon[6:8]}"
                             card["Set"][set[0]][date] = True
 
-    # Remove useless fields
-    for k in useless_fields:
-        del card[k]
-
     artists = []
     for artist in re.split("; | & ", card["Artist"]):
         if artist in artist_fixes.keys():
@@ -325,6 +320,9 @@ def generate_card(card):
     }
     if card["Type"] == 'Master' and ('trifle' in card["Card Text"].lower()):
         card_ready["Trifle"] = True
+
+    if card['Aka']:
+        card_ready["Aka"] = card['Aka']
 
     return card_ready
 
