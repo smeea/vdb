@@ -11,15 +11,40 @@ const ConditionalTooltipOrModal = ({
   size,
   className = '',
   centered = true,
+  onClick,
+  onClose,
 }) => {
   const [showModal, setShowModal] = useState();
+
+  const handleClick = () => {
+    onClick();
+    setShowModal(true);
+  };
+
+  const handleClose = () => {
+    onClose();
+    setShowModal(false);
+  };
 
   return (
     <>
       {isModal ? (
-        <div className={className} onClick={() => setShowModal(true)}>
-          {children}
-        </div>
+        <>
+          <div className={className} onClick={handleClick}>
+            {children}
+          </div>
+          {showModal && (
+            <Modal
+              noPadding={noPadding}
+              title={title}
+              size={size}
+              handleClose={handleClose}
+              centered={centered}
+            >
+              {overlay}
+            </Modal>
+          )}
+        </>
       ) : (
         <Tooltip
           noPadding={noPadding}
@@ -30,17 +55,6 @@ const ConditionalTooltipOrModal = ({
         >
           {children}
         </Tooltip>
-      )}
-      {showModal && (
-        <Modal
-          noPadding={noPadding}
-          title={title}
-          size={size}
-          handleClose={() => setShowModal(false)}
-          centered={centered}
-        >
-          {overlay}
-        </Modal>
       )}
     </>
   );

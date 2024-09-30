@@ -16,8 +16,15 @@ import { useApp, searchResults } from '@/context';
 
 const Cards = () => {
   const params = useParams();
-  const { cryptCardBase, libraryCardBase, showImage, toggleShowImage, isMobile, playtestMode } =
-    useApp();
+  const {
+    showFloatingButtons,
+    cryptCardBase,
+    libraryCardBase,
+    showImage,
+    toggleShowImage,
+    isMobile,
+    playtestMode,
+  } = useApp();
 
   const card = useSnapshot(searchResults).quickCard;
   const navigate = useNavigate();
@@ -61,11 +68,13 @@ const Cards = () => {
                         <ResultLayoutText card={card} setCard={handleSetCard} noClose />
                       </div>
                     )}
-                    <div className="fixed z-30">
-                      <ButtonFloat onClick={toggleShowImage} variant="primary">
-                        <ArrowRepeat width="40" height="40" viewBox="0 0 16 16" />
-                      </ButtonFloat>
-                    </div>
+                    {showFloatingButtons && (
+                      <div className="fixed z-30">
+                        <ButtonFloat onClick={toggleShowImage} variant="primary">
+                          <ArrowRepeat width="40" height="40" viewBox="0 0 16 16" />
+                        </ButtonFloat>
+                      </div>
+                    )}
                   </div>
                 ) : (
                   <div className="flex">

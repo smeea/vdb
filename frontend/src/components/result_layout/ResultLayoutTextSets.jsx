@@ -33,7 +33,7 @@ const PreconsDetailed = ({ sets, set }) => {
   });
 };
 
-const PopoverSet = ({ card, set, handleClose }) => {
+const PopoverSet = ({ card, set }) => {
   return (
     <div className="flex max-sm:flex-col sm:gap-2">
       <div className="flex flex-col gap-1 p-3 sm:min-w-[220px] sm:p-4">
@@ -47,18 +47,13 @@ const PopoverSet = ({ card, set, handleClose }) => {
           </ul>
         )}
       </div>
-      <CardImage
-        size="sm"
-        card={card}
-        set={set !== POD && set.toLowerCase()}
-        onClick={handleClose}
-      />
+      <CardImage size="sm" card={card} set={set !== POD && set.toLowerCase()} />
     </div>
   );
 };
 
 const ResultLayoutTextSets = ({ card }) => {
-  const { playtestMode, isMobile } = useApp();
+  const { setShowFloatingButtons, playtestMode, isMobile } = useApp();
   const byDate = (a, b) => setsAndPrecons[a].date > setsAndPrecons[b].date;
 
   return (
@@ -72,6 +67,8 @@ const ResultLayoutTextSets = ({ card }) => {
           return (
             <div className="inline-block whitespace-nowrap" key={set}>
               <ConditionalTooltipOrModal
+                onClick={() => setShowFloatingButtons(false)}
+                onClose={() => setShowFloatingButtons(true)}
                 isModal={isMobile}
                 overlay={<PopoverSet card={card} set={set} />}
                 placement="bottom"
