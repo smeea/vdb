@@ -13,7 +13,7 @@ import { useApp } from '@/context';
 import { ANY } from '@/utils/constants';
 
 const LibrarySearchFormDiscipline = ({ value, onChange, searchForm }) => {
-  const { playtestMode, isXWide, isMobile } = useApp();
+  const { isXWide, isMobile } = useApp();
   const maxMenuHeight = isXWide ? 500 : 350;
   const name = 'discipline';
   const disciplinesExtendedList = [
@@ -23,35 +23,38 @@ const LibrarySearchFormDiscipline = ({ value, onChange, searchForm }) => {
     'Striga',
   ].toSorted();
 
-  const options = ['ANY', 'Not Required', ...disciplinesExtendedList, ...Object.keys(virtuesList)]
-    .filter((discipline) => playtestMode || discipline !== 'Oblivion')
-    .map((i) => {
-      if (['ANY', 'Not Required'].includes(i)) {
-        return {
-          value: i.toLowerCase(),
-          name: name,
-          label: (
-            <div className="flex items-center">
-              <div className="flex w-[40px]" />
-              {i}
+  const options = [
+    'ANY',
+    'Not Required',
+    ...disciplinesExtendedList,
+    ...Object.keys(virtuesList),
+  ].map((i) => {
+    if (['ANY', 'Not Required'].includes(i)) {
+      return {
+        value: i.toLowerCase(),
+        name: name,
+        label: (
+          <div className="flex items-center">
+            <div className="flex w-[40px]" />
+            {i}
+          </div>
+        ),
+      };
+    } else {
+      return {
+        value: i.toLowerCase(),
+        name: name,
+        label: (
+          <div className="flex items-center">
+            <div className="flex w-[40px] justify-center">
+              <ResultDisciplineImage value={i} size="lg" />
             </div>
-          ),
-        };
-      } else {
-        return {
-          value: i.toLowerCase(),
-          name: name,
-          label: (
-            <div className="flex items-center">
-              <div className="flex w-[40px] justify-center">
-                <ResultDisciplineImage value={i} size="lg" />
-              </div>
-              {i}
-            </div>
-          ),
-        };
-      }
-    });
+            {i}
+          </div>
+        ),
+      };
+    }
+  });
 
   return (
     <>
