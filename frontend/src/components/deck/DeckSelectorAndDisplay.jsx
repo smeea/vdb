@@ -45,8 +45,8 @@ const DeckSelectorAndDisplay = () => {
             title="Hide Deck Panel"
             variant="primary"
             onClick={toggleAddMode}
-            icon={addMode ? <EyeSlashFill /> : <EyeFill />}
-            text={addMode ? null : 'Show Deck'}
+            icon={addMode ? <EyeSlashFill /> : null}
+            text={addMode ? null : <div className="whitespace-nowrap">Show Deck</div>}
           />
         )}
       </div>

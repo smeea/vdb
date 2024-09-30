@@ -34,7 +34,7 @@ const ButtonIconed = ({
       noOutline={noOutline}
     >
       <div className="flex items-center justify-center gap-2">
-        <div className={`flex ${iconStyle[variant]} items-center`}>{icon}</div>
+        {icon && <div className={`flex ${iconStyle[variant]} items-center`}>{icon}</div>}
         {text && <div className="font-normal">{text}</div>}
       </div>
     </Button>
