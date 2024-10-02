@@ -16,6 +16,25 @@ import {
 import { getLegality } from '@/utils';
 import { AKA, PLAYTEST } from '@/utils/constants';
 
+const Group = ({ card, noClose, handleClose, inPopover }) => {
+  const { isNarrow } = useApp();
+
+  return (
+    <div className="flex items-center space-x-3">
+      <ResultCryptGroup value={card.Group} />
+      <div
+        className={
+          noClose || inPopover || isNarrow
+            ? 'hidden max-h-0 max-w-0 opacity-0'
+            : 'flex justify-center'
+        }
+      >
+        <ButtonCloseModal handleClick={handleClose} />
+      </div>
+    </div>
+  );
+};
+
 const ResultCryptLayoutText = ({ card, setCard, handleClose, noClose, inPopover }) => {
   const { isNarrow, isMobile, cryptCardBase } = useApp();
   const legalRestriction = getLegality(card);
@@ -23,58 +42,63 @@ const ResultCryptLayoutText = ({ card, setCard, handleClose, noClose, inPopover 
   return (
     <div className="space-y-3">
       <div className="flex items-center justify-between whitespace-nowrap">
-        <div className="flex items-center justify-between gap-3 whitespace-nowrap">
-          <div className="flex items-center gap-2 whitespace-nowrap">
-            <ResultClanImage value={card.Clan} />
-            <div className="space-x-2 font-bold text-fgName dark:text-fgNameDark">
-              <ResultName card={card} />
-              {card.Adv[1] && (
-                <ConditionalTooltip
-                  overlay={<CardPopover card={cryptCardBase[card.Adv[1]]} />}
-                  disabled={isMobile}
-                  noPadding
-                >
-                  <div
-                    className="inline text-fgSecondary dark:text-fgSecondaryDark"
-                    onClick={() => setCard(cryptCardBase[card.Adv[1]])}
+        <div
+          className={`${isMobile || inPopover ? 'basis-full flex-col items-start' : 'items-center'} flex justify-between gap-1 whitespace-nowrap sm:gap-3`}
+        >
+          <div
+            className={`flex items-center justify-between gap-2 whitespace-nowrap ${isMobile || inPopover ? 'w-full' : ''}`}
+          >
+            <div className="flex items-center gap-2">
+              <ResultClanImage value={card.Clan} />
+              <div className="space-x-2 font-bold text-fgName dark:text-fgNameDark">
+                <ResultName card={card} />
+                {card.Adv[1] && (
+                  <ConditionalTooltip
+                    overlay={<CardPopover card={cryptCardBase[card.Adv[1]]} />}
+                    disabled={isMobile}
+                    noPadding
                   >
-                    {inPopover ? (
-                      <>
-                        {!card.Adv[0] && (
-                          <div className="inline-flex items-center">
-                            [has
-                            <img
-                              className="ml-1 inline-flex items-center"
-                              src={`${import.meta.env.VITE_BASE_URL}/images/misc/advanced.svg`}
-                              title="Advanced"
-                              width="12"
-                            />
-                            ]
-                          </div>
-                        )}
-                      </>
-                    ) : (
-                      <>[see {`${card.Adv[0] ? 'Base' : 'Adv'}`}]</>
-                    )}
-                  </div>
-                </ConditionalTooltip>
-              )}
+                    <div
+                      className="inline text-fgSecondary dark:text-fgSecondaryDark"
+                      onClick={() => setCard(cryptCardBase[card.Adv[1]])}
+                    >
+                      {inPopover ? (
+                        <>
+                          {!card.Adv[0] && (
+                            <div className="inline-flex items-center">
+                              [has
+                              <img
+                                className="ml-1 inline-flex items-center"
+                                src={`${import.meta.env.VITE_BASE_URL}/images/misc/advanced.svg`}
+                                title="Advanced"
+                                width="12"
+                              />
+                              ]
+                            </div>
+                          )}
+                        </>
+                      ) : (
+                        <>[see {`${card.Adv[0] ? 'Base' : 'Adv'}`}]</>
+                      )}
+                    </div>
+                  </ConditionalTooltip>
+                )}
+              </div>
             </div>
+            {(isMobile || inPopover) && (
+              <Group
+                card={card}
+                noClose={noClose}
+                handleClose={handleClose}
+                inPopover={inPopover}
+              />
+            )}
           </div>
           {card[AKA] && <ResultNameAka card={card} />}
         </div>
-        <div className="flex items-center space-x-3">
-          <ResultCryptGroup value={card.Group} />
-          <div
-            className={
-              noClose || inPopover || isNarrow
-                ? 'hidden max-h-0 max-w-0 opacity-0'
-                : 'flex justify-center'
-            }
-          >
-            <ButtonCloseModal handleClick={handleClose} />
-          </div>
-        </div>
+        {!(isMobile || inPopover) && (
+          <Group card={card} noClose={noClose} handleClose={handleClose} inPopover={inPopover} />
+        )}
       </div>
       <Hr />
       <div>
