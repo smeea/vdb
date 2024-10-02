@@ -178,6 +178,14 @@ def generate_card(card):
                         card["Set"]["Anthology"] = {}
                         card["Set"]["Anthology I"] = {}
 
+
+            elif set[0] == "V5":
+                for precon in precons:
+                    if "PL" in precon:
+                        card["Set"]["V5L"] = {}
+                    else:
+                        card["Set"]["V5"] = {}
+
             elif set[0] not in ["AU", "DM", "TU"] and set[0] not in card["Set"]:
                 card["Set"][set[0]] = {}
 
@@ -204,6 +212,13 @@ def generate_card(card):
                     else:
                         card["Set"]["Anthology I"][""] = precon
                         card["Set"]["Anthology"][""] = precon
+
+            # Split Lasombra from V5 (2020) set
+            elif set[0] == "V5":
+                for precon in precons:
+                    set_name = 'V5' if 'PL' not in precon else 'V5L'
+                    if m := re.match(r"^(\D+)([0-9]+)?", precon):
+                        card["Set"][set_name][m.group(1)] = m.group(2)
 
             else:
                 for precon in precons:

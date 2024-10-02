@@ -4,7 +4,7 @@ import { useSnapshot } from 'valtio';
 import { set, setMany, getMany, update } from 'idb-keyval';
 import { playtestServices, storageServices, userServices, cardServices } from '@/services';
 import { useDeck, useWindowSize } from '@/hooks';
-import { byTimestamp } from '@/utils';
+import { deepClone, byTimestamp } from '@/utils';
 import {
   CAPACITY_MIN_MAX,
   QUANTITYx,
@@ -137,7 +137,7 @@ export const AppProvider = ({ children }) => {
       setLocalizedLibrary({ [EN]: data.nativeLibrary });
 
       cardServices.getPreconDecks(data.crypt, data.library).then((preconData) => {
-        if (isIndexedDB) set('preconDecks', preconData);
+        if (isIndexedDB) set('preconDecks', deepClone(preconData));
         setPreconDecks(preconData);
       });
     });

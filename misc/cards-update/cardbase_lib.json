@@ -1895,6 +1895,31 @@
         "Twd":93,
         "Type":"Action"
     },
+    "102274":{
+        "ASCII Name":"Amici Noctis",
+        "Artist":[
+            "Krasen Maximov"
+        ],
+        "Banned":"",
+        "Blood Cost":"",
+        "Burn Option":"",
+        "Card Text":"Only usable after resolution of a political action whose referendum passed.\nFor each vote by which the referendum passed, distribute 1 blood from the blood bank among the ready Lasombra you control and your pool. A vampire cannot gain more than 1 blood this way. You cannot gain more than 1 pool this way or more than 2 pool this way if this acting Lasombra is titled.",
+        "Clan":"Lasombra",
+        "Conviction Cost":"",
+        "Discipline":"",
+        "Id":102274,
+        "Name":"Amici Noctis",
+        "Pool Cost":"",
+        "Requirement":"",
+        "Rulings":[],
+        "Set":{
+            "V5L":{
+                "PL":"4"
+            }
+        },
+        "Twd":0,
+        "Type":"Action Modifier"
+    },
     "100047":{
         "ASCII Name":"Amria",
         "Artist":[
@@ -2694,6 +2719,9 @@
             },
             "FB":{
                 "PV":"1"
+            },
+            "V5L":{
+                "PL":"1"
             },
             "V5":{
                 "PV":"1"
@@ -3737,6 +3765,31 @@
         },
         "Twd":7,
         "Type":"Ally"
+    },
+    "102275":{
+        "ASCII Name":"Arms of Ahriman",
+        "Artist":[
+            "Mark Kelly"
+        ],
+        "Banned":"",
+        "Blood Cost":"",
+        "Burn Option":"",
+        "Card Text":"[obl] Additional strike (limited).\n[OBL] Strike: dodge, with 1 additional strike (limited).",
+        "Clan":"",
+        "Conviction Cost":"",
+        "Discipline":"Oblivion",
+        "Id":102275,
+        "Name":"Arms of Ahriman",
+        "Pool Cost":"",
+        "Requirement":"",
+        "Rulings":[],
+        "Set":{
+            "V5L":{
+                "PL":"2"
+            }
+        },
+        "Twd":0,
+        "Type":"Combat"
     },
     "100091":{
         "ASCII Name":"Arms of the Abyss",
@@ -11770,6 +11823,9 @@
         "Set":{
             "30th":{
                 "":"5"
+            },
+            "V5L":{
+                "PL":"2"
             }
         },
         "Twd":0,
@@ -21054,6 +21110,9 @@
             "FB":{
                 "PV":"4"
             },
+            "V5L":{
+                "PL":"6"
+            },
             "V5":{
                 "PM":"5",
                 "PTr":"4",
@@ -25982,7 +26041,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique location.\nLock to give a Lasombra you control +1 stealth.",
+        "Card Text":"Unique location.\nYou can lock this location to give a Lasombra you control +1 stealth.",
         "Clan":"Lasombra",
         "Conviction Cost":"",
         "Discipline":"",
@@ -26003,6 +26062,9 @@
             },
             "POD":{
                 "DTC":true
+            },
+            "V5L":{
+                "PL":"1"
             }
         },
         "Twd":121,
@@ -28008,6 +28070,31 @@
         },
         "Twd":0,
         "Type":"Combat"
+    },
+    "102276":{
+        "ASCII Name":"Expulsion",
+        "Artist":[
+            "Camille D\u00e9farge"
+        ],
+        "Banned":"",
+        "Blood Cost":"",
+        "Burn Option":"",
+        "Card Text":"Requires a primogen or prince.\nChoose up to two minions. Successful referendum means the chosen minions cannot play reaction cards, block or cast votes or ballots this turn.",
+        "Clan":"",
+        "Conviction Cost":"",
+        "Discipline":"",
+        "Id":102276,
+        "Name":"Expulsion",
+        "Pool Cost":"",
+        "Requirement":"primogen,prince,camarilla",
+        "Rulings":[],
+        "Set":{
+            "V5L":{
+                "PL":"2"
+            }
+        },
+        "Twd":0,
+        "Type":"Political Action"
     },
     "100675":{
         "ASCII Name":"Extortion",
@@ -35223,6 +35310,9 @@
                 "PTr":"6",
                 "PV":"6"
             },
+            "V5L":{
+                "PL":"7"
+            },
             "V5":{
                 "PM":"12",
                 "PTr":"12"
@@ -40900,6 +40990,9 @@
             "25th":{
                 "":"1"
             },
+            "V5L":{
+                "PL":"1"
+            },
             "V5":{
                 "PV":"1"
             },
@@ -43872,6 +43965,9 @@
             "FB":{
                 "PTo":"4",
                 "PV":"5"
+            },
+            "V5L":{
+                "PL":"3"
             },
             "V5":{
                 "PTo":"8",
@@ -50366,7 +50462,7 @@
         "Type":"Action Modifier"
     },
     "101215":{
-        "ASCII Name":"Mind Rape",
+        "ASCII Name":"Puppet Master",
         "Artist":[
             "Scott M. Bakal",
             "Brian LeBlanc"
@@ -50374,12 +50470,12 @@
         "Banned":"",
         "Blood Cost":"2",
         "Burn Option":"",
-        "Card Text":"[dom] (D) Bleed with +2 bleed.\n[DOM] (D) Lock a younger vampire and put this card on that vampire; you still control this card. This vampire does not unlock as normal. During your next minion phase, burn this card to unlock this vampire and take control of him or her until the end of your turn.",
+        "Card Text":"[dom] (D) Bleed with +2 bleed.\n[DOM] (D) Put this card on a younger vampire and lock them; you still control this card. The attached vampire does not unlock as normal. During your next minion phase, burn this card to unlock the attached vampire and take control of them until the end of your turn.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Dominate",
         "Id":101215,
-        "Name":"Mind Rape",
+        "Name":"Puppet Master",
         "Pool Cost":"",
         "Requirement":"",
         "Rulings":[
@@ -50435,10 +50531,14 @@
             },
             "KoT":{
                 "R":true
+            },
+            "V5L":{
+                "PL":"2"
             }
         },
         "Twd":88,
-        "Type":"Action"
+        "Type":"Action",
+        "Aka":"Mind Rape"
     },
     "101216":{
         "ASCII Name":"Mind Tricks",
@@ -54613,6 +54713,34 @@
         "Twd":165,
         "Type":"Master"
     },
+    "102277":{
+        "ASCII Name":"Oblivion",
+        "Artist":[
+            "Raquel Cornejo"
+        ],
+        "Banned":"",
+        "Blood Cost":"",
+        "Burn Option":"",
+        "Card Text":"Discipline.\nPut this card on a vampire. This vampire gets +1 level of Oblivion [obl] and +1 capacity. Cannot be put on a vampire with superior Oblivion [OBL].",
+        "Clan":"",
+        "Conviction Cost":"",
+        "Discipline":"",
+        "Id":102277,
+        "Name":"Oblivion",
+        "Pool Cost":"",
+        "Requirement":"",
+        "Rulings":[],
+        "Set":{
+            "V5L":{
+                "PL":"1"
+            },
+            "PLAYTEST":{
+                "PH":1
+            }
+        },
+        "Twd":0,
+        "Type":"Master"
+    },
     "101311":{
         "ASCII Name":"Obsession",
         "Artist":[
@@ -54939,6 +55067,31 @@
         },
         "Twd":5,
         "Type":"Retainer"
+    },
+    "102278":{
+        "ASCII Name":"Ominous Chorus",
+        "Artist":[
+            "Anastasiia Horbunova"
+        ],
+        "Banned":"",
+        "Blood Cost":"",
+        "Burn Option":"",
+        "Card Text":"Only usable during the polling step of a political action.\nThis Lasombra gets +3 votes.",
+        "Clan":"Lasombra",
+        "Conviction Cost":"",
+        "Discipline":"",
+        "Id":102278,
+        "Name":"Ominous Chorus",
+        "Pool Cost":"",
+        "Requirement":"",
+        "Rulings":[],
+        "Set":{
+            "V5L":{
+                "PL":"4"
+            }
+        },
+        "Twd":0,
+        "Type":"Action Modifier/Reaction"
     },
     "101321":{
         "ASCII Name":"On the Qui Vive",
@@ -56404,6 +56557,9 @@
             "Promo":{
                 "2020-05-11":true
             },
+            "V5L":{
+                "PL":"2"
+            },
             "V5":{
                 "PTo":"4",
                 "PV":"5"
@@ -56530,6 +56686,36 @@
         },
         "Twd":39,
         "Type":"Reaction"
+    },
+    "102279":{
+        "ASCII Name":"Pass Through Shadow",
+        "Artist":[
+            "Paolo Puggioni"
+        ],
+        "Banned":"",
+        "Blood Cost":"1",
+        "Burn Option":"",
+        "Card Text":"[obl] Strike: combat ends.\n[OBL] Strike: combat ends. After combat ends, put this card on this vampire. This vampire can burn this card to get +1 stealth.",
+        "Clan":"",
+        "Conviction Cost":"",
+        "Discipline":"Oblivion",
+        "Id":102279,
+        "Name":"Pass Through Shadow",
+        "Pool Cost":"",
+        "Requirement":"",
+        "Rulings":[],
+        "Set":{
+            "V5L":{
+                "PL":"4"
+            },
+            "PLAYTEST":{
+                "SDS":3,
+                "NH":4,
+                "PH":3
+            }
+        },
+        "Twd":0,
+        "Type":"Combat"
     },
     "101356":{
         "ASCII Name":"Passion",
@@ -58629,7 +58815,8 @@
         "ASCII Name":"Political Hunting Ground",
         "Artist":[
             "John Scotello",
-            "Melissa Uran"
+            "Melissa Uran",
+            "Gin\u00e9s Qui\u00f1onero"
         ],
         "Banned":"",
         "Blood Cost":"",
@@ -58659,6 +58846,9 @@
             },
             "POD":{
                 "DTC":true
+            },
+            "V5L":{
+                "PL":"1"
             }
         },
         "Twd":71,
@@ -59323,7 +59513,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique.\nPut this card in play. Lock during the polling step of a political action to give each Lasombra you control +1 vote.",
+        "Card Text":"Unique.\nPut this card in play. During the polling step of a political action, you can lock this card to give each Lasombra you control +1 vote.",
         "Clan":"Lasombra",
         "Conviction Cost":"",
         "Discipline":"",
@@ -59354,6 +59544,9 @@
             },
             "POD":{
                 "DTC":true
+            },
+            "V5L":{
+                "PL":"1"
             }
         },
         "Twd":51,
@@ -70324,7 +70517,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Requires a prince or justicar.\n+2 intercept. Also usable by a locked prince or justicar, even if intercept is not yet needed, to burn 1 blood to unlock and attempt to block with +2 intercept.",
+        "Card Text":"Requires a prince or justicar.\n[REACTION] +2 intercept.\n[REACTION] Only usable by a locked prince or justicar. This vampire burns 1 blood to unlock and attempt to block with +2 intercept, even if intercept is not yet needed.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -70388,6 +70581,9 @@
             },
             "FB":{
                 "PV":"2"
+            },
+            "V5L":{
+                "PL":"6"
             },
             "V5":{
                 "PTo":"4",
@@ -71753,6 +71949,64 @@
         },
         "Twd":11,
         "Type":"Action Modifier/Combat"
+    },
+    "102280":{
+        "ASCII Name":"Shadow Cast",
+        "Artist":[
+            "Yanis Cardin"
+        ],
+        "Banned":"",
+        "Blood Cost":"",
+        "Burn Option":"",
+        "Card Text":"[obl] +1 stealth.\n[OBL] Only usable after resolution of a successful directed action. Put this card on this vampire. During an action directed at the same Methuselah or same set of Methuselahs, this vampire can burn this card to get +1 stealth.",
+        "Clan":"",
+        "Conviction Cost":"",
+        "Discipline":"Oblivion",
+        "Id":102280,
+        "Name":"Shadow Cast",
+        "Pool Cost":"",
+        "Requirement":"",
+        "Rulings":[],
+        "Set":{
+            "V5L":{
+                "PL":"4"
+            },
+            "PLAYTEST":{
+                "PH":3
+            }
+        },
+        "Twd":0,
+        "Type":"Action Modifier"
+    },
+    "102281":{
+        "ASCII Name":"Shadow Cloak",
+        "Artist":[
+            "Gabriel de G\u00f3es Figueiredo"
+        ],
+        "Banned":"",
+        "Blood Cost":"",
+        "Burn Option":"",
+        "Card Text":"[obl] +1 stealth.\n[OBL] Only usable after resolution of a successful action. Put this card on this vampire. Minions without Auspex [aus] cannot perform actions directed at this vampire. During your unlock phase, burn this card.",
+        "Clan":"",
+        "Conviction Cost":"",
+        "Discipline":"Oblivion",
+        "Id":102281,
+        "Name":"Shadow Cloak",
+        "Pool Cost":"",
+        "Requirement":"",
+        "Rulings":[],
+        "Set":{
+            "V5L":{
+                "PL":"4"
+            },
+            "PLAYTEST":{
+                "SDS":3,
+                "NH":2,
+                "PH":3
+            }
+        },
+        "Twd":0,
+        "Type":"Action Modifier"
     },
     "101737":{
         "ASCII Name":"Shadow Court Satyr",
@@ -74432,7 +74686,7 @@
         "Banned":"",
         "Blood Cost":"1",
         "Burn Option":"",
-        "Card Text":"Only usable when the action is announced.\n[dom] Choose a locked vampire. He or she cannot attempt to block this action.\n[DOM] Minions cannot unlock during this action.",
+        "Card Text":"Only usable as the action is announced.\n[dom] Choose a locked vampire. The chosen vampire cannot block this action.\n[DOM] During this action, minions cannot unlock.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Dominate",
@@ -74469,6 +74723,9 @@
             },
             "Third":{
                 "PTr":1
+            },
+            "V5L":{
+                "PL":"2"
             }
         },
         "Twd":43,
@@ -77924,6 +78181,35 @@
         "Twd":15,
         "Type":"Combat"
     },
+    "102282":{
+        "ASCII Name":"Stygian Shroud",
+        "Artist":[
+            "Phill Simpson"
+        ],
+        "Banned":"",
+        "Blood Cost":"",
+        "Burn Option":"",
+        "Card Text":"Only usable if a minion attempts to block.\n[obl] The blocking minion gets -1 intercept.\n[OBL] Burn 1 blood to have that attempt fail; the blocking minion cannot attempt to block this action again.",
+        "Clan":"",
+        "Conviction Cost":"",
+        "Discipline":"Oblivion",
+        "Id":102282,
+        "Name":"Stygian Shroud",
+        "Pool Cost":"",
+        "Requirement":"",
+        "Rulings":[],
+        "Set":{
+            "V5L":{
+                "PL":"4"
+            },
+            "PLAYTEST":{
+                "NH":2,
+                "PH":3
+            }
+        },
+        "Twd":0,
+        "Type":"Action Modifier"
+    },
     "101890":{
         "ASCII Name":"Subdued by the Blood",
         "Artist":[
@@ -78185,7 +78471,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Out-of-turn.\nCancel a master card played by another Methuselah as it is played, and its cost is not paid.",
+        "Card Text":"Out-of-turn.\nCancel a master card as it is played by another Methuselah, and its cost is not paid.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"",
@@ -78275,6 +78561,9 @@
             },
             "FB":{
                 "PM":"1"
+            },
+            "V5L":{
+                "PL":"2"
             }
         },
         "Twd":675,
@@ -82968,6 +83257,31 @@
         "Twd":47,
         "Type":"Action Modifier/Reaction"
     },
+    "102283":{
+        "ASCII Name":"Touch of Oblivion",
+        "Artist":[
+            "Paolo Puggioni"
+        ],
+        "Banned":"",
+        "Blood Cost":"2",
+        "Burn Option":"",
+        "Card Text":"[obl] Strike: put this card on the opposing minion with 2 counters. The attached minion burns 1 counter from this card instead of unlocking as normal. If this card has no counters, burn it.\n[OBL] Strike: send the opposing vampire to torpor or burn the opposing ally.",
+        "Clan":"",
+        "Conviction Cost":"",
+        "Discipline":"Oblivion",
+        "Id":102283,
+        "Name":"Touch of Oblivion",
+        "Pool Cost":"",
+        "Requirement":"",
+        "Rulings":[],
+        "Set":{
+            "V5L":{
+                "PL":"2"
+            }
+        },
+        "Twd":0,
+        "Type":"Combat"
+    },
     "101999":{
         "ASCII Name":"Touch of Pain",
         "Artist":[
@@ -84526,6 +84840,34 @@
         },
         "Twd":1,
         "Type":"Political Action"
+    },
+    "102284":{
+        "ASCII Name":"Truth in Darkness",
+        "Artist":[
+            "Noora Hirvonen"
+        ],
+        "Banned":"",
+        "Blood Cost":"",
+        "Burn Option":"",
+        "Card Text":"[obl] +1 intercept.\n[OBL] As above, and if this vampire blocks, they can burn 1 blood to unlock after block resolution.",
+        "Clan":"",
+        "Conviction Cost":"",
+        "Discipline":"Oblivion",
+        "Id":102284,
+        "Name":"Truth in Darkness",
+        "Pool Cost":"",
+        "Requirement":"",
+        "Rulings":[],
+        "Set":{
+            "V5L":{
+                "PL":"2"
+            },
+            "PLAYTEST":{
+                "PH":3
+            }
+        },
+        "Twd":0,
+        "Type":"Reaction"
     },
     "102043":{
         "ASCII Name":"Truth in Ink",
@@ -87716,6 +88058,9 @@
             "25th":{
                 "":"5"
             },
+            "V5L":{
+                "PL":"3"
+            },
             "V5":{
                 "PTo":"6"
             },
@@ -89999,6 +90344,36 @@
         },
         "Twd":0,
         "Type":"Ally"
+    },
+    "102285":{
+        "ASCII Name":"Where the Veil Thins",
+        "Artist":[
+            "Camille D\u00e9farge"
+        ],
+        "Banned":"",
+        "Blood Cost":"",
+        "Burn Option":"",
+        "Card Text":"[obl] +1 stealth.\n[OBL] As above, and minions without Oblivion [obl] must burn 1 blood to attempt to block (allies cannot burn blood).",
+        "Clan":"",
+        "Conviction Cost":"",
+        "Discipline":"Oblivion",
+        "Id":102285,
+        "Name":"Where the Veil Thins",
+        "Pool Cost":"",
+        "Requirement":"",
+        "Rulings":[],
+        "Set":{
+            "V5L":{
+                "PL":"4"
+            },
+            "PLAYTEST":{
+                "SDS":3,
+                "NH":2,
+                "PH":3
+            }
+        },
+        "Twd":0,
+        "Type":"Action Modifier"
     },
     "102175":{
         "ASCII Name":"Whispers from the Dead",

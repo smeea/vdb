@@ -1107,6 +1107,35 @@
         "Title":"",
         "Twd":3
     },
+    "201708":{
+        "ASCII Name":"Aintzane Arriaga",
+        "Adv":"",
+        "Artist":[
+            "Francisco T\u00e9bar"
+        ],
+        "Banned":"",
+        "Capacity":6,
+        "Card Text":"Camarilla.",
+        "Clan":"Lasombra",
+        "Disciplines":{
+            "Dominate":2,
+            "Oblivion":2,
+            "Potence":2
+        },
+        "Group":"6",
+        "Id":201708,
+        "Name":"Aintzane Arriaga",
+        "New":false,
+        "Rulings":[],
+        "Sect":"Camarilla",
+        "Set":{
+            "V5L":{
+                "PL":"1"
+            }
+        },
+        "Title":"",
+        "Twd":0
+    },
     "200028":{
         "ASCII Name":"Aisata Swanou",
         "Adv":"",
@@ -5262,6 +5291,34 @@
         "Title":"",
         "Twd":1
     },
+    "201709":{
+        "ASCII Name":"Araceli \"Celia\" Rivera",
+        "Adv":"",
+        "Artist":[
+            "Ken Meyer, Jr."
+        ],
+        "Banned":"",
+        "Capacity":3,
+        "Card Text":"Camarilla.",
+        "Clan":"Lasombra",
+        "Disciplines":{
+            "Dominate":1,
+            "Oblivion":1
+        },
+        "Group":"6",
+        "Id":201709,
+        "Name":"Araceli \"Celia\" Rivera",
+        "New":false,
+        "Rulings":[],
+        "Sect":"Camarilla",
+        "Set":{
+            "V5L":{
+                "PL":"1"
+            }
+        },
+        "Title":"",
+        "Twd":0
+    },
     "200127":{
         "ASCII Name":"Arcadian, The",
         "Adv":"",
@@ -6619,6 +6676,35 @@
         },
         "Title":"",
         "Twd":1
+    },
+    "201710":{
+        "ASCII Name":"Azucena",
+        "Adv":"",
+        "Artist":[
+            "Krasen Maximov"
+        ],
+        "Banned":"",
+        "Capacity":5,
+        "Card Text":"Camarilla: Azucena gets +1 intercept against younger Lasombra and -1 intercept against older Lasombra.",
+        "Clan":"Lasombra",
+        "Disciplines":{
+            "Potence":1,
+            "Dominate":2,
+            "Oblivion":2
+        },
+        "Group":"6",
+        "Id":201710,
+        "Name":"Azucena",
+        "New":false,
+        "Rulings":[],
+        "Sect":"Camarilla",
+        "Set":{
+            "V5L":{
+                "PL":"1"
+            }
+        },
+        "Title":"",
+        "Twd":0
     },
     "200157":{
         "ASCII Name":"Baba Yaga, the Iron Hag",
@@ -8884,6 +8970,35 @@
         },
         "Title":"",
         "Twd":10
+    },
+    "201711":{
+        "ASCII Name":"Braden White",
+        "Adv":"",
+        "Artist":[
+            "Ken Meyer, Jr."
+        ],
+        "Banned":"",
+        "Capacity":4,
+        "Card Text":"Camarilla.",
+        "Clan":"Lasombra",
+        "Disciplines":{
+            "Dominate":1,
+            "Oblivion":1,
+            "Potence":1
+        },
+        "Group":"6",
+        "Id":201711,
+        "Name":"Braden White",
+        "New":false,
+        "Rulings":[],
+        "Sect":"Camarilla",
+        "Set":{
+            "V5L":{
+                "PL":"1"
+            }
+        },
+        "Title":"",
+        "Twd":0
     },
     "201581":{
         "ASCII Name":"Brandon Grime",
@@ -21064,6 +21179,40 @@
         "Title":"",
         "Twd":1
     },
+    "201712":{
+        "ASCII Name":"Gnaeus Aemilius Augustinus",
+        "Adv":"",
+        "Artist":[
+            "Gin\u00e9s Qui\u00f1onero"
+        ],
+        "Banned":"",
+        "Capacity":9,
+        "Card Text":"Camarilla Prince of Lima: If Aemilius is ready during your unlock phase, your prey chooses a ready minion they control; the chosen minion takes 1 unpreventable damage.",
+        "Clan":"Lasombra",
+        "Disciplines":{
+            "Blood Sorcery":1,
+            "Dominate":2,
+            "Oblivion":2,
+            "Potence":2,
+            "Protean":2
+        },
+        "Group":"6",
+        "Id":201712,
+        "Name":"Gnaeus Aemilius Augustinus",
+        "New":false,
+        "Rulings":[],
+        "Sect":"Camarilla",
+        "Set":{
+            "V5L":{
+                "PL":"2"
+            },
+            "PLAYTEST":{
+                "NL":1
+            }
+        },
+        "Title":"prince",
+        "Twd":0
+    },
     "200527":{
         "ASCII Name":"Gold Pan Dan",
         "Adv":"",
@@ -29320,6 +29469,36 @@
         "Title":"",
         "Twd":15
     },
+    "201713":{
+        "ASCII Name":"Kamaluddin",
+        "Adv":"",
+        "Artist":[
+            "Konrad Wa\u015bci\u0144ski"
+        ],
+        "Banned":"",
+        "Capacity":6,
+        "Card Text":"Camarilla primogen.",
+        "Clan":"Lasombra",
+        "Disciplines":{
+            "Fortitude":1,
+            "Potence":1,
+            "Dominate":2,
+            "Oblivion":2
+        },
+        "Group":"6",
+        "Id":201713,
+        "Name":"Kamaluddin",
+        "New":false,
+        "Rulings":[],
+        "Sect":"Camarilla",
+        "Set":{
+            "V5L":{
+                "PL":"1"
+            }
+        },
+        "Title":"primogen",
+        "Twd":0
+    },
     "200747":{
         "ASCII Name":"Kamaria",
         "Adv":"",
@@ -36579,6 +36758,38 @@
         },
         "Title":"",
         "Twd":1
+    },
+    "201714":{
+        "ASCII Name":"Maria del Toro",
+        "Adv":"",
+        "Artist":[
+            "Raquel Cornejo"
+        ],
+        "Banned":"",
+        "Capacity":7,
+        "Card Text":"Camarilla Prince of Barcelona.",
+        "Clan":"Lasombra",
+        "Disciplines":{
+            "Dominate":2,
+            "Oblivion":2,
+            "Potence":2
+        },
+        "Group":"6",
+        "Id":201714,
+        "Name":"Mar\u00eda del Toro",
+        "New":false,
+        "Rulings":[],
+        "Sect":"Camarilla",
+        "Set":{
+            "V5L":{
+                "PL":"2"
+            },
+            "PLAYTEST":{
+                "NL":1
+            }
+        },
+        "Title":"prince",
+        "Twd":0
     },
     "200922":{
         "ASCII Name":"Maria Stone",
@@ -47596,6 +47807,36 @@
         "Title":"priscus",
         "Twd":3
     },
+    "201715":{
+        "ASCII Name":"Rinaldo Albizzi",
+        "Adv":"",
+        "Artist":[
+            "Gin\u00e9s Qui\u00f1onero"
+        ],
+        "Banned":"",
+        "Capacity":7,
+        "Card Text":"Camarilla primogen: +1 intercept.",
+        "Clan":"Lasombra",
+        "Disciplines":{
+            "Presence":1,
+            "Dominate":2,
+            "Oblivion":2,
+            "Potence":2
+        },
+        "Group":"6",
+        "Id":201715,
+        "Name":"Rinaldo Albizzi",
+        "New":false,
+        "Rulings":[],
+        "Sect":"Camarilla",
+        "Set":{
+            "V5L":{
+                "PL":"1"
+            }
+        },
+        "Title":"primogen",
+        "Twd":0
+    },
     "201192":{
         "ASCII Name":"Robert Price",
         "Adv":"",
@@ -51803,7 +52044,7 @@
         ],
         "Banned":"",
         "Capacity":4,
-        "Card Text":"Camarilla: While Slag is ready, any Methuselah playing or discarding a card during a referendum shows you its replacement.",
+        "Card Text":"Camarilla: While Slag is ready, Methuselahs playing or discarding cards in a referendum shows you their replacements.",
         "Clan":"Nosferatu",
         "Disciplines":{
             "Animalism":1,
@@ -59390,6 +59631,39 @@
         },
         "Title":"",
         "Twd":2
+    },
+    "201716":{
+        "ASCII Name":"Yewon Ong",
+        "Adv":"",
+        "Artist":[
+            "Noora Hirvonen"
+        ],
+        "Banned":"",
+        "Capacity":8,
+        "Card Text":"Camarilla Prince of Singapore: During the polling step of any referendum, Yewon can discard a card requiring Oblivion [obl] to get +1 vote.",
+        "Clan":"Lasombra",
+        "Disciplines":{
+            "Fortitude":1,
+            "Dominate":2,
+            "Oblivion":2,
+            "Potence":2
+        },
+        "Group":"6",
+        "Id":201716,
+        "Name":"Yewon Ong",
+        "New":false,
+        "Rulings":[],
+        "Sect":"Camarilla",
+        "Set":{
+            "V5L":{
+                "PL":"2"
+            },
+            "PLAYTEST":{
+                "NL":1
+            }
+        },
+        "Title":"prince",
+        "Twd":0
     },
     "201487":{
         "ASCII Name":"Yitzak",

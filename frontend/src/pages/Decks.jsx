@@ -168,7 +168,6 @@ const Decks = () => {
             if (preconDecks[deckidFixed]) {
               setDeck(preconDecks[deckidFixed]);
             } else {
-              setDeck(undefined);
               setError('NO DECK WITH THIS ID');
             }
           } else {

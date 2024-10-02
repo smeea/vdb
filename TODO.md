@@ -5,7 +5,8 @@
 # FEATURES
 - Card q-ty change in autocompletion
 - Playtest reports export to csv
-- Lasombra precon
+- Precon dates instead of set dates
+- 30th Hungary to ETDA
 
 # FEATURES ON HOLD
 - TWD search with % V5-compatibility -> after BCP clarify V5

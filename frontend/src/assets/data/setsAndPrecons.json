@@ -53,6 +53,16 @@
       }
     }
   },
+  "V5L": {
+    "name": "Fifth Edition (Lasombra)",
+    "date": "2024-10-03",
+    "precons": {
+      "PL": {
+        "name": "Lasombra",
+        "clan": "Lasombra"
+      }
+    }
+  },
   "30th": {
     "name": "30th Anniversary",
     "date": "2024-07-20",

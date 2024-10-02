@@ -162,6 +162,9 @@
         "twd_date":"2017-12-23",
         "player":"Matias Frosterus"
     },
+    "201708":{
+        "deckid":null
+    },
     "200028":{
         "deckid":"2k9blessedaudience",
         "twd_date":"2009-09-28",
@@ -710,6 +713,9 @@
         "twd_date":"2023-04-02",
         "player":"Sebastian Meurer"
     },
+    "201709":{
+        "deckid":null
+    },
     "200127":{
         "deckid":"2010englisheq",
         "twd_date":"2010-05-15",
@@ -895,6 +901,9 @@
         "deckid":"2018cotrc",
         "twd_date":"2018-10-20",
         "player":"Miguel Angel Vasquez"
+    },
+    "201710":{
+        "deckid":null
     },
     "200157":{
         "deckid":"2016decqltroiun",
@@ -1221,6 +1230,9 @@
         "deckid":"rdz-leg",
         "twd_date":"1998-09-19",
         "player":"Legbiter"
+    },
+    "201711":{
+        "deckid":null
     },
     "201581":{
         "deckid":"10021",
@@ -2923,6 +2935,9 @@
         "twd_date":"2021-05-09",
         "player":"Bruno Patr\u00edcio Silva Pontes"
     },
+    "201712":{
+        "deckid":null
+    },
     "200527":{
         "deckid":"2014jrxxvinotv",
         "twd_date":"2014-04-20",
@@ -4089,6 +4104,9 @@
         "twd_date":"1999-06-06",
         "player":"Michael W. Jones"
     },
+    "201713":{
+        "deckid":null
+    },
     "200747":{
         "deckid":"2k6originsfri3",
         "twd_date":"2006-06-30",
@@ -5059,6 +5077,9 @@
         "deckid":"20188hnvf",
         "twd_date":"2018-10-13",
         "player":"Tuomas Nyberg"
+    },
+    "201714":{
+        "deckid":null
     },
     "200922":{
         "deckid":"2k4esgrimaboston",
@@ -6566,6 +6587,9 @@
         "deckid":"8872",
         "twd_date":"2018-04-07",
         "player":"Arnau Diez Sans"
+    },
+    "201715":{
+        "deckid":null
     },
     "201192":{
         "deckid":"2k9alastorsvilleins",
@@ -8153,6 +8177,9 @@
         "twd_date":"2022-04-16",
         "player":"Alexandre Mar\u00e7al de Barros Costa"
     },
+    "201716":{
+        "deckid":null
+    },
     "201487":{
         "deckid":"2k9sirenslurego",
         "twd_date":"2009-09-27",
@@ -8498,6 +8525,9 @@
         "twd_date":"1997-04-11",
         "player":"Josh Duffin"
     },
+    "102274":{
+        "deckid":null
+    },
     "100047":{
         "deckid":"2k2castrovalley",
         "twd_date":"2002-03-30",
@@ -8713,6 +8743,9 @@
         "deckid":"2k7pswesterville",
         "twd_date":"2007-05-20",
         "player":"Jay Kristoff"
+    },
+    "102275":{
+        "deckid":null
     },
     "100091":{
         "deckid":"barney",
@@ -11534,6 +11567,9 @@
         "player":"Darby Keeney"
     },
     "100674":{
+        "deckid":null
+    },
+    "102276":{
         "deckid":null
     },
     "100675":{
@@ -14612,6 +14648,9 @@
         "twd_date":"1999-02-20",
         "player":"Matt Green"
     },
+    "102277":{
+        "deckid":null
+    },
     "101311":{
         "deckid":"lsj",
         "twd_date":"1998-11-21",
@@ -14659,6 +14698,9 @@
         "deckid":"2k8soaboc",
         "twd_date":"2008-04-06",
         "player":"James Messer"
+    },
+    "102278":{
+        "deckid":null
     },
     "101321":{
         "deckid":"2k6sncqvs",
@@ -14845,6 +14887,9 @@
         "deckid":"9997",
         "twd_date":"2021-12-05",
         "player":"Dayvisson Magalh\u00e3es Alves"
+    },
+    "102279":{
+        "deckid":null
     },
     "101356":{
         "deckid":"2k3scregion",
@@ -16708,6 +16753,12 @@
         "twd_date":"2014-06-22",
         "player":"Jorge Delgado"
     },
+    "102280":{
+        "deckid":null
+    },
+    "102281":{
+        "deckid":null
+    },
     "101737":{
         "deckid":"2k3burningtouch",
         "twd_date":"2003-03-29",
@@ -17434,6 +17485,9 @@
         "twd_date":"2002-05-04",
         "player":"John Bell"
     },
+    "102282":{
+        "deckid":null
+    },
     "101890":{
         "deckid":"2010kwamatiwane",
         "twd_date":"2010-09-12",
@@ -17942,6 +17996,9 @@
         "twd_date":"2009-03-01",
         "player":"Michael Heyder"
     },
+    "102283":{
+        "deckid":null
+    },
     "101999":{
         "deckid":"2k8manserrrrock",
         "twd_date":"2008-02-16",
@@ -18134,6 +18191,9 @@
         "deckid":"2k8sodprague",
         "twd_date":"2008-09-20",
         "player":"Martin Varga"
+    },
+    "102284":{
+        "deckid":null
     },
     "102043":{
         "deckid":"2k7ecqutn",
@@ -18788,6 +18848,9 @@
         "player":"Karol Magda"
     },
     "102174":{
+        "deckid":null
+    },
+    "102285":{
         "deckid":null
     },
     "102175":{
