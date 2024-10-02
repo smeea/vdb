@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Wrench from '@/assets/images/icons/wrench.svg?react';
 import InboxesFill from '@/assets/images/icons/inboxes-fill.svg?react';
-import { PlaytestUserCard, ErrorMessage, ButtonIconed } from '@/components';
+import { PlaytestUserCard, ButtonIconed } from '@/components';
 import PersonFill from '@/assets/images/icons/person-fill.svg?react';
 import { useApp } from '@/context';
 
@@ -10,7 +10,7 @@ const Playtest = () => {
   const { username, isPlaytestAdmin, isPlaytester } = useApp();
   return (
     <div className="account-container mx-auto grid place-items-center sm:h-[90vh]">
-      {isPlaytester ? (
+      {isPlaytester && (
         <div className="flex w-full flex-col gap-8">
           <div className="mb-3 flex w-full items-center gap-2 border border-borderSecondary bg-bgSecondary p-2 font-bold text-fgSecondary dark:border-borderSecondaryDark dark:bg-bgSecondaryDark dark:text-fgSecondaryDark sm:mb-0">
             <div className="flex min-w-[20px] justify-center">
@@ -42,8 +42,6 @@ const Playtest = () => {
             )}
           </div>
         </div>
-      ) : (
-        <ErrorMessage>NOT ENOUGH INTERCEPT</ErrorMessage>
       )}
     </div>
   );
