@@ -6,6 +6,7 @@
 - Card q-ty change in autocompletion
 - Playtest reports export to csv
 - Precon dates instead of set dates
+- Card Aka for autocompletion
 
 # FEATURES ON HOLD
 - TWD search with % V5-compatibility -> after BCP clarify V5
