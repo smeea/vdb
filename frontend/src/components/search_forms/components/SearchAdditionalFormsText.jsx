@@ -43,7 +43,7 @@ const SearchAdditionalFormsText = ({ value, onChange, onChangeOptions, searchFor
                 <SearchFormButtonAddText searchForm={searchForm} />
                 <SearchFormButtonDel searchForm={searchForm} i={i} />
               </div>
-              <div className="flex items-center justify-end space-x-4">
+              <div className="flex items-center justify-end gap-4">
                 {options.map((opt, index) => {
                   return (
                     <Checkbox

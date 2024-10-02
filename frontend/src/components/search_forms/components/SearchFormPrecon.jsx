@@ -124,7 +124,7 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
         onChange={onChange}
         maxMenuHeight={maxMenuHeight}
       />
-      <div className="flex items-center justify-end space-x-4">
+      <div className="flex items-center justify-end gap-4">
         {[
           {
             value: ONLY,

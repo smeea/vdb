@@ -12,7 +12,7 @@ const CryptSearchFormDisciplines = ({ value, onChange, withMalStr }) => {
       {disciplines.map((i) => (
         <div
           key={i}
-          className={`flex h-[38px] w-[38px] cursor-pointer items-center justify-center ${
+          className={`flex h-[39px] w-[39px] cursor-pointer items-center justify-center ${
             value[i] ? '' : 'opacity-40'
           }`}
           onClick={() => onChange(i, 2)}

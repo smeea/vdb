@@ -124,7 +124,7 @@ const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
         maxMenuHeight={maxMenuHeight}
       />
       <div className="space-y-2">
-        <div className="flex items-center justify-end space-x-4">
+        <div className="flex items-center justify-end gap-4">
           {[
             {
               value: OR_NEWER,
@@ -167,7 +167,7 @@ const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
             );
           })}
         </div>
-        <div className="flex items-center justify-end space-x-4">
+        <div className="flex items-center justify-end gap-4">
           {[
             {
               value: ONLY,
