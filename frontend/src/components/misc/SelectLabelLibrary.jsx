@@ -4,6 +4,7 @@ import {
   ResultName,
   ResultLibraryDisciplines,
   ResultLibraryTypeImage,
+  ResultLibraryRequirements,
   ResultLibraryCost,
   ResultLibraryClan,
 } from '@/components';
@@ -33,10 +34,10 @@ const SelectLabelLibrary = ({ cardid, inInventory }) => {
           <ResultLibraryTypeImage value={card.Type} />
           <ResultName card={card} colored={false} />
         </div>
-        <div className="flex items-center space-x-2">
-          <div>
+        <div className="flex items-center gap-2">
+          {card.Requirement && <ResultLibraryRequirements value={card.Requirement} />}
+          <div className="flex items-center gap-1.5">
             {card.Discipline && <ResultLibraryDisciplines value={card.Discipline} />}
-            {card.Discipline && card.Clan && '+'}
             {card.Clan && <ResultLibraryClan value={card.Clan} />}
           </div>
           {(card[BLOOD_COST] || card[POOL_COST]) && (

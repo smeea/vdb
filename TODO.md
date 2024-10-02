@@ -1,7 +1,6 @@
 # FIX
 - Snapshot url in iOS
 - Page update in iOS
-- Tri discipline in card title multiline
 
 # FEATURES
 - Card q-ty change in autocompletion

@@ -13,7 +13,7 @@ const ResultLibraryDisciplines = ({ value }) => {
   } else if (value.indexOf('/') != -1) {
     const disciplines = value.split('/');
     return (
-      <div className="flex max-w-[55px] flex-wrap items-center justify-center">
+      <div className="flex min-w-[50px] flex-wrap items-center justify-center">
         {disciplines.map((d, idx) => {
           return (
             <React.Fragment key={idx}>

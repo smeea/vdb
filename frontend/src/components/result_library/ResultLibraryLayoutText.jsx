@@ -20,11 +20,13 @@ const Requirements = ({ card, noClose, handleClose, inPopover }) => {
   const { isNarrow } = useApp();
 
   return (
-    <div className="flex items-center space-x-3">
-      <div className="flex items-center gap-1">
+    <div className="flex items-center gap-3">
+      <div className="flex items-center gap-2">
         {card.Requirement && <ResultLibraryRequirements value={card.Requirement} />}
-        {card.Discipline && <ResultLibraryDisciplines value={card.Discipline} />}
-        {card.Clan && <ResultLibraryClan value={card.Clan} />}
+        <div className="flex gap-1.5">
+          {card.Discipline && <ResultLibraryDisciplines value={card.Discipline} />}
+          {card.Clan && <ResultLibraryClan value={card.Clan} />}
+        </div>
       </div>
       {card[BURN_OPTION] && <ResultMiscImage value={BURN_OPTION} />}
       {card[TRIFLE] && <ResultMiscImage value={TRIFLE} />}

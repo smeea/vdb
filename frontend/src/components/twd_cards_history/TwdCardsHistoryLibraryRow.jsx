@@ -39,11 +39,10 @@ const TwdCardsHistoryLibraryRow = ({ card, players, handleClick }) => {
         </>
       )}
       <div
-        className="flex min-w-[32px] items-center justify-center sm:min-w-[80px]"
+        className="flex min-w-[32px] items-center justify-center gap-1.5 sm:min-w-[80px]"
         onClick={() => handleClick(card)}
       >
         {card.Clan && <ResultLibraryClan value={card.Clan} />}
-        {card.Discipline && card.Clan && '+'}
         {card.Discipline && <ResultLibraryDisciplines value={card.Discipline} />}
       </div>
       <div
