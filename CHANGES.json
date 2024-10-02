@@ -1,5 +1,15 @@
 [
   {
+    "version": "2024-10-03",
+    "changes": [
+      "Add Lasombra preconstructed deck",
+      "Add First 30th event in Vac, Hungary (https://vdb.im/tournament_analyze/11730)",
+      "Add card 'aka' name to card popup",
+      "Update rulings",
+      "Small other fixes and improvements"
+    ]
+  },
+  {
     "version": "2024-09-24",
     "changes": [
       "Add legacy card images for Banu Haqim, Ministry, Giovanni, True Brujah",

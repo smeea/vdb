@@ -135,7 +135,7 @@ const PlaytestUserCard = () => {
       </ListEntry>
       <ListEntry
         icon={<Calendar2EventFill width="22" heigh="22" viewBox="0 0 16 16" />}
-        title="General Opinion on the Expansion"
+        title="General Opinion about the Expansion"
         forceNewLine
       >
         <form className="flex w-full" onSubmit={handleGeneralSubmit}>
@@ -144,7 +144,7 @@ const PlaytestUserCard = () => {
             onChange={handleGeneralChange}
             onBlur={handleGeneralOnBlur}
             value={general}
-            placeholder="Enter your general general on the Expansion"
+            placeholder="Enter your general opinion about the Expansion"
           />
         </form>
       </ListEntry>
