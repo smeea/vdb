@@ -131,7 +131,7 @@ const PlaytestReportsAll = () => {
             GENERAL OPINIONS
           </div>
           <div className="flex basis-full flex-col gap-4">
-            {value &&
+            {value?.[GENERAL] &&
               Object.entries(value?.[GENERAL])
                 .filter((i) => i[1])
                 .map((i, idx) => {
