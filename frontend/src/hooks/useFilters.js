@@ -4,27 +4,28 @@
 // if the filter is present and the card dont match it the method returns true meaning the criteria is missing.
 // if some criteria is missing the main method return false and exits that card check.
 import {
-  ASCII_NAME,
-  CARD_TEXT,
-  BURN_OPTION,
-  BLOOD_COST,
-  POOL_COST,
-  PLAYTEST,
-  BCP,
-  PROMO,
+  AKA,
   AND,
-  NOT,
-  OR,
-  ONLY,
+  ASCII_NAME,
+  BCP,
+  BLOOD_COST,
+  BURN_OPTION,
+  CARD_TEXT,
+  EQ,
   FIRST,
-  REPRINT,
   GE,
   LE,
-  EQ,
-  OR_NEWER,
-  OR_OLDER,
+  NOT,
   NOT_NEWER,
   NOT_OLDER,
+  ONLY,
+  OR,
+  OR_NEWER,
+  OR_OLDER,
+  PLAYTEST,
+  POOL_COST,
+  PROMO,
+  REPRINT,
 } from '@/utils/constants';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 
@@ -536,10 +537,13 @@ const missingNameOrInitials = (filter, card) => {
 
   let name = card.Name.toLowerCase();
   let nameASCII = card[ASCII_NAME].toLowerCase();
+  let nameAKA = card[AKA] ? card[AKA].toLowerCase() : '';
+
   filter = filter.toLowerCase();
   if (/^the .*/.test(filter) && /, the$/.test(name)) {
     name = `the ${name.replace(/, the$/, '')}`;
     nameASCII = `the ${nameASCII.replace(/, the$/, '')}`;
+    nameAKA = `the ${nameAKA.replace(/, the$/, '')}`;
   }
   filter = filter.replace(/[^\p{L}\d]/giu, '');
 
@@ -548,8 +552,11 @@ const missingNameOrInitials = (filter, card) => {
     name.replace(/[^a-z0-9]/gi, '').includes(filter) ||
     nameASCII.includes(filter) ||
     nameASCII.replace(/[^a-z0-9]/gi, '').includes(filter) ||
+    nameAKA.includes(filter) ||
+    nameAKA.replace(/[^a-z0-9]/gi, '').includes(filter) ||
     (checkInitials && checkInitials.test(name)) ||
-    (checkInitials && checkInitials.test(nameASCII))
+    (checkInitials && checkInitials.test(nameASCII)) ||
+    (checkInitials && checkInitials.test(nameAKA))
   );
 };
 
