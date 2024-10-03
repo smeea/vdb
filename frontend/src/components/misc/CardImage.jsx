@@ -7,20 +7,24 @@ const legacyImagesClans = [
   'Abomination',
   'Ahrimane',
   'Baali',
+  'Banu Haqim',
   'Blood Brother',
   'Caitiff',
   'Daughter of Cacophony',
   'Gargoyle',
+  'Giovanni',
   'Harbinger of Skulls',
   'Kiasyd',
+  'Ministry',
   'Nagaraja',
   'Pander',
   'Ravnos',
-  'Salubri',
   'Salubri antitribu',
+  'Salubri',
   'Samedi',
+  'True Brujah',
   'Tzimisce',
-]
+];
 
 const CardImage = ({ card, set, className = 'max-sm:w-full', size = 'md', onClick }) => {
   const { lang, showLegacyImage } = useApp();
@@ -41,9 +45,7 @@ const CardImage = ({ card, set, className = 'max-sm:w-full', size = 'md', onClic
     <>
       {lang !== EN ||
       set ||
-      (showLegacyImage &&
-        card.Id > 200000 &&
-       legacyImagesClans.includes(card.Clan)) ? (
+      (showLegacyImage && card.Id > 200000 && legacyImagesClans.includes(card.Clan)) ? (
         <img
           className={`${sizeStyle[size]} ${className}`}
           src={`${set ? otherUrl : showLegacyImage ? legacyUrl : otherUrl}.jpg?v=${import.meta.env.VITE_CARD_VERSION}`}
