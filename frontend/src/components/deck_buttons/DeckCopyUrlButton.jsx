@@ -48,16 +48,27 @@ const DeckCopyUrlButton = ({ deck, noText, setQrUrl }) => {
   };
 
   const handleSnapshot = () => {
-    deckServices.deckSnapshot(deck).then((deckid) => {
-      const url = `${import.meta.env.VITE_BASE_URL}/decks/${deckid}`;
-      navigator.clipboard.writeText(url);
-      setSuccess(true);
-      setTimeout(() => {
-        setSuccess(false);
-        setShowMenuButtons(false);
-        setShowFloatingButtons(true);
-      }, 1000);
-    });
+    if (typeof ClipboardItem == 'function' && !!navigator.clipboard.write) {
+      const url = new ClipboardItem({
+        'text/plain': deckServices.deckSnapshot(deck).then((deckid) => {
+          return new Blob([`${import.meta.env.VITE_BASE_URL}/decks/${deckid}`], {
+            type: 'text/plain',
+          });
+        }),
+      });
+      navigator.clipboard.write([url]);
+    } else {
+      deckServices.deckSnapshot(deck).then((deckid) => {
+        const url = `${import.meta.env.VITE_BASE_URL}/decks/${deckid}`;
+        navigator.clipboard.writeText(url);
+        setSuccess(true);
+        setTimeout(() => {
+          setSuccess(false);
+          setShowMenuButtons(false);
+          setShowFloatingButtons(true);
+        }, 1000);
+      });
+    }
   };
 
   return (
