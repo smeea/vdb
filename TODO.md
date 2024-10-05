@@ -1,5 +1,7 @@
 # FIX
 - Page update in iOS
+- Move requirements to cost line for library in card view
+- Move capacity before disciplines for crypt in card view
 
 # FEATURES
 - Card q-ty change in autocompletion
