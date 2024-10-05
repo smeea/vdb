@@ -184,6 +184,13 @@ const About = () => {
             </li>
             <li>Andrey &quot;Vaughnad&quot; Davino for multiple development contributions</li>
             <li>Legacy crypt images by Thiago Sousa</li>
+            <li>
+              Tournament analyze{' '}
+              <a href="https://garourimgazette.wordpress.com/vtes-discussions/vtes-tournament-archive/">
+                archive
+              </a>{' '}
+              by Petrus "Rune" Makkonen
+            </li>
           </ul>
         </div>
 
@@ -191,20 +198,31 @@ const About = () => {
           <Title>DONATIONS</Title>
           <div className="flex gap-1">
             Patreon: <a href="https://patreon.com/smeea">patreon.com/smeea</a>
-            <ConditionalTooltipOrModal title="MacOS/iOS warning" isModal={isMobile} overlay={
-              <div className="flex flex-col gap-1">
-                <div>
-                Starting from November 2024 Apple will charge 30% fee from users who subsribes using Patreon app from App Store (in addition to Patreon fees!).
+            <ConditionalTooltipOrModal
+              title="MacOS/iOS warning"
+              isModal={isMobile}
+              overlay={
+                <div className="flex flex-col gap-1">
+                  <div>
+                    Starting from November 2024 Apple will charge 30% fee from users who subsribes
+                    using Patreon app from App Store (in addition to Patreon fees!).
+                  </div>
+                  <div>
+                    Please consider subscribing using patreon website in standard browser (Chrome,
+                    Firefox, Safari, etc).
+                  </div>
+                  <div>
+                    Read more:{' '}
+                    <a href="https://news.patreon.com/articles/understanding-apple-requirements-for-patreon">
+                      https://news.patreon.com/articles/understanding-apple-requirements-for-patreon
+                    </a>
+                  </div>
                 </div>
-                <div>
-                  Please consider subscribing using patreon website in standard browser (Chrome, Firefox, Safari, etc).
-                </div>
-                <div>
-                  Read more: <a href="https://news.patreon.com/articles/understanding-apple-requirements-for-patreon">https://news.patreon.com/articles/understanding-apple-requirements-for-patreon</a>
-                </div>
+              }
+            >
+              <div className="flex font-bold text-fgThird dark:text-fgThirdDark">
+                [MacOS/iOS warning]
               </div>
-            }>
-              <div className="flex font-bold text-fgThird dark:text-fgThirdDark">[MacOS/iOS warning]</div>
             </ConditionalTooltipOrModal>
           </div>
           <div className="flex gap-1">
