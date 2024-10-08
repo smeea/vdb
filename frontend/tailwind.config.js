@@ -84,7 +84,7 @@ module.exports = {
       fgNameDark: '#d59000',
       fgPrimary: '#000000',
       fgPrimaryDark: '#eeeeee',
-      fgSecondary: '#2020a0',
+      fgSecondary: '#4646cc',
       fgSecondaryDark: '#80b0ff',
       fgThird: '#2020a0',
       fgThirdDark: '#d0d0ee',
