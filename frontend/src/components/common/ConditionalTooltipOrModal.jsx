@@ -17,12 +17,12 @@ const ConditionalTooltipOrModal = ({
   const [showModal, setShowModal] = useState();
 
   const handleClick = () => {
-    onClick();
+    onClick && onClick();
     setShowModal(true);
   };
 
   const handleClose = () => {
-    onClose();
+    onClose && onClose();
     setShowModal(false);
   };
 
