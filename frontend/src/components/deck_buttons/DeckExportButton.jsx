@@ -54,11 +54,6 @@ const DeckExportButton = ({ deck, inMissing, inInventory }) => {
     setShowFloatingButtons(true);
   };
 
-  const saveFile = async (file, name) => {
-    let { saveAs } = await import('file-saver');
-    saveAs(file, name);
-  };
-
   const saveDeck = async (format) => {
     let deckName = deck.name;
     if (deck.branchName && (deck.master || deck.branches.length > 0)) {
@@ -99,7 +94,9 @@ const DeckExportButton = ({ deck, inMissing, inInventory }) => {
       });
     }
 
-    saveFile(file);
+    let { saveAs } = await import('file-saver');
+    saveAs(file, name);
+
     setShowMenuButtons(false);
     setShowFloatingButtons(true);
   };

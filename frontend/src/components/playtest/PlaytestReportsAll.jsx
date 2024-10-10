@@ -12,7 +12,18 @@ import {
 } from '@/components';
 import { useFetch } from '@/hooks';
 import { useApp } from '@/context';
-import { CRYPT, LIBRARY, PRECONS, GENERAL, CARDS, NAME, CLAN_DISCIPLINE } from '@/utils/constants';
+import { playtestServices } from '@/services';
+import {
+  ALL,
+  CARDS,
+  CLAN_DISCIPLINE,
+  CRYPT,
+  GENERAL,
+  LIBRARY,
+  NAME,
+  PRECONS,
+  XLSX,
+} from '@/utils/constants';
 
 const PlaytestReportsAll = () => {
   const { preconDecks, cryptCardBase, libraryCardBase } = useApp();
@@ -23,53 +34,63 @@ const PlaytestReportsAll = () => {
     [CLAN_DISCIPLINE]: 'C/D',
   };
 
-  const exportReports = async (target) => {
-    let exportText = '';
-    Object.keys(value).forEach((id, idx) => {
-      let name;
-      switch (target) {
-        case PRECONS:
-          if (id == GENERAL || !isNaN(id)) return;
-          name = preconDecks[`PLAYTEST:${id}`].name;
-          exportText += `Precon: ${name}\n\n`;
-          break;
-        case CARDS:
-          if (isNaN(id)) return;
-          name = id > 200000 ? cryptCardBase[id].Name : libraryCardBase[id].Name;
-          exportText += `${id > 200000 ? 'Crypt' : 'Library'}: ${name}\n\n`;
-          break;
-        default:
-          if (id != GENERAL) return;
-          exportText += 'General Opinions\n\n';
-      }
+  const exportReports = async (target, format) => {
+    let file;
 
-      Object.keys(value[id]).forEach((user, uIdx) => {
-        exportText += `User: <${user}>\n`;
+    if (format === XLSX) {
+      const data = await playtestServices.exportXlsx(
+        value,
+        cryptCardBase,
+        libraryCardBase,
+        preconDecks,
+      );
+      file = new File([data], `${target}.xlsx`, {
+        type: 'application/octet-stream',
+      });
+    } else {
+      let exportText = '';
+      Object.keys(value).forEach((id, idx) => {
+        let name;
         switch (target) {
-          case GENERAL:
-            if (value[id][user]) exportText += `${value[id][user]}\n`;
+          case PRECONS:
+            if (id == GENERAL || !isNaN(id)) return;
+            name = preconDecks[`PLAYTEST:${id}`].name;
+            exportText += `Precon: ${name}\n\n`;
+            break;
+          case CARDS:
+            if (isNaN(id)) return;
+            name = id > 200000 ? cryptCardBase[id].Name : libraryCardBase[id].Name;
+            exportText += `${id > 200000 ? 'Crypt' : 'Library'}: ${name}\n\n`;
             break;
           default:
-            exportText += `Score: ${value[id][user].score}\n`;
-            exportText += `Seen in Play: ${value[id][user].isPlayed ? 'Yes' : 'No'}\n`;
-            if (value[id][user].text) exportText += `${value[id][user].text}\n`;
+            if (id != GENERAL) return;
+            exportText += 'General Opinions\n\n';
         }
-        if (uIdx + 1 < Object.keys(value[id]).length) {
-          exportText += '\n-----\n\n';
+
+        Object.keys(value[id]).forEach((user, uIdx) => {
+          exportText += `User: <${user}>\n`;
+          switch (target) {
+            case GENERAL:
+              if (value[id][user]) exportText += `${value[id][user]}\n`;
+              break;
+            default:
+              exportText += `Score: ${value[id][user].score}\n`;
+              exportText += `Seen in Play: ${value[id][user].isPlayed ? 'Yes' : 'No'}\n`;
+              if (value[id][user].text) exportText += `${value[id][user].text}\n`;
+          }
+          if (uIdx + 1 < Object.keys(value[id]).length) {
+            exportText += '\n-----\n\n';
+          }
+        });
+        if (idx + 1 < Object.keys(value).length) {
+          exportText += '\n=====\n\n';
         }
       });
-      if (idx + 1 < Object.keys(value).length) {
-        exportText += '\n=====\n\n';
-      }
-    });
 
-    const file = new File(
-      [exportText],
-      `Reports - ${target == PRECONS ? 'Precons' : 'Cards'}.txt`,
-      {
+      file = new File([exportText], `Reports - ${target == PRECONS ? 'Precons' : 'Cards'}.txt`, {
         type: 'text/plain;charset=utf-8',
-      },
-    );
+      });
+    }
 
     let { saveAs } = await import('file-saver');
     saveAs(file);
@@ -86,22 +107,29 @@ const PlaytestReportsAll = () => {
             <ButtonIconed
               className="w-full whitespace-nowrap"
               onClick={() => exportReports(PRECONS)}
-              title="Save Precons"
-              text="Save Precons"
+              title="Save Precons - Text"
+              text="Save Precons - Text"
               icon={<Download />}
             />
             <ButtonIconed
               className="w-full whitespace-nowrap"
               onClick={() => exportReports(CARDS)}
-              title="Save Cards"
-              text="Save Cards"
+              title="Save Cards - Text"
+              text="Save Cards - Text"
               icon={<Download />}
             />
             <ButtonIconed
               className="w-full whitespace-nowrap"
               onClick={() => exportReports(GENERAL)}
-              title="Save General"
-              text="Save General"
+              title="Save General - Text"
+              text="Save General - Text"
+              icon={<Download />}
+            />
+            <ButtonIconed
+              className="w-full whitespace-nowrap"
+              onClick={() => exportReports(ALL, XLSX)}
+              title="Save All - Excel"
+              text="Save All - Excel"
               icon={<Download />}
             />
           </div>
