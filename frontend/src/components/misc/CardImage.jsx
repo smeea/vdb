@@ -46,7 +46,7 @@ const CardImage = ({ card, set, className = 'max-sm:w-full', size = 'md', onClic
       {set || (showLegacyImage && card.Id > 200000 && legacyImagesClans.includes(card.Clan)) ? (
         <img
           className={`${sizeStyle[size]} ${className}`}
-          src={`${set ? otherUrl : legacyUrl}.jpg?v=${import.meta.env.VITE_CARD_VERSION}`}
+          src={`${set ? otherUrl : legacyUrl}.jpg?v=${import.meta.env.VITE_IMAGE_VERSION}`}
           alt={card.Name}
           onClick={onClick}
           onError={resetImgSrc}
@@ -55,12 +55,12 @@ const CardImage = ({ card, set, className = 'max-sm:w-full', size = 'md', onClic
         <picture>
           <source
             media="(max-width: 576px)"
-            srcSet={`${lang == EN ? baseUrl : otherUrl}.webp?v=${import.meta.env.VITE_CARD_VERSION}`}
+            srcSet={`${lang == EN ? baseUrl : otherUrl}.webp?v=${import.meta.env.VITE_IMAGE_VERSION}`}
             type="image/webp"
           />
           <img
             className={`${sizeStyle[size]} ${className}`}
-            src={`${lang == EN ? baseUrl : otherUrl}.jpg?v=${import.meta.env.VITE_CARD_VERSION}`}
+            src={`${lang == EN ? baseUrl : otherUrl}.jpg?v=${import.meta.env.VITE_IMAGE_VERSION}`}
             alt={card.Name}
             onClick={onClick}
           />
