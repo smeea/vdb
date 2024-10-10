@@ -10,7 +10,15 @@ import {
   ResultLibraryTypeImage,
   ConditionalTooltip,
 } from '@/components';
-import { TRIFLE, POOL_COST, BLOOD_COST, BURN_OPTION } from '@/utils/constants';
+import {
+  REQUIREMENT,
+  DISCIPLINE,
+  CLAN,
+  TRIFLE,
+  POOL_COST,
+  BLOOD_COST,
+  BURN_OPTION,
+} from '@/utils/constants';
 import { useApp } from '@/context';
 
 const Type = ({ card, handleClick }) => {
@@ -57,9 +65,9 @@ const Requirements = ({ card, handleClick }) => {
   return (
     <td className="min-w-[60px] sm:min-w-[90px]" onClick={() => handleClick(card)}>
       <div className="flex items-center justify-center gap-1">
-        {card.Requirement && <ResultLibraryRequirements value={card.Requirement} />}
-        {card.Discipline && <ResultLibraryDisciplines value={card.Discipline} />}
-        {card.Clan && <ResultLibraryClan value={card.Clan} />}
+        {card[REQUIREMENT] && <ResultLibraryRequirements value={card[REQUIREMENT]} />}
+        {card[CLAN] && <ResultLibraryClan value={card[CLAN]} />}
+        {card[DISCIPLINE] && <ResultLibraryDisciplines value={card[DISCIPLINE]} />}
       </div>
     </td>
   );

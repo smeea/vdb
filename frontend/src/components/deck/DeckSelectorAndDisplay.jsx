@@ -1,6 +1,5 @@
 import React from 'react';
 import { useSnapshot } from 'valtio';
-import EyeFill from '@/assets/images/icons/eye-fill.svg?react';
 import EyeSlashFill from '@/assets/images/icons/eye-slash-fill.svg?react';
 import {
   DeckSelectMy,

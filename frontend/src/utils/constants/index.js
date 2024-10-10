@@ -119,6 +119,7 @@ export const QUANTITYx = 'Quantity ';
 export const RANK_HIGH_LOW = 'Rank - High to Low';
 export const RANK_LOW_HIGH = 'Rank - Low to High';
 export const REPRINT = 'reprint';
+export const REQUIREMENT = 'Requirement';
 export const ROUND_REPORTED = 'roundReported';
 export const SECT = 'Sect';
 export const TEXT = 'text';
