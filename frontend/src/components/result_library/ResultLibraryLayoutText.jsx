@@ -30,15 +30,26 @@ import {
 const Requirements = ({ card }) => {
   return (
     <div className="flex items-center gap-3">
-      <div className="flex items-center gap-2">
-        {card[REQUIREMENT] && <ResultLibraryRequirements value={card[REQUIREMENT]} />}
-        <div className="flex gap-1.5">
-          {card[CLAN] && <ResultLibraryClan value={card[CLAN]} />}
-          {card[DISCIPLINE] && <ResultLibraryDisciplines value={card[DISCIPLINE]} />}
+      {(card[BLOOD_COST] || card[POOL_COST]) && (
+        <div className="flex items-center justify-between">
+          <ResultLibraryCost valuePool={card[POOL_COST]} valueBlood={card[BLOOD_COST]} />
         </div>
+      )}
+      <div className="flex items-center gap-3">
+        {(card[REQUIREMENT] || card[CLAN] || card[DISCIPLINE]) && (
+          <div className="flex items-center gap-2">
+            {card[REQUIREMENT] && <ResultLibraryRequirements value={card[REQUIREMENT]} />}
+            {(card[CLAN] || card[DISCIPLINE]) && (
+              <div className="flex gap-1.5">
+                {card[CLAN] && <ResultLibraryClan value={card[CLAN]} />}
+                {card[DISCIPLINE] && <ResultLibraryDisciplines value={card[DISCIPLINE]} />}
+              </div>
+            )}
+          </div>
+        )}
+        {card[BURN_OPTION] && <ResultMiscImage value={BURN_OPTION} />}
+        {card[TRIFLE] && <ResultMiscImage value={TRIFLE} />}
       </div>
-      {card[BURN_OPTION] && <ResultMiscImage value={BURN_OPTION} />}
-      {card[TRIFLE] && <ResultMiscImage value={TRIFLE} />}
     </div>
   );
 };
@@ -88,14 +99,7 @@ const ResultLibraryLayoutText = ({ card, handleClose, noClose, inPopover }) => {
       <Hr />
       {hasRequirements && (
         <>
-          <div className="flex items-center gap-3">
-            {(card[BLOOD_COST] || card[POOL_COST]) && (
-              <div className="flex items-center justify-between">
-                <ResultLibraryCost valuePool={card[POOL_COST]} valueBlood={card[BLOOD_COST]} />
-              </div>
-            )}
-            <Requirements card={card} />
-          </div>
+          <Requirements card={card} />
           <Hr />
         </>
       )}
