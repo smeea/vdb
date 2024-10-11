@@ -21,7 +21,14 @@ for file, precon in playtest_files.items():
     try:
         with open(f"playtest/precons/{file}", "r", encoding="utf8") as deck_file:
             precon_deck = " ".join(str(x) for x in deck_file.readlines())
-            precon_cards = deck_import(precon_deck)["cards"]
+            imported_deck = deck_import(precon_deck)
+            precon_cards = imported_deck["cards"]
+            bad_cards = imported_deck["bad_cards"]
+
+            if len(bad_cards):
+                for c in bad_cards:
+                    print(f"BAD CARD: {c} [{file}]")
+
             for cardid, q in precon_cards.items():
                 cardid = str(cardid)
                 if cardid in playtest_cards:

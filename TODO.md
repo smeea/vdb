@@ -1,5 +1,6 @@
 # FIX
 - Page update in iOS
+- Shroud of Decay
 
 # FEATURES
 - Card q-ty change in autocompletion
