@@ -1,5 +1,12 @@
 [
   {
+    "version": "2024-10-11",
+    "changes": [
+      "Update card: move capacity in front of disciplines and move library cards requirement to the cost line",
+      "Small fixes"
+    ]
+  },
+  {
     "version": "2024-10-06",
     "changes": [
       "Fix legality date for Lasombra to start 30-days legality period from official release date later in October",

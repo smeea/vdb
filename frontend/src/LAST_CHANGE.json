@@ -1,10 +1,7 @@
 {
-  "version": "2024-10-06",
+  "version": "2024-10-11",
   "changes": [
-    "Fix legality date for Lasombra to start 30-days legality period from official release date later in October",
-    "Add autocompletion to show renamed cards with 'aka' name entered (e.g. 'mind rape' will show Puppet Master or 'gangrel de-evolution' will show Gangrel Atavism)",
-    "Update TWDA",
-    "Fix snapshot url on Safari",
-    "Fix Banu Haqim, Ministry, Giovanni, True Brujah legacy images"
+    "Update card: move capacity in front of disciplines and move library cards requirement to the cost line",
+    "Small fixes"
   ]
 }
