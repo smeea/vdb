@@ -21,7 +21,7 @@ const TooltipText = () => {
 };
 
 const AccountChangeName = () => {
-  const { publicName, setPublicName, isMobile } = useApp();
+  const { publicName, setPublicName } = useApp();
   const [formName, setFormName] = useState(publicName || '');
   const [isLoading, setIsLoading] = useState(false);
   const [success, setSuccess] = useState(false);
@@ -63,7 +63,7 @@ const AccountChangeName = () => {
           <PenFill />
         </div>
         <div className="flex">Change public name</div>
-        <ConditionalTooltipOrModal title="Public name" isModal={isMobile} overlay={<TooltipText />}>
+        <ConditionalTooltipOrModal title="Public name" overlay={<TooltipText />}>
           <div className="text-fgThird dark:text-fgThirdDark">[?]</div>
         </ConditionalTooltipOrModal>
       </div>

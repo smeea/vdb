@@ -110,12 +110,9 @@ const InventoryAddPreconModal = ({ handleClose }) => {
                 <ConditionalTooltipOrModal
                   className="basis-full"
                   title="Precon Quantity"
-                  isModal={isMobile}
                   overlay={<TooltipText />}
                 >
-                  <div className="flex basis-full justify-center text-fgThird dark:text-fgThirdDark">
-                    [?]
-                  </div>
+                  <div className="flex justify-center text-fgThird dark:text-fgThirdDark">[?]</div>
                 </ConditionalTooltipOrModal>
                 <DeckSortButton sortMethod={sortMethod} onChange={setSortMethod} noText />
               </div>

@@ -16,14 +16,11 @@ import { useApp } from '@/context';
 import { playtestServices } from '@/services';
 
 const Title = ({ isPrecon }) => {
-  const { isMobile } = useApp();
-
   return (
     <div className="flex gap-3 whitespace-nowrap font-bold text-fgSecondary dark:text-fgSecondaryDark">
       Playtest Report:
       <ConditionalTooltipOrModal
         title="Public name"
-        isModal={isMobile}
         overlay={
           <div className="flex flex-col gap-2">
             <div>

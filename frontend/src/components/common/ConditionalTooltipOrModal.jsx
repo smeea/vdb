@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Modal, Tooltip } from '@/components';
+import { useApp } from '@/context';
 
 const ConditionalTooltipOrModal = ({
   children,
@@ -14,6 +15,8 @@ const ConditionalTooltipOrModal = ({
   onClick,
   onClose,
 }) => {
+  const { isMobile } = useApp();
+  const withModal = isModal !== undefined ? isModal : isMobile;
   const [showModal, setShowModal] = useState();
 
   const handleClick = () => {
@@ -28,7 +31,7 @@ const ConditionalTooltipOrModal = ({
 
   return (
     <>
-      {isModal ? (
+      {withModal ? (
         <>
           <div className={className} onClick={handleClick}>
             {children}

@@ -37,7 +37,7 @@ const PasswordTooltipText = () => {
 };
 
 const AccountLogin = () => {
-  const { isMobile, initializeUserData } = useApp();
+  const { initializeUserData } = useApp();
   const [formUsername, setFormUsername] = useState('');
   const [formPassword, setFormPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -86,11 +86,7 @@ const AccountLogin = () => {
           <DoorOpenFill width="20" height="20" viewBox="0 0 16 16" />
         </div>
         <div className="flex">Login</div>
-        <ConditionalTooltipOrModal
-          title="Why to have account"
-          isModal={isMobile}
-          overlay={<LoginTooltipText />}
-        >
+        <ConditionalTooltipOrModal title="Why to have account" overlay={<LoginTooltipText />}>
           <div className="text-fgThird dark:text-fgThirdDark">[?]</div>
         </ConditionalTooltipOrModal>
       </div>
@@ -109,7 +105,6 @@ const AccountLogin = () => {
         </div>
         <div className="flex">
           <ConditionalTooltipOrModal
-            isModal={isMobile}
             placement="bottom"
             overlay={<PasswordTooltipText />}
             title="Password reset"

@@ -39,7 +39,6 @@ const PlaytestReportLanguageSelector = () => {
           Language
           <ConditionalTooltipOrModal
             title="Playtest Language"
-            isModal={isMobile}
             overlay={
               <div className="flex flex-col gap-1">
                 <div>

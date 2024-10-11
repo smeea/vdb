@@ -79,7 +79,6 @@ const PlaytestUserCard = () => {
             Games
             <ConditionalTooltipOrModal
               title="Games Played"
-              isModal={isMobile}
               overlay={
                 <div className="flex flex-col gap-1">
                   <div>During playtest of this round</div>
@@ -108,7 +107,6 @@ const PlaytestUserCard = () => {
             Reports
             <ConditionalTooltipOrModal
               title="Total Reports"
-              isModal={isMobile}
               overlay={
                 <div className="flex flex-col gap-1">
                   <div>Only count reports (cards + precons) from current round</div>

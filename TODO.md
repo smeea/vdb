@@ -1,5 +1,6 @@
 # FIX
 - Page update in iOS
+- Move generated playtest csv to playtest folder to copy at once
 
 # FEATURES
 - Card q-ty change in autocompletion

@@ -7,7 +7,6 @@ import EnvelopeFill from '@/assets/images/icons/envelope-fill.svg?react';
 import Globe2 from '@/assets/images/icons/globe2.svg?react';
 import ClipboardFill from '@/assets/images/icons/clipboard-fill.svg?react';
 import { Title, Banner, TextWithLinks, ConditionalTooltipOrModal } from '@/components';
-import { useApp } from '@/context';
 import lastChange from '@/LAST_CHANGE.json';
 
 const ContactLi = ({ icon, children }) => {
@@ -20,9 +19,7 @@ const ContactLi = ({ icon, children }) => {
 };
 
 const About = () => {
-  const { isMobile } = useApp();
   const BTC_WALLET = 'bc1qcj6zs57xskca9cua2lj5la6l2yz368j0wxdeap';
-
   return (
     <div className="about-container mx-auto">
       <div className="sm:mb-6">
@@ -200,7 +197,6 @@ const About = () => {
             Patreon: <a href="https://patreon.com/smeea">patreon.com/smeea</a>
             <ConditionalTooltipOrModal
               title="MacOS/iOS warning"
-              isModal={isMobile}
               overlay={
                 <div className="flex flex-col gap-1">
                   <div>
