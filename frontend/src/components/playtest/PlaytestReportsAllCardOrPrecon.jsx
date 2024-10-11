@@ -13,18 +13,16 @@ const PlaytestReportsAllCardOrPrecon = ({ product, isPrecon, report, withHr }) =
           {isMobile ? (
             <div className="flex font-bold text-fgSecondary dark:text-fgSecondaryDark">{name}</div>
           ) : (
-            <>
+            <div className="flex w-[320px] flex-col gap-1">
+              <div className="flex font-bold text-fgSecondary dark:text-fgSecondaryDark">
+                {name}
+              </div>
               {isPrecon ? (
-                <div className="flex w-[320px] flex-col gap-1">
-                  <div className="flex font-bold text-fgSecondary dark:text-fgSecondaryDark">
-                    {name}
-                  </div>
-                  <DeckCrypt deck={product} noDisciplines inMissing />
-                </div>
+                <DeckCrypt deck={product} noDisciplines inMissing />
               ) : (
                 <CardImage card={product} size="sm" />
               )}
-            </>
+            </div>
           )}
         </div>
         {report && <PlaytestReportEntry value={report} />}
