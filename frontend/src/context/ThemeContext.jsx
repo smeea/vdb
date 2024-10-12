@@ -1,5 +1,5 @@
-import React, { useState, useLayoutEffect } from 'react';
-import { initFromStorage, setLocalStorage, getLocalStorage } from '@/services/storageServices.js';
+import React, { useState, useEffect } from 'react';
+import { setLocalStorage, getLocalStorage } from '@/services/storageServices';
 
 const THEME = 'theme';
 const DARK = 'dark';
@@ -12,13 +12,10 @@ export const ThemeContext = React.createContext({
 });
 
 export const ThemeProvider = (props) => {
-  const [theme, setTheme] = useState(getLocalStorage(THEME));
+  const [theme, setTheme] = useState(getLocalStorage(THEME) ?? AUTO);
 
-  useLayoutEffect(() => {
-    initFromStorage(THEME, AUTO, setTheme);
-
+  useEffect(() => {
     const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? DARK : LIGHT;
-
     const root = document.getElementsByTagName('html')[0];
     root.className = theme === AUTO ? systemTheme : theme;
   }, [theme]);

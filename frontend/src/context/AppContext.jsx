@@ -2,7 +2,8 @@ import React, { useState, useLayoutEffect, useEffect, useMemo } from 'react';
 import { useImmer } from 'use-immer';
 import { useSnapshot } from 'valtio';
 import { set, setMany, getMany, update } from 'idb-keyval';
-import { playtestServices, storageServices, userServices, cardServices } from '@/services';
+import { playtestServices, userServices, cardServices } from '@/services';
+import { getLocalStorage, setLocalStorage } from '@/services/storageServices';
 import { useDeck, useWindowSize } from '@/hooks';
 import { deepClone, byTimestamp } from '@/utils';
 import {
@@ -64,27 +65,43 @@ export const AppProvider = ({ children }) => {
   const [publicName, setPublicName] = useState();
   const [email, setEmail] = useState();
   const [inventoryKey, setInventoryKey] = useState();
-  const [lang, setLang] = useState(EN);
+  const [lang, setLang] = useState(getLocalStorage(LANG) ?? EN);
   const [isOnline, setIsOnline] = useState(navigator.onLine);
   const [isPlaytestAdmin, setIsPlaytestAdmin] = useState();
   const [isPlaytester, setIsPlaytester] = useState();
   const [playtestProfile, setPlaytestProfile] = useState();
-  const [playtestMode, setPlaytestMode] = useState();
-  const [showImage, setShowImage] = useState();
-  const [showLegacyImage, setShowLegacyImage] = useState();
-  const [addMode, setAddMode] = useState();
-  const [inventoryMode, setInventoryMode] = useState();
-  const [limitedMode, setLimitedMode] = useState();
+  const [playtestMode, setPlaytestMode] = useState(getLocalStorage(PLAYTEST_MODE) ?? false);
+  const [showImage, setShowImage] = useState(getLocalStorage(SHOW_IMAGE) ?? true);
+  const [showLegacyImage, setShowLegacyImage] = useState(
+    getLocalStorage(SHOW_LEGACY_IMAGE) ?? false,
+  );
+  const [addMode, setAddMode] = useState(getLocalStorage(ADD_MODE) ?? isDesktop);
+  const [inventoryMode, setInventoryMode] = useState(getLocalStorage(INVENTORY_MODE) ?? false);
+  const [limitedMode, setLimitedMode] = useState(getLocalStorage(LIMITED_MODE) ?? false);
   const [searchInventoryMode, setSearchInventoryMode] = useState();
   const [searchMissingInventoryMode, setSearchMissingInventoryMode] = useState();
-  const [cryptDeckSort, setCryptDeckSort] = useState();
-  const [cryptSearchSort, setCryptSearchSort] = useState();
-  const [cryptInventorySort, setCryptInventorySort] = useState();
-  const [librarySearchSort, setLibrarySearchSort] = useState();
-  const [libraryInventorySort, setLibraryInventorySort] = useState();
-  const [twdSearchSort, setTwdSearchSort] = useState();
-  const [pdaSearchSort, setPdaSearchSort] = useState();
-  const [analyzeSearchSort, setAnalyzeSearchSort] = useState();
+  const [cryptDeckSort, setCryptDeckSort] = useState(getLocalStorage(CRYPT_DECK_SORT) ?? QUANTITYx);
+  const [cryptSearchSort, setCryptSearchSort] = useState(
+    getLocalStorage(CRYPT_SEARCH_SORT) ?? CAPACITY_MIN_MAX,
+  );
+  const [cryptInventorySort, setCryptInventorySort] = useState(
+    getLocalStorage(CRYPT_INVENTORY_SORT) ?? NAME,
+  );
+  const [librarySearchSort, setLibrarySearchSort] = useState(
+    getLocalStorage(LIBRARY_SEARCH_SORT) ?? TYPE,
+  );
+  const [libraryInventorySort, setLibraryInventorySort] = useState(
+    getLocalStorage(LIBRARY_INVENTORY_SORT) ?? NAME,
+  );
+  const [twdSearchSort, setTwdSearchSort] = useState(
+    getLocalStorage(TWD_SEARCH_SORT) ?? DATE_NEW_OLD,
+  );
+  const [pdaSearchSort, setPdaSearchSort] = useState(
+    getLocalStorage(PDA_SEARCH_SORT) ?? DATE_NEW_OLD,
+  );
+  const [analyzeSearchSort, setAnalyzeSearchSort] = useState(
+    getLocalStorage(ANALYZE_SEARCH_SORT) ?? RANK_HIGH_LOW,
+  );
   const [showCryptSearch, setShowCryptSearch] = useState(true);
   const [showLibrarySearch, setShowLibrarySearch] = useState(true);
   const [showFloatingButtons, setShowFloatingButtons] = useState(true);
@@ -111,7 +128,7 @@ export const AppProvider = ({ children }) => {
     { deckid: undefined },
   ];
   const lastDeckId = lastDeckArray[0]?.deckid;
-  const [recentDecks, setRecentDecks] = useState([]);
+  const [recentDecks, setRecentDecks] = useState(getLocalStorage(RECENT_DECKS) ?? []);
 
   // CARD BASE
   const CARD_VERSION = import.meta.env.VITE_CARD_VERSION;
@@ -261,7 +278,7 @@ export const AppProvider = ({ children }) => {
   // LANGUAGE
   const changeLang = (lang) => {
     setLang(lang);
-    storageServices.setLocalStorage(LANG, lang);
+    setLocalStorage(LANG, lang);
   };
 
   const changeBaseTextToLocalizedText = (setCardBase, localizedInfo, nativeInfo) => {
@@ -325,72 +342,72 @@ export const AppProvider = ({ children }) => {
   // APP DATA
   const toggleShowImage = () => {
     setShowImage(!showImage);
-    storageServices.setLocalStorage(SHOW_IMAGE, !showImage);
+    setLocalStorage(SHOW_IMAGE, !showImage);
   };
 
   const toggleShowLegacyImage = () => {
     setShowLegacyImage(!showLegacyImage);
-    storageServices.setLocalStorage(SHOW_LEGACY_IMAGE, !showLegacyImage);
+    setLocalStorage(SHOW_LEGACY_IMAGE, !showLegacyImage);
   };
 
   const toggleInventoryMode = () => {
     setInventoryMode(!inventoryMode);
-    storageServices.setLocalStorage(INVENTORY_MODE, !inventoryMode);
+    setLocalStorage(INVENTORY_MODE, !inventoryMode);
   };
 
   const toggleLimitedMode = () => {
     setLimitedMode(!limitedMode);
-    storageServices.setLocalStorage(LIMITED_MODE, !limitedMode);
+    setLocalStorage(LIMITED_MODE, !limitedMode);
   };
 
   const togglePlaytestMode = () => {
     setPlaytestMode(!playtestMode);
-    storageServices.setLocalStorage(PLAYTEST_MODE, !playtestMode);
+    setLocalStorage(PLAYTEST_MODE, !playtestMode);
   };
 
   const toggleAddMode = () => {
     setAddMode(!addMode);
-    storageServices.setLocalStorage(ADD_MODE, !addMode);
+    setLocalStorage(ADD_MODE, !addMode);
   };
 
   const changeCryptDeckSort = (method) => {
     setCryptDeckSort(method);
-    storageServices.setLocalStorage(CRYPT_DECK_SORT, method);
+    setLocalStorage(CRYPT_DECK_SORT, method);
   };
 
   const changeCryptSearchSort = (method) => {
     setCryptSearchSort(method);
-    storageServices.setLocalStorage(CRYPT_SEARCH_SORT, method);
+    setLocalStorage(CRYPT_SEARCH_SORT, method);
   };
 
   const changeCryptInventorySort = (method) => {
     setCryptInventorySort(method);
-    storageServices.setLocalStorage(CRYPT_INVENTORY_SORT, method);
+    setLocalStorage(CRYPT_INVENTORY_SORT, method);
   };
 
   const changeLibrarySearchSort = (method) => {
     setLibrarySearchSort(method);
-    storageServices.setLocalStorage(LIBRARY_SEARCH_SORT, method);
+    setLocalStorage(LIBRARY_SEARCH_SORT, method);
   };
 
   const changeLibraryInventorySort = (method) => {
     setLibraryInventorySort(method);
-    storageServices.setLocalStorage(LIBRARY_INVENTORY_SORT, method);
+    setLocalStorage(LIBRARY_INVENTORY_SORT, method);
   };
 
   const changeTwdSearchSort = (method) => {
     setTwdSearchSort(method);
-    storageServices.setLocalStorage(TWD_SEARCH_SORT, method);
+    setLocalStorage(TWD_SEARCH_SORT, method);
   };
 
   const changePdaSearchSort = (method) => {
     setPdaSearchSort(method);
-    storageServices.setLocalStorage(PDA_SEARCH_SORT, method);
+    setLocalStorage(PDA_SEARCH_SORT, method);
   };
 
   const changeAnalyzeSearchSort = (method) => {
     setAnalyzeSearchSort(method);
-    storageServices.setLocalStorage(ANALYZE_SEARCH_SORT, method);
+    setLocalStorage(ANALYZE_SEARCH_SORT, method);
   };
 
   const addRecentDeck = (deck) => {
@@ -405,12 +422,12 @@ export const AppProvider = ({ children }) => {
     });
     if (d.length > 10) d = d.slice(0, 10);
     setRecentDecks(d);
-    storageServices.setLocalStorage(RECENT_DECKS, d);
+    setLocalStorage(RECENT_DECKS, d);
   };
 
   const updateRecentDecks = (decks) => {
     setRecentDecks(decks);
-    storageServices.setLocalStorage(RECENT_DECKS, decks);
+    setLocalStorage(RECENT_DECKS, decks);
   };
 
   useEffect(() => {
@@ -421,25 +438,6 @@ export const AppProvider = ({ children }) => {
       window.removeEventListener(OFFLINE, () => setIsOnline(false));
       window.removeEventListener(ONLINE, () => setIsOnline(true));
     };
-  }, []);
-
-  useLayoutEffect(() => {
-    storageServices.initFromStorage(CRYPT_SEARCH_SORT, CAPACITY_MIN_MAX, setCryptSearchSort);
-    storageServices.initFromStorage(CRYPT_DECK_SORT, QUANTITYx, setCryptDeckSort);
-    storageServices.initFromStorage(CRYPT_INVENTORY_SORT, NAME, setCryptInventorySort);
-    storageServices.initFromStorage(LIBRARY_SEARCH_SORT, TYPE, setLibrarySearchSort);
-    storageServices.initFromStorage(LIBRARY_INVENTORY_SORT, NAME, setLibraryInventorySort);
-    storageServices.initFromStorage(TWD_SEARCH_SORT, DATE_NEW_OLD, setTwdSearchSort);
-    storageServices.initFromStorage(PDA_SEARCH_SORT, DATE_NEW_OLD, setPdaSearchSort);
-    storageServices.initFromStorage(ANALYZE_SEARCH_SORT, RANK_HIGH_LOW, setAnalyzeSearchSort);
-    storageServices.initFromStorage(LANG, EN, setLang);
-    storageServices.initFromStorage(ADD_MODE, isDesktop, setAddMode);
-    storageServices.initFromStorage(INVENTORY_MODE, false, setInventoryMode);
-    storageServices.initFromStorage(LIMITED_MODE, false, setLimitedMode);
-    storageServices.initFromStorage(SHOW_IMAGE, true, setShowImage);
-    storageServices.initFromStorage(RECENT_DECKS, [], setRecentDecks);
-    storageServices.initFromStorage(PLAYTEST_MODE, false, setPlaytestMode);
-    storageServices.initFromStorage(SHOW_LEGACY_IMAGE, false, setShowLegacyImage);
   }, []);
 
   // DECKS

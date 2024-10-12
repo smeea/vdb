@@ -1,7 +1,7 @@
-import React, { useEffect, useLayoutEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useImmer } from 'use-immer';
 import { SeatingModal } from '@/components';
-import { initFromStorage, setLocalStorage } from '@/services/storageServices.js';
+import { getLocalStorage, setLocalStorage } from '@/services/storageServices';
 import { useApp } from '@/context';
 import standardDecksData from '@/assets/data/standardDecks.json';
 
@@ -27,42 +27,28 @@ const randomizeArray = (array) => {
 const Seating = ({ setShow }) => {
   const { setShowFloatingButtons } = useApp();
   const [seating, setSeating] = useState();
-  const [withCustom, setWithCustom] = useState();
-  const [withStandard, setWithStandard] = useState();
-  const [customDecks, setCustomDecks] = useImmer([]);
+  const [withCustom, setWithCustom] = useState(getLocalStorage(WITH_CUSTOM) ?? true);
+  const [withStandard, setWithStandard] = useState(getLocalStorage(WITH_STANDARD) ?? true);
+  const [customDecks, setCustomDecks] = useImmer(getLocalStorage(CUSTOM_DECKS) ?? []);
   const [standardDecks, setStandardDecks] = useImmer(
-    Object.keys(standardDecksData)
-      .toSorted((a, b) => standardDecksData[a].localeCompare(standardDecksData[b], 'en'))
-      .map((deckid) => ({
-        deckid: deckid,
-        name: standardDecksData[deckid],
-        state: true,
-      })),
+    getLocalStorage(STANDARD_DECKS) ??
+      Object.keys(standardDecksData)
+        .toSorted((a, b) => standardDecksData[a].localeCompare(standardDecksData[b], 'en'))
+        .map((deckid) => ({
+          deckid: deckid,
+          name: standardDecksData[deckid],
+          state: true,
+        })),
   );
-
-  const [players, setPlayers] = useImmer([
-    { name: 'Player 1', random: false, state: true },
-    { name: 'Player 2', random: false, state: true },
-    { name: 'Player 3', random: false, state: true },
-    { name: 'Player 4', random: false, state: true },
-    { name: 'Player 5', random: false, state: true },
-  ]);
-
-  const initPlayers = (players) => {
-    setPlayers((draft) => {
-      players.map((p, idx) => {
-        draft[idx] = p;
-      });
-    });
-  };
-
-  const initCustomDecks = (decks) => {
-    setCustomDecks((draft) => {
-      decks.map((d, idx) => {
-        draft[idx] = d;
-      });
-    });
-  };
+  const [players, setPlayers] = useImmer(
+    getLocalStorage(PLAYERS) ?? [
+      { name: 'Player 1', random: false, state: true },
+      { name: 'Player 2', random: false, state: true },
+      { name: 'Player 3', random: false, state: true },
+      { name: 'Player 4', random: false, state: true },
+      { name: 'Player 5', random: false, state: true },
+    ],
+  );
 
   const setPlayer = (i, value) => {
     setPlayers((draft) => {
@@ -181,18 +167,6 @@ const Seating = ({ setShow }) => {
       draft.splice(i, 1);
     });
   };
-
-  useLayoutEffect(() => {
-    initFromStorage(CUSTOM_DECKS, [], initCustomDecks);
-    initFromStorage(PLAYERS, undefined, (val) => {
-      if (val) initPlayers(val);
-    });
-    initFromStorage(STANDARD_DECKS, undefined, (val) => {
-      if (val) setStandardDecks(val);
-    });
-    initFromStorage(WITH_CUSTOM, true, setWithCustom);
-    initFromStorage(WITH_STANDARD, true, setWithStandard);
-  }, []);
 
   useEffect(() => {
     setLocalStorage(CUSTOM_DECKS, customDecks);
