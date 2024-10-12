@@ -191,6 +191,7 @@ export { default as InventoryShowSelect } from './inventory/InventoryShowSelect.
 export { default as InventoryText } from './inventory/InventoryText.jsx';
 
 export { default as Banner } from './misc/Banner.jsx';
+export { default as Btc } from './misc/Btc.jsx';
 export { default as ButtonAddCard } from './misc/ButtonAddCard.jsx';
 export { default as ButtonCardCopyUrl } from './misc/ButtonCardCopyUrl.jsx';
 export { default as ButtonCardChange } from './misc/ButtonCardChange.jsx';

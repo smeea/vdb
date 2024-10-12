@@ -5,8 +5,7 @@ import Github from '@/assets/images/icons/github.svg?react';
 import Discord from '@/assets/images/icons/discord.svg?react';
 import EnvelopeFill from '@/assets/images/icons/envelope-fill.svg?react';
 import Globe2 from '@/assets/images/icons/globe2.svg?react';
-import ClipboardFill from '@/assets/images/icons/clipboard-fill.svg?react';
-import { Title, Banner, TextWithLinks, ConditionalTooltipOrModal } from '@/components';
+import { Btc, Title, Banner, TextWithLinks, ConditionalTooltipOrModal } from '@/components';
 import lastChange from '@/LAST_CHANGE.json';
 
 const ContactLi = ({ icon, children }) => {
@@ -19,7 +18,6 @@ const ContactLi = ({ icon, children }) => {
 };
 
 const About = () => {
-  const BTC_WALLET = 'bc1qcj6zs57xskca9cua2lj5la6l2yz368j0wxdeap';
   return (
     <div className="about-container mx-auto">
       <div className="sm:mb-6">
@@ -193,19 +191,21 @@ const About = () => {
 
         <div className="space-y-1.5">
           <Title>DONATIONS</Title>
-          <div className="flex gap-1">
-            Patreon: <a href="https://patreon.com/smeea">patreon.com/smeea</a>
+          <div className="flex gap-1.5 max-sm:flex-col sm:gap-4">
+            <div className="flex gap-1">
+              Patreon: <a href="https://patreon.com/smeea">patreon.com/smeea</a>
+            </div>
             <ConditionalTooltipOrModal
               title="MacOS/iOS warning"
               overlay={
                 <div className="flex flex-col gap-1">
                   <div>
-                    Starting from November 2024 Apple will charge 30% fee from users who subsribes
-                    using Patreon app from App Store (in addition to Patreon fees!).
+                    Starting from November 2024 Apple will charge extra 30% fee from users who
+                    subsribe using Patreon app from App Store (in addition to Patreon fees!).
                   </div>
                   <div>
-                    Please consider subscribing using patreon website in standard browser (Chrome,
-                    Firefox, Safari, etc).
+                    Please subscribe using patreon website in the browser (Chrome, Firefox, Safari,
+                    etc) to direct most of your donation money to me.
                   </div>
                   <div>
                     Read more:{' '}
@@ -216,22 +216,17 @@ const About = () => {
                 </div>
               }
             >
-              <div className="flex font-bold text-fgThird dark:text-fgThirdDark">
-                [MacOS/iOS warning]
+              <div className="flex gap-1">
+                [
+                <div className="flex text-fgSecondary dark:text-fgSecondaryDark">
+                  MacOS/iOS Patreon warning
+                </div>
+                ]
               </div>
             </ConditionalTooltipOrModal>
           </div>
-          <div className="flex gap-1">
-            Bitcoin (BTC):{' '}
-            <a href={`https://www.blockchain.com/btc/address/${BTC_WALLET}`}>
-              <div className="inline font-mono text-sm">{BTC_WALLET}</div>
-            </a>
-            <div
-              className="inline pl-1 text-fgSecondary hover:text-fgPrimary dark:text-fgSecondaryDark dark:hover:text-fgPrimaryDark"
-              onClick={() => navigator.clipboard.writeText(BTC_WALLET)}
-            >
-              <ClipboardFill className="inline" viewBox="0 0 18 18" />
-            </div>
+          <div className="flex gap-1 max-sm:flex-col">
+            Bitcoin (BTC): <Btc />
           </div>
         </div>
 
