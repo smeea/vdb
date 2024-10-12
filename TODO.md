@@ -1,6 +1,5 @@
 # FIX
 - Page update in iOS
-- Move generated playtest csv to playtest folder to copy at once
 
 # FEATURES
 - Card q-ty change in autocompletion
@@ -15,6 +14,7 @@
 # TECH IMPROVEMENTS
 - Update to React 19 (useOptimistic, useMemo/useCallback, useContext, use, ref)
 - Update to TailwindCSS 4
+- Update to React Router 7
 - Migrate from isWidth to container queries
 - Migrate forms to useFormStatus+useActionState
 - Remove legacy polyfills when Safari adopts groupBy

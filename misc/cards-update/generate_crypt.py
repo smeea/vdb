@@ -372,9 +372,9 @@ with open("artistsCrypt.json", "w", encoding="utf8") as artists_file, open(
                 with open(
                                 "playtest/vtescrypt_playtest.csv", "r", encoding="utf-8-sig"
                 ) as cardbase_csv_playtest, open(
-                        "cardbase_crypt_playtest.json", "w", encoding="utf8"
+                        "playtest/cardbase_crypt_playtest.json", "w", encoding="utf8"
                 ) as cardbase_file_playtest, open(
-                        "cardbase_crypt_playtest.min.json", "w", encoding="utf8"
+                        "playtest/cardbase_crypt_playtest.min.json", "w", encoding="utf8"
                 ) as cardbase_file_min_playtest:
                         reader_playtest = csv.reader(cardbase_csv_playtest)
                         fieldnames_playtest = next(reader_playtest)

@@ -43,17 +43,17 @@ try:
     with open("cardbase_crypt.json", "r+", encoding="utf8") as crypt_file, open(
         "cardbase_crypt.min.json", "w", encoding="utf8"
     ) as crypt_file_min, open(
-        "cardbase_crypt_playtest.json", "r+", encoding="utf8"
+        "playtest/cardbase_crypt_playtest.json", "r+", encoding="utf8"
     ) as crypt_playtest_file, open(
-        "cardbase_crypt_playtest.min.json", "w", encoding="utf8"
+        "playtest/cardbase_crypt_playtest.min.json", "w", encoding="utf8"
     ) as crypt_playtest_file_min, open(
         "cardbase_lib.json", "r+", encoding="utf8"
     ) as library_file, open(
         "cardbase_lib.min.json", "w", encoding="utf8"
     ) as library_file_min, open(
-        "cardbase_lib_playtest.json", "r+", encoding="utf8"
+        "playtest/cardbase_lib_playtest.json", "r+", encoding="utf8"
     ) as library_playtest_file, open(
-        "cardbase_lib_playtest.min.json", "w", encoding="utf8"
+        "playtest/cardbase_lib_playtest.min.json", "w", encoding="utf8"
     ) as library_playtest_file_min:
         crypt = json.load(crypt_file)
         crypt_playtest = json.load(crypt_playtest_file)

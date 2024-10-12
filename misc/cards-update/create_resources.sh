@@ -1,7 +1,7 @@
 #!/bin/sh
 # Update Card List
-echo '{}' > cardbase_crypt_playtest.min.json
-echo '{}' > cardbase_lib_playtest.min.json
+echo '{}' > playtest/cardbase_crypt_playtest.min.json
+echo '{}' > playtest/cardbase_lib_playtest.min.json
 python generate_crypt.py
 python generate_library.py
 python fix_crossrefs.py
@@ -9,8 +9,8 @@ python generate_playtest_precons.py
 python generate_precons.py
 mv cardbase_crypt.min.json ../../frontend/public/data/cardbase_crypt.json
 mv cardbase_lib.min.json ../../frontend/public/data/cardbase_lib.json
-mv cardbase_crypt_playtest.min.json ../../frontend/public/data/cardbase_crypt_playtest.json
-mv cardbase_lib_playtest.min.json ../../frontend/public/data/cardbase_lib_playtest.json
+mv playtest/cardbase_crypt_playtest.min.json ../../frontend/public/data/cardbase_crypt_playtest.json
+mv playtest/cardbase_lib_playtest.min.json ../../frontend/public/data/cardbase_lib_playtest.json
 mv precon_decks.min.json ../../frontend/public/data/precon_decks.json
 mv artistsCrypt.min.json ../../frontend/src/assets/data/artistsCrypt.json
 mv artistsLib.min.json ../../frontend/src/assets/data/artistsLib.json
