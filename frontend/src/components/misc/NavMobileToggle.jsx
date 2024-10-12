@@ -4,7 +4,10 @@ import ToggleOff from '@/assets/images/icons/toggle-off.svg?react';
 
 const NavMobileToggleSwitch = ({ text, isOn, onToggle }) => {
   return (
-    <div className="flex items-center space-x-2 px-3 py-1.5" onClick={onToggle}>
+    <div
+      className="flex items-center gap-2 px-3 py-1.5 text-fgThird dark:text-fgPrimaryDark"
+      onClick={onToggle}
+    >
       <div className="flex min-w-[30px] justify-center">
         {isOn ? (
           <ToggleOn height="26" width="26" viewBox="0 0 16 16" />

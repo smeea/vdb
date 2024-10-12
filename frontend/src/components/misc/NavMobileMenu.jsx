@@ -14,7 +14,7 @@ const LinkItem = ({ target, icon, text, setShowMenu }) => {
         to={target}
         onClick={() => setShowMenu(false)}
         className={({ isActive }) =>
-          `flex items-center space-x-2 px-3 py-1.5 text-fgPrimary dark:text-fgPrimaryDark ${
+          `flex items-center gap-2 px-3 py-1.5 text-fgThird dark:text-fgPrimaryDark ${
             isActive ? 'bg-borderPrimary dark:bg-borderPrimaryDark' : ''
           }`
         }

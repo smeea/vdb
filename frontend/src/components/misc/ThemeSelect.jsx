@@ -50,7 +50,7 @@ const ThemeSelect = ({ setShowMenu }) => {
     <>
       {isMobile ? (
         <div
-          className="flex items-center space-x-2 px-3 py-1.5 sm:text-white sm:dark:text-white"
+          className="flex items-center gap-2 px-3 py-1.5 text-fgThird dark:text-fgPrimaryDark"
           onClick={handleClick}
         >
           <div className="flex min-w-[30px] justify-center">{themeVisual[theme]?.icon}</div>
@@ -58,7 +58,7 @@ const ThemeSelect = ({ setShowMenu }) => {
         </div>
       ) : (
         <div
-          className="flex h-full min-w-[40px] items-center justify-center sm:text-white sm:dark:text-white"
+          className="flex h-full min-w-[40px] items-center justify-center text-white dark:text-white"
           onClick={handleClick}
           title="Switch Theme"
         >
