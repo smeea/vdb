@@ -4,7 +4,7 @@ import Bullseye from '@/assets/images/icons/bullseye.svg?react';
 import { Button } from '@/components';
 import { clearSearchForm } from '@/context';
 import { useLibraryRequirements } from '@/hooks';
-import { LE, GE } from '@/utils/constants';
+import { CRYPT, LE, GE } from '@/utils/constants';
 
 const ButtonPlayableBy = ({ card, handleClose }) => {
   const navigate = useNavigate();
@@ -35,8 +35,12 @@ const ButtonPlayableBy = ({ card, handleClose }) => {
       queries.push(`"clan"%3A{"value"%3A[${values.join('%2C')}]%2C"logic"%3A"or"}`);
     }
     if (isTitle.length > 0) {
-      const values = isTitle.map((i) => `"${i}"%3Atrue`);
-      queries.push(`"titles"%3A{${values.join('%2C')}}`);
+      if (isTitle[0] == 'titled') {
+        queries.push(`"votes"%3A"1"`);
+      } else {
+        const values = isTitle.map((i) => `"${i}"%3Atrue`);
+        queries.push(`"titles"%3A{${values.join('%2C')}}`);
+      }
     }
     if (isCapacity) {
       const [v, logic] = isCapacity.split(' or ');
@@ -61,7 +65,7 @@ const ButtonPlayableBy = ({ card, handleClose }) => {
       queries.push(`"traits"%3A{${traitsQuery}}`);
     }
 
-    clearSearchForm('crypt');
+    clearSearchForm(CRYPT);
     navigate(`/crypt?q={${queries.join('%2C')}}`);
 
     handleClose && handleClose();

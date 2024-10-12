@@ -128,7 +128,7 @@ const LibrarySearchForm = () => {
   };
 
   const handleClear = () => {
-    clearSearchForm('library');
+    clearSearchForm(LIBRARY);
     setLibraryResults(undefined);
     setPreresults(undefined);
     setError(false);
@@ -140,7 +140,7 @@ const LibrarySearchForm = () => {
 
   const processSearch = () => {
     setError(false);
-    const sanitizedForm = sanitizeFormState('library', libraryFormState);
+    const sanitizedForm = sanitizeFormState(LIBRARY, libraryFormState);
 
     if (Object.entries(sanitizedForm).length === 0) {
       setError('EMPTY REQUEST');
@@ -184,7 +184,7 @@ const LibrarySearchForm = () => {
 
   const testInputsAndSearch = () => {
     if (!isMobile && libraryCardBase) {
-      const input = sanitizeFormState('library', libraryFormState);
+      const input = sanitizeFormState(LIBRARY, libraryFormState);
       if (Object.keys(input).length === 0) {
         if (query) {
           setLibraryResults(undefined);

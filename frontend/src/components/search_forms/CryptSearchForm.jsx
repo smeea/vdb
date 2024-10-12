@@ -135,7 +135,7 @@ const CryptSearchForm = () => {
   };
 
   const handleClear = () => {
-    clearSearchForm('crypt');
+    clearSearchForm(CRYPT);
     setCryptResults(undefined);
     setPreresults(undefined);
     setError(false);
@@ -147,7 +147,7 @@ const CryptSearchForm = () => {
 
   const processSearch = () => {
     setError(false);
-    const sanitizedForm = sanitizeFormState('crypt', cryptFormState);
+    const sanitizedForm = sanitizeFormState(CRYPT, cryptFormState);
 
     if (Object.entries(sanitizedForm).length === 0) {
       setError('EMPTY REQUEST');
@@ -189,7 +189,7 @@ const CryptSearchForm = () => {
 
   const testInputsAndSearch = () => {
     if (!isMobile && cryptCardBase) {
-      const input = sanitizeFormState('crypt', cryptFormState);
+      const input = sanitizeFormState(CRYPT, cryptFormState);
       if (Object.keys(input).length === 0) {
         if (query) {
           setCryptResults(undefined);
