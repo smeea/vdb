@@ -1,6 +1,6 @@
 from flask import jsonify, request, abort
 from flask_login import current_user, login_required
-from datetime import date, datetime, timedelta
+from datetime import date
 from api import app, db, login
 from models import User
 import copy

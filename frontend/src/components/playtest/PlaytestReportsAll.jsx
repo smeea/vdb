@@ -39,7 +39,8 @@ const PlaytestReportsAll = () => {
 
     if (format === XLSX) {
       const data = await playtestServices.exportXlsx(
-        value,
+        reports,
+        users,
         cryptCardBase,
         libraryCardBase,
         preconDecks,
@@ -49,7 +50,7 @@ const PlaytestReportsAll = () => {
       });
     } else {
       let exportText = '';
-      Object.keys(value).forEach((id, idx) => {
+      Object.keys(reports).forEach((id, idx) => {
         let name;
         switch (target) {
           case PRECONS:
@@ -67,22 +68,22 @@ const PlaytestReportsAll = () => {
             exportText += 'General Opinions\n\n';
         }
 
-        Object.keys(value[id]).forEach((user, uIdx) => {
+        Object.keys(reports[id]).forEach((user, uIdx) => {
           exportText += `User: <${user}>\n`;
           switch (target) {
             case GENERAL:
-              if (value[id][user]) exportText += `${value[id][user]}\n`;
+              if (reports[id][user]) exportText += `${reports[id][user]}\n`;
               break;
             default:
-              exportText += `Score: ${value[id][user].score}\n`;
-              exportText += `Seen in Play: ${value[id][user].isPlayed ? 'Yes' : 'No'}\n`;
-              if (value[id][user].text) exportText += `${value[id][user].text}\n`;
+              exportText += `Score: ${reports[id][user].score}\n`;
+              exportText += `Seen in Play: ${reports[id][user].isPlayed ? 'Yes' : 'No'}\n`;
+              if (reports[id][user].text) exportText += `${reports[id][user].text}\n`;
           }
-          if (uIdx + 1 < Object.keys(value[id]).length) {
+          if (uIdx + 1 < Object.keys(reports[id]).length) {
             exportText += '\n-----\n\n';
           }
         });
-        if (idx + 1 < Object.keys(value).length) {
+        if (idx + 1 < Object.keys(reports).length) {
           exportText += '\n=====\n\n';
         }
       });
@@ -96,8 +97,10 @@ const PlaytestReportsAll = () => {
     saveAs(file);
   };
 
-  const url = `${import.meta.env.VITE_API_URL}/playtest/export/all/all`;
-  const { value } = useFetch(url, {}, []);
+  const urlReports = `${import.meta.env.VITE_API_URL}/playtest/export/all/all`;
+  const urlUsers = `${import.meta.env.VITE_API_URL}/playtest/users`;
+  const { value: reports } = useFetch(urlReports, {}, []);
+  const { value: users } = useFetch(urlUsers, {}, []);
 
   return (
     <div className="playtest-reports-container mx-auto">
@@ -148,19 +151,23 @@ const PlaytestReportsAll = () => {
             />
           </div>
         </div>
-        <PlaytestReportsAllCardsWrapper reports={value} target={CRYPT} sortMethod={sortMethod} />
+        <PlaytestReportsAllCardsWrapper reports={reports} target={CRYPT} sortMethod={sortMethod} />
         <Hr isThick />
-        <PlaytestReportsAllCardsWrapper reports={value} target={LIBRARY} sortMethod={sortMethod} />
+        <PlaytestReportsAllCardsWrapper
+          reports={reports}
+          target={LIBRARY}
+          sortMethod={sortMethod}
+        />
         <Hr isThick />
-        <PlaytestReportsAllPreconsWrapper reports={value} />
+        <PlaytestReportsAllPreconsWrapper reports={reports} />
         <Hr isThick />
         <FlexGapped className="max-sm:flex-col">
           <div className="flex font-bold text-fgSecondary dark:text-fgSecondaryDark sm:min-w-[320px]">
             GENERAL OPINIONS
           </div>
           <div className="flex basis-full flex-col gap-4">
-            {value?.[GENERAL] &&
-              Object.entries(value?.[GENERAL])
+            {reports?.[GENERAL] &&
+              Object.entries(reports?.[GENERAL])
                 .filter((i) => i[1])
                 .map((i, idx) => {
                   const name = i[0];
@@ -177,7 +184,7 @@ const PlaytestReportsAll = () => {
                           ))}
                         </div>
                       </div>
-                      {idx + 1 < Object.keys(value?.[GENERAL]).length && <Hr />}
+                      {idx + 1 < Object.keys(reports?.[GENERAL]).length && <Hr />}
                     </React.Fragment>
                   );
                 })}

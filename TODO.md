@@ -3,7 +3,6 @@
 
 # FEATURES
 - Card q-ty change in autocompletion
-- Details to playtest xlsx export
 - Ventrue, Tremere, Toreador to Legacy
 
 # FEATURES ON HOLD

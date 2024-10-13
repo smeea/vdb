@@ -27,57 +27,67 @@ export const updateProfile = (target, value) => {
   return ky.put(url, { json: { [target]: value } }).json();
 };
 
-export const exportXlsx = async (value, cryptCardBase, libraryCardBase, preconDecks) => {
+export const exportXlsx = async (reports, users, cryptCardBase, libraryCardBase, preconDecks) => {
   const XLSX = await import('xlsx');
   const workbook = XLSX.utils.book_new();
 
-  const cardsData = Object.keys(value)
+  const cardsData = Object.keys(reports)
     .filter((id) => !isNaN(id))
     .reduce((obj, key) => {
       return {
         ...obj,
-        [key]: value[key],
+        [key]: reports[key],
       };
     }, {});
 
-  const preconsData = Object.keys(value)
+  const preconsData = Object.keys(reports)
     .filter((id) => isNaN(id) && id !== GENERAL)
     .reduce((obj, key) => {
       return {
         ...obj,
-        [key]: value[key],
+        [key]: reports[key],
       };
     }, {});
 
-  const generalData = value[GENERAL];
+  const generalData = reports[GENERAL];
 
   const getSheet = (data) => {
-    const reports = Object.entries(data).map((j) => {
-      const [username, report] = j;
+    const reports = Object.entries(data).map((value) => {
+      const [username, report] = value;
+      const user = users[username];
+
       return {
         User: username,
         'Is Played': report.isPlayed ? 'Y' : 'N',
         Score: report.score,
         Report: report.text,
+        Games: user.games,
+        Liaison: user.liaison,
       };
     });
 
     return XLSX.utils.json_to_sheet(reports);
   };
 
-  const generalReports = Object.keys(generalData).map((user) => {
+  const generalReports = Object.keys(generalData).map((username) => {
+    const user = users[username];
+
     return {
-      User: user,
-      Report: generalData[user],
+      User: username,
+      Report: generalData[username],
+      Games: user.games,
+      Liaison: user.liaison,
     };
   });
   const generalSheet = XLSX.utils.json_to_sheet(generalReports);
+  generalSheet['!cols'] = [{ wch: 15 }, { wch: 60 }, { wch: 8 }, { wch: 15 }];
   XLSX.utils.book_append_sheet(workbook, generalSheet, 'General');
 
   Object.entries(preconsData).forEach((i) => {
     const [id, reportsData] = i;
     if (!preconDecks[`PLAYTEST:${id}`]) return;
     const sheet = getSheet(reportsData);
+    sheet['!cols'] = [{ wch: 15 }, { wch: 8 }, { wch: 8 }, { wch: 60 }, { wch: 8 }, { wch: 15 }];
     const sheetName = `P ${preconDecks[`PLAYTEST:${id}`].name.replace(/\W+/g, ' ').substring(0, 20)}`;
     XLSX.utils.book_append_sheet(workbook, sheet, sheetName);
   });
@@ -87,6 +97,7 @@ export const exportXlsx = async (value, cryptCardBase, libraryCardBase, preconDe
     const cardBase = cardid > 200000 ? cryptCardBase : libraryCardBase;
     if (!cardBase[cardid]) return;
     const sheet = getSheet(reportsData);
+    sheet['!cols'] = [{ wch: 15 }, { wch: 8 }, { wch: 8 }, { wch: 60 }, { wch: 8 }, { wch: 15 }];
     const sheetName = `${cardid > 200000 ? 'C' : 'L'} ${cardBase[cardid][NAME].replace(/\W+/g, ' ').substring(0, 20)}`;
     XLSX.utils.book_append_sheet(workbook, sheet, sheetName);
   });
