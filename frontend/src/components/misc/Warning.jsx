@@ -1,30 +1,30 @@
 import React from 'react';
 import Exclamation from '@/assets/images/icons/exclamation-triangle.svg?react';
 import { ResultLegalIcon } from '@/components';
-import { BANNED, LEGAL, PLAYTEST } from '@/utils/constants';
+import { LIMITED, GROUPS, BANNED, LEGAL, PLAYTEST } from '@/utils/constants';
 
 const Warning = ({ type, value = 'WARNING', title = '' }) => {
   const types = {
-    GROUPS: {
+    [GROUPS]: {
       text: 'GROUPS',
       title: `Bad Groups`,
     },
-    BANNED: {
+    [BANNED]: {
       text: 'BANNED',
       title: 'Banned Cards',
       icon: <ResultLegalIcon type={BANNED} value={BANNED} className="flex" />,
     },
-    PLAYTEST: {
+    [PLAYTEST]: {
       text: 'PLAYTEST',
       title: 'Playtest Cards',
       icon: <ResultLegalIcon type={PLAYTEST} value={PLAYTEST} className="flex" />,
     },
-    LEGAL: {
+    [LEGAL]: {
       text: 'LEGAL',
       title: `Not Tournament Legal until ${value}`,
       icon: <ResultLegalIcon type={LEGAL} value={value} className="flex" />,
     },
-    LIMITED: {
+    [LIMITED]: {
       text: 'LIMITED',
       title: 'Cards Excluded in Limited Format',
     },

@@ -18,3 +18,5 @@
 - Migrate from isWidth to container queries
 - Migrate forms to useFormStatus+useActionState
 - Remove legacy polyfills when Safari adopts groupBy
+- Use constants for idb keys
+- Use constants for store keys

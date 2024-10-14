@@ -6,12 +6,8 @@ import { CRYPT, LIBRARY, BANNED, ALLOWED } from '@/utils/constants';
 
 const AccountLimitedCardSelection = ({ inBanned }) => {
   const { cryptCardBase, libraryCardBase } = useApp();
-  const limitedCrypt = inBanned
-    ? useSnapshot(limitedFullStore).banned.crypt
-    : useSnapshot(limitedFullStore).allowed.crypt;
-  const limitedLibrary = inBanned
-    ? useSnapshot(limitedFullStore).banned.library
-    : useSnapshot(limitedFullStore).allowed.library;
+  const limitedCrypt = useSnapshot(limitedFullStore)[inBanned ? BANNED : ALLOWED][CRYPT];
+  const limitedLibrary = useSnapshot(limitedFullStore)[inBanned ? BANNED : ALLOWED][LIBRARY];
 
   const cardAdd = (e) => {
     const card = e.value > 200000 ? cryptCardBase[e.value] : libraryCardBase[e.value];

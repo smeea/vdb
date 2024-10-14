@@ -1,26 +1,27 @@
 import { proxy } from 'valtio';
 import { derive } from 'derive-valtio';
 import { update } from 'idb-keyval';
+import { SETS, CRYPT, LIBRARY, BANNED, ALLOWED } from '@/utils/constants';
 
 export const limitedFullStore = proxy({
-  crypt: {},
-  library: {},
-  sets: {},
-  allowed: {
+  [CRYPT]: {},
+  [LIBRARY]: {},
+  [SETS]: {},
+  [ALLOWED]: {
     crypt: {},
     library: {},
   },
-  banned: {
-    crypt: {},
-    library: {},
+  [BANNED]: {
+    [CRYPT]: {},
+    [LIBRARY]: {},
   },
 });
 
 export const limitedStore = derive({
   crypt: (get) => {
-    const allowed = get(limitedFullStore).allowed.crypt;
-    const banned = get(limitedFullStore).banned.crypt;
-    const sets = Object.keys(get(limitedFullStore).sets);
+    const allowed = get(limitedFullStore)[ALLOWED][CRYPT];
+    const banned = get(limitedFullStore)[BANNED][CRYPT];
+    const sets = Object.keys(get(limitedFullStore)[SETS]);
     const cards = {};
 
     Object.values(get(limitedFullStore).crypt)
@@ -42,9 +43,9 @@ export const limitedStore = derive({
     return cards;
   },
   library: (get) => {
-    const allowed = get(limitedFullStore).allowed.library;
-    const banned = get(limitedFullStore).banned.library;
-    const sets = Object.keys(get(limitedFullStore).sets);
+    const allowed = get(limitedFullStore)[ALLOWED][LIBRARY];
+    const banned = get(limitedFullStore)[BANNED][LIBRARY];
+    const sets = Object.keys(get(limitedFullStore)[SETS]);
     const cards = {};
 
     Object.values(get(limitedFullStore).library)
@@ -68,27 +69,27 @@ export const limitedStore = derive({
 });
 
 export const setLimitedAllowedCrypt = (v) => {
-  limitedFullStore.allowed.crypt = v;
+  limitedFullStore[ALLOWED][CRYPT] = v;
 };
 
 export const setLimitedAllowedLibrary = (v) => {
-  limitedFullStore.allowed.library = v;
+  limitedFullStore[ALLOWED][LIBRARY] = v;
 };
 
 export const setLimitedBannedCrypt = (v) => {
-  limitedFullStore.banned.crypt = v;
+  limitedFullStore[BANNED][CRYPT] = v;
 };
 
 export const setLimitedBannedLibrary = (v) => {
-  limitedFullStore.banned.library = v;
+  limitedFullStore[BANNED][LIBRARY] = v;
 };
 
 export const setLimitedSets = (v) => {
-  limitedFullStore.sets = v;
+  limitedFullStore[SETS] = v;
 };
 
 export const limitedSetChange = (set, isAdd) => {
-  const store = limitedFullStore.sets;
+  const store = limitedFullStore[SETS];
   const idbStore = 'limitedSets';
 
   if (isAdd) {
@@ -109,15 +110,7 @@ export const limitedSetChange = (set, isAdd) => {
 };
 
 export const limitedCardChange = (card, isAllowed, isAdd) => {
-  const store =
-    card.Id > 200000
-      ? isAllowed
-        ? limitedFullStore.allowed.crypt
-        : limitedFullStore.banned.crypt
-      : isAllowed
-        ? limitedFullStore.allowed.library
-        : limitedFullStore.banned.library;
-
+  const store = limitedFullStore[isAllowed ? ALLOWED : BANNED][card.Id > 200000 ? CRYPT : LIBRARY];
   const idbStore =
     card.Id > 200000
       ? isAllowed

@@ -1,4 +1,4 @@
-import React, { useState, useLayoutEffect, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { useImmer } from 'use-immer';
 import { useSnapshot } from 'valtio';
 import { set, setMany, getMany, update } from 'idb-keyval';
