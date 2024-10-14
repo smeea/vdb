@@ -44,6 +44,8 @@ const CardImage = ({ card, set, className = 'max-sm:w-full', size = 'md', onClic
     md: 'sm:min-w-[358px] sm:max-w-[358px]',
   };
 
+  console.log(legacyUrl);
+
   return (
     <>
       {set || (showLegacyImage && card.Id > 200000 && legacyImagesClans.includes(card.Clan)) ? (
