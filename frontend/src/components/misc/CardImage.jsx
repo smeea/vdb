@@ -22,8 +22,11 @@ const legacyImagesClans = [
   'Salubri antitribu',
   'Salubri',
   'Samedi',
+  'Toreador',
+  'Tremere',
   'True Brujah',
   'Tzimisce',
+  'Ventrue',
 ];
 
 const CardImage = ({ card, set, className = 'max-sm:w-full', size = 'md', onClick }) => {

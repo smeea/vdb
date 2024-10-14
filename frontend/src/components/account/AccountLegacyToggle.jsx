@@ -21,8 +21,11 @@ const legacyImagesClans = [
   'Salubri antitribu',
   'Salubri',
   'Samedi',
+  'Toreador',
+  'Tremere',
   'True Brujah',
   'Tzimisce',
+  'Ventrue',
 ];
 
 const TooltipText = () => {
