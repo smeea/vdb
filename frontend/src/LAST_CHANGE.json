@@ -1,7 +1,8 @@
 {
-  "version": "2024-10-11",
+  "version": "2024-10-15",
   "changes": [
-    "Update card: move capacity in front of disciplines and move library cards requirement to the cost line",
+    "Add Ventrue, Toreador and Tremere legacy images",
+    "Fix images to be available by direct urls",
     "Small fixes"
   ]
 }
