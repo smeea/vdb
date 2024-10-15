@@ -3,6 +3,7 @@
 
 # FEATURES
 - Card q-ty change in autocompletion
+- Playtest cards in report only for that round
 
 # FEATURES ON HOLD
 - TWD search with % V5-compatibility -> after BCP clarify V5
