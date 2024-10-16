@@ -49,7 +49,8 @@ export const setLibraryCompare = (v) => {
 
 export const clearSearchForm = (target) => {
   switch (target) {
-    case [CRYPT]:
+    case CRYPT:
+      console.log('FOO');
       searchCryptForm.text = structuredClone(defaultsCryptForm.text);
       searchCryptForm.votes = ANY;
       searchCryptForm.artist = ANY;
@@ -61,7 +62,7 @@ export const clearSearchForm = (target) => {
         });
       });
       break;
-    case [LIBRARY]:
+    case LIBRARY:
       searchLibraryForm.text = structuredClone(defaultsLibraryForm.text);
       searchLibraryForm.artist = ANY;
 
