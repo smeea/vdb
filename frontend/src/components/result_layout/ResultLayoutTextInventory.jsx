@@ -5,15 +5,15 @@ import CalculatorFill from '@/assets/images/icons/calculator-fill.svg?react';
 import { InventoryText, UsedDescription } from '@/components';
 import { inventoryStore, usedStore, deckStore } from '@/context';
 import { getHardTotal, getSoftMax } from '@/utils';
-import { DECKS } from '@/utils/constants';
+import { SOFT, HARD, CRYPT, LIBRARY, DECKS } from '@/utils/constants';
 
 const ResultLayoutTextInventory = ({ card, inPopover }) => {
   const decks = useSnapshot(deckStore)[DECKS];
-  const { crypt: inventoryCrypt, library: inventoryLibrary } = useSnapshot(inventoryStore);
-  const { crypt: usedCrypt, library: usedLibrary } = useSnapshot(usedStore);
+  const { [CRYPT]: inventoryCrypt, [LIBRARY]: inventoryLibrary } = useSnapshot(inventoryStore);
+  const { [CRYPT]: usedCrypt, [LIBRARY]: usedLibrary } = useSnapshot(usedStore);
   const usedCards = card.Id > 200000 ? usedCrypt : usedLibrary;
-  const softUsedMax = getSoftMax(usedCards.soft[card.Id]);
-  const hardUsedTotal = getHardTotal(usedCards.hard[card.Id]);
+  const softUsedMax = getSoftMax(usedCards[SOFT][card.Id]);
+  const hardUsedTotal = getHardTotal(usedCards[HARD][card.Id]);
   const inInventory =
     card.Id > 200000 ? inventoryCrypt[card.Id]?.q || 0 : inventoryLibrary[card.Id]?.q || 0;
   const text = card.Id > 200000 ? inventoryCrypt[card.Id]?.t : inventoryLibrary[card.Id]?.t;
@@ -42,14 +42,14 @@ const ResultLayoutTextInventory = ({ card, inPopover }) => {
             <div className="flex basis-full flex-col gap-0.5 md:basis-2/3">
               {softUsedMax > 0 && (
                 <UsedDescription
-                  usedCards={usedCards.soft[card.Id]}
+                  usedCards={usedCards[SOFT][card.Id]}
                   decks={decks}
                   inventoryType="s"
                 />
               )}
               {hardUsedTotal > 0 && (
                 <UsedDescription
-                  usedCards={usedCards.hard[card.Id]}
+                  usedCards={usedCards[HARD][card.Id]}
                   decks={decks}
                   inventoryType="h"
                 />

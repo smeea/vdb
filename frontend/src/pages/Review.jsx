@@ -114,7 +114,7 @@ const Review = () => {
 
   const cardChange = (_, card, count) => {
     if (count >= 0) {
-      const cardSrc = card.Id > 200000 ? 'crypt' : 'library';
+      const cardSrc = card.Id > 200000 ? CRYPT : LIBRARY;
 
       setDeckFrom((draft) => {
         draft[cardSrc][card.Id] = {

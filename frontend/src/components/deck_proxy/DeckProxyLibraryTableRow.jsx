@@ -8,7 +8,7 @@ import {
 } from '@/components';
 import { useApp, usedStore, inventoryStore } from '@/context';
 import { getSoftMax, getHardTotal } from '@/utils';
-import { LIBRARY } from '@/utils/constants';
+import { SOFT, HARD, LIBRARY } from '@/utils/constants';
 
 const DeckProxyLibraryTableRow = ({
   handleClick,
@@ -23,8 +23,8 @@ const DeckProxyLibraryTableRow = ({
   const inventoryLibrary = useSnapshot(inventoryStore)[LIBRARY];
   const usedLibrary = useSnapshot(usedStore)[LIBRARY];
   const inInventory = inventoryLibrary[card.c.Id]?.q ?? 0;
-  const softUsedMax = getSoftMax(usedLibrary.soft[card.c.Id]) ?? 0;
-  const hardUsedTotal = getHardTotal(usedLibrary.hard[card.c.Id]) ?? 0;
+  const softUsedMax = getSoftMax(usedLibrary[SOFT][card.c.Id]) ?? 0;
+  const hardUsedTotal = getHardTotal(usedLibrary[HARD][card.c.Id]) ?? 0;
 
   return (
     <tr key={card.c.Id} className="row-bg border-y border-bgSecondary dark:border-bgSecondaryDark">

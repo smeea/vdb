@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 import { useSnapshot } from 'valtio';
 import disciplinesList from '@/assets/data/disciplinesList.json';
 import virtuesList from '@/assets/data/virtuesList.json';
-import { LIBRARY, ALL, NONE, OK, NOK, cardtypeSorted } from '@/utils/constants';
+import { SOFT, HARD, LIBRARY, ALL, NONE, OK, NOK, cardtypeSorted } from '@/utils/constants';
 import { getHardTotal, getSoftMax } from '@/utils';
 import { useApp, usedStore } from '@/context';
 
@@ -61,8 +61,8 @@ const useInventoryLibrary = (cards = {}, category = OK, compact, type, disciplin
             disciplines = [d];
           }
 
-          const softUsedMax = getSoftMax(usedLibrary.soft[cardid]);
-          const hardUsedTotal = getHardTotal(usedLibrary.hard[cardid]);
+          const softUsedMax = getSoftMax(usedLibrary[SOFT][cardid]);
+          const hardUsedTotal = getHardTotal(usedLibrary[HARD][cardid]);
           const miss = softUsedMax + hardUsedTotal - cards[cardid].q;
 
           if (miss > 0) {
@@ -124,7 +124,7 @@ const useInventoryLibrary = (cards = {}, category = OK, compact, type, disciplin
           }
         });
 
-      Object.keys(usedLibrary.soft)
+      Object.keys(usedLibrary[SOFT])
         .filter((cardid) => cardid < 110000 && !cards[cardid])
         .forEach((cardid) => {
           const types = libraryCardBase[cardid].Type.split('/');
@@ -163,7 +163,7 @@ const useInventoryLibrary = (cards = {}, category = OK, compact, type, disciplin
             }
           }
 
-          const softUsedMax = getSoftMax(usedLibrary.soft[cardid]);
+          const softUsedMax = getSoftMax(usedLibrary[SOFT][cardid]);
 
           types.forEach((t) => {
             missingByType[t][cardid] = {
@@ -190,7 +190,7 @@ const useInventoryLibrary = (cards = {}, category = OK, compact, type, disciplin
           }
         });
 
-      Object.keys(usedLibrary.hard)
+      Object.keys(usedLibrary[HARD])
         .filter((cardid) => cardid < 110000 && !cards[cardid])
         .forEach((cardid) => {
           const types = libraryCardBase[cardid].Type.split('/');
@@ -229,7 +229,7 @@ const useInventoryLibrary = (cards = {}, category = OK, compact, type, disciplin
             }
           }
 
-          const hardUsedTotal = getHardTotal(usedLibrary.hard[cardid]);
+          const hardUsedTotal = getHardTotal(usedLibrary[HARD][cardid]);
 
           types.forEach((t) => {
             if (missingByType[t][cardid]) {

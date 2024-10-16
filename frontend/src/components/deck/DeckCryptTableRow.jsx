@@ -9,7 +9,7 @@ import {
 } from '@/components';
 import { getSoftMax, getHardTotal } from '@/utils';
 import { useSwipe } from '@/hooks';
-import { CRYPT } from '@/utils/constants';
+import { SOFT, HARD, CRYPT } from '@/utils/constants';
 
 const DeckCryptTableRow = ({
   handleClick,
@@ -39,8 +39,8 @@ const DeckCryptTableRow = ({
 
   const inLimited = limitedCrypt[card.c.Id];
   const inInventory = inventoryCrypt[card.c.Id]?.q ?? 0;
-  const softUsedMax = getSoftMax(usedCrypt.soft[card.c.Id]) ?? 0;
-  const hardUsedTotal = getHardTotal(usedCrypt.hard[card.c.Id]) ?? 0;
+  const softUsedMax = getSoftMax(usedCrypt[SOFT][card.c.Id]) ?? 0;
+  const hardUsedTotal = getHardTotal(usedCrypt[HARD][card.c.Id]) ?? 0;
 
   const trBg = isSwiped
     ? isSwiped === 'right'

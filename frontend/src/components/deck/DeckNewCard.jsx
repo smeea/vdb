@@ -1,6 +1,7 @@
 import React from 'react';
 import { NewCardSelect } from '@/components';
 import { useApp, deckCardChange } from '@/context';
+import { CRYPT } from '@/utils/constants';
 
 const DeckNewCard = ({ target, cards, deckid, handleClose, cardChange, menuPlacement }) => {
   const { cryptCardBase, libraryCardBase } = useApp();
@@ -8,12 +9,12 @@ const DeckNewCard = ({ target, cards, deckid, handleClose, cardChange, menuPlace
 
   const handleChange = (event) => {
     const cardid = event.value;
-    let currentQ = 0
-    cards.forEach(card => {
-      if (card.c.Id == cardid) currentQ = card.q
-    })
+    let currentQ = 0;
+    cards.forEach((card) => {
+      if (card.c.Id == cardid) currentQ = card.q;
+    });
 
-    const card = target === 'crypt' ? cryptCardBase[cardid] : libraryCardBase[cardid];
+    const card = target === CRYPT ? cryptCardBase[cardid] : libraryCardBase[cardid];
     changeAction(deckid, card, currentQ + 1);
     handleClose();
   };

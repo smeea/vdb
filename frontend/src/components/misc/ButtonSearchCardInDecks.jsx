@@ -4,7 +4,7 @@ import { Button } from '@/components';
 import PeopleFill from '@/assets/images/icons/people-fill.svg?react';
 import TrophyFill from '@/assets/images/icons/trophy-fill.svg?react';
 import { clearSearchForm, searchTwdForm, searchPdaForm } from '@/context';
-import { PDA, GT } from '@/utils/constants';
+import { CRYPT, LIBRARY, PDA, GT } from '@/utils/constants';
 
 const ButtonSearchCardInDecks = ({ cardid, target, handleClose }) => {
   const navigate = useNavigate();
@@ -13,9 +13,9 @@ const ButtonSearchCardInDecks = ({ cardid, target, handleClose }) => {
   const handleClick = () => {
     clearSearchForm(target);
     if (target === PDA) {
-      searchPdaForm[cardid > 200000 ? 'crypt' : 'library'] = value;
+      searchPdaForm[cardid > 200000 ? CRYPT : LIBRARY] = value;
     } else {
-      searchTwdForm[cardid > 200000 ? 'crypt' : 'library'] = value;
+      searchTwdForm[cardid > 200000 ? CRYPT : LIBRARY] = value;
     }
     navigate(
       `/${target}?q={"${

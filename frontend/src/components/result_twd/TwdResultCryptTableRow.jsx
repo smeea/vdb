@@ -10,7 +10,7 @@ import {
 } from '@/components';
 import { getHardTotal } from '@/utils';
 import { useApp, limitedStore, inventoryStore, usedStore } from '@/context';
-import { CRYPT } from '@/utils/constants';
+import { HARD, CRYPT } from '@/utils/constants';
 
 const TwdResultCryptTableRow = ({ card, handleClick, shouldShowModal }) => {
   const { limitedMode, inventoryMode, isMobile } = useApp();
@@ -19,7 +19,7 @@ const TwdResultCryptTableRow = ({ card, handleClick, shouldShowModal }) => {
   const inLimited = limitedCrypt[card.c.Id];
   const inInventory = inventoryCrypt[card.c.Id]?.q ?? 0;
   const usedCrypt = useSnapshot(usedStore)[CRYPT];
-  const hardUsedTotal = getHardTotal(usedCrypt.hard[card.c.Id]);
+  const hardUsedTotal = getHardTotal(usedCrypt[HARD][card.c.Id]);
 
   return (
     <tr key={card.c.Id} className="row-bg border-y border-bgSecondary dark:border-bgSecondaryDark">

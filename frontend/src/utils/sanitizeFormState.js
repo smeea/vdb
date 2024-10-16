@@ -134,7 +134,7 @@ const sanitizeFormState = (target, state) => {
     case TWD:
       forms = ['clan', 'sect'];
       break;
-    case 'library':
+    case LIBRARY:
       forms = ['clan', 'sect', 'title'];
       break;
     default:

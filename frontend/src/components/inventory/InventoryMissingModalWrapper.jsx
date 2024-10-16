@@ -3,6 +3,7 @@ import { useSnapshot } from 'valtio';
 import { DeckMissingModal } from '@/components';
 import { useApp, inventoryStore } from '@/context';
 import { useInventoryCrypt, useInventoryLibrary } from '@/hooks';
+import { CRYPT, LIBRARY } from '@/utils/constants';
 
 const InventoryMissingModalWrapper = ({
   clan,
@@ -15,7 +16,7 @@ const InventoryMissingModalWrapper = ({
   handleClose,
 }) => {
   const { cryptCardBase, libraryCardBase, publicName } = useApp();
-  const { crypt: inventoryCrypt, library: inventoryLibrary } = useSnapshot(inventoryStore);
+  const { [CRYPT]: inventoryCrypt, [LIBRARY]: inventoryLibrary } = useSnapshot(inventoryStore);
   const { missingByClan } = useInventoryCrypt(crypt, category, false, onlyNotes);
   const { missingByType, missingByDiscipline } = useInventoryLibrary(
     library,

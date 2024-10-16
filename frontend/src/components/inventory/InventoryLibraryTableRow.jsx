@@ -12,7 +12,7 @@ import {
   ResultName,
   ConditionalTooltip,
 } from '@/components';
-import { LIBRARY, TRIFLE, POOL_COST, BLOOD_COST, BURN_OPTION } from '@/utils/constants';
+import { SOFT, HARD, LIBRARY, TRIFLE, POOL_COST, BLOOD_COST, BURN_OPTION } from '@/utils/constants';
 import { getHardTotal, getSoftMax } from '@/utils';
 import { useApp, inventoryStore, usedStore, limitedStore, inventoryCardChange } from '@/context';
 import { useSwipe } from '@/hooks';
@@ -22,8 +22,8 @@ const InventoryLibraryTableRow = ({ card, compact, newFocus, inShared, handleCli
   const usedLibrary = useSnapshot(usedStore)[LIBRARY];
   const limitedLibrary = useSnapshot(limitedStore)[LIBRARY];
   const inLimited = limitedLibrary[card.c.Id];
-  const softUsedMax = getSoftMax(usedLibrary.soft[card.c.Id]);
-  const hardUsedTotal = getHardTotal(usedLibrary.hard[card.c.Id]);
+  const softUsedMax = getSoftMax(usedLibrary[SOFT][card.c.Id]);
+  const hardUsedTotal = getHardTotal(usedLibrary[HARD][card.c.Id]);
   const isEditable = !useSnapshot(inventoryStore).isFrozen;
 
   const { isSwiped, swipeHandlers } = useSwipe(

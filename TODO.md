@@ -20,5 +20,5 @@
 - Migrate from isWidth to container queries
 - Migrate forms to useFormStatus+useActionState
 - Remove legacy polyfills when Safari adopts groupBy
-- Use constants for idb keys, cardSrc, soft/hard
+- Use constants for idb keys
 - Unify twdDate & twd_date

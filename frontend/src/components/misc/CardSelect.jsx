@@ -2,6 +2,7 @@ import React from 'react';
 import { useApp } from '@/context';
 import { Select, SelectLabelCrypt, SelectLabelLibrary } from '@/components';
 import { useFilters } from '@/hooks';
+import { CRYPT, LIBRARY } from '@/utils/constants';
 
 const getMatches = (inputValue, filterAction, playtestId, playtestMode, inInventory) => {
   const input = { name: inputValue };
@@ -38,12 +39,12 @@ const getAllMatches = (
   const libraryPlaytestId = 110000;
 
   const cryptMatches =
-    target !== 'library'
+    target !== LIBRARY
       ? getMatches(inputValue, filterCrypt, cryptPlaytestId, playtestMode, inInventory)
       : [];
 
   const libraryMatches =
-    target !== 'crypt'
+    target !== CRYPT
       ? getMatches(inputValue, filterLibrary, libraryPlaytestId, playtestMode, inInventory)
       : [];
 
@@ -102,12 +103,12 @@ const CardSelect = React.forwardRef(
           inInventory,
         );
 
-        if (target === 'crypt') {
+        if (target === CRYPT) {
           return [
             ...cryptMatches.startingWith.toSorted(byTwd),
             ...cryptMatches.other.toSorted(byTwd),
           ];
-        } else if (target === 'library') {
+        } else if (target === LIBRARY) {
           return [
             ...libraryMatches.startingWith.toSorted(byTwd),
             ...libraryMatches.other.toSorted(byTwd),

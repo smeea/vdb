@@ -42,6 +42,8 @@ import {
   FIRST,
   ONLY,
   CRYPT,
+  SOFT,
+  HARD,
 } from '@/utils/constants';
 
 const CryptSearchForm = () => {
@@ -163,7 +165,7 @@ const CryptSearchForm = () => {
     if (searchInventoryMode && inventoryMode) {
       setResults(
         filteredCards.filter((card) => {
-          return inventoryCrypt[card.Id] || usedCrypt.soft[card.Id] || usedCrypt.hard[card.Id];
+          return inventoryCrypt[card.Id] || usedCrypt[SOFT][card.Id] || usedCrypt[HARD][card.Id];
         }),
       );
     } else if (searchMissingInventoryMode && inventoryMode) {

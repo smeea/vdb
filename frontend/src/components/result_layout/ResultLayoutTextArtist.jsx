@@ -1,12 +1,13 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { searchLibraryForm, searchCryptForm, clearSearchForm } from '@/context';
+import { CRYPT, LIBRARY } from '@/utils/constants';
 
 const ResultLayoutTextArtist = ({ handleClose, inCrypt, artists }) => {
   const navigate = useNavigate();
 
   const handleClick = (value) => {
-    clearSearchForm(inCrypt ? 'crypt' : 'library');
+    clearSearchForm(inCrypt ? CRYPT : LIBRARY);
     inCrypt ? (searchCryptForm.artist = value) : (searchLibraryForm.artist = value);
     navigate(
       `/${inCrypt ? 'crypt' : 'library'}?q=${encodeURIComponent(JSON.stringify({ artist: value }))}`,

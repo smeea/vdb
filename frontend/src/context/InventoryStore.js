@@ -59,7 +59,7 @@ export const inventoryCardsAdd = (cards) => {
 
 export const inventoryCardChange = (card, q) => {
   if (card.Id > 210000 || (card.Id < 200000 && card.Id > 110000)) return;
-  const cardSrc = card.Id > 200000 ? 'crypt' : 'library';
+  const cardSrc = card.Id > 200000 ? CRYPT : LIBRARY;
   const initialState = deepClone(inventoryStore[cardSrc]);
   const store = inventoryStore[cardSrc];
 
@@ -76,7 +76,7 @@ export const inventoryCardChange = (card, q) => {
     delete store[card.Id];
   }
 
-  if (cardSrc === 'crypt') startCryptTimer();
+  if (cardSrc === CRYPT) startCryptTimer();
 
   inventoryServices.setCard(card.Id, q).catch(() => {
     inventoryStore[cardSrc] = initialState;
@@ -85,7 +85,7 @@ export const inventoryCardChange = (card, q) => {
 
 export const inventoryCardTextChange = (card, text) => {
   if (card.Id > 210000 || (card.Id < 200000 && card.Id > 110000)) return;
-  const cardSrc = card.Id > 200000 ? 'crypt' : 'library';
+  const cardSrc = card.Id > 200000 ? CRYPT : LIBRARY;
   const initialState = deepClone(inventoryStore[cardSrc]);
   const store = inventoryStore[cardSrc];
 

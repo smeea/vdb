@@ -1,6 +1,6 @@
 import { proxy } from 'valtio';
 import { deepClone } from '@/utils';
-import { DECK, DECKS, CRYPT_TIMER, CARD_TEXT } from '@/utils/constants';
+import { CRYPT, LIBRARY, DECK, DECKS, CRYPT_TIMER, CARD_TEXT } from '@/utils/constants';
 import { deckServices } from '@/services';
 import { startCryptTimer, miscStore } from '@/context';
 
@@ -15,7 +15,7 @@ export const setDeck = (v) => {
 };
 
 export const deckCardChange = (deckid, card, q) => {
-  const cardSrc = card.Id > 200000 ? 'crypt' : 'library';
+  const cardSrc = card.Id > 200000 ? CRYPT : LIBRARY;
   const initialDeckState = deepClone(deckStore[DECK]);
   const initialDecksState = deepClone(deckStore[DECKS][deckid]);
 
@@ -41,7 +41,7 @@ export const deckCardChange = (deckid, card, q) => {
 
   changeMaster(deckid);
 
-  if (cardSrc === 'crypt') startCryptTimer();
+  if (cardSrc === CRYPT) startCryptTimer();
 
   deckServices.cardChange(deckid, card.Id, q).catch(() => {
     deckStore[DECK] = initialDeckState;
@@ -150,7 +150,7 @@ export const deckToggleInventoryState = (deckid) => {
 
 export const cardToggleInventoryState = (deckid, cardid) => {
   const deck = deckStore[DECKS][deckid];
-  const target = cardid > 200000 ? 'crypt' : 'library';
+  const target = cardid > 200000 ? CRYPT : LIBRARY;
   const value = deck[target][cardid].i ? '' : deck.inventoryType === 's' ? 'h' : 's';
   deckUpdate(deckid, 'usedInInventory', {
     [cardid]: value,

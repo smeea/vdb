@@ -42,6 +42,8 @@ import {
   REPRINT,
   FIRST,
   LIBRARY,
+  SOFT,
+  HARD,
 } from '@/utils/constants';
 
 const LibrarySearchForm = () => {
@@ -157,7 +159,7 @@ const LibrarySearchForm = () => {
       setResults(
         filteredCards.filter((card) => {
           return (
-            inventoryLibrary[card.Id] || usedLibrary.soft[card.Id] || usedLibrary.hard[card.Id]
+            inventoryLibrary[card.Id] || usedLibrary[SOFT][card.Id] || usedLibrary[HARD][card.Id]
           );
         }),
       );

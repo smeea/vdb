@@ -8,7 +8,7 @@ import {
 } from '@/components';
 import { getSoftMax, getHardTotal } from '@/utils';
 import { useApp, usedStore, inventoryStore } from '@/context';
-import { CRYPT } from '@/utils/constants';
+import { SOFT, HARD, CRYPT } from '@/utils/constants';
 
 const DeckProxyCryptTableRow = ({
   proxySelected,
@@ -25,8 +25,8 @@ const DeckProxyCryptTableRow = ({
   const inventoryCrypt = useSnapshot(inventoryStore)[CRYPT];
   const usedCrypt = useSnapshot(usedStore)[CRYPT];
   const inInventory = inventoryCrypt[card.c.Id]?.q ?? 0;
-  const softUsedMax = getSoftMax(usedCrypt.soft[card.c.Id]) ?? 0;
-  const hardUsedTotal = getHardTotal(usedCrypt.hard[card.c.Id]) ?? 0;
+  const softUsedMax = getSoftMax(usedCrypt[SOFT][card.c.Id]) ?? 0;
+  const hardUsedTotal = getHardTotal(usedCrypt[HARD][card.c.Id]) ?? 0;
 
   return (
     <tr key={card.c.Id} className="row-bg border-y border-bgSecondary dark:border-bgSecondaryDark">

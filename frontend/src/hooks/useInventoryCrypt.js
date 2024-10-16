@@ -3,7 +3,7 @@ import { useSnapshot } from 'valtio';
 import imbuedClansList from '@/assets/data/imbuedClansList.json';
 import vampireClansList from '@/assets/data/vampireClansList.json';
 import { getHardTotal, getSoftMax } from '@/utils';
-import { CRYPT, ALL, OK, NOK } from '@/utils/constants';
+import { SOFT, HARD, CRYPT, ALL, OK, NOK } from '@/utils/constants';
 import { useApp, usedStore } from '@/context';
 
 const useInventoryCrypt = (cards = {}, category = OK, compact, onlyNotes) => {
@@ -40,8 +40,8 @@ const useInventoryCrypt = (cards = {}, category = OK, compact, onlyNotes) => {
         })
         .forEach((cardid) => {
           const clan = cards[cardid].c.Clan;
-          const softUsedMax = getSoftMax(usedCrypt.soft[cardid]);
-          const hardUsedTotal = getHardTotal(usedCrypt.hard[cardid]);
+          const softUsedMax = getSoftMax(usedCrypt[SOFT][cardid]);
+          const hardUsedTotal = getHardTotal(usedCrypt[HARD][cardid]);
           const miss = softUsedMax + hardUsedTotal - cards[cardid].q;
 
           if (miss > 0) {
@@ -63,7 +63,7 @@ const useInventoryCrypt = (cards = {}, category = OK, compact, onlyNotes) => {
           }
         });
 
-      Object.keys(usedCrypt.soft)
+      Object.keys(usedCrypt[SOFT])
         .filter((cardid) => cardid < 210000 && !cards[cardid])
         .forEach((cardid) => {
           const clan = cryptCardBase[cardid].Clan;
@@ -79,7 +79,7 @@ const useInventoryCrypt = (cards = {}, category = OK, compact, onlyNotes) => {
             };
           }
 
-          const softUsedMax = getSoftMax(usedCrypt.soft[cardid]);
+          const softUsedMax = getSoftMax(usedCrypt[SOFT][cardid]);
 
           missingByClan[clan][cardid] = {
             q: softUsedMax,
@@ -91,7 +91,7 @@ const useInventoryCrypt = (cards = {}, category = OK, compact, onlyNotes) => {
           };
         });
 
-      Object.keys(usedCrypt.hard)
+      Object.keys(usedCrypt[HARD])
         .filter((cardid) => cardid < 210000 && !cards[cardid])
         .forEach((cardid) => {
           const clan = cryptCardBase[cardid].Clan;
@@ -107,7 +107,7 @@ const useInventoryCrypt = (cards = {}, category = OK, compact, onlyNotes) => {
             };
           }
 
-          const hardUsedTotal = getHardTotal(usedCrypt.hard[cardid]);
+          const hardUsedTotal = getHardTotal(usedCrypt[HARD][cardid]);
 
           if (missingByClan[clan][cardid]) {
             missingByClan[clan][cardid].q += hardUsedTotal;

@@ -9,7 +9,7 @@ import {
 } from '@/components';
 import { getSoftMax, getHardTotal } from '@/utils';
 import { useSwipe } from '@/hooks';
-import { LIBRARY } from '@/utils/constants';
+import { SOFT, HARD, LIBRARY } from '@/utils/constants';
 
 const DeckLibraryTableRow = ({
   handleClick,
@@ -36,8 +36,8 @@ const DeckLibraryTableRow = ({
 
   const inLimited = limitedLibrary[card.c.Id];
   const inInventory = inventoryLibrary[card.c.Id]?.q ?? 0;
-  const softUsedMax = getSoftMax(usedLibrary.soft[card.c.Id]) ?? 0;
-  const hardUsedTotal = getHardTotal(usedLibrary.hard[card.c.Id]) ?? 0;
+  const softUsedMax = getSoftMax(usedLibrary[SOFT][card.c.Id]) ?? 0;
+  const hardUsedTotal = getHardTotal(usedLibrary[HARD][card.c.Id]) ?? 0;
 
   const trBg = isSwiped
     ? isSwiped === 'right'

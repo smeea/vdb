@@ -1,5 +1,6 @@
 import React from 'react';
 import { CardSelect } from '@/components';
+import { CRYPT } from '@/utils/constants';
 
 const NewCardSelect = React.forwardRef(
   ({ target, inInventory, onChange, autoFocus, menuPlacement }, ref) => {
@@ -8,7 +9,7 @@ const NewCardSelect = React.forwardRef(
         autoFocus={autoFocus}
         inInventory={inInventory}
         onChange={onChange}
-        placeholder={`Add ${target === 'crypt' ? 'Crypt' : 'Library'} Card`}
+        placeholder={`Add ${target === CRYPT ? 'Crypt' : 'Library'} Card`}
         menuPlacement={menuPlacement}
         value={null}
         target={target}

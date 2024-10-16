@@ -4,11 +4,12 @@ import { useSnapshot } from 'valtio';
 import { FlexGapped, Modal, Button, DeckProxyCrypt, DeckProxyLibrary } from '@/components';
 import { useApp, usedStore, inventoryStore } from '@/context';
 import { getHardTotal, getSoftMax } from '@/utils';
+import { SOFT, HARD, CRYPT, LIBRARY } from '@/utils/constants';
 
 const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
   const { isMobile, inventoryMode } = useApp();
-  const { crypt: inventoryCrypt, library: inventoryLibrary } = useSnapshot(inventoryStore);
-  const { crypt: usedCrypt, library: usedLibrary } = useSnapshot(usedStore);
+  const { [CRYPT]: inventoryCrypt, [LIBRARY]: inventoryLibrary } = useSnapshot(inventoryStore);
+  const { [CRYPT]: usedCrypt, [LIBRARY]: usedLibrary } = useSnapshot(usedStore);
 
   const [proxySelected, setProxySelected] = useImmer(() => {
     const cards = {};
@@ -49,8 +50,8 @@ const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
     Object.keys(deck.crypt)
       .filter((cardid) => deck.crypt[cardid].q > 0)
       .forEach((cardid) => {
-        const softUsedMax = getSoftMax(usedCrypt.soft[cardid]);
-        const hardUsedTotal = getHardTotal(usedCrypt.hard[cardid]);
+        const softUsedMax = getSoftMax(usedCrypt[SOFT][cardid]);
+        const hardUsedTotal = getHardTotal(usedCrypt[HARD][cardid]);
 
         const inInventory = inventoryCrypt[cardid]?.q || 0;
         const inventoryMiss = softUsedMax + hardUsedTotal - inInventory;
@@ -71,8 +72,8 @@ const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
     Object.keys(deck.library)
       .filter((cardid) => deck.library[cardid].q > 0)
       .forEach((cardid) => {
-        const softUsedMax = getSoftMax(usedLibrary.soft[cardid]);
-        const hardUsedTotal = getHardTotal(usedLibrary.hard[cardid]);
+        const softUsedMax = getSoftMax(usedLibrary[SOFT][cardid]);
+        const hardUsedTotal = getHardTotal(usedLibrary[HARD][cardid]);
 
         const inInventory = inventoryLibrary[cardid]?.q || 0;
         const inventoryMiss = softUsedMax + hardUsedTotal - inInventory;
