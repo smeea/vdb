@@ -87,10 +87,10 @@ export const byPlayer = (a, b) => {
 };
 
 export const byDateWin = (a, b) => {
-  if (a.twd_date && !b.twd_date) return -1;
-  if (!a.twd_date && b.twd_date) return 1;
-  if (!a.twd_date && !b.twd_date) return 0;
-  return a.twd_date < b.twd_date;
+  if (a.twdDate && !b.twdDate) return -1;
+  if (!a.twdDate && b.twdDate) return 1;
+  if (!a.twdDate && !b.twdDate) return 0;
+  return a.twdDate < b.twdDate;
 };
 
 export const byDatePrint = (a, b) => {

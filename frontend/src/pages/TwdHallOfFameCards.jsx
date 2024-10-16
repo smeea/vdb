@@ -38,7 +38,7 @@ const TwdHallOfFameCards = () => {
             }
           });
 
-        const twdDate = value[cardid].twd_date;
+        const twdDate = value[cardid].twdDate;
         if (twdDate) {
           if (!p[player]) {
             p[player] = {

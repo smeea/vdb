@@ -23,13 +23,13 @@ with open("twda.json", "r") as twda_input, open(
 
         for card in i["crypt"]["cards"]:
             cards[card["id"]]["deckid"] = deckid
-            cards[card["id"]]["twd_date"] = date
+            cards[card["id"]]["twdDate"] = date
             cards[card["id"]]["player"] = player
 
         for cardtype in i["library"]["cards"]:
             for card in cardtype["cards"]:
                 cards[card["id"]]["deckid"] = deckid
-                cards[card["id"]]["twd_date"] = date
+                cards[card["id"]]["twdDate"] = date
                 cards[card["id"]]["player"] = player
 
 with open("twd_cards_history.json", "w") as output_file, open(

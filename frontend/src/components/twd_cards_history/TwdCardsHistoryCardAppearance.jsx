@@ -9,10 +9,10 @@ const TwdCardsHistoryCardAppearance = ({ card, byPlayer }) => {
   const navigate = useNavigate();
 
   let yearsToWin = null;
-  if (card.twd_date) {
+  if (card.twdDate) {
     yearsToWin =
       Math.round(
-        (new Date(card.twd_date) - new Date(card.release_date)) / (1000 * 60 * 60 * 24) / 365,
+        (new Date(card.twdDate) - new Date(card.release_date)) / (1000 * 60 * 60 * 24) / 365,
       ) || 1;
   } else {
     const date = new Date();
@@ -36,7 +36,7 @@ const TwdCardsHistoryCardAppearance = ({ card, byPlayer }) => {
       </div>
       {!isMobile && (
         <div className="flex min-w-[45px] items-center justify-center sm:min-w-[60px]">
-          {card.twd_date && card.twd_date.slice(0, 4)}
+          {card.twdDate && card.twdDate.slice(0, 4)}
         </div>
       )}
       <div
