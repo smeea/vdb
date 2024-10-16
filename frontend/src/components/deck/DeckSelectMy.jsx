@@ -6,11 +6,11 @@ import At from '@/assets/images/icons/at.svg?react';
 import { Select, ResultPreconClan, ResultLegalIcon } from '@/components';
 import { limitedStore, deckStore, useApp } from '@/context';
 import { getRestrictions, getClan } from '@/utils';
-import { BANNED, LEGAL, PLAYTEST } from '@/utils/constants';
+import { DECKS, BANNED, LEGAL, PLAYTEST } from '@/utils/constants';
 
 const DeckSelectMy = ({ deckid, handleSelect }) => {
   const { limitedMode, inventoryMode, isMobile, isWide } = useApp();
-  const decks = useSnapshot(deckStore).decks;
+  const decks = useSnapshot(deckStore)[DECKS];
   const limitedCards = useSnapshot(limitedStore);
 
   const byTimestamp = (a, b) => {

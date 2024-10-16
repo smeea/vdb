@@ -10,7 +10,7 @@ import {
 } from '@/components';
 import { librarySort } from '@/utils';
 import { useApp, deckStore } from '@/context';
-import { CLAN_DISCIPLINE, COST_MAX_MIN, COST_MIN_MAX, NAME, TYPE } from '@/utils/constants';
+import { DECK, CLAN_DISCIPLINE, COST_MAX_MIN, COST_MIN_MAX, NAME, TYPE } from '@/utils/constants';
 
 const ResultLibrary = ({ cards, setCards, inCompare }) => {
   const {
@@ -23,7 +23,7 @@ const ResultLibrary = ({ cards, setCards, inCompare }) => {
     showFloatingButtons,
   } = useApp();
   const navigate = useNavigate();
-  const deck = useSnapshot(deckStore).deck;
+  const deck = useSnapshot(deckStore)[DECK];
   const isEditable = deck?.isAuthor && !deck?.isPublic && !deck?.isFrozen;
 
   const sortMethods = {
@@ -54,7 +54,9 @@ const ResultLibrary = ({ cards, setCards, inCompare }) => {
   return (
     <>
       {!isMobile && (cards === null || cards.length === 0) && (
-        <ErrorMessage sticky>{cards === null ? 'CONNECTION PROBLEM' : 'NO CARDS FOUND'}</ErrorMessage>
+        <ErrorMessage sticky>
+          {cards === null ? 'CONNECTION PROBLEM' : 'NO CARDS FOUND'}
+        </ErrorMessage>
       )}
       {cards && cards.length > 0 && (
         <>

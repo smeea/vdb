@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 import { useSnapshot } from 'valtio';
 import { TwdResult, TwdSearchForm, ErrorMessage, FlexGapped } from '@/components';
 import { useApp, searchResults, setTwdResults } from '@/context';
+import { TWD } from '@/utils/constants';
 
 const Twd = () => {
   const { isMobile } = useApp();
-  const twdResults = useSnapshot(searchResults).twd;
+  const twdResults = useSnapshot(searchResults)[TWD];
   const [error, setError] = useState();
 
   return (

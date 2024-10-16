@@ -8,8 +8,8 @@ export const limitedFullStore = proxy({
   [LIBRARY]: {},
   [SETS]: {},
   [ALLOWED]: {
-    crypt: {},
-    library: {},
+    [CRYPT]: {},
+    [LIBRARY]: {},
   },
   [BANNED]: {
     [CRYPT]: {},
@@ -18,13 +18,13 @@ export const limitedFullStore = proxy({
 });
 
 export const limitedStore = derive({
-  crypt: (get) => {
+  [CRYPT]: (get) => {
     const allowed = get(limitedFullStore)[ALLOWED][CRYPT];
     const banned = get(limitedFullStore)[BANNED][CRYPT];
     const sets = Object.keys(get(limitedFullStore)[SETS]);
     const cards = {};
 
-    Object.values(get(limitedFullStore).crypt)
+    Object.values(get(limitedFullStore)[CRYPT])
       .filter((card) => {
         if (banned[card.Id]) return false;
         if (allowed[card.Id]) return true;
@@ -42,13 +42,13 @@ export const limitedStore = derive({
 
     return cards;
   },
-  library: (get) => {
+  [LIBRARY]: (get) => {
     const allowed = get(limitedFullStore)[ALLOWED][LIBRARY];
     const banned = get(limitedFullStore)[BANNED][LIBRARY];
     const sets = Object.keys(get(limitedFullStore)[SETS]);
     const cards = {};
 
-    Object.values(get(limitedFullStore).library)
+    Object.values(get(limitedFullStore)[LIBRARY])
       .filter((card) => {
         if (banned[card.Id]) return false;
         if (allowed[card.Id]) return true;

@@ -1,7 +1,8 @@
 import { proxy } from 'valtio';
+import { CRYPT_TIMER } from '@/utils/constants';
 
 export const miscStore = proxy({
-  cryptTimer: undefined,
+  [CRYPT_TIMER]: undefined,
   cryptTimers: [],
 });
 
@@ -17,7 +18,7 @@ export const startCryptTimer = () => {
       counter = counter - 1;
     } else {
       clearInterval(timerId);
-      miscStore.cryptTimer = !miscStore.cryptTimer;
+      miscStore.cryptTimer = !miscStore[CRYPT_TIMER];
     }
   }, 500);
 

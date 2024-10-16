@@ -2,7 +2,7 @@ import ky from 'ky';
 import { redirect, defer } from 'react-router-dom';
 import { useDeckExport } from '@/hooks';
 import { getTextDisciplines } from '@/utils';
-import { POOL_COST, BLOOD_COST, CARD_TEXT } from '@/utils/constants';
+import { DECK, DECKS, POOL_COST, BLOOD_COST, CARD_TEXT } from '@/utils/constants';
 import { deckStore } from '@/context';
 
 export const update = (deckid, field, value) => {
@@ -37,7 +37,7 @@ export const deckImport = (deck) => {
 
 export const deckDelete = (deck) => {
   const url = `${import.meta.env.VITE_API_URL}/deck/${deck.deckid}`;
-  return ky.delete(url).then(() => delete deckStore.decks[deck.master ?? deck.deckid]);
+  return ky.delete(url).then(() => delete deckStore[DECKS][deck.master ?? deck.deckid]);
 };
 
 export const deckClone = (deck) => {
@@ -62,7 +62,7 @@ export const deckClone = (deck) => {
       if (data.error === undefined) {
         const now = new Date();
 
-        deckStore.decks[data.deckid] = {
+        deckStore[DECKS][data.deckid] = {
           branchName: null,
           branches: [],
           crypt: { ...deck.crypt },
@@ -131,19 +131,19 @@ export const branchDelete = (deckid, decks) => {
 
     if (masterId) {
       branches.splice(branches.indexOf(deckid), 1);
-      deckStore.decks[masterId].branches = branches;
-      deckStore.decks[masterId].isBranches = branches.length > 0;
+      deckStore[DECKS][masterId].branches = branches;
+      deckStore[DECKS][masterId].isBranches = branches.length > 0;
     } else {
       masterId = branches.pop();
-      deckStore.decks[masterId].branches = branches;
-      deckStore.decks[masterId].isBranches = branches.length > 0;
-      deckStore.decks[masterId].master = null;
+      deckStore[DECKS][masterId].branches = branches;
+      deckStore[DECKS][masterId].isBranches = branches.length > 0;
+      deckStore[DECKS][masterId].master = null;
       branches.map((b) => {
-        deckStore.decks[b].master = masterId;
+        deckStore[DECKS][b].master = masterId;
       });
     }
 
-    delete deckStore.decks[deckid];
+    delete deckStore[DECKS][deckid];
     return masterId;
   });
 };
@@ -157,13 +157,13 @@ export const branchCreate = (deck, branch) => {
     .json()
     .then((data) => {
       const now = new Date();
-      deckStore.decks[master].master = null;
-      deckStore.decks[master].isBranches = true;
-      deckStore.decks[master].branches = deckStore.decks[master].branches
-        ? [...deckStore.decks[master].branches, data[0].deckid]
+      deckStore[DECKS][master].master = null;
+      deckStore[DECKS][master].isBranches = true;
+      deckStore[DECKS][master].branches = deckStore[DECKS][master].branches
+        ? [...deckStore[DECKS][master].branches, data[0].deckid]
         : [data[0].deckid];
 
-      deckStore.decks[data[0].deckid] = {
+      deckStore[DECKS][data[0].deckid] = {
         ...deck,
         deckid: data[0].deckid,
         description: `[${now.toISOString().split('T')[0]}]\n${branch.description}`,
@@ -187,8 +187,8 @@ export const publicSync = (deck, decks) => {
     .put(url)
     .json()
     .then(() => {
-      deckStore.deck.crypt = { ...decks[deck.publicParent].crypt };
-      deckStore.deck.library = { ...decks[deck.publicParent].library };
+      deckStore[DECK].crypt = { ...decks[deck.publicParent].crypt };
+      deckStore[DECK].library = { ...decks[deck.publicParent].library };
     });
 };
 
@@ -203,7 +203,7 @@ export const publicCreateOrDelete = (deck) => {
   })
     .json()
     .then((data) => {
-      deckStore.decks[parentId].publicChild = isPublished ? null : data.deckid;
+      deckStore[DECKS][parentId].publicChild = isPublished ? null : data.deckid;
       return data.deckid;
     });
 };

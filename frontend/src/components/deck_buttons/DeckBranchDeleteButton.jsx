@@ -5,12 +5,13 @@ import NodeMinusFill from '@/assets/images/icons/node-minus-fill.svg?react';
 import { ButtonIconed, ModalConfirmation } from '@/components';
 import { deckStore, useApp } from '@/context';
 import { deckServices } from '@/services';
+import { DECKS } from '@/utils/constants';
 
 const DeckBranchDeleteButton = ({ deck, noText }) => {
   const { isDesktop, setShowMenuButtons } = useApp();
   const [showConfirmation, setShowConfirmation] = useState(false);
   const navigate = useNavigate();
-  const decks = useSnapshot(deckStore).decks;
+  const decks = useSnapshot(deckStore)[DECKS];
 
   const handleClick = () => {
     deckServices.branchDelete(deck.deckid, decks).then((deckid) => {

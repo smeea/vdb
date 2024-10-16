@@ -7,10 +7,11 @@ import {
   ResultClanImage,
 } from '@/components';
 import { useApp, inventoryStore } from '@/context';
+import { CRYPT } from '@/utils/constants';
 
 const SelectLabelCrypt = ({ cardid, inInventory }) => {
   const { cryptCardBase } = useApp();
-  const inventoryCrypt = useSnapshot(inventoryStore).crypt;
+  const inventoryCrypt = useSnapshot(inventoryStore)[CRYPT];
   const card = cryptCardBase[cardid];
 
   return (

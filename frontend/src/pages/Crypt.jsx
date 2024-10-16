@@ -15,11 +15,12 @@ import {
   setDeck,
   deckStore,
 } from '@/context';
+import { CRYPT, CRYPT_COMPARE, DECK, DECKS } from '@/utils/constants';
 
 const Crypt = () => {
   const { showCryptSearch, addMode, toggleAddMode, isMobile, isDesktop, lastDeckId } = useApp();
-  const { deck, decks } = useSnapshot(deckStore);
-  const { crypt: cryptResults, cryptCompare } = useSnapshot(searchResults);
+  const { [DECK]: deck, [DECKS]: decks } = useSnapshot(deckStore);
+  const { [CRYPT]: cryptResults, [CRYPT_COMPARE]: cryptCompare } = useSnapshot(searchResults);
   const showSearchForm = useMemo(() => {
     return (
       isDesktop ||

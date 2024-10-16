@@ -12,12 +12,13 @@ import {
 } from '@/components';
 import { useApp, limitedStore, inventoryStore, usedStore } from '@/context';
 import { getHardTotal } from '@/utils';
+import { LIBRARY } from '@/utils/constants';
 
 const TwdResultLibraryKeyCardsTableRow = ({ card, handleClick, shouldShowModal }) => {
   const { limitedMode, inventoryMode, isMobile } = useApp();
-  const inventoryLibrary = useSnapshot(inventoryStore).library;
-  const limitedLibrary = useSnapshot(limitedStore).library;
-  const usedLibrary = useSnapshot(usedStore).library;
+  const inventoryLibrary = useSnapshot(inventoryStore)[LIBRARY];
+  const limitedLibrary = useSnapshot(limitedStore)[LIBRARY];
+  const usedLibrary = useSnapshot(usedStore)[LIBRARY];
   const inLimited = limitedLibrary[card.c.Id];
   const inInventory = inventoryLibrary[card.c.Id]?.q ?? 0;
   const hardUsedTotal = getHardTotal(usedLibrary.hard[card.c.Id]);

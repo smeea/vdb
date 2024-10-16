@@ -2,9 +2,10 @@ import React from 'react';
 import { useSnapshot } from 'valtio';
 import { deckStore } from '@/context';
 import { DeckSortButton } from '@/components';
+import { DECKS } from '@/utils/constants';
 
 const DeckSelectAdvTotal = ({ sortMethod, setSortMethod, tagsFilter, setTagsFilter }) => {
-  const decks = useSnapshot(deckStore).decks;
+  const decks = useSnapshot(deckStore)[DECKS];
   const byTags = {};
   let total = 0;
 

@@ -13,6 +13,7 @@ import {
 import { useApp, deckStore, deckAdd } from '@/context';
 import { useDeckImport } from '@/hooks';
 import { deckServices } from '@/services';
+import { DECK } from '@/utils/constants';
 
 const DeckImport = ({ setShowInfo, isOnlyNew }) => {
   const {
@@ -23,7 +24,7 @@ const DeckImport = ({ setShowInfo, isOnlyNew }) => {
     libraryCardBase,
     publicName,
   } = useApp();
-  const deck = useSnapshot(deckStore).deck;
+  const deck = useSnapshot(deckStore)[DECK];
   const navigate = useNavigate();
   const [error, setError] = useState(false);
   const [showTextModal, setShowTextModal] = useState(false);

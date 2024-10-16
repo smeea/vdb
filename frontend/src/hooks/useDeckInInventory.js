@@ -1,8 +1,9 @@
 import { useSnapshot } from 'valtio';
 import { inventoryStore } from '@/context';
+import { CRYPT, LIBRARY } from '@/utils/constants';
 
 const useDeckInInventory = (deck) => {
-  const { crypt: inventoryCrypt, library: inventoryLibrary } = useSnapshot(inventoryStore);
+  const { [CRYPT]: inventoryCrypt, [LIBRARY]: inventoryLibrary } = useSnapshot(inventoryStore);
 
   let cryptInInventory;
   let libraryInInventory;

@@ -9,11 +9,11 @@ import {
   ResultLibraryClan,
 } from '@/components';
 import { useApp, inventoryStore } from '@/context';
-import { BLOOD_COST, POOL_COST } from '@/utils/constants';
+import { LIBRARY, BLOOD_COST, POOL_COST } from '@/utils/constants';
 
 const SelectLabelLibrary = ({ cardid, inInventory }) => {
   const { libraryCardBase } = useApp();
-  const inventoryLibrary = useSnapshot(inventoryStore).library;
+  const inventoryLibrary = useSnapshot(inventoryStore)[LIBRARY];
   const card = libraryCardBase[cardid];
 
   return (

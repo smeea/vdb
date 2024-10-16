@@ -56,9 +56,9 @@ const LibrarySearchForm = () => {
     playtestMode,
     limitedMode,
   } = useApp();
-  const inventoryLibrary = useSnapshot(inventoryStore).library;
-  const usedLibrary = useSnapshot(usedStore).library;
-  const limitedLibrary = useSnapshot(limitedStore).library;
+  const inventoryLibrary = useSnapshot(inventoryStore)[LIBRARY];
+  const usedLibrary = useSnapshot(usedStore)[LIBRARY];
+  const limitedLibrary = useSnapshot(limitedStore)[LIBRARY];
   const libraryFormState = useSnapshot(searchLibraryForm);
   const { filterLibrary } = useFilters(limitedMode ? limitedLibrary : libraryCardBase);
   const [error, setError] = useState(false);

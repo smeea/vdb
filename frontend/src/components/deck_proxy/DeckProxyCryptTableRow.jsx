@@ -8,6 +8,7 @@ import {
 } from '@/components';
 import { getSoftMax, getHardTotal } from '@/utils';
 import { useApp, usedStore, inventoryStore } from '@/context';
+import { CRYPT } from '@/utils/constants';
 
 const DeckProxyCryptTableRow = ({
   proxySelected,
@@ -21,8 +22,8 @@ const DeckProxyCryptTableRow = ({
   handleClick,
 }) => {
   const { isMobile } = useApp();
-  const inventoryCrypt = useSnapshot(inventoryStore).crypt;
-  const usedCrypt = useSnapshot(usedStore).crypt;
+  const inventoryCrypt = useSnapshot(inventoryStore)[CRYPT];
+  const usedCrypt = useSnapshot(usedStore)[CRYPT];
   const inInventory = inventoryCrypt[card.c.Id]?.q ?? 0;
   const softUsedMax = getSoftMax(usedCrypt.soft[card.c.Id]) ?? 0;
   const hardUsedTotal = getHardTotal(usedCrypt.hard[card.c.Id]) ?? 0;

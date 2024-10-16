@@ -2,9 +2,10 @@ import React from 'react';
 import { useSnapshot } from 'valtio';
 import { DeckRecommendationLibraryTableRow } from '@/components';
 import { deckStore } from '@/context';
+import { DECK } from '@/utils/constants';
 
 const DeckRecommendationLibraryTable = ({ handleClick, cards }) => {
-  const deck = useSnapshot(deckStore).deck;
+  const deck = useSnapshot(deckStore)[DECK];
 
   return (
     <table className="w-full border-bgSecondary dark:border-bgSecondaryDark sm:border">

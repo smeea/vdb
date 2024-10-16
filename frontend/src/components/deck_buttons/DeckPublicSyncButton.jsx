@@ -4,10 +4,11 @@ import PeopleFill from '@/assets/images/icons/people-fill.svg?react';
 import { Spinner, ModalConfirmation, DeckPublicDiff, ButtonIconed } from '@/components';
 import { deckServices } from '@/services';
 import { useApp, deckStore } from '@/context';
+import { DECKS } from '@/utils/constants';
 
 const DeckPublicSyncButton = ({ deck }) => {
   const { isDesktop } = useApp();
-  const decks = useSnapshot(deckStore).decks;
+  const decks = useSnapshot(deckStore)[DECKS];
   const [isLoading, setIsLoading] = useState(false);
   const [showConfirmation, setShowConfirmation] = useState(false);
 

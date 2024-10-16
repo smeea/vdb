@@ -17,6 +17,10 @@ import {
   TWD,
   PDA,
   CARD_TEXT,
+  DECK,
+  DECKS,
+  CRYPT,
+  LIBRARY,
 } from '@/utils/constants';
 import {
   setLimitedSets,
@@ -123,7 +127,7 @@ export const AppProvider = ({ children }) => {
   const [localizedLibrary, setLocalizedLibrary] = useState();
   const [preconDecks, setPreconDecks] = useState();
 
-  const { deck, decks } = useSnapshot(deckStore);
+  const { [DECK]: deck, [DECKS]: decks } = useSnapshot(deckStore);
   const lastDeckArray = (decks && Object.values(decks).toSorted(byTimestamp)) ?? [
     { deckid: undefined },
   ];
@@ -188,8 +192,8 @@ export const AppProvider = ({ children }) => {
         if (!v || CARD_VERSION > v) {
           fetchAndSetCardBase();
         } else {
-          limitedFullStore.crypt = cb;
-          limitedFullStore.library = lb;
+          limitedFullStore[CRYPT] = cb;
+          limitedFullStore[LIBRARY] = lb;
           setCryptCardBase(cb);
           setLibraryCardBase(lb);
           setNativeCrypt(nc);
@@ -243,9 +247,9 @@ export const AppProvider = ({ children }) => {
     if (!data.playtest.is_playtester && !data.playtest.is_admin) setPlaytestMode(false);
     const { isFrozen, crypt, library } = parseInventoryData(data.inventory);
     inventoryStore.isFrozen = isFrozen;
-    inventoryStore.crypt = crypt;
-    inventoryStore.library = library;
-    deckStore.decks = parseDecksData(data.decks);
+    inventoryStore[CRYPT] = crypt;
+    inventoryStore[LIBRARY] = library;
+    deckStore[DECKS] = parseDecksData(data.decks);
   };
 
   const initializeUnauthenticatedUser = () => {
@@ -257,12 +261,12 @@ export const AppProvider = ({ children }) => {
     setPlaytestMode(false);
     setUsername(null);
     setEmail(undefined);
-    inventoryStore.crypt = {};
-    inventoryStore.library = {};
+    inventoryStore[CRYPT] = {};
+    inventoryStore[LIBRARY] = {};
     if (decks?.[deck?.deckid]) {
-      deckStore.deck = undefined;
+      deckStore[DECK] = undefined;
     }
-    deckStore.decks = undefined;
+    deckStore[DECKS] = undefined;
   };
 
   useEffect(() => {

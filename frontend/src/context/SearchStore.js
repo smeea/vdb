@@ -3,7 +3,7 @@ import defaultsPdaForm from '@/components/search_forms/forms_data/defaultsPdaFor
 import defaultsTwdForm from '@/components/search_forms/forms_data/defaultsTwdForm.json';
 import defaultsCryptForm from '@/components/search_forms/forms_data/defaultsCryptForm.json';
 import defaultsLibraryForm from '@/components/search_forms/forms_data/defaultsLibraryForm.json';
-import { ANY, TWD, PDA } from '@/utils/constants';
+import { CRYPT_COMPARE, LIBRARY_COMPARE, CRYPT, LIBRARY, ANY, TWD, PDA } from '@/utils/constants';
 
 export const searchResults = proxy({});
 
@@ -24,32 +24,32 @@ export const searchPdaForm = proxy({
 });
 
 export const setCryptResults = (v) => {
-  searchResults.crypt = v;
+  searchResults[CRYPT] = v;
 };
 
 export const setLibraryResults = (v) => {
-  searchResults.library = v;
+  searchResults[LIBRARY] = v;
 };
 
 export const setPdaResults = (v) => {
-  searchResults.pda = v;
+  searchResults[PDA] = v;
 };
 
 export const setTwdResults = (v) => {
-  searchResults.twd = v;
+  searchResults[TWD] = v;
 };
 
 export const setCryptCompare = (v) => {
-  searchResults.cryptCompare = v;
+  searchResults[CRYPT_COMPARE] = v;
 };
 
 export const setLibraryCompare = (v) => {
-  searchResults.libraryCompare = v;
+  searchResults[LIBRARY_COMPARE] = v;
 };
 
 export const clearSearchForm = (target) => {
   switch (target) {
-    case 'crypt':
+    case [CRYPT]:
       searchCryptForm.text = structuredClone(defaultsCryptForm.text);
       searchCryptForm.votes = ANY;
       searchCryptForm.artist = ANY;
@@ -61,7 +61,7 @@ export const clearSearchForm = (target) => {
         });
       });
       break;
-    case 'library':
+    case [LIBRARY]:
       searchLibraryForm.text = structuredClone(defaultsLibraryForm.text);
       searchLibraryForm.artist = ANY;
 

@@ -8,10 +8,11 @@ import {
 } from '@/components';
 import { useApp, deckStore, deckCardChange } from '@/context';
 import { useSwipe } from '@/hooks';
+import { DECK } from '@/utils/constants';
 
 const ResultLibraryTableRow = ({ card, handleClick, inLimited, shouldShowModal }) => {
   const { addMode, inventoryMode } = useApp();
-  const deck = useSnapshot(deckStore).deck;
+  const deck = useSnapshot(deckStore)[DECK];
   const inDeck = deck?.library[card.Id]?.q || 0;
   const isEditable = deck?.isAuthor && !deck?.isPublic && !deck?.isFrozen;
 

@@ -23,7 +23,7 @@ import {
 } from '@/components';
 import { deckStore, useApp, setDeck } from '@/context';
 import { useDeck, useTags } from '@/hooks';
-import { CRYPT, LIBRARY } from '@/utils/constants';
+import { DECK, DECKS, CRYPT, LIBRARY } from '@/utils/constants';
 
 const Decks = () => {
   const {
@@ -40,7 +40,7 @@ const Decks = () => {
     cryptCardBase,
     libraryCardBase,
   } = useApp();
-  const { deck, decks } = useSnapshot(deckStore);
+  const { [DECK]: deck, [DECKS]: decks } = useSnapshot(deckStore);
   const navigate = useNavigate();
   const { deckid } = useParams();
   const { hash } = useLocation();

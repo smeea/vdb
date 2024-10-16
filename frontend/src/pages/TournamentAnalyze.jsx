@@ -25,10 +25,11 @@ import {
   useApp,
 } from '@/context';
 import { useDeckImport, useTags } from '@/hooks';
+import { DECKS, RESULTS, INFO } from '@/utils/constants';
 
 const TournamentAnalyze = () => {
   const { username, cryptCardBase, libraryCardBase, isMobile, isDesktop } = useApp();
-  const { decks, results, info } = useSnapshot(analyzeStore);
+  const { [DECKS]: decks, [RESULTS]: results, [INFO]: info } = useSnapshot(analyzeStore);
   const params = useParams();
   const navigate = useNavigate();
 

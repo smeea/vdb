@@ -1,10 +1,11 @@
 import { useMemo } from 'react';
 import { useSnapshot } from 'valtio';
 import { cryptSort } from '@/utils';
+import { CRYPT_TIMER } from '@/utils/constants';
 import { miscStore } from '@/context';
 
 const cryptSortWithTimer = (cardsList, sortMethod) => {
-  const timer = useSnapshot(miscStore).cryptTimer;
+  const timer = useSnapshot(miscStore)[CRYPT_TIMER];
 
   const sortedState = useMemo(() => {
     return cryptSort(cardsList, sortMethod).map((c) => c.c.Id);

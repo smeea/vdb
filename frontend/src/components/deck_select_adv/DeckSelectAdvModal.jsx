@@ -13,11 +13,11 @@ import {
 } from '@/components';
 import { useApp, deckStore } from '@/context';
 import { deckServices } from '@/services';
-import { NAME } from '@/utils/constants';
+import { DECKS, NAME } from '@/utils/constants';
 
 const DeckSelectAdvModal = ({ onClick, setShow, allTagsOptions, short }) => {
   const { isMobile, setShowFloatingButtons } = useApp();
-  const decks = useSnapshot(deckStore).decks;
+  const decks = useSnapshot(deckStore)[DECKS];
   const [sortMethod, setSortMethod] = useState(NAME);
   const [isSelectedAll, setIsSelectedAll] = useState(false);
   const [selectedDecks, setSelectedDecks] = useState({});

@@ -16,7 +16,7 @@ import {
 } from '@/components';
 import { useApp, deckStore } from '@/context';
 import { useDeck, useTags } from '@/hooks';
-import { CRYPT, LIBRARY } from '@/utils/constants';
+import { DECKS, CRYPT, LIBRARY } from '@/utils/constants';
 
 const Review = () => {
   const {
@@ -29,7 +29,7 @@ const Review = () => {
     setShowMenuButtons,
     showMenuButtons,
   } = useApp();
-  const decks = useSnapshot(deckStore).decks;
+  const decks = useSnapshot(deckStore)[DECKS];
   const navigate = useNavigate();
   const { deckid } = useParams();
   const { hash } = useLocation();

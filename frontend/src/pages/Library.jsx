@@ -15,11 +15,13 @@ import {
   setDeck,
   deckStore,
 } from '@/context';
+import { LIBRARY, LIBRARY_COMPARE, DECK, DECKS } from '@/utils/constants';
 
 const Library = () => {
   const { showLibrarySearch, addMode, toggleAddMode, isMobile, isDesktop, lastDeckId } = useApp();
-  const { deck, decks } = useSnapshot(deckStore);
-  const { library: libraryResults, libraryCompare } = useSnapshot(searchResults);
+  const { [DECK]: deck, [DECKS]: decks } = useSnapshot(deckStore);
+  const { [LIBRARY]: libraryResults, [LIBRARY_COMPARE]: libraryCompare } =
+    useSnapshot(searchResults);
   const showSearchForm = useMemo(() => {
     return (
       isDesktop ||

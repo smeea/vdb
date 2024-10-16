@@ -56,9 +56,9 @@ const CryptSearchForm = () => {
     playtestMode,
     limitedMode,
   } = useApp();
-  const inventoryCrypt = useSnapshot(inventoryStore).crypt;
-  const usedCrypt = useSnapshot(usedStore).crypt;
-  const limitedCrypt = useSnapshot(limitedStore).crypt;
+  const inventoryCrypt = useSnapshot(inventoryStore)[CRYPT];
+  const usedCrypt = useSnapshot(usedStore)[CRYPT];
+  const limitedCrypt = useSnapshot(limitedStore)[CRYPT];
   const cryptFormState = useSnapshot(searchCryptForm);
   const { filterCrypt } = useFilters(limitedMode ? limitedCrypt : cryptCardBase);
   const [error, setError] = useState(false);

@@ -14,7 +14,7 @@ const InventoryLibraryWrapper = ({
   setType,
 }) => {
   const { libraryCardBase } = useApp();
-  const inventoryLibrary = useSnapshot(inventoryStore).library;
+  const inventoryLibrary = useSnapshot(inventoryStore)[LIBRARY];
   const [newCardId, setNewCardId] = useState();
   const newCardFocus = () => newCardRef.current.focus();
   const newCardRef = useRef();

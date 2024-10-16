@@ -6,10 +6,11 @@ import { ButtonIconed, ModalConfirmation } from '@/components';
 import { deckServices } from '@/services';
 import { deckStore, useApp } from '@/context';
 import { byTimestamp } from '@/utils';
+import { DECKS } from '@/utils/constants';
 
 const DeckDeleteButton = ({ deck, noText }) => {
   const { isDesktop, setShowFloatingButtons, setShowMenuButtons } = useApp();
-  const decks = useSnapshot(deckStore).decks;
+  const decks = useSnapshot(deckStore)[DECKS];
   const [showConfirmation, setShowConfirmation] = useState(false);
   const navigate = useNavigate();
 

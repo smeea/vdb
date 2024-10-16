@@ -12,15 +12,15 @@ import {
   ResultName,
   ConditionalTooltip,
 } from '@/components';
-import { TRIFLE, POOL_COST, BLOOD_COST, BURN_OPTION } from '@/utils/constants';
+import { LIBRARY, TRIFLE, POOL_COST, BLOOD_COST, BURN_OPTION } from '@/utils/constants';
 import { getHardTotal, getSoftMax } from '@/utils';
 import { useApp, inventoryStore, usedStore, limitedStore, inventoryCardChange } from '@/context';
 import { useSwipe } from '@/hooks';
 
 const InventoryLibraryTableRow = ({ card, compact, newFocus, inShared, handleClick }) => {
   const { isMobile, isNarrow, limitedMode } = useApp();
-  const usedLibrary = useSnapshot(usedStore).library;
-  const limitedLibrary = useSnapshot(limitedStore).library;
+  const usedLibrary = useSnapshot(usedStore)[LIBRARY];
+  const limitedLibrary = useSnapshot(limitedStore)[LIBRARY];
   const inLimited = limitedLibrary[card.c.Id];
   const softUsedMax = getSoftMax(usedLibrary.soft[card.c.Id]);
   const hardUsedTotal = getHardTotal(usedLibrary.hard[card.c.Id]);

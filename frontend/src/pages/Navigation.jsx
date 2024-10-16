@@ -10,7 +10,7 @@ import libraryDefaults from '@/components/search_forms/forms_data/defaultsLibrar
 import twdDefaults from '@/components/search_forms/forms_data/defaultsTwdForm.json';
 import pdaDefaults from '@/components/search_forms/forms_data/defaultsPdaForm.json';
 import { sanitizeFormState } from '@/utils';
-import { CRYPT, LIBRARY, TWD, PDA } from '@/utils/constants';
+import { DECK, CRYPT, LIBRARY, TWD, PDA } from '@/utils/constants';
 import {
   searchCryptForm,
   searchLibraryForm,
@@ -57,7 +57,7 @@ const Navigation = () => {
 
   const [showMenu, setShowMenu] = useState(false);
   const location = useLocation();
-  const deck = useSnapshot(deckStore).deck;
+  const deck = useSnapshot(deckStore)[DECK];
   const quickCard = useSnapshot(searchResults).quickCard;
   const cryptFormState = useSnapshot(searchCryptForm);
   const libraryFormState = useSnapshot(searchLibraryForm);

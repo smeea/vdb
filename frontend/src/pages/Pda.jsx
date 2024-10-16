@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 import { useSnapshot } from 'valtio';
 import { FlexGapped, PdaResult, PdaSearchForm, ErrorMessage } from '@/components';
 import { useApp, searchResults, setPdaResults } from '@/context';
+import { PDA } from '@/utils/constants';
 
 const Pda = () => {
   const { isMobile } = useApp();
-  const pdaResults = useSnapshot(searchResults).pda;
+  const pdaResults = useSnapshot(searchResults)[PDA];
   const [error, setError] = useState();
 
   return (

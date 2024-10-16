@@ -13,6 +13,7 @@ import {
 } from '@/components';
 import FolderPlus from '@/assets/images/icons/folder-plus.svg?react';
 import { useApp, deckStore, inventoryStore } from '@/context';
+import { CRYPT, LIBRARY, DECKS } from '@/utils/constants';
 
 const InventoryButtons = ({
   setShowAddDeck,
@@ -40,10 +41,10 @@ const InventoryButtons = ({
 
   const {
     isFrozen,
-    crypt: inventoryCrypt,
-    library: inventoryLibrary,
+    [CRYPT]: inventoryCrypt,
+    [LIBRARY]: inventoryLibrary,
   } = useSnapshot(inventoryStore);
-  const decks = useSnapshot(deckStore).decks;
+  const decks = useSnapshot(deckStore)[DECKS];
   const navigate = useNavigate();
   const crypt = isSharedInventory ? sharedCrypt : inventoryCrypt;
   const library = isSharedInventory ? sharedLibrary : inventoryLibrary;

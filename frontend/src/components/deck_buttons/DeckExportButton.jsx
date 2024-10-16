@@ -6,7 +6,7 @@ import { MenuItems, MenuItem, MenuItemDivider, MenuButton } from '@/components';
 import { useDeckExport } from '@/hooks';
 import { useApp, deckStore } from '@/context';
 import { deckServices } from '@/services';
-import { TWD, TWD_HINTS, TEXT, LACKEY, JOL, XLSX, EN } from '@/utils/constants';
+import { DECKS, TWD, TWD_HINTS, TEXT, LACKEY, JOL, XLSX, EN } from '@/utils/constants';
 
 const SAVE = 'save';
 const COPY = 'copy';
@@ -22,7 +22,7 @@ const DeckExportButton = ({ deck, inMissing, inInventory }) => {
     isDesktop,
     lang,
   } = useApp();
-  const decks = useSnapshot(deckStore).decks;
+  const decks = useSnapshot(deckStore)[DECKS];
 
   const ExportDropdown = ({ action, format }) => {
     const formats = {

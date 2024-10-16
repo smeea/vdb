@@ -25,12 +25,12 @@ import {
   clearAnalyzeForm,
   analyzeStore,
 } from '@/context';
-import { ANALYZE } from '@/utils/constants';
+import { DECKS, ANALYZE } from '@/utils/constants';
 
 const AnalyzeSearchForm = () => {
   const { cryptCardBase, libraryCardBase, isMobile } = useApp();
   const analyzeFormState = useSnapshot(searchAnalyzeForm);
-  const decks = useSnapshot(analyzeStore).decks;
+  const decks = useSnapshot(analyzeStore)[DECKS];
   const { filterDecks } = useFiltersDecks(decks);
   const [error, setError] = useState(false);
   const navigate = useNavigate();

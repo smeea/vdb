@@ -2,12 +2,12 @@ import { useMemo } from 'react';
 import { useSnapshot } from 'valtio';
 import disciplinesList from '@/assets/data/disciplinesList.json';
 import virtuesList from '@/assets/data/virtuesList.json';
-import { ALL, NONE, OK, NOK, cardtypeSorted } from '@/utils/constants';
+import { LIBRARY, ALL, NONE, OK, NOK, cardtypeSorted } from '@/utils/constants';
 import { getHardTotal, getSoftMax } from '@/utils';
 import { useApp, usedStore } from '@/context';
 
 const useInventoryLibrary = (cards = {}, category = OK, compact, type, discipline, onlyNotes) => {
-  const usedLibrary = useSnapshot(usedStore).library;
+  const usedLibrary = useSnapshot(usedStore)[LIBRARY];
   const { libraryCardBase } = useApp();
 
   const value = useMemo(() => {

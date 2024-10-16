@@ -2,9 +2,10 @@ import React, { useMemo, useState } from 'react';
 import { useSnapshot } from 'valtio';
 import { Select } from '@/components';
 import { deckStore } from '@/context';
+import { DECKS } from '@/utils/constants';
 
 const DeckBranchSelect = ({ deck, handleSelect }) => {
-  const decks = useSnapshot(deckStore).decks;
+  const decks = useSnapshot(deckStore)[DECKS];
   const [branches, setBranches] = useState([]);
 
   const byTimestamp = (a, b) => {

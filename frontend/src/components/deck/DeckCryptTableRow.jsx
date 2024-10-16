@@ -9,6 +9,7 @@ import {
 } from '@/components';
 import { getSoftMax, getHardTotal } from '@/utils';
 import { useSwipe } from '@/hooks';
+import { CRYPT } from '@/utils/constants';
 
 const DeckCryptTableRow = ({
   handleClick,
@@ -24,9 +25,9 @@ const DeckCryptTableRow = ({
   shouldShowModal,
 }) => {
   const { limitedMode, inventoryMode, isDesktop } = useApp();
-  const usedCrypt = useSnapshot(usedStore).crypt;
-  const inventoryCrypt = useSnapshot(inventoryStore).crypt;
-  const limitedCrypt = useSnapshot(limitedStore).crypt;
+  const usedCrypt = useSnapshot(usedStore)[CRYPT];
+  const inventoryCrypt = useSnapshot(inventoryStore)[CRYPT];
+  const limitedCrypt = useSnapshot(limitedStore)[CRYPT];
   const { deckid, isPublic, isAuthor, isFrozen } = deck;
   const isEditable = isAuthor && !isPublic && !isFrozen;
 

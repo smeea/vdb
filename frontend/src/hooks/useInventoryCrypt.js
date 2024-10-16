@@ -3,11 +3,11 @@ import { useSnapshot } from 'valtio';
 import imbuedClansList from '@/assets/data/imbuedClansList.json';
 import vampireClansList from '@/assets/data/vampireClansList.json';
 import { getHardTotal, getSoftMax } from '@/utils';
-import { ALL, OK, NOK } from '@/utils/constants';
+import { CRYPT, ALL, OK, NOK } from '@/utils/constants';
 import { useApp, usedStore } from '@/context';
 
 const useInventoryCrypt = (cards = {}, category = OK, compact, onlyNotes) => {
-  const usedCrypt = useSnapshot(usedStore).crypt;
+  const usedCrypt = useSnapshot(usedStore)[CRYPT];
   const { cryptCardBase } = useApp();
 
   const value = useMemo(() => {

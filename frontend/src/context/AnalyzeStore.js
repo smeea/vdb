@@ -1,26 +1,27 @@
 import { proxy } from 'valtio';
 import defaultsAnalyzeForm from '@/components/search_forms/forms_data/defaultsAnalyzeForm.json';
+import { DECKS, RESULTS, INFO } from '@/utils/constants';
 
 export const searchAnalyzeForm = proxy({
   ...structuredClone(defaultsAnalyzeForm),
 });
 
 export const analyzeStore = proxy({
-  decks: undefined,
-  results: undefined,
-  info: undefined,
+  [DECKS]: undefined,
+  [RESULTS]: undefined,
+  [INFO]: undefined,
 });
 
 export const setAnalyzeInfo = (v) => {
-  analyzeStore.info = v;
+  analyzeStore[INFO] = v;
 };
 
 export const setAnalyzeDecks = (v) => {
-  analyzeStore.decks = v;
+  analyzeStore[DECKS] = v;
 };
 
 export const setAnalyzeResults = (v) => {
-  analyzeStore.results = v;
+  analyzeStore[RESULTS] = v;
 };
 
 export const clearAnalyzeForm = () => {

@@ -6,7 +6,7 @@ import { CRYPT, OK } from '@/utils/constants';
 
 const InventoryCryptWrapper = ({ sharedCrypt, category, onlyNotes, clan, setClan }) => {
   const { cryptCardBase } = useApp();
-  const inventoryCrypt = useSnapshot(inventoryStore).crypt;
+  const inventoryCrypt = useSnapshot(inventoryStore)[CRYPT];
   const [newCardId, setNewCardId] = useState();
   const newCardFocus = () => newCardRef.current.focus();
   const newCardRef = useRef();

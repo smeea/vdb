@@ -9,6 +9,7 @@ import {
 import { getSoftMax, getHardTotal } from '@/utils';
 import { useApp, usedStore, inventoryStore, deckStore, deckCardChange } from '@/context';
 import { useSwipe } from '@/hooks';
+import { CRYPT, DECKS } from '@/utils/constants';
 
 const DiffCryptTableRow = ({
   cardChange,
@@ -24,9 +25,9 @@ const DiffCryptTableRow = ({
   keyDisciplines,
 }) => {
   const { inventoryMode } = useApp();
-  const decks = useSnapshot(deckStore).decks;
-  const inventoryCrypt = useSnapshot(inventoryStore).crypt;
-  const usedCrypt = useSnapshot(usedStore).crypt;
+  const decks = useSnapshot(deckStore)[DECKS];
+  const inventoryCrypt = useSnapshot(inventoryStore)[CRYPT];
+  const usedCrypt = useSnapshot(usedStore)[CRYPT];
   const softUsedMax = getSoftMax(usedCrypt.soft[card.Id]);
   const hardUsedTotal = getHardTotal(usedCrypt.hard[card.Id]);
   const inInventory = inventoryCrypt[card.c.Id]?.q ?? 0;

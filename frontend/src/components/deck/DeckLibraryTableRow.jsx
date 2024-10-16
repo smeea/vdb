@@ -9,6 +9,7 @@ import {
 } from '@/components';
 import { getSoftMax, getHardTotal } from '@/utils';
 import { useSwipe } from '@/hooks';
+import { LIBRARY } from '@/utils/constants';
 
 const DeckLibraryTableRow = ({
   handleClick,
@@ -21,9 +22,9 @@ const DeckLibraryTableRow = ({
   shouldShowModal,
 }) => {
   const { limitedMode, inventoryMode, isDesktop } = useApp();
-  const usedLibrary = useSnapshot(usedStore).library;
-  const inventoryLibrary = useSnapshot(inventoryStore).library;
-  const limitedLibrary = useSnapshot(limitedStore).library;
+  const usedLibrary = useSnapshot(usedStore)[LIBRARY];
+  const inventoryLibrary = useSnapshot(inventoryStore)[LIBRARY];
+  const limitedLibrary = useSnapshot(limitedStore)[LIBRARY];
   const { deckid, isPublic, isAuthor, isFrozen } = deck;
   const isEditable = isAuthor && !isPublic && !isFrozen;
 

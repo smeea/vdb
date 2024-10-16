@@ -1,5 +1,6 @@
 import ky from 'ky';
 import { inventoryStore } from '@/context';
+import { CRYPT, LIBRARY } from '@/utils/constants';
 
 export const addCards = (cards) => {
   const url = `${import.meta.env.VITE_API_URL}/inventory`;
@@ -56,7 +57,7 @@ export const createSharedInventory = (key) => {
 export const deleteInventory = () => {
   const url = `${import.meta.env.VITE_API_URL}/inventory`;
   ky.delete(url).then(() => {
-    inventoryStore.crypt = {};
-    inventoryStore.library = {};
+    inventoryStore[CRYPT] = {};
+    inventoryStore[LIBRARY] = {};
   });
 };

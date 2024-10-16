@@ -8,6 +8,7 @@ import {
 } from '@/components';
 import { useApp, usedStore, inventoryStore } from '@/context';
 import { getSoftMax, getHardTotal } from '@/utils';
+import { LIBRARY } from '@/utils/constants';
 
 const DeckProxyLibraryTableRow = ({
   handleClick,
@@ -19,8 +20,8 @@ const DeckProxyLibraryTableRow = ({
   card,
 }) => {
   const { isMobile } = useApp();
-  const inventoryLibrary = useSnapshot(inventoryStore).library;
-  const usedLibrary = useSnapshot(usedStore).library;
+  const inventoryLibrary = useSnapshot(inventoryStore)[LIBRARY];
+  const usedLibrary = useSnapshot(usedStore)[LIBRARY];
   const inInventory = inventoryLibrary[card.c.Id]?.q ?? 0;
   const softUsedMax = getSoftMax(usedLibrary.soft[card.c.Id]) ?? 0;
   const hardUsedTotal = getHardTotal(usedLibrary.hard[card.c.Id]) ?? 0;

@@ -10,14 +10,15 @@ import {
 } from '@/components';
 import { getHardTotal } from '@/utils';
 import { useApp, limitedStore, inventoryStore, usedStore } from '@/context';
+import { CRYPT } from '@/utils/constants';
 
 const TwdResultCryptTableRow = ({ card, handleClick, shouldShowModal }) => {
   const { limitedMode, inventoryMode, isMobile } = useApp();
-  const inventoryCrypt = useSnapshot(inventoryStore).crypt;
-  const limitedCrypt = useSnapshot(limitedStore).crypt;
+  const inventoryCrypt = useSnapshot(inventoryStore)[CRYPT];
+  const limitedCrypt = useSnapshot(limitedStore)[CRYPT];
   const inLimited = limitedCrypt[card.c.Id];
   const inInventory = inventoryCrypt[card.c.Id]?.q ?? 0;
-  const usedCrypt = useSnapshot(usedStore).crypt;
+  const usedCrypt = useSnapshot(usedStore)[CRYPT];
   const hardUsedTotal = getHardTotal(usedCrypt.hard[card.c.Id]);
 
   return (

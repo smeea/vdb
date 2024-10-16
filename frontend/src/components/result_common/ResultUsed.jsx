@@ -3,11 +3,12 @@ import { useSnapshot } from 'valtio';
 import { UsedPopover, Tooltip } from '@/components';
 import { getSoftMax, getHardTotal } from '@/utils';
 import { useApp, inventoryStore, usedStore } from '@/context';
+import { CRYPT, LIBRARY } from '@/utils/constants';
 
 const ResultUsed = ({ card }) => {
   const { isDesktop } = useApp();
-  const { crypt: inventoryCrypt, library: inventoryLibrary } = useSnapshot(inventoryStore);
-  const { crypt: usedCrypt, library: usedLibrary } = useSnapshot(usedStore);
+  const { [CRYPT]: inventoryCrypt, [LIBRARY]: inventoryLibrary } = useSnapshot(inventoryStore);
+  const { [CRYPT]: usedCrypt, [LIBRARY]: usedLibrary } = useSnapshot(usedStore);
 
   const used = card.Id > 200000 ? usedCrypt : usedLibrary;
   const inventory = card.Id > 200000 ? inventoryCrypt : inventoryLibrary;

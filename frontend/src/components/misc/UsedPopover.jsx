@@ -6,11 +6,12 @@ import ChatLeftQuoteFill from '@/assets/images/icons/chat-left-quote-fill.svg?re
 import { Hr, UsedDescription } from '@/components';
 import { deckStore, usedStore, inventoryStore } from '@/context';
 import { getHardTotal, getSoftMax } from '@/utils';
+import { CRYPT, LIBRARY, DECKS } from '@/utils/constants';
 
 const UsedPopover = ({ cardid }) => {
-  const decks = useSnapshot(deckStore).decks;
-  const { crypt: usedCrypt, library: usedLibrary } = useSnapshot(usedStore);
-  const { crypt: inventoryCrypt, library: inventoryLibrary } = useSnapshot(inventoryStore);
+  const decks = useSnapshot(deckStore)[DECKS];
+  const { [CRYPT]: usedCrypt, [LIBRARY]: usedLibrary } = useSnapshot(usedStore);
+  const { [CRYPT]: inventoryCrypt, [LIBRARY]: inventoryLibrary } = useSnapshot(inventoryStore);
   const usedCards = cardid > 200000 ? usedCrypt : usedLibrary;
   const softUsedMax = getSoftMax(usedCards.soft[cardid]);
   const hardUsedTotal = getHardTotal(usedCards.hard[cardid]);

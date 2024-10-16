@@ -9,7 +9,15 @@ import {
   ButtonFloatAdd,
   ErrorMessage,
 } from '@/components';
-import { CAPACITY_MAX_MIN, CAPACITY_MIN_MAX, CLAN, GROUP, NAME, SECT } from '@/utils/constants';
+import {
+  DECK,
+  CAPACITY_MAX_MIN,
+  CAPACITY_MIN_MAX,
+  CLAN,
+  GROUP,
+  NAME,
+  SECT,
+} from '@/utils/constants';
 import { cryptSort } from '@/utils';
 import { useApp, deckStore } from '@/context';
 
@@ -24,7 +32,7 @@ const ResultCrypt = ({ cards, setCards, inCompare }) => {
     showFloatingButtons,
   } = useApp();
   const navigate = useNavigate();
-  const deck = useSnapshot(deckStore).deck;
+  const deck = useSnapshot(deckStore)[DECK];
   const isEditable = deck?.isAuthor && !deck?.isPublic && !deck?.isFrozen;
   const sortMethods = {
     [CAPACITY_MAX_MIN]: 'C↓',
@@ -58,7 +66,9 @@ const ResultCrypt = ({ cards, setCards, inCompare }) => {
   return (
     <>
       {!isMobile && (cards === null || cards.length === 0) && (
-        <ErrorMessage sticky>{cards === null ? 'CONNECTION PROBLEM' : 'NO CARDS FOUND'}</ErrorMessage>
+        <ErrorMessage sticky>
+          {cards === null ? 'CONNECTION PROBLEM' : 'NO CARDS FOUND'}
+        </ErrorMessage>
       )}
       {cards && cards.length > 0 && (
         <>

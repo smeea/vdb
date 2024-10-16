@@ -1,41 +1,41 @@
 import { proxy } from 'valtio';
 import { deepClone } from '@/utils';
-import { CARD_TEXT } from '@/utils/constants';
+import { DECK, DECKS, CRYPT_TIMER, CARD_TEXT } from '@/utils/constants';
 import { deckServices } from '@/services';
 import { startCryptTimer, miscStore } from '@/context';
 
 export const deckStore = proxy({
-  deck: undefined,
-  decks: undefined,
+  [DECK]: undefined,
+  [DECKS]: undefined,
 });
 
 export const setDeck = (v) => {
-  deckStore.deck = deepClone(v);
-  miscStore.cryptTimer = !miscStore.cryptTimer;
+  deckStore[DECK] = deepClone(v);
+  miscStore[CRYPT_TIMER] = !miscStore[CRYPT_TIMER];
 };
 
 export const deckCardChange = (deckid, card, q) => {
   const cardSrc = card.Id > 200000 ? 'crypt' : 'library';
-  const initialDeckState = deepClone(deckStore.deck);
-  const initialDecksState = deepClone(deckStore.decks[deckid]);
+  const initialDeckState = deepClone(deckStore[DECK]);
+  const initialDecksState = deepClone(deckStore[DECKS][deckid]);
 
   if (q >= 0) {
-    deckStore.decks[deckid][cardSrc][card.Id] = {
+    deckStore[DECKS][deckid][cardSrc][card.Id] = {
       c: card,
       q: q,
     };
 
-    if (deckid === deckStore.deck.deckid) {
-      deckStore.deck[cardSrc][card.Id] = {
+    if (deckid === deckStore[DECK].deckid) {
+      deckStore[DECK][cardSrc][card.Id] = {
         c: card,
         q: q,
       };
     }
   } else {
-    delete deckStore.decks[deckid][cardSrc][card.Id];
+    delete deckStore[DECKS][deckid][cardSrc][card.Id];
 
-    if (deckid === deckStore.deck.deckid) {
-      delete deckStore.deck[cardSrc][card.Id];
+    if (deckid === deckStore[DECK].deckid) {
+      delete deckStore[DECK][cardSrc][card.Id];
     }
   }
 
@@ -44,66 +44,66 @@ export const deckCardChange = (deckid, card, q) => {
   if (cardSrc === 'crypt') startCryptTimer();
 
   deckServices.cardChange(deckid, card.Id, q).catch(() => {
-    deckStore.deck = initialDeckState;
-    deckStore.decks[deckid] = initialDecksState;
+    deckStore[DECK] = initialDeckState;
+    deckStore[DECKS][deckid] = initialDecksState;
   });
 };
 
 export const deckUpdate = (deckid, field, value) => {
   let initialDeckState;
   if (deckStore?.deck?.deckid === deckid) {
-    initialDeckState = deepClone(deckStore.deck);
+    initialDeckState = deepClone(deckStore[DECK]);
   }
-  const initialDecksState = deepClone(deckStore.decks[deckid]);
+  const initialDecksState = deepClone(deckStore[DECKS][deckid]);
 
   switch (field) {
     case 'usedInInventory':
       Object.keys(value).forEach((cardid) => {
         if (cardid > 200000) {
-          deckStore.decks[deckid].crypt[cardid].i = value[cardid];
+          deckStore[DECKS][deckid].crypt[cardid].i = value[cardid];
         } else {
-          deckStore.decks[deckid].library[cardid].i = value[cardid];
+          deckStore[DECKS][deckid].library[cardid].i = value[cardid];
         }
       });
 
       if (deckid === deckStore?.deck?.deckid) {
         Object.keys(value).forEach((cardid) => {
           if (cardid > 200000) {
-            deckStore.deck.crypt[cardid].i = value[cardid];
+            deckStore[DECK].crypt[cardid].i = value[cardid];
           } else {
-            deckStore.deck.library[cardid].i = value[cardid];
+            deckStore[DECK].library[cardid].i = value[cardid];
           }
         });
       }
       break;
     case 'cards':
-      deckStore.decks[deckid].crypt = value.crypt;
-      deckStore.decks[deckid].library = value.library;
+      deckStore[DECKS][deckid].crypt = value.crypt;
+      deckStore[DECKS][deckid].library = value.library;
 
       if (deckid === deckStore?.deck?.deckid) {
-        deckStore.deck.crypt = value.crypt;
-        deckStore.deck.library = value.library;
+        deckStore[DECK].crypt = value.crypt;
+        deckStore[DECK].library = value.library;
       }
       break;
     default:
-      deckStore.decks[deckid][field] = value;
+      deckStore[DECKS][deckid][field] = value;
       if (field === 'inventoryType') {
-        Object.keys(deckStore.decks[deckid].crypt).forEach((cardid) => {
-          deckStore.decks[deckid].crypt[cardid].i = '';
+        Object.keys(deckStore[DECKS][deckid].crypt).forEach((cardid) => {
+          deckStore[DECKS][deckid].crypt[cardid].i = '';
         });
-        Object.keys(deckStore.decks[deckid].library).forEach((cardid) => {
-          deckStore.decks[deckid].library[cardid].i = '';
+        Object.keys(deckStore[DECKS][deckid].library).forEach((cardid) => {
+          deckStore[DECKS][deckid].library[cardid].i = '';
         });
       }
 
       if (deckid === deckStore?.deck?.deckid) {
-        deckStore.deck[field] = value;
+        deckStore[DECK][field] = value;
         if (field === 'inventoryType') {
-          Object.keys(deckStore.deck.crypt).forEach((cardid) => {
-            deckStore.deck.crypt[cardid].i = '';
+          Object.keys(deckStore[DECK].crypt).forEach((cardid) => {
+            deckStore[DECK].crypt[cardid].i = '';
           });
-          Object.keys(deckStore.deck.library).forEach((cardid) => {
-            deckStore.deck.library[cardid].i = '';
+          Object.keys(deckStore[DECK].library).forEach((cardid) => {
+            deckStore[DECK].library[cardid].i = '';
           });
         }
       }
@@ -112,7 +112,7 @@ export const deckUpdate = (deckid, field, value) => {
   const branchesUpdateFields = ['name', 'author'];
   if (
     branchesUpdateFields.includes(field) &&
-    (deckStore.decks[deckid].branches || deckStore.decks[deckid].master)
+    (deckStore[DECKS][deckid].branches || deckStore[DECKS][deckid].master)
   ) {
     branchesUpdate(deckid, field, value);
   }
@@ -127,16 +127,16 @@ export const deckUpdate = (deckid, field, value) => {
   }
 
   const now = new Date();
-  deckStore.decks[deckid].timestamp = now.toUTCString();
+  deckStore[DECKS][deckid].timestamp = now.toUTCString();
 
   return deckServices.update(deckid, field, value).catch(() => {
-    deckStore.deck = initialDeckState;
-    deckStore.decks[deckid] = initialDecksState;
+    deckStore[DECK] = initialDeckState;
+    deckStore[DECKS][deckid] = initialDecksState;
   });
 };
 
 export const deckToggleInventoryState = (deckid) => {
-  switch (deckStore.decks[deckid].inventoryType) {
+  switch (deckStore[DECKS][deckid].inventoryType) {
     case 's':
       deckUpdate(deckid, 'inventoryType', 'h');
       break;
@@ -149,7 +149,7 @@ export const deckToggleInventoryState = (deckid) => {
 };
 
 export const cardToggleInventoryState = (deckid, cardid) => {
-  const deck = deckStore.decks[deckid];
+  const deck = deckStore[DECKS][deckid];
   const target = cardid > 200000 ? 'crypt' : 'library';
   const value = deck[target][cardid].i ? '' : deck.inventoryType === 's' ? 'h' : 's';
   deckUpdate(deckid, 'usedInInventory', {
@@ -175,56 +175,56 @@ export const deckAdd = (deck) => {
     isBranches: Boolean(deck.master || deck.branches?.length > 0),
   };
 
-  deckStore.decks[deck.deckid] = d;
+  deckStore[DECKS][deck.deckid] = d;
 };
 
 export const deckLocalize = (localizedCrypt, nativeCrypt, localizedLibrary, nativeLibrary) => {
-  Object.values(deckStore.deck.crypt).forEach((card) => {
+  Object.values(deckStore[DECK].crypt).forEach((card) => {
     const id = card.c.Id;
     const newInfo = localizedCrypt[id] ? localizedCrypt[id] : nativeCrypt[id];
-    deckStore.deck.crypt[id].c.Name = newInfo.Name;
-    deckStore.deck.crypt[id].c[CARD_TEXT] = newInfo[CARD_TEXT];
+    deckStore[DECK].crypt[id].c.Name = newInfo.Name;
+    deckStore[DECK].crypt[id].c[CARD_TEXT] = newInfo[CARD_TEXT];
   });
-  Object.values(deckStore.deck.library).forEach((card) => {
+  Object.values(deckStore[DECK].library).forEach((card) => {
     const id = card.c.Id;
     const newInfo = localizedLibrary[id] ? localizedLibrary[id] : nativeLibrary[id];
-    deckStore.deck.library[id].c.Name = newInfo.Name;
-    deckStore.deck.library[id].c[CARD_TEXT] = newInfo[CARD_TEXT];
+    deckStore[DECK].library[id].c.Name = newInfo.Name;
+    deckStore[DECK].library[id].c[CARD_TEXT] = newInfo[CARD_TEXT];
   });
 };
 
 // INTERNAL STORE FUNCTIONS
 const changeMaster = (deckid) => {
-  const oldMasterDeckid = deckStore.decks[deckid].master;
+  const oldMasterDeckid = deckStore[DECKS][deckid].master;
 
   if (oldMasterDeckid) {
-    const branches = deckStore.decks[oldMasterDeckid].branches.filter((i) => i !== deckid);
+    const branches = deckStore[DECKS][oldMasterDeckid].branches.filter((i) => i !== deckid);
     branches.push(oldMasterDeckid);
 
     branches.forEach((b) => {
-      deckStore.decks[b].master = deckid;
-      deckStore.decks[b].branches = [];
+      deckStore[DECKS][b].master = deckid;
+      deckStore[DECKS][b].branches = [];
     });
-    deckStore.decks[deckid].branches = branches;
-    deckStore.decks[deckid].master = null;
+    deckStore[DECKS][deckid].branches = branches;
+    deckStore[DECKS][deckid].master = null;
 
-    deckStore.deck.branches = branches;
-    deckStore.deck.master = null;
+    deckStore[DECK].branches = branches;
+    deckStore[DECK].master = null;
   }
 };
 
 const branchesUpdate = (deckid, field, value) => {
   let revisions = [];
-  if (deckStore.decks[deckid].master) {
+  if (deckStore[DECKS][deckid].master) {
     revisions = [
-      deckStore.decks[deckid].master,
-      ...deckStore.decks[deckStore.decks[deckid].master].branches,
+      deckStore[DECKS][deckid].master,
+      ...deckStore[DECKS][deckStore[DECKS][deckid].master].branches,
     ];
   } else {
-    revisions = [deckid, ...deckStore.decks[deckid].branches];
+    revisions = [deckid, ...deckStore[DECKS][deckid].branches];
   }
 
   revisions.forEach((d) => {
-    deckStore.decks[d][field] = value;
+    deckStore[DECKS][d][field] = value;
   });
 };

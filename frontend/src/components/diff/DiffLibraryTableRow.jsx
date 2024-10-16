@@ -9,6 +9,7 @@ import {
 import { getHardTotal, getSoftMax } from '@/utils';
 import { useApp, deckStore, usedStore, inventoryStore, deckCardChange } from '@/context';
 import { useSwipe } from '@/hooks';
+import { DECKS, LIBRARY } from '@/utils/constants';
 
 const DiffLibraryTableRow = ({
   cardChange,
@@ -22,9 +23,9 @@ const DiffLibraryTableRow = ({
   handleClick,
 }) => {
   const { inventoryMode } = useApp();
-  const decks = useSnapshot(deckStore).decks;
-  const inventoryLibrary = useSnapshot(inventoryStore).library;
-  const usedLibrary = useSnapshot(usedStore).library;
+  const decks = useSnapshot(deckStore)[DECKS];
+  const inventoryLibrary = useSnapshot(inventoryStore)[LIBRARY];
+  const usedLibrary = useSnapshot(usedStore)[LIBRARY];
   const softUsedMax = getSoftMax(usedLibrary.soft[card.c.Id]);
   const hardUsedTotal = getHardTotal(usedLibrary.hard[card.c.Id]);
   const inInventory = inventoryLibrary[card.c.Id]?.q ?? 0;
