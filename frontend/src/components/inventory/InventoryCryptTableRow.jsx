@@ -1,4 +1,5 @@
 import React from 'react';
+import { twMerge } from 'tailwind-merge';
 import { useSnapshot } from 'valtio';
 import {
   CardPopover,
@@ -39,14 +40,19 @@ const InventoryCryptTableRow = ({ card, compact, newFocus, inShared, handleClick
     : '';
 
   return (
-    <div className={`flex w-full items-center ${trBg}`} {...swipeHandlers}>
+    <div className={twMerge('flex w-full items-center', trBg)} {...swipeHandlers}>
       {inShared ? (
         <div className="flex h-full min-w-[42px] border-r border-bgSecondary bg-blue/5 dark:border-bgSecondaryDark sm:min-w-[48px]">
           {card.q || null}
         </div>
       ) : (
         <div
-          className={`flex ${isEditable ? 'min-w-[84px]' : 'h-full min-w-[42px] border-r border-bgSecondary bg-blue/5 dark:border-bgSecondaryDark sm:min-w-[48px]'}`}
+          className={twMerge(
+            'flex',
+            isEditable
+              ? 'min-w-[84px]'
+              : 'h-full min-w-[42px] border-r border-bgSecondary bg-blue/5 dark:border-bgSecondaryDark sm:min-w-[48px]',
+          )}
         >
           <InventoryCardQuantity
             card={card}

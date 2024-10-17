@@ -1,4 +1,5 @@
 import React from 'react';
+import { twMerge } from 'tailwind-merge';
 import { ResultLegalIcon } from '@/components';
 import { getLegality } from '@/utils';
 import { BANNED, LEGAL, PLAYTEST } from '@/utils/constants';
@@ -8,11 +9,14 @@ const ResultLibraryName = ({ card, colored = true, isBanned }) => {
 
   return (
     <div
-      className={`inline space-x-1 whitespace-nowrap ${
-        colored ? 'text-fgName dark:text-fgNameDark' : ''
-      }`}
+      className={twMerge(
+        'inline space-x-1 whitespace-nowrap',
+        colored && 'text-fgName dark:text-fgNameDark',
+      )}
     >
-      <div className={`inline whitespace-normal ${card.Banned || isBanned ? 'line-through' : ''}`}>
+      <div
+        className={twMerge('inline whitespace-normal', (card.Banned || isBanned) && 'line-through')}
+      >
         {card.Name}
       </div>
       {card.Banned && <ResultLegalIcon type={BANNED} value={card.Banned} />}

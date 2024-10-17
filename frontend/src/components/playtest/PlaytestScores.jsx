@@ -1,4 +1,5 @@
 import React from 'react';
+import { twMerge } from 'tailwind-merge';
 import Star from '@/assets/images/icons/star.svg?react';
 import StarFill from '@/assets/images/icons/star-fill.svg?react';
 import { useApp } from '@/context';
@@ -26,7 +27,7 @@ const PlaytestScores = ({ value, handleClick, isSmall }) => {
         return (
           <div
             key={idx}
-            className={`flex ${handleClick ? 'cursor-pointer' : ''}`}
+            className={twMerge('flex', handleClick && 'cursor-pointer')}
             onClick={handleClick ? () => handleClick(idx + 1) : null}
             title={titles[idx]}
           >

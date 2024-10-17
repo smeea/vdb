@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { twMerge } from 'tailwind-merge';
 import { FlexGapped, DiffCryptTable, ResultModal, DeckCryptHeader } from '@/components';
 import { useApp } from '@/context';
 import { useModalCardController, useKeyDisciplines, useDeckCrypt } from '@/hooks';
@@ -43,9 +44,10 @@ const ReviewCrypt = ({ cardChange, cardsFrom, cardsTo }) => {
 
   return (
     <FlexGapped
-      className={`flex-col ${
-        !isMobile ? 'sticky bg-bgPrimary dark:bg-bgPrimaryDark sm:top-10' : ''
-      }`}
+      className={twMerge(
+        'flex-col',
+        !isMobile && 'sticky bg-bgPrimary dark:bg-bgPrimaryDark sm:top-10',
+      )}
     >
       <div>
         <DeckCryptHeader

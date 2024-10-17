@@ -1,4 +1,5 @@
 import React from 'react';
+import { twMerge } from 'tailwind-merge';
 
 const ButtonFloat = ({
   onClick,
@@ -23,7 +24,12 @@ const ButtonFloat = ({
   return (
     <div
       onClick={onClick}
-      className={`fixed right-[15px] z-50 h-[48px] w-[48px] items-center justify-center rounded-[25px] text-white sm:right-[25px] ${positionClass[position]} ${style[variant]} ${className}`}
+      className={twMerge(
+        'fixed right-[15px] z-50 h-[48px] w-[48px] items-center justify-center rounded-[25px] text-white sm:right-[25px]',
+        positionClass[position],
+        style[variant],
+        className,
+      )}
     >
       <div className="flex h-full w-full items-center justify-center">{children}</div>
     </div>

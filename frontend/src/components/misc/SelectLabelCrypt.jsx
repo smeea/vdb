@@ -1,4 +1,5 @@
 import React from 'react';
+import { twMerge } from 'tailwind-merge';
 import { useSnapshot } from 'valtio';
 import {
   ResultName,
@@ -20,11 +21,11 @@ const SelectLabelCrypt = ({ cardid, inInventory }) => {
         <div className="flex items-center space-x-1">
           {inInventory && (
             <div
-              className={`inline w-7 text-center text-lg ${
-                inventoryCrypt[cardid]
-                  ? 'rounded-md border-2 border-midGray dark:border-midGrayDark'
-                  : ''
-              }`}
+              className={twMerge(
+                'inline w-7 text-center text-lg',
+                inventoryCrypt[cardid] &&
+                  'rounded-md border-2 border-midGray dark:border-midGrayDark',
+              )}
             >
               {inventoryCrypt[cardid] && inventoryCrypt[cardid].q}
             </div>

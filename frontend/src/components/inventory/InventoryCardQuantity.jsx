@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { twMerge } from 'tailwind-merge';
 import { useSnapshot } from 'valtio';
 import { ButtonCardChange } from '@/components';
 import { useApp, inventoryStore, inventoryCardChange } from '@/context';
@@ -42,11 +43,11 @@ const InventoryCardQuantity = ({ card, softUsedMax, hardUsedTotal, compact, newF
             <>
               <ButtonCardChange onClick={() => handleQuantityChange(-1)} isLink isNegative />
               <div
-                className={`mx-1 flex w-full justify-center ${
-                  state < softUsedMax + hardUsedTotal
-                    ? 'bg-bgError text-white dark:bg-bgErrorDark dark:text-whiteDark'
-                    : ''
-                }`}
+                className={twMerge(
+                  'mx-1 flex w-full justify-center',
+                  state < softUsedMax + hardUsedTotal &&
+                    'bg-bgError text-white dark:bg-bgErrorDark dark:text-whiteDark',
+                )}
               >
                 {card.t && <div className="min-w-[4px]"></div>}
                 {state == 0 ? <>&nbsp;</> : state}
@@ -96,11 +97,11 @@ const InventoryCardQuantity = ({ card, softUsedMax, hardUsedTotal, compact, newF
         </div>
       ) : (
         <div
-          className={`mx-1 my-2 flex w-full items-center justify-center ${
-            state < softUsedMax + hardUsedTotal
-              ? 'bg-bgError text-white dark:bg-bgErrorDark dark:text-whiteDark'
-              : ''
-          }`}
+          className={twMerge(
+            'mx-1 my-2 flex w-full items-center justify-center',
+            state < softUsedMax + hardUsedTotal &&
+              'bg-bgError text-white dark:bg-bgErrorDark dark:text-whiteDark',
+          )}
         >
           {card.t && <div className="min-w-[4px]"></div>}
           {state == 0 ? <>&nbsp;</> : state}

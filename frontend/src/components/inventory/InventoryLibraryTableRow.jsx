@@ -1,4 +1,5 @@
 import React from 'react';
+import { twMerge } from 'tailwind-merge';
 import { useSnapshot } from 'valtio';
 import {
   CardPopover,
@@ -47,14 +48,19 @@ const InventoryLibraryTableRow = ({ card, compact, newFocus, inShared, handleCli
     : '';
 
   return (
-    <div className={`flex w-full items-center ${trBg}`} {...swipeHandlers}>
+    <div className={twMerge('flex w-full items-center', trBg)} {...swipeHandlers}>
       {inShared ? (
         <div className="flex h-full min-w-[42px] border-r border-bgSecondary bg-blue/5 dark:border-bgSecondaryDark sm:min-w-[48px]">
           {card.q || null}
         </div>
       ) : (
         <div
-          className={`flex ${isEditable ? 'min-w-[84px]' : 'h-full min-w-[42px] border-r border-bgSecondary bg-blue/5 dark:border-bgSecondaryDark sm:min-w-[48px]'}`}
+          className={twMerge(
+            'flex',
+            isEditable
+              ? 'min-w-[84px]'
+              : 'h-full min-w-[42px] border-r border-bgSecondary bg-blue/5 dark:border-bgSecondaryDark sm:min-w-[48px]',
+          )}
         >
           <InventoryCardQuantity
             card={card}
@@ -93,7 +99,7 @@ const InventoryLibraryTableRow = ({ card, compact, newFocus, inShared, handleCli
         <div className="flex min-w-[82px] justify-between" onClick={() => handleClick(card.c)}>
           {(card.c[BLOOD_COST] || card.c[POOL_COST]) && (
             <div
-              className={`flex min-w-[22px] justify-center ${card.c[BLOOD_COST] && 'pb-1'}`}
+              className={twMerge('flex min-w-[22px] justify-center', card.c[BLOOD_COST] && 'pb-1')}
               onClick={() => handleClick(card.c)}
             >
               <ResultLibraryCost valueBlood={card.c[BLOOD_COST]} valuePool={card.c[POOL_COST]} />
@@ -108,7 +114,7 @@ const InventoryLibraryTableRow = ({ card, compact, newFocus, inShared, handleCli
       ) : (
         <>
           <div
-            className={`flex min-w-[30px] justify-center ${card.c[BLOOD_COST] && 'pb-1'}`}
+            className={twMerge('flex min-w-[30px] justify-center', card.c[BLOOD_COST] && 'pb-1')}
             onClick={() => handleClick(card.c)}
           >
             {(card.c[BLOOD_COST] || card.c[POOL_COST]) && (

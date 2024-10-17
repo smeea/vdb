@@ -1,4 +1,5 @@
 import React from 'react';
+import { twMerge } from 'tailwind-merge';
 import { useSnapshot } from 'valtio';
 import { UsedPopover, Tooltip } from '@/components';
 import { getSoftMax, getHardTotal } from '@/utils';
@@ -23,11 +24,11 @@ const ResultUsed = ({ card }) => {
     <Tooltip placement={isDesktop ? 'left' : 'bottom'} overlay={<UsedPopover cardid={card.Id} />}>
       {(inInventory > 0 || softUsedMax + hardUsedTotal > 0) && (
         <div
-          className={`mx-1 flex items-center px-0.5 ${
-            inInventory < softUsedMax + hardUsedTotal
-              ? 'bg-bgError text-white dark:bg-bgErrorDark dark:text-whiteDark'
-              : ''
-          } `}
+          className={twMerge(
+            'mx-1 flex items-center px-0.5',
+            inInventory < softUsedMax + hardUsedTotal &&
+              'bg-bgError text-white dark:bg-bgErrorDark dark:text-whiteDark',
+          )}
         >
           <div className="flex basis-3/5 justify-center text-lg">
             {isInventoryNote && <div className="min-w-[4px]"></div>}
@@ -35,11 +36,12 @@ const ResultUsed = ({ card }) => {
             {isInventoryNote && <div className="max-w-[4px] text-sm">*</div>}
           </div>
           <div
-            className={`flex basis-2/5 justify-center text-sm ${
+            className={twMerge(
+              'flex basis-2/5 justify-center text-sm',
               inInventory >= softUsedMax + hardUsedTotal
                 ? 'text-midGray dark:text-midGrayDark'
-                : 'text-white dark:text-white'
-            } `}
+                : 'text-white dark:text-white',
+            )}
           >
             {inInventory >= softUsedMax + hardUsedTotal
               ? `+${inInventory - softUsedMax - hardUsedTotal}`

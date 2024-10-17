@@ -1,4 +1,5 @@
 import React from 'react';
+import { twMerge } from 'tailwind-merge';
 import { useNavigate } from 'react-router-dom';
 import { TwdOpenDeckButton } from '@/components';
 import { useApp, clearSearchForm, searchTwdForm } from '@/context';
@@ -28,9 +29,10 @@ const TwdCardsHistoryCardAppearance = ({ card, byPlayer }) => {
   return (
     <>
       <div
-        className={`flex min-w-[45px] items-center justify-center sm:min-w-[60px] ${
-          card.deckid ? '' : 'font-bold text-fgSecondary dark:text-fgSecondaryDark'
-        }`}
+        className={twMerge(
+          'flex min-w-[45px] items-center justify-center sm:min-w-[60px]',
+          !card.deckid && 'font-bold text-fgSecondary dark:text-fgSecondaryDark',
+        )}
       >
         {card.release_date.slice(0, 4)}
       </div>
@@ -40,9 +42,10 @@ const TwdCardsHistoryCardAppearance = ({ card, byPlayer }) => {
         </div>
       )}
       <div
-        className={`flex min-w-[25px] items-center justify-center sm:min-w-[60px] ${
-          card.deckid ? '' : 'font-bold text-fgSecondary dark:text-fgSecondaryDark'
-        }`}
+        className={twMerge(
+          'flex min-w-[25px] items-center justify-center sm:min-w-[60px]',
+          !card.deckid && 'font-bold text-fgSecondary dark:text-fgSecondaryDark',
+        )}
       >
         {yearsToWin}
       </div>

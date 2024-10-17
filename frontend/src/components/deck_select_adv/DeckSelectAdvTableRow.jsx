@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { twMerge } from 'tailwind-merge';
 import { useSnapshot } from 'valtio';
 import { useNavigate } from 'react-router-dom';
 import EyeFill from '@/assets/images/icons/eye-fill.svg?react';
@@ -99,7 +100,7 @@ const DeckSelectAdvTableRow = ({
       )}
 
       <td
-        className={`${short ? 'w-full' : 'min-w-[45vw]'} cursor-pointer sm:min-w-[340px]`}
+        className={twMerge(short ? 'w-full' : 'min-w-[45vw]', 'cursor-pointer sm:min-w-[340px]')}
         onClick={handleClick}
       >
         <div

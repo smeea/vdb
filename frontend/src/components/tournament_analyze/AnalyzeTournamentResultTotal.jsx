@@ -1,4 +1,5 @@
 import React from 'react';
+import { twMerge } from 'tailwind-merge';
 import { SortButton } from '@/components';
 import { useApp } from '@/context';
 
@@ -29,9 +30,10 @@ const AnalyzeTournamentResultTotal = ({ results, sortMethods, sortMethod, setSor
 
   return (
     <div
-      className={`${
-        isMobile && Object.keys(byRank).length > 10 ? 'block' : 'flex'
-      } items-center justify-between bg-bgSecondary dark:bg-bgSecondaryDark sm:space-x-2`}
+      className={twMerge(
+        isMobile && Object.keys(byRank).length > 10 ? 'block' : 'flex',
+        'items-center justify-between bg-bgSecondary dark:bg-bgSecondaryDark sm:space-x-2',
+      )}
     >
       <div className="flex flex-col gap-1 p-2">
         <div className="whitespace-nowrap font-bold">TOTAL: {results.length}</div>

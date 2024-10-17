@@ -1,4 +1,5 @@
 import React from 'react';
+import { twMerge } from 'tailwind-merge';
 
 const ErrorOverlay = ({ placement = 'bottom', children }) => {
   const placementStyle = {
@@ -9,7 +10,7 @@ const ErrorOverlay = ({ placement = 'bottom', children }) => {
   };
 
   return (
-    <div className={`absolute z-10 flex items-center ${placementStyle[placement]}`}>
+    <div className={twMerge('absolute z-10 flex items-center', placementStyle[placement])}>
       <div className="inline whitespace-nowrap rounded bg-bgError px-1.5 py-0.5 text-sm font-bold text-white dark:bg-bgErrorDark dark:text-fgPrimaryDark">
         {children}
       </div>

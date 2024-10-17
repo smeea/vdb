@@ -1,4 +1,5 @@
 import React from 'react';
+import { twMerge } from 'tailwind-merge';
 import {
   TwdCardsHistoryCardAppearance,
   CardPopover,
@@ -32,7 +33,7 @@ const TwdCardsHistoryCryptRow = ({ card, players, handleClick }) => {
         </div>
       )}
       <div
-        className={`flex w-full items-center justify-start ${card.deckid ? '' : 'font-bold'} `}
+        className={twMerge('flex w-full items-center justify-start', !card.deckid && 'font-bold')}
         onClick={() => handleClick(card)}
       >
         <ConditionalTooltip

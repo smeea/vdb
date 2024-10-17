@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { twMerge } from 'tailwind-merge';
 import ClipboardFill from '@/assets/images/icons/clipboard-fill.svg?react';
 
 const Btc = () => {
@@ -19,7 +20,12 @@ const Btc = () => {
         <div className="inline font-mono text-sm">{BTC_WALLET}</div>
       </a>
       <div
-        className={`inline pl-1 ${success ? 'text-fgSecondaryDark hover:text-fgSecondaryDark dark:text-whiteDark dark:hover:text-fgSecondaryDark' : 'text-fgSecondary hover:text-blue dark:text-fgSecondaryDark dark:hover:text-fgPrimaryDark'}`}
+        className={twMerge(
+          'inline pl-1',
+          success
+            ? 'text-fgSecondaryDark hover:text-fgSecondaryDark dark:text-whiteDark dark:hover:text-fgSecondaryDark'
+            : 'text-fgSecondary hover:text-blue dark:text-fgSecondaryDark dark:hover:text-fgPrimaryDark',
+        )}
         onClick={handleClick}
       >
         <ClipboardFill className="inline" viewBox="0 0 18 18" />

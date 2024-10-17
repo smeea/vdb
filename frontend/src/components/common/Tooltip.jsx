@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react';
+import { twMerge } from 'tailwind-merge';
 import {
   useFloating,
   autoUpdate,
@@ -77,9 +78,11 @@ const Tooltip = ({
       <FloatingPortal>
         {(show || open) && (
           <div
-            className={`z-50 rounded-md border border-bgSecondary bg-bgPrimary text-fgPrimary dark:border-bgSecondaryDark dark:bg-bgPrimaryDark dark:text-fgPrimaryDark ${
-              noPadding ? '' : 'p-3'
-            } ${widthClass[size]} `}
+            className={twMerge(
+              'z-50 rounded-md border border-bgSecondary bg-bgPrimary text-fgPrimary dark:border-bgSecondaryDark dark:bg-bgPrimaryDark dark:text-fgPrimaryDark',
+              !noPadding && 'p-3',
+              widthClass[size],
+            )}
             ref={refs.setFloating}
             style={{
               position: strategy,
@@ -91,7 +94,11 @@ const Tooltip = ({
             {overlay}
             <div
               ref={arrowRef}
-              className={`absolute z-[-1] h-[12px] w-[12px] border-b border-l border-bgSecondary bg-bgPrimary dark:border-bgSecondaryDark dark:bg-bgPrimaryDark ${arrowOffset} ${arrowRotate}`}
+              className={twMerge(
+                'absolute z-[-1] h-[12px] w-[12px] border-b border-l border-bgSecondary bg-bgPrimary dark:border-bgSecondaryDark dark:bg-bgPrimaryDark',
+                arrowOffset,
+                arrowRotate,
+              )}
               style={{
                 left: arrowX != null ? `${arrowX}px` : '',
                 top: arrowY != null ? `${arrowY}px` : '',

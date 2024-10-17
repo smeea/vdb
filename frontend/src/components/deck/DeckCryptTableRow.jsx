@@ -1,4 +1,5 @@
 import React from 'react';
+import { twMerge } from 'tailwind-merge';
 import { useSnapshot } from 'valtio';
 import { deckCardChange, useApp, usedStore, inventoryStore, limitedStore } from '@/context';
 import {
@@ -51,7 +52,7 @@ const DeckCryptTableRow = ({
   return (
     <tr
       {...swipeHandlers}
-      className={`h-[38px] border-y border-bgSecondary dark:border-bgSecondaryDark ${trBg}`}
+      className={twMerge('h-[38px] border-y border-bgSecondary dark:border-bgSecondaryDark', trBg)}
     >
       {inventoryMode && deck.inventoryType && !inMissing && !inSearch && isDesktop && (
         <DeckCardToggleInventoryStateTd card={card} deck={deck} />

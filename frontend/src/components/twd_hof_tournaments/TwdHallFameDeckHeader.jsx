@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { twMerge } from 'tailwind-merge';
 import PeopleFill from '@/assets/images/icons/people-fill.svg?react';
 import { useApp } from '@/context';
 import { Hr, TwdHallFameDeckBody } from '@/components';
@@ -14,9 +15,10 @@ const TwdHallFameDeckHeader = ({ deck, isStar }) => {
     <div className="rounded-md border-2 border-borderPrimary bg-bgPrimary dark:border-borderPrimaryDark dark:bg-bgPrimaryDark">
       <div
         onClick={handleClick}
-        className={`flex justify-between p-2.5 text-fgSecondary hover:underline dark:text-fgSecondaryDark ${
-          isStar ? 'font-bold' : ''
-        }`}
+        className={twMerge(
+          'flex justify-between p-2.5 text-fgSecondary hover:underline dark:text-fgSecondaryDark',
+          isStar && 'font-bold',
+        )}
       >
         <div className="flex items-center space-x-4">
           <div className="flex items-center space-x-1">

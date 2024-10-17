@@ -1,4 +1,5 @@
 import React from 'react';
+import { twMerge } from 'tailwind-merge';
 import {
   ButtonCloseModal,
   Hr,
@@ -70,7 +71,10 @@ const ResultLibraryLayoutText = ({ card, handleClose, noClose, inPopover }) => {
     <div className="space-y-3">
       <div className="flex items-center justify-between">
         <div
-          className={`${isMobile || inPopover ? 'flex-col' : ''} flex justify-between gap-1 whitespace-nowrap sm:gap-3`}
+          className={twMerge(
+            'flex justify-between gap-1 whitespace-nowrap sm:gap-3',
+            isMobile || (inPopover && 'flex-col'),
+          )}
         >
           <div className="flex items-center justify-between gap-2 whitespace-nowrap">
             <div className="flex items-center gap-2">

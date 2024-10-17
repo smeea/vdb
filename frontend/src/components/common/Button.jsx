@@ -1,4 +1,5 @@
 import React from 'react';
+import { twMerge } from 'tailwind-merge';
 
 const Button = ({
   children,
@@ -42,7 +43,15 @@ const Button = ({
 
   return (
     <button
-      className={`${roundedStyle} ${outlineStyle} ${borderStyle} ${customStyle[variant]} flex items-center justify-center font-normal ${paddingStyle} ${className}`}
+      className={twMerge(
+        'flex items-center justify-center font-normal',
+        roundedStyle,
+        outlineStyle,
+        borderStyle,
+        customStyle[variant],
+        paddingStyle,
+        className,
+      )}
       onClick={onClick}
       title={title}
       disabled={disabled}

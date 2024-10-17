@@ -1,4 +1,5 @@
 import React from 'react';
+import { twMerge } from 'tailwind-merge';
 
 const Input = React.forwardRef(
   (
@@ -24,7 +25,12 @@ const Input = React.forwardRef(
   ) => {
     return (
       <input
-        className={`min-h-[42px] w-full border-borderSecondary bg-bgPrimary px-2 outline-1 outline-bgCheckboxSelected placeholder:text-midGray focus:outline dark:border-borderSecondaryDark dark:bg-bgPrimaryDark dark:outline-bgCheckboxSelectedDark dark:placeholder:text-midGrayDark ${className} ${borderStyle} ${roundedStyle} `}
+        className={twMerge(
+          'min-h-[42px] w-full border-borderSecondary bg-bgPrimary px-2 outline-1 outline-bgCheckboxSelected placeholder:text-midGray focus:outline dark:border-borderSecondaryDark dark:bg-bgPrimaryDark dark:outline-bgCheckboxSelectedDark dark:placeholder:text-midGrayDark',
+          borderStyle,
+          roundedStyle,
+          className,
+        )}
         placeholder={placeholder}
         type={type}
         name={name}

@@ -1,4 +1,5 @@
 import React from 'react';
+import { twMerge } from 'tailwind-merge';
 
 const Textarea = React.forwardRef(
   (
@@ -21,7 +22,12 @@ const Textarea = React.forwardRef(
   ) => {
     return (
       <textarea
-        className={`w-full rounded border-borderSecondary bg-bgPrimary px-1.5 py-1 outline-1 outline-bgCheckboxSelected placeholder:text-midGray focus:outline dark:border-borderSecondaryDark dark:bg-bgPrimaryDark dark:outline-bgCheckboxSelectedDark dark:placeholder:text-midGrayDark ${className} ${borderStyle} ${roundedStyle} `}
+        className={twMerge(
+          'w-full rounded border-borderSecondary bg-bgPrimary px-1.5 py-1 outline-1 outline-bgCheckboxSelected placeholder:text-midGray focus:outline dark:border-borderSecondaryDark dark:bg-bgPrimaryDark dark:outline-bgCheckboxSelectedDark dark:placeholder:text-midGrayDark',
+          className,
+          borderStyle,
+          roundedStyle,
+        )}
         rows={rows}
         value={value}
         placeholder={placeholder}

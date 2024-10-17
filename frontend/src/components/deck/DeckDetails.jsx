@@ -1,4 +1,5 @@
 import React from 'react';
+import { twMerge } from 'tailwind-merge';
 import {
   DeckTags,
   DeckChangeName,
@@ -16,13 +17,14 @@ const DeckDetails = ({ deck, allTagsOptions, folded, setFolded }) => {
   return (
     <div className="flex w-full flex-col gap-2">
       <div className="flex gap-2 max-sm:flex-col">
-        <div className={`basis-full ${deck.isBranches ? 'sm:basis-6/12' : 'sm:basis-8/12'}`}>
+        <div className={twMerge('basis-full', deck.isBranches ? 'sm:basis-6/12' : 'sm:basis-8/12')}>
           <DeckChangeName deck={deck} />
         </div>
         <div
-          className={`flex basis-full max-sm:flex-col ${
-            deck.isBranches ? 'sm:basis-6/12' : 'sm:basis-4/12'
-          } gap-2`}
+          className={twMerge(
+            'flex basis-full gap-2 max-sm:flex-col',
+            deck.isBranches ? 'sm:basis-6/12' : 'sm:basis-4/12',
+          )}
         >
           {deck.isBranches && (
             <div className="basis-full sm:basis-4/12">
@@ -34,7 +36,7 @@ const DeckDetails = ({ deck, allTagsOptions, folded, setFolded }) => {
           </div>
         </div>
       </div>
-      <div className={`flex ${!folded || isMobile ? 'flex-col' : 'flex-row'} gap-2`}>
+      <div className={twMerge('flex gap-2', !folded || isMobile ? 'flex-col' : 'flex-row')}>
         {isPlaytester && playtestPrecon ? (
           <div className="basis-full">
             <PlaytestReportForm id={playtestPrecon} isPrecon />

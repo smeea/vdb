@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { twMerge } from 'tailwind-merge';
 import { ConditionalTooltip, UsedPopover, ButtonCardChange } from '@/components';
 import { useApp } from '@/context';
 
@@ -69,7 +70,7 @@ const DeckCardQuantity = ({
           {isMobile ? (
             <>
               <ButtonCardChange onClick={() => cardChange(deckid, card, q - 1)} isLink isNegative />
-              <div className={`mx-1 flex w-full justify-center ${inventoryColor}`}>
+              <div className={twMerge('mx-1 flex w-full justify-center', inventoryColor)}>
                 {q == 0 ? '' : q}
               </div>
               <ButtonCardChange onClick={() => cardChange(deckid, card, q + 1)} isLink />
@@ -81,7 +82,10 @@ const DeckCardQuantity = ({
               )}
               <div
                 tabIndex={0}
-                className={manual ? '' : `mx-1 flex w-full justify-center ${inventoryColor}`}
+                className={twMerge(
+                  !manual && 'mx-1 flex w-full justify-center',
+                  !manual && inventoryColor,
+                )}
                 onFocus={() => setManual(true)}
               >
                 <ConditionalTooltip
@@ -116,7 +120,7 @@ const DeckCardQuantity = ({
           overlay={<UsedPopover cardid={card.Id} />}
           disabled={!inventoryMode || isMobile}
         >
-          <div className={`mx-1 flex items-center justify-center text-lg ${inventoryColor}`}>
+          <div className={twMerge('mx-1 flex items-center justify-center text-lg', inventoryColor)}>
             {q || null}
           </div>
         </ConditionalTooltip>

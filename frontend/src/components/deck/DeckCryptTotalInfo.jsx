@@ -1,4 +1,5 @@
 import React from 'react';
+import { twMerge } from 'tailwind-merge';
 import { DisciplinesCryptSummary, ResultCryptCapacity } from '@/components';
 import { useApp } from '@/context';
 import { drawUniqueProbability, countCards, countTotalCost } from '@/utils';
@@ -46,7 +47,12 @@ const DeckCryptTotalInfo = ({ cards, disciplinesDetailed }) => {
         </div>
         <div className="flex gap-3">
           <div className="text-fgSecondary dark:text-fgSecondaryDark">Uniq:</div>
-          <div className={`flex flex-row ${isMobile && uniqueDraw.length > 2 ? 'gap-2' : 'gap-3'}`}>
+          <div
+            className={twMerge(
+              'flex flex-row',
+              isMobile && uniqueDraw.length > 2 ? 'gap-2' : 'gap-3',
+            )}
+          >
             {uniqueDraw}
           </div>
         </div>

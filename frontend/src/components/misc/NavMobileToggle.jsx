@@ -1,4 +1,5 @@
 import React from 'react';
+import { twMerge } from 'tailwind-merge';
 import ToggleOn from '@/assets/images/icons/toggle-on.svg?react';
 import ToggleOff from '@/assets/images/icons/toggle-off.svg?react';
 
@@ -15,7 +16,7 @@ const NavMobileToggleSwitch = ({ text, isOn, onToggle }) => {
           <ToggleOff height="26" width="26" viewBox="0 0 16 16" />
         )}
       </div>
-      <div className={`whitespace-nowrap ${isOn ? '' : 'text-midGray dark:text-midGrayDark'}`}>
+      <div className={twMerge('whitespace-nowrap', !isOn && 'text-midGray dark:text-midGrayDark')}>
         {text}
       </div>
     </div>

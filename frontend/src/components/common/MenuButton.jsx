@@ -1,4 +1,5 @@
 import React from 'react';
+import { twMerge } from 'tailwind-merge';
 import { Menu } from '@headlessui/react';
 
 const MenuButton = ({ title, icon, variant = 'primary', className = '', text }) => {
@@ -17,7 +18,13 @@ const MenuButton = ({ title, icon, variant = 'primary', className = '', text }) 
 
   return (
     <Menu.Button
-      className={`${mainStyle} ${customStyle[variant]} flex min-h-[41px] w-full items-center justify-center gap-2 rounded px-3 py-1.5 ${outlineStyle} ${className}`}
+      className={twMerge(
+        mainStyle,
+        customStyle[variant],
+        'flex min-h-[41px] w-full items-center justify-center gap-2 rounded px-3 py-1.5',
+        outlineStyle,
+        className,
+      )}
       title={title}
     >
       <div className="flex items-center text-fgFourth dark:text-fgPrimaryDark">{icon}</div>

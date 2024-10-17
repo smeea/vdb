@@ -1,4 +1,5 @@
 import React from 'react';
+import { twMerge } from 'tailwind-merge';
 import { SortButton, Header } from '@/components';
 import { useApp } from '@/context';
 
@@ -19,7 +20,10 @@ const TwdResultTotal = ({ results, sortMethods, sortMethod, setSortMethod }) => 
 
   return (
     <Header
-      className={`sm:space-x-2 ${isMobile && Object.keys(byYear).length > 10 ? 'block' : 'flex'}`}
+      className={twMerge(
+        'sm:space-x-2',
+        isMobile && Object.keys(byYear).length > 10 ? 'block' : 'flex',
+      )}
     >
       <div className="whitespace-nowrap p-2 font-bold">TOTAL: {total}</div>
       <div>

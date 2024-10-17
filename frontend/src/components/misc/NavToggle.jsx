@@ -1,15 +1,17 @@
 import React from 'react';
+import { twMerge } from 'tailwind-merge';
 import ToggleOn from '@/assets/images/icons/toggle-on.svg?react';
 import ToggleOff from '@/assets/images/icons/toggle-off.svg?react';
 
 const NavToggle = ({ text, isOn, onToggle, disabled }) => {
   return (
     <div
-      className={`flex h-full items-center space-x-1 ${
+      className={twMerge(
+        'flex h-full items-center space-x-1',
         disabled || !isOn
           ? 'text-lightGray dark:text-lightGrayDark'
-          : 'text-white dark:text-whiteDark'
-      }`}
+          : 'text-white dark:text-whiteDark',
+      )}
       onClick={() => !disabled && onToggle()}
     >
       <div className="flex min-w-[36px] justify-center">

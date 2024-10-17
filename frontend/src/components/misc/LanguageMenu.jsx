@@ -20,11 +20,10 @@ const LanguageMenu = ({ setShowMenu }) => {
           return (
             <div
               key={l}
-              className={`${
-                lang == l
-                  ? 'rounded-full border-4 border-double border-fgSecondary dark:border-fgSecondaryDark'
-                  : ''
-              }`}
+              className={
+                lang == l &&
+                'rounded-full border-4 border-double border-fgSecondary dark:border-fgSecondaryDark'
+              }
               onClick={() => handleClick(l)}
             >
               <Flag size={22} value={l} />

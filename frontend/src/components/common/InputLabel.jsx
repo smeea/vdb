@@ -1,11 +1,14 @@
 import React from 'react';
+import { twMerge } from 'tailwind-merge';
 
 const InputLabel = ({ title, className = '', isLast = false, children }) => {
   return (
     <div
-      className={`flex items-center border-borderSecondary dark:border-borderSecondaryDark ${
-        isLast ? 'rounded-r' : 'rounded-l'
-      } border border-bgSecondary bg-bgSecondary p-2 text-fgFourth dark:border-bgSecondaryDark dark:bg-bgSecondaryDark dark:text-fgThirdDark ${className}`}
+      className={twMerge(
+        'flex items-center border border-bgSecondary border-borderSecondary bg-bgSecondary p-2 text-fgFourth dark:border-bgSecondaryDark dark:border-borderSecondaryDark dark:bg-bgSecondaryDark dark:text-fgThirdDark',
+        isLast ? 'rounded-r' : 'rounded-l',
+        className,
+      )}
       title={title}
     >
       {children}

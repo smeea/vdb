@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { twMerge } from 'tailwind-merge';
 import { useLocation } from 'react-router-dom';
 import {
   LoginBlock,
@@ -89,9 +90,10 @@ const Inventory = () => {
       {(!sharedKey && username) || isSharedInventory ? (
         <FlexGapped>
           <div
-            className={`${
-              showCryptOnMobile ? 'flex' : 'hidden'
-            } basis-full flex-col sm:flex sm:basis-5/9 sm:gap-2 lg:gap-3 xl:gap-4`}
+            className={twMerge(
+              showCryptOnMobile ? 'flex' : 'hidden',
+              'basis-full flex-col sm:flex sm:basis-5/9 sm:gap-2 lg:gap-3 xl:gap-4',
+            )}
           >
             <InventoryCryptWrapper
               sharedCrypt={sharedCrypt}
@@ -102,9 +104,10 @@ const Inventory = () => {
             />
           </div>
           <div
-            className={`${
-              showCryptOnMobile ? 'hidden' : 'flex'
-            } basis-full flex-col sm:flex sm:basis-4/9 sm:gap-2 lg:gap-3 xl:gap-4`}
+            className={twMerge(
+              showCryptOnMobile ? 'hidden' : 'flex',
+              'basis-full flex-col sm:flex sm:basis-4/9 sm:gap-2 lg:gap-3 xl:gap-4',
+            )}
           >
             <InventoryLibraryWrapper
               sharedLibrary={sharedLibrary}

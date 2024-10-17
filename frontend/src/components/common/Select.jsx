@@ -2,6 +2,7 @@ import React from 'react';
 import ReactSelect from 'react-select';
 import AsyncSelect from 'react-select/async';
 import ReactSelectCreatable from 'react-select/creatable';
+import { twMerge } from 'tailwind-merge';
 
 const Select = React.forwardRef(
   (
@@ -96,10 +97,7 @@ const Select = React.forwardRef(
                 : ''
           }
 `,
-          container: () => `bg-bgPrimary dark:bg-bgPrimaryDark
-          ${roundedStyle}
-          ${className}
-`,
+          container: () => twMerge('bg-bgPrimary dark:bg-bgPrimaryDark', roundedStyle, className),
           placeholder: () => 'text-midGray dark:text-midGrayDark',
           // no bg- in creatable
           valueContainer: () =>

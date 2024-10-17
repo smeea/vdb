@@ -1,4 +1,5 @@
 import React from 'react';
+import { twMerge } from 'tailwind-merge';
 import { ButtonAddCard, ResultLibraryTableRowCommon } from '@/components';
 import { deckCardChange } from '@/context';
 import { useSwipe } from '@/hooks';
@@ -22,7 +23,7 @@ const DeckRecommendationLibraryTableRow = ({ card, handleClick, deck }) => {
   return (
     <tr
       {...swipeHandlers}
-      className={`h-[38px] border-y border-bgSecondary dark:border-bgSecondaryDark ${trBg}`}
+      className={twMerge('h-[38px] border-y border-bgSecondary dark:border-bgSecondaryDark', trBg)}
     >
       {isEditable && (
         <td>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { twMerge } from 'tailwind-merge';
 import { useSnapshot } from 'valtio';
 import ArchiveFill from '@/assets/images/icons/archive-fill.svg?react';
 import CalculatorFill from '@/assets/images/icons/calculator-fill.svg?react';
@@ -20,7 +21,7 @@ const ResultLayoutTextInventory = ({ card, inPopover }) => {
 
   return (
     <div className="flex flex-col gap-1.5">
-      <div className={`flex ${inPopover ? 'flex-col' : 'max-md:flex-col'} gap-1.5`}>
+      <div className={twMerge('flex gap-1.5', inPopover ? 'flex-col' : 'max-md:flex-col')}>
         <div className="flex basis-full flex-col gap-0.5 md:basis-1/3">
           <div className="flex items-center gap-1.5">
             <div className="opacity-40">

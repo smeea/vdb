@@ -1,4 +1,5 @@
 import React from 'react';
+import { twMerge } from 'tailwind-merge';
 import virtuesList from '@/assets/data/virtuesList.json';
 
 const ResultDisciplineImage = ({ value, isSuperior, name, size = 'md' }) => {
@@ -22,7 +23,10 @@ const ResultDisciplineImage = ({ value, isSuperior, name, size = 'md' }) => {
 
   return (
     <img
-      className={`inline drop-shadow-[0px_0px_1px_#a0a0a0] dark:brightness-[0.85] dark:drop-shadow-[0px_0px_1px_#d0d0d0] ${sizeStyle[size]}`}
+      className={twMerge(
+        'inline drop-shadow-[0px_0px_1px_#a0a0a0] dark:brightness-[0.85] dark:drop-shadow-[0px_0px_1px_#d0d0d0]',
+        sizeStyle[size],
+      )}
       src={`${import.meta.env.VITE_BASE_URL}/images/disciplines/${value
         .toLowerCase()
         .replace(/\s/g, '')}${isSuperior ? 'sup' : ''}.svg`}

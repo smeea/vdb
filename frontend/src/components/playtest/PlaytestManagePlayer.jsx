@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { twMerge } from 'tailwind-merge';
 import { Flag, Toggle } from '@/components';
 import { playtestServices } from '@/services';
 import { useApp } from '@/context';
@@ -19,7 +20,10 @@ const PlaytestManagePlayer = ({ value }) => {
         <div className="flex justify-between px-1">
           <Toggle isOn={state} toggle={handleClick} disabled={is_admin}>
             <div
-              className={`flex items-center gap-2 ${is_admin ? 'font-bold text-fgSecondary dark:text-fgSecondaryDark' : ''}`}
+              className={twMerge(
+                'flex items-center gap-2',
+                is_admin && 'font-bold text-fgSecondary dark:text-fgSecondaryDark',
+              )}
             >
               {username}
             </div>

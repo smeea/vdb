@@ -56,5 +56,8 @@
     "vite-plugin-pwa": "^0.20.5",
     "vite-plugin-svgr": "^4.2.0",
     "xlsx": "^0.18.5"
+  },
+  "dependencies": {
+    "tailwind-merge": "^2.5.4"
   }
 }

@@ -1,4 +1,5 @@
 import React, { useMemo, useEffect } from 'react';
+import { twMerge } from 'tailwind-merge';
 import { useSnapshot } from 'valtio';
 import {
   ResultLibrary,
@@ -47,9 +48,10 @@ const Library = () => {
       <FlexGapped>
         {!isMobile && (
           <div
-            className={`${showSearchForm ? 'lg:basis-1/12' : 'sm:basis-5/12 lg:basis-6/12'} ${
-              deck && addMode ? 'xl:basis-4/12' : 'xl:basis-2/12'
-            }`}
+            className={twMerge(
+              showSearchForm ? 'lg:basis-1/12' : 'sm:basis-5/12 lg:basis-6/12',
+              deck && addMode ? 'xl:basis-4/12' : 'xl:basis-2/12',
+            )}
           >
             {decks !== undefined && (isDesktop || (!isDesktop && !showSearchForm)) && (
               <DeckSelectorAndDisplay />

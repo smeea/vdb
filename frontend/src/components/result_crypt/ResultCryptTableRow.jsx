@@ -1,4 +1,5 @@
 import React from 'react';
+import { twMerge } from 'tailwind-merge';
 import { useSnapshot } from 'valtio';
 import {
   AccountLimitedDelCard,
@@ -38,7 +39,7 @@ const ResultCryptTableRow = ({
   return (
     <tr
       {...swipeHandlers}
-      className={`h-[38px] border-y border-bgSecondary dark:border-bgSecondaryDark ${trBg}`}
+      className={twMerge('h-[38px] border-y border-bgSecondary dark:border-bgSecondaryDark', trBg)}
     >
       {inLimited ? (
         <td className="min-w-[22px]">

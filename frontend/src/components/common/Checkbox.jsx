@@ -1,4 +1,5 @@
 import React from 'react';
+import { twMerge } from 'tailwind-merge';
 
 const Checkbox = ({
   checked,
@@ -14,7 +15,7 @@ const Checkbox = ({
   const htmlId = id ?? `${prefix ?? ''}-${name}-${value}`;
 
   return (
-    <div className={`flex items-center gap-1.5 ${className}`}>
+    <div className={twMerge('flex items-center gap-1.5', className)}>
       <input
         name={name}
         disabled={disabled}

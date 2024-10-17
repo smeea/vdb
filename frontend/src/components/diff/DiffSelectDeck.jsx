@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { twMerge } from 'tailwind-merge';
 import { useNavigate } from 'react-router-dom';
 import Check2 from '@/assets/images/icons/check2.svg?react';
 import {
@@ -73,7 +74,9 @@ const DiffSelectDeck = ({ decks, deck, deckidFrom, deckidTo, target, title }) =>
           </div>
         </form>
       ) : (
-        <div className={`z-20 flex gap-1 ${!inventoryMode && isMobile ? 'justify-between' : ''}`}>
+        <div
+          className={twMerge('z-20 flex gap-1', !inventoryMode && isMobile && 'justify-between')}
+        >
           <div className={deck?.isBranches && source == `${target}-my` ? 'w-3/4' : 'w-full'}>
             {source == `${target}-my` && decks ? (
               <DeckSelectMy handleSelect={handleSelect} deckid={deck?.deckid} />

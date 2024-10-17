@@ -1,4 +1,5 @@
 import React from 'react';
+import { twMerge } from 'tailwind-merge';
 import { useApp } from '@/context';
 import { useCardImageUrl } from '@/hooks';
 import { EN } from '@/utils/constants';
@@ -50,7 +51,7 @@ const CardImage = ({ card, set, className = 'max-sm:w-full', size = 'md', onClic
     <>
       {set ? (
         <img
-          className={`${sizeStyle[size]} ${className}`}
+          className={twMerge(sizeStyle[size], className)}
           src={`${otherUrl}.jpg?v=${import.meta.env.VITE_IMAGE_VERSION}`}
           alt={card.Name}
           onClick={onClick}
@@ -65,7 +66,7 @@ const CardImage = ({ card, set, className = 'max-sm:w-full', size = 'md', onClic
             onError={resetImgSrc}
           />
           <img
-            className={`${sizeStyle[size]} ${className}`}
+            className={twMerge(sizeStyle[size], className)}
             src={`${url}.jpg?v=${import.meta.env.VITE_IMAGE_VERSION}`}
             alt={card.Name}
             onClick={onClick}

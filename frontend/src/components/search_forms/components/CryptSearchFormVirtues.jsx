@@ -1,4 +1,5 @@
 import React from 'react';
+import { twMerge } from 'tailwind-merge';
 import { ResultDisciplineImage } from '@/components';
 import virtuesList from '@/assets/data/virtuesList.json';
 
@@ -8,9 +9,10 @@ const CryptSearchFormVirtues = ({ value, onChange }) => {
       {Object.keys(virtuesList).map((i) => (
         <div
           key={i}
-          className={`flex h-[39px] w-[39px] cursor-pointer items-center justify-center ${
-            value[i] ? '' : 'opacity-40'
-          }`}
+          className={twMerge(
+            'flex h-[39px] w-[39px] cursor-pointer items-center justify-center',
+            !value[i] && 'opacity-40',
+          )}
           onClick={() => onChange(i, 1)}
         >
           <ResultDisciplineImage size="lg" value={i} />

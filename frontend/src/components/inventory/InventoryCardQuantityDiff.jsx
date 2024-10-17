@@ -12,13 +12,13 @@ const InventoryCardQuantityDiff = ({ card, softUsedMax, hardUsedTotal }) => {
       disabled={isMobile}
     >
       <div
-        className={`${
+        className={
           card.q == softUsedMax + hardUsedTotal
             ? 'text-midGray dark:text-midGrayDark'
             : card.q >= softUsedMax + hardUsedTotal
               ? 'text-fgGreen dark:text-fgGreenDark'
               : 'text-fgRed dark:text-fgRedDark'
-        }`}
+        }
       >
         {card.q === softUsedMax + hardUsedTotal
           ? '='

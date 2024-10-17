@@ -1,4 +1,5 @@
 import React from 'react';
+import { twMerge } from 'tailwind-merge';
 import HourglassSplit from '@/assets/images/icons/hourglass-split.svg?react';
 import LightningChargeFill from '@/assets/images/icons/lightning-charge-fill.svg?react';
 import Hammer from '@/assets/images/icons/hammer.svg?react';
@@ -22,7 +23,10 @@ const ResultLegalIcon = ({ value, type = 'default', className = '' }) => {
 
   return (
     <div
-      className={`inline-flex items-center whitespace-nowrap text-fgRed dark:text-fgRedDark ${className}`}
+      className={twMerge(
+        'inline-flex items-center whitespace-nowrap text-fgRed dark:text-fgRedDark',
+        className,
+      )}
       title={title[type] ?? ''}
     >
       {icons[type] ?? <Exclamation width="15" height="15" viewBox="0 0 16 16" />}

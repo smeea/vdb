@@ -1,4 +1,5 @@
 import React from 'react';
+import { twMerge } from 'tailwind-merge';
 import { useSnapshot } from 'valtio';
 import {
   CardPopover,
@@ -29,13 +30,12 @@ const TwdResultLibraryKeyCardsTableRow = ({ card, handleClick, shouldShowModal }
         {inventoryMode ? (
           <ConditionalTooltip overlay={<UsedPopover cardid={card.c.Id} />} disabled={isMobile}>
             <div
-              className={`flex justify-center text-lg ${
+              className={twMerge(
+                'flex justify-center text-lg',
                 inInventory < card.q
                   ? 'bg-bgError text-white dark:bg-bgErrorDark dark:text-whiteDark'
-                  : inInventory - hardUsedTotal < card.q
-                    ? 'bg-bgWarning dark:bg-bgWarningDark'
-                    : ''
-              }`}
+                  : inInventory - hardUsedTotal < card.q && 'bg-bgWarning dark:bg-bgWarningDark',
+              )}
             >
               {card.q}
             </div>

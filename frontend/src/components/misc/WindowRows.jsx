@@ -1,10 +1,14 @@
 import React from 'react';
+import { twMerge } from 'tailwind-merge';
 
 const WindowRows = ({ index, style, data }) => {
   return (
     <div
       style={style}
-      className={`${index % 2 ? 'bg-bgThird dark:bg-bgThirdDark' : 'bg-bgPrimary dark:bg-bgPrimaryDark'} flex border-b border-bgSecondary dark:border-bgSecondaryDark`}
+      className={twMerge(
+        index % 2 ? 'bg-bgThird dark:bg-bgThirdDark' : 'bg-bgPrimary dark:bg-bgPrimaryDark',
+        'flex border-b border-bgSecondary dark:border-bgSecondaryDark',
+      )}
     >
       {data[index]}
     </div>

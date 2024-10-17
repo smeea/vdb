@@ -1,4 +1,5 @@
 import React from 'react';
+import { twMerge } from 'tailwind-merge';
 import {
   CardPopover,
   ResultLibraryClan,
@@ -34,7 +35,7 @@ const Type = ({ card, handleClick }) => {
 const Cost = ({ card, handleClick }) => {
   return (
     <td className="min-w-[25px] sm:min-w-[30px]" onClick={() => handleClick(card)}>
-      <div className={`{card[BLOOD_COST] ? 'pb-2' : ''} flex justify-center`}>
+      <div className={twMerge(card[BLOOD_COST] && 'pb-2', 'flex justify-center')}>
         {(card[BLOOD_COST] || card[POOL_COST]) && (
           <ResultLibraryCost valueBlood={card[BLOOD_COST]} valuePool={card[POOL_COST]} />
         )}

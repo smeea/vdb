@@ -1,4 +1,5 @@
 import React from 'react';
+import { twMerge } from 'tailwind-merge';
 import { useSnapshot } from 'valtio';
 import {
   DeckCardQuantityTd,
@@ -47,7 +48,7 @@ const DiffLibraryTableRow = ({
   return (
     <tr
       {...swipeHandlers}
-      className={`h-[38px] border-y border-bgSecondary dark:border-bgSecondaryDark ${trBg}`}
+      className={twMerge('h-[38px] border-y border-bgSecondary dark:border-bgSecondaryDark', trBg)}
     >
       <DeckCardQuantityTd
         card={card.c}

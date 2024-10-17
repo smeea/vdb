@@ -1,4 +1,5 @@
 import React from 'react';
+import { twMerge } from 'tailwind-merge';
 import {
   TwdCardsHistoryCardAppearance,
   CardPopover,
@@ -21,9 +22,10 @@ const TwdCardsHistoryLibraryRow = ({ card, players, handleClick }) => {
       {!isMobile && (
         <>
           <div
-            className={`flex min-w-[30px] items-center justify-center ${
-              card[BLOOD_COST] && 'pb-1'
-            }`}
+            className={twMerge(
+              'flex min-w-[30px] items-center justify-center',
+              card[BLOOD_COST] && 'pb-1',
+            )}
             onClick={() => handleClick(card)}
           >
             {(card[BLOOD_COST] || card[POOL_COST]) && (
@@ -46,7 +48,7 @@ const TwdCardsHistoryLibraryRow = ({ card, players, handleClick }) => {
         {card.Discipline && <ResultLibraryDisciplines value={card.Discipline} />}
       </div>
       <div
-        className={`flex w-full items-center justify-start ${card.deckid ? '' : 'font-bold'} `}
+        className={twMerge('flex w-full items-center justify-start', !card.deckid && 'font-bold')}
         onClick={() => handleClick(card)}
       >
         <ConditionalTooltip

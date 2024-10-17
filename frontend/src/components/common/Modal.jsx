@@ -1,4 +1,5 @@
 import React from 'react';
+import { twMerge } from 'tailwind-merge';
 import { Dialog } from '@headlessui/react';
 import { ButtonCloseModal, ButtonFloatClose } from '@/components';
 
@@ -26,19 +27,24 @@ const Modal = ({
       <div className="fixed inset-0 bg-black bg-opacity-50" aria-hidden="true" />
       <div className="fixed inset-0 overflow-y-auto">
         <div
-          className={`flex min-h-full justify-center p-0 sm:p-8 ${
-            centered ? 'items-center' : 'items-start'
-          }`}
+          className={twMerge(
+            'flex min-h-full justify-center p-0 sm:p-8',
+            centered ? 'items-center' : 'items-start',
+          )}
         >
           <Dialog.Panel
-            className={`border-bgSecondary dark:border-bgSecondaryDark ${widthClass[size]} rounded ${noBorder ? '' : 'border'} bg-bgPrimary ${
-              noPadding ? '' : 'p-3 sm:p-5'
-            } dark:bg-bgPrimaryDark`}
+            className={twMerge(
+              'rounded border-bgSecondary bg-bgPrimary dark:border-bgSecondaryDark dark:bg-bgPrimaryDark',
+              widthClass[size],
+              !noBorder && 'border',
+              !noPadding && 'p-3 sm:p-5',
+            )}
           >
             <Dialog.Title
-              className={`flex items-center justify-between border-none ${
-                title ? (noPadding ? 'p-1.5' : 'pb-1.5 sm:pb-3') : ''
-              }`}
+              className={twMerge(
+                'flex items-center justify-between border-none',
+                !title && (noPadding ? 'p-1.5' : 'pb-1.5 sm:pb-3'),
+              )}
             >
               {title && (
                 <>

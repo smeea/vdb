@@ -1,4 +1,5 @@
 import React from 'react';
+import { twMerge } from 'tailwind-merge';
 import {
   AccountLogin,
   AccountLogoutButton,
@@ -17,9 +18,10 @@ const Account = () => {
   const { username } = useApp();
   return (
     <div
-      className={`account-container mx-auto grid place-items-center ${
-        username ? 'sm:h-[90vh]' : 'h-[90vh] max-sm:p-2'
-      }`}
+      className={twMerge(
+        'account-container mx-auto grid place-items-center',
+        username ? 'sm:h-[90vh]' : 'h-[90vh] max-sm:p-2',
+      )}
     >
       {username ? (
         <div className="flex w-full flex-col gap-8">

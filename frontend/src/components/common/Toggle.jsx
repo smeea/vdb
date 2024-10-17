@@ -1,4 +1,5 @@
 import React from 'react';
+import { twMerge } from 'tailwind-merge';
 import ToggleOn from '@/assets/images/icons/toggle-on.svg?react';
 import ToggleOff from '@/assets/images/icons/toggle-off.svg?react';
 
@@ -11,9 +12,10 @@ const Toggle = ({ isOn, toggle, size = 'md', disabled = false, children }) => {
 
   return (
     <div
-      className={`flex items-center gap-2 ${
-        disabled || !isOn ? 'text-midGray dark:text-midGrayDark' : ''
-      }`}
+      className={twMerge(
+        'flex items-center gap-2',
+        disabled || (!isOn && 'text-midGray dark:text-midGrayDark'),
+      )}
       onClick={() => !disabled && toggle()}
     >
       {isOn ? (
