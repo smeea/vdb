@@ -2,12 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { useSnapshot } from 'valtio';
 import { ButtonCardChange } from '@/components';
 import { useApp, inventoryStore, inventoryCardChange } from '@/context';
+import { IS_FROZEN } from '@/utils/constants';
 
 const InventoryCardQuantity = ({ card, softUsedMax, hardUsedTotal, compact, newFocus }) => {
   const { isMobile } = useApp();
   const [manual, setManual] = useState(false);
   const [state, setState] = useState(card.q ?? '');
-  const isEditable = !useSnapshot(inventoryStore).isFrozen;
+  const isEditable = !useSnapshot(inventoryStore)[IS_FROZEN];
 
   useEffect(() => {
     if (state !== card.q) setState(card.q ?? '');

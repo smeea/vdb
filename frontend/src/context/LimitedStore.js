@@ -1,7 +1,18 @@
 import { proxy } from 'valtio';
 import { derive } from 'derive-valtio';
 import { update } from 'idb-keyval';
-import { SETS, CRYPT, LIBRARY, BANNED, ALLOWED } from '@/utils/constants';
+import {
+  SETS,
+  CRYPT,
+  LIBRARY,
+  BANNED,
+  ALLOWED,
+  LIMITED_SETS,
+  LIMITED_BANNED_CRYPT,
+  LIMITED_BANNED_LIBRARY,
+  LIMITED_ALLOWED_LIBRARY,
+  LIMITED_ALLOWED_CRYPT,
+} from '@/utils/constants';
 
 export const limitedFullStore = proxy({
   [CRYPT]: {},
@@ -90,7 +101,7 @@ export const setLimitedSets = (v) => {
 
 export const limitedSetChange = (set, isAdd) => {
   const store = limitedFullStore[SETS];
-  const idbStore = 'limitedSets';
+  const idbStore = LIMITED_SETS;
 
   if (isAdd) {
     store[set] = true;
@@ -114,11 +125,11 @@ export const limitedCardChange = (card, isAllowed, isAdd) => {
   const idbStore =
     card.Id > 200000
       ? isAllowed
-        ? 'limitedAllowedCrypt'
-        : 'limitedBannedCrypt'
+        ? LIMITED_ALLOWED_CRYPT
+        : LIMITED_BANNED_CRYPT
       : isAllowed
-        ? 'limitedAllowedLibrary'
-        : 'limitedBannedLibrary';
+        ? LIMITED_ALLOWED_LIBRARY
+        : LIMITED_BANNED_LIBRARY;
 
   if (isAdd) {
     store[card.Id] = card;

@@ -3,11 +3,11 @@ import { useSnapshot } from 'valtio';
 import { AccountLimitedSet } from '@/components';
 import { limitedSetChange, limitedFullStore } from '@/context';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
-import { PLAYTEST } from '@/utils/constants';
+import { SETS, PLAYTEST } from '@/utils/constants';
 
 const AccountLimitedSetSelection = () => {
   const BCP_START = '2018-01-01';
-  const limitedSets = useSnapshot(limitedFullStore).sets;
+  const limitedSets = useSnapshot(limitedFullStore)[SETS];
 
   return (
     <div className="flex flex-col gap-2">

@@ -4,6 +4,18 @@ import { setMany } from 'idb-keyval';
 import UiChecksGrid from '@/assets/images/icons/ui-checks-grid.svg?react';
 import { AccountLimitedModal, ButtonIconed } from '@/components';
 import { useApp } from '@/context';
+import {
+  ALLOWED,
+  BANNED,
+  CRYPT,
+  LIBRARY,
+  LIMITED_ALLOWED_CRYPT,
+  LIMITED_ALLOWED_LIBRARY,
+  LIMITED_BANNED_CRYPT,
+  LIMITED_BANNED_LIBRARY,
+  LIMITED_SETS,
+  SETS,
+} from '@/utils/constants';
 
 const AccountLimitedButton = () => {
   const { setLimitedFormat } = useApp();
@@ -14,19 +26,19 @@ const AccountLimitedButton = () => {
 
   const setFormat = (format) => {
     setLimitedFormat(
-      format.allowed.crypt,
-      format.allowed.library,
-      format.banned.crypt,
-      format.banned.library,
-      format.sets,
+      format[ALLOWED][CRYPT],
+      format[ALLOWED][LIBRARY],
+      format[BANNED][CRYPT],
+      format[BANNED][LIBRARY],
+      format[SETS],
     );
 
     setMany([
-      ['limitedAllowedCrypt', format.allowed.crypt],
-      ['limitedAllowedLibrary', format.allowed.library],
-      ['limitedBannedCrypt', format.banned.crypt],
-      ['limitedBannedLibrary', format.banned.library],
-      ['limitedSets', format.sets],
+      [LIMITED_ALLOWED_CRYPT, format[ALLOWED][CRYPT]],
+      [LIMITED_ALLOWED_LIBRARY, format[ALLOWED][LIBRARY]],
+      [LIMITED_BANNED_CRYPT, format[BANNED][CRYPT]],
+      [LIMITED_BANNED_LIBRARY, format[BANNED][LIBRARY]],
+      [LIMITED_SETS, format[SETS]],
     ]);
   };
 

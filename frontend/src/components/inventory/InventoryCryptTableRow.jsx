@@ -16,7 +16,7 @@ import {
 import { getHardTotal, getSoftMax } from '@/utils';
 import { useApp, inventoryStore, usedStore, limitedStore, inventoryCardChange } from '@/context';
 import { useSwipe } from '@/hooks';
-import { SOFT, HARD, CRYPT } from '@/utils/constants';
+import { IS_FROZEN, SOFT, HARD, CRYPT } from '@/utils/constants';
 
 const InventoryCryptTableRow = ({ card, compact, newFocus, inShared, handleClick }) => {
   const { isMobile, isNarrow, isWide, limitedMode } = useApp();
@@ -25,7 +25,7 @@ const InventoryCryptTableRow = ({ card, compact, newFocus, inShared, handleClick
   const inLimited = limitedCrypt[card.c.Id];
   const softUsedMax = getSoftMax(usedCrypt[SOFT][card.c.Id]);
   const hardUsedTotal = getHardTotal(usedCrypt[HARD][card.c.Id]);
-  const isEditable = !useSnapshot(inventoryStore).isFrozen;
+  const isEditable = !useSnapshot(inventoryStore)[IS_FROZEN];
 
   const { isSwiped, swipeHandlers } = useSwipe(
     () => inventoryCardChange(card.c, card.q - 1),

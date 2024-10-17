@@ -21,6 +21,12 @@ import {
   DECKS,
   CRYPT,
   LIBRARY,
+  IS_FROZEN,
+  LIMITED_SETS,
+  LIMITED_BANNED_CRYPT,
+  LIMITED_BANNED_LIBRARY,
+  LIMITED_ALLOWED_LIBRARY,
+  LIMITED_ALLOWED_CRYPT,
 } from '@/utils/constants';
 import {
   setLimitedSets,
@@ -53,6 +59,14 @@ const SHOW_LEGACY_IMAGE = 'showLegacyImage';
 const RECENT_DECKS = 'recentDecks';
 const ONLINE = 'online';
 const OFFLINE = 'offline';
+const CARD_VERSION_KEY = 'cardVersion';
+const CRYPT_CARDBASE = 'cryptCardBase';
+const LIBRARY_CARDBASE = 'libraryCardBase';
+const NATIVE_CRYPT = 'nativeCrypt';
+const NATIVE_LIBRARY = 'nativeLibrary';
+const LOCALIZED_CRYPT = 'localizedCrypt';
+const LOCALIZED_LIBRARY = 'localizedLibrary';
+const PRECON_DECKS = 'preconDecks';
 
 export const AppContext = React.createContext();
 
@@ -140,25 +154,25 @@ export const AppProvider = ({ children }) => {
     cardServices.getCardBase().then((data) => {
       if (isIndexedDB) {
         setMany([
-          ['cardVersion', CARD_VERSION],
-          ['cryptCardBase', data.crypt],
-          ['libraryCardBase', data.library],
-          ['nativeCrypt', data.nativeCrypt],
-          ['nativeLibrary', data.nativeLibrary],
-          ['localizedCrypt', { [EN]: data.nativeCrypt }],
-          ['localizedLibrary', { [EN]: data.nativeLibrary }],
+          [CARD_VERSION_KEY, CARD_VERSION],
+          [CRYPT_CARDBASE, data[CRYPT]],
+          [LIBRARY_CARDBASE, data[LIBRARY]],
+          [NATIVE_CRYPT, data[NATIVE_CRYPT]],
+          [NATIVE_LIBRARY, data[NATIVE_LIBRARY]],
+          [LOCALIZED_CRYPT, { [EN]: data[NATIVE_CRYPT] }],
+          [LOCALIZED_LIBRARY, { [EN]: data[NATIVE_LIBRARY] }],
         ]);
       }
 
-      setCryptCardBase(data.crypt);
-      setLibraryCardBase(data.library);
-      setNativeCrypt(data.nativeCrypt);
-      setNativeLibrary(data.nativeLibrary);
-      setLocalizedCrypt({ [EN]: data.nativeCrypt });
-      setLocalizedLibrary({ [EN]: data.nativeLibrary });
+      setCryptCardBase(data[CRYPT]);
+      setLibraryCardBase(data[LIBRARY]);
+      setNativeCrypt(data[NATIVE_CRYPT]);
+      setNativeLibrary(data[NATIVE_LIBRARY]);
+      setLocalizedCrypt({ [EN]: data[NATIVE_CRYPT] });
+      setLocalizedLibrary({ [EN]: data[NATIVE_LIBRARY] });
 
       cardServices.getPreconDecks(data.crypt, data.library).then((preconData) => {
-        if (isIndexedDB) set('preconDecks', deepClone(preconData));
+        if (isIndexedDB) set(PRECON_DECKS, deepClone(preconData));
         setPreconDecks(preconData);
       });
     });
@@ -174,19 +188,19 @@ export const AppProvider = ({ children }) => {
 
   useEffect(() => {
     getMany([
-      'cardVersion',
-      'cryptCardBase',
-      'libraryCardBase',
-      'nativeCrypt',
-      'nativeLibrary',
-      'localizedCrypt',
-      'localizedLibrary',
-      'preconDecks',
-      'limitedAllowedCrypt',
-      'limitedAllowedLibrary',
-      'limitedBannedCrypt',
-      'limitedBannedLibrary',
-      'limitedSets',
+      CARD_VERSION_KEY,
+      CRYPT_CARDBASE,
+      LIBRARY_CARDBASE,
+      NATIVE_CRYPT,
+      NATIVE_LIBRARY,
+      LOCALIZED_CRYPT,
+      LOCALIZED_LIBRARY,
+      PRECON_DECKS,
+      LIMITED_SETS,
+      LIMITED_BANNED_CRYPT,
+      LIMITED_BANNED_LIBRARY,
+      LIMITED_ALLOWED_LIBRARY,
+      LIMITED_ALLOWED_CRYPT,
     ])
       .then(([v, cb, lb, nc, nl, lc, ll, pd, lac, lal, lbc, lbl, ls]) => {
         if (!v || CARD_VERSION > v) {
@@ -246,7 +260,7 @@ export const AppProvider = ({ children }) => {
     setPlaytestProfile(data.playtest.profile);
     if (!data.playtest.is_playtester && !data.playtest.is_admin) setPlaytestMode(false);
     const { isFrozen, crypt, library } = parseInventoryData(data.inventory);
-    inventoryStore.isFrozen = isFrozen;
+    inventoryStore[IS_FROZEN] = isFrozen;
     inventoryStore[CRYPT] = crypt;
     inventoryStore[LIBRARY] = library;
     deckStore[DECKS] = parseDecksData(data.decks);
@@ -297,11 +311,11 @@ export const AppProvider = ({ children }) => {
 
   const initializeLocalizedInfo = async (lang) => {
     cardServices.getLocalizedCardBase(lang).then((data) => {
-      update('localizedCrypt', (val) => ({
+      update(LOCALIZED_CRYPT, (val) => ({
         ...val,
         [lang]: data.crypt,
       }));
-      update('localizedLibrary', (val) => ({
+      update(LOCALIZED_LIBRARY, (val) => ({
         ...val,
         [lang]: data.library,
       }));

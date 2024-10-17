@@ -10,11 +10,16 @@ import {
   ButtonIconed,
 } from '@/components';
 import { limitedFullStore } from '@/context';
+import { CRYPT, LIBRARY, BANNED, ALLOWED, SETS } from '@/utils/constants';
 
 const AccountLimitedModal = ({ setShow, setFormat }) => {
-  const { allowed, banned, sets: limitedSets } = useSnapshot(limitedFullStore);
-  const { crypt: limitedAllowedCrypt, library: limitedAllowedLibrary } = allowed;
-  const { crypt: limitedBannedCrypt, library: limitedBannedLibrary } = banned;
+  const {
+    [ALLOWED]: allowed,
+    [BANNED]: banned,
+    [SETS]: limitedSets,
+  } = useSnapshot(limitedFullStore);
+  const { [CRYPT]: limitedAllowedCrypt, [LIBRARY]: limitedAllowedLibrary } = allowed;
+  const { [CRYPT]: limitedBannedCrypt, [LIBRARY]: limitedBannedLibrary } = banned;
   const fileInput = useRef();
 
   const handleFileInputClick = () => {
@@ -33,27 +38,27 @@ const AccountLimitedModal = ({ setShow, setFormat }) => {
 
   const minifyFormat = () => {
     const minified = {
-      sets: limitedSets,
-      allowed: {
-        crypt: {},
-        library: {},
+      [SETS]: limitedSets,
+      [ALLOWED]: {
+        [CRYPT]: {},
+        [LIBRARY]: {},
       },
-      banned: {
-        crypt: {},
-        library: {},
+      [BANNED]: {
+        [CRYPT]: {},
+        [LIBRARY]: {},
       },
     };
     Object.keys(limitedAllowedCrypt).forEach((c) => {
-      minified.allowed.crypt[c] = true;
+      minified[ALLOWED][CRYPT][c] = true;
     });
     Object.keys(limitedAllowedLibrary).forEach((c) => {
-      minified.allowed.library[c] = true;
+      minified[ALLOWED][LIBRARY][c] = true;
     });
     Object.keys(limitedBannedCrypt).forEach((c) => {
-      minified.banned.crypt[c] = true;
+      minified[BANNED][CRYPT][c] = true;
     });
     Object.keys(limitedBannedLibrary).forEach((c) => {
-      minified.banned.library[c] = true;
+      minified[BANNED][LIBRARY][c] = true;
     });
     return minified;
   };
