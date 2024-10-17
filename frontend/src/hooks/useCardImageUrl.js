@@ -11,7 +11,7 @@ const useCardImageUrl = (card, set, language) => {
       set ? `set/${set}` : language
     }/${cardNameFixed}g${card.Group.toLowerCase()}${card.Adv[0] ? 'adv' : ''}`;
 
-    const legacyUrl = `${import.meta.env.VITE_BASE_URL}/images/cards/legacy/${card.Name}${card.Adv[0] ? ' ADV' : ''}${card.New ? ` G${card.Group}` : ''}`;
+    const legacyUrl = `${import.meta.env.VITE_BASE_URL}/images/cards/legacy/${card.Name.replace(/,/g, '')}${card.Adv[0] ? ' ADV' : ''}${card.New ? ` G${card.Group}` : ''}`;
 
     return { baseUrl, otherUrl, legacyUrl };
   } else {

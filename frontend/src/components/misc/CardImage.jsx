@@ -32,6 +32,8 @@ const legacyImagesClans = [
 const CardImage = ({ card, set, className = 'max-sm:w-full', size = 'md', onClick }) => {
   const { lang, showLegacyImage } = useApp();
   const { baseUrl, otherUrl, legacyUrl } = useCardImageUrl(card, set, lang);
+  const hasLegacyImage = card.Id > 200000 && legacyImagesClans.includes(card.Clan);
+  const url = showLegacyImage && hasLegacyImage ? legacyUrl : lang == EN ? baseUrl : otherUrl;
 
   const resetImgSrc = (event) => {
     if (event.target.src != `${baseUrl}.jpg`) {
@@ -46,10 +48,10 @@ const CardImage = ({ card, set, className = 'max-sm:w-full', size = 'md', onClic
 
   return (
     <>
-      {set || (showLegacyImage && card.Id > 200000 && legacyImagesClans.includes(card.Clan)) ? (
+      {set ? (
         <img
           className={`${sizeStyle[size]} ${className}`}
-          src={`${set ? otherUrl : legacyUrl}.jpg?v=${import.meta.env.VITE_IMAGE_VERSION}`}
+          src={`${otherUrl}.jpg?v=${import.meta.env.VITE_IMAGE_VERSION}`}
           alt={card.Name}
           onClick={onClick}
           onError={resetImgSrc}
@@ -58,14 +60,16 @@ const CardImage = ({ card, set, className = 'max-sm:w-full', size = 'md', onClic
         <picture>
           <source
             media="(max-width: 576px)"
-            srcSet={`${lang == EN ? baseUrl : otherUrl}.webp?v=${import.meta.env.VITE_IMAGE_VERSION}`}
+            srcSet={`${url}.webp?v=${import.meta.env.VITE_IMAGE_VERSION}`}
             type="image/webp"
+            onError={resetImgSrc}
           />
           <img
             className={`${sizeStyle[size]} ${className}`}
-            src={`${lang == EN ? baseUrl : otherUrl}.jpg?v=${import.meta.env.VITE_IMAGE_VERSION}`}
+            src={`${url}.jpg?v=${import.meta.env.VITE_IMAGE_VERSION}`}
             alt={card.Name}
             onClick={onClick}
+            onError={resetImgSrc}
           />
         </picture>
       )}
