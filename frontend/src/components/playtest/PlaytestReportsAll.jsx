@@ -13,6 +13,7 @@ import {
 import { useFetch } from '@/hooks';
 import { useApp } from '@/context';
 import { playtestServices } from '@/services';
+import { capitalize } from '@/utils';
 import {
   ALL,
   CARDS,
@@ -60,7 +61,13 @@ const PlaytestReportsAll = () => {
             break;
           case CARDS:
             if (isNaN(id)) return;
-            name = id > 200000 ? cryptCardBase[id].Name : libraryCardBase[id].Name;
+            let name;
+            try {
+              name = id > 200000 ? cryptCardBase[id].Name : libraryCardBase[id].Name;
+            } catch {
+              console.log(`Skipping (not in this Round) - ${id}`);
+              break;
+            }
             exportText += `${id > 200000 ? 'Crypt' : 'Library'}: ${name}\n\n`;
             break;
           default:
@@ -88,7 +95,7 @@ const PlaytestReportsAll = () => {
         }
       });
 
-      file = new File([exportText], `Reports - ${target == PRECONS ? 'Precons' : 'Cards'}.txt`, {
+      file = new File([exportText], `Reports - ${capitalize(target)}.txt`, {
         type: 'text/plain;charset=utf-8',
       });
     }
