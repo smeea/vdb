@@ -6,52 +6,54 @@ import { useFetch } from '@/hooks';
 import { useApp } from '@/context';
 
 const PlaytestManage = () => {
-  const { isMobile } = useApp();
+  const { isPlaytestAdmin, isMobile } = useApp();
   const navigate = useNavigate();
   const [newPlaytesters, setNewPlaytesters] = useState([]);
   const url = `${import.meta.env.VITE_API_URL}/playtest/users`;
-  const { value } = useFetch(url, {}, []);
+  const { value } = useFetch(url, {}, [isPlaytestAdmin]);
 
   return (
     <div className="playtest-manage-container mx-auto">
-      <div className="flex flex-col sm:gap-4">
-        <div className="flex w-full justify-between gap-2 max-sm:p-2">
-          <PlaytestManageAdd
-            playtesters={value}
-            newPlaytesters={newPlaytesters}
-            setNewPlaytesters={setNewPlaytesters}
-          />
-          <ButtonIconed
-            onClick={() => navigate('/playtest')}
-            title="Back"
-            icon={<Arrow90DegLeft />}
-            text="Back"
-          />
+      {isPlaytestAdmin && (
+        <div className="flex flex-col sm:gap-4">
+          <div className="flex w-full justify-between gap-2 max-sm:p-2">
+            <PlaytestManageAdd
+              playtesters={value}
+              newPlaytesters={newPlaytesters}
+              setNewPlaytesters={setNewPlaytesters}
+            />
+            <ButtonIconed
+              onClick={() => navigate('/playtest')}
+              title="Back"
+              icon={<Arrow90DegLeft />}
+              text="Back"
+            />
+          </div>
+          <table className="w-full border-bgSecondary dark:border-bgSecondaryDark sm:border">
+            <thead className="h-9 bg-bgSecondary text-fgSecondary dark:bg-bgSecondaryDark dark:text-fgPrimaryDark">
+              <tr>
+                <th className="text-center font-bold">Username</th>
+                <th />
+                {!isMobile && (
+                  <>
+                    <th className="text-center font-bold">Reports</th>
+                    <th className="text-center font-bold">Last Activity</th>
+                    <th className="text-center font-bold">Added Date</th>
+                    <th className="text-center font-bold">Added By</th>
+                    <th className="text-center font-bold">Liaison</th>
+                  </>
+                )}
+              </tr>
+            </thead>
+            <tbody>
+              {value &&
+                [...newPlaytesters.toReversed(), ...Object.keys(value).toSorted()].map((u) => (
+                  <PlaytestManagePlayer key={u} value={{ ...value[u], username: u }} />
+                ))}
+            </tbody>
+          </table>
         </div>
-        <table className="w-full border-bgSecondary dark:border-bgSecondaryDark sm:border">
-          <thead className="h-9 bg-bgSecondary text-fgSecondary dark:bg-bgSecondaryDark dark:text-fgPrimaryDark">
-            <tr>
-              <th className="text-center font-bold">Username</th>
-              <th />
-              {!isMobile && (
-                <>
-                  <th className="text-center font-bold">Reports</th>
-                  <th className="text-center font-bold">Last Activity</th>
-                  <th className="text-center font-bold">Added Date</th>
-                  <th className="text-center font-bold">Added By</th>
-                  <th className="text-center font-bold">Liaison</th>
-                </>
-              )}
-            </tr>
-          </thead>
-          <tbody>
-            {value &&
-              [...newPlaytesters.toReversed(), ...Object.keys(value).toSorted()].map((u) => (
-                <PlaytestManagePlayer key={u} value={{ ...value[u], username: u }} />
-              ))}
-          </tbody>
-        </table>
-      </div>
+      )}
     </div>
   );
 };
