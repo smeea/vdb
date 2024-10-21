@@ -61,7 +61,6 @@ const PlaytestReportsAll = () => {
             break;
           case CARDS:
             if (isNaN(id)) return;
-            let name;
             try {
               name = id > 200000 ? cryptCardBase[id].Name : libraryCardBase[id].Name;
             } catch {

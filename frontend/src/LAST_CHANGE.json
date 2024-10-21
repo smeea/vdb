@@ -1,8 +1,7 @@
 {
-  "version": "2024-10-15",
+  "version": "2024-10-21",
   "changes": [
-    "Add Ventrue, Toreador and Tremere legacy images",
-    "Fix images to be available by direct urls",
-    "Small fixes"
+    "Add compressed webp images of legacy vampire cards as defaults on mobile (should open much faster on slow networks now)",
+    "Bug fix"
   ]
 }
