@@ -1,5 +1,7 @@
 # FIX
 - Page update in iOS
+- Paddingless modal on mobile to have header padding
+- Default maegin to modals on mobile
 
 # FEATURES
 - Card q-ty change in autocompletion
@@ -19,3 +21,5 @@
 - Migrate from isWidth to container queries
 - Migrate forms to useFormStatus+useActionState
 - Remove legacy polyfills when Safari adopts groupBy
+- Require auth for playtest pages with react router
+https://ui.dev/react-router-protected-routes-authentication
