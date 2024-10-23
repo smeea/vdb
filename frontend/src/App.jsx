@@ -6,6 +6,7 @@ import {
   Route,
   Navigate,
 } from 'react-router-dom';
+import { useApp } from '@/context';
 import { deckServices, miscServices } from '@/services';
 import RootLayout from './pages/RootLayout.jsx';
 import About from './pages/About.jsx';
@@ -29,6 +30,16 @@ const TwdCardsHistory = lazy(() => import('./pages/TwdCardsHistory.jsx'));
 const TwdCheck = lazy(() => import('./pages/TwdCheck.jsx'));
 const TwdHallOfFameCards = lazy(() => import('./pages/TwdHallOfFameCards.jsx'));
 const TwdHallOfFameTournaments = lazy(() => import('./pages/TwdHallOfFameTournaments.jsx'));
+
+const RequirePlaytest = ({ children }) => {
+  const { isPlaytester } = useApp();
+  return isPlaytester ? children : <div />;
+};
+
+const RequirePlaytestAdmin = ({ children }) => {
+  const { isPlaytestAdmin } = useApp();
+  return isPlaytestAdmin ? children : <div />;
+};
 
 const App = () => {
   const router = createBrowserRouter(
@@ -97,7 +108,9 @@ const App = () => {
           path="playtest"
           element={
             <Suspense fallback={<div />}>
-              <Playtest />
+              <RequirePlaytest>
+                <Playtest />
+              </RequirePlaytest>
             </Suspense>
           }
         />
@@ -105,7 +118,9 @@ const App = () => {
           path="playtest/manage"
           element={
             <Suspense fallback={<div />}>
-              <PlaytestManage />
+              <RequirePlaytestAdmin>
+                <PlaytestManage />
+              </RequirePlaytestAdmin>
             </Suspense>
           }
         />
@@ -113,7 +128,9 @@ const App = () => {
           path="playtest/reports"
           element={
             <Suspense fallback={<div />}>
-              <PlaytestReportsAll />
+              <RequirePlaytestAdmin>
+                <PlaytestReportsAll />
+              </RequirePlaytestAdmin>
             </Suspense>
           }
         />

@@ -19,5 +19,3 @@
 - Migrate from isWidth to container queries
 - Migrate forms to useFormStatus+useActionState
 - Remove legacy polyfills when Safari adopts groupBy
-- Require auth for playtest pages with react router
-https://ui.dev/react-router-protected-routes-authentication
