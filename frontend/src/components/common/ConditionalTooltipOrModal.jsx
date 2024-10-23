@@ -10,8 +10,9 @@ const ConditionalTooltipOrModal = ({
   isModal,
   noPadding,
   size,
-  className = '',
+  className,
   centered = true,
+  withMobileMargin,
   onClick,
   onClose,
 }) => {
@@ -43,6 +44,7 @@ const ConditionalTooltipOrModal = ({
               size={size}
               handleClose={handleClose}
               centered={centered}
+              withMobileMargin={withMobileMargin}
             >
               {overlay}
             </Modal>

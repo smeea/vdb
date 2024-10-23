@@ -119,7 +119,7 @@ const Inventory = () => {
               setType={setType}
             />
           </div>
-          <div className="max-lg:hidden lg:basis-2/12">
+          <div className="min-w-[180px] max-lg:hidden">
             <InventoryMenu
               category={category}
               clan={clan}
@@ -159,7 +159,7 @@ const Inventory = () => {
         <ButtonFloatMenu />
       </div>
       {showMenuButtons && (
-        <Modal handleClose={handleClose} centered size="sm">
+        <Modal handleClose={handleClose} centered size="sm" withMobileMargin>
           <InventoryMenu
             category={category}
             clan={clan}

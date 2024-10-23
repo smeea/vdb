@@ -3,7 +3,7 @@ import { twMerge } from 'tailwind-merge';
 import { Button } from '@/components';
 
 const ButtonIconed = ({
-  className = '',
+  className,
   disabled,
   icon,
   onClick,

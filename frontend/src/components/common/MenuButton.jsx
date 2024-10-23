@@ -2,7 +2,7 @@ import React from 'react';
 import { twMerge } from 'tailwind-merge';
 import { Menu } from '@headlessui/react';
 
-const MenuButton = ({ title, icon, variant = 'primary', className = '', text }) => {
+const MenuButton = ({ title, icon, variant = 'primary', className, text }) => {
   const outlineStyle =
     'rounded outline-bgCheckboxSelected focus:outline outline-1 dark:outline-bgCheckboxSelectedDark';
 

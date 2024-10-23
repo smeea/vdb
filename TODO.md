@@ -1,6 +1,5 @@
 # FIX
 - Page update in iOS
-- Default margin to modals on mobile
 
 # FEATURES
 - Card q-ty change in autocompletion

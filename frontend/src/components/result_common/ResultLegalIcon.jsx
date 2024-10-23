@@ -6,7 +6,7 @@ import Hammer from '@/assets/images/icons/hammer.svg?react';
 import Exclamation from '@/assets/images/icons/exclamation-triangle.svg?react';
 import { BANNED, LEGAL, PLAYTEST } from '@/utils/constants';
 
-const ResultLegalIcon = ({ value, type = 'default', className = '' }) => {
+const ResultLegalIcon = ({ value, type = 'default', className }) => {
   const title = {
     [PLAYTEST]: 'Playtest',
     [BANNED]: `Banned in ${value}`,

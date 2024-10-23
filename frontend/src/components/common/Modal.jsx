@@ -4,14 +4,15 @@ import { Dialog } from '@headlessui/react';
 import { ButtonCloseModal, ButtonFloatClose } from '@/components';
 
 const Modal = ({
-  handleClose,
-  title,
-  children,
-  size = 'md',
-  noPadding = false,
   centered = false,
+  children,
+  handleClose,
   initialFocus,
-  noBorder,
+  noBorder = false,
+  withMobileMargin = false,
+  noPadding = false,
+  size = 'md',
+  title,
 }) => {
   const widthClass = {
     sm: 'min-w-full sm:min-w-[500px] sm:max-w-[550px]',
@@ -28,8 +29,9 @@ const Modal = ({
       <div className="fixed inset-0 overflow-y-auto">
         <div
           className={twMerge(
-            'flex min-h-full justify-center p-0 sm:p-8',
+            'flex min-h-full justify-center p-8',
             centered ? 'items-center' : 'items-start',
+            withMobileMargin ? 'max-sm:p-4' : 'max-sm:p-0',
           )}
         >
           <Dialog.Panel

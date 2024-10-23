@@ -29,7 +29,7 @@ const InventoryMenu = ({
   const isSharedInventory = sharedCrypt && sharedLibrary;
 
   return (
-    <div className="flex basis-full flex-col gap-3 sm:gap-4">
+    <div className="flex flex-col gap-4">
       <InventoryButtons
         sharedCrypt={sharedCrypt}
         sharedLibrary={sharedLibrary}

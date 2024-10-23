@@ -11,7 +11,7 @@ const Button = ({
   value,
   type = 'button',
   tabIndex,
-  className = '',
+  className,
   variant = 'primary',
   borderStyle = 'border',
   roundedStyle = 'rounded',

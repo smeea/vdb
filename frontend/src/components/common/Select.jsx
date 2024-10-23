@@ -9,7 +9,7 @@ const Select = React.forwardRef(
     {
       autoFocus = false,
       borderStyle = 'border',
-      className = '',
+      className,
       defaultMenuIsOpen = false,
       filterOption,
       isClearable = false,

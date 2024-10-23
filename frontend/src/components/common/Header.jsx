@@ -1,7 +1,7 @@
 import React from 'react';
 import { twMerge } from 'tailwind-merge';
 
-const Header = ({ className = '', children }) => {
+const Header = ({ className, children }) => {
   return (
     <div
       className={twMerge(

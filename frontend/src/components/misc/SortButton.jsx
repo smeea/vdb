@@ -8,7 +8,7 @@ const RelativeDiv = React.forwardRef((props, ref) => {
 });
 RelativeDiv.displayName = 'RelativeDiv';
 
-const SortButton = ({ sortMethod, setSortMethod, sortMethods, noText, className = '' }) => {
+const SortButton = ({ sortMethod, setSortMethod, sortMethods, noText, className }) => {
   return (
     <Menu as={RelativeDiv}>
       <MenuButton

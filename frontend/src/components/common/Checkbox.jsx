@@ -1,17 +1,7 @@
 import React from 'react';
 import { twMerge } from 'tailwind-merge';
 
-const Checkbox = ({
-  checked,
-  prefix,
-  disabled,
-  name,
-  value,
-  onChange,
-  label,
-  id,
-  className = '',
-}) => {
+const Checkbox = ({ checked, prefix, disabled, name, value, onChange, label, id, className }) => {
   const htmlId = id ?? `${prefix ?? ''}-${name}-${value}`;
 
   return (

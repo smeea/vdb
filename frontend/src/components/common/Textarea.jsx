@@ -14,7 +14,7 @@ const Textarea = React.forwardRef(
       spellCheck = false,
       autoFocus = false,
       readOnly = false,
-      className = '',
+      className,
       borderStyle = 'border',
       roundedStyle = 'rounded',
     },

@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { twMerge } from 'tailwind-merge';
 import { FlexGapped, Input, Modal, Button, ErrorOverlay } from '@/components';
 import { useApp } from '@/context';
+import { YES } from '@/utils/constants';
 
 const ModalConfirmation = ({
   title,
@@ -13,6 +15,7 @@ const ModalConfirmation = ({
   disabled,
   children,
   buttonVariant = 'primary',
+  withMobileMargin = 'true',
 }) => {
   const { isMobile } = useApp();
   const [confirmation, setConfirmation] = useState('');
@@ -20,7 +23,7 @@ const ModalConfirmation = ({
 
   const handleClick = () => {
     if (withWrittenConfirmation) {
-      if (confirmation === 'YES') {
+      if (confirmation === YES) {
         setErrorConfirmation(false);
         setConfirmation('');
         handleConfirm();
@@ -39,21 +42,26 @@ const ModalConfirmation = ({
   };
 
   return (
-    <Modal handleClose={handleClose} centered={centered ?? isMobile} size={size} title={title}>
+    <Modal
+      handleClose={handleClose}
+      centered={centered ?? isMobile}
+      size={size}
+      title={title}
+      withMobileMargin={withMobileMargin}
+    >
       <FlexGapped className="flex-col">
-        {children && children}
-        <div className="flex justify-end gap-2">
+        <div className={twMerge('flex justify-end gap-2', !children && 'pt-3')}>
           {withWrittenConfirmation && (
             <form onSubmit={handleClick} className="w-full">
               <Input
-                placeholder="Type 'YES' to confirm"
+                placeholder={`Type '${YES}' to confirm`}
                 name="text"
                 value={confirmation}
                 onChange={(e) => setConfirmation(e.target.value)}
                 autoFocus
               />
               {errorConfirmation && (
-                <ErrorOverlay placement="bottom">Type &apos;YES&apos; to confirm</ErrorOverlay>
+                <ErrorOverlay placement="bottom">Type &apos;{YES}&apos; to confirm</ErrorOverlay>
               )}
             </form>
           )}

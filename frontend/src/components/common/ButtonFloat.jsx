@@ -5,7 +5,7 @@ const ButtonFloat = ({
   onClick,
   position = 'bottom',
   variant = 'primary',
-  className = '',
+  className,
   children,
 }) => {
   const positionClass = {

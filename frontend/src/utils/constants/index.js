@@ -147,3 +147,4 @@ export const TYPE = 'Type';
 export const TYPEx = 'Type ';
 export const VALUE = 'value';
 export const XLSX = 'xlsx';
+export const YES = 'YES';
