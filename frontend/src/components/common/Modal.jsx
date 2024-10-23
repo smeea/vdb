@@ -40,15 +40,15 @@ const Modal = ({
               !noPadding && 'p-3 sm:p-5',
             )}
           >
-            <Dialog.Title
-              className={twMerge(
-                'flex items-center justify-between border-none',
-                !title && (noPadding ? 'p-1.5' : 'pb-1.5 sm:pb-3'),
-              )}
-            >
+            <Dialog.Title className="flex items-center justify-between border-none">
               {title && (
                 <>
-                  <div className="text-lg font-bold text-fgSecondary dark:text-fgSecondaryDark">
+                  <div
+                    className={twMerge(
+                      'text-lg font-bold text-fgSecondary dark:text-fgSecondaryDark',
+                      noPadding ? 'p-1.5' : 'py-1.5',
+                    )}
+                  >
                     {title}
                   </div>
                   <div className="max-md:hidden">

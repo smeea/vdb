@@ -1,7 +1,6 @@
 # FIX
 - Page update in iOS
-- Paddingless modal on mobile to have header padding
-- Default maegin to modals on mobile
+- Default margin to modals on mobile
 
 # FEATURES
 - Card q-ty change in autocompletion
