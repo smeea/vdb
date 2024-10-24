@@ -25,7 +25,7 @@ const DeckSelectorAndDisplay = () => {
 
   return (
     <FlexGapped className="flex-col">
-      <div className="sticky z-10 flex space-x-1 bg-bgPrimary dark:bg-bgPrimaryDark sm:top-10">
+      <div className="sticky z-10 flex gap-1 bg-bgPrimary dark:bg-bgPrimaryDark sm:top-10">
         {addMode && (
           <>
             <div className="w-full">

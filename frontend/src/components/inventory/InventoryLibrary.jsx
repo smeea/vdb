@@ -44,7 +44,7 @@ const InventoryLibrary = ({
         <>
           <Header>
             <div className="w-3/4 p-1">
-              <div className="flex flex-col space-y-1">
+              <div className="flex flex-col gap-1">
                 <InventoryFilterForm
                   value={type}
                   setValue={setType}
@@ -76,14 +76,14 @@ const InventoryLibrary = ({
             </div>
             <SortButton
               sortMethods={sortMethods}
-            sortMethod={libraryInventorySort}
-            setSortMethod={changeLibraryInventorySort}
+              sortMethod={libraryInventorySort}
+              setSortMethod={changeLibraryInventorySort}
             />
           </Header>
         </>
       )}
       <InventoryLibraryTable
-            sortMethod={libraryInventorySort}
+        sortMethod={libraryInventorySort}
         compact={compact}
         withCompact={withCompact}
         cards={

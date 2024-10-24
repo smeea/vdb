@@ -43,7 +43,7 @@ const DeckMissingModal = ({ deck, missAllVtes, handleClose, inInventory }) => {
             />
           </div>
         </FlexGapped>
-        <div className="flex flex-col justify-end gap-2 max-sm:p-2 max-sm:pt-0 sm:flex-row">
+        <div className="flex justify-end gap-2 max-sm:flex-col max-sm:p-2 max-sm:pt-0">
           {inInventory && (
             <ButtonIconed
               variant="primary"

@@ -63,7 +63,7 @@ const DeckProxyLibrary = ({
 
   return (
     <FlexGapped className="flex-col">
-      <div className="space-y-2">
+      <div className="flex flex-col gap-2">
         <Header>
           <div className="px-2 font-bold">Library [{libraryTotalSelected}]</div>
         </Header>
@@ -91,7 +91,7 @@ const DeckProxyLibrary = ({
         })}
       </div>
       {librarySide.length > 0 && (
-        <div className="space-y-2 opacity-60 dark:opacity-50">
+        <div className="flex flex-col gap-2 opacity-60 dark:opacity-50">
           <Header>
             <div className="px-2 font-bold">Side Library</div>
           </Header>

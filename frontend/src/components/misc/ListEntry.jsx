@@ -21,7 +21,7 @@ const ListEntry = ({ icon, title, children, forceNewLine, forceOneLine, basis = 
     >
       <div
         className={twMerge(
-          'flex items-center space-x-2 text-lg text-fgSecondary dark:text-fgSecondaryDark',
+          'flex items-center gap-2 text-lg text-fgSecondary dark:text-fgSecondaryDark',
           !forceNewLine && basises[basis][0],
         )}
       >

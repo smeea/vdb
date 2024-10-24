@@ -134,7 +134,7 @@ const Diff = () => {
             deckidTo={deckidTo}
           />
           {(errorFrom || errorTo) && (
-            <div className="flex flex-row">
+            <div className="flex">
               <div className="w-full">
                 {errorFrom && <ErrorMessage>NO DECK WITH THIS ID</ErrorMessage>}
               </div>

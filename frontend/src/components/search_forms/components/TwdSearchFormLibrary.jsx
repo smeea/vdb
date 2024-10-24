@@ -39,16 +39,16 @@ const TwdSearchFormLibrary = ({ value, form }) => {
   };
 
   return (
-    <div className="space-y-2">
+    <div className="flex flex-col gap-2">
       <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Library:</div>
       <NewCardSelect target={LIBRARY} onChange={handleAdd} />
-      <div className="space-y-1">
+      <div className="flex flex-col gap-1">
         {Object.keys(value)
           .filter((id) => value[id].q >= 0)
           .map((id) => {
             const card = libraryCardBase[id];
             return (
-              <div key={id} className="flex items-center space-x-2">
+              <div key={id} className="flex items-center gap-2">
                 <TwdSearchFormQuantityButtons value={value} form={form} id={id} />
                 <ConditionalTooltip
                   placement="left"

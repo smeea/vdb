@@ -29,7 +29,7 @@ const LibrarySearchFormPoolCost = ({ value, onChange }) => {
         <div className="w-1/4">
           <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Pool Cost:</div>
         </div>
-        <div className="flex w-3/4 space-x-1">
+        <div className="flex w-3/4 gap-1">
           <div className="w-1/2">
             <Select
               options={morelessOptions}

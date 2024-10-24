@@ -3,10 +3,10 @@ import { Checkbox } from '@/components';
 
 const CryptSearchFormTitles = ({ value, onChange }) => {
   return (
-    <div className="space-y-1">
+    <div className="flex flex-col gap-1">
       <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Title:</div>
       <div className="flex">
-        <div className="w-7/12 space-y-0.5">
+        <div className="flex w-7/12 flex-col gap-0.5">
           {[
             ['primogen', 'Primogen'],
             ['prince', 'Prince'],
@@ -26,7 +26,7 @@ const CryptSearchFormTitles = ({ value, onChange }) => {
             />
           ))}
         </div>
-        <div className="w-5/12 space-y-0.5">
+        <div className="flex w-5/12 flex-col gap-0.5">
           {[
             ['bishop', 'Bishop'],
             ['archbishop', 'Archbishop'],

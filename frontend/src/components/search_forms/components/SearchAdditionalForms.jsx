@@ -23,7 +23,7 @@ const SearchAdditionalForms = ({
     forms.push(
       <div key={i} className="flex items-center">
         <div className="flex w-1/4 justify-end">
-          <div className="flex space-x-1 px-1">
+          <div className="flex gap-1 px-1">
             {i == value.value.length - 1 && (
               <SearchFormButtonAdd
                 name={name}
@@ -35,7 +35,7 @@ const SearchAdditionalForms = ({
           </div>
         </div>
         {withMoreless ? (
-          <div className="flex w-3/4 space-x-1">
+          <div className="flex w-3/4 gap-1">
             <div className="w-1/2">
               <Select
                 options={morelessOptions}

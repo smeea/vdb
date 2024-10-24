@@ -12,10 +12,7 @@ const DeckProxyCrypt = ({
   handleProxyCounter,
 }) => {
   const { cryptDeckSort, setShowFloatingButtons } = useApp();
-  const { cryptSide, sortedCards, sortedCardsSide } = useDeckCrypt(
-    deck.crypt,
-    cryptDeckSort,
-  );
+  const { cryptSide, sortedCards, sortedCardsSide } = useDeckCrypt(deck.crypt, cryptDeckSort);
 
   const proxiesToPrint = Object.keys(proxySelected)
     .filter(

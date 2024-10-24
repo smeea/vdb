@@ -30,11 +30,11 @@ const TwdSearchFormPlayers = ({ value, onChange }) => {
 
   return (
     <>
-      <div className="flex items-center space-x-1">
+      <div className="flex items-center gap-1">
         <div className="w-1/4">
           <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Players:</div>
         </div>
-        <div className="flex w-3/4 items-center space-x-1">
+        <div className="flex w-3/4 items-center gap-1">
           <div className="w-full">
             <Select
               options={fromOptions}

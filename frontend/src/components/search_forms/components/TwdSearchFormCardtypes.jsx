@@ -102,7 +102,7 @@ const TwdSearchFormCardtypes = ({ value, onChange }) => {
       value[i[0].toLowerCase()] == ANY ? [0, 100] : value[i[0].toLowerCase()].split(',');
 
     const form = (
-      <div className="flex items-center space-x-1" key={i[0]}>
+      <div className="flex items-center gap-1" key={i[0]}>
         <div className="flex w-1/6 justify-center">
           <ResultLibraryTypeImage value={i[0]} size="xl" />
         </div>
@@ -158,9 +158,9 @@ const TwdSearchFormCardtypes = ({ value, onChange }) => {
           Custom %
         </Toggle>
       </div>
-      <div className="flex space-x-6">
-        <div className="w-1/2 space-y-1">{formsLeft}</div>
-        <div className="w-1/2 space-y-1">{formsRight}</div>
+      <div className="flex gap-6">
+        <div className="flex w-1/2 flex-col gap-1">{formsLeft}</div>
+        <div className="flex w-1/2 flex-col gap-1">{formsRight}</div>
       </div>
     </div>
   );

@@ -6,7 +6,7 @@ const LibrarySearchFormTraits = ({ value, onChange }) => {
   const { playtestMode } = useApp();
 
   return (
-    <div className="space-y-1">
+    <div className="flex flex-col gap-1">
       <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Traits:</div>
       <div className="flex">
         <div className="flex basis-5/9 flex-col gap-0.5">
@@ -27,17 +27,18 @@ const LibrarySearchFormTraits = ({ value, onChange }) => {
             ['multi-discipline', 'Multi-Discipline'],
             ['path-caine', 'Path of Caine'],
             ['path-cathari', 'Path of Cathari'],
-          ].filter((i) => !['path-caine', 'path-cathari'].includes(i[0]) || playtestMode)
-          .map((i, index) => (
-            <Checkbox
-              key={index}
-              name="traits"
-              value={i[0]}
-              label={i[1]}
-              checked={value[i[0]]}
-              onChange={onChange}
-            />
-          ))}
+          ]
+            .filter((i) => !['path-caine', 'path-cathari'].includes(i[0]) || playtestMode)
+            .map((i, index) => (
+              <Checkbox
+                key={index}
+                name="traits"
+                value={i[0]}
+                label={i[1]}
+                checked={value[i[0]]}
+                onChange={onChange}
+              />
+            ))}
         </div>
         <div className="flex basis-4/9 flex-col gap-0.5">
           {[

@@ -87,7 +87,7 @@ const InventoryAddDeckRow = ({ deck, allTagsOptions }) => {
         </td>
       )}
       <td className="min-w-[110px]">
-        <div className="flex justify-end space-x-1">
+        <div className="flex justify-end gap-1">
           <InventoryDeckAddButton deck={deck} inInventory={inInventory} />
           <InventoryDeckDeleteButton deck={deck} inInventory={inInventory} />
         </div>

@@ -36,7 +36,7 @@ const CryptSearchFormCapacity = ({ value, searchForm, onChange }) => {
         <div className="w-1/4">
           <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Capacity:</div>
           {value.value[0][name] !== ANY && (
-            <div className="flex justify-end space-x-1 px-1">
+            <div className="flex justify-end gap-1 px-1">
               <SearchFormButtonLogicToggle
                 name={name}
                 value={value.logic}
@@ -50,7 +50,7 @@ const CryptSearchFormCapacity = ({ value, searchForm, onChange }) => {
             </div>
           )}
         </div>
-        <div className="flex w-3/4 space-x-1">
+        <div className="flex w-3/4 gap-1">
           <div className="w-1/2">
             <Select
               options={morelessOptions}

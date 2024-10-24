@@ -32,7 +32,7 @@ const PdaResult = ({ results, setResults }) => {
 
   return (
     <>
-      <div className="space-y-4">
+      <div className="flex flex-col gap-4">
         <div>
           <TwdResultTotal
             results={results}
@@ -40,7 +40,7 @@ const PdaResult = ({ results, setResults }) => {
             sortMethod={pdaSearchSort}
             setSortMethod={changePdaSearchSort}
           />
-          <div className="space-y-4">
+          <div className="flex flex-col gap-4">
             {showedDecks.map((d) => {
               return <TwdDeck key={d.deckid} deck={d} inPda />;
             })}

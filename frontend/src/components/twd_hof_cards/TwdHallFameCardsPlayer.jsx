@@ -87,7 +87,7 @@ const TwdHallFameCardsPlayer = ({ name, cards }) => {
   return (
     <div className="rounded border border-borderPrimary bg-bgThird dark:border-borderPrimaryDark dark:bg-bgThirdDark">
       <Disclosure.Button className="w-full p-3">
-        <div className="flex items-center space-x-4 px-2 text-fgName dark:text-fgNameDark">
+        <div className="flex items-center gap-4 px-2 text-fgName dark:text-fgNameDark">
           <div className="flex items-center gap-1">
             <div>{Object.keys(cards).length}</div>
             <LightbulbFill height="13" width="13" viewBox="0 0 18 18" />

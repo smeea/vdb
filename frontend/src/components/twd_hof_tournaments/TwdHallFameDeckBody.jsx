@@ -15,7 +15,7 @@ const TwdHallFameDeckBody = ({ deck }) => {
   const cards = useDeck(value?.cards, cryptCardBase, libraryCardBase);
 
   return (
-    <div className="flex flex-row gap-2">
+    <div className="flex gap-2">
       <div className="basis-full xl:basis-1/4">
         <TwdResultDescription deck={deck} />
       </div>

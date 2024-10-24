@@ -45,14 +45,14 @@ const AccountRegister = () => {
   };
 
   return (
-    <div className="space-y-2">
-      <div className="flex items-center space-x-2 text-xl font-bold text-fgSecondary dark:text-fgSecondaryDark">
+    <div className="flex flex-col gap-2">
+      <div className="flex items-center gap-2 text-xl font-bold text-fgSecondary dark:text-fgSecondaryDark">
         <div className="flex min-w-[23px] justify-center">
           <PersonPlusFill width="22" height="22" viewBox="0 0 16 16" />
         </div>
         <div className="flex">Create account</div>
       </div>
-      <form className="space-y-2" onSubmit={handleSubmit}>
+      <form className="flex flex-col gap-2" onSubmit={handleSubmit}>
         <div className="relative flex w-full">
           <AccountUsernameForm value={formUsername} setValue={setFormUsername} />
           {usernameError && <ErrorOverlay placement="bottom">{usernameError}</ErrorOverlay>}

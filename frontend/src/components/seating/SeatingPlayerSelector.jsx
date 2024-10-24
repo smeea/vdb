@@ -43,7 +43,7 @@ const SeatingPlayerSelector = ({ setPlayer, delPlayer, i, player }) => {
   };
 
   return (
-    <div className="flex justify-between space-x-2">
+    <div className="flex justify-between gap-2">
       <div className="flex w-full">
         <Input
           placeholder="Disabled"

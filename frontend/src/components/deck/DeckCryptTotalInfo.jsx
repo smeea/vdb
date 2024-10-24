@@ -23,12 +23,7 @@ const UniqueDraw = ({ cards }) => {
   });
 
   return (
-    <div
-      className={twMerge(
-        'flex flex-row',
-        isMobile && Object.keys(probs).length > 2 ? 'gap-2' : 'gap-3',
-      )}
-    >
+    <div className={twMerge('flex', isMobile && Object.keys(probs).length > 2 ? 'gap-2' : 'gap-3')}>
       <>
         {Object.keys(probs).map((i) => {
           return (

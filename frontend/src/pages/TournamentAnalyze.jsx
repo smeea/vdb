@@ -221,7 +221,7 @@ const TournamentAnalyze = () => {
   }, [params.tournamentid, cryptCardBase, libraryCardBase]);
 
   return (
-    <div className="twd-container mx-auto space-y-2">
+    <div className="twd-container mx-auto flex flex-col gap-2">
       <Header>
         <div className="flex w-full flex-col p-2 text-lg max-sm:gap-2">
           <div className="flex justify-center">

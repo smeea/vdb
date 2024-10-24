@@ -22,19 +22,19 @@ const ResultCryptLayoutText = ({ card, setCard, handleClose, noClose, inPopover 
   const legalRestriction = getLegality(card);
 
   return (
-    <div className="space-y-3">
+    <div className="flex flex-col gap-3">
       <div className="flex items-center justify-between whitespace-nowrap">
         <div className="flex items-center justify-between">
           <div
             className={twMerge(
-              isMobile || (inPopover && 'flex-col'),
+              (isMobile || inPopover) && 'flex-col',
               'flex justify-between gap-1 whitespace-nowrap sm:gap-3',
             )}
           >
             <div className="flex items-center justify-between gap-2 whitespace-nowrap">
               <div className="flex items-center gap-2">
                 <ResultClanImage value={card.Clan} />
-                <div className="space-x-2 font-bold text-fgName dark:text-fgNameDark">
+                <div className="flex gap-2 font-bold">
                   <ResultName card={card} />
                   {card.Adv[1] && (
                     <ConditionalTooltip
@@ -62,7 +62,7 @@ const ResultCryptLayoutText = ({ card, setCard, handleClose, noClose, inPopover 
                             )}
                           </>
                         ) : (
-                          <>[see {`${card.Adv[0] ? 'Base' : 'Adv'}`}]</>
+                          <>[see {card.Adv[0] ? 'Base' : 'Adv'}]</>
                         )}
                       </div>
                     </ConditionalTooltip>

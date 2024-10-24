@@ -36,11 +36,11 @@ const LibrarySearchFormSect = ({ value, searchForm, onChange }) => {
 
   return (
     <>
-      <div className="flex flex-row items-center">
+      <div className="flex items-center">
         <div className="flex w-1/4 items-center justify-between">
           <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Sect:</div>
           {value.value[0] !== ANY && (
-            <div className="flex justify-end space-x-1 px-1">
+            <div className="flex justify-end gap-1 px-1">
               <SearchFormButtonLogicToggle
                 name={name}
                 value={value.logic}

@@ -30,10 +30,10 @@ const SearchAdditionalFormsText = ({ value, onChange, onChangeOptions, searchFor
       {values.map((v, idx) => {
         const i = idx + 1;
         return (
-          <div className="space-y-1" key={i}>
+          <div className="flex flex-col gap-1" key={i}>
             <SearchAdditionalFormsTextForm id={i} value={value[i]} onChange={onChange} />
             <div className="flex">
-              <div className="flex w-1/5 space-x-1">
+              <div className="flex w-1/5 gap-1">
                 <SearchFormButtonLogicToggle
                   name="text"
                   value={v.logic}

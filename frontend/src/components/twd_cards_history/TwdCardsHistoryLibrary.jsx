@@ -176,7 +176,7 @@ const TwdCardsHistoryLibrary = ({ cards, players }) => {
     <div className="h-[calc(100dvh-174px)] sm:h-[calc(100dvh-240px)]">
       <div className="flex items-center justify-between bg-bgSecondary dark:bg-bgSecondaryDark">
         <div className="w-3/4">
-          <div className="flex flex-col space-y-1">
+          <div className="flex flex-col gap-1">
             <InventoryFilterForm
               value={type}
               setValue={setType}

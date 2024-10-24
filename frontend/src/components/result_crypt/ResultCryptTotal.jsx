@@ -67,7 +67,7 @@ const ResultCryptTotal = ({
             </Button>
           </div>
         ) : (
-          <div className="space-y-1">
+          <div className="flex flex-col gap-1">
             {!inHoF && (
               <div className="flex justify-end">
                 <Button title="Additional Info" variant="primary" onClick={() => toggleShowInfo()}>

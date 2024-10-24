@@ -42,7 +42,7 @@ const PopoverSet = ({ card, set }) => {
           {![POD, PROMO, PLAYTEST].includes(set) && ' - ' + setsAndPrecons[set].date.slice(0, 4)}
         </div>
         {![POD, PROMO].includes(set) && (
-          <ul className="space-y-1">
+          <ul className="flex flex-col gap-1">
             <PreconsDetailed sets={card.Set} set={set} />
           </ul>
         )}

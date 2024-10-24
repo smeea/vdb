@@ -20,7 +20,7 @@ const SelectLabelLibrary = ({ cardid, inInventory }) => {
   return (
     <>
       <div className="flex items-center justify-between">
-        <div className="flex items-center space-x-1">
+        <div className="flex items-center gap-1">
           {inInventory && (
             <div
               className={twMerge(

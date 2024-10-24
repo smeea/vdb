@@ -42,7 +42,7 @@ const DeckSelect = ({
   const isEditable = isAuthor && !isPublic && !isFrozen && !isNonEditable;
 
   return (
-    <div className="space-y-2">
+    <div className="flex flex-col gap-2">
       <div className="z-20 flex gap-1">
         <div className="w-full">
           {selectFrom == 'my' && decks ? (
@@ -108,7 +108,7 @@ const DeckSelect = ({
             />
           )}
         </div>
-        <div className="flex flex-row space-x-1">
+        <div className="flex gap-1">
           {decks && (
             <ButtonIconed
               title="Advanced Deck Select"

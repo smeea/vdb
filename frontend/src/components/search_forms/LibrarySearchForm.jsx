@@ -223,7 +223,7 @@ const LibrarySearchForm = () => {
   }, [preresults]);
 
   return (
-    <div className="space-y-2">
+    <div className="flex flex-col gap-2">
       <SearchFormTextAndButtons
         value={libraryFormState.text}
         onChange={handleTextChange}

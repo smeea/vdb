@@ -112,7 +112,7 @@ const AnalyzeSearchForm = () => {
   }, [analyzeFormState, cryptCardBase, libraryCardBase]);
 
   return (
-    <div className="space-y-2">
+    <div className="flex flex-col gap-2">
       <div className="flex gap-2">
         <AnalyzeSearchFormRank value={analyzeFormState.rank} onChange={handleChangeWithOpt} />
         <ButtonClose title="Clear Forms & Results" handleClick={handleClear} />

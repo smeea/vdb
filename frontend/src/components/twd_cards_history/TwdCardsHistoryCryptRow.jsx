@@ -49,7 +49,7 @@ const TwdCardsHistoryCryptRow = ({ card, players, handleClick }) => {
           <div className="flex justify-center">
             <ResultClanImage value={card.Clan} />
           </div>
-          <div className="flex justify-center space-x-1 text-sm">
+          <div className="flex justify-center gap-1 text-sm">
             <div className="flex w-full justify-end font-bold">
               {card.Title && <ResultCryptTitle value={card.Title} />}
             </div>

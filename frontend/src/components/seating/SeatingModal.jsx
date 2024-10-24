@@ -47,10 +47,10 @@ const SeatingModal = ({
 
   return (
     <Modal handleClose={handleClose} title="Table Seating" size="lg">
-      <div className="space-y-5">
+      <div className="flex flex-col gap-5">
         <div className="flex gap-4 max-sm:flex-col">
-          <div className="space-y-3 sm:w-5/12 xl:w-5/12">
-            <div className="space-y-2">
+          <div className="flex flex-col gap-3 sm:w-5/12 xl:w-5/12">
+            <div className="flex flex-col gap-2">
               {players.map((p, idx) => {
                 return (
                   <SeatingPlayerSelector

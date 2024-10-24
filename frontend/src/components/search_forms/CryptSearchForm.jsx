@@ -248,7 +248,7 @@ const CryptSearchForm = () => {
   }, [preresults]);
 
   return (
-    <div className="space-y-2">
+    <div className="flex flex-col gap-2">
       <SearchFormTextAndButtons
         value={cryptFormState.text}
         onChange={handleTextChange}

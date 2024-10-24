@@ -65,7 +65,7 @@ const ResultLayoutText = ({
         />
       </div>
       <div className="flex justify-between">
-        <div className="flex flex-row gap-1">
+        <div className="flex gap-1">
           <ButtonCardCopyUrl cardid={card.Id} />
           <ButtonSearchCardInDecks
             cardid={card.Id}

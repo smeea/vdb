@@ -63,7 +63,7 @@ const InventoryShareModal = ({ setShow }) => {
             </div>
           )}
         </div>
-        <div className="flex flex-col justify-end gap-2 sm:flex-row">
+        <div className="flex justify-end gap-2 max-sm:flex-col">
           <ButtonIconed
             variant={success ? 'success' : 'primary'}
             onClick={handleClick}

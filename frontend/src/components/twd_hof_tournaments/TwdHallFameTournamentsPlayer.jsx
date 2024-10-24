@@ -37,12 +37,12 @@ const TwdHallFameTournamentsPlayer = ({ name, decks }) => {
   return (
     <div className="rounded border border-borderPrimary bg-bgThird dark:border-borderPrimaryDark dark:bg-bgThirdDark">
       <Disclosure.Button className="w-full p-3">
-        <div className="flex items-center space-x-4 px-2 text-fgName dark:text-fgNameDark">
+        <div className="flex items-center gap-4 px-2 text-fgName dark:text-fgNameDark">
           <div className="flex items-center gap-1">
             {Object.keys(decks).length}
             <TrophyFill width="13" height="13" viewBox="0 0 16 16" />
           </div>
-          <div className="flex items-center space-x-1 whitespace-nowrap">
+          <div className="flex items-center gap-1 whitespace-nowrap">
             <div>{name}</div>
             <div
               className="flex items-center"
@@ -54,7 +54,7 @@ const TwdHallFameTournamentsPlayer = ({ name, decks }) => {
         </div>
       </Disclosure.Button>
       <Disclosure.Panel>
-        <div className="space-y-1.5 px-2">
+        <div className="flex flex-col gap-1.5 px-2">
           {decks.toSorted(byDate).map((deck) => {
             return (
               <TwdHallFameDeckHeader

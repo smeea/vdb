@@ -39,7 +39,7 @@ const UsedPopover = ({ cardid }) => {
         <b>{softUsedMax + hardUsedTotal}</b>
         <div>- Total Used</div>
       </div>
-      <div className="flex items-center space-x-1">
+      <div className="flex items-center gap-1">
         <div className="opacity-40">
           <ArchiveFill width="14" height="14" viewBox="0 0 16 16" />
         </div>

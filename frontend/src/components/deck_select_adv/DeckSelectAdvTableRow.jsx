@@ -157,7 +157,7 @@ const DeckSelectAdvTableRow = ({
             />
           </td>
           <td>
-            <div className="flex justify-end space-x-1">
+            <div className="flex justify-end gap-1">
               <DeckHideButton deck={deck} />
               {!isMobile && <DeckFreezeButton deck={deck} />}
               {isDesktop && (

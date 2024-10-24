@@ -106,7 +106,7 @@ const InventoryAddDeckModal = ({ handleClose }) => {
               </th>
             )}
             <th className="min-w-[105px]">
-              <div className="flex justify-end space-x-1">
+              <div className="flex justify-end gap-1">
                 <Checkbox
                   id="revFilter"
                   label={isMobile ? 'Rev' : 'Show Revisions'}

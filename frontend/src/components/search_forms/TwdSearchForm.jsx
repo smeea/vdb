@@ -161,7 +161,7 @@ const TwdSearchForm = ({ error, setError }) => {
   }, [twdFormState, cryptCardBase, libraryCardBase]);
 
   return (
-    <div className="space-y-2">
+    <div className="flex flex-col gap-2">
       <TwdSearchFormButtons handleClear={handleClear} getNew={getNewTwd} getRandom={getRandomTwd} />
       {inventoryMode && (
         <>
@@ -175,7 +175,7 @@ const TwdSearchForm = ({ error, setError }) => {
             target={LIBRARY}
             onChange={handleChangeWithOpt}
           />
-          <div className="flex justify-end space-x-6">
+          <div className="flex justify-end gap-6">
             <Checkbox
               name="60"
               label="Scale to 60 cards"

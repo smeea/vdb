@@ -17,7 +17,7 @@ const Documentation = () => {
       <div className="sm:mb-6">
         <Banner />
       </div>
-      <div className="space-y-6 max-sm:p-3">
+      <div className="flex flex-col gap-6 max-sm:p-3">
         <div>
           <Title>HELP / DOCUMENTATION</Title>
           <div>Documentation below describe some logic of VDB components.</div>
@@ -30,7 +30,7 @@ const Documentation = () => {
         <div>
           <Title>TABLE OF CONTENT</Title>
           <div>
-            <ul className="space-y-2">
+            <ul className="flex flex-col gap-2">
               <li>
                 <a href="#crypt">Crypt search</a>
               </li>
@@ -59,7 +59,7 @@ const Documentation = () => {
           </div>
         </div>
 
-        <div className="space-y-1">
+        <div className="flex flex-col gap-1">
           <Title id="crypt">CRYPT SEARCH</Title>
           <div>
             <SubTitle>Name or Text</SubTitle>
@@ -107,7 +107,7 @@ const Documentation = () => {
           </ul>
         </div>
 
-        <div className="space-y-1">
+        <div className="flex flex-col gap-1">
           <Title id="library">LIBRARY SEARCH</Title>
           <div>
             <SubTitle>Name or Text</SubTitle>
@@ -141,7 +141,7 @@ const Documentation = () => {
           </div>
         </div>
 
-        <div className="space-y-1">
+        <div className="flex flex-col gap-1">
           <Title id="twd">TWD SEARCH</Title>
           <div>
             <SubTitle>Star Vampire</SubTitle>
@@ -224,7 +224,7 @@ const Documentation = () => {
           </div>
         </div>
 
-        <div className="space-y-1">
+        <div className="flex flex-col gap-1">
           <Title id="pda">PDA SEARCH</Title>
           <div>
             Public Deck Archive (PDA) let you share your decks with other players and search other
@@ -271,7 +271,7 @@ const Documentation = () => {
           </div>
         </div>
 
-        <div className="space-y-1">
+        <div className="flex flex-col gap-1">
           <Title id="cards">CARD VIEW</Title>
           <div>
             <ul>
@@ -289,7 +289,7 @@ const Documentation = () => {
           </div>
         </div>
 
-        <div className="space-y-1">
+        <div className="flex flex-col gap-1">
           <Title id="decks">DECK BUILDING</Title>
           <div>
             <SubTitle>Hints</SubTitle>
@@ -344,7 +344,7 @@ const Documentation = () => {
           </div>
         </div>
 
-        <div className="space-y-1">
+        <div className="flex flex-col gap-1">
           <Title id="inventory">INVENTORY MANAGEMENT</Title>
           <div>
             Inventory management in VDB let you browse your card collection with existing
@@ -414,7 +414,7 @@ const Documentation = () => {
           </div>
         </div>
 
-        <div className="space-y-1">
+        <div className="flex flex-col gap-1">
           <Title id="analyze">ANALYZE TOURNAMENT</Title>
           <div>
             This feature available at <Link to="/tournament_analyze">Tournament Analyze</Link> lets

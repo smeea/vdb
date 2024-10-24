@@ -68,18 +68,18 @@ const ResultLibraryLayoutText = ({ card, handleClose, noClose, inPopover }) => {
     card[POOL_COST];
 
   return (
-    <div className="space-y-3">
+    <div className="flex flex-col gap-3">
       <div className="flex items-center justify-between">
         <div
           className={twMerge(
-            'flex justify-between gap-1 whitespace-nowrap sm:gap-3',
-            isMobile || (inPopover && 'flex-col'),
+            'flex justify-between gap-3 whitespace-nowrap',
+            (isMobile || inPopover) && 'flex-col gap-1.5',
           )}
         >
           <div className="flex items-center justify-between gap-2 whitespace-nowrap">
             <div className="flex items-center gap-2">
               <ResultLibraryTypeImage value={card.Type} />
-              <div className="space-x-1 font-bold text-fgName dark:text-fgNameDark">
+              <div className="font-bold">
                 <ResultName card={card} />
               </div>
             </div>

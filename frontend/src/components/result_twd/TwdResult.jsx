@@ -32,7 +32,7 @@ const TwdResult = ({ results, setResults }) => {
 
   return (
     <>
-      <div className="space-y-4">
+      <div className="flex flex-col gap-4">
         <div>
           <TwdResultTotal
             results={results}
@@ -40,7 +40,7 @@ const TwdResult = ({ results, setResults }) => {
             sortMethod={twdSearchSort}
             setSortMethod={changeTwdSearchSort}
           />
-          <div className="space-y-4">
+          <div className="flex flex-col gap-4">
             {showedDecks.map((d) => {
               return <TwdDeck key={d.deckid} deck={d} />;
             })}

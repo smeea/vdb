@@ -93,8 +93,8 @@ const DiffSelectDeck = ({ decks, deck, deckidFrom, deckidTo, target, title }) =>
           )}
         </div>
       )}
-      <div className="flex items-center justify-between space-x-6">
-        <div className="flex space-x-6">
+      <div className="flex items-center justify-between gap-6">
+        <div className="flex gap-6">
           {username && decks && Object.keys(decks).length > 0 && (
             <Radio
               checked={source == `${target}-my`}

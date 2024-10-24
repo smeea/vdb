@@ -54,7 +54,7 @@ const Text = ({ text }) => {
 
 const ResultLayoutTextRulings = ({ rulings }) => {
   return (
-    <ul className="space-y-2 text-sm">
+    <ul className="flex flex-col gap-2 text-sm">
       {rulings.map((k, idx) => {
         const text = k.text.replace(/\(D\)/g, '\u24B9').split('\n');
 

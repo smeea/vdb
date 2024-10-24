@@ -53,7 +53,7 @@ const AccountDeleteConfirmation = ({ setShow }) => {
       <Modal handleClose={() => setShow(false)} centered={isMobile} title="Delete Account">
         <FlexGapped className="flex-col">
           This will also delete all your decks and they will not be available via URL anymore.
-          <div className="flex justify-end space-x-2">
+          <div className="flex justify-end gap-2">
             <form onSubmit={handleSubmit}>
               <div className="flex">
                 <div className="relative flex w-full">
@@ -72,7 +72,7 @@ const AccountDeleteConfirmation = ({ setShow }) => {
                     <ErrorOverlay placement="bottom">CONNECTION PROBME</ErrorOverlay>
                   )}
                 </div>
-                <div className="flex space-x-2">
+                <div className="flex gap-2">
                   <Button
                     className="rounded-l-none"
                     tabIndex="-1"

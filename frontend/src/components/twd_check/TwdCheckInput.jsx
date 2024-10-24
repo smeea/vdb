@@ -129,7 +129,7 @@ const TwdCheckInput = ({ deckData, setDeckData }) => {
         </div>
       </div>
       <div className="flex justify-end">
-        <div className="flex flex-row space-x-2">
+        <div className="flex gap-2">
           <ButtonIconed
             variant="primary"
             onClick={() => saveDeck(deckText, deckData.id)}

@@ -20,14 +20,14 @@ const TwdHallFameDeckHeader = ({ deck, isStar }) => {
           isStar && 'font-bold',
         )}
       >
-        <div className="flex items-center space-x-4">
-          <div className="flex items-center space-x-1">
+        <div className="flex items-center gap-4">
+          <div className="flex items-center gap-1">
             <div>{deck.players}</div>
             <div className="flex items-center">
               <PeopleFill width="15" height="15" viewBox="0 0 16 16" />
             </div>
           </div>
-          <div className="flex items-center space-x-1">
+          <div className="flex items-center gap-1">
             <div>{`${deck.event}: ${deck.location}`}</div>
           </div>
         </div>

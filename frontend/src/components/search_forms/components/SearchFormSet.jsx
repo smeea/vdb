@@ -87,12 +87,12 @@ const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
   };
 
   return (
-    <div className="space-y-1">
+    <div className="flex flex-col gap-1">
       <div className="flex items-center">
         <div className="flex w-1/4 items-center justify-between">
           <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Set:</div>
           {value.value[0] !== ANY && (
-            <div className="flex justify-end space-x-1 px-1">
+            <div className="flex justify-end gap-1 px-1">
               {value.value.length == 1 ? (
                 <SearchFormButtonAdd searchForm={searchForm} name={name} />
               ) : (
@@ -123,7 +123,7 @@ const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
         onChange={onChange}
         maxMenuHeight={maxMenuHeight}
       />
-      <div className="space-y-2">
+      <div className="flex flex-col gap-2">
         <div className="flex items-center justify-end gap-4">
           {[
             {

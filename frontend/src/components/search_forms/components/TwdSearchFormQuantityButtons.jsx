@@ -45,7 +45,7 @@ const TwdSearchFormQuantityButtons = ({ value, form, id }) => {
   };
 
   return (
-    <div className="flex items-center justify-between space-x-1">
+    <div className="flex items-center justify-between gap-1">
       <Button
         className="h-[27px] w-[35px] text-sm"
         variant="primary"

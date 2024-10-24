@@ -3,7 +3,7 @@ import { ResultLibraryTypeImage } from '@/components';
 
 const ResultLibraryType = ({ cardtype, total, trifleTotal }) => {
   return (
-    <div className="flex items-center space-x-1">
+    <div className="flex items-center gap-1">
       <ResultLibraryTypeImage value={cardtype} />
       {total > 0 ? (
         <div className="inline">

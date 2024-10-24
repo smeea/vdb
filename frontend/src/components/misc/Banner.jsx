@@ -18,7 +18,7 @@ const Banner = () => {
           VDB
         </div>
       </div>
-      <div className="inline space-y-1 px-2 text-sm italic text-fgSecondary dark:text-whiteDark">
+      <div className="flex flex-col gap-1 px-2 text-sm italic text-fgSecondary dark:text-whiteDark">
         <div className="flex justify-end">If only I had a laptop...</div>
         <div className="flex justify-end">- Enkidu, The Noah</div>
       </div>

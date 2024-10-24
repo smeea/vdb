@@ -36,7 +36,7 @@ const DeckDetails = ({ deck, allTagsOptions, folded, setFolded }) => {
           </div>
         </div>
       </div>
-      <div className={twMerge('flex gap-2', !folded || isMobile ? 'flex-col' : 'flex-row')}>
+      <div className={twMerge('flex gap-2', (!folded || isMobile) && 'flex-col')}>
         {isPlaytester && playtestPrecon ? (
           <div className="basis-full">
             <PlaytestReportForm id={playtestPrecon} isPrecon />

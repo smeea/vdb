@@ -55,8 +55,8 @@ const SearchFormTextAndButtons = ({
   ];
 
   return (
-    <div className="space-y-2">
-      <div className="space-y-1">
+    <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-1">
         <div className="flex">
           <Input
             placeholder="Card Name / Text / RegEx"

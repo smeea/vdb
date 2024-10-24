@@ -29,7 +29,7 @@ const TwdDeck = ({ deck, inPda }) => {
   return (
     <>
       {deck.crypt && deck.library && (
-        <div className="group space-y-6">
+        <div className="group flex flex-col gap-6">
           <div className="flex gap-2 max-lg:flex-col">
             <div className="basis-full lg:basis-1/4">
               {inPda ? <PdaResultDescription deck={deck} /> : <TwdResultDescription deck={deck} />}
