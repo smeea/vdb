@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { Popover, PopoverButton, PopoverPanel } from '@headlessui/react';
 import PersonFill from '@/assets/images/icons/person-fill.svg?react';
 import InfoCircleFill from '@/assets/images/icons/info-circle-fill.svg?react';
 import List from '@/assets/images/icons/list.svg?react';
@@ -7,12 +8,12 @@ import StoplightsFill from '@/assets/images/icons/stoplights-fill.svg?react';
 import { NavMobileToggle, LanguageMenu, ThemeSelect, Hr } from '@/components';
 import { useApp } from '@/context';
 
-const LinkItem = ({ target, icon, text, setShowMenu }) => {
+const LinkItem = ({ target, icon, text, handleClose }) => {
   return (
     <div className="w-full">
       <NavLink
         to={target}
-        onClick={() => setShowMenu(false)}
+        onClick={handleClose}
         className={({ isActive }) =>
           `flex items-center gap-2 px-3 py-1.5 text-fgThird dark:text-fgPrimaryDark ${
             isActive ? 'bg-borderPrimary dark:bg-borderPrimaryDark' : ''
@@ -26,7 +27,7 @@ const LinkItem = ({ target, icon, text, setShowMenu }) => {
   );
 };
 
-const NavMobileMenu = ({ isLimited, showMenu, setShowMenu }) => {
+const NavMobileMenu = ({ isLimited, setShowMenu }) => {
   const {
     limitedMode,
     inventoryMode,
@@ -39,73 +40,74 @@ const NavMobileMenu = ({ isLimited, showMenu, setShowMenu }) => {
   } = useApp();
 
   return (
-    <div
-      className="relative flex h-full items-center px-1 text-white"
-      onClick={() => setShowMenu(!showMenu)}
-    >
-      <List width="30" height="30" viewBox="0 0 16 16" />
-      {showMenu && (
-        <div className="absolute bottom-10 space-y-0 rounded-lg border border-borderPrimary bg-bgPrimary text-lg text-fgPrimary dark:border-borderPrimaryDark dark:bg-bgPrimaryDark dark:text-fgPrimaryDark">
-          <LinkItem
-            target="/account"
-            text={username ? 'Account' : 'Login'}
-            icon={<PersonFill height="20" width="20" viewBox="0 0 16 16" />}
-            setShowMenu={setShowMenu}
-          />
-          {isPlaytester && (
+    <Popover className="relative">
+      <PopoverButton className="flex h-full items-center px-1 text-white focus:outline-none">
+        <List width="30" height="30" viewBox="0 0 16 16" />
+      </PopoverButton>
+      <PopoverPanel anchor={{ to: 'top', gap: '9px', padding: '4px' }} className="z-50">
+        {({ close }) => (
+          <div className="flex flex-col rounded-lg border border-borderPrimary bg-bgPrimary text-lg text-fgPrimary dark:border-borderPrimaryDark dark:bg-bgPrimaryDark dark:text-fgPrimaryDark">
             <LinkItem
-              target="/playtest"
-              text="Playtest"
-              icon={<StoplightsFill height="20" width="20" viewBox="0 0 16 16" />}
-              setShowMenu={setShowMenu}
+              target="/account"
+              text={username ? 'Account' : 'Login'}
+              icon={<PersonFill height="20" width="20" viewBox="0 0 16 16" />}
+              handleClose={close}
             />
-          )}
-          <LinkItem
-            target="/"
-            text="About"
-            icon={<InfoCircleFill height="20" width="20" viewBox="0 0 16 16" />}
-            setShowMenu={setShowMenu}
-          />
-          <ThemeSelect setShowMenu={setShowMenu} />
-          {username && (
-            <NavMobileToggle
-              isOn={inventoryMode}
-              onToggle={() => {
-                toggleInventoryMode();
-                setShowMenu(false);
-              }}
-              text="Inventory Mode"
+            {isPlaytester && (
+              <LinkItem
+                target="/playtest"
+                text="Playtest"
+                icon={<StoplightsFill height="20" width="20" viewBox="0 0 16 16" />}
+                handleClose={close}
+              />
+            )}
+            <LinkItem
+              target="/"
+              text="About"
+              icon={<InfoCircleFill height="20" width="20" viewBox="0 0 16 16" />}
+              handleClose={close}
             />
-          )}
-          {(isLimited || limitedMode) && (
-            <NavMobileToggle
-              isOn={limitedMode}
-              onToggle={() => {
-                toggleLimitedMode();
-                setShowMenu(false);
-              }}
-              text="Limited Mode"
-            />
-          )}
-          {isPlaytester && (
-            <NavMobileToggle
-              isOn={playtestMode}
-              onToggle={() => {
-                togglePlaytestMode();
-                setShowMenu(false);
-              }}
-              text="Playtest Mode"
-            />
-          )}
-          <div className="px-3.5 pt-2.5">
-            <Hr />
+            <ThemeSelect setShowMenu={setShowMenu} />
+            {username && (
+              <NavMobileToggle
+                isOn={inventoryMode}
+                onToggle={() => {
+                  toggleInventoryMode();
+                  close();
+                }}
+                text="Inventory Mode"
+              />
+            )}
+            {(isLimited || limitedMode) && (
+              <NavMobileToggle
+                isOn={limitedMode}
+                onToggle={() => {
+                  toggleLimitedMode();
+                  close();
+                }}
+                text="Limited Mode"
+              />
+            )}
+            {isPlaytester && (
+              <NavMobileToggle
+                isOn={playtestMode}
+                onToggle={() => {
+                  togglePlaytestMode();
+                  close();
+                }}
+                text="Playtest Mode"
+              />
+            )}
+            <div className="px-3.5 pt-2.5">
+              <Hr />
+            </div>
+            <div className="flex p-3.5">
+              <LanguageMenu handleClose={close} />
+            </div>
           </div>
-          <div className="flex p-3.5">
-            <LanguageMenu setShowMenu={setShowMenu} />
-          </div>
-        </div>
-      )}
-    </div>
+        )}
+      </PopoverPanel>
+    </Popover>
   );
 };
 

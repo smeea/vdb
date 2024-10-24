@@ -1,23 +1,24 @@
 import React from 'react';
+import { Popover, PopoverButton, PopoverPanel } from '@headlessui/react';
 import { Flag, LanguageMenu } from '@/components';
 import { useApp } from '@/context';
 
-const LanguageSelectButton = ({ showMenu, setShowMenu }) => {
+const LanguageSelectButton = () => {
   const { lang } = useApp();
 
   return (
-    <div
-      className="relative flex h-full min-w-[40px] items-center justify-center"
-      onClick={() => setShowMenu(!showMenu)}
-      title="Select Language"
-    >
-      <Flag value={lang} />
-      {showMenu && (
-        <div className="absolute left-1 top-11 rounded border border-borderPrimary bg-bgPrimary p-3 dark:border-borderPrimaryDark dark:bg-bgPrimaryDark">
-          <LanguageMenu setShowMenu={setShowMenu} />
-        </div>
-      )}
-    </div>
+    <Popover className="relative">
+      <PopoverButton className="flex h-full min-w-[40px] items-center justify-center focus:outline-none">
+        <Flag value={lang} />
+      </PopoverButton>
+      <PopoverPanel anchor={{ to: 'bottom', gap: '15px', padding: '4px' }} className="z-50">
+        {({ close }) => (
+          <div className="rounded border border-borderPrimary bg-bgPrimary p-3 dark:border-borderPrimaryDark dark:bg-bgPrimaryDark">
+            <LanguageMenu handleClose={close} />
+          </div>
+        )}
+      </PopoverPanel>
+    </Popover>
   );
 };
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import { useSnapshot } from 'valtio';
 import LightningFill from '@/assets/images/icons/lightning-fill.svg?react';
@@ -55,7 +55,6 @@ const Navigation = () => {
     togglePlaytestMode,
   } = useApp();
 
-  const [showMenu, setShowMenu] = useState(false);
   const location = useLocation();
   const deck = useSnapshot(deckStore)[DECK];
   const quickCard = useSnapshot(searchResults).quickCard;
@@ -101,10 +100,10 @@ const Navigation = () => {
       <div className="navbar-container mx-auto flex h-10 justify-between">
         <div className="flex items-center space-x-6">
           {isMobile ? (
-            <NavMobileMenu isLimited={isLimited} showMenu={showMenu} setShowMenu={setShowMenu} />
+            <NavMobileMenu isLimited={isLimited} />
           ) : (
             <>
-              <LanguageSelectButton showMenu={showMenu} setShowMenu={setShowMenu} />
+              <LanguageSelectButton />
               <ThemeSelect />
             </>
           )}

@@ -3,13 +3,13 @@ import { Flag } from '@/components';
 import { useApp } from '@/context';
 import { EN, ES, FR, PT } from '@/utils/constants';
 
-const LanguageMenu = ({ setShowMenu }) => {
+const LanguageMenu = ({ handleClose }) => {
   const { lang, changeLang } = useApp();
   const languages = [EN, ES, FR, PT];
 
   const handleClick = (l) => {
     changeLang(l);
-    setShowMenu(false);
+    handleClose();
   };
 
   return (
@@ -21,8 +21,9 @@ const LanguageMenu = ({ setShowMenu }) => {
             <div
               key={l}
               className={
-                lang == l &&
-                'rounded-full border-4 border-double border-fgSecondary dark:border-fgSecondaryDark'
+                lang == l
+                  ? 'rounded-full border-4 border-double border-fgSecondary dark:border-fgSecondaryDark'
+                  : ''
               }
               onClick={() => handleClick(l)}
             >

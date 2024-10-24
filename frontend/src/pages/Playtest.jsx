@@ -7,7 +7,7 @@ import PersonFill from '@/assets/images/icons/person-fill.svg?react';
 import { useApp } from '@/context';
 
 const Playtest = () => {
-  const { username, isPlaytestAdmin, isPlaytester } = useApp();
+  const { username, isPlaytestAdmin } = useApp();
   return (
     <div className="account-container mx-auto grid place-items-center sm:h-[90vh]">
       <div className="flex w-full flex-col gap-8">
