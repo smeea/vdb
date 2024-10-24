@@ -18,7 +18,7 @@ const PlaytestManagePlayer = ({ value }) => {
     <tr className="row-bg h-9 border-y border-bgSecondary dark:border-bgSecondaryDark">
       <td>
         <div className="flex justify-between px-1">
-          <Toggle isOn={state} toggle={handleClick} disabled={is_admin}>
+          <Toggle isOn={state} handleClick={handleClick} disabled={is_admin}>
             <div
               className={twMerge(
                 'flex items-center gap-2',

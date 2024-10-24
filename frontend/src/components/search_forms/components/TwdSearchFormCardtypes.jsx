@@ -154,7 +154,7 @@ const TwdSearchFormCardtypes = ({ value, onChange }) => {
         <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
           Library Card Types:
         </div>
-        <Toggle isOn={isManual} toggle={() => setIsManual(!isManual)}>
+        <Toggle isOn={isManual} handleClick={() => setIsManual(!isManual)}>
           Custom %
         </Toggle>
       </div>

@@ -59,7 +59,7 @@ const SeatingPlayerSelector = ({ setPlayer, delPlayer, i, player }) => {
           <Dice3 />
         </Button>
       </div>
-      <Toggle isOn={player.state} toggle={toggle} size="lg" />
+      <Toggle isOn={player.state} handleClick={toggle} size="lg" />
       <div
         className="flex cursor-pointer items-center p-0.5 text-fgRed dark:text-fgRedDark"
         onClick={() => delPlayer(i)}

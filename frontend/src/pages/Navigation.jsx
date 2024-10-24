@@ -4,7 +4,7 @@ import { useSnapshot } from 'valtio';
 import LightningFill from '@/assets/images/icons/lightning-fill.svg?react';
 import PersonFill from '@/assets/images/icons/person-fill.svg?react';
 import { useApp } from '@/context';
-import { NavToggle, NavMobileMenu, LanguageSelectButton, ThemeSelect } from '@/components';
+import { Toggle, NavMobileMenu, LanguageSelectButton, ThemeSelect } from '@/components';
 import cryptDefaults from '@/components/search_forms/forms_data/defaultsCryptForm.json';
 import libraryDefaults from '@/components/search_forms/forms_data/defaultsLibraryForm.json';
 import twdDefaults from '@/components/search_forms/forms_data/defaultsTwdForm.json';
@@ -97,7 +97,7 @@ const Navigation = () => {
 
   return (
     <nav className="z-50 bg-bgNav dark:bg-bgNavDark max-sm:fixed max-sm:bottom-0 max-sm:w-full sm:sticky sm:top-0">
-      <div className="navbar-container mx-auto flex h-10 justify-between">
+      <div className="navbar-container mx-auto flex h-10 justify-between sm:gap-3">
         <div className="flex items-center space-x-6">
           {isMobile ? (
             <NavMobileMenu isLimited={isLimited} />
@@ -110,18 +110,24 @@ const Navigation = () => {
           {!isMobile && (
             <>
               {username && (
-                <NavToggle
+                <Toggle
                   isOn={inventoryMode}
-                  onToggle={toggleInventoryMode}
-                  text="Inventory Mode"
+                  handleClick={toggleInventoryMode}
                   disabled={location.pathname == '/inventory'}
-                />
+                  variant="secondary"
+                >
+                  Inventory Mode
+                </Toggle>
               )}
               {(isLimited || limitedMode) && (
-                <NavToggle isOn={limitedMode} onToggle={toggleLimitedMode} text="Limited Mode" />
+                <Toggle isOn={limitedMode} handleClick={toggleLimitedMode} variant="secondary">
+                  Limited Mode
+                </Toggle>
               )}
               {isPlaytester && (
-                <NavToggle isOn={playtestMode} onToggle={togglePlaytestMode} text="Playtest Mode" />
+                <Toggle isOn={playtestMode} handleClick={togglePlaytestMode} variant="secondary">
+                  Playtest Mode
+                </Toggle>
               )}
             </>
           )}

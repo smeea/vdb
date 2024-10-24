@@ -71,32 +71,35 @@ const NavMobileMenu = ({ isLimited, setShowMenu }) => {
             {username && (
               <NavMobileToggle
                 isOn={inventoryMode}
-                onToggle={() => {
+                handleClick={() => {
                   toggleInventoryMode();
                   close();
                 }}
-                text="Inventory Mode"
-              />
+              >
+                Inventory Mode
+              </NavMobileToggle>
             )}
             {(isLimited || limitedMode) && (
               <NavMobileToggle
                 isOn={limitedMode}
-                onToggle={() => {
+                handleClick={() => {
                   toggleLimitedMode();
                   close();
                 }}
-                text="Limited Mode"
-              />
+              >
+                Limited Mode
+              </NavMobileToggle>
             )}
             {isPlaytester && (
               <NavMobileToggle
                 isOn={playtestMode}
-                onToggle={() => {
+                handleClick={() => {
                   togglePlaytestMode();
                   close();
                 }}
-                text="Playtest Mode"
-              />
+              >
+                Playtest Mode
+              </NavMobileToggle>
             )}
             <div className="px-3.5 pt-2.5">
               <Hr />

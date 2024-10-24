@@ -215,7 +215,6 @@ export { default as LanguageSelectButton } from './misc/LanguageSelectButton.jsx
 export { default as ListEntry } from './misc/ListEntry.jsx';
 export { default as NavMobileMenu } from './misc/NavMobileMenu.jsx';
 export { default as NavMobileToggle } from './misc/NavMobileToggle.jsx';
-export { default as NavToggle } from './misc/NavToggle.jsx';
 export { default as NewCardSelect } from './misc/NewCardSelect.jsx';
 export { default as OfflineNotification } from './misc/OfflineNotification.jsx';
 export { default as SelectLabelCrypt } from './misc/SelectLabelCrypt.jsx';

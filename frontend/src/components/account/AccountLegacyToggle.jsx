@@ -51,7 +51,7 @@ const AccountLegacyToggle = () => {
   const { showLegacyImage, toggleShowLegacyImage } = useApp();
 
   return (
-    <Toggle isOn={showLegacyImage} toggle={toggleShowLegacyImage}>
+    <Toggle isOn={showLegacyImage} handleClick={toggleShowLegacyImage}>
       <div className="flex items-center gap-2">
         <div>Legacy Crypt Images [BETA, limited]</div>
         <ConditionalTooltipOrModal title="Public name" overlay={<TooltipText />}>

@@ -17,7 +17,7 @@ const SeatingSelectRandom = ({
     <div className="space-y-4">
       <Hr />
       <div className="space-y-2">
-        <Toggle size="lg" isOn={withCustom} toggle={() => setWithCustom(!withCustom)}>
+        <Toggle size="lg" isOn={withCustom} handleClick={() => setWithCustom(!withCustom)}>
           <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Custom Decks</div>
         </Toggle>
         <div className="w-full sm:w-1/3">
@@ -72,7 +72,7 @@ const SeatingSelectRandom = ({
       </div>
       <Hr />
       <div className="space-y-2">
-        <Toggle size="lg" isOn={withStandard} toggle={() => setWithStandard(!withStandard)}>
+        <Toggle size="lg" isOn={withStandard} handleClick={() => setWithStandard(!withStandard)}>
           <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
             Standard Decks (from{' '}
             <a
