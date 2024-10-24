@@ -1,4 +1,5 @@
 import React from 'react';
+import { Textarea as TextareaHUI } from '@headlessui/react';
 import { twMerge } from 'tailwind-merge';
 
 const Textarea = React.forwardRef(
@@ -21,7 +22,7 @@ const Textarea = React.forwardRef(
     ref,
   ) => {
     return (
-      <textarea
+      <TextareaHUI
         className={twMerge(
           'w-full rounded border-borderSecondary bg-bgPrimary px-1.5 py-1 outline-1 outline-bgCheckboxSelected placeholder:text-midGray focus:outline dark:border-borderSecondaryDark dark:bg-bgPrimaryDark dark:outline-bgCheckboxSelectedDark dark:placeholder:text-midGrayDark',
           className,

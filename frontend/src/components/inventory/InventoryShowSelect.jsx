@@ -3,15 +3,13 @@ import { Radio } from '@/components';
 import { ALL, OK, NOK } from '@/utils/constants';
 
 const InventoryShowSelect = ({ category, setCategory }) => {
-  const options = [
-    [ALL, 'Show All'],
-    [OK, 'Only Owned'],
-    [NOK, 'Only Problems'],
-  ];
-
   return (
-    <>
-      {options.map((i) => (
+    <div className="flex flex-col gap-0.5">
+      {[
+        [ALL, 'Show All'],
+        [OK, 'Only Owned'],
+        [NOK, 'Only Problems'],
+      ].map((i) => (
         <Radio
           key={i[0]}
           id={i[0]}
@@ -20,7 +18,7 @@ const InventoryShowSelect = ({ category, setCategory }) => {
           onChange={(e) => setCategory(e.target.id)}
         />
       ))}
-    </>
+    </div>
   );
 };
 

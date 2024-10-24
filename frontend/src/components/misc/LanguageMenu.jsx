@@ -1,4 +1,5 @@
 import React from 'react';
+import { twMerge } from 'tailwind-merge';
 import { Flag } from '@/components';
 import { useApp } from '@/context';
 import { EN, ES, FR, PT } from '@/utils/constants';
@@ -13,18 +14,18 @@ const LanguageMenu = ({ handleClose }) => {
   };
 
   return (
-    <div className="space-y-2">
+    <div className="flex flex-col gap-2">
       <div>Card Language:</div>
-      <div className="flex items-center space-x-5">
+      <div className="flex items-center gap-5">
         {languages.map((l) => {
           return (
             <div
               key={l}
-              className={
-                lang == l
-                  ? 'rounded-full border-4 border-double border-fgSecondary dark:border-fgSecondaryDark'
-                  : ''
-              }
+              className={twMerge(
+                'cursor-pointer',
+                lang == l &&
+                  'rounded-full border-4 border-double border-fgSecondary dark:border-fgSecondaryDark',
+              )}
               onClick={() => handleClick(l)}
             >
               <Flag size={22} value={l} />

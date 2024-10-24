@@ -1,5 +1,5 @@
 # FIX
-- Page update in iOS
+- Page update in Chrome (Safari?)
 
 # FEATURES
 - Card q-ty change in autocompletion
@@ -20,6 +20,3 @@
 - Migrate from isWidth to container queries
 - Migrate forms to useFormStatus+useActionState
 - Remove legacy polyfills when Safari adopts groupBy
-- Headless:
-  - Textarea
-  - Radio Group
