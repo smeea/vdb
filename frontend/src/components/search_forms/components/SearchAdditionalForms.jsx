@@ -12,6 +12,7 @@ const SearchAdditionalForms = ({
   morelessOptions,
   menuPlacement,
   searchForm,
+  menuHeight,
   maxMenuHeight,
   isClearable = false,
 }) => {
@@ -57,6 +58,7 @@ const SearchAdditionalForms = ({
                     })[0]
                   ] === ANY
                 }
+                menuHeight={menuHeight}
                 maxMenuHeight={maxMenuHeight ? maxMenuHeight - 45 : isMobile ? 350 : 450}
                 menuPlacement={menuPlacement}
                 name={i}

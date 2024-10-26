@@ -1,6 +1,5 @@
 # FIX
 - Page update in Chrome (Safari?)
-- Compress legacy images
 
 # FEATURES
 - Card q-ty change in autocompletion

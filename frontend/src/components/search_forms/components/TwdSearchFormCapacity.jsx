@@ -11,13 +11,11 @@ const TwdSearchFormCapacity = ({ value, onChange }) => {
         <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Capacity Avg:</div>
       </div>
       <div className="flex w-3/4 justify-end">
-        {options.map((i, idx) => {
-          return (
-            <ButtonGroup isSelected={value[i]} key={idx} name={name} onClick={onChange} value={i}>
-              {i}
-            </ButtonGroup>
-          );
-        })}
+        {options.map((i, idx) => (
+          <ButtonGroup isSelected={value[i]} key={idx} name={name} onClick={onChange} value={i}>
+            {i}
+          </ButtonGroup>
+        ))}
       </div>
     </div>
   );

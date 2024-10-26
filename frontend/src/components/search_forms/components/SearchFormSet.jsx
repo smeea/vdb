@@ -26,7 +26,7 @@ import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 
 const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
   const { playtestMode, isMobile, isXWide } = useApp();
-  const maxMenuHeight = isXWide ? 500 : 350;
+  const menuHeight = isXWide ? 500 : 350;
   const name = 'set';
 
   const options = [
@@ -80,9 +80,7 @@ const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
       year = label.props.children[1].props?.children;
     }
 
-    if (name) {
-      return `${name} ${year}`.toLowerCase().includes(string);
-    }
+    if (name) return `${name} ${year}`.toLowerCase().includes(string);
     return true;
   };
 
@@ -108,7 +106,7 @@ const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
             isClearable={value.value[0] !== ANY}
             filterOption={filterOption}
             name={0}
-            maxMenuHeight={maxMenuHeight}
+            menuHeight={menuHeight}
             value={options.find((obj) => obj.value === value.value[0])}
             onChange={(e, id) => (e ? onChange(e, id) : onChange({ name: name, value: ANY }, id))}
           />
@@ -121,7 +119,7 @@ const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
         searchForm={searchForm}
         options={options}
         onChange={onChange}
-        maxMenuHeight={maxMenuHeight}
+        menuHeight={menuHeight}
       />
       <div className="flex flex-col gap-2">
         <div className="flex items-center justify-end gap-4">

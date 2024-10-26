@@ -18,33 +18,18 @@ const CryptSearchFormClan = ({ value, searchForm, onChange }) => {
   const name = 'clan';
   const options = ['ANY', ...vampireClansList, ...imbuedClansList]
     .filter((clan) => playtestMode || clan !== 'Hecata')
-    .map((i) => {
-      if (i.toLowerCase() == ANY) {
-        return {
-          value: i.toLowerCase(),
-          name: name,
-          label: (
-            <div className="flex items-center">
-              <div className="flex w-[40px]" />
-              {i}
-            </div>
-          ),
-        };
-      } else {
-        return {
-          value: i.toLowerCase(),
-          name: name,
-          label: (
-            <div className="flex items-center">
-              <div className="flex w-[40px] justify-center">
-                <ResultClanImage value={i} />
-              </div>
-              {i}
-            </div>
-          ),
-        };
-      }
-    });
+    .map((i) => ({
+      value: i.toLowerCase(),
+      name: name,
+      label: (
+        <div className="flex items-center">
+          <div className="flex w-[40px] justify-center">
+            {i.toLowerCase() !== ANY && <ResultClanImage value={i} />}
+          </div>
+          {i}
+        </div>
+      ),
+    }));
 
   return (
     <>

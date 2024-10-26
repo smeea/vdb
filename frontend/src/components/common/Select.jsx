@@ -15,8 +15,11 @@ const Select = React.forwardRef(
       isClearable = false,
       isDisabled = false,
       isSearchable,
+      minMenuHeight,
       maxMenuHeight,
+      menuHeight,
       menuPlacement = 'auto',
+      menuShouldScrollIntoView = true,
       name,
       noBorder,
       noDropdown,
@@ -60,7 +63,9 @@ const Select = React.forwardRef(
         isClearable={isClearable}
         isDisabled={isDisabled}
         isSearchable={isSearchable}
-        maxMenuHeight={maxMenuHeight}
+        minMenuHeight={menuHeight || minMenuHeight}
+        maxMenuHeight={menuHeight || maxMenuHeight}
+        menuShouldScrollIntoView={menuShouldScrollIntoView}
         menuPlacement={menuPlacement}
         name={name}
         onChange={onChange}

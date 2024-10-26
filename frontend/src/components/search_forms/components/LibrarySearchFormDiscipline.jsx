@@ -28,33 +28,18 @@ const LibrarySearchFormDiscipline = ({ value, onChange, searchForm }) => {
     'Not Required',
     ...disciplinesExtendedList,
     ...Object.keys(virtuesList),
-  ].map((i) => {
-    if (['ANY', 'Not Required'].includes(i)) {
-      return {
-        value: i.toLowerCase(),
-        name: name,
-        label: (
-          <div className="flex items-center">
-            <div className="flex w-[40px]" />
-            {i}
-          </div>
-        ),
-      };
-    } else {
-      return {
-        value: i.toLowerCase(),
-        name: name,
-        label: (
-          <div className="flex items-center">
-            <div className="flex w-[40px] justify-center">
-              <ResultDisciplineImage value={i} size="lg" />
-            </div>
-            {i}
-          </div>
-        ),
-      };
-    }
-  });
+  ].map((i) => ({
+    value: i.toLowerCase(),
+    name: name,
+    label: (
+      <div className="flex items-center">
+        <div className="flex w-[40px] justify-center">
+          {!['ANY', 'Not Required'].includes(i) && <ResultDisciplineImage value={i} size="lg" />}
+        </div>
+        {i}
+      </div>
+    ),
+  }));
 
   return (
     <>

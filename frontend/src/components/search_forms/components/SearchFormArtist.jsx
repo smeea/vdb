@@ -8,7 +8,7 @@ import { CRYPT, ANY } from '@/utils/constants';
 const SearchFormArtist = ({ target, value, onChange }) => {
   const { isXWide } = useApp();
   const name = 'artist';
-  const maxMenuHeight = isXWide ? 500 : 350;
+  const menuHeight = isXWide ? 500 : 350;
   const artists = target == CRYPT ? cryptArtists : libraryArtists;
 
   const options = artists.map((artist) => {
@@ -39,7 +39,7 @@ const SearchFormArtist = ({ target, value, onChange }) => {
         <Select
           options={options}
           isClearable={value !== ANY}
-          maxMenuHeight={maxMenuHeight}
+          menuHeight={menuHeight}
           name={name}
           placeholder="Artist"
           value={options.find((obj) => obj.value === value)}

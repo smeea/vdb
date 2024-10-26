@@ -15,33 +15,18 @@ const LibrarySearchFormType = ({ value, onChange, searchForm }) => {
   const { isXWide } = useApp();
   const maxMenuHeight = isXWide ? 500 : 350;
   const name = 'type';
-  const options = ['ANY', ...cardtypeSorted].map((i) => {
-    if (i.toLowerCase() == ANY) {
-      return {
-        value: i.toLowerCase(),
-        name: name,
-        label: (
-          <div className="flex items-center">
-            <div className="flex w-[40px]" />
-            {i}
-          </div>
-        ),
-      };
-    } else {
-      return {
-        value: i.toLowerCase(),
-        name: 'type',
-        label: (
-          <div className="flex items-center">
-            <div className="flex w-[40px] justify-center">
-              <ResultLibraryTypeImage size="lg" value={i} />
-            </div>
-            {i}
-          </div>
-        ),
-      };
-    }
-  });
+  const options = ['ANY', ...cardtypeSorted].map((i) => ({
+    value: i.toLowerCase(),
+    name: 'type',
+    label: (
+      <div className="flex items-center">
+        <div className="flex w-[40px] justify-center">
+          {i.toLowerCase() !== ANY && <ResultLibraryTypeImage size="lg" value={i} />}
+        </div>
+        {i}
+      </div>
+    ),
+  }));
 
   return (
     <>

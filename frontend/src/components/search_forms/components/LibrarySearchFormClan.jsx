@@ -19,33 +19,18 @@ const LibrarySearchFormClan = ({ value, searchForm, onChange }) => {
 
   const options = ['ANY', 'Not Required', ...vampireClansList, ...imbuedClansList]
     .filter((clan) => playtestMode || clan !== 'Hecata')
-    .map((i) => {
-      if (['ANY', 'Not Required'].includes(i)) {
-        return {
-          value: i.toLowerCase(),
-          name: name,
-          label: (
-            <div className="flex items-center">
-              <div className="flex w-[40px]" />
-              {i}
-            </div>
-          ),
-        };
-      } else {
-        return {
-          value: i.toLowerCase(),
-          name: name,
-          label: (
-            <div className="flex items-center">
-              <div className="flex w-[40px] justify-center">
-                <ResultLibraryClan value={i} />
-              </div>
-              {i}
-            </div>
-          ),
-        };
-      }
-    });
+    .map((i) => ({
+      value: i.toLowerCase(),
+      name: name,
+      label: (
+        <div className="flex items-center">
+          <div className="flex w-[40px] justify-center">
+            {!['ANY', 'Not Required'].includes(i) && <ResultLibraryClan value={i} />}
+          </div>
+          {i}
+        </div>
+      ),
+    }));
 
   return (
     <>

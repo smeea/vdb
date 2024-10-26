@@ -13,7 +13,7 @@ import { FIRST, REPRINT, PRINT, BCP, PLAYTEST, ANY, ONLY } from '@/utils/constan
 
 const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
   const { playtestMode, isMobile, isXWide } = useApp();
-  const maxMenuHeight = isXWide ? 500 : 350;
+  const menuHeight = isXWide ? 500 : 350;
   const name = 'precon';
 
   const options = [
@@ -66,7 +66,7 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
                   </div>
                   {fullName}
                 </div>
-                <div className="text-sm">
+                <div className="whitespace-nowrap text-sm">
                   {set} {year && `'${year}`}
                 </div>
               </div>
@@ -109,7 +109,7 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
             isClearable={value.value[0] !== ANY}
             filterOption={filterOption}
             name={0}
-            maxMenuHeight={maxMenuHeight}
+            menuHeight={menuHeight}
             value={options.find((obj) => obj.value === value.value[0])}
             onChange={(e, id) => (e ? onChange(e, id) : onChange({ name: name, value: ANY }, id))}
           />
@@ -122,7 +122,7 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
         searchForm={searchForm}
         options={options}
         onChange={onChange}
-        maxMenuHeight={maxMenuHeight}
+        menuHeight={menuHeight}
       />
       <div className="flex items-center justify-end gap-4">
         {[
