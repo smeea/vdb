@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Activity from '@/assets/images/icons/activity.svg?react';
-import { Hr, Modal, ButtonIconed, TextWithLinks } from '@/components';
+import { Spinner, Hr, Modal, ButtonIconed, TextWithLinks } from '@/components';
 import { useFetch } from '@/hooks';
 import lastChange from '@/LAST_CHANGE.json';
 
 const UpdateNotification = () => {
   const [update, setUpdate] = useState();
+  const [isLoading, setIsLoading] = useState();
+  const navigate = useNavigate();
   const url = `${import.meta.env.VITE_API_URL}/version`;
   const { value } = useFetch(url, {}, []);
   if (update === undefined && value?.version > lastChange.version) {
@@ -32,11 +35,13 @@ const UpdateNotification = () => {
             <Hr />
             <ButtonIconed
               variant="primary"
+              disabled={isLoading}
               onClick={() => {
-                window.location.reload(true);
+                setIsLoading(true);
+                navigate('/');
               }}
-              icon={<Activity />}
-              text="Apply Update"
+              icon={isLoading ? <Spinner className="size-5" /> : <Activity />}
+              text={isLoading ? 'Loading, please wait...' : 'Apply Update'}
             />
             <div className="text-sm text-fgRed dark:text-fgRedDark">
               If this window show up again after clicking Apply Update, please refresh the page
