@@ -18,7 +18,7 @@ const DeckLibraryTotalInfo = ({ byClans, byTypes, byDisciplines }) => {
     : [];
 
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex flex-col gap-2 bg-bgSecondary p-2 dark:bg-bgSecondaryDark">
       <div>
         {Object.keys(byTypes).map((t, idx) => {
           return (

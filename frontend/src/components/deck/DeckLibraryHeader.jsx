@@ -89,9 +89,7 @@ const DeckLibraryHeader = ({
         </div>
       </Header>
       {showInfo && (
-        <div className="bg-bgSecondary p-2 dark:bg-bgSecondaryDark">
-          <DeckLibraryTotalInfo byDisciplines={byDisciplines} byTypes={byTypes} byClans={byClans} />
-        </div>
+        <DeckLibraryTotalInfo byDisciplines={byDisciplines} byTypes={byTypes} byClans={byClans} />
       )}
       {showAdd && (
         <DeckNewCard

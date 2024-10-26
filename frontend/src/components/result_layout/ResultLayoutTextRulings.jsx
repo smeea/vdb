@@ -5,7 +5,7 @@ import { CardPopover, ResultName, ResultMiscImage, ConditionalTooltip } from '@/
 
 const Refs = ({ refs }) => {
   return (
-    <>
+    <div className={Object.keys(refs).length > 2 ? 'flex flex-wrap gap-1' : 'inline space-x-1'}>
       {Object.keys(refs).map((i) => {
         return (
           <div key={i} className="inline whitespace-nowrap">
@@ -15,14 +15,14 @@ const Refs = ({ refs }) => {
           </div>
         );
       })}
-    </>
+    </div>
   );
 };
 
 const Text = ({ text }) => {
   const { nativeCrypt, nativeLibrary, cryptCardBase, libraryCardBase, isMobile } = useApp();
 
-  let textWithIcons = reactStringReplace(text, /\[(\w+?)\]/g, (match, idx) => {
+  const textWithIcons = reactStringReplace(text, /\[(\w+?)\]/g, (match, idx) => {
     return (
       <div key={`${match}-${idx}`} className="inline pr-0.5">
         <ResultMiscImage value={match} />
@@ -30,7 +30,7 @@ const Text = ({ text }) => {
     );
   });
 
-  textWithIcons = reactStringReplace(textWithIcons, /{(.*?)}/g, (match, idx) => {
+  return reactStringReplace(textWithIcons, /{(.*?)}/g, (match, idx) => {
     const cardBase = { ...nativeCrypt, ...nativeLibrary };
     const cardid = Object.keys(cardBase).find((j) => cardBase[j].Name == match);
 
@@ -38,18 +38,18 @@ const Text = ({ text }) => {
 
     if (card) {
       return (
-        <span key={`${match}-${idx}`}>
-          <ConditionalTooltip overlay={<CardPopover card={card} />} disabled={isMobile} noPadding>
-            <ResultName card={card} />
-          </ConditionalTooltip>
-        </span>
+        <ConditionalTooltip
+          key={`${match}-${idx}`}
+          overlay={<CardPopover card={card} />}
+          disabled={isMobile}
+          noPadding
+        >
+          <ResultName card={card} />
+        </ConditionalTooltip>
       );
-    } else {
-      return <React.Fragment key={idx}>&#123;{match}&#125;</React.Fragment>;
     }
+    return <React.Fragment key={idx}>&#123;{match}&#125;</React.Fragment>;
   });
-
-  return <>{textWithIcons}</>;
 };
 
 const ResultLayoutTextRulings = ({ rulings }) => {
@@ -63,13 +63,7 @@ const ResultLayoutTextRulings = ({ rulings }) => {
             {text.map((i, idxText) => {
               return <Text key={`x${idxText}`} text={i} />;
             })}
-            <div
-              className={
-                Object.keys(k['refs']).length > 2 ? 'flex flex-wrap gap-1' : 'inline space-x-1'
-              }
-            >
-              <Refs refs={k['refs']} />
-            </div>
+            <Refs refs={k['refs']} />
           </li>
         );
       })}

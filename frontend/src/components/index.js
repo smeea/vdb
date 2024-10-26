@@ -19,6 +19,9 @@ export { default as AccountRegister } from './account/AccountRegister';
 export { default as AccountUsernameForm } from './account/AccountUsernameForm';
 export { default as LoginBlock } from './account/LoginBlock';
 
+export { default as CardsDesktop } from './cards/CardsDesktop.jsx';
+export { default as CardsMobile } from './cards/CardsMobile.jsx';
+
 export { default as Button } from './common/Button.jsx';
 export { default as ButtonFloat } from './common/ButtonFloat.jsx';
 export { default as ButtonIconed } from './common/ButtonIconed.jsx';
