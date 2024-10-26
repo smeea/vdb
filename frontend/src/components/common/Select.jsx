@@ -75,40 +75,44 @@ const Select = React.forwardRef(
         unstyled
         value={value}
         classNames={{
-          control: (state) => `
-            ${
-              noBorder
-                ? ''
-                : state.isFocused
-                  ? `${roundedStyle} ${borderStyle} bg-bgPrimary dark:bg-bgPrimaryDark border-bgCheckboxSelected dark:border-bgCheckboxSelectedDark`
-                  : `${roundedStyle} ${borderStyle} bg-bgPrimary dark:bg-bgPrimaryDark border-borderSecondary dark:border-borderSecondaryDark`
-            }`,
+          control: (state) =>
+            twMerge(
+              'hover:cursor-pointer',
+              !noBorder && `bg-bgPrimary dark:bg-bgPrimaryDark ${roundedStyle} ${borderStyle}`,
+              !noBorder &&
+                (state.isFocused
+                  ? 'border-bgCheckboxSelected dark:border-bgCheckboxSelectedDark'
+                  : 'border-borderSecondary dark:border-borderSecondaryDark'),
+            ),
           dropdownIndicator: () =>
             variant == 'creatable' || noDropdown
               ? 'max-w-[0px] max-h-[0px]'
               : 'px-2 text-borderSecondary dark:text-borderSecondaryDark',
-          indicatorsContainer: () => `rounded
-            ${variant == 'creatable' || noDropdown ? 'max-h-[0px] max-w-[0px]' : 'py-1.5 '}`,
+          indicatorsContainer: () =>
+            twMerge(
+              'rounded',
+              variant == 'creatable' || noDropdown ? 'max-h-[0px] max-w-[0px]' : 'py-1.5 ',
+            ),
           indicatorSeparator: () => 'bg-borderSecondary dark:bg-borderSecondaryDark',
           menu: () => 'my-2 rounded border border-borderThird dark:border-borderThirdDark',
           menuList: () => 'rounded bg-bgPrimary dark:bg-bgPrimaryDark',
 
-          option: (state) => `p-2 text-fgPrimary dark:text-fgPrimaryDark
-          ${
-            state.isFocused
-              ? 'bg-borderPrimary dark:bg-bgCheckboxSelectedDark'
-              : state.isSelected
-                ? 'bg-borderSecondary dark:bg-borderPrimaryDark'
-                : ''
-          }
-`,
+          option: (state) =>
+            twMerge(
+              'p-2 hover:cursor-pointer text-fgPrimary dark:text-fgPrimaryDark',
+              state.isFocused
+                ? 'bg-borderPrimary dark:bg-bgCheckboxSelectedDark'
+                : state.isSelected && 'bg-borderSecondary dark:bg-borderPrimaryDark',
+            ),
           container: () => twMerge('bg-bgPrimary dark:bg-bgPrimaryDark', roundedStyle, className),
           placeholder: () => 'text-midGray dark:text-midGrayDark',
           // no bg- in creatable
           valueContainer: () =>
-            `px-2 min-h-[40px] text-fgPrimary dark:text-fgPrimaryDark bg-bgPrimary dark:bg-bgPrimaryDark rounded
-              ${variant == 'creatable' ? (noBorder ? '' : 'px-[5px]') : ''}
-              ${variant == 'creatable' ? 'gap-1' : ''}`,
+            twMerge(
+              'px-2 min-h-[40px] text-fgPrimary dark:text-fgPrimaryDark bg-bgPrimary dark:bg-bgPrimaryDark rounded',
+              variant == 'creatable' && !noBorder && 'px-[5px]',
+              variant == 'creatable' && 'gap-1',
+            ),
           noOptionsMessage: () => 'rounded p-2',
           clearIndicator: () => 'text-lightGray dark:text-lightGrayDark pr-2',
 
@@ -119,13 +123,13 @@ const Select = React.forwardRef(
           // Creatable
           input: () => (noRemove ? 'max-w-[0px] max-h-[0px]' : ''),
           multiValue: () => 'bg-bgButton dark:bg-bgButtonDark rounded',
-          multiValueLabel:
-            () => `text-sm px-[5px] py-1 border-borderSecondary dark:border-borderSecondaryDark
-          ${
-            noRemove
-              ? 'border rounded'
-              : 'border-l border-y border-borderSecondary dark:border-borderSecondaryDark rounded-l rounded-y'
-          }`,
+          multiValueLabel: () =>
+            twMerge(
+              'text-sm px-[5px] py-1 border-borderSecondary dark:border-borderSecondaryDark',
+              noRemove
+                ? 'border rounded'
+                : 'border-l border-y border-borderSecondary dark:border-borderSecondaryDark rounded-l rounded-y',
+            ),
           multiValueRemove: () =>
             noRemove
               ? 'max-w-[0px] max-h-[0px] hidden'

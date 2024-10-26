@@ -11,12 +11,16 @@ const Checkbox = ({ checked, prefix, disabled, name, value, onChange, label, id,
         disabled={disabled}
         value={value}
         type="checkbox"
-        className="form-checkbox h-[16px] w-[16px] rounded border-borderPrimary bg-white checked:bg-bgCheckboxSelected dark:border-none dark:bg-whiteDark checked:dark:bg-bgCheckboxSelectedDark"
+        className="form-checkbox h-[16px] w-[16px] rounded border-borderPrimary bg-white checked:bg-bgCheckboxSelected hover:cursor-pointer dark:border-none dark:bg-whiteDark checked:dark:bg-bgCheckboxSelectedDark"
         id={htmlId}
         onChange={onChange}
         checked={checked}
       />
-      {label ? <label htmlFor={htmlId}>{label}</label> : null}
+      {label ? (
+        <label className="hover:cursor-pointer" htmlFor={htmlId}>
+          {label}
+        </label>
+      ) : null}
     </div>
   );
 };
