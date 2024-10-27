@@ -196,11 +196,11 @@ export const AppProvider = ({ children }) => {
       LOCALIZED_CRYPT,
       LOCALIZED_LIBRARY,
       PRECON_DECKS,
-      LIMITED_SETS,
+      LIMITED_ALLOWED_CRYPT,
+      LIMITED_ALLOWED_LIBRARY,
       LIMITED_BANNED_CRYPT,
       LIMITED_BANNED_LIBRARY,
-      LIMITED_ALLOWED_LIBRARY,
-      LIMITED_ALLOWED_CRYPT,
+      LIMITED_SETS,
     ])
       .then(([v, cb, lb, nc, nl, lc, ll, pd, lac, lal, lbc, lbl, ls]) => {
         if (!v || CARD_VERSION > v) {
@@ -215,8 +215,8 @@ export const AppProvider = ({ children }) => {
           setLocalizedCrypt(lc);
           setLocalizedLibrary(ll);
           setPreconDecks(pd);
-          setLimitedFormat(lac, lal, lbc, lbl, ls);
         }
+        setLimitedFormat(lac, lal, lbc, lbl, ls);
       })
       .catch(() => {
         fetchAndSetCardBase(false);

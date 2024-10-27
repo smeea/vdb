@@ -1,5 +1,4 @@
 # FIX
-- Page update in Chrome (Safari?)
 
 # FEATURES
 - Card q-ty change in autocompletion
