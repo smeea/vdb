@@ -1,32 +1,7 @@
 import React from 'react';
 import { Toggle, ConditionalTooltipOrModal } from '@/components';
 import { useApp } from '@/context';
-
-const legacyImagesClans = [
-  'Abomination',
-  'Ahrimane',
-  'Baali',
-  'Banu Haqim',
-  'Blood Brother',
-  'Caitiff',
-  'Daughter of Cacophony',
-  'Gargoyle',
-  'Giovanni',
-  'Harbinger of Skulls',
-  'Kiasyd',
-  'Ministry',
-  'Nagaraja',
-  'Pander',
-  'Ravnos',
-  'Salubri antitribu',
-  'Salubri',
-  'Samedi',
-  'Toreador',
-  'Tremere',
-  'True Brujah',
-  'Tzimisce',
-  'Ventrue',
-];
+import legacyImagesClans from '@/assets/data/legacyImagesClansList.json';
 
 const TooltipText = () => {
   return (

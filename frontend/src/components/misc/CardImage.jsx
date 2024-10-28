@@ -3,32 +3,7 @@ import { twMerge } from 'tailwind-merge';
 import { useApp } from '@/context';
 import { useCardImageUrl } from '@/hooks';
 import { EN } from '@/utils/constants';
-
-const legacyImagesClans = [
-  'Abomination',
-  'Ahrimane',
-  'Baali',
-  'Banu Haqim',
-  'Blood Brother',
-  'Caitiff',
-  'Daughter of Cacophony',
-  'Gargoyle',
-  'Giovanni',
-  'Harbinger of Skulls',
-  'Kiasyd',
-  'Ministry',
-  'Nagaraja',
-  'Pander',
-  'Ravnos',
-  'Salubri antitribu',
-  'Salubri',
-  'Samedi',
-  'Toreador',
-  'Tremere',
-  'True Brujah',
-  'Tzimisce',
-  'Ventrue',
-];
+import legacyImagesClans from '@/assets/data/legacyImagesClansList.json';
 
 const CardImage = ({ card, set, className = 'max-sm:w-full', size = 'md', onClick }) => {
   const { lang, showLegacyImage } = useApp();
