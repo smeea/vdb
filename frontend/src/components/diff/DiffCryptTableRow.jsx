@@ -7,7 +7,7 @@ import {
   DiffQuantityDiffCard,
   ResultCryptTableRowCommon,
 } from '@/components';
-import { getSoftMax, getHardTotal } from '@/utils';
+import { getSwipedBg, getSoftMax, getHardTotal } from '@/utils';
 import { useApp, usedStore, inventoryStore, deckStore, deckCardChange } from '@/context';
 import { useSwipe } from '@/hooks';
 import { SOFT, HARD, CRYPT, DECKS } from '@/utils/constants';
@@ -41,16 +41,13 @@ const DiffCryptTableRow = ({
     isEditable,
   );
 
-  const trBg = isSwiped
-    ? isSwiped === 'right'
-      ? 'bg-bgSuccess dark:bg-bgSuccessDark'
-      : 'bg-bgErrorSecondary dark:bg-bgErrorSecondaryDark'
-    : 'row-bg ';
-
   return (
     <tr
       {...swipeHandlers}
-      className={twMerge('h-[38px] border-y border-bgSecondary dark:border-bgSecondaryDark', trBg)}
+      className={twMerge(
+        'h-[38px] border-y border-bgSecondary dark:border-bgSecondaryDark',
+        getSwipedBg(isSwiped),
+      )}
     >
       <DeckCardQuantityTd
         card={card.c}

@@ -210,6 +210,16 @@ export const getSect = (crypt) => {
   }
 };
 
+export const getSwipedBg = (isSwiped, inInventory) => {
+  if (isSwiped) {
+    return isSwiped === 'right'
+      ? 'bg-bgSuccess dark:bg-bgSuccessDark'
+      : 'bg-bgErrorSecondary dark:bg-bgErrorSecondaryDark';
+  } else {
+    return inInventory ? '' : 'row-bg';
+  }
+};
+
 export const deepClone = (v) => JSON.parse(JSON.stringify(v));
 export const capitalize = (v) => v.charAt(0).toUpperCase() + v.slice(1);
 

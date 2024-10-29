@@ -46,7 +46,7 @@ const DeckDrawCryptTable = ({
                 inDeck
               />
               {(!ashHeap || !isMobile) && (
-                <td className="min-w-[45px] p-1 text-right text-fgSecondary dark:text-fgSecondaryDark">
+                <td className="min-w-[45px] text-right text-fgSecondary dark:text-fgSecondaryDark sm:p-1">
                   {!ashHeap && (
                     <DeckDrawProbability cardName={card.Name} N={N} n={n} k={nonPlayed[card.Id]} />
                   )}

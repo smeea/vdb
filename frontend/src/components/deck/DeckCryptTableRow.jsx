@@ -8,8 +8,8 @@ import {
   ResultCryptTableRowCommon,
   DeckDrawProbability,
 } from '@/components';
-import { getSoftMax, getHardTotal } from '@/utils';
 import { useSwipe } from '@/hooks';
+import { getSwipedBg, getSoftMax, getHardTotal } from '@/utils';
 import { SOFT, HARD, CRYPT } from '@/utils/constants';
 
 const DeckCryptTableRow = ({
@@ -24,6 +24,7 @@ const DeckCryptTableRow = ({
   inMissing,
   noDisciplines,
   shouldShowModal,
+  inSide,
 }) => {
   const { limitedMode, inventoryMode, isDesktop } = useApp();
   const usedCrypt = useSnapshot(usedStore)[CRYPT];
@@ -43,16 +44,13 @@ const DeckCryptTableRow = ({
   const softUsedMax = getSoftMax(usedCrypt[SOFT][card.c.Id]) ?? 0;
   const hardUsedTotal = getHardTotal(usedCrypt[HARD][card.c.Id]) ?? 0;
 
-  const trBg = isSwiped
-    ? isSwiped === 'right'
-      ? 'bg-bgSuccess dark:bg-bgSuccessDark'
-      : 'bg-bgErrorSecondary dark:bg-bgErrorSecondaryDark'
-    : 'row-bg';
-
   return (
     <tr
       {...swipeHandlers}
-      className={twMerge('h-[38px] border-y border-bgSecondary dark:border-bgSecondaryDark', trBg)}
+      className={twMerge(
+        'h-[38px] border-y border-bgSecondary dark:border-bgSecondaryDark',
+        getSwipedBg(isSwiped),
+      )}
     >
       {inventoryMode && deck.inventoryType && !inMissing && !inSearch && isDesktop && (
         <DeckCardToggleInventoryStateTd card={card} deck={deck} />
@@ -82,8 +80,10 @@ const DeckCryptTableRow = ({
         inDeck
       />
       {showInfo && (
-        <td className="min-w-[40px] text-right sm:p-1">
-          <DeckDrawProbability cardName={card.c.Name} N={cryptTotal} n={4} k={card.q} />
+        <td className="min-w-[45px] text-right sm:p-1">
+          {!inSide && (
+            <DeckDrawProbability cardName={card.c.Name} N={cryptTotal} n={4} k={card.q} />
+          )}
         </td>
       )}
     </tr>

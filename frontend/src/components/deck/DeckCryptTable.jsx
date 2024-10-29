@@ -13,6 +13,7 @@ const DeckCryptTable = ({
   inMissing,
   noDisciplines,
   shouldShowModal,
+  inSide,
 }) => {
   return (
     <table className="w-full border-bgSecondary dark:border-bgSecondaryDark sm:border">
@@ -32,6 +33,7 @@ const DeckCryptTable = ({
               noDisciplines={noDisciplines}
               inMissing={inMissing}
               shouldShowModal={shouldShowModal}
+              inSide={inSide}
             />
           );
         })}

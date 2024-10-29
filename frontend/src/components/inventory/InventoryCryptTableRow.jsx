@@ -14,7 +14,7 @@ import {
   ResultCryptClanGroupTitle,
   ConditionalTooltip,
 } from '@/components';
-import { getHardTotal, getSoftMax } from '@/utils';
+import { getSwipedBg, getHardTotal, getSoftMax } from '@/utils';
 import { useApp, inventoryStore, usedStore, limitedStore, inventoryCardChange } from '@/context';
 import { useSwipe } from '@/hooks';
 import { IS_FROZEN, SOFT, HARD, CRYPT } from '@/utils/constants';
@@ -33,14 +33,11 @@ const InventoryCryptTableRow = ({ card, compact, newFocus, inShared, handleClick
     () => inventoryCardChange(card.c, card.q + 1),
   );
 
-  const trBg = isSwiped
-    ? isSwiped === 'right'
-      ? 'bg-bgSuccess dark:bg-bgSuccessDark'
-      : 'bg-bgErrorSecondary dark:bg-bgErrorSecondaryDark'
-    : '';
-
   return (
-    <div className={twMerge('flex w-full items-center', trBg)} {...swipeHandlers}>
+    <div
+      {...swipeHandlers}
+      className={twMerge('flex w-full items-center', getSwipedBg(isSwiped, true))}
+    >
       {inShared ? (
         <div className="flex h-full min-w-[42px] border-r border-bgSecondary bg-blue/5 dark:border-bgSecondaryDark sm:min-w-[48px]">
           {card.q || null}

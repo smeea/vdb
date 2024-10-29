@@ -9,6 +9,7 @@ import {
 } from '@/components';
 import { useApp, deckStore, deckCardChange } from '@/context';
 import { useSwipe } from '@/hooks';
+import { getSwipedBg } from '@/utils';
 import { DECK } from '@/utils/constants';
 
 const ResultCryptTableRow = ({
@@ -30,16 +31,13 @@ const ResultCryptTableRow = ({
     inDeck > 0,
   );
 
-  const trBg = isSwiped
-    ? isSwiped === 'right'
-      ? 'bg-bgSuccess dark:bg-bgSuccessDark'
-      : 'bg-bgErrorSecondary dark:bg-bgErrorSecondaryDark'
-    : 'row-bg';
-
   return (
     <tr
       {...swipeHandlers}
-      className={twMerge('h-[38px] border-y border-bgSecondary dark:border-bgSecondaryDark', trBg)}
+      className={twMerge(
+        'h-[38px] border-y border-bgSecondary dark:border-bgSecondaryDark',
+        getSwipedBg(isSwiped),
+      )}
     >
       {inLimited ? (
         <td className="min-w-[22px]">

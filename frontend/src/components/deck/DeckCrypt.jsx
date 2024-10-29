@@ -113,11 +113,13 @@ const DeckCrypt = ({ inSearch, inPreview, inMissing, noDisciplines, deck }) => {
             handleClick={handleClickSide}
             cards={sortedCardsSide}
             disciplinesSet={disciplinesSet}
+            showInfo={showInfo}
             keyDisciplines={keyDisciplines}
             noDisciplines={noDisciplines}
             inSearch={inSearch}
             inMissing={inMissing}
             shouldShowModal={shouldShowModal}
+            inSide
           />
         </div>
       )}

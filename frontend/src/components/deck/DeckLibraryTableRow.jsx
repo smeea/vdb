@@ -8,7 +8,7 @@ import {
   ResultLibraryTableRowCommon,
   DeckDrawProbability,
 } from '@/components';
-import { getSoftMax, getHardTotal } from '@/utils';
+import { getSwipedBg, getSoftMax, getHardTotal } from '@/utils';
 import { useSwipe } from '@/hooks';
 import { SOFT, HARD, LIBRARY } from '@/utils/constants';
 
@@ -40,16 +40,13 @@ const DeckLibraryTableRow = ({
   const softUsedMax = getSoftMax(usedLibrary[SOFT][card.c.Id]) ?? 0;
   const hardUsedTotal = getHardTotal(usedLibrary[HARD][card.c.Id]) ?? 0;
 
-  const trBg = isSwiped
-    ? isSwiped === 'right'
-      ? 'bg-bgSuccess dark:bg-bgSuccessDark'
-      : 'bg-bgErrorSecondary dark:bg-bgErrorSecondaryDark'
-    : 'row-bg ';
-
   return (
     <tr
       {...swipeHandlers}
-      className={twMerge('h-[38px] border-y border-bgSecondary dark:border-bgSecondaryDark', trBg)}
+      className={twMerge(
+        'h-[38px] border-y border-bgSecondary dark:border-bgSecondaryDark',
+        getSwipedBg(isSwiped),
+      )}
     >
       {inventoryMode && deck.inventoryType && !inMissing && !inSearch && isDesktop && (
         <DeckCardToggleInventoryStateTd card={card} deck={deck} />
@@ -75,7 +72,7 @@ const DeckLibraryTableRow = ({
         inDeck
       />
       {showInfo && (
-        <td className="min-w-[40px] text-right sm:p-1">
+        <td className="min-w-[45px] text-right sm:p-1">
           <DeckDrawProbability cardName={card.c.Name} N={libraryTotal} n={7} k={card.q} />
         </td>
       )}
