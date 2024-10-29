@@ -4054,7 +4054,9 @@
         "player":"Johan Carlsson"
     },
     "201698":{
-        "deckid":null
+        "deckid":"11669",
+        "twdDate":"2024-09-29",
+        "player":"Danilo Torrisi"
     },
     "200736":{
         "deckid":"2k4dcqualifier",
@@ -7978,7 +7980,9 @@
         "player":"Douglass Brindley"
     },
     "201619":{
-        "deckid":null
+        "deckid":"11672",
+        "twdDate":"2024-10-12",
+        "player":"Kelly Lyons"
     },
     "201445":{
         "deckid":"2k3apphilippines",
@@ -9050,7 +9054,9 @@
         "player":"Nikos Quemuel"
     },
     "100147":{
-        "deckid":null
+        "deckid":"11212",
+        "twdDate":"2024-01-20",
+        "player":"Eduardo Manuel Mateus"
     },
     "100148":{
         "deckid":"2012ffnmg",
@@ -12241,7 +12247,9 @@
         "player":"Alexander J Skrabut"
     },
     "100802":{
-        "deckid":null
+        "deckid":"11735",
+        "twdDate":"2024-10-06",
+        "player":"Mailton Silva"
     },
     "100803":{
         "deckid":"jamesh",
@@ -13190,7 +13198,9 @@
         "player":"Jay Kristoff"
     },
     "102251":{
-        "deckid":null
+        "deckid":"11458",
+        "twdDate":"2024-06-08",
+        "player":"Jan-Willem Kaagman"
     },
     "101004":{
         "deckid":"2k3politicalflux",
@@ -16619,9 +16629,9 @@
         "player":"Misty Martin"
     },
     "102260":{
-        "deckid":"11139",
-        "twdDate":"2024-06-09",
-        "player":"Joab Rogerio Barbosa da Silva"
+        "deckid":"11458",
+        "twdDate":"2024-06-08",
+        "player":"Jan-Willem Kaagman"
     },
     "101703":{
         "deckid":"2k4powerbasepalma",

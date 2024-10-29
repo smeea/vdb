@@ -319,7 +319,7 @@
             }
         },
         "Title":"",
-        "Twd":4
+        "Twd":5
     },
     "201634":{
         "ASCII Name":"Abraham Mellon",
@@ -357,7 +357,7 @@
             }
         },
         "Title":"",
-        "Twd":14
+        "Twd":15
     },
     "200009":{
         "ASCII Name":"Abu Nuwasi",
@@ -707,7 +707,7 @@
             }
         },
         "Title":"baron",
-        "Twd":16
+        "Twd":21
     },
     "200017":{
         "ASCII Name":"Aeron",
@@ -1040,7 +1040,7 @@
             }
         },
         "Title":"",
-        "Twd":2
+        "Twd":3
     },
     "200026":{
         "ASCII Name":"Aimee Laroux",
@@ -1576,7 +1576,7 @@
             }
         },
         "Title":"",
-        "Twd":15
+        "Twd":16
     },
     "200039":{
         "ASCII Name":"Alabastrom",
@@ -1998,7 +1998,7 @@
             }
         },
         "Title":"prince",
-        "Twd":12
+        "Twd":13
     },
     "200049":{
         "ASCII Name":"Alexandra",
@@ -2038,8 +2038,7 @@
             {
                 "text":"The ability can be used when in torpor. ",
                 "refs":{
-                    "[LSJ 20011022]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ",
-                    "[LSJ 20100902-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/mFpx91METxM/m/ETLGtyQfvksJ"
+                    "[LSJ 20011022]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
                 }
             }
         ],
@@ -2329,7 +2328,7 @@
             }
         },
         "Title":"baron",
-        "Twd":32
+        "Twd":35
     },
     "200055":{
         "ASCII Name":"Allanyan Serata",
@@ -2529,7 +2528,7 @@
             }
         },
         "Title":"justicar",
-        "Twd":27
+        "Twd":28
     },
     "200061":{
         "ASCII Name":"Alonzo Guillen",
@@ -2592,7 +2591,7 @@
             }
         },
         "Title":"",
-        "Twd":40
+        "Twd":41
     },
     "201577":{
         "ASCII Name":"Aluc Romas de Leon",
@@ -2622,7 +2621,7 @@
             }
         },
         "Title":"",
-        "Twd":20
+        "Twd":21
     },
     "200063":{
         "ASCII Name":"Alvaro, The Scion of Angelica",
@@ -3238,7 +3237,7 @@
             }
         },
         "Title":"",
-        "Twd":377
+        "Twd":382
     },
     "200077":{
         "ASCII Name":"Anastasia Grey",
@@ -3376,7 +3375,7 @@
             }
         },
         "Title":"prince",
-        "Twd":20
+        "Twd":21
     },
     "200080":{
         "ASCII Name":"Andre LeRoux",
@@ -3437,7 +3436,7 @@
             }
         },
         "Title":"",
-        "Twd":55
+        "Twd":56
     },
     "200081":{
         "ASCII Name":"Andre the Manipulator",
@@ -3468,7 +3467,7 @@
             }
         },
         "Title":"",
-        "Twd":31
+        "Twd":33
     },
     "200082":{
         "ASCII Name":"Andrea Giovanni",
@@ -3664,7 +3663,7 @@
                 }
             },
             {
-                "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again (eg. {Immortal Grapple}). ",
+                "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again. ",
                 "refs":{
                     "[ANK 20190104]":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
                     "[RBK cancel-a-card]":"https://www.vekn.net/rulebook#cancel-a-card",
@@ -3735,7 +3734,7 @@
             }
         },
         "Title":"",
-        "Twd":5
+        "Twd":6
     },
     "200088":{
         "ASCII Name":"Angel",
@@ -3827,7 +3826,7 @@
             }
         },
         "Title":"baron",
-        "Twd":17
+        "Twd":24
     },
     "200090":{
         "ASCII Name":"Angela Decker",
@@ -3891,8 +3890,7 @@
             {
                 "text":"The ability can be used when in torpor. ",
                 "refs":{
-                    "[LSJ 20011022]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ",
-                    "[LSJ 20100902-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/mFpx91METxM/m/ETLGtyQfvksJ"
+                    "[LSJ 20011022]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
                 }
             }
         ],
@@ -4165,7 +4163,7 @@
             }
         },
         "Title":"",
-        "Twd":2
+        "Twd":3
     },
     "200097":{
         "ASCII Name":"Anjalika Underwood",
@@ -4230,7 +4228,7 @@
             }
         },
         "Title":"",
-        "Twd":18
+        "Twd":19
     },
     "200099":{
         "ASCII Name":"Ankh-sen-Sutekh",
@@ -4484,7 +4482,7 @@
             }
         },
         "Title":"2 votes",
-        "Twd":35
+        "Twd":36
     },
     "200105":{
         "ASCII Name":"Anne-Marie Bourgeois, Inconnu Recruiter",
@@ -4906,7 +4904,7 @@
             }
         },
         "Title":"",
-        "Twd":99
+        "Twd":100
     },
     "200117":{
         "ASCII Name":"Antonio Delgado",
@@ -5531,7 +5529,7 @@
             }
         },
         "Title":"",
-        "Twd":23
+        "Twd":25
     },
     "200133":{
         "ASCII Name":"Arianne, The Conqueror",
@@ -5706,7 +5704,7 @@
             }
         },
         "Title":"1 vote",
-        "Twd":55
+        "Twd":56
     },
     "200137":{
         "ASCII Name":"Aristotle de Laurent",
@@ -6065,7 +6063,7 @@
             }
         },
         "Title":"",
-        "Twd":4
+        "Twd":5
     },
     "200146":{
         "ASCII Name":"Ash Harrison",
@@ -6131,7 +6129,7 @@
             }
         },
         "Title":"",
-        "Twd":2
+        "Twd":3
     },
     "201533":{
         "ASCII Name":"Ashley",
@@ -6189,7 +6187,7 @@
             }
         },
         "Title":"",
-        "Twd":5
+        "Twd":6
     },
     "200147":{
         "ASCII Name":"Assad Salhoum",
@@ -6304,7 +6302,7 @@
             }
         },
         "Title":"baron",
-        "Twd":41
+        "Twd":44
     },
     "200149":{
         "ASCII Name":"Augustus Giovanni",
@@ -6506,7 +6504,7 @@
             }
         },
         "Title":"prince",
-        "Twd":13
+        "Twd":14
     },
     "200153":{
         "ASCII Name":"Ayo Igoli",
@@ -6602,7 +6600,7 @@
             }
         },
         "Title":"",
-        "Twd":4
+        "Twd":5
     },
     "200155":{
         "ASCII Name":"Aziz, Dammar of Istanbul",
@@ -7420,7 +7418,7 @@
             }
         },
         "Title":"",
-        "Twd":30
+        "Twd":31
     },
     "200176":{
         "ASCII Name":"Batsheva",
@@ -7869,7 +7867,7 @@
             }
         },
         "Title":"prince",
-        "Twd":6
+        "Twd":7
     },
     "200188":{
         "ASCII Name":"Belle Equitone",
@@ -8000,7 +7998,7 @@
             }
         },
         "Title":"prince",
-        "Twd":15
+        "Twd":16
     },
     "200191":{
         "ASCII Name":"Bernard, the Scourge",
@@ -9061,7 +9059,7 @@
             }
         },
         "Title":"baron",
-        "Twd":15
+        "Twd":21
     },
     "200217":{
         "ASCII Name":"Brazil",
@@ -9122,7 +9120,7 @@
             }
         },
         "Title":"",
-        "Twd":1
+        "Twd":2
     },
     "200218":{
         "ASCII Name":"Brian Thompson",
@@ -10064,7 +10062,7 @@
             }
         },
         "Title":"",
-        "Twd":22
+        "Twd":23
     },
     "200243":{
         "ASCII Name":"Cardano",
@@ -10477,7 +10475,7 @@
             }
         },
         "Title":"baron",
-        "Twd":77
+        "Twd":82
     },
     "200252":{
         "ASCII Name":"Casino Reeds",
@@ -10578,7 +10576,7 @@
             }
         },
         "Title":"",
-        "Twd":24
+        "Twd":25
     },
     "201668":{
         "ASCII Name":"Castellan",
@@ -10670,7 +10668,7 @@
             }
         },
         "Title":"prince",
-        "Twd":11
+        "Twd":12
     },
     "200256":{
         "ASCII Name":"Catherine du Bois",
@@ -10891,7 +10889,7 @@
             }
         },
         "Title":"",
-        "Twd":7
+        "Twd":8
     },
     "200262":{
         "ASCII Name":"Cesewayo",
@@ -11504,7 +11502,7 @@
             }
         },
         "Title":"",
-        "Twd":13
+        "Twd":15
     },
     "200276":{
         "ASCII Name":"Clarissa Steinburgen",
@@ -11835,7 +11833,7 @@
             }
         },
         "Title":"",
-        "Twd":5
+        "Twd":7
     },
     "200285":{
         "ASCII Name":"Cohn Rose",
@@ -12623,7 +12621,7 @@
             }
         },
         "Title":"",
-        "Twd":35
+        "Twd":36
     },
     "200305":{
         "ASCII Name":"Cybele",
@@ -12659,7 +12657,7 @@
             }
         },
         "Title":"",
-        "Twd":85
+        "Twd":86
     },
     "200306":{
         "ASCII Name":"Cynthia Ingold",
@@ -14057,7 +14055,7 @@
                 }
             },
             {
-                "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again (eg. {Immortal Grapple}). ",
+                "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again. ",
                 "refs":{
                     "[ANK 20190104]":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
                     "[RBK cancel-a-card]":"https://www.vekn.net/rulebook#cancel-a-card",
@@ -14078,7 +14076,7 @@
             }
         },
         "Title":"justicar",
-        "Twd":4
+        "Twd":5
     },
     "200342":{
         "ASCII Name":"Diana Vick",
@@ -14416,7 +14414,7 @@
             }
         },
         "Title":"",
-        "Twd":12
+        "Twd":15
     },
     "201584":{
         "ASCII Name":"Doctor Morocco",
@@ -14446,7 +14444,7 @@
             }
         },
         "Title":"",
-        "Twd":23
+        "Twd":24
     },
     "200351":{
         "ASCII Name":"Doctor Streck",
@@ -15057,7 +15055,7 @@
             }
         },
         "Title":"",
-        "Twd":10
+        "Twd":11
     },
     "200366":{
         "ASCII Name":"Donatello Giovanni",
@@ -16644,7 +16642,7 @@
             }
         },
         "Title":"",
-        "Twd":28
+        "Twd":31
     },
     "200407":{
         "ASCII Name":"Elena Gutierrez",
@@ -16881,7 +16879,7 @@
             }
         },
         "Title":"baron",
-        "Twd":48
+        "Twd":52
     },
     "200413":{
         "ASCII Name":"Elizabeth Conde",
@@ -17092,7 +17090,7 @@
             }
         },
         "Title":"",
-        "Twd":92
+        "Twd":93
     },
     "200419":{
         "ASCII Name":"Emerson Bridges",
@@ -18302,7 +18300,7 @@
             }
         },
         "Title":"2 votes",
-        "Twd":1
+        "Twd":2
     },
     "200451":{
         "ASCII Name":"Ezra Hawthorne",
@@ -18424,7 +18422,7 @@
             }
         },
         "Title":"",
-        "Twd":2
+        "Twd":3
     },
     "200455":{
         "ASCII Name":"Fakir al Sidi",
@@ -18777,7 +18775,7 @@
             }
         },
         "Title":"",
-        "Twd":46
+        "Twd":47
     },
     "200463":{
         "ASCII Name":"Fergus Alexander",
@@ -19064,7 +19062,7 @@
             }
         },
         "Title":"prince",
-        "Twd":12
+        "Twd":13
     },
     "200470":{
         "ASCII Name":"Fleurdumal",
@@ -19641,8 +19639,7 @@
             {
                 "text":"The ability can be used when in torpor. ",
                 "refs":{
-                    "[LSJ 20011022]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ",
-                    "[LSJ 20100902-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/mFpx91METxM/m/ETLGtyQfvksJ"
+                    "[LSJ 20011022]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
                 }
             }
         ],
@@ -20012,7 +20009,7 @@
             }
         },
         "Title":"",
-        "Twd":13
+        "Twd":15
     },
     "200496":{
         "ASCII Name":"Gatjil Munyarryun",
@@ -20546,7 +20543,7 @@
             }
         },
         "Title":"",
-        "Twd":45
+        "Twd":47
     },
     "200509":{
         "ASCII Name":"Gerard",
@@ -20714,7 +20711,7 @@
             }
         },
         "Title":"",
-        "Twd":16
+        "Twd":17
     },
     "200514":{
         "ASCII Name":"Giangaleazzo, The Traitor",
@@ -20877,7 +20874,7 @@
             }
         },
         "Title":"baron",
-        "Twd":18
+        "Twd":19
     },
     "200518":{
         "ASCII Name":"Gillespi Giovanni",
@@ -21787,7 +21784,7 @@
             }
         },
         "Title":"",
-        "Twd":3
+        "Twd":4
     },
     "200541":{
         "ASCII Name":"Grotesque",
@@ -22166,7 +22163,7 @@
             }
         },
         "Title":"primogen",
-        "Twd":27
+        "Twd":28
     },
     "200550":{
         "ASCII Name":"Gustav Breidenstein",
@@ -22700,7 +22697,7 @@
             }
         },
         "Title":"",
-        "Twd":53
+        "Twd":54
     },
     "200564":{
         "ASCII Name":"Hanna Redmonds",
@@ -24240,8 +24237,7 @@
             {
                 "text":"The ability can be used when in torpor. ",
                 "refs":{
-                    "[LSJ 20011022]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ",
-                    "[LSJ 20100902-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/mFpx91METxM/m/ETLGtyQfvksJ"
+                    "[LSJ 20011022]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
                 }
             }
         ],
@@ -24258,7 +24254,7 @@
             }
         },
         "Title":"",
-        "Twd":53
+        "Twd":54
     },
     "200606":{
         "ASCII Name":"Horrock",
@@ -25290,7 +25286,7 @@
             }
         },
         "Title":"",
-        "Twd":60
+        "Twd":64
     },
     "201551":{
         "ASCII Name":"Ines Tristao",
@@ -25673,7 +25669,7 @@
             }
         },
         "Title":"",
-        "Twd":21
+        "Twd":22
     },
     "200642":{
         "ASCII Name":"Isabel de Leon",
@@ -26041,8 +26037,7 @@
             {
                 "text":"The ability can be used when in torpor. ",
                 "refs":{
-                    "[LSJ 20011022]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ",
-                    "[LSJ 20100902-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/mFpx91METxM/m/ETLGtyQfvksJ"
+                    "[LSJ 20011022]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
                 }
             }
         ],
@@ -26705,7 +26700,7 @@
                 }
             },
             {
-                "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again (eg. {Immortal Grapple}). ",
+                "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again. ",
                 "refs":{
                     "[ANK 20190104]":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
                     "[RBK cancel-a-card]":"https://www.vekn.net/rulebook#cancel-a-card",
@@ -27300,7 +27295,7 @@
             }
         },
         "Title":"",
-        "Twd":11
+        "Twd":13
     },
     "200686":{
         "ASCII Name":"Jefferson Foster",
@@ -27486,7 +27481,7 @@
             }
         },
         "Title":"",
-        "Twd":32
+        "Twd":33
     },
     "200691":{
         "ASCII Name":"Jephta Hester",
@@ -28112,7 +28107,7 @@
             }
         },
         "Title":"",
-        "Twd":47
+        "Twd":48
     },
     "200708":{
         "ASCII Name":"Joaquin Murietta",
@@ -28577,7 +28572,7 @@
             }
         },
         "Title":"bishop",
-        "Twd":4
+        "Twd":5
     },
     "200722":{
         "ASCII Name":"Joseph DiGiaccomo",
@@ -28640,7 +28635,7 @@
             }
         },
         "Title":"",
-        "Twd":12
+        "Twd":15
     },
     "200724":{
         "ASCII Name":"Joseph O'Grady",
@@ -29062,7 +29057,7 @@
             }
         },
         "Title":"justicar",
-        "Twd":0
+        "Twd":1
     },
     "200736":{
         "ASCII Name":"Julio Martinez",
@@ -29096,7 +29091,7 @@
             }
         },
         "Title":"bishop",
-        "Twd":7
+        "Twd":8
     },
     "200737":{
         "ASCII Name":"Julius",
@@ -29431,7 +29426,7 @@
             }
         },
         "Title":"primogen",
-        "Twd":11
+        "Twd":12
     },
     "200746":{
         "ASCII Name":"Kallista, Master Sculptor",
@@ -29585,7 +29580,7 @@
             }
         },
         "Title":"",
-        "Twd":69
+        "Twd":73
     },
     "200749":{
         "ASCII Name":"Kamiri wa Itherero",
@@ -30097,7 +30092,7 @@
             }
         },
         "Title":"prince",
-        "Twd":25
+        "Twd":26
     },
     "200760":{
         "ASCII Name":"Kassiym Malikhair",
@@ -30418,7 +30413,7 @@
             }
         },
         "Title":"",
-        "Twd":1
+        "Twd":2
     },
     "201659":{
         "ASCII Name":"Keegan",
@@ -30479,7 +30474,7 @@
             }
         },
         "Title":"",
-        "Twd":164
+        "Twd":165
     },
     "200768":{
         "ASCII Name":"Keller Thiel",
@@ -30869,7 +30864,7 @@
             }
         },
         "Title":"primogen",
-        "Twd":23
+        "Twd":24
     },
     "200776":{
         "ASCII Name":"Khalid",
@@ -30971,7 +30966,7 @@
             }
         },
         "Title":"",
-        "Twd":31
+        "Twd":32
     },
     "200779":{
         "ASCII Name":"Khalu",
@@ -31011,7 +31006,7 @@
                 }
             },
             {
-                "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again (eg. {Immortal Grapple}). ",
+                "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again. ",
                 "refs":{
                     "[ANK 20190104]":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
                     "[RBK cancel-a-card]":"https://www.vekn.net/rulebook#cancel-a-card",
@@ -31662,7 +31657,7 @@
             }
         },
         "Title":"baron",
-        "Twd":68
+        "Twd":75
     },
     "200797":{
         "ASCII Name":"Kyle Strathcona, Cardinal of Canada",
@@ -32482,7 +32477,7 @@
             }
         },
         "Title":"",
-        "Twd":7
+        "Twd":8
     },
     "201554":{
         "ASCII Name":"Lauren",
@@ -32615,7 +32610,7 @@
             }
         },
         "Title":"",
-        "Twd":25
+        "Twd":26
     },
     "200820":{
         "ASCII Name":"Lazarus",
@@ -33008,7 +33003,7 @@
             }
         },
         "Title":"",
-        "Twd":2
+        "Twd":3
     },
     "200830":{
         "ASCII Name":"Lena Rowe",
@@ -33201,7 +33196,7 @@
             }
         },
         "Title":"baron",
-        "Twd":38
+        "Twd":41
     },
     "200834":{
         "ASCII Name":"Lia Milliner",
@@ -33297,7 +33292,7 @@
             }
         },
         "Title":"",
-        "Twd":27
+        "Twd":28
     },
     "200837":{
         "ASCII Name":"Lin Jun",
@@ -33954,7 +33949,7 @@
             }
         },
         "Title":"",
-        "Twd":5
+        "Twd":6
     },
     "200855":{
         "ASCII Name":"Lord Fianna",
@@ -34244,7 +34239,7 @@
                 }
             },
             {
-                "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again (eg. {Immortal Grapple}). ",
+                "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again. ",
                 "refs":{
                     "[ANK 20190104]":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
                     "[RBK cancel-a-card]":"https://www.vekn.net/rulebook#cancel-a-card",
@@ -34749,7 +34744,7 @@
             }
         },
         "Title":"",
-        "Twd":5
+        "Twd":8
     },
     "200872":{
         "ASCII Name":"Lucina",
@@ -34935,7 +34930,7 @@
                 }
             },
             {
-                "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again (eg. {Immortal Grapple}). ",
+                "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again. ",
                 "refs":{
                     "[ANK 20190104]":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
                     "[RBK cancel-a-card]":"https://www.vekn.net/rulebook#cancel-a-card",
@@ -35641,7 +35636,7 @@
             }
         },
         "Title":"",
-        "Twd":3
+        "Twd":4
     },
     "200895":{
         "ASCII Name":"Macoute",
@@ -35847,7 +35842,7 @@
             }
         },
         "Title":"primogen",
-        "Twd":6
+        "Twd":7
     },
     "200899":{
         "ASCII Name":"Makarios, The Seducer",
@@ -36074,7 +36069,7 @@
             }
         },
         "Title":"",
-        "Twd":13
+        "Twd":14
     },
     "200905":{
         "ASCII Name":"Malgorzata",
@@ -36236,7 +36231,7 @@
             }
         },
         "Title":"",
-        "Twd":34
+        "Twd":35
     },
     "200909":{
         "ASCII Name":"Marcel de Breau",
@@ -36889,7 +36884,7 @@
             }
         },
         "Title":"",
-        "Twd":11
+        "Twd":13
     },
     "200924":{
         "ASCII Name":"Mariana Gilbert",
@@ -37637,7 +37632,7 @@
             }
         },
         "Title":"",
-        "Twd":55
+        "Twd":56
     },
     "200944":{
         "ASCII Name":"Martino della Passaglia",
@@ -38077,7 +38072,7 @@
             }
         },
         "Title":"baron",
-        "Twd":67
+        "Twd":73
     },
     "201558":{
         "ASCII Name":"Massimo Falconi",
@@ -38292,7 +38287,7 @@
             }
         },
         "Title":"",
-        "Twd":4
+        "Twd":5
     },
     "200958":{
         "ASCII Name":"Mateusz Gryzbowsky",
@@ -38360,7 +38355,7 @@
             }
         },
         "Title":"",
-        "Twd":3
+        "Twd":4
     },
     "200960":{
         "ASCII Name":"Matteus, Flesh Sculptor",
@@ -38469,8 +38464,7 @@
             {
                 "text":"The ability can be used when in torpor. ",
                 "refs":{
-                    "[LSJ 20011022]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ",
-                    "[LSJ 20100902-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/mFpx91METxM/m/ETLGtyQfvksJ"
+                    "[LSJ 20011022]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
                 }
             }
         ],
@@ -38570,7 +38564,7 @@
             }
         },
         "Title":"1 vote",
-        "Twd":8
+        "Twd":9
     },
     "200965":{
         "ASCII Name":"Max Lowell",
@@ -38876,8 +38870,7 @@
             {
                 "text":"The ability can be used when in torpor. ",
                 "refs":{
-                    "[LSJ 20011022]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ",
-                    "[LSJ 20100902-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/mFpx91METxM/m/ETLGtyQfvksJ"
+                    "[LSJ 20011022]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
                 }
             }
         ],
@@ -39287,8 +39280,7 @@
             {
                 "text":"The ability can be used when in torpor. ",
                 "refs":{
-                    "[LSJ 20011022]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ",
-                    "[LSJ 20100902-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/mFpx91METxM/m/ETLGtyQfvksJ"
+                    "[LSJ 20011022]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
                 }
             }
         ],
@@ -39345,7 +39337,7 @@
                 }
             },
             {
-                "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again (eg. {Immortal Grapple}). ",
+                "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again. ",
                 "refs":{
                     "[ANK 20190104]":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
                     "[RBK cancel-a-card]":"https://www.vekn.net/rulebook#cancel-a-card",
@@ -40081,7 +40073,7 @@
                 }
             },
             {
-                "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again (eg. {Immortal Grapple}). ",
+                "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again. ",
                 "refs":{
                     "[ANK 20190104]":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
                     "[RBK cancel-a-card]":"https://www.vekn.net/rulebook#cancel-a-card",
@@ -40200,7 +40192,7 @@
             }
         },
         "Title":"prince",
-        "Twd":13
+        "Twd":14
     },
     "201703":{
         "ASCII Name":"Modius",
@@ -40659,7 +40651,7 @@
             }
         },
         "Title":"",
-        "Twd":43
+        "Twd":44
     },
     "201014":{
         "ASCII Name":"Mouse",
@@ -41615,7 +41607,7 @@
             }
         },
         "Title":"",
-        "Twd":62
+        "Twd":64
     },
     "201632":{
         "ASCII Name":"Nathaniel Bordruff",
@@ -42024,7 +42016,7 @@
             }
         },
         "Title":"",
-        "Twd":113
+        "Twd":115
     },
     "201047":{
         "ASCII Name":"Nepata",
@@ -42208,7 +42200,7 @@
             }
         },
         "Title":"",
-        "Twd":8
+        "Twd":9
     },
     "201050":{
         "ASCII Name":"Nestor Kaba",
@@ -42321,7 +42313,7 @@
             }
         },
         "Title":"",
-        "Twd":42
+        "Twd":43
     },
     "201053":{
         "ASCII Name":"Ngozi Ekwensu",
@@ -42409,7 +42401,7 @@
             }
         },
         "Title":"",
-        "Twd":41
+        "Twd":42
     },
     "201056":{
         "ASCII Name":"Nickolai, The Survivor",
@@ -42643,7 +42635,7 @@
             }
         },
         "Title":"prince",
-        "Twd":1
+        "Twd":2
     },
     "201061":{
         "ASCII Name":"Nitidas",
@@ -42670,8 +42662,7 @@
             {
                 "text":"The ability can be used when in torpor. ",
                 "refs":{
-                    "[LSJ 20011022]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ",
-                    "[LSJ 20100902-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/mFpx91METxM/m/ETLGtyQfvksJ"
+                    "[LSJ 20011022]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
                 }
             }
         ],
@@ -42759,7 +42750,7 @@
             }
         },
         "Title":"",
-        "Twd":7
+        "Twd":8
     },
     "201064":{
         "ASCII Name":"Nkule Galadima",
@@ -42827,7 +42818,7 @@
             }
         },
         "Title":"",
-        "Twd":24
+        "Twd":25
     },
     "201065":{
         "ASCII Name":"Normal",
@@ -43255,7 +43246,7 @@
             }
         },
         "Title":"",
-        "Twd":11
+        "Twd":13
     },
     "201075":{
         "ASCII Name":"Olga Triminov",
@@ -43491,7 +43482,7 @@
             }
         },
         "Title":"",
-        "Twd":2
+        "Twd":3
     },
     "201081":{
         "ASCII Name":"Omme Enberbenight",
@@ -45064,7 +45055,7 @@
             }
         },
         "Title":"",
-        "Twd":11
+        "Twd":13
     },
     "201120":{
         "ASCII Name":"Pherydima",
@@ -45335,7 +45326,7 @@
             }
         },
         "Title":"",
-        "Twd":72
+        "Twd":73
     },
     "201127":{
         "ASCII Name":"Pochtli",
@@ -45588,7 +45579,7 @@
             }
         },
         "Title":"",
-        "Twd":10
+        "Twd":11
     },
     "201133":{
         "ASCII Name":"Preston Varrick",
@@ -46932,7 +46923,7 @@
             }
         },
         "Title":"",
-        "Twd":9
+        "Twd":10
     },
     "201169":{
         "ASCII Name":"Raziya Samater",
@@ -47287,7 +47278,7 @@
             }
         },
         "Title":"",
-        "Twd":1
+        "Twd":2
     },
     "201178":{
         "ASCII Name":"Remilliard, Devout Crusader",
@@ -47897,7 +47888,7 @@
             }
         },
         "Title":"",
-        "Twd":10
+        "Twd":12
     },
     "201193":{
         "ASCII Name":"Robin Withers",
@@ -48666,7 +48657,7 @@
             }
         },
         "Title":"",
-        "Twd":42
+        "Twd":43
     },
     "201211":{
         "ASCII Name":"Rusticus",
@@ -48803,8 +48794,7 @@
             {
                 "text":"The ability can be used when in torpor. ",
                 "refs":{
-                    "[LSJ 20011022]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ",
-                    "[LSJ 20100902-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/mFpx91METxM/m/ETLGtyQfvksJ"
+                    "[LSJ 20011022]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
                 }
             }
         ],
@@ -49098,7 +49088,7 @@
             }
         },
         "Title":"",
-        "Twd":96
+        "Twd":98
     },
     "201223":{
         "ASCII Name":"Sajid al Misbah",
@@ -49194,7 +49184,7 @@
             }
         },
         "Title":"baron",
-        "Twd":16
+        "Twd":20
     },
     "201224":{
         "ASCII Name":"Salbatore Bokkengro",
@@ -49229,7 +49219,7 @@
             }
         },
         "Title":"",
-        "Twd":35
+        "Twd":36
     },
     "201225":{
         "ASCII Name":"Salinger",
@@ -49617,7 +49607,7 @@
                 }
             },
             {
-                "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again (eg. {Immortal Grapple}). ",
+                "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again. ",
                 "refs":{
                     "[ANK 20190104]":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
                     "[RBK cancel-a-card]":"https://www.vekn.net/rulebook#cancel-a-card",
@@ -50061,7 +50051,7 @@
             }
         },
         "Title":"",
-        "Twd":27
+        "Twd":28
     },
     "201247":{
         "ASCII Name":"Saul Meira",
@@ -50144,7 +50134,7 @@
             }
         },
         "Title":"",
-        "Twd":29
+        "Twd":30
     },
     "201249":{
         "ASCII Name":"Saxum, Master of Slaves",
@@ -50689,7 +50679,7 @@
             }
         },
         "Title":"",
-        "Twd":21
+        "Twd":22
     },
     "201264":{
         "ASCII Name":"Sennuwy, The Promoter",
@@ -50721,7 +50711,7 @@
             }
         },
         "Title":"",
-        "Twd":24
+        "Twd":25
     },
     "201686":{
         "ASCII Name":"Seraphina",
@@ -50919,7 +50909,7 @@
             }
         },
         "Title":"baron",
-        "Twd":18
+        "Twd":22
     },
     "201268":{
         "ASCII Name":"Servius Marius Pustula",
@@ -50951,7 +50941,7 @@
             }
         },
         "Title":"",
-        "Twd":9
+        "Twd":10
     },
     "201269":{
         "ASCII Name":"Seterpenre",
@@ -51131,8 +51121,7 @@
             {
                 "text":"The ability can be used when in torpor. ",
                 "refs":{
-                    "[LSJ 20011022]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ",
-                    "[LSJ 20100902-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/mFpx91METxM/m/ETLGtyQfvksJ"
+                    "[LSJ 20011022]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
                 }
             }
         ],
@@ -51342,8 +51331,7 @@
             {
                 "text":"The ability can be used when in torpor. ",
                 "refs":{
-                    "[LSJ 20011022]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ",
-                    "[LSJ 20100902-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/mFpx91METxM/m/ETLGtyQfvksJ"
+                    "[LSJ 20011022]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
                 }
             }
         ],
@@ -51600,7 +51588,7 @@
             }
         },
         "Title":"",
-        "Twd":11
+        "Twd":12
     },
     "201286":{
         "ASCII Name":"Sigrid Bekker",
@@ -51923,7 +51911,7 @@
             }
         },
         "Title":"",
-        "Twd":17
+        "Twd":18
     },
     "201295":{
         "ASCII Name":"Skidmark",
@@ -52524,7 +52512,7 @@
             }
         },
         "Title":"",
-        "Twd":29
+        "Twd":30
     },
     "201687":{
         "ASCII Name":"Sreelekha",
@@ -52554,7 +52542,7 @@
             }
         },
         "Title":"",
-        "Twd":10
+        "Twd":12
     },
     "201652":{
         "ASCII Name":"Sri Sansa",
@@ -53529,8 +53517,7 @@
             {
                 "text":"The ability can be used when in torpor. ",
                 "refs":{
-                    "[LSJ 20011022]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ",
-                    "[LSJ 20100902-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/mFpx91METxM/m/ETLGtyQfvksJ"
+                    "[LSJ 20011022]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
                 }
             }
         ],
@@ -54723,7 +54710,7 @@
             }
         },
         "Title":"",
-        "Twd":14
+        "Twd":15
     },
     "201364":{
         "ASCII Name":"Theron",
@@ -55553,7 +55540,7 @@
             }
         },
         "Title":"",
-        "Twd":11
+        "Twd":12
     },
     "201387":{
         "ASCII Name":"Troglodytia",
@@ -55691,7 +55678,7 @@
             }
         },
         "Title":"",
-        "Twd":6
+        "Twd":7
     },
     "201390":{
         "ASCII Name":"Tryphosa",
@@ -55831,7 +55818,7 @@
             }
         },
         "Title":"",
-        "Twd":96
+        "Twd":97
     },
     "201394":{
         "ASCII Name":"Tura Vaughn",
@@ -56006,7 +55993,7 @@
             }
         },
         "Title":"",
-        "Twd":31
+        "Twd":32
     },
     "201399":{
         "ASCII Name":"Ubende",
@@ -56355,7 +56342,14 @@
         "Id":201409,
         "Name":"Undele",
         "New":false,
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"Undele's ability returns cards by name (i.e. if there is more than 1 copy of the same card in your ash heap, it will return one of them even if another is removed during polling). It will return one of the two named cards if the other is removed during polling. ",
+                "refs":{
+                    "[LSJ 20100917]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/4wTBzYsQOMM/m/kLWMz-JSlHIJ"
+                }
+            }
+        ],
         "Sect":"Laibon",
         "Set":{
             "EK":{
@@ -56435,7 +56429,7 @@
             }
         },
         "Title":"",
-        "Twd":62
+        "Twd":63
     },
     "201412":{
         "ASCII Name":"Unre, Keeper of Golgotha",
@@ -56915,7 +56909,7 @@
             }
         },
         "Title":"baron",
-        "Twd":36
+        "Twd":42
     },
     "201423":{
         "ASCII Name":"Valkyrie",
@@ -57252,7 +57246,7 @@
             }
         },
         "Title":"",
-        "Twd":29
+        "Twd":30
     },
     "201433":{
         "ASCII Name":"Veejay Vinod",
@@ -57701,7 +57695,7 @@
             }
         },
         "Title":"",
-        "Twd":0
+        "Twd":1
     },
     "201445":{
         "ASCII Name":"Victorine Lafourcade",
@@ -58198,7 +58192,7 @@
             }
         },
         "Title":"baron",
-        "Twd":49
+        "Twd":53
     },
     "201456":{
         "ASCII Name":"Vlad Tepes",
@@ -58609,7 +58603,7 @@
             }
         },
         "Title":"prince",
-        "Twd":25
+        "Twd":26
     },
     "201464":{
         "ASCII Name":"Watenda",
@@ -58669,7 +58663,7 @@
                 }
             },
             {
-                "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again (eg. {Immortal Grapple}). ",
+                "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again. ",
                 "refs":{
                     "[ANK 20190104]":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
                     "[RBK cancel-a-card]":"https://www.vekn.net/rulebook#cancel-a-card",
@@ -58822,7 +58816,7 @@
             }
         },
         "Title":"",
-        "Twd":13
+        "Twd":15
     },
     "201467":{
         "ASCII Name":"White Lily",
@@ -60141,7 +60135,7 @@
             }
         },
         "Title":"",
-        "Twd":11
+        "Twd":13
     },
     "201500":{
         "ASCII Name":"Zahir, Hand of the Silsila",
@@ -60434,7 +60428,7 @@
             }
         },
         "Title":"",
-        "Twd":66
+        "Twd":67
     },
     "201508":{
         "ASCII Name":"Zizi",

@@ -56,7 +56,7 @@
                 "PTr":"1"
             }
         },
-        "Twd":378,
+        "Twd":381,
         "Type":"Equipment"
     },
     "100002":{
@@ -113,7 +113,7 @@
                 "PB":"1"
             }
         },
-        "Twd":4,
+        "Twd":5,
         "Type":"Ally"
     },
     "100003":{
@@ -302,7 +302,7 @@
                 "SCai":2
             }
         },
-        "Twd":203,
+        "Twd":204,
         "Type":"Action"
     },
     "100007":{
@@ -669,7 +669,7 @@
                 "PTr":"1"
             }
         },
-        "Twd":105,
+        "Twd":106,
         "Type":"Master"
     },
     "100016":{
@@ -1189,7 +1189,7 @@
                 "NR":3
             }
         },
-        "Twd":231,
+        "Twd":232,
         "Type":"Combat"
     },
     "100030":{
@@ -1274,7 +1274,7 @@
                 "PTo":"2"
             }
         },
-        "Twd":266,
+        "Twd":267,
         "Type":"Action Modifier"
     },
     "100032":{
@@ -1309,7 +1309,7 @@
                 "NR":1
             }
         },
-        "Twd":15,
+        "Twd":16,
         "Type":"Equipment"
     },
     "100033":{
@@ -1892,7 +1892,7 @@
                 "2024-04-23":true
             }
         },
-        "Twd":95,
+        "Twd":96,
         "Type":"Action"
     },
     "102274":{
@@ -2160,7 +2160,7 @@
                 "PTz":"1"
             }
         },
-        "Twd":142,
+        "Twd":150,
         "Type":"Master"
     },
     "100053":{
@@ -2216,7 +2216,7 @@
                 "PMi":"1"
             }
         },
-        "Twd":159,
+        "Twd":166,
         "Type":"Master"
     },
     "100055":{
@@ -2273,7 +2273,7 @@
                 "PTz":"1"
             }
         },
-        "Twd":178,
+        "Twd":181,
         "Type":"Master"
     },
     "100056":{
@@ -2381,7 +2381,7 @@
                 "SCat":1
             }
         },
-        "Twd":475,
+        "Twd":479,
         "Type":"Master"
     },
     "100059":{
@@ -2432,7 +2432,7 @@
                 "PM":"1"
             }
         },
-        "Twd":360,
+        "Twd":361,
         "Type":"Political Action"
     },
     "100060":{
@@ -2730,7 +2730,7 @@
                 "":"1"
             }
         },
-        "Twd":371,
+        "Twd":372,
         "Type":"Political Action"
     },
     "100066":{
@@ -2780,7 +2780,7 @@
                 "DTC":true
             }
         },
-        "Twd":33,
+        "Twd":34,
         "Type":"Combat"
     },
     "100067":{
@@ -2981,7 +2981,7 @@
                 "2020-05-11":true
             }
         },
-        "Twd":48,
+        "Twd":49,
         "Type":"Equipment"
     },
     "100072":{
@@ -3145,7 +3145,7 @@
                 "DTC":true
             }
         },
-        "Twd":14,
+        "Twd":15,
         "Type":"Combat"
     },
     "100077":{
@@ -3242,7 +3242,7 @@
                 }
             },
             {
-                "text":"[PRE]The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again (eg. {Immortal Grapple}). ",
+                "text":"[PRE]The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again. ",
                 "refs":{
                     "[ANK 20190104]":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
                     "[RBK cancel-a-card]":"https://www.vekn.net/rulebook#cancel-a-card",
@@ -3271,7 +3271,7 @@
                 "PT":"4"
             }
         },
-        "Twd":108,
+        "Twd":109,
         "Type":"Action Modifier"
     },
     "100079":{
@@ -3305,7 +3305,7 @@
                 "NR":1
             }
         },
-        "Twd":491,
+        "Twd":496,
         "Type":"Action"
     },
     "100080":{
@@ -3385,7 +3385,7 @@
                 "PTr":"1"
             }
         },
-        "Twd":126,
+        "Twd":127,
         "Type":"Master"
     },
     "100082":{
@@ -3581,7 +3581,7 @@
                 "PR":"1"
             }
         },
-        "Twd":691,
+        "Twd":695,
         "Type":"Master"
     },
     "100086":{
@@ -3917,7 +3917,7 @@
                 "PG":"1"
             }
         },
-        "Twd":278,
+        "Twd":280,
         "Type":"Action"
     },
     "100094":{
@@ -4020,7 +4020,7 @@
                 "":"1"
             }
         },
-        "Twd":107,
+        "Twd":108,
         "Type":"Master"
     },
     "100096":{
@@ -4478,7 +4478,7 @@
                 "2024-01-01":true
             }
         },
-        "Twd":437,
+        "Twd":444,
         "Type":"Master"
     },
     "100107":{
@@ -4568,7 +4568,7 @@
                 "PM":"1"
             }
         },
-        "Twd":87,
+        "Twd":88,
         "Type":"Master"
     },
     "100109":{
@@ -4982,7 +4982,7 @@
                 "":"2"
             }
         },
-        "Twd":217,
+        "Twd":218,
         "Type":"Action Modifier"
     },
     "100120":{
@@ -5030,7 +5030,7 @@
                 }
             },
             {
-                "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again (eg. {Immortal Grapple}). ",
+                "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again. ",
                 "refs":{
                     "[ANK 20190104]":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
                     "[RBK cancel-a-card]":"https://www.vekn.net/rulebook#cancel-a-card",
@@ -5297,7 +5297,7 @@
                 "PG":"1"
             }
         },
-        "Twd":143,
+        "Twd":144,
         "Type":"Master"
     },
     "102218":{
@@ -5338,7 +5338,7 @@
                 "PTz":"3"
             }
         },
-        "Twd":140,
+        "Twd":152,
         "Type":"Reaction"
     },
     "100127":{
@@ -5606,7 +5606,7 @@
                 "SPIV":2
             }
         },
-        "Twd":539,
+        "Twd":541,
         "Type":"Political Action"
     },
     "100132":{
@@ -6259,7 +6259,7 @@
                 "U":true
             }
         },
-        "Twd":0,
+        "Twd":1,
         "Type":"Action"
     },
     "100148":{
@@ -6336,7 +6336,7 @@
                 "U":true
             }
         },
-        "Twd":60,
+        "Twd":61,
         "Type":"Combat"
     },
     "100150":{
@@ -6610,7 +6610,15 @@
         "Name":"Bewitching Oration",
         "Pool Cost":"",
         "Requirement":"",
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"Cannot be used during a referendum that is automatically passing. ",
+                "refs":{
+                    "[PIB 20150105]":"https://www.vekn.net/forum/rules-questions/68465-voting-is-complicated#68493",
+                    "[LSJ 19980107]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aUUs4VCR_Ec/m/PLecvfrEqbgJ"
+                }
+            }
+        ],
         "Set":{
             "Jyhad":{
                 "C":true
@@ -6653,7 +6661,7 @@
                 "PTo":"2"
             }
         },
-        "Twd":252,
+        "Twd":253,
         "Type":"Action Modifier"
     },
     "100158":{
@@ -7066,7 +7074,7 @@
                 "DTC":true
             }
         },
-        "Twd":4,
+        "Twd":5,
         "Type":"Action"
     },
     "100170":{
@@ -7400,7 +7408,37 @@
         "Name":"Bleeding the Vine",
         "Pool Cost":"1",
         "Requirement":"",
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"Cards are not replaced during the \"as played\" window. The cancelation must be played immediately: no other effects can be used, except for wakes (eg. neither\u00a0{Barrens, The}\u00a0nor {Dreams of the Sphinx}\u00a0can be used). ",
+                "refs":{
+                    "[LSJ 20061207]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/nqcrJlhg4Ng/m/qQu7p-LLhfAJ",
+                    "[RBK playing-a-card]":"https://www.vekn.net/rulebook#playing-a-card",
+                    "[LSJ 20061013]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/6w8K3yDtBH0/m/M_SZH9Id8n8J"
+                }
+            },
+            {
+                "text":"If the canceled card had a \"do not replace until\" clause (or alternate replacement like {Steely Tenacity}), that clause is canceled as well and the card is replaced normally. ",
+                "refs":{
+                    "[LSJ 20080630]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/nvuXBpEaKAA/m/ymiC3yAQVOwJ",
+                    "[LSJ 20011023]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/2GOLIrXAF8M/m/P4T3Dj6UNL0J"
+                }
+            },
+            {
+                "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again. ",
+                "refs":{
+                    "[ANK 20190104]":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
+                    "[RBK cancel-a-card]":"https://www.vekn.net/rulebook#cancel-a-card",
+                    "[LSJ 19980212]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/fLFLlXZXHqA/m/ggjw8aGjdRoJ"
+                }
+            },
+            {
+                "text":"If a limited effect is canceled (bleed, additional strike), then the limit is not triggered and another limited effect can be used. ",
+                "refs":{
+                    "[LSJ 20030224]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/67261v339Ds/m/um8V7VVp2Y4J"
+                }
+            }
+        ],
         "Set":{
             "Anarchs":{
                 "R":true
@@ -7486,7 +7524,7 @@
                 }
             },
             {
-                "text":"[val][REFLEX]The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again (eg. {Immortal Grapple}). ",
+                "text":"[val][REFLEX]The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again. ",
                 "refs":{
                     "[ANK 20190104]":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
                     "[RBK cancel-a-card]":"https://www.vekn.net/rulebook#cancel-a-card",
@@ -7825,7 +7863,7 @@
                 }
             },
             {
-                "text":"[pre][dom]The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again (eg. {Immortal Grapple}). ",
+                "text":"[pre][dom]The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again. ",
                 "refs":{
                     "[ANK 20190104]":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
                     "[RBK cancel-a-card]":"https://www.vekn.net/rulebook#cancel-a-card",
@@ -8344,7 +8382,7 @@
                 "NL":2
             }
         },
-        "Twd":1273,
+        "Twd":1274,
         "Type":"Master"
     },
     "100200":{
@@ -9405,7 +9443,7 @@
                 "PBH":"2"
             }
         },
-        "Twd":221,
+        "Twd":223,
         "Type":"Combat"
     },
     "100228":{
@@ -9603,7 +9641,7 @@
                 }
             },
             {
-                "text":"[pre]The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again (eg. {Immortal Grapple}). ",
+                "text":"[pre]The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again. ",
                 "refs":{
                     "[ANK 20190104]":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
                     "[RBK cancel-a-card]":"https://www.vekn.net/rulebook#cancel-a-card",
@@ -9625,7 +9663,7 @@
                 "AU":"3"
             }
         },
-        "Twd":21,
+        "Twd":22,
         "Type":"Combat"
     },
     "100233":{
@@ -9848,7 +9886,7 @@
                 "PSal":"4"
             }
         },
-        "Twd":427,
+        "Twd":428,
         "Type":"Action Modifier"
     },
     "100237":{
@@ -10112,7 +10150,7 @@
                 "PSal":"1"
             }
         },
-        "Twd":527,
+        "Twd":529,
         "Type":"Equipment"
     },
     "100244":{
@@ -10311,7 +10349,7 @@
                 "PR":"8"
             }
         },
-        "Twd":14,
+        "Twd":16,
         "Type":"Action"
     },
     "100248":{
@@ -10503,7 +10541,7 @@
                 "C":true
             }
         },
-        "Twd":33,
+        "Twd":34,
         "Type":"Combat"
     },
     "100253":{
@@ -10826,7 +10864,7 @@
                 "PB":"3"
             }
         },
-        "Twd":22,
+        "Twd":23,
         "Type":"Master"
     },
     "100261":{
@@ -10984,6 +11022,12 @@
                 "refs":{
                     "[TOM 19960225]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
                 }
+            },
+            {
+                "text":"The \"make a melee strike\" option can be used with {Bundi} while {Immortal Grapple} is in effect. ",
+                "refs":{
+                    "[LSJ 20090114]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/fZIdIRDDxdo/m/dtdSNVk_IIkJ"
+                }
             }
         ],
         "Set":{
@@ -11088,7 +11132,7 @@
                 "2023-05-07":true
             }
         },
-        "Twd":287,
+        "Twd":288,
         "Type":"Action"
     },
     "100267":{
@@ -11749,7 +11793,7 @@
                 "":"2"
             }
         },
-        "Twd":4,
+        "Twd":5,
         "Type":"Master"
     },
     "100284":{
@@ -11828,7 +11872,7 @@
                 "PL":"2"
             }
         },
-        "Twd":6,
+        "Twd":8,
         "Type":"Political Action"
     },
     "100285":{
@@ -12066,7 +12110,7 @@
                 "SKTz":"1"
             }
         },
-        "Twd":283,
+        "Twd":284,
         "Type":"Combat"
     },
     "100291":{
@@ -12305,7 +12349,7 @@
                 "PB":"1"
             }
         },
-        "Twd":143,
+        "Twd":154,
         "Type":"Master"
     },
     "100298":{
@@ -12355,7 +12399,7 @@
                 "PwN":"1"
             }
         },
-        "Twd":773,
+        "Twd":775,
         "Type":"Ally",
         "Aka":"Carlton Van Wyk (Hunter)"
     },
@@ -12486,7 +12530,7 @@
                 "NR":3
             }
         },
-        "Twd":407,
+        "Twd":409,
         "Type":"Combat"
     },
     "100302":{
@@ -12834,7 +12878,7 @@
                 "PTz":"4"
             }
         },
-        "Twd":383,
+        "Twd":385,
         "Type":"Reaction"
     },
     "100309":{
@@ -13025,7 +13069,7 @@
                 "PB":"1"
             }
         },
-        "Twd":73,
+        "Twd":74,
         "Type":"Master"
     },
     "100313":{
@@ -13878,7 +13922,7 @@
                 "NTz":1
             }
         },
-        "Twd":135,
+        "Twd":136,
         "Type":"Master"
     },
     "100333":{
@@ -13914,7 +13958,7 @@
                 }
             },
             {
-                "text":"[aus][pre]The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again (eg. {Immortal Grapple}). ",
+                "text":"[aus][pre]The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again. ",
                 "refs":{
                     "[ANK 20190104]":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
                     "[RBK cancel-a-card]":"https://www.vekn.net/rulebook#cancel-a-card",
@@ -13945,7 +13989,7 @@
                 "":"2"
             }
         },
-        "Twd":37,
+        "Twd":38,
         "Type":"Combat"
     },
     "100334":{
@@ -14226,7 +14270,7 @@
                 "PTz":"2"
             }
         },
-        "Twd":5,
+        "Twd":10,
         "Type":"Action"
     },
     "100338":{
@@ -14861,7 +14905,7 @@
                 "DTC":true
             }
         },
-        "Twd":5,
+        "Twd":6,
         "Type":"Action"
     },
     "100356":{
@@ -14912,7 +14956,7 @@
                 "PG":"2"
             }
         },
-        "Twd":148,
+        "Twd":149,
         "Type":"Combat"
     },
     "100357":{
@@ -15161,7 +15205,7 @@
                 "PR":"4"
             }
         },
-        "Twd":660,
+        "Twd":662,
         "Type":"Action Modifier"
     },
     "100363":{
@@ -15239,7 +15283,7 @@
                 "PBH":"1"
             }
         },
-        "Twd":24,
+        "Twd":25,
         "Type":"Action Modifier"
     },
     "100365":{
@@ -15267,7 +15311,7 @@
                 "C":true
             }
         },
-        "Twd":26,
+        "Twd":27,
         "Type":"Action"
     },
     "100366":{
@@ -15308,7 +15352,7 @@
                 "NTz":1
             }
         },
-        "Twd":116,
+        "Twd":123,
         "Type":"Master"
     },
     "100367":{
@@ -15549,7 +15593,7 @@
                 "NR":1
             }
         },
-        "Twd":64,
+        "Twd":65,
         "Type":"Equipment"
     },
     "100375":{
@@ -16298,7 +16342,7 @@
                 "PT":"2"
             }
         },
-        "Twd":225,
+        "Twd":227,
         "Type":"Combat"
     },
     "100393":{
@@ -16560,7 +16604,7 @@
                 "DTC":true
             }
         },
-        "Twd":25,
+        "Twd":26,
         "Type":"Action"
     },
     "100401":{
@@ -16623,7 +16667,7 @@
                 "PV":"4"
             }
         },
-        "Twd":1033,
+        "Twd":1036,
         "Type":"Action Modifier"
     },
     "100402":{
@@ -16785,7 +16829,7 @@
                 "PM":"4"
             }
         },
-        "Twd":143,
+        "Twd":144,
         "Type":"Action Modifier"
     },
     "100406":{
@@ -16814,7 +16858,7 @@
                 "PS":"3"
             }
         },
-        "Twd":57,
+        "Twd":58,
         "Type":"Reaction"
     },
     "100407":{
@@ -16973,7 +17017,7 @@
                 "PB":"3"
             }
         },
-        "Twd":242,
+        "Twd":244,
         "Type":"Political Action"
     },
     "100411":{
@@ -17233,7 +17277,7 @@
                 "PTz":"1"
             }
         },
-        "Twd":103,
+        "Twd":107,
         "Type":"Action"
     },
     "100417":{
@@ -17301,7 +17345,7 @@
                 "DTC":true
             }
         },
-        "Twd":68,
+        "Twd":70,
         "Type":"Action"
     },
     "100419":{
@@ -17337,7 +17381,7 @@
                 }
             },
             {
-                "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again (eg. {Immortal Grapple}). ",
+                "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again. ",
                 "refs":{
                     "[ANK 20190104]":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
                     "[RBK cancel-a-card]":"https://www.vekn.net/rulebook#cancel-a-card",
@@ -17935,7 +17979,7 @@
                 "":"1"
             }
         },
-        "Twd":504,
+        "Twd":510,
         "Type":"Master",
         "Trifle":true
     },
@@ -18270,7 +18314,7 @@
                 "SPIV":1
             }
         },
-        "Twd":243,
+        "Twd":246,
         "Type":"Master"
     },
     "100445":{
@@ -18344,7 +18388,7 @@
                 "DTC":true
             }
         },
-        "Twd":40,
+        "Twd":41,
         "Type":"Action Modifier"
     },
     "100447":{
@@ -18477,7 +18521,7 @@
                 "PTo":"2"
             }
         },
-        "Twd":65,
+        "Twd":66,
         "Type":"Action Modifier"
     },
     "100451":{
@@ -19352,7 +19396,7 @@
                 "U":true
             }
         },
-        "Twd":65,
+        "Twd":66,
         "Type":"Action Modifier"
     },
     "100479":{
@@ -19592,7 +19636,7 @@
                 "PMi":"2"
             }
         },
-        "Twd":49,
+        "Twd":53,
         "Type":"Master",
         "Trifle":true
     },
@@ -19914,7 +19958,7 @@
                 "PV":"1"
             }
         },
-        "Twd":279,
+        "Twd":280,
         "Type":"Action Modifier"
     },
     "100493":{
@@ -19950,7 +19994,7 @@
                 }
             },
             {
-                "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again (eg. {Immortal Grapple}). ",
+                "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again. ",
                 "refs":{
                     "[ANK 20190104]":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
                     "[RBK cancel-a-card]":"https://www.vekn.net/rulebook#cancel-a-card",
@@ -19992,7 +20036,7 @@
                 "U":true
             }
         },
-        "Twd":129,
+        "Twd":130,
         "Type":"Master"
     },
     "100494":{
@@ -20670,7 +20714,7 @@
                 }
             },
             {
-                "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again (eg. {Immortal Grapple}). ",
+                "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again. ",
                 "refs":{
                     "[ANK 20190104]":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
                     "[RBK cancel-a-card]":"https://www.vekn.net/rulebook#cancel-a-card",
@@ -20883,7 +20927,7 @@
                 "PG":"3"
             }
         },
-        "Twd":80,
+        "Twd":84,
         "Type":"Reaction"
     },
     "100515":{
@@ -20951,7 +20995,7 @@
                 "NR":5
             }
         },
-        "Twd":264,
+        "Twd":266,
         "Type":"Action"
     },
     "100516":{
@@ -21132,7 +21176,7 @@
                 "NL":3
             }
         },
-        "Twd":1466,
+        "Twd":1473,
         "Type":"Reaction"
     },
     "100519":{
@@ -21226,7 +21270,7 @@
                 "PSal":"2"
             }
         },
-        "Twd":984,
+        "Twd":993,
         "Type":"Reaction"
     },
     "100520":{
@@ -21294,7 +21338,7 @@
                 "PM":1
             }
         },
-        "Twd":56,
+        "Twd":57,
         "Type":"Master"
     },
     "100522":{
@@ -21361,7 +21405,7 @@
                 }
             },
             {
-                "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again (eg. {Immortal Grapple}). ",
+                "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again. ",
                 "refs":{
                     "[ANK 20190104]":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
                     "[RBK cancel-a-card]":"https://www.vekn.net/rulebook#cancel-a-card",
@@ -21440,7 +21484,7 @@
                 "PM":"2"
             }
         },
-        "Twd":94,
+        "Twd":95,
         "Type":"Action Modifier/Combat"
     },
     "100525":{
@@ -21869,7 +21913,7 @@
                 }
             },
             {
-                "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again (eg. {Immortal Grapple}). ",
+                "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again. ",
                 "refs":{
                     "[ANK 20190104]":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
                     "[RBK cancel-a-card]":"https://www.vekn.net/rulebook#cancel-a-card",
@@ -22018,7 +22062,7 @@
                 }
             },
             {
-                "text":"[abo][REFLEX]The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again (eg. {Immortal Grapple}). ",
+                "text":"[abo][REFLEX]The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again. ",
                 "refs":{
                     "[ANK 20190104]":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
                     "[RBK cancel-a-card]":"https://www.vekn.net/rulebook#cancel-a-card",
@@ -22091,7 +22135,7 @@
                 }
             },
             {
-                "text":"[abo][REFLEX]The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again (eg. {Immortal Grapple}). ",
+                "text":"[abo][REFLEX]The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again. ",
                 "refs":{
                     "[ANK 20190104]":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
                     "[RBK cancel-a-card]":"https://www.vekn.net/rulebook#cancel-a-card",
@@ -22152,7 +22196,7 @@
                 }
             },
             {
-                "text":"[abo][REFLEX]The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again (eg. {Immortal Grapple}). ",
+                "text":"[abo][REFLEX]The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again. ",
                 "refs":{
                     "[ANK 20190104]":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
                     "[RBK cancel-a-card]":"https://www.vekn.net/rulebook#cancel-a-card",
@@ -22214,7 +22258,7 @@
                 }
             },
             {
-                "text":"[abo][REFLEX]The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again (eg. {Immortal Grapple}). ",
+                "text":"[abo][REFLEX]The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again. ",
                 "refs":{
                     "[ANK 20190104]":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
                     "[RBK cancel-a-card]":"https://www.vekn.net/rulebook#cancel-a-card",
@@ -22441,7 +22485,7 @@
                 }
             },
             {
-                "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again (eg. {Immortal Grapple}). ",
+                "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again. ",
                 "refs":{
                     "[ANK 20190104]":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
                     "[RBK cancel-a-card]":"https://www.vekn.net/rulebook#cancel-a-card",
@@ -22489,7 +22533,7 @@
                 "DTC":true
             }
         },
-        "Twd":1266,
+        "Twd":1276,
         "Type":"Master"
     },
     "100546":{
@@ -22657,7 +22701,7 @@
                 "NL":1
             }
         },
-        "Twd":198,
+        "Twd":199,
         "Type":"Combat"
     },
     "100550":{
@@ -22834,7 +22878,7 @@
                 }
             },
             {
-                "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again (eg. {Immortal Grapple}). ",
+                "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again. ",
                 "refs":{
                     "[ANK 20190104]":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
                     "[RBK cancel-a-card]":"https://www.vekn.net/rulebook#cancel-a-card",
@@ -22983,6 +23027,12 @@
                 "text":"If used to \"change\" the control of a location or equipment representing a location to the same Methuselah, the location cannot be moved to another minion controlled by the same Methuselah. ",
                 "refs":{
                     "[LSJ 19971002]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/RY_nhdykKP0/m/fOdKJtOy4kgJ"
+                }
+            },
+            {
+                "text":"Changing the controller of a location has no other effect, unless specified by card text. Exception: A location \"on\" another controlled card is moved onto an appropriate card controlled by the new controller of the location. ",
+                "refs":{
+                    "[RTR 19980623]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/tSpd9dtTElc/m/-CuHJF54_n0J"
                 }
             }
         ],
@@ -23192,7 +23242,7 @@
                 "C":true
             }
         },
-        "Twd":15,
+        "Twd":16,
         "Type":"Action"
     },
     "100563":{
@@ -23229,7 +23279,7 @@
                 "PB":"3"
             }
         },
-        "Twd":54,
+        "Twd":56,
         "Type":"Combat"
     },
     "100564":{
@@ -23428,7 +23478,7 @@
                 "PG":"1"
             }
         },
-        "Twd":29,
+        "Twd":30,
         "Type":"Retainer"
     },
     "100569":{
@@ -23558,7 +23608,7 @@
                 "C":true
             }
         },
-        "Twd":96,
+        "Twd":97,
         "Type":"Action Modifier"
     },
     "100572":{
@@ -23641,6 +23691,12 @@
                 "refs":{
                     "[RTR 19960112]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d3n3StNS7no/m/k2NmZFUl9fAJ"
                 }
+            },
+            {
+                "text":"Changing the controller of a location has no other effect, unless specified by card text. Exception: A location \"on\" another controlled card is moved onto an appropriate card controlled by the new controller of the location. ",
+                "refs":{
+                    "[RTR 19980623]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/tSpd9dtTElc/m/-CuHJF54_n0J"
+                }
             }
         ],
         "Set":{
@@ -23697,7 +23753,7 @@
                 "PM":"2"
             }
         },
-        "Twd":7,
+        "Twd":8,
         "Type":"Master"
     },
     "100575":{
@@ -23766,7 +23822,7 @@
                 "AU":"3"
             }
         },
-        "Twd":63,
+        "Twd":68,
         "Type":"Combat"
     },
     "102220":{
@@ -24004,7 +24060,7 @@
                 "DoF":"1"
             }
         },
-        "Twd":293,
+        "Twd":294,
         "Type":"Event"
     },
     "100582":{
@@ -24355,7 +24411,7 @@
                 "NH":1
             }
         },
-        "Twd":1925,
+        "Twd":1937,
         "Type":"Master"
     },
     "100589":{
@@ -24755,7 +24811,7 @@
                 "PB":"4"
             }
         },
-        "Twd":35,
+        "Twd":38,
         "Type":"Combat"
     },
     "100598":{
@@ -24820,7 +24876,7 @@
                 "PSal":"2"
             }
         },
-        "Twd":525,
+        "Twd":527,
         "Type":"Reaction"
     },
     "100599":{
@@ -24902,7 +24958,7 @@
                 "NTz":2
             }
         },
-        "Twd":233,
+        "Twd":241,
         "Type":"Action Modifier"
     },
     "100601":{
@@ -24950,7 +25006,7 @@
                 "PG":"3"
             }
         },
-        "Twd":341,
+        "Twd":350,
         "Type":"Combat"
     },
     "100602":{
@@ -25082,7 +25138,7 @@
                 "AU":"2"
             }
         },
-        "Twd":28,
+        "Twd":31,
         "Type":"Political Action"
     },
     "100606":{
@@ -25270,7 +25326,7 @@
                 "PG":"1"
             }
         },
-        "Twd":184,
+        "Twd":186,
         "Type":"Master",
         "Aka":"Eco Terrorists"
     },
@@ -25542,7 +25598,7 @@
                 "PGar":"2"
             }
         },
-        "Twd":241,
+        "Twd":244,
         "Type":"Master"
     },
     "100617":{
@@ -25594,7 +25650,7 @@
                 "PMi":"1"
             }
         },
-        "Twd":717,
+        "Twd":723,
         "Type":"Action Modifier"
     },
     "100618":{
@@ -25737,7 +25793,7 @@
                 "PM":"1"
             }
         },
-        "Twd":128,
+        "Twd":129,
         "Type":"Master"
     },
     "100621":{
@@ -25805,7 +25861,7 @@
                 "DTC":true
             }
         },
-        "Twd":15,
+        "Twd":16,
         "Type":"Action Modifier/Reaction"
     },
     "100623":{
@@ -26182,7 +26238,7 @@
                 "":"1"
             }
         },
-        "Twd":57,
+        "Twd":58,
         "Type":"Master"
     },
     "100633":{
@@ -26233,7 +26289,7 @@
                 "LB":"9"
             }
         },
-        "Twd":168,
+        "Twd":170,
         "Type":"Action"
     },
     "100634":{
@@ -26342,7 +26398,7 @@
                 }
             },
             {
-                "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again (eg. {Immortal Grapple}). ",
+                "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again. ",
                 "refs":{
                     "[ANK 20190104]":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
                     "[RBK cancel-a-card]":"https://www.vekn.net/rulebook#cancel-a-card",
@@ -26597,7 +26653,7 @@
                 "PMi":"2"
             }
         },
-        "Twd":40,
+        "Twd":42,
         "Type":"Action Modifier"
     },
     "100642":{
@@ -26778,7 +26834,7 @@
                 "PH":3
             }
         },
-        "Twd":489,
+        "Twd":490,
         "Type":"Reaction"
     },
     "100645":{
@@ -26829,7 +26885,7 @@
                 "":"1"
             }
         },
-        "Twd":427,
+        "Twd":432,
         "Type":"Action Modifier"
     },
     "100646":{
@@ -26873,7 +26929,7 @@
                 "":"1"
             }
         },
-        "Twd":75,
+        "Twd":76,
         "Type":"Master"
     },
     "100647":{
@@ -27146,7 +27202,7 @@
                 "SCat":2
             }
         },
-        "Twd":619,
+        "Twd":620,
         "Type":"Action"
     },
     "100653":{
@@ -27292,7 +27348,7 @@
                 "2004-03-01":true
             }
         },
-        "Twd":183,
+        "Twd":187,
         "Type":"Master"
     },
     "100657":{
@@ -27327,7 +27383,7 @@
                 "R":true
             }
         },
-        "Twd":25,
+        "Twd":26,
         "Type":"Equipment"
     },
     "100658":{
@@ -27483,7 +27539,7 @@
                 "SKM":"1"
             }
         },
-        "Twd":7,
+        "Twd":8,
         "Type":"Ally"
     },
     "100662":{
@@ -27549,7 +27605,7 @@
                 }
             },
             {
-                "text":"[PRE][POT]The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again (eg. {Immortal Grapple}). ",
+                "text":"[PRE][POT]The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again. ",
                 "refs":{
                     "[ANK 20190104]":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
                     "[RBK cancel-a-card]":"https://www.vekn.net/rulebook#cancel-a-card",
@@ -27819,7 +27875,7 @@
                 }
             },
             {
-                "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again (eg. {Immortal Grapple}). ",
+                "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again. ",
                 "refs":{
                     "[ANK 20190104]":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
                     "[RBK cancel-a-card]":"https://www.vekn.net/rulebook#cancel-a-card",
@@ -28324,7 +28380,7 @@
                 "PH":3
             }
         },
-        "Twd":682,
+        "Twd":687,
         "Type":"Reaction"
     },
     "100681":{
@@ -28404,7 +28460,7 @@
                 "PM":"4"
             }
         },
-        "Twd":141,
+        "Twd":142,
         "Type":"Action Modifier"
     },
     "100683":{
@@ -28555,7 +28611,7 @@
                 "PG":"3"
             }
         },
-        "Twd":65,
+        "Twd":66,
         "Type":"Reaction"
     },
     "100687":{
@@ -28631,7 +28687,7 @@
                 "PMi":"1"
             }
         },
-        "Twd":764,
+        "Twd":768,
         "Type":"Action Modifier"
     },
     "100688":{
@@ -28692,7 +28748,7 @@
                 }
             },
             {
-                "text":"[myt][REFLEX]The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again (eg. {Immortal Grapple}). ",
+                "text":"[myt][REFLEX]The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again. ",
                 "refs":{
                     "[ANK 20190104]":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
                     "[RBK cancel-a-card]":"https://www.vekn.net/rulebook#cancel-a-card",
@@ -29075,7 +29131,7 @@
                 }
             },
             {
-                "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again (eg. {Immortal Grapple}). ",
+                "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again. ",
                 "refs":{
                     "[ANK 20190104]":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
                     "[RBK cancel-a-card]":"https://www.vekn.net/rulebook#cancel-a-card",
@@ -29181,7 +29237,7 @@
                 "NTz":1
             }
         },
-        "Twd":720,
+        "Twd":723,
         "Type":"Master"
     },
     "100699":{
@@ -29363,7 +29419,7 @@
                 "NTz":1
             }
         },
-        "Twd":202,
+        "Twd":203,
         "Type":"Action"
     },
     "100704":{
@@ -29685,7 +29741,7 @@
                 "":"1"
             }
         },
-        "Twd":123,
+        "Twd":124,
         "Type":"Master"
     },
     "100711":{
@@ -30350,7 +30406,7 @@
                 "":"4"
             }
         },
-        "Twd":19,
+        "Twd":21,
         "Type":"Action"
     },
     "100726":{
@@ -30422,7 +30478,7 @@
                 "PV":"1"
             }
         },
-        "Twd":77,
+        "Twd":78,
         "Type":"Action",
         "Aka":"Fifth Tradition: Hospitality, The"
     },
@@ -30899,7 +30955,7 @@
                 "DTC":true
             }
         },
-        "Twd":19,
+        "Twd":20,
         "Type":"Combat"
     },
     "100742":{
@@ -31620,7 +31676,7 @@
                 "C":true
             }
         },
-        "Twd":88,
+        "Twd":89,
         "Type":"Action Modifier/Combat"
     },
     "100759":{
@@ -31851,7 +31907,7 @@
                 "":"3"
             }
         },
-        "Twd":206,
+        "Twd":207,
         "Type":"Action Modifier"
     },
     "100762":{
@@ -32024,7 +32080,7 @@
                 "PTz":"3"
             }
         },
-        "Twd":402,
+        "Twd":403,
         "Type":"Action Modifier"
     },
     "100766":{
@@ -32175,7 +32231,7 @@
                 "PM":"2"
             }
         },
-        "Twd":437,
+        "Twd":439,
         "Type":"Action Modifier"
     },
     "100770":{
@@ -32309,7 +32365,7 @@
                 "NTz":2
             }
         },
-        "Twd":333,
+        "Twd":341,
         "Type":"Combat"
     },
     "102223":{
@@ -32357,7 +32413,7 @@
                 "NTz":3
             }
         },
-        "Twd":101,
+        "Twd":110,
         "Type":"Action Modifier/Reaction"
     },
     "102224":{
@@ -32385,7 +32441,7 @@
                 "PMi":"2"
             }
         },
-        "Twd":10,
+        "Twd":11,
         "Type":"Action Modifier/Combat"
     },
     "100772":{
@@ -32528,7 +32584,7 @@
                 "PSal":1
             }
         },
-        "Twd":109,
+        "Twd":110,
         "Type":"Master"
     },
     "100775":{
@@ -32616,7 +32672,7 @@
                 "PR":"1"
             }
         },
-        "Twd":46,
+        "Twd":48,
         "Type":"Master"
     },
     "100778":{
@@ -32781,7 +32837,7 @@
                 "PBH":"2"
             }
         },
-        "Twd":58,
+        "Twd":59,
         "Type":"Action",
         "Aka":"Fourth Tradition: The Accounting, The"
     },
@@ -32912,7 +32968,7 @@
                 "PTr":"1"
             }
         },
-        "Twd":103,
+        "Twd":104,
         "Type":"Master"
     },
     "100786":{
@@ -32985,11 +33041,11 @@
         "Requirement":"",
         "Rulings":[
             {
-                "text":"[FOR] Is played after all combats are handled. Can be played from torpor. ",
+                "text":"[FOR] Is played after all combats are handled. Can be played from torpor ",
                 "refs":{
-                    "[RTR 19980623]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/tSpd9dtTElc/m/-CuHJF54_n0J",
                     "[LSJ 20030103]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/TUDO_4FwdyY/m/DWOwgQL850gJ",
-                    "[ANK 20180906]":"https://www.vekn.net/forum/rules-questions/76981-freak-drive-while-going-to-torpor#90451"
+                    "[ANK 20180906]":"https://www.vekn.net/forum/rules-questions/76981-freak-drive-while-going-to-torpor#90451",
+                    "[RTR 19980623]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/tSpd9dtTElc/m/-CuHJF54_n0J"
                 }
             },
             {
@@ -33060,7 +33116,7 @@
                 "PH":4
             }
         },
-        "Twd":653,
+        "Twd":658,
         "Type":"Action Modifier"
     },
     "100789":{
@@ -33588,7 +33644,7 @@
                 "R":true
             }
         },
-        "Twd":0,
+        "Twd":1,
         "Type":"Action Modifier"
     },
     "100803":{
@@ -33829,7 +33885,7 @@
                 "PR":"1"
             }
         },
-        "Twd":122,
+        "Twd":132,
         "Type":"Master"
     },
     "100810":{
@@ -34019,7 +34075,7 @@
                 "PA":"3"
             }
         },
-        "Twd":21,
+        "Twd":22,
         "Type":"Combat"
     },
     "100815":{
@@ -34512,7 +34568,7 @@
                 "NH":1
             }
         },
-        "Twd":1546,
+        "Twd":1559,
         "Type":"Master"
     },
     "100825":{
@@ -34740,7 +34796,7 @@
                 "PN":1
             }
         },
-        "Twd":16,
+        "Twd":17,
         "Type":"Master"
     },
     "100832":{
@@ -35327,7 +35383,7 @@
                 "NTz":4
             }
         },
-        "Twd":1064,
+        "Twd":1070,
         "Type":"Action"
     },
     "100846":{
@@ -35628,7 +35684,7 @@
                 "NL":1
             }
         },
-        "Twd":191,
+        "Twd":192,
         "Type":"Action",
         "Aka":"Grave Robbing"
     },
@@ -35877,7 +35933,7 @@
                 "R":true
             }
         },
-        "Twd":7,
+        "Twd":8,
         "Type":"Ally"
     },
     "100859":{
@@ -35943,7 +35999,7 @@
                 "PBH":"2"
             }
         },
-        "Twd":53,
+        "Twd":54,
         "Type":"Master"
     },
     "100861":{
@@ -36000,6 +36056,35 @@
                 }
             },
             {
+                "text":"Cards are not replaced during the \"as played\" window. The cancelation must be played immediately: no other effects can be used, except for wakes (eg. neither\u00a0{Barrens, The}\u00a0nor {Dreams of the Sphinx}\u00a0can be used). ",
+                "refs":{
+                    "[LSJ 20061207]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/nqcrJlhg4Ng/m/qQu7p-LLhfAJ",
+                    "[RBK playing-a-card]":"https://www.vekn.net/rulebook#playing-a-card",
+                    "[LSJ 20061013]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/6w8K3yDtBH0/m/M_SZH9Id8n8J"
+                }
+            },
+            {
+                "text":"If the canceled card had a \"do not replace until\" clause (or alternate replacement like {Steely Tenacity}), that clause is canceled as well and the card is replaced normally. ",
+                "refs":{
+                    "[LSJ 20080630]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/nvuXBpEaKAA/m/ymiC3yAQVOwJ",
+                    "[LSJ 20011023]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/2GOLIrXAF8M/m/P4T3Dj6UNL0J"
+                }
+            },
+            {
+                "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again. ",
+                "refs":{
+                    "[ANK 20190104]":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
+                    "[RBK cancel-a-card]":"https://www.vekn.net/rulebook#cancel-a-card",
+                    "[LSJ 19980212]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/fLFLlXZXHqA/m/ggjw8aGjdRoJ"
+                }
+            },
+            {
+                "text":"If a limited effect is canceled (bleed, additional strike), then the limit is not triggered and another limited effect can be used. ",
+                "refs":{
+                    "[LSJ 20030224]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/67261v339Ds/m/um8V7VVp2Y4J"
+                }
+            },
+            {
                 "text":"The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}). The card cannot be played if the minion cannot afford to burn the blood. ",
                 "refs":{
                     "[ANK 20210226]":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
@@ -36011,7 +36096,7 @@
                 "C":true
             }
         },
-        "Twd":41,
+        "Twd":43,
         "Type":"Combat"
     },
     "100862":{
@@ -36115,7 +36200,7 @@
                 "PR":"4"
             }
         },
-        "Twd":145,
+        "Twd":147,
         "Type":"Reaction"
     },
     "100864":{
@@ -36657,7 +36742,7 @@
                 }
             },
             {
-                "text":"[tem]The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again (eg. {Immortal Grapple}). ",
+                "text":"[tem]The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again. ",
                 "refs":{
                     "[ANK 20190104]":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
                     "[RBK cancel-a-card]":"https://www.vekn.net/rulebook#cancel-a-card",
@@ -36725,7 +36810,7 @@
                 }
             },
             {
-                "text":"[CHI]The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again (eg. {Immortal Grapple}). ",
+                "text":"[CHI]The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again. ",
                 "refs":{
                     "[ANK 20190104]":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
                     "[RBK cancel-a-card]":"https://www.vekn.net/rulebook#cancel-a-card",
@@ -36841,7 +36926,7 @@
                 "":"1"
             }
         },
-        "Twd":20,
+        "Twd":21,
         "Type":"Equipment"
     },
     "100883":{
@@ -37495,7 +37580,7 @@
                 "PTr":1
             }
         },
-        "Twd":15,
+        "Twd":16,
         "Type":"Equipment"
     },
     "100899":{
@@ -37681,7 +37766,7 @@
                 "PMin":"1"
             }
         },
-        "Twd":830,
+        "Twd":842,
         "Type":"Equipment"
     },
     "100904":{
@@ -37712,7 +37797,7 @@
                 "PMin":"1"
             }
         },
-        "Twd":104,
+        "Twd":105,
         "Type":"Action"
     },
     "100905":{
@@ -37895,7 +37980,7 @@
                 "":"1"
             }
         },
-        "Twd":255,
+        "Twd":256,
         "Type":"Master",
         "Aka":"Heidelburg Castle, Germany"
     },
@@ -37939,7 +38024,7 @@
                 "U":true
             }
         },
-        "Twd":66,
+        "Twd":67,
         "Type":"Equipment"
     },
     "100910":{
@@ -37975,7 +38060,7 @@
                 "DTC":true
             }
         },
-        "Twd":42,
+        "Twd":43,
         "Type":"Combat"
     },
     "100911":{
@@ -38225,7 +38310,7 @@
                 "PAn":"4"
             }
         },
-        "Twd":9,
+        "Twd":10,
         "Type":"Action Modifier"
     },
     "100917":{
@@ -38329,7 +38414,7 @@
                 "PSal":"3"
             }
         },
-        "Twd":220,
+        "Twd":221,
         "Type":"Combat"
     },
     "100919":{
@@ -38492,7 +38577,7 @@
                 }
             },
             {
-                "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again (eg. {Immortal Grapple}). ",
+                "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again. ",
                 "refs":{
                     "[ANK 20190104]":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
                     "[RBK cancel-a-card]":"https://www.vekn.net/rulebook#cancel-a-card",
@@ -38879,7 +38964,7 @@
                 "PTz":"1"
             }
         },
-        "Twd":123,
+        "Twd":125,
         "Type":"Retainer"
     },
     "100933":{
@@ -39466,7 +39551,7 @@
                 }
             },
             {
-                "text":"[dai][obf],\u00a0[DAI][OBF]The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again (eg. {Immortal Grapple}). ",
+                "text":"[dai][obf],\u00a0[DAI][OBF]The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again. ",
                 "refs":{
                     "[ANK 20190104]":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
                     "[RBK cancel-a-card]":"https://www.vekn.net/rulebook#cancel-a-card",
@@ -39491,7 +39576,7 @@
                 "DTC":true
             }
         },
-        "Twd":83,
+        "Twd":85,
         "Type":"Action Modifier"
     },
     "100948":{
@@ -39681,7 +39766,7 @@
                 "AU":"3"
             }
         },
-        "Twd":24,
+        "Twd":25,
         "Type":"Action"
     },
     "100953":{
@@ -40049,7 +40134,7 @@
                 "NL":6
             }
         },
-        "Twd":310,
+        "Twd":314,
         "Type":"Combat"
     },
     "100960":{
@@ -40842,7 +40927,7 @@
                 "PO":1
             }
         },
-        "Twd":46,
+        "Twd":48,
         "Type":"Combat"
     },
     "100981":{
@@ -41000,7 +41085,7 @@
                 "":"2"
             }
         },
-        "Twd":1012,
+        "Twd":1018,
         "Type":"Master"
     },
     "100985":{
@@ -41028,7 +41113,7 @@
                 "R":true
             }
         },
-        "Twd":19,
+        "Twd":20,
         "Type":"Master"
     },
     "100986":{
@@ -41344,7 +41429,7 @@
                 "":"3"
             }
         },
-        "Twd":108,
+        "Twd":109,
         "Type":"Action Modifier"
     },
     "100995":{
@@ -41722,7 +41807,7 @@
                 "PTz":"3"
             }
         },
-        "Twd":0,
+        "Twd":1,
         "Type":"Action Modifier"
     },
     "101004":{
@@ -41795,7 +41880,7 @@
                 }
             },
             {
-                "text":"[abo][REFLEX]The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again (eg. {Immortal Grapple}). ",
+                "text":"[abo][REFLEX]The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again. ",
                 "refs":{
                     "[ANK 20190104]":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
                     "[RBK cancel-a-card]":"https://www.vekn.net/rulebook#cancel-a-card",
@@ -41840,6 +41925,35 @@
         "Pool Cost":"",
         "Requirement":"",
         "Rulings":[
+            {
+                "text":"[abo]Cards are not replaced during the \"as played\" window. The cancelation must be played immediately: no other effects can be used, except for wakes (eg. neither\u00a0{Barrens, The}\u00a0nor {Dreams of the Sphinx}\u00a0can be used). ",
+                "refs":{
+                    "[LSJ 20061207]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/nqcrJlhg4Ng/m/qQu7p-LLhfAJ",
+                    "[RBK playing-a-card]":"https://www.vekn.net/rulebook#playing-a-card",
+                    "[LSJ 20061013]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/6w8K3yDtBH0/m/M_SZH9Id8n8J"
+                }
+            },
+            {
+                "text":"[abo]If the canceled card had a \"do not replace until\" clause (or alternate replacement like {Steely Tenacity}), that clause is canceled as well and the card is replaced normally. ",
+                "refs":{
+                    "[LSJ 20080630]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/nvuXBpEaKAA/m/ymiC3yAQVOwJ",
+                    "[LSJ 20011023]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/2GOLIrXAF8M/m/P4T3Dj6UNL0J"
+                }
+            },
+            {
+                "text":"[abo]The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again. ",
+                "refs":{
+                    "[ANK 20190104]":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
+                    "[RBK cancel-a-card]":"https://www.vekn.net/rulebook#cancel-a-card",
+                    "[LSJ 19980212]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/fLFLlXZXHqA/m/ggjw8aGjdRoJ"
+                }
+            },
+            {
+                "text":"[abo]If a limited effect is canceled (bleed, additional strike), then the limit is not triggered and another limited effect can be used. ",
+                "refs":{
+                    "[LSJ 20030224]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/67261v339Ds/m/um8V7VVp2Y4J"
+                }
+            },
             {
                 "text":"[abo] [REFLEX] Any frenzy card that targets/selects/chooses/affects the minion when played, is considered being played on the minion. ",
                 "refs":{
@@ -41987,7 +42101,7 @@
                 }
             },
             {
-                "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again (eg. {Immortal Grapple}). ",
+                "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again. ",
                 "refs":{
                     "[ANK 20190104]":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
                     "[RBK cancel-a-card]":"https://www.vekn.net/rulebook#cancel-a-card",
@@ -42192,7 +42306,7 @@
                 "PSal":"1"
             }
         },
-        "Twd":690,
+        "Twd":691,
         "Type":"Equipment"
     },
     "101015":{
@@ -42236,7 +42350,7 @@
                 "PN":"1"
             }
         },
-        "Twd":233,
+        "Twd":234,
         "Type":"Retainer"
     },
     "101016":{
@@ -42422,7 +42536,7 @@
                 "2024-04-23":true
             }
         },
-        "Twd":553,
+        "Twd":559,
         "Type":"Master",
         "Aka":"Jake Washington (Hunter)"
     },
@@ -42598,7 +42712,7 @@
                 }
             },
             {
-                "text":"[SER]The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again (eg. {Immortal Grapple}). ",
+                "text":"[SER]The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again. ",
                 "refs":{
                     "[ANK 20190104]":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
                     "[RBK cancel-a-card]":"https://www.vekn.net/rulebook#cancel-a-card",
@@ -42695,7 +42809,7 @@
                 }
             },
             {
-                "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again (eg. {Immortal Grapple}). ",
+                "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again. ",
                 "refs":{
                     "[ANK 20190104]":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
                     "[RBK cancel-a-card]":"https://www.vekn.net/rulebook#cancel-a-card",
@@ -42837,7 +42951,7 @@
                 "":"1"
             }
         },
-        "Twd":78,
+        "Twd":79,
         "Type":"Action"
     },
     "101029":{
@@ -43080,7 +43194,7 @@
                 "DTC":true
             }
         },
-        "Twd":37,
+        "Twd":38,
         "Type":"Equipment"
     },
     "101036":{
@@ -43886,7 +44000,7 @@
                 "PM":"8"
             }
         },
-        "Twd":167,
+        "Twd":168,
         "Type":"Action"
     },
     "101056":{
@@ -43984,7 +44098,7 @@
                 "SPIV":5
             }
         },
-        "Twd":757,
+        "Twd":761,
         "Type":"Political Action"
     },
     "101057":{
@@ -44134,7 +44248,7 @@
                 "DTC":true
             }
         },
-        "Twd":1,
+        "Twd":2,
         "Type":"Action"
     },
     "101062":{
@@ -44404,7 +44518,7 @@
                 "SDS":1
             }
         },
-        "Twd":404,
+        "Twd":405,
         "Type":"Master"
     },
     "101068":{
@@ -44504,7 +44618,7 @@
                 "PN":"1"
             }
         },
-        "Twd":79,
+        "Twd":80,
         "Type":"Master"
     },
     "101071":{
@@ -44593,7 +44707,7 @@
                 "C":true
             }
         },
-        "Twd":1,
+        "Twd":2,
         "Type":"Combat"
     },
     "101073":{
@@ -45739,7 +45853,7 @@
                 "PB":"1"
             }
         },
-        "Twd":26,
+        "Twd":27,
         "Type":"Master"
     },
     "101101":{
@@ -45816,7 +45930,7 @@
                 "PTz":"1"
             }
         },
-        "Twd":77,
+        "Twd":79,
         "Type":"Master"
     },
     "101103":{
@@ -45879,7 +45993,7 @@
                 "":"1"
             }
         },
-        "Twd":71,
+        "Twd":73,
         "Type":"Master"
     },
     "101104":{
@@ -46173,7 +46287,7 @@
                 "PB":"3"
             }
         },
-        "Twd":30,
+        "Twd":32,
         "Type":"Action"
     },
     "101111":{
@@ -46329,7 +46443,7 @@
                 "PTz":"1"
             }
         },
-        "Twd":34,
+        "Twd":35,
         "Type":"Equipment"
     },
     "101115":{
@@ -46774,7 +46888,7 @@
                 "PR":"4"
             }
         },
-        "Twd":919,
+        "Twd":925,
         "Type":"Action Modifier"
     },
     "101126":{
@@ -46813,7 +46927,7 @@
                 "PA":1
             }
         },
-        "Twd":75,
+        "Twd":76,
         "Type":"Reaction"
     },
     "102273":{
@@ -46838,7 +46952,7 @@
                 "":"6"
             }
         },
-        "Twd":3,
+        "Twd":4,
         "Type":"Action Modifier"
     },
     "101127":{
@@ -47592,7 +47706,7 @@
                 "PTr":"1"
             }
         },
-        "Twd":237,
+        "Twd":238,
         "Type":"Action"
     },
     "101144":{
@@ -47669,7 +47783,7 @@
                 "SPIV":4
             }
         },
-        "Twd":720,
+        "Twd":722,
         "Type":"Combat"
     },
     "101145":{
@@ -47819,7 +47933,7 @@
                 "PB":"2"
             }
         },
-        "Twd":10,
+        "Twd":11,
         "Type":"Action"
     },
     "101148":{
@@ -49064,7 +49178,7 @@
                 "PSam":"2"
             }
         },
-        "Twd":49,
+        "Twd":50,
         "Type":"Action Modifier"
     },
     "101180":{
@@ -49624,7 +49738,7 @@
                 }
             },
             {
-                "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again (eg. {Immortal Grapple}). ",
+                "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again. ",
                 "refs":{
                     "[ANK 20190104]":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
                     "[RBK cancel-a-card]":"https://www.vekn.net/rulebook#cancel-a-card",
@@ -49887,7 +50001,7 @@
                 "AU":"2"
             }
         },
-        "Twd":25,
+        "Twd":28,
         "Type":"Action Modifier"
     },
     "101200":{
@@ -50158,7 +50272,7 @@
                 "U":true
             }
         },
-        "Twd":197,
+        "Twd":198,
         "Type":"Master"
     },
     "102239":{
@@ -50572,7 +50686,7 @@
                 "PM":"3"
             }
         },
-        "Twd":48,
+        "Twd":49,
         "Type":"Action Modifier"
     },
     "101217":{
@@ -50908,7 +51022,7 @@
                 "SDS":3
             }
         },
-        "Twd":227,
+        "Twd":229,
         "Type":"Action Modifier"
     },
     "101224":{
@@ -51277,7 +51391,7 @@
                 }
             },
             {
-                "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again (eg. {Immortal Grapple}). ",
+                "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again. ",
                 "refs":{
                     "[ANK 20190104]":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
                     "[RBK cancel-a-card]":"https://www.vekn.net/rulebook#cancel-a-card",
@@ -51428,7 +51542,7 @@
                 "PAB":"4"
             }
         },
-        "Twd":5,
+        "Twd":6,
         "Type":"Reaction"
     },
     "101234":{
@@ -51640,7 +51754,7 @@
                 "":"1"
             }
         },
-        "Twd":476,
+        "Twd":480,
         "Type":"Master"
     },
     "101239":{
@@ -51671,7 +51785,7 @@
                 "PG":"1"
             }
         },
-        "Twd":85,
+        "Twd":88,
         "Type":"Action Modifier"
     },
     "101240":{
@@ -52089,7 +52203,7 @@
                 "DTC":true
             }
         },
-        "Twd":15,
+        "Twd":16,
         "Type":"Action"
     },
     "101249":{
@@ -52130,7 +52244,7 @@
                 "PBh":"1"
             }
         },
-        "Twd":414,
+        "Twd":415,
         "Type":"Retainer"
     },
     "101250":{
@@ -52285,7 +52399,7 @@
                 }
             },
             {
-                "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again (eg. {Immortal Grapple}). ",
+                "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again. ",
                 "refs":{
                     "[ANK 20190104]":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
                     "[RBK cancel-a-card]":"https://www.vekn.net/rulebook#cancel-a-card",
@@ -52487,7 +52601,7 @@
                 "2020-05-11":true
             }
         },
-        "Twd":167,
+        "Twd":168,
         "Type":"Action Modifier/Reaction"
     },
     "101257":{
@@ -52605,7 +52719,7 @@
                 "NH":2
             }
         },
-        "Twd":642,
+        "Twd":645,
         "Type":"Reaction"
     },
     "101260":{
@@ -52630,7 +52744,7 @@
                 "C":true
             }
         },
-        "Twd":22,
+        "Twd":23,
         "Type":"Political Action"
     },
     "101261":{
@@ -52671,7 +52785,7 @@
                 "PoS":"1"
             }
         },
-        "Twd":378,
+        "Twd":381,
         "Type":"Ally",
         "Aka":"Mylan Horseed (Goblin)"
     },
@@ -52816,7 +52930,7 @@
                 "":"1"
             }
         },
-        "Twd":183,
+        "Twd":186,
         "Type":"Event"
     },
     "101266":{
@@ -53029,7 +53143,7 @@
                 "PB":"1"
             }
         },
-        "Twd":171,
+        "Twd":172,
         "Type":"Political Action"
     },
     "101272":{
@@ -53102,7 +53216,7 @@
                 "PwN":"8"
             }
         },
-        "Twd":113,
+        "Twd":114,
         "Type":"Ally",
         "Aka":"Nephandus (Mage)"
     },
@@ -53267,7 +53381,7 @@
                 "DTC":true
             }
         },
-        "Twd":15,
+        "Twd":16,
         "Type":"Action Modifier"
     },
     "101277":{
@@ -53304,7 +53418,7 @@
                 "PB":"1"
             }
         },
-        "Twd":58,
+        "Twd":59,
         "Type":"Master"
     },
     "101278":{
@@ -53956,7 +54070,7 @@
                 "PM":"2"
             }
         },
-        "Twd":103,
+        "Twd":104,
         "Type":"Combat"
     },
     "101293":{
@@ -54233,7 +54347,7 @@
                 "R":true
             }
         },
-        "Twd":25,
+        "Twd":26,
         "Type":"Master"
     },
     "101301":{
@@ -54347,7 +54461,7 @@
                 }
             },
             {
-                "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again (eg. {Immortal Grapple}). ",
+                "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again. ",
                 "refs":{
                     "[ANK 20190104]":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
                     "[RBK cancel-a-card]":"https://www.vekn.net/rulebook#cancel-a-card",
@@ -54628,7 +54742,7 @@
                 "SDS":2
             }
         },
-        "Twd":262,
+        "Twd":263,
         "Type":"Reaction"
     },
     "102255":{
@@ -54656,7 +54770,7 @@
                 "NTz":2
             }
         },
-        "Twd":4,
+        "Twd":5,
         "Type":"Action Modifier/Combat"
     },
     "101310":{
@@ -54710,7 +54824,7 @@
                 "PMi":"1"
             }
         },
-        "Twd":165,
+        "Twd":166,
         "Type":"Master"
     },
     "102277":{
@@ -55193,7 +55307,7 @@
                 "PH":3
             }
         },
-        "Twd":1870,
+        "Twd":1883,
         "Type":"Reaction"
     },
     "102256":{
@@ -55235,7 +55349,7 @@
                 "NTz":1
             }
         },
-        "Twd":7,
+        "Twd":8,
         "Type":"Reaction"
     },
     "101322":{
@@ -55347,7 +55461,7 @@
                 "PB":"1"
             }
         },
-        "Twd":27,
+        "Twd":29,
         "Type":"Action"
     },
     "101325":{
@@ -55389,7 +55503,7 @@
                 }
             },
             {
-                "text":"[PRE][SER]The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again (eg. {Immortal Grapple}). ",
+                "text":"[PRE][SER]The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again. ",
                 "refs":{
                     "[ANK 20190104]":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
                     "[RBK cancel-a-card]":"https://www.vekn.net/rulebook#cancel-a-card",
@@ -55451,7 +55565,7 @@
                 "PMin":"1"
             }
         },
-        "Twd":122,
+        "Twd":123,
         "Type":"Master"
     },
     "101327":{
@@ -55586,7 +55700,7 @@
                 "PTz":"3"
             }
         },
-        "Twd":115,
+        "Twd":127,
         "Type":"Reaction"
     },
     "101330":{
@@ -55775,7 +55889,7 @@
                 "R":true
             }
         },
-        "Twd":274,
+        "Twd":275,
         "Type":"Ally"
     },
     "101334":{
@@ -55929,7 +56043,7 @@
                 "U":true
             }
         },
-        "Twd":4,
+        "Twd":5,
         "Type":"Ally"
     },
     "101338":{
@@ -55977,7 +56091,7 @@
                 "C":true
             }
         },
-        "Twd":21,
+        "Twd":22,
         "Type":"Combat"
     },
     "101339":{
@@ -56075,7 +56189,7 @@
                 "PN":"1"
             }
         },
-        "Twd":88,
+        "Twd":89,
         "Type":"Retainer"
     },
     "101341":{
@@ -56439,7 +56553,7 @@
                 "PTz":"1"
             }
         },
-        "Twd":166,
+        "Twd":171,
         "Type":"Master"
     },
     "101351":{
@@ -56581,7 +56695,7 @@
                 "NL":2
             }
         },
-        "Twd":531,
+        "Twd":534,
         "Type":"Political Action"
     },
     "101354":{
@@ -56619,7 +56733,7 @@
                 "PR":"1"
             }
         },
-        "Twd":35,
+        "Twd":36,
         "Type":"Master"
     },
     "101355":{
@@ -56656,7 +56770,7 @@
                 "":"1"
             }
         },
-        "Twd":637,
+        "Twd":640,
         "Type":"Master"
     },
     "102231":{
@@ -56684,7 +56798,7 @@
                 "PMi":"4"
             }
         },
-        "Twd":43,
+        "Twd":45,
         "Type":"Reaction"
     },
     "102279":{
@@ -57199,7 +57313,7 @@
                 "R":true
             }
         },
-        "Twd":5,
+        "Twd":6,
         "Type":"Action"
     },
     "101372":{
@@ -57678,7 +57792,7 @@
                 "SCat":1
             }
         },
-        "Twd":1738,
+        "Twd":1742,
         "Type":"Master"
     },
     "101385":{
@@ -57802,7 +57916,7 @@
                 "":"2"
             }
         },
-        "Twd":204,
+        "Twd":205,
         "Type":"Action Modifier"
     },
     "101388":{
@@ -57867,7 +57981,7 @@
                 "NTz":1
             }
         },
-        "Twd":503,
+        "Twd":506,
         "Type":"Master"
     },
     "101389":{
@@ -58334,7 +58448,7 @@
                 "NTz":1
             }
         },
-        "Twd":39,
+        "Twd":40,
         "Type":"Master"
     },
     "101402":{
@@ -58412,7 +58526,7 @@
                 "PMi":"5"
             }
         },
-        "Twd":38,
+        "Twd":40,
         "Type":"Action"
     },
     "101403":{
@@ -58462,7 +58576,7 @@
                 "R":true
             }
         },
-        "Twd":10,
+        "Twd":11,
         "Type":"Master"
     },
     "101405":{
@@ -58561,7 +58675,7 @@
                 "PM":"2"
             }
         },
-        "Twd":81,
+        "Twd":84,
         "Type":"Reaction"
     },
     "101407":{
@@ -58712,7 +58826,7 @@
                 "PV":"1"
             }
         },
-        "Twd":3,
+        "Twd":4,
         "Type":"Ally"
     },
     "101412":{
@@ -59046,7 +59160,7 @@
                 "R":true
             }
         },
-        "Twd":102,
+        "Twd":103,
         "Type":"Ally"
     },
     "101420":{
@@ -59079,7 +59193,7 @@
                 "2004-10-15":true
             }
         },
-        "Twd":3,
+        "Twd":4,
         "Type":"Event"
     },
     "101421":{
@@ -59402,7 +59516,7 @@
                 }
             },
             {
-                "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again (eg. {Immortal Grapple}). ",
+                "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again. ",
                 "refs":{
                     "[ANK 20190104]":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
                     "[RBK cancel-a-card]":"https://www.vekn.net/rulebook#cancel-a-card",
@@ -59502,7 +59616,7 @@
                 "DTC":true
             }
         },
-        "Twd":31,
+        "Twd":32,
         "Type":"Action Modifier"
     },
     "101430":{
@@ -59731,7 +59845,7 @@
                 "PR":"1"
             }
         },
-        "Twd":87,
+        "Twd":88,
         "Type":"Master"
     },
     "101436":{
@@ -59863,7 +59977,7 @@
                 "PSal":"1"
             }
         },
-        "Twd":882,
+        "Twd":892,
         "Type":"Master"
     },
     "101440":{
@@ -61055,7 +61169,7 @@
                 "PH":3
             }
         },
-        "Twd":220,
+        "Twd":221,
         "Type":"Reaction"
     },
     "101476":{
@@ -61120,7 +61234,7 @@
                 }
             },
             {
-                "text":"[abo][REFLEX]The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again (eg. {Immortal Grapple}). ",
+                "text":"[abo][REFLEX]The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again. ",
                 "refs":{
                     "[ANK 20190104]":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
                     "[RBK cancel-a-card]":"https://www.vekn.net/rulebook#cancel-a-card",
@@ -61181,7 +61295,7 @@
                 }
             },
             {
-                "text":"[abo][REFLEX]The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again (eg. {Immortal Grapple}). ",
+                "text":"[abo][REFLEX]The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again. ",
                 "refs":{
                     "[ANK 20190104]":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
                     "[RBK cancel-a-card]":"https://www.vekn.net/rulebook#cancel-a-card",
@@ -61261,7 +61375,7 @@
                 }
             },
             {
-                "text":"[abo][REFLEX]The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again (eg. {Immortal Grapple}). ",
+                "text":"[abo][REFLEX]The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again. ",
                 "refs":{
                     "[ANK 20190104]":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
                     "[RBK cancel-a-card]":"https://www.vekn.net/rulebook#cancel-a-card",
@@ -61626,7 +61740,7 @@
                 "PBH":"2"
             }
         },
-        "Twd":28,
+        "Twd":29,
         "Type":"Master",
         "Trifle":true
     },
@@ -61922,7 +62036,7 @@
                 "AU":"3"
             }
         },
-        "Twd":20,
+        "Twd":21,
         "Type":"Action Modifier"
     },
     "101497":{
@@ -61991,7 +62105,7 @@
                 "PG":"1"
             }
         },
-        "Twd":71,
+        "Twd":74,
         "Type":"Master"
     },
     "101499":{
@@ -62104,7 +62218,7 @@
                 "":"1"
             }
         },
-        "Twd":77,
+        "Twd":79,
         "Type":"Master"
     },
     "101501":{
@@ -62151,7 +62265,7 @@
                 "NR":2
             }
         },
-        "Twd":70,
+        "Twd":73,
         "Type":"Reaction"
     },
     "101502":{
@@ -62338,7 +62452,7 @@
                 }
             },
             {
-                "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again (eg. {Immortal Grapple}). ",
+                "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again. ",
                 "refs":{
                     "[ANK 20190104]":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
                     "[RBK cancel-a-card]":"https://www.vekn.net/rulebook#cancel-a-card",
@@ -62475,7 +62589,7 @@
                 "PT":"3"
             }
         },
-        "Twd":188,
+        "Twd":190,
         "Type":"Combat"
     },
     "101508":{
@@ -62690,7 +62804,7 @@
                 "PB":"2"
             }
         },
-        "Twd":86,
+        "Twd":87,
         "Type":"Action"
     },
     "101514":{
@@ -62710,7 +62824,14 @@
         "Name":"Public Vilification",
         "Pool Cost":"",
         "Requirement":"sabbat,titled",
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"If the target has less than 3 blood when referendum passes, the Methuselah calling the referendum chooses how to distribute within the bounds of the terms. ",
+                "refs":{
+                    "[LSJ 20010606]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/2Dj_N6wtifI/m/j_bddYqDbOYJ"
+                }
+            }
+        ],
         "Set":{
             "DM":{
                 "C":true
@@ -62873,7 +62994,7 @@
                 "U":true
             }
         },
-        "Twd":97,
+        "Twd":98,
         "Type":"Action"
     },
     "101518":{
@@ -63097,7 +63218,7 @@
                 "PBh":"4"
             }
         },
-        "Twd":274,
+        "Twd":275,
         "Type":"Combat"
     },
     "101524":{
@@ -63434,7 +63555,7 @@
                 "PBh":"4"
             }
         },
-        "Twd":36,
+        "Twd":37,
         "Type":"Combat"
     },
     "101533":{
@@ -63474,7 +63595,7 @@
                 "C":true
             }
         },
-        "Twd":10,
+        "Twd":11,
         "Type":"Action Modifier/Reaction"
     },
     "101534":{
@@ -63618,7 +63739,7 @@
                 "NR":1
             }
         },
-        "Twd":621,
+        "Twd":627,
         "Type":"Master"
     },
     "101537":{
@@ -63681,7 +63802,7 @@
                 "PGar":"3"
             }
         },
-        "Twd":61,
+        "Twd":62,
         "Type":"Combat"
     },
     "101539":{
@@ -64041,7 +64162,7 @@
                 "PN":"2"
             }
         },
-        "Twd":58,
+        "Twd":59,
         "Type":"Reaction"
     },
     "101548":{
@@ -64177,7 +64298,7 @@
                 "PN":"2"
             }
         },
-        "Twd":366,
+        "Twd":368,
         "Type":"Retainer"
     },
     "101551":{
@@ -64307,7 +64428,7 @@
                 "NR":1
             }
         },
-        "Twd":22,
+        "Twd":23,
         "Type":"Master"
     },
     "101554":{
@@ -64851,7 +64972,7 @@
                 "PMi":"2"
             }
         },
-        "Twd":107,
+        "Twd":108,
         "Type":"Political Action"
     },
     "101568":{
@@ -65639,7 +65760,7 @@
                 "PTr":"2"
             }
         },
-        "Twd":103,
+        "Twd":104,
         "Type":"Combat",
         "Aka":"Rego Motus"
     },
@@ -65703,7 +65824,7 @@
                 "":"1"
             }
         },
-        "Twd":43,
+        "Twd":44,
         "Type":"Political Action"
     },
     "101591":{
@@ -66076,7 +66197,7 @@
                 "C":true
             }
         },
-        "Twd":17,
+        "Twd":18,
         "Type":"Master"
     },
     "101602":{
@@ -66265,7 +66386,7 @@
                 "DTC":true
             }
         },
-        "Twd":47,
+        "Twd":48,
         "Type":"Action Modifier"
     },
     "101607":{
@@ -66444,7 +66565,7 @@
                 "PBH":"3"
             }
         },
-        "Twd":153,
+        "Twd":154,
         "Type":"Action Modifier/Combat"
     },
     "101611":{
@@ -66976,7 +67097,7 @@
                 "PMi":"3"
             }
         },
-        "Twd":39,
+        "Twd":41,
         "Type":"Action Modifier"
     },
     "101625":{
@@ -67150,7 +67271,7 @@
                 "PTz":"3"
             }
         },
-        "Twd":47,
+        "Twd":48,
         "Type":"Retainer"
     },
     "101629":{
@@ -67254,7 +67375,7 @@
                 "PMi":"1"
             }
         },
-        "Twd":45,
+        "Twd":49,
         "Type":"Political Action"
     },
     "101632":{
@@ -67297,7 +67418,7 @@
                 "PG":"1"
             }
         },
-        "Twd":59,
+        "Twd":61,
         "Type":"Action"
     },
     "101633":{
@@ -67333,7 +67454,7 @@
                 }
             },
             {
-                "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again (eg. {Immortal Grapple}). ",
+                "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again. ",
                 "refs":{
                     "[ANK 20190104]":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
                     "[RBK cancel-a-card]":"https://www.vekn.net/rulebook#cancel-a-card",
@@ -68320,7 +68441,7 @@
                 "PTz":1
             }
         },
-        "Twd":165,
+        "Twd":166,
         "Type":"Master"
     },
     "102215":{
@@ -68351,7 +68472,7 @@
                 "PN":"6"
             }
         },
-        "Twd":23,
+        "Twd":24,
         "Type":"Combat"
     },
     "101655":{
@@ -68727,7 +68848,7 @@
                 "U":true
             }
         },
-        "Twd":135,
+        "Twd":136,
         "Type":"Political Action"
     },
     "101664":{
@@ -68777,7 +68898,7 @@
                 "SDS":2
             }
         },
-        "Twd":122,
+        "Twd":124,
         "Type":"Action"
     },
     "101665":{
@@ -68824,7 +68945,7 @@
                 "TUB":"1"
             }
         },
-        "Twd":44,
+        "Twd":45,
         "Type":"Ally",
         "Aka":"Saatet-ta (Bane Mummy)"
     },
@@ -69442,7 +69563,7 @@
                 "DTC":true
             }
         },
-        "Twd":100,
+        "Twd":102,
         "Type":"Equipment"
     },
     "101682":{
@@ -69726,7 +69847,7 @@
                 "PTo":"1"
             }
         },
-        "Twd":83,
+        "Twd":84,
         "Type":"Action Modifier/Reaction"
     },
     "101687":{
@@ -69861,7 +69982,7 @@
                 "2009-04-01":true
             }
         },
-        "Twd":16,
+        "Twd":17,
         "Type":"Action"
     },
     "101691":{
@@ -70144,7 +70265,7 @@
                 "R":true
             }
         },
-        "Twd":275,
+        "Twd":276,
         "Type":"Event"
     },
     "101698":{
@@ -70294,7 +70415,7 @@
                 }
             },
             {
-                "text":"[VIS]The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again (eg. {Immortal Grapple}). ",
+                "text":"[VIS]The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again. ",
                 "refs":{
                     "[ANK 20190104]":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
                     "[RBK cancel-a-card]":"https://www.vekn.net/rulebook#cancel-a-card",
@@ -70412,7 +70533,7 @@
                 "NTz":2
             }
         },
-        "Twd":2,
+        "Twd":3,
         "Type":"Combat"
     },
     "101703":{
@@ -70606,7 +70727,7 @@
                 "NL":3
             }
         },
-        "Twd":504,
+        "Twd":505,
         "Type":"Reaction",
         "Aka":"Second Tradition: Domain, The"
     },
@@ -70750,7 +70871,7 @@
                 "PI":"2"
             }
         },
-        "Twd":23,
+        "Twd":24,
         "Type":"Master"
     },
     "101711":{
@@ -70834,7 +70955,7 @@
                 "PM":"1"
             }
         },
-        "Twd":517,
+        "Twd":521,
         "Type":"Master"
     },
     "101712":{
@@ -70902,7 +71023,7 @@
                 "PSal":"2"
             }
         },
-        "Twd":434,
+        "Twd":435,
         "Type":"Action Modifier"
     },
     "101713":{
@@ -71133,7 +71254,7 @@
                 "DTC":true
             }
         },
-        "Twd":80,
+        "Twd":82,
         "Type":"Action Modifier/Reaction"
     },
     "101719":{
@@ -71246,7 +71367,7 @@
                 "DTC":true
             }
         },
-        "Twd":39,
+        "Twd":40,
         "Type":"Action"
     },
     "101722":{
@@ -71947,7 +72068,7 @@
                 "DM":"4"
             }
         },
-        "Twd":12,
+        "Twd":13,
         "Type":"Action Modifier/Combat"
     },
     "102280":{
@@ -72520,7 +72641,7 @@
                 "DM":"4"
             }
         },
-        "Twd":3,
+        "Twd":4,
         "Type":"Master",
         "Trifle":true
     },
@@ -72654,7 +72775,7 @@
                 "PN":1
             }
         },
-        "Twd":23,
+        "Twd":24,
         "Type":"Master"
     },
     "101754":{
@@ -72691,7 +72812,7 @@
                 }
             },
             {
-                "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again (eg. {Immortal Grapple}). ",
+                "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again. ",
                 "refs":{
                     "[ANK 20190104]":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
                     "[RBK cancel-a-card]":"https://www.vekn.net/rulebook#cancel-a-card",
@@ -73260,7 +73381,7 @@
                 "PR":"1"
             }
         },
-        "Twd":36,
+        "Twd":37,
         "Type":"Equipment"
     },
     "101768":{
@@ -73662,7 +73783,7 @@
                 "PBH":"2"
             }
         },
-        "Twd":98,
+        "Twd":99,
         "Type":"Combat"
     },
     "101779":{
@@ -73716,7 +73837,7 @@
                 "PI":"2"
             }
         },
-        "Twd":157,
+        "Twd":158,
         "Type":"Combat"
     },
     "101780":{
@@ -73788,7 +73909,7 @@
                 "":"1"
             }
         },
-        "Twd":67,
+        "Twd":68,
         "Type":"Equipment"
     },
     "101782":{
@@ -74728,7 +74849,7 @@
                 "PL":"2"
             }
         },
-        "Twd":43,
+        "Twd":44,
         "Type":"Action Modifier"
     },
     "101806":{
@@ -74894,7 +75015,7 @@
                 "PAG":"3"
             }
         },
-        "Twd":8,
+        "Twd":9,
         "Type":"Action"
     },
     "101810":{
@@ -74982,7 +75103,7 @@
                 "PG":"1"
             }
         },
-        "Twd":472,
+        "Twd":475,
         "Type":"Master"
     },
     "101812":{
@@ -75188,7 +75309,7 @@
                 "PTr":"1"
             }
         },
-        "Twd":280,
+        "Twd":282,
         "Type":"Equipment"
     },
     "101817":{
@@ -75452,7 +75573,7 @@
                 "R":true
             }
         },
-        "Twd":75,
+        "Twd":76,
         "Type":"Master"
     },
     "101823":{
@@ -75613,7 +75734,7 @@
                 "C":true
             }
         },
-        "Twd":13,
+        "Twd":14,
         "Type":"Combat"
     },
     "101828":{
@@ -75758,7 +75879,7 @@
                 }
             },
             {
-                "text":"[OBF][VIC]The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again (eg. {Immortal Grapple}). ",
+                "text":"[OBF][VIC]The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again. ",
                 "refs":{
                     "[ANK 20190104]":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
                     "[RBK cancel-a-card]":"https://www.vekn.net/rulebook#cancel-a-card",
@@ -76521,7 +76642,7 @@
                 "DTC":true
             }
         },
-        "Twd":43,
+        "Twd":44,
         "Type":"Action"
     },
     "101849":{
@@ -76635,7 +76756,7 @@
                 "PTr":"2"
             }
         },
-        "Twd":223,
+        "Twd":224,
         "Type":"Reaction"
     },
     "101851":{
@@ -76971,7 +77092,7 @@
                 "PN":"1"
             }
         },
-        "Twd":488,
+        "Twd":490,
         "Type":"Action Modifier"
     },
     "101858":{
@@ -78509,7 +78630,7 @@
                 }
             },
             {
-                "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again (eg. {Immortal Grapple}). ",
+                "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again. ",
                 "refs":{
                     "[ANK 20190104]":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
                     "[RBK cancel-a-card]":"https://www.vekn.net/rulebook#cancel-a-card",
@@ -78566,7 +78687,7 @@
                 "PL":"2"
             }
         },
-        "Twd":679,
+        "Twd":680,
         "Type":"Master"
     },
     "101897":{
@@ -78622,7 +78743,7 @@
                 "":"3"
             }
         },
-        "Twd":23,
+        "Twd":24,
         "Type":"Action"
     },
     "101898":{
@@ -78981,7 +79102,7 @@
                 }
             },
             {
-                "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again (eg. {Immortal Grapple}). ",
+                "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again. ",
                 "refs":{
                     "[ANK 20190104]":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
                     "[RBK cancel-a-card]":"https://www.vekn.net/rulebook#cancel-a-card",
@@ -79304,7 +79425,7 @@
                 "PR":"4"
             }
         },
-        "Twd":749,
+        "Twd":751,
         "Type":"Action Modifier/Combat"
     },
     "101914":{
@@ -79602,7 +79723,7 @@
                 }
             },
             {
-                "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again (eg. {Immortal Grapple}). ",
+                "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again. ",
                 "refs":{
                     "[ANK 20190104]":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
                     "[RBK cancel-a-card]":"https://www.vekn.net/rulebook#cancel-a-card",
@@ -79750,7 +79871,7 @@
                 "R":true
             }
         },
-        "Twd":28,
+        "Twd":29,
         "Type":"Master"
     },
     "101925":{
@@ -79930,7 +80051,7 @@
                 }
             },
             {
-                "text":"[abo][REFLEX]The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again (eg. {Immortal Grapple}). ",
+                "text":"[abo][REFLEX]The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again. ",
                 "refs":{
                     "[ANK 20190104]":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
                     "[RBK cancel-a-card]":"https://www.vekn.net/rulebook#cancel-a-card",
@@ -79991,7 +80112,7 @@
                 }
             },
             {
-                "text":"[abo][REFLEX]The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again (eg. {Immortal Grapple}). ",
+                "text":"[abo][REFLEX]The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again. ",
                 "refs":{
                     "[ANK 20190104]":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
                     "[RBK cancel-a-card]":"https://www.vekn.net/rulebook#cancel-a-card",
@@ -80233,7 +80354,7 @@
                 }
             },
             {
-                "text":"[abo][REFLEX]The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again (eg. {Immortal Grapple}). ",
+                "text":"[abo][REFLEX]The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again. ",
                 "refs":{
                     "[ANK 20190104]":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
                     "[RBK cancel-a-card]":"https://www.vekn.net/rulebook#cancel-a-card",
@@ -80307,7 +80428,7 @@
                 "2019-06-14":true
             }
         },
-        "Twd":23,
+        "Twd":24,
         "Type":"Action Modifier"
     },
     "101936":{
@@ -80784,7 +80905,7 @@
                 "NL":3
             }
         },
-        "Twd":773,
+        "Twd":778,
         "Type":"Combat"
     },
     "101946":{
@@ -81012,7 +81133,7 @@
                 "PH":3
             }
         },
-        "Twd":1135,
+        "Twd":1140,
         "Type":"Reaction"
     },
     "101950":{
@@ -81402,7 +81523,7 @@
                 "DTC":true
             }
         },
-        "Twd":55,
+        "Twd":56,
         "Type":"Master"
     },
     "101957":{
@@ -81531,7 +81652,7 @@
                 }
             },
             {
-                "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again (eg. {Immortal Grapple}). ",
+                "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again. ",
                 "refs":{
                     "[ANK 20190104]":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
                     "[RBK cancel-a-card]":"https://www.vekn.net/rulebook#cancel-a-card",
@@ -81609,7 +81730,7 @@
                 "NR":2
             }
         },
-        "Twd":106,
+        "Twd":107,
         "Type":"Combat"
     },
     "101961":{
@@ -81704,7 +81825,7 @@
                 "PTr":"1"
             }
         },
-        "Twd":13,
+        "Twd":14,
         "Type":"Ally",
         "Aka":"Thadius Zho, Mage"
     },
@@ -81860,7 +81981,7 @@
                 "PTr":"5"
             }
         },
-        "Twd":150,
+        "Twd":152,
         "Type":"Combat"
     },
     "101967":{
@@ -82066,7 +82187,7 @@
                 "PG":"5"
             }
         },
-        "Twd":73,
+        "Twd":75,
         "Type":"Action"
     },
     "101973":{
@@ -82130,7 +82251,7 @@
                 "":"1"
             }
         },
-        "Twd":46,
+        "Twd":47,
         "Type":"Action",
         "Aka":"Third Tradition: Progeny, The"
     },
@@ -82789,7 +82910,7 @@
                 "":"6"
             }
         },
-        "Twd":58,
+        "Twd":59,
         "Type":"Master"
     },
     "101990":{
@@ -83003,7 +83124,7 @@
                 "NL":6
             }
         },
-        "Twd":203,
+        "Twd":204,
         "Type":"Combat"
     },
     "101994":{
@@ -83102,7 +83223,7 @@
                 "C":true
             }
         },
-        "Twd":13,
+        "Twd":14,
         "Type":"Combat"
     },
     "101996":{
@@ -83206,7 +83327,7 @@
                 }
             },
             {
-                "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again (eg. {Immortal Grapple}). ",
+                "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again. ",
                 "refs":{
                     "[ANK 20190104]":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
                     "[RBK cancel-a-card]":"https://www.vekn.net/rulebook#cancel-a-card",
@@ -83609,7 +83730,7 @@
                 }
             },
             {
-                "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again (eg. {Immortal Grapple}). ",
+                "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again. ",
                 "refs":{
                     "[ANK 20190104]":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
                     "[RBK cancel-a-card]":"https://www.vekn.net/rulebook#cancel-a-card",
@@ -83647,7 +83768,14 @@
         "Name":"Transcendent Laibon",
         "Pool Cost":"",
         "Requirement":"",
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"The burn option can only be used if there is no Laibon with at least three Aye and three Orun. ",
+                "refs":{
+                    "[LSJ 20110611-2]":"https://boardgamegeek.com/thread/662413/article/6919607"
+                }
+            }
+        ],
         "Set":{
             "EK":{
                 "R":true
@@ -83954,7 +84082,7 @@
                 }
             },
             {
-                "text":"[OBE][REACTION]The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again (eg. {Immortal Grapple}). ",
+                "text":"[OBE][REACTION]The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again. ",
                 "refs":{
                     "[ANK 20190104]":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
                     "[RBK cancel-a-card]":"https://www.vekn.net/rulebook#cancel-a-card",
@@ -84266,7 +84394,7 @@
                 "2023-12-13":true
             }
         },
-        "Twd":148,
+        "Twd":150,
         "Type":"Master"
     },
     "102024":{
@@ -84812,7 +84940,7 @@
                 "PMin":"2"
             }
         },
-        "Twd":53,
+        "Twd":54,
         "Type":"Action Modifier"
     },
     "102042":{
@@ -85244,7 +85372,7 @@
                 "DTC":true
             }
         },
-        "Twd":76,
+        "Twd":77,
         "Type":"Ally"
     },
     "102054":{
@@ -85362,7 +85490,7 @@
                 "":"1"
             }
         },
-        "Twd":142,
+        "Twd":145,
         "Type":"Event"
     },
     "102058":{
@@ -85616,7 +85744,7 @@
                 "PSam":"2"
             }
         },
-        "Twd":17,
+        "Twd":18,
         "Type":"Action Modifier"
     },
     "102063":{
@@ -85690,7 +85818,7 @@
                 "SCat":2
             }
         },
-        "Twd":66,
+        "Twd":67,
         "Type":"Action"
     },
     "102064":{
@@ -85775,7 +85903,7 @@
                 "PTz":"2"
             }
         },
-        "Twd":32,
+        "Twd":33,
         "Type":"Ally"
     },
     "102066":{
@@ -86018,7 +86146,7 @@
                 "PV":"2"
             }
         },
-        "Twd":119,
+        "Twd":120,
         "Type":"Combat"
     },
     "102072":{
@@ -86245,7 +86373,7 @@
                 "DTC":true
             }
         },
-        "Twd":173,
+        "Twd":176,
         "Type":"Action"
     },
     "102077":{
@@ -86376,7 +86504,7 @@
                 "PwN":"1"
             }
         },
-        "Twd":490,
+        "Twd":493,
         "Type":"Event"
     },
     "102080":{
@@ -86465,7 +86593,7 @@
                 }
             },
             {
-                "text":"[abo][REFLEX]The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again (eg. {Immortal Grapple}). ",
+                "text":"[abo][REFLEX]The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again. ",
                 "refs":{
                     "[ANK 20190104]":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
                     "[RBK cancel-a-card]":"https://www.vekn.net/rulebook#cancel-a-card",
@@ -86659,7 +86787,7 @@
                 "R":true
             }
         },
-        "Twd":6,
+        "Twd":7,
         "Type":"Master"
     },
     "102087":{
@@ -87156,7 +87284,7 @@
                 "PR":"3"
             }
         },
-        "Twd":269,
+        "Twd":271,
         "Type":"Action Modifier"
     },
     "102098":{
@@ -87363,7 +87491,7 @@
                 "DTC":true
             }
         },
-        "Twd":84,
+        "Twd":85,
         "Type":"Ally",
         "Aka":"Veneficti (Mage)"
     },
@@ -87764,7 +87892,7 @@
                 "NSal":2
             }
         },
-        "Twd":1203,
+        "Twd":1209,
         "Type":"Master",
         "Trifle":true
     },
@@ -88079,7 +88207,7 @@
                 "PH":3
             }
         },
-        "Twd":1246,
+        "Twd":1263,
         "Type":"Master",
         "Trifle":true
     },
@@ -88237,7 +88365,7 @@
                 "PR":"4"
             }
         },
-        "Twd":10,
+        "Twd":12,
         "Type":"Action Modifier"
     },
     "102265":{
@@ -88262,7 +88390,7 @@
                 "PR":"4"
             }
         },
-        "Twd":16,
+        "Twd":19,
         "Type":"Reaction"
     },
     "102126":{
@@ -88306,7 +88434,7 @@
                 "PV":"1"
             }
         },
-        "Twd":82,
+        "Twd":83,
         "Type":"Master"
     },
     "102127":{
@@ -88481,7 +88609,7 @@
                 "PR":"2"
             }
         },
-        "Twd":5,
+        "Twd":6,
         "Type":"Combat"
     },
     "102131":{
@@ -88575,7 +88703,7 @@
                 "SPIV":2
             }
         },
-        "Twd":486,
+        "Twd":487,
         "Type":"Action Modifier"
     },
     "102132":{
@@ -88667,7 +88795,7 @@
                 "PTz":"1"
             }
         },
-        "Twd":3,
+        "Twd":4,
         "Type":"Ally"
     },
     "102134":{
@@ -89175,7 +89303,7 @@
                 "PTz":"2"
             }
         },
-        "Twd":80,
+        "Twd":81,
         "Type":"Ally"
     },
     "102145":{
@@ -89377,7 +89505,7 @@
                 "PN":"1"
             }
         },
-        "Twd":47,
+        "Twd":48,
         "Type":"Master"
     },
     "102150":{
@@ -89419,7 +89547,7 @@
                 "PB":"1"
             }
         },
-        "Twd":52,
+        "Twd":53,
         "Type":"Master"
     },
     "102151":{
@@ -89484,7 +89612,7 @@
                 }
             },
             {
-                "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again (eg. {Immortal Grapple}). ",
+                "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again. ",
                 "refs":{
                     "[ANK 20190104]":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
                     "[RBK cancel-a-card]":"https://www.vekn.net/rulebook#cancel-a-card",
@@ -89512,7 +89640,7 @@
                 "LB":"1"
             }
         },
-        "Twd":525,
+        "Twd":527,
         "Type":"Master",
         "Trifle":true
     },
@@ -89715,7 +89843,37 @@
         "Name":"Watchtower: The Wolves Feed",
         "Pool Cost":"1",
         "Requirement":"1 gehenna,seraph",
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"Cards are not replaced during the \"as played\" window. The cancelation must be played immediately: no other effects can be used, except for wakes (eg. neither\u00a0{Barrens, The}\u00a0nor {Dreams of the Sphinx}\u00a0can be used). ",
+                "refs":{
+                    "[LSJ 20061207]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/nqcrJlhg4Ng/m/qQu7p-LLhfAJ",
+                    "[RBK playing-a-card]":"https://www.vekn.net/rulebook#playing-a-card",
+                    "[LSJ 20061013]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/6w8K3yDtBH0/m/M_SZH9Id8n8J"
+                }
+            },
+            {
+                "text":"If the canceled card had a \"do not replace until\" clause (or alternate replacement like {Steely Tenacity}), that clause is canceled as well and the card is replaced normally. ",
+                "refs":{
+                    "[LSJ 20080630]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/nvuXBpEaKAA/m/ymiC3yAQVOwJ",
+                    "[LSJ 20011023]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/2GOLIrXAF8M/m/P4T3Dj6UNL0J"
+                }
+            },
+            {
+                "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again. ",
+                "refs":{
+                    "[ANK 20190104]":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
+                    "[RBK cancel-a-card]":"https://www.vekn.net/rulebook#cancel-a-card",
+                    "[LSJ 19980212]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/fLFLlXZXHqA/m/ggjw8aGjdRoJ"
+                }
+            },
+            {
+                "text":"If a limited effect is canceled (bleed, additional strike), then the limit is not triggered and another limited effect can be used. ",
+                "refs":{
+                    "[LSJ 20030224]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/67261v339Ds/m/um8V7VVp2Y4J"
+                }
+            }
+        ],
         "Set":{
             "SoC":{
                 "R":true
@@ -90049,7 +90207,7 @@
                 "PR":"1"
             }
         },
-        "Twd":62,
+        "Twd":65,
         "Type":"Master"
     },
     "102167":{
@@ -90477,7 +90635,7 @@
                 }
             },
             {
-                "text":"[abo][REFLEX]The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again (eg. {Immortal Grapple}). ",
+                "text":"[abo][REFLEX]The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again. ",
                 "refs":{
                     "[ANK 20190104]":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
                     "[RBK cancel-a-card]":"https://www.vekn.net/rulebook#cancel-a-card",
@@ -90626,7 +90784,7 @@
                 "":"1"
             }
         },
-        "Twd":789,
+        "Twd":802,
         "Type":"Master",
         "Trifle":true
     },
@@ -90730,7 +90888,7 @@
                 "DTC":true
             }
         },
-        "Twd":12,
+        "Twd":13,
         "Type":"Action Modifier"
     },
     "102184":{
@@ -91417,7 +91575,7 @@
                 "SCai":1
             }
         },
-        "Twd":43,
+        "Twd":44,
         "Type":"Master"
     },
     "102200":{
@@ -91753,7 +91911,7 @@
                 "":"6"
             }
         },
-        "Twd":373,
+        "Twd":374,
         "Type":"Master"
     },
     "102208":{
@@ -91952,7 +92110,7 @@
                 "PG":"1"
             }
         },
-        "Twd":103,
+        "Twd":104,
         "Type":"Master"
     }
 }
