@@ -22,7 +22,7 @@ const CardsMobile = ({ card, openRandomCard, handleChange, handleSetCard }) => {
               )}
               {showFloatingButtons && (
                 <div className="fixed z-30">
-                  <ButtonFloat onClick={toggleShowImage} variant="primary">
+                  <ButtonFloat onClick={toggleShowImage}>
                     <ArrowRepeat width="40" height="40" viewBox="0 0 16 16" />
                   </ButtonFloat>
                 </div>

@@ -27,7 +27,7 @@ const ButtonSearchCardInDecks = ({ cardid, target, handleClose }) => {
   };
 
   return (
-    <Button title={`Search in ${target.toUpperCase()}`} variant="primary" onClick={handleClick}>
+    <Button title={`Search in ${target.toUpperCase()}`} onClick={handleClick}>
       {target === PDA ? <PeopleFill /> : <TrophyFill />}
     </Button>
   );

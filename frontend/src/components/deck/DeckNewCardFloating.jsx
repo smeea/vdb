@@ -15,11 +15,7 @@ const DeckNewCardFloating = ({ deckid, cards, cardChange, target }) => {
 
   return (
     <>
-      <ButtonFloat
-        onClick={handleClick}
-        position={target === CRYPT ? 'top' : 'middle'}
-        variant="primary"
-      >
+      <ButtonFloat onClick={handleClick} position={target === CRYPT ? 'top' : 'middle'}>
         <div className="flex items-center">
           <div className="text-[24px]">+</div>
           <div className="text-[28px]">{target === CRYPT ? 'C' : 'L'}</div>

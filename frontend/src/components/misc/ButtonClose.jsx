@@ -9,7 +9,6 @@ const ButtonClose = ({ handleClick, title, className, text }) => {
       title={title}
       text={text}
       onClick={handleClick}
-      variant="primary"
       icon={<XLg width="14" height="14" viewBox="0 0 16 16" />}
     />
   );

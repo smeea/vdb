@@ -8,7 +8,6 @@ const TwdOpenDeckButton = ({ deckid, url, noText }) => {
     <Link to={url ?? `/decks/${deckid}`} className="hover:no-underline">
       <ButtonIconed
         className="w-full"
-        variant="primary"
         icon={<PlayFill height="18" viewBox="0 0 12 14" />}
         text={noText ? null : 'Open'}
       />

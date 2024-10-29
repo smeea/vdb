@@ -46,7 +46,6 @@ const DeckMissingModal = ({ deck, missAllVtes, handleClose, inInventory }) => {
         <div className="flex justify-end gap-2 max-sm:flex-col max-sm:p-2 max-sm:pt-0">
           {inInventory && (
             <ButtonIconed
-              variant="primary"
               onClick={() => setShowMissAll(!showMissAll)}
               text={
                 showMissAll

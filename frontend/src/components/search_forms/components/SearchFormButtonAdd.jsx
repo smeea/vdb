@@ -13,7 +13,7 @@ const SearchFormButtonAdd = ({ name, searchForm, withMoreless }) => {
   };
 
   return (
-    <Button className="h-[18px] w-[18px]" variant="primary" onClick={addForm} noPadding>
+    <Button className="h-[18px] w-[18px]" onClick={addForm} noPadding>
       <Plus />
     </Button>
   );

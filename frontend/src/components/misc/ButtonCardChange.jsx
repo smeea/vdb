@@ -11,7 +11,7 @@ const ButtonCardChange = ({ onClick, isLink, isNegative }) => {
           className="relative before:absolute before:inset-[-12px] before:content-[''] hover:no-underline"
           onClick={onClick}
         >
-          <Button variant="primary" className="h-[27px] w-[18px]" noPadding>
+          <Button className="h-[27px] w-[18px]" noPadding>
             {isNegative ? (
               <Dash width="15" height="15" viewBox="0 0 16 16" />
             ) : (
@@ -20,13 +20,7 @@ const ButtonCardChange = ({ onClick, isLink, isNegative }) => {
           </Button>
         </a>
       ) : (
-        <Button
-          className="h-[27px] min-w-[18px]"
-          variant="primary"
-          onClick={onClick}
-          tabIndex={-1}
-          noPadding
-        >
+        <Button className="h-[27px] min-w-[18px]" onClick={onClick} tabIndex={-1} noPadding>
           {isNegative ? (
             <Dash width="15" height="15" viewBox="0 0 16 16" />
           ) : (

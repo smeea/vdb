@@ -71,9 +71,7 @@ const InventoryShareModal = ({ setShow }) => {
             icon={<Link45Deg width="19" height="19" viewBox="0 0 14 14" />}
             text="Create URL"
           />
-          <Button variant="primary" onClick={handleClose}>
-            Close
-          </Button>
+          <Button onClick={handleClose}>Close</Button>
         </div>
       </FlexGapped>
     </Modal>

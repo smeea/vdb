@@ -177,7 +177,7 @@ const DeckImportAmaranth = ({ handleClose }) => {
           {emptyError && <ErrorOverlay placement="bottom">ERROR IN URL</ErrorOverlay>}
           {importError && <ErrorOverlay placement="bottom">ERROR DURING IMPORT</ErrorOverlay>}
         </div>
-        <Button className="min-w-[72px] rounded-l-none" variant="primary" onClick={handleImport}>
+        <Button className="min-w-[72px] rounded-l-none" onClick={handleImport}>
           {isLoading ? <Spinner className="size-5" /> : 'Import'}
         </Button>
       </div>

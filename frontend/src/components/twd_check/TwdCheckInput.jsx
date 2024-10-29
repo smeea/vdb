@@ -131,21 +131,18 @@ const TwdCheckInput = ({ deckData, setDeckData }) => {
       <div className="flex justify-end">
         <div className="flex gap-2">
           <ButtonIconed
-            variant="primary"
             onClick={() => saveDeck(deckText, deckData.id)}
             title="Save to File"
             icon={<Download />}
             text="Save to File"
           />
           <ButtonIconed
-            variant="primary"
             onClick={handleLoad}
             title="Load from File"
             icon={<Upload />}
             text="Load from File"
           />
           <ButtonIconed
-            variant="primary"
             onClick={handleClear}
             title="Clear Deck Form"
             icon={<X width="20" height="20" viewBox="0 0 16 16" />}

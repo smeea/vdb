@@ -48,7 +48,6 @@ const TwdSearchFormQuantityButtons = ({ value, form, id }) => {
     <div className="flex items-center justify-between gap-1">
       <Button
         className="h-[27px] w-[35px] text-sm"
-        variant="primary"
         onClick={handleToggleMoreLess}
         title={getIconAndText(value[id].m)[1]}
         noPadding

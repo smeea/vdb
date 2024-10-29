@@ -76,7 +76,6 @@ const AccountDeleteConfirmation = ({ setShow }) => {
                   <Button
                     className="rounded-l-none"
                     tabIndex="-1"
-                    variant="primary"
                     onClick={() => setHidePassword(!hidePassword)}
                   >
                     {hidePassword ? <EyeFill /> : <EyeSlashFill />}
@@ -87,9 +86,7 @@ const AccountDeleteConfirmation = ({ setShow }) => {
                 </div>
               </div>
             </form>
-            <Button variant="primary" onClick={() => setShow(false)}>
-              Cancel
-            </Button>
+            <Button onClick={() => setShow(false)}>Cancel</Button>
           </div>
         </FlexGapped>
       </Modal>

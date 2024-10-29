@@ -51,7 +51,7 @@ const PlaytestManageAdd = ({ playtesters, newPlaytesters, setNewPlaytesters }) =
           />
           {error && <ErrorOverlay placement="bottom">{error}</ErrorOverlay>}
         </div>
-        <Button className="rounded-l-none" variant="primary" type="submit">
+        <Button className="rounded-l-none" type="submit">
           {isLoading ? <Spinner /> : <Check2 />}
         </Button>
       </div>

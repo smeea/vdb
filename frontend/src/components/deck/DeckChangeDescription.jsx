@@ -62,7 +62,6 @@ const DeckDescription = ({ deck, folded, setFolded }) => {
       <Button
         roundedStyle="rounded-r"
         title="Collapse/Uncollapse Description"
-        variant="primary"
         onClick={() => setFolded(!folded)}
       >
         {folded ? <ChevronBarExpand /> : <ChevronBarContract />}

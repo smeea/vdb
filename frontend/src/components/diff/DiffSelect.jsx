@@ -24,7 +24,7 @@ const DiffSelect = ({ decks, deck, deckTo, deckidFrom, deckidTo }) => {
         />
       </div>
       <div className="flex items-center justify-center">
-        <Button variant="primary" onClick={handleSwap}>
+        <Button onClick={handleSwap}>
           <ArrowLeftRight />
         </Button>
       </div>

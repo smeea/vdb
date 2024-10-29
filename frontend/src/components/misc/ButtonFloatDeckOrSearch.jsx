@@ -5,7 +5,7 @@ import { ButtonFloat } from '@/components';
 
 const ButtonFloatAddOrSearch = ({ addMode, toggleAddMode }) => {
   return (
-    <ButtonFloat onClick={toggleAddMode} variant="primary">
+    <ButtonFloat onClick={toggleAddMode}>
       {addMode ? (
         <BinocularsFill width="27" height="27" viewBox="0 1 16 16" />
       ) : (

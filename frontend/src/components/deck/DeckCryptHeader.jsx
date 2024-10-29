@@ -63,18 +63,12 @@ const DeckCryptHeader = ({
             <Button
               className="min-h-10"
               title="Additional Info"
-              variant="primary"
               onClick={() => setShowInfo(!showInfo)}
             >
               <InfoCircle />
             </Button>
             {isEditable && !isMobile && (
-              <Button
-                className="min-h-10"
-                title="Add Card"
-                variant="primary"
-                onClick={() => setShowAdd(!showAdd)}
-              >
+              <Button className="min-h-10" title="Add Card" onClick={() => setShowAdd(!showAdd)}>
                 <PlusLg width="15" height="15" viewBox="0 0 16 16" />
               </Button>
             )}

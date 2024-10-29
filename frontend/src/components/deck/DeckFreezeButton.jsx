@@ -11,7 +11,6 @@ const DeckFreezeButton = ({ deck, className, roundedStyle, borderStyle }) => {
 
   return (
     <Button
-      variant="primary"
       onClick={handleClick}
       title={`${deck.isFrozen ? 'Disabled' : 'Enabled'} Crypt/Library Editing`}
       className={className}

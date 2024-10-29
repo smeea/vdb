@@ -68,7 +68,6 @@ const DeckSelect = ({
                     ? 'FLEXIBLE\nLet cards to be reused with other Flexible Decks'
                     : 'FIXED\nUse unique copies of cards from Inventory'
               }`}
-              variant="primary"
               disabled={!isEditable}
               onClick={() => deckToggleInventoryState(deck?.deckid)}
             >
@@ -112,7 +111,6 @@ const DeckSelect = ({
           {decks && (
             <ButtonIconed
               title="Advanced Deck Select"
-              variant="primary"
               onClick={() => {
                 setShowFloatingButtons(false);
                 setShowDeckSelectAdv(true);
@@ -121,7 +119,7 @@ const DeckSelect = ({
             />
           )}
           {isMobile && deck && (
-            <Button variant="primary" onClick={() => setShowInfo(!showInfo)}>
+            <Button onClick={() => setShowInfo(!showInfo)}>
               <div className="flex">
                 <ChatLeftQuoteFill width="16" height="18" viewBox="0 0 16 18" />
               </div>

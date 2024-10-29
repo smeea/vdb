@@ -58,11 +58,7 @@ const ResultCryptTotal = ({
       <div className={inCompare ? 'flex' : ''}>
         {inCompare ? (
           <div>
-            <Button
-              title="Clear Compare"
-              variant="primary"
-              onClick={() => setCryptCompare(undefined)}
-            >
+            <Button title="Clear Compare" onClick={() => setCryptCompare(undefined)}>
               <X width="16" height="20" viewBox="0 0 16 16" />
             </Button>
           </div>
@@ -70,7 +66,7 @@ const ResultCryptTotal = ({
           <div className="flex flex-col gap-1">
             {!inHoF && (
               <div className="flex justify-end">
-                <Button title="Additional Info" variant="primary" onClick={() => toggleShowInfo()}>
+                <Button title="Additional Info" onClick={() => toggleShowInfo()}>
                   <InfoCircle />
                 </Button>
               </div>

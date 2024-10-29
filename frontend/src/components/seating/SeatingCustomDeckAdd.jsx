@@ -25,7 +25,7 @@ const SeatingRandomDeckAddForm = ({ addDeck }) => {
         onChange={handleChange}
         roundedStyle="rounded rounded-r-none"
       />
-      <Button variant="primary" type="submit" className="rounded-l-none">
+      <Button type="submit" className="rounded-l-none">
         <Check2 />
       </Button>
     </form>

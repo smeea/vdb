@@ -68,7 +68,7 @@ const DiffSelectDeck = ({ decks, deck, deckidFrom, deckidTo, target, title }) =>
               value={url}
               onChange={handleUrlChange}
             />
-            <Button className="rounded-l-none" variant="primary" type="submit">
+            <Button className="rounded-l-none" type="submit">
               <Check2 />
             </Button>
           </div>

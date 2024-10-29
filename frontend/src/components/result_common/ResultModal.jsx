@@ -99,7 +99,7 @@ const ResultModal = ({ card, handleModalCardChange, handleClose, forceInventoryM
           <ChevronCompactRight width="48" height="64" viewBox="0 0 12 16" />
         </div>
         {isMobile && (
-          <ButtonFloat onClick={toggleShowImage} variant="primary" position="middle">
+          <ButtonFloat onClick={toggleShowImage} position="middle">
             <ArrowRepeat width="40" height="40" viewBox="0 0 16 16" />
           </ButtonFloat>
         )}

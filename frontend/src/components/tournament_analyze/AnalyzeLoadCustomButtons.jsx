@@ -52,7 +52,6 @@ const AnalyzeLoadCustomButtons = ({
       {tempDecks ? (
         <ButtonIconed
           className="w-full"
-          variant="primary"
           onClick={() => fileInputArchon.current.click()}
           title="Import Archon"
           icon={<Upload />}
@@ -61,7 +60,6 @@ const AnalyzeLoadCustomButtons = ({
       ) : (
         <ButtonIconed
           className="w-full"
-          variant="primary"
           onClick={() => fileInputDecks.current.click()}
           title="Import Decks"
           icon={<Upload />}

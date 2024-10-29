@@ -11,7 +11,6 @@ const DeckHideButton = ({ deck }) => {
 
   return (
     <ButtonIconed
-      variant="primary"
       onClick={handleClick}
       title={`${deck.isHidden ? 'Hidden' : 'Shown'} in Deck Selector`}
       icon={

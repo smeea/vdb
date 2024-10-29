@@ -160,7 +160,6 @@ const PlaytestReportForm = ({ id, setIsHotkeysDisabled, isPrecon = false }) => {
         <Button
           roundedStyle="rounded-r"
           title="Collapse/Uncollapse Description"
-          variant="primary"
           onClick={() => setIsFolded(!isFolded)}
         >
           {isFolded ? <ChevronBarExpand /> : <ChevronBarContract />}

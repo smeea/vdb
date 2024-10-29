@@ -143,12 +143,7 @@ const DeckImport = ({ setShowInfo, isOnlyNew }) => {
   return (
     <>
       {isOnlyNew ? (
-        <ButtonIconed
-          variant="primary"
-          onClick={createNewDeck}
-          icon={<ClipboardPlus />}
-          text="Create New Deck"
-        />
+        <ButtonIconed onClick={createNewDeck} icon={<ClipboardPlus />} text="Create New Deck" />
       ) : (
         <>
           <DeckImportButton

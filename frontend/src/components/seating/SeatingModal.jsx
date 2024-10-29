@@ -65,14 +65,12 @@ const SeatingModal = ({
             </div>
             <div className="flex flex-col gap-1">
               <ButtonIconed
-                variant="primary"
                 onClick={addPlayer}
                 title="Add Player"
                 icon={<PersonFill width="18" height="18" viewBox="0 0 16 16" />}
                 text="Add Player"
               />
               <ButtonIconed
-                variant="primary"
                 onClick={reshuffle}
                 title="Reshuffle"
                 icon={<Recycle width="18" height="18" viewBox="0 0 16 16" />}
@@ -80,7 +78,6 @@ const SeatingModal = ({
                 disabled={players.length < 3}
               />
               <ButtonIconed
-                variant="primary"
                 onClick={() => setShowSelectRandom(!showSelectRandom)}
                 title="Reshuffle"
                 icon={<PencilSquare width="18" height="18" viewBox="0 0 16 16" />}

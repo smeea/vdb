@@ -91,9 +91,7 @@ It will skip other (useless) lines, you don't have to remove it yourself.
           {importError && <ErrorOverlay placement="bottom">ERROR DURING IMPORT</ErrorOverlay>}
         </div>
         <div className="flex justify-end">
-          <Button variant="primary" onClick={importDeckFromText}>
-            Import
-          </Button>
+          <Button onClick={importDeckFromText}>Import</Button>
         </div>
       </FlexGapped>
     </Modal>

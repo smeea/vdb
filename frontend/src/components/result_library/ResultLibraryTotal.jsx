@@ -50,11 +50,7 @@ const ResultLibraryTotal = ({
           />
         ) : (
           <div>
-            <Button
-              title="Clear Compare"
-              variant="primary"
-              onClick={() => setLibraryCompare(undefined)}
-            >
+            <Button title="Clear Compare" onClick={() => setLibraryCompare(undefined)}>
               <X width="16" height="20" viewBox="0 0 16 16" />
             </Button>
           </div>

@@ -69,9 +69,7 @@ const ModalConfirmation = ({
             <Button disabled={disabled} variant={buttonVariant} onClick={handleClick}>
               {buttonText}
             </Button>
-            <Button variant="primary" onClick={handleClose}>
-              Cancel
-            </Button>
+            <Button onClick={handleClose}>Cancel</Button>
           </div>
         </div>
       </FlexGapped>

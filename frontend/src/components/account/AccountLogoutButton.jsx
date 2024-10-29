@@ -15,7 +15,6 @@ const AccountLogoutButton = () => {
   return (
     <ButtonIconed
       className="w-full"
-      variant="primary"
       onClick={logoutUser}
       title="Logout"
       icon={<DoorClosedFill />}

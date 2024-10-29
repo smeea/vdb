@@ -177,7 +177,6 @@ const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
         </div>
         <div className="flex justify-end gap-2 max-sm:flex-col max-sm:p-2 max-sm:pt-0">
           <Button
-            variant="primary"
             onClick={() =>
               handleGenerate({
                 isWhite: false,
@@ -188,7 +187,6 @@ const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
             Generate - Gray gaps (A4)
           </Button>
           <Button
-            variant="primary"
             onClick={() =>
               handleGenerate({
                 isWhite: true,
@@ -199,7 +197,6 @@ const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
             Generate - White gaps (A4)
           </Button>
           <Button
-            variant="primary"
             onClick={() =>
               handleGenerate({
                 isWhite: false,
@@ -210,7 +207,6 @@ const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
             Generate - Gray gaps (Letter)
           </Button>
           <Button
-            variant="primary"
             onClick={() =>
               handleGenerate({
                 isWhite: true,
@@ -220,14 +216,8 @@ const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
           >
             Generate - White gaps (Letter)
           </Button>
-          <Button variant="primary" onClick={handleToggleSelect}>
-            Select / Deselect All
-          </Button>
-          {inventoryMode && (
-            <Button variant="primary" onClick={handleToggleResolve}>
-              Add Missing in Inventory
-            </Button>
-          )}
+          <Button onClick={handleToggleSelect}>Select / Deselect All</Button>
+          {inventoryMode && <Button onClick={handleToggleResolve}>Add Missing in Inventory</Button>}
         </div>
       </FlexGapped>
     </Modal>

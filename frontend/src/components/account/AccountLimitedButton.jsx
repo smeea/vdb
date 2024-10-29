@@ -47,7 +47,6 @@ const AccountLimitedButton = () => {
   return (
     <>
       <ButtonIconed
-        variant="primary"
         className="w-full"
         onClick={() => setShowModal(true)}
         title="Manage Format"

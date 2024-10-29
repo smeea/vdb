@@ -71,7 +71,6 @@ const DeckDrawModal = ({
                 </div>
                 <div className="flex gap-1">
                   <Button
-                    variant="primary"
                     title="Draw All"
                     onClick={() => handleCryptHandSize(restCrypt.length)}
                     disabled={restCrypt.length < 1}
@@ -79,23 +78,16 @@ const DeckDrawModal = ({
                     <StackIcon />
                   </Button>
                   <Button
-                    variant="primary"
                     title="Hand Size -1"
                     onClick={() => handleCryptHandSize(-1)}
                     disabled={drawedCrypt.length < 1}
                   >
                     -1
                   </Button>
-                  <Button
-                    variant="primary"
-                    title="Re-Draw"
-                    onClick={handleReDrawCrypt}
-                    disabled={cryptTotal < 4}
-                  >
+                  <Button title="Re-Draw" onClick={handleReDrawCrypt} disabled={cryptTotal < 4}>
                     <ArrowRepeat />
                   </Button>
                   <Button
-                    variant="primary"
                     title="Hand Size +1"
                     onClick={() => handleCryptHandSize(1)}
                     disabled={restCrypt.length < 1}
@@ -125,7 +117,6 @@ const DeckDrawModal = ({
               <div className="flex gap-1">
                 <Button
                   title="Draw All"
-                  variant="primary"
                   onClick={() => handleLibraryHandSize(restLibrary.length)}
                   disabled={restLibrary.length < 1}
                 >
@@ -133,23 +124,16 @@ const DeckDrawModal = ({
                 </Button>
                 <Button
                   title="Hand Size -1"
-                  variant="primary"
                   onClick={() => handleLibraryHandSize(-1)}
                   disabled={drawedLibrary.length < 1}
                 >
                   -1
                 </Button>
-                <Button
-                  title="Re-Draw"
-                  variant="primary"
-                  onClick={handleReDrawLibrary}
-                  disabled={libraryTotal < 7}
-                >
+                <Button title="Re-Draw" onClick={handleReDrawLibrary} disabled={libraryTotal < 7}>
                   <ArrowRepeat />
                 </Button>
                 <Button
                   title="Hand Size +1"
-                  variant="primary"
                   onClick={() => handleLibraryHandSize(1)}
                   disabled={restLibrary.length < 1}
                 >

@@ -5,7 +5,6 @@ import { ButtonIconed } from '@/components';
 const TwdRandomButton = ({ getRandom, noText }) => {
   return (
     <ButtonIconed
-      variant="primary"
       onClick={() => getRandom(10)}
       title="Get 10 random TWD"
       icon={<Dice3 />}

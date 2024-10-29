@@ -72,7 +72,7 @@ const ButtonPlayableBy = ({ card, handleClose }) => {
   };
 
   return (
-    <Button title="Search Who Can Play It" variant="primary" onClick={handleClick}>
+    <Button title="Search Who Can Play It" onClick={handleClick}>
       <Bullseye />
     </Button>
   );

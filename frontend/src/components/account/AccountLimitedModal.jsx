@@ -84,7 +84,6 @@ const AccountLimitedModal = ({ setShow, setFormat }) => {
             format={JSON.stringify(minifyFormat(), null, '').replace(/\n/g, '')}
           />
           <ButtonIconed
-            variant="primary"
             onClick={handleFileInputClick}
             title="Import Format"
             icon={<Upload />}
@@ -92,7 +91,6 @@ const AccountLimitedModal = ({ setShow, setFormat }) => {
           />
 
           <ButtonIconed
-            variant="primary"
             onClick={exportFormat}
             title="Export Format"
             icon={<Download />}

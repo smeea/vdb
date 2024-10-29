@@ -35,7 +35,6 @@ const UpdateNotification = () => {
             </div>
             <Hr />
             <ButtonIconed
-              variant="primary"
               disabled={isLoading}
               onClick={() => {
                 setIsLoading(true);
