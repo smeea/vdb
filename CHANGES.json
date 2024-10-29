@@ -1,5 +1,16 @@
 [
   {
+    "version": "2024-10-29",
+    "changes": [
+      "Add Malkavian and Nosferatu legacy images",
+      "Update TWDA",
+      "Update Rulings",
+      "(Hopefully) fix VDB update process on some browsers/systems not working properly after user hit \"Apply update\" button (new update procedure will take place only on the following update, this one is expected to behave in old semi-broken way)",
+      "Fix bug in Limited Formats introduced in the last update, not saving preferences between sessions",
+      "Small other fixes and improvements"
+    ]
+  },
+  {
     "version": "2024-10-21",
     "changes": [
       "Add compressed webp images of legacy vampire cards as defaults on mobile (should open much faster on slow networks now)",
