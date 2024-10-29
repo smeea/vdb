@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import Activity from '@/assets/images/icons/activity.svg?react';
 import { Spinner, Hr, Modal, ButtonIconed, TextWithLinks } from '@/components';
 import { useFetch } from '@/hooks';
@@ -8,6 +8,7 @@ import lastChange from '@/LAST_CHANGE.json';
 const UpdateNotification = () => {
   const [update, setUpdate] = useState();
   const [isLoading, setIsLoading] = useState();
+  const location = useLocation();
   const navigate = useNavigate();
   const url = `${import.meta.env.VITE_API_URL}/version`;
   const { value } = useFetch(url, {}, []);
@@ -38,7 +39,7 @@ const UpdateNotification = () => {
               disabled={isLoading}
               onClick={() => {
                 setIsLoading(true);
-                navigate('/');
+                navigate(location.pathname);
               }}
               icon={isLoading ? <Spinner className="size-5" /> : <Activity />}
               text={isLoading ? 'Loading, please wait...' : 'Apply Update'}
