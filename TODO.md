@@ -3,7 +3,6 @@
 # FEATURES
 - Card q-ty change in autocompletion
 - Playtest cards in report only for that round
-- Add Nosferatu and Malkavian
 - New layout for old cards or fallback to scans?
 
 # FEATURES ON HOLD
