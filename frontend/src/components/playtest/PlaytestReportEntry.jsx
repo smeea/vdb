@@ -5,16 +5,20 @@ import { Hr, PlaytestScores } from '@/components';
 import { useApp } from '@/context';
 
 const Report = ({ id, text, score, isPlayed }) => {
-  const { isMobile } = useApp();
+  const { hidePlaytestNames, isMobile } = useApp();
   const maxLength = isMobile ? 10 : 25;
 
   return (
     <div className="flex flex-col gap-2 sm:gap-3">
-      <div className="flex w-full items-center justify-between">
+      <div className="flex h-6 w-full items-center justify-between">
         <div title={id} className="text-fgName dark:text-fgNameDark">
-          &lt;{id.substring(0, maxLength)}
-          {id.length > maxLength && '…'}&gt;
-        </div>{' '}
+          {!hidePlaytestNames && (
+            <>
+              &lt;{id.substring(0, maxLength)}
+              {id.length > maxLength && '…'}&gt;
+            </>
+          )}
+        </div>
         <div className="flex items-center justify-end gap-2 sm:gap-4">
           <PlaytestScores value={score} isSmall />
           <div

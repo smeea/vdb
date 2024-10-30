@@ -4,7 +4,6 @@
 - Card q-ty change in autocompletion
 - Playtest cards in report only for that round
 - New layout for old cards or fallback to scans?
-- Add Garou Rim event
 
 # FEATURES ON HOLD
 - TWD search with % V5-compatibility -> after BCP clarify V5

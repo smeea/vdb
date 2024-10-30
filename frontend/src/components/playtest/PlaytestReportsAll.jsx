@@ -9,6 +9,7 @@ import {
   PlaytestReportsAllCardsWrapper,
   PlaytestReportsAllPreconsWrapper,
   SortButton,
+  Toggle,
 } from '@/components';
 import { useFetch } from '@/hooks';
 import { useApp } from '@/context';
@@ -27,7 +28,14 @@ import {
 } from '@/utils/constants';
 
 const PlaytestReportsAll = () => {
-  const { isPlaytestAdmin, preconDecks, cryptCardBase, libraryCardBase } = useApp();
+  const {
+    hidePlaytestNames,
+    setHidePlaytestNames,
+    isPlaytestAdmin,
+    preconDecks,
+    cryptCardBase,
+    libraryCardBase,
+  } = useApp();
   const navigate = useNavigate();
   const [sortMethod, setSortMethod] = useState(NAME);
   const sortMethods = {
@@ -156,6 +164,14 @@ const PlaytestReportsAll = () => {
               setSortMethod={setSortMethod}
             />
           </div>
+        </div>
+        <div className="flex justify-end">
+          <Toggle
+            isOn={hidePlaytestNames}
+            handleClick={() => setHidePlaytestNames(!hidePlaytestNames)}
+          >
+            Hide Usernames
+          </Toggle>
         </div>
         <PlaytestReportsAllCardsWrapper reports={reports} target={CRYPT} sortMethod={sortMethod} />
         <Hr isThick />
