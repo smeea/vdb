@@ -41,7 +41,10 @@ const NavMobileMenu = ({ isLimited, setShowMenu }) => {
 
   return (
     <Popover className="relative">
-      <PopoverButton className="flex h-full items-center px-1 text-white focus:outline-none">
+      <PopoverButton
+        aria-label="Menu"
+        className="flex h-full items-center px-1 text-white focus:outline-none"
+      >
         <List width="30" height="30" viewBox="0 0 16 16" />
       </PopoverButton>
       <PopoverPanel anchor={{ to: 'top', gap: '9px', padding: '4px' }} className="z-50">

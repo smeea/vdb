@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
+import { twMerge } from 'tailwind-merge';
 import { useSnapshot } from 'valtio';
 import LightningFill from '@/assets/images/icons/lightning-fill.svg?react';
 import PersonFill from '@/assets/images/icons/person-fill.svg?react';
@@ -21,20 +22,21 @@ import {
   deckStore,
 } from '@/context';
 
-const Link = ({ to, end, ariaLabel, icon, text }) => {
+const Link = ({ to, end, ariaLabel, icon, text, title }) => {
   return (
     <NavLink
       to={to}
       end={end}
+      title={title}
       aria-label={ariaLabel}
       className={({ isActive }) =>
-        `flex h-full items-center outline-none hover:no-underline ${
-          icon ? 'px-3' : 'px-2 pb-[2px]'
-        } ${
+        twMerge(
+          'flex h-full items-center outline-none hover:no-underline',
+          icon ? 'px-3' : 'px-2 pb-[2px]',
           isActive
             ? 'bg-borderNestModal text-white dark:bg-borderNestModalDark dark:text-whiteDark'
-            : 'text-lightGray dark:text-lightGrayDark'
-        }`
+            : 'text-lightGray dark:text-lightGrayDark',
+        )
       }
     >
       {icon ?? text}
@@ -139,7 +141,8 @@ const Navigation = () => {
                 to="/account"
                 icon={username ? <PersonFill width="21" height="21" viewBox="0 1 16 16" /> : null}
                 text={username ? null : 'Login'}
-                ariaLabel="Login"
+                ariaLabel={username ? 'Account' : 'Login'}
+                title={username ? 'Account' : 'Login'}
               />
               {isPlaytester && <Link to="/playtest" text="Playtest" />}
               <Link to="/" text="About" end />
@@ -153,7 +156,8 @@ const Navigation = () => {
           <Link to={libraryUrl} text={isMobile ? 'LIB' : 'Library'} />
           <Link
             to={cardsUrl}
-            ariaLabel="Quick card search"
+            ariaLabel="Quick Card Search"
+            title="Quick Card Search"
             icon={<LightningFill width="19" height="19" viewBox="0 0 16 16" />}
           />
         </div>

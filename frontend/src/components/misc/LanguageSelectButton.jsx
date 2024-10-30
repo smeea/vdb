@@ -8,7 +8,11 @@ const LanguageSelectButton = () => {
 
   return (
     <Popover className="relative">
-      <PopoverButton className="flex h-full min-w-[40px] items-center justify-center focus:outline-none">
+      <PopoverButton
+        aria-label="Language"
+        title="Language Select"
+        className="flex h-full min-w-[40px] items-center justify-center focus:outline-none"
+      >
         <Flag value={lang} />
       </PopoverButton>
       <PopoverPanel anchor={{ to: 'bottom', gap: '15px', padding: '4px' }} className="z-50">
