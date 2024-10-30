@@ -1,6 +1,7 @@
 import React from 'react';
 import { twMerge } from 'tailwind-merge';
 import Star from '@/assets/images/icons/star.svg?react';
+import StarHalf from '@/assets/images/icons/star-half.svg?react';
 import StarFill from '@/assets/images/icons/star-fill.svg?react';
 import { useApp } from '@/context';
 
@@ -31,7 +32,9 @@ const PlaytestScores = ({ value, handleClick, isSmall }) => {
             onClick={handleClick ? () => handleClick(idx + 1) : null}
             title={titles[idx]}
           >
-            {idx < value ? (
+            {idx + 0.5 == value ? (
+              <StarHalf width={SIZE} height={SIZE} />
+            ) : idx < value ? (
               <StarFill width={SIZE} height={SIZE} />
             ) : (
               <Star width={SIZE} height={SIZE} />
