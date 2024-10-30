@@ -24,7 +24,7 @@ const PlaytestScores = ({ value, handleClick, isSmall }) => {
 
   return (
     <div className="flex gap-1.5 px-1 sm:gap-2">
-      {Array.apply(null, Array(10)).map((i, idx) => {
+      {Array.apply(null, Array(10)).map((_, idx) => {
         return (
           <div
             key={idx}
