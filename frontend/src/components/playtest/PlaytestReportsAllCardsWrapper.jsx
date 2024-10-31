@@ -4,7 +4,7 @@ import { cryptSort, librarySort } from '@/utils';
 import { useApp } from '@/context';
 import { CRYPT } from '@/utils/constants';
 
-const PlaytestReportsAllCardsWrapper = ({ reports, target, sortMethod }) => {
+const PlaytestReportsAllCardsWrapper = ({ reports, target, sortMethod, maxSameScore }) => {
   const { cryptCardBase, libraryCardBase } = useApp();
   const sort = target == CRYPT ? cryptSort : librarySort;
   const cardBase = target == CRYPT ? cryptCardBase : libraryCardBase;
@@ -29,6 +29,7 @@ const PlaytestReportsAllCardsWrapper = ({ reports, target, sortMethod }) => {
             key={i.Id}
             product={i}
             report={reports?.[i.Id]}
+            maxSameScore={maxSameScore}
             withHr={idx + 1 < products.length}
           />
         );

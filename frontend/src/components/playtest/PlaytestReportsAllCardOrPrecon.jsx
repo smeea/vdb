@@ -6,10 +6,11 @@ import {
   FlexGapped,
   Hr,
   PlaytestReportEntry,
+  PlaytestScoresChart,
 } from '@/components';
 import { useApp } from '@/context';
 
-const PlaytestReportsAllCardOrPrecon = ({ product, isPrecon, report, withHr }) => {
+const PlaytestReportsAllCardOrPrecon = ({ product, isPrecon, report, withHr, maxSameScore }) => {
   const { isMobile } = useApp();
   const name = isPrecon ? product.name : product.Name;
 
@@ -40,6 +41,9 @@ const PlaytestReportsAllCardOrPrecon = ({ product, isPrecon, report, withHr }) =
                 <div className="flex flex-col gap-4">
                   <div className="flex items-center">
                     <PlaytestScores value={scoreRoundedHalf} />
+                  </div>
+                  <div className="flex items-center">
+                    <PlaytestScoresChart value={report} maxSameScore={maxSameScore} />
                   </div>
                   <div className="flex flex-col gap-2">
                     <div className="flex justify-between">

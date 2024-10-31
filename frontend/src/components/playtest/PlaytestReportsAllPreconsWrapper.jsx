@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import { PlaytestReportsAllCardOrPrecon } from '@/components';
 import { useApp } from '@/context';
 
-const PlaytestReportsAllPreconsWrapper = ({ reports }) => {
+const PlaytestReportsAllPreconsWrapper = ({ reports, maxSameScore }) => {
   const { preconDecks } = useApp();
   const products = useMemo(
     () =>
@@ -21,6 +21,7 @@ const PlaytestReportsAllPreconsWrapper = ({ reports }) => {
             key={id}
             product={i}
             report={reports?.[id]}
+            maxSameScore={maxSameScore}
             withHr={idx + 1 < products.length}
             isPrecon
           />

@@ -244,6 +244,7 @@ export { default as PlaytestReportsAllCardsWrapper } from './playtest/PlaytestRe
 export { default as PlaytestReportsAllPreconsWrapper } from './playtest/PlaytestReportsAllPreconsWrapper.jsx';
 export { default as PlaytestReportsOneButton } from './playtest/PlaytestReportsOneButton.jsx';
 export { default as PlaytestScores } from './playtest/PlaytestScores.jsx';
+export { default as PlaytestScoresChart } from './playtest/PlaytestScoresChart.jsx';
 export { default as PlaytestUserCard } from './playtest/PlaytestUserCard.jsx';
 
 export { default as ResultClanImage } from './result_common/ResultClanImage.jsx';

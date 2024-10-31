@@ -1,6 +1,5 @@
 import React from 'react';
 import { Cell, ScatterChart, Scatter, XAxis, YAxis, ZAxis, Tooltip, ReferenceLine } from 'recharts';
-
 import { BubbleChartTooltip } from '@/components';
 
 const BubbleChart = ({ data, name, width, titleWidth, refLine }) => {

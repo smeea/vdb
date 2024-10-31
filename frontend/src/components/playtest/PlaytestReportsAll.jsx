@@ -135,17 +135,6 @@ const PlaytestReportsAll = () => {
               textY += pdf.getTextDimensions(value.text, { maxWidth: maxWidth }).h + miniGap;
             }
 
-            // switch (target) {
-            //   case GENERAL:
-            //     if (reports[id][user]) {
-            //       exportText += `${reports[id][user]}\n`;
-            //     }
-            //     break;
-            //   default:
-            //   exportText += `Score: ${reports[id][user].score}\n`;
-            //   exportText += `Seen in Play: ${reports[id][user].isPlayed ? 'Yes' : 'No'}\n`;
-            //   if (reports[id][user].text) exportText += `${reports[id][user].text}\n`;
-            // }
             if (uIdx + 1 < Object.keys(reports[id]).length) {
               pdf.line(textX, textY, sheetW - marginSides, textY);
               textY += gap + miniGap;
@@ -217,6 +206,32 @@ const PlaytestReportsAll = () => {
   const { value: reports } = useFetch(urlReports, {}, [isPlaytestAdmin]);
   const { value: users } = useFetch(urlUsers, {}, [isPlaytestAdmin]);
 
+  const maxReportsSameScore =
+    reports &&
+    Object.entries(reports).reduce(
+      (acc, value) => {
+        const scoresDistribution = Object.values(value[1]).reduce((acc2, value2) => {
+          acc2[value2.score - 1] += 1;
+          return acc2;
+        }, Array(10).fill(0));
+
+        const maxSameScore = Math.max.apply(Math, scoresDistribution);
+
+        if (isNaN(value[0])) {
+          return {
+            cards: acc.cards,
+            precons: maxSameScore > acc.precons ? maxSameScore : acc.precons,
+          };
+        } else {
+          return {
+            cards: maxSameScore > acc.cards ? maxSameScore : acc.cards,
+            precons: acc.precons,
+          };
+        }
+      },
+      { cards: 0, precons: 0 },
+    );
+
   return (
     <div className="playtest-reports-container mx-auto">
       <div className="flex flex-col gap-3 max-sm:p-2 sm:gap-4">
@@ -281,15 +296,24 @@ const PlaytestReportsAll = () => {
             Hide Usernames
           </Toggle>
         </div>
-        <PlaytestReportsAllCardsWrapper reports={reports} target={CRYPT} sortMethod={sortMethod} />
+        <PlaytestReportsAllCardsWrapper
+          maxSameScore={maxReportsSameScore?.cards}
+          reports={reports}
+          target={CRYPT}
+          sortMethod={sortMethod}
+        />
         <Hr isThick />
         <PlaytestReportsAllCardsWrapper
+          maxSameScore={maxReportsSameScore?.cards}
           reports={reports}
           target={LIBRARY}
           sortMethod={sortMethod}
         />
         <Hr isThick />
-        <PlaytestReportsAllPreconsWrapper reports={reports} />
+        <PlaytestReportsAllPreconsWrapper
+          reports={reports}
+          maxSameScore={maxReportsSameScore?.precons}
+        />
         <Hr isThick />
         <FlexGapped className="max-sm:flex-col">
           <div className="flex font-bold text-fgSecondary dark:text-fgSecondaryDark sm:min-w-[320px]">
