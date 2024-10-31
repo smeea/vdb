@@ -177,7 +177,7 @@ const Decks = () => {
           setDeck(decks[deckid]);
         }
       } else if (decks?.[lastDeckId]) {
-        setDeck(decks[lastDeckId]);
+        navigate(`/decks/${lastDeckId}`);
       }
     }
   }, [deckid, loaderData, lastDeckId, decks, preconDecks, cryptCardBase, libraryCardBase]);
