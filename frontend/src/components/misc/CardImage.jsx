@@ -24,7 +24,7 @@ const CardImage = ({ card, set, className = 'max-sm:w-full', size = 'md', onClic
 
   return (
     <>
-      {set ? (
+      {set || lang != EN ? (
         <img
           className={twMerge(sizeStyle[size], className)}
           src={`${otherUrl}.jpg?v=${import.meta.env.VITE_IMAGE_VERSION}`}
@@ -38,7 +38,6 @@ const CardImage = ({ card, set, className = 'max-sm:w-full', size = 'md', onClic
             media="(max-width: 576px)"
             srcSet={`${url}.webp?v=${import.meta.env.VITE_IMAGE_VERSION}`}
             type="image/webp"
-            onError={resetImgSrc}
           />
           <img
             className={twMerge(sizeStyle[size], className)}
