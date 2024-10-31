@@ -4,7 +4,7 @@ import { GENERAL } from '@/utils/constants';
 
 const PlaytestReportsAllGeneral = ({ reports }) => {
   return (
-    <FlexGapped className="max-sm:flex-col">
+    <FlexGapped className="max-sm:flex-col print:break-after-page print:p-8">
       <div className="flex font-bold text-fgSecondary dark:text-fgSecondaryDark sm:min-w-[320px]">
         General Opinions
       </div>
@@ -18,7 +18,7 @@ const PlaytestReportsAllGeneral = ({ reports }) => {
               return (
                 <React.Fragment key={name}>
                   <div className="flex flex-col gap-3">
-                    <div className="flex w-full items-center text-fgName dark:text-fgNameDark">
+                    <div className="flex w-full items-center text-fgName dark:text-fgNameDark print:dark:text-fgName">
                       &lt;{name}&gt;
                     </div>
                     <div>

@@ -10,7 +10,7 @@ const ResultCryptName = ({ card, colored = true, isBanned }) => {
   return (
     <div
       className={twMerge(
-        'inline space-x-1 whitespace-nowrap',
+        'inline space-x-1 whitespace-nowrap print:dark:text-fgName',
         colored && 'text-fgName dark:text-fgNameDark',
       )}
     >

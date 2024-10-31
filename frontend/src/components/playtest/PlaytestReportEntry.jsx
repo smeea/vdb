@@ -13,7 +13,7 @@ const Report = ({ id, text, score, isPlayed }) => {
       <div className="flex h-6 w-full items-center justify-between">
         <div
           title={id}
-          className="text-fgName dark:text-fgNameDark print:max-w-[150px] print:overflow-hidden print:text-ellipsis"
+          className="text-fgName dark:text-fgNameDark print:max-w-[150px] print:overflow-hidden print:text-ellipsis print:dark:text-fgName"
         >
           {!hidePlaytestNames && (
             <>
@@ -25,7 +25,7 @@ const Report = ({ id, text, score, isPlayed }) => {
         <div className="flex items-center justify-end gap-2 sm:gap-4">
           <PlaytestScores value={score} isSmall />
           <div
-            className={isPlayed ? '' : 'text-fgRed dark:text-fgRedDark'}
+            className={isPlayed ? 'print:text-fgPrimary' : 'text-fgRed dark:text-fgRedDark'}
             title={`Was ${isPlayed ? '' : 'not '}seen in play`}
           >
             {isPlayed ? <EyeFill /> : <EyeSlashFill />}
@@ -33,7 +33,7 @@ const Report = ({ id, text, score, isPlayed }) => {
         </div>
       </div>
       {text && (
-        <div>
+        <div className="print:dark:text-fgPrimary">
           {text.split('\n').map((line, idx) => (
             <div key={idx}>{line}</div>
           ))}

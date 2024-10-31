@@ -28,11 +28,13 @@ const PlaytestReportsAllCardOrPrecon = ({ product, isPrecon, report, withHr, max
           ) : (
             <div className="flex w-[320px] flex-col gap-4 print:max-w-[250px]">
               <div className="flex flex-col gap-1">
-                <div className="flex font-bold text-fgSecondary dark:text-fgSecondaryDark">
+                <div className="flex font-bold text-fgSecondary dark:text-fgSecondaryDark print:dark:text-fgSecondary">
                   {name}
                 </div>
                 {isPrecon ? (
-                  <DeckCrypt deck={product} noDisciplines inMissing />
+                  <div className="print:text-sm">
+                    <DeckCrypt deck={product} noDisciplines inMissing />
+                  </div>
                 ) : (
                   <CardImage
                     card={product}
@@ -51,16 +53,16 @@ const PlaytestReportsAllCardOrPrecon = ({ product, isPrecon, report, withHr, max
                   </div>
                   <div className="flex flex-col gap-2">
                     <div className="flex justify-between">
-                      <div className="min-w-[80px] font-bold text-fgSecondary dark:text-fgSecondaryDark">
+                      <div className="min-w-[80px] font-bold text-fgSecondary dark:text-fgSecondaryDark print:dark:text-fgSecondary">
                         Avg. score:
                       </div>
-                      <div className="flex items-center">{scoreRounded}</div>
+                      <div className="print:dark:text-fgPrimary">{scoreRounded}</div>
                     </div>
                     <div className="flex justify-between">
-                      <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
+                      <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark print:dark:text-fgSecondary">
                         Reports:
                       </div>
-                      <div>{q}</div>
+                      <div className="print:dark:text-fgPrimary">{q}</div>
                     </div>
                   </div>
                 </div>

@@ -235,7 +235,7 @@ const PlaytestReportsAll = () => {
             <Tab.Panel>
               <FlexGapped className="flex-col">
                 <PlaytestReportsAllGeneral reports={reports} />
-                <Hr isThick />
+                <Hr isThick className="print:hidden" />
                 <PlaytestReportsAllPreconsWrapper
                   reports={reports}
                   maxSameScore={maxReportsSameScore?.precons}
