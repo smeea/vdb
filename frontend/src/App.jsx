@@ -54,7 +54,7 @@ const App = () => {
         <Route path="crypt" element={<Crypt />} />
         <Route path="library" element={<Library />} />
         <Route path="decks" element={<Decks />} />
-        <Route path="/decks/:deckid" element={<Decks />} loader={deckServices.deckLoader} />
+        <Route path="decks/:deckid" element={<Decks />} loader={deckServices.deckLoader} />
         <Route
           path="documentation"
           element={
@@ -133,7 +133,18 @@ const App = () => {
               </RequirePlaytestAdmin>
             </Suspense>
           }
-        />
+        >
+          <Route
+            path=":lang"
+            element={
+              <Suspense fallback={<div />}>
+                <RequirePlaytestAdmin>
+                  <PlaytestReportsAll />
+                </RequirePlaytestAdmin>
+              </Suspense>
+            }
+          />
+        </Route>
         <Route
           path="review"
           element={

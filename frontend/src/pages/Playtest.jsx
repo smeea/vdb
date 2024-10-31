@@ -2,12 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Wrench from '@/assets/images/icons/wrench.svg?react';
 import InboxesFill from '@/assets/images/icons/inboxes-fill.svg?react';
-import { PlaytestUserCard, ButtonIconed } from '@/components';
 import PersonFill from '@/assets/images/icons/person-fill.svg?react';
+import { PlaytestUserCard, ButtonIconed } from '@/components';
 import { useApp } from '@/context';
+import { EN, LANG } from '@/utils/constants';
 
 const Playtest = () => {
-  const { username, isPlaytestAdmin } = useApp();
+  const { username, isPlaytestAdmin, playtestProfile } = useApp();
+
   return (
     <div className="account-container mx-auto grid place-items-center sm:h-[90vh]">
       <div className="flex w-full flex-col gap-8">
@@ -29,7 +31,10 @@ const Playtest = () => {
                   text="Manage Playtesters"
                 />
               </Link>
-              <Link to="/playtest/reports" className="w-full hover:no-underline">
+              <Link
+                to={`/playtest/reports/${playtestProfile[LANG] ?? EN}`}
+                className="w-full hover:no-underline"
+              >
                 <ButtonIconed
                   className="w-full"
                   title="Show Playtest Reports"

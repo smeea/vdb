@@ -7,7 +7,6 @@ import { useApp, searchResults } from '@/context';
 const Cards = () => {
   const params = useParams();
   const { cryptCardBase, libraryCardBase, isMobile, playtestMode } = useApp();
-
   const card = useSnapshot(searchResults).quickCard;
   const navigate = useNavigate();
 

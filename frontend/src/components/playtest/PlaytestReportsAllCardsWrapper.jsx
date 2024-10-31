@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { PlaytestReportsAllCardOrPrecon } from '@/components';
+import { FlexGapped, PlaytestReportsAllCardOrPrecon } from '@/components';
 import { cryptSort, librarySort } from '@/utils';
 import { useApp } from '@/context';
 import { CRYPT } from '@/utils/constants';
@@ -22,7 +22,7 @@ const PlaytestReportsAllCardsWrapper = ({ reports, target, sortMethod, maxSameSc
   );
 
   return (
-    <>
+    <FlexGapped className="flex-col">
       {products.map((i, idx) => {
         return (
           <PlaytestReportsAllCardOrPrecon
@@ -34,7 +34,7 @@ const PlaytestReportsAllCardsWrapper = ({ reports, target, sortMethod, maxSameSc
           />
         );
       })}
-    </>
+    </FlexGapped>
   );
 };
 

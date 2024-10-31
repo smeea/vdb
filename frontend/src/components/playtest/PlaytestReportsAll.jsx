@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import ky from 'ky';
+import { useNavigate, useParams } from 'react-router-dom';
+import { Tab } from '@headlessui/react';
+import { TabButton } from '@/components';
 import Download from '@/assets/images/icons/download.svg?react';
 import Arrow90DegLeft from '@/assets/images/icons/arrow-90deg-left.svg?react';
 import {
@@ -27,6 +30,7 @@ import {
   PRECONS,
   XLSX,
   PDF,
+  LANG,
 } from '@/utils/constants';
 
 const PlaytestReportsAll = () => {
@@ -38,6 +42,8 @@ const PlaytestReportsAll = () => {
     cryptCardBase,
     libraryCardBase,
   } = useApp();
+  const params = useParams();
+  const lang = params[LANG];
   const navigate = useNavigate();
   const [sortMethod, setSortMethod] = useState(NAME);
   const sortMethods = {
@@ -51,6 +57,8 @@ const PlaytestReportsAll = () => {
 
     switch (format) {
       case XLSX: {
+        const urlUsers = `${import.meta.env.VITE_API_URL}/playtest/users`;
+        const users = await ky(urlUsers).json();
         const data = await playtestServices.exportXlsx(
           reports,
           users,
@@ -63,91 +71,91 @@ const PlaytestReportsAll = () => {
         });
         break;
       }
-      case PDF: {
-        const sheetW = format == 'letter' ? 215.9 : 210;
-        const sheetH = format == 'letter' ? 279.4 : 297;
-        const cardW = 63;
-        const cardH = 88;
-        const marginSides = 15;
-        const gap = 5;
-        const miniGap = 2;
+      // case PDF: {
+      //   const sheetW = format == 'letter' ? 215.9 : 210;
+      //   const sheetH = format == 'letter' ? 279.4 : 297;
+      //   const cardW = 63;
+      //   const cardH = 88;
+      //   const marginSides = 15;
+      //   const gap = 5;
+      //   const miniGap = 2;
 
-        let { jsPDF } = await import('jspdf');
-        const pdf = new jsPDF('p', 'mm', [sheetW, sheetH]);
-        pdf.setDrawColor(200, 200, 200);
+      //   let { jsPDF } = await import('jspdf');
+      //   const pdf = new jsPDF('p', 'mm', [sheetW, sheetH]);
+      //   pdf.setDrawColor(200, 200, 200);
 
-        Object.keys(reports).forEach((id, idx) => {
-          let name;
-          if (isNaN(id)) {
-            name = id == GENERAL ? capitalize(GENERAL) : preconDecks[`PLAYTEST:${id}`].name;
-          } else {
-            try {
-              const card = id > 200000 ? cryptCardBase[id] : libraryCardBase[id];
-              name = card[ASCII_NAME];
+      //   Object.keys(reports).forEach((id, idx) => {
+      //     let name;
+      //     if (isNaN(id)) {
+      //       name = id == GENERAL ? capitalize(GENERAL) : preconDecks[`PLAYTEST:${id}`].name;
+      //     } else {
+      //       try {
+      //         const card = id > 200000 ? cryptCardBase[id] : libraryCardBase[id];
+      //         name = card[ASCII_NAME];
 
-              const img = new Image();
-              img.src = `${useCardImageUrl(card, undefined, undefined).baseUrl}.jpg`;
-              pdf.addImage(img, 'JPEG', marginSides, marginSides + gap, cardW, cardH);
-            } catch {
-              return;
-            }
-          }
+      //         const img = new Image();
+      //         img.src = `${useCardImageUrl(card, undefined, undefined).baseUrl}.jpg`;
+      //         pdf.addImage(img, 'JPEG', marginSides, marginSides + gap, cardW, cardH);
+      //       } catch {
+      //         return;
+      //       }
+      //     }
 
-          pdf.setFontSize(14);
-          pdf.text(name, marginSides, marginSides);
+      //     pdf.setFontSize(14);
+      //     pdf.text(name, marginSides, marginSides);
 
-          const textX = marginSides + cardW + gap;
-          let textY = marginSides + gap + 4;
-          const maxWidth = sheetW - marginSides * 2 - cardW - gap;
+      //     const textX = marginSides + cardW + gap;
+      //     let textY = marginSides + gap + 4;
+      //     const maxWidth = sheetW - marginSides * 2 - cardW - gap;
 
-          Object.values(reports[id]).forEach((value, uIdx) => {
-            if (isNaN(id)) return;
-            let starX = textX;
+      //     Object.values(reports[id]).forEach((value, uIdx) => {
+      //       if (isNaN(id)) return;
+      //       let starX = textX;
 
-            const neededY =
-              textY + gap + miniGap + pdf.getTextDimensions(value.text, { maxWidth: maxWidth }).h;
+      //       const neededY =
+      //         textY + gap + miniGap + pdf.getTextDimensions(value.text, { maxWidth: maxWidth }).h;
 
-            if (neededY > sheetH - marginSides) {
-              pdf.addPage();
-              textY = marginSides;
-            }
+      //       if (neededY > sheetH - marginSides) {
+      //         pdf.addPage();
+      //         textY = marginSides;
+      //       }
 
-            Array.apply(null, Array(10)).forEach((_, i) => {
-              if (i < value.score) {
-                pdf.text('+', starX, textY, {
-                  maxWidth: maxWidth,
-                });
-              } else {
-                pdf.text('-', starX, textY, {
-                  maxWidth: maxWidth,
-                });
-              }
-              starX += gap;
-            });
-            textY += gap;
+      //       Array.apply(null, Array(10)).forEach((_, i) => {
+      //         if (i < value.score) {
+      //           pdf.text('+', starX, textY, {
+      //             maxWidth: maxWidth,
+      //           });
+      //         } else {
+      //           pdf.text('-', starX, textY, {
+      //             maxWidth: maxWidth,
+      //           });
+      //         }
+      //         starX += gap;
+      //       });
+      //       textY += gap;
 
-            if (value.text) {
-              textY += miniGap;
-              pdf.setFontSize(11);
-              pdf.text(value.text, textX, textY, {
-                maxWidth: maxWidth,
-              });
-              textY += pdf.getTextDimensions(value.text, { maxWidth: maxWidth }).h + miniGap;
-            }
+      //       if (value.text) {
+      //         textY += miniGap;
+      //         pdf.setFontSize(11);
+      //         pdf.text(value.text, textX, textY, {
+      //           maxWidth: maxWidth,
+      //         });
+      //         textY += pdf.getTextDimensions(value.text, { maxWidth: maxWidth }).h + miniGap;
+      //       }
 
-            if (uIdx + 1 < Object.keys(reports[id]).length) {
-              pdf.line(textX, textY, sheetW - marginSides, textY);
-              textY += gap + miniGap;
-            }
-          });
-          if (idx + 1 < Object.keys(reports).length) {
-            pdf.addPage();
-          }
-        });
+      //       if (uIdx + 1 < Object.keys(reports[id]).length) {
+      //         pdf.line(textX, textY, sheetW - marginSides, textY);
+      //         textY += gap + miniGap;
+      //       }
+      //     });
+      //     if (idx + 1 < Object.keys(reports).length) {
+      //       pdf.addPage();
+      //     }
+      //   });
 
-        pdf.save(`file.pdf`);
-        return;
-      }
+      //   pdf.save(`file.pdf`);
+      //   return;
+      // }
       default:
         Object.keys(reports).forEach((id, idx) => {
           let name;
@@ -201,10 +209,8 @@ const PlaytestReportsAll = () => {
     saveAs(file);
   };
 
-  const urlReports = `${import.meta.env.VITE_API_URL}/playtest/export/all/all`;
-  const urlUsers = `${import.meta.env.VITE_API_URL}/playtest/users`;
+  const urlReports = `${import.meta.env.VITE_API_URL}/playtest/export/all/${lang}`;
   const { value: reports } = useFetch(urlReports, {}, [isPlaytestAdmin]);
-  const { value: users } = useFetch(urlUsers, {}, [isPlaytestAdmin]);
 
   const maxReportsSameScore =
     reports &&
@@ -265,13 +271,13 @@ const PlaytestReportsAll = () => {
               text="Excel"
               icon={<Download />}
             />
-            <ButtonIconed
-              className="w-full whitespace-nowrap"
-              onClick={() => exportReports(ALL, PDF)}
-              title="PDF"
-              text="PDF"
-              icon={<Download />}
-            />
+            {/* <ButtonIconed */}
+            {/*   className="w-full whitespace-nowrap" */}
+            {/*   onClick={() => exportReports(ALL, PDF)} */}
+            {/*   title="PDF" */}
+            {/*   text="PDF" */}
+            {/*   icon={<Download />} */}
+            {/* /> */}
           </div>
           <div className="flex justify-between gap-1 max-sm:flex-col sm:gap-4">
             <ButtonIconed
@@ -286,64 +292,77 @@ const PlaytestReportsAll = () => {
               sortMethod={sortMethod}
               setSortMethod={setSortMethod}
             />
+            <div className="flex justify-end">
+              <Toggle
+                isOn={hidePlaytestNames}
+                handleClick={() => setHidePlaytestNames(!hidePlaytestNames)}
+              >
+                Hide Usernames
+              </Toggle>
+            </div>
           </div>
         </div>
-        <div className="flex justify-end">
-          <Toggle
-            isOn={hidePlaytestNames}
-            handleClick={() => setHidePlaytestNames(!hidePlaytestNames)}
-          >
-            Hide Usernames
-          </Toggle>
-        </div>
-        <PlaytestReportsAllCardsWrapper
-          maxSameScore={maxReportsSameScore?.cards}
-          reports={reports}
-          target={CRYPT}
-          sortMethod={sortMethod}
-        />
-        <Hr isThick />
-        <PlaytestReportsAllCardsWrapper
-          maxSameScore={maxReportsSameScore?.cards}
-          reports={reports}
-          target={LIBRARY}
-          sortMethod={sortMethod}
-        />
-        <Hr isThick />
-        <PlaytestReportsAllPreconsWrapper
-          reports={reports}
-          maxSameScore={maxReportsSameScore?.precons}
-        />
-        <Hr isThick />
-        <FlexGapped className="max-sm:flex-col">
-          <div className="flex font-bold text-fgSecondary dark:text-fgSecondaryDark sm:min-w-[320px]">
-            GENERAL OPINIONS
-          </div>
-          <div className="flex basis-full flex-col gap-4">
-            {reports?.[GENERAL] &&
-              Object.entries(reports?.[GENERAL])
-                .filter((i) => i[1])
-                .map((i, idx) => {
-                  const name = i[0];
-                  const text = i[1];
-                  return (
-                    <React.Fragment key={name}>
-                      <div className="flex flex-col gap-3">
-                        <div className="flex w-full items-center text-fgName dark:text-fgNameDark">
-                          &lt;{name}&gt;
-                        </div>
-                        <div>
-                          {text.split('\n').map((line, lineIdx) => (
-                            <div key={lineIdx}>{line}</div>
-                          ))}
-                        </div>
-                      </div>
-                      {idx + 1 < Object.keys(reports?.[GENERAL]).length && <Hr />}
-                    </React.Fragment>
-                  );
-                })}
-          </div>
-        </FlexGapped>
+        <Tab.Group manual className="flex flex-col gap-3 sm:gap-4">
+          <Tab.List className="flex gap-1.5">
+            <TabButton>Crypt</TabButton>
+            <TabButton>Library</TabButton>
+            <TabButton>Precons / General</TabButton>
+          </Tab.List>
+          <Tab.Panels>
+            <Tab.Panel>
+              <PlaytestReportsAllCardsWrapper
+                maxSameScore={maxReportsSameScore?.cards}
+                reports={reports}
+                target={CRYPT}
+                sortMethod={sortMethod}
+              />
+            </Tab.Panel>
+            <Tab.Panel>
+              <PlaytestReportsAllCardsWrapper
+                maxSameScore={maxReportsSameScore?.cards}
+                reports={reports}
+                target={LIBRARY}
+                sortMethod={sortMethod}
+              />
+            </Tab.Panel>
+            <Tab.Panel>
+              <PlaytestReportsAllPreconsWrapper
+                reports={reports}
+                maxSameScore={maxReportsSameScore?.precons}
+              />
+              <Hr isThick />
+              <FlexGapped className="max-sm:flex-col">
+                <div className="flex font-bold text-fgSecondary dark:text-fgSecondaryDark sm:min-w-[320px]">
+                  GENERAL OPINIONS
+                </div>
+                <div className="flex basis-full flex-col gap-4">
+                  {reports?.[GENERAL] &&
+                    Object.entries(reports?.[GENERAL])
+                      .filter((i) => i[1])
+                      .map((i, idx) => {
+                        const name = i[0];
+                        const text = i[1];
+                        return (
+                          <React.Fragment key={name}>
+                            <div className="flex flex-col gap-3">
+                              <div className="flex w-full items-center text-fgName dark:text-fgNameDark">
+                                &lt;{name}&gt;
+                              </div>
+                              <div>
+                                {text.split('\n').map((line, lineIdx) => (
+                                  <div key={lineIdx}>{line}</div>
+                                ))}
+                              </div>
+                            </div>
+                            {idx + 1 < Object.keys(reports?.[GENERAL]).length && <Hr />}
+                          </React.Fragment>
+                        );
+                      })}
+                </div>
+              </FlexGapped>
+            </Tab.Panel>
+          </Tab.Panels>
+        </Tab.Group>
       </div>
     </div>
   );

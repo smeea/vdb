@@ -64,7 +64,12 @@ def report_export_route(target, id):
     if not current_user.playtest_admin:
         abort(401)
 
-    lang = current_user.playtest_profile['lang'] if 'lang' in current_user.playtest_profile else 'en-EN'
+    lang = 'en-EN'
+    if target == 'all':
+        lang = id
+    elif 'lang' in current_user.playtest_profile:
+        lang = current_user.playtest_profile['lang']
+
     reports = {}
     playtesters = User.query.filter_by(playtester=True).all()
     targets = ['general', 'cards', 'precons'] if target == 'all' else [target]
@@ -89,7 +94,7 @@ def report_export_route(target, id):
                     reports['general'] = { p.username: general }
 
             elif t in report:
-                if id == 'all':
+                if target == 'all':
                     for k, v in report[t].items():
                         if v['score'] == 0 and v['text'] == '':
                             continue

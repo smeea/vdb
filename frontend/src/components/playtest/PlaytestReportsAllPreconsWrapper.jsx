@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { PlaytestReportsAllCardOrPrecon } from '@/components';
+import { FlexGapped, PlaytestReportsAllCardOrPrecon } from '@/components';
 import { useApp } from '@/context';
 
 const PlaytestReportsAllPreconsWrapper = ({ reports, maxSameScore }) => {
@@ -13,7 +13,7 @@ const PlaytestReportsAllPreconsWrapper = ({ reports, maxSameScore }) => {
   );
 
   return (
-    <>
+    <FlexGapped className="flex-col">
       {products.map((i, idx) => {
         const id = i.deckid.replace('PLAYTEST:', '');
         return (
@@ -27,7 +27,7 @@ const PlaytestReportsAllPreconsWrapper = ({ reports, maxSameScore }) => {
           />
         );
       })}
-    </>
+    </FlexGapped>
   );
 };
 
