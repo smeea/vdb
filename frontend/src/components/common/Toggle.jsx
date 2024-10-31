@@ -30,11 +30,13 @@ const Toggle = ({ isOn, handleClick, size = 'md', disabled, children, variant = 
             disabled || !checked ? style[variant].disabled : style[variant].main,
           )}
         >
-          {checked ? (
-            <ToggleOn width={customSize[size]} height={customSize[size]} viewBox="0 0 16 16" />
-          ) : (
-            <ToggleOff width={customSize[size]} height={customSize[size]} viewBox="0 0 16 16" />
-          )}
+          <div>
+            {checked ? (
+              <ToggleOn width={customSize[size]} height={customSize[size]} viewBox="0 0 16 16" />
+            ) : (
+              <ToggleOff width={customSize[size]} height={customSize[size]} viewBox="0 0 16 16" />
+            )}
+          </div>
           {children && <div className="flex items-center">{children}</div>}
         </div>
       )}
