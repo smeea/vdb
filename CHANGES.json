@@ -1,5 +1,12 @@
 [
   {
+    "version": "2024-11-01",
+    "changes": [
+      "Fix page loading",
+      "Fix fallback (english) images for non-english language settings if no image for that language exist"
+    ]
+  },
+  {
     "version": "2024-10-29",
     "changes": [
       "Add Malkavian and Nosferatu legacy images",
