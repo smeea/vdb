@@ -241,6 +241,7 @@ export { default as PlaytestReportForm } from './playtest/PlaytestReportForm.jsx
 export { default as PlaytestReportsAll } from './playtest/PlaytestReportsAll.jsx';
 export { default as PlaytestReportsAllCardOrPrecon } from './playtest/PlaytestReportsAllCardOrPrecon.jsx';
 export { default as PlaytestReportsAllCardsWrapper } from './playtest/PlaytestReportsAllCardsWrapper.jsx';
+export { default as PlaytestReportsAllGeneral } from './playtest/PlaytestReportsAllGeneral.jsx';
 export { default as PlaytestReportsAllPreconsWrapper } from './playtest/PlaytestReportsAllPreconsWrapper.jsx';
 export { default as PlaytestReportsOneButton } from './playtest/PlaytestReportsOneButton.jsx';
 export { default as PlaytestScores } from './playtest/PlaytestScores.jsx';

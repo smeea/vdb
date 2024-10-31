@@ -118,7 +118,6 @@ export const OR = 'or';
 export const OR_NEWER = 'or-newer';
 export const OR_OLDER = 'or-older';
 export const PDA = 'pda';
-export const PDF = 'pdf';
 export const PLAYER = 'Player';
 export const PLAYERS = 'Players';
 export const PLAYTEST = 'PLAYTEST';

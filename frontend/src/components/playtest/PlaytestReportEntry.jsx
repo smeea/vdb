@@ -11,7 +11,10 @@ const Report = ({ id, text, score, isPlayed }) => {
   return (
     <div className="flex flex-col gap-2 sm:gap-3">
       <div className="flex h-6 w-full items-center justify-between">
-        <div title={id} className="text-fgName dark:text-fgNameDark">
+        <div
+          title={id}
+          className="text-fgName dark:text-fgNameDark print:max-w-[150px] print:overflow-hidden print:text-ellipsis"
+        >
           {!hidePlaytestNames && (
             <>
               &lt;{id.substring(0, maxLength)}
@@ -43,19 +46,22 @@ const Report = ({ id, text, score, isPlayed }) => {
 const PlaytestReportEntry = ({ value }) => {
   return (
     <div className="flex basis-full flex-col gap-4">
-      {Object.keys(value).map((id, idx) => {
-        return (
-          <React.Fragment key={id}>
-            <Report
-              id={id}
-              text={value[id].text}
-              score={value[id].score}
-              isPlayed={value[id].isPlayed}
-            />
-            {idx + 1 < Object.keys(value).length && <Hr />}
-          </React.Fragment>
-        );
-      })}
+      {Object.keys(value)
+        .sort((a, b) => value[a].text < value[b].text)
+        .sort((a, b) => value[a].score < value[b].score)
+        .map((id, idx) => {
+          return (
+            <div key={id} className="flex flex-col gap-2 sm:gap-3 print:break-inside-avoid">
+              <Report
+                id={id}
+                text={value[id].text}
+                score={value[id].score}
+                isPlayed={value[id].isPlayed}
+              />
+              {idx + 1 < Object.keys(value).length && <Hr />}
+            </div>
+          );
+        })}
     </div>
   );
 };

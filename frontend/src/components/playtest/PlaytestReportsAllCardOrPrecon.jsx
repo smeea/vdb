@@ -21,12 +21,12 @@ const PlaytestReportsAllCardOrPrecon = ({ product, isPrecon, report, withHr, max
 
   return (
     <>
-      <FlexGapped className="max-sm:flex-col">
+      <FlexGapped className="max-sm:flex-col print:break-after-page print:p-8">
         <div className="flex flex-col gap-2 sm:gap-4">
           {isMobile ? (
             <div className="flex font-bold text-fgSecondary dark:text-fgSecondaryDark">{name}</div>
           ) : (
-            <div className="flex w-[320px] flex-col gap-4">
+            <div className="flex w-[320px] flex-col gap-4 print:max-w-[250px]">
               <div className="flex flex-col gap-1">
                 <div className="flex font-bold text-fgSecondary dark:text-fgSecondaryDark">
                   {name}
@@ -34,7 +34,11 @@ const PlaytestReportsAllCardOrPrecon = ({ product, isPrecon, report, withHr, max
                 {isPrecon ? (
                   <DeckCrypt deck={product} noDisciplines inMissing />
                 ) : (
-                  <CardImage card={product} size="sm" />
+                  <CardImage
+                    card={product}
+                    size="sm"
+                    className="print:min-w-[250px] print:max-w-[250px]"
+                  />
                 )}
               </div>
               {score && (
@@ -66,7 +70,7 @@ const PlaytestReportsAllCardOrPrecon = ({ product, isPrecon, report, withHr, max
         </div>
         {report && <PlaytestReportEntry value={report} />}
       </FlexGapped>
-      {withHr && <Hr isThick />}
+      {withHr && <Hr isThick className="print:hidden" />}
     </>
   );
 };

@@ -98,7 +98,7 @@ const Navigation = () => {
   if (quickCard) cardsUrl = `/cards/${quickCard.Id}`;
 
   return (
-    <nav className="z-50 bg-bgNav dark:bg-bgNavDark max-sm:fixed max-sm:bottom-0 max-sm:w-full sm:sticky sm:top-0">
+    <nav className="z-50 bg-bgNav dark:bg-bgNavDark max-sm:fixed max-sm:bottom-0 max-sm:w-full sm:sticky sm:top-0 print:hidden">
       <div className="navbar-container mx-auto flex h-10 justify-between sm:gap-3">
         <div className="flex items-center gap-6">
           {isMobile ? (

@@ -28,7 +28,7 @@ const PlaytestScores = ({ value, handleClick, isSmall }) => {
         return (
           <div
             key={idx}
-            className={twMerge('flex', handleClick && 'cursor-pointer')}
+            className={twMerge('flex print:max-w-[14px]', handleClick && 'cursor-pointer')}
             onClick={handleClick ? () => handleClick(idx + 1) : null}
             title={titles[idx]}
           >
