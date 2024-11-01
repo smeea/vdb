@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import ky from 'ky';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Tab } from '@headlessui/react';
 import Download from '@/assets/images/icons/download.svg?react';
 import Arrow90DegLeft from '@/assets/images/icons/arrow-90deg-left.svg?react';
@@ -40,9 +40,8 @@ const PlaytestReportsAll = () => {
     preconDecks,
     cryptCardBase,
     libraryCardBase,
+    playtestProfile,
   } = useApp();
-  const params = useParams();
-  const lang = params[LANG];
   const navigate = useNavigate();
   const [sortMethod, setSortMethod] = useState(NAME);
   const sortMethods = {
@@ -123,7 +122,7 @@ const PlaytestReportsAll = () => {
     saveAs(file);
   };
 
-  const urlReports = `${import.meta.env.VITE_API_URL}/playtest/export/all/${lang}`;
+  const urlReports = `${import.meta.env.VITE_API_URL}/playtest/export/all/${playtestProfile[LANG]}`;
   const { value: reports } = useFetch(urlReports, {}, [isPlaytestAdmin]);
 
   const maxReportsSameScore =

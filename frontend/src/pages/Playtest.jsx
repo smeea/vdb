@@ -31,10 +31,7 @@ const Playtest = () => {
                   text="Manage Playtesters"
                 />
               </Link>
-              <Link
-                to={`/playtest/reports/${playtestProfile[LANG] ?? EN}`}
-                className="w-full hover:no-underline"
-              >
+              <Link to="/playtest/reports" className="w-full hover:no-underline">
                 <ButtonIconed
                   className="w-full"
                   title="Show Playtest Reports"

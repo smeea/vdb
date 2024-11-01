@@ -1,5 +1,5 @@
 import React from 'react';
-import { FlexGapped } from '@/components';
+import { FlexGapped, Hr } from '@/components';
 import { GENERAL } from '@/utils/constants';
 
 const PlaytestReportsAllGeneral = ({ reports }) => {

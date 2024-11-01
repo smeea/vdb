@@ -133,18 +133,7 @@ const App = () => {
               </RequirePlaytestAdmin>
             </Suspense>
           }
-        >
-          <Route
-            path=":lang"
-            element={
-              <Suspense fallback={<div />}>
-                <RequirePlaytestAdmin>
-                  <PlaytestReportsAll />
-                </RequirePlaytestAdmin>
-              </Suspense>
-            }
-          />
-        </Route>
+        />
         <Route
           path="review"
           element={
