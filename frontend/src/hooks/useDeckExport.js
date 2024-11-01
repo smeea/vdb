@@ -1,14 +1,18 @@
 import { getTextDisciplines, cryptSort, librarySort } from '@/utils';
 import {
-  cardtypeSortedFull,
   ASCII_NAME,
-  MASTER,
-  TRIFLE,
+  CAPACITY,
   CARD_TEXT,
-  TWD,
+  JOL,
+  LACKEY,
+  MASTER,
   NAME,
   QUANTITY,
-  CAPACITY,
+  TEXT,
+  TRIFLE,
+  TWD,
+  TWD_HINTS,
+  cardtypeSortedFull,
 } from '@/utils/constants';
 
 const getCryptTitle = (crypt) => {
@@ -306,15 +310,15 @@ const useDeckExport = (deck, format) => {
   const d = { ...deck, crypt: crypt, library: library };
 
   switch (format) {
-    case 'jol':
+    case JOL:
       return exportJol(d);
-    case 'lackey':
+    case LACKEY:
       return exportLackey(d);
     case TWD:
       return exportTwd(d, false);
-    case 'twdHints':
+    case TWD_HINTS:
       return exportTwd(d, true);
-    case 'text':
+    case TEXT:
       return exportText(d);
   }
 };

@@ -13,7 +13,7 @@ import {
 } from '@/components';
 import { useApp, deckStore } from '@/context';
 import { deckServices } from '@/services';
-import { DECKS, NAME } from '@/utils/constants';
+import { DECKS, NAME, JOL, LACKEY, TEXT, XLSX } from '@/utils/constants';
 
 const DeckSelectAdvModal = ({ onClick, setShow, allTagsOptions, short }) => {
   const { isMobile, setShowFloatingButtons } = useApp();
@@ -76,10 +76,10 @@ const DeckSelectAdvModal = ({ onClick, setShow, allTagsOptions, short }) => {
             <Menu as="div" className="relative">
               <MenuButton title="Export Selected" icon={<Download />} text="Export Selected" />
               <MenuItems>
-                <MenuItem onClick={() => exportSelected('text')}>Text</MenuItem>
-                <MenuItem onClick={() => exportSelected('lackey')}>Lackey</MenuItem>
-                <MenuItem onClick={() => exportSelected('jol')}>JOL</MenuItem>
-                <MenuItem onClick={() => exportSelected('xlsx')}>Excel</MenuItem>
+                <MenuItem onClick={() => exportSelected(TEXT)}>Text</MenuItem>
+                <MenuItem onClick={() => exportSelected(LACKEY)}>Lackey</MenuItem>
+                <MenuItem onClick={() => exportSelected(JOL)}>JOL</MenuItem>
+                <MenuItem onClick={() => exportSelected(XLSX)}>Excel</MenuItem>
               </MenuItems>
             </Menu>
           </div>
