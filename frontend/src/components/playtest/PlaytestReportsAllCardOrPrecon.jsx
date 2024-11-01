@@ -26,7 +26,7 @@ const PlaytestReportsAllCardOrPrecon = ({ product, isPrecon, report, withHr, max
           {isMobile ? (
             <div className="flex font-bold text-fgSecondary dark:text-fgSecondaryDark">{name}</div>
           ) : (
-            <div className="flex w-[320px] flex-col gap-4 print:max-w-[250px]">
+            <FlexGapped className="w-[320px] flex-col print:max-w-[250px]">
               <div className="flex flex-col gap-1">
                 <div className="flex font-bold text-fgSecondary dark:text-fgSecondaryDark print:dark:text-fgSecondary">
                   {name}
@@ -44,14 +44,14 @@ const PlaytestReportsAllCardOrPrecon = ({ product, isPrecon, report, withHr, max
                 )}
               </div>
               {score && (
-                <div className="flex flex-col gap-4">
-                  <div className="flex items-center">
+                <FlexGapped className="flex-col">
+                  <div className="flex items-center justify-center">
                     <PlaytestScores value={scoreRoundedHalf} />
                   </div>
-                  <div className="flex items-center">
-                    <PlaytestScoresChart value={report} maxSameScore={maxSameScore} />
-                  </div>
                   <div className="flex flex-col gap-2">
+                    <div className="flex items-center">
+                      <PlaytestScoresChart value={report} maxSameScore={maxSameScore} />
+                    </div>
                     <div className="flex justify-between">
                       <div className="min-w-[80px] font-bold text-fgSecondary dark:text-fgSecondaryDark print:dark:text-fgSecondary">
                         Avg. score:
@@ -65,9 +65,9 @@ const PlaytestReportsAllCardOrPrecon = ({ product, isPrecon, report, withHr, max
                       <div className="print:dark:text-fgPrimary">{q}</div>
                     </div>
                   </div>
-                </div>
+                </FlexGapped>
               )}
-            </div>
+            </FlexGapped>
           )}
         </div>
         {report && <PlaytestReportEntry value={report} />}
