@@ -59,20 +59,16 @@ def playtesters_route():
 @login_required
 @app.route("/api/playtest/export/<string:target>/<string:id>", methods=["GET"])
 def report_export_route(target, id):
-    if target not in ['cards', 'precons', 'all']:
+    if target not in ['crypt', 'library', 'cards', 'precons', 'general']:
         abort(400)
     if not current_user.playtest_admin:
         abort(401)
 
-    lang = 'en-EN'
-    if target == 'all':
-        lang = id
-    elif 'lang' in current_user.playtest_profile:
-        lang = current_user.playtest_profile['lang']
+    lang = current_user.playtest_profile['lang'] if 'lang' in current_user.playtest_profile else 'en-EN'
 
     reports = {}
     playtesters = User.query.filter_by(playtester=True).all()
-    targets = ['general', 'cards', 'precons'] if target == 'all' else [target]
+    # targets = ['general', 'cards', 'precons'] if target == 'all' else [target]
 
     for p in playtesters:
         # defaulting lang to English if not specified
@@ -82,21 +78,24 @@ def report_export_route(target, id):
 
         report = copy.deepcopy(p.playtest_report)
 
-        for t in targets:
-            if t == 'general':
-                general = p.playtest_profile['general'] if 'general' in p.playtest_profile else None
-                if not general:
-                    continue
+        if target == 'general':
+            general = p.playtest_profile['general'] if 'general' in p.playtest_profile else None
+            if not general:
+                continue
 
-                if 'general' in reports:
-                    reports['general'][p.username] = general
-                else:
-                    reports['general'] = { p.username: general }
+            if 'general' in reports:
+                reports[p.username] = general
+            else:
+                reports = { p.username: general }
 
-            elif t in report:
-                if target == 'all':
+        else:
+            t = 'cards' if target in ['crypt', 'library'] else target
+            if t in report:
+                if id == 'all':
                     for k, v in report[t].items():
                         if v['score'] == 0 and v['text'] == '':
+                            continue
+                        if target == 'crypt' and int(k) < 200000 or target == 'library' and int(k) > 200000:
                             continue
 
                         if k in reports:
@@ -104,10 +103,10 @@ def report_export_route(target, id):
                         else:
                             reports[k] = { p.username: v }
 
-                elif id in report[t]:
-                    if report[t][id]['score'] == 0 and report[t][id]['text'] == '':
+                elif id in report[target]:
+                    if report[target][id]['score'] == 0 and report[target][id]['text'] == '':
                         continue
-                    reports[p.username] = report[t][id]
+                    reports[p.username] = report[target][id]
 
     return jsonify(reports)
 

@@ -29,7 +29,6 @@ import {
   NAME,
   PRECONS,
   XLSX,
-  LANG,
 } from '@/utils/constants';
 
 const PlaytestReportsAll = () => {
@@ -40,7 +39,6 @@ const PlaytestReportsAll = () => {
     preconDecks,
     cryptCardBase,
     libraryCardBase,
-    playtestProfile,
   } = useApp();
   const navigate = useNavigate();
   const [sortMethod, setSortMethod] = useState(NAME);
@@ -50,6 +48,12 @@ const PlaytestReportsAll = () => {
   };
 
   const exportReports = async (target, format) => {
+    const reports = {
+      ...reportsCrypt,
+      ...reportsLibrary,
+      ...reportsPrecons,
+      [GENERAL]: reportsGeneral,
+    };
     let file;
     let exportText = '';
 
@@ -122,34 +126,30 @@ const PlaytestReportsAll = () => {
     saveAs(file);
   };
 
-  const urlReports = `${import.meta.env.VITE_API_URL}/playtest/export/all/${playtestProfile[LANG]}`;
-  const { value: reports } = useFetch(urlReports, {}, [isPlaytestAdmin]);
+  const urlReportsCrypt = `${import.meta.env.VITE_API_URL}/playtest/export/${CRYPT}/all`;
+  const urlReportsLibrary = `${import.meta.env.VITE_API_URL}/playtest/export/${LIBRARY}/all`;
+  const urlReportsPrecons = `${import.meta.env.VITE_API_URL}/playtest/export/${PRECONS}/all`;
+  const urlReportsGeneral = `${import.meta.env.VITE_API_URL}/playtest/export/${GENERAL}/all`;
+  const { value: reportsCrypt } = useFetch(urlReportsCrypt, {}, [isPlaytestAdmin]);
+  const { value: reportsLibrary } = useFetch(urlReportsLibrary, {}, [isPlaytestAdmin]);
+  const { value: reportsPrecons } = useFetch(urlReportsPrecons, {}, [isPlaytestAdmin]);
+  const { value: reportsGeneral } = useFetch(urlReportsGeneral, {}, [isPlaytestAdmin]);
 
-  const maxReportsSameScore =
-    reports &&
-    Object.entries(reports).reduce(
-      (acc, value) => {
-        const scoresDistribution = Object.values(value[1]).reduce((acc2, value2) => {
-          acc2[value2.score - 1] += 1;
-          return acc2;
-        }, Array(10).fill(0));
+  const getMaxReportsSameScore = (data) => {
+    return Object.entries(data).reduce((acc, value) => {
+      const scoresDistribution = Object.values(value[1]).reduce((acc2, value2) => {
+        acc2[value2.score - 1] += 1;
+        return acc2;
+      }, Array(10).fill(0));
 
-        const maxSameScore = Math.max.apply(Math, scoresDistribution);
+      const maxSameScore = Math.max.apply(Math, scoresDistribution);
+      return maxSameScore > acc ? maxSameScore : acc;
+    }, 0);
+  };
 
-        if (isNaN(value[0])) {
-          return {
-            cards: acc.cards,
-            precons: maxSameScore > acc.precons ? maxSameScore : acc.precons,
-          };
-        } else {
-          return {
-            cards: maxSameScore > acc.cards ? maxSameScore : acc.cards,
-            precons: acc.precons,
-          };
-        }
-      },
-      { cards: 0, precons: 0 },
-    );
+  const maxReportsSameScoreCrypt = reportsCrypt && getMaxReportsSameScore(reportsCrypt);
+  const maxReportsSameScoreLibrary = reportsLibrary && getMaxReportsSameScore(reportsLibrary);
+  const maxReportsSameScorePrecons = reportsPrecons && getMaxReportsSameScore(reportsPrecons);
 
   return (
     <div className="playtest-reports-container mx-auto">
@@ -158,16 +158,16 @@ const PlaytestReportsAll = () => {
           <div className="flex justify-between gap-1 max-sm:w-full max-sm:flex-col sm:gap-4">
             <ButtonIconed
               className="w-full whitespace-nowrap"
-              onClick={() => exportReports(PRECONS)}
-              title="Precons - Text"
-              text="Precons - Text"
+              onClick={() => exportReports(CARDS)}
+              title="Cards - Text"
+              text="Cards - Text"
               icon={<Download />}
             />
             <ButtonIconed
               className="w-full whitespace-nowrap"
-              onClick={() => exportReports(CARDS)}
-              title="Cards - Text"
-              text="Cards - Text"
+              onClick={() => exportReports(PRECONS)}
+              title="Precons - Text"
+              text="Precons - Text"
               icon={<Download />}
             />
             <ButtonIconed
@@ -217,27 +217,27 @@ const PlaytestReportsAll = () => {
           <Tab.Panels>
             <Tab.Panel>
               <PlaytestReportsAllCardsWrapper
-                maxSameScore={maxReportsSameScore?.cards}
-                reports={reports}
+                maxSameScore={maxReportsSameScoreCrypt}
+                reports={reportsCrypt}
                 target={CRYPT}
                 sortMethod={sortMethod}
               />
             </Tab.Panel>
             <Tab.Panel>
               <PlaytestReportsAllCardsWrapper
-                maxSameScore={maxReportsSameScore?.cards}
-                reports={reports}
+                maxSameScore={maxReportsSameScoreLibrary}
+                reports={reportsLibrary}
                 target={LIBRARY}
                 sortMethod={sortMethod}
               />
             </Tab.Panel>
             <Tab.Panel>
               <FlexGapped className="flex-col">
-                <PlaytestReportsAllGeneral reports={reports} />
+                <PlaytestReportsAllGeneral reports={reportsGeneral} />
                 <Hr isThick className="print:hidden" />
                 <PlaytestReportsAllPreconsWrapper
-                  reports={reports}
-                  maxSameScore={maxReportsSameScore?.precons}
+                  reports={reportsPrecons}
+                  maxSameScore={maxReportsSameScorePrecons}
                 />
               </FlexGapped>
             </Tab.Panel>

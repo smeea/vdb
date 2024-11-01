@@ -1,7 +1,6 @@
 import React from 'react';
 import { useApp } from '@/context';
 import { FlexGapped, Hr } from '@/components';
-import { GENERAL } from '@/utils/constants';
 
 const PlaytestReportsAllGeneral = ({ reports }) => {
   const { hidePlaytestNames } = useApp();
@@ -12,8 +11,8 @@ const PlaytestReportsAllGeneral = ({ reports }) => {
         General Opinions
       </div>
       <div className="flex basis-full flex-col gap-4">
-        {reports?.[GENERAL] &&
-          Object.entries(reports?.[GENERAL])
+        {reports &&
+          Object.entries(reports)
             .filter((i) => i[1])
             .map((i, idx) => {
               const name = i[0];
@@ -32,7 +31,7 @@ const PlaytestReportsAllGeneral = ({ reports }) => {
                       ))}
                     </div>
                   </div>
-                  {idx + 1 < Object.keys(reports?.[GENERAL]).length && <Hr />}
+                  {idx + 1 < Object.keys(reports).length && <Hr />}
                 </React.Fragment>
               );
             })}
