@@ -22,13 +22,12 @@ import {
   deckStore,
 } from '@/context';
 
-const Link = ({ to, end, ariaLabel, icon, text, title }) => {
+const Link = ({ to, end, icon, text, title }) => {
   return (
     <NavLink
       to={to}
       end={end}
       title={title}
-      aria-label={ariaLabel}
       className={({ isActive }) =>
         twMerge(
           'flex h-full items-center outline-none hover:no-underline',
@@ -141,7 +140,6 @@ const Navigation = () => {
                 to="/account"
                 icon={username ? <PersonFill width="21" height="21" viewBox="0 1 16 16" /> : null}
                 text={username ? null : 'Login'}
-                ariaLabel={username ? 'Account' : 'Login'}
                 title={username ? 'Account' : 'Login'}
               />
               {isPlaytester && <Link to="/playtest" text="Playtest" />}
