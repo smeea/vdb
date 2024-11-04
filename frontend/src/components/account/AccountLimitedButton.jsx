@@ -15,6 +15,7 @@ import {
   LIMITED_BANNED_LIBRARY,
   LIMITED_SETS,
   SETS,
+  FORMAT,
 } from '@/utils/constants';
 
 const AccountLimitedButton = () => {
@@ -22,7 +23,7 @@ const AccountLimitedButton = () => {
   const [showModal, setShowModal] = useState(false);
 
   const query = new URLSearchParams(useLocation().search);
-  const limitedFormat = JSON.parse(query.get('format'));
+  const limitedFormat = JSON.parse(query.get(FORMAT));
 
   const setFormat = (format) => {
     setLimitedFormat(

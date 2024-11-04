@@ -1,6 +1,17 @@
 import { proxy } from 'valtio';
 import { deepClone } from '@/utils';
-import { CRYPT, LIBRARY, DECK, DECKS, CRYPT_TIMER, CARD_TEXT } from '@/utils/constants';
+import {
+  USED_IN_INVENTORY,
+  CRYPT,
+  LIBRARY,
+  DECK,
+  DECKS,
+  CRYPT_TIMER,
+  CARD_TEXT,
+  CARDS,
+  INVENTORY_TYPE,
+  AUTHOR,
+} from '@/utils/constants';
 import { deckServices } from '@/services';
 import { startCryptTimer, miscStore } from '@/context';
 
@@ -57,7 +68,7 @@ export const deckUpdate = (deckid, field, value) => {
   const initialDecksState = deepClone(deckStore[DECKS][deckid]);
 
   switch (field) {
-    case 'usedInInventory':
+    case USED_IN_INVENTORY:
       Object.keys(value).forEach((cardid) => {
         if (cardid > 200000) {
           deckStore[DECKS][deckid].crypt[cardid].i = value[cardid];
@@ -76,7 +87,7 @@ export const deckUpdate = (deckid, field, value) => {
         });
       }
       break;
-    case 'cards':
+    case CARDS:
       deckStore[DECKS][deckid].crypt = value.crypt;
       deckStore[DECKS][deckid].library = value.library;
 
@@ -87,7 +98,7 @@ export const deckUpdate = (deckid, field, value) => {
       break;
     default:
       deckStore[DECKS][deckid][field] = value;
-      if (field === 'inventoryType') {
+      if (field === INVENTORY_TYPE) {
         Object.keys(deckStore[DECKS][deckid].crypt).forEach((cardid) => {
           deckStore[DECKS][deckid].crypt[cardid].i = '';
         });
@@ -98,7 +109,7 @@ export const deckUpdate = (deckid, field, value) => {
 
       if (deckid === deckStore?.deck?.deckid) {
         deckStore[DECK][field] = value;
-        if (field === 'inventoryType') {
+        if (field === INVENTORY_TYPE) {
           Object.keys(deckStore[DECK].crypt).forEach((cardid) => {
             deckStore[DECK].crypt[cardid].i = '';
           });
@@ -109,7 +120,7 @@ export const deckUpdate = (deckid, field, value) => {
       }
   }
 
-  const branchesUpdateFields = ['name', 'author'];
+  const branchesUpdateFields = ['name', AUTHOR];
   if (
     branchesUpdateFields.includes(field) &&
     (deckStore[DECKS][deckid].branches || deckStore[DECKS][deckid].master)
@@ -118,7 +129,7 @@ export const deckUpdate = (deckid, field, value) => {
   }
   changeMaster(deckid);
 
-  if (field === 'cards') {
+  if (field === CARDS) {
     const cards = {};
     Object.values({ ...value.crypt, ...value.library }).forEach((card) => {
       cards[card.c.Id] = card.q;
@@ -136,23 +147,23 @@ export const deckUpdate = (deckid, field, value) => {
 };
 
 export const deckToggleInventoryState = (deckid) => {
-  switch (deckStore[DECKS][deckid].inventoryType) {
+  switch (deckStore[DECKS][deckid][INVENTORY_TYPE]) {
     case 's':
-      deckUpdate(deckid, 'inventoryType', 'h');
+      deckUpdate(deckid, INVENTORY_TYPE, 'h');
       break;
     case 'h':
-      deckUpdate(deckid, 'inventoryType', '');
+      deckUpdate(deckid, INVENTORY_TYPE, '');
       break;
     default:
-      deckUpdate(deckid, 'inventoryType', 's');
+      deckUpdate(deckid, INVENTORY_TYPE, 's');
   }
 };
 
 export const cardToggleInventoryState = (deckid, cardid) => {
   const deck = deckStore[DECKS][deckid];
   const target = cardid > 200000 ? CRYPT : LIBRARY;
-  const value = deck[target][cardid].i ? '' : deck.inventoryType === 's' ? 'h' : 's';
-  deckUpdate(deckid, 'usedInInventory', {
+  const value = deck[target][cardid].i ? '' : deck[INVENTORY_TYPE] === 's' ? 'h' : 's';
+  deckUpdate(deckid, USED_IN_INVENTORY, {
     [cardid]: value,
   });
 };

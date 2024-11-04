@@ -4,7 +4,7 @@ import { useSnapshot } from 'valtio';
 import { FlexGapped, Modal, Button, DeckProxyCrypt, DeckProxyLibrary } from '@/components';
 import { useApp, usedStore, inventoryStore } from '@/context';
 import { getHardTotal, getSoftMax } from '@/utils';
-import { SOFT, HARD, CRYPT, LIBRARY } from '@/utils/constants';
+import { INVENTORY_TYPE, SOFT, HARD, CRYPT, LIBRARY } from '@/utils/constants';
 
 const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
   const { isMobile, inventoryMode } = useApp();
@@ -55,7 +55,7 @@ const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
 
         const inInventory = inventoryCrypt[cardid]?.q || 0;
         const inventoryMiss = softUsedMax + hardUsedTotal - inInventory;
-        const miss = deck.inventoryType
+        const miss = deck[INVENTORY_TYPE]
           ? Math.min(inventoryMiss, deck.crypt[cardid].q)
           : inventoryMiss >= 0
             ? deck.crypt[cardid].q
@@ -77,7 +77,7 @@ const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
 
         const inInventory = inventoryLibrary[cardid]?.q || 0;
         const inventoryMiss = softUsedMax + hardUsedTotal - inInventory;
-        const miss = deck.inventoryType
+        const miss = deck[INVENTORY_TYPE]
           ? Math.min(inventoryMiss, deck.library[cardid].q)
           : inventoryMiss >= 0
             ? deck.library[cardid].q

@@ -17,6 +17,7 @@ import {
 import { useApp, deckStore } from '@/context';
 import { useDeck, useTags } from '@/hooks';
 import { DECKS, CRYPT, LIBRARY } from '@/utils/constants';
+import { deepClone } from '@/utils';
 
 const Review = () => {
   const {
@@ -127,9 +128,8 @@ const Review = () => {
 
   useEffect(() => {
     if (hash && deckTo) {
-      const deckWithHash = JSON.parse(
-        JSON.stringify({ crypt: deckTo.crypt, library: deckTo.library }),
-      );
+      const deckWithHash = deepClone({ crypt: deckTo.crypt, library: deckTo.library });
+
       hash
         .slice(1)
         .split(';')
@@ -137,12 +137,12 @@ const Review = () => {
           const j = i.split('=');
           if (j[0] > 200000) {
             deckWithHash.crypt[j[0]] = {
-              q: (deckWithHash.crypt[j[0]]?.q || 0) + parseInt(j[1]),
+              q: (deckTo.crypt[j[0]]?.q || 0) + parseInt(j[1]),
               c: cryptCardBase[j[0]],
             };
           } else {
             deckWithHash.library[j[0]] = {
-              q: (deckWithHash.library[j[0]]?.q || 0) + parseInt(j[1]),
+              q: (deckTo.library[j[0]]?.q || 0) + parseInt(j[1]),
               c: libraryCardBase[j[0]],
             };
           }

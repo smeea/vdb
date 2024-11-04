@@ -1,6 +1,6 @@
 import ky from 'ky';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
-import { CARD_TEXT, PLAYTEST } from '@/utils/constants';
+import { PRECONS, CARD_TEXT, PLAYTEST } from '@/utils/constants';
 import { useDeck, useTags } from '@/hooks';
 
 const CARD_VERSION = import.meta.env.VITE_CARD_VERSION;
@@ -61,7 +61,7 @@ export const getPreconDecks = async (cryptCardBase, libraryCardBase) => {
   Object.keys(preconDecksData).forEach((set) => {
     Object.keys(preconDecksData[set]).forEach((precon) => {
       const deckid = `${set}:${precon}`;
-      const name = setsAndPrecons[set]['precons'][precon]['name'];
+      const name = setsAndPrecons[set][PRECONS][precon]['name'];
 
       preconDecks[deckid] = {
         name: `${name}`,

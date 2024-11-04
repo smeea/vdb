@@ -15,6 +15,7 @@ import {
 import { getClan } from '@/utils';
 import { useDeckInInventory } from '@/hooks';
 import { useApp, deckToggleInventoryState } from '@/context';
+import { INVENTORY_TYPE } from '@/utils/constants';
 
 const InventoryAddDeckRow = ({ deck, allTagsOptions }) => {
   const { isDesktop, isMobile } = useApp();
@@ -29,16 +30,16 @@ const InventoryAddDeckRow = ({ deck, allTagsOptions }) => {
           <Button onClick={() => deckToggleInventoryState(deck.deckid)}>
             <div
               title={
-                deck.inventoryType === 's'
+                deck[INVENTORY_TYPE] === 's'
                   ? 'Flexible'
-                  : deck.inventoryType === 'h'
+                  : deck[INVENTORY_TYPE] === 'h'
                     ? 'Fixed'
                     : 'Virtual'
               }
             >
-              {deck.inventoryType == 's' && <Shuffle />}
-              {deck.inventoryType == 'h' && <PinAngleFill />}
-              {!deck.inventoryType && <At />}
+              {deck[INVENTORY_TYPE] == 's' && <Shuffle />}
+              {deck[INVENTORY_TYPE] == 'h' && <PinAngleFill />}
+              {!deck[INVENTORY_TYPE] && <At />}
             </div>
           </Button>
         </td>

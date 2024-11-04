@@ -2,7 +2,7 @@ import { proxy } from 'valtio';
 import { deepClone } from '@/utils';
 import { inventoryServices } from '@/services';
 import { startCryptTimer } from '@/context';
-import { CRYPT, LIBRARY, SOFT, HARD } from '@/utils/constants';
+import { INVENTORY_TYPE, CRYPT, LIBRARY, SOFT, HARD } from '@/utils/constants';
 
 export const inventoryStore = proxy({
   [CRYPT]: {},
@@ -121,14 +121,14 @@ export const setupUsedInventory = (decks) => {
   const libraries = { h: hardLibrary, s: softLibrary };
 
   Object.keys(decks).forEach((deckid) => {
-    if (decks[deckid].inventoryType) {
+    if (decks[deckid][INVENTORY_TYPE]) {
       Object.entries(decks[deckid].crypt).forEach(([id, card]) => {
-        const target = crypts[card.i || decks[deckid].inventoryType];
+        const target = crypts[card.i || decks[deckid][INVENTORY_TYPE]];
         if (!target[id]) target[id] = {};
         target[id][deckid] = card.q;
       });
       Object.entries(decks[deckid].library).forEach(([id, card]) => {
-        const target = libraries[card.i || decks[deckid].inventoryType];
+        const target = libraries[card.i || decks[deckid][INVENTORY_TYPE]];
         if (!target[id]) target[id] = {};
         target[id][deckid] = card.q;
       });

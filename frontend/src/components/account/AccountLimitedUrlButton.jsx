@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import Link45Deg from '@/assets/images/icons/link-45deg.svg?react';
 import { ButtonIconed } from '@/components';
+import { FORMAT } from '@/utils/constants';
 
 const AccountLimitedUrlButton = ({ format }) => {
   const [success, setSuccess] = useState(false);
 
   const copyUrl = () => {
-    const formatURI = encodeURI(`format=${format}`);
+    const formatURI = encodeURI(`${FORMAT}=${format}`);
     const url = `${import.meta.env.VITE_BASE_URL}/account?${formatURI}`;
 
     navigator.clipboard.writeText(url);

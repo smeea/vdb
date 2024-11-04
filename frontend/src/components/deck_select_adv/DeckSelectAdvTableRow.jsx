@@ -22,7 +22,7 @@ import {
   ResultLegalIcon,
 } from '@/components';
 import { limitedStore, useApp, deckToggleInventoryState } from '@/context';
-import { BANNED, LEGAL, PLAYTEST } from '@/utils/constants';
+import { INVENTORY_TYPE, BANNED, LEGAL, PLAYTEST } from '@/utils/constants';
 import { getClan, getRestrictions } from '@/utils';
 
 const DeckSelectAdvTableRow = ({
@@ -74,16 +74,16 @@ const DeckSelectAdvTableRow = ({
               disabled={deck.isFrozen}
               onClick={() => deckToggleInventoryState(deck.deckid)}
               title={
-                deck.inventoryType === 's'
+                deck[INVENTORY_TYPE] === 's'
                   ? 'Flexible'
-                  : deck.inventoryType === 'h'
+                  : deck[INVENTORY_TYPE] === 'h'
                     ? 'Fixed'
                     : 'Virtual'
               }
             >
-              {deck.inventoryType == 's' ? (
+              {deck[INVENTORY_TYPE] == 's' ? (
                 <Shuffle />
-              ) : deck.inventoryType == 'h' ? (
+              ) : deck[INVENTORY_TYPE] == 'h' ? (
                 <PinAngleFill />
               ) : (
                 <At />

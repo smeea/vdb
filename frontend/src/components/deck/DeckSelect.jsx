@@ -14,6 +14,7 @@ import {
   Button,
 } from '@/components';
 import { useApp, deckToggleInventoryState } from '@/context';
+import { MY, RECENT, PRECONS, INVENTORY_TYPE } from '@/utils/constants';
 
 const DeckSelect = ({
   deck,
@@ -30,11 +31,11 @@ const DeckSelect = ({
 
   useEffect(() => {
     if (deckid?.includes(':') || !deckid) {
-      setSelectFrom('precons');
+      setSelectFrom(PRECONS);
     } else if (decks?.[deckid]) {
-      setSelectFrom('my');
+      setSelectFrom(MY);
     } else {
-      setSelectFrom('recent');
+      setSelectFrom(RECENT);
     }
   }, [deckid, decks]);
 
@@ -45,15 +46,15 @@ const DeckSelect = ({
     <div className="flex flex-col gap-2">
       <div className="z-20 flex gap-1">
         <div className="w-full">
-          {selectFrom == 'my' && decks ? (
+          {selectFrom == MY && decks ? (
             <DeckSelectMy handleSelect={handleSelect} deckid={deck?.deckid} />
-          ) : selectFrom == 'recent' ? (
+          ) : selectFrom == RECENT ? (
             <DeckSelectRecent handleSelect={handleSelect} deckid={deck?.deckid} />
           ) : (
             <DeckSelectPrecon handleSelect={handleSelect} deckid={deck?.deckid} />
           )}
         </div>
-        {selectFrom == 'my' && decks && deck?.isBranches && (
+        {selectFrom == MY && decks && deck?.isBranches && (
           <div className="min-w-[90px]">
             <DeckBranchSelect handleSelect={handleSelect} deck={deck} />
           </div>
@@ -62,9 +63,9 @@ const DeckSelect = ({
           <div className="flex">
             <Button
               title={`Inventory Type: ${
-                !deck?.inventoryType
+                !deck?.[INVENTORY_TYPE]
                   ? 'VIRTUAL\nDo not use Inventory'
-                  : deck?.inventoryType === 's'
+                  : deck?.[INVENTORY_TYPE] === 's'
                     ? 'FLEXIBLE\nLet cards to be reused with other Flexible Decks'
                     : 'FIXED\nUse unique copies of cards from Inventory'
               }`}
@@ -72,9 +73,9 @@ const DeckSelect = ({
               onClick={() => deckToggleInventoryState(deck?.deckid)}
             >
               <div className="flex items-center">
-                {!deck?.inventoryType && <At />}
-                {deck?.inventoryType === 's' && <Shuffle />}
-                {deck?.inventoryType === 'h' && <PinAngleFill />}
+                {!deck?.[INVENTORY_TYPE] && <At />}
+                {deck?.[INVENTORY_TYPE] === 's' && <Shuffle />}
+                {deck?.[INVENTORY_TYPE] === 'h' && <PinAngleFill />}
               </div>
             </Button>
           </div>
@@ -85,25 +86,25 @@ const DeckSelect = ({
           {username && decks && Object.keys(decks).length > 0 && (
             <>
               <Radio
-                checked={selectFrom == 'my'}
+                checked={selectFrom == MY}
                 onChange={(e) => setSelectFrom(e.target.id)}
                 value={isMobile ? 'My' : 'My Decks'}
-                id="my"
+                id={MY}
               />
             </>
           )}
           <Radio
-            checked={selectFrom == 'precons'}
+            checked={selectFrom == PRECONS}
             onChange={(e) => setSelectFrom(e.target.id)}
             value="Precons"
-            id="precons"
+            id={PRECONS}
           />
           {recentDecks.length > 0 && (
             <Radio
-              checked={selectFrom == 'recent'}
+              checked={selectFrom == RECENT}
               onChange={(e) => setSelectFrom(e.target.id)}
               value="Recent"
-              id="recent"
+              id={RECENT}
             />
           )}
         </div>

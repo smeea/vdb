@@ -238,3 +238,27 @@ export const getTextDisciplines = (disciplines) => {
 
   return [...supDisciplines, ...baseDisciplines].join(' ');
 };
+
+export const parseDeckHash = (hash, cryptCardBase, libraryCardBase) => {
+  const crypt = {};
+  const library = {};
+
+  hash
+    .slice(1)
+    .split(';')
+    .forEach((i) => {
+      const j = i.split('=');
+      if (j[0] > 200000) {
+        crypt[j[0]] = {
+          q: parseInt(j[1]),
+          c: cryptCardBase[j[0]],
+        };
+      } else {
+        library[j[0]] = {
+          q: parseInt(j[1]),
+          c: libraryCardBase[j[0]],
+        };
+      }
+    });
+  return { crypt, library };
+};

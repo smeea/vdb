@@ -10,7 +10,7 @@ import {
 import { getSwipedBg, getHardTotal, getSoftMax } from '@/utils';
 import { useApp, deckStore, usedStore, inventoryStore, deckCardChange } from '@/context';
 import { useSwipe } from '@/hooks';
-import { SOFT, HARD, DECKS, LIBRARY } from '@/utils/constants';
+import { INVENTORY_TYPE, SOFT, HARD, DECKS, LIBRARY } from '@/utils/constants';
 
 const DiffLibraryTableRow = ({
   cardChange,
@@ -54,7 +54,7 @@ const DiffLibraryTableRow = ({
         disabledTooltip={!inventoryMode}
         hardUsedTotal={hardUsedTotal}
         inInventory={inInventory}
-        inventoryType={decks?.[deckid]?.inventoryType}
+        inventoryType={decks?.[deckid]?.[INVENTORY_TYPE]}
         isEditable={isEditable}
         q={qFrom}
         softUsedMax={softUsedMax}

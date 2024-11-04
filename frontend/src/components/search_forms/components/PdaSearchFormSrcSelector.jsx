@@ -1,14 +1,15 @@
 import React from 'react';
 import { Radio } from '@/components';
+import { MY, ANY, MY_NONPUBLIC, FAVORITES } from '@/utils/constants';
 
 const PdaSearchFormSrcSelector = ({ value, onChange }) => {
   return (
     <div className="flex gap-4 sm:gap-6">
       {[
-        ['any', 'All'],
-        ['favorites', 'Favorites'],
-        ['my', 'My'],
-        ['my-nonpublic', 'My Non-Public'],
+        [ANY, 'All'],
+        [FAVORITES, 'Favorites'],
+        [MY, 'My'],
+        [MY_NONPUBLIC, 'My Non-Public'],
       ].map((i) => (
         <Radio
           key={i[0]}

@@ -6,7 +6,7 @@ import At from '@/assets/images/icons/at.svg?react';
 import { Select, ResultPreconClan, ResultLegalIcon } from '@/components';
 import { limitedStore, deckStore, useApp } from '@/context';
 import { getRestrictions, getClan } from '@/utils';
-import { DECKS, BANNED, LEGAL, PLAYTEST } from '@/utils/constants';
+import { INVENTORY_TYPE, DECKS, BANNED, LEGAL, PLAYTEST } from '@/utils/constants';
 
 const DeckSelectMy = ({ deckid, handleSelect }) => {
   const { limitedMode, inventoryMode, isMobile, isWide } = useApp();
@@ -72,9 +72,9 @@ const DeckSelectMy = ({ deckid, handleSelect }) => {
                 </div>
                 {inventoryMode && (
                   <div>
-                    {decks[i].inventoryType == 's' && <Shuffle />}
-                    {decks[i].inventoryType == 'h' && <PinAngleFill />}
-                    {!decks[i].inventoryType && <At />}
+                    {decks[i][INVENTORY_TYPE] == 's' && <Shuffle />}
+                    {decks[i][INVENTORY_TYPE] == 'h' && <PinAngleFill />}
+                    {!decks[i][INVENTORY_TYPE] && <At />}
                   </div>
                 )}
                 <div className="text-sm">{lastEdit}</div>
@@ -114,9 +114,9 @@ const DeckSelectMy = ({ deckid, handleSelect }) => {
               <div className="flex items-center gap-1">
                 {inventoryMode && (
                   <div>
-                    {decks[deckid].inventoryType == 's' && <Shuffle />}
-                    {decks[deckid].inventoryType == 'h' && <PinAngleFill />}
-                    {!decks[deckid].inventoryType && <At />}
+                    {decks[deckid][INVENTORY_TYPE] == 's' && <Shuffle />}
+                    {decks[deckid][INVENTORY_TYPE] == 'h' && <PinAngleFill />}
+                    {!decks[deckid][INVENTORY_TYPE] && <At />}
                   </div>
                 )}
                 <div className="text-sm">

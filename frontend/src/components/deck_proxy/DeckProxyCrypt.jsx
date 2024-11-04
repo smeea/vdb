@@ -3,6 +3,7 @@ import { DeckProxyCryptTable, ResultModal, Header, FlexGapped } from '@/componen
 import { countCards } from '@/utils';
 import { useApp } from '@/context';
 import { useModalCardController, useDeckCrypt } from '@/hooks';
+import { INVENTORY_TYPE } from '@/utils/constants';
 
 const DeckProxyCrypt = ({
   deck,
@@ -53,7 +54,7 @@ const DeckProxyCrypt = ({
           <div className="px-2 font-bold">Crypt [{cryptTotalSelected}]</div>
         </Header>
         <DeckProxyCryptTable
-          inventoryType={deck.inventoryType}
+          inventoryType={deck[INVENTORY_TYPE]}
           handleClick={handleClick}
           cards={sortedCards}
           handleProxySelector={handleProxySelector}
@@ -68,7 +69,7 @@ const DeckProxyCrypt = ({
             <div className="px-2 font-bold">Side Crypt</div>
           </Header>
           <DeckProxyCryptTable
-            inventoryType={deck.inventoryType}
+            inventoryType={deck[INVENTORY_TYPE]}
             handleClick={handleClickSide}
             cards={sortedCardsSide}
             handleProxySelector={handleProxySelector}

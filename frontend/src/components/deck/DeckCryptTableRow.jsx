@@ -10,7 +10,7 @@ import {
 } from '@/components';
 import { useSwipe } from '@/hooks';
 import { getSwipedBg, getSoftMax, getHardTotal } from '@/utils';
-import { SOFT, HARD, CRYPT } from '@/utils/constants';
+import { INVENTORY_TYPE, SOFT, HARD, CRYPT } from '@/utils/constants';
 
 const DeckCryptTableRow = ({
   handleClick,
@@ -52,7 +52,7 @@ const DeckCryptTableRow = ({
         getSwipedBg(isSwiped),
       )}
     >
-      {inventoryMode && deck.inventoryType && !inMissing && !inSearch && isDesktop && (
+      {inventoryMode && deck[INVENTORY_TYPE] && !inMissing && !inSearch && isDesktop && (
         <DeckCardToggleInventoryStateTd card={card} deck={deck} />
       )}
       <DeckCardQuantityTd
@@ -63,7 +63,7 @@ const DeckCryptTableRow = ({
         hardUsedTotal={hardUsedTotal}
         inInventory={inInventory}
         inMissing={inMissing}
-        inventoryType={deck.inventoryType}
+        inventoryType={deck[INVENTORY_TYPE]}
         isEditable={isEditable}
         q={card.q}
         softUsedMax={softUsedMax}

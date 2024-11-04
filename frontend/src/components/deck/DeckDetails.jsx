@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 import {
   DeckTags,
@@ -10,8 +10,9 @@ import {
 } from '@/components';
 import { useApp } from '@/context';
 
-const DeckDetails = ({ deck, allTagsOptions, folded, setFolded }) => {
+const DeckDetails = ({ deck, allTagsOptions }) => {
   const { isPlaytester, isMobile } = useApp();
+  const [folded, setFolded] = useState(!isMobile);
   const playtestPrecon = deck.deckid.includes('PLAYTEST:') && deck.deckid.replace('PLAYTEST:', '');
 
   return (

@@ -1,8 +1,8 @@
 import ky from 'ky';
-import { GENERAL, NAME } from '@/utils/constants';
+import { PRECONS, CARDS, GENERAL, NAME } from '@/utils/constants';
 
 export const submitReport = (id, value, isPrecon) => {
-  const url = `${import.meta.env.VITE_API_URL}/playtest/${isPrecon ? 'precons' : 'cards'}/${id}`;
+  const url = `${import.meta.env.VITE_API_URL}/playtest/${isPrecon ? PRECONS : CARDS}/${id}`;
   return ky.put(url, { json: value }).json();
 };
 
@@ -16,7 +16,7 @@ export const changePlaytester = (user, isAdd = true) => {
 
 export const getReports = async (value, isPrecon) => {
   const url = `${import.meta.env.VITE_API_URL}/playtest/export/${
-    isPrecon ? 'precons' : 'cards'
+    isPrecon ? PRECONS : CARDS
   }/${value.Id}`;
 
   return ky.get(url).json();

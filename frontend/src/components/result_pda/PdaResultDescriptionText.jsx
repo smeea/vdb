@@ -6,7 +6,7 @@ import CalendarEvent from '@/assets/images/icons/calendar-event.svg?react';
 import { TwdResultTags, TwdResultDescriptionTextTr } from '@/components';
 import { useApp, searchPdaForm, clearSearchForm } from '@/context';
 import { useTags } from '@/hooks';
-import { PDA } from '@/utils/constants';
+import { AUTHOR, PDA } from '@/utils/constants';
 
 const PdaResultDescriptionText = ({ deck }) => {
   const { isMobile } = useApp();
@@ -16,7 +16,7 @@ const PdaResultDescriptionText = ({ deck }) => {
 
   const handleClick = (value) => {
     clearSearchForm(PDA);
-    searchPdaForm['author'] = value;
+    searchPdaForm[AUTHOR] = value;
     navigate(`/pda?q=${encodeURIComponent(JSON.stringify({ author: value }))}`);
   };
 
@@ -30,9 +30,9 @@ const PdaResultDescriptionText = ({ deck }) => {
           <TwdResultDescriptionTextTr title={isMobile ? <PersonFill /> : <>Author:</>}>
             <div
               className="text-fgSecondary hover:underline dark:text-fgSecondaryDark"
-              onClick={() => handleClick(deck['author'])}
+              onClick={() => handleClick(deck[AUTHOR])}
             >
-              {deck['author']}
+              {deck[AUTHOR]}
             </div>
           </TwdResultDescriptionTextTr>
           <TwdResultDescriptionTextTr title={isMobile ? <CalendarEvent /> : <>Created:</>}>

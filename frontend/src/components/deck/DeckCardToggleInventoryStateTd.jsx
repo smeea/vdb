@@ -3,6 +3,7 @@ import { twMerge } from 'tailwind-merge';
 import Shuffle from '@/assets/images/icons/shuffle.svg?react';
 import PinAngleFill from '@/assets/images/icons/pin-angle-fill.svg?react';
 import { cardToggleInventoryState } from '@/context';
+import { INVENTORY_TYPE } from '@/utils/constants';
 
 const DeckCardToggleInventoryStateTd = ({ card, deck }) => {
   const { deckid, isPublic, isAuthor, isFrozen } = deck;
@@ -18,7 +19,7 @@ const DeckCardToggleInventoryStateTd = ({ card, deck }) => {
           )}
           onClick={() => isEditable && cardToggleInventoryState(deckid, card.c.Id)}
         >
-          {deck.inventoryType == 's' ? <PinAngleFill /> : <Shuffle />}
+          {deck[INVENTORY_TYPE] == 's' ? <PinAngleFill /> : <Shuffle />}
         </div>
       </div>
     </td>

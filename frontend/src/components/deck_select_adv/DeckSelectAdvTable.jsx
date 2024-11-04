@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { getClan, decksSort } from '@/utils';
 import { DeckSelectAdvTableRow, DeckSelectAdvTableHeader, ResultClanImage } from '@/components';
-import { ANY } from '@/utils/constants';
+import { INVENTORY_TYPE, ANY } from '@/utils/constants';
 
 const DeckSelectAdvTable = ({
   allTagsOptions,
@@ -85,7 +85,7 @@ const DeckSelectAdvTable = ({
       let filtered = Object.values(decks);
 
       if (invFilter !== ANY) {
-        filtered = filtered.filter((deck) => deck.inventoryType === invFilter);
+        filtered = filtered.filter((deck) => deck[INVENTORY_TYPE] === invFilter);
       }
 
       if (clanFilter !== ANY) {

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSnapshot } from 'valtio';
 import { useNavigate, useLocation, useParams, useLoaderData } from 'react-router-dom';
 import {
@@ -22,8 +22,9 @@ import {
   Seating,
 } from '@/components';
 import { deckStore, useApp, setDeck } from '@/context';
-import { useDeck, useTags } from '@/hooks';
-import { DECK, DECKS, CRYPT, LIBRARY } from '@/utils/constants';
+import { useDecksTagsAll, useDeck, useTags } from '@/hooks';
+import { parseDeckHash } from '@/utils';
+import { AUTHOR, DECK, DECKS, CRYPT, LIBRARY } from '@/utils/constants';
 
 const Decks = () => {
   const {
@@ -48,7 +49,6 @@ const Decks = () => {
   const loaderData = useLoaderData();
 
   const [error, setError] = useState(false);
-  const [foldedDescription, setFoldedDescription] = useState(!isMobile);
   const [qrUrl, setQrUrl] = useState(false);
   const [showDeckSelectAdv, setShowDeckSelectAdv] = useState(false);
   const [showDraw, setShowDraw] = useState(false);
@@ -102,54 +102,16 @@ const Decks = () => {
     navigate(`/decks/${e.value.replace(' ', '_')}`);
   };
 
-  const allTagsOptions = useMemo(() => {
-    const allTags = new Set();
-
-    if (decks) {
-      Object.keys(decks).forEach((id) => {
-        if (decks[id].tags) {
-          decks[id].tags.forEach((tag) => {
-            allTags.add(tag);
-          });
-        }
-      });
-    }
-
-    const options = [...allTags].map((tag) => ({
-      label: tag,
-      value: tag,
-    }));
-
-    return options;
-  }, [decks]);
+  const allTagsOptions = useDecksTagsAll(decks);
 
   useEffect(() => {
     if (hash && cryptCardBase && libraryCardBase) {
-      const crypt = {};
-      const library = {};
-
-      hash
-        .slice(1)
-        .split(';')
-        .forEach((i) => {
-          const j = i.split('=');
-          if (j[0] > 200000) {
-            crypt[j[0]] = {
-              q: parseInt(j[1]),
-              c: cryptCardBase[j[0]],
-            };
-          } else {
-            library[j[0]] = {
-              q: parseInt(j[1]),
-              c: libraryCardBase[j[0]],
-            };
-          }
-        });
+      const { crypt, library } = parseDeckHash(hash, cryptCardBase, libraryCardBase);
 
       setDeck({
         deckid: 'deck',
         name: query.get('name') ?? '',
-        author: query.get('author') ?? '',
+        author: query.get(AUTHOR) ?? '',
         description: query.get('description') ?? '',
         crypt: crypt,
         library: library,
@@ -212,12 +174,7 @@ const Decks = () => {
             </div>
             {deck && (showInfo || !isMobile) && (
               <div className="sm:basis-7/12">
-                <DeckDetails
-                  deck={deck}
-                  folded={foldedDescription}
-                  setFolded={setFoldedDescription}
-                  allTagsOptions={allTagsOptions}
-                />
+                <DeckDetails deck={deck} allTagsOptions={allTagsOptions} />
               </div>
             )}
           </div>

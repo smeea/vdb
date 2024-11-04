@@ -5,10 +5,9 @@ import InboxesFill from '@/assets/images/icons/inboxes-fill.svg?react';
 import PersonFill from '@/assets/images/icons/person-fill.svg?react';
 import { PlaytestUserCard, ButtonIconed } from '@/components';
 import { useApp } from '@/context';
-import { EN, LANG } from '@/utils/constants';
 
 const Playtest = () => {
-  const { username, isPlaytestAdmin, playtestProfile } = useApp();
+  const { username, isPlaytestAdmin } = useApp();
 
   return (
     <div className="account-container mx-auto grid place-items-center sm:h-[90vh]">

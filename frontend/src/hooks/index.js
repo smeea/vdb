@@ -8,6 +8,7 @@ export { default as useDeckImport } from './useDeckImport.js';
 export { default as useDeckInInventory } from './useDeckInInventory.js';
 export { default as useDeckLibrary } from './useDeckLibrary.js';
 export { default as useDeckMissing } from './useDeckMissing.js';
+export { default as useDecksTagsAll } from './useDecksTagsAll.js';
 export { default as useDiffMissing } from './useDiffMissing.js';
 export { default as useFetch } from './useFetch.js';
 export { default as useFilters } from './useFilters.js';

@@ -8,7 +8,7 @@ import {
 } from '@/components';
 import { useApp } from '@/context';
 import { countCards } from '@/utils';
-import { MASTER } from '@/utils/constants';
+import { INVENTORY_TYPE, MASTER } from '@/utils/constants';
 import { useModalCardController, useDeckLibrary } from '@/hooks';
 
 const DeckProxyLibrary = ({
@@ -78,7 +78,7 @@ const DeckProxyLibrary = ({
                 />
               </div>
               <DeckProxyLibraryTable
-                inventoryType={deck.inventoryType}
+                inventoryType={deck[INVENTORY_TYPE]}
                 handleClick={handleClick}
                 cards={libraryByType[cardtype]}
                 handleProxySelector={handleProxySelector}
@@ -104,7 +104,7 @@ const DeckProxyLibrary = ({
                   trifleTotal={cardtype == MASTER && trifleTotal}
                 />
                 <DeckProxyLibraryTable
-                  inventoryType={deck.inventoryType}
+                  inventoryType={deck[INVENTORY_TYPE]}
                   handleClick={handleClickSide}
                   cards={librarySideByType[cardtype]}
                   handleProxySelector={handleProxySelector}

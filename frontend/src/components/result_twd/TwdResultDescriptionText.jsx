@@ -8,7 +8,7 @@ import GeoAltFill from '@/assets/images/icons/geo-alt-fill.svg?react';
 import { TwdResultTags, TwdResultDescriptionTextTr } from '@/components';
 import { useApp, searchTwdForm, clearSearchForm } from '@/context';
 import { useTags } from '@/hooks';
-import { TWD } from '@/utils/constants';
+import { AUTHOR, TWD } from '@/utils/constants';
 
 const TwdResultDescriptionText = ({ deck }) => {
   const { isMobile } = useApp();
@@ -45,9 +45,9 @@ const TwdResultDescriptionText = ({ deck }) => {
           <TwdResultDescriptionTextTr title={isMobile ? <PersonFill /> : <>Player:</>}>
             <div
               className="text-fgSecondary hover:underline dark:text-fgSecondaryDark"
-              onClick={() => handleClick('author', deck['author'])}
+              onClick={() => handleClick(AUTHOR, deck[AUTHOR])}
             >
-              {deck['author']}
+              {deck[AUTHOR]}
             </div>
           </TwdResultDescriptionTextTr>
           <TwdResultDescriptionTextTr title={isMobile ? <TagFill /> : <>Deck:</>}>

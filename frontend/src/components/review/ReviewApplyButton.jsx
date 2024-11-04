@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Check2All from '@/assets/images/icons/check2-all.svg?react';
 import { useApp, deckUpdate } from '@/context';
 import { ButtonIconed } from '@/components';
+import { CARDS } from '@/utils/constants';
 
 const ReviewApplyButton = ({ deck, parentId }) => {
   const { isDesktop, setShowFloatingButtons, setShowMenuButtons } = useApp();
@@ -9,7 +10,7 @@ const ReviewApplyButton = ({ deck, parentId }) => {
   const [error, setError] = useState(false);
 
   const handleStandard = async () => {
-    const response = await deckUpdate(parentId, 'cards', {
+    const response = await deckUpdate(parentId, CARDS, {
       crypt: deck.crypt,
       library: deck.library,
     });

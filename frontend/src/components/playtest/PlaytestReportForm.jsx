@@ -14,6 +14,7 @@ import {
 import { useFetch } from '@/hooks';
 import { useApp } from '@/context';
 import { playtestServices } from '@/services';
+import { PRECONS, CARDS } from '@/utils/constants';
 
 const Title = ({ isPrecon }) => {
   return (
@@ -63,7 +64,7 @@ const PlaytestReportForm = ({ id, setIsHotkeysDisabled, isPrecon = false }) => {
   const [isPlayed, setIsPlayed] = useState(false);
   const [isFolded, setIsFolded] = useState(true);
 
-  const url = `${import.meta.env.VITE_API_URL}/playtest/${isPrecon ? 'precons' : 'cards'}/${id}`;
+  const url = `${import.meta.env.VITE_API_URL}/playtest/${isPrecon ? PRECONS : CARDS}/${id}`;
   const { value: dataValue } = useFetch(url, {}, [id]);
 
   useEffect(() => {
