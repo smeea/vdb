@@ -1,8 +1,10 @@
 import React, { useMemo } from 'react';
+import { twMerge } from 'tailwind-merge';
 import Spellcheck from '@/assets/images/icons/spellcheck.svg?react';
 import { Select, ButtonIconed } from '@/components';
 import { deckUpdate } from '@/context';
 import { useTags } from '@/hooks';
+import { TAGS } from '@/utils/constants';
 
 const DeckTags = ({ deck, tagsSuperior, noAutotags, isBordered, allTagsOptions }) => {
   const { deckid, tags, isPublic, isAuthor, isFrozen } = deck;
@@ -33,12 +35,12 @@ const DeckTags = ({ deck, tagsSuperior, noAutotags, isBordered, allTagsOptions }
 
   const handleChange = (event) => {
     const v = event.map((t) => t.value);
-    deckUpdate(deckid, 'tags', v);
+    deckUpdate(deckid, TAGS, v);
   };
 
   const handleAutotagClick = () => {
     const tags = useTags(deck.crypt, deck.library);
-    deckUpdate(deckid, 'tags', [...tags.superior, ...tags.base]);
+    deckUpdate(deckid, TAGS, [...tags.superior, ...tags.base]);
   };
 
   return (
@@ -55,10 +57,8 @@ const DeckTags = ({ deck, tagsSuperior, noAutotags, isBordered, allTagsOptions }
         value={tagList}
         placeholder="Click to add tags"
         noOptionsMessage={() => 'Enter new tag'}
-        roundedStyle={`rounded
-          ${isEditable ? 'rounded-r-none' : ''}`}
-        borderStyle={`
-          ${isEditable ? 'border-y border-l border-r-none' : 'border'}`}
+        roundedStyle={twMerge('rounded', isEditable && 'rounded-r-none')}
+        borderStyle={isEditable ? 'border-y border-l border-r-none' : 'border'}
       />
       {!noAutotags && isEditable && (
         <ButtonIconed

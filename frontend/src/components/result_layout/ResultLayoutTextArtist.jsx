@@ -10,7 +10,7 @@ const ResultLayoutTextArtist = ({ handleClose, inCrypt, artists }) => {
     clearSearchForm(inCrypt ? CRYPT : LIBRARY);
     inCrypt ? (searchCryptForm.artist = value) : (searchLibraryForm.artist = value);
     navigate(
-      `/${inCrypt ? 'crypt' : 'library'}?q=${encodeURIComponent(JSON.stringify({ artist: value }))}`,
+      `/${inCrypt ? CRYPT : LIBRARY}?q=${encodeURIComponent(JSON.stringify({ artist: value }))}`,
     );
     handleClose();
   };

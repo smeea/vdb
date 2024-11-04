@@ -1,8 +1,9 @@
 import React from 'react';
 import { ButtonGroup } from '@/components';
+import { LIBRARY_TOTAL } from '@/utils/constants';
 
 const TwdSearchFormLibraryTotal = ({ value, onChange }) => {
-  const name = 'libraryTotal';
+  const name = LIBRARY_TOTAL;
   const options = ['60-67', '68-75', '76-83', '84-90'];
 
   return (

@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import { Select } from '@/components';
 import { Toggle, ResultLibraryTypeImage } from '@/components';
 import { useApp } from '@/context';
-import { ANY } from '@/utils/constants';
+import { CARDTYPES, ANY } from '@/utils/constants';
 
 const TwdSearchFormCardtypes = ({ value, onChange }) => {
   const [isManual, setIsManual] = useState();
   const { isXWide } = useApp();
   const maxMenuHeight = isXWide ? 500 : 350;
-  const name = 'cardtypes';
+  const name = CARDTYPES;
   const types = [
     ['Master', [15, 25, 35]],
     ['Action', [0, 5, 15]],
@@ -37,7 +37,7 @@ const TwdSearchFormCardtypes = ({ value, onChange }) => {
 
     min = min === ANY || !min ? 0 : min;
     max = max === ANY || !max ? 100 : max;
-    onChange({ name: e.target.name, value: `${min},${max}` }, { name: 'cardtypes' });
+    onChange({ name: e.target.name, value: `${min},${max}` }, { name: CARDTYPES });
   };
 
   const formsLeft = [];

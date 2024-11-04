@@ -20,13 +20,13 @@ import {
   PLAYER,
   TYPE,
   DISCIPLINE,
-  cardtypeSorted,
 } from '@/utils/constants';
 import { librarySort } from '@/utils';
 import { useApp } from '@/context';
 import { useModalCardController } from '@/hooks';
 import disciplinesList from '@/assets/data/disciplinesList.json';
 import virtuesList from '@/assets/data/virtuesList.json';
+import cardtypeSorted from '@/assets/data/cardtypeSorted.json';
 
 const TwdCardsHistoryLibrary = ({ cards, players }) => {
   const { isMobile } = useApp();

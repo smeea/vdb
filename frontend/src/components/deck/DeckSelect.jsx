@@ -14,7 +14,7 @@ import {
   Button,
 } from '@/components';
 import { useApp, deckToggleInventoryState } from '@/context';
-import { MY, RECENT, PRECONS, INVENTORY_TYPE } from '@/utils/constants';
+import { S, H, MY, RECENT, PRECONS, INVENTORY_TYPE } from '@/utils/constants';
 
 const DeckSelect = ({
   deck,
@@ -26,7 +26,6 @@ const DeckSelect = ({
   setShowInfo,
 }) => {
   const { inventoryMode, isMobile, recentDecks, setShowFloatingButtons, username } = useApp();
-
   const [selectFrom, setSelectFrom] = useState();
 
   useEffect(() => {
@@ -65,7 +64,7 @@ const DeckSelect = ({
               title={`Inventory Type: ${
                 !deck?.[INVENTORY_TYPE]
                   ? 'VIRTUAL\nDo not use Inventory'
-                  : deck?.[INVENTORY_TYPE] === 's'
+                  : deck?.[INVENTORY_TYPE] === S
                     ? 'FLEXIBLE\nLet cards to be reused with other Flexible Decks'
                     : 'FIXED\nUse unique copies of cards from Inventory'
               }`}
@@ -74,8 +73,8 @@ const DeckSelect = ({
             >
               <div className="flex items-center">
                 {!deck?.[INVENTORY_TYPE] && <At />}
-                {deck?.[INVENTORY_TYPE] === 's' && <Shuffle />}
-                {deck?.[INVENTORY_TYPE] === 'h' && <PinAngleFill />}
+                {deck?.[INVENTORY_TYPE] === S && <Shuffle />}
+                {deck?.[INVENTORY_TYPE] === H && <PinAngleFill />}
               </div>
             </Button>
           </div>

@@ -5,7 +5,7 @@ import At from '@/assets/images/icons/at.svg?react';
 import { DeckSelectAdvTagsFilter, Select, Checkbox, Input } from '@/components';
 import { useDebounce } from '@/hooks';
 import { useApp } from '@/context';
-import { ANY } from '@/utils/constants';
+import { S, H, ANY } from '@/utils/constants';
 
 const DeckSelectAdvTableHeader = ({
   allTagsOptions,
@@ -40,12 +40,12 @@ const DeckSelectAdvTableHeader = ({
       label: <At />,
     },
     {
-      value: 's',
+      value: S,
       name: 'inventory',
       label: <Shuffle />,
     },
     {
-      value: 'h',
+      value: H,
       name: 'inventory',
       label: <PinAngleFill />,
     },

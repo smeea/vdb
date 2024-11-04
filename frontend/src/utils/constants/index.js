@@ -1,42 +1,3 @@
-export const cardtypeSortedFull = [
-  'Master',
-  'Conviction',
-  'Power',
-  'Action',
-  'Action/Reaction',
-  'Action/Combat',
-  'Political Action',
-  'Ally',
-  'Equipment',
-  'Retainer',
-  'Action Modifier',
-  'Action Modifier/Combat',
-  'Action Modifier/Reaction',
-  'Reaction',
-  'Reaction/Action Modifier',
-  'Reaction/Combat',
-  'Combat',
-  'Combat/Action Modifier',
-  'Combat/Reaction',
-  'Event',
-];
-
-export const cardtypeSorted = [
-  'Master',
-  'Action',
-  'Political Action',
-  'Ally',
-  'Equipment',
-  'Retainer',
-  'Action Modifier',
-  'Reaction',
-  'Combat',
-  'Event',
-  'Conviction',
-  'Power',
-  'Reflex',
-];
-
 export const AKA = 'Aka';
 export const ALL = 'All';
 export const ALLOWED = 'allowed';
@@ -44,6 +5,7 @@ export const ANALYZE = 'analyze';
 export const AND = 'and';
 export const ANY = 'any';
 export const ASCII_NAME = 'ASCII Name';
+export const AUTHOR = 'author';
 export const BANNED = 'Banned';
 export const BCP = 'bcp';
 export const BLOOD_COST = 'Blood Cost';
@@ -52,12 +14,14 @@ export const CAPACITY = 'Capacity';
 export const CAPACITY_MAX_MIN = 'Capacity - Max to Min';
 export const CAPACITY_MIN_MAX = 'Capacity - Min to Max';
 export const CARDS = 'cards';
+export const CARDTYPES = 'cardtypes';
 export const CARD_TEXT = 'Card Text';
 export const CLAN = 'Clan';
 export const CLAN_DISCIPLINE = 'Clan / Discipline';
 export const CLANx = 'Clan ';
 export const COST_MAX_MIN = 'Cost - Max to Min';
 export const COST_MIN_MAX = 'Cost - Min to Max';
+export const CREATION_DATE = 'creation_date';
 export const CRYPT = 'crypt';
 export const CRYPT_COMPARE = 'cryptCompare';
 export const CRYPT_TIMER = 'cryptTimer';
@@ -69,11 +33,14 @@ export const DATE_WIN = 'Date - Win';
 export const DECK = 'deck';
 export const DECKS = 'decks';
 export const DISCIPLINE = 'Discipline';
+export const DISCIPLINES = 'disciplines';
 export const EN = 'en-EN';
 export const EQ = 'eq';
 export const ES = 'es-ES';
 export const EVENT = 'Event';
+export const FAVORITES = 'favorites';
 export const FIRST = 'first';
+export const FORMAT = 'format';
 export const FR = 'fr-FR';
 export const FROM = 'from';
 export const GAMES = 'games';
@@ -84,9 +51,11 @@ export const GROUPED_TYPE = 'GroupedType';
 export const GROUPS = 'GROUPS';
 export const GROUPx = 'Group ';
 export const GT = 'gt';
+export const H = 'h';
 export const HARD = 'hard';
 export const ID = 'Id';
 export const INFO = 'info';
+export const INVENTORY_TYPE = 'inventoryType';
 export const IS_FROZEN = 'isFrozen';
 export const JOL = 'jol';
 export const LACKEY = 'lackey';
@@ -96,15 +65,20 @@ export const LEGAL = 'legal';
 export const LIAISON = 'liaison';
 export const LIBRARY = 'library';
 export const LIBRARY_COMPARE = 'libraryCompare';
+export const LIBRARY_TOTAL = 'libraryTotal';
 export const LIMITED = 'limited';
 export const LIMITED_ALLOWED_CRYPT = 'limitedAllowedCrypt';
 export const LIMITED_ALLOWED_LIBRARY = 'limitedAllowedLibrary';
 export const LIMITED_BANNED_CRYPT = 'limitedBannedCrypt';
 export const LIMITED_BANNED_LIBRARY = 'limitedBannedLibrary';
 export const LIMITED_SETS = 'limitedSets';
+export const LOCATION = 'location';
 export const LT = 'lt';
 export const LT0 = 'lt0';
 export const MASTER = 'Master';
+export const MATCH_INVENTORY = 'matchInventory';
+export const MY = 'my';
+export const MY_NONPUBLIC = 'my-nonpublic';
 export const NAME = 'Name';
 export const NOK = 'nok';
 export const NONE = 'None';
@@ -128,30 +102,30 @@ export const PROMO = 'Promo';
 export const PT = 'pt-PT';
 export const QUANTITY = 'Quantity';
 export const QUANTITYx = 'Quantity ';
+export const RANK = 'rank';
 export const RANK_HIGH_LOW = 'Rank - High to Low';
 export const RANK_LOW_HIGH = 'Rank - Low to High';
+export const RECENT = 'recent';
 export const REPRINT = 'reprint';
 export const REQUIREMENT = 'Requirement';
 export const RESULTS = 'results';
 export const ROUND_REPORTED = 'roundReported';
+export const S = 's';
 export const SECT = 'Sect';
 export const SETS = 'Sets';
 export const SOFT = 'soft';
+export const TAGS = 'tags';
 export const TEXT = 'text';
+export const TIMESTAMP = 'timestamp';
+export const TITLES = 'titles';
 export const TO = 'to';
+export const TRAITS = 'traits';
 export const TRIFLE = 'Trifle';
 export const TWD = 'twd';
 export const TWD_HINTS = 'twdHints';
 export const TYPE = 'Type';
 export const TYPEx = 'Type ';
+export const USED_IN_INVENTORY = 'usedInInventory';
 export const VALUE = 'value';
 export const XLSX = 'xlsx';
 export const YES = 'YES';
-export const FORMAT = 'format';
-export const AUTHOR = 'author';
-export const INVENTORY_TYPE = 'inventoryType';
-export const USED_IN_INVENTORY = 'usedInInventory';
-export const MY = 'my';
-export const RECENT = 'recent';
-export const MY_NONPUBLIC = 'my-nonpublic';
-export const FAVORITES = 'favorites';

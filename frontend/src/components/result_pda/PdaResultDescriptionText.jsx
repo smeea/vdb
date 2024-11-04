@@ -6,13 +6,13 @@ import CalendarEvent from '@/assets/images/icons/calendar-event.svg?react';
 import { TwdResultTags, TwdResultDescriptionTextTr } from '@/components';
 import { useApp, searchPdaForm, clearSearchForm } from '@/context';
 import { useTags } from '@/hooks';
-import { AUTHOR, PDA } from '@/utils/constants';
+import { CREATION_DATE, TIMESTAMP, AUTHOR, PDA } from '@/utils/constants';
 
 const PdaResultDescriptionText = ({ deck }) => {
   const { isMobile } = useApp();
   const navigate = useNavigate();
   const tags = useTags(deck.crypt, deck.library);
-  const lastUpdated = new Date(deck['timestamp']).toISOString().split('T')[0];
+  const lastUpdated = new Date(deck[TIMESTAMP]).toISOString().split('T')[0];
 
   const handleClick = (value) => {
     clearSearchForm(PDA);
@@ -36,9 +36,9 @@ const PdaResultDescriptionText = ({ deck }) => {
             </div>
           </TwdResultDescriptionTextTr>
           <TwdResultDescriptionTextTr title={isMobile ? <CalendarEvent /> : <>Created:</>}>
-            {deck['creation_date']}
+            {deck[CREATION_DATE]}
           </TwdResultDescriptionTextTr>
-          {lastUpdated !== deck['creation_date'] && (
+          {lastUpdated !== deck[CREATION_DATE] && (
             <TwdResultDescriptionTextTr title={isMobile ? <CalendarEvent /> : <>Updated:</>}>
               {lastUpdated}
             </TwdResultDescriptionTextTr>

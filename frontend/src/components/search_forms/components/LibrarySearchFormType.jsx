@@ -7,9 +7,9 @@ import {
   SearchFormButtonAdd,
   SearchFormButtonDel,
 } from '@/components';
-import { cardtypeSorted } from '@/utils/constants';
 import { useApp } from '@/context';
 import { ANY } from '@/utils/constants';
+import cardtypeSorted from '@/assets/data/cardtypeSorted.json';
 
 const LibrarySearchFormType = ({ value, onChange, searchForm }) => {
   const { isXWide } = useApp();

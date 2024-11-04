@@ -2,7 +2,8 @@ import { useMemo } from 'react';
 import { useSnapshot } from 'valtio';
 import disciplinesList from '@/assets/data/disciplinesList.json';
 import virtuesList from '@/assets/data/virtuesList.json';
-import { SOFT, HARD, LIBRARY, ALL, NONE, OK, NOK, cardtypeSorted } from '@/utils/constants';
+import cardtypeSorted from '@/assets/data/cardtypeSorted.json';
+import { SOFT, HARD, LIBRARY, ALL, NONE, OK, NOK } from '@/utils/constants';
 import { getHardTotal, getSoftMax } from '@/utils';
 import { useApp, usedStore } from '@/context';
 

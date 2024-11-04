@@ -11,6 +11,8 @@ import {
   CARDS,
   INVENTORY_TYPE,
   AUTHOR,
+  S,
+  H,
 } from '@/utils/constants';
 import { deckServices } from '@/services';
 import { startCryptTimer, miscStore } from '@/context';
@@ -148,21 +150,21 @@ export const deckUpdate = (deckid, field, value) => {
 
 export const deckToggleInventoryState = (deckid) => {
   switch (deckStore[DECKS][deckid][INVENTORY_TYPE]) {
-    case 's':
-      deckUpdate(deckid, INVENTORY_TYPE, 'h');
+    case S:
+      deckUpdate(deckid, INVENTORY_TYPE, H);
       break;
-    case 'h':
+    case H:
       deckUpdate(deckid, INVENTORY_TYPE, '');
       break;
     default:
-      deckUpdate(deckid, INVENTORY_TYPE, 's');
+      deckUpdate(deckid, INVENTORY_TYPE, S);
   }
 };
 
 export const cardToggleInventoryState = (deckid, cardid) => {
   const deck = deckStore[DECKS][deckid];
   const target = cardid > 200000 ? CRYPT : LIBRARY;
-  const value = deck[target][cardid].i ? '' : deck[INVENTORY_TYPE] === 's' ? 'h' : 's';
+  const value = deck[target][cardid].i ? '' : deck[INVENTORY_TYPE] === S ? H : S;
   deckUpdate(deckid, USED_IN_INVENTORY, {
     [cardid]: value,
   });

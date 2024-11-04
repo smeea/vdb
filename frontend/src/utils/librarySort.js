@@ -1,19 +1,4 @@
 import {
-  CLAN_DISCIPLINE,
-  COST_MAX_MIN,
-  COST_MIN_MAX,
-  DATE_PRINT,
-  DATE_WIN,
-  GROUPED_TYPE,
-  NAME,
-  PLAYER,
-  QUANTITY,
-  TYPE,
-  TYPEx,
-  cardtypeSortedFull,
-} from '@/utils/constants';
-
-import {
   byBloodCost,
   byPoolCost,
   byDiscipline,
@@ -26,6 +11,20 @@ import {
   byDatePrint,
   getCardProperty,
 } from '@/utils';
+import {
+  CLAN_DISCIPLINE,
+  COST_MAX_MIN,
+  COST_MIN_MAX,
+  DATE_PRINT,
+  DATE_WIN,
+  GROUPED_TYPE,
+  NAME,
+  PLAYER,
+  QUANTITY,
+  TYPE,
+  TYPEx,
+} from '@/utils/constants';
+import cardtypeSortedFull from '@/assets/data/cardtypeSortedFull.json';
 
 const byGroupedType = (a, b) => {
   return (

@@ -6,7 +6,7 @@ import At from '@/assets/images/icons/at.svg?react';
 import { Select, ResultPreconClan, ResultLegalIcon } from '@/components';
 import { limitedStore, deckStore, useApp } from '@/context';
 import { getRestrictions, getClan } from '@/utils';
-import { INVENTORY_TYPE, DECKS, BANNED, LEGAL, PLAYTEST } from '@/utils/constants';
+import { S, H, TIMESTAMP, INVENTORY_TYPE, DECKS, BANNED, LEGAL, PLAYTEST } from '@/utils/constants';
 
 const DeckSelectMy = ({ deckid, handleSelect }) => {
   const { limitedMode, inventoryMode, isMobile, isWide } = useApp();
@@ -23,12 +23,12 @@ const DeckSelectMy = ({ deckid, handleSelect }) => {
       .toSorted(byTimestamp)
       .map((i, idx) => {
         const diffDays = Math.round(
-          (new Date() - new Date(decks[i]['timestamp'])) / (1000 * 60 * 60 * 24),
+          (new Date() - new Date(decks[i][TIMESTAMP])) / (1000 * 60 * 60 * 24),
         );
 
         let lastEdit;
         if (diffDays > 90) {
-          lastEdit = new Date(decks[i]['timestamp']).toISOString().split('T')[0];
+          lastEdit = new Date(decks[i][TIMESTAMP]).toISOString().split('T')[0];
         } else if (diffDays > 30) {
           lastEdit = `${Math.round(diffDays / 30)}mo`;
         } else if (diffDays > 5) {
@@ -72,8 +72,8 @@ const DeckSelectMy = ({ deckid, handleSelect }) => {
                 </div>
                 {inventoryMode && (
                   <div>
-                    {decks[i][INVENTORY_TYPE] == 's' && <Shuffle />}
-                    {decks[i][INVENTORY_TYPE] == 'h' && <PinAngleFill />}
+                    {decks[i][INVENTORY_TYPE] == S && <Shuffle />}
+                    {decks[i][INVENTORY_TYPE] == H && <PinAngleFill />}
                     {!decks[i][INVENTORY_TYPE] && <At />}
                   </div>
                 )}
@@ -114,13 +114,13 @@ const DeckSelectMy = ({ deckid, handleSelect }) => {
               <div className="flex items-center gap-1">
                 {inventoryMode && (
                   <div>
-                    {decks[deckid][INVENTORY_TYPE] == 's' && <Shuffle />}
-                    {decks[deckid][INVENTORY_TYPE] == 'h' && <PinAngleFill />}
+                    {decks[deckid][INVENTORY_TYPE] == S && <Shuffle />}
+                    {decks[deckid][INVENTORY_TYPE] == H && <PinAngleFill />}
                     {!decks[deckid][INVENTORY_TYPE] && <At />}
                   </div>
                 )}
                 <div className="text-sm">
-                  {new Date(decks[deckid]['timestamp']).toISOString().split('T')[0]}
+                  {new Date(decks[deckid][TIMESTAMP]).toISOString().split('T')[0]}
                 </div>
               </div>
             </div>

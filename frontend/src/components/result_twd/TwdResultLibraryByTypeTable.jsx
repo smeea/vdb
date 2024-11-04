@@ -8,7 +8,8 @@ import {
   ResultLibraryCost,
 } from '@/components';
 import { useApp } from '@/context';
-import { BANNED, cardtypeSortedFull } from '@/utils/constants';
+import cardtypeSortedFull from '@/assets/data/cardtypeSortedFull.json';
+import { BANNED } from '@/utils/constants';
 import { useDeckLibrary, useModalCardController } from '@/hooks';
 
 const TwdResultLibraryByTypeTable = ({ library }) => {

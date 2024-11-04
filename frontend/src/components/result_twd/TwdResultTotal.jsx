@@ -2,20 +2,15 @@ import React from 'react';
 import { twMerge } from 'tailwind-merge';
 import { SortButton, Header } from '@/components';
 import { useApp } from '@/context';
+import { CREATION_DATE } from '@/utils/constants';
 
 const TwdResultTotal = ({ results, sortMethods, sortMethod, setSortMethod }) => {
   const { isMobile } = useApp();
   const byYear = {};
-  let total = 0;
 
-  results.map((deck) => {
-    const year = `'${deck['creation_date'].slice(2, 4)}`;
-    if (byYear[year]) {
-      byYear[year] += 1;
-    } else {
-      byYear[year] = 1;
-    }
-    total += 1;
+  results.forEach((deck) => {
+    const year = `'${deck[CREATION_DATE].slice(2, 4)}`;
+    byYear[year] = byYear[year] ?? 0 + 1;
   });
 
   return (
@@ -25,7 +20,7 @@ const TwdResultTotal = ({ results, sortMethods, sortMethod, setSortMethod }) => 
         isMobile && Object.keys(byYear).length > 10 ? 'block' : 'flex',
       )}
     >
-      <div className="whitespace-nowrap p-2 font-bold">TOTAL: {total}</div>
+      <div className="whitespace-nowrap p-2 font-bold">TOTAL: {results.length}</div>
       <div>
         {Object.keys(byYear).map((i) => {
           return (

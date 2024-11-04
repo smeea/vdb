@@ -1,6 +1,7 @@
 import React from 'react';
 import Shuffle from '@/assets/images/icons/shuffle.svg?react';
 import PinAngleFill from '@/assets/images/icons/pin-angle-fill.svg?react';
+import { S } from '@/utils/constants';
 
 const UsedDescriptionDeck = ({ deck, t, q }) => {
   const isBranches = deck.master || (deck.branches && deck.branches.length > 0);
@@ -8,7 +9,7 @@ const UsedDescriptionDeck = ({ deck, t, q }) => {
   return (
     <div className="flex items-center gap-1">
       <div className="opacity-40">
-        {t == 's' ? (
+        {t == S ? (
           <Shuffle width="16" height="16" viewBox="0 0 16 16" />
         ) : (
           <PinAngleFill width="16" height="16" viewBox="0 0 16 16" />

@@ -8,7 +8,7 @@ import GeoAltFill from '@/assets/images/icons/geo-alt-fill.svg?react';
 import { TwdResultTags, TwdResultDescriptionTextTr } from '@/components';
 import { useApp, searchTwdForm, clearSearchForm } from '@/context';
 import { useTags } from '@/hooks';
-import { AUTHOR, TWD } from '@/utils/constants';
+import { LOCATION, CREATION_DATE, AUTHOR, TWD } from '@/utils/constants';
 
 const TwdResultDescriptionText = ({ deck }) => {
   const { isMobile } = useApp();
@@ -17,7 +17,7 @@ const TwdResultDescriptionText = ({ deck }) => {
 
   const handleClick = (target, value) => {
     clearSearchForm(TWD);
-    if (target === 'location') {
+    if (target === LOCATION) {
       value = { city: value };
     }
     searchTwdForm[target] = value;
@@ -29,7 +29,7 @@ const TwdResultDescriptionText = ({ deck }) => {
       <table>
         <tbody>
           <TwdResultDescriptionTextTr title={isMobile ? <CalendarEvent /> : <>Date:</>}>
-            {deck['creation_date']}
+            {deck[CREATION_DATE]}
           </TwdResultDescriptionTextTr>
           <TwdResultDescriptionTextTr title={isMobile ? <TrophyFill /> : <>Event:</>}>
             {deck['event']}
@@ -37,9 +37,9 @@ const TwdResultDescriptionText = ({ deck }) => {
           <TwdResultDescriptionTextTr title={isMobile ? <GeoAltFill /> : <>Place:</>}>
             <div
               className="text-fgSecondary hover:underline dark:text-fgSecondaryDark"
-              onClick={() => handleClick('location', deck['location'])}
+              onClick={() => handleClick(LOCATION, deck[LOCATION])}
             >
-              {deck['location']}
+              {deck[LOCATION]}
             </div>
           </TwdResultDescriptionTextTr>
           <TwdResultDescriptionTextTr title={isMobile ? <PersonFill /> : <>Player:</>}>

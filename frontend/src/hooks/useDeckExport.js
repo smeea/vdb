@@ -12,8 +12,8 @@ import {
   TRIFLE,
   TWD,
   TWD_HINTS,
-  cardtypeSortedFull,
 } from '@/utils/constants';
+import cardtypeSortedFull from '@/assets/data/cardtypeSortedFull.json';
 
 const getCryptTitle = (crypt) => {
   let cryptTotalCap = 0;

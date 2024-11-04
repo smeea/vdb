@@ -1,5 +1,22 @@
 import { deepClone } from '@/utils';
-import { ANY, VALUE, CRYPT, LIBRARY, TWD, PDA, ANALYZE } from '@/utils/constants';
+import {
+  DISCIPLINES,
+  TRAITS,
+  TITLES,
+  CARDTYPES,
+  LIBRARY_TOTAL,
+  RANK,
+  LOCATION,
+  ANY,
+  VALUE,
+  CRYPT,
+  LIBRARY,
+  TWD,
+  PDA,
+  ANALYZE,
+  MATCH_INVENTORY,
+  TEXT,
+} from '@/utils/constants';
 
 const sanitizeFormState = (target, state) => {
   const input = deepClone(state);
@@ -8,7 +25,7 @@ const sanitizeFormState = (target, state) => {
   switch (target) {
     case CRYPT:
     case LIBRARY:
-      forms = ['text'];
+      forms = [TEXT];
       break;
     default:
       forms = [];
@@ -30,28 +47,28 @@ const sanitizeFormState = (target, state) => {
 
   switch (target) {
     case CRYPT:
-      forms = ['disciplines', 'titles', 'group', 'traits'];
+      forms = [DISCIPLINES, TITLES, 'group', TRAITS];
       break;
     case LIBRARY:
-      forms = ['traits'];
+      forms = [TRAITS];
       break;
     case PDA:
-      forms = ['disciplines', 'traits', 'cardtypes', 'date', 'capacity', 'libraryTotal'];
+      forms = [DISCIPLINES, TRAITS, CARDTYPES, 'date', 'capacity', LIBRARY_TOTAL];
       break;
     case TWD:
       forms = [
-        'disciplines',
-        'traits',
-        'cardtypes',
+        DISCIPLINES,
+        TRAITS,
+        CARDTYPES,
         'date',
         'players',
-        'location',
+        LOCATION,
         'capacity',
-        'libraryTotal',
+        LIBRARY_TOTAL,
       ];
       break;
     case ANALYZE:
-      forms = ['disciplines', 'traits', 'cardtypes', 'rank', 'capacity', 'libraryTotal'];
+      forms = [DISCIPLINES, TRAITS, CARDTYPES, RANK, 'capacity', LIBRARY_TOTAL];
       break;
     default:
       forms = [];
@@ -65,7 +82,7 @@ const sanitizeFormState = (target, state) => {
   switch (target) {
     case PDA:
     case TWD:
-      forms = ['matchInventory'];
+      forms = [MATCH_INVENTORY];
       break;
     default:
       forms = [];
@@ -150,7 +167,7 @@ const sanitizeFormState = (target, state) => {
     case ANALYZE:
     case PDA:
     case TWD:
-      forms = ['crypt', 'library'];
+      forms = [CRYPT, LIBRARY];
       break;
     default:
       forms = [];

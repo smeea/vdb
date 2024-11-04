@@ -1,12 +1,12 @@
 import React from 'react';
 import { Select } from '@/components';
 import { useApp } from '@/context';
-import { ANY, FROM, TO } from '@/utils/constants';
+import { RANK, ANY, FROM, TO } from '@/utils/constants';
 
 const AnalyzeSearchFormRank = ({ value, onChange }) => {
   const { isXWide } = useApp();
   const maxMenuHeight = isXWide ? 500 : 350;
-  const name = 'rank';
+  const name = RANK;
   const fromOptions = [];
   const toOptions = [];
 
