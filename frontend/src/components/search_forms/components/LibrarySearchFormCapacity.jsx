@@ -1,7 +1,7 @@
 import React from 'react';
 import { Select } from '@/components';
 import { useApp } from '@/context';
-import { ANY, LE, GE } from '@/utils/constants';
+import { ANY, LE, GE } from '@/constants';
 
 const LibrarySearchFormCapacity = ({ value, onChange }) => {
   const { isXWide } = useApp();

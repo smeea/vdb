@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import { useSnapshot } from 'valtio';
 import { cryptSortWithTimer, countCards, containCard, getGroups, getRestrictions } from '@/utils';
-import { CRYPT_TIMER, NAME } from '@/utils/constants';
+import { CRYPT_TIMER, NAME } from '@/constants';
 import { miscStore, limitedStore } from '@/context';
 
 const useDeckCrypt = (cardsList, sortMethod = NAME, cardsToList = {}) => {

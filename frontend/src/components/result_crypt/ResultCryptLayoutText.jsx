@@ -15,7 +15,7 @@ import {
   ResultLayoutTextText,
 } from '@/components';
 import { getLegality } from '@/utils';
-import { BANNED, GROUP, AKA, PLAYTEST } from '@/utils/constants';
+import { BANNED, GROUP, AKA, PLAYTEST } from '@/constants';
 
 const ResultCryptLayoutText = ({ card, setCard, handleClose, noClose, inPopover }) => {
   const { isNarrow, isMobile, cryptCardBase } = useApp();

@@ -2,7 +2,7 @@ import { proxy } from 'valtio';
 import { deepClone } from '@/utils';
 import { inventoryServices } from '@/services';
 import { startCryptTimer } from '@/context';
-import { INVENTORY_TYPE, CRYPT, LIBRARY, SOFT, HARD } from '@/utils/constants';
+import { INVENTORY_TYPE, CRYPT, LIBRARY, SOFT, HARD } from '@/constants';
 
 export const inventoryStore = proxy({
   [CRYPT]: {},

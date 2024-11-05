@@ -22,7 +22,7 @@ import {
 import { sanitizeFormState } from '@/utils';
 import { useApp, setPdaResults, searchPdaForm, clearSearchForm } from '@/context';
 import { archiveServices } from '@/services';
-import { PDA, CRYPT, LIBRARY } from '@/utils/constants';
+import { PDA, CRYPT, LIBRARY } from '@/constants';
 
 const PdaSearchForm = ({ error, setError }) => {
   const { username, cryptCardBase, libraryCardBase, showFloatingButtons, inventoryMode, isMobile } =

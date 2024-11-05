@@ -1,7 +1,7 @@
 import React from 'react';
 import Shuffle from '@/assets/images/icons/shuffle.svg?react';
 import PinAngleFill from '@/assets/images/icons/pin-angle-fill.svg?react';
-import { S } from '@/utils/constants';
+import { S } from '@/constants';
 
 const UsedDescriptionDeck = ({ deck, t, q }) => {
   const isBranches = deck.master || (deck.branches && deck.branches.length > 0);

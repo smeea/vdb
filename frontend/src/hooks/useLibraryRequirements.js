@@ -25,7 +25,7 @@ import {
   TITLED,
   NON_TITLED,
   NONE,
-} from '@/utils/constants';
+} from '@/constants';
 
 const useLibraryRequirements = (card) => {
   let isCapacity;

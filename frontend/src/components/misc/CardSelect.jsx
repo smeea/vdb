@@ -2,7 +2,7 @@ import React from 'react';
 import { useApp } from '@/context';
 import { Select, SelectLabelCrypt, SelectLabelLibrary } from '@/components';
 import { useFilters } from '@/hooks';
-import { CRYPT, LIBRARY } from '@/utils/constants';
+import { CRYPT, LIBRARY } from '@/constants';
 
 const getMatches = (inputValue, filterAction, playtestId, playtestMode, inInventory) => {
   const input = { name: inputValue };

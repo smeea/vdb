@@ -10,7 +10,7 @@ import {
   Header,
 } from '@/components';
 import { useApp } from '@/context';
-import { LIBRARY, LIMITED, BANNED, LEGAL, PLAYTEST } from '@/utils/constants';
+import { LIBRARY, LIMITED, BANNED, LEGAL, PLAYTEST } from '@/constants';
 
 const DeckLibraryHeader = ({
   libraryTotal,

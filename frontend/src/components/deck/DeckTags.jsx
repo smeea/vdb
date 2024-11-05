@@ -4,7 +4,7 @@ import Spellcheck from '@/assets/images/icons/spellcheck.svg?react';
 import { Select, ButtonIconed } from '@/components';
 import { deckUpdate } from '@/context';
 import { useTags } from '@/hooks';
-import { TAGS } from '@/utils/constants';
+import { TAGS } from '@/constants';
 
 const DeckTags = ({ deck, tagsSuperior, noAutotags, isBordered, allTagsOptions }) => {
   const { deckid, tags, isPublic, isAuthor, isFrozen } = deck;

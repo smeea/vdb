@@ -10,7 +10,7 @@ import {
 } from '@/components';
 import { getSwipedBg, getSoftMax, getHardTotal } from '@/utils';
 import { useSwipe } from '@/hooks';
-import { INVENTORY_TYPE, SOFT, HARD, LIBRARY } from '@/utils/constants';
+import { INVENTORY_TYPE, SOFT, HARD, LIBRARY } from '@/constants';
 
 const DeckLibraryTableRow = ({
   handleClick,

@@ -5,7 +5,7 @@
 // if some criteria is missing the main method return false and exits that deck check.
 
 import { countCards, countTotalCost, getClan, getSect } from '@/utils';
-import { LT, LT0, GT, EQ, NOT, OR, CAPACITY } from '@/utils/constants';
+import { LT, LT0, GT, EQ, NOT, OR, CAPACITY } from '@/constants';
 
 const useFiltersDecks = (decks = {}) => {
   const filterDecks = (filter) => {

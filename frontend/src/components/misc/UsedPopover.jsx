@@ -6,7 +6,7 @@ import ChatLeftQuoteFill from '@/assets/images/icons/chat-left-quote-fill.svg?re
 import { Hr, UsedDescription } from '@/components';
 import { deckStore, usedStore, inventoryStore } from '@/context';
 import { getHardTotal, getSoftMax } from '@/utils';
-import { SOFT, HARD, CRYPT, LIBRARY, DECKS } from '@/utils/constants';
+import { SOFT, HARD, CRYPT, LIBRARY, DECKS } from '@/constants';
 
 const UsedPopover = ({ cardid }) => {
   const decks = useSnapshot(deckStore)[DECKS];

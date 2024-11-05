@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { DeckDrawModal } from '@/components';
-import { POOL_COST, BLOOD_COST } from '@/utils/constants';
+import { POOL_COST, BLOOD_COST } from '@/constants';
 import { countCards, getCardsArray } from '@/utils';
 import { useApp } from '@/context';
 

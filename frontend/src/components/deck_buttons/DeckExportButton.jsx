@@ -6,7 +6,7 @@ import { MenuItems, MenuItem, MenuItemDivider, MenuButton } from '@/components';
 import { useDeckExport } from '@/hooks';
 import { useApp, deckStore } from '@/context';
 import { deckServices } from '@/services';
-import { DECKS, TWD, TWD_HINTS, TEXT, LACKEY, JOL, XLSX, EN } from '@/utils/constants';
+import { DECKS, TWD, TWD_HINTS, TEXT, LACKEY, JOL, XLSX, EN } from '@/constants';
 
 const SAVE = 'save';
 const COPY = 'copy';

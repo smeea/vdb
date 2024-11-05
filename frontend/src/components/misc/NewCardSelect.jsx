@@ -1,6 +1,6 @@
 import React from 'react';
 import { CardSelect } from '@/components';
-import { CRYPT } from '@/utils/constants';
+import { CRYPT } from '@/constants';
 
 const NewCardSelect = React.forwardRef(
   ({ target, inInventory, onChange, autoFocus, menuPlacement }, ref) => {

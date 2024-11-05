@@ -12,7 +12,7 @@ import {
   TRIFLE,
   TWD,
   TWD_HINTS,
-} from '@/utils/constants';
+} from '@/constants';
 import cardtypeSortedFull from '@/assets/data/cardtypeSortedFull.json';
 
 const getCryptTitle = (crypt) => {

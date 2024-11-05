@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Check2All from '@/assets/images/icons/check2-all.svg?react';
 import { useApp, deckUpdate } from '@/context';
 import { ButtonIconed } from '@/components';
-import { CARDS } from '@/utils/constants';
+import { CARDS } from '@/constants';
 
 const ReviewApplyButton = ({ deck, parentId }) => {
   const { isDesktop, setShowFloatingButtons, setShowMenuButtons } = useApp();

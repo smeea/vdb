@@ -4,7 +4,7 @@ import HourglassSplit from '@/assets/images/icons/hourglass-split.svg?react';
 import LightningChargeFill from '@/assets/images/icons/lightning-charge-fill.svg?react';
 import Hammer from '@/assets/images/icons/hammer.svg?react';
 import Exclamation from '@/assets/images/icons/exclamation-triangle.svg?react';
-import { BANNED, LEGAL, PLAYTEST } from '@/utils/constants';
+import { BANNED, LEGAL, PLAYTEST } from '@/constants';
 
 const ResultLegalIcon = ({ value, type = 'default', className }) => {
   const title = {

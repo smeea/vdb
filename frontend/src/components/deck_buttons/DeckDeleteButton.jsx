@@ -6,7 +6,7 @@ import { ButtonIconed, ModalConfirmation } from '@/components';
 import { deckServices } from '@/services';
 import { deckStore, useApp } from '@/context';
 import { byTimestamp } from '@/utils';
-import { DECKS } from '@/utils/constants';
+import { DECKS } from '@/constants';
 
 const DeckDeleteButton = ({ deck, noText }) => {
   const { isDesktop, setShowFloatingButtons, setShowMenuButtons } = useApp();

@@ -4,7 +4,7 @@ import PlusLg from '@/assets/images/icons/plus-lg.svg?react';
 import { DeckCryptTotalInfo, DeckNewCard, Warning, Button, SortButton, Header } from '@/components';
 import { useApp } from '@/context';
 import { useKeyDisciplines } from '@/hooks';
-import { CRYPT, GROUPS, LIMITED, BANNED, LEGAL, PLAYTEST } from '@/utils/constants';
+import { CRYPT, GROUPS, LIMITED, BANNED, LEGAL, PLAYTEST } from '@/constants';
 
 const DeckCryptHeader = ({
   cardChange,

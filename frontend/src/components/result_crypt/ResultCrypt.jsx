@@ -9,15 +9,7 @@ import {
   ButtonFloatAdd,
   ErrorMessage,
 } from '@/components';
-import {
-  DECK,
-  CAPACITY_MAX_MIN,
-  CAPACITY_MIN_MAX,
-  CLAN,
-  GROUP,
-  NAME,
-  SECT,
-} from '@/utils/constants';
+import { DECK, CAPACITY_MAX_MIN, CAPACITY_MIN_MAX, CLAN, GROUP, NAME, SECT } from '@/constants';
 import { cryptSort } from '@/utils';
 import { useApp, deckStore } from '@/context';
 

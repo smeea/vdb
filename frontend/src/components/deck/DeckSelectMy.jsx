@@ -6,7 +6,7 @@ import At from '@/assets/images/icons/at.svg?react';
 import { Select, ResultPreconClan, ResultLegalIcon } from '@/components';
 import { limitedStore, deckStore, useApp } from '@/context';
 import { getRestrictions, getClan } from '@/utils';
-import { S, H, TIMESTAMP, INVENTORY_TYPE, DECKS, BANNED, LEGAL, PLAYTEST } from '@/utils/constants';
+import { S, H, TIMESTAMP, INVENTORY_TYPE, DECKS, BANNED, LEGAL, PLAYTEST } from '@/constants';
 
 const DeckSelectMy = ({ deckid, handleSelect }) => {
   const { limitedMode, inventoryMode, isMobile, isWide } = useApp();

@@ -16,7 +16,7 @@ import {
   INDEPENDENT,
   ANARCH,
   IMBUED,
-} from '@/utils/constants';
+} from '@/constants';
 
 const LibrarySearchFormSect = ({ value, searchForm, onChange }) => {
   const { isXWide } = useApp();

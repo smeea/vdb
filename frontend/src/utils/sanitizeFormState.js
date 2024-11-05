@@ -16,7 +16,7 @@ import {
   ANALYZE,
   MATCH_INVENTORY,
   TEXT,
-} from '@/utils/constants';
+} from '@/constants';
 
 const sanitizeFormState = (target, state) => {
   const input = deepClone(state);

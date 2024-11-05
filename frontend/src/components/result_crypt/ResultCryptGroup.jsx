@@ -1,5 +1,5 @@
 import React from 'react';
-import { ANY } from '@/utils/constants';
+import { ANY } from '@/constants';
 
 const ResultCryptGroup = ({ value }) => {
   return (

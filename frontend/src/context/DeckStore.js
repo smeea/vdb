@@ -13,7 +13,7 @@ import {
   AUTHOR,
   S,
   H,
-} from '@/utils/constants';
+} from '@/constants';
 import { deckServices } from '@/services';
 import { startCryptTimer, miscStore } from '@/context';
 

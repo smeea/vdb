@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useSnapshot } from 'valtio';
 import { TwdResult, TwdSearchForm, ErrorMessage, FlexGapped } from '@/components';
 import { useApp, searchResults, setTwdResults } from '@/context';
-import { TWD } from '@/utils/constants';
+import { TWD } from '@/constants';
 
 const Twd = () => {
   const { isMobile } = useApp();

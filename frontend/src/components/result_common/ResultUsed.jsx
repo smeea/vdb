@@ -4,7 +4,7 @@ import { useSnapshot } from 'valtio';
 import { UsedPopover, Tooltip } from '@/components';
 import { getSoftMax, getHardTotal } from '@/utils';
 import { useApp, inventoryStore, usedStore } from '@/context';
-import { CRYPT, LIBRARY } from '@/utils/constants';
+import { CRYPT, LIBRARY } from '@/constants';
 
 const ResultUsed = ({ card }) => {
   const { isDesktop } = useApp();

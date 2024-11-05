@@ -1,4 +1,4 @@
-import { ASCII_NAME } from '@/utils/constants';
+import { ASCII_NAME } from '@/constants';
 
 const useDeckImport = async (deckText, cryptCardBase, libraryCardBase, isPlaytester) => {
   const { default: unidecode } = await import('unidecode');

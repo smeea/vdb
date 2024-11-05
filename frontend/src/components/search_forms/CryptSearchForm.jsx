@@ -45,7 +45,7 @@ import {
   SOFT,
   HARD,
   TEXT,
-} from '@/utils/constants';
+} from '@/constants';
 
 const CryptSearchForm = () => {
   const {

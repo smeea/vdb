@@ -18,7 +18,7 @@ import {
   MASTER,
   EVENT,
   CLAN,
-} from '@/utils/constants';
+} from '@/constants';
 import { limitedStore } from '@/context';
 
 const useDeckLibrary = (cardsList, cardsToList = {}) => {

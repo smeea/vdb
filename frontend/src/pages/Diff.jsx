@@ -16,7 +16,7 @@ import {
 import { useApp, deckStore, setDeck } from '@/context';
 import { useDeck } from '@/hooks';
 import { deckServices } from '@/services';
-import { CRYPT, LIBRARY } from '@/utils/constants';
+import { CRYPT, LIBRARY } from '@/constants';
 
 const Diff = () => {
   const {

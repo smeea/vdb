@@ -25,7 +25,7 @@ import {
   POOL_COST,
   BLOOD_COST,
   BURN_OPTION,
-} from '@/utils/constants';
+} from '@/constants';
 
 const InventoryLibraryTableRow = ({ card, compact, newFocus, inShared, handleClick }) => {
   const { isMobile, isNarrow, limitedMode } = useApp();

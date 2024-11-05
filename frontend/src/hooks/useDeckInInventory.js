@@ -1,6 +1,6 @@
 import { useSnapshot } from 'valtio';
 import { inventoryStore } from '@/context';
-import { CRYPT, LIBRARY } from '@/utils/constants';
+import { CRYPT, LIBRARY } from '@/constants';
 
 const useDeckInInventory = (deck) => {
   const { [CRYPT]: inventoryCrypt, [LIBRARY]: inventoryLibrary } = useSnapshot(inventoryStore);

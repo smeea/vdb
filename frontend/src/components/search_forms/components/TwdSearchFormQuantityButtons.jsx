@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, ButtonCardChange } from '@/components';
 import { useApp } from '@/context';
-import { EQ, LT, LT0, GT } from '@/utils/constants';
+import { EQ, LT, LT0, GT } from '@/constants';
 
 const TwdSearchFormQuantityButtons = ({ value, form, id }) => {
   const { isMobile } = useApp();

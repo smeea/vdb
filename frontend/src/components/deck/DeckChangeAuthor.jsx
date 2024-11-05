@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PersonFill from '@/assets/images/icons/person-fill.svg?react';
 import { Input, InputLabel } from '@/components';
 import { deckUpdate } from '@/context';
-import { AUTHOR } from '@/utils/constants';
+import { AUTHOR } from '@/constants';
 
 const DeckChangeAuthor = ({ deck }) => {
   const { deckid, author, isAuthor, isPublic, isFrozen } = deck;

@@ -13,7 +13,7 @@ import {
 } from '@/components';
 import { useApp, deckStore } from '@/context';
 import { deckServices } from '@/services';
-import { DECKS, NAME, JOL, LACKEY, TEXT, XLSX } from '@/utils/constants';
+import { DECKS, NAME, JOL, LACKEY, TEXT, XLSX } from '@/constants';
 
 const DeckSelectAdvModal = ({ onClick, setShow, allTagsOptions, short }) => {
   const { isMobile, setShowFloatingButtons } = useApp();

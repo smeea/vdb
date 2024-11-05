@@ -8,7 +8,7 @@ import {
   PLAYERS,
   RANK_HIGH_LOW,
   RANK_LOW_HIGH,
-} from '@/utils/constants';
+} from '@/constants';
 
 const decksSort = (decks, sortMethod) => {
   const byRank = (a, b) => a.score.rank - b.score.rank;

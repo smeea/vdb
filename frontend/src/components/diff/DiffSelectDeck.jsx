@@ -12,7 +12,7 @@ import {
   Input,
 } from '@/components';
 import { useApp } from '@/context';
-import { FROM } from '@/utils/constants';
+import { FROM } from '@/constants';
 
 const DiffSelectDeck = ({ decks, deck, deckidFrom, deckidTo, target, title }) => {
   const { recentDecks, inventoryMode, username, isMobile } = useApp();

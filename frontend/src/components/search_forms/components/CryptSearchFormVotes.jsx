@@ -1,7 +1,7 @@
 import React from 'react';
 import { Select } from '@/components';
 import { useApp } from '@/context';
-import { VOTES, ANY } from '@/utils/constants';
+import { VOTES, ANY } from '@/constants';
 
 const CryptSearchFormVotes = ({ value, onChange }) => {
   const { isXWide } = useApp();

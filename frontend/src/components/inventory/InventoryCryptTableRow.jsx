@@ -17,7 +17,7 @@ import {
 import { getSwipedBg, getHardTotal, getSoftMax } from '@/utils';
 import { useApp, inventoryStore, usedStore, limitedStore, inventoryCardChange } from '@/context';
 import { useSwipe } from '@/hooks';
-import { IS_FROZEN, SOFT, HARD, CRYPT } from '@/utils/constants';
+import { IS_FROZEN, SOFT, HARD, CRYPT } from '@/constants';
 
 const InventoryCryptTableRow = ({ card, compact, newFocus, inShared, handleClick }) => {
   const { isMobile, isNarrow, isWide, limitedMode } = useApp();

@@ -44,7 +44,7 @@ import {
   VOTE_2,
   KHOLO,
   IMPERATOR,
-} from '@/utils/constants';
+} from '@/constants';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 
 const useFilters = (cards = {}) => {

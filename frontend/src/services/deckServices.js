@@ -2,7 +2,7 @@ import ky from 'ky';
 import { redirect, defer } from 'react-router-dom';
 import { useDeckExport } from '@/hooks';
 import { getTextDisciplines } from '@/utils';
-import { DECK, DECKS, POOL_COST, BLOOD_COST, CARD_TEXT } from '@/utils/constants';
+import { DECK, DECKS, POOL_COST, BLOOD_COST, CARD_TEXT } from '@/constants';
 import { deckStore } from '@/context';
 
 export const update = (deckid, field, value) => {

@@ -3,7 +3,7 @@ import { twMerge } from 'tailwind-merge';
 import { useSnapshot } from 'valtio';
 import { ButtonCardChange } from '@/components';
 import { useApp, inventoryStore, inventoryCardChange } from '@/context';
-import { IS_FROZEN } from '@/utils/constants';
+import { IS_FROZEN } from '@/constants';
 
 const InventoryCardQuantity = ({ card, softUsedMax, hardUsedTotal, compact, newFocus }) => {
   const { isMobile } = useApp();

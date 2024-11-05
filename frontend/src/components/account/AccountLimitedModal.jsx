@@ -10,7 +10,7 @@ import {
   ButtonIconed,
 } from '@/components';
 import { limitedFullStore } from '@/context';
-import { CRYPT, LIBRARY, BANNED, ALLOWED, SETS } from '@/utils/constants';
+import { CRYPT, LIBRARY, BANNED, ALLOWED, SETS } from '@/constants';
 
 const AccountLimitedModal = ({ setShow, setFormat }) => {
   const {

@@ -26,7 +26,7 @@ import {
   POOL_COST,
   REQUIREMENT,
   TRIFLE,
-} from '@/utils/constants';
+} from '@/constants';
 
 const Requirements = ({ card }) => {
   return (

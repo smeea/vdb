@@ -10,7 +10,7 @@ import {
 } from '@/components';
 import { librarySort } from '@/utils';
 import { useApp, deckStore } from '@/context';
-import { DECK, CLAN_DISCIPLINE, COST_MAX_MIN, COST_MIN_MAX, NAME, TYPE } from '@/utils/constants';
+import { DECK, CLAN_DISCIPLINE, COST_MAX_MIN, COST_MIN_MAX, NAME, TYPE } from '@/constants';
 
 const ResultLibrary = ({ cards, setCards, inCompare }) => {
   const {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Radio } from '@/components';
-import { MY, ANY, MY_NONPUBLIC, FAVORITES } from '@/utils/constants';
+import { MY, ANY, MY_NONPUBLIC, FAVORITES } from '@/constants';
 
 const PdaSearchFormSrcSelector = ({ value, onChange }) => {
   return (

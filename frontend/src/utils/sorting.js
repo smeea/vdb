@@ -1,4 +1,4 @@
-import { ASCII_NAME, BLOOD_COST, POOL_COST } from '@/utils/constants';
+import { ASCII_NAME, BLOOD_COST, POOL_COST } from '@/constants';
 
 export const byName = (a, b) => a.localeCompare(b, 'en');
 

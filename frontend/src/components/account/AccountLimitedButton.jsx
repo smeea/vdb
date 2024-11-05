@@ -16,7 +16,7 @@ import {
   LIMITED_SETS,
   SETS,
   FORMAT,
-} from '@/utils/constants';
+} from '@/constants';
 
 const AccountLimitedButton = () => {
   const { setLimitedFormat } = useApp();

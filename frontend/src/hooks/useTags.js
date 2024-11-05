@@ -1,4 +1,4 @@
-import { CARD_TEXT } from '@/utils/constants';
+import { CARD_TEXT } from '@/constants';
 
 const useTags = (crypt, library) => {
   const deckTags = {

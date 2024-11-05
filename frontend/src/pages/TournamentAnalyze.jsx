@@ -25,7 +25,7 @@ import {
   useApp,
 } from '@/context';
 import { useDeckImport, useTags } from '@/hooks';
-import { DECKS, RESULTS, INFO } from '@/utils/constants';
+import { DECKS, RESULTS, INFO } from '@/constants';
 
 const TournamentAnalyze = () => {
   const { username, cryptCardBase, libraryCardBase, isMobile, isDesktop } = useApp();

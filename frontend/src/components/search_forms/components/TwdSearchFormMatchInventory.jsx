@@ -1,7 +1,7 @@
 import React from 'react';
 import { Select } from '@/components';
 import { capitalize } from '@/utils';
-import { MATCH_INVENTORY, ANY } from '@/utils/constants';
+import { MATCH_INVENTORY, ANY } from '@/constants';
 
 const TwdSearchFormMatchInventory = ({ value, target, onChange }) => {
   const name = MATCH_INVENTORY;

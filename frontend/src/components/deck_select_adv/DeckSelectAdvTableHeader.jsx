@@ -5,7 +5,7 @@ import At from '@/assets/images/icons/at.svg?react';
 import { DeckSelectAdvTagsFilter, Select, Checkbox, Input } from '@/components';
 import { useDebounce } from '@/hooks';
 import { useApp } from '@/context';
-import { S, H, ANY } from '@/utils/constants';
+import { S, H, ANY } from '@/constants';
 
 const DeckSelectAdvTableHeader = ({
   allTagsOptions,

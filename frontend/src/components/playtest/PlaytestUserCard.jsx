@@ -12,7 +12,7 @@ import {
   PlaytestLanguageSelector,
 } from '@/components';
 import { useApp } from '@/context';
-import { GENERAL, GAMES, LIAISON } from '@/utils/constants';
+import { GENERAL, GAMES, LIAISON } from '@/constants';
 
 const PlaytestUserCard = () => {
   const { isMobile, playtestProfile, updatePlaytestProfile } = useApp();

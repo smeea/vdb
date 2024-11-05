@@ -6,7 +6,7 @@ import {
   DeckDrawProbability,
   DeckLibraryHeader,
 } from '@/components';
-import { MASTER } from '@/utils/constants';
+import { MASTER } from '@/constants';
 import { useApp } from '@/context';
 import { useModalCardController, useDeckLibrary } from '@/hooks';
 import { FlexGapped, DiffQuantityDiff } from '@/components';

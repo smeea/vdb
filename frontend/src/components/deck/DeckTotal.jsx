@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSnapshot } from 'valtio';
 import { deckStore } from '@/context';
-import { DECKS } from '@/utils/constants';
+import { DECKS } from '@/constants';
 
 const DeckSelectAdvTotal = ({ tagsFilter, setTagsFilter }) => {
   const decks = useSnapshot(deckStore)[DECKS];

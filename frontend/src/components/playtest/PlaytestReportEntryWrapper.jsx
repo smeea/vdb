@@ -1,7 +1,7 @@
 import React from 'react';
 import { PlaytestReportEntry } from '@/components';
 import { useFetch } from '@/hooks';
-import { PRECONS, CARDS } from '@/utils/constants';
+import { PRECONS, CARDS } from '@/constants';
 
 const PlaytestReportEntryWrapper = ({ id, isPrecon }) => {
   const url = `${import.meta.env.VITE_API_URL}/playtest/export/${isPrecon ? PRECONS : CARDS}/${id}`;

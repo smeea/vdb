@@ -4,7 +4,7 @@ import { TabButton, TwdHallFameCardsPlayer } from '@/components';
 import { useApp } from '@/context';
 import { useFetch } from '@/hooks';
 import { byName } from '@/utils';
-import { POD, PROMO } from '@/utils/constants';
+import { POD, PROMO } from '@/constants';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 
 const TwdHallOfFameCards = () => {

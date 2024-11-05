@@ -23,7 +23,7 @@ import {
   QUANTITY,
   TYPE,
   TYPEx,
-} from '@/utils/constants';
+} from '@/constants';
 import cardtypeSortedFull from '@/assets/data/cardtypeSortedFull.json';
 
 const byGroupedType = (a, b) => {

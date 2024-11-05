@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import { useSnapshot } from 'valtio';
 import { cryptSort } from '@/utils';
-import { CRYPT_TIMER } from '@/utils/constants';
+import { CRYPT_TIMER } from '@/constants';
 import { miscStore } from '@/context';
 
 const cryptSortWithTimer = (cardsList, sortMethod) => {

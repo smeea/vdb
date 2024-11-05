@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 import { useSnapshot } from 'valtio';
 import { usedStore, inventoryStore } from '@/context';
 import { getHardTotal, getSoftMax } from '@/utils';
-import { INVENTORY_TYPE, CRYPT, LIBRARY } from '@/utils/constants';
+import { INVENTORY_TYPE, CRYPT, LIBRARY } from '@/constants';
 
 const getMissing = (cards, inventoryType, used, inventory) => {
   const missingCards = {};

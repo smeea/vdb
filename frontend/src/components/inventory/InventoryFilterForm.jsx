@@ -5,7 +5,7 @@ import {
   ResultDisciplineImage,
   ResultClanImage,
 } from '@/components';
-import { ALL, CRYPT, TYPE, DISCIPLINE, NONE } from '@/utils/constants';
+import { ALL, CRYPT, TYPE, DISCIPLINE, NONE } from '@/constants';
 
 const InventoryFilterForm = ({ value, setValue, values, target, byTotal, byUnique }) => {
   const options = [];

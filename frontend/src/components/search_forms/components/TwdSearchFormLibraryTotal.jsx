@@ -1,6 +1,6 @@
 import React from 'react';
 import { ButtonGroup } from '@/components';
-import { LIBRARY_TOTAL } from '@/utils/constants';
+import { LIBRARY_TOTAL } from '@/constants';
 
 const TwdSearchFormLibraryTotal = ({ value, onChange }) => {
   const name = LIBRARY_TOTAL;

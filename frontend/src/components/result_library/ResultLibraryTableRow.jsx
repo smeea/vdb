@@ -10,7 +10,7 @@ import {
 import { useApp, deckStore, deckCardChange } from '@/context';
 import { useSwipe } from '@/hooks';
 import { getSwipedBg } from '@/utils';
-import { DECK } from '@/utils/constants';
+import { DECK } from '@/constants';
 
 const ResultLibraryTableRow = ({ card, handleClick, inLimited, shouldShowModal }) => {
   const { addMode, inventoryMode } = useApp();

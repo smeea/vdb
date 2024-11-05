@@ -15,7 +15,7 @@ import {
 import { getClan } from '@/utils';
 import { useDeckInInventory } from '@/hooks';
 import { useApp, deckToggleInventoryState } from '@/context';
-import { S, H, INVENTORY_TYPE } from '@/utils/constants';
+import { S, H, INVENTORY_TYPE } from '@/constants';
 
 const InventoryAddDeckRow = ({ deck, allTagsOptions }) => {
   const { isDesktop, isMobile } = useApp();

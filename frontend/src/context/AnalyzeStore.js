@@ -1,6 +1,6 @@
 import { proxy } from 'valtio';
 import defaultsAnalyzeForm from '@/components/search_forms/forms_data/defaultsAnalyzeForm.json';
-import { DECKS, RESULTS, INFO } from '@/utils/constants';
+import { DECKS, RESULTS, INFO } from '@/constants';
 
 export const searchAnalyzeForm = proxy({
   ...structuredClone(defaultsAnalyzeForm),

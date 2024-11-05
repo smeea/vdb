@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import { AnalyzeTournamentDeck, AnalyzeTournamentResultTotal } from '@/components';
 import { useApp } from '@/context';
 import { decksSort } from '@/utils';
-import { RANK_HIGH_LOW, RANK_LOW_HIGH } from '@/utils/constants';
+import { RANK_HIGH_LOW, RANK_LOW_HIGH } from '@/constants';
 
 const AnalyzerTournamentResult = ({ decks }) => {
   const { analyzeSearchSort, changeAnalyzeSearchSort } = useApp();

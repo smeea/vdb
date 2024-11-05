@@ -3,7 +3,7 @@ import { Select } from '@/components';
 import cryptArtists from '@/assets/data/artistsCrypt.json';
 import libraryArtists from '@/assets/data/artistsLib.json';
 import { useApp } from '@/context';
-import { ARTIST, CRYPT, ANY } from '@/utils/constants';
+import { ARTIST, CRYPT, ANY } from '@/constants';
 
 const SearchFormArtist = ({ target, value, onChange }) => {
   const { isXWide } = useApp();

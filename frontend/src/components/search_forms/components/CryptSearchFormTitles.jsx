@@ -15,7 +15,7 @@ import {
   MAGAJI,
   VOTE_1,
   VOTE_2,
-} from '@/utils/constants';
+} from '@/constants';
 
 const CryptSearchFormTitles = ({ value, onChange }) => {
   return (

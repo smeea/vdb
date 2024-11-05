@@ -12,7 +12,7 @@ import {
 } from '@/components';
 import { useDebounce } from '@/hooks';
 import { useApp } from '@/context';
-import { TEXT } from '@/utils/constants';
+import { TEXT } from '@/constants';
 
 const SearchFormTextAndButtons = ({
   searchForm,

@@ -2,7 +2,7 @@ import React from 'react';
 import { twMerge } from 'tailwind-merge';
 import { Flag } from '@/components';
 import { useApp } from '@/context';
-import { EN, ES, FR, PT } from '@/utils/constants';
+import { EN, ES, FR, PT } from '@/constants';
 
 const LanguageMenu = ({ handleClose }) => {
   const { lang, changeLang } = useApp();

@@ -24,7 +24,7 @@ import {
 import { sanitizeFormState } from '@/utils';
 import { useApp, setTwdResults, searchTwdForm, clearSearchForm } from '@/context';
 import { archiveServices } from '@/services';
-import { TWD, CRYPT, LIBRARY } from '@/utils/constants';
+import { TWD, CRYPT, LIBRARY } from '@/constants';
 
 const TwdSearchForm = ({ error, setError }) => {
   const { cryptCardBase, libraryCardBase, showFloatingButtons, inventoryMode, isMobile } = useApp();

@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import { FlexGapped, PlaytestReportsAllCardOrPrecon } from '@/components';
 import { cryptSort, librarySort } from '@/utils';
 import { useApp } from '@/context';
-import { CRYPT } from '@/utils/constants';
+import { CRYPT } from '@/constants';
 
 const PlaytestReportsAllCardsWrapper = ({ reports, target, sortMethod, maxSameScore }) => {
   const { cryptCardBase, libraryCardBase } = useApp();

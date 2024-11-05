@@ -1,4 +1,4 @@
-import { ANY, POD, PLAYTEST, PROMO, ID } from '@/utils/constants';
+import { ANY, POD, PLAYTEST, PROMO, ID } from '@/constants';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 import disciplinesList from '@/assets/data/disciplinesList.json';
 import virtuesList from '@/assets/data/virtuesList.json';

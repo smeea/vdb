@@ -7,7 +7,7 @@ import {
   DeckLibraryHeader,
   FlexGapped,
 } from '@/components';
-import { MASTER } from '@/utils/constants';
+import { MASTER } from '@/constants';
 import { useModalCardController, useDeckLibrary } from '@/hooks';
 
 const ReviewLibrary = ({ cardChange, cardsFrom, cardsTo }) => {

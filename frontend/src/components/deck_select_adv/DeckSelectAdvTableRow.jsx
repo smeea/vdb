@@ -22,7 +22,7 @@ import {
   ResultLegalIcon,
 } from '@/components';
 import { limitedStore, useApp, deckToggleInventoryState } from '@/context';
-import { S, H, INVENTORY_TYPE, BANNED, LEGAL, PLAYTEST } from '@/utils/constants';
+import { S, H, INVENTORY_TYPE, BANNED, LEGAL, PLAYTEST } from '@/constants';
 import { getClan, getRestrictions } from '@/utils';
 
 const DeckSelectAdvTableRow = ({

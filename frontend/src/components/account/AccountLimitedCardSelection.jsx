@@ -2,7 +2,7 @@ import React from 'react';
 import { useSnapshot } from 'valtio';
 import { FlexGapped, ResultCryptTable, ResultLibraryTable, NewCardSelect } from '@/components';
 import { limitedCardChange, limitedFullStore, useApp } from '@/context';
-import { CRYPT, LIBRARY, BANNED, ALLOWED } from '@/utils/constants';
+import { CRYPT, LIBRARY, BANNED, ALLOWED } from '@/constants';
 
 const AccountLimitedCardSelection = ({ inBanned }) => {
   const { cryptCardBase, libraryCardBase } = useApp();

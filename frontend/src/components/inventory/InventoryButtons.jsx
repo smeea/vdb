@@ -13,7 +13,7 @@ import {
 } from '@/components';
 import FolderPlus from '@/assets/images/icons/folder-plus.svg?react';
 import { useApp, deckStore, inventoryStore } from '@/context';
-import { CRYPT, LIBRARY, DECKS } from '@/utils/constants';
+import { CRYPT, LIBRARY, DECKS } from '@/constants';
 
 const InventoryButtons = ({
   setShowAddDeck,

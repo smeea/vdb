@@ -1,6 +1,6 @@
 import React from 'react';
 import { Radio } from '@/components';
-import { ALL, OK, NOK } from '@/utils/constants';
+import { ALL, OK, NOK } from '@/constants';
 
 const InventoryShowSelect = ({ category, setCategory }) => {
   return (

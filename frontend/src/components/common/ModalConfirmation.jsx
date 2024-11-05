@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { FlexGapped, Input, Modal, Button, ErrorOverlay } from '@/components';
 import { useApp } from '@/context';
-import { YES } from '@/utils/constants';
+import { YES } from '@/constants';
 
 const ModalConfirmation = ({
   title,

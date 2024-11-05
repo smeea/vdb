@@ -29,7 +29,7 @@ import {
   NAME,
   PRECONS,
   XLSX,
-} from '@/utils/constants';
+} from '@/constants';
 
 const PlaytestReportsAll = () => {
   const {

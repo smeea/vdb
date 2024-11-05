@@ -19,7 +19,7 @@ import {
   NAME,
   PLAYER,
   CRYPT,
-} from '@/utils/constants';
+} from '@/constants';
 import { cryptSort } from '@/utils';
 import { useApp } from '@/context';
 import { useModalCardController } from '@/hooks';

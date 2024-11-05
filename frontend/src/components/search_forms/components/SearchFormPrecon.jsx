@@ -9,7 +9,7 @@ import {
 } from '@/components';
 import { useApp } from '@/context';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
-import { FIRST, REPRINT, PRINT, BCP, PLAYTEST, ANY, ONLY } from '@/utils/constants';
+import { FIRST, REPRINT, PRINT, BCP, PLAYTEST, ANY, ONLY } from '@/constants';
 
 const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
   const { playtestMode, isMobile, isXWide } = useApp();

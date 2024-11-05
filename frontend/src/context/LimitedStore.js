@@ -12,7 +12,7 @@ import {
   LIMITED_BANNED_LIBRARY,
   LIMITED_ALLOWED_LIBRARY,
   LIMITED_ALLOWED_CRYPT,
-} from '@/utils/constants';
+} from '@/constants';
 
 export const limitedFullStore = proxy({
   [CRYPT]: {},

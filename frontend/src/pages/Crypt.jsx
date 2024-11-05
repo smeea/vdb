@@ -16,7 +16,7 @@ import {
   setDeck,
   deckStore,
 } from '@/context';
-import { CRYPT, CRYPT_COMPARE, DECK, DECKS } from '@/utils/constants';
+import { CRYPT, CRYPT_COMPARE, DECK, DECKS } from '@/constants';
 
 const Crypt = () => {
   const { showCryptSearch, addMode, toggleAddMode, isMobile, isDesktop, lastDeckId } = useApp();

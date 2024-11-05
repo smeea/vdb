@@ -20,7 +20,7 @@ import {
   PLAYER,
   TYPE,
   DISCIPLINE,
-} from '@/utils/constants';
+} from '@/constants';
 import { librarySort } from '@/utils';
 import { useApp } from '@/context';
 import { useModalCardController } from '@/hooks';

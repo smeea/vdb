@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 import { Select, ResultPreconClan } from '@/components';
 import { useApp } from '@/context';
-import { PLAYTEST } from '@/utils/constants';
+import { PLAYTEST } from '@/constants';
 
 const DeckSelectPrecon = ({ deckid, handleSelect }) => {
   const { isMobile, playtestMode } = useApp();

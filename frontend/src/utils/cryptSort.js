@@ -13,7 +13,7 @@ import {
   QUANTITY,
   QUANTITYx,
   SECT,
-} from '@/utils/constants';
+} from '@/constants';
 
 import {
   bySect,

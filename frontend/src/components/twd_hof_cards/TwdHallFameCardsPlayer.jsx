@@ -21,7 +21,7 @@ import {
   NAME,
   SECT,
   TYPE,
-} from '@/utils/constants';
+} from '@/constants';
 
 const TwdHallFameCardsPlayer = ({ name, cards }) => {
   const {

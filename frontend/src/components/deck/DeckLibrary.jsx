@@ -8,7 +8,7 @@ import {
   FlexGapped,
 } from '@/components';
 import { useApp } from '@/context';
-import { MASTER } from '@/utils/constants';
+import { MASTER } from '@/constants';
 import { useModalCardController, useDeckLibrary } from '@/hooks';
 
 const DeckLibrary = ({ inSearch, inPreview, inMissing, deck }) => {

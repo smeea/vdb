@@ -3,7 +3,7 @@ import { twMerge } from 'tailwind-merge';
 import Shuffle from '@/assets/images/icons/shuffle.svg?react';
 import PinAngleFill from '@/assets/images/icons/pin-angle-fill.svg?react';
 import { cardToggleInventoryState } from '@/context';
-import { S, INVENTORY_TYPE } from '@/utils/constants';
+import { S, INVENTORY_TYPE } from '@/constants';
 
 const DeckCardToggleInventoryStateTd = ({ card, deck }) => {
   const { deckid, isPublic, isAuthor, isFrozen } = deck;

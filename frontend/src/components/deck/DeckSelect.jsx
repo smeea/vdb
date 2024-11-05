@@ -14,7 +14,7 @@ import {
   Button,
 } from '@/components';
 import { useApp, deckToggleInventoryState } from '@/context';
-import { S, H, MY, RECENT, PRECONS, INVENTORY_TYPE } from '@/utils/constants';
+import { S, H, MY, RECENT, PRECONS, INVENTORY_TYPE } from '@/constants';
 
 const DeckSelect = ({
   deck,

@@ -7,7 +7,7 @@ import {
   SearchFormButtonDel,
 } from '@/components';
 import { useApp } from '@/context';
-import { ANY } from '@/utils/constants';
+import { ANY } from '@/constants';
 
 const CryptSearchFormSect = ({ value, searchForm, onChange }) => {
   const { isXWide } = useApp();

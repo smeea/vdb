@@ -1,7 +1,7 @@
 import React from 'react';
 import { Select } from '@/components';
 import { useApp } from '@/context';
-import { RANK, ANY, FROM, TO } from '@/utils/constants';
+import { RANK, ANY, FROM, TO } from '@/constants';
 
 const AnalyzeSearchFormRank = ({ value, onChange }) => {
   const { isXWide } = useApp();

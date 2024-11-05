@@ -3,7 +3,7 @@ import { ResultModal, TwdResultCryptTableRow, Warning } from '@/components';
 import { useApp } from '@/context';
 import { countCards, countTotalCost } from '@/utils';
 import { useDeckCrypt, useModalCardController } from '@/hooks';
-import { BANNED, GROUPS, CAPACITY } from '@/utils/constants';
+import { BANNED, GROUPS, CAPACITY } from '@/constants';
 
 const TwdResultCryptTable = ({ crypt }) => {
   const { cryptDeckSort, setShowFloatingButtons } = useApp();

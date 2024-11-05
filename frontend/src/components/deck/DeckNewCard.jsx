@@ -1,7 +1,7 @@
 import React from 'react';
 import { NewCardSelect } from '@/components';
 import { useApp, deckCardChange } from '@/context';
-import { CRYPT } from '@/utils/constants';
+import { CRYPT } from '@/constants';
 
 const DeckNewCard = ({ target, cards, deckid, handleClose, cardChange, menuPlacement }) => {
   const { cryptCardBase, libraryCardBase } = useApp();

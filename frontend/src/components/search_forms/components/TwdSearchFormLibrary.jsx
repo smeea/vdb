@@ -9,7 +9,7 @@ import {
 } from '@/components';
 import { useApp } from '@/context';
 import { useModalCardController } from '@/hooks';
-import { GT, LIBRARY } from '@/utils/constants';
+import { GT, LIBRARY } from '@/constants';
 
 const TwdSearchFormLibrary = ({ value, form }) => {
   const { libraryCardBase, setShowFloatingButtons, isMobile } = useApp();

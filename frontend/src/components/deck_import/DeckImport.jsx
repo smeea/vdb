@@ -13,7 +13,7 @@ import {
 import { useApp, deckStore, deckAdd } from '@/context';
 import { useDeckImport } from '@/hooks';
 import { deckServices } from '@/services';
-import { DECK } from '@/utils/constants';
+import { DECK } from '@/constants';
 
 const DeckImport = ({ setShowInfo, isOnlyNew }) => {
   const {

@@ -1,6 +1,6 @@
 import ky from 'ky';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
-import { PRECONS, CARD_TEXT, PLAYTEST } from '@/utils/constants';
+import { PRECONS, CARD_TEXT, PLAYTEST } from '@/constants';
 import { useDeck, useTags } from '@/hooks';
 
 const CARD_VERSION = import.meta.env.VITE_CARD_VERSION;

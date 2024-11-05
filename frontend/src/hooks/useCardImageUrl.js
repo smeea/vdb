@@ -1,4 +1,4 @@
-import { ASCII_NAME, EN } from '@/utils/constants';
+import { ASCII_NAME, EN } from '@/constants';
 
 const useCardImageUrl = (card, set, language) => {
   const isPlaytest = card.Id > 210000 || (card.Id < 200000 && card.Id > 110000);

@@ -22,7 +22,7 @@ import {
   CARDINAL,
   REGENT,
   MAGAJI,
-} from '@/utils/constants';
+} from '@/constants';
 
 const LibrarySearchFormTitle = ({ value, onChange, searchForm }) => {
   const { isXWide } = useApp();

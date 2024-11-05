@@ -4,7 +4,7 @@ import { Button } from '@/components';
 import PeopleFill from '@/assets/images/icons/people-fill.svg?react';
 import TrophyFill from '@/assets/images/icons/trophy-fill.svg?react';
 import { clearSearchForm, searchTwdForm, searchPdaForm } from '@/context';
-import { CRYPT, LIBRARY, PDA, GT } from '@/utils/constants';
+import { CRYPT, LIBRARY, PDA, GT } from '@/constants';
 
 const ButtonSearchCardInDecks = ({ cardid, target, handleClose }) => {
   const navigate = useNavigate();

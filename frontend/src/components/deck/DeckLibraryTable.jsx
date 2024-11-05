@@ -1,5 +1,5 @@
 import React from 'react';
-import { ASCII_NAME } from '@/utils/constants';
+import { ASCII_NAME } from '@/constants';
 import { DeckLibraryTableRow } from '@/components';
 
 const DeckLibraryTable = ({

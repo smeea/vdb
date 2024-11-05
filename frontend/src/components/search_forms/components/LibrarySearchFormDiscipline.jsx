@@ -11,7 +11,7 @@ import disciplinesList from '@/assets/data/disciplinesList.json';
 import disciplinesExtraList from '@/assets/data/disciplinesExtraList.json';
 import virtuesList from '@/assets/data/virtuesList.json';
 import { useApp } from '@/context';
-import { NOT_REQUIRED, ANY } from '@/utils/constants';
+import { NOT_REQUIRED, ANY } from '@/constants';
 
 const LibrarySearchFormDiscipline = ({ value, onChange, searchForm }) => {
   const { isXWide, isMobile } = useApp();

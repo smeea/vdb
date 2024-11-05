@@ -3,7 +3,7 @@ import { Select } from '@/components';
 import TrophyFill from '@/assets/images/icons/trophy-fill.svg?react';
 import PeopleFill from '@/assets/images/icons/people-fill.svg?react';
 import { useApp } from '@/context';
-import { TWD, PDA } from '@/utils/constants';
+import { TWD, PDA } from '@/constants';
 
 const DeckSelectRecent = ({ deckid, handleSelect }) => {
   const { recentDecks, isMobile } = useApp();

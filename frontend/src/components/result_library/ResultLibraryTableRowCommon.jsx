@@ -19,7 +19,7 @@ import {
   POOL_COST,
   BLOOD_COST,
   BURN_OPTION,
-} from '@/utils/constants';
+} from '@/constants';
 import { useApp } from '@/context';
 
 const Type = ({ card, handleClick }) => {

@@ -4,7 +4,7 @@ import Printer from '@/assets/images/icons/printer.svg?react';
 import { Spinner, MenuButton, MenuItems, MenuItem, DeckProxySelectModal } from '@/components';
 import { countCards, cryptSort, librarySort } from '@/utils';
 import { useCardImageUrl } from '@/hooks';
-import { EN, GROUPED_TYPE } from '@/utils/constants';
+import { EN, GROUPED_TYPE } from '@/constants';
 import { useApp } from '@/context';
 
 const DeckProxyButton = ({ missingCrypt, missingLibrary, deck, inDiff }) => {

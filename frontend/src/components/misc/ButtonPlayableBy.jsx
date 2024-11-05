@@ -4,7 +4,7 @@ import Bullseye from '@/assets/images/icons/bullseye.svg?react';
 import { Button } from '@/components';
 import { clearSearchForm } from '@/context';
 import { useLibraryRequirements } from '@/hooks';
-import { CRYPT, LE, GE } from '@/utils/constants';
+import { CRYPT, LE, GE } from '@/constants';
 
 const ButtonPlayableBy = ({ card, handleClose }) => {
   const navigate = useNavigate();

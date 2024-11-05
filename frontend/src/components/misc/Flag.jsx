@@ -3,7 +3,7 @@ import FlagEn from '@/assets/images/flags/en.svg?react';
 import FlagEs from '@/assets/images/flags/es.svg?react';
 import FlagFr from '@/assets/images/flags/fr.svg?react';
 import FlagBr from '@/assets/images/flags/br.svg?react';
-import { EN, ES, FR, PT } from '@/utils/constants';
+import { EN, ES, FR, PT } from '@/constants';
 
 const Flag = ({ value, size = '18' }) => {
   const languages = {

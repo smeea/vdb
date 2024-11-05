@@ -1,6 +1,6 @@
 import React from 'react';
 import { twMerge } from 'tailwind-merge';
-import { BLOOD_COST, POOL_COST } from '@/utils/constants';
+import { BLOOD_COST, POOL_COST } from '@/constants';
 
 const ResultLibraryCost = ({ valueBlood, valuePool, className }) => {
   return (

@@ -14,7 +14,7 @@ import {
   ANY,
   TWD,
   PDA,
-} from '@/utils/constants';
+} from '@/constants';
 
 export const searchResults = proxy({});
 

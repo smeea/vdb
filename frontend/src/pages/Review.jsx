@@ -16,7 +16,7 @@ import {
 } from '@/components';
 import { useApp, deckStore } from '@/context';
 import { useDeck, useTags } from '@/hooks';
-import { DECKS, CRYPT, LIBRARY } from '@/utils/constants';
+import { DECKS, CRYPT, LIBRARY } from '@/constants';
 import { deepClone } from '@/utils';
 
 const Review = () => {

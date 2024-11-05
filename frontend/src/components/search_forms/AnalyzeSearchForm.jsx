@@ -25,7 +25,7 @@ import {
   clearAnalyzeForm,
   analyzeStore,
 } from '@/context';
-import { DECKS, ANALYZE } from '@/utils/constants';
+import { DECKS, ANALYZE } from '@/constants';
 
 const AnalyzeSearchForm = () => {
   const { cryptCardBase, libraryCardBase, isMobile } = useApp();

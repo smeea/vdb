@@ -7,7 +7,7 @@ import {
   InventoryShowSelect,
 } from '@/components';
 import { inventoryStore } from '@/context';
-import { OK } from '@/utils/constants';
+import { OK } from '@/constants';
 
 const InventoryMenu = ({
   sharedCrypt,

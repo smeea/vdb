@@ -21,7 +21,7 @@ import {
   POD,
   BCP,
   PROMO,
-} from '@/utils/constants';
+} from '@/constants';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 
 const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {

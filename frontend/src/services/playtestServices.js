@@ -1,5 +1,5 @@
 import ky from 'ky';
-import { PRECONS, CARDS, GENERAL, NAME } from '@/utils/constants';
+import { PRECONS, CARDS, GENERAL, NAME } from '@/constants';
 
 export const submitReport = (id, value, isPrecon) => {
   const url = `${import.meta.env.VITE_API_URL}/playtest/${isPrecon ? PRECONS : CARDS}/${id}`;

@@ -5,7 +5,7 @@ import NodeMinusFill from '@/assets/images/icons/node-minus-fill.svg?react';
 import { ButtonIconed, ModalConfirmation } from '@/components';
 import { deckStore, useApp } from '@/context';
 import { deckServices } from '@/services';
-import { DECKS } from '@/utils/constants';
+import { DECKS } from '@/constants';
 
 const DeckBranchDeleteButton = ({ deck, noText }) => {
   const { isDesktop, setShowMenuButtons } = useApp();

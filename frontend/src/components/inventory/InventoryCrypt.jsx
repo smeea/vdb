@@ -11,7 +11,7 @@ import {
   CRYPT,
   NAME,
   QUANTITY,
-} from '@/utils/constants';
+} from '@/constants';
 
 const InventoryCrypt = ({
   compact,
