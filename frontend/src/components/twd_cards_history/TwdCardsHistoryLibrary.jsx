@@ -25,6 +25,7 @@ import { librarySort } from '@/utils';
 import { useApp } from '@/context';
 import { useModalCardController } from '@/hooks';
 import disciplinesList from '@/assets/data/disciplinesList.json';
+import disciplinesExtraList from '@/assets/data/disciplinesExtraList.json';
 import virtuesList from '@/assets/data/virtuesList.json';
 import cardtypeSorted from '@/assets/data/cardtypeSorted.json';
 
@@ -56,14 +57,9 @@ const TwdCardsHistoryLibrary = ({ cards, players }) => {
 
   const cardsByDiscipline = {};
   const cardsByDisciplineTotal = {};
-  const disciplinesExtendedList = [
-    ...Object.keys(disciplinesList),
-    'Flight',
-    'Maleficia',
-    'Striga',
-  ].toSorted();
+  const disciplines = [...Object.keys(disciplinesList), ...disciplinesExtraList].toSorted();
 
-  [ALL, NONE, ...disciplinesExtendedList, ...Object.keys(virtuesList)].forEach((i) => {
+  [ALL, NONE, ...disciplines, ...Object.keys(virtuesList)].forEach((i) => {
     cardsByDiscipline[i] = {};
     cardsByDisciplineTotal[i] = 0;
   });

@@ -126,7 +126,7 @@ const getLibraryText = (library, format) => {
 
   const libraryTitle = `Library (${libraryTotal} cards)`;
   result += `${libraryTitle}\n`;
-  if (format === 'text') {
+  if (format === TEXT) {
     result += '='.repeat(libraryTitle.length);
     result += '\n';
   }
@@ -140,7 +140,7 @@ const getLibraryText = (library, format) => {
       typeTitle += ')\n';
       result += typeTitle;
 
-      if (format === 'text') {
+      if (format === TEXT) {
         result += '-'.repeat(typeTitle.length);
         result += '\n';
       }
@@ -285,7 +285,7 @@ const exportText = (deck) => {
   result += '\n';
   result += getCryptText(sortedCrypt);
   result += '\n';
-  result += getLibraryText(deck.library, 'text');
+  result += getLibraryText(deck.library, TEXT);
 
   return result;
 };

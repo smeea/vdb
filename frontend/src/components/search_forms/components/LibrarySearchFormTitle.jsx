@@ -7,7 +7,22 @@ import {
   SearchFormButtonDel,
 } from '@/components';
 import { useApp } from '@/context';
-import { ANY } from '@/utils/constants';
+import {
+  ANY,
+  TITLED,
+  NON_TITLED,
+  PRIMOGEN,
+  PRINCE,
+  JUSTICAR,
+  INNER_CIRCLE,
+  BARON,
+  BISHOP,
+  ARCHBISHOP,
+  PRISCUS,
+  CARDINAL,
+  REGENT,
+  MAGAJI,
+} from '@/utils/constants';
 
 const LibrarySearchFormTitle = ({ value, onChange, searchForm }) => {
   const { isXWide } = useApp();
@@ -15,28 +30,27 @@ const LibrarySearchFormTitle = ({ value, onChange, searchForm }) => {
   const name = 'title';
 
   const options = [
-    'ANY',
-    'Not Required',
-    'Non-titled',
-    'Titled',
-    'Primogen',
-    'Prince',
-    'Justicar',
-    'Inner Circle',
-    'Baron',
-    'Bishop',
-    'Archbishop',
-    'Priscus',
-    'Cardinal',
-    'Regent',
-    'Magaji',
+    ['ANY', ANY],
+    ['Non-titled', NON_TITLED],
+    ['Titled', TITLED],
+    ['Primogen', PRIMOGEN],
+    ['Prince', PRINCE],
+    ['Justicar', JUSTICAR],
+    ['Inner Circle', INNER_CIRCLE],
+    ['Baron', BARON],
+    ['Bishop', BISHOP],
+    ['Archbishop', ARCHBISHOP],
+    ['Priscus', PRISCUS],
+    ['Cardinal', CARDINAL],
+    ['Regent', REGENT],
+    ['Magaji', MAGAJI],
   ].map((i) => ({
-    value: i.toLowerCase(),
+    value: i[1],
     name: name,
     label: (
       <div className="flex items-center">
         <div className="flex w-[40px]" />
-        {i}
+        {i[0]}
       </div>
     ),
   }));
@@ -68,7 +82,7 @@ const LibrarySearchFormTitle = ({ value, onChange, searchForm }) => {
             isClearable={value.value[0] !== ANY}
             name={0}
             maxMenuHeight={maxMenuHeight}
-            value={options.find((obj) => obj.value === value.value[0].toLowerCase())}
+            value={options.find((obj) => obj.value === value.value[0])}
             onChange={(e, id) => (e ? onChange(e, id) : onChange({ name: name, value: ANY }, id))}
           />
         </div>

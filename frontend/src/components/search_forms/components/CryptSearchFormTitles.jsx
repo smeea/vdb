@@ -1,5 +1,21 @@
 import React from 'react';
 import { Checkbox } from '@/components';
+import {
+  PRIMOGEN,
+  PRINCE,
+  NON_TITLED,
+  JUSTICAR,
+  INNER_CIRCLE,
+  BARON,
+  BISHOP,
+  ARCHBISHOP,
+  PRISCUS,
+  CARDINAL,
+  REGENT,
+  MAGAJI,
+  VOTE_1,
+  VOTE_2,
+} from '@/utils/constants';
 
 const CryptSearchFormTitles = ({ value, onChange }) => {
   return (
@@ -8,40 +24,40 @@ const CryptSearchFormTitles = ({ value, onChange }) => {
       <div className="flex">
         <div className="flex w-7/12 flex-col gap-0.5">
           {[
-            ['primogen', 'Primogen'],
-            ['prince', 'Prince'],
-            ['justicar', 'Justicar'],
-            ['inner circle', 'Inner Circle'],
-            ['baron', 'Baron'],
-            ['1 vote', '1 vote (titled)'],
-            ['2 votes', '2 votes (titled)'],
+            ['Primogen', PRIMOGEN],
+            ['Prince', PRINCE],
+            ['Justicar', JUSTICAR],
+            ['Inner Circle', INNER_CIRCLE],
+            ['Baron', BARON],
+            ['1 vote (titled)', VOTE_1],
+            ['2 votes (titled)', VOTE_2],
           ].map((i, index) => (
             <Checkbox
               key={index}
               name="titles"
-              value={i[0]}
-              label={i[1]}
-              checked={value[i[0]]}
+              value={i[1]}
+              label={i[0]}
+              checked={value[i[1]]}
               onChange={onChange}
             />
           ))}
         </div>
         <div className="flex w-5/12 flex-col gap-0.5">
           {[
-            ['bishop', 'Bishop'],
-            ['archbishop', 'Archbishop'],
-            ['priscus', 'Priscus'],
-            ['cardinal', 'Cardinal'],
-            ['regent', 'Regent'],
-            ['magaji', 'Magaji'],
-            ['none', 'Non-titled'],
+            ['Bishop', BISHOP],
+            ['Archbishop', ARCHBISHOP],
+            ['Priscus', PRISCUS],
+            ['Cardinal', CARDINAL],
+            ['Regent', REGENT],
+            ['Magaji', MAGAJI],
+            ['Non-titled', NON_TITLED],
           ].map((i, index) => (
             <Checkbox
               key={index}
               name="titles"
-              value={i[0]}
-              label={i[1]}
-              checked={value[i[0]]}
+              value={i[1]}
+              label={i[0]}
+              checked={value[i[1]]}
               onChange={onChange}
             />
           ))}

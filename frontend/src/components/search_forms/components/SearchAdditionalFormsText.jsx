@@ -6,6 +6,7 @@ import {
   SearchFormButtonLogicToggle,
   SearchAdditionalFormsTextForm,
 } from '@/components';
+import { TEXT } from '@/utils/constants';
 
 const SearchAdditionalFormsText = ({ value, onChange, onChangeOptions, searchForm }) => {
   const options = [
@@ -14,7 +15,7 @@ const SearchAdditionalFormsText = ({ value, onChange, onChangeOptions, searchFor
       label: 'Only in Name',
     },
     {
-      value: 'text',
+      value: TEXT,
       label: 'Only in Text',
     },
     {

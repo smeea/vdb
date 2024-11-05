@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 import { useSnapshot } from 'valtio';
 import disciplinesList from '@/assets/data/disciplinesList.json';
+import disciplinesExtraList from '@/assets/data/disciplinesExtraList.json';
 import virtuesList from '@/assets/data/virtuesList.json';
 import cardtypeSorted from '@/assets/data/cardtypeSorted.json';
 import { SOFT, HARD, LIBRARY, ALL, NONE, OK, NOK } from '@/utils/constants';
@@ -23,14 +24,9 @@ const useInventoryLibrary = (cards = {}, category = OK, compact, type, disciplin
       missingByType[i] = {};
     });
 
-    const disciplinesExtendedList = [
-      ...Object.keys(disciplinesList),
-      'Flight',
-      'Maleficia',
-      'Striga',
-    ].toSorted();
+    const disciplines = [...Object.keys(disciplinesList), ...disciplinesExtraList].toSorted();
 
-    [ALL, NONE, ...disciplinesExtendedList, ...Object.keys(virtuesList)].forEach((i) => {
+    [ALL, NONE, ...disciplines, ...Object.keys(virtuesList)].forEach((i) => {
       cardsByDiscipline[i] = {};
       missingByDiscipline[i] = {};
     });

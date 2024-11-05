@@ -8,35 +8,31 @@ import {
   SearchFormButtonDel,
 } from '@/components';
 import disciplinesList from '@/assets/data/disciplinesList.json';
+import disciplinesExtraList from '@/assets/data/disciplinesExtraList.json';
 import virtuesList from '@/assets/data/virtuesList.json';
 import { useApp } from '@/context';
-import { ANY } from '@/utils/constants';
+import { NOT_REQUIRED, ANY } from '@/utils/constants';
 
 const LibrarySearchFormDiscipline = ({ value, onChange, searchForm }) => {
   const { isXWide, isMobile } = useApp();
   const maxMenuHeight = isXWide ? 500 : 350;
   const name = 'discipline';
-  const disciplinesExtendedList = [
-    ...Object.keys(disciplinesList),
-    'Flight',
-    'Maleficia',
-    'Striga',
-  ].toSorted();
+  const disciplines = [...Object.keys(disciplinesList), ...disciplinesExtraList].toSorted();
 
   const options = [
-    'ANY',
-    'Not Required',
-    ...disciplinesExtendedList,
-    ...Object.keys(virtuesList),
+    ['ANY', ANY],
+    ['Not Required', NOT_REQUIRED],
+    ...disciplines.map((d) => [d, d.toLowerCase()]),
+    ...Object.keys(virtuesList).map((v) => [v, v.toLowerCase()]),
   ].map((i) => ({
-    value: i.toLowerCase(),
+    value: i[1],
     name: name,
     label: (
       <div className="flex items-center">
         <div className="flex w-[40px] justify-center">
-          {!['ANY', 'Not Required'].includes(i) && <ResultDisciplineImage value={i} size="lg" />}
+          {![ANY, NOT_REQUIRED].includes(i[1]) && <ResultDisciplineImage value={i[1]} size="lg" />}
         </div>
-        {i}
+        {i[0]}
       </div>
     ),
   }));
@@ -70,7 +66,7 @@ const LibrarySearchFormDiscipline = ({ value, onChange, searchForm }) => {
             isClearable={value.value[0] !== ANY}
             name={0}
             maxMenuHeight={maxMenuHeight}
-            value={options.find((obj) => obj.value === value.value[0].toLowerCase())}
+            value={options.find((obj) => obj.value === value.value[0])}
             onChange={(e, id) => (e ? onChange(e, id) : onChange({ name: name, value: ANY }, id))}
           />
         </div>

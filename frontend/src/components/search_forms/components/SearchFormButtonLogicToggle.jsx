@@ -1,11 +1,11 @@
 import React from 'react';
 import { Button } from '@/components';
-import { AND, NOT, OR, ONLY } from '@/utils/constants';
+import { TEXT, AND, NOT, OR, ONLY } from '@/utils/constants';
 import Exclamation from '@/assets/images/icons/exclamation.svg?react';
 
 const SearchFormButtonLogicToggle = ({ name, i, value, searchForm, withAnd, withOnly }) => {
   const handleToggleForm = () => {
-    if (name === 'text') {
+    if (name === TEXT) {
       switch (value) {
         case AND:
           searchForm[name][i].logic = NOT;

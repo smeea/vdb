@@ -44,6 +44,7 @@ import {
   LIBRARY,
   SOFT,
   HARD,
+  TEXT,
 } from '@/utils/constants';
 
 const LibrarySearchForm = () => {
@@ -89,7 +90,7 @@ const LibrarySearchForm = () => {
 
   const handleTextCheckboxesChange = (event) => {
     const { name, value } = event.currentTarget;
-    if (['name', 'text'].includes(value)) {
+    if (['name', TEXT].includes(value)) {
       searchLibraryForm.text[name]['in'] =
         searchLibraryForm.text[name]['in'] === value ? false : value;
     } else {

@@ -1,3 +1,32 @@
+import {
+  CAMARILLA,
+  SABBAT,
+  LAIBON,
+  INDEPENDENT,
+  ANARCH,
+  IMBUED,
+  NON_CAMARILLA,
+  NON_SABBAT,
+  NON_LAIBON,
+  NON_INDEPENDENT,
+  NON_ANARCH,
+  NON_IMBUED,
+  PRIMOGEN,
+  PRINCE,
+  JUSTICAR,
+  INNER_CIRCLE,
+  BARON,
+  BISHOP,
+  ARCHBISHOP,
+  PRISCUS,
+  CARDINAL,
+  REGENT,
+  MAGAJI,
+  TITLED,
+  NON_TITLED,
+  NONE,
+} from '@/utils/constants';
+
 const useLibraryRequirements = (card) => {
   let isCapacity;
   let isClan = [];
@@ -9,31 +38,24 @@ const useLibraryRequirements = (card) => {
   let isBlackHand;
   let isSeraph;
 
-  const sects = ['camarilla', 'sabbat', 'laibon', 'independent', 'anarch', 'imbued'];
+  const sects = [CAMARILLA, SABBAT, LAIBON, INDEPENDENT, ANARCH, IMBUED];
 
-  const nonSects = [
-    'non-camarilla',
-    'non-sabbat',
-    'non-laibon',
-    'non-independent',
-    'non-anarch',
-    'non-imbued',
-  ];
+  const nonSects = [NON_CAMARILLA, NON_SABBAT, NON_LAIBON, NON_INDEPENDENT, NON_ANARCH, NON_IMBUED];
 
   const titles = [
-    'primogen',
-    'prince',
-    'justicar',
-    'inner circle',
-    'baron',
-    'bishop',
-    'archbishop',
-    'priscus',
-    'cardinal',
-    'regent',
-    'magaji',
-    'titled',
-    'non-titled',
+    PRIMOGEN,
+    PRINCE,
+    JUSTICAR,
+    INNER_CIRCLE,
+    BARON,
+    BISHOP,
+    ARCHBISHOP,
+    PRISCUS,
+    CARDINAL,
+    REGENT,
+    MAGAJI,
+    TITLED,
+    NON_TITLED,
   ];
 
   const uselessReqs = ['non-sterile'];
@@ -57,7 +79,7 @@ const useLibraryRequirements = (card) => {
       if (uselessReqs.includes(req)) return;
       if (sects.includes(req)) isSect = req;
       if (nonSects.includes(req)) isNonSect = req.replace('non-', '');
-      if (titles.includes(req)) isTitle.push(req.replace('non-titled', 'none'));
+      if (titles.includes(req)) isTitle.push(req.replace(NON_TITLED, NONE));
       if (req === 'red list') isRedlist = true;
       if (req.includes('capacity')) isCapacity = req.replace('capacity ', '');
       if (req.includes('seraph')) isSeraph = true;

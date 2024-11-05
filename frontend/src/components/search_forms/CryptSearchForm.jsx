@@ -44,6 +44,7 @@ import {
   CRYPT,
   SOFT,
   HARD,
+  TEXT,
 } from '@/utils/constants';
 
 const CryptSearchForm = () => {
@@ -89,7 +90,7 @@ const CryptSearchForm = () => {
 
   const handleTextCheckboxesChange = (event) => {
     const { name, value } = event.currentTarget;
-    if (['name', 'text'].includes(value)) {
+    if (['name', TEXT].includes(value)) {
       searchCryptForm.text[name]['in'] = searchCryptForm.text[name]['in'] === value ? false : value;
     } else {
       searchCryptForm.text[name][value] = !searchCryptForm.text[name][value];

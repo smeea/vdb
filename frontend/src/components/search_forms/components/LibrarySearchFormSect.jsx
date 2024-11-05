@@ -7,7 +7,16 @@ import {
   SearchFormButtonDel,
 } from '@/components';
 import { useApp } from '@/context';
-import { ANY } from '@/utils/constants';
+import {
+  ANY,
+  NOT_REQUIRED,
+  CAMARILLA,
+  SABBAT,
+  LAIBON,
+  INDEPENDENT,
+  ANARCH,
+  IMBUED,
+} from '@/utils/constants';
 
 const LibrarySearchFormSect = ({ value, searchForm, onChange }) => {
   const { isXWide } = useApp();
@@ -15,21 +24,21 @@ const LibrarySearchFormSect = ({ value, searchForm, onChange }) => {
   const name = 'sect';
 
   const options = [
-    'ANY',
-    'Not Required',
-    'Camarilla',
-    'Sabbat',
-    'Laibon',
-    'Independent',
-    'Anarch',
-    'Imbued',
+    ['ANY', ANY],
+    ['Not Required', NOT_REQUIRED],
+    ['Camarilla', CAMARILLA],
+    ['Sabbat', SABBAT],
+    ['Laibon', LAIBON],
+    ['Independent', INDEPENDENT],
+    ['Anarch', ANARCH],
+    ['Imbued', IMBUED],
   ].map((i) => ({
-    value: i.toLowerCase(),
+    value: i[1],
     name: name,
     label: (
       <div className="flex items-center">
         <div className="flex w-[40px]" />
-        {i}
+        {i}[0]
       </div>
     ),
   }));
@@ -61,7 +70,7 @@ const LibrarySearchFormSect = ({ value, searchForm, onChange }) => {
             isClearable={value.value[0] !== ANY}
             name={0}
             maxMenuHeight={maxMenuHeight}
-            value={options.find((obj) => obj.value === value.value[0].toLowerCase())}
+            value={options.find((obj) => obj.value === value.value[0])}
             onChange={(e, id) => (e ? onChange(e, id) : onChange({ name: name, value: ANY }, id))}
           />
         </div>

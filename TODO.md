@@ -21,6 +21,9 @@
 - Remove legacy polyfills when Safari adopts groupBy
 - Decapitalize card.Value
 - Refactor to constants:
-  - DeckStore
   - SanitizeFormState
-  - FormState
+  - SearchForm (.value)
+  - FormState (.value)
+  - useFilters
+  - useFiltersDecks
+  - Traits

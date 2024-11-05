@@ -129,3 +129,39 @@ export const USED_IN_INVENTORY = 'usedInInventory';
 export const VALUE = 'value';
 export const XLSX = 'xlsx';
 export const YES = 'YES';
+
+export const VOTES = 'votes';
+export const ARTIST = 'artist';
+export const NOT_REQUIRED = 'not required';
+export const TITLED = 'titled';
+export const NON_TITLED = 'non-titled';
+
+export const PRIMOGEN = 'primogen';
+export const PRINCE = 'prince';
+export const JUSTICAR = 'justicar';
+export const INNER_CIRCLE = 'inner circle';
+export const BARON = 'baron';
+export const BISHOP = 'bishop';
+export const ARCHBISHOP = 'archbishop';
+export const PRISCUS = 'priscus';
+export const CARDINAL = 'cardinal';
+export const REGENT = 'regent';
+export const MAGAJI = 'magaji';
+export const VOTE_1 = '1 vote';
+export const VOTE_2 = '2 votes';
+export const KHOLO = 'kholo';
+export const IMPERATOR = 'imperator';
+
+export const CAMARILLA = 'camarilla';
+export const SABBAT = 'sabbat';
+export const LAIBON = 'laibon';
+export const INDEPENDENT = 'independent';
+export const ANARCH = 'anarch';
+export const IMBUED = 'imbued';
+
+export const NON_CAMARILLA = 'non-camarila';
+export const NON_SABBAT = 'non-sabbat';
+export const NON_LAIBON = 'non-laibon';
+export const NON_INDEPENDENT = 'non-independent';
+export const NON_ANARCH = 'non-anarch';
+export const NON_IMBUED = 'non-imbued';

@@ -3,11 +3,11 @@ import { Select } from '@/components';
 import cryptArtists from '@/assets/data/artistsCrypt.json';
 import libraryArtists from '@/assets/data/artistsLib.json';
 import { useApp } from '@/context';
-import { CRYPT, ANY } from '@/utils/constants';
+import { ARTIST, CRYPT, ANY } from '@/utils/constants';
 
 const SearchFormArtist = ({ target, value, onChange }) => {
   const { isXWide } = useApp();
-  const name = 'artist';
+  const name = ARTIST;
   const menuHeight = isXWide ? 500 : 350;
   const artists = target == CRYPT ? cryptArtists : libraryArtists;
 

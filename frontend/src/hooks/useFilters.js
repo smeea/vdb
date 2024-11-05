@@ -26,6 +26,24 @@ import {
   POOL_COST,
   PROMO,
   REPRINT,
+  NOT_REQUIRED,
+  TEXT,
+  NON_TITLED,
+  PRIMOGEN,
+  PRINCE,
+  JUSTICAR,
+  INNER_CIRCLE,
+  BARON,
+  BISHOP,
+  ARCHBISHOP,
+  PRISCUS,
+  CARDINAL,
+  REGENT,
+  MAGAJI,
+  VOTE_1,
+  VOTE_2,
+  KHOLO,
+  IMPERATOR,
 } from '@/utils/constants';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 
@@ -94,26 +112,26 @@ const missingDisciplinesLibrary = (filter, card) => {
   switch (logic) {
     case AND:
       return !disciplines.every((discipline) => {
-        if (discipline === 'not required' && !card.Discipline) return true;
+        if (discipline === NOT_REQUIRED && !card.Discipline) return true;
         if (card.Discipline.toLowerCase().includes(discipline)) return true;
       });
 
     case OR:
       return !disciplines.some((discipline) => {
-        if (discipline === 'not required' && !card.Discipline) return true;
+        if (discipline === NOT_REQUIRED && !card.Discipline) return true;
         if (card.Discipline.toLowerCase().includes(discipline)) return true;
       });
 
     case NOT:
       return disciplines.some((discipline) => {
-        if (discipline === 'not required' && !card.Discipline) return true;
+        if (discipline === NOT_REQUIRED && !card.Discipline) return true;
         if (card.Discipline.toLowerCase().includes(discipline)) return true;
       });
 
     case ONLY:
       if (card.Discipline.split(/[/&]/).length > disciplines.length) return true;
       return !disciplines.every((discipline) => {
-        if (discipline === 'not required' && !card.Discipline) return true;
+        if (discipline === NOT_REQUIRED && !card.Discipline) return true;
         if (card.Discipline.toLowerCase().includes(discipline)) return true;
       });
   }
@@ -140,11 +158,11 @@ const missingTextQuery = (query, card) => {
     } catch {}
 
     match =
-      (query.in !== 'text' && (cardName.match(regexExp) || cardASCII.match(regexExp))) ||
+      (query.in !== TEXT && (cardName.match(regexExp) || cardASCII.match(regexExp))) ||
       (query.in !== 'name' && cardText.match(regexExp));
   } else {
     match =
-      (query.in !== 'text' && !missingNameOrInitials(search, card)) ||
+      (query.in !== TEXT && !missingNameOrInitials(search, card)) ||
       (query.in !== 'name' && cardText.includes(search));
   }
 
@@ -245,7 +263,7 @@ const LibraryTraitsRegexMap = {
 };
 
 const missingTitleCrypt = (filter, card) => {
-  const cardTitle = card.Title.toLowerCase() || 'none';
+  const cardTitle = card.Title.toLowerCase() || NON_TITLED;
   const titles = Object.keys(filter);
 
   if (titles.includes(cardTitle)) return false;
@@ -273,43 +291,43 @@ const missingTitleLibrary = (filter, card) => {
 };
 
 const requiredTitleList = [
-  'primogen',
-  'prince',
-  'justicar',
-  'inner circle',
-  'baron',
-  'bishop',
-  'archbishop',
-  'priscus',
-  'cardinal',
-  'regent',
-  'magaji',
+  PRIMOGEN,
+  PRINCE,
+  JUSTICAR,
+  INNER_CIRCLE,
+  BARON,
+  BISHOP,
+  ARCHBISHOP,
+  PRISCUS,
+  CARDINAL,
+  REGENT,
+  MAGAJI,
 ];
 
 const missingVotes = (filter, card) => {
-  const cardTitle = card.Title.toLowerCase() || 'none';
-  if (parseInt(filter) === 0) return !(cardTitle === 'none');
+  const cardTitle = card.Title.toLowerCase() || NON_TITLED;
+  if (parseInt(filter) === 0) return !(cardTitle === NON_TITLED);
 
   return !(titleWorth[cardTitle] >= parseInt(filter));
 };
 
 const titleWorth = {
-  primogen: 1,
-  prince: 2,
-  justicar: 3,
-  imperator: 3,
-  'inner circle': 4,
-  bishop: 1,
-  archbishop: 2,
-  priscus: 3,
-  cardinal: 3,
-  regent: 4,
-  '1 vote': 1,
-  '2 votes': 2,
-  magaji: 2,
-  kholo: 2,
-  baron: 2,
-  none: 0,
+  [PRIMOGEN]: 1,
+  [PRINCE]: 2,
+  [JUSTICAR]: 3,
+  [IMPERATOR]: 3,
+  [INNER_CIRCLE]: 4,
+  [BISHOP]: 1,
+  [ARCHBISHOP]: 2,
+  [PRISCUS]: 3,
+  [CARDINAL]: 3,
+  [REGENT]: 4,
+  [VOTE_1]: 1,
+  [VOTE_2]: 2,
+  [MAGAJI]: 2,
+  [KHOLO]: 2,
+  [BARON]: 2,
+  [NON_TITLED]: 0,
 };
 
 const missingCapacityCrypt = (filter, card) => {
@@ -380,12 +398,12 @@ const missingClan = (filterClan, card) => {
     case 'or':
       return !clans.some((clan) => {
         if (card.Clan.toLowerCase().split('/').includes(clan)) return true;
-        if (clan === 'not required' && !card.Clan) return true;
+        if (clan === NOT_REQUIRED && !card.Clan) return true;
       });
     case 'not':
       return clans.some((clan) => {
         if (card.Clan.toLowerCase().split('/').includes(clan)) return true;
-        if (clan === 'not required' && !card.Clan) return true;
+        if (clan === NOT_REQUIRED && !card.Clan) return true;
       });
   }
 };
@@ -567,20 +585,18 @@ const missingRequirementsCheck = (logic, array, value, hasNoRequirement) => {
         (name) =>
           !(
             RegExp('(^|[, ])' + name, 'i').test(value) ||
-            (name === 'not required' && hasNoRequirement)
+            (name === NOT_REQUIRED && hasNoRequirement)
           ),
       );
     case OR:
       return !array.some(
         (name) =>
-          RegExp('(^|[, ])' + name, 'i').test(value) ||
-          (name === 'not required' && hasNoRequirement),
+          RegExp('(^|[, ])' + name, 'i').test(value) || (name === NOT_REQUIRED && hasNoRequirement),
       );
     case NOT:
       return array.some(
         (name) =>
-          RegExp('(^|[, ])' + name, 'i').test(value) ||
-          (name === 'not required' && hasNoRequirement),
+          RegExp('(^|[, ])' + name, 'i').test(value) || (name === NOT_REQUIRED && hasNoRequirement),
       );
   }
 };

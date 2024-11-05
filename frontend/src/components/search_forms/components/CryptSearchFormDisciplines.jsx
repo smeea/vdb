@@ -2,10 +2,11 @@ import React from 'react';
 import { twMerge } from 'tailwind-merge';
 import { ResultDisciplineImage } from '@/components';
 import disciplinesList from '@/assets/data/disciplinesList.json';
+import disciplinesExtraList from '@/assets/data/disciplinesExtraList.json';
 
-const CryptSearchFormDisciplines = ({ value, onChange, withMalStr }) => {
-  const disciplines = withMalStr
-    ? [...Object.keys(disciplinesList), 'Flight', 'Maleficia', 'Striga'].toSorted()
+const CryptSearchFormDisciplines = ({ value, onChange, withExtra }) => {
+  const disciplines = withExtra
+    ? [...Object.keys(disciplinesList), ...disciplinesExtraList].toSorted()
     : Object.keys(disciplinesList);
 
   return (

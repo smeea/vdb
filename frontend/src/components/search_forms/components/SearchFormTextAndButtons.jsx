@@ -12,6 +12,7 @@ import {
 } from '@/components';
 import { useDebounce } from '@/hooks';
 import { useApp } from '@/context';
+import { TEXT } from '@/utils/constants';
 
 const SearchFormTextAndButtons = ({
   searchForm,
@@ -45,7 +46,7 @@ const SearchFormTextAndButtons = ({
       label: 'Only in Name',
     },
     {
-      value: 'text',
+      value: TEXT,
       label: 'Only in Text',
     },
     {

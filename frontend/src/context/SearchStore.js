@@ -3,7 +3,18 @@ import defaultsPdaForm from '@/components/search_forms/forms_data/defaultsPdaFor
 import defaultsTwdForm from '@/components/search_forms/forms_data/defaultsTwdForm.json';
 import defaultsCryptForm from '@/components/search_forms/forms_data/defaultsCryptForm.json';
 import defaultsLibraryForm from '@/components/search_forms/forms_data/defaultsLibraryForm.json';
-import { CRYPT_COMPARE, LIBRARY_COMPARE, CRYPT, LIBRARY, ANY, TWD, PDA } from '@/utils/constants';
+import {
+  TEXT,
+  VOTES,
+  ARTIST,
+  CRYPT_COMPARE,
+  LIBRARY_COMPARE,
+  CRYPT,
+  LIBRARY,
+  ANY,
+  TWD,
+  PDA,
+} from '@/utils/constants';
 
 export const searchResults = proxy({});
 
@@ -50,23 +61,23 @@ export const setLibraryCompare = (v) => {
 export const clearSearchForm = (target) => {
   switch (target) {
     case CRYPT:
-      searchCryptForm.text = structuredClone(defaultsCryptForm.text);
-      searchCryptForm.votes = ANY;
-      searchCryptForm.artist = ANY;
+      searchCryptForm[TEXT] = structuredClone(defaultsCryptForm[TEXT]);
+      searchCryptForm[VOTES] = ANY;
+      searchCryptForm[ARTIST] = ANY;
 
       Object.keys(defaultsCryptForm).forEach((k) => {
-        if (['text', 'votes', 'artist'].includes(k)) return;
+        if ([TEXT, VOTES, ARTIST].includes(k)) return;
         Object.keys(defaultsCryptForm[k]).forEach((v) => {
           searchCryptForm[k][v] = structuredClone(defaultsCryptForm[k][v]);
         });
       });
       break;
     case LIBRARY:
-      searchLibraryForm.text = structuredClone(defaultsLibraryForm.text);
-      searchLibraryForm.artist = ANY;
+      searchLibraryForm[TEXT] = structuredClone(defaultsLibraryForm[TEXT]);
+      searchLibraryForm[ARTIST] = ANY;
 
       Object.keys(defaultsLibraryForm).forEach((k) => {
-        if (['text', 'artist'].includes(k)) return;
+        if ([TEXT, ARTIST].includes(k)) return;
         Object.keys(defaultsLibraryForm[k]).forEach((v) => {
           searchLibraryForm[k][v] = structuredClone(defaultsLibraryForm[k][v]);
         });

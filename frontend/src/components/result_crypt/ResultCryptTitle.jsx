@@ -1,21 +1,37 @@
 import React from 'react';
+import {
+  TITLED,
+  PRIMOGEN,
+  PRINCE,
+  JUSTICAR,
+  INNER_CIRCLE,
+  BARON,
+  BISHOP,
+  ARCHBISHOP,
+  PRISCUS,
+  CARDINAL,
+  REGENT,
+  MAGAJI,
+  VOTE_1,
+  VOTE_2,
+} from '@/utils/constants';
 
 const ResultCryptTitle = ({ value, noTitle }) => {
   const titles = {
-    primogen: ['Primogen', 'Pg'],
-    prince: ['Prince', 'Pc'],
-    justicar: ['Justicar', 'Js'],
-    'inner circle': ['Inner Circle', 'IC'],
-    baron: ['Baron', 'Br'],
-    '1 vote': ['1 vote (titled)', '1v'],
-    '2 votes': ['2 votes (titled)', '2v'],
-    bishop: ['Bishop', 'Bs'],
-    archbishop: ['Archbishop', 'Ar'],
-    priscus: ['Priscus', 'Ps'],
-    cardinal: ['Cardinal', 'Cr'],
-    regent: ['Regent', 'Rg'],
-    magaji: ['Magaji', 'Mj'],
-    titled: ['Titled', 'T'],
+    [PRIMOGEN]: ['Primogen', 'Pg'],
+    [PRINCE]: ['Prince', 'Pc'],
+    [JUSTICAR]: ['Justicar', 'Js'],
+    [INNER_CIRCLE]: ['Inner Circle', 'IC'],
+    [BARON]: ['Baron', 'Br'],
+    [VOTE_1]: ['1 vote (titled)', '1v'],
+    [VOTE_2]: ['2 votes (titled)', '2v'],
+    [BISHOP]: ['Bishop', 'Bs'],
+    [ARCHBISHOP]: ['Archbishop', 'Ar'],
+    [PRISCUS]: ['Priscus', 'Ps'],
+    [CARDINAL]: ['Cardinal', 'Cr'],
+    [REGENT]: ['Regent', 'Rg'],
+    [MAGAJI]: ['Magaji', 'Mj'],
+    [TITLED]: ['Titled', 'T'],
   };
 
   return (

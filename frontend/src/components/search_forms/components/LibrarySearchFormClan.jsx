@@ -10,24 +10,29 @@ import {
 import imbuedClansList from '@/assets/data/imbuedClansList.json';
 import vampireClansList from '@/assets/data/vampireClansList.json';
 import { useApp } from '@/context';
-import { ANY } from '@/utils/constants';
+import { NOT_REQUIRED, ANY } from '@/utils/constants';
 
 const LibrarySearchFormClan = ({ value, searchForm, onChange }) => {
   const { playtestMode, isXWide, isMobile } = useApp();
   const maxMenuHeight = isXWide ? 500 : 350;
   const name = 'clan';
 
-  const options = ['ANY', 'Not Required', ...vampireClansList, ...imbuedClansList]
+  const options = [
+    ['ANY', ANY],
+    ['Not Required', NOT_REQUIRED],
+    ...vampireClansList.map((c) => [c, c.toLowerCase()]),
+    ...imbuedClansList.map((c) => [c, c.toLowerCase()]),
+  ]
     .filter((clan) => playtestMode || clan !== 'Hecata')
     .map((i) => ({
-      value: i.toLowerCase(),
+      value: i[1],
       name: name,
       label: (
         <div className="flex items-center">
           <div className="flex w-[40px] justify-center">
-            {!['ANY', 'Not Required'].includes(i) && <ResultLibraryClan value={i} />}
+            {![ANY, NOT_REQUIRED].includes(i[1]) && <ResultLibraryClan value={i[1]} />}
           </div>
-          {i}
+          {i[0]}
         </div>
       ),
     }));
@@ -59,7 +64,7 @@ const LibrarySearchFormClan = ({ value, searchForm, onChange }) => {
             isClearable={value.value[0] !== ANY}
             name={0}
             maxMenuHeight={maxMenuHeight}
-            value={options.find((obj) => obj.value === value.value[0].toLowerCase())}
+            value={options.find((obj) => obj.value === value.value[0])}
             onChange={(e, id) => (e ? onChange(e, id) : onChange({ name: name, value: ANY }, id))}
           />
         </div>

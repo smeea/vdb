@@ -1,11 +1,11 @@
 import React from 'react';
 import { Select } from '@/components';
 import { useApp } from '@/context';
-import { ANY } from '@/utils/constants';
+import { VOTES, ANY } from '@/utils/constants';
 
 const CryptSearchFormVotes = ({ value, onChange }) => {
   const { isXWide } = useApp();
-  const name = 'votes';
+  const name = VOTES;
   const maxMenuHeight = isXWide ? 500 : 350;
 
   const options = [
