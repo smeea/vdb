@@ -35,19 +35,19 @@ def deck_import(deck_text):
     cardbase = {}
 
     for card in crypt:
-        adv = True if card["Adv"] and card["Adv"][0] else False
-        name = re.sub(r"\W", "", unidecode(card["Name"])).lower()
+        adv = True if card["adv"] and card["adv"][0] else False
+        name = re.sub(r"\W", "", unidecode(card["name"])).lower()
 
         if name not in cardbase:
-            cardbase[name] = {"base": card["Id"], card["Group"]: card["Id"]}
+            cardbase[name] = {"base": card["id"], card["group"]: card["id"]}
         elif adv:
-            cardbase[name]["adv"] = card["Id"]
+            cardbase[name]["adv"] = card["id"]
         else:
-            cardbase[name][card["Group"]] = card["Id"]
+            cardbase[name][card["group"]] = card["id"]
 
     for card in library:
-        name = re.sub(r"\W", "", unidecode(card["Name"])).lower()
-        cardbase[name] = {"base": card["Id"]}
+        name = re.sub(r"\W", "", unidecode(card["name"])).lower()
+        cardbase[name] = {"base": card["id"]}
 
     for i in linesArray:
         i = i.strip()

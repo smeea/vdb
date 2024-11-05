@@ -9,7 +9,7 @@ with open("twda.json", "r") as twda_input, open(
     cards = {}
 
     for card in [*crypt_cardbase, *library_cardbase]:
-        cards[card["Id"]] = {
+        cards[card["id"]] = {
             "deckid": None,
         }
 

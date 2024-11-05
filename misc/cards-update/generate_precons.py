@@ -205,11 +205,11 @@ with open("cardbase_crypt.json", "r") as crypt_file, open(
         print(e)
 
     for card in crypt + library:
-        for card_set, card_precons in card["Set"].items():
+        for card_set, card_precons in card["set"].items():
             if card_set in bundles:
                 for precon in bundles[card_set].keys():
                     if precon in card_precons:
-                        bundles[card_set][precon][card["Id"]] = int(
+                        bundles[card_set][precon][card["id"]] = int(
                             card_precons[precon]
                         )
 

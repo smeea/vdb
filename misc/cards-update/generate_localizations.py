@@ -26,8 +26,8 @@ for lang in languages:
                 )
 
                 cards_localized[card["Id"]] = {
-                    "Name": card[f"Name {lang}"] if card[f"Name {lang}"] else card['Name'],
-                    "Card Text": card["Card Text"].strip(),
+                    "name": card[f"Name {lang}"] if card[f"Name {lang}"] else card['Name'],
+                    "text": card["Card Text"].strip(),
                 }
 
             json.dump(cards_localized, f_out_min, separators=(",", ":"))

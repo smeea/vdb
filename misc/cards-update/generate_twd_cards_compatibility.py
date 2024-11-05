@@ -17,9 +17,9 @@ cards = {}
 twda_total = len(twda)
 
 for c in cardbase_crypt:
-    cards[c["Id"]] = {}
+    cards[c["id"]] = {}
 for c in cardbase_library:
-    cards[c["Id"]] = {}
+    cards[c["id"]] = {}
 
 for twd in twda:
     year = int(twd["creation_date"][:4])

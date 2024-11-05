@@ -31,24 +31,24 @@ with open("cardbase_crypt.json", "r+") as crypt_file, open(
 
     def generate_crossref(card):
         for other_card in cards.values():
-            if other_card['Id'] == card['Id']:
+            if other_card['id'] == card['id']:
                 continue
 
-            name = other_card['Name']
+            name = other_card['name']
             if ', The' in name:
                 name = name.replace(', The', '')
                 name = f"The {name}"
 
             if name not in blacklist and name not in card[
-                    'Name'] and name in card['Card Text']:
-                is_long_name_exception = get_long_name_exception(name, card['Card Text'])
+                    'name'] and name in card['text']:
+                is_long_name_exception = get_long_name_exception(name, card['text'])
 
-                if f"/{name}/" in card['Card Text'] or is_long_name_exception:
+                if f"/{name}/" in card['text'] or is_long_name_exception:
                     pass
 
                 else:
-                    card['Card Text'] = card['Card Text'].replace(name,
-                                                    f"/{other_card['Name']}/")
+                    card['Card Text'] = card['text'].replace(name,
+                                                    f"/{other_card['name']}/")
 
         return card
 
@@ -58,10 +58,10 @@ with open("cardbase_crypt.json", "r+") as crypt_file, open(
     fixed_library = {}
 
     for card in fixed_cards:
-        if card['Id'] > 200000:
-            fixed_crypt[str(card['Id'])] = card
+        if card['id'] > 200000:
+            fixed_crypt[str(card['id'])] = card
         else:
-            fixed_library[str(card['Id'])] = card
+            fixed_library[str(card['id'])] = card
 
     crypt_file.seek(0)
     lib_file.seek(0)

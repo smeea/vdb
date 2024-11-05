@@ -315,29 +315,29 @@ def generate_card(card):
 
 
     card_ready = {
-        "ASCII Name": card["ASCII Name"],
-        "Artist": card["Artist"],
-        "Banned": card["Banned"],
-        "Blood Cost": card["Blood Cost"],
-        "Burn Option": card["Burn Option"],
-        "Card Text": card["Card Text"],
-        "Clan": card["Clan"],
-        "Conviction Cost": card["Conviction Cost"],
-        "Discipline": card["Discipline"],
-        "Id": card["Id"],
-        "Name": card["Name"],
-        "Pool Cost": card["Pool Cost"],
-        "Requirement": card["Requirement"].lower(),
-        "Rulings": card["Rulings"],
-        "Set": card["Set"],
-        "Twd": card["Twd"],
-        "Type": card["Type"],
+        "ascii": card["ASCII Name"],
+        "artist": card["Artist"],
+        "banned": card["Banned"],
+        "blood": card["Blood Cost"],
+        "burn": card["Burn Option"],
+        "text": card["Card Text"],
+        "clan": card["Clan"],
+        "conviction": card["Conviction Cost"],
+        "discipline": card["Discipline"],
+        "id": card["Id"],
+        "name": card["Name"],
+        "pool": card["Pool Cost"],
+        "requirement": card["Requirement"].lower(),
+        "rulings": card["Rulings"],
+        "set": card["Set"],
+        "twd": card["Twd"],
+        "type": card["Type"],
     }
     if card["Type"] == 'Master' and ('trifle' in card["Card Text"].lower()):
-        card_ready["Trifle"] = True
+        card_ready["trifle"] = True
 
     if card['Aka']:
-        card_ready["Aka"] = card['Aka']
+        card_ready["aka"] = card['Aka']
 
     return card_ready
 
@@ -348,7 +348,7 @@ def generate_cards(csv_cards, cardbase_file, cardbase_file_min):
 
     cardbase = {}
     for card in fixed_cards:
-        cardbase[card['Id']] = card
+        cardbase[card['id']] = card
 
     json.dump(cardbase, cardbase_file_min, separators=(",", ":"))
     json.dump(cardbase, cardbase_file, indent=4, separators=(",", ":"))

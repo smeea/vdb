@@ -319,27 +319,27 @@ def generate_card(card):
     card["Card Text"] = card["Card Text"].replace("Thaumaturgy", "Blood Sorcery")
 
     card_ready = {
-        "ASCII Name": card["ASCII Name"],
-        "Adv": card["Advancement"],
-        "Artist": card["Artist"],
-        "Banned": card["Banned"],
-        "Capacity": card["Capacity"],
-        "Card Text": card["Card Text"],
-        "Clan": card["Clan"],
-        "Disciplines": card["Disciplines"],
-        "Group": card["Group"].lower(),
-        "Id": card["Id"],
-        "Name": card["Name"],
-        "New": card["New"],
-        "Rulings": card["Rulings"],
-        "Sect": card["Sect"],
-        "Set": card["Set"],
-        "Title": card["Title"].lower(),
-        "Twd": card["Twd"],
+        "ascii": card["ASCII Name"],
+        "adv": card["Advancement"],
+        "artist": card["Artist"],
+        "banned": card["Banned"],
+        "capacity": card["Capacity"],
+        "text": card["Card Text"],
+        "clan": card["Clan"],
+        "disciplines": card["Disciplines"],
+        "group": card["Group"].lower(),
+        "id": card["Id"],
+        "name": card["Name"],
+        "new": card["New"],
+        "rulings": card["Rulings"],
+        "sect": card["Sect"],
+        "set": card["Set"],
+        "title": card["Title"].lower(),
+        "twd": card["Twd"],
     }
 
     if card['Aka']:
-        card_ready["Aka"] = card['Aka']
+        card_ready["aka"] = card['Aka']
 
     return card_ready
 
@@ -349,7 +349,7 @@ def generate_cards(csv_cards, cardbase_file, cardbase_file_min):
 
     cardbase = {}
     for card in fixed_cards:
-        cardbase[card['Id']] = card
+        cardbase[card['id']] = card
 
     json.dump(cardbase, cardbase_file_min, separators=(",", ":"))
     json.dump(cardbase, cardbase_file, indent=4, separators=(",", ":"))

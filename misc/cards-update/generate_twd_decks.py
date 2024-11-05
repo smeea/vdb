@@ -52,26 +52,26 @@ def generate_twd(i):
 
         # Skip Anarch Convert
         if id != 200076:
-            total_capacity += q * c["Capacity"]
+            total_capacity += q * c["capacity"]
 
-            if (clan := c["Clan"]) in clans:
+            if (clan := c["clan"]) in clans:
                 clans[clan] += q
             else:
                 clans[clan] = q
 
-        if (sect := c["Sect"]) in sects:
+        if (sect := c["sect"]) in sects:
             sects[sect] += q
         else:
             sects[sect] = q
 
         if "star" not in deck["traits"] and id != 200076:
-            if c["Adv"] and c["Adv"][1] in crypt:
-                q += crypt[c["Adv"][1]]["q"]
+            if c["adv"] and c["adv"][1] in crypt:
+                q += crypt[c["adv"][1]]["q"]
 
             if q / total_crypt_ex_ac > 0.33:
                 deck["traits"].append("star")
 
-        for d in c["Disciplines"].keys():
+        for d in c["disciplines"].keys():
             crypt_disciplines.add(d)
 
     for clan, q in clans.items():
@@ -95,7 +95,7 @@ def generate_twd(i):
         for card in ct["cards"]:
             deck["cards"][card["id"]] = card["count"]
 
-            discipline_entry = library_db[str(card["id"])]["Discipline"]
+            discipline_entry = library_db[str(card["id"])]["discipline"]
             if "&" in discipline_entry:
                 for d in discipline_entry.split(" & "):
                     if d in [*crypt_disciplines, 'Flight', 'Maleficia', 'Striga']:
