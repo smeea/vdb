@@ -9,12 +9,12 @@ import {
 } from '@/components';
 import { useApp } from '@/context';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
-import { FIRST, REPRINT, PRINT, BCP, PLAYTEST, ANY, ONLY } from '@/constants';
+import { PRECON, FIRST, REPRINT, PRINT, BCP, PLAYTEST, ANY, ONLY } from '@/constants';
 
 const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
   const { playtestMode, isMobile, isXWide } = useApp();
   const menuHeight = isXWide ? 500 : 350;
-  const name = 'precon';
+  const name = PRECON;
 
   const options = [
     {
@@ -51,7 +51,7 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
 
           options.push({
             value: `${set}:${precon}`,
-            name: 'precon',
+            name: PRECON,
             label: (
               <div className="flex items-center justify-between">
                 <div className="flex items-center">

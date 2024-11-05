@@ -1,12 +1,12 @@
 import React from 'react';
 import { Select } from '@/components';
 import { useApp } from '@/context';
-import { ANY, LE, GE, EQ } from '@/constants';
+import { POOL, ANY, LE, GE, EQ } from '@/constants';
 
 const LibrarySearchFormPoolCost = ({ value, onChange }) => {
   const { isXWide } = useApp();
   const maxMenuHeight = isXWide ? 500 : 350;
-  const name = 'pool';
+  const name = POOL;
   const options = ['ANY', '0', '1', '2', '3', '4', '5', '6'].map((i) => ({
     value: i.toLowerCase(),
     name: name,

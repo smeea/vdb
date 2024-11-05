@@ -1,6 +1,7 @@
 import React from 'react';
 import { Checkbox } from '@/components';
 import { useApp } from '@/context';
+import { ADVANCEMENT, BANNED, NON_TWD, TRAITS } from '@/constants';
 
 const CryptSearchFormTraits = ({ value, onChange }) => {
   const { playtestMode } = useApp();
@@ -26,10 +27,10 @@ const CryptSearchFormTraits = ({ value, onChange }) => {
             ['path-cathari', 'Path of Cathari'],
           ]
             .filter((i) => !['path-caine', 'path-cathari'].includes(i[0]) || playtestMode)
-            .map((i, index) => (
+            .map((i) => (
               <Checkbox
-                key={index}
-                name="traits"
+                key={i[0]}
+                name={TRAITS}
                 value={i[0]}
                 label={i[1]}
                 checked={value[i[0]]}
@@ -46,19 +47,19 @@ const CryptSearchFormTraits = ({ value, onChange }) => {
             ['infernal', 'Infernal'],
             ['red list', 'Red List'],
             ['flight', 'Flight'],
-            ['advancement', 'Advancement'],
-            ['banned', 'Banned'],
-            ['non-twd', 'Not in TWD'],
+            [ADVANCEMENT, 'Advancement'],
+            [BANNED, 'Banned'],
+            [NON_TWD, 'Not in TWD'],
             ['playtest', 'Playtest'],
             ['path-death', 'Path of Death'],
             ['path-power', 'Path of Power'],
           ]
             .filter((i) => !['playtest', 'path-death', 'path-power'].includes(i[0]) || playtestMode)
-            .map((i, index) => {
+            .map((i) => {
               return (
                 <Checkbox
-                  key={index}
-                  name="traits"
+                  key={i[0]}
+                  name={TRAITS}
                   value={i[0]}
                   label={i[1]}
                   checked={value[i[0]]}

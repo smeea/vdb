@@ -45,6 +45,7 @@ import {
   SOFT,
   HARD,
   TEXT,
+  AGE,
 } from '@/constants';
 
 const CryptSearchForm = () => {
@@ -121,7 +122,7 @@ const CryptSearchForm = () => {
     const { name, value } = event.currentTarget;
 
     if ([OR_NEWER, OR_OLDER, NOT_NEWER, NOT_OLDER].includes(value)) {
-      searchCryptForm[name]['age'] = searchCryptForm[name]['age'] === value ? false : value;
+      searchCryptForm[name][AGE] = searchCryptForm[name][AGE] === value ? false : value;
     } else if ([ONLY, FIRST, REPRINT].includes(value)) {
       searchCryptForm[name][PRINT] = searchCryptForm[name][PRINT] === value ? false : value;
     } else {

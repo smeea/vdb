@@ -1,16 +1,4 @@
 import {
-  CAMARILLA,
-  SABBAT,
-  LAIBON,
-  INDEPENDENT,
-  ANARCH,
-  IMBUED,
-  NON_CAMARILLA,
-  NON_SABBAT,
-  NON_LAIBON,
-  NON_INDEPENDENT,
-  NON_ANARCH,
-  NON_IMBUED,
   PRIMOGEN,
   PRINCE,
   JUSTICAR,
@@ -24,8 +12,8 @@ import {
   MAGAJI,
   TITLED,
   NON_TITLED,
-  NONE,
 } from '@/constants';
+import sects from '@/assets/data/sectsList.json';
 
 const useLibraryRequirements = (card) => {
   let isCapacity;
@@ -37,10 +25,6 @@ const useLibraryRequirements = (card) => {
   let isTitle = [];
   let isBlackHand;
   let isSeraph;
-
-  const sects = [CAMARILLA, SABBAT, LAIBON, INDEPENDENT, ANARCH, IMBUED];
-
-  const nonSects = [NON_CAMARILLA, NON_SABBAT, NON_LAIBON, NON_INDEPENDENT, NON_ANARCH, NON_IMBUED];
 
   const titles = [
     PRIMOGEN,
@@ -77,9 +61,9 @@ const useLibraryRequirements = (card) => {
 
     requirements.forEach((req) => {
       if (uselessReqs.includes(req)) return;
-      if (sects.includes(req)) isSect = req;
-      if (nonSects.includes(req)) isNonSect = req.replace('non-', '');
-      if (titles.includes(req)) isTitle.push(req.replace(NON_TITLED, NONE));
+      if (sects.map((s) => s.toLowerCase()).includes(req)) isSect = req;
+      if (sects.map((s) => `non-${s.toLowerCase()}`).includes(req)) isNonSect = req;
+      if (titles.includes(req)) isTitle.push(req);
       if (req === 'red list') isRedlist = true;
       if (req.includes('capacity')) isCapacity = req.replace('capacity ', '');
       if (req.includes('seraph')) isSeraph = true;

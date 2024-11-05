@@ -152,16 +152,20 @@ export const VOTE_2 = '2 votes';
 export const KHOLO = 'kholo';
 export const IMPERATOR = 'imperator';
 
-export const CAMARILLA = 'camarilla';
-export const SABBAT = 'sabbat';
-export const LAIBON = 'laibon';
-export const INDEPENDENT = 'independent';
-export const ANARCH = 'anarch';
-export const IMBUED = 'imbued';
+export const SET = 'set';
+export const PRECON = 'precon';
+export const BLOOD = 'blood';
+export const POOL = 'pool';
+export const TITLE = 'title';
 
-export const NON_CAMARILLA = 'non-camarila';
-export const NON_SABBAT = 'non-sabbat';
-export const NON_LAIBON = 'non-laibon';
-export const NON_INDEPENDENT = 'non-independent';
-export const NON_ANARCH = 'non-anarch';
-export const NON_IMBUED = 'non-imbued';
+export const AGE = 'age';
+export const MONOCLAN = 'monoclan';
+export const STAR = 'star';
+export const MORELESS = 'moreless';
+
+export const ADVANCEMENT = 'advancement';
+export const NON_TWD = 'non-twd';
+export const BURN = 'burn';
+export const MULTI_DISCIPLINE = 'multi-discipline';
+export const MULTI_TYPE = 'multi-type';
+export const NO_REQUIREMENTS = 'no-requirements';

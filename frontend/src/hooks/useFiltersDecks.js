@@ -5,7 +5,7 @@
 // if some criteria is missing the main method return false and exits that deck check.
 
 import { countCards, countTotalCost, getClan, getSect } from '@/utils';
-import { LT, LT0, GT, EQ, NOT, OR, CAPACITY } from '@/constants';
+import { STAR, MONOCLAN, LT, LT0, GT, EQ, NOT, OR, CAPACITY } from '@/constants';
 
 const useFiltersDecks = (decks = {}) => {
   const filterDecks = (filter) => {
@@ -210,9 +210,9 @@ const missingTraits = (filter, deck) => {
   if (
     Object.keys(filter).every((t) => {
       switch (t) {
-        case 'monoclan':
+        case MONOCLAN:
           return clans.length === 1;
-        case 'star':
+        case STAR:
           return cryptMaxUnique / cryptTotal > 0.33;
         default:
           return true;

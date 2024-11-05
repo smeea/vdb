@@ -22,12 +22,13 @@ import {
   CARDINAL,
   REGENT,
   MAGAJI,
+  TITLE,
 } from '@/constants';
 
 const LibrarySearchFormTitle = ({ value, onChange, searchForm }) => {
   const { isXWide } = useApp();
   const maxMenuHeight = isXWide ? 500 : 350;
-  const name = 'title';
+  const name = TITLE;
 
   const options = [
     ['ANY', ANY],

@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 import { Select, ResultPreconClan } from '@/components';
 import { useApp } from '@/context';
-import { PLAYTEST } from '@/constants';
+import { PRECON, PLAYTEST } from '@/constants';
 
 const DeckSelectPrecon = ({ deckid, handleSelect }) => {
   const { isMobile, playtestMode } = useApp();
@@ -20,7 +20,7 @@ const DeckSelectPrecon = ({ deckid, handleSelect }) => {
 
           opts.push({
             value: `${set}:${precon}`,
-            name: 'precon',
+            name: PRECON,
             label: (
               <div className="flex items-center justify-between">
                 <div className="flex items-center">

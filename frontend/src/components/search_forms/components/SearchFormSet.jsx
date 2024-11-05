@@ -21,13 +21,15 @@ import {
   POD,
   BCP,
   PROMO,
+  SET,
+  AGE,
 } from '@/constants';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 
 const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
   const { playtestMode, isMobile, isXWide } = useApp();
   const menuHeight = isXWide ? 500 : 350;
-  const name = 'set';
+  const name = SET;
 
   const options = [
     {
@@ -159,7 +161,7 @@ const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
                   value.value[0] === PROMO ||
                   value.value[0] === POD
                 }
-                checked={value['age'] === i.value}
+                checked={value[AGE] === i.value}
                 onChange={onChangeOptions}
               />
             );

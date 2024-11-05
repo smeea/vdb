@@ -16,6 +16,11 @@ import {
   ANALYZE,
   MATCH_INVENTORY,
   TEXT,
+  SET,
+  PRECON,
+  BLOOD,
+  POOL,
+  TITLE,
 } from '@/constants';
 
 const sanitizeFormState = (target, state) => {
@@ -96,10 +101,10 @@ const sanitizeFormState = (target, state) => {
 
   switch (target) {
     case CRYPT:
-      forms = ['set', 'precon'];
+      forms = [SET, PRECON];
       break;
     case LIBRARY:
-      forms = ['discipline', 'type', 'set', 'precon'];
+      forms = ['discipline', 'type', SET, PRECON];
       break;
     default:
       forms = [];
@@ -117,7 +122,7 @@ const sanitizeFormState = (target, state) => {
 
   switch (target) {
     case LIBRARY:
-      forms = ['blood', 'pool', 'capacity'];
+      forms = [BLOOD, POOL, 'capacity'];
       break;
     default:
       forms = [];
@@ -152,7 +157,7 @@ const sanitizeFormState = (target, state) => {
       forms = ['clan', 'sect'];
       break;
     case LIBRARY:
-      forms = ['clan', 'sect', 'title'];
+      forms = ['clan', 'sect', TITLE];
       break;
     default:
       forms = [];

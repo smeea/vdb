@@ -1,7 +1,7 @@
 import React from 'react';
 import { Select, SearchFormButtonAdd, SearchFormButtonDel } from '@/components';
 import { useApp } from '@/context';
-import { ANY } from '@/constants';
+import { MORELESS, ANY } from '@/constants';
 
 const SearchAdditionalForms = ({
   value,
@@ -54,7 +54,7 @@ const SearchAdditionalForms = ({
                 defaultMenuIsOpen={
                   value.value[i][
                     Object.keys(value.value[i]).filter((k) => {
-                      return k !== 'moreless';
+                      return k !== MORELESS;
                     })[0]
                   ] === ANY
                 }

@@ -44,7 +44,15 @@ import {
   VOTE_2,
   KHOLO,
   IMPERATOR,
+  ADVANCEMENT,
+  BANNED,
+  NON_TWD,
+  MULTI_DISCIPLINE,
+  MULTI_TYPE,
+  NO_REQUIREMENTS,
+  BURN,
 } from '@/constants';
+import sects from '@/assets/data/sectsList.json';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 
 const useFilters = (cards = {}) => {
@@ -185,21 +193,21 @@ const missingTraits = (filter, card, traitsRegexMap) => {
 
 const missingTrait = (trait, card, traitsRegexMap) => {
   switch (trait) {
-    case 'playtest':
+    case PLAYTEST:
       return (card.Id > 200000 && card.Id < 210000) || (card.Id > 100000 && card.Id < 110000);
-    case 'advancement':
+    case ADVANCEMENT:
       return !card.Adv;
-    case 'banned':
+    case BANNED:
       return !card.Banned;
-    case 'non-twd':
+    case NON_TWD:
       return card.Twd;
-    case 'multi-discipline':
+    case MULTI_DISCIPLINE:
       return !(card.Discipline.includes('/') || card.Discipline.includes('&'));
-    case 'multi-type':
+    case MULTI_TYPE:
       return !card.Type.includes('/');
-    case 'burn':
+    case BURN:
       return !card[BURN_OPTION];
-    case 'no-requirements':
+    case NO_REQUIREMENTS:
       return (
         card.Requirement ||
         card.Discipline ||
@@ -414,12 +422,10 @@ const missingSectCrypt = (filter, card) => {
 
 const missingSectLibrary = (filter, card) => {
   const requirements = card.Requirement.toLowerCase();
-  const hasNoTitleRequirement = !requiredSectList.some((sect) => requirements.includes(sect));
+  const hasNoTitleRequirement = !sects.some((sect) => requirements.includes(sect.toLowerCase()));
 
   return missingRequirementsCheck(filter.logic, filter.value, requirements, hasNoTitleRequirement);
 };
-
-const requiredSectList = ['camarilla', 'sabbat', 'laibon', 'independent', 'anarch', 'imbued'];
 
 const missingGroup = (filter, card) => {
   return !Object.keys(filter).includes(card.Group);

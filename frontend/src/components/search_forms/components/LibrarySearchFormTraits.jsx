@@ -1,6 +1,16 @@
 import React from 'react';
 import { Checkbox } from '@/components';
 import { useApp } from '@/context';
+import {
+  BURN,
+  PLAYTEST,
+  NO_REQUIREMENTS,
+  MULTI_DISCIPLINE,
+  MULTI_TYPE,
+  BANNED,
+  NON_TWD,
+  TRAITS,
+} from '@/constants';
 
 const LibrarySearchFormTraits = ({ value, onChange }) => {
   const { playtestMode } = useApp();
@@ -23,16 +33,16 @@ const LibrarySearchFormTraits = ({ value, onChange }) => {
             ['prevent', 'Prevent'],
             ['press', 'Press'],
             ['combat ends', 'Combat Ends'],
-            ['multi-type', 'Multi-Type'],
-            ['multi-discipline', 'Multi-Discipline'],
+            [MULTI_TYPE, 'Multi-Type'],
+            [MULTI_DISCIPLINE, 'Multi-Discipline'],
             ['path-caine', 'Path of Caine'],
             ['path-cathari', 'Path of Cathari'],
           ]
             .filter((i) => !['path-caine', 'path-cathari'].includes(i[0]) || playtestMode)
-            .map((i, index) => (
+            .map((i) => (
               <Checkbox
-                key={index}
-                name="traits"
+                key={i[0]}
+                name={TRAITS}
                 value={i[0]}
                 label={i[1]}
                 checked={value[i[0]]}
@@ -51,19 +61,19 @@ const LibrarySearchFormTraits = ({ value, onChange }) => {
             ['black hand', 'Black Hand'],
             ['seraph', 'Seraph'],
             ['infernal', 'Infernal'],
-            ['burn', 'Burn Option'],
-            ['banned', 'Banned'],
-            ['non-twd', 'Not in TWD'],
-            ['no-requirements', 'No Requirement'],
+            [BURN, 'Burn Option'],
+            [BANNED, 'Banned'],
+            [NON_TWD, 'Not in TWD'],
+            [NO_REQUIREMENTS, 'No Requirement'],
             ['playtest', 'Playtest'],
             ['path-death', 'Path of Death'],
             ['path-power', 'Path of Power'],
           ]
             .filter((i) => !['playtest', 'path-death', 'path-power'].includes(i[0]) || playtestMode)
-            .map((i, index) => (
+            .map((i) => (
               <Checkbox
-                key={index}
-                name="traits"
+                key={i[0]}
+                name={TRAITS}
                 value={i[0]}
                 label={i[1]}
                 checked={value[i[0]]}

@@ -7,16 +7,8 @@ import {
   SearchFormButtonDel,
 } from '@/components';
 import { useApp } from '@/context';
-import {
-  ANY,
-  NOT_REQUIRED,
-  CAMARILLA,
-  SABBAT,
-  LAIBON,
-  INDEPENDENT,
-  ANARCH,
-  IMBUED,
-} from '@/constants';
+import { ANY, NOT_REQUIRED } from '@/constants';
+import sects from '@/assets/data/sectsList.json';
 
 const LibrarySearchFormSect = ({ value, searchForm, onChange }) => {
   const { isXWide } = useApp();
@@ -26,19 +18,14 @@ const LibrarySearchFormSect = ({ value, searchForm, onChange }) => {
   const options = [
     ['ANY', ANY],
     ['Not Required', NOT_REQUIRED],
-    ['Camarilla', CAMARILLA],
-    ['Sabbat', SABBAT],
-    ['Laibon', LAIBON],
-    ['Independent', INDEPENDENT],
-    ['Anarch', ANARCH],
-    ['Imbued', IMBUED],
+    ...sects.map((s) => [s, s.toLowerCase()]),
   ].map((i) => ({
     value: i[1],
     name: name,
     label: (
       <div className="flex items-center">
         <div className="flex w-[40px]" />
-        {i}[0]
+        {i[0]}
       </div>
     ),
   }));

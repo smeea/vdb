@@ -1,12 +1,12 @@
 import React from 'react';
 import { Select } from '@/components';
 import { useApp } from '@/context';
-import { ANY, LE, GE, EQ } from '@/constants';
+import { BLOOD, ANY, LE, GE, EQ } from '@/constants';
 
 const LibrarySearchFormBloodCost = ({ value, onChange }) => {
   const { isXWide } = useApp();
   const maxMenuHeight = isXWide ? 500 : 350;
-  const name = 'blood';
+  const name = BLOOD;
   const options = ['ANY', '0', '1', '2', '3', '4'].map((i) => ({
     value: i.toLowerCase(),
     name: name,

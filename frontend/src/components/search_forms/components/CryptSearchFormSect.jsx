@@ -7,24 +7,27 @@ import {
   SearchFormButtonDel,
 } from '@/components';
 import { useApp } from '@/context';
-import { ANY } from '@/constants';
+import { ANY, NOT_REQUIRED } from '@/constants';
+import sects from '@/assets/data/sectsList.json';
 
 const CryptSearchFormSect = ({ value, searchForm, onChange }) => {
   const { isXWide } = useApp();
   const maxMenuHeight = isXWide ? 500 : 350;
   const name = 'sect';
-  const options = ['ANY', 'Camarilla', 'Sabbat', 'Laibon', 'Independent', 'Anarch', 'Imbued'].map(
-    (i) => ({
-      value: i.toLowerCase(),
-      name: name,
-      label: (
-        <div className="flex items-center">
-          <div className="flex w-[40px]" />
-          {i}
-        </div>
-      ),
-    }),
-  );
+  const options = [
+    ['ANY', ANY],
+    ['Not Required', NOT_REQUIRED],
+    ...sects.map((s) => [s, s.toLowerCase()]),
+  ].map((i) => ({
+    value: i[1],
+    name: name,
+    label: (
+      <div className="flex items-center">
+        <div className="flex w-[40px]" />
+        {i[0]}
+      </div>
+    ),
+  }));
 
   return (
     <>
@@ -55,7 +58,7 @@ const CryptSearchFormSect = ({ value, searchForm, onChange }) => {
             isClearable={value.value[0] !== ANY}
             name={0}
             maxMenuHeight={maxMenuHeight}
-            value={options.find((obj) => obj.value === value.value[0].toLowerCase())}
+            value={options.find((obj) => obj.value === value.value[0])}
             onChange={(e, id) => (e ? onChange(e, id) : onChange({ name: name, value: ANY }, id))}
           />
         </div>
