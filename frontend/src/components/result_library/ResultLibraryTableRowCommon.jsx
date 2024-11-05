@@ -74,7 +74,7 @@ const Requirements = ({ card, handleClick }) => {
   );
 };
 
-const Burn = ({ card, handleClick }) => {
+const BurnTrifle = ({ card, handleClick }) => {
   return (
     <td className="min-w-[30px]" onClick={() => handleClick(card)}>
       <div className="flex justify-center">
@@ -108,7 +108,7 @@ const ResultLibraryTableRowCommon = ({
           />
           {(!inSearch || !isNarrow) && <Cost card={card} handleClick={handleClick} />}
           <Requirements card={card} handleClick={handleClick} />
-          {(!inSearch || !isNarrow) && <Burn card={card} handleClick={handleClick} />}
+          {(!inSearch || !isNarrow) && <BurnTrifle card={card} handleClick={handleClick} />}
         </>
       ) : (
         <>
@@ -121,7 +121,7 @@ const ResultLibraryTableRowCommon = ({
             shouldShowModal={shouldShowModal}
             isBanned={isBanned}
           />
-          {!noBurn && <Burn card={card} handleClick={handleClick} />}
+          {!noBurn && <BurnTrifle card={card} handleClick={handleClick} />}
         </>
       )}
     </>
