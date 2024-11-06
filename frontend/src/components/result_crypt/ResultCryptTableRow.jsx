@@ -9,7 +9,7 @@ import {
 } from '@/components';
 import { useApp, deckStore, deckCardChange } from '@/context';
 import { useSwipe } from '@/hooks';
-import { getSwipedBg } from '@/utils';
+import { getIsEditable, getSwipedBg } from '@/utils';
 import { DECK } from '@/constants';
 
 const ResultCryptTableRow = ({
@@ -22,7 +22,7 @@ const ResultCryptTableRow = ({
   const { addMode, inventoryMode } = useApp();
   const deck = useSnapshot(deckStore)[DECK];
   const inDeck = deck?.[CRYPT][card[ID]]?.q || 0;
-  const isEditable = deck?.[IS_AUTHOR] && !deck?.[IS_PUBLIC] && !deck?.[IS_FROZEN];
+  const isEditable = getIsEditable(deck);
 
   const { isSwiped, swipeHandlers } = useSwipe(
     () => deckCardChange(deck[DECKID], card, inDeck - 1),

@@ -4,22 +4,22 @@ import ChevronBarContract from '@/assets/images/icons/chevron-bar-contract.svg?r
 import ChatLeftQuoteFill from '@/assets/images/icons/chat-left-quote-fill.svg?react';
 import { Input, InputLabel, Textarea, Button } from '@/components';
 import { deckUpdate } from '@/context';
+import { getIsEditable } from '@/utils';
 
 const DeckDescription = ({ deck, folded, setFolded }) => {
-  const { deckid, description, isAuthor, isPublic, isFrozen } = deck;
-  const [value, setValue] = useState(description || '');
-  const isEditable = isAuthor && !isPublic && !isFrozen;
+  const [value, setValue] = useState(deck[DESCRIPTION] || '');
+  const isEditable = getIsEditable(deck);
 
   useEffect(() => {
-    if (value !== description) setValue(description ?? '');
-  }, [description]);
+    if (value !== deck[DESCRIPTION]) setValue(deck[DESCRIPTION] ?? '');
+  }, [deck[DESCRIPTION]]);
 
   const handleChange = (event) => {
     setValue(folded ? value.replace(/.*/, event.target.value) : event.target.value);
   };
 
   const deckChangeDescription = () => {
-    deckUpdate(deckid, 'description', value);
+    deckUpdate(deck[DECKID], DESCRIPTION, value);
   };
 
   const handleSubmit = (event) => {
@@ -28,7 +28,7 @@ const DeckDescription = ({ deck, folded, setFolded }) => {
   };
 
   const handleOnBlur = () => {
-    if (value !== description) {
+    if (value !== deck[DESCRIPTION]) {
       deckChangeDescription();
     }
   };

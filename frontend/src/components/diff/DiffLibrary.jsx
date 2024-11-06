@@ -5,11 +5,13 @@ import {
   ResultModal,
   DeckDrawProbability,
   DeckLibraryHeader,
+  FlexGapped,
+  DiffQuantityDiff,
 } from '@/components';
 import { TYPE_MASTER } from '@/constants';
 import { useApp } from '@/context';
 import { useModalCardController, useDeckLibrary } from '@/hooks';
-import { FlexGapped, DiffQuantityDiff } from '@/components';
+import { getIsEditable } from '@/utils';
 
 const BloodPoolDifference = ({ qTo, qFrom }) => {
   return (
@@ -46,8 +48,7 @@ const DiffLibrary = ({ cardsTo, deck }) => {
   const [showInfo, setShowInfo] = useState(false);
 
   const cardsFrom = deck[LIBRARY];
-  const { deckid, isPublic, isAuthor, isFrozen } = deck;
-  const isEditable = isAuthor && !isPublic && !isFrozen;
+  const isEditable = getIsEditable(deck);
 
   const {
     library,
@@ -104,7 +105,7 @@ const DiffLibrary = ({ cardsTo, deck }) => {
             showInfo={showInfo}
             setShowInfo={setShowInfo}
             cards={library}
-            deckid={deckid}
+            deckid={deck[DECKID]}
             byTypes={libraryByTypeTotal}
             byClan={libraryByClansTotal}
             byDisciplines={libraryByDisciplinesTotal}
@@ -135,7 +136,7 @@ const DiffLibrary = ({ cardsTo, deck }) => {
                   handleClick={handleClick}
                   libraryTotal={libraryTotal}
                   showInfo={showInfo}
-                  deckid={deckid}
+                  deckid={deck[DECKID]}
                   cards={libraryByType[cardtype]}
                   cardsFrom={cardsFrom}
                   cardsTo={cardsTo}
@@ -162,7 +163,7 @@ const DiffLibrary = ({ cardsTo, deck }) => {
                   />
                   <DiffLibraryTable
                     handleClick={handleClickSide}
-                    deckid={deckid}
+                    deckid={deck[DECKID]}
                     cards={librarySideByType[cardtype]}
                     cardsFrom={cardsFrom}
                     cardsTo={cardsTo}

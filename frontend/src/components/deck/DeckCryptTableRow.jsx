@@ -9,7 +9,7 @@ import {
   DeckDrawProbability,
 } from '@/components';
 import { useSwipe } from '@/hooks';
-import { getSwipedBg, getSoftMax, getHardTotal } from '@/utils';
+import { getIsEditable, getSwipedBg, getSoftMax, getHardTotal } from '@/utils';
 import { INVENTORY_TYPE, SOFT, HARD, CRYPT } from '@/constants';
 
 const DeckCryptTableRow = ({
@@ -30,12 +30,11 @@ const DeckCryptTableRow = ({
   const usedCrypt = useSnapshot(usedStore)[CRYPT];
   const inventoryCrypt = useSnapshot(inventoryStore)[CRYPT];
   const limitedCrypt = useSnapshot(limitedStore)[CRYPT];
-  const { deckid, isPublic, isAuthor, isFrozen } = deck;
-  const isEditable = isAuthor && !isPublic && !isFrozen;
+  const isEditable = getIsEditable(deck);
 
   const { isSwiped, swipeHandlers } = useSwipe(
-    () => deckCardChange(deckid, card.c, card.q - 1),
-    () => deckCardChange(deckid, card.c, card.q + 1),
+    () => deckCardChange(deck[DECKID], card.c, card.q - 1),
+    () => deckCardChange(deck[DECKID], card.c, card.q + 1),
     isEditable,
   );
 
@@ -58,7 +57,7 @@ const DeckCryptTableRow = ({
       <DeckCardQuantityTd
         card={card.c}
         cardChange={deckCardChange}
-        deckid={deckid}
+        deckid={deck[DECKID]}
         disabledTooltip={!inventoryMode}
         hardUsedTotal={hardUsedTotal}
         inInventory={inInventory}

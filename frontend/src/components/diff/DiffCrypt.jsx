@@ -2,15 +2,14 @@ import React, { useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { FlexGapped, DiffCryptTable, ResultModal, DeckCryptHeader } from '@/components';
 import { useApp } from '@/context';
+import { getIsEditable } from '@/utils';
 import { useModalCardController, useKeyDisciplines, useDeckCrypt } from '@/hooks';
 
 const DiffCrypt = ({ cardsTo, deck }) => {
   const { isMobile, cryptDeckSort, changeCryptDeckSort, setShowFloatingButtons } = useApp();
   const [showInfo, setShowInfo] = useState(false);
-
   const cardsFrom = deck[CRYPT];
-  const { deckid, isPublic, isAuthor, isFrozen } = deck;
-  const isEditable = isAuthor && !isPublic && !isFrozen;
+  const isEditable = getIsEditable(deck);
 
   const sortMethods = {
     Capacity: 'C',
@@ -73,7 +72,7 @@ const DiffCrypt = ({ cardsTo, deck }) => {
           cards={crypt}
           cryptGroups={cryptGroups}
           cryptTotal={cryptTotal}
-          deckid={deckid}
+          deckid={deck[DECKID]}
           hasBanned={hasBanned}
           hasIllegalDate={hasIllegalDate}
           hasLimited={hasLimited}
@@ -88,7 +87,7 @@ const DiffCrypt = ({ cardsTo, deck }) => {
         />
         <DiffCryptTable
           handleClick={handleClick}
-          deckid={deckid}
+          deckid={deck[DECKID]}
           cards={sortedCards}
           cardsFrom={cardsFrom}
           cardsTo={cardsTo}
@@ -104,7 +103,7 @@ const DiffCrypt = ({ cardsTo, deck }) => {
           <div className="flex items-center justify-between font-bold">Side Crypt</div>
           <DiffCryptTable
             handleClick={handleClickSide}
-            deckid={deckid}
+            deckid={deck[DECKID]}
             cards={sortedCardsSide}
             cardsFrom={cardsFrom}
             cardsTo={cardsTo}

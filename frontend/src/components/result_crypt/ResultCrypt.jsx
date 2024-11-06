@@ -10,7 +10,7 @@ import {
   ErrorMessage,
 } from '@/components';
 import { DECK, CAPACITY_MAX_MIN, CAPACITY_MIN_MAX, CLAN, GROUP, NAME, SECT } from '@/constants';
-import { cryptSort } from '@/utils';
+import { getIsEditable, cryptSort } from '@/utils';
 import { useApp, deckStore } from '@/context';
 
 const ResultCrypt = ({ cards, setCards, inCompare }) => {
@@ -25,7 +25,7 @@ const ResultCrypt = ({ cards, setCards, inCompare }) => {
   } = useApp();
   const navigate = useNavigate();
   const deck = useSnapshot(deckStore)[DECK];
-  const isEditable = deck?.[IS_AUTHOR] && !deck?.[IS_PUBLIC] && !deck?.[IS_FROZEN];
+  const isEditable = getIsEditable(deck);
   const sortMethods = {
     [CAPACITY_MAX_MIN]: 'C↓',
     [CAPACITY_MIN_MAX]: 'C↑',

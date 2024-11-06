@@ -7,9 +7,8 @@ import { deckUpdate } from '@/context';
 import { Input, InputLabel, DeckFreezeButton } from '@/components';
 
 const DeckChangeName = ({ deck }) => {
-  const { isPublic, isAuthor, isFrozen, isNonEditable } = deck;
   const [value, setValue] = useState(deck[NAME] || '');
-  const isEditable = isAuthor && !isPublic && !isFrozen && !isNonEditable;
+  const isEditable = getIsEditable(deck);
   const isTwd = deck[DECKID] !== 'deck' && deck[DECKID].length !== 9 && !deck[DECKID].includes(':');
 
   useEffect(() => {
@@ -45,21 +44,23 @@ const DeckChangeName = ({ deck }) => {
         onChange={handleChange}
         onBlur={handleOnBlur}
         readOnly={!isEditable}
-        roundedStyle={isAuthor || isNonEditable || isPublic || isTwd ? '' : 'rounded-r'}
+        roundedStyle={
+          deck[IS_AUTHOR] || deck[IS_NON_EDITABLE] || deck[IS_PUBLIC] || isTwd ? '' : 'rounded-r'
+        }
         borderStyle={`border-y
-          ${isAuthor || isNonEditable || isPublic || isTwd ? '' : 'border-r'}`}
+          ${deck[IS_AUTHOR] || deck[IS_NON_EDITABLE] || deck[IS_PUBLIC] || isTwd ? '' : 'border-r'}`}
       />
-      {(isPublic || isTwd) && (
-        <InputLabel title={isPublic ? 'Public Deck' : 'Tournament Winning Deck'} isLast>
-          {isPublic ? <PeopleFill /> : <TrophyFill />}
+      {(deck[IS_PUBLIC] || isTwd) && (
+        <InputLabel title={deck[IS_PUBLIC] ? 'Public Deck' : 'Tournament Winning Deck'} isLast>
+          {deck[IS_PUBLIC] ? <PeopleFill /> : <TrophyFill />}
         </InputLabel>
       )}
-      {isNonEditable && (
+      {deck[IS_NON_EDITABLE] && (
         <InputLabel title="Deck is non-editable and will never change" isLast>
           <Snow width="16" height="23" viewBox="0 0 16 16" />
         </InputLabel>
       )}
-      {isAuthor && !isPublic && (
+      {deck[IS_AUTHOR] && !deck[IS_PUBLIC] && (
         <DeckFreezeButton
           roundedStyle="rounded-r"
           borderStyle="border-l border-y sm:border-r"

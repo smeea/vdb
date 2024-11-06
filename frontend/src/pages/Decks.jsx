@@ -23,7 +23,7 @@ import {
 } from '@/components';
 import { deckStore, useApp, setDeck } from '@/context';
 import { useDecksTagsAll, useDeck, useTags } from '@/hooks';
-import { parseDeckHash } from '@/utils';
+import { getIsEditable, parseDeckHash } from '@/utils';
 import { AUTHOR, DECK, DECKS, CRYPT, LIBRARY } from '@/constants';
 
 const Decks = () => {
@@ -55,9 +55,7 @@ const Decks = () => {
   const [showSeating, setShowSeating] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
   const [showRecommendation, setShowRecommendation] = useState(false);
-
-  const { isPublic, isAuthor, isFrozen } = deck || {};
-  const isEditable = isAuthor && !isPublic && !isFrozen;
+  const isEditable = getIsEditable(deck);
 
   const getDeck = async () => {
     let deckData;

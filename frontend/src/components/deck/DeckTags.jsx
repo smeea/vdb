@@ -4,11 +4,11 @@ import Spellcheck from '@/assets/images/icons/spellcheck.svg?react';
 import { Select, ButtonIconed } from '@/components';
 import { deckUpdate } from '@/context';
 import { useTags } from '@/hooks';
+import { getIsEditable } from '@/utils';
 import { TAGS } from '@/constants';
 
 const DeckTags = ({ deck, tagsSuperior, noAutotags, isBordered, allTagsOptions }) => {
-  const { deckid, tags, isPublic, isAuthor, isFrozen } = deck;
-  const isEditable = isAuthor && !isPublic && !isFrozen;
+  const isEditable = getIsEditable(deck);
 
   const tagList = useMemo(() => {
     const t = [];
@@ -21,8 +21,8 @@ const DeckTags = ({ deck, tagsSuperior, noAutotags, isBordered, allTagsOptions }
       });
     }
 
-    if (tags) {
-      tags.map((tag) => {
+    if (deck[TAGS]) {
+      deck[TAGS].map((tag) => {
         t.push({
           label: tag,
           value: tag,
@@ -31,16 +31,16 @@ const DeckTags = ({ deck, tagsSuperior, noAutotags, isBordered, allTagsOptions }
     }
 
     return t;
-  }, [tags, tagsSuperior]);
+  }, [deck[TAGS], tagsSuperior]);
 
   const handleChange = (event) => {
     const v = event.map((t) => t.value);
-    deckUpdate(deckid, TAGS, v);
+    deckUpdate(deck[DECKID], TAGS, v);
   };
 
   const handleAutotagClick = () => {
     const tags = useTags(deck[CRYPT], deck[LIBRARY]);
-    deckUpdate(deckid, TAGS, [...tags.superior, ...tags.base]);
+    deckUpdate(deck[DECKID], TAGS, [...tags.superior, ...tags.base]);
   };
 
   return (

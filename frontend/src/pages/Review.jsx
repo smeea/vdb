@@ -69,11 +69,11 @@ const Review = () => {
     }
     const d = {
       ...deckData,
-      crypt: cardsData[CRYPT],
-      library: cardsData[LIBRARY],
-      isBranches: !!(deckData[MASTER] || deckData[BRANCHES]?.length > 0),
-      isPublic: !!deckData.publicParent,
-      isNonEditable: false,
+      [CRYPT]: cardsData[CRYPT],
+      [LIBRARY]: cardsData[LIBRARY],
+      [IS_BRANCHES]: !!(deckData[MASTER] || deckData[BRANCHES]?.length > 0),
+      [IS_PUBLIC]: !!deckData.publicParent,
+      [IS_NON_EDITABLE]: false,
     };
     delete d.cards;
 
@@ -189,7 +189,7 @@ const Review = () => {
         <FlexGapped className="w-full flex-col">
           {deckFrom && (
             <DeckDetails
-              deck={{ ...deckFrom, isNonEditable: false }}
+              deck={{ ...deckFrom, [IS_NON_EDITABLE]: false }}
               folded={foldedDescription}
               setFolded={setFoldedDescription}
             />

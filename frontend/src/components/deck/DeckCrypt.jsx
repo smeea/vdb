@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { DeckCryptTable, DeckCryptHeader, ResultModal, FlexGapped } from '@/components';
 import { useApp } from '@/context';
+import { getIsEditable } from '@/utils';
 import { useModalCardController, useKeyDisciplines, useDeckCrypt } from '@/hooks';
 
 const DeckCrypt = ({ inSearch, inPreview, inMissing, noDisciplines, deck }) => {
   const { setShowFloatingButtons, cryptDeckSort, changeCryptDeckSort, isMobile } = useApp();
-  const { deckid, isPublic, isAuthor, isFrozen } = deck;
-  const isEditable = isAuthor && !isPublic && !isFrozen;
+  const isEditable = getIsEditable(deck);
   const [showInfo, setShowInfo] = useState(false);
 
   const sortMethods = {
@@ -75,7 +75,7 @@ const DeckCrypt = ({ inSearch, inPreview, inMissing, noDisciplines, deck }) => {
           cards={crypt}
           cryptGroups={cryptGroups}
           cryptTotal={cryptTotal}
-          deckid={deckid}
+          deckid={deck[DECKID]}
           hasBanned={hasBanned}
           hasIllegalDate={hasIllegalDate}
           hasLimited={hasLimited}

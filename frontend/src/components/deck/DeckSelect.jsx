@@ -27,6 +27,7 @@ const DeckSelect = ({
 }) => {
   const { inventoryMode, isMobile, recentDecks, setShowFloatingButtons, username } = useApp();
   const [selectFrom, setSelectFrom] = useState();
+  const isEditable = getIsEditable(deck);
 
   useEffect(() => {
     if (deckid?.includes(':') || !deckid) {
@@ -37,9 +38,6 @@ const DeckSelect = ({
       setSelectFrom(RECENT);
     }
   }, [deckid, decks]);
-
-  const { isPublic, isAuthor, isFrozen, isNonEditable } = deck || {};
-  const isEditable = isAuthor && !isPublic && !isFrozen && !isNonEditable;
 
   return (
     <div className="flex flex-col gap-2">
@@ -58,7 +56,7 @@ const DeckSelect = ({
             <DeckBranchSelect handleSelect={handleSelect} deck={deck} />
           </div>
         )}
-        {inventoryMode && isAuthor && (
+        {inventoryMode && deck[IS_AUTHOR] && (
           <div className="flex">
             <Button
               title={`Inventory Type: ${

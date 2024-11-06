@@ -8,7 +8,7 @@ import {
   ResultLibraryTotal,
   ErrorMessage,
 } from '@/components';
-import { librarySort } from '@/utils';
+import { getIsEditable, librarySort } from '@/utils';
 import { useApp, deckStore } from '@/context';
 import { DECK, CLAN_DISCIPLINE, COST_MAX_MIN, COST_MIN_MAX, NAME, TYPE } from '@/constants';
 
@@ -24,7 +24,7 @@ const ResultLibrary = ({ cards, setCards, inCompare }) => {
   } = useApp();
   const navigate = useNavigate();
   const deck = useSnapshot(deckStore)[DECK];
-  const isEditable = deck?.[IS_AUTHOR] && !deck?.[IS_PUBLIC] && !deck?.[IS_FROZEN];
+  const isEditable = getIsEditable(deck);
 
   const sortMethods = {
     [CLAN_DISCIPLINE]: 'C/D',

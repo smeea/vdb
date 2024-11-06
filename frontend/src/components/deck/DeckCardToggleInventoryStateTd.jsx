@@ -6,8 +6,7 @@ import { cardToggleInventoryState } from '@/context';
 import { S, INVENTORY_TYPE } from '@/constants';
 
 const DeckCardToggleInventoryStateTd = ({ card, deck }) => {
-  const { deckid, isPublic, isAuthor, isFrozen } = deck;
-  const isEditable = isAuthor && !isPublic && !isFrozen;
+  const isEditable = getIsEditable(deck);
 
   return (
     <td className="group max-w-0">
@@ -18,7 +17,7 @@ const DeckCardToggleInventoryStateTd = ({ card, deck }) => {
             !card.i && 'opacity-0',
             !card.i && isEditable && 'group-hover:opacity-[0.35]',
           )}
-          onClick={() => isEditable && cardToggleInventoryState(deckid, card.c[ID])}
+          onClick={() => isEditable && cardToggleInventoryState(deck[DECKID], card.c[ID])}
         >
           {deck[INVENTORY_TYPE] == S ? <PinAngleFill /> : <Shuffle />}
         </div>

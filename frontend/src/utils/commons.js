@@ -262,3 +262,8 @@ export const parseDeckHash = (hash, cryptCardBase, libraryCardBase) => {
     });
   return { crypt, library };
 };
+
+export const getIsEditable = (deck) => {
+  if (!deck) return null;
+  return deck[IS_AUTHOR] && !deck[IS_PUBLIC] && !deck[IS_FROZEN] && !deck[IS_NON_EDITABLE];
+};

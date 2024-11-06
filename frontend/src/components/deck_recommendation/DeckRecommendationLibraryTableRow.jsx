@@ -2,12 +2,12 @@ import React from 'react';
 import { twMerge } from 'tailwind-merge';
 import { ButtonAddCard, ResultLibraryTableRowCommon } from '@/components';
 import { deckCardChange } from '@/context';
-import { getSwipedBg } from '@/utils';
+import { getIsEditable, getSwipedBg } from '@/utils';
 import { useSwipe } from '@/hooks';
 
 const DeckRecommendationLibraryTableRow = ({ card, handleClick, deck }) => {
-  const isEditable = deck?.[IS_AUTHOR] && !deck?.[IS_PUBLIC] && !deck?.[IS_FROZEN];
   const inDeck = deck[LIBRARY][card[ID]]?.q || 0;
+  const isEditable = getIsEditable(deck);
 
   const { isSwiped, swipeHandlers } = useSwipe(
     () => deckCardChange(deck[DECKID], card, inDeck - 1),

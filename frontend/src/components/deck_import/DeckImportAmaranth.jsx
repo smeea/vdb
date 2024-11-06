@@ -64,7 +64,7 @@ const DeckImportAmaranth = ({ handleClose }) => {
       });
     });
 
-    return deckServices[BRANCHES]Import(master[DECKID], branches);
+    return deckServices.branchesImport(master[DECKID], branches);
   };
 
   const importDeckFromAmaranth = async (amaranth_deck) => {

@@ -8,13 +8,13 @@ import {
   FlexGapped,
 } from '@/components';
 import { useApp } from '@/context';
+import { getIsEditable } from '@/utils';
 import { TYPE_MASTER } from '@/constants';
 import { useModalCardController, useDeckLibrary } from '@/hooks';
 
 const DeckLibrary = ({ inSearch, inPreview, inMissing, deck }) => {
   const { setShowFloatingButtons, isMobile, isNarrow } = useApp();
-  const { deckid, isPublic, isAuthor, isFrozen } = deck;
-  const isEditable = isAuthor && !isPublic && !isFrozen;
+  const isEditable = getIsEditable(deck);
   const [showInfo, setShowInfo] = useState(false);
 
   const {
@@ -82,7 +82,7 @@ const DeckLibrary = ({ inSearch, inPreview, inMissing, deck }) => {
             showInfo={showInfo}
             setShowInfo={setShowInfo}
             cards={library}
-            deckid={deckid}
+            deckid={deck[DECKID]}
             byTypes={libraryByTypeTotal}
             byClans={libraryByClansTotal}
             byDisciplines={libraryByDisciplinesTotal}

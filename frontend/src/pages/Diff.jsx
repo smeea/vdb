@@ -16,6 +16,7 @@ import {
 import { useApp, deckStore, setDeck } from '@/context';
 import { useDeck } from '@/hooks';
 import { deckServices } from '@/services';
+import { getIsEditable } from '@/utils';
 import { CRYPT, LIBRARY } from '@/constants';
 
 const Diff = () => {
@@ -37,9 +38,7 @@ const Diff = () => {
   const [errorFrom, setErrorFrom] = useState(false);
   const [errorTo, setErrorTo] = useState(false);
   const [deckTo, setDeckTo] = useState();
-
-  const { isPublic, isAuthor, isFrozen } = deck || {};
-  const isEditable = isAuthor && !isPublic && !isFrozen;
+  const isEditable = getIsEditable(deck);
 
   const getDeck = async (id, setD, setE) => {
     let deckData;

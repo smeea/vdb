@@ -2,23 +2,23 @@ import React, { useState, useEffect } from 'react';
 import PersonFill from '@/assets/images/icons/person-fill.svg?react';
 import { Input, InputLabel } from '@/components';
 import { deckUpdate } from '@/context';
+import { getIsEditable } from '@/utils';
 import { AUTHOR } from '@/constants';
 
 const DeckChangeAuthor = ({ deck }) => {
-  const { deckid, author, isAuthor, isPublic, isFrozen } = deck;
-  const [value, setValue] = useState(author || '');
-  const isEditable = isAuthor && !isPublic && !isFrozen;
+  const [value, setValue] = useState(deck[AUTHOR] || '');
+  const isEditable = getIsEditable(deck);
 
   useEffect(() => {
-    if (value !== author) setValue(author ?? '');
-  }, [author]);
+    if (value !== deck[AUTHOR]) setValue(deck[AUTHOR] ?? '');
+  }, [deck[AUTHOR]]);
 
   const handleChange = (event) => {
     setValue(event.target.value);
   };
 
   const deckChangeAuthor = () => {
-    deckUpdate(deckid, AUTHOR, value);
+    deckUpdate(deck[DECKID], AUTHOR, value);
   };
 
   const handleSubmit = (event) => {
@@ -27,7 +27,7 @@ const DeckChangeAuthor = ({ deck }) => {
   };
 
   const handleOnBlur = () => {
-    if (value !== author) {
+    if (value !== deck[AUTHOR]) {
       deckChangeAuthor();
     }
   };

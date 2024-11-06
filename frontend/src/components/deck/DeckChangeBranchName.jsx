@@ -5,21 +5,20 @@ import { Input, InputLabel, Button } from '@/components';
 import { deckUpdate } from '@/context';
 
 const DeckChangeBranchName = ({ deck }) => {
-  const { deckid, branchName, isAuthor, isPublic, isFrozen } = deck;
-  const [value, setValue] = useState(branchName || '');
+  const [value, setValue] = useState(deck[BRANCH_NAME] || '');
   const [success, setSuccess] = useState(false);
-  const isEditable = isAuthor && !isPublic && !isFrozen;
+  const isEditable = getIsEditable(deck);
 
   useEffect(() => {
-    if (value !== branchName) setValue(branchName ?? '');
-  }, [branchName]);
+    if (value !== deck[BRANCH_NAME]) setValue(deck[BRANCH_NAME] ?? '');
+  }, [deck[BRANCH_NAME]]);
 
   const handleChange = (event) => {
     setValue(event.target.value);
   };
 
   const deckChangeBranchName = () => {
-    deckUpdate(deckid, BRANCH_NAME, value);
+    deckUpdate(deck[DECKID], BRANCH_NAME, value);
     setSuccess(true);
     setTimeout(() => {
       setSuccess(false);
@@ -32,7 +31,7 @@ const DeckChangeBranchName = ({ deck }) => {
   };
 
   const handleOnBlur = () => {
-    if (value != branchName) {
+    if (value != deck[BRANCH_NAME]) {
       deckChangeBranchName();
     }
   };
@@ -49,7 +48,7 @@ const DeckChangeBranchName = ({ deck }) => {
         readOnly={!isEditable}
         roundedStyle="rounded max-sm:rounded-none"
       />
-      {isAuthor && (
+      {deck[IS_AUTHOR] && (
         <Button
           className="rounded-l-none sm:hidden"
           variant={success ? 'success' : 'primary'}
