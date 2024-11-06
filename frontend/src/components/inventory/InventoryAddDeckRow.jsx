@@ -21,7 +21,7 @@ const InventoryAddDeckRow = ({ deck, allTagsOptions }) => {
   const { isDesktop, isMobile } = useApp();
   const [showDeck, setShowDeck] = useState();
   const inInventory = useDeckInInventory(deck);
-  const clan = getClan(deck.crypt);
+  const clan = getClan(deck[CRYPT]);
 
   return (
     <tr className="row-bg border-y border-bgSecondary dark:border-bgSecondaryDark">
@@ -50,9 +50,9 @@ const InventoryAddDeckRow = ({ deck, allTagsOptions }) => {
       <td className="max-sm:w-full sm:min-w-[250px] lg:min-w-[400px]">
         <div
           className="flex justify-between truncate text-fgName dark:text-fgNameDark"
-          title={deck.name}
+          title={deck[NAME]}
         >
-          {deck.name}
+          {deck[NAME]}
           {deck.branchName && (deck.master || (deck.branches && deck.branches.length > 0)) && (
             <div className="inline" title={deck.branchName}>
               {deck.branchName}

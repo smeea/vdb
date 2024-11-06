@@ -47,14 +47,14 @@ const PlaytestReportEntry = ({ value }) => {
   return (
     <div className="flex basis-full flex-col gap-4">
       {Object.keys(value)
-        .sort((a, b) => value[a].text < value[b].text)
+        .sort((a, b) => value[a][TEXT] < value[b][TEXT])
         .sort((a, b) => value[a].score < value[b].score)
         .map((id, idx) => {
           return (
             <div key={id} className="flex flex-col gap-2 sm:gap-3 print:break-inside-avoid">
               <Report
                 id={id}
-                text={value[id].text}
+                text={value[id][TEXT]}
                 score={value[id].score}
                 isPlayed={value[id].isPlayed}
               />

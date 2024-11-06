@@ -5,7 +5,7 @@ import {
   ResultLibraryCost,
   ResultLegalIcon,
 } from '@/components';
-import { BANNED, GROUPED_TYPE, ASCII_NAME } from '@/constants';
+import { BANNED, GROUPED_TYPE, ASCII } from '@/constants';
 import { useApp } from '@/context';
 import { librarySort } from '@/utils';
 import { useDeckLibrary, useModalCardController } from '@/hooks';
@@ -15,7 +15,7 @@ const TwdResultLibraryKeyCardsTable = ({ library, withHeader }) => {
   const sortedLibrary = librarySort(Object.values(library), GROUPED_TYPE);
   const keyCards = sortedLibrary
     .filter((card) => card.q >= 4)
-    .toSorted((a, b) => a.c[ASCII_NAME] - b.c[ASCII_NAME]);
+    .toSorted((a, b) => a.c[ASCII] - b.c[ASCII]);
 
   const {
     currentModalCard,
@@ -66,7 +66,7 @@ const TwdResultLibraryKeyCardsTable = ({ library, withHeader }) => {
           {keyCards.map((card) => {
             return (
               <TwdResultLibraryKeyCardsTableRow
-                key={card.c.Id}
+                key={card.c[ID]}
                 card={card}
                 handleClick={handleClick}
                 shouldShowModal={shouldShowModal}

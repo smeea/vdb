@@ -12,9 +12,9 @@ const TwdSearchFormLocation = ({ value, form }) => {
   const maxMenuHeight = isXWide ? 500 : 350;
 
   const handleChange = (v, target) => {
-    form.location[target] = v?.value ?? '';
+    form[LOCATION][target] = v?.value ?? '';
     if (target === 'country') {
-      form.location.city = '';
+      form[LOCATION].city = '';
     }
   };
 

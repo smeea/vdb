@@ -14,10 +14,10 @@ import cardtypeSorted from '@/assets/data/cardtypeSorted.json';
 const LibrarySearchFormType = ({ value, onChange, searchForm }) => {
   const { isXWide } = useApp();
   const maxMenuHeight = isXWide ? 500 : 350;
-  const name = 'type';
+  const name = TYPE;
   const options = ['ANY', ...cardtypeSorted].map((i) => ({
     value: i.toLowerCase(),
-    name: 'type',
+    name: TYPE,
     label: (
       <div className="flex items-center">
         <div className="flex w-[40px] justify-center">

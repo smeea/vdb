@@ -54,7 +54,7 @@ const DeckSelectAdvTableRow = ({
     handleClose();
   };
 
-  const clan = getClan(deck.crypt);
+  const clan = getClan(deck[CRYPT]);
 
   return (
     <tr className="row-bg h-[41px] border-y border-bgSecondary dark:border-bgSecondaryDark">
@@ -104,9 +104,9 @@ const DeckSelectAdvTableRow = ({
       >
         <div
           className="flex justify-between gap-2 text-fgName dark:text-fgNameDark"
-          title={deck.name}
+          title={deck[NAME]}
         >
-          {deck.name}
+          {deck[NAME]}
           <div className="flex items-center justify-end gap-3">
             {hasBanned && <ResultLegalIcon type={BANNED} />}
             {limitedMode && hasLimited && <ResultLegalIcon />}

@@ -16,7 +16,7 @@ import {
   EN,
   TWD,
   PDA,
-  CARD_TEXT,
+  TEXT,
   DECK,
   DECKS,
   CRYPT,
@@ -172,7 +172,7 @@ export const AppProvider = ({ children }) => {
       setLocalizedCrypt({ [EN]: data[NATIVE_CRYPT] });
       setLocalizedLibrary({ [EN]: data[NATIVE_LIBRARY] });
 
-      cardServices.getPreconDecks(data.crypt, data.library).then((preconData) => {
+      cardServices.getPreconDecks(data[CRYPT], data[LIBRARY]).then((preconData) => {
         if (isIndexedDB) set(PRECON_DECKS, deepClone(preconData));
         setPreconDecks(preconData);
       });
@@ -233,18 +233,18 @@ export const AppProvider = ({ children }) => {
   }, []);
 
   const parseInventoryData = (inventoryData) => {
-    Object.keys(inventoryData.crypt).forEach((i) => {
+    Object.keys(inventoryData[CRYPT]).forEach((i) => {
       if (cryptCardBase[i]) {
-        inventoryData.crypt[i].c = cryptCardBase[i];
+        inventoryData[CRYPT][i].c = cryptCardBase[i];
       } else {
-        delete inventoryData.crypt[i];
+        delete inventoryData[CRYPT][i];
       }
     });
-    Object.keys(inventoryData.library).forEach((i) => {
+    Object.keys(inventoryData[LIBRARY]).forEach((i) => {
       if (libraryCardBase[i]) {
-        inventoryData.library[i].c = libraryCardBase[i];
+        inventoryData[LIBRARY][i].c = libraryCardBase[i];
       } else {
-        delete inventoryData.library[i];
+        delete inventoryData[LIBRARY][i];
       }
     });
 
@@ -304,8 +304,8 @@ export const AppProvider = ({ children }) => {
     setCardBase((draft) => {
       Object.keys(draft).forEach((k) => {
         const newInfo = localizedInfo[k] ?? nativeInfo[k];
-        draft[k].Name = newInfo.Name;
-        draft[k][CARD_TEXT] = newInfo[CARD_TEXT];
+        draft[k][NAME] = newInfo[NAME];
+        draft[k][TEXT] = newInfo[TEXT];
       });
     });
   };
@@ -314,22 +314,22 @@ export const AppProvider = ({ children }) => {
     cardServices.getLocalizedCardBase(lang).then((data) => {
       update(LOCALIZED_CRYPT, (val) => ({
         ...val,
-        [lang]: data.crypt,
+        [lang]: data[CRYPT],
       }));
       update(LOCALIZED_LIBRARY, (val) => ({
         ...val,
-        [lang]: data.library,
+        [lang]: data[LIBRARY],
       }));
       setLocalizedCrypt((prevState) => ({
         ...prevState,
-        [lang]: data.crypt,
+        [lang]: data[CRYPT],
       }));
       setLocalizedLibrary((prevState) => ({
         ...prevState,
-        [lang]: data.library,
+        [lang]: data[LIBRARY],
       }));
-      changeBaseTextToLocalizedText(setCryptCardBase, data.crypt, nativeCrypt);
-      changeBaseTextToLocalizedText(setLibraryCardBase, data.library, nativeLibrary);
+      changeBaseTextToLocalizedText(setCryptCardBase, data[CRYPT], nativeCrypt);
+      changeBaseTextToLocalizedText(setLibraryCardBase, data[LIBRARY], nativeLibrary);
     });
   };
 
@@ -436,7 +436,7 @@ export const AppProvider = ({ children }) => {
     if (idx !== -1) d.splice(idx, 1);
     d.unshift({
       deckid: deck.deckid,
-      name: deck.name,
+      name: deck[NAME],
       src: src,
     });
     if (d.length > 10) d = d.slice(0, 10);
@@ -468,12 +468,12 @@ export const AppProvider = ({ children }) => {
       if (decksData[deckid].usedInInventory) {
         Object.keys(decksData[deckid].usedInInventory).forEach((cardid) => {
           if (cardid > 200000) {
-            if (decksData[deckid].crypt[cardid]) {
-              decksData[deckid].crypt[cardid].i = decksData[deckid].usedInInventory[cardid];
+            if (decksData[deckid][CRYPT][cardid]) {
+              decksData[deckid][CRYPT][cardid].i = decksData[deckid].usedInInventory[cardid];
             }
           } else {
-            if (decksData[deckid].library[cardid]) {
-              decksData[deckid].library[cardid].i = decksData[deckid].usedInInventory[cardid];
+            if (decksData[deckid][LIBRARY][cardid]) {
+              decksData[deckid][LIBRARY][cardid].i = decksData[deckid].usedInInventory[cardid];
             }
           }
         });
@@ -500,7 +500,7 @@ export const AppProvider = ({ children }) => {
 
   useEffect(() => {
     if (decks && inventoryMode) setupUsedInventory(decks);
-  }, [decks, decks?.[deck?.deckid]?.crypt, decks?.[deck?.deckid]?.library, inventoryMode]);
+  }, [decks, decks?.[deck?.deckid]?.[CRYPT], decks?.[deck?.deckid]?.[LIBRARY], inventoryMode]);
 
   return (
     <AppContext.Provider

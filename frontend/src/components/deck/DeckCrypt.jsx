@@ -31,9 +31,9 @@ const DeckCrypt = ({ inSearch, inPreview, inMissing, noDisciplines, deck }) => {
     hasWrongGroups,
     cryptGroups,
     cryptTotal,
-  } = useDeckCrypt(deck.crypt, cryptDeckSort);
+  } = useDeckCrypt(deck[CRYPT], cryptDeckSort);
 
-  const { disciplinesSet, keyDisciplines } = useKeyDisciplines(deck.crypt);
+  const { disciplinesSet, keyDisciplines } = useKeyDisciplines(deck[CRYPT]);
 
   const {
     currentModalCard,

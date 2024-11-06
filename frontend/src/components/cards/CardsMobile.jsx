@@ -11,7 +11,7 @@ const CardsMobile = ({ card, openRandomCard, handleChange, handleSetCard }) => {
     <>
       {card && (
         <>
-          {playtestMode || card.Id < 110000 || (card.Id > 200000 && card.Id < 210000) ? (
+          {playtestMode || card[ID] < 110000 || (card[ID] > 200000 && card[ID] < 210000) ? (
             <div className="pb-[59px]">
               {showImage ? (
                 <CardImage card={card} />
@@ -37,7 +37,7 @@ const CardsMobile = ({ card, openRandomCard, handleChange, handleSetCard }) => {
       )}
       <div className="fixed bottom-10 z-20 flex w-full bg-bgPrimary p-2 dark:bg-bgPrimaryDark">
         <div className="w-full md:basis-8/12">
-          <CardSelect autoFocus={!isMobile || !card?.Id} onChange={handleChange} value={null} />
+          <CardSelect autoFocus={!isMobile || !card?.[ID]} onChange={handleChange} value={null} />
         </div>
       </div>
       <div className="fixed z-10">

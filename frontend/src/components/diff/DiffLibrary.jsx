@@ -45,7 +45,7 @@ const DiffLibrary = ({ cardsTo, deck }) => {
   const { setShowFloatingButtons } = useApp();
   const [showInfo, setShowInfo] = useState(false);
 
-  const cardsFrom = deck.library;
+  const cardsFrom = deck[LIBRARY];
   const { deckid, isPublic, isAuthor, isFrozen } = deck;
   const isEditable = isAuthor && !isPublic && !isFrozen;
 

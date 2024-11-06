@@ -39,7 +39,7 @@ const DeckTags = ({ deck, tagsSuperior, noAutotags, isBordered, allTagsOptions }
   };
 
   const handleAutotagClick = () => {
-    const tags = useTags(deck.crypt, deck.library);
+    const tags = useTags(deck[CRYPT], deck[LIBRARY]);
     deckUpdate(deckid, TAGS, [...tags.superior, ...tags.base]);
   };
 

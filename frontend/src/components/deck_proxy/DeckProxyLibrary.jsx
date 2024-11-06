@@ -27,7 +27,7 @@ const DeckProxyLibrary = ({
     librarySideByType,
     trifleTotal,
     libraryByTypeTotal,
-  } = useDeckLibrary(deck.library);
+  } = useDeckLibrary(deck[LIBRARY]);
 
   const proxiesToPrint = Object.keys(proxySelected)
     .filter(

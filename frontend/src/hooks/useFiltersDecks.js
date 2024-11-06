@@ -3,23 +3,22 @@
 // in case of missing filter or matching them the method returns false, meaning there's no missing criteria
 // if the filter is present and the deck dont match it the method returns true meaning the criteria is missing.
 // if some criteria is missing the main method return false and exits that deck check.
-
 import { countCards, countTotalCost, getClan, getSect } from '@/utils';
 import { STAR, MONOCLAN, LT, LT0, GT, EQ, NOT, OR, CAPACITY } from '@/constants';
 
 const useFiltersDecks = (decks = {}) => {
   const filterDecks = (filter) => {
     return Object.values(decks).filter((deck) => {
-      if (filter.rank && missingRank(filter.rank, deck)) return false;
-      if (filter.crypt && missingCrypt(filter.crypt, deck)) return false;
-      if (filter.library && missingLibrary(filter.library, deck)) return false;
-      if (filter.libraryTotal && missingLibraryTotal(filter.libraryTotal, deck)) return false;
-      if (filter.clan && missingClan(filter.clan, deck)) return false;
-      if (filter.sect && missingSect(filter.sect, deck)) return false;
-      if (filter.capacity && missingCapacity(filter.capacity, deck)) return false;
-      if (filter.disciplines && missingDisciplines(filter.disciplines, deck)) return false;
-      if (filter.cardtypes && missingCardtypes(filter.cardtypes, deck)) return false;
-      if (filter.traits && missingTraits(filter.traits, deck)) return false;
+      if (filter[RANK] && missingRank(filter[RANK], deck)) return false;
+      if (filter[CRYPT] && missingCrypt(filter[CRYPT], deck)) return false;
+      if (filter[LIBRARY] && missingLibrary(filter[LIBRARY], deck)) return false;
+      if (filter[LIBRARY_TOTAL] && missingLibraryTotal(filter[LIBRARY_TOTAL], deck)) return false;
+      if (filter[CLAN] && missingClan(filter[CLAN], deck)) return false;
+      if (filter[SECT] && missingSect(filter[SECT], deck)) return false;
+      if (filter[CAPACITY] && missingCapacity(filter[CAPACITY], deck)) return false;
+      if (filter[DISCIPLINES] && missingDisciplines(filter[DISCIPLINES], deck)) return false;
+      if (filter[CARDTYPES] && missingCardtypes(filter[CARDTYPES], deck)) return false;
+      if (filter[TRAITS] && missingTraits(filter[TRAITS], deck)) return false;
 
       return true;
     });
@@ -38,21 +37,21 @@ const missingRank = (filter, deck) => {
 
   if (from) {
     if (from.includes('%')) {
-      if (deck.score.rank > (deck.score.players * from.split('%')[0]) / 100) {
+      if (deck.score[RANK] > (deck.score[PLAYERS] * from.split('%')[0]) / 100) {
         miss = true;
       }
     } else {
-      if (deck.score.rank > from) miss = true;
+      if (deck.score[RANK] > from) miss = true;
     }
   }
 
   if (to) {
     if (to.includes('%')) {
-      if (deck.score.rank < (deck.score.players * to.split('%')[0]) / 100) {
+      if (deck.score[RANK] < (deck.score[PLAYERS] * to.split('%')[0]) / 100) {
         miss = true;
       }
     } else {
-      if (deck.score.rank < to) miss = true;
+      if (deck.score[RANK] < to) miss = true;
     }
   }
 
@@ -63,7 +62,7 @@ const missingCrypt = (filter, deck) => {
   if (
     Object.keys(filter).every((c) => {
       const { q, m } = filter[c];
-      const cardQty = deck.crypt?.[c]?.q ?? 0;
+      const cardQty = deck[CRYPT]?.[c]?.q ?? 0;
       return compareQty(cardQty, q, m);
     })
   ) {
@@ -77,7 +76,7 @@ const missingLibrary = (filter, deck) => {
   if (
     Object.keys(filter).every((c) => {
       const { q, m } = filter[c];
-      const cardQty = deck.library?.[c]?.q ?? 0;
+      const cardQty = deck[LIBRARY]?.[c]?.q ?? 0;
       return compareQty(cardQty, q, m);
     })
   ) {
@@ -88,7 +87,7 @@ const missingLibrary = (filter, deck) => {
 };
 
 const missingLibraryTotal = (filter, deck) => {
-  const libraryTotal = countCards(Object.values(deck.library));
+  const libraryTotal = countCards(Object.values(deck[LIBRARY]));
 
   if (
     Object.keys(filter).some((i) => {
@@ -104,7 +103,7 @@ const missingLibraryTotal = (filter, deck) => {
 
 const missingClan = (filter, deck) => {
   const { value, logic } = filter;
-  const clan = getClan(deck.crypt);
+  const clan = getClan(deck[CRYPT]);
 
   switch (logic) {
     case OR:
@@ -122,7 +121,7 @@ const missingClan = (filter, deck) => {
 
 const missingSect = (filter, deck) => {
   const { value, logic } = filter;
-  const sect = getSect(deck.crypt);
+  const sect = getSect(deck[CRYPT]);
 
   switch (logic) {
     case OR:
@@ -139,8 +138,8 @@ const missingSect = (filter, deck) => {
 };
 
 const missingCapacity = (filter, deck) => {
-  const cryptTotal = countCards(Object.values(deck.crypt));
-  const cryptTotalCap = countTotalCost(Object.values(deck.crypt), CAPACITY);
+  const cryptTotal = countCards(Object.values(deck[CRYPT]));
+  const cryptTotalCap = countTotalCost(Object.values(deck[CRYPT]), CAPACITY);
   const avgCapacity = cryptTotalCap / cryptTotal;
 
   if (
@@ -158,8 +157,8 @@ const missingCapacity = (filter, deck) => {
 const missingDisciplines = (filter, deck) => {
   if (
     Object.keys(filter).every((d) => {
-      return Object.values(deck.library).some((card) => {
-        return card.c.Discipline.includes(d);
+      return Object.values(deck[LIBRARY]).some((card) => {
+        return card.c[DISCIPLINE].includes(d);
       });
     })
   ) {
@@ -172,9 +171,9 @@ const missingCardtypes = (filter, deck) => {
   let cardTypes = {};
   let libraryTotal = 0;
 
-  Object.values(deck.library).forEach((card) => {
+  Object.values(deck[LIBRARY]).forEach((card) => {
     libraryTotal += card.q;
-    const type = card.c.Type.toLowerCase();
+    const type = card.c[TYPE].toLowerCase();
     if (cardTypes[type]) {
       cardTypes[type] += card.q;
     } else {
@@ -199,10 +198,10 @@ const missingTraits = (filter, deck) => {
   let cryptTotal = 0;
   let cryptMaxUnique = 0;
   let clans = [];
-  Object.values(deck.crypt)
-    .filter((card) => card.Id !== 200076)
+  Object.values(deck[CRYPT])
+    .filter((card) => card[ID] !== 200076)
     .forEach((card) => {
-      if (!clans.includes(card.c.Clan)) clans.push(card.c.Clan);
+      if (!clans.includes(card.c[CLAN])) clans.push(card.c[CLAN]);
       cryptTotal += card.q;
       if (cryptMaxUnique < card.q) cryptMaxUnique = card.q;
     });

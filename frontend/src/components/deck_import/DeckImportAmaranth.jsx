@@ -51,14 +51,14 @@ const DeckImportAmaranth = ({ handleClose }) => {
         }
       });
 
-      let description = master.description;
+      let description = master[DESCRIPTION];
       if (revision['comments']) {
         if (description) description += '\n\n';
         description += revision['comments'];
       }
 
       branches.push({
-        author: master.author,
+        author: master[AUTHOR],
         cards: cards,
         description: description,
       });
@@ -71,9 +71,9 @@ const DeckImportAmaranth = ({ handleClose }) => {
     const now = new Date();
     const deck = {
       branchName: '#0',
-      name: amaranth_deck.title,
-      author: amaranth_deck.author || '',
-      description: amaranth_deck.description || '',
+      name: amaranth_deck[TITLE],
+      author: amaranth_deck[AUTHOR] || '',
+      description: amaranth_deck[DESCRIPTION] || '',
       crypt: {},
       library: {},
       isAuthor: true,
@@ -83,12 +83,12 @@ const DeckImportAmaranth = ({ handleClose }) => {
     Object.keys(amaranth_deck.cards).forEach((i) => {
       if (idReference[i] !== undefined) {
         if (idReference[i] > 200000) {
-          deck.crypt[idReference[i]] = {
+          deck[CRYPT][idReference[i]] = {
             c: cryptCardBase[idReference[i]],
             q: amaranth_deck.cards[i],
           };
         } else {
-          deck.library[idReference[i]] = {
+          deck[LIBRARY][idReference[i]] = {
             c: libraryCardBase[idReference[i]],
             q: amaranth_deck.cards[i],
           };
@@ -124,15 +124,15 @@ const DeckImportAmaranth = ({ handleClose }) => {
 
               const n = new Date();
               const d = {
-                author: deck.author,
+                author: deck[AUTHOR],
                 branchName: b.branchName,
                 crypt: bCrypt,
                 library: bLibrary,
                 deckid: b.deckid,
-                description: b.description,
+                description: b[DESCRIPTION],
                 isAuthor: true,
                 master: deck.deckid,
-                name: deck.name,
+                name: deck[NAME],
                 timestamp: n.toUTCString(),
               };
 

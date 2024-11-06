@@ -22,18 +22,18 @@ const DeckProxyLibraryTableRow = ({
   const { isMobile } = useApp();
   const inventoryLibrary = useSnapshot(inventoryStore)[LIBRARY];
   const usedLibrary = useSnapshot(usedStore)[LIBRARY];
-  const inInventory = inventoryLibrary[card.c.Id]?.q ?? 0;
-  const softUsedMax = getSoftMax(usedLibrary[SOFT][card.c.Id]) ?? 0;
-  const hardUsedTotal = getHardTotal(usedLibrary[HARD][card.c.Id]) ?? 0;
+  const inInventory = inventoryLibrary[card.c[ID]]?.q ?? 0;
+  const softUsedMax = getSoftMax(usedLibrary[SOFT][card.c[ID]]) ?? 0;
+  const hardUsedTotal = getHardTotal(usedLibrary[HARD][card.c[ID]]) ?? 0;
 
   return (
-    <tr key={card.c.Id} className="row-bg border-y border-bgSecondary dark:border-bgSecondaryDark">
+    <tr key={card.c[ID]} className="row-bg border-y border-bgSecondary dark:border-bgSecondaryDark">
       <td className="min-w-[25px]">
         <div className="flex items-center justify-center">
           <Checkbox
-            id={card.c.Id}
+            id={card.c[ID]}
             name="print"
-            checked={proxySelected[card.c.Id]?.print}
+            checked={proxySelected[card.c[ID]]?.print}
             onChange={handleProxySelector}
           />
         </div>
@@ -47,8 +47,8 @@ const DeckProxyLibraryTableRow = ({
         inProxy
         inventoryType={inventoryType}
         isEditable
-        isSelected={proxySelected[card.c.Id]?.print}
-        q={proxySelected[card.c.Id] ? proxySelected[card.c.Id].q : 0}
+        isSelected={proxySelected[card.c[ID]]?.print}
+        q={proxySelected[card.c[ID]] ? proxySelected[card.c[ID]].q : 0}
         softUsedMax={softUsedMax}
       />
       <ResultLibraryTableRowCommon card={card.c} handleClick={handleClick} inDeck />
@@ -56,7 +56,7 @@ const DeckProxyLibraryTableRow = ({
         <DeckProxyTableSetSelect
           card={card.c}
           handleSetSelector={handleSetSelector}
-          value={proxySelected[card.c.Id]?.set}
+          value={proxySelected[card.c[ID]]?.[SET]}
         />
       )}
     </tr>

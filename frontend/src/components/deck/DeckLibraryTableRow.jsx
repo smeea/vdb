@@ -35,10 +35,10 @@ const DeckLibraryTableRow = ({
     isEditable,
   );
 
-  const inLimited = limitedLibrary[card.c.Id];
-  const inInventory = inventoryLibrary[card.c.Id]?.q ?? 0;
-  const softUsedMax = getSoftMax(usedLibrary[SOFT][card.c.Id]) ?? 0;
-  const hardUsedTotal = getHardTotal(usedLibrary[HARD][card.c.Id]) ?? 0;
+  const inLimited = limitedLibrary[card.c[ID]];
+  const inInventory = inventoryLibrary[card.c[ID]]?.q ?? 0;
+  const softUsedMax = getSoftMax(usedLibrary[SOFT][card.c[ID]]) ?? 0;
+  const hardUsedTotal = getHardTotal(usedLibrary[HARD][card.c[ID]]) ?? 0;
 
   return (
     <tr
@@ -73,7 +73,7 @@ const DeckLibraryTableRow = ({
       />
       {showInfo && (
         <td className="min-w-[45px] text-right sm:p-1">
-          <DeckDrawProbability cardName={card.c.Name} N={libraryTotal} n={7} k={card.q} />
+          <DeckDrawProbability cardName={card.c[NAME]} N={libraryTotal} n={7} k={card.q} />
         </td>
       )}
     </tr>

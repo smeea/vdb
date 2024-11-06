@@ -9,14 +9,14 @@ const AnalyzeTournamentChartsStyle = ({ decks }) => {
     const result = {};
 
     Object.values(decks).forEach((deck) => {
-      deck.tags.superior.forEach((t) => {
+      deck[TAGS].superior.forEach((t) => {
         if (result[t]) {
           result[t] += 1.5;
         } else {
           result[t] = 1.5;
         }
       });
-      deck.tags.base.forEach((t) => {
+      deck[TAGS].base.forEach((t) => {
         if (result[t]) {
           result[t] += 1;
         } else {

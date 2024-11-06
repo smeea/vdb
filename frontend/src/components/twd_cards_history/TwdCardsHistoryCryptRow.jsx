@@ -29,7 +29,7 @@ const TwdCardsHistoryCryptRow = ({ card, players, handleClick }) => {
           className="flex min-w-[170px] items-center lg:min-w-[180px]"
           onClick={() => handleClick(card)}
         >
-          <ResultCryptDisciplines value={card.Disciplines} />
+          <ResultCryptDisciplines value={card[DISCIPLINES]} />
         </div>
       )}
       <div
@@ -47,14 +47,14 @@ const TwdCardsHistoryCryptRow = ({ card, players, handleClick }) => {
       {!isMobile && (
         <div className="min-w-[60px]" onClick={() => handleClick(card)}>
           <div className="flex justify-center">
-            <ResultClanImage value={card.Clan} />
+            <ResultClanImage value={card[CLAN]} />
           </div>
           <div className="flex justify-center gap-1 text-sm">
             <div className="flex w-full justify-end font-bold">
-              {card.Title && <ResultCryptTitle value={card.Title} />}
+              {card[TITLE] && <ResultCryptTitle value={card[TITLE]} />}
             </div>
             <div className="w-full">
-              <ResultCryptGroup value={card.Group} />
+              <ResultCryptGroup value={card[GROUP]} />
             </div>
           </div>
         </div>

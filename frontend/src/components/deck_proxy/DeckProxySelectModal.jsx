@@ -13,18 +13,18 @@ const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
 
   const [proxySelected, setProxySelected] = useImmer(() => {
     const cards = {};
-    Object.keys(deck.crypt).forEach((cardid) => {
+    Object.keys(deck[CRYPT]).forEach((cardid) => {
       cards[cardid] = {
         print: false,
         set: '',
-        q: deck.crypt[cardid].q,
+        q: deck[CRYPT][cardid].q,
       };
     });
-    Object.keys(deck.library).forEach((cardid) => {
+    Object.keys(deck[LIBRARY]).forEach((cardid) => {
       cards[cardid] = {
         print: false,
         set: '',
-        q: deck.library[cardid].q,
+        q: deck[LIBRARY][cardid].q,
       };
     });
 
@@ -47,8 +47,8 @@ const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
     const crypt = {};
     const library = {};
 
-    Object.keys(deck.crypt)
-      .filter((cardid) => deck.crypt[cardid].q > 0)
+    Object.keys(deck[CRYPT])
+      .filter((cardid) => deck[CRYPT][cardid].q > 0)
       .forEach((cardid) => {
         const softUsedMax = getSoftMax(usedCrypt[SOFT][cardid]);
         const hardUsedTotal = getHardTotal(usedCrypt[HARD][cardid]);
@@ -56,10 +56,10 @@ const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
         const inInventory = inventoryCrypt[cardid]?.q || 0;
         const inventoryMiss = softUsedMax + hardUsedTotal - inInventory;
         const miss = deck[INVENTORY_TYPE]
-          ? Math.min(inventoryMiss, deck.crypt[cardid].q)
+          ? Math.min(inventoryMiss, deck[CRYPT][cardid].q)
           : inventoryMiss >= 0
-            ? deck.crypt[cardid].q
-            : deck.crypt[cardid].q + inventoryMiss;
+            ? deck[CRYPT][cardid].q
+            : deck[CRYPT][cardid].q + inventoryMiss;
 
         if (miss > 0) {
           crypt[cardid] = {
@@ -69,8 +69,8 @@ const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
         }
       });
 
-    Object.keys(deck.library)
-      .filter((cardid) => deck.library[cardid].q > 0)
+    Object.keys(deck[LIBRARY])
+      .filter((cardid) => deck[LIBRARY][cardid].q > 0)
       .forEach((cardid) => {
         const softUsedMax = getSoftMax(usedLibrary[SOFT][cardid]);
         const hardUsedTotal = getHardTotal(usedLibrary[HARD][cardid]);
@@ -78,10 +78,10 @@ const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
         const inInventory = inventoryLibrary[cardid]?.q || 0;
         const inventoryMiss = softUsedMax + hardUsedTotal - inInventory;
         const miss = deck[INVENTORY_TYPE]
-          ? Math.min(inventoryMiss, deck.library[cardid].q)
+          ? Math.min(inventoryMiss, deck[LIBRARY][cardid].q)
           : inventoryMiss >= 0
-            ? deck.library[cardid].q
-            : deck.library[cardid].q + inventoryMiss;
+            ? deck[LIBRARY][cardid].q
+            : deck[LIBRARY][cardid].q + inventoryMiss;
 
         if (miss > 0) {
           library[cardid] = {
@@ -104,14 +104,14 @@ const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
   const handleSetSelector = (e) => {
     const { id, value } = e;
     setProxySelected((draft) => {
-      draft[id].set = value;
+      draft[id][SET] = value;
     });
   };
 
   const handleProxyCounter = (_, card, q) => {
     if (q >= 0) {
       setProxySelected((draft) => {
-        draft[card.Id].q = q;
+        draft[card[ID]].q = q;
       });
     }
   };
@@ -124,9 +124,9 @@ const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
       .forEach((cardid) => {
         if (proxySelected[cardid].q > 0) {
           const card = {
-            c: cardid > 200000 ? deck.crypt[cardid].c : deck.library[cardid].c,
+            c: cardid > 200000 ? deck[CRYPT][cardid].c : deck[LIBRARY][cardid].c,
             q: proxySelected[cardid].q,
-            set: proxySelected[cardid].set,
+            set: proxySelected[cardid][SET],
           };
 
           if (cardid > 200000) {
@@ -151,7 +151,7 @@ const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
       <FlexGapped className="flex-col">
         <div className="flex gap-5 max-md:flex-col">
           <div className="basis-full sm:basis-5/9">
-            {deck.crypt && (
+            {deck[CRYPT] && (
               <div className="sm:top-[22px] sm:z-10 sm:bg-bgPrimary sm:dark:bg-bgPrimaryDark">
                 <DeckProxyCrypt
                   deck={deck}
@@ -164,7 +164,7 @@ const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
             )}
           </div>
           <div className="basis-full sm:basis-4/9">
-            {deck.library && (
+            {deck[LIBRARY] && (
               <DeckProxyLibrary
                 deck={deck}
                 handleProxySelector={handleProxySelector}

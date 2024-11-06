@@ -15,11 +15,14 @@ const ResultCryptName = ({ card, colored = true, isBanned }) => {
       )}
     >
       <div
-        className={twMerge('inline whitespace-normal', (card.Banned || isBanned) && 'line-through')}
+        className={twMerge(
+          'inline whitespace-normal',
+          (card[BANNED] || isBanned) && 'line-through',
+        )}
       >
-        {card.Name}
+        {card[NAME]}
       </div>
-      {card.Adv[0] && (
+      {card[ADV][0] && (
         <div className="inline whitespace-nowrap">
           <img
             className="mb-1 inline"
@@ -29,7 +32,7 @@ const ResultCryptName = ({ card, colored = true, isBanned }) => {
           />
         </div>
       )}
-      {card.Banned && <ResultLegalIcon type={BANNED} value={card.Banned} />}
+      {card[BANNED] && <ResultLegalIcon type={BANNED} value={card[BANNED]} />}
       {isBanned && <>[Limited]</>}
       {legalRestriction && (
         <ResultLegalIcon

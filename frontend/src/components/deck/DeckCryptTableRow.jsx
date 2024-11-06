@@ -39,10 +39,10 @@ const DeckCryptTableRow = ({
     isEditable,
   );
 
-  const inLimited = limitedCrypt[card.c.Id];
-  const inInventory = inventoryCrypt[card.c.Id]?.q ?? 0;
-  const softUsedMax = getSoftMax(usedCrypt[SOFT][card.c.Id]) ?? 0;
-  const hardUsedTotal = getHardTotal(usedCrypt[HARD][card.c.Id]) ?? 0;
+  const inLimited = limitedCrypt[card.c[ID]];
+  const inInventory = inventoryCrypt[card.c[ID]]?.q ?? 0;
+  const softUsedMax = getSoftMax(usedCrypt[SOFT][card.c[ID]]) ?? 0;
+  const hardUsedTotal = getHardTotal(usedCrypt[HARD][card.c[ID]]) ?? 0;
 
   return (
     <tr
@@ -82,7 +82,7 @@ const DeckCryptTableRow = ({
       {showInfo && (
         <td className="min-w-[45px] text-right sm:p-1">
           {!inSide && (
-            <DeckDrawProbability cardName={card.c.Name} N={cryptTotal} n={4} k={card.q} />
+            <DeckDrawProbability cardName={card.c[NAME]} N={cryptTotal} n={4} k={card.q} />
           )}
         </td>
       )}

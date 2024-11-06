@@ -78,18 +78,18 @@ const Decks = () => {
     setError(false);
     const cardsData = useDeck(deckData.cards, cryptCardBase, libraryCardBase);
     if (deckid.length !== 9 || deckData.publicParent) {
-      deckData.tags = [];
-      Object.values(useTags(cardsData.crypt, cardsData.library)).forEach((v) => {
-        deckData.tags = deckData.tags.concat(v);
+      deckData[TAGS] = [];
+      Object.values(useTags(cardsData[CRYPT], cardsData[LIBRARY])).forEach((v) => {
+        deckData[TAGS] = deckData[TAGS].concat(v);
       });
     }
 
     const d = {
       ...deckData,
-      crypt: cardsData.crypt,
+      crypt: cardsData[CRYPT],
       isBranches: !!(deckData.master || deckData.branches?.length > 0),
       isPublic: !!deckData.publicParent,
-      library: cardsData.library,
+      library: cardsData[LIBRARY],
       isFromUrl: true,
     };
     delete d.cards;
@@ -183,8 +183,8 @@ const Decks = () => {
             <FlexGapped className="max-sm:flex-col">
               {playtestMode ||
               !(
-                Object.keys(deck.crypt).some((cardid) => cardid > 210000) ||
-                Object.keys(deck.library).some((cardid) => cardid > 110000)
+                Object.keys(deck[CRYPT]).some((cardid) => cardid > 210000) ||
+                Object.keys(deck[LIBRARY]).some((cardid) => cardid > 110000)
               ) ? (
                 <>
                   <div className="sm:basis-5/9">
@@ -234,11 +234,11 @@ const Decks = () => {
       )}
       {isEditable && isMobile && showFloatingButtons && (
         <>
-          <DeckNewCardFloating target={CRYPT} deckid={deckid} cards={Object.values(deck.crypt)} />
+          <DeckNewCardFloating target={CRYPT} deckid={deckid} cards={Object.values(deck[CRYPT])} />
           <DeckNewCardFloating
             target={LIBRARY}
             deckid={deckid}
-            cards={Object.values(deck.library)}
+            cards={Object.values(deck[LIBRARY])}
           />
         </>
       )}

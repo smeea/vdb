@@ -10,7 +10,7 @@ import {
   ResultLibraryClan,
 } from '@/components';
 import { useApp, inventoryStore } from '@/context';
-import { LIBRARY, BLOOD_COST, POOL_COST } from '@/constants';
+import { LIBRARY, BLOOD, POOL } from '@/constants';
 
 const SelectLabelLibrary = ({ cardid, inInventory }) => {
   const { libraryCardBase } = useApp();
@@ -32,17 +32,17 @@ const SelectLabelLibrary = ({ cardid, inInventory }) => {
               {inventoryLibrary[cardid] && inventoryLibrary[cardid].q}
             </div>
           )}
-          <ResultLibraryTypeImage value={card.Type} />
+          <ResultLibraryTypeImage value={card[TYPE]} />
           <ResultName card={card} colored={false} />
         </div>
         <div className="flex items-center gap-2">
-          {card.Requirement && <ResultLibraryRequirements value={card.Requirement} />}
+          {card[REQUIREMENT] && <ResultLibraryRequirements value={card[REQUIREMENT]} />}
           <div className="flex items-center gap-1.5">
-            {card.Discipline && <ResultLibraryDisciplines value={card.Discipline} />}
-            {card.Clan && <ResultLibraryClan value={card.Clan} />}
+            {card[DISCIPLINE] && <ResultLibraryDisciplines value={card[DISCIPLINE]} />}
+            {card[CLAN] && <ResultLibraryClan value={card[CLAN]} />}
           </div>
-          {(card[BLOOD_COST] || card[POOL_COST]) && (
-            <ResultLibraryCost valuePool={card[POOL_COST]} valueBlood={card[BLOOD_COST]} />
+          {(card[BLOOD] || card[POOL]) && (
+            <ResultLibraryCost valuePool={card[POOL]} valueBlood={card[BLOOD]} />
           )}
         </div>
       </div>

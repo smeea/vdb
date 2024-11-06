@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { DeckDrawModal } from '@/components';
-import { POOL_COST, BLOOD_COST } from '@/constants';
+import { POOL, BLOOD } from '@/constants';
 import { countCards, getCardsArray } from '@/utils';
 import { useApp } from '@/context';
 
@@ -16,9 +16,9 @@ const getRandomTransfers = () => {
 const DeckDraw = ({ deck, setShow }) => {
   const { setShowFloatingButtons } = useApp();
 
-  const cryptTotal = countCards(Object.values(deck.crypt));
-  const cryptArr = getCardsArray(deck.crypt);
-  const libraryArr = getCardsArray(deck.library);
+  const cryptTotal = countCards(Object.values(deck[CRYPT]));
+  const cryptArr = getCardsArray(deck[CRYPT]);
+  const libraryArr = getCardsArray(deck[LIBRARY]);
 
   const drawCards = (cards, quantity) => {
     const restArray = [...cards];
@@ -101,18 +101,18 @@ const DeckDraw = ({ deck, setShow }) => {
 
   let burnedCapacityTotal = 0;
   burnedCrypt.forEach((card) => {
-    burnedCapacityTotal += parseInt(card.Capacity);
+    burnedCapacityTotal += parseInt(card[CAPACITY]);
   });
 
   let burnedPoolTotal = 0;
   let burnedBloodTotal = 0;
 
   burnedLibrary.forEach((card) => {
-    if (card[BLOOD_COST] && !isNaN(card[BLOOD_COST])) {
-      burnedBloodTotal += parseInt(card[BLOOD_COST]);
+    if (card[BLOOD] && !isNaN(card[BLOOD])) {
+      burnedBloodTotal += parseInt(card[BLOOD]);
     }
-    if (card[POOL_COST] && !isNaN(card[POOL_COST])) {
-      burnedPoolTotal += parseInt(card[POOL_COST]);
+    if (card[POOL] && !isNaN(card[POOL])) {
+      burnedPoolTotal += parseInt(card[POOL]);
     }
   });
 
@@ -163,7 +163,7 @@ const DeckDraw = ({ deck, setShow }) => {
           burnedCrypt={burnedCrypt}
           burnedLibrary={burnedLibrary}
           burnedPoolTotal={burnedPoolTotal}
-          crypt={deck.crypt}
+          crypt={deck[CRYPT]}
           cryptTotal={cryptTotal}
           drawedCrypt={drawedCrypt}
           drawedLibrary={drawedLibrary}

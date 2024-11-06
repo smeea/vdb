@@ -14,11 +14,11 @@ const PreconsDetailed = ({ sets, set }) => {
       V: 'Vampire',
     };
 
-    if (setsAndPrecons[set].precons?.[i]) {
+    if (setsAndPrecons[set][PRECONS]?.[i]) {
       return (
         <li key={`${set}-${i}`} className="whitespace-nowrap">
           <Link target="_blank" rel="noreferrer" to={`/decks/${set}:${i}`}>
-            {setsAndPrecons[set].precons[i].name}
+            {setsAndPrecons[set][PRECONS][i][NAME]}
           </Link>{' '}
           - {sets[set][i]}x
         </li>
@@ -38,12 +38,12 @@ const PopoverSet = ({ card, set }) => {
     <div className="flex max-sm:flex-col sm:gap-2">
       <div className="flex flex-col gap-1 p-3 sm:min-w-[220px] sm:p-4">
         <div className="whitespace-nowrap">
-          <b>{setsAndPrecons[set].name}</b>
-          {![POD, PROMO, PLAYTEST].includes(set) && ' - ' + setsAndPrecons[set].date.slice(0, 4)}
+          <b>{setsAndPrecons[set][NAME]}</b>
+          {![POD, PROMO, PLAYTEST].includes(set) && ' - ' + setsAndPrecons[set][DATE].slice(0, 4)}
         </div>
         {![POD, PROMO].includes(set) && (
           <ul className="flex flex-col gap-1">
-            <PreconsDetailed sets={card.Set} set={set} />
+            <PreconsDetailed sets={card[SET]} set={set} />
           </ul>
         )}
       </div>
@@ -54,15 +54,15 @@ const PopoverSet = ({ card, set }) => {
 
 const ResultLayoutTextSets = ({ card }) => {
   const { setShowFloatingButtons, playtestMode } = useApp();
-  const byDate = (a, b) => setsAndPrecons[a].date > setsAndPrecons[b].date;
+  const byDate = (a, b) => setsAndPrecons[a][DATE] > setsAndPrecons[b][DATE];
 
   return (
     <div className="flex flex-wrap gap-x-2.5 gap-y-0.5">
-      {Object.keys(card.Set)
+      {Object.keys(card[SET])
         .filter((set) => playtestMode || set !== PLAYTEST)
         .toSorted(byDate)
         .map((set) => {
-          const preconsShort = Object.keys(card.Set[set]).join('/');
+          const preconsShort = Object.keys(card[SET][set]).join('/');
 
           return (
             <div className="inline-block whitespace-nowrap" key={set}>

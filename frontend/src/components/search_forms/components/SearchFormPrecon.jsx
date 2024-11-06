@@ -42,12 +42,12 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
   Object.keys(setsAndPrecons)
     .filter((set) => playtestMode || set !== PLAYTEST)
     .map((set) => {
-      if (setsAndPrecons[set].precons) {
-        const year = setsAndPrecons[set].date ? setsAndPrecons[set].date.slice(2, 4) : null;
+      if (setsAndPrecons[set][PRECONS]) {
+        const year = setsAndPrecons[set][DATE] ? setsAndPrecons[set][DATE].slice(2, 4) : null;
 
-        Object.keys(setsAndPrecons[set].precons).map((precon) => {
-          const fullName = setsAndPrecons[set].precons[precon].name;
-          const clans = setsAndPrecons[set].precons[precon].clan.split('/');
+        Object.keys(setsAndPrecons[set][PRECONS]).map((precon) => {
+          const fullName = setsAndPrecons[set][PRECONS][precon][NAME];
+          const clans = setsAndPrecons[set][PRECONS][precon][CLAN].split('/');
 
           options.push({
             value: `${set}:${precon}`,
@@ -149,7 +149,7 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
               name={name}
               value={i.value}
               label={i.label}
-              title={i.title}
+              title={i[TITLE]}
               disabled={value.value[0] === BCP && i.value === REPRINT}
               checked={value[PRINT] === i.value}
               onChange={onChangeOptions}

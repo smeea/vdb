@@ -17,7 +17,7 @@ const ResultLayoutTextCommon = ({
   setIsHotkeysDisabled,
 }) => {
   const { isPlaytester, inventoryMode } = useApp();
-  const isPlaytest = card.Id > 210000 || (card.Id < 200000 && card.Id > 110000);
+  const isPlaytest = card[ID] > 210000 || (card[ID] < 200000 && card[ID] > 110000);
 
   return (
     <div className="flex flex-col gap-3">
@@ -30,15 +30,15 @@ const ResultLayoutTextCommon = ({
         <div className="flex flex-wrap gap-x-2.5 gap-y-0.5">
           <ResultLayoutTextArtist
             handleClose={handleClose}
-            inCrypt={card.Id > 200000}
-            artists={card.Artist}
+            inCrypt={card[ID] > 200000}
+            artists={card[ARTIST]}
           />
         </div>
       </div>
-      {Object.keys(card.Rulings).length > 0 && (
+      {Object.keys(card[RULINGS]).length > 0 && (
         <div className="flex flex-col gap-1">
           <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Rulings:</div>
-          <ResultLayoutTextRulings rulings={card.Rulings} />
+          <ResultLayoutTextRulings rulings={card[RULINGS]} />
         </div>
       )}
       {!isPlaytest && (forceInventoryMode || inventoryMode) && (
@@ -53,7 +53,7 @@ const ResultLayoutTextCommon = ({
       {!inPopover && isPlaytester && isPlaytest && (
         <>
           <Hr />
-          <PlaytestReportForm id={card.Id} setIsHotkeysDisabled={setIsHotkeysDisabled} />
+          <PlaytestReportForm id={card[ID]} setIsHotkeysDisabled={setIsHotkeysDisabled} />
         </>
       )}
     </div>

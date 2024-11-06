@@ -22,8 +22,8 @@ export const countDisciplines = (cardsList) => {
   if (!cardsList.length) return 0;
   return cardsList.reduce((acc, card) => {
     const n = card.c
-      ? Object.keys(card.c.Disciplines).length
-      : Object.keys(card.Disciplines).length;
+      ? Object.keys(card.c[DISCIPLINES]).length
+      : Object.keys(card[DISCIPLINES]).length;
     if (acc > n) return acc;
     return n;
   });
@@ -41,13 +41,13 @@ export const getRestrictions = (deck, limitedCards) => {
   let hasIllegalDate;
   let hasBanned;
   let hasLimited;
-  [...Object.values(deck.crypt), ...Object.values(deck.library)].forEach((card) => {
+  [...Object.values(deck[CRYPT]), ...Object.values(deck[LIBRARY])].forEach((card) => {
     if (card.q < 1) return;
-    if (card.c.Banned) hasBanned = true;
+    if (card.c[BANNED]) hasBanned = true;
     if (
       limitedCards &&
-      ![...Object.keys(limitedCards.crypt), ...Object.keys(limitedCards.library)].includes(
-        card.c.Id,
+      ![...Object.keys(limitedCards[CRYPT]), ...Object.keys(limitedCards[LIBRARY])].includes(
+        card.c[ID],
       )
     ) {
       hasLimited = true;
@@ -71,12 +71,12 @@ export const getRestrictions = (deck, limitedCards) => {
 };
 
 export const getLegality = (card) => {
-  const sets = Object.keys(card.Set).filter((s) => s !== PLAYTEST);
+  const sets = Object.keys(card[SET]).filter((s) => s !== PLAYTEST);
   if (sets.length > 1 || [POD, PROMO].includes(sets[0])) return false;
   if (sets.length == 0) return PLAYTEST;
 
   const MS_TO_DAYS = 1000 * 60 * 60 * 24;
-  const setDate = new Date(setsAndPrecons[sets[0]].date);
+  const setDate = new Date(setsAndPrecons[sets[0]][DATE]);
   const now = new Date();
   if ((now - setDate) / MS_TO_DAYS > 30) return false;
   setDate.setDate(setDate.getDate() + 30);
@@ -86,12 +86,12 @@ export const getLegality = (card) => {
 
 export const getGroups = (cards) => {
   const cryptGroupMin = cards
-    .filter((card) => card.c.Group !== ANY)
-    .reduce((acc, card) => (acc = card.c.Group < acc ? card.c.Group : acc), 10);
+    .filter((card) => card.c[GROUP] !== ANY)
+    .reduce((acc, card) => (acc = card.c[GROUP] < acc ? card.c[GROUP] : acc), 10);
 
   const cryptGroupMax = cards
-    .filter((card) => card.c.Group !== ANY)
-    .reduce((acc, card) => (acc = card.c.Group > acc ? card.c.Group : acc), 0);
+    .filter((card) => card.c[GROUP] !== ANY)
+    .reduce((acc, card) => (acc = card.c[GROUP] > acc ? card.c[GROUP] : acc), 0);
 
   if (cryptGroupMax - cryptGroupMin == 1) {
     return { cryptGroups: `${cryptGroupMin}-${cryptGroupMax}` };
@@ -147,9 +147,9 @@ export const getClan = (crypt) => {
   const clans = {};
 
   Object.values(crypt)
-    .filter((card) => card.c.Name !== 'Anarch Convert')
+    .filter((card) => card.c[NAME] !== 'Anarch Convert')
     .forEach((card) => {
-      const clan = card.c.Clan;
+      const clan = card.c[CLAN];
       if (clans[clan]) {
         clans[clan] += card.q;
       } else {
@@ -171,7 +171,7 @@ export const getClan = (crypt) => {
   );
 
   if (topClan.q / topClan.t > 0.5) {
-    return topClan.clan;
+    return topClan[CLAN];
   } else {
     return null;
   }
@@ -181,9 +181,9 @@ export const getSect = (crypt) => {
   const sects = {};
 
   Object.values(crypt)
-    .filter((card) => card.c.Name !== 'Anarch Convert')
+    .filter((card) => card.c[NAME] !== 'Anarch Convert')
     .forEach((card) => {
-      const sect = card.c.Sect;
+      const sect = card.c[SECT];
       if (sects[sect]) {
         sects[sect] += card.q;
       } else {

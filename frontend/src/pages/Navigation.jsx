@@ -73,7 +73,8 @@ const Navigation = () => {
   let cardsUrl = '/cards';
 
   const isLimited =
-    Object.keys(limitedStoreState.crypt).length + Object.keys(limitedStoreState.library).length > 0;
+    Object.keys(limitedStoreState[CRYPT]).length + Object.keys(limitedStoreState[LIBRARY]).length >
+    0;
 
   if (!isMobile) {
     if (JSON.stringify(cryptFormState) != JSON.stringify(cryptDefaults)) {
@@ -94,7 +95,7 @@ const Navigation = () => {
     }
   }
   if (deck?.deckid) decksUrl = `/decks/${deck.deckid}`;
-  if (quickCard) cardsUrl = `/cards/${quickCard.Id}`;
+  if (quickCard) cardsUrl = `/cards/${quickCard[ID]}`;
 
   return (
     <nav className="z-50 bg-bgNav dark:bg-bgNavDark max-sm:fixed max-sm:bottom-0 max-sm:w-full sm:sticky sm:top-0 print:hidden">

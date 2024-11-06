@@ -20,15 +20,15 @@ const ResultCryptTotal = ({
   let total = 0;
 
   cards.map((card) => {
-    if (byGroups[card.Group]) {
-      byGroups[card.Group] += 1;
+    if (byGroups[card[GROUP]]) {
+      byGroups[card[GROUP]] += 1;
     } else {
-      byGroups[card.Group] = 1;
+      byGroups[card[GROUP]] = 1;
     }
-    if (byGroupsCapacityTotal[card.Group]) {
-      byGroupsCapacityTotal[card.Group] += card.Capacity;
+    if (byGroupsCapacityTotal[card[GROUP]]) {
+      byGroupsCapacityTotal[card[GROUP]] += card[CAPACITY];
     } else {
-      byGroupsCapacityTotal[card.Group] = card.Capacity;
+      byGroupsCapacityTotal[card[GROUP]] = card[CAPACITY];
     }
     total += 1;
   });

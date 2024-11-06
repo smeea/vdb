@@ -26,7 +26,7 @@ const AnalyzerTournamentResult = ({ decks }) => {
       />
       <div className="flex flex-col gap-4">
         {sortedDecks.map((deck) => (
-          <AnalyzeTournamentDeck deck={deck} key={deck.author} />
+          <AnalyzeTournamentDeck deck={deck} key={deck[AUTHOR]} />
         ))}
       </div>
     </div>

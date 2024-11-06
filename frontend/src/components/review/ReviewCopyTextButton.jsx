@@ -17,7 +17,7 @@ const ReviewCopyTextButton = ({ urlDiff }) => {
     const [cardid, q] = i.replace('"', '').split('=');
     const card = cardid > 200000 ? cryptCardBase[cardid] : libraryCardBase[cardid];
     if (cardid > 200000) {
-      const cardDiff = `${q > 0 ? `+${q}` : q} ${card.Name}${card.Adv ? ' ADV' : ''}`;
+      const cardDiff = `${q > 0 ? `+${q}` : q} ${card[NAME]}${card[ADV] ? ' ADV' : ''}`;
       cryptDiff.push(cardDiff);
     } else {
       library[cardid] = {
@@ -32,7 +32,7 @@ const ReviewCopyTextButton = ({ urlDiff }) => {
   const libraryDiff = [];
   Object.values(libraryByType).forEach((cards) => {
     cards.forEach((c) => {
-      const cardDiff = `${c.diff > 0 ? `+${c.diff}` : c.diff} ${c.c.Name}`;
+      const cardDiff = `${c.diff > 0 ? `+${c.diff}` : c.diff} ${c.c[NAME]}`;
       libraryDiff.push(cardDiff);
     });
   });

@@ -8,7 +8,7 @@ const DiffMissingModalWrapper = ({ deckFrom, deckTo, handleClose }) => {
   return (
     <DeckMissingModal
       deck={{
-        name: `Missing card for ${deckFrom.name}`,
+        name: `Missing card for ${deckFrom[NAME]}`,
         crypt: missingCrypt,
         library: missingLibrary,
       }}

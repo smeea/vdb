@@ -79,13 +79,13 @@ const PlaytestReportsAll = () => {
           switch (target) {
             case PRECONS:
               if (id == GENERAL || !isNaN(id)) return;
-              name = preconDecks[`PLAYTEST:${id}`].name;
+              name = preconDecks[`PLAYTEST:${id}`][NAME];
               exportText += `Precon: ${name}\n\n`;
               break;
             case CARDS:
               if (isNaN(id)) return;
               try {
-                name = id > 200000 ? cryptCardBase[id].Name : libraryCardBase[id].Name;
+                name = id > 200000 ? cryptCardBase[id][NAME] : libraryCardBase[id][NAME];
               } catch {
                 console.log(`Skipping (not in this Round) - ${id}`);
                 break;
@@ -106,7 +106,7 @@ const PlaytestReportsAll = () => {
               default:
                 exportText += `Score: ${reports[id][user].score}\n`;
                 exportText += `Seen in Play: ${reports[id][user].isPlayed ? 'Yes' : 'No'}\n`;
-                if (reports[id][user].text) exportText += `${reports[id][user].text}\n`;
+                if (reports[id][user][TEXT]) exportText += `${reports[id][user][TEXT]}\n`;
             }
             if (uIdx + 1 < Object.keys(reports[id]).length) {
               exportText += '\n-----\n\n';

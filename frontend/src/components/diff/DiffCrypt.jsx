@@ -8,7 +8,7 @@ const DiffCrypt = ({ cardsTo, deck }) => {
   const { isMobile, cryptDeckSort, changeCryptDeckSort, setShowFloatingButtons } = useApp();
   const [showInfo, setShowInfo] = useState(false);
 
-  const cardsFrom = deck.crypt;
+  const cardsFrom = deck[CRYPT];
   const { deckid, isPublic, isAuthor, isFrozen } = deck;
   const isEditable = isAuthor && !isPublic && !isFrozen;
 

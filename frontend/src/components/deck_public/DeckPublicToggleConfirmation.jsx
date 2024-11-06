@@ -6,14 +6,14 @@ const DeckPublicToggleConfirmation = ({ deck, handleConfirmation, setShow }) => 
   const isPublished = !!(deck.publicParent || deck.publicChild);
 
   const isWrongQtyCards =
-    countCards(Object.values(deck.crypt)) > 35 ||
-    countCards(Object.values(deck.crypt)) < 12 ||
-    countCards(Object.values(deck.library)) < 60 ||
-    countCards(Object.values(deck.library)) > 90;
+    countCards(Object.values(deck[CRYPT])) > 35 ||
+    countCards(Object.values(deck[CRYPT])) < 12 ||
+    countCards(Object.values(deck[LIBRARY])) < 60 ||
+    countCards(Object.values(deck[LIBRARY])) > 90;
 
   const withPlaytestCards =
-    Object.keys(deck.crypt).some((cardid) => cardid > 210000) ||
-    Object.keys(deck.library).some((cardid) => cardid > 110000);
+    Object.keys(deck[CRYPT]).some((cardid) => cardid > 210000) ||
+    Object.keys(deck[LIBRARY]).some((cardid) => cardid > 110000);
 
   return (
     <ModalConfirmation
@@ -21,8 +21,8 @@ const DeckPublicToggleConfirmation = ({ deck, handleConfirmation, setShow }) => 
       handleCancel={() => setShow(false)}
       title={
         isPublished
-          ? `Remove "${deck.name}" from Public Deck Archive?`
-          : `Add "${deck.name}" to Public Deck Archive?`
+          ? `Remove "${deck[NAME]}" from Public Deck Archive?`
+          : `Add "${deck[NAME]}" to Public Deck Archive?`
       }
       disabled={isWrongQtyCards || withPlaytestCards}
       buttonText={isPublished ? 'Remove Public' : 'Make Public'}

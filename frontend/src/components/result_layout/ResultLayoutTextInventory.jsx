@@ -12,12 +12,12 @@ const ResultLayoutTextInventory = ({ card, inPopover }) => {
   const decks = useSnapshot(deckStore)[DECKS];
   const { [CRYPT]: inventoryCrypt, [LIBRARY]: inventoryLibrary } = useSnapshot(inventoryStore);
   const { [CRYPT]: usedCrypt, [LIBRARY]: usedLibrary } = useSnapshot(usedStore);
-  const usedCards = card.Id > 200000 ? usedCrypt : usedLibrary;
-  const softUsedMax = getSoftMax(usedCards[SOFT][card.Id]);
-  const hardUsedTotal = getHardTotal(usedCards[HARD][card.Id]);
+  const usedCards = card[ID] > 200000 ? usedCrypt : usedLibrary;
+  const softUsedMax = getSoftMax(usedCards[SOFT][card[ID]]);
+  const hardUsedTotal = getHardTotal(usedCards[HARD][card[ID]]);
   const inInventory =
-    card.Id > 200000 ? inventoryCrypt[card.Id]?.q || 0 : inventoryLibrary[card.Id]?.q || 0;
-  const text = card.Id > 200000 ? inventoryCrypt[card.Id]?.t : inventoryLibrary[card.Id]?.t;
+    card[ID] > 200000 ? inventoryCrypt[card[ID]]?.q || 0 : inventoryLibrary[card[ID]]?.q || 0;
+  const text = card[ID] > 200000 ? inventoryCrypt[card[ID]]?.t : inventoryLibrary[card[ID]]?.t;
 
   return (
     <div className="flex flex-col gap-1.5">
@@ -43,14 +43,14 @@ const ResultLayoutTextInventory = ({ card, inPopover }) => {
             <div className="flex basis-full flex-col gap-0.5 md:basis-2/3">
               {softUsedMax > 0 && (
                 <UsedDescription
-                  usedCards={usedCards[SOFT][card.Id]}
+                  usedCards={usedCards[SOFT][card[ID]]}
                   decks={decks}
                   inventoryType="s"
                 />
               )}
               {hardUsedTotal > 0 && (
                 <UsedDescription
-                  usedCards={usedCards[HARD][card.Id]}
+                  usedCards={usedCards[HARD][card[ID]]}
                   decks={decks}
                   inventoryType="h"
                 />

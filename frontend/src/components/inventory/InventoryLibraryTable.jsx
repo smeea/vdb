@@ -24,11 +24,11 @@ const InventoryLibraryTable = ({ cards, sortMethod, compact, withCompact, newFoc
   };
 
   const cardRows = sortedCards
-    .filter((card) => playtestMode || card.c.Id < 110000)
+    .filter((card) => playtestMode || card.c[ID] < 110000)
     .map((card) => {
       return (
         <InventoryLibraryTableRow
-          key={card.c.Id}
+          key={card.c[ID]}
           card={card}
           compact={compact}
           newFocus={newFocus}

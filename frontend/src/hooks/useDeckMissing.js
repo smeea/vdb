@@ -34,14 +34,14 @@ const useDeckMissing = (deck, isEmpty) => {
   const missingCrypt = useMemo(() => {
     if (isEmpty || !deck) return null;
 
-    return getMissing(deck.crypt, deck[INVENTORY_TYPE], usedCrypt, inventoryCrypt);
-  }, [deck.crypt, deck[INVENTORY_TYPE], isEmpty]);
+    return getMissing(deck[CRYPT], deck[INVENTORY_TYPE], usedCrypt, inventoryCrypt);
+  }, [deck[CRYPT], deck[INVENTORY_TYPE], isEmpty]);
 
   const missingLibrary = useMemo(() => {
     if (isEmpty || !deck) return null;
 
-    return getMissing(deck.library, deck[INVENTORY_TYPE], usedLibrary, inventoryLibrary);
-  }, [deck.library, deck[INVENTORY_TYPE], isEmpty]);
+    return getMissing(deck[LIBRARY], deck[INVENTORY_TYPE], usedLibrary, inventoryLibrary);
+  }, [deck[LIBRARY], deck[INVENTORY_TYPE], isEmpty]);
 
   return { missingCrypt, missingLibrary };
 };

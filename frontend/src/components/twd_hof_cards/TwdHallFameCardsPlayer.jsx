@@ -36,7 +36,7 @@ const TwdHallFameCardsPlayer = ({ name, cards }) => {
   const cryptSorted = useMemo(
     () =>
       cryptSort(
-        Object.values(cards).filter((card) => card.Id > 200000),
+        Object.values(cards).filter((card) => card[ID] > 200000),
         cryptSearchSort,
       ),
     [cards, cryptSearchSort],
@@ -45,7 +45,7 @@ const TwdHallFameCardsPlayer = ({ name, cards }) => {
   const librarySorted = useMemo(
     () =>
       librarySort(
-        Object.values(cards).filter((card) => card.Id < 200000),
+        Object.values(cards).filter((card) => card[ID] < 200000),
         librarySearchSort,
       ),
     [cards, librarySearchSort],
@@ -80,8 +80,8 @@ const TwdHallFameCardsPlayer = ({ name, cards }) => {
   let firstCardDate = null;
   let lastCardDate = null;
   Object.values(cards).map((card) => {
-    if (!firstCardDate || card.twdDate < firstCardDate) firstCardDate = card.twdDate;
-    if (!lastCardDate || card.twdDate > lastCardDate) lastCardDate = card.twdDate;
+    if (!firstCardDate || card[TWD_DATE] < firstCardDate) firstCardDate = card[TWD_DATE];
+    if (!lastCardDate || card[TWD_DATE] > lastCardDate) lastCardDate = card[TWD_DATE];
   });
 
   return (
@@ -148,7 +148,7 @@ const TwdHallFameCardsPlayer = ({ name, cards }) => {
             {cryptSorted.map((card, idx) => {
               return (
                 <TwdHallFameCardsCard
-                  key={card.Id}
+                  key={card[ID]}
                   idx={idx}
                   card={card}
                   handleClick={handleModalCardOpen}
@@ -194,7 +194,7 @@ const TwdHallFameCardsPlayer = ({ name, cards }) => {
             {librarySorted.map((card, idx) => {
               return (
                 <TwdHallFameCardsCard
-                  key={card.Id}
+                  key={card[ID]}
                   idx={idx + cryptSorted.length}
                   card={card}
                   handleClick={handleModalCardOpen}

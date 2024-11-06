@@ -57,8 +57,8 @@ const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
   Object.keys(setsAndPrecons)
     .filter((set) => playtestMode || set !== PLAYTEST)
     .map((set) => {
-      const year = set === PLAYTEST ? null : setsAndPrecons[set].date.slice(2, 4);
-      const fullName = setsAndPrecons[set].name;
+      const year = set === PLAYTEST ? null : setsAndPrecons[set][DATE].slice(2, 4);
+      const fullName = setsAndPrecons[set][NAME];
 
       options.push({
         value: set,
@@ -154,7 +154,7 @@ const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
                 name={name}
                 value={i.value}
                 label={i.label}
-                title={i.title}
+                title={i[TITLE]}
                 disabled={
                   value.value.length > 1 ||
                   value.value[0] === BCP ||
@@ -192,7 +192,7 @@ const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
                 name={name}
                 value={i.value}
                 label={i.label}
-                title={i.title}
+                title={i[TITLE]}
                 disabled={
                   (value.value[0] === BCP || value.value[0] === PROMO || value.value[0] === POD) &&
                   i.value === REPRINT

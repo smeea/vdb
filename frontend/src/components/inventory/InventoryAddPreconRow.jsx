@@ -16,7 +16,7 @@ const InventoryAddPreconRow = ({ deck }) => {
   const [showDeck, setShowDeck] = useState();
   const inInventory = useDeckInInventory(deck);
   const [set, precon] = deck.deckid.split(':');
-  const clans = setsAndPrecons[set].precons[precon].clan.split('/');
+  const clans = setsAndPrecons[set][PRECONS][precon][CLAN].split('/');
 
   return (
     <tr className="row-bg border-y border-bgSecondary dark:border-bgSecondaryDark">
@@ -34,9 +34,9 @@ const InventoryAddPreconRow = ({ deck }) => {
       <td className="max-sm:w-full sm:min-w-[250px] lg:min-w-[400px]">
         <div
           className="text-overflow flex justify-between text-fgName dark:text-fgNameDark"
-          title={deck.name}
+          title={deck[NAME]}
         >
-          {deck.name}
+          {deck[NAME]}
         </div>
       </td>
       {isDesktop && (
@@ -59,12 +59,12 @@ const InventoryAddPreconRow = ({ deck }) => {
       <td className="w-full text-fgThird dark:text-fgThirdDark">
         {isMobile ? (
           <>
-            <div>{setsAndPrecons[set].name}</div>
-            <div className="flex justify-end text-sm">{setsAndPrecons[set].date.slice(0, 4)}</div>
+            <div>{setsAndPrecons[set][NAME]}</div>
+            <div className="flex justify-end text-sm">{setsAndPrecons[set][DATE].slice(0, 4)}</div>
           </>
         ) : (
           <>
-            {setsAndPrecons[set].date.slice(0, 4)} – {setsAndPrecons[set].name}
+            {setsAndPrecons[set][DATE].slice(0, 4)} – {setsAndPrecons[set][NAME]}
           </>
         )}
       </td>

@@ -18,7 +18,7 @@ const DeckBranchSelect = ({ deck, handleSelect }) => {
     [target.deckid]: {
       deckid: target.deckid,
       branchName: target.branchName,
-      name: target.name,
+      name: target[NAME],
       timestamp: target.timestamp,
     },
   };
@@ -28,7 +28,7 @@ const DeckBranchSelect = ({ deck, handleSelect }) => {
       b[i] = {
         deckid: decks[i].deckid,
         branchName: decks[i].branchName,
-        name: decks[i].name,
+        name: decks[i][NAME],
         timestamp: decks[i].timestamp,
       };
     });

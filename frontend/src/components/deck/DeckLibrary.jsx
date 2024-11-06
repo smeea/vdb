@@ -33,7 +33,7 @@ const DeckLibrary = ({ inSearch, inPreview, inMissing, deck }) => {
     libraryByTypeTotal,
     libraryByClansTotal,
     libraryByDisciplinesTotal,
-  } = useDeckLibrary(deck.library);
+  } = useDeckLibrary(deck[LIBRARY]);
 
   const {
     currentModalCard,

@@ -40,7 +40,7 @@ const AnalyzeLoadCustomButtons = ({
     Promise.all(decks).then((v) => {
       const d = {};
       v.forEach((i) => {
-        d[parseInt(i.author)] = i;
+        d[parseInt(i[AUTHOR])] = i;
       });
 
       setTempDecks(d);

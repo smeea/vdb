@@ -58,8 +58,8 @@ const TwdSearchFormCrypt = ({ value, form }) => {
                 >
                   <div className="flex cursor-pointer gap-1" onClick={() => handleClick(card)}>
                     <ResultName card={card} />
-                    {card.New && (
-                      <div className="text-midGray dark:text-midGrayDark">[G{card.Group}]</div>
+                    {card[NEW] && (
+                      <div className="text-midGray dark:text-midGrayDark">[G{card[GROUP]}]</div>
                     )}
                   </div>
                 </ConditionalTooltip>

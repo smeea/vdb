@@ -36,8 +36,8 @@ const DeckButtons = ({
   const playtestPrecon = deck?.deckid.includes('PLAYTEST:') && deck.deckid.replace('PLAYTEST:', '');
   const hasPlaytest =
     deck &&
-    (Object.keys(deck.crypt).some((cardid) => cardid > 210000) ||
-      Object.keys(deck.library).some((cardid) => cardid > 110000));
+    (Object.keys(deck[CRYPT]).some((cardid) => cardid > 210000) ||
+      Object.keys(deck[LIBRARY]).some((cardid) => cardid > 110000));
 
   const isPlaytestSafe = playtestMode || !hasPlaytest;
 
@@ -49,7 +49,7 @@ const DeckButtons = ({
         <>
           {playtestMode && playtestPrecon && isPlaytestAdmin && (
             <PlaytestReportsOneButton
-              value={{ deck: deck, Name: deck.name, Id: playtestPrecon }}
+              value={{ deck: deck, Name: deck[NAME], Id: playtestPrecon }}
               isPrecon
             />
           )}

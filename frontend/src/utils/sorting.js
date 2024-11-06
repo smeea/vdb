@@ -1,50 +1,50 @@
-import { ASCII_NAME, BLOOD_COST, POOL_COST } from '@/constants';
+import { ASCII, BLOOD, POOL } from '@/constants';
 
 export const byName = (a, b) => a.localeCompare(b, 'en');
 
 export const byCardName = (a, b) => {
-  const nameA = a.c ? a.c[ASCII_NAME] : a[ASCII_NAME];
-  const nameB = b.c ? b.c[ASCII_NAME] : b[ASCII_NAME];
+  const nameA = a.c ? a.c[ASCII] : a[ASCII];
+  const nameB = b.c ? b.c[ASCII] : b[ASCII];
   return byName(nameA, nameB);
 };
 
 export const byClan = (a, b) => {
-  const clanA = a.c ? a.c.Clan : a.Clan;
-  const clanB = b.c ? b.c.Clan : b.Clan;
+  const clanA = a.c ? a.c[CLAN] : a[CLAN];
+  const clanB = b.c ? b.c[CLAN] : b[CLAN];
   return byName(clanA, clanB);
 };
 
 export const byClanOpt = (a, b) => {
-  const clanA = a.c ? a.c.Clan : a.Clan;
-  const clanB = b.c ? b.c.Clan : b.Clan;
+  const clanA = a.c ? a.c[CLAN] : a[CLAN];
+  const clanB = b.c ? b.c[CLAN] : b[CLAN];
   if (clanA && !clanB) return -1;
   if (!clanA && clanB) return 1;
   return byName(clanA, clanB);
 };
 
 export const byGroup = (a, b) => {
-  const groupA = a.c ? a.c.Group : a.Group;
-  const groupB = b.c ? b.c.Group : b.Group;
+  const groupA = a.c ? a.c[GROUP] : a[GROUP];
+  const groupB = b.c ? b.c[GROUP] : b[GROUP];
   return groupA - groupB;
 };
 
 export const byCapacity = (a, b) => {
-  const capacityA = a.c ? a.c.Capacity : a.Capacity;
-  const capacityB = b.c ? b.c.Capacity : b.Capacity;
+  const capacityA = a.c ? a.c[CAPACITY] : a[CAPACITY];
+  const capacityB = b.c ? b.c[CAPACITY] : b[CAPACITY];
   return capacityB - capacityA;
 };
 
 export const byQuantity = (a, b) => b.q - a.q;
 
 export const byType = (a, b) => {
-  const typeA = a.c ? a.c.Type : a.Type;
-  const typeB = b.c ? b.c.Type : b.Type;
+  const typeA = a.c ? a.c[TYPE] : a[TYPE];
+  const typeB = b.c ? b.c[TYPE] : b[TYPE];
   return byName(typeA, typeB);
 };
 
 export const byDiscipline = (a, b) => {
-  const disciplineA = a.c ? a.c.Discipline : a.Discipline;
-  const disciplineB = b.c ? b.c.Discipline : b.Discipline;
+  const disciplineA = a.c ? a.c[DISCIPLINE] : a[DISCIPLINE];
+  const disciplineB = b.c ? b.c[DISCIPLINE] : b[DISCIPLINE];
 
   if (disciplineA && !disciplineB) return -1;
   if (!disciplineA && disciplineB) return 1;
@@ -52,8 +52,8 @@ export const byDiscipline = (a, b) => {
 };
 
 export const byBloodCost = (a, b) => {
-  const costA = a.c ? a.c[BLOOD_COST] : a[BLOOD_COST];
-  const costB = b.c ? b.c[BLOOD_COST] : b[BLOOD_COST];
+  const costA = a.c ? a.c[BLOOD] : a[BLOOD];
+  const costB = b.c ? b.c[BLOOD] : b[BLOOD];
   if (!isNaN(costA) && isNaN(costB)) return -1;
   if (!isNaN(costB) && isNaN(costA)) return 1;
   if (isNaN(costA) && isNaN(costB)) return 0;
@@ -61,8 +61,8 @@ export const byBloodCost = (a, b) => {
 };
 
 export const byPoolCost = (a, b) => {
-  const costA = a.c ? a.c[POOL_COST] : a[POOL_COST];
-  const costB = b.c ? b.c[POOL_COST] : b[POOL_COST];
+  const costA = a.c ? a.c[POOL] : a[POOL];
+  const costB = b.c ? b.c[POOL] : b[POOL];
   if (!isNaN(costA) && isNaN(costB)) return -1;
   if (!isNaN(costB) && isNaN(costA)) return 1;
   if (isNaN(costA) && isNaN(costB)) return 0;
@@ -70,8 +70,8 @@ export const byPoolCost = (a, b) => {
 };
 
 export const bySect = (a, b) => {
-  const sectA = a.c ? a.c.Sect : a.Sect;
-  const sectB = b.c ? b.c.Sect : b.Sect;
+  const sectA = a.c ? a.c[SECT] : a[SECT];
+  const sectB = b.c ? b.c[SECT] : b[SECT];
   return byName(sectA, sectB);
 };
 
@@ -87,10 +87,10 @@ export const byPlayer = (a, b) => {
 };
 
 export const byDateWin = (a, b) => {
-  if (a.twdDate && !b.twdDate) return -1;
-  if (!a.twdDate && b.twdDate) return 1;
-  if (!a.twdDate && !b.twdDate) return 0;
-  return a.twdDate < b.twdDate;
+  if (a[TWD_DATE] && !b[TWD_DATE]) return -1;
+  if (!a[TWD_DATE] && b[TWD_DATE]) return 1;
+  if (!a[TWD_DATE] && !b[TWD_DATE]) return 0;
+  return a[TWD_DATE] < b[TWD_DATE];
 };
 
 export const byDatePrint = (a, b) => {

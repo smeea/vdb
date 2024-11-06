@@ -22,22 +22,22 @@ const TwdHallFameDeckHeader = ({ deck, isStar }) => {
       >
         <div className="flex items-center gap-4">
           <div className="flex items-center gap-1">
-            <div>{deck.players}</div>
+            <div>{deck[PLAYERS]}</div>
             <div className="flex items-center">
               <PeopleFill width="15" height="15" viewBox="0 0 16 16" />
             </div>
           </div>
           <div className="flex items-center gap-1">
-            <div>{`${deck.event}: ${deck.location}`}</div>
+            <div>{`${deck[EVENT]}: ${deck[LOCATION]}`}</div>
           </div>
         </div>
-        <div className="whitespace-nowrap">{isMobile ? deck.date.slice(0, 4) : deck.date}</div>
+        <div className="whitespace-nowrap">{isMobile ? deck[DATE].slice(0, 4) : deck[DATE]}</div>
       </div>
       {showDeck && (
         <>
           <Hr />
           <div className="p-2.5">
-            {showDeck && <TwdHallFameDeckBody deck={{ ...deck, creation_date: deck.date }} />}
+            {showDeck && <TwdHallFameDeckBody deck={{ ...deck, creation_date: deck[DATE] }} />}
           </div>
         </>
       )}

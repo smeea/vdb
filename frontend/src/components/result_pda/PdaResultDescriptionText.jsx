@@ -11,7 +11,7 @@ import { CREATION_DATE, TIMESTAMP, AUTHOR, PDA } from '@/constants';
 const PdaResultDescriptionText = ({ deck }) => {
   const { isMobile } = useApp();
   const navigate = useNavigate();
-  const tags = useTags(deck.crypt, deck.library);
+  const tags = useTags(deck[CRYPT], deck[LIBRARY]);
   const lastUpdated = new Date(deck[TIMESTAMP]).toISOString().split('T')[0];
 
   const handleClick = (value) => {
@@ -25,7 +25,7 @@ const PdaResultDescriptionText = ({ deck }) => {
       <table>
         <tbody>
           <TwdResultDescriptionTextTr title={isMobile ? <TagFill /> : <>Deck:</>}>
-            {deck.name}
+            {deck[NAME]}
           </TwdResultDescriptionTextTr>
           <TwdResultDescriptionTextTr title={isMobile ? <PersonFill /> : <>Author:</>}>
             <div

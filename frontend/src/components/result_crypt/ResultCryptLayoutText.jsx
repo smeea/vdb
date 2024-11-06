@@ -33,22 +33,22 @@ const ResultCryptLayoutText = ({ card, setCard, handleClose, noClose, inPopover 
           >
             <div className="flex items-center justify-between gap-2 whitespace-nowrap">
               <div className="flex items-center gap-2">
-                <ResultClanImage value={card.Clan} />
+                <ResultClanImage value={card[CLAN]} />
                 <div className="flex gap-2 font-bold">
                   <ResultName card={card} />
-                  {card.Adv[1] && (
+                  {card[ADV][1] && (
                     <ConditionalTooltip
-                      overlay={<CardPopover card={cryptCardBase[card.Adv[1]]} />}
+                      overlay={<CardPopover card={cryptCardBase[card[ADV][1]]} />}
                       disabled={isMobile}
                       noPadding
                     >
                       <div
                         className="inline text-fgSecondary dark:text-fgSecondaryDark"
-                        onClick={() => setCard(cryptCardBase[card.Adv[1]])}
+                        onClick={() => setCard(cryptCardBase[card[ADV][1]])}
                       >
                         {inPopover ? (
                           <>
-                            {!card.Adv[0] && (
+                            {!card[ADV][0] && (
                               <div className="inline-flex items-center">
                                 [has
                                 <img
@@ -62,7 +62,7 @@ const ResultCryptLayoutText = ({ card, setCard, handleClose, noClose, inPopover 
                             )}
                           </>
                         ) : (
-                          <>[see {card.Adv[0] ? 'Base' : 'Adv'}]</>
+                          <>[see {card[ADV][0] ? 'Base' : 'Adv'}]</>
                         )}
                       </div>
                     </ConditionalTooltip>
@@ -88,12 +88,12 @@ const ResultCryptLayoutText = ({ card, setCard, handleClose, noClose, inPopover 
       </div>
       <Hr />
       <div>
-        <ResultLayoutTextText cardid={card.Id} />
+        <ResultLayoutTextText cardid={card[ID]} />
       </div>
       <Hr />
       <div className="flex items-center gap-2">
         <ResultCryptCapacity card={card} />
-        <ResultCryptDisciplines value={card.Disciplines} />
+        <ResultCryptDisciplines value={card[DISCIPLINES]} />
       </div>
       <Hr />
       {card[BANNED] && (

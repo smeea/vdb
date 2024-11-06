@@ -8,7 +8,7 @@ import legacyImagesClans from '@/assets/data/legacyImagesClansList.json';
 const CardImage = ({ card, set, className = 'max-sm:w-full', size = 'md', onClick }) => {
   const { lang, showLegacyImage } = useApp();
   const { baseUrl, otherUrl, legacyUrl } = useCardImageUrl(card, set, lang);
-  const hasLegacyImage = card.Id > 200000 && legacyImagesClans.includes(card.Clan);
+  const hasLegacyImage = card[ID] > 200000 && legacyImagesClans.includes(card[CLAN]);
   const url = showLegacyImage && hasLegacyImage ? legacyUrl : lang == EN ? baseUrl : otherUrl;
 
   const resetImgSrc = (event) => {
@@ -28,7 +28,7 @@ const CardImage = ({ card, set, className = 'max-sm:w-full', size = 'md', onClic
         <img
           className={twMerge(sizeStyle[size], className)}
           src={`${otherUrl}.jpg?v=${import.meta.env.VITE_IMAGE_VERSION}`}
-          alt={card.Name}
+          alt={card[NAME]}
           onClick={onClick}
           onError={resetImgSrc}
         />
@@ -42,7 +42,7 @@ const CardImage = ({ card, set, className = 'max-sm:w-full', size = 'md', onClic
           <img
             className={twMerge(sizeStyle[size], className)}
             src={`${url}.jpg?v=${import.meta.env.VITE_IMAGE_VERSION}`}
-            alt={card.Name}
+            alt={card[NAME]}
             onClick={onClick}
             onError={resetImgSrc}
           />

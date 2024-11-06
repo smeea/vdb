@@ -25,7 +25,7 @@ const InventoryImport = () => {
       const deck = await useDeckImport(deckText, cryptCardBase, libraryCardBase);
 
       setBadCards(deck.badCards);
-      inventoryCardsAdd({ ...deck.crypt, ...deck.library });
+      inventoryCardsAdd({ ...deck[CRYPT], ...deck[LIBRARY] });
     };
   };
 

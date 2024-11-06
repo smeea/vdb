@@ -15,7 +15,7 @@ import { NOT_REQUIRED, ANY } from '@/constants';
 const LibrarySearchFormClan = ({ value, searchForm, onChange }) => {
   const { playtestMode, isXWide, isMobile } = useApp();
   const maxMenuHeight = isXWide ? 500 : 350;
-  const name = 'clan';
+  const name = CLAN;
 
   const options = [
     ['ANY', ANY],

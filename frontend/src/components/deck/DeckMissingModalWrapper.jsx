@@ -8,7 +8,7 @@ const DeckMissingModalWrapper = ({ deck, handleClose }) => {
   return (
     <DeckMissingModal
       deck={{
-        name: `Missing card for ${deck.name}`,
+        name: `Missing card for ${deck[NAME]}`,
         crypt: missingCrypt,
         library: missingLibrary,
       }}

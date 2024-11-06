@@ -29,11 +29,11 @@ const DiffCryptTableRow = ({
   const decks = useSnapshot(deckStore)[DECKS];
   const inventoryCrypt = useSnapshot(inventoryStore)[CRYPT];
   const usedCrypt = useSnapshot(usedStore)[CRYPT];
-  const softUsedMax = getSoftMax(usedCrypt[SOFT][card.Id]);
-  const hardUsedTotal = getHardTotal(usedCrypt[HARD][card.Id]);
-  const inInventory = inventoryCrypt[card.c.Id]?.q ?? 0;
-  const qFrom = cardsFrom[card.c.Id]?.q ?? 0;
-  const qTo = cardsTo[card.c.Id]?.q ?? 0;
+  const softUsedMax = getSoftMax(usedCrypt[SOFT][card[ID]]);
+  const hardUsedTotal = getHardTotal(usedCrypt[HARD][card[ID]]);
+  const inInventory = inventoryCrypt[card.c[ID]]?.q ?? 0;
+  const qFrom = cardsFrom[card.c[ID]]?.q ?? 0;
+  const qTo = cardsTo[card.c[ID]]?.q ?? 0;
 
   const { isSwiped, swipeHandlers } = useSwipe(
     () => deckCardChange(deckid, card.c, card.q - 1),
@@ -71,7 +71,7 @@ const DiffCryptTableRow = ({
       />
       {showInfo && (
         <td className="min-w-[40px] text-right sm:p-1">
-          <DeckDrawProbability cardName={card.c.Name} N={cryptTotal} n={4} k={card.q} />
+          <DeckDrawProbability cardName={card.c[NAME]} N={cryptTotal} n={4} k={card.q} />
         </td>
       )}
     </tr>

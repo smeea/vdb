@@ -8,7 +8,7 @@ const SeatingDeck = ({ toggle, i, deck, disabled, remove }) => {
   return (
     <div className="flex items-center">
       <Toggle isOn={deck.state} handleClick={() => toggle(i)} size="sm" disabled={disabled}>
-        <div className="inline">{deck.name}</div>
+        <div className="inline">{deck[NAME]}</div>
       </Toggle>
       {deck.deckid ? (
         <Link className="p-1" target="_blank" to={`/decks/${deck.deckid}`}>

@@ -5,13 +5,13 @@ const ResultCryptClanGroupTitle = ({ card }) => {
   return (
     <>
       <div className="flex justify-center">
-        <ResultClanImage value={card.Clan} />
+        <ResultClanImage value={card[CLAN]} />
       </div>
       <div className="flex justify-between gap-1 text-sm font-bold">
         <div className="text-fgSecondary dark:text-fgSecondaryDark">
-          {card.Title && <ResultCryptTitle value={card.Title} />}
+          {card[TITLE] && <ResultCryptTitle value={card[TITLE]} />}
         </div>
-        <ResultCryptGroup value={card.Group} />
+        <ResultCryptGroup value={card[GROUP]} />
       </div>
     </>
   );

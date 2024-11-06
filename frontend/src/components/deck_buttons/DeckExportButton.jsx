@@ -55,7 +55,7 @@ const DeckExportButton = ({ deck, inMissing, inInventory }) => {
   };
 
   const saveDeck = async (format) => {
-    let deckName = deck.name;
+    let deckName = deck[NAME];
     if (deck.branchName && (deck.master || deck.branches.length > 0)) {
       deckName += ` [${deck['branchName']}]`;
     }
@@ -71,16 +71,16 @@ const DeckExportButton = ({ deck, inMissing, inInventory }) => {
       if ((format === TWD || format === TWD_HINTS) && lang !== EN) {
         const enCrypt = {};
         const enLibrary = {};
-        Object.keys(deck.crypt).forEach((cardid) => {
+        Object.keys(deck[CRYPT]).forEach((cardid) => {
           enCrypt[cardid] = {
-            ...deck.crypt[cardid],
-            c: { ...deck.crypt[cardid].c, Name: nativeCrypt[cardid].Name },
+            ...deck[CRYPT][cardid],
+            c: { ...deck[CRYPT][cardid].c, Name: nativeCrypt[cardid][NAME] },
           };
         });
-        Object.keys(deck.library).forEach((cardid) => {
+        Object.keys(deck[LIBRARY]).forEach((cardid) => {
           enLibrary[cardid] = {
-            ...deck.library[cardid],
-            c: { ...deck.library[cardid].c, Name: nativeLibrary[cardid].Name },
+            ...deck[LIBRARY][cardid],
+            c: { ...deck[LIBRARY][cardid].c, Name: nativeLibrary[cardid][NAME] },
           };
         });
 

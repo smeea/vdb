@@ -19,7 +19,7 @@ const DeckProxyCryptTable = ({
         {cards.map((card) => {
           return (
             <DeckProxyCryptTableRow
-              key={card.c.Id}
+              key={card.c[ID]}
               inventoryType={inventoryType}
               disciplinesSet={disciplinesSet}
               keyDisciplines={keyDisciplines}

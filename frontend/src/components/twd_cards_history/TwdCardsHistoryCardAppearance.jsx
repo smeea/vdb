@@ -10,10 +10,10 @@ const TwdCardsHistoryCardAppearance = ({ card, byPlayer }) => {
   const navigate = useNavigate();
 
   let yearsToWin = null;
-  if (card.twdDate) {
+  if (card[TWD_DATE]) {
     yearsToWin =
       Math.round(
-        (new Date(card.twdDate) - new Date(card.release_date)) / (1000 * 60 * 60 * 24) / 365,
+        (new Date(card[TWD_DATE]) - new Date(card.release_date)) / (1000 * 60 * 60 * 24) / 365,
       ) || 1;
   } else {
     const date = new Date();
@@ -22,7 +22,7 @@ const TwdCardsHistoryCardAppearance = ({ card, byPlayer }) => {
 
   const handleClick = (author) => {
     clearSearchForm(TWD);
-    searchTwdForm.author = author;
+    searchTwdForm[AUTHOR] = author;
     navigate(`/twd?q=${encodeURIComponent(JSON.stringify({ author: author }))}`);
   };
 
@@ -38,7 +38,7 @@ const TwdCardsHistoryCardAppearance = ({ card, byPlayer }) => {
       </div>
       {!isMobile && (
         <div className="flex min-w-[45px] items-center justify-center sm:min-w-[60px]">
-          {card.twdDate && card.twdDate.slice(0, 4)}
+          {card[TWD_DATE] && card[TWD_DATE].slice(0, 4)}
         </div>
       )}
       <div
@@ -60,10 +60,10 @@ const TwdCardsHistoryCardAppearance = ({ card, byPlayer }) => {
           <div
             className="inline"
             title={`First appearance in TWDA by Player:
-Crypt: ${byPlayer.crypt}
-Library: ${byPlayer.library}`}
+Crypt: ${byPlayer[CRYPT]}
+Library: ${byPlayer[LIBRARY]}`}
           >
-            [{byPlayer.crypt + byPlayer.library}]
+            [{byPlayer[CRYPT] + byPlayer[LIBRARY]}]
           </div>
         )}
       </div>

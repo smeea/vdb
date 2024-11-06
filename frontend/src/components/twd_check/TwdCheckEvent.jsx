@@ -108,14 +108,14 @@ const TwdCheckEvent = ({ deckData }) => {
     hasWrongGroups,
     hasBanned: cryptHasBanned,
     cryptTotal,
-  } = useDeckCrypt(deckData.deck.crypt);
+  } = useDeckCrypt(deckData.deck[CRYPT]);
 
-  const { hasBanned: libraryHasBanned, libraryTotal } = useDeckLibrary(deckData.deck.library);
+  const { hasBanned: libraryHasBanned, libraryTotal } = useDeckLibrary(deckData.deck[LIBRARY]);
 
   const cryptQtyError = cryptTotal < 12;
   const libraryQtyError = libraryTotal > 90 || libraryTotal < 60;
 
-  const deckLocation = deckData.location.split(', ');
+  const deckLocation = deckData[LOCATION].split(', ');
   const deckCountry = deckLocation.at(-1);
   const deckCity = deckLocation.at(-2);
   const isUniqueCity = deckCity && cities && !cities.includes(`${deckCity}, ${deckCountry}`);
@@ -125,16 +125,18 @@ const TwdCheckEvent = ({ deckData }) => {
     <>
       {value && value.event_id === deckData.id ? (
         <div className="pt-[5px] font-mono text-sm">
-          <div className={deckData.event === veknEvent.name ? '' : 'underline decoration-fgRed'}>
-            {veknEvent.name}
+          <div className={deckData[EVENT] === veknEvent[NAME] ? '' : 'underline decoration-fgRed'}>
+            {veknEvent[NAME]}
           </div>
           <div
-            className={deckData.location === veknEvent.location ? '' : 'underline decoration-fgRed'}
+            className={
+              deckData[LOCATION] === veknEvent[LOCATION] ? '' : 'underline decoration-fgRed'
+            }
           >
-            {veknEvent.location}
+            {veknEvent[LOCATION]}
           </div>
-          <div className={deckData.date === veknEvent.date ? '' : 'underline decoration-fgRed'}>
-            {veknEvent.date}
+          <div className={deckData[DATE] === veknEvent[DATE] ? '' : 'underline decoration-fgRed'}>
+            {veknEvent[DATE]}
           </div>
           <div className={deckData.format === veknEvent.format ? '' : 'underline decoration-fgRed'}>
             {veknEvent.format}

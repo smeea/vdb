@@ -44,8 +44,8 @@ const TwdCheckInput = ({ deckData, setDeckData }) => {
       players: lines[4],
       url: url ? url[0] : null,
       deck: {
-        crypt: d.crypt,
-        library: d.library,
+        crypt: d[CRYPT],
+        library: d[LIBRARY],
       },
     });
   };

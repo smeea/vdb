@@ -39,7 +39,7 @@ const TournamentAnalyze = () => {
 
   const getDeck = async (data) => {
     const deck = await useDeckImport(data, cryptCardBase, libraryCardBase);
-    deck.tags = await useTags(deck.crypt, deck.library);
+    deck[TAGS] = await useTags(deck[CRYPT], deck[LIBRARY]);
     return deck;
   };
 
@@ -60,14 +60,14 @@ const TournamentAnalyze = () => {
       .then(JSZip.loadAsync)
       .then((zip) => {
         Object.values(zip.files).forEach(async (f) => {
-          if (f.name.includes('.xlsx')) {
+          if (f[NAME].includes('.xlsx')) {
             const archon = await f.async('base64');
             setTempArchon(archon);
           }
         });
 
         const decks = Object.values(zip.files)
-          .filter((f) => !f.name.includes('.xlsx'))
+          .filter((f) => !f[NAME].includes('.xlsx'))
           .map(async (f) => {
             const d = await f.async('string');
             return getDeck(d);
@@ -76,7 +76,7 @@ const TournamentAnalyze = () => {
         Promise.all(decks).then((v) => {
           const d = {};
           v.forEach((i) => {
-            d[parseInt(i.author)] = i;
+            d[parseInt(i[AUTHOR])] = i;
           });
 
           setTempDecks(d);
@@ -154,11 +154,11 @@ const TournamentAnalyze = () => {
       };
 
       if (tempDecks[veknId]) {
-        reportedRanks.push(score.rank);
+        reportedRanks.push(score[RANK]);
         tempDecks[veknId].score = score;
       }
 
-      if (score.rank > Math.ceil(totalPlayers / 2)) {
+      if (score[RANK] > Math.ceil(totalPlayers / 2)) {
         if (medianVp < score.vp) medianVp = score.vp;
         if (medianGw < score.gw) medianGw = score.gw;
       }

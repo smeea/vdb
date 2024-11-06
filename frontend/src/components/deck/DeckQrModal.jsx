@@ -19,7 +19,7 @@ const DeckQrModal = ({ qrUrl, setQrUrl, deck }) => {
       centered
       title={
         <div className="flex justify-between">
-          QR for ${deck.name}
+          QR for ${deck[NAME]}
           {(deck.isNonEditable || qrUrl.includes('decks/deck?')) && (
             <div className="flex text-fgSecondary dark:text-fgSecondaryDark" title="Non-editable">
               <Snow width="26" height="26" viewBox="0 0 16 16" />
@@ -29,6 +29,7 @@ const DeckQrModal = ({ qrUrl, setQrUrl, deck }) => {
       }
     >
       <div className="flex justify-center">
+        {/* TODO check tailwind*/}
         <div style={{ background: 'white', padding: '4px' }}>
           <a href={qrUrl}>
             <Suspense fallback={<div />}>

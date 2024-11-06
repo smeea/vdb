@@ -6,7 +6,7 @@ import { ANY, LE, GE } from '@/constants';
 const LibrarySearchFormCapacity = ({ value, onChange }) => {
   const { isXWide } = useApp();
   const maxMenuHeight = isXWide ? 500 : 350;
-  const name = 'capacity';
+  const name = CAPACITY;
   const options = ['ANY', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11'].map((i) => ({
     value: i.toLowerCase(),
     name: name,

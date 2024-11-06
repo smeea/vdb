@@ -90,7 +90,7 @@ const InventoryLibrary = ({
           compact
             ? Object.values(cardsByType[ALL])
             : Object.values(cardsByType[type]).filter((i) => {
-                return cardsByDiscipline[discipline][i.c.Id];
+                return cardsByDiscipline[discipline][i.c[ID]];
               })
         }
         newFocus={newFocus}

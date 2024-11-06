@@ -26,10 +26,10 @@ const ResultLayoutText = ({
 }) => {
   const { isPlaytestAdmin, isMobile, isNarrow } = useApp();
   const { cryptCompare, libraryCompare } = useSnapshot(searchResults);
-  const compare = card.Id > 200000 ? cryptCompare : libraryCompare;
-  const setCompare = card.Id > 200000 ? setCryptCompare : setLibraryCompare;
-  const inCompare = compare ? compare.map((i) => i.Id).includes(card.Id) : false;
-  const isPlaytest = card.Id > 210000 || (card.Id < 200000 && card.Id > 110000);
+  const compare = card[ID] > 200000 ? cryptCompare : libraryCompare;
+  const setCompare = card[ID] > 200000 ? setCryptCompare : setLibraryCompare;
+  const inCompare = compare ? compare.map((i) => i[ID]).includes(card[ID]) : false;
+  const isPlaytest = card[ID] > 210000 || (card[ID] < 200000 && card[ID] > 110000);
 
   const handleCompare = () => {
     if (!compare) {
@@ -37,7 +37,7 @@ const ResultLayoutText = ({
     } else if (!inCompare) {
       setCompare([...compare, card]);
     } else {
-      const result = compare.filter((c) => c.Id !== card.Id);
+      const result = compare.filter((c) => c[ID] !== card[ID]);
       setCompare(result.length > 0 ? result : undefined);
     }
 
@@ -47,7 +47,7 @@ const ResultLayoutText = ({
   return (
     <div className="grid h-full w-full content-between gap-3">
       <div className="flex flex-col gap-3">
-        {card.Id > 200000 ? (
+        {card[ID] > 200000 ? (
           <ResultCryptLayoutText
             card={card}
             setCard={setCard}
@@ -66,18 +66,18 @@ const ResultLayoutText = ({
       </div>
       <div className="flex justify-between">
         <div className="flex gap-1">
-          <ButtonCardCopyUrl cardid={card.Id} />
+          <ButtonCardCopyUrl cardid={card[ID]} />
           <ButtonSearchCardInDecks
-            cardid={card.Id}
+            cardid={card[ID]}
             target={TWD}
             handleClose={noClose ? null : handleClose}
           />
           <ButtonSearchCardInDecks
-            cardid={card.Id}
+            cardid={card[ID]}
             target={PDA}
             handleClose={noClose ? null : handleClose}
           />
-          {card.Id < 200000 && card?.Type !== 'Master' && (
+          {card[ID] < 200000 && card?.[TYPE] !== 'Master' && (
             <ButtonPlayableBy card={card} handleClose={noClose ? null : handleClose} />
           )}
           {!isMobile && <ButtonToggleShowImage />}
@@ -85,7 +85,7 @@ const ResultLayoutText = ({
             variant={inCompare ? 'third' : 'primary'}
             onClick={handleCompare}
             title={`Add Card to Compare: it will be displayed above search results in ${
-              card.Id > 200000 ? 'Crypt' : 'Library'
+              card[ID] > 200000 ? 'Crypt' : 'Library'
             }`}
             icon={<SearchHeartFill width="16" height="24" viewBox="0 0 16 16" />}
           />

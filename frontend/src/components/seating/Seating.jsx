@@ -87,9 +87,9 @@ const Seating = ({ setShow }) => {
           if (withStandard) src.push(...standardDecks.filter((v) => v.state));
           if (!src.length > 0) return { name: 'ERROR', deckid: null };
           const randomDeck = getRandomDeck(src);
-          return { name: randomDeck.name, deckid: randomDeck.deckid };
+          return { name: randomDeck[NAME], deckid: randomDeck.deckid };
         } else {
-          return { name: d.name };
+          return { name: d[NAME] };
         }
       });
 

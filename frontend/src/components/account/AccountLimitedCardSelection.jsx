@@ -31,7 +31,7 @@ const AccountLimitedCardSelection = ({ inBanned }) => {
           <NewCardSelect target={CRYPT} onChange={cardAdd} />
           {Object.keys(limitedCrypt).length > 0 && (
             <ResultCryptTable
-              resultCards={Object.values(cryptCardBase).filter((c) => limitedCrypt[c.Id])}
+              resultCards={Object.values(cryptCardBase).filter((c) => limitedCrypt[c[ID]])}
               inLimited={inBanned ? BANNED : ALLOWED}
             />
           )}
@@ -41,7 +41,7 @@ const AccountLimitedCardSelection = ({ inBanned }) => {
           <NewCardSelect target={LIBRARY} onChange={cardAdd} />
           {Object.keys(limitedLibrary).length > 0 && (
             <ResultLibraryTable
-              resultCards={Object.values(libraryCardBase).filter((c) => limitedLibrary[c.Id])}
+              resultCards={Object.values(libraryCardBase).filter((c) => limitedLibrary[c[ID]])}
               inLimited={inBanned ? BANNED : ALLOWED}
             />
           )}

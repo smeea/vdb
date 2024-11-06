@@ -1,5 +1,5 @@
 import React from 'react';
-import { ASCII_NAME } from '@/constants';
+import { ASCII } from '@/constants';
 import { DeckLibraryTableRow } from '@/components';
 
 const DeckLibraryTable = ({
@@ -12,7 +12,7 @@ const DeckLibraryTable = ({
   inMissing,
   shouldShowModal,
 }) => {
-  const sortedCards = cards.toSorted((a, b) => a.c[ASCII_NAME] - b.c[ASCII_NAME]);
+  const sortedCards = cards.toSorted((a, b) => a.c[ASCII] - b.c[ASCII]);
 
   return (
     <table className="w-full border-bgSecondary dark:border-bgSecondaryDark sm:border">
@@ -20,7 +20,7 @@ const DeckLibraryTable = ({
         {sortedCards.map((card) => {
           return (
             <DeckLibraryTableRow
-              key={card.c.Id}
+              key={card.c[ID]}
               handleClick={handleClick}
               card={card}
               deck={deck}

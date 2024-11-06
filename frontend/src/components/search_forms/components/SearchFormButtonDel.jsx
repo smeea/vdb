@@ -7,7 +7,7 @@ const SearchFormButtonDel = ({ i, name, searchForm }) => {
     if (name) {
       searchForm[name].value.splice(n, 1);
     } else {
-      searchForm.text.splice(n, 1);
+      searchForm[TEXT].splice(n, 1);
     }
   };
 

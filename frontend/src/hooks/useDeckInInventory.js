@@ -8,10 +8,10 @@ const useDeckInInventory = (deck) => {
   let cryptInInventory;
   let libraryInInventory;
 
-  Object.keys(deck.crypt).forEach((cardid) => {
-    if (deck.crypt[cardid].q > 0) {
+  Object.keys(deck[CRYPT]).forEach((cardid) => {
+    if (deck[CRYPT][cardid].q > 0) {
       if (inventoryCrypt[cardid]) {
-        const inInventory = Math.floor(inventoryCrypt[cardid].q / deck.crypt[cardid].q);
+        const inInventory = Math.floor(inventoryCrypt[cardid].q / deck[CRYPT][cardid].q);
         if (cryptInInventory === undefined || inInventory < cryptInInventory) {
           cryptInInventory = inInventory;
         }
@@ -21,10 +21,10 @@ const useDeckInInventory = (deck) => {
     }
   });
 
-  Object.keys(deck.library).forEach((cardid) => {
-    if (deck.library[cardid].q > 0) {
-      if (inventoryLibrary[cardid] && deck.library[cardid].q > 0) {
-        const inInventory = Math.floor(inventoryLibrary[cardid].q / deck.library[cardid].q);
+  Object.keys(deck[LIBRARY]).forEach((cardid) => {
+    if (deck[LIBRARY][cardid].q > 0) {
+      if (inventoryLibrary[cardid] && deck[LIBRARY][cardid].q > 0) {
+        const inInventory = Math.floor(inventoryLibrary[cardid].q / deck[LIBRARY][cardid].q);
         if (libraryInInventory === undefined || inInventory < libraryInInventory) {
           libraryInInventory = inInventory;
         }

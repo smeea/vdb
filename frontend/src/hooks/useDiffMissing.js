@@ -2,28 +2,28 @@ const useDiffMissing = (deckTo, deckFrom) => {
   const missingCrypt = {};
   const missingLibrary = {};
 
-  Object.keys(deckTo.crypt)
-    .filter((card) => deckTo.crypt[card].q > 0)
+  Object.keys(deckTo[CRYPT])
+    .filter((card) => deckTo[CRYPT][card].q > 0)
     .forEach((card) => {
-      if (!deckFrom.crypt[card]) {
-        missingCrypt[card] = deckTo.crypt[card];
-      } else if (deckFrom.crypt[card].q < deckTo.crypt[card].q) {
+      if (!deckFrom[CRYPT][card]) {
+        missingCrypt[card] = deckTo[CRYPT][card];
+      } else if (deckFrom[CRYPT][card].q < deckTo[CRYPT][card].q) {
         missingCrypt[card] = {
-          c: deckTo.crypt[card].c,
-          q: deckTo.crypt[card].q - deckFrom.crypt[card].q,
+          c: deckTo[CRYPT][card].c,
+          q: deckTo[CRYPT][card].q - deckFrom[CRYPT][card].q,
         };
       }
     });
 
-  Object.keys(deckTo.library)
-    .filter((card) => deckTo.library[card].q > 0)
+  Object.keys(deckTo[LIBRARY])
+    .filter((card) => deckTo[LIBRARY][card].q > 0)
     .forEach((card) => {
-      if (!deckFrom.library[card]) {
-        missingLibrary[card] = deckTo.library[card];
-      } else if (deckFrom.library[card].q < deckTo.library[card].q) {
+      if (!deckFrom[LIBRARY][card]) {
+        missingLibrary[card] = deckTo[LIBRARY][card];
+      } else if (deckFrom[LIBRARY][card].q < deckTo[LIBRARY][card].q) {
         missingLibrary[card] = {
-          c: deckTo.library[card].c,
-          q: deckTo.library[card].q - deckFrom.library[card].q,
+          c: deckTo[LIBRARY][card].c,
+          q: deckTo[LIBRARY][card].q - deckFrom[LIBRARY][card].q,
         };
       }
     });

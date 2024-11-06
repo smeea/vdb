@@ -11,7 +11,7 @@ const Cards = () => {
   const navigate = useNavigate();
 
   const handleSetCard = (card) => {
-    navigate(`/cards/${card.Id}`);
+    navigate(`/cards/${card[ID]}`);
   };
 
   const handleChange = (event) => {

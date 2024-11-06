@@ -17,10 +17,10 @@ const DeckDrawLibraryTable = ({
 
   if (restCards && resultCards) {
     [...restCards, ...resultCards].forEach((c) => {
-      if (c.Id in nonPlayed) {
-        nonPlayed[c.Id] += 1;
+      if (c[ID] in nonPlayed) {
+        nonPlayed[c[ID]] += 1;
       } else {
-        nonPlayed[c.Id] = 1;
+        nonPlayed[c[ID]] = 1;
       }
     });
   }
@@ -31,7 +31,7 @@ const DeckDrawLibraryTable = ({
         {resultCards.map((card, idx) => {
           return (
             <tr
-              key={`${idx}-${card.Id}`}
+              key={`${idx}-${card[ID]}`}
               className="row-bg h-[38px] border-y border-bgSecondary dark:border-bgSecondaryDark"
             >
               <ResultLibraryTableRowCommon
@@ -42,7 +42,12 @@ const DeckDrawLibraryTable = ({
               {(!ashHeap || !isMobile) && (
                 <td className="min-w-[45px] text-right text-fgSecondary dark:text-fgSecondaryDark sm:p-1">
                   {!ashHeap && (
-                    <DeckDrawProbability cardName={card.Name} N={N} n={n} k={nonPlayed[card.Id]} />
+                    <DeckDrawProbability
+                      cardName={card[NAME]}
+                      N={N}
+                      n={n}
+                      k={nonPlayed[card[ID]]}
+                    />
                   )}
                 </td>
               )}

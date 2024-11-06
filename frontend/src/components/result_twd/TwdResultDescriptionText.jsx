@@ -13,7 +13,7 @@ import { LOCATION, CREATION_DATE, AUTHOR, TWD } from '@/constants';
 const TwdResultDescriptionText = ({ deck }) => {
   const { isMobile } = useApp();
   const navigate = useNavigate();
-  const tags = useTags(deck.crypt, deck.library);
+  const tags = useTags(deck[CRYPT], deck[LIBRARY]);
 
   const handleClick = (target, value) => {
     clearSearchForm(TWD);

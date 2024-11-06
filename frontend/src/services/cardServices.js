@@ -1,6 +1,6 @@
 import ky from 'ky';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
-import { PRECONS, CARD_TEXT, PLAYTEST } from '@/constants';
+import { PRECONS, TEXT, PLAYTEST } from '@/constants';
 import { useDeck, useTags } from '@/hooks';
 
 const CARD_VERSION = import.meta.env.VITE_CARD_VERSION;
@@ -29,10 +29,10 @@ export const getCardBase = async () => {
     ...library,
     ...libraryPlaytest,
   }).forEach((card) => {
-    const target = card.Id > 200000 ? nativeCrypt : nativeLibrary;
-    target[card.Id] = {
-      Name: card.Name,
-      [CARD_TEXT]: card[CARD_TEXT],
+    const target = card[ID] > 200000 ? nativeCrypt : nativeLibrary;
+    target[card[ID]] = {
+      Name: card[NAME],
+      [TEXT]: card[TEXT],
     };
   });
 
@@ -67,8 +67,8 @@ export const getPreconDecks = async (cryptCardBase, libraryCardBase) => {
         name: `${name}`,
         deckid: deckid,
         author: 'VTES Team',
-        description: `Preconstructed from "${setsAndPrecons[set].name}"${
-          setsAndPrecons[set].date ? ` [${setsAndPrecons[set].date}]` : ''
+        description: `Preconstructed from "${setsAndPrecons[set][NAME]}"${
+          setsAndPrecons[set][DATE] ? ` [${setsAndPrecons[set][DATE]}]` : ''
         }`,
         crypt: {},
         library: {},
@@ -78,14 +78,14 @@ export const getPreconDecks = async (cryptCardBase, libraryCardBase) => {
 
       let tags = [];
       if (set !== PLAYTEST || (cryptCardBase[210001] && libraryCardBase[110001])) {
-        Object.values(useTags(cardsData.crypt, cardsData.library)).forEach((v) => {
+        Object.values(useTags(cardsData[CRYPT], cardsData[LIBRARY])).forEach((v) => {
           tags = tags.concat(v);
         });
       }
 
-      preconDecks[deckid].crypt = cardsData.crypt;
-      preconDecks[deckid].library = cardsData.library;
-      preconDecks[deckid].tags = tags;
+      preconDecks[deckid][CRYPT] = cardsData[CRYPT];
+      preconDecks[deckid][LIBRARY] = cardsData[LIBRARY];
+      preconDecks[deckid][TAGS] = tags;
     });
   });
 

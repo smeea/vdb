@@ -62,7 +62,7 @@ const SearchAdditionalForms = ({
                 maxMenuHeight={maxMenuHeight ? maxMenuHeight - 45 : isMobile ? 350 : 450}
                 menuPlacement={menuPlacement}
                 name={i}
-                value={options.find((obj) => obj.value === value.value[i].capacity)}
+                value={options.find((obj) => obj.value === value.value[i][CAPACITY])}
                 onChange={onChange}
                 autoFocus
               />

@@ -18,11 +18,12 @@ const Button = ({
   noPadding,
   noOutline,
 }) => {
-  const outlineStyle = `focus:outline ${
+  const outlineStyle = twMerge(
+    'focus:outline',
     noOutline
       ? 'outline-0'
-      : 'outline-1 outline-bgCheckboxSelected dark:outline-bgCheckboxSelectedDark'
-  }`;
+      : 'outline-1 outline-bgCheckboxSelected dark:outline-bgCheckboxSelectedDark',
+  );
 
   const paddingStyle = noPadding ? '' : 'px-3 py-1.5';
 

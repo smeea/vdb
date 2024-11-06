@@ -8,13 +8,13 @@ import { Input, InputLabel, DeckFreezeButton } from '@/components';
 
 const DeckChangeName = ({ deck }) => {
   const { isPublic, isAuthor, isFrozen, isNonEditable } = deck;
-  const [value, setValue] = useState(deck.name || '');
+  const [value, setValue] = useState(deck[NAME] || '');
   const isEditable = isAuthor && !isPublic && !isFrozen && !isNonEditable;
   const isTwd = deck.deckid !== 'deck' && deck.deckid.length !== 9 && !deck.deckid.includes(':');
 
   useEffect(() => {
-    if (value !== deck.name) setValue(deck.name ?? '');
-  }, [deck.name]);
+    if (value !== deck[NAME]) setValue(deck[NAME] ?? '');
+  }, [deck[NAME]]);
 
   const handleChange = (event) => {
     setValue(event.target.value);
@@ -30,7 +30,7 @@ const DeckChangeName = ({ deck }) => {
   };
 
   const handleOnBlur = () => {
-    if (value != deck.name) {
+    if (value != deck[NAME]) {
       deckChangeName();
     }
   };

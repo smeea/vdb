@@ -10,18 +10,18 @@ const getMatches = (inputValue, filterAction, playtestId, playtestMode, inInvent
   const startingWith = [];
   const other = filterAction(input)
     .filter((card) => {
-      if (!((playtestMode && !inInventory) || card.Id < playtestId)) {
+      if (!((playtestMode && !inInventory) || card[ID] < playtestId)) {
         return false;
       }
 
-      if (card.Name.toLowerCase().startsWith(inputValue.toLowerCase())) {
-        startingWith.push({ value: card.Id });
+      if (card[NAME].toLowerCase().startsWith(inputValue.toLowerCase())) {
+        startingWith.push({ value: card[ID] });
       } else {
         return true;
       }
     })
     .map((card) => ({
-      value: card.Id,
+      value: card[ID],
     }));
 
   return { startingWith, other };
@@ -82,8 +82,8 @@ const CardSelect = React.forwardRef(
     };
 
     const byTwd = (a, b) => {
-      const aInTwd = a.value > 200000 ? cryptCardBase[a.value].Twd : libraryCardBase[a.value].Twd;
-      const bInTwd = b.value > 200000 ? cryptCardBase[b.value].Twd : libraryCardBase[b.value].Twd;
+      const aInTwd = a.value > 200000 ? cryptCardBase[a.value][TWD] : libraryCardBase[a.value][TWD];
+      const bInTwd = b.value > 200000 ? cryptCardBase[b.value][TWD] : libraryCardBase[b.value][TWD];
 
       return bInTwd - aInTwd;
     };

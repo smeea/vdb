@@ -10,7 +10,7 @@ const TwdSearchFormPlayer = ({ inPda, value, form }) => {
   const { value: players } = useFetch(url, {}, []);
 
   const handleChange = (v) => {
-    form.author = v?.value ?? '';
+    form[AUTHOR] = v?.value ?? '';
   };
 
   const loadOptions = async (inputValue) => {

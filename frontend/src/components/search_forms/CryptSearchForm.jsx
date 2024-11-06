@@ -86,15 +86,16 @@ const CryptSearchForm = () => {
   }, []);
 
   const handleTextChange = (formId, value) => {
-    searchCryptForm.text[formId].value = value;
+    searchCryptForm[TEXT][formId].value = value;
   };
 
   const handleTextCheckboxesChange = (event) => {
     const { name, value } = event.currentTarget;
     if (['name', TEXT].includes(value)) {
-      searchCryptForm.text[name]['in'] = searchCryptForm.text[name]['in'] === value ? false : value;
+      searchCryptForm[TEXT][name]['in'] =
+        searchCryptForm[TEXT][name]['in'] === value ? false : value;
     } else {
-      searchCryptForm.text[name][value] = !searchCryptForm.text[name][value];
+      searchCryptForm[TEXT][name][value] = !searchCryptForm[TEXT][name][value];
     }
   };
 
@@ -104,10 +105,10 @@ const CryptSearchForm = () => {
   };
 
   const handleMultiSelectChange = (event, id) => {
-    const i = id.name;
+    const i = id[NAME];
     const { name, value } = event;
 
-    if (['capacity'].includes(name)) {
+    if ([CAPACITY].includes(name)) {
       if ([LE, GE, EQ].includes(value)) {
         searchCryptForm[name].value[i].moreless = value;
       } else {
@@ -131,10 +132,10 @@ const CryptSearchForm = () => {
   };
 
   const handleDisciplinesChange = (name, max) => {
-    if (cryptFormState.disciplines[name] < max) {
-      searchCryptForm.disciplines[name] += 1;
+    if (cryptFormState[DISCIPLINES][name] < max) {
+      searchCryptForm[DISCIPLINES][name] += 1;
     } else {
-      searchCryptForm.disciplines[name] = 0;
+      searchCryptForm[DISCIPLINES][name] = 0;
     }
   };
 
@@ -160,18 +161,18 @@ const CryptSearchForm = () => {
     navigate(`/crypt?q=${encodeURIComponent(JSON.stringify(sanitizedForm))}`);
 
     const filteredCards = filterCrypt(sanitizedForm).filter(
-      (card) => playtestMode || card.Id < 210000,
+      (card) => playtestMode || card[ID] < 210000,
     );
 
     const setResults = isMobile ? setCryptResults : setPreresults;
     if (searchInventoryMode && inventoryMode) {
       setResults(
         filteredCards.filter((card) => {
-          return inventoryCrypt[card.Id] || usedCrypt[SOFT][card.Id] || usedCrypt[HARD][card.Id];
+          return inventoryCrypt[card[ID]] || usedCrypt[SOFT][card[ID]] || usedCrypt[HARD][card[ID]];
         }),
       );
     } else if (searchMissingInventoryMode && inventoryMode) {
-      setResults(filteredCards.filter((card) => !inventoryCrypt[card.Id]?.q));
+      setResults(filteredCards.filter((card) => !inventoryCrypt[card[ID]]?.q));
     } else {
       setResults(filteredCards);
     }
@@ -200,7 +201,7 @@ const CryptSearchForm = () => {
           setPreresults(undefined);
           navigate('/crypt');
         }
-      } else if (!cryptFormState.text[0].value || cryptFormState.text[0].value.length > 2) {
+      } else if (!cryptFormState[TEXT][0].value || cryptFormState[TEXT][0].value.length > 2) {
         processSearch();
       }
     }
@@ -209,17 +210,17 @@ const CryptSearchForm = () => {
   useEffect(
     () => testInputsAndSearch(),
     [
-      cryptFormState.text,
-      cryptFormState.artist,
-      cryptFormState.capacity,
-      cryptFormState.clan,
-      cryptFormState.group,
-      cryptFormState.precon,
-      cryptFormState.sect,
-      cryptFormState.set,
-      cryptFormState.titles,
-      cryptFormState.traits,
-      cryptFormState.votes,
+      cryptFormState[TEXT],
+      cryptFormState[ARTIST],
+      cryptFormState[CAPACITY],
+      cryptFormState[CLAN],
+      cryptFormState[GROUP],
+      cryptFormState[PRECON],
+      cryptFormState[SECT],
+      cryptFormState[SET],
+      cryptFormState[TITLES],
+      cryptFormState[TRAITS],
+      cryptFormState[VOTES],
       searchInventoryMode,
       searchMissingInventoryMode,
       inventoryMode,
@@ -230,7 +231,7 @@ const CryptSearchForm = () => {
   );
 
   useDebounce(() => testInputsAndSearch(), 300, [
-    cryptFormState.disciplines,
+    cryptFormState[DISCIPLINES],
     searchInventoryMode,
     searchMissingInventoryMode,
     inventoryMode,
@@ -252,7 +253,7 @@ const CryptSearchForm = () => {
   return (
     <div className="flex flex-col gap-2">
       <SearchFormTextAndButtons
-        value={cryptFormState.text}
+        value={cryptFormState[TEXT]}
         onChange={handleTextChange}
         onChangeOptions={handleTextCheckboxesChange}
         searchForm={searchCryptForm}
@@ -262,46 +263,46 @@ const CryptSearchForm = () => {
         showLimit={showLimit}
       />
       <CryptSearchFormDisciplines
-        value={cryptFormState.disciplines}
+        value={cryptFormState[DISCIPLINES]}
         onChange={handleDisciplinesChange}
       />
       <CryptSearchFormVirtues
-        value={cryptFormState.disciplines}
+        value={cryptFormState[DISCIPLINES]}
         onChange={handleDisciplinesChange}
       />
       <CryptSearchFormCapacity
-        value={cryptFormState.capacity}
+        value={cryptFormState[CAPACITY]}
         onChange={handleMultiSelectChange}
         searchForm={searchCryptForm}
       />
       <CryptSearchFormClan
-        value={cryptFormState.clan}
+        value={cryptFormState[CLAN]}
         onChange={handleMultiSelectChange}
         searchForm={searchCryptForm}
       />
       <CryptSearchFormSect
-        value={cryptFormState.sect}
+        value={cryptFormState[SECT]}
         onChange={handleMultiSelectChange}
         searchForm={searchCryptForm}
       />
-      <CryptSearchFormVotes value={cryptFormState.votes} onChange={handleSelectChange} />
-      <CryptSearchFormTitles value={cryptFormState.titles} onChange={handleMultiChange} />
-      <CryptSearchFormGroup value={cryptFormState.group} onChange={handleMultiChange} />
-      <CryptSearchFormTraits value={cryptFormState.traits} onChange={handleMultiChange} />
+      <CryptSearchFormVotes value={cryptFormState[VOTES]} onChange={handleSelectChange} />
+      <CryptSearchFormTitles value={cryptFormState[TITLES]} onChange={handleMultiChange} />
+      <CryptSearchFormGroup value={cryptFormState[GROUP]} onChange={handleMultiChange} />
+      <CryptSearchFormTraits value={cryptFormState[TRAITS]} onChange={handleMultiChange} />
       <SearchFormSet
-        value={cryptFormState.set}
+        value={cryptFormState[SET]}
         onChange={handleMultiSelectChange}
         onChangeOptions={handleMultiChange}
         searchForm={searchCryptForm}
       />
       <SearchFormPrecon
-        value={cryptFormState.precon}
+        value={cryptFormState[PRECON]}
         onChange={handleMultiSelectChange}
         onChangeOptions={handleMultiChange}
         searchForm={searchCryptForm}
       />
       <SearchFormArtist
-        value={cryptFormState.artist}
+        value={cryptFormState[ARTIST]}
         onChange={handleSelectChange}
         target={CRYPT}
       />

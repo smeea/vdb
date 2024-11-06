@@ -32,7 +32,7 @@ const Text = ({ text }) => {
 
   return reactStringReplace(textWithIcons, /{(.*?)}/g, (match, idx) => {
     const cardBase = { ...nativeCrypt, ...nativeLibrary };
-    const cardid = Object.keys(cardBase).find((j) => cardBase[j].Name == match);
+    const cardid = Object.keys(cardBase).find((j) => cardBase[j][NAME] == match);
 
     const card = cardid > 200000 ? cryptCardBase[cardid] : libraryCardBase[cardid];
 
@@ -56,7 +56,7 @@ const ResultLayoutTextRulings = ({ rulings }) => {
   return (
     <ul className="flex flex-col gap-2 text-sm">
       {rulings.map((k, idx) => {
-        const text = k.text.replace(/\(D\)/g, '\u24B9').split('\n');
+        const text = k[TEXT].replace(/\(D\)/g, '\u24B9').split('\n');
 
         return (
           <li key={idx}>

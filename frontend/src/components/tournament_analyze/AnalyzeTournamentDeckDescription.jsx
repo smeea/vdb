@@ -20,15 +20,15 @@ const AnalyzeTournamentDeckDescription = ({ deck }) => {
         <table>
           <tbody>
             <TwdResultDescriptionTextTr title={isMobile ? <TrophyFill /> : <>Place:</>}>
-              {deck.score.rank}
+              {deck.score[RANK]}
             </TwdResultDescriptionTextTr>
             <TwdResultDescriptionTextTr title={isMobile ? <StarFill /> : <>Score:</>}>
               {deck.score.gw}GW + {deck.score.vp}VP
             </TwdResultDescriptionTextTr>
           </tbody>
         </table>
-        {(deck.tags.superior.length > 0 || deck.tags.base.length > 0) && (
-          <TwdResultTags tags={deck.tags} />
+        {(deck[TAGS].superior.length > 0 || deck[TAGS].base.length > 0) && (
+          <TwdResultTags tags={deck[TAGS]} />
         )}
       </div>
       <div className="flex justify-between gap-1 max-lg:flex-col max-lg:p-1 lg:basis-full">
@@ -40,7 +40,7 @@ const AnalyzeTournamentDeckDescription = ({ deck }) => {
             <DeckCloneButton
               deck={{
                 ...deck,
-                tags: [...deck.tags.superior, ...deck.tags.base],
+                tags: [...deck[TAGS].superior, ...deck[TAGS].base],
               }}
               inTwdPda
             />

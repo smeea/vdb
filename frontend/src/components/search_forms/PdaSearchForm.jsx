@@ -53,7 +53,7 @@ const PdaSearchForm = ({ error, setError }) => {
   }, [pdaFormState, cryptCardBase, libraryCardBase]);
 
   const handleMultiSelectChange = (event, id) => {
-    const i = id.name;
+    const i = id[NAME];
     const { name, value } = event;
     searchPdaForm[name].value[i] = value;
   };
@@ -65,13 +65,13 @@ const PdaSearchForm = ({ error, setError }) => {
   };
 
   const handleChangeWithOpt = (event, id) => {
-    const i = id.name;
+    const i = id[NAME];
     const { name, value } = event;
     searchPdaForm[i][name] = value;
   };
 
   const handleDisciplinesChange = (name) => {
-    searchPdaForm.disciplines[name] = !pdaFormState.disciplines[name];
+    searchPdaForm[DISCIPLINES][name] = !pdaFormState[DISCIPLINES][name];
   };
 
   const handleMultiChange = (event) => {
@@ -81,9 +81,9 @@ const PdaSearchForm = ({ error, setError }) => {
 
   const handleMatchInventoryScalingChange = (e) => {
     if (e.target.checked) {
-      searchPdaForm.matchInventory.scaling = e.target.name;
+      searchPdaForm[MATCH_INVENTORY][SCALING] = e.target[NAME];
     } else {
-      searchPdaForm.matchInventory.scaling = false;
+      searchPdaForm[MATCH_INVENTORY][SCALING] = false;
     }
   };
 
@@ -167,16 +167,16 @@ const PdaSearchForm = ({ error, setError }) => {
         getRandom={getRandomPda}
         inPda
       />
-      {username && <PdaSearchFormSrcSelector value={pdaFormState.src} onChange={handleChange} />}
+      {username && <PdaSearchFormSrcSelector value={pdaFormState[SRC]} onChange={handleChange} />}
       {inventoryMode && (
         <>
           <TwdSearchFormMatchInventory
-            value={pdaFormState.matchInventory.crypt}
+            value={pdaFormState[MATCH_INVENTORY][CRYPT]}
             target={CRYPT}
             onChange={handleChangeWithOpt}
           />
           <TwdSearchFormMatchInventory
-            value={pdaFormState.matchInventory.library}
+            value={pdaFormState[MATCH_INVENTORY][LIBRARY]}
             target={LIBRARY}
             onChange={handleChangeWithOpt}
           />
@@ -184,63 +184,63 @@ const PdaSearchForm = ({ error, setError }) => {
             <Checkbox
               name="60"
               label="Scale to 60 cards"
-              checked={pdaFormState.matchInventory.scaling == 60}
-              value={pdaFormState.matchInventory.scaling}
+              checked={pdaFormState[MATCH_INVENTORY][SCALING] == 60}
+              value={pdaFormState[MATCH_INVENTORY][SCALING]}
               onChange={handleMatchInventoryScalingChange}
             />
             <Checkbox
               name="75"
               label="Scale to 75 cards"
-              checked={pdaFormState.matchInventory.scaling == 75}
-              value={pdaFormState.matchInventory.scaling}
+              checked={pdaFormState[MATCH_INVENTORY][SCALING] == 75}
+              value={pdaFormState[MATCH_INVENTORY][SCALING]}
               onChange={handleMatchInventoryScalingChange}
             />
           </div>
         </>
       )}
-      <TwdSearchFormDate value={pdaFormState.date} onChange={handleChangeWithOpt} inPda />
+      <TwdSearchFormDate value={pdaFormState[DATE]} onChange={handleChangeWithOpt} inPda />
       {cryptCardBase && (
-        <TwdSearchFormCrypt value={pdaFormState.crypt} form={searchPdaForm.crypt} />
+        <TwdSearchFormCrypt value={pdaFormState[CRYPT]} form={searchPdaForm[CRYPT]} />
       )}
       <div className="flex justify-end">
         <Checkbox
-          name="traits"
-          value="star"
+          name={TRAITS}
+          value={STAR}
           label="With Star"
-          checked={pdaFormState.traits.star}
+          checked={pdaFormState[TRAITS][STAR]}
           onChange={handleMultiChange}
         />
       </div>
       {libraryCardBase && (
-        <TwdSearchFormLibrary value={pdaFormState.library} form={searchPdaForm.library} />
+        <TwdSearchFormLibrary value={pdaFormState[LIBRARY]} form={searchPdaForm[LIBRARY]} />
       )}
-      <TwdSearchFormLibraryTotal value={pdaFormState.libraryTotal} onChange={handleMultiChange} />
+      <TwdSearchFormLibraryTotal value={pdaFormState[LIBRARY_TOTAL]} onChange={handleMultiChange} />
       <CryptSearchFormClan
-        value={pdaFormState.clan}
+        value={pdaFormState[CLAN]}
         onChange={handleMultiSelectChange}
         searchForm={searchPdaForm}
       />
       <div className="flex justify-end">
         <Checkbox
-          name="traits"
-          value="monoclan"
+          name={TRAITS}
+          value={MONOCLAN}
           label="Mono Clan"
-          checked={pdaFormState.traits.monoclan}
+          checked={pdaFormState[TRAITS][MONOCLAN]}
           onChange={handleMultiChange}
         />
       </div>
       <CryptSearchFormSect
-        value={pdaFormState.sect}
+        value={pdaFormState[SECT]}
         onChange={handleMultiSelectChange}
         searchForm={searchPdaForm}
       />
-      <TwdSearchFormCapacity value={pdaFormState.capacity} onChange={handleMultiChange} />
+      <TwdSearchFormCapacity value={pdaFormState[CAPACITY]} onChange={handleMultiChange} />
       <TwdSearchFormDisciplines
-        value={pdaFormState.disciplines}
+        value={pdaFormState[DISCIPLINES]}
         onChange={handleDisciplinesChange}
       />
-      <TwdSearchFormCardtypes value={pdaFormState.cardtypes} onChange={handleChangeWithOpt} />
-      <TwdSearchFormPlayer value={pdaFormState.author} form={searchPdaForm} inPda />
+      <TwdSearchFormCardtypes value={pdaFormState[CARDTYPES]} onChange={handleChangeWithOpt} />
+      <TwdSearchFormPlayer value={pdaFormState[AUTHOR]} form={searchPdaForm} inPda />
       {isMobile && showFloatingButtons && (
         <>
           <ButtonFloatClose handleClose={handleClear} position="middle" />

@@ -11,8 +11,8 @@ const ReviewApplyButton = ({ deck, parentId }) => {
 
   const handleStandard = async () => {
     const response = await deckUpdate(parentId, CARDS, {
-      crypt: deck.crypt,
-      library: deck.library,
+      crypt: deck[CRYPT],
+      library: deck[LIBRARY],
     });
     if (response?.success) {
       setSuccess(true);

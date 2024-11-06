@@ -15,7 +15,7 @@ import { ANY } from '@/constants';
 const CryptSearchFormClan = ({ value, searchForm, onChange }) => {
   const { playtestMode, isXWide, isMobile } = useApp();
   const maxMenuHeight = isXWide ? 450 : 350;
-  const name = 'clan';
+  const name = CLAN;
   const options = ['ANY', ...vampireClansList, ...imbuedClansList]
     .filter((clan) => playtestMode || clan !== 'Hecata')
     .map((i) => ({

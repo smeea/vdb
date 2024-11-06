@@ -15,7 +15,7 @@ import { DECK } from '@/constants';
 const ResultLibraryTableRow = ({ card, handleClick, inLimited, shouldShowModal }) => {
   const { addMode, inventoryMode } = useApp();
   const deck = useSnapshot(deckStore)[DECK];
-  const inDeck = deck?.library[card.Id]?.q || 0;
+  const inDeck = deck?.[LIBRARY][card[ID]]?.q || 0;
   const isEditable = deck?.isAuthor && !deck?.isPublic && !deck?.isFrozen;
 
   const { isSwiped, swipeHandlers } = useSwipe(
@@ -35,7 +35,7 @@ const ResultLibraryTableRow = ({ card, handleClick, inLimited, shouldShowModal }
     >
       {inLimited ? (
         <td className="min-w-[22px]">
-          <AccountLimitedDelCard cardid={card.Id} target={inLimited} />
+          <AccountLimitedDelCard cardid={card[ID]} target={inLimited} />
         </td>
       ) : (
         isEditable &&

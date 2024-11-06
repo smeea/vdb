@@ -17,16 +17,16 @@ const TwdResultCryptTableRow = ({ card, handleClick, shouldShowModal }) => {
   const { limitedMode, inventoryMode, isMobile } = useApp();
   const inventoryCrypt = useSnapshot(inventoryStore)[CRYPT];
   const limitedCrypt = useSnapshot(limitedStore)[CRYPT];
-  const inLimited = limitedCrypt[card.c.Id];
-  const inInventory = inventoryCrypt[card.c.Id]?.q ?? 0;
+  const inLimited = limitedCrypt[card.c[ID]];
+  const inInventory = inventoryCrypt[card.c[ID]]?.q ?? 0;
   const usedCrypt = useSnapshot(usedStore)[CRYPT];
-  const hardUsedTotal = getHardTotal(usedCrypt[HARD][card.c.Id]);
+  const hardUsedTotal = getHardTotal(usedCrypt[HARD][card.c[ID]]);
 
   return (
-    <tr key={card.c.Id} className="row-bg border-y border-bgSecondary dark:border-bgSecondaryDark">
+    <tr key={card.c[ID]} className="row-bg border-y border-bgSecondary dark:border-bgSecondaryDark">
       <td className="min-w-[28px] border-r border-bgSecondary bg-blue/5 dark:border-bgSecondaryDark sm:min-w-[35px]">
         {inventoryMode ? (
-          <ConditionalTooltip overlay={<UsedPopover cardid={card.c.Id} />} disabled={isMobile}>
+          <ConditionalTooltip overlay={<UsedPopover cardid={card.c[ID]} />} disabled={isMobile}>
             <div
               className={twMerge(
                 'flex justify-center text-lg',
@@ -61,7 +61,7 @@ const TwdResultCryptTableRow = ({ card, handleClick, shouldShowModal }) => {
       </td>
       <td className="min-w-[30px]" onClick={() => handleClick(card.c)}>
         <div className="flex justify-center">
-          <ResultClanImage value={card.c.Clan} />
+          <ResultClanImage value={card.c[CLAN]} />
         </div>
       </td>
     </tr>

@@ -6,8 +6,8 @@ const useDecksTagsAll = (decks) => {
 
     if (decks) {
       Object.keys(decks).forEach((id) => {
-        if (decks[id].tags) {
-          decks[id].tags.forEach((tag) => {
+        if (decks[id][TAGS]) {
+          decks[id][TAGS].forEach((tag) => {
             allTags.add(tag);
           });
         }

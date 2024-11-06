@@ -28,17 +28,17 @@ const TwdHallOfFameCards = () => {
 
         let releaseDate = null;
 
-        Object.keys(card.Set)
+        Object.keys(card[SET])
           .filter((set) => set !== POD)
           .forEach((set) => {
-            const d = set === PROMO ? Object.keys(card.Set.Promo)[0] : setsAndPrecons[set].date;
+            const d = set === PROMO ? Object.keys(card[SET].Promo)[0] : setsAndPrecons[set][DATE];
 
             if (!releaseDate || releaseDate > d) {
               releaseDate = d;
             }
           });
 
-        const twdDate = value[cardid].twdDate;
+        const twdDate = value[cardid][TWD_DATE];
         if (twdDate) {
           if (!p[player]) {
             p[player] = {
@@ -69,9 +69,9 @@ const TwdHallOfFameCards = () => {
   };
 
   const isInnovation = (card) => {
-    const twdAppearanceDelay = (new Date(card.twdDate) - new Date(card.releaseDate)) / MS_TO_DAYS;
+    const twdAppearanceDelay = (new Date(card[TWD_DATE]) - new Date(card.releaseDate)) / MS_TO_DAYS;
 
-    if (card.twdDate < IGNORED_BEFORE_DATE) return false;
+    if (card[TWD_DATE] < IGNORED_BEFORE_DATE) return false;
     return twdAppearanceDelay > INNOVATION_PERIOD;
   };
 
@@ -79,7 +79,7 @@ const TwdHallOfFameCards = () => {
     const innovationCards = {};
     Object.values(cards).forEach((card) => {
       if (isInnovation(card)) {
-        innovationCards[card.Id] = card;
+        innovationCards[card[ID]] = card;
       }
     });
     return innovationCards;

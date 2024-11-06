@@ -37,7 +37,7 @@ const DeckSelectMy = ({ deckid, handleSelect }) => {
           lastEdit = `${diffDays}d`;
         }
 
-        const clan = getClan(decks[i].crypt);
+        const clan = getClan(decks[i][CRYPT]);
 
         let hasBanned;
         let hasLimited;
@@ -110,7 +110,7 @@ const DeckSelectMy = ({ deckid, handleSelect }) => {
           value: deckid,
           label: (
             <div className="flex items-center justify-between">
-              <div className="inline">{decks[deckid].name}</div>
+              <div className="inline">{decks[deckid][NAME]}</div>
               <div className="flex items-center gap-1">
                 {inventoryMode && (
                   <div>

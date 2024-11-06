@@ -11,7 +11,7 @@ const DeckNewCard = ({ target, cards, deckid, handleClose, cardChange, menuPlace
     const cardid = event.value;
     let currentQ = 0;
     cards.forEach((card) => {
-      if (card.c.Id == cardid) currentQ = card.q;
+      if (card.c[ID] == cardid) currentQ = card.q;
     });
 
     const card = target === CRYPT ? cryptCardBase[cardid] : libraryCardBase[cardid];

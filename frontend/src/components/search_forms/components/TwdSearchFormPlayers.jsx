@@ -6,7 +6,7 @@ import { ANY, FROM, TO } from '@/constants';
 const TwdSearchFormPlayers = ({ value, onChange }) => {
   const { isXWide } = useApp();
   const maxMenuHeight = isXWide ? 500 : 350;
-  const name = 'players';
+  const name = PLAYERS;
   const fromOptions = [];
   const toOptions = [];
 

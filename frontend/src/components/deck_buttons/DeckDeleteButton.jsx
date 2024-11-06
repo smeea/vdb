@@ -58,7 +58,7 @@ const DeckDeleteButton = ({ deck, noText }) => {
           withWrittenConfirmation={deck.isBranches}
           handleConfirm={handleClick}
           handleCancel={() => setShowConfirmation(false)}
-          title={`Delete deck "${deck.name}" and all its revisions`}
+          title={`Delete deck "${deck[NAME]}" and all its revisions`}
           buttonText="Delete"
           buttonVariant="danger"
         />

@@ -20,15 +20,15 @@ const TwdResultLibraryKeyCardsTableRow = ({ card, handleClick, shouldShowModal }
   const inventoryLibrary = useSnapshot(inventoryStore)[LIBRARY];
   const limitedLibrary = useSnapshot(limitedStore)[LIBRARY];
   const usedLibrary = useSnapshot(usedStore)[LIBRARY];
-  const inLimited = limitedLibrary[card.c.Id];
-  const inInventory = inventoryLibrary[card.c.Id]?.q ?? 0;
-  const hardUsedTotal = getHardTotal(usedLibrary[HARD][card.c.Id]);
+  const inLimited = limitedLibrary[card.c[ID]];
+  const inInventory = inventoryLibrary[card.c[ID]]?.q ?? 0;
+  const hardUsedTotal = getHardTotal(usedLibrary[HARD][card.c[ID]]);
 
   return (
-    <tr key={card.c.Id} className="row-bg border-y border-bgSecondary dark:border-bgSecondaryDark">
+    <tr key={card.c[ID]} className="row-bg border-y border-bgSecondary dark:border-bgSecondaryDark">
       <td className="min-w-[28px] border-r border-bgSecondary bg-blue/5 dark:border-bgSecondaryDark sm:min-w-[35px]">
         {inventoryMode ? (
-          <ConditionalTooltip overlay={<UsedPopover cardid={card.c.Id} />} disabled={isMobile}>
+          <ConditionalTooltip overlay={<UsedPopover cardid={card.c[ID]} />} disabled={isMobile}>
             <div
               className={twMerge(
                 'flex justify-center text-lg',
@@ -46,7 +46,7 @@ const TwdResultLibraryKeyCardsTableRow = ({ card, handleClick, shouldShowModal }
       </td>
       <td className="min-w-[55px]" onClick={() => handleClick(card.c)}>
         <div className="flex justify-center">
-          <ResultLibraryTypeImage value={card.c.Type} />
+          <ResultLibraryTypeImage value={card.c[TYPE]} />
         </div>
       </td>
       <td className="w-full" onClick={() => handleClick(card.c)}>
@@ -63,9 +63,9 @@ const TwdResultLibraryKeyCardsTableRow = ({ card, handleClick, shouldShowModal }
       {!isMobile && (
         <td className="min-w-[90px]" onClick={() => handleClick(card.c)}>
           <div className="flex items-center justify-center gap-1">
-            {card.c.Clan && <ResultLibraryClan value={card.c.Clan} />}
-            {card.c.Discipline && <ResultLibraryDisciplines value={card.c.Discipline} />}
-            {card.c.Requirement && <ResultLibraryRequirements value={card.c.Requirement} />}
+            {card.c[CLAN] && <ResultLibraryClan value={card.c[CLAN]} />}
+            {card.c[DISCIPLINE] && <ResultLibraryDisciplines value={card.c[DISCIPLINE]} />}
+            {card.c[REQUIREMENT] && <ResultLibraryRequirements value={card.c[REQUIREMENT]} />}
           </div>
         </td>
       )}

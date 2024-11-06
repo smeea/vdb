@@ -30,7 +30,7 @@ const ResultLibraryTable = ({ resultCards, inLimited }) => {
           {resultCards.map((card) => {
             return (
               <ResultLibraryTableRow
-                key={card.Id}
+                key={card[ID]}
                 card={card}
                 handleClick={handleClick}
                 inLimited={inLimited}

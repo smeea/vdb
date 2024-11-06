@@ -62,15 +62,15 @@ const Review = () => {
     setError(false);
     const cardsData = useDeck(deckData.cards, cryptCardBase, libraryCardBase);
     if (deckid.length !== 9 || deckData.publicParent) {
-      deckData.tags = [];
-      Object.values(useTags(cardsData.crypt, cardsData.library)).forEach((v) => {
-        deckData.tags = deckData.tags.concat(v);
+      deckData[TAGS] = [];
+      Object.values(useTags(cardsData[CRYPT], cardsData[LIBRARY])).forEach((v) => {
+        deckData[TAGS] = deckData[TAGS].concat(v);
       });
     }
     const d = {
       ...deckData,
-      crypt: cardsData.crypt,
-      library: cardsData.library,
+      crypt: cardsData[CRYPT],
+      library: cardsData[LIBRARY],
       isBranches: !!(deckData.master || deckData.branches?.length > 0),
       isPublic: !!deckData.publicParent,
       isNonEditable: false,
@@ -98,8 +98,8 @@ const Review = () => {
   useEffect(() => {
     if (deckFrom && deckTo) {
       const diff = getDiff(
-        { ...deckFrom?.crypt, ...deckFrom?.library },
-        { ...deckTo?.crypt, ...deckTo?.library },
+        { ...deckFrom?.[CRYPT], ...deckFrom?.[LIBRARY] },
+        { ...deckTo?.[CRYPT], ...deckTo?.[LIBRARY] },
       );
 
       const cards = [];
@@ -115,10 +115,10 @@ const Review = () => {
 
   const cardChange = (_, card, count) => {
     if (count >= 0) {
-      const cardSrc = card.Id > 200000 ? CRYPT : LIBRARY;
+      const cardSrc = card[ID] > 200000 ? CRYPT : LIBRARY;
 
       setDeckFrom((draft) => {
-        draft[cardSrc][card.Id] = {
+        draft[cardSrc][card[ID]] = {
           c: card,
           q: count,
         };
@@ -128,7 +128,7 @@ const Review = () => {
 
   useEffect(() => {
     if (hash && deckTo) {
-      const deckWithHash = deepClone({ crypt: deckTo.crypt, library: deckTo.library });
+      const deckWithHash = deepClone({ crypt: deckTo[CRYPT], library: deckTo[LIBRARY] });
 
       hash
         .slice(1)
@@ -136,24 +136,24 @@ const Review = () => {
         .forEach((i) => {
           const j = i.split('=');
           if (j[0] > 200000) {
-            deckWithHash.crypt[j[0]] = {
-              q: (deckTo.crypt[j[0]]?.q || 0) + parseInt(j[1]),
+            deckWithHash[CRYPT][j[0]] = {
+              q: (deckTo[CRYPT][j[0]]?.q || 0) + parseInt(j[1]),
               c: cryptCardBase[j[0]],
             };
           } else {
-            deckWithHash.library[j[0]] = {
-              q: (deckTo.library[j[0]]?.q || 0) + parseInt(j[1]),
+            deckWithHash[LIBRARY][j[0]] = {
+              q: (deckTo[LIBRARY][j[0]]?.q || 0) + parseInt(j[1]),
               c: libraryCardBase[j[0]],
             };
           }
         });
       if (
-        JSON.stringify({ crypt: deckFrom.crypt, library: deckFrom.library }) !=
+        JSON.stringify({ crypt: deckFrom[CRYPT], library: deckFrom[LIBRARY] }) !=
         JSON.stringify(deckWithHash)
       ) {
         setDeckFrom((draft) => {
-          draft.crypt = deckWithHash.crypt;
-          draft.library = deckWithHash.library;
+          draft[CRYPT] = deckWithHash[CRYPT];
+          draft[LIBRARY] = deckWithHash[LIBRARY];
         });
       }
     }
@@ -171,7 +171,7 @@ const Review = () => {
     if (deckFrom) setError(false);
   }, [deckFrom]);
 
-  const parentId = deckFrom?.description.replace(
+  const parentId = deckFrom?[DESCRIPTION].replace(
     `Review of ${import.meta.env.VITE_BASE_URL}/decks/`,
     '',
   );
@@ -203,15 +203,15 @@ const Review = () => {
             <FlexGapped className="max-sm:flex-col">
               <div className="basis-full sm:basis-5/9">
                 <ReviewCrypt
-                  cardsFrom={deckFrom.crypt}
-                  cardsTo={deckTo.crypt}
+                  cardsFrom={deckFrom[CRYPT]}
+                  cardsTo={deckTo[CRYPT]}
                   cardChange={cardChange}
                 />
               </div>
               <div className="basis-full sm:basis-4/9">
                 <ReviewLibrary
-                  cardsFrom={deckFrom.library}
-                  cardsTo={deckTo.library}
+                  cardsFrom={deckFrom[LIBRARY]}
+                  cardsTo={deckTo[LIBRARY]}
                   cardChange={cardChange}
                 />
               </div>
@@ -229,12 +229,12 @@ const Review = () => {
           <DeckNewCardFloating
             target={CRYPT}
             deckid={deckFrom?.deckid}
-            cards={Object.values(deckFrom?.crypt ?? {})}
+            cards={Object.values(deckFrom?.[CRYPT] ?? {})}
           />
           <DeckNewCardFloating
             target={LIBRARY}
             deckid={deckFrom?.deckid}
-            cards={Object.values(deckFrom?.library ?? {})}
+            cards={Object.values(deckFrom?.[LIBRARY] ?? {})}
           />
         </>
       )}

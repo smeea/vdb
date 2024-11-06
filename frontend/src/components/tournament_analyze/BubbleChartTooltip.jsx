@@ -10,28 +10,30 @@ const BubbleChartTooltip = ({ active, payload }) => {
       {active && (
         <div className="flex flex-col gap-2 p-1">
           <div className="flex items-center justify-between">
-            <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">{value.clan}</div>
+            <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
+              {value[CLAN]}
+            </div>
             <div className="flex gap-2">
-              {value.tags && (value.tags.superior.length > 0 || value.tags.base.length > 0) && (
-                <TwdResultTags tags={value.tags} />
+              {value[TAGS] && (value[TAGS].superior.length > 0 || value[TAGS].base.length > 0) && (
+                <TwdResultTags tags={value[TAGS]} />
               )}
               <div className="flex items-center">
                 <div
                   className={twMerge(
                     'flex items-center whitespace-nowrap rounded-lg px-2.5 py-1 font-bold text-fgSecondary dark:text-fgSecondaryDark',
-                    value.rank > 5
+                    value[RANK] > 5
                       ? 'border border-borderPrimary dark:border-borderPrimaryDark'
                       : 'border-2',
                   )}
                 >
-                  # {value.rank}
+                  # {value[RANK]}
                 </div>
               </div>
             </div>
           </div>
           <div className="flex gap-2 text-sm">
-            <TwdResultCryptTable crypt={value.crypt} />
-            <TwdResultLibraryKeyCardsTable withHeader library={value.library} />
+            <TwdResultCryptTable crypt={value[CRYPT]} />
+            <TwdResultLibraryKeyCardsTable withHeader library={value[LIBRARY]} />
           </div>
         </div>
       )}

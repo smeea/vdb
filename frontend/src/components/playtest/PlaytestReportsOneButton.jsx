@@ -23,13 +23,13 @@ const PlaytestReportsOneButton = ({ value, isPrecon = false }) => {
     Object.keys(result).forEach((id, idx) => {
       exportText += `User: <${id}>\n`;
       exportText += `Score: ${result[id].score}\n`;
-      exportText += `${result[id].text}\n`;
+      exportText += `${result[id][TEXT]}\n`;
       if (idx + 1 < Object.keys(result).length) {
         exportText += '\n-----\n\n';
       }
     });
 
-    const file = new File([exportText], `${value.Name}.txt`, {
+    const file = new File([exportText], `${value[NAME]}.txt`, {
       type: 'text/plain;charset=utf-8',
     });
 
@@ -49,7 +49,7 @@ const PlaytestReportsOneButton = ({ value, isPrecon = false }) => {
       {show && (
         <Modal
           size="card"
-          title={`Playtest Report - ${value.Name}`}
+          title={`Playtest Report - ${value[NAME]}`}
           handleClose={() => setShow(false)}
         >
           <FlexGapped className="max-sm:flex-col">
@@ -72,7 +72,7 @@ const PlaytestReportsOneButton = ({ value, isPrecon = false }) => {
                 icon={<Download />}
               />
             </div>
-            <PlaytestReportEntryWrapper id={value.Id} isPrecon={isPrecon} />
+            <PlaytestReportEntryWrapper id={value[ID]} isPrecon={isPrecon} />
           </FlexGapped>
         </Modal>
       )}

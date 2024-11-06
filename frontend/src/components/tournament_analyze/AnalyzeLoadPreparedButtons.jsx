@@ -29,8 +29,8 @@ const AnalyzeLoadPreparedButtons = ({ setTempDecks, setTempArchon, setError }) =
             key={v.id}
             className="w-full"
             onClick={() => handlePrepared(v.id)}
-            title={v.title}
-            text={`${v.title} [${v.date}]`}
+            title={v[TITLE]}
+            text={`${v[TITLE]} [${v[DATE]}]`}
             icon={loadingDeck == v.id ? <Spinner /> : v.isNC ? <StarFill /> : null}
           />
         );

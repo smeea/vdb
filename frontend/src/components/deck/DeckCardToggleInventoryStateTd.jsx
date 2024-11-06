@@ -18,7 +18,7 @@ const DeckCardToggleInventoryStateTd = ({ card, deck }) => {
             !card.i && 'opacity-0',
             !card.i && isEditable && 'group-hover:opacity-[0.35]',
           )}
-          onClick={() => isEditable && cardToggleInventoryState(deckid, card.c.Id)}
+          onClick={() => isEditable && cardToggleInventoryState(deckid, card.c[ID])}
         >
           {deck[INVENTORY_TYPE] == S ? <PinAngleFill /> : <Shuffle />}
         </div>

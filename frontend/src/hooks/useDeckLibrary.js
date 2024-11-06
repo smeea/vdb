@@ -8,17 +8,7 @@ import {
   containCard,
   getRestrictions,
 } from '@/utils';
-import {
-  GROUPED_TYPE,
-  POOL_COST,
-  BLOOD_COST,
-  TYPE,
-  DISCIPLINE,
-  ANY,
-  MASTER,
-  EVENT,
-  CLAN,
-} from '@/constants';
+import { GROUPED_TYPE, POOL, BLOOD, TYPE, DISCIPLINE, ANY, MASTER, EVENT, CLAN } from '@/constants';
 import { limitedStore } from '@/context';
 
 const useDeckLibrary = (cardsList, cardsToList = {}) => {
@@ -55,23 +45,23 @@ const useDeckLibrary = (cardsList, cardsToList = {}) => {
     const trifleTotal = countCards(library.filter((card) => card.c.Trifle));
     const libraryTotal = countCards(cardsFrom);
     const libraryToTotal = countCards(cardsTo);
-    const poolTotal = countTotalCost(cardsFrom, POOL_COST);
-    const poolToTotal = countTotalCost(cardsTo, POOL_COST);
-    const bloodTotal = countTotalCost(cardsFrom, BLOOD_COST);
-    const bloodToTotal = countTotalCost(cardsTo, BLOOD_COST);
+    const poolTotal = countTotalCost(cardsFrom, POOL);
+    const poolToTotal = countTotalCost(cardsTo, POOL);
+    const bloodTotal = countTotalCost(cardsFrom, BLOOD);
+    const bloodToTotal = countTotalCost(cardsTo, BLOOD);
     const libraryByTypeTotal = getTotalCardsGroupedBy(library, TYPE);
     const libraryByDisciplinesTotal = getTotalCardsGroupedBy(
-      library.filter((card) => card.c.Discipline),
+      library.filter((card) => card.c[DISCIPLINE]),
       DISCIPLINE,
     );
     const libraryByClansTotal = getTotalCardsGroupedBy(
-      library.filter((card) => card.c.Clan && card.c.Type !== MASTER && card.c.Type !== EVENT),
+      library.filter((card) => card.c[CLAN] && card.c[TYPE] !== MASTER && card.c[TYPE] !== EVENT),
       CLAN,
     );
     const anyDisciplines = countCards(
       library.filter(
         (card) =>
-          !card.c.Clan && !card.c.Discipline && card.c.Type !== MASTER && card.c.Type !== EVENT,
+          !card.c[CLAN] && !card.c[DISCIPLINE] && card.c[TYPE] !== MASTER && card.c[TYPE] !== EVENT,
       ),
     );
 

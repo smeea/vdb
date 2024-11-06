@@ -18,19 +18,19 @@ const AnalyzeTournamentChartsRankingStyle = ({ info, decks, searchResults }) => 
     });
 
     Object.values(decks).forEach((deck) => {
-      const position = info.players - deck.score.rank;
-      const inSearch = Object.values(searchResults).some((d) => d.author === deck.author);
+      const position = info.players - deck.score[RANK];
+      const inSearch = Object.values(searchResults).some((d) => d[AUTHOR] === deck[AUTHOR]);
       const def = {
-        clan: getClan(deck.crypt) || 'Multi',
-        crypt: deck.crypt,
-        library: deck.library,
-        tags: deck.tags,
+        clan: getClan(deck[CRYPT]) || 'Multi',
+        crypt: deck[CRYPT],
+        library: deck[LIBRARY],
+        tags: deck[TAGS],
         inSearch: inSearch,
-        rank: deck.score.rank,
+        rank: deck.score[RANK],
         index: -1,
       };
 
-      deck.tags.superior
+      deck[TAGS].superior
         .filter((t) => allowedTags.includes(t))
         .forEach((t) => {
           d[t][position] = {
@@ -38,7 +38,7 @@ const AnalyzeTournamentChartsRankingStyle = ({ info, decks, searchResults }) => 
             value: 1,
           };
         });
-      deck.tags.base
+      deck[TAGS].base
         .filter((t) => allowedTags.includes(t))
         .forEach((t) => {
           d[t][position] = {

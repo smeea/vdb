@@ -13,7 +13,7 @@ const DeckRecommendationLibraryTable = ({ handleClick, cards }) => {
         {cards.map((card) => {
           return (
             <DeckRecommendationLibraryTableRow
-              key={card.Id}
+              key={card[ID]}
               card={card}
               deck={deck}
               handleClick={handleClick}

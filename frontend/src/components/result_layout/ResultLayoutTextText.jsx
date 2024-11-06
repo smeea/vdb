@@ -2,26 +2,26 @@ import React from 'react';
 import reactStringReplace from 'react-string-replace';
 import { useApp } from '@/context';
 import { CardPopover, ResultName, ResultMiscImage, ConditionalTooltip } from '@/components';
-import { CARD_TEXT } from '@/constants';
+import { TEXT } from '@/constants';
 
 const ResultLayoutTextText = ({ cardid }) => {
   const { nativeCrypt, nativeLibrary, cryptCardBase, libraryCardBase, isMobile } = useApp();
 
   const cardBase = { ...nativeCrypt, ...nativeLibrary };
   const cardNative = cardid > 200000 ? nativeCrypt[cardid] : nativeLibrary[cardid];
-  const cardTextNative = cardNative[CARD_TEXT].replace(/\(D\)/g, '\u24B9').split('\n');
+  const cardTextNative = cardNative[TEXT].replace(/\(D\)/g, '\u24B9').split('\n');
 
   const refCards = [];
   cardTextNative.map((i) => {
     reactStringReplace(i, /\/(.*?)\//g, (match) => {
-      const refCardid = Object.keys(cardBase).find((j) => cardBase[j].Name == match);
+      const refCardid = Object.keys(cardBase).find((j) => cardBase[j][NAME] == match);
 
       refCards.push(refCardid);
     });
   });
 
   const c = cardid > 200000 ? cryptCardBase[cardid] : libraryCardBase[cardid];
-  const cardText = c[CARD_TEXT].replace(/\(D\)/g, '\u24B9').split('\n');
+  const cardText = c[TEXT].replace(/\(D\)/g, '\u24B9').split('\n');
 
   return (
     <>

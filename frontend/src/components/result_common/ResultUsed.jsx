@@ -11,17 +11,17 @@ const ResultUsed = ({ card }) => {
   const { [CRYPT]: inventoryCrypt, [LIBRARY]: inventoryLibrary } = useSnapshot(inventoryStore);
   const { [CRYPT]: usedCrypt, [LIBRARY]: usedLibrary } = useSnapshot(usedStore);
 
-  const used = card.Id > 200000 ? usedCrypt : usedLibrary;
-  const inventory = card.Id > 200000 ? inventoryCrypt : inventoryLibrary;
+  const used = card[ID] > 200000 ? usedCrypt : usedLibrary;
+  const inventory = card[ID] > 200000 ? inventoryCrypt : inventoryLibrary;
 
-  const softUsedMax = getSoftMax(used.soft[card.Id]);
-  const hardUsedTotal = getHardTotal(used.hard[card.Id]);
-  const inInventory = inventory[card.Id]?.q || 0;
+  const softUsedMax = getSoftMax(used.soft[card[ID]]);
+  const hardUsedTotal = getHardTotal(used.hard[card[ID]]);
+  const inInventory = inventory[card[ID]]?.q || 0;
 
-  const isInventoryNote = inventory[card.Id]?.t;
+  const isInventoryNote = inventory[card[ID]]?.t;
 
   return (
-    <Tooltip placement={isDesktop ? 'left' : 'bottom'} overlay={<UsedPopover cardid={card.Id} />}>
+    <Tooltip placement={isDesktop ? 'left' : 'bottom'} overlay={<UsedPopover cardid={card[ID]} />}>
       {(inInventory > 0 || softUsedMax + hardUsedTotal > 0) && (
         <div
           className={twMerge(

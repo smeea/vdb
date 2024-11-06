@@ -16,7 +16,7 @@ import { NOT_REQUIRED, ANY } from '@/constants';
 const LibrarySearchFormDiscipline = ({ value, onChange, searchForm }) => {
   const { isXWide, isMobile } = useApp();
   const maxMenuHeight = isXWide ? 500 : 350;
-  const name = 'discipline';
+  const name = DISCIPLINE;
   const disciplines = [...Object.keys(disciplinesList), ...disciplinesExtraList].toSorted();
 
   const options = [

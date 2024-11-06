@@ -28,7 +28,7 @@ const TwdDeck = ({ deck, inPda }) => {
 
   return (
     <>
-      {deck.crypt && deck.library && (
+      {deck[CRYPT] && deck[LIBRARY] && (
         <div className="group flex flex-col gap-6">
           <div className="flex gap-2 max-lg:flex-col">
             <div className="basis-full lg:basis-1/4">
@@ -36,13 +36,13 @@ const TwdDeck = ({ deck, inPda }) => {
             </div>
             <div className="flex basis-full gap-2 lg:basis-3/4">
               <div className="basis-1/2 md:basis-4/12">
-                <TwdResultCryptTable crypt={deck.crypt} />
+                <TwdResultCryptTable crypt={deck[CRYPT]} />
               </div>
               <div className="max-md:hidden md:basis-3/12">
-                <TwdResultLibraryByTypeTable library={deck.library} />
+                <TwdResultLibraryByTypeTable library={deck[LIBRARY]} />
               </div>
               <div className="basis-1/2 md:basis-5/12">
-                <TwdResultLibraryKeyCardsTable withHeader={isNarrow} library={deck.library} />
+                <TwdResultLibraryKeyCardsTable withHeader={isNarrow} library={deck[LIBRARY]} />
               </div>
             </div>
           </div>

@@ -21,7 +21,7 @@ const DeckCryptTable = ({
         {cards.map((card) => {
           return (
             <DeckCryptTableRow
-              key={card.c.Id}
+              key={card.c[ID]}
               handleClick={handleClick}
               card={card}
               deck={deck}

@@ -9,10 +9,10 @@ const AccountLimitedSet = ({ isChecked, handleSetChange, setid }) => {
         name={setid}
         label={
           <div className="flex gap-1.5">
-            {setsAndPrecons[setid].name}{' '}
-            {setsAndPrecons[setid].date && (
+            {setsAndPrecons[setid][NAME]}{' '}
+            {setsAndPrecons[setid][DATE] && (
               <div className="text-fgSecondary dark:text-fgSecondaryDark">
-                [{setsAndPrecons[setid].date}]
+                [{setsAndPrecons[setid][DATE]}]
               </div>
             )}
           </div>

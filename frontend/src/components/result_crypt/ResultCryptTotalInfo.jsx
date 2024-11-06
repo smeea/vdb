@@ -5,7 +5,7 @@ import { useKeyDisciplines } from '@/hooks';
 const ResultCryptTotalInfo = ({ cards }) => {
   const cardsById = {};
   cards.map((c) => {
-    cardsById[c.Id] = {
+    cardsById[c[ID]] = {
       c: c,
       q: 1,
     };

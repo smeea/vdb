@@ -70,7 +70,7 @@ const PlaytestReportForm = ({ id, setIsHotkeysDisabled, isPrecon = false }) => {
   useEffect(() => {
     if (dataValue) {
       setScore(dataValue.score);
-      setText(dataValue.text);
+      setText(dataValue[TEXT]);
       setIsPlayed(!!dataValue.isPlayed);
     }
   }, [id, dataValue]);
@@ -98,7 +98,7 @@ const PlaytestReportForm = ({ id, setIsHotkeysDisabled, isPrecon = false }) => {
 
   const handleOnBlur = () => {
     if (setIsHotkeysDisabled) setIsHotkeysDisabled(false);
-    if (text !== dataValue.text) {
+    if (text !== dataValue[TEXT]) {
       submit(text, score, isPlayed);
     }
   };

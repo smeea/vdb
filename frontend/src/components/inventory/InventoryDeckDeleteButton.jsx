@@ -8,9 +8,9 @@ const InventoryDeckDeleteButton = ({ deck, inInventory }) => {
 
   const inventoryDeckDelete = (deck) => {
     const cards = {};
-    Object.values({ ...deck.crypt, ...deck.library }).forEach((card) => {
+    Object.values({ ...deck[CRYPT], ...deck[LIBRARY] }).forEach((card) => {
       if (card.q) {
-        cards[card.c.Id] = {
+        cards[card.c[ID]] = {
           c: card.c,
           q: -card.q,
         };
@@ -40,7 +40,7 @@ const InventoryDeckDeleteButton = ({ deck, inInventory }) => {
           handleConfirm={handleConfirm}
           handleCancel={handleCancel}
           buttonText="Remove"
-          title={'Remove deck ' + deck.name + ' from Inventory?'}
+          title={'Remove deck ' + deck[NAME] + ' from Inventory?'}
         />
       )}
     </>

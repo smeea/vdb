@@ -7,7 +7,7 @@ import { useSwipe } from '@/hooks';
 
 const DeckRecommendationLibraryTableRow = ({ card, handleClick, deck }) => {
   const isEditable = deck?.isAuthor && !deck?.isPublic && !deck?.isFrozen;
-  const inDeck = deck.library[card.Id]?.q || 0;
+  const inDeck = deck[LIBRARY][card[ID]]?.q || 0;
 
   const { isSwiped, swipeHandlers } = useSwipe(
     () => deckCardChange(deck.deckid, card, inDeck - 1),
@@ -25,7 +25,7 @@ const DeckRecommendationLibraryTableRow = ({ card, handleClick, deck }) => {
     >
       {isEditable && (
         <td>
-          <ButtonAddCard cardid={card.Id} deckid={deck.deckid} card={card} inDeck={inDeck} />
+          <ButtonAddCard cardid={card[ID]} deckid={deck.deckid} card={card} inDeck={inDeck} />
         </td>
       )}
       <ResultLibraryTableRowCommon card={card} handleClick={handleClick} inDeck />

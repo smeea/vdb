@@ -30,7 +30,7 @@ const ResultCryptTable = ({ resultCards, inRecommendation, inLimited }) => {
           {resultCards.map((card) => {
             return (
               <ResultCryptTableRow
-                key={card.Id}
+                key={card[ID]}
                 card={card}
                 handleClick={handleClick}
                 inRecommendation={inRecommendation}

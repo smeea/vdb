@@ -1,22 +1,22 @@
-import { ASCII_NAME, EN } from '@/constants';
+import { ASCII } from '@/constants';
 
 const useCardImageUrl = (card, set, language) => {
-  const isPlaytest = card.Id > 210000 || (card.Id < 200000 && card.Id > 110000);
-  const cardNameFixed = card[ASCII_NAME].toLowerCase().replace(/[\s,:!?'".\-()/]/g, '');
+  const isPlaytest = card[ID] > 210000 || (card[ID] < 200000 && card[ID] > 110000);
+  const cardNameFixed = card[ASCII].toLowerCase().replace(/[\s,:!?'".\-()/]/g, '');
 
-  if (card.Id > 200000) {
-    const baseUrl = `${import.meta.env.VITE_BASE_URL}/images/cards/${isPlaytest ? 'playtest' : EN}/${cardNameFixed}g${card.Group.toLowerCase()}${card.Adv[0] ? 'adv' : ''}`;
+  if (card[ID] > 200000) {
+    const baseUrl = `${import.meta.env.VITE_BASE_URL}/images/cards/${isPlaytest ? 'playtest' : 'en'}/${cardNameFixed}g${card[GROUP].toLowerCase()}${card[ADV][0] ? 'adv' : ''}`;
 
     const otherUrl = `${import.meta.env.VITE_BASE_URL}/images/cards/${
       set ? `set/${set}` : language
-    }/${cardNameFixed}g${card.Group.toLowerCase()}${card.Adv[0] ? 'adv' : ''}`;
+    }/${cardNameFixed}g${card[GROUP].toLowerCase()}${card[ADV][0] ? 'adv' : ''}`;
 
-    const legacyUrl = `${import.meta.env.VITE_BASE_URL}/images/cards/legacy/${card.Name.replace(/,/g, '')}${card.Adv[0] ? ' ADV' : ''}${card.New ? ` G${card.Group}` : ''}`;
+    const legacyUrl = `${import.meta.env.VITE_BASE_URL}/images/cards/legacy/${card[NAME].replace(/,/g, '')}${card[ADV][0] ? ' ADV' : ''}${card[NEW] ? ` G${card[GROUP]}` : ''}`;
 
     return { baseUrl, otherUrl, legacyUrl };
   } else {
     const baseUrl = `${import.meta.env.VITE_BASE_URL}/images/cards/${
-      isPlaytest ? 'playtest' : EN
+      isPlaytest ? 'playtest' : 'en'
     }/${cardNameFixed}`;
 
     const otherUrl = `${import.meta.env.VITE_BASE_URL}/images/cards/${

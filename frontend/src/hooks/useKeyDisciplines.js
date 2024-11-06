@@ -7,8 +7,8 @@ const useKeyDisciplines = (crypt = {}) => {
 
   Object.keys(crypt).forEach((card) => {
     cryptTotal += crypt[card].q;
-    Object.keys(crypt[card].c.Disciplines).forEach((d) => {
-      const levelModifier = crypt[card].c.Disciplines[d] > 1 ? 1.5 : 1;
+    Object.keys(crypt[card].c[DISCIPLINES]).forEach((d) => {
+      const levelModifier = crypt[card].c[DISCIPLINES][d] > 1 ? 1.5 : 1;
 
       if (disciplinesDict[d] === undefined) {
         disciplinesDict[d] = crypt[card].q;
@@ -17,11 +17,11 @@ const useKeyDisciplines = (crypt = {}) => {
         } else {
           disciplinesDetailed[d] = { 0: 0, 1: 0, 2: 0 };
         }
-        disciplinesDetailed[d][crypt[card].c.Disciplines[d]] += crypt[card].q;
+        disciplinesDetailed[d][crypt[card].c[DISCIPLINES][d]] += crypt[card].q;
         disciplinesDetailed[d][0] += crypt[card].q * levelModifier;
       } else {
         disciplinesDict[d] += crypt[card].q;
-        disciplinesDetailed[d][crypt[card].c.Disciplines[d]] += crypt[card].q;
+        disciplinesDetailed[d][crypt[card].c[DISCIPLINES][d]] += crypt[card].q;
         disciplinesDetailed[d][0] += crypt[card].q * levelModifier;
       }
     });

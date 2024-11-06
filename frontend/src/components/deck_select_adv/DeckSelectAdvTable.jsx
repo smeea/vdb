@@ -24,7 +24,7 @@ const DeckSelectAdvTable = ({
 
   const allDecksClans = [];
   Object.values(decks).forEach((deck) => {
-    const clan = getClan(deck.crypt);
+    const clan = getClan(deck[CRYPT]);
 
     if (clan && !allDecksClans.includes(clan)) {
       allDecksClans.push(clan);
@@ -34,12 +34,12 @@ const DeckSelectAdvTable = ({
   const clanOptions = [
     {
       value: ANY,
-      name: 'clan',
+      name: CLAN,
       label: 'ANY',
     },
     {
       value: '',
-      name: 'clan',
+      name: CLAN,
       label: 'NONE',
     },
   ];
@@ -47,7 +47,7 @@ const DeckSelectAdvTable = ({
   allDecksClans.toSorted().forEach((i) => {
     clanOptions.push({
       value: i.toLowerCase(),
-      name: 'clan',
+      name: CLAN,
       label: <ResultClanImage value={i} />,
     });
   });
@@ -58,8 +58,8 @@ const DeckSelectAdvTable = ({
       .normalize('NFD')
       .replace(/\p{Diacritic}/gu, '');
 
-    return Object.values({ ...deck.crypt, ...deck.library }).some((card) => {
-      const normalizedCardName = card.c.Name.toLowerCase()
+    return Object.values({ ...deck[CRYPT], ...deck[LIBRARY] }).some((card) => {
+      const normalizedCardName = card.c[NAME].toLowerCase()
         .normalize('NFD')
         .replace(/\p{Diacritic}/gu, '');
 
@@ -72,8 +72,7 @@ const DeckSelectAdvTable = ({
       .toLowerCase()
       .normalize('NFD')
       .replace(/\p{Diacritic}/gu, '');
-    const normalizedDeckName = deck.name
-      .toLowerCase()
+    const normalizedDeckName = deck[NAME].toLowerCase()
       .normalize('NFD')
       .replace(/\p{Diacritic}/gu, '');
 
@@ -90,7 +89,7 @@ const DeckSelectAdvTable = ({
 
       if (clanFilter !== ANY) {
         filtered = filtered.filter((deck) => {
-          const clan = getClan(deck.crypt) || '';
+          const clan = getClan(deck[CRYPT]) || '';
           return clan.toLowerCase() === clanFilter;
         });
       }
@@ -106,7 +105,7 @@ const DeckSelectAdvTable = ({
         filtered = filtered.filter((deck) => {
           let counter = 0;
           tagsFilter.forEach((tag) => {
-            if (deck.tags && deck.tags.includes(tag)) counter += 1;
+            if (deck[TAGS] && deck[TAGS].includes(tag)) counter += 1;
           });
           if (counter >= tagsFilter.length) return true;
         });

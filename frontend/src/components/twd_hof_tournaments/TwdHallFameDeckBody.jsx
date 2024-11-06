@@ -23,22 +23,22 @@ const TwdHallFameDeckBody = ({ deck }) => {
         {isMobile ? (
           <>
             <div className="basis-1/2">
-              <TwdResultCryptTable crypt={cards.crypt} />
+              <TwdResultCryptTable crypt={cards[CRYPT]} />
             </div>
             <div className="basis-1/2">
-              <TwdResultLibraryKeyCardsTable library={deck.library} />
+              <TwdResultLibraryKeyCardsTable library={deck[LIBRARY]} />
             </div>
           </>
         ) : (
           <>
             <div className="basis-full md:basis-1/3">
-              <TwdResultCryptTable crypt={cards.crypt} />
+              <TwdResultCryptTable crypt={cards[CRYPT]} />
             </div>
             <div className="basis-full md:basis-1/3">
-              <TwdResultLibraryByTypeTable library={cards.library} />
+              <TwdResultLibraryByTypeTable library={cards[LIBRARY]} />
             </div>
             <div className="basis-full md:basis-1/3">
-              <TwdResultLibraryKeyCardsTable library={cards.library} />
+              <TwdResultLibraryKeyCardsTable library={cards[LIBRARY]} />
             </div>
           </>
         )}

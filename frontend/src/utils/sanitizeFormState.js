@@ -52,28 +52,19 @@ const sanitizeFormState = (target, state) => {
 
   switch (target) {
     case CRYPT:
-      forms = [DISCIPLINES, TITLES, 'group', TRAITS];
+      forms = [DISCIPLINES, TITLES, GROUP, TRAITS];
       break;
     case LIBRARY:
       forms = [TRAITS];
       break;
     case PDA:
-      forms = [DISCIPLINES, TRAITS, CARDTYPES, 'date', 'capacity', LIBRARY_TOTAL];
+      forms = [DISCIPLINES, TRAITS, CARDTYPES, DATE, CAPACITY, LIBRARY_TOTAL];
       break;
     case TWD:
-      forms = [
-        DISCIPLINES,
-        TRAITS,
-        CARDTYPES,
-        'date',
-        'players',
-        LOCATION,
-        'capacity',
-        LIBRARY_TOTAL,
-      ];
+      forms = [DISCIPLINES, TRAITS, CARDTYPES, DATE, PLAYERS, LOCATION, CAPACITY, LIBRARY_TOTAL];
       break;
     case ANALYZE:
-      forms = [DISCIPLINES, TRAITS, CARDTYPES, RANK, 'capacity', LIBRARY_TOTAL];
+      forms = [DISCIPLINES, TRAITS, CARDTYPES, RANK, CAPACITY, LIBRARY_TOTAL];
       break;
     default:
       forms = [];
@@ -96,7 +87,7 @@ const sanitizeFormState = (target, state) => {
     Object.keys(input[i]).forEach((k) => {
       (input[i][k] == 0 || input[i][k] == ANY) && delete input[i][k];
     });
-    if (!input[i].crypt && !input[i].library) delete input[i];
+    if (!input[i][CRYPT] && !input[i][LIBRARY]) delete input[i];
   });
 
   switch (target) {
@@ -104,7 +95,7 @@ const sanitizeFormState = (target, state) => {
       forms = [SET, PRECON];
       break;
     case LIBRARY:
-      forms = ['discipline', 'type', SET, PRECON];
+      forms = [DISCIPLINE, TYPE, SET, PRECON];
       break;
     default:
       forms = [];
@@ -122,7 +113,7 @@ const sanitizeFormState = (target, state) => {
 
   switch (target) {
     case LIBRARY:
-      forms = [BLOOD, POOL, 'capacity'];
+      forms = [BLOOD, POOL, CAPACITY];
       break;
     default:
       forms = [];
@@ -135,7 +126,7 @@ const sanitizeFormState = (target, state) => {
 
   switch (target) {
     case CRYPT:
-      forms = ['capacity'];
+      forms = [CAPACITY];
       break;
     default:
       forms = [];
@@ -154,10 +145,10 @@ const sanitizeFormState = (target, state) => {
     case ANALYZE:
     case PDA:
     case TWD:
-      forms = ['clan', 'sect'];
+      forms = [CLAN, SECT];
       break;
     case LIBRARY:
-      forms = ['clan', 'sect', TITLE];
+      forms = [CLAN, SECT, TITLE];
       break;
     default:
       forms = [];

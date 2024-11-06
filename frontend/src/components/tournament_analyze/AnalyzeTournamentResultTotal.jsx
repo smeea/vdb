@@ -10,7 +10,7 @@ const AnalyzeTournamentResultTotal = ({ results, sortMethods, sortMethod, setSor
   let totalRank = 0;
 
   results.forEach((deck) => {
-    const rank = deck.score.rank;
+    const rank = deck.score[RANK];
     totalRank += rank;
 
     if (byRank[rank]) {
@@ -19,7 +19,7 @@ const AnalyzeTournamentResultTotal = ({ results, sortMethods, sortMethod, setSor
       byRank[rank] = 1;
     }
 
-    [...deck.tags.superior, ...deck.tags.base].forEach((t) => {
+    [...deck[TAGS].superior, ...deck[TAGS].base].forEach((t) => {
       if (byTags[t]) {
         byTags[t] += 1;
       } else {

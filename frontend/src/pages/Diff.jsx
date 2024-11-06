@@ -61,8 +61,8 @@ const Diff = () => {
     const cardsData = useDeck(deckData.cards, cryptCardBase, libraryCardBase);
     const d = {
       ...deckData,
-      crypt: cardsData.crypt,
-      library: cardsData.library,
+      crypt: cardsData[CRYPT],
+      library: cardsData[LIBRARY],
       isBranches: !!(deckData.master || deckData.branches?.length > 0),
       isPublic: !!deckData.publicParent,
     };
@@ -148,15 +148,15 @@ const Diff = () => {
             <FlexGapped className="max-sm:flex-col">
               {playtestMode ||
               !(
-                Object.keys(deck.crypt).some((cardid) => cardid > 210000) ||
-                Object.keys(deck.library).some((cardid) => cardid > 110000)
+                Object.keys(deck[CRYPT]).some((cardid) => cardid > 210000) ||
+                Object.keys(deck[LIBRARY]).some((cardid) => cardid > 110000)
               ) ? (
                 <>
                   <div className="basis-full sm:basis-5/9">
-                    <DiffCrypt deck={deck} cardsTo={deckTo.crypt} />
+                    <DiffCrypt deck={deck} cardsTo={deckTo[CRYPT]} />
                   </div>
                   <div className="basis-full sm:basis-4/9">
-                    <DiffLibrary deck={deck} cardsTo={deckTo.library} />
+                    <DiffLibrary deck={deck} cardsTo={deckTo[LIBRARY]} />
                   </div>
                 </>
               ) : (
@@ -178,12 +178,12 @@ const Diff = () => {
           <DeckNewCardFloating
             target={CRYPT}
             deckid={deck.deckid}
-            cards={Object.values(deck.crypt)}
+            cards={Object.values(deck[CRYPT])}
           />
           <DeckNewCardFloating
             target={LIBRARY}
             deckid={deck.deckid}
-            cards={Object.values(deck.library)}
+            cards={Object.values(deck[LIBRARY])}
           />
         </>
       )}

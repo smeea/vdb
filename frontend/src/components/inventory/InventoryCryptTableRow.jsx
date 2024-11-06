@@ -23,9 +23,9 @@ const InventoryCryptTableRow = ({ card, compact, newFocus, inShared, handleClick
   const { isMobile, isNarrow, isWide, limitedMode } = useApp();
   const usedCrypt = useSnapshot(usedStore)[CRYPT];
   const limitedCrypt = useSnapshot(limitedStore)[CRYPT];
-  const inLimited = limitedCrypt[card.c.Id];
-  const softUsedMax = getSoftMax(usedCrypt[SOFT][card.c.Id]);
-  const hardUsedTotal = getHardTotal(usedCrypt[HARD][card.c.Id]);
+  const inLimited = limitedCrypt[card.c[ID]];
+  const softUsedMax = getSoftMax(usedCrypt[SOFT][card.c[ID]]);
+  const hardUsedTotal = getHardTotal(usedCrypt[HARD][card.c[ID]]);
   const isEditable = !useSnapshot(inventoryStore)[IS_FROZEN];
 
   const { isSwiped, swipeHandlers } = useSwipe(
@@ -77,7 +77,7 @@ const InventoryCryptTableRow = ({ card, compact, newFocus, inShared, handleClick
       </div>
       {!isMobile && !isNarrow && (
         <div className="flex min-w-[170px] lg:min-w-[180px]" onClick={() => handleClick(card.c)}>
-          <ResultCryptDisciplines value={card.c.Disciplines} />
+          <ResultCryptDisciplines value={card.c[DISCIPLINES]} />
         </div>
       )}
       <div className="flex w-full" onClick={() => handleClick(card.c)}>
@@ -95,13 +95,13 @@ const InventoryCryptTableRow = ({ card, compact, newFocus, inShared, handleClick
       {isWide ? (
         <>
           <div className="flex min-w-[25px] justify-center" onClick={() => handleClick(card.c)}>
-            {card.c.Title && <ResultCryptTitle value={card.c.Title} />}
+            {card.c[TITLE] && <ResultCryptTitle value={card.c[TITLE]} />}
           </div>
           <div className="flex min-w-[35px] justify-center" onClick={() => handleClick(card.c)}>
-            <ResultClanImage value={card.c.Clan} />
+            <ResultClanImage value={card.c[CLAN]} />
           </div>
           <div className="flex min-w-[30px] justify-center" onClick={() => handleClick(card.c)}>
-            <ResultCryptGroup value={card.c.Group} />
+            <ResultCryptGroup value={card.c[GROUP]} />
           </div>
         </>
       ) : (

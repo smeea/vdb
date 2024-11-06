@@ -11,22 +11,14 @@ import {
   ResultLibraryTypeImage,
   ConditionalTooltip,
 } from '@/components';
-import {
-  REQUIREMENT,
-  DISCIPLINE,
-  CLAN,
-  TRIFLE,
-  POOL_COST,
-  BLOOD_COST,
-  BURN_OPTION,
-} from '@/constants';
+import { REQUIREMENT, DISCIPLINE, CLAN, TRIFLE, POOL, BLOOD, BURN } from '@/constants';
 import { useApp } from '@/context';
 
 const Type = ({ card, handleClick }) => {
   return (
     <td className="min-w-[50px] sm:min-w-[60px]" onClick={() => handleClick(card)}>
       <div className="flex justify-center">
-        <ResultLibraryTypeImage value={card.Type} />
+        <ResultLibraryTypeImage value={card[TYPE]} />
       </div>
     </td>
   );
@@ -35,9 +27,9 @@ const Type = ({ card, handleClick }) => {
 const Cost = ({ card, handleClick }) => {
   return (
     <td className="min-w-[25px] sm:min-w-[30px]" onClick={() => handleClick(card)}>
-      <div className={twMerge(card[BLOOD_COST] && 'pb-2', 'flex justify-center')}>
-        {(card[BLOOD_COST] || card[POOL_COST]) && (
-          <ResultLibraryCost valueBlood={card[BLOOD_COST]} valuePool={card[POOL_COST]} />
+      <div className={twMerge(card[BLOOD] && 'pb-2', 'flex justify-center')}>
+        {(card[BLOOD] || card[POOL]) && (
+          <ResultLibraryCost valueBlood={card[BLOOD]} valuePool={card[POOL]} />
         )}
       </div>
     </td>
@@ -78,7 +70,7 @@ const BurnTrifle = ({ card, handleClick }) => {
   return (
     <td className="min-w-[30px]" onClick={() => handleClick(card)}>
       <div className="flex justify-center">
-        {card[BURN_OPTION] && <ResultMiscImage value={BURN_OPTION} />}
+        {card[BURN] && <ResultMiscImage value={BURN} />}
         {card[TRIFLE] && <ResultMiscImage value={TRIFLE} />}
       </div>
     </td>

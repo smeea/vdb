@@ -15,7 +15,7 @@ const CardPopover = ({ card }) => {
   } else {
     return (
       <div className="flex w-[375px] flex-col gap-3 p-4">
-        {card.Id > 200000 ? (
+        {card[ID] > 200000 ? (
           <ResultCryptLayoutText card={card} inPopover />
         ) : (
           <ResultLibraryLayoutText card={card} inPopover />

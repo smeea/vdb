@@ -6,7 +6,7 @@ import { ANY, FROM, TO } from '@/constants';
 const TwdSearchFormDate = ({ inPda, value, onChange }) => {
   const { isXWide } = useApp();
   const maxMenuHeight = isXWide ? 500 : 350;
-  const name = 'date';
+  const name = DATE;
   const currentYear = new Date().getFullYear();
   const TWD_START = 1997;
   const PDA_START = 2022;

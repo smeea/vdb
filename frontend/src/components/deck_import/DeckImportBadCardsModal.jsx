@@ -51,9 +51,9 @@ const DeckImportBadCardsModal = ({ deckid, badCards, setBadCards, inInventory })
             </div>
             <div className="basis-2/3 sm:basis-3/5">
               <CardSelect
-                autoFocus={!isMobile || !cards[idx]?.c?.Id}
+                autoFocus={!isMobile || !cards[idx]?.c?.[ID]}
                 onChange={(card) => handleSetCard(card, idx)}
-                value={{ value: cards[idx]?.c?.Id }}
+                value={{ value: cards[idx]?.c?.[ID] }}
               />
             </div>
           </div>

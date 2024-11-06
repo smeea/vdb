@@ -52,8 +52,8 @@ const TwdCardsHistoryCrypt = ({ cards, players }) => {
   });
 
   cards.forEach((card) => {
-    cardsByClan[card.Clan][card.Id] = card;
-    cardsByClan[ALL][card.Id] = card;
+    cardsByClan[card[CLAN]][card[ID]] = card;
+    cardsByClan[ALL][card[ID]] = card;
   });
 
   Object.keys(cardsByClan).forEach((c) => {
@@ -76,7 +76,7 @@ const TwdCardsHistoryCrypt = ({ cards, players }) => {
   const cardRows = sortedCards.map((card) => {
     return (
       <TwdCardsHistoryCryptRow
-        key={card.Id}
+        key={card[ID]}
         card={card}
         players={players}
         handleClick={handleModalCardOpen}

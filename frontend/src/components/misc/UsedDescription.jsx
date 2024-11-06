@@ -17,7 +17,7 @@ const UsedDescriptionDeck = ({ deck, t, q }) => {
       </div>
       <b>{q}</b>
       <div className="truncate sm:max-w-[265px] md:max-w-[290px]">
-        {` - ${deck.name}${isBranches ? ` [${deck.branchName}]` : ''} `}
+        {` - ${deck[NAME]}${isBranches ? ` [${deck.branchName}]` : ''} `}
       </div>
     </div>
   );

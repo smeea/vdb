@@ -5,7 +5,7 @@ import Plus from '@/assets/images/icons/plus.svg?react';
 
 const SearchFormButtonAddText = ({ searchForm }) => {
   const addForm = () => {
-    searchForm.text.push({
+    searchForm[TEXT].push({
       value: '',
       regex: false,
       in: false,

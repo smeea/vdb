@@ -32,7 +32,7 @@ const DeckPublicSyncButton = ({ deck }) => {
       {showConfirmation && (
         <ModalConfirmation
           size="xl"
-          title={`Sync "${deck.name}" with Public Deck Archive?`}
+          title={`Sync "${deck[NAME]}" with Public Deck Archive?`}
           buttonText="Sync"
           handleConfirm={handleClick}
           handleCancel={() => setShowConfirmation(false)}

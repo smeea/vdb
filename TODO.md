@@ -1,4 +1,5 @@
 # FIX
+- Conviction cost
 
 # FEATURES
 - Card q-ty change in autocompletion
@@ -19,11 +20,4 @@
 - Migrate from isWidth to container queries
 - Migrate forms to useFormStatus+useActionState
 - Remove legacy polyfills when Safari adopts groupBy
-- Decapitalize card.Value
-- Refactor to constants:
-  - SanitizeFormState
-  - SearchForm (.value)
-  - FormState (.value)
-  - useFilters
-  - useFiltersDecks
-  - Traits
+- Refactor to constants: traits, deck tags

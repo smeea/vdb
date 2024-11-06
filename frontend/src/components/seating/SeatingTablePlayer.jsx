@@ -14,10 +14,10 @@ const SeatingTablePlayer = ({ deck, isFirst }) => {
     >
       {deck.deckid ? (
         <Link target="_blank" rel="noreferrer" to={`/decks/${deck.deckid}`}>
-          {deck.name}
+          {deck[NAME]}
         </Link>
       ) : (
-        <>{deck.name}</>
+        <>{deck[NAME]}</>
       )}
     </div>
   );

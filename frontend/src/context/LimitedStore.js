@@ -37,10 +37,10 @@ export const limitedStore = derive({
 
     Object.values(get(limitedFullStore)[CRYPT])
       .filter((card) => {
-        if (banned[card.Id]) return false;
-        if (allowed[card.Id]) return true;
+        if (banned[card[ID]]) return false;
+        if (allowed[card[ID]]) return true;
         if (
-          Object.keys(card.Set).some((i) => {
+          Object.keys(card[SET]).some((i) => {
             return sets.includes(i);
           })
         ) {
@@ -48,7 +48,7 @@ export const limitedStore = derive({
         }
       })
       .forEach((card) => {
-        cards[card.Id] = card;
+        cards[card[ID]] = card;
       });
 
     return cards;
@@ -61,10 +61,10 @@ export const limitedStore = derive({
 
     Object.values(get(limitedFullStore)[LIBRARY])
       .filter((card) => {
-        if (banned[card.Id]) return false;
-        if (allowed[card.Id]) return true;
+        if (banned[card[ID]]) return false;
+        if (allowed[card[ID]]) return true;
         if (
-          Object.keys(card.Set).some((i) => {
+          Object.keys(card[SET]).some((i) => {
             return sets.includes(i);
           })
         ) {
@@ -72,7 +72,7 @@ export const limitedStore = derive({
         }
       })
       .forEach((card) => {
-        cards[card.Id] = card;
+        cards[card[ID]] = card;
       });
 
     return cards;
@@ -121,9 +121,9 @@ export const limitedSetChange = (set, isAdd) => {
 };
 
 export const limitedCardChange = (card, isAllowed, isAdd) => {
-  const store = limitedFullStore[isAllowed ? ALLOWED : BANNED][card.Id > 200000 ? CRYPT : LIBRARY];
+  const store = limitedFullStore[isAllowed ? ALLOWED : BANNED][card[ID] > 200000 ? CRYPT : LIBRARY];
   const idbStore =
-    card.Id > 200000
+    card[ID] > 200000
       ? isAllowed
         ? LIMITED_ALLOWED_CRYPT
         : LIMITED_BANNED_CRYPT
@@ -132,17 +132,17 @@ export const limitedCardChange = (card, isAllowed, isAdd) => {
         : LIMITED_BANNED_LIBRARY;
 
   if (isAdd) {
-    store[card.Id] = card;
+    store[card[ID]] = card;
 
     update(idbStore, (val) => ({
       ...val,
-      [card.Id]: true,
+      [card[ID]]: true,
     }));
   } else {
-    delete store[card.Id];
+    delete store[card[ID]];
 
     update(idbStore, (val) => {
-      delete val[card.Id];
+      delete val[card[ID]];
       return val;
     });
   }

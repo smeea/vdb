@@ -25,7 +25,7 @@ const DiffLibraryTable = ({
               isEditable={isEditable}
               showInfo={showInfo}
               libraryTotal={libraryTotal}
-              key={card.c.Id}
+              key={card.c[ID]}
               card={card}
               handleClick={handleClick}
             />

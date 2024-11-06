@@ -9,20 +9,20 @@ const DeckProxyTableSetSelect = ({ card, value, handleSetSelector }) => {
   const setOptions = [
     {
       value: '',
-      id: card.Id,
+      id: card[ID],
       label: <div className="text-sm">Newest (default)</div>,
     },
   ];
 
   Object.keys(setsAndPrecons).map((i) => {
-    if (card.Set[i] && i !== POD) {
+    if (card[SET][i] && i !== POD) {
       setOptions.push({
         value: i.toLowerCase(),
-        id: card.Id,
+        id: card[ID],
         label: (
           <div className="text-sm">
-            {setsAndPrecons[i].name}
-            {setsAndPrecons[i].date ? ` '${setsAndPrecons[i].date.slice(2, 4)}` : null}
+            {setsAndPrecons[i][NAME]}
+            {setsAndPrecons[i][DATE] ? ` '${setsAndPrecons[i][DATE].slice(2, 4)}` : null}
           </div>
         ),
       });

@@ -38,12 +38,12 @@ const ResultCryptTableRowCommon = ({
         <td className="sm:min-w-[170px]" onClick={() => handleClick(card)}>
           {inDeck && keyDisciplines && disciplinesSet.length < ALIGN_DISCIPLINES_THRESHOLD ? (
             <DeckCryptDisciplines
-              value={card.Disciplines}
+              value={card[DISCIPLINES]}
               disciplinesSet={disciplinesSet}
               keyDisciplines={keyDisciplines}
             />
           ) : (
-            <ResultCryptDisciplines value={card.Disciplines} />
+            <ResultCryptDisciplines value={card[DISCIPLINES]} />
           )}
         </td>
       )}
@@ -62,17 +62,17 @@ const ResultCryptTableRowCommon = ({
         <>
           <td className="min-w-[25px]" onClick={() => handleClick(card)}>
             <div className="flex justify-center">
-              {card.Title && <ResultCryptTitle value={card.Title} />}
+              {card[TITLE] && <ResultCryptTitle value={card[TITLE]} />}
             </div>
           </td>
           <td className="min-w-[35px]" onClick={() => handleClick(card)}>
             <div className="flex justify-center">
-              <ResultClanImage value={card.Clan} />
+              <ResultClanImage value={card[CLAN]} />
             </div>
           </td>
           <td className="min-w-[30px]" onClick={() => handleClick(card)}>
             <div className="flex justify-center">
-              <ResultCryptGroup value={card.Group} />
+              <ResultCryptGroup value={card[GROUP]} />
             </div>
           </td>
         </>

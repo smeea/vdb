@@ -9,10 +9,10 @@ import {
   PlaytestScoresChart,
 } from '@/components';
 import { useApp } from '@/context';
+import { NAME } from '@/constants';
 
 const PlaytestReportsAllCardOrPrecon = ({ product, isPrecon, report, withHr, maxSameScore }) => {
   const { isMobile } = useApp();
-  const name = isPrecon ? product.name : product.Name;
 
   const q = report && Object.keys(report).length;
   const score = report && Object.values(report).reduce((acc, value) => acc + value.score, 0) / q;
@@ -24,12 +24,14 @@ const PlaytestReportsAllCardOrPrecon = ({ product, isPrecon, report, withHr, max
       <FlexGapped className="max-sm:flex-col print:break-after-page print:p-8">
         <div className="flex flex-col gap-2 sm:gap-4">
           {isMobile ? (
-            <div className="flex font-bold text-fgSecondary dark:text-fgSecondaryDark">{name}</div>
+            <div className="flex font-bold text-fgSecondary dark:text-fgSecondaryDark">
+              {product[NAME]}
+            </div>
           ) : (
             <FlexGapped className="w-[320px] flex-col print:max-w-[250px]">
               <div className="flex flex-col gap-1">
                 <div className="flex font-bold text-fgSecondary dark:text-fgSecondaryDark print:dark:text-fgSecondary">
-                  {name}
+                  {product[NAME]}
                 </div>
                 {isPrecon ? (
                   <div className="print:text-sm">

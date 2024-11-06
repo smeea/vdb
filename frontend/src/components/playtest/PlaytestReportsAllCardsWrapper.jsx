@@ -14,7 +14,7 @@ const PlaytestReportsAllCardsWrapper = ({ reports, target, sortMethod, maxSameSc
     () =>
       sort(
         Object.values(cardBase || {}).filter((i) => {
-          return i.Id > playtestId;
+          return i[ID] > playtestId;
         }),
         sortMethod,
       ),
@@ -26,9 +26,9 @@ const PlaytestReportsAllCardsWrapper = ({ reports, target, sortMethod, maxSameSc
       {products.map((i, idx) => {
         return (
           <PlaytestReportsAllCardOrPrecon
-            key={i.Id}
+            key={i[ID]}
             product={i}
-            report={reports?.[i.Id]}
+            report={reports?.[i[ID]]}
             maxSameScore={maxSameScore}
             withHr={idx + 1 < products.length}
           />

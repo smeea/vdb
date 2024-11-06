@@ -65,8 +65,8 @@ const TwdCardsHistoryLibrary = ({ cards, players }) => {
   });
 
   cards.forEach((card) => {
-    const types = card.Type.split('/');
-    const d = card.Discipline;
+    const types = card[TYPE].split('/');
+    const d = card[DISCIPLINE];
     let disciplines = [NONE];
     if (d.includes('/')) {
       disciplines = d.split('/');
@@ -91,17 +91,17 @@ const TwdCardsHistoryLibrary = ({ cards, players }) => {
     }
 
     types.forEach((t) => {
-      cardsByType[t][card.Id] = card;
+      cardsByType[t][card[ID]] = card;
     });
-    cardsByType[ALL][card.Id] = card;
-    cardsByDiscipline[ALL][card.Id] = card;
+    cardsByType[ALL][card[ID]] = card;
+    cardsByDiscipline[ALL][card[ID]] = card;
 
     if (disciplines) {
       disciplines.forEach((i) => {
-        cardsByDiscipline[i][card.Id] = card;
+        cardsByDiscipline[i][card[ID]] = card;
       });
     } else {
-      cardsByDiscipline[NONE][card.Id] = card;
+      cardsByDiscipline[NONE][card[ID]] = card;
     }
   });
 
@@ -142,7 +142,7 @@ const TwdCardsHistoryLibrary = ({ cards, players }) => {
     () =>
       librarySort(
         Object.values(cardsByType[type]).filter((i) => {
-          return cardsByDiscipline[discipline][i.Id];
+          return cardsByDiscipline[discipline][i[ID]];
         }),
         sortMethod,
       ),
@@ -160,7 +160,7 @@ const TwdCardsHistoryLibrary = ({ cards, players }) => {
   const cardRows = sortedCards.map((card) => {
     return (
       <TwdCardsHistoryLibraryRow
-        key={card.Id}
+        key={card[ID]}
         card={card}
         players={players}
         handleClick={handleModalCardOpen}

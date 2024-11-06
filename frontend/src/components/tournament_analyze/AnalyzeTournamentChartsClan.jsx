@@ -9,7 +9,7 @@ const AnalyzeTournamentChartsClan = ({ decks }) => {
     const result = {};
 
     Object.values(decks).forEach((deck) => {
-      const clan = getClan(deck.crypt) || 'Multi';
+      const clan = getClan(deck[CRYPT]) || 'Multi';
       if (result[clan]) {
         result[clan] += 1;
       } else {
@@ -24,7 +24,7 @@ const AnalyzeTournamentChartsClan = ({ decks }) => {
           value: result[c],
         };
       })
-      .toSorted((a, b) => a.name > b.name)
+      .toSorted((a, b) => a[NAME] > b[NAME])
       .toSorted((a, b) => b.value > a.value);
   }, [decks]);
 
@@ -41,7 +41,7 @@ const AnalyzeTournamentChartsClan = ({ decks }) => {
         cy="50%"
         outerRadius={isMobile || (isDesktop && !isWide) ? 90 : 150}
         fill="#8884d8"
-        label={({ index }) => data[index].name}
+        label={({ index }) => data[index][NAME]}
       />
       <Tooltip
         contentStyle={{

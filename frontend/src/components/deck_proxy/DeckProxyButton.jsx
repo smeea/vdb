@@ -37,9 +37,9 @@ const DeckProxyButton = ({ missingCrypt, missingLibrary, deck, inDiff }) => {
     const cardsTotal = countCards([...cryptSorted, ...librarySorted]);
     const cards = [...cryptSorted, ...librarySorted].map((card) => {
       return {
-        Id: card.c.Id,
-        set: card.set,
-        url: useCardImageUrl(card.c, card.set, lang),
+        Id: card.c[ID],
+        set: card[SET],
+        url: useCardImageUrl(card.c, card[SET], lang),
         q: card.q,
       };
     });
@@ -125,10 +125,10 @@ const DeckProxyButton = ({ missingCrypt, missingLibrary, deck, inDiff }) => {
         );
 
         try {
-          if (lang !== EN || card.set || showLegacyImage) {
-            const url = card.set
+          if (lang !== EN || card[SET] || showLegacyImage) {
+            const url = card[SET]
               ? card.url.otherUrl
-              : showLegacyImage && card.Id > 200000
+              : showLegacyImage && card[ID] > 200000
                 ? card.url.legacyUrl
                 : card.url.otherUrl;
 
@@ -191,7 +191,7 @@ const DeckProxyButton = ({ missingCrypt, missingLibrary, deck, inDiff }) => {
             <>
               <MenuItem
                 onClick={() =>
-                  proxyCards(deck.crypt, deck.library, {
+                  proxyCards(deck[CRYPT], deck[LIBRARY], {
                     isWhiteGaps: false,
                     isLetter: false,
                   })
@@ -201,7 +201,7 @@ const DeckProxyButton = ({ missingCrypt, missingLibrary, deck, inDiff }) => {
               </MenuItem>
               <MenuItem
                 onClick={() =>
-                  proxyCards(deck.crypt, deck.library, {
+                  proxyCards(deck[CRYPT], deck[LIBRARY], {
                     isWhite: true,
                     isLetter: false,
                   })
@@ -211,7 +211,7 @@ const DeckProxyButton = ({ missingCrypt, missingLibrary, deck, inDiff }) => {
               </MenuItem>
               <MenuItem
                 onClick={() =>
-                  proxyCards(deck.crypt, deck.library, {
+                  proxyCards(deck[CRYPT], deck[LIBRARY], {
                     isWhiteGaps: false,
                     isLetter: true,
                   })
@@ -221,7 +221,7 @@ const DeckProxyButton = ({ missingCrypt, missingLibrary, deck, inDiff }) => {
               </MenuItem>
               <MenuItem
                 onClick={() =>
-                  proxyCards(deck.crypt, deck.library, {
+                  proxyCards(deck[CRYPT], deck[LIBRARY], {
                     isWhite: true,
                     isLetter: true,
                   })

@@ -88,16 +88,16 @@ const LibrarySearchForm = () => {
   }, []);
 
   const handleTextChange = (formId, value) => {
-    searchLibraryForm.text[formId].value = value;
+    searchLibraryForm[TEXT][formId].value = value;
   };
 
   const handleTextCheckboxesChange = (event) => {
     const { name, value } = event.currentTarget;
     if (['name', TEXT].includes(value)) {
-      searchLibraryForm.text[name]['in'] =
-        searchLibraryForm.text[name]['in'] === value ? false : value;
+      searchLibraryForm[TEXT][name]['in'] =
+        searchLibraryForm[TEXT][name]['in'] === value ? false : value;
     } else {
-      searchLibraryForm.text[name][value] = !searchLibraryForm.text[name][value];
+      searchLibraryForm[TEXT][name][value] = !searchLibraryForm[TEXT][name][value];
     }
   };
 
@@ -107,10 +107,10 @@ const LibrarySearchForm = () => {
   };
 
   const handleMultiSelectChange = (event, id) => {
-    const i = id.name;
+    const i = id[NAME];
     const { name, value } = event;
 
-    if ([BLOOD, POOL, 'capacity'].includes(name)) {
+    if ([BLOOD, POOL, CAPACITY].includes(name)) {
       if ([LE, GE, EQ].includes(value)) {
         searchLibraryForm[name].moreless = value;
       } else {
@@ -155,7 +155,7 @@ const LibrarySearchForm = () => {
     navigate(`/library?q=${encodeURIComponent(JSON.stringify(sanitizedForm))}`);
 
     const filteredCards = filterLibrary(sanitizedForm).filter(
-      (card) => playtestMode || card.Id < 110000,
+      (card) => playtestMode || card[ID] < 110000,
     );
 
     const setResults = isMobile ? setLibraryResults : setPreresults;
@@ -163,12 +163,12 @@ const LibrarySearchForm = () => {
       setResults(
         filteredCards.filter((card) => {
           return (
-            inventoryLibrary[card.Id] || usedLibrary[SOFT][card.Id] || usedLibrary[HARD][card.Id]
+            inventoryLibrary[card[ID]] || usedLibrary[SOFT][card[ID]] || usedLibrary[HARD][card[ID]]
           );
         }),
       );
     } else if (searchMissingInventoryMode && inventoryMode) {
-      setResults(filteredCards.filter((card) => !inventoryLibrary[card.Id]?.q));
+      setResults(filteredCards.filter((card) => !inventoryLibrary[card[ID]]?.q));
     } else {
       setResults(filteredCards);
     }
@@ -197,7 +197,7 @@ const LibrarySearchForm = () => {
           setPreresults(undefined);
           navigate('/library');
         }
-      } else if (!libraryFormState.text[0].value || libraryFormState.text[0].value.length > 2) {
+      } else if (!libraryFormState[TEXT][0].value || libraryFormState[TEXT][0].value.length > 2) {
         processSearch();
       }
     }
@@ -229,7 +229,7 @@ const LibrarySearchForm = () => {
   return (
     <div className="flex flex-col gap-2">
       <SearchFormTextAndButtons
-        value={libraryFormState.text}
+        value={libraryFormState[TEXT]}
         onChange={handleTextChange}
         onChangeOptions={handleTextCheckboxesChange}
         searchForm={searchLibraryForm}
@@ -239,54 +239,57 @@ const LibrarySearchForm = () => {
         showLimit={showLimit}
       />
       <LibrarySearchFormType
-        value={libraryFormState.type}
+        value={libraryFormState[TYPE]}
         onChange={handleMultiSelectChange}
         searchForm={searchLibraryForm}
       />
       <LibrarySearchFormDiscipline
-        value={libraryFormState.discipline}
+        value={libraryFormState[DISCIPLINE]}
         onChange={handleMultiSelectChange}
         searchForm={searchLibraryForm}
       />
       <LibrarySearchFormClan
-        value={libraryFormState.clan}
+        value={libraryFormState[CLAN]}
         onChange={handleMultiSelectChange}
         searchForm={searchLibraryForm}
       />
       <LibrarySearchFormSect
-        value={libraryFormState.sect}
+        value={libraryFormState[SECT]}
         onChange={handleMultiSelectChange}
         searchForm={searchLibraryForm}
       />
       <LibrarySearchFormTitle
-        value={libraryFormState.title}
+        value={libraryFormState[TITLE]}
         onChange={handleMultiSelectChange}
         searchForm={searchLibraryForm}
       />
       <LibrarySearchFormBloodCost
-        value={libraryFormState.blood}
+        value={libraryFormState[BLOOD]}
         onChange={handleMultiSelectChange}
       />
-      <LibrarySearchFormPoolCost value={libraryFormState.pool} onChange={handleMultiSelectChange} />
+      <LibrarySearchFormPoolCost
+        value={libraryFormState[POOL]}
+        onChange={handleMultiSelectChange}
+      />
       <LibrarySearchFormCapacity
-        value={libraryFormState.capacity}
+        value={libraryFormState[CAPACITY]}
         onChange={handleMultiSelectChange}
       />
-      <LibrarySearchFormTraits value={libraryFormState.traits} onChange={handleMultiChange} />
+      <LibrarySearchFormTraits value={libraryFormState[TRAITS]} onChange={handleMultiChange} />
       <SearchFormSet
-        value={libraryFormState.set}
+        value={libraryFormState[SET]}
         onChange={handleMultiSelectChange}
         onChangeOptions={handleMultiChange}
         searchForm={searchLibraryForm}
       />
       <SearchFormPrecon
-        value={libraryFormState.precon}
+        value={libraryFormState[PRECON]}
         onChange={handleMultiSelectChange}
         onChangeOptions={handleMultiChange}
         searchForm={searchLibraryForm}
       />
       <SearchFormArtist
-        value={libraryFormState.artist}
+        value={libraryFormState[ARTIST]}
         onChange={handleSelectChange}
         target={LIBRARY}
       />

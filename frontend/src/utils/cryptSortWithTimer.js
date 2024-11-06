@@ -8,11 +8,11 @@ const cryptSortWithTimer = (cardsList, sortMethod) => {
   const timer = useSnapshot(miscStore)[CRYPT_TIMER];
 
   const sortedState = useMemo(() => {
-    return cryptSort(cardsList, sortMethod).map((c) => c.c.Id);
+    return cryptSort(cardsList, sortMethod).map((c) => c.c[ID]);
   }, [timer, sortMethod]);
 
   const sortedCards = cardsList.toSorted((a, b) => {
-    return sortedState.indexOf(a.c.Id) - sortedState.indexOf(b.c.Id);
+    return sortedState.indexOf(a.c[ID]) - sortedState.indexOf(b.c[ID]);
   });
 
   const value = useMemo(() => sortedCards, [cardsList, timer, sortMethod]);

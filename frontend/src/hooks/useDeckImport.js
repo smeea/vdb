@@ -1,25 +1,25 @@
-import { ASCII_NAME } from '@/constants';
+import { ASCII } from '@/constants';
 
 const useDeckImport = async (deckText, cryptCardBase, libraryCardBase, isPlaytester) => {
   const { default: unidecode } = await import('unidecode');
 
   const cardbase = {};
   Object.values(cryptCardBase).forEach((card) => {
-    const adv = !!card?.Adv[0];
-    const name = card[ASCII_NAME].toLowerCase().replace(/\W/g, '');
+    const adv = !!card?.[ADV][0];
+    const name = card[ASCII].toLowerCase().replace(/\W/g, '');
 
     if (!Object.keys(cardbase).includes(name)) {
-      cardbase[name] = { base: card.Id, [card.Group]: card.Id };
+      cardbase[name] = { base: card[ID], [card[GROUP]]: card[ID] };
     } else if (adv) {
-      cardbase[name].adv = card.Id;
+      cardbase[name].adv = card[ID];
     } else {
-      cardbase[name][card.Group] = card.Id;
+      cardbase[name][card[GROUP]] = card[ID];
     }
   });
 
   Object.values(libraryCardBase).forEach((card) => {
-    const name = card[ASCII_NAME].toLowerCase().replace(/\W/g, '');
-    cardbase[name] = { base: card.Id };
+    const name = card[ASCII].toLowerCase().replace(/\W/g, '');
+    cardbase[name] = { base: card[ID] };
   });
 
   const minifyCardName = (name) => {
@@ -94,15 +94,15 @@ const useDeckImport = async (deckText, cryptCardBase, libraryCardBase, isPlaytes
   deckArray.forEach((i) => {
     i = i.trim();
     if (i.startsWith('Deck Name: ')) {
-      deck.name = i.replace('Deck Name: ', '');
+      deck[NAME] = i.replace('Deck Name: ', '');
       return;
     }
     if (i.startsWith('Author: ')) {
-      deck.author = i.replace('Author: ', '');
+      deck[AUTHOR] = i.replace('Author: ', '');
       return;
     }
     if (i.startsWith('Description: ')) {
-      deck.description = i.replace('Description: ', '');
+      deck[DESCRIPTION] = i.replace('Description: ', '');
       return;
     }
     if (!i || i.match(/^\D/)) {
@@ -114,12 +114,12 @@ const useDeckImport = async (deckText, cryptCardBase, libraryCardBase, isPlaytes
 
     if (id && q && (!isPlaytest || isPlaytester)) {
       if (id > 200000) {
-        deck.crypt[id] = {
+        deck[CRYPT][id] = {
           c: cryptCardBase[id],
           q: q,
         };
       } else {
-        deck.library[id] = {
+        deck[LIBRARY][id] = {
           c: libraryCardBase[id],
           q: q,
         };

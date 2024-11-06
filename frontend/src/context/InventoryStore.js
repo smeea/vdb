@@ -40,63 +40,63 @@ export const inventoryCardsAdd = (cards) => {
   Object.values(filteredCards).forEach((card) => {
     const { q, c } = card;
 
-    const store = c.Id > 200000 ? inventoryStore[CRYPT] : inventoryStore[LIBRARY];
-    const isPositive = (store[c.Id]?.q || 0) + q > 0;
+    const store = c[ID] > 200000 ? inventoryStore[CRYPT] : inventoryStore[LIBRARY];
+    const isPositive = (store[c[ID]]?.q || 0) + q > 0;
     if (isPositive) {
-      if (store[c.Id]) {
-        store[c.Id].q = store[c.Id].q + q;
+      if (store[c[ID]]) {
+        store[c[ID]].q = store[c[ID]].q + q;
       } else {
-        store[c.Id] = {
+        store[c[ID]] = {
           c: c,
           q: q,
         };
       }
     } else {
-      delete store[c.Id];
+      delete store[c[ID]];
     }
   });
 };
 
 export const inventoryCardChange = (card, q) => {
-  if (card.Id > 210000 || (card.Id < 200000 && card.Id > 110000)) return;
-  const cardSrc = card.Id > 200000 ? CRYPT : LIBRARY;
+  if (card[ID] > 210000 || (card[ID] < 200000 && card[ID] > 110000)) return;
+  const cardSrc = card[ID] > 200000 ? CRYPT : LIBRARY;
   const initialState = deepClone(inventoryStore[cardSrc]);
   const store = inventoryStore[cardSrc];
 
   if (q >= 0) {
-    if (store[card.Id]) {
-      store[card.Id].q = q;
+    if (store[card[ID]]) {
+      store[card[ID]].q = q;
     } else {
-      store[card.Id] = {
+      store[card[ID]] = {
         c: card,
         q: q,
       };
     }
   } else {
-    delete store[card.Id];
+    delete store[card[ID]];
   }
 
   if (cardSrc === CRYPT) startCryptTimer();
 
-  inventoryServices.setCard(card.Id, q).catch(() => {
+  inventoryServices.setCard(card[ID], q).catch(() => {
     inventoryStore[cardSrc] = initialState;
   });
 };
 
 export const inventoryCardTextChange = (card, text) => {
-  if (card.Id > 210000 || (card.Id < 200000 && card.Id > 110000)) return;
-  const cardSrc = card.Id > 200000 ? CRYPT : LIBRARY;
+  if (card[ID] > 210000 || (card[ID] < 200000 && card[ID] > 110000)) return;
+  const cardSrc = card[ID] > 200000 ? CRYPT : LIBRARY;
   const initialState = deepClone(inventoryStore[cardSrc]);
   const store = inventoryStore[cardSrc];
 
-  inventoryServices.setCardText(card.Id, text).catch(() => {
+  inventoryServices.setCardText(card[ID], text).catch(() => {
     inventoryStore[cardSrc] = initialState;
   });
 
-  if (store[card.Id]) {
-    store[card.Id].t = text;
+  if (store[card[ID]]) {
+    store[card[ID]].t = text;
   } else {
-    store[card.Id] = {
+    store[card[ID]] = {
       q: 0,
       c: card,
       t: text,
@@ -122,12 +122,12 @@ export const setupUsedInventory = (decks) => {
 
   Object.keys(decks).forEach((deckid) => {
     if (decks[deckid][INVENTORY_TYPE]) {
-      Object.entries(decks[deckid].crypt).forEach(([id, card]) => {
+      Object.entries(decks[deckid][CRYPT]).forEach(([id, card]) => {
         const target = crypts[card.i || decks[deckid][INVENTORY_TYPE]];
         if (!target[id]) target[id] = {};
         target[id][deckid] = card.q;
       });
-      Object.entries(decks[deckid].library).forEach(([id, card]) => {
+      Object.entries(decks[deckid][LIBRARY]).forEach(([id, card]) => {
         const target = libraries[card.i || decks[deckid][INVENTORY_TYPE]];
         if (!target[id]) target[id] = {};
         target[id][deckid] = card.q;
@@ -135,11 +135,11 @@ export const setupUsedInventory = (decks) => {
     }
   });
 
-  usedStore.crypt = {
+  usedStore[CRYPT] = {
     soft: softCrypt,
     hard: hardCrypt,
   };
-  usedStore.library = {
+  usedStore[LIBRARY] = {
     soft: softLibrary,
     hard: hardLibrary,
   };

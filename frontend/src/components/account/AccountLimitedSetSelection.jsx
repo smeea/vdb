@@ -17,7 +17,7 @@ const AccountLimitedSetSelection = () => {
       <div className="flex gap-2 max-sm:flex-col">
         <div className="flex basis-full flex-col gap-2 sm:basis-1/2">
           {Object.keys(setsAndPrecons)
-            .filter((i) => i !== PLAYTEST && setsAndPrecons[i].date > BCP_START)
+            .filter((i) => i !== PLAYTEST && setsAndPrecons[i][DATE] > BCP_START)
             .map((i) => {
               return (
                 <AccountLimitedSet
@@ -31,7 +31,7 @@ const AccountLimitedSetSelection = () => {
         </div>
         <div className="flex basis-full flex-col gap-2 sm:basis-1/2">
           {Object.keys(setsAndPrecons)
-            .filter((i) => i !== PLAYTEST && setsAndPrecons[i].date < BCP_START)
+            .filter((i) => i !== PLAYTEST && setsAndPrecons[i][DATE] < BCP_START)
             .map((i) => {
               return (
                 <AccountLimitedSet

@@ -9,7 +9,7 @@ const InventoryDeckAddButton = ({ deck, inInventory }) => {
   const [showConfirmation, setShowConfirmation] = useState(false);
 
   const inventoryDeckAdd = (deck) => {
-    inventoryCardsAdd({ ...deck.crypt, ...deck.library });
+    inventoryCardsAdd({ ...deck[CRYPT], ...deck[LIBRARY] });
   };
 
   const handleCancel = () => setShowConfirmation(false);
@@ -35,7 +35,7 @@ const InventoryDeckAddButton = ({ deck, inInventory }) => {
           handleConfirm={handleConfirm}
           handleCancel={handleCancel}
           buttonText="Add"
-          title={'Add deck ' + deck.name + ' to Inventory?'}
+          title={'Add deck ' + deck[NAME] + ' to Inventory?'}
         />
       )}
     </>

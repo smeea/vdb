@@ -19,9 +19,9 @@ const SeatingPlayerSelector = ({ setPlayer, delPlayer, i, player }) => {
   };
 
   const toggle = () => {
-    if (player.name) {
+    if (player[NAME]) {
       setPlayer(i, {
-        name: player.name,
+        name: player[NAME],
         random: player.random,
         state: !player.state,
       });
@@ -36,7 +36,7 @@ const SeatingPlayerSelector = ({ setPlayer, delPlayer, i, player }) => {
 
   const handleClick = () => {
     setPlayer(i, {
-      name: player.name,
+      name: player[NAME],
       random: !player.random,
       state: !player.state && !player.random ? true : player.state,
     });
@@ -47,7 +47,7 @@ const SeatingPlayerSelector = ({ setPlayer, delPlayer, i, player }) => {
       <div className="flex w-full">
         <Input
           placeholder="Disabled"
-          value={player.state ? (player.random ? 'RANDOM' : player.name) : ''}
+          value={player.state ? (player.random ? 'RANDOM' : player[NAME]) : ''}
           onChange={handleChange}
           roundedStyle="rounded rounded-r-none"
         />

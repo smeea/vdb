@@ -2,7 +2,7 @@ import React from 'react';
 import { ButtonGroup } from '@/components';
 
 const CryptSearchFormGroup = ({ value, onChange }) => {
-  const name = 'group';
+  const name = GROUP;
   const options = [1, 2, 3, 4, 5, 6, 7];
 
   return (

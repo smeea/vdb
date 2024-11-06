@@ -17,7 +17,7 @@ const InventoryCardQuantity = ({ card, softUsedMax, hardUsedTotal, compact, newF
 
   useEffect(() => {
     if (compact && card.q === 0) setManual(true);
-  }, [card.Id]);
+  }, [card[ID]]);
 
   const handleManualChange = (event) => {
     setState(event.target.value ?? '');

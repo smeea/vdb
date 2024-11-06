@@ -47,8 +47,8 @@ const useInventoryLibrary = (cards = {}, category = OK, compact, type, disciplin
           return true;
         })
         .forEach((cardid) => {
-          const types = cards[cardid].c.Type.split('/');
-          const d = libraryCardBase[cardid].Discipline;
+          const types = cards[cardid].c[TYPE].split('/');
+          const d = libraryCardBase[cardid][DISCIPLINE];
           let disciplines = [NONE];
           if (d.includes('/')) {
             disciplines = d.split('/');
@@ -124,8 +124,8 @@ const useInventoryLibrary = (cards = {}, category = OK, compact, type, disciplin
       Object.keys(usedLibrary[SOFT])
         .filter((cardid) => cardid < 110000 && !cards[cardid])
         .forEach((cardid) => {
-          const types = libraryCardBase[cardid].Type.split('/');
-          const d = libraryCardBase[cardid].Discipline;
+          const types = libraryCardBase[cardid][TYPE].split('/');
+          const d = libraryCardBase[cardid][DISCIPLINE];
           let disciplines = [NONE];
           if (d.includes('/')) {
             disciplines = d.split('/');
@@ -190,8 +190,8 @@ const useInventoryLibrary = (cards = {}, category = OK, compact, type, disciplin
       Object.keys(usedLibrary[HARD])
         .filter((cardid) => cardid < 110000 && !cards[cardid])
         .forEach((cardid) => {
-          const types = libraryCardBase[cardid].Type.split('/');
-          const d = libraryCardBase[cardid].Discipline;
+          const types = libraryCardBase[cardid][TYPE].split('/');
+          const d = libraryCardBase[cardid][DISCIPLINE];
           let disciplines = [NONE];
           if (d.includes('/')) {
             disciplines = d.split('/');

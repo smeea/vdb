@@ -54,23 +54,23 @@ const TwdSearchForm = ({ error, setError }) => {
   }, [twdFormState, cryptCardBase, libraryCardBase]);
 
   const handleEventChange = (event) => {
-    searchTwdForm.event = event.target.value;
+    searchTwdForm[EVENT] = event.target.value;
   };
 
   const handleMultiSelectChange = (event, id) => {
-    const i = id.name;
+    const i = id[NAME];
     const { name, value } = event;
     searchTwdForm[name].value[i] = value;
   };
 
   const handleChangeWithOpt = (event, id) => {
-    const i = id.name;
+    const i = id[NAME];
     const { name, value } = event;
     searchTwdForm[i][name] = value;
   };
 
   const handleDisciplinesChange = (name) => {
-    searchTwdForm.disciplines[name] = !twdFormState.disciplines[name];
+    searchTwdForm[DISCIPLINES][name] = !twdFormState[DISCIPLINES][name];
   };
 
   const handleMultiChange = (event) => {
@@ -80,9 +80,9 @@ const TwdSearchForm = ({ error, setError }) => {
 
   const handleMatchInventoryScalingChange = (e) => {
     if (e.target.checked) {
-      searchTwdForm.matchInventory.scaling = e.target.name;
+      searchTwdForm[MATCH_INVENTORY][SCALING] = e.target[NAME];
     } else {
-      searchTwdForm.matchInventory.scaling = false;
+      searchTwdForm[MATCH_INVENTORY][SCALING] = false;
     }
   };
 
@@ -154,7 +154,7 @@ const TwdSearchForm = ({ error, setError }) => {
           setTwdResults(undefined);
           navigate('/twd');
         }
-      } else if (!twdFormState.event || twdFormState.event.length > 2) {
+      } else if (!twdFormState[EVENT] || twdFormState[EVENT].length > 2) {
         processSearch();
       }
     }
@@ -166,12 +166,12 @@ const TwdSearchForm = ({ error, setError }) => {
       {inventoryMode && (
         <>
           <TwdSearchFormMatchInventory
-            value={twdFormState.matchInventory.crypt}
+            value={twdFormState[MATCH_INVENTORY][CRYPT]}
             target={CRYPT}
             onChange={handleChangeWithOpt}
           />
           <TwdSearchFormMatchInventory
-            value={twdFormState.matchInventory.library}
+            value={twdFormState[MATCH_INVENTORY][LIBRARY]}
             target={LIBRARY}
             onChange={handleChangeWithOpt}
           />
@@ -179,66 +179,66 @@ const TwdSearchForm = ({ error, setError }) => {
             <Checkbox
               name="60"
               label="Scale to 60 cards"
-              checked={twdFormState.matchInventory.scaling == 60}
-              value={twdFormState.matchInventory.scaling}
+              checked={twdFormState[MATCH_INVENTORY][SCALING] == 60}
+              value={twdFormState[MATCH_INVENTORY][SCALING]}
               onChange={handleMatchInventoryScalingChange}
             />
             <Checkbox
               name="75"
               label="Scale to 75 cards"
-              checked={twdFormState.matchInventory.scaling == 75}
-              value={twdFormState.matchInventory.scaling}
+              checked={twdFormState[MATCH_INVENTORY][SCALING] == 75}
+              value={twdFormState[MATCH_INVENTORY][SCALING]}
               onChange={handleMatchInventoryScalingChange}
             />
           </div>
         </>
       )}
-      <TwdSearchFormDate value={twdFormState.date} onChange={handleChangeWithOpt} />
-      <TwdSearchFormPlayers value={twdFormState.players} onChange={handleChangeWithOpt} />
+      <TwdSearchFormDate value={twdFormState[DATE]} onChange={handleChangeWithOpt} />
+      <TwdSearchFormPlayers value={twdFormState[PLAYERS]} onChange={handleChangeWithOpt} />
       {cryptCardBase && (
-        <TwdSearchFormCrypt value={twdFormState.crypt} form={searchTwdForm.crypt} />
+        <TwdSearchFormCrypt value={twdFormState[CRYPT]} form={searchTwdForm[CRYPT]} />
       )}
       <div className="flex justify-end">
         <Checkbox
-          name="traits"
-          value="star"
+          name={TRAITS}
+          value={STAR}
           label="With Star"
-          checked={twdFormState.traits.star}
+          checked={twdFormState[TRAITS][STAR]}
           onChange={handleMultiChange}
         />
       </div>
       {libraryCardBase && (
-        <TwdSearchFormLibrary value={twdFormState.library} form={searchTwdForm.library} />
+        <TwdSearchFormLibrary value={twdFormState[LIBRARY]} form={searchTwdForm[LIBRARY]} />
       )}
-      <TwdSearchFormLibraryTotal value={twdFormState.libraryTotal} onChange={handleMultiChange} />
+      <TwdSearchFormLibraryTotal value={twdFormState[LIBRARY_TOTAL]} onChange={handleMultiChange} />
       <CryptSearchFormClan
-        value={twdFormState.clan}
+        value={twdFormState[CLAN]}
         onChange={handleMultiSelectChange}
         searchForm={searchTwdForm}
       />
       <div className="flex justify-end">
         <Checkbox
-          name="traits"
-          value="monoclan"
+          name={TRAITS}
+          value={MONOCLAN}
           label="Mono Clan"
-          checked={twdFormState.traits.monoclan}
+          checked={twdFormState[TRAITS][MONOCLAN]}
           onChange={handleMultiChange}
         />
       </div>
       <CryptSearchFormSect
-        value={twdFormState.sect}
+        value={twdFormState[SECT]}
         onChange={handleMultiSelectChange}
         searchForm={searchTwdForm}
       />
-      <TwdSearchFormCapacity value={twdFormState.capacity} onChange={handleMultiChange} />
+      <TwdSearchFormCapacity value={twdFormState[CAPACITY]} onChange={handleMultiChange} />
       <TwdSearchFormDisciplines
-        value={twdFormState.disciplines}
+        value={twdFormState[DISCIPLINES]}
         onChange={handleDisciplinesChange}
       />
-      <TwdSearchFormCardtypes value={twdFormState.cardtypes} onChange={handleChangeWithOpt} />
-      <TwdSearchFormEvent value={twdFormState.event} onChange={handleEventChange} />
-      <TwdSearchFormLocation value={twdFormState.location} form={searchTwdForm} />
-      <TwdSearchFormPlayer value={twdFormState.author} form={searchTwdForm} />
+      <TwdSearchFormCardtypes value={twdFormState[CARDTYPES]} onChange={handleChangeWithOpt} />
+      <TwdSearchFormEvent value={twdFormState[EVENT]} onChange={handleEventChange} />
+      <TwdSearchFormLocation value={twdFormState[LOCATION]} form={searchTwdForm} />
+      <TwdSearchFormPlayer value={twdFormState[AUTHOR]} form={searchTwdForm} />
       {isMobile && showFloatingButtons && (
         <>
           <ButtonFloatClose handleClose={handleClear} position="middle" />

@@ -15,7 +15,7 @@ const DeckMissingModal = ({ deck, missAllVtes, handleClose, inInventory }) => {
   const [showMissAll, setShowMissAll] = useState();
 
   return (
-    <Modal handleClose={handleClose} size="lg" title={deck.name} noPadding={isMobile}>
+    <Modal handleClose={handleClose} size="lg" title={deck[NAME]} noPadding={isMobile}>
       <FlexGapped className="flex-col">
         <FlexGapped className="max-sm:flex-col">
           <div className="basis-full md:basis-5/9">
@@ -28,7 +28,7 @@ const DeckMissingModal = ({ deck, missAllVtes, handleClose, inInventory }) => {
             >
               <DeckCrypt
                 deck={{
-                  crypt: showMissAll ? missAllVtes.crypt : deck.crypt,
+                  crypt: showMissAll ? missAllVtes[CRYPT] : deck[CRYPT],
                 }}
                 inMissing
               />
@@ -37,7 +37,7 @@ const DeckMissingModal = ({ deck, missAllVtes, handleClose, inInventory }) => {
           <div className="basis-full md:basis-4/9">
             <DeckLibrary
               deck={{
-                library: showMissAll ? missAllVtes.library : deck.library,
+                library: showMissAll ? missAllVtes[LIBRARY] : deck[LIBRARY],
               }}
               inMissing
             />
@@ -57,9 +57,9 @@ const DeckMissingModal = ({ deck, missAllVtes, handleClose, inInventory }) => {
           )}
           <DeckExportButton
             deck={{
-              name: deck.name,
-              crypt: showMissAll ? missAllVtes.crypt : deck.crypt,
-              library: showMissAll ? missAllVtes.library : deck.library,
+              name: deck[NAME],
+              crypt: showMissAll ? missAllVtes[CRYPT] : deck[CRYPT],
+              library: showMissAll ? missAllVtes[LIBRARY] : deck[LIBRARY],
             }}
             inMissing
           />

@@ -52,8 +52,8 @@ const DeckSelectorAndDisplay = () => {
         <>
           {playtestMode ||
           !(
-            Object.keys(deck.crypt).some((cardid) => cardid > 210000) ||
-            Object.keys(deck.library).some((cardid) => cardid > 110000)
+            Object.keys(deck[CRYPT]).some((cardid) => cardid > 210000) ||
+            Object.keys(deck[LIBRARY]).some((cardid) => cardid > 110000)
           ) ? (
             <>
               <DeckCrypt deck={deck} inSearch />

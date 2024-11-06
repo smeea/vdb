@@ -2,7 +2,7 @@ import ky from 'ky';
 import { redirect, defer } from 'react-router-dom';
 import { useDeckExport } from '@/hooks';
 import { getTextDisciplines } from '@/utils';
-import { DECK, DECKS, POOL_COST, BLOOD_COST, CARD_TEXT } from '@/constants';
+import { DECK, DECKS, POOL, BLOOD, TEXT } from '@/constants';
 import { deckStore } from '@/context';
 
 export const update = (deckid, field, value) => {
@@ -18,16 +18,16 @@ export const cardChange = (deckid, cardid, q) => {
 export const deckImport = (deck) => {
   const url = `${import.meta.env.VITE_API_URL}/deck`;
   const cards = {};
-  Object.values({ ...deck.crypt, ...deck.library }).forEach((card) => {
-    cards[card.c.Id] = card.q;
+  Object.values({ ...deck[CRYPT], ...deck[LIBRARY] }).forEach((card) => {
+    cards[card.c[ID]] = card.q;
   });
 
   return ky
     .post(url, {
       json: {
-        name: deck.name,
-        description: deck.description,
-        author: deck.author,
+        name: deck[NAME],
+        description: deck[DESCRIPTION],
+        author: deck[AUTHOR],
         cards: cards,
         anonymous: deck.anonymous,
       },
@@ -42,19 +42,19 @@ export const deckDelete = (deck) => {
 
 export const deckClone = (deck) => {
   const url = `${import.meta.env.VITE_API_URL}/deck`;
-  const name = `${deck.name} [by ${deck.author}]`;
+  const name = `${deck[NAME]} [by ${deck[AUTHOR]}]`;
   const cards = {};
-  Object.keys(deck.crypt).forEach((cardid) => (cards[cardid] = deck.crypt[cardid].q));
-  Object.keys(deck.library).forEach((cardid) => (cards[cardid] = deck.library[cardid].q));
+  Object.keys(deck[CRYPT]).forEach((cardid) => (cards[cardid] = deck[CRYPT][cardid].q));
+  Object.keys(deck[LIBRARY]).forEach((cardid) => (cards[cardid] = deck[LIBRARY][cardid].q));
 
   return ky
     .post(url, {
       json: {
         name: name,
-        description: deck.description,
-        author: deck.author,
+        description: deck[DESCRIPTION],
+        author: deck[AUTHOR],
         cards: cards,
-        tags: deck.tags,
+        tags: deck[TAGS],
       },
     })
     .json()
@@ -65,15 +65,15 @@ export const deckClone = (deck) => {
         deckStore[DECKS][data.deckid] = {
           branchName: null,
           branches: [],
-          crypt: { ...deck.crypt },
-          library: { ...deck.library },
+          crypt: { ...deck[CRYPT] },
+          library: { ...deck[LIBRARY] },
           deckid: data.deckid,
           master: null,
           name: name,
           timestamp: now.toUTCString(),
-          tags: deck.tags,
-          author: deck.author,
-          description: deck.description,
+          tags: deck[TAGS],
+          author: deck[AUTHOR],
+          description: deck[DESCRIPTION],
           isAuthor: true,
           isBranches: false,
         };
@@ -86,17 +86,17 @@ export const deckClone = (deck) => {
 export const deckSnapshot = (deck) => {
   const url = `${import.meta.env.VITE_API_URL}/deck`;
   const cards = {};
-  Object.keys(deck.crypt).forEach((cardid) => (cards[cardid] = deck.crypt[cardid].q));
-  Object.keys(deck.library).forEach((cardid) => (cards[cardid] = deck.library[cardid].q));
+  Object.keys(deck[CRYPT]).forEach((cardid) => (cards[cardid] = deck[CRYPT][cardid].q));
+  Object.keys(deck[LIBRARY]).forEach((cardid) => (cards[cardid] = deck[LIBRARY][cardid].q));
 
   return ky
     .post(url, {
       json: {
-        name: deck.name,
-        description: deck.description,
-        author: deck.author,
+        name: deck[NAME],
+        description: deck[DESCRIPTION],
+        author: deck[AUTHOR],
         cards: cards,
-        tags: deck.tags,
+        tags: deck[TAGS],
         anonymous: true,
       },
     })
@@ -166,10 +166,10 @@ export const branchCreate = (deck, branch) => {
       deckStore[DECKS][data[0].deckid] = {
         ...deck,
         deckid: data[0].deckid,
-        description: `[${now.toISOString().split('T')[0]}]\n${branch.description}`,
-        tags: branch.tags,
-        crypt: { ...branch.crypt },
-        library: { ...branch.library },
+        description: `[${now.toISOString().split('T')[0]}]\n${branch[DESCRIPTION]}`,
+        tags: branch[TAGS],
+        crypt: { ...branch[CRYPT] },
+        library: { ...branch[LIBRARY] },
         inventoryType: '',
         master: master,
         branchName: data[0].branchName,
@@ -187,8 +187,8 @@ export const publicSync = (deck, decks) => {
     .put(url)
     .json()
     .then(() => {
-      deckStore[DECK].crypt = { ...decks[deck.publicParent].crypt };
-      deckStore[DECK].library = { ...decks[deck.publicParent].library };
+      deckStore[DECK][CRYPT] = { ...decks[deck.publicParent][CRYPT] };
+      deckStore[DECK][LIBRARY] = { ...decks[deck.publicParent][LIBRARY] };
     });
 };
 
@@ -228,7 +228,7 @@ export const exportDecks = async (decks, format) => {
 
   if (format === 'xlsx') {
     const fetchPromises = Object.values(decks).map((deck) => {
-      let deckName = deck.name;
+      let deckName = deck[NAME];
       if (deck.branchName && (deck.master || deck.branches.length > 0)) {
         deckName += ` [${deck['branchName']}]`;
       }
@@ -250,7 +250,7 @@ export const exportDecks = async (decks, format) => {
     });
   } else {
     Object.values(decks).forEach((deck) => {
-      let deckName = deck.name;
+      let deckName = deck[NAME];
       if (deck.branchName && (deck.master || deck.branches.length > 0)) {
         deckName += ` [${deck['branchName']}]`;
       }
@@ -266,33 +266,33 @@ export const exportDecks = async (decks, format) => {
 
 export const exportXlsx = async (deck) => {
   const XLSX = await import('xlsx');
-  const crypt = Object.values(deck.crypt).map((card) => {
+  const crypt = Object.values(deck[CRYPT]).map((card) => {
     const c = card.c;
-    let name = c.Name;
-    if (c.Adv && c.Adv[0]) name += ' (ADV)';
-    if (c.New) name += ` (G${c.Group})`;
+    let name = c[NAME];
+    if (c[ADV] && c[ADV][0]) name += ' (ADV)';
+    if (c[NEW]) name += ` (G${c[GROUP]})`;
 
     return {
       Quantity: card.q,
       Card: name,
-      Disciplines: getTextDisciplines(c.Disciplines),
-      Capacity: c.Capacity,
-      Group: c.Group,
-      Clan: c.Clan,
-      Text: c[CARD_TEXT].replace(/ ?\[\w+\]/g, ''),
+      Disciplines: getTextDisciplines(c[DISCIPLINES]),
+      Capacity: c[CAPACITY],
+      Group: c[GROUP],
+      Clan: c[CLAN],
+      Text: c[TEXT].replace(/ ?\[\w+\]/g, ''),
     };
   });
 
-  const library = Object.values(deck.library).map((card) => {
+  const library = Object.values(deck[LIBRARY]).map((card) => {
     const c = card.c;
     return {
       Quantity: card.q,
-      Card: c.Name,
-      Type: c.Type,
-      Clan: c.Clan,
-      'Blood Cost': c[BLOOD_COST],
-      'Pool Cost': c[POOL_COST],
-      Text: c[CARD_TEXT].replace(/ ?\[\w+\]/g, ''),
+      Card: c[NAME],
+      Type: c[TYPE],
+      Clan: c[CLAN],
+      'Blood Cost': c[BLOOD],
+      'Pool Cost': c[POOL],
+      Text: c[TEXT].replace(/ ?\[\w+\]/g, ''),
     };
   });
 

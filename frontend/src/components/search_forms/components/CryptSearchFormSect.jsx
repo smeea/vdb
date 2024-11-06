@@ -13,7 +13,7 @@ import sects from '@/assets/data/sectsList.json';
 const CryptSearchFormSect = ({ value, searchForm, onChange }) => {
   const { isXWide } = useApp();
   const maxMenuHeight = isXWide ? 500 : 350;
-  const name = 'sect';
+  const name = SECT;
   const options = [
     ['ANY', ANY],
     ['Not Required', NOT_REQUIRED],

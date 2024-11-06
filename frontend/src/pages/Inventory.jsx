@@ -62,8 +62,8 @@ const Inventory = () => {
       }
       return;
     }
-    setSharedCrypt(response.crypt);
-    setSharedLibrary(response.library);
+    setSharedCrypt(response[CRYPT]);
+    setSharedLibrary(response[LIBRARY]);
   };
 
   useEffect(() => {

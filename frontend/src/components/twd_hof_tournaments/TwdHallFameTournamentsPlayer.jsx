@@ -25,7 +25,7 @@ const TwdHallFameTournamentsPlayer = ({ name, decks }) => {
   };
 
   const byDate = (a, b) => {
-    return b.date - a.date;
+    return b[DATE] - a[DATE];
   };
 
   const starsQty = getStars(decks);

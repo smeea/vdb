@@ -18,12 +18,12 @@ import { useApp } from '@/context';
 import {
   AKA,
   BANNED,
-  BLOOD_COST,
-  BURN_OPTION,
+  BLOOD,
+  BURN,
   CLAN,
   DISCIPLINE,
   PLAYTEST,
-  POOL_COST,
+  POOL,
   REQUIREMENT,
   TRIFLE,
 } from '@/constants';
@@ -31,9 +31,9 @@ import {
 const Requirements = ({ card }) => {
   return (
     <div className="flex items-center gap-3">
-      {(card[BLOOD_COST] || card[POOL_COST]) && (
+      {(card[BLOOD] || card[POOL]) && (
         <div className="flex items-center justify-between">
-          <ResultLibraryCost valuePool={card[POOL_COST]} valueBlood={card[BLOOD_COST]} />
+          <ResultLibraryCost valuePool={card[POOL]} valueBlood={card[BLOOD]} />
         </div>
       )}
       <div className="flex items-center gap-3">
@@ -48,7 +48,7 @@ const Requirements = ({ card }) => {
             )}
           </div>
         )}
-        {card[BURN_OPTION] && <ResultMiscImage value={BURN_OPTION} />}
+        {card[BURN] && <ResultMiscImage value={BURN} />}
         {card[TRIFLE] && <ResultMiscImage value={TRIFLE} />}
       </div>
     </div>
@@ -63,9 +63,9 @@ const ResultLibraryLayoutText = ({ card, handleClose, noClose, inPopover }) => {
     card[CLAN] ||
     card[DISCIPLINE] ||
     card[TRIFLE] ||
-    card[BURN_OPTION] ||
-    card[BLOOD_COST] ||
-    card[POOL_COST];
+    card[BURN] ||
+    card[BLOOD] ||
+    card[POOL];
 
   return (
     <div className="flex flex-col gap-3">
@@ -78,7 +78,7 @@ const ResultLibraryLayoutText = ({ card, handleClose, noClose, inPopover }) => {
         >
           <div className="flex items-center justify-between gap-2 whitespace-nowrap">
             <div className="flex items-center gap-2">
-              <ResultLibraryTypeImage value={card.Type} />
+              <ResultLibraryTypeImage value={card[TYPE]} />
               <div className="font-bold">
                 <ResultName card={card} />
               </div>
@@ -98,7 +98,7 @@ const ResultLibraryLayoutText = ({ card, handleClose, noClose, inPopover }) => {
       </div>
       <Hr />
       <div>
-        <ResultLayoutTextText cardid={card.Id} />
+        <ResultLayoutTextText cardid={card[ID]} />
       </div>
       <Hr />
       {hasRequirements && (

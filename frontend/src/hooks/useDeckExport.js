@@ -1,8 +1,8 @@
 import { getTextDisciplines, cryptSort, librarySort } from '@/utils';
 import {
-  ASCII_NAME,
+  ASCII,
   CAPACITY,
-  CARD_TEXT,
+  TEXT,
   JOL,
   LACKEY,
   MASTER,
@@ -20,8 +20,8 @@ const getCryptTitle = (crypt) => {
   const capacityList = [];
 
   Object.values(crypt).forEach((card) => {
-    cryptTotalCap += card.c.Capacity * card.q;
-    for (let i = 0; i < card.q; i++) capacityList.push(card.c.Capacity);
+    cryptTotalCap += card.c[CAPACITY] * card.q;
+    for (let i = 0; i < card.q; i++) capacityList.push(card.c[CAPACITY]);
   });
   capacityList.sort((a, b) => a - b);
   const cryptTotalCards = capacityList.length;
@@ -49,11 +49,11 @@ const getCryptText = (crypt) => {
   crypt.forEach((card) => {
     const c = card.c;
     const q = card.q;
-    let name = c.Name;
-    if (c.Adv && c.Adv[0]) {
+    let name = c[NAME];
+    if (c[ADV] && c[ADV][0]) {
       name += ' (ADV)';
     }
-    const disciplines = getTextDisciplines(c.Disciplines);
+    const disciplines = getTextDisciplines(c[DISCIPLINES]);
 
     if (q.toString().length > maxQtyLength) {
       maxQtyLength = q.toString().length;
@@ -61,11 +61,11 @@ const getCryptText = (crypt) => {
     if (name.length > maxNameLength) {
       maxNameLength = name.length;
     }
-    if (c.Title.length > maxTitleLength) {
-      maxTitleLength = c.Title.length;
+    if (c[TITLE].length > maxTitleLength) {
+      maxTitleLength = c[TITLE].length;
     }
-    if (c.Capacity.toString().length > maxCapacityLength) {
-      maxCapacityLength = c.Capacity.toString().length;
+    if (c[CAPACITY].toString().length > maxCapacityLength) {
+      maxCapacityLength = c[CAPACITY].toString().length;
     }
     if (disciplines.length > maxDisciplinesLength) {
       maxDisciplinesLength = disciplines.length;
@@ -76,24 +76,24 @@ const getCryptText = (crypt) => {
     const q = card.q;
     const c = card.c;
 
-    let name = c.Name;
-    if (c.Adv && c.Adv[0]) {
+    let name = c[NAME];
+    if (c[ADV] && c[ADV][0]) {
       name += ' (ADV)';
     }
-    const disciplines = getTextDisciplines(c.Disciplines);
+    const disciplines = getTextDisciplines(c[DISCIPLINES]);
 
     const quantitySpaces = maxQtyLength - q.toString().length;
     const nameSpaces = maxNameLength - name.length + 3;
     const disSpaces = maxDisciplinesLength - disciplines.length + 3;
-    const capacitySpaces = maxCapacityLength - c.Capacity.toString().length;
-    const titleSpaces = maxTitleLength - c.Title.length + 3;
+    const capacitySpaces = maxCapacityLength - c[CAPACITY].toString().length;
+    const titleSpaces = maxTitleLength - c[TITLE].length + 3;
 
     result += `${q}x${' '.repeat(quantitySpaces)} `;
     result += `${name}${' '.repeat(nameSpaces)}`;
-    result += `${' '.repeat(capacitySpaces)}${c.Capacity} `;
+    result += `${' '.repeat(capacitySpaces)}${c[CAPACITY]} `;
     result += `${disciplines}${' '.repeat(disSpaces)}`;
-    result += `${c.Title}${' '.repeat(titleSpaces)}`;
-    result += `${c.Clan}:${c['Group']}\n`;
+    result += `${c[TITLE]}${' '.repeat(titleSpaces)}`;
+    result += `${c[CLAN]}:${c['Group']}\n`;
   });
 
   return result;
@@ -108,9 +108,9 @@ const getLibraryText = (library, format) => {
 
   Object.values(library).forEach((card) => {
     libraryTotal += card.q;
-    const cardType = card.c.Type;
-    const cardName = card.c.Name;
-    if (card.c.Type === MASTER && card.c[CARD_TEXT].toLowerCase().includes(TRIFLE.toLowerCase())) {
+    const cardType = card.c[TYPE];
+    const cardName = card.c[NAME];
+    if (card.c[TYPE] === MASTER && card.c[TEXT].toLowerCase().includes(TRIFLE.toLowerCase())) {
       triflesTotal += card.q;
     }
 
@@ -160,12 +160,12 @@ const getLibraryText = (library, format) => {
 
 const exportJol = (deck) => {
   let result = '';
-  const sortedCrypt = cryptSort(Object.values(deck.crypt), NAME);
-  const sortedLibrary = librarySort(Object.values(deck.library), NAME);
+  const sortedCrypt = cryptSort(Object.values(deck[CRYPT]), NAME);
+  const sortedLibrary = librarySort(Object.values(deck[LIBRARY]), NAME);
 
   sortedCrypt.forEach((card) => {
     let name = card.c[NAME];
-    if (card.c.Adv && card.c.Adv[0]) {
+    if (card.c[ADV] && card.c[ADV][0]) {
       name += ' (ADV)';
     }
     if (card.c['New']) {
@@ -184,21 +184,21 @@ const exportJol = (deck) => {
 
 const exportLackey = (deck) => {
   let result = '';
-  const sortedCrypt = cryptSort(Object.values(deck.crypt), NAME);
-  const sortedLibrary = librarySort(Object.values(deck.library), NAME);
+  const sortedCrypt = cryptSort(Object.values(deck[CRYPT]), NAME);
+  const sortedLibrary = librarySort(Object.values(deck[LIBRARY]), NAME);
 
   sortedLibrary.forEach((card) => {
     const spaces = 8 - card.q.toString().length;
     result += `${card.q}${' '.repeat(spaces)}`;
-    result += `${card.c[ASCII_NAME].replace(/\//g, '')}\n`;
+    result += `${card.c[ASCII].replace(/\//g, '')}\n`;
   });
 
   result += 'Crypt:\n';
 
   sortedCrypt.forEach((card) => {
     const spaces = 8 - card.q.toString().length;
-    let name = card.c[ASCII_NAME];
-    if (card.c.Adv && card.c.Adv[0]) {
+    let name = card.c[ASCII];
+    if (card.c[ADV] && card.c[ADV][0]) {
       name += ' (ADV)';
     }
     if (card.c['New']) {
@@ -214,7 +214,7 @@ const exportLackey = (deck) => {
 
 const exportTwd = (deck, withHints) => {
   let result = '';
-  const sortedCrypt = cryptSort(Object.values(deck.crypt), QUANTITY);
+  const sortedCrypt = cryptSort(Object.values(deck[CRYPT]), QUANTITY);
 
   if (withHints) {
     result += `# REPLACE BELOW LINES WITH YOUR EVENT DATA
@@ -227,12 +227,12 @@ March 25th 2023                                    # Event Date
 Otso Saariluoma                                    # Winner
 https://www.vekn.net/event-calendar/event/10546    # Event Link
 
-Deck Name: ${deck.name}${' '.repeat(39 - deck.name.length)} # OPTIONAL
+Deck Name: ${deck[NAME]}${' '.repeat(39 - deck[NAME].length)} # OPTIONAL
 Created by: Author Name                            # OPTIONAL, only if different from Winner
 Description:                                       # OPTIONAL
 ${
-  deck.description.replace(/\n|\s/g, '').length > 0
-    ? deck.description
+  deck[DESCRIPTION].replace(/\n|\s/g, '').length > 0
+    ? deck[DESCRIPTION]
     : `Put your descriptiopn here.
 Empty lines in description are OK. Can take multiple lines.
 Each line can be as long as you need it.
@@ -253,57 +253,57 @@ One empty line between Description and Crypt is necessary.
 
 -- [Scores]
 
-Deck Name: ${deck.name}
+Deck Name: ${deck[NAME]}
 Description:
 [Description]
 `;
   }
 
   result += '\n';
-  result += `${getCryptTitle(deck.crypt)}\n`;
-  result += '-'.repeat(getCryptTitle(deck.crypt).length);
+  result += `${getCryptTitle(deck[CRYPT])}\n`;
+  result += '-'.repeat(getCryptTitle(deck[CRYPT]).length);
   result += '\n';
   result += getCryptText(sortedCrypt);
   result += '\n';
-  result += getLibraryText(deck.library, TWD);
+  result += getLibraryText(deck[LIBRARY], TWD);
 
   return result;
 };
 
 const exportText = (deck) => {
   let result = '';
-  const sortedCrypt = cryptSort(Object.values(deck.crypt), CAPACITY);
+  const sortedCrypt = cryptSort(Object.values(deck[CRYPT]), CAPACITY);
 
-  result += `Deck Name: ${deck.name}\n`;
-  result += `Author: ${deck.author}\n`;
-  if (deck.description) {
-    result += `Description: ${deck.description}\n`;
+  result += `Deck Name: ${deck[NAME]}\n`;
+  result += `Author: ${deck[AUTHOR]}\n`;
+  if (deck[DESCRIPTION]) {
+    result += `Description: ${deck[DESCRIPTION]}\n`;
   }
   result += '\n';
-  result += `${getCryptTitle(deck.crypt)}\n`;
-  result += '='.repeat(getCryptTitle(deck.crypt).length);
+  result += `${getCryptTitle(deck[CRYPT])}\n`;
+  result += '='.repeat(getCryptTitle(deck[CRYPT]).length);
   result += '\n';
   result += getCryptText(sortedCrypt);
   result += '\n';
-  result += getLibraryText(deck.library, TEXT);
+  result += getLibraryText(deck[LIBRARY], TEXT);
 
   return result;
 };
 
 const useDeckExport = (deck, format) => {
-  const crypt = Object.values(deck.crypt)
+  const crypt = Object.values(deck[CRYPT])
     .filter((card) => card.q > 0)
     .reduce((obj, card) => {
       return Object.assign(obj, {
-        [card.c.Id]: deck.crypt[card.c.Id],
+        [card.c[ID]]: deck[CRYPT][card.c[ID]],
       });
     }, {});
 
-  const library = Object.values(deck.library)
+  const library = Object.values(deck[LIBRARY])
     .filter((card) => card.q > 0)
     .reduce((obj, card) => {
       return Object.assign(obj, {
-        [card.c.Id]: deck.library[card.c.Id],
+        [card.c[ID]]: deck[LIBRARY][card.c[ID]],
       });
     }, {});
 

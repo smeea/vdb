@@ -19,13 +19,13 @@ const AnalyzeTournamentInfo = ({ info, decks }) => {
       <table>
         <tbody>
           <TwdResultDescriptionTextTr title={isMobile ? <TrophyFill /> : <>Event:</>}>
-            {info.event}
+            {info[EVENT]}
           </TwdResultDescriptionTextTr>
           <TwdResultDescriptionTextTr title={isMobile ? <GeoAltFill /> : <>Place:</>}>
-            {info.location}
+            {info[LOCATION]}
           </TwdResultDescriptionTextTr>
           <TwdResultDescriptionTextTr title={isMobile ? <CalendarEvent /> : <>Date:</>}>
-            {info.date}
+            {info[DATE]}
           </TwdResultDescriptionTextTr>
           <TwdResultDescriptionTextTr title={isMobile ? <TagFill /> : <>Format:</>}>
             {info.rounds - 1} Rounds + Final

@@ -19,12 +19,12 @@ const CardsDesktop = ({ card, openRandomCard, handleChange, handleSetCard }) => 
       <FlexGapped className="basis-full flex-col">
         {cryptCardBase && libraryCardBase && (
           <div>
-            <CardSelect autoFocus={!isMobile || !card?.Id} onChange={handleChange} value={null} />
+            <CardSelect autoFocus={!isMobile || !card?.[ID]} onChange={handleChange} value={null} />
           </div>
         )}
         {card && (
           <>
-            {playtestMode || card.Id < 110000 || (card.Id > 200000 && card.Id < 210000) ? (
+            {playtestMode || card[ID] < 110000 || (card[ID] > 200000 && card[ID] < 210000) ? (
               <div className="flex border-bgSecondary dark:border-bgSecondaryDark">
                 <div>
                   <CardImage card={card} />

@@ -51,7 +51,7 @@ const TwdResultCryptTable = ({ crypt }) => {
           {sortedCards.map((card) => {
             return (
               <TwdResultCryptTableRow
-                key={card.c.Id}
+                key={card.c[ID]}
                 handleClick={handleClick}
                 card={card}
                 shouldShowModal={shouldShowModal}

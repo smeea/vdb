@@ -39,7 +39,7 @@ const useInventoryCrypt = (cards = {}, category = OK, compact, onlyNotes) => {
           return true;
         })
         .forEach((cardid) => {
-          const clan = cards[cardid].c.Clan;
+          const clan = cards[cardid].c[CLAN];
           const softUsedMax = getSoftMax(usedCrypt[SOFT][cardid]);
           const hardUsedTotal = getHardTotal(usedCrypt[HARD][cardid]);
           const miss = softUsedMax + hardUsedTotal - cards[cardid].q;
@@ -66,7 +66,7 @@ const useInventoryCrypt = (cards = {}, category = OK, compact, onlyNotes) => {
       Object.keys(usedCrypt[SOFT])
         .filter((cardid) => cardid < 210000 && !cards[cardid])
         .forEach((cardid) => {
-          const clan = cryptCardBase[cardid].Clan;
+          const clan = cryptCardBase[cardid][CLAN];
 
           if (category !== OK && !onlyNotes) {
             cardsByClan[clan][cardid] = {
@@ -94,7 +94,7 @@ const useInventoryCrypt = (cards = {}, category = OK, compact, onlyNotes) => {
       Object.keys(usedCrypt[HARD])
         .filter((cardid) => cardid < 210000 && !cards[cardid])
         .forEach((cardid) => {
-          const clan = cryptCardBase[cardid].Clan;
+          const clan = cryptCardBase[cardid][CLAN];
 
           if (category !== OK && !onlyNotes) {
             cardsByClan[clan][cardid] = {

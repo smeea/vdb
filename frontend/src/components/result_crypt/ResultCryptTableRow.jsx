@@ -21,7 +21,7 @@ const ResultCryptTableRow = ({
 }) => {
   const { addMode, inventoryMode } = useApp();
   const deck = useSnapshot(deckStore)[DECK];
-  const inDeck = deck?.crypt[card.Id]?.q || 0;
+  const inDeck = deck?.[CRYPT][card[ID]]?.q || 0;
   const isEditable = deck?.isAuthor && !deck?.isPublic && !deck?.isFrozen;
 
   const { isSwiped, swipeHandlers } = useSwipe(
@@ -41,12 +41,12 @@ const ResultCryptTableRow = ({
     >
       {inLimited ? (
         <td className="min-w-[22px]">
-          <AccountLimitedDelCard cardid={card.Id} target={inLimited} />
+          <AccountLimitedDelCard cardid={card[ID]} target={inLimited} />
         </td>
       ) : (
         (inRecommendation ? isEditable : isEditable && addMode) && (
           <td className="min-w-[22px]">
-            <ButtonAddCard cardid={card.Id} deckid={deck.deckid} card={card} inDeck={inDeck} />
+            <ButtonAddCard cardid={card[ID]} deckid={deck.deckid} card={card} inDeck={inDeck} />
           </td>
         )
       )}

@@ -24,11 +24,13 @@ const TwdCardsHistory = () => {
         const cardBase = cardid > 200000 ? cryptCardBase : libraryCardBase;
         target[cardid] = { ...value[cardid], ...cardBase[cardid] };
 
-        Object.keys(cardBase[cardid].Set)
+        Object.keys(cardBase[cardid][SET])
           .filter((set) => set !== POD)
           .forEach((set) => {
             const d =
-              set === PROMO ? Object.keys(cardBase[cardid].Set.Promo)[0] : setsAndPrecons[set].date;
+              set === PROMO
+                ? Object.keys(cardBase[cardid][SET].Promo)[0]
+                : setsAndPrecons[set][DATE];
 
             if (!target[cardid].release_date || target[cardid].release_date > d) {
               target[cardid].release_date = d;
@@ -40,9 +42,9 @@ const TwdCardsHistory = () => {
             players[value[cardid].player] = { crypt: 0, library: 0 };
           }
           if (cardid > 200000) {
-            players[value[cardid].player].crypt += 1;
+            players[value[cardid].player][CRYPT] += 1;
           } else {
-            players[value[cardid].player].library += 1;
+            players[value[cardid].player][LIBRARY] += 1;
           }
         }
       });

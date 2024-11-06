@@ -9,9 +9,9 @@ const AnalyzeTournamentChartsRankingClan = ({ info, decks, searchResults }) => {
     const d = {};
 
     Object.values(decks).forEach((deck) => {
-      const position = info.players - deck.score.rank;
-      const inSearch = Object.values(searchResults).some((d) => d.author === deck.author);
-      const clan = getClan(deck.crypt) || 'Multi';
+      const position = info.players - deck.score[RANK];
+      const inSearch = Object.values(searchResults).some((d) => d[AUTHOR] === deck[AUTHOR]);
+      const clan = getClan(deck[CRYPT]) || 'Multi';
 
       if (!d[clan]) {
         d[clan] = [];
@@ -22,13 +22,13 @@ const AnalyzeTournamentChartsRankingClan = ({ info, decks, searchResults }) => {
 
       d[clan][position] = {
         clan: clan,
-        crypt: deck.crypt,
-        library: deck.library,
-        tags: deck.tags,
+        crypt: deck[CRYPT],
+        library: deck[LIBRARY],
+        tags: deck[TAGS],
         inSearch: inSearch,
         index: -1,
         value: 1,
-        rank: deck.score.rank,
+        rank: deck.score[RANK],
       };
     });
 

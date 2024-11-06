@@ -16,24 +16,15 @@ import {
 import { getSwipedBg, getHardTotal, getSoftMax } from '@/utils';
 import { useApp, inventoryStore, usedStore, limitedStore, inventoryCardChange } from '@/context';
 import { useSwipe } from '@/hooks';
-import {
-  IS_FROZEN,
-  SOFT,
-  HARD,
-  LIBRARY,
-  TRIFLE,
-  POOL_COST,
-  BLOOD_COST,
-  BURN_OPTION,
-} from '@/constants';
+import { IS_FROZEN, SOFT, HARD, LIBRARY, TRIFLE, POOL, BLOOD, BURN } from '@/constants';
 
 const InventoryLibraryTableRow = ({ card, compact, newFocus, inShared, handleClick }) => {
   const { isMobile, isNarrow, limitedMode } = useApp();
   const usedLibrary = useSnapshot(usedStore)[LIBRARY];
   const limitedLibrary = useSnapshot(limitedStore)[LIBRARY];
-  const inLimited = limitedLibrary[card.c.Id];
-  const softUsedMax = getSoftMax(usedLibrary[SOFT][card.c.Id]);
-  const hardUsedTotal = getHardTotal(usedLibrary[HARD][card.c.Id]);
+  const inLimited = limitedLibrary[card.c[ID]];
+  const softUsedMax = getSoftMax(usedLibrary[SOFT][card.c[ID]]);
+  const hardUsedTotal = getHardTotal(usedLibrary[HARD][card.c[ID]]);
   const isEditable = !useSnapshot(inventoryStore)[IS_FROZEN];
 
   const { isSwiped, swipeHandlers } = useSwipe(
@@ -78,7 +69,7 @@ const InventoryLibraryTableRow = ({ card, compact, newFocus, inShared, handleCli
         </div>
       )}
       <div className="flex min-w-[40px] justify-center" onClick={() => handleClick(card.c)}>
-        <ResultLibraryTypeImage value={card.c.Type} />
+        <ResultLibraryTypeImage value={card.c[TYPE]} />
       </div>
       <div className="flex w-full" onClick={() => handleClick(card.c)}>
         <ConditionalTooltip
@@ -94,40 +85,40 @@ const InventoryLibraryTableRow = ({ card, compact, newFocus, inShared, handleCli
       </div>
       {isMobile ? (
         <div className="flex min-w-[82px] justify-between" onClick={() => handleClick(card.c)}>
-          {(card.c[BLOOD_COST] || card.c[POOL_COST]) && (
+          {(card.c[BLOOD] || card.c[POOL]) && (
             <div
-              className={twMerge('flex min-w-[22px] justify-center', card.c[BLOOD_COST] && 'pb-1')}
+              className={twMerge('flex min-w-[22px] justify-center', card.c[BLOOD] && 'pb-1')}
               onClick={() => handleClick(card.c)}
             >
-              <ResultLibraryCost valueBlood={card.c[BLOOD_COST]} valuePool={card.c[POOL_COST]} />
+              <ResultLibraryCost valueBlood={card.c[BLOOD]} valuePool={card.c[POOL]} />
             </div>
           )}
           <div className="flex w-full items-center justify-end" onClick={() => handleClick(card.c)}>
-            {card.c.Clan && <ResultLibraryClan value={card.c.Clan} />}
-            {card.c.Discipline && card.c.Clan && '+'}
-            {card.c.Discipline && <ResultLibraryDisciplines value={card.c.Discipline} />}
+            {card.c[CLAN] && <ResultLibraryClan value={card.c[CLAN]} />}
+            {card.c[DISCIPLINE] && card.c[CLAN] && '+'}
+            {card.c[DISCIPLINE] && <ResultLibraryDisciplines value={card.c[DISCIPLINE]} />}
           </div>
         </div>
       ) : (
         <>
           <div
-            className={twMerge('flex min-w-[30px] justify-center', card.c[BLOOD_COST] && 'pb-1')}
+            className={twMerge('flex min-w-[30px] justify-center', card.c[BLOOD] && 'pb-1')}
             onClick={() => handleClick(card.c)}
           >
-            {(card.c[BLOOD_COST] || card.c[POOL_COST]) && (
-              <ResultLibraryCost valueBlood={card.c[BLOOD_COST]} valuePool={card.c[POOL_COST]} />
+            {(card.c[BLOOD] || card.c[POOL]) && (
+              <ResultLibraryCost valueBlood={card.c[BLOOD]} valuePool={card.c[POOL]} />
             )}
           </div>
           <div className="flex min-w-[82px] justify-center" onClick={() => handleClick(card.c)}>
-            {card.c.Clan && <ResultLibraryClan value={card.c.Clan} />}
-            {card.c.Discipline && card.c.Clan && '+'}
-            {card.c.Discipline && <ResultLibraryDisciplines value={card.c.Discipline} />}
+            {card.c[CLAN] && <ResultLibraryClan value={card.c[CLAN]} />}
+            {card.c[DISCIPLINE] && card.c[CLAN] && '+'}
+            {card.c[DISCIPLINE] && <ResultLibraryDisciplines value={card.c[DISCIPLINE]} />}
           </div>
         </>
       )}
       {!isNarrow && (
         <div className="flex min-w-[30px] justify-center" onClick={() => handleClick(card.c)}>
-          {card.c[BURN_OPTION] && <ResultMiscImage value={BURN_OPTION} />}
+          {card.c[BURN] && <ResultMiscImage value={BURN} />}
           {card.c[TRIFLE] && <ResultMiscImage value={TRIFLE} />}
         </div>
       )}

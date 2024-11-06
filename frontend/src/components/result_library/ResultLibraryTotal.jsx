@@ -16,10 +16,10 @@ const ResultLibraryTotal = ({
   let total = 0;
 
   cards.map((card) => {
-    if (byTypes[card.Type]) {
-      byTypes[card.Type] += 1;
+    if (byTypes[card[TYPE]]) {
+      byTypes[card[TYPE]] += 1;
     } else {
-      byTypes[card.Type] = 1;
+      byTypes[card[TYPE]] = 1;
     }
     total += 1;
   });

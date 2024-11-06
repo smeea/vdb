@@ -54,7 +54,7 @@ const ResultLibraryRequirements = ({ value }) => {
   ];
   const validSects = ['camarilla', 'sabbat', 'laibon', 'anarch', 'independent'];
 
-  const capacityReq = requirements.find((i) => i.includes('capacity'));
+  const capacityReq = requirements.find((i) => i.includes(CAPACITY));
   const titleReq = requirements.filter((i) => validTitles.includes(i));
   const sectReq = requirements.filter((i) => validSects.includes(i));
 

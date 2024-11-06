@@ -2,7 +2,7 @@ import React from 'react';
 import { ButtonGroup } from '@/components';
 
 const TwdSearchFormCapacity = ({ value, onChange }) => {
-  const name = 'capacity';
+  const name = CAPACITY;
   const options = ['1-4', '4-6', '6-8', '8-11'];
 
   return (

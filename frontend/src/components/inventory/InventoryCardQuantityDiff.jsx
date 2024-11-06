@@ -8,7 +8,7 @@ const InventoryCardQuantityDiff = ({ card, softUsedMax, hardUsedTotal }) => {
   return (
     <ConditionalTooltip
       placement="bottom"
-      overlay={<UsedPopover cardid={card.c.Id} />}
+      overlay={<UsedPopover cardid={card.c[ID]} />}
       disabled={isMobile}
     >
       <div

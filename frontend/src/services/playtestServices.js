@@ -17,7 +17,7 @@ export const changePlaytester = (user, isAdd = true) => {
 export const getReports = async (value, isPrecon) => {
   const url = `${import.meta.env.VITE_API_URL}/playtest/export/${
     isPrecon ? PRECONS : CARDS
-  }/${value.Id}`;
+  }/${value[ID]}`;
 
   return ky.get(url).json();
 };
@@ -60,7 +60,7 @@ export const exportXlsx = async (reports, users, cryptCardBase, libraryCardBase,
         User: username,
         'Is Played': report.isPlayed ? 'Y' : 'N',
         Score: report.score,
-        Report: report.text,
+        Report: report[TEXT],
         Games: user.games,
         Liaison: user.liaison,
       };
@@ -88,7 +88,7 @@ export const exportXlsx = async (reports, users, cryptCardBase, libraryCardBase,
     if (!preconDecks[`PLAYTEST:${id}`]) return;
     const sheet = getSheet(reportsData);
     sheet['!cols'] = [{ wch: 15 }, { wch: 8 }, { wch: 8 }, { wch: 60 }, { wch: 8 }, { wch: 15 }];
-    const sheetName = `P ${preconDecks[`PLAYTEST:${id}`].name.replace(/\W+/g, ' ').substring(0, 20)}`;
+    const sheetName = `P ${preconDecks[`PLAYTEST:${id}`][NAME].replace(/\W+/g, ' ').substring(0, 20)}`;
     XLSX.utils.book_append_sheet(workbook, sheet, sheetName);
   });
 

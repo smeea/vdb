@@ -1,6 +1,6 @@
 import React from 'react';
 import { Radio } from '@/components';
-import { MY, ANY, MY_NONPUBLIC, FAVORITES } from '@/constants';
+import { MY, ANY, SRC, MY_NONPUBLIC, FAVORITES } from '@/constants';
 
 const PdaSearchFormSrcSelector = ({ value, onChange }) => {
   return (
@@ -16,7 +16,7 @@ const PdaSearchFormSrcSelector = ({ value, onChange }) => {
           checked={value == i[0]}
           onChange={onChange}
           value={i[1]}
-          name="src"
+          name={SRC}
           id={i[0]}
         />
       ))}
