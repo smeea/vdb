@@ -58,7 +58,7 @@ const TwdHallFameTournamentsPlayer = ({ name, decks }) => {
           {decks.toSorted(byDate).map((deck) => {
             return (
               <TwdHallFameDeckHeader
-                key={deck.deckid}
+                key={deck[DECKID]}
                 deck={{ ...deck, author: name }}
                 isStar={testStar(deck['event'])}
               />

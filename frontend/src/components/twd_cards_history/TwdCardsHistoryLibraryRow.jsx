@@ -48,7 +48,7 @@ const TwdCardsHistoryLibraryRow = ({ card, players, handleClick }) => {
         {card[DISCIPLINE] && <ResultLibraryDisciplines value={card[DISCIPLINE]} />}
       </div>
       <div
-        className={twMerge('flex w-full items-center justify-start', !card.deckid && 'font-bold')}
+        className={twMerge('flex w-full items-center justify-start', !card[DECKID] && 'font-bold')}
         onClick={() => handleClick(card)}
       >
         <ConditionalTooltip
@@ -67,7 +67,7 @@ const TwdCardsHistoryLibraryRow = ({ card, players, handleClick }) => {
           {card[BURN] && <ResultMiscImage value={BURN} />}
         </div>
       )}
-      <TwdCardsHistoryCardAppearance card={card} byPlayer={players[card.player]} />
+      <TwdCardsHistoryCardAppearance card={card} byPlayer={players[card[PLAYER]]} />
     </>
   );
 };

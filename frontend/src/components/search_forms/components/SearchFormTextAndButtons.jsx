@@ -42,7 +42,7 @@ const SearchFormTextAndButtons = ({
 
   const options = [
     {
-      value: 'name',
+      value: NAME,
       label: 'Only in Name',
     },
     {

@@ -28,10 +28,10 @@ const AnalyzeTournamentInfo = ({ info, decks }) => {
             {info[DATE]}
           </TwdResultDescriptionTextTr>
           <TwdResultDescriptionTextTr title={isMobile ? <TagFill /> : <>Format:</>}>
-            {info.rounds - 1} Rounds + Final
+            {info[ROUNDS] - 1} Rounds + Final
           </TwdResultDescriptionTextTr>
           <TwdResultDescriptionTextTr title={isMobile ? <PersonFill /> : <>Players:</>}>
-            {info.players}
+            {info[PLAYERS]}
           </TwdResultDescriptionTextTr>
           <TwdResultDescriptionTextTr
             title={
@@ -47,7 +47,7 @@ const AnalyzeTournamentInfo = ({ info, decks }) => {
             <div>
               {Object.keys(decks).length}{' '}
               <div className="inline text-midGray dark:text-midGrayDark">
-                ({Math.round((Object.keys(decks).length / info.players) * 100)}
+                ({Math.round((Object.keys(decks).length / info[PLAYERS]) * 100)}
                 %)
               </div>
             </div>

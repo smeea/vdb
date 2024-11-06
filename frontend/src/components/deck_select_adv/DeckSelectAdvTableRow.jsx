@@ -49,7 +49,7 @@ const DeckSelectAdvTableRow = ({
     if (onClick) {
       onClick(deck);
     } else {
-      navigate(`/decks/${deck.deckid}`);
+      navigate(`/decks/${deck[DECKID]}`);
     }
     handleClose();
   };
@@ -61,8 +61,8 @@ const DeckSelectAdvTableRow = ({
       {!(short || isMobile) && (
         <td className="min-w-[30px]">
           <Checkbox
-            checked={selectedDecks[deck.deckid] ?? false}
-            onChange={() => toggleSelect(deck.deckid)}
+            checked={selectedDecks[deck[DECKID]] ?? false}
+            onChange={() => toggleSelect(deck[DECKID])}
             className="justify-center"
           />
         </td>
@@ -71,8 +71,8 @@ const DeckSelectAdvTableRow = ({
         <td>
           <div className="flex justify-center">
             <Button
-              disabled={deck.isFrozen}
-              onClick={() => deckToggleInventoryState(deck.deckid)}
+              disabled={deck[IS_FROZEN]}
+              onClick={() => deckToggleInventoryState(deck[DECKID])}
               title={
                 deck[INVENTORY_TYPE] === S
                   ? 'Flexible'
@@ -112,11 +112,12 @@ const DeckSelectAdvTableRow = ({
             {limitedMode && hasLimited && <ResultLegalIcon />}
             {hasPlaytest && <ResultLegalIcon type={PLAYTEST} />}
             {hasIllegalDate && <ResultLegalIcon type={LEGAL} value={hasIllegalDate} />}
-            {deck.branchName && (deck.master || (deck.branches && deck.branches.length > 0)) && (
-              <div className="inline" title={deck.branchName}>
-                {deck.branchName}
-              </div>
-            )}
+            {deck[BRANCH_NAME] &&
+              (deck[MASTER] || (deck[BRANCHES] && deck[BRANCHES].length > 0)) && (
+                <div className="inline" title={deck[BRANCH_NAME]}>
+                  {deck[BRANCH_NAME]}
+                </div>
+              )}
           </div>
         </div>
       </td>
@@ -124,12 +125,12 @@ const DeckSelectAdvTableRow = ({
         <td className="min-w-[30px] sm:min-w-[45px]">
           <div
             className="flex justify-center"
-            onMouseEnter={() => setShowDeck(deck.deckid)}
+            onMouseEnter={() => setShowDeck(deck[DECKID])}
             onMouseLeave={() => setShowDeck(false)}
           >
             <Tooltip
               size="xl"
-              show={showDeck === deck.deckid}
+              show={showDeck === deck[DECKID]}
               overlay={<DeckPreview deck={deck} setShow={setShowDeck} />}
             >
               <EyeFill />
@@ -142,7 +143,7 @@ const DeckSelectAdvTableRow = ({
           className="min-w-[100px] cursor-pointer whitespace-nowrap text-center sm:min-w-[105px]"
           onClick={handleClick}
         >
-          {new Date(deck.timestamp).toISOString().split('T')[0]}
+          {new Date(deck[TIMESTAMP]).toISOString().split('T')[0]}
         </td>
       )}
       {!short && (
@@ -163,7 +164,7 @@ const DeckSelectAdvTableRow = ({
                 <>
                   <DeckPublicToggleButton deck={deck} inAdv />
                   <DeckCopyUrlButton deck={deck} noText isAuthor />
-                  {revFilter && (deck.master || (deck.branches && deck.branches.length > 0)) ? (
+                  {revFilter && (deck[MASTER] || (deck[BRANCHES] && deck[BRANCHES].length > 0)) ? (
                     <DeckBranchDeleteButton noText deck={deck} />
                   ) : (
                     <DeckDeleteButton noText deck={deck} />

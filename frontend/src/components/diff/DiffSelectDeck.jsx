@@ -79,11 +79,11 @@ const DiffSelectDeck = ({ decks, deck, deckidFrom, deckidTo, target, title }) =>
         >
           <div className={deck?.isBranches && source == `${target}-my` ? 'w-3/4' : 'w-full'}>
             {source == `${target}-my` && decks ? (
-              <DeckSelectMy handleSelect={handleSelect} deckid={deck?.deckid} />
+              <DeckSelectMy handleSelect={handleSelect} deckid={deck?.[DECKID]} />
             ) : source == `${target}-recent` ? (
-              <DeckSelectRecent handleSelect={handleSelect} deckid={deck?.deckid} />
+              <DeckSelectRecent handleSelect={handleSelect} deckid={deck?.[DECKID]} />
             ) : (
-              <DeckSelectPrecon handleSelect={handleSelect} deckid={deck?.deckid} />
+              <DeckSelectPrecon handleSelect={handleSelect} deckid={deck?.[DECKID]} />
             )}
           </div>
           {source == `${target}-my` && decks && deck?.isBranches && (

@@ -48,7 +48,7 @@ const InventoryAddPreconModal = ({ handleClose }) => {
   const sortedDecks = useMemo(() => {
     if (Object.values(preconDecks).length > 0) {
       let filtered = Object.values(preconDecks).filter((i) => {
-        return !i.deckid.includes(PLAYTEST);
+        return !i[DECKID].includes(PLAYTEST);
       });
 
       if (nameFilter) {
@@ -59,7 +59,7 @@ const InventoryAddPreconModal = ({ handleClose }) => {
 
       if (setFilter) {
         filtered = filtered.filter((deck) => {
-          const set = deck.deckid.split(':')[0];
+          const set = deck[DECKID].split(':')[0];
           if (setsAndPrecons[set][NAME].toLowerCase().indexOf(setFilter.toLowerCase()) >= 0)
             return true;
         });
@@ -121,7 +121,7 @@ const InventoryAddPreconModal = ({ handleClose }) => {
         </thead>
         <tbody>
           {sortedDecks.map((deck) => {
-            return <InventoryAddPreconRow key={deck.deckid} deck={deck} />;
+            return <InventoryAddPreconRow key={deck[DECKID]} deck={deck} />;
           })}
         </tbody>
       </table>

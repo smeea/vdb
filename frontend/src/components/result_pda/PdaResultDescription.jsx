@@ -17,7 +17,7 @@ const PdaResultDescription = ({ deck }) => {
       </div>
       <div className="flex justify-between gap-1 max-lg:flex-col max-lg:p-1 lg:basis-full">
         <div className="basis-full">
-          <TwdOpenDeckButton deckid={deck.deckid} />
+          <TwdOpenDeckButton deckid={deck[DECKID]} />
         </div>
         {username && (
           <>

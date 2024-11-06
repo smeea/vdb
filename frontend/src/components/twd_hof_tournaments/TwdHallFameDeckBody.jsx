@@ -10,7 +10,7 @@ import { useApp } from '@/context';
 
 const TwdHallFameDeckBody = ({ deck }) => {
   const { cryptCardBase, libraryCardBase, isMobile } = useApp();
-  const url = `${import.meta.env.VITE_API_URL}/deck/${deck.deckid}`;
+  const url = `${import.meta.env.VITE_API_URL}/deck/${deck[DECKID]}`;
   const { value } = useFetch(url, {}, []);
   const cards = useDeck(value?.cards, cryptCardBase, libraryCardBase);
 

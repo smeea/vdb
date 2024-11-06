@@ -6,7 +6,7 @@ import { useApp, inventoryUpdate } from '@/context';
 
 const InventoryFreezeButton = ({ isFrozen, className, roundedStyle, borderStyle }) => {
   const { isDesktop } = useApp();
-  const handleClick = () => inventoryUpdate('isFrozen', !isFrozen);
+  const handleClick = () => inventoryUpdate(IS_FROZEN, !isFrozen);
 
   return (
     <div className="flex items-center gap-2 text-fgPrimary dark:text-fgPrimaryDark">

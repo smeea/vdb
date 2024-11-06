@@ -42,7 +42,7 @@ const PdaResult = ({ results, setResults }) => {
           />
           <div className="flex flex-col gap-4">
             {showedDecks.map((d) => {
-              return <TwdDeck key={d.deckid} deck={d} inPda />;
+              return <TwdDeck key={d[DECKID]} deck={d} inPda />;
             })}
           </div>
         </div>

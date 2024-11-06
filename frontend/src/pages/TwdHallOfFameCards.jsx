@@ -23,8 +23,8 @@ const TwdHallOfFameCards = () => {
       Object.keys(value).forEach((cardid) => {
         const cardBase = cardid > 200000 ? cryptCardBase : libraryCardBase;
         const card = cardBase[cardid];
-        const player = value[cardid].player;
-        const deckid = value[cardid].deckid;
+        const player = value[cardid][PLAYER];
+        const deckid = value[cardid][DECKID];
 
         let releaseDate = null;
 

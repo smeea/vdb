@@ -97,7 +97,7 @@ const TwdCheckEvent = ({ deckData }) => {
 
   const veknEvent = {
     name: value?.event_name,
-    format: value?.rounds,
+    format: value?.[ROUNDS],
     location: location,
     date: date,
     players: `${value?.attendance} players`,
@@ -138,13 +138,15 @@ const TwdCheckEvent = ({ deckData }) => {
           <div className={deckData[DATE] === veknEvent[DATE] ? '' : 'underline decoration-fgRed'}>
             {veknEvent[DATE]}
           </div>
-          <div className={deckData.format === veknEvent.format ? '' : 'underline decoration-fgRed'}>
-            {veknEvent.format}
+          <div
+            className={deckData[FORMAT] === veknEvent[FORMAT] ? '' : 'underline decoration-fgRed'}
+          >
+            {veknEvent[FORMAT]}
           </div>
           <div
-            className={deckData.players === veknEvent.players ? '' : 'underline decoration-fgRed'}
+            className={deckData[PLAYERS] === veknEvent[PLAYERS] ? '' : 'underline decoration-fgRed'}
           >
-            {veknEvent.players}
+            {veknEvent[PLAYERS]}
           </div>
           <br />
           <div>

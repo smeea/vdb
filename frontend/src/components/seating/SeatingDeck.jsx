@@ -10,8 +10,8 @@ const SeatingDeck = ({ toggle, i, deck, disabled, remove }) => {
       <Toggle isOn={deck.state} handleClick={() => toggle(i)} size="sm" disabled={disabled}>
         <div className="inline">{deck[NAME]}</div>
       </Toggle>
-      {deck.deckid ? (
-        <Link className="p-1" target="_blank" to={`/decks/${deck.deckid}`}>
+      {deck[DECKID] ? (
+        <Link className="p-1" target="_blank" to={`/decks/${deck[DECKID]}`}>
           <PlayFill width="20" height="20" viewBox="0 0 16 16" />
         </Link>
       ) : (

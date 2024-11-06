@@ -27,7 +27,7 @@ const InventoryAddDeckRow = ({ deck, allTagsOptions }) => {
     <tr className="row-bg border-y border-bgSecondary dark:border-bgSecondaryDark">
       {!isMobile && (
         <td>
-          <Button onClick={() => deckToggleInventoryState(deck.deckid)}>
+          <Button onClick={() => deckToggleInventoryState(deck[DECKID])}>
             <div
               title={
                 deck[INVENTORY_TYPE] === S
@@ -53,9 +53,9 @@ const InventoryAddDeckRow = ({ deck, allTagsOptions }) => {
           title={deck[NAME]}
         >
           {deck[NAME]}
-          {deck.branchName && (deck.master || (deck.branches && deck.branches.length > 0)) && (
-            <div className="inline" title={deck.branchName}>
-              {deck.branchName}
+          {deck[BRANCH_NAME] && (deck[MASTER] || (deck[BRANCHES] && deck[BRANCHES].length > 0)) && (
+            <div className="inline" title={deck[BRANCH_NAME]}>
+              {deck[BRANCH_NAME]}
             </div>
           )}
         </div>
@@ -64,12 +64,12 @@ const InventoryAddDeckRow = ({ deck, allTagsOptions }) => {
         <td className="min-w-[30px] sm:min-w-[45px]">
           <div
             className="flex justify-center"
-            onMouseEnter={() => setShowDeck(deck.deckid)}
+            onMouseEnter={() => setShowDeck(deck[DECKID])}
             onMouseLeave={() => setShowDeck(false)}
           >
             <Tooltip
               size="xl"
-              show={showDeck === deck.deckid}
+              show={showDeck === deck[DECKID]}
               overlay={<DeckPreview deck={deck} setShow={setShowDeck} />}
             >
               <EyeFill />
@@ -79,7 +79,7 @@ const InventoryAddDeckRow = ({ deck, allTagsOptions }) => {
       )}
       {!isMobile && (
         <td className="min-w-[100px] whitespace-nowrap">
-          {new Date(deck.timestamp).toISOString().split('T')[0]}
+          {new Date(deck[TIMESTAMP]).toISOString().split('T')[0]}
         </td>
       )}
       {!isMobile && (

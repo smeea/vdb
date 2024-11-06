@@ -173,7 +173,7 @@ const DeckProxyButton = ({ missingCrypt, missingLibrary, deck, inDiff }) => {
       }
     });
 
-    pdf.save(`${deck['name']}.pdf`);
+    pdf.save(`${deck[NAME]}.pdf`);
     setIsLoading(false);
   };
 

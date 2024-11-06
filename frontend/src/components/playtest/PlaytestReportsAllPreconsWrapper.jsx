@@ -7,7 +7,7 @@ const PlaytestReportsAllPreconsWrapper = ({ reports, maxSameScore }) => {
   const products = useMemo(
     () =>
       Object.values(preconDecks || {}).filter((i) => {
-        return i.deckid.includes('PLAYTEST:');
+        return i[DECKID].includes('PLAYTEST:');
       }),
     [preconDecks],
   );
@@ -15,7 +15,7 @@ const PlaytestReportsAllPreconsWrapper = ({ reports, maxSameScore }) => {
   return (
     <FlexGapped className="flex-col">
       {products.map((i, idx) => {
-        const id = i.deckid.replace('PLAYTEST:', '');
+        const id = i[DECKID].replace('PLAYTEST:', '');
         return (
           <PlaytestReportsAllCardOrPrecon
             key={id}

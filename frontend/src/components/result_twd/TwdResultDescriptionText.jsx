@@ -51,7 +51,7 @@ const TwdResultDescriptionText = ({ deck }) => {
             </div>
           </TwdResultDescriptionTextTr>
           <TwdResultDescriptionTextTr title={isMobile ? <TagFill /> : <>Deck:</>}>
-            {deck['name']}
+            {deck[NAME]}
           </TwdResultDescriptionTextTr>
         </tbody>
       </table>

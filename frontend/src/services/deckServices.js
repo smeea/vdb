@@ -36,8 +36,8 @@ export const deckImport = (deck) => {
 };
 
 export const deckDelete = (deck) => {
-  const url = `${import.meta.env.VITE_API_URL}/deck/${deck.deckid}`;
-  return ky.delete(url).then(() => delete deckStore[DECKS][deck.master ?? deck.deckid]);
+  const url = `${import.meta.env.VITE_API_URL}/deck/${deck[DECKID]}`;
+  return ky.delete(url).then(() => delete deckStore[DECKS][deck[MASTER] ?? deck[DECKID]]);
 };
 
 export const deckClone = (deck) => {
@@ -62,12 +62,12 @@ export const deckClone = (deck) => {
       if (data.error === undefined) {
         const now = new Date();
 
-        deckStore[DECKS][data.deckid] = {
+        deckStore[DECKS][data[DECKID]] = {
           branchName: null,
           branches: [],
           crypt: { ...deck[CRYPT] },
           library: { ...deck[LIBRARY] },
-          deckid: data.deckid,
+          deckid: data[DECKID],
           master: null,
           name: name,
           timestamp: now.toUTCString(),
@@ -78,7 +78,7 @@ export const deckClone = (deck) => {
           isBranches: false,
         };
 
-        return data.deckid;
+        return data[DECKID];
       }
     });
 };
@@ -101,7 +101,7 @@ export const deckSnapshot = (deck) => {
       },
     })
     .json()
-    .then((data) => data.deckid);
+    .then((data) => data[DECKID]);
 };
 
 export const branchesImport = (masterId, branches) => {
@@ -114,8 +114,8 @@ export const branchesImport = (masterId, branches) => {
     .json()
     .then((data) => {
       data.forEach((branch, idx) => {
-        branches[idx].deckid = branch.deckid;
-        branches[idx].branchName = branch.branchName;
+        branches[idx][DECKID] = branch[DECKID];
+        branches[idx][BRANCH_NAME] = branch[BRANCH_NAME];
       });
 
       return branches;
@@ -126,20 +126,20 @@ export const branchDelete = (deckid, decks) => {
   const url = `${import.meta.env.VITE_API_URL}/deck/${deckid}/branch`;
 
   return ky.delete(url).then(() => {
-    let masterId = decks[deckid].master || null;
-    const branches = masterId ? [...decks[masterId].branches] : [...decks[deckid].branches];
+    let masterId = decks[deckid][MASTER] || null;
+    const branches = masterId ? [...decks[masterId][BRANCHES]] : [...decks[deckid][BRANCHES]];
 
     if (masterId) {
       branches.splice(branches.indexOf(deckid), 1);
-      deckStore[DECKS][masterId].branches = branches;
+      deckStore[DECKS][masterId][BRANCHES] = branches;
       deckStore[DECKS][masterId].isBranches = branches.length > 0;
     } else {
       masterId = branches.pop();
-      deckStore[DECKS][masterId].branches = branches;
+      deckStore[DECKS][masterId][BRANCHES] = branches;
       deckStore[DECKS][masterId].isBranches = branches.length > 0;
-      deckStore[DECKS][masterId].master = null;
+      deckStore[DECKS][masterId][MASTER] = null;
       branches.map((b) => {
-        deckStore[DECKS][b].master = masterId;
+        deckStore[DECKS][b][MASTER] = masterId;
       });
     }
 
@@ -149,40 +149,40 @@ export const branchDelete = (deckid, decks) => {
 };
 
 export const branchCreate = (deck, branch) => {
-  const master = deck.master ?? deck.deckid;
+  const master = deck[MASTER] ?? deck[DECKID];
   const url = `${import.meta.env.VITE_API_URL}/deck/${master}/branch`;
 
   return ky
-    .post(url, { json: { deckid: branch.deckid } })
+    .post(url, { json: { deckid: branch[DECKID] } })
     .json()
     .then((data) => {
       const now = new Date();
-      deckStore[DECKS][master].master = null;
+      deckStore[DECKS][master][MASTER] = null;
       deckStore[DECKS][master].isBranches = true;
-      deckStore[DECKS][master].branches = deckStore[DECKS][master].branches
-        ? [...deckStore[DECKS][master].branches, data[0].deckid]
-        : [data[0].deckid];
+      deckStore[DECKS][master][BRANCHES] = deckStore[DECKS][master][BRANCHES]
+        ? [...deckStore[DECKS][master][BRANCHES], data[0][DECKID]]
+        : [data[0][DECKID]];
 
-      deckStore[DECKS][data[0].deckid] = {
+      deckStore[DECKS][data[0][DECKID]] = {
         ...deck,
-        deckid: data[0].deckid,
+        deckid: data[0][DECKID],
         description: `[${now.toISOString().split('T')[0]}]\n${branch[DESCRIPTION]}`,
         tags: branch[TAGS],
         crypt: { ...branch[CRYPT] },
         library: { ...branch[LIBRARY] },
         inventoryType: '',
         master: master,
-        branchName: data[0].branchName,
+        branchName: data[0][BRANCH_NAME],
         isPublic: false,
         isBranches: true,
         timestamp: now.toUTCString(),
       };
-      return data[0].deckid;
+      return data[0][DECKID];
     });
 };
 
 export const publicSync = (deck, decks) => {
-  const url = `${import.meta.env.VITE_API_URL}/pda/${deck.deckid}`;
+  const url = `${import.meta.env.VITE_API_URL}/pda/${deck[DECKID]}`;
   return ky
     .put(url)
     .json()
@@ -193,18 +193,18 @@ export const publicSync = (deck, decks) => {
 };
 
 export const publicCreateOrDelete = (deck) => {
-  const url = `${import.meta.env.VITE_API_URL}/pda/${deck.deckid}`;
+  const url = `${import.meta.env.VITE_API_URL}/pda/${deck[DECKID]}`;
 
   const isPublished = !!(deck.publicParent || deck.publicChild);
-  const parentId = deck.publicParent ?? deck.deckid;
+  const parentId = deck.publicParent ?? deck[DECKID];
 
   return ky(url, {
     method: isPublished ? 'DELETE' : 'POST',
   })
     .json()
     .then((data) => {
-      deckStore[DECKS][parentId].publicChild = isPublished ? null : data.deckid;
-      return data.deckid;
+      deckStore[DECKS][parentId].publicChild = isPublished ? null : data[DECKID];
+      return data[DECKID];
     });
 };
 
@@ -226,11 +226,11 @@ export const exportDecks = async (decks, format) => {
   const zip = JSzip();
   const date = new Date().toISOString().split('T')[0];
 
-  if (format === 'xlsx') {
+  if (format === XLSX) {
     const fetchPromises = Object.values(decks).map((deck) => {
       let deckName = deck[NAME];
-      if (deck.branchName && (deck.master || deck.branches.length > 0)) {
-        deckName += ` [${deck['branchName']}]`;
+      if (deck[BRANCH_NAME] && (deck[MASTER] || deck[BRANCHES].length > 0)) {
+        deckName += ` [${deck[BRANCH_NAME]}]`;
       }
 
       return { deckName: deckName, file: exportXlsx(deck) };
@@ -251,8 +251,8 @@ export const exportDecks = async (decks, format) => {
   } else {
     Object.values(decks).forEach((deck) => {
       let deckName = deck[NAME];
-      if (deck.branchName && (deck.master || deck.branches.length > 0)) {
-        deckName += ` [${deck['branchName']}]`;
+      if (deck[BRANCH_NAME] && (deck[MASTER] || deck[BRANCHES].length > 0)) {
+        deckName += ` [${deck[BRANCH_NAME]}]`;
       }
 
       zip.folder(`Decks ${date} [${format}]`).file(`${deckName}.txt`, useDeckExport(deck, format));
@@ -302,7 +302,7 @@ export const exportXlsx = async (deck) => {
   const workbook = XLSX.utils.book_new();
   XLSX.utils.book_append_sheet(workbook, cryptSheet, 'Crypt');
   XLSX.utils.book_append_sheet(workbook, librarySheet, 'Library');
-  return XLSX.write(workbook, { type: 'array', bookType: 'xlsx' });
+  return XLSX.write(workbook, { type: 'array', bookType: XLSX });
 };
 
 const saveFile = async (file, name) => {
@@ -311,7 +311,7 @@ const saveFile = async (file, name) => {
 };
 
 export const deckLoader = async ({ params }) => {
-  const deckid = params.deckid;
+  const deckid = params[DECKID];
 
   if (deckid === 'deck' || deckid.includes(':')) return null;
   if (deckid.length == 32) {

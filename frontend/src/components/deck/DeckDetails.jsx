@@ -13,7 +13,8 @@ import { useApp } from '@/context';
 const DeckDetails = ({ deck, allTagsOptions }) => {
   const { isPlaytester, isMobile } = useApp();
   const [folded, setFolded] = useState(!isMobile);
-  const playtestPrecon = deck.deckid.includes('PLAYTEST:') && deck.deckid.replace('PLAYTEST:', '');
+  const playtestPrecon =
+    deck[DECKID].includes('PLAYTEST:') && deck[DECKID].replace('PLAYTEST:', '');
 
   return (
     <div className="flex w-full flex-col gap-2">
@@ -47,7 +48,7 @@ const DeckDetails = ({ deck, allTagsOptions }) => {
             <div className="basis-full sm:basis-6/12">
               <DeckChangeDescription deck={deck} folded={folded} setFolded={setFolded} />
             </div>
-            {(deck[TAGS]?.length > 0 || deck.isAuthor || !deck.isPublic) && (
+            {(deck[TAGS]?.length > 0 || deck[IS_AUTHOR] || !deck[IS_PUBLIC]) && (
               <div className="basis-full sm:z-20 sm:basis-6/12">
                 <DeckTags deck={deck} allTagsOptions={allTagsOptions} isBordered />
               </div>

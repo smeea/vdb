@@ -17,13 +17,13 @@ const DeckDeleteButton = ({ deck, noText }) => {
   const getLastDeckExcept = () => {
     const lastDecks = Object.values(decks)
       .filter((d) => {
-        if (d.branches && d.branches.includes(deck.deckid)) return false;
-        if (d.master) return false;
-        if (d.deckid === deck.deckid) return false;
+        if (d[BRANCHES] && d[BRANCHES].includes(deck[DECKID])) return false;
+        if (d[MASTER]) return false;
+        if (d[DECKID] === deck[DECKID]) return false;
         return true;
       })
       .toSorted(byTimestamp)
-      .map((d) => d.deckid);
+      .map((d) => d[DECKID]);
 
     return lastDecks[0] || null;
   };

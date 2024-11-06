@@ -71,7 +71,7 @@ const Review = () => {
       ...deckData,
       crypt: cardsData[CRYPT],
       library: cardsData[LIBRARY],
-      isBranches: !!(deckData.master || deckData.branches?.length > 0),
+      isBranches: !!(deckData[MASTER] || deckData[BRANCHES]?.length > 0),
       isPublic: !!deckData.publicParent,
       isNonEditable: false,
     };
@@ -161,7 +161,7 @@ const Review = () => {
 
   useEffect(() => {
     if (cryptCardBase && libraryCardBase && deckid) {
-      if (!deckFrom || deckFrom.deckid != deckid) {
+      if (!deckFrom || deckFrom[DECKID] != deckid) {
         getDeck();
       }
     }
@@ -171,7 +171,7 @@ const Review = () => {
     if (deckFrom) setError(false);
   }, [deckFrom]);
 
-  const parentId = deckFrom?[DESCRIPTION].replace(
+  const parentId = deckFrom?.[DESCRIPTION].replace(
     `Review of ${import.meta.env.VITE_BASE_URL}/decks/`,
     '',
   );
@@ -228,12 +228,12 @@ const Review = () => {
         <>
           <DeckNewCardFloating
             target={CRYPT}
-            deckid={deckFrom?.deckid}
+            deckid={deckFrom?.[DECKID]}
             cards={Object.values(deckFrom?.[CRYPT] ?? {})}
           />
           <DeckNewCardFloating
             target={LIBRARY}
-            deckid={deckFrom?.deckid}
+            deckid={deckFrom?.[DECKID]}
             cards={Object.values(deckFrom?.[LIBRARY] ?? {})}
           />
         </>

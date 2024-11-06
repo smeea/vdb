@@ -66,11 +66,11 @@ const DeckImport = ({ setShowInfo, isOnlyNew }) => {
         setShowFloatingButtons(true);
         deckAdd({
           ...d,
-          deckid: data.deckid,
+          deckid: data[DECKID],
           crypt: {},
           library: {},
         });
-        navigate(`/decks/${data.deckid}`);
+        navigate(`/decks/${data[DECKID]}`);
       })
       .catch(() => setError(true));
   };
@@ -128,9 +128,9 @@ const DeckImport = ({ setShowInfo, isOnlyNew }) => {
         .then((data) => {
           deckAdd({
             ...d,
-            deckid: data.deckid,
+            deckid: data[DECKID],
           });
-          navigate(`/decks/${data.deckid}`);
+          navigate(`/decks/${data[DECKID]}`);
           setBadCards(d.badCards);
           setShowMenuButtons(false);
           setShowFloatingButtons(true);
@@ -154,7 +154,7 @@ const DeckImport = ({ setShowInfo, isOnlyNew }) => {
           />
           {badCards.length > 0 && (
             <DeckImportBadCardsModal
-              deckid={deck?.deckid}
+              deckid={deck?.[DECKID]}
               badCards={badCards}
               setBadCards={setBadCards}
             />

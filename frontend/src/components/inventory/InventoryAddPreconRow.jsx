@@ -15,7 +15,7 @@ const InventoryAddPreconRow = ({ deck }) => {
   const { isDesktop, isMobile } = useApp();
   const [showDeck, setShowDeck] = useState();
   const inInventory = useDeckInInventory(deck);
-  const [set, precon] = deck.deckid.split(':');
+  const [set, precon] = deck[DECKID].split(':');
   const clans = setsAndPrecons[set][PRECONS][precon][CLAN].split('/');
 
   return (
@@ -43,12 +43,12 @@ const InventoryAddPreconRow = ({ deck }) => {
         <td className="min-w-[30px] sm:min-w-[45px]">
           <div
             className="flex justify-center"
-            onMouseEnter={() => setShowDeck(deck.deckid)}
+            onMouseEnter={() => setShowDeck(deck[DECKID])}
             onMouseLeave={() => setShowDeck(false)}
           >
             <Tooltip
               size="xl"
-              show={showDeck === deck.deckid}
+              show={showDeck === deck[DECKID]}
               overlay={<DeckPreview deck={deck} setShow={setShowDeck} />}
             >
               <EyeFill />

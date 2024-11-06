@@ -17,7 +17,7 @@ const DeckSelectorAndDisplay = () => {
   const { playtestMode, isDesktop, addMode, toggleAddMode } = useApp();
   const { deck, decks } = useSnapshot(deckStore);
 
-  const isBranches = deck ? deck.master || (deck.branches && deck.branches.length > 0) : null;
+  const isBranches = deck ? deck[MASTER] || (deck[BRANCHES] && deck[BRANCHES].length > 0) : null;
 
   const handleSelect = (e) => {
     setDeck(decks[e.value]);
@@ -29,14 +29,14 @@ const DeckSelectorAndDisplay = () => {
         {addMode && (
           <>
             <div className="w-full">
-              <DeckSelectMy handleSelect={handleSelect} deckid={deck?.deckid ?? null} />
+              <DeckSelectMy handleSelect={handleSelect} deckid={deck?.[DECKID] ?? null} />
             </div>
             {isBranches && (
               <div className="min-w-[90px]">
                 <DeckBranchSelect handleSelect={handleSelect} deck={deck} />
               </div>
             )}
-            {deck?.isAuthor && !deck?.isPublic && <DeckFreezeButton deck={deck} />}
+            {deck?.[IS_AUTHOR] && !deck?.[IS_PUBLIC] && <DeckFreezeButton deck={deck} />}
           </>
         )}
         {isDesktop && (

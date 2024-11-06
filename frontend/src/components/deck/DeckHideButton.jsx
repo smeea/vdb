@@ -6,15 +6,15 @@ import { ButtonIconed } from '@/components';
 
 const DeckHideButton = ({ deck }) => {
   const handleClick = () => {
-    deckUpdate(deck.deckid, 'isHidden', !deck.isHidden);
+    deckUpdate(deck[DECKID], IS_HIDDEN, !deck[IS_HIDDEN]);
   };
 
   return (
     <ButtonIconed
       onClick={handleClick}
-      title={`${deck.isHidden ? 'Hidden' : 'Shown'} in Deck Selector`}
+      title={`${deck[IS_HIDDEN] ? 'Hidden' : 'Shown'} in Deck Selector`}
       icon={
-        deck.isHidden ? (
+        deck[IS_HIDDEN] ? (
           <LightbulbOffFill width="16" height="23" viewBox="0 0 16 16" />
         ) : (
           <LightbulbFill width="16" height="23" viewBox="0 0 16 16" />

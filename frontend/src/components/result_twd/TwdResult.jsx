@@ -42,7 +42,7 @@ const TwdResult = ({ results, setResults }) => {
           />
           <div className="flex flex-col gap-4">
             {showedDecks.map((d) => {
-              return <TwdDeck key={d.deckid} deck={d} />;
+              return <TwdDeck key={d[DECKID]} deck={d} />;
             })}
           </div>
         </div>

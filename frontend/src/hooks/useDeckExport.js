@@ -5,7 +5,7 @@ import {
   TEXT,
   JOL,
   LACKEY,
-  MASTER,
+  TYPE_MASTER,
   NAME,
   QUANTITY,
   TEXT,
@@ -110,7 +110,7 @@ const getLibraryText = (library, format) => {
     libraryTotal += card.q;
     const cardType = card.c[TYPE];
     const cardName = card.c[NAME];
-    if (card.c[TYPE] === MASTER && card.c[TEXT].toLowerCase().includes(TRIFLE.toLowerCase())) {
+    if (card.c[TYPE] === TYPE_MASTER && card.c[TEXT].toLowerCase().includes(TRIFLE.toLowerCase())) {
       triflesTotal += card.q;
     }
 
@@ -134,7 +134,7 @@ const getLibraryText = (library, format) => {
   cardtypeSortedFull.forEach((type) => {
     if (byType[type]) {
       let typeTitle = `${type} (${byTypeTotal[type]}`;
-      if (type === MASTER && triflesTotal) {
+      if (type === TYPE_MASTER && triflesTotal) {
         typeTitle += `; ${triflesTotal} trifle`;
       }
       typeTitle += ')\n';

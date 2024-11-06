@@ -10,7 +10,7 @@ const DeckChangeName = ({ deck }) => {
   const { isPublic, isAuthor, isFrozen, isNonEditable } = deck;
   const [value, setValue] = useState(deck[NAME] || '');
   const isEditable = isAuthor && !isPublic && !isFrozen && !isNonEditable;
-  const isTwd = deck.deckid !== 'deck' && deck.deckid.length !== 9 && !deck.deckid.includes(':');
+  const isTwd = deck[DECKID] !== 'deck' && deck[DECKID].length !== 9 && !deck[DECKID].includes(':');
 
   useEffect(() => {
     if (value !== deck[NAME]) setValue(deck[NAME] ?? '');
@@ -21,7 +21,7 @@ const DeckChangeName = ({ deck }) => {
   };
 
   const deckChangeName = () => {
-    deckUpdate(deck.deckid, 'name', value);
+    deckUpdate(deck[DECKID], NAME, value);
   };
 
   const handleSubmit = (event) => {

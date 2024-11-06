@@ -14,12 +14,12 @@ const DeckSelectMy = ({ deckid, handleSelect }) => {
   const limitedCards = useSnapshot(limitedStore);
 
   const byTimestamp = (a, b) => {
-    return new Date(decks[b].timestamp) - new Date(decks[a].timestamp);
+    return new Date(decks[b][TIMESTAMP]) - new Date(decks[a][TIMESTAMP]);
   };
 
   const options = useMemo(() => {
     return Object.keys(decks)
-      .filter((i) => !decks[i].master && !decks[i].isHidden)
+      .filter((i) => !decks[i][MASTER] && !decks[i][IS_HIDDEN])
       .toSorted(byTimestamp)
       .map((i, idx) => {
         const diffDays = Math.round(
@@ -59,7 +59,7 @@ const DeckSelectMy = ({ deckid, handleSelect }) => {
                   {clan && <ResultPreconClan clan={clan} />}
                 </div>
                 <div className="inline">
-                  {decks[i]['name'].slice(0, inventoryMode ? (isWide ? 28 : 23) : 32)}
+                  {decks[i][NAME].slice(0, inventoryMode ? (isWide ? 28 : 23) : 32)}
                 </div>
               </div>
 
@@ -96,8 +96,8 @@ const DeckSelectMy = ({ deckid, handleSelect }) => {
   const getValue = () => {
     if (decks[deckid]) {
       const v = options.find((obj) => {
-        if (decks[deckid].master) {
-          return obj.value === decks[deckid].master;
+        if (decks[deckid][MASTER]) {
+          return obj.value === decks[deckid][MASTER];
         } else {
           return obj.value === deckid;
         }

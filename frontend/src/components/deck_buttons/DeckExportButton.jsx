@@ -56,8 +56,8 @@ const DeckExportButton = ({ deck, inMissing, inInventory }) => {
 
   const saveDeck = async (format) => {
     let deckName = deck[NAME];
-    if (deck.branchName && (deck.master || deck.branches.length > 0)) {
-      deckName += ` [${deck['branchName']}]`;
+    if (deck[BRANCH_NAME] && (deck[MASTER] || deck[BRANCHES].length > 0)) {
+      deckName += ` [${deck[BRANCH_NAME]}]`;
     }
     let file;
 

@@ -77,7 +77,7 @@ const ResultLayoutText = ({
             target={PDA}
             handleClose={noClose ? null : handleClose}
           />
-          {card[ID] < 200000 && card?.[TYPE] !== 'Master' && (
+          {card[ID] < 200000 && card?.[TYPE] !== TYPE_MASTER && (
             <ButtonPlayableBy card={card} handleClose={noClose ? null : handleClose} />
           )}
           {!isMobile && <ButtonToggleShowImage />}

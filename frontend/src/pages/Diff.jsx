@@ -63,7 +63,7 @@ const Diff = () => {
       ...deckData,
       crypt: cardsData[CRYPT],
       library: cardsData[LIBRARY],
-      isBranches: !!(deckData.master || deckData.branches?.length > 0),
+      isBranches: !!(deckData[MASTER] || deckData[BRANCHES]?.length > 0),
       isPublic: !!deckData.publicParent,
     };
 
@@ -73,7 +73,7 @@ const Diff = () => {
 
   useEffect(() => {
     if (cryptCardBase && libraryCardBase && decks !== undefined) {
-      if (deckidFrom && deck?.deckid != deckidFrom) {
+      if (deckidFrom && deck?.[DECKID] != deckidFrom) {
         if (decks[deckidFrom]) {
           setDeck(decks[deckidFrom]);
         } else if (deckidFrom.includes(':')) {
@@ -92,7 +92,7 @@ const Diff = () => {
 
   useEffect(() => {
     if (cryptCardBase && libraryCardBase && decks !== undefined) {
-      if (deckidTo && deckTo?.deckid != deckidTo) {
+      if (deckidTo && deckTo?.[DECKID] != deckidTo) {
         if (decks[deckidTo]) {
           setDeckTo(decks[deckidTo]);
         } else if (deckidTo.includes(':')) {
@@ -111,11 +111,11 @@ const Diff = () => {
 
   useEffect(() => {
     if (deck) setErrorFrom(false);
-  }, [deck?.deckid]);
+  }, [deck?.[DECKID]]);
 
   useEffect(() => {
     if (deckTo) setErrorTo(false);
-  }, [deckTo?.deckid]);
+  }, [deckTo?.[DECKID]]);
 
   const handleClose = () => {
     setShowMenuButtons(false);
@@ -177,12 +177,12 @@ const Diff = () => {
         <>
           <DeckNewCardFloating
             target={CRYPT}
-            deckid={deck.deckid}
+            deckid={deck[DECKID]}
             cards={Object.values(deck[CRYPT])}
           />
           <DeckNewCardFloating
             target={LIBRARY}
-            deckid={deck.deckid}
+            deckid={deck[DECKID]}
             cards={Object.values(deck[LIBRARY])}
           />
         </>

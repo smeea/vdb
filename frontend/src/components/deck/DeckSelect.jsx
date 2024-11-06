@@ -46,11 +46,11 @@ const DeckSelect = ({
       <div className="z-20 flex gap-1">
         <div className="w-full">
           {selectFrom == MY && decks ? (
-            <DeckSelectMy handleSelect={handleSelect} deckid={deck?.deckid} />
+            <DeckSelectMy handleSelect={handleSelect} deckid={deck?.[DECKID]} />
           ) : selectFrom == RECENT ? (
-            <DeckSelectRecent handleSelect={handleSelect} deckid={deck?.deckid} />
+            <DeckSelectRecent handleSelect={handleSelect} deckid={deck?.[DECKID]} />
           ) : (
-            <DeckSelectPrecon handleSelect={handleSelect} deckid={deck?.deckid} />
+            <DeckSelectPrecon handleSelect={handleSelect} deckid={deck?.[DECKID]} />
           )}
         </div>
         {selectFrom == MY && decks && deck?.isBranches && (
@@ -69,7 +69,7 @@ const DeckSelect = ({
                     : 'FIXED\nUse unique copies of cards from Inventory'
               }`}
               disabled={!isEditable}
-              onClick={() => deckToggleInventoryState(deck?.deckid)}
+              onClick={() => deckToggleInventoryState(deck?.[DECKID])}
             >
               <div className="flex items-center">
                 {!deck?.[INVENTORY_TYPE] && <At />}

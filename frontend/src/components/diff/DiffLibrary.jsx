@@ -6,7 +6,7 @@ import {
   DeckDrawProbability,
   DeckLibraryHeader,
 } from '@/components';
-import { MASTER } from '@/constants';
+import { TYPE_MASTER } from '@/constants';
 import { useApp } from '@/context';
 import { useModalCardController, useDeckLibrary } from '@/hooks';
 import { FlexGapped, DiffQuantityDiff } from '@/components';
@@ -118,7 +118,7 @@ const DiffLibrary = ({ cardsTo, deck }) => {
                   <ResultLibraryType
                     cardtype={cardtype}
                     total={libraryByTypeTotal[cardtype]}
-                    trifleTotal={cardtype === MASTER && trifleTotal}
+                    trifleTotal={cardtype === TYPE_MASTER && trifleTotal}
                   />
                   {showInfo && (
                     <div className="sm:p-1">
@@ -158,7 +158,7 @@ const DiffLibrary = ({ cardsTo, deck }) => {
                   <ResultLibraryType
                     cardtype={cardtype}
                     total={0}
-                    trifleTotal={cardtype === MASTER && trifleTotal}
+                    trifleTotal={cardtype === TYPE_MASTER && trifleTotal}
                   />
                   <DiffLibraryTable
                     handleClick={handleClickSide}

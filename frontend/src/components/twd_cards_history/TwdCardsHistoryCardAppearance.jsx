@@ -31,7 +31,7 @@ const TwdCardsHistoryCardAppearance = ({ card, byPlayer }) => {
       <div
         className={twMerge(
           'flex min-w-[45px] items-center justify-center sm:min-w-[60px]',
-          !card.deckid && 'font-bold text-fgSecondary dark:text-fgSecondaryDark',
+          !card[DECKID] && 'font-bold text-fgSecondary dark:text-fgSecondaryDark',
         )}
       >
         {card.release_date.slice(0, 4)}
@@ -44,7 +44,7 @@ const TwdCardsHistoryCardAppearance = ({ card, byPlayer }) => {
       <div
         className={twMerge(
           'flex min-w-[25px] items-center justify-center sm:min-w-[60px]',
-          !card.deckid && 'font-bold text-fgSecondary dark:text-fgSecondaryDark',
+          !card[DECKID] && 'font-bold text-fgSecondary dark:text-fgSecondaryDark',
         )}
       >
         {yearsToWin}
@@ -52,9 +52,9 @@ const TwdCardsHistoryCardAppearance = ({ card, byPlayer }) => {
       <div className="flex min-w-[90px] items-center justify-between sm:min-w-[250px]">
         <div
           className="inline text-fgSecondary hover:underline dark:text-fgSecondaryDark max-sm:text-sm"
-          onClick={() => handleClick(card.player)}
+          onClick={() => handleClick(card[PLAYER])}
         >
-          {card.player}
+          {card[PLAYER]}
         </div>
         {!isMobile && byPlayer && (
           <div
@@ -68,7 +68,7 @@ Library: ${byPlayer[LIBRARY]}`}
         )}
       </div>
       <div className="flex min-w-[45px] items-center justify-end sm:min-w-[110px]">
-        {card.deckid && <TwdOpenDeckButton deckid={card.deckid} noText={isMobile} />}
+        {card[DECKID] && <TwdOpenDeckButton deckid={card[DECKID]} noText={isMobile} />}
       </div>
     </>
   );

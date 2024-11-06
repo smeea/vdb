@@ -58,7 +58,7 @@ const useTags = (crypt, library) => {
     let masterTotal = 0;
     Object.values(library).forEach((card) => {
       libraryTotal += card.q;
-      if (card.c[TYPE] === 'Master') masterTotal += card.q;
+      if (card.c[TYPE] === TYPE_MASTER) masterTotal += card.q;
     });
 
     const librarySizeFactor = 90 / libraryTotal;

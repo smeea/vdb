@@ -24,7 +24,7 @@ const ResultLibrary = ({ cards, setCards, inCompare }) => {
   } = useApp();
   const navigate = useNavigate();
   const deck = useSnapshot(deckStore)[DECK];
-  const isEditable = deck?.isAuthor && !deck?.isPublic && !deck?.isFrozen;
+  const isEditable = deck?.[IS_AUTHOR] && !deck?.[IS_PUBLIC] && !deck?.[IS_FROZEN];
 
   const sortMethods = {
     [CLAN_DISCIPLINE]: 'C/D',

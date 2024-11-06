@@ -15,7 +15,7 @@ const TwdDeck = ({ deck, inPda }) => {
   if (deck.cards) {
     deck = { ...deck, ...useDeck(deck.cards, cryptCardBase, libraryCardBase) };
   } else {
-    const url = `${import.meta.env.VITE_API_URL}/${inPda ? 'pda' : 'twd'}/${deck.deckid}`;
+    const url = `${import.meta.env.VITE_API_URL}/${inPda ? 'pda' : 'twd'}/${deck[DECKID]}`;
     const { value: d } = useFetch(url, {}, []);
     if (d) {
       deck = {

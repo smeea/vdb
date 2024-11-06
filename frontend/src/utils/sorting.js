@@ -76,14 +76,14 @@ export const bySect = (a, b) => {
 };
 
 export const byTimestamp = (a, b) => {
-  return new Date(b.timestamp) - new Date(a.timestamp);
+  return new Date(b[TIMESTAMP]) - new Date(a[TIMESTAMP]);
 };
 
 export const byPlayer = (a, b) => {
-  if (a.player && !b.player) return -1;
-  if (!a.player && b.player) return 1;
-  if (!a.player && !b.player) return 0;
-  return byName(a.player, b.player);
+  if (a[PLAYER] && !b[PLAYER]) return -1;
+  if (!a[PLAYER] && b[PLAYER]) return 1;
+  if (!a[PLAYER] && !b[PLAYER]) return 0;
+  return byName(a[PLAYER], b[PLAYER]);
 };
 
 export const byDateWin = (a, b) => {

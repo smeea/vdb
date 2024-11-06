@@ -14,7 +14,7 @@ const DeckBranchDeleteButton = ({ deck, noText }) => {
   const decks = useSnapshot(deckStore)[DECKS];
 
   const handleClick = () => {
-    deckServices.branchDelete(deck.deckid, decks).then((deckid) => {
+    deckServices.branchDelete(deck[DECKID], decks).then((deckid) => {
       navigate(`/decks/${deckid}`);
       setShowMenuButtons(false);
       setShowConfirmation(false);
@@ -40,7 +40,7 @@ const DeckBranchDeleteButton = ({ deck, noText }) => {
         <ModalConfirmation
           handleConfirm={handleClick}
           handleCancel={() => setShowConfirmation(false)}
-          title={`Delete revision "${deck.branchName}" of deck "${deck[NAME]}"`}
+          title={`Delete revision "${deck[BRANCH_NAME]}" of deck "${deck[NAME]}"`}
           buttonText="Delete"
         />
       )}

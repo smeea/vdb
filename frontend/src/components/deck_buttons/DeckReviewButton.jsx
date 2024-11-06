@@ -13,7 +13,7 @@ const DeckReviewButton = ({ deck }) => {
     deckServices
       .deckSnapshot({
         ...deck,
-        description: `Review of ${import.meta.env.VITE_BASE_URL}/decks/${deck.deckid}`,
+        description: `Review of ${import.meta.env.VITE_BASE_URL}/decks/${deck[DECKID]}`,
         author: publicName ? `review by ${publicName}` : '',
       })
       .then((deckid) => {

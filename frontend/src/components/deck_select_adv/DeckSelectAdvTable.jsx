@@ -112,7 +112,7 @@ const DeckSelectAdvTable = ({
       }
 
       if (!revFilter) {
-        filtered = filtered.filter((deck) => !deck.master);
+        filtered = filtered.filter((deck) => !deck[MASTER]);
       }
 
       return decksSort(filtered, sortMethod);
@@ -134,7 +134,7 @@ const DeckSelectAdvTable = ({
       setSelectedDecks(() => {
         const selected = {};
         sortedDecks.forEach((d) => {
-          selected[d.deckid] = true;
+          selected[d[DECKID]] = true;
         });
 
         return selected;
@@ -165,7 +165,7 @@ const DeckSelectAdvTable = ({
         {sortedDecks.map((deck) => {
           return (
             <DeckSelectAdvTableRow
-              key={deck.deckid}
+              key={deck[DECKID]}
               deck={deck}
               onClick={onClick}
               handleClose={handleClose}

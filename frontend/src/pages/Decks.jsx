@@ -87,7 +87,7 @@ const Decks = () => {
     const d = {
       ...deckData,
       crypt: cardsData[CRYPT],
-      isBranches: !!(deckData.master || deckData.branches?.length > 0),
+      isBranches: !!(deckData[MASTER] || deckData[BRANCHES]?.length > 0),
       isPublic: !!deckData.publicParent,
       library: cardsData[LIBRARY],
       isFromUrl: true,
@@ -110,7 +110,7 @@ const Decks = () => {
 
       setDeck({
         deckid: 'deck',
-        name: query.get('name') ?? '',
+        name: query.get(NAME) ?? '',
         author: query.get(AUTHOR) ?? '',
         description: query.get('description') ?? '',
         crypt: crypt,
@@ -122,7 +122,7 @@ const Decks = () => {
   useEffect(() => {
     if (cryptCardBase && libraryCardBase) {
       if (deckid) {
-        if (!deck || deck.deckid != deckid) {
+        if (!deck || deck[DECKID] != deckid) {
           if (decks?.[deckid]) {
             setDeck(decks[deckid]);
           } else if (deckid.includes(':') && preconDecks) {
@@ -147,9 +147,9 @@ const Decks = () => {
   useEffect(() => {
     if (deck) {
       setError(false);
-      if (!deckid) navigate(`/decks/${deck.deckid}`);
+      if (!deckid) navigate(`/decks/${deck[DECKID]}`);
     }
-  }, [deck?.deckid]);
+  }, [deck?.[DECKID]]);
 
   const handleClose = () => {
     setShowMenuButtons(false);

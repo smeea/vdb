@@ -40,9 +40,9 @@ const DeckImportText = ({ isAnonymous, setBadCards, handleCloseModal }) => {
         .then((data) => {
           deckAdd({
             ...d,
-            deckid: data.deckid,
+            deckid: data[DECKID],
           });
-          navigate(`/decks/${data.deckid}`);
+          navigate(`/decks/${data[DECKID]}`);
           setBadCards(d.badCards);
           setShowMenuButtons(false);
           setShowFloatingButtons(true);

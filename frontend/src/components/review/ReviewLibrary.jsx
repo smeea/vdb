@@ -7,7 +7,7 @@ import {
   DeckLibraryHeader,
   FlexGapped,
 } from '@/components';
-import { MASTER } from '@/constants';
+import { TYPE_MASTER } from '@/constants';
 import { useModalCardController, useDeckLibrary } from '@/hooks';
 
 const ReviewLibrary = ({ cardChange, cardsFrom, cardsTo }) => {
@@ -64,7 +64,7 @@ const ReviewLibrary = ({ cardChange, cardsFrom, cardsTo }) => {
                   <ResultLibraryType
                     cardtype={cardtype}
                     total={libraryByTypeTotal[cardtype]}
-                    trifleTotal={cardtype === MASTER && trifleTotal}
+                    trifleTotal={cardtype === TYPE_MASTER && trifleTotal}
                   />
                   {showInfo && (
                     <div className="sm:p-1">
@@ -104,7 +104,7 @@ const ReviewLibrary = ({ cardChange, cardsFrom, cardsTo }) => {
                   <ResultLibraryType
                     cardtype={cardtype}
                     total={0}
-                    trifleTotal={cardtype === MASTER && trifleTotal}
+                    trifleTotal={cardtype === TYPE_MASTER && trifleTotal}
                   />
                   <DiffLibraryTable
                     isEditable

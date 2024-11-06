@@ -11,7 +11,7 @@ const DeckCopyUrlButton = ({ deck, noText, setQrUrl }) => {
   const [success, setSuccess] = useState(false);
 
   const handleStandard = () => {
-    const url = `${import.meta.env.VITE_BASE_URL}/decks/${deck.deckid.replace(' ', '_')}`;
+    const url = `${import.meta.env.VITE_BASE_URL}/decks/${deck[DECKID].replace(' ', '_')}`;
     navigator.clipboard.writeText(url);
     setSuccess(true);
     setTimeout(() => {
@@ -22,7 +22,7 @@ const DeckCopyUrlButton = ({ deck, noText, setQrUrl }) => {
   };
 
   const handleStandardQr = () => {
-    const url = `${import.meta.env.VITE_BASE_URL}/decks/${deck.deckid.replace(' ', '_')}`;
+    const url = `${import.meta.env.VITE_BASE_URL}/decks/${deck[DECKID].replace(' ', '_')}`;
 
     setShowMenuButtons(false);
     setShowFloatingButtons(false);
@@ -81,7 +81,7 @@ const DeckCopyUrlButton = ({ deck, noText, setQrUrl }) => {
       />
       <MenuItems divided>
         <>
-          {deck.deckid !== 'deck' && (
+          {deck[DECKID] !== 'deck' && (
             <div>
               <MenuItem
                 title="Copy URL (will follow deck changes, if any)"
@@ -97,7 +97,7 @@ const DeckCopyUrlButton = ({ deck, noText, setQrUrl }) => {
               </MenuItem>
             </div>
           )}
-          {(deck.deckid.length === 9 || deck.deckid === 'deck') && (
+          {(deck[DECKID].length === 9 || deck[DECKID] === 'deck') && (
             <div>
               <div className="px-3 pt-2 text-sm text-midGray dark:text-midGrayDark">
                 Non-modifiable:
@@ -114,7 +114,7 @@ const DeckCopyUrlButton = ({ deck, noText, setQrUrl }) => {
               >
                 Deck-in-QR
               </MenuItem>
-              {deck.deckid.length === 9 && (
+              {deck[DECKID].length === 9 && (
                 <MenuItem
                   title="Copy URL to snapshot of the deck (will not follow deck changes)"
                   onClick={handleSnapshot}

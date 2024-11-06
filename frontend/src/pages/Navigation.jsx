@@ -94,7 +94,7 @@ const Navigation = () => {
       pdaUrl = `/pda?q=${encodeURIComponent(JSON.stringify(input))}`;
     }
   }
-  if (deck?.deckid) decksUrl = `/decks/${deck.deckid}`;
+  if (deck?.[DECKID]) decksUrl = `/decks/${deck[DECKID]}`;
   if (quickCard) cardsUrl = `/cards/${quickCard[ID]}`;
 
   return (

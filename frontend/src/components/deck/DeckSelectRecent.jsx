@@ -19,7 +19,7 @@ const DeckSelectRecent = ({ deckid, handleSelect }) => {
 
   const options = recentDecks.map((i) => {
     return {
-      value: i.deckid,
+      value: i[DECKID],
       name: 'deck',
       label: (
         <div className="flex justify-between">

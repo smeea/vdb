@@ -12,8 +12,8 @@ const SeatingTablePlayer = ({ deck, isFirst }) => {
           : 'p-3.5',
       )}
     >
-      {deck.deckid ? (
-        <Link target="_blank" rel="noreferrer" to={`/decks/${deck.deckid}`}>
+      {deck[DECKID] ? (
+        <Link target="_blank" rel="noreferrer" to={`/decks/${deck[DECKID]}`}>
           {deck[NAME]}
         </Link>
       ) : (

@@ -20,4 +20,5 @@
 - Migrate from isWidth to container queries
 - Migrate forms to useFormStatus+useActionState
 - Remove legacy polyfills when Safari adopts groupBy
-- Refactor to constants: traits, deck tags
+- Refactor to constants: traits, name="XXX"
+- Refactor isEditable

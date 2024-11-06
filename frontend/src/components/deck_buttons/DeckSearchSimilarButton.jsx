@@ -13,11 +13,11 @@ const DeckSearchSimilarButton = ({ deck }) => {
   const handleClick = (target) => {
     clearSearchForm(target);
     if (target === PDA) {
-      searchPdaForm.similar = deck.deckid;
+      searchPdaForm.similar = deck[DECKID];
     } else {
-      searchTwdForm.similar = deck.deckid;
+      searchTwdForm.similar = deck[DECKID];
     }
-    navigate(`/${target}?q={"similar"%3A"${deck.deckid}"}`);
+    navigate(`/${target}?q={"similar"%3A"${deck[DECKID]}"}`);
     setShowMenuButtons(false);
     setShowFloatingButtons(true);
   };

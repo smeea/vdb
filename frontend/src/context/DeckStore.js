@@ -38,7 +38,7 @@ export const deckCardChange = (deckid, card, q) => {
       q: q,
     };
 
-    if (deckid === deckStore[DECK].deckid) {
+    if (deckid === deckStore[DECK][DECKID]) {
       deckStore[DECK][cardSrc][card[ID]] = {
         c: card,
         q: q,
@@ -47,7 +47,7 @@ export const deckCardChange = (deckid, card, q) => {
   } else {
     delete deckStore[DECKS][deckid][cardSrc][card[ID]];
 
-    if (deckid === deckStore[DECK].deckid) {
+    if (deckid === deckStore[DECK][DECKID]) {
       delete deckStore[DECK][cardSrc][card[ID]];
     }
   }
@@ -64,7 +64,7 @@ export const deckCardChange = (deckid, card, q) => {
 
 export const deckUpdate = (deckid, field, value) => {
   let initialDeckState;
-  if (deckStore?.deck?.deckid === deckid) {
+  if (deckStore?.deck?.[DECKID] === deckid) {
     initialDeckState = deepClone(deckStore[DECK]);
   }
   const initialDecksState = deepClone(deckStore[DECKS][deckid]);
@@ -79,7 +79,7 @@ export const deckUpdate = (deckid, field, value) => {
         }
       });
 
-      if (deckid === deckStore?.deck?.deckid) {
+      if (deckid === deckStore?.deck?.[DECKID]) {
         Object.keys(value).forEach((cardid) => {
           if (cardid > 200000) {
             deckStore[DECK][CRYPT][cardid].i = value[cardid];
@@ -93,7 +93,7 @@ export const deckUpdate = (deckid, field, value) => {
       deckStore[DECKS][deckid][CRYPT] = value[CRYPT];
       deckStore[DECKS][deckid][LIBRARY] = value[LIBRARY];
 
-      if (deckid === deckStore?.deck?.deckid) {
+      if (deckid === deckStore?.deck?.[DECKID]) {
         deckStore[DECK][CRYPT] = value[CRYPT];
         deckStore[DECK][LIBRARY] = value[LIBRARY];
       }
@@ -109,7 +109,7 @@ export const deckUpdate = (deckid, field, value) => {
         });
       }
 
-      if (deckid === deckStore?.deck?.deckid) {
+      if (deckid === deckStore?.deck?.[DECKID]) {
         deckStore[DECK][field] = value;
         if (field === INVENTORY_TYPE) {
           Object.keys(deckStore[DECK][CRYPT]).forEach((cardid) => {
@@ -122,10 +122,10 @@ export const deckUpdate = (deckid, field, value) => {
       }
   }
 
-  const branchesUpdateFields = ['name', AUTHOR];
+  const branchesUpdateFields = [NAME, AUTHOR];
   if (
     branchesUpdateFields.includes(field) &&
-    (deckStore[DECKS][deckid].branches || deckStore[DECKS][deckid].master)
+    (deckStore[DECKS][deckid][BRANCHES] || deckStore[DECKS][deckid][MASTER])
   ) {
     branchesUpdate(deckid, field, value);
   }
@@ -140,7 +140,7 @@ export const deckUpdate = (deckid, field, value) => {
   }
 
   const now = new Date();
-  deckStore[DECKS][deckid].timestamp = now.toUTCString();
+  deckStore[DECKS][deckid][TIMESTAMP] = now.toUTCString();
 
   return deckServices.update(deckid, field, value).catch(() => {
     deckStore[DECK] = initialDeckState;
@@ -173,11 +173,11 @@ export const cardToggleInventoryState = (deckid, cardid) => {
 export const deckAdd = (deck) => {
   const now = new Date();
   const d = {
-    deckid: deck.deckid,
+    deckid: deck[DECKID],
     name: deck[NAME] ?? '',
-    master: deck.master ?? null,
-    branches: deck.branches ?? [],
-    branchName: deck.branchName ?? '#0',
+    master: deck[MASTER] ?? null,
+    branches: deck[BRANCHES] ?? [],
+    branchName: deck[BRANCH_NAME] ?? '#0',
     description: deck[DESCRIPTION] ?? '',
     author: deck[AUTHOR] ?? '',
     crypt: deck[CRYPT],
@@ -185,10 +185,10 @@ export const deckAdd = (deck) => {
     timestamp: now.toUTCString(),
     isAuthor: true,
     isPublic: Boolean(deck.publicParent),
-    isBranches: Boolean(deck.master || deck.branches?.length > 0),
+    isBranches: Boolean(deck[MASTER] || deck[BRANCHES]?.length > 0),
   };
 
-  deckStore[DECKS][deck.deckid] = d;
+  deckStore[DECKS][deck[DECKID]] = d;
 };
 
 export const deckLocalize = (localizedCrypt, nativeCrypt, localizedLibrary, nativeLibrary) => {
@@ -208,33 +208,33 @@ export const deckLocalize = (localizedCrypt, nativeCrypt, localizedLibrary, nati
 
 // INTERNAL STORE FUNCTIONS
 const changeMaster = (deckid) => {
-  const oldMasterDeckid = deckStore[DECKS][deckid].master;
+  const oldMasterDeckid = deckStore[DECKS][deckid][MASTER];
 
   if (oldMasterDeckid) {
-    const branches = deckStore[DECKS][oldMasterDeckid].branches.filter((i) => i !== deckid);
+    const branches = deckStore[DECKS][oldMasterDeckid][BRANCHES].filter((i) => i !== deckid);
     branches.push(oldMasterDeckid);
 
     branches.forEach((b) => {
-      deckStore[DECKS][b].master = deckid;
-      deckStore[DECKS][b].branches = [];
+      deckStore[DECKS][b][MASTER] = deckid;
+      deckStore[DECKS][b][BRANCHES] = [];
     });
-    deckStore[DECKS][deckid].branches = branches;
-    deckStore[DECKS][deckid].master = null;
+    deckStore[DECKS][deckid][BRANCHES] = branches;
+    deckStore[DECKS][deckid][MASTER] = null;
 
-    deckStore[DECK].branches = branches;
-    deckStore[DECK].master = null;
+    deckStore[DECK][BRANCHES] = branches;
+    deckStore[DECK][MASTER] = null;
   }
 };
 
 const branchesUpdate = (deckid, field, value) => {
   let revisions = [];
-  if (deckStore[DECKS][deckid].master) {
+  if (deckStore[DECKS][deckid][MASTER]) {
     revisions = [
-      deckStore[DECKS][deckid].master,
-      ...deckStore[DECKS][deckStore[DECKS][deckid].master].branches,
+      deckStore[DECKS][deckid][MASTER],
+      ...deckStore[DECKS][deckStore[DECKS][deckid][MASTER]][BRANCHES],
     ];
   } else {
-    revisions = [deckid, ...deckStore[DECKS][deckid].branches];
+    revisions = [deckid, ...deckStore[DECKS][deckid][BRANCHES]];
   }
 
   revisions.forEach((d) => {

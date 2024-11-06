@@ -93,7 +93,7 @@ const LibrarySearchForm = () => {
 
   const handleTextCheckboxesChange = (event) => {
     const { name, value } = event.currentTarget;
-    if (['name', TEXT].includes(value)) {
+    if ([NAME, TEXT].includes(value)) {
       searchLibraryForm[TEXT][name]['in'] =
         searchLibraryForm[TEXT][name]['in'] === value ? false : value;
     } else {

@@ -3,7 +3,7 @@ import { ResultLibraryTypeImage, ResultLibraryDisciplines, ResultLibraryClan } f
 
 const DeckLibraryTotalInfo = ({ byClans, byTypes, byDisciplines }) => {
   const total = Object.values(byTypes).reduce((a, b) => a + b, 0);
-  const totalExMasters = total - (byTypes['Master'] || 0);
+  const totalExMasters = total - (byTypes[TYPE_MASTER] || 0);
 
   const byDisciplinesSorted = byDisciplines
     ? Object.keys(byDisciplines).toSorted((a, b) => {

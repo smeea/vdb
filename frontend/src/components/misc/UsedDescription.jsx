@@ -4,7 +4,7 @@ import PinAngleFill from '@/assets/images/icons/pin-angle-fill.svg?react';
 import { S } from '@/constants';
 
 const UsedDescriptionDeck = ({ deck, t, q }) => {
-  const isBranches = deck.master || (deck.branches && deck.branches.length > 0);
+  const isBranches = deck[MASTER] || (deck[BRANCHES] && deck[BRANCHES].length > 0);
 
   return (
     <div className="flex items-center gap-1">
@@ -17,7 +17,7 @@ const UsedDescriptionDeck = ({ deck, t, q }) => {
       </div>
       <b>{q}</b>
       <div className="truncate sm:max-w-[265px] md:max-w-[290px]">
-        {` - ${deck[NAME]}${isBranches ? ` [${deck.branchName}]` : ''} `}
+        {` - ${deck[NAME]}${isBranches ? ` [${deck[BRANCH_NAME]}]` : ''} `}
       </div>
     </div>
   );

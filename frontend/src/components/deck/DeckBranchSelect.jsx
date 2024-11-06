@@ -9,27 +9,27 @@ const DeckBranchSelect = ({ deck, handleSelect }) => {
   const [branches, setBranches] = useState([]);
 
   const byTimestamp = (a, b) => {
-    return new Date(decks[b].timestamp) - new Date(decks[a].timestamp);
+    return new Date(decks[b][TIMESTAMP]) - new Date(decks[a][TIMESTAMP]);
   };
 
-  const target = decks[deck.master] ?? deck;
+  const target = decks[deck[MASTER]] ?? deck;
 
   const b = {
-    [target.deckid]: {
-      deckid: target.deckid,
-      branchName: target.branchName,
+    [target[DECKID]]: {
+      deckid: target[DECKID],
+      branchName: target[BRANCH_NAME],
       name: target[NAME],
-      timestamp: target.timestamp,
+      timestamp: target[TIMESTAMP],
     },
   };
 
-  if (target.branches) {
-    target.branches.map((i) => {
+  if (target[BRANCHES]) {
+    target[BRANCHES].map((i) => {
       b[i] = {
-        deckid: decks[i].deckid,
-        branchName: decks[i].branchName,
+        deckid: decks[i][DECKID],
+        branchName: decks[i][BRANCH_NAME],
         name: decks[i][NAME],
-        timestamp: decks[i].timestamp,
+        timestamp: decks[i][TIMESTAMP],
       };
     });
   }
@@ -46,7 +46,7 @@ const DeckBranchSelect = ({ deck, handleSelect }) => {
         return {
           value: i,
           name: 'deck',
-          label: decks[i].branchName,
+          label: decks[i][BRANCH_NAME],
         };
       });
   }, [branches]);
@@ -55,7 +55,7 @@ const DeckBranchSelect = ({ deck, handleSelect }) => {
     <Select
       options={options}
       isSearchable={false}
-      value={options.find((obj) => obj.value === deck.deckid)}
+      value={options.find((obj) => obj.value === deck[DECKID])}
       onChange={handleSelect}
     />
   );

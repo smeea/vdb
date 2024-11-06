@@ -37,14 +37,14 @@ const TwdCardsHistory = () => {
             }
           });
 
-        if (value[cardid].deckid) {
-          if (!players[value[cardid].player]) {
-            players[value[cardid].player] = { crypt: 0, library: 0 };
+        if (value[cardid][DECKID]) {
+          if (!players[value[cardid][PLAYER]]) {
+            players[value[cardid][PLAYER]] = { crypt: 0, library: 0 };
           }
           if (cardid > 200000) {
-            players[value[cardid].player][CRYPT] += 1;
+            players[value[cardid][PLAYER]][CRYPT] += 1;
           } else {
-            players[value[cardid].player][LIBRARY] += 1;
+            players[value[cardid][PLAYER]][LIBRARY] += 1;
           }
         }
       });

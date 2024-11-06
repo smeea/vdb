@@ -102,5 +102,5 @@ export const exportXlsx = async (reports, users, cryptCardBase, libraryCardBase,
     XLSX.utils.book_append_sheet(workbook, sheet, sheetName);
   });
 
-  return XLSX.write(workbook, { type: 'array', bookType: 'xlsx' });
+  return XLSX.write(workbook, { type: 'array', bookType: XLSX });
 };

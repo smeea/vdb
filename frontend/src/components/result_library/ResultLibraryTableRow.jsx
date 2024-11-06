@@ -16,11 +16,11 @@ const ResultLibraryTableRow = ({ card, handleClick, inLimited, shouldShowModal }
   const { addMode, inventoryMode } = useApp();
   const deck = useSnapshot(deckStore)[DECK];
   const inDeck = deck?.[LIBRARY][card[ID]]?.q || 0;
-  const isEditable = deck?.isAuthor && !deck?.isPublic && !deck?.isFrozen;
+  const isEditable = deck?.[IS_AUTHOR] && !deck?.[IS_PUBLIC] && !deck?.[IS_FROZEN];
 
   const { isSwiped, swipeHandlers } = useSwipe(
-    () => deckCardChange(deck.deckid, card, inDeck - 1),
-    () => deckCardChange(deck.deckid, card, inDeck + 1),
+    () => deckCardChange(deck[DECKID], card, inDeck - 1),
+    () => deckCardChange(deck[DECKID], card, inDeck + 1),
     isEditable && addMode,
     inDeck > 0,
   );
@@ -41,7 +41,7 @@ const ResultLibraryTableRow = ({ card, handleClick, inLimited, shouldShowModal }
         isEditable &&
         addMode && (
           <td>
-            <ButtonAddCard deckid={deck.deckid} card={card} inDeck={inDeck} />
+            <ButtonAddCard deckid={deck[DECKID]} card={card} inDeck={inDeck} />
           </td>
         )
       )}

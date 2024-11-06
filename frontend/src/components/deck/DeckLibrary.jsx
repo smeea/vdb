@@ -8,7 +8,7 @@ import {
   FlexGapped,
 } from '@/components';
 import { useApp } from '@/context';
-import { MASTER } from '@/constants';
+import { TYPE_MASTER } from '@/constants';
 import { useModalCardController, useDeckLibrary } from '@/hooks';
 
 const DeckLibrary = ({ inSearch, inPreview, inMissing, deck }) => {
@@ -96,7 +96,7 @@ const DeckLibrary = ({ inSearch, inPreview, inMissing, deck }) => {
                   <ResultLibraryType
                     cardtype={cardtype}
                     total={libraryByTypeTotal[cardtype]}
-                    trifleTotal={cardtype === MASTER && trifleTotal}
+                    trifleTotal={cardtype === TYPE_MASTER && trifleTotal}
                   />
                   {showInfo && (
                     <div className="sm:p-1">
@@ -136,7 +136,7 @@ const DeckLibrary = ({ inSearch, inPreview, inMissing, deck }) => {
                   <ResultLibraryType
                     cardtype={cardtype}
                     total={0}
-                    trifleTotal={cardtype === MASTER && trifleTotal}
+                    trifleTotal={cardtype === TYPE_MASTER && trifleTotal}
                   />
                   <DeckLibraryTable
                     deck={deck}

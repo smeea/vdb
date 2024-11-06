@@ -9,14 +9,14 @@ const AnalyzeTournamentChartsRankingClan = ({ info, decks, searchResults }) => {
     const d = {};
 
     Object.values(decks).forEach((deck) => {
-      const position = info.players - deck.score[RANK];
+      const position = info[PLAYERS] - deck.score[RANK];
       const inSearch = Object.values(searchResults).some((d) => d[AUTHOR] === deck[AUTHOR]);
       const clan = getClan(deck[CRYPT]) || 'Multi';
 
       if (!d[clan]) {
         d[clan] = [];
-        for (let i = 0; i < info.players; i++) {
-          d[clan].push({ index: -1, value: 0, rank: info.players - i });
+        for (let i = 0; i < info[PLAYERS]; i++) {
+          d[clan].push({ index: -1, value: 0, rank: info[PLAYERS] - i });
         }
       }
 

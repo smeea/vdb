@@ -19,7 +19,7 @@ const DeckChangeBranchName = ({ deck }) => {
   };
 
   const deckChangeBranchName = () => {
-    deckUpdate(deckid, 'branchName', value);
+    deckUpdate(deckid, BRANCH_NAME, value);
     setSuccess(true);
     setTimeout(() => {
       setSuccess(false);

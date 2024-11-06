@@ -11,7 +11,7 @@ import { TEXT } from '@/constants';
 const SearchAdditionalFormsText = ({ value, onChange, onChangeOptions, searchForm }) => {
   const options = [
     {
-      value: 'name',
+      value: NAME,
       label: 'Only in Name',
     },
     {

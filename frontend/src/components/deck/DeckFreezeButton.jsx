@@ -6,19 +6,19 @@ import { deckUpdate } from '@/context';
 
 const DeckFreezeButton = ({ deck, className, roundedStyle, borderStyle }) => {
   const handleClick = () => {
-    deckUpdate(deck.deckid, 'isFrozen', !deck.isFrozen);
+    deckUpdate(deck[DECKID], IS_FROZEN, !deck[IS_FROZEN]);
   };
 
   return (
     <Button
       onClick={handleClick}
-      title={`${deck.isFrozen ? 'Disabled' : 'Enabled'} Crypt/Library Editing`}
+      title={`${deck[IS_FROZEN] ? 'Disabled' : 'Enabled'} Crypt/Library Editing`}
       className={className}
       roundedStyle={roundedStyle}
       borderStyle={borderStyle}
     >
       <>
-        {deck.isFrozen ? (
+        {deck[IS_FROZEN] ? (
           <LockFill width="18" height="23" viewBox="0 0 16 16" />
         ) : (
           <UnlockFill width="18" height="23" viewBox="0 0 16 16" />

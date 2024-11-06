@@ -30,9 +30,9 @@ const TwdHallFameCardsCard = ({ card, idx, handleClick }) => {
         ) || 1}
       </td>
       <td className="min-w-[45px] sm:min-w-[110px]">
-        {card.deckid && (
+        {card[DECKID] && (
           <div>
-            <TwdOpenDeckButton deckid={card.deckid} noText={isMobile} />
+            <TwdOpenDeckButton deckid={card[DECKID]} noText={isMobile} />
           </div>
         )}
       </td>

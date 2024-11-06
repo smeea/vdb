@@ -58,7 +58,7 @@ const InventoryAddDeckModal = ({ handleClose }) => {
 
       if (!revFilter) {
         filtered = filtered.filter((deck) => {
-          if (!deck.master) return true;
+          if (!deck[MASTER]) return true;
         });
       }
 
@@ -124,7 +124,7 @@ const InventoryAddDeckModal = ({ handleClose }) => {
           {sortedDecks.map((deck) => {
             return (
               <InventoryAddDeckRow
-                key={deck.deckid}
+                key={deck[DECKID]}
                 deck={deck}
                 allTagsOptions={defaultTagsOptions}
               />

@@ -129,7 +129,7 @@ const PlaytestUserCard = () => {
         basis={isMobile ? 2 : 3}
         forceOneLine
       >
-        {playtestProfile.timestamp}
+        {playtestProfile[TIMESTAMP]}
       </ListEntry>
       <ListEntry
         icon={<Calendar2EventFill width="22" heigh="22" viewBox="0 0 16 16" />}

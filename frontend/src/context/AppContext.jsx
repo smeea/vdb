@@ -146,7 +146,7 @@ export const AppProvider = ({ children }) => {
   const lastDeckArray = (decks && Object.values(decks).toSorted(byTimestamp)) ?? [
     { deckid: undefined },
   ];
-  const lastDeckId = lastDeckArray[0]?.deckid;
+  const lastDeckId = lastDeckArray[0]?.[DECKID];
   const [recentDecks, setRecentDecks] = useState(getLocalStorage(RECENT_DECKS) ?? []);
 
   // CARD BASE
@@ -278,7 +278,7 @@ export const AppProvider = ({ children }) => {
     setEmail(undefined);
     inventoryStore[CRYPT] = {};
     inventoryStore[LIBRARY] = {};
-    if (decks?.[deck?.deckid]) {
+    if (decks?.[deck?.[DECKID]]) {
       deckStore[DECK] = undefined;
     }
     deckStore[DECKS] = undefined;
@@ -356,7 +356,7 @@ export const AppProvider = ({ children }) => {
     ) {
       deckLocalize(localizedCrypt[lang], nativeCrypt, localizedLibrary[lang], nativeLibrary);
     }
-  }, [deck?.deckid, lang, localizedCrypt, localizedLibrary]);
+  }, [deck?.[DECKID], lang, localizedCrypt, localizedLibrary]);
 
   // APP DATA
   const toggleShowImage = () => {
@@ -430,12 +430,12 @@ export const AppProvider = ({ children }) => {
   };
 
   const addRecentDeck = (deck) => {
-    const src = deck.deckid.length != 9 ? TWD : deck.publicParent ? PDA : 'shared';
+    const src = deck[DECKID].length != 9 ? TWD : deck.publicParent ? PDA : 'shared';
     let d = [...recentDecks];
-    const idx = recentDecks.map((v) => v.deckid).indexOf(deck.deckid);
+    const idx = recentDecks.map((v) => v[DECKID]).indexOf(deck[DECKID]);
     if (idx !== -1) d.splice(idx, 1);
     d.unshift({
-      deckid: deck.deckid,
+      deckid: deck[DECKID],
       name: deck[NAME],
       src: src,
     });
@@ -478,10 +478,11 @@ export const AppProvider = ({ children }) => {
           }
         });
       }
-      decksData[deckid].isAuthor = true;
-      decksData[deckid].master = decksData[deckid].master !== '' ? decksData[deckid].master : null;
+      decksData[deckid][IS_AUTHOR] = true;
+      decksData[deckid][MASTER] =
+        decksData[deckid][MASTER] !== '' ? decksData[deckid][MASTER] : null;
       decksData[deckid].isBranches = !!(
-        decksData[deckid].master || decksData[deckid].branches?.length > 0
+        decksData[deckid][MASTER] || decksData[deckid][BRANCHES]?.length > 0
       );
       delete decksData[deckid].cards;
     });
@@ -491,7 +492,7 @@ export const AppProvider = ({ children }) => {
 
   useEffect(() => {
     if (decks || username === null) {
-      const d = recentDecks.filter((v) => username === null || !decks[v.deckid]);
+      const d = recentDecks.filter((v) => username === null || !decks[v[DECKID]]);
       if (d.length < recentDecks.length) {
         updateRecentDecks(d);
       }
@@ -500,7 +501,7 @@ export const AppProvider = ({ children }) => {
 
   useEffect(() => {
     if (decks && inventoryMode) setupUsedInventory(decks);
-  }, [decks, decks?.[deck?.deckid]?.[CRYPT], decks?.[deck?.deckid]?.[LIBRARY], inventoryMode]);
+  }, [decks, decks?.[deck?.[DECKID]]?.[CRYPT], decks?.[deck?.[DECKID]]?.[LIBRARY], inventoryMode]);
 
   return (
     <AppContext.Provider

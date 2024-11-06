@@ -12,13 +12,13 @@ const AnalyzeTournamentChartsRankingStyle = ({ info, decks, searchResults }) => 
 
     allowedTags.forEach((s) => {
       d[s] = [];
-      for (let i = 0; i < info.players; i++) {
-        d[s].push({ index: -1, value: 0, rank: info.players - i });
+      for (let i = 0; i < info[PLAYERS]; i++) {
+        d[s].push({ index: -1, value: 0, rank: info[PLAYERS] - i });
       }
     });
 
     Object.values(decks).forEach((deck) => {
-      const position = info.players - deck.score[RANK];
+      const position = info[PLAYERS] - deck.score[RANK];
       const inSearch = Object.values(searchResults).some((d) => d[AUTHOR] === deck[AUTHOR]);
       const def = {
         clan: getClan(deck[CRYPT]) || 'Multi',

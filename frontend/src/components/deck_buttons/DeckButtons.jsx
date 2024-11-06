@@ -33,7 +33,8 @@ const DeckButtons = ({
   const { isPlaytestAdmin, playtestMode, inventoryMode, username } = useApp();
   const { publicChild, isPublic, isAuthor, isBranches } = { ...deck };
 
-  const playtestPrecon = deck?.deckid.includes('PLAYTEST:') && deck.deckid.replace('PLAYTEST:', '');
+  const playtestPrecon =
+    deck?.[DECKID].includes(`${PLAYTEST}:`) && deck[DECKID].replace(`${PLAYTEST}:`, '');
   const hasPlaytest =
     deck &&
     (Object.keys(deck[CRYPT]).some((cardid) => cardid > 210000) ||
@@ -65,7 +66,7 @@ const DeckButtons = ({
               {!publicChild && <DeckPublicToggleButton deck={deck} />}
             </>
           )}
-          <DeckDiffButton deckid={deck.deckid} />
+          <DeckDiffButton deckid={deck[DECKID]} />
           <DeckReviewButton deck={deck} />
           <DeckCopyUrlButton setQrUrl={setQrUrl} deck={deck} />
           <DeckProxyButtonWrapper deck={deck} />

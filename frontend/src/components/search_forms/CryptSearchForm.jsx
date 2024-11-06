@@ -91,7 +91,7 @@ const CryptSearchForm = () => {
 
   const handleTextCheckboxesChange = (event) => {
     const { name, value } = event.currentTarget;
-    if (['name', TEXT].includes(value)) {
+    if ([NAME, TEXT].includes(value)) {
       searchCryptForm[TEXT][name]['in'] =
         searchCryptForm[TEXT][name]['in'] === value ? false : value;
     } else {

@@ -61,7 +61,7 @@ export const getPreconDecks = async (cryptCardBase, libraryCardBase) => {
   Object.keys(preconDecksData).forEach((set) => {
     Object.keys(preconDecksData[set]).forEach((precon) => {
       const deckid = `${set}:${precon}`;
-      const name = setsAndPrecons[set][PRECONS][precon]['name'];
+      const name = setsAndPrecons[set][PRECONS][precon][NAME];
 
       preconDecks[deckid] = {
         name: `${name}`,

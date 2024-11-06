@@ -165,11 +165,11 @@ const missingTextQuery = (query, card) => {
 
     match =
       (query.in !== TEXT && (cardName.match(regexExp) || cardASCII.match(regexExp))) ||
-      (query.in !== 'name' && cardText.match(regexExp));
+      (query.in !== NAME && cardText.match(regexExp));
   } else {
     match =
       (query.in !== TEXT && !missingNameOrInitials(search, card)) ||
-      (query.in !== 'name' && cardText.includes(search));
+      (query.in !== NAME && cardText.includes(search));
   }
 
   return !((match && hasToMatch) || (!match && !hasToMatch));

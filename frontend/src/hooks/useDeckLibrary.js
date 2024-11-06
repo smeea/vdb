@@ -8,7 +8,17 @@ import {
   containCard,
   getRestrictions,
 } from '@/utils';
-import { GROUPED_TYPE, POOL, BLOOD, TYPE, DISCIPLINE, ANY, MASTER, EVENT, CLAN } from '@/constants';
+import {
+  GROUPED_TYPE,
+  POOL,
+  BLOOD,
+  TYPE,
+  DISCIPLINE,
+  ANY,
+  TYPE_MASTER,
+  TYPE_EVENT,
+  CLAN,
+} from '@/constants';
 import { limitedStore } from '@/context';
 
 const useDeckLibrary = (cardsList, cardsToList = {}) => {
@@ -55,13 +65,18 @@ const useDeckLibrary = (cardsList, cardsToList = {}) => {
       DISCIPLINE,
     );
     const libraryByClansTotal = getTotalCardsGroupedBy(
-      library.filter((card) => card.c[CLAN] && card.c[TYPE] !== MASTER && card.c[TYPE] !== EVENT),
+      library.filter(
+        (card) => card.c[CLAN] && card.c[TYPE] !== TYPE_MASTER && card.c[TYPE] !== TYPE_EVENT,
+      ),
       CLAN,
     );
     const anyDisciplines = countCards(
       library.filter(
         (card) =>
-          !card.c[CLAN] && !card.c[DISCIPLINE] && card.c[TYPE] !== MASTER && card.c[TYPE] !== EVENT,
+          !card.c[CLAN] &&
+          !card.c[DISCIPLINE] &&
+          card.c[TYPE] !== TYPE_MASTER &&
+          card.c[TYPE] !== TYPE_EVENT,
       ),
     );
 

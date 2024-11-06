@@ -64,7 +64,7 @@ const DeckImportAmaranth = ({ handleClose }) => {
       });
     });
 
-    return deckServices.branchesImport(master.deckid, branches);
+    return deckServices[BRANCHES]Import(master[DECKID], branches);
   };
 
   const importDeckFromAmaranth = async (amaranth_deck) => {
@@ -99,7 +99,7 @@ const DeckImportAmaranth = ({ handleClose }) => {
     deckServices
       .deckImport(deck)
       .then((data) => {
-        deck.deckid = data.deckid;
+        deck[DECKID] = data[DECKID];
 
         if (amaranth_deck.versions) {
           const branches = {};
@@ -125,30 +125,30 @@ const DeckImportAmaranth = ({ handleClose }) => {
               const n = new Date();
               const d = {
                 author: deck[AUTHOR],
-                branchName: b.branchName,
+                branchName: b[BRANCH_NAME],
                 crypt: bCrypt,
                 library: bLibrary,
-                deckid: b.deckid,
+                deckid: b[DECKID],
                 description: b[DESCRIPTION],
                 isAuthor: true,
-                master: deck.deckid,
+                master: deck[DECKID],
                 name: deck[NAME],
                 timestamp: n.toUTCString(),
               };
 
-              branches[d.deckid] = d;
+              branches[d[DECKID]] = d;
             });
 
-            deck.branches = Object.keys(branches);
+            deck[BRANCHES] = Object.keys(branches);
             Object.values(branches).forEach((b) => {
               deckAdd(b);
             });
             deckAdd(deck);
-            navigate(`/decks/${deck.deckid}`);
+            navigate(`/decks/${deck[DECKID]}`);
           });
         } else {
           deckAdd(deck);
-          navigate(`/decks/${deck.deckid}`);
+          navigate(`/decks/${deck[DECKID]}`);
         }
       })
       .catch(() => setImportError(true));
