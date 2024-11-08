@@ -245,7 +245,10 @@ export const getSwipedBg = (isSwiped, inInventory) => {
 };
 
 export const deepClone = (v) => JSON.parse(JSON.stringify(v));
-export const capitalize = (v) => v.charAt(0).toUpperCase() + v.slice(1);
+export const capitalize = (v) => {
+  if (!v) return;
+  return v.charAt(0).toUpperCase() + v.slice(1);
+};
 
 export const getTextDisciplines = (disciplines) => {
   const disciplinesAndVirtues = { ...disciplinesList, ...virtuesList };

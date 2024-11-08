@@ -15,7 +15,7 @@ import {
 } from '@/components';
 import { useApp } from '@/context';
 import { useModalCardController } from '@/hooks';
-import { BLOOD, POOL, X } from '@/constants';
+import { CAPACITY, BLOOD, POOL, X } from '@/constants';
 
 const DeckDrawModal = ({
   burnCrypt,
@@ -159,7 +159,7 @@ const DeckDrawModal = ({
                     <div className="flex items-center font-bold">Controlled</div>
                     <div className="flex items-center font-bold">{burnedCrypt.length}</div>
                     <div className="flex items-center gap-1" title="Total Capacity">
-                      <ResultCryptCapacity card={{ Capacity: X }} />
+                      <ResultCryptCapacity card={{ [CAPACITY]: X }} />
                       <b>{burnedCapacityTotal}</b>
                     </div>
                   </div>

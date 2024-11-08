@@ -4,7 +4,7 @@ import StarFill from '@/assets/images/icons/star-fill.svg?react';
 import { useApp } from '@/context';
 import { ButtonIconed } from '@/components';
 import { miscServices } from '@/services';
-import { FAVORITED_BY } from '@/constants';
+import { DECKID, FAVORITED_BY } from '@/constants';
 const IS_FAVORITED = 'isFavorited';
 
 const PdaFavoriteButton = ({ deck }) => {
@@ -15,7 +15,7 @@ const PdaFavoriteButton = ({ deck }) => {
   const handleClick = () => {
     if (!username) return;
 
-    miscServices.pdaToggle(isFavorited).then(() => {
+    miscServices.pdaToggle(deck[DECKID], deck[IS_FAVORITED]).then(() => {
       setIsFavorited(!isFavorited);
       setFavoritedBy((prevState) => (isFavorited ? prevState - 1 : prevState + 1));
     });
