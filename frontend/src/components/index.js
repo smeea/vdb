@@ -256,6 +256,7 @@ export { default as ResultModal } from './result_common/ResultModal.jsx';
 export { default as ResultName } from './result_common/ResultName.jsx';
 export { default as ResultNameAka } from './result_common/ResultNameAka.jsx';
 export { default as ResultPreconClan } from './result_common/ResultPreconClan.jsx';
+export { default as ResultTable } from './result_common/ResultTable.jsx';
 export { default as ResultUsed } from './result_common/ResultUsed.jsx';
 
 export { default as ResultCrypt } from './result_crypt/ResultCrypt.jsx';

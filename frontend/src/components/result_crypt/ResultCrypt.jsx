@@ -1,24 +1,31 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState } from 'react';
 import { useSnapshot } from 'valtio';
 import { useNavigate } from 'react-router-dom';
 import {
-  ResultCryptTable,
+  ResultTable,
   ResultCryptTotal,
   ResultCryptTotalInfo,
   ButtonFloatClose,
   ButtonFloatAdd,
   ErrorMessage,
 } from '@/components';
-import { DECK, CAPACITY_MAX_MIN, CAPACITY_MIN_MAX, CLAN, GROUP, NAME, SECT } from '@/constants';
-import { getIsEditable, cryptSort } from '@/utils';
+import {
+  CRYPT,
+  DECK,
+  CAPACITY_MAX_MIN,
+  CAPACITY_MIN_MAX,
+  CLAN,
+  GROUP,
+  NAME,
+  SECT,
+} from '@/constants';
+import { getIsEditable } from '@/utils';
 import { useApp, deckStore } from '@/context';
 
 const ResultCrypt = ({ cards, setCards, inCompare }) => {
   const {
     setShowCryptSearch,
-    addMode,
     isMobile,
-    isDesktop,
     cryptSearchSort,
     changeCryptSearchSort,
     showFloatingButtons,
@@ -44,17 +51,6 @@ const ResultCrypt = ({ cards, setCards, inCompare }) => {
     setShowCryptSearch(true);
   };
 
-  const table = useMemo(() => {
-    const sortedCards = cryptSort(cards, cryptSearchSort);
-
-    return (
-      <ResultCryptTable
-        resultCards={sortedCards}
-        placement={isDesktop || (!isDesktop && !addMode) ? 'right' : 'bottom'}
-      />
-    );
-  }, [cards, cryptSearchSort]);
-
   return (
     <>
       {!isMobile && (cards === null || cards.length === 0) && (
@@ -77,7 +73,7 @@ const ResultCrypt = ({ cards, setCards, inCompare }) => {
               <ResultCryptTotalInfo cards={cards} />
             </div>
           )}
-          {table}
+          <ResultTable cards={cards} target={CRYPT} />
         </>
       )}
       {isMobile && showFloatingButtons && (

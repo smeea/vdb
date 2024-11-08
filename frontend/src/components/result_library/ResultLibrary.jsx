@@ -1,23 +1,23 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import { useSnapshot } from 'valtio';
 import { useNavigate } from 'react-router-dom';
-import {
-  ButtonFloatAdd,
-  ButtonFloatClose,
-  ResultLibraryTable,
-  ResultLibraryTotal,
-  ErrorMessage,
-} from '@/components';
-import { getIsEditable, librarySort } from '@/utils';
+import { ButtonFloatAdd, ButtonFloatClose, ResultLibraryTotal, ErrorMessage } from '@/components';
+import { getIsEditable } from '@/utils';
 import { useApp, deckStore } from '@/context';
-import { DECK, CLAN_DISCIPLINE, COST_MAX_MIN, COST_MIN_MAX, NAME, TYPE } from '@/constants';
+import {
+  LIBRARY,
+  DECK,
+  CLAN_DISCIPLINE,
+  COST_MAX_MIN,
+  COST_MIN_MAX,
+  NAME,
+  TYPE,
+} from '@/constants';
 
 const ResultLibrary = ({ cards, setCards, inCompare }) => {
   const {
     setShowLibrarySearch,
-    addMode,
     isMobile,
-    isDesktop,
     librarySearchSort,
     changeLibrarySearchSort,
     showFloatingButtons,
@@ -40,17 +40,6 @@ const ResultLibrary = ({ cards, setCards, inCompare }) => {
     setShowLibrarySearch(true);
   };
 
-  const table = useMemo(() => {
-    const sortedCards = librarySort(cards, librarySearchSort);
-
-    return (
-      <ResultLibraryTable
-        resultCards={sortedCards}
-        placement={isDesktop || (!isDesktop && !addMode) ? 'right' : 'bottom'}
-      />
-    );
-  }, [cards, librarySearchSort]);
-
   return (
     <>
       {!isMobile && (cards === null || cards.length === 0) && (
@@ -67,7 +56,7 @@ const ResultLibrary = ({ cards, setCards, inCompare }) => {
             sortMethod={librarySearchSort}
             setSortMethod={changeLibrarySearchSort}
           />
-          {table}
+          <ResultTable cards={cards} target={LIBRARY} />
         </>
       )}
       {isMobile && showFloatingButtons && <ButtonFloatClose handleClose={handleClear} />}
