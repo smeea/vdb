@@ -6,7 +6,7 @@ import CalendarEvent from '@/assets/images/icons/calendar-event.svg?react';
 import { TwdResultTags, TwdResultDescriptionTextTr } from '@/components';
 import { useApp, searchPdaForm, clearSearchForm } from '@/context';
 import { useTags } from '@/hooks';
-import { CRYPT, LIBRARY, NAME, CREATION_DATE, TIMESTAMP, AUTHOR, PDA } from '@/constants';
+import { AUTHOR, CRYPT, LIBRARY, NAME, CREATION_DATE, TIMESTAMP, PDA } from '@/constants';
 
 const PdaResultDescriptionText = ({ deck }) => {
   const { isMobile } = useApp();
@@ -17,7 +17,7 @@ const PdaResultDescriptionText = ({ deck }) => {
   const handleClick = (value) => {
     clearSearchForm(PDA);
     searchPdaForm[AUTHOR] = value;
-    navigate(`/pda?q=${encodeURIComponent(JSON.stringify({ author: value }))}`);
+    navigate(`/pda?q=${encodeURIComponent(JSON.stringify({ [AUTHOR]: value }))}`);
   };
 
   return (

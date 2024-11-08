@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { TwdDeck, TwdResultTotal, Button, ButtonFloatClose } from '@/components';
 import { decksSort } from '@/utils';
 import { useApp } from '@/context';
-import { DECKID } from '@/constants';
+import { DECKID, DATE_NEW_OLD, DATE_OLD_NEW, PLAYERS } from '@/constants';
 
 const TwdResult = ({ results, setResults }) => {
   const { isMobile, showFloatingButtons, twdSearchSort, changeTwdSearchSort } = useApp();
@@ -13,9 +13,9 @@ const TwdResult = ({ results, setResults }) => {
   const [showCounter, setShowCounter] = useState(showCounterStep);
 
   const sortMethods = {
-    'Date - New to Old': 'D↓',
-    'Date - Old to New': 'D↑',
-    Players: 'P',
+    [DATE_NEW_OLD]: 'D↓',
+    [DATE_OLD_NEW]: 'D↑',
+    [PLAYERS]: 'P',
   };
 
   const handleClear = () => {

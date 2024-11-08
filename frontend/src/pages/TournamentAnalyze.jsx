@@ -25,7 +25,26 @@ import {
   useApp,
 } from '@/context';
 import { useDeckImport, useTags } from '@/hooks';
-import { TAGS, CRYPT, LIBRARY, NAME, AUTHOR, RANK, DECKS, RESULTS, INFO } from '@/constants';
+import {
+  AUTHOR,
+  CRYPT,
+  DATE,
+  DECKS,
+  EVENT,
+  GW,
+  INFO,
+  LIBRARY,
+  LOCATION,
+  NAME,
+  PLAYERS,
+  RANK,
+  RESULTS,
+  ROUNDS,
+  TAGS,
+  VP,
+} from '@/constants';
+
+const TESTERS = ['1', 'crauseon'];
 
 const TournamentAnalyze = () => {
   const { username, cryptCardBase, libraryCardBase, isMobile, isDesktop } = useApp();
@@ -146,11 +165,11 @@ const TournamentAnalyze = () => {
       const name = `${array[1]} ${array[2]}`;
 
       const score = {
-        name: name,
-        rank: rank,
-        gw: Number(array[7]),
-        vp: Number(array[8]),
-        players: totalPlayers,
+        [NAME]: name,
+        [RANK]: rank,
+        [GW]: Number(array[7]),
+        [VP]: Number(array[8]),
+        [PLAYERS]: totalPlayers,
       };
 
       if (tempDecks[veknId]) {
@@ -159,11 +178,11 @@ const TournamentAnalyze = () => {
       }
 
       if (score[RANK] > Math.ceil(totalPlayers / 2)) {
-        if (medianVp < score.vp) medianVp = score.vp;
-        if (medianGw < score.gw) medianGw = score.gw;
+        if (medianVp < score[VP]) medianVp = score[VP];
+        if (medianGw < score[GW]) medianGw = score[GW];
       }
-      totalGw += score.gw;
-      totalVp += score.vp;
+      totalGw += score[GW];
+      totalVp += score[VP];
     });
 
     let medianReportedRank;
@@ -177,12 +196,12 @@ const TournamentAnalyze = () => {
     }
 
     const info = {
-      event: event,
-      date: date,
-      location: location,
-      players: totalPlayers,
+      [EVENT]: event,
+      [DATE]: date,
+      [LOCATION]: location,
+      [PLAYERS]: totalPlayers,
+      [ROUNDS]: totalRounds,
       matches: totalMatches,
-      rounds: totalRounds,
       totalGw: totalGw,
       totalVp: totalVp,
       avgMatchGw: Math.round((totalGw / totalMatches) * 10) / 10,
@@ -249,7 +268,7 @@ const TournamentAnalyze = () => {
                 setTempArchon={setTempArchon}
                 setError={setError}
               />
-              {['1', 'crauseon'].includes(username) && (
+              {TESTERS.includes(username) && (
                 <AnalyzeLoadCustomButtons
                   tempDecks={tempDecks}
                   setTempDecks={setTempDecks}

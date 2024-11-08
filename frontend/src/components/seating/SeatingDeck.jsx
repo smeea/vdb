@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom';
 import PlayFill from '@/assets/images/icons/play-fill.svg?react';
 import X from '@/assets/images/icons/x.svg?react';
 import { Toggle } from '@/components';
-import { DECKID, NAME } from '@/constants';
+import { STATE, DECKID, NAME } from '@/constants';
 
 const SeatingDeck = ({ toggle, i, deck, disabled, remove }) => {
   return (
     <div className="flex items-center">
-      <Toggle isOn={deck.state} handleClick={() => toggle(i)} size="sm" disabled={disabled}>
+      <Toggle isOn={deck[STATE]} handleClick={() => toggle(i)} size="sm" disabled={disabled}>
         <div className="inline">{deck[NAME]}</div>
       </Toggle>
       {deck[DECKID] ? (

@@ -3,7 +3,7 @@ import { useSnapshot } from 'valtio';
 import { DeckMissingModal } from '@/components';
 import { useApp, inventoryStore } from '@/context';
 import { useInventoryCrypt, useInventoryLibrary } from '@/hooks';
-import { ID, CRYPT, LIBRARY } from '@/constants';
+import { ID, CRYPT, LIBRARY, NAME, AUTHOR, DESCRIPTION, DECKID } from '@/constants';
 
 const InventoryMissingModalWrapper = ({
   clan,
@@ -63,12 +63,12 @@ const InventoryMissingModalWrapper = ({
   return (
     <DeckMissingModal
       deck={{
-        name: 'Missing cards for Inventory',
-        author: publicName,
-        description: '',
-        crypt: missingCrypt,
-        library: missingLibrary,
-        deckid: 'missingInInventory',
+        [NAME]: 'Missing cards for Inventory',
+        [AUTHOR]: publicName,
+        [DESCRIPTION]: '',
+        [CRYPT]: missingCrypt,
+        [LIBRARY]: missingLibrary,
+        [DECKID]: 'missingInInventory',
       }}
       missAllVtes={{ crypt: missAllVtesCrypt, library: missAllVtesLibrary }}
       handleClose={handleClose}

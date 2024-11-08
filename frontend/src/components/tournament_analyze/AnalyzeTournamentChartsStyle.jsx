@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis } from 'recharts';
 import { useApp } from '@/context';
-import { TAGS } from '@/constants';
+import { NAME, TAGS, VALUE } from '@/constants';
 
 const AnalyzeTournamentChartsStyle = ({ decks }) => {
   const { isMobile, isDesktop, isWide } = useApp();
@@ -28,36 +28,36 @@ const AnalyzeTournamentChartsStyle = ({ decks }) => {
 
     return [
       {
-        name: 'Bleed',
-        value: result.bleed / qty || 0,
+        [NAME]: 'Bleed',
+        [VALUE]: result.bleed / qty || 0,
       },
       {
-        name: 'Stealth',
-        value: result.stealth / qty || 0,
+        [NAME]: 'Stealth',
+        [VALUE]: result.stealth / qty || 0,
       },
       {
-        name: 'Block',
-        value: result.block / qty || 0,
+        [NAME]: 'Block',
+        [VALUE]: result.block / qty || 0,
       },
       {
-        name: 'Rush',
-        value: result.rush / qty || 0,
+        [NAME]: 'Rush',
+        [VALUE]: result.rush / qty || 0,
       },
       {
-        name: 'Combat',
-        value: result.combat / qty || 0,
+        [NAME]: 'Combat',
+        [VALUE]: result.combat / qty || 0,
       },
       {
-        name: 'Ally',
-        value: result.ally / qty || 0,
+        [NAME]: 'Ally',
+        [VALUE]: result.ally / qty || 0,
       },
       {
-        name: 'Swarm',
-        value: result.swarm / qty || 0,
+        [NAME]: 'Swarm',
+        [VALUE]: result.swarm / qty || 0,
       },
       {
-        name: 'Vote',
-        value: result.vote / qty || 0,
+        [NAME]: 'Vote',
+        [VALUE]: result.vote / qty || 0,
       },
     ];
   }, [decks]);
@@ -72,11 +72,11 @@ const AnalyzeTournamentChartsStyle = ({ decks }) => {
       data={data}
     >
       <PolarGrid />
-      <PolarAngleAxis axisLine={false} dataKey="name" />
+      <PolarAngleAxis axisLine={false} dataKey={NAME} />
       <Radar
         isAnimationActive={false}
         name="Playstyle"
-        dataKey="value"
+        dataKey={VALUE}
         stroke="#8884d8"
         fill="#8884d8"
         fillOpacity={0.7}

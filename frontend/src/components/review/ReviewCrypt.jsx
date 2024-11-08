@@ -3,18 +3,19 @@ import { twMerge } from 'tailwind-merge';
 import { FlexGapped, DiffCryptTable, ResultModal, DeckCryptHeader } from '@/components';
 import { useApp } from '@/context';
 import { useModalCardController, useKeyDisciplines, useDeckCrypt } from '@/hooks';
+import { CAPACITY, CLAN, GROUP, NAME, QUANTITYx, SECT } from '@/constants';
 
 const ReviewCrypt = ({ cardChange, cardsFrom, cardsTo }) => {
   const { cryptDeckSort, changeCryptDeckSort, isMobile } = useApp();
   const [showInfo, setShowInfo] = useState(false);
 
   const sortMethods = {
-    Capacity: 'C',
-    Clan: 'CL',
-    Group: 'G',
-    Name: 'N',
-    'Quantity ': 'Q ', // SPACE SUFFIX IS INTENTIONAL
-    Sect: 'S',
+    [CAPACITY]: 'C',
+    [CLAN]: 'CL',
+    [GROUP]: 'G',
+    [NAME]: 'N',
+    [QUANTITYx]: 'Q',
+    [SECT]: 'S',
   };
 
   const {

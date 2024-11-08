@@ -36,7 +36,11 @@ import {
   MASTER,
   NAME,
   TAGS,
+  PUBLIC_PARENT,
+  IS_BRANCHES,
+  IS_PUBLIC,
 } from '@/constants';
+const IS_FROM_URL = 'isFromUrl';
 
 const Decks = () => {
   const {
@@ -87,7 +91,7 @@ const Decks = () => {
 
     setError(false);
     const cardsData = useDeck(deckData.cards, cryptCardBase, libraryCardBase);
-    if (deckid.length !== 9 || deckData.publicParent) {
+    if (deckid.length !== 9 || deckData[PUBLIC_PARENT]) {
       deckData[TAGS] = [];
       Object.values(useTags(cardsData[CRYPT], cardsData[LIBRARY])).forEach((v) => {
         deckData[TAGS] = deckData[TAGS].concat(v);
@@ -96,11 +100,11 @@ const Decks = () => {
 
     const d = {
       ...deckData,
-      crypt: cardsData[CRYPT],
-      isBranches: !!(deckData[MASTER] || deckData[BRANCHES]?.length > 0),
-      isPublic: !!deckData.publicParent,
-      library: cardsData[LIBRARY],
-      isFromUrl: true,
+      [CRYPT]: cardsData[CRYPT],
+      [LIBRARY]: cardsData[LIBRARY],
+      [IS_BRANCHES]: !!(deckData[MASTER] || deckData[BRANCHES]?.length > 0),
+      [IS_PUBLIC]: !!deckData[PUBLIC_PARENT],
+      [IS_FROM_URL]: true,
     };
     delete d.cards;
 
@@ -116,15 +120,19 @@ const Decks = () => {
 
   useEffect(() => {
     if (hash && cryptCardBase && libraryCardBase) {
-      const { crypt, library } = parseDeckHash(hash, cryptCardBase, libraryCardBase);
+      const { [CRYPT]: crypt, [LIBRARY]: library } = parseDeckHash(
+        hash,
+        cryptCardBase,
+        libraryCardBase,
+      );
 
       setDeck({
-        deckid: DECK,
-        name: query.get(NAME) ?? '',
-        author: query.get(AUTHOR) ?? '',
-        description: query.get(DESCRIPTION) ?? '',
-        crypt: crypt,
-        library: library,
+        [DECKID]: DECK,
+        [NAME]: query.get(NAME) ?? '',
+        [AUTHOR]: query.get(AUTHOR) ?? '',
+        [DESCRIPTION]: query.get(DESCRIPTION) ?? '',
+        [CRYPT]: crypt,
+        [LIBRARY]: library,
       });
     }
   }, [hash, cryptCardBase, libraryCardBase]);
@@ -145,7 +153,7 @@ const Decks = () => {
           } else {
             getDeck();
           }
-        } else if (deck.isFromUrl && decks?.[deckid]) {
+        } else if (deck[IS_FROM_URL] && decks?.[deckid]) {
           setDeck(decks[deckid]);
         }
       } else if (decks?.[lastDeckId]) {

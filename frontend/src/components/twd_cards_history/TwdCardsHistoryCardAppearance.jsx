@@ -3,7 +3,7 @@ import { twMerge } from 'tailwind-merge';
 import { useNavigate } from 'react-router-dom';
 import { TwdOpenDeckButton } from '@/components';
 import { useApp, clearSearchForm, searchTwdForm } from '@/context';
-import { TWD_DATE, DECKID, AUTHOR, PLAYER, CRYPT, LIBRARY, TWD } from '@/constants';
+import { RELEASE_DATE, TWD_DATE, DECKID, AUTHOR, PLAYER, CRYPT, LIBRARY, TWD } from '@/constants';
 
 const TwdCardsHistoryCardAppearance = ({ card, byPlayer }) => {
   const { isMobile } = useApp();
@@ -13,17 +13,17 @@ const TwdCardsHistoryCardAppearance = ({ card, byPlayer }) => {
   if (card[TWD_DATE]) {
     yearsToWin =
       Math.round(
-        (new Date(card[TWD_DATE]) - new Date(card.release_date)) / (1000 * 60 * 60 * 24) / 365,
+        (new Date(card[TWD_DATE]) - new Date(card[RELEASE_DATE])) / (1000 * 60 * 60 * 24) / 365,
       ) || 1;
   } else {
     const date = new Date();
-    yearsToWin = `${date.getFullYear() - card.release_date.slice(0, 4)}+`;
+    yearsToWin = `${date.getFullYear() - card[RELEASE_DATE].slice(0, 4)}+`;
   }
 
   const handleClick = (author) => {
     clearSearchForm(TWD);
     searchTwdForm[AUTHOR] = author;
-    navigate(`/twd?q=${encodeURIComponent(JSON.stringify({ author: author }))}`);
+    navigate(`/twd?q=${encodeURIComponent(JSON.stringify({ [AUTHOR]: author }))}`);
   };
 
   return (
@@ -34,7 +34,7 @@ const TwdCardsHistoryCardAppearance = ({ card, byPlayer }) => {
           !card[DECKID] && 'font-bold text-fgSecondary dark:text-fgSecondaryDark',
         )}
       >
-        {card.release_date.slice(0, 4)}
+        {card[RELEASE_DATE].slice(0, 4)}
       </div>
       {!isMobile && (
         <div className="flex min-w-[45px] items-center justify-center sm:min-w-[60px]">

@@ -34,6 +34,8 @@ import {
   TIMESTAMP,
   TYPE,
   XLSX,
+  PUBLIC_PARENT,
+  PUBLIC_CHILD,
 } from '@/constants';
 import { deckStore } from '@/context';
 
@@ -185,7 +187,7 @@ export const branchCreate = (deck, branch) => {
   const url = `${import.meta.env.VITE_API_URL}/deck/${master}/branch`;
 
   return ky
-    .post(url, { json: { deckid: branch[DECKID] } })
+    .post(url, { json: { [DECKID]: branch[DECKID] } })
     .json()
     .then((data) => {
       const now = new Date();
@@ -219,23 +221,23 @@ export const publicSync = (deck, decks) => {
     .put(url)
     .json()
     .then(() => {
-      deckStore[DECK][CRYPT] = { ...decks[deck.publicParent][CRYPT] };
-      deckStore[DECK][LIBRARY] = { ...decks[deck.publicParent][LIBRARY] };
+      deckStore[DECK][CRYPT] = { ...decks[deck[PUBLIC_PARENT]][CRYPT] };
+      deckStore[DECK][LIBRARY] = { ...decks[deck[PUBLIC_PARENT]][LIBRARY] };
     });
 };
 
 export const publicCreateOrDelete = (deck) => {
   const url = `${import.meta.env.VITE_API_URL}/pda/${deck[DECKID]}`;
 
-  const isPublished = !!(deck.publicParent || deck.publicChild);
-  const parentId = deck.publicParent ?? deck[DECKID];
+  const isPublished = !!(deck[PUBLIC_PARENT] || deck[PUBLIC_CHILD]);
+  const parentId = deck[PUBLIC_PARENT] ?? deck[DECKID];
 
   return ky(url, {
     method: isPublished ? 'DELETE' : 'POST',
   })
     .json()
     .then((data) => {
-      deckStore[DECKS][parentId].publicChild = isPublished ? null : data[DECKID];
+      deckStore[DECKS][parentId][PUBLIC_CHILD] = isPublished ? null : data[DECKID];
       return data[DECKID];
     });
 };
@@ -265,13 +267,13 @@ export const exportDecks = async (decks, format) => {
         deckName += ` [${deck[BRANCH_NAME]}]`;
       }
 
-      return { deckName: deckName, file: exportXlsx(deck) };
+      return { [NAME]: deckName, file: exportXlsx(deck) };
     });
 
     const folder = zip.folder(`Decks ${date} [${format}]`);
     Promise.all(fetchPromises).then((deckExports) => {
       deckExports.forEach((d) => {
-        folder.file(`${d.deckName}.xlsx`, d.file, {
+        folder.file(`${d[NAME]}.xlsx`, d.file, {
           base64: true,
         });
       });

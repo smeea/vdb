@@ -4,7 +4,7 @@ import { FlexGapped, DiffCryptTable, ResultModal, DeckCryptHeader } from '@/comp
 import { useApp } from '@/context';
 import { getIsEditable } from '@/utils';
 import { useModalCardController, useKeyDisciplines, useDeckCrypt } from '@/hooks';
-import { CRYPT, DECKID } from '@/constants';
+import { CRYPT, DECKID, CAPACITY, CLAN, GROUP, NAME, QUANTITYx, SECT } from '@/constants';
 
 const DiffCrypt = ({ cardsTo, deck }) => {
   const { isMobile, cryptDeckSort, changeCryptDeckSort, setShowFloatingButtons } = useApp();
@@ -13,12 +13,12 @@ const DiffCrypt = ({ cardsTo, deck }) => {
   const isEditable = getIsEditable(deck);
 
   const sortMethods = {
-    Capacity: 'C',
-    Clan: 'CL',
-    Group: 'G',
-    Name: 'N',
-    'Quantity ': 'Q', // SPACE SUFFIX IS INTENTIONAL
-    Sect: 'S',
+    [CAPACITY]: 'C',
+    [CLAN]: 'CL',
+    [GROUP]: 'G',
+    [NAME]: 'N',
+    [QUANTITYx]: 'Q',
+    [SECT]: 'S',
   };
 
   const {

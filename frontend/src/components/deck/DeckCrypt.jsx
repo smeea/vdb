@@ -4,20 +4,20 @@ import { DeckCryptTable, DeckCryptHeader, ResultModal, FlexGapped } from '@/comp
 import { useApp } from '@/context';
 import { getIsEditable } from '@/utils';
 import { useModalCardController, useKeyDisciplines, useDeckCrypt } from '@/hooks';
-import { DECKID, CRYPT } from '@/constants';
+import { CRYPT, DECKID, CAPACITY, CLAN, GROUP, NAME, QUANTITYx, SECT } from '@/constants';
 
 const DeckCrypt = ({ inSearch, inPreview, inMissing, noDisciplines, deck }) => {
   const { setShowFloatingButtons, cryptDeckSort, changeCryptDeckSort, isMobile } = useApp();
-  const isEditable = getIsEditable(deck);
   const [showInfo, setShowInfo] = useState(false);
+  const isEditable = getIsEditable(deck);
 
   const sortMethods = {
-    Capacity: 'C',
-    Clan: 'CL',
-    Group: 'G',
-    Name: 'N',
-    'Quantity ': 'Q', // SPACE SUFFIX IS INTENTIONAL
-    Sect: 'S',
+    [CAPACITY]: 'C',
+    [CLAN]: 'CL',
+    [GROUP]: 'G',
+    [NAME]: 'N',
+    [QUANTITYx]: 'Q',
+    [SECT]: 'S',
   };
 
   const {

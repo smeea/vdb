@@ -18,6 +18,12 @@ import {
   TYPE_MASTER,
   TYPE_EVENT,
   CLAN,
+  CRYPT,
+  LIBRARY,
+  HAS_BANNED,
+  HAS_LIMITED,
+  HAS_PLAYTEST,
+  HAS_ILLEGAL_DATE,
 } from '@/constants';
 import { limitedStore } from '@/context';
 
@@ -47,10 +53,12 @@ const useDeckLibrary = (cardsList, cardsToList = {}) => {
     const libraryByType = Object.groupBy(library, (card) => card.c[TYPE]);
     const librarySideByType = Object.groupBy(librarySide, (card) => card.c[TYPE]);
 
-    const { hasBanned, hasLimited, hasPlaytest, hasIllegalDate } = getRestrictions(
-      { crypt: {}, library: library },
-      limitedCards,
-    );
+    const {
+      [HAS_BANNED]: hasBanned,
+      [HAS_LIMITED]: hasLimited,
+      [HAS_PLAYTEST]: hasPlaytest,
+      [HAS_ILLEGAL_DATE]: hasIllegalDate,
+    } = getRestrictions({ [CRYPT]: {}, [LIBRARY]: library }, limitedCards);
 
     const trifleTotal = countCards(library.filter((card) => card.c.Trifle));
     const libraryTotal = countCards(cardsFrom);

@@ -4,11 +4,13 @@ import StarFill from '@/assets/images/icons/star-fill.svg?react';
 import { useApp } from '@/context';
 import { ButtonIconed } from '@/components';
 import { miscServices } from '@/services';
+import { FAVORITED_BY } from '@/constants';
+const IS_FAVORITED = 'isFavorited';
 
 const PdaFavoriteButton = ({ deck }) => {
   const { username } = useApp();
-  const [isFavorited, setIsFavorited] = useState(deck.isFavorited);
-  const [favoritedBy, setFavoritedBy] = useState(deck.favoritedBy);
+  const [isFavorited, setIsFavorited] = useState(deck[IS_FAVORITED]);
+  const [favoritedBy, setFavoritedBy] = useState(deck[FAVORITED_BY]);
 
   const handleClick = () => {
     if (!username) return;

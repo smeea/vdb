@@ -18,6 +18,9 @@ import {
   SWARM,
   TAGS,
   VOTE,
+  SCORE,
+  CLAN,
+  IN_SEARCH,
 } from '@/constants';
 
 const AnalyzeTournamentChartsRankingStyle = ({ info, decks, searchResults }) => {
@@ -35,15 +38,15 @@ const AnalyzeTournamentChartsRankingStyle = ({ info, decks, searchResults }) => 
     });
 
     Object.values(decks).forEach((deck) => {
-      const position = info[PLAYERS] - deck.score[RANK];
+      const position = info[PLAYERS] - deck[SCORE][RANK];
       const inSearch = Object.values(searchResults).some((d) => d[AUTHOR] === deck[AUTHOR]);
       const def = {
-        clan: getClan(deck[CRYPT]) || MULTI,
-        crypt: deck[CRYPT],
-        library: deck[LIBRARY],
-        tags: deck[TAGS],
-        inSearch: inSearch,
-        rank: deck.score[RANK],
+        [CLAN]: getClan(deck[CRYPT]) || MULTI,
+        [CRYPT]: deck[CRYPT],
+        [LIBRARY]: deck[LIBRARY],
+        [TAGS]: deck[TAGS],
+        [IN_SEARCH]: inSearch,
+        [RANK]: deck[SCORE][RANK],
         index: -1,
       };
 

@@ -1,4 +1,15 @@
-import { ADV, ID, GROUP, NAME, AUTHOR, DESCRIPTION, CRYPT, LIBRARY, ASCII } from '@/constants';
+import {
+  ADV,
+  ASCII,
+  AUTHOR,
+  BAD_CARDS,
+  CRYPT,
+  DESCRIPTION,
+  GROUP,
+  ID,
+  LIBRARY,
+  NAME,
+} from '@/constants';
 
 const useDeckImport = async (deckText, cryptCardBase, libraryCardBase, isPlaytester) => {
   const { default: unidecode } = await import('unidecode');
@@ -11,7 +22,7 @@ const useDeckImport = async (deckText, cryptCardBase, libraryCardBase, isPlaytes
     if (!Object.keys(cardbase).includes(name)) {
       cardbase[name] = { base: card[ID], [card[GROUP]]: card[ID] };
     } else if (adv) {
-      cardbase[name].adv = card[ID];
+      cardbase[name][ADV] = card[ID];
     } else {
       cardbase[name][card[GROUP]] = card[ID];
     }
@@ -82,12 +93,12 @@ const useDeckImport = async (deckText, cryptCardBase, libraryCardBase, isPlaytes
   };
 
   const deck = {
-    name: 'New deck',
-    author: '',
-    description: '',
-    crypt: {},
-    library: {},
-    badCards: [],
+    [NAME]: 'New deck',
+    [AUTHOR]: '',
+    [DESCRIPTION]: '',
+    [CRYPT]: {},
+    [LIBRARY]: {},
+    [BAD_CARDS]: [],
   };
 
   const deckArray = deckText.split(/\n/);
@@ -125,7 +136,7 @@ const useDeckImport = async (deckText, cryptCardBase, libraryCardBase, isPlaytes
         };
       }
     } else {
-      deck.badCards.push(i);
+      deck[BAD_CARDS].push(i);
     }
   });
 

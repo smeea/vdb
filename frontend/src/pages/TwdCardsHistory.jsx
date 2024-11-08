@@ -4,7 +4,7 @@ import { TabButton, TwdCardsHistoryCrypt, TwdCardsHistoryLibrary } from '@/compo
 import { useApp } from '@/context';
 import { byCardName } from '@/utils';
 import { useFetch } from '@/hooks';
-import { SET, DATE, PLAYER, DECKID, CRYPT, LIBRARY, POD, PROMO } from '@/constants';
+import { RELEASE_DATE, SET, DATE, PLAYER, DECKID, CRYPT, LIBRARY, POD, PROMO } from '@/constants';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 
 const TwdCardsHistory = () => {
@@ -32,8 +32,8 @@ const TwdCardsHistory = () => {
                 ? Object.keys(cardBase[cardid][SET].Promo)[0]
                 : setsAndPrecons[set][DATE];
 
-            if (!target[cardid].release_date || target[cardid].release_date > d) {
-              target[cardid].release_date = d;
+            if (!target[cardid][RELEASE_DATE] || target[cardid][RELEASE_DATE] > d) {
+              target[cardid][RELEASE_DATE] = d;
             }
           });
 

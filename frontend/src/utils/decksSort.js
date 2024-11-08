@@ -9,13 +9,16 @@ import {
   RANK_HIGH_LOW,
   RANK_LOW_HIGH,
   RANK,
+  SCORE,
+  FAVORITED_BY,
+  CREATION_DATE,
 } from '@/constants';
 
 const decksSort = (decks, sortMethod) => {
-  const byRank = (a, b) => a.score[RANK] - b.score[RANK];
-  const byFavorites = (a, b) => b.favoritedBy - a.favoritedBy;
+  const byRank = (a, b) => a[SCORE][RANK] - b[SCORE][RANK];
+  const byFavorites = (a, b) => b[FAVORITED_BY] - a[FAVORITED_BY];
   const byName = (a, b) => a[NAME].localeCompare(b[NAME]);
-  const byDate = (a, b) => a.creation_date < b.creation_date;
+  const byDate = (a, b) => a[CREATION_DATE] < b[CREATION_DATE];
   const byPlayers = (a, b) => b[PLAYERS] - a[PLAYERS];
 
   if (decks) {

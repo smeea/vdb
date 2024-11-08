@@ -1,7 +1,16 @@
 import { useMemo } from 'react';
 import { useSnapshot } from 'valtio';
 import { cryptSortWithTimer, countCards, containCard, getGroups, getRestrictions } from '@/utils';
-import { CRYPT_TIMER, NAME } from '@/constants';
+import {
+  CRYPT,
+  CRYPT_TIMER,
+  HAS_BANNED,
+  HAS_ILLEGAL_DATE,
+  HAS_LIMITED,
+  HAS_PLAYTEST,
+  LIBRARY,
+  NAME,
+} from '@/constants';
 import { miscStore, limitedStore } from '@/context';
 
 const useDeckCrypt = (cardsList, sortMethod = NAME, cardsToList = {}) => {
@@ -27,10 +36,12 @@ const useDeckCrypt = (cardsList, sortMethod = NAME, cardsToList = {}) => {
   const sortedCardsSide = cryptSortWithTimer(cryptSide, sortMethod);
 
   const value = useMemo(() => {
-    const { hasBanned, hasLimited, hasPlaytest, hasIllegalDate } = getRestrictions(
-      { crypt: cryptFrom, library: {} },
-      limitedCards,
-    );
+    const {
+      [HAS_BANNED]: hasBanned,
+      [HAS_LIMITED]: hasLimited,
+      [HAS_PLAYTEST]: hasPlaytest,
+      [HAS_ILLEGAL_DATE]: hasIllegalDate,
+    } = getRestrictions({ [CRYPT]: cryptFrom, [LIBRARY]: {} }, limitedCards);
 
     const cryptTotal = countCards(cryptFrom);
     const { hasWrongGroups, cryptGroups } = getGroups(cryptFrom);

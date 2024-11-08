@@ -1,5 +1,8 @@
 import React, { useMemo } from 'react';
 import { BarChart, Bar, XAxis, YAxis, Label, Tooltip, Legend } from 'recharts';
+import { NAME } from '@/constants';
+const SEEN = 'seen';
+const NOT_SEEN = 'notSeen';
 
 const ChartTooltip = ({ active, payload }) => {
   const value = payload?.[0]?.payload;
@@ -8,10 +11,10 @@ const ChartTooltip = ({ active, payload }) => {
       {active && (
         <div className="flex flex-col gap-2 p-1">
           <div className="flex justify-between gap-2 text-[#6565cc]">
-            Seen: <div className="flex">{value.seen}</div>
+            Seen: <div className="flex">{value[SEEN]}</div>
           </div>
           <div className="flex justify-between gap-2 text-[#d57020]">
-            Not Seen: <div className="flex">{value.notseen}</div>
+            Not Seen: <div className="flex">{value[NOT_SEEN]}</div>
           </div>
         </div>
       )}
@@ -23,9 +26,9 @@ const PlaytestScoresChart = ({ value, maxSameScore }) => {
   const data = useMemo(() => {
     const d = Array.apply(null, Array(10)).map((_, i) => {
       return {
-        name: i + 1,
-        seen: 0,
-        notseen: 0,
+        [NAME]: i + 1,
+        [SEEN]: 0,
+        [NOT_SEEN]: 0,
       };
     });
 
@@ -34,9 +37,9 @@ const PlaytestScoresChart = ({ value, maxSameScore }) => {
       if (!score) return;
 
       if (isPlayed) {
-        d[score - 1].seen += 1;
+        d[score - 1][SEEN] += 1;
       } else {
-        d[score - 1].notseen += 1;
+        d[score - 1][NOT_SEEN] += 1;
       }
     });
 
@@ -56,7 +59,7 @@ const PlaytestScoresChart = ({ value, maxSameScore }) => {
       }}
       isAnimationActive={false}
     >
-      <XAxis dataKey="name">
+      <XAxis dataKey={NAME}>
         <Label value="Score" offset={0} position="bottom" />
       </XAxis>
       <YAxis label="#" type="number" domain={[0, maxSameScore]} allowDataOverflow />

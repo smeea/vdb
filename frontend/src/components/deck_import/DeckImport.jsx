@@ -13,7 +13,7 @@ import {
 import { useApp, deckStore, deckAdd } from '@/context';
 import { useDeckImport } from '@/hooks';
 import { deckServices } from '@/services';
-import { DECK, DECKID } from '@/constants';
+import { NAME, AUTHOR, CRYPT, LIBRARY, DECK, DECKID, BAD_CARDS } from '@/constants';
 
 const DeckImport = ({ setShowInfo, isOnlyNew }) => {
   const {
@@ -54,8 +54,8 @@ const DeckImport = ({ setShowInfo, isOnlyNew }) => {
   const createNewDeck = () => {
     setError(false);
     const d = {
-      name: 'New deck',
-      author: publicName,
+      [NAME]: 'New deck',
+      [AUTHOR]: publicName,
     };
 
     deckServices
@@ -66,9 +66,9 @@ const DeckImport = ({ setShowInfo, isOnlyNew }) => {
         setShowFloatingButtons(true);
         deckAdd({
           ...d,
-          deckid: data[DECKID],
-          crypt: {},
-          library: {},
+          [DECKID]: data[DECKID],
+          [CRYPT]: {},
+          [LIBRARY]: {},
         });
         navigate(`/decks/${data[DECKID]}`);
       })
@@ -128,10 +128,10 @@ const DeckImport = ({ setShowInfo, isOnlyNew }) => {
         .then((data) => {
           deckAdd({
             ...d,
-            deckid: data[DECKID],
+            [DECKID]: data[DECKID],
           });
           navigate(`/decks/${data[DECKID]}`);
-          setBadCards(d.badCards);
+          setBadCards(d[BAD_CARDS]);
           setShowMenuButtons(false);
           setShowFloatingButtons(true);
           handleCloseImportModal();

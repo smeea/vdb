@@ -18,6 +18,10 @@ import {
   PROMO,
   SECT,
   SET,
+  HAS_BANNED,
+  HAS_LIMITED,
+  HAS_PLAYTEST,
+  HAS_ILLEGAL_DATE,
 } from '@/constants';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 import disciplinesList from '@/assets/data/disciplinesList.json';
@@ -83,10 +87,10 @@ export const getRestrictions = (deck, limitedCards) => {
   });
 
   return {
-    hasBanned: hasBanned,
-    hasLimited: hasLimited,
-    hasPlaytest: hasPlaytest,
-    hasIllegalDate: hasIllegalDate,
+    [HAS_BANNED]: hasBanned,
+    [HAS_LIMITED]: hasLimited,
+    [HAS_PLAYTEST]: hasPlaytest,
+    [HAS_ILLEGAL_DATE]: hasIllegalDate,
   };
 };
 
@@ -99,7 +103,6 @@ export const getLegality = (card) => {
   const setDate = new Date(setsAndPrecons[sets[0]][DATE]);
   const now = new Date();
   if ((now - setDate) / MS_TO_DAYS > 30) return false;
-  console.log(card, setDate, setDate.getDate() + 30);
   setDate.setDate(setDate.getDate() + 30);
   const dateIso = setDate.toISOString().split('T')[0];
   return dateIso;

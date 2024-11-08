@@ -3,7 +3,7 @@ import { useImmer } from 'use-immer';
 import { SeatingModal } from '@/components';
 import { getLocalStorage, setLocalStorage } from '@/services/storageServices';
 import { useApp } from '@/context';
-import { DECKID, NAME } from '@/constants';
+import { STATE, DECKID, RANDOM, NAME } from '@/constants';
 import standardDecksData from '@/assets/data/standardDecks.json';
 const CUSTOM_DECKS = 'seatingCustomDecks';
 const STANDARD_DECKS = 'seatingStandardDecks';
@@ -35,18 +35,18 @@ const Seating = ({ setShow }) => {
       Object.keys(standardDecksData)
         .toSorted((a, b) => standardDecksData[a].localeCompare(standardDecksData[b], 'en'))
         .map((deckid) => ({
-          deckid: deckid,
-          name: standardDecksData[deckid],
-          state: true,
+          [DECKID]: deckid,
+          [NAME]: standardDecksData[deckid],
+          [STATE]: true,
         })),
   );
   const [players, setPlayers] = useImmer(
     getLocalStorage(PLAYERS) ?? [
-      { name: 'Player 1', random: false, state: true },
-      { name: 'Player 2', random: false, state: true },
-      { name: 'Player 3', random: false, state: true },
-      { name: 'Player 4', random: false, state: true },
-      { name: 'Player 5', random: false, state: true },
+      { [NAME]: 'Player 1', [RANDOM]: false, [STATE]: true },
+      { [NAME]: 'Player 2', [RANDOM]: false, [STATE]: true },
+      { [NAME]: 'Player 3', [RANDOM]: false, [STATE]: true },
+      { [NAME]: 'Player 4', [RANDOM]: false, [STATE]: true },
+      { [NAME]: 'Player 5', [RANDOM]: false, [STATE]: true },
     ],
   );
 
@@ -59,9 +59,9 @@ const Seating = ({ setShow }) => {
   const addPlayer = () => {
     setPlayers((draft) => {
       draft.push({
-        name: `Player ${draft.length + 1}`,
-        random: false,
-        state: true,
+        [NAME]: `Player ${draft.length + 1}`,
+        [RANDOM]: false,
+        [STATE]: true,
       });
     });
   };
@@ -79,17 +79,17 @@ const Seating = ({ setShow }) => {
 
   const reshuffle = () => {
     const options = players
-      .filter((d) => d.state)
+      .filter((d) => d[STATE])
       .map((d) => {
-        if (d.random) {
+        if (d[RANDOM]) {
           const src = [];
-          if (withCustom) src.push(...customDecks.filter((v) => v.state));
-          if (withStandard) src.push(...standardDecks.filter((v) => v.state));
-          if (!src.length > 0) return { name: 'ERROR', deckid: null };
+          if (withCustom) src.push(...customDecks.filter((v) => v[STATE]));
+          if (withStandard) src.push(...standardDecks.filter((v) => v[STATE]));
+          if (!src.length > 0) return { [NAME]: 'ERROR', [DECKID]: null };
           const randomDeck = getRandomDeck(src);
-          return { name: randomDeck[NAME], deckid: randomDeck[DECKID] };
+          return { [NAME]: randomDeck[NAME], [DECKID]: randomDeck[DECKID] };
         } else {
-          return { name: d[NAME] };
+          return { [NAME]: d[NAME] };
         }
       });
 
@@ -146,19 +146,19 @@ const Seating = ({ setShow }) => {
 
   const toggleCustom = (i) => {
     setCustomDecks((draft) => {
-      draft[i].state = !draft[i].state;
+      draft[i][STATE] = !draft[i][STATE];
     });
   };
 
   const toggleStandard = (i) => {
     setStandardDecks((draft) => {
-      draft[i].state = !draft[i].state;
+      draft[i][STATE] = !draft[i][STATE];
     });
   };
 
   const addCustomDeck = (name) => {
     setCustomDecks((draft) => {
-      draft.unshift({ deckid: null, name: name, state: true });
+      draft.unshift({ [DECKID]: null, [NAME]: name, [STATE]: true });
     });
   };
 

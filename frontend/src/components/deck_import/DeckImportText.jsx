@@ -4,7 +4,7 @@ import { FlexGapped, Textarea, Modal, Button, ErrorOverlay } from '@/components'
 import { useApp, deckAdd } from '@/context';
 import { useDeckImport } from '@/hooks';
 import { deckServices } from '@/services';
-import { DECKID } from '@/constants';
+import { DECKID, BAD_CARDS } from '@/constants';
 
 const DeckImportText = ({ isAnonymous, setBadCards, handleCloseModal }) => {
   const {
@@ -41,10 +41,10 @@ const DeckImportText = ({ isAnonymous, setBadCards, handleCloseModal }) => {
         .then((data) => {
           deckAdd({
             ...d,
-            deckid: data[DECKID],
+            [DECKID]: data[DECKID],
           });
           navigate(`/decks/${data[DECKID]}`);
-          setBadCards(d.badCards);
+          setBadCards(d[BAD_CARDS]);
           setShowMenuButtons(false);
           setShowFloatingButtons(true);
           setDeckText('');

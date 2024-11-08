@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import { ErrorOverlay, InventoryImportButton, DeckImportBadCardsModal } from '@/components';
 import { useApp, inventoryCardsAdd } from '@/context';
 import { useDeckImport } from '@/hooks';
-import { CRYPT, LIBRARY } from '@/constants';
+import { CRYPT, LIBRARY, BAD_CARDS } from '@/constants';
 
 const InventoryImport = () => {
   const { cryptCardBase, libraryCardBase } = useApp();
@@ -25,7 +25,7 @@ const InventoryImport = () => {
       const deckText = reader.result;
       const deck = await useDeckImport(deckText, cryptCardBase, libraryCardBase);
 
-      setBadCards(deck.badCards);
+      setBadCards(deck[BAD_CARDS]);
       inventoryCardsAdd({ ...deck[CRYPT], ...deck[LIBRARY] });
     };
   };

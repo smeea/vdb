@@ -13,7 +13,7 @@ import {
 } from '@/components';
 import FolderPlus from '@/assets/images/icons/folder-plus.svg?react';
 import { useApp, deckStore, inventoryStore } from '@/context';
-import { CRYPT, LIBRARY, DECKS } from '@/constants';
+import { NAME, AUTHOR, CRYPT, LIBRARY, DECKS, IS_FROZEN } from '@/constants';
 
 const InventoryButtons = ({
   setShowAddDeck,
@@ -40,7 +40,7 @@ const InventoryButtons = ({
   } = useApp();
 
   const {
-    isFrozen,
+    [IS_FROZEN]: isFrozen,
     [CRYPT]: inventoryCrypt,
     [LIBRARY]: inventoryLibrary,
   } = useSnapshot(inventoryStore);
@@ -74,10 +74,10 @@ const InventoryButtons = ({
         )}
         <DeckExportButton
           deck={{
-            name: `Inventory ${new Date().toISOString().split('T')[0]}`,
-            author: publicName,
-            crypt: crypt,
-            library: library,
+            [NAME]: `Inventory ${new Date().toISOString().split('T')[0]}`,
+            [AUTHOR]: publicName,
+            [CRYPT]: crypt,
+            [LIBRARY]: library,
           }}
           inInventory
         />

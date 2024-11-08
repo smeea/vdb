@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDiffMissing } from '@/hooks';
 import { DeckMissingModal } from '@/components';
-import { NAME } from '@/constants';
+import { NAME, CRYPT, LIBRARY } from '@/constants';
 
 const DiffMissingModalWrapper = ({ deckFrom, deckTo, handleClose }) => {
   const { missingCrypt, missingLibrary } = useDiffMissing(deckFrom, deckTo);
@@ -9,9 +9,9 @@ const DiffMissingModalWrapper = ({ deckFrom, deckTo, handleClose }) => {
   return (
     <DeckMissingModal
       deck={{
-        name: `Missing card for ${deckFrom[NAME]}`,
-        crypt: missingCrypt,
-        library: missingLibrary,
+        [NAME]: `Missing card for ${deckFrom[NAME]}`,
+        [CRYPT]: missingCrypt,
+        [LIBRARY]: missingLibrary,
       }}
       handleClose={handleClose}
     />

@@ -11,6 +11,7 @@ import {
   NAME,
   PLAYERS,
   ROUNDS,
+  HAS_BANNED,
 } from '@/constants';
 
 const getDateWithSuffix = (d) => {
@@ -108,21 +109,21 @@ const TwdCheckEvent = ({ deckData }) => {
   const date = `${month} ${day} ${year}`;
 
   const veknEvent = {
-    name: value?.event_name,
-    format: value?.[ROUNDS],
-    location: location,
-    date: date,
-    players: `${value?.attendance} players`,
-    url: `https://www.vekn.net/event-calendar/event/${value?.event_id}`,
+    [NAME]: value?.event_name,
+    [FORMAT]: value?.[ROUNDS],
+    [LOCATION]: location,
+    [DATE]: date,
+    [PLAYERS]: `${value?.attendance} players`,
+    [URL]: `https://www.vekn.net/event-calendar/event/${value?.event_id}`,
   };
 
   const {
+    [HAS_BANNED]: cryptHasBanned,
     hasWrongGroups,
-    hasBanned: cryptHasBanned,
     cryptTotal,
   } = useDeckCrypt(deckData.deck[CRYPT]);
 
-  const { hasBanned: libraryHasBanned, libraryTotal } = useDeckLibrary(deckData.deck[LIBRARY]);
+  const { [HAS_BANNED]: libraryHasBanned, libraryTotal } = useDeckLibrary(deckData.deck[LIBRARY]);
 
   const cryptQtyError = cryptTotal < 12;
   const libraryQtyError = libraryTotal > 90 || libraryTotal < 60;

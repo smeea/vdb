@@ -1,5 +1,5 @@
 import ky from 'ky';
-import { PLAYTEST, ID, TEXT, PRECONS, CARDS, GENERAL, NAME } from '@/constants';
+import { USERNAME, PLAYTEST, ID, TEXT, PRECONS, CARDS, GENERAL, NAME } from '@/constants';
 
 export const submitReport = (id, value, isPrecon) => {
   const url = `${import.meta.env.VITE_API_URL}/playtest/${isPrecon ? PRECONS : CARDS}/${id}`;
@@ -10,7 +10,7 @@ export const changePlaytester = (user, isAdd = true) => {
   const url = `${import.meta.env.VITE_API_URL}/playtest/users`;
   return ky(url, {
     method: isAdd ? 'PUT' : 'DELETE',
-    json: { username: user },
+    json: { [USERNAME]: user },
   }).json();
 };
 

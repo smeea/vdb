@@ -28,8 +28,10 @@ import {
   NATIVE_CRYPT,
   NATIVE_LIBRARY,
   PDA,
+  PUBLIC_PARENT,
   QUANTITYx,
   RANK_HIGH_LOW,
+  SRC,
   TEXT,
   TWD,
   TYPE,
@@ -148,7 +150,7 @@ export const AppProvider = ({ children }) => {
 
   const { [DECK]: deck, [DECKS]: decks } = useSnapshot(deckStore);
   const lastDeckArray = (decks && Object.values(decks).toSorted(byTimestamp)) ?? [
-    { deckid: undefined },
+    { [DECKID]: undefined },
   ];
   const lastDeckId = lastDeckArray[0]?.[DECKID];
   const [recentDecks, setRecentDecks] = useState(getLocalStorage(RECENT_DECKS) ?? []);
@@ -438,14 +440,14 @@ export const AppProvider = ({ children }) => {
   };
 
   const addRecentDeck = (deck) => {
-    const src = deck[DECKID].length != 9 ? TWD : deck.publicParent ? PDA : 'shared';
+    const src = deck[DECKID].length != 9 ? TWD : deck[PUBLIC_PARENT] ? PDA : 'shared';
     let d = [...recentDecks];
     const idx = recentDecks.map((v) => v[DECKID]).indexOf(deck[DECKID]);
     if (idx !== -1) d.splice(idx, 1);
     d.unshift({
-      deckid: deck[DECKID],
-      name: deck[NAME],
-      src: src,
+      [DECKID]: deck[DECKID],
+      [NAME]: deck[NAME],
+      [SRC]: src,
     });
     if (d.length > 10) d = d.slice(0, 10);
     setRecentDecks(d);

@@ -29,6 +29,7 @@ import {
   LIBRARY,
   MASTER,
   TAGS,
+  PUBLIC_PARENT,
 } from '@/constants';
 import { deepClone } from '@/utils';
 
@@ -74,7 +75,7 @@ const Review = () => {
 
     setError(false);
     const cardsData = useDeck(deckData.cards, cryptCardBase, libraryCardBase);
-    if (deckid.length !== 9 || deckData.publicParent) {
+    if (deckid.length !== 9 || deckData[PUBLIC_PARENT]) {
       deckData[TAGS] = [];
       Object.values(useTags(cardsData[CRYPT], cardsData[LIBRARY])).forEach((v) => {
         deckData[TAGS] = deckData[TAGS].concat(v);
@@ -85,7 +86,7 @@ const Review = () => {
       [CRYPT]: cardsData[CRYPT],
       [LIBRARY]: cardsData[LIBRARY],
       [IS_BRANCHES]: !!(deckData[MASTER] || deckData[BRANCHES]?.length > 0),
-      [IS_PUBLIC]: !!deckData.publicParent,
+      [IS_PUBLIC]: !!deckData[PUBLIC_PARENT],
       [IS_NON_EDITABLE]: false,
     };
     delete d.cards;

@@ -29,6 +29,10 @@ import {
   CRYPT,
   DECKID,
   H,
+  HAS_BANNED,
+  HAS_ILLEGAL_DATE,
+  HAS_LIMITED,
+  HAS_PLAYTEST,
   INVENTORY_TYPE,
   IS_FROZEN,
   LEGAL,
@@ -55,10 +59,12 @@ const DeckSelectAdvTableRow = ({
   const navigate = useNavigate();
   const [showDeck, setShowDeck] = useState();
 
-  const { hasBanned, hasLimited, hasPlaytest, hasIllegalDate } = getRestrictions(
-    deck,
-    limitedCards,
-  );
+  const {
+    [HAS_BANNED]: hasBanned,
+    [HAS_LIMITED]: hasLimited,
+    [HAS_PLAYTEST]: hasPlaytest,
+    [HAS_ILLEGAL_DATE]: hasIllegalDate,
+  } = getRestrictions(deck, limitedCards);
 
   const handleClick = () => {
     if (onClick) {

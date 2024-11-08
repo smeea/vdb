@@ -89,17 +89,17 @@ const DeckExportButton = ({ deck, inMissing, inInventory }) => {
         Object.keys(deck[CRYPT]).forEach((cardid) => {
           enCrypt[cardid] = {
             ...deck[CRYPT][cardid],
-            c: { ...deck[CRYPT][cardid].c, Name: nativeCrypt[cardid][NAME] },
+            c: { ...deck[CRYPT][cardid].c, [NAME]: nativeCrypt[cardid][NAME] },
           };
         });
         Object.keys(deck[LIBRARY]).forEach((cardid) => {
           enLibrary[cardid] = {
             ...deck[LIBRARY][cardid],
-            c: { ...deck[LIBRARY][cardid].c, Name: nativeLibrary[cardid][NAME] },
+            c: { ...deck[LIBRARY][cardid].c, [NAME]: nativeLibrary[cardid][NAME] },
           };
         });
 
-        exportText = useDeckExport({ ...deck, crypt: enCrypt, library: enLibrary }, format);
+        exportText = useDeckExport({ ...deck, [CRYPT]: enCrypt, [LIBRARY]: enLibrary }, format);
       } else {
         exportText = useDeckExport(deck, format);
       }

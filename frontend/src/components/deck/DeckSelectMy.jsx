@@ -11,6 +11,10 @@ import {
   CRYPT,
   DECKS,
   H,
+  HAS_BANNED,
+  HAS_ILLEGAL_DATE,
+  HAS_LIMITED,
+  HAS_PLAYTEST,
   INVENTORY_TYPE,
   IS_HIDDEN,
   LEGAL,
@@ -57,10 +61,12 @@ const DeckSelectMy = ({ deckid, handleSelect }) => {
         let hasPlaytest;
         let hasIllegalDate;
         if (idx < 15 || diffDays < 90) {
-          ({ hasBanned, hasLimited, hasPlaytest, hasIllegalDate } = getRestrictions(
-            decks[i],
-            limitedCards,
-          ));
+          ({
+            [HAS_BANNED]: hasBanned,
+            [HAS_LIMITED]: hasLimited,
+            [HAS_PLAYTEST]: hasPlaytest,
+            [HAS_ILLEGAL_DATE]: hasIllegalDate,
+          } = getRestrictions(decks[i], limitedCards));
         }
 
         return {

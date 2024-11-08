@@ -9,7 +9,7 @@ import {
 } from '@/components';
 import { useApp } from '@/context';
 import { getDeckInUrl } from '@/utils';
-import { RANK, TAGS } from '@/constants';
+import { SCORE, GW, VP, RANK, TAGS } from '@/constants';
 
 const AnalyzeTournamentDeckDescription = ({ deck }) => {
   const { username, isMobile } = useApp();
@@ -24,7 +24,7 @@ const AnalyzeTournamentDeckDescription = ({ deck }) => {
               {deck.score[RANK]}
             </TwdResultDescriptionTextTr>
             <TwdResultDescriptionTextTr title={isMobile ? <StarFill /> : <>Score:</>}>
-              {deck.score.gw}GW + {deck.score.vp}VP
+              {deck[SCORE][GW]}GW + {deck[SCORE][VP]}VP
             </TwdResultDescriptionTextTr>
           </tbody>
         </table>

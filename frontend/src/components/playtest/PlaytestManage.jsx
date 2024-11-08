@@ -4,6 +4,7 @@ import Arrow90DegLeft from '@/assets/images/icons/arrow-90deg-left.svg?react';
 import { ButtonIconed, PlaytestManagePlayer, PlaytestManageAdd } from '@/components';
 import { useFetch } from '@/hooks';
 import { useApp } from '@/context';
+import { USERNAME } from '@/constants';
 
 const PlaytestManage = () => {
   const { isPlaytestAdmin, isMobile } = useApp();
@@ -47,7 +48,7 @@ const PlaytestManage = () => {
           <tbody>
             {value &&
               [...newPlaytesters.toReversed(), ...Object.keys(value).toSorted()].map((u) => (
-                <PlaytestManagePlayer key={u} value={{ ...value[u], username: u }} />
+                <PlaytestManagePlayer key={u} value={{ ...value[u], [USERNAME]: u }} />
               ))}
           </tbody>
         </table>

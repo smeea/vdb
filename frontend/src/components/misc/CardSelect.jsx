@@ -2,10 +2,10 @@ import React from 'react';
 import { useApp } from '@/context';
 import { Select, SelectLabelCrypt, SelectLabelLibrary } from '@/components';
 import { useFilters } from '@/hooks';
-import { ID, NAME, TWD, CRYPT, LIBRARY } from '@/constants';
+import { ID, NAME, TWD, CRYPT, LIBRARY, VALUE } from '@/constants';
 
 const getMatches = (inputValue, filterAction, playtestId, playtestMode, inInventory) => {
-  const input = { name: inputValue };
+  const input = { [NAME]: inputValue };
 
   const startingWith = [];
   const other = filterAction(input)
@@ -15,13 +15,13 @@ const getMatches = (inputValue, filterAction, playtestId, playtestMode, inInvent
       }
 
       if (card[NAME].toLowerCase().startsWith(inputValue.toLowerCase())) {
-        startingWith.push({ value: card[ID] });
+        startingWith.push({ [VALUE]: card[ID] });
       } else {
         return true;
       }
     })
     .map((card) => ({
-      value: card[ID],
+      [VALUE]: card[ID],
     }));
 
   return { startingWith, other };
@@ -82,8 +82,10 @@ const CardSelect = React.forwardRef(
     };
 
     const byTwd = (a, b) => {
-      const aInTwd = a.value > 200000 ? cryptCardBase[a.value][TWD] : libraryCardBase[a.value][TWD];
-      const bInTwd = b.value > 200000 ? cryptCardBase[b.value][TWD] : libraryCardBase[b.value][TWD];
+      const aInTwd =
+        a[VALUE] > 200000 ? cryptCardBase[a[VALUE]][TWD] : libraryCardBase[a[VALUE]][TWD];
+      const bInTwd =
+        b[VALUE] > 200000 ? cryptCardBase[b[VALUE]][TWD] : libraryCardBase[b[VALUE]][TWD];
 
       return bInTwd - aInTwd;
     };

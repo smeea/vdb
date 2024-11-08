@@ -2,19 +2,19 @@ import React from 'react';
 import Dice3 from '@/assets/images/icons/dice-3-fill.svg?react';
 import X from '@/assets/images/icons/x.svg?react';
 import { Toggle, Input, Button } from '@/components';
-import { NAME } from '@/constants';
+import { NAME, STATE, RANDOM } from '@/constants';
 
 const SeatingPlayerSelector = ({ setPlayer, delPlayer, i, player }) => {
   const handleChange = (event) => {
     if (event.target.value) {
       setPlayer(i, {
-        name: event.target.value,
-        state: true,
+        [NAME]: event.target.value,
+        [STATE]: true,
       });
     } else {
       setPlayer(i, {
-        name: '',
-        state: false,
+        [NAME]: '',
+        [STATE]: false,
       });
     }
   };
@@ -22,24 +22,24 @@ const SeatingPlayerSelector = ({ setPlayer, delPlayer, i, player }) => {
   const toggle = () => {
     if (player[NAME]) {
       setPlayer(i, {
-        name: player[NAME],
-        random: player.random,
-        state: !player.state,
+        [NAME]: player[NAME],
+        [RANDOM]: player[RANDOM],
+        [STATE]: !player[STATE],
       });
     } else {
       setPlayer(i, {
-        name: `Player ${i + 1}`,
-        random: player.random,
-        state: true,
+        [NAME]: `Player ${i + 1}`,
+        [RANDOM]: player[RANDOM],
+        [STATE]: true,
       });
     }
   };
 
   const handleClick = () => {
     setPlayer(i, {
-      name: player[NAME],
-      random: !player.random,
-      state: !player.state && !player.random ? true : player.state,
+      [NAME]: player[NAME],
+      [RANDOM]: !player[RANDOM],
+      [STATE]: !player[STATE] && !player[RANDOM] ? true : player[STATE],
     });
   };
 
@@ -48,19 +48,19 @@ const SeatingPlayerSelector = ({ setPlayer, delPlayer, i, player }) => {
       <div className="flex w-full">
         <Input
           placeholder="Disabled"
-          value={player.state ? (player.random ? 'RANDOM' : player[NAME]) : ''}
+          value={player[STATE] ? (player[RANDOM] ? 'RANDOM' : player[NAME]) : ''}
           onChange={handleChange}
           roundedStyle="rounded rounded-r-none"
         />
         <Button
-          variant={player.random && player.state ? 'primary' : 'secondary'}
+          variant={player[RANDOM] && player[STATE] ? 'primary' : 'secondary'}
           onClick={handleClick}
           className="rounded-l-none"
         >
           <Dice3 />
         </Button>
       </div>
-      <Toggle isOn={player.state} handleClick={toggle} size="lg" />
+      <Toggle isOn={player[STATE]} handleClick={toggle} size="lg" />
       <div
         className="flex cursor-pointer items-center p-0.5 text-fgRed dark:text-fgRedDark"
         onClick={() => delPlayer(i)}

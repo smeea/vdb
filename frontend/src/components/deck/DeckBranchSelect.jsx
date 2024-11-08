@@ -16,20 +16,20 @@ const DeckBranchSelect = ({ deck, handleSelect }) => {
 
   const b = {
     [target[DECKID]]: {
-      deckid: target[DECKID],
-      branchName: target[BRANCH_NAME],
-      name: target[NAME],
-      timestamp: target[TIMESTAMP],
+      [DECKID]: target[DECKID],
+      [BRANCH_NAME]: target[BRANCH_NAME],
+      [NAME]: target[NAME],
+      [TIMESTAMP]: target[TIMESTAMP],
     },
   };
 
   if (target[BRANCHES]) {
     target[BRANCHES].map((i) => {
       b[i] = {
-        deckid: decks[i][DECKID],
-        branchName: decks[i][BRANCH_NAME],
-        name: decks[i][NAME],
-        timestamp: decks[i][TIMESTAMP],
+        [DECKID]: decks[i][DECKID],
+        [BRANCH_NAME]: decks[i][BRANCH_NAME],
+        [NAME]: decks[i][NAME],
+        [TIMESTAMP]: decks[i][TIMESTAMP],
       };
     });
   }

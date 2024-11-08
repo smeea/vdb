@@ -5,13 +5,14 @@ import PeopleFill from '@/assets/images/icons/people-fill.svg?react';
 import { Spinner, DeckPublicToggleConfirmation, ButtonIconed } from '@/components';
 import { deckServices } from '@/services';
 import { useApp } from '@/context';
+import { PUBLIC_PARENT, PUBLIC_CHILD } from '@/constants';
 
 const DeckPublicToggleButton = ({ deck, inAdv }) => {
   const { isDesktop } = useApp();
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
   const [showConfirmation, setShowConfirmation] = useState(false);
-  const isPublished = !!(deck.publicParent || deck.publicChild);
+  const isPublished = !!(deck[PUBLIC_PARENT] || deck[PUBLIC_CHILD]);
 
   const handleClick = () => {
     setIsLoading(true);
@@ -19,7 +20,7 @@ const DeckPublicToggleButton = ({ deck, inAdv }) => {
       setShowConfirmation(false);
       setIsLoading(false);
       if (!inAdv) {
-        navigate(`/decks/${isPublished ? deck.publicParent : deckid}`);
+        navigate(`/decks/${isPublished ? deck[PUBLIC_PARENT] : deckid}`);
       }
     });
   };

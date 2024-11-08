@@ -2,7 +2,7 @@ import React from 'react';
 import { twMerge } from 'tailwind-merge';
 import { SortButton } from '@/components';
 import { useApp } from '@/context';
-import { RANK, TAGS } from '@/constants';
+import { SCORE, RANK, TAGS } from '@/constants';
 
 const AnalyzeTournamentResultTotal = ({ results, sortMethods, sortMethod, setSortMethod }) => {
   const { isMobile } = useApp();
@@ -11,7 +11,7 @@ const AnalyzeTournamentResultTotal = ({ results, sortMethods, sortMethod, setSor
   let totalRank = 0;
 
   results.forEach((deck) => {
-    const rank = deck.score[RANK];
+    const rank = deck[SCORE][RANK];
     totalRank += rank;
 
     if (byRank[rank]) {

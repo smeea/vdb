@@ -11,6 +11,7 @@ import {
   TIMESTAMP,
   TWD_DATE,
   TYPE,
+  RELEASE_DATE,
 } from '@/constants';
 
 export const byName = (a, b) => a.localeCompare(b, 'en');
@@ -107,5 +108,5 @@ export const byDateWin = (a, b) => {
 };
 
 export const byDatePrint = (a, b) => {
-  return b.release_date > a.release_date;
+  return b[RELEASE_DATE] > a[RELEASE_DATE];
 };

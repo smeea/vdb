@@ -1,7 +1,24 @@
 import React from 'react';
 import { ResultCryptTitle } from '@/components';
 import { capitalize } from '@/utils';
-import { CAPACITY } from '@/constants';
+import {
+  CAPACITY,
+  PRIMOGEN,
+  PRINCE,
+  JUSTICAR,
+  INNER_CIRCLE,
+  BARON,
+  VOTE_1,
+  VOTE_2,
+  BISHOP,
+  ARCHBISHOP,
+  PRISCUS,
+  CARDINAL,
+  REGENT,
+  MAGAJI,
+  TITLED,
+} from '@/constants';
+import sectsOpts from '@/assets/data/sectsList.json';
 
 const TitlesReq = ({ value }) => {
   const htmlTitle = value.map((v) => capitalize(v)).join(' or ');
@@ -37,27 +54,26 @@ const CapacityReq = ({ value }) => {
 
 const ResultLibraryRequirements = ({ value }) => {
   const requirements = value.split(',');
-  const validTitles = [
-    'primogen',
-    'prince',
-    'justicar',
-    'inner circle',
-    'baron',
-    '1 vote',
-    '2 votes',
-    'bishop',
-    'archbishop',
-    'priscus',
-    'cardinal',
-    'regent',
-    'magaji',
-    'titled',
+  const titlesOpts = [
+    PRIMOGEN,
+    PRINCE,
+    JUSTICAR,
+    INNER_CIRCLE,
+    BARON,
+    VOTE_1,
+    VOTE_2,
+    BISHOP,
+    ARCHBISHOP,
+    PRISCUS,
+    CARDINAL,
+    REGENT,
+    MAGAJI,
+    TITLED,
   ];
-  const validSects = ['camarilla', 'sabbat', 'laibon', 'anarch', 'independent'];
 
   const capacityReq = requirements.find((i) => i.includes(CAPACITY));
-  const titleReq = requirements.filter((i) => validTitles.includes(i));
-  const sectReq = requirements.filter((i) => validSects.includes(i));
+  const titleReq = requirements.filter((i) => titlesOpts.includes(i));
+  const sectReq = requirements.filter((i) => sectsOpts.includes(i));
 
   return (
     <>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Cell, ScatterChart, Scatter, XAxis, YAxis, ZAxis, Tooltip, ReferenceLine } from 'recharts';
 import { BubbleChartTooltip } from '@/components';
+import { IN_SEARCH, INDEX, RANK, VALUE } from '@/constants';
 
 const BubbleChart = ({ data, name, width, titleWidth, refLine }) => {
   return (
@@ -14,9 +15,9 @@ const BubbleChart = ({ data, name, width, titleWidth, refLine }) => {
         left: 0,
       }}
     >
-      <XAxis dataKey="rank" tick={{ fontSize: 12 }} tickLine={{ transform: 'translate(0, -6)' }} />
+      <XAxis dataKey={RANK} tick={{ fontSize: 12 }} tickLine={{ transform: 'translate(0, -6)' }} />
       <YAxis
-        dataKey="index"
+        dataKey={INDEX}
         name={name}
         width={titleWidth}
         tick={false}
@@ -24,7 +25,7 @@ const BubbleChart = ({ data, name, width, titleWidth, refLine }) => {
         axisLine={false}
         label={{ value: name, position: 'insideRight' }}
       />
-      <ZAxis dataKey="value" range={[0, 85]} />
+      <ZAxis dataKey={VALUE} range={[0, 85]} />
       <ReferenceLine x={refLine} strokeWidth={2} stroke="#ff00aa" />
       <Tooltip
         cursor={null}
@@ -41,7 +42,7 @@ const BubbleChart = ({ data, name, width, titleWidth, refLine }) => {
       />
       <Scatter data={data}>
         {data.map((d, idx) => (
-          <Cell key={`{name}-${idx}`} fill={d.inSearch ? '#ff4040' : '#8884d8'} />
+          <Cell key={`${name}-${idx}`} fill={d[IN_SEARCH] ? '#ff4040' : '#8884d8'} />
         ))}
       </Scatter>
     </ScatterChart>

@@ -4,7 +4,7 @@ import PeopleFill from '@/assets/images/icons/people-fill.svg?react';
 import { Spinner, ModalConfirmation, DeckPublicDiff, ButtonIconed } from '@/components';
 import { deckServices } from '@/services';
 import { useApp, deckStore } from '@/context';
-import { NAME, DECKS } from '@/constants';
+import { PUBLIC_PARENT, NAME, DECKS } from '@/constants';
 
 const DeckPublicSyncButton = ({ deck }) => {
   const { isDesktop } = useApp();
@@ -41,7 +41,7 @@ const DeckPublicSyncButton = ({ deck }) => {
             <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
               Changes from currently published version:
             </div>
-            <DeckPublicDiff deckTo={deck} deckFrom={decks[deck.publicParent]} />
+            <DeckPublicDiff deckTo={deck} deckFrom={decks[deck[PUBLIC_PARENT]]} />
           </div>
         </ModalConfirmation>
       )}

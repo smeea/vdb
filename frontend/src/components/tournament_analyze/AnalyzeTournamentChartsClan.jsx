@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import { PieChart, Pie, Tooltip } from 'recharts';
 import { getClan } from '@/utils';
 import { useApp } from '@/context';
-import { NAME, CRYPT, MULTI, ANTITRIBU } from '@/constants';
+import { NAME, CRYPT, VALUE, MULTI, ANTITRIBU } from '@/constants';
 
 const AnalyzeTournamentChartsClan = ({ decks }) => {
   const { isMobile, isDesktop, isWide } = useApp();
@@ -37,7 +37,7 @@ const AnalyzeTournamentChartsClan = ({ decks }) => {
       <Pie
         isAnimationActive={false}
         data={data}
-        dataKey="value"
+        dataKey={VALUE}
         cx="50%"
         cy="50%"
         outerRadius={isMobile || (isDesktop && !isWide) ? 90 : 150}

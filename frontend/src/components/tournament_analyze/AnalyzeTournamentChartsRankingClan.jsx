@@ -2,7 +2,19 @@ import React, { useMemo } from 'react';
 import { BubbleChart } from '@/components';
 import { byName, getClan } from '@/utils';
 import { useApp } from '@/context';
-import { PLAYERS, RANK, AUTHOR, CRYPT, LIBRARY, MULTI, ANTITRIBU, TAGS } from '@/constants';
+import {
+  IN_SEARCH,
+  CLAN,
+  SCORE,
+  PLAYERS,
+  RANK,
+  AUTHOR,
+  CRYPT,
+  LIBRARY,
+  MULTI,
+  ANTITRIBU,
+  TAGS,
+} from '@/constants';
 
 const AnalyzeTournamentChartsRankingClan = ({ info, decks, searchResults }) => {
   const { isMobile, isDesktop, isWide } = useApp();
@@ -10,7 +22,7 @@ const AnalyzeTournamentChartsRankingClan = ({ info, decks, searchResults }) => {
     const d = {};
 
     Object.values(decks).forEach((deck) => {
-      const position = info[PLAYERS] - deck.score[RANK];
+      const position = info[PLAYERS] - deck[SCORE][RANK];
       const inSearch = Object.values(searchResults).some((d) => d[AUTHOR] === deck[AUTHOR]);
       const clan = getClan(deck[CRYPT]) || MULTI;
 
@@ -22,14 +34,14 @@ const AnalyzeTournamentChartsRankingClan = ({ info, decks, searchResults }) => {
       }
 
       d[clan][position] = {
-        clan: clan,
-        crypt: deck[CRYPT],
-        library: deck[LIBRARY],
-        tags: deck[TAGS],
-        inSearch: inSearch,
+        [CLAN]: clan,
+        [CRYPT]: deck[CRYPT],
+        [LIBRARY]: deck[LIBRARY],
+        [TAGS]: deck[TAGS],
+        [IN_SEARCH]: inSearch,
         index: -1,
         value: 1,
-        rank: deck.score[RANK],
+        [RANK]: deck[SCORE][RANK],
       };
     });
 

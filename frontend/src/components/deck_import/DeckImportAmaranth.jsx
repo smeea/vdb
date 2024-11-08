@@ -14,6 +14,10 @@ import {
   LIBRARY,
   NAME,
   TITLE,
+  TIMESTAMP,
+  IS_AUTHOR,
+  MASTER,
+  CARDS,
 } from '@/constants';
 
 const DeckImportAmaranth = ({ handleClose }) => {
@@ -25,7 +29,7 @@ const DeckImportAmaranth = ({ handleClose }) => {
   const [isLoading, setIsLoading] = useState(false);
   const ref = useRef();
 
-  const VERSION = '2022-07-22';
+  const VERSION = '2024-11-07';
   const url = `${import.meta.env.VITE_BASE_URL}/data/amaranth_ids.json?v=${VERSION}`;
   const { value: idReference } = useFetch(url, {}, []);
 
@@ -69,9 +73,9 @@ const DeckImportAmaranth = ({ handleClose }) => {
       }
 
       branches.push({
-        author: master[AUTHOR],
-        cards: cards,
-        description: description,
+        [AUTHOR]: master[AUTHOR],
+        [CARDS]: cards,
+        [DESCRIPTION]: description,
       });
     });
 
@@ -81,14 +85,14 @@ const DeckImportAmaranth = ({ handleClose }) => {
   const importDeckFromAmaranth = async (amaranth_deck) => {
     const now = new Date();
     const deck = {
-      branchName: '#0',
-      name: amaranth_deck[TITLE],
-      author: amaranth_deck[AUTHOR] || '',
-      description: amaranth_deck[DESCRIPTION] || '',
-      crypt: {},
-      library: {},
-      isAuthor: true,
-      timestamp: now.toUTCString(),
+      [BRANCH_NAME]: '#0',
+      [NAME]: amaranth_deck[TITLE],
+      [AUTHOR]: amaranth_deck[AUTHOR] || '',
+      [DESCRIPTION]: amaranth_deck[DESCRIPTION] || '',
+      [CRYPT]: {},
+      [LIBRARY]: {},
+      [IS_AUTHOR]: true,
+      [TIMESTAMP]: now.toUTCString(),
     };
 
     Object.keys(amaranth_deck.cards).forEach((i) => {
@@ -135,16 +139,16 @@ const DeckImportAmaranth = ({ handleClose }) => {
 
               const n = new Date();
               const d = {
-                author: deck[AUTHOR],
-                branchName: b[BRANCH_NAME],
-                crypt: bCrypt,
-                library: bLibrary,
-                deckid: b[DECKID],
-                description: b[DESCRIPTION],
-                isAuthor: true,
-                master: deck[DECKID],
-                name: deck[NAME],
-                timestamp: n.toUTCString(),
+                [AUTHOR]: deck[AUTHOR],
+                [BRANCH_NAME]: b[BRANCH_NAME],
+                [CRYPT]: bCrypt,
+                [LIBRARY]: bLibrary,
+                [DECKID]: b[DECKID],
+                [DESCRIPTION]: b[DESCRIPTION],
+                [IS_AUTHOR]: true,
+                [MASTER]: deck[DECKID],
+                [NAME]: deck[NAME],
+                [TIMESTAMP]: n.toUTCString(),
               };
 
               branches[d[DECKID]] = d;

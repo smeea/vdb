@@ -9,6 +9,7 @@ import {
   SeatingSelectRandom,
   Modal,
 } from '@/components';
+import { STATE, RANDOM } from '@/constants';
 
 const SeatingModal = ({
   addCustomDeck,
@@ -32,17 +33,17 @@ const SeatingModal = ({
   const [showSelectRandom, setShowSelectRandom] = useState();
 
   const withRandom = Object.values(players).some((d) => {
-    return d.state && d.random;
+    return d[STATE] && d[RANDOM];
   });
 
   const haveRandomSelected =
     (withStandard &&
       Object.values(standardDecks).some((d) => {
-        return d.state;
+        return d[STATE];
       })) ||
     (withCustom &&
       Object.values(customDecks).some((d) => {
-        return d.state;
+        return d[STATE];
       }));
 
   return (
