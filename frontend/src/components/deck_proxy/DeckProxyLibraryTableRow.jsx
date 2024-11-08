@@ -8,7 +8,7 @@ import {
 } from '@/components';
 import { useApp, usedStore, inventoryStore } from '@/context';
 import { getSoftMax, getHardTotal } from '@/utils';
-import { SOFT, HARD, LIBRARY } from '@/constants';
+import { ID, PRINT, SET, SOFT, HARD, LIBRARY } from '@/constants';
 
 const DeckProxyLibraryTableRow = ({
   handleClick,

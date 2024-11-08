@@ -1,4 +1,4 @@
-import { ASCII } from '@/constants';
+import { ID, GROUP, ADV, NAME, NEW, ASCII } from '@/constants';
 
 const useCardImageUrl = (card, set, language) => {
   const isPlaytest = card[ID] > 210000 || (card[ID] < 200000 && card[ID] > 110000);

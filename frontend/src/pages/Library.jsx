@@ -16,7 +16,7 @@ import {
   setDeck,
   deckStore,
 } from '@/context';
-import { LIBRARY, LIBRARY_COMPARE, DECK, DECKS } from '@/constants';
+import { DECKID, LIBRARY, LIBRARY_COMPARE, DECK, DECKS } from '@/constants';
 
 const Library = () => {
   const { showLibrarySearch, addMode, toggleAddMode, isMobile, isDesktop, lastDeckId } = useApp();

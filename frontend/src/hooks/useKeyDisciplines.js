@@ -1,4 +1,5 @@
 import virtuesList from '@/assets/data/virtuesList.json';
+import { DISCIPLINES } from '@/constants';
 
 const useKeyDisciplines = (crypt = {}) => {
   let cryptTotal = 0;

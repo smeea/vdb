@@ -4,7 +4,9 @@ import TagFill from '@/assets/images/icons/tag-fill.svg?react';
 import PeopleFill from '@/assets/images/icons/people-fill.svg?react';
 import TrophyFill from '@/assets/images/icons/trophy-fill.svg?react';
 import { deckUpdate } from '@/context';
+import { getIsEditable } from '@/utils';
 import { Input, InputLabel, DeckFreezeButton } from '@/components';
+import { NAME, DECKID, DECK, IS_PUBLIC, IS_AUTHOR, IS_NON_EDITABLE } from '@/constants';
 
 const DeckChangeName = ({ deck }) => {
   const [value, setValue] = useState(deck[NAME] || '');

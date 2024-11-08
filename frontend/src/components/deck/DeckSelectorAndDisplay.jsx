@@ -12,11 +12,11 @@ import {
   FlexGapped,
 } from '@/components';
 import { setDeck, deckStore, useApp } from '@/context';
+import { DECKID, CRYPT, LIBRARY, MASTER, BRANCHES, IS_PUBLIC, IS_AUTHOR } from '@/constants';
 
 const DeckSelectorAndDisplay = () => {
   const { playtestMode, isDesktop, addMode, toggleAddMode } = useApp();
   const { deck, decks } = useSnapshot(deckStore);
-
   const isBranches = deck ? deck[MASTER] || (deck[BRANCHES] && deck[BRANCHES].length > 0) : null;
 
   const handleSelect = (e) => {

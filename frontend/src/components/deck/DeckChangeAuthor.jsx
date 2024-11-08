@@ -3,7 +3,7 @@ import PersonFill from '@/assets/images/icons/person-fill.svg?react';
 import { Input, InputLabel } from '@/components';
 import { deckUpdate } from '@/context';
 import { getIsEditable } from '@/utils';
-import { AUTHOR } from '@/constants';
+import { AUTHOR, DECKID } from '@/constants';
 
 const DeckChangeAuthor = ({ deck }) => {
   const [value, setValue] = useState(deck[AUTHOR] || '');

@@ -2,6 +2,7 @@ import React from 'react';
 import { ResultModal, ResultCryptTableRow } from '@/components';
 import { useApp } from '@/context';
 import { useModalCardController } from '@/hooks';
+import { ID } from '@/constants';
 
 const ResultCryptTable = ({ resultCards, inRecommendation, inLimited }) => {
   const { setShowFloatingButtons } = useApp();

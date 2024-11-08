@@ -10,7 +10,7 @@ import {
 import { getSwipedBg, getHardTotal, getSoftMax } from '@/utils';
 import { useApp, deckStore, usedStore, inventoryStore, deckCardChange } from '@/context';
 import { useSwipe } from '@/hooks';
-import { INVENTORY_TYPE, SOFT, HARD, DECKS, LIBRARY } from '@/constants';
+import { ID, NAME, INVENTORY_TYPE, SOFT, HARD, DECKS, LIBRARY } from '@/constants';
 
 const DiffLibraryTableRow = ({
   cardChange,

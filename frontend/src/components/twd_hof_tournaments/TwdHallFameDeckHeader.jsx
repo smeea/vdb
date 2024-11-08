@@ -3,6 +3,7 @@ import { twMerge } from 'tailwind-merge';
 import PeopleFill from '@/assets/images/icons/people-fill.svg?react';
 import { useApp } from '@/context';
 import { Hr, TwdHallFameDeckBody } from '@/components';
+import { PLAYERS, EVENT, LOCATION, DATE } from '@/constants';
 
 const TwdHallFameDeckHeader = ({ deck, isStar }) => {
   const { isMobile } = useApp();

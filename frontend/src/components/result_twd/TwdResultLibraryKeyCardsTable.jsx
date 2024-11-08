@@ -5,7 +5,7 @@ import {
   ResultLibraryCost,
   ResultLegalIcon,
 } from '@/components';
-import { BANNED, GROUPED_TYPE, ASCII } from '@/constants';
+import { ID, BANNED, GROUPED_TYPE, ASCII } from '@/constants';
 import { useApp } from '@/context';
 import { librarySort } from '@/utils';
 import { useDeckLibrary, useModalCardController } from '@/hooks';

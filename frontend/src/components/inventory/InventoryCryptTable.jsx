@@ -5,6 +5,7 @@ import { WindowRows, ResultModal, InventoryCryptTableRow } from '@/components';
 import { cryptSortWithTimer } from '@/utils';
 import { useApp } from '@/context';
 import { useModalCardController } from '@/hooks';
+import { ID } from '@/constants';
 
 const InventoryCryptTable = ({ cards, sortMethod, compact, withCompact, newFocus, inShared }) => {
   const { playtestMode, setShowFloatingButtons } = useApp();

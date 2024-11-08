@@ -1,3 +1,5 @@
+import { NAME, AUTHOR, DESCRIPTION, CRYPT, LIBRARY } from '@/constants';
+
 const getDeckInUrl = (deck) => {
   const cards = [];
 

@@ -3,8 +3,8 @@ import { useImmer } from 'use-immer';
 import { SeatingModal } from '@/components';
 import { getLocalStorage, setLocalStorage } from '@/services/storageServices';
 import { useApp } from '@/context';
+import { DECKID, NAME } from '@/constants';
 import standardDecksData from '@/assets/data/standardDecks.json';
-
 const CUSTOM_DECKS = 'seatingCustomDecks';
 const STANDARD_DECKS = 'seatingStandardDecks';
 const WITH_CUSTOM = 'seatingWithCustom';

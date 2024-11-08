@@ -12,6 +12,7 @@ import {
   ConditionalTooltip,
 } from '@/components';
 import { useApp } from '@/context';
+import { DISCIPLINES, TITLE, CLAN, GROUP } from '@/constants';
 
 const ResultCryptTableRowCommon = ({
   card,

@@ -9,7 +9,7 @@ import {
 } from '@/components';
 import { useApp } from '@/context';
 import { useModalCardController } from '@/hooks';
-import { GT, CRYPT } from '@/constants';
+import { NEW, GROUP, GT, CRYPT } from '@/constants';
 
 const TwdSearchFormCrypt = ({ value, form }) => {
   const { cryptCardBase, setShowFloatingButtons, isMobile } = useApp();

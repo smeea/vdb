@@ -3,6 +3,7 @@ import PcDisplay from '@/assets/images/icons/pc-display.svg?react';
 import SunFill from '@/assets/images/icons/sun-fill.svg?react';
 import MoonFill from '@/assets/images/icons/moon-fill.svg?react';
 import { useApp, useTheme } from '@/context';
+import { NAME } from '@/constants';
 
 const ThemeSelect = ({ setShowMenu }) => {
   const { theme, toggleTheme } = useTheme();

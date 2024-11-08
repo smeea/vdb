@@ -3,6 +3,7 @@ import { DeckDrawModal } from '@/components';
 import { POOL, BLOOD } from '@/constants';
 import { countCards, getCardsArray } from '@/utils';
 import { useApp } from '@/context';
+import { CRYPT, LIBRARY, CAPACITY } from '@/constants';
 
 const getRandomInt = (max) => {
   return Math.floor(Math.random() * Math.floor(max));

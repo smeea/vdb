@@ -8,6 +8,7 @@ import {
   PLAYERS,
   RANK_HIGH_LOW,
   RANK_LOW_HIGH,
+  RANK,
 } from '@/constants';
 
 const decksSort = (decks, sortMethod) => {

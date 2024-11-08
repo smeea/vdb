@@ -5,6 +5,7 @@ import { MenuItems, MenuItem, MenuButton } from '@/components';
 import { deckServices } from '@/services';
 import { useApp } from '@/context';
 import { getDeckInUrl } from '@/utils';
+import { DECKID, DECK } from '@/constants';
 
 const DeckCopyUrlButton = ({ deck, noText, setQrUrl }) => {
   const { isDesktop, setShowMenuButtons, setShowFloatingButtons } = useApp();

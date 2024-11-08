@@ -2,7 +2,7 @@ import React from 'react';
 import { InventoryLibraryTable, InventoryFilterForm, SortButton, Header } from '@/components';
 import { useApp } from '@/context';
 import { useInventoryLibrary } from '@/hooks';
-import { ALL, CLAN_DISCIPLINE, NAME, QUANTITY, TYPE, DISCIPLINE } from '@/constants';
+import { ID, ALL, CLAN_DISCIPLINE, NAME, QUANTITY, TYPE, DISCIPLINE } from '@/constants';
 
 const InventoryLibrary = ({
   compact,

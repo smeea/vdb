@@ -1,18 +1,26 @@
 import { proxy } from 'valtio';
 import { deepClone } from '@/utils';
 import {
-  USED_IN_INVENTORY,
-  CRYPT,
-  LIBRARY,
-  DECK,
-  DECKS,
-  CRYPT_TIMER,
-  TEXT,
-  CARDS,
-  INVENTORY_TYPE,
   AUTHOR,
-  S,
+  BRANCHES,
+  BRANCH_NAME,
+  CARDS,
+  CRYPT,
+  CRYPT_TIMER,
+  DECK,
+  DECKID,
+  DECKS,
+  DESCRIPTION,
   H,
+  ID,
+  INVENTORY_TYPE,
+  LIBRARY,
+  MASTER,
+  NAME,
+  S,
+  TEXT,
+  TIMESTAMP,
+  USED_IN_INVENTORY,
 } from '@/constants';
 import { deckServices } from '@/services';
 import { startCryptTimer, miscStore } from '@/context';

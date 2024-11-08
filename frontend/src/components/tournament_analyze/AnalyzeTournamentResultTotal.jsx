@@ -2,6 +2,7 @@ import React from 'react';
 import { twMerge } from 'tailwind-merge';
 import { SortButton } from '@/components';
 import { useApp } from '@/context';
+import { RANK, TAGS } from '@/constants';
 
 const AnalyzeTournamentResultTotal = ({ results, sortMethods, sortMethod, setSortMethod }) => {
   const { isMobile } = useApp();

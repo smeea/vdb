@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { TwdDeck, TwdResultTotal, Button, ButtonFloatClose } from '@/components';
 import { decksSort } from '@/utils';
 import { useApp } from '@/context';
+import { DECKID } from '@/constants';
 
 const PdaResult = ({ results, setResults }) => {
   const { isMobile, showFloatingButtons, pdaSearchSort, changePdaSearchSort } = useApp();

@@ -9,6 +9,7 @@ import CalendarEvent from '@/assets/images/icons/calendar-event.svg?react';
 import GeoAltFill from '@/assets/images/icons/geo-alt-fill.svg?react';
 import { TwdResultDescriptionTextTr, Title } from '@/components';
 import { useApp } from '@/context';
+import { EVENT, LOCATION, ROUNDS, DATE, PLAYERS } from '@/constants';
 
 const AnalyzeTournamentInfo = ({ info, decks }) => {
   const { isMobile } = useApp();

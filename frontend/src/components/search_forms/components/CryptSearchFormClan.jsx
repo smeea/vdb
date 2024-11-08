@@ -10,7 +10,7 @@ import {
 import imbuedClansList from '@/assets/data/imbuedClansList.json';
 import vampireClansList from '@/assets/data/vampireClansList.json';
 import { useApp } from '@/context';
-import { ANY } from '@/constants';
+import { CLAN, ANY } from '@/constants';
 
 const CryptSearchFormClan = ({ value, searchForm, onChange }) => {
   const { playtestMode, isXWide, isMobile } = useApp();

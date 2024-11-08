@@ -2,8 +2,9 @@ import React from 'react';
 import { twMerge } from 'tailwind-merge';
 import Shuffle from '@/assets/images/icons/shuffle.svg?react';
 import PinAngleFill from '@/assets/images/icons/pin-angle-fill.svg?react';
+import { getIsEditable } from '@/utils';
 import { cardToggleInventoryState } from '@/context';
-import { S, INVENTORY_TYPE } from '@/constants';
+import { DECKID, ID, S, INVENTORY_TYPE } from '@/constants';
 
 const DeckCardToggleInventoryStateTd = ({ card, deck }) => {
   const isEditable = getIsEditable(deck);

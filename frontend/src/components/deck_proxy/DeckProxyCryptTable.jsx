@@ -1,6 +1,7 @@
 import React from 'react';
 import { DeckProxyCryptTableRow } from '@/components';
 import { useKeyDisciplines } from '@/hooks';
+import { ID } from '@/constants';
 
 const DeckProxyCryptTable = ({
   handleClick,

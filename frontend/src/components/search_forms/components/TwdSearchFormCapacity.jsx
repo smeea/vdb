@@ -1,5 +1,6 @@
 import React from 'react';
 import { ButtonGroup } from '@/components';
+import { CAPACITY } from '@/constants';
 
 const TwdSearchFormCapacity = ({ value, onChange }) => {
   const name = CAPACITY;

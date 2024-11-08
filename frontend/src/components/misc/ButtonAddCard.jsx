@@ -3,7 +3,7 @@ import { useSnapshot } from 'valtio';
 import PlusLg from '@/assets/images/icons/plus-lg.svg?react';
 import { Button } from '@/components';
 import { deckStore, deckCardChange } from '@/context';
-import { DECKS } from '@/constants';
+import { NAME, DECKS } from '@/constants';
 
 const ButtonAddCard = ({ deckid, card, inDeck, inQuick }) => {
   const decks = useSnapshot(deckStore)[DECKS];

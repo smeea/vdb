@@ -7,7 +7,7 @@ import {
   Input,
 } from '@/components';
 import { decksSort } from '@/utils';
-import { DATE, PLAYTEST } from '@/constants';
+import { DECKID, NAME, DATE, PLAYTEST } from '@/constants';
 import { useApp } from '@/context';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 

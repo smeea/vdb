@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import { ErrorOverlay, InventoryImportButton, DeckImportBadCardsModal } from '@/components';
 import { useApp, inventoryCardsAdd } from '@/context';
 import { useDeckImport } from '@/hooks';
+import { CRYPT, LIBRARY } from '@/constants';
 
 const InventoryImport = () => {
   const { cryptCardBase, libraryCardBase } = useApp();

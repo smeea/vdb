@@ -7,6 +7,7 @@ import {
 } from '@/components';
 import { useFetch, useDeck } from '@/hooks';
 import { useApp } from '@/context';
+import { DECKID, CRYPT, LIBRARY } from '@/constants';
 
 const TwdHallFameDeckBody = ({ deck }) => {
   const { cryptCardBase, libraryCardBase, isMobile } = useApp();

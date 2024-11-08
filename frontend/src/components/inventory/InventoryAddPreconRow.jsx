@@ -9,6 +9,7 @@ import {
 } from '@/components';
 import { useDeckInInventory } from '@/hooks';
 import { useApp } from '@/context';
+import { DECKID, CLAN, NAME, PRECONS, DATE } from '@/constants';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 
 const InventoryAddPreconRow = ({ deck }) => {

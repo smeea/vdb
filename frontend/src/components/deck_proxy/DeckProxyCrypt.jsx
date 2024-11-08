@@ -3,7 +3,7 @@ import { DeckProxyCryptTable, ResultModal, Header, FlexGapped } from '@/componen
 import { countCards } from '@/utils';
 import { useApp } from '@/context';
 import { useModalCardController, useDeckCrypt } from '@/hooks';
-import { INVENTORY_TYPE } from '@/constants';
+import { CRYPT, PRINT, INVENTORY_TYPE } from '@/constants';
 
 const DeckProxyCrypt = ({
   deck,

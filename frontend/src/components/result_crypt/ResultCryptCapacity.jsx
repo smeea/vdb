@@ -1,4 +1,5 @@
 import React from 'react';
+import { SECT, CAPACITY } from '@/constants';
 
 const ResultCryptCapacity = ({ card }) => {
   return (

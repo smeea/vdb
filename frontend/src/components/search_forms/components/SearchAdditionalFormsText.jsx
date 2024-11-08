@@ -6,7 +6,7 @@ import {
   SearchFormButtonLogicToggle,
   SearchAdditionalFormsTextForm,
 } from '@/components';
-import { TEXT } from '@/constants';
+import { NAME, TEXT } from '@/constants';
 
 const SearchAdditionalFormsText = ({ value, onChange, onChangeOptions, searchForm }) => {
   const options = [

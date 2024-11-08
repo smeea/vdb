@@ -7,7 +7,7 @@ import {
   SearchFormButtonDel,
 } from '@/components';
 import { useApp } from '@/context';
-import { ANY, NOT_REQUIRED } from '@/constants';
+import { SECT, ANY, NOT_REQUIRED } from '@/constants';
 import sects from '@/assets/data/sectsList.json';
 
 const LibrarySearchFormSect = ({ value, searchForm, onChange }) => {

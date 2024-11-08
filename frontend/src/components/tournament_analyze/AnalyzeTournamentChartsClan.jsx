@@ -2,6 +2,7 @@ import React, { useMemo } from 'react';
 import { PieChart, Pie, Tooltip } from 'recharts';
 import { getClan } from '@/utils';
 import { useApp } from '@/context';
+import { NAME, CRYPT, MULTI, ANTITRIBU } from '@/constants';
 
 const AnalyzeTournamentChartsClan = ({ decks }) => {
   const { isMobile, isDesktop, isWide } = useApp();

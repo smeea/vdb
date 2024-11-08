@@ -3,6 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { useSnapshot } from 'valtio';
 import { CardsDesktop, CardsMobile } from '@/components';
 import { useApp, searchResults } from '@/context';
+import { ID } from '@/constants';
 
 const Cards = () => {
   const params = useParams();

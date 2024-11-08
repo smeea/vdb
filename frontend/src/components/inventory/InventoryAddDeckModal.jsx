@@ -2,7 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { useSnapshot } from 'valtio';
 import { Select, DeckSortButton, InventoryAddDeckRow, Modal, Checkbox, Input } from '@/components';
 import { decksSort } from '@/utils';
-import { DECKS, NAME } from '@/constants';
+import { TAGS, MASTER, DECKID, DECKS, NAME } from '@/constants';
 import { useApp, deckStore } from '@/context';
 
 const InventoryAddDeckModal = ({ handleClose }) => {

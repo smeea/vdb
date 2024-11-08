@@ -5,6 +5,7 @@ import {
   ResultLibraryTableRowCommon,
   TwdOpenDeckButton,
 } from '@/components';
+import { TWD_DATE, ID, DECKID } from '@/constants';
 
 const TwdHallFameCardsCard = ({ card, idx, handleClick }) => {
   const { isMobile } = useApp();

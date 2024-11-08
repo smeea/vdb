@@ -4,7 +4,7 @@ import PeopleFill from '@/assets/images/icons/people-fill.svg?react';
 import { Spinner, ModalConfirmation, DeckPublicDiff, ButtonIconed } from '@/components';
 import { deckServices } from '@/services';
 import { useApp, deckStore } from '@/context';
-import { DECKS } from '@/constants';
+import { NAME, DECKS } from '@/constants';
 
 const DeckPublicSyncButton = ({ deck }) => {
   const { isDesktop } = useApp();

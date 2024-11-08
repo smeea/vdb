@@ -12,15 +12,14 @@ import {
   PlaytestLanguageSelector,
 } from '@/components';
 import { useApp } from '@/context';
-import { GENERAL, GAMES, LIAISON } from '@/constants';
+import { TIMESTAMP, GENERAL, GAMES, LIAISON } from '@/constants';
 
 const PlaytestUserCard = () => {
   const { isMobile, playtestProfile, updatePlaytestProfile } = useApp();
   const [liaison, setLiaison] = useState(playtestProfile?.[LIAISON] || '');
   const [general, setGeneral] = useState(playtestProfile?.[GENERAL] || '');
 
-  const gamesBrackets = ['0', '1-3', '4-6', '7+'];
-  const gamesOptions = gamesBrackets.map((i) => ({
+  const gamesOptions = ['0', '1-3', '4-6', '7+'].map((i) => ({
     value: i,
     label: i,
   }));

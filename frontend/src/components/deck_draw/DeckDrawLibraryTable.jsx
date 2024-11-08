@@ -1,6 +1,7 @@
 import React from 'react';
 import { ResultLibraryTableRowCommon, DeckDrawProbability } from '@/components';
 import { useApp } from '@/context';
+import { ID, NAME } from '@/constants';
 
 const DeckDrawLibraryTable = ({
   handleClick,

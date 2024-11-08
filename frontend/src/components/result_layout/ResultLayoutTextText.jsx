@@ -2,7 +2,7 @@ import React from 'react';
 import reactStringReplace from 'react-string-replace';
 import { useApp } from '@/context';
 import { CardPopover, ResultName, ResultMiscImage, ConditionalTooltip } from '@/components';
-import { TEXT } from '@/constants';
+import { NAME, TEXT } from '@/constants';
 
 const ResultLayoutTextText = ({ cardid }) => {
   const { nativeCrypt, nativeLibrary, cryptCardBase, libraryCardBase, isMobile } = useApp();

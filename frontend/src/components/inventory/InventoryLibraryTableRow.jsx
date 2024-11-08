@@ -16,7 +16,20 @@ import {
 import { getSwipedBg, getHardTotal, getSoftMax } from '@/utils';
 import { useApp, inventoryStore, usedStore, limitedStore, inventoryCardChange } from '@/context';
 import { useSwipe } from '@/hooks';
-import { IS_FROZEN, SOFT, HARD, LIBRARY, TRIFLE, POOL, BLOOD, BURN } from '@/constants';
+import {
+  ID,
+  TYPE,
+  CLAN,
+  DISCIPLINE,
+  IS_FROZEN,
+  SOFT,
+  HARD,
+  LIBRARY,
+  TRIFLE,
+  POOL,
+  BLOOD,
+  BURN,
+} from '@/constants';
 
 const InventoryLibraryTableRow = ({ card, compact, newFocus, inShared, handleClick }) => {
   const { isMobile, isNarrow, limitedMode } = useApp();

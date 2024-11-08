@@ -6,7 +6,7 @@ import CalculatorFill from '@/assets/images/icons/calculator-fill.svg?react';
 import { InventoryText, UsedDescription } from '@/components';
 import { inventoryStore, usedStore, deckStore } from '@/context';
 import { getHardTotal, getSoftMax } from '@/utils';
-import { SOFT, HARD, CRYPT, LIBRARY, DECKS } from '@/constants';
+import { ID, SOFT, HARD, CRYPT, LIBRARY, DECKS } from '@/constants';
 
 const ResultLayoutTextInventory = ({ card, inPopover }) => {
   const decks = useSnapshot(deckStore)[DECKS];

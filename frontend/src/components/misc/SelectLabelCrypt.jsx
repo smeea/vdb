@@ -8,7 +8,7 @@ import {
   ResultClanImage,
 } from '@/components';
 import { useApp, inventoryStore } from '@/context';
-import { CRYPT } from '@/constants';
+import { CRYPT, GROUP, CLAN, DISCIPLINES } from '@/constants';
 
 const SelectLabelCrypt = ({ cardid, inInventory }) => {
   const { cryptCardBase } = useApp();

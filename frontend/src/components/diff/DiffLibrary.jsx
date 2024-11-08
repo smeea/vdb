@@ -8,7 +8,7 @@ import {
   FlexGapped,
   DiffQuantityDiff,
 } from '@/components';
-import { TYPE_MASTER } from '@/constants';
+import { DECKID, LIBRARY, TYPE_MASTER } from '@/constants';
 import { useApp } from '@/context';
 import { useModalCardController, useDeckLibrary } from '@/hooks';
 import { getIsEditable } from '@/utils';

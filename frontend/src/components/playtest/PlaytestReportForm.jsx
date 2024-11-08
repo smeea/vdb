@@ -14,7 +14,7 @@ import {
 import { useFetch } from '@/hooks';
 import { useApp } from '@/context';
 import { playtestServices } from '@/services';
-import { PRECONS, CARDS } from '@/constants';
+import { PRECONS, TEXT, CARDS } from '@/constants';
 
 const Title = ({ isPrecon }) => {
   return (

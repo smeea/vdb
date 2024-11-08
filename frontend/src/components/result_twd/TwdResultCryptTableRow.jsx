@@ -11,7 +11,7 @@ import {
 } from '@/components';
 import { getHardTotal } from '@/utils';
 import { useApp, limitedStore, inventoryStore, usedStore } from '@/context';
-import { HARD, CRYPT } from '@/constants';
+import { ID, CLAN, HARD, CRYPT } from '@/constants';
 
 const TwdResultCryptTableRow = ({ card, handleClick, shouldShowModal }) => {
   const { limitedMode, inventoryMode, isMobile } = useApp();

@@ -22,10 +22,12 @@ import {
   BURN,
   CLAN,
   DISCIPLINE,
+  ID,
   PLAYTEST,
   POOL,
   REQUIREMENT,
   TRIFLE,
+  TYPE,
 } from '@/constants';
 
 const Requirements = ({ card }) => {

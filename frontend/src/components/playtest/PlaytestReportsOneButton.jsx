@@ -11,6 +11,7 @@ import {
 } from '@/components';
 import { useApp } from '@/context';
 import { playtestServices } from '@/services';
+import { TEXT, NAME, ID } from '@/constants';
 
 const PlaytestReportsOneButton = ({ value, isPrecon = false }) => {
   const { isMobile, isDesktop } = useApp();

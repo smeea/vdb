@@ -11,7 +11,7 @@ import {
   ResultLibraryTypeImage,
   ResultLibraryDisciplines,
 } from '@/components';
-import { BURN, POOL, BLOOD } from '@/constants';
+import { TYPE, CLAN, DISCIPLINE, DECKID, PLAYER, BURN, POOL, BLOOD } from '@/constants';
 import { useApp } from '@/context';
 
 const TwdCardsHistoryLibraryRow = ({ card, players, handleClick }) => {

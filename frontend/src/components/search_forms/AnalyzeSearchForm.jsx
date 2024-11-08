@@ -25,7 +25,23 @@ import {
   clearAnalyzeForm,
   analyzeStore,
 } from '@/context';
-import { DECKS, ANALYZE } from '@/constants';
+import {
+  ANALYZE,
+  CAPACITY,
+  CARDTYPES,
+  CLAN,
+  CRYPT,
+  DECKS,
+  DISCIPLINES,
+  LIBRARY,
+  LIBRARY_TOTAL,
+  MONOCLAN,
+  NAME,
+  RANK,
+  SECT,
+  STAR,
+  TRAITS,
+} from '@/constants';
 
 const AnalyzeSearchForm = () => {
   const { cryptCardBase, libraryCardBase, isMobile } = useApp();

@@ -1,7 +1,7 @@
 import React from 'react';
 import Exclamation from '@/assets/images/icons/exclamation-triangle.svg?react';
 import { ResultLegalIcon } from '@/components';
-import { LIMITED, GROUPS, BANNED, LEGAL, PLAYTEST } from '@/constants';
+import { TITLE, TEXT, LIMITED, GROUPS, BANNED, LEGAL, PLAYTEST } from '@/constants';
 
 const Warning = ({ type, value = 'WARNING', title = '' }) => {
   const types = {

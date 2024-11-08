@@ -1,5 +1,6 @@
 import React from 'react';
 import { ResultCryptName, ResultLibraryName } from '@/components';
+import { ID } from '@/constants';
 
 const ResultName = ({ card, isBanned, colored }) => {
   return (

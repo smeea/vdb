@@ -4,7 +4,30 @@
 // if the filter is present and the deck dont match it the method returns true meaning the criteria is missing.
 // if some criteria is missing the main method return false and exits that deck check.
 import { countCards, countTotalCost, getClan, getSect } from '@/utils';
-import { STAR, MONOCLAN, LT, LT0, GT, EQ, NOT, OR, CAPACITY } from '@/constants';
+import {
+  CAPACITY,
+  CARDTYPES,
+  CLAN,
+  CRYPT,
+  DISCIPLINE,
+  DISCIPLINES,
+  EQ,
+  GT,
+  ID,
+  LIBRARY,
+  LIBRARY_TOTAL,
+  LT,
+  LT0,
+  MONOCLAN,
+  NOT,
+  OR,
+  PLAYERS,
+  RANK,
+  SECT,
+  STAR,
+  TRAITS,
+  TYPE,
+} from '@/constants';
 
 const useFiltersDecks = (decks = {}) => {
   const filterDecks = (filter) => {

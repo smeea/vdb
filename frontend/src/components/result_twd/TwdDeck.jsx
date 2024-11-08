@@ -9,6 +9,7 @@ import {
 } from '@/components';
 import { useApp } from '@/context';
 import { useFetch, useDeck } from '@/hooks';
+import { CRYPT, LIBRARY, DECKID } from '@/constants';
 
 const TwdDeck = ({ deck, inPda }) => {
   const { cryptCardBase, libraryCardBase, isNarrow } = useApp();

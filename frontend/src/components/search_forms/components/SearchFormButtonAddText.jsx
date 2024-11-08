@@ -1,7 +1,7 @@
 import React from 'react';
-import { Button } from '@/components';
-import { AND } from '@/constants';
 import Plus from '@/assets/images/icons/plus.svg?react';
+import { Button } from '@/components';
+import { TEXT, AND } from '@/constants';
 
 const SearchFormButtonAddText = ({ searchForm }) => {
   const addForm = () => {

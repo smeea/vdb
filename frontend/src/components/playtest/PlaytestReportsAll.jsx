@@ -27,7 +27,9 @@ import {
   GENERAL,
   LIBRARY,
   NAME,
+  PLAYTEST,
   PRECONS,
+  TEXT,
   XLSX,
 } from '@/constants';
 
@@ -79,7 +81,7 @@ const PlaytestReportsAll = () => {
           switch (target) {
             case PRECONS:
               if (id == GENERAL || !isNaN(id)) return;
-              name = preconDecks[`PLAYTEST:${id}`][NAME];
+              name = preconDecks[`${PLAYTEST}:${id}`][NAME];
               exportText += `Precon: ${name}\n\n`;
               break;
             case CARDS:

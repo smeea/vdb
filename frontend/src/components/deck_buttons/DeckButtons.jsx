@@ -21,6 +21,7 @@ import {
   PlaytestReportsOneButton,
 } from '@/components';
 import { useApp } from '@/context';
+import { PLAYTEST, CRYPT, LIBRARY, DECKID, NAME } from '@/constants';
 
 const DeckButtons = ({
   deck,

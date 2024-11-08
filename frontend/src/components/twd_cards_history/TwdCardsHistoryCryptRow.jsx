@@ -11,6 +11,7 @@ import {
   ResultCryptGroup,
   ResultCryptTitle,
 } from '@/components';
+import { PLAYER, DECKID, DISCIPLINES, TITLE, CLAN, GROUP } from '@/constants';
 import { useApp } from '@/context';
 
 const TwdCardsHistoryCryptRow = ({ card, players, handleClick }) => {

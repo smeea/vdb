@@ -4,6 +4,7 @@ import { FlexGapped, Textarea, Modal, Button, ErrorOverlay } from '@/components'
 import { useApp, deckAdd } from '@/context';
 import { useDeckImport } from '@/hooks';
 import { deckServices } from '@/services';
+import { DECKID } from '@/constants';
 
 const DeckImportText = ({ isAnonymous, setBadCards, handleCloseModal }) => {
   const {

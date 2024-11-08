@@ -2,6 +2,7 @@ import React from 'react';
 import Dice3 from '@/assets/images/icons/dice-3-fill.svg?react';
 import X from '@/assets/images/icons/x.svg?react';
 import { Toggle, Input, Button } from '@/components';
+import { NAME } from '@/constants';
 
 const SeatingPlayerSelector = ({ setPlayer, delPlayer, i, player }) => {
   const handleChange = (event) => {

@@ -1,6 +1,7 @@
 import React from 'react';
 import { UsedPopover, ConditionalTooltip } from '@/components';
 import { useApp } from '@/context';
+import { ID } from '@/constants';
 
 const InventoryCardQuantityDiff = ({ card, softUsedMax, hardUsedTotal }) => {
   const { isMobile } = useApp();

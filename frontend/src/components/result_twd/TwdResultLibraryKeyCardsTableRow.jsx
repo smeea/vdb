@@ -13,7 +13,7 @@ import {
 } from '@/components';
 import { useApp, limitedStore, inventoryStore, usedStore } from '@/context';
 import { getHardTotal } from '@/utils';
-import { HARD, LIBRARY } from '@/constants';
+import { ID, TYPE, CLAN, DISCIPLINE, REQUIREMENT, HARD, LIBRARY } from '@/constants';
 
 const TwdResultLibraryKeyCardsTableRow = ({ card, handleClick, shouldShowModal }) => {
   const { limitedMode, inventoryMode, isMobile } = useApp();

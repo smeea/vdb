@@ -9,8 +9,8 @@ import {
 } from '@/components';
 import { useApp } from '@/context';
 import { getIsEditable } from '@/utils';
-import { TYPE_MASTER } from '@/constants';
 import { useModalCardController, useDeckLibrary } from '@/hooks';
+import { DECKID, LIBRARY, TYPE_MASTER } from '@/constants';
 
 const DeckLibrary = ({ inSearch, inPreview, inMissing, deck }) => {
   const { setShowFloatingButtons, isMobile, isNarrow } = useApp();

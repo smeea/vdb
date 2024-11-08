@@ -2,7 +2,7 @@ import React from 'react';
 import { twMerge } from 'tailwind-merge';
 import { ResultLegalIcon } from '@/components';
 import { getLegality } from '@/utils';
-import { BANNED, LEGAL, PLAYTEST } from '@/constants';
+import { NAME, BANNED, LEGAL, PLAYTEST } from '@/constants';
 
 const ResultLibraryName = ({ card, colored = true, isBanned }) => {
   const legalRestriction = getLegality(card);

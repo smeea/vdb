@@ -2,12 +2,12 @@ import { proxy } from 'valtio';
 import { deepClone } from '@/utils';
 import { inventoryServices } from '@/services';
 import { startCryptTimer } from '@/context';
-import { INVENTORY_TYPE, CRYPT, LIBRARY, SOFT, HARD } from '@/constants';
+import { IS_FROZEN, ID, INVENTORY_TYPE, CRYPT, LIBRARY, SOFT, HARD } from '@/constants';
 
 export const inventoryStore = proxy({
   [CRYPT]: {},
   [LIBRARY]: {},
-  isFrozen: false,
+  [IS_FROZEN]: false,
 });
 
 export const usedStore = proxy({

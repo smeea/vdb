@@ -2,7 +2,7 @@ import React from 'react';
 import { Select } from '@/components';
 import EyeFill from '@/assets/images/icons/eye-fill.svg?react';
 import { CardImage, Tooltip } from '@/components';
-import { POD } from '@/constants';
+import { NAME, ID, SET, DATE, POD } from '@/constants';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 
 const DeckProxyTableSetSelect = ({ card, value, handleSetSelector }) => {

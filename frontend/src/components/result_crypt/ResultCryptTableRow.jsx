@@ -10,7 +10,7 @@ import {
 import { useApp, deckStore, deckCardChange } from '@/context';
 import { useSwipe } from '@/hooks';
 import { getIsEditable, getSwipedBg } from '@/utils';
-import { DECK } from '@/constants';
+import { DECKID, CRYPT, ID, DECK } from '@/constants';
 
 const ResultCryptTableRow = ({
   card,

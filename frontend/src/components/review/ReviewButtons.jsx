@@ -5,6 +5,7 @@ import {
   ReviewCopyTextButton,
   DiffBackButton,
 } from '@/components';
+import { DECKID } from '@/constants';
 
 const ReviewButtons = ({ parentId, deck, urlDiff }) => {
   return (

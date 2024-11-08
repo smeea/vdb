@@ -10,7 +10,7 @@ import {
 } from '@/components';
 import { useSwipe } from '@/hooks';
 import { getIsEditable, getSwipedBg, getSoftMax, getHardTotal } from '@/utils';
-import { INVENTORY_TYPE, SOFT, HARD, CRYPT } from '@/constants';
+import { DECKID, ID, NAME, INVENTORY_TYPE, SOFT, HARD, CRYPT } from '@/constants';
 
 const DeckCryptTableRow = ({
   handleClick,

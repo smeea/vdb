@@ -3,7 +3,7 @@ import { twMerge } from 'tailwind-merge';
 import { useNavigate } from 'react-router-dom';
 import { TwdOpenDeckButton } from '@/components';
 import { useApp, clearSearchForm, searchTwdForm } from '@/context';
-import { TWD } from '@/constants';
+import { TWD_DATE, DECKID, AUTHOR, PLAYER, CRYPT, LIBRARY, TWD } from '@/constants';
 
 const TwdCardsHistoryCardAppearance = ({ card, byPlayer }) => {
   const { isMobile } = useApp();

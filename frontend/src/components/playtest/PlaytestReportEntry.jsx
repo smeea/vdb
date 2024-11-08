@@ -3,6 +3,7 @@ import EyeFill from '@/assets/images/icons/eye-fill.svg?react';
 import EyeSlashFill from '@/assets/images/icons/eye-slash-fill.svg?react';
 import { Hr, PlaytestScores } from '@/components';
 import { useApp } from '@/context';
+import { TEXT } from '@/constants';
 
 const Report = ({ id, text, score, isPlayed }) => {
   const { hidePlaytestNames, isMobile } = useApp();

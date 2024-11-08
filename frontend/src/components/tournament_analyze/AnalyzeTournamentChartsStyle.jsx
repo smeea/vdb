@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react';
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis } from 'recharts';
 import { useApp } from '@/context';
+import { TAGS } from '@/constants';
 
 const AnalyzeTournamentChartsStyle = ({ decks }) => {
   const { isMobile, isDesktop, isWide } = useApp();

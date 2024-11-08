@@ -3,6 +3,7 @@ import { Disclosure } from '@headlessui/react';
 import TrophyFill from '@/assets/images/icons/trophy-fill.svg?react';
 import StarFill from '@/assets/images/icons/star-fill.svg?react';
 import { TwdHallFameDeckHeader } from '@/components';
+import { DATE, DECKID } from '@/constants';
 
 const testStar = (eventName) => {
   return (

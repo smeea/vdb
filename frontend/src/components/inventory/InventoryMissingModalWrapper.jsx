@@ -3,7 +3,7 @@ import { useSnapshot } from 'valtio';
 import { DeckMissingModal } from '@/components';
 import { useApp, inventoryStore } from '@/context';
 import { useInventoryCrypt, useInventoryLibrary } from '@/hooks';
-import { CRYPT, LIBRARY } from '@/constants';
+import { ID, CRYPT, LIBRARY } from '@/constants';
 
 const InventoryMissingModalWrapper = ({
   clan,

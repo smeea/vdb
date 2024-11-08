@@ -6,6 +6,7 @@ import {
   TwdResultLibraryKeyCardsTable,
   Hr,
 } from '@/components';
+import { AUTHOR, CRYPT, LIBRARY } from '@/constants';
 
 const AnalyzeTournamentDeck = ({ deck }) => {
   return (

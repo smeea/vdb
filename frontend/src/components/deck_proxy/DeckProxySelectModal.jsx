@@ -4,7 +4,7 @@ import { useSnapshot } from 'valtio';
 import { FlexGapped, Modal, Button, DeckProxyCrypt, DeckProxyLibrary } from '@/components';
 import { useApp, usedStore, inventoryStore } from '@/context';
 import { getHardTotal, getSoftMax } from '@/utils';
-import { INVENTORY_TYPE, SOFT, HARD, CRYPT, LIBRARY } from '@/constants';
+import { PRINT, SET, ID, INVENTORY_TYPE, SOFT, HARD, CRYPT, LIBRARY } from '@/constants';
 
 const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
   const { isMobile, inventoryMode } = useApp();

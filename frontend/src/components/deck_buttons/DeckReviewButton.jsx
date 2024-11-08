@@ -4,6 +4,7 @@ import PencilSquare from '@/assets/images/icons/pencil-square.svg?react';
 import { deckServices } from '@/services';
 import { useApp } from '@/context';
 import { ButtonIconed } from '@/components';
+import { DECKID } from '@/constants';
 
 const DeckReviewButton = ({ deck }) => {
   const { isDesktop, setShowFloatingButtons, setShowMenuButtons, publicName } = useApp();

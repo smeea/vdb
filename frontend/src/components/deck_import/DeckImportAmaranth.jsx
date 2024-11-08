@@ -4,6 +4,17 @@ import { Spinner, Modal, Input, Button, ErrorOverlay } from '@/components';
 import { useApp, deckAdd } from '@/context';
 import { deckServices } from '@/services';
 import { useFetch } from '@/hooks';
+import {
+  AUTHOR,
+  BRANCHES,
+  BRANCH_NAME,
+  CRYPT,
+  DECKID,
+  DESCRIPTION,
+  LIBRARY,
+  NAME,
+  TITLE,
+} from '@/constants';
 
 const DeckImportAmaranth = ({ handleClose }) => {
   const { cryptCardBase, libraryCardBase, isMobile } = useApp();

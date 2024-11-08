@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { searchLibraryForm, searchCryptForm, clearSearchForm } from '@/context';
-import { CRYPT, LIBRARY } from '@/constants';
+import { ARTIST, CRYPT, LIBRARY } from '@/constants';
 
 const ResultLayoutTextArtist = ({ handleClose, inCrypt, artists }) => {
   const navigate = useNavigate();

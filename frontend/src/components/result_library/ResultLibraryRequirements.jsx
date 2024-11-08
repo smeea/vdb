@@ -1,6 +1,7 @@
 import React from 'react';
 import { ResultCryptTitle } from '@/components';
 import { capitalize } from '@/utils';
+import { CAPACITY } from '@/constants';
 
 const TitlesReq = ({ value }) => {
   const htmlTitle = value.map((v) => capitalize(v)).join(' or ');

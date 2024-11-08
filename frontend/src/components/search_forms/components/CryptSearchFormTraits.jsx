@@ -1,7 +1,35 @@
 import React from 'react';
 import { Checkbox } from '@/components';
 import { useApp } from '@/context';
-import { ADVANCEMENT, BANNED, NON_TWD, TRAITS } from '@/constants';
+import {
+  ADDITIONAL_STRIKE,
+  ADVANCEMENT,
+  AGGRAVATED,
+  BANNED,
+  BLACK_HAND,
+  BLEED_1,
+  BLEED_2,
+  ENTER_COMBAT,
+  FLIGHT,
+  INFERNAL,
+  INTERCEPT_1,
+  MANEUVER,
+  NON_TWD,
+  PATH_CAINE,
+  PATH_CATHARI,
+  PATH_DEATH,
+  PATH_POWER,
+  PLAYTEST,
+  PRESS,
+  PREVENT,
+  RED_LIST,
+  SERAPH,
+  STEALTH_1,
+  STRENGTH_1,
+  STRENGTH_2,
+  TRAITS,
+  UNLOCK,
+} from '@/constants';
 
 const CryptSearchFormTraits = ({ value, onChange }) => {
   const { playtestMode } = useApp();

@@ -4,6 +4,7 @@ import StarFill from '@/assets/images/icons/star-fill.svg?react';
 import tournaments from '@/assets/data/etda.json';
 import { Spinner, ButtonIconed } from '@/components';
 import { setAnalyzeDecks, setAnalyzeInfo, setAnalyzeResults, clearAnalyzeForm } from '@/context';
+import { ID, TITLE, DATE } from '@/constants';
 
 const AnalyzeLoadPreparedButtons = ({ setTempDecks, setTempArchon, setError }) => {
   const navigate = useNavigate();

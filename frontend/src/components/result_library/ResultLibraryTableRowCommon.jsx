@@ -11,7 +11,7 @@ import {
   ResultLibraryTypeImage,
   ConditionalTooltip,
 } from '@/components';
-import { REQUIREMENT, DISCIPLINE, CLAN, TRIFLE, POOL, BLOOD, BURN } from '@/constants';
+import { TYPE, REQUIREMENT, DISCIPLINE, CLAN, TRIFLE, POOL, BLOOD, BURN } from '@/constants';
 import { useApp } from '@/context';
 
 const Type = ({ card, handleClick }) => {

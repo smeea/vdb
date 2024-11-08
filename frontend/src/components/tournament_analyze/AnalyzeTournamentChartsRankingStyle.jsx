@@ -2,6 +2,23 @@ import React, { useMemo } from 'react';
 import { BubbleChart } from '@/components';
 import { capitalize, getClan } from '@/utils';
 import { useApp } from '@/context';
+import {
+  ALLY,
+  AUTHOR,
+  BLEED,
+  BLOCK,
+  COMBAT,
+  CRYPT,
+  LIBRARY,
+  MULTI,
+  PLAYERS,
+  RANK,
+  RUSH,
+  STEALTH,
+  SWARM,
+  TAGS,
+  VOTE,
+} from '@/constants';
 
 const AnalyzeTournamentChartsRankingStyle = ({ info, decks, searchResults }) => {
   const { isMobile, isDesktop, isWide } = useApp();

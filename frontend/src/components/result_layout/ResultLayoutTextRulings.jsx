@@ -2,6 +2,7 @@ import React from 'react';
 import reactStringReplace from 'react-string-replace';
 import { useApp } from '@/context';
 import { CardPopover, ResultName, ResultMiscImage, ConditionalTooltip } from '@/components';
+import { TEXT, NAME } from '@/constants';
 
 const Refs = ({ refs }) => {
   return (

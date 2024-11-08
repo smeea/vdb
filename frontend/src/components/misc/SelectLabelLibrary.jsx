@@ -10,7 +10,7 @@ import {
   ResultLibraryClan,
 } from '@/components';
 import { useApp, inventoryStore } from '@/context';
-import { LIBRARY, BLOOD, POOL } from '@/constants';
+import { TYPE, REQUIREMENT, CLAN, DISCIPLINE, LIBRARY, BLOOD, POOL } from '@/constants';
 
 const SelectLabelLibrary = ({ cardid, inInventory }) => {
   const { libraryCardBase } = useApp();

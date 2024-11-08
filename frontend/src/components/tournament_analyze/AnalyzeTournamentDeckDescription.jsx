@@ -9,6 +9,7 @@ import {
 } from '@/components';
 import { useApp } from '@/context';
 import { getDeckInUrl } from '@/utils';
+import { RANK, TAGS } from '@/constants';
 
 const AnalyzeTournamentDeckDescription = ({ deck }) => {
   const { username, isMobile } = useApp();

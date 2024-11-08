@@ -2,7 +2,7 @@ import React from 'react';
 import { twMerge } from 'tailwind-merge';
 import { useApp } from '@/context';
 import { useCardImageUrl } from '@/hooks';
-import { EN } from '@/constants';
+import { NAME, CLAN, ID, EN } from '@/constants';
 import legacyImagesClans from '@/assets/data/legacyImagesClansList.json';
 
 const CardImage = ({ card, set, className = 'max-sm:w-full', size = 'md', onClick }) => {

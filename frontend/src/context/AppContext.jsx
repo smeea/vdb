@@ -7,26 +7,30 @@ import { getLocalStorage, setLocalStorage } from '@/services/storageServices';
 import { useDeck, useWindowSize } from '@/hooks';
 import { deepClone, byTimestamp } from '@/utils';
 import {
+  BRANCHES,
   CAPACITY_MIN_MAX,
-  QUANTITYx,
-  NAME,
-  TYPE,
-  DATE_NEW_OLD,
-  RANK_HIGH_LOW,
-  EN,
-  TWD,
-  PDA,
-  TEXT,
-  DECK,
-  DECKS,
   CRYPT,
-  LIBRARY,
+  DATE_NEW_OLD,
+  DECK,
+  DECKID,
+  DECKS,
+  EN,
+  IS_AUTHOR,
   IS_FROZEN,
-  LIMITED_SETS,
+  LIBRARY,
+  LIMITED_ALLOWED_CRYPT,
+  LIMITED_ALLOWED_LIBRARY,
   LIMITED_BANNED_CRYPT,
   LIMITED_BANNED_LIBRARY,
-  LIMITED_ALLOWED_LIBRARY,
-  LIMITED_ALLOWED_CRYPT,
+  LIMITED_SETS,
+  MASTER,
+  NAME,
+  PDA,
+  QUANTITYx,
+  RANK_HIGH_LOW,
+  TEXT,
+  TWD,
+  TYPE,
 } from '@/constants';
 import {
   setLimitedSets,
@@ -260,7 +264,11 @@ export const AppProvider = ({ children }) => {
     setIsPlaytestAdmin(data.playtest.is_admin);
     setPlaytestProfile(data.playtest.profile);
     if (!data.playtest.is_playtester && !data.playtest.is_admin) setPlaytestMode(false);
-    const { isFrozen, crypt, library } = parseInventoryData(data.inventory);
+    const {
+      [IS_FROZEN]: isFrozen,
+      [CRYPT]: crypt,
+      [LIBRARY]: library,
+    } = parseInventoryData(data.inventory);
     inventoryStore[IS_FROZEN] = isFrozen;
     inventoryStore[CRYPT] = crypt;
     inventoryStore[LIBRARY] = library;

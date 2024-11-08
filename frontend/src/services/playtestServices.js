@@ -1,5 +1,5 @@
 import ky from 'ky';
-import { PRECONS, CARDS, GENERAL, NAME } from '@/constants';
+import { PLAYTEST, ID, TEXT, PRECONS, CARDS, GENERAL, NAME } from '@/constants';
 
 export const submitReport = (id, value, isPrecon) => {
   const url = `${import.meta.env.VITE_API_URL}/playtest/${isPrecon ? PRECONS : CARDS}/${id}`;
@@ -85,10 +85,10 @@ export const exportXlsx = async (reports, users, cryptCardBase, libraryCardBase,
 
   Object.entries(preconsData).forEach((i) => {
     const [id, reportsData] = i;
-    if (!preconDecks[`PLAYTEST:${id}`]) return;
+    if (!preconDecks[`${PLAYTEST}:${id}`]) return;
     const sheet = getSheet(reportsData);
     sheet['!cols'] = [{ wch: 15 }, { wch: 8 }, { wch: 8 }, { wch: 60 }, { wch: 8 }, { wch: 15 }];
-    const sheetName = `P ${preconDecks[`PLAYTEST:${id}`][NAME].replace(/\W+/g, ' ').substring(0, 20)}`;
+    const sheetName = `P ${preconDecks[`${PLAYTEST}:${id}`][NAME].replace(/\W+/g, ' ').substring(0, 20)}`;
     XLSX.utils.book_append_sheet(workbook, sheet, sheetName);
   });
 

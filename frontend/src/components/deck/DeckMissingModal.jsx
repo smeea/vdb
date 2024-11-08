@@ -9,6 +9,7 @@ import {
   Modal,
 } from '@/components';
 import { useApp } from '@/context';
+import { NAME, CRYPT, LIBRARY } from '@/constants';
 
 const DeckMissingModal = ({ deck, missAllVtes, handleClose, inInventory }) => {
   const { isMobile } = useApp();

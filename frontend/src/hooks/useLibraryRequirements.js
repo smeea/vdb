@@ -12,6 +12,10 @@ import {
   MAGAJI,
   TITLED,
   NON_TITLED,
+  DISCIPLINE,
+  REQUIREMENT,
+  CLAN,
+  CAPACITY,
 } from '@/constants';
 import sects from '@/assets/data/sectsList.json';
 

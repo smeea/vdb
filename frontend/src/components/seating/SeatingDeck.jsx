@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import PlayFill from '@/assets/images/icons/play-fill.svg?react';
 import X from '@/assets/images/icons/x.svg?react';
 import { Toggle } from '@/components';
+import { DECKID, NAME } from '@/constants';
 
 const SeatingDeck = ({ toggle, i, deck, disabled, remove }) => {
   return (

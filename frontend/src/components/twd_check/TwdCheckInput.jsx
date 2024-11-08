@@ -5,6 +5,7 @@ import Upload from '@/assets/images/icons/upload.svg?react';
 import { Textarea, ButtonIconed, ErrorOverlay } from '@/components';
 import { useApp } from '@/context';
 import { useDeckImport } from '@/hooks';
+import { ID, CRYPT, LIBRARY } from '@/constants';
 
 const TwdCheckInput = ({ deckData, setDeckData }) => {
   const { cryptCardBase, libraryCardBase } = useApp();

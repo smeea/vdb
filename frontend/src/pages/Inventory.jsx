@@ -18,7 +18,7 @@ import {
 } from '@/components';
 import { useApp } from '@/context';
 import { inventoryServices } from '@/services';
-import { ALL } from '@/constants';
+import { CRYPT, LIBRARY, ALL } from '@/constants';
 
 const Inventory = () => {
   const {

@@ -6,6 +6,7 @@ import {
   PdaFavoriteButton,
 } from '@/components';
 import { useApp } from '@/context';
+import { DECKID } from '@/constants';
 
 const PdaResultDescription = ({ deck }) => {
   const { username } = useApp();

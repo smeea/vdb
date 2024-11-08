@@ -2,6 +2,7 @@ import React from 'react';
 import { useImmer } from 'use-immer';
 import { useApp, deckCardChange, inventoryCardChange } from '@/context';
 import { Modal, DeckCardQuantity, CardSelect } from '@/components';
+import { ID } from '@/constants';
 
 const DeckImportBadCardsModal = ({ deckid, badCards, setBadCards, inInventory }) => {
   const { cryptCardBase, libraryCardBase, isMobile } = useApp();

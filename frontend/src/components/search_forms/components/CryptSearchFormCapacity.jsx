@@ -7,7 +7,7 @@ import {
   SearchFormButtonDel,
 } from '@/components';
 import { useApp } from '@/context';
-import { ANY, LE, GE, EQ } from '@/constants';
+import { CAPACITY, ANY, LE, GE, EQ } from '@/constants';
 
 const CryptSearchFormCapacity = ({ value, searchForm, onChange }) => {
   const { isXWide } = useApp();

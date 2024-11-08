@@ -6,7 +6,7 @@ import { ButtonIconed, ModalConfirmation } from '@/components';
 import { deckServices } from '@/services';
 import { deckStore, useApp } from '@/context';
 import { byTimestamp } from '@/utils';
-import { DECKS } from '@/constants';
+import { BRANCHES, DECKID, MASTER, NAME, DECKS } from '@/constants';
 
 const DeckDeleteButton = ({ deck, noText }) => {
   const { isDesktop, setShowFloatingButtons, setShowMenuButtons } = useApp();
@@ -58,7 +58,7 @@ const DeckDeleteButton = ({ deck, noText }) => {
           withWrittenConfirmation={deck.isBranches}
           handleConfirm={handleClick}
           handleCancel={() => setShowConfirmation(false)}
-          title={`Delete deck "${deck[NAME]}" and all its revisions`}
+          title={`Delete deck "${deck[NAME]}" and all its revisions?`}
           buttonText="Delete"
           buttonVariant="danger"
         />

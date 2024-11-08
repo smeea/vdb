@@ -5,6 +5,7 @@ import {
   DiffProxyButtonWrapper,
   DeckMissingButton,
 } from '@/components';
+import { DECKID } from '@/constants';
 
 const DiffButtons = ({ deckFrom, deckTo }) => {
   return (

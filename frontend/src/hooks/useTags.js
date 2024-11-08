@@ -1,4 +1,30 @@
-import { TEXT } from '@/constants';
+import {
+  ADDITIONAL_STRIKE,
+  AGGRAVATED,
+  BLEED,
+  BLEED_1,
+  EMBRACE,
+  ENTER_COMBAT,
+  INTERCEPT,
+  INTERCEPT_1,
+  NAME,
+  PRESS,
+  PREVENT,
+  PUT_BLOOD,
+  STEALTH,
+  STEALTH_1,
+  STRENGTH,
+  STRENGTH_1,
+  TEXT,
+  TYPE,
+  TYPE_ALLY,
+  TYPE_COMBAT,
+  TYPE_MASTER,
+  TYPE_POLITICAL_ACTION,
+  TYPE_REACTION,
+  UNLOCK,
+  VOTES_TITLE,
+} from '@/constants';
 
 const useTags = (crypt, library) => {
   const deckTags = {

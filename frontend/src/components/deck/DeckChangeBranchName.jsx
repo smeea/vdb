@@ -2,7 +2,9 @@ import React, { useState, useEffect } from 'react';
 import Check2 from '@/assets/images/icons/check2.svg?react';
 import PaletteFill from '@/assets/images/icons/palette-fill.svg?react';
 import { Input, InputLabel, Button } from '@/components';
+import { getIsEditable } from '@/utils';
 import { deckUpdate } from '@/context';
+import { BRANCH_NAME, DECKID, IS_AUTHOR } from '@/constants';
 
 const DeckChangeBranchName = ({ deck }) => {
   const [value, setValue] = useState(deck[BRANCH_NAME] || '');

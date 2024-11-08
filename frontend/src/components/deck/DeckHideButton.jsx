@@ -3,6 +3,7 @@ import LightbulbFill from '@/assets/images/icons/lightbulb-fill.svg?react';
 import LightbulbOffFill from '@/assets/images/icons/lightbulb-off-fill.svg?react';
 import { deckUpdate } from '@/context';
 import { ButtonIconed } from '@/components';
+import { DECKID, IS_HIDDEN } from '@/constants';
 
 const DeckHideButton = ({ deck }) => {
   const handleClick = () => {

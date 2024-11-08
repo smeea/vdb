@@ -2,6 +2,7 @@ import React from 'react';
 import { DeckRecommendationModal } from '@/components';
 import { useApp } from '@/context';
 import { useFetch } from '@/hooks';
+import { LIBRARY, CRYPT, ID } from '@/constants';
 
 const DeckRecommendation = ({ setShow, deck }) => {
   const { cryptCardBase, libraryCardBase, setShowFloatingButtons } = useApp();

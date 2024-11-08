@@ -5,6 +5,7 @@ import ChatLeftQuoteFill from '@/assets/images/icons/chat-left-quote-fill.svg?re
 import { Input, InputLabel, Textarea, Button } from '@/components';
 import { deckUpdate } from '@/context';
 import { getIsEditable } from '@/utils';
+import { DESCRIPTION, DECKID } from '@/constants';
 
 const DeckDescription = ({ deck, folded, setFolded }) => {
   const [value, setValue] = useState(deck[DESCRIPTION] || '');

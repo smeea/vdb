@@ -1,17 +1,26 @@
 import { getTextDisciplines, cryptSort, librarySort } from '@/utils';
 import {
+  ADV,
   ASCII,
+  AUTHOR,
   CAPACITY,
-  TEXT,
+  CLAN,
+  CRYPT,
+  DESCRIPTION,
+  DISCIPLINES,
+  ID,
   JOL,
   LACKEY,
-  TYPE_MASTER,
+  LIBRARY,
   NAME,
   QUANTITY,
   TEXT,
+  TITLE,
   TRIFLE,
   TWD,
   TWD_HINTS,
+  TYPE,
+  TYPE_MASTER,
 } from '@/constants';
 import cardtypeSortedFull from '@/assets/data/cardtypeSortedFull.json';
 

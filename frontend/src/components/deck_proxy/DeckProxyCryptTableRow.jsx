@@ -8,7 +8,7 @@ import {
 } from '@/components';
 import { getSoftMax, getHardTotal } from '@/utils';
 import { useApp, usedStore, inventoryStore } from '@/context';
-import { SOFT, HARD, CRYPT } from '@/constants';
+import { ID, PRINT, SET, SOFT, HARD, CRYPT } from '@/constants';
 
 const DeckProxyCryptTableRow = ({
   proxySelected,

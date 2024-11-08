@@ -2,7 +2,7 @@ import React from 'react';
 import { useSnapshot } from 'valtio';
 import { DeckRecommendationLibraryTableRow } from '@/components';
 import { deckStore } from '@/context';
-import { DECK } from '@/constants';
+import { DECK, ID } from '@/constants';
 
 const DeckRecommendationLibraryTable = ({ handleClick, cards }) => {
   const deck = useSnapshot(deckStore)[DECK];

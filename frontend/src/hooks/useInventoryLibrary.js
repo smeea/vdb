@@ -4,7 +4,7 @@ import disciplinesList from '@/assets/data/disciplinesList.json';
 import disciplinesExtraList from '@/assets/data/disciplinesExtraList.json';
 import virtuesList from '@/assets/data/virtuesList.json';
 import cardtypeSorted from '@/assets/data/cardtypeSorted.json';
-import { SOFT, HARD, LIBRARY, ALL, NONE, OK, NOK } from '@/constants';
+import { TYPE, DISCIPLINE, SOFT, HARD, LIBRARY, ALL, NONE, OK, NOK } from '@/constants';
 import { getHardTotal, getSoftMax } from '@/utils';
 import { useApp, usedStore } from '@/context';
 

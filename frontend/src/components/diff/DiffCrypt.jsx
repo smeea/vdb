@@ -4,6 +4,7 @@ import { FlexGapped, DiffCryptTable, ResultModal, DeckCryptHeader } from '@/comp
 import { useApp } from '@/context';
 import { getIsEditable } from '@/utils';
 import { useModalCardController, useKeyDisciplines, useDeckCrypt } from '@/hooks';
+import { CRYPT, DECKID } from '@/constants';
 
 const DiffCrypt = ({ cardsTo, deck }) => {
   const { isMobile, cryptDeckSort, changeCryptDeckSort, setShowFloatingButtons } = useApp();

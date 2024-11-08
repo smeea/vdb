@@ -9,7 +9,7 @@ import {
 } from '@/components';
 import { useApp } from '@/context';
 import cardtypeSortedFull from '@/assets/data/cardtypeSortedFull.json';
-import { BANNED } from '@/constants';
+import { TYPE_MASTER, BANNED } from '@/constants';
 import { useDeckLibrary, useModalCardController } from '@/hooks';
 
 const TwdResultLibraryByTypeTable = ({ library }) => {

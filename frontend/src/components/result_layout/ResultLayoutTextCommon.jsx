@@ -8,6 +8,7 @@ import {
   PlaytestReportForm,
   Hr,
 } from '@/components';
+import { ID, ARTIST, RULINGS } from '@/constants';
 
 const ResultLayoutTextCommon = ({
   handleClose,

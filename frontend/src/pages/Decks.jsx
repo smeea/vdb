@@ -24,7 +24,19 @@ import {
 import { deckStore, useApp, setDeck } from '@/context';
 import { useDecksTagsAll, useDeck, useTags } from '@/hooks';
 import { getIsEditable, parseDeckHash } from '@/utils';
-import { AUTHOR, DECK, DECKS, CRYPT, LIBRARY } from '@/constants';
+import {
+  AUTHOR,
+  BRANCHES,
+  CRYPT,
+  DECK,
+  DECKID,
+  DECKS,
+  DESCRIPTION,
+  LIBRARY,
+  MASTER,
+  NAME,
+  TAGS,
+} from '@/constants';
 
 const Decks = () => {
   const {

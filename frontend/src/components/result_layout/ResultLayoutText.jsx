@@ -14,7 +14,7 @@ import {
   PlaytestReportsOneButton,
 } from '@/components';
 import { searchResults, setCryptCompare, setLibraryCompare, useApp } from '@/context';
-import { TWD, PDA } from '@/constants';
+import { ID, TYPE, TYPE_MASTER, TWD, PDA } from '@/constants';
 
 const ResultLayoutText = ({
   card,

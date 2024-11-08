@@ -6,6 +6,7 @@ import {
   ResultLayoutTextCommon,
 } from '@/components';
 import { useApp } from '@/context';
+import { ID } from '@/constants';
 
 const CardPopover = ({ card }) => {
   const { showImage } = useApp();

@@ -4,6 +4,7 @@ import { DeckCryptTable, DeckCryptHeader, ResultModal, FlexGapped } from '@/comp
 import { useApp } from '@/context';
 import { getIsEditable } from '@/utils';
 import { useModalCardController, useKeyDisciplines, useDeckCrypt } from '@/hooks';
+import { DECKID, CRYPT } from '@/constants';
 
 const DeckCrypt = ({ inSearch, inPreview, inMissing, noDisciplines, deck }) => {
   const { setShowFloatingButtons, cryptDeckSort, changeCryptDeckSort, isMobile } = useApp();

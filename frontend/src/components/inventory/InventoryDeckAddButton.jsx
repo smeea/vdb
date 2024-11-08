@@ -3,6 +3,7 @@ import Check2 from '@/assets/images/icons/check2.svg?react';
 import PlusLg from '@/assets/images/icons/plus-lg.svg?react';
 import { ButtonIconed, ModalConfirmation } from '@/components';
 import { useApp, inventoryCardsAdd } from '@/context';
+import { NAME, CRYPT, LIBRARY } from '@/constants';
 
 const InventoryDeckAddButton = ({ deck, inInventory }) => {
   const { setShowFloatingButtons, setShowMenuButtons } = useApp();
@@ -35,7 +36,7 @@ const InventoryDeckAddButton = ({ deck, inInventory }) => {
           handleConfirm={handleConfirm}
           handleCancel={handleCancel}
           buttonText="Add"
-          title={'Add deck ' + deck[NAME] + ' to Inventory?'}
+          title={`Add deck ${deck[NAME]} to Inventory?`}
         />
       )}
     </>

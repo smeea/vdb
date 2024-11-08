@@ -4,6 +4,7 @@ import { ButtonAddCard, ResultLibraryTableRowCommon } from '@/components';
 import { deckCardChange } from '@/context';
 import { getIsEditable, getSwipedBg } from '@/utils';
 import { useSwipe } from '@/hooks';
+import { LIBRARY, ID, DECKID } from '@/constants';
 
 const DeckRecommendationLibraryTableRow = ({ card, handleClick, deck }) => {
   const inDeck = deck[LIBRARY][card[ID]]?.q || 0;

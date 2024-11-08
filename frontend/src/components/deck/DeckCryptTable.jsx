@@ -1,5 +1,6 @@
 import React from 'react';
 import { DeckCryptTableRow } from '@/components';
+import { ID } from '@/constants';
 
 const DeckCryptTable = ({
   deck,

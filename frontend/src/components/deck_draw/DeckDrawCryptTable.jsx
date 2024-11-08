@@ -2,6 +2,7 @@ import React from 'react';
 import { ResultCryptTableRowCommon, DeckDrawProbability } from '@/components';
 import { useKeyDisciplines } from '@/hooks';
 import { useApp } from '@/context';
+import { ID, NAME } from '@/constants';
 
 const DeckDrawCryptTable = ({
   handleClick,

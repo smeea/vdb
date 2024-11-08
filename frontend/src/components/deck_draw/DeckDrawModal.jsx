@@ -13,9 +13,9 @@ import {
   Header,
   FlexGapped,
 } from '@/components';
-
 import { useApp } from '@/context';
 import { useModalCardController } from '@/hooks';
+import { X } from '@/constants';
 
 const DeckDrawModal = ({
   burnCrypt,

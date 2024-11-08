@@ -5,7 +5,7 @@ import { Select, ButtonIconed } from '@/components';
 import { deckUpdate } from '@/context';
 import { useTags } from '@/hooks';
 import { getIsEditable } from '@/utils';
-import { TAGS } from '@/constants';
+import { DECKID, CRYPT, LIBRARY, TAGS } from '@/constants';
 
 const DeckTags = ({ deck, tagsSuperior, noAutotags, isBordered, allTagsOptions }) => {
   const isEditable = getIsEditable(deck);

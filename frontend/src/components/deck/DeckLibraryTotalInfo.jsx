@@ -1,5 +1,6 @@
 import React from 'react';
 import { ResultLibraryTypeImage, ResultLibraryDisciplines, ResultLibraryClan } from '@/components';
+import { TYPE_MASTER } from '@/constants';
 
 const DeckLibraryTotalInfo = ({ byClans, byTypes, byDisciplines }) => {
   const total = Object.values(byTypes).reduce((a, b) => a + b, 0);

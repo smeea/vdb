@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Select } from '@/components';
 import { Toggle, ResultLibraryTypeImage } from '@/components';
 import { useApp } from '@/context';
-import { CARDTYPES, ANY } from '@/constants';
+import { NAME, ID, CARDTYPES, ANY } from '@/constants';
 
 const TwdSearchFormCardtypes = ({ value, onChange }) => {
   const [isManual, setIsManual] = useState();

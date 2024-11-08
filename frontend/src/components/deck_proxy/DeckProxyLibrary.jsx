@@ -8,7 +8,7 @@ import {
 } from '@/components';
 import { useApp } from '@/context';
 import { countCards } from '@/utils';
-import { INVENTORY_TYPE, TYPE_MASTER } from '@/constants';
+import { PRINT, LIBRARY, INVENTORY_TYPE, TYPE_MASTER } from '@/constants';
 import { useModalCardController, useDeckLibrary } from '@/hooks';
 
 const DeckProxyLibrary = ({

@@ -21,4 +21,10 @@
 - Migrate from isWidth to container queries
 - Migrate forms to useFormStatus+useActionState
 - Remove legacy polyfills when Safari adopts groupBy
+- Refactor to constants:
+  - useTags
+  - .key
+  - sortMethods: TwdResult, PdaResult, DiffCrypt, DeckCrypt, ReviewCrypt
+  - ResultLibraryReq
+  - In Objects keys e.g. name:, branchName:
 - Check Input type="" and name=""

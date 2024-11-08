@@ -1,7 +1,7 @@
 import React from 'react';
 import { Select, SearchFormButtonAdd, SearchFormButtonDel } from '@/components';
 import { useApp } from '@/context';
-import { MORELESS, ANY } from '@/constants';
+import { CAPACITY, MORELESS, ANY } from '@/constants';
 
 const SearchAdditionalForms = ({
   value,
