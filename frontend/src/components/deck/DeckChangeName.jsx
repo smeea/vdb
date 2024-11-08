@@ -9,7 +9,7 @@ import { Input, InputLabel, DeckFreezeButton } from '@/components';
 const DeckChangeName = ({ deck }) => {
   const [value, setValue] = useState(deck[NAME] || '');
   const isEditable = getIsEditable(deck);
-  const isTwd = deck[DECKID] !== 'deck' && deck[DECKID].length !== 9 && !deck[DECKID].includes(':');
+  const isTwd = deck[DECKID] !== DECK && deck[DECKID].length !== 9 && !deck[DECKID].includes(':');
 
   useEffect(() => {
     if (value !== deck[NAME]) setValue(deck[NAME] ?? '');

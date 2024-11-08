@@ -5,7 +5,7 @@ import { useApp } from '@/context';
 
 const AnalyzeTournamentChartsRankingStyle = ({ info, decks, searchResults }) => {
   const { isMobile, isDesktop, isWide } = useApp();
-  const allowedTags = ['bleed', 'stealth', 'block', 'rush', 'combat', 'ally', 'swarm', 'vote'];
+  const allowedTags = [BLEED, STEALTH, BLOCK, RUSH, COMBAT, ALLY, SWARM, VOTE];
 
   const data = useMemo(() => {
     const d = {};
@@ -21,7 +21,7 @@ const AnalyzeTournamentChartsRankingStyle = ({ info, decks, searchResults }) => 
       const position = info[PLAYERS] - deck.score[RANK];
       const inSearch = Object.values(searchResults).some((d) => d[AUTHOR] === deck[AUTHOR]);
       const def = {
-        clan: getClan(deck[CRYPT]) || 'Multi',
+        clan: getClan(deck[CRYPT]) || MULTI,
         crypt: deck[CRYPT],
         library: deck[LIBRARY],
         tags: deck[TAGS],

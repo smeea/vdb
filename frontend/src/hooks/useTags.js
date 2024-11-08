@@ -120,25 +120,19 @@ const getLibraryTags = (card) => {
 };
 
 const testCryptBleed = (card) => {
-  if (haveTraits(['1 bleed'], card, CryptTraitsRegexMap)) {
+  if (haveTraits([BLEED_1], card, CryptTraitsRegexMap)) {
     return true;
   }
 };
 
 const testCryptBlock = (card) => {
-  if (haveTraits(['1 intercept'], card, CryptTraitsRegexMap)) {
+  if (haveTraits([INTERCEPT_1], card, CryptTraitsRegexMap)) {
     return true;
   }
 };
 
 const testCryptCombat = (card) => {
-  if (
-    haveTraits(
-      ['1 strength', 'optional press', 'additional strike', 'prevent'],
-      card,
-      CryptTraitsRegexMap,
-    )
-  ) {
+  if (haveTraits([STRENGTH_1, PRESS, ADDITIONAL_STRIKE, PREVENT], card, CryptTraitsRegexMap)) {
     return true;
   }
 };
@@ -149,56 +143,56 @@ const testCryptMmpa = (card) => {
 };
 
 const testCryptRush = (card) => {
-  if (haveTraits(['enter combat'], card, CryptTraitsRegexMap)) {
+  if (haveTraits([ENTER_COMBAT], card, CryptTraitsRegexMap)) {
     return true;
   }
 };
 
 const testCryptStealth = (card) => {
-  if (haveTraits(['1 stealth'], card, CryptTraitsRegexMap)) {
+  if (haveTraits([STEALTH_1], card, CryptTraitsRegexMap)) {
     return true;
   }
 };
 
 const testLibraryAlly = (card) => {
-  if (card[TYPE].split('/').includes('Ally')) return true;
+  if (card[TYPE].split('/').includes(TYPE_ALLY)) return true;
   if (['FBI Special Affairs Division', 'Unmasking, The'].includes(card[NAME])) return true;
 };
 
 const testLibraryBleed = (card) => {
-  if (haveTraits(['bleed'], card, LibraryTraitsRegexMap)) {
+  if (haveTraits([BLEED], card, LibraryTraitsRegexMap)) {
     return true;
   }
 };
 const testLibraryAccel = (card) => {
-  if (haveTraits(['put-blood'], card, LibraryTraitsRegexMap)) {
+  if (haveTraits([PUT_BLOOD], card, LibraryTraitsRegexMap)) {
     return true;
   }
 };
 
 const testLibraryBlock = (card) => {
-  if (haveTraits(['intercept'], card, LibraryTraitsRegexMap)) {
+  if (haveTraits([INTERCEPT], card, LibraryTraitsRegexMap)) {
     return true;
   }
   if (
-    haveTraits(['unlock'], card, LibraryTraitsRegexMap) &&
-    card[TYPE].split('/').includes('Reaction')
+    haveTraits([UNLOCK], card, LibraryTraitsRegexMap) &&
+    card[TYPE].split('/').includes(TYPE_REACTION)
   ) {
     return true;
   }
 };
 
 const testLibrarySwarm = (card) => {
-  if (haveTraits(['embrace'], card, LibraryTraitsRegexMap)) {
+  if (haveTraits([EMBRACE], card, LibraryTraitsRegexMap)) {
     return true;
   }
 };
 
 const testLibraryCombat = (card) => {
-  if (card[TYPE].split('/').includes('Combat')) return true;
+  if (card[TYPE].split('/').includes(TYPE_COMBAT)) return true;
   if (
     haveTraits(
-      ['strength', 'aggravated', 'prevent', 'press', 'additional strike'],
+      [STRENGTH, AGGRAVATED, PREVENT, PRESS, ADDITIONAL_STRIKE],
       card,
       LibraryTraitsRegexMap,
     )
@@ -212,20 +206,20 @@ const testLibraryMmpa = (card) => {
 };
 
 const testLibraryRush = (card) => {
-  if (haveTraits(['enter combat'], card, LibraryTraitsRegexMap)) {
+  if (haveTraits([ENTER_COMBAT], card, LibraryTraitsRegexMap)) {
     return true;
   }
 };
 
 const testLibraryStealth = (card) => {
-  if (haveTraits(['stealth'], card, LibraryTraitsRegexMap)) {
+  if (haveTraits([STEALTH], card, LibraryTraitsRegexMap)) {
     return true;
   }
 };
 
 const testLibraryVote = (card) => {
-  if (card[TYPE].split('/').includes('Political Action')) return true;
-  if (haveTraits(['votes-title'], card, LibraryTraitsRegexMap)) {
+  if (card[TYPE].split('/').includes(TYPE_POLITICAL_ACTION)) return true;
+  if (haveTraits([VOTES_TITLE], card, LibraryTraitsRegexMap)) {
     return true;
   }
 };
@@ -238,33 +232,33 @@ const haveTraits = (traits, card, traitsRegexMap) => {
 };
 
 const CryptTraitsRegexMap = {
-  'enter combat': (card) =>
+  [ENTER_COMBAT]: (card) =>
     '(he|she|it|they|' +
     card[NAME].match(/^\S+/i)[0].replace(/,/, '') +
     ') (can|may)( .* to)? enter combat',
-  'optional press': () => /gets (.*)?optional press/i,
-  '1 bleed': () => /[:.] \+[1-9] bleed./i,
-  '1 strength': () => /[:.] \+[1-9] strength./i,
-  '1 intercept': () => /[:.] \+[1-9] intercept./i,
-  '1 stealth': () =>
+  [PRESS]: () => /gets (.*)?optional press/i,
+  [BLEED_1]: () => /[:.] \+[1-9] bleed./i,
+  [STRENGTH_1]: () => /[:.] \+[1-9] strength./i,
+  [INTERCEPT_1]: () => /[:.] \+[1-9] intercept./i,
+  [STEALTH_1]: () =>
     /([:.] \+[1-9] stealth.|gets \+[1-9] stealth on each of (his|her|they) actions)/i,
-  unlock: () => /(?!not )unlock(?! phase|ed)|wakes/i,
-  'additional strike': () => /additional strike/i,
-  aggravated: () => /(?:[^non-])aggravated/i,
-  prevent: () => /(?:[^un])prevent(?:[^able])/i,
+  [UNLOCK]: () => /(?!not )unlock(?! phase|ed)|wakes/i,
+  [ADDITIONAL_STRIKE]: () => /additional strike/i,
+  [AGGRAVATED]: () => /(?:[^non-])aggravated/i,
+  [PREVENT]: () => /(?:[^un])prevent(?:[^able])/i,
 };
 
 const LibraryTraitsRegexMap = {
-  'enter combat': () => /enter combat/i,
-  intercept: () =>
+  [ENTER_COMBAT]: () => /enter combat/i,
+  [INTERCEPT]: () =>
     /-[0-9]+ stealth(?! \(d\))(?! \w)(?! action)|\+[0-9]+ intercept|gets -([0-9]|x)+ stealth|stealth to 0/i,
-  stealth: () => /\+[0-9]+ stealth(?! \(d\))(?! \w)(?! action)|-[0-9]+ intercept/i,
-  bleed: () => /\+[0-9]+ bleed/i,
-  strength: () => /\+[0-9]+ strength/i,
-  embrace: () => /becomes a.*(\d[ -]|same.*)capacity/i,
-  unlock: () => /(?!not )unlock(?! phase|ed)|wakes/i,
-  'votes-title': () => /\+. vote|additional vote|represent the .* title/i,
-  aggravated: () => /(?:[^non-])aggravated/i,
-  prevent: () => /(?:[^un])prevent(?:[^able])/i,
-  'put-blood': () => /add .* blood (from the blood bank )?to .* in your uncontrolled region/i,
+  [STEALTH]: () => /\+[0-9]+ stealth(?! \(d\))(?! \w)(?! action)|-[0-9]+ intercept/i,
+  [BLEED]: () => /\+[0-9]+ bleed/i,
+  [STRENGTH]: () => /\+[0-9]+ strength/i,
+  [EMBRACE]: () => /becomes a.*(\d[ -]|same.*)capacity/i,
+  [UNLOCK]: () => /(?!not )unlock(?! phase|ed)|wakes/i,
+  [VOTES_TITLE]: () => /\+. vote|additional vote|represent the .* title/i,
+  [AGGRAVATED]: () => /(?:[^non-])aggravated/i,
+  [PREVENT]: () => /(?:[^un])prevent(?:[^able])/i,
+  [PUT_BLOOD]: () => /add .* blood (from the blood bank )?to .* in your uncontrolled region/i,
 };

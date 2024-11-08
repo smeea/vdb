@@ -159,7 +159,7 @@ const DeckDrawModal = ({
                     <div className="flex items-center font-bold">Controlled</div>
                     <div className="flex items-center font-bold">{burnedCrypt.length}</div>
                     <div className="flex items-center gap-1" title="Total Capacity">
-                      <ResultCryptCapacity card={{ Capacity: 'X' }} />
+                      <ResultCryptCapacity card={{ Capacity: X }} />
                       <b>{burnedCapacityTotal}</b>
                     </div>
                   </div>

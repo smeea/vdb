@@ -21,24 +21,24 @@ const LibrarySearchFormTraits = ({ value, onChange }) => {
       <div className="flex">
         <div className="flex basis-5/9 flex-col gap-0.5">
           {[
-            ['intercept', '+Intercept / -Stealth'],
-            ['stealth', '+Stealth / -Intercept'],
-            ['bleed', '+Bleed'],
-            ['votes-title', '+Votes / Title'],
-            ['strength', '+Strength'],
-            ['dodge', 'Dodge'],
-            ['maneuver', 'Maneuver'],
-            ['additional strike', 'Additional Strike'],
-            ['aggravated', 'Aggravated'],
-            ['prevent', 'Prevent'],
-            ['press', 'Press'],
-            ['combat ends', 'Combat Ends'],
+            [INTERCEPT, '+Intercept / -Stealth'],
+            [STEALTH, '+Stealth / -Intercept'],
+            [BLEED, '+Bleed'],
+            [VOTES_TITLE, '+Votes / Title'],
+            [STRENGTH, '+Strength'],
+            [DODGE, 'Dodge'],
+            [MANEUVER, 'Maneuver'],
+            [ADDITIONAL_STRIKE, 'Additional Strike'],
+            [AGGRAVATED, 'Aggravated'],
+            [PREVENT, 'Prevent'],
+            [PRESS, 'Press'],
+            [COMBAT_ENDS, 'Combat Ends'],
             [MULTI_TYPE, 'Multi-Type'],
             [MULTI_DISCIPLINE, 'Multi-Discipline'],
-            ['path-caine', 'Path of Caine'],
-            ['path-cathari', 'Path of Cathari'],
+            [PATH_CAINE, 'Path of Caine'],
+            [PATH_CATHARI, 'Path of Cathari'],
           ]
-            .filter((i) => !['path-caine', 'path-cathari'].includes(i[0]) || playtestMode)
+            .filter((i) => ![PATH_CAINE, PATH_CATHARI].includes(i[0]) || playtestMode)
             .map((i) => (
               <Checkbox
                 key={i[0]}
@@ -52,24 +52,24 @@ const LibrarySearchFormTraits = ({ value, onChange }) => {
         </div>
         <div className="flex basis-4/9 flex-col gap-0.5">
           {[
-            ['enter combat', 'Enter Combat'],
-            ['embrace', 'Create Vampire'],
-            ['bloat', 'Blood to Uncontrolled'],
-            ['bounce bleed', 'Bounce Bleed'],
-            ['reduce bleed', 'Reduce Bleed'],
-            ['unlock', 'Wake / Unlock'],
-            ['black hand', 'Black Hand'],
-            ['seraph', 'Seraph'],
-            ['infernal', 'Infernal'],
+            [ENTER_COMBAT, 'Enter Combat'],
+            [EMBRACE, 'Create Vampire'],
+            [PUT_BLOOD, 'Blood to Uncontrolled'],
+            [BOUNCE_BLEED, 'Bounce Bleed'],
+            [REDUCE_BLEED, 'Reduce Bleed'],
+            [UNLOCK, 'Wake / Unlock'],
+            [BLACK_HAND, 'Black Hand'],
+            [SERAPH, 'Seraph'],
+            [INFERNAL, 'Infernal'],
             [BURN, 'Burn Option'],
             [BANNED, 'Banned'],
             [NON_TWD, 'Not in TWD'],
             [NO_REQUIREMENTS, 'No Requirement'],
-            ['playtest', 'Playtest'],
-            ['path-death', 'Path of Death'],
-            ['path-power', 'Path of Power'],
+            [PLAYTEST, 'Playtest'],
+            [PATH_DEATH, 'Path of Death'],
+            [PATH_POWER, 'Path of Power'],
           ]
-            .filter((i) => !['playtest', 'path-death', 'path-power'].includes(i[0]) || playtestMode)
+            .filter((i) => ![PLAYTEST, PATH_DEATH, PATH_POWER].includes(i[0]) || playtestMode)
             .map((i) => (
               <Checkbox
                 key={i[0]}

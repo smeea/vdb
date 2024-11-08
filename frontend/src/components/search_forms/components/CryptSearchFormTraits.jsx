@@ -12,21 +12,21 @@ const CryptSearchFormTraits = ({ value, onChange }) => {
       <div className="flex">
         <div className="flex w-7/12 flex-col gap-0.5">
           {[
-            ['1 intercept', '+1 intercept'],
-            ['1 stealth', '+1 stealth'],
-            ['1 bleed', '+1 bleed'],
-            ['2 bleed', '+2 bleed'],
-            ['1 strength', '+1 strength'],
-            ['2 strength', '+2 strength'],
-            ['maneuver', 'Maneuver'],
-            ['additional strike', 'Additional Strike'],
-            ['aggravated', 'Aggravated'],
-            ['prevent', 'Prevent'],
-            ['press', 'Press'],
-            ['path-caine', 'Path of Caine'],
-            ['path-cathari', 'Path of Cathari'],
+            [INTERCEPT_1, '+1 intercept'],
+            [STEALTH_1, '+1 stealth'],
+            [BLEED_1, '+1 bleed'],
+            [BLEED_2, '+2 bleed'],
+            [STRENGTH_1, '+1 strength'],
+            [STRENGTH_2, '+2 strength'],
+            [MANEUVER, 'Maneuver'],
+            [ADDITIONAL_STRIKE, 'Additional Strike'],
+            [AGGRAVATED, 'Aggravated'],
+            [PREVENT, 'Prevent'],
+            [PRESS, 'Press'],
+            [PATH_CAINE, 'Path of Caine'],
+            [PATH_CATHARI, 'Path of Cathari'],
           ]
-            .filter((i) => !['path-caine', 'path-cathari'].includes(i[0]) || playtestMode)
+            .filter((i) => ![PATH_CAINE, PATH_CATHARI].includes(i[0]) || playtestMode)
             .map((i) => (
               <Checkbox
                 key={i[0]}
@@ -40,21 +40,21 @@ const CryptSearchFormTraits = ({ value, onChange }) => {
         </div>
         <div className="flex w-5/12 flex-col gap-0.5">
           {[
-            ['enter combat', 'Enter combat'],
-            ['unlock', 'Unlock'],
-            ['black hand', 'Black Hand'],
-            ['seraph', 'Seraph'],
-            ['infernal', 'Infernal'],
-            ['red list', 'Red List'],
-            ['flight', 'Flight'],
+            [ENTER_COMBAT, 'Enter combat'],
+            [UNLOCK, 'Unlock'],
+            [BLACK_HAND, 'Black Hand'],
+            [SERAPH, 'Seraph'],
+            [INFERNAL, 'Infernal'],
+            [RED_LIST, 'Red List'],
+            [FLIGHT, 'Flight'],
             [ADVANCEMENT, 'Advancement'],
             [BANNED, 'Banned'],
             [NON_TWD, 'Not in TWD'],
-            ['playtest', 'Playtest'],
-            ['path-death', 'Path of Death'],
-            ['path-power', 'Path of Power'],
+            [PLAYTEST, 'Playtest'],
+            [PATH_DEATH, 'Path of Death'],
+            [PATH_POWER, 'Path of Power'],
           ]
-            .filter((i) => !['playtest', 'path-death', 'path-power'].includes(i[0]) || playtestMode)
+            .filter((i) => ![PLAYTEST, PATH_DEATH, PATH_POWER].includes(i[0]) || playtestMode)
             .map((i) => {
               return (
                 <Checkbox

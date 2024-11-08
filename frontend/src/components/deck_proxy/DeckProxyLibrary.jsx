@@ -31,7 +31,7 @@ const DeckProxyLibrary = ({
 
   const proxiesToPrint = Object.keys(proxySelected)
     .filter(
-      (cardid) => cardid < 200000 && proxySelected[cardid].print && proxySelected[cardid].q > 0,
+      (cardid) => cardid < 200000 && proxySelected[cardid][PRINT] && proxySelected[cardid].q > 0,
     )
     .map((cardid) => proxySelected[cardid]);
 

@@ -89,8 +89,8 @@ const DeckImport = ({ setShowInfo, isOnlyNew }) => {
       } else {
         const parser = new DOMParser();
         const xmlDoc = parser.parseFromString(reader.result, 'text/xml');
-        const xmlCrypt = xmlDoc.getElementsByTagName('deck')[0].childNodes[5].children;
-        const xmlLibrary = xmlDoc.getElementsByTagName('deck')[0].childNodes[3].children;
+        const xmlCrypt = xmlDoc.getElementsByTagName(DECK)[0].childNodes[5].children;
+        const xmlLibrary = xmlDoc.getElementsByTagName(DECK)[0].childNodes[3].children;
 
         const crypt = {};
         Object.values(xmlCrypt).forEach((i) => {

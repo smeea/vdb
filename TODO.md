@@ -1,5 +1,6 @@
 # FIX
 - Conviction cost
+- Review TWDA radar: remove swarm, maybe replace?
 
 # FEATURES
 - Card q-ty change in autocompletion
@@ -20,4 +21,4 @@
 - Migrate from isWidth to container queries
 - Migrate forms to useFormStatus+useActionState
 - Remove legacy polyfills when Safari adopts groupBy
-- Refactor to constants: traits, name="XXX"
+- Check Input type="" and name=""

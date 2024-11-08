@@ -81,7 +81,7 @@ const DeckCopyUrlButton = ({ deck, noText, setQrUrl }) => {
       />
       <MenuItems divided>
         <>
-          {deck[DECKID] !== 'deck' && (
+          {deck[DECKID] !== DECK && (
             <div>
               <MenuItem
                 title="Copy URL (will follow deck changes, if any)"
@@ -97,7 +97,7 @@ const DeckCopyUrlButton = ({ deck, noText, setQrUrl }) => {
               </MenuItem>
             </div>
           )}
-          {(deck[DECKID].length === 9 || deck[DECKID] === 'deck') && (
+          {(deck[DECKID].length === 9 || deck[DECKID] === DECK) && (
             <div>
               <div className="px-3 pt-2 text-sm text-midGray dark:text-midGrayDark">
                 Non-modifiable:

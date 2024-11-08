@@ -24,8 +24,8 @@ const TwdCheckEvent = ({ deckData }) => {
   const { value: countries } = useFetch(urlCountries, {}, []);
   const { value: cities } = useFetch(urlCities, {}, []);
 
-  const url = `${import.meta.env.VITE_API_URL}/twd/event/${deckData.id}`;
-  const { value } = useFetch(url, {}, [deckData.id]);
+  const url = `${import.meta.env.VITE_API_URL}/twd/event/${deckData[ID]}`;
+  const { value } = useFetch(url, {}, [deckData[ID]]);
 
   const countriesFixes = {
     AT: 'Austria',
@@ -123,7 +123,7 @@ const TwdCheckEvent = ({ deckData }) => {
 
   return (
     <>
-      {value && value.event_id === deckData.id ? (
+      {value && value.event_id === deckData[ID] ? (
         <div className="pt-[5px] font-mono text-sm">
           <div className={deckData[EVENT] === veknEvent[NAME] ? '' : 'underline decoration-fgRed'}>
             {veknEvent[NAME]}

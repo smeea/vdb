@@ -11,7 +11,7 @@ const AnalyzeTournamentChartsRankingClan = ({ info, decks, searchResults }) => {
     Object.values(decks).forEach((deck) => {
       const position = info[PLAYERS] - deck.score[RANK];
       const inSearch = Object.values(searchResults).some((d) => d[AUTHOR] === deck[AUTHOR]);
-      const clan = getClan(deck[CRYPT]) || 'Multi';
+      const clan = getClan(deck[CRYPT]) || MULTI;
 
       if (!d[clan]) {
         d[clan] = [];
@@ -40,7 +40,7 @@ const AnalyzeTournamentChartsRankingClan = ({ info, decks, searchResults }) => {
       {Object.keys(data)
         .toSorted(byName)
         .map((s) => {
-          const clan = isMobile && s.includes('antitribu') ? '!' + s.replace(' antitribu', '') : s;
+          const clan = isMobile && s.includes(ANTITRIBU) ? '!' + s.replace(` ${ANTITRIBU}`, '') : s;
 
           return (
             <BubbleChart

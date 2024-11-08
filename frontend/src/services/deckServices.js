@@ -313,7 +313,7 @@ const saveFile = async (file, name) => {
 export const deckLoader = async ({ params }) => {
   const deckid = params[DECKID];
 
-  if (deckid === 'deck' || deckid.includes(':')) return null;
+  if (deckid === DECK || deckid.includes(':')) return null;
   if (deckid.length == 32) {
     return redirect(`/decks/${deckid.substring(0, 9)}`);
   }

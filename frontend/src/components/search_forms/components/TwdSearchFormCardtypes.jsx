@@ -25,7 +25,7 @@ const TwdSearchFormCardtypes = ({ value, onChange }) => {
   const handleManual = (e) => {
     const v = e.target.value;
     let [min, max] = value[e.target[NAME]].split(',');
-    if (e.target.id == 'min') {
+    if (e.target[ID] == 'min') {
       if (v >= 0) {
         min = e.target.value ?? 0;
       }

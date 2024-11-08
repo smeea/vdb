@@ -36,7 +36,7 @@ const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
   const handleToggleSelect = () => {
     setProxySelected((draft) => {
       Object.keys(draft).forEach((cardid) => {
-        draft[cardid].print = !toggleState;
+        draft[cardid][PRINT] = !toggleState;
       });
     });
 
@@ -120,7 +120,7 @@ const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
     const crypt = {};
     const library = {};
     Object.keys(proxySelected)
-      .filter((cardid) => proxySelected[cardid].print)
+      .filter((cardid) => proxySelected[cardid][PRINT])
       .forEach((cardid) => {
         if (proxySelected[cardid].q > 0) {
           const card = {

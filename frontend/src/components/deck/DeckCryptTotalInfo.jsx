@@ -49,7 +49,7 @@ const DeckCryptTotalInfo = ({ cards, disciplinesDetailed }) => {
         <div className="flex gap-0.5" title="Average capacity">
           <div className="flex items-center gap-1 text-fgSecondary dark:text-fgSecondaryDark">
             Avg.
-            <ResultCryptCapacity card={{ Capacity: 'X' }} />
+            <ResultCryptCapacity card={{ Capacity: X }} />
           </div>
           <div>: {cryptAvg}</div>
         </div>

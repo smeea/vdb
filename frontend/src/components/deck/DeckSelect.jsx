@@ -84,7 +84,7 @@ const DeckSelect = ({
             <>
               <Radio
                 checked={selectFrom == MY}
-                onChange={(e) => setSelectFrom(e.target.id)}
+                onChange={(e) => setSelectFrom(e.target[ID])}
                 value={isMobile ? 'My' : 'My Decks'}
                 id={MY}
               />
@@ -92,14 +92,14 @@ const DeckSelect = ({
           )}
           <Radio
             checked={selectFrom == PRECONS}
-            onChange={(e) => setSelectFrom(e.target.id)}
+            onChange={(e) => setSelectFrom(e.target[ID])}
             value="Precons"
             id={PRECONS}
           />
           {recentDecks.length > 0 && (
             <Radio
               checked={selectFrom == RECENT}
-              onChange={(e) => setSelectFrom(e.target.id)}
+              onChange={(e) => setSelectFrom(e.target[ID])}
               value="Recent"
               id={RECENT}
             />

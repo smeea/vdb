@@ -15,7 +15,7 @@ const InventoryShowSelect = ({ category, setCategory }) => {
           id={i[0]}
           value={i[1]}
           checked={category == i[0]}
-          onChange={(e) => setCategory(e.target.id)}
+          onChange={(e) => setCategory(e.target[ID])}
         />
       ))}
     </div>

@@ -98,28 +98,28 @@ const DiffSelectDeck = ({ decks, deck, deckidFrom, deckidTo, target, title }) =>
           {username && decks && Object.keys(decks).length > 0 && (
             <Radio
               checked={source == `${target}-my`}
-              onChange={(e) => setSource(e.target.id)}
+              onChange={(e) => setSource(e.target[ID])}
               id={`${target}-my`}
               value={isMobile ? 'My' : 'My Decks'}
             />
           )}
           <Radio
             checked={source == `${target}-precons`}
-            onChange={(e) => setSource(e.target.id)}
+            onChange={(e) => setSource(e.target[ID])}
             id={`${target}-precons`}
             value="Precons"
           />
           {recentDecks.length > 0 && (
             <Radio
               checked={source == `${target}-recent`}
-              onChange={(e) => setSource(e.target.id)}
+              onChange={(e) => setSource(e.target[ID])}
               id={`${target}-recent`}
               value="Recent"
             />
           )}
           <Radio
             checked={source == `${target}-url`}
-            onChange={(e) => setSource(e.target.id)}
+            onChange={(e) => setSource(e.target[ID])}
             id={`${target}-url`}
             value="URL"
           />

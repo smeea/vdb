@@ -26,12 +26,12 @@ const AnalyzeLoadPreparedButtons = ({ setTempDecks, setTempArchon, setError }) =
       {tournaments.map((v) => {
         return (
           <ButtonIconed
-            key={v.id}
+            key={v[ID]}
             className="w-full"
-            onClick={() => handlePrepared(v.id)}
+            onClick={() => handlePrepared(v[ID])}
             title={v[TITLE]}
             text={`${v[TITLE]} [${v[DATE]}]`}
-            icon={loadingDeck == v.id ? <Spinner /> : v.isNC ? <StarFill /> : null}
+            icon={loadingDeck == v[ID] ? <Spinner /> : v.isNC ? <StarFill /> : null}
           />
         );
       })}

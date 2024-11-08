@@ -45,7 +45,7 @@ const DeckBranchSelect = ({ deck, handleSelect }) => {
       .map((i) => {
         return {
           value: i,
-          name: 'deck',
+          name: DECK,
           label: decks[i][BRANCH_NAME],
         };
       });

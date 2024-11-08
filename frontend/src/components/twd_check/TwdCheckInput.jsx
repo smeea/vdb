@@ -131,7 +131,7 @@ const TwdCheckInput = ({ deckData, setDeckData }) => {
       <div className="flex justify-end">
         <div className="flex gap-2">
           <ButtonIconed
-            onClick={() => saveDeck(deckText, deckData.id)}
+            onClick={() => saveDeck(deckText, deckData[ID])}
             title="Save to File"
             icon={<Download />}
             text="Save to File"

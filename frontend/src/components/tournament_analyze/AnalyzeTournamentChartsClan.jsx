@@ -9,7 +9,7 @@ const AnalyzeTournamentChartsClan = ({ decks }) => {
     const result = {};
 
     Object.values(decks).forEach((deck) => {
-      const clan = getClan(deck[CRYPT]) || 'Multi';
+      const clan = getClan(deck[CRYPT]) || MULTI;
       if (result[clan]) {
         result[clan] += 1;
       } else {
@@ -20,7 +20,7 @@ const AnalyzeTournamentChartsClan = ({ decks }) => {
     return Object.keys(result)
       .map((c) => {
         return {
-          name: isMobile && c.includes('antitribu') ? '!' + c.replace(' antitribu', '') : c,
+          name: isMobile && c.includes(ANTITRIBU) ? '!' + c.replace(` ${ANTITRIBU}`, '') : c,
           value: result[c],
         };
       })

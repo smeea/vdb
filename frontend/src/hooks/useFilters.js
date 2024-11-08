@@ -220,52 +220,53 @@ const missingTrait = (trait, card, traitsRegexMap) => {
 };
 
 const CryptTraitsRegexMap = {
-  'enter combat': (card) =>
+  [ENTER_COMBAT]: (card) =>
     '(he|she|it|they|' +
     card[NAME].match(/^\S+/i)[0].replace(/,/, '') +
     ') (can|may)( .* to)? enter combat',
-  'optional press': () => /gets (.*)?optional press/i,
-  '1 bleed': () => /[:.] \+[1-9] bleed./i,
-  '2 bleed': () => /[:.] \+[2-9] bleed./i,
-  '1 strength': () => /[:.] \+[1-9] strength./i,
-  '2 strength': () => /[:.] \+[2-9] strength./i,
-  '1 intercept': () => /[:.] \+[1-9] intercept./i,
-  '1 stealth': () =>
+  [PRES]: () => /gets (.*)?optional press/i,
+  [BLEED_1]: () => /[:.] \+[1-9] bleed./i,
+  [BLEED_2]: () => /[:.] \+[2-9] bleed./i,
+  [STRENGTH_1]: () => /[:.] \+[1-9] strength./i,
+  [STRENGTH_2]: () => /[:.] \+[2-9] strength./i,
+  [INTERCEPT_1]: () => /[:.] \+[1-9] intercept./i,
+  [STEALTH_1]: () =>
     /([:.] \+[1-9] stealth.|gets \+[1-9] stealth on each of (his|her|they) actions)/i,
-  unlock: () => /(?!not )unlock(?! phase|ed)|wakes/i,
-  'black hand': () => /black hand[ .:]/i,
-  seraph: () => /seraph[.:]/i,
-  infernal: () => /infernal[.:]/i,
-  'red list': () => /red list[.:]/i,
-  flight: () => /\[flight\]\./i,
-  'additional strike': () => /additional strike/i,
-  aggravated: () => /(?:[^non-])aggravated/i,
-  prevent: () => /(?:[^un])prevent(?:[^able])/i,
-  'path-caine': () => /Path of Caine/i,
-  'path-cathari': () => /Path of Cathari/i,
-  'path-death': () => /Path of Death/i,
-  'path-power': () => /Path of Power/i,
+  [UNLOCK]: () => /(?!not )unlock(?! phase|ed)|wakes/i,
+  [BLACK_HAND]: () => /black hand[ .:]/i,
+  [SERAPH]: () => /seraph[.:]/i,
+  [INFERNAL]: () => /infernal[.:]/i,
+  [RED_LIST]: () => /red list[.:]/i,
+  [FLIGHT]: () => /\[flight\]\./i,
+  [ADDITIONAL_STRIKE]: () => /additional strike/i,
+  [AGGRAVATED]: () => /(?:[^non-])aggravated/i,
+  [PREVENT]: () => /(?:[^un])prevent(?:[^able])/i,
+  [PATH_CAINE]: () => /Path of Caine/i,
+  [PATH_CATHARI]: () => /Path of Cathari/i,
+  [PATH_DEATH]: () => /Path of Death/i,
+  [PATH_POWER]: () => /Path of Power/i,
 };
 
 const LibraryTraitsRegexMap = {
-  intercept: () =>
+  [INTERCEPT]: () =>
     /-[0-9]+ stealth(?! \(d\))(?! \w)(?! action)|\+[0-9]+ intercept|gets -([0-9]|x)+ stealth|stealth to 0/i,
-  stealth: () => /\+[0-9]+ stealth(?! \(d\))(?! \w)(?! action)|-[0-9]+ intercept/i,
-  bleed: () => /\+([0-9]+|X) bleed/i,
-  strength: () => /\+[0-9]+ strength/i,
-  embrace: () => /becomes a.*(\d[ -]|same.*)capacity/i,
-  'bounce bleed': () => /change the target of the bleed|is now bleeding/i,
-  unlock: () => /(?!not )unlock(?! phase|ed)|wakes/i,
-  'votes-title': () =>
+  [STEALTH]: () => /\+[0-9]+ stealth(?! \(d\))(?! \w)(?! action)|-[0-9]+ intercept/i,
+  [BLEED]: () => /\+([0-9]+|X) bleed/i,
+  [STRENGTH]: () => /\+[0-9]+ strength/i,
+  [EMBRACE]: () => /becomes a.*(\d[ -]|same.*)capacity/i,
+  [BOUNCE_BLEED]: () => /change the target of the bleed|is now bleeding/i,
+  [UNLOCK]: () => /(?!not )unlock(?! phase|ed)|wakes/i,
+  [VOTES_TITLE]: () =>
     /receive .* title|gains . vote|\+. vote|additional vote|represent the .* title/i,
-  'reduce bleed': () => /reduce (a|the)(.*) bleed (amount)?|bleed amount is reduced/i,
-  aggravated: () => /(?:[^non-])aggravated/i,
-  prevent: () => /(?:[^un])prevent(?:[^able])/i,
-  bloat: () => /(move|add) .* blood (from the blood bank )?to .* in your uncontrolled region/i,
-  'path-caine': () => /Path of Caine/i,
-  'path-cathari': () => /Path of Cathari/i,
-  'path-death': () => /Path of Death/i,
-  'path-power': () => /Path of Power/i,
+  [REDUCE_BLEED]: () => /reduce (a|the)(.*) bleed (amount)?|bleed amount is reduced/i,
+  [AGGRAVATED]: () => /(?:[^non-])aggravated/i,
+  [PREVENT]: () => /(?:[^un])prevent(?:[^able])/i,
+  [PUT_BLOOD]: () =>
+    /(move|add) .* blood (from the blood bank )?to .* in your uncontrolled region/i,
+  [PATH_CAINE]: () => /Path of Caine/i,
+  [PATH_CATHARI]: () => /Path of Cathari/i,
+  [PATH_DEATH]: () => /Path of Death/i,
+  [PATH_POWER]: () => /Path of Power/i,
 };
 
 const missingTitleCrypt = (filter, card) => {
@@ -278,7 +279,7 @@ const missingTitleCrypt = (filter, card) => {
     card[ADV]?.[0] &&
     RegExp(
       `\\[MERGED\\].*(${titles
-        .map((t) => t.replace('1 vote', '1 vote (titled)').replace('2 votes', '2 votes (titled)'))
+        .map((t) => t.replace(VOTE_1, '1 vote (titled)').replace(VOTE_2, '2 votes (titled)'))
         .join('|')})`,
       'i',
     ).test(card[TEXT])
@@ -401,12 +402,12 @@ const missingClan = (filterClan, card) => {
   const logic = filterClan.logic;
 
   switch (logic) {
-    case 'or':
+    case OR:
       return !clans.some((clan) => {
         if (card[CLAN].toLowerCase().split('/').includes(clan)) return true;
         if (clan === NOT_REQUIRED && !card[CLAN]) return true;
       });
-    case 'not':
+    case NOT:
       return clans.some((clan) => {
         if (card[CLAN].toLowerCase().split('/').includes(clan)) return true;
         if (clan === NOT_REQUIRED && !card[CLAN]) return true;
@@ -430,12 +431,12 @@ const missingGroup = (filter, card) => {
 };
 
 const missingPoolCost = (filter, card) => {
-  if (card[POOL] === 'X') return false;
+  if (card[POOL] === X) return false;
   return missingCostCheck(filter.moreless, filter[POOL], card[POOL]);
 };
 
 const missingBloodCost = (filter, card) => {
-  if (card[BLOOD] === 'X') return false;
+  if (card[BLOOD] === X) return false;
   return missingCostCheck(filter.moreless, filter[BLOOD], card[BLOOD]);
 };
 
@@ -466,8 +467,8 @@ const FUTURE = '2077-01-01';
 
 const missingSet = (filter, card) => {
   const sets = filter.value;
-  const print = filter.print ?? null;
-  const age = filter.age ?? null;
+  const print = filter[PRINT] ?? null;
+  const age = filter[AGE] ?? null;
 
   const dates = cardDates(card, true);
 
@@ -516,7 +517,7 @@ const missingSet = (filter, card) => {
 
 const missingPrecon = (filter, card) => {
   const setsAndSub = filter.value;
-  const print = filter.print ?? null;
+  const print = filter[PRINT] ?? null;
 
   const dates = cardDates(card, false);
 

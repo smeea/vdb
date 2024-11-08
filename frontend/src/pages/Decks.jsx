@@ -107,10 +107,10 @@ const Decks = () => {
       const { crypt, library } = parseDeckHash(hash, cryptCardBase, libraryCardBase);
 
       setDeck({
-        deckid: 'deck',
+        deckid: DECK,
         name: query.get(NAME) ?? '',
         author: query.get(AUTHOR) ?? '',
-        description: query.get('description') ?? '',
+        description: query.get(DESCRIPTION) ?? '',
         crypt: crypt,
         library: library,
       });

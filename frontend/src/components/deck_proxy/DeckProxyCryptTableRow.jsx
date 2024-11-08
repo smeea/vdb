@@ -35,7 +35,7 @@ const DeckProxyCryptTableRow = ({
           <Checkbox
             id={card.c[ID]}
             name="print"
-            checked={proxySelected[card.c[ID]]?.print}
+            checked={proxySelected[card.c[ID]]?.[PRINT]}
             onChange={handleProxySelector}
           />
         </div>
@@ -49,7 +49,7 @@ const DeckProxyCryptTableRow = ({
         inProxy
         inventoryType={inventoryType}
         isEditable
-        isSelected={proxySelected[card.c[ID]]?.print}
+        isSelected={proxySelected[card.c[ID]]?.[PRINT]}
         q={proxySelected[card.c[ID]] ? proxySelected[card.c[ID]].q : 0}
         softUsedMax={softUsedMax}
       />
