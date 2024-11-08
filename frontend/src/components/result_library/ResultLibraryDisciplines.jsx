@@ -2,6 +2,8 @@ import React from 'react';
 import { ResultDisciplineImage } from '@/components';
 
 const ResultLibraryDisciplines = ({ value }) => {
+  if (value == '') return;
+
   if (value.indexOf('&') != -1) {
     const disciplines = value.split(' & ');
     return (

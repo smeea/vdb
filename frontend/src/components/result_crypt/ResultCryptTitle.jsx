@@ -17,6 +17,8 @@ import {
 } from '@/constants';
 
 const ResultCryptTitle = ({ value, noTitle }) => {
+  if (!value) return;
+
   const titles = {
     [PRIMOGEN]: ['Primogen', 'Pg'],
     [PRINCE]: ['Prince', 'Pc'],

@@ -63,9 +63,9 @@ const TwdResultLibraryKeyCardsTableRow = ({ card, handleClick, shouldShowModal }
       {!isMobile && (
         <td className="min-w-[90px]" onClick={() => handleClick(card.c)}>
           <div className="flex items-center justify-center gap-1">
-            {card.c[CLAN] && <ResultLibraryClan value={card.c[CLAN]} />}
-            {card.c[DISCIPLINE] && <ResultLibraryDisciplines value={card.c[DISCIPLINE]} />}
-            {card.c[REQUIREMENT] && <ResultLibraryRequirements value={card.c[REQUIREMENT]} />}
+            <ResultLibraryClan value={card.c[CLAN]} />
+            <ResultLibraryDisciplines value={card.c[DISCIPLINE]} />
+            <ResultLibraryRequirements value={card.c[REQUIREMENT]} />
           </div>
         </td>
       )}

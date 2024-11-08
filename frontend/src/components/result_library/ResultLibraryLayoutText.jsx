@@ -34,19 +34,19 @@ import {
 const Requirements = ({ card }) => {
   return (
     <div className="flex items-center gap-3">
-      {card[BLOOD] || card[POOL] || card[CONVICTION] ? (
+      {!!(card[BLOOD] || card[POOL] || card[CONVICTION]) && (
         <div className="flex items-center justify-between">
           <ResultLibraryCost card={card} />
         </div>
-      ) : null}
+      )}
       <div className="flex items-center gap-3">
         {(card[REQUIREMENT] || card[CLAN] || card[DISCIPLINE]) && (
           <div className="flex items-center gap-2">
-            {card[REQUIREMENT] && <ResultLibraryRequirements value={card[REQUIREMENT]} />}
+            <ResultLibraryRequirements value={card[REQUIREMENT]} />
             {(card[CLAN] || card[DISCIPLINE]) && (
               <div className="flex gap-1.5">
-                {card[CLAN] && <ResultLibraryClan value={card[CLAN]} />}
-                {card[DISCIPLINE] && <ResultLibraryDisciplines value={card[DISCIPLINE]} />}
+                <ResultLibraryClan value={card[CLAN]} />
+                <ResultLibraryDisciplines value={card[DISCIPLINE]} />
               </div>
             )}
           </div>
@@ -61,14 +61,16 @@ const Requirements = ({ card }) => {
 const ResultLibraryLayoutText = ({ card, handleClose, noClose, inPopover }) => {
   const { isNarrow, isMobile } = useApp();
   const legalRestriction = getLegality(card);
-  const hasRequirements =
+  const hasRequirements = !!(
     card[REQUIREMENT] ||
     card[CLAN] ||
     card[DISCIPLINE] ||
     card[TRIFLE] ||
     card[BURN] ||
     card[BLOOD] ||
-    card[POOL];
+    card[CONVICTION] ||
+    card[POOL]
+  );
 
   return (
     <div className="flex flex-col gap-3">

@@ -21,6 +21,7 @@ import {
 import sectsOpts from '@/assets/data/sectsList.json';
 
 const TitlesReq = ({ value }) => {
+  if (value.length < 1) return;
   const htmlTitle = value.map((v) => capitalize(v)).join(' or ');
 
   return (
@@ -32,6 +33,7 @@ const TitlesReq = ({ value }) => {
 };
 
 const SectReq = ({ value }) => {
+  if (value.length < 1) return;
   const htmlTitle = value.map((v) => capitalize(v)).join(' or ');
 
   return (
@@ -42,6 +44,7 @@ const SectReq = ({ value }) => {
 };
 
 const CapacityReq = ({ value }) => {
+  if (!value) return;
   const matches = [...value.matchAll(/capacity (\d+) or (more|less)/g)];
 
   return (
@@ -74,20 +77,21 @@ const ResultLibraryRequirements = ({ value }) => {
   const capacityReq = requirements.find((i) => i.includes(CAPACITY));
   const titleReq = requirements.filter((i) => titlesOpts.includes(i));
   const sectReq = requirements.filter((i) => sectsOpts.includes(i));
+  const hasRequirements = capacityReq || titleReq.length > 0 || sectReq.length > 0;
 
-  return (
-    <>
-      {(capacityReq || titleReq.length > 0 || sectReq.length > 0) && (
+  if (hasRequirements) {
+    return (
+      <>
         <div className="flex gap-1">
-          {capacityReq && <CapacityReq value={capacityReq} />}
-          {titleReq.length > 0 && <TitlesReq value={titleReq} />}
+          <CapacityReq value={capacityReq} />
+          <TitlesReq value={titleReq} />
           {sectReq.length > 0 && (titleReq.length == 0 || titleReq[0] == 'titled') && (
             <SectReq value={sectReq} />
           )}
         </div>
-      )}
-    </>
-  );
+      </>
+    );
+  } else return;
 };
 
 export default ResultLibraryRequirements;

@@ -27,7 +27,7 @@ const SelectLabelCrypt = ({ cardid, inInventory }) => {
                   'rounded-md border-2 border-midGray dark:border-midGrayDark',
               )}
             >
-              {inventoryCrypt[cardid] && inventoryCrypt[cardid].q}
+              {inventoryCrypt[cardid]?.q}
             </div>
           )}
           <ResultCryptCapacity card={card} />

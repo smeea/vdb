@@ -29,17 +29,17 @@ const SelectLabelLibrary = ({ cardid, inInventory }) => {
                   'rounded-md border-2 border-midGray dark:border-midGrayDark',
               )}
             >
-              {inventoryLibrary[cardid] && inventoryLibrary[cardid].q}
+              {inventoryLibrary[cardid]?.q}
             </div>
           )}
           <ResultLibraryTypeImage value={card[TYPE]} />
           <ResultName card={card} colored={false} />
         </div>
         <div className="flex items-center gap-2">
-          {card[REQUIREMENT] && <ResultLibraryRequirements value={card[REQUIREMENT]} />}
+          <ResultLibraryRequirements value={card[REQUIREMENT]} />
           <div className="flex items-center gap-1.5">
-            {card[DISCIPLINE] && <ResultLibraryDisciplines value={card[DISCIPLINE]} />}
-            {card[CLAN] && <ResultLibraryClan value={card[CLAN]} />}
+            <ResultLibraryDisciplines value={card[DISCIPLINE]} />
+            <ResultLibraryClan value={card[CLAN]} />
           </div>
           <ResultLibraryCost card={card} />
         </div>

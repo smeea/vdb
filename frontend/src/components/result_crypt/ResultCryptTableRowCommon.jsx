@@ -63,7 +63,7 @@ const ResultCryptTableRowCommon = ({
         <>
           <td className="min-w-[25px]" onClick={() => handleClick(card)}>
             <div className="flex justify-center">
-              {card[TITLE] && <ResultCryptTitle value={card[TITLE]} />}
+              <ResultCryptTitle value={card[TITLE]} />
             </div>
           </td>
           <td className="min-w-[35px]" onClick={() => handleClick(card)}>

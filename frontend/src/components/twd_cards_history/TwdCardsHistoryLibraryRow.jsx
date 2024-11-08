@@ -42,8 +42,8 @@ const TwdCardsHistoryLibraryRow = ({ card, players, handleClick }) => {
         className="flex min-w-[32px] items-center justify-center gap-1.5 sm:min-w-[80px]"
         onClick={() => handleClick(card)}
       >
-        {card[CLAN] && <ResultLibraryClan value={card[CLAN]} />}
-        {card[DISCIPLINE] && <ResultLibraryDisciplines value={card[DISCIPLINE]} />}
+        <ResultLibraryClan value={card[CLAN]} />
+        <ResultLibraryDisciplines value={card[DISCIPLINE]} />
       </div>
       <div
         className={twMerge('flex w-full items-center justify-start', !card[DECKID] && 'font-bold')}

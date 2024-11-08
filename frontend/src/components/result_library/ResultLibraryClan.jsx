@@ -2,7 +2,10 @@ import React from 'react';
 import { ResultClanImage } from '@/components';
 
 const ResultLibraryClan = ({ value }) => {
+  if (!value) return;
   const clans = value.split('/');
+  if (clans.length < 1) return;
+
   return (
     <>
       {clans.map((clan, idx) => (

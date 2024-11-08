@@ -99,18 +99,18 @@ const InventoryLibraryTableRow = ({ card, compact, newFocus, inShared, handleCli
       </div>
       {isMobile ? (
         <div className="flex min-w-[82px] justify-between" onClick={() => handleClick(card.c)}>
-          {card.c[BLOOD] || card.c[POOL] || card.c[CONVICTION] ? (
+          {!!(card.c[BLOOD] || card.c[POOL] || card.c[CONVICTION]) && (
             <div
               className={twMerge('flex min-w-[22px] justify-center', card.c[BLOOD] && 'pb-1')}
               onClick={() => handleClick(card.c)}
             >
               <ResultLibraryCost card={card.c} />
             </div>
-          ) : null}
+          )}
           <div className="flex w-full items-center justify-end" onClick={() => handleClick(card.c)}>
-            {card.c[CLAN] && <ResultLibraryClan value={card.c[CLAN]} />}
+            <ResultLibraryClan value={card.c[CLAN]} />
             {card.c[DISCIPLINE] && card.c[CLAN] && '+'}
-            {card.c[DISCIPLINE] && <ResultLibraryDisciplines value={card.c[DISCIPLINE]} />}
+            <ResultLibraryDisciplines value={card.c[DISCIPLINE]} />
           </div>
         </div>
       ) : (
@@ -122,9 +122,9 @@ const InventoryLibraryTableRow = ({ card, compact, newFocus, inShared, handleCli
             <ResultLibraryCost card={card.c} />
           </div>
           <div className="flex min-w-[82px] justify-center" onClick={() => handleClick(card.c)}>
-            {card.c[CLAN] && <ResultLibraryClan value={card.c[CLAN]} />}
+            <ResultLibraryClan value={card.c[CLAN]} />
             {card.c[DISCIPLINE] && card.c[CLAN] && '+'}
-            {card.c[DISCIPLINE] && <ResultLibraryDisciplines value={card.c[DISCIPLINE]} />}
+            <ResultLibraryDisciplines value={card.c[DISCIPLINE]} />
           </div>
         </>
       )}

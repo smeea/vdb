@@ -6,7 +6,7 @@ import { BLOOD, POOL, CONVICTION } from '@/constants';
 const ResultLibraryCost = ({ card, className }) => {
   const target = card[BLOOD] ? BLOOD : card[POOL] ? POOL : CONVICTION;
   const value = card[target];
-  if (value == 0) return null;
+  if (value == 0) return;
 
   const styles = {
     [BLOOD]: 'max-h-[30px]',

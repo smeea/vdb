@@ -56,9 +56,9 @@ const Requirements = ({ card, handleClick }) => {
   return (
     <td className="min-w-[60px] sm:min-w-[90px]" onClick={() => handleClick(card)}>
       <div className="flex items-center justify-center gap-1">
-        {card[REQUIREMENT] && <ResultLibraryRequirements value={card[REQUIREMENT]} />}
-        {card[CLAN] && <ResultLibraryClan value={card[CLAN]} />}
-        {card[DISCIPLINE] && <ResultLibraryDisciplines value={card[DISCIPLINE]} />}
+        <ResultLibraryRequirements value={card[REQUIREMENT]} />
+        <ResultLibraryClan value={card[CLAN]} />
+        <ResultLibraryDisciplines value={card[DISCIPLINE]} />
       </div>
     </td>
   );
