@@ -10,7 +10,7 @@ import {
   Header,
 } from '@/components';
 import { useApp } from '@/context';
-import { LIBRARY, LIMITED, BANNED, LEGAL, PLAYTEST } from '@/constants';
+import { POOL, BLOOD, X, LIBRARY, LIMITED, BANNED, LEGAL, PLAYTEST } from '@/constants';
 
 const DeckLibraryHeader = ({
   libraryTotal,
@@ -56,11 +56,11 @@ const DeckLibraryHeader = ({
             {!inMissing && (
               <div className="flex gap-3">
                 <div className="flex items-center gap-1" title="Total Blood Cost">
-                  <ResultLibraryCost valueBlood="X" className="h-[30px] pb-1" />
+                  <ResultLibraryCost card={{ [BLOOD]: X }} className="h-[30px] pb-1" />
                   <b>{bloodTotal}</b>
                 </div>
                 <div className="flex items-center gap-1" title="Total Pool Cost">
-                  <ResultLibraryCost valuePool="X" className="h-[30px]" />
+                  <ResultLibraryCost card={{ [POOL]: X }} className="h-[30px]" />
                   <b>{poolTotal}</b>
                 </div>
               </div>

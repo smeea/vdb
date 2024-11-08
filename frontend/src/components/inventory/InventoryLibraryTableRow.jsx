@@ -17,18 +17,19 @@ import { getSwipedBg, getHardTotal, getSoftMax } from '@/utils';
 import { useApp, inventoryStore, usedStore, limitedStore, inventoryCardChange } from '@/context';
 import { useSwipe } from '@/hooks';
 import {
-  ID,
-  TYPE,
-  CLAN,
-  DISCIPLINE,
-  IS_FROZEN,
-  SOFT,
-  HARD,
-  LIBRARY,
-  TRIFLE,
-  POOL,
   BLOOD,
   BURN,
+  CLAN,
+  CONVICTION,
+  DISCIPLINE,
+  HARD,
+  ID,
+  IS_FROZEN,
+  LIBRARY,
+  POOL,
+  SOFT,
+  TRIFLE,
+  TYPE,
 } from '@/constants';
 
 const InventoryLibraryTableRow = ({ card, compact, newFocus, inShared, handleClick }) => {
@@ -98,14 +99,14 @@ const InventoryLibraryTableRow = ({ card, compact, newFocus, inShared, handleCli
       </div>
       {isMobile ? (
         <div className="flex min-w-[82px] justify-between" onClick={() => handleClick(card.c)}>
-          {(card.c[BLOOD] || card.c[POOL]) && (
+          {card.c[BLOOD] || card.c[POOL] || card.c[CONVICTION] ? (
             <div
               className={twMerge('flex min-w-[22px] justify-center', card.c[BLOOD] && 'pb-1')}
               onClick={() => handleClick(card.c)}
             >
-              <ResultLibraryCost valueBlood={card.c[BLOOD]} valuePool={card.c[POOL]} />
+              <ResultLibraryCost card={card.c} />
             </div>
-          )}
+          ) : null}
           <div className="flex w-full items-center justify-end" onClick={() => handleClick(card.c)}>
             {card.c[CLAN] && <ResultLibraryClan value={card.c[CLAN]} />}
             {card.c[DISCIPLINE] && card.c[CLAN] && '+'}
@@ -118,9 +119,7 @@ const InventoryLibraryTableRow = ({ card, compact, newFocus, inShared, handleCli
             className={twMerge('flex min-w-[30px] justify-center', card.c[BLOOD] && 'pb-1')}
             onClick={() => handleClick(card.c)}
           >
-            {(card.c[BLOOD] || card.c[POOL]) && (
-              <ResultLibraryCost valueBlood={card.c[BLOOD]} valuePool={card.c[POOL]} />
-            )}
+            <ResultLibraryCost card={card.c} />
           </div>
           <div className="flex min-w-[82px] justify-center" onClick={() => handleClick(card.c)}>
             {card.c[CLAN] && <ResultLibraryClan value={card.c[CLAN]} />}

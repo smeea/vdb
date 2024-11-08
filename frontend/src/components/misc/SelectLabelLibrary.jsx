@@ -10,7 +10,7 @@ import {
   ResultLibraryClan,
 } from '@/components';
 import { useApp, inventoryStore } from '@/context';
-import { TYPE, REQUIREMENT, CLAN, DISCIPLINE, LIBRARY, BLOOD, POOL } from '@/constants';
+import { TYPE, REQUIREMENT, CLAN, DISCIPLINE, LIBRARY } from '@/constants';
 
 const SelectLabelLibrary = ({ cardid, inInventory }) => {
   const { libraryCardBase } = useApp();
@@ -41,9 +41,7 @@ const SelectLabelLibrary = ({ cardid, inInventory }) => {
             {card[DISCIPLINE] && <ResultLibraryDisciplines value={card[DISCIPLINE]} />}
             {card[CLAN] && <ResultLibraryClan value={card[CLAN]} />}
           </div>
-          {(card[BLOOD] || card[POOL]) && (
-            <ResultLibraryCost valuePool={card[POOL]} valueBlood={card[BLOOD]} />
-          )}
+          <ResultLibraryCost card={card} />
         </div>
       </div>
     </>

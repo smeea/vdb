@@ -1,5 +1,4 @@
 # FIX
-- Conviction cost
 - Review TWDA radar: remove swarm, maybe replace?
 
 # FEATURES

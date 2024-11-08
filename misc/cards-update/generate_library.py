@@ -307,11 +307,29 @@ def generate_card(card):
     )
     card["Discipline"] = card["Discipline"].replace("Thaumaturgy", "Blood Sorcery")
 
-    if card["Blood Cost"] == "0":
-        card["Blood Cost"] = ""
+    match card["Blood Cost"]:
+        case "":
+            card["Blood Cost"] = 0
+        case "X":
+            card["Blood Cost"] = "X"
+        case _:
+            card["Blood Cost"] = int(card["Blood Cost"])
 
-    if card["Pool Cost"] == "0":
-        card["Pool Cost"] = ""
+    match card["Pool Cost"]:
+        case "":
+            card["Pool Cost"] = 0
+        case "X":
+            card["Pool Cost"] = "X"
+        case _:
+            card["Pool Cost"] = int(card["Pool Cost"])
+
+    match card["Conviction Cost"]:
+        case "":
+            card["Conviction Cost"] = 0
+        case "X":
+            card["Conviction Cost"] = "X"
+        case _:
+            card["Conviction Cost"] = int(card["Conviction Cost"])
 
 
     card_ready = {

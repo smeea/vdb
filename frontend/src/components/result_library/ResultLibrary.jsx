@@ -1,7 +1,13 @@
 import React from 'react';
 import { useSnapshot } from 'valtio';
 import { useNavigate } from 'react-router-dom';
-import { ButtonFloatAdd, ButtonFloatClose, ResultLibraryTotal, ErrorMessage } from '@/components';
+import {
+  ResultTable,
+  ButtonFloatAdd,
+  ButtonFloatClose,
+  ResultLibraryTotal,
+  ErrorMessage,
+} from '@/components';
 import { getIsEditable } from '@/utils';
 import { useApp, deckStore } from '@/context';
 import {

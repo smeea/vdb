@@ -5,7 +5,7 @@ import {
   ResultLibraryCost,
   ResultLegalIcon,
 } from '@/components';
-import { ID, BANNED, GROUPED_TYPE, ASCII } from '@/constants';
+import { POOL, BLOOD, X, ID, BANNED, GROUPED_TYPE, ASCII } from '@/constants';
 import { useApp } from '@/context';
 import { librarySort } from '@/utils';
 import { useDeckLibrary, useModalCardController } from '@/hooks';
@@ -48,11 +48,11 @@ const TwdResultLibraryKeyCardsTable = ({ library, withHeader }) => {
             {hasBanned && <ResultLegalIcon type={BANNED} />}
             <div className="flex gap-1.5 sm:gap-3">
               <div className="flex items-center gap-1" title="Total Blood Cost">
-                <ResultLibraryCost valueBlood="X" className="h-[30px] pb-1" />
+                <ResultLibraryCost card={{ [BLOOD]: X }} className="h-[30px] pb-1" />
                 <div>{bloodTotal}</div>
               </div>
               <div className="flex items-center gap-1" title="Total Pool Cost">
-                <ResultLibraryCost valuePool="X" className="h-[30px]" />
+                <ResultLibraryCost card={{ [POOL]: X }} className="h-[30px]" />
                 <div>{poolTotal}</div>
               </div>
             </div>

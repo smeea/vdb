@@ -1,15 +1,24 @@
 import React from 'react';
 import { twMerge } from 'tailwind-merge';
-import { BLOOD, POOL } from '@/constants';
+import { capitalize } from '@/utils';
+import { BLOOD, POOL, CONVICTION } from '@/constants';
 
-const ResultLibraryCost = ({ valueBlood, valuePool, className }) => {
+const ResultLibraryCost = ({ card, className }) => {
+  const target = card[BLOOD] ? BLOOD : card[POOL] ? POOL : CONVICTION;
+  const value = card[target];
+  if (value == 0) return null;
+
+  const styles = {
+    [BLOOD]: 'max-h-[30px]',
+    [POOL]: 'max-h-[35px]',
+    [CONVICTION]: 'max-h-[30px]',
+  };
+
   return (
     <img
-      className={twMerge(valueBlood ? 'max-h-[30px]' : 'max-h-[35px]', className)}
-      title={valueBlood ? BLOOD : POOL}
-      src={`${import.meta.env.VITE_BASE_URL}/images/misc/${
-        valueBlood ? `blood${valueBlood}` : `pool${valuePool}`
-      }.gif`}
+      className={twMerge(styles[target], className)}
+      title={`${capitalize(target)} Cost`}
+      src={`${import.meta.env.VITE_BASE_URL}/images/misc/${target}${value}.${target == CONVICTION ? 'svg' : 'gif'}`}
     />
   );
 };

@@ -11,7 +11,7 @@ import {
   ResultLibraryTypeImage,
   ResultLibraryDisciplines,
 } from '@/components';
-import { TYPE, CLAN, DISCIPLINE, DECKID, PLAYER, BURN, POOL, BLOOD } from '@/constants';
+import { TYPE, CLAN, DISCIPLINE, DECKID, PLAYER, BURN, BLOOD } from '@/constants';
 import { useApp } from '@/context';
 
 const TwdCardsHistoryLibraryRow = ({ card, players, handleClick }) => {
@@ -28,9 +28,7 @@ const TwdCardsHistoryLibraryRow = ({ card, players, handleClick }) => {
             )}
             onClick={() => handleClick(card)}
           >
-            {(card[BLOOD] || card[POOL]) && (
-              <ResultLibraryCost valueBlood={card[BLOOD]} valuePool={card[POOL]} />
-            )}
+            <ResultLibraryCost card={card} />
           </div>
           <div
             className="flex min-w-[40px] items-center justify-center"

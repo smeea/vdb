@@ -28,16 +28,17 @@ import {
   REQUIREMENT,
   TRIFLE,
   TYPE,
+  CONVICTION,
 } from '@/constants';
 
 const Requirements = ({ card }) => {
   return (
     <div className="flex items-center gap-3">
-      {(card[BLOOD] || card[POOL]) && (
+      {card[BLOOD] || card[POOL] || card[CONVICTION] ? (
         <div className="flex items-center justify-between">
-          <ResultLibraryCost valuePool={card[POOL]} valueBlood={card[BLOOD]} />
+          <ResultLibraryCost card={card} />
         </div>
-      )}
+      ) : null}
       <div className="flex items-center gap-3">
         {(card[REQUIREMENT] || card[CLAN] || card[DISCIPLINE]) && (
           <div className="flex items-center gap-2">
