@@ -7,7 +7,7 @@
     "name": "Print-on-Demand (DTC)",
     "date": ""
   },
-  "PLAYTEST": {
+  "playtest": {
     "name": "PLAYTEST",
     "date": "",
     "precons": {

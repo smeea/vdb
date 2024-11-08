@@ -1,10 +1,10 @@
 import React from 'react';
-import X from '@/assets/images/icons/x.svg?react';
+import XIcon from '@/assets/images/icons/x.svg?react';
 import InfoCircle from '@/assets/images/icons/info-circle.svg?react';
 import { ANY } from '@/constants';
 import { Button, SortButton, Header } from '@/components';
 import { setCryptCompare } from '@/context';
-import { GROUP, CAPACITY } from '@/constants';
+import { X, GROUP, CAPACITY } from '@/constants';
 
 const ResultCryptTotal = ({
   cards,
@@ -59,7 +59,7 @@ const ResultCryptTotal = ({
         {inCompare ? (
           <div>
             <Button title="Clear Compare" onClick={() => setCryptCompare(undefined)}>
-              <X width="16" height="20" viewBox="0 0 16 16" />
+              <XIcon width="16" height="20" viewBox="0 0 16 16" />
             </Button>
           </div>
         ) : (

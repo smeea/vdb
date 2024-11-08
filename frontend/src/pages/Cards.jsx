@@ -16,7 +16,7 @@ const Cards = () => {
   };
 
   const handleChange = (event) => {
-    handleSetCard({ Id: event.value });
+    handleSetCard({ [ID]: event.value });
   };
 
   const openRandomCard = (isCrypt) => {

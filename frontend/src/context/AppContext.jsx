@@ -25,6 +25,8 @@ import {
   LIMITED_SETS,
   MASTER,
   NAME,
+  NATIVE_CRYPT,
+  NATIVE_LIBRARY,
   PDA,
   QUANTITYx,
   RANK_HIGH_LOW,
@@ -66,8 +68,6 @@ const OFFLINE = 'offline';
 const CARD_VERSION_KEY = 'cardVersion';
 const CRYPT_CARDBASE = 'cryptCardBase';
 const LIBRARY_CARDBASE = 'libraryCardBase';
-const NATIVE_CRYPT = 'nativeCrypt';
-const NATIVE_LIBRARY = 'nativeLibrary';
 const LOCALIZED_CRYPT = 'localizedCrypt';
 const LOCALIZED_LIBRARY = 'localizedLibrary';
 const PRECON_DECKS = 'preconDecks';

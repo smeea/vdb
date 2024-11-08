@@ -1,6 +1,21 @@
 import ky from 'ky';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
-import { ID, NAME, DATE, CRYPT, LIBRARY, TAGS, PRECONS, TEXT, PLAYTEST } from '@/constants';
+import {
+  AUTHOR,
+  CRYPT,
+  DATE,
+  DECKID,
+  DESCRIPTION,
+  ID,
+  LIBRARY,
+  NAME,
+  NATIVE_CRYPT,
+  NATIVE_LIBRARY,
+  PLAYTEST,
+  PRECONS,
+  TAGS,
+  TEXT,
+} from '@/constants';
 import { useDeck, useTags } from '@/hooks';
 
 const CARD_VERSION = import.meta.env.VITE_CARD_VERSION;
@@ -31,16 +46,16 @@ export const getCardBase = async () => {
   }).forEach((card) => {
     const target = card[ID] > 200000 ? nativeCrypt : nativeLibrary;
     target[card[ID]] = {
-      Name: card[NAME],
+      [NAME]: card[NAME],
       [TEXT]: card[TEXT],
     };
   });
 
   return {
-    crypt: { ...crypt, ...cryptPlaytest },
-    library: { ...library, ...libraryPlaytest },
-    nativeCrypt: nativeCrypt,
-    nativeLibrary: nativeLibrary,
+    [CRYPT]: { ...crypt, ...cryptPlaytest },
+    [LIBRARY]: { ...library, ...libraryPlaytest },
+    [NATIVE_CRYPT]: nativeCrypt,
+    [NATIVE_LIBRARY]: nativeLibrary,
   };
 };
 
@@ -49,8 +64,8 @@ export const getLocalizedCardBase = async (lang) => {
   const library = await ky.get(urlLocalizedLibrary(lang)).json();
 
   return {
-    crypt: crypt,
-    library: library,
+    [CRYPT]: crypt,
+    [LIBRARY]: library,
   };
 };
 
@@ -64,14 +79,14 @@ export const getPreconDecks = async (cryptCardBase, libraryCardBase) => {
       const name = setsAndPrecons[set][PRECONS][precon][NAME];
 
       preconDecks[deckid] = {
-        name: `${name}`,
-        deckid: deckid,
-        author: 'VTES Team',
-        description: `Preconstructed from "${setsAndPrecons[set][NAME]}"${
+        [NAME]: `${name}`,
+        [DECKID]: deckid,
+        [AUTHOR]: 'VTES Team',
+        [DESCRIPTION]: `Preconstructed from "${setsAndPrecons[set][NAME]}"${
           setsAndPrecons[set][DATE] ? ` [${setsAndPrecons[set][DATE]}]` : ''
         }`,
-        crypt: {},
-        library: {},
+        [CRYPT]: {},
+        [LIBRARY]: {},
       };
 
       const cardsData = useDeck(preconDecksData[set][precon], cryptCardBase, libraryCardBase);

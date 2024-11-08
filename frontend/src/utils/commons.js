@@ -99,6 +99,7 @@ export const getLegality = (card) => {
   const setDate = new Date(setsAndPrecons[sets[0]][DATE]);
   const now = new Date();
   if ((now - setDate) / MS_TO_DAYS > 30) return false;
+  console.log(card, setDate, setDate.getDate() + 30);
   setDate.setDate(setDate.getDate() + 30);
   const dateIso = setDate.toISOString().split('T')[0];
   return dateIso;

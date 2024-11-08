@@ -24,7 +24,8 @@
 - Refactor to constants:
   - useTags
   - .key
+  - .publicParent, .publicChild
   - sortMethods: TwdResult, PdaResult, DiffCrypt, DeckCrypt, ReviewCrypt
   - ResultLibraryReq
-  - In Objects keys e.g. name:, branchName:
+  - In Objects keys e.g. name:, branchName:, author:, description:
 - Check Input type="" and name=""

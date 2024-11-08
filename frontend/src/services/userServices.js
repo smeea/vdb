@@ -1,14 +1,15 @@
 import ky from 'ky';
 const ACCOUNT_URL = `${import.meta.env.VITE_API_URL}/account`;
 const LOGIN_URL = `${import.meta.env.VITE_API_URL}/login`;
+import { USERNAME, PASSWORD, NEW_PASSWORD, REMEMBER, EMAIL, PUBLIC_NAME } from '@/constants';
 
 export const login = (username, password, onSuccess = () => {}, onError = () => {}) => {
   const options = {
     method: 'POST',
     json: {
-      username: username,
-      password: password,
-      remember: 'True',
+      [USERNAME]: username,
+      [PASSWORD]: password,
+      [REMEMBER]: 'True',
     },
   };
 
@@ -26,9 +27,9 @@ export const register = (username, password, email, onSuccess = () => {}, onErro
   const options = {
     method: 'POST',
     json: {
-      username: username,
-      email: email,
-      password: password,
+      [USERNAME]: username,
+      [EMAIL]: email,
+      [PASSWORD]: password,
     },
   };
 
@@ -39,8 +40,8 @@ export const changePassword = (password, newPassword, onSuccess = () => {}, onEr
   const options = {
     method: 'PUT',
     json: {
-      password: password,
-      newPassword: newPassword,
+      [PASSWORD]: password,
+      [NEW_PASSWORD]: newPassword,
     },
   };
 
@@ -51,8 +52,8 @@ export const changeEmail = (password, email, onSuccess = () => {}, onError = () 
   const options = {
     method: 'PUT',
     json: {
-      password: password,
-      email: email,
+      [PASSWORD]: password,
+      [EMAIL]: email,
     },
   };
 
@@ -62,7 +63,7 @@ export const changeEmail = (password, email, onSuccess = () => {}, onError = () 
 export const changeName = (publicName, onSuccess = () => {}, onError = () => {}) => {
   const options = {
     method: 'PUT',
-    json: { publicName: publicName },
+    json: { [PUBLIC_NAME]: publicName },
   };
 
   fetchWithCallbacks(ACCOUNT_URL, options, onSuccess, onError);
@@ -71,7 +72,7 @@ export const changeName = (publicName, onSuccess = () => {}, onError = () => {})
 export const deleteAccount = (password, onSuccess = () => {}, onError = () => {}) => {
   const options = {
     method: 'DELETE',
-    json: { password: password },
+    json: { [PASSWORD]: password },
   };
 
   fetchWithCallbacks(ACCOUNT_URL, options, onSuccess, onError);

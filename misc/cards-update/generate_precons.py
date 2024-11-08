@@ -167,7 +167,7 @@ bundles = {
 }
 
 playtest_bundles = {
-    "PLAYTEST": {
+    "playtest": {
         "SCai": {},
         "SCat": {},
         "SDS": {},

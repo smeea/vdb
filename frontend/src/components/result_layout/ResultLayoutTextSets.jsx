@@ -39,7 +39,7 @@ const PopoverSet = ({ card, set }) => {
       <div className="flex flex-col gap-1 p-3 sm:min-w-[220px] sm:p-4">
         <div className="whitespace-nowrap">
           <b>{setsAndPrecons[set][NAME]}</b>
-          {![POD, PROMO, PLAYTEST].includes(set) && ' - ' + setsAndPrecons[set][DATE].slice(0, 4)}
+          {![POD, PROMO, PLAYTEST].includes(set) && ` - ${setsAndPrecons[set][DATE].slice(0, 4)}`}
         </div>
         {![POD, PROMO].includes(set) && (
           <ul className="flex flex-col gap-1">
@@ -75,7 +75,7 @@ const ResultLayoutTextSets = ({ card }) => {
                 noPadding
               >
                 <div className="text-fgSecondary dark:text-fgPrimaryDark">
-                  {set}
+                  {set == PLAYTEST ? 'PLAYTEST' : set}
                   <div className="inline text-midGray dark:text-midGrayDark">
                     {preconsShort ? `:${preconsShort}` : null}
                   </div>

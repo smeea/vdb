@@ -21,7 +21,7 @@ import {
   PlaytestReportsOneButton,
 } from '@/components';
 import { useApp } from '@/context';
-import { PLAYTEST, CRYPT, LIBRARY, DECKID, NAME } from '@/constants';
+import { PLAYTEST, CRYPT, LIBRARY, DECK, DECKID, NAME, ID } from '@/constants';
 
 const DeckButtons = ({
   deck,
@@ -51,7 +51,7 @@ const DeckButtons = ({
         <>
           {playtestMode && playtestPrecon && isPlaytestAdmin && (
             <PlaytestReportsOneButton
-              value={{ deck: deck, Name: deck[NAME], Id: playtestPrecon }}
+              value={{ [DECK]: deck, [NAME]: deck[NAME], [ID]: playtestPrecon }}
               isPrecon
             />
           )}

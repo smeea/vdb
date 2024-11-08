@@ -37,8 +37,8 @@ const DeckProxyButton = ({ missingCrypt, missingLibrary, deck, inDiff }) => {
     const cardsTotal = countCards([...cryptSorted, ...librarySorted]);
     const cards = [...cryptSorted, ...librarySorted].map((card) => {
       return {
-        Id: card.c[ID],
-        set: card[SET],
+        [ID]: card.c[ID],
+        [SET]: card[SET],
         url: useCardImageUrl(card.c, card[SET], lang),
         q: card.q,
       };

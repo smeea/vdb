@@ -4,7 +4,7 @@ import PencilSquare from '@/assets/images/icons/pencil-square.svg?react';
 import { deckServices } from '@/services';
 import { useApp } from '@/context';
 import { ButtonIconed } from '@/components';
-import { DECKID } from '@/constants';
+import { DESCRIPTION, AUTHOR, DECKID } from '@/constants';
 
 const DeckReviewButton = ({ deck }) => {
   const { isDesktop, setShowFloatingButtons, setShowMenuButtons, publicName } = useApp();
@@ -14,8 +14,8 @@ const DeckReviewButton = ({ deck }) => {
     deckServices
       .deckSnapshot({
         ...deck,
-        description: `Review of ${import.meta.env.VITE_BASE_URL}/decks/${deck[DECKID]}`,
-        author: publicName ? `review by ${publicName}` : '',
+        [DESCRIPTION]: `Review of ${import.meta.env.VITE_BASE_URL}/decks/${deck[DECKID]}`,
+        [AUTHOR]: publicName ? `review by ${publicName}` : '',
       })
       .then((deckid) => {
         navigate(`/review/${deckid}`);

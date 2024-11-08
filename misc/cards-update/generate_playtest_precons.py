@@ -72,10 +72,10 @@ try:
                 card = library[cardid]
 
             for precon, q in playtest_cards[cardid].items():
-                if "PLAYTEST" in card["set"]:
-                    card["set"]["PLAYTEST"][precon] = q
+                if "playtest" in card["set"]:
+                    card["set"]["playtest"][precon] = q
                 else:
-                    card["set"]["PLAYTEST"] = {precon: q}
+                    card["set"]["playtest"] = {precon: q}
 
         crypt_file.seek(0)
         crypt_file.truncate()

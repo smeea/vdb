@@ -144,7 +144,7 @@ def generate_card(card):
 
     # Convert sets to dict
     if not card["Set"]:
-        card["Set"] = {"PLAYTEST": {}}
+        card["Set"] = {"playtest": {}}
     else:
         sets = card["Set"].split(", ")
         card["Set"] = {}

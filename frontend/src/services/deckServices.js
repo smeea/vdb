@@ -4,11 +4,13 @@ import { useDeckExport } from '@/hooks';
 import { getTextDisciplines } from '@/utils';
 import {
   ADV,
+  ANONYMOUS,
   AUTHOR,
   BLOOD,
   BRANCHES,
   BRANCH_NAME,
   CAPACITY,
+  CARDS,
   CLAN,
   CRYPT,
   DECK,
@@ -18,6 +20,10 @@ import {
   DISCIPLINES,
   GROUP,
   ID,
+  INVENTORY_TYPE,
+  IS_AUTHOR,
+  IS_BRANCHES,
+  IS_PUBLIC,
   LIBRARY,
   MASTER,
   NAME,
@@ -25,6 +31,7 @@ import {
   POOL,
   TAGS,
   TEXT,
+  TIMESTAMP,
   TYPE,
   XLSX,
 } from '@/constants';
@@ -50,11 +57,11 @@ export const deckImport = (deck) => {
   return ky
     .post(url, {
       json: {
-        name: deck[NAME],
-        description: deck[DESCRIPTION],
-        author: deck[AUTHOR],
-        cards: cards,
-        anonymous: deck.anonymous,
+        [NAME]: deck[NAME],
+        [DESCRIPTION]: deck[DESCRIPTION],
+        [AUTHOR]: deck[AUTHOR],
+        [CARDS]: cards,
+        [ANONYMOUS]: deck.anonymous,
       },
     })
     .json();
@@ -75,11 +82,11 @@ export const deckClone = (deck) => {
   return ky
     .post(url, {
       json: {
-        name: name,
-        description: deck[DESCRIPTION],
-        author: deck[AUTHOR],
-        cards: cards,
-        tags: deck[TAGS],
+        [NAME]: name,
+        [DESCRIPTION]: deck[DESCRIPTION],
+        [AUTHOR]: deck[AUTHOR],
+        [CARDS]: cards,
+        [TAGS]: deck[TAGS],
       },
     })
     .json()
@@ -88,19 +95,19 @@ export const deckClone = (deck) => {
         const now = new Date();
 
         deckStore[DECKS][data[DECKID]] = {
-          branchName: null,
-          branches: [],
-          crypt: { ...deck[CRYPT] },
-          library: { ...deck[LIBRARY] },
-          deckid: data[DECKID],
-          master: null,
-          name: name,
-          timestamp: now.toUTCString(),
-          tags: deck[TAGS],
-          author: deck[AUTHOR],
-          description: deck[DESCRIPTION],
-          isAuthor: true,
-          isBranches: false,
+          [BRANCH_NAME]: null,
+          [BRANCHES]: [],
+          [CRYPT]: { ...deck[CRYPT] },
+          [LIBRARY]: { ...deck[LIBRARY] },
+          [DECKID]: data[DECKID],
+          [MASTER]: null,
+          [NAME]: name,
+          [TIMESTAMP]: now.toUTCString(),
+          [TAGS]: deck[TAGS],
+          [AUTHOR]: deck[AUTHOR],
+          [DESCRIPTION]: deck[DESCRIPTION],
+          [IS_AUTHOR]: true,
+          [IS_BRANCHES]: false,
         };
 
         return data[DECKID];
@@ -117,12 +124,12 @@ export const deckSnapshot = (deck) => {
   return ky
     .post(url, {
       json: {
-        name: deck[NAME],
-        description: deck[DESCRIPTION],
-        author: deck[AUTHOR],
-        cards: cards,
-        tags: deck[TAGS],
-        anonymous: true,
+        [NAME]: deck[NAME],
+        [DESCRIPTION]: deck[DESCRIPTION],
+        [AUTHOR]: deck[AUTHOR],
+        [CARDS]: cards,
+        [TAGS]: deck[TAGS],
+        [ANONYMOUS]: true,
       },
     })
     .json()
@@ -190,17 +197,17 @@ export const branchCreate = (deck, branch) => {
 
       deckStore[DECKS][data[0][DECKID]] = {
         ...deck,
-        deckid: data[0][DECKID],
-        description: `[${now.toISOString().split('T')[0]}]\n${branch[DESCRIPTION]}`,
-        tags: branch[TAGS],
-        crypt: { ...branch[CRYPT] },
-        library: { ...branch[LIBRARY] },
-        inventoryType: '',
-        master: master,
-        branchName: data[0][BRANCH_NAME],
-        isPublic: false,
-        isBranches: true,
-        timestamp: now.toUTCString(),
+        [DECKID]: data[0][DECKID],
+        [DESCRIPTION]: `[${now.toISOString().split('T')[0]}]\n${branch[DESCRIPTION]}`,
+        [TAGS]: branch[TAGS],
+        [CRYPT]: { ...branch[CRYPT] },
+        [LIBRARY]: { ...branch[LIBRARY] },
+        [INVENTORY_TYPE]: '',
+        [MASTER]: master,
+        [BRANCH_NAME]: data[0][BRANCH_NAME],
+        [IS_PUBLIC]: false,
+        [IS_BRANCHES]: true,
+        [TIMESTAMP]: now.toUTCString(),
       };
       return data[0][DECKID];
     });

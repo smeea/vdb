@@ -120,7 +120,7 @@
             "V5C":{
                 "PSal":"2"
             },
-            "PLAYTEST":{
+            "playtest":{
                 "NSal":1
             }
         },
@@ -11500,7 +11500,7 @@
             "V5C":{
                 "PTz":"1"
             },
-            "PLAYTEST":{
+            "playtest":{
                 "NTz":1
             }
         },
@@ -14413,7 +14413,7 @@
             "V5C":{
                 "PR":"1"
             },
-            "PLAYTEST":{
+            "playtest":{
                 "NR":1
             }
         },
@@ -21210,7 +21210,7 @@
             "V5L":{
                 "PL":"2"
             },
-            "PLAYTEST":{
+            "playtest":{
                 "NL":1
             }
         },
@@ -34751,7 +34751,7 @@
             "V5C":{
                 "PR":"1"
             },
-            "PLAYTEST":{
+            "playtest":{
                 "NR":1
             }
         },
@@ -35979,7 +35979,7 @@
             "V5C":{
                 "PSal":"2"
             },
-            "PLAYTEST":{
+            "playtest":{
                 "NSal":1
             }
         },
@@ -36791,7 +36791,7 @@
             "V5L":{
                 "PL":"2"
             },
-            "PLAYTEST":{
+            "playtest":{
                 "NL":1
             }
         },
@@ -42207,7 +42207,7 @@
             "V5C":{
                 "PTz":"1"
             },
-            "PLAYTEST":{
+            "playtest":{
                 "NTz":1
             }
         },
@@ -43627,7 +43627,7 @@
             "V5C":{
                 "PSal":"1"
             },
-            "PLAYTEST":{
+            "playtest":{
                 "NSal":1
             }
         },
@@ -47897,7 +47897,7 @@
             "V5C":{
                 "PR":"1"
             },
-            "PLAYTEST":{
+            "playtest":{
                 "NR":1
             }
         },
@@ -49159,7 +49159,7 @@
             "V5C":{
                 "PSal":"1"
             },
-            "PLAYTEST":{
+            "playtest":{
                 "NSal":1
             }
         },
@@ -55689,7 +55689,7 @@
             "V5C":{
                 "PR":"1"
             },
-            "PLAYTEST":{
+            "playtest":{
                 "NR":1
             }
         },
@@ -58828,7 +58828,7 @@
             "V5C":{
                 "PTz":"1"
             },
-            "PLAYTEST":{
+            "playtest":{
                 "NTz":1
             }
         },
@@ -59669,7 +59669,7 @@
             "V5L":{
                 "PL":"2"
             },
-            "PLAYTEST":{
+            "playtest":{
                 "NL":1
             }
         },
