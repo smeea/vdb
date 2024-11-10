@@ -1,20 +1,27 @@
 import {
+  ACCEL,
   ADDITIONAL_STRIKE,
   AGGRAVATED,
+  ALLY,
   BLEED,
   BLEED_1,
+  BLOCK,
+  COMBAT,
   EMBRACE,
   ENTER_COMBAT,
   INTERCEPT,
   INTERCEPT_1,
+  MMPA,
   NAME,
   PRESS,
   PREVENT,
   PUT_BLOOD,
+  RUSH,
   STEALTH,
   STEALTH_1,
   STRENGTH,
   STRENGTH_1,
+  SWARM,
   TEXT,
   TYPE,
   TYPE_ALLY,
@@ -23,34 +30,35 @@ import {
   TYPE_POLITICAL_ACTION,
   TYPE_REACTION,
   UNLOCK,
+  VOTE,
   VOTES_TITLE,
 } from '@/constants';
 
 const useTags = (crypt, library) => {
   const deckTags = {
-    accel: 0,
-    ally: 0,
-    bleed: 0,
-    block: 0,
-    combat: 0,
-    mmpa: 0,
-    rush: 0,
-    stealth: 0,
-    swarm: 0,
-    vote: 0,
+    [ACCEL]: 0,
+    [ALLY]: 0,
+    [BLEED]: 0,
+    [BLOCK]: 0,
+    [COMBAT]: 0,
+    [MMPA]: 0,
+    [RUSH]: 0,
+    [STEALTH]: 0,
+    [SWARM]: 0,
+    [VOTE]: 0,
   };
 
   const threshold = {
-    accel: 10,
-    ally: 5,
-    bleed: 15,
-    block: 15,
-    combat: 20,
-    mmpa: 10,
-    rush: 8,
-    stealth: 15,
-    swarm: 5,
-    vote: 5,
+    [ACCEL]: 10,
+    [ALLY]: 5,
+    [BLEED]: 15,
+    [BLOCK]: 15,
+    [COMBAT]: 20,
+    [MMPA]: 10,
+    [RUSH]: 8,
+    [STEALTH]: 15,
+    [SWARM]: 5,
+    [VOTE]: 5,
   };
 
   const result = {
@@ -97,7 +105,7 @@ const useTags = (crypt, library) => {
     });
 
     if (masterTotal * librarySizeFactor > 20) {
-      deckTags['mmpa'] += Math.abs(masterTotal * librarySizeFactor - 20) / 1.5;
+      deckTags[MMPA] += Math.abs(masterTotal * librarySizeFactor - 20) / 1.5;
     }
   }
 
@@ -119,28 +127,28 @@ export default useTags;
 
 const getCryptTags = (card) => {
   const cardTags = [];
-  testCryptBleed(card) && cardTags.push('bleed');
-  testCryptBlock(card) && cardTags.push('block');
-  testCryptCombat(card) && cardTags.push('combat');
-  testCryptMmpa(card) && cardTags.push('mmpa');
-  testCryptRush(card) && cardTags.push('rush');
-  testCryptStealth(card) && cardTags.push('stealth');
+  testCryptBleed(card) && cardTags.push(BLEED);
+  testCryptBlock(card) && cardTags.push(BLOCK);
+  testCryptCombat(card) && cardTags.push(COMBAT);
+  testCryptMmpa(card) && cardTags.push(MMPA);
+  testCryptRush(card) && cardTags.push(RUSH);
+  testCryptStealth(card) && cardTags.push(STEALTH);
 
   return cardTags;
 };
 
 const getLibraryTags = (card) => {
   let cardTags = [];
-  testLibraryAlly(card) && cardTags.push('ally');
-  testLibraryBleed(card) && cardTags.push('bleed');
-  testLibraryAccel(card) && cardTags.push('accel');
-  testLibraryBlock(card) && cardTags.push('block');
-  testLibrarySwarm(card) && cardTags.push('swarm');
-  testLibraryCombat(card) && cardTags.push('combat');
-  testLibraryMmpa(card) && cardTags.push('mmpa');
-  testLibraryRush(card) && cardTags.push('rush');
-  testLibraryStealth(card) && cardTags.push('stealth');
-  testLibraryVote(card) && cardTags.push('vote');
+  testLibraryAlly(card) && cardTags.push(ALLY);
+  testLibraryBleed(card) && cardTags.push(BLEED);
+  testLibraryAccel(card) && cardTags.push(ACCEL);
+  testLibraryBlock(card) && cardTags.push(BLOCK);
+  testLibrarySwarm(card) && cardTags.push(SWARM);
+  testLibraryCombat(card) && cardTags.push(COMBAT);
+  testLibraryMmpa(card) && cardTags.push(MMPA);
+  testLibraryRush(card) && cardTags.push(RUSH);
+  testLibraryStealth(card) && cardTags.push(STEALTH);
+  testLibraryVote(card) && cardTags.push(VOTE);
 
   return cardTags;
 };

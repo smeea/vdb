@@ -2,7 +2,22 @@ import React, { useState } from 'react';
 import { Select } from '@/components';
 import { Toggle, ResultLibraryTypeImage } from '@/components';
 import { useApp } from '@/context';
-import { NAME, ID, CARDTYPES, ANY } from '@/constants';
+import {
+  ANY,
+  CARDTYPES,
+  ID,
+  NAME,
+  TYPE_ACTION,
+  TYPE_ACTION_MODIFIER,
+  TYPE_ALLY,
+  TYPE_COMBAT,
+  TYPE_EQUIPMENT,
+  TYPE_EVENT,
+  TYPE_MASTER,
+  TYPE_POLITICAL_ACTION,
+  TYPE_REACTION,
+  TYPE_RETAINER,
+} from '@/constants';
 
 const TwdSearchFormCardtypes = ({ value, onChange }) => {
   const [isManual, setIsManual] = useState();
@@ -10,16 +25,16 @@ const TwdSearchFormCardtypes = ({ value, onChange }) => {
   const maxMenuHeight = isXWide ? 500 : 350;
   const name = CARDTYPES;
   const types = [
-    ['Master', [15, 25, 35]],
-    ['Action', [0, 5, 15]],
-    ['Political Action', [0, 5, 10, 15]],
-    ['Ally', [0, 5, 15]],
-    ['Equipment', [0, 5, 10]],
-    ['Retainer', [0, 5, 10]],
-    ['Action Modifier', [0, 10, 20, 30]],
-    ['Reaction', [0, 10, 20, 30]],
-    ['Combat', [0, 10, 20, 30]],
-    ['Event', [0, 4, 8]],
+    [TYPE_MASTER, [15, 25, 35]],
+    [TYPE_ACTION, [0, 5, 15]],
+    [TYPE_POLITICAL_ACTION, [0, 5, 10, 15]],
+    [TYPE_ALLY, [0, 5, 15]],
+    [TYPE_EQUIPMENT, [0, 5, 10]],
+    [TYPE_RETAINER, [0, 5, 10]],
+    [TYPE_ACTION_MODIFIER, [0, 10, 20, 30]],
+    [TYPE_REACTION, [0, 10, 20, 30]],
+    [TYPE_COMBAT, [0, 10, 20, 30]],
+    [TYPE_EVENT, [0, 4, 8]],
   ];
 
   const handleManual = (e) => {
