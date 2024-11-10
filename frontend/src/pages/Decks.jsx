@@ -150,7 +150,7 @@ const Decks = () => {
             } else {
               setError('NO DECK WITH THIS ID');
             }
-          } else {
+          } else if (!hash) {
             getDeck();
           }
         } else if (deck[IS_FROM_URL] && decks?.[deckid]) {
