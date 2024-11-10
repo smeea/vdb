@@ -17,12 +17,13 @@ const DeckQrModal = ({ qrUrl, setQrUrl, deck }) => {
   return (
     <Modal
       handleClose={handleClose}
+      size="xs"
       centered
       title={
-        <div className="flex justify-between">
-          QR for ${deck[NAME]}
+        <div className="flex items-center gap-2">
+          <div>{deck[NAME]}</div>
           {(deck[IS_NON_EDITABLE] || qrUrl.includes('decks/deck?')) && (
-            <div className="flex text-fgSecondary dark:text-fgSecondaryDark" title="Non-editable">
+            <div className="flex px-2 text-fgPrimary dark:text-fgPrimaryDark" title="Non-editable">
               <Snow width="26" height="26" viewBox="0 0 16 16" />
             </div>
           )}
@@ -30,8 +31,7 @@ const DeckQrModal = ({ qrUrl, setQrUrl, deck }) => {
       }
     >
       <div className="flex justify-center">
-        {/* TODO check tailwind*/}
-        <div style={{ background: 'white', padding: '4px' }}>
+        <div className="bg-white p-1">
           <a href={qrUrl}>
             <Suspense fallback={<div />}>
               <QRCode size={320} level="L" title={qrUrl} value={qrUrl} />
