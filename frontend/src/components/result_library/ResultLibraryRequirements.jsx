@@ -76,7 +76,7 @@ const ResultLibraryRequirements = ({ value }) => {
 
   const capacityReq = requirements.find((i) => i.includes(CAPACITY));
   const titleReq = requirements.filter((i) => titlesOpts.includes(i));
-  const sectReq = requirements.filter((i) => sectsOpts.includes(i));
+  const sectReq = requirements.filter((i) => sectsOpts.includes(capitalize(i)));
   const hasRequirements = capacityReq || titleReq.length > 0 || sectReq.length > 0;
 
   if (hasRequirements) {
