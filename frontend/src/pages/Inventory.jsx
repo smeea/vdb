@@ -26,6 +26,7 @@ const Inventory = () => {
     setInventoryMode,
     username,
     isMobile,
+    isDesktop,
     showMenuButtons,
     setShowMenuButtons,
     showFloatingButtons,
@@ -155,7 +156,7 @@ const Inventory = () => {
         <ButtonFloatMenu />
       </div>
       {showMenuButtons && (
-        <Modal handleClose={handleClose} centered size="sm" withMobileMargin>
+        <Modal handleClose={handleClose} centered size="sm" withMobileMargin noClose={!isDesktop}>
           <InventoryMenu
             category={category}
             clan={clan}

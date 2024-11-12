@@ -46,6 +46,7 @@ const Decks = () => {
   const {
     addRecentDeck,
     isMobile,
+    isDesktop,
     playtestMode,
     preconDecks,
     showFloatingButtons,
@@ -264,7 +265,7 @@ const Decks = () => {
         <ButtonFloatMenu />
       </div>
       {showMenuButtons && (
-        <Modal handleClose={handleClose} centered size="sm" withMobileMargin>
+        <Modal handleClose={handleClose} centered size="sm" withMobileMargin noClose={!isDesktop}>
           <>
             <DeckButtons
               deck={deck}

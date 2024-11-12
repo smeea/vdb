@@ -5,6 +5,7 @@ import { ButtonIconed } from '@/components';
 
 const DeckDrawButton = ({ setShow }) => {
   const { isDesktop, setShowFloatingButtons, setShowMenuButtons } = useApp();
+
   const handleClick = () => {
     setShow(true);
     setShowMenuButtons(false);

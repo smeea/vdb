@@ -12,6 +12,7 @@ const Modal = ({
   noBorder = false,
   withMobileMargin = false,
   noPadding = false,
+  noClose = false,
   size = 'md',
   title,
 }) => {
@@ -37,29 +38,31 @@ const Modal = ({
         >
           <Dialog.Panel
             className={twMerge(
-              'flex flex-col gap-1 rounded border-bgSecondary bg-bgPrimary dark:border-bgSecondaryDark dark:bg-bgPrimaryDark sm:gap-2',
+              'flex flex-col gap-1 rounded border-bgSecondary bg-bgPrimary dark:border-bgSecondaryDark dark:bg-bgPrimaryDark',
               widthClass[size],
               !noBorder && 'border',
-              !noPadding && 'p-3 sm:p-5',
+              !noPadding && 'px-5 pb-5 pt-4 max-sm:px-3 max-sm:pb-3 max-sm:pt-2',
               className,
             )}
           >
             <Dialog.Title className="flex items-center justify-between border-none">
-              {title && (
-                <>
+              <>
+                {(title || !noClose) && (
                   <div
                     className={twMerge(
                       'text-lg font-bold text-fgSecondary dark:text-fgSecondaryDark',
-                      noPadding ? 'px-2 pt-2' : '',
+                      noPadding && 'px-2 pt-2',
                     )}
                   >
                     {title}
                   </div>
+                )}
+                {!noClose && (
                   <div className="flex items-center max-md:hidden">
                     <ButtonCloseModal handleClick={handleClose} />
                   </div>
-                </>
-              )}
+                )}
+              </>
             </Dialog.Title>
             <div className="max-h-0 max-w-0 opacity-0">
               <button />

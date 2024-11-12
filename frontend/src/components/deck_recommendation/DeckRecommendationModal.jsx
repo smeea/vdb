@@ -22,7 +22,7 @@ const DeckRecommendationModal = ({ handleClose, crypt, library }) => {
           {crypt ? (
             <ResultCryptTable resultCards={crypt} inRecommendation />
           ) : (
-            <div className="flex justify-center max-sm:pt-2 sm:pt-5">
+            <div className="flex justify-center pt-5 max-sm:pt-2">
               <Spinner className="size-7" />
             </div>
           )}
@@ -34,7 +34,7 @@ const DeckRecommendationModal = ({ handleClose, crypt, library }) => {
           {library ? (
             <DeckRecommendationLibrary cards={library} />
           ) : (
-            <div className="flex justify-center max-sm:pb-2 sm:pt-3">
+            <div className="flex justify-center pt-3 max-sm:pb-2">
               <Spinner className="size-7" />
             </div>
           )}
