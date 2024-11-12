@@ -5,6 +5,7 @@ import { ButtonCloseModal, ButtonFloatClose } from '@/components';
 
 const Modal = ({
   centered = false,
+  className,
   children,
   handleClose,
   initialFocus,
@@ -36,10 +37,11 @@ const Modal = ({
         >
           <Dialog.Panel
             className={twMerge(
-              'rounded border-bgSecondary bg-bgPrimary dark:border-bgSecondaryDark dark:bg-bgPrimaryDark',
+              'flex flex-col gap-1 rounded border-bgSecondary bg-bgPrimary dark:border-bgSecondaryDark dark:bg-bgPrimaryDark sm:gap-2',
               widthClass[size],
               !noBorder && 'border',
               !noPadding && 'p-3 sm:p-5',
+              className,
             )}
           >
             <Dialog.Title className="flex items-center justify-between border-none">
@@ -48,12 +50,12 @@ const Modal = ({
                   <div
                     className={twMerge(
                       'text-lg font-bold text-fgSecondary dark:text-fgSecondaryDark',
-                      noPadding ? 'p-1.5' : 'py-1.5',
+                      noPadding ? 'px-2 pt-2' : '',
                     )}
                   >
                     {title}
                   </div>
-                  <div className="max-md:hidden">
+                  <div className="flex items-center max-md:hidden">
                     <ButtonCloseModal handleClick={handleClose} />
                   </div>
                 </>
