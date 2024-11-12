@@ -22,9 +22,9 @@ const DeckSelect = ({
   deckid,
   decks,
   handleSelect,
-  setShowDeckSelectAdv,
-  showInfo,
   setShowInfo,
+  setShowSelect,
+  showInfo,
 }) => {
   const { inventoryMode, isMobile, recentDecks, setShowFloatingButtons, username } = useApp();
   const [selectFrom, setSelectFrom] = useState();
@@ -57,7 +57,7 @@ const DeckSelect = ({
             <DeckBranchSelect handleSelect={handleSelect} deck={deck} />
           </div>
         )}
-        {inventoryMode && deck[IS_AUTHOR] && (
+        {inventoryMode && deck?.[IS_AUTHOR] && (
           <div className="flex">
             <Button
               title={`Inventory Type: ${
@@ -112,7 +112,7 @@ const DeckSelect = ({
               title="Advanced Deck Select"
               onClick={() => {
                 setShowFloatingButtons(false);
-                setShowDeckSelectAdv(true);
+                setShowSelect(true);
               }}
               icon={<BinocularsFill width="16" height="22" viewBox="0 0 16 18" />}
             />

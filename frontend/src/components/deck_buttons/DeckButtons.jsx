@@ -29,6 +29,7 @@ const DeckButtons = ({
   setShowDraw,
   setShowSeating,
   setQrUrl,
+  setShowMissing,
   setShowRecommendation,
 }) => {
   const { isPlaytestAdmin, playtestMode, inventoryMode, username } = useApp();
@@ -74,7 +75,7 @@ const DeckButtons = ({
           <DeckRecommendationButton setShowRecommendation={setShowRecommendation} />
           <DeckSearchSimilarButton deck={deck} />
           <DeckDrawButton setShow={setShowDraw} />
-          {inventoryMode && <DeckMissingButton deck={deck} />}
+          {inventoryMode && <DeckMissingButton setShow={setShowMissing} />}
         </>
       )}
       <SeatingButton setShow={setShowSeating} />

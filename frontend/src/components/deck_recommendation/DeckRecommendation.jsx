@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { DeckRecommendationModal } from '@/components';
 import { useApp } from '@/context';
 import { useFetch } from '@/hooks';
@@ -21,17 +21,21 @@ const DeckRecommendation = ({ setShow, deck }) => {
     [deck],
   );
 
-  const crypt = value
-    ? value[CRYPT].map((cardid) => {
-        return cryptCardBase[cardid];
-      })
-    : null;
+  const crypt = useMemo(() => {
+    return value
+      ? value[CRYPT].map((cardid) => {
+          return cryptCardBase[cardid];
+        })
+      : null;
+  }, value[CRYPT]);
 
-  const library = value
-    ? value[LIBRARY].map((cardid) => {
-        return libraryCardBase[cardid];
-      })
-    : null;
+  const library = useMemo(() => {
+    return value
+      ? value[LIBRARY].map((cardid) => {
+          return libraryCardBase[cardid];
+        })
+      : null;
+  }, value[LIBRARY]);
 
   const handleCloseModal = () => {
     setShow(false);

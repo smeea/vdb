@@ -3,7 +3,7 @@ import { useDiffMissing } from '@/hooks';
 import { DeckMissingModal } from '@/components';
 import { NAME, CRYPT, LIBRARY } from '@/constants';
 
-const DiffMissingModalWrapper = ({ deckFrom, deckTo, handleClose }) => {
+const DiffMissingModalWrapper = ({ setShow, deckFrom, deckTo }) => {
   const { missingCrypt, missingLibrary } = useDiffMissing(deckFrom, deckTo);
 
   return (
@@ -13,7 +13,7 @@ const DiffMissingModalWrapper = ({ deckFrom, deckTo, handleClose }) => {
         [CRYPT]: missingCrypt,
         [LIBRARY]: missingLibrary,
       }}
-      handleClose={handleClose}
+      setShow={setShow}
     />
   );
 };

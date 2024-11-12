@@ -3,7 +3,7 @@ import { DeckMissingModal } from '@/components';
 import { useDeckMissing } from '@/hooks';
 import { NAME } from '@/constants';
 
-const DeckMissingModalWrapper = ({ deck, handleClose }) => {
+const DeckMissingModalWrapper = ({ deck, setShow = { setShow } }) => {
   const { missingCrypt, missingLibrary } = useDeckMissing(deck);
 
   return (
@@ -13,7 +13,7 @@ const DeckMissingModalWrapper = ({ deck, handleClose }) => {
         crypt: missingCrypt,
         library: missingLibrary,
       }}
-      handleClose={handleClose}
+      setShow={setShow}
     />
   );
 };

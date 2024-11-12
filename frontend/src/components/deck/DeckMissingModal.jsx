@@ -11,9 +11,15 @@ import {
 import { useApp } from '@/context';
 import { NAME, CRYPT, LIBRARY } from '@/constants';
 
-const DeckMissingModal = ({ deck, missAllVtes, handleClose, inInventory }) => {
-  const { isMobile } = useApp();
+const DeckMissingModal = ({ setShow, deck, missAllVtes, inInventory }) => {
+  const { isMobile, setShowFloatingButtons, setShowMenuButtons } = useApp();
   const [showMissAll, setShowMissAll] = useState();
+
+  const handleClose = () => {
+    setShow(false);
+    setShowMenuButtons(false);
+    setShowFloatingButtons(true);
+  };
 
   return (
     <Modal handleClose={handleClose} size="lg" title={deck[NAME]} noPadding={isMobile}>

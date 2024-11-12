@@ -7,7 +7,7 @@ import {
 } from '@/components';
 import { DECKID } from '@/constants';
 
-const DiffButtons = ({ deckFrom, deckTo }) => {
+const DiffButtons = ({ setShowMissing, deckFrom, deckTo }) => {
   return (
     <div className="flex flex-col gap-1">
       <DiffBackButton deckid={deckFrom?.[DECKID]} />
@@ -15,7 +15,7 @@ const DiffButtons = ({ deckFrom, deckTo }) => {
       {deckFrom && deckTo && (
         <>
           <DiffProxyButtonWrapper deckFrom={deckFrom} deckTo={deckTo} />
-          <DeckMissingButton deck={deckFrom} deckTo={deckTo} />
+          <DeckMissingButton setShow={setShowMissing} />
         </>
       )}
     </div>

@@ -8,6 +8,7 @@ import {
   DiffButtons,
   DiffCrypt,
   DiffLibrary,
+  DiffMissingModalWrapper,
   DiffSelect,
   ErrorMessage,
   FlexGapped,
@@ -38,6 +39,7 @@ const Diff = () => {
   const [errorFrom, setErrorFrom] = useState(false);
   const [errorTo, setErrorTo] = useState(false);
   const [deckTo, setDeckTo] = useState();
+  const [showMissing, setShowMissing] = useState(false);
   const isEditable = getIsEditable(deck);
 
   const getDeck = async (id, setD, setE) => {
@@ -167,7 +169,7 @@ const Diff = () => {
         {!isMobile && (
           <div className="basis-2/12 max-lg:hidden">
             <div className="top-[77px] z-20 bg-bgPrimary dark:bg-bgPrimaryDark">
-              <DiffButtons deckFrom={deck} deckTo={deckTo} />
+              <DiffButtons setShowMissing={setShowMissing} deckFrom={deck} deckTo={deckTo} />
             </div>
           </div>
         )}
@@ -191,11 +193,14 @@ const Diff = () => {
       </div>
       {showMenuButtons && (
         <Modal handleClose={handleClose} centered size="sm">
-          <DiffButtons deckFrom={deck} deckTo={deckTo} />
+          <DiffButtons setShowMissing={setShowMissing} deckFrom={deck} deckTo={deckTo} />
           <div className="lg:hidden">
             <ButtonFloatClose handleClose={handleClose} />
           </div>
         </Modal>
+      )}
+      {showMissing && (
+        <DiffMissingModalWrapper deckFrom={deck} deckTo={deckTo} setShow={setShowMissing} />
       )}
     </div>
   );

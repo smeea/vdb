@@ -2,21 +2,22 @@ import React, { useState, useEffect } from 'react';
 import { useSnapshot } from 'valtio';
 import { useNavigate, useLocation, useParams, useLoaderData } from 'react-router-dom';
 import {
-  ButtonFloatMenu,
   ButtonFloatClose,
+  ButtonFloatMenu,
   DeckButtons,
   DeckCrypt,
   DeckDetails,
   DeckDraw,
   DeckImport,
   DeckLibrary,
+  DeckMissingModalWrapper,
   DeckNewCardFloating,
   DeckQrModal,
   DeckRecommendation,
   DeckSelect,
   DeckSelectAdvModal,
-  FlexGapped,
   ErrorMessage,
+  FlexGapped,
   LoginBlock,
   Modal,
   Seating,
@@ -67,9 +68,10 @@ const Decks = () => {
 
   const [error, setError] = useState(false);
   const [qrUrl, setQrUrl] = useState(false);
-  const [showDeckSelectAdv, setShowDeckSelectAdv] = useState(false);
+  const [showSelect, setShowSelect] = useState(false);
   const [showDraw, setShowDraw] = useState(false);
   const [showSeating, setShowSeating] = useState(false);
+  const [showMissing, setShowMissing] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
   const [showRecommendation, setShowRecommendation] = useState(false);
   const isEditable = getIsEditable(deck);
@@ -182,13 +184,13 @@ const Decks = () => {
           <div className="flex gap-2 max-sm:flex-col max-sm:px-2 max-sm:pt-2 sm:gap-4">
             <div className="sm:basis-5/12">
               <DeckSelect
-                deckid={deckid}
                 deck={deck}
+                deckid={deckid}
                 decks={decks}
                 handleSelect={handleSelect}
-                setShowDeckSelectAdv={setShowDeckSelectAdv}
-                showInfo={showInfo}
                 setShowInfo={setShowInfo}
+                setShowSelect={setShowSelect}
+                showInfo={showInfo}
               />
             </div>
             {deck && (showInfo || !isMobile) && (
@@ -223,11 +225,12 @@ const Decks = () => {
           <div className="sticky z-20 w-full bg-bgPrimary dark:bg-bgPrimaryDark lg:top-10">
             <DeckButtons
               deck={deck}
-              setShowInfo={setShowInfo}
-              setShowDraw={setShowDraw}
-              setShowSeating={setShowSeating}
-              setShowRecommendation={setShowRecommendation}
               setQrUrl={setQrUrl}
+              setShowDraw={setShowDraw}
+              setShowInfo={setShowInfo}
+              setShowMissing={setShowMissing}
+              setShowRecommendation={setShowRecommendation}
+              setShowSeating={setShowSeating}
             />
           </div>
         </div>
@@ -269,11 +272,12 @@ const Decks = () => {
           <>
             <DeckButtons
               deck={deck}
-              setShowInfo={setShowInfo}
-              setShowDraw={setShowDraw}
-              setShowSeating={setShowSeating}
-              setShowRecommendation={setShowRecommendation}
               setQrUrl={setQrUrl}
+              setShowDraw={setShowDraw}
+              setShowInfo={setShowInfo}
+              setShowMissing={setShowMissing}
+              setShowRecommendation={setShowRecommendation}
+              setShowSeating={setShowSeating}
             />
             <div className="lg:hidden">
               <ButtonFloatClose handleClose={handleClose} />
@@ -281,13 +285,12 @@ const Decks = () => {
           </>
         </Modal>
       )}
-      {showDeckSelectAdv && (
-        <DeckSelectAdvModal setShow={setShowDeckSelectAdv} allTagsOptions={allTagsOptions} />
-      )}
+      {showSelect && <DeckSelectAdvModal setShow={setShowSelect} allTagsOptions={allTagsOptions} />}
       {showDraw && <DeckDraw setShow={setShowDraw} deck={deck} />}
       {showSeating && <Seating setShow={setShowSeating} />}
       {showRecommendation && <DeckRecommendation deck={deck} setShow={setShowRecommendation} />}
       {qrUrl && <DeckQrModal qrUrl={qrUrl} setQrUrl={setQrUrl} deck={deck} />}
+      {showMissing && <DeckMissingModalWrapper deck={deck} setShow={setShowMissing} />}
     </div>
   );
 };

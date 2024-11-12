@@ -21,6 +21,5 @@
 - Migrate forms to useFormStatus+useActionState
 - Remove legacy polyfills when Safari adopts groupBy
 - Move modal upper (same as DeckDraw)
-  - DeckMissingButton
   - DeckImportButton
   - DeckProxyButton
