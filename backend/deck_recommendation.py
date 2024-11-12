@@ -37,13 +37,13 @@ def deck_recommendation(cards):
     group_multiplier = {}
 
     for i in crypt.values():
-        for k, v in i["c"]["Disciplines"].items():
+        for k, v in i["c"]["disciplines"].items():
             if k not in discipline_multiplier:
                 discipline_multiplier[k] = i["q"] * v / crypt_total
             else:
                 discipline_multiplier[k] += i["q"] * v / crypt_total
 
-        g = i["c"]["Group"]
+        g = i["c"]["group"]
         if g not in group_multiplier:
             group_multiplier[g] = i["q"] / crypt_total
         else:
@@ -59,10 +59,10 @@ def deck_recommendation(cards):
                 continue
 
             if r > 200000:
-                if cardbase_crypt[str(r)]["Banned"]:
+                if cardbase_crypt[str(r)]["banned"]:
                     continue
             else:
-                if cardbase_lib[str(r)]["Banned"]:
+                if cardbase_lib[str(r)]["banned"]:
                     continue
 
             sum = 0
@@ -78,7 +78,7 @@ def deck_recommendation(cards):
                     score = score * CRYPT_MULTIPLIER_FOR_LIBRARY
 
             if r > 200000:
-                g = cardbase_crypt[str(r)]["Group"]
+                g = cardbase_crypt[str(r)]["group"]
 
                 for k in group_multiplier.keys():
                     if g == "any" or k == "any":
@@ -94,7 +94,7 @@ def deck_recommendation(cards):
                     recommended_crypt[r] += score
             else:
                 disciplines = []
-                d = cardbase_lib[str(r)]["Discipline"]
+                d = cardbase_lib[str(r)]["discipline"]
                 if " & " in d:
                     disciplines = d.split(" & ")
                 elif "/" in d:
@@ -113,7 +113,7 @@ def deck_recommendation(cards):
 
                     score = score * max_multiplier
 
-                t = cardbase_lib[str(r)]["Type"]
+                t = cardbase_lib[str(r)]["type"]
                 if t == "Master":
                     score = score * MASTER_MULTIPLIER
 
