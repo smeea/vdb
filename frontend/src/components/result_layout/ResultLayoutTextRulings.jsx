@@ -25,7 +25,10 @@ const Text = ({ text }) => {
 
   const textWithIcons = reactStringReplace(text, /\[(\w+?)\]/g, (match, idx) => {
     return (
-      <div key={`${match}-${idx}`} className="inline pr-0.5">
+      <div
+        key={`${match}-${idx}`}
+        className="inline-block min-h-[25px] min-w-[25px] pr-0.5 text-center align-middle"
+      >
         <ResultMiscImage value={match} />
       </div>
     );
