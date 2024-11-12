@@ -24,6 +24,7 @@ const DeckImportAmaranth = ({ handleClose }) => {
   const { cryptCardBase, libraryCardBase, isMobile } = useApp();
   const navigate = useNavigate();
   const [deckUrl, setDeckUrl] = useState('');
+  const [urlError, setUrlError] = useState(false);
   const [emptyError, setEmptyError] = useState(false);
   const [importError, setImportError] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -33,8 +34,12 @@ const DeckImportAmaranth = ({ handleClose }) => {
   const url = `${import.meta.env.VITE_BASE_URL}/data/amaranth_ids.json?v=${VERSION}`;
   const { value: idReference } = useFetch(url, {}, []);
 
-  const handleImport = () => {
+  const handleClick = () => {
     setImportError(false);
+    if (!deckUrl) {
+      setEmptyError(true);
+      return;
+    }
 
     if (/.*#deck\//.test(deckUrl)) {
       setIsLoading(true);
@@ -51,7 +56,7 @@ const DeckImportAmaranth = ({ handleClose }) => {
           .finally(() => setIsLoading(false));
       }
     } else {
-      setEmptyError(true);
+      setUrlError(true);
     }
   };
 
@@ -169,13 +174,19 @@ const DeckImportAmaranth = ({ handleClose }) => {
       .catch(() => setImportError(true));
   };
 
+  const onChange = (e) => {
+    setDeckUrl(e.target.value);
+    setEmptyError(null);
+    setUrlError(null);
+  };
+
   return (
     <Modal
       handleClose={handleClose}
       initialFocus={ref}
-      size="lg"
       centered={isMobile}
       title="Import from Amaranth"
+      withMobileMargin
     >
       <div className="flex">
         <div className="relative flex w-full">
@@ -183,16 +194,16 @@ const DeckImportAmaranth = ({ handleClose }) => {
             placeholder="e.g. https://amaranth.co.nz/deck#my-best-deck-id"
             className="text-xl"
             roundedStyle="rounded rounded-r-none"
-            type="text"
-            name="url"
+            type="url"
             value={deckUrl}
-            onChange={(event) => setDeckUrl(event.target.value)}
+            onChange={onChange}
             ref={ref}
           />
-          {emptyError && <ErrorOverlay placement="bottom">ERROR IN URL</ErrorOverlay>}
+          {emptyError && <ErrorOverlay placement="bottom">ENTER URL</ErrorOverlay>}
+          {urlError && <ErrorOverlay placement="bottom">ERROR IN URL</ErrorOverlay>}
           {importError && <ErrorOverlay placement="bottom">ERROR DURING IMPORT</ErrorOverlay>}
         </div>
-        <Button className="min-w-[72px] rounded-l-none" onClick={handleImport}>
+        <Button className="min-w-[72px] rounded-l-none" onClick={handleClick}>
           {isLoading ? <Spinner className="size-5" /> : 'Import'}
         </Button>
       </div>
