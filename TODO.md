@@ -24,4 +24,3 @@
   - DeckMissingButton
   - DeckImportButton
   - DeckProxyButton
-- Check Input type="" and name=""

@@ -98,7 +98,6 @@ const DeckSelectAdvTableHeader = ({
         <th className="min-w-[45vw] sm:min-w-[340px]">
           <Input
             placeholder="Filter by Deck or Card Name"
-            type="text"
             name="text"
             autoComplete="off"
             spellCheck="false"

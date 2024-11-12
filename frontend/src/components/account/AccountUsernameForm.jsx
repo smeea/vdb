@@ -6,7 +6,6 @@ const AccountUsernameForm = ({ value, setValue, autoFocus, isNew }) => {
     <Input
       autoFocus={autoFocus}
       placeholder={isNew ? 'New Username' : 'Username'}
-      type="text"
       name="username"
       value={value}
       required

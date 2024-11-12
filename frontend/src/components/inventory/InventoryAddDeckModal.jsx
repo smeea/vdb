@@ -83,7 +83,6 @@ const InventoryAddDeckModal = ({ handleClose }) => {
             <th className="max-sm:w-full sm:min-w-[250px] lg:min-w-[400px]">
               <Input
                 placeholder="Filter by Name"
-                type="text"
                 name="text"
                 autoComplete="off"
                 spellCheck="false"

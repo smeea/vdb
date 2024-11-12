@@ -63,7 +63,6 @@ const DiffSelectDeck = ({ decks, deck, deckidFrom, deckidTo, target, title }) =>
             <Input
               roundedStyle="rounded rounded-r-none"
               placeholder="First Deck (ID or URL)"
-              type="text"
               name={target}
               value={url}
               onChange={handleUrlChange}
