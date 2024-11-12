@@ -51,7 +51,6 @@ const ThemeSelect = ({ setShowMenu }) => {
     <>
       {isMobile ? (
         <div
-          aria-label="Switch Theme"
           className="flex items-center gap-2 px-3 py-1.5 text-fgThird dark:text-fgPrimaryDark"
           onClick={handleClick}
         >
@@ -63,7 +62,6 @@ const ThemeSelect = ({ setShowMenu }) => {
           className="flex h-full min-w-[40px] items-center justify-center text-white hover:cursor-pointer dark:text-white"
           onClick={handleClick}
           title="Switch Theme"
-          aria-label="Switch Theme"
         >
           {themeVisual[theme]?.icon}
         </div>

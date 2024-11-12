@@ -9,7 +9,6 @@ const LanguageSelectButton = () => {
   return (
     <Popover className="relative">
       <PopoverButton
-        aria-label="Language"
         title="Language Select"
         className="flex h-full min-w-[40px] items-center justify-center focus:outline-none"
       >
