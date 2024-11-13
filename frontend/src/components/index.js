@@ -265,7 +265,6 @@ export { default as ResultCryptClanGroupTitle } from './result_crypt/ResultCrypt
 export { default as ResultCryptDisciplines } from './result_crypt/ResultCryptDisciplines.jsx';
 export { default as ResultCryptGroup } from './result_crypt/ResultCryptGroup.jsx';
 export { default as ResultCryptLayoutText } from './result_crypt/ResultCryptLayoutText.jsx';
-export { default as ResultCryptName } from './result_crypt/ResultCryptName.jsx';
 export { default as ResultCryptTable } from './result_crypt/ResultCryptTable.jsx';
 export { default as ResultCryptTableRow } from './result_crypt/ResultCryptTableRow.jsx';
 export { default as ResultCryptTableRowCommon } from './result_crypt/ResultCryptTableRowCommon.jsx';
@@ -286,7 +285,6 @@ export { default as ResultLibraryClan } from './result_library/ResultLibraryClan
 export { default as ResultLibraryCost } from './result_library/ResultLibraryCost.jsx';
 export { default as ResultLibraryDisciplines } from './result_library/ResultLibraryDisciplines.jsx';
 export { default as ResultLibraryLayoutText } from './result_library/ResultLibraryLayoutText.jsx';
-export { default as ResultLibraryName } from './result_library/ResultLibraryName.jsx';
 export { default as ResultLibraryRequirements } from './result_library/ResultLibraryRequirements.jsx';
 export { default as ResultLibraryTable } from './result_library/ResultLibraryTable.jsx';
 export { default as ResultLibraryTableRow } from './result_library/ResultLibraryTableRow.jsx';
