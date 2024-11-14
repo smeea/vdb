@@ -23,4 +23,3 @@
 - Remove legacy polyfills when Safari adopts groupBy
 - Move modal upper (same as DeckDraw)
   - DeckImportButton
-  - DeckProxyButton

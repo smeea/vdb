@@ -5,6 +5,7 @@ import {
   ButtonFloatClose,
   ButtonFloatMenu,
   DeckNewCardFloating,
+  DeckProxySelectModal,
   DiffButtons,
   DiffCrypt,
   DiffLibrary,
@@ -40,6 +41,7 @@ const Diff = () => {
   const [errorTo, setErrorTo] = useState(false);
   const [deckTo, setDeckTo] = useState();
   const [showMissing, setShowMissing] = useState(false);
+  const [showProxySelect, setShowProxySelect] = useState(false);
   const isEditable = getIsEditable(deck);
 
   const getDeck = async (id, setD, setE) => {
@@ -169,7 +171,12 @@ const Diff = () => {
         {!isMobile && (
           <div className="basis-2/12 max-lg:hidden">
             <div className="top-[77px] z-20 bg-bgPrimary dark:bg-bgPrimaryDark">
-              <DiffButtons setShowMissing={setShowMissing} deckFrom={deck} deckTo={deckTo} />
+              <DiffButtons
+                deckFrom={deck}
+                deckTo={deckTo}
+                setShowMissing={setShowMissing}
+                setShowProxySelect={setShowProxySelect}
+              />
             </div>
           </div>
         )}
@@ -193,7 +200,12 @@ const Diff = () => {
       </div>
       {showMenuButtons && (
         <Modal handleClose={handleClose} centered size="sm">
-          <DiffButtons setShowMissing={setShowMissing} deckFrom={deck} deckTo={deckTo} />
+          <DiffButtons
+            deckFrom={deck}
+            deckTo={deckTo}
+            setShowMissing={setShowMissing}
+            setShowProxySelect={setShowProxySelect}
+          />
           <div className="lg:hidden">
             <ButtonFloatClose handleClose={handleClose} />
           </div>
@@ -202,6 +214,8 @@ const Diff = () => {
       {showMissing && (
         <DiffMissingModalWrapper deckFrom={deck} deckTo={deckTo} setShow={setShowMissing} />
       )}
+
+      {showProxySelect && <DeckProxySelectModal setShow={setShowProxySelect} deck={deck} />}
     </div>
   );
 };

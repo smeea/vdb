@@ -12,6 +12,7 @@ import {
   DeckLibrary,
   DeckMissingModalWrapper,
   DeckNewCardFloating,
+  DeckProxySelectModal,
   DeckQrModal,
   DeckRecommendation,
   DeckSelect,
@@ -74,6 +75,7 @@ const Decks = () => {
   const [showMissing, setShowMissing] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
   const [showRecommendation, setShowRecommendation] = useState(false);
+  const [showProxySelect, setShowProxySelect] = useState(false);
   const isEditable = getIsEditable(deck);
 
   const getDeck = async () => {
@@ -231,6 +233,7 @@ const Decks = () => {
               setShowMissing={setShowMissing}
               setShowRecommendation={setShowRecommendation}
               setShowSeating={setShowSeating}
+              setShowProxySelect={setShowProxySelect}
             />
           </div>
         </div>
@@ -278,6 +281,7 @@ const Decks = () => {
               setShowMissing={setShowMissing}
               setShowRecommendation={setShowRecommendation}
               setShowSeating={setShowSeating}
+              setShowProxySelect={setShowProxySelect}
             />
             <div className="lg:hidden">
               <ButtonFloatClose handleClose={handleClose} />
@@ -291,6 +295,7 @@ const Decks = () => {
       {showRecommendation && <DeckRecommendation deck={deck} setShow={setShowRecommendation} />}
       {qrUrl && <DeckQrModal qrUrl={qrUrl} setQrUrl={setQrUrl} deck={deck} />}
       {showMissing && <DeckMissingModalWrapper deck={deck} setShow={setShowMissing} />}
+      {showProxySelect && <DeckProxySelectModal setShow={setShowProxySelect} deck={deck} />}
     </div>
   );
 };

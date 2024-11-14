@@ -31,6 +31,7 @@ const DeckButtons = ({
   setQrUrl,
   setShowMissing,
   setShowRecommendation,
+  setShowProxySelect,
 }) => {
   const { isPlaytestAdmin, playtestMode, inventoryMode, username } = useApp();
   const { publicChild, isPublic, isAuthor, isBranches } = { ...deck };
@@ -71,7 +72,7 @@ const DeckButtons = ({
           <DeckDiffButton deckid={deck[DECKID]} />
           <DeckReviewButton deck={deck} />
           <DeckCopyUrlButton setQrUrl={setQrUrl} deck={deck} />
-          <DeckProxyButtonWrapper deck={deck} />
+          <DeckProxyButtonWrapper deck={deck} setShowProxySelect={setShowProxySelect} />
           <DeckRecommendationButton setShowRecommendation={setShowRecommendation} />
           <DeckSearchSimilarButton deck={deck} />
           <DeckDrawButton setShow={setShowDraw} />

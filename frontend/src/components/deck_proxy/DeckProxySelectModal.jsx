@@ -4,12 +4,28 @@ import { useSnapshot } from 'valtio';
 import { FlexGapped, Modal, Button, DeckProxyCrypt, DeckProxyLibrary } from '@/components';
 import { useApp, usedStore, inventoryStore } from '@/context';
 import { getHardTotal, getSoftMax } from '@/utils';
+import { pdfServices } from '@/services';
 import { PRINT, SET, ID, INVENTORY_TYPE, SOFT, HARD, CRYPT, LIBRARY } from '@/constants';
 
-const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
-  const { isMobile, inventoryMode } = useApp();
+const DeckProxySelectModal = ({ deck, setShow }) => {
+  const {
+    setShowMenuButtons,
+    setShowFloatingButtons,
+    isMobile,
+    inventoryMode,
+    cryptDeckSort,
+    lang,
+    showLegacyImage,
+  } = useApp();
+
   const { [CRYPT]: inventoryCrypt, [LIBRARY]: inventoryLibrary } = useSnapshot(inventoryStore);
   const { [CRYPT]: usedCrypt, [LIBRARY]: usedLibrary } = useSnapshot(usedStore);
+
+  const handleClose = () => {
+    setShow(false);
+    setShowMenuButtons(false);
+    setShowFloatingButtons(true);
+  };
 
   const [proxySelected, setProxySelected] = useImmer(() => {
     const cards = {};
@@ -137,7 +153,7 @@ const DeckProxySelectModal = ({ deck, proxyCards, handleClose }) => {
         }
       });
 
-    proxyCards(crypt, library, format);
+    pdfServices.proxyCards(crypt, library, format, cryptDeckSort, lang, showLegacyImage);
     handleClose();
   };
 
