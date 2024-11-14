@@ -9,21 +9,22 @@ import {
   getRestrictions,
 } from '@/utils';
 import {
-  GROUPED_TYPE,
-  POOL,
-  BLOOD,
-  TYPE,
-  DISCIPLINE,
   ANY,
-  TYPE_MASTER,
-  TYPE_EVENT,
+  BLOOD,
   CLAN,
   CRYPT,
-  LIBRARY,
+  DISCIPLINE,
+  GROUPED_TYPE,
   HAS_BANNED,
+  HAS_ILLEGAL_DATE,
   HAS_LIMITED,
   HAS_PLAYTEST,
-  HAS_ILLEGAL_DATE,
+  LIBRARY,
+  POOL,
+  TRIFLE,
+  TYPE,
+  TYPE_EVENT,
+  TYPE_MASTER,
 } from '@/constants';
 import { limitedStore } from '@/context';
 
@@ -60,7 +61,7 @@ const useDeckLibrary = (cardsList, cardsToList = {}) => {
       [HAS_ILLEGAL_DATE]: hasIllegalDate,
     } = getRestrictions({ [CRYPT]: {}, [LIBRARY]: library }, limitedCards);
 
-    const trifleTotal = countCards(library.filter((card) => card.c.Trifle));
+    const trifleTotal = countCards(library.filter((card) => card.c[TRIFLE]));
     const libraryTotal = countCards(cardsFrom);
     const libraryToTotal = countCards(cardsTo);
     const poolTotal = countTotalCost(cardsFrom, POOL);
