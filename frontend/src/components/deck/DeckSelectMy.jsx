@@ -66,7 +66,7 @@ const DeckSelectMy = ({ deckid, handleSelect }) => {
             [HAS_LIMITED]: hasLimited,
             [HAS_PLAYTEST]: hasPlaytest,
             [HAS_ILLEGAL_DATE]: hasIllegalDate,
-          } = getRestrictions(decks[i], limitedCards));
+          } = getRestrictions(decks[i], limitedMode ? limitedCards : null));
         }
 
         return {
@@ -102,7 +102,7 @@ const DeckSelectMy = ({ deckid, handleSelect }) => {
           ),
         };
       });
-  }, [decks, inventoryMode]);
+  }, [decks, limitedMode, inventoryMode]);
 
   const filterOption = ({ label }, string) => {
     const name = label.props.children[0].props.children[1].props.children;
