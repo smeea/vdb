@@ -23,7 +23,7 @@ const InventoryLibraryWrapper = ({
     <>
       {!sharedLibrary && (
         <>
-          <div className="p-2 sm:p-0">
+          <div className="max-sm:p-2">
             <NewCardSelect
               onChange={(e) => setNewCardId(e.value)}
               ref={newCardRef}

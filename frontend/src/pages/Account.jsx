@@ -31,7 +31,7 @@ const Account = () => {
             </div>
             <div className="text-lg">Logged as: &lt;{username}&gt;</div>
           </div>
-          <div className="flex flex-col gap-5 p-2 sm:gap-6 sm:p-0">
+          <div className="flex flex-col gap-5 max-sm:p-2 sm:gap-6">
             <AccountChangeName />
             <AccountChangePassword />
             <AccountChangeEmail />

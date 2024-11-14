@@ -306,11 +306,11 @@ const TournamentAnalyze = () => {
         </FlexGapped>
         {decks && info && (
           <FlexGapped>
-            <div className="flex flex-col gap-4 sm:basis-7/12 sm:p-0 lg:basis-8/12 xl:basis-9/12">
+            <div className="flex flex-col gap-4 sm:basis-7/12 lg:basis-8/12 xl:basis-9/12">
               <AnalyzeTournamentResult decks={results ?? Object.values(decks)} />
             </div>
             {!(isMobile && decks && info) && (
-              <div className="basis-full p-2 sm:basis-5/12 sm:p-0 lg:basis-4/12 xl:basis-3/12">
+              <div className="basis-full max-sm:p-2 sm:basis-5/12 lg:basis-4/12 xl:basis-3/12">
                 <AnalyzeSearchForm />
               </div>
             )}

@@ -72,7 +72,7 @@ const Library = () => {
         )}
         {showSearchForm && (
           <>
-            <div className="basis-full p-2 sm:basis-5/12 sm:p-0 lg:basis-4/12 xl:basis-3/12">
+            <div className="basis-full max-sm:p-2 sm:basis-5/12 lg:basis-4/12 xl:basis-3/12">
               <LibrarySearchForm />
             </div>
             <div className={deck && addMode ? 'hidden' : 'hidden lg:flex lg:basis-1/12'} />

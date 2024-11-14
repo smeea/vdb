@@ -55,7 +55,7 @@ const PlaytestUserCard = () => {
   const handleGamesChange = (e) => updatePlaytestProfile(GAMES, e.value);
 
   return (
-    <div className="flex flex-col gap-5 sm:gap-6 sm:p-0">
+    <div className="flex flex-col gap-5 sm:gap-6">
       <PlaytestLanguageSelector />
       <ListEntry
         icon={<PersonFillExclamation width="20" height="20" viewBox="0 0 16 16" />}
