@@ -23,7 +23,10 @@ const TwdResultCryptTableRow = ({ card, handleClick, shouldShowModal }) => {
   const hardUsedTotal = getHardTotal(usedCrypt[HARD][card.c[ID]]);
 
   return (
-    <tr key={card.c[ID]} className="row-bg border-y border-bgSecondary dark:border-bgSecondaryDark">
+    <tr
+      key={card.c[ID]}
+      className="row-bg h-[38px] border-y border-bgSecondary dark:border-bgSecondaryDark"
+    >
       <td className="min-w-[28px] border-r border-bgSecondary bg-blue/5 dark:border-bgSecondaryDark sm:min-w-[35px]">
         {inventoryMode ? (
           <ConditionalTooltip overlay={<UsedPopover cardid={card.c[ID]} />} disabled={isMobile}>

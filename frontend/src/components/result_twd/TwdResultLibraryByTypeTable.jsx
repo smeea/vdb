@@ -86,7 +86,7 @@ const TwdResultLibraryByTypeTable = ({ library }) => {
               return (
                 <tr
                   key={cardtype}
-                  className="row-bg border-y border-bgSecondary dark:border-bgSecondaryDark"
+                  className="row-bg h-[38px] border-y border-bgSecondary dark:border-bgSecondaryDark"
                 >
                   <td className="min-w-[55px]">
                     <div className="flex justify-center">

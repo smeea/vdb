@@ -2,16 +2,14 @@ import React from 'react';
 import { twMerge } from 'tailwind-merge';
 import {
   CardPopover,
-  ResultLibraryClan,
   ResultLibraryCost,
-  ResultLibraryDisciplines,
-  ResultLibraryRequirements,
+  ResultLibraryTableRowReqClanDis,
   ResultName,
   ResultMiscImage,
   ResultLibraryTypeImage,
   ConditionalTooltip,
 } from '@/components';
-import { TYPE, REQUIREMENT, DISCIPLINE, CLAN, TRIFLE, BLOOD, BURN } from '@/constants';
+import { TYPE, TRIFLE, BLOOD, BURN } from '@/constants';
 import { useApp } from '@/context';
 
 const Type = ({ card, handleClick }) => {
@@ -52,18 +50,6 @@ const Name = ({ card, handleClick, shouldShowModal, isBanned }) => {
   );
 };
 
-const Requirements = ({ card, handleClick }) => {
-  return (
-    <td className="min-w-[60px] sm:min-w-[90px]" onClick={() => handleClick(card)}>
-      <div className="flex items-center justify-center gap-1">
-        <ResultLibraryRequirements value={card[REQUIREMENT]} />
-        <ResultLibraryClan value={card[CLAN]} />
-        <ResultLibraryDisciplines value={card[DISCIPLINE]} />
-      </div>
-    </td>
-  );
-};
-
 const BurnTrifle = ({ card, handleClick }) => {
   return (
     <td className="min-w-[30px]" onClick={() => handleClick(card)}>
@@ -97,14 +83,14 @@ const ResultLibraryTableRowCommon = ({
             isBanned={isBanned}
           />
           {(!inSearch || !isNarrow) && <Cost card={card} handleClick={handleClick} />}
-          <Requirements card={card} handleClick={handleClick} />
+          <ResultLibraryTableRowReqClanDis card={card} handleClick={handleClick} />
           {(!inSearch || !isNarrow) && <BurnTrifle card={card} handleClick={handleClick} />}
         </>
       ) : (
         <>
           <Cost card={card} handleClick={handleClick} />
           <Type card={card} handleClick={handleClick} />
-          <Requirements card={card} handleClick={handleClick} />
+          <ResultLibraryTableRowReqClanDis card={card} handleClick={handleClick} />
           <Name
             card={card}
             handleClick={handleClick}

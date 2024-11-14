@@ -289,6 +289,7 @@ export { default as ResultLibraryRequirements } from './result_library/ResultLib
 export { default as ResultLibraryTable } from './result_library/ResultLibraryTable.jsx';
 export { default as ResultLibraryTableRow } from './result_library/ResultLibraryTableRow.jsx';
 export { default as ResultLibraryTableRowCommon } from './result_library/ResultLibraryTableRowCommon.jsx';
+export { default as ResultLibraryTableRowReqClanDis } from './result_library/ResultLibraryTableRowReqClanDis.jsx';
 export { default as ResultLibraryTotal } from './result_library/ResultLibraryTotal.jsx';
 export { default as ResultLibraryType } from './result_library/ResultLibraryType.jsx';
 export { default as ResultLibraryTypeImage } from './result_library/ResultLibraryTypeImage.jsx';
