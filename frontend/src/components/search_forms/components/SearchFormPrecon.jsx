@@ -81,7 +81,7 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
                   {fullName}
                 </div>
                 <div className="whitespace-nowrap text-sm">
-                  {set} {year && `'${year}`}
+                  {set == PLAYTEST ? 'PLAYTEST' : set} {year && `'${year}`}
                 </div>
               </div>
             ),

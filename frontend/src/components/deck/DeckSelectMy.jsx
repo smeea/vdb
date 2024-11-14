@@ -106,9 +106,7 @@ const DeckSelectMy = ({ deckid, handleSelect }) => {
 
   const filterOption = ({ label }, string) => {
     const name = label.props.children[0].props.children[1].props.children;
-    if (name) {
-      return name.toLowerCase().includes(string.toLowerCase());
-    }
+    if (name) return name.toLowerCase().includes(string.toLowerCase());
     return true;
   };
 

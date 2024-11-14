@@ -36,7 +36,7 @@ const DeckSelectPrecon = ({ deckid, handleSelect }) => {
                   {fullName}
                 </div>
                 <div className="text-sm">
-                  {set} {year && `'${year}`}
+                  {set == PLAYTEST ? 'PLAYTEST' : set} {year && `'${year}`}
                 </div>
               </div>
             ),
@@ -50,9 +50,7 @@ const DeckSelectPrecon = ({ deckid, handleSelect }) => {
     const name = label.props.children[0].props.children[1];
     const set = label.props.children[1].props.children;
 
-    if (name) {
-      return `${name} ${set}`.toLowerCase().includes(string.toLowerCase());
-    }
+    if (name) return `${name} ${set}`.toLowerCase().includes(string.toLowerCase());
     return true;
   };
 
