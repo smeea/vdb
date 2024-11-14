@@ -7,7 +7,6 @@ import {
   ErrorOverlay,
   DeckImportButton,
   DeckImportText,
-  DeckImportAmaranth,
   DeckImportBadCardsModal,
 } from '@/components';
 import { useApp, deckStore, deckAdd } from '@/context';
@@ -15,7 +14,7 @@ import { useDeckImport } from '@/hooks';
 import { deckServices } from '@/services';
 import { NAME, AUTHOR, CRYPT, LIBRARY, DECK, DECKID, BAD_CARDS } from '@/constants';
 
-const DeckImport = ({ setShowInfo, isOnlyNew }) => {
+const DeckImport = ({ setShowImportAmaranth, setShowInfo, isOnlyNew }) => {
   const {
     isPlaytester,
     setShowMenuButtons,
@@ -28,7 +27,6 @@ const DeckImport = ({ setShowInfo, isOnlyNew }) => {
   const navigate = useNavigate();
   const [error, setError] = useState(false);
   const [showTextModal, setShowTextModal] = useState(false);
-  const [showAmaranthModal, setShowAmaranthModal] = useState(false);
   const [badCards, setBadCards] = useState([]);
 
   const fileInput = useRef();
@@ -38,18 +36,21 @@ const DeckImport = ({ setShowInfo, isOnlyNew }) => {
     isAnonymous ? fileInputAnonymous.current.click() : fileInput.current.click();
   };
 
-  const handleCloseImportModal = () => {
-    setShowTextModal(false);
-    setShowAmaranthModal(false);
-    setShowMenuButtons(false);
-    setShowFloatingButtons(true);
-  };
-
   const handleOpenTextModal = (isAnonymous) => {
     setShowTextModal({ isAnonymous: isAnonymous, show: true });
   };
 
-  const handleOpenAmaranthModal = () => setShowAmaranthModal(true);
+  const handleOpenAmaranthModal = () => {
+    setShowImportAmaranth(true);
+    setShowMenuButtons(false);
+    setShowFloatingButtons(false);
+  };
+
+  const handleCloseImportModal = () => {
+    setShowTextModal(false);
+    setShowMenuButtons(false);
+    setShowFloatingButtons(true);
+  };
 
   const createNewDeck = () => {
     setError(false);
@@ -166,7 +167,6 @@ const DeckImport = ({ setShowInfo, isOnlyNew }) => {
               setBadCards={setBadCards}
             />
           )}
-          {showAmaranthModal && <DeckImportAmaranth handleClose={handleCloseImportModal} />}
           <input
             ref={fileInput}
             accept=".txt, .dek"

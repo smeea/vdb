@@ -20,8 +20,8 @@ import {
   CARDS,
 } from '@/constants';
 
-const DeckImportAmaranth = ({ handleClose }) => {
-  const { cryptCardBase, libraryCardBase, isMobile } = useApp();
+const DeckImportAmaranth = ({ setShow }) => {
+  const { setShowFloatingButtons, cryptCardBase, libraryCardBase, isMobile } = useApp();
   const navigate = useNavigate();
   const [deckUrl, setDeckUrl] = useState('');
   const [urlError, setUrlError] = useState(false);
@@ -33,6 +33,11 @@ const DeckImportAmaranth = ({ handleClose }) => {
   const VERSION = '2024-11-07';
   const url = `${import.meta.env.VITE_BASE_URL}/data/amaranth_ids.json?v=${VERSION}`;
   const { value: idReference } = useFetch(url, {}, []);
+
+  const handleClose = () => {
+    setShow(false);
+    setShowFloatingButtons(true);
+  };
 
   const handleClick = () => {
     setImportError(false);

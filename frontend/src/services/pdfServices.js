@@ -1,6 +1,6 @@
 import { countCards, cryptSort, librarySort } from '@/utils';
 import { useCardImageUrl } from '@/hooks';
-import { QUANTITYx, ID, SET, NAME, EN, GROUPED_TYPE } from '@/constants';
+import { QUANTITYx, ID, SET, EN, GROUPED_TYPE } from '@/constants';
 
 export const proxyCards = async (
   crypt,
@@ -11,9 +11,6 @@ export const proxyCards = async (
   showLegacyImage = false,
   name = 'Deck',
 ) => {
-  // TODO
-  // setIsLoading(true);
-
   const cryptSorted = cryptSort(
     Object.values(crypt).filter((card) => card.q > 0),
     cryptSortMethod,
@@ -164,5 +161,4 @@ export const proxyCards = async (
   });
 
   pdf.save(`${name}.pdf`);
-  // setIsLoading(false);
 };

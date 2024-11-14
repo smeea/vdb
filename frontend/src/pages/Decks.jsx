@@ -9,6 +9,7 @@ import {
   DeckDetails,
   DeckDraw,
   DeckImport,
+  DeckImportAmaranth,
   DeckLibrary,
   DeckMissingModalWrapper,
   DeckNewCardFloating,
@@ -76,6 +77,7 @@ const Decks = () => {
   const [showInfo, setShowInfo] = useState(false);
   const [showRecommendation, setShowRecommendation] = useState(false);
   const [showProxySelect, setShowProxySelect] = useState(false);
+  const [showImportAmaranth, setShowImportAmaranth] = useState(false);
   const isEditable = getIsEditable(deck);
 
   const getDeck = async () => {
@@ -234,6 +236,7 @@ const Decks = () => {
               setShowRecommendation={setShowRecommendation}
               setShowSeating={setShowSeating}
               setShowProxySelect={setShowProxySelect}
+              setShowImportAmaranth={setShowImportAmaranth}
             />
           </div>
         </div>
@@ -282,6 +285,7 @@ const Decks = () => {
               setShowRecommendation={setShowRecommendation}
               setShowSeating={setShowSeating}
               setShowProxySelect={setShowProxySelect}
+              setShowImportAmaranth={setShowImportAmaranth}
             />
             <div className="lg:hidden">
               <ButtonFloatClose handleClose={handleClose} />
@@ -296,6 +300,7 @@ const Decks = () => {
       {qrUrl && <DeckQrModal qrUrl={qrUrl} setQrUrl={setQrUrl} deck={deck} />}
       {showMissing && <DeckMissingModalWrapper deck={deck} setShow={setShowMissing} />}
       {showProxySelect && <DeckProxySelectModal setShow={setShowProxySelect} deck={deck} />}
+      {showImportAmaranth && <DeckImportAmaranth setShow={setShowImportAmaranth} />}
     </div>
   );
 };
