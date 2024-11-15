@@ -1,6 +1,6 @@
 import React from 'react';
-import { ResultClanImage, ResultCryptGroup, ResultCryptTitle } from '@/components';
-import { TITLE, CLAN, GROUP } from '@/constants';
+import { ResultClanImage, ResultCryptSect, ResultCryptGroup, ResultCryptTitle } from '@/components';
+import { TITLE, CLAN, GROUP, SECT } from '@/constants';
 
 const ResultCryptClanGroupTitle = ({ card }) => {
   return (
@@ -9,9 +9,13 @@ const ResultCryptClanGroupTitle = ({ card }) => {
         <ResultClanImage value={card[CLAN]} />
       </div>
       <div className="flex justify-between gap-1 text-sm font-bold">
-        <div className="text-fgSecondary dark:text-fgSecondaryDark">
-          {card[TITLE] && <ResultCryptTitle value={card[TITLE]} />}
-        </div>
+        {card[TITLE] ? (
+          <ResultCryptTitle value={card[TITLE]} />
+        ) : (
+          <div className="px-0.5">
+            <ResultCryptSect value={card[SECT]} />
+          </div>
+        )}
         <ResultCryptGroup value={card[GROUP]} />
       </div>
     </>

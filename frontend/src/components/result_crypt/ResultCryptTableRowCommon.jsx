@@ -1,18 +1,19 @@
 import React from 'react';
 import {
   CardPopover,
-  ResultCryptCapacity,
-  ResultCryptDisciplines,
-  DeckCryptDisciplines,
-  ResultName,
-  ResultClanImage,
-  ResultCryptGroup,
-  ResultCryptTitle,
-  ResultCryptClanGroupTitle,
   ConditionalTooltip,
+  DeckCryptDisciplines,
+  ResultClanImage,
+  ResultCryptCapacity,
+  ResultCryptClanGroupTitle,
+  ResultCryptDisciplines,
+  ResultCryptGroup,
+  ResultCryptSect,
+  ResultCryptTitle,
+  ResultName,
 } from '@/components';
 import { useApp } from '@/context';
-import { DISCIPLINES, TITLE, CLAN, GROUP } from '@/constants';
+import { SECT, DISCIPLINES, TITLE, CLAN, GROUP } from '@/constants';
 
 const ResultCryptTableRowCommon = ({
   card,
@@ -64,6 +65,11 @@ const ResultCryptTableRowCommon = ({
           <td className="min-w-[25px]" onClick={() => handleClick(card)}>
             <div className="flex justify-center">
               <ResultCryptTitle value={card[TITLE]} />
+            </div>
+          </td>
+          <td className="min-w-[20px]" onClick={() => handleClick(card)}>
+            <div className="flex justify-center">
+              <ResultCryptSect value={card[SECT]} />
             </div>
           </td>
           <td className="min-w-[35px]" onClick={() => handleClick(card)}>

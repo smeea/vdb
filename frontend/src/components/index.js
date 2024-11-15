@@ -271,6 +271,7 @@ export { default as ResultCryptTableRowCommon } from './result_crypt/ResultCrypt
 export { default as ResultCryptTitle } from './result_crypt/ResultCryptTitle.jsx';
 export { default as ResultCryptTotal } from './result_crypt/ResultCryptTotal.jsx';
 export { default as ResultCryptTotalInfo } from './result_crypt/ResultCryptTotalInfo.jsx';
+export { default as ResultCryptSect } from './result_crypt/ResultCryptSect.jsx';
 
 export { default as ResultLayoutText } from './result_layout/ResultLayoutText.jsx';
 export { default as ResultLayoutTextArtist } from './result_layout/ResultLayoutTextArtist.jsx';
