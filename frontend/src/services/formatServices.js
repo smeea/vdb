@@ -1,6 +1,6 @@
 import { DECK } from '@/constants';
 
-export const convertDektoText = (data) => {
+export const convertDekToText = (data) => {
   const parser = new DOMParser();
   const xmlDoc = parser.parseFromString(data, 'text/xml');
   const xmlCrypt = xmlDoc.getElementsByTagName(DECK)[0].childNodes[5].children;
