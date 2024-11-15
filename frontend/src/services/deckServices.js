@@ -63,7 +63,7 @@ export const deckImport = (deck) => {
         [DESCRIPTION]: deck[DESCRIPTION],
         [AUTHOR]: deck[AUTHOR],
         [CARDS]: cards,
-        [ANONYMOUS]: deck.anonymous,
+        [ANONYMOUS]: deck[ANONYMOUS],
       },
     })
     .json();

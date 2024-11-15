@@ -10,6 +10,8 @@ import {
   DeckDraw,
   DeckImport,
   DeckImportAmaranth,
+  DeckImportBadCardsModal,
+  DeckImportText,
   DeckLibrary,
   DeckMissingModalWrapper,
   DeckNewCardFloating,
@@ -78,6 +80,8 @@ const Decks = () => {
   const [showRecommendation, setShowRecommendation] = useState(false);
   const [showProxySelect, setShowProxySelect] = useState(false);
   const [showImportAmaranth, setShowImportAmaranth] = useState(false);
+  const [showImportText, setShowImportText] = useState(false);
+  const [badImportCards, setBadImportCards] = useState([]);
   const isEditable = getIsEditable(deck);
 
   const getDeck = async () => {
@@ -127,11 +131,7 @@ const Decks = () => {
 
   useEffect(() => {
     if (hash && cryptCardBase && libraryCardBase) {
-      const { [CRYPT]: crypt, [LIBRARY]: library } = parseDeckHash(
-        hash,
-        cryptCardBase,
-        libraryCardBase,
-      );
+      const { crypt, library } = parseDeckHash(hash, cryptCardBase, libraryCardBase);
 
       setDeck({
         [DECKID]: DECK,
@@ -237,6 +237,8 @@ const Decks = () => {
               setShowSeating={setShowSeating}
               setShowProxySelect={setShowProxySelect}
               setShowImportAmaranth={setShowImportAmaranth}
+              setShowImportText={setShowImportText}
+              setBadImportCards={setBadImportCards}
             />
           </div>
         </div>
@@ -256,7 +258,12 @@ const Decks = () => {
                 preconstructed decks
               </div>
             </div>
-            <DeckImport isOnlyNew={true} />
+            <DeckImport
+              isOnlyNew={true}
+              setShowImportAmaranth={setShowImportAmaranth}
+              setShowImportText={setShowImportText}
+              setBadImportCards={setBadImportCards}
+            />
           </div>
         </div>
       )}
@@ -286,6 +293,8 @@ const Decks = () => {
               setShowSeating={setShowSeating}
               setShowProxySelect={setShowProxySelect}
               setShowImportAmaranth={setShowImportAmaranth}
+              setShowImportText={setShowImportText}
+              setBadImportCards={setBadImportCards}
             />
             <div className="lg:hidden">
               <ButtonFloatClose handleClose={handleClose} />
@@ -301,6 +310,20 @@ const Decks = () => {
       {showMissing && <DeckMissingModalWrapper deck={deck} setShow={setShowMissing} />}
       {showProxySelect && <DeckProxySelectModal setShow={setShowProxySelect} deck={deck} />}
       {showImportAmaranth && <DeckImportAmaranth setShow={setShowImportAmaranth} />}
+      {showImportText.show && (
+        <DeckImportText
+          isAnonymous={showImportText.isAnonymous}
+          setShow={setShowImportText}
+          setBadCards={setBadImportCards}
+        />
+      )}
+      {badImportCards.length > 0 && (
+        <DeckImportBadCardsModal
+          deckid={deck?.[DECKID]}
+          badCards={badImportCards}
+          setBadCards={setBadImportCards}
+        />
+      )}
     </div>
   );
 };

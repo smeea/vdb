@@ -6,7 +6,7 @@ import { useDeckImport } from '@/hooks';
 import { deckServices } from '@/services';
 import { DECKID, BAD_CARDS } from '@/constants';
 
-const DeckImportText = ({ isAnonymous, setBadCards, handleCloseModal }) => {
+const DeckImportText = ({ isAnonymous, setBadCards, setShow }) => {
   const {
     isPlaytester,
     isMobile,
@@ -22,38 +22,38 @@ const DeckImportText = ({ isAnonymous, setBadCards, handleCloseModal }) => {
   const ref = useRef();
 
   const handleChange = (event) => {
+    setEmptyError(false);
     setDeckText(event.target.value);
   };
 
   const handleClose = () => {
-    handleCloseModal();
     setDeckText('');
+    setShowMenuButtons(false);
+    setShowFloatingButtons(true);
+    setShow(false);
   };
 
   const importDeckFromText = async () => {
     setImportError(false);
+    if (!deckText) return setEmptyError(true);
 
-    if (deckText) {
-      const d = await useDeckImport(deckText, cryptCardBase, libraryCardBase, isPlaytester);
+    const d = await useDeckImport(deckText, cryptCardBase, libraryCardBase, isPlaytester);
 
-      deckServices
-        .deckImport({ ...d, anonymous: isAnonymous })
-        .then((data) => {
-          deckAdd({
-            ...d,
-            [DECKID]: data[DECKID],
-          });
-          navigate(`/decks/${data[DECKID]}`);
-          setBadCards(d[BAD_CARDS]);
-          setShowMenuButtons(false);
-          setShowFloatingButtons(true);
-          setDeckText('');
-          handleClose();
-        })
-        .catch(() => setImportError(true));
-    } else {
-      setEmptyError(true);
-    }
+    deckServices
+      .deckImport({ ...d, anonymous: isAnonymous })
+      .then((data) => {
+        deckAdd({
+          ...d,
+          [DECKID]: data[DECKID],
+        });
+        navigate(`/decks/${data[DECKID]}`);
+        setBadCards(d[BAD_CARDS]);
+        setShowMenuButtons(false);
+        setShowFloatingButtons(true);
+        setDeckText('');
+        handleClose();
+      })
+      .catch(() => setImportError(true));
   };
 
   const placeholder = `\

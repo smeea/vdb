@@ -7,3 +7,4 @@ export * as storageServices from './storageServices.js';
 export * as userServices from './userServices.js';
 export * as pdfServices from './pdfServices.js';
 export * as playtestServices from './playtestServices.js';
+export * as formatServices from './formatServices.js';

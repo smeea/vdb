@@ -1,5 +1,4 @@
 # FIX
-- Exprort to lackey deck name
 - Review TWDA radar: remove swarm, maybe replace?
 
 # FEATURES
@@ -21,4 +20,3 @@
 - Migrate from isWidth to container queries
 - Migrate forms to useFormStatus+useActionState
 - Remove legacy polyfills when Safari adopts groupBy
-- Move modal to Decks: DeckImportText

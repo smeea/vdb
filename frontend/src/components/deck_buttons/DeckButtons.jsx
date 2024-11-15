@@ -33,6 +33,8 @@ const DeckButtons = ({
   setShowRecommendation,
   setShowProxySelect,
   setShowImportAmaranth,
+  setShowImportText,
+  setBadImportCards,
 }) => {
   const { isPlaytestAdmin, playtestMode, inventoryMode, username } = useApp();
   const { publicChild, isPublic, isAuthor, isBranches } = { ...deck };
@@ -48,7 +50,12 @@ const DeckButtons = ({
 
   return (
     <div className="flex flex-col gap-1">
-      <DeckImport setShowInfo={setShowInfo} setShowImportAmaranth={setShowImportAmaranth} />
+      <DeckImport
+        setShowInfo={setShowInfo}
+        setShowImportAmaranth={setShowImportAmaranth}
+        setShowImportText={setShowImportText}
+        setBadImportCards={setBadImportCards}
+      />
       {hasPlaytest && !isPlaytestSafe && isAuthor && !isPublic && <DeckDeleteButton deck={deck} />}
       {deck && isPlaytestSafe && (
         <>
