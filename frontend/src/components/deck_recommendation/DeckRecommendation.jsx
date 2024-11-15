@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import { DeckRecommendationModal } from '@/components';
 import { useApp } from '@/context';
 import { useFetch } from '@/hooks';
-import { LIBRARY, CRYPT, ID } from '@/constants';
+import { CARDS, LIBRARY, CRYPT, ID } from '@/constants';
 
 const DeckRecommendation = ({ setShow, deck }) => {
   const { cryptCardBase, libraryCardBase, setShowFloatingButtons } = useApp();
@@ -16,7 +16,7 @@ const DeckRecommendation = ({ setShow, deck }) => {
     url,
     {
       method: 'POST',
-      json: { cards: cards },
+      json: { [CARDS]: cards },
     },
     [deck],
   );
@@ -27,7 +27,7 @@ const DeckRecommendation = ({ setShow, deck }) => {
           return cryptCardBase[cardid];
         })
       : null;
-  }, value[CRYPT]);
+  }, [value?.[CRYPT]]);
 
   const library = useMemo(() => {
     return value
@@ -35,7 +35,7 @@ const DeckRecommendation = ({ setShow, deck }) => {
           return libraryCardBase[cardid];
         })
       : null;
-  }, value[LIBRARY]);
+  }, [value?.[LIBRARY]]);
 
   const handleCloseModal = () => {
     setShow(false);
