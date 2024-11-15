@@ -44,9 +44,15 @@ const ResultCryptTableRow = ({
           <AccountLimitedDelCard cardid={card[ID]} target={inLimited} />
         </td>
       ) : (
-        (inRecommendation ? isEditable : isEditable && addMode) && (
+        (inRecommendation || addMode) && (
           <td className="min-w-[22px]">
-            <ButtonAddCard cardid={card[ID]} deckid={deck[DECKID]} card={card} inDeck={inDeck} />
+            <ButtonAddCard
+              disabled={!isEditable}
+              cardid={card[ID]}
+              deckid={deck[DECKID]}
+              card={card}
+              inDeck={inDeck}
+            />
           </td>
         )
       )}

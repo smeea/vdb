@@ -38,10 +38,14 @@ const ResultLibraryTableRow = ({ card, handleClick, inLimited, shouldShowModal }
           <AccountLimitedDelCard cardid={card[ID]} target={inLimited} />
         </td>
       ) : (
-        isEditable &&
         addMode && (
           <td>
-            <ButtonAddCard deckid={deck[DECKID]} card={card} inDeck={inDeck} />
+            <ButtonAddCard
+              disabled={!isEditable}
+              deckid={deck[DECKID]}
+              card={card}
+              inDeck={inDeck}
+            />
           </td>
         )
       )}

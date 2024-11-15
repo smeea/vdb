@@ -5,7 +5,7 @@ import { Button } from '@/components';
 import { deckStore, deckCardChange } from '@/context';
 import { NAME, DECKS } from '@/constants';
 
-const ButtonAddCard = ({ deckid, card, inDeck, inQuick }) => {
+const ButtonAddCard = ({ deckid, card, inDeck, inQuick, disabled }) => {
   const decks = useSnapshot(deckStore)[DECKS];
 
   const handleClick = () => {
@@ -23,6 +23,7 @@ const ButtonAddCard = ({ deckid, card, inDeck, inQuick }) => {
       variant={inDeck ? 'third' : 'primary'}
       onClick={handleClick}
       title={title}
+      disabled={disabled}
       noPadding
     >
       {inDeck ? inDeck : <PlusLg width="15" height="15" viewBox="0 0 16 16" />}
