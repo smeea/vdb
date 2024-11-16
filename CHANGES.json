@@ -1,5 +1,15 @@
 [
   {
+    "version": "2024-11-17",
+    "changes": [
+      "Add Garou Rim event in Joensuu, Finland (https://vdb.im/tournament_analyze/11707)",
+      "Add Brujah and Lasombra legacy images",
+      "Add Conviction cost to card line in results (deck, search). And no, Conviction cost filter will not come to Library (won't waste limited screen space for this marginal feature).",
+      "Add Sect indicator to crypt cards line, and Sect/Title to crypt card popup",
+      "A lot of small other fixes and improvements and a lot of code changes. This means new bugs with what used to work: please report and I'll fix it ASAP. This is unpleasant, but I need to overhaul the code from time to time, otherwise it becomes harder to maintain old (bad) code even if it 'just works'"
+    ]
+  },
+  {
     "version": "2024-11-01",
     "changes": [
       "Fix page loading",
