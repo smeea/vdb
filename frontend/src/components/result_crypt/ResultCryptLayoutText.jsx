@@ -8,6 +8,8 @@ import {
   Hr,
   ResultClanImage,
   ResultCryptCapacity,
+  ResultCryptSect,
+  ResultCryptTitle,
   ResultCryptDisciplines,
   ResultCryptGroup,
   ResultName,
@@ -15,7 +17,7 @@ import {
   ResultLayoutTextText,
 } from '@/components';
 import { getLegality } from '@/utils';
-import { CLAN, ADV, ID, DISCIPLINES, BANNED, GROUP, AKA, PLAYTEST } from '@/constants';
+import { SECT, TITLE, CLAN, ADV, ID, DISCIPLINES, BANNED, GROUP, AKA, PLAYTEST } from '@/constants';
 
 const ResultCryptLayoutText = ({ card, setCard, handleClose, noClose, inPopover }) => {
   const { isNarrow, isMobile, cryptCardBase } = useApp();
@@ -91,9 +93,15 @@ const ResultCryptLayoutText = ({ card, setCard, handleClose, noClose, inPopover 
         <ResultLayoutTextText cardid={card[ID]} />
       </div>
       <Hr />
-      <div className="flex items-center gap-2">
-        <ResultCryptCapacity card={card} />
-        <ResultCryptDisciplines value={card[DISCIPLINES]} />
+      <div className="flex justify-between gap-2">
+        <div className="flex items-center gap-2">
+          <ResultCryptCapacity card={card} />
+          <ResultCryptDisciplines value={card[DISCIPLINES]} />
+        </div>
+        <div className="flex items-center gap-2">
+          <ResultCryptTitle value={card[TITLE]} />
+          <ResultCryptSect value={card[SECT]} />
+        </div>
       </div>
       <Hr />
       {card[BANNED] && (

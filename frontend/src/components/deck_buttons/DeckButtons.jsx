@@ -38,7 +38,7 @@ const DeckButtons = ({
   setBadImportCards,
 }) => {
   const { isPlaytestAdmin, playtestMode, inventoryMode, username } = useApp();
-  const { publicChild, isPublic, isAuthor, isBranches } = deck;
+  const { publicChild, isPublic, isAuthor, isBranches } = deck || {};
 
   const playtestPrecon =
     deck?.[DECKID].includes(`${PLAYTEST}:`) && deck[DECKID].replace(`${PLAYTEST}:`, '');
