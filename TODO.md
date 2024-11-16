@@ -1,5 +1,6 @@
 # FIX
 - Review TWDA radar: remove swarm, maybe replace?
+- Add Conviction 3 cost
 
 # FEATURES
 - Card q-ty change in autocompletion
