@@ -1,9 +1,10 @@
 import ky from 'ky';
+import { defer } from 'react-router-dom';
 
-export const changesLoader = () => {
+export const changesLoader = async () => {
   const url = `${import.meta.env.VITE_API_URL}/changelog`;
   const response = ky.get(url).json();
-  return { changes: response };
+  return defer({ changes: response });
 };
 
 export const pdaToggle = (deckid, isDelete) => {
