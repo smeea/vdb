@@ -9,6 +9,7 @@ import {
   ErrorMessage,
 } from '@/components';
 import { useApp } from '@/context';
+import { getIsPlaytest } from '@/utils';
 import { ID } from '@/constants';
 
 const CardsDesktop = ({ card, openRandomCard, handleChange, handleSetCard }) => {
@@ -25,7 +26,7 @@ const CardsDesktop = ({ card, openRandomCard, handleChange, handleSetCard }) => 
         )}
         {card && (
           <>
-            {playtestMode || card[ID] < 110000 || (card[ID] > 200000 && card[ID] < 210000) ? (
+            {playtestMode || !getIsPlaytest(card[ID]) ? (
               <div className="flex border-bgSecondary dark:border-bgSecondaryDark">
                 <div>
                   <CardImage card={card} />

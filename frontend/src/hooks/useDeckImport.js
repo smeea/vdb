@@ -10,6 +10,7 @@ import {
   LIBRARY,
   NAME,
 } from '@/constants';
+import { getIsPlaytest } from '@/utils';
 
 const useDeckImport = async (deckText, cryptCardBase, libraryCardBase, isPlaytester) => {
   const { default: unidecode } = await import('unidecode');
@@ -121,7 +122,7 @@ const useDeckImport = async (deckText, cryptCardBase, libraryCardBase, isPlaytes
     }
 
     const [id, q] = parseCard(i);
-    const isPlaytest = id > 210000 || (id < 200000 && id > 110000);
+    const isPlaytest = getIsPlaytest(id);
 
     if (id && q && (!isPlaytest || isPlaytester)) {
       if (id > 200000) {

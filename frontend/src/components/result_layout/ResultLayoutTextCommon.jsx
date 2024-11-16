@@ -9,6 +9,7 @@ import {
   Hr,
 } from '@/components';
 import { ID, ARTIST, RULINGS } from '@/constants';
+import { getIsPlaytest } from '@/utils';
 
 const ResultLayoutTextCommon = ({
   handleClose,
@@ -18,7 +19,7 @@ const ResultLayoutTextCommon = ({
   setIsHotkeysDisabled,
 }) => {
   const { isPlaytester, inventoryMode } = useApp();
-  const isPlaytest = card[ID] > 210000 || (card[ID] < 200000 && card[ID] > 110000);
+  const isPlaytest = getIsPlaytest(card[ID]);
 
   return (
     <div className="flex flex-col gap-3">

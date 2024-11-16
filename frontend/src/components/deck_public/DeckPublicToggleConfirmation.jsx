@@ -1,6 +1,6 @@
 import React from 'react';
 import { ModalConfirmation } from '@/components';
-import { countCards } from '@/utils';
+import { getIsPlaytest, countCards } from '@/utils';
 import { LIBRARY, CRYPT, NAME, PUBLIC_PARENT, PUBLIC_CHILD } from '@/constants';
 
 const DeckPublicToggleConfirmation = ({ deck, handleConfirmation, setShow }) => {
@@ -12,9 +12,9 @@ const DeckPublicToggleConfirmation = ({ deck, handleConfirmation, setShow }) => 
     countCards(Object.values(deck[LIBRARY])) < 60 ||
     countCards(Object.values(deck[LIBRARY])) > 90;
 
-  const withPlaytestCards =
-    Object.keys(deck[CRYPT]).some((cardid) => cardid > 210000) ||
-    Object.keys(deck[LIBRARY]).some((cardid) => cardid > 110000);
+  const withPlaytestCards = Object.keys({ ...deck[CRYPT], ...deck[LIBRARY] }).some((cardid) =>
+    getIsPlaytest(cardid),
+  );
 
   return (
     <ModalConfirmation

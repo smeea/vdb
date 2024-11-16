@@ -2,6 +2,7 @@ import React, { useMemo } from 'react';
 import { useSnapshot } from 'valtio';
 import { DeckMissingModal } from '@/components';
 import { useApp, inventoryStore } from '@/context';
+import { getIsPlaytest } from '@/utils';
 import { useInventoryCrypt, useInventoryLibrary } from '@/hooks';
 import { ID, CRYPT, LIBRARY, NAME, AUTHOR, DESCRIPTION, DECKID } from '@/constants';
 
@@ -50,13 +51,13 @@ const InventoryMissingModalWrapper = ({
 
   Object.keys(cryptCardBase)
     .filter((cardid) => {
-      return cardid < 210000 && (!inventoryCrypt[cardid] || !inventoryCrypt[cardid]?.q);
+      return !getIsPlaytest(cardid) && (!inventoryCrypt[cardid] || !inventoryCrypt[cardid]?.q);
     })
     .map((cardid) => (missAllVtesCrypt[cardid] = { q: 1, c: cryptCardBase[cardid] }));
 
   Object.keys(libraryCardBase)
     .filter((cardid) => {
-      return cardid < 110000 && (!inventoryLibrary[cardid] || !inventoryLibrary[cardid]?.q);
+      return !getIsPlaytest(cardid) && (!inventoryLibrary[cardid] || !inventoryLibrary[cardid]?.q);
     })
     .map((cardid) => (missAllVtesLibrary[cardid] = { q: 1, c: libraryCardBase[cardid] }));
 

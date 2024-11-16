@@ -2,7 +2,7 @@ import React from 'react';
 import { FixedSizeList } from 'react-window';
 import AutoSizer from 'react-virtualized-auto-sizer';
 import { WindowRows, ResultModal, InventoryLibraryTableRow } from '@/components';
-import { librarySort } from '@/utils';
+import { getIsPlaytest, librarySort } from '@/utils';
 import { useApp } from '@/context';
 import { useModalCardController } from '@/hooks';
 import { ID } from '@/constants';
@@ -25,7 +25,7 @@ const InventoryLibraryTable = ({ cards, sortMethod, compact, withCompact, newFoc
   };
 
   const cardRows = sortedCards
-    .filter((card) => playtestMode || card.c[ID] < 110000)
+    .filter((card) => playtestMode || !getIsPlaytest(card.c[ID]))
     .map((card) => {
       return (
         <InventoryLibraryTableRow

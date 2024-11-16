@@ -15,6 +15,7 @@ import {
 } from '@/components';
 import { searchResults, setCryptCompare, setLibraryCompare, useApp } from '@/context';
 import { ID, TYPE, TYPE_MASTER, TWD, PDA } from '@/constants';
+import { getIsPlaytest } from '@/utils';
 
 const ResultLayoutText = ({
   card,
@@ -29,7 +30,7 @@ const ResultLayoutText = ({
   const compare = card[ID] > 200000 ? cryptCompare : libraryCompare;
   const setCompare = card[ID] > 200000 ? setCryptCompare : setLibraryCompare;
   const inCompare = compare ? compare.map((i) => i[ID]).includes(card[ID]) : false;
-  const isPlaytest = card[ID] > 210000 || (card[ID] < 200000 && card[ID] > 110000);
+  const isPlaytest = getIsPlaytest(card[ID]);
 
   const handleCompare = () => {
     if (!compare) {

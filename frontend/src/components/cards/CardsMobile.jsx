@@ -3,6 +3,7 @@ import ArrowRepeat from '@/assets/images/icons/arrow-repeat.svg?react';
 import Dice3 from '@/assets/images/icons/dice-3-fill.svg?react';
 import { CardSelect, ResultLayoutText, CardImage, ButtonFloat, ErrorMessage } from '@/components';
 import { useApp } from '@/context';
+import { getIsPlaytest } from '@/utils';
 import { ID } from '@/constants';
 
 const CardsMobile = ({ card, openRandomCard, handleChange, handleSetCard }) => {
@@ -12,7 +13,7 @@ const CardsMobile = ({ card, openRandomCard, handleChange, handleSetCard }) => {
     <>
       {card && (
         <>
-          {playtestMode || card[ID] < 110000 || (card[ID] > 200000 && card[ID] < 210000) ? (
+          {playtestMode || !getIsPlaytest(card[ID]) ? (
             <div className="pb-[59px]">
               {showImage ? (
                 <CardImage card={card} />

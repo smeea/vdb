@@ -2,6 +2,7 @@ import React from 'react';
 import { useApp } from '@/context';
 import { Select, SelectLabelCrypt, SelectLabelLibrary } from '@/components';
 import { useFilters } from '@/hooks';
+import { getIsPlaytest } from '@/utils';
 import { ID, NAME, TWD, CRYPT, LIBRARY, VALUE } from '@/constants';
 
 const getMatches = (inputValue, filterAction, playtestId, playtestMode, inInventory) => {
@@ -10,7 +11,7 @@ const getMatches = (inputValue, filterAction, playtestId, playtestMode, inInvent
   const startingWith = [];
   const other = filterAction(input)
     .filter((card) => {
-      if (!((playtestMode && !inInventory) || card[ID] < playtestId)) {
+      if (!((playtestMode && !inInventory) || !getIsPlaytest(card[ID]))) {
         return false;
       }
 
@@ -35,18 +36,11 @@ const getAllMatches = (
   playtestMode,
   inInventory,
 ) => {
-  const cryptPlaytestId = 210000;
-  const libraryPlaytestId = 110000;
-
   const cryptMatches =
-    target !== LIBRARY
-      ? getMatches(inputValue, filterCrypt, cryptPlaytestId, playtestMode, inInventory)
-      : [];
+    target !== LIBRARY ? getMatches(inputValue, filterCrypt, playtestMode, inInventory) : [];
 
   const libraryMatches =
-    target !== CRYPT
-      ? getMatches(inputValue, filterLibrary, libraryPlaytestId, playtestMode, inInventory)
-      : [];
+    target !== CRYPT ? getMatches(inputValue, filterLibrary, playtestMode, inInventory) : [];
 
   return {
     cryptMatches,

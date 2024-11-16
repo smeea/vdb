@@ -41,13 +41,7 @@ export const limitedStore = derive({
       .filter((card) => {
         if (banned[card[ID]]) return false;
         if (allowed[card[ID]]) return true;
-        if (
-          Object.keys(card[SET]).some((i) => {
-            return sets.includes(i);
-          })
-        ) {
-          return true;
-        }
+        if (Object.keys(card[SET]).some((i) => sets.includes(i))) return true;
       })
       .forEach((card) => {
         cards[card[ID]] = card;
@@ -65,13 +59,7 @@ export const limitedStore = derive({
       .filter((card) => {
         if (banned[card[ID]]) return false;
         if (allowed[card[ID]]) return true;
-        if (
-          Object.keys(card[SET]).some((i) => {
-            return sets.includes(i);
-          })
-        ) {
-          return true;
-        }
+        if (Object.keys(card[SET]).some((i) => sets.includes(i))) return true;
       })
       .forEach((card) => {
         cards[card[ID]] = card;

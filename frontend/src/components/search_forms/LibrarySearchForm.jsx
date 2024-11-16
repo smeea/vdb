@@ -18,7 +18,7 @@ import {
   LibrarySearchFormPoolCost,
   LibrarySearchFormCapacity,
 } from '@/components';
-import { sanitizeFormState } from '@/utils';
+import { getIsPlaytest, sanitizeFormState } from '@/utils';
 import { useFilters } from '@/hooks';
 import {
   useApp,
@@ -167,7 +167,7 @@ const LibrarySearchForm = () => {
     navigate(`/library?q=${encodeURIComponent(JSON.stringify(sanitizedForm))}`);
 
     const filteredCards = filterLibrary(sanitizedForm).filter(
-      (card) => playtestMode || card[ID] < 110000,
+      (card) => playtestMode || !getIsPlaytest(card[ID]),
     );
 
     const setResults = isMobile ? setLibraryResults : setPreresults;

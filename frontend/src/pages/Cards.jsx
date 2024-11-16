@@ -3,6 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { useSnapshot } from 'valtio';
 import { CardsDesktop, CardsMobile } from '@/components';
 import { useApp, searchResults } from '@/context';
+import { getIsPlaytest } from '@/utils';
 import { ID } from '@/constants';
 
 const Cards = () => {
@@ -21,8 +22,7 @@ const Cards = () => {
 
   const openRandomCard = (isCrypt) => {
     const cardbase = isCrypt ? cryptCardBase : libraryCardBase;
-    const playtestId = isCrypt ? 210000 : 110000;
-    const cards = Object.keys(cardbase).filter((cardid) => playtestMode || cardid < playtestId);
+    const cards = Object.keys(cardbase).filter((cardid) => playtestMode || !getIsPlaytest(cardid));
     const cardid = cards[Math.floor(Math.random() * cards.length)];
     navigate(`/cards/${cardid}`);
   };

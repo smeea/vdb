@@ -28,7 +28,7 @@ import {
 } from '@/components';
 import { deckStore, useApp, setDeck } from '@/context';
 import { useDecksTagsAll, useDeck, useTags } from '@/hooks';
-import { getIsEditable, parseDeckHash } from '@/utils';
+import { getIsPlaytest, getIsEditable, parseDeckHash } from '@/utils';
 import {
   AUTHOR,
   BRANCHES,
@@ -207,9 +207,8 @@ const Decks = () => {
           {deck && (
             <FlexGapped className="max-sm:flex-col">
               {playtestMode ||
-              !(
-                Object.keys(deck[CRYPT]).some((cardid) => cardid > 210000) ||
-                Object.keys(deck[LIBRARY]).some((cardid) => cardid > 110000)
+              !Object.keys({ ...deck[CRYPT], ...deck[LIBRARY] }).some((cardid) =>
+                getIsPlaytest(cardid),
               ) ? (
                 <>
                   <div className="sm:basis-5/9">

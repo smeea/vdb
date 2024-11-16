@@ -18,7 +18,7 @@ import {
   CryptSearchFormGroup,
   CryptSearchFormTraits,
 } from '@/components';
-import { sanitizeFormState } from '@/utils';
+import { getIsPlaytest, sanitizeFormState } from '@/utils';
 import { useDebounce, useFilters } from '@/hooks';
 import {
   useApp,
@@ -174,7 +174,7 @@ const CryptSearchForm = () => {
     navigate(`/crypt?q=${encodeURIComponent(JSON.stringify(sanitizedForm))}`);
 
     const filteredCards = filterCrypt(sanitizedForm).filter(
-      (card) => playtestMode || card[ID] < 210000,
+      (card) => playtestMode || !getIsPlaytest(card[ID]),
     );
 
     const setResults = isMobile ? setCryptResults : setPreresults;

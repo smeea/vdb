@@ -103,6 +103,7 @@ import {
   VOTE_2,
   X,
 } from '@/constants';
+import { getIsPlaytest } from '@/utils';
 import sects from '@/assets/data/sectsList.json';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 
@@ -245,7 +246,7 @@ const missingTraits = (filter, card, traitsRegexMap) => {
 const missingTrait = (trait, card, traitsRegexMap) => {
   switch (trait) {
     case PLAYTEST:
-      return (card[ID] > 200000 && card[ID] < 210000) || (card[ID] > 100000 && card[ID] < 110000);
+      return !getIsPlaytest(card[ID]);
     case ADVANCEMENT:
       return !card[ADV];
     case BANNED:

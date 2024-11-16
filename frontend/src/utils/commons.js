@@ -294,3 +294,7 @@ export const getIsEditable = (deck) => {
   if (!deck) return null;
   return deck[IS_AUTHOR] && !deck[IS_PUBLIC] && !deck[IS_FROZEN] && !deck[IS_NON_EDITABLE];
 };
+
+export const getIsPlaytest = (cardid) => {
+  return cardid > 210000 || (cardid < 200000 && cardid > 110000);
+};

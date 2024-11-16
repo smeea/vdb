@@ -2,7 +2,7 @@ import React from 'react';
 import { FixedSizeList } from 'react-window';
 import AutoSizer from 'react-virtualized-auto-sizer';
 import { WindowRows, ResultModal, InventoryCryptTableRow } from '@/components';
-import { cryptSortWithTimer } from '@/utils';
+import { getIsPlaytest, cryptSortWithTimer } from '@/utils';
 import { useApp } from '@/context';
 import { useModalCardController } from '@/hooks';
 import { ID } from '@/constants';
@@ -25,7 +25,7 @@ const InventoryCryptTable = ({ cards, sortMethod, compact, withCompact, newFocus
   };
 
   const cardRows = sortedCards
-    .filter((card) => playtestMode || card.c[ID] < 210000)
+    .filter((card) => playtestMode || getIsPlaytest(card.c[ID]))
     .map((card) => {
       return (
         <InventoryCryptTableRow

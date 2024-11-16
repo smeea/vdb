@@ -1,7 +1,8 @@
 import { ID, GROUP, ADV, NAME, NEW, ASCII, EN } from '@/constants';
+import { getIsPlaytest } from '@/utils';
 
 const useCardImageUrl = (card, set, language) => {
-  const isPlaytest = card[ID] > 210000 || (card[ID] < 200000 && card[ID] > 110000);
+  const isPlaytest = getIsPlaytest(card[ID]);
   const cardNameFixed = card[ASCII].toLowerCase().replace(/[\s,:!?'".\-()/]/g, '');
 
   if (card[ID] > 200000) {

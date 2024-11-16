@@ -6,6 +6,7 @@
 - Playtest cards in report only for that round
 - New layout for old cards or fallback to scans?
 - Non-english images to use webp with fallback image
+- Prince title to popover /cards
 
 # FEATURES ON HOLD
 - TWD search with % V5-compatibility -> after BCP clarify V5

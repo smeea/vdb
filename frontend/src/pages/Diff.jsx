@@ -18,7 +18,7 @@ import {
 import { useApp, deckStore, setDeck } from '@/context';
 import { useDeck } from '@/hooks';
 import { deckServices } from '@/services';
-import { getIsEditable } from '@/utils';
+import { getIsPlaytest, getIsEditable } from '@/utils';
 import { PUBLIC_PARENT, MASTER, DECKID, BRANCHES, CRYPT, LIBRARY } from '@/constants';
 
 const Diff = () => {
@@ -150,9 +150,8 @@ const Diff = () => {
           {deck && deckTo && (
             <FlexGapped className="max-sm:flex-col">
               {playtestMode ||
-              !(
-                Object.keys(deck[CRYPT]).some((cardid) => cardid > 210000) ||
-                Object.keys(deck[LIBRARY]).some((cardid) => cardid > 110000)
+              !Object.keys({ ...deck[CRYPT], ...deck[LIBRARY] }).some((cardid) =>
+                getIsPlaytest(cardid),
               ) ? (
                 <>
                   <div className="basis-full sm:basis-5/9">

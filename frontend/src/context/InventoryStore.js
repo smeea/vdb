@@ -1,5 +1,5 @@
 import { proxy } from 'valtio';
-import { deepClone } from '@/utils';
+import { getIsPlaytest, deepClone } from '@/utils';
 import { inventoryServices } from '@/services';
 import { startCryptTimer } from '@/context';
 import { IS_FROZEN, ID, INVENTORY_TYPE, CRYPT, LIBRARY, SOFT, HARD } from '@/constants';
@@ -27,7 +27,7 @@ export const inventoryCardsAdd = (cards) => {
 
   const filteredCards = {};
   Object.keys(cards)
-    .filter((cardid) => !(cardid > 210000 || (cardid < 200000 && cardid > 110000)))
+    .filter((cardid) => !getIsPlaytest(cardid))
     .forEach((cardid) => {
       filteredCards[cardid] = cards[cardid];
     });
@@ -58,7 +58,7 @@ export const inventoryCardsAdd = (cards) => {
 };
 
 export const inventoryCardChange = (card, q) => {
-  if (card[ID] > 210000 || (card[ID] < 200000 && card[ID] > 110000)) return;
+  if (getIsPlaytest(card[ID])) return;
   const cardSrc = card[ID] > 200000 ? CRYPT : LIBRARY;
   const initialState = deepClone(inventoryStore[cardSrc]);
   const store = inventoryStore[cardSrc];
@@ -84,7 +84,7 @@ export const inventoryCardChange = (card, q) => {
 };
 
 export const inventoryCardTextChange = (card, text) => {
-  if (card[ID] > 210000 || (card[ID] < 200000 && card[ID] > 110000)) return;
+  if (getIsPlaytest(card[ID])) return;
   const cardSrc = card[ID] > 200000 ? CRYPT : LIBRARY;
   const initialState = deepClone(inventoryStore[cardSrc]);
   const store = inventoryStore[cardSrc];

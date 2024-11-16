@@ -1,12 +1,12 @@
 import { useMemo } from 'react';
 import { useSnapshot } from 'valtio';
+import { TYPE, DISCIPLINE, SOFT, HARD, LIBRARY, ALL, NONE, OK, NOK } from '@/constants';
+import { getIsPlaytest, getHardTotal, getSoftMax } from '@/utils';
+import { useApp, usedStore } from '@/context';
 import disciplinesList from '@/assets/data/disciplinesList.json';
 import disciplinesExtraList from '@/assets/data/disciplinesExtraList.json';
 import virtuesList from '@/assets/data/virtuesList.json';
 import cardtypeSorted from '@/assets/data/cardtypeSorted.json';
-import { TYPE, DISCIPLINE, SOFT, HARD, LIBRARY, ALL, NONE, OK, NOK } from '@/constants';
-import { getHardTotal, getSoftMax } from '@/utils';
-import { useApp, usedStore } from '@/context';
 
 const useInventoryLibrary = (cards = {}, category = OK, compact, type, discipline, onlyNotes) => {
   const usedLibrary = useSnapshot(usedStore)[LIBRARY];
@@ -122,7 +122,7 @@ const useInventoryLibrary = (cards = {}, category = OK, compact, type, disciplin
         });
 
       Object.keys(usedLibrary[SOFT])
-        .filter((cardid) => cardid < 110000 && !cards[cardid])
+        .filter((cardid) => !getIsPlaytest(cardid) && !cards[cardid])
         .forEach((cardid) => {
           const types = libraryCardBase[cardid][TYPE].split('/');
           const d = libraryCardBase[cardid][DISCIPLINE];
@@ -188,7 +188,7 @@ const useInventoryLibrary = (cards = {}, category = OK, compact, type, disciplin
         });
 
       Object.keys(usedLibrary[HARD])
-        .filter((cardid) => cardid < 110000 && !cards[cardid])
+        .filter((cardid) => !getIsPlaytest(cardid) && !cards[cardid])
         .forEach((cardid) => {
           const types = libraryCardBase[cardid][TYPE].split('/');
           const d = libraryCardBase[cardid][DISCIPLINE];

@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 import { useSnapshot } from 'valtio';
 import imbuedClansList from '@/assets/data/imbuedClansList.json';
 import vampireClansList from '@/assets/data/vampireClansList.json';
-import { getHardTotal, getSoftMax } from '@/utils';
+import { getIsPlaytest, getHardTotal, getSoftMax } from '@/utils';
 import { CLAN, SOFT, HARD, CRYPT, ALL, OK, NOK } from '@/constants';
 import { useApp, usedStore } from '@/context';
 
@@ -64,7 +64,7 @@ const useInventoryCrypt = (cards = {}, category = OK, compact, onlyNotes) => {
         });
 
       Object.keys(usedCrypt[SOFT])
-        .filter((cardid) => cardid < 210000 && !cards[cardid])
+        .filter((cardid) => !getIsPlaytest(cardid) && !cards[cardid])
         .forEach((cardid) => {
           const clan = cryptCardBase[cardid][CLAN];
 
@@ -92,7 +92,7 @@ const useInventoryCrypt = (cards = {}, category = OK, compact, onlyNotes) => {
         });
 
       Object.keys(usedCrypt[HARD])
-        .filter((cardid) => cardid < 210000 && !cards[cardid])
+        .filter((cardid) => getIsPlaytest(cardid) && !cards[cardid])
         .forEach((cardid) => {
           const clan = cryptCardBase[cardid][CLAN];
 

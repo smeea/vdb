@@ -11,6 +11,7 @@ import {
   ErrorMessage,
   FlexGapped,
 } from '@/components';
+import { getIsPlaytest } from '@/utils';
 import { setDeck, deckStore, useApp } from '@/context';
 import { DECKID, CRYPT, LIBRARY, MASTER, BRANCHES, IS_PUBLIC, IS_AUTHOR } from '@/constants';
 
@@ -51,9 +52,8 @@ const DeckSelectorAndDisplay = () => {
       {deck && addMode && (
         <>
           {playtestMode ||
-          !(
-            Object.keys(deck[CRYPT]).some((cardid) => cardid > 210000) ||
-            Object.keys(deck[LIBRARY]).some((cardid) => cardid > 110000)
+          !Object.keys({ ...deck[CRYPT], ...deck[LIBRARY] }).some((cardid) =>
+            getIsPlaytest(cardid),
           ) ? (
             <>
               <DeckCrypt deck={deck} inSearch />
