@@ -7,6 +7,7 @@
 - Playtest cards in report only for that round
 - New layout for old cards or fallback to scans?
 - Non-english images to use webp with fallback image
+- Clickable card q-ty change in twd search + width for 2 digit
 
 # FEATURES ON HOLD
 - TWD search with % V5-compatibility -> after BCP clarify V5

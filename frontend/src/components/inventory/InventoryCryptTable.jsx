@@ -25,7 +25,7 @@ const InventoryCryptTable = ({ cards, sortMethod, compact, withCompact, newFocus
   };
 
   const cardRows = sortedCards
-    .filter((card) => playtestMode || getIsPlaytest(card.c[ID]))
+    .filter((card) => playtestMode || !getIsPlaytest(card.c[ID]))
     .map((card) => {
       return (
         <InventoryCryptTableRow
