@@ -10,7 +10,7 @@ const TwdResultTotal = ({ results, sortMethods, sortMethod, setSortMethod }) => 
 
   results.forEach((deck) => {
     const year = `'${deck[CREATION_DATE].slice(2, 4)}`;
-    byYear[year] = byYear[year] ?? 0 + 1;
+    byYear[year] = byYear[year] ? byYear[year] + 1 : 1;
   });
 
   return (
