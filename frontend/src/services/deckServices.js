@@ -299,7 +299,7 @@ export const exportDecks = async (decks, format) => {
 };
 
 export const exportXlsx = async (deck) => {
-  const XLSX = await import('xlsx');
+  const xlsx = await import('xlsx');
   const crypt = Object.values(deck[CRYPT]).map((card) => {
     const c = card.c;
     let name = c[NAME];
@@ -330,13 +330,13 @@ export const exportXlsx = async (deck) => {
     };
   });
 
-  const cryptSheet = XLSX.utils.json_to_sheet(crypt);
-  const librarySheet = XLSX.utils.json_to_sheet(library);
+  const cryptSheet = xlsx.utils.json_to_sheet(crypt);
+  const librarySheet = xlsx.utils.json_to_sheet(library);
 
-  const workbook = XLSX.utils.book_new();
-  XLSX.utils.book_append_sheet(workbook, cryptSheet, 'Crypt');
-  XLSX.utils.book_append_sheet(workbook, librarySheet, 'Library');
-  return XLSX.write(workbook, { type: 'array', bookType: XLSX });
+  const workbook = xlsx.utils.book_new();
+  xlsx.utils.book_append_sheet(workbook, cryptSheet, 'Crypt');
+  xlsx.utils.book_append_sheet(workbook, librarySheet, 'Library');
+  return xlsx.write(workbook, { type: 'array', bookType: XLSX });
 };
 
 const saveFile = async (file, name) => {

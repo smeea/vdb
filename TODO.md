@@ -1,5 +1,6 @@
 # FIX
 - Review TWDA radar: remove swarm, maybe replace?
+- Legacy Valez
 
 # FEATURES
 - Card q-ty change in autocompletion
