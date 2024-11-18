@@ -42,7 +42,7 @@ const ResultLibraryTableRow = ({ card, handleClick, inLimited, shouldShowModal }
           <td>
             <ButtonAddCard
               disabled={!isEditable}
-              deckid={deck[DECKID]}
+              deckid={deck?.[DECKID]}
               card={card}
               inDeck={inDeck}
             />

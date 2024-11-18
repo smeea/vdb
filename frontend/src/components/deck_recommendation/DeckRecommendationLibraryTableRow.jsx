@@ -26,7 +26,7 @@ const DeckRecommendationLibraryTableRow = ({ card, handleClick, deck }) => {
     >
       {isEditable && (
         <td>
-          <ButtonAddCard cardid={card[ID]} deckid={deck[DECKID]} card={card} inDeck={inDeck} />
+          <ButtonAddCard deckid={deck[DECKID]} card={card} inDeck={inDeck} />
         </td>
       )}
       <ResultLibraryTableRowCommon card={card} handleClick={handleClick} inDeck />

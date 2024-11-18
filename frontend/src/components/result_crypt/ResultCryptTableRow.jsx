@@ -48,8 +48,7 @@ const ResultCryptTableRow = ({
           <td className="min-w-[22px]">
             <ButtonAddCard
               disabled={!isEditable}
-              cardid={card[ID]}
-              deckid={deck[DECKID]}
+              deckid={deck?.[DECKID]}
               card={card}
               inDeck={inDeck}
             />
