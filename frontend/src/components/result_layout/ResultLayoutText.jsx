@@ -46,7 +46,7 @@ const ResultLayoutText = ({
   };
 
   return (
-    <div className="grid h-full w-full content-between gap-3">
+    <div className="flex h-full flex-col justify-between gap-4">
       <div className="flex flex-col gap-3">
         {card[ID] > 200000 ? (
           <ResultCryptLayoutText

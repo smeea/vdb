@@ -148,7 +148,7 @@ const Inventory = () => {
       ) : inventoryError ? (
         <ErrorMessage>{inventoryError}</ErrorMessage>
       ) : (
-        <div className="grid h-[80vh] place-items-center max-sm:px-2">
+        <div className="flex h-[80vh] place-items-center max-sm:px-2">
           <LoginBlock>Login to manage your inventory</LoginBlock>
         </div>
       )}
