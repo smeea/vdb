@@ -1,6 +1,12 @@
 [
   {
-    "version": "2024-11-17/2",
+    "version": "2024-11-18",
+    "changes": [
+      "Fix few bugs of the previous update"
+    ]
+  },
+  {
+    "version": "2024-11-17",
     "changes": [
       "Add Garou Rim event in Joensuu, Finland (https://vdb.im/tournament_analyze/11707)",
       "Add Brujah and Lasombra legacy images",
