@@ -1,10 +1,27 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { twMerge } from 'tailwind-merge';
 import { Button, ButtonCardChange } from '@/components';
 import { useApp } from '@/context';
 import { EQ, LT, LT0, GT } from '@/constants';
 
 const TwdSearchFormQuantityButtons = ({ value, form, id }) => {
   const { isMobile } = useApp();
+  const [manual, setManual] = useState(false);
+  const [state, setState] = useState(value[id].q);
+
+  useEffect(() => {
+    if (state !== value[id].q) setState(value[id].q);
+  }, [value[id].q]);
+
+  const handleManualChange = (event) => {
+    setState(parseInt(event.target.value));
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    handleChangeQ(state);
+    setManual(false);
+  };
 
   const handleChangeQ = (q) => {
     if (q >= 0) {
@@ -54,13 +71,37 @@ const TwdSearchFormQuantityButtons = ({ value, form, id }) => {
       >
         {getIconAndText(value[id].m)[0]}
       </Button>
-      <ButtonCardChange
-        onClick={() => handleChangeQ(value[id].q - 1)}
-        isLink={isMobile}
-        isNegative
-      />
-      <div>{value[id].q}</div>
-      <ButtonCardChange onClick={() => handleChangeQ(value[id].q + 1)} isLink={isMobile} />
+      {(!manual || isMobile) && (
+        <ButtonCardChange
+          onClick={() => handleChangeQ(value[id].q - 1)}
+          isLink={isMobile}
+          isNegative
+        />
+      )}
+      <div
+        tabIndex={0}
+        className={twMerge(!manual && 'flex w-[20px] justify-center')}
+        onFocus={() => setManual(true)}
+      >
+        {manual ? (
+          <form onSubmit={handleSubmit}>
+            <input
+              className="w-[63px] rounded-sm border-2 border-bgSecondary bg-bgPrimary text-center text-fgPrimary outline-1 outline-bgCheckboxSelected focus:outline dark:border-bgSecondaryDark dark:bg-bgPrimaryDark dark:text-fgPrimaryDark dark:outline-bgCheckboxSelectedDark"
+              placeholder=""
+              type="number"
+              value={state}
+              onBlur={handleSubmit}
+              onChange={handleManualChange}
+              autoFocus
+            />
+          </form>
+        ) : (
+          <>{value[id].q}</>
+        )}
+      </div>
+      {(!manual || isMobile) && (
+        <ButtonCardChange isLink={isMobile} onClick={() => handleChangeQ(value[id].q + 1)} />
+      )}
     </div>
   );
 };
