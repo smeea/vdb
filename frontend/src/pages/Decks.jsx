@@ -44,6 +44,7 @@ import {
   PUBLIC_PARENT,
   IS_BRANCHES,
   IS_PUBLIC,
+  IS_ANONYMOUS,
 } from '@/constants';
 const IS_FROM_URL = 'isFromUrl';
 
@@ -311,7 +312,7 @@ const Decks = () => {
       {showImportAmaranth && <DeckImportAmaranth setShow={setShowImportAmaranth} />}
       {showImportText.show && (
         <DeckImportText
-          isAnonymous={showImportText.isAnonymous}
+          isAnonymous={showImportText[IS_ANONYMOUS]}
           setShow={setShowImportText}
           setBadCards={setBadImportCards}
         />

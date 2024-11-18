@@ -111,8 +111,8 @@ def unauthorized_handler():
 
 @app.route("/api/deck", methods=["POST"])
 def new_deck_route():
-    anonymous = request.json.get("anonymous")
-    if not current_user.is_authenticated and not anonymous:
+    is_anonymous = request.json.get("isAnonymous")
+    if not current_user.is_authenticated and not is_anonymous:
         return abort(401)
 
     new_deckid = non_secure_generate('1234567890abcdef', 9)
@@ -135,7 +135,7 @@ def new_deck_route():
         author_public_name=author_public_name,
         creation_date=date.today().strftime("%Y-%m-%d"),
         description=description,
-        author=current_user if not anonymous else None,
+        author=current_user if not is_anonymous else None,
         cards=cards,
         tags=tags,
     )

@@ -4,7 +4,7 @@ import { FlexGapped, Textarea, Modal, Button, ErrorOverlay } from '@/components'
 import { useApp, deckAdd } from '@/context';
 import { useDeckImport } from '@/hooks';
 import { deckServices } from '@/services';
-import { DECKID, BAD_CARDS } from '@/constants';
+import { IS_ANONYMOUS, DECKID, BAD_CARDS } from '@/constants';
 
 const DeckImportText = ({ isAnonymous, setBadCards, setShow }) => {
   const {
@@ -40,7 +40,7 @@ const DeckImportText = ({ isAnonymous, setBadCards, setShow }) => {
     const d = await useDeckImport(deckText, cryptCardBase, libraryCardBase, isPlaytester);
 
     deckServices
-      .deckImport({ ...d, anonymous: isAnonymous })
+      .deckImport({ ...d, [IS_ANONYMOUS]: isAnonymous })
       .then((data) => {
         deckAdd({
           ...d,

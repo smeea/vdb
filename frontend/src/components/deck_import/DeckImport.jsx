@@ -4,7 +4,7 @@ import { ErrorOverlay, DeckImportButton } from '@/components';
 import { useApp, deckAdd } from '@/context';
 import { useDeckImport } from '@/hooks';
 import { formatServices, deckServices } from '@/services';
-import { ANONYMOUS, NAME, AUTHOR, CRYPT, LIBRARY, DECKID, BAD_CARDS } from '@/constants';
+import { IS_ANONYMOUS, NAME, AUTHOR, CRYPT, LIBRARY, DECKID, BAD_CARDS } from '@/constants';
 
 const DeckImport = ({
   isOnlyNew,
@@ -32,7 +32,7 @@ const DeckImport = ({
   };
 
   const handleOpenTextModal = (isAnonymous) => {
-    setShowImportText({ isAnonymous: isAnonymous, show: true });
+    setShowImportText({ [IS_ANONYMOUS]: isAnonymous, show: true });
     setShowMenuButtons(false);
     setShowFloatingButtons(false);
   };
@@ -86,7 +86,7 @@ const DeckImport = ({
       const d = await useDeckImport(deckText, cryptCardBase, libraryCardBase, isPlaytester);
 
       deckServices
-        .deckImport({ ...d, [ANONYMOUS]: isAnonymous })
+        .deckImport({ ...d, [IS_ANONYMOUS]: isAnonymous })
         .then((data) => {
           deckAdd({
             ...d,

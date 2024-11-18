@@ -4,7 +4,6 @@ import { useDeckExport } from '@/hooks';
 import { getTextDisciplines } from '@/utils';
 import {
   ADV,
-  ANONYMOUS,
   AUTHOR,
   BLOOD,
   BRANCHES,
@@ -21,6 +20,7 @@ import {
   GROUP,
   ID,
   INVENTORY_TYPE,
+  IS_ANONYMOUS,
   IS_AUTHOR,
   IS_BRANCHES,
   IS_PUBLIC,
@@ -29,13 +29,13 @@ import {
   NAME,
   NEW,
   POOL,
+  PUBLIC_CHILD,
+  PUBLIC_PARENT,
   TAGS,
   TEXT,
   TIMESTAMP,
   TYPE,
   XLSX,
-  PUBLIC_PARENT,
-  PUBLIC_CHILD,
 } from '@/constants';
 import { deckStore } from '@/context';
 
@@ -63,7 +63,7 @@ export const deckImport = (deck) => {
         [DESCRIPTION]: deck[DESCRIPTION],
         [AUTHOR]: deck[AUTHOR],
         [CARDS]: cards,
-        [ANONYMOUS]: deck[ANONYMOUS],
+        [IS_ANONYMOUS]: deck[IS_ANONYMOUS],
       },
     })
     .json();
@@ -131,7 +131,7 @@ export const deckSnapshot = (deck) => {
         [AUTHOR]: deck[AUTHOR],
         [CARDS]: cards,
         [TAGS]: deck[TAGS],
-        [ANONYMOUS]: true,
+        [IS_ANONYMOUS]: true,
       },
     })
     .json()
