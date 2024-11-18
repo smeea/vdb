@@ -25,7 +25,7 @@ const Type = ({ card, handleClick }) => {
 const Cost = ({ card, handleClick }) => {
   return (
     <td className="min-w-[25px] sm:min-w-[30px]" onClick={() => handleClick(card)}>
-      <div className={twMerge(card[BLOOD] && 'pb-2', 'flex justify-center')}>
+      <div className={twMerge(card[BLOOD] && 'pb-1.5', 'flex justify-center')}>
         <ResultLibraryCost card={card} />
       </div>
     </td>

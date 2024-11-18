@@ -9,7 +9,7 @@ const ResultLibraryCost = ({ card, className }) => {
   if (value == 0) return;
 
   const styles = {
-    [BLOOD]: 'max-h-[30px]',
+    [BLOOD]: 'max-h-[29px]',
     [POOL]: 'max-h-[35px]',
     [CONVICTION]: 'max-h-[30px]',
   };
