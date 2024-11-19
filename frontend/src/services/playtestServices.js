@@ -1,5 +1,16 @@
 import ky from 'ky';
-import { XLSX, USERNAME, PLAYTEST, ID, TEXT, PRECONS, CARDS, GENERAL, NAME } from '@/constants';
+import {
+  XLSX,
+  USERNAME,
+  SCORE,
+  PLAYTEST,
+  ID,
+  TEXT,
+  PRECONS,
+  CARDS,
+  GENERAL,
+  NAME,
+} from '@/constants';
 
 export const submitReport = (id, value, isPrecon) => {
   const url = `${import.meta.env.VITE_API_URL}/playtest/${isPrecon ? PRECONS : CARDS}/${id}`;
@@ -59,7 +70,7 @@ export const exportXlsx = async (reports, users, cryptCardBase, libraryCardBase,
       return {
         User: username,
         'Is Played': report.isPlayed ? 'Y' : 'N',
-        Score: report.score,
+        Score: report[SCORE],
         Report: report[TEXT],
         Games: user.games,
         Liaison: user.liaison,

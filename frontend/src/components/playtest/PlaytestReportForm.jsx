@@ -14,7 +14,7 @@ import {
 import { useFetch } from '@/hooks';
 import { useApp } from '@/context';
 import { playtestServices } from '@/services';
-import { PRECONS, TEXT, CARDS } from '@/constants';
+import { PRECONS, TEXT, CARDS, SCORE } from '@/constants';
 
 const Title = ({ isPrecon }) => {
   return (
@@ -69,7 +69,7 @@ const PlaytestReportForm = ({ id, setIsHotkeysDisabled, isPrecon = false }) => {
 
   useEffect(() => {
     if (dataValue) {
-      setScore(dataValue.score);
+      setScore(dataValue[SCORE]);
       setText(dataValue[TEXT]);
       setIsPlayed(!!dataValue.isPlayed);
     }
@@ -83,8 +83,8 @@ const PlaytestReportForm = ({ id, setIsHotkeysDisabled, isPrecon = false }) => {
     playtestServices.submitReport(
       id,
       {
-        text: t,
-        score: s,
+        [TEXT]: t,
+        [SCORE]: s,
         isPlayed: i,
       },
       isPrecon,

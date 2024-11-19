@@ -9,13 +9,13 @@ import {
   PlaytestScoresChart,
 } from '@/components';
 import { useApp } from '@/context';
-import { NAME } from '@/constants';
+import { SCORE, NAME } from '@/constants';
 
 const PlaytestReportsAllCardOrPrecon = ({ product, isPrecon, report, withHr, maxSameScore }) => {
   const { isMobile } = useApp();
 
   const q = report && Object.keys(report).length;
-  const score = report && Object.values(report).reduce((acc, value) => acc + value.score, 0) / q;
+  const score = report && Object.values(report).reduce((acc, value) => acc + value[SCORE], 0) / q;
   const scoreRounded = Math.round(score * 10) / 10;
   const scoreRoundedHalf = Math.round(score * 2) / 2;
 

@@ -3,7 +3,7 @@ import EyeFill from '@/assets/images/icons/eye-fill.svg?react';
 import EyeSlashFill from '@/assets/images/icons/eye-slash-fill.svg?react';
 import { Hr, PlaytestScores } from '@/components';
 import { useApp } from '@/context';
-import { TEXT } from '@/constants';
+import { SCORE, TEXT } from '@/constants';
 
 const Report = ({ id, text, score, isPlayed }) => {
   const { hidePlaytestNames, isMobile } = useApp();
@@ -49,14 +49,14 @@ const PlaytestReportEntry = ({ value }) => {
     <div className="flex basis-full flex-col gap-4">
       {Object.keys(value)
         .sort((a, b) => value[a][TEXT] < value[b][TEXT])
-        .sort((a, b) => value[a].score < value[b].score)
+        .sort((a, b) => value[a][SCORE] < value[b][SCORE])
         .map((id, idx) => {
           return (
             <div key={id} className="flex flex-col gap-2 sm:gap-3 print:break-inside-avoid">
               <Report
                 id={id}
                 text={value[id][TEXT]}
-                score={value[id].score}
+                score={value[id][SCORE]}
                 isPlayed={value[id].isPlayed}
               />
               {idx + 1 < Object.keys(value).length && <Hr />}

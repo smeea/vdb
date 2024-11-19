@@ -11,7 +11,7 @@ import {
 } from '@/components';
 import { useApp } from '@/context';
 import { playtestServices } from '@/services';
-import { TEXT, NAME, ID } from '@/constants';
+import { SCORE, TEXT, NAME, ID } from '@/constants';
 
 const PlaytestReportsOneButton = ({ value, isPrecon = false }) => {
   const { isMobile, isDesktop } = useApp();
@@ -23,7 +23,7 @@ const PlaytestReportsOneButton = ({ value, isPrecon = false }) => {
     let exportText = '';
     Object.keys(result).forEach((id, idx) => {
       exportText += `User: <${id}>\n`;
-      exportText += `Score: ${result[id].score}\n`;
+      exportText += `Score: ${result[id][SCORE]}\n`;
       exportText += `${result[id][TEXT]}\n`;
       if (idx + 1 < Object.keys(result).length) {
         exportText += '\n-----\n\n';

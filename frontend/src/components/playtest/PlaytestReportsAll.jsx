@@ -31,6 +31,7 @@ import {
   PRECONS,
   TEXT,
   XLSX,
+  SCORE,
 } from '@/constants';
 
 const PlaytestReportsAll = () => {
@@ -106,7 +107,7 @@ const PlaytestReportsAll = () => {
                 if (reports[id][user]) exportText += `${reports[id][user]}\n`;
                 break;
               default:
-                exportText += `Score: ${reports[id][user].score}\n`;
+                exportText += `Score: ${reports[id][user][SCORE]}\n`;
                 exportText += `Seen in Play: ${reports[id][user].isPlayed ? 'Yes' : 'No'}\n`;
                 if (reports[id][user][TEXT]) exportText += `${reports[id][user][TEXT]}\n`;
             }
@@ -140,7 +141,7 @@ const PlaytestReportsAll = () => {
   const getMaxReportsSameScore = (data) => {
     return Object.entries(data).reduce((acc, value) => {
       const scoresDistribution = Object.values(value[1]).reduce((acc2, value2) => {
-        acc2[value2.score - 1] += 1;
+        acc2[value2[SCORE] - 1] += 1;
         return acc2;
       }, Array(10).fill(0));
 

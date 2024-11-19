@@ -27,6 +27,7 @@ import {
   STAR,
   TRAITS,
   TYPE,
+  SCORE,
 } from '@/constants';
 
 const useFiltersDecks = (decks = {}) => {
@@ -60,21 +61,21 @@ const missingRank = (filter, deck) => {
 
   if (from) {
     if (from.includes('%')) {
-      if (deck.score[RANK] > (deck.score[PLAYERS] * from.split('%')[0]) / 100) {
+      if (deck[SCORE][RANK] > (deck[SCORE][PLAYERS] * from.split('%')[0]) / 100) {
         miss = true;
       }
     } else {
-      if (deck.score[RANK] > from) miss = true;
+      if (deck[SCORE][RANK] > from) miss = true;
     }
   }
 
   if (to) {
     if (to.includes('%')) {
-      if (deck.score[RANK] < (deck.score[PLAYERS] * to.split('%')[0]) / 100) {
+      if (deck[SCORE][RANK] < (deck[SCORE][PLAYERS] * to.split('%')[0]) / 100) {
         miss = true;
       }
     } else {
-      if (deck.score[RANK] < to) miss = true;
+      if (deck[SCORE][RANK] < to) miss = true;
     }
   }
 

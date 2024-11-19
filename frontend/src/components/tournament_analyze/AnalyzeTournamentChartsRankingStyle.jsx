@@ -40,6 +40,7 @@ const AnalyzeTournamentChartsRankingStyle = ({ info, decks, searchResults }) => 
     });
 
     Object.values(decks).forEach((deck) => {
+      console.log(deck);
       const position = info[PLAYERS] - deck[SCORE][RANK];
       const inSearch = Object.values(searchResults).some((d) => d[AUTHOR] === deck[AUTHOR]);
       const def = {

@@ -6,27 +6,27 @@ import { TITLE, TEXT, LIMITED, GROUPS, BANNED, LEGAL, PLAYTEST } from '@/constan
 const Warning = ({ type, value = 'WARNING', title = '' }) => {
   const types = {
     [GROUPS]: {
-      text: 'GROUPS',
-      title: `Bad Groups`,
+      [TEXT]: 'GROUPS',
+      [TITLE]: 'Bad Groups',
     },
     [BANNED]: {
-      text: 'BANNED',
-      title: 'Banned Cards',
+      [TEXT]: 'BANNED',
+      [TITLE]: 'Banned Cards',
       icon: <ResultLegalIcon type={BANNED} value={BANNED} className="flex" />,
     },
     [PLAYTEST]: {
-      text: 'PLAYTEST',
-      title: 'Playtest Cards',
+      [TEXT]: 'PLAYTEST',
+      [TITLE]: 'Playtest Cards',
       icon: <ResultLegalIcon type={PLAYTEST} value={PLAYTEST} className="flex" />,
     },
     [LEGAL]: {
-      text: 'LEGAL',
-      title: `Not Tournament Legal until ${value}`,
+      [TEXT]: 'LEGAL',
+      [TITLE]: `Not Tournament Legal until ${value}`,
       icon: <ResultLegalIcon type={LEGAL} value={value} className="flex" />,
     },
     [LIMITED]: {
-      text: 'LIMITED',
-      title: 'Cards Excluded in Limited Format',
+      [TEXT]: 'LIMITED',
+      [TITLE]: 'Cards Excluded in Limited Format',
     },
   };
 

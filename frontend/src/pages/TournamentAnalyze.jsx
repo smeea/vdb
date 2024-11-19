@@ -42,6 +42,7 @@ import {
   ROUNDS,
   TAGS,
   VP,
+  SCORE,
 } from '@/constants';
 
 const TESTERS = ['1', 'crauseon'];
@@ -139,7 +140,7 @@ const TournamentAnalyze = () => {
 
     dataInfo.forEach((n) => {
       const array = n.split(',');
-      if (array[0] === 'Number of Players:') totalPlayers = array[1];
+      if (array[0] === 'Number of Players:') totalPlayers = parseInt(array[1]);
       if (array[0] === 'Number of Rounds (including final):') totalRounds = array[1];
       if (array[0] === 'Number of Event Matches:') totalMatches = array[1];
       if (array[0] === 'Event Name:') event = array[1];
@@ -147,11 +148,14 @@ const TournamentAnalyze = () => {
       if (array[0] === 'City:') location = array[1];
     });
 
+    const archonIds = [];
+
     dataScores.forEach((n) => {
       const array = n.split(',');
       const veknId = parseInt(array[4]);
       const playerNumber = parseInt(array[0]);
       if (!veknId) return;
+      archonIds.push(veknId);
 
       const rank =
         array[20] == 'DQ'
@@ -174,7 +178,7 @@ const TournamentAnalyze = () => {
 
       if (tempDecks[veknId]) {
         reportedRanks.push(score[RANK]);
-        tempDecks[veknId].score = score;
+        tempDecks[veknId][SCORE] = score;
       }
 
       if (score[RANK] > Math.ceil(totalPlayers / 2)) {
@@ -183,6 +187,10 @@ const TournamentAnalyze = () => {
       }
       totalGw += score[GW];
       totalVp += score[VP];
+    });
+
+    Object.keys(tempDecks).forEach((deckid) => {
+      if (!archonIds.includes(parseInt(deckid))) console.log(`Deck ${deckid} is not in Archon`);
     });
 
     let medianReportedRank;
