@@ -28,7 +28,7 @@ const BubbleChart = ({ data, name, width, titleWidth, refLine }) => {
       <ZAxis dataKey={VALUE} range={[0, 85]} />
       <ReferenceLine x={refLine} strokeWidth={2} stroke="#ff00aa" />
       <Tooltip
-        cursor={null}
+        cursor={false}
         position={{ x: 0, y: 45 }}
         wrapperStyle={{ zIndex: 100 }}
         contentStyle={{

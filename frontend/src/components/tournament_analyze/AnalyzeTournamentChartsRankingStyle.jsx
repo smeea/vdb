@@ -21,6 +21,8 @@ import {
   SCORE,
   CLAN,
   IN_SEARCH,
+  INDEX,
+  VALUE,
 } from '@/constants';
 
 const AnalyzeTournamentChartsRankingStyle = ({ info, decks, searchResults }) => {
@@ -33,7 +35,7 @@ const AnalyzeTournamentChartsRankingStyle = ({ info, decks, searchResults }) => 
     allowedTags.forEach((s) => {
       d[s] = [];
       for (let i = 0; i < info[PLAYERS]; i++) {
-        d[s].push({ index: -1, value: 0, rank: info[PLAYERS] - i });
+        d[s].push({ [INDEX]: -1, [VALUE]: 0, [RANK]: info[PLAYERS] - i });
       }
     });
 
@@ -47,7 +49,7 @@ const AnalyzeTournamentChartsRankingStyle = ({ info, decks, searchResults }) => 
         [TAGS]: deck[TAGS],
         [IN_SEARCH]: inSearch,
         [RANK]: deck[SCORE][RANK],
-        index: -1,
+        [INDEX]: -1,
       };
 
       deck[TAGS].superior
@@ -55,7 +57,7 @@ const AnalyzeTournamentChartsRankingStyle = ({ info, decks, searchResults }) => 
         .forEach((t) => {
           d[t][position] = {
             ...def,
-            value: 1,
+            [VALUE]: 1,
           };
         });
       deck[TAGS].base
@@ -63,7 +65,7 @@ const AnalyzeTournamentChartsRankingStyle = ({ info, decks, searchResults }) => 
         .forEach((t) => {
           d[t][position] = {
             ...def,
-            value: 0.55,
+            [VALUE]: 0.55,
           };
         });
     });

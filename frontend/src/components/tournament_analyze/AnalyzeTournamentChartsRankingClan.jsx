@@ -14,6 +14,8 @@ import {
   MULTI,
   ANTITRIBU,
   TAGS,
+  VALUE,
+  INDEX,
 } from '@/constants';
 
 const AnalyzeTournamentChartsRankingClan = ({ info, decks, searchResults }) => {
@@ -29,7 +31,7 @@ const AnalyzeTournamentChartsRankingClan = ({ info, decks, searchResults }) => {
       if (!d[clan]) {
         d[clan] = [];
         for (let i = 0; i < info[PLAYERS]; i++) {
-          d[clan].push({ index: -1, value: 0, rank: info[PLAYERS] - i });
+          d[clan].push({ [INDEX]: -1, [VALUE]: 0, [RANK]: info[PLAYERS] - i });
         }
       }
 
@@ -39,8 +41,8 @@ const AnalyzeTournamentChartsRankingClan = ({ info, decks, searchResults }) => {
         [LIBRARY]: deck[LIBRARY],
         [TAGS]: deck[TAGS],
         [IN_SEARCH]: inSearch,
-        index: -1,
-        value: 1,
+        [INDEX]: -1,
+        [VALUE]: 1,
         [RANK]: deck[SCORE][RANK],
       };
     });
@@ -53,7 +55,7 @@ const AnalyzeTournamentChartsRankingClan = ({ info, decks, searchResults }) => {
       {Object.keys(data)
         .toSorted(byName)
         .map((s) => {
-          const clan = isMobile && s.includes(ANTITRIBU) ? '!' + s.replace(` ${ANTITRIBU}`, '') : s;
+          const clan = isMobile && s.includes(ANTITRIBU) ? `!${s.replace(` ${ANTITRIBU}`, '')}` : s;
 
           return (
             <BubbleChart
