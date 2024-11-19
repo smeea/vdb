@@ -267,9 +267,7 @@ const haveTraits = (traits, card, traitsRegexMap) => {
 
 const CryptTraitsRegexMap = {
   [ENTER_COMBAT]: (card) =>
-    '(he|she|it|they|' +
-    card[NAME].match(/^\S+/i)[0].replace(/,/, '') +
-    ') (can|may)( .* to)? enter combat',
+    `(he|she|it|they|${card[NAME].match(/^\S+/i)[0].replace(/,/, '')}) (can|may|attempt)(?! ?not)(.* to)? enter combat`,
   [PRESS]: () => /gets (.*)?optional press/i,
   [BLEED_1]: () => /[:.] \+[1-9] bleed./i,
   [STRENGTH_1]: () => /[:.] \+[1-9] strength./i,

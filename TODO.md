@@ -1,6 +1,5 @@
 # FIX
 - Review TWDA radar: remove swarm, maybe replace?
-- Talbot enter combat filter
 
 # FEATURES
 - Card q-ty change in autocompletion
@@ -21,3 +20,4 @@
 - Migrate from isWidth to container queries
 - Migrate forms to useFormStatus+useActionState
 - Remove legacy polyfills when Safari adopts groupBy
+- Refactor useTags and useFilter traits
