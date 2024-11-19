@@ -21,6 +21,7 @@ import {
   TWD_HINTS,
   TYPE,
   TYPE_MASTER,
+  GROUP,
 } from '@/constants';
 import cardtypeSortedFull from '@/assets/data/cardtypeSortedFull.json';
 
@@ -102,7 +103,7 @@ const getCryptText = (crypt) => {
     result += `${' '.repeat(capacitySpaces)}${c[CAPACITY]} `;
     result += `${disciplines}${' '.repeat(disSpaces)}`;
     result += `${c[TITLE]}${' '.repeat(titleSpaces)}`;
-    result += `${c[CLAN]}:${c['Group']}\n`;
+    result += `${c[CLAN]}:${c[GROUP]}\n`;
   });
 
   return result;
@@ -178,7 +179,7 @@ const exportJol = (deck) => {
       name += ' (ADV)';
     }
     if (card.c['New']) {
-      name += ` (G${card.c['Group']})`;
+      name += ` (G${card.c[GROUP]})`;
     }
     result += `${card.q}x${name}\n`;
   });
@@ -211,7 +212,7 @@ const exportLackey = (deck) => {
       name += ' (ADV)';
     }
     if (card.c['New']) {
-      name += ` (G${card.c['Group']})`;
+      name += ` (G${card.c[GROUP]})`;
     }
 
     result += `${card.q}${' '.repeat(spaces)}`;
