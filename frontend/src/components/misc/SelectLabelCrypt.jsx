@@ -8,7 +8,7 @@ import {
   ResultClanImage,
 } from '@/components';
 import { useApp, inventoryStore } from '@/context';
-import { CRYPT, GROUP, CLAN, DISCIPLINES } from '@/constants';
+import { CRYPT, GROUP, CLAN, DISCIPLINES, ANY, X } from '@/constants';
 
 const SelectLabelCrypt = ({ cardid, inInventory }) => {
   const { cryptCardBase } = useApp();
@@ -18,7 +18,7 @@ const SelectLabelCrypt = ({ cardid, inInventory }) => {
   return (
     <>
       <div className="flex items-center justify-between">
-        <div className="flex items-center gap-1">
+        <div className="flex items-center gap-1.5">
           {inInventory && (
             <div
               className={twMerge(
@@ -30,9 +30,17 @@ const SelectLabelCrypt = ({ cardid, inInventory }) => {
               {inventoryCrypt[cardid]?.q}
             </div>
           )}
-          <ResultCryptCapacity card={card} />
+          <div className="min-w-[24px]">
+            <ResultCryptCapacity card={card} />
+          </div>
           <ResultName card={card} isColored={false} />
-          <div className="text-midGray dark:text-midGrayDark">[G{card[GROUP]}]</div>
+          <div className="inline text-midGray dark:text-midGrayDark">
+            [G
+            <div className="inline text-fgPrimary dark:text-fgPrimaryDark">
+              {card[GROUP] == ANY ? X : card[GROUP]}
+            </div>
+            ]
+          </div>
           <ResultClanImage value={card[CLAN]} />
         </div>
         <div className="flex whitespace-nowrap">

@@ -20,7 +20,7 @@ const SelectLabelLibrary = ({ cardid, inInventory }) => {
   return (
     <>
       <div className="flex items-center justify-between">
-        <div className="flex items-center gap-1">
+        <div className="flex items-center gap-1.5">
           {inInventory && (
             <div
               className={twMerge(
@@ -32,7 +32,9 @@ const SelectLabelLibrary = ({ cardid, inInventory }) => {
               {inventoryLibrary[cardid]?.q}
             </div>
           )}
-          <ResultLibraryTypeImage value={card[TYPE]} />
+          <div className="min-w-[24px]">
+            <ResultLibraryTypeImage value={card[TYPE]} />
+          </div>
           <ResultName card={card} isColored={false} />
         </div>
         <div className="flex items-center gap-2">
