@@ -26,7 +26,7 @@ const ResultCryptTableRowCommon = ({
   shouldShowModal,
   isBanned,
 }) => {
-  const { isMobile, isNarrow, isWide } = useApp();
+  const { isMobile, isNarrow, isDesktop, isWide } = useApp();
   const ALIGN_DISCIPLINES_THRESHOLD = isMobile ? 13 : 17;
 
   return (
@@ -60,7 +60,7 @@ const ResultCryptTableRowCommon = ({
           </div>
         </ConditionalTooltip>
       </td>
-      {isWide && !inSearch ? (
+      {((!isNarrow && !isDesktop) || isWide) && !inSearch ? (
         <>
           <td className="min-w-[25px]" onClick={() => handleClick(card)}>
             <div className="flex justify-center">
