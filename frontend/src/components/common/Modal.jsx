@@ -5,16 +5,16 @@ import { ButtonCloseModal, ButtonFloatClose } from '@/components';
 
 const Modal = ({
   centered = false,
-  className,
   children,
+  className,
   handleClose,
   initialFocus,
   noBorder = false,
-  withMobileMargin = false,
-  noPadding = false,
   noClose = false,
+  noPadding = false,
   size = 'md',
   title,
+  withMobileMargin = false,
 }) => {
   const widthClass = {
     sm: 'min-w-full sm:min-w-[500px] sm:max-w-[550px]',

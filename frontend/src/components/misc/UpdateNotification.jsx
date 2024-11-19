@@ -19,7 +19,12 @@ const UpdateNotification = () => {
   return (
     <>
       {update && (
-        <Modal handleClose={() => setUpdate(null)} title="Update available!" centered>
+        <Modal
+          handleClose={() => setUpdate(null)}
+          title="Update available!"
+          centered
+          withMobileMargin
+        >
           <div className="flex flex-col gap-4 sm:gap-5">
             <div className="flex flex-col gap-1.5">
               <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">

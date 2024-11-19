@@ -1,5 +1,6 @@
 # FIX
 - Review TWDA radar: remove swarm, maybe replace?
+- Talbot enter combat filter
 
 # FEATURES
 - Card q-ty change in autocompletion
