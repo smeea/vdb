@@ -22,3 +22,4 @@ export { default as useSwipe } from './useSwipe.js';
 export { default as useTags } from './useTags.js';
 export { default as useTimeout } from './useTimeout.js';
 export { default as useWindowSize } from './useWindowSize.js';
+export * from './traitsRegexMaps.js';

@@ -33,6 +33,7 @@ import {
   VOTE,
   VOTES_TITLE,
 } from '@/constants';
+import { CryptTraitsRegexMap, LibraryTraitsRegexMap } from '@/hooks/traitsRegexMaps';
 
 const useTags = (crypt, library) => {
   const deckTags = {
@@ -263,34 +264,4 @@ const haveTraits = (traits, card, traitsRegexMap) => {
     const regex = traitsRegexMap[trait] ? traitsRegexMap[trait](card) : trait;
     return RegExp(regex, 'i').test(card[TEXT]);
   });
-};
-
-const CryptTraitsRegexMap = {
-  [ENTER_COMBAT]: (card) =>
-    `(he|she|it|they|${card[NAME].match(/^\S+/i)[0].replace(/,/, '')}) (can|may|attempt)(?! ?not)(.* to)? enter combat`,
-  [PRESS]: () => /gets (.*)?optional press/i,
-  [BLEED_1]: () => /[:.] \+[1-9] bleed./i,
-  [STRENGTH_1]: () => /[:.] \+[1-9] strength./i,
-  [INTERCEPT_1]: () => /[:.] \+[1-9] intercept./i,
-  [STEALTH_1]: () =>
-    /([:.] \+[1-9] stealth.|gets \+[1-9] stealth on each of (his|her|they) actions)/i,
-  [UNLOCK]: () => /(?!not )unlock(?! phase|ed)|wakes/i,
-  [ADDITIONAL_STRIKE]: () => /additional strike/i,
-  [AGGRAVATED]: () => /(?:[^non-])aggravated/i,
-  [PREVENT]: () => /(?:[^un])prevent(?:[^able])/i,
-};
-
-const LibraryTraitsRegexMap = {
-  [ENTER_COMBAT]: () => /enter combat/i,
-  [INTERCEPT]: () =>
-    /-[0-9]+ stealth(?! \(d\))(?! \w)(?! action)|\+[0-9]+ intercept|gets -([0-9]|x)+ stealth|stealth to 0/i,
-  [STEALTH]: () => /\+[0-9]+ stealth(?! \(d\))(?! \w)(?! action)|-[0-9]+ intercept/i,
-  [BLEED]: () => /\+[0-9]+ bleed/i,
-  [STRENGTH]: () => /\+[0-9]+ strength/i,
-  [EMBRACE]: () => /becomes a.*(\d[ -]|same.*)capacity/i,
-  [UNLOCK]: () => /(?!not )unlock(?! phase|ed)|wakes/i,
-  [VOTES_TITLE]: () => /\+. vote|additional vote|represent the .* title/i,
-  [AGGRAVATED]: () => /(?:[^non-])aggravated/i,
-  [PREVENT]: () => /(?:[^un])prevent(?:[^able])/i,
-  [PUT_BLOOD]: () => /add .* blood (from the blood bank )?to .* in your uncontrolled region/i,
 };

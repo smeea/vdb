@@ -4,11 +4,9 @@
 // if the filter is present and the card dont match it the method returns true meaning the criteria is missing.
 // if some criteria is missing the main method return false and exits that card check.
 import {
-  ADDITIONAL_STRIKE,
   ADV,
   ADVANCEMENT,
   AGE,
-  AGGRAVATED,
   AKA,
   AND,
   ARCHBISHOP,
@@ -18,12 +16,7 @@ import {
   BARON,
   BCP,
   BISHOP,
-  BLACK_HAND,
-  BLEED,
-  BLEED_1,
-  BLEED_2,
   BLOOD,
-  BOUNCE_BLEED,
   BURN,
   CAPACITY,
   CARDINAL,
@@ -31,19 +24,13 @@ import {
   DATE,
   DISCIPLINE,
   DISCIPLINES,
-  EMBRACE,
-  ENTER_COMBAT,
   EQ,
   FIRST,
-  FLIGHT,
   GE,
   GROUP,
   ID,
   IMPERATOR,
-  INFERNAL,
   INNER_CIRCLE,
-  INTERCEPT,
-  INTERCEPT_1,
   JUSTICAR,
   KHOLO,
   LE,
@@ -62,48 +49,32 @@ import {
   OR,
   OR_NEWER,
   OR_OLDER,
-  PATH_CAINE,
-  PATH_CATHARI,
-  PATH_DEATH,
-  PATH_POWER,
   PLAYTEST,
   POOL,
   PRECON,
-  PREVENT,
-  PRESS,
   PRIMOGEN,
   PRINCE,
   PRINT,
   PRISCUS,
   PROMO,
-  PUT_BLOOD,
-  REDUCE_BLEED,
-  RED_LIST,
   REGENT,
   REPRINT,
   REQUIREMENT,
   SECT,
-  SERAPH,
   SET,
-  STEALTH,
-  STEALTH_1,
-  STRENGTH,
-  STRENGTH_1,
-  STRENGTH_2,
   TEXT,
   TITLE,
   TITLES,
   TRAITS,
   TWD,
   TYPE,
-  UNLOCK,
   VOTES,
-  VOTES_TITLE,
   VOTE_1,
   VOTE_2,
   X,
 } from '@/constants';
 import { getIsPlaytest } from '@/utils';
+import { CryptTraitsRegexMap, LibraryTraitsRegexMap } from '@/hooks/traitsRegexMaps';
 import sects from '@/assets/data/sectsList.json';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 
@@ -271,54 +242,6 @@ const missingTrait = (trait, card, traitsRegexMap) => {
         card[TEXT],
       );
   }
-};
-
-const CryptTraitsRegexMap = {
-  [ENTER_COMBAT]: (card) =>
-    `(he|she|it|they|${card[NAME].match(/^\S+/i)[0].replace(/,/, '')}) (can|may|attempt)(?! ?not)(.* to)? enter combat`,
-  [PRESS]: () => /gets (.*)?optional press/i,
-  [BLEED_1]: () => /[:.] \+[1-9] bleed./i,
-  [BLEED_2]: () => /[:.] \+[2-9] bleed./i,
-  [STRENGTH_1]: () => /[:.] \+[1-9] strength./i,
-  [STRENGTH_2]: () => /[:.] \+[2-9] strength./i,
-  [INTERCEPT_1]: () => /[:.] \+[1-9] intercept./i,
-  [STEALTH_1]: () =>
-    /([:.] \+[1-9] stealth.|gets \+[1-9] stealth on each of (his|her|they) actions)/i,
-  [UNLOCK]: () => /(?!not )unlock(?! phase|ed)|wakes/i,
-  [BLACK_HAND]: () => /black hand[ .:]/i,
-  [SERAPH]: () => /seraph[.:]/i,
-  [INFERNAL]: () => /infernal[.:]/i,
-  [RED_LIST]: () => /red list[.:]/i,
-  [FLIGHT]: () => /\[flight\]\./i,
-  [ADDITIONAL_STRIKE]: () => /additional strike/i,
-  [AGGRAVATED]: () => /(?:[^non-])aggravated/i,
-  [PREVENT]: () => /(?:[^un])prevent(?:[^able])/i,
-  [PATH_CAINE]: () => /Path of Caine/i,
-  [PATH_CATHARI]: () => /Path of Cathari/i,
-  [PATH_DEATH]: () => /Path of Death/i,
-  [PATH_POWER]: () => /Path of Power/i,
-};
-
-const LibraryTraitsRegexMap = {
-  [INTERCEPT]: () =>
-    /-[0-9]+ stealth(?! \(d\))(?! \w)(?! action)|\+[0-9]+ intercept|gets -([0-9]|x)+ stealth|stealth to 0/i,
-  [STEALTH]: () => /\+[0-9]+ stealth(?! \(d\))(?! \w)(?! action)|-[0-9]+ intercept/i,
-  [BLEED]: () => /\+([0-9]+|X) bleed/i,
-  [STRENGTH]: () => /\+[0-9]+ strength/i,
-  [EMBRACE]: () => /becomes a.*(\d[ -]|same.*)capacity/i,
-  [BOUNCE_BLEED]: () => /change the target of the bleed|is now bleeding/i,
-  [UNLOCK]: () => /(?!not )unlock(?! phase|ed)|wakes/i,
-  [VOTES_TITLE]: () =>
-    /receive .* title|gains . vote|\+. vote|additional vote|represent the .* title/i,
-  [REDUCE_BLEED]: () => /reduce (a|the)(.*) bleed (amount)?|bleed amount is reduced/i,
-  [AGGRAVATED]: () => /(?:[^non-])aggravated/i,
-  [PREVENT]: () => /(?:[^un])prevent(?:[^able])/i,
-  [PUT_BLOOD]: () =>
-    /(move|add) .* blood (from the blood bank )?to .* in your uncontrolled region/i,
-  [PATH_CAINE]: () => /Path of Caine/i,
-  [PATH_CATHARI]: () => /Path of Cathari/i,
-  [PATH_DEATH]: () => /Path of Death/i,
-  [PATH_POWER]: () => /Path of Power/i,
 };
 
 const missingTitleCrypt = (filter, card) => {
