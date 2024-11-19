@@ -261,7 +261,7 @@ const TournamentAnalyze = () => {
       </Header>
       <FlexGapped className="flex-col">
         {!(info && decks) && (
-          <div className="flex h-[70vh] place-items-center justify-center max-sm:px-2">
+          <div className="flex min-h-[70vh] place-items-center justify-center max-sm:px-2">
             <div className="flex flex-col gap-2">
               <AnalyzeLoadPreparedButtons
                 setTempDecks={setTempDecks}

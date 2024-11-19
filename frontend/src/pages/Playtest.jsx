@@ -11,7 +11,7 @@ const Playtest = () => {
 
   return (
     <div className="account-container mx-auto grid place-items-center sm:h-[90vh]">
-      <div className="flex w-full flex-col gap-8">
+      <div className="flex w-full flex-col sm:gap-8">
         <div className="mb-3 flex w-full items-center gap-2 border border-borderSecondary bg-bgSecondary p-2 font-bold text-fgSecondary dark:border-borderSecondaryDark dark:bg-bgSecondaryDark dark:text-fgSecondaryDark sm:mb-0">
           <div className="flex min-w-[20px] justify-center">
             <PersonFill width="20" height="20" viewBox="0 0 16 16" />

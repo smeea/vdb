@@ -1,5 +1,6 @@
 # FIX
 - Review TWDA radar: remove swarm, maybe replace?
+- any in group card autocompletion
 
 # FEATURES
 - Card q-ty change in autocompletion
