@@ -45,6 +45,7 @@ import {
   IS_BRANCHES,
   IS_PUBLIC,
   IS_ANONYMOUS,
+  SHOW,
 } from '@/constants';
 const IS_FROM_URL = 'isFromUrl';
 
@@ -310,7 +311,7 @@ const Decks = () => {
       {showMissing && <DeckMissingModalWrapper deck={deck} setShow={setShowMissing} />}
       {showProxySelect && <DeckProxySelectModal setShow={setShowProxySelect} deck={deck} />}
       {showImportAmaranth && <DeckImportAmaranth setShow={setShowImportAmaranth} />}
-      {showImportText.show && (
+      {showImportText[SHOW] && (
         <DeckImportText
           isAnonymous={showImportText[IS_ANONYMOUS]}
           setShow={setShowImportText}

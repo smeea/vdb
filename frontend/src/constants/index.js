@@ -209,6 +209,7 @@ export const SECT = 'sect';
 export const SERAPH = 'seraph';
 export const SET = 'set';
 export const SETS = 'sets';
+export const SHOW = 'show';
 export const SOFT = 'soft';
 export const SRC = 'src';
 export const STAR = 'star';

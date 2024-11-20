@@ -4,7 +4,7 @@ import { ErrorOverlay, DeckImportButton } from '@/components';
 import { useApp, deckAdd } from '@/context';
 import { useDeckImport } from '@/hooks';
 import { formatServices, deckServices } from '@/services';
-import { IS_ANONYMOUS, NAME, AUTHOR, CRYPT, LIBRARY, DECKID, BAD_CARDS } from '@/constants';
+import { SHOW, IS_ANONYMOUS, NAME, AUTHOR, CRYPT, LIBRARY, DECKID, BAD_CARDS } from '@/constants';
 
 const DeckImport = ({
   isOnlyNew,
@@ -32,7 +32,7 @@ const DeckImport = ({
   };
 
   const handleOpenTextModal = (isAnonymous) => {
-    setShowImportText({ [IS_ANONYMOUS]: isAnonymous, show: true });
+    setShowImportText({ [IS_ANONYMOUS]: isAnonymous, [SHOW]: true });
     setShowMenuButtons(false);
     setShowFloatingButtons(false);
   };
