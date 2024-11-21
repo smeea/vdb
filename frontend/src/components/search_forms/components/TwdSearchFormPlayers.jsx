@@ -19,7 +19,7 @@ const TwdSearchFormPlayers = ({ value, onChange }) => {
       });
     }
 
-    if (i.toLowerCase === ANY || value.from === ANY || parseInt(i) > value.from) {
+    if (i.toLowerCase() == ANY || value.from === ANY || parseInt(i) > value.from) {
       toOptions.push({
         value: i.toLowerCase(),
         name: TO,

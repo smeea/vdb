@@ -20,7 +20,7 @@ const AnalyzeSearchFormRank = ({ value, onChange }) => {
       fromOptions.push({
         value: i.toLowerCase(),
         name: FROM,
-        label: <div className="flex justify-center">{i.toLowerCase == ANY ? i : `Top ${i}`}</div>,
+        label: <div className="flex justify-center">{i.toLowerCase() == ANY ? i : `Top ${i}`}</div>,
       });
     }
 
