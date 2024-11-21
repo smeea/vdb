@@ -109,11 +109,6 @@ const TournamentAnalyze = () => {
     const { read, utils } = await import('xlsx');
     const wb = read(file);
 
-    const wsInfo = wb.Sheets['Tournament Info'];
-    const dataInfo = utils.sheet_to_csv(wsInfo).split('\n');
-    const wsScores = wb.Sheets['Methuselahs'];
-    const dataScores = utils.sheet_to_csv(wsScores).split('\n');
-
     const getFinalPlace = (playerNumber) => {
       const wsFinalTable = wb.Sheets['Final Round'];
       const dataFinalTable = utils.sheet_to_csv(wsFinalTable).split('\n');
@@ -126,6 +121,8 @@ const TournamentAnalyze = () => {
       return parseInt(finalPlace);
     };
 
+    const wsInfo = wb.Sheets['Tournament Info'];
+    const dataInfo = utils.sheet_to_csv(wsInfo).split('\n');
     let totalPlayers = 0;
     let totalRounds = 0;
     let totalMatches = 0;
@@ -148,7 +145,52 @@ const TournamentAnalyze = () => {
       if (array[0] === 'City:') location = array[1];
     });
 
+    const wsScores = wb.Sheets['Methuselahs'];
+
+    Object.keys(wsScores).forEach((k) => {
+      [
+        'D', // 3
+        'F', // 5
+        'G', // 6
+        'J', // 9
+        'K', // 10
+        'L', // 11
+        'M', // 12
+        'N', // 13
+        'O', // 14
+        'P', // 15
+        'Q', // 16
+        'S', // 18
+        'T', // 19
+        'V', // 21
+        'W', // 22
+        'X', // 23
+        'Y', // 24
+        'Z', // 25
+        'AA', // 26
+        'AB', // 27
+      ].forEach((col) => {
+        if (k.includes(col)) {
+          delete wsScores[k];
+        }
+      });
+    });
+
+    let maxA = 1;
+    Object.keys(wsScores).forEach((k) => {
+      ['f', 'r', 'h'].forEach((i) => delete wsScores[k][i]);
+      if (k.includes('A')) {
+        const v = parseInt(k.replace('A', ''));
+        if (v > maxA) maxA = v;
+      }
+    });
+    wsScores['!ref'] = `A1:AB${maxA}`;
+    delete wsScores['!margins'];
+
+    const dataScores = utils.sheet_to_csv(wsScores).split('\n');
+
     const archonIds = [];
+    const analyzeDecks = { ...tempDecks };
 
     dataScores.forEach((n) => {
       const array = n.split(',');
@@ -178,7 +220,7 @@ const TournamentAnalyze = () => {
 
       if (tempDecks[veknId]) {
         reportedRanks.push(score[RANK]);
-        tempDecks[veknId][SCORE] = score;
+        analyzeDecks[veknId][SCORE] = score;
       }
 
       if (score[RANK] > Math.ceil(totalPlayers / 2)) {
@@ -189,7 +231,7 @@ const TournamentAnalyze = () => {
       totalVp += score[VP];
     });
 
-    Object.keys(tempDecks).forEach((deckid) => {
+    Object.keys(analyzeDecks).forEach((deckid) => {
       if (!archonIds.includes(parseInt(deckid))) console.log(`Deck ${deckid} is not in Archon`);
     });
 
@@ -221,7 +263,7 @@ const TournamentAnalyze = () => {
     };
 
     setAnalyzeInfo(info);
-    setAnalyzeDecks(tempDecks);
+    setAnalyzeDecks(analyzeDecks);
   };
 
   const handleClear = () => {
