@@ -309,9 +309,10 @@ const TournamentAnalyze = () => {
           </div>
         </div>
       </Header>
+      {error && <ErrorMessage>NO DATA AVAILABLE FOR EVENT #{error}</ErrorMessage>}
       <FlexGapped className="flex-col">
         {!(info && decks) && (
-          <div className="flex min-h-[70vh] place-items-center justify-center max-sm:px-2">
+          <div className="flex min-h-[70vh] flex-col place-items-center justify-center max-sm:px-2">
             <div className="flex flex-col gap-2">
               <AnalyzeLoadPreparedButtons
                 setTempDecks={setTempDecks}
@@ -332,11 +333,6 @@ const TournamentAnalyze = () => {
         )}
         <FlexGapped className="max-sm:flex-col">
           <div className="flex basis-9/12 justify-center max-sm:order-last">
-            {error && (
-              <div className="w-full">
-                <ErrorMessage>NO DATA AVAILABLE FOR EVENT #{error}</ErrorMessage>
-              </div>
-            )}
             {decks && info && (
               <AnalyzeTournamentCharts info={info} decks={decks} searchResults={results ?? {}} />
             )}
