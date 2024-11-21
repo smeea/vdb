@@ -8,7 +8,6 @@
 - New layout for old cards or fallback to scans?
 - Non-english images to use webp with fallback image
 - Paypal donations
-- Add EC LCQ
 
 # FEATURES ON HOLD
 - TWD search with % V5-compatibility -> after BCP clarify V5
