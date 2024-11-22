@@ -105,7 +105,7 @@ const TwdCheckInput = ({ deckData, setDeckData }) => {
   return (
     <div className="flex flex-col gap-2">
       <div className="flex gap-2">
-        <div className="pt-[5px] xl:basis-2/12">
+        <div className="basis-2/12 pt-[5px]">
           <div className="flex justify-end">
             <pre className="font-mono text-sm">{fieldNames}</pre>
           </div>
@@ -115,7 +115,7 @@ const TwdCheckInput = ({ deckData, setDeckData }) => {
             </pre>
           </div>
         </div>
-        <div className="xl:basis-10/12">
+        <div className="basis-full">
           <Textarea
             className="font-mono text-sm"
             rows={(window.innerHeight - 215) / 20}
