@@ -20,3 +20,4 @@
 - Migrate from isWidth to container queries
 - Migrate forms to useFormStatus+useActionState
 - Remove legacy polyfills when Safari adopts groupBy
+- Move pseudohooks from hooks to utils

@@ -102,12 +102,12 @@ export const deckUpdate = (deckid, field, value) => {
       }
       break;
     case CARDS:
-      deckStore[DECKS][deckid][CRYPT] = value[CRYPT];
-      deckStore[DECKS][deckid][LIBRARY] = value[LIBRARY];
+      deckStore[DECKS][deckid][CRYPT] = deepClone(value[CRYPT]);
+      deckStore[DECKS][deckid][LIBRARY] = deepClone(value[LIBRARY]);
 
-      if (deckid === deckStore?.deck?.[DECKID]) {
-        deckStore[DECK][CRYPT] = value[CRYPT];
-        deckStore[DECK][LIBRARY] = value[LIBRARY];
+      if (deckid === deckStore?.[DECK]?.[DECKID]) {
+        deckStore[DECK][CRYPT] = deepClone(value[CRYPT]);
+        deckStore[DECK][LIBRARY] = deepClone(value[LIBRARY]);
       }
       break;
     default:

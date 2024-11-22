@@ -9,7 +9,7 @@ const ReviewApplyButton = ({ deck, parentId }) => {
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
 
-  const handleStandard = async () => {
+  const handleClick = async () => {
     const response = await deckUpdate(parentId, CARDS, {
       [CRYPT]: deck[CRYPT],
       [LIBRARY]: deck[LIBRARY],
@@ -30,7 +30,7 @@ const ReviewApplyButton = ({ deck, parentId }) => {
   return (
     <ButtonIconed
       variant={success ? 'success' : error ? 'danger' : isDesktop ? 'secondary' : 'primary'}
-      onClick={handleStandard}
+      onClick={handleClick}
       title="Apply Changes"
       icon={<Check2All width="20" height="20" viewBox="0 0 16 16" />}
       text={success ? 'Applied' : error ? 'Error' : 'Apply Changes'}
