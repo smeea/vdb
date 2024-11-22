@@ -39,7 +39,7 @@ const TwdCardsHistory = () => {
 
         if (value[cardid][DECKID]) {
           if (!players[value[cardid][PLAYER]]) {
-            players[value[cardid][PLAYER]] = { crypt: 0, library: 0 };
+            players[value[cardid][PLAYER]] = { [CRYPT]: 0, [LIBRARY]: 0 };
           }
           if (cardid > 200000) {
             players[value[cardid][PLAYER]][CRYPT] += 1;

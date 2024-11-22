@@ -1,7 +1,7 @@
 import React from 'react';
 import { DeckMissingModal } from '@/components';
 import { useDeckMissing } from '@/hooks';
-import { NAME } from '@/constants';
+import { NAME, CRYPT, LIBRARY } from '@/constants';
 
 const DeckMissingModalWrapper = ({ deck, setShow = { setShow } }) => {
   const { missingCrypt, missingLibrary } = useDeckMissing(deck);
@@ -9,9 +9,9 @@ const DeckMissingModalWrapper = ({ deck, setShow = { setShow } }) => {
   return (
     <DeckMissingModal
       deck={{
-        name: `Missing card for ${deck[NAME]}`,
-        crypt: missingCrypt,
-        library: missingLibrary,
+        [NAME]: `Missing card for ${deck[NAME]}`,
+        [CRYPT]: missingCrypt,
+        [LIBRARY]: missingLibrary,
       }}
       setShow={setShow}
     />

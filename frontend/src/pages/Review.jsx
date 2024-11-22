@@ -142,7 +142,7 @@ const Review = () => {
 
   useEffect(() => {
     if (hash && deckTo) {
-      const deckWithHash = deepClone({ crypt: deckTo[CRYPT], library: deckTo[LIBRARY] });
+      const deckWithHash = deepClone({ [CRYPT]: deckTo[CRYPT], [LIBRARY]: deckTo[LIBRARY] });
 
       hash
         .slice(1)
@@ -162,7 +162,7 @@ const Review = () => {
           }
         });
       if (
-        JSON.stringify({ crypt: deckFrom[CRYPT], library: deckFrom[LIBRARY] }) !=
+        JSON.stringify({ [CRYPT]: deckFrom[CRYPT], [LIBRARY]: deckFrom[LIBRARY] }) !=
         JSON.stringify(deckWithHash)
       ) {
         setDeckFrom((draft) => {

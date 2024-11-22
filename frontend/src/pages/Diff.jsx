@@ -19,7 +19,16 @@ import { useApp, deckStore, setDeck } from '@/context';
 import { useDeck } from '@/hooks';
 import { deckServices } from '@/services';
 import { getIsPlaytest, getIsEditable } from '@/utils';
-import { PUBLIC_PARENT, MASTER, DECKID, BRANCHES, CRYPT, LIBRARY } from '@/constants';
+import {
+  IS_BRANCHES,
+  IS_PUBLIC,
+  PUBLIC_PARENT,
+  MASTER,
+  DECKID,
+  BRANCHES,
+  CRYPT,
+  LIBRARY,
+} from '@/constants';
 
 const Diff = () => {
   const {
@@ -64,10 +73,10 @@ const Diff = () => {
     const cardsData = useDeck(deckData.cards, cryptCardBase, libraryCardBase);
     const d = {
       ...deckData,
-      crypt: cardsData[CRYPT],
-      library: cardsData[LIBRARY],
-      isBranches: !!(deckData[MASTER] || deckData[BRANCHES]?.length > 0),
-      isPublic: !!deckData[PUBLIC_PARENT],
+      [CRYPT]: cardsData[CRYPT],
+      [LIBRARY]: cardsData[LIBRARY],
+      [IS_BRANCHES]: !!(deckData[MASTER] || deckData[BRANCHES]?.length > 0),
+      [IS_PUBLIC]: !!deckData[PUBLIC_PARENT],
     };
 
     addRecentDeck(d);

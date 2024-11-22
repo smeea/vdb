@@ -5,7 +5,7 @@ import Upload from '@/assets/images/icons/upload.svg?react';
 import { Textarea, ButtonIconed, ErrorOverlay } from '@/components';
 import { useApp } from '@/context';
 import { useDeckImport } from '@/hooks';
-import { ID, CRYPT, LIBRARY } from '@/constants';
+import { EVENT, LOCATION, DATE, FORMAT, PLAYERS, DECK, ID, CRYPT, LIBRARY } from '@/constants';
 
 const TwdCheckInput = ({ deckData, setDeckData }) => {
   const { cryptCardBase, libraryCardBase } = useApp();
@@ -37,16 +37,16 @@ const TwdCheckInput = ({ deckData, setDeckData }) => {
 
     const d = await useDeckImport(text, cryptCardBase, libraryCardBase);
     setDeckData({
-      id: id,
-      event: lines[0],
-      location: lines[1],
-      date: lines[2],
-      format: lines[3],
-      players: lines[4],
-      url: url ? url[0] : null,
-      deck: {
-        crypt: d[CRYPT],
-        library: d[LIBRARY],
+      [ID]: id,
+      [EVENT]: lines[0],
+      [LOCATION]: lines[1],
+      [DATE]: lines[2],
+      [FORMAT]: lines[3],
+      [PLAYERS]: lines[4],
+      [URL]: url ? url[0] : null,
+      [DECK]: {
+        [CRYPT]: d[CRYPT],
+        [LIBRARY]: d[LIBRARY],
       },
     });
   };

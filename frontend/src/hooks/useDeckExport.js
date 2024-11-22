@@ -318,7 +318,7 @@ const useDeckExport = (deck, format) => {
       });
     }, {});
 
-  const d = { ...deck, crypt: crypt, library: library };
+  const d = { ...deck, [CRYPT]: crypt, [LIBRARY]: library };
 
   switch (format) {
     case JOL:

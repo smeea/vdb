@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { twMerge } from 'tailwind-merge';
 import Gem from '@/assets/images/icons/gem.svg?react';
 import {
   FlexGapped,
@@ -27,15 +28,13 @@ const DeckMissingModal = ({ setShow, deck, missAllVtes, inInventory }) => {
         <FlexGapped className="max-sm:flex-col">
           <div className="basis-full md:basis-5/9">
             <div
-              className={
-                isMobile || inInventory
-                  ? null
-                  : 'top-[22px] z-10 bg-bgPrimary dark:bg-bgPrimaryDark'
-              }
+              className={twMerge(
+                !(isMobile || inInventory) && 'top-[22px] z-10 bg-bgPrimary dark:bg-bgPrimaryDark',
+              )}
             >
               <DeckCrypt
                 deck={{
-                  crypt: showMissAll ? missAllVtes[CRYPT] : deck[CRYPT],
+                  [CRYPT]: showMissAll ? missAllVtes[CRYPT] : deck[CRYPT],
                 }}
                 inMissing
               />
@@ -44,7 +43,7 @@ const DeckMissingModal = ({ setShow, deck, missAllVtes, inInventory }) => {
           <div className="basis-full md:basis-4/9">
             <DeckLibrary
               deck={{
-                library: showMissAll ? missAllVtes[LIBRARY] : deck[LIBRARY],
+                [LIBRARY]: showMissAll ? missAllVtes[LIBRARY] : deck[LIBRARY],
               }}
               inMissing
             />
@@ -64,9 +63,9 @@ const DeckMissingModal = ({ setShow, deck, missAllVtes, inInventory }) => {
           )}
           <DeckExportButton
             deck={{
-              name: deck[NAME],
-              crypt: showMissAll ? missAllVtes[CRYPT] : deck[CRYPT],
-              library: showMissAll ? missAllVtes[LIBRARY] : deck[LIBRARY],
+              [NAME]: deck[NAME],
+              [CRYPT]: showMissAll ? missAllVtes[CRYPT] : deck[CRYPT],
+              [LIBRARY]: showMissAll ? missAllVtes[LIBRARY] : deck[LIBRARY],
             }}
             inMissing
           />

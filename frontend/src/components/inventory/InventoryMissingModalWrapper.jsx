@@ -71,7 +71,7 @@ const InventoryMissingModalWrapper = ({
         [LIBRARY]: missingLibrary,
         [DECKID]: 'missingInInventory',
       }}
-      missAllVtes={{ crypt: missAllVtesCrypt, library: missAllVtesLibrary }}
+      missAllVtes={{ [CRYPT]: missAllVtesCrypt, [LIBRARY]: missAllVtesLibrary }}
       handleClose={handleClose}
       inInventory
     />
