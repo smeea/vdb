@@ -18,7 +18,7 @@ const DeckRecommendation = ({ setShow, deck }) => {
       method: 'POST',
       json: { [CARDS]: cards },
     },
-    [deck],
+    [],
   );
 
   const crypt = useMemo(() => {
