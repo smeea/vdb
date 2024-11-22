@@ -49,6 +49,7 @@ const ResultModal = ({ card, handleModalCardChange, handleClose, forceInventoryM
       centered
       noBorder
       noPadding
+      noClose
     >
       <div className="relative">
         <div className="max-h-0 max-w-0 opacity-0">

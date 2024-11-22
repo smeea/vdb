@@ -45,26 +45,24 @@ const Modal = ({
               className,
             )}
           >
-            <Dialog.Title className="flex items-center justify-between border-none">
-              <>
-                {(title || !noClose) && (
-                  <div
-                    className={twMerge(
-                      'text-lg font-bold text-fgSecondary dark:text-fgSecondaryDark',
-                      noPadding && 'px-2 pt-2',
-                    )}
-                  >
-                    {title}
-                  </div>
-                )}
+            {(title || !noClose) && (
+              <Dialog.Title className="flex items-center justify-between border-none">
+                <div
+                  className={twMerge(
+                    'text-lg font-bold text-fgSecondary dark:text-fgSecondaryDark',
+                    noPadding && 'px-2 pt-2',
+                  )}
+                >
+                  {title}
+                </div>
                 {!noClose && (
                   <div className="flex items-center max-md:hidden">
                     <ButtonCloseModal handleClick={handleClose} />
                   </div>
                 )}
-              </>
-            </Dialog.Title>
-            <div className="max-h-0 max-w-0 opacity-0">
+              </Dialog.Title>
+            )}
+            <div className={twMerge('max-h-0 max-w-0 opacity-0', noClose && 'hidden')}>
               <button />
             </div>
             {children}
