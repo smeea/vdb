@@ -20,13 +20,16 @@ const DeckQrModal = ({ qrUrl, setQrUrl, deck }) => {
       size="xs"
       centered
       title={
-        <div className="flex items-center gap-2">
-          <div>{deck[NAME]}</div>
+        <div className="flex gap-3">
           {(deck[IS_NON_EDITABLE] || qrUrl.includes('decks/deck?')) && (
-            <div className="flex px-2 text-fgPrimary dark:text-fgPrimaryDark" title="Non-editable">
-              <Snow width="26" height="26" viewBox="0 0 16 16" />
+            <div
+              className="flex items-center text-fgPrimary dark:text-fgPrimaryDark"
+              title="Non-editable"
+            >
+              <Snow width="24" height="24" viewBox="0 0 16 16" />
             </div>
           )}
+          <div>{deck[NAME]}</div>
         </div>
       }
     >
