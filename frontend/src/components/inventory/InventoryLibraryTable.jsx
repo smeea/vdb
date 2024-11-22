@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { FixedSizeList } from 'react-window';
 import AutoSizer from 'react-virtualized-auto-sizer';
 import { WindowRows, ResultModal, InventoryLibraryTableRow } from '@/components';
@@ -24,20 +24,22 @@ const InventoryLibraryTable = ({ cards, sortMethod, compact, withCompact, newFoc
     setShowFloatingButtons(false);
   };
 
-  const cardRows = sortedCards
-    .filter((card) => playtestMode || !getIsPlaytest(card.c[ID]))
-    .map((card) => {
-      return (
-        <InventoryLibraryTableRow
-          key={card.c[ID]}
-          card={card}
-          compact={compact}
-          newFocus={newFocus}
-          inShared={inShared}
-          handleClick={handleClick}
-        />
-      );
-    });
+  const cardRows = useMemo(() => {
+    return sortedCards
+      .filter((card) => playtestMode || !getIsPlaytest(card.c[ID]))
+      .map((card) => {
+        return (
+          <InventoryLibraryTableRow
+            key={card.c[ID]}
+            card={card}
+            compact={compact}
+            newFocus={newFocus}
+            inShared={inShared}
+            handleClick={handleClick}
+          />
+        );
+      });
+  }, [sortedCards]);
 
   return (
     <>
