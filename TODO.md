@@ -1,6 +1,5 @@
 # FIX
 - Review TWDA radar: remove swarm, maybe replace?
-- Vertical padding for tags in adv select on mobile (if multi lines)
 
 # FEATURES
 - Card q-ty change in autocompletion

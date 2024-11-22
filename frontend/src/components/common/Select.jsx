@@ -110,7 +110,7 @@ const Select = React.forwardRef(
           valueContainer: () =>
             twMerge(
               'px-2 min-h-[40px] text-fgPrimary dark:text-fgPrimaryDark bg-bgPrimary dark:bg-bgPrimaryDark rounded',
-              variant == 'creatable' && !noBorder && 'px-[5px]',
+              variant == 'creatable' && !noBorder && 'p-1.5',
               variant == 'creatable' && 'gap-1',
             ),
           noOptionsMessage: () => 'rounded p-2',
@@ -125,7 +125,7 @@ const Select = React.forwardRef(
           multiValue: () => 'bg-bgButton dark:bg-bgButtonDark rounded',
           multiValueLabel: () =>
             twMerge(
-              'text-sm px-[5px] py-1 border-borderSecondary dark:border-borderSecondaryDark',
+              'text-sm px-1.5 py-1 border-borderSecondary dark:border-borderSecondaryDark',
               noRemove
                 ? 'border rounded'
                 : 'border-l border-y border-borderSecondary dark:border-borderSecondaryDark rounded-l rounded-y',
