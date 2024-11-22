@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router';
 import Activity from '@/assets/images/icons/activity.svg?react';
 import { Spinner, Hr, Modal, ButtonIconed, TextWithLinks } from '@/components';
 import { useFetch } from '@/hooks';

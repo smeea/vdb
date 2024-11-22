@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Menu } from '@headlessui/react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 import NodePlusFill from '@/assets/images/icons/node-plus-fill.svg?react';
 import { DeckSelectAdvModal, MenuItems, MenuItem, MenuButton } from '@/components';
 import { deckServices } from '@/services';

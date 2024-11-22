@@ -1,6 +1,6 @@
 import React from 'react';
 import { twMerge } from 'tailwind-merge';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 import { TwdOpenDeckButton } from '@/components';
 import { useApp, clearSearchForm, searchTwdForm } from '@/context';
 import { RELEASE_DATE, TWD_DATE, DECKID, AUTHOR, PLAYER, CRYPT, LIBRARY, TWD } from '@/constants';

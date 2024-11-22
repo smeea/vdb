@@ -1,5 +1,5 @@
 import ky from 'ky';
-import { redirect, defer } from 'react-router-dom';
+import { redirect } from 'react-router';
 import { useDeckExport } from '@/hooks';
 import { getTextDisciplines } from '@/utils';
 import {
@@ -353,7 +353,7 @@ export const deckLoader = async ({ params }) => {
   }
 
   const response = getDeck(deckid);
-  return defer({ deckData: response });
+  return { deckData: response };
 };
 
 export const getDeck = (deckid) => {

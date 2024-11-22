@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 import { TwdDeck, TwdResultTotal, Button, ButtonFloatClose } from '@/components';
 import { decksSort } from '@/utils';
 import { useApp } from '@/context';

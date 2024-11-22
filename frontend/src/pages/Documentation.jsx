@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import At from '@/assets/images/icons/at.svg?react';
 import Shuffle from '@/assets/images/icons/shuffle.svg?react';
 import SearchHeartFill from '@/assets/images/icons/search-heart-fill.svg?react';

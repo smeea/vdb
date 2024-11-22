@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 import PersonFill from '@/assets/images/icons/person-fill.svg?react';
 import TagFill from '@/assets/images/icons/tag-fill.svg?react';
 import CalendarEvent from '@/assets/images/icons/calendar-event.svg?react';

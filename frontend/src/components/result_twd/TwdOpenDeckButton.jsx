@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import PlayFill from '@/assets/images/icons/play-fill.svg?react';
 import { ButtonIconed } from '@/components';
 

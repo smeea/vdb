@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { twMerge } from 'tailwind-merge';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 import Check2 from '@/assets/images/icons/check2.svg?react';
 import {
   DeckSelectMy,

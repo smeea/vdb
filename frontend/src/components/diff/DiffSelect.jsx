@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 import ArrowLeftRight from '@/assets/images/icons/arrow-left-right.svg?react';
 import { DiffSelectDeck, Button, FlexGapped } from '@/components';
 import { FROM, TO } from '@/constants';

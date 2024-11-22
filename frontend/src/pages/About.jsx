@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import Telegram from '@/assets/images/icons/telegram.svg?react';
 import Github from '@/assets/images/icons/github.svg?react';
 import Discord from '@/assets/images/icons/discord.svg?react';

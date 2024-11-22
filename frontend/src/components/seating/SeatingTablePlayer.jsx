@@ -1,6 +1,6 @@
 import React from 'react';
 import { twMerge } from 'tailwind-merge';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import { NAME, DECKID } from '@/constants';
 
 const SeatingTablePlayer = ({ deck, isFirst }) => {

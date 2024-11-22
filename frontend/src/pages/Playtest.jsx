@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import Wrench from '@/assets/images/icons/wrench.svg?react';
 import InboxesFill from '@/assets/images/icons/inboxes-fill.svg?react';
 import PersonFill from '@/assets/images/icons/person-fill.svg?react';

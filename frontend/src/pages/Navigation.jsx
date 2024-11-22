@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router';
 import { twMerge } from 'tailwind-merge';
 import { useSnapshot } from 'valtio';
 import LightningFill from '@/assets/images/icons/lightning-fill.svg?react';

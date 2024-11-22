@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useSnapshot } from 'valtio';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 import {
   ResultTable,
   ResultCryptTotal,

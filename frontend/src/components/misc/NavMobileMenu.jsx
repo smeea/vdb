@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router';
 import { Popover, PopoverButton, PopoverPanel } from '@headlessui/react';
 import PersonFill from '@/assets/images/icons/person-fill.svg?react';
 import InfoCircleFill from '@/assets/images/icons/info-circle-fill.svg?react';

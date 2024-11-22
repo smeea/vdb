@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 import { Button } from '@/components';
 import PeopleFill from '@/assets/images/icons/people-fill.svg?react';
 import TrophyFill from '@/assets/images/icons/trophy-fill.svg?react';

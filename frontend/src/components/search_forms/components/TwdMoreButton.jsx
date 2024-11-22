@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 import { Menu } from '@headlessui/react';
 import { MenuItems, MenuItem, MenuButton } from '@/components';
 import Gem from '@/assets/images/icons/gem.svg?react';

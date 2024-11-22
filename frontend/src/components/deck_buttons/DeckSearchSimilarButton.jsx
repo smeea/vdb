@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 import { Menu } from '@headlessui/react';
 import SymmetryVertical from '@/assets/images/icons/symmetry-vertical.svg?react';
 import { MenuItems, MenuItem, MenuButton } from '@/components';

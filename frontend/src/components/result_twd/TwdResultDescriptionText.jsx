@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 import TrophyFill from '@/assets/images/icons/trophy-fill.svg?react';
 import PersonFill from '@/assets/images/icons/person-fill.svg?react';
 import TagFill from '@/assets/images/icons/tag-fill.svg?react';

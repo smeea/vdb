@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 import { searchLibraryForm, searchCryptForm, clearSearchForm } from '@/context';
 import { ARTIST, CRYPT, LIBRARY } from '@/constants';
 

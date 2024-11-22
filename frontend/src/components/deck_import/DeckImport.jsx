@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 import { ErrorOverlay, DeckImportButton } from '@/components';
 import { useApp, deckAdd } from '@/context';
 import { useDeckImport } from '@/hooks';

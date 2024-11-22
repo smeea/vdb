@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 import People from '@/assets/images/icons/people.svg?react';
 import PeopleFill from '@/assets/images/icons/people-fill.svg?react';
 import { Spinner, DeckPublicToggleConfirmation, ButtonIconed } from '@/components';

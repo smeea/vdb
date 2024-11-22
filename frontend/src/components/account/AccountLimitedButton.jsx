@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router';
 import { setMany } from 'idb-keyval';
 import UiChecksGrid from '@/assets/images/icons/ui-checks-grid.svg?react';
 import { AccountLimitedModal, ButtonIconed } from '@/components';

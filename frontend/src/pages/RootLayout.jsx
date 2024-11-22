@@ -1,5 +1,5 @@
 import React from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router';
 import { AppProvider, ThemeProvider } from '@/context';
 import Navigation from '@/pages/Navigation.jsx';
 import { OfflineNotification, UpdateNotification } from '@/components';

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSnapshot } from 'valtio';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 import Folder2Open from '@/assets/images/icons/folder2-open.svg?react';
 import {
   InventoryImport,

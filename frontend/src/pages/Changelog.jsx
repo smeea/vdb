@@ -1,5 +1,5 @@
 import React from 'react';
-import { Await, useLoaderData } from 'react-router-dom';
+import { Await, useLoaderData } from 'react-router';
 import { Banner, TextWithLinks } from '@/components';
 
 const Changelog = () => {

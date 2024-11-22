@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 import { FlexGapped, Textarea, Modal, Button, ErrorOverlay } from '@/components';
 import { useApp, deckAdd } from '@/context';
 import { useDeckImport } from '@/hooks';

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 import PencilSquare from '@/assets/images/icons/pencil-square.svg?react';
 import { deckServices } from '@/services';
 import { useApp } from '@/context';

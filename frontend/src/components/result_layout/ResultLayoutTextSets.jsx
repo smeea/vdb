@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import { CardImage, ConditionalTooltipOrModal } from '@/components';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 import { useApp } from '@/context';

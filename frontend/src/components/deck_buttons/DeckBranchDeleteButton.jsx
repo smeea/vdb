@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useSnapshot } from 'valtio';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 import NodeMinusFill from '@/assets/images/icons/node-minus-fill.svg?react';
 import { ButtonIconed, ModalConfirmation } from '@/components';
 import { deckStore, useApp } from '@/context';

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSnapshot } from 'valtio';
-import { useParams } from 'react-router-dom';
+import { useParams } from 'react-router';
 import {
   ButtonFloatClose,
   ButtonFloatMenu,

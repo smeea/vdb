@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { useSnapshot } from 'valtio';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 import EyeFill from '@/assets/images/icons/eye-fill.svg?react';
 import Shuffle from '@/assets/images/icons/shuffle.svg?react';
 import PinAngleFill from '@/assets/images/icons/pin-angle-fill.svg?react';

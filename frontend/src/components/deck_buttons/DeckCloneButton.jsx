@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 import Files from '@/assets/images/icons/files.svg?react';
 import { useApp } from '@/context';
 import { deckServices } from '@/services';
