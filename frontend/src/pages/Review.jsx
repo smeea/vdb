@@ -15,7 +15,6 @@ import {
   FlexGapped,
 } from '@/components';
 import { useApp, deckStore } from '@/context';
-import { useTags } from '@/hooks';
 import {
   BRANCHES,
   CRYPT,
@@ -31,7 +30,7 @@ import {
   TAGS,
   PUBLIC_PARENT,
 } from '@/constants';
-import { parseDeck, deepClone } from '@/utils';
+import { getTags, parseDeck, deepClone } from '@/utils';
 
 const Review = () => {
   const {
@@ -77,7 +76,7 @@ const Review = () => {
     const cardsData = parseDeck(deckData.cards, cryptCardBase, libraryCardBase);
     if (deckid.length !== 9 || deckData[PUBLIC_PARENT]) {
       deckData[TAGS] = [];
-      Object.values(useTags(cardsData[CRYPT], cardsData[LIBRARY])).forEach((v) => {
+      Object.values(getTags(cardsData[CRYPT], cardsData[LIBRARY])).forEach((v) => {
         deckData[TAGS] = deckData[TAGS].concat(v);
       });
     }

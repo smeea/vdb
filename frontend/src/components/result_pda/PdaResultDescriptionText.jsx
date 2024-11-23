@@ -5,13 +5,13 @@ import TagFill from '@/assets/images/icons/tag-fill.svg?react';
 import CalendarEvent from '@/assets/images/icons/calendar-event.svg?react';
 import { TwdResultTags, TwdResultDescriptionTextTr } from '@/components';
 import { useApp, searchPdaForm, clearSearchForm } from '@/context';
-import { useTags } from '@/hooks';
+import { getTags } from '@/utils';
 import { AUTHOR, CRYPT, LIBRARY, NAME, CREATION_DATE, TIMESTAMP, PDA } from '@/constants';
 
 const PdaResultDescriptionText = ({ deck }) => {
   const { isMobile } = useApp();
   const navigate = useNavigate();
-  const tags = useTags(deck[CRYPT], deck[LIBRARY]);
+  const tags = getTags(deck[CRYPT], deck[LIBRARY]);
   const lastUpdated = new Date(deck[TIMESTAMP]).toISOString().split('T')[0];
 
   const handleClick = (value) => {

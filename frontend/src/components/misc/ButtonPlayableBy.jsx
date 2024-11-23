@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router';
 import Bullseye from '@/assets/images/icons/bullseye.svg?react';
 import { Button } from '@/components';
 import { clearSearchForm } from '@/context';
-import { useLibraryRequirements } from '@/hooks';
+import { getLibraryRequirements } from '@/utils';
 import { CRYPT, LE, GE } from '@/constants';
 
 const ButtonPlayableBy = ({ card, handleClose }) => {
@@ -19,7 +19,7 @@ const ButtonPlayableBy = ({ card, handleClose }) => {
     isTitle,
     isSeraph,
     isBlackHand,
-  } = useLibraryRequirements(card);
+  } = getLibraryRequirements(card);
 
   const handleClick = () => {
     const queries = [];

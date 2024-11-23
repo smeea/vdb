@@ -12,7 +12,7 @@ import {
 } from '@/constants';
 import { getIsPlaytest } from '@/utils';
 
-const useDeckImport = async (deckText, cryptCardBase, libraryCardBase, isPlaytester) => {
+const importDeck = async (deckText, cryptCardBase, libraryCardBase, isPlaytester) => {
   const { default: unidecode } = await import('unidecode');
 
   const cardbase = {};
@@ -144,4 +144,4 @@ const useDeckImport = async (deckText, cryptCardBase, libraryCardBase, isPlaytes
   return deck;
 };
 
-export default useDeckImport;
+export default importDeck;

@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router';
 import { ErrorOverlay, DeckImportButton } from '@/components';
 import { useApp, deckAdd } from '@/context';
-import { useDeckImport } from '@/hooks';
+import { importDeck } from '@/utils';
 import { formatServices, deckServices } from '@/services';
 import { SHOW, IS_ANONYMOUS, NAME, AUTHOR, CRYPT, LIBRARY, DECKID, BAD_CARDS } from '@/constants';
 
@@ -83,7 +83,7 @@ const DeckImport = ({
       const deckText =
         file.type === 'text/plain' ? reader.result : formatServices.convertDekToText(reader.result);
 
-      const d = await useDeckImport(deckText, cryptCardBase, libraryCardBase, isPlaytester);
+      const d = await importDeck(deckText, cryptCardBase, libraryCardBase, isPlaytester);
 
       deckServices
         .deckImport({ ...d, [IS_ANONYMOUS]: isAnonymous })

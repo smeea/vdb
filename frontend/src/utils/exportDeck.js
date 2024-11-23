@@ -301,7 +301,7 @@ const exportText = (deck) => {
   return result;
 };
 
-const useDeckExport = (deck, format) => {
+const exportDeck = (deck, format) => {
   const crypt = Object.values(deck[CRYPT])
     .filter((card) => card.q > 0)
     .reduce((obj, card) => {
@@ -334,4 +334,4 @@ const useDeckExport = (deck, format) => {
   }
 };
 
-export default useDeckExport;
+export default exportDeck;

@@ -1,6 +1,6 @@
 import { LIBRARY, CRYPT } from '@/constants';
 
-const useDiffMissing = (deckTo, deckFrom) => {
+const getDiffMissing = (deckTo, deckFrom) => {
   const missingCrypt = {};
   const missingLibrary = {};
 
@@ -33,4 +33,4 @@ const useDiffMissing = (deckTo, deckFrom) => {
   return { missingCrypt, missingLibrary };
 };
 
-export default useDiffMissing;
+export default getDiffMissing;

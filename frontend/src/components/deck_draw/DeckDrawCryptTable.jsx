@@ -1,6 +1,6 @@
 import React from 'react';
 import { ResultCryptTableRowCommon, DeckDrawProbability } from '@/components';
-import { useKeyDisciplines } from '@/hooks';
+import { getKeyDisciplines } from '@/utils';
 import { useApp } from '@/context';
 import { ID, NAME } from '@/constants';
 
@@ -13,7 +13,7 @@ const DeckDrawCryptTable = ({
   crypt,
 }) => {
   const { isMobile } = useApp();
-  const { disciplinesSet, keyDisciplines } = useKeyDisciplines(crypt);
+  const { disciplinesSet, keyDisciplines } = getKeyDisciplines(crypt);
 
   const N = restCards && resultCards ? restCards.length + resultCards.length : 0;
   const n = resultCards ? resultCards.length : 0;

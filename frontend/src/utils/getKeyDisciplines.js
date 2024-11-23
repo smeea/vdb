@@ -1,7 +1,7 @@
 import virtuesList from '@/assets/data/virtuesList.json';
 import { DISCIPLINES } from '@/constants';
 
-const useKeyDisciplines = (crypt = {}) => {
+const getKeyDisciplines = (crypt = {}) => {
   let cryptTotal = 0;
   const disciplinesDetailed = {};
   const disciplinesDict = {};
@@ -56,4 +56,4 @@ const useKeyDisciplines = (crypt = {}) => {
   };
 };
 
-export default useKeyDisciplines;
+export default getKeyDisciplines;

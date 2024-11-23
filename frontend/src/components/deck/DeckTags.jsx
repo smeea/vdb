@@ -3,8 +3,7 @@ import { twMerge } from 'tailwind-merge';
 import Spellcheck from '@/assets/images/icons/spellcheck.svg?react';
 import { Select, ButtonIconed } from '@/components';
 import { deckUpdate } from '@/context';
-import { useTags } from '@/hooks';
-import { getIsEditable } from '@/utils';
+import { getTags, getIsEditable } from '@/utils';
 import { DECKID, CRYPT, LIBRARY, TAGS } from '@/constants';
 
 const DeckTags = ({ deck, tagsSuperior, noAutotags, isBordered, allTagsOptions }) => {
@@ -39,7 +38,7 @@ const DeckTags = ({ deck, tagsSuperior, noAutotags, isBordered, allTagsOptions }
   };
 
   const handleAutotagClick = () => {
-    const tags = useTags(deck[CRYPT], deck[LIBRARY]);
+    const tags = getTags(deck[CRYPT], deck[LIBRARY]);
     deckUpdate(deck[DECKID], TAGS, [...tags.superior, ...tags.base]);
   };
 

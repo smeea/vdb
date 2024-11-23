@@ -4,7 +4,7 @@ import Download from '@/assets/images/icons/download.svg?react';
 import Upload from '@/assets/images/icons/upload.svg?react';
 import { Textarea, ButtonIconed, ErrorOverlay } from '@/components';
 import { useApp } from '@/context';
-import { useDeckImport } from '@/hooks';
+import { importDeck } from '@/utils';
 import { EVENT, LOCATION, DATE, FORMAT, PLAYERS, DECK, ID, CRYPT, LIBRARY } from '@/constants';
 
 const TwdCheckInput = ({ deckData, setDeckData }) => {
@@ -35,7 +35,7 @@ const TwdCheckInput = ({ deckData, setDeckData }) => {
     const url = text.match(/.*vekn.net\/event-calendar\/event\/\d+/g);
     const id = url ? url[0].replace(/.*vekn.net\/event-calendar\/event\/(\d+)/g, '$1') : null;
 
-    const d = await useDeckImport(text, cryptCardBase, libraryCardBase);
+    const d = await importDeck(text, cryptCardBase, libraryCardBase);
     setDeckData({
       [ID]: id,
       [EVENT]: lines[0],

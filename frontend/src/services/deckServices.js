@@ -1,7 +1,6 @@
 import ky from 'ky';
 import { redirect } from 'react-router';
-import { useDeckExport } from '@/hooks';
-import { getTextDisciplines } from '@/utils';
+import { exportDeck, getTextDisciplines } from '@/utils';
 import {
   ADV,
   AUTHOR,
@@ -289,7 +288,7 @@ export const exportDecks = async (decks, format) => {
         deckName += ` [${deck[BRANCH_NAME]}]`;
       }
 
-      zip.folder(`Decks ${date} [${format}]`).file(`${deckName}.txt`, useDeckExport(deck, format));
+      zip.folder(`Decks ${date} [${format}]`).file(`${deckName}.txt`, exportDeck(deck, format));
     });
 
     zip

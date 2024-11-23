@@ -35,7 +35,7 @@ import {
 } from '@/constants';
 import { CryptTraitsRegexMap, LibraryTraitsRegexMap } from '@/hooks/traitsRegexMaps';
 
-const useTags = (crypt, library) => {
+const getTags = (crypt, library) => {
   const deckTags = {
     [ACCEL]: 0,
     [ALLY]: 0,
@@ -124,7 +124,7 @@ const useTags = (crypt, library) => {
   return result;
 };
 
-export default useTags;
+export default getTags;
 
 const getCryptTags = (card) => {
   const cardTags = [];

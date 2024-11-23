@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { ErrorOverlay, InventoryImportButton, DeckImportBadCardsModal } from '@/components';
 import { useApp, inventoryCardsAdd } from '@/context';
-import { useDeckImport } from '@/hooks';
+import { importDeck } from '@/utils';
 import { CRYPT, LIBRARY, BAD_CARDS } from '@/constants';
 
 const InventoryImport = () => {
@@ -23,7 +23,7 @@ const InventoryImport = () => {
     reader.readAsText(file);
     reader.onload = async () => {
       const deckText = reader.result;
-      const deck = await useDeckImport(deckText, cryptCardBase, libraryCardBase);
+      const deck = await importDeck(deckText, cryptCardBase, libraryCardBase);
 
       setBadCards(deck[BAD_CARDS]);
       inventoryCardsAdd({ ...deck[CRYPT], ...deck[LIBRARY] });

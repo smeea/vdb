@@ -3,7 +3,7 @@ import InfoCircle from '@/assets/images/icons/info-circle.svg?react';
 import PlusLg from '@/assets/images/icons/plus-lg.svg?react';
 import { DeckCryptTotalInfo, DeckNewCard, Warning, Button, SortButton, Header } from '@/components';
 import { useApp } from '@/context';
-import { useKeyDisciplines } from '@/hooks';
+import { getKeyDisciplines } from '@/utils';
 import { CRYPT, GROUPS, LIMITED, BANNED, LEGAL, PLAYTEST } from '@/constants';
 
 const DeckCryptHeader = ({
@@ -27,7 +27,7 @@ const DeckCryptHeader = ({
 }) => {
   const { limitedMode, isMobile } = useApp();
   const [showAdd, setShowAdd] = useState(false);
-  const { disciplinesDetailed } = useKeyDisciplines(cards);
+  const { disciplinesDetailed } = getKeyDisciplines(cards);
 
   return (
     <>

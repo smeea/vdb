@@ -19,7 +19,7 @@ import {
 } from '@/constants';
 import sects from '@/assets/data/sectsList.json';
 
-const useLibraryRequirements = (card) => {
+const getLibraryRequirements = (card) => {
   let isCapacity;
   let isClan = [];
   let isDiscipline = [];
@@ -88,4 +88,4 @@ const useLibraryRequirements = (card) => {
   };
 };
 
-export default useLibraryRequirements;
+export default getLibraryRequirements;

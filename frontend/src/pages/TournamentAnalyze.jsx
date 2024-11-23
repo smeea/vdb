@@ -24,7 +24,7 @@ import {
   setAnalyzeResults,
   useApp,
 } from '@/context';
-import { useDeckImport, useTags } from '@/hooks';
+import { getTags, importDeck } from '@/utils';
 import {
   AUTHOR,
   CRYPT,
@@ -58,8 +58,8 @@ const TournamentAnalyze = () => {
   const [error, setError] = useState(false);
 
   const getDeck = async (data) => {
-    const deck = await useDeckImport(data, cryptCardBase, libraryCardBase);
-    deck[TAGS] = await useTags(deck[CRYPT], deck[LIBRARY]);
+    const deck = await importDeck(data, cryptCardBase, libraryCardBase);
+    deck[TAGS] = await getTags(deck[CRYPT], deck[LIBRARY]);
     return deck;
   };
 

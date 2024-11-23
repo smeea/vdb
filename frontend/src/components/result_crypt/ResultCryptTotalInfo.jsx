@@ -1,6 +1,6 @@
 import React from 'react';
 import { DisciplinesCryptSummary } from '@/components';
-import { useKeyDisciplines } from '@/hooks';
+import { getKeyDisciplines } from '@/utils';
 import { ID } from '@/constants';
 
 const ResultCryptTotalInfo = ({ cards }) => {
@@ -12,7 +12,7 @@ const ResultCryptTotalInfo = ({ cards }) => {
     };
   });
 
-  const { disciplinesDetailed } = useKeyDisciplines(cardsById);
+  const { disciplinesDetailed } = getKeyDisciplines(cardsById);
 
   return <DisciplinesCryptSummary disciplinesDetailed={disciplinesDetailed} />;
 };

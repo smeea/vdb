@@ -1,9 +1,9 @@
 import React from 'react';
 import { useSnapshot } from 'valtio';
-import Download from '@/assets/images/icons/download.svg?react';
 import { Menu } from '@headlessui/react';
+import Download from '@/assets/images/icons/download.svg?react';
 import { MenuItems, MenuItem, MenuItemDivider, MenuButton } from '@/components';
-import { useDeckExport } from '@/hooks';
+import { exportDeck } from '@/utils';
 import { useApp, deckStore } from '@/context';
 import { deckServices } from '@/services';
 import {
@@ -63,7 +63,7 @@ const DeckExportButton = ({ deck, inMissing, inInventory }) => {
   };
 
   const copyDeck = (format) => {
-    const exportText = useDeckExport(deck, format);
+    const exportText = exportDeck(deck, format);
     navigator.clipboard.writeText(exportText);
     setShowMenuButtons(false);
     setShowFloatingButtons(true);
@@ -99,9 +99,9 @@ const DeckExportButton = ({ deck, inMissing, inInventory }) => {
           };
         });
 
-        exportText = useDeckExport({ ...deck, [CRYPT]: enCrypt, [LIBRARY]: enLibrary }, format);
+        exportText = exportDeck({ ...deck, [CRYPT]: enCrypt, [LIBRARY]: enLibrary }, format);
       } else {
-        exportText = useDeckExport(deck, format);
+        exportText = exportDeck(deck, format);
       }
 
       file = new File([exportText], `${deckName} [${format}].txt`, {

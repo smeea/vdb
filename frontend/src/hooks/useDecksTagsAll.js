@@ -14,7 +14,7 @@ const useDecksTagsAll = (decks) => {
         }
       });
     }
-  });
+  }, [decks]);
 };
 
 export default useDecksTagsAll;

@@ -7,13 +7,13 @@ import CalendarEvent from '@/assets/images/icons/calendar-event.svg?react';
 import GeoAltFill from '@/assets/images/icons/geo-alt-fill.svg?react';
 import { TwdResultTags, TwdResultDescriptionTextTr } from '@/components';
 import { useApp, searchTwdForm, clearSearchForm } from '@/context';
-import { useTags } from '@/hooks';
+import { getTags } from '@/utils';
 import { CRYPT, LIBRARY, NAME, LOCATION, CREATION_DATE, AUTHOR, TWD } from '@/constants';
 
 const TwdResultDescriptionText = ({ deck }) => {
   const { isMobile } = useApp();
   const navigate = useNavigate();
-  const tags = useTags(deck[CRYPT], deck[LIBRARY]);
+  const tags = getTags(deck[CRYPT], deck[LIBRARY]);
 
   const handleClick = (target, value) => {
     clearSearchForm(TWD);

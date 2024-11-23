@@ -1,10 +1,10 @@
 import React from 'react';
-import { useDiffMissing } from '@/hooks';
+import { getDiffMissing } from '@/utils';
 import { DeckMissingModal } from '@/components';
 import { NAME, CRYPT, LIBRARY } from '@/constants';
 
 const DiffMissingModalWrapper = ({ setShow, deckFrom, deckTo }) => {
-  const { missingCrypt, missingLibrary } = useDiffMissing(deckFrom, deckTo);
+  const { missingCrypt, missingLibrary } = getDiffMissing(deckFrom, deckTo);
 
   return (
     <DeckMissingModal

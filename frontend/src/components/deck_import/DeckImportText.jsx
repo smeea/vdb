@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router';
 import { FlexGapped, Textarea, Modal, Button, ErrorOverlay } from '@/components';
 import { useApp, deckAdd } from '@/context';
-import { useDeckImport } from '@/hooks';
+import { importDeck } from '@/utils';
 import { deckServices } from '@/services';
 import { IS_ANONYMOUS, DECKID, BAD_CARDS } from '@/constants';
 
@@ -37,7 +37,7 @@ const DeckImportText = ({ isAnonymous, setBadCards, setShow }) => {
     setImportError(false);
     if (!deckText) return setEmptyError(true);
 
-    const d = await useDeckImport(deckText, cryptCardBase, libraryCardBase, isPlaytester);
+    const d = await importDeck(deckText, cryptCardBase, libraryCardBase, isPlaytester);
 
     deckServices
       .deckImport({ ...d, [IS_ANONYMOUS]: isAnonymous })

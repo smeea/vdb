@@ -1,6 +1,6 @@
 import React from 'react';
 import { DeckProxyCryptTableRow } from '@/components';
-import { useKeyDisciplines } from '@/hooks';
+import { getKeyDisciplines } from '@/utils';
 import { ID } from '@/constants';
 
 const DeckProxyCryptTable = ({
@@ -12,7 +12,7 @@ const DeckProxyCryptTable = ({
   handleProxyCounter,
   handleSetSelector,
 }) => {
-  const { disciplinesSet, keyDisciplines } = useKeyDisciplines(cards);
+  const { disciplinesSet, keyDisciplines } = getKeyDisciplines(cards);
 
   return (
     <table className="w-full border-bgSecondary dark:border-bgSecondaryDark sm:border">
