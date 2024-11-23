@@ -302,6 +302,7 @@ export { default as PdaFavoriteButton } from './result_pda/PdaFavoriteButton.jsx
 
 export { default as TwdOpenDeckButton } from './result_twd/TwdOpenDeckButton.jsx';
 export { default as TwdDeck } from './result_twd/TwdDeck.jsx';
+export { default as TwdDeckWrapper } from './result_twd/TwdDeckWrapper.jsx';
 export { default as TwdResult } from './result_twd/TwdResult.jsx';
 export { default as TwdResultCryptTable } from './result_twd/TwdResultCryptTable.jsx';
 export { default as TwdResultCryptTableRow } from './result_twd/TwdResultCryptTableRow.jsx';

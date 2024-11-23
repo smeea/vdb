@@ -1,9 +1,9 @@
 import React, { useState, useMemo } from 'react';
 import { useNavigate } from 'react-router';
-import { TwdDeck, TwdResultTotal, Button, ButtonFloatClose } from '@/components';
+import { TwdDeck, TwdDeckWrapper, TwdResultTotal, Button, ButtonFloatClose } from '@/components';
 import { decksSort } from '@/utils';
 import { useApp } from '@/context';
-import { DECKID, DATE_NEW_OLD, DATE_OLD_NEW, FAVORITES } from '@/constants';
+import { CARDS, DECKID, DATE_NEW_OLD, DATE_OLD_NEW, FAVORITES } from '@/constants';
 
 const PdaResult = ({ results, setResults }) => {
   const { isMobile, showFloatingButtons, pdaSearchSort, changePdaSearchSort } = useApp();
@@ -43,7 +43,11 @@ const PdaResult = ({ results, setResults }) => {
           />
           <div className="flex flex-col gap-4">
             {showedDecks.map((d) => {
-              return <TwdDeck key={d[DECKID]} deck={d} inPda />;
+              return d[CARDS] ? (
+                <TwdDeck key={d[DECKID]} deck={d} inPda />
+              ) : (
+                <TwdDeckWrapper key={d[DECKID]} deckid={d[DECKID]} inPda />
+              );
             })}
           </div>
         </div>
