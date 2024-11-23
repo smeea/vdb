@@ -30,30 +30,24 @@ import {
   SCORE,
 } from '@/constants';
 
-const useFiltersDecks = (decks = {}) => {
-  const filterDecks = (filter) => {
-    return Object.values(decks).filter((deck) => {
-      if (filter[RANK] && missingRank(filter[RANK], deck)) return false;
-      if (filter[CRYPT] && missingCrypt(filter[CRYPT], deck)) return false;
-      if (filter[LIBRARY] && missingLibrary(filter[LIBRARY], deck)) return false;
-      if (filter[LIBRARY_TOTAL] && missingLibraryTotal(filter[LIBRARY_TOTAL], deck)) return false;
-      if (filter[CLAN] && missingClan(filter[CLAN], deck)) return false;
-      if (filter[SECT] && missingSect(filter[SECT], deck)) return false;
-      if (filter[CAPACITY] && missingCapacity(filter[CAPACITY], deck)) return false;
-      if (filter[DISCIPLINES] && missingDisciplines(filter[DISCIPLINES], deck)) return false;
-      if (filter[CARDTYPES] && missingCardtypes(filter[CARDTYPES], deck)) return false;
-      if (filter[TRAITS] && missingTraits(filter[TRAITS], deck)) return false;
+const filterDecks = (decks = {}, filter) => {
+  return Object.values(decks).filter((deck) => {
+    if (filter[RANK] && missingRank(filter[RANK], deck)) return false;
+    if (filter[CRYPT] && missingCrypt(filter[CRYPT], deck)) return false;
+    if (filter[LIBRARY] && missingLibrary(filter[LIBRARY], deck)) return false;
+    if (filter[LIBRARY_TOTAL] && missingLibraryTotal(filter[LIBRARY_TOTAL], deck)) return false;
+    if (filter[CLAN] && missingClan(filter[CLAN], deck)) return false;
+    if (filter[SECT] && missingSect(filter[SECT], deck)) return false;
+    if (filter[CAPACITY] && missingCapacity(filter[CAPACITY], deck)) return false;
+    if (filter[DISCIPLINES] && missingDisciplines(filter[DISCIPLINES], deck)) return false;
+    if (filter[CARDTYPES] && missingCardtypes(filter[CARDTYPES], deck)) return false;
+    if (filter[TRAITS] && missingTraits(filter[TRAITS], deck)) return false;
 
-      return true;
-    });
-  };
-
-  return {
-    filterDecks,
-  };
+    return true;
+  });
 };
 
-export default useFiltersDecks;
+export default filterDecks;
 
 const missingRank = (filter, deck) => {
   const { to, from } = filter;

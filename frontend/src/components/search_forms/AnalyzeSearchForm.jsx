@@ -16,8 +16,7 @@ import {
   TwdSearchFormLibraryTotal,
   AnalyzeSearchFormRank,
 } from '@/components';
-import { useFiltersDecks } from '@/hooks';
-import { sanitizeFormState } from '@/utils';
+import { filterDecks, sanitizeFormState } from '@/utils';
 import {
   useApp,
   setAnalyzeResults,
@@ -47,7 +46,6 @@ const AnalyzeSearchForm = () => {
   const { cryptCardBase, libraryCardBase, isMobile } = useApp();
   const analyzeFormState = useSnapshot(searchAnalyzeForm);
   const decks = useSnapshot(analyzeStore)[DECKS];
-  const { filterDecks } = useFiltersDecks(decks);
   const [error, setError] = useState(false);
   const navigate = useNavigate();
   const query = JSON.parse(new URLSearchParams(useLocation().search).get('q'));
@@ -111,7 +109,7 @@ const AnalyzeSearchForm = () => {
 
     navigate(`/tournament_analyze?q=${encodeURIComponent(JSON.stringify(sanitizedForm))}`);
 
-    const filteredDecks = filterDecks(sanitizedForm);
+    const filteredDecks = filterDecks(decks, sanitizedForm);
     setAnalyzeResults(filteredDecks);
   };
 

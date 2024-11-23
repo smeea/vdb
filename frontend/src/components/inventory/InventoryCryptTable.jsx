@@ -2,14 +2,14 @@ import React, { useMemo } from 'react';
 import { FixedSizeList } from 'react-window';
 import AutoSizer from 'react-virtualized-auto-sizer';
 import { WindowRows, ResultModal, InventoryCryptTableRow } from '@/components';
-import { getIsPlaytest, cryptSortWithTimer } from '@/utils';
+import { getIsPlaytest } from '@/utils';
 import { useApp } from '@/context';
-import { useModalCardController } from '@/hooks';
+import { useCryptSortWithTimer, useModalCardController } from '@/hooks';
 import { ID } from '@/constants';
 
 const InventoryCryptTable = ({ cards, sortMethod, compact, withCompact, newFocus, inShared }) => {
   const { playtestMode, setShowFloatingButtons } = useApp();
-  const sortedCards = cryptSortWithTimer(cards, sortMethod);
+  const sortedCards = useCryptSortWithTimer(cards, sortMethod);
 
   const {
     currentModalCard,

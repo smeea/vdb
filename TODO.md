@@ -1,5 +1,6 @@
 # FIX
 - Review TWDA radar: remove swarm, maybe replace?
+- TwdDeck useFetch hook
 
 # FEATURES
 - Card q-ty change in autocompletion
@@ -7,6 +8,7 @@
 - New layout for old cards or fallback to scans?
 - Non-english images to use webp with fallback image
 - Paypal donations
+- Analyze to keep eventId with filters
 
 # FEATURES ON HOLD
 - TWD search with % V5-compatibility -> after BCP clarify V5
@@ -20,4 +22,3 @@
 - Migrate from isWidth to container queries
 - Migrate forms to useFormStatus+useActionState
 - Remove legacy polyfills when Safari adopts groupBy
-- Move pseudohooks from hooks to utils

@@ -33,7 +33,7 @@ import {
   VOTE,
   VOTES_TITLE,
 } from '@/constants';
-import { CryptTraitsRegexMap, LibraryTraitsRegexMap } from '@/hooks/traitsRegexMaps';
+import { CryptTraitsRegexMap, LibraryTraitsRegexMap } from '@/utils/traitsRegexMaps';
 
 const getTags = (crypt, library) => {
   const deckTags = {

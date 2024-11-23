@@ -1,11 +1,17 @@
 import React from 'react';
 import { useApp } from '@/context';
 import { Select, SelectLabelCrypt, SelectLabelLibrary } from '@/components';
-import { useFilters } from '@/hooks';
-import { getIsPlaytest } from '@/utils';
+import { filterCrypt, filterLibrary, getIsPlaytest } from '@/utils';
 import { ID, NAME, TWD, CRYPT, LIBRARY, VALUE } from '@/constants';
 
-const getMatches = (inputValue, filterAction, playtestId, playtestMode, inInventory) => {
+const getMatches = (
+  inputValue,
+  filterAction,
+  filterSource,
+  playtestId,
+  playtestMode,
+  inInventory,
+) => {
   const input = { [NAME]: inputValue };
 
   const startingWith = [];
@@ -30,17 +36,17 @@ const getMatches = (inputValue, filterAction, playtestId, playtestMode, inInvent
 
 const getAllMatches = (
   inputValue,
-  filterCrypt,
-  filterLibrary,
+  filterCryptAction,
+  filterLibraryAction,
   target,
   playtestMode,
   inInventory,
 ) => {
   const cryptMatches =
-    target !== LIBRARY ? getMatches(inputValue, filterCrypt, playtestMode, inInventory) : [];
+    target !== LIBRARY ? getMatches(inputValue, filterCryptAction, playtestMode, inInventory) : [];
 
   const libraryMatches =
-    target !== CRYPT ? getMatches(inputValue, filterLibrary, playtestMode, inInventory) : [];
+    target !== CRYPT ? getMatches(inputValue, filterLibraryAction, playtestMode, inInventory) : [];
 
   return {
     cryptMatches,
@@ -62,8 +68,8 @@ const CardSelect = React.forwardRef(
     ref,
   ) => {
     const { cryptCardBase, libraryCardBase, playtestMode } = useApp();
-    const { filterCrypt } = useFilters(cryptCardBase);
-    const { filterLibrary } = useFilters(libraryCardBase);
+    const filterCryptAction = (filter) => filterCrypt(cryptCardBase, filter);
+    const filterLibraryAction = (filter) => filterLibrary(libraryCardBase, filter);
 
     const getOptionLabel = (option) => {
       const cardid = option.value;
@@ -92,8 +98,8 @@ const CardSelect = React.forwardRef(
       ) {
         const { cryptMatches, libraryMatches } = getAllMatches(
           inputValue,
-          filterCrypt,
-          filterLibrary,
+          filterCryptAction,
+          filterLibraryAction,
           target,
           playtestMode,
           inInventory,

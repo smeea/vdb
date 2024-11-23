@@ -4,7 +4,7 @@ import { cryptSort } from '@/utils';
 import { ID, CRYPT_TIMER } from '@/constants';
 import { miscStore } from '@/context';
 
-const cryptSortWithTimer = (cardsList, sortMethod) => {
+const useCryptSortWithTimer = (cardsList, sortMethod) => {
   const timer = useSnapshot(miscStore)[CRYPT_TIMER];
 
   const sortedState = useMemo(() => {
@@ -20,4 +20,4 @@ const cryptSortWithTimer = (cardsList, sortMethod) => {
   return value;
 };
 
-export default cryptSortWithTimer;
+export default useCryptSortWithTimer;

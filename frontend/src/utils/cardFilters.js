@@ -74,59 +74,50 @@ import {
   X,
 } from '@/constants';
 import { getIsPlaytest } from '@/utils';
-import { CryptTraitsRegexMap, LibraryTraitsRegexMap } from '@/hooks/traitsRegexMaps';
+import { CryptTraitsRegexMap, LibraryTraitsRegexMap } from '@/utils/traitsRegexMaps';
 import sects from '@/assets/data/sectsList.json';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 
-const useFilters = (cards = {}) => {
-  const filterCrypt = (filter) => {
-    return Object.values(cards).filter((card) => {
-      if (filter[DISCIPLINES] && missingDisciplinesCrypt(filter[DISCIPLINES], card)) return false;
-      if (filter[TEXT] && missingTextQueries(filter[TEXT], card)) return false;
-      if (filter[TRAITS] && missingTraitsCrypt(filter[TRAITS], card)) return false;
-      if (filter[TITLES] && missingTitleCrypt(filter[TITLES], card)) return false;
-      if (filter[VOTES] && missingVotes(filter[VOTES], card)) return false;
-      if (filter[CAPACITY] && missingCapacityCrypt(filter[CAPACITY], card)) return false;
-      if (filter[CLAN] && missingClan(filter[CLAN], card)) return false;
-      if (filter[SECT] && missingSectCrypt(filter[SECT], card)) return false;
-      if (filter[GROUP] && missingGroup(filter[GROUP], card)) return false;
-      if (filter[SET] && missingSet(filter[SET], card)) return false;
-      if (filter[PRECON] && missingPrecon(filter[PRECON], card)) return false;
-      if (filter[ARTIST] && missingArtist(filter[ARTIST], card)) return false;
-      if (filter[NAME] && missingNameOrInitials(filter[NAME], card)) return false;
+export const filterCrypt = (cards = {}, filter) => {
+  return Object.values(cards).filter((card) => {
+    if (filter[DISCIPLINES] && missingDisciplinesCrypt(filter[DISCIPLINES], card)) return false;
+    if (filter[TEXT] && missingTextQueries(filter[TEXT], card)) return false;
+    if (filter[TRAITS] && missingTraitsCrypt(filter[TRAITS], card)) return false;
+    if (filter[TITLES] && missingTitleCrypt(filter[TITLES], card)) return false;
+    if (filter[VOTES] && missingVotes(filter[VOTES], card)) return false;
+    if (filter[CAPACITY] && missingCapacityCrypt(filter[CAPACITY], card)) return false;
+    if (filter[CLAN] && missingClan(filter[CLAN], card)) return false;
+    if (filter[SECT] && missingSectCrypt(filter[SECT], card)) return false;
+    if (filter[GROUP] && missingGroup(filter[GROUP], card)) return false;
+    if (filter[SET] && missingSet(filter[SET], card)) return false;
+    if (filter[PRECON] && missingPrecon(filter[PRECON], card)) return false;
+    if (filter[ARTIST] && missingArtist(filter[ARTIST], card)) return false;
+    if (filter[NAME] && missingNameOrInitials(filter[NAME], card)) return false;
 
-      return true;
-    });
-  };
-
-  const filterLibrary = (filter) => {
-    return Object.values(cards).filter((card) => {
-      if (filter[TEXT] && missingTextQueries(filter[TEXT], card)) return false;
-      if (filter[DISCIPLINE] && missingDisciplinesLibrary(filter[DISCIPLINE], card)) return false;
-      if (filter[CLAN] && missingClan(filter[CLAN], card)) return false;
-      if (filter[TITLE] && missingTitleLibrary(filter[TITLE], card)) return false;
-      if (filter[TYPE] && missingType(filter[TYPE], card)) return false;
-      if (filter[SECT] && missingSectLibrary(filter[SECT], card)) return false;
-      if (filter[BLOOD] && missingBloodCost(filter[BLOOD], card)) return false;
-      if (filter[POOL] && missingPoolCost(filter[POOL], card)) return false;
-      if (filter[TRAITS] && missingTraitsLibrary(filter[TRAITS], card)) return false;
-      if (filter[CAPACITY] && missingCapacityLibrary(filter[CAPACITY], card)) return false;
-      if (filter[SET] && missingSet(filter[SET], card)) return false;
-      if (filter[PRECON] && missingPrecon(filter[PRECON], card)) return false;
-      if (filter[ARTIST] && missingArtist(filter[ARTIST], card)) return false;
-      if (filter[NAME] && missingNameOrInitials(filter[NAME], card)) return false;
-
-      return true;
-    });
-  };
-
-  return {
-    filterCrypt,
-    filterLibrary,
-  };
+    return true;
+  });
 };
 
-export default useFilters;
+export const filterLibrary = (cards = {}, filter) => {
+  return Object.values(cards).filter((card) => {
+    if (filter[TEXT] && missingTextQueries(filter[TEXT], card)) return false;
+    if (filter[DISCIPLINE] && missingDisciplinesLibrary(filter[DISCIPLINE], card)) return false;
+    if (filter[CLAN] && missingClan(filter[CLAN], card)) return false;
+    if (filter[TITLE] && missingTitleLibrary(filter[TITLE], card)) return false;
+    if (filter[TYPE] && missingType(filter[TYPE], card)) return false;
+    if (filter[SECT] && missingSectLibrary(filter[SECT], card)) return false;
+    if (filter[BLOOD] && missingBloodCost(filter[BLOOD], card)) return false;
+    if (filter[POOL] && missingPoolCost(filter[POOL], card)) return false;
+    if (filter[TRAITS] && missingTraitsLibrary(filter[TRAITS], card)) return false;
+    if (filter[CAPACITY] && missingCapacityLibrary(filter[CAPACITY], card)) return false;
+    if (filter[SET] && missingSet(filter[SET], card)) return false;
+    if (filter[PRECON] && missingPrecon(filter[PRECON], card)) return false;
+    if (filter[ARTIST] && missingArtist(filter[ARTIST], card)) return false;
+    if (filter[NAME] && missingNameOrInitials(filter[NAME], card)) return false;
+
+    return true;
+  });
+};
 
 const missingDisciplinesCrypt = (filter, card) => {
   return Object.keys(filter).some(

@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { useSnapshot } from 'valtio';
-import { cryptSortWithTimer, countCards, containCard, getGroups, getRestrictions } from '@/utils';
+import { countCards, containCard, getGroups, getRestrictions } from '@/utils';
 import {
   CRYPT,
   CRYPT_TIMER,
@@ -11,6 +11,7 @@ import {
   LIBRARY,
   NAME,
 } from '@/constants';
+import { useCryptSortWithTimer } from '@/hooks';
 import { miscStore, limitedStore } from '@/context';
 
 const useDeckCrypt = (cardsList, sortMethod = NAME, cardsToList = {}) => {
@@ -32,8 +33,8 @@ const useDeckCrypt = (cardsList, sortMethod = NAME, cardsToList = {}) => {
   const crypt = [...cryptFrom, ...cryptTo.map((card) => ({ q: 0, c: card.c }))];
   const cryptSide = [...cryptFromSide, ...cryptToSide.map((card) => ({ q: 0, c: card.c }))];
 
-  const sortedCards = cryptSortWithTimer(crypt, sortMethod);
-  const sortedCardsSide = cryptSortWithTimer(cryptSide, sortMethod);
+  const sortedCards = useCryptSortWithTimer(crypt, sortMethod);
+  const sortedCardsSide = useCryptSortWithTimer(cryptSide, sortMethod);
 
   const value = useMemo(() => {
     const {

@@ -18,8 +18,8 @@ import {
   CryptSearchFormGroup,
   CryptSearchFormTraits,
 } from '@/components';
-import { getIsPlaytest, sanitizeFormState } from '@/utils';
-import { useDebounce, useFilters } from '@/hooks';
+import { filterCrypt, getIsPlaytest, sanitizeFormState } from '@/utils';
+import { useDebounce } from '@/hooks';
 import {
   useApp,
   setCryptResults,
@@ -77,7 +77,6 @@ const CryptSearchForm = () => {
   const usedCrypt = useSnapshot(usedStore)[CRYPT];
   const limitedCrypt = useSnapshot(limitedStore)[CRYPT];
   const cryptFormState = useSnapshot(searchCryptForm);
-  const { filterCrypt } = useFilters(limitedMode ? limitedCrypt : cryptCardBase);
   const [error, setError] = useState(false);
   const [preresults, setPreresults] = useState();
   const showLimit = 300;
@@ -173,9 +172,10 @@ const CryptSearchForm = () => {
     }
     navigate(`/crypt?q=${encodeURIComponent(JSON.stringify(sanitizedForm))}`);
 
-    const filteredCards = filterCrypt(sanitizedForm).filter(
-      (card) => playtestMode || !getIsPlaytest(card[ID]),
-    );
+    const filteredCards = filterCrypt(
+      limitedMode ? limitedCrypt : cryptCardBase,
+      sanitizedForm,
+    ).filter((card) => playtestMode || !getIsPlaytest(card[ID]));
 
     const setResults = isMobile ? setCryptResults : setPreresults;
     if (searchInventoryMode && inventoryMode) {

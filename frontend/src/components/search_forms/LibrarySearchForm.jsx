@@ -18,8 +18,7 @@ import {
   LibrarySearchFormPoolCost,
   LibrarySearchFormCapacity,
 } from '@/components';
-import { getIsPlaytest, sanitizeFormState } from '@/utils';
-import { useFilters } from '@/hooks';
+import { filterLibrary, getIsPlaytest, sanitizeFormState } from '@/utils';
 import {
   useApp,
   setLibraryResults,
@@ -78,7 +77,6 @@ const LibrarySearchForm = () => {
   const usedLibrary = useSnapshot(usedStore)[LIBRARY];
   const limitedLibrary = useSnapshot(limitedStore)[LIBRARY];
   const libraryFormState = useSnapshot(searchLibraryForm);
-  const { filterLibrary } = useFilters(limitedMode ? limitedLibrary : libraryCardBase);
   const [error, setError] = useState(false);
   const [preresults, setPreresults] = useState();
   const showLimit = 300;
@@ -166,9 +164,10 @@ const LibrarySearchForm = () => {
     }
     navigate(`/library?q=${encodeURIComponent(JSON.stringify(sanitizedForm))}`);
 
-    const filteredCards = filterLibrary(sanitizedForm).filter(
-      (card) => playtestMode || !getIsPlaytest(card[ID]),
-    );
+    const filteredCards = filterLibrary(
+      limitedMode ? limitedLibrary : libraryCardBase,
+      sanitizedForm,
+    ).filter((card) => playtestMode || !getIsPlaytest(card[ID]));
 
     const setResults = isMobile ? setLibraryResults : setPreresults;
     if (searchInventoryMode && inventoryMode) {

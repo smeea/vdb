@@ -1,6 +1,7 @@
 import globals from 'globals';
 import js from '@eslint/js';
 import react from 'eslint-plugin-react';
+import reactHooks from 'eslint-plugin-react-hooks';
 
 export default [
   js.configs.recommended,
@@ -9,6 +10,7 @@ export default [
     ...react.configs.flat.recommended,
     plugins: {
       react,
+      reactHooks,
     },
     languageOptions: {
       globals: {
@@ -34,10 +36,10 @@ export default [
           allowEmptyCatch: true,
         },
       ],
-      'require-jsdoc': 'off',
-      'react/prop-types': 'off',
       'react/jsx-uses-react': 'error',
       'react/jsx-uses-vars': 'error',
+      'reactHooks/rules-of-hooks': 'error',
+      'reactHooks/exhaustive-deps': 'off',
     },
   },
 ];
