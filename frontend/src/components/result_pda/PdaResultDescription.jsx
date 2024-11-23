@@ -16,16 +16,16 @@ const PdaResultDescription = ({ deck }) => {
       <div>
         <PdaResultDescriptionText deck={deck} />
       </div>
-      <div className="flex justify-between gap-1 max-lg:flex-col max-lg:p-1 lg:basis-full">
-        <div className="basis-full">
+      <div className="flex gap-1 max-lg:flex-col max-lg:p-1 lg:basis-full">
+        <div className="w-full">
           <TwdOpenDeckButton deckid={deck[DECKID]} />
         </div>
         {username && (
           <>
-            <div className="basis-full">
+            <div className="w-full">
               <DeckCloneButton deck={deck} inTwdPda />
             </div>
-            <div className="basis-full">
+            <div className="w-full">
               <PdaFavoriteButton deck={deck} />
             </div>
           </>

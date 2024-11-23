@@ -15,12 +15,7 @@ const TwdSearchFormMatchInventory = ({ value, target, onChange }) => {
   ].map((i) => ({
     value: i[0],
     name: target,
-    label: (
-      <>
-        <span />
-        {i[1]}
-      </>
-    ),
+    label: <div className="flex justify-center">{i[1]}</div>,
   }));
 
   return (

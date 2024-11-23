@@ -24,6 +24,7 @@ const PdaFavoriteButton = ({ deck }) => {
   return (
     <ButtonIconed
       variant={isFavorited ? 'third' : 'primary'}
+      className="w-full"
       onClick={handleClick}
       icon={isFavorited ? <StarFill /> : <Star />}
       text={favoritedBy}
