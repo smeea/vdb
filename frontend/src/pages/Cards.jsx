@@ -30,9 +30,9 @@ const Cards = () => {
   useEffect(() => {
     if (cryptCardBase && libraryCardBase) {
       searchResults.quickCard =
-        params.cardid > 200000 ? cryptCardBase[params.cardid] : libraryCardBase[params.cardid];
+        params[ID] > 200000 ? cryptCardBase[params[ID]] : libraryCardBase[params[ID]];
     }
-  }, [params.cardid, cryptCardBase, libraryCardBase]);
+  }, [params[ID], cryptCardBase, libraryCardBase]);
 
   return (
     <div className="cards-container mx-auto">

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ky from 'ky';
-import { useParams } from 'react-router';
-import { useNavigate } from 'react-router';
+import { useNavigate, useParams } from 'react-router';
 import { useSnapshot } from 'valtio';
 import {
   AnalyzeLoadCustomButtons,
@@ -243,10 +242,10 @@ const TournamentAnalyze = () => {
   }, [tempDecks, tempArchon]);
 
   useEffect(() => {
-    if (params.tournamentid && !(decks || info) && cryptCardBase && libraryCardBase) {
-      loadPrepared(params.tournamentid);
+    if (params[EVENT] && !(decks || info) && cryptCardBase && libraryCardBase) {
+      loadPrepared(params[EVENT]);
     }
-  }, [params.tournamentid, cryptCardBase, libraryCardBase]);
+  }, [params[EVENT], cryptCardBase, libraryCardBase]);
 
   return (
     <div className="twd-container mx-auto flex flex-col gap-2">

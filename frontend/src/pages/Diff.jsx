@@ -27,6 +27,8 @@ import {
   BRANCHES,
   CRYPT,
   LIBRARY,
+  DECKID_FROM,
+  DECKID_TO,
 } from '@/constants';
 
 const Diff = () => {
@@ -43,7 +45,7 @@ const Diff = () => {
     setShowMenuButtons,
   } = useApp();
   const { deck, decks } = useSnapshot(deckStore);
-  const { deckidFrom, deckidTo } = useParams();
+  const { [DECKID_FROM]: deckidFrom, [DECKID_TO]: deckidTo } = useParams();
 
   const [errorFrom, setErrorFrom] = useState(false);
   const [errorTo, setErrorTo] = useState(false);

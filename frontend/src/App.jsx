@@ -2,6 +2,7 @@ import React, { Suspense, lazy } from 'react';
 import { createBrowserRouter, createRoutesFromElements, Route, Navigate } from 'react-router';
 import { RouterProvider } from 'react-router/dom';
 import { useApp } from '@/context';
+import { DECKID, DECKID_FROM, DECKID_TO, ID, EVENT } from '@/constants';
 import { deckServices, miscServices } from '@/services';
 import RootLayout from './pages/RootLayout.jsx';
 import About from './pages/About.jsx';
@@ -43,12 +44,12 @@ const router = createBrowserRouter(
       <Route path="about" element={<Navigate to="/" />} />
       <Route path="account" element={<Account />} />
       <Route path="cards" element={<Cards />}>
-        <Route path=":cardid" element={<Cards />} />
+        <Route path={`:${ID}`} element={<Cards />} />
       </Route>
       <Route path="crypt" element={<Crypt />} />
       <Route path="library" element={<Library />} />
       <Route path="decks" element={<Decks />} />
-      <Route path="decks/:deckid" element={<Decks />} loader={deckServices.deckLoader} />
+      <Route path={`decks/:${DECKID}`} element={<Decks />} loader={deckServices.deckLoader} />
       <Route
         path="documentation"
         element={
@@ -75,7 +76,7 @@ const router = createBrowserRouter(
         }
       />
       <Route
-        path="diff/:deckidFrom/:deckidTo"
+        path={`diff/:${DECKID_FROM}/:${DECKID_TO}`}
         element={
           <Suspense fallback={<div />}>
             <Diff />
@@ -137,7 +138,7 @@ const router = createBrowserRouter(
         }
       />
       <Route
-        path="review/:deckid"
+        path={`review/:${DECKID}`}
         element={
           <Suspense fallback={<div />}>
             <Review />
@@ -194,7 +195,7 @@ const router = createBrowserRouter(
         }
       >
         <Route
-          path=":tournamentid"
+          path={`:${EVENT}`}
           element={
             <Suspense fallback={<div />}>
               <TournamentAnalyze />

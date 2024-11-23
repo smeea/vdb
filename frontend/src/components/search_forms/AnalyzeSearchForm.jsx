@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate, useLocation } from 'react-router';
+import { useParams, useNavigate, useLocation } from 'react-router';
 import { useSnapshot } from 'valtio';
 import {
   ButtonClose,
@@ -40,6 +40,7 @@ import {
   SECT,
   STAR,
   TRAITS,
+  EVENT,
 } from '@/constants';
 
 const AnalyzeSearchForm = () => {
@@ -48,6 +49,7 @@ const AnalyzeSearchForm = () => {
   const decks = useSnapshot(analyzeStore)[DECKS];
   const [error, setError] = useState(false);
   const navigate = useNavigate();
+  const params = useParams();
   const query = JSON.parse(new URLSearchParams(useLocation().search).get('q'));
 
   useEffect(() => {
@@ -107,7 +109,9 @@ const AnalyzeSearchForm = () => {
       return;
     }
 
-    navigate(`/tournament_analyze?q=${encodeURIComponent(JSON.stringify(sanitizedForm))}`);
+    navigate(
+      `/tournament_analyze/${params[EVENT]}?q=${encodeURIComponent(JSON.stringify(sanitizedForm))}`,
+    );
 
     const filteredDecks = filterDecks(decks, sanitizedForm);
     setAnalyzeResults(filteredDecks);
@@ -119,7 +123,7 @@ const AnalyzeSearchForm = () => {
       if (Object.keys(sanitizedForm).length === 0) {
         if (query) {
           setAnalyzeResults();
-          navigate('/tournament_analyze');
+          navigate(`/tournament_analyze/${params[EVENT]}`);
         }
       } else processSearch();
     }
