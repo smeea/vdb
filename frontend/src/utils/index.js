@@ -17,4 +17,5 @@ export { default as importDeck } from './importDeck.js';
 export { default as librarySort } from './librarySort.js';
 export { default as parseDeck } from './parseDeck.js';
 export { default as sanitizeFormState } from './sanitizeFormState.js';
+export { default as sanitizeScoreSheet } from './sanitizeScoreSheet.js';
 export { filterCrypt, filterLibrary } from './cardFilters.js';
