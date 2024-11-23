@@ -9,7 +9,7 @@ import {
   PlaytestReportForm,
 } from '@/components';
 import { useApp } from '@/context';
-import { DECKID, IS_AUTHOR, IS_PUBLIC, TAGS, PLAYTEST } from '@/constants';
+import { DECKID, IS_AUTHOR, IS_PUBLIC, IS_BRANCHES, TAGS, PLAYTEST } from '@/constants';
 
 const DeckDetails = ({ deck, allTagsOptions }) => {
   const { isPlaytester, isMobile } = useApp();
@@ -20,16 +20,18 @@ const DeckDetails = ({ deck, allTagsOptions }) => {
   return (
     <div className="flex w-full flex-col gap-2">
       <div className="flex gap-2 max-sm:flex-col">
-        <div className={twMerge('basis-full', deck.isBranches ? 'sm:basis-6/12' : 'sm:basis-8/12')}>
+        <div
+          className={twMerge('basis-full', deck[IS_BRANCHES] ? 'sm:basis-6/12' : 'sm:basis-8/12')}
+        >
           <DeckChangeName deck={deck} />
         </div>
         <div
           className={twMerge(
             'flex basis-full gap-2 max-sm:flex-col',
-            deck.isBranches ? 'sm:basis-6/12' : 'sm:basis-4/12',
+            deck[IS_BRANCHES] ? 'sm:basis-6/12' : 'sm:basis-4/12',
           )}
         >
-          {deck.isBranches && (
+          {deck[IS_BRANCHES] && (
             <div className="basis-full sm:basis-4/12">
               <DeckChangeBranchName deck={deck} />
             </div>

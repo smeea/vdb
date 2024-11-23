@@ -32,6 +32,7 @@ import { getTags, parseDeck, getIsPlaytest, getIsEditable, parseDeckHash } from 
 import {
   AUTHOR,
   BRANCHES,
+  CARDS,
   CRYPT,
   DECK,
   DECKID,
@@ -103,7 +104,7 @@ const Decks = () => {
     }
 
     setError(false);
-    const cardsData = parseDeck(deckData.cards, cryptCardBase, libraryCardBase);
+    const cardsData = parseDeck(deckData[CARDS], cryptCardBase, libraryCardBase);
     if (deckid.length !== 9 || deckData[PUBLIC_PARENT]) {
       deckData[TAGS] = [];
       Object.values(getTags(cardsData[CRYPT], cardsData[LIBRARY])).forEach((v) => {
@@ -119,7 +120,7 @@ const Decks = () => {
       [IS_PUBLIC]: !!deckData[PUBLIC_PARENT],
       [IS_FROM_URL]: true,
     };
-    delete d.cards;
+    delete d[CARDS];
 
     addRecentDeck(d);
     setDeck(d);

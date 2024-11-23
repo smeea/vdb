@@ -19,16 +19,17 @@ import { useApp, deckStore, setDeck } from '@/context';
 import { deckServices } from '@/services';
 import { parseDeck, getIsPlaytest, getIsEditable } from '@/utils';
 import {
-  IS_BRANCHES,
-  IS_PUBLIC,
-  PUBLIC_PARENT,
-  MASTER,
-  DECKID,
   BRANCHES,
+  CARDS,
   CRYPT,
-  LIBRARY,
+  DECKID,
   DECKID_FROM,
   DECKID_TO,
+  IS_BRANCHES,
+  IS_PUBLIC,
+  LIBRARY,
+  MASTER,
+  PUBLIC_PARENT,
 } from '@/constants';
 
 const Diff = () => {
@@ -71,7 +72,7 @@ const Diff = () => {
     }
 
     setE(false);
-    const cardsData = parseDeck(deckData.cards, cryptCardBase, libraryCardBase);
+    const cardsData = parseDeck(deckData[CARDS], cryptCardBase, libraryCardBase);
     const d = {
       ...deckData,
       [CRYPT]: cardsData[CRYPT],

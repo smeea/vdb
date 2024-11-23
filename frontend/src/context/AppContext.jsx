@@ -9,6 +9,7 @@ import { parseDeck, deepClone, byTimestamp } from '@/utils';
 import {
   BRANCHES,
   CAPACITY_MIN_MAX,
+  CARDS,
   CRYPT,
   DATE_NEW_OLD,
   DECK,
@@ -17,6 +18,7 @@ import {
   EN,
   IS_AUTHOR,
   IS_FROZEN,
+  IS_BRANCHES,
   LIBRARY,
   LIMITED_ALLOWED_CRYPT,
   LIMITED_ALLOWED_LIBRARY,
@@ -472,7 +474,7 @@ export const AppProvider = ({ children }) => {
   // DECKS
   const parseDecksData = (decksData) => {
     Object.keys(decksData).forEach((deckid) => {
-      const cardsData = parseDeck(decksData[deckid].cards, cryptCardBase, libraryCardBase);
+      const cardsData = parseDeck(decksData[deckid][CARDS], cryptCardBase, libraryCardBase);
 
       decksData[deckid] = { ...decksData[deckid], ...cardsData };
       if (decksData[deckid].usedInInventory) {
@@ -491,10 +493,10 @@ export const AppProvider = ({ children }) => {
       decksData[deckid][IS_AUTHOR] = true;
       decksData[deckid][MASTER] =
         decksData[deckid][MASTER] !== '' ? decksData[deckid][MASTER] : null;
-      decksData[deckid].isBranches = !!(
+      decksData[deckid][IS_BRANCHES] = !!(
         decksData[deckid][MASTER] || decksData[deckid][BRANCHES]?.length > 0
       );
-      delete decksData[deckid].cards;
+      delete decksData[deckid][CARDS];
     });
 
     return decksData;

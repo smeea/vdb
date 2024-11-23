@@ -12,7 +12,7 @@ import {
   Input,
 } from '@/components';
 import { useApp } from '@/context';
-import { DECKID, ID, FROM } from '@/constants';
+import { IS_BRANCHES, DECKID, ID, FROM } from '@/constants';
 
 const DiffSelectDeck = ({ decks, deck, deckidFrom, deckidTo, target, title }) => {
   const { recentDecks, inventoryMode, username, isMobile } = useApp();
@@ -76,7 +76,7 @@ const DiffSelectDeck = ({ decks, deck, deckidFrom, deckidTo, target, title }) =>
         <div
           className={twMerge('z-20 flex gap-1', !inventoryMode && isMobile && 'justify-between')}
         >
-          <div className={deck?.isBranches && source == `${target}-my` ? 'w-3/4' : 'w-full'}>
+          <div className={deck?.[IS_BRANCHES] && source == `${target}-my` ? 'w-3/4' : 'w-full'}>
             {source == `${target}-my` && decks ? (
               <DeckSelectMy handleSelect={handleSelect} deckid={deck?.[DECKID]} />
             ) : source == `${target}-recent` ? (
@@ -85,7 +85,7 @@ const DiffSelectDeck = ({ decks, deck, deckidFrom, deckidTo, target, title }) =>
               <DeckSelectPrecon handleSelect={handleSelect} deckid={deck?.[DECKID]} />
             )}
           </div>
-          {source == `${target}-my` && decks && deck?.isBranches && (
+          {source == `${target}-my` && decks && deck?.[IS_BRANCHES] && (
             <div className="w-1/4">
               <DeckBranchSelect handleSelect={handleSelect} deck={deck} />
             </div>

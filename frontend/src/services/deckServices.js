@@ -165,11 +165,11 @@ export const branchDelete = (deckid, decks) => {
     if (masterId) {
       branches.splice(branches.indexOf(deckid), 1);
       deckStore[DECKS][masterId][BRANCHES] = branches;
-      deckStore[DECKS][masterId].isBranches = branches.length > 0;
+      deckStore[DECKS][masterId][IS_BRANCHES] = branches.length > 0;
     } else {
       masterId = branches.pop();
       deckStore[DECKS][masterId][BRANCHES] = branches;
-      deckStore[DECKS][masterId].isBranches = branches.length > 0;
+      deckStore[DECKS][masterId][IS_BRANCHES] = branches.length > 0;
       deckStore[DECKS][masterId][MASTER] = null;
       branches.map((b) => {
         deckStore[DECKS][b][MASTER] = masterId;
@@ -191,7 +191,7 @@ export const branchCreate = (deck, branch) => {
     .then((data) => {
       const now = new Date();
       deckStore[DECKS][master][MASTER] = null;
-      deckStore[DECKS][master].isBranches = true;
+      deckStore[DECKS][master][IS_BRANCHES] = true;
       deckStore[DECKS][master][BRANCHES] = deckStore[DECKS][master][BRANCHES]
         ? [...deckStore[DECKS][master][BRANCHES], data[0][DECKID]]
         : [data[0][DECKID]];

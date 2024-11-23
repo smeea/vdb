@@ -15,7 +15,18 @@ import {
 } from '@/components';
 import { useApp, deckToggleInventoryState } from '@/context';
 import { getIsEditable } from '@/utils';
-import { ID, DECKID, IS_AUTHOR, S, H, MY, RECENT, PRECONS, INVENTORY_TYPE } from '@/constants';
+import {
+  ID,
+  DECKID,
+  IS_AUTHOR,
+  IS_BRANCHES,
+  S,
+  H,
+  MY,
+  RECENT,
+  PRECONS,
+  INVENTORY_TYPE,
+} from '@/constants';
 
 const DeckSelect = ({
   deck,
@@ -52,7 +63,7 @@ const DeckSelect = ({
             <DeckSelectPrecon handleSelect={handleSelect} deckid={deck?.[DECKID]} />
           )}
         </div>
-        {selectFrom == MY && decks && deck?.isBranches && (
+        {selectFrom == MY && decks && deck?.[IS_BRANCHES] && (
           <div className="min-w-[90px]">
             <DeckBranchSelect handleSelect={handleSelect} deck={deck} />
           </div>

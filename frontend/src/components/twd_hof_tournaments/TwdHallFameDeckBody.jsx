@@ -8,13 +8,13 @@ import {
 import { useFetch } from '@/hooks';
 import { parseDeck } from '@/utils';
 import { useApp } from '@/context';
-import { DECKID, CRYPT, LIBRARY } from '@/constants';
+import { CARDS, DECKID, CRYPT, LIBRARY } from '@/constants';
 
 const TwdHallFameDeckBody = ({ deck }) => {
   const { cryptCardBase, libraryCardBase, isMobile } = useApp();
   const url = `${import.meta.env.VITE_API_URL}/deck/${deck[DECKID]}`;
   const { value } = useFetch(url, {}, []);
-  const cards = parseDeck(value?.cards, cryptCardBase, libraryCardBase);
+  const cards = parseDeck(value?.[CARDS], cryptCardBase, libraryCardBase);
 
   return (
     <div className="flex gap-2">

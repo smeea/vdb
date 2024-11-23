@@ -8,6 +8,7 @@ import {
   AUTHOR,
   BRANCHES,
   BRANCH_NAME,
+  CARDS,
   CRYPT,
   DECKID,
   DESCRIPTION,
@@ -17,7 +18,6 @@ import {
   TIMESTAMP,
   IS_AUTHOR,
   MASTER,
-  CARDS,
 } from '@/constants';
 
 const DeckImportAmaranth = ({ setShow }) => {
@@ -70,9 +70,9 @@ const DeckImportAmaranth = ({ setShow }) => {
 
     revisions.forEach((revision) => {
       const cards = {};
-      Object.keys(revision.cards).forEach((i) => {
+      Object.keys(revision[CARDS]).forEach((i) => {
         if (idReference[i] !== undefined) {
-          cards[idReference[i]] = revision.cards[i];
+          cards[idReference[i]] = revision[CARDS][i];
         }
       });
 
@@ -105,17 +105,17 @@ const DeckImportAmaranth = ({ setShow }) => {
       [TIMESTAMP]: now.toUTCString(),
     };
 
-    Object.keys(amaranth_deck.cards).forEach((i) => {
+    Object.keys(amaranth_deck[CARDS]).forEach((i) => {
       if (idReference[i] !== undefined) {
         if (idReference[i] > 200000) {
           deck[CRYPT][idReference[i]] = {
             c: cryptCardBase[idReference[i]],
-            q: amaranth_deck.cards[i],
+            q: amaranth_deck[CARDS][i],
           };
         } else {
           deck[LIBRARY][idReference[i]] = {
             c: libraryCardBase[idReference[i]],
-            q: amaranth_deck.cards[i],
+            q: amaranth_deck[CARDS][i],
           };
         }
       }
@@ -133,16 +133,16 @@ const DeckImportAmaranth = ({ setShow }) => {
             brs.forEach((b) => {
               const bCrypt = {};
               const bLibrary = {};
-              Object.keys(b.cards).forEach((cardid) => {
+              Object.keys(b[CARDS]).forEach((cardid) => {
                 if (cardid > 200000) {
                   bCrypt[cardid] = {
                     c: cryptCardBase[cardid],
-                    q: b.cards[cardid],
+                    q: b[CARDS][cardid],
                   };
                 } else {
                   bLibrary[cardid] = {
                     c: libraryCardBase[cardid],
-                    q: b.cards[cardid],
+                    q: b[CARDS][cardid],
                   };
                 }
               });
