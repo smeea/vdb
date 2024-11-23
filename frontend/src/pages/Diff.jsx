@@ -16,9 +16,8 @@ import {
   Modal,
 } from '@/components';
 import { useApp, deckStore, setDeck } from '@/context';
-import { useDeck } from '@/hooks';
 import { deckServices } from '@/services';
-import { getIsPlaytest, getIsEditable } from '@/utils';
+import { parseDeck, getIsPlaytest, getIsEditable } from '@/utils';
 import {
   IS_BRANCHES,
   IS_PUBLIC,
@@ -70,7 +69,7 @@ const Diff = () => {
     }
 
     setE(false);
-    const cardsData = useDeck(deckData.cards, cryptCardBase, libraryCardBase);
+    const cardsData = parseDeck(deckData.cards, cryptCardBase, libraryCardBase);
     const d = {
       ...deckData,
       [CRYPT]: cardsData[CRYPT],

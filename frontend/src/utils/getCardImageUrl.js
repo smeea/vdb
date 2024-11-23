@@ -1,7 +1,7 @@
 import { ID, GROUP, ADV, NAME, NEW, ASCII, EN } from '@/constants';
 import { getIsPlaytest } from '@/utils';
 
-const useCardImageUrl = (card, set, language) => {
+const getCardImageUrl = (card, set, language) => {
   const isPlaytest = getIsPlaytest(card[ID]);
   const cardNameFixed = card[ASCII].toLowerCase().replace(/[\s,:!?'".\-()/]/g, '');
 
@@ -28,4 +28,4 @@ const useCardImageUrl = (card, set, language) => {
   }
 };
 
-export default useCardImageUrl;
+export default getCardImageUrl;

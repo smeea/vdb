@@ -1,5 +1,4 @@
-import { countCards, cryptSort, librarySort } from '@/utils';
-import { useCardImageUrl } from '@/hooks';
+import { getCardImageUrl, countCards, cryptSort, librarySort } from '@/utils';
 import { QUANTITYx, ID, SET, EN, GROUPED_TYPE } from '@/constants';
 
 export const proxyCards = async (
@@ -26,7 +25,7 @@ export const proxyCards = async (
     return {
       [ID]: card.c[ID],
       [SET]: card[SET],
-      url: useCardImageUrl(card.c, card[SET], lang),
+      url: getCardImageUrl(card.c, card[SET], lang),
       q: card.q,
     };
   });

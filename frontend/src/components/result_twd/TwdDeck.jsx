@@ -8,21 +8,21 @@ import {
   Hr,
 } from '@/components';
 import { useApp } from '@/context';
-import { useFetch, useDeck } from '@/hooks';
+import { useFetch } from '@/hooks';
+import { parseDeck } from '@/utils';
 import { CRYPT, LIBRARY, DECKID } from '@/constants';
 
 const TwdDeck = ({ deck, inPda }) => {
   const { cryptCardBase, libraryCardBase, isNarrow } = useApp();
   if (deck.cards) {
-    deck = { ...deck, ...useDeck(deck.cards, cryptCardBase, libraryCardBase) };
+    deck = { ...deck, ...parseDeck(deck.cards, cryptCardBase, libraryCardBase) };
   } else {
     const url = `${import.meta.env.VITE_API_URL}/${inPda ? 'pda' : 'twd'}/${deck[DECKID]}`;
     const { value: d } = useFetch(url, {}, []);
     if (d) {
       deck = {
-        ...deck,
         ...d,
-        ...useDeck(d.cards, cryptCardBase, libraryCardBase),
+        ...parseDeck(d.cards, cryptCardBase, libraryCardBase),
       };
     }
   }

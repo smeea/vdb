@@ -4,8 +4,8 @@ import { useSnapshot } from 'valtio';
 import { set, setMany, getMany, update } from 'idb-keyval';
 import { playtestServices, userServices, cardServices } from '@/services';
 import { getLocalStorage, setLocalStorage } from '@/services/storageServices';
-import { useDeck, useWindowSize } from '@/hooks';
-import { deepClone, byTimestamp } from '@/utils';
+import { useWindowSize } from '@/hooks';
+import { parseDeck, deepClone, byTimestamp } from '@/utils';
 import {
   BRANCHES,
   CAPACITY_MIN_MAX,
@@ -472,7 +472,7 @@ export const AppProvider = ({ children }) => {
   // DECKS
   const parseDecksData = (decksData) => {
     Object.keys(decksData).forEach((deckid) => {
-      const cardsData = useDeck(decksData[deckid].cards, cryptCardBase, libraryCardBase);
+      const cardsData = parseDeck(decksData[deckid].cards, cryptCardBase, libraryCardBase);
 
       decksData[deckid] = { ...decksData[deckid], ...cardsData };
       if (decksData[deckid].usedInInventory) {

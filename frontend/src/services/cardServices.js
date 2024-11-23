@@ -16,7 +16,8 @@ import {
   TAGS,
   TEXT,
 } from '@/constants';
-import { useDeck, useTags } from '@/hooks';
+import { useTags } from '@/hooks';
+import { parseDeck } from '@/utils';
 
 const CARD_VERSION = import.meta.env.VITE_CARD_VERSION;
 const BASE_URL = import.meta.env.VITE_BASE_URL;
@@ -89,7 +90,7 @@ export const getPreconDecks = async (cryptCardBase, libraryCardBase) => {
         [LIBRARY]: {},
       };
 
-      const cardsData = useDeck(preconDecksData[set][precon], cryptCardBase, libraryCardBase);
+      const cardsData = parseDeck(preconDecksData[set][precon], cryptCardBase, libraryCardBase);
 
       let tags = [];
       if (set !== PLAYTEST || (cryptCardBase[210001] && libraryCardBase[110001])) {

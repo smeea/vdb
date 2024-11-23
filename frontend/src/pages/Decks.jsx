@@ -27,8 +27,8 @@ import {
   Seating,
 } from '@/components';
 import { deckStore, useApp, setDeck } from '@/context';
-import { useDecksTagsAll, useDeck, useTags } from '@/hooks';
-import { getIsPlaytest, getIsEditable, parseDeckHash } from '@/utils';
+import { useDecksTagsAll, useTags } from '@/hooks';
+import { parseDeck, getIsPlaytest, getIsEditable, parseDeckHash } from '@/utils';
 import {
   AUTHOR,
   BRANCHES,
@@ -103,7 +103,7 @@ const Decks = () => {
     }
 
     setError(false);
-    const cardsData = useDeck(deckData.cards, cryptCardBase, libraryCardBase);
+    const cardsData = parseDeck(deckData.cards, cryptCardBase, libraryCardBase);
     if (deckid.length !== 9 || deckData[PUBLIC_PARENT]) {
       deckData[TAGS] = [];
       Object.values(useTags(cardsData[CRYPT], cardsData[LIBRARY])).forEach((v) => {

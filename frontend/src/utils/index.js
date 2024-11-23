@@ -8,3 +8,5 @@ export { default as librarySort } from './librarySort.js';
 export { default as decksSort } from './decksSort.js';
 export { default as getDeckInUrl } from './getDeckInUrl.js';
 export { default as cryptSortWithTimer } from './cryptSortWithTimer.js';
+export { default as getCardImageUrl } from './getCardImageUrl.js';
+export { default as parseDeck } from './parseDeck.js';

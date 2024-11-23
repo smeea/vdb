@@ -1,4 +1,4 @@
-const useDeck = (cards = {}, cryptCardBase, libraryCardBase) => {
+const parseDeck = (cards = {}, cryptCardBase, libraryCardBase) => {
   const crypt = {};
   const library = {};
 
@@ -18,4 +18,4 @@ const useDeck = (cards = {}, cryptCardBase, libraryCardBase) => {
   return { crypt, library };
 };
 
-export default useDeck;
+export default parseDeck;

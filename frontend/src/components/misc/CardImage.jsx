@@ -1,13 +1,13 @@
 import React from 'react';
 import { twMerge } from 'tailwind-merge';
 import { useApp } from '@/context';
-import { useCardImageUrl } from '@/hooks';
+import { getCardImageUrl } from '@/utils';
 import { NAME, CLAN, ID, EN } from '@/constants';
 import legacyImagesClans from '@/assets/data/legacyImagesClansList.json';
 
 const CardImage = ({ card, set, className = 'max-sm:w-full', size = 'md', onClick }) => {
   const { lang, showLegacyImage } = useApp();
-  const { baseUrl, otherUrl, legacyUrl } = useCardImageUrl(card, set, lang);
+  const { baseUrl, otherUrl, legacyUrl } = getCardImageUrl(card, set, lang);
   const hasLegacyImage = card[ID] > 200000 && legacyImagesClans.includes(card[CLAN]);
   const url = showLegacyImage && hasLegacyImage ? legacyUrl : lang == EN ? baseUrl : otherUrl;
 

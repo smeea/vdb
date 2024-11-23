@@ -15,7 +15,7 @@ import {
   FlexGapped,
 } from '@/components';
 import { useApp, deckStore } from '@/context';
-import { useDeck, useTags } from '@/hooks';
+import { useTags } from '@/hooks';
 import {
   BRANCHES,
   CRYPT,
@@ -31,7 +31,7 @@ import {
   TAGS,
   PUBLIC_PARENT,
 } from '@/constants';
-import { deepClone } from '@/utils';
+import { parseDeck, deepClone } from '@/utils';
 
 const Review = () => {
   const {
@@ -74,7 +74,7 @@ const Review = () => {
     }
 
     setError(false);
-    const cardsData = useDeck(deckData.cards, cryptCardBase, libraryCardBase);
+    const cardsData = parseDeck(deckData.cards, cryptCardBase, libraryCardBase);
     if (deckid.length !== 9 || deckData[PUBLIC_PARENT]) {
       deckData[TAGS] = [];
       Object.values(useTags(cardsData[CRYPT], cardsData[LIBRARY])).forEach((v) => {
