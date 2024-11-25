@@ -58,20 +58,20 @@ def get_missing_fields(source):
     for id, c in crypt.items():
         # Skip Anarch Convert
         if id != 200076:
-            total_capacity += c["q"] * c["Capacity"]
+            total_capacity += c["q"] * c["capacity"]
 
-            if (clan := c["Clan"]) in clans:
+            if (clan := c["clan"]) in clans:
                 clans[clan] += c["q"]
             else:
                 clans[clan] = c["q"]
 
-        if (sect := c["Sect"]) in sects:
+        if (sect := c["sect"]) in sects:
             sects[sect] += c["q"]
         else:
             sects[sect] = c["q"]
 
         if "star" not in deck["traits"] and id != 200076:
-            adv = c["Adv"]
+            adv = c["adv"]
             if adv and adv[1] in crypt:
                 if (c["q"] + crypt[adv[1]]["q"]) / total_crypt_ex_ac > 0.33:
                     deck["traits"].append("star")
@@ -79,7 +79,7 @@ def get_missing_fields(source):
                 if c["q"] / total_crypt_ex_ac > 0.33:
                     deck["traits"].append("star")
 
-        for d in c["Disciplines"].keys():
+        for d in c["disciplines"].keys():
             crypt_disciplines.add(d)
 
     for clan, q in clans.items():
@@ -98,23 +98,23 @@ def get_missing_fields(source):
     card_types = {}
 
     for id, c in library.items():
-        if c["Type"] in card_types:
-            card_types[c["Type"]] += c["q"]
+        if c["type"] in card_types:
+            card_types[c["type"]] += c["q"]
         else:
-            card_types[c["Type"]] = c["q"]
+            card_types[c["type"]] = c["q"]
 
-        if "&" in c["Discipline"]:
-            for d in c["Discipline"].split(" & "):
+        if "&" in c["discipline"]:
+            for d in c["discipline"].split(" & "):
                 if d in [*crypt_disciplines, 'Flight', 'Maleficia', 'Striga']:
                     disciplines.add(d)
 
-        elif "/" in c["Discipline"]:
-            for d in c["Discipline"].split("/"):
+        elif "/" in c["discipline"]:
+            for d in c["discipline"].split("/"):
                 if d in [*crypt_disciplines, 'Flight', 'Maleficia', 'Striga']:
                     disciplines.add(d)
 
-        elif c["Discipline"] in [*crypt_disciplines, 'Flight', 'Maleficia', 'Striga']:
-                disciplines.add(c["Discipline"])
+        elif c["discipline"] in [*crypt_disciplines, 'Flight', 'Maleficia', 'Striga']:
+                disciplines.add(c["discipline"])
 
     for ct, q in card_types.items():
         deck["cardtypes_ratio"][ct.lower()] = q / deck["library_total"]
