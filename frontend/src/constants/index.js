@@ -260,3 +260,4 @@ export const VP = 'vp';
 export const X = 'X';
 export const XLSX = 'xlsx';
 export const YES = 'YES';
+export const PLAYTEST_OLD = 'playtest_old';

@@ -9,13 +9,23 @@ import {
   PlaytestReportForm,
 } from '@/components';
 import { useApp } from '@/context';
-import { DECKID, IS_AUTHOR, IS_PUBLIC, IS_BRANCHES, TAGS, PLAYTEST } from '@/constants';
+import {
+  PLAYTEST_OLD,
+  DECKID,
+  IS_AUTHOR,
+  IS_PUBLIC,
+  IS_BRANCHES,
+  TAGS,
+  PLAYTEST,
+} from '@/constants';
 
 const DeckDetails = ({ deck, allTagsOptions }) => {
   const { isPlaytester, isMobile } = useApp();
   const [folded, setFolded] = useState(!isMobile);
   const playtestPrecon =
-    deck[DECKID].includes(`${PLAYTEST}:`) && deck[DECKID].replace(`${PLAYTEST}:`, '');
+    deck[DECKID].includes(`${PLAYTEST}:`) &&
+    deck[DECKID].replace(`${PLAYTEST}:`, '') &&
+    !deck[PLAYTEST_OLD];
 
   return (
     <div className="flex w-full flex-col gap-2">

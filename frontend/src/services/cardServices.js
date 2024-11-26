@@ -15,6 +15,7 @@ import {
   PRECONS,
   TAGS,
   TEXT,
+  PLAYTEST_OLD,
 } from '@/constants';
 import { getTags, parseDeck } from '@/utils';
 
@@ -88,6 +89,10 @@ export const getPreconDecks = async (cryptCardBase, libraryCardBase) => {
         [CRYPT]: {},
         [LIBRARY]: {},
       };
+
+      if (set === PLAYTEST && setsAndPrecons[set][PRECONS][precon][PLAYTEST_OLD]) {
+        preconDecks[deckid][PLAYTEST_OLD] = true;
+      }
 
       const cardsData = parseDeck(preconDecksData[set][precon], cryptCardBase, libraryCardBase);
 

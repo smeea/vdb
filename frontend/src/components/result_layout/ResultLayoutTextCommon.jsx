@@ -8,7 +8,7 @@ import {
   PlaytestReportForm,
   Hr,
 } from '@/components';
-import { ID, ARTIST, RULINGS } from '@/constants';
+import { PLAYTEST_OLD, ID, ARTIST, RULINGS } from '@/constants';
 import { getIsPlaytest } from '@/utils';
 
 const ResultLayoutTextCommon = ({
@@ -52,7 +52,7 @@ const ResultLayoutTextCommon = ({
           </div>
         </>
       )}
-      {!inPopover && isPlaytester && isPlaytest && (
+      {!inPopover && isPlaytester && isPlaytest && !card[PLAYTEST_OLD] && (
         <>
           <Hr />
           <PlaytestReportForm id={card[ID]} setIsHotkeysDisabled={setIsHotkeysDisabled} />

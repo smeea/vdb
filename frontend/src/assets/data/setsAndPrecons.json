@@ -29,27 +29,33 @@
       },
       "PH": {
         "name": "Hecata",
-        "clan": "Hecata"
+        "clan": "Hecata",
+        "playtest_old": true
       },
       "NR": {
         "name": "New Blood: Ravnos",
-        "clan": "Ravnos"
+        "clan": "Ravnos",
+        "playtest_old": true
       },
       "NSal": {
         "name": "New Blood: Salubri",
-        "clan": "Salubri"
+        "clan": "Salubri",
+        "playtest_old": true
       },
       "NTz": {
         "name": "New Blood: Tzimisce",
-        "clan": "Tzimisce"
+        "clan": "Tzimisce",
+        "playtest_old": true
       },
       "NH": {
         "name": "New Blood: Hecata",
-        "clan": "Hecata"
+        "clan": "Hecata",
+        "playtest_old": true
       },
       "NL": {
         "name": "New Blood: Lasombra",
-        "clan": "Lasombra"
+        "clan": "Lasombra",
+        "playtest_old": true
       }
     }
   },

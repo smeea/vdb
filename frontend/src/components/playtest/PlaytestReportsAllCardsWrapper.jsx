@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import { FlexGapped, PlaytestReportsAllCardOrPrecon } from '@/components';
 import { getIsPlaytest, cryptSort, librarySort } from '@/utils';
 import { useApp } from '@/context';
-import { CRYPT, ID } from '@/constants';
+import { PLAYTEST_OLD, CRYPT, ID } from '@/constants';
 
 const PlaytestReportsAllCardsWrapper = ({ reports, target, sortMethod, maxSameScore }) => {
   const { cryptCardBase, libraryCardBase } = useApp();
@@ -12,7 +12,9 @@ const PlaytestReportsAllCardsWrapper = ({ reports, target, sortMethod, maxSameSc
   const products = useMemo(
     () =>
       sort(
-        Object.values(cardBase || {}).filter((card) => getIsPlaytest(card[ID])),
+        Object.values(cardBase || {}).filter((card) => {
+          return getIsPlaytest(card[ID]) && !card[PLAYTEST_OLD];
+        }),
         sortMethod,
       ),
     [sortMethod, cardBase],
