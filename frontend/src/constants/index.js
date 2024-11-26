@@ -261,3 +261,4 @@ export const X = 'X';
 export const XLSX = 'xlsx';
 export const YES = 'YES';
 export const PLAYTEST_OLD = 'playtest_old';
+export const PATH = 'path';

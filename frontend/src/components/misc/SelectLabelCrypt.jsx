@@ -6,9 +6,11 @@ import {
   ResultCryptCapacity,
   ResultCryptDisciplines,
   ResultClanImage,
+  ResultCryptSect,
+  ResultPathImage,
 } from '@/components';
 import { useApp, inventoryStore } from '@/context';
-import { CRYPT, GROUP, CLAN, DISCIPLINES, ANY, X } from '@/constants';
+import { SECT, PATH, CRYPT, GROUP, CLAN, DISCIPLINES, ANY, X } from '@/constants';
 
 const SelectLabelCrypt = ({ cardid, inInventory }) => {
   const { cryptCardBase } = useApp();
@@ -42,6 +44,13 @@ const SelectLabelCrypt = ({ cardid, inInventory }) => {
             ]
           </div>
           <ResultClanImage value={card[CLAN]} />
+          <div className="flex justify-center">
+            {card[PATH] ? (
+              <ResultPathImage value={card[PATH]} />
+            ) : (
+              <ResultCryptSect value={card[SECT]} />
+            )}
+          </div>
         </div>
         <div className="flex whitespace-nowrap">
           <ResultCryptDisciplines value={card[DISCIPLINES]} />

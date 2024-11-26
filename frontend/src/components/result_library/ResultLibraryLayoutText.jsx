@@ -10,6 +10,7 @@ import {
   ResultLibraryRequirements,
   ResultMiscImage,
   ResultName,
+  ResultPathImage,
   ResultNameAka,
   ResultLibraryTypeImage,
 } from '@/components';
@@ -29,6 +30,7 @@ import {
   TRIFLE,
   TYPE,
   CONVICTION,
+  PATH,
 } from '@/constants';
 
 const Requirements = ({ card }) => {
@@ -45,6 +47,7 @@ const Requirements = ({ card }) => {
             <ResultLibraryRequirements value={card[REQUIREMENT]} />
             {(card[CLAN] || card[DISCIPLINE]) && (
               <div className="flex gap-1.5">
+                <ResultPathImage value={card[PATH]} />
                 <ResultLibraryClan value={card[CLAN]} />
                 <ResultLibraryDisciplines value={card[DISCIPLINE]} />
               </div>

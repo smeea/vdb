@@ -8,9 +8,10 @@ import {
   ResultLibraryRequirements,
   ResultLibraryCost,
   ResultLibraryClan,
+  ResultPathImage,
 } from '@/components';
 import { useApp, inventoryStore } from '@/context';
-import { TYPE, REQUIREMENT, CLAN, DISCIPLINE, LIBRARY } from '@/constants';
+import { PATH, TYPE, REQUIREMENT, CLAN, DISCIPLINE, LIBRARY } from '@/constants';
 
 const SelectLabelLibrary = ({ cardid, inInventory }) => {
   const { libraryCardBase } = useApp();
@@ -42,6 +43,7 @@ const SelectLabelLibrary = ({ cardid, inInventory }) => {
           <div className="flex items-center gap-1.5">
             <ResultLibraryDisciplines value={card[DISCIPLINE]} />
             <ResultLibraryClan value={card[CLAN]} />
+            <ResultPathImage value={card[PATH]} />
           </div>
           <ResultLibraryCost card={card} />
         </div>

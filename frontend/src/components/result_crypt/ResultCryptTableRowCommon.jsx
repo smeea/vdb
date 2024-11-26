@@ -10,10 +10,11 @@ import {
   ResultCryptGroup,
   ResultCryptSect,
   ResultCryptTitle,
+  ResultPathImage,
   ResultName,
 } from '@/components';
 import { useApp } from '@/context';
-import { SECT, DISCIPLINES, TITLE, CLAN, GROUP } from '@/constants';
+import { PATH, SECT, DISCIPLINES, TITLE, CLAN, GROUP } from '@/constants';
 
 const ResultCryptTableRowCommon = ({
   card,
@@ -67,9 +68,13 @@ const ResultCryptTableRowCommon = ({
               <ResultCryptTitle value={card[TITLE]} />
             </div>
           </td>
-          <td className="min-w-[20px]" onClick={() => handleClick(card)}>
+          <td className="min-w-[25px]" onClick={() => handleClick(card)}>
             <div className="flex justify-center">
-              <ResultCryptSect value={card[SECT]} />
+              {card[PATH] ? (
+                <ResultPathImage value={card[PATH]} />
+              ) : (
+                <ResultCryptSect value={card[SECT]} />
+              )}
             </div>
           </td>
           <td className="min-w-[35px]" onClick={() => handleClick(card)}>
