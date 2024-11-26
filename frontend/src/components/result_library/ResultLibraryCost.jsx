@@ -17,7 +17,7 @@ const ResultLibraryCost = ({ card, className }) => {
   return (
     <img
       className={twMerge(styles[target], className)}
-      title={`${capitalize(target)} Cost`}
+      title={`${capitalize(target)} Cost ${value}`}
       src={`${import.meta.env.VITE_BASE_URL}/images/misc/${target}${value}.${target == CONVICTION ? 'svg' : 'gif'}`}
     />
   );

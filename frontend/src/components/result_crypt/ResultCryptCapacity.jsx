@@ -8,7 +8,7 @@ const ResultCryptCapacity = ({ card }) => {
       src={`${import.meta.env.VITE_BASE_URL}/images/misc/${
         card[SECT] === 'Imbued' ? 'life' : 'cap'
       }${card[CAPACITY]}.gif`}
-      title="Capacity"
+      title={`Capacity ${card[CAPACITY]}`}
     />
   );
 };
