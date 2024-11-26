@@ -81,6 +81,14 @@ export const deckUpdate = (deckid, field, value) => {
   }
   const initialDecksState = deepClone(deckStore[DECKS][deckid]);
 
+  const clearNegative = (cards) => {
+    Object.values(cards).forEach((v) => {
+      if (v.q < 0) delete cards[v.c[ID]];
+    });
+
+    return cards;
+  };
+
   switch (field) {
     case USED_IN_INVENTORY:
       Object.keys(value).forEach((cardid) => {
@@ -102,12 +110,12 @@ export const deckUpdate = (deckid, field, value) => {
       }
       break;
     case CARDS:
-      deckStore[DECKS][deckid][CRYPT] = deepClone(value[CRYPT]);
-      deckStore[DECKS][deckid][LIBRARY] = deepClone(value[LIBRARY]);
+      deckStore[DECKS][deckid][CRYPT] = clearNegative(deepClone(value[CRYPT]));
+      deckStore[DECKS][deckid][LIBRARY] = clearNegative(deepClone(value[LIBRARY]));
 
       if (deckid === deckStore?.[DECK]?.[DECKID]) {
-        deckStore[DECK][CRYPT] = deepClone(value[CRYPT]);
-        deckStore[DECK][LIBRARY] = deepClone(value[LIBRARY]);
+        deckStore[DECK][CRYPT] = clearNegative(deepClone(value[CRYPT]));
+        deckStore[DECK][LIBRARY] = clearNegative(deepClone(value[LIBRARY]));
       }
       break;
     default:

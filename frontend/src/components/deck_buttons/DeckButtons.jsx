@@ -3,6 +3,7 @@ import {
   DeckSearchSimilarButton,
   DeckCloneButton,
   DeckDeleteButton,
+  DeckDeletePlaytestButton,
   DeckCopyUrlButton,
   DeckImport,
   DeckExportButton,
@@ -56,7 +57,12 @@ const DeckButtons = ({
         setShowImportText={setShowImportText}
         setBadImportCards={setBadImportCards}
       />
-      {hasPlaytest && !isPlaytestSafe && isAuthor && !isPublic && <DeckDeleteButton deck={deck} />}
+      {hasPlaytest && !isPlaytestSafe && isAuthor && !isPublic && (
+        <>
+          <DeckDeletePlaytestButton deck={deck} />
+          <DeckDeleteButton deck={deck} />
+        </>
+      )}
       {deck && isPlaytestSafe && (
         <>
           {playtestMode && playtestPrecon && isPlaytestAdmin && (

@@ -1,6 +1,6 @@
 import ky from 'ky';
 import { redirect } from 'react-router';
-import { exportDeck, getTextDisciplines } from '@/utils';
+import { getIsPlaytest, exportDeck, getTextDisciplines } from '@/utils';
 import {
   ADV,
   AUTHOR,
@@ -45,7 +45,7 @@ export const update = (deckid, field, value) => {
 
 export const cardChange = (deckid, cardid, q) => {
   const url = `${import.meta.env.VITE_API_URL}/deck/${deckid}`;
-  return ky.put(url, { json: { cardChange: { [cardid]: q } } }).json();
+  return ky.put(url, { json: { [CARDS]: { [cardid]: q } } }).json();
 };
 
 export const deckImport = (deck) => {
@@ -71,6 +71,16 @@ export const deckImport = (deck) => {
 export const deckDelete = (deck) => {
   const url = `${import.meta.env.VITE_API_URL}/deck/${deck[DECKID]}`;
   return ky.delete(url).then(() => delete deckStore[DECKS][deck[MASTER] ?? deck[DECKID]]);
+};
+
+export const deckDeletePlaytest = (deck) => {
+  const playtestCards = {};
+  Object.keys({ ...deck[CRYPT], ...deck[LIBRARY] }).forEach((id) => {
+    if (getIsPlaytest(id)) playtestCards[id] = -1;
+  });
+
+  const url = `${import.meta.env.VITE_API_URL}/deck/${deck[DECKID]}`;
+  return ky.put(url, { json: { [CARDS]: playtestCards } }).json();
 };
 
 export const deckClone = (deck) => {

@@ -96,6 +96,7 @@ export { default as DeckButtons } from './deck_buttons/DeckButtons.jsx';
 export { default as DeckCloneButton } from './deck_buttons/DeckCloneButton.jsx';
 export { default as DeckCopyUrlButton } from './deck_buttons/DeckCopyUrlButton.jsx';
 export { default as DeckDeleteButton } from './deck_buttons/DeckDeleteButton.jsx';
+export { default as DeckDeletePlaytestButton } from './deck_buttons/DeckDeletePlaytestButton.jsx';
 export { default as DeckDiffButton } from './deck_buttons/DeckDiffButton.jsx';
 export { default as DeckDrawButton } from './deck_buttons/DeckDrawButton.jsx';
 export { default as DeckExportButton } from './deck_buttons/DeckExportButton.jsx';

@@ -242,8 +242,8 @@ def update_deck_route(deckid):
     else:
         d.timestamp = datetime.utcnow()
 
-    if "cardChange" in request.json:
-        new_cards = request.json["cardChange"]
+    if "cards" in request.json:
+        new_cards = request.json["cards"]
         merged_cards = d.cards.copy()
 
         for k, v in new_cards.items():
@@ -256,16 +256,6 @@ def update_deck_route(deckid):
                     del used_cards[k]
                     d.used_in_inventory = used_cards.copy()
             else:
-                merged_cards[k] = v
-
-        d.cards = merged_cards.copy()
-
-    if "cardAdd" in request.json:
-        new_cards = request.json["cardAdd"]
-        merged_cards = d.cards.copy()
-        for k, v in new_cards.items():
-            k = int(k)
-            if k not in merged_cards:
                 merged_cards[k] = v
 
         d.cards = merged_cards.copy()
@@ -321,24 +311,6 @@ def update_deck_route(deckid):
 
     if "tags" in request.json:
         d.tags = request.json["tags"]
-
-    if "cards" in request.json:
-        cards = {}
-        for k, v in request.json["cards"].items():
-            cards[int(k)] = v
-
-        d.cards = cards
-
-    if "library" in request.json:
-        cards = {}
-        for k, v in d.cards.items():
-            if k > 200000:
-                cards[k] = v
-
-        for k, v in request.json["library"].items():
-            cards[int(k)] = v
-
-        d.cards = cards
 
     if d.master:
         old_master = Deck.query.get(d.master)
