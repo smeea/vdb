@@ -4,20 +4,16 @@ import { Select, SelectLabelCrypt, SelectLabelLibrary } from '@/components';
 import { filterCrypt, filterLibrary, getIsPlaytest } from '@/utils';
 import { ID, NAME, TWD, CRYPT, LIBRARY, VALUE } from '@/constants';
 
-const getMatches = (
-  inputValue,
-  filterAction,
-  filterSource,
-  playtestId,
-  playtestMode,
-  inInventory,
-) => {
+const STARTING_WITH = 'startingWith';
+const OTHER = 'other';
+
+const getMatches = (inputValue, filterAction, playtestMode, inInventory) => {
   const input = { [NAME]: inputValue };
 
   const startingWith = [];
   const other = filterAction(input)
     .filter((card) => {
-      if (!((playtestMode && !inInventory) || !getIsPlaytest(card[ID]))) {
+      if (!((playtestMode && !inInventory) || getIsPlaytest(card[ID]))) {
         return false;
       }
 
@@ -31,7 +27,7 @@ const getMatches = (
       [VALUE]: card[ID],
     }));
 
-  return { startingWith, other };
+  return { [STARTING_WITH]: startingWith, [OTHER]: other };
 };
 
 const getAllMatches = (
@@ -76,7 +72,7 @@ const CardSelect = React.forwardRef(
 
       if (cardid > 200000) {
         return <SelectLabelCrypt cardid={cardid} inInventory={inInventory} />;
-      } else if (cardid > 100000) {
+      } else {
         return <SelectLabelLibrary cardid={cardid} inInventory={inInventory} />;
       }
     };
@@ -107,18 +103,18 @@ const CardSelect = React.forwardRef(
 
         if (target === CRYPT) {
           return [
-            ...cryptMatches.startingWith.toSorted(byTwd),
-            ...cryptMatches.other.toSorted(byTwd),
+            ...cryptMatches[STARTING_WITH].toSorted(byTwd),
+            ...cryptMatches[OTHER].toSorted(byTwd),
           ];
         } else if (target === LIBRARY) {
           return [
-            ...libraryMatches.startingWith.toSorted(byTwd),
-            ...libraryMatches.other.toSorted(byTwd),
+            ...libraryMatches[STARTING_WITH].toSorted(byTwd),
+            ...libraryMatches[OTHER].toSorted(byTwd),
           ];
         }
         return [
-          ...[...cryptMatches.startingWith, ...libraryMatches.startingWith].toSorted(byTwd),
-          ...[...cryptMatches.other, ...libraryMatches.other].toSorted(byTwd),
+          ...[...cryptMatches[STARTING_WITH], ...libraryMatches[STARTING_WITH]].toSorted(byTwd),
+          ...[...cryptMatches[OTHER], ...libraryMatches[OTHER]].toSorted(byTwd),
         ];
       }
     };
