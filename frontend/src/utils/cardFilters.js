@@ -65,6 +65,11 @@ import {
   TEXT,
   TITLE,
   TITLES,
+  PATH,
+  PATH_CAINE,
+  PATH_CATHARI,
+  PATH_DEATH,
+  PATH_POWER,
   TRAITS,
   TWD,
   TYPE,
@@ -221,6 +226,11 @@ const missingTrait = (trait, card, traitsRegexMap) => {
       return !card[TYPE].includes('/');
     case BURN:
       return !card[BURN];
+    case PATH_CAINE:
+    case PATH_CATHARI:
+    case PATH_DEATH:
+    case PATH_POWER:
+      return card[PATH].toLowerCase().replace(/ .*/, '') !== trait.replace('path-', '');
     case NO_REQUIREMENTS:
       return (
         card[REQUIREMENT] ||
