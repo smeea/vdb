@@ -1,6 +1,6 @@
 [
   {
-    "version": "2024-11-26",
+    "version": "2024-11-26/1",
     "changes": [
       "Add EC2024 LCQ event (https://vdb.im/tournament_analyze/11667)",
       "Add Gangrel legacy images",

@@ -13,9 +13,7 @@ const getMatches = (inputValue, filterAction, playtestMode, inInventory) => {
   const startingWith = [];
   const other = filterAction(input)
     .filter((card) => {
-      if (!((playtestMode && !inInventory) || getIsPlaytest(card[ID]))) {
-        return false;
-      }
+      if (getIsPlaytest(card[ID]) && (!playtestMode || inInventory)) return false;
 
       if (card[NAME].toLowerCase().startsWith(inputValue.toLowerCase())) {
         startingWith.push({ [VALUE]: card[ID] });
