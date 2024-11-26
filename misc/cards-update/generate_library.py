@@ -332,30 +332,34 @@ def generate_card(card):
             card["Conviction Cost"] = int(card["Conviction Cost"])
 
 
+
     card_ready = {
-        "ascii": card["ASCII Name"],
+        "aka": card["Aka"],
         "artist": card["Artist"],
+        "ascii": card["ASCII Name"],
         "banned": card["Banned"],
         "blood": card["Blood Cost"],
         "burn": card["Burn Option"],
-        "text": card["Card Text"],
         "clan": card["Clan"],
         "conviction": card["Conviction Cost"],
         "discipline": card["Discipline"],
         "id": card["Id"],
         "name": card["Name"],
+        "path": card["Path"],
         "pool": card["Pool Cost"],
         "requirement": card["Requirement"].lower(),
         "rulings": card["Rulings"],
         "set": card["Set"],
+        "text": card["Card Text"],
         "twd": card["Twd"],
         "type": card["Type"],
     }
+
     if card["Type"] == 'Master' and ('trifle' in card["Card Text"].lower()):
         card_ready["trifle"] = True
 
-    if card['Aka']:
-        card_ready["aka"] = card['Aka']
+    if "Playtest Old" in card and card["Playtest Old"]:
+        card_ready["playtest_old"] = True
 
     return card_ready
 
@@ -384,18 +388,12 @@ with open("vteslib.csv", "r", encoding="utf-8-sig") as cardbase_csv_main, open(
     generate_cards(csv_cards, cardbase_file, cardbase_file_min)
     generate_artists(csv_cards, artists_file, artists_file_min)
 
-try:
-    with open("playtest/vteslib_playtest.csv", "r", encoding="utf-8-sig") as cardbase_csv_playtest, open(
-        "playtest/cardbase_lib_playtest.json", "w", encoding="utf8"
-    ) as cardbase_file, open(
-        "playtest/cardbase_lib_playtest.min.json", "w", encoding="utf8"
-    ) as cardbase_file_min:
-        reader_playtest = csv.reader(cardbase_csv_playtest)
-        fieldnames_playtest = next(reader_playtest)
-        csv_cards_playtest = csv.DictReader(cardbase_csv_playtest, fieldnames_main)
-        generate_cards(csv_cards_playtest, cardbase_file, cardbase_file_min)
-
-except Exception:
-    print(
-        "PLAYTEST DISABLED - NO LIBRARY PLAYTEST FILES FOUND (CONTACT PLAYTEST COORDINATOR TO GET IT)"
-    )
+with open("playtest/vteslib_playtest.csv", "r", encoding="utf-8-sig") as cardbase_csv_playtest, open(
+    "playtest/cardbase_lib_playtest.json", "w", encoding="utf8"
+) as cardbase_file, open(
+    "playtest/cardbase_lib_playtest.min.json", "w", encoding="utf8"
+) as cardbase_file_min:
+    reader_playtest = csv.reader(cardbase_csv_playtest)
+    fieldnames_playtest = next(reader_playtest)
+    csv_cards_playtest = csv.DictReader(cardbase_csv_playtest, fieldnames_playtest)
+    generate_cards(csv_cards_playtest, cardbase_file, cardbase_file_min)

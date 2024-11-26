@@ -191,9 +191,6 @@ def generate_card(card):
                             date = f"{precon[0:4]}-{precon[4:6]}-{precon[6:8]}"
                             card["Set"][set[0]][date] = True
 
-        # for set in card["Set"].keys():
-        #         print(set)
-
     # Add Sect
     if card["Type"] == "Imbued":
         card["Sect"] = "Imbued"
@@ -319,27 +316,29 @@ def generate_card(card):
     card["Card Text"] = card["Card Text"].replace("Thaumaturgy", "Blood Sorcery")
 
     card_ready = {
-        "ascii": card["ASCII Name"],
         "adv": card["Advancement"],
+        "aka": card["Aka"],
         "artist": card["Artist"],
+        "ascii": card["ASCII Name"],
         "banned": card["Banned"],
         "capacity": card["Capacity"],
-        "text": card["Card Text"],
         "clan": card["Clan"],
         "disciplines": card["Disciplines"],
         "group": card["Group"].lower(),
         "id": card["Id"],
         "name": card["Name"],
         "new": card["New"],
+        "path": card["Path"],
         "rulings": card["Rulings"],
         "sect": card["Sect"],
         "set": card["Set"],
+        "text": card["Card Text"],
         "title": card["Title"].lower(),
         "twd": card["Twd"],
     }
 
-    if card['Aka']:
-        card_ready["aka"] = card['Aka']
+    if "Playtest Old" in card and card["Playtest Old"]:
+        card_ready["playtest_old"] = True
 
     return card_ready
 
@@ -368,20 +367,14 @@ with open("artistsCrypt.json", "w", encoding="utf8") as artists_file, open(
         generate_cards(csv_cards_main, cardbase_file, cardbase_file_min)
         generate_artists(csv_cards_main, artists_file, artists_file_min)
 
-        try:
-                with open(
-                                "playtest/vtescrypt_playtest.csv", "r", encoding="utf-8-sig"
-                ) as cardbase_csv_playtest, open(
-                        "playtest/cardbase_crypt_playtest.json", "w", encoding="utf8"
-                ) as cardbase_file_playtest, open(
-                        "playtest/cardbase_crypt_playtest.min.json", "w", encoding="utf8"
-                ) as cardbase_file_min_playtest:
-                        reader_playtest = csv.reader(cardbase_csv_playtest)
-                        fieldnames_playtest = next(reader_playtest)
-                        csv_cards_playtest = csv.DictReader(cardbase_csv_playtest, fieldnames_playtest)
-                        generate_cards(csv_cards_playtest, cardbase_file_playtest, cardbase_file_min_playtest)
-
-        except Exception:
-                print(
-                        "PLAYTEST DISABLED - NO CRYPT PLAYTEST FILES FOUND (CONTACT PLAYTEST COORDINATOR TO GET IT)"
-                )
+with open(
+        "playtest/vtescrypt_playtest.csv", "r", encoding="utf-8-sig"
+) as cardbase_csv_playtest, open(
+        "playtest/cardbase_crypt_playtest.json", "w", encoding="utf8"
+) as cardbase_file_playtest, open(
+        "playtest/cardbase_crypt_playtest.min.json", "w", encoding="utf8"
+) as cardbase_file_min_playtest:
+        reader_playtest = csv.reader(cardbase_csv_playtest)
+        fieldnames_playtest = next(reader_playtest)
+        csv_cards_playtest = csv.DictReader(cardbase_csv_playtest, fieldnames_playtest)
+        generate_cards(csv_cards_playtest, cardbase_file_playtest, cardbase_file_min_playtest)

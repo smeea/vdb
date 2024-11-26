@@ -3,10 +3,10 @@ from deck_import import deck_import
 
 
 playtest_files = {
-    "precon-caine-round1.txt": "SCai",
-    "precon-cathari-round1.txt": "SCat",
-    "precon-death-round1.txt": "SDS",
-    "precon-power-round1.txt": "SPIV",
+    "precon-caine-round2.txt": "SCai",
+    "precon-cathari-round2.txt": "SCat",
+    "precon-death-round2.txt": "SDS",
+    "precon-power-round2.txt": "SPIV",
     "precon-nb-ravnos-round4.txt": "NR",
     "precon-nb-salubri-round4.txt": "NSal",
     "precon-nb-tzimisce-round4.txt": "NTz",
