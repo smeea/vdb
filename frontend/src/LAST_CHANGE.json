@@ -1,7 +1,8 @@
 {
-  "version": "2024-11-19",
+  "version": "2024-11-26",
   "changes": [
-    "Add Week of Nightmare 1-3 events (https://vdb.im/tournament_analyze/11663, https://vdb.im/tournament_analyze/11664, https://vdb.im/tournament_analyze/11665)",
-    "Fix more bugs of the previous update"
+    "Add EC2024 LCQ event (https://vdb.im/tournament_analyze/11667)",
+    "Add Gangrel legacy images",
+    "Small other fixes and improvements"
   ]
 }
