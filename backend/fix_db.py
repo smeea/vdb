@@ -41,10 +41,11 @@ with app.app_context():
         deck.cards = new_cards
 
     # CLEAR PLAYTEST REPORTS
-    # for u in User.query.filter_by(playtester=True).all():
-    #     u.playtest_report = {}
-    #     profile = copy.deepcopy(u.playtest_prfile)
-    #     del profile['games']
-    #     u.playtest_profile = profile
+    for u in User.query.filter_by(playtester=True).all():
+        u.playtest_report = {}
+        profile = copy.deepcopy(u.playtest_profile)
+        if 'games' in profile:
+            del profile['games']
+        u.playtest_profile = profile
 
     db.session.commit()
