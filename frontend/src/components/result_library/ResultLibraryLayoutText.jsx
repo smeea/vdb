@@ -42,10 +42,10 @@ const Requirements = ({ card }) => {
         </div>
       )}
       <div className="flex items-center gap-3">
-        {(card[REQUIREMENT] || card[CLAN] || card[DISCIPLINE]) && (
+        {(card[REQUIREMENT] || card[PATH] || card[CLAN] || card[DISCIPLINE]) && (
           <div className="flex items-center gap-2">
             <ResultLibraryRequirements value={card[REQUIREMENT]} />
-            {(card[CLAN] || card[DISCIPLINE]) && (
+            {(card[CLAN] || card[PATH] || card[DISCIPLINE]) && (
               <div className="flex gap-1.5">
                 <ResultPathImage value={card[PATH]} />
                 <ResultLibraryClan value={card[CLAN]} />
@@ -67,6 +67,7 @@ const ResultLibraryLayoutText = ({ card, handleClose, noClose, inPopover }) => {
   const hasRequirements = !!(
     card[REQUIREMENT] ||
     card[CLAN] ||
+    card[PATH] ||
     card[DISCIPLINE] ||
     card[TRIFLE] ||
     card[BURN] ||
