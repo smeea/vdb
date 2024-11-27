@@ -1,13 +1,19 @@
 import React from 'react';
+import { twMerge } from 'tailwind-merge';
 
-const ResultPathImage = ({ value }) => {
+const ResultPathImage = ({ value, size = 'md' }) => {
   if (!value) return;
+
+  const sizeStyle = {
+    sm: 'max-h-[20px] max-w-[20px] sm:max-h-[23px] sm:max-w-[23px]',
+    md: 'max-h-[25px] max-w-[25px] sm:max-h-[28px] sm:max-w-[28px]',
+  };
 
   return (
     <img
-      className="inline max-h-[25px] max-w-[25px] dark:brightness-[0.65] sm:max-h-[28px] sm:max-w-[28px]"
+      className={twMerge('inline dark:brightness-[0.65]', sizeStyle[size])}
       src={`${import.meta.env.VITE_BASE_URL}/images/misc/path${value.toLowerCase().replace(/ .*/, '')}.svg`}
-      title={value}
+      title={`Path of ${value}`}
     />
   );
 };

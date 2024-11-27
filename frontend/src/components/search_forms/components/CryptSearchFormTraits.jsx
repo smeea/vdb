@@ -1,5 +1,5 @@
 import React from 'react';
-import { Checkbox } from '@/components';
+import { ResultPathImage, Checkbox } from '@/components';
 import { useApp } from '@/context';
 import {
   ADDITIONAL_STRIKE,
@@ -51,8 +51,18 @@ const CryptSearchFormTraits = ({ value, onChange }) => {
             [AGGRAVATED, 'Aggravated'],
             [PREVENT, 'Prevent'],
             [PRESS, 'Press'],
-            [PATH_CAINE, 'Path of Caine'],
-            [PATH_CATHARI, 'Path of Cathari'],
+            [
+              PATH_CAINE,
+              <div className="flex items-center gap-1.5">
+                Path of Caine <ResultPathImage value={'caine'} size="sm" />
+              </div>,
+            ],
+            [
+              PATH_CATHARI,
+              <div className="flex items-center gap-1.5">
+                Path of Cathari <ResultPathImage value={'cathari'} size="sm" />
+              </div>,
+            ],
           ]
             .filter((i) => ![PATH_CAINE, PATH_CATHARI].includes(i[0]) || playtestMode)
             .map((i) => (
@@ -79,8 +89,18 @@ const CryptSearchFormTraits = ({ value, onChange }) => {
             [BANNED, 'Banned'],
             [NON_TWD, 'Not in TWD'],
             [PLAYTEST, 'Playtest'],
-            [PATH_DEATH, 'Path of Death'],
-            [PATH_POWER, 'Path of Power'],
+            [
+              PATH_DEATH,
+              <div className="flex items-center gap-1.5">
+                Path of Death <ResultPathImage value={'death'} size="sm" />
+              </div>,
+            ],
+            [
+              PATH_POWER,
+              <div className="flex items-center gap-1.5">
+                Path of Power <ResultPathImage value={'power'} size="sm" />
+              </div>,
+            ],
           ]
             .filter((i) => ![PLAYTEST, PATH_DEATH, PATH_POWER].includes(i[0]) || playtestMode)
             .map((i) => {
