@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useLocation } from 'react-router';
+import { useSearchParams } from 'react-router';
 import { setMany } from 'idb-keyval';
 import UiChecksGrid from '@/assets/images/icons/ui-checks-grid.svg?react';
 import { AccountLimitedModal, ButtonIconed } from '@/components';
@@ -21,9 +21,8 @@ import {
 const AccountLimitedButton = () => {
   const { setLimitedFormat } = useApp();
   const [showModal, setShowModal] = useState(false);
-
-  const query = new URLSearchParams(useLocation().search);
-  const limitedFormat = JSON.parse(query.get(FORMAT));
+  const [searchParams] = useSearchParams();
+  const limitedFormat = JSON.parse(searchParams.get(FORMAT));
 
   const setFormat = (format) => {
     setLimitedFormat(

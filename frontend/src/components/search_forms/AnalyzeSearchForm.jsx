@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate, useLocation } from 'react-router';
+import { useSearchParams, useParams, useNavigate, useLocation } from 'react-router';
 import { useSnapshot } from 'valtio';
 import {
   ButtonClose,
@@ -50,7 +50,8 @@ const AnalyzeSearchForm = () => {
   const [error, setError] = useState(false);
   const navigate = useNavigate();
   const params = useParams();
-  const query = JSON.parse(new URLSearchParams(useLocation().search).get('q'));
+  const [searchParams] = useSearchParams();
+  const query = JSON.parse(searchParams.get('q'));
 
   useEffect(() => {
     if (query) {

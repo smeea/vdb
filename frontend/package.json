@@ -18,7 +18,7 @@
     "@headlessui/react": "^2.2.0",
     "@tailwindcss/forms": "^0.5.9",
     "@vitejs/plugin-legacy": "^5.4.3",
-    "@vitejs/plugin-react-swc": "^3.7.1",
+    "@vitejs/plugin-react-swc": "^3.7.2",
     "autoprefixer": "^10.4.20",
     "browserslist": "^4.24.2",
     "derive-valtio": "^0.2.0",
@@ -32,12 +32,12 @@
     "jszip": "^3.10.1",
     "ky": "^1.7.2",
     "postcss": "^8.4.49",
-    "prettier": "^3.3.3",
+    "prettier": "^3.4.1",
     "prettier-plugin-tailwindcss": "^0.6.9",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-qr-code": "^2.0.15",
-    "react-router": "^7.0.0",
+    "react-router": "^7.0.1",
     "react-select": "^5.8.3",
     "react-string-replace": "^1.1.1",
     "react-swipeable": "^7.0.2",
@@ -59,6 +59,6 @@
     "xlsx": "^0.18.5"
   },
   "dependencies": {
-    "tailwind-merge": "^2.5.4"
+    "tailwind-merge": "^2.5.5"
   }
 }

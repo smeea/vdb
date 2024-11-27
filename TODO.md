@@ -19,7 +19,8 @@
 - Update to React 19 (useOptimistic, useMemo/useCallback, useContext, use, ref)
 - Update to TailwindCSS 4
 - Update to Vite 6
-- Update to React Router 7
 - Migrate from isWidth to container queries
 - Migrate forms to useFormStatus+useActionState
 - Remove legacy polyfills when Safari adopts groupBy
+- Refactor search forms to primary change useSearchParams and set cryptFormState from it
+- Refactor TWD/PDA to use searchParams for new and random

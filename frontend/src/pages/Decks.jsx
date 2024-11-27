@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSnapshot } from 'valtio';
-import { useNavigate, useLocation, useParams, useLoaderData } from 'react-router';
+import { useSearchParams, useNavigate, useLocation, useParams, useLoaderData } from 'react-router';
 import {
   ButtonFloatClose,
   ButtonFloatMenu,
@@ -70,7 +70,7 @@ const Decks = () => {
   const navigate = useNavigate();
   const { deckid } = useParams();
   const { hash } = useLocation();
-  const query = new URLSearchParams(useLocation().search);
+  const [searchParams] = useSearchParams();
   const loaderData = useLoaderData();
 
   const [error, setError] = useState(false);
@@ -138,9 +138,9 @@ const Decks = () => {
 
       setDeck({
         [DECKID]: DECK,
-        [NAME]: query.get(NAME) ?? '',
-        [AUTHOR]: query.get(AUTHOR) ?? '',
-        [DESCRIPTION]: query.get(DESCRIPTION) ?? '',
+        [NAME]: searchParams.get(NAME) ?? '',
+        [AUTHOR]: searchParams.get(AUTHOR) ?? '',
+        [DESCRIPTION]: searchParams.get(DESCRIPTION) ?? '',
         [CRYPT]: crypt,
         [LIBRARY]: library,
       });

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { twMerge } from 'tailwind-merge';
-import { useLocation } from 'react-router';
+import { useSearchParams } from 'react-router';
 import {
   LoginBlock,
   InventoryAddDeckModal,
@@ -36,8 +36,8 @@ const Inventory = () => {
   } = useApp();
 
   const [inventoryError, setInventoryError] = useState();
-  const query = new URLSearchParams(useLocation().search);
-  const sharedKey = query.get('key');
+  const [searchParams] = useSearchParams();
+  const sharedKey = searchParams.get('key');
   const [sharedCrypt, setSharedCrypt] = useState();
   const [sharedLibrary, setSharedLibrary] = useState();
   const [showShareModal, setShowShareModal] = useState(false);
@@ -69,7 +69,7 @@ const Inventory = () => {
 
   useEffect(() => {
     if (sharedKey && !isSharedInventory && cryptCardBase && libraryCardBase) {
-      getInventory(query.get('key'));
+      getInventory(sharedKey);
     }
   }, [sharedKey, cryptCardBase, libraryCardBase]);
 
