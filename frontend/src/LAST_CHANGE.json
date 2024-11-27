@@ -1,8 +1,6 @@
 {
-  "version": "2024-11-26/2",
+  "version": "2024-11-27",
   "changes": [
-    "Add EC2024 LCQ event (https://vdb.im/tournament_analyze/11667)",
-    "Add Gangrel legacy images",
-    "Small other fixes and improvements"
+    "Fix going back from search results on mobile"
   ]
 }
