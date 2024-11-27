@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
-import { Select, ResultPreconClan } from '@/components';
+import { ResultPathImage, Select, ResultPreconClan } from '@/components';
 import { useApp } from '@/context';
 import { DATE, NAME, CLAN, PRECONS, PRECON, PLAYTEST } from '@/constants';
 
@@ -29,9 +29,13 @@ const DeckSelectPrecon = ({ deckid, handleSelect }) => {
                       clans.length == 1 ? 'flex w-[40px] items-center justify-center' : 'inline'
                     }
                   >
-                    {clans.map((clan) => (
-                      <ResultPreconClan key={clan} clan={clan} />
-                    ))}
+                    {clans.map((clan) => {
+                      return ['Caine', 'Cathari', 'Death', 'Power'].includes(clan) ? (
+                        <ResultPathImage key={clan} value={clan} />
+                      ) : (
+                        <ResultPreconClan key={clan} clan={clan} />
+                      );
+                    })}
                   </div>
                   {fullName}
                 </div>

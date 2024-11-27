@@ -13,19 +13,19 @@
     "precons": {
       "SCai": {
         "name": "Path of Caine",
-        "clan": "Mix"
+        "clan": "Caine"
       },
       "SCat": {
         "name": "Path of Cathari",
-        "clan": "Mix"
+        "clan": "Cathari"
       },
       "SDS": {
         "name": "Path of Death",
-        "clan": "Mix"
+        "clan": "Death"
       },
       "SPIV": {
         "name": "Path of Power",
-        "clan": "Mix"
+        "clan": "Power"
       },
       "PH": {
         "name": "Hecata",
