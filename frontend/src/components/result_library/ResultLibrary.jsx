@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSnapshot } from 'valtio';
-import { useNavigate } from 'react-router';
+import { useSearchParams } from 'react-router';
 import {
   ResultTable,
   ButtonFloatAdd,
@@ -20,17 +20,12 @@ import {
   TYPE,
 } from '@/constants';
 
-const ResultLibrary = ({ cards, setCards, inCompare }) => {
-  const {
-    setShowLibrarySearch,
-    isMobile,
-    librarySearchSort,
-    changeLibrarySearchSort,
-    showFloatingButtons,
-  } = useApp();
-  const navigate = useNavigate();
+const ResultLibrary = ({ cards, inCompare }) => {
+  const { isMobile, librarySearchSort, changeLibrarySearchSort, showFloatingButtons } = useApp();
+  const [, setSearchParams] = useSearchParams();
   const deck = useSnapshot(deckStore)[DECK];
   const isEditable = getIsEditable(deck);
+  const handleClear = () => setSearchParams();
 
   const sortMethods = {
     [CLAN_DISCIPLINE]: 'C/D',
@@ -38,12 +33,6 @@ const ResultLibrary = ({ cards, setCards, inCompare }) => {
     [COST_MIN_MAX]: 'C↑',
     [NAME]: 'N',
     [TYPE]: 'T',
-  };
-
-  const handleClear = () => {
-    navigate('/library');
-    setCards(undefined);
-    setShowLibrarySearch(true);
   };
 
   return (

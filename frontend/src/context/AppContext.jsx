@@ -129,8 +129,6 @@ export const AppProvider = ({ children }) => {
   const [analyzeSearchSort, setAnalyzeSearchSort] = useState(
     getLocalStorage(ANALYZE_SEARCH_SORT) ?? RANK_HIGH_LOW,
   );
-  const [showCryptSearch, setShowCryptSearch] = useState(true);
-  const [showLibrarySearch, setShowLibrarySearch] = useState(true);
   const [showFloatingButtons, setShowFloatingButtons] = useState(true);
   const [showMenuButtons, setShowMenuButtons] = useState();
 
@@ -583,12 +581,6 @@ export const AppProvider = ({ children }) => {
         recentDecks,
         addRecentDeck,
         lastDeckId,
-
-        // LISTING Context
-        showCryptSearch,
-        setShowCryptSearch,
-        showLibrarySearch,
-        setShowLibrarySearch,
 
         // SORTING Context
         cryptSearchSort,

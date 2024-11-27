@@ -1,4 +1,5 @@
 import React, { useMemo, useEffect } from 'react';
+import { useSearchParams } from 'react-router';
 import { twMerge } from 'tailwind-merge';
 import { useSnapshot } from 'valtio';
 import {
@@ -8,33 +9,33 @@ import {
   ButtonFloatDeckOrSearch,
   FlexGapped,
 } from '@/components';
-import {
-  useApp,
-  searchResults,
-  setCryptResults,
-  setCryptCompare,
-  setDeck,
-  deckStore,
-} from '@/context';
+import { useApp, searchResults, setCryptResults, setDeck, deckStore } from '@/context';
 import { DECKID, CRYPT, CRYPT_COMPARE, DECK, DECKS } from '@/constants';
 
 const Crypt = () => {
-  const { showCryptSearch, addMode, toggleAddMode, isMobile, isDesktop, lastDeckId } = useApp();
+  const { addMode, toggleAddMode, isMobile, isDesktop, lastDeckId } = useApp();
   const { [DECK]: deck, [DECKS]: decks } = useSnapshot(deckStore);
   const { [CRYPT]: cryptResults, [CRYPT_COMPARE]: cryptCompare } = useSnapshot(searchResults);
+  const [searchParams] = useSearchParams();
+  const query = JSON.parse(searchParams.get('q'));
+
   const showSearchForm = useMemo(() => {
     return (
       isDesktop ||
       (!isDesktop && !isMobile && !(addMode && cryptResults)) ||
-      (isMobile && showCryptSearch)
+      (isMobile && !cryptResults)
     );
-  }, [isMobile, isDesktop, addMode, showCryptSearch, cryptResults]);
+  }, [isMobile, isDesktop, addMode, cryptResults]);
 
   const showToggleAddMode = useMemo(() => {
     return deck && cryptResults && !isMobile && !isDesktop;
   }, [deck?.[DECKID], isMobile, isDesktop, cryptResults]);
 
-  const showResultCol = useMemo(() => !(isMobile && showCryptSearch));
+  const showResultCol = useMemo(() => !(isMobile && !cryptResults), [isMobile, cryptResults]);
+
+  useEffect(() => {
+    if (!query) setCryptResults();
+  }, [query]);
 
   useEffect(() => {
     if (!deck && decks !== undefined && lastDeckId) {
@@ -61,12 +62,10 @@ const Crypt = () => {
           <div className="basis-full sm:basis-7/12 lg:basis-6/12 xl:basis-5/12">
             {((isMobile && cryptCompare && cryptResults) || (!isMobile && cryptCompare)) && (
               <div>
-                <ResultCrypt cards={cryptCompare} setCards={setCryptCompare} inCompare />
+                <ResultCrypt cards={cryptCompare} inCompare />
               </div>
             )}
-            {cryptResults !== undefined && (
-              <ResultCrypt cards={cryptResults} setCards={setCryptResults} />
-            )}
+            {cryptResults !== undefined && <ResultCrypt cards={cryptResults} />}
           </div>
         )}
         {showSearchForm && (

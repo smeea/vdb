@@ -1,26 +1,22 @@
 import React, { useState, useMemo } from 'react';
-import { useNavigate } from 'react-router';
+import { useSearchParams } from 'react-router';
 import { TwdDeck, TwdDeckWrapper, TwdResultTotal, Button, ButtonFloatClose } from '@/components';
 import { decksSort } from '@/utils';
 import { useApp } from '@/context';
 import { CARDS, DECKID, DATE_NEW_OLD, DATE_OLD_NEW, PLAYERS } from '@/constants';
 
-const TwdResult = ({ results, setResults }) => {
+const TwdResult = ({ results }) => {
   const { isMobile, showFloatingButtons, twdSearchSort, changeTwdSearchSort } = useApp();
-  const navigate = useNavigate();
-  const showCounterStep = 10;
+  const [, setSearchParams] = useSearchParams();
+  const SHOW_COUNTER_STEP = 10;
   const deckCounter = results.length || 0;
-  const [showCounter, setShowCounter] = useState(showCounterStep);
+  const [showCounter, setShowCounter] = useState(SHOW_COUNTER_STEP);
+  const handleClear = () => setSearchParams();
 
   const sortMethods = {
     [DATE_NEW_OLD]: 'D↓',
     [DATE_OLD_NEW]: 'D↑',
     [PLAYERS]: 'P',
-  };
-
-  const handleClear = () => {
-    navigate('/twd');
-    setResults(undefined);
   };
 
   const sortedDecks = useMemo(() => {
@@ -53,7 +49,7 @@ const TwdResult = ({ results, setResults }) => {
         </div>
         {deckCounter > showCounter && (
           <div className="flex justify-center">
-            <Button onClick={() => setShowCounter(showCounter + showCounterStep)}>
+            <Button onClick={() => setShowCounter(showCounter + SHOW_COUNTER_STEP)}>
               Show More ({deckCounter - showCounter} left)
             </Button>
           </div>

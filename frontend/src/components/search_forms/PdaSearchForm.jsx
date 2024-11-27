@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate, useLocation } from 'react-router';
+import { useSearchParams } from 'react-router';
 import { useSnapshot } from 'valtio';
 import {
   ButtonFloatSearch,
@@ -48,19 +48,13 @@ const PdaSearchForm = ({ error, setError }) => {
     useApp();
   const pdaFormState = useSnapshot(searchPdaForm);
   const [isLoading, setIsLoading] = useState(false);
-  const navigate = useNavigate();
-  const query = JSON.parse(new URLSearchParams(useLocation().search).get('q'));
+  const [searchParams, setSearchParams] = useSearchParams();
+  const query = JSON.parse(searchParams.get('q'));
 
   useEffect(() => {
     if (query) {
       Object.keys(query).forEach((i) => {
-        if (typeof query[i] === 'object') {
-          Object.keys(query[i]).forEach((j) => {
-            searchPdaForm[i][j] = query[i][j];
-          });
-        } else {
-          searchPdaForm[i] = query[i];
-        }
+        searchPdaForm[i] = query[i];
       });
     }
   }, []);
@@ -107,8 +101,8 @@ const PdaSearchForm = ({ error, setError }) => {
   };
 
   const handleClear = () => {
+    setSearchParams();
     clearSearchForm(PDA);
-    setPdaResults(undefined);
     setError(false);
   };
 
@@ -124,7 +118,7 @@ const PdaSearchForm = ({ error, setError }) => {
     setPdaResults(null);
     if (isMobile) {
       setIsLoading(false);
-      navigate('/pda');
+      setSearchParams();
     }
   };
 
@@ -135,7 +129,8 @@ const PdaSearchForm = ({ error, setError }) => {
       setError('EMPTY REQUEST');
       return;
     }
-    navigate(`/pda?q=${encodeURIComponent(JSON.stringify(sanitizedForm))}`);
+
+    setSearchParams({ q: JSON.stringify(sanitizedForm) });
 
     setIsLoading(true);
     archiveServices
@@ -146,7 +141,7 @@ const PdaSearchForm = ({ error, setError }) => {
 
   const getNewPda = (q) => {
     setError(false);
-    clearSearchForm(PDA);
+    setSearchParams({ q: JSON.stringify({ new: q }) });
 
     setIsLoading(true);
     archiveServices
@@ -157,7 +152,7 @@ const PdaSearchForm = ({ error, setError }) => {
 
   const getRandomPda = (q) => {
     setError(false);
-    clearSearchForm(PDA);
+    setSearchParams({ q: JSON.stringify({ random: q }) });
 
     setIsLoading(true);
     archiveServices
@@ -170,10 +165,7 @@ const PdaSearchForm = ({ error, setError }) => {
     if (!isMobile && cryptCardBase && libraryCardBase) {
       const sanitizedForm = sanitizeFormState(PDA, pdaFormState);
       if (Object.keys(sanitizedForm).length === 0) {
-        if (query) {
-          setPdaResults(undefined);
-          navigate('/pda');
-        }
+        if (query) setSearchParams();
       } else processSearch();
     }
   }, [pdaFormState, cryptCardBase, libraryCardBase]);

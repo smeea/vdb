@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate, useLocation } from 'react-router';
+import { useSearchParams } from 'react-router';
 import { useSnapshot } from 'valtio';
 import {
   ButtonFloatSearch,
@@ -66,7 +66,6 @@ const CryptSearchForm = () => {
     cryptCardBase,
     searchInventoryMode,
     searchMissingInventoryMode,
-    setShowCryptSearch,
     showFloatingButtons,
     inventoryMode,
     isMobile,
@@ -79,27 +78,70 @@ const CryptSearchForm = () => {
   const cryptFormState = useSnapshot(searchCryptForm);
   const [error, setError] = useState(false);
   const [preresults, setPreresults] = useState();
-  const showLimit = 300;
-  const navigate = useNavigate();
-  const query = JSON.parse(new URLSearchParams(useLocation().search).get('q'));
+  const [searchParams, setSearchParams] = useSearchParams();
+  const query = JSON.parse(searchParams.get('q'));
+  const SHOW_LIMIT = 300;
 
   useEffect(() => {
     if (query) {
       Object.keys(query).forEach((i) => {
-        if (typeof query[i] === 'object') {
-          Object.keys(query[i]).forEach((j) => {
-            searchCryptForm[i][j] = query[i][j];
-          });
-        } else {
-          searchCryptForm[i] = query[i];
-        }
+        searchCryptForm[i] = query[i];
       });
     }
   }, []);
 
+  useEffect(() => {
+    if (isMobile && query && cryptFormState && cryptCardBase) {
+      processSearch();
+    }
+  }, [cryptFormState, cryptCardBase]);
+
   const handleTextChange = (formId, value) => {
     searchCryptForm[TEXT][formId].value = value;
   };
+
+  useEffect(
+    () => textInputsAndSearch(),
+    [
+      cryptFormState[TEXT],
+      cryptFormState[ARTIST],
+      cryptFormState[CAPACITY],
+      cryptFormState[CLAN],
+      cryptFormState[GROUP],
+      cryptFormState[PRECON],
+      cryptFormState[SECT],
+      cryptFormState[SET],
+      cryptFormState[TITLES],
+      cryptFormState[TRAITS],
+      cryptFormState[VOTES],
+      searchInventoryMode,
+      searchMissingInventoryMode,
+      inventoryMode,
+      limitedMode,
+      playtestMode,
+      cryptCardBase,
+    ],
+  );
+
+  useDebounce(() => textInputsAndSearch(), 300, [
+    cryptFormState[DISCIPLINES],
+    searchInventoryMode,
+    searchMissingInventoryMode,
+    inventoryMode,
+    limitedMode,
+    playtestMode,
+    cryptCardBase,
+  ]);
+
+  useEffect(() => {
+    if (!isMobile && preresults) {
+      if (preresults.length <= SHOW_LIMIT) {
+        setCryptResults(preresults);
+      } else {
+        setCryptResults(undefined);
+      }
+    }
+  }, [preresults]);
 
   const handleTextCheckboxesChange = (event) => {
     const { name, value } = event.currentTarget;
@@ -152,9 +194,8 @@ const CryptSearchForm = () => {
   };
 
   const handleClear = () => {
+    setSearchParams();
     clearSearchForm(CRYPT);
-    setCryptResults(undefined);
-    setPreresults(undefined);
     setError(false);
   };
 
@@ -170,12 +211,18 @@ const CryptSearchForm = () => {
       setError('EMPTY REQUEST');
       return;
     }
-    navigate(`/crypt?q=${encodeURIComponent(JSON.stringify(sanitizedForm))}`);
 
     const filteredCards = filterCrypt(
       limitedMode ? limitedCrypt : cryptCardBase,
       sanitizedForm,
     ).filter((card) => playtestMode || !getIsPlaytest(card[ID]));
+
+    if (isMobile && filteredCards.length == 0) {
+      setError('NO CARDS FOUND');
+      return;
+    }
+
+    setSearchParams({ q: JSON.stringify(sanitizedForm) });
 
     const setResults = isMobile ? setCryptResults : setPreresults;
     if (searchInventoryMode && inventoryMode) {
@@ -189,79 +236,22 @@ const CryptSearchForm = () => {
     } else {
       setResults(filteredCards);
     }
-    if (isMobile) {
-      if (filteredCards.length == 0) {
-        navigate('/crypt');
-        setError('NO CARDS FOUND');
-      } else {
-        setShowCryptSearch(false);
-      }
-    }
   };
 
-  useEffect(() => {
-    if (isMobile && query && cryptFormState && cryptCardBase) {
-      processSearch();
-    }
-  }, [cryptFormState, cryptCardBase]);
-
-  const testInputsAndSearch = () => {
+  const textInputsAndSearch = () => {
     if (!isMobile && cryptCardBase) {
       const input = sanitizeFormState(CRYPT, cryptFormState);
       if (Object.keys(input).length === 0) {
         if (query) {
           setCryptResults(undefined);
           setPreresults(undefined);
-          navigate('/crypt');
+          setSearchParams();
         }
       } else if (!cryptFormState[TEXT][0].value || cryptFormState[TEXT][0].value.length > 2) {
         processSearch();
       }
     }
   };
-
-  useEffect(
-    () => testInputsAndSearch(),
-    [
-      cryptFormState[TEXT],
-      cryptFormState[ARTIST],
-      cryptFormState[CAPACITY],
-      cryptFormState[CLAN],
-      cryptFormState[GROUP],
-      cryptFormState[PRECON],
-      cryptFormState[SECT],
-      cryptFormState[SET],
-      cryptFormState[TITLES],
-      cryptFormState[TRAITS],
-      cryptFormState[VOTES],
-      searchInventoryMode,
-      searchMissingInventoryMode,
-      inventoryMode,
-      limitedMode,
-      playtestMode,
-      cryptCardBase,
-    ],
-  );
-
-  useDebounce(() => testInputsAndSearch(), 300, [
-    cryptFormState[DISCIPLINES],
-    searchInventoryMode,
-    searchMissingInventoryMode,
-    inventoryMode,
-    limitedMode,
-    playtestMode,
-    cryptCardBase,
-  ]);
-
-  useEffect(() => {
-    if (!isMobile && preresults) {
-      if (preresults.length <= showLimit) {
-        setCryptResults(preresults);
-      } else {
-        setCryptResults(undefined);
-      }
-    }
-  }, [preresults]);
 
   return (
     <div className="flex flex-col gap-2">
@@ -273,7 +263,7 @@ const CryptSearchForm = () => {
         handleShowResults={handleShowResults}
         handleClear={handleClear}
         preresults={preresults?.length}
-        showLimit={showLimit}
+        showLimit={SHOW_LIMIT}
       />
       <CryptSearchFormDisciplines
         value={cryptFormState[DISCIPLINES]}

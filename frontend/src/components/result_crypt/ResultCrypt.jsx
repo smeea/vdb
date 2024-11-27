@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useSnapshot } from 'valtio';
-import { useNavigate } from 'react-router';
+import { useSearchParams } from 'react-router';
 import {
   ResultTable,
   ResultCryptTotal,
@@ -22,17 +22,15 @@ import {
 import { getIsEditable } from '@/utils';
 import { useApp, deckStore } from '@/context';
 
-const ResultCrypt = ({ cards, setCards, inCompare }) => {
-  const {
-    setShowCryptSearch,
-    isMobile,
-    cryptSearchSort,
-    changeCryptSearchSort,
-    showFloatingButtons,
-  } = useApp();
-  const navigate = useNavigate();
+const ResultCrypt = ({ cards, inCompare }) => {
+  const { isMobile, cryptSearchSort, changeCryptSearchSort, showFloatingButtons } = useApp();
+  const [, setSearchParams] = useSearchParams();
   const deck = useSnapshot(deckStore)[DECK];
   const isEditable = getIsEditable(deck);
+  const [showInfo, setShowInfo] = useState(false);
+  const toggleShowInfo = () => setShowInfo(!showInfo);
+  const handleClear = () => setSearchParams();
+
   const sortMethods = {
     [CAPACITY_MAX_MIN]: 'C↓',
     [CAPACITY_MIN_MAX]: 'C↑',
@@ -40,15 +38,6 @@ const ResultCrypt = ({ cards, setCards, inCompare }) => {
     [GROUP]: 'G',
     [NAME]: 'N',
     [SECT]: 'S',
-  };
-
-  const [showInfo, setShowInfo] = useState(false);
-  const toggleShowInfo = () => setShowInfo(!showInfo);
-
-  const handleClear = () => {
-    navigate('/crypt');
-    setCards(undefined);
-    setShowCryptSearch(true);
   };
 
   return (

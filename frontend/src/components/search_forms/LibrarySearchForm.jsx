@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate, useLocation } from 'react-router';
+import { useSearchParams } from 'react-router';
 import { useSnapshot } from 'valtio';
 import {
   ButtonFloatSearch,
@@ -66,7 +66,6 @@ const LibrarySearchForm = () => {
     libraryCardBase,
     searchInventoryMode,
     searchMissingInventoryMode,
-    setShowLibrarySearch,
     showFloatingButtons,
     inventoryMode,
     isMobile,
@@ -79,23 +78,61 @@ const LibrarySearchForm = () => {
   const libraryFormState = useSnapshot(searchLibraryForm);
   const [error, setError] = useState(false);
   const [preresults, setPreresults] = useState();
-  const showLimit = 300;
-  const navigate = useNavigate();
-  const query = JSON.parse(new URLSearchParams(useLocation().search).get('q'));
+  const [searchParams, setSearchParams] = useSearchParams();
+  const query = JSON.parse(searchParams.get('q'));
+  const SHOW_LIMIT = 300;
 
   useEffect(() => {
     if (query) {
       Object.keys(query).forEach((i) => {
-        if (typeof query[i] === 'object') {
-          Object.keys(query[i]).forEach((j) => {
-            searchLibraryForm[i][j] = query[i][j];
-          });
-        } else {
-          searchLibraryForm[i] = query[i];
-        }
+        searchLibraryForm[i] = query[i];
       });
     }
   }, []);
+
+  useEffect(() => {
+    if (isMobile && query && libraryFormState && libraryCardBase) {
+      processSearch();
+    }
+  }, [libraryFormState, libraryCardBase]);
+
+  const textInputsAndSearch = () => {
+    if (!isMobile && libraryCardBase) {
+      const input = sanitizeFormState(LIBRARY, libraryFormState);
+      if (Object.keys(input).length === 0) {
+        if (query) {
+          setLibraryResults(undefined);
+          setPreresults(undefined);
+          setSearchParams();
+        }
+      } else if (!libraryFormState[TEXT][0].value || libraryFormState[TEXT][0].value.length > 2) {
+        processSearch();
+      }
+    }
+  };
+
+  useEffect(
+    () => textInputsAndSearch(),
+    [
+      libraryFormState,
+      searchInventoryMode,
+      searchMissingInventoryMode,
+      inventoryMode,
+      limitedMode,
+      playtestMode,
+      libraryCardBase,
+    ],
+  );
+
+  useEffect(() => {
+    if (!isMobile && preresults) {
+      if (preresults.length <= SHOW_LIMIT) {
+        setLibraryResults(preresults);
+      } else {
+        setLibraryResults(undefined);
+      }
+    }
+  }, [preresults]);
 
   const handleTextChange = (formId, value) => {
     searchLibraryForm[TEXT][formId].value = value;
@@ -144,6 +181,7 @@ const LibrarySearchForm = () => {
   };
 
   const handleClear = () => {
+    setSearchParams();
     clearSearchForm(LIBRARY);
     setLibraryResults(undefined);
     setPreresults(undefined);
@@ -162,12 +200,17 @@ const LibrarySearchForm = () => {
       setError('EMPTY REQUEST');
       return;
     }
-    navigate(`/library?q=${encodeURIComponent(JSON.stringify(sanitizedForm))}`);
-
     const filteredCards = filterLibrary(
       limitedMode ? limitedLibrary : libraryCardBase,
       sanitizedForm,
     ).filter((card) => playtestMode || !getIsPlaytest(card[ID]));
+
+    if (isMobile && filteredCards.length == 0) {
+      setError('NO CARDS FOUND');
+      return;
+    }
+
+    setSearchParams({ q: JSON.stringify(sanitizedForm) });
 
     const setResults = isMobile ? setLibraryResults : setPreresults;
     if (searchInventoryMode && inventoryMode) {
@@ -183,59 +226,7 @@ const LibrarySearchForm = () => {
     } else {
       setResults(filteredCards);
     }
-    if (isMobile) {
-      if (filteredCards.length == 0) {
-        navigate('/library');
-        setError('NO CARDS FOUND');
-      } else {
-        setShowLibrarySearch(false);
-      }
-    }
   };
-
-  useEffect(() => {
-    if (isMobile && query && libraryFormState && libraryCardBase) {
-      processSearch();
-    }
-  }, [libraryFormState, libraryCardBase]);
-
-  const testInputsAndSearch = () => {
-    if (!isMobile && libraryCardBase) {
-      const input = sanitizeFormState(LIBRARY, libraryFormState);
-      if (Object.keys(input).length === 0) {
-        if (query) {
-          setLibraryResults(undefined);
-          setPreresults(undefined);
-          navigate('/library');
-        }
-      } else if (!libraryFormState[TEXT][0].value || libraryFormState[TEXT][0].value.length > 2) {
-        processSearch();
-      }
-    }
-  };
-
-  useEffect(
-    () => testInputsAndSearch(),
-    [
-      libraryFormState,
-      searchInventoryMode,
-      searchMissingInventoryMode,
-      inventoryMode,
-      limitedMode,
-      playtestMode,
-      libraryCardBase,
-    ],
-  );
-
-  useEffect(() => {
-    if (!isMobile && preresults) {
-      if (preresults.length <= showLimit) {
-        setLibraryResults(preresults);
-      } else {
-        setLibraryResults(undefined);
-      }
-    }
-  }, [preresults]);
 
   return (
     <div className="flex flex-col gap-2">
@@ -247,7 +238,7 @@ const LibrarySearchForm = () => {
         handleShowResults={handleShowResults}
         handleClear={handleClear}
         preresults={preresults?.length}
-        showLimit={showLimit}
+        showLimit={SHOW_LIMIT}
       />
       <LibrarySearchFormType
         value={libraryFormState[TYPE]}

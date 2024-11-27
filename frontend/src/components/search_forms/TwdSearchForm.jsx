@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate, useLocation } from 'react-router';
+import { useSearchParams } from 'react-router';
 import { useSnapshot } from 'valtio';
 import {
   ButtonFloatSearch,
@@ -51,19 +51,13 @@ const TwdSearchForm = ({ error, setError }) => {
   const { cryptCardBase, libraryCardBase, showFloatingButtons, inventoryMode, isMobile } = useApp();
   const twdFormState = useSnapshot(searchTwdForm);
   const [isLoading, setIsLoading] = useState(false);
-  const navigate = useNavigate();
-  const query = JSON.parse(new URLSearchParams(useLocation().search).get('q'));
+  const [searchParams, setSearchParams] = useSearchParams();
+  const query = JSON.parse(searchParams.get('q'));
 
   useEffect(() => {
     if (query) {
       Object.keys(query).forEach((i) => {
-        if (typeof query[i] === 'object') {
-          Object.keys(query[i]).forEach((j) => {
-            searchTwdForm[i][j] = query[i][j];
-          });
-        } else {
-          searchTwdForm[i] = query[i];
-        }
+        searchTwdForm[i] = query[i];
       });
     }
   }, []);
@@ -108,8 +102,8 @@ const TwdSearchForm = ({ error, setError }) => {
   };
 
   const handleClear = () => {
+    setSearchParams();
     clearSearchForm(TWD);
-    setTwdResults(undefined);
     setError(false);
   };
 
@@ -125,7 +119,7 @@ const TwdSearchForm = ({ error, setError }) => {
     setTwdResults(null);
     if (isMobile) {
       setIsLoading(false);
-      navigate('/twd');
+      setSearchParams();
     }
   };
 
@@ -136,7 +130,8 @@ const TwdSearchForm = ({ error, setError }) => {
       setError('EMPTY REQUEST');
       return;
     }
-    navigate(`/twd?q=${encodeURIComponent(JSON.stringify(sanitizedForm))}`);
+
+    setSearchParams({ q: JSON.stringify(sanitizedForm) });
 
     setIsLoading(true);
     archiveServices
@@ -147,7 +142,7 @@ const TwdSearchForm = ({ error, setError }) => {
 
   const getNewTwd = (q) => {
     setError(false);
-    clearSearchForm(TWD);
+    setSearchParams({ q: JSON.stringify({ new: q }) });
 
     setIsLoading(true);
     archiveServices
@@ -158,7 +153,7 @@ const TwdSearchForm = ({ error, setError }) => {
 
   const getRandomTwd = (q) => {
     setError(false);
-    clearSearchForm(TWD);
+    setSearchParams({ q: JSON.stringify({ random: q }) });
 
     setIsLoading(true);
     archiveServices
@@ -171,10 +166,7 @@ const TwdSearchForm = ({ error, setError }) => {
     if (!isMobile && cryptCardBase && libraryCardBase) {
       const sanitizedForm = sanitizeFormState(TWD, twdFormState);
       if (Object.keys(sanitizedForm).length === 0) {
-        if (query) {
-          setTwdResults(undefined);
-          navigate('/twd');
-        }
+        if (query) setSearchParams();
       } else if (!twdFormState[EVENT] || twdFormState[EVENT].length > 2) {
         processSearch();
       }

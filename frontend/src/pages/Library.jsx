@@ -1,4 +1,5 @@
 import React, { useMemo, useEffect } from 'react';
+import { useSearchParams } from 'react-router';
 import { twMerge } from 'tailwind-merge';
 import { useSnapshot } from 'valtio';
 import {
@@ -19,23 +20,30 @@ import {
 import { DECKID, LIBRARY, LIBRARY_COMPARE, DECK, DECKS } from '@/constants';
 
 const Library = () => {
-  const { showLibrarySearch, addMode, toggleAddMode, isMobile, isDesktop, lastDeckId } = useApp();
+  const { addMode, toggleAddMode, isMobile, isDesktop, lastDeckId } = useApp();
   const { [DECK]: deck, [DECKS]: decks } = useSnapshot(deckStore);
   const { [LIBRARY]: libraryResults, [LIBRARY_COMPARE]: libraryCompare } =
     useSnapshot(searchResults);
+  const [searchParams] = useSearchParams();
+  const query = JSON.parse(searchParams.get('q'));
+
   const showSearchForm = useMemo(() => {
     return (
       isDesktop ||
       (!isDesktop && !isMobile && !(addMode && libraryResults)) ||
-      (isMobile && showLibrarySearch)
+      (isMobile && !libraryResults)
     );
-  }, [isMobile, isDesktop, addMode, showLibrarySearch, libraryResults]);
+  }, [isMobile, isDesktop, addMode, libraryResults]);
 
   const showToggleAddMode = useMemo(() => {
     return deck && libraryResults && !isMobile && !isDesktop;
   }, [deck?.[DECKID], isMobile, isDesktop, libraryResults]);
 
-  const showResultCol = useMemo(() => !(isMobile && showLibrarySearch));
+  const showResultCol = useMemo(() => !(isMobile && !libraryResults), [isMobile, libraryResults]);
+
+  useEffect(() => {
+    if (!query) setLibraryResults();
+  }, [query]);
 
   useEffect(() => {
     if (!deck && decks !== undefined && lastDeckId) {
