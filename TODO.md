@@ -1,6 +1,6 @@
 # FIX
 - Review TWDA radar: remove swarm, maybe replace?
-- Twisted Bloodhound (maybe anything else?)
+- Wall of Filth - Caine
 
 # FEATURES
 - Card q-ty change in autocompletion
@@ -22,5 +22,3 @@
 - Migrate from isWidth to container queries
 - Migrate forms to useFormStatus+useActionState
 - Remove legacy polyfills when Safari adopts groupBy
-- Refactor search forms to primary change useSearchParams and set cryptFormState from it
-- Refactor TWD/PDA to use searchParams for new and random

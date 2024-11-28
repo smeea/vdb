@@ -60,7 +60,14 @@ const PdaSearchForm = ({ error, setError }) => {
   }, []);
 
   useEffect(() => {
-    if (isMobile && query && pdaFormState && cryptCardBase && libraryCardBase) {
+    if (!isMobile && cryptCardBase && libraryCardBase) {
+      const sanitizedForm = sanitizeFormState(PDA, pdaFormState);
+      if (Object.keys(sanitizedForm).length === 0) {
+        if (query) setSearchParams();
+      } else {
+        processSearch();
+      }
+    } else if (isMobile && query && pdaFormState && cryptCardBase && libraryCardBase) {
       processSearch();
     }
   }, [pdaFormState, cryptCardBase, libraryCardBase]);
@@ -140,10 +147,10 @@ const PdaSearchForm = ({ error, setError }) => {
   };
 
   const getNewPda = (q) => {
-    setError(false);
     setSearchParams({ q: JSON.stringify({ new: q }) });
-
+    setError(false);
     setIsLoading(true);
+
     archiveServices
       .getNewDecks(q, true)
       .catch((error) => handleError(error))
@@ -151,24 +158,15 @@ const PdaSearchForm = ({ error, setError }) => {
   };
 
   const getRandomPda = (q) => {
-    setError(false);
     setSearchParams({ q: JSON.stringify({ random: q }) });
-
+    setError(false);
     setIsLoading(true);
+
     archiveServices
       .getRandomDecks(q, true)
       .catch((error) => handleError(error))
       .finally(() => setIsLoading(false));
   };
-
-  useEffect(() => {
-    if (!isMobile && cryptCardBase && libraryCardBase) {
-      const sanitizedForm = sanitizeFormState(PDA, pdaFormState);
-      if (Object.keys(sanitizedForm).length === 0) {
-        if (query) setSearchParams();
-      } else processSearch();
-    }
-  }, [pdaFormState, cryptCardBase, libraryCardBase]);
 
   return (
     <div className="flex flex-col gap-2">

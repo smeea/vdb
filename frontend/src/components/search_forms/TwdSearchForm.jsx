@@ -63,7 +63,14 @@ const TwdSearchForm = ({ error, setError }) => {
   }, []);
 
   useEffect(() => {
-    if (isMobile && query && twdFormState && cryptCardBase && libraryCardBase) {
+    if (!isMobile && cryptCardBase && libraryCardBase) {
+      const sanitizedForm = sanitizeFormState(TWD, twdFormState);
+      if (Object.keys(sanitizedForm).length === 0) {
+        if (query) setSearchParams();
+      } else if (!twdFormState[EVENT] || twdFormState[EVENT].length > 2) {
+        processSearch();
+      }
+    } else if (isMobile && query && twdFormState && cryptCardBase && libraryCardBase) {
       processSearch();
     }
   }, [twdFormState, cryptCardBase, libraryCardBase]);
@@ -141,10 +148,10 @@ const TwdSearchForm = ({ error, setError }) => {
   };
 
   const getNewTwd = (q) => {
-    setError(false);
     setSearchParams({ q: JSON.stringify({ new: q }) });
-
+    setError(false);
     setIsLoading(true);
+
     archiveServices
       .getNewDecks(q)
       .catch((error) => handleError(error))
@@ -152,26 +159,15 @@ const TwdSearchForm = ({ error, setError }) => {
   };
 
   const getRandomTwd = (q) => {
-    setError(false);
     setSearchParams({ q: JSON.stringify({ random: q }) });
-
+    setError(false);
     setIsLoading(true);
+
     archiveServices
       .getRandomDecks(q)
       .catch((error) => handleError(error))
       .finally(() => setIsLoading(false));
   };
-
-  useEffect(() => {
-    if (!isMobile && cryptCardBase && libraryCardBase) {
-      const sanitizedForm = sanitizeFormState(TWD, twdFormState);
-      if (Object.keys(sanitizedForm).length === 0) {
-        if (query) setSearchParams();
-      } else if (!twdFormState[EVENT] || twdFormState[EVENT].length > 2) {
-        processSearch();
-      }
-    }
-  }, [twdFormState, cryptCardBase, libraryCardBase]);
 
   return (
     <div className="flex flex-col gap-2">
