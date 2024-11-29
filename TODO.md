@@ -1,6 +1,7 @@
 # FIX
 - Review TWDA radar: remove swarm, maybe replace?
 - Wall of Filth - Caine
+- Conviction X cost
 
 # FEATURES
 - Card q-ty change in autocompletion
@@ -18,7 +19,6 @@
 # TECH IMPROVEMENTS
 - Update to React 19 (useOptimistic, useMemo/useCallback, useContext, use, ref)
 - Update to TailwindCSS 4
-- Update to Vite 6
 - Migrate from isWidth to container queries
 - Migrate forms to useFormStatus+useActionState
 - Remove legacy polyfills when Safari adopts groupBy
