@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { twMerge } from 'tailwind-merge';
 import ArrowRepeat from '@/assets/images/icons/arrow-repeat.svg?react';
 import ChevronCompactLeft from '@/assets/images/icons/chevron-compact-left.svg?react';
 import ChevronCompactRight from '@/assets/images/icons/chevron-compact-right.svg?react';
@@ -45,10 +46,11 @@ const ResultModal = ({ card, handleModalCardChange, handleClose, forceInventoryM
   return (
     <Modal
       handleClose={handleClose}
-      size={showImage ? 'card' : 'cardText'}
+      size="card"
       centered
       noBorder
-      noPadding
+      noPadding={!isMobile || showImage}
+      withMobileMargin={!showImage}
       noClose
     >
       <div className="relative">
@@ -60,7 +62,7 @@ const ResultModal = ({ card, handleModalCardChange, handleClose, forceInventoryM
             {showImage ? (
               <CardImage card={activeCard} onClick={handleClose} />
             ) : (
-              <div className="w-full p-3">
+              <div className="w-full">
                 <ResultLayoutText
                   card={activeCard}
                   setCard={setActiveCard}
@@ -89,13 +91,19 @@ const ResultModal = ({ card, handleModalCardChange, handleClose, forceInventoryM
         )}
         <div
           onClick={() => handleModalCardChange(-1)}
-          className="absolute bottom-1/2 left-0 h-[50px] text-darkGray/50 dark:text-midGray/50 sm:left-[-40px] sm:text-white sm:dark:text-whiteDark"
+          className={twMerge(
+            'absolute bottom-1/2 left-[-40px] text-darkGray/50 dark:text-midGray/50 sm:text-white sm:dark:text-whiteDark',
+            showImage ? 'h-[50px] max-sm:left-[0px]' : 'h-[48px] max-sm:left-[-20px]',
+          )}
         >
           <ChevronCompactLeft width="48" height="64" viewBox="4 0 12 16" />
         </div>
         <div
           onClick={() => handleModalCardChange(1)}
-          className="absolute bottom-1/2 right-0 h-[50px] text-darkGray/50 dark:text-midGray/50 sm:right-[-40px] sm:text-white sm:dark:text-whiteDark"
+          className={twMerge(
+            'absolute bottom-1/2 right-[-40px] text-darkGray/50 dark:text-midGray/50 sm:text-white sm:dark:text-whiteDark',
+            showImage ? 'h-[50px] max-sm:right-[0px]' : 'h-[48px] max-sm:right-[-20px]',
+          )}
         >
           <ChevronCompactRight width="48" height="64" viewBox="0 0 12 16" />
         </div>

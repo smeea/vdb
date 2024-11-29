@@ -23,3 +23,4 @@
 - Migrate forms to useFormStatus+useActionState
 - Remove legacy polyfills when Safari adopts groupBy
 - Refactor useFetch to useSWR (test on playtest reports)
+- Add extra modal size (~900...1000px) and refactor using it (step down to xs?)

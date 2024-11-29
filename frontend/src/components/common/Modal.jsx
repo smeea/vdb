@@ -20,7 +20,6 @@ const Modal = ({
     sm: 'min-w-full sm:min-w-[500px] sm:max-w-[550px]',
     md: 'min-w-full sm:min-w-[650px] sm:max-w-[725px]',
     card: 'w-full sm:w-[900px]',
-    cardText: 'w-full sm:w-[900px] max-sm:m-2',
     lg: 'min-w-full lg:min-w-[1150px] lg:max-w-[1250px]',
     xl: 'min-w-full xl:min-w-[1350px] xl:max-w-[1500px]',
   };
@@ -33,7 +32,7 @@ const Modal = ({
           className={twMerge(
             'flex min-h-full justify-center p-8',
             centered ? 'items-center' : 'items-start',
-            withMobileMargin ? 'max-sm:p-4' : 'max-sm:p-0',
+            withMobileMargin ? 'max-sm:p-2' : 'max-sm:p-0',
           )}
         >
           <Dialog.Panel

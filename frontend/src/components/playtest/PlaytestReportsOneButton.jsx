@@ -49,7 +49,7 @@ const PlaytestReportsOneButton = ({ value, isPrecon = false }) => {
       />
       {show && (
         <Modal
-          size="card"
+          size="lg"
           title={`Playtest Report - ${value[NAME]}`}
           handleClose={() => setShow(false)}
         >
