@@ -1,17 +1,14 @@
 import React, { useState, useMemo } from 'react';
-import { useSearchParams } from 'react-router';
-import { TwdDeck, TwdDeckWrapper, TwdResultTotal, Button, ButtonFloatClose } from '@/components';
+import { TwdDeck, TwdDeckWrapper, TwdResultTotal, Button } from '@/components';
 import { decksSort } from '@/utils';
 import { useApp } from '@/context';
 import { CARDS, DECKID, DATE_NEW_OLD, DATE_OLD_NEW, PLAYERS } from '@/constants';
 
 const TwdResult = ({ results }) => {
-  const { isMobile, showFloatingButtons, twdSearchSort, changeTwdSearchSort } = useApp();
-  const [, setSearchParams] = useSearchParams();
+  const { twdSearchSort, changeTwdSearchSort } = useApp();
   const SHOW_COUNTER_STEP = 10;
   const deckCounter = results.length || 0;
   const [showCounter, setShowCounter] = useState(SHOW_COUNTER_STEP);
-  const handleClear = () => setSearchParams();
 
   const sortMethods = {
     [DATE_NEW_OLD]: 'D↓',
@@ -55,7 +52,6 @@ const TwdResult = ({ results }) => {
           </div>
         )}
       </div>
-      {isMobile && showFloatingButtons && <ButtonFloatClose handleClose={handleClear} />}
     </>
   );
 };

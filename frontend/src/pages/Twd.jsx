@@ -1,16 +1,17 @@
-import React, { useState, useEffect } from 'react'; //
+import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router';
 import { useSnapshot } from 'valtio';
-import { TwdResult, TwdSearchForm, ErrorMessage, FlexGapped } from '@/components';
+import { ButtonFloatClose, TwdResult, TwdSearchForm, ErrorMessage, FlexGapped } from '@/components';
 import { useApp, searchResults, setTwdResults } from '@/context';
 import { TWD } from '@/constants';
 
 const Twd = () => {
-  const { isMobile } = useApp();
+  const { showFloatingButtons, isMobile } = useApp();
   const twdResults = useSnapshot(searchResults)[TWD];
   const [error, setError] = useState();
-  const [searchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
   const query = JSON.parse(searchParams.get('q'));
+  const handleClear = () => setSearchParams();
 
   useEffect(() => {
     if (!query) setTwdResults();
@@ -31,6 +32,9 @@ const Twd = () => {
           </div>
         )}
       </FlexGapped>
+      {isMobile && showFloatingButtons && twdResults && (
+        <ButtonFloatClose handleClose={handleClear} />
+      )}
     </div>
   );
 };

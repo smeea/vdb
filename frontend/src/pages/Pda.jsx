@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router';
 import { useSnapshot } from 'valtio';
-import { FlexGapped, PdaResult, PdaSearchForm, ErrorMessage } from '@/components';
+import { ButtonFloatClose, PdaResult, PdaSearchForm, ErrorMessage, FlexGapped } from '@/components';
 import { useApp, searchResults, setPdaResults } from '@/context';
 import { PDA } from '@/constants';
 
 const Pda = () => {
-  const { isMobile } = useApp();
+  const { showFloatingButtons, isMobile } = useApp();
   const pdaResults = useSnapshot(searchResults)[PDA];
   const [error, setError] = useState();
-  const [searchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
   const query = JSON.parse(searchParams.get('q'));
+  const handleClear = () => setSearchParams();
 
   useEffect(() => {
     if (!query) setPdaResults();
@@ -31,6 +32,9 @@ const Pda = () => {
           </div>
         )}
       </FlexGapped>
+      {isMobile && showFloatingButtons && pdaResults && (
+        <ButtonFloatClose handleClose={handleClear} />
+      )}
     </div>
   );
 };

@@ -3,21 +3,25 @@ import { useSearchParams } from 'react-router';
 import { twMerge } from 'tailwind-merge';
 import { useSnapshot } from 'valtio';
 import {
-  ResultCrypt,
+  ButtonFloatAdd,
+  ButtonFloatClose,
+  ButtonFloatDeckOrSearch,
   CryptSearchForm,
   DeckSelectorAndDisplay,
-  ButtonFloatDeckOrSearch,
   FlexGapped,
+  ResultCrypt,
 } from '@/components';
 import { useApp, searchResults, setCryptResults, setDeck, deckStore } from '@/context';
 import { DECKID, CRYPT, CRYPT_COMPARE, DECK, DECKS } from '@/constants';
+import { getIsEditable } from '@/utils';
 
 const Crypt = () => {
-  const { addMode, toggleAddMode, isMobile, isDesktop, lastDeckId } = useApp();
+  const { addMode, toggleAddMode, isMobile, isDesktop, showFloatingButtons, lastDeckId } = useApp();
   const { [DECK]: deck, [DECKS]: decks } = useSnapshot(deckStore);
   const { [CRYPT]: cryptResults, [CRYPT_COMPARE]: cryptCompare } = useSnapshot(searchResults);
-  const [searchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
   const query = JSON.parse(searchParams.get('q'));
+  const isEditable = getIsEditable(deck);
 
   const showSearchForm = useMemo(() => {
     return (
@@ -32,6 +36,8 @@ const Crypt = () => {
   }, [deck?.[DECKID], isMobile, isDesktop, cryptResults]);
 
   const showResultCol = useMemo(() => !(isMobile && !cryptResults), [isMobile, cryptResults]);
+
+  const handleClear = () => setSearchParams();
 
   useEffect(() => {
     if (!query) setCryptResults();
@@ -79,6 +85,12 @@ const Crypt = () => {
       </FlexGapped>
       {showToggleAddMode && (
         <ButtonFloatDeckOrSearch addMode={addMode} toggleAddMode={toggleAddMode} />
+      )}
+      {isMobile && showFloatingButtons && showResultCol && (
+        <>
+          <ButtonFloatClose handleClose={handleClear} />
+          {isEditable && <ButtonFloatAdd />}
+        </>
       )}
     </div>
   );

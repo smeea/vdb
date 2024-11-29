@@ -18,14 +18,16 @@ import {
   deckStore,
 } from '@/context';
 import { DECKID, LIBRARY, LIBRARY_COMPARE, DECK, DECKS } from '@/constants';
+import { getIsEditable } from '@/utils';
 
 const Library = () => {
-  const { addMode, toggleAddMode, isMobile, isDesktop, lastDeckId } = useApp();
+  const { addMode, toggleAddMode, isMobile, isDesktop, showFloatingButtons, lastDeckId } = useApp();
   const { [DECK]: deck, [DECKS]: decks } = useSnapshot(deckStore);
   const { [LIBRARY]: libraryResults, [LIBRARY_COMPARE]: libraryCompare } =
     useSnapshot(searchResults);
-  const [searchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
   const query = JSON.parse(searchParams.get('q'));
+  const isEditable = getIsEditable(deck);
 
   const showSearchForm = useMemo(() => {
     return (
@@ -40,6 +42,8 @@ const Library = () => {
   }, [deck?.[DECKID], isMobile, isDesktop, libraryResults]);
 
   const showResultCol = useMemo(() => !(isMobile && !libraryResults), [isMobile, libraryResults]);
+
+  const handleClear = () => setSearchParams();
 
   useEffect(() => {
     if (!query) setLibraryResults();
@@ -89,6 +93,12 @@ const Library = () => {
       </FlexGapped>
       {showToggleAddMode && (
         <ButtonFloatDeckOrSearch addMode={addMode} toggleAddMode={toggleAddMode} />
+      )}
+      {isMobile && showFloatingButtons && showResultCol && (
+        <>
+          <ButtonFloatClose handleClose={handleClear} />
+          {isEditable && <ButtonFloatAdd />}
+        </>
       )}
     </div>
   );

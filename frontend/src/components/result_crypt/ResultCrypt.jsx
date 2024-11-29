@@ -1,35 +1,12 @@
 import React, { useState } from 'react';
-import { useSnapshot } from 'valtio';
-import { useSearchParams } from 'react-router';
-import {
-  ResultTable,
-  ResultCryptTotal,
-  ResultCryptTotalInfo,
-  ButtonFloatClose,
-  ButtonFloatAdd,
-  ErrorMessage,
-} from '@/components';
-import {
-  CRYPT,
-  DECK,
-  CAPACITY_MAX_MIN,
-  CAPACITY_MIN_MAX,
-  CLAN,
-  GROUP,
-  NAME,
-  SECT,
-} from '@/constants';
-import { getIsEditable } from '@/utils';
-import { useApp, deckStore } from '@/context';
+import { ResultTable, ResultCryptTotal, ResultCryptTotalInfo, ErrorMessage } from '@/components';
+import { CRYPT, CAPACITY_MAX_MIN, CAPACITY_MIN_MAX, CLAN, GROUP, NAME, SECT } from '@/constants';
+import { useApp } from '@/context';
 
 const ResultCrypt = ({ cards, inCompare }) => {
-  const { isMobile, cryptSearchSort, changeCryptSearchSort, showFloatingButtons } = useApp();
-  const [, setSearchParams] = useSearchParams();
-  const deck = useSnapshot(deckStore)[DECK];
-  const isEditable = getIsEditable(deck);
+  const { cryptSearchSort, changeCryptSearchSort } = useApp();
   const [showInfo, setShowInfo] = useState(false);
   const toggleShowInfo = () => setShowInfo(!showInfo);
-  const handleClear = () => setSearchParams();
 
   const sortMethods = {
     [CAPACITY_MAX_MIN]: 'C↓',
@@ -42,12 +19,11 @@ const ResultCrypt = ({ cards, inCompare }) => {
 
   return (
     <>
-      {!isMobile && (cards === null || cards.length === 0) && (
+      {cards === null || cards.length === 0 ? (
         <ErrorMessage sticky>
           {cards === null ? 'CONNECTION PROBLEM' : 'NO CARDS FOUND'}
         </ErrorMessage>
-      )}
-      {cards && cards.length > 0 && (
+      ) : (
         <>
           <ResultCryptTotal
             inCompare={inCompare}
@@ -63,12 +39,6 @@ const ResultCrypt = ({ cards, inCompare }) => {
             </div>
           )}
           <ResultTable cards={cards} target={CRYPT} />
-        </>
-      )}
-      {isMobile && showFloatingButtons && (
-        <>
-          <ButtonFloatClose handleClose={handleClear} />
-          {isEditable && <ButtonFloatAdd />}
         </>
       )}
     </>

@@ -1,7 +1,7 @@
 # FIX
 - Review TWDA radar: remove swarm, maybe replace?
 - Wall of Filth - Caine
-- Conviction X cost
+- Conviction X cost (living wood staff)
 
 # FEATURES
 - Card q-ty change in autocompletion
@@ -21,6 +21,6 @@
 - Update to TailwindCSS 4
 - Migrate from isWidth to container queries
 - Migrate forms to useFormStatus+useActionState
-- Remove legacy polyfills when Safari adopts groupBy
+- Remove legacy polyfills (2024-11-30 groupBy 87.24%)
 - Refactor useFetch to useSWR (test on playtest reports)
 - Add extra modal size (~900...1000px) and refactor using it (step down to xs?)
