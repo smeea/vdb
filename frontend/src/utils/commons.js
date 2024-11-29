@@ -22,6 +22,7 @@ import {
   HAS_LIMITED,
   HAS_PLAYTEST,
   HAS_ILLEGAL_DATE,
+  MS_TO_DAYS,
 } from '@/constants';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 import disciplinesList from '@/assets/data/disciplinesList.json';
@@ -99,7 +100,6 @@ export const getLegality = (card) => {
   if (sets.length > 1 || [POD, PROMO].includes(sets[0])) return false;
   if (sets.length == 0) return PLAYTEST;
 
-  const MS_TO_DAYS = 1000 * 60 * 60 * 24;
   const setDate = new Date(setsAndPrecons[sets[0]][DATE]);
   const now = new Date();
   if ((now - setDate) / MS_TO_DAYS > 30) return false;

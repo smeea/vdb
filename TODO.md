@@ -22,3 +22,4 @@
 - Migrate from isWidth to container queries
 - Migrate forms to useFormStatus+useActionState
 - Remove legacy polyfills when Safari adopts groupBy
+- Refactor useFetch to useSWR (test on playtest reports)

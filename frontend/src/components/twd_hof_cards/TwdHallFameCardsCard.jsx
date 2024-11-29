@@ -5,7 +5,7 @@ import {
   ResultLibraryTableRowCommon,
   TwdOpenDeckButton,
 } from '@/components';
-import { TWD_DATE, ID, DECKID, RELEASE_DATE } from '@/constants';
+import { MS_TO_DAYS, TWD_DATE, ID, DECKID, RELEASE_DATE } from '@/constants';
 
 const TwdHallFameCardsCard = ({ card, idx, handleClick }) => {
   const { isMobile } = useApp();
@@ -26,9 +26,8 @@ const TwdHallFameCardsCard = ({ card, idx, handleClick }) => {
         {card[TWD_DATE].slice(0, 4)}
       </td>
       <td className="min-w-[25px] text-center sm:min-w-[60px]">
-        {Math.round(
-          (new Date(card[TWD_DATE]) - new Date(card[RELEASE_DATE])) / (1000 * 60 * 60 * 24) / 365,
-        ) || 1}
+        {Math.round((new Date(card[TWD_DATE]) - new Date(card[RELEASE_DATE])) / MS_TO_DAYS / 365) ||
+          1}
       </td>
       <td className="min-w-[45px] sm:min-w-[110px]">
         {card[DECKID] && (

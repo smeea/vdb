@@ -141,7 +141,7 @@ const TwdHallFameCardsPlayer = ({ name, cards }) => {
                 Win
               </th>
               <th className="text-center font-bold" title="Years to Win">
-                {isMobile ? 'Y' : 'YtW'}
+                YtW
               </th>
               <th />
             </tr>
@@ -187,7 +187,7 @@ const TwdHallFameCardsPlayer = ({ name, cards }) => {
                 className="text-center font-bold"
                 title="Years to Win - From release to first TWD appearance"
               >
-                {isMobile ? 'Y' : 'YtW'}
+                YtW
               </th>
               <th />
             </tr>

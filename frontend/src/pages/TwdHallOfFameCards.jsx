@@ -4,14 +4,24 @@ import { TabButton, TwdHallFameCardsPlayer } from '@/components';
 import { useApp } from '@/context';
 import { useFetch } from '@/hooks';
 import { byName } from '@/utils';
-import { RELEASE_DATE, SET, DATE, PLAYER, DECKID, TWD_DATE, ID, POD, PROMO } from '@/constants';
+import {
+  MS_TO_DAYS,
+  RELEASE_DATE,
+  SET,
+  DATE,
+  PLAYER,
+  DECKID,
+  TWD_DATE,
+  ID,
+  POD,
+  PROMO,
+} from '@/constants';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 
 const TwdHallOfFameCards = () => {
   const { cryptCardBase, libraryCardBase } = useApp();
   const INNOVATION_PERIOD = 2 * 365;
   const IGNORED_BEFORE_DATE = '1999-04-11'; // first was 1997-04-11
-  const MS_TO_DAYS = 1000 * 60 * 60 * 24;
 
   const url = `${import.meta.env.VITE_BASE_URL}/data/twd_cards_history.json`;
   const { value } = useFetch(url, {}, []);
@@ -95,7 +105,7 @@ const TwdHallOfFameCards = () => {
 
   return (
     <div className="hof-cards-container mx-auto flex flex-col gap-1.5">
-      <Tab.Group manual>
+      <Tab.Group manual className="flex flex-col gap-2">
         <Tab.List className="flex gap-1.5">
           <TabButton>By Total</TabButton>
           <TabButton>By Innovation</TabButton>

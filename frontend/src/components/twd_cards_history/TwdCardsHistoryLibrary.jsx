@@ -226,7 +226,7 @@ const TwdCardsHistoryLibrary = ({ cards, players }) => {
           className="flex min-w-[25px] items-center justify-center sm:min-w-[60px]"
           title="Years to Win"
         >
-          {isMobile ? 'Y' : 'YtW'}
+          YtW
         </div>
         <div className="flex min-w-[90px] items-center sm:min-w-[250px]" title="First Winner">
           Player

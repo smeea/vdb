@@ -17,10 +17,8 @@ const TwdHallFameDeckBody = ({ deck }) => {
   const cards = parseDeck(value?.[CARDS], cryptCardBase, libraryCardBase);
 
   return (
-    <div className="flex gap-2">
-      <div className="basis-full xl:basis-1/4">
-        <TwdResultDescription deck={deck} />
-      </div>
+    <div className="flex gap-2 max-md:flex-col">
+      <TwdResultDescription deck={deck} />
       <div className="flex basis-full gap-2 xl:basis-3/4">
         {isMobile ? (
           <>
@@ -28,18 +26,18 @@ const TwdHallFameDeckBody = ({ deck }) => {
               <TwdResultCryptTable crypt={cards[CRYPT]} />
             </div>
             <div className="basis-1/2">
-              <TwdResultLibraryKeyCardsTable library={deck[LIBRARY]} />
+              <TwdResultLibraryKeyCardsTable library={cards[LIBRARY]} />
             </div>
           </>
         ) : (
           <>
-            <div className="basis-full md:basis-1/3">
+            <div className="basis-1/3">
               <TwdResultCryptTable crypt={cards[CRYPT]} />
             </div>
-            <div className="basis-full md:basis-1/3">
+            <div className="basis-1/3">
               <TwdResultLibraryByTypeTable library={cards[LIBRARY]} />
             </div>
-            <div className="basis-full md:basis-1/3">
+            <div className="basis-1/3">
               <TwdResultLibraryKeyCardsTable library={cards[LIBRARY]} />
             </div>
           </>

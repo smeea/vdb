@@ -3,7 +3,17 @@ import { twMerge } from 'tailwind-merge';
 import { useNavigate } from 'react-router';
 import { TwdOpenDeckButton } from '@/components';
 import { useApp, clearSearchForm, searchTwdForm } from '@/context';
-import { RELEASE_DATE, TWD_DATE, DECKID, AUTHOR, PLAYER, CRYPT, LIBRARY, TWD } from '@/constants';
+import {
+  MS_TO_DAYS,
+  RELEASE_DATE,
+  TWD_DATE,
+  DECKID,
+  AUTHOR,
+  PLAYER,
+  CRYPT,
+  LIBRARY,
+  TWD,
+} from '@/constants';
 
 const TwdCardsHistoryCardAppearance = ({ card, byPlayer }) => {
   const { isMobile } = useApp();
@@ -12,9 +22,7 @@ const TwdCardsHistoryCardAppearance = ({ card, byPlayer }) => {
   let yearsToWin = null;
   if (card[TWD_DATE]) {
     yearsToWin =
-      Math.round(
-        (new Date(card[TWD_DATE]) - new Date(card[RELEASE_DATE])) / (1000 * 60 * 60 * 24) / 365,
-      ) || 1;
+      Math.round((new Date(card[TWD_DATE]) - new Date(card[RELEASE_DATE])) / MS_TO_DAYS / 365) || 1;
   } else {
     const date = new Date();
     yearsToWin = `${date.getFullYear() - card[RELEASE_DATE].slice(0, 4)}+`;

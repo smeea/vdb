@@ -23,6 +23,7 @@ import {
   PLAYTEST,
   S,
   TIMESTAMP,
+  MS_TO_DAYS,
 } from '@/constants';
 
 const DeckSelectMy = ({ deckid, handleSelect }) => {
@@ -39,9 +40,7 @@ const DeckSelectMy = ({ deckid, handleSelect }) => {
       .filter((i) => !decks[i][MASTER] && !decks[i][IS_HIDDEN])
       .toSorted(byTimestamp)
       .map((i, idx) => {
-        const diffDays = Math.round(
-          (new Date() - new Date(decks[i][TIMESTAMP])) / (1000 * 60 * 60 * 24),
-        );
+        const diffDays = Math.round((new Date() - new Date(decks[i][TIMESTAMP])) / MS_TO_DAYS);
 
         let lastEdit;
         if (diffDays > 90) {
