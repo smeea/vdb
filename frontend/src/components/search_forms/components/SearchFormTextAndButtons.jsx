@@ -109,7 +109,6 @@ const SearchFormTextAndButtons = ({
                 <Checkbox
                   className="text-sm"
                   key={idx}
-                  prefix="text"
                   name={0}
                   value={opt.value}
                   onChange={onChangeOptions}

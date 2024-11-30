@@ -107,7 +107,6 @@ const InventoryAddDeckModal = ({ handleClose }) => {
             <th className="min-w-[105px]">
               <div className="flex justify-end gap-1">
                 <Checkbox
-                  id="revFilter"
                   label={isMobile ? 'Rev' : 'Show Revisions'}
                   checked={revFilter}
                   onChange={() => setRevFilter(!revFilter)}

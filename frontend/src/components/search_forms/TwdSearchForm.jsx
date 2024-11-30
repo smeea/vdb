@@ -96,7 +96,7 @@ const TwdSearchForm = ({ error, setError }) => {
   };
 
   const handleMultiChange = (event) => {
-    const { name, value } = event.target;
+    const { name, value } = event.currentTarget;
     searchTwdForm[name][value] = !twdFormState[name][value];
   };
 

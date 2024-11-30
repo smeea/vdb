@@ -16,7 +16,6 @@
     "@eslint/js": "^9.15.0",
     "@floating-ui/react": "^0.26.28",
     "@headlessui/react": "^2.2.0",
-    "@tailwindcss/forms": "^0.5.9",
     "@vitejs/plugin-legacy": "^6.0.0",
     "@vitejs/plugin-react-swc": "^3.7.2",
     "autoprefixer": "^10.4.20",

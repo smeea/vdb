@@ -1,18 +1,12 @@
 module.exports = {
   content: ['index.html', './src/**/*.{html,js,jsx}'],
   darkMode: 'class',
-  plugins: [
-    require('@tailwindcss/forms')({
-      strategy: 'class',
-    }),
-  ],
   theme: {
     screens: {
       sm: '768px',
       md: '1024px',
       lg: '1280px',
       xl: '1440px',
-      '2xl': '1920px',
     },
     listStyleType: {
       none: 'none',
@@ -25,11 +19,6 @@ module.exports = {
       base: ['16px', '24px'],
       lg: ['18px', '28px'],
       xl: ['20px', '28px'],
-    },
-    containers: {
-      sm: '5rem',
-      md: '8rem',
-      lg: '10rem',
     },
     colors: {
       black: '#000000',

@@ -50,7 +50,6 @@ const SearchAdditionalFormsText = ({ value, onChange, onChangeOptions, searchFor
                     <Checkbox
                       className="text-sm"
                       key={`${i}-${index}`}
-                      prefix="text"
                       name={i}
                       value={opt.value}
                       onChange={onChangeOptions}

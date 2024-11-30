@@ -20,9 +20,7 @@
 - Update to TailwindCSS 4
 - Migrate from isWidth to container queries
 - Migrate forms to useFormStatus+useActionState
-- HeadlessUI:
-  - Forms to Fieldset
-  - Input type=checkbox to Checkbox (also remove tailwindcss/forms?)
+- Refactor forms to HeadlessUI Fieldset
 - Remove legacy polyfills (2024-11-30 groupBy 87.24%)
 - Refactor useFetch to useSWR (test on playtest reports)
 - Add extra modal size (~900...1000px) and refactor using it (step down to xs?)
