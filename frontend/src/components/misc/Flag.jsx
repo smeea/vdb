@@ -28,7 +28,7 @@ const Flag = ({ value, size = 'md', noTitle }) => {
   return (
     <img
       src={`${import.meta.env.VITE_BASE_URL}/images/misc/flag-${icons[value].filename}.svg`}
-      title={!noTitle && icons[value].title}
+      title={!noTitle ? icons[value].title : null}
       className={sizeStyle[size]}
     />
   );
