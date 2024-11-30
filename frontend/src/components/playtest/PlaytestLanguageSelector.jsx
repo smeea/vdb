@@ -21,7 +21,7 @@ const PlaytestReportLanguageSelector = () => {
       label: (
         <div className="flex items-center">
           <div className="flex w-[40px] justify-center">
-            <Flag value={i} />
+            <Flag value={i} noTitle />
           </div>
           {languages[i]}
         </div>

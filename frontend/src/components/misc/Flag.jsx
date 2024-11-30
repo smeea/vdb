@@ -1,20 +1,37 @@
 import React from 'react';
-import FlagEn from '@/assets/images/flags/en.svg?react';
-import FlagEs from '@/assets/images/flags/es.svg?react';
-import FlagFr from '@/assets/images/flags/fr.svg?react';
-import FlagBr from '@/assets/images/flags/br.svg?react';
 import { EN, ES, FR, PT } from '@/constants';
 
-const Flag = ({ value, size = '18' }) => {
-  const languages = {
-    [EN]: FlagEn,
-    [ES]: FlagEs,
-    [FR]: FlagFr,
-    [PT]: FlagBr,
+const Flag = ({ value, size = 'md', noTitle }) => {
+  const icons = {
+    [EN]: {
+      filename: 'en',
+      title: 'English',
+    },
+    [ES]: {
+      filename: 'es',
+      title: 'Spanish',
+    },
+    [FR]: {
+      filename: 'fr',
+      title: 'French',
+    },
+    [PT]: {
+      filename: 'br',
+      title: 'Portuguese',
+    },
   };
-  const SelectedFlag = languages[value];
+  const sizeStyle = {
+    md: 'h-[18px]',
+    lg: 'h-[22px]',
+  };
 
-  return <SelectedFlag width={size} height={size} viewBox="0 0 500 500" />;
+  return (
+    <img
+      src={`${import.meta.env.VITE_BASE_URL}/images/misc/flag-${icons[value].filename}.svg`}
+      title={!noTitle && icons[value].title}
+      className={sizeStyle[size]}
+    />
+  );
 };
 
 export default Flag;

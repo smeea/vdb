@@ -28,7 +28,7 @@ const LanguageMenu = ({ handleClose }) => {
               )}
               onClick={() => handleClick(l)}
             >
-              <Flag size={22} value={l} />
+              <Flag size="lg" value={l} />
             </div>
           );
         })}
