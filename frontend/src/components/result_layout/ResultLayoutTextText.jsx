@@ -14,7 +14,12 @@ const ResultLayoutTextText = ({ cardid }) => {
   const refCards = [];
   cardTextNative.map((i) => {
     reactStringReplace(i, /\/(.*?)\//g, (match) => {
-      const refCardid = Object.keys(cardBase).find((j) => cardBase[j][NAME] == match);
+      const refCardid = Object.keys(cardBase).find((j) => {
+        if (match.startsWith('The ')) {
+          match = `${match.replace(/^The /, '')}, The`;
+        }
+        return cardBase[j][NAME] == match;
+      });
 
       refCards.push(refCardid);
     });
