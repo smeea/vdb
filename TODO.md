@@ -1,7 +1,6 @@
 # FIX
 - Review TWDA radar: remove swarm, maybe replace?
 - Wall of Filth - Caine
-- Conviction X cost (living wood staff)
 - Fix legacy filenames
 
 # FEATURES
