@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import { twMerge } from 'tailwind-merge';
-import Spellcheck from '@/assets/images/icons/spellcheck.svg?react';
+import Spellcheck from '@icons/spellcheck.svg?react';
 import { Select, ButtonIconed } from '@/components';
 import { deckUpdate } from '@/context';
 import { getTags, getIsEditable } from '@/utils';

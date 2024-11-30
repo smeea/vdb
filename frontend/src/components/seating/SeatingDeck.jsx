@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
-import PlayFill from '@/assets/images/icons/play-fill.svg?react';
-import X from '@/assets/images/icons/x.svg?react';
+import PlayFill from '@icons/play-fill.svg?react';
+import X from '@icons/x.svg?react';
 import { Toggle } from '@/components';
 import { STATE, DECKID, NAME } from '@/constants';
 

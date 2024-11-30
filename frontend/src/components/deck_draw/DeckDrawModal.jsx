@@ -1,6 +1,6 @@
 import React from 'react';
-import ArrowRepeat from '@/assets/images/icons/arrow-repeat.svg?react';
-import StackIcon from '@/assets/images/icons/stack.svg?react';
+import ArrowRepeat from '@icons/arrow-repeat.svg?react';
+import StackIcon from '@icons/stack.svg?react';
 import {
   Button,
   Modal,

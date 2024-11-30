@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Check2 from '@/assets/images/icons/check2.svg?react';
-import PenFill from '@/assets/images/icons/pen-fill.svg?react';
+import Check2 from '@icons/check2.svg?react';
+import PenFill from '@icons/pen-fill.svg?react';
 import { Spinner, Input, ConditionalTooltipOrModal, ErrorOverlay, Button } from '@/components';
 import { useApp } from '@/context';
 import { userServices } from '@/services';

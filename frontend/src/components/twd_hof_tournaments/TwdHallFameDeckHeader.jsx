@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { twMerge } from 'tailwind-merge';
-import PeopleFill from '@/assets/images/icons/people-fill.svg?react';
+import PeopleFill from '@icons/people-fill.svg?react';
 import { useApp } from '@/context';
 import { Hr, TwdHallFameDeckBody } from '@/components';
 import { CREATION_DATE, PLAYERS, EVENT, LOCATION, DATE } from '@/constants';

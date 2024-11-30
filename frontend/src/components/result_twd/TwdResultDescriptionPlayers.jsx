@@ -1,6 +1,6 @@
 import React from 'react';
 import { twMerge } from 'tailwind-merge';
-import PeopleFill from '@/assets/images/icons/people-fill.svg?react';
+import PeopleFill from '@icons/people-fill.svg?react';
 
 const TwdResultDescriptionPlayers = ({ players }) => {
   return (

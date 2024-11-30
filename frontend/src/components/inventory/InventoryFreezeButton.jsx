@@ -1,6 +1,6 @@
 import React from 'react';
-import LockFill from '@/assets/images/icons/lock-fill.svg?react';
-import UnlockFill from '@/assets/images/icons/unlock-fill.svg?react';
+import LockFill from '@icons/lock-fill.svg?react';
+import UnlockFill from '@icons/unlock-fill.svg?react';
 import { Button } from '@/components';
 import { useApp, inventoryUpdate } from '@/context';
 import { IS_FROZEN } from '@/constants';

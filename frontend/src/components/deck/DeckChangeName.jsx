@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import Snow from '@/assets/images/icons/snow.svg?react';
-import TagFill from '@/assets/images/icons/tag-fill.svg?react';
-import PeopleFill from '@/assets/images/icons/people-fill.svg?react';
-import TrophyFill from '@/assets/images/icons/trophy-fill.svg?react';
+import Snow from '@icons/snow.svg?react';
+import TagFill from '@icons/tag-fill.svg?react';
+import PeopleFill from '@icons/people-fill.svg?react';
+import TrophyFill from '@icons/trophy-fill.svg?react';
 import { deckUpdate } from '@/context';
 import { getIsEditable } from '@/utils';
 import { Input, InputLabel, DeckFreezeButton } from '@/components';

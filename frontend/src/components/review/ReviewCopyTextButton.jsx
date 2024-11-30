@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import PlusSlashMinus from '@/assets/images/icons/plus-slash-minus.svg?react';
+import PlusSlashMinus from '@icons/plus-slash-minus.svg?react';
 import { useApp } from '@/context';
 import { ButtonIconed } from '@/components';
 import { useDeckLibrary } from '@/hooks';

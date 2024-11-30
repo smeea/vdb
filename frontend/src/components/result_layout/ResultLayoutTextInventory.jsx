@@ -1,8 +1,8 @@
 import React from 'react';
 import { twMerge } from 'tailwind-merge';
 import { useSnapshot } from 'valtio';
-import ArchiveFill from '@/assets/images/icons/archive-fill.svg?react';
-import CalculatorFill from '@/assets/images/icons/calculator-fill.svg?react';
+import ArchiveFill from '@icons/archive-fill.svg?react';
+import CalculatorFill from '@icons/calculator-fill.svg?react';
 import { InventoryText, UsedDescription } from '@/components';
 import { inventoryStore, usedStore, deckStore } from '@/context';
 import { getHardTotal, getSoftMax } from '@/utils';

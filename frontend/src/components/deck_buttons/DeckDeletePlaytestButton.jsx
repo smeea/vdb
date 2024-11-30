@@ -1,5 +1,5 @@
 import React from 'react';
-import TrashFill from '@/assets/images/icons/trash-fill.svg?react';
+import TrashFill from '@icons/trash-fill.svg?react';
 import { ButtonIconed } from '@/components';
 import { deckUpdate, useApp } from '@/context';
 import { deepClone, getIsPlaytest } from '@/utils';

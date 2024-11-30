@@ -1,7 +1,7 @@
 import React from 'react';
-import PcDisplay from '@/assets/images/icons/pc-display.svg?react';
-import SunFill from '@/assets/images/icons/sun-fill.svg?react';
-import MoonFill from '@/assets/images/icons/moon-fill.svg?react';
+import PcDisplay from '@icons/pc-display.svg?react';
+import SunFill from '@icons/sun-fill.svg?react';
+import MoonFill from '@icons/moon-fill.svg?react';
 import { useApp, useTheme } from '@/context';
 import { NAME } from '@/constants';
 

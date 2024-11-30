@@ -1,5 +1,5 @@
 import React from 'react';
-import X from '@/assets/images/icons/x.svg?react';
+import X from '@icons/x.svg?react';
 import { ButtonFloat } from '@/components';
 
 const ButtonFloatClose = ({ handleClose, position }) => {

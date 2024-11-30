@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { twMerge } from 'tailwind-merge';
-import ChatLeftQuoteFill from '@/assets/images/icons/chat-left-quote-fill.svg?react';
+import ChatLeftQuoteFill from '@icons/chat-left-quote-fill.svg?react';
 import { useDebounce } from '@/hooks';
 import { inventoryCardTextChange } from '@/context';
 import { Textarea } from '@/components';

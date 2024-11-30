@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Check2All from '@/assets/images/icons/check2-all.svg?react';
+import Check2All from '@icons/check2-all.svg?react';
 import { useApp, deckUpdate } from '@/context';
 import { ButtonIconed } from '@/components';
 import { CRYPT, LIBRARY, CARDS } from '@/constants';

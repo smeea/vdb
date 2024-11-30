@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router';
-import Telegram from '@/assets/images/icons/telegram.svg?react';
-import Github from '@/assets/images/icons/github.svg?react';
-import Discord from '@/assets/images/icons/discord.svg?react';
-import EnvelopeFill from '@/assets/images/icons/envelope-fill.svg?react';
-import Globe2 from '@/assets/images/icons/globe2.svg?react';
+import Telegram from '@icons/telegram.svg?react';
+import Github from '@icons/github.svg?react';
+import Discord from '@icons/discord.svg?react';
+import EnvelopeFill from '@icons/envelope-fill.svg?react';
+import Globe2 from '@icons/globe2.svg?react';
 import { Btc, Title, Banner, TextWithLinks, ConditionalTooltipOrModal } from '@/components';
 import lastChange from '@/LAST_CHANGE.json';
 

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import PersonFill from '@/assets/images/icons/person-fill.svg?react';
+import PersonFill from '@icons/person-fill.svg?react';
 import { Input, InputLabel } from '@/components';
 import { deckUpdate } from '@/context';
 import { getIsEditable } from '@/utils';

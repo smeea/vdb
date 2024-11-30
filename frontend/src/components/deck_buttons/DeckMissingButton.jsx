@@ -1,5 +1,5 @@
 import React from 'react';
-import Cart4 from '@/assets/images/icons/cart4.svg?react';
+import Cart4 from '@icons/cart4.svg?react';
 import { ButtonIconed } from '@/components';
 import { useApp } from '@/context';
 

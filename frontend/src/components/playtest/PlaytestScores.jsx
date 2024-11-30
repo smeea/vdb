@@ -1,8 +1,8 @@
 import React from 'react';
 import { twMerge } from 'tailwind-merge';
-import Star from '@/assets/images/icons/star.svg?react';
-import StarHalf from '@/assets/images/icons/star-half.svg?react';
-import StarFill from '@/assets/images/icons/star-fill.svg?react';
+import Star from '@icons/star.svg?react';
+import StarHalf from '@icons/star-half.svg?react';
+import StarFill from '@icons/star-fill.svg?react';
 import { useApp } from '@/context';
 
 const PlaytestScores = ({ value, handleClick, isSmall }) => {

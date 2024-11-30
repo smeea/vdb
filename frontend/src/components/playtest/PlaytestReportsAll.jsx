@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import ky from 'ky';
 import { useNavigate } from 'react-router';
 import { Tab } from '@headlessui/react';
-import Download from '@/assets/images/icons/download.svg?react';
-import Arrow90DegLeft from '@/assets/images/icons/arrow-90deg-left.svg?react';
+import Download from '@icons/download.svg?react';
+import Arrow90DegLeft from '@icons/arrow-90deg-left.svg?react';
 import {
   TabButton,
   ButtonIconed,

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Menu } from '@headlessui/react';
-import SortDown from '@/assets/images/icons/sort-down.svg?react';
+import SortDown from '@icons/sort-down.svg?react';
 import { MenuItems, MenuItem, MenuButton } from '@/components';
 import { capitalize } from '@/utils';
 

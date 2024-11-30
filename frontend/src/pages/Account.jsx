@@ -11,7 +11,7 @@ import {
   AccountLimitedButton,
   AccountLegacyToggle,
 } from '@/components';
-import PersonFill from '@/assets/images/icons/person-fill.svg?react';
+import PersonFill from '@icons/person-fill.svg?react';
 import { useApp } from '@/context';
 
 const Account = () => {

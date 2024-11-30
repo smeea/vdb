@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import Shuffle from '@/assets/images/icons/shuffle.svg?react';
-import At from '@/assets/images/icons/at.svg?react';
-import PinAngleFill from '@/assets/images/icons/pin-angle-fill.svg?react';
-import ChatLeftQuoteFill from '@/assets/images/icons/chat-left-quote-fill.svg?react';
-import BinocularsFill from '@/assets/images/icons/binoculars-fill.svg?react';
+import Shuffle from '@icons/shuffle.svg?react';
+import At from '@icons/at.svg?react';
+import PinAngleFill from '@icons/pin-angle-fill.svg?react';
+import ChatLeftQuoteFill from '@icons/chat-left-quote-fill.svg?react';
+import BinocularsFill from '@icons/binoculars-fill.svg?react';
 import {
   ButtonIconed,
   DeckBranchSelect,

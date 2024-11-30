@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSnapshot } from 'valtio';
 import { Menu } from '@headlessui/react';
-import Download from '@/assets/images/icons/download.svg?react';
+import Download from '@icons/download.svg?react';
 import { MenuItems, MenuItem, MenuItemDivider, MenuButton } from '@/components';
 import { exportDeck } from '@/utils';
 import { useApp, deckStore } from '@/context';

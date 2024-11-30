@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useSnapshot } from 'valtio';
-import PeopleFill from '@/assets/images/icons/people-fill.svg?react';
+import PeopleFill from '@icons/people-fill.svg?react';
 import { Spinner, ModalConfirmation, DeckPublicDiff, ButtonIconed } from '@/components';
 import { deckServices } from '@/services';
 import { useApp, deckStore } from '@/context';

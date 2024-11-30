@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
-import X from '@/assets/images/icons/x.svg?react';
-import Download from '@/assets/images/icons/download.svg?react';
-import Upload from '@/assets/images/icons/upload.svg?react';
+import X from '@icons/x.svg?react';
+import Download from '@icons/download.svg?react';
+import Upload from '@icons/upload.svg?react';
 import { Textarea, ButtonIconed, ErrorOverlay } from '@/components';
 import { useApp } from '@/context';
 import { importDeck } from '@/utils';

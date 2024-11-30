@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import PersonFillExclamation from '@/assets/images/icons/person-fill-exclamation.svg?react';
-import EightCircleFill from '@/assets/images/icons/8-circle-fill.svg?react';
-import Calendar2EventFill from '@/assets/images/icons/calendar2-event-fill.svg?react';
-import PostcardHeartFill from '@/assets/images/icons/postcard-heart-fill.svg?react';
+import PersonFillExclamation from '@icons/person-fill-exclamation.svg?react';
+import EightCircleFill from '@icons/8-circle-fill.svg?react';
+import Calendar2EventFill from '@icons/calendar2-event-fill.svg?react';
+import PostcardHeartFill from '@icons/postcard-heart-fill.svg?react';
 import {
   Input,
   Textarea,

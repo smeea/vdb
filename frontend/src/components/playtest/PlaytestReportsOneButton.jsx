@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Download from '@/assets/images/icons/download.svg?react';
-import InboxesFill from '@/assets/images/icons/inboxes-fill.svg?react';
+import Download from '@icons/download.svg?react';
+import InboxesFill from '@icons/inboxes-fill.svg?react';
 import {
   ButtonIconed,
   CardImage,

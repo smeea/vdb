@@ -1,6 +1,6 @@
 import React from 'react';
 import { Select } from '@/components';
-import EyeFill from '@/assets/images/icons/eye-fill.svg?react';
+import EyeFill from '@icons/eye-fill.svg?react';
 import { CardImage, Tooltip } from '@/components';
 import { NAME, ID, SET, DATE, POD } from '@/constants';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';

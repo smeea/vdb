@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import DoorOpenFill from '@/assets/images/icons/door-open-fill.svg?react';
+import DoorOpenFill from '@icons/door-open-fill.svg?react';
 import {
   AccountPasswordForm,
   AccountUsernameForm,

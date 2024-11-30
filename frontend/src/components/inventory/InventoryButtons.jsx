@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSnapshot } from 'valtio';
 import { useNavigate } from 'react-router';
-import Folder2Open from '@/assets/images/icons/folder2-open.svg?react';
+import Folder2Open from '@icons/folder2-open.svg?react';
 import {
   InventoryImport,
   DeckExportButton,
@@ -11,7 +11,7 @@ import {
   ButtonIconed,
   ButtonFloatClose,
 } from '@/components';
-import FolderPlus from '@/assets/images/icons/folder-plus.svg?react';
+import FolderPlus from '@icons/folder-plus.svg?react';
 import { useApp, deckStore, inventoryStore } from '@/context';
 import { NAME, AUTHOR, CRYPT, LIBRARY, DECKS, IS_FROZEN } from '@/constants';
 

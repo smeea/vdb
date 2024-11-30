@@ -1,5 +1,5 @@
 import React from 'react';
-import X from '@/assets/images/icons/x.svg?react';
+import X from '@icons/x.svg?react';
 import { Button, ResultLibraryTypeImage, SortButton, Header } from '@/components';
 import { setLibraryCompare } from '@/context';
 import { TYPE } from '@/constants';

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router';
-import People from '@/assets/images/icons/people.svg?react';
-import PeopleFill from '@/assets/images/icons/people-fill.svg?react';
+import People from '@icons/people.svg?react';
+import PeopleFill from '@icons/people-fill.svg?react';
 import { Spinner, DeckPublicToggleConfirmation, ButtonIconed } from '@/components';
 import { deckServices } from '@/services';
 import { useApp } from '@/context';

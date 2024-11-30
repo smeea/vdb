@@ -1,5 +1,5 @@
 import React from 'react';
-import Globe from '@/assets/images/icons/globe.svg?react';
+import Globe from '@icons/globe.svg?react';
 import { ConditionalTooltipOrModal, ListEntry, Flag, Select } from '@/components';
 import { useApp } from '@/context';
 import { LANG, EN, ES, FR, PT } from '@/constants';

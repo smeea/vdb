@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Menu } from '@headlessui/react';
 import { useSnapshot } from 'valtio';
-import Download from '@/assets/images/icons/download.svg?react';
+import Download from '@icons/download.svg?react';
 import {
   FlexGapped,
   DeckSelectAdvTotal,

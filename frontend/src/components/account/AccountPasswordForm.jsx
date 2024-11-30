@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import EyeFill from '@/assets/images/icons/eye-fill.svg?react';
-import EyeSlashFill from '@/assets/images/icons/eye-slash-fill.svg?react';
-import Check2 from '@/assets/images/icons/check2.svg?react';
+import EyeFill from '@icons/eye-fill.svg?react';
+import EyeSlashFill from '@icons/eye-slash-fill.svg?react';
+import Check2 from '@icons/check2.svg?react';
 import { Spinner, Input, Button } from '@/components';
 
 const AccountPasswordForm = ({ value, setValue, success, isLoading, isOld, isNew }) => {

@@ -1,6 +1,6 @@
 import React from 'react';
-import Dash from '@/assets/images/icons/dash.svg?react';
-import PlusLg from '@/assets/images/icons/plus-lg.svg?react';
+import Dash from '@icons/dash.svg?react';
+import PlusLg from '@icons/plus-lg.svg?react';
 import { Button } from '@/components';
 
 const ButtonCardChange = ({ onClick, isLink, isNegative }) => {

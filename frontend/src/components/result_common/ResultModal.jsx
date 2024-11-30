@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { twMerge } from 'tailwind-merge';
-import ArrowRepeat from '@/assets/images/icons/arrow-repeat.svg?react';
-import ChevronCompactLeft from '@/assets/images/icons/chevron-compact-left.svg?react';
-import ChevronCompactRight from '@/assets/images/icons/chevron-compact-right.svg?react';
+import ArrowRepeat from '@icons/arrow-repeat.svg?react';
+import ChevronCompactLeft from '@icons/chevron-compact-left.svg?react';
+import ChevronCompactRight from '@icons/chevron-compact-right.svg?react';
 import { ButtonFloat, CardImage, ResultLayoutText, Modal } from '@/components';
 import { useApp } from '@/context';
 import { useSwipe } from '@/hooks';

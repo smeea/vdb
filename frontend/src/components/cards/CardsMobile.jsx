@@ -1,6 +1,6 @@
 import React from 'react';
-import ArrowRepeat from '@/assets/images/icons/arrow-repeat.svg?react';
-import Dice3 from '@/assets/images/icons/dice-3-fill.svg?react';
+import ArrowRepeat from '@icons/arrow-repeat.svg?react';
+import Dice3 from '@icons/dice-3-fill.svg?react';
 import { CardSelect, ResultLayoutText, CardImage, ButtonFloat, ErrorMessage } from '@/components';
 import { useApp } from '@/context';
 import { getIsPlaytest } from '@/utils';

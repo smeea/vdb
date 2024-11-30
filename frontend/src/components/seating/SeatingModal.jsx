@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import PencilSquare from '@/assets/images/icons/pencil-square.svg?react';
-import Recycle from '@/assets/images/icons/recycle.svg?react';
-import PersonFill from '@/assets/images/icons/person-fill.svg?react';
+import PencilSquare from '@icons/pencil-square.svg?react';
+import Recycle from '@icons/recycle.svg?react';
+import PersonFill from '@icons/person-fill.svg?react';
 import {
   ButtonIconed,
   SeatingPlayerSelector,

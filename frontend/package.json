@@ -59,6 +59,7 @@
     "xlsx": "^0.18.5"
   },
   "dependencies": {
+    "bootstrap-icons": "^1.11.3",
     "tailwind-merge": "^2.5.5"
   }
 }

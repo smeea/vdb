@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router';
-import Activity from '@/assets/images/icons/activity.svg?react';
+import Activity from '@icons/activity.svg?react';
 import { Spinner, Hr, Modal, ButtonIconed, TextWithLinks } from '@/components';
 import { useFetch } from '@/hooks';
 import lastChange from '@/LAST_CHANGE.json';

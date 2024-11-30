@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Link45Deg from '@/assets/images/icons/link-45deg.svg?react';
+import Link45Deg from '@icons/link-45deg.svg?react';
 import { useApp } from '@/context';
 import { ButtonIconed } from '@/components';
 

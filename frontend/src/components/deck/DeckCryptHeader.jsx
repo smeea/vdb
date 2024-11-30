@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import InfoCircle from '@/assets/images/icons/info-circle.svg?react';
-import PlusLg from '@/assets/images/icons/plus-lg.svg?react';
+import InfoCircle from '@icons/info-circle.svg?react';
+import PlusLg from '@icons/plus-lg.svg?react';
 import { DeckCryptTotalInfo, DeckNewCard, Warning, Button, SortButton, Header } from '@/components';
 import { useApp } from '@/context';
 import { getKeyDisciplines } from '@/utils';

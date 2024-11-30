@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Check2 from '@/assets/images/icons/check2.svg?react';
+import Check2 from '@icons/check2.svg?react';
 import { Spinner, Input, Button, ErrorOverlay } from '@/components';
 import { playtestServices } from '@/services';
 

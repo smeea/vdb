@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router';
-import PeopleFill from '@/assets/images/icons/people-fill.svg?react';
+import PeopleFill from '@icons/people-fill.svg?react';
 import { ButtonIconed } from '@/components';
 import { useApp } from '@/context';
 import { PUBLIC_PARENT, PUBLIC_CHILD } from '@/constants';

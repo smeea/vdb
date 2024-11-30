@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import Upload from '@/assets/images/icons/upload.svg?react';
+import Upload from '@icons/upload.svg?react';
 import { ButtonIconed } from '@/components';
 import { AUTHOR } from '@/constants';
 

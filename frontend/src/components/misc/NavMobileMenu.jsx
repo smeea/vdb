@@ -1,10 +1,10 @@
 import React from 'react';
 import { NavLink } from 'react-router';
 import { Popover, PopoverButton, PopoverPanel } from '@headlessui/react';
-import PersonFill from '@/assets/images/icons/person-fill.svg?react';
-import InfoCircleFill from '@/assets/images/icons/info-circle-fill.svg?react';
-import List from '@/assets/images/icons/list.svg?react';
-import StoplightsFill from '@/assets/images/icons/stoplights-fill.svg?react';
+import PersonFill from '@icons/person-fill.svg?react';
+import InfoCircleFill from '@icons/info-circle-fill.svg?react';
+import List from '@icons/list.svg?react';
+import StoplightsFill from '@icons/stoplights-fill.svg?react';
 import { NavMobileToggle, LanguageMenu, ThemeSelect, Hr } from '@/components';
 import { useApp } from '@/context';
 

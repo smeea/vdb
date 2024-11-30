@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import ChevronBarExpand from '@/assets/images/icons/chevron-bar-expand.svg?react';
-import ChevronBarContract from '@/assets/images/icons/chevron-bar-contract.svg?react';
-import ChatLeftQuoteFill from '@/assets/images/icons/chat-left-quote-fill.svg?react';
+import ChevronBarExpand from '@icons/chevron-bar-expand.svg?react';
+import ChevronBarContract from '@icons/chevron-bar-contract.svg?react';
+import ChatLeftQuoteFill from '@icons/chat-left-quote-fill.svg?react';
 import {
   Button,
   Input,

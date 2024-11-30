@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Link45Deg from '@/assets/images/icons/link-45deg.svg?react';
-import ClipboardFill from '@/assets/images/icons/clipboard-fill.svg?react';
+import Link45Deg from '@icons/link-45deg.svg?react';
+import ClipboardFill from '@icons/clipboard-fill.svg?react';
 import { FlexGapped, Modal, Button, ButtonIconed } from '@/components';
 import { useApp } from '@/context';
 import { inventoryServices } from '@/services';

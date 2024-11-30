@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router';
-import StarFill from '@/assets/images/icons/star-fill.svg?react';
+import StarFill from '@icons/star-fill.svg?react';
 import tournaments from '@/assets/data/etda.json';
 import { Spinner, ButtonIconed } from '@/components';
 import { setAnalyzeDecks, setAnalyzeInfo, setAnalyzeResults, clearAnalyzeForm } from '@/context';

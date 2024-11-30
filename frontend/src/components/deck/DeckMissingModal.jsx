@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { twMerge } from 'tailwind-merge';
-import Gem from '@/assets/images/icons/gem.svg?react';
+import Gem from '@icons/gem.svg?react';
 import {
   FlexGapped,
   DeckCrypt,

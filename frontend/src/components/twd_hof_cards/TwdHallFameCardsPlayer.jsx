@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import { Disclosure } from '@headlessui/react';
-import LightbulbFill from '@/assets/images/icons/lightbulb-fill.svg?react';
+import LightbulbFill from '@icons/lightbulb-fill.svg?react';
 import {
   ResultCryptTotal,
   ResultLibraryTotal,

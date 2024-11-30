@@ -1,6 +1,6 @@
 import React from 'react';
-import XIcon from '@/assets/images/icons/x.svg?react';
-import InfoCircle from '@/assets/images/icons/info-circle.svg?react';
+import XIcon from '@icons/x.svg?react';
+import InfoCircle from '@icons/info-circle.svg?react';
 import { ANY } from '@/constants';
 import { Button, SortButton, Header } from '@/components';
 import { setCryptCompare } from '@/context';

@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { useSnapshot } from 'valtio';
-import Download from '@/assets/images/icons/download.svg?react';
-import Upload from '@/assets/images/icons/upload.svg?react';
+import Download from '@icons/download.svg?react';
+import Upload from '@icons/upload.svg?react';
 import {
   AccountLimitedSetSelection,
   AccountLimitedCardSelection,

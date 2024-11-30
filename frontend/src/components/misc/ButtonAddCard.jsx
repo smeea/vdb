@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSnapshot } from 'valtio';
-import PlusLg from '@/assets/images/icons/plus-lg.svg?react';
+import PlusLg from '@icons/plus-lg.svg?react';
 import { Button } from '@/components';
 import { deckStore, deckCardChange } from '@/context';
 import { NAME, DECKS } from '@/constants';

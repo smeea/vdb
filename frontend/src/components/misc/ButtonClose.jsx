@@ -1,5 +1,5 @@
 import React from 'react';
-import XLg from '@/assets/images/icons/x-lg.svg?react';
+import XLg from '@icons/x-lg.svg?react';
 import { ButtonIconed } from '@/components';
 
 const ButtonClose = ({ handleClick, title, className, text }) => {

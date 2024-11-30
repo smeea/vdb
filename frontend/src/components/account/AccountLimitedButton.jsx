@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useSearchParams } from 'react-router';
 import { setMany } from 'idb-keyval';
-import UiChecksGrid from '@/assets/images/icons/ui-checks-grid.svg?react';
+import UiChecksGrid from '@icons/ui-checks-grid.svg?react';
 import { AccountLimitedModal, ButtonIconed } from '@/components';
 import { useApp } from '@/context';
 import {

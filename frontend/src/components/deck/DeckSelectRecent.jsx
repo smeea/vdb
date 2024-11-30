@@ -1,6 +1,6 @@
 import React from 'react';
-import TrophyFill from '@/assets/images/icons/trophy-fill.svg?react';
-import PeopleFill from '@/assets/images/icons/people-fill.svg?react';
+import TrophyFill from '@icons/trophy-fill.svg?react';
+import PeopleFill from '@icons/people-fill.svg?react';
 import { Select } from '@/components';
 import { useApp } from '@/context';
 import { DECK, DECKID, NAME, TWD, PDA } from '@/constants';

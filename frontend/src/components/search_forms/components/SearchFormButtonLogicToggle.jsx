@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from '@/components';
 import { TEXT, AND, NOT, OR, ONLY } from '@/constants';
-import Exclamation from '@/assets/images/icons/exclamation.svg?react';
+import Exclamation from '@icons/exclamation.svg?react';
 
 const SearchFormButtonLogicToggle = ({ name, i, value, searchForm, withAnd, withOnly }) => {
   const handleToggleForm = () => {

@@ -1,5 +1,5 @@
 import React from 'react';
-import WifiOff from '@/assets/images/icons/wifi-off.svg?react';
+import WifiOff from '@icons/wifi-off.svg?react';
 import { GlobalNotification } from '@/components';
 import { useApp } from '@/context';
 

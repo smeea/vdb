@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router';
-import Arrow90DegLeft from '@/assets/images/icons/arrow-90deg-left.svg?react';
+import Arrow90DegLeft from '@icons/arrow-90deg-left.svg?react';
 import { useApp } from '@/context';
 import { ButtonIconed } from '@/components';
 

@@ -1,8 +1,8 @@
 import React, { useMemo } from 'react';
 import { useSnapshot } from 'valtio';
-import Shuffle from '@/assets/images/icons/shuffle.svg?react';
-import PinAngleFill from '@/assets/images/icons/pin-angle-fill.svg?react';
-import At from '@/assets/images/icons/at.svg?react';
+import Shuffle from '@icons/shuffle.svg?react';
+import PinAngleFill from '@icons/pin-angle-fill.svg?react';
+import At from '@icons/at.svg?react';
 import { Select, ResultPreconClan, ResultLegalIcon } from '@/components';
 import { limitedStore, deckStore, useApp } from '@/context';
 import { getRestrictions, getClan } from '@/utils';

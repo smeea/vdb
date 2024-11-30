@@ -1,5 +1,5 @@
 import React from 'react';
-import Dash from '@/assets/images/icons/dash.svg?react';
+import Dash from '@icons/dash.svg?react';
 import { Button } from '@/components';
 import { TEXT } from '@/constants';
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import Plus from '@/assets/images/icons/plus.svg?react';
+import Plus from '@icons/plus.svg?react';
 import { Button } from '@/components';
 import { TEXT, AND } from '@/constants';
 

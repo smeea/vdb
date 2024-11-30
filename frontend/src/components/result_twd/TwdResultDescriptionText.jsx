@@ -1,10 +1,10 @@
 import React from 'react';
 import { useNavigate } from 'react-router';
-import TrophyFill from '@/assets/images/icons/trophy-fill.svg?react';
-import PersonFill from '@/assets/images/icons/person-fill.svg?react';
-import TagFill from '@/assets/images/icons/tag-fill.svg?react';
-import CalendarEvent from '@/assets/images/icons/calendar-event.svg?react';
-import GeoAltFill from '@/assets/images/icons/geo-alt-fill.svg?react';
+import TrophyFill from '@icons/trophy-fill.svg?react';
+import PersonFill from '@icons/person-fill.svg?react';
+import TagFill from '@icons/tag-fill.svg?react';
+import CalendarEvent from '@icons/calendar-event.svg?react';
+import GeoAltFill from '@icons/geo-alt-fill.svg?react';
 import { TwdResultTags, TwdResultDescriptionTextTr } from '@/components';
 import { useApp, searchTwdForm, clearSearchForm } from '@/context';
 import { getTags } from '@/utils';

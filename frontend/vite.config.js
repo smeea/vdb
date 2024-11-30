@@ -56,7 +56,10 @@ export default defineConfig({
     }),
   ],
   resolve: {
-    alias: [{ find: '@', replacement: resolve(__dirname, 'src') }],
+    alias: [
+      { find: '@', replacement: resolve(__dirname, 'src') },
+      { find: '@icons', replacement: resolve(__dirname, 'node_modules/bootstrap-icons/icons') },
+    ],
   },
   build: {
     chunkSizeWarningLimit: 1024,

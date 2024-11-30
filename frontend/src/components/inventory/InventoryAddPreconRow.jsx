@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import EyeFill from '@/assets/images/icons/eye-fill.svg?react';
+import EyeFill from '@icons/eye-fill.svg?react';
 import {
   DeckPreview,
   InventoryDeckAddButton,

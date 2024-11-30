@@ -1,5 +1,5 @@
 import React from 'react';
-import Exclamation from '@/assets/images/icons/exclamation-triangle.svg?react';
+import Exclamation from '@icons/exclamation-triangle.svg?react';
 import { ResultLegalIcon } from '@/components';
 import { TITLE, TEXT, LIMITED, GROUPS, BANNED, LEGAL, PLAYTEST } from '@/constants';
 

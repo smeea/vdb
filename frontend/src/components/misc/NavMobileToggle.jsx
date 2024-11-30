@@ -1,8 +1,8 @@
 import React from 'react';
 import { Switch } from '@headlessui/react';
 import { twMerge } from 'tailwind-merge';
-import ToggleOn from '@/assets/images/icons/toggle-on.svg?react';
-import ToggleOff from '@/assets/images/icons/toggle-off.svg?react';
+import ToggleOn from '@icons/toggle-on.svg?react';
+import ToggleOff from '@icons/toggle-off.svg?react';
 
 const NavMobileToggle = ({ children, isOn, disabled, handleClick }) => {
   return (
