@@ -1,5 +1,6 @@
 import React from 'react';
 import { twMerge } from 'tailwind-merge';
+import { capitalize } from '@/utils';
 
 const ResultPathImage = ({ value, size = 'md' }) => {
   if (!value) return;
@@ -13,7 +14,7 @@ const ResultPathImage = ({ value, size = 'md' }) => {
     <img
       className={twMerge('inline dark:brightness-[0.65]', sizeStyle[size])}
       src={`${import.meta.env.VITE_BASE_URL}/images/misc/path${value.toLowerCase().replace(/ .*/, '')}.svg`}
-      title={`Path of ${value}`}
+      title={`Path of ${capitalize(value)}`}
     />
   );
 };
