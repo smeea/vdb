@@ -63,6 +63,7 @@ const ResultLayoutTextSets = ({ card }) => {
         .toSorted(byDate)
         .map((set) => {
           const preconsShort = Object.keys(card[SET][set]).join('/');
+          const year = setsAndPrecons[set][DATE].slice(2, 4) || null;
 
           return (
             <div className="inline-block whitespace-nowrap" key={set}>
@@ -74,8 +75,11 @@ const ResultLayoutTextSets = ({ card }) => {
                 size="lg"
                 noPadding
               >
-                <div className="text-fgSecondary dark:text-fgPrimaryDark">
+                <div className="flex text-fgSecondary dark:text-fgPrimaryDark">
                   {set == PLAYTEST ? 'PLAYTEST' : set}
+                  <div className="flex items-start text-sm text-fgFourth dark:text-fgFourthDark">
+                    {year ? `'${year}` : null}
+                  </div>
                   <div className="inline text-midGray dark:text-midGrayDark">
                     {preconsShort ? `:${preconsShort}` : null}
                   </div>

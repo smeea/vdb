@@ -78,6 +78,7 @@ module.exports = {
       fgThird: '#2020a0',
       fgThirdDark: '#d0d0ee',
       fgFourth: '#4040a0',
+      fgFourthDark: '#9090c0',
     },
     extend: {
       flexBasis: {
