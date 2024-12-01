@@ -11,7 +11,7 @@ const ModalConfirmation = ({
   handleConfirm,
   handleCancel,
   centered,
-  size = 'sm',
+  size = 'xs',
   disabled,
   children,
   buttonVariant = 'primary',

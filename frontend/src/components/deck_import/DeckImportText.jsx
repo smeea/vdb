@@ -77,7 +77,7 @@ It will skip other (useless) lines, you don't have to remove it yourself.
 `;
 
   return (
-    <Modal initialFocus={ref} handleClose={handleClose} size="lg" title="Import from Text">
+    <Modal initialFocus={ref} handleClose={handleClose} title="Import from Text">
       <FlexGapped className="flex-col">
         <div className="relative">
           <Textarea

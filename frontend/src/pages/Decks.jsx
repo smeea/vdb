@@ -283,7 +283,7 @@ const Decks = () => {
         <ButtonFloatMenu />
       </div>
       {showMenuButtons && (
-        <Modal handleClose={handleClose} centered size="sm" withMobileMargin noClose={!isDesktop}>
+        <Modal handleClose={handleClose} centered size="xs" withMobileMargin noClose={!isDesktop}>
           <>
             <DeckButtons
               deck={deck}

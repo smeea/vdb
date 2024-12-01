@@ -43,7 +43,7 @@ const DeckSelectAdvModal = ({ onClick, setShow, allTagsOptions, short }) => {
     <Modal
       noPadding={isMobile}
       handleClose={handleClose}
-      size={short ? 'md' : 'xl'}
+      size={short ? 'sm' : 'xl'}
       title="Select Deck"
     >
       <FlexGapped className="flex-col">

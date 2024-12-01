@@ -24,6 +24,7 @@ const UpdateNotification = () => {
           title="Update available!"
           centered
           withMobileMargin
+          size="sm"
         >
           <div className="flex flex-col gap-4 sm:gap-5">
             <div className="flex flex-col gap-0.5 text-fgRed dark:text-fgRedDark">

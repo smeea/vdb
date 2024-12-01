@@ -256,7 +256,7 @@ const Review = () => {
         <ButtonFloatMenu />
       </div>
       {showMenuButtons && (
-        <Modal handleClose={handleClose} centered size="sm">
+        <Modal handleClose={handleClose} centered size="xs">
           <ReviewButtons deck={deckFrom} urlDiff={urlDiff} parentId={inDecks ? parentId : null} />
           <div className="lg:hidden">
             <ButtonFloatClose handleClose={handleClose} />

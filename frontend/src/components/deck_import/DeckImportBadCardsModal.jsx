@@ -36,12 +36,7 @@ const DeckImportBadCardsModal = ({ deckid, badCards, setBadCards, inInventory })
   };
 
   return (
-    <Modal
-      handleClose={() => setBadCards([])}
-      size="lg"
-      title="Fix Bad Import"
-      noPadding={isMobile}
-    >
+    <Modal handleClose={() => setBadCards([])} title="Fix Bad Import" noPadding={isMobile}>
       {badCards.map((c, idx) => {
         return (
           <div key={idx} className="flex items-center gap-1 sm:gap-3">

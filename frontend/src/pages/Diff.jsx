@@ -209,7 +209,7 @@ const Diff = () => {
         <ButtonFloatMenu />
       </div>
       {showMenuButtons && (
-        <Modal handleClose={handleClose} centered size="sm">
+        <Modal handleClose={handleClose} centered size="xs">
           <DiffButtons
             deckFrom={deck}
             deckTo={deckTo}

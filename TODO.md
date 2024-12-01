@@ -18,9 +18,7 @@
 # TECH IMPROVEMENTS
 - Update to React 19 (useOptimistic, useMemo/useCallback, useContext, use, ref)
 - Update to TailwindCSS 4
+- Migrate to useSWR (test on playtest reports)
 - Migrate from isWidth to container queries
 - Migrate forms to useFormStatus+useActionState
-- Refactor forms to HeadlessUI Fieldset
 - Remove legacy polyfills (2024-11-30 groupBy 87.24%)
-- Refactor useFetch to useSWR (test on playtest reports)
-- Add extra modal size (~900...1000px) and refactor using it (step down to xs?)
