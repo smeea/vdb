@@ -20,5 +20,5 @@
 - Update to TailwindCSS 4
 - Migrate to useSWR (test on playtest reports)
 - Migrate from isWidth to container queries
-- Migrate forms to useFormStatus+useActionState
+- Migrate forms to useFormStatus/useActionState
 - Remove legacy polyfills (2024-11-30 groupBy 87.24%)

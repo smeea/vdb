@@ -21,7 +21,7 @@ import {
 
 const DeckDetails = ({ deck, allTagsOptions }) => {
   const { isPlaytester, isMobile } = useApp();
-  const [folded, setFolded] = useState(!isMobile);
+  const [isFolded, setIsFolded] = useState(!isMobile);
   const playtestPrecon =
     deck[DECKID].includes(`${PLAYTEST}:`) &&
     deck[DECKID].replace(`${PLAYTEST}:`, '') &&
@@ -51,7 +51,7 @@ const DeckDetails = ({ deck, allTagsOptions }) => {
           </div>
         </div>
       </div>
-      <div className={twMerge('flex gap-2', (!folded || isMobile) && 'flex-col')}>
+      <div className={twMerge('flex gap-2', (!isFolded || isMobile) && 'flex-col')}>
         {isPlaytester && playtestPrecon ? (
           <div className="basis-full">
             <PlaytestReportForm id={playtestPrecon} isPrecon />
@@ -59,7 +59,7 @@ const DeckDetails = ({ deck, allTagsOptions }) => {
         ) : (
           <>
             <div className="basis-full sm:basis-6/12">
-              <DeckChangeDescription deck={deck} folded={folded} setFolded={setFolded} />
+              <DeckChangeDescription deck={deck} isFolded={isFolded} setIsFolded={setIsFolded} />
             </div>
             {(deck[TAGS]?.length > 0 || deck[IS_AUTHOR] || !deck[IS_PUBLIC]) && (
               <div className="basis-full sm:z-20 sm:basis-6/12">

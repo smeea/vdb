@@ -70,7 +70,7 @@ const DeckSelect = ({
         )}
         {inventoryMode && deck?.[IS_AUTHOR] && (
           <div className="flex">
-            <Button
+            <ButtonIconed
               title={`Inventory Type: ${
                 !deck?.[INVENTORY_TYPE]
                   ? 'VIRTUAL\nDo not use Inventory'
@@ -80,13 +80,16 @@ const DeckSelect = ({
               }`}
               disabled={!isEditable}
               onClick={() => deckToggleInventoryState(deck?.[DECKID])}
-            >
-              <div className="flex items-center">
-                {!deck?.[INVENTORY_TYPE] && <At />}
-                {deck?.[INVENTORY_TYPE] === S && <Shuffle />}
-                {deck?.[INVENTORY_TYPE] === H && <PinAngleFill />}
-              </div>
-            </Button>
+              icon={
+                !deck?.[INVENTORY_TYPE] ? (
+                  <At width="17" height="17" viewBox="0 0 16 16" />
+                ) : deck?.[INVENTORY_TYPE] === S ? (
+                  <Shuffle width="17" height="17" viewBox="0 0 16 16" />
+                ) : (
+                  <PinAngleFill width="17" height="17" viewBox="0 0 16 16" />
+                )
+              }
+            />
           </div>
         )}
       </div>
@@ -125,13 +128,13 @@ const DeckSelect = ({
                 setShowFloatingButtons(false);
                 setShowSelect(true);
               }}
-              icon={<BinocularsFill width="16" height="22" viewBox="0 0 16 18" />}
+              icon={<BinocularsFill width="18" height="18" viewBox="0 0 16 16" />}
             />
           )}
           {isMobile && deck && (
             <Button onClick={() => setShowInfo(!showInfo)}>
               <div className="flex">
-                <ChatLeftQuoteFill width="16" height="18" viewBox="0 0 16 18" />
+                <ChatLeftQuoteFill width="18" height="18" viewBox="0 0 16 16" />
               </div>
             </Button>
           )}

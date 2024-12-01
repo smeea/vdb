@@ -64,7 +64,7 @@ const DeckTags = ({ deck, tagsSuperior, noAutotags, isBordered, allTagsOptions }
           className="rounded-l-none"
           onClick={handleAutotagClick}
           title="Autotag Deck"
-          icon={<Spellcheck width="22" height="23" viewBox="0 0 16 16" />}
+          icon={<Spellcheck width="22" height="24" viewBox="0 0 16 16" />}
         />
       )}
     </div>

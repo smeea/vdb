@@ -53,7 +53,7 @@ const Review = () => {
   const [deckFrom, setDeckFrom] = useImmer();
   const [deckTo, setDeckTo] = useImmer();
   const [error, setError] = useState(false);
-  const [foldedDescription, setFoldedDescription] = useState(true);
+  const [isFoldedDescription, setIsFoldedDescription] = useState(true);
   const [urlDiff, setUrlDiff] = useState();
 
   const getDeck = async () => {
@@ -204,8 +204,8 @@ const Review = () => {
           {deckFrom && (
             <DeckDetails
               deck={{ ...deckFrom, [IS_NON_EDITABLE]: false }}
-              folded={foldedDescription}
-              setFolded={setFoldedDescription}
+              isFolded={isFoldedDescription}
+              setIsFolded={setIsFoldedDescription}
             />
           )}
           {error && (

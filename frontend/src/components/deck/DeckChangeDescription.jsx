@@ -7,7 +7,7 @@ import { deckUpdate } from '@/context';
 import { getIsEditable } from '@/utils';
 import { DESCRIPTION, DECKID } from '@/constants';
 
-const DeckDescription = ({ deck, folded, setFolded }) => {
+const DeckDescription = ({ deck, isFolded, setIsFolded }) => {
   const [value, setValue] = useState(deck[DESCRIPTION] || '');
   const isEditable = getIsEditable(deck);
 
@@ -16,7 +16,7 @@ const DeckDescription = ({ deck, folded, setFolded }) => {
   }, [deck[DESCRIPTION]]);
 
   const handleChange = (event) => {
-    setValue(folded ? value.replace(/.*/, event.target.value) : event.target.value);
+    setValue(isFolded ? value.replace(/.*/, event.target.value) : event.target.value);
   };
 
   const deckChangeDescription = () => {
@@ -37,9 +37,9 @@ const DeckDescription = ({ deck, folded, setFolded }) => {
   return (
     <form className="flex" onSubmit={handleSubmit}>
       <InputLabel title="Description">
-        <ChatLeftQuoteFill width="20" height="18" viewBox="0 0 16 16" />
+        <ChatLeftQuoteFill width="17" height="17" viewBox="0 0 16 16" />
       </InputLabel>
-      {folded ? (
+      {isFolded ? (
         <Input
           value={value.split('\n', 1)[0]}
           onChange={handleChange}
@@ -63,9 +63,13 @@ const DeckDescription = ({ deck, folded, setFolded }) => {
       <Button
         roundedStyle="rounded-r"
         title="Collapse/Uncollapse Description"
-        onClick={() => setFolded(!folded)}
+        onClick={() => setIsFolded(!isFolded)}
       >
-        {folded ? <ChevronBarExpand /> : <ChevronBarContract />}
+        {isFolded ? (
+          <ChevronBarExpand width="19" height="19" viewBox="0 0 16 16" />
+        ) : (
+          <ChevronBarContract width="19" height="19" viewBox="0 0 16 16" />
+        )}
       </Button>
     </form>
   );
