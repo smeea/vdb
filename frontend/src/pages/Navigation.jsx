@@ -65,37 +65,32 @@ const Navigation = () => {
   const pdaFormState = useSnapshot(searchPdaForm);
   const limitedStoreState = useSnapshot(limitedStore);
 
-  let pdaUrl = '/pda';
-  let twdUrl = '/twd';
-  let cryptUrl = '/crypt';
-  let libraryUrl = '/library';
-  let decksUrl = '/decks';
-  let cardsUrl = '/cards';
+  const pdaUrl =
+    JSON.stringify(pdaFormState) == JSON.stringify(pdaDefaults)
+      ? '/pda'
+      : `/pda?q=${encodeURIComponent(JSON.stringify(sanitizeFormState(PDA, pdaFormState)))}`;
+
+  const twdUrl =
+    JSON.stringify(twdFormState) == JSON.stringify(twdDefaults)
+      ? '/twd'
+      : `/twd?q=${encodeURIComponent(JSON.stringify(sanitizeFormState(TWD, twdFormState)))}`;
+
+  const cryptUrl =
+    JSON.stringify(cryptFormState) == JSON.stringify(cryptDefaults)
+      ? '/crypt'
+      : `/crypt?q=${encodeURIComponent(JSON.stringify(sanitizeFormState(CRYPT, cryptFormState)))}`;
+
+  const libraryUrl =
+    JSON.stringify(libraryFormState) == JSON.stringify(libraryDefaults)
+      ? '/library'
+      : `/library?q=${encodeURIComponent(JSON.stringify(sanitizeFormState(LIBRARY, libraryFormState)))}`;
+
+  let decksUrl = `/decks${deck?.[DECKID] ? `/${deck[DECKID]}` : ''}`;
+  let cardsUrl = `/cards${quickCard ? `/${quickCard[ID]}` : ''}`;
 
   const isLimited =
     Object.keys(limitedStoreState[CRYPT]).length + Object.keys(limitedStoreState[LIBRARY]).length >
     0;
-
-  if (!isMobile) {
-    if (JSON.stringify(cryptFormState) != JSON.stringify(cryptDefaults)) {
-      const input = sanitizeFormState(CRYPT, cryptFormState);
-      cryptUrl = `/crypt?q=${encodeURIComponent(JSON.stringify(input))}`;
-    }
-    if (JSON.stringify(libraryFormState) != JSON.stringify(libraryDefaults)) {
-      const input = sanitizeFormState(LIBRARY, libraryFormState);
-      libraryUrl = `/library?q=${encodeURIComponent(JSON.stringify(input))}`;
-    }
-    if (JSON.stringify(twdFormState) != JSON.stringify(twdDefaults)) {
-      const input = sanitizeFormState(TWD, twdFormState);
-      twdUrl = `/twd?q=${encodeURIComponent(JSON.stringify(input))}`;
-    }
-    if (JSON.stringify(pdaFormState) != JSON.stringify(pdaDefaults)) {
-      const input = sanitizeFormState(PDA, pdaFormState);
-      pdaUrl = `/pda?q=${encodeURIComponent(JSON.stringify(input))}`;
-    }
-  }
-  if (deck?.[DECKID]) decksUrl = `/decks/${deck[DECKID]}`;
-  if (quickCard) cardsUrl = `/cards/${quickCard[ID]}`;
 
   return (
     <nav className="z-50 bg-bgNav dark:bg-bgNavDark max-sm:fixed max-sm:bottom-0 max-sm:w-full sm:sticky sm:top-0 print:hidden">
