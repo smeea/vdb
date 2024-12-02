@@ -334,7 +334,7 @@ def update_public_deck(child_id):
         abort(400)
 
     child.name = parent.name
-    child.timestamp = datetime.utcnow()
+    child.timestamp = datetime.now().isoformat()
     child.cards = parent.cards
     child.author_public_name = parent.author_public_name
     child.description = parent.description

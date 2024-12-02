@@ -227,8 +227,7 @@ def update_deck_route(deckid):
         abort(400)
     elif not d.author:
         # For newly anonymous imported decks to fix bad imports
-        accepted_past = datetime.utcnow() - timedelta(minutes=15)
-        if d.timestamp < accepted_past:
+        if (datetime.now() - d.timestamp).seconds > 900:
             abort(401)
     elif d.author != current_user:
         abort(401)
@@ -240,7 +239,7 @@ def update_deck_route(deckid):
     elif d.frozen:
         abort(409)
     else:
-        d.timestamp = datetime.utcnow()
+        d.timestamp = datetime.now()
 
     if "cards" in request.json:
         new_cards = request.json["cards"]
@@ -351,7 +350,7 @@ def create_branch_route(deckid):
         d = Deck.query.get(request.json["deckid"])
         source = {
             "author": d.author_public_name,
-            "description": f"[{datetime.utcnow().strftime('%Y-%m-%d')}] \n{d.description}",
+            "description": f"[{datetime.now().strftime('%Y-%m-%d')}] \n{d.description}",
             "tags": d.tags,
             "cards": d.cards,
         }

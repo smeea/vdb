@@ -59,6 +59,7 @@
   },
   "dependencies": {
     "bootstrap-icons": "^1.11.3",
+    "dayjs": "^1.11.13",
     "tailwind-merge": "^2.5.5"
   }
 }

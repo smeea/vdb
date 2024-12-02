@@ -1,3 +1,4 @@
+import dayjs from 'dayjs';
 import {
   ASCII,
   BLOOD,
@@ -90,7 +91,7 @@ export const bySect = (a, b) => {
 };
 
 export const byTimestamp = (a, b) => {
-  return new Date(b[TIMESTAMP]) - new Date(a[TIMESTAMP]);
+  return dayjs(b[TIMESTAMP]) - dayjs(a[TIMESTAMP]);
 };
 
 export const byPlayer = (a, b) => {

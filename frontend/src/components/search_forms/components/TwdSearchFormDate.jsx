@@ -1,4 +1,5 @@
 import React from 'react';
+import dayjs from 'dayjs';
 import { Select } from '@/components';
 import { useApp } from '@/context';
 import { DATE, ANY, FROM, TO } from '@/constants';
@@ -7,7 +8,7 @@ const TwdSearchFormDate = ({ inPda, value, onChange }) => {
   const { isXWide } = useApp();
   const maxMenuHeight = isXWide ? 500 : 350;
   const name = DATE;
-  const currentYear = new Date().getFullYear();
+  const currentYear = dayjs().format('YYYY');
   const TWD_START = 1997;
   const PDA_START = 2022;
 

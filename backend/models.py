@@ -49,7 +49,7 @@ class Deck(db.Model):
     master = db.Column(db.String(9))
     name = db.Column(db.String(64), default="New Deck")
     tags = db.Column(db.PickleType, default=[])
-    timestamp = db.Column(db.DateTime, default=datetime.utcnow)
+    timestamp = db.Column(db.DateTime, default=datetime.now())
     used_in_inventory = db.Column(db.PickleType, default={})
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"))
 

@@ -2,16 +2,12 @@ import React, { useMemo, useState } from 'react';
 import { useSnapshot } from 'valtio';
 import { Select } from '@/components';
 import { deckStore } from '@/context';
+import { byTimestamp } from '@/utils';
 import { DECK, DECKS, DECKID, TIMESTAMP, BRANCHES, BRANCH_NAME, MASTER, NAME } from '@/constants';
 
 const DeckBranchSelect = ({ deck, handleSelect }) => {
   const decks = useSnapshot(deckStore)[DECKS];
   const [branches, setBranches] = useState([]);
-
-  const byTimestamp = (a, b) => {
-    return new Date(decks[b][TIMESTAMP]) - new Date(decks[a][TIMESTAMP]);
-  };
-
   const target = decks[deck[MASTER]] ?? deck;
 
   const b = {
@@ -41,7 +37,7 @@ const DeckBranchSelect = ({ deck, handleSelect }) => {
   const options = useMemo(() => {
     return Object.keys(branches)
       .filter((i) => decks[i])
-      .toSorted(byTimestamp)
+      .toSorted((a, b) => byTimestamp(decks[a], decks[b]))
       .map((i) => {
         return {
           value: i,

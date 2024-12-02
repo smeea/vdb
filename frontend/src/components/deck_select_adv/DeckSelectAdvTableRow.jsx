@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import dayjs from 'dayjs';
 import { twMerge } from 'tailwind-merge';
 import { useSnapshot } from 'valtio';
 import { useNavigate } from 'react-router';
@@ -165,7 +166,7 @@ const DeckSelectAdvTableRow = ({
           className="min-w-[100px] cursor-pointer whitespace-nowrap text-center sm:min-w-[105px]"
           onClick={handleClick}
         >
-          {new Date(deck[TIMESTAMP]).toISOString().split('T')[0]}
+          {dayjs(deck[TIMESTAMP]).format('YYYY-MM-DD')}
         </td>
       )}
       {!short && (

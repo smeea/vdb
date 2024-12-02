@@ -1,11 +1,12 @@
 import React, { useMemo } from 'react';
+import dayjs from 'dayjs';
 import { useSnapshot } from 'valtio';
 import Shuffle from '@icons/shuffle.svg?react';
 import PinAngleFill from '@icons/pin-angle-fill.svg?react';
 import At from '@icons/at.svg?react';
 import { Select, ResultPreconClan, ResultLegalIcon } from '@/components';
 import { limitedStore, deckStore, useApp } from '@/context';
-import { getRestrictions, getClan } from '@/utils';
+import { byTimestamp, getRestrictions, getClan } from '@/utils';
 import {
   BANNED,
   CRYPT,
@@ -23,7 +24,6 @@ import {
   PLAYTEST,
   S,
   TIMESTAMP,
-  MS_TO_DAYS,
 } from '@/constants';
 
 const DeckSelectMy = ({ deckid, handleSelect }) => {
@@ -31,20 +31,16 @@ const DeckSelectMy = ({ deckid, handleSelect }) => {
   const decks = useSnapshot(deckStore)[DECKS];
   const limitedCards = useSnapshot(limitedStore);
 
-  const byTimestamp = (a, b) => {
-    return new Date(decks[b][TIMESTAMP]) - new Date(decks[a][TIMESTAMP]);
-  };
-
   const options = useMemo(() => {
     return Object.keys(decks)
       .filter((i) => !decks[i][MASTER] && !decks[i][IS_HIDDEN])
-      .toSorted(byTimestamp)
+      .toSorted((a, b) => byTimestamp(decks[a], decks[b]))
       .map((i, idx) => {
-        const diffDays = Math.round((new Date() - new Date(decks[i][TIMESTAMP])) / MS_TO_DAYS);
+        const diffDays = dayjs().diff(dayjs(decks[i][TIMESTAMP]), 'day');
 
         let lastEdit;
         if (diffDays > 90) {
-          lastEdit = new Date(decks[i][TIMESTAMP]).toISOString().split('T')[0];
+          lastEdit = dayjs(decks[i][TIMESTAMP]).format('YYYY-MM-DD');
         } else if (diffDays > 30) {
           lastEdit = `${Math.round(diffDays / 30)}mo`;
         } else if (diffDays > 5) {
@@ -136,7 +132,7 @@ const DeckSelectMy = ({ deckid, handleSelect }) => {
                   </div>
                 )}
                 <div className="text-sm">
-                  {new Date(decks[deckid][TIMESTAMP]).toISOString().split('T')[0]}
+                  {dayjs(decks[deckid][TIMESTAMP]).format('YYYY-MM-DD')}
                 </div>
               </div>
             </div>

@@ -1,3 +1,4 @@
+import dayjs from 'dayjs';
 import {
   ANY,
   BANNED,
@@ -22,7 +23,6 @@ import {
   HAS_LIMITED,
   HAS_PLAYTEST,
   HAS_ILLEGAL_DATE,
-  MS_TO_DAYS,
 } from '@/constants';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 import disciplinesList from '@/assets/data/disciplinesList.json';
@@ -100,12 +100,10 @@ export const getLegality = (card) => {
   if (sets.length > 1 || [POD, PROMO].includes(sets[0])) return false;
   if (sets.length == 0) return PLAYTEST;
 
-  const setDate = new Date(setsAndPrecons[sets[0]][DATE]);
-  const now = new Date();
-  if ((now - setDate) / MS_TO_DAYS > 30) return false;
-  setDate.setDate(setDate.getDate() + 30);
-  const dateIso = setDate.toISOString().split('T')[0];
-  return dateIso;
+  const setDate = dayjs(setsAndPrecons[sets[0]][DATE]);
+  if (dayjs().diff(setDate, 'day') > 30) return false;
+  const legalDate = setDate.add(30, 'day').format('YYYY-MM-DD');
+  return legalDate;
 };
 
 export const getGroups = (cards) => {

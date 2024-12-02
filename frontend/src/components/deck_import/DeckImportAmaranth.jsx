@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react';
+import dayjs from 'dayjs';
 import { useNavigate } from 'react-router';
 import { Spinner, Modal, Input, Button, ErrorOverlay } from '@/components';
 import { useApp, deckAdd } from '@/context';
@@ -93,7 +94,6 @@ const DeckImportAmaranth = ({ setShow }) => {
   };
 
   const importDeckFromAmaranth = async (amaranth_deck) => {
-    const now = new Date();
     const deck = {
       [BRANCH_NAME]: '#0',
       [NAME]: amaranth_deck[TITLE],
@@ -102,7 +102,7 @@ const DeckImportAmaranth = ({ setShow }) => {
       [CRYPT]: {},
       [LIBRARY]: {},
       [IS_AUTHOR]: true,
-      [TIMESTAMP]: now.toUTCString(),
+      [TIMESTAMP]: dayjs().toISOString(),
     };
 
     Object.keys(amaranth_deck[CARDS]).forEach((i) => {
@@ -147,7 +147,6 @@ const DeckImportAmaranth = ({ setShow }) => {
                 }
               });
 
-              const n = new Date();
               const d = {
                 [AUTHOR]: deck[AUTHOR],
                 [BRANCH_NAME]: b[BRANCH_NAME],
@@ -158,7 +157,7 @@ const DeckImportAmaranth = ({ setShow }) => {
                 [IS_AUTHOR]: true,
                 [MASTER]: deck[DECKID],
                 [NAME]: deck[NAME],
-                [TIMESTAMP]: n.toUTCString(),
+                [TIMESTAMP]: dayjs().toISOString(),
               };
 
               branches[d[DECKID]] = d;

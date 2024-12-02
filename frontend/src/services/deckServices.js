@@ -1,4 +1,5 @@
 import ky from 'ky';
+import dayjs from 'dayjs';
 import { redirect } from 'react-router';
 import { getIsPlaytest, exportDeck, getTextDisciplines } from '@/utils';
 import {
@@ -103,8 +104,6 @@ export const deckClone = (deck) => {
     .json()
     .then((data) => {
       if (data.error === undefined) {
-        const now = new Date();
-
         deckStore[DECKS][data[DECKID]] = {
           [BRANCH_NAME]: null,
           [BRANCHES]: [],
@@ -113,7 +112,7 @@ export const deckClone = (deck) => {
           [DECKID]: data[DECKID],
           [MASTER]: null,
           [NAME]: name,
-          [TIMESTAMP]: now.toUTCString(),
+          [TIMESTAMP]: dayjs().toISOString(),
           [TAGS]: deck[TAGS],
           [AUTHOR]: deck[AUTHOR],
           [DESCRIPTION]: deck[DESCRIPTION],
@@ -194,12 +193,12 @@ export const branchDelete = (deckid, decks) => {
 export const branchCreate = (deck, branch) => {
   const master = deck[MASTER] ?? deck[DECKID];
   const url = `${import.meta.env.VITE_API_URL}/deck/${master}/branch`;
+  const date = dayjs().format('YYYY-MM-DD');
 
   return ky
     .post(url, { json: { [DECKID]: branch[DECKID] } })
     .json()
     .then((data) => {
-      const now = new Date();
       deckStore[DECKS][master][MASTER] = null;
       deckStore[DECKS][master][IS_BRANCHES] = true;
       deckStore[DECKS][master][BRANCHES] = deckStore[DECKS][master][BRANCHES]
@@ -209,7 +208,7 @@ export const branchCreate = (deck, branch) => {
       deckStore[DECKS][data[0][DECKID]] = {
         ...deck,
         [DECKID]: data[0][DECKID],
-        [DESCRIPTION]: `[${now.toISOString().split('T')[0]}]\n${branch[DESCRIPTION]}`,
+        [DESCRIPTION]: `[${date}]\n${branch[DESCRIPTION]}`,
         [TAGS]: branch[TAGS],
         [CRYPT]: { ...branch[CRYPT] },
         [LIBRARY]: { ...branch[LIBRARY] },
@@ -218,7 +217,7 @@ export const branchCreate = (deck, branch) => {
         [BRANCH_NAME]: data[0][BRANCH_NAME],
         [IS_PUBLIC]: false,
         [IS_BRANCHES]: true,
-        [TIMESTAMP]: now.toUTCString(),
+        [TIMESTAMP]: dayjs().toISOString(),
       };
       return data[0][DECKID];
     });
@@ -237,7 +236,6 @@ export const publicSync = (deck, decks) => {
 
 export const publicCreateOrDelete = (deck) => {
   const url = `${import.meta.env.VITE_API_URL}/pda/${deck[DECKID]}`;
-
   const isPublished = !!(deck[PUBLIC_PARENT] || deck[PUBLIC_CHILD]);
   const parentId = deck[PUBLIC_PARENT] ?? deck[DECKID];
 
@@ -267,7 +265,7 @@ export const getDeckFromAmaranth = async (deckUrl) => {
 export const exportDecks = async (decks, format) => {
   const { default: JSzip } = await import('jszip');
   const zip = JSzip();
-  const date = new Date().toISOString().split('T')[0];
+  const date = dayjs().format('YYYY-MM-DD');
 
   if (format === XLSX) {
     const fetchPromises = Object.values(decks).map((deck) => {

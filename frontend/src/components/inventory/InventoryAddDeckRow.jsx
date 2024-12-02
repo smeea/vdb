@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import dayjs from 'dayjs';
 import EyeFill from '@icons/eye-fill.svg?react';
 import Shuffle from '@icons/shuffle.svg?react';
 import PinAngleFill from '@icons/pin-angle-fill.svg?react';
@@ -90,7 +91,7 @@ const InventoryAddDeckRow = ({ deck, allTagsOptions }) => {
       )}
       {!isMobile && (
         <td className="min-w-[100px] whitespace-nowrap">
-          {new Date(deck[TIMESTAMP]).toISOString().split('T')[0]}
+          {dayjs(deck[TIMESTAMP]).format('YYYY-MM-DD')}
         </td>
       )}
       {!isMobile && (

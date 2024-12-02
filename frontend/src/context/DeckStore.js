@@ -1,4 +1,5 @@
 import { proxy } from 'valtio';
+import dayjs from 'dayjs';
 import { deepClone } from '@/utils';
 import {
   AUTHOR,
@@ -159,8 +160,7 @@ export const deckUpdate = (deckid, field, value) => {
     value = cards;
   }
 
-  const now = new Date();
-  deckStore[DECKS][deckid][TIMESTAMP] = now.toUTCString();
+  deckStore[DECKS][deckid][TIMESTAMP] = dayjs().toISOString();
 
   return deckServices.update(deckid, field, value).catch(() => {
     deckStore[DECK] = initialDeckState;
@@ -191,7 +191,6 @@ export const cardToggleInventoryState = (deckid, cardid) => {
 };
 
 export const deckAdd = (deck) => {
-  const now = new Date();
   const d = {
     [DECKID]: deck[DECKID],
     [NAME]: deck[NAME] ?? '',
@@ -202,7 +201,7 @@ export const deckAdd = (deck) => {
     [AUTHOR]: deck[AUTHOR] ?? '',
     [CRYPT]: deck[CRYPT],
     [LIBRARY]: deck[LIBRARY],
-    [TIMESTAMP]: now.toUTCString(),
+    [TIMESTAMP]: dayjs().toISOString(),
     [IS_AUTHOR]: true,
     [IS_PUBLIC]: Boolean(deck[PUBLIC_PARENT]),
     [IS_BRANCHES]: Boolean(deck[MASTER] || deck[BRANCHES]?.length > 0),

@@ -1,21 +1,11 @@
 import React, { useMemo } from 'react';
+import dayjs from 'dayjs';
 import { Disclosure, Tab } from '@headlessui/react';
 import { TabButton, TwdHallFameCardsPlayer } from '@/components';
 import { useApp } from '@/context';
 import { useFetch } from '@/hooks';
 import { byName } from '@/utils';
-import {
-  MS_TO_DAYS,
-  RELEASE_DATE,
-  SET,
-  DATE,
-  PLAYER,
-  DECKID,
-  TWD_DATE,
-  ID,
-  POD,
-  PROMO,
-} from '@/constants';
+import { RELEASE_DATE, SET, DATE, PLAYER, DECKID, TWD_DATE, ID, POD, PROMO } from '@/constants';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 
 const TwdHallOfFameCards = () => {
@@ -79,8 +69,7 @@ const TwdHallOfFameCards = () => {
   };
 
   const isInnovation = (card) => {
-    const twdAppearanceDelay =
-      (new Date(card[TWD_DATE]) - new Date(card[RELEASE_DATE])) / MS_TO_DAYS;
+    const twdAppearanceDelay = dayjs(card[TWD_DATE]).diff(dayjs(card[RELEASE_DATE]), 'day');
 
     if (card[TWD_DATE] < IGNORED_BEFORE_DATE) return false;
     return twdAppearanceDelay > INNOVATION_PERIOD;

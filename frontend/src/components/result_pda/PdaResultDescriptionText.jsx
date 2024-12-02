@@ -1,4 +1,5 @@
 import React from 'react';
+import dayjs from 'dayjs';
 import { useNavigate } from 'react-router';
 import PersonFill from '@icons/person-fill.svg?react';
 import TagFill from '@icons/tag-fill.svg?react';
@@ -12,7 +13,7 @@ const PdaResultDescriptionText = ({ deck }) => {
   const { isMobile } = useApp();
   const navigate = useNavigate();
   const tags = getTags(deck[CRYPT], deck[LIBRARY]);
-  const lastUpdated = new Date(deck[TIMESTAMP]).toISOString().split('T')[0];
+  const lastUpdated = dayjs(deck[TIMESTAMP]).format('YYYY');
 
   const handleClick = (value) => {
     clearSearchForm(PDA);
