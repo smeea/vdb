@@ -45,7 +45,7 @@ const PlaytestReportsAllCardOrPrecon = ({ product, isPrecon, report, withHr, max
                   />
                 )}
               </div>
-              {score && (
+              {score > 0 && (
                 <FlexGapped className="flex-col">
                   <div className="flex items-center justify-center">
                     <PlaytestScores value={scoreRoundedHalf} />
