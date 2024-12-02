@@ -1,6 +1,7 @@
 # FIX
 - Review TWDA radar: remove swarm, maybe replace?
 - Wall of Filth - Caine
+- Switch from decks to crypt with results on mobile
 
 # FEATURES
 - Card q-ty change in autocompletion

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useSearchParams, useParams, useNavigate, useLocation } from 'react-router';
+import { useSearchParams } from 'react-router';
 import { useSnapshot } from 'valtio';
 import {
   ButtonClose,
@@ -40,7 +40,6 @@ import {
   SECT,
   STAR,
   TRAITS,
-  EVENT,
 } from '@/constants';
 
 const AnalyzeSearchForm = () => {
@@ -48,27 +47,26 @@ const AnalyzeSearchForm = () => {
   const analyzeFormState = useSnapshot(searchAnalyzeForm);
   const decks = useSnapshot(analyzeStore)[DECKS];
   const [error, setError] = useState(false);
-  const navigate = useNavigate();
-  const params = useParams();
-  const [searchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
   const query = JSON.parse(searchParams.get('q'));
 
   useEffect(() => {
     if (query) {
       Object.keys(query).forEach((i) => {
-        if (typeof query[i] === 'object') {
-          Object.keys(query[i]).forEach((j) => {
-            searchAnalyzeForm[i][j] = query[i][j];
-          });
-        } else {
-          searchAnalyzeForm[i] = query[i];
-        }
+        searchAnalyzeForm[i] = query[i];
       });
     }
   }, []);
 
   useEffect(() => {
-    if (isMobile && query && analyzeFormState && cryptCardBase && libraryCardBase) {
+    if (!isMobile && cryptCardBase && libraryCardBase) {
+      const sanitizedForm = sanitizeFormState(ANALYZE, analyzeFormState);
+      if (Object.keys(sanitizedForm).length === 0) {
+        if (query) setSearchParams();
+      } else {
+        processSearch();
+      }
+    } else if (isMobile && query && analyzeFormState && cryptCardBase && libraryCardBase) {
       processSearch();
     }
   }, [analyzeFormState, cryptCardBase, libraryCardBase]);
@@ -110,25 +108,16 @@ const AnalyzeSearchForm = () => {
       return;
     }
 
-    navigate(
-      `/tournament_analyze/${params[EVENT]}?q=${encodeURIComponent(JSON.stringify(sanitizedForm))}`,
-    );
-
     const filteredDecks = filterDecks(decks, sanitizedForm);
+
+    if (isMobile && filteredDecks.length == 0) {
+      setError('NO DECKS FOUND');
+      return;
+    }
+
+    setSearchParams({ q: JSON.stringify(sanitizedForm) });
     setAnalyzeResults(filteredDecks);
   };
-
-  useEffect(() => {
-    if (!isMobile && cryptCardBase && libraryCardBase) {
-      const sanitizedForm = sanitizeFormState(ANALYZE, analyzeFormState);
-      if (Object.keys(sanitizedForm).length === 0) {
-        if (query) {
-          setAnalyzeResults();
-          navigate(`/tournament_analyze/${params[EVENT]}`);
-        }
-      } else processSearch();
-    }
-  }, [analyzeFormState, cryptCardBase, libraryCardBase]);
 
   return (
     <div className="flex flex-col gap-2">

@@ -81,12 +81,12 @@ const DeckSelect = ({
               disabled={!isEditable}
               onClick={() => deckToggleInventoryState(deck?.[DECKID])}
               icon={
-                !deck?.[INVENTORY_TYPE] ? (
-                  <At width="17" height="17" viewBox="0 0 16 16" />
-                ) : deck?.[INVENTORY_TYPE] === S ? (
+                deck?.[INVENTORY_TYPE] === S ? (
                   <Shuffle width="17" height="17" viewBox="0 0 16 16" />
-                ) : (
+                ) : deck?.[INVENTORY_TYPE] === H ? (
                   <PinAngleFill width="17" height="17" viewBox="0 0 16 16" />
+                ) : (
+                  <At width="17" height="17" viewBox="0 0 16 16" />
                 )
               }
             />

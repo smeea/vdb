@@ -17,7 +17,7 @@ import {
   DeckPublicToggleButton,
   ResultClanImage,
   Tooltip,
-  Button,
+  ButtonIconed,
   Checkbox,
   ResultLegalIcon,
 } from '@/components';
@@ -90,8 +90,8 @@ const DeckSelectAdvTableRow = ({
       )}
       {inventoryMode && !isMobile && (
         <td>
-          <div className="flex justify-center">
-            <Button
+          <div className="flex h-full justify-center">
+            <ButtonIconed
               disabled={deck[IS_FROZEN]}
               onClick={() => deckToggleInventoryState(deck[DECKID])}
               title={
@@ -101,15 +101,16 @@ const DeckSelectAdvTableRow = ({
                     ? 'Fixed'
                     : 'Virtual'
               }
-            >
-              {deck[INVENTORY_TYPE] == S ? (
-                <Shuffle />
-              ) : deck[INVENTORY_TYPE] == H ? (
-                <PinAngleFill />
-              ) : (
-                <At />
-              )}
-            </Button>
+              icon={
+                !deck[INVENTORY_TYPE] ? (
+                  <At width="17" height="17" viewBox="0 0 16 16" />
+                ) : deck?.[INVENTORY_TYPE] === S ? (
+                  <Shuffle width="17" height="17" viewBox="0 0 16 16" />
+                ) : (
+                  <PinAngleFill width="17" height="17" viewBox="0 0 16 16" />
+                )
+              }
+            />
           </div>
         </td>
       )}
