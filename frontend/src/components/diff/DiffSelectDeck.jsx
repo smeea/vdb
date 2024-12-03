@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { twMerge } from 'tailwind-merge';
+import { RadioGroup } from '@headlessui/react';
 import { useNavigate } from 'react-router';
 import Check2 from '@icons/check2.svg?react';
 import {
@@ -12,7 +13,7 @@ import {
   Input,
 } from '@/components';
 import { useApp } from '@/context';
-import { IS_BRANCHES, DECKID, ID, FROM } from '@/constants';
+import { IS_BRANCHES, DECKID, FROM } from '@/constants';
 
 const DiffSelectDeck = ({ decks, deck, deckidFrom, deckidTo, target, title }) => {
   const { recentDecks, inventoryMode, username, isMobile } = useApp();
@@ -93,36 +94,19 @@ const DiffSelectDeck = ({ decks, deck, deckidFrom, deckidTo, target, title }) =>
         </div>
       )}
       <div className="flex items-center justify-between gap-6">
-        <div className="flex gap-6">
+        <RadioGroup
+          value={source}
+          onChange={setSource}
+          aria-label="Server size"
+          className="flex gap-4 sm:gap-6"
+        >
           {username && decks && Object.keys(decks).length > 0 && (
-            <Radio
-              checked={source == `${target}-my`}
-              onChange={(e) => setSource(e.target[ID])}
-              id={`${target}-my`}
-              value={isMobile ? 'My' : 'My Decks'}
-            />
+            <Radio value={`${target}-my`} label={isMobile ? 'My' : 'My Decks'} />
           )}
-          <Radio
-            checked={source == `${target}-precons`}
-            onChange={(e) => setSource(e.target[ID])}
-            id={`${target}-precons`}
-            value="Precons"
-          />
-          {recentDecks.length > 0 && (
-            <Radio
-              checked={source == `${target}-recent`}
-              onChange={(e) => setSource(e.target[ID])}
-              id={`${target}-recent`}
-              value="Recent"
-            />
-          )}
-          <Radio
-            checked={source == `${target}-url`}
-            onChange={(e) => setSource(e.target[ID])}
-            id={`${target}-url`}
-            value="URL"
-          />
-        </div>
+          <Radio value={`${target}-precons`} label="Precons" />
+          {recentDecks.length > 0 && <Radio value={`${target}-recent`} label="Recent" />}
+          <Radio value={`${target}-url`} label="URL" />
+        </RadioGroup>
       </div>
     </div>
   );

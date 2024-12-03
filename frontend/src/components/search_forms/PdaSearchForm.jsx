@@ -78,16 +78,14 @@ const PdaSearchForm = ({ error, setError }) => {
     searchPdaForm[name].value[i] = value;
   };
 
-  const handleChange = (event) => {
-    const { name, value, id } = event.target ?? event;
-    const i = id ?? value;
-    searchPdaForm[name] = i;
-  };
-
   const handleChangeWithOpt = (event, id) => {
     const i = id[NAME];
     const { name, value } = event;
     searchPdaForm[i][name] = value;
+  };
+
+  const handleSrcChange = (value) => {
+    searchPdaForm[SRC] = value;
   };
 
   const handleDisciplinesChange = (name) => {
@@ -176,7 +174,9 @@ const PdaSearchForm = ({ error, setError }) => {
         getRandom={getRandomPda}
         inPda
       />
-      {username && <PdaSearchFormSrcSelector value={pdaFormState[SRC]} onChange={handleChange} />}
+      {username && (
+        <PdaSearchFormSrcSelector value={pdaFormState[SRC]} onChange={handleSrcChange} />
+      )}
       {inventoryMode && (
         <>
           <TwdSearchFormMatchInventory

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { RadioGroup } from '@headlessui/react';
 import Shuffle from '@icons/shuffle.svg?react';
 import At from '@icons/at.svg?react';
 import PinAngleFill from '@icons/pin-angle-fill.svg?react';
@@ -16,7 +17,6 @@ import {
 import { useApp, deckToggleInventoryState } from '@/context';
 import { getIsEditable } from '@/utils';
 import {
-  ID,
   DECKID,
   IS_AUTHOR,
   IS_BRANCHES,
@@ -94,32 +94,18 @@ const DeckSelect = ({
         )}
       </div>
       <div className="flex items-center justify-between gap-2">
-        <div className="flex gap-4 sm:gap-6">
+        <RadioGroup
+          value={selectFrom}
+          onChange={setSelectFrom}
+          aria-label="Server size"
+          className="flex gap-4 sm:gap-6"
+        >
           {username && decks && Object.keys(decks).length > 0 && (
-            <>
-              <Radio
-                checked={selectFrom == MY}
-                onChange={(e) => setSelectFrom(e.target[ID])}
-                value={isMobile ? 'My' : 'My Decks'}
-                id={MY}
-              />
-            </>
+            <Radio label={isMobile ? 'My' : 'My Decks'} value={MY} />
           )}
-          <Radio
-            checked={selectFrom == PRECONS}
-            onChange={(e) => setSelectFrom(e.target[ID])}
-            value="Precons"
-            id={PRECONS}
-          />
-          {recentDecks.length > 0 && (
-            <Radio
-              checked={selectFrom == RECENT}
-              onChange={(e) => setSelectFrom(e.target[ID])}
-              value="Recent"
-              id={RECENT}
-            />
-          )}
-        </div>
+          <Radio label="Precons" value={PRECONS} />
+          {recentDecks.length > 0 && <Radio label="Recent" value={RECENT} />}
+        </RadioGroup>
         <div className="flex gap-1">
           {decks && (
             <ButtonIconed

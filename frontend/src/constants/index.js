@@ -262,4 +262,3 @@ export const XLSX = 'xlsx';
 export const YES = 'YES';
 export const PLAYTEST_OLD = 'playtest_old';
 export const PATH = 'path';
-export const MS_TO_DAYS = 1000 * 60 * 60 * 24;

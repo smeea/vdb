@@ -1,22 +1,28 @@
 import React from 'react';
+import { twMerge } from 'tailwind-merge';
+import { Field, Label, Radio as RadioHUI } from '@headlessui/react';
 
-const Radio = ({ id, name, checked, value, onChange }) => {
-  const htmlId = id ?? value;
-
+const Radio = ({ value, label }) => {
   return (
-    <div className="flex items-center gap-1.5">
-      <input
-        className="form-radio h-3.5 w-3.5 text-bgCheckboxSelected focus:ring-0 focus:ring-offset-0 dark:text-bgCheckboxSelectedDark"
-        checked={checked}
-        name={name}
-        onChange={onChange}
-        type="radio"
-        id={htmlId}
-      />
-      <label htmlFor={htmlId}>
-        <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">{value}</div>
-      </label>
-    </div>
+    <Field className="flex items-center gap-2">
+      <RadioHUI
+        value={value}
+        className="group flex size-3.5 items-center justify-center rounded-full border bg-white hover:cursor-pointer"
+      >
+        {({ checked, disabled }) => (
+          <span
+            className={twMerge(
+              checked &&
+                'size-0.5 rounded-full ring-[5px] ring-bgCheckboxSelected ring-offset-2 dark:ring-bgCheckboxSelectedDark',
+              disabled && 'opacity-60',
+            )}
+          />
+        )}
+      </RadioHUI>
+      <Label className="font-bold text-fgSecondary hover:cursor-pointer dark:text-fgSecondaryDark">
+        {label}
+      </Label>
+    </Field>
   );
 };
 
