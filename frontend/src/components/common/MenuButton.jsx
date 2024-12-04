@@ -3,12 +3,7 @@ import { twMerge } from 'tailwind-merge';
 import { Menu } from '@headlessui/react';
 
 const MenuButton = ({ title, icon, variant = 'primary', className, text }) => {
-  const outlineStyle =
-    'rounded outline-bgCheckboxSelected focus:outline outline-1 dark:outline-bgCheckboxSelectedDark';
-
-  const mainStyle = 'text-fgThird dark:text-fgThirdDark ';
-
-  const customStyle = {
+  const mainStyle = {
     primary:
       'bg-bgButton dark:bg-bgButtonDark border border-borderSecondary dark:border-borderSecondaryDark disabled:opacity-40 disabled:text-fgPrimary dark:disabled:text-fgPrimaryDark hover:bg-borderPrimary dark:hover:bg-borderPrimaryDark hover:border-borderPrimary dark:hover:border-borderPrimaryDark',
     secondary:
@@ -19,10 +14,8 @@ const MenuButton = ({ title, icon, variant = 'primary', className, text }) => {
   return (
     <Menu.Button
       className={twMerge(
-        mainStyle,
-        customStyle[variant],
-        'flex min-h-[41px] w-full items-center justify-center gap-2 rounded px-3 py-1.5',
-        outlineStyle,
+        'flex min-h-[41px] w-full items-center justify-center gap-2 rounded px-3 py-1.5 text-fgThird outline-1 outline-bgCheckboxSelected focus:outline dark:text-fgThirdDark dark:outline-bgCheckboxSelectedDark',
+        mainStyle[variant],
         className,
       )}
       title={title}

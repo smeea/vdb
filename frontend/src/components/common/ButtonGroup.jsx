@@ -10,7 +10,7 @@ const ButtonGroup = ({ name, onClick, title, isSelected, value, children }) => {
         !isSelected && 'hover:bg-borderSecondary dark:hover:bg-borderSecondaryDark',
       )}
       name={name}
-      variant={isSelected ? 'fourth' : 'outline-primary'}
+      variant={isSelected ? 'groupSelected' : 'group'}
       title={title}
       value={value}
       onClick={onClick}
