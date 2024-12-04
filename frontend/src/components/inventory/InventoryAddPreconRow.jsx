@@ -6,11 +6,13 @@ import {
   InventoryDeckDeleteButton,
   ResultPreconClan,
   Tooltip,
+  ResultPathImage,
 } from '@/components';
 import { useDeckInInventory } from '@/hooks';
 import { useApp } from '@/context';
 import { DECKID, CLAN, NAME, PRECONS, DATE } from '@/constants';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
+import paths from '@/assets/data/paths.json';
 
 const InventoryAddPreconRow = ({ deck }) => {
   const { isDesktop, isMobile } = useApp();
@@ -25,9 +27,13 @@ const InventoryAddPreconRow = ({ deck }) => {
         <div className="flex justify-center">
           {clans.length > 0 && (
             <>
-              {clans.map((clan) => (
-                <ResultPreconClan key={clan} clan={clan} />
-              ))}
+              {clans.map((clan) => {
+                return paths.includes(clan) ? (
+                  <ResultPathImage key={clan} value={clan} />
+                ) : (
+                  <ResultPreconClan key={clan} clan={clan} />
+                );
+              })}
             </>
           )}
         </div>

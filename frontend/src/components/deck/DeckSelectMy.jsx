@@ -4,7 +4,8 @@ import { useSnapshot } from 'valtio';
 import Shuffle from '@icons/shuffle.svg?react';
 import PinAngleFill from '@icons/pin-angle-fill.svg?react';
 import At from '@icons/at.svg?react';
-import { Select, ResultPreconClan, ResultLegalIcon } from '@/components';
+import paths from '@/assets/data/paths.json';
+import { ResultPathImage, Select, ResultPreconClan, ResultLegalIcon } from '@/components';
 import { limitedStore, deckStore, useApp } from '@/context';
 import { byTimestamp, getRestrictions, getClan } from '@/utils';
 import {
@@ -70,7 +71,15 @@ const DeckSelectMy = ({ deckid, handleSelect }) => {
             <div className="flex items-center justify-between">
               <div className="flex items-center">
                 <div className="flex w-[40px] items-center justify-center">
-                  {clan && <ResultPreconClan clan={clan} />}
+                  {clan && (
+                    <>
+                      {paths.includes(clan) ? (
+                        <ResultPathImage value={clan} />
+                      ) : (
+                        <ResultPreconClan clan={clan} />
+                      )}
+                    </>
+                  )}
                 </div>
                 <div className="inline">
                   {decks[i][NAME].slice(0, inventoryMode ? (isWide ? 28 : 23) : 32)}

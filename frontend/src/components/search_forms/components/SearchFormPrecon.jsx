@@ -6,9 +6,11 @@ import {
   SearchFormButtonDel,
   Checkbox,
   Select,
+  ResultPathImage,
 } from '@/components';
 import { useApp } from '@/context';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
+import paths from '@/assets/data/paths.json';
 import {
   ANY,
   BCP,
@@ -74,9 +76,13 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
                       clans.length == 1 ? 'flex w-[40px] items-center justify-center' : 'inline'
                     }
                   >
-                    {clans.map((clan) => (
-                      <ResultPreconClan key={clan} clan={clan} />
-                    ))}
+                    {clans.map((clan) => {
+                      return paths.includes(clan) ? (
+                        <ResultPathImage key={clan} value={clan} />
+                      ) : (
+                        <ResultPreconClan key={clan} clan={clan} />
+                      );
+                    })}
                   </div>
                   {fullName}
                 </div>

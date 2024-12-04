@@ -1,5 +1,6 @@
 import React, { useMemo } from 'react';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
+import paths from '@/assets/data/paths.json';
 import { ResultPathImage, Select, ResultPreconClan } from '@/components';
 import { useApp } from '@/context';
 import { DATE, NAME, CLAN, PRECONS, PRECON, PLAYTEST } from '@/constants';
@@ -30,7 +31,7 @@ const DeckSelectPrecon = ({ deckid, handleSelect }) => {
                     }
                   >
                     {clans.map((clan) => {
-                      return ['Caine', 'Cathari', 'Death', 'Power'].includes(clan) ? (
+                      return paths.includes(clan) ? (
                         <ResultPathImage key={clan} value={clan} />
                       ) : (
                         <ResultPreconClan key={clan} clan={clan} />
