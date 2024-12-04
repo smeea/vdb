@@ -1,7 +1,7 @@
 import csv
 import re
 import json
-import unicodedata
+from unidecode import unidecode
 import multiprocessing
 
 
@@ -18,12 +18,6 @@ with open("twda.json", "r") as twda_input, open(
     requirements = []
     for c in csv_meta:
         requirements.append(c)
-
-def letters_to_ascii(text):
-    return "".join(
-        c for c in unicodedata.normalize("NFD", text) if unicodedata.category(c) != "Mn"
-    )
-
 
 artist_fixes = {
     "Alejandro Collucci": "Alejandro Colucci",
@@ -79,14 +73,6 @@ def generate_card(card):
             card[k] = int(card[k])
         except (ValueError):
             pass
-
-    # ASCII-fication of name
-    if card["Id"] == 101670:
-        card["ASCII Name"] = "Sacre-Coeur Cathedral, France"
-    elif card["Id"] == 100130:
-        card["ASCII Name"] = "Bang Nakh - Tiger's Claws"
-    else:
-        card["ASCII Name"] = letters_to_ascii(card["Name"])
 
     # Sect requirement for Title-requiring cards
     title_sects = {
@@ -336,7 +322,7 @@ def generate_card(card):
     card_ready = {
         "aka": card["Aka"],
         "artist": card["Artist"],
-        "ascii": card["ASCII Name"],
+        "ascii": unidecode(card["Name"]),
         "banned": card["Banned"],
         "blood": card["Blood Cost"],
         "burn": card["Burn Option"],
@@ -345,7 +331,7 @@ def generate_card(card):
         "discipline": card["Discipline"],
         "id": card["Id"],
         "name": card["Name"],
-        "path": card["Path"] if 'Path' in card else '',
+        "path": card["Path"],
         "pool": card["Pool Cost"],
         "requirement": card["Requirement"].lower(),
         "rulings": card["Rulings"],

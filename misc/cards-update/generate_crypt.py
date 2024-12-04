@@ -1,7 +1,7 @@
 import csv
 import re
 import json
-import unicodedata
+from unidecode import unidecode
 import multiprocessing
 
 
@@ -28,12 +28,6 @@ with open("../../frontend/src/assets/data/disciplinesList.json", "r") as discipl
         virtues = {}
         for v in virtues_list.items():
             virtues[v[1]] = v[0]
-
-def letters_to_ascii(text):
-    return "".join(
-        c for c in unicodedata.normalize("NFD", text) if unicodedata.category(c) != "Mn"
-    )
-
 
 artist_fixes = {
     "Alejandro Collucci": "Alejandro Colucci",
@@ -200,19 +194,6 @@ def generate_card(card):
             card["Sect"] = text[1]
         else:
             card["Sect"] = text[0]
-
-    # ASCII-fication of name
-    match card["Id"]:
-        case 201528:
-            card["ASCII Name"] = "Boleslaw Gutowski"
-        case 201669:
-            card["ASCII Name"] = "Clara Hjortshoj"
-        case 250014:
-            card["ASCII Name"] = "Przemyslaw, War Beast"
-        case 250018:
-            card["ASCII Name"] = "Aelswith, The Irresistible"
-        case _:
-            card["ASCII Name"] = letters_to_ascii(card["Name"])
 
     # Remove empty disciplines/virtues
     if card["Type"] == "Imbued":
