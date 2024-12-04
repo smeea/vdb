@@ -62,6 +62,8 @@ export const countTotalCost = (cardsList, type) => {
 };
 
 export const getRestrictions = (deck, limitedCards) => {
+  if (!deck) return {};
+
   let hasPlaytest;
   let hasIllegalDate;
   let hasBanned;
@@ -79,7 +81,7 @@ export const getRestrictions = (deck, limitedCards) => {
     }
 
     const legalRestriction = getLegality(card.c);
-    if (legalRestriction && legalRestriction === PLAYTEST) {
+    if (legalRestriction === PLAYTEST) {
       hasPlaytest = true;
     }
     if (legalRestriction && legalRestriction !== PLAYTEST) {

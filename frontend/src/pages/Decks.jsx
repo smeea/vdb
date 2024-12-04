@@ -28,7 +28,7 @@ import {
 } from '@/components';
 import { deckStore, useApp, setDeck } from '@/context';
 import { useDecksTagsAll } from '@/hooks';
-import { getTags, parseDeck, getIsPlaytest, getIsEditable, parseDeckHash } from '@/utils';
+import { getTags, parseDeck, getRestrictions, getIsEditable, parseDeckHash } from '@/utils';
 import {
   AUTHOR,
   BRANCHES,
@@ -86,6 +86,7 @@ const Decks = () => {
   const [showImportText, setShowImportText] = useState(false);
   const [badImportCards, setBadImportCards] = useState([]);
   const isEditable = getIsEditable(deck);
+  const { hasPlaytest } = getRestrictions(deck);
 
   const getDeck = async () => {
     let deckData;
@@ -200,19 +201,16 @@ const Decks = () => {
                 showInfo={showInfo}
               />
             </div>
-            {deck && (showInfo || !isMobile) && (
+            {(showInfo || !isMobile) && (
               <div className="sm:basis-7/12">
-                <DeckDetails deck={deck} allTagsOptions={allTagsOptions} />
+                {deck && <DeckDetails deck={deck} allTagsOptions={allTagsOptions} />}
               </div>
             )}
           </div>
           {error && <ErrorMessage>{error}</ErrorMessage>}
           {deck && (
             <FlexGapped className="max-sm:flex-col">
-              {playtestMode ||
-              !Object.keys({ ...deck[CRYPT], ...deck[LIBRARY] }).some((cardid) =>
-                getIsPlaytest(cardid),
-              ) ? (
+              {playtestMode || !hasPlaytest ? (
                 <>
                   <div className="sm:basis-5/9">
                     <DeckCrypt deck={deck} />

@@ -17,7 +17,7 @@ import {
 } from '@/components';
 import { useApp, deckStore, setDeck } from '@/context';
 import { deckServices } from '@/services';
-import { parseDeck, getIsPlaytest, getIsEditable } from '@/utils';
+import { parseDeck, getRestrictions, getIsEditable } from '@/utils';
 import {
   BRANCHES,
   CARDS,
@@ -54,6 +54,7 @@ const Diff = () => {
   const [showMissing, setShowMissing] = useState(false);
   const [showProxySelect, setShowProxySelect] = useState(false);
   const isEditable = getIsEditable(deck);
+  const { hasPlaytest } = getRestrictions(deck);
 
   const getDeck = async (id, setD, setE) => {
     let deckData;
@@ -160,10 +161,7 @@ const Diff = () => {
 
           {deck && deckTo && (
             <FlexGapped className="max-sm:flex-col">
-              {playtestMode ||
-              !Object.keys({ ...deck[CRYPT], ...deck[LIBRARY] }).some((cardid) =>
-                getIsPlaytest(cardid),
-              ) ? (
+              {playtestMode || !hasPlaytest ? (
                 <>
                   <div className="basis-full sm:basis-5/9">
                     <DiffCrypt deck={deck} cardsTo={deckTo[CRYPT]} />

@@ -22,8 +22,8 @@ import {
   PlaytestReportsOneButton,
 } from '@/components';
 import { useApp } from '@/context';
-import { getIsPlaytest } from '@/utils';
-import { PLAYTEST, CRYPT, LIBRARY, DECK, DECKID, NAME, ID } from '@/constants';
+import { getRestrictions } from '@/utils';
+import { PLAYTEST, DECK, DECKID, NAME, ID } from '@/constants';
 
 const DeckButtons = ({
   deck,
@@ -40,13 +40,9 @@ const DeckButtons = ({
 }) => {
   const { isPlaytestAdmin, playtestMode, inventoryMode, username } = useApp();
   const { publicChild, isPublic, isAuthor, isBranches } = deck || {};
-
   const playtestPrecon =
     deck?.[DECKID].includes(`${PLAYTEST}:`) && deck[DECKID].replace(`${PLAYTEST}:`, '');
-  const hasPlaytest =
-    deck &&
-    Object.keys({ ...deck[CRYPT], ...deck[LIBRARY] }).some((cardid) => getIsPlaytest(cardid));
-
+  const { hasPlaytest } = getRestrictions(deck);
   const isPlaytestSafe = playtestMode || !hasPlaytest;
 
   return (
