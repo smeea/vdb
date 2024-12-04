@@ -13,10 +13,6 @@ import {
   INTERCEPT,
   INTERCEPT_1,
   NAME,
-  PATH_CAINE,
-  PATH_CATHARI,
-  PATH_DEATH,
-  PATH_POWER,
   PREVENT,
   PRESS,
   PUT_BLOOD,
@@ -52,10 +48,6 @@ export const CryptTraitsRegexMap = {
   [ADDITIONAL_STRIKE]: () => /additional strike/i,
   [AGGRAVATED]: () => /(?:[^non-])aggravated/i,
   [PREVENT]: () => /(?:[^un])prevent(?:[^able])/i,
-  [PATH_CAINE]: () => /Path of Caine/i,
-  [PATH_CATHARI]: () => /Path of Cathari/i,
-  [PATH_DEATH]: () => /Path of Death/i,
-  [PATH_POWER]: () => /Path of Power/i,
 };
 
 export const LibraryTraitsRegexMap = {
@@ -74,8 +66,4 @@ export const LibraryTraitsRegexMap = {
   [PREVENT]: () => /(?:[^un])prevent(?:[^able])/i,
   [PUT_BLOOD]: () =>
     /(move|add) .* blood (from the blood bank )?to .* in your uncontrolled region/i,
-  [PATH_CAINE]: () => /Path of Caine/i,
-  [PATH_CATHARI]: () => /Path of Cathari/i,
-  [PATH_DEATH]: () => /Path of Death/i,
-  [PATH_POWER]: () => /Path of Power/i,
 };

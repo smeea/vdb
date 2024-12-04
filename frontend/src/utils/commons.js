@@ -14,6 +14,7 @@ import {
   IS_PUBLIC,
   LIBRARY,
   NAME,
+  PATH,
   PLAYTEST,
   POD,
   PROMO,
@@ -173,7 +174,7 @@ export const getClan = (crypt) => {
   Object.values(crypt)
     .filter((card) => card.c[NAME] !== 'Anarch Convert')
     .forEach((card) => {
-      const clan = card.c[CLAN];
+      const clan = card.c[PATH] ?? card.c[CLAN];
       if (clans[clan]) {
         clans[clan] += card.q;
       } else {

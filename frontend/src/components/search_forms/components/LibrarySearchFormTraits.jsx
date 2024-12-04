@@ -20,6 +20,10 @@ import {
   MULTI_TYPE,
   NON_TWD,
   NO_REQUIREMENTS,
+  CAINE,
+  CATHARI,
+  DEATH,
+  POWER,
   PATH_CAINE,
   PATH_CATHARI,
   PATH_DEATH,
@@ -63,13 +67,13 @@ const LibrarySearchFormTraits = ({ value, onChange }) => {
             [
               PATH_CAINE,
               <div className="flex items-center gap-1.5">
-                Path of Caine <ResultPathImage value={'caine'} size="sm" />
+                Path of Caine <ResultPathImage value={CAINE} size="sm" />
               </div>,
             ],
             [
               PATH_CATHARI,
               <div className="flex items-center gap-1.5">
-                Path of Cathari <ResultPathImage value={'cathari'} size="sm" />
+                Path of Cathari <ResultPathImage value={CATHARI} size="sm" />
               </div>,
             ],
           ]
@@ -104,13 +108,13 @@ const LibrarySearchFormTraits = ({ value, onChange }) => {
             [
               PATH_DEATH,
               <div className="flex items-center gap-1.5">
-                Path of Death <ResultPathImage value={'death'} size="sm" />
+                Path of Death <ResultPathImage value={DEATH} size="sm" />
               </div>,
             ],
             [
               PATH_POWER,
               <div className="flex items-center gap-1.5">
-                Path of Power <ResultPathImage value={'power'} size="sm" />
+                Path of Power <ResultPathImage value={POWER} size="sm" />
               </div>,
             ],
           ]
