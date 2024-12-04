@@ -345,7 +345,7 @@ def generate_card(card):
         "discipline": card["Discipline"],
         "id": card["Id"],
         "name": card["Name"],
-        "path": card["Path"],
+        "path": card["Path"] if 'Path' in card else '',
         "pool": card["Pool Cost"],
         "requirement": card["Requirement"].lower(),
         "rulings": card["Rulings"],

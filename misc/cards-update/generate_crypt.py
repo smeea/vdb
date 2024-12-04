@@ -328,7 +328,7 @@ def generate_card(card):
         "id": card["Id"],
         "name": card["Name"],
         "new": card["New"],
-        "path": card["Path"],
+        "path": card["Path"] if 'Path' in card else '',
         "rulings": card["Rulings"],
         "sect": card["Sect"],
         "set": card["Set"],

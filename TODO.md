@@ -1,10 +1,7 @@
 # FIX
 - Review TWDA radar: remove swarm, maybe replace?
-- Wall of Filth - Caine
 
 # FEATURES
-- Card q-ty change in autocompletion
-- Playtest cards in report only for that round
 - New layout for old cards or fallback to scans?
 - Non-english images to use webp with fallback image
 - Paypal donations
