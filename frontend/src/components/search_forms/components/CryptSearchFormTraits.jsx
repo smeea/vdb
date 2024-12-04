@@ -38,7 +38,7 @@ const CryptSearchFormTraits = ({ value, onChange }) => {
     <div className="flex flex-col gap-1">
       <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Traits:</div>
       <div className="flex">
-        <div className="flex w-7/12 flex-col gap-0.5">
+        <div className="flex basis-5/9 flex-col gap-0.5">
           {[
             [INTERCEPT_1, '+1 intercept'],
             [STEALTH_1, '+1 stealth'],
@@ -76,7 +76,7 @@ const CryptSearchFormTraits = ({ value, onChange }) => {
               />
             ))}
         </div>
-        <div className="flex w-5/12 flex-col gap-0.5">
+        <div className="flex basis-4/9 flex-col gap-0.5">
           {[
             [ENTER_COMBAT, 'Enter combat'],
             [UNLOCK, 'Unlock'],

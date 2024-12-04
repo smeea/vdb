@@ -22,7 +22,7 @@ const CryptSearchFormTitles = ({ value, onChange }) => {
     <div className="flex flex-col gap-1">
       <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Title:</div>
       <div className="flex">
-        <div className="flex w-7/12 flex-col gap-0.5">
+        <div className="flex basis-5/9 flex-col gap-0.5">
           {[
             ['Primogen', PRIMOGEN],
             ['Prince', PRINCE],
@@ -42,7 +42,7 @@ const CryptSearchFormTitles = ({ value, onChange }) => {
             />
           ))}
         </div>
-        <div className="flex w-5/12 flex-col gap-0.5">
+        <div className="flex basis-4/9 flex-col gap-0.5">
           {[
             ['Bishop', BISHOP],
             ['Archbishop', ARCHBISHOP],
