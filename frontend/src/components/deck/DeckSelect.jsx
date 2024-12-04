@@ -38,7 +38,7 @@ const DeckSelect = ({
   showInfo,
 }) => {
   const { inventoryMode, isMobile, recentDecks, setShowFloatingButtons, username } = useApp();
-  const [selectFrom, setSelectFrom] = useState();
+  const [selectFrom, setSelectFrom] = useState(MY);
   const isEditable = getIsEditable(deck);
 
   useEffect(() => {

@@ -13,14 +13,14 @@ import {
   Input,
 } from '@/components';
 import { useApp } from '@/context';
-import { IS_BRANCHES, DECKID, FROM } from '@/constants';
+import { IS_BRANCHES, DECKID, FROM, MY, RECENT, PRECONS, URL } from '@/constants';
 
 const DiffSelectDeck = ({ decks, deck, deckidFrom, deckidTo, target, title }) => {
   const { recentDecks, inventoryMode, username, isMobile } = useApp();
   const deckid = target === FROM ? deckidFrom : deckidTo;
   const navigate = useNavigate();
   const [url, setUrl] = useState('');
-  const [source, setSource] = useState('from-my');
+  const [source, setSource] = useState(`${FROM}-${MY}`);
 
   const handleSelect = (e) => {
     if (target == FROM) {
@@ -47,18 +47,18 @@ const DiffSelectDeck = ({ decks, deck, deckidFrom, deckidTo, target, title }) =>
 
   useEffect(() => {
     if (deckid?.includes(':')) {
-      setSource(`${target}-precons`);
+      setSource(`${target}-${PRECONS}`);
     } else if (decks?.[deckid]) {
-      setSource(`${target}-my`);
+      setSource(`${target}-${MY}`);
     } else {
-      setSource(`${target}-recent`);
+      setSource(`${target}-${RECENT}`);
     }
   }, [deckid, decks]);
 
   return (
     <div className="flex flex-col gap-1 sm:gap-2">
       <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">{title}</div>
-      {source === `${target}-url` ? (
+      {source === `${target}-${URL}` ? (
         <form name={target} onSubmit={handleUrlSubmit} className="min-w-[270px]">
           <div className="flex">
             <Input
@@ -77,16 +77,16 @@ const DiffSelectDeck = ({ decks, deck, deckidFrom, deckidTo, target, title }) =>
         <div
           className={twMerge('z-20 flex gap-1', !inventoryMode && isMobile && 'justify-between')}
         >
-          <div className={deck?.[IS_BRANCHES] && source == `${target}-my` ? 'w-3/4' : 'w-full'}>
-            {source == `${target}-my` && decks ? (
+          <div className={deck?.[IS_BRANCHES] && source == `${target}-${MY}` ? 'w-3/4' : 'w-full'}>
+            {source == `${target}-${MY}` && decks ? (
               <DeckSelectMy handleSelect={handleSelect} deckid={deck?.[DECKID]} />
-            ) : source == `${target}-recent` ? (
+            ) : source == `${target}-${RECENT}` ? (
               <DeckSelectRecent handleSelect={handleSelect} deckid={deck?.[DECKID]} />
             ) : (
               <DeckSelectPrecon handleSelect={handleSelect} deckid={deck?.[DECKID]} />
             )}
           </div>
-          {source == `${target}-my` && decks && deck?.[IS_BRANCHES] && (
+          {source == `${target}-${MY}` && decks && deck?.[IS_BRANCHES] && (
             <div className="w-1/4">
               <DeckBranchSelect handleSelect={handleSelect} deck={deck} />
             </div>
@@ -101,11 +101,11 @@ const DiffSelectDeck = ({ decks, deck, deckidFrom, deckidTo, target, title }) =>
           className="flex gap-4 sm:gap-6"
         >
           {username && decks && Object.keys(decks).length > 0 && (
-            <Radio value={`${target}-my`} label={isMobile ? 'My' : 'My Decks'} />
+            <Radio value={`${target}-${MY}`} label={isMobile ? 'My' : 'My Decks'} />
           )}
-          <Radio value={`${target}-precons`} label="Precons" />
-          {recentDecks.length > 0 && <Radio value={`${target}-recent`} label="Recent" />}
-          <Radio value={`${target}-url`} label="URL" />
+          <Radio value={`${target}-${PRECONS}`} label="Precons" />
+          {recentDecks.length > 0 && <Radio value={`${target}-${RECENT}`} label="Recent" />}
+          <Radio value={`${target}-${URL}`} label="URL" />
         </RadioGroup>
       </div>
     </div>
