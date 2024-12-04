@@ -23,6 +23,7 @@ import {
   TYPE_MASTER,
   GROUP,
   ANY,
+  NEW,
 } from '@/constants';
 import cardtypeSortedFull from '@/assets/data/cardtypeSortedFull.json';
 
@@ -179,7 +180,7 @@ const exportJol = (deck) => {
     if (card.c[ADV] && card.c[ADV][0]) {
       name += ' (ADV)';
     }
-    if (card.c['New']) {
+    if (card.c[NEW]) {
       name += ` (G${card.c[GROUP]})`;
     }
     result += `${card.q}x${name}\n`;
@@ -212,7 +213,7 @@ const exportLackey = (deck) => {
     if (card.c[ADV] && card.c[ADV][0]) {
       name += ' (ADV)';
     }
-    if (card.c['New']) {
+    if (card.c[NEW]) {
       name += ` (G${card.c[GROUP]})`;
     }
 
