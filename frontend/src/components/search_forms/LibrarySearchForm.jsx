@@ -169,7 +169,7 @@ const LibrarySearchForm = () => {
   };
 
   const handleMultiChange = (event) => {
-    const { name, value } = event.target;
+    const { name, value } = event.currentTarget;
 
     if ([OR_NEWER, OR_OLDER, NOT_NEWER, NOT_OLDER].includes(value)) {
       searchLibraryForm[name][AGE] = searchLibraryForm[name][AGE] === value ? false : value;
