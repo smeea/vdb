@@ -2,7 +2,6 @@
 - Review TWDA radar: remove swarm, maybe replace?
 
 # FEATURES
-- New layout for old cards or fallback to scans?
 - Non-english images to use webp with fallback image
 - Paypal donations
 

@@ -7,9 +7,17 @@ import legacyImagesClans from '@/assets/data/legacyImagesClansList.json';
 
 const CardImage = ({ card, set, className = 'max-sm:w-full', size = 'md', onClick }) => {
   const { lang, showLegacyImage } = useApp();
-  const { baseUrl, otherUrl, legacyUrl } = getCardImageUrl(card, set, lang);
   const hasLegacyImage = card[ID] > 200000 && legacyImagesClans.includes(card[CLAN]);
-  const url = showLegacyImage && hasLegacyImage ? legacyUrl : lang == EN ? baseUrl : otherUrl;
+  const { baseUrl, otherUrl, legacyUrl, legacyScanUrl } = getCardImageUrl(card, set, lang);
+
+  const url =
+    showLegacyImage && (hasLegacyImage || legacyScanUrl)
+      ? legacyScanUrl
+        ? legacyScanUrl
+        : legacyUrl
+      : lang == EN
+        ? baseUrl
+        : otherUrl;
 
   const resetImgSrc = (event) => {
     if (event.target.src != `${baseUrl}.jpg`) {
