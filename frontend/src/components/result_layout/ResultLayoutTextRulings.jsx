@@ -11,7 +11,7 @@ const Refs = ({ refs }) => {
         return (
           <div key={i} className="inline whitespace-nowrap">
             <a target="_blank" rel="noreferrer" href={refs[i]}>
-              {i}
+              [{i}]
             </a>
           </div>
         );
@@ -66,7 +66,7 @@ const ResultLayoutTextRulings = ({ rulings }) => {
           <li key={idx}>
             {text.map((i, idxText) => {
               return <Text key={`x${idxText}`} text={i} />;
-            })}
+            })}{' '}
             <Refs refs={k['refs']} />
           </li>
         );

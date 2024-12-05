@@ -7,9 +7,9 @@ import multiprocessing
 
 with open("../../frontend/src/assets/data/disciplinesList.json", "r") as disciplines_file, open(
                 "../../frontend/src/assets/data/virtuesList.json", "r") as virtues_file, open(
-                        "vtes.json", "r", encoding="utf8") as krcg_file, open(
+                        "rulings.json", "r") as rulings_file, open(
                                 "twda.json", "r") as twda_input:
-        krcg_cards = json.load(krcg_file)
+        rulings = json.load(rulings_file)
         twda = json.load(twda_input)
         disciplines_list = json.load(disciplines_file)
         virtues_list = json.load(virtues_file)
@@ -223,31 +223,6 @@ def generate_card(card):
 
     card["Artist"] = artists
 
-    # Add rules to card
-    card["Rulings"] = []
-    for c in krcg_cards:
-        if c["id"] == card["Id"] and "rulings" in c:
-            for r in c["rulings"]:
-                references = {}
-                for ref in r["references"]:
-                    references[ref['text']] = ref['url']
-
-                if match := re.match(r"(.*?)\[... \S+\].*", r["text"]):
-                    text = match.group(1)
-                    text = re.sub(r"{The (.+?)}", r"{\1, The}", text)
-                    text = text.replace("Thaumaturgy", "Blood Sorcery")
-                    text = text.replace("Assamites", "Banu Haqim")
-                    text = text.replace("Assamite", "Banu Haqim")
-                    text = text.replace("Followers of Set", "Ministers")
-                    text = text.replace("Follower of Set", "Minister")
-                    text = re.sub(r"\[(\w+)\s*(\w*)\]", r"[\1\2]", text)
-                    card["Rulings"].append(
-                        {
-                            "text": text,
-                            "refs": references,
-                        }
-                    )
-
     # Add twda info
     card["Twd"] = 0
     for i in twda:
@@ -300,7 +275,7 @@ def generate_card(card):
         "adv": card["Advancement"],
         "aka": card["Aka"],
         "artist": card["Artist"],
-        "ascii": card["ASCII Name"],
+        "ascii": unidecode(card["Name"]),
         "banned": card["Banned"],
         "capacity": card["Capacity"],
         "clan": card["Clan"],
@@ -310,7 +285,7 @@ def generate_card(card):
         "name": card["Name"],
         "new": card["New"],
         "path": card["Path"] if 'Path' in card else '',
-        "rulings": card["Rulings"],
+        "rulings": rulings[str(card["Id"])] if str(card["Id"]) in rulings else [],
         "sect": card["Sect"],
         "set": card["Set"],
         "text": card["Card Text"],

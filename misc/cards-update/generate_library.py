@@ -6,11 +6,11 @@ import multiprocessing
 
 
 with open("twda.json", "r") as twda_input, open(
-    "vtes.json", "r", encoding="utf8"
-) as krcg_file, open(
+    "rulings.json", "r"
+) as rulings_file, open(
     "vteslibmeta.csv", "r", encoding="utf-8-sig"
 ) as cardbase_meta_csv:
-    krcg_cards = json.load(krcg_file)
+    rulings = json.load(rulings_file)
     twda = json.load(twda_input)
     reader_meta = csv.reader(cardbase_meta_csv)
     fieldnames_meta = next(reader_meta)
@@ -244,31 +244,6 @@ def generate_card(card):
     card["Card Text"] = re.sub("[{}]", "", card["Card Text"])
     card["Card Text"] = re.sub(r"\[(\w+)\s*(\w*)\]", r"[\1\2]", card["Card Text"])
 
-    # Add rules to card
-    card["Rulings"] = []
-    for c in krcg_cards:
-        if c["id"] == card["Id"] and "rulings" in c:
-            for r in c["rulings"]:
-                references = {}
-                for ref in r["references"]:
-                    references[ref['text']] = ref['url']
-
-                if match := re.match(r"(.*?)\[... \S+\].*", r["text"]):
-                    text = match.group(1)
-                    text = re.sub(r"{The (.+?)}", r"{\1, The}", text)
-                    text = text.replace("Thaumaturgy", "Blood Sorcery")
-                    text = text.replace("Assamites", "Banu Haqim")
-                    text = text.replace("Assamite", "Banu Haqim")
-                    text = text.replace("Followers of Set", "Ministers")
-                    text = text.replace("Follower of Set", "Minister")
-                    text = re.sub(r"\[(\w+)\s*(\w*)\]", r"[\1\2]", text)
-                    card["Rulings"].append(
-                        {
-                            "text": text,
-                            "refs": references,
-                        }
-                    )
-
     # Add twda info
     card["Twd"] = 0
     for i in twda:
@@ -331,10 +306,10 @@ def generate_card(card):
         "discipline": card["Discipline"],
         "id": card["Id"],
         "name": card["Name"],
-        "path": card["Path"],
+        "path": card["Path"] if 'Path' in card else '',
         "pool": card["Pool Cost"],
         "requirement": card["Requirement"].lower(),
-        "rulings": card["Rulings"],
+        "rulings": rulings[str(card["Id"])] if str(card["Id"]) in rulings else [],
         "set": card["Set"],
         "text": card["Card Text"],
         "twd": card["Twd"],

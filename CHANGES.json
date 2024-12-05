@@ -1,5 +1,13 @@
 [
   {
+    "version": "2024-12-05",
+    "changes": [
+      "Update rulings (there is a stunning progress in Rulings Database project https://github.com/vtes-biased/vtes-rulings thanks to Lionel Panhauleux and others who contribute!)",
+      "Legacy Images mode will now show scans of actual crypt cards if they are available in legacy layout is available (means all from Jyhad to Bloodlines set)",
+      "Many fixes and small improvements"
+    ]
+  },
+  {
     "version": "2024-11-27",
     "changes": [
       "Fix going back from search results on mobile"
