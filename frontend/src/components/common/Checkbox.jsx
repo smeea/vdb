@@ -3,7 +3,15 @@ import { Checkbox as CheckboxHUI, Field, Label } from '@headlessui/react';
 import { twMerge } from 'tailwind-merge';
 import { NAME, VALUE } from '@/constants';
 
-const Checkbox = ({ checked, disabled, name, value, onChange, label, className }) => {
+const Checkbox = ({
+  checked = false,
+  disabled = false,
+  name,
+  value,
+  onChange,
+  label,
+  className,
+}) => {
   const handleChange = () => {
     onChange({
       currentTarget: {
