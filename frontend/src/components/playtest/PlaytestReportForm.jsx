@@ -14,7 +14,7 @@ import {
 import { useFetch } from '@/hooks';
 import { useApp } from '@/context';
 import { playtestServices } from '@/services';
-import { PRECONS, TEXT, CARDS, SCORE } from '@/constants';
+import { VALUE, PRECONS, TEXT, CARDS, SCORE } from '@/constants';
 
 const Title = ({ isPrecon }) => {
   return (
@@ -104,8 +104,9 @@ const PlaytestReportForm = ({ id, setIsHotkeysDisabled, isPrecon = false }) => {
   };
 
   const handleIsPlayedChange = (event) => {
-    setIsPlayed(event.target.checked);
-    submit(text, score, event.target.checked);
+    const { value } = event.currentTarget;
+    setIsPlayed(!value);
+    submit(text, score, !value);
   };
 
   const handleScoreChange = (value) => {
@@ -119,13 +120,23 @@ const PlaytestReportForm = ({ id, setIsHotkeysDisabled, isPrecon = false }) => {
       <div className="flex justify-between">
         <Title />
         {isMobile && (
-          <Checkbox label="seen in play" checked={isPlayed} onChange={handleIsPlayedChange} />
+          <Checkbox
+            label="seen in play"
+            value={isPlayed}
+            checked={isPlayed}
+            onChange={handleIsPlayedChange}
+          />
         )}
       </div>
       <div className="flex w-full items-center justify-between gap-4">
         <PlaytestScores value={score} handleClick={handleScoreChange} />
         {!isMobile && (
-          <Checkbox label="seen in play" checked={isPlayed} onChange={handleIsPlayedChange} />
+          <Checkbox
+            label="seen in play"
+            value={isPlayed}
+            checked={isPlayed}
+            onChange={handleIsPlayedChange}
+          />
         )}
       </div>
       <form className="flex" onSubmit={handleSubmit}>

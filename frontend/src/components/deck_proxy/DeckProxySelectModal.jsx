@@ -31,15 +31,15 @@ const DeckProxySelectModal = ({ deck, setShow }) => {
     const cards = {};
     Object.keys(deck[CRYPT]).forEach((cardid) => {
       cards[cardid] = {
-        print: false,
-        set: '',
+        [PRINT]: false,
+        [SET]: '',
         q: deck[CRYPT][cardid].q,
       };
     });
     Object.keys(deck[LIBRARY]).forEach((cardid) => {
       cards[cardid] = {
-        print: false,
-        set: '',
+        [PRINT]: false,
+        [SET]: '',
         q: deck[LIBRARY][cardid].q,
       };
     });
@@ -79,7 +79,7 @@ const DeckProxySelectModal = ({ deck, setShow }) => {
 
         if (miss > 0) {
           crypt[cardid] = {
-            print: true,
+            [PRINT]: true,
             q: miss,
           };
         }
@@ -101,7 +101,7 @@ const DeckProxySelectModal = ({ deck, setShow }) => {
 
         if (miss > 0) {
           library[cardid] = {
-            print: true,
+            [PRINT]: true,
             q: miss,
           };
         }
@@ -111,9 +111,9 @@ const DeckProxySelectModal = ({ deck, setShow }) => {
   };
 
   const handleProxySelector = (e) => {
-    const { id, name } = e.target;
+    const { value, name } = e.currentTarget;
     setProxySelected((draft) => {
-      draft[id][name] = !draft[id][name];
+      draft[value][name] = !draft[value][name];
     });
   };
 

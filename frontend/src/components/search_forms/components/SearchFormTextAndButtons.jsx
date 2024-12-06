@@ -12,7 +12,7 @@ import {
 } from '@/components';
 import { useDebounce } from '@/hooks';
 import { useApp } from '@/context';
-import { NAME, TEXT } from '@/constants';
+import { NAME, TEXT, LABEL, VALUE, LOGIC, IN, REGEX } from '@/constants';
 
 const SearchFormTextAndButtons = ({
   searchForm,
@@ -35,23 +35,23 @@ const SearchFormTextAndButtons = ({
   const [text, setText] = useState('');
 
   useEffect(() => {
-    setText(value[0].value ?? '');
+    setText(value[0][VALUE] ?? '');
   }, [value]);
 
   useDebounce(() => onChange(0, text), 300, [text]);
 
   const options = [
     {
-      value: NAME,
-      label: 'Only in Name',
+      [VALUE]: NAME,
+      [LABEL]: 'Only in Name',
     },
     {
-      value: TEXT,
-      label: 'Only in Text',
+      [VALUE]: TEXT,
+      [LABEL]: 'Only in Text',
     },
     {
-      value: 'regex',
-      label: 'Regex',
+      [VALUE]: REGEX,
+      [LABEL]: 'Regex',
     },
   ];
 
@@ -91,7 +91,7 @@ const SearchFormTextAndButtons = ({
               <>
                 <SearchFormButtonLogicToggle
                   name="text"
-                  value={value[0].logic}
+                  value={value[0][LOGIC]}
                   i={0}
                   searchForm={searchForm}
                 />
@@ -104,17 +104,17 @@ const SearchFormTextAndButtons = ({
             )}
           </div>
           <div className="flex items-center justify-end gap-4">
-            {options.map((opt, idx) => {
+            {options.map((opt) => {
               return (
                 <Checkbox
                   className="text-sm"
-                  key={idx}
+                  key={opt[VALUE]}
                   name={0}
-                  value={opt.value}
+                  value={opt[VALUE]}
                   onChange={onChangeOptions}
-                  label={opt.label}
+                  label={opt[LABEL]}
                   checked={
-                    opt.value === 'regex' ? value[0].regex || false : value[0].in === opt.value
+                    opt[VALUE] === REGEX ? value[0][REGEX] || false : value[0][IN] === opt[VALUE]
                   }
                 />
               );

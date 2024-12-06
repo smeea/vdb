@@ -6,21 +6,21 @@ import {
   SearchFormButtonLogicToggle,
   SearchAdditionalFormsTextForm,
 } from '@/components';
-import { NAME, TEXT } from '@/constants';
+import { NAME, TEXT, VALUE, LABEL, LOGIC, IN, REGEX } from '@/constants';
 
 const SearchAdditionalFormsText = ({ value, onChange, onChangeOptions, searchForm }) => {
   const options = [
     {
-      value: NAME,
-      label: 'Only in Name',
+      [VALUE]: NAME,
+      [LABEL]: 'Only in Name',
     },
     {
-      value: TEXT,
-      label: 'Only in Text',
+      [VALUE]: TEXT,
+      [LABEL]: 'Only in Text',
     },
     {
-      value: 'regex',
-      label: 'Regex',
+      [VALUE]: REGEX,
+      [LABEL]: 'Regex',
     },
   ];
 
@@ -37,7 +37,7 @@ const SearchAdditionalFormsText = ({ value, onChange, onChangeOptions, searchFor
               <div className="flex w-1/5 gap-1">
                 <SearchFormButtonLogicToggle
                   name="text"
-                  value={v.logic}
+                  value={v[LOGIC]}
                   i={i}
                   searchForm={searchForm}
                 />
@@ -45,15 +45,21 @@ const SearchAdditionalFormsText = ({ value, onChange, onChangeOptions, searchFor
                 <SearchFormButtonDel searchForm={searchForm} i={i} />
               </div>
               <div className="flex items-center justify-end gap-4">
-                {options.map((opt, index) => {
+                {options.map((opt) => {
+                  console.log(value);
                   return (
                     <Checkbox
                       className="text-sm"
-                      key={`${i}-${index}`}
+                      key={opt[VALUE]}
                       name={i}
-                      value={opt.value}
+                      value={opt[VALUE]}
                       onChange={onChangeOptions}
-                      label={opt.label}
+                      label={opt[LABEL]}
+                      checked={
+                        opt[VALUE] === REGEX
+                          ? value[i][REGEX] || false
+                          : value[i][IN] === opt[VALUE]
+                      }
                     />
                   );
                 })}

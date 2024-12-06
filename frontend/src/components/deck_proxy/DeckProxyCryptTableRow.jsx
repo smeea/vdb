@@ -33,7 +33,7 @@ const DeckProxyCryptTableRow = ({
       <td className="min-w-[25px]">
         <div className="flex items-center justify-center">
           <Checkbox
-            id={card.c[ID]}
+            value={card.c[ID]}
             name="print"
             checked={proxySelected[card.c[ID]]?.[PRINT]}
             onChange={handleProxySelector}
