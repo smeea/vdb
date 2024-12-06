@@ -88,9 +88,7 @@ def generate_twd(i):
     deck["capacity"] = round(total_capacity / total_crypt_ex_ac, 1)
 
     for ct in i["library"]["cards"]:
-        deck["cardtypes_ratio"][ct["type"].lower()] = round(
-            ct["count"] / deck["library_total"], 2
-        )
+        deck["cardtypes_ratio"][ct["type"].lower()] = round(ct["count"] / deck["library_total"], 2)
 
         for card in ct["cards"]:
             deck["cards"][card["id"]] = card["count"]
@@ -98,15 +96,20 @@ def generate_twd(i):
             discipline_entry = library_db[str(card["id"])]["discipline"]
             if "&" in discipline_entry:
                 for d in discipline_entry.split(" & "):
-                    if d in [*crypt_disciplines, 'Flight', 'Maleficia', 'Striga']:
+                    if d in [*crypt_disciplines, "Flight", "Maleficia", "Striga"]:
                         disciplines.add(d)
 
             elif "/" in discipline_entry:
                 for d in discipline_entry.split("/"):
-                    if d in [*crypt_disciplines, 'Flight', 'Maleficia', 'Striga']:
+                    if d in [*crypt_disciplines, "Flight", "Maleficia", "Striga"]:
                         disciplines.add(d)
 
-            elif discipline_entry in [*crypt_disciplines, 'Flight', 'Maleficia', 'Striga']:
+            elif discipline_entry in [
+                *crypt_disciplines,
+                "Flight",
+                "Maleficia",
+                "Striga",
+            ]:
                 disciplines.add(discipline_entry)
 
     deck["disciplines"] = sorted(list(disciplines))
@@ -132,8 +135,8 @@ with open("twda.json", "r") as twd_input, open("twd_decks.json", "w") as twd_dec
     json.dump(decks_by_id, twd_decks_file, indent=4, separators=(",", ":"))
 
 with open("twda.json", "r") as twd_input, open(
-        "twd_locations.json", "w") as twd_locations_file, open(
-                "twd_players.json", "w") as twd_players_file:
+    "twd_locations.json", "w"
+) as twd_locations_file, open("twd_players.json", "w") as twd_players_file:
 
     twda = json.load(twd_input)
     cities = set(())
@@ -155,7 +158,9 @@ with open("twda.json", "r") as twd_input, open(
     players = sorted(players)
 
     json.dump(players, twd_players_file, indent=4, separators=(",", ":"))
-    json.dump({
-        'countries': countries,
-        'cities': cities
-    }, twd_locations_file, indent=4, separators=(",", ":"))
+    json.dump(
+        {"countries": countries, "cities": cities},
+        twd_locations_file,
+        indent=4,
+        separators=(",", ":"),
+    )

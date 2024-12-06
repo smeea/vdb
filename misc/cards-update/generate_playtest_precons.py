@@ -93,9 +93,7 @@ try:
         json.dump(library, library_file_min, separators=(",", ":"))
         json.dump(library, library_file, indent=4, separators=(",", ":"))
         json.dump(library_playtest, library_playtest_file_min, separators=(",", ":"))
-        json.dump(
-            library_playtest, library_playtest_file, indent=4, separators=(",", ":")
-        )
+        json.dump(library_playtest, library_playtest_file, indent=4, separators=(",", ":"))
 
 except Exception as e:
     print(e)

@@ -7,15 +7,14 @@ from deck_recommendation import deck_recommendation
 from api import app, db, login
 from models import Deck
 
+
 def get_twd_deck(deckid):
     with open("twd_decks.json", "r") as twd_decks_file:
         twd_decks = json.load(twd_decks_file)
 
         if deckid in twd_decks:
             deck = twd_decks[deckid]
-            comments = (
-                deck["description"] if deck["description"] != "Unknown" else ""
-            )
+            comments = deck["description"] if deck["description"] != "Unknown" else ""
             deck["description"] = "Date: " + deck["creation_date"] + "\n"
             deck["description"] += "Players: " + str(deck["players"]) + "\n"
             deck["description"] += "Event: " + deck["event"] + "\n"
@@ -41,6 +40,7 @@ def get_twd_deck(deckid):
 
         else:
             return None
+
 
 def parse_user_decks(user_decks):
     decks = {}
@@ -115,9 +115,9 @@ def new_deck_route():
     if not current_user.is_authenticated and not is_anonymous:
         return abort(401)
 
-    new_deckid = non_secure_generate('1234567890abcdef', 9)
+    new_deckid = non_secure_generate("1234567890abcdef", 9)
     while Deck.query.get(new_deckid):
-        new_deckid = non_secure_generate('1234567890abcdef', 9)
+        new_deckid = non_secure_generate("1234567890abcdef", 9)
 
     name = request.json["name"] if "name" in request.json else "New deck"
     author_public_name = request.json["author"] if "author" in request.json else ""
@@ -189,6 +189,7 @@ def get_deck_route(deckid):
         }
 
     return jsonify(deck)
+
 
 @app.route("/api/deck/<string:deckid>", methods=["DELETE"])
 @login_required
@@ -361,13 +362,11 @@ def create_branch_route(deckid):
 
     for i, b in enumerate(new_branches):
         branch_name = (
-            f"#{len(master.branches) + 1}"
-            if master.branches
-            else f"#{len(new_branches) - i}"
+            f"#{len(master.branches) + 1}" if master.branches else f"#{len(new_branches) - i}"
         )
-        new_deckid = non_secure_generate('1234567890abcdef', 9)
+        new_deckid = non_secure_generate("1234567890abcdef", 9)
         while Deck.query.get(new_deckid):
-            new_deckid = non_secure_generate('1234567890abcdef', 9)
+            new_deckid = non_secure_generate("1234567890abcdef", 9)
 
         cards = {}
         for k, v in b["cards"].items():

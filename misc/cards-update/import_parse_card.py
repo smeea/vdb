@@ -4,9 +4,7 @@ from unidecode import unidecode
 
 def get_card_name(cardname):
     if cardname.startswith("The "):
-        return re.sub(
-            r"\W", "", unidecode(f"{cardname.removeprefix('The ')}, The")
-        ).lower()
+        return re.sub(r"\W", "", unidecode(f"{cardname.removeprefix('The ')}, The")).lower()
     else:
         return re.sub(r"\W", "", unidecode(cardname)).lower()
 

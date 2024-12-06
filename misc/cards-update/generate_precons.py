@@ -7,11 +7,7 @@ bundles = {
     "30th": {
         "": {},
     },
-    "V5C": {
-        "PR": {},
-        "PSal": {},
-        "PTz": {}
-    },
+    "V5C": {"PR": {}, "PSal": {}, "PTz": {}},
     "NB2": {
         "PB": {},
         "PBH": {},
@@ -209,9 +205,7 @@ with open("cardbase_crypt.json", "r") as crypt_file, open(
             if card_set in bundles:
                 for precon in bundles[card_set].keys():
                     if precon in card_precons:
-                        bundles[card_set][precon][card["id"]] = int(
-                            card_precons[precon]
-                        )
+                        bundles[card_set][precon][card["id"]] = int(card_precons[precon])
 
     json.dump(bundles, precons_file_min, separators=(",", ":"))
     json.dump(bundles, precons_file, indent=4, separators=(",", ":"))

@@ -2,6 +2,7 @@ from flask import jsonify
 from api import app
 import json
 
+
 @app.route("/api/version", methods=["GET"])
 def version_route():
     with open("../CHANGES.json", "r") as changes_file:

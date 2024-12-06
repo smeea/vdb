@@ -44,6 +44,7 @@ def sanitize_twd(d):
 
     return deck
 
+
 def minify_twd(d):
     deck = {
         "deckid": d["deckid"],
@@ -56,34 +57,36 @@ def minify_twd(d):
 
 @app.route("/api/twd/event/<string:event_id>", methods=["GET"])
 def get_event(event_id):
-    base_url = 'https://www.vekn.net/api/vekn'
+    base_url = "https://www.vekn.net/api/vekn"
     token_valid = None
-    if 'vekn_timestamp' in session and 'vekn_token' in session:
-        token_age = datetime.now().timestamp() - session['vekn_timestamp'].timestamp() - 18000
+    if "vekn_timestamp" in session and "vekn_token" in session:
+        token_age = datetime.now().timestamp() - session["vekn_timestamp"].timestamp() - 18000
         if token_age > (60 * 4):
             token_valid = True
 
     if not token_valid:
         login_url = f"{base_url}/login"
-        credentials = {'username': 'vdb.vtes', 'password': 'Vdbpassword123'}
+        credentials = {"username": "vdb.vtes", "password": "Vdbpassword123"}
         r = requests.post(login_url, data=credentials)
-        token = r.json()['data']['auth']
-        session['vekn_token'] = token
-        session['vekn_timestamp'] = datetime.now()
+        token = r.json()["data"]["auth"]
+        session["vekn_token"] = token
+        session["vekn_timestamp"] = datetime.now()
 
     event_url = f"{base_url}/event/{event_id}"
-    r = requests.get(event_url, headers={'Authorization': f"Bearer {session['vekn_token']}"})
-    data = r.json()['data']['events'][0]
+    r = requests.get(event_url, headers={"Authorization": f"Bearer {session['vekn_token']}"})
+    data = r.json()["data"]["events"][0]
 
-    return(data)
+    return data
+
 
 @app.route("/api/twd/cities", methods=["GET"])
 def get_cities():
-    return jsonify(twd_locations['cities'])
+    return jsonify(twd_locations["cities"])
+
 
 @app.route("/api/twd/countries", methods=["GET"])
 def get_countries():
-    return jsonify(twd_locations['countries'])
+    return jsonify(twd_locations["countries"])
 
 
 @app.route("/api/twd/authors", methods=["GET"])
@@ -119,6 +122,7 @@ def get_random_twd_route(quantity):
 
     return jsonify(decks)
 
+
 @app.route("/api/twd/<string:deckid>", methods=["GET"])
 def get_twd(deckid):
     with open("twd_decks.json", "r") as twd_decks_file:
@@ -126,6 +130,7 @@ def get_twd(deckid):
         deck = sanitize_twd(twd_decks[deckid])
 
         return jsonify(deck)
+
 
 @app.route("/api/search/twd", methods=["POST"])
 def search_twd_route():
@@ -146,19 +151,13 @@ def search_twd_route():
         "cardtypes",
         "similar",
     ]
-    queries = [
-        {"option": q, "value": request.json[q]}
-        for q in query_priority
-        if q in request.json
-    ]
+    queries = [{"option": q, "value": request.json[q]} for q in query_priority if q in request.json]
 
     result = search_decks(queries, twd_decks.values())
 
     if "matchInventory" in request.json:
         if result:
-            result = match_inventory(
-                request.json["matchInventory"], current_user.inventory, result
-            )
+            result = match_inventory(request.json["matchInventory"], current_user.inventory, result)
         else:
             result = match_inventory(
                 request.json["matchInventory"],

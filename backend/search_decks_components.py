@@ -37,11 +37,7 @@ def get_decks_by_crypt(crypt_request, decks):
                         counter += 1
 
             elif m == "lt0":
-                if (
-                    card in deck["crypt"]
-                    and deck["crypt"][card] <= q
-                    or card not in deck["crypt"]
-                ):
+                if card in deck["crypt"] and deck["crypt"][card] <= q or card not in deck["crypt"]:
                     counter += 1
 
         if counter == cards_counter:
@@ -101,8 +97,8 @@ def get_decks_by_author(author, decks):
 
 
 def get_decks_by_location(location, decks):
-    country = location['country'] if 'country' in location else ''
-    city = location['city'] if 'city' in location else ''
+    country = location["country"] if "country" in location else ""
+    city = location["city"] if "city" in location else ""
     match_decks = []
     for deck in decks:
         if country in deck["location"] and city in deck["location"]:
@@ -139,25 +135,22 @@ def get_decks_by_players(request, decks):
     match_decks = []
 
     for deck in decks:
-        if (
-            deck["players"] != "Unknown"
-            and players_from <= deck["players"] <= players_to
-        ):
+        if deck["players"] != "Unknown" and players_from <= deck["players"] <= players_to:
             match_decks.append(deck)
 
     return match_decks
 
 
 def get_decks_by_clan(value, decks):
-    clans = value['value']
-    logic = value['logic']
+    clans = value["value"]
+    logic = value["logic"]
     match_decks = []
     for deck in decks:
         for clan in clans:
-            if logic == 'or':
+            if logic == "or":
                 if deck["clan"] and deck["clan"].lower() == clan:
                     match_decks.append(deck)
-            if logic == 'not':
+            if logic == "not":
                 if not deck["clan"] or deck["clan"].lower() != clan:
                     match_decks.append(deck)
 
@@ -165,15 +158,15 @@ def get_decks_by_clan(value, decks):
 
 
 def get_decks_by_sect(value, decks):
-    sects = value['value']
-    logic = value['logic']
+    sects = value["value"]
+    logic = value["logic"]
     match_decks = []
     for deck in decks:
         for sect in sects:
-            if logic == 'or':
+            if logic == "or":
                 if deck["sect"] and deck["sect"].lower() == sect:
                     match_decks.append(deck)
-            if logic == 'not':
+            if logic == "not":
                 if not deck["sect"] or deck["sect"].lower() != sect:
                     match_decks.append(deck)
 
@@ -257,7 +250,7 @@ def get_decks_by_traits(traits, decks):
 
 
 def get_decks_by_src(src, decks):
-    if src == 'my-nonpublic':
+    if src == "my-nonpublic":
         return decks
 
     match_decks = []
@@ -303,8 +296,8 @@ def match_inventory(request, inventory, decks):
 
             for card, q in deck["crypt"].items():
                 if card in inventory:
-                    if q > inventory[card]['q']:
-                        counter += inventory[card]['q']
+                    if q > inventory[card]["q"]:
+                        counter += inventory[card]["q"]
                     else:
                         counter += q
 
@@ -315,17 +308,15 @@ def match_inventory(request, inventory, decks):
             counter = 0
             scaling_factor = deck["library_total"] / scaling if scaling else None
             min_counter = (
-                scaling * library_ratio
-                if scaling
-                else deck["library_total"] * library_ratio
+                scaling * library_ratio if scaling else deck["library_total"] * library_ratio
             )
 
             for card, q in deck["library"].items():
                 if card in inventory:
                     q = q / scaling_factor if scaling_factor else q
 
-                    if q > inventory[card]['q']:
-                        counter += inventory[card]['q']
+                    if q > inventory[card]["q"]:
+                        counter += inventory[card]["q"]
                     else:
                         counter += q
 
@@ -367,12 +358,8 @@ def get_decks_by_similar(deckid, decks):
             query_library_total += q
 
     for deck in decks:
-        crypt_ratio = (
-            deck["crypt_total"] / query_crypt_total if query_crypt_total else 0
-        )
-        library_ratio = (
-            deck["library_total"] / query_library_total if query_library_total else 0
-        )
+        crypt_ratio = deck["crypt_total"] / query_crypt_total if query_crypt_total else 0
+        library_ratio = deck["library_total"] / query_library_total if query_library_total else 0
 
         matches_crypt = 0
         matches_library = 0
@@ -390,9 +377,7 @@ def get_decks_by_similar(deckid, decks):
             elif cardid in deck["library"]:
                 matches_library += min(q, deck["library"][cardid])
 
-        similarity = (
-            matches_crypt * crypt_ratio * CRYPT_COEF + matches_library * library_ratio
-        )
+        similarity = matches_crypt * crypt_ratio * CRYPT_COEF + matches_library * library_ratio
 
         if similarity > SIMILARITY_THRESHOLD:
             match_decks.append(deck)

@@ -19,7 +19,7 @@ def deck_recommendation(cards):
     crypt_total = 0
     library = {}
 
-    empty_cards = [k for k,v in cards.items() if v < 1]
+    empty_cards = [k for k, v in cards.items() if v < 1]
     playtest_cards = [k for k in cards.keys() if k > 210000 or (k > 110000 and k < 200000)]
     for k in set(empty_cards + playtest_cards):
         del cards[int(k)]
@@ -30,8 +30,6 @@ def deck_recommendation(cards):
             crypt_total += v
         else:
             library[k] = {"c": cardbase_lib[str(k)], "q": v}
-
-
 
     discipline_multiplier = {}
     group_multiplier = {}
@@ -105,10 +103,7 @@ def deck_recommendation(cards):
                 if disciplines:
                     max_multiplier = 0
                     for d in disciplines:
-                        if (
-                            d in discipline_multiplier
-                            and discipline_multiplier[d] > max_multiplier
-                        ):
+                        if d in discipline_multiplier and discipline_multiplier[d] > max_multiplier:
                             max_multiplier = discipline_multiplier[d]
 
                     score = score * max_multiplier
@@ -122,9 +117,7 @@ def deck_recommendation(cards):
                 else:
                     recommended_library[r] += score
 
-    top_pick_crypt = sorted(
-        recommended_crypt, key=lambda i: recommended_crypt[i], reverse=True
-    )
+    top_pick_crypt = sorted(recommended_crypt, key=lambda i: recommended_crypt[i], reverse=True)
 
     top_pick_library = sorted(
         recommended_library, key=lambda i: recommended_library[i], reverse=True

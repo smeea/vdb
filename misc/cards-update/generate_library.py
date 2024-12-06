@@ -5,11 +5,11 @@ from unidecode import unidecode
 import multiprocessing
 
 
-with open("twda.json", "r") as twda_input, open(
-    "rulings.json", "r"
-) as rulings_file, open(
-    "vteslibmeta.csv", "r", encoding="utf-8-sig"
-) as cardbase_meta_csv:
+with (
+    open("twda.json", "r") as twda_input,
+    open("rulings.json", "r") as rulings_file,
+    open("vteslibmeta.csv", "r", encoding="utf-8-sig") as cardbase_meta_csv,
+):
     rulings = json.load(rulings_file)
     twda = json.load(twda_input)
     reader_meta = csv.reader(cardbase_meta_csv)
@@ -22,7 +22,7 @@ with open("twda.json", "r") as twda_input, open(
 artist_fixes = {
     "Alejandro Collucci": "Alejandro Colucci",
     "Chet Masterz": "Chet Masters",
-    "Dimple": "Nicolas \"Dimple\" Bigot",
+    "Dimple": 'Nicolas "Dimple" Bigot',
     "EM Gist": "E.M. Gist",
     "G. Goleash": "Grant Goleash",
     "Ginés Quiñonero-Santiago": "Ginés Quiñonero",
@@ -44,6 +44,7 @@ artist_fixes = {
 }
 
 integer_fields = ["Id"]
+
 
 def generate_artists(csv_cards, artists_file, artists_file_min):
     artists = set()
@@ -71,7 +72,7 @@ def generate_card(card):
     for k in integer_fields:
         try:
             card[k] = int(card[k])
-        except (ValueError):
+        except ValueError:
             pass
 
     # Sect requirement for Title-requiring cards
@@ -164,7 +165,6 @@ def generate_card(card):
                         card["Set"]["Anthology"] = {}
                         card["Set"]["Anthology I"] = {}
 
-
             elif set[0] == "V5":
                 for precon in precons:
                     if "PL" in precon:
@@ -202,15 +202,13 @@ def generate_card(card):
             # Split Lasombra from V5 (2020) set
             elif set[0] == "V5":
                 for precon in precons:
-                    set_name = 'V5' if 'PL' not in precon else 'V5L'
+                    set_name = "V5" if "PL" not in precon else "V5L"
                     if m := re.match(r"^(\D+)([0-9]+)?", precon):
                         card["Set"][set_name][m.group(1)] = m.group(2)
 
             else:
                 for precon in precons:
-                    if set[0] in ["KoT", "HttB"] and (
-                        m := re.match(r"^(A|B)([0-9]+)?", precon)
-                    ):
+                    if set[0] in ["KoT", "HttB"] and (m := re.match(r"^(A|B)([0-9]+)?", precon)):
                         s = f"{set[0]}R"
                         if m.group(2):
                             card["Set"][s][m.group(1)] = m.group(2)
@@ -254,9 +252,7 @@ def generate_card(card):
 
     # Rename legacy clans and disciplines
     card["Clan"] = (
-        card["Clan"]
-        .replace("Follower of Set", "Ministry")
-        .replace("Assamite", "Banu Haqim")
+        card["Clan"].replace("Follower of Set", "Ministry").replace("Assamite", "Banu Haqim")
     )
     card["Card Text"] = (
         card["Card Text"]
@@ -292,8 +288,6 @@ def generate_card(card):
         case _:
             card["Conviction Cost"] = int(card["Conviction Cost"])
 
-
-
     card_ready = {
         "aka": card["Aka"],
         "artist": card["Artist"],
@@ -306,7 +300,7 @@ def generate_card(card):
         "discipline": card["Discipline"],
         "id": card["Id"],
         "name": card["Name"],
-        "path": card["Path"] if 'Path' in card else '',
+        "path": card["Path"] if "Path" in card else "",
         "pool": card["Pool Cost"],
         "requirement": card["Requirement"].lower(),
         "rulings": rulings[str(card["Id"])] if str(card["Id"]) in rulings else [],
@@ -316,7 +310,7 @@ def generate_card(card):
         "type": card["Type"],
     }
 
-    if card["Type"] == 'Master' and ('trifle' in card["Card Text"].lower()):
+    if card["Type"] == "Master" and ("trifle" in card["Card Text"].lower()):
         card_ready["trifle"] = True
 
     if "Playtest Old" in card and card["Playtest Old"]:
@@ -331,29 +325,30 @@ def generate_cards(csv_cards, cardbase_file, cardbase_file_min):
 
     cardbase = {}
     for card in fixed_cards:
-        cardbase[card['id']] = card
+        cardbase[card["id"]] = card
 
     json.dump(cardbase, cardbase_file_min, separators=(",", ":"))
     json.dump(cardbase, cardbase_file, indent=4, separators=(",", ":"))
 
-with open("vteslib.csv", "r", encoding="utf-8-sig") as cardbase_csv_main, open(
-    "cardbase_lib.json", "w", encoding="utf8"
-) as cardbase_file, open(
-    "cardbase_lib.min.json", "w", encoding="utf8"
-) as cardbase_file_min, open("artistsLib.json", "w", encoding="utf8") as artists_file, open(
-    "artistsLib.min.json", "w", encoding="utf8"
-) as artists_file_min:
+
+with (
+    open("vteslib.csv", "r", encoding="utf-8-sig") as cardbase_csv_main,
+    open("cardbase_lib.json", "w", encoding="utf8") as cardbase_file,
+    open("cardbase_lib.min.json", "w", encoding="utf8") as cardbase_file_min,
+    open("artistsLib.json", "w", encoding="utf8") as artists_file,
+    open("artistsLib.min.json", "w", encoding="utf8") as artists_file_min,
+):
     reader_main = csv.reader(cardbase_csv_main)
     fieldnames_main = next(reader_main)
     csv_cards = list(csv.DictReader(cardbase_csv_main, fieldnames_main))
     generate_cards(csv_cards, cardbase_file, cardbase_file_min)
     generate_artists(csv_cards, artists_file, artists_file_min)
 
-with open("playtest/vteslib_playtest.csv", "r", encoding="utf-8-sig") as cardbase_csv_playtest, open(
-    "playtest/cardbase_lib_playtest.json", "w", encoding="utf8"
-) as cardbase_file, open(
-    "playtest/cardbase_lib_playtest.min.json", "w", encoding="utf8"
-) as cardbase_file_min:
+with (
+    open("playtest/vteslib_playtest.csv", "r", encoding="utf-8-sig") as cardbase_csv_playtest,
+    open("playtest/cardbase_lib_playtest.json", "w", encoding="utf8") as cardbase_file,
+    open("playtest/cardbase_lib_playtest.min.json", "w", encoding="utf8") as cardbase_file_min,
+):
     reader_playtest = csv.reader(cardbase_csv_playtest)
     fieldnames_playtest = next(reader_playtest)
     csv_cards_playtest = csv.DictReader(cardbase_csv_playtest, fieldnames_playtest)

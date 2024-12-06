@@ -16,6 +16,7 @@ with open("../frontend/public/data/cardbase_crypt.json", "r") as crypt_file:
 with open("../frontend/public/data/cardbase_lib.json", "r") as library_file:
     library_db = json.load(library_file)
 
+
 @login.unauthorized_handler
 def unauthorized_handler():
     abort(401)
@@ -105,16 +106,16 @@ def get_missing_fields(source):
 
         if "&" in c["discipline"]:
             for d in c["discipline"].split(" & "):
-                if d in [*crypt_disciplines, 'Flight', 'Maleficia', 'Striga']:
+                if d in [*crypt_disciplines, "Flight", "Maleficia", "Striga"]:
                     disciplines.add(d)
 
         elif "/" in c["discipline"]:
             for d in c["discipline"].split("/"):
-                if d in [*crypt_disciplines, 'Flight', 'Maleficia', 'Striga']:
+                if d in [*crypt_disciplines, "Flight", "Maleficia", "Striga"]:
                     disciplines.add(d)
 
-        elif c["discipline"] in [*crypt_disciplines, 'Flight', 'Maleficia', 'Striga']:
-                disciplines.add(c["discipline"])
+        elif c["discipline"] in [*crypt_disciplines, "Flight", "Maleficia", "Striga"]:
+            disciplines.add(c["discipline"])
 
     for ct, q in card_types.items():
         deck["cardtypes_ratio"][ct.lower()] = q / deck["library_total"]
@@ -131,7 +132,7 @@ def sanitize_pda(d):
         "author": d.author_public_name,
         "isFavorited": False,
         "favoritedBy": len(d.favorited),
-        "creation_date": d.creation_date if d.creation_date else d.timestamp.strftime('%Y-%m-%d'),
+        "creation_date": (d.creation_date if d.creation_date else d.timestamp.strftime("%Y-%m-%d")),
         "timestamp": d.timestamp,
         "cards": d.cards,
     }
@@ -141,16 +142,18 @@ def sanitize_pda(d):
 
     return deck
 
+
 def minify_pda(d):
     deck = {
         "deckid": d.deckid,
-        "creation_date": d.creation_date if d.creation_date else d.timestamp.strftime('%Y-%m-%d'),
+        "creation_date": (d.creation_date if d.creation_date else d.timestamp.strftime("%Y-%m-%d")),
     }
 
     if current_user.is_authenticated and current_user.id in d.favorited:
         deck["isFavorited"] = True
 
     return deck
+
 
 @app.route("/api/pda/<string:deckid>", methods=["GET"])
 def get_pda(deckid):
@@ -188,6 +191,7 @@ def get_pda(deckid):
 
     return jsonify(deck)
 
+
 @app.route("/api/pda/authors", methods=["GET"])
 def get_pda_authors_route():
     authors = []
@@ -202,10 +206,14 @@ def get_pda_authors_route():
 def search_pda_route():
     pda_decks = []
     decks = []
-    if 'src' in request.json and request.json["src"] == 'my-nonpublic':
-        decks = Deck.query.filter(Deck.author == current_user).order_by(Deck.creation_date.desc()).all()
+    if "src" in request.json and request.json["src"] == "my-nonpublic":
+        decks = (
+            Deck.query.filter(Deck.author == current_user).order_by(Deck.creation_date.desc()).all()
+        )
     else:
-        decks = Deck.query.filter(Deck.public_parent != None).order_by(Deck.creation_date.desc()).all()
+        decks = (
+            Deck.query.filter(Deck.public_parent != None).order_by(Deck.creation_date.desc()).all()
+        )
 
     for d in decks:
         deck = {
@@ -216,7 +224,9 @@ def search_pda_route():
             "sect": d.sect,
             "crypt": {},
             "crypt_total": d.crypt_total,
-            "creation_date": d.creation_date if d.creation_date else d.timestamp.strftime('%Y-%m-%d'),
+            "creation_date": (
+                d.creation_date if d.creation_date else d.timestamp.strftime("%Y-%m-%d")
+            ),
             "disciplines": d.disciplines,
             "library": {},
             "library_total": d.library_total,
@@ -250,18 +260,12 @@ def search_pda_route():
         "similar",
     ]
 
-    queries = [
-        {"option": q, "value": request.json[q]}
-        for q in query_priority
-        if q in request.json
-    ]
+    queries = [{"option": q, "value": request.json[q]} for q in query_priority if q in request.json]
     result = search_decks(queries, pda_decks)
 
     if "matchInventory" in request.json:
         if result:
-            result = match_inventory(
-                request.json["matchInventory"], current_user.inventory, result
-            )
+            result = match_inventory(request.json["matchInventory"], current_user.inventory, result)
         else:
             result = match_inventory(
                 request.json["matchInventory"], current_user.inventory, pda_decks
@@ -270,7 +274,10 @@ def search_pda_route():
     if not result:
         abort(400)
 
-    return jsonify([sanitize_pda(Deck.query.get(d["deckid"])) for d in result[0:10]] + [minify_pda(Deck.query.get(d["deckid"])) for d in result[10:]])
+    return jsonify(
+        [sanitize_pda(Deck.query.get(d["deckid"])) for d in result[0:10]]
+        + [minify_pda(Deck.query.get(d["deckid"])) for d in result[10:]]
+    )
 
 
 @app.route("/api/pda/<string:parent_id>", methods=["POST"])
@@ -282,9 +289,9 @@ def new_public_deck_route(parent_id):
     if parent.public_child:
         abort(400)
 
-    new_child_id = non_secure_generate('1234567890abcdef', 9)
+    new_child_id = non_secure_generate("1234567890abcdef", 9)
     while Deck.query.get(new_child_id):
-        new_child_id = non_secure_generate('1234567890abcdef', 9)
+        new_child_id = non_secure_generate("1234567890abcdef", 9)
 
     m = get_missing_fields(parent)
     if m["crypt_total"] > 35 or m["library_total"] > 90:
@@ -374,9 +381,7 @@ def get_new_pda_route(quantity):
 
     counter = 0
     for d in (
-        Deck.query.filter(Deck.public_parent != None)
-        .order_by(Deck.creation_date.desc())
-        .all()
+        Deck.query.filter(Deck.public_parent != None).order_by(Deck.creation_date.desc()).all()
     ):
         if counter == quantity:
             break

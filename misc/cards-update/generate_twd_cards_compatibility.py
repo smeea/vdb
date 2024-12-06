@@ -25,9 +25,7 @@ for twd in twda:
     year = int(twd["creation_date"][:4])
     year_diff = CURRENT_YEAR - year
     year_coef = 1 / (1 + year_diff * YEAR_MULTIPLIER)
-    players_coef = (
-        twd["players"] * PLAYERS_MULTIPLIER if type(twd["players"]) == int else 1
-    )
+    players_coef = twd["players"] * PLAYERS_MULTIPLIER if type(twd["players"]) == int else 1
     score = year_coef * players_coef
 
     for i in twd["cards"].keys():

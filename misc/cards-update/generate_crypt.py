@@ -6,33 +6,26 @@ import multiprocessing
 
 
 with open("../../frontend/src/assets/data/disciplinesList.json", "r") as disciplines_file, open(
-                "../../frontend/src/assets/data/virtuesList.json", "r") as virtues_file, open(
-                        "rulings.json", "r") as rulings_file, open(
-                                "twda.json", "r") as twda_input:
-        rulings = json.load(rulings_file)
-        twda = json.load(twda_input)
-        disciplines_list = json.load(disciplines_file)
-        virtues_list = json.load(virtues_file)
+    "../../frontend/src/assets/data/virtuesList.json", "r"
+) as virtues_file, open("rulings.json", "r") as rulings_file, open("twda.json", "r") as twda_input:
+    rulings = json.load(rulings_file)
+    twda = json.load(twda_input)
+    disciplines_list = json.load(disciplines_file)
+    virtues_list = json.load(virtues_file)
 
-        disciplines = {}
-        for d in disciplines_list.items():
-            disciplines[d[1]] = {
-                "name": d[0],
-                "value": 1
-            }
-            disciplines[d[1].upper()] = {
-                "name": d[0],
-                "value": 2
-            }
+    disciplines = {}
+    for d in disciplines_list.items():
+        disciplines[d[1]] = {"name": d[0], "value": 1}
+        disciplines[d[1].upper()] = {"name": d[0], "value": 2}
 
-        virtues = {}
-        for v in virtues_list.items():
-            virtues[v[1]] = v[0]
+    virtues = {}
+    for v in virtues_list.items():
+        virtues[v[1]] = v[0]
 
 artist_fixes = {
     "Alejandro Collucci": "Alejandro Colucci",
     "Chet Masterz": "Chet Masters",
-    "Dimple": "Nicolas \"Dimple\" Bigot",
+    "Dimple": 'Nicolas "Dimple" Bigot',
     "EM Gist": "E.M. Gist",
     "G. Goleash": "Grant Goleash",
     "Ginés Quiñonero-Santiago": "Ginés Quiñonero",
@@ -75,7 +68,7 @@ def generate_card(card):
     for k in integer_fields:
         try:
             card[k] = int(card[k])
-        except (ValueError):
+        except ValueError:
             pass
 
     # Remove {} and spaces in []
@@ -156,15 +149,13 @@ def generate_card(card):
             # Split Lasombra from V5 (2020) set
             elif set[0] == "V5":
                 for precon in precons:
-                    set_name = 'V5' if 'PL' not in precon else 'V5L'
+                    set_name = "V5" if "PL" not in precon else "V5L"
                     if m := re.match(r"^(\D+)([0-9]+)?", precon):
                         card["Set"][set_name][m.group(1)] = m.group(2)
 
             else:
                 for precon in precons:
-                    if set[0] in ["KoT", "HttB"] and (
-                            m := re.match(r"^(A|B)([0-9]+)?", precon)
-                    ):
+                    if set[0] in ["KoT", "HttB"] and (m := re.match(r"^(A|B)([0-9]+)?", precon)):
                         s = f"{set[0]}R"
                         if m.group(2):
                             card["Set"][s][m.group(1)] = m.group(2)
@@ -210,7 +201,7 @@ def generate_card(card):
         card_disciplines = {}
         for d in card_disciplines_letters:
             if d in disciplines:
-                card_disciplines[disciplines[d]['name']] = disciplines[d]['value']
+                card_disciplines[disciplines[d]["name"]] = disciplines[d]["value"]
 
         card["Disciplines"] = card_disciplines
 
@@ -233,11 +224,7 @@ def generate_card(card):
     # Add Advancement info
     card["Advancement"] = ""
     for c in csv_cards_main:
-        if (
-                c["Name"] == card["Name"]
-                and int(c["Id"]) != card["Id"]
-                and c["Group"] == card["Group"]
-        ):
+        if c["Name"] == card["Name"] and int(c["Id"]) != card["Id"] and c["Group"] == card["Group"]:
             isAdv = bool(card["Adv"])
             card["Advancement"] = [isAdv, int(c["Id"])]
 
@@ -245,11 +232,7 @@ def generate_card(card):
     card["New"] = False
 
     for c in csv_cards_main:
-        if (
-                c["Name"] == card["Name"]
-                and int(c["Id"]) < card["Id"]
-                and c["Group"] != card["Group"]
-        ):
+        if c["Name"] == card["Name"] and int(c["Id"]) < card["Id"] and c["Group"] != card["Group"]:
             card["New"] = True
 
     # Rename Assamite and Follower of Set
@@ -260,9 +243,7 @@ def generate_card(card):
         card["Clan"] = "Ministry"
 
     card["Card Text"] = (
-        card["Card Text"]
-        .replace("Assamites", "Banu Haqim")
-        .replace("Assamite", "Banu Haqim")
+        card["Card Text"].replace("Assamites", "Banu Haqim").replace("Assamite", "Banu Haqim")
     )
 
     card["Card Text"] = card["Card Text"].replace("Followers of Set", "Ministers")
@@ -284,7 +265,7 @@ def generate_card(card):
         "id": card["Id"],
         "name": card["Name"],
         "new": card["New"],
-        "path": card["Path"] if 'Path' in card else '',
+        "path": card["Path"] if "Path" in card else "",
         "rulings": rulings[str(card["Id"])] if str(card["Id"]) in rulings else [],
         "sect": card["Sect"],
         "set": card["Set"],
@@ -298,39 +279,40 @@ def generate_card(card):
 
     return card_ready
 
+
 def generate_cards(csv_cards, cardbase_file, cardbase_file_min):
     pool = multiprocessing.Pool(processes=4)
     fixed_cards = pool.map(generate_card, csv_cards)
 
     cardbase = {}
     for card in fixed_cards:
-        cardbase[card['id']] = card
+        cardbase[card["id"]] = card
 
     json.dump(cardbase, cardbase_file_min, separators=(",", ":"))
     json.dump(cardbase, cardbase_file, indent=4, separators=(",", ":"))
 
 
 with open("artistsCrypt.json", "w", encoding="utf8") as artists_file, open(
-                "artistsCrypt.min.json", "w", encoding="utf8"
+    "artistsCrypt.min.json", "w", encoding="utf8"
 ) as artists_file_min, open("vtescrypt.csv", "r", encoding="utf-8-sig") as cardbase_csv_main, open(
-        "cardbase_crypt.json", "w", encoding="utf8"
+    "cardbase_crypt.json", "w", encoding="utf8"
 ) as cardbase_file, open(
-        "cardbase_crypt.min.json", "w", encoding="utf8"
+    "cardbase_crypt.min.json", "w", encoding="utf8"
 ) as cardbase_file_min:
-        reader_main = csv.reader(cardbase_csv_main)
-        fieldnames_main = next(reader_main)
-        csv_cards_main = list(csv.DictReader(cardbase_csv_main, fieldnames_main))
-        generate_cards(csv_cards_main, cardbase_file, cardbase_file_min)
-        generate_artists(csv_cards_main, artists_file, artists_file_min)
+    reader_main = csv.reader(cardbase_csv_main)
+    fieldnames_main = next(reader_main)
+    csv_cards_main = list(csv.DictReader(cardbase_csv_main, fieldnames_main))
+    generate_cards(csv_cards_main, cardbase_file, cardbase_file_min)
+    generate_artists(csv_cards_main, artists_file, artists_file_min)
 
 with open(
-        "playtest/vtescrypt_playtest.csv", "r", encoding="utf-8-sig"
+    "playtest/vtescrypt_playtest.csv", "r", encoding="utf-8-sig"
 ) as cardbase_csv_playtest, open(
-        "playtest/cardbase_crypt_playtest.json", "w", encoding="utf8"
+    "playtest/cardbase_crypt_playtest.json", "w", encoding="utf8"
 ) as cardbase_file_playtest, open(
-        "playtest/cardbase_crypt_playtest.min.json", "w", encoding="utf8"
+    "playtest/cardbase_crypt_playtest.min.json", "w", encoding="utf8"
 ) as cardbase_file_min_playtest:
-        reader_playtest = csv.reader(cardbase_csv_playtest)
-        fieldnames_playtest = next(reader_playtest)
-        csv_cards_playtest = csv.DictReader(cardbase_csv_playtest, fieldnames_playtest)
-        generate_cards(csv_cards_playtest, cardbase_file_playtest, cardbase_file_min_playtest)
+    reader_playtest = csv.reader(cardbase_csv_playtest)
+    fieldnames_playtest = next(reader_playtest)
+    csv_cards_playtest = csv.DictReader(cardbase_csv_playtest, fieldnames_playtest)
+    generate_cards(csv_cards_playtest, cardbase_file_playtest, cardbase_file_min_playtest)

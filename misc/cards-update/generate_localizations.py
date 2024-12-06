@@ -21,12 +21,10 @@ for lang in languages:
 
             for card in csv_cards:
                 card["Card Text"] = re.sub("[{}]", "", card["Card Text"])
-                card["Card Text"] = re.sub(
-                    r"\[(\w+)\s*(\w*)\]", r"[\1\2]", card["Card Text"]
-                )
+                card["Card Text"] = re.sub(r"\[(\w+)\s*(\w*)\]", r"[\1\2]", card["Card Text"])
 
                 cards_localized[card["Id"]] = {
-                    "name": card[f"Name {lang}"] if card[f"Name {lang}"] else card['Name'],
+                    "name": (card[f"Name {lang}"] if card[f"Name {lang}"] else card["Name"]),
                     "text": card["Card Text"].strip(),
                 }
 

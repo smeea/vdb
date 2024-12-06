@@ -20,13 +20,21 @@ with app.app_context():
             print(f"Decks: {sorted([deck.name for deck in user.decks.all()])}", sep="\n")
         else:
             print(f"Decks: {len(user.decks.all())}")
-            print("\n".join(sorted([f"{deck.name} {deck.branch_name if deck.master or len(deck.branches) else ''}" for deck in user.decks.all()])))
+            print(
+                "\n".join(
+                    sorted(
+                        [
+                            f"{deck.name} {deck.branch_name if deck.master or len(deck.branches) else ''}"
+                            for deck in user.decks.all()
+                        ]
+                    )
+                )
+            )
         print(f"Inventory: '{len(user.inventory)}'")
 
     elif argv[2] == "x":
         password = "".join(
-            random.SystemRandom().choice(string.ascii_letters + string.digits)
-            for _ in range(10)
+            random.SystemRandom().choice(string.ascii_letters + string.digits) for _ in range(10)
         )
         user.set_password(password)
         db.session.commit()
