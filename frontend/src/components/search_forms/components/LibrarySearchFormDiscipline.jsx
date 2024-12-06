@@ -11,7 +11,7 @@ import disciplinesList from '@/assets/data/disciplinesList.json';
 import disciplinesExtraList from '@/assets/data/disciplinesExtraList.json';
 import virtuesList from '@/assets/data/virtuesList.json';
 import { useApp } from '@/context';
-import { DISCIPLINE, NOT_REQUIRED, ANY } from '@/constants';
+import { LOGIC, DISCIPLINE, NOT_REQUIRED, ANY } from '@/constants';
 
 const LibrarySearchFormDiscipline = ({ value, onChange, searchForm }) => {
   const { isXWide, isMobile } = useApp();
@@ -46,7 +46,7 @@ const LibrarySearchFormDiscipline = ({ value, onChange, searchForm }) => {
             <div className="flex justify-end gap-1 px-1">
               <SearchFormButtonLogicToggle
                 name={name}
-                value={value.logic}
+                value={value[LOGIC]}
                 searchForm={searchForm}
                 withAnd
                 withOnly

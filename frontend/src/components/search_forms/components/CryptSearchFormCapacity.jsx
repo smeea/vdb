@@ -7,7 +7,7 @@ import {
   SearchFormButtonDel,
 } from '@/components';
 import { useApp } from '@/context';
-import { CAPACITY, ANY, LE, GE, EQ } from '@/constants';
+import { LOGIC, CAPACITY, ANY, LE, GE, EQ } from '@/constants';
 
 const CryptSearchFormCapacity = ({ value, searchForm, onChange }) => {
   const { isXWide } = useApp();
@@ -39,7 +39,7 @@ const CryptSearchFormCapacity = ({ value, searchForm, onChange }) => {
             <div className="flex justify-end gap-1 px-1">
               <SearchFormButtonLogicToggle
                 name={name}
-                value={value.logic}
+                value={value[LOGIC]}
                 searchForm={searchForm}
               />
               {value.value.length == 1 ? (

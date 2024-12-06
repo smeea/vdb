@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { setLocalStorage, getLocalStorage } from '@/services/storageServices';
-
+import { AUTO, DARK, LIGHT } from '@/constants';
 const THEME = 'theme';
-const DARK = 'dark';
-const LIGHT = 'light';
-const AUTO = 'auto';
+const TOGGLE_THEME = 'toggleTheme';
 
 export const ThemeContext = React.createContext({
-  theme: AUTO,
-  toggleTheme: () => {},
+  [THEME]: AUTO,
+  [TOGGLE_THEME]: () => {},
 });
 
 export const ThemeProvider = (props) => {

@@ -3,7 +3,7 @@ import PcDisplay from '@icons/pc-display.svg?react';
 import SunFill from '@icons/sun-fill.svg?react';
 import MoonFill from '@icons/moon-fill.svg?react';
 import { useApp, useTheme } from '@/context';
-import { NAME } from '@/constants';
+import { AUTO, DARK, LIGHT, ICON, NAME } from '@/constants';
 
 const ThemeSelect = ({ setShowMenu }) => {
   const { theme, toggleTheme } = useTheme();
@@ -15,35 +15,35 @@ const ThemeSelect = ({ setShowMenu }) => {
   };
 
   const themeVisual = {
-    auto: {
-      icon: (
+    [AUTO]: {
+      [ICON]: (
         <PcDisplay
           width={isMobile ? '20' : '16'}
           height={isMobile ? '20' : '16'}
           viewBox="0 0 16 16"
         />
       ),
-      name: 'System Theme',
+      [NAME]: 'System Theme',
     },
-    dark: {
-      icon: (
+    [DARK]: {
+      [ICON]: (
         <MoonFill
           width={isMobile ? '20' : '16'}
           height={isMobile ? '20' : '16'}
           viewBox="0 0 16 16"
         />
       ),
-      name: 'Dark Theme',
+      [NAME]: 'Dark Theme',
     },
-    light: {
-      icon: (
+    [LIGHT]: {
+      [ICON]: (
         <SunFill
           width={isMobile ? '20' : '16'}
           height={isMobile ? '20' : '16'}
           viewBox="0 0 16 16"
         />
       ),
-      name: 'Light Theme',
+      [NAME]: 'Light Theme',
     },
   };
 
@@ -54,7 +54,7 @@ const ThemeSelect = ({ setShowMenu }) => {
           className="flex items-center gap-2 px-3 py-1.5 text-fgThird dark:text-fgPrimaryDark"
           onClick={handleClick}
         >
-          <div className="flex min-w-[30px] justify-center">{themeVisual[theme]?.icon}</div>
+          <div className="flex min-w-[30px] justify-center">{themeVisual[theme]?.[ICON]}</div>
           <div className="whitespace-nowrap">{themeVisual[theme]?.[NAME]}</div>
         </div>
       ) : (
@@ -63,7 +63,7 @@ const ThemeSelect = ({ setShowMenu }) => {
           onClick={handleClick}
           title="Switch Theme"
         >
-          {themeVisual[theme]?.icon}
+          {themeVisual[theme]?.[ICON]}
         </div>
       )}
     </>

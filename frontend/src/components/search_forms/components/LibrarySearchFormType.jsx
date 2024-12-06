@@ -8,7 +8,7 @@ import {
   SearchFormButtonDel,
 } from '@/components';
 import { useApp } from '@/context';
-import { TYPE, ANY } from '@/constants';
+import { LOGIC, TYPE, ANY } from '@/constants';
 import cardtypeSorted from '@/assets/data/cardtypeSorted.json';
 
 const LibrarySearchFormType = ({ value, onChange, searchForm }) => {
@@ -37,7 +37,7 @@ const LibrarySearchFormType = ({ value, onChange, searchForm }) => {
             <div className="flex justify-end gap-1 px-1">
               <SearchFormButtonLogicToggle
                 name={name}
-                value={value.logic}
+                value={value[LOGIC]}
                 searchForm={searchForm}
                 withAnd
               />

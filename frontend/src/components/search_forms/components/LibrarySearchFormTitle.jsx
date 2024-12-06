@@ -23,6 +23,7 @@ import {
   REGENT,
   MAGAJI,
   TITLE,
+  LOGIC,
 } from '@/constants';
 
 const LibrarySearchFormTitle = ({ value, onChange, searchForm }) => {
@@ -65,7 +66,7 @@ const LibrarySearchFormTitle = ({ value, onChange, searchForm }) => {
             <div className="flex justify-end gap-1 px-1">
               <SearchFormButtonLogicToggle
                 name={name}
-                value={value.logic}
+                value={value[LOGIC]}
                 searchForm={searchForm}
               />
               {value.value.length == 1 ? (

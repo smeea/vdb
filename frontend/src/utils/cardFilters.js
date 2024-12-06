@@ -77,6 +77,7 @@ import {
   VOTE_1,
   VOTE_2,
   X,
+  LOGIC,
 } from '@/constants';
 import { getIsPlaytest } from '@/utils';
 import { CryptTraitsRegexMap, LibraryTraitsRegexMap } from '@/utils/traitsRegexMaps';
@@ -134,7 +135,7 @@ const missingDisciplinesCrypt = (filter, card) => {
 
 const missingDisciplinesLibrary = (filter, card) => {
   const disciplines = filter.value;
-  const logic = filter.logic;
+  const logic = filter[LOGIC];
 
   switch (logic) {
     case AND:
@@ -170,7 +171,7 @@ const missingTextQueries = (filter, card) => {
 
 const missingTextQuery = (query, card) => {
   const search = query.value.toLowerCase();
-  const hasToMatch = query.logic === AND;
+  const hasToMatch = query[LOGIC] === AND;
 
   const cardText = card[TEXT].toLowerCase().replace('\n', ' ');
   const cardName = card[NAME].toLowerCase();
@@ -270,7 +271,7 @@ const missingTitleLibrary = (filter, card) => {
   const requirements = card[REQUIREMENT].toLowerCase();
   const hasNoTitleRequirement = !requiredTitleList.some((title) => requirements.includes(title));
 
-  return missingRequirementsCheck(filter.logic, filter.value, requirements, hasNoTitleRequirement);
+  return missingRequirementsCheck(filter[LOGIC], filter.value, requirements, hasNoTitleRequirement);
 };
 
 const requiredTitleList = [
@@ -315,7 +316,7 @@ const titleWorth = {
 
 const missingCapacityCrypt = (filter, card) => {
   const values = filter.value;
-  const logic = filter.logic;
+  const logic = filter[LOGIC];
 
   switch (logic) {
     case OR:
@@ -375,7 +376,7 @@ const capacityRegex = {
 
 const missingClan = (filterClan, card) => {
   const clans = filterClan.value;
-  const logic = filterClan.logic;
+  const logic = filterClan[LOGIC];
 
   switch (logic) {
     case OR:
@@ -392,14 +393,14 @@ const missingClan = (filterClan, card) => {
 };
 
 const missingSectCrypt = (filter, card) => {
-  return missingRequirementsCheck(filter.logic, filter.value, card[SECT].toLowerCase(), false);
+  return missingRequirementsCheck(filter[LOGIC], filter.value, card[SECT].toLowerCase(), false);
 };
 
 const missingSectLibrary = (filter, card) => {
   const requirements = card[REQUIREMENT].toLowerCase();
   const hasNoTitleRequirement = !sects.some((sect) => requirements.includes(sect.toLowerCase()));
 
-  return missingRequirementsCheck(filter.logic, filter.value, requirements, hasNoTitleRequirement);
+  return missingRequirementsCheck(filter[LOGIC], filter.value, requirements, hasNoTitleRequirement);
 };
 
 const missingGroup = (filter, card) => {
@@ -427,7 +428,7 @@ const testType = (card, type) => {
 const missingType = (filter, card) => {
   const types = filter.value;
 
-  switch (filter.logic) {
+  switch (filter[LOGIC]) {
     case AND:
       return !types.every((type) => testType(card, type));
 

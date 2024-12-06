@@ -7,7 +7,7 @@ import {
   SearchFormButtonDel,
 } from '@/components';
 import { useApp } from '@/context';
-import { SECT, ANY, NOT_REQUIRED } from '@/constants';
+import { LOGIC, SECT, ANY, NOT_REQUIRED } from '@/constants';
 import sects from '@/assets/data/sectsList.json';
 
 const LibrarySearchFormSect = ({ value, searchForm, onChange }) => {
@@ -39,7 +39,7 @@ const LibrarySearchFormSect = ({ value, searchForm, onChange }) => {
             <div className="flex justify-end gap-1 px-1">
               <SearchFormButtonLogicToggle
                 name={name}
-                value={value.logic}
+                value={value[LOGIC]}
                 searchForm={searchForm}
               />
               {value.value.length == 1 ? (

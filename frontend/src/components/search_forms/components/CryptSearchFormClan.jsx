@@ -10,7 +10,7 @@ import {
 import imbuedClansList from '@/assets/data/imbuedClansList.json';
 import vampireClansList from '@/assets/data/vampireClansList.json';
 import { useApp } from '@/context';
-import { CLAN, ANY } from '@/constants';
+import { LOGIC, CLAN, ANY } from '@/constants';
 
 const CryptSearchFormClan = ({ value, searchForm, onChange }) => {
   const { playtestMode, isXWide, isMobile } = useApp();
@@ -40,7 +40,7 @@ const CryptSearchFormClan = ({ value, searchForm, onChange }) => {
             <div className="flex justify-end gap-1 px-1">
               <SearchFormButtonLogicToggle
                 name={name}
-                value={value.logic}
+                value={value[LOGIC]}
                 searchForm={searchForm}
               />
               {value.value.length == 1 ? (

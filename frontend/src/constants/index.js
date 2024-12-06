@@ -270,3 +270,7 @@ export const PATH = 'path';
 export const REGEX = 'regex';
 export const IN = 'in';
 export const LOGIC = 'logic';
+export const ICON = 'icon';
+export const DARK = 'dark';
+export const LIGHT = 'light';
+export const AUTO = 'auto';

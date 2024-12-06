@@ -7,7 +7,7 @@ import {
   SearchFormButtonDel,
 } from '@/components';
 import { useApp } from '@/context';
-import { SECT, ANY, NOT_REQUIRED } from '@/constants';
+import { LOGIC, SECT, ANY, NOT_REQUIRED } from '@/constants';
 import sects from '@/assets/data/sectsList.json';
 
 const CryptSearchFormSect = ({ value, searchForm, onChange }) => {
@@ -39,7 +39,7 @@ const CryptSearchFormSect = ({ value, searchForm, onChange }) => {
               <div>
                 <SearchFormButtonLogicToggle
                   name={name}
-                  value={value.logic}
+                  value={value[LOGIC]}
                   searchForm={searchForm}
                 />
               </div>

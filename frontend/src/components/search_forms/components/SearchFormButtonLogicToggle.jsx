@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from '@/components';
-import { TEXT, AND, NOT, OR, ONLY } from '@/constants';
+import { LOGIC, TEXT, AND, NOT, OR, ONLY } from '@/constants';
 import Exclamation from '@icons/exclamation.svg?react';
 
 const SearchFormButtonLogicToggle = ({ name, i, value, searchForm, withAnd, withOnly }) => {
@@ -8,25 +8,25 @@ const SearchFormButtonLogicToggle = ({ name, i, value, searchForm, withAnd, with
     if (name === TEXT) {
       switch (value) {
         case AND:
-          searchForm[name][i].logic = NOT;
+          searchForm[name][i][LOGIC] = NOT;
           break;
         case NOT:
-          searchForm[name][i].logic = AND;
+          searchForm[name][i][LOGIC] = AND;
           break;
       }
     } else {
       switch (value) {
         case OR:
-          searchForm[name].logic = withAnd ? AND : NOT;
+          searchForm[name][LOGIC] = withAnd ? AND : NOT;
           break;
         case AND:
-          searchForm[name].logic = NOT;
+          searchForm[name][LOGIC] = NOT;
           break;
         case NOT:
-          searchForm[name].logic = withOnly ? ONLY : OR;
+          searchForm[name][LOGIC] = withOnly ? ONLY : OR;
           break;
         case ONLY:
-          searchForm[name].logic = OR;
+          searchForm[name][LOGIC] = OR;
           break;
       }
     }
