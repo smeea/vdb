@@ -52,7 +52,7 @@ const DeckSelectorAndDisplay = () => {
       </div>
       {deck && addMode && (
         <>
-          {playtestMode || hasPlaytest ? (
+          {playtestMode || !hasPlaytest ? (
             <>
               <DeckCrypt deck={deck} inSearch />
               <DeckLibrary deck={deck} inSearch />
