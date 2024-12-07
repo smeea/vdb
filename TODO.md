@@ -2,8 +2,6 @@
 - Review TWDA radar: remove swarm, maybe replace?
 
 # FEATURES
-- Non-english images to use webp with fallback image
-- Paypal donations
 
 # FEATURES ON HOLD
 - TWD search with % V5-compatibility -> after BCP clarify V5

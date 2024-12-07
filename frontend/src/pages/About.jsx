@@ -216,14 +216,15 @@ const About = () => {
                 </div>
               }
             >
-              <div className="flex gap-1">
-                [
-                <div className="flex text-fgSecondary dark:text-fgSecondaryDark">
-                  MacOS/iOS Patreon warning
-                </div>
-                ]
+              <div className="flex gap-0.5">
+                [<div className="flex text-fgThird dark:text-fgThirdDark">MacOS/iOS warning</div>]
               </div>
             </ConditionalTooltipOrModal>
+          </div>
+
+          <div className="flex gap-1 max-sm:flex-col">
+            Paypal:
+            <a href="https://paypal.com/paypalme/smeea">paypal.com/paypalme/smeea</a>
           </div>
           <div className="flex gap-1 max-sm:flex-col">
             Bitcoin (BTC): <Btc />
