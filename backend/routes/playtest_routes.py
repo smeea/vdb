@@ -85,7 +85,6 @@ def report_export_route(target, id):
 
     reports = {}
     playtesters = User.query.filter_by(playtester=True).all()
-    # targets = ['general', 'cards', 'precons'] if target == 'all' else [target]
 
     for p in playtesters:
         # defaulting lang to English if not specified
@@ -100,10 +99,7 @@ def report_export_route(target, id):
             if not general:
                 continue
 
-            if "general" in reports:
-                reports[p.username] = general
-            else:
-                reports = {p.username: general}
+            reports[p.username] = general
 
         else:
             t = "cards" if target in ["crypt", "library"] else target
@@ -184,5 +180,6 @@ def update_profile_route():
     if "general" in request.json:
         profile["general"] = request.json["general"]
     current_user.playtest_profile = profile
+
     db.session.commit()
     return jsonify(success=True)
