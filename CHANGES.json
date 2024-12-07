@@ -1,6 +1,14 @@
 [
   {
-    "version": "2024-12-06/1",
+    "version": "2024-12-07",
+    "changes": [
+      "Add EC2024 Day 2 event (https://vdb.im/tournament_analyze/11669)",
+      "Add VTES 30th Anniversary event (https://vdb.im/tournament_analyze/11670)",
+      "Hot fixes"
+    ]
+  },
+  {
+    "version": "2024-12-06",
     "changes": [
       "Update rulings (there is a stunning progress in Rulings Database project https://github.com/vtes-biased/vtes-rulings thanks to Lionel Panhauleux and others who contribute!)",
       "Legacy Images mode will now show scans of actual crypt cards if they are available in legacy layout is available (means all from Jyhad to Bloodlines set)",
