@@ -8,7 +8,7 @@
     "preview": "vite preview",
     "stylelint": "npx stylelint \"src/assets/css/style.sass\"",
     "eslint": "npx eslint \"src/**/*.{js,jsx}\"",
-    "prettier": "npx prettier --write  \"src/**/*.{js,jsx}\""
+    "prettier": "npx prettier --write ."
   },
   "author": "Vadim Matveev",
   "license": "MIT",

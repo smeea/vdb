@@ -55,15 +55,11 @@
     "logic": "or"
   },
   "clan": {
-    "value": [
-      "any"
-    ],
+    "value": ["any"],
     "logic": "or"
   },
   "sect": {
-    "value": [
-      "any"
-    ],
+    "value": ["any"],
     "logic": "or"
   },
   "votes": "any",
@@ -121,16 +117,12 @@
     "path-power": false
   },
   "set": {
-    "value": [
-      "any"
-    ],
+    "value": ["any"],
     "print": false,
     "age": false
   },
   "precon": {
-    "value": [
-      "any"
-    ],
+    "value": ["any"],
     "only in": false,
     "first print": false
   },

@@ -12,15 +12,11 @@
     "84-90": false
   },
   "clan": {
-    "value": [
-      "any"
-    ],
+    "value": ["any"],
     "logic": "or"
   },
   "sect": {
-    "value": [
-      "any"
-    ],
+    "value": ["any"],
     "logic": "or"
   },
   "capacity": {
