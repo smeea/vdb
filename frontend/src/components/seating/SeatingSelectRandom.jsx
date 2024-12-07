@@ -1,5 +1,6 @@
 import React from 'react';
 import { Toggle, Hr, SeatingDeck, SeatingCustomDeckAdd } from '@/components';
+import { DECKID, NAME } from '@/constants';
 
 const SeatingSelectRandom = ({
   addCustomDeck,
@@ -28,7 +29,7 @@ const SeatingSelectRandom = ({
             {customDecks.slice(0, Math.ceil(customDecks.length / 3)).map((d, idx) => {
               return (
                 <SeatingDeck
-                  key={idx}
+                  key={d[NAME]}
                   i={idx}
                   deck={d}
                   toggle={toggleCustom}
@@ -44,7 +45,7 @@ const SeatingSelectRandom = ({
               .map((d, idx) => {
                 return (
                   <SeatingDeck
-                    key={idx}
+                    key={d[NAME]}
                     i={Math.ceil(customDecks.length / 3) + idx}
                     deck={d}
                     toggle={toggleCustom}
@@ -58,7 +59,7 @@ const SeatingSelectRandom = ({
             {customDecks.slice(Math.ceil((customDecks.length * 2) / 3)).map((d, idx) => {
               return (
                 <SeatingDeck
-                  key={idx}
+                  key={d[NAME]}
                   i={Math.ceil((customDecks.length * 2) / 3) + idx}
                   deck={d}
                   toggle={toggleCustom}
@@ -91,7 +92,7 @@ const SeatingSelectRandom = ({
             {standardDecks.slice(0, Math.ceil(standardDecks.length / 3)).map((d, idx) => {
               return (
                 <SeatingDeck
-                  key={idx}
+                  key={d[DECKID]}
                   i={idx}
                   deck={d}
                   toggle={toggleStandard}
@@ -106,7 +107,7 @@ const SeatingSelectRandom = ({
               .map((d, idx) => {
                 return (
                   <SeatingDeck
-                    key={idx}
+                    key={d[DECKID]}
                     i={Math.ceil(standardDecks.length / 3) + idx}
                     deck={d}
                     toggle={toggleStandard}
@@ -119,7 +120,7 @@ const SeatingSelectRandom = ({
             {standardDecks.slice(Math.ceil((standardDecks.length * 2) / 3)).map((d, idx) => {
               return (
                 <SeatingDeck
-                  key={idx}
+                  key={d[DECKID]}
                   i={Math.ceil((standardDecks.length * 2) / 3) + idx}
                   deck={d}
                   toggle={toggleStandard}

@@ -12,9 +12,9 @@ const TwdSearchFormLibraryTotal = ({ value, onChange }) => {
         <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Library Size:</div>
       </div>
       <div className="flex w-3/4 justify-end">
-        {options.map((i, idx) => {
+        {options.map((i) => {
           return (
-            <ButtonGroup isSelected={value[i]} key={idx} name={name} onClick={onChange} value={i}>
+            <ButtonGroup isSelected={value[i]} key={i} name={name} onClick={onChange} value={i}>
               {i}
             </ButtonGroup>
           );

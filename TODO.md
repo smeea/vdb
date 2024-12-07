@@ -4,8 +4,6 @@
 # FEATURES
 - Non-english images to use webp with fallback image
 - Paypal donations
-- Add Warsaw Day 2 event
-- Add Warsaw 30th event
 
 # FEATURES ON HOLD
 - TWD search with % V5-compatibility -> after BCP clarify V5

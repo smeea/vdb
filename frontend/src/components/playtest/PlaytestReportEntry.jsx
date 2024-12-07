@@ -50,16 +50,16 @@ const PlaytestReportEntry = ({ value }) => {
       {Object.keys(value)
         .sort((a, b) => value[a][TEXT] < value[b][TEXT])
         .sort((a, b) => value[a][SCORE] < value[b][SCORE])
-        .map((id, idx) => {
+        .map((id) => {
           return (
-            <div key={id} className="flex flex-col gap-2 sm:gap-3 print:break-inside-avoid">
+            <div key={id} className="group flex flex-col gap-2 sm:gap-3 print:break-inside-avoid">
               <Report
                 id={id}
                 text={value[id][TEXT]}
                 score={value[id][SCORE]}
                 isPlayed={value[id].isPlayed}
               />
-              {idx + 1 < Object.keys(value).length && <Hr />}
+              <Hr className="group-last:hidden" />
             </div>
           );
         })}

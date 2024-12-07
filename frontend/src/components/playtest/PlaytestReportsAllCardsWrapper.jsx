@@ -22,14 +22,13 @@ const PlaytestReportsAllCardsWrapper = ({ reports, target, sortMethod, maxSameSc
 
   return (
     <FlexGapped className="flex-col">
-      {products.map((i, idx) => {
+      {products.map((i) => {
         return (
           <PlaytestReportsAllCardOrPrecon
             key={i[ID]}
             product={i}
             report={reports?.[i[ID]]}
             maxSameScore={maxSameScore}
-            withHr={idx + 1 < products.length}
           />
         );
       })}

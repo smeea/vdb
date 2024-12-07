@@ -31,9 +31,9 @@ const CryptSearchFormTitles = ({ value, onChange }) => {
             ['Baron', BARON],
             ['1 vote (titled)', VOTE_1],
             ['2 votes (titled)', VOTE_2],
-          ].map((i, index) => (
+          ].map((i) => (
             <Checkbox
-              key={index}
+              key={i[1]}
               name="titles"
               value={i[1]}
               label={i[0]}
@@ -51,9 +51,9 @@ const CryptSearchFormTitles = ({ value, onChange }) => {
             ['Regent', REGENT],
             ['Magaji', MAGAJI],
             ['Non-titled', NON_TITLED],
-          ].map((i, index) => (
+          ].map((i) => (
             <Checkbox
-              key={index}
+              key={i[1]}
               name="titles"
               value={i[1]}
               label={i[0]}

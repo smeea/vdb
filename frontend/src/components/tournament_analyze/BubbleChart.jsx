@@ -41,8 +41,8 @@ const BubbleChart = ({ data, name, width, titleWidth, refLine }) => {
         isAnimationActive={false}
       />
       <Scatter data={data}>
-        {data.map((d, idx) => (
-          <Cell key={`${name}-${idx}`} fill={d[IN_SEARCH] ? '#ff4040' : '#8884d8'} />
+        {data.map((d) => (
+          <Cell key={d[RANK]} fill={d[IN_SEARCH] ? '#ff4040' : '#8884d8'} />
         ))}
       </Scatter>
     </ScatterChart>

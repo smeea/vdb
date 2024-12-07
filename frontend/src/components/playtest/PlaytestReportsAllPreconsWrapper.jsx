@@ -15,7 +15,7 @@ const PlaytestReportsAllPreconsWrapper = ({ reports, maxSameScore }) => {
 
   return (
     <FlexGapped className="flex-col">
-      {products.map((i, idx) => {
+      {products.map((i) => {
         const id = i[DECKID].replace(`${PLAYTEST}:`, '');
         return (
           <PlaytestReportsAllCardOrPrecon
@@ -23,7 +23,6 @@ const PlaytestReportsAllPreconsWrapper = ({ reports, maxSameScore }) => {
             product={i}
             report={reports?.[id]}
             maxSameScore={maxSameScore}
-            withHr={idx + 1 < products.length}
             isPrecon
           />
         );

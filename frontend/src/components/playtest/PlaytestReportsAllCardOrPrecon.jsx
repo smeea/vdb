@@ -11,7 +11,7 @@ import {
 import { useApp } from '@/context';
 import { SCORE, NAME } from '@/constants';
 
-const PlaytestReportsAllCardOrPrecon = ({ product, isPrecon, report, withHr, maxSameScore }) => {
+const PlaytestReportsAllCardOrPrecon = ({ product, isPrecon, report, maxSameScore }) => {
   const { isMobile } = useApp();
 
   const q = report && Object.keys(report).length;
@@ -74,7 +74,7 @@ const PlaytestReportsAllCardOrPrecon = ({ product, isPrecon, report, withHr, max
         </div>
         {report && <PlaytestReportEntry value={report} />}
       </FlexGapped>
-      {withHr && <Hr isThick className="print:hidden" />}
+      <Hr isThick className="last:hidden print:hidden" />
     </>
   );
 };

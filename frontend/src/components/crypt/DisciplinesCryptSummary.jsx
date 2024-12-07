@@ -19,9 +19,9 @@ const DisciplinesCryptSummary = ({ disciplinesDetailed }) => {
       {withDisciplines &&
         disciplinesSorted
           .filter((d) => !virtuesList[d] && disciplinesDetailed[d][0] > 0)
-          .map((d, idx) => {
+          .map((d) => {
             return (
-              <div key={idx} className="inline-block whitespace-nowrap pr-5">
+              <div key={d} className="inline-block whitespace-nowrap pr-5">
                 <div className="flex items-center gap-1">
                   <ResultDisciplineImage
                     title={`${d} Superior | Inferior`}
@@ -38,9 +38,9 @@ const DisciplinesCryptSummary = ({ disciplinesDetailed }) => {
       {withVirtues &&
         disciplinesSorted
           .filter((d) => virtuesList[d] && disciplinesDetailed[d][0] > 0)
-          .map((d, idx) => {
+          .map((d) => {
             return (
-              <div key={idx} className="inline-block whitespace-nowrap pr-5">
+              <div key={d} className="inline-block whitespace-nowrap pr-5">
                 <div className="flex items-center gap-1">
                   <ResultDisciplineImage value={d} />
                   <div className="flex">{disciplinesDetailed[d][1]}</div>

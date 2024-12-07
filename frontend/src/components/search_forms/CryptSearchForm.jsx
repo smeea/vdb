@@ -144,7 +144,6 @@ const CryptSearchForm = () => {
   }, [preresults]);
 
   const handleTextCheckboxesChange = (event) => {
-    console.log(event);
     const { name, value } = event.currentTarget;
 
     if ([NAME, TEXT].includes(value)) {

@@ -16,12 +16,12 @@ const ResultLibraryDisciplines = ({ value }) => {
     const disciplines = value.split('/');
     return (
       <div className="flex min-w-[55px] flex-wrap items-center justify-center">
-        {disciplines.map((d, idx) => {
+        {disciplines.map((d) => {
           return (
-            <React.Fragment key={idx}>
+            <div className="group flex items-center" key={d}>
               <ResultDisciplineImage value={d} />
-              {idx + 1 < disciplines.length && '/'}
-            </React.Fragment>
+              <div className="inline group-last:hidden">/</div>
+            </div>
           );
         })}
       </div>

@@ -29,10 +29,8 @@ import vampireClansList from '@/assets/data/vampireClansList.json';
 
 const TwdCardsHistoryCrypt = ({ cards, players }) => {
   const { isMobile } = useApp();
-
   const [clan, setClan] = useState(ALL);
-
-  const [sortMethod, setSortMethod] = useState('Name');
+  const [sortMethod, setSortMethod] = useState([NAME]);
   const sortMethods = {
     [NAME]: 'N',
     [PLAYER]: 'P',

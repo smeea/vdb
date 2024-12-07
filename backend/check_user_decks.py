@@ -28,4 +28,4 @@ with app.app_context():
             print(f"{deck.name} - https://vdb.im/decks/{deck.deckid}")
             for card, q in deck.cards.items():
                 if card > 200000:
-                    print(f"{q} - {cardbase[str(card)]['Name']}")
+                    print(f"{q} - {cardbase[str(card)]['name']}")

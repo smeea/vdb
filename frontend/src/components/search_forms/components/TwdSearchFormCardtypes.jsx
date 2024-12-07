@@ -19,11 +19,54 @@ import {
   TYPE_RETAINER,
 } from '@/constants';
 
-const TwdSearchFormCardtypes = ({ value, onChange }) => {
-  const [isManual, setIsManual] = useState();
+const TypeForm = ({ isManual, handleManual, value, name, options, onChange }) => {
   const { isXWide } = useApp();
   const maxMenuHeight = isXWide ? 500 : 350;
-  const name = CARDTYPES;
+  const [min, max] = value == ANY ? [0, 100] : value.split(',');
+
+  return (
+    <div className="flex items-center gap-1">
+      <div className="flex w-1/6 justify-center">
+        <ResultLibraryTypeImage value={name} size="xl" />
+      </div>
+      <div className="w-5/6">
+        {isManual ? (
+          <div className="flex items-center justify-between gap-1">
+            <input
+              className="min-h-[42px] w-full rounded border border-borderSecondary bg-bgPrimary text-center text-fgPrimary outline-1 outline-bgCheckboxSelected focus:outline dark:border-borderSecondaryDark dark:bg-bgPrimaryDark dark:text-fgPrimaryDark dark:outline-bgCheckboxSelectedDark"
+              type="number"
+              value={min}
+              name={name.toLowerCase()}
+              id="min"
+              onChange={handleManual}
+            />
+            -
+            <input
+              className="min-h-[42px] w-full rounded border border-borderSecondary bg-bgPrimary text-center text-fgPrimary outline-1 outline-bgCheckboxSelected focus:outline dark:border-borderSecondaryDark dark:bg-bgPrimaryDark dark:text-fgPrimaryDark dark:outline-bgCheckboxSelectedDark"
+              type="number"
+              name={name.toLowerCase()}
+              id="max"
+              value={max}
+              onChange={handleManual}
+            />
+          </div>
+        ) : (
+          <Select
+            options={options}
+            isSearchable={false}
+            name={CARDTYPES}
+            maxMenuHeight={maxMenuHeight}
+            value={options.find((obj) => obj.value === value)}
+            onChange={onChange}
+          />
+        )}
+      </div>
+    </div>
+  );
+};
+
+const TwdSearchFormCardtypes = ({ value, onChange }) => {
+  const [isManual, setIsManual] = useState(false);
   const types = [
     [TYPE_MASTER, [15, 25, 35]],
     [TYPE_ACTION, [0, 5, 15]],
@@ -55,10 +98,8 @@ const TwdSearchFormCardtypes = ({ value, onChange }) => {
     onChange({ name: e.target[NAME], value: `${min},${max}` }, { name: CARDTYPES });
   };
 
-  const formsLeft = [];
-  const formsRight = [];
-
-  types.map((i, idx) => {
+  const typesOptions = {};
+  types.forEach((i) => {
     const options = [
       {
         value: ANY,
@@ -113,54 +154,7 @@ const TwdSearchFormCardtypes = ({ value, onChange }) => {
         });
       });
 
-    const [min, max] =
-      value[i[0].toLowerCase()] == ANY ? [0, 100] : value[i[0].toLowerCase()].split(',');
-
-    const form = (
-      <div className="flex items-center gap-1" key={i[0]}>
-        <div className="flex w-1/6 justify-center">
-          <ResultLibraryTypeImage value={i[0]} size="xl" />
-        </div>
-        <div className="w-5/6">
-          {isManual ? (
-            <div className="flex items-center justify-between gap-1">
-              <input
-                className="min-h-[42px] w-full rounded border border-borderSecondary bg-bgPrimary text-center text-fgPrimary outline-1 outline-bgCheckboxSelected focus:outline dark:border-borderSecondaryDark dark:bg-bgPrimaryDark dark:text-fgPrimaryDark dark:outline-bgCheckboxSelectedDark"
-                type="number"
-                value={min}
-                name={i[0].toLowerCase()}
-                id="min"
-                onChange={handleManual}
-              />
-              -
-              <input
-                className="min-h-[42px] w-full rounded border border-borderSecondary bg-bgPrimary text-center text-fgPrimary outline-1 outline-bgCheckboxSelected focus:outline dark:border-borderSecondaryDark dark:bg-bgPrimaryDark dark:text-fgPrimaryDark dark:outline-bgCheckboxSelectedDark"
-                type="number"
-                name={i[0].toLowerCase()}
-                id="max"
-                value={max}
-                onChange={handleManual}
-              />
-            </div>
-          ) : (
-            <Select
-              options={options}
-              isSearchable={false}
-              name={name}
-              maxMenuHeight={maxMenuHeight}
-              value={options.find((obj) => obj.value === value[i[0].toLowerCase()])}
-              onChange={onChange}
-            />
-          )}
-        </div>
-      </div>
-    );
-
-    if (idx < 5) {
-      formsLeft.push(form);
-    } else {
-      formsRight.push(form);
-    }
+    typesOptions[i[0]] = options;
   });
 
   return (
@@ -174,8 +168,38 @@ const TwdSearchFormCardtypes = ({ value, onChange }) => {
         </Toggle>
       </div>
       <div className="flex gap-6">
-        <div className="flex w-1/2 flex-col gap-1">{formsLeft}</div>
-        <div className="flex w-1/2 flex-col gap-1">{formsRight}</div>
+        <div className="flex w-1/2 flex-col gap-1">
+          {[TYPE_MASTER, TYPE_ACTION, TYPE_POLITICAL_ACTION, TYPE_ALLY, TYPE_EQUIPMENT].map((i) => {
+            return (
+              <TypeForm
+                key={i}
+                isManual={isManual}
+                handleManual={handleManual}
+                onChange={onChange}
+                name={i}
+                value={value[i.toLowerCase()]}
+                options={typesOptions[i]}
+              />
+            );
+          })}
+        </div>
+        <div className="flex w-1/2 flex-col gap-1">
+          {[TYPE_RETAINER, TYPE_ACTION_MODIFIER, TYPE_REACTION, TYPE_COMBAT, TYPE_EVENT].map(
+            (i) => {
+              return (
+                <TypeForm
+                  key={i}
+                  isManual={isManual}
+                  handleManual={handleManual}
+                  onChange={onChange}
+                  name={i}
+                  value={value[i.toLowerCase()]}
+                  options={typesOptions[i]}
+                />
+              );
+            },
+          )}
+        </div>
       </div>
     </div>
   );

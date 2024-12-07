@@ -14,11 +14,11 @@ const PlaytestReportsAllGeneral = ({ reports }) => {
         {reports &&
           Object.entries(reports)
             .filter((i) => i[1])
-            .map((i, idx) => {
+            .map((i) => {
               const name = i[0];
               const text = i[1];
               return (
-                <React.Fragment key={name}>
+                <div className="group flex flex-col gap-3" key={name}>
                   <div className="flex flex-col gap-3">
                     {!hidePlaytestNames && (
                       <div className="flex w-full items-center text-fgName dark:text-fgNameDark print:dark:text-fgName">
@@ -31,8 +31,8 @@ const PlaytestReportsAllGeneral = ({ reports }) => {
                       ))}
                     </div>
                   </div>
-                  {idx + 1 < Object.keys(reports).length && <Hr />}
-                </React.Fragment>
+                  <Hr className="group-last:hidden" />
+                </div>
               );
             })}
       </div>

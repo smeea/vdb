@@ -47,11 +47,11 @@ const AnalyzeTournamentResultTotal = ({ results, sortMethods, sortMethod, setSor
           <div className="inline px-2 font-bold text-fgSecondary dark:text-fgSecondaryDark">
             Places:
           </div>
-          {Object.keys(byRank).map((i, idx) => {
+          {Object.keys(byRank).map((i) => {
             return (
-              <div key={i} className="inline-block whitespace-nowrap px-2">
+              <div key={i} className="group inline-block whitespace-nowrap px-2">
                 {i}
-                {idx < Object.keys(byRank).length - 1 && ','}
+                <div className="inline group-last:hidden">,</div>
               </div>
             );
           })}

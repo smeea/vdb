@@ -46,7 +46,6 @@ const SearchAdditionalFormsText = ({ value, onChange, onChangeOptions, searchFor
               </div>
               <div className="flex items-center justify-end gap-4">
                 {options.map((opt) => {
-                  console.log(value);
                   return (
                     <Checkbox
                       className="text-sm"

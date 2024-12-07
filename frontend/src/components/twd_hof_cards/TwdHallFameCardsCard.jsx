@@ -11,6 +11,8 @@ import { TWD_DATE, ID, DECKID, RELEASE_DATE } from '@/constants';
 const TwdHallFameCardsCard = ({ card, idx, handleClick }) => {
   const { isMobile } = useApp();
 
+  console.log(idx);
+
   return (
     <tr className="row-bg border-y border-bgSecondary dark:border-bgSecondaryDark">
       {card[ID] > 200000 ? (

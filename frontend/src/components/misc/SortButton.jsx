@@ -19,9 +19,9 @@ const SortButton = ({ sortMethod, setSortMethod, sortMethods, noText, className 
         text={noText ? null : capitalize(sortMethods[sortMethod])}
       />
       <MenuItems>
-        {Object.keys(sortMethods).map((i, index) => {
+        {Object.keys(sortMethods).map((i) => {
           return (
-            <MenuItem key={index} onClick={() => setSortMethod(i)}>
+            <MenuItem key={i} onClick={() => setSortMethod(i)}>
               Sort by {capitalize(i)}
             </MenuItem>
           );

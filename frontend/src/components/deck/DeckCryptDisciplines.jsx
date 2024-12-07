@@ -9,9 +9,9 @@ const DeckCryptDisciplines = ({ value, disciplinesSet, keyDisciplines }) => {
     <table>
       <tbody>
         <tr>
-          {disciplinesSet.slice(0, keyDisciplines).map((d, index) => {
+          {disciplinesSet.slice(0, keyDisciplines).map((d) => {
             return (
-              <td className="min-w-[24px] max-w-[24px] sm:min-w-[28px] sm:max-w-[28px]" key={index}>
+              <td className="min-w-[24px] max-w-[24px] sm:min-w-[28px] sm:max-w-[28px]" key={d}>
                 {value?.[d] && (
                   <div className="flex items-center justify-center">
                     <ResultDisciplineImage
@@ -27,27 +27,22 @@ const DeckCryptDisciplines = ({ value, disciplinesSet, keyDisciplines }) => {
           {disciplinesSet
             .slice(keyDisciplines)
             .toSorted()
-            .map((d, index) => {
-              if (value[d]) {
-                return (
-                  <td
-                    className="min-w-[24px] max-w-[24px] sm:min-w-[28px] sm:max-w-[28px]"
-                    key={index}
-                  >
-                    {value[d] && (
-                      <div className="flex items-center justify-center">
-                        <ResultDisciplineImage
-                          size={isMobile ? 'sm' : 'md'}
-                          value={d}
-                          isSuperior={value[d] === 2}
-                        />
-                      </div>
-                    )}
-                  </td>
-                );
-              } else {
-                return null;
-              }
+            .map((d) => {
+              if (!value[d]) return null;
+
+              return (
+                <td className="min-w-[24px] max-w-[24px] sm:min-w-[28px] sm:max-w-[28px]" key={d}>
+                  {value[d] && (
+                    <div className="flex items-center justify-center">
+                      <ResultDisciplineImage
+                        size={isMobile ? 'sm' : 'md'}
+                        value={d}
+                        isSuperior={value[d] === 2}
+                      />
+                    </div>
+                  )}
+                </td>
+              );
             })}
         </tr>
       </tbody>
