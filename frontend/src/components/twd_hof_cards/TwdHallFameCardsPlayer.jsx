@@ -32,7 +32,7 @@ const TwdHallFameCardsPlayer = ({ name, cards }) => {
     librarySearchSort,
     changeLibrarySearchSort,
     isMobile,
-    isWide,
+    isNarrow,
   } = useApp();
 
   const cryptSorted = useMemo(
@@ -130,8 +130,9 @@ const TwdHallFameCardsPlayer = ({ name, cards }) => {
               {!isMobile && <th />}
               <th />
               <th />
-              {isWide && <th />}
-              {isWide && <th />}
+              {!isNarrow && <th />}
+              {!isNarrow && <th />}
+              {!isNarrow && <th />}
               {!isMobile && (
                 <th className="text-center font-bold" title="First Print Date">
                   Print
