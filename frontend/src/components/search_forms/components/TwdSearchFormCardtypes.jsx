@@ -19,7 +19,7 @@ import {
   TYPE_RETAINER,
 } from '@/constants';
 
-const TypeForm = ({ isManual, handleManual, value, name, options, onChange }) => {
+const TypeForm = ({ isManual, handleManual, value = ANY, name, options, onChange }) => {
   const { isXWide } = useApp();
   const maxMenuHeight = isXWide ? 500 : 350;
   const [min, max] = value == ANY ? [0, 100] : value.split(',');
