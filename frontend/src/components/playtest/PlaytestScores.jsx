@@ -5,7 +5,7 @@ import StarHalf from '@icons/star-half.svg?react';
 import StarFill from '@icons/star-fill.svg?react';
 import { useApp } from '@/context';
 
-const PlaytestScores = ({ value, handleClick, isSmall }) => {
+const PlaytestScores = ({ value, handleClick, disabled, isSmall }) => {
   const { isMobile } = useApp();
   const SIZE = isSmall ? (isMobile ? '16' : '20') : '24';
 
@@ -28,8 +28,8 @@ const PlaytestScores = ({ value, handleClick, isSmall }) => {
         return (
           <div
             key={i}
-            className={twMerge('flex print:max-w-[14px]', handleClick && 'cursor-pointer')}
-            onClick={handleClick ? () => handleClick(i + 1) : null}
+            className={twMerge('flex print:max-w-[14px]', !disabled && 'cursor-pointer')}
+            onClick={() => (disabled ? null : handleClick(i + 1))}
             title={titles[i]}
           >
             {i + 0.5 == value ? (

@@ -8,6 +8,7 @@
 - Deck details show % V5-compatibility -> after BCP clarify V5
 - Indicator of inventory-perfect decks in selector -> performance issue for many decks
 - Legacy style in PDF select card -> all legacy to be available
+- Draft Cube support -> when draft cube info is available
 
 # TECH IMPROVEMENTS
 - Update to React 19 (useOptimistic, useMemo/useCallback, useContext, use, ref)

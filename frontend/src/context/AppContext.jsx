@@ -489,8 +489,7 @@ export const AppProvider = ({ children }) => {
         });
       }
       decksData[deckid][IS_AUTHOR] = true;
-      decksData[deckid][MASTER] =
-        decksData[deckid][MASTER] !== '' ? decksData[deckid][MASTER] : null;
+      decksData[deckid][MASTER] = decksData[deckid][MASTER] || null;
       decksData[deckid][IS_BRANCHES] = !!(
         decksData[deckid][MASTER] || decksData[deckid][BRANCHES]?.length > 0
       );

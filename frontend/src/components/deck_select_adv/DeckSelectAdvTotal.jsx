@@ -7,7 +7,6 @@ import { TAGS, DECKS } from '@/constants';
 const DeckSelectAdvTotal = ({ sortMethod, setSortMethod, tagsFilter, setTagsFilter }) => {
   const decks = useSnapshot(deckStore)[DECKS];
   const byTags = {};
-  let total = 0;
 
   const handleClick = (tag) => {
     if (!tagsFilter.includes(tag)) {
@@ -26,13 +25,12 @@ const DeckSelectAdvTotal = ({ sortMethod, setSortMethod, tagsFilter, setTagsFilt
           byTags[tag] = 1;
         }
       });
-      total += 1;
     }
   });
 
   return (
     <div className="flex items-center justify-between bg-bgSecondary dark:bg-bgSecondaryDark">
-      <div className="whitespace-nowrap p-2 font-bold">TOTAL: {total}</div>
+      <div className="whitespace-nowrap p-2 font-bold">TOTAL: {Object.keys(decks).length}</div>
       <div>
         {Object.keys(byTags)
           .toSorted()

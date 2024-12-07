@@ -24,7 +24,7 @@ const Report = ({ id, text, score, isPlayed }) => {
           )}
         </div>
         <div className="flex items-center justify-end gap-2 sm:gap-4">
-          <PlaytestScores value={score} isSmall />
+          <PlaytestScores value={score} isSmall disabled />
           <div
             className={isPlayed ? 'print:text-fgPrimary' : 'text-fgRed dark:text-fgRedDark'}
             title={`Was ${isPlayed ? '' : 'not '}seen in play`}
