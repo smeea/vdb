@@ -37,7 +37,7 @@ const DeckDrawLibraryTable = ({
             >
               <ResultLibraryTableRowCommon
                 card={card}
-                handleClick={() => handleClick(idx)}
+                handleClick={() => handleClick(card)}
                 shouldShowModal={shouldShowModal}
               />
               {(!ashHeap || !isMobile) && (

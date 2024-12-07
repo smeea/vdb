@@ -24,17 +24,17 @@ const PlaytestScores = ({ value, handleClick, isSmall }) => {
 
   return (
     <div className="flex gap-1.5 px-1 sm:gap-2 print:dark:text-fgPrimary">
-      {Array.apply(null, Array(10)).map((_, idx) => {
+      {Array.from(Array(10).keys()).map((i) => {
         return (
           <div
-            key={idx}
+            key={i}
             className={twMerge('flex print:max-w-[14px]', handleClick && 'cursor-pointer')}
-            onClick={handleClick ? () => handleClick(idx + 1) : null}
-            title={titles[idx]}
+            onClick={handleClick ? () => handleClick(i + 1) : null}
+            title={titles[i]}
           >
-            {idx + 0.5 == value ? (
+            {i + 0.5 == value ? (
               <StarHalf width={SIZE} height={SIZE} />
-            ) : idx < value ? (
+            ) : i < value ? (
               <StarFill width={SIZE} height={SIZE} />
             ) : (
               <Star width={SIZE} height={SIZE} />

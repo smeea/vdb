@@ -148,11 +148,10 @@ const TwdHallFameCardsPlayer = ({ name, cards }) => {
             </tr>
           </thead>
           <tbody>
-            {cryptSorted.map((card, idx) => {
+            {cryptSorted.map((card) => {
               return (
                 <TwdHallFameCardsCard
                   key={card[ID]}
-                  idx={idx}
                   card={card}
                   handleClick={handleModalCardOpen}
                 />
@@ -194,11 +193,10 @@ const TwdHallFameCardsPlayer = ({ name, cards }) => {
             </tr>
           </thead>
           <tbody>
-            {librarySorted.map((card, idx) => {
+            {librarySorted.map((card) => {
               return (
                 <TwdHallFameCardsCard
                   key={card[ID]}
-                  idx={idx + cryptSorted.length}
                   card={card}
                   handleClick={handleModalCardOpen}
                 />

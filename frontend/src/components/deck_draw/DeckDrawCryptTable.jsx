@@ -41,7 +41,7 @@ const DeckDrawCryptTable = ({
               <ResultCryptTableRowCommon
                 card={card}
                 shouldShowModal={shouldShowModal}
-                handleClick={() => handleClick(idx)}
+                handleClick={() => handleClick(card)}
                 keyDisciplines={keyDisciplines}
                 disciplinesSet={disciplinesSet}
                 inDeck

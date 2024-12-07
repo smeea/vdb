@@ -8,7 +8,7 @@ import {
 } from '@/components';
 import { TWD_DATE, ID, DECKID, RELEASE_DATE } from '@/constants';
 
-const TwdHallFameCardsCard = ({ card, idx, handleClick }) => {
+const TwdHallFameCardsCard = ({ card, handleClick }) => {
   const { isMobile } = useApp();
 
   return (
@@ -19,11 +19,11 @@ const TwdHallFameCardsCard = ({ card, idx, handleClick }) => {
         <ResultLibraryTableRowCommon card={card} handleClick={handleClick} noBurn={isMobile} />
       )}
       {!isMobile && (
-        <td className="min-w-[60px] text-center" onClick={() => handleClick(idx)}>
+        <td className="min-w-[60px] text-center" onClick={() => handleClick(card)}>
           {card[RELEASE_DATE].slice(0, 4)}
         </td>
       )}
-      <td className="min-w-[60px] text-center" onClick={() => handleClick(idx)}>
+      <td className="min-w-[60px] text-center" onClick={() => handleClick(card)}>
         {card[TWD_DATE].slice(0, 4)}
       </td>
       <td className="min-w-[25px] text-center sm:min-w-[60px]">
