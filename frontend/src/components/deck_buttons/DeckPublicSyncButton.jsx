@@ -14,17 +14,12 @@ const DeckPublicSyncButton = ({ deck }) => {
 
   const handleClick = () => {
     setIsLoading(true);
-    deckServices
-      .publicSync(deck, decks)
-      .catch(() => {
-        // TODO add catch error
-      })
-      .finally(() => {
-        setIsLoading(false);
-        setShowConfirmation(false);
-        setShowMenuButtons(false);
-        setShowFloatingButtons(true);
-      });
+    deckServices.publicSync(deck, decks).finally(() => {
+      setIsLoading(false);
+      setShowConfirmation(false);
+      setShowMenuButtons(false);
+      setShowFloatingButtons(true);
+    });
   };
 
   return (

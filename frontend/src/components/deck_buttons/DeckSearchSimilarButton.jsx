@@ -5,6 +5,7 @@ import SymmetryVertical from '@icons/symmetry-vertical.svg?react';
 import { MenuItems, MenuItem, MenuButton } from '@/components';
 import { useApp, clearSearchForm, searchTwdForm, searchPdaForm } from '@/context';
 import { DECKID, TWD, PDA } from '@/constants';
+const SIMILAR = 'similar';
 
 const DeckSearchSimilarButton = ({ deck }) => {
   const { isDesktop, setShowFloatingButtons, setShowMenuButtons } = useApp();
@@ -12,12 +13,9 @@ const DeckSearchSimilarButton = ({ deck }) => {
 
   const handleClick = (target) => {
     clearSearchForm(target);
-    if (target === PDA) {
-      searchPdaForm.similar = deck[DECKID];
-    } else {
-      searchTwdForm.similar = deck[DECKID];
-    }
-    navigate(`/${target}?q={"similar"%3A"${deck[DECKID]}"}`);
+    const searchForm = target == PDA ? searchPdaForm : searchTwdForm;
+    searchForm[SIMILAR] = deck[DECKID];
+    navigate(`/${target}?q={"${SIMILAR}"%3A"${deck[DECKID]}"}`);
     setShowMenuButtons(false);
     setShowFloatingButtons(true);
   };

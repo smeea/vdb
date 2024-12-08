@@ -8,17 +8,22 @@ import { deckServices } from '@/services';
 import { NAME, DECKID, BRANCH_NAME, DECKS } from '@/constants';
 
 const DeckBranchDeleteButton = ({ deck, noText }) => {
-  const { isDesktop, setShowMenuButtons } = useApp();
+  const { isDesktop, setShowFloatingButtons, setShowMenuButtons } = useApp();
   const [showConfirmation, setShowConfirmation] = useState(false);
   const navigate = useNavigate();
   const decks = useSnapshot(deckStore)[DECKS];
 
   const handleClick = () => {
-    deckServices.branchDelete(deck[DECKID], decks).then((deckid) => {
-      navigate(`/decks/${deckid}`);
-      setShowMenuButtons(false);
-      setShowConfirmation(false);
-    });
+    deckServices
+      .branchDelete(deck[DECKID], decks)
+      .then((deckid) => {
+        navigate(`/decks/${deckid}`);
+      })
+      .finally(() => {
+        setShowConfirmation(false);
+        setShowMenuButtons(false);
+        setShowFloatingButtons(true);
+      });
   };
 
   return (

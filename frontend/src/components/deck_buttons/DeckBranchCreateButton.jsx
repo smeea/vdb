@@ -7,15 +7,20 @@ import { deckServices } from '@/services';
 import { useApp } from '@/context';
 
 const DeckBranchCreateButton = ({ deck }) => {
-  const { isDesktop, setShowMenuButtons } = useApp();
+  const { isDesktop, setShowFloatingButtons, setShowMenuButtons } = useApp();
   const navigate = useNavigate();
   const [showSelect, setShowSelect] = useState();
 
   const handleClick = (branch) => {
-    deckServices.branchCreate(deck, branch).then((newDeckid) => {
-      navigate(`/decks/${newDeckid}`);
-      setShowMenuButtons(false);
-    });
+    deckServices
+      .branchCreate(deck, branch)
+      .then((newDeckid) => {
+        navigate(`/decks/${newDeckid}`);
+      })
+      .finally(() => {
+        setShowMenuButtons(false);
+        setShowFloatingButtons(true);
+      });
   };
 
   return (

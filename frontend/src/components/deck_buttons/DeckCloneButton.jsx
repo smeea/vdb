@@ -6,19 +6,24 @@ import { deckServices } from '@/services';
 import { ButtonIconed } from '@/components';
 
 const DeckCloneButton = ({ deck, inTwdPda, noText }) => {
-  const { isDesktop, setShowMenuButtons } = useApp();
+  const { isDesktop, setShowFloatingButtons, setShowMenuButtons } = useApp();
   const navigate = useNavigate();
   const [success, setSuccess] = useState(false);
 
   const handleClick = () => {
-    deckServices.deckClone(deck).then((deckid) => {
-      if (!inTwdPda) navigate(`/decks/${deckid}`);
-      setSuccess(true);
-      setTimeout(() => {
-        setSuccess(false);
+    deckServices
+      .deckClone(deck)
+      .then((deckid) => {
+        if (!inTwdPda) navigate(`/decks/${deckid}`);
+        setSuccess(true);
+        setTimeout(() => {
+          setSuccess(false);
+        }, 1000);
+      })
+      .finally(() => {
         setShowMenuButtons(false);
-      }, 1000);
-    });
+        setShowFloatingButtons(true);
+      });
   };
 
   return (

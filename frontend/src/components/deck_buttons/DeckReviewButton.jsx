@@ -19,6 +19,8 @@ const DeckReviewButton = ({ deck }) => {
       })
       .then((deckid) => {
         navigate(`/review/${deckid}`);
+      })
+      .finally(() => {
         setShowMenuButtons(false);
         setShowFloatingButtons(true);
       });

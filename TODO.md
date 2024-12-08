@@ -19,7 +19,6 @@
   - useContext to use
   - use can be conditional => useApp can be updated (use in utils instead of props drilling, update hooks)
 - Update to TailwindCSS 4
+  - isWidth to container queries
 - Migrate to useSWR (test on playtest reports)
-- Migrate from isWidth to container queries
-- Migrate forms to useFormStatus/useActionState
 - Remove legacy polyfills (2024-11-30 groupBy 87.24%)

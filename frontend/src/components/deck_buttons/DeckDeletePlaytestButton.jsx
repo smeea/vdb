@@ -17,7 +17,7 @@ const DeckDeletePlaytestButton = ({ deck }) => {
   });
 
   const handleClick = () => {
-    deckUpdate(deck[DECKID], CARDS, noPlaytestDeck).then(() => {
+    deckUpdate(deck[DECKID], CARDS, noPlaytestDeck).finally(() => {
       setShowMenuButtons(false);
       setShowFloatingButtons(true);
     });

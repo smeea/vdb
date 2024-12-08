@@ -11,9 +11,7 @@ const DeckCopyUrlButton = ({ deck, noText, setQrUrl }) => {
   const { isDesktop, setShowMenuButtons, setShowFloatingButtons } = useApp();
   const [success, setSuccess] = useState(false);
 
-  const handleStandard = () => {
-    const url = `${import.meta.env.VITE_BASE_URL}/decks/${deck[DECKID].replace(' ', '_')}`;
-    navigator.clipboard.writeText(url);
+  const handleSuccess = () => {
     setSuccess(true);
     setTimeout(() => {
       setSuccess(false);
@@ -22,9 +20,14 @@ const DeckCopyUrlButton = ({ deck, noText, setQrUrl }) => {
     }, 1000);
   };
 
+  const handleStandard = () => {
+    const url = `${import.meta.env.VITE_BASE_URL}/decks/${deck[DECKID].replace(' ', '_')}`;
+    navigator.clipboard.writeText(url);
+    handleSuccess();
+  };
+
   const handleStandardQr = () => {
     const url = `${import.meta.env.VITE_BASE_URL}/decks/${deck[DECKID].replace(' ', '_')}`;
-
     setShowMenuButtons(false);
     setShowFloatingButtons(false);
     setQrUrl(url);
@@ -33,12 +36,7 @@ const DeckCopyUrlButton = ({ deck, noText, setQrUrl }) => {
   const handleDeckInUrl = () => {
     const url = getDeckInUrl(deck);
     navigator.clipboard.writeText(url);
-    setSuccess(true);
-    setTimeout(() => {
-      setSuccess(false);
-      setShowMenuButtons(false);
-      setShowFloatingButtons(true);
-    }, 1000);
+    handleSuccess();
   };
 
   const handleDeckInQr = () => {
@@ -62,12 +60,7 @@ const DeckCopyUrlButton = ({ deck, noText, setQrUrl }) => {
       deckServices.deckSnapshot(deck).then((deckid) => {
         const url = `${import.meta.env.VITE_BASE_URL}/decks/${deckid}`;
         navigator.clipboard.writeText(url);
-        setSuccess(true);
-        setTimeout(() => {
-          setSuccess(false);
-          setShowMenuButtons(false);
-          setShowFloatingButtons(true);
-        }, 1000);
+        handleSuccess();
       });
     }
   };

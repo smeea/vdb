@@ -29,13 +29,17 @@ const DeckDeleteButton = ({ deck, noText }) => {
   };
 
   const handleClick = () => {
-    deckServices.deckDelete(deck).then(() => {
-      setShowConfirmation(false);
-      setShowMenuButtons(false);
-      setShowFloatingButtons(true);
-      const lastDeckId = getLastDeckExcept();
-      navigate(lastDeckId ? `/decks/${lastDeckId}` : '/decks');
-    });
+    deckServices
+      .deckDelete(deck)
+      .then(() => {
+        const lastDeckId = getLastDeckExcept();
+        navigate(lastDeckId ? `/decks/${lastDeckId}` : '/decks');
+      })
+      .finally(() => {
+        setShowConfirmation(false);
+        setShowMenuButtons(false);
+        setShowFloatingButtons(true);
+      });
   };
 
   return (
