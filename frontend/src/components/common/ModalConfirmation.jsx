@@ -50,6 +50,7 @@ const ModalConfirmation = ({
       withMobileMargin={withMobileMargin}
     >
       <FlexGapped className="flex-col">
+        {children}
         <div className={twMerge('flex justify-end gap-2', !children && 'pt-3')}>
           {withWrittenConfirmation && (
             <form onSubmit={handleClick} className="w-full">
