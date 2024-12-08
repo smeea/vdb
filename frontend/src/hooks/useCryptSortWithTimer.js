@@ -11,13 +11,7 @@ const useCryptSortWithTimer = (cardsList, sortMethod) => {
     return cryptSort(cardsList, sortMethod).map((c) => c.c[ID]);
   }, [timer, sortMethod]);
 
-  const sortedCards = cardsList.toSorted((a, b) => {
-    return sortedState.indexOf(a.c[ID]) - sortedState.indexOf(b.c[ID]);
-  });
-
-  const value = useMemo(() => sortedCards, [cardsList, timer, sortMethod]);
-
-  return value;
+  return cardsList.toSorted((a, b) => sortedState.indexOf(a.c[ID]) - sortedState.indexOf(b.c[ID]));
 };
 
 export default useCryptSortWithTimer;
