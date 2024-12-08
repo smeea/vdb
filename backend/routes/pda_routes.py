@@ -4,11 +4,13 @@ from datetime import date, datetime
 import json
 from nanoid import non_secure_generate
 from random import random
-
 from search_decks import search_decks
 from search_decks_components import match_inventory
 from api import app, db, login
 from models import Deck
+
+CRYPT_LIMIT = 35
+LIBRARY_LIMIT = 90
 
 with open("../frontend/public/data/cardbase_crypt.json", "r") as crypt_file:
     crypt_db = json.load(crypt_file)
@@ -294,7 +296,7 @@ def new_public_deck_route(parent_id):
         new_child_id = non_secure_generate("1234567890abcdef", 9)
 
     m = get_missing_fields(parent)
-    if m["crypt_total"] > 35 or m["library_total"] > 90:
+    if m["crypt_total"] > CRYPT_LIMIT or m["library_total"] > LIBRARY_LIMIT:
         abort(400)
 
     child = Deck(
@@ -330,6 +332,7 @@ def new_public_deck_route(parent_id):
 def update_public_deck(child_id):
     child = Deck.query.get(child_id)
     if not child:
+        print("x")
         abort(400)
 
     elif child.author != current_user:
@@ -337,11 +340,11 @@ def update_public_deck(child_id):
 
     parent = Deck.query.get(child.public_parent)
     m = get_missing_fields(parent)
-    if m["crypt_total"] > 30 or m["library_total"] > 90:
+    if m["crypt_total"] > CRYPT_LIMIT or m["library_total"] > LIBRARY_LIMIT:
         abort(400)
 
     child.name = parent.name
-    child.timestamp = datetime.now().isoformat()
+    child.timestamp = datetime.now()
     child.cards = parent.cards
     child.author_public_name = parent.author_public_name
     child.description = parent.description

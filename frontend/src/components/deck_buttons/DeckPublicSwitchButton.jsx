@@ -6,11 +6,13 @@ import { useApp } from '@/context';
 import { PUBLIC_PARENT, PUBLIC_CHILD } from '@/constants';
 
 const DeckPublicSwitchButton = ({ deck }) => {
-  const { isDesktop } = useApp();
+  const { isDesktop, setShowMenuButtons, setShowFloatingButtons } = useApp();
   const navigate = useNavigate();
   const isChild = !!deck[PUBLIC_PARENT];
 
   const handleClick = () => {
+    setShowMenuButtons(false);
+    setShowFloatingButtons(true);
     navigate(`/decks/${isChild ? deck[PUBLIC_PARENT] : deck[PUBLIC_CHILD]}`);
   };
 

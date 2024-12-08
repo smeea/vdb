@@ -7,17 +7,24 @@ import { useApp, deckStore } from '@/context';
 import { PUBLIC_PARENT, NAME, DECKS } from '@/constants';
 
 const DeckPublicSyncButton = ({ deck }) => {
-  const { isDesktop } = useApp();
+  const { isDesktop, setShowMenuButtons, setShowFloatingButtons } = useApp();
   const decks = useSnapshot(deckStore)[DECKS];
   const [isLoading, setIsLoading] = useState(false);
   const [showConfirmation, setShowConfirmation] = useState(false);
 
   const handleClick = () => {
     setIsLoading(true);
-    deckServices.publicSync(deck, decks).then(() => {
-      setIsLoading(false);
-      setShowConfirmation(false);
-    });
+    deckServices
+      .publicSync(deck, decks)
+      .catch(() => {
+        // TODO add catch error
+      })
+      .finally(() => {
+        setIsLoading(false);
+        setShowConfirmation(false);
+        setShowMenuButtons(false);
+        setShowFloatingButtons(true);
+      });
   };
 
   return (
@@ -31,7 +38,6 @@ const DeckPublicSyncButton = ({ deck }) => {
       />
       {showConfirmation && (
         <ModalConfirmation
-          size="xl"
           title={`Sync "${deck[NAME]}" with Public Deck Archive?`}
           buttonText="Sync"
           handleConfirm={handleClick}
