@@ -38,6 +38,7 @@ const DeckPublicSyncButton = ({ deck }) => {
       />
       {showConfirmation && (
         <ModalConfirmation
+          size="xl"
           title={`Sync "${deck[NAME]}" with Public Deck Archive?`}
           buttonText="Sync"
           handleConfirm={handleClick}

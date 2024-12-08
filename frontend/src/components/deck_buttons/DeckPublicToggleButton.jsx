@@ -8,7 +8,7 @@ import { useApp } from '@/context';
 import { PUBLIC_PARENT, PUBLIC_CHILD } from '@/constants';
 
 const DeckPublicToggleButton = ({ deck, inAdv }) => {
-  const { isDesktop } = useApp();
+  const { isDesktop, setShowMenuButtons, setShowFloatingButtons } = useApp();
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
   const [showConfirmation, setShowConfirmation] = useState(false);
@@ -16,13 +16,17 @@ const DeckPublicToggleButton = ({ deck, inAdv }) => {
 
   const handleClick = () => {
     setIsLoading(true);
-    deckServices.publicCreateOrDelete(deck).then((deckid) => {
-      setShowConfirmation(false);
-      setIsLoading(false);
-      if (!inAdv) {
-        navigate(`/decks/${isPublished ? deck[PUBLIC_PARENT] : deckid}`);
-      }
-    });
+    deckServices
+      .publicCreateOrDelete(deck)
+      .then((deckid) => {
+        if (!inAdv) navigate(`/decks/${isPublished ? deck[PUBLIC_PARENT] : deckid}`);
+      })
+      .finally(() => {
+        setIsLoading(false);
+        setShowConfirmation(false);
+        setShowMenuButtons(false);
+        setShowFloatingButtons(true);
+      });
   };
 
   return (
