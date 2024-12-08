@@ -20,7 +20,8 @@ def login_route():
     if not user.check_password(request.json["password"]):
         abort(401)
 
-    login_user(user, remember=request.json["remember"])
+    remember = request.json["remember"] if "remember" in request.json else False
+    login_user(user, remember=remember)
     cards_reports = (
         len(current_user.playtest_report["cards"].keys())
         if "cards" in current_user.playtest_report

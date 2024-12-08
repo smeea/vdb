@@ -17,7 +17,7 @@
   - Forms to useFormStatus/useActionState
   - <Contex.Provider> to <Context>
   - useContext to use
-  - use can be conditional => useApp can be updated (use in utils instead of props drilling, update hooks)
+  - use can be conditional => useApp can be updated (in utils instead of props drilling)
 - Update to TailwindCSS 4
   - isWidth to container queries
 - Migrate to useSWR (test on playtest reports)
