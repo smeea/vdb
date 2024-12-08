@@ -2,8 +2,7 @@ import ky from 'ky';
 
 export const changesLoader = async () => {
   const url = `${import.meta.env.VITE_API_URL}/changelog`;
-  const response = ky.get(url).json();
-  return { changes: response };
+  return ky.get(url).json();
 };
 
 export const pdaToggle = (deckid, isDelete) => {

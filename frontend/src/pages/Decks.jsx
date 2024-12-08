@@ -91,7 +91,7 @@ const Decks = () => {
   const getDeck = async () => {
     let deckData;
     try {
-      deckData = await loaderData.deckData;
+      deckData = await loaderData;
     } catch (e) {
       switch (e.response.status) {
         case 400:

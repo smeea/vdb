@@ -10,7 +10,7 @@ const Changelog = () => {
       <div className="sm:mb-6">
         <Banner />
       </div>
-      <Await resolve={loaderData.changes}>
+      <Await resolve={loaderData}>
         {(changes) => (
           <div className="flex flex-col gap-3 max-sm:p-3">
             <div className="text-xl font-bold text-fgSecondary underline dark:text-fgSecondaryDark">

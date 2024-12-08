@@ -359,8 +359,7 @@ export const deckLoader = async ({ params }) => {
     return redirect(`/decks/${deckid.substring(0, 9)}`);
   }
 
-  const response = getDeck(deckid);
-  return { deckData: response };
+  return getDeck(deckid);
 };
 
 export const getDeck = (deckid) => {
