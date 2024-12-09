@@ -36,7 +36,10 @@ const Text = ({ text }) => {
 
   return reactStringReplace(textWithIcons, /{(.*?)}/g, (match, idx) => {
     const cardBase = { ...nativeCrypt, ...nativeLibrary };
-    const cardid = Object.keys(cardBase).find((j) => cardBase[j][NAME] == match);
+    const cardid = Object.keys(cardBase).find((j) => {
+      if (match.startsWith('The ')) match = `${match.replace(/^The /, '')}, The`;
+      return cardBase[j][NAME] == match;
+    });
 
     const card = cardid > 200000 ? cryptCardBase[cardid] : libraryCardBase[cardid];
 
@@ -65,9 +68,9 @@ const ResultLayoutTextRulings = ({ rulings }) => {
         return (
           <li key={idx}>
             {text.map((i, idxText) => {
-              return <Text key={`x${idxText}`} text={i} />;
+              return <Text key={idxText} text={i} />;
             })}{' '}
-            <Refs refs={k['refs']} />
+            <Refs refs={k.refs} />
           </li>
         );
       })}
