@@ -64,7 +64,7 @@ const useInventoryCrypt = (cards = {}, category = OK, compact, onlyNotes) => {
         });
 
       Object.keys(usedCrypt[SOFT])
-        .filter((cardid) => !getIsPlaytest(cardid) && !cards[cardid])
+        .filter((cardid) => !(getIsPlaytest(cardid) || cards[cardid]))
         .forEach((cardid) => {
           const clan = cryptCardBase[cardid][CLAN];
 
@@ -92,7 +92,7 @@ const useInventoryCrypt = (cards = {}, category = OK, compact, onlyNotes) => {
         });
 
       Object.keys(usedCrypt[HARD])
-        .filter((cardid) => getIsPlaytest(cardid) && !cards[cardid])
+        .filter((cardid) => !getIsPlaytest(cardid) && !cards[cardid])
         .forEach((cardid) => {
           const clan = cryptCardBase[cardid][CLAN];
 

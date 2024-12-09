@@ -122,7 +122,7 @@ const useInventoryLibrary = (cards = {}, category = OK, compact, type, disciplin
         });
 
       Object.keys(usedLibrary[SOFT])
-        .filter((cardid) => !getIsPlaytest(cardid) && !cards[cardid])
+        .filter((cardid) => !(getIsPlaytest(cardid) || cards[cardid]))
         .forEach((cardid) => {
           const types = libraryCardBase[cardid][TYPE].split('/');
           const d = libraryCardBase[cardid][DISCIPLINE];
