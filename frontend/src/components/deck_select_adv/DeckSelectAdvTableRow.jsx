@@ -90,9 +90,10 @@ const DeckSelectAdvTableRow = ({
         </td>
       )}
       {inventoryMode && !isMobile && (
-        <td>
+        <td className="min-w-[52px]">
           <div className="flex h-full justify-center">
             <ButtonIconed
+              className="w-full"
               disabled={deck[IS_FROZEN]}
               onClick={() => deckToggleInventoryState(deck[DECKID])}
               title={

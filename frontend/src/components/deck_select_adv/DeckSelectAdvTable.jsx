@@ -34,12 +34,10 @@ const DeckSelectAdvTable = ({
   const clanOptions = [
     {
       value: ANY,
-      name: CLAN,
       label: 'ANY',
     },
     {
       value: '',
-      name: CLAN,
       label: 'NONE',
     },
   ];
@@ -47,7 +45,6 @@ const DeckSelectAdvTable = ({
   allDecksClans.toSorted().forEach((i) => {
     clanOptions.push({
       value: i.toLowerCase(),
-      name: CLAN,
       label: <ResultClanImage value={i} />,
     });
   });
