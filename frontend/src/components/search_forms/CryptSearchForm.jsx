@@ -81,6 +81,7 @@ const CryptSearchForm = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const query = JSON.parse(searchParams.get('q'));
   const SHOW_LIMIT = 300;
+  const DISCIPLINES_DEBOUNCE_DELAY = 180;
 
   useEffect(() => {
     if (query) {
@@ -123,7 +124,7 @@ const CryptSearchForm = () => {
     ],
   );
 
-  useDebounce(() => textInputsAndSearch(), 300, [
+  useDebounce(() => textInputsAndSearch(), DISCIPLINES_DEBOUNCE_DELAY, [
     cryptFormState[DISCIPLINES],
     searchInventoryMode,
     searchMissingInventoryMode,

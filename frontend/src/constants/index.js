@@ -274,3 +274,4 @@ export const ICON = 'icon';
 export const DARK = 'dark';
 export const LIGHT = 'light';
 export const AUTO = 'auto';
+export const TYPE_DEBOUNCE_DELAY = 250;

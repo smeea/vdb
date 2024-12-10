@@ -12,7 +12,7 @@ import {
 } from '@/components';
 import { useDebounce } from '@/hooks';
 import { useApp } from '@/context';
-import { NAME, TEXT, LABEL, VALUE, LOGIC, IN, REGEX } from '@/constants';
+import { TYPE_DEBOUNCE_DELAY, NAME, TEXT, LABEL, VALUE, LOGIC, IN, REGEX } from '@/constants';
 
 const SearchFormTextAndButtons = ({
   searchForm,
@@ -38,7 +38,7 @@ const SearchFormTextAndButtons = ({
     setText(value[0][VALUE] ?? '');
   }, [value]);
 
-  useDebounce(() => onChange(0, text), 300, [text]);
+  useDebounce(() => onChange(0, text), TYPE_DEBOUNCE_DELAY, [text]);
 
   const options = [
     {

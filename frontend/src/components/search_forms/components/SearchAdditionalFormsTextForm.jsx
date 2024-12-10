@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Input } from '@/components';
 import { useDebounce } from '@/hooks';
+import { TYPE_DEBOUNCE_DELAY } from '@/constants';
 
 const SearchAdditionalFormsTextForm = ({ id, value, onChange }) => {
   const [text, setText] = useState('');
@@ -9,7 +10,7 @@ const SearchAdditionalFormsTextForm = ({ id, value, onChange }) => {
     setText(value.value ?? '');
   }, [value]);
 
-  useDebounce(() => onChange(id, text), 250, [text]);
+  useDebounce(() => onChange(id, text), TYPE_DEBOUNCE_DELAY, [text]);
 
   return (
     <Input

@@ -5,7 +5,7 @@ import At from '@icons/at.svg?react';
 import { DeckSelectAdvTagsFilter, Select, Checkbox, Input } from '@/components';
 import { useDebounce } from '@/hooks';
 import { useApp } from '@/context';
-import { S, H, ANY } from '@/constants';
+import { TYPE_DEBOUNCE_DELAY, S, H, ANY } from '@/constants';
 
 const DeckSelectAdvTableHeader = ({
   allTagsOptions,
@@ -26,28 +26,36 @@ const DeckSelectAdvTableHeader = ({
   const { inventoryMode, isMobile, isNarrow, isDesktop } = useApp();
 
   const [debouncedNameFilter, setDebouncedNameFilter] = useState('');
-  useDebounce(() => setNameFilter(debouncedNameFilter), 250, [debouncedNameFilter]);
+  useDebounce(() => setNameFilter(debouncedNameFilter), TYPE_DEBOUNCE_DELAY, [debouncedNameFilter]);
 
   const invOptions = [
     {
       value: ANY,
-      name: 'inventory',
       label: 'ANY',
     },
     {
       value: '',
-      name: 'inventory',
-      label: <At />,
+      label: (
+        <div className="flex justify-center">
+          <At />
+        </div>
+      ),
     },
     {
       value: S,
-      name: 'inventory',
-      label: <Shuffle />,
+      label: (
+        <div className="flex justify-center">
+          <Shuffle />
+        </div>
+      ),
     },
     {
       value: H,
-      name: 'inventory',
-      label: <PinAngleFill />,
+      label: (
+        <div className="flex justify-center">
+          <PinAngleFill />
+        </div>
+      ),
     },
   ];
 
@@ -74,7 +82,7 @@ const DeckSelectAdvTableHeader = ({
           </th>
         )}
         {inventoryMode && !isMobile && (
-          <th>
+          <th className="min-w-[52px]">
             <Select
               options={invOptions}
               onChange={(e) => setInvFilter(e.value)}

@@ -4,6 +4,7 @@ import ChatLeftQuoteFill from '@icons/chat-left-quote-fill.svg?react';
 import { useDebounce } from '@/hooks';
 import { inventoryCardTextChange } from '@/context';
 import { Textarea } from '@/components';
+import { TYPE_DEBOUNCE_DELAY } from '@/constants';
 
 const InventoryText = ({ card, text, inPopover }) => {
   const [newText, setNewText] = useState(text || '');
@@ -14,13 +15,7 @@ const InventoryText = ({ card, text, inPopover }) => {
     if (newText !== text) setNewText(text ?? '');
   }, [text]);
 
-  useDebounce(
-    () => {
-      inventoryCardTextChange(card, newText);
-    },
-    300,
-    [newText],
-  );
+  useDebounce(() => inventoryCardTextChange(card, newText), TYPE_DEBOUNCE_DELAY, [newText]);
 
   return (
     <div className="items-top flex gap-1.5">
