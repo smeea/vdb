@@ -1,8 +1,10 @@
 {
-  "version": "2024-12-07",
+  "version": "2024-12-12",
   "changes": [
-    "Add EC2024 Day 2 event (https://vdb.im/tournament_analyze/11669)",
-    "Add VTES 30th Anniversary event (https://vdb.im/tournament_analyze/11670)",
-    "Hot fixes"
+    "Update TWDA",
+    "Fix Gangrels Legacy images",
+    "Add Paypal donate link",
+    "Add blood/pool 'rescaled' (for library of 90) total library cost (click (i) button)",
+    "Small other fixes and improvements"
   ]
 }
