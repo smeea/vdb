@@ -58,7 +58,7 @@
             }
         },
         "text":"Weapon: gun.\nStrike: 2R damage, with 1 optional maneuver each combat.",
-        "twd":381,
+        "twd":382,
         "type":"Equipment"
     },
     "100002":{
@@ -316,7 +316,7 @@
             }
         },
         "text":"+1 stealth action. Requires a Sabbat vampire.\nPut this card on this acting Sabbat vampire and unlock him or her. This Sabbat vampire gets +1 intercept during actions directed at his or her controller. A vampire may have only one Abbot.",
-        "twd":204,
+        "twd":206,
         "type":"Action"
     },
     "100007":{
@@ -1255,7 +1255,7 @@
             }
         },
         "text":"[ani] Strike: 1R damage, with 1 optional maneuver.\n[ANI] As above, with 1 optional press.",
-        "twd":232,
+        "twd":234,
         "type":"Combat"
     },
     "100030":{
@@ -1344,7 +1344,7 @@
             }
         },
         "text":"Only usable during a bleed action.\n[pre] +1 bleed, with an additional +1 bleed if this vampire is Toreador (limited).\n[PRE] +2 bleed, with an additional +1 bleed if this vampire is Toreador (limited).",
-        "twd":267,
+        "twd":269,
         "type":"Action Modifier"
     },
     "100032":{
@@ -1381,7 +1381,7 @@
             }
         },
         "text":"Weapon. Gun.\n2R damage each strike, with an optional maneuver each combat. When bearer strikes with this gun, he or she gets an optional additional strike (limited) this round, only usable to strike with this gun.",
-        "twd":16,
+        "twd":17,
         "type":"Equipment"
     },
     "100033":{
@@ -1583,7 +1583,7 @@
             }
         },
         "text":"Unique location.\nAfter an Banu Haqim you control successfully bleeds a Methuselah, put the pool lost by that Methuselah on this card. During the polling step of a political action, you can burn X counters from this card to give a vampire you control +X votes.",
-        "twd":47,
+        "twd":48,
         "type":"Master"
     },
     "100038":{
@@ -1711,7 +1711,7 @@
             }
         },
         "text":"Not usable in combat with an ally or an older vampire.\n[ani][for] Strike: combat ends.\n[ANI][FOR] Only usable before range is determined. Combat ends.",
-        "twd":9,
+        "twd":10,
         "type":"Combat"
     },
     "100041":{
@@ -1841,7 +1841,7 @@
             }
         },
         "text":"Only usable by a vampire who can commit diablerie. Only usable when the opposing vampire should go to torpor. Diablerize the opposing vampire instead. Not usable by a vampire being burned or going to torpor.",
-        "twd":63,
+        "twd":64,
         "type":"Combat"
     },
     "100044":{
@@ -2141,7 +2141,7 @@
             }
         },
         "text":"Master: unique location. Hunting ground.\nDuring your unlock phase, you may move 1 blood from the blood bank to a ready vampire you control. A vampire can gain blood from only one hunting ground card each turn.",
-        "twd":23,
+        "twd":24,
         "type":"Master"
     },
     "100050":{
@@ -2278,7 +2278,7 @@
             }
         },
         "text":"Unique. Requires a ready Anarch.\nPut this card in play. You can lock this card to give an Anarch you control +1 intercept. You can lock this card after an Anarch successfully hunts to add 1 blood to that Anarch.",
-        "twd":150,
+        "twd":154,
         "type":"Master"
     },
     "100053":{
@@ -2305,7 +2305,7 @@
             }
         },
         "text":"Equipment.\nThe anarch with this equipment gets +1 stealth on actions that require an anarch. Titled non-Anarch vampires get +1 strength in combat with this minion. A minion may have only one Anarch Manifesto.",
-        "twd":7,
+        "twd":8,
         "type":"Equipment"
     },
     "100054":{
@@ -2338,7 +2338,7 @@
             }
         },
         "text":"Unique location.\nYou can lock this card to give an Anarch +1 stealth.",
-        "twd":166,
+        "twd":174,
         "type":"Master"
     },
     "100055":{
@@ -2397,7 +2397,7 @@
             }
         },
         "text":"Put this card in play. A Methuselah not controlling a ready Anarch burns 1 pool during their unlock phase. Vampires can call a referendum to burn this card as a +1 stealth political action.",
-        "twd":181,
+        "twd":182,
         "type":"Master"
     },
     "100056":{
@@ -2511,7 +2511,7 @@
             }
         },
         "text":"Unique.\nPut this card in play. During your unlock phase, you can give your prey control of the Anarch Troublemaker and either lock up to two vampires they control or burn an equipment on one of their minions.",
-        "twd":479,
+        "twd":481,
         "type":"Master"
     },
     "100059":{
@@ -2564,7 +2564,7 @@
             }
         },
         "text":"Successful referendum means each Methuselah burns 1 pool for each minion they control.",
-        "twd":361,
+        "twd":364,
         "type":"Political Action"
     },
     "100060":{
@@ -2645,7 +2645,7 @@
             }
         },
         "text":"Requires a prince or justicar.\nChoose a ready vampire. Successful referendum means this card is put on the chosen vampire. If the attached vampire's blood is reduced to 0 in combat, the attached vampire is burned and the Methuselah controlling the opposing minion gains pool equal to the attached vampire's capacity.",
-        "twd":51,
+        "twd":52,
         "type":"Political Action"
     },
     "100061":{
@@ -2815,7 +2815,7 @@
             }
         },
         "text":"Only one Ancient Influence can be played or called in a game.\nSuccessful referendum means each Methuselah can choose a ready vampire they control. Each Methuselah gains pool equal to their chosen vampire's capacity, then burns 5 pool.",
-        "twd":418,
+        "twd":422,
         "type":"Political Action"
     },
     "100065":{
@@ -2874,7 +2874,7 @@
             }
         },
         "text":"Successful referendum means each Methuselah burns 1 pool for each minion they control.",
-        "twd":372,
+        "twd":375,
         "type":"Political Action"
     },
     "100066":{
@@ -3164,7 +3164,7 @@
             }
         },
         "text":"+3 stealth equip action. Requires a vampire.\nEquip this vampire with a non-location equipment card from your hand (requirements and cost apply as normal).",
-        "twd":3,
+        "twd":4,
         "type":"Action"
     },
     "100073":{
@@ -3201,7 +3201,7 @@
             }
         },
         "text":"Unique.\nPut this card in play. During each Methuselah's unlock phase, that Methuselah burns 1 pool unless they burn a vampire they control with capacity 4 or more to burn this card.",
-        "twd":60,
+        "twd":62,
         "type":"Master"
     },
     "100074":{
@@ -3477,7 +3477,7 @@
             }
         },
         "text":"+1 stealth action. Unique.\nPut this card in play. You can lock Aranthebes to give a minion controlled by your predator -1 stealth. While Aranthebes is unlocked, vampires with capacity 4 or less get -1 bleed against you. Vampires with capacity 5 or more can shuffle Aranthebes into your library as a (D) action.",
-        "twd":496,
+        "twd":498,
         "type":"Action"
     },
     "100080":{
@@ -3765,7 +3765,7 @@
             }
         },
         "text":"Out-of-turn. Only usable if a minion is bleeding you and the bleed amount is 4 or more, after blocks are declined.\nBurn the acting minion. (The action is not successful.)",
-        "twd":695,
+        "twd":706,
         "type":"Master"
     },
     "100086":{
@@ -4119,7 +4119,7 @@
             }
         },
         "text":"+1 stealth action.\n[ani] Put this card in play. During your unlock phase, your prey burns 1 pool. A Methuselah can burn only 1 pool each turn with Army of Rats cards. Minions can burn this card as a (D) action.",
-        "twd":280,
+        "twd":282,
         "type":"Action"
     },
     "100094":{
@@ -4399,7 +4399,7 @@
             }
         },
         "text":"+1 stealth action.\nGain 2 pool.",
-        "twd":51,
+        "twd":53,
         "type":"Action"
     },
     "100100":{
@@ -4548,7 +4548,7 @@
             }
         },
         "text":"Ghoul with 3 life. 2 strength, 0 bleed.\nAsanbonsam Ghoul gets +1 intercept during directed actions. If Asanbonsam Ghoul blocks a directed action, set the range for the first round of the resulting combat to close.",
-        "twd":24,
+        "twd":25,
         "type":"Ally"
     },
     "100104":{
@@ -4706,7 +4706,7 @@
             }
         },
         "text":"Only one Ashur Tablets can be played each turn.\nPut this card in play. If you control three copies of this card, remove all copies in play (even controlled by other Methuselahs) from the game to gain 3 pool and choose up to thirteen library cards from your ash heap; move one of the chosen cards to your hand and shuffle the others into your library.",
-        "twd":444,
+        "twd":449,
         "type":"Master"
     },
     "100107":{
@@ -4800,7 +4800,7 @@
             }
         },
         "text":"Unique location. Hunting ground.\nDuring your unlock phase, a ready vampire you control can gain 1 blood. A vampire can gain blood from only one hunting ground each turn.",
-        "twd":88,
+        "twd":91,
         "type":"Master"
     },
     "100109":{
@@ -5053,7 +5053,7 @@
             }
         },
         "text":"Master: Discipline.\nPut this card on a vampire. This vampire gains 1 level of Auspex [aus]. Capacity increases by 1: the vampire is one generation older. Cannot be placed on a vampire with superior Auspex [AUS].",
-        "twd":74,
+        "twd":75,
         "type":"Master"
     },
     "100115":{
@@ -5089,7 +5089,7 @@
             }
         },
         "text":"Successful referendum means each Methuselah gains 1 pool for each minion he or she controls.",
-        "twd":40,
+        "twd":41,
         "type":"Political Action"
     },
     "100116":{
@@ -5236,7 +5236,7 @@
             }
         },
         "text":"Only usable during the polling step of a political action.\n[pre] This vampire gets +X+1 votes.\n[PRE] This vampire gets +2X+1 votes.",
-        "twd":218,
+        "twd":220,
         "type":"Action Modifier"
     },
     "100120":{
@@ -5566,7 +5566,7 @@
             }
         },
         "text":"Unique location.\nLock to give a Gangrel you control +1 stealth.",
-        "twd":144,
+        "twd":149,
         "type":"Master"
     },
     "102218":{
@@ -5609,7 +5609,7 @@
             }
         },
         "text":"Requires a baron. Only usable if a minion is bleeding you, after blocks are declined.\nLock this reacting vampire. Change the target of the bleed to another Methuselah other than the acting minion's controller (that Methuselah can attempt to block).",
-        "twd":152,
+        "twd":162,
         "type":"Reaction"
     },
     "100127":{
@@ -5696,7 +5696,7 @@
             }
         },
         "text":"Requires a vampire.\nIf this vampire is Ravnos, this is a +1 stealth action. Put this card on this vampire. During your unlock phase, burn this card and each other Methuselah chooses a ready vampire they control who is not older than this vampire; if you control a ready Lasombra, you choose the vampires instead; this vampire and the chosen vampires go to torpor.",
-        "twd":17,
+        "twd":18,
         "type":"Action"
     },
     "100129":{
@@ -5886,7 +5886,7 @@
             }
         },
         "text":"Choose a ready younger vampire. Successful referendum means the chosen vampire is moved to the uncontrolled region (breaking any temporary control effects); any cards and counters on the chosen vampire stay with them but are out of play as long as the chosen vampire remains uncontrolled.",
-        "twd":541,
+        "twd":544,
         "type":"Political Action"
     },
     "100132":{
@@ -6097,7 +6097,7 @@
             }
         },
         "text":"Unique location.\nYou can lock this card to discard a card (draw up afterward).",
-        "twd":463,
+        "twd":469,
         "type":"Master"
     },
     "100136":{
@@ -6996,7 +6996,7 @@
             }
         },
         "text":"Only usable during the polling step of a political action.\n[pre] This vampire gets +2 votes.\n[PRE] This vampire gets +4 votes.",
-        "twd":253,
+        "twd":254,
         "type":"Action Modifier"
     },
     "100158":{
@@ -7231,7 +7231,7 @@
             }
         },
         "text":"Event.\nEach Methuselah gets +2 hand size for each victory point he or she has.",
-        "twd":69,
+        "twd":70,
         "type":"Event"
     },
     "100164":{
@@ -7304,7 +7304,7 @@
             }
         },
         "text":"Master: unique location. Requires a ready Sabbat vampire.\nOnce each turn, a Sabbat vampire may call a referendum to give his or her controller 2 pool from the blood bank as a +1 stealth political action. Any Changeling may burn this card as a +1 stealth (D) action.",
-        "twd":62,
+        "twd":64,
         "type":"Master"
     },
     "100166":{
@@ -7716,7 +7716,7 @@
             }
         },
         "text":"Unique melee weapon.\nStrike: strength+1 damage, only usable by a vampire with capacity above 5. Damage inflicted by this weapon on a Brujah or Brujah antitribu is aggravated. This vampire with capacity above 5 is immune to the effects of Frenzy cards.",
-        "twd":13,
+        "twd":14,
         "type":"Equipment"
     },
     "100177":{
@@ -7765,7 +7765,7 @@
             }
         },
         "text":"[obt] +1 stealth.\n[OBT] Only usable by a ready vampire other than the acting minion if a minion attempts to block. Lock this modifying vampire to have that attempt fail; the blocking minion cannot attempt to block this action again.",
-        "twd":89,
+        "twd":90,
         "type":"Action Modifier"
     },
     "100178":{
@@ -7825,7 +7825,7 @@
             }
         },
         "text":"Unique master.\nPut this card into play. During your unlock phase, lock this card or burn 1 pool. You may lock this card to cancel a non-out-of-turn master card played by another Methuselah as that card is played. That card has no effect (no cost is paid), and that Methuselah gains another master phase action.",
-        "twd":66,
+        "twd":67,
         "type":"Master"
     },
     "100179":{
@@ -8213,7 +8213,7 @@
             }
         },
         "text":"Master.\nChoose a vampire you control and an ally or younger vampire controlled by your prey. While the first chosen vampire is acting this turn, the other chosen minion cannot block or play reaction cards.",
-        "twd":56,
+        "twd":57,
         "type":"Master"
     },
     "100189":{
@@ -8802,7 +8802,7 @@
             }
         },
         "text":"Put this card on a vampire you control. During their master phase, this vampire's controller can move 1 blood from this vampire to their pool or from their pool to this vampire.",
-        "twd":1274,
+        "twd":1278,
         "type":"Master"
     },
     "100200":{
@@ -9217,7 +9217,7 @@
             }
         },
         "text":"Only usable at close range.\n[tha] Strike: hand strike. Damage from this strike cannot be prevented by cards requiring Fortitude [for]. The opposing vampire's strikes with weapons inflict no damage this round.\n[THA] As above, and this hand strike is at +1 damage.",
-        "twd":22,
+        "twd":24,
         "type":"Combat"
     },
     "100209":{
@@ -9357,7 +9357,7 @@
             }
         },
         "text":"Unique equipment.\nThe vampire with this equipment may burn this card to prevent 2 points of damage in combat or to gain 2 blood (ignore excess blood).",
-        "twd":20,
+        "twd":22,
         "type":"Equipment"
     },
     "100213":{
@@ -9918,7 +9918,7 @@
             }
         },
         "text":"[cel] Additional strike (limited).\n[CEL] 2 additional strikes (limited).",
-        "twd":223,
+        "twd":225,
         "type":"Combat"
     },
     "100228":{
@@ -10386,7 +10386,7 @@
             }
         },
         "text":"Only usable during a bleed action.\n[dom] +1 bleed (limited).\n[DOM] +1 stealth and +1 bleed (limited).",
-        "twd":428,
+        "twd":430,
         "type":"Action Modifier"
     },
     "100237":{
@@ -10664,7 +10664,7 @@
             }
         },
         "text":"Unique.\nThe bearer with Auspex [aus] gets +1 intercept. The bearer with superior Auspex [AUS] can burn 1 blood during an action to get an additional +1 intercept.",
-        "twd":529,
+        "twd":533,
         "type":"Equipment"
     },
     "100244":{
@@ -10873,7 +10873,7 @@
             }
         },
         "text":"Requires an Anarch. More than one Discipline can be used to play this card. (D) Bleed.\n[ani] The bleed is with +1 bleed.\n[obf] If the bleed is successful, you can lock a minion controlled by the target Methuselah.\n[pre] If the bleed is successful, add 1 blood to a vampire in your uncontrolled region.",
-        "twd":16,
+        "twd":18,
         "type":"Action"
     },
     "100248":{
@@ -10976,7 +10976,7 @@
             }
         },
         "text":"[vic] Strike: 1R aggravated damage. If this strike is used at close range, this striking vampire also takes 1 environmental aggravated damage.\n[VIC] Strike: 2R aggravated damage. If this strike is used at close range, this striking vampire also takes 2 environmental aggravated damage.",
-        "twd":99,
+        "twd":100,
         "type":"Combat"
     },
     "100251":{
@@ -11220,7 +11220,7 @@
             }
         },
         "text":"Unique location.\n+1 hand size. Minions you control can unlock after resolution of a successful action to equip with a non-electronic, non-vehicle, non-weapon equipment card from your hand; a minion can unlock only once this way each turn. Non-electronic, non-vehicle, non-weapon equipment cards cost minions you control -1 blood or pool to equip.",
-        "twd":14,
+        "twd":16,
         "type":"Master"
     },
     "100256":{
@@ -11696,7 +11696,7 @@
             }
         },
         "text":"Do not replace until after this action.\n(D) Enter combat with a minion. This acting minion gets 1 optional maneuver during that combat.",
-        "twd":288,
+        "twd":289,
         "type":"Action"
     },
     "100267":{
@@ -12153,7 +12153,7 @@
             }
         },
         "text":"+1 stealth action.\n[aus][dem] Move 2 blood from the blood bank to a younger vampire with Dementation [dem] in your uncontrolled region.\n[AUS][DEM] As above, but move 3 blood.",
-        "twd":61,
+        "twd":62,
         "type":"Action"
     },
     "100279":{
@@ -12393,7 +12393,7 @@
             }
         },
         "text":"Unique. Requires a justicar or Inner Circle member.\nPut this card in play with 4 counters. During a political action performed by a Camarilla vampire you control or its polling step, you can burn 1 counter from this card to give the acting vampire +1 stealth or to give each non-Camarilla vampire -1 vote. If this card has no counters, burn it.",
-        "twd":5,
+        "twd":6,
         "type":"Master"
     },
     "100284":{
@@ -12476,7 +12476,7 @@
             }
         },
         "text":"Requires a titled Camarilla vampire.\nChoose a Methuselah and allocate 5 points among two or more other Methuselahs. Successful referendum means the chosen Methuselah gains 1 pool and each Methuselah burns 1 pool for each point allocated.",
-        "twd":8,
+        "twd":9,
         "type":"Political Action"
     },
     "100285":{
@@ -12726,7 +12726,7 @@
             }
         },
         "text":"[ani] Strike: 1R damage.\n[ANI] Strike: ranged; destroy equipment with first strike.",
-        "twd":284,
+        "twd":286,
         "type":"Combat"
     },
     "100291":{
@@ -12979,7 +12979,7 @@
             }
         },
         "text":"Requires a ready Anarch. Unique location. Hunting ground.\nDuring your unlock phase, a ready Anarch you control can gain 1 blood, and, if you control a ready baron, another ready Anarch you control can gain 1 blood as well. A vampire can gain blood from only one hunting ground each turn.",
-        "twd":154,
+        "twd":162,
         "type":"Master"
     },
     "100298":{
@@ -13031,7 +13031,7 @@
             }
         },
         "text":"Unique mortal with 2 life. 0 strength, 0 bleed.\nCarlton can strike: 1R damage. Once each combat, he can strike: dodge. Carlton gets +1 intercept against vampires. During your discard phase, you can burn Carlton to burn a vampire who has committed diablerie since your last turn.",
-        "twd":775,
+        "twd":777,
         "type":"Ally"
     },
     "100299":{
@@ -13167,7 +13167,7 @@
             }
         },
         "text":"Only usable before range is determined. A vampire can play only one Carrion Crows each combat.\n[ani] The opposing minion takes 1R environmental damage each round this combat during normal strike resolution.\n[ANI] As above, but for 2R environmental damage.",
-        "twd":409,
+        "twd":412,
         "type":"Combat"
     },
     "100302":{
@@ -13235,7 +13235,7 @@
             }
         },
         "text":"Unique location.\nAfter a vampire with capacity 3 or less goes to torpor, put 1 hostage counter on them. Vampires with any hostage counters cannot be moved to the ready region or be diablerized. Lock during your master phase to add X blood to a ready vampire you control, where X is the number of vampires with any hostage counters. During any unlock phase, any ready vampire can burn 2 blood to burn any vampire's hostage counters. After this card leaves play, burn all the hostage counters.",
-        "twd":69,
+        "twd":70,
         "type":"Master"
     },
     "100304":{
@@ -13529,7 +13529,7 @@
             }
         },
         "text":"[ani] Only usable by a locked vampire who has blocked, after block resolution. Unlock this vampire.\n[ANI] +1 intercept.",
-        "twd":385,
+        "twd":389,
         "type":"Reaction"
     },
     "100309":{
@@ -13728,7 +13728,7 @@
             }
         },
         "text":"Discipline.\nPut this card on a vampire. This vampire gets +1 level of Celerity [cel] and +1 capacity. Cannot be put on a vampire with superior Celerity [CEL].",
-        "twd":74,
+        "twd":75,
         "type":"Master"
     },
     "100313":{
@@ -14262,7 +14262,7 @@
             }
         },
         "text":"Only usable if this minion is blocked, before block resolution.\nUnlock this minion, and the action ends (unsuccessfully). This minion cannot perform the same action again this turn.",
-        "twd":231,
+        "twd":233,
         "type":"Action Modifier"
     },
     "100324":{
@@ -14304,7 +14304,7 @@
             }
         },
         "text":"[vic] Only usable during a bleed action. +1 bleed (limited).\n[VIC] +1 stealth.",
-        "twd":102,
+        "twd":103,
         "type":"Action Modifier"
     },
     "100325":{
@@ -14414,7 +14414,7 @@
             }
         },
         "text":"Unique location.\nLock to give a minion you control +2 intercept. Not usable during the first action in a minion phase.",
-        "twd":152,
+        "twd":153,
         "type":"Master"
     },
     "100328":{
@@ -14621,7 +14621,7 @@
             }
         },
         "text":"Unique.\nPut this card on a ready vampire. Recruit ally actions cost this vampire 1 fewer blood or pool.",
-        "twd":136,
+        "twd":137,
         "type":"Master"
     },
     "100333":{
@@ -14981,7 +14981,7 @@
             }
         },
         "text":"+1 stealth action. Requires a non-sterile baron.\nPut this card in play. It becomes a 1-capacity (non-unique) Anarch vampire of the same clan as the acting vampire and must hunt this turn. You can search your library (shuffle afterward), hand and/or ash heap for a Discipline master card and put it on this new vampire.",
-        "twd":10,
+        "twd":12,
         "type":"Action"
     },
     "100338":{
@@ -15233,7 +15233,7 @@
             }
         },
         "text":"[vic] Maneuver.\n[VIC] Burn 1 blood to make the damage from this vampire's hand strikes aggravated this round.",
-        "twd":106,
+        "twd":107,
         "type":"Combat"
     },
     "100345":{
@@ -15707,7 +15707,7 @@
             }
         },
         "text":"[pro] Damage from this vampire's hand strikes is aggravated this round.\n[PRO] Maneuver.",
-        "twd":149,
+        "twd":152,
         "type":"Combat"
     },
     "100357":{
@@ -15968,7 +15968,7 @@
             }
         },
         "text":"[obf] +1 stealth.\n[OBF] Only usable by a ready vampire other than the acting minion. The acting minion gets +1 stealth.",
-        "twd":662,
+        "twd":670,
         "type":"Action Modifier"
     },
     "100363":{
@@ -16123,7 +16123,7 @@
             }
         },
         "text":"Unique location.\nAn Anarch can burn 1 blood once as they announce a bleed action to get +1 bleed for that action.",
-        "twd":123,
+        "twd":126,
         "type":"Master"
     },
     "100367":{
@@ -16380,7 +16380,7 @@
             }
         },
         "text":"Unique.\nThe bearer gets -2 stealth when bleeding. This vampire can bleed as a (D) action that costs 1 blood; this action gets +3 bleed if the target Methuselah does not control a ready unlocked minion.",
-        "twd":65,
+        "twd":66,
         "type":"Equipment"
     },
     "100375":{
@@ -17238,7 +17238,7 @@
             }
         },
         "text":"Unique equipment.\nWhen the vampire with this card announces an action, he or she may burn this card to prevent vampires from blocking that action. If he or she does so, this vampire cannot play cards requiring Disciplines until the action is complete.",
-        "twd":4,
+        "twd":5,
         "type":"Equipment"
     },
     "100395":{
@@ -17508,7 +17508,7 @@
             }
         },
         "text":"Only usable during a bleed action.\n[dom] +2 bleed (limited).\n[DOM] +3 bleed (limited).",
-        "twd":1036,
+        "twd":1044,
         "type":"Action Modifier"
     },
     "100402":{
@@ -17680,7 +17680,7 @@
             }
         },
         "text":"Only usable during a bleed action.\n[dem] +1 bleed (limited).\n[DEM] +1 stealth and +1 bleed (limited).",
-        "twd":144,
+        "twd":145,
         "type":"Action Modifier"
     },
     "100406":{
@@ -17711,7 +17711,7 @@
             }
         },
         "text":"[obf] Reduce a younger vampire's or an ally's bleed against you by 1.\n[OBF] Only usable during a referendum before any votes and ballots are cast. Not usable on a referendum that is automatically passing. The acting vampire cannot cast any votes or ballots in this referendum. If the referendum requires a titled vampire, the referendum fails.",
-        "twd":58,
+        "twd":59,
         "type":"Reaction"
     },
     "100407":{
@@ -17878,7 +17878,7 @@
             }
         },
         "text":"Boon.\nChoose a clan. Successful referendum means each Methuselah gains 1 pool for each vampire of the chosen clan they control.",
-        "twd":244,
+        "twd":248,
         "type":"Political Action"
     },
     "100411":{
@@ -18150,7 +18150,7 @@
             }
         },
         "text":"+1 stealth action. Requires an Anarch. Unique.\nPut this card in play with 1 counter. During your unlock phase, add 1 counter to this card. During each other Methuselah's unlock phase, that Methuselah burns X pool and/or cards at random from their hand, where X is the number of counters on this card. Vampires can burn this card as a (D) action that costs 1 pool.",
-        "twd":107,
+        "twd":110,
         "type":"Action"
     },
     "100417":{
@@ -18222,7 +18222,7 @@
             }
         },
         "text":"+1 stealth action. Requires an infernal vampire. Unique.\n[dai] Put this card on this vampire. During each other Methuselah's unlock phase, they burn 1 pool if this vampire is ready.\n[DAI] As [dai] above, and once each combat, this vampire can strike: put 1 corruption counter on the opposing minion; if the number of your corruption counters on the minion equals or exceeds their capacity or cost, you can burn those counters to steal the opposing minion after the resolution of this strike (ending combat).",
-        "twd":70,
+        "twd":71,
         "type":"Action"
     },
     "100419":{
@@ -18376,7 +18376,7 @@
             }
         },
         "text":"Equipment.\nPut 4 blood counters on this card. During your unlock phase, if the vampire with this equipment is ready, you may move 1 blood from this card to this vampire. Burn this card when it has no counters.",
-        "twd":12,
+        "twd":13,
         "type":"Equipment"
     },
     "100423":{
@@ -18890,7 +18890,7 @@
             }
         },
         "text":"Unique. Trifle.\nPut this card in play. Lock to add 2 blood to a ready vampire you control. During your discard phase, your predator takes control of The Coven.",
-        "twd":510,
+        "twd":517,
         "type":"Master",
         "trifle":true
     },
@@ -19245,7 +19245,7 @@
             }
         },
         "text":"Unique location.\nLock as a vampire you control announces an undirected action to give that vampire +1 stealth, even if stealth is not yet needed.",
-        "twd":246,
+        "twd":248,
         "type":"Master"
     },
     "100445":{
@@ -19323,7 +19323,7 @@
             }
         },
         "text":"Requires an Anarch. Only usable after resolution of a successful action requiring an Anarch or making this vampire Anarch.\n[pro] Unlock this Anarch.\n[qui] Unlock another ready Anarch.\n[tha] Put this card in play. During your minion phase, you can burn 1 pool to unlock a ready Anarch you control.",
-        "twd":41,
+        "twd":42,
         "type":"Action Modifier"
     },
     "100447":{
@@ -19350,7 +19350,7 @@
             }
         },
         "text":"Only usable when this vampire is being diablerized. Usable by a locked vampire. Usable by a vampire in torpor.\n[ani] The diablerie is canceled and the diablerist burns 1 blood.\n[ANI] Burn both the diablerist and this vampire. (The diablerie is still considered successful.)",
-        "twd":0,
+        "twd":1,
         "type":"Combat/Reaction"
     },
     "100448":{
@@ -19380,7 +19380,7 @@
             }
         },
         "text":"Unique melee weapon.\nStrength+1 damage as a strike. If this weapon successfully inflicts damage on an opponent in combat, add a soul counter to it at the end of that round. This weapon does one additional point of damage each strike for each soul counter on this card. Remove all soul counters from this card if another minion gains control of it.",
-        "twd":9,
+        "twd":10,
         "type":"Equipment"
     },
     "100449":{
@@ -20397,7 +20397,7 @@
             }
         },
         "text":"Only usable on a successful referendum.\nThe next referendum a vampire you control calls this turn passes automatically.",
-        "twd":66,
+        "twd":67,
         "type":"Action Modifier"
     },
     "100479":{
@@ -20651,7 +20651,7 @@
             }
         },
         "text":"Archetype. Trifle.\nPut this card on a vampire you control. Once each turn, after an action (successful or not) is resolved during which this vampire used 3 or more Disciplines to play cards, this vampire can either burn 1 blood to unlock or gain 1 blood. A vampire can have only one archetype.",
-        "twd":53,
+        "twd":59,
         "type":"Master",
         "trifle":true
     },
@@ -20987,7 +20987,7 @@
             }
         },
         "text":"[for] Vampires cannot block this action. This vampire takes 2 unpreventable environmental aggravated damage after action resolution.\n[FOR] As above, but this vampire takes 1 unpreventable environmental aggravated damage.",
-        "twd":280,
+        "twd":284,
         "type":"Action Modifier"
     },
     "100493":{
@@ -21067,7 +21067,7 @@
             }
         },
         "text":"Out-of-turn.\nCancel a minion card as it is played, its cost is not paid, and put this card in play. That card cannot be played again this turn. The next card played that would cancel another Methuselah's minion card as it is played is canceled, its cost is not paid, and this card is burned instead.",
-        "twd":130,
+        "twd":131,
         "type":"Master"
     },
     "100494":{
@@ -22003,7 +22003,7 @@
             }
         },
         "text":"Requires an Anarch.\n[ani] Only usable during an action directed at you (or a card you control). +2 intercept.\n[for] Reduce a bleed against you by 2.\n[pro] Only usable by a locked vampire. This vampire burns 1 blood to unlock.",
-        "twd":84,
+        "twd":89,
         "type":"Reaction"
     },
     "100515":{
@@ -22073,7 +22073,7 @@
             }
         },
         "text":"[ani] (D) Bleed with +1 bleed.\n[ANI] Frenzy. (D) Enter combat with and lock a vampire. The target vampire is considered the acting minion during that combat.",
-        "twd":266,
+        "twd":271,
         "type":"Action"
     },
     "100516":{
@@ -22260,7 +22260,7 @@
             }
         },
         "text":"Only usable if a minion is bleeding you, after blocks are declined.\n[dom] Lock this reacting vampire. Change the target of the bleed to another Methuselah other than the acting minion's controller (that Methuselah can attempt to block).\n[DOM] As above, but do not lock this vampire.",
-        "twd":1473,
+        "twd":1484,
         "type":"Reaction"
     },
     "100519":{
@@ -22356,7 +22356,7 @@
             }
         },
         "text":"Only usable during the polling step of a political action.\nCancel the referendum. Unlock the acting vampire. If a political action card [POLITICALACTION] was played to call this referendum, return it to its owner's hand (discard down afterward). Minions controlled by the acting Methuselah cannot perform the same political action again this turn.",
-        "twd":993,
+        "twd":1002,
         "type":"Reaction"
     },
     "100520":{
@@ -22658,7 +22658,7 @@
             }
         },
         "text":"Unique.\nPut this card on a ready vampire you control. This vampire gets +1 strength. This vampire gets +1 stealth during diablerie actions. This vampire cannot recruit allies or employ retainers.",
-        "twd":66,
+        "twd":67,
         "type":"Master"
     },
     "100527":{
@@ -23456,7 +23456,7 @@
             }
         },
         "text":"Only one D\u00eda de los Muertos can be played in a game.\nThe first referendum a Sabbat vampire you control calls on this turn passes automatically (skip the polling step).",
-        "twd":41,
+        "twd":42,
         "type":"Master"
     },
     "100542":{
@@ -23494,7 +23494,7 @@
             }
         },
         "text":"[aus] Reduce a bleed against you by 1.\n[dai] Requires an infernal vampire. Only usable if this vampire blocks, before block resolution. Put 4 pact counters on the acting minion; if the number of pact counters equals or exceeds their capacity or cost, burn those counters to make them infernal.\n[DAI] As [dai] above, and the acting minion's controller burns 1 pool.",
-        "twd":0,
+        "twd":1,
         "type":"Reaction"
     },
     "100543":{
@@ -23675,7 +23675,7 @@
             }
         },
         "text":"Out-of-turn.\nCancel a minion card as it is played, and its cost is not paid. (If it was an action card, the acting minion does not lock. If it was a strike card, the minion chooses another strike.)",
-        "twd":1276,
+        "twd":1288,
         "type":"Master"
     },
     "100546":{
@@ -23851,7 +23851,7 @@
             }
         },
         "text":"Only usable at close range at the end of a round during which this vampire successfully inflicted more damage than the opposing vampire. Not usable by a vampire being burned or going to torpor.\n[pot] Put this card on the opposing vampire and send them to torpor. The attached vampire gets -1 strength. They can burn 3 blood to burn this card. A vampire can have only one Disarm.\n[POT] As above, but the attached vampire gets -2 strength.",
-        "twd":199,
+        "twd":200,
         "type":"Combat"
     },
     "100550":{
@@ -24241,7 +24241,7 @@
             }
         },
         "text":"Choose a location and a Methuselah. Successful referendum means the chosen Methuselah takes control of the chosen location.",
-        "twd":198,
+        "twd":199,
         "type":"Political Action"
     },
     "100558":{
@@ -24458,7 +24458,7 @@
             }
         },
         "text":"Requires an Anarch.\n[cel] Additional strike (limited).\n[for] Prevent 2 damage.\n[tha] Strike, ranged: steal 1 blood or life (becoming blood), with 1 optional maneuver.",
-        "twd":56,
+        "twd":57,
         "type":"Combat"
     },
     "100564":{
@@ -24667,7 +24667,7 @@
             }
         },
         "text":"Animal with 1 life.\nMinions in combat with the employer cannot strike: combat ends.",
-        "twd":30,
+        "twd":31,
         "type":"Retainer"
     },
     "100569":{
@@ -24702,7 +24702,7 @@
             }
         },
         "text":"If this referendum passes, put this card in play. Any Brujah antitribu may enter combat with a ready minion as a (D) action. You may burn this card to cancel a blood hunt called on a Brujah antitribu. Any vampire may call a referendum to burn this card as a +1 stealth political action.",
-        "twd":7,
+        "twd":8,
         "type":"Political Action"
     },
     "100570":{
@@ -24925,7 +24925,7 @@
             }
         },
         "text":"[dom] +1 stealth action. (D) Bleed with +1 bleed.\n[DOM] (D) Steal a location.",
-        "twd":177,
+        "twd":178,
         "type":"Action"
     },
     "100574":{
@@ -25026,7 +25026,7 @@
             }
         },
         "text":"Requires an Anarch. Only usable at close range.\n[obf] Strike: burn equipment or retainer with first strike.\n[pro] Strike: hand strike, aggravated.\n[ser] Strike: steal 2 blood or life (becoming blood).",
-        "twd":68,
+        "twd":71,
         "type":"Combat"
     },
     "102220":{
@@ -25056,7 +25056,7 @@
             }
         },
         "text":"Unique werewolf with 3 life. 1 strength, 1 bleed.\nDouble Deuce has +1 stealth. If Double Deuce has 2 or fewer life during your unlock phase, he gains 1 life.",
-        "twd":16,
+        "twd":17,
         "type":"Ally"
     },
     "100577":{
@@ -25281,7 +25281,7 @@
             }
         },
         "text":"Gehenna. Do not replace as long as this card is in play.\nDuring each Methuselah's discard phase, that Methuselah burns 1 pool for each vampire in torpor they control.",
-        "twd":294,
+        "twd":295,
         "type":"Event"
     },
     "100582":{
@@ -25646,7 +25646,7 @@
             }
         },
         "text":"Unique.\nPut this card in play. Add 1 counter to this card each time you lock it. You can lock this card to get +2 hand size until the end of the turn. You can lock this card during your unlock phase to gain 1 pool if you have the Edge. You can lock this card to add 1 blood to a vampire in your uncontrolled region. Burn this card if it has 3 counters.",
-        "twd":1937,
+        "twd":1960,
         "type":"Master"
     },
     "100589":{
@@ -26132,7 +26132,7 @@
             }
         },
         "text":"[aus] +1 intercept.\n[AUS] This vampire attempts to block the current action, ignoring the normal prey, predator or target restrictions for blocking actions.",
-        "twd":527,
+        "twd":531,
         "type":"Reaction"
     },
     "100599":{
@@ -26169,7 +26169,7 @@
             }
         },
         "text":"[pro] Burn 1 blood to get +1 intercept.\n[spi] +1 intercept.\n[SPI] +2 intercept.",
-        "twd":30,
+        "twd":31,
         "type":"Reaction"
     },
     "100600":{
@@ -26218,7 +26218,7 @@
             }
         },
         "text":"[pro] +1 stealth.\n[PRO] +2 stealth.",
-        "twd":241,
+        "twd":248,
         "type":"Action Modifier"
     },
     "100601":{
@@ -26268,7 +26268,7 @@
             }
         },
         "text":"[pro] Strike: combat ends.\n[PRO] As above, and unlock this vampire before combat ends.",
-        "twd":350,
+        "twd":359,
         "type":"Combat"
     },
     "100602":{
@@ -26377,7 +26377,7 @@
             }
         },
         "text":"[pot] Strike: strength ranged damage. This strike cannot be dodged. Not usable against a minion with flight [FLIGHT].\n[POT] As above, but for strength+1 ranged damage.",
-        "twd":31,
+        "twd":32,
         "type":"Combat"
     },
     "100605":{
@@ -26408,7 +26408,7 @@
             }
         },
         "text":"Requires an Anarch.\nChoose one or more Methuselahs. Successful referendum means each chosen Methuselah burns 1 pool, plus 3 additional pool if they control a ready titled vampire. In this referendum, each priscus gets -1 ballot, each non-priscus titled vampire gets -1 vote, and burning the Edge is worth 1 additional vote.",
-        "twd":31,
+        "twd":32,
         "type":"Political Action"
     },
     "100606":{
@@ -26604,7 +26604,7 @@
             }
         },
         "text":"Unique location.\nLock during your influence phase to add 1 blood to a Gangrel in your uncontrolled region.",
-        "twd":186,
+        "twd":191,
         "type":"Master"
     },
     "100610":{
@@ -26891,7 +26891,7 @@
             }
         },
         "text":"Master.\nMove the top card from your crypt to your uncontrolled region.",
-        "twd":244,
+        "twd":247,
         "type":"Master"
     },
     "100617":{
@@ -26945,7 +26945,7 @@
             }
         },
         "text":"[obf] +1 stealth.\n[OBF] Only usable if a minion attempts to block. That attempt fails and the blocking minion cannot attempt to block this action again.",
-        "twd":723,
+        "twd":734,
         "type":"Action Modifier"
     },
     "100618":{
@@ -26993,7 +26993,7 @@
             }
         },
         "text":"Only usable during a bleed action directed at you. Do not replace until after this action.\n+2 intercept. A vampire cannot play both Elder Intervention and cards named /Pack Tactics/ during the same action.",
-        "twd":14,
+        "twd":15,
         "type":"Reaction"
     },
     "100619":{
@@ -27094,7 +27094,7 @@
             }
         },
         "text":"Unique location.\n+1 hand size.",
-        "twd":129,
+        "twd":131,
         "type":"Master"
     },
     "100621":{
@@ -27403,7 +27403,7 @@
             }
         },
         "text":"Only usable by a locked vampire.\nThis vampire unlocks and attempts to block.",
-        "twd":82,
+        "twd":83,
         "type":"Reaction"
     },
     "100629":{
@@ -27442,7 +27442,7 @@
             }
         },
         "text":"Unique location.\nYou can lock this location to give a Lasombra you control +1 stealth.",
-        "twd":122,
+        "twd":124,
         "type":"Master"
     },
     "100630":{
@@ -27563,7 +27563,7 @@
             }
         },
         "text":"Unique location.\nYou can lock this location during the polling step of a political action to give each titled Camarilla vampire you control +1 vote.",
-        "twd":58,
+        "twd":59,
         "type":"Master"
     },
     "100633":{
@@ -27616,7 +27616,7 @@
             }
         },
         "text":"+1 stealth action. Requires a non-sterile vampire.\nPut this card in play. It becomes a 1-capacity non-unique vampire of the same clan and sect as the acting vampire, and must hunt this turn.",
-        "twd":170,
+        "twd":172,
         "type":"Action"
     },
     "100634":{
@@ -27921,7 +27921,7 @@
             }
         },
         "text":"[pre] (D) Bleed with +1 bleed.\n[PRE] +1 stealth action. Add 2 blood to a younger vampire in your uncontrolled region.",
-        "twd":260,
+        "twd":264,
         "type":"Action"
     },
     "100641":{
@@ -27998,7 +27998,7 @@
             }
         },
         "text":"[pre][pro] +1 stealth.\n[PRE][PRO] As above, and once this action, you can burn 1 of your corruption counters from a blocking minion to have their block attempt fail, and they cannot attempt to block this action again.",
-        "twd":42,
+        "twd":45,
         "type":"Action Modifier"
     },
     "100642":{
@@ -28187,7 +28187,7 @@
             }
         },
         "text":"[aus] +1 intercept.\n[AUS] +2 intercept.",
-        "twd":490,
+        "twd":495,
         "type":"Reaction"
     },
     "100645":{
@@ -28240,7 +28240,7 @@
             }
         },
         "text":"Unique. Requires a vampire with capacity 10 or more. Only usable after resolution of a successful bleed against your prey.\nPut this card on this vampire. This vampire gets +1 bleed. During any Methuselah's minion phase, this vampire can lock this card to take an action.",
-        "twd":432,
+        "twd":438,
         "type":"Action Modifier"
     },
     "100646":{
@@ -28286,7 +28286,7 @@
             }
         },
         "text":"Unique location.\nLock to get +1 hand size this turn. Lock during your influence phase to get +1 transfer.",
-        "twd":76,
+        "twd":78,
         "type":"Master"
     },
     "100647":{
@@ -28571,7 +28571,7 @@
             }
         },
         "text":"[pre] (D) Bleed with +1 bleed.\n[PRE] +1 stealth action. (D) Steal an ally controlled by another Methuselah.",
-        "twd":620,
+        "twd":628,
         "type":"Action"
     },
     "100653":{
@@ -29038,7 +29038,7 @@
             }
         },
         "text":"+1 stealth action. Unique.\n[pot][pre] Put this card in play and unlock this vampire. Minions you control get +1 strength. Burn this card during your unlock phase.\n[POT][PRE] As above, and you can burn this card to cancel an action card requiring Dementation [dem], Dominate [dom] or Presence [pre] that would target you (or a card you control) as it is played.",
-        "twd":4,
+        "twd":5,
         "type":"Action"
     },
     "100664":{
@@ -29180,7 +29180,7 @@
             }
         },
         "text":"+1 stealth action. Requires a ready archbishop, priscus, cardinal or regent.\nPut this card on the acting vampire. During an action, this Sabbat vampire can burn 1 blood to unlock and attempt to block. Burn this card if this vampire goes to torpor.",
-        "twd":59,
+        "twd":60,
         "type":"Action"
     },
     "100667":{
@@ -29808,7 +29808,7 @@
             }
         },
         "text":"[aus] Only usable during an action directed at you (or a card you control). +2 intercept.\n[AUS] Only usable by a locked vampire. This vampire wakes (they ignore the requirement to be unlocked for playing reaction cards and attempting to block until the end of the action).",
-        "twd":687,
+        "twd":695,
         "type":"Reaction"
     },
     "100681":{
@@ -29892,7 +29892,7 @@
             }
         },
         "text":"Only usable during a bleed action.\n[dem] +1 bleed (limited).\n[DEM] +2 bleed (limited).",
-        "twd":142,
+        "twd":143,
         "type":"Action Modifier"
     },
     "100683":{
@@ -30053,7 +30053,7 @@
             }
         },
         "text":"Only usable by a locked Gangrel.\nThis Gangrel unlocks and attempts to block. During this action, this Gangrel can burn 1 blood to get +1 intercept. Lock this Gangrel after action resolution if they did not block this action.",
-        "twd":66,
+        "twd":69,
         "type":"Reaction"
     },
     "100687":{
@@ -30131,7 +30131,7 @@
             }
         },
         "text":"[obf] +1 stealth.\n[OBF] As above, and minions who attempt to block this action and fail become locked before action resolution.",
-        "twd":768,
+        "twd":779,
         "type":"Action Modifier"
     },
     "100688":{
@@ -30423,7 +30423,7 @@
             }
         },
         "text":"[ani] This vampire burns 1 blood to get +1 intercept.\n[spi] +1 intercept.\n[SPI] This reacting vampire attempts to block the current action, ignoring the normal prey, predator or target restrictions for blocking actions.",
-        "twd":63,
+        "twd":64,
         "type":"Reaction"
     },
     "100695":{
@@ -30703,7 +30703,7 @@
             }
         },
         "text":"Unique.\nPut this card on a ready vampire. The controller of this vampire burns 3 pool after this vampire goes to torpor. During each Methuselah's unlock phase, if this vampire is in torpor, that Methuselah burns 1 pool.",
-        "twd":723,
+        "twd":728,
         "type":"Master"
     },
     "100699":{
@@ -31191,7 +31191,7 @@
             }
         },
         "text":"Government.\nIf an ally is burned in combat with an acting vampire, add 1 counter to this card and inflict 2 unpreventable environmental damage on the acting vampire after the combat ends. If this card has 4 counters, burn it.",
-        "twd":203,
+        "twd":205,
         "type":"Event"
     },
     "100710":{
@@ -31301,7 +31301,7 @@
             }
         },
         "text":"[dom] (D) Bleed with +2 bleed.\n[DOM] As above, and if the bleed is successful, add 2 blood to a younger vampire you control or in your uncontrolled region.",
-        "twd":2,
+        "twd":3,
         "type":"Action"
     },
     "100712":{
@@ -31389,7 +31389,7 @@
             }
         },
         "text":"+1 stealth action. Requires an Anarch with capacity 5 or more. Title.\nPut this card on this Anarch to represent the unique Anarch title of Baron of Corte. Vampires can call a referendum to burn this card as a +1 stealth political action; during that referendum, non-Anarch titles are worth -1 vote.",
-        "twd":29,
+        "twd":30,
         "type":"Action"
     },
     "100714":{
@@ -31521,7 +31521,7 @@
             }
         },
         "text":"+1 stealth action. Requires an Anarch with capacity 5 or more. Title.\nPut this card on this Anarch to represent the unique Anarch title of Baron of Perth. Vampires can call a referendum to burn this card as a +1 stealth political action; during that referendum, non-Anarch titles are worth -1 vote.",
-        "twd":28,
+        "twd":29,
         "type":"Action"
     },
     "100717":{
@@ -31565,7 +31565,7 @@
             }
         },
         "text":"+1 stealth action. Requires an Anarch with capacity 5 or more. Title.\nPut this card on this Anarch to represent the unique Anarch title of Baron of Seattle. While this Anarch is Gangrel or Gangrel antitribu, they get +1 vote during referendums they call. Vampires can call a referendum to burn this card as a +1 stealth political action; during that referendum, non-Anarch titles are worth -1 vote.",
-        "twd":27,
+        "twd":28,
         "type":"Action"
     },
     "100718":{
@@ -31873,7 +31873,7 @@
             }
         },
         "text":"Master: unique location. Hunting Ground.\nDuring your unlock phase, you may move 1 blood from the blood bank to a ready vampire you control. A vampire can gain blood from only one hunting ground card each turn.",
-        "twd":44,
+        "twd":45,
         "type":"Master"
     },
     "100725":{
@@ -31929,7 +31929,7 @@
             }
         },
         "text":"+1 stealth action. Requires an Anarch.\nUnlock this vampire, choose a Discipline they have at superior, and put this card on another ready non-titled vampire you control. The attached vampire is considered Anarch and gets +1 level of the chosen Discipline. If the attached vampire changes sect, burn this card. A vampire can have only one Field Training.",
-        "twd":21,
+        "twd":23,
         "type":"Action"
     },
     "100726":{
@@ -32659,7 +32659,7 @@
             }
         },
         "text":"[cel] Maneuver or press.\n[CEL] Maneuver with 1 optional press.",
-        "twd":140,
+        "twd":141,
         "type":"Combat"
     },
     "100745":{
@@ -33024,7 +33024,7 @@
             }
         },
         "text":"[cel] (D) Bleed. If the bleed is successful, draw two cards (discard afterward).\n[CEL] (D) Bleed. If the bleed is successful, this vampire unlocks.",
-        "twd":66,
+        "twd":68,
         "type":"Action"
     },
     "100753":{
@@ -33054,7 +33054,7 @@
             }
         },
         "text":"Only usable before range is determined. A vampire can play only one Focus the Blood each combat.\nPut this card and 1 blood on this Banu Haqim. This vampire can burn this card to reduce the cost of a combat card they play by 1 blood.",
-        "twd":4,
+        "twd":5,
         "type":"Combat"
     },
     "100754":{
@@ -33262,7 +33262,7 @@
             }
         },
         "text":"[pre] [COMBAT] Strike: combat ends.\n[PRE] [ACTIONMODIFIER] Only usable as the action is announced. Vampires must burn 1 blood to attempt to block this action. Non-zombie allies cannot block this action.",
-        "twd":89,
+        "twd":90,
         "type":"Action Modifier/Combat"
     },
     "100759":{
@@ -33333,7 +33333,7 @@
             }
         },
         "text":"Only usable by a locked vampire.\n[for] (D) Bleed with +1 bleed. After resolution, this vampire takes 2 unpreventable aggravated damage even if the action is blocked.\n[FOR] As above, but with +2 bleed, and the acting vampire takes only 1 unpreventable aggravated damage.",
-        "twd":26,
+        "twd":27,
         "type":"Action"
     },
     "100760":{
@@ -33423,7 +33423,7 @@
             }
         },
         "text":"Only usable by a locked vampire.\nThis vampire wakes (they ignore the requirement to be unlocked for playing reaction cards and attempting to block until the end of the action). If they do not block this action, they burn 1 blood before action resolution.",
-        "twd":631,
+        "twd":633,
         "type":"Reaction"
     },
     "102250":{
@@ -33450,7 +33450,7 @@
             }
         },
         "text":"Only usable if a minion attempts to block.\n[dom] The blocking minion gets -1 intercept.\n[DOM] That attempt fails and the blocking minion cannot attempt to block this action again.",
-        "twd":2,
+        "twd":3,
         "type":"Action Modifier"
     },
     "100761":{
@@ -33501,7 +33501,7 @@
             }
         },
         "text":"A vampire can play only one Forced March each turn.\n[cel][for] Only usable after resolution of a successful action. Unlock this vampire.\n[CEL][FOR] +1 stealth. After action resolution, if the action was successful, this vampire can burn 1 blood to unlock.",
-        "twd":207,
+        "twd":210,
         "type":"Action Modifier"
     },
     "100762":{
@@ -33682,7 +33682,7 @@
             }
         },
         "text":"Only usable during a bleed action.\n[dom] +1 bleed (limited).\n[DOM] +3 bleed if the target Methuselah has 9 or fewer pool (limited).",
-        "twd":403,
+        "twd":412,
         "type":"Action Modifier"
     },
     "100766":{
@@ -33841,7 +33841,7 @@
             }
         },
         "text":"Not usable during a bleed action.\n[obf] +2 stealth.\n[OBF] +3 stealth.",
-        "twd":439,
+        "twd":441,
         "type":"Action Modifier"
     },
     "100770":{
@@ -33979,7 +33979,7 @@
             }
         },
         "text":"[pro] Strike: dodge.\n[PRO] Strike: combat ends. After combat ends, if this vampire was blocked while performing an action, they can burn 1 blood to continue the action with +1 stealth as if unblocked, even if stealth is not yet needed. A vampire can play only one Form of Mist at superior each action.",
-        "twd":341,
+        "twd":352,
         "type":"Combat"
     },
     "102223":{
@@ -34029,7 +34029,7 @@
             }
         },
         "text":"[pro] [ACTIONMODIFIER] Only usable if a minion attempts to block. The blocking minion gets -1 intercept. If this action is blocked, this vampire gets 1 optional maneuver and cannot use equipment during the resulting combat.\n[PRO] [REACTION] +1 intercept. If this vampire blocks, they get 1 optional maneuver and cannot use equipment during the resulting combat.",
-        "twd":110,
+        "twd":118,
         "type":"Action Modifier/Reaction"
     },
     "102224":{
@@ -34210,7 +34210,7 @@
             }
         },
         "text":"Master: Discipline.\nPut this card on a vampire. This vampire gains 1 level of Fortitude [for]. Capacity increases by 1: the vampire is one generation older. Cannot be placed on a vampire with superior Fortitude [FOR].",
-        "twd":110,
+        "twd":111,
         "type":"Master"
     },
     "100775":{
@@ -34304,7 +34304,7 @@
             }
         },
         "text":"Unique location.\nYou can lock this card to give a Ravnos +1 stealth.",
-        "twd":48,
+        "twd":50,
         "type":"Master"
     },
     "100778":{
@@ -34378,7 +34378,7 @@
             }
         },
         "text":"Unique location.\nEach non-titled Toreador antitribu you control gets +1 vote. Any vampire can burn this card as a (D) action that costs 1 blood.",
-        "twd":17,
+        "twd":18,
         "type":"Master"
     },
     "100780":{
@@ -34769,7 +34769,7 @@
             }
         },
         "text":"Only usable after action resolution.\n[for] Only usable if the action was successful. Unlock this vampire.\n[FOR] Only usable if the action was blocked. Unlock this vampire.",
-        "twd":658,
+        "twd":667,
         "type":"Action Modifier"
     },
     "100789":{
@@ -35014,7 +35014,7 @@
             }
         },
         "text":"Put this card in play. Each ready minion you control can enter combat with a minion controlled by your prey as a (D) action. You gain 1 pool after a ready minion controlled by your prey is burned or sent to torpor. During your influence phase, burn this card and burn 1 pool for each ready minion controlled by your prey.",
-        "twd":82,
+        "twd":83,
         "type":"Master"
     },
     "100795":{
@@ -35084,7 +35084,7 @@
             }
         },
         "text":"Gehenna. Do not replace until a vampire commits diablerie.\nThis card comes into play with 10 counters. After another Gehenna event is played, burn 1 counter from this card. Blood hunts cannot be called on vampires with capacity greater than the number of counters on this card who diablerize a younger vampire.",
-        "twd":7,
+        "twd":8,
         "type":"Event"
     },
     "100797":{
@@ -35358,7 +35358,7 @@
             }
         },
         "text":"Master: unique location.\nDuring your influence phase, lock to move 1 blood from the blood bank to a Brujah antitribu in your uncontrolled region.",
-        "twd":25,
+        "twd":26,
         "type":"Master"
     },
     "100804":{
@@ -35497,7 +35497,7 @@
             }
         },
         "text":"Unique.\nPut this card in play. Gangrel you control get +1 strength. Non-Ravnos minions can burn this card as a (D) action.",
-        "twd":42,
+        "twd":43,
         "type":"Master"
     },
     "100808":{
@@ -35579,7 +35579,7 @@
             }
         },
         "text":"Unique location.\nYou can lock this location and burn 1 pool during your unlock phase to exchange one card from your hand for one card in your ash heap requiring an Anarch. You can lock this location before range is determined to end a combat involving an Anarch you control and another Anarch.",
-        "twd":132,
+        "twd":140,
         "type":"Master"
     },
     "100810":{
@@ -36292,7 +36292,7 @@
             }
         },
         "text":"Only one Giant's Blood can be played in a game.\nChoose a vampire. The chosen vampire gains enough blood to reach full capacity.",
-        "twd":1559,
+        "twd":1577,
         "type":"Master"
     },
     "100825":{
@@ -36399,7 +36399,7 @@
             }
         },
         "text":"+1 stealth action.\nPut this card on this Gangrel with any number of cards requiring Protean [pro] from your hand face down and out of play (you can look at the cards at any time). This Gangrel can play these cards as if from your hand. Burn this card if it has no cards on it. A vampire can have only one Gift of Proteus.",
-        "twd":3,
+        "twd":4,
         "type":"Action"
     },
     "100828":{
@@ -36984,7 +36984,7 @@
             }
         },
         "text":"Remove a vampire with capacity 8 or more from the game. Their controller gains pool equal to the vampire's capacity. Their controller can burn 2 pool to cancel this card as it is played.",
-        "twd":395,
+        "twd":399,
         "type":"Master"
     },
     "100843":{
@@ -37148,7 +37148,7 @@
             }
         },
         "text":"[dom] (D) Bleed with +2 bleed.\n[DOM] +1 stealth action. Add 3 blood to a younger vampire in your uncontrolled region.",
-        "twd":1070,
+        "twd":1079,
         "type":"Action"
     },
     "100846":{
@@ -37228,7 +37228,7 @@
             }
         },
         "text":"In play, this is a unique location and does not count as equipment.\nWhen your predator or prey puts a minion in play in any phase except the unlock phase, that minion is locked. If that minion is a younger vampire, he or she burns 1 blood.",
-        "twd":68,
+        "twd":69,
         "type":"Equipment"
     },
     "100848":{
@@ -37463,7 +37463,7 @@
             }
         },
         "text":"[dom] (D) Steal a vampire in torpor controlled by another Methuselah.\n[DOM] As above, and this acting vampire may burn 2 blood to move the stolen vampire to your ready region.",
-        "twd":192,
+        "twd":195,
         "type":"Action"
     },
     "100853":{
@@ -38000,7 +38000,7 @@
             }
         },
         "text":"Only usable by a locked vampire during a bleed action directed at you.\n[ani] Unlock this vampire.\n[ANI] As above, with 1 optional maneuver during the resulting combat if this vampire blocks.",
-        "twd":147,
+        "twd":151,
         "type":"Reaction"
     },
     "100864":{
@@ -38132,7 +38132,7 @@
             }
         },
         "text":"Put this card on a ready vampire you control. This vampire gets +1 intercept during bleed actions against you. This vampire can prevent 1 damage each combat. Burn this card if this vampire is in torpor.",
-        "twd":201,
+        "twd":204,
         "type":"Master"
     },
     "100867":{
@@ -38929,7 +38929,7 @@
             }
         },
         "text":"Put this card in play. During a bleed action, an Banu Haqim you control can discard a combat card to get +1 bleed.",
-        "twd":32,
+        "twd":35,
         "type":"Master"
     },
     "100886":{
@@ -39425,7 +39425,7 @@
             }
         },
         "text":"Put this card on a ready vampire. Minions can enter combat with this vampire as a +1 stealth (D) action. This vampire can burn this card as a +1 stealth (D) action.",
-        "twd":289,
+        "twd":291,
         "type":"Master"
     },
     "100898":{
@@ -39657,7 +39657,7 @@
             }
         },
         "text":"Unique.\nIf the bearer is ready during your unlock phase, you can draw up to 3 cards without discarding and then move the same number of cards from your hand to the bottom of your library.",
-        "twd":842,
+        "twd":852,
         "type":"Equipment"
     },
     "100904":{
@@ -39690,7 +39690,7 @@
             }
         },
         "text":"+1 stealth action.\n[pre] Put this card on this vampire. This vampire gets +1 bleed. A vampire can have only one Heart of the City.\n[PRE] As above, but this vampire gets +2 bleed.",
-        "twd":105,
+        "twd":106,
         "type":"Action"
     },
     "100905":{
@@ -39881,7 +39881,7 @@
             }
         },
         "text":"Unique location.\nLock to move blood, equipment and/or retainers between any two ready vampires you control. Cannot be used during an action.",
-        "twd":256,
+        "twd":260,
         "type":"Master"
     },
     "100909":{
@@ -40100,7 +40100,7 @@
             }
         },
         "text":"+3 stealth action.\n[pot] Put this card on this vampire. This vampire gets +1 strength. This vampire can strike: burn equipment. Burn this card if this vampire is in torpor. A vampire can have only one Heroic Might.\n[POT] As above, with an additional +1 strength, and this vampire can strike: 2R damage.",
-        "twd":68,
+        "twd":69,
         "type":"Action"
     },
     "100914":{
@@ -40333,7 +40333,7 @@
             }
         },
         "text":"[for] Prevent X+1 damage.\n[FOR] As above, with 1 optional press.",
-        "twd":221,
+        "twd":223,
         "type":"Combat"
     },
     "100919":{
@@ -40525,7 +40525,7 @@
             }
         },
         "text":"[obf] [COMBAT] Cancel a combat card that requires Auspex [aus] as it is played. No cost is paid.\n[OBF] [ACTIONMODIFIER] Cancel a reaction card that requires Auspex as it is played. No cost is paid.",
-        "twd":68,
+        "twd":71,
         "type":"Action Modifier/Combat"
     },
     "100922":{
@@ -40912,7 +40912,7 @@
             }
         },
         "text":"Retainer with 1 life.\n[pro] During any Methuselah's unlock phase, the employer can burn 1 blood to unlock.\n[PRO] As above, but Homunculus has 2 life.",
-        "twd":125,
+        "twd":129,
         "type":"Retainer"
     },
     "100933":{
@@ -41072,7 +41072,7 @@
             }
         },
         "text":"Only usable when this vampire is blocked.\n[pro] Unlock the blocking minion. This action is not blocked, and it is now unblockable.",
-        "twd":14,
+        "twd":15,
         "type":"Action Modifier"
     },
     "100937":{
@@ -41385,7 +41385,7 @@
             }
         },
         "text":"Only usable before range is determined.\n[tha] This round, this vampire can strike, ranged: steal 1 blood or life (becoming blood).\n[THA] As above, but for 2 blood or life (becoming blood).",
-        "twd":23,
+        "twd":25,
         "type":"Combat"
     },
     "100945":{
@@ -41432,7 +41432,7 @@
             }
         },
         "text":"Unique location.\nSabbat vampires you control get +1 hunt.",
-        "twd":149,
+        "twd":151,
         "type":"Master"
     },
     "100946":{
@@ -41489,7 +41489,7 @@
             }
         },
         "text":"[cel][tha] (D) Enter combat with a minion. This acting vampire gets 1 optional press during that combat.\n[CEL][THA] As above, and the opposing minion cannot strike: combat ends during the first round of that combat.",
-        "twd":22,
+        "twd":24,
         "type":"Action"
     },
     "100947":{
@@ -41558,7 +41558,7 @@
             }
         },
         "text":"[dai] +1 stealth.\n[dai][obf] Cancel a reaction card requiring Auspex [aus] as it is played (cost must be paid).\n[DAI][OBF] As [dai][obf] above, and/or gain 1 pool after action resolution if this action is successful.",
-        "twd":85,
+        "twd":89,
         "type":"Action Modifier"
     },
     "100948":{
@@ -42141,7 +42141,7 @@
             }
         },
         "text":"Grapple. Only usable at close range before strikes are chosen. A vampire can play only one Immortal Grapple each round.\n[pot] Strikes that are not hand strikes cannot be used this round (by either combatant).\n[POT] As above, with 1 optional press. If another round of combat occurs, that round is at close range (skip the determine range step for that round).",
-        "twd":314,
+        "twd":316,
         "type":"Combat"
     },
     "100960":{
@@ -42625,7 +42625,7 @@
             }
         },
         "text":"Equipment.\nChoose a minion your prey controls. The chosen minion cannot block the minion with this equipment.",
-        "twd":3,
+        "twd":4,
         "type":"Equipment"
     },
     "100973":{
@@ -42983,7 +42983,7 @@
             }
         },
         "text":"[cel] Press.\n[CEL] For the remainder of the combat, each time you replace a card (including when you draw to replace this card), draw an additional card and discard down to your hand size.",
-        "twd":48,
+        "twd":49,
         "type":"Combat"
     },
     "100981":{
@@ -43029,7 +43029,7 @@
             }
         },
         "text":"Unique demon with 2 life. 1 strength, 3 bleed. Requires an infernal vampire.\n[dai] Infernal Servitor can perform actions the turn it is recruited. Remove it from the game if you control no infernal vampires, or after it performs a successful action.\n[DAI] As above, and Infernal Servitor can play cards requiring basic Daimoinon [dai] and/or basic Obfuscate [obf] as a vampire.",
-        "twd":36,
+        "twd":37,
         "type":"Ally"
     },
     "100982":{
@@ -43149,7 +43149,7 @@
             }
         },
         "text":"Unique location.\n+2 transfers.",
-        "twd":1018,
+        "twd":1028,
         "type":"Master"
     },
     "100985":{
@@ -43513,7 +43513,7 @@
             }
         },
         "text":"[cel][pro] +1 stealth.\n[CEL][PRO] Only usable after resolution of a successful action. Unlock this vampire. A vampire can play only one Instantaneous Transformation at superior each turn.",
-        "twd":109,
+        "twd":112,
         "type":"Action Modifier"
     },
     "100995":{
@@ -43726,7 +43726,7 @@
             }
         },
         "text":"[pre] (D) Bleed with +1 bleed.\n[PRE] (D) Bleed with +2 bleed.",
-        "twd":101,
+        "twd":102,
         "type":"Action"
     },
     "101000":{
@@ -43808,7 +43808,7 @@
             }
         },
         "text":"Do not replace until your unlock phase.\n[obf] +1 stealth. Once this action, this vampire may burn 1 blood to give an ally or younger vampire -1 intercept. Into Thin Air and Lost in Crowds cannot both be played on the same action.\n[OBF] As above, but for +2 stealth.",
-        "twd":182,
+        "twd":184,
         "type":"Action Modifier",
         "Card Text":"Do not replace until your unlock phase.\n[obf] +1 stealth. Once this action, this vampire may burn 1 blood to give an ally or younger vampire -1 intercept. Into Thin Air and /Lost in Crowds/ cannot both be played on the same action.\n[OBF] As above, but for +2 stealth."
     },
@@ -43912,7 +43912,7 @@
             }
         },
         "text":"Requires an Anarch.\n[ani] This Anarch gets +1 strength this action.\n[dom] This Anarch cannot be blocked by allies this action.\n[pro] This Anarch's hand strikes are aggravated this action.",
-        "twd":1,
+        "twd":2,
         "type":"Action Modifier"
     },
     "101004":{
@@ -44175,7 +44175,7 @@
             }
         },
         "text":"[pot][pre] Only usable during a referendum. This vampire gains 2 votes.\n[POT][PRE] Only usable during a bleed action. +2 bleed (limited).",
-        "twd":72,
+        "twd":73,
         "type":"Action Modifier"
     },
     "101009":{
@@ -44434,7 +44434,7 @@
             }
         },
         "text":"Unique weapon.\nStrike: 1R aggravated damage.",
-        "twd":691,
+        "twd":695,
         "type":"Equipment"
     },
     "101015":{
@@ -44480,7 +44480,7 @@
             }
         },
         "text":"Unique mortal with 1 life.\nThe employer gets +1 bleed.",
-        "twd":234,
+        "twd":235,
         "type":"Retainer"
     },
     "101016":{
@@ -44674,7 +44674,7 @@
             }
         },
         "text":"Unique.\nPut this card in play; it becomes a unique mortal ally with 1 life, 0 strength and 0 bleed. During your unlock phase, you can burn Jake to add up to 4 blood to a ready vampire with no blood.",
-        "twd":559,
+        "twd":567,
         "type":"Master"
     },
     "101020":{
@@ -45404,7 +45404,7 @@
             }
         },
         "text":"Master.\nAll Methuselahs move any crypt cards in their uncontrolled regions to their crypts. Any blood counters on them are moved to the Methuselah's pool, and any cards on them are burned. Each Methuselah shuffles his or her crypt and then moves as many cards from his or her crypt to his or her uncontrolled region as he or she shuffled in. Only one Kaymakli Nightmares may be played per game.",
-        "twd":26,
+        "twd":27,
         "type":"Master"
     },
     "101037":{
@@ -45542,7 +45542,7 @@
             }
         },
         "text":"Once each combat, the bearer can prevent 2 damage from gun strikes or 1 damage from any other source. A minion can have only one Kevlar Vest.",
-        "twd":128,
+        "twd":131,
         "type":"Equipment"
     },
     "101041":{
@@ -45628,7 +45628,7 @@
             }
         },
         "text":"Unique.\nPut this card in play. Banu Haqim get +1 stealth when bleeding. Minions can burn this card as a (D) action; Tremere get +1 stealth during that action.",
-        "twd":20,
+        "twd":21,
         "type":"Master"
     },
     "101043":{
@@ -45664,7 +45664,7 @@
             }
         },
         "text":"+1 stealth action. Unique. Not usable if any non-mandatory actions have been performed this turn.\nPut this card on this Banu Haqim and unlock them. This Banu Haqim gets +1 bleed. If your prey is ousted, you gain 4 additional pool. Burn this card during your unlock phase.",
-        "twd":43,
+        "twd":45,
         "type":"Action"
     },
     "101044":{
@@ -46209,7 +46209,7 @@
             }
         },
         "text":"[dem] (D) Bleed any Methuselah. Gain 1 pool if this bleed is successful (for 1 or more).\n[DEM] As above, with +1 bleed.",
-        "twd":168,
+        "twd":169,
         "type":"Action"
     },
     "101056":{
@@ -46309,7 +46309,7 @@
             }
         },
         "text":"Allocate 4 points among two or more Methuselahs. Successful referendum means each Methuselah burns 1 pool for each point allocated.",
-        "twd":761,
+        "twd":765,
         "type":"Political Action"
     },
     "101057":{
@@ -46536,7 +46536,7 @@
             }
         },
         "text":"Only usable when a vampire who does not have Fortitude [for] attempts to block this acting minion.\n[for] The block attempt is canceled, the blocking vampire burns 2 blood, and the current action is ended (without combat).\n[FOR] As above, and send the blocking vampire to torpor.",
-        "twd":149,
+        "twd":150,
         "type":"Action Modifier"
     },
     "101063":{
@@ -47762,7 +47762,7 @@
             }
         },
         "text":"[pre] (D) Bleed with +2 bleed.\n[PRE] As above, and gain 1 pool if the bleed is successful (for 1 or more).",
-        "twd":166,
+        "twd":168,
         "type":"Action"
     },
     "101090":{
@@ -47842,7 +47842,7 @@
             }
         },
         "text":"Unique.\nPut this card on a vampire with capacity 7 or more who entered your ready region during your last influence phase. This vampire gets +2 bleed and +2 votes. Any vampire can call a referendum to burn this card as a +1 stealth political action.",
-        "twd":125,
+        "twd":126,
         "type":"Master"
     },
     "101092":{
@@ -48235,7 +48235,7 @@
             }
         },
         "text":"Unique location. Hunting ground.\nDuring your unlock phase, a ready vampire you control can gain 1 blood. A vampire can gain blood from only one hunting ground each turn.",
-        "twd":79,
+        "twd":82,
         "type":"Master"
     },
     "101103":{
@@ -48300,7 +48300,7 @@
             }
         },
         "text":"Out-of-turn. Boon.\nGive pool to a Methuselah with no pool to keep them in the game, and put this card in play. During each of their unlock phases, you can steal 1 pool from that Methuselah. You gain any victory point gained by that Methuselah instead of them, until you are being ousted or until you have gained 1 victory point from this card. Burn this card after you have gained 1 victory point from this card.",
-        "twd":73,
+        "twd":74,
         "type":"Master"
     },
     "101104":{
@@ -48580,7 +48580,7 @@
             }
         },
         "text":"Unique location.\nYou can lock this location to reduce the cost of an action card a vampire you control plays by 1 blood (this location is not locked if that card is canceled as it is played). Vampires can steal this location as a (D) action.",
-        "twd":10,
+        "twd":11,
         "type":"Master"
     },
     "102229":{
@@ -48683,7 +48683,7 @@
             }
         },
         "text":"Do not replace until your discard phase.\nBurn 7 cards from the top of your library to gain 3 pool.",
-        "twd":262,
+        "twd":264,
         "type":"Master"
     },
     "101113":{
@@ -48774,7 +48774,7 @@
             }
         },
         "text":"Location. While in play, this card does not count as equipment.\nThis vampire gets +1 bleed. They can burn this card before range is determined to end combat. A vampire can have only one Living Manse.",
-        "twd":35,
+        "twd":38,
         "type":"Equipment"
     },
     "101115":{
@@ -49164,7 +49164,7 @@
             }
         },
         "text":"[qui] (D) Burn an equipment or location on a minion controlled by your predator or prey.\n[QUI] (D) Bleed with +2 bleed.",
-        "twd":30,
+        "twd":31,
         "type":"Action"
     },
     "101125":{
@@ -49242,7 +49242,7 @@
             }
         },
         "text":"[obf] +1 stealth. Lost in Crowds and cards named /Into Thin Air/ cannot both be played during the same action.\n[OBF] As above, but for +2 stealth.",
-        "twd":925,
+        "twd":935,
         "type":"Action Modifier"
     },
     "101126":{
@@ -49283,7 +49283,7 @@
             }
         },
         "text":"Only usable when an ally or younger vampire is bleeding you, after blocks are declined.\nLock this reacting vampire. Choose another Methuselah other than the acting minion's controller. The acting minion is now bleeding the chosen Methuselah. Only one Lost in Translation may be played each action.",
-        "twd":76,
+        "twd":77,
         "type":"Reaction"
     },
     "102273":{
@@ -50097,7 +50097,7 @@
             }
         },
         "text":"+1 stealth action.\n[tha] Search your library for an equipment card and equip this vampire with it (requirements and cost apply as normal; shuffle afterward).\n[THA] As above, but this is a +3 stealth action.",
-        "twd":238,
+        "twd":239,
         "type":"Action"
     },
     "101144":{
@@ -50176,7 +50176,7 @@
             }
         },
         "text":"[pre] Strike: combat ends.\n[PRE] As above, and unlock this vampire before combat ends.",
-        "twd":722,
+        "twd":730,
         "type":"Combat"
     },
     "101145":{
@@ -52269,7 +52269,7 @@
             }
         },
         "text":"Unique location. Hunting ground.\nDuring your unlock phase, a ready Salubri you control can gain 1 blood. You can lock this card to cancel a frenzy card as it is played on a Salubri you control (cost is still paid). A vampire can gain blood from only one hunting ground each turn.",
-        "twd":2,
+        "twd":3,
         "type":"Master"
     },
     "101194":{
@@ -52398,7 +52398,7 @@
             }
         },
         "text":"[vic] Strike: combat ends, and unlock the opposing minion (at any range) before combat ends.\n[VIC] Strike: combat ends.",
-        "twd":39,
+        "twd":40,
         "type":"Combat"
     },
     "101197":{
@@ -52504,7 +52504,7 @@
             }
         },
         "text":"Requires an Anarch. Only usable as the action is announced. More than one Discipline can be used to play this card.\n[dem] Choose a titled vampire or a younger vampire. The chosen vampire cannot block this action.\n[obf] +1 stealth, even if stealth is not yet needed.\n[pre] If this action is blocked, this Anarch can strike: combat ends during the first round of the resulting combat.",
-        "twd":28,
+        "twd":31,
         "type":"Action Modifier"
     },
     "101200":{
@@ -52592,7 +52592,7 @@
             }
         },
         "text":"Only usable if this vampire blocks an ally or younger vampire, before block resolution.\n[obf] Lock this vampire and end the action. This card costs Ministers 1 fewer blood.\n[OBF] As above, but do not lock this vampire.",
-        "twd":56,
+        "twd":57,
         "type":"Reaction"
     },
     "101202":{
@@ -52689,7 +52689,7 @@
             }
         },
         "text":"Strike: combat ends. Only usable if this vampire has more blood than the opposing vampire. Opposing vampire gains 1 blood (even at long range).",
-        "twd":0,
+        "twd":1,
         "type":"Combat"
     },
     "101205":{
@@ -52791,7 +52791,7 @@
             }
         },
         "text":"Master: unique location.\nDuring your discard phase, you may lock this card and burn 1 pool to unlock a vampire you control.",
-        "twd":198,
+        "twd":199,
         "type":"Master"
     },
     "102239":{
@@ -53013,7 +53013,7 @@
             }
         },
         "text":"[pre] (D) Put this card on an unlocked vampire and lock them. The attached vampire does not unlock as normal. Burn this card during your unlock phase.\n[PRE] As above, and this is a +1 stealth action.",
-        "twd":122,
+        "twd":123,
         "type":"Action"
     },
     "101212":{
@@ -53107,7 +53107,7 @@
             }
         },
         "text":"[ani][aus] If this action is blocked, this vampire gets 1 optional maneuver during the first round of the resulting combat and the blocking minion cannot strike: combat ends.\n[ANI][AUS] As above, with +1 stealth.",
-        "twd":31,
+        "twd":32,
         "type":"Action Modifier"
     },
     "101215":{
@@ -53187,7 +53187,7 @@
             }
         },
         "text":"[dom] (D) Bleed with +2 bleed.\n[DOM] (D) Put this card on a younger vampire and lock them; you still control this card. The attached vampire does not unlock as normal. During your next minion phase, burn this card to unlock the attached vampire and take control of them until the end of your turn.",
-        "twd":88,
+        "twd":89,
         "type":"Action"
     },
     "101216":{
@@ -53296,7 +53296,7 @@
             }
         },
         "text":"Move any amount of blood from a vampire you control to your pool.",
-        "twd":447,
+        "twd":448,
         "type":"Master"
     },
     "101218":{
@@ -53574,7 +53574,7 @@
             }
         },
         "text":"Do not replace until your discard phase.\n[tha] +1 stealth.\n[THA] As above, and if this action is blocked, lock the blocking minion and end the action before block resolution.",
-        "twd":229,
+        "twd":232,
         "type":"Action Modifier"
     },
     "101224":{
@@ -53668,7 +53668,7 @@
             }
         },
         "text":"Lock a minion.",
-        "twd":258,
+        "twd":260,
         "type":"Master"
     },
     "101226":{
@@ -54342,7 +54342,7 @@
             }
         },
         "text":"Unique location.\n+1 hand size. Lock to give a vampire with capacity 8 or more +1 stealth.",
-        "twd":480,
+        "twd":487,
         "type":"Master"
     },
     "101239":{
@@ -54375,7 +54375,7 @@
             }
         },
         "text":"Requires an Anarch. Only usable during a bleed action.\n+X bleed (limited). X must be 1, 2 or 3.",
-        "twd":88,
+        "twd":91,
         "type":"Action Modifier"
     },
     "101240":{
@@ -54525,7 +54525,7 @@
             }
         },
         "text":"Master: archetype.\nPut this card on a ready vampire you control. Once each turn when combat involving this vampire ends and the opposing minion is not ready, this vampire may burn a blood to unlock. A vampire may have only one archetype.",
-        "twd":50,
+        "twd":51,
         "type":"Master"
     },
     "102253":{
@@ -54552,7 +54552,7 @@
             }
         },
         "text":"[dom][pro] Only usable before range is determined. This vampire gets +1 strength this combat. A vampire can play only one Monstrous Form each round.\n[DOM][PRO] +1 stealth action. Put this card on this vampire. During combat, you can lock this card to give this vampire +1 strength this round, or 1 maneuver or press.",
-        "twd":1,
+        "twd":2,
         "type":"Action/Combat"
     },
     "101243":{
@@ -54856,7 +54856,7 @@
             }
         },
         "text":"Unique mortal with 1 life.\nThe employer gets +1 intercept.",
-        "twd":415,
+        "twd":418,
         "type":"Retainer"
     },
     "101250":{
@@ -54894,7 +54894,7 @@
             }
         },
         "text":"Unique mortal with 1 life. 4 strength, 0 bleed.\nThe Muddled Vampire Hunter strikes with first strike. He may enter combat with a ready vampire controlled by another Methuselah as a (D) action.",
-        "twd":94,
+        "twd":96,
         "type":"Ally"
     },
     "101251":{
@@ -55187,7 +55187,7 @@
             }
         },
         "text":"+1 stealth employ retainer action.\n[ani] Search your library for a retainer that requires Animalism. This vampire employs that retainer (pay cost as normal). Shuffle your library afterward.\n[ani][spi] As [ani] above, and the retainer has an additional life.\n[ANI][SPI] As [ani][spi] above, and unlock this acting vampire at the end of the turn.",
-        "twd":25,
+        "twd":26,
         "type":"Action"
     },
     "101256":{
@@ -55228,7 +55228,7 @@
             }
         },
         "text":"[dom] [ACTIONMODIFIER] Only usable during a bleed action. +1 bleed (limited).\n[DOM] [REACTION] Only usable if a younger vampire is bleeding you, after blocks are declined. Lock this reacting vampire. Change the target of the bleed to another Methuselah other than the acting vampire's controller (that Methuselah can attempt to block).",
-        "twd":168,
+        "twd":171,
         "type":"Action Modifier/Reaction"
     },
     "101257":{
@@ -55352,7 +55352,7 @@
             }
         },
         "text":"[aus] +1 intercept.\n[AUS] Only usable if a minion controlled by your predator is bleeding you, after blocks are declined. Not usable if there are only two Methuselahs left. Lock this reacting vampire. Change the target of the bleed to your predator's predator (that Methuselah can attempt to block).",
-        "twd":645,
+        "twd":650,
         "type":"Reaction"
     },
     "101260":{
@@ -55422,7 +55422,7 @@
             }
         },
         "text":"Unique changeling with 1 life. 0 strength, 1 bleed.\nOnce each combat, Mylan can strike: dodge. He can unlock a ready non-Camarilla vampire with capacity 8 or more as a +1 stealth action. Mylan cannot block vampires.",
-        "twd":381,
+        "twd":383,
         "type":"Ally"
     },
     "101262":{
@@ -55574,7 +55574,7 @@
             }
         },
         "text":"Inconnu. Do not replace until your next unlock phase.\nMinion cards that change the target of a bleed action cost +1 blood or life.",
-        "twd":186,
+        "twd":195,
         "type":"Event"
     },
     "101266":{
@@ -55753,7 +55753,7 @@
             }
         },
         "text":"Mortal with 1 life. 1 strength, 0 bleed.\nLock after resolution of an unsuccessful action to inflict 1 damage on the acting vampire. Only one Neighborhood Watch Commander can lock to inflict damage each action.",
-        "twd":33,
+        "twd":34,
         "type":"Ally"
     },
     "101271":{
@@ -55799,7 +55799,7 @@
             }
         },
         "text":"Choose one or more Methuselahs. Successful referendum means each chosen Methuselah burns 1 pool, plus 3 additional pool if they control a ready vampire with capacity 4 or less.",
-        "twd":172,
+        "twd":173,
         "type":"Political Action"
     },
     "101272":{
@@ -55874,7 +55874,7 @@
             }
         },
         "text":"Mage with 2 life. 0 strength, 1 bleed.\nNephandus can strike: 1R damage. Nephandus gets 1 optional press each combat. Nephandus can burn a vampire in torpor to gain 1 life as a (D) action. Each strike or damaging effect made by the opposing minion against Nephandus in combat inflicts 1 less damage.",
-        "twd":114,
+        "twd":115,
         "type":"Ally"
     },
     "101273":{
@@ -56085,7 +56085,7 @@
             }
         },
         "text":"Unique location.\nTitled Brujah get +1 bleed and +1 vote. Ventrue get -1 vote.",
-        "twd":59,
+        "twd":60,
         "type":"Master"
     },
     "101278":{
@@ -56770,7 +56770,7 @@
             }
         },
         "text":"[obf] Only usable at long range. Strike: combat ends.\n[OBF] Strike: combat ends.",
-        "twd":104,
+        "twd":108,
         "type":"Combat"
     },
     "101293":{
@@ -56923,7 +56923,7 @@
             }
         },
         "text":"+1 stealth action.\n[aus] (D) Enter combat with a ready locked minion controlled by another Methuselah. This acting minion gets an optional maneuver in that combat.\n[spi] As [aus] above, with an additional optional maneuver during that combat.\n[SPI] As [spi] above, but enter combat with any ready minion controlled by another Methuselah.",
-        "twd":89,
+        "twd":91,
         "type":"Action"
     },
     "101297":{
@@ -57202,7 +57202,7 @@
             }
         },
         "text":"Master: out-of-turn.\nCancel an event card as it is played (no cost is paid). Put this card in play. During your master phase, you get one additional master phase action. During your discard phase, you get one fewer discard phase action, and this card is burned.",
-        "twd":58,
+        "twd":59,
         "type":"Master"
     },
     "101304":{
@@ -57285,7 +57285,7 @@
             }
         },
         "text":"Government.\nAny minion who successfully performs an equip action unlocks at the end of the turn.",
-        "twd":54,
+        "twd":57,
         "type":"Event"
     },
     "101306":{
@@ -57477,7 +57477,7 @@
             }
         },
         "text":"Only usable if this vampire is about to enter combat with an acting younger vampire.\n[dom] Unlock the acting vampire and end the action. (Do not lock this vampire if they are blocking.) The acting vampire cannot take the same action this turn.\n[DOM] As above, but do not unlock the acting vampire.",
-        "twd":263,
+        "twd":265,
         "type":"Reaction"
     },
     "102255":{
@@ -57507,7 +57507,7 @@
             }
         },
         "text":"[dom][pro] [ACTIONMODIFIER] +1 stealth. Allies get -1 intercept.\n[DOM][PRO] [COMBAT] Only usable before range is determined. This round, this vampire gets +1 strength, 1 optional maneuver and can prevent 1 damage. A vampire can play only one Obedient Flesh each round.",
-        "twd":5,
+        "twd":8,
         "type":"Action Modifier/Combat"
     },
     "101310":{
@@ -57563,7 +57563,7 @@
             }
         },
         "text":"Discipline.\nPut this card on a vampire. This vampire gets +1 level of Obfuscate [obf] and +1 capacity. Cannot be put on a vampire with superior Obfuscate [OBF].",
-        "twd":166,
+        "twd":167,
         "type":"Master"
     },
     "102277":{
@@ -58072,7 +58072,7 @@
             }
         },
         "text":"Only usable by a locked minion. A minion can play only one On the Qui Vive between their unlock phases.\nThis minion wakes (they ignore the requirement to be unlocked for playing reaction cards and attempting to block until the end of the action). If this minion is an ally, they do not unlock as normal during their next unlock phase.",
-        "twd":1883,
+        "twd":1901,
         "type":"Reaction"
     },
     "102256":{
@@ -58116,7 +58116,7 @@
             }
         },
         "text":"Only usable during an action directed at you (or a card you control).\n[pro] +2 intercept.\n[PRO] Only usable by a locked vampire. This vampire unlocks and attempts to block. If they block, neither combatant can strike during the first round of the resulting combat.",
-        "twd":8,
+        "twd":10,
         "type":"Reaction"
     },
     "101322":{
@@ -58342,7 +58342,7 @@
             }
         },
         "text":"Unique location.\nLock to give a Minister you control +1 stealth.",
-        "twd":123,
+        "twd":124,
         "type":"Master"
     },
     "101327":{
@@ -58485,7 +58485,7 @@
             }
         },
         "text":"Requires a baron. Usable by a locked baron.\nAn Anarch you control gets +1 intercept. Also usable to unlock a locked Anarch you control; that Anarch attempts to block with +1 intercept, even if intercept is not yet needed.",
-        "twd":127,
+        "twd":135,
         "type":"Reaction"
     },
     "101330":{
@@ -58683,7 +58683,7 @@
             }
         },
         "text":"Unique werewolf with 4 life. 2 strength, 0 bleed. Red List.\nOssian may enter combat with any vampire as a +1 stealth (D) action. In the first round of combat with a vampire who has played a card that requires Auspex [aus] during this action, that vampire cannot use any maneuvers or strikes. Ossian gains 1 life at the end of each round for each blood the opposing vampire used to heal damage or prevent destruction that round.",
-        "twd":275,
+        "twd":276,
         "type":"Ally"
     },
     "101334":{
@@ -58997,7 +58997,7 @@
             }
         },
         "text":"Animal with 1 life.\n[ani] While the employer is in combat, the opposing minion's controller plays with an open hand.\n[ANI] As above, but Owl Companion has 2 life.",
-        "twd":89,
+        "twd":90,
         "type":"Retainer"
     },
     "101341":{
@@ -59078,7 +59078,7 @@
             }
         },
         "text":"A vampire can play only one Pack Alpha each round.\n[ani] Only usable before range is determined. Employ an animal retainer from your hand (requirements and cost apply as normal).\n[ANI] Burn an animal retainer employed by this vampire to put this card on this vampire. This minion gets +1 strength. A minion can have only one Pack Alpha.",
-        "twd":90,
+        "twd":92,
         "type":"Combat"
     },
     "101343":{
@@ -59195,7 +59195,7 @@
             }
         },
         "text":"This equipment card represents a location and does not count as equipment while in play. Unique.\nDuring your master phase, the vampire with this location gains 1 blood.",
-        "twd":143,
+        "twd":144,
         "type":"Equipment"
     },
     "101346":{
@@ -59234,7 +59234,7 @@
             }
         },
         "text":"Unique.\nPut this card in play with 3 counters. Toreador antitribu get +1 bleed. During your discard phase, burn 1 counter from this card. Burn this card if it has no counters.",
-        "twd":66,
+        "twd":68,
         "type":"Master"
     },
     "101347":{
@@ -59383,7 +59383,7 @@
             }
         },
         "text":"Unique location. Hunting ground. Requires a ready vampire with a city title.\nDuring your unlock phase, a ready titled vampire you control can gain 2 blood. A vampire can gain blood from only one hunting ground each turn.",
-        "twd":171,
+        "twd":176,
         "type":"Master"
     },
     "101351":{
@@ -59531,7 +59531,7 @@
             }
         },
         "text":"Requires a prince or justicar.\nChoose a Methuselah who has more pool than you do and allocate 3 of their pool among 1 or more other Methuselahs (including you). Successful referendum means the pool is distributed as you chose.",
-        "twd":534,
+        "twd":537,
         "type":"Political Action"
     },
     "101354":{
@@ -59610,7 +59610,7 @@
             }
         },
         "text":"Unique location.\nDuring your master phase, you can lock this card to get +1 master phase action.",
-        "twd":640,
+        "twd":646,
         "type":"Master"
     },
     "102231":{
@@ -59640,7 +59640,7 @@
             }
         },
         "text":"Requires an Anarch.\n[obf] Reduce a bleed against you by 2.\n[pre] Only usable during the polling step of a political action. This vampire gets +2 votes.\n[pro] +1 intercept.",
-        "twd":45,
+        "twd":48,
         "type":"Reaction"
     },
     "102279":{
@@ -59780,7 +59780,7 @@
             }
         },
         "text":"Unique.\nPut this card in play. Cards requiring Quietus [qui] cost Banu Haqim 1 fewer blood. Any minion can burn this card as a (D) action that inflicts 1 unpreventable environmental damage on acting vampires.",
-        "twd":6,
+        "twd":7,
         "type":"Master"
     },
     "101359":{
@@ -60694,7 +60694,7 @@
             }
         },
         "text":"Unique.\nPut this card on a ready minion. This minion cannot block. Any other minion can burn this card as a (D) action.",
-        "twd":1742,
+        "twd":1752,
         "type":"Master"
     },
     "101385":{
@@ -60784,7 +60784,7 @@
             }
         },
         "text":"Only usable when the action is announced.\n[tha] Reaction cards that require Dominate [dom] or Presence [pre] do not affect this vampire for the duration of this action.\n[THA] As above, and for the remainder of this action, minions opposing this vampire in combat cannot play cards that require Dominate or Presence.",
-        "twd":30,
+        "twd":31,
         "type":"Action Modifier"
     },
     "101387":{
@@ -60823,7 +60823,7 @@
             }
         },
         "text":"[pre] Only usable during the polling step of a political action. This vampire gets +3 votes.\n[PRE] Allies and younger vampires get -1 intercept.",
-        "twd":205,
+        "twd":208,
         "type":"Action Modifier"
     },
     "101388":{
@@ -60890,7 +60890,7 @@
             }
         },
         "text":"Archetype.\nPut this card on a vampire you control. Once each turn, this vampire can gain 1 blood after performing a successful action during which no reaction cards are played. A vampire can have only one archetype.",
-        "twd":506,
+        "twd":507,
         "type":"Master"
     },
     "101389":{
@@ -61383,7 +61383,7 @@
             }
         },
         "text":"Requires a ready Anarch.\nLock a ready unlocked Anarch you control. That Anarch recruits or employs an ally or retainer from your hand (requirements and cost apply as normal). This is not an action and cannot be blocked.",
-        "twd":40,
+        "twd":41,
         "type":"Master"
     },
     "101402":{
@@ -61465,7 +61465,7 @@
             }
         },
         "text":"Requires an Anarch. More than one Discipline can be used to play this card. (D) Bleed.\n[obf] This is a +1 stealth action.\n[pre] The bleed is with +1 bleed.\n[pro] Put 1 corruption counter on a minion controlled by the target Methuselah if the bleed is successful (for 1 or more).",
-        "twd":40,
+        "twd":43,
         "type":"Action"
     },
     "101403":{
@@ -61519,7 +61519,7 @@
             }
         },
         "text":"Master. Location. Hunting ground. Derivative.\nDuring your unlock phase, choose up to X ready anarchs you control who each gain 1 blood, where X is the number of non-derivative hunting grounds controlled by other Methuselahs. A vampire can gain blood from only one hunting ground card each turn.",
-        "twd":11,
+        "twd":13,
         "type":"Master"
     },
     "101405":{
@@ -61622,7 +61622,7 @@
             }
         },
         "text":"Only usable during a referendum, before votes and ballots are cast.\nIf the referendum passes and the effect of the referendum causes you to lose pool, the controller of the acting vampire loses the same amount of pool (in addition to the effects of the referendum).",
-        "twd":84,
+        "twd":86,
         "type":"Reaction"
     },
     "101407":{
@@ -62030,7 +62030,7 @@
             }
         },
         "text":"Only one Political Stranglehold can be played or called in a game.\nSuccessful referendum means each Methuselah gains 3 pool for each vampire they control with capacity 8 or more.",
-        "twd":373,
+        "twd":376,
         "type":"Political Action"
     },
     "101418":{
@@ -62133,7 +62133,7 @@
             }
         },
         "text":"Unique wraith with 1 life. 0 strength, 0 bleed.\nPonticulus gets +1 intercept during actions directed at you. He can lock to give any Tremere +1 intercept. He is immune to non-aggravated damage. He cannot act and he cannot have or use equipment.",
-        "twd":103,
+        "twd":104,
         "type":"Ally"
     },
     "101420":{
@@ -62609,7 +62609,7 @@
             }
         },
         "text":"Requires an Anarch.\n[obt] Only usable if this Anarch is blocked, before block resolution. The blocking minion burns 2 blood or life.\n[pot] Only usable during a bleed action. +1 bleed that does not count against the limit.\n[pre] Only usable during a bleed action. +1 bleed (limited), or +1 stealth and +1 bleed (limited).",
-        "twd":32,
+        "twd":33,
         "type":"Action Modifier"
     },
     "101430":{
@@ -62990,7 +62990,7 @@
             }
         },
         "text":"Unique location.\nDuring your influence phase, you can add 1 blood to a vampire in your uncontrolled region. Vampires can steal this location as a (D) action.",
-        "twd":892,
+        "twd":899,
         "type":"Master"
     },
     "101440":{
@@ -64254,7 +64254,7 @@
             }
         },
         "text":"[aus] +1 intercept.\n[AUS] As above, and this vampire can prevent 1 damage during the first round of the resulting combat if they block.",
-        "twd":221,
+        "twd":223,
         "type":"Reaction"
     },
     "101476":{
@@ -64547,7 +64547,7 @@
             }
         },
         "text":"Master: Discipline.\nPut this card on a vampire. This vampire gains 1 level of Presence [pre]. Capacity increases by 1: the vampire is one generation older. Cannot be placed on a vampire with superior Presence [PRE].",
-        "twd":86,
+        "twd":87,
         "type":"Master"
     },
     "101481":{
@@ -64849,7 +64849,7 @@
             }
         },
         "text":"Unique contract. Trifle.\nChoose a ready Banu Haqim you control and put this card on a minion controlled by your prey. The chosen Banu Haqim can enter combat with the attached minion as a +1 stealth (D) action. If the attached minion is about to leave the ready region, you can burn this card to gain 3 pool.",
-        "twd":29,
+        "twd":31,
         "type":"Master",
         "trifle":true
     },
@@ -65133,7 +65133,7 @@
             }
         },
         "text":"[pre] (D) Bleed with +1 bleed. Titled vampires cannot block this action.\n[PRE] As above, and the target Methuselah locks a ready unlocked minion they control.",
-        "twd":19,
+        "twd":20,
         "type":"Action"
     },
     "101496":{
@@ -65163,7 +65163,7 @@
             }
         },
         "text":"Requires an Anarch. Only usable after resolution of a successful directed action.\nPut this card in play. You can burn this card during the polling step of a political action to get +2 votes.",
-        "twd":21,
+        "twd":23,
         "type":"Action Modifier"
     },
     "101497":{
@@ -65404,7 +65404,7 @@
             }
         },
         "text":"Requires an Anarch.\n+1 intercept, with an additional +1 intercept if the acting minion is titled.",
-        "twd":73,
+        "twd":74,
         "type":"Reaction"
     },
     "101502":{
@@ -65740,7 +65740,7 @@
             }
         },
         "text":"[cel] Press.\n[CEL] Only usable at the end of a round when both combatants are still ready and combat is about to end. After this round, begin another combat with the opposing minion.",
-        "twd":190,
+        "twd":192,
         "type":"Combat"
     },
     "101508":{
@@ -65966,7 +65966,7 @@
             }
         },
         "text":"[pre] (D) Bleed with +2 bleed.\n[PRE] As above, and if the bleed is successful (for 1 or more), add 1 blood to a vampire in your uncontrolled region.",
-        "twd":87,
+        "twd":90,
         "type":"Action"
     },
     "101514":{
@@ -66399,7 +66399,7 @@
             }
         },
         "text":"[cel] Maneuver.\n[CEL] Additional strike (limited).",
-        "twd":275,
+        "twd":278,
         "type":"Combat"
     },
     "101524":{
@@ -66704,7 +66704,7 @@
             }
         },
         "text":"[aus][cel] +1 intercept, with an optional maneuver in the resulting combat if this vampire successfully blocks.\n[AUS][CEL] As above, but with +2 intercept.",
-        "twd":94,
+        "twd":95,
         "type":"Reaction"
     },
     "101532":{
@@ -66753,7 +66753,7 @@
             }
         },
         "text":"A vampire can play only one Quickness each round.\n[cel] Additional strike (limited).\n[CEL] Additional strike that does not count against the limit.",
-        "twd":37,
+        "twd":39,
         "type":"Combat"
     },
     "101533":{
@@ -66945,7 +66945,7 @@
             }
         },
         "text":"Unique location.\nAs this card is played or its controller changes, its controller chooses a ready vampire they control. During this card's controller's unlock phase, the chosen vampire can gain 2 blood. A vampire controlled by another Methuselah can steal this location as a (D) action.",
-        "twd":627,
+        "twd":631,
         "type":"Master"
     },
     "101537":{
@@ -67301,7 +67301,7 @@
             }
         },
         "text":"Animal with 1 life.\n[ani] The employer gets +1 intercept.\n[ANI] As above, and while the employer is in combat, the opposing minion's controller gets -1 hand size.",
-        "twd":13,
+        "twd":14,
         "type":"Retainer"
     },
     "101546":{
@@ -67532,7 +67532,7 @@
             }
         },
         "text":"Animal with 1 life.\n[ani] The employer gets +1 intercept.\n[ANI] As above, but Raven Spy has 2 life.",
-        "twd":368,
+        "twd":371,
         "type":"Retainer"
     },
     "101551":{
@@ -68116,7 +68116,7 @@
             }
         },
         "text":"Archetype. Trifle.\nPut this card on a vampire you control. Once each turn, if they block a titled vampire or a political action, this vampire gains 1 blood before block resolution. A vampire can have only one archetype.",
-        "twd":13,
+        "twd":14,
         "type":"Master",
         "trifle":true
     },
@@ -68681,7 +68681,7 @@
             }
         },
         "text":"[dom] Only usable when a younger vampire is bleeding you, after blocks are declined. Lock this reacting vampire. Choose another Methuselah other than the acting vampire's controller. That acting vampire is now bleeding that Methuselah.\n[DOM] As above, but the acting vampire can be the same age or older.",
-        "twd":278,
+        "twd":279,
         "type":"Reaction"
     },
     "101579":{
@@ -69067,7 +69067,7 @@
             }
         },
         "text":"A vampire can play only one Rego Motum each round.\n[tha] Prevent 2 damage from the opposing minion's strike.\n[THA] Prevent 4 damage from the opposing minion's strike.",
-        "twd":104,
+        "twd":107,
         "type":"Combat"
     },
     "101589":{
@@ -69199,7 +69199,7 @@
             }
         },
         "text":"Only one Reins of Power can be played or called in a game.\nSuccessful referendum means each Methuselah can choose a ready vampire they control. Each Methuselah gains 6 pool, then burns pool equal to the capacity of their predator's chosen vampire.",
-        "twd":402,
+        "twd":407,
         "type":"Political Action"
     },
     "101592":{
@@ -69914,7 +69914,7 @@
             }
         },
         "text":"[cel] [COMBAT] Press, or maneuver with 1 optional press.\n[CEL] [ACTIONMODIFIER] +1 stealth.",
-        "twd":154,
+        "twd":159,
         "type":"Action Modifier/Combat"
     },
     "101611":{
@@ -70031,7 +70031,7 @@
             }
         },
         "text":"+1 stealth action.\n[for] This vampire gains 2 blood.\n[FOR] This vampire gains 3 blood.",
-        "twd":57,
+        "twd":58,
         "type":"Action"
     },
     "101614":{
@@ -70268,7 +70268,7 @@
             }
         },
         "text":"Master.\nChoose a minion who successfully bled you for more than 1 pool since your last turn. The chosen minion takes 3 unpreventable damage. A Methuselah can play only 1 Retribution in a game.",
-        "twd":23,
+        "twd":24,
         "type":"Master"
     },
     "101620":{
@@ -70476,7 +70476,7 @@
             }
         },
         "text":"Only usable during a bleed action.\n[pre][pro] +1 bleed (limited), or +1 stealth and +1 bleed (limited).\n[PRE][PRO] As above, and if the bleed is successful, this vampire can burn 2 of your corruption counters from a minion controlled by the target Methuselah to unlock.",
-        "twd":41,
+        "twd":44,
         "type":"Action Modifier"
     },
     "101625":{
@@ -70617,7 +70617,7 @@
             }
         },
         "text":"+1 stealth action.\n[aus] (D) Look at your prey's hand and discard one card of your choice from it.\n[AUS] Put this card in play. Your prey plays with an open hand. Any minion can burn this card as a (D) action.",
-        "twd":112,
+        "twd":113,
         "type":"Action"
     },
     "101628":{
@@ -70658,7 +70658,7 @@
             }
         },
         "text":"Ghoul with 2 life.\nThe employer gets +1 intercept.",
-        "twd":48,
+        "twd":49,
         "type":"Retainer"
     },
     "101629":{
@@ -70768,7 +70768,7 @@
             }
         },
         "text":"Requires a baron.\nChoose X ready unlocked Anarchs you control and allocate 2X points among one or more Methuselahs, locations, and equipment. Successful referendum means each chosen Anarch is locked, each Methuselah burns 1 pool for each point allocated, and each location or equipment allocated a point is burned.",
-        "twd":49,
+        "twd":51,
         "type":"Political Action"
     },
     "101632":{
@@ -70813,7 +70813,7 @@
             }
         },
         "text":"(D) Burn a location and burn 2 pool from its controller.",
-        "twd":61,
+        "twd":63,
         "type":"Action"
     },
     "101633":{
@@ -71315,7 +71315,7 @@
             }
         },
         "text":"Unique.\nThis vampire gets +1 level of Blood Sorcery [tha]. Rescuing a vampire from torpor costs this vampire -1 blood. Once each turn, this vampire can unlock after rescuing a vampire from torpor.",
-        "twd":4,
+        "twd":6,
         "type":"Equipment"
     },
     "101642":{
@@ -71626,7 +71626,7 @@
             }
         },
         "text":"[for] Prevent 1 damage.\n[FOR] Burn 1 blood to prevent all damage from the opposing minion's strikes this round.",
-        "twd":323,
+        "twd":325,
         "type":"Combat"
     },
     "101650":{
@@ -71882,7 +71882,7 @@
             }
         },
         "text":"Master: out-of-turn. Frenzy.\nPut this card on a vampire when an opposing minion attempts to inflict aggravated damage on him or her, whether the damage would be successfully inflicted or not. Combat ends. This vampire is locked and sent to torpor. This vampire does not unlock as normal. During this vampire's next unlock phase, burn this card.",
-        "twd":166,
+        "twd":170,
         "type":"Master"
     },
     "102215":{
@@ -71915,7 +71915,7 @@
             }
         },
         "text":"[pot] Strike: hand strike at +2 damage.\n[POT] Strike: hand strike at +3 damage.",
-        "twd":24,
+        "twd":25,
         "type":"Combat"
     },
     "101655":{
@@ -72144,7 +72144,7 @@
             }
         },
         "text":"Unique location.\nPut pool you burn to unlock infernal minions you control using the infernal trait on this card. During an action, you can burn X counters from this card to reduce a bleed against you by X. During your predator's discard phase, burn all the counters from this card.",
-        "twd":25,
+        "twd":27,
         "type":"Master"
     },
     "101660":{
@@ -72308,7 +72308,7 @@
             }
         },
         "text":"Choose one or more Methuselahs. If this referendum is successful, put this card into play. Each chosen Methuselah receives two master phase actions during his or her master phase (instead of one). Any vampire can call a referendum to burn this card as a +1 stealth political action.",
-        "twd":136,
+        "twd":137,
         "type":"Political Action"
     },
     "101664":{
@@ -72360,7 +72360,7 @@
             }
         },
         "text":"+1 stealth action.\n[tha] Put this card on this vampire, and this vampire takes 1 unpreventable environmental aggravated damage. Starting with your next turn, this vampire can unlock during your minion phase. A vampire can have only one Rutor's Hand.\n[THA] As above, and this vampire can burn 3 blood to be immune to this aggravated damage.",
-        "twd":124,
+        "twd":125,
         "type":"Action"
     },
     "101665":{
@@ -72409,7 +72409,7 @@
             }
         },
         "text":"Unique mummy with 2 life. 2 strength, 1 bleed.\nDuring an action, Saatet-ta can lock to give a Minister you control +1 stealth, +1 intercept, or +1 bleed. If she is burned, shuffle her into her owner's library.",
-        "twd":45,
+        "twd":46,
         "type":"Ally"
     },
     "101666":{
@@ -73057,7 +73057,7 @@
             }
         },
         "text":"Unique.\nThis vampire gets superior Necromancy [NEC]. This vampire can move a library card from your ash heap to your hand as an action that costs 1 blood (discard down afterward).",
-        "twd":102,
+        "twd":103,
         "type":"Equipment"
     },
     "101682":{
@@ -73134,7 +73134,7 @@
             }
         },
         "text":"Unique archetype.\nPut this card on a Salubri you control. This Salubri gets +1 strength. This Salubri can enter combat with a non-Salubri vampire as a (D) action; if that vampire is Tremere, this is a +1 stealth action. A vampire can have only one archetype.",
-        "twd":1,
+        "twd":2,
         "type":"Master"
     },
     "102258":{
@@ -73358,7 +73358,7 @@
             }
         },
         "text":"Only usable during the polling step of a political action.\n[cel][pre] Choose a vampire who has cast votes or ballots in this referendum. The chosen vampire is locked and abstains (this cancels the chosen vampire's votes and ballots).\n[CEL][PRE] As above, and the chosen vampire burns 1 blood.",
-        "twd":84,
+        "twd":85,
         "type":"Action Modifier/Reaction"
     },
     "101687":{
@@ -73798,7 +73798,7 @@
             }
         },
         "text":"During your discard phase, you can burn a vampire with capacity 2 or less, and your predator takes control of this card (even if you do not burn a vampire).",
-        "twd":276,
+        "twd":279,
         "type":"Event"
     },
     "101698":{
@@ -74078,7 +74078,7 @@
             }
         },
         "text":"[pro] Strike: hand strike, aggravated.\n[PRO] Strike: hand strike at +1 damage, and put this card on the opposing minion. During their unlock phase, the attached minion burns 1 blood or life. Minions can burn this card as a +1 stealth action.",
-        "twd":3,
+        "twd":5,
         "type":"Combat"
     },
     "101703":{
@@ -74122,7 +74122,7 @@
             }
         },
         "text":"Unique equipment.\nOnly usable by a vampire with capacity above 5. This vampire can bleed at +1 bleed as a (D) action. During each of your unlock phases, put a counter on this card if it has 3 or fewer counters. The first 2 counters each grant this vampire one level of Dominate [dom]. The next 2 each grant this vampire one level of Fortitude [for]. Remove all counters from this card if another minion gains control of it.",
-        "twd":44,
+        "twd":45,
         "type":"Equipment"
     },
     "101704":{
@@ -74280,7 +74280,7 @@
             }
         },
         "text":"Requires a prince or justicar.\n[REACTION] +2 intercept.\n[REACTION] Only usable by a locked prince or justicar. This vampire burns 1 blood to unlock and attempt to block with +2 intercept, even if intercept is not yet needed.",
-        "twd":505,
+        "twd":508,
         "type":"Reaction"
     },
     "101707":{
@@ -74431,7 +74431,7 @@
             }
         },
         "text":"Master.\nPut this card on a ready minion you control. If this minion is the target of a directed action while he or she is ready, you may burn this card to make the action fail. A minion can have only one Secret Passage.",
-        "twd":24,
+        "twd":26,
         "type":"Master"
     },
     "101711":{
@@ -74517,7 +74517,7 @@
             }
         },
         "text":"Unique location. Haven.\nPut this card on a minion you control. This minion cannot be the target of other Methuselahs' actions. Master cards targeting this minion cost 1 additional pool. Burn this card after this minion goes to torpor. A minion can have only one haven.",
-        "twd":521,
+        "twd":530,
         "type":"Master"
     },
     "101712":{
@@ -74587,7 +74587,7 @@
             }
         },
         "text":"Only usable as the action is announced.\n[dom] Choose a younger vampire. The chosen vampire cannot block this action.\n[DOM] As above, but choose any vampire.",
-        "twd":435,
+        "twd":439,
         "type":"Action Modifier"
     },
     "101713":{
@@ -74797,7 +74797,7 @@
             }
         },
         "text":"Requires a vampire with capacity 7 or more.\n[ani] +1 intercept.\n[ANI] Only usable by a locked vampire. This vampire unlocks and attempts to block.",
-        "twd":220,
+        "twd":222,
         "type":"Reaction"
     },
     "101718":{
@@ -74830,7 +74830,7 @@
             }
         },
         "text":"[aus] [REACTION] Only usable if a younger vampire is acting. +1 intercept.\n[dai] [REACTION] +1 intercept, with an additional +1 intercept if the acting minion has any corruption counters.\n[DAI] [ACTIONMODIFIER] Only usable during a bleed action. +2 bleed (limited). Minions with any corruption counters get -1 intercept.",
-        "twd":82,
+        "twd":86,
         "type":"Action Modifier/Reaction"
     },
     "101719":{
@@ -75606,7 +75606,7 @@
             }
         },
         "text":"[obt] Strike: combat ends.\n[OBT] As above, and if this vampire was blocked while performing a non-bleed non-political action, the action continues as if unblocked.",
-        "twd":96,
+        "twd":97,
         "type":"Combat"
     },
     "101736":{
@@ -76065,7 +76065,7 @@
             }
         },
         "text":"[obt] +1 stealth.\n[OBT] +2 stealth.",
-        "twd":197,
+        "twd":199,
         "type":"Action Modifier"
     },
     "101744":{
@@ -76554,7 +76554,7 @@
             }
         },
         "text":"Unique location.\nIf you have the Edge, you can lock this card to reduce the cost of a card you play by 2 pool or blood. Vampires can steal this location as a (D) action; Ventrue get +1 stealth during that action.",
-        "twd":5,
+        "twd":6,
         "type":"Master"
     },
     "101755":{
@@ -76836,7 +76836,7 @@
             }
         },
         "text":"This vampire gains 4 blood. Put this card on this vampire. This vampire does not unlock as normal. Burn this card during your unlock phase.",
-        "twd":6,
+        "twd":7,
         "type":"Action"
     },
     "101763":{
@@ -77061,7 +77061,7 @@
             }
         },
         "text":"Unique.\nMove the top 2 cards of your library to this equipment, face down and out of play (you can look at the cards at any time). While this Ravnos is ready, if you would draw a card from your library, you can draw one of these cards instead. During your unlock phase, you can move the top card of your library to this equipment.",
-        "twd":37,
+        "twd":39,
         "type":"Equipment"
     },
     "101768":{
@@ -77247,7 +77247,7 @@
             }
         },
         "text":"[pot][pre] (D) Bleed with +1 bleed. If this action is blocked, before range is determined during the first round of the resulting combat, this vampire can gain +1 strength that combat.\n[POT][PRE] As above, but at +2 bleed and this vampire can gain +2 strength.",
-        "twd":11,
+        "twd":12,
         "type":"Action"
     },
     "101773":{
@@ -77334,7 +77334,7 @@
             }
         },
         "text":"[dom][obt] +1 stealth.\n[DOM][OBT] As above, and this vampire can strike: combat ends during the first round of the resulting combat if they are blocked.",
-        "twd":159,
+        "twd":161,
         "type":"Action Modifier"
     },
     "101775":{
@@ -77485,7 +77485,7 @@
             }
         },
         "text":"[cel] Strike: dodge.\n[CEL] Additional strike (limited).",
-        "twd":99,
+        "twd":101,
         "type":"Combat"
     },
     "101779":{
@@ -77541,7 +77541,7 @@
             }
         },
         "text":"[cel] Strike: dodge.\n[CEL] Prevent 1 damage. A vampire can play only one Sideslip at superior each round.",
-        "twd":158,
+        "twd":160,
         "type":"Combat"
     },
     "101780":{
@@ -77577,7 +77577,7 @@
             }
         },
         "text":"Unique.\nPut this card on a Salubri you control. This Salubri gets +1 intercept.",
-        "twd":19,
+        "twd":20,
         "type":"Master"
     },
     "101781":{
@@ -77617,7 +77617,7 @@
             }
         },
         "text":"Unique.\nVampires with capacity 8 or more cannot attempt to block the bearer.",
-        "twd":68,
+        "twd":70,
         "type":"Equipment"
     },
     "101782":{
@@ -77993,7 +77993,7 @@
             }
         },
         "text":"[for] This vampire treats aggravated damage as normal damage for the remainder of this round.\n[FOR] As above, and prevent 1 damage.",
-        "twd":24,
+        "twd":25,
         "type":"Combat"
     },
     "101791":{
@@ -78095,7 +78095,7 @@
             }
         },
         "text":"[for] Prevent all damage from the opponent's strike.\n[FOR] As above, and prevent all damage from the opponent's strikes for the remainder of this round.",
-        "twd":185,
+        "twd":186,
         "type":"Combat"
     },
     "101793":{
@@ -78339,7 +78339,7 @@
             }
         },
         "text":"[pot] Strike: hand strike at +2 damage.\n[POT] As above, with 1 optional maneuver, only usable to get to close range.",
-        "twd":58,
+        "twd":59,
         "type":"Combat"
     },
     "101799":{
@@ -78871,7 +78871,7 @@
             }
         },
         "text":"Unique.\nPut this card in play. During your unlock phase, move 1 counter from your pool to this card. During each other Methuselah's unlock phase, for each counter on this card, that Methuselah burns 1 pool or burns 1 blood from a vampire they control. Vampires can burn this card as a (D) action.",
-        "twd":475,
+        "twd":481,
         "type":"Master"
     },
     "101812":{
@@ -79088,7 +79088,7 @@
             }
         },
         "text":"Weapon: gun.\nStrike: 2R damage, only usable at long range. If the bearer blocks, they can, before range is determined, set the range for the first round of the resulting combat to long, and their initial strike that round must be with this weapon.",
-        "twd":282,
+        "twd":284,
         "type":"Equipment"
     },
     "101817":{
@@ -79648,7 +79648,7 @@
             }
         },
         "text":"[tha] Strike: 1R damage. This damage cannot be prevented by cards requiring Fortitude [for]. The opposing vampire's strikes with weapons inflict no damage this round.\n[THA] As above, but for 2R damage.",
-        "twd":20,
+        "twd":21,
         "type":"Combat"
     },
     "101830":{
@@ -79928,7 +79928,7 @@
             }
         },
         "text":"+1 stealth action.\n[aus] Search your crypt for a younger vampire without Obfuscate [obf], reveal them, and move them to your uncontrolled region (shuffle afterward).\n[AUS] As above, but you can search for a younger vampire with up to one level of Obfuscate.",
-        "twd":6,
+        "twd":7,
         "type":"Action"
     },
     "101836":{
@@ -80116,7 +80116,7 @@
             }
         },
         "text":"[ani] +1 intercept. Only usable during a bleed action.\n[spi] +1 intercept.\n[SPI] Only usable by a locked vampire. This vampire unlocks and attempts to block. Once this action, this vampire can burn 1 blood to get +1 intercept.",
-        "twd":62,
+        "twd":63,
         "type":"Reaction"
     },
     "101841":{
@@ -80603,7 +80603,7 @@
             }
         },
         "text":"[aus] +1 intercept.\n[AUS] As above, with 1 optional maneuver during the resulting combat if this vampire blocks.",
-        "twd":224,
+        "twd":226,
         "type":"Reaction"
     },
     "101851":{
@@ -80953,7 +80953,7 @@
             }
         },
         "text":"[obf] +1 stealth.\n[OBF] Only usable if a bleed would be successful. Instead, the bleed burns no pool, is unsuccessful, and this card is put on this vampire. The next time this vampire is about to successfully bleed the same Methuselah, burn this card and this vampire gets +2 bleed.",
-        "twd":490,
+        "twd":498,
         "type":"Action Modifier"
     },
     "101858":{
@@ -81045,7 +81045,7 @@
             }
         },
         "text":"[pre] Strike: dodge.\n[PRE] Strike: combat ends.",
-        "twd":130,
+        "twd":131,
         "type":"Combat"
     },
     "101860":{
@@ -81202,7 +81202,7 @@
             }
         },
         "text":"+1 stealth action. Requires a ready anarch. Unique.\nPut this card in play. During your master phase, you may move 1 blood from a ready anarch you control to another ready anarch. When a blocking anarch has just completed combat with an acting minion, you may lock this card and a ready unlocked anarch you control other than the blocking anarch. That anarch enters combat with the acting minion. The acting minion cannot use any strikes in the first round of that combat.",
-        "twd":9,
+        "twd":10,
         "type":"Action"
     },
     "101864":{
@@ -81746,7 +81746,7 @@
             }
         },
         "text":"Master: location.\nPut a card from your hand face down (out of play) on this card when you play it. You may look at the card at any time. During your master phase, you may exchange a card in your hand for the card on this Storage Annex.",
-        "twd":85,
+        "twd":87,
         "type":"Master"
     },
     "101878":{
@@ -81947,7 +81947,7 @@
             }
         },
         "text":"Only usable at the end of a round of combat in which this vampire successfully inflicted more damage than the opposing minion.\n[pot] Move 1 blood from the blood bank to a younger vampire in your uncontrolled region. A vampire can play only 1 Street Cred each turn.\n[POT] As above, but move 2 blood.",
-        "twd":7,
+        "twd":8,
         "type":"Combat"
     },
     "101883":{
@@ -82629,7 +82629,7 @@
             }
         },
         "text":"Out-of-turn.\nCancel a master card as it is played by another Methuselah, and its cost is not paid.",
-        "twd":680,
+        "twd":686,
         "type":"Master"
     },
     "101897":{
@@ -83019,7 +83019,7 @@
             }
         },
         "text":"[for] Prevent all damage from the opposing minion's strike.\n[FOR] As above, and each round of this combat, this vampire may burn 1 blood to prevent all damage from the opposing minion's initial strike for that round.",
-        "twd":114,
+        "twd":115,
         "type":"Combat"
     },
     "101906":{
@@ -83402,7 +83402,7 @@
             }
         },
         "text":"[obf] [ACTIONMODIFIER] +1 stealth.\n[OBF] [COMBAT] Maneuver.",
-        "twd":751,
+        "twd":763,
         "type":"Action Modifier/Combat"
     },
     "101914":{
@@ -83514,7 +83514,7 @@
             }
         },
         "text":"[cel] [COMBAT] Press.\n[spi] [COMBAT] Maneuver or press.\n[SPI] [ACTIONMODIFIER] +1 stealth.",
-        "twd":61,
+        "twd":62,
         "type":"Action Modifier/Combat"
     },
     "101917":{
@@ -83735,7 +83735,7 @@
             }
         },
         "text":"Unique melee weapon.\nStrike: strength+1 aggravated damage. Once each combat, this Salubri can burn 1 blood to cancel a grapple or aim card as it is played by the opposing minion, and its cost is not paid. Once each turn, if the opposing vampire is burned during this weapon's strike resolution and the bearer remains ready, the bearer can unlock at the end of combat.",
-        "twd":1,
+        "twd":2,
         "type":"Equipment"
     },
     "101921":{
@@ -84767,7 +84767,7 @@
             }
         },
         "text":"Aim. Only usable as this minion chooses a strike. A minion can play only one aim each strike.\nIf any damage from this strike is successfully inflicted on the opposing minion, they take +2 damage from this strike, and they cannot press this round. They can discard two combat cards to cancel this card as it is played.",
-        "twd":359,
+        "twd":360,
         "type":"Combat"
     },
     "101943":{
@@ -84804,7 +84804,7 @@
             }
         },
         "text":"Unique mortal with 1 life.\nThe minion with this retainer gets +1 bleed.",
-        "twd":209,
+        "twd":210,
         "type":"Retainer"
     },
     "101944":{
@@ -84841,7 +84841,7 @@
             }
         },
         "text":"Only usable at long range.\n[qui] Strike: 1R aggravated damage.\n[QUI] Strike: 2R aggravated damage.",
-        "twd":26,
+        "twd":27,
         "type":"Combat"
     },
     "101945":{
@@ -84947,7 +84947,7 @@
             }
         },
         "text":"Only usable at the end of a round of combat. Not usable by a vampire being burned or going to torpor. A vampire can play only one Taste of Vitae each round.\nThis vampire gains blood equal to the amount of blood lost by the opposing vampire to damage this round.",
-        "twd":778,
+        "twd":783,
         "type":"Combat"
     },
     "101946":{
@@ -85183,7 +85183,7 @@
             }
         },
         "text":"[aus] +1 intercept.\n[AUS] Only usable if a minion is bleeding you, after blocks are declined. Lock this reacting vampire. Change the target of the bleed to another Methuselah other than the acting minion's controller (that Methuselah can attempt to block).",
-        "twd":1140,
+        "twd":1150,
         "type":"Reaction"
     },
     "101950":{
@@ -85255,7 +85255,7 @@
             }
         },
         "text":"[aus] Press, only usable to continue combat. If another round of combat occurs, this vampire gets 1 optional maneuver that round.\n[AUS] Only usable if both combatants are still ready and combat would end. Instead, start a new round.",
-        "twd":63,
+        "twd":64,
         "type":"Combat"
     },
     "101951":{
@@ -85587,7 +85587,7 @@
             }
         },
         "text":"Choose a ready unlocked infernal Baali you control. Add 3 blood to a younger infernal vampire in your uncontrolled region.",
-        "twd":56,
+        "twd":58,
         "type":"Master"
     },
     "101957":{
@@ -85634,7 +85634,7 @@
             }
         },
         "text":"[obt] +1 stealth.\n[OBT] As above, and minions without Obtenebration [obt] must burn 1 blood to attempt to block (allies cannot burn blood).",
-        "twd":80,
+        "twd":81,
         "type":"Action Modifier"
     },
     "101958":{
@@ -85684,7 +85684,7 @@
             }
         },
         "text":"Unique.\nPut this card in play. Any Methuselah burns 1 pool after a ready minion they control is burned or sent to torpor. Any Methuselah can use a master phase action and discard two master cards to burn this card.",
-        "twd":201,
+        "twd":203,
         "type":"Master"
     },
     "101959":{
@@ -86283,7 +86283,7 @@
             }
         },
         "text":"+1 stealth action.\nAdd 2 blood to a Gangrel in your uncontrolled region.",
-        "twd":75,
+        "twd":79,
         "type":"Action"
     },
     "101973":{
@@ -86584,7 +86584,7 @@
             }
         },
         "text":"Only usable during a bleed action.\n[dom] +1 bleed (limited).\n[DOM] +2 bleed (limited).",
-        "twd":112,
+        "twd":113,
         "type":"Action Modifier"
     },
     "101979":{
@@ -87261,7 +87261,7 @@
             }
         },
         "text":"Only usable before range is determined.\n[pot] This vampire gets a strength of 2 this combat.\n[POT] This vampire gets a strength of 3 this combat.",
-        "twd":204,
+        "twd":205,
         "type":"Combat"
     },
     "101994":{
@@ -87364,7 +87364,7 @@
             }
         },
         "text":"[cel] Additional strike (limited).\n[CEL] Strike: combat ends. If this vampire was blocked while performing an action, the action continues as if unblocked.",
-        "twd":14,
+        "twd":16,
         "type":"Combat"
     },
     "101996":{
@@ -87522,7 +87522,7 @@
             }
         },
         "text":"Usable by an acting minion or any ready unlocked minion.\n[dem] Cancel a non-combat card requiring Dementation [dem], Dominate [dom] or Presence [pre] as it is played, and its cost is not paid. Lock this vampire.\n[DEM] As above, but do not lock this vampire.",
-        "twd":47,
+        "twd":48,
         "type":"Action Modifier/Reaction"
     },
     "102283":{
@@ -87614,7 +87614,7 @@
             }
         },
         "text":"[for] [ACTION] +1 stealth action. Add 3 blood or life to a minion, not to exceed starting life.\n[for] [COMBAT] Prevent all damage from the opposing minion's strike.\n[FOR] [COMBAT] Only usable by a ready vampire not involved in the combat involving another minion you control. Prevent all damage to that minion from the opposing minion's strike.",
-        "twd":1,
+        "twd":2,
         "type":"Action/Combat"
     },
     "102000":{
@@ -88232,7 +88232,7 @@
             }
         },
         "text":"Unique.\nThis Ravnos gets +1 bleed. Once each combat, this Ravnos can strike: dodge.",
-        "twd":44,
+        "twd":45,
         "type":"Equipment"
     },
     "102016":{
@@ -89178,7 +89178,7 @@
             }
         },
         "text":"[obf][pre] Only usable during a bleed action. +1 bleed (limited).\n[OBF][PRE] Only usable if a minion attempts to block. That attempt fails and the blocking minion cannot attempt to block this action again. The blocking minion's controller can burn 1 pool to cancel this card as it is played.",
-        "twd":54,
+        "twd":56,
         "type":"Action Modifier"
     },
     "102042":{
@@ -89501,7 +89501,7 @@
             }
         },
         "text":"Put this card in play with 4 blood. After you put a non-titled non-Anarch vampire in play from your uncontrolled region, you can burn 1 blood from this card to make that vampire Anarch. You can use a master phase action to move 1 blood from this card to an Anarch. If this card has no blood, burn it.",
-        "twd":48,
+        "twd":49,
         "type":"Master"
     },
     "102050":{
@@ -89595,7 +89595,7 @@
             }
         },
         "text":"Master: out-of-turn. Trifle.\nPlay when a minion controlled by a Methuselah other than your predator is bleeding you after blocks are declined. That minion is now bleeding his or her prey. The next card that would change the target of this bleed is canceled as it is played.",
-        "twd":25,
+        "twd":26,
         "type":"Master",
         "trifle":true
     },
@@ -89761,7 +89761,7 @@
             }
         },
         "text":"Do not replace as long as this card is in play.\nDuring your discard phase, burn another event at random. Other Methuselahs can use a discard phase action and burn X pool to burn this card, where X is the number of other events in play.",
-        "twd":145,
+        "twd":147,
         "type":"Event"
     },
     "102058":{
@@ -90101,7 +90101,7 @@
             }
         },
         "text":"+1 stealth action. Requires a titled Sabbat vampire. Unique.\nPut this card in play with 3 counters. Once each action, a Sabbat vampire you control can burn 1 counter from this card to unlock and attempt to block with +1 intercept, even if intercept is not yet needed. Burn this card if it has no counters.",
-        "twd":67,
+        "twd":68,
         "type":"Action"
     },
     "102064":{
@@ -90190,7 +90190,7 @@
             }
         },
         "text":"Animal with 1 life. 0 strength, 0 bleed.\n[ani] This ally can burn 1 life to give a minion you control 1 press. During an action directed at you (or a card you control), you can burn this ally if it is not blocking to unlock a ready minion you control.\n[ANI] As above, but this ally has 2 life and 1 strength.",
-        "twd":33,
+        "twd":34,
         "type":"Ally"
     },
     "102066":{
@@ -90231,7 +90231,7 @@
             }
         },
         "text":"Unique location. Hunting ground.\nDuring your unlock phase, a ready vampire you control can gain 1 blood. A vampire can gain blood from only one hunting ground each turn.",
-        "twd":39,
+        "twd":40,
         "type":"Master"
     },
     "102067":{
@@ -90389,7 +90389,7 @@
             }
         },
         "text":"Only usable during a referendum.\nEach ready Brujah antitribu gets an additional vote this referendum. When tallying results, if any Brujah antitribu cast any votes or ballots in opposition to this Brujah antitribu's votes or ballots (or if this Brujah antitribu abstains), none of the additional votes from this card are counted.",
-        "twd":5,
+        "twd":6,
         "type":"Action Modifier/Reaction"
     },
     "102071":{
@@ -90445,7 +90445,7 @@
             }
         },
         "text":"[for] Prevent 1 damage.\n[FOR] Maneuver, and this vampire can prevent 1 damage later this round.",
-        "twd":120,
+        "twd":121,
         "type":"Combat"
     },
     "102072":{
@@ -90587,7 +90587,7 @@
             }
         },
         "text":"Unique location. Hunting ground.\nDuring your unlock phase, a ready vampire you control can gain 1 blood. A vampire can gain blood from only one hunting ground each turn.",
-        "twd":67,
+        "twd":68,
         "type":"Master"
     },
     "102076":{
@@ -90683,7 +90683,7 @@
             }
         },
         "text":"+1 stealth action. Requires an infernal vampire. Unique.\n[dai] Put this card in play. This card can attempt to block an action directed at you (or a card you control) and is considered a 9-capacity infernal vampire with +2 intercept during that attempt; if successful, the acting minion takes 1 unpreventable environmental aggravated damage and this card is burned.\n[DAI] As above, and unlock this vampire.",
-        "twd":176,
+        "twd":181,
         "type":"Action"
     },
     "102077":{
@@ -90744,7 +90744,7 @@
             }
         },
         "text":"Only usable as the action is announced.\n[dom] Choose a minion. The chosen minion cannot play reaction cards this action.\n[DOM] As above, and the next reaction card played this action costs +1 blood or life.",
-        "twd":2,
+        "twd":3,
         "type":"Action Modifier"
     },
     "102078":{
@@ -90822,7 +90822,7 @@
             }
         },
         "text":"Gehenna. Do not replace until your next discard phase.\nAllies get +1 intercept against vampires.",
-        "twd":493,
+        "twd":495,
         "type":"Event"
     },
     "102080":{
@@ -91059,7 +91059,7 @@
             }
         },
         "text":"Unique location. Hunting ground.\nDuring your unlock phase, a ready vampire you control can gain 1 blood. A vampire can gain blood from only one hunting ground each turn.",
-        "twd":56,
+        "twd":57,
         "type":"Master"
     },
     "102085":{
@@ -91640,7 +91640,7 @@
             }
         },
         "text":"Only usable by a ready unlocked vampire other than the acting minion. Only one Veil the Legions can be played each action.\n[obf] The acting minion gets +1 stealth.\n[OBF] As above, and this vampire can burn X blood to give the next X actions minions you control perform this turn +1 stealth. Only one Veil the Legions can be played at superior each turn.",
-        "twd":271,
+        "twd":274,
         "type":"Action Modifier"
     },
     "102098":{
@@ -91789,7 +91789,7 @@
             }
         },
         "text":"Only usable when you are successfully bled for more than 2 pool.\nPut this card on the acting minion. Brujah antitribu get +1 strength in combat with the minion with this card. Any ready Brujah antitribu may enter combat with this vampire as a (D) action. Burn this card if this minion goes to torpor.",
-        "twd":1,
+        "twd":2,
         "type":"Reaction"
     },
     "102102":{
@@ -91859,7 +91859,7 @@
             }
         },
         "text":"Unique mage with 2 life. 1 strength, 2 bleed. Requires an infernal vampire.\nVeneficti has +1 stealth. He can steal a demon ally or burn a demon retainer as a (D) action. He cannot be the target of a directed action performed by an ally or a vampire with capacity 6 or less.",
-        "twd":85,
+        "twd":88,
         "type":"Ally"
     },
     "102104":{
@@ -92109,7 +92109,7 @@
             }
         },
         "text":"Unique location.\nLock during the polling step of any referendum to get +3 votes.",
-        "twd":148,
+        "twd":149,
         "type":"Master"
     },
     "102110":{
@@ -92278,7 +92278,7 @@
             }
         },
         "text":"Trifle.\nPut this card on a vampire, and you can burn a card named /Blood Doll/ (if any). During their unlock phase, this vampire's controller can move 1 blood from this vampire to their pool or from their pool to this vampire.",
-        "twd":1209,
+        "twd":1226,
         "type":"Master",
         "trifle":true
     },
@@ -92609,7 +92609,7 @@
             }
         },
         "text":"Trifle.\nPut this card on a vampire you control who has any amount of blood and move 2 to 5 blood from that vampire to your pool. Cards named /Minion Tap/ cost you +1 pool to play. Villein costs +1 pool to play on this vampire.",
-        "twd":1263,
+        "twd":1288,
         "type":"Master",
         "trifle":true
     },
@@ -92777,7 +92777,7 @@
             }
         },
         "text":"[pre] Allies cannot block this action.\n[PRE] Only usable during a bleed action. As above, with +2 bleed (limited).",
-        "twd":12,
+        "twd":14,
         "type":"Action Modifier"
     },
     "102265":{
@@ -92804,7 +92804,7 @@
             }
         },
         "text":"[obf][pre] Reduce a bleed against you by 3.\n[OBF][PRE] Lock this vampire to reduce a bleed against you to 0. (The acting minion can still increase the bleed amount.)",
-        "twd":19,
+        "twd":21,
         "type":"Reaction"
     },
     "102126":{
@@ -93035,7 +93035,7 @@
             }
         },
         "text":"[ani] Strike: dodge.\n[ANI] As above, with 1 additional ranged strike: burn weapon.",
-        "twd":6,
+        "twd":7,
         "type":"Combat"
     },
     "102131":{
@@ -93131,7 +93131,7 @@
             }
         },
         "text":"Only usable after resolution of a political action whose referendum passed.\n[pre] This vampire gains 1 blood for each vote by which the referendum passed.\n[PRE] As above, but move up to 2 of those blood to your pool instead of this vampire.",
-        "twd":487,
+        "twd":491,
         "type":"Action Modifier"
     },
     "102132":{
@@ -93229,7 +93229,7 @@
             }
         },
         "text":"Unique ghoul with 5 life. 3 strength, 0 bleed.\nAfter this ally enters play, burn an ally or retainer you control. It can strike: 3R damage. It can enter combat with a minion as a (D) action. During your unlock phase, you can discard an ally or retainer card to add 2 life to this ally.",
-        "twd":4,
+        "twd":5,
         "type":"Ally"
     },
     "102134":{
@@ -93349,7 +93349,7 @@
             }
         },
         "text":"Transient.\nPut this card in play with 10 counters. Whenever a non-Anarch vampire takes an action, burn a counter from this card. Burn this card when it has no counters. During your unlock phase, each anarch burns 1 blood or becomes Camarilla, and each ally burns 1 life.",
-        "twd":7,
+        "twd":8,
         "type":"Event"
     },
     "102137":{
@@ -93646,7 +93646,7 @@
             }
         },
         "text":"Master: unique location.\nLock during an undirected action to give a minion you control +1 intercept for the current action. Lock to select a minion you control. Once this turn, the chosen minion may move a counter from an investment card controlled by any Methuselah to your pool as a +1 stealth (D) action.",
-        "twd":62,
+        "twd":63,
         "type":"Master"
     },
     "102143":{
@@ -93759,7 +93759,7 @@
             }
         },
         "text":"Ghoul with 5 life. 4 strength, 0 bleed.\nAfter this ally enters play, burn an ally or retainer you control. It can prevent 1 damage each round of combat. It can enter combat with a vampire as a (D) action. It can lock and burn itself to burn a location, except during combat.",
-        "twd":81,
+        "twd":82,
         "type":"Ally"
     },
     "102145":{
@@ -94017,7 +94017,7 @@
             }
         },
         "text":"Unique location. Hunting ground.\nDuring your unlock phase, a ready vampire you control can gain 1 blood. A vampire can gain blood from only one hunting ground each turn.",
-        "twd":53,
+        "twd":54,
         "type":"Master"
     },
     "102151":{
@@ -94112,7 +94112,7 @@
             }
         },
         "text":"Out-of-turn. Trifle. Do not replace until your unlock phase.\nCancel a master card played by your predator or prey as it is played, and its cost is not paid. That Methuselah gets +1 master phase action immediately, or at the start of their next master phase if the canceled card is an out-of-turn master.",
-        "twd":527,
+        "twd":531,
         "type":"Master",
         "trifle":true
     },
@@ -94709,7 +94709,7 @@
             }
         },
         "text":"Only one Week of Nightmares can be played in a game.\nPut this card in play with 10 nightmare counters. Ravnos get +1 bleed and +1 strength and do not hunt as normal. Any Ravnos can steal 1 blood from another Ravnos as a +1 stealth hunt action. During each Methuselah's unlock phase, that Methuselah can move 1 nightmare counter from this card to a Ravnos. If this card has no counters, each Ravnos burns 1 blood for each nightmare counter on them or is burned, then burn this card and the nightmare counters.",
-        "twd":65,
+        "twd":67,
         "type":"Master"
     },
     "102167":{
@@ -95315,7 +95315,7 @@
             }
         },
         "text":"Trifle.\nPut this card in play. You can use 1 transfer to draw 1 card from your crypt and then remove a crypt card in your uncontrolled region from the game. You can use 4 transfers to burn this card and gain 2 pool.",
-        "twd":802,
+        "twd":813,
         "type":"Master",
         "trifle":true
     },
@@ -95643,7 +95643,7 @@
             }
         },
         "text":"Unique location.\nYou can lock this card to give a minion +1 intercept. If that minion does not block the action, burn 1 pool after action resolution.",
-        "twd":214,
+        "twd":215,
         "type":"Master"
     },
     "102190":{
@@ -96143,7 +96143,7 @@
             }
         },
         "text":"Master: unique location. Requires a ready Sabbat vampire.\nWhen a political action is successful, before the referendum, lock this card and a ready unlocked Sabbat vampire you control to have that vampire enter combat with the acting vampire. If the acting vampire is still ready at the end of combat, the Sabbat vampire takes 2 damage, and the referendum is conducted as normal.",
-        "twd":44,
+        "twd":45,
         "type":"Master"
     },
     "102200":{
@@ -96224,7 +96224,7 @@
             }
         },
         "text":"Unique location.\nIf a ready Banu Haqim you control is the target of a directed action or is chosen by the acting Methuselah in the terms of a referendum, you can lock this location to unlock the acting minion and have the action or referendum fail. Only usable as the directed action is announced or during the polling step of the referendum before votes and ballots are cast.",
-        "twd":34,
+        "twd":35,
         "type":"Master"
     },
     "102202":{
@@ -96495,7 +96495,7 @@
             }
         },
         "text":"Add 4 blood to a vampire in your uncontrolled region with capacity 8 or more.",
-        "twd":374,
+        "twd":378,
         "type":"Master"
     },
     "102208":{
@@ -96544,7 +96544,7 @@
             }
         },
         "text":"Before range is determined, put this card on this minion. This card represents an equipment card and doesn't count as a combat card while in play. This equipment is a weapon, gun. Ammo cards cannot be used with this gun. It does 1R damage each strike, with an optional maneuver each combat. Bearer takes 1 damage during strike resolution when striking with this gun, but only once each combat. This card is kept as normal equipment and is not discarded after combat.",
-        "twd":44,
+        "twd":45,
         "type":"Combat"
     },
     "102209":{
@@ -96704,7 +96704,7 @@
             }
         },
         "text":"Unique location. Hunting ground.\nDuring your unlock phase, a ready vampire you control can gain 1 blood. A vampire can gain blood from only one hunting ground each turn.",
-        "twd":104,
+        "twd":106,
         "type":"Master"
     }
 }
