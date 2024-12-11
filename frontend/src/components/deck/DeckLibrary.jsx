@@ -8,13 +8,11 @@ import {
   FlexGapped,
 } from '@/components';
 import { useApp } from '@/context';
-import { getIsEditable } from '@/utils';
 import { useModalCardController, useDeckLibrary } from '@/hooks';
-import { DECKID, LIBRARY, TYPE_MASTER } from '@/constants';
+import { LIBRARY, TYPE_MASTER } from '@/constants';
 
 const DeckLibrary = ({ inSearch, inPreview, inMissing, deck }) => {
   const { setShowFloatingButtons, isMobile, isNarrow } = useApp();
-  const isEditable = getIsEditable(deck);
   const [showInfo, setShowInfo] = useState(false);
 
   const {
@@ -22,17 +20,9 @@ const DeckLibrary = ({ inSearch, inPreview, inMissing, deck }) => {
     librarySide,
     libraryByType,
     librarySideByType,
-    hasBanned,
-    hasLimited,
-    hasPlaytest,
-    hasIllegalDate,
     trifleTotal,
     libraryTotal,
-    poolTotal,
-    bloodTotal,
     libraryByTypeTotal,
-    libraryByClansTotal,
-    libraryByDisciplinesTotal,
   } = useDeckLibrary(deck[LIBRARY]);
 
   const {
@@ -70,22 +60,10 @@ const DeckLibrary = ({ inSearch, inPreview, inMissing, deck }) => {
           }
         >
           <DeckLibraryHeader
-            libraryTotal={libraryTotal}
             inMissing={inMissing}
-            bloodTotal={bloodTotal}
-            poolTotal={poolTotal}
-            hasBanned={hasBanned}
-            hasLimited={hasLimited}
-            hasPlaytest={hasPlaytest}
-            hasIllegalDate={hasIllegalDate}
-            isEditable={isEditable}
             showInfo={showInfo}
             setShowInfo={setShowInfo}
-            cards={library}
-            deckid={deck[DECKID]}
-            byTypes={libraryByTypeTotal}
-            byClans={libraryByClansTotal}
-            byDisciplines={libraryByDisciplinesTotal}
+            deck={deck}
           />
         </div>
         <div className="flex flex-col gap-2">

@@ -46,7 +46,6 @@ const LibraryTotalDifference = ({ qTo, qFrom }) => {
 const DiffLibrary = ({ cardsTo, deck }) => {
   const { setShowFloatingButtons } = useApp();
   const [showInfo, setShowInfo] = useState(false);
-
   const cardsFrom = deck[LIBRARY];
   const isEditable = getIsEditable(deck);
 
@@ -55,7 +54,6 @@ const DiffLibrary = ({ cardsTo, deck }) => {
     librarySide,
     libraryByType,
     librarySideByType,
-    hasBanned,
     trifleTotal,
     libraryTotal,
     libraryToTotal,
@@ -64,8 +62,6 @@ const DiffLibrary = ({ cardsTo, deck }) => {
     bloodTotal,
     bloodToTotal,
     libraryByTypeTotal,
-    libraryByClansTotal,
-    libraryByDisciplinesTotal,
   } = useDeckLibrary(cardsFrom, cardsTo);
 
   const {
@@ -97,18 +93,12 @@ const DiffLibrary = ({ cardsTo, deck }) => {
       <div className="flex flex-col gap-2">
         <div className="sm:sticky sm:top-10 sm:z-10 sm:bg-bgPrimary sm:dark:bg-bgPrimaryDark">
           <DeckLibraryHeader
-            libraryTotal={<LibraryTotalDifference qTo={libraryToTotal} qFrom={libraryTotal} />}
-            bloodTotal={<BloodPoolDifference qTo={bloodToTotal} qFrom={bloodTotal} />}
-            poolTotal={<BloodPoolDifference qTo={poolToTotal} qFrom={poolTotal} />}
-            hasBanned={hasBanned}
-            isEditable={isEditable}
+            libraryTotalDiff={<LibraryTotalDifference qTo={libraryToTotal} qFrom={libraryTotal} />}
+            bloodTotalDiff={<BloodPoolDifference qTo={bloodToTotal} qFrom={bloodTotal} />}
+            poolTotalDiff={<BloodPoolDifference qTo={poolToTotal} qFrom={poolTotal} />}
             showInfo={showInfo}
             setShowInfo={setShowInfo}
-            cards={library}
-            deckid={deck[DECKID]}
-            byTypes={libraryByTypeTotal}
-            byClan={libraryByClansTotal}
-            byDisciplines={libraryByDisciplinesTotal}
+            deck={deck}
           />
         </div>
         <div className="flex flex-col gap-2">

@@ -18,14 +18,9 @@ const ReviewLibrary = ({ cardChange, cardsFrom, cardsTo }) => {
     librarySide,
     libraryByType,
     librarySideByType,
-    hasBanned,
     trifleTotal,
     libraryTotal,
-    poolTotal,
-    bloodTotal,
     libraryByTypeTotal,
-    libraryByClansTotal,
-    libraryByDisciplinesTotal,
   } = useDeckLibrary(cardsFrom, cardsTo);
 
   const {
@@ -42,18 +37,9 @@ const ReviewLibrary = ({ cardChange, cardsFrom, cardsTo }) => {
       <div className="flex flex-col gap-2">
         <div className="sm:sticky sm:top-10 sm:z-10 sm:bg-bgPrimary sm:dark:bg-bgPrimaryDark">
           <DeckLibraryHeader
-            libraryTotal={libraryTotal}
-            bloodTotal={bloodTotal}
-            poolTotal={poolTotal}
-            hasBanned={hasBanned}
             showInfo={showInfo}
             setShowInfo={setShowInfo}
-            cards={library}
-            byTypes={libraryByTypeTotal}
-            byClan={libraryByClansTotal}
-            byDisciplines={libraryByDisciplinesTotal}
             cardChange={cardChange}
-            isEditable
           />
         </div>
         <div className="flex flex-col gap-2">

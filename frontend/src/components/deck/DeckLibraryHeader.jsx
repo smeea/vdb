@@ -10,29 +10,40 @@ import {
   Header,
 } from '@/components';
 import { useApp } from '@/context';
-import { POOL, BLOOD, X, LIBRARY, LIMITED, BANNED, LEGAL, PLAYTEST } from '@/constants';
+import { useDeckLibrary } from '@/hooks';
+import { getIsEditable } from '@/utils';
+import { DECKID, POOL, BLOOD, X, LIBRARY, LIMITED, BANNED, LEGAL, PLAYTEST } from '@/constants';
 
 const DeckLibraryHeader = ({
-  libraryTotal,
   inMissing,
-  bloodTotal,
-  poolTotal,
-  hasBanned,
-  hasLimited,
-  hasPlaytest,
-  hasIllegalDate,
-  isEditable,
-  cards,
-  deckid,
   cardChange,
   showInfo,
   setShowInfo,
-  byClans,
-  byTypes,
-  byDisciplines,
+  deck,
+  libraryTotalDiff,
+  poolTotalDiff,
+  bloodTotalDiff,
 }) => {
   const { limitedMode, isMobile } = useApp();
   const [showAdd, setShowAdd] = useState(false);
+
+  const {
+    library,
+    hasBanned,
+    hasLimited,
+    hasPlaytest,
+    hasIllegalDate,
+    libraryTotal,
+    poolTotal,
+    bloodTotal,
+    libraryByClansTotal,
+    libraryByTypeTotal,
+    libraryByDisciplinesTotal,
+  } = useDeckLibrary(deck[LIBRARY]);
+  const isEditable = getIsEditable(deck);
+
+  const rescaledBloodTotal = Math.round((bloodTotal / libraryTotal) * 90);
+  const rescaledPoolTotal = Math.round((poolTotal / libraryTotal) * 90);
 
   return (
     <>
@@ -40,7 +51,7 @@ const DeckLibraryHeader = ({
         <div className="flex basis-full justify-between">
           <div className="flex basis-full items-center justify-between gap-2 px-2 font-bold">
             <div className="flex">
-              Library [{libraryTotal}
+              Library [{libraryTotalDiff ?? libraryTotal}
               {!inMissing && (libraryTotal < 60 || libraryTotal > 90) && ' of 60-90'}]
             </div>
             <div className="flex gap-2">
@@ -57,11 +68,29 @@ const DeckLibraryHeader = ({
               <div className="flex gap-3">
                 <div className="flex items-center gap-1" title="Total Blood Cost">
                   <ResultLibraryCost card={{ [BLOOD]: X }} className="h-[30px] pb-1" />
-                  <b>{bloodTotal}</b>
+                  <b>{bloodTotalDiff ?? bloodTotal}</b>
+                  {showInfo && !bloodTotalDiff && libraryTotal < 90 && (
+                    <div
+                      className="flex items-end text-midGray dark:text-midGrayDark"
+                      title="Rescaled for 90 cards library"
+                    >
+                      ({rescaledBloodTotal}
+                      <div className="text-[9px] font-normal">90</div>)
+                    </div>
+                  )}
                 </div>
                 <div className="flex items-center gap-1" title="Total Pool Cost">
                   <ResultLibraryCost card={{ [POOL]: X }} className="h-[30px]" />
-                  <b>{poolTotal}</b>
+                  <b>{poolTotalDiff ?? poolTotal}</b>
+                  {showInfo && !poolTotalDiff && libraryTotal < 90 && (
+                    <div
+                      className="flex items-end text-midGray dark:text-midGrayDark"
+                      title="Rescaled for 90 cards library"
+                    >
+                      ({rescaledPoolTotal}
+                      <div className="text-[9px] font-normal">90</div>)
+                    </div>
+                  )}
                 </div>
               </div>
             )}
@@ -83,13 +112,17 @@ const DeckLibraryHeader = ({
         </div>
       </Header>
       {showInfo && (
-        <DeckLibraryTotalInfo byDisciplines={byDisciplines} byTypes={byTypes} byClans={byClans} />
+        <DeckLibraryTotalInfo
+          byTypes={libraryByTypeTotal}
+          byClans={libraryByClansTotal}
+          byDisciplines={libraryByDisciplinesTotal}
+        />
       )}
       {showAdd && (
         <DeckNewCard
           handleClose={() => setShowAdd(false)}
-          cards={cards}
-          deckid={deckid}
+          cards={library}
+          deckid={deck[DECKID]}
           target={LIBRARY}
           cardChange={cardChange}
         />
