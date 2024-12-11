@@ -44,7 +44,7 @@ Start backend:
     flask db init                                        # ONLY ON FIRST RUN
     flask db migrate                                     # ONLY ON FIRST RUN
     flask db upgrade                                     # ONLY ON FIRST RUN
-    flask run
+    flask --debug run
 ```
 
 Start frontend:
