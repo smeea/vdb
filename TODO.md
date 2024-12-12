@@ -1,7 +1,6 @@
 # FIX
 - Review TWDA radar: remove swarm, maybe replace?
 - Focus q-ty field add existing card
-- Artist idx (e.g. Aching)
 
 # FEATURES
 
