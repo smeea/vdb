@@ -35,13 +35,13 @@ const DeckDrawCryptTable = ({
         {resultCards.map((card, idx) => {
           return (
             <tr
-              key={`${idx}-${card[ID]}`}
+              key={idx}
               className="row-bg h-[38px] border-y border-bgSecondary dark:border-bgSecondaryDark"
             >
               <ResultCryptTableRowCommon
                 card={card}
                 shouldShowModal={shouldShowModal}
-                handleClick={() => handleClick(card)}
+                handleClick={() => handleClick(idx)}
                 keyDisciplines={keyDisciplines}
                 disciplinesSet={disciplinesSet}
                 inDeck

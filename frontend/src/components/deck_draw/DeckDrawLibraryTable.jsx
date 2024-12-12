@@ -32,12 +32,12 @@ const DeckDrawLibraryTable = ({
         {resultCards.map((card, idx) => {
           return (
             <tr
-              key={`${idx}-${card[ID]}`}
+              key={idx}
               className="row-bg h-[38px] border-y border-bgSecondary dark:border-bgSecondaryDark"
             >
               <ResultLibraryTableRowCommon
                 card={card}
-                handleClick={() => handleClick(card)}
+                handleClick={() => handleClick(idx)}
                 shouldShowModal={shouldShowModal}
               />
               {(!ashHeap || !isMobile) && (
