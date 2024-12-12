@@ -31,7 +31,7 @@ const ResultLayoutTextText = ({ cardid }) => {
   return (
     <>
       {cardText.map((i, idxText) => {
-        let replacedText = reactStringReplace(i, /\[(\w+?)\]/g, (match, idx) => {
+        let replacedText = reactStringReplace(i, /\[(\w+ ?\w+)\]/g, (match, idx) => {
           return (
             <div
               key={`${idxText}-${idx}`}

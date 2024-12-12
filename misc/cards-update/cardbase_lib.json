@@ -349,7 +349,7 @@
                 "R":true
             }
         },
-        "text":"[COMBAT] Lock this imbued before range is determined to end a combat between a monster and a mortal. If the mortal is a minion other than this imbued, you may move a conviction [1CONVICTION] to this imbued from your hand or ash heap.",
+        "text":"[COMBAT] Lock this imbued before range is determined to end a combat between a monster and a mortal. If the mortal is a minion other than this imbued, you may move a conviction [1 CONVICTION] to this imbued from your hand or ash heap.",
         "twd":9,
         "type":"Power"
     },
@@ -2699,7 +2699,7 @@
                 "PO":"4"
             }
         },
-        "text":"Requires a ready Laibon.\n[aus] [REACTION] Reduce a bleed against you by 1.\n[AUS] [ACTIONMODIFIER] Only usable during a bleed action. +1 bleed (limited).",
+        "text":"Requires a ready Laibon.\n[aus] [REACTION] Reduce a bleed against you by 1.\n[AUS] [ACTION MODIFIER] Only usable during a bleed action. +1 bleed (limited).",
         "twd":3,
         "type":"Action Modifier/Reaction"
     },
@@ -4900,7 +4900,7 @@
                 "PKia":"4"
             }
         },
-        "text":"[aus] [REACTION] This vampire burns 1 blood to get +1 intercept.\n[myt] [REACTION] +1 intercept.\n[MYT] [ACTIONMODIFIER] +1 stealth.",
+        "text":"[aus] [REACTION] This vampire burns 1 blood to get +1 intercept.\n[myt] [REACTION] +1 intercept.\n[MYT] [ACTION MODIFIER] +1 stealth.",
         "twd":46,
         "type":"Action Modifier/Reaction"
     },
@@ -8506,7 +8506,7 @@
                 "DTC":true
             }
         },
-        "text":"[qui] [REACTION] +1 intercept.\n[QUI] [ACTIONMODIFIER] Only usable if a younger vampire attempts to block this vampire. That attempt fails and the blocking vampire cannot attempt to block this action again.",
+        "text":"[qui] [REACTION] +1 intercept.\n[QUI] [ACTION MODIFIER] Only usable if a younger vampire attempts to block this vampire. That attempt fails and the blocking vampire cannot attempt to block this action again.",
         "twd":16,
         "type":"Action Modifier/Reaction"
     },
@@ -10929,7 +10929,7 @@
                 "DTC":true
             }
         },
-        "text":"[nec] [ACTIONMODIFIER] Only usable during an action to recruit or employ a wraith. +2 stealth.\n[NEC] [COMBAT] Strike: 1 aggravated damage.",
+        "text":"[nec] [ACTION MODIFIER] Only usable during an action to recruit or employ a wraith. +2 stealth.\n[NEC] [COMBAT] Strike: 1 aggravated damage.",
         "twd":66,
         "type":"Action Modifier/Combat"
     },
@@ -11841,7 +11841,7 @@
                 "C":true
             }
         },
-        "text":"[tha] [COMBAT] Strike: 1 damage. This damage cannot be prevented by cards that require Fortitude [for].\n[val] [ACTIONMODIFIER] If this action is blocked, the blocking minion burns one blood or life before combat begins. Any minion currently attempting to block may now choose not to block.\n[VAL] [ACTIONMODIFIER] Only usable during a bleed action. +1 bleed (limited).",
+        "text":"[tha] [COMBAT] Strike: 1 damage. This damage cannot be prevented by cards that require Fortitude [for].\n[val] [ACTION MODIFIER] If this action is blocked, the blocking minion burns one blood or life before combat begins. Any minion currently attempting to block may now choose not to block.\n[VAL] [ACTION MODIFIER] Only usable during a bleed action. +1 bleed (limited).",
         "twd":5,
         "type":"Action Modifier/Combat"
     },
@@ -14145,7 +14145,7 @@
                 "R":true
             }
         },
-        "text":"[REACTION] [2CONVICTION] Only usable when a monster controlled by another Methuselah is taking an action directed at you or an imbued controlled by any player. The action fails and the acting monster enters combat with this imbued instead.",
+        "text":"[REACTION] [2 CONVICTION] Only usable when a monster controlled by another Methuselah is taking an action directed at you or an imbued controlled by any player. The action fails and the acting monster enters combat with this imbued instead.",
         "twd":60,
         "type":"Power"
     },
@@ -15782,7 +15782,7 @@
                 "C":true
             }
         },
-        "text":"Choose a melee weapon this imbued has or spend 1 conviction [1CONVICTION] to put this card on this imbued to represent a melee weapon that does strength damage each strike. This melee weapon inflicts +1 additional damage this action. If the opposing minion is (or becomes) immune to non-aggravated damage, he or she loses that immunity for handling damage from this weapon. Burn the melee weapon at the end of the action.",
+        "text":"Choose a melee weapon this imbued has or spend 1 conviction [1 CONVICTION] to put this card on this imbued to represent a melee weapon that does strength damage each strike. This melee weapon inflicts +1 additional damage this action. If the opposing minion is (or becomes) immune to non-aggravated damage, he or she loses that immunity for handling damage from this weapon. Burn the melee weapon at the end of the action.",
         "twd":1,
         "type":"Combat"
     },
@@ -22355,7 +22355,7 @@
                 "PSal":"2"
             }
         },
-        "text":"Only usable during the polling step of a political action.\nCancel the referendum. Unlock the acting vampire. If a political action card [POLITICALACTION] was played to call this referendum, return it to its owner's hand (discard down afterward). Minions controlled by the acting Methuselah cannot perform the same political action again this turn.",
+        "text":"Only usable during the polling step of a political action.\nCancel the referendum. Unlock the acting vampire. If a political action card [POLITICAL ACTION] was played to call this referendum, return it to its owner's hand (discard down afterward). Minions controlled by the acting Methuselah cannot perform the same political action again this turn.",
         "twd":1002,
         "type":"Reaction"
     },
@@ -22579,7 +22579,7 @@
                 "PM":"2"
             }
         },
-        "text":"[dem] [COMBAT] Press.\n[DEM] [ACTIONMODIFIER] +1 stealth.",
+        "text":"[dem] [COMBAT] Press.\n[DEM] [ACTION MODIFIER] +1 stealth.",
         "twd":95,
         "type":"Action Modifier/Combat"
     },
@@ -23587,7 +23587,7 @@
                 "C":true
             }
         },
-        "text":"Only usable on an undirected action as the action is announced.\nEquipment and conviction [1CONVICTION] cards cannot grant intercept this action (any intercept they grant is lost). Reaction cards (and powers) that grant intercept for this action cost an additional blood or life.",
+        "text":"Only usable on an undirected action as the action is announced.\nEquipment and conviction [1 CONVICTION] cards cannot grant intercept this action (any intercept they grant is lost). Reaction cards (and powers) that grant intercept for this action cost an additional blood or life.",
         "twd":0,
         "type":"Action Modifier"
     },
@@ -24987,7 +24987,7 @@
                 "C":true
             }
         },
-        "text":"[ACTIONMODIFIER] [1CONVICTION] Only usable during a bleed action by a ready imbued other than the acting mortal. Burn this card to give the acting mortal you control +1 bleed (limited).\n[REACTION] [1CONVICTION] Burn this card to give another mortal you control +1 intercept.\n[COMBAT] [1CONVICTION] Only usable by a ready imbued other than a mortal combatant you control. Burn this card to give that combatant +1 strength for the remainder of the action.",
+        "text":"[ACTION MODIFIER] [1 CONVICTION] Only usable during a bleed action by a ready imbued other than the acting mortal. Burn this card to give the acting mortal you control +1 bleed (limited).\n[REACTION] [1 CONVICTION] Burn this card to give another mortal you control +1 intercept.\n[COMBAT] [1 CONVICTION] Only usable by a ready imbued other than a mortal combatant you control. Burn this card to give that combatant +1 strength for the remainder of the action.",
         "twd":5,
         "type":"Power"
     },
@@ -26560,7 +26560,7 @@
                 "DTC":true
             }
         },
-        "text":"[pre] Only usable during the polling step of a political action. This vampire gets +2 votes.\n[mel] As [pre] above, and usable by a ready vampire other than the acting minion.\n[MEL] Only usable after resolution of a political action. Usable by a ready vampire other than the acting minion. Move the political action card [POLITICALACTION] used to call the referendum from your ash heap to this vampire, face down and out of play; this vampire can play it as if from your hand (requirements and cost apply as normal).",
+        "text":"[pre] Only usable during the polling step of a political action. This vampire gets +2 votes.\n[mel] As [pre] above, and usable by a ready vampire other than the acting minion.\n[MEL] Only usable after resolution of a political action. Usable by a ready vampire other than the acting minion. Move the political action card [POLITICAL ACTION] used to call the referendum from your ash heap to this vampire, face down and out of play; this vampire can play it as if from your hand (requirements and cost apply as normal).",
         "twd":4,
         "type":"Action Modifier"
     },
@@ -26738,7 +26738,7 @@
                 "R":true
             }
         },
-        "text":"Gehenna.\nRequires at least one other Gehenna card in play. Each imbued can have (and use) one power card for which he or she doesn't meet the requirements. An imbued who performs a successful action may gain 1 conviction [1CONVICTION] from his or her ash heap. An imbued can only gain 1 conviction [1CONVICTION] this way each turn.",
+        "text":"Gehenna.\nRequires at least one other Gehenna card in play. Each imbued can have (and use) one power card for which he or she doesn't meet the requirements. An imbued who performs a successful action may gain 1 conviction [1 CONVICTION] from his or her ash heap. An imbued can only gain 1 conviction [1 CONVICTION] this way each turn.",
         "twd":33,
         "type":"Event"
     },
@@ -27165,7 +27165,7 @@
                 "DTC":true
             }
         },
-        "text":"Only usable during the polling step of a political action.\n[ACTIONMODIFIER] Each Laibon Ravnos gets +2 votes.\n[REACTION] Each Ravnos gets +1 vote.",
+        "text":"Only usable during the polling step of a political action.\n[ACTION MODIFIER] Each Laibon Ravnos gets +2 votes.\n[REACTION] Each Ravnos gets +1 vote.",
         "twd":16,
         "type":"Action Modifier/Reaction"
     },
@@ -29537,7 +29537,7 @@
                 "R":true
             }
         },
-        "text":"Requires an imbued with 5 conviction [5CONVICTION]. Only usable before range is determined on the first round.\nIf two consecutive rounds of combat occur at close range and this imbued remains ready, this imbued burns 5 conviction [5CONVICTION] during the press step of that second round to burn himself or herself and the opposing monster. Otherwise, this imbued burns 1 conviction [1CONVICTION] when combat ends.",
+        "text":"Requires an imbued with 5 conviction [5 CONVICTION]. Only usable before range is determined on the first round.\nIf two consecutive rounds of combat occur at close range and this imbued remains ready, this imbued burns 5 conviction [5 CONVICTION] during the press step of that second round to burn himself or herself and the opposing monster. Otherwise, this imbued burns 1 conviction [1 CONVICTION] when combat ends.",
         "twd":0,
         "type":"Combat"
     },
@@ -30220,7 +30220,7 @@
                 "DTC":true
             }
         },
-        "text":"[myt] [REFLEX] Cancel a grapple card as it is played, and its cost is not paid.\n[obt] [COMBAT] Maneuver.\n[myt] [COMBAT] Maneuver.\n[MYT] [ACTIONMODIFIER] +1 stealth.",
+        "text":"[myt] [REFLEX] Cancel a grapple card as it is played, and its cost is not paid.\n[obt] [COMBAT] Maneuver.\n[myt] [COMBAT] Maneuver.\n[MYT] [ACTION MODIFIER] +1 stealth.",
         "twd":41,
         "type":"Action Modifier/Combat"
     },
@@ -33261,7 +33261,7 @@
                 "C":true
             }
         },
-        "text":"[pre] [COMBAT] Strike: combat ends.\n[PRE] [ACTIONMODIFIER] Only usable as the action is announced. Vampires must burn 1 blood to attempt to block this action. Non-zombie allies cannot block this action.",
+        "text":"[pre] [COMBAT] Strike: combat ends.\n[PRE] [ACTION MODIFIER] Only usable as the action is announced. Vampires must burn 1 blood to attempt to block this action. Non-zombie allies cannot block this action.",
         "twd":90,
         "type":"Action Modifier/Combat"
     },
@@ -33623,7 +33623,7 @@
                 "R":true
             }
         },
-        "text":"[COMBAT] [1CONVICTION] Only usable before range is determined on the first round of combat resulting from a block. Look at the opposing minion's controller's hand. You may then choose to cancel combat. If you do, and this imbued was blocking, the action continues as if unblocked.",
+        "text":"[COMBAT] [1 CONVICTION] Only usable before range is determined on the first round of combat resulting from a block. Look at the opposing minion's controller's hand. You may then choose to cancel combat. If you do, and this imbued was blocking, the action continues as if unblocked.",
         "twd":9,
         "type":"Power"
     },
@@ -34028,7 +34028,7 @@
                 "NTz":3
             }
         },
-        "text":"[pro] [ACTIONMODIFIER] Only usable if a minion attempts to block. The blocking minion gets -1 intercept. If this action is blocked, this vampire gets 1 optional maneuver and cannot use equipment during the resulting combat.\n[PRO] [REACTION] +1 intercept. If this vampire blocks, they get 1 optional maneuver and cannot use equipment during the resulting combat.",
+        "text":"[pro] [ACTION MODIFIER] Only usable if a minion attempts to block. The blocking minion gets -1 intercept. If this action is blocked, this vampire gets 1 optional maneuver and cannot use equipment during the resulting combat.\n[PRO] [REACTION] +1 intercept. If this vampire blocks, they get 1 optional maneuver and cannot use equipment during the resulting combat.",
         "twd":118,
         "type":"Action Modifier/Reaction"
     },
@@ -34058,7 +34058,7 @@
                 "PMi":"2"
             }
         },
-        "text":"[pro] [COMBAT] Strike: steal 1 blood or life (becoming blood).\n[PRO] [ACTIONMODIFIER] Only usable as the action is announced. +1 stealth, even if stealth is not yet needed.",
+        "text":"[pro] [COMBAT] Strike: steal 1 blood or life (becoming blood).\n[PRO] [ACTION MODIFIER] Only usable as the action is announced. +1 stealth, even if stealth is not yet needed.",
         "twd":11,
         "type":"Action Modifier/Combat"
     },
@@ -34125,7 +34125,7 @@
                 "DTC":true
             }
         },
-        "text":"[ser] [ACTIONMODIFIER] +1 stealth.\n[SER] [COMBAT] Maneuver.",
+        "text":"[ser] [ACTION MODIFIER] +1 stealth.\n[SER] [COMBAT] Maneuver.",
         "twd":19,
         "type":"Action Modifier/Combat"
     },
@@ -36439,7 +36439,7 @@
                 "DTC":true
             }
         },
-        "text":"[obf] [ACTIONMODIFIER] +1 stealth.\n[obe] [ACTIONMODIFIER][REACTION] Only usable if this vampire is about to enter combat with an ally. Lock that ally and end the action. (Do not lock this vampire if they are blocking.)\n[OBE] [ACTIONMODIFIER] +1 stealth.",
+        "text":"[obf] [ACTION MODIFIER] +1 stealth.\n[obe] [ACTION MODIFIER][REACTION] Only usable if this vampire is about to enter combat with an ally. Lock that ally and end the action. (Do not lock this vampire if they are blocking.)\n[OBE] [ACTION MODIFIER] +1 stealth.",
         "twd":38,
         "type":"Action Modifier/Reaction"
     },
@@ -38604,7 +38604,7 @@
                 "R":true
             }
         },
-        "text":"Only usable during a referendum.\n[dom] [ACTIONMODIFIER] Requires a vampire with capacity above 4. This vampire gains 2 votes.\n[tem] [ACTIONMODIFIER][REACTION] Cancel a reaction card as it is played by a younger vampire who does not have Temporis [tem] (no cost is paid).\n[TEM] [ACTIONMODIFIER][REACTION] Multiplier. Only usable by a ready unlocked vampire other than the acting vampire. The acting vampire's votes are doubled when the votes are tallied. Only one multiplier can be played on a vampire each action.",
+        "text":"Only usable during a referendum.\n[dom] [ACTION MODIFIER] Requires a vampire with capacity above 4. This vampire gains 2 votes.\n[tem] [ACTION MODIFIER][REACTION] Cancel a reaction card as it is played by a younger vampire who does not have Temporis [tem] (no cost is paid).\n[TEM] [ACTION MODIFIER][REACTION] Multiplier. Only usable by a ready unlocked vampire other than the acting vampire. The acting vampire's votes are doubled when the votes are tallied. Only one multiplier can be played on a vampire each action.",
         "twd":5,
         "type":"Action Modifier/Reaction"
     },
@@ -40388,10 +40388,10 @@
                 "R":true
             }
         },
-        "text":"Not usable by an imbued with Illuminate.\n[ACTIONMODIFIER] [1CONVICTION] Only usable as the action is announced. Monsters get -1 intercept against this action.\n[REACTION] [1CONVICTION] Only usable during a monster's action directed at this imbued. The action fails.",
+        "text":"Not usable by an imbued with Illuminate.\n[ACTION MODIFIER] [1 CONVICTION] Only usable as the action is announced. Monsters get -1 intercept against this action.\n[REACTION] [1 CONVICTION] Only usable during a monster's action directed at this imbued. The action fails.",
         "twd":15,
         "type":"Power",
-        "Card Text":"Not usable by an imbued with /Illuminate/.\n[ACTIONMODIFIER] [1CONVICTION] Only usable as the action is announced. Monsters get -1 intercept against this action.\n[REACTION] [1CONVICTION] Only usable during a monster's action directed at this imbued. The action fails."
+        "Card Text":"Not usable by an imbued with /Illuminate/.\n[ACTION MODIFIER] [1 CONVICTION] Only usable as the action is announced. Monsters get -1 intercept against this action.\n[REACTION] [1 CONVICTION] Only usable during a monster's action directed at this imbued. The action fails."
     },
     "100920":{
         "aka":"",
@@ -40524,7 +40524,7 @@
                 "NR":1
             }
         },
-        "text":"[obf] [COMBAT] Cancel a combat card that requires Auspex [aus] as it is played. No cost is paid.\n[OBF] [ACTIONMODIFIER] Cancel a reaction card that requires Auspex as it is played. No cost is paid.",
+        "text":"[obf] [COMBAT] Cancel a combat card that requires Auspex [aus] as it is played. No cost is paid.\n[OBF] [ACTION MODIFIER] Cancel a reaction card that requires Auspex as it is played. No cost is paid.",
         "twd":71,
         "type":"Action Modifier/Combat"
     },
@@ -43373,7 +43373,7 @@
                 "R":true
             }
         },
-        "text":"[ACTION] [1CONVICTION] +1 stealth action.\nAdd a counter to an imbued in your uncontrolled region or move the conviction [1CONVICTION] you paid for this action from your ash heap to any imbued in play.",
+        "text":"[ACTION] [1 CONVICTION] +1 stealth action.\nAdd a counter to an imbued in your uncontrolled region or move the conviction [1 CONVICTION] you paid for this action from your ash heap to any imbued in play.",
         "twd":40,
         "type":"Power"
     },
@@ -47468,7 +47468,7 @@
                 "U":true
             }
         },
-        "text":"Requires a ready mortal, ghoul, or mage.\n(D) Steal a blood (it becomes a life) from a vampire controlled by another Methuselah and unlock this ally. Burn any conviction [1CONVICTION] cards on this ally. This ally may play cards requiring Potence [pot] as a vampire until his or her next unlock phase.",
+        "text":"Requires a ready mortal, ghoul, or mage.\n(D) Steal a blood (it becomes a life) from a vampire controlled by another Methuselah and unlock this ally. Burn any conviction [1 CONVICTION] cards on this ally. This ally may play cards requiring Potence [pot] as a vampire until his or her next unlock phase.",
         "twd":6,
         "type":"Action"
     },
@@ -49988,7 +49988,7 @@
                 "DTC":true
             }
         },
-        "text":"Only usable during the polling step of a political action before votes and ballots are cast.\n[pre] [REACTION] This vampire gets +2 votes.\n[mel] [ACTIONMODIFIER][REACTION] This vampire gets +2 votes.\n[MEL] [ACTIONMODIFIER][REACTION] As [mel] above, and vampires casting votes or ballots in agreement with this vampire gain 1 blood. Vampires casting votes or ballots in opposition to this vampire burn 1 blood. Blood is gained or burned once results are tallied.",
+        "text":"Only usable during the polling step of a political action before votes and ballots are cast.\n[pre] [REACTION] This vampire gets +2 votes.\n[mel] [ACTION MODIFIER][REACTION] This vampire gets +2 votes.\n[MEL] [ACTION MODIFIER][REACTION] As [mel] above, and vampires casting votes or ballots in agreement with this vampire gain 1 blood. Vampires casting votes or ballots in opposition to this vampire burn 1 blood. Blood is gained or burned once results are tallied.",
         "twd":7,
         "type":"Action Modifier/Reaction"
     },
@@ -53505,7 +53505,7 @@
                 "DTC":true
             }
         },
-        "text":"[chi] [ACTIONMODIFIER] +1 stealth.\n[CHI] [COMBAT] Strike: combat ends. If this vampire was blocked while performing a non-bleed action, the action continues as if unblocked.",
+        "text":"[chi] [ACTION MODIFIER] +1 stealth.\n[CHI] [COMBAT] Strike: combat ends. If this vampire was blocked while performing a non-bleed action, the action continues as if unblocked.",
         "twd":49,
         "type":"Action Modifier/Combat"
     },
@@ -55227,7 +55227,7 @@
                 "2020-05-11":true
             }
         },
-        "text":"[dom] [ACTIONMODIFIER] Only usable during a bleed action. +1 bleed (limited).\n[DOM] [REACTION] Only usable if a younger vampire is bleeding you, after blocks are declined. Lock this reacting vampire. Change the target of the bleed to another Methuselah other than the acting vampire's controller (that Methuselah can attempt to block).",
+        "text":"[dom] [ACTION MODIFIER] Only usable during a bleed action. +1 bleed (limited).\n[DOM] [REACTION] Only usable if a younger vampire is bleeding you, after blocks are declined. Lock this reacting vampire. Change the target of the bleed to another Methuselah other than the acting vampire's controller (that Methuselah can attempt to block).",
         "twd":171,
         "type":"Action Modifier/Reaction"
     },
@@ -57506,7 +57506,7 @@
                 "NTz":2
             }
         },
-        "text":"[dom][pro] [ACTIONMODIFIER] +1 stealth. Allies get -1 intercept.\n[DOM][PRO] [COMBAT] Only usable before range is determined. This round, this vampire gets +1 strength, 1 optional maneuver and can prevent 1 damage. A vampire can play only one Obedient Flesh each round.",
+        "text":"[dom][pro] [ACTION MODIFIER] +1 stealth. Allies get -1 intercept.\n[DOM][PRO] [COMBAT] Only usable before range is determined. This round, this vampire gets +1 strength, 1 optional maneuver and can prevent 1 damage. A vampire can play only one Obedient Flesh each round.",
         "twd":8,
         "type":"Action Modifier/Combat"
     },
@@ -57693,7 +57693,7 @@
                 "DTC":true
             }
         },
-        "text":"[chi] [COMBAT] Strike: dodge.\n[CHI] [ACTIONMODIFIER] +1 stealth.",
+        "text":"[chi] [COMBAT] Strike: dodge.\n[CHI] [ACTION MODIFIER] +1 stealth.",
         "twd":35,
         "type":"Action Modifier/Combat"
     },
@@ -60606,7 +60606,7 @@
                 "DTC":true
             }
         },
-        "text":"[for] [COMBAT] This round, this vampire treats aggravated damage as normal damage and cards named /Flash Grenade/ have no effect on this vampire.\n[for][obe] [COMBAT] As [for] above, but until the end of combat.\n[FOR][OBE] [ACTIONMODIFIER] Only usable as the action is announced. Choose a vampire. The chosen vampire cannot block this action.",
+        "text":"[for] [COMBAT] This round, this vampire treats aggravated damage as normal damage and cards named /Flash Grenade/ have no effect on this vampire.\n[for][obe] [COMBAT] As [for] above, but until the end of combat.\n[FOR][OBE] [ACTION MODIFIER] Only usable as the action is announced. Choose a vampire. The chosen vampire cannot block this action.",
         "twd":6,
         "type":"Action Modifier/Combat"
     },
@@ -61419,7 +61419,7 @@
                 "DTC":true
             }
         },
-        "text":"[vic] [ACTIONMODIFIER] +1 stealth.\n[VIC] [COMBAT] Strike: dodge.",
+        "text":"[vic] [ACTION MODIFIER] +1 stealth.\n[VIC] [COMBAT] Strike: dodge.",
         "twd":75,
         "type":"Action Modifier/Combat"
     },
@@ -64492,7 +64492,7 @@
                 "C":true
             }
         },
-        "text":"[abo] [REFLEX] Cancel a frenzy card played on this vampire as it is played.\n[abo] [ACTIONMODIFIER] Only usable as the action is announced. +1 stealth, even if stealth is not yet needed.\n[ABO] [ACTIONMODIFIER][COMBAT] Only usable when this vampire burns a minion controlled by your prey, either in combat or as a (D) action. Your prey burns two pool. A vampire may play only one Predator's Transformation at superior each action.",
+        "text":"[abo] [REFLEX] Cancel a frenzy card played on this vampire as it is played.\n[abo] [ACTION MODIFIER] Only usable as the action is announced. +1 stealth, even if stealth is not yet needed.\n[ABO] [ACTION MODIFIER][COMBAT] Only usable when this vampire burns a minion controlled by your prey, either in combat or as a (D) action. Your prey burns two pool. A vampire may play only one Predator's Transformation at superior each action.",
         "twd":28,
         "type":"Action Modifier/Combat"
     },
@@ -65002,7 +65002,7 @@
                 "R":true
             }
         },
-        "text":"[ACTIONMODIFIER] [1CONVICTION] Only usable as the action is announced.\nVampires with capacity less than 7 and monster allies who cost less than 4 pool cannot block this action.",
+        "text":"[ACTION MODIFIER] [1 CONVICTION] Only usable as the action is announced.\nVampires with capacity less than 7 and monster allies who cost less than 4 pool cannot block this action.",
         "twd":10,
         "type":"Power"
     },
@@ -66794,7 +66794,7 @@
                 "C":true
             }
         },
-        "text":"[aus] [REACTION] +1 intercept.\n[tem] [REACTION] Reduce a bleed against you by 2.\n[aus][tem] [ACTIONMODIFIER][REACTION] Only usable during a referendum. Force a younger vampire to abstain (this can cancel that vampire's votes and ballots).\n[AUS][TEM] [ACTIONMODIFIER] Only usable during a bleed action. +2 bleed that does not count against the limit.",
+        "text":"[aus] [REACTION] +1 intercept.\n[tem] [REACTION] Reduce a bleed against you by 2.\n[aus][tem] [ACTION MODIFIER][REACTION] Only usable during a referendum. Force a younger vampire to abstain (this can cancel that vampire's votes and ballots).\n[AUS][TEM] [ACTION MODIFIER] Only usable during a bleed action. +2 bleed that does not count against the limit.",
         "twd":11,
         "type":"Action Modifier/Reaction"
     },
@@ -67155,7 +67155,7 @@
                 "NTz":2
             }
         },
-        "text":"[pro] [ACTIONMODIFIER] +1 stealth.\n[PRO] [COMBAT] Strike: combat ends.",
+        "text":"[pro] [ACTION MODIFIER] +1 stealth.\n[PRO] [COMBAT] Strike: combat ends.",
         "twd":118,
         "type":"Action Modifier/Combat"
     },
@@ -69225,7 +69225,7 @@
                 "C":true
             }
         },
-        "text":"During your unlock phase, if this imbued has fewer life than his or her starting amount, he or she gains 1 life.\n[ACTION] [1CONVICTION] +1 stealth action. Add 1 blood to a vampire or 1 life to any other ally, not to exceed starting life.",
+        "text":"During your unlock phase, if this imbued has fewer life than his or her starting amount, he or she gains 1 life.\n[ACTION] [1 CONVICTION] +1 stealth action. Add 1 blood to a vampire or 1 life to any other ally, not to exceed starting life.",
         "twd":68,
         "type":"Power"
     },
@@ -69913,7 +69913,7 @@
                 "PBH":"3"
             }
         },
-        "text":"[cel] [COMBAT] Press, or maneuver with 1 optional press.\n[CEL] [ACTIONMODIFIER] +1 stealth.",
+        "text":"[cel] [COMBAT] Press, or maneuver with 1 optional press.\n[CEL] [ACTION MODIFIER] +1 stealth.",
         "twd":159,
         "type":"Action Modifier/Combat"
     },
@@ -69940,7 +69940,7 @@
                 "C":true
             }
         },
-        "text":"[ACTION] (D) Inflict 1 damage on a vampire with capacity less than 6. If this action is successful, you may move 1 conviction [1CONVICTION] from your hand or ash heap to this imbued.\n[ACTION] [1CONVICTION] +1 stealth action. Add 1 blood to a vampire or 1 life to any other ally, not to exceed starting life.",
+        "text":"[ACTION] (D) Inflict 1 damage on a vampire with capacity less than 6. If this action is successful, you may move 1 conviction [1 CONVICTION] from your hand or ash heap to this imbued.\n[ACTION] [1 CONVICTION] +1 stealth action. Add 1 blood to a vampire or 1 life to any other ally, not to exceed starting life.",
         "twd":4,
         "type":"Power"
     },
@@ -71762,7 +71762,7 @@
                 "R":true
             }
         },
-        "text":"Master: unique location.\nLock this location and burn a conviction [1CONVICTION] from a ready imbued you control to reduce a bleed against you by one or to gain two votes in a referendum.",
+        "text":"Master: unique location.\nLock this location and burn a conviction [1 CONVICTION] from a ready imbued you control to reduce a bleed against you by one or to gain two votes in a referendum.",
         "twd":32,
         "type":"Master"
     },
@@ -74829,7 +74829,7 @@
                 "DTC":true
             }
         },
-        "text":"[aus] [REACTION] Only usable if a younger vampire is acting. +1 intercept.\n[dai] [REACTION] +1 intercept, with an additional +1 intercept if the acting minion has any corruption counters.\n[DAI] [ACTIONMODIFIER] Only usable during a bleed action. +2 bleed (limited). Minions with any corruption counters get -1 intercept.",
+        "text":"[aus] [REACTION] Only usable if a younger vampire is acting. +1 intercept.\n[dai] [REACTION] +1 intercept, with an additional +1 intercept if the acting minion has any corruption counters.\n[DAI] [ACTION MODIFIER] Only usable during a bleed action. +2 bleed (limited). Minions with any corruption counters get -1 intercept.",
         "twd":86,
         "type":"Action Modifier/Reaction"
     },
@@ -75679,7 +75679,7 @@
                 "DM":"4"
             }
         },
-        "text":"[obf][pot] [COMBAT] Maneuver, only usable to get to close range, or press, only usable to continue combat.\n[OBF][POT] [ACTIONMODIFIER] Only usable after a combat resulting from a block. Not usable if the blocking minion is ready. This vampire burns 1 blood to continue the action as if unblocked.",
+        "text":"[obf][pot] [COMBAT] Maneuver, only usable to get to close range, or press, only usable to continue combat.\n[OBF][POT] [ACTION MODIFIER] Only usable after a combat resulting from a block. Not usable if the blocking minion is ready. This vampire burns 1 blood to continue the action as if unblocked.",
         "twd":13,
         "type":"Action Modifier/Combat"
     },
@@ -76390,10 +76390,10 @@
                 "C":true
             }
         },
-        "text":"[COMBAT] [2CONVICTION] Only usable before strikes are chosen.\nBurn this card. The opposing monster takes an amount of damage equal to his or her strength, then combat ends. Not usable on an infernal minion, a vampire with capacity above 7, nor a vampire who has Memories of Mortality or Humanitas.",
+        "text":"[COMBAT] [2 CONVICTION] Only usable before strikes are chosen.\nBurn this card. The opposing monster takes an amount of damage equal to his or her strength, then combat ends. Not usable on an infernal minion, a vampire with capacity above 7, nor a vampire who has Memories of Mortality or Humanitas.",
         "twd":1,
         "type":"Power",
-        "Card Text":"[COMBAT] [2CONVICTION] Only usable before strikes are chosen.\nBurn this card. The opposing monster takes an amount of damage equal to his or her strength, then combat ends. Not usable on an infernal minion, a vampire with capacity above 7, nor a vampire who has /Memories of Mortality/ or Humanitas."
+        "Card Text":"[COMBAT] [2 CONVICTION] Only usable before strikes are chosen.\nBurn this card. The opposing monster takes an amount of damage equal to his or her strength, then combat ends. Not usable on an infernal minion, a vampire with capacity above 7, nor a vampire who has /Memories of Mortality/ or Humanitas."
     },
     "101753":{
         "aka":"",
@@ -78293,7 +78293,7 @@
                 "C":true
             }
         },
-        "text":"Only usable after this Blood Brother gains blood.\n[san] [COMBAT] Choose another ready Blood Brother of the same circle. The chosen Blood Brother gains the same amount of blood.\n[SAN] [ACTIONMODIFIER] As above, but usable as an action modifier.",
+        "text":"Only usable after this Blood Brother gains blood.\n[san] [COMBAT] Choose another ready Blood Brother of the same circle. The chosen Blood Brother gains the same amount of blood.\n[SAN] [ACTION MODIFIER] As above, but usable as an action modifier.",
         "twd":5,
         "type":"Action Modifier/Combat"
     },
@@ -79981,7 +79981,7 @@
                 "DTC":true
             }
         },
-        "text":"Only usable if this vampire burns a vampire controlled by your prey.\n[nec] [ACTIONMODIFIER] This vampire gains blood equal to half the burned vampire's capacity rounded down.\n[NEC] [COMBAT] As above, but usable in combat.",
+        "text":"Only usable if this vampire burns a vampire controlled by your prey.\n[nec] [ACTION MODIFIER] This vampire gains blood equal to half the burned vampire's capacity rounded down.\n[NEC] [COMBAT] As above, but usable in combat.",
         "twd":0,
         "type":"Action Modifier/Combat"
     },
@@ -80223,7 +80223,7 @@
                 "DTC":true
             }
         },
-        "text":"[nec] [ACTIONMODIFIER] +1 stealth.\n[NEC] [REACTION] +1 intercept.",
+        "text":"[nec] [ACTION MODIFIER] +1 stealth.\n[NEC] [REACTION] +1 intercept.",
         "twd":172,
         "type":"Action Modifier/Reaction"
     },
@@ -83187,7 +83187,7 @@
                 "R":true
             }
         },
-        "text":"[COMBAT][REACTION] [1CONVICTION] Put three surge counters on this imbued. This imbued may burn any number of surge counters to prevent that amount of non-aggravated damage. Burn all surge counters on this imbued at the end of the action.",
+        "text":"[COMBAT][REACTION] [1 CONVICTION] Put three surge counters on this imbued. This imbued may burn any number of surge counters to prevent that amount of non-aggravated damage. Burn all surge counters on this imbued at the end of the action.",
         "twd":11,
         "type":"Power"
     },
@@ -83401,7 +83401,7 @@
                 "PR":"4"
             }
         },
-        "text":"[obf] [ACTIONMODIFIER] +1 stealth.\n[OBF] [COMBAT] Maneuver.",
+        "text":"[obf] [ACTION MODIFIER] +1 stealth.\n[OBF] [COMBAT] Maneuver.",
         "twd":763,
         "type":"Action Modifier/Combat"
     },
@@ -83513,7 +83513,7 @@
                 "C":true
             }
         },
-        "text":"[cel] [COMBAT] Press.\n[spi] [COMBAT] Maneuver or press.\n[SPI] [ACTIONMODIFIER] +1 stealth.",
+        "text":"[cel] [COMBAT] Press.\n[spi] [COMBAT] Maneuver or press.\n[SPI] [ACTION MODIFIER] +1 stealth.",
         "twd":62,
         "type":"Action Modifier/Combat"
     },
@@ -92524,7 +92524,7 @@
                 "C":true
             }
         },
-        "text":"[ACTIONMODIFIER] Only usable at the end of a successful action (after resolving the action). Unlock this imbued.\n[REACTION] [1CONVICTION] Only usable by a locked imbued. Unlock this imbued.",
+        "text":"[ACTION MODIFIER] Only usable at the end of a successful action (after resolving the action). Unlock this imbued.\n[REACTION] [1 CONVICTION] Only usable by a locked imbued. Unlock this imbued.",
         "twd":78,
         "type":"Power"
     },
@@ -93693,7 +93693,7 @@
                 "C":true
             }
         },
-        "text":"[ACTIONMODIFIER][REACTION] Only usable during a referendum. Usable by a locked vampire. This Akunanse gets an additional vote in this referendum.\n[ACTIONMODIFIER] Only usable when this Akunanse successfully hunts. He or she gains 1 additional blood.",
+        "text":"[ACTION MODIFIER][REACTION] Only usable during a referendum. Usable by a locked vampire. This Akunanse gets an additional vote in this referendum.\n[ACTION MODIFIER] Only usable when this Akunanse successfully hunts. He or she gains 1 additional blood.",
         "twd":0,
         "type":"Action Modifier/Reaction"
     },

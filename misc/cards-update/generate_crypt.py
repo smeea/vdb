@@ -71,10 +71,6 @@ def generate_card(card):
         except ValueError:
             pass
 
-    # Remove {} and spaces in []
-    card["Card Text"] = re.sub("[{}]", "", card["Card Text"])
-    card["Card Text"] = re.sub(r"\[(\w+)\s*(\w*)\]", r"[\1\2]", card["Card Text"])
-
     # Convert sets to dict
     if not card["Set"]:
         card["Set"] = {"playtest": {}}
@@ -242,15 +238,15 @@ def generate_card(card):
     if card["Clan"] == "Follower of Set":
         card["Clan"] = "Ministry"
 
+    card["Card Text"] = re.sub("[{}]", "", card["Card Text"])
     card["Card Text"] = (
-        card["Card Text"].replace("Assamites", "Banu Haqim").replace("Assamite", "Banu Haqim")
+        card["Card Text"]
+        .replace("Assamites", "Banu Haqim")
+        .replace("Assamite", "Banu Haqim")
+        .replace("Followers of Set", "Ministers")
+        .replace("Follower of Set", "Minister")
+        .replace("Thaumaturgy", "Blood Sorcery")
     )
-
-    card["Card Text"] = card["Card Text"].replace("Followers of Set", "Ministers")
-    card["Card Text"] = card["Card Text"].replace("Follower of Set", "Minister")
-
-    # Rename Thaumaturgy
-    card["Card Text"] = card["Card Text"].replace("Thaumaturgy", "Blood Sorcery")
 
     card_ready = {
         "adv": card["Advancement"],

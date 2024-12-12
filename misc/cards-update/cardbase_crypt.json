@@ -2417,7 +2417,7 @@
                 "":"5"
             }
         },
-        "text":"Camarilla Prince of Tampa: After Alicia performs a successful directed action, you can discard a political action card [POLITICALACTION] to lock a younger vampire controlled by (one of) the target Methuselah(s).",
+        "text":"Camarilla Prince of Tampa: After Alicia performs a successful directed action, you can discard a political action card [POLITICAL ACTION] to lock a younger vampire controlled by (one of) the target Methuselah(s).",
         "title":"prince",
         "twd":1
     },
@@ -17217,7 +17217,7 @@
                 "U":true
             }
         },
-        "text":"Earl gets +1 stealth on actions other than actions to enter combat. During your unlock phase, if you control more than two ready imbued, Earl burns 1 conviction [1CONVICTION].",
+        "text":"Earl gets +1 stealth on actions other than actions to enter combat. During your unlock phase, if you control more than two ready imbued, Earl burns 1 conviction [1 CONVICTION].",
         "title":"",
         "twd":17
     },
@@ -18599,7 +18599,7 @@
                 "U":true
             }
         },
-        "text":"If Erick successfully enters combat with a monster as an action, he may gain a conviction [1CONVICTION] from your hand or ash heap (before combat begins).",
+        "text":"If Erick successfully enters combat with a monster as an action, he may gain a conviction [1 CONVICTION] from your hand or ash heap (before combat begins).",
         "title":"",
         "twd":43
     },
@@ -27658,7 +27658,7 @@
         "new":false,
         "path":"",
         "rulings":[],
-        "sect":"Anarch",
+        "sect":"",
         "set":{
             "TR":{
                 "U":true
@@ -29015,7 +29015,7 @@
                 "U":true
             }
         },
-        "text":"Any incapacitated imbued may move to the ready region and gain a life (not to exceed his or her starting amount) by burning 2 conviction [2CONVICTION] during any Methuselah's unlock phase.",
+        "text":"Any incapacitated imbued may move to the ready region and gain a life (not to exceed his or her starting amount) by burning 2 conviction [2 CONVICTION] during any Methuselah's unlock phase.",
         "title":"",
         "twd":86
     },
@@ -30021,7 +30021,7 @@
                 "U":true
             }
         },
-        "text":"John may enter combat with a monster as a (D) action that costs 1 conviction [1CONVICTION].",
+        "text":"John may enter combat with a monster as a (D) action that costs 1 conviction [1 CONVICTION].",
         "title":"",
         "twd":46
     },
@@ -31811,7 +31811,7 @@
                 "PBH":"2"
             }
         },
-        "text":"Camarilla Banu Haqim Justicar: Once each combat, Kasim can discard a political action card [POLITICALACTION] before range is determined to get +2 strength that combat. +1 bleed.",
+        "text":"Camarilla Banu Haqim Justicar: Once each combat, Kasim can discard a political action card [POLITICAL ACTION] before range is determined to get +2 strength that combat. +1 bleed.",
         "title":"justicar",
         "twd":17
     },
@@ -34729,7 +34729,7 @@
                 "U":true
             }
         },
-        "text":"During your discard phase, Leaf may lock to gain a conviction [1CONVICTION] from your library (shuffle afterward), hand or ash heap.",
+        "text":"During your discard phase, Leaf may lock to gain a conviction [1 CONVICTION] from your library (shuffle afterward), hand or ash heap.",
         "title":"",
         "twd":21
     },
@@ -35586,7 +35586,7 @@
                 "U":true
             }
         },
-        "text":"Liz doesn't gain a conviction [1CONVICTION] as normal when entering play.",
+        "text":"Liz doesn't gain a conviction [1 CONVICTION] as normal when entering play.",
         "title":"",
         "twd":13
     },
@@ -37372,7 +37372,7 @@
                 "U":true
             }
         },
-        "text":"If Lupe has a vehicle, once each action she may burn a conviction [1CONVICTION] to get +1 stealth or +1 intercept.",
+        "text":"If Lupe has a vehicle, once each action she may burn a conviction [1 CONVICTION] to get +1 stealth or +1 intercept.",
         "title":"",
         "twd":11
     },
@@ -37908,7 +37908,7 @@
                 "2024-04-23":true
             }
         },
-        "text":"Camarilla primogen: If Maila is ready during your turn, you can discard a political action card [POLITICALACTION] to give a minion you control +1 stealth for the current action.",
+        "text":"Camarilla primogen: If Maila is ready during your turn, you can discard a political action card [POLITICAL ACTION] to give a minion you control +1 stealth for the current action.",
         "title":"primogen",
         "twd":7
     },
@@ -38245,7 +38245,7 @@
                 "U":true
             }
         },
-        "text":"During a referendum, Maman may burn a conviction [1CONVICTION] to get 3 votes against the referendum. You may lock Maman before range is determined in a combat between two monsters to end that combat.",
+        "text":"During a referendum, Maman may burn a conviction [1 CONVICTION] to get 3 votes against the referendum. You may lock Maman before range is determined in a combat between two monsters to end that combat.",
         "title":"",
         "twd":13
     },
@@ -47466,7 +47466,7 @@
                 "U":true
             }
         },
-        "text":"While Peter is in combat with a monster, he may burn a conviction [1CONVICTION] to get a maneuver.",
+        "text":"While Peter is in combat with a monster, he may burn a conviction [1 CONVICTION] to get a maneuver.",
         "title":"",
         "twd":5
     },
@@ -58688,7 +58688,7 @@
                 "U":true
             }
         },
-        "text":"Travis may move 2 blood from the blood bank to an imbued in your uncontrolled region as a +1 stealth action that costs 1 conviction [1CONVICTION].",
+        "text":"Travis may move 2 blood from the blood bank to an imbued in your uncontrolled region as a +1 stealth action that costs 1 conviction [1 CONVICTION].",
         "title":"",
         "twd":74
     },
@@ -62777,7 +62777,7 @@
                 "U":true
             }
         },
-        "text":"If Xian successfully blocks a monster and is still ready at the end of the action, he may gain a conviction [1CONVICTION] from your hand or ash heap.",
+        "text":"If Xian successfully blocks a monster and is still ready at the end of the action, he may gain a conviction [1 CONVICTION] from your hand or ash heap.",
         "title":"",
         "twd":22
     },

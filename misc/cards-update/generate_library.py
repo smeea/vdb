@@ -238,10 +238,6 @@ def generate_card(card):
 
     card["Artist"] = artists
 
-    # Remove {} and spaces in []
-    card["Card Text"] = re.sub("[{}]", "", card["Card Text"])
-    card["Card Text"] = re.sub(r"\[(\w+)\s*(\w*)\]", r"[\1\2]", card["Card Text"])
-
     # Add twda info
     card["Twd"] = 0
     for i in twda:
@@ -254,6 +250,8 @@ def generate_card(card):
     card["Clan"] = (
         card["Clan"].replace("Follower of Set", "Ministry").replace("Assamite", "Banu Haqim")
     )
+
+    card["Card Text"] = re.sub("[{}]", "", card["Card Text"])
     card["Card Text"] = (
         card["Card Text"]
         .replace("Assamites", "Banu Haqim")

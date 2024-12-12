@@ -23,7 +23,7 @@ const Refs = ({ refs }) => {
 const Text = ({ text }) => {
   const { nativeCrypt, nativeLibrary, cryptCardBase, libraryCardBase, isMobile } = useApp();
 
-  const textWithIcons = reactStringReplace(text, /\[(\w+?)\]/g, (match, idx) => {
+  const textWithIcons = reactStringReplace(text, /\[(\w+ ?\w+)\]/g, (match, idx) => {
     return (
       <div
         key={`${match}-${idx}`}
