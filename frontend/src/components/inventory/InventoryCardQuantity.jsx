@@ -3,11 +3,11 @@ import { twMerge } from 'tailwind-merge';
 import { useSnapshot } from 'valtio';
 import { ButtonCardChange } from '@/components';
 import { useApp, inventoryStore, inventoryCardChange } from '@/context';
-import { ID, IS_FROZEN } from '@/constants';
+import { IS_FROZEN } from '@/constants';
 
 const InventoryCardQuantity = ({ card, softUsedMax, hardUsedTotal, compact, newFocus }) => {
   const { isMobile } = useApp();
-  const [manual, setManual] = useState(false);
+  const [manual, setManual] = useState(compact);
   const [state, setState] = useState(card.q ?? '');
   const isEditable = !useSnapshot(inventoryStore)[IS_FROZEN];
 
@@ -15,17 +15,13 @@ const InventoryCardQuantity = ({ card, softUsedMax, hardUsedTotal, compact, newF
     if (state !== card.q) setState(card.q ?? '');
   }, [card.q]);
 
-  useEffect(() => {
-    if (compact && card.q === 0) setManual(true);
-  }, [card[ID]]);
-
   const handleManualChange = (event) => {
     setState(event.target.value ?? '');
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (compact && card.q === 0) newFocus();
+    if (compact) newFocus();
     inventoryCardChange(card.c, state ? parseInt(state) : 0);
     setManual(false);
   };
