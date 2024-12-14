@@ -1,6 +1,7 @@
 import React from 'react';
 import { twMerge } from 'tailwind-merge';
 import { ResultDisciplineImage } from '@/components';
+import { capitalize } from '@/utils';
 import cardtextIcons from '@/assets/data/cardtextIcons.json';
 import disciplinesList from '@/assets/data/disciplinesList.json';
 
@@ -25,7 +26,7 @@ const ResultMiscImage = ({ value, title, size = 'md' }) => {
       ) : (
         <img
           src={`${import.meta.env.VITE_BASE_URL}/images/${cardtextIcons[value]}.svg`}
-          title={title ?? value}
+          title={title ?? capitalize(value)}
           className={twMerge(
             'inline drop-shadow-[0px_0px_1px_#a0a0a0] dark:brightness-[0.85] dark:drop-shadow-[0px_0px_1px_#d0d0d0]',
             sizeStyle[size],
