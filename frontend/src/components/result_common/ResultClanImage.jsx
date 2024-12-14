@@ -1,9 +1,15 @@
 import React from 'react';
+import { twMerge } from 'tailwind-merge';
 
 const ResultClanImage = ({ value }) => {
+  const WIDE_ICON_CLANS = ['Judge', 'Martyr', 'Redeemer', 'Daughter of Cacophony', 'Nagaraja'];
+
   return (
     <img
-      className="inline h-[21px] dark:brightness-[0.65] sm:h-[24px]"
+      className={twMerge(
+        'inline dark:brightness-[0.65]',
+        WIDE_ICON_CLANS.includes(value) ? 'h-[17px] sm:h-[20px]' : 'h-[21px] sm:h-[24px]',
+      )}
       src={`${import.meta.env.VITE_BASE_URL}/images/clans/${value
         .toLowerCase()
         .replace(/[\s,:!?'.-]/g, '')}.svg`}

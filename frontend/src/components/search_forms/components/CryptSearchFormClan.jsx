@@ -23,7 +23,7 @@ const CryptSearchFormClan = ({ value, searchForm, onChange }) => {
       name: name,
       label: (
         <div className="flex items-center">
-          <div className="flex w-[40px] justify-center">
+          <div className="flex min-w-[40px] justify-center">
             {i.toLowerCase() !== ANY && <ResultClanImage value={i} />}
           </div>
           {i}
