@@ -89,10 +89,7 @@ const Decks = () => {
   const { hasPlaytest } = getRestrictions(deck);
 
   const getDeck = async () => {
-    let deckData;
-    try {
-      deckData = await loaderData;
-    } catch (e) {
+    const deckData = await loaderData[DECK].catch((e) => {
       switch (e.response.status) {
         case 400:
           setError('NO DECK WITH THIS ID');
@@ -101,8 +98,7 @@ const Decks = () => {
           setError('CONNECTION PROBLEM');
       }
       setDeck(undefined);
-      return;
-    }
+    });
 
     setError(false);
     const cardsData = parseDeck(deckData[CARDS], cryptCardBase, libraryCardBase);

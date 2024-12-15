@@ -351,7 +351,7 @@ const saveFile = async (file, name) => {
   saveAs(file, name);
 };
 
-export const deckLoader = async ({ params }) => {
+export const deckLoader = ({ params }) => {
   const deckid = params[DECKID];
 
   if (deckid === DECK || deckid.includes(':')) return null;
@@ -359,7 +359,7 @@ export const deckLoader = async ({ params }) => {
     return redirect(`/decks/${deckid.substring(0, 9)}`);
   }
 
-  return getDeck(deckid);
+  return { deck: getDeck(deckid) };
 };
 
 export const getDeck = (deckid) => {
