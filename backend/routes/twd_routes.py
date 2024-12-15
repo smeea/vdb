@@ -112,13 +112,16 @@ def get_new_twd_route(quantity):
 @app.route("/api/twd/random/<int:quantity>", methods=["GET"])
 def get_random_twd_route(quantity):
     all_decks = list(twd_decks.values())
-    decks = []
     max_id = len(all_decks) - 1
-    counter = 0
-    while counter < quantity:
-        deck = all_decks[round(random() * max_id)]
-        decks.append(minify_twd(deck) if counter > 9 else sanitize_twd(deck))
-        counter += 1
+    decks = []
+    decks_id = []
+    while len(decks_id) < quantity:
+        id = round(random() * max_id)
+        if id not in decks_id:
+            decks_id.append(id)
+
+    for idx, id in enumerate(decks_id):
+        decks.append(minify_twd(all_decks[id]) if idx > 9 else sanitize_twd(all_decks[id]))
 
     return jsonify(decks)
 

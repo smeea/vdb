@@ -1,6 +1,5 @@
 # FIX
 - Review TWDA radar: remove swarm, maybe replace?
-- Prevent same deck to appear in TWD/PDA random
 
 # FEATURES
 

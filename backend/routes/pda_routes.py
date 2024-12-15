@@ -400,15 +400,15 @@ def get_random_pda_route(quantity):
     all_decks = Deck.query.filter(Deck.public_parent != None).all()
     max_id = len(all_decks) - 1
     decks = []
-    decks_ids = []
+    decks_id = []
 
-    counter = 0
-    while counter < quantity and len(decks_ids) <= max_id:
+    while len(decks_id) < quantity:
         id = round(random() * max_id)
-        if id not in decks_ids:
-            decks_ids.append(id)
-            decks.append(minify_pda(all_decks[id]) if counter > 9 else sanitize_pda(all_decks[id]))
-            counter += 1
+        if id not in decks_id:
+            decks_id.append(id)
+
+    for idx, id in enumerate(decks_id):
+        decks.append(minify_pda(all_decks[id]) if idx > 9 else sanitize_pda(all_decks[id]))
 
     return jsonify(decks)
 
