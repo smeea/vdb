@@ -10,7 +10,7 @@ const DeckProxyTableSetSelect = ({ card, value, handleSetSelector }) => {
     {
       value: '',
       id: card[ID],
-      label: <div className="text-sm">Newest (default)</div>,
+      label: <div className="text-sm">Newest</div>,
     },
   ];
 
@@ -31,7 +31,7 @@ const DeckProxyTableSetSelect = ({ card, value, handleSetSelector }) => {
 
   return (
     <>
-      <td className="min-w-[110px]">
+      <td className="min-w-[165px]">
         <Select
           options={setOptions}
           isSearchable={false}
@@ -41,12 +41,12 @@ const DeckProxyTableSetSelect = ({ card, value, handleSetSelector }) => {
           onChange={handleSetSelector}
         />
       </td>
-      <td className="proxy-set-image">
-        <Tooltip overlay={<CardImage card={card} set={value ?? null} />} noPadding>
-          <div>
+      <td className="min-w-[25px]">
+        <div className="flex items-center justify-center">
+          <Tooltip overlay={<CardImage card={card} set={value ?? null} />} noPadding>
             <EyeFill />
-          </div>
-        </Tooltip>
+          </Tooltip>
+        </div>
       </td>
     </>
   );
