@@ -1,10 +1,11 @@
 {
-  "version": "2024-12-12/1",
+  "version": "2024-12-16",
   "changes": [
-    "Update TWDA",
-    "Fix Gangrels Legacy images",
-    "Add Paypal donate link",
-    "Add blood/pool 'rescaled' (for library of 90) total library cost (click (i) button)",
+    "Add legacy images for Tremere Antitribu and Ventrue Antitribu",
+    "Fix inventory q-ty input to be always focused for newly selected ('add') card",
+    "Fix delay with opening your decks on slower network connection (regression of previous update)",
+    "Fix deck tags not to show used tags in autocompletion",
+    "Add batch deck delete (checkboxes + Delete Selected button in Binocular decks selection menu)",
     "Small other fixes and improvements"
   ]
 }
