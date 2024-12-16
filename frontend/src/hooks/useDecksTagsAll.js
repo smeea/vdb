@@ -14,6 +14,8 @@ const useDecksTagsAll = (decks) => {
         }
       });
     }
+
+    return [...allTags];
   }, [decks]);
 };
 

@@ -68,6 +68,13 @@ const DeckSelectAdvTableHeader = ({
     setTagsFilter(tags);
   };
 
+  const options = allTagsOptions.map((tag) => {
+    return {
+      value: tag,
+      label: tag,
+    };
+  });
+
   return (
     <thead>
       <tr>
@@ -120,7 +127,7 @@ const DeckSelectAdvTableHeader = ({
             <DeckSelectAdvTagsFilter
               tagsFilter={tagsFilter}
               handleChangeTagsFilter={handleChangeTagsFilter}
-              allTagsOptions={allTagsOptions}
+              allTagsOptions={options}
             />
           </th>
         )}

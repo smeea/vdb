@@ -2,6 +2,8 @@
 - Review TWDA radar: remove swarm, maybe replace?
 
 # FEATURES
+- Batch delete decks
+- Inventory 'target' q-ty -> for design consideration
 
 # FEATURES ON HOLD
 - TWD search with % V5-compatibility -> after BCP clarify V5

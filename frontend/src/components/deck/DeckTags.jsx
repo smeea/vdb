@@ -42,6 +42,13 @@ const DeckTags = ({ deck, tagsSuperior, noAutotags, isBordered, allTagsOptions }
     deckUpdate(deck[DECKID], TAGS, [...tags.superior, ...tags.base]);
   };
 
+  const options = allTagsOptions.map((tag) => {
+    return {
+      value: tag,
+      label: tag,
+    };
+  });
+
   return (
     <div className="flex">
       <Select
@@ -51,7 +58,7 @@ const DeckTags = ({ deck, tagsSuperior, noAutotags, isBordered, allTagsOptions }
         noRemove={!isEditable}
         isMulti
         isDisabled={!isEditable}
-        options={allTagsOptions}
+        options={options}
         onChange={handleChange}
         value={tagList}
         placeholder="Click to add tags"
