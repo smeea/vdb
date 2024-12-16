@@ -41,6 +41,11 @@ const ModalConfirmation = ({
     handleCancel();
   };
 
+  const handleChange = (event) => {
+    setErrorConfirmation(false);
+    setConfirmation(event.target.value);
+  };
+
   return (
     <Modal
       handleClose={handleClose}
@@ -53,12 +58,12 @@ const ModalConfirmation = ({
         {children}
         <div className={twMerge('flex justify-end gap-2', !children && 'pt-3')}>
           {withWrittenConfirmation && (
-            <form onSubmit={handleClick} className="w-full">
+            <form onSubmit={handleClick} className="relative w-full">
               <Input
                 placeholder={`Type '${YES}' to confirm`}
                 name="text"
                 value={confirmation}
-                onChange={(e) => setConfirmation(e.target.value)}
+                onChange={handleChange}
                 autoFocus
               />
               {errorConfirmation && (
