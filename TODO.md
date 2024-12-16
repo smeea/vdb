@@ -2,7 +2,6 @@
 - Review TWDA radar: remove swarm, maybe replace?
 
 # FEATURES
-- Batch delete decks
 - Inventory 'target' q-ty -> for design consideration
 
 # FEATURES ON HOLD

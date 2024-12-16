@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { Menu } from '@headlessui/react';
 import { useSnapshot } from 'valtio';
+import { useNavigate, useParams } from 'react-router';
 import Download from '@icons/download.svg?react';
+import TrashFill from '@icons/trash-fill.svg?react';
 import {
   FlexGapped,
   DeckSelectAdvTotal,
@@ -10,18 +12,23 @@ import {
   MenuItems,
   MenuItem,
   MenuButton,
+  ButtonIconed,
+  ModalConfirmation,
 } from '@/components';
 import { useApp, deckStore } from '@/context';
 import { deckServices } from '@/services';
-import { DECKS, NAME, JOL, LACKEY, TEXT, XLSX } from '@/constants';
+import { DECKID, DECKS, NAME, JOL, LACKEY, TEXT, XLSX } from '@/constants';
 
 const DeckSelectAdvModal = ({ onClick, setShow, allTagsOptions, short }) => {
   const { isMobile, setShowFloatingButtons } = useApp();
   const decks = useSnapshot(deckStore)[DECKS];
+  const [showDeleteConfirmation, setShowDeleteConfirmation] = useState(false);
   const [sortMethod, setSortMethod] = useState(NAME);
   const [isSelectedAll, setIsSelectedAll] = useState(false);
   const [selectedDecks, setSelectedDecks] = useState({});
   const [tagsFilter, setTagsFilter] = useState([]);
+  const { [DECKID]: activeDeckid } = useParams();
+  const navigate = useNavigate();
 
   const handleClose = () => {
     setShow(false);
@@ -31,12 +38,25 @@ const DeckSelectAdvModal = ({ onClick, setShow, allTagsOptions, short }) => {
   const exportSelected = (format) => {
     const target = {};
     Object.keys(selectedDecks)
-      .filter((deckid) => selectedDecks[deckid])
-      .map((deckid) => {
+      .filter((deckid) => !!selectedDecks[deckid])
+      .forEach((deckid) => {
         target[deckid] = decks[deckid];
       });
 
     deckServices.exportDecks(target, format);
+  };
+
+  const deleteSelected = () => {
+    Object.keys(selectedDecks)
+      .filter((deckid) => !!selectedDecks[deckid])
+      .forEach((deckid) => {
+        const deck = decks[deckid];
+        deckServices.deckDelete(deck).then(() => {
+          if (deckid == activeDeckid) navigate('/decks');
+        });
+      });
+
+    setShowDeleteConfirmation(false);
   };
 
   return (
@@ -72,7 +92,17 @@ const DeckSelectAdvModal = ({ onClick, setShow, allTagsOptions, short }) => {
           />
         </div>
         {!(short || isMobile) && (
-          <div className="flex justify-end max-sm:flex-col max-sm:p-2 max-sm:pt-0">
+          <div className="flex justify-end gap-2">
+            <ButtonIconed
+              variant="danger"
+              text="Delete Selected"
+              title="Delete Deck"
+              onClick={() =>
+                Object.keys(selectedDecks).filter((deckid) => !!selectedDecks[deckid]).length > 0 &&
+                setShowDeleteConfirmation(true)
+              }
+              icon={<TrashFill width="18" height="18" viewBox="0 0 18 16" />}
+            />
             <Menu as="div" className="relative">
               <MenuButton title="Export Selected" icon={<Download />} text="Export Selected" />
               <MenuItems>
@@ -85,6 +115,28 @@ const DeckSelectAdvModal = ({ onClick, setShow, allTagsOptions, short }) => {
           </div>
         )}
       </FlexGapped>
+      {showDeleteConfirmation && (
+        <ModalConfirmation
+          handleConfirm={deleteSelected}
+          handleCancel={() => setShowDeleteConfirmation(false)}
+          title="Delete selected decks and their revisions?"
+          buttonText="Delete"
+          buttonVariant="danger"
+          withWrittenConfirmation
+        >
+          <div className="flex flex-col gap-1.5">
+            {Object.keys(selectedDecks)
+              .filter((deckid) => !!selectedDecks[deckid])
+              .map((deckid) => {
+                return (
+                  <div key={deckid} className="text-fgName dark:text-fgNameDark">
+                    {decks[deckid][NAME]}
+                  </div>
+                );
+              })}
+          </div>
+        </ModalConfirmation>
+      )}
     </Modal>
   );
 };
