@@ -41,6 +41,7 @@ const Name = ({ card, handleClick, shouldShowModal, isBanned }) => {
         overlay={<CardPopover card={card} />}
         disabled={isMobile || shouldShowModal}
         noPadding
+        noClick
       >
         <div className="flex cursor-pointer px-1">
           <ResultName card={card} isBanned={isBanned} />

@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   ResultLibraryTypeImage,
   DeckLibraryTable,
   ResultModal,
-  Tooltip,
+  ConditionalTooltip,
   ResultLegalIcon,
   ResultLibraryCost,
 } from '@/components';
@@ -14,14 +14,6 @@ import { useDeckLibrary, useModalCardController } from '@/hooks';
 
 const TwdResultLibraryByTypeTable = ({ library }) => {
   const { setShowFloatingButtons } = useApp();
-  const [show, setShow] = useState({});
-
-  const handleClickType = (cardtype) => {
-    setShow((prevState) => {
-      if (prevState[cardtype]) return {};
-      return { [cardtype]: true };
-    });
-  };
 
   const handleClickCard = (card) => {
     handleModalCardOpen(card);
@@ -31,10 +23,6 @@ const TwdResultLibraryByTypeTable = ({ library }) => {
   const handleClose = () => {
     handleModalCardClose();
     setShowFloatingButtons(true);
-  };
-
-  const handleHover = (cardtype) => {
-    if (!show[cardtype]) setShow({});
   };
 
   const {
@@ -93,13 +81,8 @@ const TwdResultLibraryByTypeTable = ({ library }) => {
                       <ResultLibraryTypeImage value={cardtype} />
                     </div>
                   </td>
-                  <td
-                    onMouseOver={() => handleHover(cardtype)}
-                    onClick={() => handleClickType(cardtype)}
-                    className="w-full"
-                  >
-                    <Tooltip
-                      show={show[cardtype]}
+                  <td className="w-full">
+                    <ConditionalTooltip
                       noPadding
                       overlay={
                         <div className="p-1">
@@ -115,7 +98,7 @@ const TwdResultLibraryByTypeTable = ({ library }) => {
                         {cardtype} [{libraryByTypeTotal[cardtype]}]
                         {cardtype == TYPE_MASTER && trifleTotal > 0 && <> - {trifleTotal} trifle</>}
                       </div>
-                    </Tooltip>
+                    </ConditionalTooltip>
                   </td>
                 </tr>
               );

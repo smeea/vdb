@@ -23,6 +23,7 @@ const Tooltip = ({
   noPadding,
   placement = 'right',
   show,
+  noClick,
 }) => {
   const widthClass = {
     sm: 'max-w-full sm:max-w-[300px]',
@@ -50,7 +51,7 @@ const Tooltip = ({
     middleware: [offset(7), flip(), shift(), arrow({ element: arrowRef })],
   });
 
-  const click = useClick(context);
+  const click = useClick(context, { enabled: !noClick });
   const hover = useHover(context);
   const focus = useFocus(context);
   const dismiss = useDismiss(context);

@@ -9,6 +9,7 @@ const ConditionalTooltip = ({
   placement,
   overlay,
   disabled,
+  noClick,
 }) => {
   return (
     <>
@@ -19,6 +20,7 @@ const ConditionalTooltip = ({
           overlay={overlay}
           noPadding={noPadding}
           size={size}
+          noClick={noClick}
         >
           {children}
         </Tooltip>
