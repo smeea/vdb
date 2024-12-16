@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import dayjs from 'dayjs';
 import { twMerge } from 'tailwind-merge';
 import { useSnapshot } from 'valtio';
@@ -17,7 +17,7 @@ import {
   DeckCopyUrlButton,
   DeckPublicToggleButton,
   ResultClanImage,
-  Tooltip,
+  ConditionalTooltip,
   ButtonIconed,
   Checkbox,
   ResultLegalIcon,
@@ -58,7 +58,6 @@ const DeckSelectAdvTableRow = ({
   const { limitedMode, inventoryMode, isMobile, isNarrow, isDesktop } = useApp();
   const limitedCards = useSnapshot(limitedStore);
   const navigate = useNavigate();
-  const [showDeck, setShowDeck] = useState();
 
   const {
     [HAS_BANNED]: hasBanned,
@@ -147,18 +146,10 @@ const DeckSelectAdvTableRow = ({
       </td>
       {isDesktop && (
         <td className="min-w-[30px] sm:min-w-[45px]">
-          <div
-            className="flex justify-center"
-            onMouseEnter={() => setShowDeck(deck[DECKID])}
-            onMouseLeave={() => setShowDeck(false)}
-          >
-            <Tooltip
-              size="xl"
-              show={showDeck === deck[DECKID]}
-              overlay={<DeckPreview deck={deck} setShow={setShowDeck} />}
-            >
+          <div className="flex justify-center">
+            <ConditionalTooltip size="xl" overlay={<DeckPreview deck={deck} />}>
               <EyeFill />
-            </Tooltip>
+            </ConditionalTooltip>
           </div>
         </td>
       )}

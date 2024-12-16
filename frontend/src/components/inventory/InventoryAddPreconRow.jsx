@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import EyeFill from '@icons/eye-fill.svg?react';
 import {
   DeckPreview,
   InventoryDeckAddButton,
   InventoryDeckDeleteButton,
   ResultPreconClan,
-  Tooltip,
+  ConditionalTooltip,
   ResultPathImage,
 } from '@/components';
 import { useDeckInInventory } from '@/hooks';
@@ -16,7 +16,6 @@ import paths from '@/assets/data/paths.json';
 
 const InventoryAddPreconRow = ({ deck }) => {
   const { isDesktop, isMobile } = useApp();
-  const [showDeck, setShowDeck] = useState();
   const inInventory = useDeckInInventory(deck);
   const [set, precon] = deck[DECKID].split(':');
   const clans = setsAndPrecons[set][PRECONS][precon][CLAN].split('/');
@@ -48,18 +47,10 @@ const InventoryAddPreconRow = ({ deck }) => {
       </td>
       {isDesktop && (
         <td className="min-w-[30px] sm:min-w-[45px]">
-          <div
-            className="flex justify-center"
-            onMouseEnter={() => setShowDeck(deck[DECKID])}
-            onMouseLeave={() => setShowDeck(false)}
-          >
-            <Tooltip
-              size="xl"
-              show={showDeck === deck[DECKID]}
-              overlay={<DeckPreview deck={deck} setShow={setShowDeck} />}
-            >
+          <div className="flex justify-center">
+            <ConditionalTooltip size="xl" overlay={<DeckPreview deck={deck} />}>
               <EyeFill />
-            </Tooltip>
+            </ConditionalTooltip>
           </div>
         </td>
       )}

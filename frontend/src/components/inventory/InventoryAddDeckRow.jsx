@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import dayjs from 'dayjs';
 import EyeFill from '@icons/eye-fill.svg?react';
 import Shuffle from '@icons/shuffle.svg?react';
@@ -10,7 +10,7 @@ import {
   InventoryDeckAddButton,
   InventoryDeckDeleteButton,
   ResultClanImage,
-  Tooltip,
+  ConditionalTooltip,
   Button,
 } from '@/components';
 import { getClan } from '@/utils';
@@ -31,7 +31,6 @@ import {
 
 const InventoryAddDeckRow = ({ deck, allTagsOptions }) => {
   const { isDesktop, isMobile } = useApp();
-  const [showDeck, setShowDeck] = useState();
   const inInventory = useDeckInInventory(deck);
   const clan = getClan(deck[CRYPT]);
 
@@ -74,18 +73,10 @@ const InventoryAddDeckRow = ({ deck, allTagsOptions }) => {
       </td>
       {isDesktop && (
         <td className="min-w-[30px] sm:min-w-[45px]">
-          <div
-            className="flex justify-center"
-            onMouseEnter={() => setShowDeck(deck[DECKID])}
-            onMouseLeave={() => setShowDeck(false)}
-          >
-            <Tooltip
-              size="xl"
-              show={showDeck === deck[DECKID]}
-              overlay={<DeckPreview deck={deck} setShow={setShowDeck} />}
-            >
+          <div className="flex justify-center">
+            <ConditionalTooltip size="xl" overlay={<DeckPreview deck={deck} />}>
               <EyeFill />
-            </Tooltip>
+            </ConditionalTooltip>
           </div>
         </td>
       )}
