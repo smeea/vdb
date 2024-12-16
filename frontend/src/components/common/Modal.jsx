@@ -17,10 +17,10 @@ const Modal = ({
   withMobileMargin = false,
 }) => {
   const widthClass = {
-    xs: 'min-w-full sm:min-w-[500px] sm:max-w-[550px]',
-    sm: 'min-w-full sm:min-w-[650px] sm:max-w-[725px]',
-    md: 'min-w-full sm:min-w-[850px] sm:max-w-[950px]',
-    lg: 'min-w-full lg:min-w-[1150px] lg:max-w-[1250px]',
+    xs: 'min-w-full sm:min-w-[500px] sm:max-w-[500px]',
+    sm: 'min-w-full sm:min-w-[700px] sm:max-w-[700px]',
+    md: 'min-w-full sm:min-w-[900px] sm:max-w-[900px]',
+    lg: 'min-w-full lg:min-w-[1200px] lg:max-w-[1200px]',
     xl: 'min-w-full xl:min-w-[1350px] xl:max-w-[1500px]',
     card: 'w-full sm:w-[900px]',
   };
