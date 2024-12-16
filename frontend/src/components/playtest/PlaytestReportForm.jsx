@@ -65,7 +65,7 @@ const PlaytestReportForm = ({ id, setIsHotkeysDisabled, isPrecon = false }) => {
   const [isFolded, setIsFolded] = useState(true);
 
   const url = `${import.meta.env.VITE_API_URL}/playtest/${isPrecon ? PRECONS : CARDS}/${id}`;
-  const { value: dataValue } = useFetch(url, {}, [id]);
+  const { [VALUE]: dataValue } = useFetch(url, {}, [id]);
 
   useEffect(() => {
     if (dataValue) {

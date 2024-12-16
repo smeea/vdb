@@ -24,8 +24,8 @@ const DeckDetails = ({ deck, allTagsOptions }) => {
   const [isFolded, setIsFolded] = useState(!isMobile);
   const playtestPrecon =
     deck[DECKID].includes(`${PLAYTEST}:`) &&
-    deck[DECKID].replace(`${PLAYTEST}:`, '') &&
-    !deck[PLAYTEST_OLD];
+    !deck[PLAYTEST_OLD] &&
+    deck[DECKID].replace(`${PLAYTEST}:`, '');
 
   return (
     <div className="flex w-full flex-col gap-2">
