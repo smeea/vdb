@@ -12,9 +12,7 @@
 - Draft Cube support -> when draft cube info is available
 
 # TECH IMPROVEMENTS
-- Update to React 19:
-  - useOptimistic
-  - Forms to useFormStatus/useActionState
+- Refactor DeckStore and InventoryStore with useOptimistic
 - Update to TailwindCSS 4
   - isWidth to container queries
 - Migrate to useSWR (test on playtest reports)

@@ -15,6 +15,7 @@ import { useFetch } from '@/hooks';
 import { useApp } from '@/context';
 import { playtestServices } from '@/services';
 import { VALUE, PRECONS, TEXT, CARDS, SCORE } from '@/constants';
+const IS_PLAYED = 'isPlayed';
 
 const Title = ({ isPrecon }) => {
   return (
@@ -58,61 +59,48 @@ const Title = ({ isPrecon }) => {
 
 const PlaytestReportForm = ({ id, setIsHotkeysDisabled, isPrecon = false }) => {
   const { isMobile } = useApp();
-
-  const [text, setText] = useState('');
-  const [score, setScore] = useState(0);
-  const [isPlayed, setIsPlayed] = useState(false);
   const [isFolded, setIsFolded] = useState(true);
+  const [report, setReport] = useState({
+    [TEXT]: '',
+    [SCORE]: 0,
+    [IS_PLAYED]: false,
+  });
 
   const url = `${import.meta.env.VITE_API_URL}/playtest/${isPrecon ? PRECONS : CARDS}/${id}`;
   const { [VALUE]: dataValue } = useFetch(url, {}, [id]);
 
   useEffect(() => {
     if (dataValue) {
-      setScore(dataValue[SCORE]);
-      setText(dataValue[TEXT]);
-      setIsPlayed(!!dataValue.isPlayed);
+      setReport({
+        [TEXT]: dataValue[TEXT],
+        [SCORE]: dataValue[SCORE],
+        [IS_PLAYED]: !!dataValue[IS_PLAYED],
+      });
     }
   }, [id, dataValue]);
 
-  const handleTextChange = (event) => {
-    setText(event.target.value);
-  };
+  useEffect(() => submit(), [report[SCORE], report[IS_PLAYED]]);
 
-  const submit = (t, s, i) => {
-    playtestServices.submitReport(
-      id,
-      {
-        [TEXT]: t,
-        [SCORE]: s,
-        isPlayed: i,
-      },
-      isPrecon,
-    );
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    submit(text, score, isPlayed);
+  const submit = (event) => {
+    event?.preventDefault();
+    playtestServices.submitReport(id, report, isPrecon);
   };
 
   const handleOnBlur = () => {
     if (setIsHotkeysDisabled) setIsHotkeysDisabled(false);
-    if (text !== dataValue[TEXT]) {
-      submit(text, score, isPlayed);
-    }
+    if (report[TEXT] !== dataValue[TEXT]) submit();
   };
 
   const handleIsPlayedChange = (event) => {
-    const { value } = event.currentTarget;
-    setIsPlayed(!value);
-    submit(text, score, !value);
+    setReport((prevState) => ({ ...prevState, [IS_PLAYED]: !event.currentTarget.value }));
   };
 
   const handleScoreChange = (value) => {
-    const result = value == score ? 0 : value;
-    setScore(result);
-    submit(text, result, isPlayed);
+    setReport((prevState) => ({ ...prevState, [SCORE]: value == prevState[SCORE] ? 0 : value }));
+  };
+
+  const handleTextChange = (event) => {
+    setReport((prevState) => ({ ...prevState, [TEXT]: event.target.value }));
   };
 
   return (
@@ -122,31 +110,31 @@ const PlaytestReportForm = ({ id, setIsHotkeysDisabled, isPrecon = false }) => {
         {isMobile && (
           <Checkbox
             label="seen in play"
-            value={isPlayed}
-            checked={isPlayed}
+            value={report[IS_PLAYED]}
+            checked={report[IS_PLAYED]}
             onChange={handleIsPlayedChange}
           />
         )}
       </div>
       <div className="flex w-full items-center justify-between gap-4">
-        <PlaytestScores value={score} handleClick={handleScoreChange} />
+        <PlaytestScores value={report[SCORE]} handleClick={handleScoreChange} />
         {!isMobile && (
           <Checkbox
             label="seen in play"
-            value={isPlayed}
-            checked={isPlayed}
+            value={report[IS_PLAYED]}
+            checked={report[IS_PLAYED]}
             onChange={handleIsPlayedChange}
           />
         )}
       </div>
-      <form className="flex" onSubmit={handleSubmit}>
+      <form className="flex" onSubmit={submit}>
         <InputLabel title="Description">
           <ChatLeftQuoteFill width="20" height="18" viewBox="0 0 16 16" />
         </InputLabel>
         {isFolded ? (
           <Input
             placeholder="Write playtest report here"
-            value={text}
+            value={report[TEXT]}
             onChange={handleTextChange}
             onBlur={handleOnBlur}
             borderStyle="border-y"
@@ -159,7 +147,7 @@ const PlaytestReportForm = ({ id, setIsHotkeysDisabled, isPrecon = false }) => {
           <Textarea
             className="w-full"
             rows={12}
-            value={text}
+            value={report[TEXT]}
             onChange={handleTextChange}
             onBlur={handleOnBlur}
             borderStyle="border-y"
