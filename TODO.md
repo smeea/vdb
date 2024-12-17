@@ -15,7 +15,6 @@
 - Update to React 19:
   - useOptimistic
   - Forms to useFormStatus/useActionState
-  - <Contex.Provider> to <Context>
   - useContext to use
   - use can be conditional => useApp can be updated (in utils instead of props drilling)
 - Update to TailwindCSS 4

@@ -35,13 +35,13 @@ export const ThemeProvider = (props) => {
   };
 
   return (
-    <ThemeContext.Provider
+    <ThemeContext
       value={{
         theme,
         toggleTheme,
       }}
     >
       {props.children}
-    </ThemeContext.Provider>
+    </ThemeContext>
   );
 };

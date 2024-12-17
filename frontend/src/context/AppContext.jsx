@@ -513,7 +513,7 @@ export const AppProvider = ({ children }) => {
   }, [decks, decks?.[deck?.[DECKID]]?.[CRYPT], decks?.[deck?.[DECKID]]?.[LIBRARY], inventoryMode]);
 
   return (
-    <AppContext.Provider
+    <AppContext
       value={{
         // APP Context
         isMobile,
@@ -601,6 +601,6 @@ export const AppProvider = ({ children }) => {
       }}
     >
       {children}
-    </AppContext.Provider>
+    </AppContext>
   );
 };
