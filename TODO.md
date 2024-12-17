@@ -13,7 +13,6 @@
 
 # TECH IMPROVEMENTS
 - Update to React 19:
-  - forwardRef
   - useOptimistic
   - Forms to useFormStatus/useActionState
   - <Contex.Provider> to <Context>
