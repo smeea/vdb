@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useActionState } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { FlexGapped, Input, Modal, Button, ErrorOverlay } from '@/components';
 import { useApp } from '@/context';
-import { YES } from '@/constants';
+import { YES, TEXT } from '@/constants';
 
 const ModalConfirmation = ({
   title,
@@ -18,33 +18,29 @@ const ModalConfirmation = ({
   withMobileMargin = 'true',
 }) => {
   const { isMobile } = useApp();
-  const [confirmation, setConfirmation] = useState('');
-  const [errorConfirmation, setErrorConfirmation] = useState(false);
+  const [error, setError] = useState(false);
 
-  const handleClick = () => {
+  const handleClose = () => {
+    setError(false);
+    handleCancel();
+  };
+
+  const confirm = async (prevState, formData) => {
     if (withWrittenConfirmation) {
-      if (confirmation === YES) {
-        setErrorConfirmation(false);
-        setConfirmation('');
+      if (formData.get(TEXT) === YES) {
+        setError(false);
         handleConfirm();
       } else {
-        setErrorConfirmation(true);
+        setError(true);
       }
     } else {
       handleConfirm();
     }
+
+    return { [TEXT]: formData.get(TEXT) };
   };
 
-  const handleClose = () => {
-    setErrorConfirmation(false);
-    setConfirmation('');
-    handleCancel();
-  };
-
-  const handleChange = (event) => {
-    setErrorConfirmation(false);
-    setConfirmation(event.target.value);
-  };
+  const [data, action] = useActionState(confirm);
 
   return (
     <Modal
@@ -56,28 +52,29 @@ const ModalConfirmation = ({
     >
       <FlexGapped className="flex-col">
         {children}
-        <div className={twMerge('flex justify-end gap-2', !children && 'pt-3')}>
+        <form action={action} className={twMerge('flex justify-end gap-2', !children && 'pt-3')}>
           {withWrittenConfirmation && (
-            <form onSubmit={handleClick} className="relative w-full">
-              <Input
-                placeholder={`Type '${YES}' to confirm`}
-                name="text"
-                value={confirmation}
-                onChange={handleChange}
-                autoFocus
-              />
-              {errorConfirmation && (
-                <ErrorOverlay placement="bottom">Type &apos;{YES}&apos; to confirm</ErrorOverlay>
-              )}
-            </form>
+            <>
+              <div className="relative w-full">
+                <Input
+                  placeholder={`Type '${YES}' to confirm`}
+                  name={TEXT}
+                  defaultValue={data?.[TEXT]}
+                  autoFocus
+                />
+                {error && (
+                  <ErrorOverlay placement="bottom">Type &apos;{YES}&apos; to confirm</ErrorOverlay>
+                )}
+              </div>
+            </>
           )}
           <div className="flex justify-between gap-2">
-            <Button disabled={disabled} variant={buttonVariant} onClick={handleClick}>
+            <Button disabled={disabled} variant={buttonVariant} type="submit">
               {buttonText}
             </Button>
             <Button onClick={handleClose}>Cancel</Button>
           </div>
-        </div>
+        </form>
       </FlexGapped>
     </Modal>
   );

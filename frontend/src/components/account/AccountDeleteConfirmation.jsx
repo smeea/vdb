@@ -1,52 +1,34 @@
-import React, { useState } from 'react';
+import React, { useState, useActionState } from 'react';
 import EyeFill from '@icons/eye-fill.svg?react';
 import EyeSlashFill from '@icons/eye-slash-fill.svg?react';
 import { FlexGapped, Spinner, Input, Modal, Button, ErrorOverlay } from '@/components';
 import { useApp } from '@/context';
 import { userServices } from '@/services';
+import { PASSWORD } from '@/constants';
 
 const AccountDeleteConfirmation = ({ setShow }) => {
   const { setUsername, isMobile } = useApp();
-  const [password, setPassword] = useState('');
-  const [passwordError, setPasswordError] = useState(false);
   const [hidePassword, setHidePassword] = useState(true);
-  const [isLoading, setIsLoading] = useState(false);
-  const [connectionError, setConnectionError] = useState(false);
+  const [error, setError] = useState(false);
 
-  const handleChange = (event) => setPassword(event.target.value);
+  const deleteAccount = async (prevState, formData) => {
+    const result = await userServices.deleteAccount(formData.get(PASSWORD));
 
-  const onError = (e) => {
-    setIsLoading(false);
-    if (e.status == 401) {
-      setPasswordError(true);
-      setPassword('');
-    } else {
-      setConnectionError(true);
+    switch (result.error) {
+      case 401:
+        setError('WRONG PASSWORD');
+        break;
+      case 500:
+        setError('CONNECTION PROBLEM');
+        break;
+      default:
+        setUsername(undefined);
     }
+
+    return { [PASSWORD]: formData.get(PASSWORD) };
   };
 
-  const onSuccess = () => {
-    setIsLoading(false);
-    setShow(false);
-    setUsername(undefined);
-  };
-
-  const deleteAccount = () => {
-    if (isLoading) return;
-
-    setPasswordError(false);
-    setConnectionError(false);
-
-    if (password) {
-      setIsLoading(true);
-      userServices.deleteAccount(password, onSuccess, onError);
-    }
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    deleteAccount();
-  };
+  const [data, action, pending] = useActionState(deleteAccount);
 
   return (
     <>
@@ -54,23 +36,19 @@ const AccountDeleteConfirmation = ({ setShow }) => {
         <FlexGapped className="flex-col">
           This will also delete all your decks and they will not be available via URL anymore.
           <div className="flex justify-end gap-2">
-            <form onSubmit={handleSubmit}>
+            <form action={action}>
               <div className="flex">
                 <div className="relative flex w-full">
                   <Input
                     placeholder="Enter password"
                     type={hidePassword ? 'password' : 'text'}
-                    name="password"
-                    value={password}
-                    onChange={handleChange}
+                    name={PASSWORD}
+                    defaultValue={data?.[PASSWORD]}
                     roundedStyle="rounded rounded-r-none"
                     autoFocus
                     required
                   />
-                  {passwordError && <ErrorOverlay placement="bottom">WRONG PASSWORD</ErrorOverlay>}
-                  {connectionError && (
-                    <ErrorOverlay placement="bottom">CONNECTION PROBME</ErrorOverlay>
-                  )}
+                  {error && <ErrorOverlay placement="bottom">{error}</ErrorOverlay>}
                 </div>
                 <div className="flex gap-2">
                   <Button
@@ -81,7 +59,7 @@ const AccountDeleteConfirmation = ({ setShow }) => {
                     {hidePassword ? <EyeFill /> : <EyeSlashFill />}
                   </Button>
                   <Button className="min-w-[72px]" variant="danger" type="submit">
-                    {isLoading ? <Spinner /> : 'Delete'}
+                    {pending ? <Spinner /> : 'Delete'}
                   </Button>
                 </div>
               </div>

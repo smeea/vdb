@@ -5,14 +5,8 @@ import { ALLOWED, ID } from '@/constants';
 
 const AccountLimitedDelCard = ({ cardid, target }) => {
   const card = { [ID]: cardid };
-
-  const allowedDel = () => {
-    limitedCardChange(card, true, false);
-  };
-
-  const bannedDel = () => {
-    limitedCardChange(card, false, false);
-  };
+  const allowedDel = () => limitedCardChange(card, true, false);
+  const bannedDel = () => limitedCardChange(card, false, false);
 
   return (
     <Button

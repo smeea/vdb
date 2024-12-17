@@ -3,7 +3,7 @@ const ACCOUNT_URL = `${import.meta.env.VITE_API_URL}/account`;
 const LOGIN_URL = `${import.meta.env.VITE_API_URL}/login`;
 import { USERNAME, PASSWORD, NEW_PASSWORD, REMEMBER, EMAIL, PUBLIC_NAME } from '@/constants';
 
-export const login = (username, password, onSuccess = () => {}, onError = () => {}) => {
+export const login = (username, password) => {
   const options = {
     method: 'POST',
     json: {
@@ -13,7 +13,11 @@ export const login = (username, password, onSuccess = () => {}, onError = () => 
     },
   };
 
-  fetchWithCallbacks(LOGIN_URL, options, onSuccess, onError);
+  return ky(LOGIN_URL, options)
+    .then((data) => data.json())
+    .catch((e) => {
+      return { error: e.response.status };
+    });
 };
 
 export const whoAmI = () => {
@@ -23,7 +27,7 @@ export const whoAmI = () => {
 
 export const logout = () => ky.delete(LOGIN_URL);
 
-export const register = (username, password, email, onSuccess = () => {}, onError = () => {}) => {
+export const register = (username, password, email) => {
   const options = {
     method: 'POST',
     json: {
@@ -33,10 +37,14 @@ export const register = (username, password, email, onSuccess = () => {}, onErro
     },
   };
 
-  fetchWithCallbacks(ACCOUNT_URL, options, onSuccess, onError);
+  return ky(ACCOUNT_URL, options)
+    .then((data) => data.json())
+    .catch((e) => {
+      return { error: e.response.status };
+    });
 };
 
-export const changePassword = (password, newPassword, onSuccess = () => {}, onError = () => {}) => {
+export const changePassword = (password, newPassword) => {
   const options = {
     method: 'PUT',
     json: {
@@ -45,10 +53,14 @@ export const changePassword = (password, newPassword, onSuccess = () => {}, onEr
     },
   };
 
-  fetchWithCallbacks(ACCOUNT_URL, options, onSuccess, onError);
+  return ky(ACCOUNT_URL, options)
+    .then((data) => data.json())
+    .catch((e) => {
+      return { error: e.response.status };
+    });
 };
 
-export const changeEmail = (password, email, onSuccess = () => {}, onError = () => {}) => {
+export const changeEmail = async (password, email) => {
   const options = {
     method: 'PUT',
     json: {
@@ -57,36 +69,35 @@ export const changeEmail = (password, email, onSuccess = () => {}, onError = () 
     },
   };
 
-  fetchWithCallbacks(ACCOUNT_URL, options, onSuccess, onError);
+  return ky(ACCOUNT_URL, options)
+    .then((data) => data.json())
+    .catch((e) => {
+      return { error: e.response.status };
+    });
 };
 
-export const changeName = (publicName, onSuccess = () => {}, onError = () => {}) => {
+export const changeName = (publicName) => {
   const options = {
     method: 'PUT',
     json: { [PUBLIC_NAME]: publicName },
   };
 
-  fetchWithCallbacks(ACCOUNT_URL, options, onSuccess, onError);
+  return ky(ACCOUNT_URL, options)
+    .then((data) => data.json())
+    .catch((e) => {
+      return { error: e.response.status };
+    });
 };
 
-export const deleteAccount = (password, onSuccess = () => {}, onError = () => {}) => {
+export const deleteAccount = (password) => {
   const options = {
     method: 'DELETE',
     json: { [PASSWORD]: password },
   };
 
-  fetchWithCallbacks(ACCOUNT_URL, options, onSuccess, onError);
-};
-
-const fetchWithCallbacks = async (url, options, onSuccessCallBack, onErrorCallBack) => {
-  try {
-    await ky(url, options)
-      .json()
-      .then((data) => onSuccessCallBack(data));
-  } catch (e) {
-    if (e.name === 'HTTPError') {
-      const error = await e.response;
-      onErrorCallBack(error);
-    }
-  }
+  return ky(ACCOUNT_URL, options)
+    .then((data) => data.json())
+    .catch((e) => {
+      return { error: e.response.status };
+    });
 };

@@ -1,15 +1,15 @@
 import React from 'react';
 import { Input } from '@/components';
+import { USERNAME } from '@/constants';
 
-const AccountUsernameForm = ({ value, setValue, autoFocus, isNew }) => {
+const AccountUsernameForm = ({ defaultValue, autoFocus, isNew }) => {
   return (
     <Input
       autoFocus={autoFocus}
       placeholder={isNew ? 'New Username' : 'Username'}
-      name="username"
-      value={value}
+      name={USERNAME}
+      defaultValue={defaultValue}
       required
-      onChange={(e) => setValue(e.target.value)}
     />
   );
 };

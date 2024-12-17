@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useActionState } from 'react';
 import DoorOpenFill from '@icons/door-open-fill.svg?react';
 import {
   AccountPasswordForm,
@@ -8,6 +8,7 @@ import {
 } from '@/components';
 import { useApp } from '@/context';
 import { userServices } from '@/services';
+import { USERNAME, PASSWORD } from '@/constants';
 
 const LoginTooltipText = () => {
   return (
@@ -38,46 +39,34 @@ const PasswordTooltipText = () => {
 
 const AccountLogin = () => {
   const { initializeUserData } = useApp();
-  const [formUsername, setFormUsername] = useState('');
-  const [formPassword, setFormPassword] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
   const [usernameError, setUsernameError] = useState(false);
   const [passwordError, setPasswordError] = useState(false);
+  const [success, setSuccess] = useState();
 
-  const onError = (e) => {
-    setIsLoading(false);
-    switch (e.status) {
+  const loginUser = async (prevState, formData) => {
+    const result = await userServices.login(formData.get(USERNAME), formData.get(PASSWORD));
+    switch (result.error) {
       case 401:
         setPasswordError('WRONG PASSWORD');
+        break;
+      case 500:
+        setPasswordError('CONNECTION PROBLEM');
         break;
       case 400:
         setUsernameError('USER DOES NOT EXIST');
         break;
       default:
-        setPasswordError('CONNECTION PROBLEM');
+        initializeUserData(result);
+        setSuccess(true);
+        setTimeout(() => {
+          setSuccess(false);
+        }, 1000);
     }
+
+    return { [USERNAME]: formData.get(USERNAME), [PASSWORD]: formData.get(PASSWORD) };
   };
 
-  const onSuccess = (data) => {
-    setIsLoading(false);
-    initializeUserData(data);
-  };
-
-  const loginUser = () => {
-    if (isLoading) return;
-    setUsernameError(false);
-    setPasswordError(false);
-
-    if (formUsername && formPassword) {
-      setIsLoading(true);
-      userServices.login(formUsername, formPassword, onSuccess, onError);
-    }
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    loginUser();
-  };
+  const [data, action] = useActionState(loginUser);
 
   return (
     <div className="flex flex-col gap-2">
@@ -90,17 +79,13 @@ const AccountLogin = () => {
           <div className="text-fgThird dark:text-fgThirdDark">[?]</div>
         </ConditionalTooltipOrModal>
       </div>
-      <form className="flex flex-col gap-2" onSubmit={handleSubmit}>
+      <form className="flex flex-col gap-2" action={action}>
         <div className="relative flex w-full">
-          <AccountUsernameForm value={formUsername} setValue={setFormUsername} autoFocus />
+          <AccountUsernameForm defaultValue={data?.[USERNAME]} autoFocus />
           {usernameError && <ErrorOverlay placement="bottom">{usernameError}</ErrorOverlay>}
         </div>
         <div className="relative flex w-full">
-          <AccountPasswordForm
-            value={formPassword}
-            setValue={setFormPassword}
-            isLoading={isLoading}
-          />
+          <AccountPasswordForm defaultValue={data?.[PASSWORD]} success={success} />
           {passwordError && <ErrorOverlay placement="bottom">{passwordError}</ErrorOverlay>}
         </div>
         <div className="flex">

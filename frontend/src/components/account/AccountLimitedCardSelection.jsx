@@ -10,9 +10,8 @@ const AccountLimitedCardSelection = ({ inBanned }) => {
   const limitedLibrary = useSnapshot(limitedFullStore)[inBanned ? BANNED : ALLOWED][LIBRARY];
 
   const cardAdd = (e) => {
-    const card = e.value > 200000 ? cryptCardBase[e.value] : libraryCardBase[e.value];
-
-    limitedCardChange(card, !inBanned, true);
+    const cardBase = e.value > 200000 ? cryptCardBase : libraryCardBase;
+    limitedCardChange(cardBase[e.value], !inBanned, true);
   };
 
   return (

@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useActionState } from 'react';
 import Check2 from '@icons/check2.svg?react';
 import PenFill from '@icons/pen-fill.svg?react';
 import { Spinner, Input, ConditionalTooltipOrModal, ErrorOverlay, Button } from '@/components';
 import { useApp } from '@/context';
 import { userServices } from '@/services';
+import { NAME } from '@/constants';
 
 const TooltipText = () => {
   return (
@@ -22,39 +23,27 @@ const TooltipText = () => {
 
 const AccountChangeName = () => {
   const { publicName, setPublicName } = useApp();
-  const [formName, setFormName] = useState(publicName || '');
-  const [isLoading, setIsLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
 
-  const onError = () => {
-    setIsLoading(false);
-    setError('CONNECTION PROBLEM');
-  };
-
-  const onSuccess = () => {
-    setIsLoading(false);
-    setPublicName(formName);
-    setSuccess(true);
-    setTimeout(() => {
-      setSuccess(false);
-    }, 1000);
-  };
-
-  const changeName = () => {
-    if (isLoading) return;
-    setError(false);
-
-    if (formName) {
-      setIsLoading(true);
-      userServices.changeName(formName, onSuccess, onError);
+  const changeName = async (prevState, formData) => {
+    const result = await userServices.changeName(formData.get(NAME));
+    switch (result.error) {
+      case 500:
+        setError('CONNECTION PROBLEM');
+        break;
+      default:
+        setPublicName(formData.get(NAME));
+        setSuccess(true);
+        setTimeout(() => {
+          setSuccess(false);
+        }, 1000);
     }
+
+    return { [NAME]: formData.get(NAME) };
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    changeName();
-  };
+  const [data, action, pending] = useActionState(changeName, { [NAME]: publicName });
 
   return (
     <div className="flex flex-col gap-2">
@@ -67,21 +56,22 @@ const AccountChangeName = () => {
           <div className="text-fgThird dark:text-fgThirdDark">[?]</div>
         </ConditionalTooltipOrModal>
       </div>
-      <form className="flex flex-col gap-2" onSubmit={handleSubmit}>
+      <form className="flex flex-col gap-2" action={action}>
         <div className="relative flex w-full">
           <Input
             placeholder="Public name"
-            value={formName}
-            onChange={(e) => setFormName(e.target.value)}
+            defaultValue={data?.[NAME]}
+            name={NAME}
             roundedStyle="rounded rounded-r-none"
           />
           <Button
+            disabled={pending}
             roundedStyle="rounded-r"
             borderStyle="border-r border-y"
             variant={success ? 'success' : 'primary'}
             type="submit"
           >
-            {isLoading ? <Spinner /> : <Check2 />}
+            {pending ? <Spinner /> : <Check2 />}
           </Button>
           {error && <ErrorOverlay placement="bottom">{error}</ErrorOverlay>}
         </div>

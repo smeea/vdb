@@ -1,13 +1,14 @@
 import React from 'react';
 import { Input } from '@/components';
+import { EMAIL } from '@/constants';
 
-const AccountEmailForm = ({ value, setValue }) => {
+const AccountEmailForm = ({ defaultValue }) => {
   return (
     <Input
       placeholder="Email (Optional, only for password reset)"
       type="email"
-      value={value}
-      onChange={(e) => setValue(e.target.value)}
+      name={EMAIL}
+      defaultValue={defaultValue}
     />
   );
 };

@@ -1,48 +1,36 @@
-import React, { useState } from 'react';
+import React, { useState, useActionState } from 'react';
 import LockFill from '@icons/lock-fill.svg?react';
 import { AccountPasswordForm, ErrorOverlay } from '@/components';
 import { userServices } from '@/services';
+import { PASSWORD, NEW_PASSWORD } from '@/constants';
 
 const AccountChangePassword = () => {
-  const [formPassword, setFormPassword] = useState('');
-  const [formNewPassword, setFormNewPassword] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
-  const [passwordError, setPasswordError] = useState(false);
+  const [error, setError] = useState(false);
   const [success, setSuccess] = useState(false);
 
-  const onError = (e) => {
-    setIsLoading(false);
-    if (e.status == 401) {
-      setPasswordError('WRONG OLD PASSWORD');
-    } else {
-      setPasswordError('CONNECTION PROBLEM');
+  const changePassword = async (prevState, formData) => {
+    const result = await userServices.changePassword(
+      formData.get(PASSWORD),
+      formData.get(NEW_PASSWORD),
+    );
+    switch (result.error) {
+      case 401:
+        setError('WRONG OLD PASSWORD');
+        break;
+      case 500:
+        setError('CONNECTION PROBLEM');
+        break;
+      default:
+        setSuccess(true);
+        setTimeout(() => {
+          setSuccess(false);
+        }, 1000);
     }
+
+    return { password: formData.get(PASSWORD), newPassword: formData.get(NEW_PASSWORD) };
   };
 
-  const onSuccess = () => {
-    setIsLoading(false);
-    setFormPassword('');
-    setFormNewPassword('');
-    setSuccess(true);
-    setTimeout(() => {
-      setSuccess(false);
-    }, 1000);
-  };
-
-  const changePassword = () => {
-    if (isLoading) return;
-    setPasswordError(false);
-
-    if (formPassword && formNewPassword) {
-      setIsLoading(true);
-      userServices.changePassword(formPassword, formNewPassword, onSuccess, onError);
-    }
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    changePassword();
-  };
+  const [data, action] = useActionState(changePassword);
 
   return (
     <div className="flex flex-col gap-2">
@@ -52,19 +40,13 @@ const AccountChangePassword = () => {
         </div>
         <div className="flex">Change password</div>
       </div>
-      <form className="flex flex-col gap-2" onSubmit={handleSubmit}>
+      <form className="flex flex-col gap-2" action={action}>
         <div className="relative flex w-full">
-          <AccountPasswordForm value={formPassword} setValue={setFormPassword} isOld />
+          <AccountPasswordForm defaultValue={data?.[PASSWORD]} isOld />
         </div>
         <div className="relative flex w-full">
-          <AccountPasswordForm
-            value={formNewPassword}
-            setValue={setFormNewPassword}
-            success={success}
-            isLoading={isLoading}
-            isNew
-          />
-          {passwordError && <ErrorOverlay placement="bottom">{passwordError}</ErrorOverlay>}
+          <AccountPasswordForm defaultValue={data?.[NEW_PASSWORD]} success={success} isNew />
+          {error && <ErrorOverlay placement="bottom">{error}</ErrorOverlay>}
         </div>
       </form>
     </div>

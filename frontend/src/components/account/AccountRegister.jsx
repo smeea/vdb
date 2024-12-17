@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useActionState } from 'react';
 import PersonPlusFill from '@icons/person-plus-fill.svg?react';
 import {
   AccountEmailForm,
@@ -8,41 +8,41 @@ import {
 } from '@/components';
 import { useApp } from '@/context';
 import { userServices } from '@/services';
+import { USERNAME, PASSWORD, EMAIL } from '@/constants';
 
 const AccountRegister = () => {
-  const { setUsername, setEmail } = useApp();
-  const [formUsername, setFormUsername] = useState('');
-  const [formPassword, setFormPassword] = useState('');
-  const [formEmail, setFormEmail] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
+  const { setUsername, setEmail, setPublicName } = useApp();
   const [usernameError, setUsernameError] = useState(false);
   const [connectionError, setConnectionError] = useState(false);
 
-  const onError = (e) => {
-    setIsLoading(false);
-    if (e.status == 409) {
-      setUsernameError('USER ALREADY EXIST');
-    } else {
-      setConnectionError('CONNECTION ERROR');
+  const registerUser = async (prevState, formData) => {
+    const result = await userServices.register(
+      formData.get(USERNAME),
+      formData.get(PASSWORD),
+      formData.get(EMAIL),
+    );
+
+    switch (result.error) {
+      case 409:
+        setUsernameError('USER ALREADY EXIST');
+        break;
+      case 500:
+        setConnectionError('CONNECTION PROBLEM');
+        break;
+      default:
+        setUsername(formData.get(USERNAME));
+        setPublicName(formData.get(USERNAME));
+        setEmail(formData.get(EMAIL));
     }
+
+    return {
+      [PASSWORD]: formData.get(PASSWORD),
+      [EMAIL]: formData.get(EMAIL),
+      [USERNAME]: formData.get(USERNAME),
+    };
   };
 
-  const onSuccess = (data) => {
-    setIsLoading(false);
-    setUsername(data.username);
-    setEmail(data.email);
-  };
-
-  const registerUser = () => {
-    setConnectionError(false);
-    setIsLoading(true);
-    userServices.register(formUsername, formPassword, formEmail, onSuccess, onError);
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    registerUser();
-  };
+  const [data, action] = useActionState(registerUser);
 
   return (
     <div className="flex flex-col gap-2">
@@ -52,20 +52,16 @@ const AccountRegister = () => {
         </div>
         <div className="flex">Create account</div>
       </div>
-      <form className="flex flex-col gap-2" onSubmit={handleSubmit}>
+      <form className="flex flex-col gap-2" action={action}>
         <div className="relative flex w-full">
-          <AccountUsernameForm value={formUsername} setValue={setFormUsername} />
+          <AccountUsernameForm defaultValue={data?.[USERNAME]} />
           {usernameError && <ErrorOverlay placement="bottom">{usernameError}</ErrorOverlay>}
         </div>
         <div className="relative flex w-full">
-          <AccountEmailForm value={formEmail} setValue={setFormEmail} />
+          <AccountEmailForm defaultValue={data?.[EMAIL]} />
         </div>
         <div className="relative flex w-full">
-          <AccountPasswordForm
-            value={formPassword}
-            setValue={setFormPassword}
-            isLoading={isLoading}
-          />
+          <AccountPasswordForm defaultValue={data?.[PASSWORD]} />
           {connectionError && <ErrorOverlay placement="bottom">{connectionError}</ErrorOverlay>}
         </div>
       </form>

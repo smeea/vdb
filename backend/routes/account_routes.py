@@ -133,12 +133,12 @@ def account_update_route():
 
         current_user.email = request.json["email"]
         db.session.commit()
-        return jsonify("email changed")
+        return jsonify(success=True)
 
     elif "inventoryKey" in request.json:
         current_user.inventory_key = request.json["inventoryKey"]
         db.session.commit()
-        return jsonify("inventory key changed")
+        return jsonify(success=True)
 
     elif "newPassword" in request.json:
         if not current_user.check_password(request.json["password"]):
@@ -146,7 +146,7 @@ def account_update_route():
 
         current_user.set_password(request.json["newPassword"])
         db.session.commit()
-        return jsonify("password changed")
+        return jsonify(success=True)
 
 
 @app.route("/api/account", methods=["DELETE"])

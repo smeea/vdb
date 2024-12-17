@@ -4,6 +4,7 @@ import { twMerge } from 'tailwind-merge';
 const Input = ({
   name,
   value,
+  defaultValue,
   placeholder,
   onChange,
   onBlur,
@@ -34,6 +35,7 @@ const Input = ({
       autoComplete={autoComplete}
       spellCheck={spellCheck}
       value={value}
+      defaultValue={defaultValue}
       onChange={onChange}
       onBlur={onBlur}
       onFocus={onFocus}

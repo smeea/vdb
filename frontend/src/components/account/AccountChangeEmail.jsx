@@ -1,50 +1,36 @@
-import React, { useState } from 'react';
+import React, { useState, useActionState } from 'react';
 import EnvelopeFill from '@icons/envelope-fill.svg?react';
 import { AccountEmailForm, AccountPasswordForm, ErrorOverlay } from '@/components';
 import { useApp } from '@/context';
 import { userServices } from '@/services';
+import { PASSWORD, EMAIL } from '@/constants';
 
 const AccountChangeEmail = () => {
   const { setEmail } = useApp();
-  const [formPassword, setFormPassword] = useState('');
-  const [formEmail, setFormEmail] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
   const [success, setSuccess] = useState(false);
-  const [passwordError, setPasswordError] = useState(false);
+  const [error, setError] = useState(false);
 
-  const onError = (e) => {
-    setIsLoading(false);
-    if (e.status == 401) {
-      setPasswordError('WRONG PASSWORD');
-    } else {
-      setPasswordError('CONNECTION PROBLEM');
+  const changeEmail = async (prevState, formData) => {
+    const result = await userServices.changeEmail(formData.get(PASSWORD), formData.get(EMAIL));
+    switch (result.error) {
+      case 401:
+        setError('WRONG PASSWORD');
+        break;
+      case 500:
+        setError('CONNECTION PROBLEM');
+        break;
+      default:
+        setEmail(formData.get(EMAIL));
+        setSuccess(true);
+        setTimeout(() => {
+          setSuccess(false);
+        }, 1000);
     }
+
+    return { [PASSWORD]: formData.get(PASSWORD), [EMAIL]: formData.get(EMAIL) };
   };
 
-  const onSuccess = () => {
-    setIsLoading(false);
-    setEmail(formEmail);
-    setFormPassword('');
-    setSuccess(true);
-    setTimeout(() => {
-      setSuccess(false);
-    }, 1000);
-  };
-
-  const changeEmail = () => {
-    if (isLoading) return;
-    setPasswordError(false);
-
-    if (formPassword) {
-      setIsLoading(true);
-      userServices.changeEmail(formPassword, formEmail, onSuccess, onError);
-    }
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    changeEmail();
-  };
+  const [data, action] = useActionState(changeEmail);
 
   return (
     <div className="flex flex-col gap-2">
@@ -54,18 +40,13 @@ const AccountChangeEmail = () => {
         </div>
         <div className="flex">Change email</div>
       </div>
-      <form className="flex flex-col gap-2" onSubmit={handleSubmit}>
+      <form className="flex flex-col gap-2" action={action}>
         <div className="relative flex w-full">
-          <AccountEmailForm value={formEmail} setValue={setFormEmail} />
+          <AccountEmailForm defaultValue={data?.[EMAIL]} />
         </div>
         <div className="relative flex w-full">
-          <AccountPasswordForm
-            value={formPassword}
-            setValue={setFormPassword}
-            isLoading={isLoading}
-            success={success}
-          />
-          {passwordError && <ErrorOverlay placement="bottom">{passwordError}</ErrorOverlay>}
+          <AccountPasswordForm defaultValue={data?.password} success={success} />
+          {error && <ErrorOverlay placement="bottom">{error}</ErrorOverlay>}
         </div>
       </form>
     </div>
