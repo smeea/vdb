@@ -3,6 +3,7 @@
 
 # FEATURES
 - Inventory 'target' q-ty -> for design consideration
+- Port nationals event
 
 # FEATURES ON HOLD
 - TWD search with % V5-compatibility -> after BCP clarify V5

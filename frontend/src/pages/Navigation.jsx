@@ -30,8 +30,8 @@ const Link = ({ to, end, icon, text, title }) => {
       title={title}
       className={({ isActive }) =>
         twMerge(
-          'flex h-full items-center outline-none hover:no-underline',
-          icon ? 'px-3 max-sm:px-2.5' : 'px-2 pb-[2px] max-sm:px-1.5',
+          'flex h-full w-full items-center justify-center outline-none hover:no-underline',
+          icon ? 'sm:px-3' : 'pb-[2px] sm:px-2',
           isActive
             ? 'bg-borderNestModal text-white dark:bg-borderNestModalDark dark:text-whiteDark'
             : 'text-lightGray dark:text-lightGrayDark',
@@ -129,7 +129,7 @@ const Navigation = () => {
             </>
           )}
         </div>
-        <div className="flex items-center">
+        <div className="flex items-center justify-between max-sm:w-full">
           {!isMobile && (
             <>
               <Link
