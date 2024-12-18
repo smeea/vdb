@@ -7,26 +7,31 @@ const TwdSearchFormPlayers = ({ value, onChange }) => {
   const { isXWide } = useApp();
   const maxMenuHeight = isXWide ? 500 : 350;
   const name = PLAYERS;
-  const fromOptions = [];
-  const toOptions = [];
+  const steps = ['ANY', '100', '50', '25', '12'];
 
-  ['ANY', '100', '50', '25', '12'].map((i) => {
-    if (i.toLowerCase() === ANY || value.to === ANY || parseInt(i) < value.to) {
-      fromOptions.push({
+  const fromOptions = steps
+    .filter((i) => {
+      return i.toLowerCase() === ANY || value[TO] === ANY || !value[TO] || parseInt(i) < value[TO];
+    })
+    .map((i) => {
+      return {
         value: i.toLowerCase(),
         name: FROM,
         label: <div className="flex justify-center">{i}</div>,
-      });
-    }
+      };
+    });
 
-    if (i.toLowerCase() == ANY || value.from === ANY || parseInt(i) > value.from) {
-      toOptions.push({
-        value: i.toLowerCase(),
-        name: TO,
-        label: <div className="flex justify-center">{i}</div>,
-      });
-    }
-  });
+  const toOptions = steps
+    .filter((i) => {
+      return (
+        i.toLowerCase() == ANY || value[FROM] === ANY || !value[FROM] || parseInt(i) > value[FROM]
+      );
+    })
+    .map((i) => ({
+      value: i.toLowerCase(),
+      name: TO,
+      label: <div className="flex justify-center">{i}</div>,
+    }));
 
   return (
     <>
@@ -41,7 +46,7 @@ const TwdSearchFormPlayers = ({ value, onChange }) => {
               isSearchable={false}
               name={name}
               maxMenuHeight={maxMenuHeight}
-              value={fromOptions.find((obj) => obj.value === value.from)}
+              value={fromOptions.find((obj) => obj.value === value[FROM])}
               onChange={onChange}
             />
           </div>
@@ -52,7 +57,7 @@ const TwdSearchFormPlayers = ({ value, onChange }) => {
               isSearchable={false}
               name={name}
               maxMenuHeight={maxMenuHeight}
-              value={toOptions.find((obj) => obj.value === value.to)}
+              value={toOptions.find((obj) => obj.value === value[TO])}
               onChange={onChange}
             />
           </div>
