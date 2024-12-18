@@ -73,7 +73,7 @@ const importDeck = async (deckText, cryptCardBase, libraryCardBase, isPlaytester
       if (match) {
         q = parseInt(match[1]);
         const cardname = minifyCardName(match[2]);
-        const group = match[4];
+        const group = match[4].toLowerCase();
         if (Object.keys(cardbase).includes(cardname)) {
           if (Object.keys(cardbase[cardname]).includes(group)) {
             id = cardbase[cardname][group];
