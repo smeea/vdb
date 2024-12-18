@@ -8,7 +8,7 @@ import { inventoryStore, usedStore, deckStore } from '@/context';
 import { getHardTotal, getSoftMax } from '@/utils';
 import { ID, SOFT, HARD, CRYPT, LIBRARY, DECKS } from '@/constants';
 
-const ResultLayoutTextInventory = ({ card, inPopover }) => {
+const ResultLayoutTextInventory = ({ card, inPopover, setIsHotkeysDisabled }) => {
   const decks = useSnapshot(deckStore)[DECKS];
   const { [CRYPT]: inventoryCrypt, [LIBRARY]: inventoryLibrary } = useSnapshot(inventoryStore);
   const { [CRYPT]: usedCrypt, [LIBRARY]: usedLibrary } = useSnapshot(usedStore);
@@ -59,7 +59,14 @@ const ResultLayoutTextInventory = ({ card, inPopover }) => {
           </>
         )}
       </div>
-      {(!inPopover || text) && <InventoryText text={text} card={card} inPopover={inPopover} />}
+      {(!inPopover || text) && (
+        <InventoryText
+          setIsHotkeysDisabled={setIsHotkeysDisabled}
+          text={text}
+          card={card}
+          inPopover={inPopover}
+        />
+      )}
     </div>
   );
 };

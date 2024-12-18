@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 import ChatLeftQuoteFill from '@icons/chat-left-quote-fill.svg?react';
-import { useDebounce } from '@/hooks';
 import { inventoryCardTextChange } from '@/context';
 import { Textarea } from '@/components';
-import { TYPE_DEBOUNCE_DELAY } from '@/constants';
 
-const InventoryText = ({ card, text, inPopover }) => {
+const InventoryText = ({ card, text, inPopover, setIsHotkeysDisabled }) => {
   const [newText, setNewText] = useState(text || '');
   const handleChange = (event) => setNewText(event.target.value);
   const lines = newText.split('\n').length;
@@ -15,7 +13,10 @@ const InventoryText = ({ card, text, inPopover }) => {
     if (newText !== text) setNewText(text ?? '');
   }, [text]);
 
-  useDebounce(() => inventoryCardTextChange(card, newText), TYPE_DEBOUNCE_DELAY, [newText]);
+  const handleOnBlur = () => {
+    if (setIsHotkeysDisabled) setIsHotkeysDisabled(false);
+    if (newText !== text) inventoryCardTextChange(card, newText);
+  };
 
   return (
     <div className="items-top flex gap-1.5">
@@ -25,7 +26,16 @@ const InventoryText = ({ card, text, inPopover }) => {
       {inPopover ? (
         <div className="text-sm">{newText}</div>
       ) : (
-        <Textarea className="text-sm" rows={lines} onChange={handleChange} value={newText} />
+        <Textarea
+          className="text-sm"
+          rows={lines}
+          onBlur={handleOnBlur}
+          onFocus={() => {
+            if (setIsHotkeysDisabled) setIsHotkeysDisabled(true);
+          }}
+          onChange={handleChange}
+          value={newText}
+        />
       )}
     </div>
   );

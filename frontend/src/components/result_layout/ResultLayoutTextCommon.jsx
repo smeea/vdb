@@ -48,7 +48,11 @@ const ResultLayoutTextCommon = ({
           <Hr />
           <div className="flex flex-col gap-1">
             <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Inventory:</div>
-            <ResultLayoutTextInventory card={card} inPopover={inPopover} />
+            <ResultLayoutTextInventory
+              card={card}
+              inPopover={inPopover}
+              setIsHotkeysDisabled={setIsHotkeysDisabled}
+            />
           </div>
         </>
       )}
