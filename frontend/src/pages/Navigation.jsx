@@ -31,7 +31,7 @@ const Link = ({ to, end, icon, text, title }) => {
       className={({ isActive }) =>
         twMerge(
           'flex h-full items-center outline-none hover:no-underline',
-          icon ? 'px-3' : 'px-2 pb-[2px]',
+          icon ? 'px-3 max-sm:px-2.5' : 'px-2 pb-[2px] max-sm:px-1.5',
           isActive
             ? 'bg-borderNestModal text-white dark:bg-borderNestModalDark dark:text-whiteDark'
             : 'text-lightGray dark:text-lightGrayDark',
@@ -85,8 +85,8 @@ const Navigation = () => {
       ? '/library'
       : `/library?q=${encodeURIComponent(JSON.stringify(sanitizeFormState(LIBRARY, libraryFormState)))}`;
 
-  let decksUrl = `/decks${deck?.[DECKID] ? `/${deck[DECKID]}` : ''}`;
-  let cardsUrl = `/cards${quickCard ? `/${quickCard[ID]}` : ''}`;
+  const decksUrl = `/decks${deck?.[DECKID] ? `/${deck[DECKID]}` : ''}`;
+  const cardsUrl = `/cards${quickCard ? `/${quickCard[ID]}` : ''}`;
 
   const isLimited =
     Object.keys(limitedStoreState[CRYPT]).length + Object.keys(limitedStoreState[LIBRARY]).length >
@@ -143,6 +143,7 @@ const Navigation = () => {
             </>
           )}
           <Link to={pdaUrl} text="PDA" />
+          <Link to="/tournament_analyze" text="TDA" />
           <Link to={twdUrl} text="TWD" />
           <Link to="/inventory" text={isMobile ? 'INV' : 'Inventory'} />
           <Link to={decksUrl} text={isMobile ? 'DKS' : 'Decks'} />
