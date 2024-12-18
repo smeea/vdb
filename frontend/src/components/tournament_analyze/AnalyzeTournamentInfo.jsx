@@ -1,12 +1,4 @@
 import React from 'react';
-import TrophyFill from '@icons/trophy-fill.svg?react';
-import PersonFill from '@icons/person-fill.svg?react';
-import PersonCheckFill from '@icons/person-check-fill.svg?react';
-import TicketPerforated from '@icons/ticket-perforated.svg?react';
-import TagFill from '@icons/tag-fill.svg?react';
-import Repeat from '@icons/repeat.svg?react';
-import CalendarEvent from '@icons/calendar-event.svg?react';
-import GeoAltFill from '@icons/geo-alt-fill.svg?react';
 import { TwdResultDescriptionTextTr, Title } from '@/components';
 import { useApp } from '@/context';
 import { EVENT, LOCATION, ROUNDS, DATE, PLAYERS } from '@/constants';
@@ -15,36 +7,18 @@ const AnalyzeTournamentInfo = ({ info, decks }) => {
   const { isMobile } = useApp();
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col max-sm:px-2">
       {!isMobile && <Title>General Info</Title>}
       <table>
         <tbody>
-          <TwdResultDescriptionTextTr title={isMobile ? <TrophyFill /> : <>Event:</>}>
-            {info[EVENT]}
-          </TwdResultDescriptionTextTr>
-          <TwdResultDescriptionTextTr title={isMobile ? <GeoAltFill /> : <>Place:</>}>
-            {info[LOCATION]}
-          </TwdResultDescriptionTextTr>
-          <TwdResultDescriptionTextTr title={isMobile ? <CalendarEvent /> : <>Date:</>}>
-            {info[DATE]}
-          </TwdResultDescriptionTextTr>
-          <TwdResultDescriptionTextTr title={isMobile ? <TagFill /> : <>Format:</>}>
+          <TwdResultDescriptionTextTr title="Event:">{info[EVENT]}</TwdResultDescriptionTextTr>
+          <TwdResultDescriptionTextTr title="Place:">{info[LOCATION]}</TwdResultDescriptionTextTr>
+          <TwdResultDescriptionTextTr title="Date:">{info[DATE]}</TwdResultDescriptionTextTr>
+          <TwdResultDescriptionTextTr title="Format:">
             {info[ROUNDS] - 1} Rounds + Final
           </TwdResultDescriptionTextTr>
-          <TwdResultDescriptionTextTr title={isMobile ? <PersonFill /> : <>Players:</>}>
-            {info[PLAYERS]}
-          </TwdResultDescriptionTextTr>
-          <TwdResultDescriptionTextTr
-            title={
-              isMobile ? (
-                <div className="pl-0.5">
-                  <PersonCheckFill />
-                </div>
-              ) : (
-                <>Reported Decks:</>
-              )
-            }
-          >
+          <TwdResultDescriptionTextTr title="Players:">{info[PLAYERS]}</TwdResultDescriptionTextTr>
+          <TwdResultDescriptionTextTr title="Reported Decks:">
             <div>
               {Object.keys(decks).length}{' '}
               <div className="inline text-midGray dark:text-midGrayDark">
@@ -58,13 +32,13 @@ const AnalyzeTournamentInfo = ({ info, decks }) => {
               &quot;
             </div>
           </TwdResultDescriptionTextTr>
-          <TwdResultDescriptionTextTr title={isMobile ? <Repeat /> : <>Total Matches:</>}>
+          <TwdResultDescriptionTextTr title="Total Matches:">
             <div>{info.matches}</div>
             <div className="text-midGray dark:text-midGrayDark">
               avg per match: {info.avgMatchGw}GW + {info.avgMatchVp}VP
             </div>
           </TwdResultDescriptionTextTr>
-          <TwdResultDescriptionTextTr title={isMobile ? <TicketPerforated /> : <>Total Score:</>}>
+          <TwdResultDescriptionTextTr title="Total Score:">
             <div>
               {info.totalGw}GW + {info.totalVp}VP{' '}
             </div>

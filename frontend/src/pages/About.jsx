@@ -37,28 +37,28 @@ const About = () => {
           <div>
             <ul className="flex flex-col gap-2">
               <li>
-                <Link to="/crypt">Search crypt cards</Link>
+                <Link to="/crypt">Search Crypt cards</Link>
               </li>
               <li>
-                <Link to="/library">Search library cards</Link>
+                <Link to="/library">Search Library cards</Link>
               </li>
               <li>
-                <Link to="/decks">Create your decks</Link>
+                <Link to="/decks">Create Decks</Link>
               </li>
               <li>
-                <Link to="/inventory">Manage your inventory</Link>
+                <Link to="/inventory">Manage Inventory</Link>
               </li>
               <li>
-                <Link to="/twd">Search Tournament Winning Decks</Link>
+                <Link to="/twd">Tournament Winning Decks</Link>
               </li>
               <li>
-                <Link to="/tournament_analyze">Tournaments analyze</Link>
+                <Link to="/tournament_analyze">Tournament Decks Analyzer</Link>
               </li>
               <li>
-                <Link to="/pda">Search Public Deck Archive</Link>
+                <Link to="/pda">Public Deck Archive</Link>
               </li>
               <li>
-                <Link to="/cards">Quick search card by name</Link>
+                <Link to="/cards">Quick search Card by name</Link>
               </li>
               <li>
                 <Link to="/documentation">Documentation / Help</Link>

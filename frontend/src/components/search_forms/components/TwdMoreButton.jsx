@@ -7,7 +7,6 @@ import TrophyFill from '@icons/trophy-fill.svg?react';
 import ClockHistory from '@icons/clock-history.svg?react';
 import LightbulbFill from '@icons/lightbulb-fill.svg?react';
 import Calendar2EventFill from '@icons/calendar2-event-fill.svg?react';
-import PieChartFill from '@icons/pie-chart-fill.svg?react';
 
 const TwdMoreButton = () => {
   const navigate = useNavigate();
@@ -38,12 +37,6 @@ const TwdMoreButton = () => {
           <div className="flex items-center gap-2">
             <Calendar2EventFill />
             Check TWD Report
-          </div>
-        </MenuItem>
-        <MenuItem onClick={() => navigate('/tournament_analyze')}>
-          <div className="flex items-center gap-2">
-            <PieChartFill />
-            Analyze Tournaments
           </div>
         </MenuItem>
       </MenuItems>

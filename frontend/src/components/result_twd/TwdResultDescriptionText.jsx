@@ -28,13 +28,22 @@ const TwdResultDescriptionText = ({ deck }) => {
     <>
       <table>
         <tbody>
-          <TwdResultDescriptionTextTr title={isMobile ? <CalendarEvent /> : <>Date:</>}>
+          <TwdResultDescriptionTextTr
+            iconed={isMobile}
+            title={isMobile ? <CalendarEvent /> : <>Date:</>}
+          >
             {deck[CREATION_DATE]}
           </TwdResultDescriptionTextTr>
-          <TwdResultDescriptionTextTr title={isMobile ? <TrophyFill /> : <>Event:</>}>
+          <TwdResultDescriptionTextTr
+            iconed={isMobile}
+            title={isMobile ? <TrophyFill /> : <>Event:</>}
+          >
             {deck['event']}
           </TwdResultDescriptionTextTr>
-          <TwdResultDescriptionTextTr title={isMobile ? <GeoAltFill /> : <>Place:</>}>
+          <TwdResultDescriptionTextTr
+            iconed={isMobile}
+            title={isMobile ? <GeoAltFill /> : <>Place:</>}
+          >
             <div
               className="text-fgSecondary hover:underline dark:text-fgSecondaryDark"
               onClick={() => handleClick(LOCATION, deck[LOCATION])}
@@ -42,7 +51,10 @@ const TwdResultDescriptionText = ({ deck }) => {
               {deck[LOCATION]}
             </div>
           </TwdResultDescriptionTextTr>
-          <TwdResultDescriptionTextTr title={isMobile ? <PersonFill /> : <>Player:</>}>
+          <TwdResultDescriptionTextTr
+            iconed={isMobile}
+            title={isMobile ? <PersonFill /> : <>Player:</>}
+          >
             <div
               className="text-fgSecondary hover:underline dark:text-fgSecondaryDark"
               onClick={() => handleClick(AUTHOR, deck[AUTHOR])}
@@ -50,7 +62,7 @@ const TwdResultDescriptionText = ({ deck }) => {
               {deck[AUTHOR]}
             </div>
           </TwdResultDescriptionTextTr>
-          <TwdResultDescriptionTextTr title={isMobile ? <TagFill /> : <>Deck:</>}>
+          <TwdResultDescriptionTextTr iconed={isMobile} title={isMobile ? <TagFill /> : <>Deck:</>}>
             {deck[NAME]}
           </TwdResultDescriptionTextTr>
         </tbody>

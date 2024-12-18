@@ -43,7 +43,7 @@ const TwdResultLibraryKeyCardsTable = ({ library, withHeader }) => {
         {withHeader ? (
           <>
             <div className="whitespace-nowrap">
-              {isMobile ? 'Lib' : 'Library'} [{libraryTotal}], Keys:
+              {isMobile ? 'L' : 'Library'} [{libraryTotal}], Keys:
             </div>
             {hasBanned && <ResultLegalIcon type={BANNED} />}
             <div className="flex gap-1.5 sm:gap-3">

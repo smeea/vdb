@@ -260,9 +260,9 @@ const TournamentAnalyze = () => {
               target="_blank"
               rel="noreferrer"
               className="underline"
-              href="https://static.krcg.org/data/tournament/index.html"
+              href="https://garourimgazette.wordpress.com/vtes-discussions/vtes-tournament-archive/"
             >
-              EXTENDED TOURNAMENTS DECKS ARCHIVE
+              TOURNAMENTS DECKS ARCHIVE
             </a>
           </div>
         </div>
