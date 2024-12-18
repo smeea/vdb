@@ -13,7 +13,6 @@ const TwdSearchFormDate = ({ inPda, value, onChange }) => {
   const PDA_START = 2022;
 
   const years = ['ANY'];
-
   if (inPda) {
     for (let i = currentYear; i >= PDA_START; i--) {
       years.push(i.toString());
@@ -24,26 +23,33 @@ const TwdSearchFormDate = ({ inPda, value, onChange }) => {
     }
   }
 
-  const fromOptions = [];
-  const toOptions = [];
-
-  years.map((i) => {
-    if (i.toLowerCase() === ANY || value.to === ANY || parseInt(i) <= value.to) {
-      fromOptions.push({
+  const fromOptions = years
+    .filter(
+      (i) => i.toLowerCase() === ANY || value[TO] === ANY || !value[TO] || parseInt(i) <= value[TO],
+    )
+    .map((i) => {
+      return {
         value: i.toLowerCase(),
         name: FROM,
         label: <div className="flex justify-center">{i}</div>,
-      });
-    }
+      };
+    });
 
-    if (i.toLowerCase() === ANY || value.from === ANY || parseInt(i) >= value.from) {
-      toOptions.push({
+  const toOptions = years
+    .filter(
+      (i) =>
+        i.toLowerCase() === ANY ||
+        value[FROM] === ANY ||
+        !value[FROM] ||
+        parseInt(i) >= value[FROM],
+    )
+    .map((i) => {
+      return {
         value: i.toLowerCase(),
         name: TO,
         label: <div className="flex justify-center">{i}</div>,
-      });
-    }
-  });
+      };
+    });
 
   return (
     <div className="flex items-center gap-1">
@@ -57,7 +63,7 @@ const TwdSearchFormDate = ({ inPda, value, onChange }) => {
             isSearchable={false}
             name={name}
             maxMenuHeight={maxMenuHeight}
-            value={fromOptions.find((obj) => obj.value === value.from)}
+            value={fromOptions.find((obj) => obj.value == value[FROM])}
             onChange={onChange}
           />
         </div>
@@ -68,7 +74,7 @@ const TwdSearchFormDate = ({ inPda, value, onChange }) => {
             isSearchable={false}
             name={name}
             maxMenuHeight={maxMenuHeight}
-            value={toOptions.find((obj) => obj.value === value.to)}
+            value={toOptions.find((obj) => obj.value == value[TO])}
             onChange={onChange}
           />
         </div>
