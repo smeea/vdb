@@ -95,7 +95,7 @@ const TournamentAnalyze = () => {
         Promise.all(decks).then((v) => {
           const d = {};
           v.forEach((i) => {
-            d[parseInt(i[AUTHOR])] = i;
+            d[i[AUTHOR]] = i;
           });
 
           setTempDecks(d);
@@ -148,14 +148,15 @@ const TournamentAnalyze = () => {
     const dataScores = utils.sheet_to_csv(wsScores).split('\n');
 
     const archonIds = [];
-    const analyzeDecks = { ...tempDecks };
+    const analyzeDecks = {};
 
-    dataScores.forEach((n) => {
+    dataScores.forEach((n, idx) => {
+      if (idx < 6) return;
       const array = n.split(',');
-      const veknId = parseInt(array[4]);
+      const playerId = array[4];
       const playerNumber = parseInt(array[0]);
-      if (!veknId) return;
-      archonIds.push(veknId);
+      if (!playerId) return;
+      archonIds.push(playerId);
 
       const rank =
         array[20] == 'DQ'
@@ -176,9 +177,12 @@ const TournamentAnalyze = () => {
         [PLAYERS]: totalPlayers,
       };
 
-      if (tempDecks[veknId]) {
-        reportedRanks.push(score[RANK]);
-        analyzeDecks[veknId][SCORE] = score;
+      if (tempDecks[playerId]) {
+        reportedRanks.push(score[RANK] == 'DQ' ? totalPlayers : score[RANK]);
+        analyzeDecks[playerId] = {
+          ...tempDecks[playerId],
+          [SCORE]: score,
+        };
       }
 
       if (score[RANK] > Math.ceil(totalPlayers / 2)) {
@@ -190,7 +194,7 @@ const TournamentAnalyze = () => {
     });
 
     Object.keys(analyzeDecks).forEach((deckid) => {
-      if (!archonIds.includes(parseInt(deckid))) console.log(`Deck ${deckid} is not in Archon`);
+      if (!archonIds.includes(deckid)) console.log(`Deck ${deckid} is not in Archon`);
     });
 
     let medianReportedRank;
