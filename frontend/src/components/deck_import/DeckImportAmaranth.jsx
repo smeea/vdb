@@ -25,9 +25,7 @@ const DeckImportAmaranth = ({ setShow }) => {
   const { setShowFloatingButtons, cryptCardBase, libraryCardBase, isMobile } = useApp();
   const navigate = useNavigate();
   const [deckUrl, setDeckUrl] = useState('');
-  const [urlError, setUrlError] = useState(false);
-  const [emptyError, setEmptyError] = useState(false);
-  const [importError, setImportError] = useState(false);
+  const [error, setError] = useState();
   const [isLoading, setIsLoading] = useState(false);
   const ref = useRef();
 
@@ -41,9 +39,9 @@ const DeckImportAmaranth = ({ setShow }) => {
   };
 
   const handleClick = () => {
-    setImportError(false);
+    setError(null);
     if (!deckUrl) {
-      setEmptyError(true);
+      setError('ENTER URL');
       return;
     }
 
@@ -58,11 +56,11 @@ const DeckImportAmaranth = ({ setShow }) => {
             setDeckUrl('');
             handleClose();
           })
-          .catch(() => setImportError(true))
+          .catch(() => setError('ERROR DURING IMPORT'))
           .finally(() => setIsLoading(false));
       }
     } else {
-      setUrlError(true);
+      setError('ERROR IN URL');
     }
   };
 
@@ -175,13 +173,12 @@ const DeckImportAmaranth = ({ setShow }) => {
           navigate(`/decks/${deck[DECKID]}`);
         }
       })
-      .catch(() => setImportError(true));
+      .catch(() => setError('ERROR DURING IMPORT'));
   };
 
   const onChange = (e) => {
     setDeckUrl(e.target.value);
-    setEmptyError(null);
-    setUrlError(null);
+    setError(null);
   };
 
   return (
@@ -203,9 +200,7 @@ const DeckImportAmaranth = ({ setShow }) => {
             onChange={onChange}
             ref={ref}
           />
-          {emptyError && <ErrorOverlay placement="bottom">ENTER URL</ErrorOverlay>}
-          {urlError && <ErrorOverlay placement="bottom">ERROR IN URL</ErrorOverlay>}
-          {importError && <ErrorOverlay placement="bottom">ERROR DURING IMPORT</ErrorOverlay>}
+          {error && <ErrorOverlay placement="bottom">{error}</ErrorOverlay>}
         </div>
         <Button className="min-w-[72px] rounded-l-none" onClick={handleClick}>
           {isLoading ? <Spinner className="size-5" /> : 'Import'}

@@ -12,7 +12,6 @@
 - Draft Cube support -> when draft cube info is available
 
 # TECH IMPROVEMENTS
-- Refactor DeckStore and InventoryStore with useOptimistic
 - Update to TailwindCSS 4
   - isWidth to container queries
 - Migrate to useSWR (test on playtest reports)

@@ -17,12 +17,11 @@ const DeckImportText = ({ isAnonymous, setBadCards, setShow }) => {
   } = useApp();
   const navigate = useNavigate();
   const [deckText, setDeckText] = useState('');
-  const [emptyError, setEmptyError] = useState(false);
-  const [importError, setImportError] = useState(false);
+  const [error, setError] = useState();
   const ref = useRef();
 
   const handleChange = (event) => {
-    setEmptyError(false);
+    setError(null);
     setDeckText(event.target.value);
   };
 
@@ -34,8 +33,8 @@ const DeckImportText = ({ isAnonymous, setBadCards, setShow }) => {
   };
 
   const importDeckFromText = async () => {
-    setImportError(false);
-    if (!deckText) return setEmptyError(true);
+    setError(null);
+    if (!deckText) return setError('ENTER DECK LIST');
 
     const d = await importDeck(deckText, cryptCardBase, libraryCardBase, isPlaytester);
 
@@ -53,7 +52,7 @@ const DeckImportText = ({ isAnonymous, setBadCards, setShow }) => {
         setDeckText('');
         handleClose();
       })
-      .catch(() => setImportError(true));
+      .catch(() => setError('ERROR DURING IMPORT'));
   };
 
   const placeholder = `\
@@ -88,8 +87,7 @@ It will skip other (useless) lines, you don't have to remove it yourself.
             onChange={handleChange}
             ref={ref}
           />
-          {emptyError && <ErrorOverlay placement="bottom">ENTER DECK LIST</ErrorOverlay>}
-          {importError && <ErrorOverlay placement="bottom">ERROR DURING IMPORT</ErrorOverlay>}
+          {error && <ErrorOverlay placement="bottom">{error}</ErrorOverlay>}
         </div>
         <div className="flex justify-end">
           <Button onClick={importDeckFromText}>Import</Button>
