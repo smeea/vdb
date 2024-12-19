@@ -17,9 +17,10 @@ import {
 } from '@/components';
 import { useApp, deckStore } from '@/context';
 import { deckServices } from '@/services';
+import { useDecksTagsAll } from '@/hooks';
 import { DECKID, DECKS, NAME, JOL, LACKEY, TEXT, XLSX } from '@/constants';
 
-const DeckSelectAdvModal = ({ onClick, setShow, allTagsOptions, short }) => {
+const DeckSelectAdvModal = ({ onClick, setShow, short }) => {
   const { isMobile, setShowFloatingButtons } = useApp();
   const decks = useSnapshot(deckStore)[DECKS];
   const [showDeleteConfirmation, setShowDeleteConfirmation] = useState(false);
@@ -29,6 +30,7 @@ const DeckSelectAdvModal = ({ onClick, setShow, allTagsOptions, short }) => {
   const [tagsFilter, setTagsFilter] = useState([]);
   const { [DECKID]: activeDeckid } = useParams();
   const navigate = useNavigate();
+  const allTagsOptions = useDecksTagsAll(decks);
 
   const handleClose = () => {
     setShow(false);

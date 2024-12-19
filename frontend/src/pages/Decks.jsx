@@ -298,7 +298,7 @@ const Decks = () => {
           </>
         </Modal>
       )}
-      {showSelect && <DeckSelectAdvModal setShow={setShowSelect} allTagsOptions={allTagsOptions} />}
+      {showSelect && <DeckSelectAdvModal setShow={setShowSelect} />}
       {showDraw && <DeckDraw setShow={setShowDraw} deck={deck} />}
       {showSeating && <Seating setShow={setShowSeating} />}
       {showRecommendation && <DeckRecommendation deck={deck} setShow={setShowRecommendation} />}
