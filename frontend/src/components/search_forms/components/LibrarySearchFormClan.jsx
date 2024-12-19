@@ -69,15 +69,17 @@ const LibrarySearchFormClan = ({ value, searchForm, onChange }) => {
           />
         </div>
       </div>
-      <SearchAdditionalForms
-        isClearable
-        value={value}
-        name={name}
-        searchForm={searchForm}
-        options={options}
-        onChange={onChange}
-        maxMenuHeight={maxMenuHeight}
-      />
+      {value.value.length > 1 && (
+        <SearchAdditionalForms
+          isClearable
+          value={value}
+          name={name}
+          searchForm={searchForm}
+          options={options}
+          onChange={onChange}
+          maxMenuHeight={maxMenuHeight}
+        />
+      )}
     </>
   );
 };

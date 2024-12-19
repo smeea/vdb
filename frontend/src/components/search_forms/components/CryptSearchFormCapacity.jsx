@@ -73,17 +73,19 @@ const CryptSearchFormCapacity = ({ value, searchForm, onChange }) => {
           </div>
         </div>
       </div>
-      <SearchAdditionalForms
-        isClearable
-        name={name}
-        value={value}
-        options={options}
-        onChange={onChange}
-        searchForm={searchForm}
-        withMoreless={true}
-        morelessOptions={morelessOptions}
-        maxMenuHeight={maxMenuHeight}
-      />
+      {value.value.length > 1 && (
+        <SearchAdditionalForms
+          isClearable
+          name={name}
+          value={value}
+          options={options}
+          onChange={onChange}
+          searchForm={searchForm}
+          withMoreless={true}
+          morelessOptions={morelessOptions}
+          maxMenuHeight={maxMenuHeight}
+        />
+      )}
     </>
   );
 };

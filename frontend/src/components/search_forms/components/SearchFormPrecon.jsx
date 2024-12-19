@@ -135,15 +135,17 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
           />
         </div>
       </div>
-      <SearchAdditionalForms
-        isClearable
-        value={value}
-        name={name}
-        searchForm={searchForm}
-        options={options}
-        onChange={onChange}
-        menuHeight={menuHeight}
-      />
+      {value.value.length > 1 && (
+        <SearchAdditionalForms
+          isClearable
+          value={value}
+          name={name}
+          searchForm={searchForm}
+          options={options}
+          onChange={onChange}
+          menuHeight={menuHeight}
+        />
+      )}
       <div className="flex items-center justify-end gap-4">
         {[
           {

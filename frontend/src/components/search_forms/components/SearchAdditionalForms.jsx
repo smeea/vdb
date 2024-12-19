@@ -17,78 +17,81 @@ const SearchAdditionalForms = ({
   isClearable = false,
 }) => {
   const { isMobile } = useApp();
+  const formIds = [...Array(value.value.length).keys()].slice(1);
 
-  const forms = [];
-
-  for (let i = 1; i < value.value.length; i++) {
-    forms.push(
-      <div key={i} className="flex items-center">
-        <div className="flex w-1/4 justify-end">
-          <div className="flex gap-1 px-1">
-            {i == value.value.length - 1 && (
-              <SearchFormButtonAdd
-                name={name}
-                searchForm={searchForm}
-                withMoreless={withMoreless}
-              />
+  return (
+    <>
+      {formIds.map((i) => {
+        return (
+          <div key={i} className="flex items-center">
+            <div className="flex w-1/4 justify-end">
+              <div className="flex gap-1 px-1">
+                {i == value.value.length - 1 && (
+                  <SearchFormButtonAdd
+                    name={name}
+                    searchForm={searchForm}
+                    withMoreless={withMoreless}
+                  />
+                )}
+                <SearchFormButtonDel searchForm={searchForm} name={name} i={i} />
+              </div>
+            </div>
+            {withMoreless ? (
+              <div className="flex w-3/4 gap-1">
+                <div className="w-1/2">
+                  <Select
+                    options={morelessOptions}
+                    isSearchable={false}
+                    menuPlacement={menuPlacement}
+                    name={i}
+                    value={morelessOptions.find((obj) => obj.value === value.value[i].moreless)}
+                    onChange={onChange}
+                  />
+                </div>
+                <div className="w-1/2">
+                  <Select
+                    options={options}
+                    isSearchable={false}
+                    defaultMenuIsOpen={
+                      value.value[i][
+                        Object.keys(value.value[i]).filter((k) => {
+                          return k !== MORELESS;
+                        })[0]
+                      ] === ANY
+                    }
+                    menuHeight={menuHeight}
+                    maxMenuHeight={maxMenuHeight ? maxMenuHeight - 45 : isMobile ? 350 : 450}
+                    menuPlacement={menuPlacement}
+                    name={i}
+                    value={options.find((obj) => obj.value === value.value[i][CAPACITY])}
+                    onChange={onChange}
+                    autoFocus
+                  />
+                </div>
+              </div>
+            ) : (
+              <div className="w-3/4">
+                <Select
+                  options={options}
+                  isSearchable={!isMobile}
+                  isClearable={isClearable && value.value[i] !== ANY}
+                  defaultMenuIsOpen={value.value[i] === ANY}
+                  menuPlacement={menuPlacement}
+                  maxMenuHeight={maxMenuHeight ? maxMenuHeight - 45 : isMobile ? 350 : 450}
+                  name={i}
+                  value={options.find((obj) => obj.value === value.value[i])}
+                  onChange={(e, id) =>
+                    e ? onChange(e, id) : onChange({ name: name, value: ANY }, id)
+                  }
+                  autoFocus
+                />
+              </div>
             )}
-            <SearchFormButtonDel searchForm={searchForm} name={name} i={i} />
           </div>
-        </div>
-        {withMoreless ? (
-          <div className="flex w-3/4 gap-1">
-            <div className="w-1/2">
-              <Select
-                options={morelessOptions}
-                isSearchable={false}
-                menuPlacement={menuPlacement}
-                name={i}
-                value={morelessOptions.find((obj) => obj.value === value.value[i].moreless)}
-                onChange={onChange}
-              />
-            </div>
-            <div className="w-1/2">
-              <Select
-                options={options}
-                isSearchable={false}
-                defaultMenuIsOpen={
-                  value.value[i][
-                    Object.keys(value.value[i]).filter((k) => {
-                      return k !== MORELESS;
-                    })[0]
-                  ] === ANY
-                }
-                menuHeight={menuHeight}
-                maxMenuHeight={maxMenuHeight ? maxMenuHeight - 45 : isMobile ? 350 : 450}
-                menuPlacement={menuPlacement}
-                name={i}
-                value={options.find((obj) => obj.value === value.value[i][CAPACITY])}
-                onChange={onChange}
-                autoFocus
-              />
-            </div>
-          </div>
-        ) : (
-          <div className="w-3/4">
-            <Select
-              options={options}
-              isSearchable={!isMobile}
-              isClearable={isClearable && value.value[i] !== ANY}
-              defaultMenuIsOpen={value.value[i] === ANY}
-              menuPlacement={menuPlacement}
-              maxMenuHeight={maxMenuHeight ? maxMenuHeight - 45 : isMobile ? 350 : 450}
-              name={i}
-              value={options.find((obj) => obj.value === value.value[i])}
-              onChange={(e, id) => (e ? onChange(e, id) : onChange({ name: name, value: ANY }, id))}
-              autoFocus
-            />
-          </div>
-        )}
-      </div>,
-    );
-  }
-
-  return <>{forms}</>;
+        );
+      })}
+    </>
+  );
 };
 
 export default SearchAdditionalForms;
