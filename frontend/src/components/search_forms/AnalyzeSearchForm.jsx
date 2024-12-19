@@ -63,6 +63,7 @@ const AnalyzeSearchForm = () => {
       const sanitizedForm = sanitizeFormState(ANALYZE, analyzeFormState);
       if (Object.keys(sanitizedForm).length === 0) {
         if (query) setSearchParams();
+        setAnalyzeResults();
       } else {
         processSearch();
       }
