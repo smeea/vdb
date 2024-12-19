@@ -67,7 +67,7 @@ const TwdSearchForm = ({ error, setError }) => {
       const sanitizedForm = sanitizeFormState(TWD, twdFormState);
       if (Object.keys(sanitizedForm).length === 0) {
         if (query) setSearchParams();
-      } else if (!twdFormState[EVENT] || twdFormState[EVENT].length > 2) {
+      } else if (!searchTwdForm[EVENT] || searchTwdForm[EVENT].length > 2) {
         processSearch();
       }
     } else if (isMobile && query && twdFormState && cryptCardBase && libraryCardBase) {
@@ -92,12 +92,12 @@ const TwdSearchForm = ({ error, setError }) => {
   };
 
   const handleDisciplinesChange = (name) => {
-    searchTwdForm[DISCIPLINES][name] = !twdFormState[DISCIPLINES][name];
+    searchTwdForm[DISCIPLINES][name] = !searchTwdForm[DISCIPLINES][name];
   };
 
   const handleMultiChange = (event) => {
     const { name, value } = event.currentTarget;
-    searchTwdForm[name][value] = !twdFormState[name][value];
+    searchTwdForm[name][value] = !searchTwdForm[name][value];
   };
 
   const handleMatchInventoryScalingChange = (e) => {
@@ -132,7 +132,7 @@ const TwdSearchForm = ({ error, setError }) => {
 
   const processSearch = () => {
     setError(false);
-    const sanitizedForm = sanitizeFormState(TWD, twdFormState);
+    const sanitizedForm = sanitizeFormState(TWD, searchTwdForm);
     if (Object.entries(sanitizedForm).length === 0) {
       setError('EMPTY REQUEST');
       return;

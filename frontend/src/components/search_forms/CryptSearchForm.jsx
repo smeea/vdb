@@ -188,7 +188,7 @@ const CryptSearchForm = () => {
   };
 
   const handleDisciplinesChange = (name, max) => {
-    if (cryptFormState[DISCIPLINES][name] < max) {
+    if (searchCryptForm[DISCIPLINES][name] < max) {
       searchCryptForm[DISCIPLINES][name] += 1;
     } else {
       searchCryptForm[DISCIPLINES][name] = 0;
@@ -207,7 +207,7 @@ const CryptSearchForm = () => {
 
   const processSearch = () => {
     setError(false);
-    const sanitizedForm = sanitizeFormState(CRYPT, cryptFormState);
+    const sanitizedForm = sanitizeFormState(CRYPT, searchCryptForm);
 
     if (Object.entries(sanitizedForm).length === 0) {
       setError('EMPTY REQUEST');
@@ -242,14 +242,14 @@ const CryptSearchForm = () => {
 
   const textInputsAndSearch = () => {
     if (!isMobile && cryptCardBase) {
-      const input = sanitizeFormState(CRYPT, cryptFormState);
+      const input = sanitizeFormState(CRYPT, searchCryptForm);
       if (Object.keys(input).length === 0) {
         if (query) {
           setCryptResults(undefined);
           setPreresults(undefined);
           setSearchParams();
         }
-      } else if (!cryptFormState[TEXT][0].value || cryptFormState[TEXT][0].value.length > 2) {
+      } else if (!searchCryptForm[TEXT][0].value || searchCryptForm[TEXT][0].value.length > 2) {
         processSearch();
       }
     }

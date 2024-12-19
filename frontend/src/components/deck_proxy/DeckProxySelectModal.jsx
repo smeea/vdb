@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useImmer } from 'use-immer';
-import { useSnapshot } from 'valtio';
 import { FlexGapped, Modal, Button, DeckProxyCrypt, DeckProxyLibrary } from '@/components';
 import { useApp, usedStore, inventoryStore } from '@/context';
 import { getHardTotal, getSoftMax } from '@/utils';
@@ -17,9 +16,6 @@ const DeckProxySelectModal = ({ deck, setShow }) => {
     lang,
     showLegacyImage,
   } = useApp();
-
-  const { [CRYPT]: inventoryCrypt, [LIBRARY]: inventoryLibrary } = useSnapshot(inventoryStore);
-  const { [CRYPT]: usedCrypt, [LIBRARY]: usedLibrary } = useSnapshot(usedStore);
 
   const handleClose = () => {
     setShow(false);
@@ -66,10 +62,10 @@ const DeckProxySelectModal = ({ deck, setShow }) => {
     Object.keys(deck[CRYPT])
       .filter((cardid) => deck[CRYPT][cardid].q > 0)
       .forEach((cardid) => {
-        const softUsedMax = getSoftMax(usedCrypt[SOFT][cardid]);
-        const hardUsedTotal = getHardTotal(usedCrypt[HARD][cardid]);
+        const softUsedMax = getSoftMax(usedStore[CRYPT][SOFT][cardid]);
+        const hardUsedTotal = getHardTotal(usedStore[CRYPT][HARD][cardid]);
 
-        const inInventory = inventoryCrypt[cardid]?.q || 0;
+        const inInventory = inventoryStore[CRYPT][cardid]?.q || 0;
         const inventoryMiss = softUsedMax + hardUsedTotal - inInventory;
         const miss = deck[INVENTORY_TYPE]
           ? Math.min(inventoryMiss, deck[CRYPT][cardid].q)
@@ -88,10 +84,10 @@ const DeckProxySelectModal = ({ deck, setShow }) => {
     Object.keys(deck[LIBRARY])
       .filter((cardid) => deck[LIBRARY][cardid].q > 0)
       .forEach((cardid) => {
-        const softUsedMax = getSoftMax(usedLibrary[SOFT][cardid]);
-        const hardUsedTotal = getHardTotal(usedLibrary[HARD][cardid]);
+        const softUsedMax = getSoftMax(usedStore[LIBRARY][SOFT][cardid]);
+        const hardUsedTotal = getHardTotal(usedStore[LIBRARY][HARD][cardid]);
 
-        const inInventory = inventoryLibrary[cardid]?.q || 0;
+        const inInventory = inventoryStore[LIBRARY][cardid]?.q || 0;
         const inventoryMiss = softUsedMax + hardUsedTotal - inInventory;
         const miss = deck[INVENTORY_TYPE]
           ? Math.min(inventoryMiss, deck[LIBRARY][cardid].q)

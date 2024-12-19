@@ -1,5 +1,6 @@
 # FIX
 - Review TWDA radar: remove swarm, maybe replace?
+- Analyze reset filters
 
 # FEATURES
 - Inventory 'target' q-ty -> for design consideration

@@ -2,15 +2,18 @@ import globals from 'globals';
 import js from '@eslint/js';
 import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
+import valtio from 'eslint-plugin-valtio';
 
 export default [
   js.configs.recommended,
   {
     files: ['**/*.{js,mjs,cjs,jsx,mjsx,ts,tsx,mtsx}'],
     ...react.configs.flat.recommended,
+    ...valtio.configs['flat/recommended'],
     plugins: {
       react,
       reactHooks,
+      valtio,
     },
     languageOptions: {
       globals: {
@@ -40,6 +43,8 @@ export default [
       'react/jsx-uses-vars': 'error',
       'reactHooks/rules-of-hooks': 'error',
       'reactHooks/exhaustive-deps': 'off',
+      'valtio/state-snapshot-rule': ['warn'],
+      'valtio/avoid-this-in-proxy': ['warn'],
     },
   },
 ];

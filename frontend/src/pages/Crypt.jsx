@@ -32,8 +32,8 @@ const Crypt = () => {
   }, [isMobile, isDesktop, addMode, cryptResults]);
 
   const showToggleAddMode = useMemo(() => {
-    return deck && cryptResults && !isMobile && !isDesktop;
-  }, [deck?.[DECKID], isMobile, isDesktop, cryptResults]);
+    return deckStore[DECK] && cryptResults && !isMobile && !isDesktop;
+  }, [deckStore[DECK]?.[DECKID], isMobile, isDesktop, cryptResults]);
 
   const showResultCol = useMemo(() => !(isMobile && !cryptResults), [isMobile, cryptResults]);
 
@@ -44,10 +44,10 @@ const Crypt = () => {
   }, [query]);
 
   useEffect(() => {
-    if (!deck && decks !== undefined && lastDeckId) {
-      setDeck(decks[lastDeckId]);
+    if (!deckStore[DECK] && deckStore[DECKS] !== undefined && lastDeckId) {
+      setDeck(deckStore[DECKS][lastDeckId]);
     }
-  }, [deck?.[DECKID], decks, lastDeckId]);
+  }, [deckStore[DECK]?.[DECKID], deckStore[DECKS], lastDeckId]);
 
   return (
     <div className="search-container mx-auto">

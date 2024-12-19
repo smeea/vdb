@@ -1,5 +1,4 @@
 import { useMemo } from 'react';
-import { useSnapshot } from 'valtio';
 import {
   countCards,
   countTotalCost,
@@ -29,9 +28,7 @@ import {
 import { limitedStore } from '@/context';
 
 const useDeckLibrary = (cardsList, cardsToList = {}) => {
-  const limitedCards = useSnapshot(limitedStore);
-
-  const value = useMemo(() => {
+  return useMemo(() => {
     const cardsFrom = Object.values(cardsList);
     const cardsTo = Object.values(cardsToList);
     const libraryFrom = cardsFrom.filter((card) => card.q > 0);
@@ -59,7 +56,7 @@ const useDeckLibrary = (cardsList, cardsToList = {}) => {
       [HAS_LIMITED]: hasLimited,
       [HAS_PLAYTEST]: hasPlaytest,
       [HAS_ILLEGAL_DATE]: hasIllegalDate,
-    } = getRestrictions({ [CRYPT]: {}, [LIBRARY]: library }, limitedCards);
+    } = getRestrictions({ [CRYPT]: {}, [LIBRARY]: library }, limitedStore);
 
     const trifleTotal = countCards(library.filter((card) => card.c[TRIFLE]));
     const libraryTotal = countCards(cardsFrom);
@@ -114,8 +111,6 @@ const useDeckLibrary = (cardsList, cardsToList = {}) => {
       libraryByDisciplinesTotal,
     };
   }, [cardsList, cardsToList]);
-
-  return value;
 };
 
 export default useDeckLibrary;

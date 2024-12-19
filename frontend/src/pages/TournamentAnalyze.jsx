@@ -85,14 +85,14 @@ const TournamentAnalyze = () => {
           }
         });
 
-        const decks = Object.values(zip.files)
+        const fetchedDecks = Object.values(zip.files)
           .filter((f) => !f[NAME].includes('.xlsx'))
           .map(async (f) => {
             const d = await f.async('string');
             return getDeck(d);
           });
 
-        Promise.all(decks).then((v) => {
+        Promise.all(fetchedDecks).then((v) => {
           const d = {};
           v.forEach((i) => {
             d[i[AUTHOR]] = i;
@@ -207,7 +207,7 @@ const TournamentAnalyze = () => {
       medianReportedRank = (min + max) / 2;
     }
 
-    const info = {
+    setAnalyzeInfo({
       [EVENT]: event,
       [DATE]: date,
       [LOCATION]: location,
@@ -222,9 +222,7 @@ const TournamentAnalyze = () => {
       medianPlayerVp: medianVp,
       medianRank: totalPlayers / 2,
       medianReportedRank: medianReportedRank,
-    };
-
-    setAnalyzeInfo(info);
+    });
     setAnalyzeDecks(analyzeDecks);
   };
 
@@ -246,7 +244,12 @@ const TournamentAnalyze = () => {
   }, [tempDecks, tempArchon]);
 
   useEffect(() => {
-    if (params[EVENT] && !(decks || info) && cryptCardBase && libraryCardBase) {
+    if (
+      params[EVENT] &&
+      !(analyzeStore[DECKS] || analyzeStore[INFO]) &&
+      cryptCardBase &&
+      libraryCardBase
+    ) {
       loadPrepared(params[EVENT]);
     }
   }, [params[EVENT], cryptCardBase, libraryCardBase]);

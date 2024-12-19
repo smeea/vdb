@@ -98,14 +98,14 @@ const LibrarySearchForm = () => {
 
   const textInputsAndSearch = () => {
     if (!isMobile && libraryCardBase) {
-      const input = sanitizeFormState(LIBRARY, libraryFormState);
+      const input = sanitizeFormState(LIBRARY, searchLibraryForm);
       if (Object.keys(input).length === 0) {
         if (query) {
           setLibraryResults(undefined);
           setPreresults(undefined);
           setSearchParams();
         }
-      } else if (!libraryFormState[TEXT][0].value || libraryFormState[TEXT][0].value.length > 2) {
+      } else if (!searchLibraryForm[TEXT][0].value || searchLibraryForm[TEXT][0].value.length > 2) {
         processSearch();
       }
     }
@@ -194,7 +194,7 @@ const LibrarySearchForm = () => {
 
   const processSearch = () => {
     setError(false);
-    const sanitizedForm = sanitizeFormState(LIBRARY, libraryFormState);
+    const sanitizedForm = sanitizeFormState(LIBRARY, searchLibraryForm);
 
     if (Object.entries(sanitizedForm).length === 0) {
       setError('EMPTY REQUEST');

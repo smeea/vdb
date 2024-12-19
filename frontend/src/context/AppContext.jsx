@@ -148,7 +148,7 @@ export const AppProvider = ({ children }) => {
   const [localizedLibrary, setLocalizedLibrary] = useState();
   const [preconDecks, setPreconDecks] = useState();
 
-  const { [DECK]: deck, [DECKS]: decks } = useSnapshot(deckStore);
+  const { [DECKS]: decks } = useSnapshot(deckStore);
   const lastDeckArray = (decks && Object.values(decks).toSorted(byTimestamp)) ?? [
     { [DECKID]: undefined },
   ];
@@ -288,7 +288,7 @@ export const AppProvider = ({ children }) => {
     setEmail(undefined);
     inventoryStore[CRYPT] = {};
     inventoryStore[LIBRARY] = {};
-    if (decks?.[deck?.[DECKID]]) {
+    if (deckStore[DECKS]?.[deckStore[DECK]?.[DECKID]]) {
       deckStore[DECK] = undefined;
     }
     deckStore[DECKS] = undefined;
@@ -359,14 +359,14 @@ export const AppProvider = ({ children }) => {
 
   useEffect(() => {
     if (
-      deck &&
+      deckStore[DECK] &&
       localizedCrypt?.[lang] &&
       localizedLibrary?.[lang] &&
       Object.keys(localizedCrypt).length > 1
     ) {
       deckLocalize(localizedCrypt[lang], nativeCrypt, localizedLibrary[lang], nativeLibrary);
     }
-  }, [deck?.[DECKID], lang, localizedCrypt, localizedLibrary]);
+  }, [deckStore[DECK]?.[DECKID], lang, localizedCrypt, localizedLibrary]);
 
   // APP DATA
   const toggleShowImage = () => {
@@ -439,14 +439,14 @@ export const AppProvider = ({ children }) => {
     setLocalStorage(ANALYZE_SEARCH_SORT, method);
   };
 
-  const addRecentDeck = (deck) => {
-    const src = deck[DECKID].length != 9 ? TWD : deck[PUBLIC_PARENT] ? PDA : 'shared';
+  const addRecentDeck = (recentDeck) => {
+    const src = recentDeck[DECKID].length != 9 ? TWD : recentDeck[PUBLIC_PARENT] ? PDA : 'shared';
     let d = [...recentDecks];
-    const idx = recentDecks.map((v) => v[DECKID]).indexOf(deck[DECKID]);
+    const idx = recentDecks.map((v) => v[DECKID]).indexOf(recentDeck[DECKID]);
     if (idx !== -1) d.splice(idx, 1);
     d.unshift({
-      [DECKID]: deck[DECKID],
-      [NAME]: deck[NAME],
+      [DECKID]: recentDeck[DECKID],
+      [NAME]: recentDeck[NAME],
       [SRC]: src,
     });
     if (d.length > 10) d = d.slice(0, 10);
@@ -454,9 +454,9 @@ export const AppProvider = ({ children }) => {
     setLocalStorage(RECENT_DECKS, d);
   };
 
-  const updateRecentDecks = (decks) => {
-    setRecentDecks(decks);
-    setLocalStorage(RECENT_DECKS, decks);
+  const updateRecentDecks = (recentDecks) => {
+    setRecentDecks(recentDecks);
+    setLocalStorage(RECENT_DECKS, recentDecks);
   };
 
   useEffect(() => {
@@ -510,7 +510,12 @@ export const AppProvider = ({ children }) => {
 
   useEffect(() => {
     if (decks && inventoryMode) setupUsedInventory(decks);
-  }, [decks, decks?.[deck?.[DECKID]]?.[CRYPT], decks?.[deck?.[DECKID]]?.[LIBRARY], inventoryMode]);
+  }, [
+    decks,
+    deckStore[DECKS]?.[deckStore[DECK]?.[DECKID]]?.[CRYPT],
+    deckStore[DECKS]?.[deckStore[DECK]?.[DECKID]]?.[LIBRARY],
+    inventoryMode,
+  ]);
 
   return (
     <AppContext

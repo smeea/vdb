@@ -1,5 +1,4 @@
 import { useMemo } from 'react';
-import { useSnapshot } from 'valtio';
 import { usedStore, inventoryStore } from '@/context';
 import { getHardTotal, getSoftMax } from '@/utils';
 import { INVENTORY_TYPE, CRYPT, LIBRARY } from '@/constants';
@@ -28,19 +27,21 @@ const getMissing = (cards, inventoryType, used, inventory) => {
 };
 
 const useDeckMissing = (deck, isEmpty) => {
-  const { [CRYPT]: usedCrypt, [LIBRARY]: usedLibrary } = useSnapshot(usedStore);
-  const { [CRYPT]: inventoryCrypt, [LIBRARY]: inventoryLibrary } = useSnapshot(inventoryStore);
-
   const missingCrypt = useMemo(() => {
     if (isEmpty || !deck) return null;
 
-    return getMissing(deck[CRYPT], deck[INVENTORY_TYPE], usedCrypt, inventoryCrypt);
+    return getMissing(deck[CRYPT], deck[INVENTORY_TYPE], usedStore[CRYPT], inventoryStore[CRYPT]);
   }, [deck[CRYPT], deck[INVENTORY_TYPE], isEmpty]);
 
   const missingLibrary = useMemo(() => {
     if (isEmpty || !deck) return null;
 
-    return getMissing(deck[LIBRARY], deck[INVENTORY_TYPE], usedLibrary, inventoryLibrary);
+    return getMissing(
+      deck[LIBRARY],
+      deck[INVENTORY_TYPE],
+      usedStore[LIBRARY],
+      inventoryStore[LIBRARY],
+    );
   }, [deck[LIBRARY], deck[INVENTORY_TYPE], isEmpty]);
 
   return { missingCrypt, missingLibrary };

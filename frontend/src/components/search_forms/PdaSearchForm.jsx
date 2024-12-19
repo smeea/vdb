@@ -89,12 +89,12 @@ const PdaSearchForm = ({ error, setError }) => {
   };
 
   const handleDisciplinesChange = (name) => {
-    searchPdaForm[DISCIPLINES][name] = !pdaFormState[DISCIPLINES][name];
+    searchPdaForm[DISCIPLINES][name] = !searchPdaForm[DISCIPLINES][name];
   };
 
   const handleMultiChange = (event) => {
     const { name, value } = event.target;
-    searchPdaForm[name][value] = !pdaFormState[name][value];
+    searchPdaForm[name][value] = !searchPdaForm[name][value];
   };
 
   const handleMatchInventoryScalingChange = (e) => {
@@ -129,7 +129,7 @@ const PdaSearchForm = ({ error, setError }) => {
 
   const processSearch = () => {
     setError(false);
-    const sanitizedForm = sanitizeFormState(PDA, pdaFormState);
+    const sanitizedForm = sanitizeFormState(PDA, searchPdaForm);
     if (Object.entries(sanitizedForm).length === 0) {
       setError('EMPTY REQUEST');
       return;

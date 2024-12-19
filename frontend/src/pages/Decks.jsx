@@ -147,9 +147,9 @@ const Decks = () => {
   useEffect(() => {
     if (cryptCardBase && libraryCardBase) {
       if (deckid) {
-        if (!deck || deck[DECKID] != deckid) {
-          if (decks?.[deckid]) {
-            setDeck(decks[deckid]);
+        if (!deckStore[DECK] || deckStore[DECK][DECKID] != deckid) {
+          if (deckStore[DECKS]?.[deckid]) {
+            setDeck(deckStore[DECKS][deckid]);
           } else if (deckid.includes(':') && preconDecks) {
             const deckidFixed = deckid.replace('_', ' ');
             if (preconDecks[deckidFixed]) {
@@ -160,21 +160,21 @@ const Decks = () => {
           } else if (!hash) {
             getDeck();
           }
-        } else if (deck[IS_FROM_URL] && decks?.[deckid]) {
-          setDeck(decks[deckid]);
+        } else if (deckStore[DECK][IS_FROM_URL] && deckStore[DECKS]?.[deckid]) {
+          setDeck(deckStore[DECKS][deckid]);
         }
-      } else if (decks?.[lastDeckId]) {
+      } else if (deckStore[DECKS]?.[lastDeckId]) {
         navigate(`/decks/${lastDeckId}`);
       }
     }
   }, [deckid, loaderData, lastDeckId, decks, preconDecks, cryptCardBase, libraryCardBase]);
 
   useEffect(() => {
-    if (deck) {
+    if (deckStore[DECK]) {
       setError(false);
-      if (!deckid) navigate(`/decks/${deck[DECKID]}`);
+      if (!deckid) navigate(`/decks/${deckStore[DECK][DECKID]}`);
     }
-  }, [deck?.[DECKID]]);
+  }, [deckStore[DECK]?.[DECKID]]);
 
   const handleClose = () => {
     setShowMenuButtons(false);

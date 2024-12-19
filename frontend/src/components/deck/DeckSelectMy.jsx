@@ -11,6 +11,7 @@ import { byTimestamp, getRestrictions, getClan } from '@/utils';
 import {
   BANNED,
   CRYPT,
+  LIBRARY,
   DECKS,
   H,
   HAS_BANNED,
@@ -30,7 +31,6 @@ import {
 const DeckSelectMy = ({ deckid, handleSelect }) => {
   const { limitedMode, inventoryMode, isMobile, isWide } = useApp();
   const decks = useSnapshot(deckStore)[DECKS];
-  const limitedCards = useSnapshot(limitedStore);
 
   const options = useMemo(() => {
     return Object.keys(decks)
@@ -52,17 +52,12 @@ const DeckSelectMy = ({ deckid, handleSelect }) => {
 
         const clan = getClan(decks[i][CRYPT]);
 
-        let hasBanned;
-        let hasLimited;
-        let hasPlaytest;
-        let hasIllegalDate;
+        let restrictions;
         if (idx < 15 || diffDays < 90) {
-          ({
-            [HAS_BANNED]: hasBanned,
-            [HAS_LIMITED]: hasLimited,
-            [HAS_PLAYTEST]: hasPlaytest,
-            [HAS_ILLEGAL_DATE]: hasIllegalDate,
-          } = getRestrictions(decks[i], limitedMode ? limitedCards : null));
+          restrictions = getRestrictions(
+            decks[i],
+            limitedMode ? { [CRYPT]: limitedStore[CRYPT], [LIBRARY]: limitedStore[LIBRARY] } : null,
+          );
         }
 
         return {
@@ -88,10 +83,12 @@ const DeckSelectMy = ({ deckid, handleSelect }) => {
 
               <div className="flex items-center gap-2">
                 <div className="flex items-center justify-end gap-2">
-                  {hasBanned && <ResultLegalIcon type={BANNED} />}
-                  {limitedMode && hasLimited && <ResultLegalIcon />}
-                  {hasPlaytest && <ResultLegalIcon type={PLAYTEST} />}
-                  {hasIllegalDate && <ResultLegalIcon type={LEGAL} value={hasIllegalDate} />}
+                  {restrictions[HAS_BANNED] && <ResultLegalIcon type={BANNED} />}
+                  {restrictions[HAS_LIMITED] && limitedMode && <ResultLegalIcon />}
+                  {restrictions[HAS_PLAYTEST] && <ResultLegalIcon type={PLAYTEST} />}
+                  {restrictions[HAS_ILLEGAL_DATE] && (
+                    <ResultLegalIcon type={LEGAL} value={restrictions[HAS_ILLEGAL_DATE]} />
+                  )}
                 </div>
                 {inventoryMode && (
                   <div>

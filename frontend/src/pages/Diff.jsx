@@ -30,6 +30,8 @@ import {
   LIBRARY,
   MASTER,
   PUBLIC_PARENT,
+  DECK,
+  DECKS,
 } from '@/constants';
 
 const Diff = () => {
@@ -88,9 +90,9 @@ const Diff = () => {
 
   useEffect(() => {
     if (cryptCardBase && libraryCardBase && decks !== undefined) {
-      if (deckidFrom && deck?.[DECKID] != deckidFrom) {
-        if (decks[deckidFrom]) {
-          setDeck(decks[deckidFrom]);
+      if (deckidFrom && deckStore[DECK]?.[DECKID] != deckidFrom) {
+        if (deckStore[DECKS][deckidFrom]) {
+          setDeck(deckStore[DECKS][deckidFrom]);
         } else if (deckidFrom.includes(':')) {
           if (preconDecks?.[deckidFrom]) {
             setDeck(preconDecks[deckidFrom]);
@@ -106,10 +108,10 @@ const Diff = () => {
   }, [deckidFrom, decks, preconDecks, cryptCardBase, libraryCardBase]);
 
   useEffect(() => {
-    if (cryptCardBase && libraryCardBase && decks !== undefined) {
+    if (cryptCardBase && libraryCardBase && deckStore[DECKS] !== undefined) {
       if (deckidTo && deckTo?.[DECKID] != deckidTo) {
-        if (decks[deckidTo]) {
-          setDeckTo(decks[deckidTo]);
+        if (deckStore[DECKS][deckidTo]) {
+          setDeckTo(deckStore[DECKS][deckidTo]);
         } else if (deckidTo.includes(':')) {
           if (preconDecks?.[deckidTo]) {
             setDeckTo(preconDecks[deckidTo]);
@@ -125,8 +127,8 @@ const Diff = () => {
   }, [deckidTo, decks, preconDecks, cryptCardBase, libraryCardBase]);
 
   useEffect(() => {
-    if (deck) setErrorFrom(false);
-  }, [deck?.[DECKID]]);
+    if (deckStore[DECK]) setErrorFrom(false);
+  }, [deckStore[DECK]?.[DECKID]]);
 
   useEffect(() => {
     if (deckTo) setErrorTo(false);

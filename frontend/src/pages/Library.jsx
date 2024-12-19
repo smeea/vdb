@@ -40,8 +40,8 @@ const Library = () => {
   }, [isMobile, isDesktop, addMode, libraryResults]);
 
   const showToggleAddMode = useMemo(() => {
-    return deck && libraryResults && !isMobile && !isDesktop;
-  }, [deck?.[DECKID], isMobile, isDesktop, libraryResults]);
+    return deckStore[DECK] && libraryResults && !isMobile && !isDesktop;
+  }, [deckStore[DECK]?.[DECKID], isMobile, isDesktop, libraryResults]);
 
   const showResultCol = useMemo(() => !(isMobile && !libraryResults), [isMobile, libraryResults]);
 
@@ -52,10 +52,10 @@ const Library = () => {
   }, [query]);
 
   useEffect(() => {
-    if (!deck && decks !== undefined && lastDeckId) {
-      setDeck(decks[lastDeckId]);
+    if (!deckStore[DECK] && deckStore[DECKS] !== undefined && lastDeckId) {
+      setDeck(deckStore[DECKS][lastDeckId]);
     }
-  }, [deck?.[DECKID], decks, lastDeckId]);
+  }, [deckStore[DECK]?.[DECKID], decks, lastDeckId]);
 
   return (
     <div className="search-container mx-auto">

@@ -26,6 +26,7 @@
     "dotenv": "^16.4.7",
     "eslint-plugin-react": "^7.37.2",
     "eslint-plugin-react-hooks": "^5.1.0",
+    "eslint-plugin-valtio": "^0.8.0",
     "file-saver": "^2.0.5",
     "globals": "^15.13.0",
     "idb-keyval": "^6.2.1",

@@ -85,12 +85,12 @@ const AnalyzeSearchForm = () => {
   };
 
   const handleDisciplinesChange = (name) => {
-    searchAnalyzeForm[DISCIPLINES][name] = !analyzeFormState[DISCIPLINES][name];
+    searchAnalyzeForm[DISCIPLINES][name] = !searchAnalyzeForm[DISCIPLINES][name];
   };
 
   const handleMultiChange = (event) => {
     const { name, value } = event.target;
-    searchAnalyzeForm[name][value] = !analyzeFormState[name][value];
+    searchAnalyzeForm[name][value] = !searchAnalyzeForm[name][value];
   };
 
   const handleClear = () => {
@@ -101,7 +101,7 @@ const AnalyzeSearchForm = () => {
 
   const processSearch = () => {
     setError(false);
-    const sanitizedForm = sanitizeFormState(ANALYZE, analyzeFormState);
+    const sanitizedForm = sanitizeFormState(ANALYZE, searchAnalyzeForm);
 
     if (Object.entries(sanitizedForm).length === 0) {
       setError('EMPTY REQUEST');

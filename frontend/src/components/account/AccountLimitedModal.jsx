@@ -1,6 +1,5 @@
 import React, { useRef } from 'react';
 import dayjs from 'dayjs';
-import { useSnapshot } from 'valtio';
 import Download from '@icons/download.svg?react';
 import Upload from '@icons/upload.svg?react';
 import {
@@ -14,13 +13,6 @@ import { limitedFullStore } from '@/context';
 import { CRYPT, LIBRARY, BANNED, ALLOWED, SETS } from '@/constants';
 
 const AccountLimitedModal = ({ setShow, setFormat }) => {
-  const {
-    [ALLOWED]: allowed,
-    [BANNED]: banned,
-    [SETS]: limitedSets,
-  } = useSnapshot(limitedFullStore);
-  const { [CRYPT]: limitedAllowedCrypt, [LIBRARY]: limitedAllowedLibrary } = allowed;
-  const { [CRYPT]: limitedBannedCrypt, [LIBRARY]: limitedBannedLibrary } = banned;
   const fileInput = useRef();
 
   const handleFileInputClick = () => {
@@ -39,7 +31,7 @@ const AccountLimitedModal = ({ setShow, setFormat }) => {
 
   const minifyFormat = () => {
     const minified = {
-      [SETS]: limitedSets,
+      [SETS]: limitedFullStore[SETS],
       [ALLOWED]: {
         [CRYPT]: {},
         [LIBRARY]: {},
@@ -49,16 +41,16 @@ const AccountLimitedModal = ({ setShow, setFormat }) => {
         [LIBRARY]: {},
       },
     };
-    Object.keys(limitedAllowedCrypt).forEach((c) => {
+    Object.keys(limitedFullStore[ALLOWED][CRYPT]).forEach((c) => {
       minified[ALLOWED][CRYPT][c] = true;
     });
-    Object.keys(limitedAllowedLibrary).forEach((c) => {
+    Object.keys(limitedFullStore[ALLOWED][LIBRARY]).forEach((c) => {
       minified[ALLOWED][LIBRARY][c] = true;
     });
-    Object.keys(limitedBannedCrypt).forEach((c) => {
+    Object.keys(limitedFullStore[BANNED][CRYPT]).forEach((c) => {
       minified[BANNED][CRYPT][c] = true;
     });
-    Object.keys(limitedBannedLibrary).forEach((c) => {
+    Object.keys(limitedFullStore[BANNED][LIBRARY]).forEach((c) => {
       minified[BANNED][LIBRARY][c] = true;
     });
     return minified;

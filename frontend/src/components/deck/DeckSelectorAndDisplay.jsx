@@ -13,16 +13,16 @@ import {
 } from '@/components';
 import { getRestrictions } from '@/utils';
 import { setDeck, deckStore, useApp } from '@/context';
-import { DECKID, MASTER, BRANCHES, IS_PUBLIC, IS_AUTHOR } from '@/constants';
+import { DECKS, DECKID, MASTER, BRANCHES, IS_PUBLIC, IS_AUTHOR } from '@/constants';
 
 const DeckSelectorAndDisplay = () => {
   const { playtestMode, isDesktop, addMode, toggleAddMode } = useApp();
-  const { deck, decks } = useSnapshot(deckStore);
+  const { deck } = useSnapshot(deckStore);
   const isBranches = deck ? deck[MASTER] || (deck[BRANCHES] && deck[BRANCHES].length > 0) : null;
   const { hasPlaytest } = getRestrictions(deck);
 
   const handleSelect = (e) => {
-    setDeck(decks[e.value]);
+    setDeck(deckStore[DECKS][e.value]);
   };
 
   return (
