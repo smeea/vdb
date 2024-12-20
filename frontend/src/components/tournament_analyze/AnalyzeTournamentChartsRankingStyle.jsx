@@ -65,7 +65,7 @@ const AnalyzeTournamentChartsRankingStyle = ({ info, decks, searchResults }) => 
         .forEach((t) => {
           d[t][position] = {
             ...def,
-            [VALUE]: 0.55,
+            [VALUE]: 0.4,
           };
         });
     });
