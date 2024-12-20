@@ -1,5 +1,15 @@
 [
   {
+    "version": "2024-12-20",
+    "changes": [
+      "Add Finnish NC 2024 decks (https://vdb.im/tda/11739)",
+      "Add Portuguese NC 2024 decks (https://vdb.im/tda/11487)",
+      "Add TDA (Tournament Deck Archive, previously called Tournament Analyze) link to navigation panel for easier access and discovery. Thanks to Rune and everybody who submit and collect the decks for their exceptional work!",
+      "Update rulings",
+      "Many fixes and small improvements"
+    ]
+  },
+  {
     "version": "2024-12-16",
     "changes": [
       "Add legacy images for Tremere Antitribu and Ventrue Antitribu",
@@ -23,8 +33,8 @@
   {
     "version": "2024-12-07",
     "changes": [
-      "Add EC2024 Day 2 event (https://vdb.im/tournament_analyze/11669)",
-      "Add VTES 30th Anniversary event (https://vdb.im/tournament_analyze/11670)",
+      "Add EC2024 Day 2 event (https://vdb.im/tda/11669)",
+      "Add VTES 30th Anniversary event (https://vdb.im/tda/11670)",
       "Hot fixes"
     ]
   },
@@ -45,7 +55,7 @@
   {
     "version": "2024-11-26",
     "changes": [
-      "Add EC2024 LCQ event (https://vdb.im/tournament_analyze/11667)",
+      "Add EC2024 LCQ event (https://vdb.im/tda/11667)",
       "Add Gangrel legacy images",
       "Small other fixes and improvements"
     ]
@@ -53,7 +63,7 @@
   {
     "version": "2024-11-19",
     "changes": [
-      "Add Week of Nightmare 1-3 events (https://vdb.im/tournament_analyze/11663, https://vdb.im/tournament_analyze/11664, https://vdb.im/tournament_analyze/11665)",
+      "Add Week of Nightmare 1-3 events (https://vdb.im/tda/11663, https://vdb.im/tda/11664, https://vdb.im/tda/11665)",
       "Fix more bugs of the previous update"
     ]
   },
@@ -66,7 +76,7 @@
   {
     "version": "2024-11-17",
     "changes": [
-      "Add Garou Rim event in Joensuu, Finland (https://vdb.im/tournament_analyze/11707)",
+      "Add Garou Rim event in Joensuu, Finland (https://vdb.im/tda/11707)",
       "Add Brujah and Lasombra legacy images",
       "Add Conviction cost to card line in results (deck, search). And no, Conviction cost filter will not come to Library (won't waste limited screen space for this marginal feature).",
       "Add Sect indicator to crypt cards line, and Sect/Title to crypt card popup",
@@ -127,7 +137,7 @@
     "version": "2024-10-03",
     "changes": [
       "Add Lasombra preconstructed deck",
-      "Add First 30th event in Vac, Hungary (https://vdb.im/tournament_analyze/11730)",
+      "Add First 30th event in Vac, Hungary (https://vdb.im/tda/11730)",
       "Add card 'aka' name to card popup",
       "Update rulings",
       "Small other fixes and improvements"
@@ -137,7 +147,7 @@
     "version": "2024-09-24",
     "changes": [
       "Add legacy card images for Banu Haqim, Ministry, Giovanni, True Brujah",
-      "Add German NC (https://vdb.im/tournament_analyze/11398) and Atlantic Cup (https://vdb.im/tournament_analyze/11184)",
+      "Add German NC (https://vdb.im/tda/11398) and Atlantic Cup (https://vdb.im/tda/11184)",
       "Fix inventory crypt to have small delay after q-ty change before it is re-sorted when sorting by q-ty",
       "Fix switching from horizontal to vertical screen in Chrome on mobile",
       "Fix PDF proxy from scans",
@@ -154,7 +164,7 @@
   {
     "version": "2024-09-08",
     "changes": [
-      "Add Rise of New Bloods in Melbourne, Australia event to Tournament Analyze - https://vdb.im/tournament_analyze/11259",
+      "Add Rise of New Bloods in Melbourne, Australia event to Tournament Analyze - https://vdb.im/tda/11259",
       "Fix export to JOL for non-ascii card names",
       "Small other fixes and improvements"
     ]
@@ -163,7 +173,7 @@
     "version": "2024-08-26",
     "changes": [
       "Add Blood Brother, Caitiff, Daughter of Cacophony, Gargoyle, Nagaraja, Ravnos to Legacy Crypt images",
-      "Add Ropecon 2024 event in Helsinki, Finland to Tournament Analyze - https://vdb.im/tournament_analyze/11480",
+      "Add Ropecon 2024 event in Helsinki, Finland to Tournament Analyze - https://vdb.im/tda/11480",
       "Add 'only' modifier to discipline search in Library to only shows card exactly matching selected disciplines (will exclude double-triple disciplines requirements)",
       "Add copy text changes button in deck Review",
       "Add Maleficia/Striga/Flight to TWD/PDA discipline search",
@@ -280,7 +290,7 @@
   {
     "version": "2024-03-29",
     "changes": [
-      "Add Salut Brie! event in Norwich, UK to Tournament Analyze - https://vdb.im/tournament_analyze/11196",
+      "Add Salut Brie! event in Norwich, UK to Tournament Analyze - https://vdb.im/tda/11196",
       "Add overall playtest reports view/export for coordinators",
       "Small other fixes and improvements"
     ]
@@ -328,7 +338,7 @@
     "version": "2024-02-18",
     "changes": [
       "Performance improvements for users with big inventory",
-      "Add White Turtle event in Vac, Hungary to Tournament Analyze - https://vdb.im/tournament_analyze/11192",
+      "Add White Turtle event in Vac, Hungary to Tournament Analyze - https://vdb.im/tda/11192",
       "Small other fixes and improvements"
     ]
   },
@@ -401,7 +411,7 @@
   {
     "version": "2023-12-10",
     "changes": [
-      "Add Finnish National 2023 to Tournament Analyze. Check it out: https://vdb.im/tournament_analyze/11023, and if you like it help your event organizer to collect deck lists! Many thanks to Rune (and everybody else involved) for provided data!",
+      "Add Finnish National 2023 to Tournament Analyze. Check it out: https://vdb.im/tda/11023, and if you like it help your event organizer to collect deck lists! Many thanks to Rune (and everybody else involved) for provided data!",
       "Improvements to Tournament Analyzer",
       "Minor color updates in day/light theme",
       "Small other fixes and improvements"
@@ -549,7 +559,7 @@
   {
     "version": "2023-07-02",
     "changes": [
-      "Add Analyze Tournament Feature (https://vdb.im/tournament_analyze or MORE button in TWD). It allows browsing decks (using standard TWD filters from VDB, you probable used to) of particular tournament (if we have the required data collected - now only ONE tournament is available but hopefully more come in the future). More details at https://vdb.im/documentation#analyze. Not optimized for phone screen yet.",
+      "Add Analyze Tournament Feature (https://vdb.im/tda or MORE button in TWD). It allows browsing decks (using standard TWD filters from VDB, you probable used to) of particular tournament (if we have the required data collected - now only ONE tournament is available but hopefully more come in the future). More details at https://vdb.im/documentation#analyze. Not optimized for phone screen yet.",
       "Add more options to card types TWD filter",
       "Fix delete deck from inventory",
       "Small other fixes"
