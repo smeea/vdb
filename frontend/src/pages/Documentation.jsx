@@ -417,8 +417,8 @@ const Documentation = () => {
         <div className="flex flex-col gap-1">
           <Title id="analyze">ANALYZE TOURNAMENT</Title>
           <div>
-            This feature available at <Link to="/tournament_analyze">Tournament Analyze</Link> lets
-            you browse decks of particular tournament using standard TWD search filters.
+            This feature available at <Link to="/tda">Tournament Analyze</Link> lets you browse
+            decks of particular tournament using standard TWD search filters.
           </div>
 
           <div>

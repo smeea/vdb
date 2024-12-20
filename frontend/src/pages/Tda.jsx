@@ -234,7 +234,7 @@ const TournamentAnalyze = () => {
     setAnalyzeInfo();
     setAnalyzeDecks();
     setAnalyzeResults();
-    navigate('/tournament_analyze');
+    navigate('/tda');
   };
 
   useEffect(() => {

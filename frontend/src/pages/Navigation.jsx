@@ -143,7 +143,7 @@ const Navigation = () => {
             </>
           )}
           <Link to={pdaUrl} text="PDA" />
-          <Link to="/tournament_analyze" text="TDA" />
+          <Link to="/tda" text="TDA" />
           <Link to={twdUrl} text="TWD" />
           <Link to="/inventory" text={isMobile ? 'INV' : 'Inventory'} />
           <Link to={decksUrl} text={isMobile ? 'DKS' : 'Decks'} />

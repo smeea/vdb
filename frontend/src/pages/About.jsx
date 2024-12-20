@@ -52,7 +52,7 @@ const About = () => {
                 <Link to="/twd">Tournament Winning Decks</Link>
               </li>
               <li>
-                <Link to="/tournament_analyze">Tournament Decks Analyzer</Link>
+                <Link to="/tda">Tournament Decks Archive</Link>
               </li>
               <li>
                 <Link to="/pda">Public Deck Archive</Link>

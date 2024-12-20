@@ -19,7 +19,7 @@ const AnalyzeLoadPreparedButtons = ({ setTempDecks, setTempArchon, setError }) =
     setAnalyzeInfo();
     setAnalyzeDecks();
     setAnalyzeResults();
-    navigate(`/tournament_analyze/${id}`);
+    navigate(`/tda/${id}`);
   };
 
   return (

@@ -20,7 +20,7 @@ const Playtest = lazy(() => import('./pages/Playtest.jsx'));
 const PlaytestManage = lazy(() => import('./components/playtest/PlaytestManage.jsx'));
 const PlaytestReportsAll = lazy(() => import('./components/playtest/PlaytestReportsAll.jsx'));
 const Review = lazy(() => import('./pages/Review.jsx'));
-const TournamentAnalyze = lazy(() => import('./pages/TournamentAnalyze.jsx'));
+const Tda = lazy(() => import('./pages/Tda.jsx'));
 const Twd = lazy(() => import('./pages/Twd.jsx'));
 const TwdCardsHistory = lazy(() => import('./pages/TwdCardsHistory.jsx'));
 const TwdCheck = lazy(() => import('./pages/TwdCheck.jsx'));
@@ -187,10 +187,10 @@ const router = createBrowserRouter(
         }
       />
       <Route
-        path="tournament_analyze"
+        path="tda"
         element={
           <Suspense fallback={<div />}>
-            <TournamentAnalyze />
+            <Tda />
           </Suspense>
         }
       >
@@ -198,7 +198,7 @@ const router = createBrowserRouter(
           path={`:${EVENT}`}
           element={
             <Suspense fallback={<div />}>
-              <TournamentAnalyze />
+              <Tda />
             </Suspense>
           }
         />
