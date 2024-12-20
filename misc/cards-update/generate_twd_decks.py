@@ -75,7 +75,7 @@ def generate_twd(i):
             crypt_disciplines.add(d)
 
     for clan, q in clans.items():
-        if q / total_crypt_ex_ac > 0.65:
+        if q / total_crypt_ex_ac > 0.5:
             deck["clan"] = clan
 
     if len(clans) <= 1 and "monoclan" not in deck["traits"]:
