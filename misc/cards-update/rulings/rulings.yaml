@@ -619,8 +619,6 @@
   - The effect to burn a hostage counter can be done only once per turn. [ANK 20200729] [RBK wording-templates]
 100307|Catatonic Fear:
   - '[PRE] Damage is done by the vampire (not environmental). [RTR 19970630] [LSJ 19990723]'
-  - '[PRE] The damage is inflicted after the end of combat. [RTR 19970630]'
-  - '[PRE] If the combat continues or a new combat begins, no damage is done. [RTR 20020501]'
   - '[PRE] If the strike is dodged, no damage is done. [LSJ 19980526] [RTR 20041202] [LSJ 20070124]'
   - "[PRE] Is a damage dealing strike and can be modified by effects like {Target Vitals} or {Dam the Heart's River}.  [ANK\
     \ 20170111] [LSJ 20071011]"
@@ -872,8 +870,6 @@
   - An action requiring a Baron (eg. {Open War}) is an action requiring an Anarch. [LSJ 20080603] [LSJ 20050128]
 100449|Crocodile Temple, The:
   - Cannot be used if the action ousted you. [ANK 20180326]
-100450|Crocodile's Tongue:
-  - The canceled block isn't successful or unsuccessful. It is simply canceled. [LSJ 20110419]
 100474|Crusader Sword, The:
   - Can be equipped by a minion who cannot use it. [LSJ 20030607]
 100475|Cry Wolf:
@@ -1492,8 +1488,6 @@
   - '[PRO] "continue as if unblocked" moves the action card from the ash heap (where it went when the action was blocked)
     to limbo (where it should be if the action is not blocked). If the action card is not in the ash heap, then the action
     cannot be continued. [LSJ 20070808-1]'
-  - '[PRO] If the combat continues or a new combat begins, the "After combat ends" effect cannot be used. [LSJ 19980109] [RTR
-    20020501] [LSJ 20031123]'
 100778|Foul Blood:
   - A hunt is not successful if no blood is gained, even if the hunt action is still successful. [LSJ 20050720-2]
 100784|Fractured Armament:
@@ -3781,7 +3775,7 @@
 102044|Truth of a Thousand Lies:
   - '[SER] Cards and effects that can be played "after resolution" (and only them) can be played after it. [ANK 20190425]'
 102047|Tunnel Runner:
-  - Damage done from stealing blood to the Runner is environmental. [RTR 19970630]
+  - Damage done from stealing blood to the Runner is environmental. [RTR 19970630] [LSJ19971028]
   - 'Damage done from stealing blood is done at the same time strike damage is done: a single instantaneous prevention card
     (eg. {Soak}) can prevent both. [ANK 20200517-2]'
 102051|Twisting the Knife:
@@ -4138,6 +4132,9 @@
     [LSJ 20010814-2]'
 102263|Unleashing the Bestial Soul:
   - An opponent can play a reaction to wake as the card is played, before its effects apply. [ANK 20231028]
+102280|Shadow Cast:
+  - If the set of Methuselahs includes the controller of the vampire this card is on, the controller of the vampire is not
+    considered as part of that set of Methuselahs. [LSJ 20100527]
 200011|Adana de Sforza:
   - Card with multiple types (eg. Combat/Action Modifier) are considered of the type they are played as, not both. [PIB 20150924-2]
 200017|Aeron:
@@ -4164,8 +4161,6 @@
   - If she locks a Toreador who was attempting to block, then that block will fail. [TOM 19951007] [LSJ 19991025]
 200063|Alvaro, The Scion of Angelica:
   - He gains blood if he casts no vote, even if he has lost his title or is in torpor. [LSJ 20010526]
-200068|Ambrogino Giovanni:
-  - Keeps his title and votes if he changes sects. [LSJ 20010714]
 200070|Ambrosio Luis Monçada, Plenipotentiary:
   - Actions from minions of the same controller targeting him are undirected, so they are not affected by his ability. [LSJ
     20030214-2]
@@ -4175,8 +4170,6 @@
   - If multiple combats occur in the same action, the opposing minion burns 1 blood or life each time the combat ends. [ANK
     20200420-1]
   - In the case of {Free Fight}, the last opposing minion burns the blood. [ANK 20200420-1]
-200074|Amisa:
-  - Keeps her title and votes if she changes sects. [LSJ 20010714]
 200076|Anarch Convert:
   - His "as he enters play" ability can be used before he enters contest if there is another one in play. This is not self-contesting.
     [LSJ 20080526] [RTR 20180303] [ANK 20211214]
@@ -4207,7 +4200,6 @@
 200103|Annabelle Triabell:
   - Her ability applies to all Toreadors, not just the ones in play at the time the action resolved. [LSJ 20030811]
 200104|Annazir:
-  - Keeps his title and votes if he changes sects. [LSJ 20010714]
   - He cannot perform the action provided by his ability twice in the same turn. [ANK 20220615]
   - The action provided by his ability is directed against the Methuselah controlling the equipment or location, not the minion
     it's on. [LSJ 20090324]"
@@ -4228,7 +4220,6 @@
 200136|Arishat:
   - Her ability applies to Priscus votes and ballots. [LSJ 19971001]
   - Her ability to force a vampire to abstain can cancel the votes and ballots of the vampire. [LSJ 20100311]
-  - Keeps her title and votes if she changes sects. [LSJ 20010714]
 200138|Armin Brenner:
   - His ability is applied after the referendum effects are applied, including any oust and pool gained from it. [LSJ 20090115-2]
 200145|Asguresh:
@@ -4243,14 +4234,9 @@
   - Her ability triggers when votes are tallied. [RTR 20001020]
   - Tremere who have not yet voted can choose to abstain. [RTR 19941006]
   - If her votes are canceled, the other Tremere votes are unaffected by her ability. [RTR 19960530]
-200149|Augustus Giovanni:
-  - Keeps his title and votes if he changes sects. [LSJ 20010714]
-200155|Aziz, Dammar of Istanbul:
-  - Keeps his title and votes if he changes sects. [LSJ 20010714]
 200157|Baba Yaga, the Iron Hag:
   - Her ability applies when she recruits or employs a retainer or ally in a non-normal way (eg. {Pack Alpha}). [PIB 20150105-2]
 200167|Baron, The:
-  - Keeps his title and votes if he changes sects. [LSJ 20010714]
   - Cannot play cards requiring a Baron. [PIB 20151116]
 200168|Baron Dieudonne:
   - Cannot play cards requiring a Baron. [PIB 20151116]
@@ -4290,7 +4276,6 @@
 200245|Carlotta Giovanni:
   - The card being retrieved is announced when the action is declared. [LSJ 19970922]
 200247|Carmine Giovanni:
-  - Keeps her title and votes if she changes sects. [LSJ 20010714]
   - Her additional life ability applies and her stealth ability can be used when she is in torpor. [LSJ 20011022] [LSJ 20100902-2]
 200249|Carolina Vález:
   - She is immune to unlock damage from allies like {Abyssal Hunter} and {Wendell Delburton} [ANK 20210228]
@@ -4303,8 +4288,6 @@
   - His ability can be used more than once each turn. [RTR 20180511]
 200314|Dancin' Dana:
   - '[MERGED] Is Anarch. If the base version was the one in play, it changes sect as it is merged. [ANK 20180524]'
-200316|Danielle Diron:
-  - Keeps her title and votes if she changes sects. [LSJ 20010714]
 200319|Danylo:
   - Cannot fetch equipments that are locations while in play (locquipments). [LSJ 20080114] [ANK 20221210]
 200327|De Sade:
@@ -4320,8 +4303,6 @@
   - If a location costs X blood, it would take X vandal counters to burn it. [LSJ 20001118]
 200360|Don Caravelli:
   - His ability to give a press can only be used during the press step. [PIB 20150121]
-200363|Don Michael Antonio Giovanni:
-  - Keeps his title and votes if he changes sects. [LSJ 20010714]
 200364|Dónal O'Connor:
   - An empty blocking vampire may still block and will try and fail to burn a blood if the block is successful. [TOM 19951215-1]
   - The blocking vampire burns 1 blood immediately upon successfully blocking Donal, regardless of whether combat begins.
@@ -4349,6 +4330,8 @@
   - His ability cannot be used if the action is blocked. [LSJ 20041022]
 200417|Ellison Humboldt:
   - Can use his ability only once per referendum. [ANK 20180307-2] [RBK wording-templates]
+200423|Enid Blount:
+  - '{Edith Blount} may burn a blood to give Enid stealth multiple times each action. [LSJ 20040617]'
 200424|Enkidu, The Noah:
   - He cannot attempt an action to equip nor strike to steal an equipment. [LSJ 20050315] [LSJ 20010210]
   - He can equip with an equipment that is a location when in play. [LSJ 20050315]
@@ -4368,8 +4351,6 @@
   - Her ability is undirect if you control the target, directed to the controller of the target otherwise. [PIB 20121210]
 200448|Eze, The Demon Prince:
   - His unlock ability is mandatory, it is applied even if the action unlocks him already. [LSJ 20051211]
-200450|Ezmerelda:
-  - Keeps her title and votes if she changes sects. [LSJ 20010714]
 200452|Fabrizia Contreraz:
   - She only gets her votes if your prey controls a ready Camarilla vampire. [PIB 20150713]
 200459|Fatima al-Faqadi:
@@ -4410,8 +4391,6 @@
     wins out. [LSJ 20070320-1]
   - 'The "do not replace" effect effectively reduces the hand size: additional draws (eg. {Ashur Tablets}) require a discard.
     [ANK 20180318] [ANK 20231229]'
-200578|Hazimel:
-  - Keeps his title and votes if he changes sects. [LSJ 20010714]
 200582|Hector Trelane:
   - The opponent gains pool if he's burned because of a bloodhunt during combat (eg. after {Amaranth}). [LSJ 20091210]
 200585|Helen Fairchild:
@@ -4448,8 +4427,6 @@
     20011217]
 200625|Igo the Hungry:
   - His ability only applies to the default rulebook hunt action (eg. he gets {Loki's Gift} +1 stealth). [PIB 20150820-2]
-200630|Imanna:
-  - Keeps her title and votes if she changes sects. [LSJ 20010714]
 200632|Inez "Nurse216" Villagrande:
   - Her "as she enters play" ability can be used before she enters contest if there is another one in play. [LSJ 20080526]
 200634|Ingrid Rossler:
@@ -4462,8 +4439,6 @@
   - If his ability is used to start a new combat, effects that end combat and then do something else after combat (include
     continuing the action as if unblocked) will be lost, except for unlock effects. [LSJ 19980109] [RTR 20020501]
   - His ability cannot be used to start a new combat if there is already a pending combat queued. [RTR 20020501]
-200668|Jamal:
-  - Keeps his title and votes if he changes sects. [LSJ 20010714]
 200670|Jan Pieterzoon:
   - '[MERGED] Is Independent. If the base version was the one in play, it changes sect as it is merged. If it had an anarch
     token, it is burned. [ANK 20180524]'
@@ -4477,6 +4452,8 @@
     not kick in. [ANK 20200709]
 200703|Jibade el-Bahrawi:
   - Gets +1 stealth when using {The Summoning} at superior [PRE]. [LSJ 20091207]
+200704|Jibade el-Bahrawi:
+  - Jihade's special can be used multiple times each combat. [LSJ 20040617]
 200705|Jimmy Dunn:
   - Can be influenced out if you already control one. [RTR 20180303]
   - If a second Jimmy Dunn is brought out during an action, and the first Jimmy (if he has Vicissitude) plays {Reform Body},
@@ -4488,9 +4465,10 @@
     burn himself. [LSJ 19991110]
 200720|Josef von Bauren:
   - His ability can be used multiple times if one has multiple discard phase actions. [ANK 20190725]
+200736|Julio Martinez:
+  - His special can be used multiple times each action [LSJ 20040617]
 200742|Kahina the Sorceress:
   - Her ability inflicts a total of one damage to a minion with one or more corruption counters. [LSJ 20030820]
-  - Keeps her title and votes if she changes sects. [LSJ 20010714]
 200753|Karen Suadela:
   - She keeps her title if {Fall of the Camarilla} is played. She can be chosen for {Recalled to the Founder}, but does not
     burn. Allies still benefit from {The Unmasking} intercept when trying to block her. [LSJ 20081120-2]
@@ -4499,25 +4477,18 @@
 200758|Karsh:
   - '[MERGED] Imperator is a unique Camarilla title worth 3 votes, it is the same as the one granted by {Imperator}. [ANK
     20190407]'
-200759|Kashan:
-  - Keeps his title and votes if he changes sects. [LSJ 20010714]
 200763|Kateline Nadasdy:
   - Her ability applies to Priscus votes and ballots. [LSJ 19971001]
   - Her ability to force a vampire to abstain can cancel the votes and ballots of the vampire. [LSJ 20100311]
 200770|Kemintiri:
-  - '[MERGED] Keeps her title and votes if she changes sects. [LSJ 20010714]'
   - '[MERGED] When playing a card requiring Camarilla, Ventrue and/or Justicar, she is treated as a such for all effects of
     the card, and only them, including duration effects. She is not treated as such for effects the card has from being in
     play. [ANK 20190228] [LSJ 20101013]'
-  - '[MERGED] She can play a card requiring Camarilla and/or Justicar even if the sect does not exist anymore (eg. {Fall of
-    the Camarilla}). [LSJ 20050124] [ANK 20230503]'
   - "[MERGED] If she plays a political action requiring a Justicar, she is not seen as such by other cards or effects during\
     \ the referendum (eg. if another vampire plays {Closed Session} and she's not Camarilla she will not be able to vote.\
     \ If she plays it, she can vote). [LSJ 20050128-2] [ANK 20221011-4] [RTR 20070707]"
   - '[MERGED] Does not enable you to play master cards, it only enables her to play certain minion cards. [LSJ 20050721]'
   - '[MERGED] When considered a Justicar, she is also implicitly considered Camarilla. [LSJ 20050128]'
-200773|Kephamos, High Priest of Marrakech:
-  - Keeps his title and votes if he changes sects. [LSJ 20010714]
 200775|Kestrelle Hayes:
   - Gets +1 stealth on actions directed at multiple Methuselahs if one or more of the targets control no ready Sabbat vampire.
     [PIB 20150526] [RTR 20080808]
@@ -4532,11 +4503,8 @@
   - If other hunt actions are granted, she may choose from among those options. [LSJ 20060306]
   - She cannot steal more blood than the target has when using a special hunt ability. [LSJ 20100915]
   - Cannot choose to target a vampire when using another non-standard hunt action (eg. {Abactor}). [LSJ 20090606]
-200804|Lady Constancia:
-  - Keeps her title and votes if she changes sects. [LSJ 20010714]
 200811|Lambach:
   - The provided action is an "equip action" [TOM 19960130]
-  - Keeps his title and votes if he changes sects. [LSJ 20010714]
   - '[MERGED] Is Independent. If the base version was the one in play, it changes sect as it is merged. If it had an anarch
     token, it is burned. [ANK 20180524]'
 200819|Lázár Dobrescu:
@@ -4587,16 +4555,11 @@
     itself does not (eg. {Jann Berger} pays 1 blood for a {Thrown Gate} played for the maneuver, but zero if he plays it when
     choosing his strike). [LSJ 20090529]
 200885|Luna Giovanni:
-  - Keeps her title and votes if she changes sects. [LSJ 20010714]
   - Her ability does not apply to the political action card played for a current action (it is in limbo). [LSJ 20070927]
 200890|Lutz von Hohenzollern:
   - His ability is applied after the referendum effects are applied, including any oust and pool gained from it. [ANK 20220808]
   - His ability is not applied if his controller is ousted by the referendum effects (reversal of previous rulings). [ANK
     20220808]
-200891|Lydia, Grand Praetor:
-  - Keeps her title and votes if she changes sects. [LSJ 20010714]
-200912|Marcia Felicia Licinia:
-  - Keeps her title and votes if she changes sects. [LSJ 20010714]
 200913|Marciana Giovanni, Investigator:
   - She can lock to grant herself the ability to burn blood for intercept. She would need a wake or unlock effect to attempt
     to block. [LSJ 20100527]
@@ -4628,10 +4591,10 @@
     some other way, it cannot be retrieved by her special. [LSJ 20041119]
   - A card canceled as it is played is still considered played, she can retrieve it. [LSJ 19980212] [ANK 20190701]
   - She can retrieve {Psyche!} (reversal of previous rulings). [PIB 20111208]
+  - Her special can only be used once each combat [LSJ 20040617]
 200945|Marty Lechtansi:
   - His ability to get a press can only be used during the press step. [PIB 20150121]
 200955|Mata Hari:
-  - Keeps her title and votes if she changes sects. [LSJ 20010714]
   - When playing a card requiring a sect and/or a clan, she is treated as a such for all effects of the card, and only them,
     including duration effects. She is not treated as such for effects the card has from being in play. [RTR 20070707] [LSJ
     20070708] [ANK 20190228]
@@ -4650,8 +4613,6 @@
     for an equipment or {Piper} or {The Summoning} for an ally. [LSJ 20050119]
 200960|Matteus, Flesh Sculptor:
   - Can use his ability to get intercept multiple times during the same action. [ANK 20180307-2]
-200964|Maureen, Dark Priestess:
-  - Keeps her title and votes if she changes sects. [LSJ 20010714]
 200966|Maxwell:
   - Cannot use his ability to become a Prince if he has changed sect and is no longer Camarilla. [LSJ 20030202]
 200976|Menele:
@@ -4671,7 +4632,6 @@
 200995|Miriam Benyona:
   - The cost to rescue from torpor is reduced even if paid by the rescuee. This is not optional. [LSJ 20020304-2]
 201006|Montano:
-  - Keeps his title and votes if he changes sects. [LSJ 20010714]
   - His ability to provide stealth can be used while locked or in torpor. [ANK 20220705] [LSJ 20100705]
 201017|Muaziz, Archon of Ulugh Beg:
   - Her ability does not apply to the {Blood Hunt} card. [TOM 19960604]
@@ -4687,12 +4647,7 @@
   - If the block succeeds and the blocking minion gets a corruption counter (eg. {Venenation}), Nakhthorheb is still blocked.
     [LSJ 20071021]
 201043|Neferu:
-  - Keeps her title and votes if she changes sects. [LSJ 20010714]
   - Cannot use her ability to force an abstaining vampire to vote. [ANK 20190731]
-201044|Nehemiah:
-  - Keeps his title and votes if he changes sects. [LSJ 20010714]
-201045|Nehsi:
-  - Keeps his title and votes if he changes sects. [LSJ 20010714]
 201048|Nergal:
   - If he plays a action he can only pay for with his ability, he has to use his ability when the action resolves (even if
     a {Deflection} was played on a bleed). [LSJ 20091021-2]
@@ -4774,8 +4729,6 @@
     after combat). [LSJ 20090622-2]
 201148|Rachel Brandywine:
   - When using her ability, make all discards and redraws first, then shuffle the discards back into the library. [RTR 20030519]
-201160|Randall:
-  - Keeps his title and votes if he changes sects. [LSJ 20010714]
 201164|Raphael Catarari:
   - 'Unlocking is the first thing to do in the unlock phase: if he is odd, gaining one blood later in the unlock phase will
     not let him "unlock as normal" this turn. [LSJ 20060911]'
@@ -4783,8 +4736,6 @@
   - His ability is activated after he equips with the equipment. He cannot use his ability to move the {Eye of Hazimel}, or
     an equipment that is a location while in play. [LSJ 20020211] [LSJ 20060221]
   - You may move all or none the equipment he gets to just one minion, but you cannot split. [LSJ 20050217] [LSJ 20090622]
-201175|Regina Giovanni, The Right Hand of Augustus:
-  - Keeps her title and votes if she changes sects. [LSJ 20010714]
 201181|Reverend Adams:
   - '[MERGED] Is Camarilla. If the base version was the one in play, it changes sect as it is merged. If it had an anarch
     token, it is burned. [ANK 20180524]'
@@ -4809,7 +4760,6 @@
 201245|Sascha Vykos, The Angel of Caine:
   - When using his ability to draw, discard afterwards. [ANK 20190707]
 201253|Scout Youngwood:
-  - Keeps her title and votes if she changes sects. [LSJ 20010714]
   - Card with multiple types (eg. Reaction/Action Modifier) are considered of the type they are played as, not both. [PIB
     20150924-2]
 201257|Sébastien Goulet:
@@ -4825,7 +4775,6 @@
   - His "as he enters play" ability can be used before he enters contest if there is another one in play. [LSJ 20080526]
 201282|Shemti:
   - The damage inflicted by his ability is environmental. [RTR 19970630]
-  - Keeps his title and votes if he changes sects. [LSJ 20010714]
   - The acting player decides the order of (and can play other) "after resolving the action" effects. [ANK 20180206]
 201299|Smallpox Griet:
   - Damages from pox counters are environmental. [RTR 19970630]
@@ -4844,10 +4793,7 @@
   - '[MERGED] His ability to force a vampire to abstain can cancel the votes and ballots of the vampire. [LSJ 20100311]'
   - '[MERGED] Is Anarch. If the base version was the one in play, it changes sect as it is merged. [ANK 20180524]'
   - '[MERGED] Can use his ability while locked. [ANK 20220705]'
-201327|Sutekh, The Dark God:
-  - Keeps his title and votes if he changes sects. [LSJ 20010714]
 201331|Synesios:
-  - Keeps his title and votes if he changes sects. [LSJ 20010714]
   - 'His ability do not allow his owner to play more than one Master: Out of Turn between two master phases. [ANK 20191004]'
 201332|Synner-G:
   - His ability applies when equipping in a non-normal way (eg. {Pier 13, Port of Baltimore}). [PIB 20150105-2]
@@ -4881,10 +4827,6 @@
 201363|Theo Bell:
   - '[MERGED] Is Independent. If the base version was the one in play, it changes sect as it is merged. If it had an anarch
     token, it is burned. [ANK 20180524]'
-201365|Thetmes, Caliph of Alamut:
-  - Keeps his title and votes if he changes sects. [LSJ 20010714]
-201370|Thucimia:
-  - Keeps her title and votes if she changes sects. [LSJ 20010714]
 201376|Toby:
   - His ability can be used while locked or in torpor. [ANK 20220705] [LSJ 20100705]
 201382|Topaz:
@@ -4906,8 +4848,6 @@
   - Undele's ability returns cards by name (i.e. if there is more than 1 copy of the same card in your ash heap, it will return
     one of them even if another is removed during polling). It will return one of the two named cards if the other is removed
     during polling. [LSJ 20100917]
-201413|Ur-Shulgi, The Shepherd:
-  - Keeps his title and votes if he changes sects. [LSJ 20010714]
 201415|Uriah Winter:
   - Can still defect if in torpor, and will remain in torpor if he does so. [RTR 19941109]
 201422|Valerius Maior, Hell's Fool:
@@ -4935,10 +4875,6 @@
     title (eg. Prince) only once, but the controller chooses how it is met (any city, even a made-up one). He must choose
     a title when playing a card required a "titled" vampire (eg. {Rubicon}), but can only choose each title once. He can choose
     the non-descript "X votes" title, but only once. [LSJ 20050128] [PIB 20150306] [PIB 20150307] [ANK 20211019]'
-  - When meeting a title requirement for a political action, he does not get the title's votes for the subsequent referendum.
-    [ANK 20231221]
-  - He can meet a title requirement even if the sect does not exist anymore (eg. {Fall of the Camarilla}). [LSJ 20050124]
-    [ANK 20230503]
   - If a contract chooses him when played (eg. {Dirty Contract}), he is "chosen for the contract" for other cards (eg. {Open
     Dossier}). If the contract choice is an effect of the card in play (eg. {Clandestine Contract}), he's not chosen. [LSJ
     20070708] [LSJ 20071109]
@@ -4960,10 +4896,6 @@
   - When meeting a title requirement, he is considered as a vampire of the underlying sect. [LSJ 20050128]
   - When meeting a requirement, the controller can choose how he meets it (eg. he can play {Anarch Secession} as a Prince
     of any city, even a made-up one). [PIB 20150306] [PIB 20150307]
-  - When meeting a title requirement for a political action, he does not get the title's votes for the subsequent referendum.
-    [ANK 20231221]
-  - He can meet a title requirement even if the sect does not exist anymore (eg. {Fall of the Camarilla}). [LSJ 20050124]
-    [ANK 20230503]
   - He can use a card requiring a sect or titled to be played (eg. use {Abbot} intercept bonus as a Sabbat vampire, perform
     {Archon} action to burn it as a Prince or Justicar). [PIB 20150306]
   - 'He cannot use a card as a vampire of a sect or with a title if the card does not require the sect or title to be played.
@@ -4998,8 +4930,6 @@
   - You can still use the burn options of cards with a requirement he could meet when you play them, but does not meet while
     in play. [LSJ 20050225]
   - His ability do not let him fulfill card requirements if they are not played normally, like when using {Piper}. [LSJ 20050119]
-201477|Xaviar:
-  - Keeps his title and votes if he changes sects. [LSJ 20010714]
 201478|Xaviar:
   - '[MERGED] Is Camarilla. If the base version was the one in play, it changes sect as it is merged. If it had an anarch
     token, it is burned. [ANK 20180524]'
@@ -5010,8 +4940,6 @@
     20180524] [LSJ 20031121-3]'
 201499|Zack North:
   - '[MERGED] Is Anarch. If the base version was the one in play, it changes sect as it is merged. [ANK 20180524]'
-201502|Zayyat, The Sandstorm:
-  - Keeps his title and votes if he changes sects. [LSJ 20010714]
 201506|Zhenga:
   - She can choose the order in which the allies brought by her ability come into play (eg. bring a first ally, then {War
     Ghoul} second burning the first one). [LSJ 20060530-1]
@@ -5214,3 +5142,16 @@ G00066|Changes controller of location:
 G00067|Stealth from random event:
   - Can be used when stealth is not yet needed. Any stealth that would be gained is not gained (as no stealth is needed).
     [ANK 20231031]
+G00068|Personal titles:
+  - Keeps their title and votes if they changes sects. [LSJ 20010714]
+G00069|Impersonating a title for political action:
+  - When meeting a title requirement for a political action, the vampire does not get the title's votes for the subsequent
+    referendum. [ANK 20231221]
+G00070|Impersonating title for non-existent sect:
+  - Can meet a sect-specific title (e.g. Justicar) requirement even if the sect does not exist anymore (eg. {Fall of the Camarilla}).
+    [ANK 20230503] [LSJ 20050124]
+G00071|After Combat Ends:
+  - The effect happens after combat is concluded. Any blood lost is not lost during combat. (e.g. {Anathema}, {Taste of Vitae})
+    [LSJ 20031123]
+  - "If the combat continues or a new combat begins, the after combat effect does not happen/is not usable. (eg. {Psyche!},\
+    \ {Telepathic Tracking})\n(Partial reversal of RTR 20010711) [RTR 20020501] [LSJ 19980109]"
