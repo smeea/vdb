@@ -95,66 +95,70 @@ const Navigation = () => {
   return (
     <nav className="z-50 bg-bgNav dark:bg-bgNavDark max-sm:fixed max-sm:bottom-0 max-sm:w-full sm:sticky sm:top-0 print:hidden">
       <div className="navbar-container mx-auto flex h-10 justify-between sm:gap-3">
-        <div className="flex items-center gap-6">
-          {isMobile ? (
-            <NavMobileMenu isLimited={isLimited} />
-          ) : (
-            <>
-              <LanguageSelectButton />
-              <ThemeSelect />
-            </>
-          )}
-          {!isMobile && (
-            <>
-              {username && (
-                <Toggle
-                  isOn={inventoryMode}
-                  handleClick={toggleInventoryMode}
-                  disabled={location.pathname == '/inventory'}
-                  variant="secondary"
-                >
-                  Inventory Mode
-                </Toggle>
-              )}
-              {(isLimited || limitedMode) && (
-                <Toggle isOn={limitedMode} handleClick={toggleLimitedMode} variant="secondary">
-                  Limited Mode
-                </Toggle>
-              )}
-              {isPlaytester && (
-                <Toggle isOn={playtestMode} handleClick={togglePlaytestMode} variant="secondary">
-                  Playtest Mode
-                </Toggle>
-              )}
-            </>
-          )}
-        </div>
-        <div className="flex items-center justify-between max-sm:w-full">
-          {!isMobile && (
-            <>
-              <Link
-                to="/account"
-                icon={username ? <PersonFill width="21" height="21" viewBox="0 1 16 16" /> : null}
-                text={username ? null : 'Login'}
-                title={username ? 'Account' : 'Login'}
-              />
-              {isPlaytester && <Link to="/playtest" text="Playtest" />}
-              <Link to="/" text="About" end />
-            </>
-          )}
-          <Link to={pdaUrl} text="PDA" />
-          <Link to="/tda" text="TDA" />
-          <Link to={twdUrl} text="TWD" />
-          <Link to="/inventory" text={isMobile ? 'INV' : 'Inventory'} />
-          <Link to={decksUrl} text={isMobile ? 'DKS' : 'Decks'} />
-          <Link to={cryptUrl} text={isMobile ? 'CRY' : 'Crypt'} />
-          <Link to={libraryUrl} text={isMobile ? 'LIB' : 'Library'} />
-          <Link
-            to={cardsUrl}
+        {!isMobile && (
+          <div className="flex items-center gap-6">
+            <LanguageSelectButton />
+            <ThemeSelect />
+            {username && (
+              <Toggle
+                isOn={inventoryMode}
+                handleClick={toggleInventoryMode}
+                disabled={location.pathname == '/inventory'}
+                variant="secondary"
+              >
+                Inventory Mode
+              </Toggle>
+            )}
+            {(isLimited || limitedMode) && (
+              <Toggle isOn={limitedMode} handleClick={toggleLimitedMode} variant="secondary">
+                Limited Mode
+              </Toggle>
+            )}
+            {isPlaytester && (
+              <Toggle isOn={playtestMode} handleClick={togglePlaytestMode} variant="secondary">
+                Playtest Mode
+              </Toggle>
+            )}
+          </div>
+        )}
+        <div className="flex items-center justify-end max-sm:w-full">
+          <div className="flex h-full w-full items-center justify-between">
+            {isMobile && <NavMobileMenu isLimited={isLimited} />}
+            {!isMobile && (
+              <>
+                <Link
+                  to="/account"
+                  icon={username ? <PersonFill width="21" height="21" viewBox="0 1 16 16" /> : null}
+                  text={username ? null : 'Login'}
+                  title={username ? 'Account' : 'Login'}
+                />
+                {isPlaytester && <Link to="/playtest" text="Playtest" />}
+                <Link to="/" text="About" end />
+              </>
+            )}
+            <Link to={pdaUrl} text="PDA" />
+            <Link to="/tda" text="TDA" />
+            <Link to={twdUrl} text="TWD" />
+            <Link to="/inventory" text={isMobile ? 'INV' : 'Inventory'} />
+            <Link to={decksUrl} text={isMobile ? 'DKS' : 'Decks'} />
+            <Link to={cryptUrl} text={isMobile ? 'CRY' : 'Crypt'} />
+            <Link to={libraryUrl} text={isMobile ? 'LIB' : 'Library'} />
+          </div>
+          <NavLink
             ariaLabel="Quick Card Search"
+            to={cardsUrl}
             title="Quick Card Search"
-            icon={<LightningFill width="19" height="19" viewBox="0 0 16 16" />}
-          />
+            className={({ isActive }) =>
+              twMerge(
+                'flex h-full items-center justify-center px-2 outline-none hover:no-underline sm:px-3',
+                isActive
+                  ? 'bg-borderNestModal text-white dark:bg-borderNestModalDark dark:text-whiteDark'
+                  : 'text-lightGray dark:text-lightGrayDark',
+              )
+            }
+          >
+            <LightningFill width="19" height="19" viewBox="0 0 16 16" />
+          </NavLink>
         </div>
       </div>
     </nav>

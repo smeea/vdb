@@ -1,5 +1,6 @@
 # FIX
 - Review TWDA radar: remove swarm, maybe replace?
+- InventoryMode on while unlogged
 
 # FEATURES
 - Inventory 'target' q-ty -> for design consideration
