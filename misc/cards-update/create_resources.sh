@@ -2,6 +2,7 @@
 # Update Card List
 echo '{}' > playtest/cardbase_crypt_playtest.min.json
 echo '{}' > playtest/cardbase_lib_playtest.min.json
+python generate_rulings.py
 python generate_crypt.py
 python generate_library.py
 python fix_crossrefs.py

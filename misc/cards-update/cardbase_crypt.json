@@ -2447,6 +2447,12 @@
                 "refs":{
                     "ANK 20220814":"https://www.vekn.net/forum/rules-questions/79950-aline-gaedeke?start=12#105964"
                 }
+            },
+            {
+                "text":"The ability can be used when in torpor.",
+                "refs":{
+                    "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
+                }
             }
         ],
         "sect":"Anarch",
@@ -3004,7 +3010,7 @@
         "path":"",
         "rulings":[
             {
-                "text":"Keeps his title and votes if he changes sects.",
+                "text":"Keeps their title and votes if they changes sects.",
                 "refs":{
                     "LSJ 20010714":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-xrhpMEiMrw/m/Vnr8QIyt41cJ"
                 }
@@ -3313,7 +3319,7 @@
         "path":"",
         "rulings":[
             {
-                "text":"Keeps her title and votes if she changes sects.",
+                "text":"Keeps their title and votes if they changes sects.",
                 "refs":{
                     "LSJ 20010714":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-xrhpMEiMrw/m/Vnr8QIyt41cJ"
                 }
@@ -4663,7 +4669,14 @@
         "name":"Annabelle Triabell",
         "new":true,
         "path":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The ability can be used when in torpor.",
+                "refs":{
+                    "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
+                }
+            }
+        ],
         "sect":"Camarilla",
         "set":{
             "30th":{
@@ -4697,12 +4710,6 @@
         "path":"",
         "rulings":[
             {
-                "text":"Keeps his title and votes if he changes sects.",
-                "refs":{
-                    "LSJ 20010714":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-xrhpMEiMrw/m/Vnr8QIyt41cJ"
-                }
-            },
-            {
                 "text":"He cannot perform the action provided by his ability twice in the same turn.",
                 "refs":{
                     "ANK 20220615":"https://www.vekn.net/forum/rules-questions/72394-re-kaymakli-fragment?start=6#105476"
@@ -4712,6 +4719,12 @@
                 "text":"The action provided by his ability is directed against the Methuselah controlling the equipment or location, not the minion it's on. \"",
                 "refs":{
                     "LSJ 20090324":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Zc_ogoVhsug/m/tJ2VBYI7resJ"
+                }
+            },
+            {
+                "text":"Keeps their title and votes if they changes sects.",
+                "refs":{
+                    "LSJ 20010714":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-xrhpMEiMrw/m/Vnr8QIyt41cJ"
                 }
             }
         ],
@@ -5986,12 +5999,6 @@
                 }
             },
             {
-                "text":"Keeps her title and votes if she changes sects.",
-                "refs":{
-                    "LSJ 20010714":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-xrhpMEiMrw/m/Vnr8QIyt41cJ"
-                }
-            },
-            {
                 "text":"The ability can be used while locked or in torpor, only once per referendum.",
                 "refs":{
                     "ANK 20220705":"https://www.vekn.net/forum/rules-questions/79895-question-regarding-using-a-minion-card-text-ability-when-locked#105630",
@@ -6000,6 +6007,12 @@
                     "LSJ 20100902-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/mFpx91METxM/m/ETLGtyQfvksJ",
                     "ANK 20180307-2":"https://www.vekn.net/forum/rules-questions/76451-ellison-humboldt-and-matteus-flesh-sculptor?start=0#85598",
                     "RBK wording-templates":"https://www.vekn.net/rulebook#wording-templates"
+                }
+            },
+            {
+                "text":"Keeps their title and votes if they changes sects.",
+                "refs":{
+                    "LSJ 20010714":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-xrhpMEiMrw/m/Vnr8QIyt41cJ"
                 }
             }
         ],
@@ -6677,7 +6690,7 @@
         "path":"",
         "rulings":[
             {
-                "text":"Keeps his title and votes if he changes sects.",
+                "text":"Keeps their title and votes if they changes sects.",
                 "refs":{
                     "LSJ 20010714":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-xrhpMEiMrw/m/Vnr8QIyt41cJ"
                 }
@@ -6992,7 +7005,7 @@
         "path":"",
         "rulings":[
             {
-                "text":"Keeps his title and votes if he changes sects.",
+                "text":"Keeps their title and votes if they changes sects.",
                 "refs":{
                     "LSJ 20010714":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-xrhpMEiMrw/m/Vnr8QIyt41cJ"
                 }
@@ -7521,15 +7534,15 @@
         "path":"",
         "rulings":[
             {
-                "text":"Keeps his title and votes if he changes sects.",
-                "refs":{
-                    "LSJ 20010714":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-xrhpMEiMrw/m/Vnr8QIyt41cJ"
-                }
-            },
-            {
                 "text":"Cannot play cards requiring a Baron.",
                 "refs":{
                     "PIB 20151116":"https://www.vekn.net/forum/rules-questions/74317-the-not-anarch-barons#74327"
+                }
+            },
+            {
+                "text":"Keeps their title and votes if they changes sects.",
+                "refs":{
+                    "LSJ 20010714":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-xrhpMEiMrw/m/Vnr8QIyt41cJ"
                 }
             }
         ],
@@ -9294,6 +9307,12 @@
         "path":"",
         "rulings":[
             {
+                "text":"The ability can be used when in torpor.",
+                "refs":{
+                    "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
+                }
+            },
+            {
                 "text":"Can be used when stealth is not yet needed. Any stealth that would be gained is not gained (as no stealth is needed).",
                 "refs":{
                     "ANK 20231031":"https://www.vekn.net/forum/rules-questions/80911-can-you-use-gathii-s-and-or-boleslaw-s-abilities-when-you-dont-need-stealth#109706"
@@ -10851,16 +10870,16 @@
         "path":"",
         "rulings":[
             {
-                "text":"Keeps her title and votes if she changes sects.",
-                "refs":{
-                    "LSJ 20010714":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-xrhpMEiMrw/m/Vnr8QIyt41cJ"
-                }
-            },
-            {
                 "text":"Her additional life ability applies and her stealth ability can be used when she is in torpor.",
                 "refs":{
                     "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ",
                     "LSJ 20100902-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/mFpx91METxM/m/ETLGtyQfvksJ"
+                }
+            },
+            {
+                "text":"Keeps their title and votes if they changes sects.",
+                "refs":{
+                    "LSJ 20010714":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-xrhpMEiMrw/m/Vnr8QIyt41cJ"
                 }
             }
         ],
@@ -13769,7 +13788,7 @@
         "path":"",
         "rulings":[
             {
-                "text":"Keeps her title and votes if she changes sects.",
+                "text":"Keeps their title and votes if they changes sects.",
                 "refs":{
                     "LSJ 20010714":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-xrhpMEiMrw/m/Vnr8QIyt41cJ"
                 }
@@ -13930,7 +13949,14 @@
         "name":"Daria",
         "new":false,
         "path":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The ability can be used when in torpor.",
+                "refs":{
+                    "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
+                }
+            }
+        ],
         "sect":"Camarilla",
         "set":{
             "FoL":{
@@ -15778,7 +15804,7 @@
         "path":"",
         "rulings":[
             {
-                "text":"Keeps his title and votes if he changes sects.",
+                "text":"Keeps their title and votes if they changes sects.",
                 "refs":{
                     "LSJ 20010714":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-xrhpMEiMrw/m/Vnr8QIyt41cJ"
                 }
@@ -15864,7 +15890,14 @@
         "name":"D\u00f3nal O'Connor",
         "new":true,
         "path":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The ability can be used when in torpor.",
+                "refs":{
+                    "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
+                }
+            }
+        ],
         "sect":"Camarilla",
         "set":{
             "30th":{
@@ -18235,7 +18268,14 @@
         "name":"Enid Blount",
         "new":false,
         "path":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"{Edith Blount} may burn a blood to give Enid stealth multiple times each action.",
+                "refs":{
+                    "LSJ 20040617":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/WxJVsEWWmbc/m/gbOBOI7T9kwJ"
+                }
+            }
+        ],
         "sect":"Camarilla",
         "set":{
             "CE":{
@@ -19329,7 +19369,7 @@
         "path":"",
         "rulings":[
             {
-                "text":"Keeps her title and votes if she changes sects.",
+                "text":"Keeps their title and votes if they changes sects.",
                 "refs":{
                     "LSJ 20010714":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-xrhpMEiMrw/m/Vnr8QIyt41cJ"
                 }
@@ -21151,6 +21191,12 @@
         "new":false,
         "path":"",
         "rulings":[
+            {
+                "text":"The ability can be used when in torpor.",
+                "refs":{
+                    "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
+                }
+            },
             {
                 "text":"Can be used when stealth is not yet needed. Any stealth that would be gained is not gained (as no stealth is needed).",
                 "refs":{
@@ -23680,7 +23726,14 @@
         "name":"Gwenllian Arwyn",
         "new":false,
         "path":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The ability can be used when in torpor.",
+                "refs":{
+                    "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
+                }
+            }
+        ],
         "sect":"Camarilla",
         "set":{
             "FoL":{
@@ -24543,7 +24596,7 @@
         "path":"",
         "rulings":[
             {
-                "text":"Keeps his title and votes if he changes sects.",
+                "text":"Keeps their title and votes if they changes sects.",
                 "refs":{
                     "LSJ 20010714":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-xrhpMEiMrw/m/Vnr8QIyt41cJ"
                 }
@@ -26672,7 +26725,7 @@
         "path":"",
         "rulings":[
             {
-                "text":"Keeps her title and votes if she changes sects.",
+                "text":"Keeps their title and votes if they changes sects.",
                 "refs":{
                     "LSJ 20010714":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-xrhpMEiMrw/m/Vnr8QIyt41cJ"
                 }
@@ -28145,7 +28198,7 @@
         "path":"",
         "rulings":[
             {
-                "text":"Keeps his title and votes if he changes sects.",
+                "text":"Keeps their title and votes if they changes sects.",
                 "refs":{
                     "LSJ 20010714":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-xrhpMEiMrw/m/Vnr8QIyt41cJ"
                 }
@@ -29564,7 +29617,14 @@
         "name":"Jibade el-Bahrawi",
         "new":false,
         "path":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Jihade's special can be used multiple times each combat.",
+                "refs":{
+                    "LSJ 20040617":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/WxJVsEWWmbc/m/gbOBOI7T9kwJ"
+                }
+            }
+        ],
         "sect":"Laibon",
         "set":{
             "EK":{
@@ -30773,7 +30833,14 @@
         "name":"Julio Martinez",
         "new":false,
         "path":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"His special can be used multiple times each action",
+                "refs":{
+                    "LSJ 20040617":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/WxJVsEWWmbc/m/gbOBOI7T9kwJ"
+                }
+            }
+        ],
         "sect":"Sabbat",
         "set":{
             "CE":{
@@ -30990,7 +31057,7 @@
                 }
             },
             {
-                "text":"Keeps her title and votes if she changes sects.",
+                "text":"Keeps their title and votes if they changes sects.",
                 "refs":{
                     "LSJ 20010714":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-xrhpMEiMrw/m/Vnr8QIyt41cJ"
                 }
@@ -31610,7 +31677,27 @@
         "name":"Karl Schrekt",
         "new":false,
         "path":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Keeps their title and votes if they changes sects.",
+                "refs":{
+                    "LSJ 20010714":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-xrhpMEiMrw/m/Vnr8QIyt41cJ"
+                }
+            },
+            {
+                "text":"When meeting a title requirement for a political action, the vampire does not get the title's votes for the subsequent referendum.",
+                "refs":{
+                    "ANK 20231221":"https://www.vekn.net/forum/rules-questions/81065-faking-title-and-votes#110148"
+                }
+            },
+            {
+                "text":"Can meet a sect-specific title (e.g. Justicar) requirement even if the sect does not exist anymore (eg. {Fall of the Camarilla}).",
+                "refs":{
+                    "ANK 20230503":"https://www.vekn.net/forum/rules-questions/80486-vlad-tepes-special-text-under-fall-of-the-sabbat?start=6#107971",
+                    "LSJ 20050124":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HVy8iPUxNbI/m/ZjCzAzmQFMwJ"
+                }
+            }
+        ],
         "sect":"Camarilla",
         "set":{
             "Promo":{
@@ -31760,7 +31847,7 @@
         "path":"",
         "rulings":[
             {
-                "text":"Keeps his title and votes if he changes sects.",
+                "text":"Keeps their title and votes if they changes sects.",
                 "refs":{
                     "LSJ 20010714":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-xrhpMEiMrw/m/Vnr8QIyt41cJ"
                 }
@@ -32354,23 +32441,10 @@
         "path":"",
         "rulings":[
             {
-                "text":"[MERGED] Keeps her title and votes if she changes sects.",
-                "refs":{
-                    "LSJ 20010714":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-xrhpMEiMrw/m/Vnr8QIyt41cJ"
-                }
-            },
-            {
                 "text":"[MERGED] When playing a card requiring Camarilla, Ventrue and/or Justicar, she is treated as a such for all effects of the card, and only them, including duration effects. She is not treated as such for effects the card has from being in play.",
                 "refs":{
                     "ANK 20190228":"https://www.vekn.net/forum/rules-questions/77427-mata-hari-and-hakim-s-law-leadership?start=42#93785",
                     "LSJ 20101013":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/hpFRDAmtSbA/m/httYmI5wpB8J"
-                }
-            },
-            {
-                "text":"[MERGED] She can play a card requiring Camarilla and/or Justicar even if the sect does not exist anymore (eg. {Fall of the Camarilla}).",
-                "refs":{
-                    "LSJ 20050124":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HVy8iPUxNbI/m/ZjCzAzmQFMwJ",
-                    "ANK 20230503":"https://www.vekn.net/forum/rules-questions/80486-vlad-tepes-special-text-under-fall-of-the-sabbat?start=6#107971"
                 }
             },
             {
@@ -32391,6 +32465,25 @@
                 "text":"[MERGED] When considered a Justicar, she is also implicitly considered Camarilla.",
                 "refs":{
                     "LSJ 20050128":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HVy8iPUxNbI/m/ZHGTnprQjGUJ"
+                }
+            },
+            {
+                "text":"[MERGED] Keeps their title and votes if they changes sects.",
+                "refs":{
+                    "LSJ 20010714":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-xrhpMEiMrw/m/Vnr8QIyt41cJ"
+                }
+            },
+            {
+                "text":"[MERGED] When meeting a title requirement for a political action, the vampire does not get the title's votes for the subsequent referendum.",
+                "refs":{
+                    "ANK 20231221":"https://www.vekn.net/forum/rules-questions/81065-faking-title-and-votes#110148"
+                }
+            },
+            {
+                "text":"[MERGED] Can meet a sect-specific title (e.g. Justicar) requirement even if the sect does not exist anymore (eg. {Fall of the Camarilla}).",
+                "refs":{
+                    "ANK 20230503":"https://www.vekn.net/forum/rules-questions/80486-vlad-tepes-special-text-under-fall-of-the-sabbat?start=6#107971",
+                    "LSJ 20050124":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HVy8iPUxNbI/m/ZjCzAzmQFMwJ"
                 }
             }
         ],
@@ -32496,7 +32589,7 @@
         "path":"",
         "rulings":[
             {
-                "text":"Keeps his title and votes if he changes sects.",
+                "text":"Keeps their title and votes if they changes sects.",
                 "refs":{
                     "LSJ 20010714":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-xrhpMEiMrw/m/Vnr8QIyt41cJ"
                 }
@@ -33793,7 +33886,7 @@
         "path":"",
         "rulings":[
             {
-                "text":"Keeps her title and votes if she changes sects.",
+                "text":"Keeps their title and votes if they changes sects.",
                 "refs":{
                     "LSJ 20010714":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-xrhpMEiMrw/m/Vnr8QIyt41cJ"
                 }
@@ -34138,15 +34231,15 @@
                 }
             },
             {
-                "text":"Keeps his title and votes if he changes sects.",
-                "refs":{
-                    "LSJ 20010714":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-xrhpMEiMrw/m/Vnr8QIyt41cJ"
-                }
-            },
-            {
                 "text":"[MERGED] Is Independent. If the base version was the one in play, it changes sect as it is merged. If it had an anarch token, it is burned.",
                 "refs":{
                     "ANK 20180524":"https://www.vekn.net/forum/rules-questions/76595-rules-team-rulings-rtr-11-05-2018?start=60#87433"
+                }
+            },
+            {
+                "text":"Keeps their title and votes if they changes sects.",
+                "refs":{
+                    "LSJ 20010714":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-xrhpMEiMrw/m/Vnr8QIyt41cJ"
                 }
             }
         ],
@@ -36740,7 +36833,14 @@
         "name":"Luciano Carvalho",
         "new":false,
         "path":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The ability can be used when in torpor.",
+                "refs":{
+                    "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
+                }
+            }
+        ],
         "sect":"Anarch",
         "set":{
             "V5C":{
@@ -36852,7 +36952,14 @@
         "name":"Lucinde, Alastor",
         "new":true,
         "path":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The ability can be used when in torpor.",
+                "refs":{
+                    "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
+                }
+            }
+        ],
         "sect":"Camarilla",
         "set":{
             "30th":{
@@ -37315,12 +37422,6 @@
         "path":"",
         "rulings":[
             {
-                "text":"Keeps her title and votes if she changes sects.",
-                "refs":{
-                    "LSJ 20010714":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-xrhpMEiMrw/m/Vnr8QIyt41cJ"
-                }
-            },
-            {
                 "text":"Her ability does not apply to the political action card played for a current action (it is in limbo).",
                 "refs":{
                     "LSJ 20070927":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/VaSQ7JL2N2Y/m/BenDHsAETG4J"
@@ -37330,6 +37431,12 @@
                 "text":"The ability can be used while locked, only once per referendum.",
                 "refs":{
                     "ANK 20220705":"https://www.vekn.net/forum/rules-questions/79895-question-regarding-using-a-minion-card-text-ability-when-locked#105630"
+                }
+            },
+            {
+                "text":"Keeps their title and votes if they changes sects.",
+                "refs":{
+                    "LSJ 20010714":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-xrhpMEiMrw/m/Vnr8QIyt41cJ"
                 }
             }
         ],
@@ -37556,12 +37663,6 @@
         "path":"",
         "rulings":[
             {
-                "text":"Keeps her title and votes if she changes sects.",
-                "refs":{
-                    "LSJ 20010714":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-xrhpMEiMrw/m/Vnr8QIyt41cJ"
-                }
-            },
-            {
                 "text":"Can use a multi-discipline card with a potential (unused) Celerity [cel] effect.",
                 "refs":{
                     "LSJ 20050322-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jiavUD9IgIA/m/SuMUFkb5uLMJ"
@@ -37571,6 +37672,12 @@
                 "text":"The scarce penalty considers the apparent clan while controlled (in case of {Clan Impersonation} and {Banishment}).",
                 "refs":{
                     "LSJ 20011015":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ZXW0ScxTsBA/m/OvbMemV2oXUJ"
+                }
+            },
+            {
+                "text":"Keeps their title and votes if they changes sects.",
+                "refs":{
+                    "LSJ 20010714":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-xrhpMEiMrw/m/Vnr8QIyt41cJ"
                 }
             }
         ],
@@ -38454,7 +38561,7 @@
         "path":"",
         "rulings":[
             {
-                "text":"Keeps her title and votes if she changes sects.",
+                "text":"Keeps their title and votes if they changes sects.",
                 "refs":{
                     "LSJ 20010714":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-xrhpMEiMrw/m/Vnr8QIyt41cJ"
                 }
@@ -39003,7 +39110,14 @@
         "name":"Marialena",
         "new":false,
         "path":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The ability can be used when in torpor.",
+                "refs":{
+                    "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
+                }
+            }
+        ],
         "sect":"Anarch",
         "set":{
             "V5C":{
@@ -39726,6 +39840,12 @@
                 }
             },
             {
+                "text":"Her special can only be used once each combat",
+                "refs":{
+                    "LSJ 20040617":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/WxJVsEWWmbc/m/gbOBOI7T9kwJ"
+                }
+            },
+            {
                 "text":"Black Hand is not a title, it is a trait unrelated to any sect. The trait is not lost if the vampire changes sect.",
                 "refs":{
                     "LSJ 20070322":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Ww-4rYJxi4w/m/P3QchWVq2o4J",
@@ -40325,12 +40445,6 @@
         "path":"",
         "rulings":[
             {
-                "text":"Keeps her title and votes if she changes sects.",
-                "refs":{
-                    "LSJ 20010714":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-xrhpMEiMrw/m/Vnr8QIyt41cJ"
-                }
-            },
-            {
                 "text":"When playing a card requiring a sect and/or a clan, she is treated as a such for all effects of the card, and only them, including duration effects. She is not treated as such for effects the card has from being in play.",
                 "refs":{
                     "RTR 20070707":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/vSOt2c1uRzQ/m/MsRAv47Cd4YJ",
@@ -40373,6 +40487,12 @@
                 "text":"Her ability do not let her fulfill card requirements if they are not played normally, like when using {Concealed Weapon} for an equipment or {Piper} or {The Summoning} for an ally.",
                 "refs":{
                     "LSJ 20050119":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NKWhBnp7uP4/m/6_56LlSV658J"
+                }
+            },
+            {
+                "text":"Keeps their title and votes if they changes sects.",
+                "refs":{
+                    "LSJ 20010714":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-xrhpMEiMrw/m/Vnr8QIyt41cJ"
                 }
             }
         ],
@@ -40761,15 +40881,15 @@
         "path":"",
         "rulings":[
             {
-                "text":"Keeps her title and votes if she changes sects.",
-                "refs":{
-                    "LSJ 20010714":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-xrhpMEiMrw/m/Vnr8QIyt41cJ"
-                }
-            },
-            {
                 "text":"\"Once each turn\" means once during each player's turn.",
                 "refs":{
                     "ANK 20180719-4":"https://www.vekn.net/forum/rules-questions/76833-once-each-turn#89014"
+                }
+            },
+            {
+                "text":"Keeps their title and votes if they changes sects.",
+                "refs":{
+                    "LSJ 20010714":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-xrhpMEiMrw/m/Vnr8QIyt41cJ"
                 }
             }
         ],
@@ -42424,7 +42544,14 @@
         "name":"Mithras",
         "new":true,
         "path":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The ability can be used when in torpor.",
+                "refs":{
+                    "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
+                }
+            }
+        ],
         "sect":"Independent",
         "set":{
             "FoL":{
@@ -42525,7 +42652,14 @@
         "name":"Modius",
         "new":false,
         "path":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The ability can be used when in torpor.",
+                "refs":{
+                    "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
+                }
+            }
+        ],
         "sect":"Camarilla",
         "set":{
             "30th":{
@@ -42699,16 +42833,16 @@
         "path":"",
         "rulings":[
             {
-                "text":"Keeps his title and votes if he changes sects.",
-                "refs":{
-                    "LSJ 20010714":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-xrhpMEiMrw/m/Vnr8QIyt41cJ"
-                }
-            },
-            {
                 "text":"His ability to provide stealth can be used while locked or in torpor.",
                 "refs":{
                     "ANK 20220705":"https://www.vekn.net/forum/rules-questions/79895-question-regarding-using-a-minion-card-text-ability-when-locked#105630",
                     "LSJ 20100705":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Dm_Zqyjdx8s/m/Fw-T7QAU8mkJ"
+                }
+            },
+            {
+                "text":"Keeps their title and votes if they changes sects.",
+                "refs":{
+                    "LSJ 20010714":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-xrhpMEiMrw/m/Vnr8QIyt41cJ"
                 }
             }
         ],
@@ -44266,12 +44400,6 @@
         "path":"",
         "rulings":[
             {
-                "text":"Keeps her title and votes if she changes sects.",
-                "refs":{
-                    "LSJ 20010714":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-xrhpMEiMrw/m/Vnr8QIyt41cJ"
-                }
-            },
-            {
                 "text":"Cannot use her ability to force an abstaining vampire to vote.",
                 "refs":{
                     "ANK 20190731":"https://www.vekn.net/forum/rules-questions/77812-abstain-from-voting?start=6#96048"
@@ -44286,6 +44414,12 @@
                     "LSJ 20100902-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/mFpx91METxM/m/ETLGtyQfvksJ",
                     "ANK 20180307-2":"https://www.vekn.net/forum/rules-questions/76451-ellison-humboldt-and-matteus-flesh-sculptor?start=0#85598",
                     "RBK wording-templates":"https://www.vekn.net/rulebook#wording-templates"
+                }
+            },
+            {
+                "text":"Keeps their title and votes if they changes sects.",
+                "refs":{
+                    "LSJ 20010714":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-xrhpMEiMrw/m/Vnr8QIyt41cJ"
                 }
             }
         ],
@@ -44326,12 +44460,6 @@
         "path":"",
         "rulings":[
             {
-                "text":"Keeps his title and votes if he changes sects.",
-                "refs":{
-                    "LSJ 20010714":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-xrhpMEiMrw/m/Vnr8QIyt41cJ"
-                }
-            },
-            {
                 "text":"Can use a multi-discipline card with a potential (unused) Celerity [cel] effect.",
                 "refs":{
                     "LSJ 20050322-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jiavUD9IgIA/m/SuMUFkb5uLMJ"
@@ -44341,6 +44469,12 @@
                 "text":"The scarce penalty considers the apparent clan while controlled (in case of {Clan Impersonation} and {Banishment}).",
                 "refs":{
                     "LSJ 20011015":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ZXW0ScxTsBA/m/OvbMemV2oXUJ"
+                }
+            },
+            {
+                "text":"Keeps their title and votes if they changes sects.",
+                "refs":{
+                    "LSJ 20010714":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-xrhpMEiMrw/m/Vnr8QIyt41cJ"
                 }
             }
         ],
@@ -44379,7 +44513,7 @@
         "path":"",
         "rulings":[
             {
-                "text":"Keeps his title and votes if he changes sects.",
+                "text":"Keeps their title and votes if they changes sects.",
                 "refs":{
                     "LSJ 20010714":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-xrhpMEiMrw/m/Vnr8QIyt41cJ"
                 }
@@ -45075,7 +45209,14 @@
         "name":"Nikolaus Vermeulen",
         "new":true,
         "path":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The ability can be used when in torpor.",
+                "refs":{
+                    "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
+                }
+            }
+        ],
         "sect":"Camarilla",
         "set":{
             "30th":{
@@ -46114,7 +46255,14 @@
         "name":"Opikun",
         "new":false,
         "path":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The ability can be used when in torpor.",
+                "refs":{
+                    "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
+                }
+            }
+        ],
         "sect":"Independent",
         "set":{
             "V5C":{
@@ -46212,7 +46360,14 @@
         "name":"Oskar Anasov",
         "new":false,
         "path":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The ability can be used when in torpor.",
+                "refs":{
+                    "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
+                }
+            }
+        ],
         "sect":"Camarilla",
         "set":{
             "FoL":{
@@ -49294,7 +49449,7 @@
         "path":"",
         "rulings":[
             {
-                "text":"Keeps his title and votes if he changes sects.",
+                "text":"Keeps their title and votes if they changes sects.",
                 "refs":{
                     "LSJ 20010714":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-xrhpMEiMrw/m/Vnr8QIyt41cJ"
                 }
@@ -49870,6 +50025,12 @@
                     "LSJ 20080107":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/XpZ6F53jK-c/m/wB6HHGzgFi4J",
                     "LSJ 20080114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aMum-K7LEeo/m/94iN92zwYTcJ"
                 }
+            },
+            {
+                "text":"The ability can be used when in torpor.",
+                "refs":{
+                    "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
+                }
             }
         ],
         "sect":"Camarilla",
@@ -49906,7 +50067,7 @@
         "path":"",
         "rulings":[
             {
-                "text":"Keeps her title and votes if she changes sects.",
+                "text":"Keeps their title and votes if they changes sects.",
                 "refs":{
                     "LSJ 20010714":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-xrhpMEiMrw/m/Vnr8QIyt41cJ"
                 }
@@ -51280,7 +51441,14 @@
         "name":"Roy",
         "new":false,
         "path":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The ability can be used when in torpor.",
+                "refs":{
+                    "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
+                }
+            }
+        ],
         "sect":"Anarch",
         "set":{
             "V5C":{
@@ -53174,15 +53342,15 @@
         "path":"",
         "rulings":[
             {
-                "text":"Keeps her title and votes if she changes sects.",
-                "refs":{
-                    "LSJ 20010714":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-xrhpMEiMrw/m/Vnr8QIyt41cJ"
-                }
-            },
-            {
                 "text":"Card with multiple types (eg. Reaction/Action Modifier) are considered of the type they are played as, not both.",
                 "refs":{
                     "PIB 20150924-2":"https://www.vekn.net/forum/rules-questions/73293-adana-de-sforza-combo-cards#73307"
+                }
+            },
+            {
+                "text":"Keeps their title and votes if they changes sects.",
+                "refs":{
+                    "LSJ 20010714":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-xrhpMEiMrw/m/Vnr8QIyt41cJ"
                 }
             }
         ],
@@ -53822,7 +53990,14 @@
         "name":"Sergio Bueno",
         "new":false,
         "path":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The ability can be used when in torpor.",
+                "refs":{
+                    "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
+                }
+            }
+        ],
         "sect":"Anarch",
         "set":{
             "NB2":{
@@ -54394,15 +54569,15 @@
                 }
             },
             {
-                "text":"Keeps his title and votes if he changes sects.",
-                "refs":{
-                    "LSJ 20010714":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-xrhpMEiMrw/m/Vnr8QIyt41cJ"
-                }
-            },
-            {
                 "text":"The acting player decides the order of (and can play other) \"after resolving the action\" effects.",
                 "refs":{
                     "ANK 20180206":"https://www.vekn.net/forum/rules-questions/76404-timing-of-shemti-s-special-and-ecstasy#85223"
+                }
+            },
+            {
+                "text":"Keeps their title and votes if they changes sects.",
+                "refs":{
+                    "LSJ 20010714":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-xrhpMEiMrw/m/Vnr8QIyt41cJ"
                 }
             }
         ],
@@ -54676,7 +54851,14 @@
         "name":"Silvian Popescu",
         "new":false,
         "path":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The ability can be used when in torpor.",
+                "refs":{
+                    "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
+                }
+            }
+        ],
         "sect":"Camarilla",
         "set":{
             "30th":{
@@ -55580,7 +55762,14 @@
         "name":"Sri Sansa",
         "new":false,
         "path":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The ability can be used when in torpor.",
+                "refs":{
+                    "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
+                }
+            }
+        ],
         "sect":"Camarilla",
         "set":{
             "FoL":{
@@ -56248,7 +56437,7 @@
         "path":"",
         "rulings":[
             {
-                "text":"Keeps his title and votes if he changes sects.",
+                "text":"Keeps their title and votes if they changes sects.",
                 "refs":{
                     "LSJ 20010714":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-xrhpMEiMrw/m/Vnr8QIyt41cJ"
                 }
@@ -56438,12 +56627,6 @@
         "path":"",
         "rulings":[
             {
-                "text":"Keeps his title and votes if he changes sects.",
-                "refs":{
-                    "LSJ 20010714":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-xrhpMEiMrw/m/Vnr8QIyt41cJ"
-                }
-            },
-            {
                 "text":"His ability do not allow his owner to play more than one Master: Out of Turn between two master phases.",
                 "refs":{
                     "ANK 20191004":"https://www.vekn.net/forum/rules-questions/77994-synesios#97241"
@@ -56459,6 +56642,12 @@
                 "text":"The scarce penalty considers the apparent clan while controlled (in case of {Clan Impersonation} and {Banishment}).",
                 "refs":{
                     "LSJ 20011015":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ZXW0ScxTsBA/m/OvbMemV2oXUJ"
+                }
+            },
+            {
+                "text":"Keeps their title and votes if they changes sects.",
+                "refs":{
+                    "LSJ 20010714":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-xrhpMEiMrw/m/Vnr8QIyt41cJ"
                 }
             }
         ],
@@ -57399,7 +57588,14 @@
         "name":"Tegyrius, Vizier",
         "new":true,
         "path":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Keeps their title and votes if they changes sects.",
+                "refs":{
+                    "LSJ 20010714":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-xrhpMEiMrw/m/Vnr8QIyt41cJ"
+                }
+            }
+        ],
         "sect":"Camarilla",
         "set":{
             "Promo":{
@@ -57904,7 +58100,7 @@
         "path":"",
         "rulings":[
             {
-                "text":"Keeps his title and votes if he changes sects.",
+                "text":"Keeps their title and votes if they changes sects.",
                 "refs":{
                     "LSJ 20010714":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-xrhpMEiMrw/m/Vnr8QIyt41cJ"
                 }
@@ -58091,7 +58287,7 @@
         "path":"",
         "rulings":[
             {
-                "text":"Keeps her title and votes if she changes sects.",
+                "text":"Keeps their title and votes if they changes sects.",
                 "refs":{
                     "LSJ 20010714":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-xrhpMEiMrw/m/Vnr8QIyt41cJ"
                 }
@@ -59727,7 +59923,7 @@
         "path":"",
         "rulings":[
             {
-                "text":"Keeps his title and votes if he changes sects.",
+                "text":"Keeps their title and votes if they changes sects.",
                 "refs":{
                     "LSJ 20010714":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-xrhpMEiMrw/m/Vnr8QIyt41cJ"
                 }
@@ -60787,6 +60983,19 @@
                 "refs":{
                     "ANK 20190228":"https://www.vekn.net/forum/rules-questions/77427-mata-hari-and-hakim-s-law-leadership?start=42#93785"
                 }
+            },
+            {
+                "text":"When meeting a title requirement for a political action, the vampire does not get the title's votes for the subsequent referendum.",
+                "refs":{
+                    "ANK 20231221":"https://www.vekn.net/forum/rules-questions/81065-faking-title-and-votes#110148"
+                }
+            },
+            {
+                "text":"Can meet a sect-specific title (e.g. Justicar) requirement even if the sect does not exist anymore (eg. {Fall of the Camarilla}).",
+                "refs":{
+                    "ANK 20230503":"https://www.vekn.net/forum/rules-questions/80486-vlad-tepes-special-text-under-fall-of-the-sabbat?start=6#107971",
+                    "LSJ 20050124":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HVy8iPUxNbI/m/ZjCzAzmQFMwJ"
+                }
             }
         ],
         "sect":"Anarch",
@@ -61107,19 +61316,6 @@
                 }
             },
             {
-                "text":"When meeting a title requirement for a political action, he does not get the title's votes for the subsequent referendum.",
-                "refs":{
-                    "ANK 20231221":"https://www.vekn.net/forum/rules-questions/81065-faking-title-and-votes#110148"
-                }
-            },
-            {
-                "text":"He can meet a title requirement even if the sect does not exist anymore (eg. {Fall of the Camarilla}).",
-                "refs":{
-                    "LSJ 20050124":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HVy8iPUxNbI/m/ZjCzAzmQFMwJ",
-                    "ANK 20230503":"https://www.vekn.net/forum/rules-questions/80486-vlad-tepes-special-text-under-fall-of-the-sabbat?start=6#107971"
-                }
-            },
-            {
                 "text":"If a contract chooses him when played (eg. {Dirty Contract}), he is \"chosen for the contract\" for other cards (eg. {Open Dossier}). If the contract choice is an effect of the card in play (eg. {Clandestine Contract}), he's not chosen.",
                 "refs":{
                     "LSJ 20070708":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/vSOt2c1uRzQ/m/F4ZIvIyp7lcJ",
@@ -61148,6 +61344,19 @@
                 "text":"His ability do not let him fulfill card requirements if they are not played normally, like when using {Concealed Weapon} for an equipment or {Piper} or {The Summoning} for an ally.",
                 "refs":{
                     "LSJ 20050119":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NKWhBnp7uP4/m/6_56LlSV658J"
+                }
+            },
+            {
+                "text":"When meeting a title requirement for a political action, the vampire does not get the title's votes for the subsequent referendum.",
+                "refs":{
+                    "ANK 20231221":"https://www.vekn.net/forum/rules-questions/81065-faking-title-and-votes#110148"
+                }
+            },
+            {
+                "text":"Can meet a sect-specific title (e.g. Justicar) requirement even if the sect does not exist anymore (eg. {Fall of the Camarilla}).",
+                "refs":{
+                    "ANK 20230503":"https://www.vekn.net/forum/rules-questions/80486-vlad-tepes-special-text-under-fall-of-the-sabbat?start=6#107971",
+                    "LSJ 20050124":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HVy8iPUxNbI/m/ZjCzAzmQFMwJ"
                 }
             }
         ],
@@ -61587,19 +61796,6 @@
                 }
             },
             {
-                "text":"When meeting a title requirement for a political action, he does not get the title's votes for the subsequent referendum.",
-                "refs":{
-                    "ANK 20231221":"https://www.vekn.net/forum/rules-questions/81065-faking-title-and-votes#110148"
-                }
-            },
-            {
-                "text":"He can meet a title requirement even if the sect does not exist anymore (eg. {Fall of the Camarilla}).",
-                "refs":{
-                    "LSJ 20050124":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HVy8iPUxNbI/m/ZjCzAzmQFMwJ",
-                    "ANK 20230503":"https://www.vekn.net/forum/rules-questions/80486-vlad-tepes-special-text-under-fall-of-the-sabbat?start=6#107971"
-                }
-            },
-            {
                 "text":"He can use a card requiring a sect or titled to be played (eg. use {Abbot} intercept bonus as a Sabbat vampire, perform {Archon} action to burn it as a Prince or Justicar).",
                 "refs":{
                     "PIB 20150306":"https://www.vekn.net/forum/rules-questions/69627-vlad-tepes-regent?start=12#69696"
@@ -61615,6 +61811,19 @@
                 "text":"If Vlad gains a title via a title card (eg. {Fee Stake: Perth}), as long as Vlad is not the correct sect, the title is dormant. He counts as untitled if he has a dormant title. He cannot \"use\" his title to become titled.",
                 "refs":{
                     "ANK 20190211":"https://www.vekn.net/forum/rules-questions/76865-vlad-tepes-anarch-secession?start=12#93409"
+                }
+            },
+            {
+                "text":"When meeting a title requirement for a political action, the vampire does not get the title's votes for the subsequent referendum.",
+                "refs":{
+                    "ANK 20231221":"https://www.vekn.net/forum/rules-questions/81065-faking-title-and-votes#110148"
+                }
+            },
+            {
+                "text":"Can meet a sect-specific title (e.g. Justicar) requirement even if the sect does not exist anymore (eg. {Fall of the Camarilla}).",
+                "refs":{
+                    "ANK 20230503":"https://www.vekn.net/forum/rules-questions/80486-vlad-tepes-special-text-under-fall-of-the-sabbat?start=6#107971",
+                    "LSJ 20050124":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HVy8iPUxNbI/m/ZjCzAzmQFMwJ"
                 }
             }
         ],
@@ -62602,7 +62811,7 @@
         "path":"",
         "rulings":[
             {
-                "text":"Keeps his title and votes if he changes sects.",
+                "text":"Keeps their title and votes if they changes sects.",
                 "refs":{
                     "LSJ 20010714":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-xrhpMEiMrw/m/Vnr8QIyt41cJ"
                 }
@@ -63052,7 +63261,14 @@
         "name":"Yewon Ong",
         "new":false,
         "path":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The ability can be used when in torpor.",
+                "refs":{
+                    "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
+                }
+            }
+        ],
         "sect":"Camarilla",
         "set":{
             "V5L":{
@@ -63669,15 +63885,15 @@
         "path":"",
         "rulings":[
             {
-                "text":"Keeps his title and votes if he changes sects.",
-                "refs":{
-                    "LSJ 20010714":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-xrhpMEiMrw/m/Vnr8QIyt41cJ"
-                }
-            },
-            {
                 "text":"\"Once each turn\" means once during each player's turn.",
                 "refs":{
                     "ANK 20180719-4":"https://www.vekn.net/forum/rules-questions/76833-once-each-turn#89014"
+                }
+            },
+            {
+                "text":"Keeps their title and votes if they changes sects.",
+                "refs":{
+                    "LSJ 20010714":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-xrhpMEiMrw/m/Vnr8QIyt41cJ"
                 }
             }
         ],

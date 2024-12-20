@@ -13393,18 +13393,6 @@
                 }
             },
             {
-                "text":"[PRE] The damage is inflicted after the end of combat.",
-                "refs":{
-                    "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ"
-                }
-            },
-            {
-                "text":"[PRE] If the combat continues or a new combat begins, no damage is done.",
-                "refs":{
-                    "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ"
-                }
-            },
-            {
                 "text":"[PRE] If the strike is dodged, no damage is done.",
                 "refs":{
                     "LSJ 19980526":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/tRTwM9wYaVI/m/jdC09vmHk3kJ",
@@ -13417,6 +13405,19 @@
                 "refs":{
                     "ANK 20170111":"https://www.vekn.net/forum/rules-questions/72635-dam-the-heart-s-river-and-catatonic-fear?start=6#80117",
                     "LSJ 20071011":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GSQqnAEBkgU/m/gFKF1ltY4JEJ"
+                }
+            },
+            {
+                "text":"The effect happens after combat is concluded. Any blood lost is not lost during combat. (e.g. {Anathema}, {Taste of Vitae})",
+                "refs":{
+                    "LSJ 20031123":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HvM2cHJ6yIo/m/jsb4iRoNdWkJ"
+                }
+            },
+            {
+                "text":"If the combat continues or a new combat begins, the after combat effect does not happen/is not usable. (eg. {Psyche!}, {Telepathic Tracking})\n(Partial reversal of RTR 20010711)",
+                "refs":{
+                    "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ",
+                    "LSJ 19980109":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d2U51Uw0Hfg/m/uIPoVvPFePgJ"
                 }
             }
         ],
@@ -19440,14 +19441,7 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[
-            {
-                "text":"The canceled block isn't successful or unsuccessful. It is simply canceled.",
-                "refs":{
-                    "LSJ 20110419":"https://boardgamegeek.com/thread/643948/article/6634732"
-                }
-            }
-        ],
+        "rulings":[],
         "set":{
             "Gehenna":{
                 "C":true
@@ -33933,11 +33927,16 @@
                 }
             },
             {
-                "text":"[PRO] If the combat continues or a new combat begins, the \"After combat ends\" effect cannot be used.",
+                "text":"The effect happens after combat is concluded. Any blood lost is not lost during combat. (e.g. {Anathema}, {Taste of Vitae})",
                 "refs":{
-                    "LSJ 19980109":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d2U51Uw0Hfg/m/uIPoVvPFePgJ",
-                    "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ",
                     "LSJ 20031123":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HvM2cHJ6yIo/m/jsb4iRoNdWkJ"
+                }
+            },
+            {
+                "text":"If the combat continues or a new combat begins, the after combat effect does not happen/is not usable. (eg. {Psyche!}, {Telepathic Tracking})\n(Partial reversal of RTR 20010711)",
+                "refs":{
+                    "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ",
+                    "LSJ 19980109":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d2U51Uw0Hfg/m/uIPoVvPFePgJ"
                 }
             }
         ],
@@ -49409,6 +49408,19 @@
                 "refs":{
                     "ANK 20180618":"https://www.vekn.net/forum/rules-questions/76735-loving-agony-timing#88268"
                 }
+            },
+            {
+                "text":"The effect happens after combat is concluded. Any blood lost is not lost during combat. (e.g. {Anathema}, {Taste of Vitae})",
+                "refs":{
+                    "LSJ 20031123":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HvM2cHJ6yIo/m/jsb4iRoNdWkJ"
+                }
+            },
+            {
+                "text":"If the combat continues or a new combat begins, the after combat effect does not happen/is not usable. (eg. {Psyche!}, {Telepathic Tracking})\n(Partial reversal of RTR 20010711)",
+                "refs":{
+                    "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ",
+                    "LSJ 19980109":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d2U51Uw0Hfg/m/uIPoVvPFePgJ"
+                }
             }
         ],
         "set":{
@@ -58721,6 +58733,19 @@
                 "text":"[OBT] Does not inflict damage (eg. does not benefit from {Target Vitals}).",
                 "refs":{
                     "LSJ 20080226":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NAfcSQEiLXY/m/GyMO2byB0AkJ"
+                }
+            },
+            {
+                "text":"The effect happens after combat is concluded. Any blood lost is not lost during combat. (e.g. {Anathema}, {Taste of Vitae})",
+                "refs":{
+                    "LSJ 20031123":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HvM2cHJ6yIo/m/jsb4iRoNdWkJ"
+                }
+            },
+            {
+                "text":"If the combat continues or a new combat begins, the after combat effect does not happen/is not usable. (eg. {Psyche!}, {Telepathic Tracking})\n(Partial reversal of RTR 20010711)",
+                "refs":{
+                    "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ",
+                    "LSJ 19980109":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d2U51Uw0Hfg/m/uIPoVvPFePgJ"
                 }
             }
         ],
@@ -75700,7 +75725,14 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"If the set of Methuselahs includes the controller of the vampire this card is on, the controller of the vampire is not considered as part of that set of Methuselahs.",
+                "refs":{
+                    "LSJ 20100527":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Tr3X4DsZr-8/m/O06iXN6LtzsJ"
+                }
+            }
+        ],
         "set":{
             "V5L":{
                 "PL":"4"
@@ -87137,6 +87169,19 @@
                 "refs":{
                     "LSJ 19980109":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d2U51Uw0Hfg/m/uIPoVvPFePgJ",
                     "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ"
+                }
+            },
+            {
+                "text":"The effect happens after combat is concluded. Any blood lost is not lost during combat. (e.g. {Anathema}, {Taste of Vitae})",
+                "refs":{
+                    "LSJ 20031123":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HvM2cHJ6yIo/m/jsb4iRoNdWkJ"
+                }
+            },
+            {
+                "text":"If the combat continues or a new combat begins, the after combat effect does not happen/is not usable. (eg. {Psyche!}, {Telepathic Tracking})\n(Partial reversal of RTR 20010711)",
+                "refs":{
+                    "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ",
+                    "LSJ 19980109":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d2U51Uw0Hfg/m/uIPoVvPFePgJ"
                 }
             }
         ],

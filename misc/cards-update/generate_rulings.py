@@ -6,7 +6,6 @@ import json
 def parse_rule(rule):
     ref_regex = r"\[((?:TOM|SFC|JON|LSJ|PIB|ANK|RTR|RBK).*?)\]"
     text = re.sub(ref_regex, "", rule).strip()
-    print(text)
 
     ref_ids = re.findall(ref_regex, rule)
     refs = {}
