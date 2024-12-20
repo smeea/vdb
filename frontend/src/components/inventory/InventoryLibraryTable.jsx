@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react';
 import { FixedSizeList } from 'react-window';
 import AutoSizer from 'react-virtualized-auto-sizer';
+import { twMerge } from 'tailwind-merge';
 import { WindowRows, ResultModal, InventoryLibraryTableRow } from '@/components';
 import { getIsPlaytest, librarySort } from '@/utils';
 import { useApp } from '@/context';
@@ -49,11 +50,13 @@ const InventoryLibraryTable = ({ cards, sortMethod, compact, withCompact, newFoc
         </div>
       ) : (
         <div
-          className={
-            withCompact
+          className={twMerge(
+            !inShared && withCompact
               ? 'h-[calc(100dvh-252px)] sm:h-[calc(100dvh-291px)] lg:h-[calc(100dvh-306px)] xl:h-[calc(100dvh-332px)]'
-              : 'h-[calc(100dvh-206px)] sm:h-[calc(100dvh-237px)] lg:h-[calc(100dvh-250px)] xl:h-[calc(100dvh-272px)]'
-          }
+              : 'h-[calc(100dvh-206px)] sm:h-[calc(100dvh-237px)] lg:h-[calc(100dvh-250px)] xl:h-[calc(100dvh-272px)]',
+            inShared &&
+              'h-[calc(100dvh-149px)] sm:h-[calc(100dvh-190px)] lg:h-[calc(100dvh-203px)] xl:h-[calc(100dvh-215px)]',
+          )}
         >
           <AutoSizer>
             {({ width, height }) => (

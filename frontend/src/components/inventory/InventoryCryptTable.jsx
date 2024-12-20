@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react';
 import { FixedSizeList } from 'react-window';
 import AutoSizer from 'react-virtualized-auto-sizer';
+import { twMerge } from 'tailwind-merge';
 import { WindowRows, ResultModal, InventoryCryptTableRow } from '@/components';
 import { getIsPlaytest } from '@/utils';
 import { useApp } from '@/context';
@@ -49,11 +50,13 @@ const InventoryCryptTable = ({ cards, sortMethod, compact, withCompact, newFocus
         </div>
       ) : (
         <div
-          className={
-            withCompact
+          className={twMerge(
+            !inShared && withCompact
               ? 'h-[calc(100dvh-206px)] sm:h-[calc(100dvh-245px)] lg:h-[calc(100dvh-261px)] xl:h-[calc(100dvh-288px)]'
-              : 'h-[calc(100dvh-159px)] sm:h-[calc(100dvh-192px)] lg:h-[calc(100dvh-204px)] xl:h-[calc(100dvh-225px)]'
-          }
+              : 'h-[calc(100dvh-159px)] sm:h-[calc(100dvh-192px)] lg:h-[calc(100dvh-204px)] xl:h-[calc(100dvh-225px)]',
+            inShared &&
+              'h-[calc(100dvh-122px)] sm:h-[calc(100dvh-145px)] lg:h-[calc(100dvh-157px)] xl:h-[calc(100dvh-168px)]',
+          )}
         >
           <AutoSizer>
             {({ width, height }) => (

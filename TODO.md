@@ -1,5 +1,6 @@
 # FIX
 - Review TWDA radar: remove swarm, maybe replace?
+- setShow in inventory missing
 
 # FEATURES
 - Inventory 'target' q-ty -> for design consideration
