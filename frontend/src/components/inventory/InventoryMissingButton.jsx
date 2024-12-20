@@ -12,14 +12,8 @@ const InventoryMissingButton = ({
   category,
   onlyNotes,
 }) => {
-  const { isDesktop, setShowFloatingButtons, setShowMenuButtons } = useApp();
+  const { isDesktop } = useApp();
   const [showModal, setShowModal] = useState();
-
-  const handleClose = () => {
-    setShowModal(false);
-    setShowMenuButtons(false);
-    setShowFloatingButtons(true);
-  };
 
   return (
     <>
@@ -39,7 +33,7 @@ const InventoryMissingButton = ({
           clan={clan}
           type={type}
           discipline={discipline}
-          handleClose={handleClose}
+          setShow={setShowModal}
         />
       )}
     </>

@@ -14,7 +14,7 @@ const InventoryMissingModalWrapper = ({
   library,
   category,
   onlyNotes,
-  handleClose,
+  setShow,
 }) => {
   const { cryptCardBase, libraryCardBase, publicName } = useApp();
   const { [CRYPT]: inventoryCrypt, [LIBRARY]: inventoryLibrary } = useSnapshot(inventoryStore);
@@ -72,7 +72,7 @@ const InventoryMissingModalWrapper = ({
         [DECKID]: 'missingInInventory',
       }}
       missAllVtes={{ [CRYPT]: missAllVtesCrypt, [LIBRARY]: missAllVtesLibrary }}
-      handleClose={handleClose}
+      setShow={setShow}
       inInventory
     />
   );
