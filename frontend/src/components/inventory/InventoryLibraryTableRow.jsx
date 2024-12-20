@@ -39,7 +39,7 @@ const InventoryLibraryTableRow = ({ card, compact, newFocus, inShared, handleCli
   const inLimited = limitedLibrary[card.c[ID]];
   const softUsedMax = getSoftMax(usedLibrary[SOFT][card.c[ID]]);
   const hardUsedTotal = getHardTotal(usedLibrary[HARD][card.c[ID]]);
-  const isEditable = !useSnapshot(inventoryStore)[IS_FROZEN];
+  const isEditable = !useSnapshot(inventoryStore)[IS_FROZEN] && !inShared;
 
   const { isSwiped, swipeHandlers } = useSwipe(
     () => inventoryCardChange(card.c, card.q - 1),
@@ -51,19 +51,17 @@ const InventoryLibraryTableRow = ({ card, compact, newFocus, inShared, handleCli
       {...swipeHandlers}
       className={twMerge('flex w-full items-center', getSwipedBg(isSwiped, true))}
     >
-      {inShared ? (
-        <div className="flex h-full min-w-[42px] border-r border-bgSecondary bg-blue/5 dark:border-bgSecondaryDark sm:min-w-[48px]">
-          {card.q || null}
-        </div>
-      ) : (
-        <div
-          className={twMerge(
-            'flex',
-            isEditable
-              ? 'min-w-[84px]'
-              : 'h-full min-w-[42px] border-r border-bgSecondary bg-blue/5 dark:border-bgSecondaryDark sm:min-w-[48px]',
-          )}
-        >
+      <div
+        className={twMerge(
+          'flex items-center justify-center',
+          isEditable
+            ? 'min-w-[84px]'
+            : 'h-full min-w-[42px] border-r border-bgSecondary bg-blue/5 dark:border-bgSecondaryDark sm:min-w-[48px]',
+        )}
+      >
+        {inShared ? (
+          <>{card.q || null}</>
+        ) : (
           <InventoryCardQuantity
             card={card}
             softUsedMax={softUsedMax}
@@ -71,8 +69,8 @@ const InventoryLibraryTableRow = ({ card, compact, newFocus, inShared, handleCli
             compact={compact}
             newFocus={newFocus}
           />
-        </div>
-      )}
+        )}
+      </div>
       {!inShared && (
         <div className="flex min-w-[40px] justify-center">
           <InventoryCardQuantityDiff
