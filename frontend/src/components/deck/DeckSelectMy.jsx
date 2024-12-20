@@ -31,6 +31,7 @@ import {
 const DeckSelectMy = ({ deckid, handleSelect }) => {
   const { limitedMode, inventoryMode, isMobile, isWide } = useApp();
   const decks = useSnapshot(deckStore)[DECKS];
+  const limitedCards = useSnapshot(limitedStore);
 
   const options = useMemo(() => {
     return Object.keys(decks)
@@ -52,7 +53,7 @@ const DeckSelectMy = ({ deckid, handleSelect }) => {
 
         const clan = getClan(decks[i][CRYPT]);
 
-        let restrictions;
+        let restrictions = {};
         if (idx < 15 || diffDays < 90) {
           restrictions = getRestrictions(
             decks[i],

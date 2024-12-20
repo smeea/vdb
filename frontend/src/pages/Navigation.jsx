@@ -145,7 +145,6 @@ const Navigation = () => {
             <Link to={libraryUrl} text={isMobile ? 'LIB' : 'Library'} />
           </div>
           <NavLink
-            ariaLabel="Quick Card Search"
             to={cardsUrl}
             title="Quick Card Search"
             className={({ isActive }) =>
