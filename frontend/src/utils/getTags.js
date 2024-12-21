@@ -241,6 +241,7 @@ const testLibraryMmpa = (card) => {
 };
 
 const testLibraryRush = (card) => {
+  if (card[TYPE] == TYPE_REACTION) return false;
   if (haveTraits([ENTER_COMBAT], card, LibraryTraitsRegexMap)) {
     return true;
   }
