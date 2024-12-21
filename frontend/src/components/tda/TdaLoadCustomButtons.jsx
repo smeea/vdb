@@ -3,13 +3,7 @@ import Upload from '@icons/upload.svg?react';
 import { ButtonIconed } from '@/components';
 import { AUTHOR } from '@/constants';
 
-const AnalyzeLoadCustomButtons = ({
-  tempDecks,
-  setTempDecks,
-  setTempArchon,
-  getDeck,
-  setError,
-}) => {
+const TdaLoadCustomButtons = ({ tempDecks, setTempDecks, setTempArchon, getDeck, setError }) => {
   const fileInputDecks = useRef();
   const fileInputArchon = useRef();
 
@@ -86,4 +80,4 @@ const AnalyzeLoadCustomButtons = ({
   );
 };
 
-export default AnalyzeLoadCustomButtons;
+export default TdaLoadCustomButtons;

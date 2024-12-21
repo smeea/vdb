@@ -180,9 +180,8 @@ const About = () => {
             <li>Andrey &quot;Vaughnad&quot; Davino for multiple development contributions</li>
             <li>Legacy crypt images by Thiago Sousa</li>
             <li>
-              Tournament analyze{' '}
               <a href="https://garourimgazette.wordpress.com/vtes-discussions/vtes-tournament-archive/">
-                archive
+                TDA
               </a>{' '}
               by Petrus "Rune" Makkonen
             </li>

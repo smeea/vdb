@@ -1,6 +1,6 @@
 import { deepClone } from '@/utils';
 import {
-  ANALYZE,
+  TDA,
   ANY,
   BLOOD,
   CAPACITY,
@@ -22,6 +22,7 @@ import {
   RANK,
   SECT,
   SET,
+  TAGS,
   TEXT,
   TITLE,
   TITLES,
@@ -66,13 +67,23 @@ const sanitizeFormState = (target, state) => {
       forms = [TRAITS];
       break;
     case PDA:
-      forms = [DISCIPLINES, TRAITS, CARDTYPES, DATE, CAPACITY, LIBRARY_TOTAL];
+      forms = [DISCIPLINES, TRAITS, TAGS, CARDTYPES, DATE, CAPACITY, LIBRARY_TOTAL];
       break;
     case TWD:
-      forms = [DISCIPLINES, TRAITS, CARDTYPES, DATE, PLAYERS, LOCATION, CAPACITY, LIBRARY_TOTAL];
+      forms = [
+        DISCIPLINES,
+        TRAITS,
+        TAGS,
+        CARDTYPES,
+        DATE,
+        PLAYERS,
+        LOCATION,
+        CAPACITY,
+        LIBRARY_TOTAL,
+      ];
       break;
-    case ANALYZE:
-      forms = [DISCIPLINES, TRAITS, CARDTYPES, RANK, CAPACITY, LIBRARY_TOTAL];
+    case TDA:
+      forms = [DISCIPLINES, TRAITS, TAGS, CARDTYPES, RANK, CAPACITY, LIBRARY_TOTAL];
       break;
     default:
       forms = [];
@@ -150,7 +161,7 @@ const sanitizeFormState = (target, state) => {
 
   switch (target) {
     case CRYPT:
-    case ANALYZE:
+    case TDA:
     case PDA:
     case TWD:
       forms = [CLAN, SECT];
@@ -168,7 +179,7 @@ const sanitizeFormState = (target, state) => {
   });
 
   switch (target) {
-    case ANALYZE:
+    case TDA:
     case PDA:
     case TWD:
       forms = [CRYPT, LIBRARY];

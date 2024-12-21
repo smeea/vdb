@@ -329,9 +329,9 @@ export { default as LibrarySearchForm } from './search_forms/LibrarySearchForm.j
 export { default as CryptSearchForm } from './search_forms/CryptSearchForm.jsx';
 export { default as TwdSearchForm } from './search_forms/TwdSearchForm.jsx';
 export { default as PdaSearchForm } from './search_forms/PdaSearchForm.jsx';
-export { default as AnalyzeSearchForm } from './search_forms/AnalyzeSearchForm.jsx';
+export { default as TdaSearchForm } from './search_forms/TdaSearchForm.jsx';
 
-export { default as AnalyzeSearchFormRank } from './search_forms/components/AnalyzeSearchFormRank.jsx';
+export { default as TdaSearchFormRank } from './search_forms/components/TdaSearchFormRank.jsx';
 
 export { default as LibrarySearchFormClan } from './search_forms/components/LibrarySearchFormClan.jsx';
 export { default as LibrarySearchFormCapacity } from './search_forms/components/LibrarySearchFormCapacity.jsx';
@@ -377,6 +377,7 @@ export { default as TwdSearchFormCardtypes } from './search_forms/components/Twd
 export { default as TwdSearchFormEvent } from './search_forms/components/TwdSearchFormEvent.jsx';
 export { default as TwdSearchFormLibrary } from './search_forms/components/TwdSearchFormLibrary.jsx';
 export { default as TwdSearchFormPlayer } from './search_forms/components/TwdSearchFormPlayer.jsx';
+export { default as TwdSearchFormTags } from './search_forms/components/TwdSearchFormTags.jsx';
 export { default as TwdRandomButton } from './search_forms/components/TwdRandomButton.jsx';
 export { default as TwdNewDecksButton } from './search_forms/components/TwdNewDecksButton.jsx';
 export { default as TwdMoreButton } from './search_forms/components/TwdMoreButton.jsx';
@@ -392,20 +393,20 @@ export { default as SeatingTableLayout } from './seating/SeatingTableLayout.jsx'
 export { default as SeatingTablePlayer } from './seating/SeatingTablePlayer.jsx';
 export { default as SeatingSelectRandom } from './seating/SeatingSelectRandom.jsx';
 
-export { default as BubbleChart } from './tournament_analyze/BubbleChart.jsx';
-export { default as BubbleChartTooltip } from './tournament_analyze/BubbleChartTooltip.jsx';
-export { default as AnalyzeLoadCustomButtons } from './tournament_analyze/AnalyzeLoadCustomButtons.jsx';
-export { default as AnalyzeLoadPreparedButtons } from './tournament_analyze/AnalyzeLoadPreparedButtons.jsx';
-export { default as AnalyzeTournamentCharts } from './tournament_analyze/AnalyzeTournamentCharts.jsx';
-export { default as AnalyzeTournamentChartsClan } from './tournament_analyze/AnalyzeTournamentChartsClan.jsx';
-export { default as AnalyzeTournamentChartsRankingClan } from './tournament_analyze/AnalyzeTournamentChartsRankingClan.jsx';
-export { default as AnalyzeTournamentChartsRankingStyle } from './tournament_analyze/AnalyzeTournamentChartsRankingStyle.jsx';
-export { default as AnalyzeTournamentChartsStyle } from './tournament_analyze/AnalyzeTournamentChartsStyle.jsx';
-export { default as AnalyzeTournamentDeck } from './tournament_analyze/AnalyzeTournamentDeck.jsx';
-export { default as AnalyzeTournamentDeckDescription } from './tournament_analyze/AnalyzeTournamentDeckDescription.jsx';
-export { default as AnalyzeTournamentInfo } from './tournament_analyze/AnalyzeTournamentInfo.jsx';
-export { default as AnalyzeTournamentResult } from './tournament_analyze/AnalyzeTournamentResult.jsx';
-export { default as AnalyzeTournamentResultTotal } from './tournament_analyze/AnalyzeTournamentResultTotal.jsx';
+export { default as BubbleChart } from './tda/BubbleChart.jsx';
+export { default as BubbleChartTooltip } from './tda/BubbleChartTooltip.jsx';
+export { default as TdaLoadCustomButtons } from './tda/TdaLoadCustomButtons.jsx';
+export { default as TdaLoadPreparedButtons } from './tda/TdaLoadPreparedButtons.jsx';
+export { default as TdaCharts } from './tda/TdaCharts.jsx';
+export { default as TdaChartsClan } from './tda/TdaChartsClan.jsx';
+export { default as TdaChartsRankingClan } from './tda/TdaChartsRankingClan.jsx';
+export { default as TdaChartsRankingStyle } from './tda/TdaChartsRankingStyle.jsx';
+export { default as TdaChartsStyle } from './tda/TdaChartsStyle.jsx';
+export { default as TdaDeck } from './tda/TdaDeck.jsx';
+export { default as TdaDeckDescription } from './tda/TdaDeckDescription.jsx';
+export { default as TdaInfo } from './tda/TdaInfo.jsx';
+export { default as TdaResult } from './tda/TdaResult.jsx';
+export { default as TdaResultTotal } from './tda/TdaResultTotal.jsx';
 
 export { default as TwdCardsHistoryCrypt } from './twd_cards_history/TwdCardsHistoryCrypt.jsx';
 export { default as TwdCardsHistoryCryptRow } from './twd_cards_history/TwdCardsHistoryCryptRow.jsx';

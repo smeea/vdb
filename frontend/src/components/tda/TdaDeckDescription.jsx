@@ -11,7 +11,7 @@ import { useApp } from '@/context';
 import { getDeckInUrl } from '@/utils';
 import { SCORE, GW, VP, RANK, TAGS } from '@/constants';
 
-const AnalyzeTournamentDeckDescription = ({ deck }) => {
+const TdaDeckDescription = ({ deck }) => {
   const { username, isMobile } = useApp();
   const deckInUrl = getDeckInUrl(deck);
 
@@ -58,4 +58,4 @@ const AnalyzeTournamentDeckDescription = ({ deck }) => {
   );
 };
 
-export default AnalyzeTournamentDeckDescription;
+export default TdaDeckDescription;

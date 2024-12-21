@@ -3,6 +3,7 @@
 
 # FEATURES
 - Inventory 'target' q-ty -> for design consideration
+- Search TWD by tags
 
 # FEATURES ON HOLD
 - TWD search with % V5-compatibility -> after BCP clarify V5

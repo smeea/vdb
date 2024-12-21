@@ -2,14 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router';
 import { useSnapshot } from 'valtio';
 import {
-  ButtonFloatSearch,
   ButtonFloatClose,
+  ButtonFloatSearch,
   Checkbox,
+  CryptSearchFormClan,
+  CryptSearchFormSect,
   TwdSearchFormButtons,
   TwdSearchFormCapacity,
   TwdSearchFormCardtypes,
-  CryptSearchFormClan,
-  CryptSearchFormSect,
   TwdSearchFormCrypt,
   TwdSearchFormDate,
   TwdSearchFormDisciplines,
@@ -20,6 +20,7 @@ import {
   TwdSearchFormMatchInventory,
   TwdSearchFormPlayer,
   TwdSearchFormPlayers,
+  TwdSearchFormTags,
 } from '@/components';
 import { sanitizeFormState } from '@/utils';
 import { useApp, setTwdResults, searchTwdForm, clearSearchForm } from '@/context';
@@ -43,6 +44,7 @@ import {
   SCALING,
   SECT,
   STAR,
+  TAGS,
   TRAITS,
   TWD,
 } from '@/constants';
@@ -245,6 +247,7 @@ const TwdSearchForm = ({ error, setError }) => {
         onChange={handleDisciplinesChange}
       />
       <TwdSearchFormCardtypes value={twdFormState[CARDTYPES]} onChange={handleChangeWithOpt} />
+      <TwdSearchFormTags value={twdFormState[TAGS]} onChange={handleMultiChange} />
       <TwdSearchFormEvent value={twdFormState[EVENT]} onChange={handleEventChange} />
       <TwdSearchFormLocation value={twdFormState[LOCATION]} form={searchTwdForm} />
       <TwdSearchFormPlayer value={twdFormState[AUTHOR]} form={searchTwdForm} />

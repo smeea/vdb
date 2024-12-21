@@ -14,11 +14,15 @@
     "84-90": false
   },
   "clan": {
-    "value": ["any"],
+    "value": [
+      "any"
+    ],
     "logic": "or"
   },
   "sect": {
-    "value": ["any"],
+    "value": [
+      "any"
+    ],
     "logic": "or"
   },
   "capacity": {
@@ -43,6 +47,18 @@
   "traits": {
     "star": false,
     "monoclan": false
+  },
+  "tags": {
+    "accel": false,
+    "ally": false,
+    "bleed": false,
+    "block": false,
+    "combat": false,
+    "mmpa": false,
+    "rush": false,
+    "stealth": false,
+    "swarm": false,
+    "vote": false
   },
   "matchInventory": {
     "crypt": "any",

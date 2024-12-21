@@ -173,6 +173,16 @@ def get_decks_by_sect(value, decks):
     return match_decks
 
 
+def get_decks_by_tags(value, decks):
+    match_decks = []
+    for deck in decks:
+        for tag in value.keys():
+            if tag in deck["tags"]:
+                match_decks.append(deck)
+
+    return match_decks
+
+
 def get_decks_by_disciplines(disciplines, decks):
     disciplines_counter = len(disciplines)
     match_decks = []

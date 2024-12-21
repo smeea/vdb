@@ -58,7 +58,7 @@ const LIBRARY_SEARCH_SORT = 'libraryInventorySort';
 const LIBRARY_INVENTORY_SORT = 'libraryInventorySort';
 const TWD_SEARCH_SORT = 'twdSearchSort';
 const PDA_SEARCH_SORT = 'pdaSearchSort';
-const ANALYZE_SEARCH_SORT = 'analyzeSearchSort';
+const TDA_SEARCH_SORT = 'tdaSearchSort';
 const LANG = 'lang';
 const ADD_MODE = 'addMode';
 const INVENTORY_MODE = 'inventoryMode';
@@ -126,8 +126,8 @@ export const AppProvider = ({ children }) => {
   const [pdaSearchSort, setPdaSearchSort] = useState(
     getLocalStorage(PDA_SEARCH_SORT) ?? DATE_NEW_OLD,
   );
-  const [analyzeSearchSort, setAnalyzeSearchSort] = useState(
-    getLocalStorage(ANALYZE_SEARCH_SORT) ?? RANK_HIGH_LOW,
+  const [tdaSearchSort, setTdaSearchSort] = useState(
+    getLocalStorage(TDA_SEARCH_SORT) ?? RANK_HIGH_LOW,
   );
   const [showFloatingButtons, setShowFloatingButtons] = useState(true);
   const [showMenuButtons, setShowMenuButtons] = useState();
@@ -434,9 +434,9 @@ export const AppProvider = ({ children }) => {
     setLocalStorage(PDA_SEARCH_SORT, method);
   };
 
-  const changeAnalyzeSearchSort = (method) => {
-    setAnalyzeSearchSort(method);
-    setLocalStorage(ANALYZE_SEARCH_SORT, method);
+  const changeTdaSearchSort = (method) => {
+    setTdaSearchSort(method);
+    setLocalStorage(TDA_SEARCH_SORT, method);
   };
 
   const addRecentDeck = (recentDeck) => {
@@ -595,8 +595,8 @@ export const AppProvider = ({ children }) => {
         changeTwdSearchSort,
         pdaSearchSort,
         changePdaSearchSort,
-        analyzeSearchSort,
-        changeAnalyzeSearchSort,
+        tdaSearchSort,
+        changeTdaSearchSort,
         cryptDeckSort,
         changeCryptDeckSort,
         cryptInventorySort,

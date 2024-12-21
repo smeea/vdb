@@ -53,7 +53,7 @@ const Documentation = () => {
                 <a href="#inventory">Inventory</a>
               </li>
               <li>
-                <a href="#analyze">Analyze Tournament</a>
+                <a href="#tda">TDA search</a>
               </li>
             </ul>
           </div>
@@ -415,10 +415,10 @@ const Documentation = () => {
         </div>
 
         <div className="flex flex-col gap-1">
-          <Title id="analyze">ANALYZE TOURNAMENT</Title>
+          <Title id="tda">TDA</Title>
           <div>
-            This feature available at <Link to="/tda">Tournament Analyze</Link> lets you browse
-            decks of particular tournament using standard TWD search filters.
+            This feature available at <Link to="/tda">TDA</Link> lets you browse decks of particular
+            tournament using standard TWD search filters.
           </div>
 
           <div>

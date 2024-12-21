@@ -4,7 +4,7 @@ import { getClan } from '@/utils';
 import { useApp } from '@/context';
 import { NAME, CRYPT, VALUE, MULTI, ANTITRIBU } from '@/constants';
 
-const AnalyzeTournamentChartsClan = ({ decks }) => {
+const TdaChartsClan = ({ decks }) => {
   const { isMobile, isDesktop, isWide } = useApp();
   const data = useMemo(() => {
     const result = {};
@@ -56,4 +56,4 @@ const AnalyzeTournamentChartsClan = ({ decks }) => {
   );
 };
 
-export default AnalyzeTournamentChartsClan;
+export default TdaChartsClan;

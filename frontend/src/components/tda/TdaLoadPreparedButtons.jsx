@@ -3,22 +3,22 @@ import { useNavigate } from 'react-router';
 import StarFill from '@icons/star-fill.svg?react';
 import tournaments from '@/assets/data/etda.json';
 import { Spinner, ButtonIconed } from '@/components';
-import { setAnalyzeDecks, setAnalyzeInfo, setAnalyzeResults, clearAnalyzeForm } from '@/context';
+import { setTdaDecks, setTdaInfo, setTdaResults, clearTdaForm } from '@/context';
 import { ID, TITLE, DATE } from '@/constants';
 
-const AnalyzeLoadPreparedButtons = ({ setTempDecks, setTempArchon, setError }) => {
+const TdaLoadPreparedButtons = ({ setTempDecks, setTempArchon, setError }) => {
   const navigate = useNavigate();
   const [loadingDeck, setLoadingDeck] = useState();
 
   const handlePrepared = (id) => {
     setLoadingDeck(id);
-    clearAnalyzeForm();
+    clearTdaForm();
     setError(false);
     setTempArchon();
     setTempDecks();
-    setAnalyzeInfo();
-    setAnalyzeDecks();
-    setAnalyzeResults();
+    setTdaInfo();
+    setTdaDecks();
+    setTdaResults();
     navigate(`/tda/${id}`);
   };
 
@@ -40,4 +40,4 @@ const AnalyzeLoadPreparedButtons = ({ setTempDecks, setTempArchon, setError }) =
   );
 };
 
-export default AnalyzeLoadPreparedButtons;
+export default TdaLoadPreparedButtons;

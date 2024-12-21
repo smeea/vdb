@@ -3,7 +3,7 @@ import { TwdResultDescriptionTextTr, Title } from '@/components';
 import { useApp } from '@/context';
 import { EVENT, LOCATION, ROUNDS, DATE, PLAYERS } from '@/constants';
 
-const AnalyzeTournamentInfo = ({ info, decks }) => {
+const TdaInfo = ({ info, decks }) => {
   const { isMobile } = useApp();
 
   return (
@@ -53,4 +53,4 @@ const AnalyzeTournamentInfo = ({ info, decks }) => {
   );
 };
 
-export default AnalyzeTournamentInfo;
+export default TdaInfo;

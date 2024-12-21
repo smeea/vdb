@@ -3,26 +3,19 @@ import ky from 'ky';
 import { useNavigate, useParams } from 'react-router';
 import { useSnapshot } from 'valtio';
 import {
-  AnalyzeLoadCustomButtons,
-  AnalyzeLoadPreparedButtons,
-  AnalyzeTournamentInfo,
-  AnalyzeTournamentCharts,
-  AnalyzeTournamentResult,
-  AnalyzeSearchForm,
+  TdaLoadCustomButtons,
+  TdaLoadPreparedButtons,
+  TdaInfo,
+  TdaCharts,
+  TdaResult,
+  TdaSearchForm,
   ButtonClose,
   ButtonFloatClose,
   ErrorMessage,
   FlexGapped,
   Header,
 } from '@/components';
-import {
-  analyzeStore,
-  clearAnalyzeForm,
-  setAnalyzeDecks,
-  setAnalyzeInfo,
-  setAnalyzeResults,
-  useApp,
-} from '@/context';
+import { tdaStore, clearTdaForm, setTdaDecks, setTdaInfo, setTdaResults, useApp } from '@/context';
 import { sanitizeScoreSheet, getTags, importDeck } from '@/utils';
 import {
   AUTHOR,
@@ -46,9 +39,9 @@ import {
 
 const TESTERS = ['1', 'crauseon'];
 
-const TournamentAnalyze = () => {
+const Tda = () => {
   const { username, cryptCardBase, libraryCardBase, isMobile, isDesktop } = useApp();
-  const { [DECKS]: decks, [RESULTS]: results, [INFO]: info } = useSnapshot(analyzeStore);
+  const { [DECKS]: decks, [RESULTS]: results, [INFO]: info } = useSnapshot(tdaStore);
   const params = useParams();
   const navigate = useNavigate();
 
@@ -148,7 +141,7 @@ const TournamentAnalyze = () => {
     const dataScores = utils.sheet_to_csv(wsScores).split('\n');
 
     const archonIds = [];
-    const analyzeDecks = {};
+    const tdaDecks = {};
 
     dataScores.forEach((n, idx) => {
       if (idx < 6) return;
@@ -179,7 +172,7 @@ const TournamentAnalyze = () => {
 
       if (tempDecks[playerId]) {
         reportedRanks.push(score[RANK] == 'DQ' ? totalPlayers : score[RANK]);
-        analyzeDecks[playerId] = {
+        tdaDecks[playerId] = {
           ...tempDecks[playerId],
           [SCORE]: score,
         };
@@ -193,7 +186,7 @@ const TournamentAnalyze = () => {
       totalVp += score[VP];
     });
 
-    Object.keys(analyzeDecks).forEach((deckid) => {
+    Object.keys(tdaDecks).forEach((deckid) => {
       if (!archonIds.includes(deckid)) console.log(`Deck ${deckid} is not in Archon`);
     });
 
@@ -207,7 +200,7 @@ const TournamentAnalyze = () => {
       medianReportedRank = (min + max) / 2;
     }
 
-    setAnalyzeInfo({
+    setTdaInfo({
       [EVENT]: event,
       [DATE]: date,
       [LOCATION]: location,
@@ -223,17 +216,17 @@ const TournamentAnalyze = () => {
       medianRank: totalPlayers / 2,
       medianReportedRank: medianReportedRank,
     });
-    setAnalyzeDecks(analyzeDecks);
+    setTdaDecks(tdaDecks);
   };
 
   const handleClear = () => {
-    clearAnalyzeForm();
+    clearTdaForm();
     setError(false);
     setTempArchon();
     setTempDecks();
-    setAnalyzeInfo();
-    setAnalyzeDecks();
-    setAnalyzeResults();
+    setTdaInfo();
+    setTdaDecks();
+    setTdaResults();
     navigate('/tda');
   };
 
@@ -244,12 +237,7 @@ const TournamentAnalyze = () => {
   }, [tempDecks, tempArchon]);
 
   useEffect(() => {
-    if (
-      params[EVENT] &&
-      !(analyzeStore[DECKS] || analyzeStore[INFO]) &&
-      cryptCardBase &&
-      libraryCardBase
-    ) {
+    if (params[EVENT] && !(tdaStore[DECKS] || tdaStore[INFO]) && cryptCardBase && libraryCardBase) {
       loadPrepared(params[EVENT]);
     }
   }, [params[EVENT], cryptCardBase, libraryCardBase]);
@@ -279,13 +267,13 @@ const TournamentAnalyze = () => {
         {!(info && decks) && (
           <div className="flex min-h-[70vh] flex-col place-items-center justify-center max-sm:px-2">
             <div className="flex flex-col gap-2">
-              <AnalyzeLoadPreparedButtons
+              <TdaLoadPreparedButtons
                 setTempDecks={setTempDecks}
                 setTempArchon={setTempArchon}
                 setError={setError}
               />
               {TESTERS.includes(username) && (
-                <AnalyzeLoadCustomButtons
+                <TdaLoadCustomButtons
                   tempDecks={tempDecks}
                   setTempDecks={setTempDecks}
                   setTempArchon={setTempArchon}
@@ -298,9 +286,7 @@ const TournamentAnalyze = () => {
         )}
         <FlexGapped className="max-sm:flex-col">
           <div className="flex basis-9/12 justify-center max-sm:order-last">
-            {decks && info && (
-              <AnalyzeTournamentCharts info={info} decks={decks} searchResults={results ?? {}} />
-            )}
+            {decks && info && <TdaCharts info={info} decks={decks} searchResults={results ?? {}} />}
           </div>
           <FlexGapped className="basis-3/12 flex-col">
             {info && decks && (
@@ -310,7 +296,7 @@ const TournamentAnalyze = () => {
                 ) : (
                   <ButtonFloatClose handleClose={handleClear} />
                 )}
-                <AnalyzeTournamentInfo info={info} decks={decks} />
+                <TdaInfo info={info} decks={decks} />
               </>
             )}
           </FlexGapped>
@@ -318,11 +304,11 @@ const TournamentAnalyze = () => {
         {decks && info && (
           <FlexGapped>
             <div className="flex flex-col gap-4 sm:basis-7/12 lg:basis-8/12 xl:basis-9/12">
-              <AnalyzeTournamentResult decks={results ?? Object.values(decks)} />
+              <TdaResult decks={results ?? Object.values(decks)} />
             </div>
             {!(isMobile && decks && info) && (
               <div className="basis-full max-sm:p-2 sm:basis-5/12 lg:basis-4/12 xl:basis-3/12">
-                <AnalyzeSearchForm />
+                <TdaSearchForm />
               </div>
             )}
           </FlexGapped>
@@ -332,4 +318,4 @@ const TournamentAnalyze = () => {
   );
 };
 
-export default TournamentAnalyze;
+export default Tda;

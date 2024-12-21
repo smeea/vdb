@@ -4,7 +4,7 @@ import { SortButton } from '@/components';
 import { useApp } from '@/context';
 import { SCORE, RANK, TAGS } from '@/constants';
 
-const AnalyzeTournamentResultTotal = ({ results, sortMethods, sortMethod, setSortMethod }) => {
+const TdaResultTotal = ({ results, sortMethods, sortMethod, setSortMethod }) => {
   const { isMobile } = useApp();
   const byRank = {};
   const byTags = {};
@@ -80,4 +80,4 @@ const AnalyzeTournamentResultTotal = ({ results, sortMethods, sortMethod, setSor
     </div>
   );
 };
-export default AnalyzeTournamentResultTotal;
+export default TdaResultTotal;

@@ -3,29 +3,23 @@ import { useSearchParams } from 'react-router';
 import { useSnapshot } from 'valtio';
 import {
   ButtonClose,
-  ButtonFloatSearch,
   ButtonFloatClose,
+  ButtonFloatSearch,
   Checkbox,
-  TwdSearchFormCapacity,
-  TwdSearchFormCardtypes,
   CryptSearchFormClan,
   CryptSearchFormSect,
+  TdaSearchFormRank,
+  TwdSearchFormCapacity,
+  TwdSearchFormCardtypes,
   TwdSearchFormCrypt,
   TwdSearchFormDisciplines,
   TwdSearchFormLibrary,
   TwdSearchFormLibraryTotal,
-  AnalyzeSearchFormRank,
+  TwdSearchFormTags,
 } from '@/components';
 import { filterDecks, sanitizeFormState } from '@/utils';
+import { useApp, setTdaResults, searchTdaForm, clearTdaForm, tdaStore } from '@/context';
 import {
-  useApp,
-  setAnalyzeResults,
-  searchAnalyzeForm,
-  clearAnalyzeForm,
-  analyzeStore,
-} from '@/context';
-import {
-  ANALYZE,
   CAPACITY,
   CARDTYPES,
   CLAN,
@@ -39,13 +33,15 @@ import {
   RANK,
   SECT,
   STAR,
+  TAGS,
+  TDA,
   TRAITS,
 } from '@/constants';
 
-const AnalyzeSearchForm = () => {
+const TdaSearchForm = () => {
   const { cryptCardBase, libraryCardBase, isMobile } = useApp();
-  const analyzeFormState = useSnapshot(searchAnalyzeForm);
-  const decks = useSnapshot(analyzeStore)[DECKS];
+  const tdaFormState = useSnapshot(searchTdaForm);
+  const decks = useSnapshot(tdaStore)[DECKS];
   const [error, setError] = useState(false);
   const [searchParams, setSearchParams] = useSearchParams();
   const query = JSON.parse(searchParams.get('q'));
@@ -53,56 +49,56 @@ const AnalyzeSearchForm = () => {
   useEffect(() => {
     if (query) {
       Object.keys(query).forEach((i) => {
-        searchAnalyzeForm[i] = query[i];
+        searchTdaForm[i] = query[i];
       });
     }
   }, []);
 
   useEffect(() => {
     if (!isMobile && cryptCardBase && libraryCardBase) {
-      const sanitizedForm = sanitizeFormState(ANALYZE, analyzeFormState);
+      const sanitizedForm = sanitizeFormState(TDA, tdaFormState);
       if (Object.keys(sanitizedForm).length === 0) {
         if (query) setSearchParams();
-        setAnalyzeResults();
+        setTdaResults();
       } else {
         processSearch();
       }
-    } else if (isMobile && query && analyzeFormState && cryptCardBase && libraryCardBase) {
+    } else if (isMobile && query && tdaFormState && cryptCardBase && libraryCardBase) {
       processSearch();
     }
-  }, [analyzeFormState, cryptCardBase, libraryCardBase]);
+  }, [tdaFormState, cryptCardBase, libraryCardBase]);
 
   const handleMultiSelectChange = (event, id) => {
     const i = id[NAME];
     const { name, value } = event;
-    searchAnalyzeForm[name].value[i] = value;
+    searchTdaForm[name].value[i] = value;
   };
 
   const handleChangeWithOpt = (event, id) => {
     const i = id[NAME];
     const { name, value } = event;
 
-    searchAnalyzeForm[i][name] = value;
+    searchTdaForm[i][name] = value;
   };
 
   const handleDisciplinesChange = (name) => {
-    searchAnalyzeForm[DISCIPLINES][name] = !searchAnalyzeForm[DISCIPLINES][name];
+    searchTdaForm[DISCIPLINES][name] = !searchTdaForm[DISCIPLINES][name];
   };
 
   const handleMultiChange = (event) => {
-    const { name, value } = event.target;
-    searchAnalyzeForm[name][value] = !searchAnalyzeForm[name][value];
+    const { name, value } = event.currentTarget;
+    searchTdaForm[name][value] = !searchTdaForm[name][value];
   };
 
   const handleClear = () => {
-    clearAnalyzeForm();
-    setAnalyzeResults();
+    clearTdaForm();
+    setTdaResults();
     setError(false);
   };
 
   const processSearch = () => {
     setError(false);
-    const sanitizedForm = sanitizeFormState(ANALYZE, searchAnalyzeForm);
+    const sanitizedForm = sanitizeFormState(TDA, searchTdaForm);
 
     if (Object.entries(sanitizedForm).length === 0) {
       setError('EMPTY REQUEST');
@@ -117,59 +113,57 @@ const AnalyzeSearchForm = () => {
     }
 
     setSearchParams({ q: JSON.stringify(sanitizedForm) });
-    setAnalyzeResults(filteredDecks);
+    setTdaResults(filteredDecks);
   };
 
   return (
     <div className="flex flex-col gap-2">
       <div className="flex gap-2">
-        <AnalyzeSearchFormRank value={analyzeFormState[RANK]} onChange={handleChangeWithOpt} />
+        <TdaSearchFormRank value={tdaFormState[RANK]} onChange={handleChangeWithOpt} />
         <ButtonClose title="Clear Forms & Results" handleClick={handleClear} />
       </div>
       {cryptCardBase && (
-        <TwdSearchFormCrypt value={analyzeFormState[CRYPT]} form={searchAnalyzeForm[CRYPT]} />
+        <TwdSearchFormCrypt value={tdaFormState[CRYPT]} form={searchTdaForm[CRYPT]} />
       )}
       <div className="flex justify-end">
         <Checkbox
           name={TRAITS}
           value={STAR}
           label="With Star"
-          checked={analyzeFormState[TRAITS][STAR]}
+          checked={tdaFormState[TRAITS][STAR]}
           onChange={handleMultiChange}
         />
       </div>
       {libraryCardBase && (
-        <TwdSearchFormLibrary value={analyzeFormState[LIBRARY]} form={searchAnalyzeForm[LIBRARY]} />
+        <TwdSearchFormLibrary value={tdaFormState[LIBRARY]} form={searchTdaForm[LIBRARY]} />
       )}
-      <TwdSearchFormLibraryTotal
-        value={analyzeFormState[LIBRARY_TOTAL]}
-        onChange={handleMultiChange}
-      />
+      <TwdSearchFormLibraryTotal value={tdaFormState[LIBRARY_TOTAL]} onChange={handleMultiChange} />
       <CryptSearchFormClan
-        value={analyzeFormState[CLAN]}
+        value={tdaFormState[CLAN]}
         onChange={handleMultiSelectChange}
-        searchForm={searchAnalyzeForm}
+        searchForm={searchTdaForm}
       />
       <div className="flex justify-end">
         <Checkbox
           name={TRAITS}
           value={MONOCLAN}
           label="Mono Clan"
-          checked={analyzeFormState[TRAITS][MONOCLAN]}
+          checked={tdaFormState[TRAITS][MONOCLAN]}
           onChange={handleMultiChange}
         />
       </div>
       <CryptSearchFormSect
-        value={analyzeFormState[SECT]}
+        value={tdaFormState[SECT]}
         onChange={handleMultiSelectChange}
-        searchForm={searchAnalyzeForm}
+        searchForm={searchTdaForm}
       />
-      <TwdSearchFormCapacity value={analyzeFormState[CAPACITY]} onChange={handleMultiChange} />
+      <TwdSearchFormCapacity value={tdaFormState[CAPACITY]} onChange={handleMultiChange} />
       <TwdSearchFormDisciplines
-        value={analyzeFormState[DISCIPLINES]}
+        value={tdaFormState[DISCIPLINES]}
         onChange={handleDisciplinesChange}
       />
-      <TwdSearchFormCardtypes value={analyzeFormState[CARDTYPES]} onChange={handleChangeWithOpt} />
+      <TwdSearchFormCardtypes value={tdaFormState[CARDTYPES]} onChange={handleChangeWithOpt} />
+      <TwdSearchFormTags value={tdaFormState[TAGS]} onChange={handleMultiChange} />
       {isMobile && (
         <>
           <ButtonFloatClose handleClose={handleClear} position="middle" />
@@ -180,4 +174,4 @@ const AnalyzeSearchForm = () => {
   );
 };
 
-export default AnalyzeSearchForm;
+export default TdaSearchForm;

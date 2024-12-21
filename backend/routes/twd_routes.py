@@ -148,6 +148,7 @@ def search_twd_route():
         "library",
         "clan",
         "sect",
+        "tags",
         "traits",
         "capacity",
         "disciplines",

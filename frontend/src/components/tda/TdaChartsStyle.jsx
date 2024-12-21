@@ -3,7 +3,7 @@ import { Radar, RadarChart, PolarGrid, PolarAngleAxis } from 'recharts';
 import { useApp } from '@/context';
 import { NAME, TAGS, VALUE } from '@/constants';
 
-const AnalyzeTournamentChartsStyle = ({ decks }) => {
+const TdaChartsStyle = ({ decks }) => {
   const { isMobile, isDesktop, isWide } = useApp();
   const data = useMemo(() => {
     const qty = Object.keys(decks).length;
@@ -85,4 +85,4 @@ const AnalyzeTournamentChartsStyle = ({ decks }) => {
   );
 };
 
-export default AnalyzeTournamentChartsStyle;
+export default TdaChartsStyle;

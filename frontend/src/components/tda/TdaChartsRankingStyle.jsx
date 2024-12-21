@@ -25,7 +25,7 @@ import {
   VALUE,
 } from '@/constants';
 
-const AnalyzeTournamentChartsRankingStyle = ({ info, decks, searchResults }) => {
+const TdaChartsRankingStyle = ({ info, decks, searchResults }) => {
   const { isMobile, isDesktop, isWide } = useApp();
   const allowedTags = [BLEED, STEALTH, BLOCK, RUSH, COMBAT, ALLY, SWARM, VOTE];
 
@@ -90,4 +90,4 @@ const AnalyzeTournamentChartsRankingStyle = ({ info, decks, searchResults }) => 
   );
 };
 
-export default AnalyzeTournamentChartsRankingStyle;
+export default TdaChartsRankingStyle;

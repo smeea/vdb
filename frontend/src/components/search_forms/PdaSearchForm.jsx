@@ -18,6 +18,7 @@ import {
   TwdSearchFormLibraryTotal,
   TwdSearchFormMatchInventory,
   TwdSearchFormPlayer,
+  TwdSearchFormTags,
 } from '@/components';
 import { sanitizeFormState } from '@/utils';
 import { useApp, setPdaResults, searchPdaForm, clearSearchForm } from '@/context';
@@ -40,6 +41,7 @@ import {
   SECT,
   SRC,
   STAR,
+  TAGS,
   TRAITS,
 } from '@/constants';
 
@@ -93,7 +95,7 @@ const PdaSearchForm = ({ error, setError }) => {
   };
 
   const handleMultiChange = (event) => {
-    const { name, value } = event.target;
+    const { name, value } = event.currentTarget;
     searchPdaForm[name][value] = !searchPdaForm[name][value];
   };
 
@@ -249,6 +251,7 @@ const PdaSearchForm = ({ error, setError }) => {
         onChange={handleDisciplinesChange}
       />
       <TwdSearchFormCardtypes value={pdaFormState[CARDTYPES]} onChange={handleChangeWithOpt} />
+      <TwdSearchFormTags value={pdaFormState[TAGS]} onChange={handleMultiChange} />
       <TwdSearchFormPlayer value={pdaFormState[AUTHOR]} form={searchPdaForm} inPda />
       {isMobile && showFloatingButtons && (
         <>

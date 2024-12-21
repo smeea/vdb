@@ -18,7 +18,7 @@ import {
   INDEX,
 } from '@/constants';
 
-const AnalyzeTournamentChartsRankingClan = ({ info, decks, searchResults }) => {
+const TdaChartsRankingClan = ({ info, decks, searchResults }) => {
   const { isMobile, isDesktop, isWide } = useApp();
   const data = useMemo(() => {
     const d = {};
@@ -72,4 +72,4 @@ const AnalyzeTournamentChartsRankingClan = ({ info, decks, searchResults }) => {
   );
 };
 
-export default AnalyzeTournamentChartsRankingClan;
+export default TdaChartsRankingClan;

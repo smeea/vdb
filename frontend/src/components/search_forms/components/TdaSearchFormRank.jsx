@@ -3,7 +3,7 @@ import { Select } from '@/components';
 import { useApp } from '@/context';
 import { RANK, ANY, FROM, TO } from '@/constants';
 
-const AnalyzeSearchFormRank = ({ value, onChange }) => {
+const TdaSearchFormRank = ({ value, onChange }) => {
   const { isXWide } = useApp();
   const maxMenuHeight = isXWide ? 500 : 350;
   const name = RANK;
@@ -75,4 +75,4 @@ const AnalyzeSearchFormRank = ({ value, onChange }) => {
   );
 };
 
-export default AnalyzeSearchFormRank;
+export default TdaSearchFormRank;
