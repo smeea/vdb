@@ -2,7 +2,7 @@ import React from 'react';
 import { twMerge } from 'tailwind-merge';
 import { SortButton } from '@/components';
 import { useApp } from '@/context';
-import { SCORE, RANK, TAGS } from '@/constants';
+import { SUPERIOR, BASE, SCORE, RANK, TAGS } from '@/constants';
 
 const TdaResultTotal = ({ results, sortMethods, sortMethod, setSortMethod }) => {
   const { isMobile } = useApp();
@@ -20,7 +20,7 @@ const TdaResultTotal = ({ results, sortMethods, sortMethod, setSortMethod }) => 
       byRank[rank] = 1;
     }
 
-    [...deck[TAGS].superior, ...deck[TAGS].base].forEach((t) => {
+    [...deck[TAGS][SUPERIOR], ...deck[TAGS][BASE]].forEach((t) => {
       if (byTags[t]) {
         byTags[t] += 1;
       } else {

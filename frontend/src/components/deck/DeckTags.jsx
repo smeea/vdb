@@ -4,7 +4,7 @@ import Spellcheck from '@icons/spellcheck.svg?react';
 import { Select, ButtonIconed } from '@/components';
 import { deckUpdate } from '@/context';
 import { getTags, getIsEditable } from '@/utils';
-import { DECKID, CRYPT, LIBRARY, TAGS } from '@/constants';
+import { SUPERIOR, BASE, DECKID, CRYPT, LIBRARY, TAGS } from '@/constants';
 
 const DeckTags = ({ deck, tagsSuperior, noAutotags, isBordered, allTagsOptions }) => {
   const isEditable = getIsEditable(deck);
@@ -39,7 +39,7 @@ const DeckTags = ({ deck, tagsSuperior, noAutotags, isBordered, allTagsOptions }
 
   const handleAutotagClick = () => {
     const tags = getTags(deck[CRYPT], deck[LIBRARY]);
-    deckUpdate(deck[DECKID], TAGS, [...tags.superior, ...tags.base]);
+    deckUpdate(deck[DECKID], TAGS, [...tags[SUPERIOR], ...tags[BASE]]);
   };
 
   const options = allTagsOptions.map((tag) => {

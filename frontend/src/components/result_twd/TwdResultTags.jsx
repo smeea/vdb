@@ -1,16 +1,17 @@
 import React from 'react';
 import { DeckTags } from '@/components';
+import { SUPERIOR, BASE } from '@/constants';
 
 const TwdResultTags = ({ tags }) => {
   return (
     <>
-      {(tags.superior.length > 0 || tags.base.length > 0) && (
+      {(tags[SUPERIOR].length > 0 || tags[BASE].length > 0) && (
         <div className="flex">
           <DeckTags
             deck={{
-              tags: tags.base,
+              tags: tags[BASE],
             }}
-            tagsSuperior={tags.superior}
+            tagsSuperior={tags[SUPERIOR]}
             allTagsOptions={[]}
           />
         </div>

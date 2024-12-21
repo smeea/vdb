@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis } from 'recharts';
 import { useApp } from '@/context';
-import { NAME, TAGS, VALUE } from '@/constants';
+import { SUPERIOR, BASE, NAME, TAGS, VALUE } from '@/constants';
 
 const TdaChartsStyle = ({ decks }) => {
   const { isMobile, isDesktop, isWide } = useApp();
@@ -10,14 +10,14 @@ const TdaChartsStyle = ({ decks }) => {
     const result = {};
 
     Object.values(decks).forEach((deck) => {
-      deck[TAGS].superior.forEach((t) => {
+      deck[TAGS][SUPERIOR].forEach((t) => {
         if (result[t]) {
           result[t] += 1.5;
         } else {
           result[t] = 1.5;
         }
       });
-      deck[TAGS].base.forEach((t) => {
+      deck[TAGS][BASE].forEach((t) => {
         if (result[t]) {
           result[t] += 1;
         } else {

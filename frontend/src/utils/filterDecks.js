@@ -28,6 +28,9 @@ import {
   TRAITS,
   TYPE,
   SCORE,
+  TAGS,
+  SUPERIOR,
+  BASE,
 } from '@/constants';
 
 const filterDecks = (decks = {}, filter) => {
@@ -42,6 +45,7 @@ const filterDecks = (decks = {}, filter) => {
     if (filter[DISCIPLINES] && missingDisciplines(filter[DISCIPLINES], deck)) return false;
     if (filter[CARDTYPES] && missingCardtypes(filter[CARDTYPES], deck)) return false;
     if (filter[TRAITS] && missingTraits(filter[TRAITS], deck)) return false;
+    if (filter[TAGS] && missingTags(filter[TAGS], deck)) return false;
 
     return true;
   });
@@ -239,6 +243,14 @@ const missingTraits = (filter, deck) => {
     return false;
   }
   return true;
+};
+
+const missingTags = (filter, deck) => {
+  const tags = [...deck[TAGS][SUPERIOR], ...deck[TAGS][BASE]];
+
+  return Object.keys(filter).some((i) => {
+    return !tags.includes(i);
+  });
 };
 
 const compareQty = (cardQty, q, m) => {

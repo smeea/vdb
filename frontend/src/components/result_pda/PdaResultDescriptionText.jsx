@@ -7,7 +7,17 @@ import CalendarEvent from '@icons/calendar-event.svg?react';
 import { TwdResultTags, TwdResultDescriptionTextTr } from '@/components';
 import { useApp, searchPdaForm, clearSearchForm } from '@/context';
 import { getTags } from '@/utils';
-import { AUTHOR, CRYPT, LIBRARY, NAME, CREATION_DATE, TIMESTAMP, PDA } from '@/constants';
+import {
+  SUPERIOR,
+  BASE,
+  AUTHOR,
+  CRYPT,
+  LIBRARY,
+  NAME,
+  CREATION_DATE,
+  TIMESTAMP,
+  PDA,
+} from '@/constants';
 
 const PdaResultDescriptionText = ({ deck }) => {
   const { isMobile } = useApp();
@@ -46,7 +56,7 @@ const PdaResultDescriptionText = ({ deck }) => {
           )}
         </tbody>
       </table>
-      {(tags.superior.length > 0 || tags.base.length > 0) && <TwdResultTags tags={tags} />}
+      {(tags[SUPERIOR].length > 0 || tags[BASE].length > 0) && <TwdResultTags tags={tags} />}
     </>
   );
 };

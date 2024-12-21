@@ -32,6 +32,8 @@ import {
   UNLOCK,
   VOTE,
   VOTES_TITLE,
+  SUPERIOR,
+  BASE,
 } from '@/constants';
 import { CryptTraitsRegexMap, LibraryTraitsRegexMap } from '@/utils/traitsRegexMaps';
 
@@ -63,8 +65,8 @@ const getTags = (crypt, library) => {
   };
 
   const result = {
-    superior: [],
-    base: [],
+    [SUPERIOR]: [],
+    [BASE]: [],
   };
 
   const byScores = (a, b) => {
@@ -115,9 +117,9 @@ const getTags = (crypt, library) => {
     .toSorted(byScores)
     .forEach((tag) => {
       if (deckTags[tag] >= threshold[tag] * superiorValueFactor) {
-        result.superior.push(tag);
+        result[SUPERIOR].push(tag);
       } else if (deckTags[tag] >= threshold[tag]) {
-        result.base.push(tag);
+        result[BASE].push(tag);
       }
     });
 

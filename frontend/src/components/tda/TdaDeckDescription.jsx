@@ -9,7 +9,7 @@ import {
 } from '@/components';
 import { useApp } from '@/context';
 import { getDeckInUrl } from '@/utils';
-import { SCORE, GW, VP, RANK, TAGS } from '@/constants';
+import { SUPERIOR, BASE, SCORE, GW, VP, RANK, TAGS } from '@/constants';
 
 const TdaDeckDescription = ({ deck }) => {
   const { username, isMobile } = useApp();
@@ -34,7 +34,7 @@ const TdaDeckDescription = ({ deck }) => {
             </TwdResultDescriptionTextTr>
           </tbody>
         </table>
-        {(deck[TAGS].superior.length > 0 || deck[TAGS].base.length > 0) && (
+        {(deck[TAGS][SUPERIOR].length > 0 || deck[TAGS][BASE].length > 0) && (
           <TwdResultTags tags={deck[TAGS]} />
         )}
       </div>
@@ -47,7 +47,7 @@ const TdaDeckDescription = ({ deck }) => {
             <DeckCloneButton
               deck={{
                 ...deck,
-                tags: [...deck[TAGS].superior, ...deck[TAGS].base],
+                tags: [...deck[TAGS][SUPERIOR], ...deck[TAGS][BASE]],
               }}
               inTwdPda
             />

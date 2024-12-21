@@ -8,7 +8,17 @@ import GeoAltFill from '@icons/geo-alt-fill.svg?react';
 import { TwdResultTags, TwdResultDescriptionTextTr } from '@/components';
 import { useApp, searchTwdForm, clearSearchForm } from '@/context';
 import { getTags } from '@/utils';
-import { CRYPT, LIBRARY, NAME, LOCATION, CREATION_DATE, AUTHOR, TWD } from '@/constants';
+import {
+  SUPERIOR,
+  BASE,
+  CRYPT,
+  LIBRARY,
+  NAME,
+  LOCATION,
+  CREATION_DATE,
+  AUTHOR,
+  TWD,
+} from '@/constants';
 
 const TwdResultDescriptionText = ({ deck }) => {
   const { isMobile } = useApp();
@@ -67,7 +77,7 @@ const TwdResultDescriptionText = ({ deck }) => {
           </TwdResultDescriptionTextTr>
         </tbody>
       </table>
-      {(tags.superior.length > 0 || tags.base.length > 0) && <TwdResultTags tags={tags} />}
+      {(tags[SUPERIOR].length > 0 || tags[BASE].length > 0) && <TwdResultTags tags={tags} />}
     </>
   );
 };

@@ -1,7 +1,7 @@
 import React from 'react';
 import { twMerge } from 'tailwind-merge';
 import { TwdResultCryptTable, TwdResultLibraryKeyCardsTable, TwdResultTags } from '@/components';
-import { CLAN, TAGS, RANK, CRYPT, LIBRARY } from '@/constants';
+import { SUPERIOR, BASE, CLAN, TAGS, RANK, CRYPT, LIBRARY } from '@/constants';
 
 const BubbleChartTooltip = ({ active, payload }) => {
   const value = payload?.[0]?.payload;
@@ -15,9 +15,10 @@ const BubbleChartTooltip = ({ active, payload }) => {
               {value[CLAN]}
             </div>
             <div className="flex gap-2">
-              {value[TAGS] && (value[TAGS].superior.length > 0 || value[TAGS].base.length > 0) && (
-                <TwdResultTags tags={value[TAGS]} />
-              )}
+              {value[TAGS] &&
+                (value[TAGS][SUPERIOR].length > 0 || value[TAGS][BASE].length > 0) && (
+                  <TwdResultTags tags={value[TAGS]} />
+                )}
               <div className="flex items-center">
                 <div
                   className={twMerge(

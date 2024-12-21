@@ -23,6 +23,8 @@ import {
   IN_SEARCH,
   INDEX,
   VALUE,
+  SUPERIOR,
+  BASE,
 } from '@/constants';
 
 const TdaChartsRankingStyle = ({ info, decks, searchResults }) => {
@@ -52,22 +54,18 @@ const TdaChartsRankingStyle = ({ info, decks, searchResults }) => {
         [INDEX]: -1,
       };
 
-      deck[TAGS].superior
-        .filter((t) => allowedTags.includes(t))
-        .forEach((t) => {
-          d[t][position] = {
-            ...def,
-            [VALUE]: 1,
-          };
-        });
-      deck[TAGS].base
-        .filter((t) => allowedTags.includes(t))
-        .forEach((t) => {
-          d[t][position] = {
-            ...def,
-            [VALUE]: 0.4,
-          };
-        });
+      deck[TAGS][SUPERIOR].filter((t) => allowedTags.includes(t)).forEach((t) => {
+        d[t][position] = {
+          ...def,
+          [VALUE]: 1,
+        };
+      });
+      deck[TAGS][BASE].filter((t) => allowedTags.includes(t)).forEach((t) => {
+        d[t][position] = {
+          ...def,
+          [VALUE]: 0.4,
+        };
+      });
     });
     return d;
   }, [searchResults, decks, info]);
