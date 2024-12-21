@@ -72,7 +72,7 @@ const InventoryAddDeckModal = ({ handleClose }) => {
     <Modal
       noPadding={isMobile}
       handleClose={handleClose}
-      size="xl"
+      size="lg"
       title="Import Deck to Inventory"
     >
       <table className="border-y border-bgSecondary dark:border-bgSecondaryDark sm:border-x">

@@ -23,6 +23,7 @@ import {
   DECKID,
   H,
   INVENTORY_TYPE,
+  IS_AUTHOR,
   MASTER,
   NAME,
   S,
@@ -87,7 +88,12 @@ const InventoryAddDeckRow = ({ deck, allTagsOptions }) => {
       )}
       {!isMobile && (
         <td className="w-full">
-          <DeckTags deck={deck} allTagsOptions={allTagsOptions} isBordered noAutoTags />
+          <DeckTags
+            deck={{ ...deck, [IS_AUTHOR]: false }}
+            allTagsOptions={allTagsOptions}
+            isBordered
+            noAutoTags
+          />
         </td>
       )}
       <td className="min-w-[110px]">

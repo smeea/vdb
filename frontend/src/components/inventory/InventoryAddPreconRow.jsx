@@ -37,9 +37,9 @@ const InventoryAddPreconRow = ({ deck }) => {
           )}
         </div>
       </td>
-      <td className="max-sm:w-full sm:min-w-[250px] lg:min-w-[400px]">
+      <td className="max-sm:w-full">
         <div
-          className="text-overflow flex justify-between text-fgName dark:text-fgNameDark"
+          className="text-overflow flex justify-between text-fgName dark:text-fgNameDark sm:whitespace-nowrap"
           title={deck[NAME]}
         >
           {deck[NAME]}
@@ -61,9 +61,9 @@ const InventoryAddPreconRow = ({ deck }) => {
             <div className="flex justify-end text-sm">{setsAndPrecons[set][DATE].slice(0, 4)}</div>
           </>
         ) : (
-          <>
+          <div className="whitespace-nowrap">
             {setsAndPrecons[set][DATE].slice(0, 4)} – {setsAndPrecons[set][NAME]}
-          </>
+          </div>
         )}
       </td>
       <td className="min-w-[110px]">

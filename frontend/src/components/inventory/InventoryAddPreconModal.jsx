@@ -72,17 +72,12 @@ const InventoryAddPreconModal = ({ handleClose }) => {
   }, [preconDecks, nameFilter, setFilter, sortMethod]);
 
   return (
-    <Modal
-      noPadding={isMobile}
-      handleClose={handleClose}
-      size="xl"
-      title="Import Precon to Inventory"
-    >
+    <Modal noPadding={isMobile} handleClose={handleClose} title="Import Precon to Inventory">
       <table className="inv-import-precons-table border-bgSecondary dark:border-bgSecondaryDark sm:border">
         <thead>
           <tr>
             <th className="min-w-[50px]"></th>
-            <th className="max-sm:w-full sm:min-w-[250px] lg:min-w-[400px]">
+            <th className="max-sm:w-full">
               <Input
                 placeholder="Filter by Name"
                 name="text"
