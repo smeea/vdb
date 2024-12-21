@@ -154,7 +154,7 @@ const useInventoryCrypt = (cards = {}, category = OK, compact, onlyNotes) => {
       missingByClan,
       missingByClanTotal,
     };
-  }, [cards, category, compact, onlyNotes]);
+  }, [cards, category, compact, onlyNotes, usedCrypt]);
 
   return value;
 };

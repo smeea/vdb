@@ -330,7 +330,7 @@ const useInventoryLibrary = (cards = {}, category = OK, compact, type, disciplin
       missingFiltered,
       missingFilteredTotal,
     };
-  }, [cards, category, compact, type, discipline, onlyNotes]);
+  }, [cards, category, compact, type, discipline, onlyNotes, usedLibrary]);
 
   return value;
 };

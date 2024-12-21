@@ -52,10 +52,10 @@ const InventoryLibraryTable = ({ cards, sortMethod, compact, withCompact, newFoc
         <div
           className={twMerge(
             !inShared && withCompact
-              ? 'h-[calc(100dvh-252px)] sm:h-[calc(100dvh-291px)] lg:h-[calc(100dvh-306px)] xl:h-[calc(100dvh-332px)]'
-              : 'h-[calc(100dvh-206px)] sm:h-[calc(100dvh-237px)] lg:h-[calc(100dvh-250px)] xl:h-[calc(100dvh-272px)]',
+              ? 'h-[calc(100dvh-262px)] sm:h-[calc(100dvh-291px)] lg:h-[calc(100dvh-314px)] xl:h-[calc(100dvh-340px)]'
+              : 'h-[calc(100dvh-217px)] sm:h-[calc(100dvh-237px)] lg:h-[calc(100dvh-257px)] xl:h-[calc(100dvh-277px)]',
             inShared &&
-              'h-[calc(100dvh-149px)] sm:h-[calc(100dvh-190px)] lg:h-[calc(100dvh-203px)] xl:h-[calc(100dvh-215px)]',
+              'h-[calc(100dvh-160px)] sm:h-[calc(100dvh-190px)] lg:h-[calc(100dvh-200px)] xl:h-[calc(100dvh-210px)]',
           )}
         >
           <AutoSizer>

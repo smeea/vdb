@@ -52,10 +52,10 @@ const InventoryCryptTable = ({ cards, sortMethod, compact, withCompact, newFocus
         <div
           className={twMerge(
             !inShared && withCompact
-              ? 'h-[calc(100dvh-206px)] sm:h-[calc(100dvh-245px)] lg:h-[calc(100dvh-261px)] xl:h-[calc(100dvh-288px)]'
-              : 'h-[calc(100dvh-159px)] sm:h-[calc(100dvh-192px)] lg:h-[calc(100dvh-204px)] xl:h-[calc(100dvh-225px)]',
+              ? 'h-[calc(100dvh-216px)] sm:h-[calc(100dvh-245px)] lg:h-[calc(100dvh-268px)] xl:h-[calc(100dvh-294px)]'
+              : 'h-[calc(100dvh-172px)] sm:h-[calc(100dvh-192px)] lg:h-[calc(100dvh-212px)] xl:h-[calc(100dvh-232px)]',
             inShared &&
-              'h-[calc(100dvh-122px)] sm:h-[calc(100dvh-145px)] lg:h-[calc(100dvh-157px)] xl:h-[calc(100dvh-168px)]',
+              'h-[calc(100dvh-114px)] sm:h-[calc(100dvh-144px)] lg:h-[calc(100dvh-154px)] xl:h-[calc(100dvh-164px)]',
           )}
         >
           <AutoSizer>
