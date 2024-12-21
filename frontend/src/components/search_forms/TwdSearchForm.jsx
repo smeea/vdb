@@ -69,6 +69,7 @@ const TwdSearchForm = ({ error, setError }) => {
       const sanitizedForm = sanitizeFormState(TWD, twdFormState);
       if (Object.keys(sanitizedForm).length === 0) {
         if (query) setSearchParams();
+        setError(false);
       } else if (!searchTwdForm[EVENT] || searchTwdForm[EVENT].length > 2) {
         processSearch();
       }

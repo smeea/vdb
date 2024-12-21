@@ -66,6 +66,7 @@ const PdaSearchForm = ({ error, setError }) => {
       const sanitizedForm = sanitizeFormState(PDA, pdaFormState);
       if (Object.keys(sanitizedForm).length === 0) {
         if (query) setSearchParams();
+        setError(false);
       } else {
         processSearch();
       }

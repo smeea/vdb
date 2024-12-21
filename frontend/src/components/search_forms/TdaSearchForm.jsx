@@ -60,6 +60,7 @@ const TdaSearchForm = () => {
       if (Object.keys(sanitizedForm).length === 0) {
         if (query) setSearchParams();
         setTdaResults();
+        setError(false);
       } else {
         processSearch();
       }
