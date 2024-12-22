@@ -187,6 +187,7 @@ const DeckImportAmaranth = ({ setShow }) => {
       initialFocus={ref}
       centered={isMobile}
       title="Import from Amaranth"
+      size="sm"
       withMobileMargin
     >
       <div className="flex">

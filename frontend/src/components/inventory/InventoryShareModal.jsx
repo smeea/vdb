@@ -42,7 +42,7 @@ const InventoryShareModal = ({ setShow }) => {
   };
 
   return (
-    <Modal handleClose={handleClose} centered={isMobile} size="sm" title="Inventory Share">
+    <Modal handleClose={handleClose} centered={isMobile} size="xs" title="Inventory Share">
       <FlexGapped className="flex-col">
         <div>
           {inventoryKey ? (
