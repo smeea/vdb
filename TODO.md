@@ -1,10 +1,10 @@
 # FIX
 - Review TWDA radar: remove swarm, maybe replace?
-- Search in TDA on mobile
 
 # FEATURES
 - Inventory 'target' q-ty -> for design consideration
 - Search PDA/TWD by tags
+- Search in TDA on mobile
 
 # FEATURES ON HOLD
 - TWD search with % V5-compatibility -> after BCP clarify V5

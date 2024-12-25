@@ -38,7 +38,12 @@ const ResultCryptLayoutText = ({ card, setCard, handleClose, noClose, inPopover 
 
   return (
     <div className="flex flex-col gap-3">
-      <div className="flex items-center justify-between whitespace-nowrap">
+      <div
+        className={twMerge(
+          'flex justify-between gap-3 whitespace-nowrap',
+          card[AKA] ? 'items-start' : 'items-center',
+        )}
+      >
         <div className="flex items-center justify-between">
           <div
             className={twMerge(
