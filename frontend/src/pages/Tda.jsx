@@ -288,18 +288,12 @@ const Tda = () => {
           <div className="flex basis-9/12 justify-center max-sm:order-last">
             {decks && info && <TdaCharts info={info} decks={decks} searchResults={results ?? {}} />}
           </div>
-          <FlexGapped className="basis-3/12 flex-col">
-            {info && decks && (
-              <>
-                {isDesktop ? (
-                  <ButtonClose handleClick={handleClear} title="Clear Data" text="Clear" />
-                ) : (
-                  <ButtonFloatClose handleClose={handleClear} />
-                )}
-                <TdaInfo info={info} decks={decks} />
-              </>
-            )}
-          </FlexGapped>
+          {info && decks && (
+            <FlexGapped className="basis-3/12 flex-col max-sm:px-2">
+              <ButtonClose handleClick={handleClear} text="Close Event" />
+              <TdaInfo info={info} decks={decks} />
+            </FlexGapped>
+          )}
         </FlexGapped>
         {decks && info && (
           <FlexGapped>

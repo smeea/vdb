@@ -7,7 +7,7 @@ const TdaInfo = ({ info, decks }) => {
   const { isMobile } = useApp();
 
   return (
-    <div className="flex flex-col max-sm:px-2">
+    <div className="flex flex-col gap-1">
       {!isMobile && <Title>General Info</Title>}
       <table>
         <tbody>
