@@ -58,7 +58,7 @@ const TdaResultTotal = ({ results, sortMethods, sortMethod, setSortMethod }) => 
         </div>
         <div>
           <div className="inline px-2 font-bold text-fgSecondary dark:text-fgSecondaryDark">
-            Playstyles:
+            Tags:
           </div>
           {Object.keys(byTags).map((i) => {
             return (
