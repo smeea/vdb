@@ -1,5 +1,6 @@
 # FIX
 - Review TWDA radar: remove swarm, maybe replace?
+- Search in TDA on mobile
 
 # FEATURES
 - Inventory 'target' q-ty -> for design consideration
