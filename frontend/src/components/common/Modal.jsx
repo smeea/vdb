@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { Dialog } from '@headlessui/react';
 import { ButtonCloseModal, ButtonFloatClose } from '@/components';
@@ -24,9 +24,10 @@ const Modal = ({
     xl: 'min-w-full xl:min-w-[1350px] xl:max-w-[1500px]',
     card: 'w-full sm:w-[900px]',
   };
+  const ref = useRef();
 
   return (
-    <Dialog initialFocus={initialFocus} onClose={handleClose} className="relative z-50" open>
+    <Dialog initialFocus={initialFocus || ref} onClose={handleClose} className="relative z-50" open>
       <div className="fixed inset-0 bg-black bg-opacity-50" aria-hidden="true" />
       <div className="fixed inset-0 overflow-y-auto">
         <div
@@ -55,15 +56,13 @@ const Modal = ({
                 >
                   {title}
                 </div>
-                {!noClose && (
-                  <div className="flex items-center max-md:hidden">
-                    <ButtonCloseModal handleClick={handleClose} />
-                  </div>
-                )}
+                <div className={twMerge('flex items-center max-md:hidden', noClose && 'hidden')}>
+                  <ButtonCloseModal handleClick={handleClose} />
+                </div>
               </Dialog.Title>
             )}
             <div className={twMerge('max-h-0 max-w-0 opacity-0', noClose && 'hidden')}>
-              <button />
+              <button ref={ref} />
             </div>
             {children}
           </Dialog.Panel>
