@@ -31,6 +31,8 @@ mv amaranth_ids.min.json ../../frontend/public/data/amaranth_ids.json
 
 # Update TWD and Card recommendations
 python generate_twd_decks.py
+node generate_twd_decks_tags.js
+prettier --log-level warn --write twd_decks.json
 python generate_twd_cards_compatibility.py
 python generate_twd_cards_history.py
 cp twd_decks.json twd_locations.json twd_players.json cards_compatibility.json ../../backend/
