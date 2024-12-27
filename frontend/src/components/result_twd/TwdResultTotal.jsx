@@ -9,7 +9,7 @@ const TwdResultTotal = ({ results, sortMethods, sortMethod, setSortMethod }) => 
   const byYear = {};
 
   results.forEach((deck) => {
-    const year = `'${deck[CREATION_DATE].slice(2, 4)}`;
+    const year = deck[CREATION_DATE].slice(0, 4);
     byYear[year] = byYear[year] ? byYear[year] + 1 : 1;
   });
 
@@ -22,16 +22,18 @@ const TwdResultTotal = ({ results, sortMethods, sortMethod, setSortMethod }) => 
     >
       <div className="whitespace-nowrap p-2 font-bold">TOTAL: {results.length}</div>
       <div>
-        {Object.keys(byYear).map((i) => {
-          return (
-            <div key={i} className="inline-block whitespace-nowrap px-2">
-              <div className="inline pr-0.5 font-bold text-fgSecondary dark:text-fgSecondaryDark">
-                {i}:
+        {Object.keys(byYear)
+          .toReversed()
+          .map((i) => {
+            return (
+              <div key={i} className="inline-block whitespace-nowrap px-2">
+                <div className="inline pr-0.5 font-bold text-fgSecondary dark:text-fgSecondaryDark">
+                  '{i.slice(2, 4)}:
+                </div>
+                {byYear[i]}
               </div>
-              {byYear[i]}
-            </div>
-          );
-        })}
+            );
+          })}
       </div>
       <div className="flex justify-end">
         <SortButton

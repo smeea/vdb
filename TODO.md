@@ -3,7 +3,7 @@
 
 # FEATURES
 - Inventory 'target' q-ty -> for design consideration
-- Search PDA/TWD by tags
+- Search PDA by tags
 - Search in TDA on mobile
 
 # FEATURES ON HOLD
