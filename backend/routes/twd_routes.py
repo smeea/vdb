@@ -102,8 +102,9 @@ def get_twd_hof_players():
 @app.route("/api/twd/new/<int:quantity>", methods=["GET"])
 def get_new_twd_route(quantity):
     decks = []
+    sorted_decks = sorted(list(twd_decks.values()), key=lambda x: x["creation_date"], reverse=True)
     for i in range(quantity):
-        deck = list(twd_decks.values())[i]
+        deck = sorted_decks[i]
         decks.append(minify_twd(deck) if i > 9 else sanitize_twd(deck))
 
     return jsonify(decks)
