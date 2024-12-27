@@ -1,10 +1,9 @@
 {
-  "version": "2024-12-21",
+  "version": "2024-12-27",
   "changes": [
-    "Add Finnish NC 2024 decks (https://vdb.im/tda/11739)",
-    "Add Portuguese NC 2024 decks (https://vdb.im/tda/11487)",
-    "Add TDA (Tournament Deck Archive, previously called Tournament Analyze) link to navigation panel for easier access and discovery. Thanks to Rune and everybody who submit and collect the decks for their exceptional work!",
-    "Update rulings",
-    "Many fixes and small improvements"
+    "Add tags search to TWD and TDA. Please keep in mind tags recognition is automated (follows very simple algorithms) and is inherently inaccurate, it is also very subjective topic. It may be useful for you, but if it is not enjoy other more objective/precise search options",
+    "Update TWDA",
+    "Update Rulings",
+    "Small other fixes and improvements"
   ]
 }
