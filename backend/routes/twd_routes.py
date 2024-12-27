@@ -173,4 +173,6 @@ def search_twd_route():
     if not result:
         abort(400)
 
+    result.sort(key=lambda x: x["creation_date"], reverse=True)
+
     return jsonify([sanitize_twd(d) for d in result[0:10]] + [minify_twd(d) for d in result[10:]])
