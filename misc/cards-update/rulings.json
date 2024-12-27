@@ -109,6 +109,13 @@
             "refs":{
                 "LSJ 19990216":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/klb6OQYtdzE/m/H1X21rprzNQJ"
             }
+        },
+        {
+            "text":"[for] Cannot be used to prevent aggravated damage, even if the minion treats them as normal damage (eg. {Skin of Night}).",
+            "refs":{
+                "LSJ 20040812-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/E7D1cVmAdqQ/m/MvPApbrT14gJ",
+                "PIB 20130327":"https://www.vekn.net/forum/rules-questions/46279-soak-vs-treat-agg-damage-as-normal-damage#46285"
+            }
         }
     ],
     "100009":[
@@ -3870,6 +3877,18 @@
             "refs":{
                 "ANK 20181026":"https://www.vekn.net/forum/rules-questions/77117-dam-the-heart-s-river-vs-thrown-gate#91508"
             }
+        },
+        {
+            "text":"[QUI] If an effect granting a strike is played/used before another effect that adds a cost to strike (e.g. {Lucian, the Perfect}, {Dam the Heart's River}), you may choose not to strike.",
+            "refs":{
+                "LSJ 20071017":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Ei307R78l4A/m/PYe-fYT8BqkJ"
+            }
+        },
+        {
+            "text":"[QUI] If an effect granting a strike (e.g. {.44 Magnum}) is played/used after another effect that adds a cost to strike, you must pay the additional cost to use that first effect.",
+            "refs":{
+                "LSJ 20090529":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/LpFSLRuWONA/m/daxDmJiGX0AJ"
+            }
         }
     ],
     "100490":[
@@ -5005,6 +5024,13 @@
             "text":"[for] Cannot be used if there is no damage to prevent.",
             "refs":{
                 "LSJ 20001114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qXSlM7Grq1c/m/cSDoQ9mw0z4J"
+            }
+        },
+        {
+            "text":"[for] Cannot be used to prevent aggravated damage, even if the minion treats them as normal damage (eg. {Skin of Night}).",
+            "refs":{
+                "LSJ 20040812-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/E7D1cVmAdqQ/m/MvPApbrT14gJ",
+                "PIB 20130327":"https://www.vekn.net/forum/rules-questions/46279-soak-vs-treat-agg-damage-as-normal-damage#46285"
             }
         }
     ],
@@ -11953,6 +11979,12 @@
             "refs":{
                 "RTR 20070707":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/vSOt2c1uRzQ/m/MsRAv47Cd4YJ"
             }
+        },
+        {
+            "text":"[THN] You can't use the option to not strike, if you are commited to a strike from another effect (eg. {.44 Magnum})",
+            "refs":{
+                "LSJ 20090528-2-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/LpFSLRuWONA/m/ZwZEHVFOrRYJ"
+            }
         }
     ],
     "101526":[
@@ -14235,6 +14267,12 @@
             "refs":{
                 "LSJ 20021028":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/g0GGiVIxyis/m/35WA-O9XrroJ"
             }
+        },
+        {
+            "text":"When used to set range, you may choose not to strike if another card gives the option not to strike (e.g. {Lucian, the Perfect}, {Dam the Heart's River}) was played after Sniper Rifle was used to set range",
+            "refs":{
+                "LSJ 20071017":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Ei307R78l4A/m/PYe-fYT8BqkJ"
+            }
         }
     ],
     "101817":[
@@ -15138,6 +15176,13 @@
             "refs":{
                 "LSJ 20070403":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/TJ2ktt_1tjk/m/fdH_x9tDmN8J",
                 "LSJ 20070413":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/umdINigMKqs/m/lfUAxTnfttIJ"
+            }
+        },
+        {
+            "text":"Cannot be used to prevent aggravated damage, even if the minion treats them as normal damage (eg. {Skin of Night}).",
+            "refs":{
+                "LSJ 20040812-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/E7D1cVmAdqQ/m/MvPApbrT14gJ",
+                "PIB 20130327":"https://www.vekn.net/forum/rules-questions/46279-soak-vs-treat-agg-damage-as-normal-damage#46285"
             }
         }
     ],
@@ -18299,6 +18344,22 @@
                 "LSJ 20050315":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/COcJX2hHP-E/m/YLUW8FaGP0kJ",
                 "LSJ 20010210":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NtMa5w_NVOE/m/jtpqcS6CwpIJ"
             }
+        },
+        {
+            "text":"The ability ability cannot be used to fulfill card requirements if they are not played normally, like when using {Concealed Weapon} for an equipment or {Piper} or {The Summoning} for an ally.",
+            "refs":{
+                "LSJ 20050119":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NKWhBnp7uP4/m/6_56LlSV658J"
+            }
+        },
+        {
+            "text":"When meeting a requirement to play a card, the vampire is treated as such for all the effects of the card, and only them, including duration effects. The vampire is not treated as meeting the requirements for effects the card has from being in play.",
+            "refs":{
+                "LSJ 20101013":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/hpFRDAmtSbA/m/httYmI5wpB8J",
+                "ANK 20190228":"https://www.vekn.net/forum/rules-questions/77427-mata-hari-and-hakim-s-law-leadership?start=42#93785",
+                "ANK 20200703-3":"https://www.vekn.net/forum/rules-questions/78716-cry-wolf-recruit-action-from-a-non-anarch-vampire-being-blocked#100264",
+                "LSJ 20070708":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/vSOt2c1uRzQ/m/F4ZIvIyp7lcJ",
+                "RTR 20070707":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/vSOt2c1uRzQ/m/MsRAv47Cd4YJ"
+            }
         }
     ],
     "200103":[
@@ -18673,6 +18734,13 @@
             "refs":{
                 "LSJ 20100708":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/7SxYC8-8654/m/VzSEX3LuKKEJ"
             }
+        },
+        {
+            "text":"Cannot be used to prevent aggravated damage, even if the minion treats them as normal damage (eg. {Skin of Night}).",
+            "refs":{
+                "LSJ 20040812-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/E7D1cVmAdqQ/m/MvPApbrT14gJ",
+                "PIB 20130327":"https://www.vekn.net/forum/rules-questions/46279-soak-vs-treat-agg-damage-as-normal-damage#46285"
+            }
         }
     ],
     "200288":[
@@ -18978,29 +19046,6 @@
             "text":"Can only use her ability when she is in combat herself.",
             "refs":{
                 "ANK 20221021":"https://www.vekn.net/forum/rules-questions/80108-patagia#106628"
-            }
-        }
-    ],
-    "200485":[
-        {
-            "text":"The cost to rescue from torpor is reduced even if paid by the rescuee. This is not optional.",
-            "refs":{
-                "LSJ 20020304-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/L-8OGYP5xsE/m/h5WnSofVrfUJ",
-                "PIB 20110918":"https://www.vekn.net/forum/rules-questions/10458-frondator#10459"
-            }
-        }
-    ],
-    "200498":[
-        {
-            "text":"When playing a card requiring a Ventrue, she is treated as a such for all effects of the card, and only them, including duration effects. She is not treated as such for effects the card has from being in play.",
-            "refs":{
-                "ANK 20190228":"https://www.vekn.net/forum/rules-questions/77427-mata-hari-and-hakim-s-law-leadership?start=42#93785"
-            }
-        },
-        {
-            "text":"Her ability does not let her fulfill card requirements if they are not played normally, like when using {Piper} to recruit an ally.",
-            "refs":{
-                "LSJ 20050119":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NKWhBnp7uP4/m/6_56LlSV658J"
             }
         }
     ],
@@ -19346,6 +19391,14 @@
             }
         }
     ],
+    "200675":[
+        {
+            "text":"When an effect that increases the cost to strike is in effect (eg. {Lucian, the Perfect}) his cost reduction only counts, when the strike card is played in the chose Strike step. (eg. He pays 1 blood for a {Thrown Gate} played for the maneuver, but zero if he plays it when choosing his strike)",
+            "refs":{
+                "LSJ 20090529":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/LpFSLRuWONA/m/daxDmJiGX0AJ"
+            }
+        }
+    ],
     "200678":[
         {
             "text":"When using the action provided by his ability, if some minions cannot be targeted because of another effect, the action will simply have no effect on the things it cannot target.",
@@ -19495,13 +19548,6 @@
     ],
     "200770":[
         {
-            "text":"[MERGED] When playing a card requiring Camarilla, Ventrue and/or Justicar, she is treated as a such for all effects of the card, and only them, including duration effects. She is not treated as such for effects the card has from being in play.",
-            "refs":{
-                "ANK 20190228":"https://www.vekn.net/forum/rules-questions/77427-mata-hari-and-hakim-s-law-leadership?start=42#93785",
-                "LSJ 20101013":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/hpFRDAmtSbA/m/httYmI5wpB8J"
-            }
-        },
-        {
             "text":"[MERGED] If she plays a political action requiring a Justicar, she is not seen as such by other cards or effects during the referendum (eg. if another vampire plays {Closed Session} and she's not Camarilla she will not be able to vote. If she plays it, she can vote).",
             "refs":{
                 "LSJ 20050128-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HVy8iPUxNbI/m/jXmrJxMaJ9MJ",
@@ -19538,6 +19584,22 @@
             "refs":{
                 "ANK 20230503":"https://www.vekn.net/forum/rules-questions/80486-vlad-tepes-special-text-under-fall-of-the-sabbat?start=6#107971",
                 "LSJ 20050124":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HVy8iPUxNbI/m/ZjCzAzmQFMwJ"
+            }
+        },
+        {
+            "text":"[MERGED] The ability ability cannot be used to fulfill card requirements if they are not played normally, like when using {Concealed Weapon} for an equipment or {Piper} or {The Summoning} for an ally.",
+            "refs":{
+                "LSJ 20050119":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NKWhBnp7uP4/m/6_56LlSV658J"
+            }
+        },
+        {
+            "text":"[MERGED] When meeting a requirement to play a card, the vampire is treated as such for all the effects of the card, and only them, including duration effects. The vampire is not treated as meeting the requirements for effects the card has from being in play.",
+            "refs":{
+                "LSJ 20101013":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/hpFRDAmtSbA/m/httYmI5wpB8J",
+                "ANK 20190228":"https://www.vekn.net/forum/rules-questions/77427-mata-hari-and-hakim-s-law-leadership?start=42#93785",
+                "ANK 20200703-3":"https://www.vekn.net/forum/rules-questions/78716-cry-wolf-recruit-action-from-a-non-anarch-vampire-being-blocked#100264",
+                "LSJ 20070708":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/vSOt2c1uRzQ/m/F4ZIvIyp7lcJ",
+                "RTR 20070707":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/vSOt2c1uRzQ/m/MsRAv47Cd4YJ"
             }
         }
     ],
@@ -19690,28 +19752,31 @@
     ],
     "200840":[
         {
-            "text":"When playing a card requiring a Ventrue antitribu or a Samedi, he is treated as a such for all effects of the card, and only them, including duration effects. He is not treated as such for effects the card has from being in play (eg. {Houngan} can be played on him, but he does not get blood and cannot lock to get blood).",
-            "refs":{
-                "ANK 20190228":"https://www.vekn.net/forum/rules-questions/77427-mata-hari-and-hakim-s-law-leadership?start=42#93785",
-                "PIB 20141006":"https://www.vekn.net/forum/rules-questions/66061-houngan-on-lisandro#66084"
-            }
-        },
-        {
             "text":"You can still use the burn options of cards with a requirement he could meet when you play them, but does not meet while in play.",
             "refs":{
                 "LSJ 20050225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/OjszbddbvxM/m/eKkxVIJPoG4J"
             }
         },
         {
-            "text":"His ability does not let him fulfill card requirements if they are not played normally, like when using {Piper} to recruit an ally.",
+            "text":"Cannot be treated as a Ventrue antitribu nor a Samedi while uncontrolled or in the crypt (eg. {Coroner's Contact} cannot fetch him).",
+            "refs":{
+                "PIB 20150530":"https://www.vekn.net/forum/rules-questions/66061-houngan-on-lisandro?start=6#71415"
+            }
+        },
+        {
+            "text":"The ability ability cannot be used to fulfill card requirements if they are not played normally, like when using {Concealed Weapon} for an equipment or {Piper} or {The Summoning} for an ally.",
             "refs":{
                 "LSJ 20050119":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NKWhBnp7uP4/m/6_56LlSV658J"
             }
         },
         {
-            "text":"Cannot be treated as a Ventrue antitribu nor a Samedi while uncontrolled or in the crypt (eg. {Coroner's Contact} cannot fetch him).",
+            "text":"When meeting a requirement to play a card, the vampire is treated as such for all the effects of the card, and only them, including duration effects. The vampire is not treated as meeting the requirements for effects the card has from being in play.",
             "refs":{
-                "PIB 20150530":"https://www.vekn.net/forum/rules-questions/66061-houngan-on-lisandro?start=6#71415"
+                "LSJ 20101013":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/hpFRDAmtSbA/m/httYmI5wpB8J",
+                "ANK 20190228":"https://www.vekn.net/forum/rules-questions/77427-mata-hari-and-hakim-s-law-leadership?start=42#93785",
+                "ANK 20200703-3":"https://www.vekn.net/forum/rules-questions/78716-cry-wolf-recruit-action-from-a-non-anarch-vampire-being-blocked#100264",
+                "LSJ 20070708":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/vSOt2c1uRzQ/m/F4ZIvIyp7lcJ",
+                "RTR 20070707":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/vSOt2c1uRzQ/m/MsRAv47Cd4YJ"
             }
         }
     ],
@@ -19824,14 +19889,26 @@
     ],
     "200871":[
         {
-            "text":"Strikes that do not target him (dodge, combat ends) do not cost more. They do if they plan to damage him after combat (eg. [PRE] {Catatonic Fear}). They do not if they target a card on him (eg. {Target Retainer}, {Canine Horde}).",
+            "text":"Strikes that do not target him (dodge, combat ends) do not cost more. They do if they plan to damage him after combat (eg. [PRE] {Catatonic Fear}).",
             "refs":{
                 "LSJ 20090528-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/LpFSLRuWONA/m/m0Alg1iD6gEJ",
                 "LSJ 20031118":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9IzmBh8PWe0/m/J1F_TzPbITsJ"
             }
         },
         {
-            "text":"Strikes the opponent commits to during the determine range phase (by using an optional maneuver) cost more, but the card itself does not (eg. {Jann Berger} pays 1 blood for a {Thrown Gate} played for the maneuver, but zero if he plays it when choosing his strike).",
+            "text":"Strikes that target cards on him, are not affected (eg. {Target Retainer}, {Canine Horde}).",
+            "refs":{
+                "LSJ 20090528-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/LpFSLRuWONA/m/m0Alg1iD6gEJ"
+            }
+        },
+        {
+            "text":"If an effect granting a strike is played/used before another effect that adds a cost to strike (e.g. {Lucian, the Perfect}, {Dam the Heart's River}), you may choose not to strike.",
+            "refs":{
+                "LSJ 20071017":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Ei307R78l4A/m/PYe-fYT8BqkJ"
+            }
+        },
+        {
+            "text":"If an effect granting a strike (e.g. {.44 Magnum}) is played/used after another effect that adds a cost to strike, you must pay the additional cost to use that first effect.",
             "refs":{
                 "LSJ 20090529":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/LpFSLRuWONA/m/daxDmJiGX0AJ"
             }
@@ -20011,14 +20088,6 @@
     ],
     "200955":[
         {
-            "text":"When playing a card requiring a sect and/or a clan, she is treated as a such for all effects of the card, and only them, including duration effects. She is not treated as such for effects the card has from being in play.",
-            "refs":{
-                "RTR 20070707":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/vSOt2c1uRzQ/m/MsRAv47Cd4YJ",
-                "LSJ 20070708":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/vSOt2c1uRzQ/m/F4ZIvIyp7lcJ",
-                "ANK 20190228":"https://www.vekn.net/forum/rules-questions/77427-mata-hari-and-hakim-s-law-leadership?start=42#93785"
-            }
-        },
-        {
             "text":"If a contract chooses her when played (eg. {Dirty Contract}), she is \"chosen for the contract\" for other cards (eg. {Open Dossier}). If the contract choice is an effect of the card in play (eg. {Clandestine Contract}), she's not chosen.",
             "refs":{
                 "LSJ 20070708":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/vSOt2c1uRzQ/m/F4ZIvIyp7lcJ",
@@ -20050,15 +20119,25 @@
             }
         },
         {
-            "text":"Her ability do not let her fulfill card requirements if they are not played normally, like when using {Concealed Weapon} for an equipment or {Piper} or {The Summoning} for an ally.",
+            "text":"Keeps their title and votes if they changes sects.",
+            "refs":{
+                "LSJ 20010714":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-xrhpMEiMrw/m/Vnr8QIyt41cJ"
+            }
+        },
+        {
+            "text":"The ability ability cannot be used to fulfill card requirements if they are not played normally, like when using {Concealed Weapon} for an equipment or {Piper} or {The Summoning} for an ally.",
             "refs":{
                 "LSJ 20050119":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NKWhBnp7uP4/m/6_56LlSV658J"
             }
         },
         {
-            "text":"Keeps their title and votes if they changes sects.",
+            "text":"When meeting a requirement to play a card, the vampire is treated as such for all the effects of the card, and only them, including duration effects. The vampire is not treated as meeting the requirements for effects the card has from being in play.",
             "refs":{
-                "LSJ 20010714":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-xrhpMEiMrw/m/Vnr8QIyt41cJ"
+                "LSJ 20101013":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/hpFRDAmtSbA/m/httYmI5wpB8J",
+                "ANK 20190228":"https://www.vekn.net/forum/rules-questions/77427-mata-hari-and-hakim-s-law-leadership?start=42#93785",
+                "ANK 20200703-3":"https://www.vekn.net/forum/rules-questions/78716-cry-wolf-recruit-action-from-a-non-anarch-vampire-being-blocked#100264",
+                "LSJ 20070708":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/vSOt2c1uRzQ/m/F4ZIvIyp7lcJ",
+                "RTR 20070707":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/vSOt2c1uRzQ/m/MsRAv47Cd4YJ"
             }
         }
     ],
@@ -20163,20 +20242,6 @@
             "text":"If a limited effect is canceled (bleed, additional strike), then the limit is not triggered and another limited effect can be used.",
             "refs":{
                 "LSJ 20030224":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/67261v339Ds/m/um8V7VVp2Y4J"
-            }
-        }
-    ],
-    "200995":[
-        {
-            "text":"The cost to rescue from torpor is reduced even if paid by the rescuee. This is not optional.",
-            "refs":{
-                "LSJ 20020304-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/L-8OGYP5xsE/m/h5WnSofVrfUJ"
-            }
-        },
-        {
-            "text":"The scarce penalty considers the apparent clan while controlled (in case of {Clan Impersonation} and {Banishment}).",
-            "refs":{
-                "LSJ 20011015":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ZXW0ScxTsBA/m/OvbMemV2oXUJ"
             }
         }
     ],
@@ -20426,21 +20491,9 @@
     ],
     "201113":[
         {
-            "text":"When recruit a werewolf ally, she is treated as a meeting the requirements for all effects of the card, and only them, including duration effects. She is not treated as meeting the requirements for effects the card has from being in play.",
-            "refs":{
-                "ANK 20190228":"https://www.vekn.net/forum/rules-questions/77427-mata-hari-and-hakim-s-law-leadership?start=42#93785"
-            }
-        },
-        {
             "text":"You can still use the burn options of cards with a requirement she could meet when you play them, but does not meet while in play.",
             "refs":{
                 "LSJ 20050225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/OjszbddbvxM/m/eKkxVIJPoG4J"
-            }
-        },
-        {
-            "text":"Her ability do not let her fulfill card requirements if they are not played normally, like when using {Piper}.",
-            "refs":{
-                "LSJ 20050119":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NKWhBnp7uP4/m/6_56LlSV658J"
             }
         },
         {
@@ -20454,19 +20507,21 @@
             "refs":{
                 "ANK 20180524":"https://www.vekn.net/forum/rules-questions/76595-rules-team-rulings-rtr-11-05-2018?start=60#87433"
             }
-        }
-    ],
-    "201121":[
+        },
         {
-            "text":"When playing a card requiring a Ventrue, he is treated as a such for all effects of the card, and only them, including duration effects. He is not treated as such for effects the card has from being in play.",
+            "text":"The ability ability cannot be used to fulfill card requirements if they are not played normally, like when using {Concealed Weapon} for an equipment or {Piper} or {The Summoning} for an ally.",
             "refs":{
-                "ANK 20190228":"https://www.vekn.net/forum/rules-questions/77427-mata-hari-and-hakim-s-law-leadership?start=42#93785"
+                "LSJ 20050119":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NKWhBnp7uP4/m/6_56LlSV658J"
             }
         },
         {
-            "text":"His ability do not let him fulfill card requirements if they are not played normally, like when using {Piper} to recruit an ally.",
+            "text":"When meeting a requirement to play a card, the vampire is treated as such for all the effects of the card, and only them, including duration effects. The vampire is not treated as meeting the requirements for effects the card has from being in play.",
             "refs":{
-                "LSJ 20050119":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NKWhBnp7uP4/m/6_56LlSV658J"
+                "LSJ 20101013":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/hpFRDAmtSbA/m/httYmI5wpB8J",
+                "ANK 20190228":"https://www.vekn.net/forum/rules-questions/77427-mata-hari-and-hakim-s-law-leadership?start=42#93785",
+                "ANK 20200703-3":"https://www.vekn.net/forum/rules-questions/78716-cry-wolf-recruit-action-from-a-non-anarch-vampire-being-blocked#100264",
+                "LSJ 20070708":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/vSOt2c1uRzQ/m/F4ZIvIyp7lcJ",
+                "RTR 20070707":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/vSOt2c1uRzQ/m/MsRAv47Cd4YJ"
             }
         }
     ],
@@ -20965,20 +21020,6 @@
             }
         }
     ],
-    "201348":[
-        {
-            "text":"When playing a card requiring Brujah or Gangrel, she is treated as a such for all effects of the card, and only them, including duration effects. She is not treated as such for effects the card has from being in play.",
-            "refs":{
-                "ANK 20190228":"https://www.vekn.net/forum/rules-questions/77427-mata-hari-and-hakim-s-law-leadership?start=42#93785"
-            }
-        },
-        {
-            "text":"Her ability do not let her fulfill card requirements if they are not played normally, like when using {Piper} or {The Summoning} to recruit an ally.",
-            "refs":{
-                "LSJ 20050119":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NKWhBnp7uP4/m/6_56LlSV658J"
-            }
-        }
-    ],
     "201352":[
         {
             "text":"Allegiance counters continue to function even if Tegyrius leaves play.",
@@ -21144,27 +21185,6 @@
             }
         }
     ],
-    "201439":[
-        {
-            "text":"When playing a card requiring a Camarilla vampire or a Prince, he is treated as a such for all effects of the card, and only them, including duration effects. He is not treated as such for effects the card has from being in play.",
-            "refs":{
-                "ANK 20190228":"https://www.vekn.net/forum/rules-questions/77427-mata-hari-and-hakim-s-law-leadership?start=42#93785"
-            }
-        },
-        {
-            "text":"When meeting a title requirement for a political action, the vampire does not get the title's votes for the subsequent referendum.",
-            "refs":{
-                "ANK 20231221":"https://www.vekn.net/forum/rules-questions/81065-faking-title-and-votes#110148"
-            }
-        },
-        {
-            "text":"Can meet a sect-specific title (e.g. Justicar) requirement even if the sect does not exist anymore (eg. {Fall of the Camarilla}).",
-            "refs":{
-                "ANK 20230503":"https://www.vekn.net/forum/rules-questions/80486-vlad-tepes-special-text-under-fall-of-the-sabbat?start=6#107971",
-                "LSJ 20050124":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HVy8iPUxNbI/m/ZjCzAzmQFMwJ"
-            }
-        }
-    ],
     "201440":[
         {
             "text":"His \"as he enters play\" ability can be used before he enters contest (not after) if there is another one in play.",
@@ -21276,12 +21296,6 @@
             }
         },
         {
-            "text":"His ability do not let him fulfill card requirements if they are not played normally, like when using {Piper} to recruit an ally.",
-            "refs":{
-                "LSJ 20050119":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NKWhBnp7uP4/m/6_56LlSV658J"
-            }
-        },
-        {
             "text":"When meeting a title requirement, he is considered as a vampire of the underlying sect.",
             "refs":{
                 "LSJ 20050128":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HVy8iPUxNbI/m/ZHGTnprQjGUJ"
@@ -21323,6 +21337,12 @@
             "refs":{
                 "ANK 20230503":"https://www.vekn.net/forum/rules-questions/80486-vlad-tepes-special-text-under-fall-of-the-sabbat?start=6#107971",
                 "LSJ 20050124":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HVy8iPUxNbI/m/ZjCzAzmQFMwJ"
+            }
+        },
+        {
+            "text":"The ability ability cannot be used to fulfill card requirements if they are not played normally, like when using {Concealed Weapon} for an equipment or {Piper} or {The Summoning} for an ally.",
+            "refs":{
+                "LSJ 20050119":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NKWhBnp7uP4/m/6_56LlSV658J"
             }
         }
     ],
@@ -21453,21 +21473,25 @@
     ],
     "201471":[
         {
-            "text":"When recruit a changeling ally, he is treated as a meeting the requirements for all effects of the card, and only them, including duration effects. He is not treated as meeting the requirements for effects the card has from being in play.",
-            "refs":{
-                "ANK 20190228":"https://www.vekn.net/forum/rules-questions/77427-mata-hari-and-hakim-s-law-leadership?start=42#93785"
-            }
-        },
-        {
             "text":"You can still use the burn options of cards with a requirement he could meet when you play them, but does not meet while in play.",
             "refs":{
                 "LSJ 20050225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/OjszbddbvxM/m/eKkxVIJPoG4J"
             }
         },
         {
-            "text":"His ability do not let him fulfill card requirements if they are not played normally, like when using {Piper}.",
+            "text":"The ability ability cannot be used to fulfill card requirements if they are not played normally, like when using {Concealed Weapon} for an equipment or {Piper} or {The Summoning} for an ally.",
             "refs":{
                 "LSJ 20050119":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NKWhBnp7uP4/m/6_56LlSV658J"
+            }
+        },
+        {
+            "text":"When meeting a requirement to play a card, the vampire is treated as such for all the effects of the card, and only them, including duration effects. The vampire is not treated as meeting the requirements for effects the card has from being in play.",
+            "refs":{
+                "LSJ 20101013":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/hpFRDAmtSbA/m/httYmI5wpB8J",
+                "ANK 20190228":"https://www.vekn.net/forum/rules-questions/77427-mata-hari-and-hakim-s-law-leadership?start=42#93785",
+                "ANK 20200703-3":"https://www.vekn.net/forum/rules-questions/78716-cry-wolf-recruit-action-from-a-non-anarch-vampire-being-blocked#100264",
+                "LSJ 20070708":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/vSOt2c1uRzQ/m/F4ZIvIyp7lcJ",
+                "RTR 20070707":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/vSOt2c1uRzQ/m/MsRAv47Cd4YJ"
             }
         }
     ],
@@ -21609,14 +21633,6 @@
             }
         }
     ],
-    "201634":[
-        {
-            "text":"His ability does not let him fulfill card requirements if they are not played normally, like when using {Piper} to recruit an ally.",
-            "refs":{
-                "LSJ 20050119":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NKWhBnp7uP4/m/6_56LlSV658J"
-            }
-        }
-    ],
     "201641":[
         {
             "text":"When using his ability, the opponent is the acting minion and play their combat effects first.",
@@ -21633,9 +21649,19 @@
             }
         },
         {
-            "text":"Her ability does not let her fulfill card requirements if they are not played normally, like when using {Piper} to recruit an ally.",
+            "text":"The ability ability cannot be used to fulfill card requirements if they are not played normally, like when using {Concealed Weapon} for an equipment or {Piper} or {The Summoning} for an ally.",
             "refs":{
                 "LSJ 20050119":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NKWhBnp7uP4/m/6_56LlSV658J"
+            }
+        },
+        {
+            "text":"When meeting a requirement to play a card, the vampire is treated as such for all the effects of the card, and only them, including duration effects. The vampire is not treated as meeting the requirements for effects the card has from being in play.",
+            "refs":{
+                "LSJ 20101013":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/hpFRDAmtSbA/m/httYmI5wpB8J",
+                "ANK 20190228":"https://www.vekn.net/forum/rules-questions/77427-mata-hari-and-hakim-s-law-leadership?start=42#93785",
+                "ANK 20200703-3":"https://www.vekn.net/forum/rules-questions/78716-cry-wolf-recruit-action-from-a-non-anarch-vampire-being-blocked#100264",
+                "LSJ 20070708":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/vSOt2c1uRzQ/m/F4ZIvIyp7lcJ",
+                "RTR 20070707":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/vSOt2c1uRzQ/m/MsRAv47Cd4YJ"
             }
         }
     ],
@@ -22279,6 +22305,49 @@
             }
         }
     ],
+    "G00072":[
+        {
+            "text":"The ability ability cannot be used to fulfill card requirements if they are not played normally, like when using {Concealed Weapon} for an equipment or {Piper} or {The Summoning} for an ally.",
+            "refs":{
+                "LSJ 20050119":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NKWhBnp7uP4/m/6_56LlSV658J"
+            }
+        }
+    ],
+    "G00073":[
+        {
+            "text":"When meeting a requirement to play a card, the vampire is treated as such for all the effects of the card, and only them, including duration effects. The vampire is not treated as meeting the requirements for effects the card has from being in play.",
+            "refs":{
+                "LSJ 20101013":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/hpFRDAmtSbA/m/httYmI5wpB8J",
+                "ANK 20190228":"https://www.vekn.net/forum/rules-questions/77427-mata-hari-and-hakim-s-law-leadership?start=42#93785",
+                "ANK 20200703-3":"https://www.vekn.net/forum/rules-questions/78716-cry-wolf-recruit-action-from-a-non-anarch-vampire-being-blocked#100264",
+                "LSJ 20070708":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/vSOt2c1uRzQ/m/F4ZIvIyp7lcJ",
+                "RTR 20070707":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/vSOt2c1uRzQ/m/MsRAv47Cd4YJ"
+            }
+        }
+    ],
+    "G00074":[
+        {
+            "text":"If an effect granting a strike is played/used before another effect that adds a cost to strike (e.g. {Lucian, the Perfect}, {Dam the Heart's River}), you may choose not to strike.",
+            "refs":{
+                "LSJ 20071017":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Ei307R78l4A/m/PYe-fYT8BqkJ"
+            }
+        },
+        {
+            "text":"If an effect granting a strike (e.g. {.44 Magnum}) is played/used after another effect that adds a cost to strike, you must pay the additional cost to use that first effect.",
+            "refs":{
+                "LSJ 20090529":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/LpFSLRuWONA/m/daxDmJiGX0AJ"
+            }
+        }
+    ],
+    "G00075":[
+        {
+            "text":"The discount applies to the action, regardless of who pays.",
+            "refs":{
+                "PIB 20110918":"https://www.vekn.net/forum/rules-questions/10458-frondator#10459",
+                "LSJ 20020304-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/L-8OGYP5xsE/m/h5WnSofVrfUJ"
+            }
+        }
+    ],
     "101519":[
         {
             "text":"If one is ousted while having temporary control of a minion, the minion is removed from the game.",
@@ -22861,6 +22930,13 @@
             "text":"If it uses its last life to play an action modifier, the action fails. If it uses its last life to play a strike, combat ends before strike resolution.",
             "refs":{
                 "ANK 20180928-1":"https://www.vekn.net/forum/rules-questions/77034-allies-and-vampire-disciplines-specifically-the-nocturn#90809"
+            }
+        },
+        {
+            "text":"Cannot be used to prevent aggravated damage, even if the minion treats them as normal damage (eg. {Skin of Night}).",
+            "refs":{
+                "LSJ 20040812-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/E7D1cVmAdqQ/m/MvPApbrT14gJ",
+                "PIB 20130327":"https://www.vekn.net/forum/rules-questions/46279-soak-vs-treat-agg-damage-as-normal-damage#46285"
             }
         },
         {
@@ -24791,6 +24867,13 @@
             "refs":{
                 "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
             }
+        },
+        {
+            "text":"Cannot be used to prevent aggravated damage, even if the minion treats them as normal damage (eg. {Skin of Night}).",
+            "refs":{
+                "LSJ 20040812-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/E7D1cVmAdqQ/m/MvPApbrT14gJ",
+                "PIB 20130327":"https://www.vekn.net/forum/rules-questions/46279-soak-vs-treat-agg-damage-as-normal-damage#46285"
+            }
         }
     ],
     "201684":[
@@ -24970,7 +25053,49 @@
             }
         }
     ],
+    "101262":[
+        {
+            "text":"Cannot be used to prevent aggravated damage, even if the minion treats them as normal damage (eg. {Skin of Night}).",
+            "refs":{
+                "LSJ 20040812-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/E7D1cVmAdqQ/m/MvPApbrT14gJ",
+                "PIB 20130327":"https://www.vekn.net/forum/rules-questions/46279-soak-vs-treat-agg-damage-as-normal-damage#46285"
+            }
+        }
+    ],
     "102172":[
+        {
+            "text":"Cannot be used to prevent aggravated damage, even if the minion treats them as normal damage (eg. {Skin of Night}).",
+            "refs":{
+                "LSJ 20040812-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/E7D1cVmAdqQ/m/MvPApbrT14gJ",
+                "PIB 20130327":"https://www.vekn.net/forum/rules-questions/46279-soak-vs-treat-agg-damage-as-normal-damage#46285"
+            }
+        }
+    ],
+    "200493":[
+        {
+            "text":"Cannot be used to prevent aggravated damage, even if the minion treats them as normal damage (eg. {Skin of Night}).",
+            "refs":{
+                "LSJ 20040812-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/E7D1cVmAdqQ/m/MvPApbrT14gJ",
+                "PIB 20130327":"https://www.vekn.net/forum/rules-questions/46279-soak-vs-treat-agg-damage-as-normal-damage#46285"
+            }
+        }
+    ],
+    "201160":[
+        {
+            "text":"Cannot be used to prevent aggravated damage, even if the minion treats them as normal damage (eg. {Skin of Night}).",
+            "refs":{
+                "LSJ 20040812-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/E7D1cVmAdqQ/m/MvPApbrT14gJ",
+                "PIB 20130327":"https://www.vekn.net/forum/rules-questions/46279-soak-vs-treat-agg-damage-as-normal-damage#46285"
+            }
+        },
+        {
+            "text":"Keeps their title and votes if they changes sects.",
+            "refs":{
+                "LSJ 20010714":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-xrhpMEiMrw/m/Vnr8QIyt41cJ"
+            }
+        }
+    ],
+    "201651":[
         {
             "text":"Cannot be used to prevent aggravated damage, even if the minion treats them as normal damage (eg. {Skin of Night}).",
             "refs":{
@@ -25575,6 +25700,21 @@
             }
         }
     ],
+    "200995":[
+        {
+            "text":"The scarce penalty considers the apparent clan while controlled (in case of {Clan Impersonation} and {Banishment}).",
+            "refs":{
+                "LSJ 20011015":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ZXW0ScxTsBA/m/OvbMemV2oXUJ"
+            }
+        },
+        {
+            "text":"The discount applies to the action, regardless of who pays.",
+            "refs":{
+                "PIB 20110918":"https://www.vekn.net/forum/rules-questions/10458-frondator#10459",
+                "LSJ 20020304-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/L-8OGYP5xsE/m/h5WnSofVrfUJ"
+            }
+        }
+    ],
     "201016":[
         {
             "text":"The scarce penalty considers the apparent clan while controlled (in case of {Clan Impersonation} and {Banishment}).",
@@ -25767,6 +25907,13 @@
             "text":"Is an equipment while in hand, library or ash heap, both equipment and location when played (eg. for cost-related effects), and just a location while in play.",
             "refs":{
                 "LSJ 20080114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aMum-K7LEeo/m/94iN92zwYTcJ"
+            }
+        },
+        {
+            "text":"The discount applies to the action, regardless of who pays.",
+            "refs":{
+                "PIB 20110918":"https://www.vekn.net/forum/rules-questions/10458-frondator#10459",
+                "LSJ 20020304-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/L-8OGYP5xsE/m/h5WnSofVrfUJ"
             }
         }
     ],
@@ -28064,14 +28211,6 @@
             }
         }
     ],
-    "201160":[
-        {
-            "text":"Keeps their title and votes if they changes sects.",
-            "refs":{
-                "LSJ 20010714":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-xrhpMEiMrw/m/Vnr8QIyt41cJ"
-            }
-        }
-    ],
     "201175":[
         {
             "text":"Keeps their title and votes if they changes sects.",
@@ -28139,6 +28278,22 @@
                 "ANK 20230503":"https://www.vekn.net/forum/rules-questions/80486-vlad-tepes-special-text-under-fall-of-the-sabbat?start=6#107971",
                 "LSJ 20050124":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HVy8iPUxNbI/m/ZjCzAzmQFMwJ"
             }
+        },
+        {
+            "text":"The ability ability cannot be used to fulfill card requirements if they are not played normally, like when using {Concealed Weapon} for an equipment or {Piper} or {The Summoning} for an ally.",
+            "refs":{
+                "LSJ 20050119":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NKWhBnp7uP4/m/6_56LlSV658J"
+            }
+        },
+        {
+            "text":"When meeting a requirement to play a card, the vampire is treated as such for all the effects of the card, and only them, including duration effects. The vampire is not treated as meeting the requirements for effects the card has from being in play.",
+            "refs":{
+                "LSJ 20101013":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/hpFRDAmtSbA/m/httYmI5wpB8J",
+                "ANK 20190228":"https://www.vekn.net/forum/rules-questions/77427-mata-hari-and-hakim-s-law-leadership?start=42#93785",
+                "ANK 20200703-3":"https://www.vekn.net/forum/rules-questions/78716-cry-wolf-recruit-action-from-a-non-anarch-vampire-being-blocked#100264",
+                "LSJ 20070708":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/vSOt2c1uRzQ/m/F4ZIvIyp7lcJ",
+                "RTR 20070707":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/vSOt2c1uRzQ/m/MsRAv47Cd4YJ"
+            }
         }
     ],
     "201654":[
@@ -28146,6 +28301,186 @@
             "text":"Keeps their title and votes if they changes sects.",
             "refs":{
                 "LSJ 20010714":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-xrhpMEiMrw/m/Vnr8QIyt41cJ"
+            }
+        }
+    ],
+    "201439":[
+        {
+            "text":"When meeting a title requirement for a political action, the vampire does not get the title's votes for the subsequent referendum.",
+            "refs":{
+                "ANK 20231221":"https://www.vekn.net/forum/rules-questions/81065-faking-title-and-votes#110148"
+            }
+        },
+        {
+            "text":"Can meet a sect-specific title (e.g. Justicar) requirement even if the sect does not exist anymore (eg. {Fall of the Camarilla}).",
+            "refs":{
+                "ANK 20230503":"https://www.vekn.net/forum/rules-questions/80486-vlad-tepes-special-text-under-fall-of-the-sabbat?start=6#107971",
+                "LSJ 20050124":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HVy8iPUxNbI/m/ZjCzAzmQFMwJ"
+            }
+        },
+        {
+            "text":"The ability ability cannot be used to fulfill card requirements if they are not played normally, like when using {Concealed Weapon} for an equipment or {Piper} or {The Summoning} for an ally.",
+            "refs":{
+                "LSJ 20050119":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NKWhBnp7uP4/m/6_56LlSV658J"
+            }
+        },
+        {
+            "text":"When meeting a requirement to play a card, the vampire is treated as such for all the effects of the card, and only them, including duration effects. The vampire is not treated as meeting the requirements for effects the card has from being in play.",
+            "refs":{
+                "LSJ 20101013":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/hpFRDAmtSbA/m/httYmI5wpB8J",
+                "ANK 20190228":"https://www.vekn.net/forum/rules-questions/77427-mata-hari-and-hakim-s-law-leadership?start=42#93785",
+                "ANK 20200703-3":"https://www.vekn.net/forum/rules-questions/78716-cry-wolf-recruit-action-from-a-non-anarch-vampire-being-blocked#100264",
+                "LSJ 20070708":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/vSOt2c1uRzQ/m/F4ZIvIyp7lcJ",
+                "RTR 20070707":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/vSOt2c1uRzQ/m/MsRAv47Cd4YJ"
+            }
+        }
+    ],
+    "200498":[
+        {
+            "text":"The ability ability cannot be used to fulfill card requirements if they are not played normally, like when using {Concealed Weapon} for an equipment or {Piper} or {The Summoning} for an ally.",
+            "refs":{
+                "LSJ 20050119":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NKWhBnp7uP4/m/6_56LlSV658J"
+            }
+        },
+        {
+            "text":"When meeting a requirement to play a card, the vampire is treated as such for all the effects of the card, and only them, including duration effects. The vampire is not treated as meeting the requirements for effects the card has from being in play.",
+            "refs":{
+                "LSJ 20101013":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/hpFRDAmtSbA/m/httYmI5wpB8J",
+                "ANK 20190228":"https://www.vekn.net/forum/rules-questions/77427-mata-hari-and-hakim-s-law-leadership?start=42#93785",
+                "ANK 20200703-3":"https://www.vekn.net/forum/rules-questions/78716-cry-wolf-recruit-action-from-a-non-anarch-vampire-being-blocked#100264",
+                "LSJ 20070708":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/vSOt2c1uRzQ/m/F4ZIvIyp7lcJ",
+                "RTR 20070707":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/vSOt2c1uRzQ/m/MsRAv47Cd4YJ"
+            }
+        }
+    ],
+    "201121":[
+        {
+            "text":"The ability ability cannot be used to fulfill card requirements if they are not played normally, like when using {Concealed Weapon} for an equipment or {Piper} or {The Summoning} for an ally.",
+            "refs":{
+                "LSJ 20050119":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NKWhBnp7uP4/m/6_56LlSV658J"
+            }
+        },
+        {
+            "text":"When meeting a requirement to play a card, the vampire is treated as such for all the effects of the card, and only them, including duration effects. The vampire is not treated as meeting the requirements for effects the card has from being in play.",
+            "refs":{
+                "LSJ 20101013":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/hpFRDAmtSbA/m/httYmI5wpB8J",
+                "ANK 20190228":"https://www.vekn.net/forum/rules-questions/77427-mata-hari-and-hakim-s-law-leadership?start=42#93785",
+                "ANK 20200703-3":"https://www.vekn.net/forum/rules-questions/78716-cry-wolf-recruit-action-from-a-non-anarch-vampire-being-blocked#100264",
+                "LSJ 20070708":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/vSOt2c1uRzQ/m/F4ZIvIyp7lcJ",
+                "RTR 20070707":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/vSOt2c1uRzQ/m/MsRAv47Cd4YJ"
+            }
+        }
+    ],
+    "201348":[
+        {
+            "text":"The ability ability cannot be used to fulfill card requirements if they are not played normally, like when using {Concealed Weapon} for an equipment or {Piper} or {The Summoning} for an ally.",
+            "refs":{
+                "LSJ 20050119":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NKWhBnp7uP4/m/6_56LlSV658J"
+            }
+        },
+        {
+            "text":"When meeting a requirement to play a card, the vampire is treated as such for all the effects of the card, and only them, including duration effects. The vampire is not treated as meeting the requirements for effects the card has from being in play.",
+            "refs":{
+                "LSJ 20101013":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/hpFRDAmtSbA/m/httYmI5wpB8J",
+                "ANK 20190228":"https://www.vekn.net/forum/rules-questions/77427-mata-hari-and-hakim-s-law-leadership?start=42#93785",
+                "ANK 20200703-3":"https://www.vekn.net/forum/rules-questions/78716-cry-wolf-recruit-action-from-a-non-anarch-vampire-being-blocked#100264",
+                "LSJ 20070708":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/vSOt2c1uRzQ/m/F4ZIvIyp7lcJ",
+                "RTR 20070707":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/vSOt2c1uRzQ/m/MsRAv47Cd4YJ"
+            }
+        }
+    ],
+    "201634":[
+        {
+            "text":"The ability ability cannot be used to fulfill card requirements if they are not played normally, like when using {Concealed Weapon} for an equipment or {Piper} or {The Summoning} for an ally.",
+            "refs":{
+                "LSJ 20050119":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NKWhBnp7uP4/m/6_56LlSV658J"
+            }
+        },
+        {
+            "text":"When meeting a requirement to play a card, the vampire is treated as such for all the effects of the card, and only them, including duration effects. The vampire is not treated as meeting the requirements for effects the card has from being in play.",
+            "refs":{
+                "LSJ 20101013":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/hpFRDAmtSbA/m/httYmI5wpB8J",
+                "ANK 20190228":"https://www.vekn.net/forum/rules-questions/77427-mata-hari-and-hakim-s-law-leadership?start=42#93785",
+                "ANK 20200703-3":"https://www.vekn.net/forum/rules-questions/78716-cry-wolf-recruit-action-from-a-non-anarch-vampire-being-blocked#100264",
+                "LSJ 20070708":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/vSOt2c1uRzQ/m/F4ZIvIyp7lcJ",
+                "RTR 20070707":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/vSOt2c1uRzQ/m/MsRAv47Cd4YJ"
+            }
+        }
+    ],
+    "100963":[
+        {
+            "text":"If an effect granting a strike is played/used before another effect that adds a cost to strike (e.g. {Lucian, the Perfect}, {Dam the Heart's River}), you may choose not to strike.",
+            "refs":{
+                "LSJ 20071017":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Ei307R78l4A/m/PYe-fYT8BqkJ"
+            }
+        },
+        {
+            "text":"If an effect granting a strike (e.g. {.44 Magnum}) is played/used after another effect that adds a cost to strike, you must pay the additional cost to use that first effect.",
+            "refs":{
+                "LSJ 20090529":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/LpFSLRuWONA/m/daxDmJiGX0AJ"
+            }
+        }
+    ],
+    "100943":[
+        {
+            "text":"The discount applies to the action, regardless of who pays.",
+            "refs":{
+                "PIB 20110918":"https://www.vekn.net/forum/rules-questions/10458-frondator#10459",
+                "LSJ 20020304-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/L-8OGYP5xsE/m/h5WnSofVrfUJ"
+            }
+        }
+    ],
+    "102243":[
+        {
+            "text":"The discount applies to the action, regardless of who pays.",
+            "refs":{
+                "PIB 20110918":"https://www.vekn.net/forum/rules-questions/10458-frondator#10459",
+                "LSJ 20020304-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/L-8OGYP5xsE/m/h5WnSofVrfUJ"
+            }
+        }
+    ],
+    "102259":[
+        {
+            "text":"The discount applies to the action, regardless of who pays.",
+            "refs":{
+                "PIB 20110918":"https://www.vekn.net/forum/rules-questions/10458-frondator#10459",
+                "LSJ 20020304-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/L-8OGYP5xsE/m/h5WnSofVrfUJ"
+            }
+        }
+    ],
+    "200485":[
+        {
+            "text":"The discount applies to the action, regardless of who pays.",
+            "refs":{
+                "PIB 20110918":"https://www.vekn.net/forum/rules-questions/10458-frondator#10459",
+                "LSJ 20020304-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/L-8OGYP5xsE/m/h5WnSofVrfUJ"
+            }
+        }
+    ],
+    "200680":[
+        {
+            "text":"The discount applies to the action, regardless of who pays.",
+            "refs":{
+                "PIB 20110918":"https://www.vekn.net/forum/rules-questions/10458-frondator#10459",
+                "LSJ 20020304-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/L-8OGYP5xsE/m/h5WnSofVrfUJ"
+            }
+        }
+    ],
+    "201635":[
+        {
+            "text":"The discount applies to the action, regardless of who pays.",
+            "refs":{
+                "PIB 20110918":"https://www.vekn.net/forum/rules-questions/10458-frondator#10459",
+                "LSJ 20020304-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/L-8OGYP5xsE/m/h5WnSofVrfUJ"
+            }
+        }
+    ],
+    "201670":[
+        {
+            "text":"The discount applies to the action, regardless of who pays.",
+            "refs":{
+                "PIB 20110918":"https://www.vekn.net/forum/rules-questions/10458-frondator#10459",
+                "LSJ 20020304-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/L-8OGYP5xsE/m/h5WnSofVrfUJ"
             }
         }
     ]

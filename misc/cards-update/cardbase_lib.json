@@ -376,6 +376,13 @@
                 "refs":{
                     "LSJ 19990216":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/klb6OQYtdzE/m/H1X21rprzNQJ"
                 }
+            },
+            {
+                "text":"[for] Cannot be used to prevent aggravated damage, even if the minion treats them as normal damage (eg. {Skin of Night}).",
+                "refs":{
+                    "LSJ 20040812-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/E7D1cVmAdqQ/m/MvPApbrT14gJ",
+                    "PIB 20130327":"https://www.vekn.net/forum/rules-questions/46279-soak-vs-treat-agg-damage-as-normal-damage#46285"
+                }
             }
         ],
         "set":{
@@ -13350,6 +13357,13 @@
                 "refs":{
                     "LSJ 20080114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aMum-K7LEeo/m/94iN92zwYTcJ"
                 }
+            },
+            {
+                "text":"The discount applies to the action, regardless of who pays.",
+                "refs":{
+                    "PIB 20110918":"https://www.vekn.net/forum/rules-questions/10458-frondator#10459",
+                    "LSJ 20020304-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/L-8OGYP5xsE/m/h5WnSofVrfUJ"
+                }
             }
         ],
         "set":{
@@ -20829,6 +20843,18 @@
                 "refs":{
                     "ANK 20181026":"https://www.vekn.net/forum/rules-questions/77117-dam-the-heart-s-river-vs-thrown-gate#91508"
                 }
+            },
+            {
+                "text":"[QUI] If an effect granting a strike is played/used before another effect that adds a cost to strike (e.g. {Lucian, the Perfect}, {Dam the Heart's River}), you may choose not to strike.",
+                "refs":{
+                    "LSJ 20071017":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Ei307R78l4A/m/PYe-fYT8BqkJ"
+                }
+            },
+            {
+                "text":"[QUI] If an effect granting a strike (e.g. {.44 Magnum}) is played/used after another effect that adds a cost to strike, you must pay the additional cost to use that first effect.",
+                "refs":{
+                    "LSJ 20090529":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/LpFSLRuWONA/m/daxDmJiGX0AJ"
+                }
             }
         ],
         "set":{
@@ -27249,6 +27275,13 @@
                 "text":"[for] Cannot be used if there is no damage to prevent.",
                 "refs":{
                     "LSJ 20001114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qXSlM7Grq1c/m/cSDoQ9mw0z4J"
+                }
+            },
+            {
+                "text":"[for] Cannot be used to prevent aggravated damage, even if the minion treats them as normal damage (eg. {Skin of Night}).",
+                "refs":{
+                    "LSJ 20040812-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/E7D1cVmAdqQ/m/MvPApbrT14gJ",
+                    "PIB 20130327":"https://www.vekn.net/forum/rules-questions/46279-soak-vs-treat-agg-damage-as-normal-damage#46285"
                 }
             }
         ],
@@ -41300,7 +41333,15 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The discount applies to the action, regardless of who pays.",
+                "refs":{
+                    "PIB 20110918":"https://www.vekn.net/forum/rules-questions/10458-frondator#10459",
+                    "LSJ 20020304-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/L-8OGYP5xsE/m/h5WnSofVrfUJ"
+                }
+            }
+        ],
         "set":{
             "AH":{
                 "V":true
@@ -42252,7 +42293,20 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"If an effect granting a strike is played/used before another effect that adds a cost to strike (e.g. {Lucian, the Perfect}, {Dam the Heart's River}), you may choose not to strike.",
+                "refs":{
+                    "LSJ 20071017":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Ei307R78l4A/m/PYe-fYT8BqkJ"
+                }
+            },
+            {
+                "text":"If an effect granting a strike (e.g. {.44 Magnum}) is played/used after another effect that adds a cost to strike, you must pay the additional cost to use that first effect.",
+                "refs":{
+                    "LSJ 20090529":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/LpFSLRuWONA/m/daxDmJiGX0AJ"
+                }
+            }
+        ],
         "set":{
             "NoR":{
                 "R":true
@@ -55454,7 +55508,15 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Cannot be used to prevent aggravated damage, even if the minion treats them as normal damage (eg. {Skin of Night}).",
+                "refs":{
+                    "LSJ 20040812-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/E7D1cVmAdqQ/m/MvPApbrT14gJ",
+                    "PIB 20130327":"https://www.vekn.net/forum/rules-questions/46279-soak-vs-treat-agg-damage-as-normal-damage#46285"
+                }
+            }
+        ],
         "set":{
             "FN":{
                 "R":true
@@ -55911,6 +55973,13 @@
                 "text":"If it uses its last life to play an action modifier, the action fails. If it uses its last life to play a strike, combat ends before strike resolution.",
                 "refs":{
                     "ANK 20180928-1":"https://www.vekn.net/forum/rules-questions/77034-allies-and-vampire-disciplines-specifically-the-nocturn#90809"
+                }
+            },
+            {
+                "text":"Cannot be used to prevent aggravated damage, even if the minion treats them as normal damage (eg. {Skin of Night}).",
+                "refs":{
+                    "LSJ 20040812-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/E7D1cVmAdqQ/m/MvPApbrT14gJ",
+                    "PIB 20130327":"https://www.vekn.net/forum/rules-questions/46279-soak-vs-treat-agg-damage-as-normal-damage#46285"
                 }
             },
             {
@@ -66510,6 +66579,12 @@
                 "refs":{
                     "RTR 20070707":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/vSOt2c1uRzQ/m/MsRAv47Cd4YJ"
                 }
+            },
+            {
+                "text":"[THN] You can't use the option to not strike, if you are commited to a strike from another effect (eg. {.44 Magnum})",
+                "refs":{
+                    "LSJ 20090528-2-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/LpFSLRuWONA/m/ZwZEHVFOrRYJ"
+                }
             }
         ],
         "set":{
@@ -71333,7 +71408,15 @@
         "path":"",
         "pool":1,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The discount applies to the action, regardless of who pays.",
+                "refs":{
+                    "PIB 20110918":"https://www.vekn.net/forum/rules-questions/10458-frondator#10459",
+                    "LSJ 20020304-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/L-8OGYP5xsE/m/h5WnSofVrfUJ"
+                }
+            }
+        ],
         "set":{
             "FoL":{
                 "":"1"
@@ -73206,7 +73289,15 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The discount applies to the action, regardless of who pays.",
+                "refs":{
+                    "PIB 20110918":"https://www.vekn.net/forum/rules-questions/10458-frondator#10459",
+                    "LSJ 20020304-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/L-8OGYP5xsE/m/h5WnSofVrfUJ"
+                }
+            }
+        ],
         "set":{
             "V5C":{
                 "PSal":"1"
@@ -79102,6 +79193,12 @@
                 "refs":{
                     "LSJ 20021028":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/g0GGiVIxyis/m/35WA-O9XrroJ"
                 }
+            },
+            {
+                "text":"When used to set range, you may choose not to strike if another card gives the option not to strike (e.g. {Lucian, the Perfect}, {Dam the Heart's River}) was played after Sniper Rifle was used to set range",
+                "refs":{
+                    "LSJ 20071017":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Ei307R78l4A/m/PYe-fYT8BqkJ"
+                }
             }
         ],
         "set":{
@@ -83211,6 +83308,13 @@
                 "refs":{
                     "LSJ 20070403":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/TJ2ktt_1tjk/m/fdH_x9tDmN8J",
                     "LSJ 20070413":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/umdINigMKqs/m/lfUAxTnfttIJ"
+                }
+            },
+            {
+                "text":"Cannot be used to prevent aggravated damage, even if the minion treats them as normal damage (eg. {Skin of Night}).",
+                "refs":{
+                    "LSJ 20040812-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/E7D1cVmAdqQ/m/MvPApbrT14gJ",
+                    "PIB 20130327":"https://www.vekn.net/forum/rules-questions/46279-soak-vs-treat-agg-damage-as-normal-damage#46285"
                 }
             }
         ],
