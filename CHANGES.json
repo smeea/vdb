@@ -1,5 +1,12 @@
 [
   {
+    "version": "2024-12-30",
+    "changes": [
+    "Add Garou Rim event to TDA",
+    "Hot fix"
+  ]
+},
+  {
     "version": "2024-12-27",
     "changes": [
       "Add tags search to TWD and TDA. Please keep in mind tags recognition is automated (follows very simple algorithms) and is inherently inaccurate, it is also very subjective topic. It may be useful for you, but if it is not enjoy other more objective/precise search options",
