@@ -1,5 +1,6 @@
 # FIX
 - Review TWDA radar: remove swarm, maybe replace?
+- Combat tag to exclude sce
 
 # FEATURES
 - Inventory 'target' q-ty -> for design consideration
