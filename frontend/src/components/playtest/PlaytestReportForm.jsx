@@ -14,7 +14,7 @@ import {
 import { useFetch } from '@/hooks';
 import { useApp } from '@/context';
 import { playtestServices } from '@/services';
-import { VALUE, PRECONS, TEXT, CARDS, SCORE } from '@/constants';
+import { ID, VALUE, PRECONS, TEXT, CARDS, SCORE } from '@/constants';
 const IS_PLAYED = 'isPlayed';
 
 const Title = ({ isPrecon }) => {
@@ -64,6 +64,7 @@ const PlaytestReportForm = ({ id, setIsHotkeysDisabled, isPrecon = false }) => {
     [TEXT]: '',
     [SCORE]: 0,
     [IS_PLAYED]: false,
+    [ID]: null,
   });
 
   const url = `${import.meta.env.VITE_API_URL}/playtest/${isPrecon ? PRECONS : CARDS}/${id}`;
@@ -75,15 +76,23 @@ const PlaytestReportForm = ({ id, setIsHotkeysDisabled, isPrecon = false }) => {
         [TEXT]: dataValue[TEXT],
         [SCORE]: dataValue[SCORE],
         [IS_PLAYED]: !!dataValue[IS_PLAYED],
+        [ID]: id,
       });
     }
-  }, [id, dataValue]);
+  }, [dataValue]);
 
-  useEffect(() => submit(), [report[SCORE], report[IS_PLAYED]]);
+  useEffect(() => {
+    if (
+      dataValue &&
+      (report[SCORE] !== dataValue[SCORE] || report[IS_PLAYED] !== dataValue[IS_PLAYED])
+    ) {
+      submit();
+    }
+  }, [report[SCORE], report[IS_PLAYED]]);
 
   const submit = (event) => {
     event?.preventDefault();
-    playtestServices.submitReport(id, report, isPrecon);
+    playtestServices.submitReport(report[ID], report, isPrecon);
   };
 
   const handleOnBlur = () => {
