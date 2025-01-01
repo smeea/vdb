@@ -1,6 +1,5 @@
 # FIX
 - Review TWDA radar: remove swarm, maybe replace?
-- Combat tag to exclude sce
 
 # FIX ON HOLD
 - Deck-in-url trim - cant reproduce in dev environment

@@ -211,7 +211,7 @@ const missingTraits = (filter, card, traitsRegexMap) => {
   return filterKeys.some((trait) => missingTrait(trait, card, traitsRegexMap));
 };
 
-const missingTrait = (trait, card, traitsRegexMap) => {
+export const missingTrait = (trait, card, traitsRegexMap) => {
   switch (trait) {
     case PLAYTEST:
       return !getIsPlaytest(card[ID]);

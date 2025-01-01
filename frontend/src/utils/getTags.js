@@ -7,6 +7,7 @@ import {
   BLEED_1,
   BLOCK,
   COMBAT,
+  COMBAT_ENDS,
   EMBRACE,
   ENTER_COMBAT,
   INTERCEPT,
@@ -36,6 +37,7 @@ import {
   BASE,
 } from '@/constants';
 import { CryptTraitsRegexMap, LibraryTraitsRegexMap } from '@/utils/traitsRegexMaps';
+import { missingTrait } from '@/utils/cardFilters';
 
 const getTags = (crypt, library) => {
   const deckTags = {
@@ -226,7 +228,8 @@ const testLibrarySwarm = (card) => {
 };
 
 const testLibraryCombat = (card) => {
-  if (card[TYPE].split('/').includes(TYPE_COMBAT)) return true;
+  if (card[TYPE].split('/').includes(TYPE_COMBAT) && missingTrait(COMBAT_ENDS, card, {}))
+    return true;
   if (
     haveTraits(
       [STRENGTH, AGGRAVATED, PREVENT, PRESS, ADDITIONAL_STRIKE],
