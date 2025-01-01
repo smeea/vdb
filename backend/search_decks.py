@@ -14,4 +14,11 @@ def search_decks(queries, target):
         if not matches:
             break
 
-    return matches
+    uniq_matches_ids = set()
+    uniq_matches = []
+    for d in matches:
+        if d["deckid"] not in uniq_matches_ids:
+            uniq_matches.append(d)
+            uniq_matches_ids.add(d["deckid"])
+
+    return uniq_matches
