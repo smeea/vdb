@@ -2,7 +2,7 @@
 - Review TWDA radar: remove swarm, maybe replace?
 
 # FIX ON HOLD
-- Deck-in-url trim - cant reproduce in dev environment
+- Deck-in-Url trimmed at first card - cant reproduce in dev environment
 
 # FEATURES
 - Inventory 'target' q-ty -> for design consideration
