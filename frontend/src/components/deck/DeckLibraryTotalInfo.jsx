@@ -2,6 +2,18 @@ import React from 'react';
 import { ResultLibraryTypeImage, ResultLibraryDisciplines, ResultLibraryClan } from '@/components';
 import { TYPE_MASTER } from '@/constants';
 
+const IconTextPercents = ({ icon, text, percents }) => {
+  return (
+    <div className="inline-block whitespace-nowrap pr-5">
+      <div className="flex items-center gap-1">
+        {icon}
+        <div className="flex">{text}</div>
+        <div className="text-midGray dark:text-midGrayDark">({percents}%)</div>
+      </div>
+    </div>
+  );
+};
+
 const DeckLibraryTotalInfo = ({ byClans, byTypes, byDisciplines }) => {
   const total = Object.values(byTypes).reduce((a, b) => a + b, 0);
   const totalExMasters = total - (byTypes[TYPE_MASTER] || 0);
@@ -21,52 +33,42 @@ const DeckLibraryTotalInfo = ({ byClans, byTypes, byDisciplines }) => {
   return (
     <div className="flex flex-col gap-2 bg-bgSecondary p-2 dark:bg-bgSecondaryDark">
       <div>
-        {Object.keys(byTypes).map((t, idx) => {
+        {Object.keys(byTypes).map((i) => {
           return (
-            <div key={idx} className="inline-block whitespace-nowrap pr-5">
-              <div className="flex items-center gap-0.5">
-                <ResultLibraryTypeImage value={t} />
-                <div className="flex">{byTypes[t]}</div>
-                <div className="text-midGray dark:text-midGrayDark">
-                  ({Math.round((byTypes[t] / total) * 100)}%)
-                </div>
-              </div>
-            </div>
+            <IconTextPercents
+              key={i}
+              icon={<ResultLibraryTypeImage value={i} />}
+              text={byTypes[i]}
+              percents={Math.round((byTypes[i] / total) * 100)}
+            />
           );
         })}
       </div>
       <div className="flex flex-col gap-1">
         <div className="text-fgSecondary dark:text-fgSecondaryDark">Excluding Master / Event:</div>
         <div>
-          {byDisciplinesSorted.map((d, idx) => {
+          {byDisciplinesSorted.map((i) => {
             return (
-              <div key={idx} className="inline-block whitespace-nowrap pr-5">
-                <div className="flex items-center gap-0.5">
-                  <ResultLibraryDisciplines value={d} />
-                  <div className="flex">{byDisciplines[d]}</div>
-                  <div className="text-midGray dark:text-midGrayDark">
-                    ({Math.round((byDisciplines[d] / totalExMasters) * 100)}
-                    %)
-                  </div>
-                </div>
-              </div>
+              <IconTextPercents
+                key={i}
+                icon={<ResultLibraryDisciplines value={i} />}
+                text={byDisciplines[i]}
+                percents={Math.round((byDisciplines[i] / totalExMasters) * 100)}
+              />
             );
           })}
         </div>
       </div>
       {byClansSorted.length > 0 && (
         <div>
-          {byClansSorted.map((d, idx) => {
+          {byClansSorted.map((i) => {
             return (
-              <div key={idx} className="inline-block whitespace-nowrap pr-5">
-                <div className="flex items-center gap-0.5">
-                  <ResultLibraryClan value={d} />
-                  <div className="flex">{byClans[d]}</div>
-                  <div className="text-midGray dark:text-midGrayDark">
-                    ({Math.round((byClans[d] / total) * 100)}%)
-                  </div>
-                </div>
-              </div>
+              <IconTextPercents
+                key={i}
+                icon={<ResultLibraryClan value={i} />}
+                text={byClans[i]}
+                percents={Math.round((byClans[i] / total) * 100)}
+              />
             );
           })}
         </div>
