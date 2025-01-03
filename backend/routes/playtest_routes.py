@@ -50,20 +50,50 @@ def playtesters_route():
 
         return jsonify(result)
 
-    if request.method == "PUT" or request.method == "DELETE":
+    if request.method == "PUT":
+        u = User.query.filter_by(username=request.json["username"].lower()).first()
+        if not u:
+            abort(400)
+
+        u.playtester = True
+        u.playtest_profile["added_by"] = current_user.username
+        u.playtest_profile["added_date"] = date.today().strftime("%Y-%m-%d")
+
+        db.session.commit()
+
+        cards_reports = (
+            len(u.playtest_report["cards"].keys()) if "cards" in u.playtest_report else 0
+        )
+        precons_reports = (
+            len(u.playtest_report["precons"].keys()) if "precons" in u.playtest_report else 0
+        )
+        total_reports = cards_reports + precons_reports
+
+        profile = {
+            "lang": (u.playtest_profile["lang"] if "lang" in u.playtest_profile else None),
+            "added_by": (
+                u.playtest_profile["added_by"] if "added_by" in u.playtest_profile else None
+            ),
+            "added_date": (
+                u.playtest_profile["added_date"] if "added_date" in u.playtest_profile else None
+            ),
+            "timestamp": (
+                u.playtest_profile["timestamp"] if "timestamp" in u.playtest_profile else None
+            ),
+            "liaison": (u.playtest_profile["liaison"] if "liaison" in u.playtest_profile else None),
+            "games": (u.playtest_profile["games"] if "games" in u.playtest_profile else None),
+            "reports": total_reports,
+            "is_admin": u.playtest_admin,
+        }
+
+        return jsonify({"success": True, **profile})
+
+    if request.method == "DELETE":
         user = User.query.filter_by(username=request.json["username"].lower()).first()
         if not user:
             abort(400)
 
-        if request.method == "PUT":
-            user.playtester = True
-            user.playtest_profile = {
-                "added_by": current_user.username,
-                "added_date": date.today().strftime("%Y-%m-%d"),
-            }
-
-        else:
-            user.playtester = False
+        user.playtester = False
 
         db.session.commit()
         return jsonify(success=True)

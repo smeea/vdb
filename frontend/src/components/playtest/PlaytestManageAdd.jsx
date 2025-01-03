@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Check2 from '@icons/check2.svg?react';
 import { Spinner, Input, Button, ErrorOverlay } from '@/components';
 import { playtestServices } from '@/services';
+import { USERNAME } from '@/constants';
 
 const PlaytestManageAdd = ({ playtesters, newPlaytesters, setNewPlaytesters }) => {
   const [username, setUsername] = useState('');
@@ -19,8 +20,14 @@ const PlaytestManageAdd = ({ playtesters, newPlaytesters, setNewPlaytesters }) =
 
     playtestServices
       .changePlaytester(username)
-      .then(() => {
-        setNewPlaytesters([...newPlaytesters, username]);
+      .then((data) => {
+        setNewPlaytesters([
+          ...newPlaytesters,
+          {
+            [USERNAME]: username,
+            ...data,
+          },
+        ]);
         setUsername('');
       })
       .catch(() => setError('USER DOES NOT EXIST'))

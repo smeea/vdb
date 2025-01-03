@@ -11,14 +11,14 @@ const PlaytestManage = () => {
   const navigate = useNavigate();
   const [newPlaytesters, setNewPlaytesters] = useState([]);
   const url = `${import.meta.env.VITE_API_URL}/playtest/users`;
-  const { value } = useFetch(url, {}, [isPlaytestAdmin]);
+  const { value: playtesters } = useFetch(url, {}, [isPlaytestAdmin]);
 
   return (
     <div className="playtest-manage-container mx-auto">
       <div className="flex flex-col sm:gap-4">
         <div className="flex w-full justify-between gap-2 max-sm:p-2">
           <PlaytestManageAdd
-            playtesters={value}
+            playtesters={playtesters}
             newPlaytesters={newPlaytesters}
             setNewPlaytesters={setNewPlaytesters}
           />
@@ -46,10 +46,15 @@ const PlaytestManage = () => {
             </tr>
           </thead>
           <tbody>
-            {value &&
-              [...newPlaytesters.toReversed(), ...Object.keys(value).toSorted()].map((u) => (
-                <PlaytestManagePlayer key={u} value={{ ...value[u], [USERNAME]: u }} />
-              ))}
+            {newPlaytesters.toReversed().map((u) => {
+              return <PlaytestManagePlayer key={u[USERNAME]} value={u} />;
+            })}
+            {playtesters &&
+              Object.keys(playtesters)
+                .toSorted()
+                .map((u) => (
+                  <PlaytestManagePlayer key={u} value={{ ...playtesters[u], [USERNAME]: u }} />
+                ))}
           </tbody>
         </table>
       </div>
