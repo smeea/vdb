@@ -10,7 +10,6 @@ import {
   TdaResult,
   TdaSearchForm,
   ButtonClose,
-  ButtonFloatClose,
   ErrorMessage,
   FlexGapped,
   Header,
@@ -40,7 +39,7 @@ import {
 const TESTERS = ['1', 'crauseon'];
 
 const Tda = () => {
-  const { username, cryptCardBase, libraryCardBase, isMobile, isDesktop } = useApp();
+  const { username, cryptCardBase, libraryCardBase, isMobile } = useApp();
   const { [DECKS]: decks, [RESULTS]: results, [INFO]: info } = useSnapshot(tdaStore);
   const params = useParams();
   const navigate = useNavigate();

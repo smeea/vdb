@@ -1,6 +1,5 @@
 import React from 'react';
 import { Checkbox } from '@/components';
-import { useApp } from '@/context';
 import {
   ACCEL,
   ALLY,

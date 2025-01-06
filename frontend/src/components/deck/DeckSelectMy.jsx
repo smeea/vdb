@@ -31,7 +31,6 @@ import {
 const DeckSelectMy = ({ deckid, handleSelect }) => {
   const { limitedMode, inventoryMode, isMobile, isWide } = useApp();
   const decks = useSnapshot(deckStore)[DECKS];
-  const limitedCards = useSnapshot(limitedStore);
 
   const options = useMemo(() => {
     return Object.keys(decks)

@@ -14,21 +14,15 @@ const Checkbox = ({
   className,
 }) => {
   const textStyle = {
-    sm: 'text-sm',
-    md: 'text-md',
-    lg: 'text-lg',
+    sm: 'text-sm gap-1',
+    md: 'text-md gap-1.5',
+    lg: 'text-lg gap-2',
   };
 
-  const marginTopStyle = {
-    sm: 'mt-0.5',
-    md: 'mt-1',
-    lg: 'mt-1.5',
-  };
-
-  const gapStyle = {
-    sm: 'gap-1',
-    md: 'gap-1.5',
-    lg: 'gap-1.5',
+  const boxStyle = {
+    sm: 'size-3.5 mt-0.5',
+    md: 'size-4 mt-1',
+    lg: 'size-5 mt-1',
   };
 
   const handleChange = () => {
@@ -41,12 +35,12 @@ const Checkbox = ({
   };
 
   return (
-    <Field
-      disabled={disabled}
-      className={twMerge('items-top flex', gapStyle[size], textStyle[size], className)}
-    >
+    <Field disabled={disabled} className={twMerge('items-top flex', textStyle[size], className)}>
       <CheckboxHUI
-        className="rounded outline-2 outline-fgSecondaryDark focus:outline dark:outline-fgSecondaryDark"
+        className={twMerge(
+          'rounded outline-2 outline-fgSecondaryDark focus:outline dark:outline-fgSecondaryDark',
+          boxStyle[size],
+        )}
         checked={checked}
         onChange={handleChange}
         name={name}
@@ -55,8 +49,7 @@ const Checkbox = ({
         {({ checked, disabled }) => (
           <div
             className={twMerge(
-              'block size-4 rounded border border-borderPrimary outline-2 outline-fgGreen dark:border-none',
-              marginTopStyle[size],
+              'block rounded border border-borderPrimary dark:border-none',
               !checked && !disabled && 'bg-white dark:bg-whiteDark',
               checked &&
                 !disabled &&
