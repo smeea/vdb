@@ -9,9 +9,28 @@ const Checkbox = ({
   name,
   value,
   onChange,
+  size = 'md',
   label,
   className,
 }) => {
+  const textStyle = {
+    sm: 'text-sm',
+    md: 'text-md',
+    lg: 'text-lg',
+  };
+
+  const marginTopStyle = {
+    sm: 'mt-0.5',
+    md: 'mt-1',
+    lg: 'mt-1.5',
+  };
+
+  const gapStyle = {
+    sm: 'gap-1',
+    md: 'gap-1.5',
+    lg: 'gap-1.5',
+  };
+
   const handleChange = () => {
     onChange({
       currentTarget: {
@@ -22,7 +41,10 @@ const Checkbox = ({
   };
 
   return (
-    <Field disabled={disabled} className={twMerge('flex items-center gap-1.5', className)}>
+    <Field
+      disabled={disabled}
+      className={twMerge('items-top flex', gapStyle[size], textStyle[size], className)}
+    >
       <CheckboxHUI
         className="rounded outline-2 outline-fgSecondaryDark focus:outline dark:outline-fgSecondaryDark"
         checked={checked}
@@ -31,9 +53,10 @@ const Checkbox = ({
         value={value}
       >
         {({ checked, disabled }) => (
-          <span
+          <div
             className={twMerge(
               'block size-4 rounded border border-borderPrimary outline-2 outline-fgGreen dark:border-none',
+              marginTopStyle[size],
               !checked && !disabled && 'bg-white dark:bg-whiteDark',
               checked &&
                 !disabled &&
@@ -56,7 +79,7 @@ const Checkbox = ({
                 strokeLinejoin="round"
               />
             </svg>
-          </span>
+          </div>
         )}
       </CheckboxHUI>
       {label ? <Label className="hover:cursor-pointer">{label}</Label> : null}

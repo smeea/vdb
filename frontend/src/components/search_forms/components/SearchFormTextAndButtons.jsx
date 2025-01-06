@@ -107,12 +107,12 @@ const SearchFormTextAndButtons = ({
             {options.map((opt) => {
               return (
                 <Checkbox
-                  className="text-sm"
                   key={opt[VALUE]}
                   name={0}
                   value={opt[VALUE]}
                   onChange={onChangeOptions}
                   label={opt[LABEL]}
+                  size="sm"
                   checked={
                     opt[VALUE] === REGEX ? value[0][REGEX] || false : value[0][IN] === opt[VALUE]
                   }

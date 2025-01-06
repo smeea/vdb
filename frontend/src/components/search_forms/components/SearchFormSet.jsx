@@ -155,7 +155,7 @@ const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
             return (
               <Checkbox
                 key={i.value}
-                className="text-sm"
+                size="sm"
                 name={name}
                 value={i.value}
                 label={i.label}
@@ -193,7 +193,7 @@ const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
             return (
               <Checkbox
                 key={i.value}
-                className="text-sm"
+                size="sm"
                 name={name}
                 value={i.value}
                 label={i.label}

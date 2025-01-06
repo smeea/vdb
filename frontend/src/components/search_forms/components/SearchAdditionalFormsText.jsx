@@ -48,7 +48,7 @@ const SearchAdditionalFormsText = ({ value, onChange, onChangeOptions, searchFor
                 {options.map((opt) => {
                   return (
                     <Checkbox
-                      className="text-sm"
+                      size="sm"
                       key={opt[VALUE]}
                       name={i}
                       value={opt[VALUE]}
