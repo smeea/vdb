@@ -285,7 +285,13 @@ const testLibrarySwarm = (card) => {
 };
 
 const testLibraryCombat = (card) => {
-  if (card[TYPE].split("/").includes(TYPE_COMBAT)) return true;
+  if (
+    card[TYPE].split("/").includes(TYPE_COMBAT) &&
+    missingTrait(COMBAT_ENDS, card, {})
+  ) {
+    return true;
+  }
+
   if (
     haveTraits(
       [STRENGTH, AGGRAVATED, PREVENT, PRESS, ADDITIONAL_STRIKE],
