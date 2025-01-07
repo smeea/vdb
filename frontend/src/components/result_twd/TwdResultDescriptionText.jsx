@@ -7,23 +7,11 @@ import CalendarEvent from '@icons/calendar-event.svg?react';
 import GeoAltFill from '@icons/geo-alt-fill.svg?react';
 import { TwdResultTags, TwdResultDescriptionTextTr } from '@/components';
 import { useApp, searchTwdForm, clearSearchForm } from '@/context';
-import { getTags } from '@/utils';
-import {
-  SUPERIOR,
-  BASE,
-  CRYPT,
-  LIBRARY,
-  NAME,
-  LOCATION,
-  CREATION_DATE,
-  AUTHOR,
-  TWD,
-} from '@/constants';
+import { SUPERIOR, BASE, TAGS, NAME, LOCATION, CREATION_DATE, AUTHOR, TWD } from '@/constants';
 
 const TwdResultDescriptionText = ({ deck }) => {
   const { isMobile } = useApp();
   const navigate = useNavigate();
-  const tags = getTags(deck[CRYPT], deck[LIBRARY]);
 
   const handleClick = (target, value) => {
     clearSearchForm(TWD);
@@ -77,7 +65,9 @@ const TwdResultDescriptionText = ({ deck }) => {
           </TwdResultDescriptionTextTr>
         </tbody>
       </table>
-      {(tags[SUPERIOR].length > 0 || tags[BASE].length > 0) && <TwdResultTags tags={tags} />}
+      {(deck[TAGS][SUPERIOR].length > 0 || deck[TAGS][BASE].length > 0) && (
+        <TwdResultTags tags={deck[TAGS]} />
+      )}
     </>
   );
 };

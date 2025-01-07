@@ -40,6 +40,7 @@ def sanitize_twd(d):
         "location": d["location"],
         "creation_date": d["creation_date"],
         "cards": d["cards"],
+        "tags": d["tags"],
     }
 
     return deck
