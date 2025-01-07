@@ -176,8 +176,9 @@ def get_decks_by_sect(value, decks):
 def get_decks_by_tags(value, decks):
     match_decks = []
     for deck in decks:
+        tags = [*deck["tags"]["superior"], *deck["tags"]["base"]]
         for tag in value.keys():
-            if tag in deck["tags"]:
+            if tag in tags:
                 match_decks.append(deck)
 
     return match_decks

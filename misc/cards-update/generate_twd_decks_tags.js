@@ -18,8 +18,7 @@ Object.values(twdDecks).forEach((d) => {
     };
   });
 
-  const tags = getTags(crypt, library);
-  d.tags = [...tags.superior, ...tags.base];
+  d.tags = getTags(crypt, library);
 });
 
 const twdDecksJson = JSON.stringify(twdDecks);
