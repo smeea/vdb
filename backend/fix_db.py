@@ -21,6 +21,9 @@ with open("../frontend/public/data/cardbase_crypt.json", "r") as crypt_file, ope
         ]
     )
 
+with open("../misc/cards-update/pda_tags.json", "r") as pda_tags_file:
+    pda_tags = json.load(pda_tags_file)
+
 
 with app.app_context():
     # REMOVE OLD PLAYTEST CARDS FROM DECKS
@@ -62,8 +65,8 @@ with app.app_context():
     #         del profile["general"]
     #     u.playtest_profile = profile
 
-    # CLEAR DECK TAGS
+    # SET PDA DECKS TAGS
     for deck in Deck.query.filter(Deck.public_parent != None):
-        deck.tags = {"superior": [], "base": []}
+        deck.tags = pda_tags[deck.deckid]
 
     db.session.commit()

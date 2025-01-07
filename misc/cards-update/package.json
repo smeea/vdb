@@ -1,0 +1,7 @@
+{
+  "type": "module",
+  "dependencies": {
+    "pickleparser": "^0.2.1",
+    "sqlite3": "^5.1.7"
+  }
+}
