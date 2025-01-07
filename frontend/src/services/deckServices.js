@@ -1,7 +1,7 @@
 import ky from 'ky';
 import dayjs from 'dayjs';
 import { redirect } from 'react-router';
-import { getIsPlaytest, exportDeck, getTextDisciplines } from '@/utils';
+import { getTags, getIsPlaytest, exportDeck, getTextDisciplines } from '@/utils';
 import {
   ADV,
   AUTHOR,
@@ -226,7 +226,9 @@ export const branchCreate = (deck, branch) => {
 export const publicSync = (deck, decks) => {
   const url = `${import.meta.env.VITE_API_URL}/pda/${deck[DECKID]}`;
   return ky
-    .put(url)
+    .put(url, {
+      json: { tags: getTags(deck[CRYPT], deck[LIBRARY]) },
+    })
     .json()
     .then(() => {
       deckStore[DECK][CRYPT] = { ...decks[deck[PUBLIC_PARENT]][CRYPT] };
@@ -239,9 +241,14 @@ export const publicCreateOrDelete = (deck) => {
   const isPublished = !!(deck[PUBLIC_PARENT] || deck[PUBLIC_CHILD]);
   const parentId = deck[PUBLIC_PARENT] ?? deck[DECKID];
 
-  return ky(url, {
-    method: isPublished ? 'DELETE' : 'POST',
-  })
+  const payload = isPublished
+    ? { method: 'DELETE' }
+    : {
+        method: 'POST',
+        json: { tags: getTags(deck[CRYPT], deck[LIBRARY]) },
+      };
+
+  return ky(url, payload)
     .json()
     .then((data) => {
       deckStore[DECKS][parentId][PUBLIC_CHILD] = isPublished ? null : data[DECKID];

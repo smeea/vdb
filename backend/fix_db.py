@@ -25,41 +25,45 @@ with open("../frontend/public/data/cardbase_crypt.json", "r") as crypt_file, ope
 with app.app_context():
     # REMOVE OLD PLAYTEST CARDS FROM DECKS
     # REPLACE CARDID FOR PLAYTEST CARDS AFTER RELEASE
-    changes = {
-        # 220005: 201708, #Aintz
-    }
-    for deck in Deck.query.all():
-        new_cards = {}
-        new_used_cards = {}
+    # changes = {
+    #     # 220005: 201708, #Aintz
+    # }
+    # for deck in Deck.query.all():
+    #     new_cards = {}
+    #     new_used_cards = {}
 
-        for k, v in deck.cards.items():
-            if k in changes.keys():
-                new_cards[changes[k]] = v
-                print(f"{k} to {changes[k]} in deck")
-                if k in deck.used_in_inventory:
-                    print(f"{k} to {changes[k]} in used")
-                    new_used_cards[changes[k]] = deck.used_in_inventory[k]
+    #     for k, v in deck.cards.items():
+    #         if k in changes.keys():
+    #             new_cards[changes[k]] = v
+    #             print(f"{k} to {changes[k]} in deck")
+    #             if k in deck.used_in_inventory:
+    #                 print(f"{k} to {changes[k]} in used")
+    #                 new_used_cards[changes[k]] = deck.used_in_inventory[k]
 
-            elif str(k) not in cardlist:
-                print(f"{k} deleted from deck")
-                continue
+    #         elif str(k) not in cardlist:
+    #             print(f"{k} deleted from deck")
+    #             continue
 
-            else:
-                new_cards[k] = v
-                if k in deck.used_in_inventory:
-                    new_used_cards[k] = deck.used_in_inventory[k]
+    #         else:
+    #             new_cards[k] = v
+    #             if k in deck.used_in_inventory:
+    #                 new_used_cards[k] = deck.used_in_inventory[k]
 
-        deck.used_in_inventory = new_used_cards
-        deck.cards = new_cards
+    #     deck.used_in_inventory = new_used_cards
+    #     deck.cards = new_cards
 
     # CLEAR PLAYTEST REPORTS
-    for u in User.query.filter_by(playtester=True).all():
-        u.playtest_report = {}
-        profile = copy.deepcopy(u.playtest_profile)
-        if "games" in profile:
-            del profile["games"]
-        if "general" in profile:
-            del profile["general"]
-        u.playtest_profile = profile
+    # for u in User.query.filter_by(playtester=True).all():
+    #     u.playtest_report = {}
+    #     profile = copy.deepcopy(u.playtest_profile)
+    #     if "games" in profile:
+    #         del profile["games"]
+    #     if "general" in profile:
+    #         del profile["general"]
+    #     u.playtest_profile = profile
+
+    # CLEAR DECK TAGS
+    for deck in Deck.query.filter(Deck.public_parent != None):
+        deck.tags = {"superior": [], "base": []}
 
     db.session.commit()

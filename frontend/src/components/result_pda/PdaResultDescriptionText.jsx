@@ -6,23 +6,11 @@ import TagFill from '@icons/tag-fill.svg?react';
 import CalendarEvent from '@icons/calendar-event.svg?react';
 import { TwdResultTags, TwdResultDescriptionTextTr } from '@/components';
 import { useApp, searchPdaForm, clearSearchForm } from '@/context';
-import { getTags } from '@/utils';
-import {
-  SUPERIOR,
-  BASE,
-  AUTHOR,
-  CRYPT,
-  LIBRARY,
-  NAME,
-  CREATION_DATE,
-  TIMESTAMP,
-  PDA,
-} from '@/constants';
+import { SUPERIOR, BASE, TAGS, AUTHOR, NAME, CREATION_DATE, TIMESTAMP, PDA } from '@/constants';
 
 const PdaResultDescriptionText = ({ deck }) => {
   const { isMobile } = useApp();
   const navigate = useNavigate();
-  const tags = getTags(deck[CRYPT], deck[LIBRARY]);
   const lastUpdated = dayjs(deck[TIMESTAMP]).format('YYYY');
 
   const handleClick = (value) => {
@@ -56,7 +44,9 @@ const PdaResultDescriptionText = ({ deck }) => {
           )}
         </tbody>
       </table>
-      {(tags[SUPERIOR].length > 0 || tags[BASE].length > 0) && <TwdResultTags tags={tags} />}
+      {(deck[TAGS][SUPERIOR].length > 0 || deck[TAGS][BASE].length > 0) && (
+        <TwdResultTags tags={deck[TAGS]} />
+      )}
     </>
   );
 };

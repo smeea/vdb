@@ -137,6 +137,7 @@ def sanitize_pda(d):
         "creation_date": (d.creation_date if d.creation_date else d.timestamp.strftime("%Y-%m-%d")),
         "timestamp": d.timestamp,
         "cards": d.cards,
+        "tags": d.tags,
     }
 
     if current_user.is_authenticated and current_user.id in d.favorited:
@@ -224,6 +225,7 @@ def search_pda_route():
             "cardtypes_ratio": d.cardtypes_ratio,
             "clan": d.clan,
             "sect": d.sect,
+            "tags": d.tags,
             "crypt": {},
             "crypt_total": d.crypt_total,
             "creation_date": (
@@ -255,6 +257,7 @@ def search_pda_route():
         "library",
         "clan",
         "sect",
+        "tags",
         "traits",
         "capacity",
         "disciplines",
@@ -332,7 +335,6 @@ def new_public_deck_route(parent_id):
 def update_public_deck(child_id):
     child = Deck.query.get(child_id)
     if not child:
-        print("x")
         abort(400)
 
     elif child.author != current_user:
@@ -345,10 +347,10 @@ def update_public_deck(child_id):
 
     child.name = parent.name
     child.timestamp = datetime.now()
+    child.tags = request.json["tags"]
     child.cards = parent.cards
     child.author_public_name = parent.author_public_name
     child.description = parent.description
-    child.tags = parent.tags
     child.crypt_total = m["crypt_total"]
     child.library_total = m["library_total"]
     child.capacity = m["capacity"]
