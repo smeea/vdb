@@ -11,7 +11,7 @@ VDB consist of two components communicating with each other.
 ### FRONTEND
 Serve the UI for the modern browsers using:
 ```
-   ReactJS (v18)
+   ReactJS (v19)
    Tailwind CSS
 ```
 
@@ -19,7 +19,7 @@ Serve the UI for the modern browsers using:
 Store user accounts (decks/inventory), generate proxy cards, using:
 
 ```
-   Python (v3.10+)
+   Python (v3.12+)
    Flask
 ```
 
@@ -51,7 +51,7 @@ Start frontend:
 ```
     cd frontend
     npm install                                          # ONLY ON FIRST RUN
-    npm run start
+    npm start
 ```
 
 Now go to http://localhost:5173 in the browser and you are ready to go.
@@ -59,7 +59,7 @@ Now go to http://localhost:5173 in the browser and you are ready to go.
 ### FOR PRODUCTION
 
 For production, in addition to the steps above, you should at least:
-* setup web-server instead of `npm run start` (`vite`) embedded server
+* setup web-server instead of `npm start` (`vite`) embedded server
 * setup wsgi-server instead of `flask run` embedded server
 * build frontend for production (`npm run build`)
 * change `app.config['SECRET_KEY']` in `backend/config.py`
@@ -80,8 +80,8 @@ To update with new Set/Precons edit the following files:
 
 To update with new Playtest add resources and edit the following files:
 ```
-    cp $NEW_PRECONS misc/cards-update/precon_decks/
-    cp $NEW_CRYPT_FILE.csv $NEW_LIB_FILE.csv misc/cards-update/
+    cp $NEW_PRECONS misc/cards-update/playtest/precons/
+    cp $NEW_CRYPT_FILE.csv $NEW_LIB_FILE.csv misc/cards-update/playtest
     vim misc/cards-update/generate_playtest_precons.py   # ADD PLAYTEST PRECONS
 ```
 
@@ -94,6 +94,8 @@ Download source files from upstream and create new resources (it will copy files
     ./download_resources.sh
     ./create_resources.sh
     python download_card_images.py                       # ONLY ENGLISH
+    ./compress_legacy_images.sh                          # ONLY FOR NEW IMAGES IN misc/legacy-images folder
+    ./convert_images_to_webp.sh
 ```
 Other than English languages and card scans from different sets only updated manually in `~/frontend/dist/images/cards/`.
 
