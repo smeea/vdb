@@ -1,12 +1,10 @@
 # FIX
-- Review TWDA radar: remove swarm, maybe replace?
 
 # FIX ON HOLD
 - Deck-in-Url trimmed at first card - cant reproduce in dev environment
 
 # FEATURES
 - Inventory 'target' q-ty -> for design consideration
-- Search PDA by tags
 - Search in TDA on mobile
 
 # FEATURES ON HOLD
