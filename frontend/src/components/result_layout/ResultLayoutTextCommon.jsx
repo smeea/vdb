@@ -1,4 +1,5 @@
 import React from 'react';
+import PencilSquare from '@icons/pencil-square.svg?react';
 import { useApp } from '@/context';
 import {
   ResultLayoutTextInventory,
@@ -39,7 +40,16 @@ const ResultLayoutTextCommon = ({
       </div>
       {Object.keys(card[RULINGS]).length > 0 && (
         <div className="flex flex-col gap-1">
-          <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Rulings:</div>
+          <div className="flex items-center justify-between gap-2 text-fgSecondary dark:text-fgSecondaryDark">
+            <div className="font-bold">Rulings:</div>
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href={`https://rulings.krcg.org/index.html?uid=${card[ID]}`}
+            >
+              <PencilSquare />
+            </a>
+          </div>
           <ResultLayoutTextRulings rulings={card[RULINGS]} />
         </div>
       )}
