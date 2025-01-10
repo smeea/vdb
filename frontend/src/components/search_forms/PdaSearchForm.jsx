@@ -43,6 +43,8 @@ import {
   STAR,
   TAGS,
   TRAITS,
+  RANDOM,
+  NEW,
 } from '@/constants';
 
 const PdaSearchForm = ({ error, setError }) => {
@@ -58,6 +60,8 @@ const PdaSearchForm = ({ error, setError }) => {
       Object.keys(query).forEach((i) => {
         searchPdaForm[i] = query[i];
       });
+      if (query[RANDOM]) searchRandom(query[RANDOM]);
+      if (query[NEW]) searchRandom(query[NEW]);
     }
   }, []);
 
@@ -65,7 +69,7 @@ const PdaSearchForm = ({ error, setError }) => {
     if (!isMobile && cryptCardBase && libraryCardBase) {
       const sanitizedForm = sanitizeFormState(PDA, pdaFormState);
       if (Object.keys(sanitizedForm).length === 0) {
-        if (query) setSearchParams();
+        if (query && !(query[RANDOM] || query[NEW])) setSearchParams();
         setError(false);
       } else {
         processSearch();
@@ -147,8 +151,17 @@ const PdaSearchForm = ({ error, setError }) => {
       .finally(() => setIsLoading(false));
   };
 
-  const getNewPda = (q) => {
+  const getRandom = (q) => {
+    setSearchParams({ q: JSON.stringify({ random: q }) });
+    searchRandom(q);
+  };
+
+  const getNew = (q) => {
     setSearchParams({ q: JSON.stringify({ new: q }) });
+    searchNew(q);
+  };
+
+  const searchNew = (q) => {
     setError(false);
     setIsLoading(true);
 
@@ -158,8 +171,7 @@ const PdaSearchForm = ({ error, setError }) => {
       .finally(() => setIsLoading(false));
   };
 
-  const getRandomPda = (q) => {
-    setSearchParams({ q: JSON.stringify({ random: q }) });
+  const searchRandom = (q) => {
     setError(false);
     setIsLoading(true);
 
@@ -171,12 +183,7 @@ const PdaSearchForm = ({ error, setError }) => {
 
   return (
     <div className="flex flex-col gap-2">
-      <TwdSearchFormButtons
-        handleClear={handleClear}
-        getNew={getNewPda}
-        getRandom={getRandomPda}
-        inPda
-      />
+      <TwdSearchFormButtons handleClear={handleClear} getNew={getNew} getRandom={getRandom} inPda />
       {username && (
         <PdaSearchFormSrcSelector value={pdaFormState[SRC]} onChange={handleSrcChange} />
       )}

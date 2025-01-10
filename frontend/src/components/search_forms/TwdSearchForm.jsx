@@ -47,6 +47,8 @@ import {
   TAGS,
   TRAITS,
   TWD,
+  RANDOM,
+  NEW,
 } from '@/constants';
 
 const TwdSearchForm = ({ error, setError }) => {
@@ -61,6 +63,8 @@ const TwdSearchForm = ({ error, setError }) => {
       Object.keys(query).forEach((i) => {
         searchTwdForm[i] = query[i];
       });
+      if (query[RANDOM]) searchRandom(query[RANDOM]);
+      if (query[NEW]) searchRandom(query[NEW]);
     }
   }, []);
 
@@ -68,7 +72,7 @@ const TwdSearchForm = ({ error, setError }) => {
     if (!isMobile && cryptCardBase && libraryCardBase) {
       const sanitizedForm = sanitizeFormState(TWD, twdFormState);
       if (Object.keys(sanitizedForm).length === 0) {
-        if (query) setSearchParams();
+        if (query && !(query[RANDOM] || query[NEW])) setSearchParams();
         setError(false);
       } else if (!searchTwdForm[EVENT] || searchTwdForm[EVENT].length > 2) {
         processSearch();
@@ -150,8 +154,17 @@ const TwdSearchForm = ({ error, setError }) => {
       .finally(() => setIsLoading(false));
   };
 
-  const getNewTwd = (q) => {
+  const getRandom = (q) => {
+    setSearchParams({ q: JSON.stringify({ random: q }) });
+    searchRandom(q);
+  };
+
+  const getNew = (q) => {
     setSearchParams({ q: JSON.stringify({ new: q }) });
+    searchNew(q);
+  };
+
+  const searchNew = (q) => {
     setError(false);
     setIsLoading(true);
 
@@ -161,8 +174,7 @@ const TwdSearchForm = ({ error, setError }) => {
       .finally(() => setIsLoading(false));
   };
 
-  const getRandomTwd = (q) => {
-    setSearchParams({ q: JSON.stringify({ random: q }) });
+  const searchRandom = (q) => {
     setError(false);
     setIsLoading(true);
 
@@ -174,7 +186,7 @@ const TwdSearchForm = ({ error, setError }) => {
 
   return (
     <div className="flex flex-col gap-2">
-      <TwdSearchFormButtons handleClear={handleClear} getNew={getNewTwd} getRandom={getRandomTwd} />
+      <TwdSearchFormButtons handleClear={handleClear} getNew={getNew} getRandom={getRandom} />
       {inventoryMode && (
         <>
           <TwdSearchFormMatchInventory

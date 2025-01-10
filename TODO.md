@@ -1,4 +1,5 @@
 # FIX
+- Open New/Random queries on mobile for PDA/TWD
 
 # FIX ON HOLD
 - Deck-in-Url trimmed at first card - cant reproduce in dev environment
