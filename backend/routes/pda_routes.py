@@ -310,7 +310,7 @@ def new_public_deck_route(parent_id):
         author_public_name=parent.author_public_name,
         description=parent.description,
         cards=parent.cards,
-        tags=parent.tags,
+        tags=request.json["tags"],
         creation_date=date.today().strftime("%Y-%m-%d"),
         crypt_total=m["crypt_total"],
         library_total=m["library_total"],
