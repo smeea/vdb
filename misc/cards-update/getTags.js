@@ -1,37 +1,52 @@
 import {
   ACCEL,
   ADDITIONAL_STRIKE,
+  ADVANCEMENT,
   AGGRAVATED,
   ALLY,
+  BANNED,
+  BASE,
+  BLACK_HAND,
   BLEED,
   BLEED_1,
   BLEED_2,
   BLOCK,
+  BOUNCE_BLEED,
+  BURN,
   COMBAT,
+  COMBAT_ENDS,
   EMBRACE,
   ENTER_COMBAT,
+  FLIGHT,
+  INFERNAL,
   INTERCEPT,
   INTERCEPT_1,
   MMPA,
+  MULTI_DISCIPLINE,
+  MULTI_TYPE,
   NAME,
+  NON_TWD,
+  NO_REQUIREMENTS,
+  PATH_CAINE,
+  PATH_CATHARI,
+  PATH_DEATH,
+  PATH_POWER,
+  PLAYTEST,
   PRESS,
   PREVENT,
   PUT_BLOOD,
+  REDUCE_BLEED,
+  RED_LIST,
   RUSH,
+  SERAPH,
   STEALTH,
   STEALTH_1,
   STRENGTH,
   STRENGTH_1,
   STRENGTH_2,
+  SUPERIOR,
   SWARM,
-  BLACK_HAND,
-  SERAPH,
   TEXT,
-  INFERNAL,
-  RED_LIST,
-  FLIGHT,
-  BOUNCE_BLEED,
-  REDUCE_BLEED,
   TYPE,
   TYPE_ALLY,
   TYPE_COMBAT,
@@ -41,9 +56,48 @@ import {
   UNLOCK,
   VOTE,
   VOTES_TITLE,
-  SUPERIOR,
-  BASE,
 } from "../../frontend/src/constants/index.js";
+
+const missingTrait = (trait, card, traitsRegexMap) => {
+  switch (trait) {
+    case PLAYTEST:
+      return !getIsPlaytest(card[ID]);
+    case ADVANCEMENT:
+      return !card[ADV];
+    case BANNED:
+      return !card[BANNED];
+    case NON_TWD:
+      return card[TWD];
+    case MULTI_DISCIPLINE:
+      return !(
+        card[DISCIPLINE].includes("/") || card[DISCIPLINE].includes("&")
+      );
+    case MULTI_TYPE:
+      return !card[TYPE].includes("/");
+    case BURN:
+      return !card[BURN];
+    case PATH_CAINE:
+    case PATH_CATHARI:
+    case PATH_DEATH:
+    case PATH_POWER:
+      return (
+        card[PATH].toLowerCase().replace(/ .*/, "") !==
+        trait.replace("path-", "")
+      );
+    case NO_REQUIREMENTS:
+      return (
+        card[REQUIREMENT] ||
+        card[DISCIPLINE] ||
+        card[CLAN] ||
+        RegExp(/requires a/i, "i").test(card[TEXT])
+      );
+    default:
+      return !RegExp(
+        traitsRegexMap[trait] ? traitsRegexMap[trait](card) : trait,
+        "i",
+      ).test(card[TEXT]);
+  }
+};
 
 const CryptTraitsRegexMap = {
   [ENTER_COMBAT]: (card) =>
