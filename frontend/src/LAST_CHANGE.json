@@ -1,7 +1,9 @@
 {
-  "version": "2024-12-30",
+  "version": "2025-01-11",
   "changes": [
-    "Add Garou Rim event to TDA",
-    "Hot fix"
+    "Add Tags search to TWD and PDA",
+    "Add Edit Ruling button (redirects to Rulings project page, and will need you to create and login with VEKN account first)",
+    "Add Camarilla Conclave event in Palma, Spain to PDA",
+    "Small other fixes and improvements"
   ]
 }
