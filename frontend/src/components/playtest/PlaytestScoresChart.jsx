@@ -74,8 +74,8 @@ const PlaytestScoresChart = ({ value, maxSameScore }) => {
         itemStyle={{ color: 'white' }}
       />
       <Legend align="right" verticalAlign="top" />
-      <Bar name="Seen in Play" dataKey="seen" stackId="a" fill="#6565cc" />
-      <Bar name="Not Seen" dataKey="notseen" stackId="a" fill="#d57020" />
+      <Bar name="Seen in Play" dataKey={SEEN} stackId="a" fill="#6565cc" />
+      <Bar name="Not Seen" dataKey={NOT_SEEN} stackId="a" fill="#d57020" />
     </BarChart>
   );
 };
