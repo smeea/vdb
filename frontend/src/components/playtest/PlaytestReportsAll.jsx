@@ -3,6 +3,7 @@ import ky from 'ky';
 import { useNavigate } from 'react-router';
 import { Tab } from '@headlessui/react';
 import Download from '@icons/download.svg?react';
+import Printer from '@icons/printer.svg?react';
 import Arrow90DegLeft from '@icons/arrow-90deg-left.svg?react';
 import {
   TabButton,
@@ -186,6 +187,13 @@ const PlaytestReportsAll = () => {
               title="Excel"
               text="Excel"
               icon={<Download />}
+            />
+            <ButtonIconed
+              className="w-full whitespace-nowrap"
+              onClick={() => print()}
+              title="PDF"
+              text="PDF"
+              icon={<Printer width="18" height="18" viewBox="0 0 18 16" />}
             />
           </div>
           <div className="flex justify-between gap-1 max-sm:flex-col sm:gap-4">
