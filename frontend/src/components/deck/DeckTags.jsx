@@ -12,7 +12,7 @@ const DeckTags = ({ deck, tagsSuperior, noAutotags, isBordered, allTagsOptions }
   const tagList = useMemo(() => {
     const t = [];
     if (tagsSuperior) {
-      tagsSuperior.map((tag) => {
+      tagsSuperior.forEach((tag) => {
         t.push({
           label: <b>{tag}</b>,
           value: tag,
@@ -20,13 +20,23 @@ const DeckTags = ({ deck, tagsSuperior, noAutotags, isBordered, allTagsOptions }
       });
     }
 
+    // TODO FIX AFTER TAGS FLATTENING ON TWD/PDA COPY
     if (deck[TAGS]) {
-      deck[TAGS].map((tag) => {
-        t.push({
-          label: tag,
-          value: tag,
+      if (deck[TAGS][BASE] && deck[TAGS][SUPERIOR]) {
+        [...deck[TAGS][BASE], ...deck[TAGS][SUPERIOR]].forEach((tag) => {
+          t.push({
+            label: tag,
+            value: tag,
+          });
         });
-      });
+      } else {
+        deck[TAGS].forEach((tag) => {
+          t.push({
+            label: tag,
+            value: tag,
+          });
+        });
+      }
     }
 
     return t;

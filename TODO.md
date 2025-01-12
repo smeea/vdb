@@ -1,5 +1,6 @@
 # FIX
 - Open New/Random queries on mobile for PDA/TWD
+- Tags on copied TWD (maybe PDA?) deck
 
 # FIX ON HOLD
 - Deck-in-Url trimmed at first card - cant reproduce in dev environment
@@ -7,6 +8,7 @@
 # FEATURES
 - Inventory 'target' q-ty -> for design consideration
 - Search in TDA on mobile
+- Antitribu clans legacy images
 
 # FEATURES ON HOLD
 - TWD search with % V5-compatibility -> after BCP clarify V5

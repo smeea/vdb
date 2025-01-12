@@ -1,9 +1,6 @@
 {
-  "version": "2025-01-11",
+  "version": "2025-01-13",
   "changes": [
-    "Add Tags search to TWD and PDA",
-    "Add Edit Ruling button (redirects to Rulings project page, and will need you to create and login with VEKN account first)",
-    "Add Camarilla Conclave event in Palma, Spain to PDA",
-    "Small other fixes and improvements"
+    "Hot fix"
   ]
 }
