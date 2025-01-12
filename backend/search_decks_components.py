@@ -176,15 +176,10 @@ def get_decks_by_sect(value, decks):
 def get_decks_by_tags(value, decks):
     match_decks = []
     for deck in decks:
-        tags = []
-        if "superior" in deck["tags"]:
-            tags = [*tags, *deck["tags"]["superior"]]
-        if "base" in deck["tags"]:
-            tags = [*tags, *deck["tags"]["base"]]
+        tags = [*deck["tags"]["superior"], *deck["tags"]["base"]]
 
-        for tag in value.keys():
-            if tag in tags:
-                match_decks.append(deck)
+        if set(value.keys()).issubset(tags):
+            match_decks.append(deck)
 
     return match_decks
 
