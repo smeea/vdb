@@ -151,6 +151,7 @@ export { default as DeckSelectAdvTotal } from './deck_select_adv/DeckSelectAdvTo
 export { default as DiffBackButton } from './diff/DiffBackButton.jsx';
 export { default as DiffButtons } from './diff/DiffButtons.jsx';
 export { default as DiffCopyUrlButton } from './diff/DiffCopyUrlButton.jsx';
+export { default as DiffCardsTotalDiff } from './diff/DiffCardsTotalDiff.jsx';
 export { default as DiffCrypt } from './diff/DiffCrypt.jsx';
 export { default as DiffCryptTable } from './diff/DiffCryptTable.jsx';
 export { default as DiffCryptTableRow } from './diff/DiffCryptTableRow.jsx';

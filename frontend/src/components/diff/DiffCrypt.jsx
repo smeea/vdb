@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
 import { twMerge } from 'tailwind-merge';
-import { FlexGapped, DiffCryptTable, ResultModal, DeckCryptHeader } from '@/components';
+import {
+  FlexGapped,
+  DiffCryptTable,
+  DiffCardsTotalDiff,
+  ResultModal,
+  DeckCryptHeader,
+} from '@/components';
 import { useApp } from '@/context';
 import { getKeyDisciplines, getIsEditable } from '@/utils';
 import { useModalCardController, useDeckCrypt } from '@/hooks';
@@ -21,7 +27,7 @@ const DiffCrypt = ({ cardsTo, deck }) => {
     [SECT]: 'S',
   };
 
-  const { crypt, cryptSide, sortedCards, sortedCardsSide, cryptTotal } = useDeckCrypt(
+  const { crypt, cryptSide, sortedCards, sortedCardsSide, cryptTotal, cryptToTotal } = useDeckCrypt(
     cardsFrom,
     cryptDeckSort,
     cardsTo,
@@ -62,6 +68,7 @@ const DiffCrypt = ({ cardsTo, deck }) => {
     >
       <div>
         <DeckCryptHeader
+          cryptTotalDiff={<DiffCardsTotalDiff qTo={cryptToTotal} qFrom={cryptTotal} />}
           cards={crypt}
           deck={deck}
           setShowInfo={setShowInfo}

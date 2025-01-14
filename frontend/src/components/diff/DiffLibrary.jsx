@@ -7,6 +7,7 @@ import {
   DeckLibraryHeader,
   FlexGapped,
   DiffQuantityDiff,
+  DiffCardsTotalDiff,
 } from '@/components';
 import { DECKID, LIBRARY, TYPE_MASTER } from '@/constants';
 import { useApp } from '@/context';
@@ -14,21 +15,6 @@ import { useModalCardController, useDeckLibrary } from '@/hooks';
 import { getIsEditable } from '@/utils';
 
 const BloodPoolDifference = ({ qTo, qFrom }) => {
-  return (
-    <>
-      {qTo === qFrom ? (
-        <>{qTo}</>
-      ) : (
-        <div className="flex">
-          {qFrom}
-          <DiffQuantityDiff qFrom={qFrom} qTo={qTo} />
-        </div>
-      )}
-    </>
-  );
-};
-
-const LibraryTotalDifference = ({ qTo, qFrom }) => {
   return (
     <>
       {qTo === qFrom ? (
@@ -93,7 +79,7 @@ const DiffLibrary = ({ cardsTo, deck }) => {
       <div className="flex flex-col gap-2">
         <div className="sm:sticky sm:top-10 sm:z-10 sm:bg-bgPrimary sm:dark:bg-bgPrimaryDark">
           <DeckLibraryHeader
-            libraryTotalDiff={<LibraryTotalDifference qTo={libraryToTotal} qFrom={libraryTotal} />}
+            libraryTotalDiff={<DiffCardsTotalDiff qTo={libraryToTotal} qFrom={libraryTotal} />}
             bloodTotalDiff={<BloodPoolDifference qTo={bloodToTotal} qFrom={bloodTotal} />}
             poolTotalDiff={<BloodPoolDifference qTo={poolToTotal} qFrom={poolTotal} />}
             showInfo={showInfo}

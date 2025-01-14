@@ -40,6 +40,7 @@ const useDeckCrypt = (cardsList, sortMethod = NAME, cardsToList = {}) => {
     } = getRestrictions({ [CRYPT]: cryptFrom, [LIBRARY]: {} }, limitedStore);
 
     const cryptTotal = countCards(cryptFrom);
+    const cryptToTotal = countCards(cryptTo);
     const { hasWrongGroups, cryptGroups } = getGroups(cryptFrom);
 
     return {
@@ -50,6 +51,7 @@ const useDeckCrypt = (cardsList, sortMethod = NAME, cardsToList = {}) => {
       hasPlaytest,
       hasIllegalDate,
       cryptTotal,
+      cryptToTotal,
       cryptGroups,
       hasWrongGroups,
       sortedCards,
