@@ -29,7 +29,7 @@ const AccountLegacyToggle = () => {
     <Toggle isOn={showLegacyImage} handleClick={toggleShowLegacyImage}>
       <div className="flex items-center gap-2">
         <div>Legacy Crypt Images [BETA, limited]</div>
-        <ConditionalTooltipOrModal title="Public name" overlay={<TooltipText />}>
+        <ConditionalTooltipOrModal title="Legacy Images" overlay={<TooltipText />}>
           <div className="font-bold text-fgThird dark:text-fgThirdDark">[?]</div>
         </ConditionalTooltipOrModal>
       </div>
