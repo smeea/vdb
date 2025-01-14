@@ -3,22 +3,16 @@ import InfoCircle from '@icons/info-circle.svg?react';
 import PlusLg from '@icons/plus-lg.svg?react';
 import { DeckCryptTotalInfo, DeckNewCard, Warning, Button, SortButton, Header } from '@/components';
 import { useApp } from '@/context';
-import { getKeyDisciplines } from '@/utils';
-import { CRYPT, GROUPS, LIMITED, BANNED, LEGAL, PLAYTEST } from '@/constants';
+import { getIsEditable, getKeyDisciplines } from '@/utils';
+import { useDeckCrypt } from '@/hooks';
+import { DECKID, CRYPT, GROUPS, LIMITED, BANNED, LEGAL, PLAYTEST } from '@/constants';
 
 const DeckCryptHeader = ({
   cardChange,
   cards,
-  cryptGroups,
-  cryptTotal,
-  deckid,
-  hasBanned,
-  hasIllegalDate,
-  hasLimited,
-  hasPlaytest,
-  hasWrongGroups,
+  deck,
   inMissing,
-  isEditable,
+  forceIsEditable,
   setShowInfo,
   setSortMethod,
   showInfo,
@@ -28,6 +22,17 @@ const DeckCryptHeader = ({
   const { limitedMode, isMobile } = useApp();
   const [showAdd, setShowAdd] = useState(false);
   const { disciplinesDetailed } = getKeyDisciplines(cards);
+  const isEditable = forceIsEditable || getIsEditable(deck);
+
+  const {
+    hasBanned,
+    hasLimited,
+    hasPlaytest,
+    hasIllegalDate,
+    hasWrongGroups,
+    cryptGroups,
+    cryptTotal,
+  } = useDeckCrypt(deck[CRYPT], sortMethod);
 
   return (
     <>
@@ -80,7 +85,7 @@ const DeckCryptHeader = ({
         <DeckNewCard
           handleClose={() => setShowAdd(false)}
           cards={cards}
-          deckid={deckid}
+          deckid={deck[DECKID]}
           target={CRYPT}
           cardChange={cardChange}
         />

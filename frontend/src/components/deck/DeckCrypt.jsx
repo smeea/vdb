@@ -2,14 +2,13 @@ import React, { useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { DeckCryptTable, DeckCryptHeader, ResultModal, FlexGapped } from '@/components';
 import { useApp } from '@/context';
-import { getKeyDisciplines, getIsEditable } from '@/utils';
+import { getKeyDisciplines } from '@/utils';
 import { useModalCardController, useDeckCrypt } from '@/hooks';
 import { CRYPT, DECKID, CAPACITY, CLAN, GROUP, NAME, QUANTITYx, SECT } from '@/constants';
 
 const DeckCrypt = ({ inSearch, inPreview, inMissing, noDisciplines, deck }) => {
   const { setShowFloatingButtons, cryptDeckSort, changeCryptDeckSort, isMobile } = useApp();
   const [showInfo, setShowInfo] = useState(false);
-  const isEditable = getIsEditable(deck);
 
   const sortMethods = {
     [CAPACITY]: 'C',
@@ -20,19 +19,10 @@ const DeckCrypt = ({ inSearch, inPreview, inMissing, noDisciplines, deck }) => {
     [SECT]: 'S',
   };
 
-  const {
-    crypt,
-    cryptSide,
-    sortedCards,
-    sortedCardsSide,
-    hasBanned,
-    hasLimited,
-    hasPlaytest,
-    hasIllegalDate,
-    hasWrongGroups,
-    cryptGroups,
-    cryptTotal,
-  } = useDeckCrypt(deck[CRYPT], cryptDeckSort);
+  const { crypt, cryptSide, sortedCards, sortedCardsSide, cryptTotal } = useDeckCrypt(
+    deck[CRYPT],
+    cryptDeckSort,
+  );
 
   const { disciplinesSet, keyDisciplines } = getKeyDisciplines(deck[CRYPT]);
 
@@ -74,16 +64,8 @@ const DeckCrypt = ({ inSearch, inPreview, inMissing, noDisciplines, deck }) => {
       <div>
         <DeckCryptHeader
           cards={crypt}
-          cryptGroups={cryptGroups}
-          cryptTotal={cryptTotal}
-          deckid={deck[DECKID]}
-          hasBanned={hasBanned}
-          hasIllegalDate={hasIllegalDate}
-          hasLimited={hasLimited}
-          hasPlaytest={hasPlaytest}
-          hasWrongGroups={hasWrongGroups}
+          deck={deck}
           inMissing={inMissing}
-          isEditable={isEditable}
           setShowInfo={setShowInfo}
           setSortMethod={changeCryptDeckSort}
           showInfo={showInfo}

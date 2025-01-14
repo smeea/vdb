@@ -30,6 +30,7 @@ import {
   MASTER,
   TAGS,
   PUBLIC_PARENT,
+  DECK,
 } from '@/constants';
 import { getTags, parseDeck, deepClone } from '@/utils';
 
@@ -57,10 +58,7 @@ const Review = () => {
   const [urlDiff, setUrlDiff] = useState();
 
   const getDeck = async () => {
-    let deckData;
-    try {
-      deckData = await loaderData.deckData;
-    } catch (e) {
+    const deckData = await loaderData[DECK].catch((e) => {
       switch (e.response.status) {
         case 400:
           setError('NO DECK WITH THIS ID');
@@ -70,8 +68,7 @@ const Review = () => {
       }
       setDeckTo(undefined);
       setDeckFrom(undefined);
-      return;
-    }
+    });
 
     setError(false);
     const cardsData = parseDeck(deckData[CARDS], cryptCardBase, libraryCardBase);
@@ -81,6 +78,7 @@ const Review = () => {
         deckData[TAGS] = deckData[TAGS].concat(v);
       });
     }
+
     const d = {
       ...deckData,
       [CRYPT]: cardsData[CRYPT],
@@ -216,15 +214,11 @@ const Review = () => {
           {deckFrom && (
             <FlexGapped className="max-sm:flex-col">
               <div className="basis-full sm:basis-5/9">
-                <ReviewCrypt
-                  cardsFrom={deckFrom[CRYPT]}
-                  cardsTo={deckTo[CRYPT]}
-                  cardChange={cardChange}
-                />
+                <ReviewCrypt deckFrom={deckFrom} cardsTo={deckTo[CRYPT]} cardChange={cardChange} />
               </div>
               <div className="basis-full sm:basis-4/9">
                 <ReviewLibrary
-                  cardsFrom={deckFrom[LIBRARY]}
+                  deckFrom={deckFrom}
                   cardsTo={deckTo[LIBRARY]}
                   cardChange={cardChange}
                 />

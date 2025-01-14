@@ -21,19 +21,11 @@ const DiffCrypt = ({ cardsTo, deck }) => {
     [SECT]: 'S',
   };
 
-  const {
-    crypt,
-    cryptSide,
-    sortedCards,
-    sortedCardsSide,
-    hasBanned,
-    hasLimited,
-    hasPlaytest,
-    hasIllegalDate,
-    hasWrongGroups,
-    cryptGroups,
-    cryptTotal,
-  } = useDeckCrypt(cardsFrom, cryptDeckSort, cardsTo);
+  const { crypt, cryptSide, sortedCards, sortedCardsSide, cryptTotal } = useDeckCrypt(
+    cardsFrom,
+    cryptDeckSort,
+    cardsTo,
+  );
 
   const { disciplinesSet, keyDisciplines } = getKeyDisciplines(crypt);
 
@@ -71,15 +63,7 @@ const DiffCrypt = ({ cardsTo, deck }) => {
       <div>
         <DeckCryptHeader
           cards={crypt}
-          cryptGroups={cryptGroups}
-          cryptTotal={cryptTotal}
-          deckid={deck[DECKID]}
-          hasBanned={hasBanned}
-          hasIllegalDate={hasIllegalDate}
-          hasLimited={hasLimited}
-          hasPlaytest={hasPlaytest}
-          hasWrongGroups={hasWrongGroups}
-          isEditable={isEditable}
+          deck={deck}
           setShowInfo={setShowInfo}
           setSortMethod={changeCryptDeckSort}
           showInfo={showInfo}

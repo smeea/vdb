@@ -7,10 +7,10 @@ import {
   DeckLibraryHeader,
   FlexGapped,
 } from '@/components';
-import { TYPE_MASTER } from '@/constants';
+import { LIBRARY, TYPE_MASTER } from '@/constants';
 import { useModalCardController, useDeckLibrary } from '@/hooks';
 
-const ReviewLibrary = ({ cardChange, cardsFrom, cardsTo }) => {
+const ReviewLibrary = ({ cardChange, deckFrom, cardsTo }) => {
   const [showInfo, setShowInfo] = useState(false);
 
   const {
@@ -21,7 +21,7 @@ const ReviewLibrary = ({ cardChange, cardsFrom, cardsTo }) => {
     trifleTotal,
     libraryTotal,
     libraryByTypeTotal,
-  } = useDeckLibrary(cardsFrom, cardsTo);
+  } = useDeckLibrary(deckFrom[LIBRARY], cardsTo);
 
   const {
     currentModalCard,
@@ -37,9 +37,11 @@ const ReviewLibrary = ({ cardChange, cardsFrom, cardsTo }) => {
       <div className="flex flex-col gap-2">
         <div className="sm:sticky sm:top-10 sm:z-10 sm:bg-bgPrimary sm:dark:bg-bgPrimaryDark">
           <DeckLibraryHeader
+            deck={deckFrom}
             showInfo={showInfo}
             setShowInfo={setShowInfo}
             cardChange={cardChange}
+            forceIsEditable
           />
         </div>
         <div className="flex flex-col gap-2">
@@ -70,7 +72,7 @@ const ReviewLibrary = ({ cardChange, cardsFrom, cardsTo }) => {
                   libraryTotal={libraryTotal}
                   showInfo={showInfo}
                   cards={libraryByType[cardtype]}
-                  cardsFrom={cardsFrom}
+                  cardsFrom={deckFrom[LIBRARY]}
                   cardsTo={cardsTo}
                 />
               </div>
@@ -97,7 +99,7 @@ const ReviewLibrary = ({ cardChange, cardsFrom, cardsTo }) => {
                     cardChange={cardChange}
                     handleModalCardOpen={handleModalSideCardOpen}
                     cards={librarySideByType[cardtype]}
-                    cardsFrom={cardsFrom}
+                    cardsFrom={deckFrom[LIBRARY]}
                     cardsTo={cardsTo}
                   />
                 </div>

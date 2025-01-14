@@ -19,7 +19,7 @@ import {
   PLAYTEST,
 } from '@/constants';
 
-const DeckDetails = ({ deck, allTagsOptions }) => {
+const DeckDetails = ({ deck, allTagsOptions = [] }) => {
   const { isPlaytester, isMobile } = useApp();
   const [isFolded, setIsFolded] = useState(!isMobile);
   const playtestPrecon =

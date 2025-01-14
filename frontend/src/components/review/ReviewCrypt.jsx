@@ -4,9 +4,9 @@ import { FlexGapped, DiffCryptTable, ResultModal, DeckCryptHeader } from '@/comp
 import { useApp } from '@/context';
 import { useModalCardController, useDeckCrypt } from '@/hooks';
 import { getKeyDisciplines } from '@/utils';
-import { CAPACITY, CLAN, GROUP, NAME, QUANTITYx, SECT } from '@/constants';
+import { CRYPT, CAPACITY, CLAN, GROUP, NAME, QUANTITYx, SECT } from '@/constants';
 
-const ReviewCrypt = ({ cardChange, cardsFrom, cardsTo }) => {
+const ReviewCrypt = ({ cardChange, deckFrom, cardsTo }) => {
   const { cryptDeckSort, changeCryptDeckSort, isMobile } = useApp();
   const [showInfo, setShowInfo] = useState(false);
 
@@ -19,19 +19,11 @@ const ReviewCrypt = ({ cardChange, cardsFrom, cardsTo }) => {
     [SECT]: 'S',
   };
 
-  const {
-    crypt,
-    cryptSide,
-    sortedCards,
-    sortedCardsSide,
-    hasBanned,
-    hasLimited,
-    hasPlaytest,
-    hasIllegalDate,
-    hasWrongGroups,
-    cryptGroups,
-    cryptTotal,
-  } = useDeckCrypt(cardsFrom, cryptDeckSort, cardsTo);
+  const { crypt, cryptSide, sortedCards, sortedCardsSide, cryptTotal } = useDeckCrypt(
+    deckFrom[CRYPT],
+    cryptDeckSort,
+    cardsTo,
+  );
 
   const { disciplinesSet, keyDisciplines } = getKeyDisciplines(crypt);
 
@@ -55,26 +47,20 @@ const ReviewCrypt = ({ cardChange, cardsFrom, cardsTo }) => {
         <DeckCryptHeader
           cardChange={cardChange}
           cards={crypt}
-          cryptGroups={cryptGroups}
-          cryptTotal={cryptTotal}
-          hasBanned={hasBanned}
-          hasIllegalDate={hasIllegalDate}
-          hasLimited={hasLimited}
-          hasPlaytest={hasPlaytest}
-          hasWrongGroups={hasWrongGroups}
-          isEditable
+          deck={deckFrom}
           setShowInfo={setShowInfo}
           setSortMethod={changeCryptDeckSort}
           showInfo={showInfo}
           sortMethod={cryptDeckSort}
           sortMethods={sortMethods}
+          forceIsEditable
         />
         <DiffCryptTable
           isEditable
           cardChange={cardChange}
           handleModalCardOpen={handleModalCardOpen}
           cards={sortedCards}
-          cardsFrom={cardsFrom}
+          cardsFrom={deckFrom[CRYPT]}
           cardsTo={cardsTo}
           showInfo={showInfo}
           cryptTotal={cryptTotal}
@@ -90,7 +76,7 @@ const ReviewCrypt = ({ cardChange, cardsFrom, cardsTo }) => {
             cardChange={cardChange}
             handleModalCardOpen={handleModalSideCardOpen}
             cards={sortedCardsSide}
-            cardsFrom={cardsFrom}
+            cardsFrom={deckFrom[CRYPT]}
             cardsTo={cardsTo}
             disciplinesSet={disciplinesSet}
             keyDisciplines={keyDisciplines}

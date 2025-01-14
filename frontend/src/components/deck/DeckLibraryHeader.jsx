@@ -10,8 +10,8 @@ import {
   Header,
 } from '@/components';
 import { useApp } from '@/context';
-import { useDeckLibrary } from '@/hooks';
 import { getIsEditable } from '@/utils';
+import { useDeckLibrary } from '@/hooks';
 import { DECKID, POOL, BLOOD, X, LIBRARY, LIMITED, BANNED, LEGAL, PLAYTEST } from '@/constants';
 
 const DeckLibraryHeader = ({
@@ -23,6 +23,7 @@ const DeckLibraryHeader = ({
   libraryTotalDiff,
   poolTotalDiff,
   bloodTotalDiff,
+  forceIsEditable,
 }) => {
   const { limitedMode, isMobile } = useApp();
   const [showAdd, setShowAdd] = useState(false);
@@ -40,7 +41,7 @@ const DeckLibraryHeader = ({
     libraryByTypeTotal,
     libraryByDisciplinesTotal,
   } = useDeckLibrary(deck[LIBRARY]);
-  const isEditable = getIsEditable(deck);
+  const isEditable = forceIsEditable || getIsEditable(deck);
 
   const rescaledBloodTotal = Math.round((bloodTotal / libraryTotal) * 90);
   const rescaledPoolTotal = Math.round((poolTotal / libraryTotal) * 90);

@@ -1,7 +1,6 @@
 # FIX
 - Open New/Random queries on mobile for PDA/TWD
 - Tags on copied TWD (maybe PDA?) deck
-- Deck Review
 
 # FIX ON HOLD
 - Deck-in-Url trimmed at first card - cant reproduce in dev environment
