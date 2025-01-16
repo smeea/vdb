@@ -8,7 +8,6 @@
 # FEATURES
 - Inventory 'target' q-ty -> for design consideration
 - Search in TDA on mobile
-- Antitribu clans legacy images
 
 # FEATURES ON HOLD
 - TWD search with % V5-compatibility -> after BCP clarify V5
