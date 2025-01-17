@@ -2471,6 +2471,12 @@
                 "refs":{
                     "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
                 }
+            },
+            {
+                "text":"The after action resolution effect can be used if the action \"fizzles\" (is unblocked at resolution, but has no effect because some requirement cannot be met or cost can't be paid in full).",
+                "refs":{
+                    "ANK 20220218":"https://www.vekn.net/forum/rules-questions/79001-the-question-of-the-month-action-fizzles?start=12#104697"
+                }
             }
         ],
         "sect":"Anarch",
@@ -3267,7 +3273,14 @@
         "name":"Amenophobis",
         "new":false,
         "path":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The after action resolution effect can be used if the action \"fizzles\" (is unblocked at resolution, but has no effect because some requirement cannot be met or cost can't be paid in full).",
+                "refs":{
+                    "ANK 20220218":"https://www.vekn.net/forum/rules-questions/79001-the-question-of-the-month-action-fizzles?start=12#104697"
+                }
+            }
+        ],
         "sect":"Camarilla",
         "set":{
             "Gehenna":{
@@ -3905,13 +3918,11 @@
             {
                 "text":"If an action is canceled, it is not performed and the minion is free to attempt the same action again.",
                 "refs":{
-                    "LSJ 20020801":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/f1yiKNUs0RY/m/2q6jrXLVT3cJ",
-                    "LSJ 19980212":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/fLFLlXZXHqA/m/ggjw8aGjdRoJ",
                     "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card"
                 }
             },
             {
-                "text":"Can only cancel minion cards played from the hand in the normal fashion (eg. not weapons played via {Disguised Weapon}\u00a0or allies via\u00a0{Piper}).",
+                "text":"Can only cancel minion cards played from the hand in the normal fashion (eg. can't cancel allies played via\u00a0{Piper}).",
                 "refs":{
                     "RTR 20001020":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GvxNYsYsWJ4/m/EY7NOjdsGCsJ"
                 }
@@ -7619,6 +7630,12 @@
                 "text":"Cannot play cards requiring a Baron.",
                 "refs":{
                     "PIB 20151116":"https://www.vekn.net/forum/rules-questions/74317-the-not-anarch-barons#74327"
+                }
+            },
+            {
+                "text":"The after action resolution effect can be used if the action \"fizzles\" (is unblocked at resolution, but has no effect because some requirement cannot be met or cost can't be paid in full).",
+                "refs":{
+                    "ANK 20220218":"https://www.vekn.net/forum/rules-questions/79001-the-question-of-the-month-action-fizzles?start=12#104697"
                 }
             }
         ],
@@ -18054,7 +18071,16 @@
         "name":"Ellen Fence, the Tracker",
         "new":false,
         "path":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"If the action is unblocked when it resolves and the target is unlocked, the action \"fizzles\" (cost, if any, is paid, and it is considered successful, but has no effect).",
+                "refs":{
+                    "ANK 20210124":"https://www.vekn.net/forum/rules-questions/79001-the-question-of-the-month-action-fizzles#101492",
+                    "LSJ 20070411":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/umdINigMKqs/m/l6GFRVKdkMsJ",
+                    "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
+                }
+            }
+        ],
         "sect":"Sabbat",
         "set":{
             "SW":{
@@ -19959,7 +19985,16 @@
         "name":"Fergus Alexander",
         "new":false,
         "path":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"If the action is unblocked when it resolves and the target is unlocked, the action \"fizzles\" (cost, if any, is paid, and it is considered successful, but has no effect).",
+                "refs":{
+                    "ANK 20210124":"https://www.vekn.net/forum/rules-questions/79001-the-question-of-the-month-action-fizzles#101492",
+                    "LSJ 20070411":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/umdINigMKqs/m/l6GFRVKdkMsJ",
+                    "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
+                }
+            }
+        ],
         "sect":"Camarilla",
         "set":{
             "KoTR":{
@@ -22492,7 +22527,16 @@
         "name":"Glycon",
         "new":false,
         "path":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"If the action is unblocked when it resolves and the target is unlocked, the action \"fizzles\" (cost, if any, is paid, and it is considered successful, but has no effect).",
+                "refs":{
+                    "ANK 20210124":"https://www.vekn.net/forum/rules-questions/79001-the-question-of-the-month-action-fizzles#101492",
+                    "LSJ 20070411":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/umdINigMKqs/m/l6GFRVKdkMsJ",
+                    "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
+                }
+            }
+        ],
         "sect":"Independent",
         "set":{
             "TU":{
@@ -23862,7 +23906,16 @@
         "name":"Haakon Mortensen",
         "new":false,
         "path":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"If the action is unblocked when it resolves and the target is locked, the action \"fizzles\" (cost, if any, is paid, and it is considered successful, but has no effect).",
+                "refs":{
+                    "ANK 20210124":"https://www.vekn.net/forum/rules-questions/79001-the-question-of-the-month-action-fizzles#101492",
+                    "LSJ 20070411":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/umdINigMKqs/m/l6GFRVKdkMsJ",
+                    "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
+                }
+            }
+        ],
         "sect":"Sabbat",
         "set":{
             "FN":{
@@ -31860,7 +31913,16 @@
         "name":"Karsh",
         "new":false,
         "path":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"If the action is unblocked when it resolves and the target is unlocked, the action \"fizzles\" (cost, if any, is paid, and it is considered successful, but has no effect).",
+                "refs":{
+                    "ANK 20210124":"https://www.vekn.net/forum/rules-questions/79001-the-question-of-the-month-action-fizzles#101492",
+                    "LSJ 20070411":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/umdINigMKqs/m/l6GFRVKdkMsJ",
+                    "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
+                }
+            }
+        ],
         "sect":"Camarilla",
         "set":{
             "Anarchs":{
@@ -32386,7 +32448,14 @@
         "name":"Keegan",
         "new":false,
         "path":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The after action resolution effect can be used if the action \"fizzles\" (is unblocked at resolution, but has no effect because some requirement cannot be met or cost can't be paid in full).",
+                "refs":{
+                    "ANK 20220218":"https://www.vekn.net/forum/rules-questions/79001-the-question-of-the-month-action-fizzles?start=12#104697"
+                }
+            }
+        ],
         "sect":"Anarch",
         "set":{
             "NB2":{
@@ -36444,13 +36513,11 @@
             {
                 "text":"If an action is canceled, it is not performed and the minion is free to attempt the same action again.",
                 "refs":{
-                    "LSJ 20020801":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/f1yiKNUs0RY/m/2q6jrXLVT3cJ",
-                    "LSJ 19980212":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/fLFLlXZXHqA/m/ggjw8aGjdRoJ",
                     "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card"
                 }
             },
             {
-                "text":"Can only cancel minion cards played from the hand in the normal fashion (eg. not weapons played via {Disguised Weapon}\u00a0or allies via\u00a0{Piper}).",
+                "text":"Can only cancel minion cards played from the hand in the normal fashion (eg. can't cancel allies played via\u00a0{Piper}).",
                 "refs":{
                     "RTR 20001020":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GvxNYsYsWJ4/m/EY7NOjdsGCsJ"
                 }
@@ -39960,7 +40027,7 @@
                 }
             },
             {
-                "text":"She can retrieve {Psyche!} (reversal of previous rulings).",
+                "text":"If another combat is queued after a combat she is part of, she can use her ability between combats to retrieve a card from the previous combat (e.g. she can retrieve a {Psyche!} she plays)",
                 "refs":{
                     "PIB 20111208":"https://www.vekn.net/forum/rules-questions/16769-rules-team-rulings-02-dec-11?limit=10&start=40#17547"
                 }
@@ -41018,6 +41085,12 @@
                 "text":"Keeps their title and votes if they changes sects.",
                 "refs":{
                     "LSJ 20010714":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-xrhpMEiMrw/m/Vnr8QIyt41cJ"
+                }
+            },
+            {
+                "text":"The after action resolution effect can be used if the action \"fizzles\" (is unblocked at resolution, but has no effect because some requirement cannot be met or cost can't be paid in full).",
+                "refs":{
+                    "ANK 20220218":"https://www.vekn.net/forum/rules-questions/79001-the-question-of-the-month-action-fizzles?start=12#104697"
                 }
             }
         ],
@@ -44285,7 +44358,16 @@
         "name":"Nathaniel Bordruff",
         "new":false,
         "path":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"If the action is unblocked when it resolves and the target is unlocked, the action \"fizzles\" (cost, if any, is paid, and it is considered successful, but has no effect).",
+                "refs":{
+                    "ANK 20210124":"https://www.vekn.net/forum/rules-questions/79001-the-question-of-the-month-action-fizzles#101492",
+                    "LSJ 20070411":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/umdINigMKqs/m/l6GFRVKdkMsJ",
+                    "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
+                }
+            }
+        ],
         "sect":"Camarilla",
         "set":{
             "NB":{
@@ -52838,7 +52920,14 @@
         "name":"Saqqaf, Keeper of the Grand Temple of Set",
         "new":false,
         "path":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The after action resolution effect can be used if the action \"fizzles\" (is unblocked at resolution, but has no effect because some requirement cannot be met or cost can't be paid in full).",
+                "refs":{
+                    "ANK 20220218":"https://www.vekn.net/forum/rules-questions/79001-the-question-of-the-month-action-fizzles?start=12#104697"
+                }
+            }
+        ],
         "sect":"Independent",
         "set":{
             "AH":{
@@ -52979,6 +53068,12 @@
                 "refs":{
                     "LSJ 20011222":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/DlCBJmB2fzY/m/HVLdn4Hr9uIJ",
                     "ANK 20221028-2":"https://www.vekn.net/forum/rules-questions/80122-the-shard-london-and-sargon#106673"
+                }
+            },
+            {
+                "text":"The after action resolution effect can be used if the action \"fizzles\" (is unblocked at resolution, but has no effect because some requirement cannot be met or cost can't be paid in full).",
+                "refs":{
+                    "ANK 20220218":"https://www.vekn.net/forum/rules-questions/79001-the-question-of-the-month-action-fizzles?start=12#104697"
                 }
             }
         ],
@@ -56599,6 +56694,12 @@
                 "text":"Keeps their title and votes if they changes sects.",
                 "refs":{
                     "LSJ 20010714":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-xrhpMEiMrw/m/Vnr8QIyt41cJ"
+                }
+            },
+            {
+                "text":"The after action resolution effect can be used if the action \"fizzles\" (is unblocked at resolution, but has no effect because some requirement cannot be met or cost can't be paid in full).",
+                "refs":{
+                    "ANK 20220218":"https://www.vekn.net/forum/rules-questions/79001-the-question-of-the-month-action-fizzles?start=12#104697"
                 }
             }
         ],
@@ -63765,7 +63866,14 @@
         "name":"Yusuf, Scribe of Alamut",
         "new":false,
         "path":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The after action resolution effect can be used if the action \"fizzles\" (is unblocked at resolution, but has no effect because some requirement cannot be met or cost can't be paid in full).",
+                "refs":{
+                    "ANK 20220218":"https://www.vekn.net/forum/rules-questions/79001-the-question-of-the-month-action-fizzles?start=12#104697"
+                }
+            }
+        ],
         "sect":"Independent",
         "set":{
             "FN":{

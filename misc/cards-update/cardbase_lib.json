@@ -1099,6 +1099,12 @@
                 "refs":{
                     "LSJ 20071005-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Ugcdb0ljZrU/m/J3Gqxj_615gJ"
                 }
+            },
+            {
+                "text":"You still gain the trifle master phase action, even if this card contests when played.",
+                "refs":{
+                    "RBK contested-cards":"https://www.vekn.net/rulebook#Contested-cards"
+                }
             }
         ],
         "set":{
@@ -1672,6 +1678,12 @@
                 "refs":{
                     "ANK 20180928-1":"https://www.vekn.net/forum/rules-questions/77034-allies-and-vampire-disciplines-specifically-the-nocturn#90809"
                 }
+            },
+            {
+                "text":"Does not stack with similar effects (or another copy of itself) to provide superior version of the discipline(s) (e.g. {Pressing Flesh} and {Putrescent Servitude} together does not provide superior [POT])",
+                "refs":{
+                    "ANK 20180111":"https://www.vekn.net/forum/rules-questions/76364-leech-putrescent-servitude#84864"
+                }
             }
         ],
         "set":{
@@ -1966,8 +1978,9 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"If the target unlocks and the action is not blocked, it is successful but has no effect.",
+                "text":"If the action is unblocked when it resolves and the target is unlocked, the action \"fizzles\" (cost, if any, is paid, and it is considered successful, but has no effect).",
                 "refs":{
+                    "ANK 20210124":"https://www.vekn.net/forum/rules-questions/79001-the-question-of-the-month-action-fizzles#101492",
                     "LSJ 20070411":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/umdINigMKqs/m/l6GFRVKdkMsJ",
                     "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
                 }
@@ -2102,6 +2115,12 @@
                 "refs":{
                     "ANK 20180719-4":"https://www.vekn.net/forum/rules-questions/76833-once-each-turn#89014"
                 }
+            },
+            {
+                "text":"Does not stack with similar effects (or another copy of itself) to provide superior version of the discipline(s) (e.g. {Pressing Flesh} and {Putrescent Servitude} together does not provide superior [POT])",
+                "refs":{
+                    "ANK 20180111":"https://www.vekn.net/forum/rules-questions/76364-leech-putrescent-servitude#84864"
+                }
             }
         ],
         "set":{
@@ -2230,6 +2249,12 @@
                 "text":"\"Once each turn\" means once during each player's turn.",
                 "refs":{
                     "ANK 20180719-4":"https://www.vekn.net/forum/rules-questions/76833-once-each-turn#89014"
+                }
+            },
+            {
+                "text":"Does not stack with similar effects (or another copy of itself) to provide superior version of the discipline(s) (e.g. {Pressing Flesh} and {Putrescent Servitude} together does not provide superior [POT])",
+                "refs":{
+                    "ANK 20180111":"https://www.vekn.net/forum/rules-questions/76364-leech-putrescent-servitude#84864"
                 }
             }
         ],
@@ -4428,9 +4453,11 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"The action has no effect if the target is not unlocked anymore when it resolves. It is still considered successful and must be paid.",
+                "text":"If the action is unblocked when it resolves and the target is locked, the action \"fizzles\" (cost, if any, is paid, and it is considered successful, but has no effect).",
                 "refs":{
-                    "ANK 20181121":"https://www.vekn.net/forum/rules-questions/77173-spirit-marionette-and-morphean-blow#91950"
+                    "ANK 20210124":"https://www.vekn.net/forum/rules-questions/79001-the-question-of-the-month-action-fizzles#101492",
+                    "LSJ 20070411":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/umdINigMKqs/m/l6GFRVKdkMsJ",
+                    "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
                 }
             }
         ],
@@ -4495,8 +4522,9 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"Is played after resolution, but still during the action. Action modifiers and effects that can be played \"after resolution\" can be played before or after it.",
+                "text":"Is played after resolution, after all combats are handled, but still during the action. Action modifiers and effects that can be played \"after resolution\" can be played before or after it.",
                 "refs":{
+                    "PIB 20150915":"https://www.vekn.net/forum/rules-questions/73134-learjet#73139",
                     "LSJ 19981028":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JZHY1bTCAa0/m/XqDVERty0roJ",
                     "ANK 20190425":"https://www.vekn.net/forum/rules-questions/77581-action-modifiers-played-at-beginning-and-end-of-an-action#94652"
                 }
@@ -5308,13 +5336,11 @@
             {
                 "text":"If an action is canceled, it is not performed and the minion is free to attempt the same action again.",
                 "refs":{
-                    "LSJ 20020801":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/f1yiKNUs0RY/m/2q6jrXLVT3cJ",
-                    "LSJ 19980212":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/fLFLlXZXHqA/m/ggjw8aGjdRoJ",
                     "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card"
                 }
             },
             {
-                "text":"Can only cancel minion cards played from the hand in the normal fashion (eg. not weapons played via {Disguised Weapon}\u00a0or allies via\u00a0{Piper}).",
+                "text":"Can only cancel minion cards played from the hand in the normal fashion (eg. can't cancel allies played via\u00a0{Piper}).",
                 "refs":{
                     "RTR 20001020":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GvxNYsYsWJ4/m/EY7NOjdsGCsJ"
                 }
@@ -6859,7 +6885,14 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Does not stack with similar effects (or another copy of itself) to provide superior version of the discipline(s) (e.g. {Pressing Flesh} and {Putrescent Servitude} together does not provide superior [POT])",
+                "refs":{
+                    "ANK 20180111":"https://www.vekn.net/forum/rules-questions/76364-leech-putrescent-servitude#84864"
+                }
+            }
+        ],
         "set":{
             "LotN":{
                 "R":true
@@ -7121,6 +7154,12 @@
                 "refs":{
                     "ANK 20200203-2":"https://www.vekn.net/forum/rules-questions/78415-is-ghoul-mortal#98872",
                     "LSJ 20060515":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/bzusnKlnYr8/m/OSMvzE7YjokJ"
+                }
+            },
+            {
+                "text":"Does not stack with similar effects (or another copy of itself) to provide superior version of the discipline(s) (e.g. {Pressing Flesh} and {Putrescent Servitude} together does not provide superior [POT])",
+                "refs":{
+                    "ANK 20180111":"https://www.vekn.net/forum/rules-questions/76364-leech-putrescent-servitude#84864"
                 }
             }
         ],
@@ -8285,13 +8324,11 @@
             {
                 "text":"[dom][pre][REACTION] If an action is canceled, it is not performed and the minion is free to attempt the same action again.",
                 "refs":{
-                    "LSJ 20020801":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/f1yiKNUs0RY/m/2q6jrXLVT3cJ",
-                    "LSJ 19980212":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/fLFLlXZXHqA/m/ggjw8aGjdRoJ",
                     "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card"
                 }
             },
             {
-                "text":"[dom][pre][REACTION] Can only cancel minion cards played from the hand in the normal fashion (eg. not weapons played via {Disguised Weapon}\u00a0or allies via\u00a0{Piper}).",
+                "text":"[dom][pre][REACTION] Can only cancel minion cards played from the hand in the normal fashion (eg. can't cancel allies played via\u00a0{Piper}).",
                 "refs":{
                     "RTR 20001020":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GvxNYsYsWJ4/m/EY7NOjdsGCsJ"
                 }
@@ -8586,6 +8623,12 @@
                     "LSJ 20090922":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdvGbJqOeo4/m/qFeNdWilXzUJ",
                     "ANK 20220916":"https://www.vekn.net/forum/rules-questions/80030-blood-brother-ambush-taking-the-skin-minion#106354"
                 }
+            },
+            {
+                "text":"Does not stack with similar effects (or another copy of itself) to provide superior version of the discipline(s) (e.g. {Pressing Flesh} and {Putrescent Servitude} together does not provide superior [POT])",
+                "refs":{
+                    "ANK 20180111":"https://www.vekn.net/forum/rules-questions/76364-leech-putrescent-servitude#84864"
+                }
             }
         ],
         "set":{
@@ -8676,7 +8719,15 @@
         "path":"",
         "pool":0,
         "requirement":"imbued",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Affects actions that add counters to vampires in the uncontroled region conditionally (eg {Undue Influence}, {Feast of the Soul's Secrets})",
+                "refs":{
+                    "LSJ 20060414":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Kok_AGc9i68/m/tiI176IwHKkJ",
+                    "ANK 20240118-2":"https://www.vekn.net/forum/rules-questions/81154-blood-cult-awareness-network-and-feast-of-the-soul-s-secrets#110399"
+                }
+            }
+        ],
         "set":{
             "NoR":{
                 "R":true
@@ -9049,7 +9100,16 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"[THA] If the action is unblocked when it resolves and the target is unlocked, the action \"fizzles\" (cost, if any, is paid, and it is considered successful, but has no effect).",
+                "refs":{
+                    "ANK 20210124":"https://www.vekn.net/forum/rules-questions/79001-the-question-of-the-month-action-fizzles#101492",
+                    "LSJ 20070411":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/umdINigMKqs/m/l6GFRVKdkMsJ",
+                    "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
+                }
+            }
+        ],
         "set":{
             "KoTR":{
                 "B":"2"
@@ -10871,6 +10931,13 @@
                 "text":"[obf]\u00a0The prey need not control a minion, the target is chosen upon resolution.",
                 "refs":{
                     "ANK 20240706":"https://www.vekn.net/forum/rules-questions/81563-break-the-bonds-presence-target?start=18#111945"
+                }
+            },
+            {
+                "text":"[pre] Is affected by {Blood Cult Awareness Network}",
+                "refs":{
+                    "ANK 20240118-2":"https://www.vekn.net/forum/rules-questions/81154-blood-cult-awareness-network-and-feast-of-the-soul-s-secrets#110399",
+                    "LSJ 20060414":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Kok_AGc9i68/m/tiI176IwHKkJ"
                 }
             }
         ],
@@ -13422,13 +13489,13 @@
                 }
             },
             {
-                "text":"The effect happens after combat is concluded. Any blood lost is not lost during combat. (e.g. {Anathema}, {Taste of Vitae})",
+                "text":"[PRE] The effect happens after combat is concluded. Any blood lost is not lost during combat. (e.g. {Anathema}, {Taste of Vitae})",
                 "refs":{
                     "LSJ 20031123":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HvM2cHJ6yIo/m/jsb4iRoNdWkJ"
                 }
             },
             {
-                "text":"If the combat continues or a new combat begins, the after combat effect does not happen/is not usable. (eg. {Psyche!}, {Telepathic Tracking})\n(Partial reversal of RTR 20010711)",
+                "text":"[PRE] If the combat continues or a new combat begins, the after combat effect does not happen/is not usable. (eg. {Psyche!}, {Telepathic Tracking})\n(Partial reversal of RTR 20010711)",
                 "refs":{
                     "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ",
                     "LSJ 19980109":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d2U51Uw0Hfg/m/uIPoVvPFePgJ"
@@ -14531,13 +14598,6 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"[for] If the target unlocks and the action is not blocked, it is successful but has no effect.",
-                "refs":{
-                    "LSJ 20070411":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/umdINigMKqs/m/l6GFRVKdkMsJ",
-                    "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
-                }
-            },
-            {
                 "text":"No other effect can be used to reset the range. Skip the determine range step on that round, but other pre-range effects can be played afterwards.",
                 "refs":{
                     "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
@@ -14548,6 +14608,14 @@
                 "text":"Additional damage inherits all of the properties of the base damage.",
                 "refs":{
                     "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
+                }
+            },
+            {
+                "text":"[for] If the action is unblocked when it resolves and the target is unlocked, the action \"fizzles\" (cost, if any, is paid, and it is considered successful, but has no effect).",
+                "refs":{
+                    "ANK 20210124":"https://www.vekn.net/forum/rules-questions/79001-the-question-of-the-month-action-fizzles#101492",
+                    "LSJ 20070411":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/umdINigMKqs/m/l6GFRVKdkMsJ",
+                    "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
                 }
             }
         ],
@@ -15855,7 +15923,16 @@
         "path":"",
         "pool":0,
         "requirement":"capacity 6 or more",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"If the action is unblocked when it resolves and the target is no longer in torpor, the action \"fizzles\" (cost, if any, is paid, and it is considered successful, but has no effect).",
+                "refs":{
+                    "ANK 20210124":"https://www.vekn.net/forum/rules-questions/79001-the-question-of-the-month-action-fizzles#101492",
+                    "LSJ 20070411":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/umdINigMKqs/m/l6GFRVKdkMsJ",
+                    "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
+                }
+            }
+        ],
         "set":{
             "SoC":{
                 "R":true
@@ -18608,6 +18685,13 @@
                 "refs":{
                     "TOM 19960109":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gB3xexVAV0s/m/zGnkjIMjyJsJ"
                 }
+            },
+            {
+                "text":"Ghouls are monsters, not mortal.",
+                "refs":{
+                    "ANK 20200203-2":"https://www.vekn.net/forum/rules-questions/78415-is-ghoul-mortal#98872",
+                    "LSJ 20060515":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/bzusnKlnYr8/m/OSMvzE7YjokJ"
+                }
             }
         ],
         "set":{
@@ -18887,6 +18971,12 @@
                 "refs":{
                     "LSJ 20100723":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0u5KQWiutdg/m/lAZoy4vIwiIJ",
                     "PIB 20111002":"https://www.vekn.net/forum/rules-questions/8235-re-coven-timing?start=18#11317"
+                }
+            },
+            {
+                "text":"You still gain the trifle master phase action, even if this card contests when played.",
+                "refs":{
+                    "RBK contested-cards":"https://www.vekn.net/rulebook#Contested-cards"
                 }
             }
         ],
@@ -19322,8 +19412,9 @@
                 }
             },
             {
-                "text":"Is played after resolution, but still during the action. Action modifiers and effects that can be played \"after resolution\" can be played before or after it.",
+                "text":"Is played after resolution, after all combats are handled, but still during the action. Action modifiers and effects that can be played \"after resolution\" can be played before or after it.",
                 "refs":{
+                    "PIB 20150915":"https://www.vekn.net/forum/rules-questions/73134-learjet#73139",
                     "LSJ 19981028":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JZHY1bTCAa0/m/XqDVERty0roJ",
                     "ANK 20190425":"https://www.vekn.net/forum/rules-questions/77581-action-modifiers-played-at-beginning-and-end-of-an-action#94652"
                 }
@@ -21060,13 +21151,11 @@
             {
                 "text":"If an action is canceled, it is not performed and the minion is free to attempt the same action again.",
                 "refs":{
-                    "LSJ 20020801":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/f1yiKNUs0RY/m/2q6jrXLVT3cJ",
-                    "LSJ 19980212":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/fLFLlXZXHqA/m/ggjw8aGjdRoJ",
                     "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card"
                 }
             },
             {
-                "text":"Can only cancel minion cards played from the hand in the normal fashion (eg. not weapons played via {Disguised Weapon}\u00a0or allies via\u00a0{Piper}).",
+                "text":"Can only cancel minion cards played from the hand in the normal fashion (eg. can't cancel allies played via\u00a0{Piper}).",
                 "refs":{
                     "RTR 20001020":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GvxNYsYsWJ4/m/EY7NOjdsGCsJ"
                 }
@@ -22534,13 +22623,11 @@
             {
                 "text":"[dom][for] If an action is canceled, it is not performed and the minion is free to attempt the same action again.",
                 "refs":{
-                    "LSJ 20020801":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/f1yiKNUs0RY/m/2q6jrXLVT3cJ",
-                    "LSJ 19980212":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/fLFLlXZXHqA/m/ggjw8aGjdRoJ",
                     "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card"
                 }
             },
             {
-                "text":"[dom][for] Can only cancel minion cards played from the hand in the normal fashion (eg. not weapons played via {Disguised Weapon}\u00a0or allies via\u00a0{Piper}).",
+                "text":"[dom][for] Can only cancel minion cards played from the hand in the normal fashion (eg. can't cancel allies played via\u00a0{Piper}).",
                 "refs":{
                     "RTR 20001020":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GvxNYsYsWJ4/m/EY7NOjdsGCsJ"
                 }
@@ -23067,13 +23154,11 @@
             {
                 "text":"If an action is canceled, it is not performed and the minion is free to attempt the same action again.",
                 "refs":{
-                    "LSJ 20020801":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/f1yiKNUs0RY/m/2q6jrXLVT3cJ",
-                    "LSJ 19980212":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/fLFLlXZXHqA/m/ggjw8aGjdRoJ",
                     "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card"
                 }
             },
             {
-                "text":"Can only cancel minion cards played from the hand in the normal fashion (eg. not weapons played via {Disguised Weapon}\u00a0or allies via\u00a0{Piper}).",
+                "text":"Can only cancel minion cards played from the hand in the normal fashion (eg. can't cancel allies played via\u00a0{Piper}).",
                 "refs":{
                     "RTR 20001020":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GvxNYsYsWJ4/m/EY7NOjdsGCsJ"
                 }
@@ -23662,13 +23747,11 @@
             {
                 "text":"If an action is canceled, it is not performed and the minion is free to attempt the same action again.",
                 "refs":{
-                    "LSJ 20020801":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/f1yiKNUs0RY/m/2q6jrXLVT3cJ",
-                    "LSJ 19980212":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/fLFLlXZXHqA/m/ggjw8aGjdRoJ",
                     "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card"
                 }
             },
             {
-                "text":"Can only cancel minion cards played from the hand in the normal fashion (eg. not weapons played via {Disguised Weapon}\u00a0or allies via\u00a0{Piper}).",
+                "text":"Can only cancel minion cards played from the hand in the normal fashion (eg. can't cancel allies played via\u00a0{Piper}).",
                 "refs":{
                     "RTR 20001020":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GvxNYsYsWJ4/m/EY7NOjdsGCsJ"
                 }
@@ -24165,7 +24248,16 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"If the action is unblocked when it resolves and the target is no longer in torpor, the action \"fizzles\" (cost, if any, is paid, and it is considered successful, but has no effect).",
+                "refs":{
+                    "ANK 20210124":"https://www.vekn.net/forum/rules-questions/79001-the-question-of-the-month-action-fizzles#101492",
+                    "LSJ 20070411":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/umdINigMKqs/m/l6GFRVKdkMsJ",
+                    "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
+                }
+            }
+        ],
         "set":{
             "FN":{
                 "R":true
@@ -25970,8 +26062,9 @@
         "requirement":"laibon",
         "rulings":[
             {
-                "text":"Is played after resolution, but still during the action. Action modifiers and effects that can be played \"after resolution\" can be played before or after it.",
+                "text":"Is played after resolution, after all combats are handled, but still during the action. Action modifiers and effects that can be played \"after resolution\" can be played before or after it.",
                 "refs":{
+                    "PIB 20150915":"https://www.vekn.net/forum/rules-questions/73134-learjet#73139",
                     "LSJ 19981028":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JZHY1bTCAa0/m/XqDVERty0roJ",
                     "ANK 20190425":"https://www.vekn.net/forum/rules-questions/77581-action-modifiers-played-at-beginning-and-end-of-an-action#94652"
                 }
@@ -28245,8 +28338,9 @@
                 }
             },
             {
-                "text":"Is played after resolution, but still during the action. Action modifiers and effects that can be played \"after resolution\" can be played before or after it.",
+                "text":"Is played after resolution, after all combats are handled, but still during the action. Action modifiers and effects that can be played \"after resolution\" can be played before or after it.",
                 "refs":{
+                    "PIB 20150915":"https://www.vekn.net/forum/rules-questions/73134-learjet#73139",
                     "LSJ 19981028":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JZHY1bTCAa0/m/XqDVERty0roJ",
                     "ANK 20190425":"https://www.vekn.net/forum/rules-questions/77581-action-modifiers-played-at-beginning-and-end-of-an-action#94652"
                 }
@@ -28879,7 +28973,16 @@
         "path":"",
         "pool":0,
         "requirement":"sabbat",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"If the action is unblocked when it resolves and the target is locked, the action \"fizzles\" (cost, if any, is paid, and it is considered successful, but has no effect).",
+                "refs":{
+                    "ANK 20210124":"https://www.vekn.net/forum/rules-questions/79001-the-question-of-the-month-action-fizzles#101492",
+                    "LSJ 20070411":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/umdINigMKqs/m/l6GFRVKdkMsJ",
+                    "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
+                }
+            }
+        ],
         "set":{
             "Third":{
                 "C":true
@@ -28974,7 +29077,14 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"You still gain the trifle master phase action, even if this card contests when played.",
+                "refs":{
+                    "RBK contested-cards":"https://www.vekn.net/rulebook#Contested-cards"
+                }
+            }
+        ],
         "set":{
             "Gehenna":{
                 "C":true
@@ -29038,13 +29148,11 @@
             {
                 "text":"[POT][PRE] If an action is canceled, it is not performed and the minion is free to attempt the same action again.",
                 "refs":{
-                    "LSJ 20020801":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/f1yiKNUs0RY/m/2q6jrXLVT3cJ",
-                    "LSJ 19980212":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/fLFLlXZXHqA/m/ggjw8aGjdRoJ",
                     "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card"
                 }
             },
             {
-                "text":"[POT][PRE] Can only cancel minion cards played from the hand in the normal fashion (eg. not weapons played via {Disguised Weapon}\u00a0or allies via\u00a0{Piper}).",
+                "text":"[POT][PRE] Can only cancel minion cards played from the hand in the normal fashion (eg. can't cancel allies played via\u00a0{Piper}).",
                 "refs":{
                     "RTR 20001020":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GvxNYsYsWJ4/m/EY7NOjdsGCsJ"
                 }
@@ -29318,13 +29426,11 @@
             {
                 "text":"[MAL] If an action is canceled, it is not performed and the minion is free to attempt the same action again.",
                 "refs":{
-                    "LSJ 20020801":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/f1yiKNUs0RY/m/2q6jrXLVT3cJ",
-                    "LSJ 19980212":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/fLFLlXZXHqA/m/ggjw8aGjdRoJ",
                     "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card"
                 }
             },
             {
-                "text":"[MAL] Can only cancel minion cards played from the hand in the normal fashion (eg. not weapons played via {Disguised Weapon}\u00a0or allies via\u00a0{Piper}).",
+                "text":"[MAL] Can only cancel minion cards played from the hand in the normal fashion (eg. can't cancel allies played via\u00a0{Piper}).",
                 "refs":{
                     "RTR 20001020":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GvxNYsYsWJ4/m/EY7NOjdsGCsJ"
                 }
@@ -30320,7 +30426,14 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"You still gain the trifle master phase action, even if this card contests when played.",
+                "refs":{
+                    "RBK contested-cards":"https://www.vekn.net/rulebook#Contested-cards"
+                }
+            }
+        ],
         "set":{
             "TR":{
                 "R":true
@@ -31318,7 +31431,21 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"[DOM] The target vampire is chosen when the card is played.",
+                "refs":{
+                    "ANK 20240724-2":"https://www.vekn.net/forum/rules-questions/81563-break-the-bonds-presence-target?start=6#111834"
+                }
+            },
+            {
+                "text":"[DOM] Is affected by {Blood Cult Awareness Network}, when choosing a younger vampire in your uncontrolled region.",
+                "refs":{
+                    "LSJ 20060414":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Kok_AGc9i68/m/tiI176IwHKkJ",
+                    "ANK 20240118-2":"https://www.vekn.net/forum/rules-questions/81154-blood-cult-awareness-network-and-feast-of-the-soul-s-secrets#110399"
+                }
+            }
+        ],
         "set":{
             "V5C":{
                 "PSal":"4"
@@ -31730,7 +31857,22 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The discipline level used to recruit it decides which version it is (inferior or superior). This does not change once it is in play.",
+                "refs":{
+                    "RTR 19941109":"https://groups.google.com/d/msg/rec.games.deckmaster/_6CXoKTSLnw/FdG67-3HEAQJ",
+                    "ANK 20180612":"https://www.vekn.net/forum/rules-questions/76717-retainers-damage-and-disciplines#88129"
+                }
+            },
+            {
+                "text":"Is neither a mortal nor a monster.",
+                "refs":{
+                    "ANK 20200203-2":"https://www.vekn.net/forum/rules-questions/78415-is-ghoul-mortal#98872",
+                    "LSJ 20060515":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/bzusnKlnYr8/m/OSMvzE7YjokJ"
+                }
+            }
+        ],
         "set":{
             "V5C":{
                 "PR":"4"
@@ -32058,6 +32200,12 @@
                 "refs":{
                     "LSJ 20040518":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/4emymfUPwAM/m/B2SCC7L6kuMJ"
                 }
+            },
+            {
+                "text":"You still gain the trifle master phase action, even if this card contests when played.",
+                "refs":{
+                    "RBK contested-cards":"https://www.vekn.net/rulebook#Contested-cards"
+                }
             }
         ],
         "set":{
@@ -32292,7 +32440,24 @@
         "path":"",
         "pool":0,
         "requirement":"laibon",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"If the action is unblocked when it resolves and the target is unlocked, the action \"fizzles\" (cost, if any, is paid, and it is considered successful, but has no effect).",
+                "refs":{
+                    "ANK 20210124":"https://www.vekn.net/forum/rules-questions/79001-the-question-of-the-month-action-fizzles#101492",
+                    "LSJ 20070411":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/umdINigMKqs/m/l6GFRVKdkMsJ",
+                    "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
+                }
+            },
+            {
+                "text":"If the action is unblocked when it resolves and the target is no longer in torpor, the action \"fizzles\" (cost, if any, is paid, and it is considered successful, but has no effect).",
+                "refs":{
+                    "ANK 20210124":"https://www.vekn.net/forum/rules-questions/79001-the-question-of-the-month-action-fizzles#101492",
+                    "LSJ 20070411":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/umdINigMKqs/m/l6GFRVKdkMsJ",
+                    "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
+                }
+            }
+        ],
         "set":{
             "LoB":{
                 "R":true
@@ -32799,8 +32964,9 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"[CEL] If the target unlocks and the action is not blocked, it is successful but has no effect.",
+                "text":"[CEL] If the action is unblocked when it resolves and the target is unlocked, the action \"fizzles\" (cost, if any, is paid, and it is considered successful, but has no effect).",
                 "refs":{
+                    "ANK 20210124":"https://www.vekn.net/forum/rules-questions/79001-the-question-of-the-month-action-fizzles#101492",
                     "LSJ 20070411":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/umdINigMKqs/m/l6GFRVKdkMsJ",
                     "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
                 }
@@ -33510,6 +33676,12 @@
                 "refs":{
                     "LSJ 20070411":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/umdINigMKqs/m/l6GFRVKdkMsJ"
                 }
+            },
+            {
+                "text":"The after action resolution effect can be used if the action \"fizzles\" (is unblocked at resolution, but has no effect because some requirement cannot be met or cost can't be paid in full).",
+                "refs":{
+                    "ANK 20220218":"https://www.vekn.net/forum/rules-questions/79001-the-question-of-the-month-action-fizzles?start=12#104697"
+                }
             }
         ],
         "set":{
@@ -33960,13 +34132,13 @@
                 }
             },
             {
-                "text":"The effect happens after combat is concluded. Any blood lost is not lost during combat. (e.g. {Anathema}, {Taste of Vitae})",
+                "text":"[PRO] The effect happens after combat is concluded. Any blood lost is not lost during combat. (e.g. {Anathema}, {Taste of Vitae})",
                 "refs":{
                     "LSJ 20031123":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HvM2cHJ6yIo/m/jsb4iRoNdWkJ"
                 }
             },
             {
-                "text":"If the combat continues or a new combat begins, the after combat effect does not happen/is not usable. (eg. {Psyche!}, {Telepathic Tracking})\n(Partial reversal of RTR 20010711)",
+                "text":"[PRO] If the combat continues or a new combat begins, the after combat effect does not happen/is not usable. (eg. {Psyche!}, {Telepathic Tracking})\n(Partial reversal of RTR 20010711)",
                 "refs":{
                     "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ",
                     "LSJ 19980109":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d2U51Uw0Hfg/m/uIPoVvPFePgJ"
@@ -34725,30 +34897,29 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"[FOR] Is played after all combats are handled. Can be played from torpor",
+                "text":"[FOR] Cannot be played if the action \"failed\" unless there was a successful block attempt.",
                 "refs":{
-                    "LSJ 20030103":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/TUDO_4FwdyY/m/DWOwgQL850gJ",
-                    "ANK 20180906":"https://www.vekn.net/forum/rules-questions/76981-freak-drive-while-going-to-torpor#90451",
-                    "RTR 19980623":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/tSpd9dtTElc/m/-CuHJF54_n0J"
+                    "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/"
                 }
             },
             {
-                "text":"[for] Can be played if the action is unblocked even if it has no effect due to lack of a suitable target.",
+                "text":"[FOR] Cannot be played if the action was \"ended.\"",
                 "refs":{
-                    "LSJ 20070411":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/umdINigMKqs/m/l6GFRVKdkMsJ"
+                    "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/"
                 }
             },
             {
-                "text":"[for] Is played after the action resolves. (eg. if played after equipping {Learjet}, you draw an additional card).",
+                "text":"Is played after resolution, after all combats are handled, but still during the action. Action modifiers and effects that can be played \"after resolution\" can be played before or after it.",
                 "refs":{
-                    "PIB 20150915":"https://www.vekn.net/forum/rules-questions/73134-learjet#73139"
-                }
-            },
-            {
-                "text":"Is played after resolution, but still during the action. Action modifiers and effects that can be played \"after resolution\" can be played before or after it.",
-                "refs":{
+                    "PIB 20150915":"https://www.vekn.net/forum/rules-questions/73134-learjet#73139",
                     "LSJ 19981028":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JZHY1bTCAa0/m/XqDVERty0roJ",
                     "ANK 20190425":"https://www.vekn.net/forum/rules-questions/77581-action-modifiers-played-at-beginning-and-end-of-an-action#94652"
+                }
+            },
+            {
+                "text":"[for] The after action resolution effect can be used if the action \"fizzles\" (is unblocked at resolution, but has no effect because some requirement cannot be met or cost can't be paid in full).",
+                "refs":{
+                    "ANK 20220218":"https://www.vekn.net/forum/rules-questions/79001-the-question-of-the-month-action-fizzles?start=12#104697"
                 }
             }
         ],
@@ -36116,6 +36287,12 @@
                 "refs":{
                     "ANK 20181208":"https://www.vekn.net/forum/rules-questions/77210-touch-of-clarity-and-fast-reaction-is-posible-to-play-with-locked-minion?start=6#92308"
                 }
+            },
+            {
+                "text":"Does not stack with similar effects (or another copy of itself) to provide superior version of the discipline(s) (e.g. {Pressing Flesh} and {Putrescent Servitude} together does not provide superior [POT])",
+                "refs":{
+                    "ANK 20180111":"https://www.vekn.net/forum/rules-questions/76364-leech-putrescent-servitude#84864"
+                }
             }
         ],
         "set":{
@@ -37462,7 +37639,16 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"If the action is unblocked when it resolves and the target is no longer in torpor, the action \"fizzles\" (cost, if any, is paid, and it is considered successful, but has no effect).",
+                "refs":{
+                    "ANK 20210124":"https://www.vekn.net/forum/rules-questions/79001-the-question-of-the-month-action-fizzles#101492",
+                    "LSJ 20070411":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/umdINigMKqs/m/l6GFRVKdkMsJ",
+                    "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
+                }
+            }
+        ],
         "set":{
             "Jyhad":{
                 "U":true
@@ -38983,7 +39169,7 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"If the action is not blocked and the target does not meet the requirements anymore, it is successful but has no effect.",
+                "text":"If the action is not blocked and the target has now more then 3 blood and is unlocked, the action \"fizzles\" (cost, if any, is paid, and it is considered successful, but has no effect).",
                 "refs":{
                     "LSJ 20070411":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/umdINigMKqs/m/l6GFRVKdkMsJ",
                     "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
@@ -39599,6 +39785,14 @@
                 "refs":{
                     "ANK 20181017":"https://www.vekn.net/forum/rules-questions/77086-question-recure-of-the-homeland-cost#91228"
                 }
+            },
+            {
+                "text":"[OBE] If the action is unblocked when it resolves and the target is no longer in torpor, the action \"fizzles\" (cost, if any, is paid, and it is considered successful, but has no effect).",
+                "refs":{
+                    "ANK 20210124":"https://www.vekn.net/forum/rules-questions/79001-the-question-of-the-month-action-fizzles#101492",
+                    "LSJ 20070411":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/umdINigMKqs/m/l6GFRVKdkMsJ",
+                    "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
+                }
             }
         ],
         "set":{
@@ -40080,6 +40274,12 @@
                 "text":"If it uses its last life to play an action modifier, the action fails. If it uses its last life to play a strike, combat ends before strike resolution.",
                 "refs":{
                     "ANK 20180928-1":"https://www.vekn.net/forum/rules-questions/77034-allies-and-vampire-disciplines-specifically-the-nocturn#90809"
+                }
+            },
+            {
+                "text":"Does not stack with similar effects (or another copy of itself) to provide superior version of the discipline(s) (e.g. {Pressing Flesh} and {Putrescent Servitude} together does not provide superior [POT])",
+                "refs":{
+                    "ANK 20180111":"https://www.vekn.net/forum/rules-questions/76364-leech-putrescent-servitude#84864"
                 }
             }
         ],
@@ -40817,6 +41017,12 @@
                 "text":"If it uses its last life to play an action modifier, the action fails. If it uses its last life to play a strike, combat ends before strike resolution.",
                 "refs":{
                     "ANK 20180928-1":"https://www.vekn.net/forum/rules-questions/77034-allies-and-vampire-disciplines-specifically-the-nocturn#90809"
+                }
+            },
+            {
+                "text":"Does not stack with similar effects (or another copy of itself) to provide superior version of the discipline(s) (e.g. {Pressing Flesh} and {Putrescent Servitude} together does not provide superior [POT])",
+                "refs":{
+                    "ANK 20180111":"https://www.vekn.net/forum/rules-questions/76364-leech-putrescent-servitude#84864"
                 }
             }
         ],
@@ -43068,6 +43274,12 @@
                 "refs":{
                     "ANK 20180928-1":"https://www.vekn.net/forum/rules-questions/77034-allies-and-vampire-disciplines-specifically-the-nocturn#90809"
                 }
+            },
+            {
+                "text":"Does not stack with similar effects (or another copy of itself) to provide superior version of the discipline(s) (e.g. {Pressing Flesh} and {Putrescent Servitude} together does not provide superior [POT])",
+                "refs":{
+                    "ANK 20180111":"https://www.vekn.net/forum/rules-questions/76364-leech-putrescent-servitude#84864"
+                }
             }
         ],
         "set":{
@@ -43541,10 +43753,17 @@
                 }
             },
             {
-                "text":"Is played after resolution, but still during the action. Action modifiers and effects that can be played \"after resolution\" can be played before or after it.",
+                "text":"Is played after resolution, after all combats are handled, but still during the action. Action modifiers and effects that can be played \"after resolution\" can be played before or after it.",
                 "refs":{
+                    "PIB 20150915":"https://www.vekn.net/forum/rules-questions/73134-learjet#73139",
                     "LSJ 19981028":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JZHY1bTCAa0/m/XqDVERty0roJ",
                     "ANK 20190425":"https://www.vekn.net/forum/rules-questions/77581-action-modifiers-played-at-beginning-and-end-of-an-action#94652"
+                }
+            },
+            {
+                "text":"[CEL][PRO] The after action resolution effect can be used if the action \"fizzles\" (is unblocked at resolution, but has no effect because some requirement cannot be met or cost can't be paid in full).",
+                "refs":{
+                    "ANK 20220218":"https://www.vekn.net/forum/rules-questions/79001-the-question-of-the-month-action-fizzles?start=12#104697"
                 }
             }
         ],
@@ -45881,6 +46100,12 @@
                 "refs":{
                     "LSJ 20010710":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GsI1UyH54jU/m/x9LfDZX1vR4J"
                 }
+            },
+            {
+                "text":"Does not stack with similar effects (or another copy of itself) to provide superior version of the discipline(s) (e.g. {Pressing Flesh} and {Putrescent Servitude} together does not provide superior [POT])",
+                "refs":{
+                    "ANK 20180111":"https://www.vekn.net/forum/rules-questions/76364-leech-putrescent-servitude#84864"
+                }
             }
         ],
         "set":{
@@ -47510,7 +47735,7 @@
                 }
             },
             {
-                "text":"Does not stack with similar effects to provide superior [POT] (eg. {Putrescent Servitude}).",
+                "text":"Does not stack with similar effects (or another copy of itself) to provide superior version of the discipline(s) (e.g. {Pressing Flesh} and {Putrescent Servitude} together does not provide superior [POT])",
                 "refs":{
                     "ANK 20180111":"https://www.vekn.net/forum/rules-questions/76364-leech-putrescent-servitude#84864"
                 }
@@ -49165,6 +49390,14 @@
                 "refs":{
                     "ANK 20181017":"https://www.vekn.net/forum/rules-questions/77086-question-recure-of-the-homeland-cost#91228"
                 }
+            },
+            {
+                "text":"[for] If the action is unblocked when it resolves and the target is no longer in torpor, the action \"fizzles\" (cost, if any, is paid, and it is considered successful, but has no effect).",
+                "refs":{
+                    "ANK 20210124":"https://www.vekn.net/forum/rules-questions/79001-the-question-of-the-month-action-fizzles#101492",
+                    "LSJ 20070411":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/umdINigMKqs/m/l6GFRVKdkMsJ",
+                    "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
+                }
             }
         ],
         "set":{
@@ -49464,13 +49697,13 @@
                 }
             },
             {
-                "text":"The effect happens after combat is concluded. Any blood lost is not lost during combat. (e.g. {Anathema}, {Taste of Vitae})",
+                "text":"[val]/[VAL] The effect happens after combat is concluded. Any blood lost is not lost during combat. (e.g. {Anathema}, {Taste of Vitae})",
                 "refs":{
                     "LSJ 20031123":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HvM2cHJ6yIo/m/jsb4iRoNdWkJ"
                 }
             },
             {
-                "text":"If the combat continues or a new combat begins, the after combat effect does not happen/is not usable. (eg. {Psyche!}, {Telepathic Tracking})\n(Partial reversal of RTR 20010711)",
+                "text":"[val]/[VAL] If the combat continues or a new combat begins, the after combat effect does not happen/is not usable. (eg. {Psyche!}, {Telepathic Tracking})\n(Partial reversal of RTR 20010711)",
                 "refs":{
                     "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ",
                     "LSJ 19980109":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d2U51Uw0Hfg/m/uIPoVvPFePgJ"
@@ -50121,15 +50354,9 @@
                 }
             },
             {
-                "text":"You do not search your library until the action is successful.",
-                "refs":{
-                    "TOM 19951107":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/lb3GhBTmgpM/m/x6qb8MwfFnAJ"
-                }
-            },
-            {
                 "text":"The equipment need not be declared, it is chosen upon resolution.",
                 "refs":{
-                    "PIB 20150315":"https://www.vekn.net/forum/rules-questions/69865-action-declaration-on-magic-of-the-smith#69869"
+                    "RBK search":"https://www.vekn.net/rulebook#search"
                 }
             },
             {
@@ -50379,8 +50606,9 @@
         "requirement":"anarch",
         "rulings":[
             {
-                "text":"If the target unlocks and the action is not blocked, it is successful but has no effect.",
+                "text":"If the action is unblocked when it resolves and the target is unlocked, the action \"fizzles\" (cost, if any, is paid, and it is considered successful, but has no effect).",
                 "refs":{
+                    "ANK 20210124":"https://www.vekn.net/forum/rules-questions/79001-the-question-of-the-month-action-fizzles#101492",
                     "LSJ 20070411":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/umdINigMKqs/m/l6GFRVKdkMsJ",
                     "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
                 }
@@ -51100,6 +51328,12 @@
                 "refs":{
                     "ANK 20200203-2":"https://www.vekn.net/forum/rules-questions/78415-is-ghoul-mortal#98872",
                     "LSJ 20060515":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/bzusnKlnYr8/m/OSMvzE7YjokJ"
+                }
+            },
+            {
+                "text":"Does not stack with similar effects (or another copy of itself) to provide superior version of the discipline(s) (e.g. {Pressing Flesh} and {Putrescent Servitude} together does not provide superior [POT])",
+                "refs":{
+                    "ANK 20180111":"https://www.vekn.net/forum/rules-questions/76364-leech-putrescent-servitude#84864"
                 }
             }
         ],
@@ -52311,13 +52545,11 @@
             {
                 "text":"If an action is canceled, it is not performed and the minion is free to attempt the same action again.",
                 "refs":{
-                    "LSJ 20020801":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/f1yiKNUs0RY/m/2q6jrXLVT3cJ",
-                    "LSJ 19980212":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/fLFLlXZXHqA/m/ggjw8aGjdRoJ",
                     "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card"
                 }
             },
             {
-                "text":"Can only cancel minion cards played from the hand in the normal fashion (eg. not weapons played via {Disguised Weapon}\u00a0or allies via\u00a0{Piper}).",
+                "text":"Can only cancel minion cards played from the hand in the normal fashion (eg. can't cancel allies played via\u00a0{Piper}).",
                 "refs":{
                     "RTR 20001020":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GvxNYsYsWJ4/m/EY7NOjdsGCsJ"
                 }
@@ -53049,15 +53281,17 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"The action has no effect if the target is not unlocked anymore when it resolves. It is still considered successful and must be paid.",
-                "refs":{
-                    "ANK 20181121":"https://www.vekn.net/forum/rules-questions/77173-spirit-marionette-and-morphean-blow#91950"
-                }
-            },
-            {
                 "text":"The \"does not unlock as normal\" effect is redundant with being infernal. If the minion is infernal, his controller can still pay a pool to unlock him.",
                 "refs":{
                     "LSJ 20050114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JWiZmyC2Y6s/m/q6JHYrE1zKYJ"
+                }
+            },
+            {
+                "text":"If the action is unblocked when it resolves and the target is locked, the action \"fizzles\" (cost, if any, is paid, and it is considered successful, but has no effect).",
+                "refs":{
+                    "ANK 20210124":"https://www.vekn.net/forum/rules-questions/79001-the-question-of-the-month-action-fizzles#101492",
+                    "LSJ 20070411":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/umdINigMKqs/m/l6GFRVKdkMsJ",
+                    "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
                 }
             }
         ],
@@ -54044,13 +54278,11 @@
             {
                 "text":"If an action is canceled, it is not performed and the minion is free to attempt the same action again.",
                 "refs":{
-                    "LSJ 20020801":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/f1yiKNUs0RY/m/2q6jrXLVT3cJ",
-                    "LSJ 19980212":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/fLFLlXZXHqA/m/ggjw8aGjdRoJ",
                     "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card"
                 }
             },
             {
-                "text":"Can only cancel minion cards played from the hand in the normal fashion (eg. not weapons played via {Disguised Weapon}\u00a0or allies via\u00a0{Piper}).",
+                "text":"Can only cancel minion cards played from the hand in the normal fashion (eg. can't cancel allies played via\u00a0{Piper}).",
                 "refs":{
                     "RTR 20001020":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GvxNYsYsWJ4/m/EY7NOjdsGCsJ"
                 }
@@ -54774,6 +55006,12 @@
                 "refs":{
                     "LSJ 20100527":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Tr3X4DsZr-8/m/O06iXN6LtzsJ"
                 }
+            },
+            {
+                "text":"Does not stack with similar effects (or another copy of itself) to provide superior version of the discipline(s) (e.g. {Pressing Flesh} and {Putrescent Servitude} together does not provide superior [POT])",
+                "refs":{
+                    "ANK 20180111":"https://www.vekn.net/forum/rules-questions/76364-leech-putrescent-servitude#84864"
+                }
             }
         ],
         "set":{
@@ -54836,7 +55074,14 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"When the acting vampire leaves torpor before the action resolves (e.g. {Warsaw Station}) the action immediately \"fizzles\" (cost, if any, is paid, and it is considered successful, but has no effect).",
+                "refs":{
+                    "ANK 20220218":"https://www.vekn.net/forum/rules-questions/79001-the-question-of-the-month-action-fizzles?start=12#104697"
+                }
+            }
+        ],
         "set":{
             "Jyhad":{
                 "U":true
@@ -55100,13 +55345,11 @@
             {
                 "text":"If an action is canceled, it is not performed and the minion is free to attempt the same action again.",
                 "refs":{
-                    "LSJ 20020801":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/f1yiKNUs0RY/m/2q6jrXLVT3cJ",
-                    "LSJ 19980212":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/fLFLlXZXHqA/m/ggjw8aGjdRoJ",
                     "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card"
                 }
             },
             {
-                "text":"Can only cancel minion cards played from the hand in the normal fashion (eg. not weapons played via {Disguised Weapon}\u00a0or allies via\u00a0{Piper}).",
+                "text":"Can only cancel minion cards played from the hand in the normal fashion (eg. can't cancel allies played via\u00a0{Piper}).",
                 "refs":{
                     "RTR 20001020":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GvxNYsYsWJ4/m/EY7NOjdsGCsJ"
                 }
@@ -55174,6 +55417,13 @@
                 "refs":{
                     "RTR 19941109":"https://groups.google.com/d/msg/rec.games.deckmaster/_6CXoKTSLnw/FdG67-3HEAQJ",
                     "ANK 20180612":"https://www.vekn.net/forum/rules-questions/76717-retainers-damage-and-disciplines#88129"
+                }
+            },
+            {
+                "text":"Is neither a mortal nor a monster.",
+                "refs":{
+                    "ANK 20200203-2":"https://www.vekn.net/forum/rules-questions/78415-is-ghoul-mortal#98872",
+                    "LSJ 20060515":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/bzusnKlnYr8/m/OSMvzE7YjokJ"
                 }
             },
             {
@@ -55993,6 +56243,12 @@
                 "refs":{
                     "LSJ 20010710":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GsI1UyH54jU/m/x9LfDZX1vR4J"
                 }
+            },
+            {
+                "text":"Does not stack with similar effects (or another copy of itself) to provide superior version of the discipline(s) (e.g. {Pressing Flesh} and {Putrescent Servitude} together does not provide superior [POT])",
+                "refs":{
+                    "ANK 20180111":"https://www.vekn.net/forum/rules-questions/76364-leech-putrescent-servitude#84864"
+                }
             }
         ],
         "set":{
@@ -56761,8 +57017,9 @@
                 }
             },
             {
-                "text":"Is played after resolution, but still during the action. Action modifiers and effects that can be played \"after resolution\" can be played before or after it.",
+                "text":"Is played after resolution, after all combats are handled, but still during the action. Action modifiers and effects that can be played \"after resolution\" can be played before or after it.",
                 "refs":{
+                    "PIB 20150915":"https://www.vekn.net/forum/rules-questions/73134-learjet#73139",
                     "LSJ 19981028":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JZHY1bTCAa0/m/XqDVERty0roJ",
                     "ANK 20190425":"https://www.vekn.net/forum/rules-questions/77581-action-modifiers-played-at-beginning-and-end-of-an-action#94652"
                 }
@@ -56884,6 +57141,12 @@
                 "refs":{
                     "ANK 20180928-1":"https://www.vekn.net/forum/rules-questions/77034-allies-and-vampire-disciplines-specifically-the-nocturn#90809"
                 }
+            },
+            {
+                "text":"Does not stack with similar effects (or another copy of itself) to provide superior version of the discipline(s) (e.g. {Pressing Flesh} and {Putrescent Servitude} together does not provide superior [POT])",
+                "refs":{
+                    "ANK 20180111":"https://www.vekn.net/forum/rules-questions/76364-leech-putrescent-servitude#84864"
+                }
             }
         ],
         "set":{
@@ -56988,8 +57251,9 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"[aus], [spi] If the target unlocks and the action is not blocked, it is successful but has no effect.",
+                "text":"[aus],[spi] If the action is unblocked when it resolves and the target is unlocked, the action \"fizzles\" (cost, if any, is paid, and it is considered successful, but has no effect).",
                 "refs":{
+                    "ANK 20210124":"https://www.vekn.net/forum/rules-questions/79001-the-question-of-the-month-action-fizzles#101492",
                     "LSJ 20070411":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/umdINigMKqs/m/l6GFRVKdkMsJ",
                     "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
                 }
@@ -58010,6 +58274,13 @@
                     "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
                     "ANK 20180720":"https://www.vekn.net/forum/rules-questions/76840-setting-range-and-pre-range#89125"
                 }
+            },
+            {
+                "text":"Ghouls are monsters, not mortal.",
+                "refs":{
+                    "ANK 20200203-2":"https://www.vekn.net/forum/rules-questions/78415-is-ghoul-mortal#98872",
+                    "LSJ 20060515":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/bzusnKlnYr8/m/OSMvzE7YjokJ"
+                }
             }
         ],
         "set":{
@@ -58805,13 +59076,13 @@
                 }
             },
             {
-                "text":"The effect happens after combat is concluded. Any blood lost is not lost during combat. (e.g. {Anathema}, {Taste of Vitae})",
+                "text":"[OBT] The effect happens after combat is concluded. Any blood lost is not lost during combat. (e.g. {Anathema}, {Taste of Vitae})",
                 "refs":{
                     "LSJ 20031123":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HvM2cHJ6yIo/m/jsb4iRoNdWkJ"
                 }
             },
             {
-                "text":"If the combat continues or a new combat begins, the after combat effect does not happen/is not usable. (eg. {Psyche!}, {Telepathic Tracking})\n(Partial reversal of RTR 20010711)",
+                "text":"[OBT] If the combat continues or a new combat begins, the after combat effect does not happen/is not usable. (eg. {Psyche!}, {Telepathic Tracking})\n(Partial reversal of RTR 20010711)",
                 "refs":{
                     "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ",
                     "LSJ 19980109":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d2U51Uw0Hfg/m/uIPoVvPFePgJ"
@@ -62616,13 +62887,11 @@
             {
                 "text":"If an action is canceled, it is not performed and the minion is free to attempt the same action again.",
                 "refs":{
-                    "LSJ 20020801":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/f1yiKNUs0RY/m/2q6jrXLVT3cJ",
-                    "LSJ 19980212":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/fLFLlXZXHqA/m/ggjw8aGjdRoJ",
                     "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card"
                 }
             },
             {
-                "text":"Can only cancel minion cards played from the hand in the normal fashion (eg. not weapons played via {Disguised Weapon}\u00a0or allies via\u00a0{Piper}).",
+                "text":"Can only cancel minion cards played from the hand in the normal fashion (eg. can't cancel allies played via\u00a0{Piper}).",
                 "refs":{
                     "RTR 20001020":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GvxNYsYsWJ4/m/EY7NOjdsGCsJ"
                 }
@@ -64687,6 +64956,12 @@
                 "refs":{
                     "LSJ 20100325-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aC6OOfaulbM/m/svWv9UqH6isJ"
                 }
+            },
+            {
+                "text":"Does not stack with similar effects (or another copy of itself) to provide superior version of the discipline(s) (e.g. {Pressing Flesh} and {Putrescent Servitude} together does not provide superior [POT])",
+                "refs":{
+                    "ANK 20180111":"https://www.vekn.net/forum/rules-questions/76364-leech-putrescent-servitude#84864"
+                }
             }
         ],
         "set":{
@@ -64877,16 +65152,17 @@
                 }
             },
             {
-                "text":"[ser] If the target unlocks and the action is not blocked, it is successful but has no effect.",
-                "refs":{
-                    "LSJ 20070411":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/umdINigMKqs/m/l6GFRVKdkMsJ",
-                    "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
-                }
-            },
-            {
                 "text":"[aus] is directed against the Methuselah controlling the equipment, not the minion it's on.",
                 "refs":{
                     "LSJ 20090324":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Zc_ogoVhsug/m/tJ2VBYI7resJ"
+                }
+            },
+            {
+                "text":"[qui] If the action is unblocked when it resolves and the target is locked, the action \"fizzles\" (cost, if any, is paid, and it is considered successful, but has no effect).",
+                "refs":{
+                    "ANK 20210124":"https://www.vekn.net/forum/rules-questions/79001-the-question-of-the-month-action-fizzles#101492",
+                    "LSJ 20070411":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/umdINigMKqs/m/l6GFRVKdkMsJ",
+                    "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
                 }
             }
         ],
@@ -64925,6 +65201,12 @@
                 "text":"Can be burned to get 3 pool when a minion leaves the ready region because his controller is ousted.",
                 "refs":{
                     "ANK 20180129-2":"https://www.vekn.net/forum/rules-questions/76363-remove-from-play-remove-from-the-game-and-contracts#85155"
+                }
+            },
+            {
+                "text":"You still gain the trifle master phase action, even if this card contests when played.",
+                "refs":{
+                    "RBK contested-cards":"https://www.vekn.net/rulebook#Contested-cards"
                 }
             }
         ],
@@ -65060,7 +65342,15 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Ghouls are monsters, not mortal.",
+                "refs":{
+                    "ANK 20200203-2":"https://www.vekn.net/forum/rules-questions/78415-is-ghoul-mortal#98872",
+                    "LSJ 20060515":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/bzusnKlnYr8/m/OSMvzE7YjokJ"
+                }
+            }
+        ],
         "set":{
             "KMW":{
                 "C":true
@@ -65749,12 +66039,6 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"[CEL] Cannot be played if the opponent is going to torpor.",
-                "refs":{
-                    "ANK 20220429":"https://www.vekn.net/forum/rules-questions/79754-heavens-gate-new-wording#105112"
-                }
-            },
-            {
                 "text":"[CEL] Effects that end combat and then do something else after combat (include continuing the action as if unblocked) will be lost, except for unlock effects.",
                 "refs":{
                     "LSJ 19980109":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d2U51Uw0Hfg/m/uIPoVvPFePgJ",
@@ -65765,13 +66049,6 @@
                 "text":"[CEL] Cannot be played if there is already a combat queued.",
                 "refs":{
                     "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ"
-                }
-            },
-            {
-                "text":"[CEL] Is played during combat, when combat is about to end. It must be played after the presses are handled and can be played if the round ends prematurely. ,",
-                "refs":{
-                    "RTR 20030519":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NOBWXWrd-vA/m/iEOpQp1uhvAJ",
-                    "PIB 20111202":"https://www.vekn.net/forum/rules-questions/16788-new-psyche-and-telepathic-tracking#16794"
                 }
             },
             {
@@ -65786,12 +66063,6 @@
                     "LSJ 20021113":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/df2P8YHZex8/m/mGCmsxDjI_YJ",
                     "ANK 20191219":"https://www.vekn.net/forum/rules-questions/78241-relentless-reaper-vs-blissful-agony-and-scheduled-combat-rulings-ambiguity#98308",
                     "ANK 20180910-1":"https://www.vekn.net/forum/rules-questions/76990-correct-order-impulse-for-combat-cards-after-combat#90517"
-                }
-            },
-            {
-                "text":"Can be retrieved by {Marthe Dizier} (reversal of previous rulings).",
-                "refs":{
-                    "PIB 20111208":"https://www.vekn.net/forum/rules-questions/16769-rules-team-rulings-02-dec-11?limit=10&start=40#17547"
                 }
             },
             {
@@ -66042,6 +66313,13 @@
                 "text":"[PRE]\u00a0The target uncontrolled vampire is chosen upon declaration.",
                 "refs":{
                     "ANK 20240706":"https://www.vekn.net/forum/rules-questions/81563-break-the-bonds-presence-target?start=18#111945"
+                }
+            },
+            {
+                "text":"[PRE] Is affected by {Blood Cult Awareness Network}",
+                "refs":{
+                    "ANK 20240118-2":"https://www.vekn.net/forum/rules-questions/81154-blood-cult-awareness-network-and-feast-of-the-soul-s-secrets#110399",
+                    "LSJ 20060414":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Kok_AGc9i68/m/tiI176IwHKkJ"
                 }
             }
         ],
@@ -66621,7 +66899,7 @@
                 }
             },
             {
-                "text":"Does not stack with similar effects to provide superior [POT] (eg. {Leech}).",
+                "text":"Does not stack with similar effects (or another copy of itself) to provide superior version of the discipline(s) (e.g. {Pressing Flesh} and {Putrescent Servitude} together does not provide superior [POT])",
                 "refs":{
                     "ANK 20180111":"https://www.vekn.net/forum/rules-questions/76364-leech-putrescent-servitude#84864"
                 }
@@ -67071,6 +67349,19 @@
                 "refs":{
                     "ANK 20180928-1":"https://www.vekn.net/forum/rules-questions/77034-allies-and-vampire-disciplines-specifically-the-nocturn#90809"
                 }
+            },
+            {
+                "text":"Ghouls are monsters, not mortal.",
+                "refs":{
+                    "ANK 20200203-2":"https://www.vekn.net/forum/rules-questions/78415-is-ghoul-mortal#98872",
+                    "LSJ 20060515":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/bzusnKlnYr8/m/OSMvzE7YjokJ"
+                }
+            },
+            {
+                "text":"Does not stack with similar effects (or another copy of itself) to provide superior version of the discipline(s) (e.g. {Pressing Flesh} and {Putrescent Servitude} together does not provide superior [POT])",
+                "refs":{
+                    "ANK 20180111":"https://www.vekn.net/forum/rules-questions/76364-leech-putrescent-servitude#84864"
+                }
             }
         ],
         "set":{
@@ -67287,6 +67578,12 @@
                 "text":"Is a \"leave torpor\" action.",
                 "refs":{
                     "LSJ 19980126":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/C96l_KOk174/m/V-MZhuAuZY4J"
+                }
+            },
+            {
+                "text":"When the acting vampire leaves torpor before the action resolves (e.g. {Warsaw Station}) the action immediately \"fizzles\" (cost, if any, is paid, and it is considered successful, but has no effect).",
+                "refs":{
+                    "ANK 20220218":"https://www.vekn.net/forum/rules-questions/79001-the-question-of-the-month-action-fizzles?start=12#104697"
                 }
             }
         ],
@@ -67802,9 +68099,24 @@
                 }
             },
             {
+                "text":"The action \"to remove that vampire from the game\" is an action to put a vampire into play, a sterile vampire cannot do it (eg. {Blood Cult Awareness Network} gives it -1 stealth).",
+                "refs":{
+                    "LSJ 20011212":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/3jinbBVvqIE/m/9QaMi2N1VeoJ",
+                    "LSJ 20060815":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/nxExSHh-QjA/m/QFBqiTmg3scJ"
+                }
+            },
+            {
                 "text":"If it leaves play, the card on it is burned.",
                 "refs":{
                     "LSJ 20021128":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/6rqhybcysh8/m/hU-qIp2on-YJ"
+                }
+            },
+            {
+                "text":"If the action is unblocked when it resolves and the target is no longer in torpor, the action \"fizzles\" (cost, if any, is paid, and it is considered successful, but has no effect).",
+                "refs":{
+                    "ANK 20210124":"https://www.vekn.net/forum/rules-questions/79001-the-question-of-the-month-action-fizzles#101492",
+                    "LSJ 20070411":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/umdINigMKqs/m/l6GFRVKdkMsJ",
+                    "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
                 }
             }
         ],
@@ -68057,7 +68369,16 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"[CHI] If the action is unblocked when it resolves and the target is unlocked, the action \"fizzles\" (cost, if any, is paid, and it is considered successful, but has no effect).",
+                "refs":{
+                    "ANK 20210124":"https://www.vekn.net/forum/rules-questions/79001-the-question-of-the-month-action-fizzles#101492",
+                    "LSJ 20070411":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/umdINigMKqs/m/l6GFRVKdkMsJ",
+                    "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
+                }
+            }
+        ],
         "set":{
             "FN":{
                 "C":true
@@ -68174,6 +68495,12 @@
                 "text":"X can be zero.",
                 "refs":{
                     "LSJ 20030502":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qBa9CvBwqNA/m/ZuBgMjNgb6EJ"
+                }
+            },
+            {
+                "text":"Does not stack with similar effects (or another copy of itself) to provide superior version of the discipline(s) (e.g. {Pressing Flesh} and {Putrescent Servitude} together does not provide superior [POT])",
+                "refs":{
+                    "ANK 20180111":"https://www.vekn.net/forum/rules-questions/76364-leech-putrescent-servitude#84864"
                 }
             }
         ],
@@ -68462,6 +68789,12 @@
                 "text":"Is not the default action, no blood is paid to leave torpor.",
                 "refs":{
                     "ANK 20181017":"https://www.vekn.net/forum/rules-questions/77086-question-recure-of-the-homeland-cost#91228"
+                }
+            },
+            {
+                "text":"When the acting vampire leaves torpor before the action resolves (e.g. {Warsaw Station}) the action immediately \"fizzles\" (cost, if any, is paid, and it is considered successful, but has no effect).",
+                "refs":{
+                    "ANK 20220218":"https://www.vekn.net/forum/rules-questions/79001-the-question-of-the-month-action-fizzles?start=12#104697"
                 }
             }
         ],
@@ -69032,7 +69365,14 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"When the acting vampire leaves torpor before the action resolves (e.g. {Warsaw Station}) the action immediately \"fizzles\" (cost, if any, is paid, and it is considered successful, but has no effect).",
+                "refs":{
+                    "ANK 20220218":"https://www.vekn.net/forum/rules-questions/79001-the-question-of-the-month-action-fizzles?start=12#104697"
+                }
+            }
+        ],
         "set":{
             "Sabbat":{
                 "C":true
@@ -69699,6 +70039,14 @@
                 "refs":{
                     "PIB 20121210":"https://www.vekn.net/forum/rules-questions/42498-does-eurayle-s-special-cost-her-blood-while-targeting-hazimel?start=18#42659"
                 }
+            },
+            {
+                "text":"[obe] If the action is unblocked when it resolves and the target is no longer in torpor, the action \"fizzles\" (cost, if any, is paid, and it is considered successful, but has no effect).",
+                "refs":{
+                    "ANK 20210124":"https://www.vekn.net/forum/rules-questions/79001-the-question-of-the-month-action-fizzles#101492",
+                    "LSJ 20070411":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/umdINigMKqs/m/l6GFRVKdkMsJ",
+                    "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
+                }
             }
         ],
         "set":{
@@ -69766,6 +70114,13 @@
                 "refs":{
                     "RTR 19941109":"https://groups.google.com/d/msg/rec.games.deckmaster/_6CXoKTSLnw/FdG67-3HEAQJ",
                     "RTR 20010710":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GsI1UyH54jU/m/x9LfDZX1vR4J"
+                }
+            },
+            {
+                "text":"Ghouls are monsters, not mortal.",
+                "refs":{
+                    "ANK 20200203-2":"https://www.vekn.net/forum/rules-questions/78415-is-ghoul-mortal#98872",
+                    "LSJ 20060515":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/bzusnKlnYr8/m/OSMvzE7YjokJ"
                 }
             }
         ],
@@ -70246,6 +70601,20 @@
                 "text":"Is not the default action, no blood is paid to leave torpor or rescue from torpor.",
                 "refs":{
                     "ANK 20181017":"https://www.vekn.net/forum/rules-questions/77086-question-recure-of-the-homeland-cost#91228"
+                }
+            },
+            {
+                "text":"[nec] When the acting vampire leaves torpor before the action resolves (e.g. {Warsaw Station}) the action immediately \"fizzles\" (cost, if any, is paid, and it is considered successful, but has no effect).",
+                "refs":{
+                    "ANK 20220218":"https://www.vekn.net/forum/rules-questions/79001-the-question-of-the-month-action-fizzles?start=12#104697"
+                }
+            },
+            {
+                "text":"[NEC] If the action is unblocked when it resolves and the target is no longer in torpor, the action \"fizzles\" (cost, if any, is paid, and it is considered successful, but has no effect).",
+                "refs":{
+                    "ANK 20210124":"https://www.vekn.net/forum/rules-questions/79001-the-question-of-the-month-action-fizzles#101492",
+                    "LSJ 20070411":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/umdINigMKqs/m/l6GFRVKdkMsJ",
+                    "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
                 }
             }
         ],
@@ -70737,7 +71106,15 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Ghouls are monsters, not mortal.",
+                "refs":{
+                    "ANK 20200203-2":"https://www.vekn.net/forum/rules-questions/78415-is-ghoul-mortal#98872",
+                    "LSJ 20060515":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/bzusnKlnYr8/m/OSMvzE7YjokJ"
+                }
+            }
+        ],
         "set":{
             "Sabbat":{
                 "U":true
@@ -70966,13 +71343,11 @@
             {
                 "text":"[tem] If an action is canceled, it is not performed and the minion is free to attempt the same action again.",
                 "refs":{
-                    "LSJ 20020801":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/f1yiKNUs0RY/m/2q6jrXLVT3cJ",
-                    "LSJ 19980212":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/fLFLlXZXHqA/m/ggjw8aGjdRoJ",
                     "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card"
                 }
             },
             {
-                "text":"[tem] Can only cancel minion cards played from the hand in the normal fashion (eg. not weapons played via {Disguised Weapon}\u00a0or allies via\u00a0{Piper}).",
+                "text":"[tem] Can only cancel minion cards played from the hand in the normal fashion (eg. can't cancel allies played via\u00a0{Piper}).",
                 "refs":{
                     "RTR 20001020":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GvxNYsYsWJ4/m/EY7NOjdsGCsJ"
                 }
@@ -71527,7 +71902,15 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Ghouls are monsters, not mortal.",
+                "refs":{
+                    "ANK 20200203-2":"https://www.vekn.net/forum/rules-questions/78415-is-ghoul-mortal#98872",
+                    "LSJ 20060515":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/bzusnKlnYr8/m/OSMvzE7YjokJ"
+                }
+            }
+        ],
         "set":{
             "Gehenna":{
                 "R":true
@@ -71829,6 +72212,14 @@
                 "text":"[vic] Is not the default action, no blood is paid for the rescue.",
                 "refs":{
                     "ANK 20181017":"https://www.vekn.net/forum/rules-questions/77086-question-recure-of-the-homeland-cost#91228"
+                }
+            },
+            {
+                "text":"[vic] If the action is unblocked when it resolves and the target is no longer in torpor, the action \"fizzles\" (cost, if any, is paid, and it is considered successful, but has no effect).",
+                "refs":{
+                    "ANK 20210124":"https://www.vekn.net/forum/rules-questions/79001-the-question-of-the-month-action-fizzles#101492",
+                    "LSJ 20070411":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/umdINigMKqs/m/l6GFRVKdkMsJ",
+                    "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
                 }
             }
         ],
@@ -72810,6 +73201,14 @@
                 "refs":{
                     "LSJ 20100423":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/YnQCu0GeMhc/m/ET__SGvjD7QJ"
                 }
+            },
+            {
+                "text":"If the action is unblocked when it resolves and the target is no longer in torpor, the action \"fizzles\" (cost, if any, is paid, and it is considered successful, but has no effect).",
+                "refs":{
+                    "ANK 20210124":"https://www.vekn.net/forum/rules-questions/79001-the-question-of-the-month-action-fizzles#101492",
+                    "LSJ 20070411":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/umdINigMKqs/m/l6GFRVKdkMsJ",
+                    "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
+                }
             }
         ],
         "set":{
@@ -72922,6 +73321,12 @@
                 "text":"If it uses its last life to play an action modifier, the action fails. If it uses its last life to play a strike, combat ends before strike resolution.",
                 "refs":{
                     "ANK 20180928-1":"https://www.vekn.net/forum/rules-questions/77034-allies-and-vampire-disciplines-specifically-the-nocturn#90809"
+                }
+            },
+            {
+                "text":"Does not stack with similar effects (or another copy of itself) to provide superior version of the discipline(s) (e.g. {Pressing Flesh} and {Putrescent Servitude} together does not provide superior [POT])",
+                "refs":{
+                    "ANK 20180111":"https://www.vekn.net/forum/rules-questions/76364-leech-putrescent-servitude#84864"
                 }
             }
         ],
@@ -74087,13 +74492,11 @@
             {
                 "text":"[VIS] If an action is canceled, it is not performed and the minion is free to attempt the same action again.",
                 "refs":{
-                    "LSJ 20020801":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/f1yiKNUs0RY/m/2q6jrXLVT3cJ",
-                    "LSJ 19980212":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/fLFLlXZXHqA/m/ggjw8aGjdRoJ",
                     "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card"
                 }
             },
             {
-                "text":"[VIS] Can only cancel minion cards played from the hand in the normal fashion (eg. not weapons played via {Disguised Weapon}\u00a0or allies via\u00a0{Piper}).",
+                "text":"[VIS] Can only cancel minion cards played from the hand in the normal fashion (eg. can't cancel allies played via\u00a0{Piper}).",
                 "refs":{
                     "RTR 20001020":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GvxNYsYsWJ4/m/EY7NOjdsGCsJ"
                 }
@@ -75150,8 +75553,9 @@
                 }
             },
             {
-                "text":"Is played after resolution, but still during the action. Action modifiers and effects that can be played \"after resolution\" can be played before or after it.",
+                "text":"Is played after resolution, after all combats are handled, but still during the action. Action modifiers and effects that can be played \"after resolution\" can be played before or after it.",
                 "refs":{
+                    "PIB 20150915":"https://www.vekn.net/forum/rules-questions/73134-learjet#73139",
                     "LSJ 19981028":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JZHY1bTCAa0/m/XqDVERty0roJ",
                     "ANK 20190425":"https://www.vekn.net/forum/rules-questions/77581-action-modifiers-played-at-beginning-and-end-of-an-action#94652"
                 }
@@ -75953,6 +76357,12 @@
                 "refs":{
                     "ANK 20180928-1":"https://www.vekn.net/forum/rules-questions/77034-allies-and-vampire-disciplines-specifically-the-nocturn#90809"
                 }
+            },
+            {
+                "text":"Does not stack with similar effects (or another copy of itself) to provide superior version of the discipline(s) (e.g. {Pressing Flesh} and {Putrescent Servitude} together does not provide superior [POT])",
+                "refs":{
+                    "ANK 20180111":"https://www.vekn.net/forum/rules-questions/76364-leech-putrescent-servitude#84864"
+                }
             }
         ],
         "set":{
@@ -76395,7 +76805,14 @@
         "path":"",
         "pool":0,
         "requirement":"black hand",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"You still gain the trifle master phase action, even if this card contests when played.",
+                "refs":{
+                    "RBK contested-cards":"https://www.vekn.net/rulebook#Contested-cards"
+                }
+            }
+        ],
         "set":{
             "DM":{
                 "C":true
@@ -77846,6 +78263,14 @@
                 "refs":{
                     "PIB 20110725":"https://www.vekn.net/forum/rules-questions/6728-announcing-siphon#6740"
                 }
+            },
+            {
+                "text":"If the action is unblocked when it resolves and the target is no longer in torpor, the action \"fizzles\" (cost, if any, is paid, and it is considered successful, but has no effect).",
+                "refs":{
+                    "ANK 20210124":"https://www.vekn.net/forum/rules-questions/79001-the-question-of-the-month-action-fizzles#101492",
+                    "LSJ 20070411":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/umdINigMKqs/m/l6GFRVKdkMsJ",
+                    "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
+                }
             }
         ],
         "set":{
@@ -78621,7 +79046,15 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"If the action is not blocked and the target has 2 or more blood, the action \"fizzles\" (cost, if any, is paid, and it is considered successful, but has no effect).",
+                "refs":{
+                    "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ",
+                    "LSJ 20070411":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/umdINigMKqs/m/l6GFRVKdkMsJ"
+                }
+            }
+        ],
         "set":{
             "Gehenna":{
                 "C":true
@@ -78654,8 +79087,9 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"Is played after resolution, but still during the action. Action modifiers and effects that can be played \"after resolution\" can be played before or after it.",
+                "text":"Is played after resolution, after all combats are handled, but still during the action. Action modifiers and effects that can be played \"after resolution\" can be played before or after it.",
                 "refs":{
+                    "PIB 20150915":"https://www.vekn.net/forum/rules-questions/73134-learjet#73139",
                     "LSJ 19981028":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JZHY1bTCAa0/m/XqDVERty0roJ",
                     "ANK 20190425":"https://www.vekn.net/forum/rules-questions/77581-action-modifiers-played-at-beginning-and-end-of-an-action#94652"
                 }
@@ -80583,13 +81017,6 @@
                 }
             },
             {
-                "text":"[OBE] The action has no effect if the target is not unlocked anymore when it resolves. It is still considered successful and must be paid.",
-                "refs":{
-                    "ANK 20181121":"https://www.vekn.net/forum/rules-questions/77173-spirit-marionette-and-morphean-blow#91950",
-                    "LSJ 20021122-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Nc72KRVbd-g/m/_Jb9Sn3xP3cJ"
-                }
-            },
-            {
                 "text":"[OBE] The minion is removed from the game when he should return to a Methuselah who has been ousted.",
                 "refs":{
                     "ANK 20181110":"https://www.vekn.net/forum/rules-questions/76844-some-questions?start=6#91778"
@@ -80599,6 +81026,14 @@
                 "text":"If one is ousted while having temporary control of a minion, the minion is removed from the game.",
                 "refs":{
                     "LSJ 20081105":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/CYjOJtTBMGU/m/H8kQXN1w2ycJ"
+                }
+            },
+            {
+                "text":"[OBE] If the action is unblocked when it resolves and the target is locked, the action \"fizzles\" (cost, if any, is paid, and it is considered successful, but has no effect).",
+                "refs":{
+                    "ANK 20210124":"https://www.vekn.net/forum/rules-questions/79001-the-question-of-the-month-action-fizzles#101492",
+                    "LSJ 20070411":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/umdINigMKqs/m/l6GFRVKdkMsJ",
+                    "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
                 }
             }
         ],
@@ -81414,7 +81849,16 @@
         "path":"",
         "pool":0,
         "requirement":"anarch",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"If the action is unblocked when it resolves and the target is no longer in torpor, the action \"fizzles\" (cost, if any, is paid, and it is considered successful, but has no effect).",
+                "refs":{
+                    "ANK 20210124":"https://www.vekn.net/forum/rules-questions/79001-the-question-of-the-month-action-fizzles#101492",
+                    "LSJ 20070411":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/umdINigMKqs/m/l6GFRVKdkMsJ",
+                    "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
+                }
+            }
+        ],
         "set":{
             "TR":{
                 "R":true
@@ -83208,13 +83652,11 @@
             {
                 "text":"If an action is canceled, it is not performed and the minion is free to attempt the same action again.",
                 "refs":{
-                    "LSJ 20020801":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/f1yiKNUs0RY/m/2q6jrXLVT3cJ",
-                    "LSJ 19980212":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/fLFLlXZXHqA/m/ggjw8aGjdRoJ",
                     "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card"
                 }
             },
             {
-                "text":"Can only cancel minion cards played from the hand in the normal fashion (eg. not weapons played via {Disguised Weapon}\u00a0or allies via\u00a0{Piper}).",
+                "text":"Can only cancel minion cards played from the hand in the normal fashion (eg. can't cancel allies played via\u00a0{Piper}).",
                 "refs":{
                     "RTR 20001020":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GvxNYsYsWJ4/m/EY7NOjdsGCsJ"
                 }
@@ -84315,6 +84757,12 @@
                 "text":"If it uses its last life to play an action modifier, the action fails. If it uses its last life to play a strike, combat ends before strike resolution.",
                 "refs":{
                     "ANK 20180928-1":"https://www.vekn.net/forum/rules-questions/77034-allies-and-vampire-disciplines-specifically-the-nocturn#90809"
+                }
+            },
+            {
+                "text":"Does not stack with similar effects (or another copy of itself) to provide superior version of the discipline(s) (e.g. {Pressing Flesh} and {Putrescent Servitude} together does not provide superior [POT])",
+                "refs":{
+                    "ANK 20180111":"https://www.vekn.net/forum/rules-questions/76364-leech-putrescent-servitude#84864"
                 }
             }
         ],
@@ -87276,13 +87724,13 @@
                 }
             },
             {
-                "text":"The effect happens after combat is concluded. Any blood lost is not lost during combat. (e.g. {Anathema}, {Taste of Vitae})",
+                "text":"[mel] The effect happens after combat is concluded. Any blood lost is not lost during combat. (e.g. {Anathema}, {Taste of Vitae})",
                 "refs":{
                     "LSJ 20031123":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HvM2cHJ6yIo/m/jsb4iRoNdWkJ"
                 }
             },
             {
-                "text":"If the combat continues or a new combat begins, the after combat effect does not happen/is not usable. (eg. {Psyche!}, {Telepathic Tracking})\n(Partial reversal of RTR 20010711)",
+                "text":"[mel] If the combat continues or a new combat begins, the after combat effect does not happen/is not usable. (eg. {Psyche!}, {Telepathic Tracking})\n(Partial reversal of RTR 20010711)",
                 "refs":{
                     "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ",
                     "LSJ 19980109":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d2U51Uw0Hfg/m/uIPoVvPFePgJ"
@@ -87638,13 +88086,11 @@
             {
                 "text":"If an action is canceled, it is not performed and the minion is free to attempt the same action again.",
                 "refs":{
-                    "LSJ 20020801":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/f1yiKNUs0RY/m/2q6jrXLVT3cJ",
-                    "LSJ 19980212":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/fLFLlXZXHqA/m/ggjw8aGjdRoJ",
                     "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card"
                 }
             },
             {
-                "text":"Can only cancel minion cards played from the hand in the normal fashion (eg. not weapons played via {Disguised Weapon}\u00a0or allies via\u00a0{Piper}).",
+                "text":"Can only cancel minion cards played from the hand in the normal fashion (eg. can't cancel allies played via\u00a0{Piper}).",
                 "refs":{
                     "RTR 20001020":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GvxNYsYsWJ4/m/EY7NOjdsGCsJ"
                 }
@@ -87720,8 +88166,9 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"Is played after resolution, but still during the action. Action modifiers and effects that can be played \"after resolution\" can be played before or after it.",
+                "text":"Is played after resolution, after all combats are handled, but still during the action. Action modifiers and effects that can be played \"after resolution\" can be played before or after it.",
                 "refs":{
+                    "PIB 20150915":"https://www.vekn.net/forum/rules-questions/73134-learjet#73139",
                     "LSJ 19981028":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JZHY1bTCAa0/m/XqDVERty0roJ",
                     "ANK 20190425":"https://www.vekn.net/forum/rules-questions/77581-action-modifiers-played-at-beginning-and-end-of-an-action#94652"
                 }
@@ -88434,13 +88881,11 @@
             {
                 "text":"[OBE] If an action is canceled, it is not performed and the minion is free to attempt the same action again.",
                 "refs":{
-                    "LSJ 20020801":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/f1yiKNUs0RY/m/2q6jrXLVT3cJ",
-                    "LSJ 19980212":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/fLFLlXZXHqA/m/ggjw8aGjdRoJ",
                     "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card"
                 }
             },
             {
-                "text":"[OBE] Can only cancel minion cards played from the hand in the normal fashion (eg. not weapons played via {Disguised Weapon}\u00a0or allies via\u00a0{Piper}).",
+                "text":"[OBE] Can only cancel minion cards played from the hand in the normal fashion (eg. can't cancel allies played via\u00a0{Piper}).",
                 "refs":{
                     "RTR 20001020":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GvxNYsYsWJ4/m/EY7NOjdsGCsJ"
                 }
@@ -89566,6 +90011,12 @@
                 "refs":{
                     "ANK 20180928-1":"https://www.vekn.net/forum/rules-questions/77034-allies-and-vampire-disciplines-specifically-the-nocturn#90809"
                 }
+            },
+            {
+                "text":"Does not stack with similar effects (or another copy of itself) to provide superior version of the discipline(s) (e.g. {Pressing Flesh} and {Putrescent Servitude} together does not provide superior [POT])",
+                "refs":{
+                    "ANK 20180111":"https://www.vekn.net/forum/rules-questions/76364-leech-putrescent-servitude#84864"
+                }
             }
         ],
         "set":{
@@ -90408,8 +90859,9 @@
                 }
             },
             {
-                "text":"All variants are affected by {Blood Cult Awareness Network}.",
+                "text":"[chi]/[pre]/[qui] Is affected by {Blood Cult Awareness Network}",
                 "refs":{
+                    "ANK 20240118-2":"https://www.vekn.net/forum/rules-questions/81154-blood-cult-awareness-network-and-feast-of-the-soul-s-secrets#110399",
                     "LSJ 20060414":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Kok_AGc9i68/m/tiI176IwHKkJ"
                 }
             }
@@ -93071,6 +93523,13 @@
                 "refs":{
                     "ANK 20180928-1":"https://www.vekn.net/forum/rules-questions/77034-allies-and-vampire-disciplines-specifically-the-nocturn#90809"
                 }
+            },
+            {
+                "text":"Ghouls are monsters, not mortal.",
+                "refs":{
+                    "ANK 20200203-2":"https://www.vekn.net/forum/rules-questions/78415-is-ghoul-mortal#98872",
+                    "LSJ 20060515":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/bzusnKlnYr8/m/OSMvzE7YjokJ"
+                }
             }
         ],
         "set":{
@@ -93226,8 +93685,9 @@
                 }
             },
             {
-                "text":"Is played after resolution, but still during the action. Action modifiers and effects that can be played \"after resolution\" can be played before or after it.",
+                "text":"Is played after resolution, after all combats are handled, but still during the action. Action modifiers and effects that can be played \"after resolution\" can be played before or after it.",
                 "refs":{
+                    "PIB 20150915":"https://www.vekn.net/forum/rules-questions/73134-learjet#73139",
                     "LSJ 19981028":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JZHY1bTCAa0/m/XqDVERty0roJ",
                     "ANK 20190425":"https://www.vekn.net/forum/rules-questions/77581-action-modifiers-played-at-beginning-and-end-of-an-action#94652"
                 }
@@ -93371,7 +93831,15 @@
         "path":"",
         "pool":3,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Ghouls are monsters, not mortal.",
+                "refs":{
+                    "ANK 20200203-2":"https://www.vekn.net/forum/rules-questions/78415-is-ghoul-mortal#98872",
+                    "LSJ 20060515":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/bzusnKlnYr8/m/OSMvzE7YjokJ"
+                }
+            }
+        ],
         "set":{
             "V5C":{
                 "PTz":"1"
@@ -93887,6 +94355,13 @@
                 "refs":{
                     "ANK 20180517":"https://www.vekn.net/forum/rules-questions/76447-rules-team-rulings-rtr-03-03-2018?start=30#87041"
                 }
+            },
+            {
+                "text":"Ghouls are monsters, not mortal.",
+                "refs":{
+                    "ANK 20200203-2":"https://www.vekn.net/forum/rules-questions/78415-is-ghoul-mortal#98872",
+                    "LSJ 20060515":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/bzusnKlnYr8/m/OSMvzE7YjokJ"
+                }
             }
         ],
         "set":{
@@ -93970,6 +94445,14 @@
                 "text":"[val] Is not the default action, no blood is paid for the rescue.",
                 "refs":{
                     "ANK 20181017":"https://www.vekn.net/forum/rules-questions/77086-question-recure-of-the-homeland-cost#91228"
+                }
+            },
+            {
+                "text":"[val],[VAL] If the action is unblocked when it resolves and the target is no longer in torpor, the action \"fizzles\" (cost, if any, is paid, and it is considered successful, but has no effect).",
+                "refs":{
+                    "ANK 20210124":"https://www.vekn.net/forum/rules-questions/79001-the-question-of-the-month-action-fizzles#101492",
+                    "LSJ 20070411":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/umdINigMKqs/m/l6GFRVKdkMsJ",
+                    "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
                 }
             }
         ],
@@ -96401,16 +96884,17 @@
                 }
             },
             {
-                "text":"If the target of their ability unlocks and the action is not blocked, it is successful but has no effect.",
-                "refs":{
-                    "LSJ 20070411":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/umdINigMKqs/m/l6GFRVKdkMsJ",
-                    "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
-                }
-            },
-            {
                 "text":"If they are burned by a strike, the blood gained from burning them is awarded after strike resolution (it cannot normally not be used to heal from their strike).",
                 "refs":{
                     "LSJ 20080212":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Yg1nZfgkpGM/m/OxDoRLREnewJ"
+                }
+            },
+            {
+                "text":"If the action is unblocked when it resolves and the target is unlocked, the action \"fizzles\" (cost, if any, is paid, and it is considered successful, but has no effect).",
+                "refs":{
+                    "ANK 20210124":"https://www.vekn.net/forum/rules-questions/79001-the-question-of-the-month-action-fizzles#101492",
+                    "LSJ 20070411":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/umdINigMKqs/m/l6GFRVKdkMsJ",
+                    "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
                 }
             }
         ],
@@ -96538,8 +97022,21 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"Is played after resolution, but still during the action. Action modifiers and effects that can be played \"after resolution\" can be played before or after it.",
+                "text":"Can be played if the action \"failed\"",
                 "refs":{
+                    "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/"
+                }
+            },
+            {
+                "text":"Cannot be played if the action \"fizzles\" (is unblocked at resolution, but has no effect because some requirement cannot be met or cost cannot be paid in full).",
+                "refs":{
+                    "ANK 20220218":"https://www.vekn.net/forum/rules-questions/79001-the-question-of-the-month-action-fizzles?start=12#104697"
+                }
+            },
+            {
+                "text":"Is played after resolution, after all combats are handled, but still during the action. Action modifiers and effects that can be played \"after resolution\" can be played before or after it.",
+                "refs":{
+                    "PIB 20150915":"https://www.vekn.net/forum/rules-questions/73134-learjet#73139",
                     "LSJ 19981028":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JZHY1bTCAa0/m/XqDVERty0roJ",
                     "ANK 20190425":"https://www.vekn.net/forum/rules-questions/77581-action-modifiers-played-at-beginning-and-end-of-an-action#94652"
                 }
