@@ -141,8 +141,6 @@
   - '"continue as if unblocked" moves the action card from the ash heap (where it went when the action was blocked) to limbo
     (where it should be if the action is not blocked). If the action card is not in the ash heap, then the action cannot be
     continued. [LSJ 20070808-1]'
-100046|Ambush:
-  - If the target unlocks and the action is not blocked, it is successful but has no effect. [LSJ 20070411] [LSJ 20090514]
 100047|Amria:
   - The press can only be used during the current round. [TOM 19960521]
 100048|Amulet of Temporal Perception:
@@ -227,9 +225,6 @@
 100097|Art of Memory, The:
   - The effect is applied after resolving the action, including after all combats. [LSJ 20031112]
   - Can be used to retrieve the action card itself (if any). [LSJ 20041115]
-100100|Art's Traumatic Essence:
-  - The action has no effect if the target is not unlocked anymore when it resolves. It is still considered successful and
-    must be paid. [ANK 20181121]
 100103|Asanbonsam Ghoul:
   - If another effect also sets the range, the first to resolve has priority (eg. {Squirrel Balance} resolves before, {Neutral
     Guard} resolves after). [PIB 20120214]
@@ -422,6 +417,9 @@
   - No other modifier can be played afterwards, combat begins immediately. [LSJ 20010806-2]
   - 'The vampire playing it is not considered having burned a minion (eg. for {Taking the Skin: Minion}), but the opponent
     is. [LSJ 20090922] [ANK 20220916]'
+100198|Blood Cult Awareness Network:
+  - Affects actions that add counters to vampires in the uncontroled region conditionally (eg {Undue Influence}, {Feast of
+    the Soul's Secrets}) [LSJ 20060414] [ANK 20240118-2]
 100199|Blood Doll:
   - Can be used when the vampire is in torpor. [PIB 20150522]
 100201|Blood Fury:
@@ -689,7 +687,6 @@
 100328|Channeling the Beast:
   - Additional damage inherits all of the properties of the base damage. [TOM 19960225]
 100330|Charge of the Buffalo:
-  - '[for] If the target unlocks and the action is not blocked, it is successful but has no effect. [LSJ 20070411] [LSJ 20090514]'
   - No other effect can be used to reset the range. Skip the determine range step on that round, but other pre-range effects
     can be played afterwards. [RTR 19970630] [ANK 20180720]
   - Additional damage inherits all of the properties of the base damage. [TOM 19960225]
@@ -1393,8 +1390,6 @@
   - If the opponent unlocks before combat ends (eg. {Majesty}), the Grenade locks them again after it ends. [LSJ 20040601]
   - 'Still burns when used if the opponent uses a "strike: combat ends" too. It does not if combat ends before strike resolution
     (eg. {Rötschreck}). [LSJ 20001127-2] [LSJ 20010806-1]'
-100747|Fleetness:
-  - '[CEL] If the target unlocks and the action is not blocked, it is successful but has no effect. [LSJ 20070411] [LSJ 20090514]'
 100749|Flesh of Marble:
   - '[pro] Cannot be used to prevent aggravated damage, even if the minion treats them as normal damage (eg. {Skin of Night}).
     [LSJ 20040812-2] [PIB 20130327]'
@@ -1497,10 +1492,8 @@
 100785|Fragment of the Book of Nod:
   - Cannot be used when a card is played to draw a card that would cancel it "as it is played". [RTR 20040501]
 100788|Freak Drive:
-  - '[FOR] Is played after all combats are handled. Can be played from torpor [LSJ 20030103] [ANK 20180906] [RTR 19980623]'
-  - '[for] Can be played if the action is unblocked even if it has no effect due to lack of a suitable target. [LSJ 20070411]'
-  - '[for] Is played after the action resolves. (eg. if played after equipping {Learjet}, you draw an additional card). [PIB
-    20150915]'
+  - '[FOR] Cannot be played if the action "failed" unless there was a successful block attempt. [RTR 20180719]'
+  - '[FOR] Cannot be played if the action was "ended." [RTR 20180719]'
 100790|Free States Rant:
   - If there are insuffient targets to which to allocate all of the points allowed, then the card cannot be played. [LSJ 20010810]
 100791|Frenzy:
@@ -1686,8 +1679,8 @@
   - The provided action is considered as an action that requires an Anarch or an Independent. (eg {CrimethInc.} can be used).
     [ANK 20180529]
 100886|Harass:
-  - If the action is not blocked and the target does not meet the requirements anymore, it is successful but has no effect.
-    [LSJ 20070411] [LSJ 20090514]
+  - If the action is not blocked and the target has now more then 3 blood and is unlocked, the action "fizzles" (cost, if
+    any, is paid, and it is considered successful, but has no effect). [LSJ 20070411] [LSJ 20090514]
 100887|Hard Case:
   - The block needs to be successful, so the blocking minion is locked. [ANK 20190708]
 100892|Hatchling:
@@ -2070,7 +2063,6 @@
     card. [LSJ 20050224-4]
 101083|Leech:
   - Can target a vampire with no blood [RTR 20010711]
-  - Does not stack with similar effects to provide superior [POT] (eg. {Putrescent Servitude}). [ANK 20180111]
 101084|Left for Dead:
   - Effects to begin a new combat cannot be used on the Left for Dead ally as he is not ready. [LSJ 20020509]
 101085|Legacy:
@@ -2190,8 +2182,7 @@
     in agreement with himself. [LSJ 20020123]'
 101143|Magic of the Smith:
   - This is an equip action. [TOM 19960130]
-  - You do not search your library until the action is successful. [TOM 19951107]
-  - The equipment need not be declared, it is chosen upon resolution. [PIB 20150315]
+  - The equipment need not be declared, it is chosen upon resolution. [RBK search]
   - Can fetch an equipment that is a location when in play. [LSJ 19971001-2]
 101144|Majesty:
   - '[PRE] The vampire still unlocks if an effect continues the combat or begins a new combat. [RTR 20020501]'
@@ -2207,8 +2198,6 @@
     [ANK 20200207]
   - Can be used by a locked vampire. [PIB 20150720] [RTR 19941109]
   - Cannot be used by a vampire in torpor. [PIB 20150720] [RTR 19970306]
-101147|Make the Misere:
-  - If the target unlocks and the action is not blocked, it is successful but has no effect. [LSJ 20070411] [LSJ 20090514]
 101150|Malkavian Dementia:
   - Does not require control of a ready Malkavian. [RTR 19951124]
   - The loss of control happens at the start of unlock phase, before unlocking. This cannot be ordered among other unlock
@@ -2320,9 +2309,6 @@
   - If an action is blocked, no other effect can be used (eg. {Crypt's Sons}) before resolving Millicent's delayed effect.
     However, effects that trigger at the same moment (eg. {Unleash Hell's Fury}) are still applied and ordered by the acting
     Methuselah. [ANK 20210627] [ANK 20211207] [ANK 20220116]
-101211|Mind Numb:
-  - The action has no effect if the target is not unlocked anymore when it resolves. It is still considered successful and
-    must be paid. [ANK 20181121]
 101214|Mind of the Wilds:
   - 'The blocking minion is prohibited to strike: combat ends for the duration of the action (during any round of any combat).
     [LSJ 20100308]'
@@ -2513,9 +2499,6 @@
     using {Madness Network}). [ANK 20200813-3] [ANK 20200930]
 101295|Nod:
   - Choose for each equipment which minion will receive it, then transfer all the equipment accordingly. [ANK 20190717-1]
-101296|Nose of the Hound:
-  - '[aus], [spi] If the target unlocks and the action is not blocked, it is successful but has no effect. [LSJ 20070411]
-    [LSJ 20090514]'
 101302|Nosferatu Putrescence:
   - Can be used by a vampire in torpor. [LSJ 20020416]
   - Can be played by a minion of a Methuselah not involved in the current combat. [ANK 20181101]
@@ -2727,7 +2710,6 @@
 101486|Principia Discordia:
   - '[qui] can target a vampire with no blood. [RTR 20010711]'
   - '[ser] can target a vampire with no blood.[RTR 20010711]'
-  - '[ser] If the target unlocks and the action is not blocked, it is successful but has no effect. [LSJ 20070411] [LSJ 20090514]'
   - "[aus] is directed against the Methuselah controlling the equipment, not the minion it's on. [LSJ 20090324]"
 101487|Priority Contract:
   - Can be burned to get 3 pool when a minion leaves the ready region because his controller is ousted. [ANK 20180129-2]
@@ -2759,17 +2741,13 @@
 101505|Psalm of the Damned:
   - '[mal], [MAL] An opponent can play a reaction to wake as the card is played, before its effects apply. [ANK 20231028]'
 101507|Psyche!:
-  - '[CEL] Cannot be played if the opponent is going to torpor. [ANK 20220429]'
   - '[CEL] Effects that end combat and then do something else after combat (include continuing the action as if unblocked)
     will be lost, except for unlock effects. [LSJ 19980109] [RTR 20020501]'
   - '[CEL] Cannot be played if there is already a combat queued. [RTR 20020501]'
-  - '[CEL] Is played during combat, when combat is about to end. It must be played after the presses are handled and can be
-    played if the round ends prematurely. [RTR 20030519], [PIB 20111202]'
   - '[CEL] Replacements effects that are played when a combat "would end" (eg. {Telepathic Tracking}) cannot be play afterwards.
     [ANK 20191219]'
   - '[CEL] Can be played before of after effects that are played "at the end of combat". [LSJ 20021113] [ANK 20191219] [ANK
     20180910-1]'
-  - Can be retrieved by {Marthe Dizier} (reversal of previous rulings). [PIB 20111208]
   - '[CEL] Cards that are only replaced after combat (eg. {Lucky Blow}) are replaced before the new combat. [LSJ 20001122]'
   - '[CEL] The new combat is still part of the current action: that action can be continued (eg. {Form of Mist}, {Mirror Image}).
     [LSJ 20021213]'
@@ -2803,7 +2781,6 @@
     \ [LSJ 20090528-2-2]"
 101526|Putrescent Servitude:
   - Requirements do not apply when taking control of a card already in play. [TOM 19960226-1]
-  - Does not stack with similar effects to provide superior [POT] (eg. {Leech}). [ANK 20180111]
 101532|Quickness:
   - '[CEL] A limited additional strike can be played before or after. [LSJ 20001206] [ANK 20211124]'
 101533|Quicksilver Contemplation:
@@ -2836,6 +2813,8 @@
 101554|Raw Recruit:
   - The created vampire is not unique. [LSJ 20100221]
   - Blood, equipments and other cards on the initial target are burned. [LSJ 20100302-2]
+  - The action "to remove that vampire from the game" is an action to put a vampire into play, a sterile vampire cannot do
+    it (eg. {Blood Cult Awareness Network} gives it -1 stealth). [LSJ 20011212] [LSJ 20060815]
 101555|Rayzeel's Song:
   - '[ani] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Dragos}). The card cannot
     be played if the minion cannot afford to burn the blood. [ANK 20210226]'
@@ -3285,6 +3264,9 @@
     [LSJ 20100325]
 101798|Slam:
   - Additional damage inherits all of the properties of the base damage. [TOM 19960225]
+101803|Sleep of Reason:
+  - If the action is not blocked and the target has 2 or more blood, the action "fizzles" (cost, if any, is paid, and it is
+    considered successful, but has no effect). [LSJ 20090514] [LSJ 20070411]
 101805|Sleeping Mind, The:
   - "[DOM] Does not prevent wake effects to be played (eg. {Wake with Evening's Freshness}), but does prevent unlock after\
     \ action resolution (eg. {Freak Drive} or [ani] {Cats' Guidance}). [PIB 20150703]"
@@ -3385,8 +3367,6 @@
   - '[OBE] If the bleed is canceled, the vampire still returns to its original controller. [RTR 20020501]'
   - '[OBE] "After resolution" effects are applied before the target vampire is returned to his or her previous controller.
     [LSJ 20030219]'
-  - '[OBE] The action has no effect if the target is not unlocked anymore when it resolves. It is still considered successful
-    and must be paid. [ANK 20181121] [LSJ 20021122-3]'
   - '[OBE] The minion is removed from the game when he should return to a Methuselah who has been ousted. [ANK 20181110]'
 101850|Spirit's Touch:
   - '[AUS] The maneuver can only be used if the block is successful, and only in the resulting (block-induced) combat. It
@@ -3777,7 +3757,7 @@
 102044|Truth of a Thousand Lies:
   - '[SER] Cards and effects that can be played "after resolution" (and only them) can be played after it. [ANK 20190425]'
 102047|Tunnel Runner:
-  - Damage done from stealing blood to the Runner is environmental. [RTR 19970630]
+  - Damage done from stealing blood to the Runner is environmental. [RTR 19970630] [LSJ19971028]
   - 'Damage done from stealing blood is done at the same time strike damage is done: a single instantaneous prevention card
     (eg. {Soak}) can prevent both. [ANK 20200517-2]'
 102051|Twisting the Knife:
@@ -3810,7 +3790,6 @@
   - He can burn 1 life to give a minion you control a press the turn he is recruited. [ANK 20180517]
 102067|Undue Influence:
   - Cannot be played with no vampire in the uncontrolled region. [LSJ 20060623]
-  - All variants are affected by {Blood Cult Awareness Network}. [LSJ 20060414]
 102068|Undying Tenacity:
   - '[for] The vampire can play cards which are not usable by vampires going to torpor. [LSJ 19970303]'
 102069|Undying Thirst:
@@ -4061,13 +4040,15 @@
 102202|Young Bloods:
   - They may use their built-in action against a vampire with only 1 blood. If successful, that vampire burns his 1 blood.
     [LSJ 20070213]
-  - If the target of their ability unlocks and the action is not blocked, it is successful but has no effect. [LSJ 20070411]
-    [LSJ 20090514]
   - If they are burned by a strike, the blood gained from burning them is awarded after strike resolution (it cannot normally
     not be used to heal from their strike). [LSJ 20080212]
 102204|Zapaderin:
   - Can only be played by the controller of the acting minion. [LSJ 19990425]
   - Multiple copies can be played by different minions on the same action. [ANK 20200515]
+102205|Zephyr:
+  - Can be played if the action "failed" [RTR 20180719]
+  - Cannot be played if the action "fizzles" (is unblocked at resolution, but has no effect because some requirement cannot
+    be met or cost cannot be paid in full). [ANK 20220218]
 102208|Zip Gun:
   - Damage done to the bearer is environmental. [LSJ 19970801]
   - No damage is done to the bearer if he does not strike with the gun (eg. if it is destroyed with first strike). [LSJ 20100310]
@@ -4116,6 +4097,10 @@
 102247|Break the Bonds:
   - '[pre] There must be an uncontrolled vampire, and it is chosen upon declaration. [ANK 20240706]'
   - '[obf] The prey need not control a minion, the target is chosen upon resolution. [ANK 20240706]'
+102248|Feast of the Soul's Secrets:
+  - '[DOM] The target vampire is chosen when the card is played. [ANK 20240724-2]'
+  - '[DOM] Is affected by {Blood Cult Awareness Network}, when choosing a younger vampire in your uncontrolled region. [LSJ
+    20060414] [ANK 20240118-2]'
 102254|Night Terrors:
   - Effectively gives a -X stealth modifier to the action, where X is the amount of stealth reduced by Night Terrors at the
     time it was played. [RTR 20030519]"
@@ -4578,7 +4563,8 @@
   - Her ability can only move cards from the ash heap that were played in the normal manner. If the card was put in play in
     some other way, it cannot be retrieved by her special. [LSJ 20041119]
   - A card canceled as it is played is still considered played, she can retrieve it. [LSJ 19980212] [ANK 20190701]
-  - She can retrieve {Psyche!} (reversal of previous rulings). [PIB 20111208]
+  - If another combat is queued after a combat she is part of, she can use her ability between combats to retrieve a card
+    from the previous combat (e.g. she can retrieve a {Psyche!} she plays) [PIB 20111208]
   - Her special can only be used once each combat [LSJ 20040617]
 200945|Marty Lechtansi:
   - His ability to get a press can only be used during the press step. [PIB 20150121]
@@ -4944,8 +4930,8 @@ G00005|Prevent normal unlock:
   - The "does not unlock as normal" effect is redundant with being infernal. If the minion is infernal, his controller can
     still pay a pool to unlock him. [LSJ 20050114]
 G00006|Modifier after resolution:
-  - Is played after resolution, but still during the action. Action modifiers and effects that can be played "after resolution"
-    can be played before or after it. [LSJ 19981028] [ANK 20190425]
+  - Is played after resolution, after all combats are handled, but still during the action. Action modifiers and effects that
+    can be played "after resolution" can be played before or after it. [PIB 20150915] [LSJ 19981028] [ANK 20190425]
 G00007|Modifier after combat:
   - Is played after all combats are handled. Can be played from torpor. [LSJ 20030103] [ANK 20181219] [ANK 20180906]
 G00008|Permanent not replaced:
@@ -4975,7 +4961,7 @@ G00016|Retainer doing damage:
 G00017|Environmental damage:
   - 'Damage is inflicted even against a dodge. A "strike: combat ends" ends combat before damage is applied, as will a combattant
     going to torpor during first strike. [RTR 19941109] [TOM 19951216] [PIB 20140324] [ANK 20200422]'
-G00018|Ally with discipline level:
+G00018|Retainer with discipline level:
   - The discipline level used to recruit it decides which version it is (inferior or superior). This does not change once
     it is in play. [RTR 19941109] [ANK 20180612]
 G00019|Animal:
@@ -5073,10 +5059,9 @@ G00060|Reflex:
   - '[abo] [REFLEX] Any frenzy card that targets/selects/chooses/affects the minion when played, is considered being played
     on the minion. [LSJ 20051113]'
 G00061|Cancel an action:
-  - If an action is canceled, it is not performed and the minion is free to attempt the same action again. [LSJ 20020801]
-    [LSJ 19980212] [RBK cancel-a-card]
-  - Can only cancel minion cards played from the hand in the normal fashion (eg. not weapons played via {Disguised Weapon} or
-    allies via {Piper}). [RTR 20001020]
+  - If an action is canceled, it is not performed and the minion is free to attempt the same action again. [RBK cancel-a-card]
+  - Can only cancel minion cards played from the hand in the normal fashion (eg. can't cancel allies played via {Piper}).
+    [RTR 20001020]
   - Can be used to cancel all action cards, including employ retainer, recruit ally and political action. [ANK 20200813-2]
 G00062|Cancel as a reaction:
   - 'Cancelation must be immediate: a wake can be used in the "as played" window, but a reaction to "unlock and attempt to
@@ -5084,7 +5069,7 @@ G00062|Cancel as a reaction:
 G00063|Cancel with no action:
   - Can be used if there is no action, but that allowance does not extend to other reactions (eg. wake effects). [PIB 20120808]
   - Cannot be played during combat. [LSJ 20080618]
-G00064|Special Hunt Action:
+G00064|Special Hunt action:
   - Is affected by increases to Hunt value. Blood comes from the target of the hunt. [RTR 20030519] [RTR 20180511]
 G00065|Burn blood for effect:
   - The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}). The card cannot
@@ -5092,7 +5077,7 @@ G00065|Burn blood for effect:
 G00066|Changes controller of location:
   - 'Changing the controller of a location has no other effect, unless specified by card text. Exception: A location "on"
     another controlled card is moved onto an appropriate card controlled by the new controller of the location. [RTR 19980623]'
-G00067|Stealth from random event:
+G00067|Stealth from random effect:
   - Can be used when stealth is not yet needed. Any stealth that would be gained is not gained (as no stealth is needed).
     [ANK 20231031]
 G00068|Personal titles:
@@ -5122,3 +5107,25 @@ G00074|Adding costs to a strike:
     must pay the additional cost to use that first effect. [LSJ 20090529]
 G00075|Discounts for rescue:
   - The discount applies to the action, regardless of who pays. [PIB 20110918] [LSJ 20020304-2]
+G00076|Is affected by BCAN:
+  - Is affected by {Blood Cult Awareness Network} [ANK 20240118-2] [LSJ 20060414]
+G00077|Requires successful action:
+  - The after action resolution effect can be used if the action "fizzles" (is unblocked at resolution, but has no effect
+    because some requirement cannot be met or cost can't be paid in full). [ANK 20220218]
+G00078|Action targeting locked minion:
+  - If the action is unblocked when it resolves and the target is unlocked, the action "fizzles" (cost, if any, is paid, and
+    it is considered successful, but has no effect). [ANK 20210124] [LSJ 20070411] [LSJ 20090514]
+G00079|Action only usable by vampire in torpor:
+  - When the acting vampire leaves torpor before the action resolves (e.g. {Warsaw Station}) the action immediately "fizzles"
+    (cost, if any, is paid, and it is considered successful, but has no effect). [ANK 20220218]
+G00080|Action targeting vampire in torpor:
+  - If the action is unblocked when it resolves and the target is no longer in torpor, the action "fizzles" (cost, if any,
+    is paid, and it is considered successful, but has no effect). [ANK 20210124] [LSJ 20070411] [LSJ 20090514]
+G00081|Action targeting unlocked minion:
+  - If the action is unblocked when it resolves and the target is locked, the action "fizzles" (cost, if any, is paid, and
+    it is considered successful, but has no effect). [ANK 20210124] [LSJ 20070411] [LSJ 20090514]
+G00082|Unique Trifle:
+  - You still gain the trifle master phase action, even if this card contests when played. [RBK contested-cards]
+G00083|Meets inferior discipline:
+  - Does not stack with similar effects (or another copy of itself) to provide superior version of the discipline(s) (e.g.
+    {Pressing Flesh} and {Putrescent Servitude} together does not provide superior [POT]) [ANK 20180111]
