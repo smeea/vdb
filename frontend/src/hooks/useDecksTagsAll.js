@@ -8,7 +8,6 @@ const useDecksTagsAll = (decks) => {
     const allTags = new Set();
     Object.keys(decks).forEach((id) => {
       if (decks[id][TAGS]) {
-        console.log(decks[id]);
         decks[id][TAGS].forEach((tag) => {
           allTags.add(tag);
         });
