@@ -1,26 +1,19 @@
 import { useMemo } from 'react';
-import { TAGS, BASE, SUPERIOR } from '@/constants';
+import { TAGS } from '@/constants';
 
 const useDecksTagsAll = (decks) => {
   return useMemo(() => {
-    const allTags = new Set();
+    if (!decks) return [];
 
-    // TODO FIX AFTER TAGS FLATTENING ON TWD/PDA COPY
-    if (decks) {
-      Object.keys(decks).forEach((id) => {
-        if (decks[id][TAGS]) {
-          if (decks[id][TAGS][BASE] && decks[id][TAGS][SUPERIOR]) {
-            [...decks[id][TAGS][BASE], ...decks[id][TAGS][SUPERIOR]].forEach((tag) => {
-              allTags.add(tag);
-            });
-          } else {
-            decks[id][TAGS].forEach((tag) => {
-              allTags.add(tag);
-            });
-          }
-        }
-      });
-    }
+    const allTags = new Set();
+    Object.keys(decks).forEach((id) => {
+      if (decks[id][TAGS]) {
+        console.log(decks[id]);
+        decks[id][TAGS].forEach((tag) => {
+          allTags.add(tag);
+        });
+      }
+    });
 
     return [...allTags];
   }, [decks]);

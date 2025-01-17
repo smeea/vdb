@@ -6,24 +6,21 @@ import { deckUpdate } from '@/context';
 import { getTags, getIsEditable } from '@/utils';
 import { SUPERIOR, BASE, DECKID, CRYPT, LIBRARY, TAGS } from '@/constants';
 
-const DeckTags = ({ deck, tagsSuperior, noAutotags, isBordered, allTagsOptions }) => {
+const DeckTags = ({ deck, noAutotags, isBordered, allTagsOptions }) => {
   const isEditable = getIsEditable(deck);
 
   const tagList = useMemo(() => {
     const t = [];
-    if (tagsSuperior) {
-      tagsSuperior.forEach((tag) => {
-        t.push({
-          label: <b>{tag}</b>,
-          value: tag,
-        });
-      });
-    }
 
-    // TODO FIX AFTER TAGS FLATTENING ON TWD/PDA COPY
     if (deck[TAGS]) {
       if (deck[TAGS][BASE] && deck[TAGS][SUPERIOR]) {
-        [...deck[TAGS][BASE], ...deck[TAGS][SUPERIOR]].forEach((tag) => {
+        deck[TAGS][SUPERIOR].forEach((tag) => {
+          t.push({
+            label: <b>{tag}</b>,
+            value: tag,
+          });
+        });
+        deck[TAGS][BASE].forEach((tag) => {
           t.push({
             label: tag,
             value: tag,
@@ -40,7 +37,7 @@ const DeckTags = ({ deck, tagsSuperior, noAutotags, isBordered, allTagsOptions }
     }
 
     return t;
-  }, [deck[TAGS], tagsSuperior]);
+  }, [deck[TAGS]]);
 
   const handleChange = (event) => {
     const v = event.map((t) => t.value);

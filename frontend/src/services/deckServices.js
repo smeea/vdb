@@ -5,6 +5,7 @@ import { getTags, getIsPlaytest, exportDeck, getTextDisciplines } from '@/utils'
 import {
   ADV,
   AUTHOR,
+  BASE,
   BLOOD,
   BRANCHES,
   BRANCH_NAME,
@@ -31,6 +32,7 @@ import {
   POOL,
   PUBLIC_CHILD,
   PUBLIC_PARENT,
+  SUPERIOR,
   TAGS,
   TEXT,
   TIMESTAMP,
@@ -91,6 +93,11 @@ export const deckClone = (deck) => {
   Object.keys(deck[CRYPT]).forEach((cardid) => (cards[cardid] = deck[CRYPT][cardid].q));
   Object.keys(deck[LIBRARY]).forEach((cardid) => (cards[cardid] = deck[LIBRARY][cardid].q));
 
+  const tags =
+    deck[TAGS][BASE] && deck[TAGS][SUPERIOR]
+      ? [...deck[TAGS][SUPERIOR], ...deck[TAGS][BASE]]
+      : deck[TAGS];
+
   return ky
     .post(url, {
       json: {
@@ -98,7 +105,7 @@ export const deckClone = (deck) => {
         [DESCRIPTION]: deck[DESCRIPTION],
         [AUTHOR]: deck[AUTHOR],
         [CARDS]: cards,
-        [TAGS]: deck[TAGS],
+        [TAGS]: tags,
       },
     })
     .json()
@@ -113,7 +120,7 @@ export const deckClone = (deck) => {
           [MASTER]: null,
           [NAME]: name,
           [TIMESTAMP]: dayjs().toISOString(),
-          [TAGS]: deck[TAGS],
+          [TAGS]: tags,
           [AUTHOR]: deck[AUTHOR],
           [DESCRIPTION]: deck[DESCRIPTION],
           [IS_AUTHOR]: true,
