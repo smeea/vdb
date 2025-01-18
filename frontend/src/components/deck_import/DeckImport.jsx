@@ -57,7 +57,7 @@ const DeckImport = ({
     };
 
     deckServices
-      .deckImport({ ...d })
+      .deckImport(d)
       .then((data) => {
         setShowInfo && setShowInfo(true);
         setShowMenuButtons(false);
