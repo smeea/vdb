@@ -1,26 +1,37 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router';
 import Activity from '@icons/activity.svg?react';
 import { Spinner, Hr, Modal, ButtonIconed, TextWithLinks } from '@/components';
 import { useFetch } from '@/hooks';
+import { useApp } from '@/context';
 import lastChange from '@/LAST_CHANGE.json';
 
 const UpdateNotification = () => {
+  const { setShowFloatingButtons } = useApp();
   const [update, setUpdate] = useState();
   const [isLoading, setIsLoading] = useState();
   const location = useLocation();
   const navigate = useNavigate();
   const url = `${import.meta.env.VITE_API_URL}/version`;
   const { value } = useFetch(url, {}, []);
-  if (update === undefined && value?.version > lastChange.version) {
-    setUpdate(value);
-  }
+
+  useEffect(() => {
+    if (update === undefined && value?.version > lastChange.version) {
+      setUpdate(value);
+      setShowFloatingButtons(false);
+    }
+  }, [value]);
+
+  const handleClose = () => {
+    setUpdate(null);
+    setShowFloatingButtons(true);
+  };
 
   return (
     <>
       {update && (
         <Modal
-          handleClose={() => setUpdate(null)}
+          handleClose={handleClose}
           title="Update available!"
           centered
           withMobileMargin
@@ -60,10 +71,6 @@ const UpdateNotification = () => {
               icon={isLoading ? <Spinner className="size-5" /> : <Activity />}
               text={isLoading ? 'Loading, please wait...' : 'Apply Update'}
             />
-            <div className="text-sm text-fgRed dark:text-fgRedDark">
-              If this window show up again after clicking Apply Update, please refresh the page
-              (Ctrl+F5 on Windows/Linux, Command+Shift+R on MacOS, swipe down on mobile)
-            </div>
           </div>
         </Modal>
       )}
