@@ -5,7 +5,7 @@ import { DeckCryptTotalInfo, DeckNewCard, Warning, Button, SortButton, Header } 
 import { useApp } from '@/context';
 import { getIsEditable, getKeyDisciplines } from '@/utils';
 import { useDeckCrypt } from '@/hooks';
-import { DECKID, CRYPT, GROUPS, LIMITED, BANNED, LEGAL, PLAYTEST } from '@/constants';
+import { DECKID, CRYPT, GROUPS, LIMITED, BANNED, PLAYTEST } from '@/constants';
 
 const DeckCryptHeader = ({
   cardChange,

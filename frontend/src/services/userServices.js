@@ -1,7 +1,7 @@
 import ky from 'ky';
 const ACCOUNT_URL = `${import.meta.env.VITE_API_URL}/account`;
 const LOGIN_URL = `${import.meta.env.VITE_API_URL}/login`;
-import { USERNAME, PASSWORD, NEW_PASSWORD, REMEMBER, EMAIL, PUBLIC_NAME } from '@/constants';
+import { ERROR, USERNAME, PASSWORD, NEW_PASSWORD, REMEMBER, EMAIL, PUBLIC_NAME } from '@/constants';
 
 export const login = (username, password) => {
   const options = {
@@ -16,13 +16,12 @@ export const login = (username, password) => {
   return ky(LOGIN_URL, options)
     .then((data) => data.json())
     .catch((e) => {
-      return { error: e.response.status };
+      return { [ERROR]: e.response.status };
     });
 };
 
 export const whoAmI = () => {
-  const url = `${import.meta.env.VITE_API_URL}/account`;
-  return ky.get(url).json();
+  return ky.get(ACCOUNT_URL).json();
 };
 
 export const logout = () => ky.delete(LOGIN_URL);
@@ -40,7 +39,7 @@ export const register = (username, password, email) => {
   return ky(ACCOUNT_URL, options)
     .then((data) => data.json())
     .catch((e) => {
-      return { error: e.response.status };
+      return { [ERROR]: e.response.status };
     });
 };
 
@@ -56,7 +55,7 @@ export const changePassword = (password, newPassword) => {
   return ky(ACCOUNT_URL, options)
     .then((data) => data.json())
     .catch((e) => {
-      return { error: e.response.status };
+      return { [ERROR]: e.response.status };
     });
 };
 
@@ -72,7 +71,7 @@ export const changeEmail = async (password, email) => {
   return ky(ACCOUNT_URL, options)
     .then((data) => data.json())
     .catch((e) => {
-      return { error: e.response.status };
+      return { [ERROR]: e.response.status };
     });
 };
 
@@ -85,7 +84,7 @@ export const changeName = (publicName) => {
   return ky(ACCOUNT_URL, options)
     .then((data) => data.json())
     .catch((e) => {
-      return { error: e.response.status };
+      return { [ERROR]: e.response.status };
     });
 };
 
@@ -98,6 +97,6 @@ export const deleteAccount = (password) => {
   return ky(ACCOUNT_URL, options)
     .then((data) => data.json())
     .catch((e) => {
-      return { error: e.response.status };
+      return { [ERROR]: e.response.status };
     });
 };

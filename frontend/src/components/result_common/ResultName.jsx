@@ -2,7 +2,7 @@ import React from 'react';
 import { twMerge } from 'tailwind-merge';
 import { ResultLegalIcon } from '@/components';
 import { getLegality } from '@/utils';
-import { ID, NAME, ADV, BANNED, LEGAL, PLAYTEST } from '@/constants';
+import { ID, NAME, ADV, BANNED, PLAYTEST } from '@/constants';
 
 const ResultName = ({ card, isBanned, isColored = true }) => {
   const legalRestriction = getLegality(card);
@@ -34,12 +34,7 @@ const ResultName = ({ card, isBanned, isColored = true }) => {
       )}
       {card[BANNED] && <ResultLegalIcon type={BANNED} value={card[BANNED]} />}
       {isBanned && <div className="inline text-fgRed dark:text-fgRedDark">[Limited]</div>}
-      {legalRestriction && (
-        <ResultLegalIcon
-          type={legalRestriction === PLAYTEST ? PLAYTEST : LEGAL}
-          value={legalRestriction}
-        />
-      )}
+      {legalRestriction && <ResultLegalIcon type={PLAYTEST} value={legalRestriction} />}
     </div>
   );
 };

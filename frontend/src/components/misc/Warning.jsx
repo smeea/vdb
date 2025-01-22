@@ -1,7 +1,7 @@
 import React from 'react';
 import Exclamation from '@icons/exclamation-triangle.svg?react';
 import { ResultLegalIcon } from '@/components';
-import { ICON, TITLE, TEXT, LIMITED, GROUPS, BANNED, LEGAL, PLAYTEST } from '@/constants';
+import { ICON, TITLE, TEXT, LIMITED, GROUPS, BANNED, PLAYTEST } from '@/constants';
 
 const Warning = ({ type, value = 'WARNING', title = '' }) => {
   const types = {
@@ -18,11 +18,6 @@ const Warning = ({ type, value = 'WARNING', title = '' }) => {
       [TEXT]: 'PLAYTEST',
       [TITLE]: 'Playtest Cards',
       [ICON]: <ResultLegalIcon type={PLAYTEST} value={PLAYTEST} className="flex" />,
-    },
-    [LEGAL]: {
-      [TEXT]: 'LEGAL',
-      [TITLE]: `Not Tournament Legal until ${value}`,
-      [ICON]: <ResultLegalIcon type={LEGAL} value={value} className="flex" />,
     },
     [LIMITED]: {
       [TEXT]: 'LIMITED',

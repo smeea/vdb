@@ -61,7 +61,7 @@ const Tda = () => {
     const url = `${import.meta.env.VITE_BASE_URL}/tournaments/${id}.zip`;
 
     ky.get(url)
-      .then(function (response) {
+      .then((response) => {
         if (response.status === 200 || response.status === 0) {
           return Promise.resolve(response.blob());
         } else {

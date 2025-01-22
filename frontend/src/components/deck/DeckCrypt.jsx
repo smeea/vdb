@@ -4,7 +4,7 @@ import { DeckCryptTable, DeckCryptHeader, ResultModal, FlexGapped } from '@/comp
 import { useApp } from '@/context';
 import { getKeyDisciplines } from '@/utils';
 import { useModalCardController, useDeckCrypt } from '@/hooks';
-import { CRYPT, DECKID, CAPACITY, CLAN, GROUP, NAME, QUANTITYx, SECT } from '@/constants';
+import { CRYPT, CAPACITY, CLAN, GROUP, NAME, QUANTITYx, SECT } from '@/constants';
 
 const DeckCrypt = ({ inSearch, inPreview, inMissing, noDisciplines, deck }) => {
   const { setShowFloatingButtons, cryptDeckSort, changeCryptDeckSort, isMobile } = useApp();

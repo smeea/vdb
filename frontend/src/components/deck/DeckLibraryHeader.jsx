@@ -12,7 +12,7 @@ import {
 import { useApp } from '@/context';
 import { getIsEditable } from '@/utils';
 import { useDeckLibrary } from '@/hooks';
-import { DECKID, POOL, BLOOD, X, LIBRARY, LIMITED, BANNED, LEGAL, PLAYTEST } from '@/constants';
+import { DECKID, POOL, BLOOD, X, LIBRARY, LIMITED, BANNED, PLAYTEST } from '@/constants';
 
 const DeckLibraryHeader = ({
   inMissing,
