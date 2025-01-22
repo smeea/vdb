@@ -33,7 +33,6 @@ const DeckLibraryHeader = ({
     hasBanned,
     hasLimited,
     hasPlaytest,
-    hasIllegalDate,
     libraryTotal,
     poolTotal,
     bloodTotal,
@@ -61,7 +60,6 @@ const DeckLibraryHeader = ({
                   {hasBanned && <Warning type={BANNED} />}
                   {limitedMode && hasLimited && <Warning type={LIMITED} />}
                   {hasPlaytest && <Warning type={PLAYTEST} />}
-                  {hasIllegalDate && <Warning value={hasIllegalDate} type={LEGAL} />}
                 </>
               )}
             </div>

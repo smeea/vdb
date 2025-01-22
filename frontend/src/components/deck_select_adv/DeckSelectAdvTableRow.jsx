@@ -31,7 +31,6 @@ import {
   DECKID,
   H,
   HAS_BANNED,
-  HAS_ILLEGAL_DATE,
   HAS_LIMITED,
   HAS_PLAYTEST,
   INVENTORY_TYPE,
@@ -63,7 +62,6 @@ const DeckSelectAdvTableRow = ({
     [HAS_BANNED]: hasBanned,
     [HAS_LIMITED]: hasLimited,
     [HAS_PLAYTEST]: hasPlaytest,
-    [HAS_ILLEGAL_DATE]: hasIllegalDate,
   } = getRestrictions(deck, limitedCards);
 
   const handleClick = () => {
@@ -134,7 +132,6 @@ const DeckSelectAdvTableRow = ({
             {hasBanned && <ResultLegalIcon type={BANNED} />}
             {limitedMode && hasLimited && <ResultLegalIcon />}
             {hasPlaytest && <ResultLegalIcon type={PLAYTEST} />}
-            {hasIllegalDate && <ResultLegalIcon type={LEGAL} value={hasIllegalDate} />}
             {deck[BRANCH_NAME] &&
               (deck[MASTER] || (deck[BRANCHES] && deck[BRANCHES].length > 0)) && (
                 <div className="inline" title={deck[BRANCH_NAME]}>

@@ -5,7 +5,6 @@ import {
   CRYPT,
   CRYPT_TIMER,
   HAS_BANNED,
-  HAS_ILLEGAL_DATE,
   HAS_LIMITED,
   HAS_PLAYTEST,
   LIBRARY,
@@ -36,7 +35,6 @@ const useDeckCrypt = (cardsList, sortMethod = NAME, cardsToList = {}) => {
       [HAS_BANNED]: hasBanned,
       [HAS_LIMITED]: hasLimited,
       [HAS_PLAYTEST]: hasPlaytest,
-      [HAS_ILLEGAL_DATE]: hasIllegalDate,
     } = getRestrictions({ [CRYPT]: cryptFrom, [LIBRARY]: {} }, limitedStore);
 
     const cryptTotal = countCards(cryptFrom);
@@ -49,7 +47,6 @@ const useDeckCrypt = (cardsList, sortMethod = NAME, cardsToList = {}) => {
       hasBanned,
       hasLimited,
       hasPlaytest,
-      hasIllegalDate,
       cryptTotal,
       cryptToTotal,
       cryptGroups,

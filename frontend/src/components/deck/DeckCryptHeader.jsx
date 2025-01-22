@@ -25,15 +25,8 @@ const DeckCryptHeader = ({
   const { disciplinesDetailed } = getKeyDisciplines(cards);
   const isEditable = forceIsEditable || getIsEditable(deck);
 
-  const {
-    hasBanned,
-    hasLimited,
-    hasPlaytest,
-    hasIllegalDate,
-    hasWrongGroups,
-    cryptGroups,
-    cryptTotal,
-  } = useDeckCrypt(deck[CRYPT], sortMethod);
+  const { hasBanned, hasLimited, hasPlaytest, hasWrongGroups, cryptGroups, cryptTotal } =
+    useDeckCrypt(deck[CRYPT], sortMethod);
 
   return (
     <>
@@ -51,7 +44,6 @@ const DeckCryptHeader = ({
                   {hasBanned && <Warning type={BANNED} />}
                   {limitedMode && hasLimited && <Warning type={LIMITED} />}
                   {hasPlaytest && <Warning type={PLAYTEST} />}
-                  {hasIllegalDate && <Warning value={hasIllegalDate} type={LEGAL} />}
                 </>
               )}
             </div>

@@ -15,7 +15,6 @@ import {
   DISCIPLINE,
   GROUPED_TYPE,
   HAS_BANNED,
-  HAS_ILLEGAL_DATE,
   HAS_LIMITED,
   HAS_PLAYTEST,
   LIBRARY,
@@ -55,7 +54,6 @@ const useDeckLibrary = (cardsList, cardsToList = {}) => {
       [HAS_BANNED]: hasBanned,
       [HAS_LIMITED]: hasLimited,
       [HAS_PLAYTEST]: hasPlaytest,
-      [HAS_ILLEGAL_DATE]: hasIllegalDate,
     } = getRestrictions({ [CRYPT]: {}, [LIBRARY]: library }, limitedStore);
 
     const trifleTotal = countCards(library.filter((card) => card.c[TRIFLE]));
@@ -98,7 +96,6 @@ const useDeckLibrary = (cardsList, cardsToList = {}) => {
       hasBanned,
       hasLimited,
       hasPlaytest,
-      hasIllegalDate,
       trifleTotal,
       libraryTotal,
       libraryToTotal,

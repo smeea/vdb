@@ -23,7 +23,6 @@ import {
   HAS_BANNED,
   HAS_LIMITED,
   HAS_PLAYTEST,
-  HAS_ILLEGAL_DATE,
 } from '@/constants';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 import disciplinesList from '@/assets/data/disciplinesList.json';
@@ -66,7 +65,6 @@ export const getRestrictions = (deck, limitedCards) => {
   if (!deck) return {};
 
   let hasPlaytest;
-  let hasIllegalDate;
   let hasBanned;
   let hasLimited;
   [...Object.values(deck[CRYPT]), ...Object.values(deck[LIBRARY])].forEach((card) => {
@@ -85,16 +83,12 @@ export const getRestrictions = (deck, limitedCards) => {
     if (legalRestriction === PLAYTEST) {
       hasPlaytest = true;
     }
-    if (legalRestriction && legalRestriction !== PLAYTEST) {
-      hasIllegalDate = legalRestriction;
-    }
   });
 
   return {
     [HAS_BANNED]: hasBanned,
     [HAS_LIMITED]: hasLimited,
     [HAS_PLAYTEST]: hasPlaytest,
-    [HAS_ILLEGAL_DATE]: hasIllegalDate,
   };
 };
 

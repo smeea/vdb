@@ -1,16 +1,15 @@
 import React from 'react';
 import { twMerge } from 'tailwind-merge';
-import HourglassSplit from '@icons/hourglass-split.svg?react';
 import LightningChargeFill from '@icons/lightning-charge-fill.svg?react';
 import Hammer from '@icons/hammer.svg?react';
 import Exclamation from '@icons/exclamation-triangle.svg?react';
-import { BANNED, LEGAL, PLAYTEST } from '@/constants';
+import { DEFAULT, BANNED, PLAYTEST } from '@/constants';
 
-const ResultLegalIcon = ({ value, type = 'default', className }) => {
+const ResultLegalIcon = ({ value, type = DEFAULT, className }) => {
   const title = {
     [PLAYTEST]: 'Playtest',
     [BANNED]: `Banned in ${value}`,
-    [LEGAL]: `Not Tournament Legal until ${value}`,
+    [DEFAULT]: '',
   };
 
   const icons = {
@@ -18,7 +17,7 @@ const ResultLegalIcon = ({ value, type = 'default', className }) => {
       <LightningChargeFill className="inline" width="15" height="15" viewBox="0 0 16 16" />
     ),
     [BANNED]: <Hammer className="inline" width="15" height="15" viewBox="0 0 16 16" />,
-    [LEGAL]: <HourglassSplit className="inline" width="14" height="14" viewBox="0 0 16 16" />,
+    [DEFAULT]: <Exclamation width="15" height="15" viewBox="0 0 16 16" />,
   };
 
   return (
@@ -27,9 +26,9 @@ const ResultLegalIcon = ({ value, type = 'default', className }) => {
         'inline-flex items-center whitespace-nowrap text-fgRed dark:text-fgRedDark',
         className,
       )}
-      title={title[type] ?? ''}
+      title={title[type]}
     >
-      {icons[type] ?? <Exclamation width="15" height="15" viewBox="0 0 16 16" />}
+      {icons[type]}
     </div>
   );
 };

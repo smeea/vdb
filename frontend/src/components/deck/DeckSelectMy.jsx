@@ -15,7 +15,6 @@ import {
   DECKS,
   H,
   HAS_BANNED,
-  HAS_ILLEGAL_DATE,
   HAS_LIMITED,
   HAS_PLAYTEST,
   INVENTORY_TYPE,
@@ -86,9 +85,6 @@ const DeckSelectMy = ({ deckid, handleSelect }) => {
                   {restrictions[HAS_BANNED] && <ResultLegalIcon type={BANNED} />}
                   {restrictions[HAS_LIMITED] && limitedMode && <ResultLegalIcon />}
                   {restrictions[HAS_PLAYTEST] && <ResultLegalIcon type={PLAYTEST} />}
-                  {restrictions[HAS_ILLEGAL_DATE] && (
-                    <ResultLegalIcon type={LEGAL} value={restrictions[HAS_ILLEGAL_DATE]} />
-                  )}
                 </div>
                 {inventoryMode && (
                   <div>
