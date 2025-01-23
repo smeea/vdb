@@ -1,0 +1,172 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+    --color-black: #000000;
+    --color-blue: #0000aa;
+    --color-darkGray: #606070;
+    --color-darkGrayDark: #404050;
+    --color-lightGray: #a8a8a8;
+    --color-lightGrayDark: #959595;
+    --color-midGray: #858595;
+    --color-midGrayDark: #808090;
+    --color-white: #ffffff;
+    --color-whiteDark: #eeeeee;
+    --color-fgGreen: #00a000;
+    --color-fgGreenDark: #00d000;
+    --color-fgRed: #f01020;
+    --color-fgRedDark: #ee3030;
+    --color-bgRed: #b05050;
+    --color-bgRedDark: #b56060;
+    --color-bgGreen: #659065;
+    --color-bgGreenDark: #709570;
+    --color-bgButton: #ffffff;
+    --color-bgButtonDark: #404050;
+    --color-bgButtonSecondary: #ffffff;
+    --color-bgButtonSecondaryDark: #303040;
+    --color-bgCheckboxSelected: #7070ff;
+    --color-bgCheckboxSelectedDark: #6060d0;
+    --color-bgError: #f04040;
+    --color-bgErrorDark: #901000;
+    --color-bgErrorSecondary: #ff6060;
+    --color-bgErrorSecondaryDark: #b03525;
+    --color-bgNav: #3a3a5a;
+    --color-bgNavDark: #303040;
+    --color-bgPrimary: #ffffff;
+    --color-bgPrimaryDark: #252530;
+    --color-bgSecondary: #e0e5ff;
+    --color-bgSecondaryDark: #353545;
+    --color-bgSuccess: #40d080;
+    --color-bgSuccessDark: #007035;
+    --color-bgThird: #f0f5ff;
+    --color-bgThirdDark: #303040;
+    --color-bgWarning: #ffb050;
+    --color-bgWarningDark: #c06500;
+    --color-borderNestModal: #555570;
+    --color-borderNestModalDark: #404050;
+    --color-borderPrimary: #80b0ff;
+    --color-borderPrimaryDark: #505060;
+    --color-borderSecondary: #b5c5ff;
+    --color-borderSecondaryDark: #404050;
+    --color-borderThird: #b5c5ff;
+    --color-borderThirdDark: #303040;
+    --color-fgName: #2020a0;
+    --color-fgNameDark: #d59000;
+    --color-fgPrimary: #000000;
+    --color-fgPrimaryDark: #eeeeee;
+    --color-fgSecondary: #4646cc;
+    --color-fgSecondaryDark: #80b0ff;
+    --color-fgThird: #2020a0;
+    --color-fgThirdDark: #d0d0ee;
+    --color-fgFourth: #4040a0;
+    --color-fgFourthDark: #9090c0;
+
+    --breakpoint-sm: 768px;
+    --breakpoint-md: 1024px;
+    --breakpoint-lg: 1280px;
+    --breakpoint-xl: 1440px;
+
+    --text-xs: 11px;
+    --text-xs--line-height: 14px;
+    --text-sm: 13px;
+    --text-sm--line-height: 18px;
+    --text-base: 16px;
+    --text-base--line-height: 24px;
+    --text-lg: 18px;
+    --text-lg--line-height: 28px;
+    --text-xl: 20px;
+    --text-xl--line-height: 28px;
+}
+
+@layer base {
+    html {
+        @apply scroll-pt-3 sm:scroll-pt-16
+    }
+    body {
+        @apply text-fgPrimary bg-bgPrimary dark:bg-bgPrimaryDark dark:text-fgPrimaryDark
+    }
+    a {
+        @apply text-fgSecondary dark:text-fgSecondaryDark hover:underline
+    }
+    ul {
+        @apply list-[square] pl-5
+    }
+    li {
+        @apply pl-1.5
+    }
+    th {
+        @apply font-normal
+    }
+}
+
+.row-bg {
+    @apply odd:bg-bgPrimary odd:dark:bg-bgPrimaryDark even:bg-bgThird even:dark:bg-bgThirdDark
+}
+
+.account-container {
+    max-width: 550px;
+}
+.about-container {
+    max-width: 760px;
+}
+.hof-cards-container {
+    max-width: 890px;
+}
+.playtest-reports-container {
+    max-width: 1000px;
+}
+.hof-history-container,
+.playtest-manage-container {
+    max-width: 1140px;
+}
+.hof-tournaments-container,
+.cards-container {
+    max-width: 1355px;
+}
+.deck-container {
+    max-width: 1400px;
+}
+.inventory-container,
+.search-container,
+.navbar-container {
+    max-width: 1600px;
+}
+.twd-container {
+    max-width: 1800px;
+}
+
+.account-container,
+.about-container,
+.hof-cards-container,
+.cards-container,
+.playtest-reports-container,
+.playtest-manage-container,
+.hof-history-container,
+.hof-tournaments-container,
+.deck-container,
+.search-container,
+.twd-container {
+    padding-bottom: 40px;
+    @media (min-width: 768px) {
+        padding: 16px
+    }
+    @media (min-width: 1280px) {
+        padding: 24px
+    }
+    @media (min-width: 1440px) {
+        padding: 32px
+    }
+}
+.inventory-container {
+    padding-bottom: 40px;
+    @media (min-width: 768px) {
+        padding: 16px 16px 0px
+    }
+    @media (min-width: 1280px) {
+        padding: 24px 24px 0px
+    }
+    @media (min-width: 1440px) {
+        padding: 32px 32px 0px
+    }
+}

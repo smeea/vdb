@@ -4,6 +4,7 @@ import react from '@vitejs/plugin-react-swc';
 import legacy from '@vitejs/plugin-legacy';
 import svgr from 'vite-plugin-svgr';
 import { VitePWA } from 'vite-plugin-pwa';
+import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
   server: {
@@ -19,6 +20,7 @@ export default defineConfig({
     },
   },
   plugins: [
+    tailwindcss(),
     legacy({
       targets: ['defaults', 'not IE 11'],
       renderLegacyChunks: true,
