@@ -6,7 +6,7 @@
     "start": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "stylelint": "npx stylelint \"src/assets/css/style.sass\"",
+    "stylelint": "npx stylelint \"src/assets/css/style.css\"",
     "eslint": "npx eslint \"src/**/*.{js,jsx}\"",
     "prettier": "npx prettier --write ."
   },
@@ -16,6 +16,7 @@
     "@eslint/js": "^9.18.0",
     "@floating-ui/react": "^0.27.3",
     "@headlessui/react": "^2.2.0",
+    "@tailwindcss/vite": "^4.0.0",
     "@vitejs/plugin-legacy": "^6.0.0",
     "@vitejs/plugin-react-swc": "^3.7.2",
     "autoprefixer": "^10.4.20",
@@ -33,7 +34,6 @@
     "jspdf": "^2.5.2",
     "jszip": "^3.10.1",
     "ky": "^1.7.4",
-    "postcss": "^8.5.1",
     "prettier": "^3.4.2",
     "prettier-plugin-tailwindcss": "^0.6.10",
     "react": "^19.0.0",
@@ -46,7 +46,6 @@
     "react-virtualized-auto-sizer": "^1.0.25",
     "react-window": "^1.8.11",
     "recharts": "^2.15.0",
-    "sass": "^1.83.4",
     "stylelint": "^16.13.2",
     "stylelint-config-recommended-scss": "^14.1.0",
     "stylelint-order": "^6.0.4",
@@ -60,8 +59,5 @@
     "vite-plugin-pwa": "^0.21.1",
     "vite-plugin-svgr": "^4.3.0",
     "xlsx": "^0.18.5"
-  },
-  "dependencies": {
-    "@tailwindcss/vite": "^4.0.0"
   }
 }

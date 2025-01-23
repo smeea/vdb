@@ -12,13 +12,6 @@ export default defineConfig({
       '/api': 'http://localhost:5000',
     },
   },
-  css: {
-    preprocessorOptions: {
-      sass: {
-        api: 'modern-compiler',
-      },
-    },
-  },
   plugins: [
     tailwindcss(),
     legacy({
