@@ -12,7 +12,7 @@ VDB consist of two components communicating with each other.
 Serve the UI for the modern browsers using:
 ```
    ReactJS (v19)
-   Tailwind CSS
+   TailwindCSS (v4)
 ```
 
 ### BACKEND
@@ -20,9 +20,9 @@ Store user accounts (decks/inventory), generate proxy cards, using:
 
 ```
    Python (v3.12+)
-   Flask
+   Flask (v3)
 ```
-
+ 
 ## INSTALLATION
 
 ### FOR DEVELOPMENT
