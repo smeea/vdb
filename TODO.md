@@ -1,6 +1,7 @@
  FIX
 - Open New/Random queries on mobile for PDA/TWD
 - New/Random in TWD/PDA - too many calls to Location or History APIs
+- Big decks account
 
 # FIX ON HOLD
 - Deck-in-Url trimmed at first card - cant reproduce in dev environment
