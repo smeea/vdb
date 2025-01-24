@@ -97,7 +97,7 @@ const DeckCardQuantity = ({
                   {manual ? (
                     <form onSubmit={handleSubmit}>
                       <input
-                        className="w-[63px] rounded-sm border-2 border-bgSecondary bg-bgPrimary text-center text-fgPrimary outline-1 outline-bgCheckboxSelected focus:outline dark:border-bgSecondaryDark dark:bg-bgPrimaryDark dark:text-fgPrimaryDark dark:outline-bgCheckboxSelectedDark"
+                        className="border-bgSecondary bg-bgPrimary text-fgPrimary outline-bgCheckboxSelected dark:border-bgSecondaryDark dark:bg-bgPrimaryDark dark:text-fgPrimaryDark dark:outline-bgCheckboxSelectedDark otline-1 w-[63px] rounded-sm border-2 text-center focus:outline"
                         placeholder=""
                         type="number"
                         value={state}

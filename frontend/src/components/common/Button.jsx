@@ -11,7 +11,7 @@ const Button = ({
   noOutline,
   noPadding,
   onClick,
-  roundedStyle = 'rounded',
+  roundedStyle = 'rounded-sm',
   tabIndex,
   title,
   type = 'button',
@@ -36,12 +36,11 @@ const Button = ({
   return (
     <button
       className={twMerge(
-        'flex items-center justify-center font-normal focus:outline',
+        'flex items-center justify-center font-normal',
         mainStyle[variant],
         !noPadding && 'px-3 py-1.5',
-        noOutline
-          ? 'outline-0'
-          : 'outline-1 outline-bgCheckboxSelected dark:outline-bgCheckboxSelectedDark',
+        !noOutline &&
+          'outline-bgCheckboxSelected dark:outline-bgCheckboxSelectedDark focus:outline',
         roundedStyle,
         borderStyle,
         className,

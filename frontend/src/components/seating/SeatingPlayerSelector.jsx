@@ -50,7 +50,7 @@ const SeatingPlayerSelector = ({ setPlayer, delPlayer, i, player }) => {
           placeholder="Disabled"
           value={player[STATE] ? (player[RANDOM] ? 'RANDOM' : player[NAME]) : ''}
           onChange={handleChange}
-          roundedStyle="rounded rounded-r-none"
+          roundedStyle="rounded-sm rounded-r-none"
         />
         <Button
           variant={player[RANDOM] && player[STATE] ? 'primary' : 'secondary'}
@@ -62,7 +62,7 @@ const SeatingPlayerSelector = ({ setPlayer, delPlayer, i, player }) => {
       </div>
       <Toggle isOn={player[STATE]} handleClick={toggle} size="lg" />
       <div
-        className="flex cursor-pointer items-center p-0.5 text-fgRed dark:text-fgRedDark"
+        className="text-fgRed dark:text-fgRedDark flex cursor-pointer items-center p-0.5"
         onClick={() => delPlayer(i)}
       >
         <X width="22" height="22" viewBox="0 0 16 16" />

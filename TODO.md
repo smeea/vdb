@@ -2,6 +2,7 @@
 - Open New/Random queries on mobile for PDA/TWD
 - New/Random in TWD/PDA - too many calls to Location or History APIs
 - Big decks account
+- Create resources with empty playtest folder
 
 # FIX ON HOLD
 - Deck-in-Url trimmed at first card - cant reproduce in dev environment
@@ -17,6 +18,5 @@
 - Draft Cube support -> when draft cube info is available
 
 # TECH IMPROVEMENTS
-- Update to TailwindCSS 4
-  - isWidth to container queries
+- Update isWidth to container queries
 - Remove legacy polyfills (groupBy 2024-11-30 87.24%, 2024-12-12 89.08%)

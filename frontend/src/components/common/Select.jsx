@@ -24,7 +24,7 @@ const Select = ({
   onChange,
   options,
   placeholder,
-  roundedStyle = 'rounded',
+  roundedStyle = 'rounded-sm',
   value,
   variant = 'select',
   ref,
@@ -87,12 +87,12 @@ const Select = ({
             : 'px-2 text-borderSecondary dark:text-borderSecondaryDark',
         indicatorsContainer: () =>
           twMerge(
-            'rounded',
+            'rounded-sm',
             variant == 'creatable' || noDropdown ? 'max-h-[0px] max-w-[0px]' : 'py-1.5 ',
           ),
         indicatorSeparator: () => 'bg-borderSecondary dark:bg-borderSecondaryDark',
-        menu: () => 'my-2 rounded border border-borderThird dark:border-borderThirdDark',
-        menuList: () => 'rounded bg-bgPrimary dark:bg-bgPrimaryDark',
+        menu: () => 'my-2 rounded-sm border border-borderThird dark:border-borderThirdDark',
+        menuList: () => 'rounded-sm bg-bgPrimary dark:bg-bgPrimaryDark',
 
         option: (state) =>
           twMerge(
@@ -106,25 +106,25 @@ const Select = ({
         // no bg- in creatable
         valueContainer: () =>
           twMerge(
-            'px-2 min-h-[40px] text-fgPrimary dark:text-fgPrimaryDark bg-bgPrimary dark:bg-bgPrimaryDark rounded',
+            'px-2 min-h-[40px] text-fgPrimary dark:text-fgPrimaryDark bg-bgPrimary dark:bg-bgPrimaryDark rounded-sm',
             variant == 'creatable' && !noBorder && 'p-1.5',
             variant == 'creatable' && 'gap-1',
           ),
-        noOptionsMessage: () => 'rounded p-2',
+        noOptionsMessage: () => 'rounded-sm p-2',
         clearIndicator: () => 'text-lightGray dark:text-lightGrayDark pr-2',
 
         // Async
-        loadingMessage: () => 'rounded p-2',
+        loadingMessage: () => 'rounded-sm p-2',
         loadingIndicator: () => 'text-lightGray dark:text-lightGrayDark pr-2',
 
         // Creatable
         input: () => (noRemove ? 'max-w-[0px] max-h-[0px]' : ''),
-        multiValue: () => 'bg-bgButton dark:bg-bgButtonDark rounded',
+        multiValue: () => 'bg-bgButton dark:bg-bgButtonDark rounded-sm',
         multiValueLabel: () =>
           twMerge(
             'text-sm px-1.5 py-1 border-borderSecondary dark:border-borderSecondaryDark',
             noRemove
-              ? 'border rounded'
+              ? 'border rounded-sm'
               : 'border-l border-y border-borderSecondary dark:border-borderSecondaryDark rounded-l rounded-y',
           ),
         multiValueRemove: () =>

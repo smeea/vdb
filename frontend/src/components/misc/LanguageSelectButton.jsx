@@ -10,13 +10,13 @@ const LanguageSelectButton = () => {
     <Popover className="relative">
       <PopoverButton
         title="Language Select"
-        className="flex h-full min-w-[40px] items-center justify-center focus:outline-none"
+        className="flex h-full min-w-[40px] items-center justify-center focus:outline-hidden"
       >
         <Flag value={lang} noTitle />
       </PopoverButton>
       <PopoverPanel anchor={{ to: 'bottom', gap: '15px', padding: '4px' }} className="z-50">
         {({ close }) => (
-          <div className="rounded border border-borderPrimary bg-bgPrimary p-3 dark:border-borderPrimaryDark dark:bg-bgPrimaryDark">
+          <div className="border-borderPrimary bg-bgPrimary dark:border-borderPrimaryDark dark:bg-bgPrimaryDark rounded-sm border p-3">
             <LanguageMenu handleClose={close} />
           </div>
         )}

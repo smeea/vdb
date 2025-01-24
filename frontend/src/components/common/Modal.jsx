@@ -28,7 +28,7 @@ const Modal = ({
 
   return (
     <Dialog initialFocus={initialFocus || ref} onClose={handleClose} className="relative z-50" open>
-      <div className="fixed inset-0 bg-black bg-opacity-50" aria-hidden="true" />
+      <div className="bg-opacity-50 fixed inset-0 bg-black" aria-hidden="true" />
       <div className="fixed inset-0 overflow-y-auto">
         <div
           className={twMerge(
@@ -39,10 +39,10 @@ const Modal = ({
         >
           <Dialog.Panel
             className={twMerge(
-              'flex flex-col gap-1 rounded border-bgSecondary bg-bgPrimary dark:border-bgSecondaryDark dark:bg-bgPrimaryDark',
+              'border-bgSecondary bg-bgPrimary dark:border-bgSecondaryDark dark:bg-bgPrimaryDark flex flex-col gap-1 rounded-sm',
               widthClass[size],
               !noBorder && 'border',
-              !noPadding && 'px-5 pb-5 pt-4 max-sm:px-3 max-sm:pb-3 max-sm:pt-2',
+              !noPadding && 'px-5 pt-4 pb-5 max-sm:px-3 max-sm:pt-2 max-sm:pb-3',
               className,
             )}
           >
@@ -50,7 +50,7 @@ const Modal = ({
               <Dialog.Title className="flex items-center justify-between border-none">
                 <div
                   className={twMerge(
-                    'text-lg font-bold text-fgSecondary dark:text-fgSecondaryDark',
+                    'text-fgSecondary dark:text-fgSecondaryDark text-lg font-bold',
                     noPadding && 'px-2 pt-2',
                   )}
                 >

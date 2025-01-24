@@ -115,7 +115,7 @@ const TwdHallOfFameCards = () => {
           </Tab.Panel>
           <Tab.Panel>
             <div className="flex flex-col gap-1.5">
-              <div className="rounded border border-borderPrimary p-3 dark:border-borderPrimaryDark">
+              <div className="border-borderPrimary dark:border-borderPrimaryDark rounded-sm border p-3">
                 Only counts cards first appeared in TWD {INNOVATION_PERIOD / 365} years after card
                 print, and excluding cards from first 2 years of active tournaments (till{' '}
                 {IGNORED_BEFORE_DATE})

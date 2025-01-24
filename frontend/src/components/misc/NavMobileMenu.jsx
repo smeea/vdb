@@ -15,7 +15,7 @@ const LinkItem = ({ target, icon, text, handleClose }) => {
         to={target}
         onClick={handleClose}
         className={({ isActive }) =>
-          `flex items-center gap-2 px-3 py-1.5 text-fgThird dark:text-fgPrimaryDark ${
+          `text-fgThird dark:text-fgPrimaryDark flex items-center gap-2 px-3 py-1.5 ${
             isActive ? 'bg-borderPrimary dark:bg-borderPrimaryDark' : ''
           }`
         }
@@ -42,14 +42,14 @@ const NavMobileMenu = ({ isLimited, setShowMenu }) => {
   return (
     <Popover className="relative">
       <PopoverButton
-        className="flex h-full items-center px-1 text-white focus:outline-none"
+        className="flex h-full items-center px-1 text-white focus:outline-hidden"
         aria-label="Menu"
       >
         <List width="30" height="30" viewBox="0 0 16 16" />
       </PopoverButton>
       <PopoverPanel anchor={{ to: 'top', gap: '9px', padding: '4px' }} className="z-50">
         {({ close }) => (
-          <div className="flex flex-col rounded-lg border border-borderPrimary bg-bgPrimary text-lg text-fgPrimary dark:border-borderPrimaryDark dark:bg-bgPrimaryDark dark:text-fgPrimaryDark">
+          <div className="border-borderPrimary bg-bgPrimary text-fgPrimary dark:border-borderPrimaryDark dark:bg-bgPrimaryDark dark:text-fgPrimaryDark flex flex-col rounded-lg border text-lg">
             <LinkItem
               target="/account"
               text={username ? 'Account' : 'Login'}

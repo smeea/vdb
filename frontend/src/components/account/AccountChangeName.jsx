@@ -47,7 +47,7 @@ const AccountChangeName = () => {
 
   return (
     <div className="flex flex-col gap-2">
-      <div className="flex items-center gap-2 text-lg font-bold text-fgSecondary dark:text-fgSecondaryDark">
+      <div className="text-fgSecondary dark:text-fgSecondaryDark flex items-center gap-2 text-lg font-bold">
         <div className="flex min-w-[23px] justify-center">
           <PenFill />
         </div>
@@ -62,7 +62,7 @@ const AccountChangeName = () => {
             placeholder="Public name"
             defaultValue={data?.[NAME]}
             name={NAME}
-            roundedStyle="rounded rounded-r-none"
+            roundedStyle="rounded-sm rounded-r-none"
           />
           <Button
             disabled={pending}

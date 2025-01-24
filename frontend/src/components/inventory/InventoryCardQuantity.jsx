@@ -42,7 +42,7 @@ const InventoryCardQuantity = ({ card, softUsedMax, hardUsedTotal, compact, newF
                 className={twMerge(
                   'mx-1 flex w-full justify-center',
                   state < softUsedMax + hardUsedTotal &&
-                    'bg-bgError text-white dark:bg-bgErrorDark dark:text-whiteDark',
+                    'bg-bgError dark:bg-bgErrorDark dark:text-whiteDark text-white',
                 )}
               >
                 {card.t && <div className="min-w-[4px]"></div>}
@@ -61,7 +61,7 @@ const InventoryCardQuantity = ({ card, softUsedMax, hardUsedTotal, compact, newF
                     ? ''
                     : `mx-1 flex w-full justify-center ${
                         state < softUsedMax + hardUsedTotal
-                          ? 'bg-bgError text-white dark:bg-bgErrorDark dark:text-whiteDark'
+                          ? 'bg-bgError dark:bg-bgErrorDark dark:text-whiteDark text-white'
                           : ''
                       }`
                 }
@@ -70,7 +70,7 @@ const InventoryCardQuantity = ({ card, softUsedMax, hardUsedTotal, compact, newF
                 {manual ? (
                   <form onSubmit={handleSubmit}>
                     <input
-                      className="w-[63px] rounded-sm border-2 border-bgSecondary bg-bgPrimary text-center text-fgPrimary outline-1 outline-bgCheckboxSelected focus:outline dark:border-bgSecondaryDark dark:bg-bgPrimaryDark dark:text-fgPrimaryDark dark:outline-bgCheckboxSelectedDark"
+                      className="border-bgSecondary bg-bgPrimary text-fgPrimary outline-bgCheckboxSelected dark:border-bgSecondaryDark dark:bg-bgPrimaryDark dark:text-fgPrimaryDark dark:outline-bgCheckboxSelectedDark w-[63px] rounded-sm border-2 text-center focus:outline"
                       placeholder=""
                       type="number"
                       autoFocus={true}
@@ -96,7 +96,7 @@ const InventoryCardQuantity = ({ card, softUsedMax, hardUsedTotal, compact, newF
           className={twMerge(
             'mx-1 my-2 flex w-full items-center justify-center',
             state < softUsedMax + hardUsedTotal &&
-              'bg-bgError text-white dark:bg-bgErrorDark dark:text-whiteDark',
+              'bg-bgError dark:bg-bgErrorDark dark:text-whiteDark text-white',
           )}
         >
           {card.t && <div className="min-w-[4px]"></div>}

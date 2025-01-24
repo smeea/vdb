@@ -15,13 +15,13 @@ const Textarea = ({
   readOnly = false,
   className,
   borderStyle = 'border',
-  roundedStyle = 'rounded',
+  roundedStyle = 'rounded-sm',
   ref,
 }) => {
   return (
     <TextareaHUI
       className={twMerge(
-        'w-full rounded border-borderSecondary bg-bgPrimary px-1.5 py-1 outline-1 outline-bgCheckboxSelected placeholder:text-midGray focus:outline dark:border-borderSecondaryDark dark:bg-bgPrimaryDark dark:outline-bgCheckboxSelectedDark dark:placeholder:text-midGrayDark',
+        'border-borderSecondary bg-bgPrimary outline-bgCheckboxSelected placeholder:text-midGray dark:border-borderSecondaryDark dark:bg-bgPrimaryDark dark:outline-bgCheckboxSelectedDark dark:placeholder:text-midGrayDark w-full rounded-sm px-1.5 py-1 focus:outline',
         className,
         borderStyle,
         roundedStyle,

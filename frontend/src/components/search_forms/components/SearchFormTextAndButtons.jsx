@@ -64,13 +64,13 @@ const SearchFormTextAndButtons = ({
             value={text}
             onChange={(e) => setText(e.target.value)}
             borderStyle="max-sm:border sm:border-y sm:border-l"
-            roundedStyle="sm:rounded-r-none rounded"
+            roundedStyle="sm:rounded-r-none rounded-sm"
           />
           {!isMobile && (
             <>
               {preresults > showLimit && (
                 <ButtonIconed
-                  className="whitespace-nowrap rounded-l-none rounded-r-none"
+                  className="rounded-l-none rounded-r-none whitespace-nowrap"
                   borderStyle="border-y border-l border-r-none"
                   onClick={handleShowResults}
                   text={`SHOW ${preresults}`}

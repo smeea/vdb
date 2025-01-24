@@ -87,9 +87,9 @@ const TwdHallFameCardsPlayer = ({ name, cards }) => {
   });
 
   return (
-    <div className="rounded border border-borderPrimary bg-bgThird dark:border-borderPrimaryDark dark:bg-bgThirdDark">
+    <div className="border-borderPrimary bg-bgThird dark:border-borderPrimaryDark dark:bg-bgThirdDark rounded-sm border">
       <Disclosure.Button className="w-full p-3">
-        <div className="flex items-center gap-4 px-2 text-fgName dark:text-fgNameDark">
+        <div className="text-fgName dark:text-fgNameDark flex items-center gap-4 px-2">
           <div className="flex items-center gap-1">
             <div>{Object.keys(cards).length}</div>
             <LightbulbFill height="13" width="13" viewBox="0 0 18 18" />
@@ -124,7 +124,7 @@ const TwdHallFameCardsPlayer = ({ name, cards }) => {
           inHoF={true}
         />
         <table className="border-bgSecondary dark:border-bgSecondaryDark sm:border">
-          <thead className="bg-bgSecondary font-bold text-fgSecondary dark:bg-bgSecondaryDark dark:text-fgSecondaryDark">
+          <thead className="bg-bgSecondary text-fgSecondary dark:bg-bgSecondaryDark dark:text-fgSecondaryDark font-bold">
             <tr>
               <th />
               {!isMobile && <th />}
@@ -167,7 +167,7 @@ const TwdHallFameCardsPlayer = ({ name, cards }) => {
           setSortMethod={changeLibrarySearchSort}
           inHoF
         />
-        <table className="w-full border-bgSecondary dark:border-bgSecondaryDark sm:border">
+        <table className="border-bgSecondary dark:border-bgSecondaryDark w-full sm:border">
           <thead className="bg-bgSecondary text-fgSecondary dark:bg-bgSecondaryDark dark:text-fgSecondaryDark">
             <tr>
               <th />

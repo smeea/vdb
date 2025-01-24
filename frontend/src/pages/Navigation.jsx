@@ -30,10 +30,10 @@ const Link = ({ to, end, icon, text, title }) => {
       title={title}
       className={({ isActive }) =>
         twMerge(
-          'flex h-full w-full items-center justify-center outline-none hover:no-underline',
+          'flex h-full w-full items-center justify-center outline-hidden hover:no-underline',
           icon ? 'sm:px-3' : 'pb-[2px] sm:px-2',
           isActive
-            ? 'bg-borderNestModal text-white dark:bg-borderNestModalDark dark:text-whiteDark'
+            ? 'bg-borderNestModal dark:bg-borderNestModalDark dark:text-whiteDark text-white'
             : 'text-lightGray dark:text-lightGrayDark',
         )
       }
@@ -93,7 +93,7 @@ const Navigation = () => {
     0;
 
   return (
-    <nav className="z-50 bg-bgNav dark:bg-bgNavDark max-sm:fixed max-sm:bottom-0 max-sm:w-full sm:sticky sm:top-0 print:hidden">
+    <nav className="bg-bgNav dark:bg-bgNavDark z-50 max-sm:fixed max-sm:bottom-0 max-sm:w-full sm:sticky sm:top-0 print:hidden">
       <div className="navbar-container mx-auto flex h-10 justify-between sm:gap-3">
         {!isMobile && (
           <div className="flex items-center gap-6">
@@ -149,9 +149,9 @@ const Navigation = () => {
             title="Quick Card Search"
             className={({ isActive }) =>
               twMerge(
-                'flex h-full items-center justify-center px-2 outline-none hover:no-underline sm:px-3',
+                'flex h-full items-center justify-center px-2 outline-hidden hover:no-underline sm:px-3',
                 isActive
-                  ? 'bg-borderNestModal text-white dark:bg-borderNestModalDark dark:text-whiteDark'
+                  ? 'bg-borderNestModal dark:bg-borderNestModalDark dark:text-whiteDark text-white'
                   : 'text-lightGray dark:text-lightGrayDark',
               )
             }

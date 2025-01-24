@@ -195,7 +195,7 @@ const DeckImportAmaranth = ({ setShow }) => {
           <Input
             placeholder="e.g. https://amaranth.co.nz/deck#my-best-deck-id"
             className="text-xl"
-            roundedStyle="rounded rounded-r-none"
+            roundedStyle="rounded-sm rounded-r-none"
             type="url"
             value={deckUrl}
             onChange={onChange}

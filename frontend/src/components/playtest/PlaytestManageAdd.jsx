@@ -53,7 +53,7 @@ const PlaytestManageAdd = ({ playtesters, newPlaytesters, setNewPlaytesters }) =
             name="username"
             value={username}
             onChange={handleChange}
-            roundedStyle="rounded rounded-r-none"
+            roundedStyle="rounded-sm rounded-r-none"
           />
           {error && <ErrorOverlay placement="bottom">{error}</ErrorOverlay>}
         </div>

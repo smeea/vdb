@@ -7,19 +7,19 @@ const Radio = ({ value, label }) => {
     <Field className="flex items-center gap-2">
       <RadioHUI
         value={value}
-        className="group flex size-3.5 items-center justify-center rounded-full border bg-white hover:cursor-pointer focus:outline-none"
+        className="group flex size-3.5 items-center justify-center rounded-full border bg-white hover:cursor-pointer focus:outline-hidden"
       >
         {({ checked, disabled }) => (
           <span
             className={twMerge(
               checked &&
-                'size-0.5 rounded-full ring-[5px] ring-bgCheckboxSelected ring-offset-2 dark:ring-bgCheckboxSelectedDark',
+                'ring-bgCheckboxSelected dark:ring-bgCheckboxSelectedDark size-0.5 rounded-full ring-[5px] ring-offset-2',
               disabled && 'opacity-60',
             )}
           />
         )}
       </RadioHUI>
-      <Label className="font-bold text-fgSecondary hover:cursor-pointer dark:text-fgSecondaryDark">
+      <Label className="text-fgSecondary dark:text-fgSecondaryDark font-bold hover:cursor-pointer">
         {label}
       </Label>
     </Field>

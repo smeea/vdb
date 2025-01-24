@@ -38,7 +38,7 @@ const Checkbox = ({
     <Field disabled={disabled} className={twMerge('items-top flex', textStyle[size], className)}>
       <CheckboxHUI
         className={twMerge(
-          'rounded outline-2 outline-fgSecondaryDark focus:outline dark:outline-fgSecondaryDark',
+          'outline-fgSecondaryDark dark:outline-fgSecondaryDark rounded-sm focus:outline-2',
           boxStyle[size],
         )}
         checked={checked}
@@ -49,17 +49,17 @@ const Checkbox = ({
         {({ checked, disabled }) => (
           <div
             className={twMerge(
-              'block rounded border border-borderPrimary dark:border-none',
-              !checked && !disabled && 'bg-white dark:bg-whiteDark',
+              'border-borderPrimary block rounded-sm border dark:border-none',
+              !checked && !disabled && 'dark:bg-whiteDark bg-white',
               checked &&
                 !disabled &&
-                'border-none bg-bgCheckboxSelected dark:bg-bgCheckboxSelectedDark',
-              disabled && 'bg-midGray opacity-60 dark:bg-midGrayDark',
+                'bg-bgCheckboxSelected dark:bg-bgCheckboxSelectedDark border-none',
+              disabled && 'bg-midGray dark:bg-midGrayDark opacity-60',
             )}
           >
             <svg
               className={twMerge(
-                'stroke-white dark:stroke-whiteDark',
+                'dark:stroke-whiteDark stroke-white',
                 checked ? 'opacity-100' : 'opacity-0',
               )}
               viewBox="0 0 14 14"

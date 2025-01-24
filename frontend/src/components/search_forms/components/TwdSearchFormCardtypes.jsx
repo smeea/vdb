@@ -33,7 +33,7 @@ const TypeForm = ({ isManual, handleManual, value = ANY, name, options, onChange
         {isManual ? (
           <div className="flex items-center justify-between gap-1">
             <input
-              className="min-h-[42px] w-full rounded border border-borderSecondary bg-bgPrimary text-center text-fgPrimary outline-1 outline-bgCheckboxSelected focus:outline dark:border-borderSecondaryDark dark:bg-bgPrimaryDark dark:text-fgPrimaryDark dark:outline-bgCheckboxSelectedDark"
+              className="border-borderSecondary bg-bgPrimary text-fgPrimary outline-bgCheckboxSelected dark:border-borderSecondaryDark dark:bg-bgPrimaryDark dark:text-fgPrimaryDark dark:outline-bgCheckboxSelectedDark min-h-[42px] w-full rounded-sm border text-center focus:outline"
               type="number"
               value={min}
               name={name.toLowerCase()}
@@ -42,7 +42,7 @@ const TypeForm = ({ isManual, handleManual, value = ANY, name, options, onChange
             />
             -
             <input
-              className="min-h-[42px] w-full rounded border border-borderSecondary bg-bgPrimary text-center text-fgPrimary outline-1 outline-bgCheckboxSelected focus:outline dark:border-borderSecondaryDark dark:bg-bgPrimaryDark dark:text-fgPrimaryDark dark:outline-bgCheckboxSelectedDark"
+              className="border-borderSecondary bg-bgPrimary text-fgPrimary outline-bgCheckboxSelected dark:border-borderSecondaryDark dark:bg-bgPrimaryDark dark:text-fgPrimaryDark dark:outline-bgCheckboxSelectedDark min-h-[42px] w-full rounded-sm border text-center focus:outline"
               type="number"
               name={name.toLowerCase()}
               id="max"
@@ -160,7 +160,7 @@ const TwdSearchFormCardtypes = ({ value, onChange }) => {
   return (
     <div className="flex flex-col gap-2">
       <div className="flex justify-between gap-2">
-        <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
+        <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">
           Library Card Types:
         </div>
         <Toggle isOn={isManual} handleClick={() => setIsManual(!isManual)}>

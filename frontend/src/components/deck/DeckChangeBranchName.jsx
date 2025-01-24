@@ -48,7 +48,7 @@ const DeckChangeBranchName = ({ deck }) => {
         onChange={handleChange}
         onBlur={handleOnBlur}
         readOnly={!isEditable}
-        roundedStyle="rounded max-sm:rounded-none"
+        roundedStyle="rounded-sm max-sm:rounded-none"
       />
       {deck[IS_AUTHOR] && (
         <Button

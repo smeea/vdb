@@ -14,13 +14,13 @@ const MenuButton = ({ title, icon, variant = 'primary', className, text }) => {
   return (
     <Menu.Button
       className={twMerge(
-        'flex min-h-[41px] w-full items-center justify-center gap-2 rounded px-3 py-1.5 text-fgThird outline-1 outline-bgCheckboxSelected focus:outline dark:text-fgThirdDark dark:outline-bgCheckboxSelectedDark',
+        'text-fgThird outline-bgCheckboxSelected dark:text-fgThirdDark dark:outline-bgCheckboxSelectedDark flex min-h-[41px] w-full items-center justify-center gap-2 rounded-sm px-3 py-1.5 focus:outline',
         mainStyle[variant],
         className,
       )}
       title={title}
     >
-      <div className="flex items-center text-fgFourth dark:text-fgPrimaryDark">{icon}</div>
+      <div className="text-fgFourth dark:text-fgPrimaryDark flex items-center">{icon}</div>
       {text && <div>{text}</div>}
     </Menu.Button>
   );

@@ -13,7 +13,7 @@ const AccountPasswordForm = ({ defaultValue, success, isOld, isNew }) => {
   return (
     <>
       <Input
-        roundedStyle={`rounded ${isOld ? '' : 'rounded-r-none'}`}
+        roundedStyle={`rounded-sm ${isOld ? '' : 'rounded-r-none'}`}
         placeholder={isNew ? 'New Password' : 'Password'}
         type={hidePassword ? 'password' : 'text'}
         autoComplete={isNew ? NEW_PASSWORD : PASSWORD}

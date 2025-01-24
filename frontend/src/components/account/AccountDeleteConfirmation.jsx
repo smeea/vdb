@@ -44,7 +44,7 @@ const AccountDeleteConfirmation = ({ setShow }) => {
                     type={hidePassword ? 'password' : 'text'}
                     name={PASSWORD}
                     defaultValue={data?.[PASSWORD]}
-                    roundedStyle="rounded rounded-r-none"
+                    roundedStyle="rounded-sm rounded-r-none"
                     autoFocus
                     required
                   />
