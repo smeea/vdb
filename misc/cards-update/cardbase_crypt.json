@@ -26296,9 +26296,22 @@
         "path":"",
         "rulings":[
             {
-                "text":"His ability can be used to meet one (not both) of the normal Discipline requirements of a multi-Discipline card.",
+                "text":"Can be used to meet one (but not more than one) of the normal Discipline requirements of a multi-Discipline card.",
                 "refs":{
-                    "LSJ 20011217":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/vZ13bh7FEvQ/m/KaZlbqc4LO0J"
+                    "LSJ 20011217":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/vZ13bh7FEvQ/m/KaZlbqc4LO0J",
+                    "LSJ 20090508":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/B7dz3qoIITQ/m/0YV5PNQvijsJ"
+                }
+            },
+            {
+                "text":"While a minion has an effect that allows them to play cards that require Discipline(s), they do not actually have those Discipline(s).",
+                "refs":{
+                    "LSJ 19980303":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Q_kKQiACZqk/m/Nu-cOlCq1cgJ"
+                }
+            },
+            {
+                "text":"Multiple similar effects (e.g. two {Infernal Familiar}, or {Ian Forestal} with an {Infernal Familiar}) cannot be used to meet the requirements of a multi-Discipline card that the minion is missing one or more Disciplines to play.",
+                "refs":{
+                    "LSJ 20020218":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/o59KNX0R1Ls/m/QHnuE-mmSj0J"
                 }
             }
         ],
