@@ -339,7 +339,7 @@
         },
         "text":"Camarilla: During an action, Abraham can discard a card requiring Blood Sorcery [tha] to get +1 intercept or +1 stealth.",
         "title":"",
-        "twd":5
+        "twd":6
     },
     "201634":{
         "adv":"",
@@ -636,7 +636,7 @@
         },
         "text":"Camarilla: Adisa can enter combat with an ally or younger vampire as a (D) action. If she successfully hunts, she does not unlock as normal during her next unlock phase.",
         "title":"",
-        "twd":4
+        "twd":5
     },
     "200014":{
         "adv":"",
@@ -769,7 +769,7 @@
         },
         "text":"Anarch Baron of Manaus: Adrino gets 1 press (mandatory) each combat, only usable to continue combat.",
         "title":"baron",
-        "twd":27
+        "twd":29
     },
     "200017":{
         "adv":"",
@@ -1120,7 +1120,7 @@
         },
         "text":"Camarilla: Aidan gets 1 optional press each combat.",
         "title":"",
-        "twd":3
+        "twd":4
     },
     "200026":{
         "adv":"",
@@ -1374,7 +1374,7 @@
         },
         "text":"Camarilla: Younger Tremere cannot block Aisling.",
         "title":"",
-        "twd":78
+        "twd":79
     },
     "200032":{
         "adv":"",
@@ -2370,7 +2370,7 @@
         },
         "text":"Camarilla Prince of Nairobi.",
         "title":"prince",
-        "twd":10
+        "twd":11
     },
     "200054":{
         "adv":"",
@@ -2490,7 +2490,7 @@
         },
         "text":"Anarch Baron of Mannheim: Once each turn, Aline can burn 1 blood to unlock after another Anarch you control performs a successful action.",
         "title":"baron",
-        "twd":37
+        "twd":39
     },
     "200055":{
         "adv":"",
@@ -2632,7 +2632,7 @@
         },
         "text":"Camarilla.",
         "title":"",
-        "twd":35
+        "twd":36
     },
     "200059":{
         "adv":"",
@@ -2769,7 +2769,7 @@
         },
         "text":"Independent: Blood cursed.",
         "title":"",
-        "twd":42
+        "twd":43
     },
     "201577":{
         "adv":"",
@@ -2846,7 +2846,7 @@
         },
         "text":"Sabbat Archbishop of Pittsburgh: After resolution of any political action, if Alvaro abstained (even in torpor), he can gain 2 blood. +1 bleed.",
         "title":"archbishop",
-        "twd":35
+        "twd":36
     },
     "200064":{
         "adv":"",
@@ -3134,7 +3134,7 @@
         },
         "text":"Sabbat cardinal: Mon\u00e7ada cannot block. Actions directed at him cost 1 additional pool. If he is ready during your discard phase, you can unlock another ready Lasombra.",
         "title":"cardinal",
-        "twd":47
+        "twd":48
     },
     "200071":{
         "adv":"",
@@ -3456,7 +3456,7 @@
         },
         "text":"Anarch: As the convert enters play, you can remove him from the game to make a non-titled vampire you control Anarch and either gain 1 pool or draw 1 card from your crypt.",
         "title":"",
-        "twd":387
+        "twd":389
     },
     "200077":{
         "adv":"",
@@ -3602,7 +3602,7 @@
         },
         "text":"Camarilla Prince of Taipei.",
         "title":"prince",
-        "twd":25
+        "twd":26
     },
     "200080":{
         "adv":"",
@@ -3665,7 +3665,7 @@
         },
         "text":"Camarilla: If a vampire you control would successfully bleed, you can reduce the bleed amount by 1 to give Andre +2 bleed this turn.",
         "title":"",
-        "twd":56
+        "twd":57
     },
     "200081":{
         "adv":"",
@@ -4072,7 +4072,7 @@
         },
         "text":"Anarch Baron of Ciudad Ju\u00e1rez.",
         "title":"baron",
-        "twd":30
+        "twd":32
     },
     "200090":{
         "adv":"",
@@ -4443,7 +4443,7 @@
         },
         "text":"Anarch.",
         "title":"",
-        "twd":4
+        "twd":5
     },
     "200097":{
         "adv":"",
@@ -5272,7 +5272,7 @@
         },
         "text":"Sabbat Archbishop of Atlanta: If Antonio performs a political action whose referendum passes, he can unlock during the discard phase.",
         "title":"archbishop",
-        "twd":31
+        "twd":32
     },
     "200118":{
         "adv":"",
@@ -5467,7 +5467,7 @@
         },
         "text":"Sabbat.",
         "title":"",
-        "twd":49
+        "twd":51
     },
     "200123":{
         "adv":"",
@@ -5666,7 +5666,7 @@
         },
         "text":"Camarilla.",
         "title":"",
-        "twd":2
+        "twd":3
     },
     "200127":{
         "adv":"",
@@ -5892,7 +5892,7 @@
         },
         "text":"Anarch: Ariane gets -1 stealth during undirected actions.",
         "title":"",
-        "twd":26
+        "twd":27
     },
     "200133":{
         "adv":"",
@@ -6008,7 +6008,7 @@
         },
         "text":"Camarilla Ventrue Inner Circle: If Arika is ready during your prey's unlock phase, your prey chooses which locations he or she keeps in play. For each location he or she controls, your prey burns 1 pool or burns the location. +2 bleed.",
         "title":"inner circle",
-        "twd":124
+        "twd":125
     },
     "200136":{
         "adv":"",
@@ -6075,7 +6075,7 @@
         },
         "text":"Independent. 1 vote (titled): During the polling step of any referendum, Arishat can burn 1 blood to force a vampire to abstain. Infernal.",
         "title":"1 vote",
-        "twd":60
+        "twd":61
     },
     "200137":{
         "adv":"",
@@ -6455,7 +6455,7 @@
         },
         "text":"Independent: During a combat, Asguresh can cancel a combat card played by the opposing minion as it is played, and its cost is not paid. Scarce.",
         "title":"",
-        "twd":5
+        "twd":6
     },
     "200146":{
         "adv":"",
@@ -6587,7 +6587,7 @@
         },
         "text":"Camarilla.",
         "title":"",
-        "twd":7
+        "twd":9
     },
     "200147":{
         "adv":"",
@@ -6708,7 +6708,7 @@
         },
         "text":"Anarch Baron of Mombasa.",
         "title":"baron",
-        "twd":47
+        "twd":49
     },
     "200149":{
         "adv":"",
@@ -6922,7 +6922,7 @@
         },
         "text":"Camarilla Prince of Addis Ababa.",
         "title":"prince",
-        "twd":15
+        "twd":16
     },
     "200153":{
         "adv":"",
@@ -6987,7 +6987,7 @@
         },
         "text":"Camarilla: If Ayse is ready, you can use a discard phase action to add 1 blood to her.",
         "title":"",
-        "twd":2
+        "twd":3
     },
     "200154":{
         "adv":"",
@@ -7132,7 +7132,7 @@
         },
         "text":"Camarilla: Azucena gets +1 intercept against younger Lasombra and -1 intercept against older Lasombra.",
         "title":"",
-        "twd":1
+        "twd":2
     },
     "200157":{
         "adv":"",
@@ -8368,7 +8368,7 @@
         },
         "text":"Camarilla Prince of Copenhagen.",
         "title":"prince",
-        "twd":8
+        "twd":9
     },
     "200188":{
         "adv":"",
@@ -8469,7 +8469,7 @@
         },
         "text":"Anarch Baron of Fortaleza.",
         "title":"baron",
-        "twd":9
+        "twd":10
     },
     "200190":{
         "adv":"",
@@ -8507,7 +8507,7 @@
         },
         "text":"Camarilla Prince of Washington, D.C.: Benjamin can call a referendum to give you +1 hand size until the end of the game as a +1 stealth political action.",
         "title":"prince",
-        "twd":16
+        "twd":17
     },
     "200191":{
         "adv":"",
@@ -8749,7 +8749,7 @@
         },
         "text":"Camarilla.",
         "title":"",
-        "twd":15
+        "twd":16
     },
     "200197":{
         "adv":"",
@@ -9301,7 +9301,7 @@
         },
         "text":"Camarilla: Blythe gets -1 strength when in combat with a Malkavian.",
         "title":"",
-        "twd":73
+        "twd":74
     },
     "200211":{
         "adv":"",
@@ -9579,7 +9579,7 @@
         },
         "text":"Camarilla.",
         "title":"",
-        "twd":2
+        "twd":3
     },
     "201581":{
         "adv":"",
@@ -9614,7 +9614,7 @@
         },
         "text":"Anarch.",
         "title":"",
-        "twd":8
+        "twd":9
     },
     "201667":{
         "adv":"",
@@ -9646,7 +9646,7 @@
         },
         "text":"Anarch Baron of Sofia: While you have 9 or fewer pool, Branimira gets +1 intercept.",
         "title":"baron",
-        "twd":26
+        "twd":29
     },
     "200217":{
         "adv":"",
@@ -9711,7 +9711,7 @@
         },
         "text":"Camarilla: Bret gets -1 intercept against titled vampires.",
         "title":"",
-        "twd":2
+        "twd":3
     },
     "200218":{
         "adv":"",
@@ -10855,7 +10855,7 @@
         },
         "text":"Camarilla: While Carmelita is ready, you get +1 hand size.",
         "title":"",
-        "twd":2
+        "twd":3
     },
     "200246":{
         "adv":"",
@@ -11139,7 +11139,7 @@
         },
         "text":"Anarch Baron of Columbus.",
         "title":"baron",
-        "twd":89
+        "twd":92
     },
     "200252":{
         "adv":"",
@@ -11246,7 +11246,7 @@
         },
         "text":"Camarilla.",
         "title":"",
-        "twd":25
+        "twd":27
     },
     "201668":{
         "adv":"",
@@ -11344,7 +11344,7 @@
         },
         "text":"Camarilla Prince of Buenos Aires: +1 bleed.",
         "title":"prince",
-        "twd":13
+        "twd":15
     },
     "200256":{
         "adv":"",
@@ -12140,7 +12140,7 @@
         },
         "text":"Camarilla primogen.",
         "title":"primogen",
-        "twd":13
+        "twd":14
     },
     "201638":{
         "adv":"",
@@ -12237,7 +12237,7 @@
         },
         "text":"Anarch.",
         "title":"",
-        "twd":20
+        "twd":23
     },
     "200276":{
         "adv":"",
@@ -12588,7 +12588,7 @@
         },
         "text":"Anarch.",
         "title":"",
-        "twd":7
+        "twd":8
     },
     "200285":{
         "adv":"",
@@ -13422,7 +13422,7 @@
         },
         "text":"Anarch.",
         "title":"",
-        "twd":39
+        "twd":40
     },
     "200305":{
         "adv":"",
@@ -13700,7 +13700,7 @@
         },
         "text":"Camarilla: Dan may take an action to allow you to go though your library, find Giant's Blood, and take it into your hand (reshuffle afterwards and discard to your maximum hand size).",
         "title":"",
-        "twd":15,
+        "twd":16,
         "Card Text":"Camarilla: Dan may take an action to allow you to go though your library, find /Giant's Blood/, and take it into your hand (reshuffle afterwards and discard to your maximum hand size)."
     },
     "200313":{
@@ -14967,7 +14967,7 @@
         },
         "text":"Camarilla Toreador Justicar: During a referendum she calls, Diana can burn 1 blood to cancel a reaction card as it is played (cost is still paid). +1 bleed.",
         "title":"justicar",
-        "twd":6
+        "twd":7
     },
     "200342":{
         "adv":"",
@@ -15145,7 +15145,7 @@
         },
         "text":"Camarilla.",
         "title":"",
-        "twd":43
+        "twd":44
     },
     "200347":{
         "adv":"",
@@ -16125,7 +16125,7 @@
         },
         "text":"Camarilla Prince of Pittsburgh.",
         "title":"prince",
-        "twd":8
+        "twd":9
     },
     "200368":{
         "adv":"",
@@ -16556,7 +16556,7 @@
         },
         "text":"Sabbat bishop: Younger vampires must burn 1 blood to attempt to block Julius.",
         "title":"bishop",
-        "twd":17
+        "twd":18
     },
     "200379":{
         "adv":[
@@ -16634,7 +16634,7 @@
         },
         "text":"Independent.",
         "title":"",
-        "twd":3
+        "twd":4
     },
     "200381":{
         "adv":"",
@@ -17136,7 +17136,7 @@
         },
         "text":"Camarilla.",
         "title":"",
-        "twd":40
+        "twd":41
     },
     "200393":{
         "adv":"",
@@ -17422,7 +17422,7 @@
         },
         "text":"Camarilla: If Eddie successfully hunts, he does not unlock as normal during his next unlock phase.",
         "title":"",
-        "twd":30
+        "twd":32
     },
     "200401":{
         "adv":"",
@@ -17695,7 +17695,7 @@
         },
         "text":"Anarch: If you control a locked minion, Elen must bleed with +1 bleed as a (D) action unless she must hunt.",
         "title":"",
-        "twd":31
+        "twd":33
     },
     "200407":{
         "adv":"",
@@ -17946,7 +17946,7 @@
         },
         "text":"Anarch Baron of Pittsburgh.",
         "title":"baron",
-        "twd":55
+        "twd":56
     },
     "200413":{
         "adv":"",
@@ -18178,7 +18178,7 @@
         },
         "text":"Sabbat.",
         "title":"",
-        "twd":95
+        "twd":96
     },
     "200419":{
         "adv":"",
@@ -19029,7 +19029,7 @@
         },
         "text":"Camarilla Tremere Inner Circle: Etrius may steal up to 3 blood from a Tremere vampire as a +1 stealth (D) action. +2 bleed.",
         "title":"inner circle",
-        "twd":32
+        "twd":33
     },
     "200441":{
         "adv":"",
@@ -19530,7 +19530,7 @@
         },
         "text":"Sabbat Archbishop of Miami: If your prey controls no ready Camarilla vampires, Fabrizia gets two fewer votes in each referendum.",
         "title":"archbishop",
-        "twd":17
+        "twd":18
     },
     "200453":{
         "adv":"",
@@ -19777,7 +19777,7 @@
         },
         "text":"Anarch: Minions with any of your corruption counters in combat with Faruq cannot strike: combat ends. +1 strength.",
         "title":"",
-        "twd":3
+        "twd":4
     },
     "200458":{
         "adv":"",
@@ -20243,7 +20243,7 @@
         },
         "text":"Independent: Blood cursed.",
         "title":"",
-        "twd":1
+        "twd":2
     },
     "201547":{
         "adv":"",
@@ -20278,7 +20278,7 @@
         },
         "text":"Camarilla Prince of S\u00e3o Paulo: Once each combat, Fl\u00e1vio can strike: dodge.",
         "title":"prince",
-        "twd":14
+        "twd":16
     },
     "200470":{
         "adv":"",
@@ -20520,7 +20520,7 @@
         },
         "text":"Sabbat Archbishop of New York: Once each turn, Francisco can burn 1 blood to get +1 bleed for the current action.",
         "title":"archbishop",
-        "twd":42
+        "twd":43
     },
     "200477":{
         "adv":"",
@@ -21008,7 +21008,7 @@
         },
         "text":"Anarch: Once each combat, Gabriel can discard a card requiring an Anarch to get +1 strength that combat. -1 stealth.",
         "title":"",
-        "twd":1
+        "twd":2
     },
     "200489":{
         "adv":"",
@@ -21588,7 +21588,7 @@
         },
         "text":"Sabbat priscus: Genevieve gets one additional vote during each political action.",
         "title":"priscus",
-        "twd":48
+        "twd":49
     },
     "200502":{
         "adv":[
@@ -22190,7 +22190,7 @@
         },
         "text":"Camarilla Prince of Miami.",
         "title":"prince",
-        "twd":72
+        "twd":73
     },
     "201617":{
         "adv":"",
@@ -22328,7 +22328,7 @@
         },
         "text":"Independent: During another Methuselah's discard phase, you can discard one card (draw up afterward). Vampires must burn 1 blood to attempt to block Giotto. Infernal.",
         "title":"",
-        "twd":21
+        "twd":23
     },
     "200521":{
         "adv":"",
@@ -22584,7 +22584,7 @@
         },
         "text":"Camarilla Prince of Lima: If Aemilius is ready during your unlock phase, your prey chooses a ready minion they control; the chosen minion takes 1 unpreventable damage.",
         "title":"prince",
-        "twd":1
+        "twd":2
     },
     "200527":{
         "adv":"",
@@ -22863,7 +22863,7 @@
         },
         "text":"Camarilla Prince of Miami.",
         "title":"prince",
-        "twd":79
+        "twd":80
     },
     "200534":{
         "adv":"",
@@ -22916,7 +22916,7 @@
         },
         "text":"Sabbat priscus: Gratiano gets +1 ballot. +1 bleed.",
         "title":"priscus",
-        "twd":74
+        "twd":76
     },
     "200535":{
         "adv":"",
@@ -23053,7 +23053,7 @@
         },
         "text":"Camarilla.",
         "title":"",
-        "twd":10
+        "twd":11
     },
     "200538":{
         "adv":"",
@@ -23995,7 +23995,7 @@
         },
         "text":"Camarilla: Camarilla vampires must burn 1 blood to attempt to block Hafsa. Banu Haqim get +1 bleed against you. Blood cursed.",
         "title":"",
-        "twd":23
+        "twd":24
     },
     "200560":{
         "adv":"",
@@ -24323,7 +24323,7 @@
         },
         "text":"Sabbat.",
         "title":"",
-        "twd":59
+        "twd":60
     },
     "200568":{
         "adv":"",
@@ -24544,7 +24544,7 @@
         },
         "text":"Camarilla Nosferatu Inner Circle: During your unlock phase, you may look at a card in your prey's uncontrolled region. +2 bleed.",
         "title":"inner circle",
-        "twd":12
+        "twd":13
     },
     "200574":{
         "adv":"",
@@ -24618,7 +24618,7 @@
         },
         "text":"Sabbat Archbishop of Berlin: Any vampire casting votes or ballots against a referendum called by Hartmut burns 1 blood once results are tallied. You can burn the Edge during your discard phase to gain 1 pool.",
         "title":"archbishop",
-        "twd":43
+        "twd":45
     },
     "200576":{
         "adv":"",
@@ -24727,7 +24727,7 @@
         },
         "text":"Independent. 2 votes (titled): Non-Ravnos vampires must burn 2 blood to announce an action (if it is not canceled as played) directed at Hazimel or a card or counter on him. +1 bleed.",
         "title":"2 votes",
-        "twd":2
+        "twd":3
     },
     "200579":{
         "adv":"",
@@ -25510,7 +25510,7 @@
         },
         "text":"Independent: While Angra is ready, your prey gets -1 hand size. During a non-bleed action, he can burn the Edge to get +1 stealth. Infernal.",
         "title":"",
-        "twd":4
+        "twd":5
     },
     "200598":{
         "adv":"",
@@ -26091,7 +26091,7 @@
         },
         "text":"Independent: If Huitzilopochtli is ready during your master phase, you can burn 1 pool to get +1 master phase action. Infernal. +1 bleed.",
         "title":"",
-        "twd":22
+        "twd":23
     },
     "200612":{
         "adv":"",
@@ -26272,7 +26272,7 @@
         },
         "text":"Camarilla Tremere Justicar: Once each turn after a combat involving Ian ends, he can unlock if the opposing minion is not ready. +1 intercept.",
         "title":"justicar",
-        "twd":0
+        "twd":1
     },
     "200616":{
         "adv":"",
@@ -26934,7 +26934,7 @@
         },
         "text":"Anarch.",
         "title":"",
-        "twd":70
+        "twd":71
     },
     "201551":{
         "adv":"",
@@ -26966,7 +26966,7 @@
         },
         "text":"Camarilla Prince of Rio de Janeiro.",
         "title":"prince",
-        "twd":9
+        "twd":10
     },
     "200632":{
         "adv":"",
@@ -27087,7 +27087,7 @@
         },
         "text":"Camarilla Prince of Geneva: If Ingrid is ready at the start of your influence phase, you get +2 transfers.",
         "title":"prince",
-        "twd":85
+        "twd":87
     },
     "200635":{
         "adv":"",
@@ -27371,7 +27371,7 @@
         },
         "text":"Camarilla.",
         "title":"",
-        "twd":136
+        "twd":137
     },
     "200643":{
         "adv":"",
@@ -27937,7 +27937,7 @@
         },
         "text":"Sabbat.",
         "title":"",
-        "twd":45
+        "twd":47
     },
     "200659":{
         "adv":"",
@@ -30503,7 +30503,7 @@
         },
         "text":"Anarch.",
         "title":"",
-        "twd":15
+        "twd":16
     },
     "200724":{
         "adv":"",
@@ -31349,7 +31349,7 @@
         },
         "text":"Camarilla primogen: During your turn, you can burn the Edge to unlock Kalinda.",
         "title":"primogen",
-        "twd":14
+        "twd":17
     },
     "200746":{
         "adv":"",
@@ -31419,7 +31419,7 @@
         },
         "text":"Camarilla primogen.",
         "title":"primogen",
-        "twd":1
+        "twd":2
     },
     "200747":{
         "adv":"",
@@ -31513,7 +31513,7 @@
         },
         "text":"Anarch: +1 bleed.",
         "title":"",
-        "twd":79
+        "twd":81
     },
     "200749":{
         "adv":[
@@ -31703,7 +31703,7 @@
         },
         "text":"Camarilla Prince of Houston: While Karen is a prince, Gehenna events do not affect her. She gets +1 stealth on undirected actions.",
         "title":"prince",
-        "twd":42
+        "twd":43
     },
     "200754":{
         "adv":"",
@@ -32098,7 +32098,7 @@
         },
         "text":"Camarilla Prince of Thessaloniki.",
         "title":"prince",
-        "twd":28
+        "twd":31
     },
     "200760":{
         "adv":"",
@@ -32477,7 +32477,7 @@
         },
         "text":"Anarch: Once each turn, Keegan can unlock after performing a successful action requiring a Gangrel.",
         "title":"",
-        "twd":7
+        "twd":9
     },
     "200767":{
         "adv":"",
@@ -32934,7 +32934,7 @@
         },
         "text":"Camarilla primogen.",
         "title":"primogen",
-        "twd":26
+        "twd":28
     },
     "200776":{
         "adv":"",
@@ -33771,7 +33771,7 @@
         },
         "text":"Anarch Baron of Santiago: Animals (allies and retainers) cost Kuy\u00e9n -1 blood or pool.",
         "title":"baron",
-        "twd":83
+        "twd":87
     },
     "200797":{
         "adv":"",
@@ -34389,7 +34389,7 @@
         },
         "text":"Sabbat cardinal: Once each combat, Lambach can burn 1 blood to make the damage from his hand strikes aggravated for the current round. +1 strength.",
         "title":"cardinal",
-        "twd":41
+        "twd":42
     },
     "200811":{
         "adv":[
@@ -34646,7 +34646,7 @@
         },
         "text":"Anarch.",
         "title":"",
-        "twd":8
+        "twd":9
     },
     "201554":{
         "adv":"",
@@ -34677,7 +34677,7 @@
         },
         "text":"Camarilla.",
         "title":"",
-        "twd":6
+        "twd":7
     },
     "200817":{
         "adv":"",
@@ -35067,7 +35067,7 @@
         },
         "text":"Camarilla Malkavian Inner Circle: During each other Methuselah's unlock phase, if Leandro is ready, that Methuselah chooses either to burn 1 pool or to lose all transfers during his or her next influence phase. +2 bleed.",
         "title":"inner circle",
-        "twd":62
+        "twd":63
     },
     "200827":{
         "adv":"",
@@ -35407,7 +35407,7 @@
         },
         "text":"Anarch Baron of Canberra.",
         "title":"baron",
-        "twd":43
+        "twd":45
     },
     "200834":{
         "adv":"",
@@ -35816,7 +35816,7 @@
         },
         "text":"Sabbat: Allies and retainers requiring a Tzimisce or Vicissitude [vic] cost the Tailor -1 blood or pool. +1 bleed.",
         "title":"",
-        "twd":37
+        "twd":38
     },
     "200845":{
         "adv":"",
@@ -38223,7 +38223,7 @@
         },
         "text":"Camarilla primogen: If Maila is ready during your turn, you can discard a political action card [POLITICAL ACTION] to give a minion you control +1 stealth for the current action.",
         "title":"primogen",
-        "twd":7
+        "twd":8
     },
     "200899":{
         "adv":"",
@@ -38464,7 +38464,7 @@
         },
         "text":"Anarch: Primogen get +1 vote in referendums called by Maldavis.\n[MERGED] Baron of Chicago.",
         "title":"",
-        "twd":14
+        "twd":16
     },
     "200905":{
         "adv":"",
@@ -38636,7 +38636,7 @@
         },
         "text":"Anarch.",
         "title":"",
-        "twd":38
+        "twd":39
     },
     "200909":{
         "adv":"",
@@ -39219,7 +39219,7 @@
         },
         "text":"Camarilla Prince of Barcelona.",
         "title":"prince",
-        "twd":1
+        "twd":2
     },
     "200922":{
         "adv":[
@@ -39332,7 +39332,7 @@
         },
         "text":"Anarch: If Marialena is blocked, she burns 1 blood before block resolution.",
         "title":"",
-        "twd":19
+        "twd":22
     },
     "200924":{
         "adv":"",
@@ -39868,7 +39868,7 @@
         },
         "text":"Camarilla Prince of Milwaukee: Mark gets an additional +1 strength in combat with a werewolf. +1 strength.",
         "title":"prince",
-        "twd":25
+        "twd":26
     },
     "200938":{
         "adv":"",
@@ -40001,7 +40001,7 @@
         },
         "text":"Sabbat: When Marta diablerizes an older vampire, she gains a blood (after receiving a master: Discipline card, if any).",
         "title":"",
-        "twd":19
+        "twd":21
     },
     "200942":{
         "adv":"",
@@ -40097,7 +40097,7 @@
         },
         "text":"Camarilla: Martin gets -1 bleed when bleeding a Methuselah who controls neither a ready Tremere nor a ready Tremere antitribu.",
         "title":"",
-        "twd":63
+        "twd":64
     },
     "201601":{
         "adv":"",
@@ -40128,7 +40128,7 @@
         },
         "text":"Anarch: Martina gets +1 intercept during bleed actions.",
         "title":"",
-        "twd":61
+        "twd":63
     },
     "200944":{
         "adv":"",
@@ -40462,7 +40462,7 @@
         },
         "text":"Camarilla.",
         "title":"",
-        "twd":38
+        "twd":39
     },
     "200953":{
         "adv":"",
@@ -40527,7 +40527,7 @@
         },
         "text":"Camarilla.",
         "title":"",
-        "twd":1
+        "twd":2
     },
     "200954":{
         "adv":"",
@@ -40594,7 +40594,7 @@
         },
         "text":"Anarch Baron of Belo Horizonte: +1 strength.",
         "title":"baron",
-        "twd":80
+        "twd":82
     },
     "201558":{
         "adv":"",
@@ -40716,7 +40716,7 @@
         },
         "text":"Independent. 2 votes (titled): You and Mata Hari can play cards requiring a sect and/or clan as if she were of that required sect and/or clan. Red List.",
         "title":"2 votes",
-        "twd":14
+        "twd":15
     },
     "200956":{
         "adv":"",
@@ -40821,7 +40821,7 @@
         },
         "text":"Camarilla.",
         "title":"",
-        "twd":5
+        "twd":6
     },
     "200958":{
         "adv":"",
@@ -40893,7 +40893,7 @@
         },
         "text":"Sabbat: If Mateusz is Sabbat and not Black Hand, he can become Black Hand as a +1 stealth action that costs 1 blood.",
         "title":"",
-        "twd":5
+        "twd":7
     },
     "200960":{
         "adv":"",
@@ -41331,7 +41331,7 @@
         },
         "text":"Anarch.",
         "title":"",
-        "twd":6
+        "twd":7
     },
     "200969":{
         "adv":"",
@@ -41799,7 +41799,7 @@
         },
         "text":"Sabbat priscus: Cards requiring Vicissitude [vic] cost Meshenka -1 blood.",
         "title":"priscus",
-        "twd":57
+        "twd":58
     },
     "200981":{
         "adv":"",
@@ -42063,7 +42063,7 @@
         },
         "text":"Sabbat: Infernal. Animal retainers lose their abilities while Midget is acting or is in combat.",
         "title":"",
-        "twd":56
+        "twd":58
     },
     "200986":{
         "adv":"",
@@ -42277,7 +42277,7 @@
         },
         "text":"Anarch.",
         "title":"",
-        "twd":11
+        "twd":12
     },
     "200991":{
         "adv":"",
@@ -42349,7 +42349,7 @@
         },
         "text":"Camarilla.",
         "title":"",
-        "twd":1
+        "twd":2
     },
     "200992":{
         "adv":"",
@@ -42844,7 +42844,7 @@
         },
         "text":"Camarilla Prince of Cape Town.",
         "title":"prince",
-        "twd":15
+        "twd":17
     },
     "201703":{
         "adv":"",
@@ -43663,7 +43663,7 @@
         },
         "text":"Camarilla Prince of Istanbul: Combat cards requiring Serpentis [ser] cost Ministers an additional blood when in combat with Murat.",
         "title":"prince",
-        "twd":52
+        "twd":53
     },
     "201023":{
         "adv":"",
@@ -44348,7 +44348,7 @@
         },
         "text":"Anarch.",
         "title":"",
-        "twd":70
+        "twd":71
     },
     "201632":{
         "adv":"",
@@ -44454,7 +44454,7 @@
         },
         "text":"Camarilla.",
         "title":"",
-        "twd":18
+        "twd":19
     },
     "201040":{
         "adv":"",
@@ -44788,7 +44788,7 @@
         },
         "text":"Sabbat: +1 intercept.",
         "title":"",
-        "twd":115
+        "twd":116
     },
     "201047":{
         "adv":"",
@@ -44980,7 +44980,7 @@
         },
         "text":"Anarch: While you control no locations, Neserian gets -1 bleed. While you control 1 or more locations, Neserian gets +1 vote.",
         "title":"",
-        "twd":15
+        "twd":16
     },
     "201050":{
         "adv":"",
@@ -45099,7 +45099,7 @@
         },
         "text":"Sabbat: As New Blood enters play during your influence phase, choose any circle and draw 1 card from your crypt. New Blood belongs to the chosen circle. Sterile.",
         "title":"",
-        "twd":45
+        "twd":47
     },
     "201053":{
         "adv":"",
@@ -45194,7 +45194,7 @@
         },
         "text":"Sabbat.",
         "title":"",
-        "twd":43
+        "twd":44
     },
     "201056":{
         "adv":"",
@@ -45410,7 +45410,7 @@
         },
         "text":"Camarilla Prince of Brussels: During your unlock phase, you may move 1 blood from Nikolaus to any Nosferatu in your uncontrolled region.",
         "title":"prince",
-        "twd":63
+        "twd":64
     },
     "201705":{
         "adv":"",
@@ -45449,7 +45449,7 @@
         },
         "text":"Camarilla Prince of Brussels: During your influence phase, you can burn the Edge to add 1 blood to a Nosferatu in your uncontrolled region.",
         "title":"prince",
-        "twd":2
+        "twd":3
     },
     "201061":{
         "adv":"",
@@ -46346,7 +46346,7 @@
         },
         "text":"Independent: Blood cursed.",
         "title":"",
-        "twd":5
+        "twd":6
     },
     "201081":{
         "adv":"",
@@ -47673,7 +47673,7 @@
         },
         "text":"Camarilla: Once each action, Persia can burn 1 blood to get +1 intercept.",
         "title":"",
-        "twd":69
+        "twd":71
     },
     "201112":{
         "adv":[
@@ -48590,7 +48590,7 @@
         },
         "text":"Anarch.",
         "title":"",
-        "twd":16
+        "twd":17
     },
     "201133":{
         "adv":"",
@@ -49447,7 +49447,7 @@
         },
         "text":"Anarch: Cards requiring Protean [pro] cost Ragnar -1 blood. Ragnar gets +1 strength in combat with an ally or younger vampire.",
         "title":"",
-        "twd":5
+        "twd":6
     },
     "201154":{
         "adv":"",
@@ -50019,7 +50019,7 @@
         },
         "text":"Anarch.",
         "title":"",
-        "twd":10
+        "twd":11
     },
     "201169":{
         "adv":"",
@@ -50759,7 +50759,7 @@
         },
         "text":"Sabbat: Richard gets -1 intercept when attempting to block Lasombra and Tzimisce.",
         "title":"",
-        "twd":38
+        "twd":39
     },
     "201187":{
         "adv":"",
@@ -51532,7 +51532,7 @@
         },
         "text":"Sabbat.",
         "title":"",
-        "twd":41
+        "twd":42
     },
     "201650":{
         "adv":"",
@@ -52336,7 +52336,7 @@
         },
         "text":"Sabbat.",
         "title":"",
-        "twd":99
+        "twd":100
     },
     "201223":{
         "adv":"",
@@ -52438,7 +52438,7 @@
         },
         "text":"Anarch Baron of Helsinki: Saku gets 1 optional maneuver each combat.",
         "title":"baron",
-        "twd":21
+        "twd":23
     },
     "201224":{
         "adv":"",
@@ -53451,7 +53451,7 @@
         },
         "text":"Independent: Damage Baali inflict on Saulot is reduced to 0. During your unlock phase, you can move 2 blood from him to a vampire in play or in your uncontrolled region. Scarce. +1 bleed. +1 strength.",
         "title":"",
-        "twd":30
+        "twd":31
     },
     "201249":{
         "adv":"",
@@ -53979,7 +53979,7 @@
         },
         "text":"Camarilla Prince of Cleveland: Selma gets +1 intercept when attempting to block a Nosferatu vampire.",
         "title":"prince",
-        "twd":46
+        "twd":47
     },
     "201263":{
         "adv":"",
@@ -54990,7 +54990,7 @@
         },
         "text":"Anarch.",
         "title":"",
-        "twd":13
+        "twd":14
     },
     "201286":{
         "adv":"",
@@ -55134,7 +55134,7 @@
         },
         "text":"Camarilla: During your unlock phase, you can move 1 blood from a prince you control to Silvian.",
         "title":"",
-        "twd":1
+        "twd":2
     },
     "201289":{
         "adv":"",
@@ -55340,7 +55340,7 @@
         },
         "text":"Sabbat.",
         "title":"",
-        "twd":18
+        "twd":19
     },
     "201295":{
         "adv":"",
@@ -56084,7 +56084,7 @@
         },
         "text":"Camarilla Gangrel Inner Circle: Retainers employed by minions opposing Stanislava in combat lose their abilities. Allies cannot block her. +2 bleed.",
         "title":"inner circle",
-        "twd":76
+        "twd":78
     },
     "201313":{
         "adv":"",
@@ -56442,7 +56442,7 @@
         },
         "text":"Camarilla Prince of Cairo: Suhailah gets +1 stealth on each of her actions if your prey has a ready prince or justicar. +1 bleed.",
         "title":"prince",
-        "twd":34
+        "twd":35
     },
     "201323":{
         "adv":"",
@@ -56677,7 +56677,7 @@
         },
         "text":"Anarch.",
         "title":"",
-        "twd":6
+        "twd":7
     },
     "201327":{
         "adv":"",
@@ -58318,7 +58318,7 @@
         },
         "text":"Anarch: Theo can enter combat with a minion as a (D) action. +1 strength.",
         "title":"",
-        "twd":15
+        "twd":16
     },
     "201364":{
         "adv":"",
@@ -59197,7 +59197,7 @@
         },
         "text":"Camarilla.",
         "title":"",
-        "twd":13
+        "twd":14
     },
     "201387":{
         "adv":"",
@@ -60023,7 +60023,7 @@
         },
         "text":"Sabbat.",
         "title":"",
-        "twd":73
+        "twd":74
     },
     "201409":{
         "adv":"",
@@ -60494,7 +60494,7 @@
         },
         "text":"Camarilla.",
         "title":"",
-        "twd":3
+        "twd":4
     },
     "201653":{
         "adv":"",
@@ -60647,7 +60647,7 @@
         },
         "text":"Anarch Baron of Moscow: +1 strength.",
         "title":"baron",
-        "twd":44
+        "twd":46
     },
     "201423":{
         "adv":"",
@@ -61086,7 +61086,7 @@
         },
         "text":"Sabbat cardinal: Once each combat, Velya can discard one card requiring Auspex [aus] to get 1 press.",
         "title":"cardinal",
-        "twd":20
+        "twd":21
     },
     "201435":{
         "adv":"",
@@ -61502,7 +61502,7 @@
         },
         "text":"Camarilla: While Victoria is ready, you can discard 1 card during a bleed action to give an acting Banu Haqim +1 bleed. +1 bleed.",
         "title":"",
-        "twd":2
+        "twd":3
     },
     "201445":{
         "adv":"",
@@ -62023,7 +62023,7 @@
         },
         "text":"Anarch Baron of Johannesburg.",
         "title":"baron",
-        "twd":58
+        "twd":59
     },
     "201456":{
         "adv":"",
@@ -62452,7 +62452,7 @@
         },
         "text":"Camarilla Prince of Algiers.",
         "title":"prince",
-        "twd":28
+        "twd":31
     },
     "201464":{
         "adv":"",
@@ -62675,7 +62675,7 @@
         },
         "text":"Anarch.",
         "title":"",
-        "twd":21
+        "twd":22
     },
     "201467":{
         "adv":"",
@@ -62935,7 +62935,7 @@
         },
         "text":"Camarilla: Wise Frog strikes with first strike in combat with a younger vampire. Blood cursed.",
         "title":"",
-        "twd":1
+        "twd":2
     },
     "201473":{
         "adv":"",
@@ -63171,7 +63171,7 @@
         },
         "text":"Camarilla Gangrel Justicar: You can unlock Xaviar after a referendum called by him passes.",
         "title":"justicar",
-        "twd":25
+        "twd":26
     },
     "201479":{
         "adv":"",
@@ -63571,7 +63571,7 @@
         },
         "text":"Camarilla Prince of Singapore: During the polling step of any referendum, Yewon can discard a card requiring Oblivion [obl] to get +1 vote.",
         "title":"prince",
-        "twd":1
+        "twd":2
     },
     "201487":{
         "adv":"",
@@ -64457,7 +64457,7 @@
         },
         "text":"Camarilla: Z\u00f6e does not get the usual +1 stealth when hunting.",
         "title":"",
-        "twd":135
+        "twd":136
     },
     "201510":{
         "adv":"",
