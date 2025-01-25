@@ -101,7 +101,7 @@ def get_decks_by_location(location, decks):
     city = location["city"] if "city" in location else ""
     match_decks = []
     for deck in decks:
-        if country in deck["location"] and city in deck["location"]:
+        if deck["location"].startswith(city) and deck["location"].endswith(country):
             match_decks.append(deck)
 
     return match_decks
