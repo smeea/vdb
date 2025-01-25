@@ -2,6 +2,7 @@
 - Open New/Random queries on mobile for PDA/TWD
 - New/Random in TWD/PDA - too many calls to Location or History APIs
 - Create resources with empty playtest folder
+- Country to be last in TWD search
 
 # FIX ON HOLD
 - Deck-in-Url trimmed at first card - cant reproduce in dev environment

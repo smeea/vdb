@@ -70,8 +70,8 @@ const DeckTags = ({ deck, noAutotags, isBordered, allTagsOptions }) => {
         value={tagList}
         placeholder="Click to add tags"
         noOptionsMessage={() => 'Enter new tag'}
-        roundedStyle={twMerge('rounded-sm', isEditable && 'rounded-r-none')}
-        borderStyle={isEditable ? 'border-y border-l border-r-none' : 'border'}
+        roundedStyle={twMerge('rounded-sm', isEditable && !noAutotags && 'rounded-r-none')}
+        borderStyle={isEditable && !noAutotags ? 'border-y border-l border-r-none' : 'border'}
       />
       {!noAutotags && isEditable && (
         <ButtonIconed

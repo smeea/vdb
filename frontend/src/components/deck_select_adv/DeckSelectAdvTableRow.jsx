@@ -75,7 +75,7 @@ const DeckSelectAdvTableRow = ({
   const clan = getClan(deck[CRYPT]);
 
   return (
-    <tr className="row-bg h-[41px] border-y border-bgSecondary dark:border-bgSecondaryDark">
+    <tr className="row-bg border-bgSecondary dark:border-bgSecondaryDark h-[41px] border-y">
       {!(short || isMobile) && (
         <td className="min-w-[30px]">
           <Checkbox
@@ -123,7 +123,7 @@ const DeckSelectAdvTableRow = ({
         onClick={handleClick}
       >
         <div
-          className="flex justify-between gap-2 text-fgName dark:text-fgNameDark"
+          className="text-fgName dark:text-fgNameDark flex justify-between gap-2"
           title={deck[NAME]}
         >
           {deck[NAME]}
@@ -151,7 +151,7 @@ const DeckSelectAdvTableRow = ({
       )}
       {(short || !isNarrow) && (
         <td
-          className="min-w-[100px] cursor-pointer whitespace-nowrap text-center sm:min-w-[105px]"
+          className="min-w-[100px] cursor-pointer text-center whitespace-nowrap sm:min-w-[105px]"
           onClick={handleClick}
         >
           {dayjs(deck[TIMESTAMP]).format('YYYY-MM-DD')}
@@ -159,7 +159,7 @@ const DeckSelectAdvTableRow = ({
       )}
       {!short && (
         <>
-          <td className="w-full">
+          <td className="w-full px-1 max-sm:px-0.5">
             <DeckTags
               deck={deck}
               allTagsOptions={allTagsOptions}
