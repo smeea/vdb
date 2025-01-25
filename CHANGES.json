@@ -1,6 +1,6 @@
 [
   {
-    "version": "2025-01-25",
+    "version": "2025-01-25/1",
     "changes": [
       "Fix login issues and few small other things",
       "Update Rulings",
@@ -8,7 +8,7 @@
     ]
   },
   {
-    "version": "2025-01-18/1",
+    "version": "2025-01-18",
     "changes": [
       "Add antitribu legacy images for Brujah, Gangrel, Malkavian, Nosferatu and Toreador",
       "Update Rulings",

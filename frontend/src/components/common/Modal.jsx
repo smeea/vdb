@@ -28,7 +28,7 @@ const Modal = ({
 
   return (
     <Dialog initialFocus={initialFocus || ref} onClose={handleClose} className="relative z-50" open>
-      <div className="bg-opacity-50 fixed inset-0 bg-black" aria-hidden="true" />
+      <div className="fixed inset-0 bg-black opacity-50" aria-hidden="true" />
       <div className="fixed inset-0 overflow-y-auto">
         <div
           className={twMerge(
