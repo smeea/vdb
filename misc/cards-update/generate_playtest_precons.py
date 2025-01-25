@@ -2,22 +2,12 @@ import json
 from deck_import import deck_import
 
 
-playtest_files = {
-    "precon-caine-round2.txt": "SCai",
-    "precon-cathari-round2.txt": "SCat",
-    "precon-death-round2.txt": "SDS",
-    "precon-power-round2.txt": "SPIV",
-    "precon-nb-ravnos-round4.txt": "NR",
-    "precon-nb-salubri-round4.txt": "NSal",
-    "precon-nb-tzimisce-round4.txt": "NTz",
-    "precon-nb-hecata-round4.txt": "NH",
-    "precon-nb-lasombra-round4.txt": "NL",
-    "precon-hecata-round4.txt": "PH",
-}
+with open("playtest/precons.json", "r") as precons_file:
+    precons = json.load(precons_file)
 
 playtest_cards = {}
 
-for file, precon in playtest_files.items():
+for file, precon in precons.items():
     try:
         with open(f"playtest/precons/{file}", "r", encoding="utf8") as deck_file:
             precon_deck = " ".join(str(x) for x in deck_file.readlines())
