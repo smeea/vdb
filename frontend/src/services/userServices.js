@@ -16,7 +16,7 @@ export const login = (username, password) => {
   return ky(LOGIN_URL, options)
     .then((data) => data.json())
     .catch((e) => {
-      return { [ERROR]: e.response.status };
+      return { [ERROR]: e?.response.status };
     });
 };
 
@@ -39,7 +39,7 @@ export const register = (username, password, email) => {
   return ky(ACCOUNT_URL, options)
     .then((data) => data.json())
     .catch((e) => {
-      return { [ERROR]: e.response.status };
+      return { [ERROR]: e?.response.status };
     });
 };
 
@@ -55,7 +55,7 @@ export const changePassword = (password, newPassword) => {
   return ky(ACCOUNT_URL, options)
     .then((data) => data.json())
     .catch((e) => {
-      return { [ERROR]: e.response.status };
+      return { [ERROR]: e?.response.status };
     });
 };
 
@@ -71,7 +71,7 @@ export const changeEmail = async (password, email) => {
   return ky(ACCOUNT_URL, options)
     .then((data) => data.json())
     .catch((e) => {
-      return { [ERROR]: e.response.status };
+      return { [ERROR]: e?.response.status };
     });
 };
 
@@ -84,7 +84,7 @@ export const changeName = (publicName) => {
   return ky(ACCOUNT_URL, options)
     .then((data) => data.json())
     .catch((e) => {
-      return { [ERROR]: e.response.status };
+      return { [ERROR]: e?.response.status };
     });
 };
 
@@ -97,6 +97,6 @@ export const deleteAccount = (password) => {
   return ky(ACCOUNT_URL, options)
     .then((data) => data.json())
     .catch((e) => {
-      return { [ERROR]: e.response.status };
+      return { [ERROR]: e?.response.status };
     });
 };

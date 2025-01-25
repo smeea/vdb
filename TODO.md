@@ -1,7 +1,6 @@
  FIX
 - Open New/Random queries on mobile for PDA/TWD
 - New/Random in TWD/PDA - too many calls to Location or History APIs
-- Big decks account
 - Create resources with empty playtest folder
 
 # FIX ON HOLD
