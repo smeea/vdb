@@ -3,17 +3,19 @@ import { BarChart, Bar, XAxis, YAxis, Label, Tooltip, Legend } from 'recharts';
 import { NAME } from '@/constants';
 const SEEN = 'seen';
 const NOT_SEEN = 'notSeen';
+const BLUE = '6565cc';
+const ORANGE = 'd57020';
 
 const ChartTooltip = ({ active, payload }) => {
   const value = payload?.[0]?.payload;
   return (
-    <div className="z-50 flex flex-col gap-0.5 rounded-md border border-bgSecondary bg-bgPrimary p-1 dark:border-bgSecondaryDark dark:bg-bgPrimaryDark">
+    <div className="border-bgSecondary bg-bgPrimary dark:border-bgSecondaryDark dark:bg-bgPrimaryDark z-50 flex flex-col gap-0.5 rounded-md border p-1">
       {active && (
         <div className="flex flex-col gap-2 p-1">
-          <div className="flex justify-between gap-2 text-[#6565cc]">
+          <div className={`text-[#${BLUE}] flex justify-between gap-2`}>
             Seen: <div className="flex">{value[SEEN]}</div>
           </div>
-          <div className="flex justify-between gap-2 text-[#d57020]">
+          <div className={`flex justify-between gap-2 text-[#${ORANGE}]`}>
             Not Seen: <div className="flex">{value[NOT_SEEN]}</div>
           </div>
         </div>
@@ -74,8 +76,8 @@ const PlaytestScoresChart = ({ value, maxSameScore }) => {
         itemStyle={{ color: 'white' }}
       />
       <Legend align="right" verticalAlign="top" />
-      <Bar name="Seen in Play" dataKey={SEEN} stackId="a" fill="#6565cc" />
-      <Bar name="Not Seen" dataKey={NOT_SEEN} stackId="a" fill="#d57020" />
+      <Bar name="Seen in Play" dataKey={SEEN} stackId="a" fill={`#${BLUE}`} />
+      <Bar name="Not Seen" dataKey={NOT_SEEN} stackId="a" fill={`#${ORANGE}`} />
     </BarChart>
   );
 };

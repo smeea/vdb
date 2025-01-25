@@ -21,14 +21,14 @@ const TdaInfo = ({ info, decks }) => {
           <TwdResultDescriptionTextTr title="Reported Decks:">
             <div>
               {Object.keys(decks).length}{' '}
-              <div className="inline text-midGray dark:text-midGrayDark">
+              <div className="text-midGray dark:text-midGrayDark inline">
                 ({Math.round((Object.keys(decks).length / info[PLAYERS]) * 100)}
                 %)
               </div>
             </div>
             <div className="text-midGray dark:text-midGrayDark">
               median reported place: {info.medianReportedRank}, &quot;
-              <div className="inline text-sm font-bold text-[#ff00aa]">|</div>
+              <div className="text-purple inline text-sm font-bold">|</div>
               &quot;
             </div>
           </TwdResultDescriptionTextTr>

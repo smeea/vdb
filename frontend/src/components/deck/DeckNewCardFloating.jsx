@@ -16,13 +16,13 @@ const DeckNewCardFloating = ({ deckid, cards, cardChange, target }) => {
   return (
     <>
       <ButtonFloat onClick={handleClick} position={target === CRYPT ? 'top' : 'middle'}>
-        <div className="flex items-center">
-          <div className="text-[24px]">+</div>
-          <div className="text-[28px]">{target === CRYPT ? 'C' : 'L'}</div>
+        <div className="flex items-center text-2xl">
+          <div>+</div>
+          <div>{target === CRYPT ? 'C' : 'L'}</div>
         </div>
       </ButtonFloat>
       {showAdd && (
-        <div className="fixed bottom-[40px] z-20 flex w-full bg-bgPrimary p-2 dark:bg-bgPrimaryDark">
+        <div className="bg-bgPrimary dark:bg-bgPrimaryDark fixed bottom-[40px] z-20 flex w-full p-2">
           <div className="w-full" onBlur={handleClose}>
             <DeckNewCard
               handleClose={handleClose}

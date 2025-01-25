@@ -70,11 +70,11 @@ const DeckLibraryHeader = ({
                   <b>{bloodTotalDiff ?? bloodTotal}</b>
                   {showInfo && !bloodTotalDiff && libraryTotal < 90 && (
                     <div
-                      className="flex items-end text-midGray dark:text-midGrayDark"
+                      className="text-midGray dark:text-midGrayDark flex items-end"
                       title="Rescaled for 90 cards library"
                     >
                       ({rescaledBloodTotal}
-                      <div className="text-[9px] font-normal">90</div>)
+                      <div className="text-2xs font-normal">90</div>)
                     </div>
                   )}
                 </div>
@@ -83,11 +83,11 @@ const DeckLibraryHeader = ({
                   <b>{poolTotalDiff ?? poolTotal}</b>
                   {showInfo && !poolTotalDiff && libraryTotal < 90 && (
                     <div
-                      className="flex items-end text-midGray dark:text-midGrayDark"
+                      className="text-midGray dark:text-midGrayDark flex items-end"
                       title="Rescaled for 90 cards library"
                     >
                       ({rescaledPoolTotal}
-                      <div className="text-[9px] font-normal">90</div>)
+                      <div className="text-2xs font-normal">90</div>)
                     </div>
                   )}
                 </div>

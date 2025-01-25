@@ -141,7 +141,7 @@ const Inventory = () => {
           </div>
           {isMobile && showFloatingButtons && (
             <ButtonFloat onClick={() => setShowCryptOnMobile(!showCryptOnMobile)} position="middle">
-              <div className="text-[28px]">{showCryptOnMobile ? 'LIB' : 'CR'}</div>
+              <div className="text-2xl">{showCryptOnMobile ? 'LIB' : 'CR'}</div>
             </ButtonFloat>
           )}
         </FlexGapped>
