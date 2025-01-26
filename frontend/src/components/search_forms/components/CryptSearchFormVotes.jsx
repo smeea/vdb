@@ -1,12 +1,9 @@
 import React from 'react';
 import { Select } from '@/components';
-import { useApp } from '@/context';
 import { VOTES, ANY } from '@/constants';
 
 const CryptSearchFormVotes = ({ value, onChange }) => {
-  const { isXWide } = useApp();
   const name = VOTES;
-  const maxMenuHeight = isXWide ? 500 : 350;
 
   const options = [
     [ANY, 'ANY'],
@@ -29,7 +26,7 @@ const CryptSearchFormVotes = ({ value, onChange }) => {
   return (
     <div className="flex items-center">
       <div className="w-1/4">
-        <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Votes:</div>
+        <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">Votes:</div>
       </div>
       <div className="w-3/4">
         <Select
@@ -37,7 +34,6 @@ const CryptSearchFormVotes = ({ value, onChange }) => {
           isSearchable={false}
           isClearable={value !== ANY}
           name={name}
-          maxMenuHeight={maxMenuHeight}
           value={options.find((obj) => obj.value === value.toLowerCase())}
           onChange={(e) => onChange(e ?? { name: name, value: ANY })}
         />

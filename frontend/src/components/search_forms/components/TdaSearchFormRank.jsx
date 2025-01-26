@@ -1,11 +1,8 @@
 import React from 'react';
 import { Select } from '@/components';
-import { useApp } from '@/context';
 import { RANK, ANY, FROM, TO } from '@/constants';
 
 const TdaSearchFormRank = ({ value, onChange }) => {
-  const { isXWide } = useApp();
-  const maxMenuHeight = isXWide ? 500 : 350;
   const name = RANK;
   const steps = ['ANY', '5', '10', '20', '25%', '33%', '50%', '66%', '75%'];
 
@@ -45,7 +42,7 @@ const TdaSearchFormRank = ({ value, onChange }) => {
     <>
       <div className="flex basis-full items-center gap-1">
         <div className="w-1/4">
-          <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Place:</div>
+          <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">Place:</div>
         </div>
         <div className="flex w-3/4 items-center gap-1">
           <div className="w-full">
@@ -53,7 +50,6 @@ const TdaSearchFormRank = ({ value, onChange }) => {
               options={fromOptions}
               isSearchable={false}
               name={name}
-              maxMenuHeight={maxMenuHeight}
               value={fromOptions.find((obj) => obj.value === value[FROM])}
               onChange={onChange}
             />
@@ -64,7 +60,6 @@ const TdaSearchFormRank = ({ value, onChange }) => {
               options={toOptions}
               isSearchable={false}
               name={name}
-              maxMenuHeight={maxMenuHeight}
               value={toOptions.find((obj) => obj.value === value[TO])}
               onChange={onChange}
             />

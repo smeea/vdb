@@ -6,7 +6,6 @@ import {
   SearchFormButtonAdd,
   SearchFormButtonDel,
 } from '@/components';
-import { useApp } from '@/context';
 import {
   ANY,
   TITLED,
@@ -27,8 +26,6 @@ import {
 } from '@/constants';
 
 const LibrarySearchFormTitle = ({ value, onChange, searchForm }) => {
-  const { isXWide } = useApp();
-  const maxMenuHeight = isXWide ? 500 : 350;
   const name = TITLE;
 
   const options = [
@@ -61,7 +58,7 @@ const LibrarySearchFormTitle = ({ value, onChange, searchForm }) => {
     <>
       <div className="flex items-center">
         <div className="flex w-1/4 items-center justify-between">
-          <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Title:</div>
+          <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">Title:</div>
           {value.value[0] !== ANY && (
             <div className="flex justify-end gap-1 px-1">
               <SearchFormButtonLogicToggle
@@ -83,7 +80,6 @@ const LibrarySearchFormTitle = ({ value, onChange, searchForm }) => {
             isSearchable={false}
             isClearable={value.value[0] !== ANY}
             name={0}
-            maxMenuHeight={maxMenuHeight}
             value={options.find((obj) => obj.value === value.value[0])}
             onChange={(e, id) => (e ? onChange(e, id) : onChange({ name: name, value: ANY }, id))}
           />
@@ -97,7 +93,6 @@ const LibrarySearchFormTitle = ({ value, onChange, searchForm }) => {
           searchForm={searchForm}
           options={options}
           onChange={onChange}
-          maxMenuHeight={maxMenuHeight}
         />
       )}
     </>

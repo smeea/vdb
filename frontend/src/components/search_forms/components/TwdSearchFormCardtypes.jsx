@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Select } from '@/components';
 import { Toggle, ResultLibraryTypeImage } from '@/components';
-import { useApp } from '@/context';
 import {
   ANY,
   CARDTYPES,
@@ -20,8 +19,6 @@ import {
 } from '@/constants';
 
 const TypeForm = ({ isManual, handleManual, value = ANY, name, options, onChange }) => {
-  const { isXWide } = useApp();
-  const maxMenuHeight = isXWide ? 500 : 350;
   const [min, max] = value == ANY ? [0, 100] : value.split(',');
 
   return (
@@ -55,7 +52,6 @@ const TypeForm = ({ isManual, handleManual, value = ANY, name, options, onChange
             options={options}
             isSearchable={false}
             name={CARDTYPES}
-            maxMenuHeight={maxMenuHeight}
             value={options.find((obj) => obj.value === value)}
             onChange={onChange}
           />

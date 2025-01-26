@@ -28,8 +28,7 @@ import {
 } from '@/constants';
 
 const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
-  const { playtestMode, isMobile, isXWide } = useApp();
-  const menuHeight = isXWide ? 500 : 350;
+  const { playtestMode, isMobile } = useApp();
   const name = PRECON;
 
   const options = [
@@ -86,7 +85,7 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
                   </div>
                   {fullName}
                 </div>
-                <div className="whitespace-nowrap text-sm">
+                <div className="text-sm whitespace-nowrap">
                   {set == PLAYTEST ? 'PLAYTEST' : set} {year && `'${year}`}
                 </div>
               </div>
@@ -111,7 +110,7 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
     <div className="flex flex-col gap-1">
       <div className="flex items-center">
         <div className="flex w-1/4 items-center justify-between">
-          <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Precon:</div>
+          <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">Precon:</div>
           {value.value[0] !== ANY && (
             <div className="flex justify-end gap-1 px-1">
               {value.value.length == 1 ? (
@@ -129,7 +128,6 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
             isClearable={value.value[0] !== ANY}
             filterOption={filterOption}
             name={0}
-            menuHeight={menuHeight}
             value={options.find((obj) => obj.value === value.value[0])}
             onChange={(e, id) => (e ? onChange(e, id) : onChange({ name: name, value: ANY }, id))}
           />
@@ -143,7 +141,6 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
           searchForm={searchForm}
           options={options}
           onChange={onChange}
-          menuHeight={menuHeight}
         />
       )}
       <div className="flex items-center justify-end gap-4">

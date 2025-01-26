@@ -30,8 +30,7 @@ import {
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 
 const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
-  const { playtestMode, isMobile, isXWide } = useApp();
-  const menuHeight = isXWide ? 500 : 350;
+  const { playtestMode, isMobile } = useApp();
   const name = SET;
 
   const options = [
@@ -93,7 +92,7 @@ const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
     <div className="flex flex-col gap-1">
       <div className="flex items-center">
         <div className="flex w-1/4 items-center justify-between">
-          <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Set:</div>
+          <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">Set:</div>
           {value.value[0] !== ANY && (
             <div className="flex justify-end gap-1 px-1">
               {value.value.length == 1 ? (
@@ -109,9 +108,9 @@ const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
             options={options}
             isSearchable={!isMobile}
             isClearable={value.value[0] !== ANY}
+            menuPlacement="top"
             filterOption={filterOption}
             name={0}
-            menuHeight={menuHeight}
             value={options.find((obj) => obj.value === value.value[0])}
             onChange={(e, id) => (e ? onChange(e, id) : onChange({ name: name, value: ANY }, id))}
           />
@@ -125,7 +124,6 @@ const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
           searchForm={searchForm}
           options={options}
           onChange={onChange}
-          menuHeight={menuHeight}
         />
       )}
       <div className="flex flex-col gap-2">

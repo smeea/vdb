@@ -1,16 +1,13 @@
 import React from 'react';
 import { Select } from '@/components';
-import { useApp } from '@/context';
 import { useFetch } from '@/hooks';
 import { LOCATION } from '@/constants';
 
 const TwdSearchFormLocation = ({ value, form }) => {
-  const { isXWide } = useApp();
   const urlCountries = `${import.meta.env.VITE_API_URL}/twd/countries`;
   const urlCities = `${import.meta.env.VITE_API_URL}/twd/cities`;
   const { value: countries } = useFetch(urlCountries, {}, []);
   const { value: cities } = useFetch(urlCities, {}, []);
-  const maxMenuHeight = isXWide ? 500 : 350;
 
   const handleChange = (v, target) => {
     form[LOCATION][target] = v?.value ?? '';
@@ -54,13 +51,12 @@ const TwdSearchFormLocation = ({ value, form }) => {
     <div className="flex flex-col gap-2">
       <div className="flex items-center">
         <div className="w-1/4">
-          <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Location:</div>
+          <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">Location:</div>
         </div>
         <div className="w-3/4">
           <Select
             variant="async"
             cacheOptions
-            maxMenuHeight={maxMenuHeight}
             autoFocus={false}
             placeholder="Country"
             loadOptions={loadOptionsCountry}
@@ -83,7 +79,6 @@ const TwdSearchFormLocation = ({ value, form }) => {
           <Select
             variant="async"
             cacheOptions
-            maxMenuHeight={maxMenuHeight}
             autoFocus={false}
             placeholder="City"
             loadOptions={loadOptionsCity}

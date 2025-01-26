@@ -1,6 +1,6 @@
  FIX
 - Open New/Random queries on mobile for PDA/TWD
-- New/Random in TWD/PDA - too many calls to Location or History APIs
+- Too many calls to Location or History APIs on filter changes in Firefox
 
 # FIX ON HOLD
 - Deck-in-Url trimmed at first card - cant reproduce in dev environment
@@ -16,5 +16,4 @@
 - Draft Cube support -> when draft cube info is available
 
 # TECH IMPROVEMENTS
-- Refactor isWidth to container queries
 - Remove legacy polyfills (groupBy 2024-11-30 87.24%, 2024-12-12 89.08%)

@@ -6,13 +6,10 @@ import {
   SearchFormButtonAdd,
   SearchFormButtonDel,
 } from '@/components';
-import { useApp } from '@/context';
 import { LOGIC, SECT, ANY, NOT_REQUIRED } from '@/constants';
 import sects from '@/assets/data/sectsList.json';
 
 const LibrarySearchFormSect = ({ value, searchForm, onChange }) => {
-  const { isXWide } = useApp();
-  const maxMenuHeight = isXWide ? 500 : 350;
   const name = SECT;
 
   const options = [
@@ -34,7 +31,7 @@ const LibrarySearchFormSect = ({ value, searchForm, onChange }) => {
     <>
       <div className="flex items-center">
         <div className="flex w-1/4 items-center justify-between">
-          <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Sect:</div>
+          <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">Sect:</div>
           {value.value[0] !== ANY && (
             <div className="flex justify-end gap-1 px-1">
               <SearchFormButtonLogicToggle
@@ -56,7 +53,6 @@ const LibrarySearchFormSect = ({ value, searchForm, onChange }) => {
             isSearchable={false}
             isClearable={value.value[0] !== ANY}
             name={0}
-            maxMenuHeight={maxMenuHeight}
             value={options.find((obj) => obj.value === value.value[0])}
             onChange={(e, id) => (e ? onChange(e, id) : onChange({ name: name, value: ANY }, id))}
           />
@@ -70,7 +66,6 @@ const LibrarySearchFormSect = ({ value, searchForm, onChange }) => {
           searchForm={searchForm}
           options={options}
           onChange={onChange}
-          maxMenuHeight={maxMenuHeight}
         />
       )}
     </>

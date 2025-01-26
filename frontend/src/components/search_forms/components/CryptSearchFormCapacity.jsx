@@ -6,12 +6,9 @@ import {
   SearchFormButtonAdd,
   SearchFormButtonDel,
 } from '@/components';
-import { useApp } from '@/context';
 import { LOGIC, CAPACITY, ANY, LE, GE, EQ } from '@/constants';
 
 const CryptSearchFormCapacity = ({ value, searchForm, onChange }) => {
-  const { isXWide } = useApp();
-  const maxMenuHeight = isXWide ? 500 : 350;
   const name = CAPACITY;
 
   const options = ['ANY', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11'].map((i) => ({
@@ -34,7 +31,7 @@ const CryptSearchFormCapacity = ({ value, searchForm, onChange }) => {
     <>
       <div className="flex items-center">
         <div className="w-1/4">
-          <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Capacity:</div>
+          <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">Capacity:</div>
           {value.value[0][name] !== ANY && (
             <div className="flex justify-end gap-1 px-1">
               <SearchFormButtonLogicToggle
@@ -66,7 +63,6 @@ const CryptSearchFormCapacity = ({ value, searchForm, onChange }) => {
               isSearchable={false}
               isClearable={value.value[0][name] !== ANY}
               name={0}
-              maxMenuHeight={maxMenuHeight}
               value={options.find((obj) => obj.value === value.value[0][name])}
               onChange={(e, id) => (e ? onChange(e, id) : onChange({ name: name, value: ANY }, id))}
             />
@@ -83,7 +79,6 @@ const CryptSearchFormCapacity = ({ value, searchForm, onChange }) => {
           searchForm={searchForm}
           withMoreless={true}
           morelessOptions={morelessOptions}
-          maxMenuHeight={maxMenuHeight}
         />
       )}
     </>

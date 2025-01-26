@@ -14,8 +14,7 @@ import { useApp } from '@/context';
 import { LOGIC, DISCIPLINE, NOT_REQUIRED, ANY } from '@/constants';
 
 const LibrarySearchFormDiscipline = ({ value, onChange, searchForm }) => {
-  const { isXWide, isMobile } = useApp();
-  const maxMenuHeight = isXWide ? 500 : 350;
+  const { isMobile } = useApp();
   const name = DISCIPLINE;
   const disciplines = [...Object.keys(disciplinesList), ...disciplinesExtraList].toSorted();
 
@@ -41,7 +40,7 @@ const LibrarySearchFormDiscipline = ({ value, onChange, searchForm }) => {
     <>
       <div className="flex items-center">
         <div className="w-1/4">
-          <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Discipline:</div>
+          <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">Discipline:</div>
           {value.value[0] !== ANY && (
             <div className="flex justify-end gap-1 px-1">
               <SearchFormButtonLogicToggle
@@ -65,7 +64,6 @@ const LibrarySearchFormDiscipline = ({ value, onChange, searchForm }) => {
             isSearchable={!isMobile}
             isClearable={value.value[0] !== ANY}
             name={0}
-            maxMenuHeight={maxMenuHeight}
             value={options.find((obj) => obj.value === value.value[0])}
             onChange={(e, id) => (e ? onChange(e, id) : onChange({ name: name, value: ANY }, id))}
           />
@@ -79,7 +77,6 @@ const LibrarySearchFormDiscipline = ({ value, onChange, searchForm }) => {
           searchForm={searchForm}
           options={options}
           onChange={onChange}
-          maxMenuHeight={maxMenuHeight}
         />
       )}
     </>

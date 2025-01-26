@@ -13,8 +13,7 @@ import { useApp } from '@/context';
 import { LOGIC, CLAN, NOT_REQUIRED, ANY } from '@/constants';
 
 const LibrarySearchFormClan = ({ value, searchForm, onChange }) => {
-  const { playtestMode, isXWide, isMobile } = useApp();
-  const maxMenuHeight = isXWide ? 500 : 350;
+  const { playtestMode, isMobile } = useApp();
   const name = CLAN;
 
   const options = [
@@ -41,7 +40,7 @@ const LibrarySearchFormClan = ({ value, searchForm, onChange }) => {
     <>
       <div className="flex items-center">
         <div className="flex w-1/4 items-center justify-between">
-          <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Clan:</div>
+          <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">Clan:</div>
           {value.value[0] !== ANY && (
             <div className="flex justify-end gap-1 px-1">
               <SearchFormButtonLogicToggle
@@ -63,7 +62,6 @@ const LibrarySearchFormClan = ({ value, searchForm, onChange }) => {
             isSearchable={!isMobile}
             isClearable={value.value[0] !== ANY}
             name={0}
-            maxMenuHeight={maxMenuHeight}
             value={options.find((obj) => obj.value === value.value[0])}
             onChange={(e, id) => (e ? onChange(e, id) : onChange({ name: name, value: ANY }, id))}
           />
@@ -77,7 +75,6 @@ const LibrarySearchFormClan = ({ value, searchForm, onChange }) => {
           searchForm={searchForm}
           options={options}
           onChange={onChange}
-          maxMenuHeight={maxMenuHeight}
         />
       )}
     </>

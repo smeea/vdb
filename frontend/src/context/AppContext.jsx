@@ -84,7 +84,6 @@ export const AppProvider = ({ children }) => {
   const isNarrow = useMemo(() => screenSize <= 1024, [screenSize]);
   const isDesktop = useMemo(() => screenSize >= 1280, [screenSize]);
   const isWide = useMemo(() => screenSize >= 1440, [screenSize]);
-  const isXWide = useMemo(() => screenSize >= 1920, [screenSize]);
 
   const [userData, setUserData] = useState();
   const [username, setUsername] = useState();
@@ -523,9 +522,8 @@ export const AppProvider = ({ children }) => {
         // APP Context
         isMobile,
         isNarrow,
-        isWide,
-        isXWide,
         isDesktop,
+        isWide,
         lang,
         changeLang,
         playtestMode,

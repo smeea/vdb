@@ -12,8 +12,6 @@ const SearchAdditionalForms = ({
   morelessOptions,
   menuPlacement,
   searchForm,
-  menuHeight,
-  maxMenuHeight,
   isClearable = false,
 }) => {
   const { isMobile } = useApp();
@@ -59,8 +57,6 @@ const SearchAdditionalForms = ({
                         })[0]
                       ] === ANY
                     }
-                    menuHeight={menuHeight}
-                    maxMenuHeight={maxMenuHeight ? maxMenuHeight - 45 : isMobile ? 350 : 450}
                     menuPlacement={menuPlacement}
                     name={i}
                     value={options.find((obj) => obj.value === value.value[i][CAPACITY])}
@@ -77,7 +73,6 @@ const SearchAdditionalForms = ({
                   isClearable={isClearable && value.value[i] !== ANY}
                   defaultMenuIsOpen={value.value[i] === ANY}
                   menuPlacement={menuPlacement}
-                  maxMenuHeight={maxMenuHeight ? maxMenuHeight - 45 : isMobile ? 350 : 450}
                   name={i}
                   value={options.find((obj) => obj.value === value.value[i])}
                   onChange={(e, id) =>

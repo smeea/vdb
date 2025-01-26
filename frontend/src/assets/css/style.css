@@ -62,10 +62,10 @@
     --color-fgFourth: #4040a0;
     --color-fgFourthDark: #9090c0;
 
-    --breakpoint-sm: 768px;
-    --breakpoint-md: 1024px;
-    --breakpoint-lg: 1280px;
-    --breakpoint-xl: 1440px;
+    --breakpoint-sm: 48rem;
+    --breakpoint-md: 64rem;
+    --breakpoint-lg: 80rem;
+    --breakpoint-xl: 90rem;
 
     --text-2xs: 0.625rem;
     --text-2xs--line-height: 0.75rem;

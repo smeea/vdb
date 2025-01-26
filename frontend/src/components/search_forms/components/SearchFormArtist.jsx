@@ -2,13 +2,10 @@ import React from 'react';
 import { Select } from '@/components';
 import cryptArtists from '@/assets/data/artistsCrypt.json';
 import libraryArtists from '@/assets/data/artistsLib.json';
-import { useApp } from '@/context';
 import { ARTIST, CRYPT, ANY } from '@/constants';
 
 const SearchFormArtist = ({ target, value, onChange }) => {
-  const { isXWide } = useApp();
   const name = ARTIST;
-  const menuHeight = isXWide ? 500 : 350;
   const artists = target == CRYPT ? cryptArtists : libraryArtists;
 
   const options = artists.map((artist) => {
@@ -33,13 +30,12 @@ const SearchFormArtist = ({ target, value, onChange }) => {
   return (
     <div className="flex items-center">
       <div className="w-1/4">
-        <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Artist:</div>
+        <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">Artist:</div>
       </div>
       <div className="w-3/4">
         <Select
           options={options}
           isClearable={value !== ANY}
-          menuHeight={menuHeight}
           name={name}
           placeholder="Artist"
           value={options.find((obj) => obj.value === value)}

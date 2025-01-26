@@ -1,11 +1,8 @@
 import React from 'react';
 import { Select } from '@/components';
-import { useApp } from '@/context';
 import { POOL, ANY, LE, GE, EQ } from '@/constants';
 
 const LibrarySearchFormPoolCost = ({ value, onChange }) => {
-  const { isXWide } = useApp();
-  const maxMenuHeight = isXWide ? 500 : 350;
   const name = POOL;
   const options = ['ANY', '0', '1', '2', '3', '4', '5', '6'].map((i) => ({
     value: i.toLowerCase(),
@@ -27,7 +24,7 @@ const LibrarySearchFormPoolCost = ({ value, onChange }) => {
     <>
       <div className="flex items-center">
         <div className="w-1/4">
-          <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Pool Cost:</div>
+          <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">Pool Cost:</div>
         </div>
         <div className="flex w-3/4 gap-1">
           <div className="w-1/2">
@@ -45,7 +42,6 @@ const LibrarySearchFormPoolCost = ({ value, onChange }) => {
               isSearchable={false}
               isClearable={value[name] !== ANY}
               name={name}
-              maxMenuHeight={maxMenuHeight}
               value={options.find((obj) => obj.value === value[name])}
               onChange={(e, id) => (e ? onChange(e, id) : onChange({ name: name, value: ANY }, id))}
             />

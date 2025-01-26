@@ -3,6 +3,7 @@ import ReactSelect from 'react-select';
 import AsyncSelect from 'react-select/async';
 import ReactSelectCreatable from 'react-select/creatable';
 import { twMerge } from 'tailwind-merge';
+import { useApp } from '@/context';
 
 const Select = ({
   autoFocus = false,
@@ -39,6 +40,9 @@ const Select = ({
   noOptionsMessage,
   noRemove,
 }) => {
+  const { isMobile, isDesktop, isWide } = useApp();
+  const defaultMaxWidth = isWide ? 500 : isDesktop ? 450 : isMobile ? 350 : 400;
+
   let Component;
   switch (variant) {
     case 'select':
@@ -61,7 +65,7 @@ const Select = ({
       isDisabled={isDisabled}
       isSearchable={isSearchable}
       minMenuHeight={menuHeight || minMenuHeight}
-      maxMenuHeight={menuHeight || maxMenuHeight}
+      maxMenuHeight={menuHeight || maxMenuHeight || defaultMaxWidth}
       menuShouldScrollIntoView={menuShouldScrollIntoView}
       menuPlacement={menuPlacement}
       name={name}

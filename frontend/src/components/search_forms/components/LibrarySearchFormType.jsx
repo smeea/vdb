@@ -7,13 +7,10 @@ import {
   SearchFormButtonAdd,
   SearchFormButtonDel,
 } from '@/components';
-import { useApp } from '@/context';
 import { LOGIC, TYPE, ANY } from '@/constants';
 import cardtypeSorted from '@/assets/data/cardtypeSorted.json';
 
 const LibrarySearchFormType = ({ value, onChange, searchForm }) => {
-  const { isXWide } = useApp();
-  const maxMenuHeight = isXWide ? 500 : 350;
   const name = TYPE;
   const options = ['ANY', ...cardtypeSorted].map((i) => ({
     value: i.toLowerCase(),
@@ -32,7 +29,7 @@ const LibrarySearchFormType = ({ value, onChange, searchForm }) => {
     <>
       <div className="flex items-center">
         <div className="flex w-1/4 items-center justify-between">
-          <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Type:</div>
+          <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">Type:</div>
           {value.value[0] !== ANY && (
             <div className="flex justify-end gap-1 px-1">
               <SearchFormButtonLogicToggle
@@ -55,7 +52,6 @@ const LibrarySearchFormType = ({ value, onChange, searchForm }) => {
             isSearchable={false}
             isClearable={value.value[0] !== ANY}
             name={0}
-            maxMenuHeight={maxMenuHeight}
             value={options.find((obj) => obj.value === value.value[0].toLowerCase())}
             onChange={(e, id) => (e ? onChange(e, id) : onChange({ name: name, value: ANY }, id))}
           />
@@ -69,7 +65,6 @@ const LibrarySearchFormType = ({ value, onChange, searchForm }) => {
           searchForm={searchForm}
           options={options}
           onChange={onChange}
-          maxMenuHeight={maxMenuHeight}
         />
       )}
     </>
