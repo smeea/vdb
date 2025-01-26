@@ -66,7 +66,7 @@ const DeckCopyUrlButton = ({ deck, noText, setQrUrl }) => {
   };
 
   return (
-    <Menu as="div" className="relative">
+    <Menu>
       <MenuButton
         title="Copy URL"
         icon={<Link45Deg width={noText ? 19 : 21} height={noText ? 19 : 21} viewBox="0 0 15 15" />}
@@ -93,7 +93,7 @@ const DeckCopyUrlButton = ({ deck, noText, setQrUrl }) => {
           )}
           {(deck[DECKID].length === 9 || deck[DECKID] === DECK) && (
             <div>
-              <div className="px-3 pt-2 text-sm text-midGray dark:text-midGrayDark">
+              <div className="text-midGray dark:text-midGrayDark px-3 pt-2 text-sm">
                 Non-modifiable:
               </div>
               <MenuItem

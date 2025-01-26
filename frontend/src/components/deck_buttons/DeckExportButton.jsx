@@ -121,7 +121,7 @@ const DeckExportButton = ({ deck, inMissing, inInventory }) => {
   };
 
   return (
-    <Menu as="div" className="relative">
+    <Menu>
       <MenuButton
         title={`Export ${inMissing ? 'Missing' : ''}`}
         icon={<Download />}

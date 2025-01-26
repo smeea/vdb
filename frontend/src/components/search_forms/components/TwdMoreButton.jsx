@@ -12,7 +12,7 @@ const TwdMoreButton = () => {
   const navigate = useNavigate();
 
   return (
-    <Menu as="div" className="relative">
+    <Menu>
       <MenuButton title="More interesting stuff" icon={<Gem />} text="More" />
       <MenuItems>
         <MenuItem onClick={() => navigate('/twd/hall_of_fame/tournaments')}>

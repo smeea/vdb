@@ -4,13 +4,9 @@ import SortDown from '@icons/sort-down.svg?react';
 import { MenuItems, MenuItem, MenuButton } from '@/components';
 import { capitalize } from '@/utils';
 
-const RelativeDiv = (props) => {
-  return <div className="relative" {...props} />;
-};
-
 const SortButton = ({ sortMethod, setSortMethod, sortMethods, noText, className }) => {
   return (
-    <Menu as={RelativeDiv}>
+    <Menu>
       <MenuButton
         className={className}
         title="Sort"

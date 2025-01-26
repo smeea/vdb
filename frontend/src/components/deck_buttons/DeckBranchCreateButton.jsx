@@ -25,7 +25,7 @@ const DeckBranchCreateButton = ({ deck }) => {
 
   return (
     <>
-      <Menu as="div" className="relative">
+      <Menu>
         <MenuButton
           title="Create New Revision of the Deck"
           icon={<NodePlusFill width="21" height="21" viewBox="0 0 16 16" />}

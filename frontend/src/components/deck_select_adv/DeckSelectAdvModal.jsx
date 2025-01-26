@@ -105,7 +105,7 @@ const DeckSelectAdvModal = ({ onClick, setShow, short }) => {
               }
               icon={<TrashFill width="18" height="18" viewBox="0 0 18 16" />}
             />
-            <Menu as="div" className="relative">
+            <Menu>
               <MenuButton title="Export Selected" icon={<Download />} text="Export Selected" />
               <MenuItems>
                 <MenuItem onClick={() => exportSelected(TEXT)}>Text</MenuItem>

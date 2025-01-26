@@ -14,7 +14,7 @@ const DeckImportButton = ({
   const { username, isDesktop } = useApp();
 
   return (
-    <Menu as="div" className="relative">
+    <Menu>
       <MenuButton
         title="Create or Import Deck"
         icon={<ClipboardPlus size={24} />}
@@ -32,7 +32,7 @@ const DeckImportButton = ({
             <MenuItemDivider />
           </>
         )}
-        <div className="flex px-3 py-1 text-sm text-midGray dark:text-midGrayDark">
+        <div className="text-midGray dark:text-midGrayDark flex px-3 py-1 text-sm">
           Anonymous (non-editable), useful only to share URL:
         </div>
         <MenuItem onClick={() => handleFileInputClick(true)}>Import w/o Acc. from File</MenuItem>

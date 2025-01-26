@@ -21,7 +21,7 @@ const DeckSearchSimilarButton = ({ deck }) => {
   };
 
   return (
-    <Menu as="div" className="relative">
+    <Menu>
       <MenuButton
         title="Search similar Decks in TWD/PDA"
         icon={<SymmetryVertical />}

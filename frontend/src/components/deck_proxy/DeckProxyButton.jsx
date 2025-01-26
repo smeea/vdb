@@ -60,7 +60,7 @@ const DeckProxyButton = ({ setShowProxySelect, missingCrypt, missingLibrary, dec
   };
 
   return (
-    <Menu as="div" className="relative">
+    <Menu>
       <MenuButton
         title="Create PDF with Cards"
         icon={isLoading ? <Spinner /> : <Printer width="18" height="18" viewBox="0 0 18 16" />}
