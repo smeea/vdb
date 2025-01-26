@@ -78,7 +78,6 @@ const Select = ({
       classNames={{
         control: (state) =>
           twMerge(
-            'hover:cursor-pointer',
             !noBorder && `bg-bgPrimary dark:bg-bgPrimaryDark ${roundedStyle} ${borderStyle}`,
             !noBorder &&
               (state.isFocused
@@ -88,7 +87,7 @@ const Select = ({
         dropdownIndicator: () =>
           variant == 'creatable' || noDropdown
             ? 'max-w-[0px] max-h-[0px]'
-            : 'px-2 text-borderSecondary dark:text-borderSecondaryDark',
+            : 'px-2 hover:cursor-pointer text-borderSecondary dark:text-borderSecondaryDark',
         indicatorsContainer: () =>
           twMerge(
             'rounded-sm',
@@ -97,10 +96,9 @@ const Select = ({
         indicatorSeparator: () => 'bg-borderSecondary dark:bg-borderSecondaryDark',
         menu: () => 'my-2 rounded-sm border border-borderThird dark:border-borderThirdDark',
         menuList: () => 'rounded-sm bg-bgPrimary dark:bg-bgPrimaryDark',
-
         option: (state) =>
           twMerge(
-            'p-2 hover:cursor-pointer text-fgPrimary dark:text-fgPrimaryDark',
+            'p-2 text-fgPrimary dark:text-fgPrimaryDark',
             state.isFocused
               ? 'bg-borderPrimary dark:bg-bgCheckboxSelectedDark'
               : state.isSelected && 'bg-borderSecondary dark:bg-borderPrimaryDark',
@@ -110,7 +108,7 @@ const Select = ({
         // no bg- in creatable
         valueContainer: () =>
           twMerge(
-            'px-2 min-h-[40px] text-fgPrimary dark:text-fgPrimaryDark bg-bgPrimary dark:bg-bgPrimaryDark rounded-sm',
+            'px-2 min-h-[40px] text-fgPrimary dark:text-fgPrimaryDark bg-bgPrimary dark:bg-bgPrimaryDark hover:cursor-pointer rounded-sm',
             variant == 'creatable' && !noBorder && 'p-1.5',
             variant == 'creatable' && 'gap-1',
           ),
@@ -134,7 +132,7 @@ const Select = ({
         multiValueRemove: () =>
           noRemove
             ? 'max-w-[0px] max-h-[0px] hidden'
-            : 'pr-1 bg-bgButton dark:bg-bgButtonDark rounded-r border-r border-y border-borderSecondary dark:border-borderSecondaryDark',
+            : 'pr-1 bg-bgButton dark:bg-bgButtonDark rounded-r border-r border-y border-borderSecondary dark:border-borderSecondaryDark hover:cursor-pointer',
       }}
       // Async
       cacheOptions={cacheOptions}

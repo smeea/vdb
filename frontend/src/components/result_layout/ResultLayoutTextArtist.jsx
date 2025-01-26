@@ -20,7 +20,7 @@ const ResultLayoutTextArtist = ({ handleClose, inCrypt, artists }) => {
       {artists.map((artist, idx) => {
         return (
           <div
-            className="inline-block whitespace-nowrap text-fgSecondary hover:underline dark:text-fgSecondaryDark"
+            className="text-fgSecondary dark:text-fgSecondaryDark inline-block whitespace-nowrap hover:cursor-pointer hover:underline"
             key={idx}
             onClick={() => handleClick(artist)}
           >

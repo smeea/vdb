@@ -63,7 +63,7 @@ const ResultCryptLayoutText = ({ card, setCard, handleClose, noClose, inPopover 
                       noPadding
                     >
                       <div
-                        className="inline text-fgSecondary dark:text-fgSecondaryDark"
+                        className="text-fgSecondary dark:text-fgSecondaryDark inline"
                         onClick={() => setCard(cryptCardBase[card[ADV][1]])}
                       >
                         {inPopover ? (
@@ -82,7 +82,9 @@ const ResultCryptLayoutText = ({ card, setCard, handleClose, noClose, inPopover 
                             )}
                           </>
                         ) : (
-                          <>[see {card[ADV][0] ? 'Base' : 'Adv'}]</>
+                          <div className="hover:cursor-pointer">
+                            [see {card[ADV][0] ? 'Base' : 'Adv'}]
+                          </div>
                         )}
                       </div>
                     </ConditionalTooltip>

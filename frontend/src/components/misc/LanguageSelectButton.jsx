@@ -10,7 +10,7 @@ const LanguageSelectButton = () => {
     <Popover className="relative">
       <PopoverButton
         title="Language Select"
-        className="flex h-full min-w-[40px] items-center justify-center focus:outline-hidden"
+        className="flex h-full min-w-[40px] items-center justify-center hover:cursor-pointer focus:outline-hidden"
       >
         <Flag value={lang} noTitle />
       </PopoverButton>

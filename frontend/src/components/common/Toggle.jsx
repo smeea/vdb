@@ -26,7 +26,7 @@ const Toggle = ({ isOn, handleClick, size = 'md', disabled, children, variant = 
       {({ checked, disabled }) => (
         <div
           className={twMerge(
-            'flex items-center gap-2',
+            'flex items-center gap-2 hover:cursor-pointer',
             disabled || !checked ? style[variant].disabled : style[variant].main,
           )}
         >

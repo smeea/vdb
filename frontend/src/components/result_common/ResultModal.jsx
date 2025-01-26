@@ -75,10 +75,10 @@ const ResultModal = ({ card, handleModalCardChange, handleClose, forceInventoryM
           </div>
         ) : (
           <div className="flex">
-            <div className="border-y border-l border-bgSecondaryDark bg-black dark:border-bgSecondaryDark">
+            <div className="border-bgSecondaryDark dark:border-bgSecondaryDark border-y border-l bg-black hover:cursor-pointer">
               <CardImage card={activeCard} onClick={handleClose} />
             </div>
-            <div className="w-full rounded-r border-y border-r border-bgSecondary p-5 dark:border-bgSecondaryDark">
+            <div className="border-bgSecondary dark:border-bgSecondaryDark w-full rounded-r border-y border-r p-5">
               <ResultLayoutText
                 card={activeCard}
                 setCard={setActiveCard}
@@ -92,7 +92,7 @@ const ResultModal = ({ card, handleModalCardChange, handleClose, forceInventoryM
         <div
           onClick={() => handleModalCardChange(-1)}
           className={twMerge(
-            'absolute bottom-1/2 left-[-40px] text-darkGray/50 dark:text-midGray/50 sm:text-white sm:dark:text-whiteDark',
+            'text-darkGray/50 dark:text-midGray/50 sm:dark:text-whiteDark absolute bottom-1/2 left-[-40px] sm:text-white',
             showImage ? 'h-[50px] max-sm:left-[0px]' : 'h-[48px] max-sm:left-[-20px]',
           )}
         >
@@ -101,7 +101,7 @@ const ResultModal = ({ card, handleModalCardChange, handleClose, forceInventoryM
         <div
           onClick={() => handleModalCardChange(1)}
           className={twMerge(
-            'absolute bottom-1/2 right-[-40px] text-darkGray/50 dark:text-midGray/50 sm:text-white sm:dark:text-whiteDark',
+            'text-darkGray/50 dark:text-midGray/50 sm:dark:text-whiteDark absolute right-[-40px] bottom-1/2 sm:text-white',
             showImage ? 'h-[50px] max-sm:right-[0px]' : 'h-[48px] max-sm:right-[-20px]',
           )}
         >
