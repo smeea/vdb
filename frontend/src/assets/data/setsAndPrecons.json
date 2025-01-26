@@ -1,12 +1,4 @@
 {
-  "Promo": {
-    "name": "Promo",
-    "date": ""
-  },
-  "POD": {
-    "name": "Print-on-Demand (DTC)",
-    "date": ""
-  },
   "playtest": {
     "name": "PLAYTEST",
     "date": "",
@@ -58,6 +50,14 @@
         "playtest_old": true
       }
     }
+  },
+  "Promo": {
+    "name": "Promo",
+    "date": ""
+  },
+  "POD": {
+    "name": "Print-on-Demand (DTC)",
+    "date": ""
   },
   "V5L": {
     "name": "Fifth Edition (Lasombra)",
