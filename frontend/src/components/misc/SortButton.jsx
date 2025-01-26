@@ -15,7 +15,9 @@ const SortButton = ({ sortMethod, setSortMethod, sortMethods, noText, className 
         className={className}
         title="Sort"
         icon={<SortDown />}
-        text={noText ? null : capitalize(sortMethods[sortMethod])}
+        text={
+          !noText && <div className="whitespace-nowrap">{capitalize(sortMethods[sortMethod])}</div>
+        }
       />
       <MenuItems>
         {Object.keys(sortMethods).map((i) => {
