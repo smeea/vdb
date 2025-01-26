@@ -14,7 +14,7 @@ import {
   PlaytestReportsOneButton,
 } from '@/components';
 import { searchResults, setCryptCompare, setLibraryCompare, useApp } from '@/context';
-import { ID, TYPE, TYPE_MASTER, TWD, PDA } from '@/constants';
+import { PLAYTEST_OLD, ID, TYPE, TYPE_MASTER, TWD, PDA } from '@/constants';
 import { getIsPlaytest } from '@/utils';
 
 const ResultLayoutText = ({
@@ -90,7 +90,9 @@ const ResultLayoutText = ({
             }`}
             icon={<SearchHeartFill width="16" height="24" viewBox="0 0 16 16" />}
           />
-          {isPlaytestAdmin && isPlaytest && <PlaytestReportsOneButton value={card} />}
+          {isPlaytestAdmin && isPlaytest && !card[PLAYTEST_OLD] && (
+            <PlaytestReportsOneButton value={card} />
+          )}
         </div>
         {!isNarrow && !noClose && (
           <ButtonClose handleClick={() => !noClose && handleClose()} title="Close" text="Close" />
