@@ -1,6 +1,7 @@
  FIX
 - Open New/Random queries on mobile for PDA/TWD
 - Too many calls to Location or History APIs on filter changes in Firefox
+- Add inv from file to close menu on mobile
 
 # FIX ON HOLD
 - Deck-in-Url trimmed at first card - cant reproduce in dev environment
@@ -17,3 +18,4 @@
 
 # TECH IMPROVEMENTS
 - Remove legacy polyfills (groupBy 2024-11-30 87.24%, 2024-12-12 89.08%)
+

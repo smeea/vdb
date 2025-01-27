@@ -20,9 +20,9 @@ const Checkbox = ({
   };
 
   const boxStyle = {
-    sm: 'size-3.5 mt-0.5',
-    md: 'size-4 mt-1',
-    lg: 'size-5 mt-1',
+    sm: 'min-w-3.5 size-3.5 mt-0.5',
+    md: 'min-w-4 size-4 mt-1',
+    lg: 'min-w-5 size-5 mt-1',
   };
 
   const handleChange = () => {
@@ -75,7 +75,7 @@ const Checkbox = ({
           </div>
         )}
       </CheckboxHUI>
-      {label ? <Label className="hover:cursor-pointer">{label}</Label> : null}
+      {label ? <Label className="text-start hover:cursor-pointer">{label}</Label> : null}
     </Field>
   );
 };
