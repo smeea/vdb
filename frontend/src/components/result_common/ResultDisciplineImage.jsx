@@ -1,6 +1,7 @@
 import React from 'react';
 import { twMerge } from 'tailwind-merge';
 import virtuesList from '@/assets/data/virtuesList.json';
+import { ANY } from '@/constants';
 
 const ResultDisciplineImage = ({ value, isSuperior, name, size = 'md' }) => {
   const sizeStyle = {
@@ -32,7 +33,7 @@ const ResultDisciplineImage = ({ value, isSuperior, name, size = 'md' }) => {
         .replace(/\s/g, '')}${isSuperior ? 'sup' : ''}.svg`}
       name={name}
       id={value}
-      title={`${isSuperior ? 'Superior ' : ''}${value}`}
+      title={`${isSuperior ? 'Superior ' : ''}${value == ANY ? 'No Discipline' : value}`}
     />
   );
 };
