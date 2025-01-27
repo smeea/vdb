@@ -59,19 +59,20 @@ const DeckTags = ({ deck, noAutotags, isBordered, allTagsOptions }) => {
   return (
     <div className="flex">
       <Select
-        variant="creatable"
-        className="w-full"
-        noBorder={!isBordered}
-        noRemove={!isEditable}
-        isMulti
-        isDisabled={!isEditable}
-        options={options}
-        onChange={handleChange}
-        value={tagList}
-        placeholder="Click to add tags"
-        noOptionsMessage={() => 'Enter new tag'}
-        roundedStyle={twMerge('rounded-sm', isEditable && !noAutotags && 'rounded-r-none')}
         borderStyle={isEditable && !noAutotags ? 'border-y border-l border-r-none' : 'border'}
+        className="w-full"
+        isDisabled={!isEditable}
+        isMulti
+        noBorder={!isBordered}
+        noOptionsMessage={() => 'Enter new tag'}
+        noRemove={!isEditable}
+        onChange={handleChange}
+        options={options}
+        placeholder={isEditable && 'Click to add tags'}
+        roundedStyle={twMerge('rounded-sm', isEditable && !noAutotags && 'rounded-r-none')}
+        value={tagList}
+        variant="creatable"
+        noDropdown
       />
       {!noAutotags && isEditable && (
         <ButtonIconed

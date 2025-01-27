@@ -85,14 +85,11 @@ const Select = ({
                 : 'border-borderSecondary dark:border-borderSecondaryDark'),
           ),
         dropdownIndicator: () =>
-          variant == 'creatable' || noDropdown
+          noDropdown
             ? 'max-w-[0px] max-h-[0px]'
             : 'px-2 hover:cursor-pointer text-borderSecondary dark:text-borderSecondaryDark',
         indicatorsContainer: () =>
-          twMerge(
-            'rounded-sm',
-            variant == 'creatable' || noDropdown ? 'max-h-[0px] max-w-[0px]' : 'py-1.5 ',
-          ),
+          twMerge('rounded-sm', noDropdown ? 'max-h-[0px] max-w-[0px]' : 'py-1.5 '),
         indicatorSeparator: () => 'bg-borderSecondary dark:bg-borderSecondaryDark',
         menu: () => 'my-2 rounded-sm border border-borderThird dark:border-borderThirdDark',
         menuList: () => 'rounded-sm bg-bgPrimary dark:bg-bgPrimaryDark',

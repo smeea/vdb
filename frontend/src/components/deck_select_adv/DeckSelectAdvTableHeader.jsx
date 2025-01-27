@@ -123,7 +123,7 @@ const DeckSelectAdvTableHeader = ({
         {!short && isDesktop && <th className="min-w-[30px] sm:min-w-[45px]" />}
         {!short && !isNarrow && <th className="min-w-[100px] sm:min-w-[105px]" />}
         {!short && (
-          <th className="w-full px-1 max-sm:px-0.5">
+          <th className="w-full px-1 text-start max-sm:px-0.5">
             <DeckSelectAdvTagsFilter
               tagsFilter={tagsFilter}
               handleChangeTagsFilter={handleChangeTagsFilter}

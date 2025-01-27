@@ -1,12 +1,12 @@
 import React, { useState, useMemo } from 'react';
 import { useSnapshot } from 'valtio';
-import { Select, DeckSortButton, InventoryAddDeckRow, Modal, Checkbox, Input } from '@/components';
+import { InventoryAddDeckHeader, InventoryAddDeckRow, Modal } from '@/components';
 import { decksSort } from '@/utils';
 import { TAGS, MASTER, DECKID, DECKS, NAME } from '@/constants';
 import { useApp, deckStore } from '@/context';
 
 const InventoryAddDeckModal = ({ handleClose }) => {
-  const { isDesktop, isMobile } = useApp();
+  const { isMobile } = useApp();
   const decks = useSnapshot(deckStore)[DECKS];
   const [sortMethod, setSortMethod] = useState(NAME);
   const [revFilter, setRevFilter] = useState(false);
@@ -75,49 +75,18 @@ const InventoryAddDeckModal = ({ handleClose }) => {
       size="lg"
       title="Import Deck to Inventory"
     >
-      <table className="border-y border-bgSecondary dark:border-bgSecondaryDark sm:border-x">
-        <thead>
-          <tr>
-            <th className="min-w-[45px]"></th>
-            {!isMobile && <th className="min-w-[50px]"></th>}
-            <th className="max-sm:w-full sm:min-w-[250px] lg:min-w-[400px]">
-              <Input
-                placeholder="Filter by Name"
-                name="text"
-                autoComplete="off"
-                spellCheck="false"
-                value={nameFilter}
-                onChange={handleChangeNameFilter}
-              />
-            </th>
-            {isDesktop && <th className="min-w-[40px]"></th>}
-            {!isMobile && <th className="min-w-[100px]"></th>}
-            {!isMobile && (
-              <th className="w-full">
-                <Select
-                  variant="creatable"
-                  isMulti
-                  options={defaultTagsOptions}
-                  onChange={handleChangeTagsFilter}
-                  defaultValue={tagsFilter}
-                  placeholder="Filter by Tags"
-                />
-              </th>
-            )}
-            <th className="min-w-[105px]">
-              <div className="flex justify-end gap-1">
-                <Checkbox
-                  label={isMobile ? 'Rev' : 'Show Revisions'}
-                  checked={revFilter}
-                  onChange={() => setRevFilter(!revFilter)}
-                />
-                <div className="flex items-center">
-                  <DeckSortButton onChange={setSortMethod} noText />
-                </div>
-              </div>
-            </th>
-          </tr>
-        </thead>
+      <table className="border-bgSecondary dark:border-bgSecondaryDark border-y sm:border-x">
+        <InventoryAddDeckHeader
+          handleChangeNameFilter={handleChangeNameFilter}
+          handleChangeTagsFilter={handleChangeTagsFilter}
+          setRevFilter={setRevFilter}
+          setSortMethod={setSortMethod}
+          nameFilter={nameFilter}
+          revFilter={revFilter}
+          tagsFilter={tagsFilter}
+          defaultTagsOptions={defaultTagsOptions}
+          sortMethod={sortMethod}
+        />
         <tbody>
           {sortedDecks.map((deck) => {
             return (

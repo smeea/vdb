@@ -165,8 +165,10 @@ export { default as DiffQuantityDiffCard } from './diff/DiffQuantityDiffCard.jsx
 export { default as DiffSelect } from './diff/DiffSelect.jsx';
 export { default as DiffSelectDeck } from './diff/DiffSelectDeck.jsx';
 
+export { default as InventoryAddDeckHeader } from './inventory/InventoryAddDeckHeader.jsx';
 export { default as InventoryAddDeckModal } from './inventory/InventoryAddDeckModal.jsx';
 export { default as InventoryAddDeckRow } from './inventory/InventoryAddDeckRow.jsx';
+export { default as InventoryAddPreconHeader } from './inventory/InventoryAddPreconHeader.jsx';
 export { default as InventoryAddPreconModal } from './inventory/InventoryAddPreconModal.jsx';
 export { default as InventoryAddPreconRow } from './inventory/InventoryAddPreconRow.jsx';
 export { default as InventoryButtons } from './inventory/InventoryButtons.jsx';

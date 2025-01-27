@@ -36,7 +36,7 @@ const InventoryAddDeckRow = ({ deck, allTagsOptions }) => {
   const clan = getClan(deck[CRYPT]);
 
   return (
-    <tr className="row-bg border-y border-bgSecondary dark:border-bgSecondaryDark">
+    <tr className="row-bg border-bgSecondary dark:border-bgSecondaryDark border-y">
       {!isMobile && (
         <td>
           <Button onClick={() => deckToggleInventoryState(deck[DECKID])}>
@@ -61,7 +61,7 @@ const InventoryAddDeckRow = ({ deck, allTagsOptions }) => {
       </td>
       <td className="max-sm:w-full sm:min-w-[250px] lg:min-w-[400px]">
         <div
-          className="flex justify-between truncate text-fgName dark:text-fgNameDark"
+          className="text-fgName dark:text-fgNameDark flex justify-between truncate"
           title={deck[NAME]}
         >
           {deck[NAME]}
@@ -87,7 +87,7 @@ const InventoryAddDeckRow = ({ deck, allTagsOptions }) => {
         </td>
       )}
       {!isMobile && (
-        <td className="w-full">
+        <td className="w-full px-1 max-sm:px-0.5">
           <DeckTags
             deck={{ ...deck, [IS_AUTHOR]: false }}
             allTagsOptions={allTagsOptions}

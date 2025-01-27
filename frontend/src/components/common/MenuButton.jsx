@@ -14,7 +14,7 @@ const MenuButton = ({ title, icon, variant = 'primary', className, text }) => {
   return (
     <Menu.Button
       className={twMerge(
-        'text-fgThird outline-bgCheckboxSelected dark:text-fgThirdDark dark:outline-bgCheckboxSelectedDark flex min-h-[41px] w-full items-center justify-center gap-2 rounded-sm px-3 py-1.5 hover:cursor-pointer focus:outline',
+        'text-fgThird outline-bgCheckboxSelected dark:text-fgThirdDark dark:outline-bgCheckboxSelectedDark flex min-h-[41px] items-center justify-center gap-2 rounded-sm px-3 py-1.5 hover:cursor-pointer focus:outline',
         mainStyle[variant],
         className,
       )}
