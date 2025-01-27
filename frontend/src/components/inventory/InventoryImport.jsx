@@ -5,7 +5,7 @@ import { importDeck } from '@/utils';
 import { CRYPT, LIBRARY, BAD_CARDS } from '@/constants';
 
 const InventoryImport = () => {
-  const { cryptCardBase, libraryCardBase } = useApp();
+  const { cryptCardBase, libraryCardBase, setShowFloatingButtons, setShowMenuButtons } = useApp();
 
   const [importError, setImportError] = useState(false);
   const [badCards, setBadCards] = useState([]);
@@ -27,6 +27,9 @@ const InventoryImport = () => {
 
       setBadCards(deck[BAD_CARDS]);
       inventoryCardsAdd({ ...deck[CRYPT], ...deck[LIBRARY] });
+
+      setShowMenuButtons(false);
+      setShowFloatingButtons(true);
     };
   };
 
