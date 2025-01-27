@@ -64,7 +64,7 @@ const TwdSearchForm = ({ error, setError }) => {
         searchTwdForm[i] = query[i];
       });
       if (query[RANDOM]) searchRandom(query[RANDOM]);
-      if (query[NEW]) searchRandom(query[NEW]);
+      if (query[NEW]) searchNew(query[NEW]);
     }
   }, []);
 
@@ -77,7 +77,14 @@ const TwdSearchForm = ({ error, setError }) => {
       } else if (!searchTwdForm[EVENT] || searchTwdForm[EVENT].length > 2) {
         processSearch();
       }
-    } else if (isMobile && query && twdFormState && cryptCardBase && libraryCardBase) {
+    } else if (
+      isMobile &&
+      query &&
+      !(query[RANDOM] || query[NEW]) &&
+      twdFormState &&
+      cryptCardBase &&
+      libraryCardBase
+    ) {
       processSearch();
     }
   }, [twdFormState, cryptCardBase, libraryCardBase]);

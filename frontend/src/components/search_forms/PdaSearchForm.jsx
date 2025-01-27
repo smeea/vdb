@@ -61,7 +61,7 @@ const PdaSearchForm = ({ error, setError }) => {
         searchPdaForm[i] = query[i];
       });
       if (query[RANDOM]) searchRandom(query[RANDOM]);
-      if (query[NEW]) searchRandom(query[NEW]);
+      if (query[NEW]) searchNew(query[NEW]);
     }
   }, []);
 
@@ -74,7 +74,14 @@ const PdaSearchForm = ({ error, setError }) => {
       } else {
         processSearch();
       }
-    } else if (isMobile && query && pdaFormState && cryptCardBase && libraryCardBase) {
+    } else if (
+      isMobile &&
+      query &&
+      !(query[RANDOM] || query[NEW]) &&
+      pdaFormState &&
+      cryptCardBase &&
+      libraryCardBase
+    ) {
       processSearch();
     }
   }, [pdaFormState, cryptCardBase, libraryCardBase]);

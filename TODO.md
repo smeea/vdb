@@ -1,5 +1,4 @@
  FIX
-- Open New/Random queries on mobile for PDA/TWD
 - Too many calls to Location or History APIs on filter changes in Firefox
 
 # FIX ON HOLD
@@ -17,4 +16,3 @@
 
 # TECH IMPROVEMENTS
 - Remove legacy polyfills (groupBy 2024-11-30 87.24%, 2024-12-12 89.08%)
-
