@@ -126,7 +126,10 @@ const DeckSelectAdvTableRow = ({
           className="text-fgName dark:text-fgNameDark flex justify-between gap-2"
           title={deck[NAME]}
         >
-          {deck[NAME]}
+          <div className="flex items-center justify-center">
+            {isMobile && clan && <ResultClanImage className="w-[30px]" value={clan} />}
+            {deck[NAME]}
+          </div>
           <div className="flex items-center justify-end gap-3">
             {hasBanned && <ResultLegalIcon type={BANNED} />}
             {limitedMode && hasLimited && <ResultLegalIcon />}
