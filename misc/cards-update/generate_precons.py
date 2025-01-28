@@ -162,28 +162,22 @@ bundles = {
     },
 }
 
-playtest_bundles = {
-    "playtest": {
-        "SCai": {},
-        "SCat": {},
-        "SDS": {},
-        "SPIV": {},
-        "NR": {},
-        "NSal": {},
-        "NTz": {},
-        "NH": {},
-        "NL": {},
-        "PH": {},
-    },
-}
+playtest_bundles = {"playtest": {}}
+
 
 with open("cardbase_crypt.json", "r") as crypt_file, open(
     "cardbase_lib.json", "r"
 ) as library_file, open("precon_decks.json", "w") as precons_file, open(
     "precon_decks.min.json", "w"
-) as precons_file_min:
+) as precons_file_min, open(
+    "playtest/precons.json", "r"
+) as playtest_precons_file:
     crypt = list(json.load(crypt_file).values())
     library = list(json.load(library_file).values())
+    playtest_precons = json.load(playtest_precons_file)
+
+    for i in playtest_precons.values():
+        playtest_bundles["playtest"][i] = {}
 
     try:
         with open("playtest/cardbase_crypt_playtest.json", "r") as crypt_playtest_file, open(

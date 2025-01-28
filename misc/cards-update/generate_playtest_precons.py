@@ -4,6 +4,8 @@ from deck_import import deck_import
 
 with open("playtest/precons.json", "r") as precons_file:
     precons = json.load(precons_file)
+    if len(precons.keys()) == 0:
+        print("PLAYTEST PRECONS DISABLED - NO PLAYTEST FILES FOUND")
 
 playtest_cards = {}
 

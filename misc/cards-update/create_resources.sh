@@ -1,7 +1,11 @@
-#!/bin/sh
+#!/bin/bash
+# Check playtest files
+mkdir -p playtest
+[ ! -f playtest/vtescrypt_playtest.csv ] && touch playtest/vtescrypt_playtest.csv
+[ ! -f playtest/vteslib_playtest.csv ] && touch playtest/vteslib_playtest.csv
+[ ! -f playtest/precons.json ] && echo '{}' > playtest/precons.json
+
 # Update Card List
-echo '{}' > playtest/cardbase_crypt_playtest.min.json
-echo '{}' > playtest/cardbase_lib_playtest.min.json
 python generate_rulings.py
 python generate_crypt.py
 python generate_library.py

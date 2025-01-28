@@ -344,10 +344,21 @@ with (
 
 with (
     open("playtest/vteslib_playtest.csv", "r", encoding="utf-8-sig") as cardbase_csv_playtest,
-    open("playtest/cardbase_lib_playtest.json", "w", encoding="utf8") as cardbase_file,
-    open("playtest/cardbase_lib_playtest.min.json", "w", encoding="utf8") as cardbase_file_min,
+    open("playtest/cardbase_lib_playtest.json", "w", encoding="utf8") as cardbase_file_playtest,
+    open(
+        "playtest/cardbase_lib_playtest.min.json", "w", encoding="utf8"
+    ) as cardbase_file_min_playtest,
 ):
-    reader_playtest = csv.reader(cardbase_csv_playtest)
-    fieldnames_playtest = next(reader_playtest)
-    csv_cards_playtest = csv.DictReader(cardbase_csv_playtest, fieldnames_playtest)
-    generate_cards(csv_cards_playtest, cardbase_file, cardbase_file_min)
+    success = False
+    try:
+        reader_playtest = csv.reader(cardbase_csv_playtest)
+        fieldnames_playtest = next(reader_playtest)
+        csv_cards_playtest = csv.DictReader(cardbase_csv_playtest, fieldnames_playtest)
+        generate_cards(csv_cards_playtest, cardbase_file_playtest, cardbase_file_min_playtest)
+        success = True
+    except StopIteration:
+        print("PLAYTEST LIBRARY DISABLED - NO PLAYTEST FILES FOUND")
+    finally:
+        if not success:
+            json.dump({}, cardbase_file_min_playtest, separators=(",", ":"))
+            json.dump({}, cardbase_file_playtest, indent=4, separators=(",", ":"))

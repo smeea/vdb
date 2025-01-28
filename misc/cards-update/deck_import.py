@@ -3,21 +3,15 @@ import re
 from unidecode import unidecode
 from import_parse_card import import_parse_card
 
-with open("cardbase_crypt.json", "r") as crypt_file, open("cardbase_lib.json", "r") as library_file:
+with open("cardbase_crypt.json", "r") as crypt_file, open(
+    "cardbase_lib.json", "r"
+) as library_file, open("playtest/cardbase_lib_playtest.json", "r") as library_playtest_file, open(
+    "playtest/cardbase_crypt_playtest.json", "r"
+) as crypt_playtest_file:
     crypt_db = json.load(crypt_file)
     library_db = json.load(library_file)
-
-try:
-    with open("playtest/cardbase_lib_playtest.json", "r") as library_playtest_file, open(
-        "playtest/cardbase_crypt_playtest.json", "r"
-    ) as crypt_playtest_file:
-        crypt_db |= json.load(crypt_playtest_file)
-        library_db |= json.load(library_playtest_file)
-
-except Exception:
-    print(
-        "PLAYTEST PRECONS DISABLED - NO PLAYTEST PRECONS FILES FOUND (CONTACT PLAYTEST COORDINATOR TO GET IT)"
-    )
+    crypt_db |= json.load(crypt_playtest_file)
+    library_db |= json.load(library_playtest_file)
 
 crypt = list(crypt_db.values())
 library = list(library_db.values())

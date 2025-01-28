@@ -308,7 +308,16 @@ with open(
 ) as cardbase_file_playtest, open(
     "playtest/cardbase_crypt_playtest.min.json", "w", encoding="utf8"
 ) as cardbase_file_min_playtest:
-    reader_playtest = csv.reader(cardbase_csv_playtest)
-    fieldnames_playtest = next(reader_playtest)
-    csv_cards_playtest = csv.DictReader(cardbase_csv_playtest, fieldnames_playtest)
-    generate_cards(csv_cards_playtest, cardbase_file_playtest, cardbase_file_min_playtest)
+    success = False
+    try:
+        reader_playtest = csv.reader(cardbase_csv_playtest)
+        fieldnames_playtest = next(reader_playtest)
+        csv_cards_playtest = csv.DictReader(cardbase_csv_playtest, fieldnames_playtest)
+        generate_cards(csv_cards_playtest, cardbase_file_playtest, cardbase_file_min_playtest)
+        success = True
+    except StopIteration:
+        print("PLAYTEST CRYPT DISABLED - NO PLAYTEST FILES FOUND")
+    finally:
+        if not success:
+            json.dump({}, cardbase_file_min_playtest, separators=(",", ":"))
+            json.dump({}, cardbase_file_playtest, indent=4, separators=(",", ":"))
