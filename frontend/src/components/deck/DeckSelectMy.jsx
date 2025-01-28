@@ -63,7 +63,7 @@ const DeckSelectMy = ({ deckid, handleSelect }) => {
           label: (
             <div className="flex items-center justify-between">
               <div className="flex items-center">
-                <div className="flex w-[40px] items-center justify-center">
+                <div className="flex w-[35px] items-center justify-center pr-1">
                   {clan && (
                     <>
                       {paths.includes(clan) ? (

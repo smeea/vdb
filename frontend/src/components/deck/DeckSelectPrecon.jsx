@@ -1,4 +1,5 @@
 import React, { useMemo } from 'react';
+import { twMerge } from 'tailwind-merge';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 import paths from '@/assets/data/paths.json';
 import { ResultPathImage, Select, ResultPreconClan } from '@/components';
@@ -26,9 +27,10 @@ const DeckSelectPrecon = ({ deckid, handleSelect }) => {
               <div className="flex items-center justify-between">
                 <div className="flex items-center">
                   <div
-                    className={
-                      clans.length == 1 ? 'flex w-[40px] items-center justify-center' : 'inline'
-                    }
+                    className={twMerge(
+                      'flex items-center justify-center gap-1 pr-1',
+                      clans.length == 1 && 'w-[35px]',
+                    )}
                   >
                     {clans.map((clan) => {
                       return paths.includes(clan) ? (

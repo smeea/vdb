@@ -1,7 +1,5 @@
  FIX
 - Too many calls to Location or History APIs on filter changes in Firefox
-- Icon box in selector on mobile
-- Tags smaller on mobile
 
 # FIX ON HOLD
 - Deck-in-Url trimmed at first card - cant reproduce in dev environment
