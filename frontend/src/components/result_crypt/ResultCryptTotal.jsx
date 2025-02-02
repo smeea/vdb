@@ -35,14 +35,14 @@ const ResultCryptTotal = ({
 
   return (
     <Header>
-      <div className="whitespace-nowrap p-2 font-bold">
+      <div className="p-1 font-bold whitespace-nowrap sm:p-2">
         {inHoF ? 'CRYPT' : inCompare ? 'COMPARE' : 'TOTAL'}: {total}
       </div>
       <div>
         {Object.keys(byGroups).map((k) => {
           return (
-            <div key={k} className="inline-block whitespace-nowrap px-2">
-              <div className="inline pr-0.5 font-bold text-fgSecondary dark:text-fgSecondaryDark">
+            <div key={k} className="inline-block px-2 whitespace-nowrap">
+              <div className="text-fgSecondary dark:text-fgSecondaryDark inline pr-0.5 font-bold">
                 G{k == ANY ? X : k}:
               </div>
               {byGroups[k]}

@@ -20,14 +20,14 @@ const TwdResultTotal = ({ results, sortMethods, sortMethod, setSortMethod }) => 
         isMobile && Object.keys(byYear).length > 10 ? 'block' : 'flex',
       )}
     >
-      <div className="whitespace-nowrap p-2 font-bold">TOTAL: {results.length}</div>
+      <div className="p-1 font-bold whitespace-nowrap sm:p-2">TOTAL: {results.length}</div>
       <div>
         {Object.keys(byYear)
           .toReversed()
           .map((i) => {
             return (
-              <div key={i} className="inline-block whitespace-nowrap px-2">
-                <div className="inline pr-0.5 font-bold text-fgSecondary dark:text-fgSecondaryDark">
+              <div key={i} className="inline-block px-2 whitespace-nowrap">
+                <div className="text-fgSecondary dark:text-fgSecondaryDark inline pr-0.5 font-bold">
                   '{i.slice(2, 4)}:
                 </div>
                 {byYear[i]}

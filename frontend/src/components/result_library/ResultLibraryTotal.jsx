@@ -15,7 +15,7 @@ const ResultLibraryTotal = ({
   const byTypes = {};
   let total = 0;
 
-  cards.map((card) => {
+  cards.forEach((card) => {
     if (byTypes[card[TYPE]]) {
       byTypes[card[TYPE]] += 1;
     } else {
@@ -26,13 +26,13 @@ const ResultLibraryTotal = ({
 
   return (
     <Header>
-      <div className="whitespace-nowrap p-2 font-bold">
+      <div className="p-1 font-bold whitespace-nowrap sm:p-2">
         {inHoF ? 'LIBRARY' : inCompare ? 'COMPARE' : 'TOTAL'}: {total}
       </div>
       <div className={Object.keys(byTypes).length > 3 ? '' : 'flex items-center'}>
         {Object.keys(byTypes).map((k) => {
           return (
-            <div key={k} className="inline-block whitespace-nowrap px-2">
+            <div key={k} className="inline-block px-2 whitespace-nowrap">
               <div className="flex items-center gap-0.5">
                 <ResultLibraryTypeImage value={k} />
                 {byTypes[k]}

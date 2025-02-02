@@ -1,10 +1,12 @@
 import React from 'react';
+import { twMerge } from 'tailwind-merge';
 import { useSnapshot } from 'valtio';
-import { deckStore } from '@/context';
-import { DeckSortButton } from '@/components';
+import { useApp, deckStore } from '@/context';
+import { Header, DeckSortButton } from '@/components';
 import { TAGS, DECKS } from '@/constants';
 
 const DeckSelectAdvTotal = ({ sortMethod, setSortMethod, tagsFilter, setTagsFilter }) => {
+  const { isMobile } = useApp();
   const decks = useSnapshot(deckStore)[DECKS];
   const byTags = {};
 
@@ -29,8 +31,15 @@ const DeckSelectAdvTotal = ({ sortMethod, setSortMethod, tagsFilter, setTagsFilt
   });
 
   return (
-    <div className="flex items-center justify-between bg-bgSecondary dark:bg-bgSecondaryDark">
-      <div className="whitespace-nowrap p-2 font-bold">TOTAL: {Object.keys(decks).length}</div>
+    <Header
+      className={twMerge(
+        'sm:space-x-2',
+        isMobile && Object.keys(byTags).length > 10 ? 'block' : 'flex',
+      )}
+    >
+      <div className="p-1 font-bold whitespace-nowrap sm:p-2">
+        TOTAL: {Object.keys(decks).length}
+      </div>
       <div>
         {Object.keys(byTags)
           .toSorted()
@@ -39,9 +48,9 @@ const DeckSelectAdvTotal = ({ sortMethod, setSortMethod, tagsFilter, setTagsFilt
               <div
                 key={i}
                 onClick={() => handleClick(i)}
-                className="inline-block cursor-pointer whitespace-nowrap px-2"
+                className="inline-block cursor-pointer px-2 whitespace-nowrap"
               >
-                <div className="inline pr-0.5 font-bold text-fgSecondary dark:text-fgSecondaryDark">
+                <div className="text-fgSecondary dark:text-fgSecondaryDark inline pr-0.5 font-bold">
                   {i}:
                 </div>
                 {byTags[i]}
@@ -49,8 +58,10 @@ const DeckSelectAdvTotal = ({ sortMethod, setSortMethod, tagsFilter, setTagsFilt
             );
           })}
       </div>
-      <DeckSortButton sortMethod={sortMethod} onChange={setSortMethod} />
-    </div>
+      <div className="flex justify-end">
+        <DeckSortButton sortMethod={sortMethod} onChange={setSortMethod} />
+      </div>
+    </Header>
   );
 };
 
