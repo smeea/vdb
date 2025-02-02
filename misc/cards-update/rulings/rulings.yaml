@@ -216,8 +216,6 @@
   - Prevents up to 3 damage, it can be used to prevent less. [RTR 20041202]
   - Cannot be used if there is no damage to prevent. [LSJ 20001114]
   - Unused prevention does not carry over. [LSJ 20001114]
-100092|Army of Apparitions:
-  - '[chi] Cannot be used during a referendum that is automatically passing. [PIB 20150105] [LSJ 19980107]'
 100096|Art of Love, The:
   - Requirements do not apply when taking control of a card already in play. [TOM 19960226-1]
   - Effects applied during the discard phase are applied before you return the ally. If you lose control of the ally before
@@ -334,8 +332,6 @@
     vampire that is the target of the betrayer, that player takes the pool loss. [RTR 19941109]
   - You select an uncontrolled vampire when you play the card. If you have a choice (more than one of your uncontrolled vampires
     is controlled by the other Methuselah), you still have to choose just one of them to be the Betrayer. [LSJ 19990419]
-100157|Bewitching Oration:
-  - Cannot be used during a referendum that is automatically passing. [PIB 20150105] [LSJ 19980107]
 100159|Big Game:
   - '"that minion" refers to the target and "this minion" to the acting minion. [ANK 20180518]'
 100160|Bima:
@@ -616,12 +612,10 @@
 100307|Catatonic Fear:
   - '[PRE] Damage is done by the vampire (not environmental). [RTR 19970630] [LSJ 19990723]'
   - '[PRE] If the strike is dodged, no damage is done. [LSJ 19980526] [RTR 20041202] [LSJ 20070124]'
-  - "[PRE] Is a damage dealing strike and can be modified by effects like {Target Vitals} or {Dam the Heart's River}.  [ANK\
-    \ 20170111] [LSJ 20071011]"
 100308|Cats' Guidance:
   - '[ani] Is played after all combats are handled. [RTR 19980623] [LSJ 20040219] [ANK 20221130]'
   - '[ani] Cannot be played if the vampire is in torpor, for example if he went into torpor during the combat resulting from
-    the block. [LSJ 20000103]'
+    the block. [RBK reaction-cards]'
 100309|Cauldron of Blood:
   - Additional damage inherits all of the properties of the base damage. [TOM 19960225]
 100310|Cavalier:
@@ -650,8 +644,6 @@
   - '[SPI] "continue as if unblocked" moves the action card from the ash heap (where it went when the action was blocked)
     to limbo (where it should be if the action is not blocked). If the action card is not in the ash heap, then the action
     cannot be continued. [LSJ 20070808-1]'
-  - '[SPI] If the combat continues or a new combat occurs, the "action continues as if unblocked" effect is lost. [LSJ 19980109]
-    [RTR 20020501]'
 100322|Champion:
   - '[REACTION] Can be used only when reactions can be used (unlocked or with a wake effect). It does not count as playing
     a reaction card. [LSJ 20070403] [LSJ 20070413]'
@@ -720,6 +712,9 @@
   - Does nothing to an empty vampire which unlocks in torpor. [RTR 19941109]
   - Cannot be damaged by host, but does not stop host from using effects which would normally damage it. [RTR 19941109]
   - 'Is not burn if the controller of the vampire it is on id ousted: it is removed from the game. [ANK 20180408]'
+100337|Cheval de Bataille:
+  - May be played at any time during the voting process and, when votes are tallied, will cause the loss of blood to vampires
+    voting 'no' before it is played, as well as to vampores voting 'no' after it is played. [RTR 19951110]
 100340|Children of Stone:
   - This is an "equip action" [TOM 19960130]
 100344|Chiropteran Marauder:
@@ -1326,8 +1321,6 @@
   - Effects that end combat and then do something else after combat (include continuing the action as if unblocked) will be
     lost, except for unlock effects. [LSJ 19980109] [RTR 20020501]
   - Cannot be used to start a new combat if there is already a pending combat queued. [RTR 20020501]
-  - The opponent cannot play or use the maneuver from a strike (eg. {.44 Magnum}, {Thrown Gate}), since they cannot strike.
-    [LSJ 20001126]
 100706|Fata Amria:
   - '[CHI] [REACTION] Is played after resolution, but still during the action. Action modifiers and effects that can be played
     "after resolution" can be played before or after it. [LSJ 19981028] [ANK 20190425]'
@@ -1407,8 +1400,6 @@
   - '[VIS] "continue as if unblocked" moves the action card from the ash heap (where it went when the action was blocked)
     to limbo (where it should be if the action is not blocked). If the action card is not in the ash heap, then the action
     cannot be continued. [LSJ 20070808-1]'
-  - '[VIS] If the combat continues or a new combat begins, the "action continues as if unblocked" effect is lost. [LSJ 19980109]
-    [RTR 20020501]'
 100755|Folderol:
   - '[aus] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Helena (ADV)}). The card
     cannot be played if the minion cannot afford to burn the blood. [ANK 20210226]'
@@ -1667,9 +1658,6 @@
 100876|Hackerspace:
   - A counter is added when {Anarch Convert} enters play, before using his ability. If he uses his ability to make a non-anarch
     vampire anarch, a second counter is added. [ANK 20210410]
-100879|Hall of Mirrors:
-  - '[CHI] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {The Path of Paradox}). The
-    card cannot be played if the minion cannot afford to burn the blood. [ANK 20210226]'
 100882|Hand of Conrad:
   - The minion cannot use the discipline provided if some effect prevents him to use the equipment (eg. {Drawing Out the Beast}).
     [RTR 20010710]
@@ -1729,8 +1717,6 @@
   - Cannot be used to start a new combat if there is already a pending combat queued. [RTR 20020501]
   - Can only be played by the controller of the acting minion. [LSJ 19990425]
   - Cannot be used to enter combat with a vampire on his way to torpor. [LSJ 20100604-1]
-  - The opponent cannot play or use the maneuver from a strike (eg. {.44 Magnum}, {Thrown Gate}), since they cannot strike.
-    [LSJ 20001126]
 100918|Hidden Strength:
   - The 'X' in card text refers to the cost of the card. [LSJ 19970224]
   - Prevents up to X+1 damage, it can prevent less (X can be higher than strictly needed). [RTR 20041202] [PIB 20121202]
@@ -1879,13 +1865,18 @@
   - The "can act the turn it is recruited" text does not let him act during an opponent turn if it was recruited then (eg.
     using {Madness Network}). [ANK 20200813-3]
 100989|Inscription:
-  - The vampire receiving the card must meet all of the requirements of the card other than the Thaumaturgy requirement. The
-    vampire playing the Inscription need not meet any of the requirements (other than the Thaumaturgy needed to play Inscription
-    in the first place). [LSJ 20031116] [ANK 20230816-2]
+  - The vampire receiving the card need not meet any of the requirements of the card to receive the Inscription, but must
+    meet all of the requirements, other than the [tha]Blood Sorcery requirement to use its effects. [ANK 20230822] [LSJ 20031116]
+    [ANK 20230816-2]
   - If the card put on it has any "Do not replace" effect, it is ignored both when Inscription is played and when it is burned
     to use the card. [ANK 20180627-1]
-  - 'When burned, the card put on it is not considered to be played normally: if it is a modifier the minion can still use
-    the same modifier himself. [ANK 20180627-1]'
+  - When burned, the card put on it is not considered to be played normally (if it is an action modifier or reaction the vampire
+    can still play the same card themselves, if it is an action the same action card can still be played normally if they
+    unlock). [ANK 20180627-1]
+  - The card inscribed with Inscription can only be used when the card could be played (an inscribed {Rutor's Hand} requires
+    an action, a {Mirror Walk} must be used by an acting vampire, etc). [PIB 20121014]
+  - The vampire playing Inscription need not meet any of the requirements, other than the [tha]Blood Sorcery needed to play
+    Inscription in the first place. [LSJ 20031116]
 100992|Inspire Greatness:
   - Can only be played by the controller of the acting minion. [LSJ 19990425]
   - Can be played by a locked vampire. [LSJ 19980210]
@@ -2132,8 +2123,6 @@
   - '[val] [VAL] If the combat continues or a new combat begins, no damage is done. The vampire can still burn 1 blood to
     unlock. [RTR 20020501]'
   - '[val] [VAL] If the strike is dodged, no damage is done. [LSJ 19980526] [RTR 20041202] [PIB 20130319]'
-  - "[val] [VAL] Is a damage dealing strike and can be modified by effects like {Target Vitals} or {Dam the Heart's River}.\
-    \ [PIB 20130319]"
   - '[VAL] The blood to unlock can be paid until the end of combat, including after other effects that are played at the end
     of round. [ANK 20180618]'
 101130|Loyalist:
@@ -2228,9 +2217,6 @@
   - '[AUS][FOR] Unused prevention does not carry over. [LSJ 20001114]'
   - '[AUS][FOR] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Una}). The card cannot
     be played if the minion cannot afford to burn the blood. [ANK 20210226]'
-101178|Mask Empathy:
-  - '[PRE] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}). The card
-    cannot be played if the minion cannot afford to burn the blood. [ANK 20210226]'
 101179|Mask of a Thousand Faces:
   - Can only be played by the controller of the acting minion. [LSJ 19990425]
   - Cannot be used to take over an action granted by an equipment the masked minion has, even if the masking vampire also
@@ -2335,8 +2321,6 @@
   - '[CHI] "continue as if unblocked" moves the action card from the ash heap (where it went when the action was blocked)
     to limbo (where it should be if the action is not blocked). If the action card is not in the ash heap, then the action
     cannot be continued. [LSJ 20070808-1]'
-  - '[CHI] If the combat continues or a new combat begins, the "action continues as if unblocked" effect is lost. [LSJ 19980109]
-    [RTR 20020501]'
 101223|Mirror Walk:
   - "[THA] The would be blocker is locked even if he benefits from an effect that prevents him to lock when he blocks. He\
     \ is not locked from the block, but from Mirror Walk's effect. [ANK 20191204]"
@@ -2407,8 +2391,6 @@
   - '[VAL] "continue as if unblocked" moves the action card from the ash heap (where it went when the action was blocked)
     to limbo (where it should be if the action is not blocked). If the action card is not in the ash heap, then the action
     cannot be continued. [LSJ 20070808-1]'
-  - '[VAL] If the combat continues or a new combat begins, the "action continues as if unblocked" effect is lost. [LSJ 19980109]
-    [RTR 20020501]'
 101245|Mouthpiece:
   - '[DOM] Can only be played by the controller of the acting minion. [LSJ 19990425]'
   - '[DOM] Can be played by a locked vampire. [LSJ 19980210]'
@@ -2697,8 +2679,6 @@
     target. [LSJ 20100325-2]
 101482|Preternatural Evasion:
   - '[CEL] The blood is burned when playing the card. [ANK 20200703-2]'
-  - '[CEL] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Mitru the Hunter}). The
-    card cannot be played if the minion cannot afford to burn the blood. [ANK 20210226]'
 101485|Primal Instincts:
   - If the strike is canceled, the rest of the effect is also canceled. [RTR 20040501]
 101486|Principia Discordia:
@@ -2938,10 +2918,8 @@
   - The opponent cannot play a card that provides an additional strike, even if just to benefit from another effect (eg. {Acrobatics}).
     [LSJ 20011214-5]
 101637|Riposte:
-  - '[cel] [CEL] The damage is dealt just after the combat ends. [RTR 19970630]'
   - '[cel] [CEL] The damage is only dealt if the strike was resolved at close range. [LSJ 19970915]'
   - '[cel] [CEL] If the strike is dodged, no damage is done. [LSJ 19980526] [RTR 20041202]'
-  - '[cel] [CEL] If the combat continues or a new combat begins, no damage is done. [RTR 20020501]'
   - "[cel] [CEL] Is a damage dealing strike and can be modified by other effects like {Target Vitals} or {Dam the Heart's\
     \ River}, even if they are done after combat.  [ANK 20170111] [PIB 20130319]"
 101640|Rising, The:
@@ -3035,8 +3013,8 @@
   - If another Methuselah is the target, he must declare whether he attempts or declines to block before Scobax can be played.
     [ANK 20200607]
 101692|Scorn of Adonis:
-  - May be played at any time during the voting process, and will retroactively cause the loss of pool to Methuselahs voting
-    'no' before it is played, as well as to Methuselahs voting 'no' after it is played. [RTR 19951110]
+  - May be played at any time during the voting process and, when votes are tallied, will cause the loss of pool to Methuselahs
+    voting 'no' before it is played, as well as to Methuselahs voting 'no' after it is played. [RTR 19951110]
   - Each Scorn played may only cause the loss of one pool to a given Methuselah, regardless of how may 'no' votes that Methuselah
     casts. [RTR 19951110]
 101693|Scorpion Sting:
@@ -3104,12 +3082,8 @@
 101727|Serpent's Numbing Kiss:
   - '[PRE][SER] The additional effect takes place after the end of combat, including the blood burn. [RTR 19970630] [ANK 20180420-1]
     [ANK 20200705]'
-  - '[PRE][SER] If the combat continues or a new combat begins, no blood is burned, the card cannot be put on the opposing
-    minion and he is not locked. [RTR 20020501] [ANK 20200705]'
   - '[PRE][SER] If the strike is dodged, the card is not put on the opposing minion and he is not locked. [RTR 20041202]'
   - '[PRE][SER] Burning 1 blood is mandatory, not a choice. [ANK 20180420-2]'
-  - '[PRE][SER] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {The Path of Typhon}).
-    The card cannot be played if the minion cannot afford to burn the blood. [ANK 20210226]'
 101730|Set's Call:
   - Requirements do not apply when taking control of a card already in play. [TOM 19960226-1]
   - The acting vampire's controller is the one who makes the choices pertaining to the ally or retainer entry in play. [LSJ
@@ -3138,8 +3112,6 @@
   - '[OBT] "continue as if unblocked" moves the action card from the ash heap (where it went when the action was blocked)
     to limbo (where it should be if the action is not blocked). If the action card is not in the ash heap, then the action
     cannot be continued. [LSJ 20070808-1]'
-  - '[OBT] If the combat continues or a new combat occurs, the "action continues as if unblocked" effect is lost. [LSJ 19980109]
-    [RTR 20020501]'
 101736|Shadow Boxing:
   - '[OBF][POT][ACTION MODIFIER] If the action continues "as if unblocked", all action modifiers and reaction cards are still
     in effect, even those pertaining to a successful block. [RTR 19941109] [ANK 20190116]'
@@ -3151,8 +3123,6 @@
     action was blocked) to limbo (where it should be if the action is not blocked). If the action card is not in the ash heap,
     then the action cannot be continued. [LSJ 20070808-1]'
   - '[OBF][POT][ACTION MODIFIER] Cannot be used by a Slave that entered combat instead of the acting minion. [ANK 20200114]'
-  - '[OBF][POT][ACTION MODIFIER] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana
-    de Sforza}). The card cannot be played if the minion cannot afford to burn the blood. [ANK 20210226]'
   - '[OBF][POT][ACTION MODIFIER] Is used after combat effectively ends and can be order against other cards and effects played
     after combat (eg. {Provision of the Silsila}). [ANK 20230314]'
 101737|Shadow Court Satyr:
@@ -3400,8 +3370,6 @@
 101869|Steely Tenacity:
   - '[ani] [COMBAT] Additional damage inherits all of the properties of the base damage. [TOM 19960225]'
   - '[ani] [COMBAT] The press can only be used during the current round. [TOM 19960521]'
-  - '[dom], [qui] [ACTION] Is not replaced if the action is blocked: it is replaced when the action ends, after all combats.
-    [LSJ 20001120]'
 101872|Stolen Police Cruiser:
   - Can be equipped by a non-Anarch and would count as a vehicle, although the rest of his effect does not apply. [LSJ 20030607]
   - Equipping it does not count as an action requiring an Anarch (eg. for {CrimethInc.}). [ANK 20170918]
@@ -3615,9 +3583,6 @@
     has declined to block. [PIB 20150501]
 101956|Tend the Flock:
   - The blood comes from the blood bank. [ANK 20190511]
-101957|Tenebrous Form:
-  - '[OBT] A minion previously attempting to block can resign his attempt and pay no blood. [LSJ 20031121-2]'
-  - '[OBT] An ally has life, not blood, he cannot pay. [LSJ 20050216] [ANK 20190701]'
 101958|Tension in the Ranks:
   - Pool is not paid when an imbued is incapacitated. [LSJ 20060409-2]
 101960|Terror Frenzy:
@@ -3693,8 +3658,6 @@
   - '[CEL] "continue as if unblocked" moves the action card from the ash heap (where it went when the action was blocked)
     to limbo (where it should be if the action is not blocked). If the action card is not in the ash heap, then the action
     cannot be continued. [LSJ 20070808-1]'
-  - '[CEL] If the combat continues or a new combat occurs, the "action continues as if unblocked" effect is lost. [LSJ 19980109]
-    [RTR 20020501]'
 101996|Tortured Confession:
   - Not usable by vampires burned in combat, either. [RTR 19950622]
 101998|Touch of Clarity:
@@ -3803,8 +3766,6 @@
   - Once it is attempting to block, its intercept can be affected by other cards normally (eg. {KRCG News Radio}). [ANK 20211112-2]
   - Is not a minion when it burns (eg. does not trigger {Tension in the Ranks}). [ANK 20230317]
   - The burn option can be used if all your infernal vampires are in torpor. [LSJ 20091203]
-  - The fact it is Unique has no bearing on the burn option. You cannot use the burn option if you have an infernal vampire
-    ready, even if you already have an Unleash Hell's Fury in play. [LSJ 20100203-2]
 102078|Unlicensed Taxicab:
   - Offers the additional stealth on actions to equip it from another friendly minion as well, even with other equipment in
     the same action. [LSJ 20060222]
@@ -3891,12 +3852,6 @@
     20200905]
 102128|Vivienne Géroux:
   - Is not Anarch (eg. does not benefit from {Anarch Manifesto, An}). [RBK allies] [ANK 20230417]
-102131|Voter Captivation:
-  - Is played after the referendum is resolved. If the effect of the referendum ousts the acting Methuselah, there is no time
-    to play it to prevent the ousting. [RTR 19951110]
-  - Can be played before or after other cards that are played "after action resolution" or "if the action was successful".
-    [LSJ 20070327]
-  - Can be used after a referendum that is automatically passing, but X is zero in this case. [PIB 20150105] [LSJ 19980107]
 102133|Vox Senis:
   - May still be "canceled as it is played" when used as an out-of-turn master. [LSJ 20031201]
 102135|Vulture's Buffet:
@@ -4103,8 +4058,8 @@
     of Mist}). [LSJ 20010814-2]'
 102256|One With the Land:
   - '[PRO] The strike restriction only applies in the combat resulting from a successful block. It does not carry over to
-    follow-up combats (eg. [CEL] {Psyche!}). [LSJ 20010813] [LSJ 20010819-2]'
-  - '[PRO] The strike restriction applies again if a second block happens on the same action (eg. after [PRO] {Form of Mist}).
+    follow-up combats (e.g. [CEL] {Psyche!}). [LSJ 20010813] [LSJ 20010819-2]'
+  - '[PRO] The strike restriction applies again if a second block happens on the same action (e.g. after [PRO] {Form of Mist}).
     [LSJ 20010814-2]'
 102263|Unleashing the Bestial Soul:
   - An opponent can play a reaction to wake as the card is played, before its effects apply. [ANK 20231028]
@@ -4465,9 +4420,8 @@
 200793|Krassimir:
   - When he cancels an action, it has reached resolution, so is subject to NRA (Non Repeatable Action) rules. [LSJ 20011202-2]
 200798|Kyoko Shinsegawa:
-  - The action provided by her ability is a hunt action and benefit from hunt bonuses. [LSJ 20030311] [LSJ 20090113-2]
   - She can only perform the action provided by her ability once per turn. [PIB 20121112]
-  - If other hunt actions are granted, she may choose from among those options. [LSJ 20060306]
+  - If other non-standard hunt actions are granted, she may choose from among those options. [LSJ 20060306]
   - She cannot steal more blood than the target has when using a special hunt ability. [LSJ 20100915]
   - Cannot choose to target a vampire when using another non-standard hunt action (eg. {Abactor}). [LSJ 20090606]
 200811|Lambach:
@@ -4541,7 +4495,6 @@
     the action as if unblocked) will be lost, except for unlock effects. [LSJ 19980109] [RTR 20020501] [ANK 20180928-2]
 200929|Mariel, Lady Thunder:
   - If she locks to end combat, the damage is applied just after the combat ends. [RTR 19970630]
-  - Her ability to end combat can be used when she is in torpor. [LSJ 20011022]
 200935|Maris Streck:
   - Can use her ability multiple times each action. [LSJ 20020814] [ANK 20180307-2]
   - Can use her ability while locked. [ANK 20220705]
@@ -4960,10 +4913,12 @@ G00018|Retainer with discipline level:
 G00019|Animal:
   - Is neither a mortal nor a monster. [ANK 20200203-2] [LSJ 20060515]
 G00020|Action not replaced:
-  - 'Is not replaced if the action is blocked: it is replaced when the action ends, after all combats. [LSJ 20001120]'
+  - Is not replaced if the action is blocked; it is replaced when the action ends, after all combats. [LSJ 20001120]
+  - The card is replaced after all "after resolution" cards and effects (e.g. {Freak Drive}). No more cards can be played
+    on that action; the action has ended. [LSJ 20101021]
 G00021|Reduce votes:
   - The votes provided by the Priscii sub-referendum are not affected. [ANK 20180307-1]
-G00022|Vote change:
+G00022|Usable during the polling step:
   - Cannot be used during a referendum that is automatically passing. [PIB 20150105] [LSJ 19980107]
 G00023|Can draw during action:
   - Can be used during an action, when the controller has the opportunity to play an effect. [ANK 20200616]
@@ -5082,8 +5037,6 @@ G00070|Impersonating title for non-existent sect:
   - Can meet a sect-specific title (e.g. Justicar) requirement even if the sect does not exist anymore (eg. {Fall of the Camarilla}).
     [ANK 20230503] [LSJ 20050124]
 G00071|After Combat Ends:
-  - The effect happens after combat is concluded. Any blood lost is not lost during combat. (e.g. {Anathema}, {Taste of Vitae})
-    [LSJ 20031123]
   - "If the combat continues or a new combat begins, the after combat effect does not happen/is not usable. (eg. {Psyche!},\
     \ {Telepathic Tracking})\n(Partial reversal of RTR 20010711) [RTR 20020501] [LSJ 19980109]"
 G00072|Impersonating requirements for cards not played normally:
@@ -5131,5 +5084,30 @@ G00085|Meets missing disciplines:
   - Multiple similar effects (e.g. two {Infernal Familiar}, or {Ian Forestal} with an {Infernal Familiar}) cannot be used
     to meet the requirements of a multi-Discipline card that the minion is missing one or more Disciplines to play. [LSJ 20020218]
 G00086|Multi-discipline:
-  - When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library,
-    or ash heap, the card is considered to require any and/or all Disciplines listed on it. [LSJ 20011204-3] [PIB 20130704]
+  - When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap,
+    the card is considered to require any and/or all Disciplines listed on it. [LSJ 20011204-3] [PIB 20130704]
+G00087|Pool gain after referendum:
+  - Is played after the referendum is resolved. If the effect of the referendum ousts the acting Methuselah, there is no time
+    to play it to prevent the ousting. [RTR 19951110]
+  - Can be used after a referendum that is automatically passing, but the vote is considered to have passed by 0 votes. [LSJ
+    19980107] [PIB 20150105]
+G00088|Burn blood to attempt to block:
+  - A minion previously attempting to block can resign his attempt and pay no blood. [LSJ 20031121-2]
+G00089|Cards that replace themselves:
+  - The card must be present in the ash heap to be redrawn. [RBK targeting-of-cards]
+  - If the card is cancelled, the self-replacing clause is also cancelled. [LSJ 20080630]
+  - If an effect delays when the redraw occurs (e.g. {The Meddling of Semsith}), you can still redraw this card from the ash
+    heap when the delay effect allows a redraw. [LSJ 20100527]
+  - If an effect prevents replacement ({Visit from the Capuchin}), then there is no opportunity to use the cards replacement
+    text. [LSJ 20080723]
+G00090|Blood loss after combat ends:
+  - Any blood loss occurs after combat (and will not trigger {Anathema} or be available for {Taste of Vitae}, etc). [LSJ 20031123]
+G00091|Damage after combat ends:
+  - Damage is applied after combat, so cannot be prevented by combat cards. [LSJ 20010205]
+  - Is a damage dealing effect and can be modified by other effects like {Dam the Heart's River}. [ANK 20170111] [PIB 20130319]
+G00092|Unique cards with burn option:
+  - The fact it is Unique has no bearing on the burn option. You cannot use the burn option if you meet the requirement, even
+    if you already have a copy of the card in play. [LSJ 20100203-2]
+G00093|Cannot strike:
+  - Minions that cannot strike, cannot play or use the maneuver from a strike (e.g. {.44 Magnum}, {Thrown Gate}). [LSJ 20001126]
+  - Minions can (uselessly) gain additional strikes even if they cannot strike. [LSJ 19970814-2]

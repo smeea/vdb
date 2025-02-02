@@ -3205,6 +3205,12 @@
                 "refs":{
                     "ANK 20200420-1":"https://www.vekn.net/forum/rules-questions/78576-amelia-the-blood-red-tears#99641"
                 }
+            },
+            {
+                "text":"Any blood loss occurs after combat (and will not trigger {Anathema} or be available for {Taste of Vitae}, etc).",
+                "refs":{
+                    "LSJ 20031123":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HvM2cHJ6yIo/m/jsb4iRoNdWkJ"
+                }
             }
         ],
         "sect":"Camarilla",
@@ -5915,7 +5921,34 @@
         "name":"Arianne, The Conqueror",
         "new":false,
         "path":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"If the combat continues or a new combat begins, the after combat effect does not happen/is not usable. (eg. {Psyche!}, {Telepathic Tracking})\n(Partial reversal of RTR 20010711)",
+                "refs":{
+                    "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ",
+                    "LSJ 19980109":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d2U51Uw0Hfg/m/uIPoVvPFePgJ"
+                }
+            },
+            {
+                "text":"Any blood loss occurs after combat (and will not trigger {Anathema} or be available for {Taste of Vitae}, etc).",
+                "refs":{
+                    "LSJ 20031123":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HvM2cHJ6yIo/m/jsb4iRoNdWkJ"
+                }
+            },
+            {
+                "text":"Damage is applied after combat, so cannot be prevented by combat cards.",
+                "refs":{
+                    "LSJ 20010205":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PMfeHfvc7ys/m/dT5XN0_6L4EJ"
+                }
+            },
+            {
+                "text":"Is a damage dealing effect and can be modified by other effects like {Dam the Heart's River}.",
+                "refs":{
+                    "ANK 20170111":"https://www.vekn.net/forum/rules-questions/72635-dam-the-heart-s-river-and-catatonic-fear?start=6#80117",
+                    "PIB 20130319":"https://www.vekn.net/forum/rules-questions/46164-catatonic-fear-and-loving-agony#46168"
+                }
+            }
+        ],
         "sect":"Sabbat",
         "set":{
             "SoC":{
@@ -22351,7 +22384,15 @@
         "name":"Giovanni del Georgio",
         "new":false,
         "path":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Is affected by increases to Hunt value. Blood comes from the target of the hunt.",
+                "refs":{
+                    "RTR 20030519":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NOBWXWrd-vA/m/iEOpQp1uhvAJ",
+                    "RTR 20180511":"https://www.vekn.net/forum/rules-questions/76595-rules-team-rulings-rtr-11-05-2018#86780"
+                }
+            }
+        ],
         "sect":"Independent",
         "set":{
             "LotN":{
@@ -33829,20 +33870,13 @@
         "path":"",
         "rulings":[
             {
-                "text":"The action provided by her ability is a hunt action and benefit from hunt bonuses.",
-                "refs":{
-                    "LSJ 20030311":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/MEiIvNrW1tE/m/ByXcnD9kP04J",
-                    "LSJ 20090113-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/e48eViCqYSk/m/X7ZEE3k3MvEJ"
-                }
-            },
-            {
                 "text":"She can only perform the action provided by her ability once per turn.",
                 "refs":{
                     "PIB 20121112":"https://www.vekn.net/forum/rules-questions/40755-kyoko-s-hunt-action#40831"
                 }
             },
             {
-                "text":"If other hunt actions are granted, she may choose from among those options.",
+                "text":"If other non-standard hunt actions are granted, she may choose from among those options.",
                 "refs":{
                     "LSJ 20060306":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/H-W0Wqx3t9w/m/jgTHm_Ac8dwJ"
                 }
@@ -33857,6 +33891,13 @@
                 "text":"Cannot choose to target a vampire when using another non-standard hunt action (eg. {Abactor}).",
                 "refs":{
                     "LSJ 20090606":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-hy9E1u2t_o/m/CPU8rltzhesJ"
+                }
+            },
+            {
+                "text":"Is affected by increases to Hunt value. Blood comes from the target of the hunt.",
+                "refs":{
+                    "RTR 20030519":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NOBWXWrd-vA/m/iEOpQp1uhvAJ",
+                    "RTR 20180511":"https://www.vekn.net/forum/rules-questions/76595-rules-team-rulings-rtr-11-05-2018#86780"
                 }
             }
         ],
@@ -39559,9 +39600,35 @@
                 }
             },
             {
-                "text":"Her ability to end combat can be used when she is in torpor.",
+                "text":"The ability can be used when in torpor.",
                 "refs":{
                     "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
+                }
+            },
+            {
+                "text":"If the combat continues or a new combat begins, the after combat effect does not happen/is not usable. (eg. {Psyche!}, {Telepathic Tracking})\n(Partial reversal of RTR 20010711)",
+                "refs":{
+                    "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ",
+                    "LSJ 19980109":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d2U51Uw0Hfg/m/uIPoVvPFePgJ"
+                }
+            },
+            {
+                "text":"Any blood loss occurs after combat (and will not trigger {Anathema} or be available for {Taste of Vitae}, etc).",
+                "refs":{
+                    "LSJ 20031123":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HvM2cHJ6yIo/m/jsb4iRoNdWkJ"
+                }
+            },
+            {
+                "text":"Damage is applied after combat, so cannot be prevented by combat cards.",
+                "refs":{
+                    "LSJ 20010205":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PMfeHfvc7ys/m/dT5XN0_6L4EJ"
+                }
+            },
+            {
+                "text":"Is a damage dealing effect and can be modified by other effects like {Dam the Heart's River}.",
+                "refs":{
+                    "ANK 20170111":"https://www.vekn.net/forum/rules-questions/72635-dam-the-heart-s-river-and-catatonic-fear?start=6#80117",
+                    "PIB 20130319":"https://www.vekn.net/forum/rules-questions/46164-catatonic-fear-and-loving-agony#46168"
                 }
             }
         ],

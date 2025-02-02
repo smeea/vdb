@@ -979,6 +979,13 @@
         "requirement":"anarch",
         "rulings":[
             {
+                "text":"[chi] Cannot be used during a referendum that is automatically passing.",
+                "refs":{
+                    "PIB 20150105":"https://www.vekn.net/forum/rules-questions/68465-voting-is-complicated#68493",
+                    "LSJ 19980107":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aUUs4VCR_Ec/m/PLecvfrEqbgJ"
+                }
+            },
+            {
                 "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
                 "refs":{
                     "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
@@ -2119,7 +2126,29 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Is played after resolution, after all combats are handled, but still during the action. Action modifiers and effects that can be played \"after resolution\" can be played before or after it.",
+                "refs":{
+                    "PIB 20150915":"https://www.vekn.net/forum/rules-questions/73134-learjet#73139",
+                    "LSJ 19981028":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JZHY1bTCAa0/m/XqDVERty0roJ",
+                    "ANK 20190425":"https://www.vekn.net/forum/rules-questions/77581-action-modifiers-played-at-beginning-and-end-of-an-action#94652"
+                }
+            },
+            {
+                "text":"Is played after the referendum is resolved. If the effect of the referendum ousts the acting Methuselah, there is no time to play it to prevent the ousting.",
+                "refs":{
+                    "RTR 19951110":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/TXfganI5B2o/m/QYh3AdPNbUwJ"
+                }
+            },
+            {
+                "text":"Can be used after a referendum that is automatically passing, but the vote is considered to have passed by 0 votes.",
+                "refs":{
+                    "LSJ 19980107":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aUUs4VCR_Ec/m/PLecvfrEqbgJ",
+                    "PIB 20150105":"https://www.vekn.net/forum/rules-questions/68465-voting-is-complicated#68493"
+                }
+            }
+        ],
         "set":{
             "V5L":{
                 "PL":"4"
@@ -4342,9 +4371,15 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"Is not replaced if the action is blocked: it is replaced when the action ends, after all combats.",
+                "text":"Is not replaced if the action is blocked; it is replaced when the action ends, after all combats.",
                 "refs":{
                     "LSJ 20001120":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Br8FPS5mRn4/m/2tbPhQquS7gJ"
+                }
+            },
+            {
+                "text":"The card is replaced after all \"after resolution\" cards and effects (e.g. {Freak Drive}). No more cards can be played on that action; the action has ended.",
+                "refs":{
+                    "LSJ 20101021":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/g3CuP9Eqffg/m/plIFW0oYuDQJ"
                 }
             },
             {
@@ -6388,9 +6423,15 @@
                 }
             },
             {
-                "text":"Is not replaced if the action is blocked: it is replaced when the action ends, after all combats.",
+                "text":"Is not replaced if the action is blocked; it is replaced when the action ends, after all combats.",
                 "refs":{
                     "LSJ 20001120":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Br8FPS5mRn4/m/2tbPhQquS7gJ"
+                }
+            },
+            {
+                "text":"The card is replaced after all \"after resolution\" cards and effects (e.g. {Freak Drive}). No more cards can be played on that action; the action has ended.",
+                "refs":{
+                    "LSJ 20101021":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/g3CuP9Eqffg/m/plIFW0oYuDQJ"
                 }
             }
         ],
@@ -7315,9 +7356,15 @@
                 }
             },
             {
-                "text":"Is not replaced if the action is blocked: it is replaced when the action ends, after all combats.",
+                "text":"Is not replaced if the action is blocked; it is replaced when the action ends, after all combats.",
                 "refs":{
                     "LSJ 20001120":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Br8FPS5mRn4/m/2tbPhQquS7gJ"
+                }
+            },
+            {
+                "text":"The card is replaced after all \"after resolution\" cards and effects (e.g. {Freak Drive}). No more cards can be played on that action; the action has ended.",
+                "refs":{
+                    "LSJ 20101021":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/g3CuP9Eqffg/m/plIFW0oYuDQJ"
                 }
             }
         ],
@@ -8462,7 +8509,14 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The fact it is Unique has no bearing on the burn option. You cannot use the burn option if you meet the requirement, even if you already have a copy of the card in play.",
+                "refs":{
+                    "LSJ 20100203-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/tKnhKlDo8lk/m/6k8b2vok7_kJ"
+                }
+            }
+        ],
         "set":{
             "LK":{
                 "":"2"
@@ -8700,6 +8754,13 @@
                 "text":"[ani] Additional damage inherits all of the properties of the base damage.",
                 "refs":{
                     "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
+                }
+            },
+            {
+                "text":"[VAL] If the combat continues or a new combat begins, the after combat effect does not happen/is not usable. (eg. {Psyche!}, {Telepathic Tracking})\n(Partial reversal of RTR 20010711)",
+                "refs":{
+                    "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ",
+                    "LSJ 19980109":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d2U51Uw0Hfg/m/uIPoVvPFePgJ"
                 }
             },
             {
@@ -9992,6 +10053,18 @@
                     "LSJ 20010627":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NhNCVCCDyU0/m/I5Yph3-UUPsJ",
                     "LSJ 20010629":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/MhHKBY7II78/m/EyI_ise9M-kJ",
                     "LSJ 20090304-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/B7EQiAVOr1Q/m/gg-GkqQBRp8J"
+                }
+            },
+            {
+                "text":"[VIC] Minions that cannot strike, cannot play or use the maneuver from a strike (e.g. {.44 Magnum}, {Thrown Gate}).",
+                "refs":{
+                    "LSJ 20001126":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ZK97Kk4WQ00/m/SJPz6uc5Xw8J"
+                }
+            },
+            {
+                "text":"[VIC] Minions can (uselessly) gain additional strikes even if they cannot strike.",
+                "refs":{
+                    "LSJ 19970814-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-NDAClfltxk/m/POeoheutXf0J"
                 }
             }
         ],
@@ -12051,9 +12124,15 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"Is not replaced if the action is blocked: it is replaced when the action ends, after all combats.",
+                "text":"Is not replaced if the action is blocked; it is replaced when the action ends, after all combats.",
                 "refs":{
                     "LSJ 20001120":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Br8FPS5mRn4/m/2tbPhQquS7gJ"
+                }
+            },
+            {
+                "text":"The card is replaced after all \"after resolution\" cards and effects (e.g. {Freak Drive}). No more cards can be played on that action; the action has ended.",
+                "refs":{
+                    "LSJ 20101021":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/g3CuP9Eqffg/m/plIFW0oYuDQJ"
                 }
             }
         ],
@@ -13814,23 +13893,29 @@
                 }
             },
             {
-                "text":"[PRE] Is a damage dealing strike and can be modified by effects like {Target Vitals} or {Dam the Heart's River}.",
+                "text":"[PRE] If the combat continues or a new combat begins, the after combat effect does not happen/is not usable. (eg. {Psyche!}, {Telepathic Tracking})\n(Partial reversal of RTR 20010711)",
                 "refs":{
-                    "ANK 20170111":"https://www.vekn.net/forum/rules-questions/72635-dam-the-heart-s-river-and-catatonic-fear?start=6#80117",
-                    "LSJ 20071011":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GSQqnAEBkgU/m/gFKF1ltY4JEJ"
+                    "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ",
+                    "LSJ 19980109":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d2U51Uw0Hfg/m/uIPoVvPFePgJ"
                 }
             },
             {
-                "text":"[PRE] The effect happens after combat is concluded. Any blood lost is not lost during combat. (e.g. {Anathema}, {Taste of Vitae})",
+                "text":"[PRE] Any blood loss occurs after combat (and will not trigger {Anathema} or be available for {Taste of Vitae}, etc).",
                 "refs":{
                     "LSJ 20031123":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HvM2cHJ6yIo/m/jsb4iRoNdWkJ"
                 }
             },
             {
-                "text":"[PRE] If the combat continues or a new combat begins, the after combat effect does not happen/is not usable. (eg. {Psyche!}, {Telepathic Tracking})\n(Partial reversal of RTR 20010711)",
+                "text":"[PRE] Damage is applied after combat, so cannot be prevented by combat cards.",
                 "refs":{
-                    "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ",
-                    "LSJ 19980109":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d2U51Uw0Hfg/m/uIPoVvPFePgJ"
+                    "LSJ 20010205":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PMfeHfvc7ys/m/dT5XN0_6L4EJ"
+                }
+            },
+            {
+                "text":"[PRE] Is a damage dealing effect and can be modified by other effects like {Dam the Heart's River}.",
+                "refs":{
+                    "ANK 20170111":"https://www.vekn.net/forum/rules-questions/72635-dam-the-heart-s-river-and-catatonic-fear?start=6#80117",
+                    "PIB 20130319":"https://www.vekn.net/forum/rules-questions/46164-catatonic-fear-and-loving-agony#46168"
                 }
             }
         ],
@@ -13891,7 +13976,7 @@
             {
                 "text":"[ani] Cannot be played if the vampire is in torpor, for example if he went into torpor during the combat resulting from the block.",
                 "refs":{
-                    "LSJ 20000103":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0KEYzv22kjs/m/H4MWvI5F_hEJ"
+                    "RBK reaction-cards":"https://www.vekn.net/rulebook#reaction-cards"
                 }
             }
         ],
@@ -14476,10 +14561,10 @@
                 }
             },
             {
-                "text":"[SPI] If the combat continues or a new combat occurs, the \"action continues as if unblocked\" effect is lost.",
+                "text":"[SPI] If the combat continues or a new combat begins, the after combat effect does not happen/is not usable. (eg. {Psyche!}, {Telepathic Tracking})\n(Partial reversal of RTR 20010711)",
                 "refs":{
-                    "LSJ 19980109":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d2U51Uw0Hfg/m/uIPoVvPFePgJ",
-                    "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ"
+                    "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ",
+                    "LSJ 19980109":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d2U51Uw0Hfg/m/uIPoVvPFePgJ"
                 }
             },
             {
@@ -15374,6 +15459,12 @@
         "pool":0,
         "requirement":"sabbat,titled",
         "rulings":[
+            {
+                "text":"May be played at any time during the voting process and, when votes are tallied, will cause the loss of blood to vampires voting 'no' before it is played, as well as to vampores voting 'no' after it is played.",
+                "refs":{
+                    "RTR 19951110":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/TXfganI5B2o/m/QYh3AdPNbUwJ"
+                }
+            },
             {
                 "text":"Cannot be used during a referendum that is automatically passing.",
                 "refs":{
@@ -16779,7 +16870,14 @@
         "path":"",
         "pool":2,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The fact it is Unique has no bearing on the burn option. You cannot use the burn option if you meet the requirement, even if you already have a copy of the card in play.",
+                "refs":{
+                    "LSJ 20100203-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/tKnhKlDo8lk/m/6k8b2vok7_kJ"
+                }
+            }
+        ],
         "set":{
             "HttBR":{
                 "B":"1"
@@ -17215,7 +17313,14 @@
         "path":"",
         "pool":2,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The fact it is Unique has no bearing on the burn option. You cannot use the burn option if you meet the requirement, even if you already have a copy of the card in play.",
+                "refs":{
+                    "LSJ 20100203-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/tKnhKlDo8lk/m/6k8b2vok7_kJ"
+                }
+            }
+        ],
         "set":{
             "HttBR":{
                 "B":"1"
@@ -18236,7 +18341,15 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"[OBF] Cannot be used during a referendum that is automatically passing.",
+                "refs":{
+                    "PIB 20150105":"https://www.vekn.net/forum/rules-questions/68465-voting-is-complicated#68493",
+                    "LSJ 19980107":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aUUs4VCR_Ec/m/PLecvfrEqbgJ"
+                }
+            }
+        ],
         "set":{
             "KMW":{
                 "C":true,
@@ -22547,6 +22660,12 @@
                 "refs":{
                     "ANK 20240610":"https://www.vekn.net/forum/rules-questions/81521-burn-option-wording-in-rulebook-v1-1?start=12#111649"
                 }
+            },
+            {
+                "text":"The fact it is Unique has no bearing on the burn option. You cannot use the burn option if you meet the requirement, even if you already have a copy of the card in play.",
+                "refs":{
+                    "LSJ 20100203-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/tKnhKlDo8lk/m/6k8b2vok7_kJ"
+                }
             }
         ],
         "set":{
@@ -22914,6 +23033,13 @@
                 "text":"If played on a referendum provided by a card in play (eg. {Anarch Revolt}), does not prevent referendums provided by another copy of the same card in play.",
                 "refs":{
                     "LSJ 20020201":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/FZ_S1BukETE/m/O_7aq0Y0Dg0J"
+                }
+            },
+            {
+                "text":"Cannot be used during a referendum that is automatically passing.",
+                "refs":{
+                    "PIB 20150105":"https://www.vekn.net/forum/rules-questions/68465-voting-is-complicated#68493",
+                    "LSJ 19980107":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aUUs4VCR_Ec/m/PLecvfrEqbgJ"
                 }
             }
         ],
@@ -25792,6 +25918,12 @@
                 "refs":{
                     "ANK 20180517":"https://www.vekn.net/forum/rules-questions/76447-rules-team-rulings-rtr-03-03-2018?start=30#87041"
                 }
+            },
+            {
+                "text":"The fact it is Unique has no bearing on the burn option. You cannot use the burn option if you meet the requirement, even if you already have a copy of the card in play.",
+                "refs":{
+                    "LSJ 20100203-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/tKnhKlDo8lk/m/6k8b2vok7_kJ"
+                }
             }
         ],
         "set":{
@@ -27200,7 +27332,7 @@
                 }
             },
             {
-                "text":"Cannot be used during a referendum that is automatically passing.",
+                "text":"[pre]/[mel] Cannot be used during a referendum that is automatically passing.",
                 "refs":{
                     "PIB 20150105":"https://www.vekn.net/forum/rules-questions/68465-voting-is-complicated#68493",
                     "LSJ 19980107":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aUUs4VCR_Ec/m/PLecvfrEqbgJ"
@@ -28357,6 +28489,12 @@
                 "refs":{
                     "LSJ 20091203":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JBdmMh1udN8/m/5f5UX4qfOMMJ"
                 }
+            },
+            {
+                "text":"The fact it is Unique has no bearing on the burn option. You cannot use the burn option if you meet the requirement, even if you already have a copy of the card in play.",
+                "refs":{
+                    "LSJ 20100203-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/tKnhKlDo8lk/m/6k8b2vok7_kJ"
+                }
             }
         ],
         "set":{
@@ -29431,6 +29569,12 @@
                 "text":"Once in play, can be equipped from the minion it's on (rulebook action) by another minion that does not meet the requirements.",
                 "refs":{
                     "ANK 20180719-3":"https://www.vekn.net/forum/rules-questions/76834-moving-equipment-with-requirements#89044"
+                }
+            },
+            {
+                "text":"The fact it is Unique has no bearing on the burn option. You cannot use the burn option if you meet the requirement, even if you already have a copy of the card in play.",
+                "refs":{
+                    "LSJ 20100203-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/tKnhKlDo8lk/m/6k8b2vok7_kJ"
                 }
             }
         ],
@@ -30528,6 +30672,18 @@
                     "ANK 20200129":"https://www.vekn.net/forum/rules-questions/78701-replace-during-unlock-and-other-unlock-effects#100210",
                     "LSJ 20091208":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ptHbJM9MlVI/m/O61W2JkI_rIJ",
                     "RTR 19951017":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ouhNUbHYg50/m/rco157ZHyqEJ"
+                }
+            },
+            {
+                "text":"[AUS][PRE] Minions that cannot strike, cannot play or use the maneuver from a strike (e.g. {.44 Magnum}, {Thrown Gate}).",
+                "refs":{
+                    "LSJ 20001126":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ZK97Kk4WQ00/m/SJPz6uc5Xw8J"
+                }
+            },
+            {
+                "text":"[AUS][PRE] Minions can (uselessly) gain additional strikes even if they cannot strike.",
+                "refs":{
+                    "LSJ 19970814-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-NDAClfltxk/m/POeoheutXf0J"
                 }
             }
         ],
@@ -31713,9 +31869,15 @@
                 }
             },
             {
-                "text":"The opponent cannot play or use the maneuver from a strike (eg. {.44 Magnum}, {Thrown Gate}), since they cannot strike.",
+                "text":"Minions that cannot strike, cannot play or use the maneuver from a strike (e.g. {.44 Magnum}, {Thrown Gate}).",
                 "refs":{
                     "LSJ 20001126":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ZK97Kk4WQ00/m/SJPz6uc5Xw8J"
+                }
+            },
+            {
+                "text":"Minions can (uselessly) gain additional strikes even if they cannot strike.",
+                "refs":{
+                    "LSJ 19970814-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-NDAClfltxk/m/POeoheutXf0J"
                 }
             }
         ],
@@ -33764,10 +33926,10 @@
                 }
             },
             {
-                "text":"[VIS] If the combat continues or a new combat begins, the \"action continues as if unblocked\" effect is lost.",
+                "text":"[VIS] If the combat continues or a new combat begins, the after combat effect does not happen/is not usable. (eg. {Psyche!}, {Telepathic Tracking})\n(Partial reversal of RTR 20010711)",
                 "refs":{
-                    "LSJ 19980109":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d2U51Uw0Hfg/m/uIPoVvPFePgJ",
-                    "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ"
+                    "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ",
+                    "LSJ 19980109":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d2U51Uw0Hfg/m/uIPoVvPFePgJ"
                 }
             },
             {
@@ -34748,9 +34910,9 @@
                 }
             },
             {
-                "text":"[PRO] The effect happens after combat is concluded. Any blood lost is not lost during combat. (e.g. {Anathema}, {Taste of Vitae})",
+                "text":"The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}). The card cannot be played if the minion cannot afford to burn the blood.",
                 "refs":{
-                    "LSJ 20031123":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HvM2cHJ6yIo/m/jsb4iRoNdWkJ"
+                    "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
                 }
             },
             {
@@ -38091,9 +38253,15 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"Is not replaced if the action is blocked: it is replaced when the action ends, after all combats.",
+                "text":"Is not replaced if the action is blocked; it is replaced when the action ends, after all combats.",
                 "refs":{
                     "LSJ 20001120":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Br8FPS5mRn4/m/2tbPhQquS7gJ"
+                }
+            },
+            {
+                "text":"The card is replaced after all \"after resolution\" cards and effects (e.g. {Freak Drive}). No more cards can be played on that action; the action has ended.",
+                "refs":{
+                    "LSJ 20101021":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/g3CuP9Eqffg/m/plIFW0oYuDQJ"
                 }
             }
         ],
@@ -39626,12 +39794,6 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"[CHI] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {The Path of Paradox}). The card cannot be played if the minion cannot afford to burn the blood.",
-                "refs":{
-                    "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
-                }
-            },
-            {
                 "text":"[CHI] Cards are not replaced during the \"as played\" window. The cancelation must be played immediately: no other effects can be used, except for wakes (eg. neither\u00a0{The Barrens}\u00a0nor {Dreams of the Sphinx}\u00a0can be used).",
                 "refs":{
                     "LSJ 20061207":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/nqcrJlhg4Ng/m/qQu7p-LLhfAJ",
@@ -39658,6 +39820,12 @@
                 "text":"[CHI] If a limited effect is canceled (bleed, additional strike), then the limit is not triggered and another limited effect can be used.",
                 "refs":{
                     "LSJ 20030224":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/67261v339Ds/m/um8V7VVp2Y4J"
+                }
+            },
+            {
+                "text":"[CHI] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}). The card cannot be played if the minion cannot afford to burn the blood.",
+                "refs":{
+                    "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
                 }
             }
         ],
@@ -41273,9 +41441,15 @@
                 }
             },
             {
-                "text":"The opponent cannot play or use the maneuver from a strike (eg. {.44 Magnum}, {Thrown Gate}), since they cannot strike.",
+                "text":"Minions that cannot strike, cannot play or use the maneuver from a strike (e.g. {.44 Magnum}, {Thrown Gate}).",
                 "refs":{
                     "LSJ 20001126":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ZK97Kk4WQ00/m/SJPz6uc5Xw8J"
+                }
+            },
+            {
+                "text":"Minions can (uselessly) gain additional strikes even if they cannot strike.",
+                "refs":{
+                    "LSJ 19970814-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-NDAClfltxk/m/POeoheutXf0J"
                 }
             }
         ],
@@ -43510,6 +43684,12 @@
                 }
             },
             {
+                "text":"[pro] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}). The card cannot be played if the minion cannot afford to burn the blood.",
+                "refs":{
+                    "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
+                }
+            },
+            {
                 "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
                 "refs":{
                     "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
@@ -44548,8 +44728,9 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"The vampire receiving the card must meet all of the requirements of the card other than the Thaumaturgy requirement. The vampire playing the Inscription need not meet any of the requirements (other than the Thaumaturgy needed to play Inscription in the first place).",
+                "text":"The vampire receiving the card need not meet any of the requirements of the card to receive the Inscription, but must meet all of the requirements, other than the [tha]Blood Sorcery requirement to use its effects.",
                 "refs":{
+                    "ANK 20230822":"https://www.vekn.net/forum/rules-questions/80683-inscription-and-hunger-of-marduk?start=24#109126",
                     "LSJ 20031116":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/RQBw8EnnD5s/m/NpdTwIuChy8J",
                     "ANK 20230816-2":"https://www.vekn.net/forum/rules-questions/80683-inscription-and-hunger-of-marduk?start=12#109056"
                 }
@@ -44561,9 +44742,21 @@
                 }
             },
             {
-                "text":"When burned, the card put on it is not considered to be played normally: if it is a modifier the minion can still use the same modifier himself.",
+                "text":"When burned, the card put on it is not considered to be played normally (if it is an action modifier or reaction the vampire can still play the same card themselves, if it is an action the same action card can still be played normally if they unlock).",
                 "refs":{
                     "ANK 20180627-1":"https://www.vekn.net/forum/rules-questions/76757-inscription-and-mirror-walk#88419"
+                }
+            },
+            {
+                "text":"The card inscribed with Inscription can only be used when the card could be played (an inscribed {Rutor's Hand} requires an action, a {Mirror Walk} must be used by an acting vampire, etc).",
+                "refs":{
+                    "PIB 20121014":"https://www.vekn.net/forum/rules-questions/39067-inscription-rutor-s-hand#39077"
+                }
+            },
+            {
+                "text":"The vampire playing Inscription need not meet any of the requirements, other than the [tha]Blood Sorcery needed to play Inscription in the first place.",
+                "refs":{
+                    "LSJ 20031116":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/RQBw8EnnD5s/m/NpdTwIuChy8J"
                 }
             }
         ],
@@ -45432,6 +45625,13 @@
                     "PIB 20150105":"https://www.vekn.net/forum/rules-questions/68465-voting-is-complicated#68493",
                     "LSJ 19980107":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aUUs4VCR_Ec/m/PLecvfrEqbgJ"
                 }
+            },
+            {
+                "text":"[pot][pre] Cannot be used during a referendum that is automatically passing.",
+                "refs":{
+                    "PIB 20150105":"https://www.vekn.net/forum/rules-questions/68465-voting-is-complicated#68493",
+                    "LSJ 19980107":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aUUs4VCR_Ec/m/PLecvfrEqbgJ"
+                }
             }
         ],
         "set":{
@@ -46289,6 +46489,12 @@
                 "text":"Once in play, can be equipped from the minion it's on (rulebook action) by another minion that does not meet the requirements.",
                 "refs":{
                     "ANK 20180719-3":"https://www.vekn.net/forum/rules-questions/76834-moving-equipment-with-requirements#89044"
+                }
+            },
+            {
+                "text":"The fact it is Unique has no bearing on the burn option. You cannot use the burn option if you meet the requirement, even if you already have a copy of the card in play.",
+                "refs":{
+                    "LSJ 20100203-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/tKnhKlDo8lk/m/6k8b2vok7_kJ"
                 }
             }
         ],
@@ -48527,6 +48733,12 @@
                 "refs":{
                     "LSJ 20100909":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9Mn1QueD1I4/m/5hwidUeZH6EJ"
                 }
+            },
+            {
+                "text":"The fact it is Unique has no bearing on the burn option. You cannot use the burn option if you meet the requirement, even if you already have a copy of the card in play.",
+                "refs":{
+                    "LSJ 20100203-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/tKnhKlDo8lk/m/6k8b2vok7_kJ"
+                }
             }
         ],
         "set":{
@@ -48563,6 +48775,12 @@
                 "text":"Additional damage inherits all of the properties of the base damage.",
                 "refs":{
                     "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
+                }
+            },
+            {
+                "text":"[vis]/[VIS] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}). The card cannot be played if the minion cannot afford to burn the blood.",
+                "refs":{
+                    "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
                 }
             },
             {
@@ -50029,7 +50247,20 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"[VIC] Minions that cannot strike, cannot play or use the maneuver from a strike (e.g. {.44 Magnum}, {Thrown Gate}).",
+                "refs":{
+                    "LSJ 20001126":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ZK97Kk4WQ00/m/SJPz6uc5Xw8J"
+                }
+            },
+            {
+                "text":"[VIC] Minions can (uselessly) gain additional strikes even if they cannot strike.",
+                "refs":{
+                    "LSJ 19970814-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-NDAClfltxk/m/POeoheutXf0J"
+                }
+            }
+        ],
         "set":{
             "SoC":{
                 "R":true
@@ -50820,21 +51051,15 @@
                 }
             },
             {
-                "text":"[val] [VAL] Is a damage dealing strike and can be modified by effects like {Target Vitals} or {Dam the Heart's River}.",
-                "refs":{
-                    "PIB 20130319":"https://www.vekn.net/forum/rules-questions/46164-catatonic-fear-and-loving-agony#46168"
-                }
-            },
-            {
                 "text":"[VAL] The blood to unlock can be paid until the end of combat, including after other effects that are played at the end of round.",
                 "refs":{
                     "ANK 20180618":"https://www.vekn.net/forum/rules-questions/76735-loving-agony-timing#88268"
                 }
             },
             {
-                "text":"[val]/[VAL] The effect happens after combat is concluded. Any blood lost is not lost during combat. (e.g. {Anathema}, {Taste of Vitae})",
+                "text":"[VAL] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}). The card cannot be played if the minion cannot afford to burn the blood.",
                 "refs":{
-                    "LSJ 20031123":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HvM2cHJ6yIo/m/jsb4iRoNdWkJ"
+                    "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
                 }
             },
             {
@@ -50849,6 +51074,25 @@
                 "refs":{
                     "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
                     "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+                }
+            },
+            {
+                "text":"[val]/[VAL] Any blood loss occurs after combat (and will not trigger {Anathema} or be available for {Taste of Vitae}, etc).",
+                "refs":{
+                    "LSJ 20031123":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HvM2cHJ6yIo/m/jsb4iRoNdWkJ"
+                }
+            },
+            {
+                "text":"[val]/[VAL] Damage is applied after combat, so cannot be prevented by combat cards.",
+                "refs":{
+                    "LSJ 20010205":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PMfeHfvc7ys/m/dT5XN0_6L4EJ"
+                }
+            },
+            {
+                "text":"[val]/[VAL] Is a damage dealing effect and can be modified by other effects like {Dam the Heart's River}.",
+                "refs":{
+                    "ANK 20170111":"https://www.vekn.net/forum/rules-questions/72635-dam-the-heart-s-river-and-catatonic-fear?start=6#80117",
+                    "PIB 20130319":"https://www.vekn.net/forum/rules-questions/46164-catatonic-fear-and-loving-agony#46168"
                 }
             }
         ],
@@ -55001,10 +55245,10 @@
                 }
             },
             {
-                "text":"[CHI] If the combat continues or a new combat begins, the \"action continues as if unblocked\" effect is lost.",
+                "text":"[CHI] If the combat continues or a new combat begins, the after combat effect does not happen/is not usable. (eg. {Psyche!}, {Telepathic Tracking})\n(Partial reversal of RTR 20010711)",
                 "refs":{
-                    "LSJ 19980109":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d2U51Uw0Hfg/m/uIPoVvPFePgJ",
-                    "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ"
+                    "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ",
+                    "LSJ 19980109":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d2U51Uw0Hfg/m/uIPoVvPFePgJ"
                 }
             }
         ],
@@ -56183,10 +56427,10 @@
                 }
             },
             {
-                "text":"[VAL] If the combat continues or a new combat begins, the \"action continues as if unblocked\" effect is lost.",
+                "text":"[VAL] If the combat continues or a new combat begins, the after combat effect does not happen/is not usable. (eg. {Psyche!}, {Telepathic Tracking})\n(Partial reversal of RTR 20010711)",
                 "refs":{
-                    "LSJ 19980109":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d2U51Uw0Hfg/m/uIPoVvPFePgJ",
-                    "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ"
+                    "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ",
+                    "LSJ 19980109":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d2U51Uw0Hfg/m/uIPoVvPFePgJ"
                 }
             },
             {
@@ -56500,6 +56744,13 @@
                 "refs":{
                     "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ",
                     "LSJ 20020505":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ka9MajuWTAo/m/M4oCzY97K_kJ"
+                }
+            },
+            {
+                "text":"If the combat continues or a new combat begins, the after combat effect does not happen/is not usable. (eg. {Psyche!}, {Telepathic Tracking})\n(Partial reversal of RTR 20010711)",
+                "refs":{
+                    "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ",
+                    "LSJ 19980109":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d2U51Uw0Hfg/m/uIPoVvPFePgJ"
                 }
             }
         ],
@@ -57867,9 +58118,15 @@
                 }
             },
             {
-                "text":"Is not replaced if the action is blocked: it is replaced when the action ends, after all combats.",
+                "text":"Is not replaced if the action is blocked; it is replaced when the action ends, after all combats.",
                 "refs":{
                     "LSJ 20001120":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Br8FPS5mRn4/m/2tbPhQquS7gJ"
+                }
+            },
+            {
+                "text":"The card is replaced after all \"after resolution\" cards and effects (e.g. {Freak Drive}). No more cards can be played on that action; the action has ended.",
+                "refs":{
+                    "LSJ 20101021":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/g3CuP9Eqffg/m/plIFW0oYuDQJ"
                 }
             }
         ],
@@ -59586,6 +59843,13 @@
         "requirement":"",
         "rulings":[
             {
+                "text":"Cannot be used during a referendum that is automatically passing.",
+                "refs":{
+                    "PIB 20150105":"https://www.vekn.net/forum/rules-questions/68465-voting-is-complicated#68493",
+                    "LSJ 19980107":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aUUs4VCR_Ec/m/PLecvfrEqbgJ"
+                }
+            },
+            {
                 "text":"Is replaced before unlocking cards: other unlock effects cannot be ordered before.",
                 "refs":{
                     "ANK 20200129":"https://www.vekn.net/forum/rules-questions/78701-replace-during-unlock-and-other-unlock-effects#100210",
@@ -59698,7 +59962,15 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Cannot be used during a referendum that is automatically passing.",
+                "refs":{
+                    "PIB 20150105":"https://www.vekn.net/forum/rules-questions/68465-voting-is-complicated#68493",
+                    "LSJ 19980107":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aUUs4VCR_Ec/m/PLecvfrEqbgJ"
+                }
+            }
+        ],
         "set":{
             "V5L":{
                 "PL":"4"
@@ -59832,16 +60104,28 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"[PRO] The strike restriction only applies in the combat resulting from a successful block. It does not carry over to follow-up combats (eg. [CEL] {Psyche!}).",
+                "text":"[PRO] The strike restriction only applies in the combat resulting from a successful block. It does not carry over to follow-up combats (e.g. [CEL] {Psyche!}).",
                 "refs":{
                     "LSJ 20010813":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/8MR4bq0Cxj4/m/f_rAOuj3CboJ",
                     "LSJ 20010819-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/8MR4bq0Cxj4/m/YgNsk8nGcREJ"
                 }
             },
             {
-                "text":"[PRO] The strike restriction applies again if a second block happens on the same action (eg. after [PRO] {Form of Mist}).",
+                "text":"[PRO] The strike restriction applies again if a second block happens on the same action (e.g. after [PRO] {Form of Mist}).",
                 "refs":{
                     "LSJ 20010814-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/8MR4bq0Cxj4/m/SH4dKuz8qO0J"
+                }
+            },
+            {
+                "text":"[PRO] Minions that cannot strike, cannot play or use the maneuver from a strike (e.g. {.44 Magnum}, {Thrown Gate}).",
+                "refs":{
+                    "LSJ 20001126":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ZK97Kk4WQ00/m/SJPz6uc5Xw8J"
+                }
+            },
+            {
+                "text":"[PRO] Minions can (uselessly) gain additional strikes even if they cannot strike.",
+                "refs":{
+                    "LSJ 19970814-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-NDAClfltxk/m/POeoheutXf0J"
                 }
             }
         ],
@@ -60462,16 +60746,16 @@
                 }
             },
             {
-                "text":"[OBT] The effect happens after combat is concluded. Any blood lost is not lost during combat. (e.g. {Anathema}, {Taste of Vitae})",
-                "refs":{
-                    "LSJ 20031123":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HvM2cHJ6yIo/m/jsb4iRoNdWkJ"
-                }
-            },
-            {
                 "text":"[OBT] If the combat continues or a new combat begins, the after combat effect does not happen/is not usable. (eg. {Psyche!}, {Telepathic Tracking})\n(Partial reversal of RTR 20010711)",
                 "refs":{
                     "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ",
                     "LSJ 19980109":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d2U51Uw0Hfg/m/uIPoVvPFePgJ"
+                }
+            },
+            {
+                "text":"[OBT] Any blood loss occurs after combat (and will not trigger {Anathema} or be available for {Taste of Vitae}, etc).",
+                "refs":{
+                    "LSJ 20031123":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HvM2cHJ6yIo/m/jsb4iRoNdWkJ"
                 }
             }
         ],
@@ -61202,7 +61486,14 @@
         "path":"",
         "pool":2,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The fact it is Unique has no bearing on the burn option. You cannot use the burn option if you meet the requirement, even if you already have a copy of the card in play.",
+                "refs":{
+                    "LSJ 20100203-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/tKnhKlDo8lk/m/6k8b2vok7_kJ"
+                }
+            }
+        ],
         "set":{
             "BL":{
                 "R":true
@@ -61404,6 +61695,13 @@
         "requirement":"anarch",
         "rulings":[
             {
+                "text":"[pre] Cannot be used during a referendum that is automatically passing.",
+                "refs":{
+                    "PIB 20150105":"https://www.vekn.net/forum/rules-questions/68465-voting-is-complicated#68493",
+                    "LSJ 19980107":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aUUs4VCR_Ec/m/PLecvfrEqbgJ"
+                }
+            },
+            {
                 "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
                 "refs":{
                     "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
@@ -61440,7 +61738,15 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"[OBL] If the combat continues or a new combat begins, the after combat effect does not happen/is not usable. (eg. {Psyche!}, {Telepathic Tracking})\n(Partial reversal of RTR 20010711)",
+                "refs":{
+                    "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ",
+                    "LSJ 19980109":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d2U51Uw0Hfg/m/uIPoVvPFePgJ"
+                }
+            }
+        ],
         "set":{
             "V5L":{
                 "PL":"4"
@@ -62591,7 +62897,15 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"[pre] Cannot be used during a referendum that is automatically passing.",
+                "refs":{
+                    "PIB 20150105":"https://www.vekn.net/forum/rules-questions/68465-voting-is-complicated#68493",
+                    "LSJ 19980107":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aUUs4VCR_Ec/m/PLecvfrEqbgJ"
+                }
+            }
+        ],
         "set":{
             "KoTR":{
                 "B":"2"
@@ -66478,7 +66792,7 @@
                 }
             },
             {
-                "text":"[CEL] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Mitru the Hunter}). The card cannot be played if the minion cannot afford to burn the blood.",
+                "text":"[CEL] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}). The card cannot be played if the minion cannot afford to burn the blood.",
                 "refs":{
                     "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
                 }
@@ -68688,6 +69002,13 @@
                 "refs":{
                     "LSJ 20100218":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/x-uJChHi76Y/m/F92fWI7WwaEJ",
                     "RTR 20180511-2":"https://www.vekn.net/forum/rules-questions/76595-rules-team-rulings-rtr-11-05-2018?start=30#86840"
+                }
+            },
+            {
+                "text":"[aus][tem] Cannot be used during a referendum that is automatically passing.",
+                "refs":{
+                    "PIB 20150105":"https://www.vekn.net/forum/rules-questions/68465-voting-is-complicated#68493",
+                    "LSJ 19980107":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aUUs4VCR_Ec/m/PLecvfrEqbgJ"
                 }
             }
         ],
@@ -71035,7 +71356,14 @@
         "path":"",
         "pool":1,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The fact it is Unique has no bearing on the burn option. You cannot use the burn option if you meet the requirement, even if you already have a copy of the card in play.",
+                "refs":{
+                    "LSJ 20100203-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/tKnhKlDo8lk/m/6k8b2vok7_kJ"
+                }
+            }
+        ],
         "set":{
             "BL":{
                 "R":true
@@ -73217,12 +73545,6 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"[cel] [CEL] The damage is dealt just after the combat ends.",
-                "refs":{
-                    "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ"
-                }
-            },
-            {
                 "text":"[cel] [CEL] The damage is only dealt if the strike was resolved at close range.",
                 "refs":{
                     "LSJ 19970915":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/in3R3mQs5Do/m/41KNa8aVpV0J"
@@ -73236,13 +73558,33 @@
                 }
             },
             {
-                "text":"[cel] [CEL] If the combat continues or a new combat begins, no damage is done.",
+                "text":"[cel] [CEL] Is a damage dealing strike and can be modified by other effects like {Target Vitals} or {Dam the Heart's River}, even if they are done after combat.",
                 "refs":{
-                    "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ"
+                    "ANK 20170111":"https://www.vekn.net/forum/rules-questions/72635-dam-the-heart-s-river-and-catatonic-fear?start=6#80117",
+                    "PIB 20130319":"https://www.vekn.net/forum/rules-questions/46164-catatonic-fear-and-loving-agony#46168"
                 }
             },
             {
-                "text":"[cel] [CEL] Is a damage dealing strike and can be modified by other effects like {Target Vitals} or {Dam the Heart's River}, even if they are done after combat.",
+                "text":"If the combat continues or a new combat begins, the after combat effect does not happen/is not usable. (eg. {Psyche!}, {Telepathic Tracking})\n(Partial reversal of RTR 20010711)",
+                "refs":{
+                    "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ",
+                    "LSJ 19980109":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d2U51Uw0Hfg/m/uIPoVvPFePgJ"
+                }
+            },
+            {
+                "text":"Any blood loss occurs after combat (and will not trigger {Anathema} or be available for {Taste of Vitae}, etc).",
+                "refs":{
+                    "LSJ 20031123":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HvM2cHJ6yIo/m/jsb4iRoNdWkJ"
+                }
+            },
+            {
+                "text":"Damage is applied after combat, so cannot be prevented by combat cards.",
+                "refs":{
+                    "LSJ 20010205":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PMfeHfvc7ys/m/dT5XN0_6L4EJ"
+                }
+            },
+            {
+                "text":"Is a damage dealing effect and can be modified by other effects like {Dam the Heart's River}.",
                 "refs":{
                     "ANK 20170111":"https://www.vekn.net/forum/rules-questions/72635-dam-the-heart-s-river-and-catatonic-fear?start=6#80117",
                     "PIB 20130319":"https://www.vekn.net/forum/rules-questions/46164-catatonic-fear-and-loving-agony#46168"
@@ -73546,6 +73888,12 @@
                 "refs":{
                     "ANK 20180719-3":"https://www.vekn.net/forum/rules-questions/76834-moving-equipment-with-requirements#89044"
                 }
+            },
+            {
+                "text":"The fact it is Unique has no bearing on the burn option. You cannot use the burn option if you meet the requirement, even if you already have a copy of the card in play.",
+                "refs":{
+                    "LSJ 20100203-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/tKnhKlDo8lk/m/6k8b2vok7_kJ"
+                }
             }
         ],
         "set":{
@@ -73615,7 +73963,20 @@
         "path":"",
         "pool":4,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Minions that cannot strike, cannot play or use the maneuver from a strike (e.g. {.44 Magnum}, {Thrown Gate}).",
+                "refs":{
+                    "LSJ 20001126":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ZK97Kk4WQ00/m/SJPz6uc5Xw8J"
+                }
+            },
+            {
+                "text":"Minions can (uselessly) gain additional strikes even if they cannot strike.",
+                "refs":{
+                    "LSJ 19970814-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-NDAClfltxk/m/POeoheutXf0J"
+                }
+            }
+        ],
         "set":{
             "BL":{
                 "R":true
@@ -73727,7 +74088,32 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The card must be present in the ash heap to be redrawn.",
+                "refs":{
+                    "RBK targeting-of-cards":"https://www.vekn.net/rulebook#targeting-of-cards"
+                }
+            },
+            {
+                "text":"If the card is cancelled, the self-replacing clause is also cancelled.",
+                "refs":{
+                    "LSJ 20080630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/nvuXBpEaKAA/m/ymiC3yAQVOwJ"
+                }
+            },
+            {
+                "text":"If an effect delays when the redraw occurs (e.g. {The Meddling of Semsith}), you can still redraw this card from the ash heap when the delay effect allows a redraw.",
+                "refs":{
+                    "LSJ 20100527":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Tr3X4DsZr-8/m/O06iXN6LtzsJ"
+                }
+            },
+            {
+                "text":"If an effect prevents replacement ({Visit from the Capuchin}), then there is no opportunity to use the cards replacement text.",
+                "refs":{
+                    "LSJ 20080723":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/p5qiUzuFDSU/m/33rg1G1lDA8J"
+                }
+            }
+        ],
         "set":{
             "LoB":{
                 "C":true
@@ -75590,7 +75976,15 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Cannot be used during a referendum that is automatically passing.",
+                "refs":{
+                    "PIB 20150105":"https://www.vekn.net/forum/rules-questions/68465-voting-is-complicated#68493",
+                    "LSJ 19980107":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aUUs4VCR_Ec/m/PLecvfrEqbgJ"
+                }
+            }
+        ],
         "set":{
             "KMW":{
                 "C":true
@@ -75841,7 +76235,7 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"May be played at any time during the voting process, and will retroactively cause the loss of pool to Methuselahs voting 'no' before it is played, as well as to Methuselahs voting 'no' after it is played.",
+                "text":"May be played at any time during the voting process and, when votes are tallied, will cause the loss of pool to Methuselahs voting 'no' before it is played, as well as to Methuselahs voting 'no' after it is played.",
                 "refs":{
                     "RTR 19951110":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/TXfganI5B2o/m/QYh3AdPNbUwJ"
                 }
@@ -75850,6 +76244,13 @@
                 "text":"Each Scorn played may only cause the loss of one pool to a given Methuselah, regardless of how may 'no' votes that Methuselah casts.",
                 "refs":{
                     "RTR 19951110":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/TXfganI5B2o/m/QYh3AdPNbUwJ"
+                }
+            },
+            {
+                "text":"Cannot be used during a referendum that is automatically passing.",
+                "refs":{
+                    "PIB 20150105":"https://www.vekn.net/forum/rules-questions/68465-voting-is-complicated#68493",
+                    "LSJ 19980107":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aUUs4VCR_Ec/m/PLecvfrEqbgJ"
                 }
             }
         ],
@@ -77459,13 +77860,6 @@
                 }
             },
             {
-                "text":"[PRE][SER] If the combat continues or a new combat begins, no blood is burned, the card cannot be put on the opposing minion and he is not locked.",
-                "refs":{
-                    "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ",
-                    "ANK 20200705":"https://www.vekn.net/forum/rules-questions/66086-serpent-s-numbing-kiss?start=6#100266"
-                }
-            },
-            {
                 "text":"[PRE][SER] If the strike is dodged, the card is not put on the opposing minion and he is not locked.",
                 "refs":{
                     "RTR 20041202":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/WUWh7AdooDU/m/vojisZMCSnsJ"
@@ -77478,15 +77872,22 @@
                 }
             },
             {
-                "text":"[PRE][SER] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {The Path of Typhon}). The card cannot be played if the minion cannot afford to burn the blood.",
+                "text":"[PRE][SER] The \"does not unlock as normal\" effect is redundant with being infernal. If the minion is infernal, his controller can still pay a pool to unlock him.",
+                "refs":{
+                    "LSJ 20050114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JWiZmyC2Y6s/m/q6JHYrE1zKYJ"
+                }
+            },
+            {
+                "text":"[PRE][SER] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}). The card cannot be played if the minion cannot afford to burn the blood.",
                 "refs":{
                     "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
                 }
             },
             {
-                "text":"[PRE][SER] The \"does not unlock as normal\" effect is redundant with being infernal. If the minion is infernal, his controller can still pay a pool to unlock him.",
+                "text":"[PRE][SER] If the combat continues or a new combat begins, the after combat effect does not happen/is not usable. (eg. {Psyche!}, {Telepathic Tracking})\n(Partial reversal of RTR 20010711)",
                 "refs":{
-                    "LSJ 20050114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JWiZmyC2Y6s/m/q6JHYrE1zKYJ"
+                    "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ",
+                    "LSJ 19980109":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d2U51Uw0Hfg/m/uIPoVvPFePgJ"
                 }
             }
         ],
@@ -77683,6 +78084,12 @@
                 "text":"Once in play, can be equipped from the minion it's on (rulebook action) by another minion that does not meet the requirements.",
                 "refs":{
                     "ANK 20180719-3":"https://www.vekn.net/forum/rules-questions/76834-moving-equipment-with-requirements#89044"
+                }
+            },
+            {
+                "text":"The fact it is Unique has no bearing on the burn option. You cannot use the burn option if you meet the requirement, even if you already have a copy of the card in play.",
+                "refs":{
+                    "LSJ 20100203-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/tKnhKlDo8lk/m/6k8b2vok7_kJ"
                 }
             }
         ],
@@ -77881,10 +78288,10 @@
                 }
             },
             {
-                "text":"[OBT] If the combat continues or a new combat occurs, the \"action continues as if unblocked\" effect is lost.",
+                "text":"[OBT] If the combat continues or a new combat begins, the after combat effect does not happen/is not usable. (eg. {Psyche!}, {Telepathic Tracking})\n(Partial reversal of RTR 20010711)",
                 "refs":{
-                    "LSJ 19980109":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d2U51Uw0Hfg/m/uIPoVvPFePgJ",
-                    "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ"
+                    "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ",
+                    "LSJ 19980109":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d2U51Uw0Hfg/m/uIPoVvPFePgJ"
                 }
             }
         ],
@@ -77956,15 +78363,15 @@
                 }
             },
             {
-                "text":"[OBF][POT][ACTION MODIFIER] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}). The card cannot be played if the minion cannot afford to burn the blood.",
-                "refs":{
-                    "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
-                }
-            },
-            {
                 "text":"[OBF][POT][ACTION MODIFIER] Is used after combat effectively ends and can be order against other cards and effects played after combat (eg. {Provision of the Silsila}).",
                 "refs":{
                     "ANK 20230314":"https://www.vekn.net/forum/rules-questions/80378-monster-vs-provision-of-silsila#107622"
+                }
+            },
+            {
+                "text":"[OBF][POT] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}). The card cannot be played if the minion cannot afford to burn the blood.",
+                "refs":{
+                    "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
                 }
             }
         ],
@@ -78003,6 +78410,14 @@
                 "refs":{
                     "LSJ 20100527":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Tr3X4DsZr-8/m/O06iXN6LtzsJ"
                 }
+            },
+            {
+                "text":"[OBL] Is played after resolution, after all combats are handled, but still during the action. Action modifiers and effects that can be played \"after resolution\" can be played before or after it.",
+                "refs":{
+                    "PIB 20150915":"https://www.vekn.net/forum/rules-questions/73134-learjet#73139",
+                    "LSJ 19981028":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JZHY1bTCAa0/m/XqDVERty0roJ",
+                    "ANK 20190425":"https://www.vekn.net/forum/rules-questions/77581-action-modifiers-played-at-beginning-and-end-of-an-action#94652"
+                }
             }
         ],
         "set":{
@@ -78034,7 +78449,16 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"[OBL] Is played after resolution, after all combats are handled, but still during the action. Action modifiers and effects that can be played \"after resolution\" can be played before or after it.",
+                "refs":{
+                    "PIB 20150915":"https://www.vekn.net/forum/rules-questions/73134-learjet#73139",
+                    "LSJ 19981028":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JZHY1bTCAa0/m/XqDVERty0roJ",
+                    "ANK 20190425":"https://www.vekn.net/forum/rules-questions/77581-action-modifiers-played-at-beginning-and-end-of-an-action#94652"
+                }
+            }
+        ],
         "set":{
             "V5L":{
                 "PL":"4"
@@ -79920,7 +80344,14 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The fact it is Unique has no bearing on the burn option. You cannot use the burn option if you meet the requirement, even if you already have a copy of the card in play.",
+                "refs":{
+                    "LSJ 20100203-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/tKnhKlDo8lk/m/6k8b2vok7_kJ"
+                }
+            }
+        ],
         "set":{
             "BL":{
                 "R":true
@@ -83635,7 +84066,20 @@
         "path":"",
         "pool":0,
         "requirement":"anarch",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Minions that cannot strike, cannot play or use the maneuver from a strike (e.g. {.44 Magnum}, {Thrown Gate}).",
+                "refs":{
+                    "LSJ 20001126":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ZK97Kk4WQ00/m/SJPz6uc5Xw8J"
+                }
+            },
+            {
+                "text":"Minions can (uselessly) gain additional strikes even if they cannot strike.",
+                "refs":{
+                    "LSJ 19970814-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-NDAClfltxk/m/POeoheutXf0J"
+                }
+            }
+        ],
         "set":{
             "Anarchs":{
                 "R":true
@@ -83858,9 +84302,15 @@
                 }
             },
             {
-                "text":"[dom], [qui] [ACTION] Is not replaced if the action is blocked: it is replaced when the action ends, after all combats.",
+                "text":"[ani]/[dom] Is not replaced if the action is blocked; it is replaced when the action ends, after all combats.",
                 "refs":{
                     "LSJ 20001120":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Br8FPS5mRn4/m/2tbPhQquS7gJ"
+                }
+            },
+            {
+                "text":"[ani]/[dom] The card is replaced after all \"after resolution\" cards and effects (e.g. {Freak Drive}). No more cards can be played on that action; the action has ended.",
+                "refs":{
+                    "LSJ 20101021":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/g3CuP9Eqffg/m/plIFW0oYuDQJ"
                 }
             },
             {
@@ -83868,6 +84318,30 @@
                 "refs":{
                     "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
                     "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+                }
+            },
+            {
+                "text":"The card must be present in the ash heap to be redrawn.",
+                "refs":{
+                    "RBK targeting-of-cards":"https://www.vekn.net/rulebook#targeting-of-cards"
+                }
+            },
+            {
+                "text":"If the card is cancelled, the self-replacing clause is also cancelled.",
+                "refs":{
+                    "LSJ 20080630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/nvuXBpEaKAA/m/ymiC3yAQVOwJ"
+                }
+            },
+            {
+                "text":"If an effect delays when the redraw occurs (e.g. {The Meddling of Semsith}), you can still redraw this card from the ash heap when the delay effect allows a redraw.",
+                "refs":{
+                    "LSJ 20100527":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Tr3X4DsZr-8/m/O06iXN6LtzsJ"
+                }
+            },
+            {
+                "text":"If an effect prevents replacement ({Visit from the Capuchin}), then there is no opportunity to use the cards replacement text.",
+                "refs":{
+                    "LSJ 20080723":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/p5qiUzuFDSU/m/33rg1G1lDA8J"
                 }
             }
         ],
@@ -84650,6 +85124,12 @@
                 "refs":{
                     "RTR 20041202":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/WUWh7AdooDU/m/vojisZMCSnsJ"
                 }
+            },
+            {
+                "text":"The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}). The card cannot be played if the minion cannot afford to burn the blood.",
+                "refs":{
+                    "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
+                }
             }
         ],
         "set":{
@@ -84739,7 +85219,14 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"[OBL] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}). The card cannot be played if the minion cannot afford to burn the blood.",
+                "refs":{
+                    "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
+                }
+            }
+        ],
         "set":{
             "V5L":{
                 "PL":"4"
@@ -85496,7 +85983,14 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"[FOR] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}). The card cannot be played if the minion cannot afford to burn the blood.",
+                "refs":{
+                    "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
+                }
+            }
+        ],
         "set":{
             "Sabbat":{
                 "C":true
@@ -86383,7 +86877,14 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The fact it is Unique has no bearing on the burn option. You cannot use the burn option if you meet the requirement, even if you already have a copy of the card in play.",
+                "refs":{
+                    "LSJ 20100203-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/tKnhKlDo8lk/m/6k8b2vok7_kJ"
+                }
+            }
+        ],
         "set":{
             "BL":{
                 "R":true
@@ -88191,13 +88692,6 @@
                 "refs":{
                     "LSJ 20031121-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/1khXmKPU0ws/m/Je_X4gvv72kJ"
                 }
-            },
-            {
-                "text":"[OBT] An ally has life, not blood, he cannot pay.",
-                "refs":{
-                    "LSJ 20050216":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/5_rUFgufFc4/m/7OVVD0KpnS4J",
-                    "ANK 20190701":"https://www.vekn.net/forum/rules-questions/77763-multiple-questions#95690"
-                }
             }
         ],
         "set":{
@@ -89718,12 +90212,6 @@
                 }
             },
             {
-                "text":"[mel] The effect happens after combat is concluded. Any blood lost is not lost during combat. (e.g. {Anathema}, {Taste of Vitae})",
-                "refs":{
-                    "LSJ 20031123":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HvM2cHJ6yIo/m/jsb4iRoNdWkJ"
-                }
-            },
-            {
                 "text":"[mel] If the combat continues or a new combat begins, the after combat effect does not happen/is not usable. (eg. {Psyche!}, {Telepathic Tracking})\n(Partial reversal of RTR 20010711)",
                 "refs":{
                     "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ",
@@ -89946,10 +90434,10 @@
                 }
             },
             {
-                "text":"[CEL] If the combat continues or a new combat occurs, the \"action continues as if unblocked\" effect is lost.",
+                "text":"[CEL] If the combat continues or a new combat begins, the after combat effect does not happen/is not usable. (eg. {Psyche!}, {Telepathic Tracking})\n(Partial reversal of RTR 20010711)",
                 "refs":{
-                    "LSJ 19980109":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d2U51Uw0Hfg/m/uIPoVvPFePgJ",
-                    "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ"
+                    "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ",
+                    "LSJ 19980109":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d2U51Uw0Hfg/m/uIPoVvPFePgJ"
                 }
             }
         ],
@@ -90550,6 +91038,12 @@
                 "text":"The burn option can only be used if there is no Laibon with at least three Aye and three Orun.",
                 "refs":{
                     "LSJ 20110611-2":"https://boardgamegeek.com/thread/662413/article/6919607"
+                }
+            },
+            {
+                "text":"The fact it is Unique has no bearing on the burn option. You cannot use the burn option if you meet the requirement, even if you already have a copy of the card in play.",
+                "refs":{
+                    "LSJ 20100203-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/tKnhKlDo8lk/m/6k8b2vok7_kJ"
                 }
             }
         ],
@@ -93162,6 +93656,13 @@
                 "refs":{
                     "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ"
                 }
+            },
+            {
+                "text":"[PRE] If the combat continues or a new combat begins, the after combat effect does not happen/is not usable. (eg. {Psyche!}, {Telepathic Tracking})\n(Partial reversal of RTR 20010711)",
+                "refs":{
+                    "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ",
+                    "LSJ 19980109":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d2U51Uw0Hfg/m/uIPoVvPFePgJ"
+                }
             }
         ],
         "set":{
@@ -93353,7 +93854,7 @@
                 }
             },
             {
-                "text":"The fact it is Unique has no bearing on the burn option. You cannot use the burn option if you have an infernal vampire ready, even if you already have an Unleash Hell's Fury in play.",
+                "text":"The fact it is Unique has no bearing on the burn option. You cannot use the burn option if you meet the requirement, even if you already have a copy of the card in play.",
                 "refs":{
                     "LSJ 20100203-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/tKnhKlDo8lk/m/6k8b2vok7_kJ"
                 }
@@ -94446,6 +94947,13 @@
                     "ANK 20200925":"https://www.vekn.net/forum/rules-questions/78861-revelation-of-wrath#100820",
                     "ANK 20211105":"https://www.vekn.net/forum/rules-questions/79460-sarrasin-corruption-and-effect-triggers#103791"
                 }
+            },
+            {
+                "text":"Cannot be used during a referendum that is automatically passing.",
+                "refs":{
+                    "PIB 20150105":"https://www.vekn.net/forum/rules-questions/68465-voting-is-complicated#68493",
+                    "LSJ 19980107":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aUUs4VCR_Ec/m/PLecvfrEqbgJ"
+                }
             }
         ],
         "set":{
@@ -94543,6 +95051,12 @@
                 "text":"The burn option can be used if all your infernal vampires are in torpor.",
                 "refs":{
                     "LSJ 20091203":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JBdmMh1udN8/m/5f5UX4qfOMMJ"
+                }
+            },
+            {
+                "text":"The fact it is Unique has no bearing on the burn option. You cannot use the burn option if you meet the requirement, even if you already have a copy of the card in play.",
+                "refs":{
+                    "LSJ 20100203-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/tKnhKlDo8lk/m/6k8b2vok7_kJ"
                 }
             }
         ],
@@ -95812,30 +96326,24 @@
         "requirement":"",
         "rulings":[
             {
+                "text":"Is played after resolution, after all combats are handled, but still during the action. Action modifiers and effects that can be played \"after resolution\" can be played before or after it.",
+                "refs":{
+                    "PIB 20150915":"https://www.vekn.net/forum/rules-questions/73134-learjet#73139",
+                    "LSJ 19981028":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JZHY1bTCAa0/m/XqDVERty0roJ",
+                    "ANK 20190425":"https://www.vekn.net/forum/rules-questions/77581-action-modifiers-played-at-beginning-and-end-of-an-action#94652"
+                }
+            },
+            {
                 "text":"Is played after the referendum is resolved. If the effect of the referendum ousts the acting Methuselah, there is no time to play it to prevent the ousting.",
                 "refs":{
                     "RTR 19951110":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/TXfganI5B2o/m/QYh3AdPNbUwJ"
                 }
             },
             {
-                "text":"Can be played before or after other cards that are played \"after action resolution\" or \"if the action was successful\".",
+                "text":"Can be used after a referendum that is automatically passing, but the vote is considered to have passed by 0 votes.",
                 "refs":{
-                    "LSJ 20070327":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/YInnFoJPx2Q/m/NFvi36RWFrkJ"
-                }
-            },
-            {
-                "text":"Can be used after a referendum that is automatically passing, but X is zero in this case.",
-                "refs":{
-                    "PIB 20150105":"https://www.vekn.net/forum/rules-questions/68465-voting-is-complicated#68493",
-                    "LSJ 19980107":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aUUs4VCR_Ec/m/PLecvfrEqbgJ"
-                }
-            },
-            {
-                "text":"Is played after resolution, after all combats are handled, but still during the action. Action modifiers and effects that can be played \"after resolution\" can be played before or after it.",
-                "refs":{
-                    "PIB 20150915":"https://www.vekn.net/forum/rules-questions/73134-learjet#73139",
-                    "LSJ 19981028":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JZHY1bTCAa0/m/XqDVERty0roJ",
-                    "ANK 20190425":"https://www.vekn.net/forum/rules-questions/77581-action-modifiers-played-at-beginning-and-end-of-an-action#94652"
+                    "LSJ 19980107":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aUUs4VCR_Ec/m/PLecvfrEqbgJ",
+                    "PIB 20150105":"https://www.vekn.net/forum/rules-questions/68465-voting-is-complicated#68493"
                 }
             }
         ],
@@ -96455,6 +96963,13 @@
                 "refs":{
                     "RTR 20030519":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NOBWXWrd-vA/m/iEOpQp1uhvAJ",
                     "RTR 20180511":"https://www.vekn.net/forum/rules-questions/76595-rules-team-rulings-rtr-11-05-2018#86780"
+                }
+            },
+            {
+                "text":"Top\u00a0[ACTION MODIFIER][REACTION] Cannot be used during a referendum that is automatically passing.",
+                "refs":{
+                    "PIB 20150105":"https://www.vekn.net/forum/rules-questions/68465-voting-is-complicated#68493",
+                    "LSJ 19980107":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aUUs4VCR_Ec/m/PLecvfrEqbgJ"
                 }
             }
         ],
@@ -97835,7 +98350,14 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"[OBL] A minion previously attempting to block can resign his attempt and pay no blood.",
+                "refs":{
+                    "LSJ 20031121-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/1khXmKPU0ws/m/Je_X4gvv72kJ"
+                }
+            }
+        ],
         "set":{
             "V5L":{
                 "PL":"4"
@@ -98833,7 +99355,15 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Cannot be used during a referendum that is automatically passing.",
+                "refs":{
+                    "PIB 20150105":"https://www.vekn.net/forum/rules-questions/68465-voting-is-complicated#68493",
+                    "LSJ 19980107":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aUUs4VCR_Ec/m/PLecvfrEqbgJ"
+                }
+            }
+        ],
         "set":{
             "KoTR":{
                 "A":"2"
