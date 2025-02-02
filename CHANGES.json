@@ -1,6 +1,15 @@
 [
   {
-    "version": "2025-01-25/1",
+    "version": "2025-02-02",
+    "changes": [
+      "Add laibon legacy images. Now all clans are available in legacy layout! Great job, Thiago Sousa!",
+      "Improve 'binocular' deck selector on mobile (clan icon, flexible width tags)",
+      "Update Rulings",
+      "Small other fixes and improvements"
+    ]
+  },
+  {
+    "version": "2025-01-25",
     "changes": [
       "Fix login issues and few small other things",
       "Update Rulings",

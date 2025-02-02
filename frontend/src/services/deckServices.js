@@ -187,7 +187,7 @@ export const branchDelete = (deckid, decks) => {
       deckStore[DECKS][masterId][BRANCHES] = branches;
       deckStore[DECKS][masterId][IS_BRANCHES] = branches.length > 0;
       deckStore[DECKS][masterId][MASTER] = null;
-      branches.map((b) => {
+      branches.forEach((b) => {
         deckStore[DECKS][b][MASTER] = masterId;
       });
     }
