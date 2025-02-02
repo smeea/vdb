@@ -37,7 +37,7 @@ def generate_twd(i):
     sects = {}
     disciplines = set()
     crypt_disciplines = set()
-    total_capacity = 0
+    total_capacity_ex_ac = 0
     total_crypt_ex_ac = 0
 
     for card in i["crypt"]["cards"]:
@@ -52,7 +52,7 @@ def generate_twd(i):
 
         # Skip Anarch Convert
         if id != 200076:
-            total_capacity += q * c["capacity"]
+            total_capacity_ex_ac += q * c["capacity"]
 
             if (clan := c["clan"]) in clans:
                 clans[clan] += q
@@ -85,7 +85,7 @@ def generate_twd(i):
         if q / deck["crypt_total"] > 0.65:
             deck["sect"] = sect
 
-    deck["capacity"] = round(total_capacity / total_crypt_ex_ac, 1)
+    deck["capacity"] = round(total_capacity_ex_ac / total_crypt_ex_ac, 1)
 
     for ct in i["library"]["cards"]:
         deck["cardtypes_ratio"][ct["type"].lower()] = round(ct["count"] / deck["library_total"], 2)
