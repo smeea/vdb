@@ -28,7 +28,9 @@ const Select = ({
   roundedStyle = 'rounded-sm',
   value,
   variant = 'select',
+  justifyRight,
   ref,
+  noBackground,
 
   // Async
   cacheOptions,
@@ -78,7 +80,9 @@ const Select = ({
       classNames={{
         control: (state) =>
           twMerge(
-            !noBorder && `bg-bgPrimary dark:bg-bgPrimaryDark ${roundedStyle} ${borderStyle}`,
+            !noBackground && 'bg-bgPrimary dark:bg-bgPrimaryDark',
+            !noBorder && roundedStyle,
+            !noBorder && borderStyle,
             !noBorder &&
               (state.isFocused
                 ? 'border-bgCheckboxSelected dark:border-bgCheckboxSelectedDark'
@@ -86,10 +90,10 @@ const Select = ({
           ),
         dropdownIndicator: () =>
           noDropdown
-            ? 'max-w-[0px] max-h-[0px]'
+            ? 'max-w-0 max-h-0'
             : 'px-2 hover:cursor-pointer text-borderSecondary dark:text-borderSecondaryDark',
         indicatorsContainer: () =>
-          twMerge('rounded-sm', noDropdown ? 'max-h-[0px] max-w-[0px]' : 'py-1.5 '),
+          twMerge('rounded-sm', noDropdown ? 'max-h-0 max-w-0' : 'py-1.5 '),
         indicatorSeparator: () => 'bg-borderSecondary dark:bg-borderSecondaryDark',
         menu: () => 'my-2 rounded-sm border border-borderThird dark:border-borderThirdDark',
         menuList: () => 'rounded-sm bg-bgPrimary dark:bg-bgPrimaryDark',
@@ -100,24 +104,25 @@ const Select = ({
               ? 'bg-borderPrimary dark:bg-bgCheckboxSelectedDark'
               : state.isSelected && 'bg-borderSecondary dark:bg-borderPrimaryDark',
           ),
-        container: () => twMerge('bg-bgPrimary dark:bg-bgPrimaryDark', roundedStyle, className),
+        container: () =>
+          twMerge(!noBackground && 'bg-bgPrimary dark:bg-bgPrimaryDark', roundedStyle, className),
         placeholder: () => 'text-midGray dark:text-midGrayDark',
-        // no bg- in creatable
+        /* no bg- in creatable */
         valueContainer: () =>
           twMerge(
-            'px-2 min-h-[40px] text-fgPrimary dark:text-fgPrimaryDark bg-bgPrimary dark:bg-bgPrimaryDark hover:cursor-pointer rounded-sm',
+            'min-h-[40px] text-fgPrimary dark:text-fgPrimaryDark hover:cursor-pointer rounded-sm',
+            !noBackground && 'bg-bgPrimary dark:bg-bgPrimaryDark',
+            justifyRight && 'justify-end',
             variant == 'creatable' && !noBorder && 'p-1.5',
-            variant == 'creatable' && 'gap-1',
+            variant == 'creatable' ? 'gap-1' : 'px-2',
           ),
         noOptionsMessage: () => 'rounded-sm p-2',
         clearIndicator: () => 'text-lightGray dark:text-lightGrayDark pr-2',
-
-        // Async
+        /* Async */
         loadingMessage: () => 'rounded-sm p-2',
         loadingIndicator: () => 'text-lightGray dark:text-lightGrayDark pr-2',
-
-        // Creatable
-        input: () => (noRemove ? 'max-w-[0px] max-h-[0px]' : ''),
+        /* Creatable */
+        input: () => (noRemove ? 'max-w-0 max-h-0' : ''),
         multiValue: () => 'bg-bgButton dark:bg-bgButtonDark rounded-sm',
         multiValueLabel: () =>
           twMerge(
@@ -128,7 +133,7 @@ const Select = ({
           ),
         multiValueRemove: () =>
           noRemove
-            ? 'max-w-[0px] max-h-[0px] hidden'
+            ? 'max-w-0 max-h-0 hidden'
             : 'pr-1 bg-bgButton dark:bg-bgButtonDark rounded-r border-r border-y border-borderSecondary dark:border-borderSecondaryDark hover:cursor-pointer',
       }}
       // Async

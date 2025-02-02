@@ -6,7 +6,7 @@ import { deckUpdate } from '@/context';
 import { getTags, getIsEditable } from '@/utils';
 import { SUPERIOR, BASE, DECKID, CRYPT, LIBRARY, TAGS } from '@/constants';
 
-const DeckTags = ({ deck, noAutotags, isBordered, allTagsOptions }) => {
+const DeckTags = ({ deck, noAutotags, justifyRight, isBordered, noBackground, allTagsOptions }) => {
   const isEditable = getIsEditable(deck);
 
   const tagList = useMemo(() => {
@@ -63,6 +63,7 @@ const DeckTags = ({ deck, noAutotags, isBordered, allTagsOptions }) => {
         className="w-full"
         isDisabled={!isEditable}
         isMulti
+        noBackground={noBackground}
         noBorder={!isBordered}
         noOptionsMessage={() => 'Enter new tag'}
         noRemove={!isEditable}
@@ -72,6 +73,7 @@ const DeckTags = ({ deck, noAutotags, isBordered, allTagsOptions }) => {
         roundedStyle={twMerge('rounded-sm', isEditable && !noAutotags && 'rounded-r-none')}
         value={tagList}
         variant="creatable"
+        justifyRight={justifyRight}
         noDropdown
       />
       {!noAutotags && isEditable && (

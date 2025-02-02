@@ -40,6 +40,8 @@ import {
   PLAYTEST,
   S,
   TIMESTAMP,
+  IS_AUTHOR,
+  TAGS,
 } from '@/constants';
 import { getClan, getRestrictions } from '@/utils';
 
@@ -119,28 +121,51 @@ const DeckSelectAdvTableRow = ({
       )}
 
       <td
-        className={twMerge(short ? 'w-full' : 'min-w-[45vw]', 'cursor-pointer sm:min-w-[340px]')}
+        colSpan={isMobile ? 2 : 1}
+        className={twMerge(
+          short || isMobile ? 'w-full' : 'min-w-[45vw]',
+          'cursor-pointer sm:min-w-[340px]',
+        )}
         onClick={handleClick}
       >
-        <div
-          className="text-fgName dark:text-fgNameDark flex justify-between gap-2"
-          title={deck[NAME]}
-        >
-          <div className="flex items-center justify-center">
-            {isMobile && clan && <ResultClanImage className="w-[30px]" value={clan} />}
-            {deck[NAME]}
-          </div>
-          <div className="flex items-center justify-end gap-3">
-            {hasBanned && <ResultLegalIcon type={BANNED} />}
-            {limitedMode && hasLimited && <ResultLegalIcon />}
-            {hasPlaytest && <ResultLegalIcon type={PLAYTEST} />}
-            {deck[BRANCH_NAME] &&
-              (deck[MASTER] || (deck[BRANCHES] && deck[BRANCHES].length > 0)) && (
-                <div className="inline" title={deck[BRANCH_NAME]}>
-                  {deck[BRANCH_NAME]}
-                </div>
+        <div className="flex w-full items-center justify-between gap-1">
+          <div
+            className="text-fgName dark:text-fgNameDark flex justify-between gap-2"
+            title={deck[NAME]}
+          >
+            <div
+              className={twMerge(
+                'flex items-center justify-center gap-0.5',
+                isMobile && !clan && 'ps-1',
               )}
+            >
+              {isMobile && clan && <ResultClanImage className="w-[30px]" value={clan} />}
+              {deck[NAME]}
+            </div>
+            <div className="flex items-center justify-end gap-3">
+              {hasBanned && <ResultLegalIcon type={BANNED} />}
+              {limitedMode && hasLimited && <ResultLegalIcon />}
+              {hasPlaytest && <ResultLegalIcon type={PLAYTEST} />}
+              {deck[BRANCH_NAME] &&
+                (deck[MASTER] || (deck[BRANCHES] && deck[BRANCHES].length > 0)) && (
+                  <div className="inline" title={deck[BRANCH_NAME]}>
+                    {deck[BRANCH_NAME]}
+                  </div>
+                )}
+            </div>
           </div>
+          {isMobile && deck[TAGS].length > 0 && (
+            <div className="max-w-[160px] p-1">
+              <DeckTags
+                deck={{ ...deck, [IS_AUTHOR]: false }}
+                allTagsOptions={allTagsOptions}
+                noAutotags
+                noBackground
+                noBorder
+                justifyRight
+              />
+            </div>
+          )}
         </div>
       </td>
       {isDesktop && (
@@ -162,14 +187,16 @@ const DeckSelectAdvTableRow = ({
       )}
       {!short && (
         <>
-          <td className="w-full px-1 max-sm:px-0.5">
-            <DeckTags
-              deck={deck}
-              allTagsOptions={allTagsOptions}
-              isBordered
-              noAutotags={isMobile}
-            />
-          </td>
+          {!isMobile && (
+            <td className="w-full px-1 max-sm:px-0.5">
+              <DeckTags
+                deck={deck}
+                allTagsOptions={allTagsOptions}
+                isBordered
+                noAutotags={isMobile}
+              />
+            </td>
+          )}
           <td>
             <div className="flex justify-end gap-1">
               <DeckHideButton deck={deck} />
