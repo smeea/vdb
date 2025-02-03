@@ -3,7 +3,7 @@ import { SortButton } from '@/components';
 import { NAME, DATE } from '@/constants';
 
 const DeckSortButton = ({ sortMethod, onChange, noText }) => {
-  const sortMethods = { [NAME]: 'Name', [DATE]: 'Date' };
+  const sortMethods = { [NAME]: 'N', [DATE]: 'D' };
 
   return (
     <SortButton

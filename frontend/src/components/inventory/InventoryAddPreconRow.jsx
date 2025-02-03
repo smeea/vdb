@@ -21,7 +21,7 @@ const InventoryAddPreconRow = ({ deck }) => {
   const clans = setsAndPrecons[set][PRECONS][precon][CLAN].split('/');
 
   return (
-    <tr className="row-bg border-y border-bgSecondary dark:border-bgSecondaryDark">
+    <tr className="row-bg border-bgSecondary dark:border-bgSecondaryDark border-y">
       <td className="min-w-[50px] sm:min-w-[70px]">
         <div className="flex justify-center">
           {clans.length > 0 && (
@@ -39,7 +39,7 @@ const InventoryAddPreconRow = ({ deck }) => {
       </td>
       <td className="max-sm:w-full">
         <div
-          className="text-overflow flex justify-between text-fgName dark:text-fgNameDark sm:whitespace-nowrap"
+          className="text-overflow text-fgName dark:text-fgNameDark flex justify-between sm:whitespace-nowrap"
           title={deck[NAME]}
         >
           {deck[NAME]}
@@ -54,11 +54,13 @@ const InventoryAddPreconRow = ({ deck }) => {
           </div>
         </td>
       )}
-      <td className="w-full text-fgThird dark:text-fgThirdDark">
+      <td className="text-fgThird dark:text-fgThirdDark w-full">
         {isMobile ? (
           <>
             <div>{setsAndPrecons[set][NAME]}</div>
-            <div className="flex justify-end text-sm">{setsAndPrecons[set][DATE].slice(0, 4)}</div>
+            <div className="flex justify-end px-1 text-sm">
+              {setsAndPrecons[set][DATE].slice(0, 4)}
+            </div>
           </>
         ) : (
           <div className="whitespace-nowrap">

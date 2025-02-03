@@ -82,7 +82,7 @@ const InventoryAddDeckRow = ({ deck, allTagsOptions }) => {
         </td>
       )}
       {!isMobile && (
-        <td className="min-w-[100px] whitespace-nowrap">
+        <td className="min-w-[100px] text-center whitespace-nowrap">
           {dayjs(deck[TIMESTAMP]).format('YYYY-MM-DD')}
         </td>
       )}

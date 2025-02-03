@@ -52,7 +52,7 @@ const InventoryAddDeckHeader = ({
               onChange={() => setRevFilter(!revFilter)}
             />
             <div className="flex items-center">
-              <DeckSortButton sortMethod={sortMethod} onChange={setSortMethod} noText />
+              <DeckSortButton sortMethod={sortMethod} onChange={setSortMethod} />
             </div>
           </div>
         </th>

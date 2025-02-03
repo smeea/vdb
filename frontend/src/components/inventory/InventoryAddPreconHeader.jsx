@@ -66,7 +66,7 @@ const InventoryAddPreconHeader = ({
             >
               <div className="text-fgThird dark:text-fgThirdDark flex justify-center">[?]</div>
             </ConditionalTooltipOrModal>
-            <DeckSortButton sortMethod={sortMethod} onChange={setSortMethod} noText />
+            <DeckSortButton sortMethod={sortMethod} onChange={setSortMethod} />
           </div>
         </th>
       </tr>
