@@ -20,7 +20,7 @@ const InventoryAddDeckHeader = ({
       <tr>
         <th className="min-w-[45px]"></th>
         {!isMobile && <th className="min-w-[50px]"></th>}
-        <th className="max-sm:w-full sm:min-w-[250px] lg:min-w-[400px]">
+        <th className="py-1 max-sm:w-full sm:min-w-[250px] lg:min-w-[400px]">
           <Input
             placeholder="Filter by Name"
             name="text"
@@ -33,7 +33,7 @@ const InventoryAddDeckHeader = ({
         {isDesktop && <th className="min-w-[40px]"></th>}
         {!isMobile && <th className="min-w-[100px]"></th>}
         {!isMobile && (
-          <th className="w-full px-1 text-start max-sm:px-0.5">
+          <th className="w-full text-start max-sm:py-0.5 sm:p-1">
             <Select
               variant="creatable"
               isMulti
@@ -44,10 +44,10 @@ const InventoryAddDeckHeader = ({
             />
           </th>
         )}
-        <th className="min-w-[105px]">
-          <div className="flex justify-end gap-1">
+        <th className="min-w-[110px] ps-1">
+          <div className="flex justify-end gap-1 sm:gap-2">
             <Checkbox
-              label={isMobile ? 'Rev' : 'Show Revisions'}
+              label={isMobile ? 'Show Rev' : 'Show Revisions'}
               checked={revFilter}
               onChange={() => setRevFilter(!revFilter)}
             />

@@ -75,7 +75,7 @@ const InventoryAddDeckModal = ({ handleClose }) => {
       size="lg"
       title="Import Deck to Inventory"
     >
-      <table className="border-bgSecondary dark:border-bgSecondaryDark border-y sm:border-x">
+      <table>
         <InventoryAddDeckHeader
           handleChangeNameFilter={handleChangeNameFilter}
           handleChangeTagsFilter={handleChangeTagsFilter}
@@ -87,7 +87,7 @@ const InventoryAddDeckModal = ({ handleClose }) => {
           defaultTagsOptions={defaultTagsOptions}
           sortMethod={sortMethod}
         />
-        <tbody>
+        <tbody className="border-bgSecondary dark:border-bgSecondaryDark sm:border-x">
           {sortedDecks.map((deck) => {
             return (
               <InventoryAddDeckRow

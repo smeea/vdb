@@ -1,4 +1,4 @@
- FIX
+# FIX
 - Too many calls to Location or History APIs on filter changes in Firefox
 
 # FIX ON HOLD

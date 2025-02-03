@@ -47,7 +47,7 @@ const InventoryAddPreconModal = ({ handleClose }) => {
 
   return (
     <Modal noPadding={isMobile} handleClose={handleClose} title="Import Precon to Inventory">
-      <table className="inv-import-precons-table border-bgSecondary dark:border-bgSecondaryDark sm:border">
+      <table>
         <InventoryAddPreconHeader
           handleChangeNameFilter={handleChangeNameFilter}
           setSortMethod={setSortMethod}
@@ -56,7 +56,7 @@ const InventoryAddPreconModal = ({ handleClose }) => {
           setFilter={setFilter}
           handleChangeSetFilter={handleChangeSetFilter}
         />
-        <tbody>
+        <tbody className="border-bgSecondary dark:border-bgSecondaryDark sm:border-x">
           {sortedDecks.map((deck) => {
             return <InventoryAddPreconRow key={deck[DECKID]} deck={deck} />;
           })}

@@ -36,7 +36,7 @@ const InventoryAddPreconHeader = ({
     <thead>
       <tr>
         <th className="min-w-[50px]"></th>
-        <th className="max-sm:w-full">
+        <th className="py-1 pr-1 max-sm:w-full">
           <Input
             placeholder="Filter by Name"
             name="text"

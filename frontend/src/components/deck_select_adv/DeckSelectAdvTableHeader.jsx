@@ -89,7 +89,7 @@ const DeckSelectAdvTableHeader = ({
           </th>
         )}
         {inventoryMode && !isMobile && (
-          <th className="min-w-[52px]">
+          <th className="min-w-[52px] py-1">
             <Select
               options={invOptions}
               onChange={(e) => setInvFilter(e.value)}
@@ -100,7 +100,7 @@ const DeckSelectAdvTableHeader = ({
           </th>
         )}
         {(short || !isMobile) && (
-          <th className="min-w-[60px] sm:min-w-[70px]">
+          <th className="min-w-[60px] p-1 sm:min-w-[70px]">
             <Select
               options={clanOptions}
               onChange={(e) => setClanFilter(e.value)}
@@ -110,7 +110,7 @@ const DeckSelectAdvTableHeader = ({
             />
           </th>
         )}
-        <th className="min-w-[45vw] sm:min-w-[340px]">
+        <th className="min-w-[45vw] max-sm:p-1 sm:min-w-[340px] sm:py-1">
           <Input
             placeholder="Filter by Deck or Card Name"
             name="text"
@@ -123,7 +123,7 @@ const DeckSelectAdvTableHeader = ({
         {!short && isDesktop && <th className="min-w-[30px] sm:min-w-[45px]" />}
         {!short && !isNarrow && <th className="min-w-[100px] sm:min-w-[105px]" />}
         {!short && (
-          <th className="w-full px-1 text-start max-sm:px-0.5">
+          <th className="w-full text-start max-sm:py-0.5 sm:p-1">
             <DeckSelectAdvTagsFilter
               tagsFilter={tagsFilter}
               handleChangeTagsFilter={handleChangeTagsFilter}
@@ -131,8 +131,8 @@ const DeckSelectAdvTableHeader = ({
             />
           </th>
         )}
-        <th colSpan={short ? 2 : 1}>
-          <div className="flex items-center justify-end p-1">
+        <th colSpan={short ? 2 : 1} className="p-1">
+          <div className="flex items-center justify-end">
             <Checkbox
               name="revFilter"
               label={
