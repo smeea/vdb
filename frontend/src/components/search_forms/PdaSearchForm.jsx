@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useCallback, useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router';
 import { useSnapshot } from 'valtio';
 import {
@@ -86,44 +86,62 @@ const PdaSearchForm = ({ error, setError }) => {
     }
   }, [pdaFormState, cryptCardBase, libraryCardBase]);
 
-  const handleMultiSelectChange = (event, id) => {
-    const i = id[NAME];
-    const { name, value } = event;
-    searchPdaForm[name].value[i] = value;
-  };
+  const handleMultiSelectChange = useCallback(
+    (event, id) => {
+      const i = id[NAME];
+      const { name, value } = event;
+      searchPdaForm[name].value[i] = value;
+    },
+    [searchPdaForm],
+  );
 
-  const handleChangeWithOpt = (event, id) => {
-    const i = id[NAME];
-    const { name, value } = event;
-    searchPdaForm[i][name] = value;
-  };
+  const handleChangeWithOpt = useCallback(
+    (event, id) => {
+      const i = id[NAME];
+      const { name, value } = event;
+      searchPdaForm[i][name] = value;
+    },
+    [searchPdaForm],
+  );
 
-  const handleSrcChange = (value) => {
-    searchPdaForm[SRC] = value;
-  };
+  const handleSrcChange = useCallback(
+    (value) => {
+      searchPdaForm[SRC] = value;
+    },
+    [searchPdaForm],
+  );
 
-  const handleDisciplinesChange = (name) => {
-    searchPdaForm[DISCIPLINES][name] = !searchPdaForm[DISCIPLINES][name];
-  };
+  const handleDisciplinesChange = useCallback(
+    (name) => {
+      searchPdaForm[DISCIPLINES][name] = !searchPdaForm[DISCIPLINES][name];
+    },
+    [searchPdaForm],
+  );
 
-  const handleMultiChange = (event) => {
-    const { name, value } = event.currentTarget;
-    searchPdaForm[name][value] = !searchPdaForm[name][value];
-  };
+  const handleMultiChange = useCallback(
+    (event) => {
+      const { name, value } = event.currentTarget;
+      searchPdaForm[name][value] = !searchPdaForm[name][value];
+    },
+    [searchPdaForm],
+  );
 
-  const handleMatchInventoryScalingChange = (e) => {
-    if (e.target.checked) {
-      searchPdaForm[MATCH_INVENTORY][SCALING] = e.target[NAME];
-    } else {
-      searchPdaForm[MATCH_INVENTORY][SCALING] = false;
-    }
-  };
+  const handleMatchInventoryScalingChange = useCallback(
+    (e) => {
+      if (e.target.checked) {
+        searchPdaForm[MATCH_INVENTORY][SCALING] = e.target[NAME];
+      } else {
+        searchPdaForm[MATCH_INVENTORY][SCALING] = false;
+      }
+    },
+    [searchPdaForm],
+  );
 
-  const handleClear = () => {
+  const handleClear = useCallback(() => {
     setSearchParams();
     clearSearchForm(PDA);
     setError(false);
-  };
+  }, [clearSearchForm]);
 
   const handleError = (e) => {
     switch (e.response.status) {

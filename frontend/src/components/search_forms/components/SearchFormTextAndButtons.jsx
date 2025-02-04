@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import Check2 from '@icons/check2.svg?react';
 import {
   SearchAdditionalFormsText,
@@ -55,6 +55,13 @@ const SearchFormTextAndButtons = ({
     },
   ];
 
+  const handleChange = useCallback(
+    (e) => {
+      setText(e.target.value);
+    },
+    [setText],
+  );
+
   return (
     <div className="flex flex-col gap-2">
       <div className="flex flex-col gap-1">
@@ -62,7 +69,7 @@ const SearchFormTextAndButtons = ({
           <Input
             placeholder="Card Name / Text / RegEx"
             value={text}
-            onChange={(e) => setText(e.target.value)}
+            onChange={handleChange}
             borderStyle="max-sm:border sm:border-y sm:border-l"
             roundedStyle="sm:rounded-r-none rounded-sm"
           />

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useCallback, useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router';
 import { useSnapshot } from 'valtio';
 import {
@@ -96,21 +96,6 @@ const LibrarySearchForm = () => {
     }
   }, [libraryFormState, libraryCardBase]);
 
-  const textInputsAndSearch = () => {
-    if (!isMobile && libraryCardBase) {
-      const input = sanitizeFormState(LIBRARY, searchLibraryForm);
-      if (Object.keys(input).length === 0) {
-        if (query) {
-          setLibraryResults(undefined);
-          setPreresults(undefined);
-          setSearchParams();
-        }
-      } else if (!searchLibraryForm[TEXT][0].value || searchLibraryForm[TEXT][0].value.length > 2) {
-        processSearch();
-      }
-    }
-  };
-
   useEffect(
     () => textInputsAndSearch(),
     [
@@ -134,59 +119,74 @@ const LibrarySearchForm = () => {
     }
   }, [preresults]);
 
-  const handleTextChange = (formId, value) => {
-    searchLibraryForm[TEXT][formId].value = value;
-  };
+  const handleTextChange = useCallback(
+    (formId, value) => {
+      searchLibraryForm[TEXT][formId].value = value;
+    },
+    [searchLibraryForm],
+  );
 
-  const handleTextCheckboxesChange = (event) => {
-    const { name, value } = event.currentTarget;
-    if ([NAME, TEXT].includes(value)) {
-      searchLibraryForm[TEXT][name]['in'] =
-        searchLibraryForm[TEXT][name]['in'] === value ? false : value;
-    } else {
-      searchLibraryForm[TEXT][name][value] = !searchLibraryForm[TEXT][name][value];
-    }
-  };
-
-  const handleSelectChange = (event) => {
-    const { name, value } = event;
-    searchLibraryForm[name] = value;
-  };
-
-  const handleMultiSelectChange = (event, id) => {
-    const i = id[NAME];
-    const { name, value } = event;
-
-    if ([BLOOD, POOL, CAPACITY].includes(name)) {
-      if ([LE, GE, EQ].includes(value)) {
-        searchLibraryForm[name].moreless = value;
+  const handleTextCheckboxesChange = useCallback(
+    (event) => {
+      const { name, value } = event.currentTarget;
+      if ([NAME, TEXT].includes(value)) {
+        searchLibraryForm[TEXT][name]['in'] =
+          searchLibraryForm[TEXT][name]['in'] === value ? false : value;
       } else {
-        searchLibraryForm[name][name] = value;
+        searchLibraryForm[TEXT][name][value] = !searchLibraryForm[TEXT][name][value];
       }
-    } else {
-      searchLibraryForm[name].value[i] = value;
-    }
-  };
+    },
+    [searchLibraryForm],
+  );
 
-  const handleMultiChange = (event) => {
-    const { name, value } = event.currentTarget;
+  const handleSelectChange = useCallback(
+    (event) => {
+      const { name, value } = event;
+      searchLibraryForm[name] = value;
+    },
+    [searchLibraryForm],
+  );
 
-    if ([OR_NEWER, OR_OLDER, NOT_NEWER, NOT_OLDER].includes(value)) {
-      searchLibraryForm[name][AGE] = searchLibraryForm[name][AGE] === value ? false : value;
-    } else if ([ONLY, FIRST, REPRINT].includes(value)) {
-      searchLibraryForm[name][PRINT] = searchLibraryForm[name][PRINT] === value ? false : value;
-    } else {
-      searchLibraryForm[name][value] = !searchLibraryForm[name][value];
-    }
-  };
+  const handleMultiSelectChange = useCallback(
+    (event, id) => {
+      const i = id[NAME];
+      const { name, value } = event;
 
-  const handleClear = () => {
+      if ([BLOOD, POOL, CAPACITY].includes(name)) {
+        if ([LE, GE, EQ].includes(value)) {
+          searchLibraryForm[name].moreless = value;
+        } else {
+          searchLibraryForm[name][name] = value;
+        }
+      } else {
+        searchLibraryForm[name].value[i] = value;
+      }
+    },
+    [searchLibraryForm],
+  );
+
+  const handleMultiChange = useCallback(
+    (event) => {
+      const { name, value } = event.currentTarget;
+
+      if ([OR_NEWER, OR_OLDER, NOT_NEWER, NOT_OLDER].includes(value)) {
+        searchLibraryForm[name][AGE] = searchLibraryForm[name][AGE] === value ? false : value;
+      } else if ([ONLY, FIRST, REPRINT].includes(value)) {
+        searchLibraryForm[name][PRINT] = searchLibraryForm[name][PRINT] === value ? false : value;
+      } else {
+        searchLibraryForm[name][value] = !searchLibraryForm[name][value];
+      }
+    },
+    [searchLibraryForm],
+  );
+
+  const handleClear = useCallback(() => {
     setSearchParams();
     clearSearchForm(LIBRARY);
     setLibraryResults(undefined);
     setPreresults(undefined);
     setError(false);
-  };
+  }, [clearSearchForm]);
 
   const handleShowResults = () => {
     setLibraryResults(preresults);
@@ -225,6 +225,21 @@ const LibrarySearchForm = () => {
       setResults(filteredCards.filter((card) => !inventoryLibrary[card[ID]]?.q));
     } else {
       setResults(filteredCards);
+    }
+  };
+
+  const textInputsAndSearch = () => {
+    if (!isMobile && libraryCardBase) {
+      const input = sanitizeFormState(LIBRARY, searchLibraryForm);
+      if (Object.keys(input).length === 0) {
+        if (query) {
+          setLibraryResults(undefined);
+          setPreresults(undefined);
+          setSearchParams();
+        }
+      } else if (!searchLibraryForm[TEXT][0].value || searchLibraryForm[TEXT][0].value.length > 2) {
+        processSearch();
+      }
     }
   };
 

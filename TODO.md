@@ -20,4 +20,5 @@
 - Refactor components with default '{}' prop
 - Refactor with useCallbacks
   - DeckCrypt/Library
-  - SearchForms
+  - Pda/Tda/TwdResult
+  - ResultModal not to trigger rerender

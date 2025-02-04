@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useCallback, useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router';
 import { useSnapshot } from 'valtio';
 import {
@@ -69,33 +69,45 @@ const TdaSearchForm = () => {
     }
   }, [tdaFormState, cryptCardBase, libraryCardBase]);
 
-  const handleMultiSelectChange = (event, id) => {
-    const i = id[NAME];
-    const { name, value } = event;
-    searchTdaForm[name].value[i] = value;
-  };
+  const handleMultiSelectChange = useCallback(
+    (event, id) => {
+      const i = id[NAME];
+      const { name, value } = event;
+      searchTdaForm[name].value[i] = value;
+    },
+    [searchTdaForm],
+  );
 
-  const handleChangeWithOpt = (event, id) => {
-    const i = id[NAME];
-    const { name, value } = event;
+  const handleChangeWithOpt = useCallback(
+    (event, id) => {
+      const i = id[NAME];
+      const { name, value } = event;
 
-    searchTdaForm[i][name] = value;
-  };
+      searchTdaForm[i][name] = value;
+    },
+    [searchTdaForm],
+  );
 
-  const handleDisciplinesChange = (name) => {
-    searchTdaForm[DISCIPLINES][name] = !searchTdaForm[DISCIPLINES][name];
-  };
+  const handleDisciplinesChange = useCallback(
+    (name) => {
+      searchTdaForm[DISCIPLINES][name] = !searchTdaForm[DISCIPLINES][name];
+    },
+    [searchTdaForm],
+  );
 
-  const handleMultiChange = (event) => {
-    const { name, value } = event.currentTarget;
-    searchTdaForm[name][value] = !searchTdaForm[name][value];
-  };
+  const handleMultiChange = useCallback(
+    (event) => {
+      const { name, value } = event.currentTarget;
+      searchTdaForm[name][value] = !searchTdaForm[name][value];
+    },
+    [searchTdaForm],
+  );
 
-  const handleClear = () => {
+  const handleClear = useCallback(() => {
     clearTdaForm();
     setTdaResults();
     setError(false);
-  };
+  }, [clearTdaForm]);
 
   const processSearch = () => {
     setError(false);
