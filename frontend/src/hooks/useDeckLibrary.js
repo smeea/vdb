@@ -26,10 +26,10 @@ import {
 } from '@/constants';
 import { limitedStore } from '@/context';
 
-const useDeckLibrary = (cardsList, cardsToList = {}) => {
+const useDeckLibrary = (cardsList, cardsToList) => {
   return useMemo(() => {
     const cardsFrom = Object.values(cardsList);
-    const cardsTo = Object.values(cardsToList);
+    const cardsTo = Object.values(cardsToList || {});
     const libraryFrom = cardsFrom.filter((card) => card.q > 0);
     const libraryTo = cardsTo.filter((card) => card.q > 0 && !containCard(libraryFrom, card));
     const libraryFromSide = cardsFrom.filter(

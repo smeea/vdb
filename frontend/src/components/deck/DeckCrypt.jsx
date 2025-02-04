@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { DeckCryptTable, DeckCryptHeader, ResultModal, FlexGapped } from '@/components';
 import { useApp } from '@/context';
@@ -24,7 +24,9 @@ const DeckCrypt = ({ inSearch, inPreview, inMissing, noDisciplines, deck }) => {
     cryptDeckSort,
   );
 
-  const { disciplinesSet, keyDisciplines } = getKeyDisciplines(deck[CRYPT]);
+  const { disciplinesSet, keyDisciplines } = useMemo(() => {
+    return getKeyDisciplines(deck[CRYPT]);
+  }, [deck[CRYPT]]);
 
   const {
     currentModalCard,
@@ -35,20 +37,26 @@ const DeckCrypt = ({ inSearch, inPreview, inMissing, noDisciplines, deck }) => {
     handleModalCardClose,
   } = useModalCardController(sortedCards, sortedCardsSide);
 
-  const handleClick = (card) => {
-    handleModalCardOpen(card);
-    setShowFloatingButtons(false);
-  };
+  const handleClick = useCallback(
+    (card) => {
+      handleModalCardOpen(card);
+      setShowFloatingButtons(false);
+    },
+    [sortedCards, sortedCardsSide],
+  );
 
-  const handleClickSide = (card) => {
-    handleModalSideCardOpen(card);
-    setShowFloatingButtons(false);
-  };
+  const handleClickSide = useCallback(
+    (card) => {
+      handleModalSideCardOpen(card);
+      setShowFloatingButtons(false);
+    },
+    [sortedCards, sortedCardsSide],
+  );
 
-  const handleClose = () => {
+  const handleClose = useCallback(() => {
     handleModalCardClose();
     setShowFloatingButtons(true);
-  };
+  }, [sortedCards, sortedCardsSide]);
 
   return (
     <FlexGapped

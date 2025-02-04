@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import {
   DeckLibraryTable,
   ResultLibraryType,
@@ -34,20 +34,26 @@ const DeckLibrary = ({ inSearch, inPreview, inMissing, deck }) => {
     handleModalCardClose,
   } = useModalCardController(library, librarySide);
 
-  const handleClick = (card) => {
-    handleModalCardOpen(card);
-    setShowFloatingButtons(false);
-  };
+  const handleClick = useCallback(
+    (card) => {
+      handleModalCardOpen(card);
+      setShowFloatingButtons(false);
+    },
+    [library, librarySide],
+  );
 
-  const handleClickSide = (card) => {
-    handleModalSideCardOpen(card);
-    setShowFloatingButtons(false);
-  };
+  const handleClickSide = useCallback(
+    (card) => {
+      handleModalSideCardOpen(card);
+      setShowFloatingButtons(false);
+    },
+    [library, librarySide],
+  );
 
-  const handleClose = () => {
+  const handleClose = useCallback(() => {
     handleModalCardClose();
     setShowFloatingButtons(true);
-  };
+  }, [library, librarySide]);
 
   return (
     <FlexGapped className="flex-col">

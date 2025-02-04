@@ -13,16 +13,16 @@ import {
 import { useCryptSortWithTimer } from '@/hooks';
 import { miscStore, limitedStore } from '@/context';
 
-const useDeckCrypt = (cardsList, sortMethod = NAME, cardsToList = {}) => {
+const useDeckCrypt = (cardsList, sortMethod = NAME, cardsToList) => {
   const timer = useSnapshot(miscStore)[CRYPT_TIMER];
   const cryptFrom = Object.values(cardsList).filter((card) => card.q > 0);
-  const cryptTo = Object.values(cardsToList).filter(
+  const cryptTo = Object.values(cardsToList || {}).filter(
     (card) => card.q > 0 && !containCard(cryptFrom, card),
   );
   const cryptFromSide = Object.values(cardsList).filter(
     (card) => card.q <= 0 && !containCard(cryptTo, card),
   );
-  const cryptToSide = Object.values(cardsToList).filter(
+  const cryptToSide = Object.values(cardsToList || {}).filter(
     (card) => card.q <= 0 && !containCard(cryptFrom, card) && !containCard(cryptFromSide, card),
   );
   const crypt = [...cryptFrom, ...cryptTo.map((card) => ({ q: 0, c: card.c }))];
