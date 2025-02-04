@@ -19,6 +19,5 @@
 - Remove legacy polyfills (groupBy 2024-11-30 87.24%, 2024-12-12 89.08%)
 - Refactor components with default '{}' prop
 - Refactor with useCallbacks
-  - DeckCrypt/Library
   - Pda/Tda/TwdResult
   - ResultModal not to trigger rerender

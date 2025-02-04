@@ -1,6 +1,7 @@
 import React from 'react';
 import { DeckCryptTableRow } from '@/components';
-import { ID } from '@/constants';
+import { getIsEditable } from '@/utils';
+import { INVENTORY_TYPE, DECKID, ID } from '@/constants';
 
 const DeckCryptTable = ({
   deck,
@@ -16,8 +17,10 @@ const DeckCryptTable = ({
   shouldShowModal,
   inSide,
 }) => {
+  const isEditable = getIsEditable(deck);
+
   return (
-    <table className="w-full border-bgSecondary dark:border-bgSecondaryDark sm:border">
+    <table className="border-bgSecondary dark:border-bgSecondaryDark w-full sm:border">
       <tbody>
         {cards.map((card) => {
           return (
@@ -25,7 +28,6 @@ const DeckCryptTable = ({
               key={card.c[ID]}
               handleClick={handleClick}
               card={card}
-              deck={deck}
               disciplinesSet={disciplinesSet}
               keyDisciplines={keyDisciplines}
               showInfo={showInfo}
@@ -35,6 +37,9 @@ const DeckCryptTable = ({
               inMissing={inMissing}
               shouldShowModal={shouldShowModal}
               inSide={inSide}
+              isEditable={isEditable}
+              deckid={deck[DECKID]}
+              inventoryType={deck[INVENTORY_TYPE]}
             />
           );
         })}

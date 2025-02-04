@@ -8,29 +8,31 @@ import {
   ResultLibraryTableRowCommon,
   DeckDrawProbability,
 } from '@/components';
-import { getIsEditable, getSwipedBg, getSoftMax, getHardTotal } from '@/utils';
+import { getSwipedBg, getSoftMax, getHardTotal } from '@/utils';
 import { useSwipe } from '@/hooks';
-import { DECKID, ID, NAME, INVENTORY_TYPE, SOFT, HARD, LIBRARY } from '@/constants';
+import { ID, NAME, SOFT, HARD, LIBRARY } from '@/constants';
 
 const DeckLibraryTableRow = ({
   handleClick,
   card,
-  deck,
   showInfo,
   libraryTotal,
   inSearch,
   inMissing,
   shouldShowModal,
+
+  isEditable,
+  deckid,
+  inventoryType,
 }) => {
   const { limitedMode, inventoryMode, isDesktop } = useApp();
   const usedLibrary = useSnapshot(usedStore)[LIBRARY];
   const inventoryLibrary = useSnapshot(inventoryStore)[LIBRARY];
   const limitedLibrary = useSnapshot(limitedStore)[LIBRARY];
-  const isEditable = getIsEditable(deck);
 
   const { isSwiped, swipeHandlers } = useSwipe(
-    () => deckCardChange(deck[DECKID], card.c, card.q - 1),
-    () => deckCardChange(deck[DECKID], card.c, card.q + 1),
+    () => deckCardChange(deckid, card.c, card.q - 1),
+    () => deckCardChange(deckid, card.c, card.q + 1),
     isEditable,
   );
 
@@ -47,17 +49,22 @@ const DeckLibraryTableRow = ({
         getSwipedBg(isSwiped),
       )}
     >
-      {inventoryMode && deck[INVENTORY_TYPE] && !inMissing && !inSearch && isDesktop && (
-        <DeckCardToggleInventoryStateTd card={card} deck={deck} />
+      {inventoryMode && inventoryType && !inMissing && !inSearch && isDesktop && (
+        <DeckCardToggleInventoryStateTd
+          isEditable={isEditable}
+          card={card}
+          deckid={deckid}
+          inventoryType={inventoryType}
+        />
       )}
       <DeckCardQuantityTd
         card={card.c}
         cardChange={deckCardChange}
-        deckid={deck[DECKID]}
+        deckid={deckid}
         hardUsedTotal={hardUsedTotal}
         inInventory={inInventory}
         inMissing={inMissing}
-        inventoryType={deck[INVENTORY_TYPE]}
+        inventoryType={inventoryType}
         isEditable={isEditable}
         q={card.q}
         softUsedMax={softUsedMax}

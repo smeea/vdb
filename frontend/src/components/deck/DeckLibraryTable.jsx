@@ -1,6 +1,7 @@
 import React from 'react';
-import { ASCII, ID } from '@/constants';
 import { DeckLibraryTableRow } from '@/components';
+import { getIsEditable } from '@/utils';
+import { ASCII, INVENTORY_TYPE, DECKID, ID } from '@/constants';
 
 const DeckLibraryTable = ({
   deck,
@@ -13,9 +14,10 @@ const DeckLibraryTable = ({
   shouldShowModal,
 }) => {
   const sortedCards = cards.toSorted((a, b) => a.c[ASCII] - b.c[ASCII]);
+  const isEditable = getIsEditable(deck);
 
   return (
-    <table className="w-full border-bgSecondary dark:border-bgSecondaryDark sm:border">
+    <table className="border-bgSecondary dark:border-bgSecondaryDark w-full sm:border">
       <tbody>
         {sortedCards.map((card) => {
           return (
@@ -23,12 +25,14 @@ const DeckLibraryTable = ({
               key={card.c[ID]}
               handleClick={handleClick}
               card={card}
-              deck={deck}
               showInfo={showInfo}
               libraryTotal={libraryTotal}
               inSearch={inSearch}
               inMissing={inMissing}
               shouldShowModal={shouldShowModal}
+              isEditable={isEditable}
+              deckid={deck[DECKID]}
+              inventoryType={deck[INVENTORY_TYPE]}
             />
           );
         })}
