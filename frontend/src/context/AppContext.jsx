@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useCallback, useState, useEffect, useMemo } from 'react';
 import { useImmer } from 'use-immer';
 import { useSnapshot } from 'valtio';
 import { set, setMany, getMany, update } from 'idb-keyval';
@@ -378,25 +378,25 @@ export const AppProvider = ({ children }) => {
     setLocalStorage(SHOW_LEGACY_IMAGE, !showLegacyImage);
   };
 
-  const toggleInventoryMode = () => {
+  const toggleInventoryMode = useCallback(() => {
     setInventoryMode(!inventoryMode);
     setLocalStorage(INVENTORY_MODE, !inventoryMode);
-  };
+  }, [inventoryMode]);
 
-  const toggleLimitedMode = () => {
+  const toggleLimitedMode = useCallback(() => {
     setLimitedMode(!limitedMode);
     setLocalStorage(LIMITED_MODE, !limitedMode);
-  };
+  }, [limitedMode]);
 
-  const togglePlaytestMode = () => {
+  const togglePlaytestMode = useCallback(() => {
     setPlaytestMode(!playtestMode);
     setLocalStorage(PLAYTEST_MODE, !playtestMode);
-  };
+  }, [playtestMode]);
 
-  const toggleAddMode = () => {
+  const toggleAddMode = useCallback(() => {
     setAddMode(!addMode);
     setLocalStorage(ADD_MODE, !addMode);
-  };
+  }, [addMode]);
 
   const changeCryptDeckSort = (method) => {
     setCryptDeckSort(method);

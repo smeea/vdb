@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { Switch } from '@headlessui/react';
 import { twMerge } from 'tailwind-merge';
 import ToggleOn from '@icons/toggle-on.svg?react';
@@ -21,8 +21,12 @@ const Toggle = ({ isOn, handleClick, size = 'md', disabled, children, variant = 
     },
   };
 
+  const onChange = useCallback(() => {
+    !disabled && handleClick();
+  }, [disabled, handleClick]);
+
   return (
-    <Switch checked={isOn} onChange={() => !disabled && handleClick()} disabled={disabled}>
+    <Switch checked={isOn} onChange={onChange} disabled={disabled}>
       {({ checked, disabled }) => (
         <div
           className={twMerge(

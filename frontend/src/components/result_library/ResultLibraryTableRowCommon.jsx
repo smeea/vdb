@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { twMerge } from 'tailwind-merge';
 import {
   CardPopover,
@@ -14,7 +14,7 @@ import { useApp } from '@/context';
 
 const Type = ({ card, handleClick }) => {
   return (
-    <td className="min-w-[50px] sm:min-w-[60px]" onClick={() => handleClick(card)}>
+    <td className="min-w-[50px] sm:min-w-[60px]" onClick={handleClick}>
       <div className="flex justify-center">
         <ResultLibraryTypeImage value={card[TYPE]} />
       </div>
@@ -24,7 +24,7 @@ const Type = ({ card, handleClick }) => {
 
 const Cost = ({ card, handleClick }) => {
   return (
-    <td className="min-w-[25px] sm:min-w-[30px]" onClick={() => handleClick(card)}>
+    <td className="min-w-[25px] sm:min-w-[30px]" onClick={handleClick}>
       <div className={twMerge(card[BLOOD] && 'pb-1.5', 'flex justify-center')}>
         <ResultLibraryCost card={card} />
       </div>
@@ -36,7 +36,7 @@ const Name = ({ card, handleClick, shouldShowModal, isBanned }) => {
   const { isMobile } = useApp();
 
   return (
-    <td className="w-full" onClick={() => handleClick(card)}>
+    <td className="w-full" onClick={handleClick}>
       <ConditionalTooltip
         overlay={<CardPopover card={card} />}
         disabled={isMobile || shouldShowModal}
@@ -53,7 +53,7 @@ const Name = ({ card, handleClick, shouldShowModal, isBanned }) => {
 
 const BurnTrifle = ({ card, handleClick }) => {
   return (
-    <td className="min-w-[30px]" onClick={() => handleClick(card)}>
+    <td className="min-w-[30px]" onClick={handleClick}>
       <div className="flex justify-center">
         {card[BURN] && <ResultMiscImage value={BURN} />}
         {card[TRIFLE] && <ResultMiscImage value={TRIFLE} />}
@@ -73,32 +73,36 @@ const ResultLibraryTableRowCommon = ({
 }) => {
   const { isNarrow } = useApp();
 
+  const onClick = useCallback(() => {
+    handleClick(card);
+  }, [card]);
+
   return (
     <>
       {inDeck ? (
         <>
           <Name
             card={card}
-            handleClick={handleClick}
+            handleClick={onClick}
             shouldShowModal={shouldShowModal}
             isBanned={isBanned}
           />
-          {(!inSearch || !isNarrow) && <Cost card={card} handleClick={handleClick} />}
-          <ResultLibraryTableRowReqClanDis card={card} handleClick={handleClick} />
-          {(!inSearch || !isNarrow) && <BurnTrifle card={card} handleClick={handleClick} />}
+          {(!inSearch || !isNarrow) && <Cost card={card} handleClick={onClick} />}
+          <ResultLibraryTableRowReqClanDis card={card} handleClick={onClick} />
+          {(!inSearch || !isNarrow) && <BurnTrifle card={card} handleClick={onClick} />}
         </>
       ) : (
         <>
-          <Cost card={card} handleClick={handleClick} />
-          <Type card={card} handleClick={handleClick} />
-          <ResultLibraryTableRowReqClanDis card={card} handleClick={handleClick} />
+          <Cost card={card} handleClick={onClick} />
+          <Type card={card} handleClick={onClick} />
+          <ResultLibraryTableRowReqClanDis card={card} handleClick={onClick} />
           <Name
             card={card}
-            handleClick={handleClick}
+            handleClick={onClick}
             shouldShowModal={shouldShowModal}
             isBanned={isBanned}
           />
-          {!noBurn && <BurnTrifle card={card} handleClick={handleClick} />}
+          {!noBurn && <BurnTrifle card={card} handleClick={onClick} />}
         </>
       )}
     </>

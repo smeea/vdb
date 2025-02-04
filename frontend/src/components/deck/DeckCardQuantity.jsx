@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { ConditionalTooltip, UsedPopover, ButtonCardChange } from '@/components';
 import { useApp } from '@/context';
@@ -36,6 +36,18 @@ const DeckCardQuantity = ({
     setManual(false);
   };
 
+  const handleClickPlus = useCallback(() => {
+    cardChange(deckid, card, q + 1);
+  }, [deckid, card, q]);
+
+  const handleClickMinus = useCallback(() => {
+    cardChange(deckid, card, q - 1);
+  }, [deckid, card, q]);
+
+  const handleClickManual = useCallback(() => {
+    setManual(true);
+  }, []);
+
   const getInventoryColor = () => {
     if (inventoryMode && !inMissing) {
       if (inventoryType) {
@@ -70,24 +82,22 @@ const DeckCardQuantity = ({
         <div className="flex items-center justify-between text-lg">
           {isMobile ? (
             <>
-              <ButtonCardChange onClick={() => cardChange(deckid, card, q - 1)} isLink isNegative />
+              <ButtonCardChange onClick={handleClickMinus} isLink isNegative />
               <div className={twMerge('mx-1 flex w-full justify-center', inventoryColor)}>
                 {q == 0 ? '' : q}
               </div>
-              <ButtonCardChange onClick={() => cardChange(deckid, card, q + 1)} isLink />
+              <ButtonCardChange onClick={handleClickPlus} isLink />
             </>
           ) : (
             <>
-              {!manual && (
-                <ButtonCardChange onClick={() => cardChange(deckid, card, q - 1)} isNegative />
-              )}
+              {!manual && <ButtonCardChange onClick={handleClickMinus} isNegative />}
               <div
                 tabIndex={0}
                 className={twMerge(
                   !manual && 'mx-1 flex w-full justify-center',
                   !manual && inventoryColor,
                 )}
-                onFocus={() => setManual(true)}
+                onFocus={handleClickManual}
               >
                 <ConditionalTooltip
                   placement="bottom"
@@ -111,7 +121,7 @@ const DeckCardQuantity = ({
                   )}
                 </ConditionalTooltip>
               </div>
-              {!manual && <ButtonCardChange onClick={() => cardChange(deckid, card, q + 1)} />}
+              {!manual && <ButtonCardChange onClick={handleClickPlus} />}
             </>
           )}
         </div>

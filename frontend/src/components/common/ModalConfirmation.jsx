@@ -1,4 +1,4 @@
-import React, { useState, useActionState } from 'react';
+import React, { useCallback, useState, useActionState } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { FlexGapped, Input, Modal, Button, ErrorOverlay } from '@/components';
 import { useApp } from '@/context';
@@ -20,25 +20,28 @@ const ModalConfirmation = ({
   const { isMobile } = useApp();
   const [error, setError] = useState(false);
 
-  const handleClose = () => {
+  const handleClose = useCallback(() => {
     setError(false);
     handleCancel();
-  };
+  }, [handleCancel]);
 
-  const confirm = async (prevState, formData) => {
-    if (withWrittenConfirmation) {
-      if (formData.get(TEXT) === YES) {
-        setError(false);
-        handleConfirm();
+  const confirm = useCallback(
+    async (prevState, formData) => {
+      if (withWrittenConfirmation) {
+        if (formData.get(TEXT) === YES) {
+          setError(false);
+          handleConfirm();
+        } else {
+          setError(true);
+        }
       } else {
-        setError(true);
+        handleConfirm();
       }
-    } else {
-      handleConfirm();
-    }
 
-    return { [TEXT]: formData.get(TEXT) };
-  };
+      return { [TEXT]: formData.get(TEXT) };
+    },
+    [withWrittenConfirmation, handleConfirm],
+  );
 
   const [data, action] = useActionState(confirm);
 

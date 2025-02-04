@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { Checkbox as CheckboxHUI, Field, Label } from '@headlessui/react';
 import { twMerge } from 'tailwind-merge';
 import { NAME, VALUE } from '@/constants';
@@ -25,14 +25,14 @@ const Checkbox = ({
     lg: 'min-w-5 size-5 mt-1',
   };
 
-  const handleChange = () => {
+  const handleChange = useCallback(() => {
     onChange({
       currentTarget: {
         [NAME]: name,
         [VALUE]: value,
       },
     });
-  };
+  }, [onChange, name, value]);
 
   return (
     <Field disabled={disabled} className={twMerge('items-top flex', textStyle[size], className)}>

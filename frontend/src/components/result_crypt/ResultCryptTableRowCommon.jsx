@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import {
   CardPopover,
   ConditionalTooltip,
@@ -30,15 +30,19 @@ const ResultCryptTableRowCommon = ({
   const { isMobile, isNarrow, isDesktop, isWide } = useApp();
   const ALIGN_DISCIPLINES_THRESHOLD = isMobile ? 13 : 17;
 
+  const onClick = useCallback(() => {
+    handleClick(card);
+  }, [card]);
+
   return (
     <>
-      <td className="min-w-[28px] md:min-w-[35px]" onClick={() => handleClick(card)}>
+      <td className="min-w-[28px] md:min-w-[35px]" onClick={onClick}>
         <div className="flex items-center justify-center">
           <ResultCryptCapacity card={card} />
         </div>
       </td>
       {!noDisciplines && (!inSearch || !isNarrow) && (
-        <td className="sm:min-w-[170px]" onClick={() => handleClick(card)}>
+        <td className="sm:min-w-[170px]" onClick={onClick}>
           {inDeck && keyDisciplines && disciplinesSet.length < ALIGN_DISCIPLINES_THRESHOLD ? (
             <DeckCryptDisciplines
               value={card[DISCIPLINES]}
@@ -50,7 +54,7 @@ const ResultCryptTableRowCommon = ({
           )}
         </td>
       )}
-      <td className="w-full" onClick={() => handleClick(card)}>
+      <td className="w-full" onClick={onClick}>
         <ConditionalTooltip
           overlay={<CardPopover card={card} />}
           disabled={isMobile || shouldShowModal}
@@ -64,12 +68,12 @@ const ResultCryptTableRowCommon = ({
       </td>
       {((!isNarrow && !isDesktop) || isWide) && !inSearch ? (
         <>
-          <td className="min-w-[25px]" onClick={() => handleClick(card)}>
+          <td className="min-w-[25px]" onClick={onClick}>
             <div className="flex justify-center">
               <ResultCryptTitle value={card[TITLE]} />
             </div>
           </td>
-          <td className="min-w-[25px]" onClick={() => handleClick(card)}>
+          <td className="min-w-[25px]" onClick={onClick}>
             <div className="flex justify-center">
               {card[PATH] ? (
                 <ResultPathImage value={card[PATH]} />
@@ -78,19 +82,19 @@ const ResultCryptTableRowCommon = ({
               )}
             </div>
           </td>
-          <td className="min-w-[35px]" onClick={() => handleClick(card)}>
+          <td className="min-w-[35px]" onClick={onClick}>
             <div className="flex justify-center">
               <ResultClanImage value={card[CLAN]} />
             </div>
           </td>
-          <td className="min-w-[30px]" onClick={() => handleClick(card)}>
+          <td className="min-w-[30px]" onClick={onClick}>
             <div className="flex justify-center">
               <ResultCryptGroup value={card[GROUP]} />
             </div>
           </td>
         </>
       ) : (
-        <td className="min-w-[40px]" onClick={() => handleClick(card)}>
+        <td className="min-w-[40px]" onClick={onClick}>
           <ResultCryptClanGroupTitle card={card} />
         </td>
       )}

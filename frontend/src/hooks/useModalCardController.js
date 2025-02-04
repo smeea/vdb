@@ -31,17 +31,12 @@ const useModalCardController = (mainCards = [], sideCards = []) => {
     }
   };
 
-  const handleModalCardClose = () => {
-    setCardid(null);
-  };
+  const handleModalCardClose = () => setCardid(null);
 
   const shouldShowModal = useMemo(() => cardid !== null, [cardid]);
-
   const isSideMode = useMemo(() => mode === SIDE_CARD_MODE, [mode]);
-
   const currentModalCard = useMemo(() => {
     if (cardid === null) return null;
-
     return (isSideMode ? sideList : mainList)[cardid];
   }, [mainList, sideList, mode, cardid]);
 

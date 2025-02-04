@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { ResultModal, ResultLibraryTableRow } from '@/components';
 import { useApp } from '@/context';
 import { useModalCardController } from '@/hooks';
@@ -14,19 +14,22 @@ const ResultLibraryTable = ({ resultCards, inLimited }) => {
     handleModalCardClose,
   } = useModalCardController(resultCards);
 
-  const handleClick = (card) => {
-    handleModalCardOpen(card);
-    setShowFloatingButtons(false);
-  };
+  const handleClick = useCallback(
+    (card) => {
+      handleModalCardOpen(card);
+      setShowFloatingButtons(false);
+    },
+    [resultCards],
+  );
 
-  const handleClose = () => {
+  const handleClose = useCallback(() => {
     handleModalCardClose();
     setShowFloatingButtons(true);
-  };
+  }, [resultCards]);
 
   return (
     <>
-      <table className="w-full border-bgSecondary dark:border-bgSecondaryDark sm:border">
+      <table className="border-bgSecondary dark:border-bgSecondaryDark w-full sm:border">
         <tbody>
           {resultCards.map((card) => {
             return (

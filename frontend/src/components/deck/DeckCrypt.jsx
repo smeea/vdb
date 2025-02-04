@@ -58,7 +58,7 @@ const DeckCrypt = ({ inSearch, inPreview, inMissing, noDisciplines, deck }) => {
           !inMissing &&
           !inSearch &&
           !isMobile &&
-          'sticky bg-bgPrimary dark:bg-bgPrimaryDark sm:top-10',
+          'bg-bgPrimary dark:bg-bgPrimaryDark sticky sm:top-10',
       )}
     >
       <div>
@@ -88,7 +88,7 @@ const DeckCrypt = ({ inSearch, inPreview, inMissing, noDisciplines, deck }) => {
       </div>
       {Object.keys(cryptSide).length > 0 && (
         <div className="opacity-60 dark:opacity-50">
-          <div className="flex h-[42px] items-center bg-bgSecondary p-2 font-bold dark:bg-bgSecondaryDark">
+          <div className="bg-bgSecondary dark:bg-bgSecondaryDark flex h-[42px] items-center p-2 font-bold">
             Side Crypt
           </div>
           <DeckCryptTable

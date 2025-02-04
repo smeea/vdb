@@ -55,7 +55,7 @@ const DeckLibrary = ({ inSearch, inPreview, inMissing, deck }) => {
         <div
           className={
             !inPreview && !inMissing && !inSearch && !isMobile
-              ? 'sticky z-10 bg-bgPrimary dark:bg-bgPrimaryDark sm:top-10'
+              ? 'bg-bgPrimary dark:bg-bgPrimaryDark sticky z-10 sm:top-10'
               : ''
           }
         >
@@ -104,7 +104,7 @@ const DeckLibrary = ({ inSearch, inPreview, inMissing, deck }) => {
       </div>
       {librarySide.length > 0 && (
         <div className="flex flex-col gap-2 opacity-60 dark:opacity-50">
-          <div className="flex h-[42px] items-center bg-bgSecondary p-2 font-bold dark:bg-bgSecondaryDark">
+          <div className="bg-bgSecondary dark:bg-bgSecondaryDark flex h-[42px] items-center p-2 font-bold">
             Side Library
           </div>
           <div className="flex flex-col gap-2">
