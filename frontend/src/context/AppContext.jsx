@@ -131,13 +131,13 @@ export const AppProvider = ({ children }) => {
   const [showFloatingButtons, setShowFloatingButtons] = useState(true);
   const [showMenuButtons, setShowMenuButtons] = useState();
 
-  const updatePlaytestProfile = (target, value) => {
+  const updatePlaytestProfile = useCallback((target, value) => {
     setPlaytestProfile((prevState) => ({
       ...prevState,
       [target]: value,
     }));
     playtestServices.updateProfile(target, value);
-  };
+  }, []);
 
   const [cryptCardBase, setCryptCardBase] = useImmer();
   const [libraryCardBase, setLibraryCardBase] = useImmer();
@@ -184,13 +184,13 @@ export const AppProvider = ({ children }) => {
     });
   };
 
-  const setLimitedFormat = (lac, lal, lbc, lbl, ls) => {
+  const setLimitedFormat = useCallback((lac, lal, lbc, lbl, ls) => {
     if (lac) setLimitedAllowedCrypt(lac);
     if (lal) setLimitedAllowedLibrary(lal);
     if (lbc) setLimitedBannedCrypt(lbc);
     if (lbl) setLimitedBannedLibrary(lbl);
     if (ls) setLimitedSets(ls);
-  };
+  }, []);
 
   useEffect(() => {
     getMany([
@@ -256,27 +256,30 @@ export const AppProvider = ({ children }) => {
     return inventoryData;
   };
 
-  const initializeUserData = (data) => {
-    setUsername(data.username);
-    setPublicName(data.public_name);
-    setEmail(data.email);
-    setInventoryKey(data.inventory_key);
-    setIsPlaytester(data.playtest.is_playtester);
-    setIsPlaytestAdmin(data.playtest.is_admin);
-    setPlaytestProfile(data.playtest.profile);
-    if (!data.playtest.is_playtester && !data.playtest.is_admin) setPlaytestMode(false);
-    const {
-      [IS_FROZEN]: isFrozen,
-      [CRYPT]: crypt,
-      [LIBRARY]: library,
-    } = parseInventoryData(data.inventory);
-    inventoryStore[IS_FROZEN] = isFrozen;
-    inventoryStore[CRYPT] = crypt;
-    inventoryStore[LIBRARY] = library;
-    deckStore[DECKS] = parseDecksData(data.decks);
-  };
+  const initializeUserData = useCallback(
+    (data) => {
+      setUsername(data.username);
+      setPublicName(data.public_name);
+      setEmail(data.email);
+      setInventoryKey(data.inventory_key);
+      setIsPlaytester(data.playtest.is_playtester);
+      setIsPlaytestAdmin(data.playtest.is_admin);
+      setPlaytestProfile(data.playtest.profile);
+      if (!data.playtest.is_playtester && !data.playtest.is_admin) setPlaytestMode(false);
+      const {
+        [IS_FROZEN]: isFrozen,
+        [CRYPT]: crypt,
+        [LIBRARY]: library,
+      } = parseInventoryData(data.inventory);
+      inventoryStore[IS_FROZEN] = isFrozen;
+      inventoryStore[CRYPT] = crypt;
+      inventoryStore[LIBRARY] = library;
+      deckStore[DECKS] = parseDecksData(data.decks);
+    },
+    [deckStore, inventoryStore, cryptCardBase, libraryCardBase],
+  );
 
-  const initializeUnauthenticatedUser = () => {
+  const initializeUnauthenticatedUser = useCallback(() => {
     setAddMode(false);
     setInventoryMode(false);
     setLimitedMode(false);
@@ -291,7 +294,7 @@ export const AppProvider = ({ children }) => {
       deckStore[DECK] = undefined;
     }
     deckStore[DECKS] = undefined;
-  };
+  }, [deckStore, inventoryStore]);
 
   useEffect(() => {
     if (cryptCardBase && libraryCardBase) {
@@ -304,10 +307,10 @@ export const AppProvider = ({ children }) => {
   }, [userData, cryptCardBase, libraryCardBase]);
 
   // LANGUAGE
-  const changeLang = (lang) => {
+  const changeLang = useCallback((lang) => {
     setLang(lang);
     setLocalStorage(LANG, lang);
-  };
+  }, []);
 
   const changeBaseTextToLocalizedText = (setCardBase, localizedInfo, nativeInfo) => {
     setCardBase((draft) => {
@@ -368,15 +371,15 @@ export const AppProvider = ({ children }) => {
   }, [deckStore[DECK]?.[DECKID], lang, localizedCrypt, localizedLibrary]);
 
   // APP DATA
-  const toggleShowImage = () => {
+  const toggleShowImage = useCallback(() => {
     setShowImage(!showImage);
     setLocalStorage(SHOW_IMAGE, !showImage);
-  };
+  }, []);
 
-  const toggleShowLegacyImage = () => {
+  const toggleShowLegacyImage = useCallback(() => {
     setShowLegacyImage(!showLegacyImage);
     setLocalStorage(SHOW_LEGACY_IMAGE, !showLegacyImage);
-  };
+  }, []);
 
   const toggleInventoryMode = useCallback(() => {
     setInventoryMode(!inventoryMode);
@@ -398,47 +401,47 @@ export const AppProvider = ({ children }) => {
     setLocalStorage(ADD_MODE, !addMode);
   }, [addMode]);
 
-  const changeCryptDeckSort = (method) => {
+  const changeCryptDeckSort = useCallback((method) => {
     setCryptDeckSort(method);
     setLocalStorage(CRYPT_DECK_SORT, method);
-  };
+  }, []);
 
-  const changeCryptSearchSort = (method) => {
+  const changeCryptSearchSort = useCallback((method) => {
     setCryptSearchSort(method);
     setLocalStorage(CRYPT_SEARCH_SORT, method);
-  };
+  }, []);
 
-  const changeCryptInventorySort = (method) => {
+  const changeCryptInventorySort = useCallback((method) => {
     setCryptInventorySort(method);
     setLocalStorage(CRYPT_INVENTORY_SORT, method);
-  };
+  }, []);
 
-  const changeLibrarySearchSort = (method) => {
+  const changeLibrarySearchSort = useCallback((method) => {
     setLibrarySearchSort(method);
     setLocalStorage(LIBRARY_SEARCH_SORT, method);
-  };
+  }, []);
 
-  const changeLibraryInventorySort = (method) => {
+  const changeLibraryInventorySort = useCallback((method) => {
     setLibraryInventorySort(method);
     setLocalStorage(LIBRARY_INVENTORY_SORT, method);
-  };
+  }, []);
 
-  const changeTwdSearchSort = (method) => {
+  const changeTwdSearchSort = useCallback((method) => {
     setTwdSearchSort(method);
     setLocalStorage(TWD_SEARCH_SORT, method);
-  };
+  }, []);
 
-  const changePdaSearchSort = (method) => {
+  const changePdaSearchSort = useCallback((method) => {
     setPdaSearchSort(method);
     setLocalStorage(PDA_SEARCH_SORT, method);
-  };
+  }, []);
 
-  const changeTdaSearchSort = (method) => {
+  const changeTdaSearchSort = useCallback((method) => {
     setTdaSearchSort(method);
     setLocalStorage(TDA_SEARCH_SORT, method);
-  };
+  }, []);
 
-  const addRecentDeck = (recentDeck) => {
+  const addRecentDeck = useCallback((recentDeck) => {
     const src = recentDeck[DECKID].length != 9 ? TWD : recentDeck[PUBLIC_PARENT] ? PDA : 'shared';
     let d = [...recentDecks];
     const idx = recentDecks.map((v) => v[DECKID]).indexOf(recentDeck[DECKID]);
@@ -451,12 +454,12 @@ export const AppProvider = ({ children }) => {
     if (d.length > 10) d = d.slice(0, 10);
     setRecentDecks(d);
     setLocalStorage(RECENT_DECKS, d);
-  };
+  }, []);
 
-  const updateRecentDecks = (recentDecks) => {
+  const updateRecentDecks = useCallback((recentDecks) => {
     setRecentDecks(recentDecks);
     setLocalStorage(RECENT_DECKS, recentDecks);
-  };
+  }, []);
 
   useEffect(() => {
     window.addEventListener(OFFLINE, () => setIsOnline(false));
