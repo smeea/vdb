@@ -11,9 +11,12 @@ import { useApp } from '@/context';
 import { parseDeck } from '@/utils';
 import { CARDS, DECKID, CRYPT, LIBRARY } from '@/constants';
 
-const TwdDeck = ({ deck = {}, inPda }) => {
+const TwdDeck = ({ deck, inPda }) => {
   const { cryptCardBase, libraryCardBase, isNarrow } = useApp();
-  const parsedDeck = { ...deck, ...parseDeck(deck[CARDS], cryptCardBase, libraryCardBase) };
+  const parsedDeck = {
+    ...(deck || {}),
+    ...parseDeck(deck?.[CARDS], cryptCardBase, libraryCardBase),
+  };
 
   return (
     <>

@@ -8,11 +8,12 @@ import disciplinesExtraList from '@/assets/data/disciplinesExtraList.json';
 import virtuesList from '@/assets/data/virtuesList.json';
 import cardtypeSorted from '@/assets/data/cardtypeSorted.json';
 
-const useInventoryLibrary = (cards = {}, category = OK, compact, type, discipline, onlyNotes) => {
+const useInventoryLibrary = (library, category = OK, compact, type, discipline, onlyNotes) => {
   const usedLibrary = useSnapshot(usedStore)[LIBRARY];
   const { libraryCardBase } = useApp();
 
   const value = useMemo(() => {
+    const cards = library || {};
     const cardsByType = {};
     const cardsByDiscipline = {};
     const missingByType = {};
@@ -330,7 +331,7 @@ const useInventoryLibrary = (cards = {}, category = OK, compact, type, disciplin
       missingFiltered,
       missingFilteredTotal,
     };
-  }, [cards, category, compact, type, discipline, onlyNotes, usedLibrary]);
+  }, [library, category, compact, type, discipline, onlyNotes, usedLibrary]);
 
   return value;
 };

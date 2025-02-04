@@ -6,11 +6,12 @@ import { getIsPlaytest, getHardTotal, getSoftMax } from '@/utils';
 import { CLAN, SOFT, HARD, CRYPT, ALL, OK, NOK } from '@/constants';
 import { useApp, usedStore } from '@/context';
 
-const useInventoryCrypt = (cards = {}, category = OK, compact, onlyNotes) => {
+const useInventoryCrypt = (crypt, category = OK, compact, onlyNotes) => {
   const usedCrypt = useSnapshot(usedStore)[CRYPT];
   const { cryptCardBase } = useApp();
 
   const value = useMemo(() => {
+    const cards = crypt || {};
     const cardsByClan = {};
     const cardsByClanTotal = {};
     const cardsByClanUnique = {};
@@ -154,7 +155,7 @@ const useInventoryCrypt = (cards = {}, category = OK, compact, onlyNotes) => {
       missingByClan,
       missingByClanTotal,
     };
-  }, [cards, category, compact, onlyNotes, usedCrypt]);
+  }, [crypt, category, compact, onlyNotes, usedCrypt]);
 
   return value;
 };
