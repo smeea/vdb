@@ -589,9 +589,8 @@ const missingRequirementsCheck = (logic, array, value, hasNoRequirement) => {
 const missingCostCheck = (logic, filter, cardCost) => {
   return !(
     (logic === LE && cardCost <= filter) ||
-    (logic !== LE && !cardCost && filter === '0') ||
     (logic === GE && cardCost >= filter) ||
-    (logic === EQ && cardCost === filter)
+    (logic === EQ && cardCost == filter)
   );
 };
 
