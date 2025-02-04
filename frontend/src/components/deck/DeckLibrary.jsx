@@ -12,7 +12,7 @@ import { useModalCardController, useDeckLibrary } from '@/hooks';
 import { LIBRARY, TYPE_MASTER } from '@/constants';
 
 const DeckLibrary = ({ inSearch, inPreview, inMissing, deck }) => {
-  const { setShowFloatingButtons, isMobile, isNarrow } = useApp();
+  const { setShowFloatingButtons, isDesktop, isMobile, isNarrow } = useApp();
   const [showInfo, setShowInfo] = useState(false);
 
   const {
@@ -37,7 +37,7 @@ const DeckLibrary = ({ inSearch, inPreview, inMissing, deck }) => {
   const handleClick = useCallback(
     (card) => {
       handleModalCardOpen(card);
-      setShowFloatingButtons(false);
+      !isDesktop && setShowFloatingButtons(false);
     },
     [library, librarySide],
   );
@@ -45,14 +45,14 @@ const DeckLibrary = ({ inSearch, inPreview, inMissing, deck }) => {
   const handleClickSide = useCallback(
     (card) => {
       handleModalSideCardOpen(card);
-      setShowFloatingButtons(false);
+      !isDesktop && setShowFloatingButtons(false);
     },
     [library, librarySide],
   );
 
   const handleClose = useCallback(() => {
     handleModalCardClose();
-    setShowFloatingButtons(true);
+    !isDesktop && setShowFloatingButtons(true);
   }, [library, librarySide]);
 
   return (

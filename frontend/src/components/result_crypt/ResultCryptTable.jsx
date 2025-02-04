@@ -5,7 +5,7 @@ import { useModalCardController } from '@/hooks';
 import { ID } from '@/constants';
 
 const ResultCryptTable = ({ resultCards, inRecommendation, inLimited }) => {
-  const { setShowFloatingButtons } = useApp();
+  const { setShowFloatingButtons, isDesktop } = useApp();
   const {
     currentModalCard,
     shouldShowModal,
@@ -16,12 +16,12 @@ const ResultCryptTable = ({ resultCards, inRecommendation, inLimited }) => {
 
   const handleClick = (card) => {
     handleModalCardOpen(card);
-    setShowFloatingButtons(false);
+    !isDesktop && setShowFloatingButtons(false);
   };
 
   const handleClose = () => {
     handleModalCardClose();
-    setShowFloatingButtons(true);
+    !isDesktop && setShowFloatingButtons(true);
   };
 
   return (

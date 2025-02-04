@@ -11,7 +11,7 @@ import { librarySort } from '@/utils';
 import { useDeckLibrary, useModalCardController } from '@/hooks';
 
 const TwdResultLibraryKeyCardsTable = ({ library, withHeader }) => {
-  const { isMobile, setShowFloatingButtons } = useApp();
+  const { isMobile, isDesktop, setShowFloatingButtons } = useApp();
   const sortedLibrary = librarySort(Object.values(library), GROUPED_TYPE);
   const keyCards = sortedLibrary
     .filter((card) => card.q >= 4)
@@ -27,19 +27,19 @@ const TwdResultLibraryKeyCardsTable = ({ library, withHeader }) => {
 
   const handleClick = (card) => {
     handleModalCardOpen(card);
-    setShowFloatingButtons(false);
+    !isDesktop && setShowFloatingButtons(false);
   };
 
   const handleClose = () => {
     handleModalCardClose();
-    setShowFloatingButtons(true);
+    !isDesktop && setShowFloatingButtons(true);
   };
 
   const { libraryTotal, hasBanned, poolTotal, bloodTotal } = useDeckLibrary(library);
 
   return (
     <div>
-      <div className="flex h-[30px] items-center justify-between gap-1.5 px-1 font-bold text-fgSecondary dark:text-whiteDark">
+      <div className="text-fgSecondary dark:text-whiteDark flex h-[30px] items-center justify-between gap-1.5 px-1 font-bold">
         {withHeader ? (
           <>
             <div className="whitespace-nowrap">
@@ -61,7 +61,7 @@ const TwdResultLibraryKeyCardsTable = ({ library, withHeader }) => {
           'Key Cards:'
         )}
       </div>
-      <table className="border-x border-bgSecondary dark:border-bgSecondaryDark">
+      <table className="border-bgSecondary dark:border-bgSecondaryDark border-x">
         <tbody>
           {keyCards.map((card) => {
             return (

@@ -7,7 +7,8 @@ import { useModalCardController, useDeckCrypt } from '@/hooks';
 import { CRYPT, CAPACITY, CLAN, GROUP, NAME, QUANTITYx, SECT } from '@/constants';
 
 const DeckCrypt = ({ inSearch, inPreview, inMissing, noDisciplines, deck }) => {
-  const { setShowFloatingButtons, cryptDeckSort, changeCryptDeckSort, isMobile } = useApp();
+  const { setShowFloatingButtons, cryptDeckSort, changeCryptDeckSort, isDesktop, isMobile } =
+    useApp();
   const [showInfo, setShowInfo] = useState(false);
 
   const sortMethods = {
@@ -40,7 +41,7 @@ const DeckCrypt = ({ inSearch, inPreview, inMissing, noDisciplines, deck }) => {
   const handleClick = useCallback(
     (card) => {
       handleModalCardOpen(card);
-      setShowFloatingButtons(false);
+      !isDesktop && setShowFloatingButtons(false);
     },
     [sortedCards, sortedCardsSide],
   );
@@ -48,14 +49,14 @@ const DeckCrypt = ({ inSearch, inPreview, inMissing, noDisciplines, deck }) => {
   const handleClickSide = useCallback(
     (card) => {
       handleModalSideCardOpen(card);
-      setShowFloatingButtons(false);
+      !isDesktop && setShowFloatingButtons(false);
     },
     [sortedCards, sortedCardsSide],
   );
 
   const handleClose = useCallback(() => {
     handleModalCardClose();
-    setShowFloatingButtons(true);
+    !isDesktop && setShowFloatingButtons(true);
   }, [sortedCards, sortedCardsSide]);
 
   return (

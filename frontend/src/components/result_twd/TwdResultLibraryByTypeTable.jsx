@@ -13,16 +13,16 @@ import { X, TYPE_MASTER, POOL, BLOOD, BANNED } from '@/constants';
 import { useDeckLibrary, useModalCardController } from '@/hooks';
 
 const TwdResultLibraryByTypeTable = ({ library }) => {
-  const { setShowFloatingButtons } = useApp();
+  const { setShowFloatingButtons, isDesktop } = useApp();
 
   const handleClickCard = (card) => {
     handleModalCardOpen(card);
-    setShowFloatingButtons(false);
+    !isDesktop && setShowFloatingButtons(false);
   };
 
   const handleClose = () => {
     handleModalCardClose();
-    setShowFloatingButtons(true);
+    !isDesktop && setShowFloatingButtons(true);
   };
 
   const {
@@ -52,7 +52,7 @@ const TwdResultLibraryByTypeTable = ({ library }) => {
 
   return (
     <div>
-      <div className="flex h-[30px] items-center justify-between gap-2 px-1 font-bold text-fgSecondary dark:text-whiteDark">
+      <div className="text-fgSecondary dark:text-whiteDark flex h-[30px] items-center justify-between gap-2 px-1 font-bold">
         <div className="flex items-center gap-1.5 whitespace-nowrap">Library [{libraryTotal}]</div>
         <div className="flex">{hasBanned && <ResultLegalIcon type={BANNED} />}</div>
         <div className="flex gap-1.5 sm:gap-3">
@@ -66,7 +66,7 @@ const TwdResultLibraryByTypeTable = ({ library }) => {
           </div>
         </div>
       </div>
-      <table className="border-x border-bgSecondary dark:border-bgSecondaryDark">
+      <table className="border-bgSecondary dark:border-bgSecondaryDark border-x">
         <tbody>
           {cardtypeSortedFull
             .filter((cardtype) => libraryByType[cardtype] !== undefined)
@@ -74,7 +74,7 @@ const TwdResultLibraryByTypeTable = ({ library }) => {
               return (
                 <tr
                   key={cardtype}
-                  className="row-bg h-[38px] border-y border-bgSecondary dark:border-bgSecondaryDark"
+                  className="row-bg border-bgSecondary dark:border-bgSecondaryDark h-[38px] border-y"
                 >
                   <td className="min-w-[55px]">
                     <div className="flex justify-center">
@@ -94,7 +94,7 @@ const TwdResultLibraryByTypeTable = ({ library }) => {
                         </div>
                       }
                     >
-                      <div className="cursor-pointer text-balance text-fgName dark:text-fgNameDark">
+                      <div className="text-fgName dark:text-fgNameDark cursor-pointer text-balance">
                         {cardtype} [{libraryByTypeTotal[cardtype]}]
                         {cardtype == TYPE_MASTER && trifleTotal > 0 && <> - {trifleTotal} trifle</>}
                       </div>

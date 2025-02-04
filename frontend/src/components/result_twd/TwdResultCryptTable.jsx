@@ -6,7 +6,7 @@ import { useDeckCrypt, useModalCardController } from '@/hooks';
 import { ID, BANNED, GROUPS, CAPACITY } from '@/constants';
 
 const TwdResultCryptTable = ({ crypt }) => {
-  const { cryptDeckSort, setShowFloatingButtons } = useApp();
+  const { cryptDeckSort, setShowFloatingButtons, isDesktop } = useApp();
   const { cryptGroups, hasBanned, hasWrongGroups, cryptTotal, sortedCards } = useDeckCrypt(
     crypt,
     cryptDeckSort,
@@ -22,12 +22,12 @@ const TwdResultCryptTable = ({ crypt }) => {
 
   const handleClick = (card) => {
     handleModalCardOpen(card);
-    setShowFloatingButtons(false);
+    !isDesktop && setShowFloatingButtons(false);
   };
 
   const handleClose = () => {
     handleModalCardClose();
-    setShowFloatingButtons(true);
+    !isDesktop && setShowFloatingButtons(true);
   };
 
   const cryptTotalQ = countCards(sortedCards);
@@ -36,7 +36,7 @@ const TwdResultCryptTable = ({ crypt }) => {
 
   return (
     <div>
-      <div className="flex h-[30px] items-center justify-between gap-2 px-1 font-bold text-fgSecondary dark:text-fgPrimaryDark">
+      <div className="text-fgSecondary dark:text-fgPrimaryDark flex h-[30px] items-center justify-between gap-2 px-1 font-bold">
         <div className="flex">
           Crypt [{cryptTotal}] {cryptGroups && <>G{cryptGroups}</>}
         </div>
@@ -46,7 +46,7 @@ const TwdResultCryptTable = ({ crypt }) => {
         </div>
         <div title="Average capacity">~{cryptAvg}</div>
       </div>
-      <table className="border-x border-bgSecondary dark:border-bgSecondaryDark">
+      <table className="border-bgSecondary dark:border-bgSecondaryDark border-x">
         <tbody>
           {sortedCards.map((card) => {
             return (
