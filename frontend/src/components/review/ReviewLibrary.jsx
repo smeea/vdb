@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import {
   DiffLibraryTable,
   ResultLibraryType,
@@ -7,10 +7,12 @@ import {
   DeckLibraryHeader,
   FlexGapped,
 } from '@/components';
+import { useApp } from '@/context';
 import { LIBRARY, TYPE_MASTER } from '@/constants';
 import { useModalCardController, useDeckLibrary } from '@/hooks';
 
 const ReviewLibrary = ({ cardChange, deckFrom, cardsTo }) => {
+  const { setShowFloatingButtons, isDesktop } = useApp();
   const [showInfo, setShowInfo] = useState(false);
 
   const {
@@ -32,10 +34,31 @@ const ReviewLibrary = ({ cardChange, deckFrom, cardsTo }) => {
     handleModalCardClose,
   } = useModalCardController(library, librarySide);
 
+  const handleClick = useCallback(
+    (card) => {
+      handleModalCardOpen(card);
+      !isDesktop && setShowFloatingButtons(false);
+    },
+    [library, librarySide],
+  );
+
+  const handleClickSide = useCallback(
+    (card) => {
+      handleModalSideCardOpen(card);
+      !isDesktop && setShowFloatingButtons(false);
+    },
+    [library, librarySide],
+  );
+
+  const handleClose = useCallback(() => {
+    handleModalCardClose();
+    !isDesktop && setShowFloatingButtons(true);
+  }, [library, librarySide]);
+
   return (
     <FlexGapped className="flex-col">
       <div className="flex flex-col gap-2">
-        <div className="sm:sticky sm:top-10 sm:z-10 sm:bg-bgPrimary sm:dark:bg-bgPrimaryDark">
+        <div className="sm:bg-bgPrimary sm:dark:bg-bgPrimaryDark sm:sticky sm:top-10 sm:z-10">
           <DeckLibraryHeader
             deck={deckFrom}
             showInfo={showInfo}
@@ -68,7 +91,7 @@ const ReviewLibrary = ({ cardChange, deckFrom, cardsTo }) => {
                 <DiffLibraryTable
                   isEditable
                   cardChange={cardChange}
-                  handleModalCardOpen={handleModalCardOpen}
+                  handleClick={handleClick}
                   libraryTotal={libraryTotal}
                   showInfo={showInfo}
                   cards={libraryByType[cardtype]}
@@ -82,7 +105,7 @@ const ReviewLibrary = ({ cardChange, deckFrom, cardsTo }) => {
       </div>
       {Object.keys(librarySide).length > 0 && (
         <div className="flex flex-col gap-2 opacity-60 dark:opacity-50">
-          <div className="flex h-[42px] items-center bg-bgSecondary p-2 font-bold dark:bg-bgSecondaryDark">
+          <div className="bg-bgSecondary dark:bg-bgSecondaryDark flex h-[42px] items-center p-2 font-bold">
             Side Library
           </div>
           <div className="flex flex-col gap-2">
@@ -97,7 +120,7 @@ const ReviewLibrary = ({ cardChange, deckFrom, cardsTo }) => {
                   <DiffLibraryTable
                     isEditable
                     cardChange={cardChange}
-                    handleModalCardOpen={handleModalSideCardOpen}
+                    handleClick={handleClickSide}
                     cards={librarySideByType[cardtype]}
                     cardsFrom={deckFrom[LIBRARY]}
                     cardsTo={cardsTo}
@@ -112,7 +135,7 @@ const ReviewLibrary = ({ cardChange, deckFrom, cardsTo }) => {
         <ResultModal
           card={currentModalCard}
           handleModalCardChange={handleModalCardChange}
-          handleClose={handleModalCardClose}
+          handleClose={handleClose}
         />
       )}
     </FlexGapped>

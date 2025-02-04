@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { ResultModal, ResultCryptTableRow } from '@/components';
 import { useApp } from '@/context';
 import { useModalCardController } from '@/hooks';
@@ -14,15 +14,18 @@ const ResultCryptTable = ({ resultCards, inRecommendation, inLimited }) => {
     handleModalCardClose,
   } = useModalCardController(resultCards);
 
-  const handleClick = (card) => {
-    handleModalCardOpen(card);
-    !isDesktop && setShowFloatingButtons(false);
-  };
+  const handleClick = useCallback(
+    (card) => {
+      handleModalCardOpen(card);
+      !isDesktop && setShowFloatingButtons(false);
+    },
+    [resultCards],
+  );
 
-  const handleClose = () => {
+  const handleClose = useCallback(() => {
     handleModalCardClose();
     !isDesktop && setShowFloatingButtons(true);
-  };
+  }, [resultCards]);
 
   return (
     <>

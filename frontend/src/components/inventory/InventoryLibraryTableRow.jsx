@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { useSnapshot } from 'valtio';
 import {
@@ -46,6 +46,10 @@ const InventoryLibraryTableRow = ({ card, compact, newFocus, inShared, handleCli
     () => inventoryCardChange(card.c, card.q + 1),
   );
 
+  const onClick = useCallback(() => {
+    handleClick(card.c);
+  }, [card]);
+
   return (
     <div
       {...swipeHandlers}
@@ -56,7 +60,7 @@ const InventoryLibraryTableRow = ({ card, compact, newFocus, inShared, handleCli
           'flex items-center justify-center',
           isEditable
             ? 'min-w-[84px]'
-            : 'h-full min-w-[42px] border-r border-bgSecondary bg-blue/5 dark:border-bgSecondaryDark sm:min-w-[48px]',
+            : 'border-bgSecondary bg-blue/5 dark:border-bgSecondaryDark h-full min-w-[42px] border-r sm:min-w-[48px]',
         )}
       >
         {inShared ? (
@@ -80,10 +84,10 @@ const InventoryLibraryTableRow = ({ card, compact, newFocus, inShared, handleCli
           />
         </div>
       )}
-      <div className="flex min-w-[40px] justify-center" onClick={() => handleClick(card.c)}>
+      <div className="flex min-w-[40px] justify-center" onClick={onClick}>
         <ResultLibraryTypeImage value={card.c[TYPE]} />
       </div>
-      <div className="flex w-full" onClick={() => handleClick(card.c)}>
+      <div className="flex w-full" onClick={onClick}>
         <ConditionalTooltip
           overlay={<CardPopover card={card.c} />}
           disabled={isMobile}
@@ -96,16 +100,16 @@ const InventoryLibraryTableRow = ({ card, compact, newFocus, inShared, handleCli
         </ConditionalTooltip>
       </div>
       {isMobile ? (
-        <div className="flex min-w-[82px] justify-between" onClick={() => handleClick(card.c)}>
+        <div className="flex min-w-[82px] justify-between" onClick={onClick}>
           {!!(card.c[BLOOD] || card.c[POOL] || card.c[CONVICTION]) && (
             <div
               className={twMerge('flex min-w-[22px] justify-center', card.c[BLOOD] && 'pb-1')}
-              onClick={() => handleClick(card.c)}
+              onClick={onClick}
             >
               <ResultLibraryCost card={card.c} />
             </div>
           )}
-          <div className="flex w-full items-center justify-end" onClick={() => handleClick(card.c)}>
+          <div className="flex w-full items-center justify-end" onClick={onClick}>
             <ResultLibraryClan value={card.c[CLAN]} />
             {card.c[DISCIPLINE] && card.c[CLAN] && '+'}
             <ResultLibraryDisciplines value={card.c[DISCIPLINE]} />
@@ -115,11 +119,11 @@ const InventoryLibraryTableRow = ({ card, compact, newFocus, inShared, handleCli
         <>
           <div
             className={twMerge('flex min-w-[30px] justify-center', card.c[BLOOD] && 'pb-1')}
-            onClick={() => handleClick(card.c)}
+            onClick={onClick}
           >
             <ResultLibraryCost card={card.c} />
           </div>
-          <div className="flex min-w-[82px] justify-center" onClick={() => handleClick(card.c)}>
+          <div className="flex min-w-[82px] justify-center" onClick={onClick}>
             <ResultLibraryClan value={card.c[CLAN]} />
             {card.c[DISCIPLINE] && card.c[CLAN] && '+'}
             <ResultLibraryDisciplines value={card.c[DISCIPLINE]} />
@@ -127,7 +131,7 @@ const InventoryLibraryTableRow = ({ card, compact, newFocus, inShared, handleCli
         </>
       )}
       {!isNarrow && (
-        <div className="flex min-w-[30px] justify-center" onClick={() => handleClick(card.c)}>
+        <div className="flex min-w-[30px] justify-center" onClick={onClick}>
           {card.c[BURN] && <ResultMiscImage value={BURN} />}
           {card.c[TRIFLE] && <ResultMiscImage value={TRIFLE} />}
         </div>

@@ -20,7 +20,6 @@ const DeckLibraryTableRow = ({
   inSearch,
   inMissing,
   shouldShowModal,
-
   isEditable,
   deckid,
   inventoryType,

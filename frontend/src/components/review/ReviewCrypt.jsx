@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { FlexGapped, DiffCryptTable, ResultModal, DeckCryptHeader } from '@/components';
 import { useApp } from '@/context';
@@ -7,7 +7,8 @@ import { getKeyDisciplines } from '@/utils';
 import { CRYPT, CAPACITY, CLAN, GROUP, NAME, QUANTITYx, SECT } from '@/constants';
 
 const ReviewCrypt = ({ cardChange, deckFrom, cardsTo }) => {
-  const { cryptDeckSort, changeCryptDeckSort, isMobile } = useApp();
+  const { setShowFloatingButtons, cryptDeckSort, changeCryptDeckSort, isDesktop, isMobile } =
+    useApp();
   const [showInfo, setShowInfo] = useState(false);
 
   const sortMethods = {
@@ -36,11 +37,32 @@ const ReviewCrypt = ({ cardChange, deckFrom, cardsTo }) => {
     handleModalCardClose,
   } = useModalCardController(sortedCards, sortedCardsSide);
 
+  const handleClick = useCallback(
+    (card) => {
+      handleModalCardOpen(card);
+      !isDesktop && setShowFloatingButtons(false);
+    },
+    [sortedCards, sortedCardsSide],
+  );
+
+  const handleClickSide = useCallback(
+    (card) => {
+      handleModalSideCardOpen(card);
+      !isDesktop && setShowFloatingButtons(false);
+    },
+    [sortedCards, sortedCardsSide],
+  );
+
+  const handleClose = useCallback(() => {
+    handleModalCardClose();
+    !isDesktop && setShowFloatingButtons(true);
+  }, [sortedCards, sortedCardsSide]);
+
   return (
     <FlexGapped
       className={twMerge(
         'flex-col',
-        !isMobile && 'sticky bg-bgPrimary dark:bg-bgPrimaryDark sm:top-10',
+        !isMobile && 'bg-bgPrimary dark:bg-bgPrimaryDark sticky sm:top-10',
       )}
     >
       <div>
@@ -58,7 +80,7 @@ const ReviewCrypt = ({ cardChange, deckFrom, cardsTo }) => {
         <DiffCryptTable
           isEditable
           cardChange={cardChange}
-          handleModalCardOpen={handleModalCardOpen}
+          handleClick={handleClick}
           cards={sortedCards}
           cardsFrom={deckFrom[CRYPT]}
           cardsTo={cardsTo}
@@ -74,7 +96,7 @@ const ReviewCrypt = ({ cardChange, deckFrom, cardsTo }) => {
           <DiffCryptTable
             isEditable
             cardChange={cardChange}
-            handleModalCardOpen={handleModalSideCardOpen}
+            handleClick={handleClickSide}
             cards={sortedCardsSide}
             cardsFrom={deckFrom[CRYPT]}
             cardsTo={cardsTo}
@@ -87,7 +109,7 @@ const ReviewCrypt = ({ cardChange, deckFrom, cardsTo }) => {
         <ResultModal
           card={currentModalCard}
           handleModalCardChange={handleModalCardChange}
-          handleClose={handleModalCardClose}
+          handleClose={handleClose}
         />
       )}
     </FlexGapped>

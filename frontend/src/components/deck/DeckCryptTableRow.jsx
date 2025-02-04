@@ -24,7 +24,6 @@ const DeckCryptTableRow = ({
   noDisciplines,
   shouldShowModal,
   inSide,
-
   isEditable,
   deckid,
   inventoryType,

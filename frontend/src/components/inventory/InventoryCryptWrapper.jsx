@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useCallback, useState, useRef } from 'react';
 import { useSnapshot } from 'valtio';
 import { NewCardSelect, InventoryCrypt } from '@/components';
 import { useApp, inventoryStore } from '@/context';
@@ -11,17 +11,16 @@ const InventoryCryptWrapper = ({ sharedCrypt, category, onlyNotes, clan, setClan
   const newCardFocus = () => newCardRef.current.focus();
   const newCardRef = useRef();
 
+  const handleClick = useCallback((e) => {
+    setNewCardId(e.value);
+  }, []);
+
   return (
     <>
       {!sharedCrypt && (
         <>
           <div className="max-sm:p-2">
-            <NewCardSelect
-              onChange={(e) => setNewCardId(e.value)}
-              ref={newCardRef}
-              target={CRYPT}
-              inInventory
-            />
+            <NewCardSelect onChange={handleClick} ref={newCardRef} target={CRYPT} inInventory />
           </div>
           {newCardId && (
             <InventoryCrypt

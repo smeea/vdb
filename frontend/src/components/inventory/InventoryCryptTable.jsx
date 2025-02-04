@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useCallback, useMemo } from 'react';
 import { FixedSizeList } from 'react-window';
 import AutoSizer from 'react-virtualized-auto-sizer';
 import { twMerge } from 'tailwind-merge';
@@ -9,7 +9,7 @@ import { useCryptSortWithTimer, useModalCardController } from '@/hooks';
 import { ID } from '@/constants';
 
 const InventoryCryptTable = ({ cards, sortMethod, compact, withCompact, newFocus, inShared }) => {
-  const { playtestMode, setShowFloatingButtons } = useApp();
+  const { playtestMode, setShowFloatingButtons, isDesktop } = useApp();
   const sortedCards = useCryptSortWithTimer(cards, sortMethod);
 
   const {
@@ -20,10 +20,18 @@ const InventoryCryptTable = ({ cards, sortMethod, compact, withCompact, newFocus
     handleModalCardClose,
   } = useModalCardController(sortedCards);
 
-  const handleClick = (card) => {
-    handleModalCardOpen(card);
-    setShowFloatingButtons(false);
-  };
+  const handleClick = useCallback(
+    (card) => {
+      handleModalCardOpen(card);
+      !isDesktop && setShowFloatingButtons(false);
+    },
+    [sortedCards],
+  );
+
+  const handleClose = useCallback(() => {
+    handleModalCardClose();
+    !isDesktop && setShowFloatingButtons(true);
+  }, [sortedCards]);
 
   const cardRows = useMemo(() => {
     return sortedCards
@@ -45,7 +53,7 @@ const InventoryCryptTable = ({ cards, sortMethod, compact, withCompact, newFocus
   return (
     <>
       {compact ? (
-        <div className="flex h-[45px] border border-bgSecondary bg-bgPrimary dark:border-bgSecondaryDark dark:bg-bgPrimaryDark">
+        <div className="border-bgSecondary bg-bgPrimary dark:border-bgSecondaryDark dark:bg-bgPrimaryDark flex h-[45px] border">
           {cardRows[0]}
         </div>
       ) : (
@@ -78,7 +86,7 @@ const InventoryCryptTable = ({ cards, sortMethod, compact, withCompact, newFocus
         <ResultModal
           card={currentModalCard}
           handleModalCardChange={handleModalCardChange}
-          handleClose={handleModalCardClose}
+          handleClose={handleClose}
           forceInventoryMode
         />
       )}

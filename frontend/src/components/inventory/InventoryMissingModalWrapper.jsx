@@ -53,13 +53,13 @@ const InventoryMissingModalWrapper = ({
     .filter((cardid) => {
       return !getIsPlaytest(cardid) && (!inventoryCrypt[cardid] || !inventoryCrypt[cardid]?.q);
     })
-    .map((cardid) => (missAllVtesCrypt[cardid] = { q: 1, c: cryptCardBase[cardid] }));
+    .forEach((cardid) => (missAllVtesCrypt[cardid] = { q: 1, c: cryptCardBase[cardid] }));
 
   Object.keys(libraryCardBase)
     .filter((cardid) => {
       return !getIsPlaytest(cardid) && (!inventoryLibrary[cardid] || !inventoryLibrary[cardid]?.q);
     })
-    .map((cardid) => (missAllVtesLibrary[cardid] = { q: 1, c: libraryCardBase[cardid] }));
+    .forEach((cardid) => (missAllVtesLibrary[cardid] = { q: 1, c: libraryCardBase[cardid] }));
 
   return (
     <DeckMissingModal

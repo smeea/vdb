@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import {
   DeckProxyLibraryTable,
   ResultLibraryType,
@@ -18,7 +18,7 @@ const DeckProxyLibrary = ({
   handleProxyCounter,
   handleProxySelector,
 }) => {
-  const { setShowFloatingButtons } = useApp();
+  const { setShowFloatingButtons, isDesktop } = useApp();
 
   const {
     library,
@@ -46,20 +46,26 @@ const DeckProxyLibrary = ({
     handleModalCardClose,
   } = useModalCardController(library, librarySide);
 
-  const handleClick = (card) => {
-    handleModalCardOpen(card);
-    setShowFloatingButtons(false);
-  };
+  const handleClick = useCallback(
+    (card) => {
+      handleModalCardOpen(card);
+      !isDesktop && setShowFloatingButtons(false);
+    },
+    [library, librarySide],
+  );
 
-  const handleClickSide = (card) => {
-    handleModalSideCardOpen(card);
-    setShowFloatingButtons(false);
-  };
+  const handleClickSide = useCallback(
+    (card) => {
+      handleModalSideCardOpen(card);
+      !isDesktop && setShowFloatingButtons(false);
+    },
+    [library, librarySide],
+  );
 
-  const handleClose = () => {
+  const handleClose = useCallback(() => {
     handleModalCardClose();
-    setShowFloatingButtons(true);
-  };
+    !isDesktop && setShowFloatingButtons(true);
+  }, [library, librarySide]);
 
   return (
     <FlexGapped className="flex-col">

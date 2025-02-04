@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { useSnapshot } from 'valtio';
 import {
@@ -33,6 +33,10 @@ const InventoryCryptTableRow = ({ card, compact, newFocus, inShared, handleClick
     () => inventoryCardChange(card.c, card.q + 1),
   );
 
+  const onClick = useCallback(() => {
+    handleClick(card.c);
+  }, [card]);
+
   return (
     <div
       {...swipeHandlers}
@@ -43,7 +47,7 @@ const InventoryCryptTableRow = ({ card, compact, newFocus, inShared, handleClick
           'flex items-center justify-center',
           isEditable
             ? 'min-w-[84px]'
-            : 'h-full min-w-[42px] border-r border-bgSecondary bg-blue/5 dark:border-bgSecondaryDark sm:min-w-[48px]',
+            : 'border-bgSecondary bg-blue/5 dark:border-bgSecondaryDark h-full min-w-[42px] border-r sm:min-w-[48px]',
         )}
       >
         {inShared ? (
@@ -67,18 +71,15 @@ const InventoryCryptTableRow = ({ card, compact, newFocus, inShared, handleClick
           />
         </div>
       )}
-      <div
-        className="flex min-w-[32px] justify-center sm:min-w-[40px]"
-        onClick={() => handleClick(card.c)}
-      >
+      <div className="flex min-w-[32px] justify-center sm:min-w-[40px]" onClick={onClick}>
         <ResultCryptCapacity card={card.c} />
       </div>
       {!isMobile && !isNarrow && (
-        <div className="flex min-w-[170px] lg:min-w-[180px]" onClick={() => handleClick(card.c)}>
+        <div className="flex min-w-[170px] lg:min-w-[180px]" onClick={onClick}>
           <ResultCryptDisciplines value={card.c[DISCIPLINES]} />
         </div>
       )}
-      <div className="flex w-full" onClick={() => handleClick(card.c)}>
+      <div className="flex w-full" onClick={onClick}>
         <ConditionalTooltip
           overlay={<CardPopover card={card.c} />}
           disabled={isMobile}
@@ -92,18 +93,18 @@ const InventoryCryptTableRow = ({ card, compact, newFocus, inShared, handleClick
       </div>
       {isWide ? (
         <>
-          <div className="flex min-w-[25px] justify-center" onClick={() => handleClick(card.c)}>
+          <div className="flex min-w-[25px] justify-center" onClick={onClick}>
             {card.c[TITLE] && <ResultCryptTitle value={card.c[TITLE]} />}
           </div>
-          <div className="flex min-w-[35px] justify-center" onClick={() => handleClick(card.c)}>
+          <div className="flex min-w-[35px] justify-center" onClick={onClick}>
             <ResultClanImage value={card.c[CLAN]} />
           </div>
-          <div className="flex min-w-[30px] justify-center" onClick={() => handleClick(card.c)}>
+          <div className="flex min-w-[30px] justify-center" onClick={onClick}>
             <ResultCryptGroup value={card.c[GROUP]} />
           </div>
         </>
       ) : (
-        <div className="min-w-[40px]" onClick={() => handleClick(card.c)}>
+        <div className="min-w-[40px]" onClick={onClick}>
           <ResultCryptClanGroupTitle card={card.c} />
         </div>
       )}

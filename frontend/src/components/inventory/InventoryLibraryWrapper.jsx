@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useCallback, useState, useRef } from 'react';
 import { useSnapshot } from 'valtio';
 import { NewCardSelect, InventoryLibrary } from '@/components';
 import { useApp, inventoryStore } from '@/context';
@@ -19,17 +19,16 @@ const InventoryLibraryWrapper = ({
   const newCardFocus = () => newCardRef.current.focus();
   const newCardRef = useRef();
 
+  const handleClick = useCallback((e) => {
+    setNewCardId(e.value);
+  }, []);
+
   return (
     <>
       {!sharedLibrary && (
         <>
           <div className="max-sm:p-2">
-            <NewCardSelect
-              onChange={(e) => setNewCardId(e.value)}
-              ref={newCardRef}
-              target={LIBRARY}
-              inInventory
-            />
+            <NewCardSelect onChange={handleClick} ref={newCardRef} target={LIBRARY} inInventory />
           </div>
           {newCardId && (
             <InventoryLibrary

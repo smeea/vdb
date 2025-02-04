@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { ResultLibraryTableRowCommon, DeckDrawProbability } from '@/components';
 import { useApp } from '@/context';
 import { ID, NAME } from '@/constants';
@@ -26,22 +26,29 @@ const DeckDrawLibraryTable = ({
     });
   }
 
+  const onChange = useCallback(
+    (idx) => {
+      handleClick(idx);
+    },
+    [handleClick],
+  );
+
   return (
-    <table className="w-full border-bgSecondary dark:border-bgSecondaryDark sm:border">
+    <table className="border-bgSecondary dark:border-bgSecondaryDark w-full sm:border">
       <tbody>
         {resultCards.map((card, idx) => {
           return (
             <tr
               key={idx}
-              className="row-bg h-[38px] border-y border-bgSecondary dark:border-bgSecondaryDark"
+              className="row-bg border-bgSecondary dark:border-bgSecondaryDark h-[38px] border-y"
             >
               <ResultLibraryTableRowCommon
                 card={card}
-                handleClick={() => handleClick(idx)}
+                handleClick={onChange}
                 shouldShowModal={shouldShowModal}
               />
               {(!ashHeap || !isMobile) && (
-                <td className="min-w-[45px] text-right text-fgSecondary dark:text-fgSecondaryDark sm:p-1">
+                <td className="text-fgSecondary dark:text-fgSecondaryDark min-w-[45px] text-right sm:p-1">
                   {!ashHeap && (
                     <DeckDrawProbability
                       cardName={card[NAME]}

@@ -1,4 +1,5 @@
 import React, { useCallback, useState } from 'react';
+import { twMerge } from 'tailwind-merge';
 import {
   DeckLibraryTable,
   ResultLibraryType,
@@ -59,11 +60,13 @@ const DeckLibrary = ({ inSearch, inPreview, inMissing, deck }) => {
     <FlexGapped className="flex-col">
       <div className="flex flex-col gap-2">
         <div
-          className={
-            !inPreview && !inMissing && !inSearch && !isMobile
-              ? 'bg-bgPrimary dark:bg-bgPrimaryDark sticky z-10 sm:top-10'
-              : ''
-          }
+          className={twMerge(
+            !inPreview &&
+              !inMissing &&
+              !inSearch &&
+              !isMobile &&
+              'bg-bgPrimary dark:bg-bgPrimaryDark sticky top-10 z-10',
+          )}
         >
           <DeckLibraryHeader
             inMissing={inMissing}

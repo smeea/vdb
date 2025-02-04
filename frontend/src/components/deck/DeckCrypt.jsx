@@ -67,7 +67,7 @@ const DeckCrypt = ({ inSearch, inPreview, inMissing, noDisciplines, deck }) => {
           !inMissing &&
           !inSearch &&
           !isMobile &&
-          'bg-bgPrimary dark:bg-bgPrimaryDark sticky sm:top-10',
+          'bg-bgPrimary dark:bg-bgPrimaryDark sticky top-10',
       )}
     >
       <div>
