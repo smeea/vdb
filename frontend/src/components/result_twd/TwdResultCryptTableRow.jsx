@@ -8,6 +8,7 @@ import {
   ResultCryptCapacity,
   ResultClanImage,
   ConditionalTooltip,
+  Tr,
 } from '@/components';
 import { getHardTotal } from '@/utils';
 import { useApp, limitedStore, inventoryStore, usedStore } from '@/context';
@@ -23,18 +24,15 @@ const TwdResultCryptTableRow = ({ card, handleClick, shouldShowModal }) => {
   const hardUsedTotal = getHardTotal(usedCrypt[HARD][card.c[ID]]);
 
   return (
-    <tr
-      key={card.c[ID]}
-      className="row-bg h-[38px] border-y border-bgSecondary dark:border-bgSecondaryDark"
-    >
-      <td className="min-w-[28px] border-r border-bgSecondary bg-blue/5 dark:border-bgSecondaryDark sm:min-w-[35px]">
+    <Tr key={card.c[ID]}>
+      <td className="border-bgSecondary bg-blue/5 dark:border-bgSecondaryDark min-w-[28px] border-r sm:min-w-[35px]">
         {inventoryMode ? (
           <ConditionalTooltip overlay={<UsedPopover cardid={card.c[ID]} />} disabled={isMobile}>
             <div
               className={twMerge(
                 'flex justify-center text-lg',
                 inInventory < card.q
-                  ? 'bg-bgError text-white dark:bg-bgErrorDark dark:text-whiteDark'
+                  ? 'bg-bgError dark:bg-bgErrorDark dark:text-whiteDark text-white'
                   : inInventory - hardUsedTotal < card.q && 'bg-bgWarning dark:bg-bgWarningDark',
               )}
             >
@@ -67,7 +65,7 @@ const TwdResultCryptTableRow = ({ card, handleClick, shouldShowModal }) => {
           <ResultClanImage value={card.c[CLAN]} />
         </div>
       </td>
-    </tr>
+    </Tr>
   );
 };
 

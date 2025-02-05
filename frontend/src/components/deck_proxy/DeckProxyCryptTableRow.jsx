@@ -5,6 +5,7 @@ import {
   ResultCryptTableRowCommon,
   Checkbox,
   DeckProxyTableSetSelect,
+  Tr,
 } from '@/components';
 import { getSoftMax, getHardTotal } from '@/utils';
 import { useApp, usedStore, inventoryStore } from '@/context';
@@ -21,7 +22,7 @@ const DeckProxyCryptTableRow = ({
   card,
   handleClick,
 }) => {
-  const { isMobile } = useApp();
+  const { isMobile, isWide } = useApp();
   const inventoryCrypt = useSnapshot(inventoryStore)[CRYPT];
   const usedCrypt = useSnapshot(usedStore)[CRYPT];
   const inInventory = inventoryCrypt[card.c[ID]]?.q ?? 0;
@@ -29,12 +30,12 @@ const DeckProxyCryptTableRow = ({
   const hardUsedTotal = getHardTotal(usedCrypt[HARD][card.c[ID]]) ?? 0;
 
   return (
-    <tr key={card.c[ID]} className="row-bg border-y border-bgSecondary dark:border-bgSecondaryDark">
-      <td className="min-w-[25px]">
+    <Tr key={card.c[ID]}>
+      <td className="min-w-[30px]">
         <div className="flex items-center justify-center">
           <Checkbox
             value={card.c[ID]}
-            name="print"
+            name={PRINT}
             checked={proxySelected[card.c[ID]]?.[PRINT]}
             onChange={handleProxySelector}
           />
@@ -58,6 +59,7 @@ const DeckProxyCryptTableRow = ({
         handleClick={handleClick}
         keyDisciplines={keyDisciplines}
         disciplinesSet={disciplinesSet}
+        noDisciplines={!isWide}
         inDeck
       />
       {!isMobile && (
@@ -67,7 +69,7 @@ const DeckProxyCryptTableRow = ({
           value={proxySelected[card.c[ID]]?.[SET]}
         />
       )}
-    </tr>
+    </Tr>
   );
 };
 

@@ -50,7 +50,7 @@ const PlaytestManageAdd = ({ playtesters, newPlaytesters, setNewPlaytesters }) =
         <div className="relative flex w-full">
           <Input
             placeholder="Add Playtester (login)"
-            name="username"
+            name={USERNAME}
             value={username}
             onChange={handleChange}
             roundedStyle="rounded-sm rounded-r-none"

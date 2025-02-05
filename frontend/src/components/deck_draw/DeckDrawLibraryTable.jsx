@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react';
-import { ResultLibraryTableRowCommon, DeckDrawProbability } from '@/components';
+import { ResultLibraryTableRowCommon, DeckDrawProbability, Tr } from '@/components';
 import { useApp } from '@/context';
 import { ID, NAME } from '@/constants';
 
@@ -38,17 +38,14 @@ const DeckDrawLibraryTable = ({
       <tbody>
         {resultCards.map((card, idx) => {
           return (
-            <tr
-              key={idx}
-              className="row-bg border-bgSecondary dark:border-bgSecondaryDark h-[38px] border-y"
-            >
+            <Tr key={idx}>
               <ResultLibraryTableRowCommon
                 card={card}
                 handleClick={onChange}
                 shouldShowModal={shouldShowModal}
               />
-              {(!ashHeap || !isMobile) && (
-                <td className="text-fgSecondary dark:text-fgSecondaryDark min-w-[45px] text-right sm:p-1">
+              {!ashHeap && (
+                <td className="text-fgSecondary dark:text-fgSecondaryDark min-w-[45px] p-1 text-right max-sm:hidden">
                   {!ashHeap && (
                     <DeckDrawProbability
                       cardName={card[NAME]}
@@ -59,7 +56,7 @@ const DeckDrawLibraryTable = ({
                   )}
                 </td>
               )}
-            </tr>
+            </Tr>
           );
         })}
       </tbody>

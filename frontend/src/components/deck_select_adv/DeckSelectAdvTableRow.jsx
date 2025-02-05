@@ -21,6 +21,7 @@ import {
   ButtonIconed,
   Checkbox,
   ResultLegalIcon,
+  Tr,
 } from '@/components';
 import { limitedStore, useApp, deckToggleInventoryState } from '@/context';
 import {
@@ -77,9 +78,9 @@ const DeckSelectAdvTableRow = ({
   const clan = getClan(deck[CRYPT]);
 
   return (
-    <tr className="row-bg border-bgSecondary dark:border-bgSecondaryDark h-[41px] border-y">
-      {!(short || isMobile) && (
-        <td className="min-w-[30px]">
+    <Tr>
+      {!short && (
+        <td className="min-w-[30px] max-sm:hidden">
           <Checkbox
             checked={selectedDecks[deck[DECKID]] ?? false}
             onChange={() => toggleSelect(deck[DECKID])}
@@ -87,8 +88,8 @@ const DeckSelectAdvTableRow = ({
           />
         </td>
       )}
-      {inventoryMode && !isMobile && (
-        <td className="min-w-[52px]">
+      {inventoryMode && (
+        <td className="min-w-[52px] max-sm:hidden">
           <div className="flex h-full justify-center">
             <ButtonIconed
               className="w-full"
@@ -114,12 +115,9 @@ const DeckSelectAdvTableRow = ({
           </div>
         </td>
       )}
-      {(short || !isMobile) && (
-        <td className="min-w-[60px] sm:min-w-[70px]" onClick={handleClick}>
-          <div className="flex justify-center">{clan && <ResultClanImage value={clan} />}</div>
-        </td>
-      )}
-
+      <td className="max-sm:hidden max-sm:min-w-[60px] sm:min-w-[70px]" onClick={handleClick}>
+        <div className="flex justify-center">{clan && <ResultClanImage value={clan} />}</div>
+      </td>
       <td
         colSpan={isMobile ? 2 : 1}
         className={twMerge(
@@ -136,10 +134,10 @@ const DeckSelectAdvTableRow = ({
             <div
               className={twMerge(
                 'flex items-center justify-center gap-0.5',
-                isMobile && !clan && 'ps-1',
+                !clan && 'max-sm:ps-1',
               )}
             >
-              {isMobile && clan && <ResultClanImage className="w-[30px]" value={clan} />}
+              {clan && <ResultClanImage className="w-[30px] sm:hidden" value={clan} />}
               {deck[NAME]}
             </div>
             <div className="flex items-center justify-end gap-3">
@@ -187,16 +185,14 @@ const DeckSelectAdvTableRow = ({
       )}
       {!short && (
         <>
-          {!isMobile && (
-            <td className="w-full px-1 max-sm:px-0.5">
-              <DeckTags
-                deck={deck}
-                allTagsOptions={allTagsOptions}
-                isBordered
-                noAutotags={isMobile}
-              />
-            </td>
-          )}
+          <td className="w-full px-1 max-sm:hidden">
+            <DeckTags
+              deck={deck}
+              allTagsOptions={allTagsOptions}
+              isBordered
+              noAutotags={isMobile}
+            />
+          </td>
           <td>
             <div className="flex justify-end gap-1">
               <DeckHideButton deck={deck} />
@@ -216,7 +212,7 @@ const DeckSelectAdvTableRow = ({
           </td>
         </>
       )}
-    </tr>
+    </Tr>
   );
 };
 

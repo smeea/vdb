@@ -50,6 +50,7 @@ export { default as Title } from './common/Title.jsx';
 export { default as Toggle } from './common/Toggle.jsx';
 export { default as Tooltip } from './common/Tooltip.jsx';
 export { default as TextWithLinks } from './common/TextWithLinks.jsx';
+export { default as Tr } from './common/Tr.jsx';
 
 export { default as DisciplinesCryptSummary } from './crypt/DisciplinesCryptSummary.jsx';
 

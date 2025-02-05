@@ -62,10 +62,10 @@
     --color-fgFourth: #4040a0;
     --color-fgFourthDark: #9090c0;
 
-    --breakpoint-sm: 48rem;
-    --breakpoint-md: 64rem;
-    --breakpoint-lg: 80rem;
-    --breakpoint-xl: 90rem;
+    --breakpoint-sm: 48rem; /* 768px */
+    --breakpoint-md: 64rem; /* 1024px */
+    --breakpoint-lg: 80rem; /* 1280px */
+    --breakpoint-xl: 90rem; /* 1440px */
 
     --text-2xs: 0.625rem;
     --text-2xs--line-height: 0.75rem;
@@ -104,10 +104,6 @@
     th {
         @apply font-normal
     }
-}
-
-.row-bg {
-    @apply odd:bg-bgPrimary odd:dark:bg-bgPrimaryDark even:bg-bgThird even:dark:bg-bgThirdDark
 }
 
 .account-container {

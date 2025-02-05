@@ -5,6 +5,7 @@ import {
   ResultCryptTableRowCommon,
   ResultLibraryTableRowCommon,
   TwdOpenDeckButton,
+  Tr,
 } from '@/components';
 import { TWD_DATE, ID, DECKID, RELEASE_DATE } from '@/constants';
 
@@ -12,7 +13,7 @@ const TwdHallFameCardsCard = ({ card, handleClick }) => {
   const { isMobile } = useApp();
 
   return (
-    <tr className="row-bg border-y border-bgSecondary dark:border-bgSecondaryDark">
+    <Tr>
       {card[ID] > 200000 ? (
         <ResultCryptTableRowCommon card={card} handleClick={handleClick} noDisciplines={isMobile} />
       ) : (
@@ -36,7 +37,7 @@ const TwdHallFameCardsCard = ({ card, handleClick }) => {
           </div>
         )}
       </td>
-    </tr>
+    </Tr>
   );
 };
 

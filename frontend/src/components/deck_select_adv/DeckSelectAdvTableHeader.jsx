@@ -5,7 +5,7 @@ import At from '@icons/at.svg?react';
 import { DeckSelectAdvTagsFilter, Select, Checkbox, Input } from '@/components';
 import { useDebounce } from '@/hooks';
 import { useApp } from '@/context';
-import { TYPE_DEBOUNCE_DELAY, S, H, ANY } from '@/constants';
+import { NAME, TYPE_DEBOUNCE_DELAY, S, H, ANY } from '@/constants';
 
 const DeckSelectAdvTableHeader = ({
   allTagsOptions,
@@ -78,8 +78,8 @@ const DeckSelectAdvTableHeader = ({
   return (
     <thead>
       <tr>
-        {!(short || isMobile) && (
-          <th className="min-w-[30px]">
+        {!short && (
+          <th className="min-w-[30px] max-sm:hidden">
             <Checkbox
               name="selectAll"
               checked={isSelectedAll}
@@ -88,8 +88,8 @@ const DeckSelectAdvTableHeader = ({
             />
           </th>
         )}
-        {inventoryMode && !isMobile && (
-          <th className="min-w-[52px] py-1">
+        {inventoryMode && (
+          <th className="min-w-[52px] py-1 max-sm:hidden">
             <Select
               options={invOptions}
               onChange={(e) => setInvFilter(e.value)}
@@ -99,21 +99,19 @@ const DeckSelectAdvTableHeader = ({
             />
           </th>
         )}
-        {(short || !isMobile) && (
-          <th className="min-w-[60px] p-1 sm:min-w-[70px]">
-            <Select
-              options={clanOptions}
-              onChange={(e) => setClanFilter(e.value)}
-              value={clanOptions.find((obj) => obj.value === clanFilter.toLowerCase())}
-              isSearchable
-              noDropdown
-            />
-          </th>
-        )}
+        <th className="min-w-[60px] p-1 max-sm:hidden sm:min-w-[70px]">
+          <Select
+            options={clanOptions}
+            onChange={(e) => setClanFilter(e.value)}
+            value={clanOptions.find((obj) => obj.value === clanFilter.toLowerCase())}
+            isSearchable
+            noDropdown
+          />
+        </th>
         <th className="min-w-[45vw] max-sm:p-1 sm:min-w-[340px] sm:py-1">
           <Input
             placeholder="Filter by Deck or Card Name"
-            name="text"
+            name={NAME}
             autoComplete="off"
             spellCheck="false"
             value={debouncedNameFilter}

@@ -21,7 +21,7 @@ import { useDecksTagsAll } from '@/hooks';
 import { DECKID, DECKS, NAME, JOL, LACKEY, TEXT, XLSX } from '@/constants';
 
 const DeckSelectAdvModal = ({ onClick, setShow, short }) => {
-  const { isMobile, setShowFloatingButtons } = useApp();
+  const { isMobile, setShowMenuButtons, setShowFloatingButtons } = useApp();
   const decks = useSnapshot(deckStore)[DECKS];
   const [showDeleteConfirmation, setShowDeleteConfirmation] = useState(false);
   const [sortMethod, setSortMethod] = useState(NAME);
@@ -34,6 +34,7 @@ const DeckSelectAdvModal = ({ onClick, setShow, short }) => {
 
   const handleClose = () => {
     setShow(false);
+    setShowMenuButtons(false);
     setShowFloatingButtons(true);
   };
 

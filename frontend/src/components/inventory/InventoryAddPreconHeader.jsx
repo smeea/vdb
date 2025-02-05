@@ -1,6 +1,7 @@
 import React from 'react';
 import { ConditionalTooltipOrModal, DeckSortButton, Input } from '@/components';
 import { useApp } from '@/context';
+import { NAME, SET } from '@/constants';
 
 const TooltipText = () => {
   return (
@@ -39,7 +40,7 @@ const InventoryAddPreconHeader = ({
         <th className="py-1 pr-1 max-sm:w-full">
           <Input
             placeholder="Filter by Name"
-            name="text"
+            name={NAME}
             autoComplete="off"
             spellCheck="false"
             value={nameFilter}
@@ -50,7 +51,7 @@ const InventoryAddPreconHeader = ({
         <th className="w-full">
           <Input
             placeholder="Filter by Set"
-            name="text"
+            name={SET}
             autoComplete="off"
             spellCheck="false"
             value={setFilter}

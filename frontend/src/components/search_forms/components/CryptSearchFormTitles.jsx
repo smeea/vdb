@@ -15,12 +15,13 @@ import {
   MAGAJI,
   VOTE_1,
   VOTE_2,
+  TITLE,
 } from '@/constants';
 
 const CryptSearchFormTitles = ({ value, onChange }) => {
   return (
     <div className="flex flex-col gap-1">
-      <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Title:</div>
+      <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">Title:</div>
       <div className="flex">
         <div className="flex basis-5/9 flex-col gap-0.5">
           {[
@@ -34,7 +35,7 @@ const CryptSearchFormTitles = ({ value, onChange }) => {
           ].map((i) => (
             <Checkbox
               key={i[1]}
-              name="titles"
+              name={TITLE}
               value={i[1]}
               label={i[0]}
               checked={value[i[1]]}
@@ -54,7 +55,7 @@ const CryptSearchFormTitles = ({ value, onChange }) => {
           ].map((i) => (
             <Checkbox
               key={i[1]}
-              name="titles"
+              name={TITLE}
               value={i[1]}
               label={i[0]}
               checked={value[i[1]]}

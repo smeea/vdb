@@ -235,7 +235,9 @@ export const getSwipedBg = (isSwiped, inInventory) => {
       ? 'bg-bgSuccess dark:bg-bgSuccessDark'
       : 'bg-bgErrorSecondary dark:bg-bgErrorSecondaryDark';
   } else {
-    return inInventory ? '' : 'row-bg';
+    return inInventory
+      ? ''
+      : 'odd:bg-bgPrimary odd:dark:bg-bgPrimaryDark even:bg-bgThird even:dark:bg-bgThirdDark';
   }
 };
 

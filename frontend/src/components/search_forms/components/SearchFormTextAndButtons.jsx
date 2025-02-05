@@ -97,7 +97,7 @@ const SearchFormTextAndButtons = ({
             {value[0].value !== '' && (
               <>
                 <SearchFormButtonLogicToggle
-                  name="text"
+                  name={TEXT}
                   value={value[0][LOGIC]}
                   i={0}
                   searchForm={searchForm}

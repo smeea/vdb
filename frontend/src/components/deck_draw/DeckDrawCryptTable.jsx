@@ -1,7 +1,6 @@
 import React, { useCallback } from 'react';
-import { ResultCryptTableRowCommon, DeckDrawProbability } from '@/components';
+import { ResultCryptTableRowCommon, DeckDrawProbability, Tr } from '@/components';
 import { getKeyDisciplines } from '@/utils';
-import { useApp } from '@/context';
 import { ID, NAME } from '@/constants';
 
 const DeckDrawCryptTable = ({
@@ -12,9 +11,7 @@ const DeckDrawCryptTable = ({
   ashHeap,
   crypt,
 }) => {
-  const { isMobile } = useApp();
   const { disciplinesSet, keyDisciplines } = getKeyDisciplines(crypt);
-
   const N = restCards && resultCards ? restCards.length + resultCards.length : 0;
   const n = resultCards ? resultCards.length : 0;
   const nonPlayed = {};
@@ -41,10 +38,7 @@ const DeckDrawCryptTable = ({
       <tbody>
         {resultCards.map((card, idx) => {
           return (
-            <tr
-              key={idx}
-              className="row-bg border-bgSecondary dark:border-bgSecondaryDark h-[38px] border-y"
-            >
+            <Tr key={idx}>
               <ResultCryptTableRowCommon
                 card={card}
                 shouldShowModal={shouldShowModal}
@@ -53,8 +47,8 @@ const DeckDrawCryptTable = ({
                 disciplinesSet={disciplinesSet}
                 inDeck
               />
-              {(!ashHeap || !isMobile) && (
-                <td className="text-fgSecondary dark:text-fgSecondaryDark min-w-[45px] text-right sm:p-1">
+              {!ashHeap && (
+                <td className="text-fgSecondary dark:text-fgSecondaryDark min-w-[45px] p-1 text-right max-sm:hidden">
                   {!ashHeap && (
                     <DeckDrawProbability
                       cardName={card[NAME]}
@@ -65,7 +59,7 @@ const DeckDrawCryptTable = ({
                   )}
                 </td>
               )}
-            </tr>
+            </Tr>
           );
         })}
       </tbody>

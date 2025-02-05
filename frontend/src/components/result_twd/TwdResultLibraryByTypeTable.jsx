@@ -6,6 +6,7 @@ import {
   ConditionalTooltip,
   ResultLegalIcon,
   ResultLibraryCost,
+  Tr,
 } from '@/components';
 import { useApp } from '@/context';
 import cardtypeSortedFull from '@/assets/data/cardtypeSortedFull.json';
@@ -72,10 +73,7 @@ const TwdResultLibraryByTypeTable = ({ library }) => {
             .filter((cardtype) => libraryByType[cardtype] !== undefined)
             .map((cardtype) => {
               return (
-                <tr
-                  key={cardtype}
-                  className="row-bg border-bgSecondary dark:border-bgSecondaryDark h-[38px] border-y"
-                >
+                <Tr key={cardtype}>
                   <td className="min-w-[55px]">
                     <div className="flex justify-center">
                       <ResultLibraryTypeImage value={cardtype} />
@@ -100,7 +98,7 @@ const TwdResultLibraryByTypeTable = ({ library }) => {
                       </div>
                     </ConditionalTooltip>
                   </td>
-                </tr>
+                </Tr>
               );
             })}
         </tbody>

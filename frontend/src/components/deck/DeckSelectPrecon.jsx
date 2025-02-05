@@ -65,7 +65,7 @@ const DeckSelectPrecon = ({ deckid, handleSelect }) => {
     <Select
       options={options}
       isSearchable={!isMobile}
-      name="decks"
+      name={PRECONS}
       maxMenuHeight={isMobile ? window.screen.height - 200 : 600}
       filterOption={filterOption}
       placeholder="Select Deck"

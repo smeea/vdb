@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { twMerge } from 'tailwind-merge';
-import { Flag, Toggle } from '@/components';
+import { Flag, Toggle, Tr } from '@/components';
 import { playtestServices } from '@/services';
 import { useApp } from '@/context';
 
@@ -15,14 +15,14 @@ const PlaytestManagePlayer = ({ value }) => {
   };
 
   return (
-    <tr className="row-bg h-9 border-y border-bgSecondary dark:border-bgSecondaryDark">
+    <Tr>
       <td>
         <div className="flex justify-between px-1">
           <Toggle isOn={state} handleClick={handleClick} disabled={is_admin}>
             <div
               className={twMerge(
                 'flex items-center gap-2',
-                is_admin && 'font-bold text-fgSecondary dark:text-fgSecondaryDark',
+                is_admin && 'text-fgSecondary dark:text-fgSecondaryDark font-bold',
               )}
             >
               {username}
@@ -46,7 +46,7 @@ const PlaytestManagePlayer = ({ value }) => {
           <td className="text-center">{liaison}</td>
         </>
       )}
-    </tr>
+    </Tr>
   );
 };
 

@@ -7,6 +7,7 @@ import {
   ResultPreconClan,
   ConditionalTooltip,
   ResultPathImage,
+  Tr,
 } from '@/components';
 import { useDeckInInventory } from '@/hooks';
 import { useApp } from '@/context';
@@ -15,13 +16,13 @@ import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 import paths from '@/assets/data/paths.json';
 
 const InventoryAddPreconRow = ({ deck }) => {
-  const { isDesktop, isMobile } = useApp();
+  const { isMobile } = useApp();
   const inInventory = useDeckInInventory(deck);
   const [set, precon] = deck[DECKID].split(':');
   const clans = setsAndPrecons[set][PRECONS][precon][CLAN].split('/');
 
   return (
-    <tr className="row-bg border-bgSecondary dark:border-bgSecondaryDark border-y">
+    <Tr>
       <td className="min-w-[50px] sm:min-w-[70px]">
         <div className="flex justify-center">
           {clans.length > 0 && (
@@ -45,15 +46,13 @@ const InventoryAddPreconRow = ({ deck }) => {
           {deck[NAME]}
         </div>
       </td>
-      {isDesktop && (
-        <td className="min-w-[30px] sm:min-w-[45px]">
-          <div className="flex justify-center">
-            <ConditionalTooltip size="xl" overlay={<DeckPreview deck={deck} />}>
-              <EyeFill />
-            </ConditionalTooltip>
-          </div>
-        </td>
-      )}
+      <td className="min-w-[30px] max-lg:hidden sm:min-w-[45px]">
+        <div className="flex justify-center">
+          <ConditionalTooltip size="xl" overlay={<DeckPreview deck={deck} />}>
+            <EyeFill />
+          </ConditionalTooltip>
+        </div>
+      </td>
       <td className="text-fgThird dark:text-fgThirdDark w-full">
         {isMobile ? (
           <>
@@ -74,7 +73,7 @@ const InventoryAddPreconRow = ({ deck }) => {
           <InventoryDeckDeleteButton deck={deck} inInventory={inInventory} />
         </div>
       </td>
-    </tr>
+    </Tr>
   );
 };
 
