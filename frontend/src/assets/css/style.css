@@ -1,7 +1,5 @@
 @import "tailwindcss";
-
 @custom-variant dark (&:where(.dark, .dark *));
-
 @theme {
     --color-black: #000000;
     --color-blue: #0000aa;
@@ -61,12 +59,10 @@
     --color-fgThirdDark: #d0d0ee;
     --color-fgFourth: #4040a0;
     --color-fgFourthDark: #9090c0;
-
     --breakpoint-sm: 48rem; /* 768px */
     --breakpoint-md: 64rem; /* 1024px */
     --breakpoint-lg: 80rem; /* 1280px */
     --breakpoint-xl: 90rem; /* 1440px */
-
     --text-2xs: 0.625rem;
     --text-2xs--line-height: 0.75rem;
     --text-xs: 0.6875rem;
@@ -85,24 +81,39 @@
 
 @layer base {
     html {
-        @apply scroll-pt-3 sm:scroll-pt-16;
+        scroll-padding-top: calc(var(--spacing) * 3);
+        @media (min-width: 768px) {
+            scroll-padding-top: calc(var(--spacing) * 16);
+        }
         font-size: 1rem;
         font-line-height: 1.5rem;
     }
     body {
-        @apply text-fgPrimary bg-bgPrimary dark:bg-bgPrimaryDark dark:text-fgPrimaryDark
+        color: var(--color-fgPrimary);
+        background: var(--color-bgPrimary);
+        @variant dark {
+            color: var(--color-fgPrimaryDark);
+            background: var(--color-bgPrimaryDark)
+        }
     }
     a {
-        @apply text-fgSecondary dark:text-fgSecondaryDark hover:underline
+        color: var(--color-fgSecondary);
+        @variant dark {
+            color: var(--color-fgSecondaryDark);
+        }
+    }
+    a:hover {
+        text-decoration: underline
     }
     ul {
-        @apply list-[square] pl-5
+        list-style-type: square;
+        padding-left: calc(var(--spacing) * 5);
     }
     li {
-        @apply pl-1.5
+        padding-left: calc(var(--spacing) * 1.5);
     }
     th {
-        @apply font-normal
+        font-style: normal;
     }
 }
 
@@ -137,7 +148,6 @@
 .twd-container {
     max-width: 1800px;
 }
-
 .account-container,
 .about-container,
 .hof-cards-container,
