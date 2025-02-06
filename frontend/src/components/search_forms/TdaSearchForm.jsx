@@ -103,6 +103,13 @@ const TdaSearchForm = () => {
     [searchTdaForm],
   );
 
+  const handleTagsChange = useCallback(
+    (name, target, value) => {
+      searchTdaForm[name][target] = value;
+    },
+    [searchTdaForm],
+  );
+
   const handleClear = useCallback(() => {
     clearTdaForm();
     setTdaResults();
@@ -176,7 +183,7 @@ const TdaSearchForm = () => {
         onChange={handleDisciplinesChange}
       />
       <TwdSearchFormCardtypes value={tdaFormState[CARDTYPES]} onChange={handleChangeWithOpt} />
-      <TwdSearchFormTags value={tdaFormState[TAGS]} onChange={handleMultiChange} />
+      <TwdSearchFormTags value={tdaFormState[TAGS]} onChange={handleTagsChange} />
       {isMobile && (
         <>
           <ButtonFloatClose handleClose={handleClear} position="middle" />

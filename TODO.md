@@ -1,5 +1,6 @@
 # FIX
 - Too many calls to Location or History APIs on filter changes in Firefox
+- TDA negative search
 
 # FIX ON HOLD
 - Deck-in-Url trimmed at first card - cant reproduce in dev environment
@@ -7,7 +8,6 @@
 # FEATURES
 - Inventory 'target' q-ty -> for design consideration
 - Search in TDA on mobile
-- 'Not' twd/pda tags search
 
 # FEATURES ON HOLD
 - TWD search with % V5-compatibility -> after BCP clarify V5

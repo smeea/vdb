@@ -1,5 +1,5 @@
 import React from 'react';
-import { Checkbox } from '@/components';
+import { Button, Checkbox } from '@/components';
 import {
   ACCEL,
   ALLY,
@@ -14,10 +14,43 @@ import {
   TAGS,
 } from '@/constants';
 
+const TagCheckbox = ({ i, value, onChange }) => {
+  const handleCheckbox = (e) => {
+    const target = e.currentTarget.value;
+    onChange(TAGS, target, value[target] ? false : true);
+  };
+
+  const handleNegative = (e) => {
+    const target = e.currentTarget.value;
+    onChange(TAGS, target, value[target] === null ? false : null);
+  };
+
+  return (
+    <div className="flex items-center gap-1">
+      <Button
+        className="h-[16px] w-[12px] text-sm"
+        onClick={handleNegative}
+        value={i[0]}
+        title={`Toggle NOT ${i[1]}`}
+        noPadding
+      >
+        {value[i[0]] === null ? '!' : ' '}
+      </Button>
+      <Checkbox
+        name={TAGS}
+        value={i[0]}
+        label={i[1]}
+        checked={value[i[0]]}
+        onChange={handleCheckbox}
+      />
+    </div>
+  );
+};
+
 const TwdSearchFormTags = ({ value, onChange }) => {
   return (
     <div className="flex flex-col gap-1">
-      <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Tags:</div>
+      <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">Tags:</div>
       <div className="flex gap-4">
         <div className="flex basis-1/3 flex-col gap-0.5">
           {[
@@ -26,14 +59,7 @@ const TwdSearchFormTags = ({ value, onChange }) => {
             [BLEED, 'Bleed'],
             [BLOCK, 'Block'],
           ].map((i) => (
-            <Checkbox
-              key={i[0]}
-              name={TAGS}
-              value={i[0]}
-              label={i[1]}
-              checked={value[i[0]]}
-              onChange={onChange}
-            />
+            <TagCheckbox key={i[0]} i={i} value={value} onChange={onChange} />
           ))}
         </div>
         <div className="flex basis-1/3 flex-col gap-0.5">
@@ -42,14 +68,7 @@ const TwdSearchFormTags = ({ value, onChange }) => {
             [MMPA, 'MMPA'],
             [RUSH, 'Rush'],
           ].map((i) => (
-            <Checkbox
-              key={i[0]}
-              name={TAGS}
-              value={i[0]}
-              label={i[1]}
-              checked={value[i[0]]}
-              onChange={onChange}
-            />
+            <TagCheckbox key={i[0]} i={i} value={value} onChange={onChange} />
           ))}
         </div>
         <div className="flex basis-1/3 flex-col gap-0.5">
@@ -58,14 +77,7 @@ const TwdSearchFormTags = ({ value, onChange }) => {
             [SWARM, 'Swarm'],
             [VOTE, 'Vote'],
           ].map((i) => (
-            <Checkbox
-              key={i[0]}
-              name={TAGS}
-              value={i[0]}
-              label={i[1]}
-              checked={value[i[0]]}
-              onChange={onChange}
-            />
+            <TagCheckbox key={i[0]} i={i} value={value} onChange={onChange} />
           ))}
         </div>
       </div>

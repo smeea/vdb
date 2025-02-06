@@ -126,6 +126,13 @@ const PdaSearchForm = ({ error, setError }) => {
     [searchPdaForm],
   );
 
+  const handleTagsChange = useCallback(
+    (name, target, value) => {
+      searchPdaForm[name][target] = value;
+    },
+    [searchPdaForm],
+  );
+
   const handleMatchInventoryScalingChange = useCallback(
     (e) => {
       if (e.target.checked) {
@@ -284,7 +291,7 @@ const PdaSearchForm = ({ error, setError }) => {
         onChange={handleDisciplinesChange}
       />
       <TwdSearchFormCardtypes value={pdaFormState[CARDTYPES]} onChange={handleChangeWithOpt} />
-      <TwdSearchFormTags value={pdaFormState[TAGS]} onChange={handleMultiChange} />
+      <TwdSearchFormTags value={pdaFormState[TAGS]} onChange={handleTagsChange} />
       <TwdSearchFormPlayer value={pdaFormState[AUTHOR]} form={searchPdaForm} inPda />
       {isMobile && showFloatingButtons && (
         <>

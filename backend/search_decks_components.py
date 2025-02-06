@@ -175,10 +175,17 @@ def get_decks_by_sect(value, decks):
 
 def get_decks_by_tags(value, decks):
     match_decks = []
+    positive_tags = []
+    negative_tags = []
+    for k, v in value.items():
+        if v:
+            positive_tags.append(k)
+        else:
+            negative_tags.append(k)
     for deck in decks:
         tags = [*deck["tags"]["superior"], *deck["tags"]["base"]]
 
-        if set(value.keys()).issubset(tags):
+        if set(positive_tags).issubset(tags) and len(list(set(negative_tags) & set(tags))) == 0:
             match_decks.append(deck)
 
     return match_decks

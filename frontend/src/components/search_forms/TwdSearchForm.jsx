@@ -129,6 +129,13 @@ const TwdSearchForm = ({ error, setError }) => {
     [searchTwdForm],
   );
 
+  const handleTagsChange = useCallback(
+    (name, target, value) => {
+      searchTwdForm[name][target] = value;
+    },
+    [searchTwdForm],
+  );
+
   const handleMatchInventoryScalingChange = useCallback(
     (e) => {
       if (e.target.checked) {
@@ -285,7 +292,7 @@ const TwdSearchForm = ({ error, setError }) => {
         onChange={handleDisciplinesChange}
       />
       <TwdSearchFormCardtypes value={twdFormState[CARDTYPES]} onChange={handleChangeWithOpt} />
-      <TwdSearchFormTags value={twdFormState[TAGS]} onChange={handleMultiChange} />
+      <TwdSearchFormTags value={twdFormState[TAGS]} onChange={handleTagsChange} />
       <TwdSearchFormEvent value={twdFormState[EVENT]} onChange={handleEventChange} />
       <TwdSearchFormLocation value={twdFormState[LOCATION]} form={searchTwdForm} />
       <TwdSearchFormPlayer value={twdFormState[AUTHOR]} form={searchTwdForm} />
