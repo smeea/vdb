@@ -247,10 +247,17 @@ const missingTraits = (filter, deck) => {
 
 const missingTags = (filter, deck) => {
   const tags = [...deck[TAGS][SUPERIOR], ...deck[TAGS][BASE]];
+  const positiveTags = Object.keys(filter).filter((i) => filter[i]);
+  const negativeTags = Object.keys(filter).filter((i) => !filter[i]);
 
-  return Object.keys(filter).some((i) => {
-    return !tags.includes(i);
-  });
+  return (
+    positiveTags.some((i) => {
+      return !tags.includes(i);
+    }) ||
+    negativeTags.some((i) => {
+      return tags.includes(i);
+    })
+  );
 };
 
 const compareQty = (cardQty, q, m) => {
