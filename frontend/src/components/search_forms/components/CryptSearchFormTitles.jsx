@@ -15,7 +15,7 @@ import {
   MAGAJI,
   VOTE_1,
   VOTE_2,
-  TITLE,
+  TITLES,
 } from '@/constants';
 
 const CryptSearchFormTitles = ({ value, onChange }) => {
@@ -35,7 +35,7 @@ const CryptSearchFormTitles = ({ value, onChange }) => {
           ].map((i) => (
             <Checkbox
               key={i[1]}
-              name={TITLE}
+              name={TITLES}
               value={i[1]}
               label={i[0]}
               checked={value[i[1]]}
@@ -55,7 +55,7 @@ const CryptSearchFormTitles = ({ value, onChange }) => {
           ].map((i) => (
             <Checkbox
               key={i[1]}
-              name={TITLE}
+              name={TITLES}
               value={i[1]}
               label={i[0]}
               checked={value[i[1]]}

@@ -1,6 +1,5 @@
 import React, { useCallback } from 'react';
 import { ResultLibraryTableRowCommon, DeckDrawProbability, Tr } from '@/components';
-import { useApp } from '@/context';
 import { ID, NAME } from '@/constants';
 
 const DeckDrawLibraryTable = ({
@@ -10,8 +9,6 @@ const DeckDrawLibraryTable = ({
   resultCards,
   ashHeap,
 }) => {
-  const { isMobile } = useApp();
-
   const N = restCards && resultCards ? restCards.length + resultCards.length : 0;
   const n = resultCards ? resultCards.length : 0;
   const nonPlayed = {};
