@@ -1,4 +1,3 @@
-import React from 'react';
 import { twMerge } from 'tailwind-merge';
 import { useSnapshot } from 'valtio';
 import {
@@ -7,10 +6,10 @@ import {
   ResultLibraryTableRowCommon,
   ResultUsed,
 } from '@/components';
-import { useApp, deckStore, deckCardChange } from '@/context';
+import { DECK, DECKID, ID, LIBRARY } from '@/constants';
+import { deckCardChange, deckStore, useApp } from '@/context';
 import { useSwipe } from '@/hooks';
 import { getIsEditable, getSwipedBg } from '@/utils';
-import { ID, DECKID, LIBRARY, DECK } from '@/constants';
 
 const ResultLibraryTableRow = ({ card, handleClick, inLimited, shouldShowModal }) => {
   const { addMode, inventoryMode } = useApp();
@@ -29,7 +28,7 @@ const ResultLibraryTableRow = ({ card, handleClick, inLimited, shouldShowModal }
     <tr
       {...swipeHandlers}
       className={twMerge(
-        'h-[38px] border-y border-bgSecondary dark:border-bgSecondaryDark',
+        'border-bgSecondary dark:border-bgSecondaryDark h-[38px] border-y',
         getSwipedBg(isSwiped),
       )}
     >

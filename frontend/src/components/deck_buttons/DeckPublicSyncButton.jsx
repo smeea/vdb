@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useSnapshot } from 'valtio';
 import PeopleFill from '@icons/people-fill.svg?react';
-import { Spinner, ModalConfirmation, DeckPublicDiff, ButtonIconed } from '@/components';
+import { ButtonIconed, DeckPublicDiff, ModalConfirmation, Spinner } from '@/components';
+import { DECKS, NAME, PUBLIC_PARENT } from '@/constants';
+import { deckStore, useApp } from '@/context';
 import { deckServices } from '@/services';
-import { useApp, deckStore } from '@/context';
-import { PUBLIC_PARENT, NAME, DECKS } from '@/constants';
 
 const DeckPublicSyncButton = ({ deck }) => {
   const { isDesktop, setShowMenuButtons, setShowFloatingButtons } = useApp();
@@ -40,7 +40,7 @@ const DeckPublicSyncButton = ({ deck }) => {
           handleCancel={() => setShowConfirmation(false)}
         >
           <div>
-            <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
+            <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">
               Changes from currently published version:
             </div>
             <DeckPublicDiff deckTo={deck} deckFrom={decks[deck[PUBLIC_PARENT]]} />

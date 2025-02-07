@@ -1,6 +1,5 @@
-import React from 'react';
 import { Select } from '@/components';
-import { CAPACITY, ANY, LE, GE } from '@/constants';
+import { ANY, CAPACITY, GE, LE } from '@/constants';
 
 const LibrarySearchFormCapacity = ({ value, onChange }) => {
   const name = CAPACITY;

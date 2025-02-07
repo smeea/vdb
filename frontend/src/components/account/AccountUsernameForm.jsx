@@ -1,4 +1,3 @@
-import React from 'react';
 import { Input } from '@/components';
 import { USERNAME } from '@/constants';
 

@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router';
 import StarFill from '@icons/star-fill.svg?react';
 import tournaments from '@/assets/data/etda.json';
-import { Spinner, ButtonIconed } from '@/components';
-import { setTdaDecks, setTdaInfo, setTdaResults, clearTdaForm } from '@/context';
-import { ID, TITLE, DATE } from '@/constants';
+import { ButtonIconed, Spinner } from '@/components';
+import { DATE, ID, TITLE } from '@/constants';
+import { clearTdaForm, setTdaDecks, setTdaInfo, setTdaResults } from '@/context';
 
 const TdaLoadPreparedButtons = ({ setTempDecks, setTempArchon, setError }) => {
   const navigate = useNavigate();

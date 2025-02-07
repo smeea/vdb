@@ -1,6 +1,5 @@
-import React from 'react';
 import { Select } from '@/components';
-import { RANK, ANY, FROM, TO } from '@/constants';
+import { ANY, FROM, RANK, TO } from '@/constants';
 
 const TdaSearchFormRank = ({ value, onChange }) => {
   const name = RANK;

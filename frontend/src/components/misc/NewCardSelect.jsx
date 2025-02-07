@@ -1,4 +1,3 @@
-import React from 'react';
 import { CardSelect } from '@/components';
 import { CRYPT } from '@/constants';
 

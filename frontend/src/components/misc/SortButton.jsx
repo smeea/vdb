@@ -1,7 +1,6 @@
-import React from 'react';
 import { Menu } from '@headlessui/react';
 import SortDown from '@icons/sort-down.svg?react';
-import { MenuItems, MenuItem, MenuButton } from '@/components';
+import { MenuButton, MenuItem, MenuItems } from '@/components';
 import { capitalize } from '@/utils';
 
 const SortButton = ({ sortMethod, setSortMethod, sortMethods, noText, className }) => {

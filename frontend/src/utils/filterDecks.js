@@ -3,8 +3,8 @@
 // in case of missing filter or matching them the method returns false, meaning there's no missing criteria
 // if the filter is present and the deck dont match it the method returns true meaning the criteria is missing.
 // if some criteria is missing the main method return false and exits that deck check.
-import { countCards, countTotalCost, getClan, getSect } from '@/utils';
 import {
+  BASE,
   CAPACITY,
   CARDTYPES,
   CLAN,
@@ -23,15 +23,15 @@ import {
   OR,
   PLAYERS,
   RANK,
+  SCORE,
   SECT,
   STAR,
+  SUPERIOR,
+  TAGS,
   TRAITS,
   TYPE,
-  SCORE,
-  TAGS,
-  SUPERIOR,
-  BASE,
 } from '@/constants';
+import { countCards, countTotalCost, getClan, getSect } from '@/utils';
 
 const filterDecks = (decks = {}, filter) => {
   return Object.values(decks).filter((deck) => {

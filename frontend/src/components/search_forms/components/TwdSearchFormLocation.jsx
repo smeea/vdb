@@ -1,7 +1,6 @@
-import React from 'react';
 import { Select } from '@/components';
-import { useFetch } from '@/hooks';
 import { LOCATION } from '@/constants';
+import { useFetch } from '@/hooks';
 
 const TwdSearchFormLocation = ({ value, form }) => {
   const urlCountries = `${import.meta.env.VITE_API_URL}/twd/countries`;

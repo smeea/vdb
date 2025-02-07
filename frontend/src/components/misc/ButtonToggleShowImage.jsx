@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import FileTextFill from '@icons/chat-quote-fill.svg?react';
 import ImageAlt from '@icons/image-alt.svg?react';
 import { ButtonIconed } from '@/components';

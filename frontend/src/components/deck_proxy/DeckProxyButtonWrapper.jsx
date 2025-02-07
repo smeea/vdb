@@ -1,7 +1,6 @@
-import React from 'react';
 import { DeckProxyButton } from '@/components';
-import { useDeckMissing } from '@/hooks';
 import { useApp } from '@/context';
+import { useDeckMissing } from '@/hooks';
 
 const DeckProxyButtonWrapper = ({ deck, setShowProxySelect }) => {
   const { inventoryMode } = useApp();

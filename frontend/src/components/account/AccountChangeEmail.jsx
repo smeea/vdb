@@ -1,9 +1,9 @@
-import React, { useState, useActionState } from 'react';
+import { useActionState, useState } from 'react';
 import EnvelopeFill from '@icons/envelope-fill.svg?react';
 import { AccountEmailForm, AccountPasswordForm, ErrorOverlay } from '@/components';
+import { EMAIL, PASSWORD } from '@/constants';
 import { useApp } from '@/context';
 import { userServices } from '@/services';
-import { PASSWORD, EMAIL } from '@/constants';
 
 const AccountChangeEmail = () => {
   const { setEmail } = useApp();
@@ -34,7 +34,7 @@ const AccountChangeEmail = () => {
 
   return (
     <div className="flex flex-col gap-2">
-      <div className="flex items-center gap-2 text-lg font-bold text-fgSecondary dark:text-fgSecondaryDark">
+      <div className="text-fgSecondary dark:text-fgSecondaryDark flex items-center gap-2 text-lg font-bold">
         <div className="flex min-w-[23px] justify-center">
           <EnvelopeFill />
         </div>

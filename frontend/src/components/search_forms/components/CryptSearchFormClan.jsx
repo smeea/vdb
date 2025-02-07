@@ -1,16 +1,15 @@
-import React from 'react';
-import {
-  Select,
-  ResultClanImage,
-  SearchAdditionalForms,
-  SearchFormButtonLogicToggle,
-  SearchFormButtonAdd,
-  SearchFormButtonDel,
-} from '@/components';
 import imbuedClansList from '@/assets/data/imbuedClansList.json';
 import vampireClansList from '@/assets/data/vampireClansList.json';
+import {
+  ResultClanImage,
+  SearchAdditionalForms,
+  SearchFormButtonAdd,
+  SearchFormButtonDel,
+  SearchFormButtonLogicToggle,
+  Select,
+} from '@/components';
+import { ANY, CLAN, LOGIC } from '@/constants';
 import { useApp } from '@/context';
-import { LOGIC, CLAN, ANY } from '@/constants';
 
 const CryptSearchFormClan = ({ value, searchForm, onChange }) => {
   const { playtestMode, isMobile } = useApp();

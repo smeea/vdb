@@ -1,4 +1,3 @@
-import React from 'react';
 import { DeckTags } from '@/components';
 import { TAGS } from '@/constants';
 

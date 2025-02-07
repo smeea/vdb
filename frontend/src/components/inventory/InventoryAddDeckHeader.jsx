@@ -1,7 +1,6 @@
-import React from 'react';
-import { Select, DeckSortButton, Checkbox, Input } from '@/components';
-import { useApp } from '@/context';
+import { Checkbox, DeckSortButton, Input, Select } from '@/components';
 import { TEXT } from '@/constants';
+import { useApp } from '@/context';
 
 const InventoryAddDeckHeader = ({
   handleChangeNameFilter,

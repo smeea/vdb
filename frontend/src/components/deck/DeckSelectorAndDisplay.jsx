@@ -1,19 +1,18 @@
-import React from 'react';
 import { useSnapshot } from 'valtio';
 import EyeSlashFill from '@icons/eye-slash-fill.svg?react';
 import {
-  DeckSelectMy,
+  ButtonIconed,
   DeckBranchSelect,
   DeckCrypt,
-  DeckLibrary,
   DeckFreezeButton,
-  ButtonIconed,
+  DeckLibrary,
+  DeckSelectMy,
   ErrorMessage,
   FlexGapped,
 } from '@/components';
+import { BRANCHES, DECKID, DECKS, IS_AUTHOR, IS_PUBLIC, MASTER } from '@/constants';
+import { deckStore, setDeck, useApp } from '@/context';
 import { getRestrictions } from '@/utils';
-import { setDeck, deckStore, useApp } from '@/context';
-import { DECKS, DECKID, MASTER, BRANCHES, IS_PUBLIC, IS_AUTHOR } from '@/constants';
 
 const DeckSelectorAndDisplay = () => {
   const { playtestMode, isDesktop, addMode, toggleAddMode } = useApp();
@@ -27,7 +26,7 @@ const DeckSelectorAndDisplay = () => {
 
   return (
     <FlexGapped className="flex-col">
-      <div className="sticky z-10 flex gap-1 bg-bgPrimary dark:bg-bgPrimaryDark sm:top-10">
+      <div className="bg-bgPrimary dark:bg-bgPrimaryDark sticky z-10 flex gap-1 sm:top-10">
         {addMode && (
           <>
             <div className="w-full">

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router';
 import PlayFill from '@icons/play-fill.svg?react';
 import { ButtonIconed } from '@/components';

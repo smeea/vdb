@@ -1,9 +1,8 @@
-import React from 'react';
 import EyeFill from '@icons/eye-fill.svg?react';
 import EyeSlashFill from '@icons/eye-slash-fill.svg?react';
 import { Hr, PlaytestScores } from '@/components';
-import { useApp } from '@/context';
 import { SCORE, TEXT } from '@/constants';
+import { useApp } from '@/context';
 
 const Report = ({ id, text, score, isPlayed }) => {
   const { hidePlaytestNames, isMobile } = useApp();
@@ -14,7 +13,7 @@ const Report = ({ id, text, score, isPlayed }) => {
       <div className="flex h-6 w-full items-center justify-between">
         <div
           title={id}
-          className="text-fgName dark:text-fgNameDark print:max-w-[150px] print:overflow-hidden print:text-ellipsis print:dark:text-fgName"
+          className="text-fgName dark:text-fgNameDark print:dark:text-fgName print:max-w-[150px] print:overflow-hidden print:text-ellipsis"
         >
           {!hidePlaytestNames && (
             <>

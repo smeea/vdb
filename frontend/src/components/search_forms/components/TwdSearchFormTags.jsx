@@ -1,4 +1,3 @@
-import React from 'react';
 import { Button, Checkbox } from '@/components';
 import {
   ACCEL,
@@ -10,8 +9,8 @@ import {
   RUSH,
   STEALTH,
   SWARM,
-  VOTE,
   TAGS,
+  VOTE,
 } from '@/constants';
 
 const TagCheckbox = ({ i, value, onChange }) => {

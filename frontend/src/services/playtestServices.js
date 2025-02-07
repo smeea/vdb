@@ -1,15 +1,15 @@
 import ky from 'ky';
 import {
-  XLSX,
-  USERNAME,
-  SCORE,
-  PLAYTEST,
-  ID,
-  TEXT,
-  PRECONS,
   CARDS,
   GENERAL,
+  ID,
   NAME,
+  PLAYTEST,
+  PRECONS,
+  SCORE,
+  TEXT,
+  USERNAME,
+  XLSX,
 } from '@/constants';
 
 export const submitReport = (id, value, isPrecon) => {

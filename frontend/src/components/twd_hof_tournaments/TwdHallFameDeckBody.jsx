@@ -1,14 +1,13 @@
-import React from 'react';
 import {
-  TwdResultDescription,
   TwdResultCryptTable,
+  TwdResultDescription,
   TwdResultLibraryByTypeTable,
   TwdResultLibraryKeyCardsTable,
 } from '@/components';
+import { CARDS, CRYPT, DECKID, LIBRARY } from '@/constants';
+import { useApp } from '@/context';
 import { useFetch } from '@/hooks';
 import { parseDeck } from '@/utils';
-import { useApp } from '@/context';
-import { CARDS, DECKID, CRYPT, LIBRARY } from '@/constants';
 
 const TwdHallFameDeckBody = ({ deck }) => {
   const { cryptCardBase, libraryCardBase, isMobile } = useApp();

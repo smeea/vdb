@@ -1,4 +1,3 @@
-import React from 'react';
 import { EN, ES, FR, PT } from '@/constants';
 
 const Flag = ({ value, size = 'md', noTitle }) => {

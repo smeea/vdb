@@ -1,16 +1,15 @@
-import React from 'react';
+import cardtypeSortedFull from '@/assets/data/cardtypeSortedFull.json';
 import {
-  ResultLibraryTypeImage,
-  DeckLibraryTable,
-  ResultModal,
   ConditionalTooltip,
+  DeckLibraryTable,
   ResultLegalIcon,
   ResultLibraryCost,
+  ResultLibraryTypeImage,
+  ResultModal,
   Tr,
 } from '@/components';
+import { BANNED, BLOOD, POOL, TYPE_MASTER, X } from '@/constants';
 import { useApp } from '@/context';
-import cardtypeSortedFull from '@/assets/data/cardtypeSortedFull.json';
-import { X, TYPE_MASTER, POOL, BLOOD, BANNED } from '@/constants';
 import { useDeckLibrary, useModalCardController } from '@/hooks';
 
 const TwdResultLibraryByTypeTable = ({ library }) => {

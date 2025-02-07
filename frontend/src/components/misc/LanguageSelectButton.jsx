@@ -1,4 +1,3 @@
-import React from 'react';
 import { Popover, PopoverButton, PopoverPanel } from '@headlessui/react';
 import { Flag, LanguageMenu } from '@/components';
 import { useApp } from '@/context';

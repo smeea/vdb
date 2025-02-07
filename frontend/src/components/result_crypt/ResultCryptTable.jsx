@@ -1,8 +1,8 @@
-import React, { useCallback } from 'react';
-import { ResultModal, ResultCryptTableRow } from '@/components';
+import { useCallback } from 'react';
+import { ResultCryptTableRow, ResultModal } from '@/components';
+import { ID } from '@/constants';
 import { useApp } from '@/context';
 import { useModalCardController } from '@/hooks';
-import { ID } from '@/constants';
 
 const ResultCryptTable = ({ resultCards, inRecommendation, inLimited }) => {
   const { setShowFloatingButtons, isDesktop } = useApp();

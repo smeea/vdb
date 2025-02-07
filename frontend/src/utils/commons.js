@@ -1,4 +1,7 @@
 import dayjs from 'dayjs';
+import disciplinesList from '@/assets/data/disciplinesList.json';
+import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
+import virtuesList from '@/assets/data/virtuesList.json';
 import {
   ANY,
   BANNED,
@@ -7,6 +10,9 @@ import {
   DATE,
   DISCIPLINES,
   GROUP,
+  HAS_BANNED,
+  HAS_LIMITED,
+  HAS_PLAYTEST,
   ID,
   IS_AUTHOR,
   IS_FROZEN,
@@ -20,13 +26,7 @@ import {
   PROMO,
   SECT,
   SET,
-  HAS_BANNED,
-  HAS_LIMITED,
-  HAS_PLAYTEST,
 } from '@/constants';
-import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
-import disciplinesList from '@/assets/data/disciplinesList.json';
-import virtuesList from '@/assets/data/virtuesList.json';
 
 export const getCardProperty = (card, property) => {
   return card.c ? card.c[property] : card[property];

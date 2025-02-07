@@ -1,5 +1,5 @@
-import React, { useCallback } from 'react';
-import { ResultLibraryTableRowCommon, DeckDrawProbability, Tr } from '@/components';
+import { useCallback } from 'react';
+import { DeckDrawProbability, ResultLibraryTableRowCommon, Tr } from '@/components';
 import { ID, NAME } from '@/constants';
 
 const DeckDrawLibraryTable = ({

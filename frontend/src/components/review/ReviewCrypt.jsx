@@ -1,10 +1,10 @@
-import React, { useCallback, useState } from 'react';
+import { useCallback, useState } from 'react';
 import { twMerge } from 'tailwind-merge';
-import { FlexGapped, DiffCryptTable, ResultModal, DeckCryptHeader } from '@/components';
+import { DeckCryptHeader, DiffCryptTable, FlexGapped, ResultModal } from '@/components';
+import { CAPACITY, CLAN, CRYPT, GROUP, NAME, QUANTITYx, SECT } from '@/constants';
 import { useApp } from '@/context';
-import { useModalCardController, useDeckCrypt } from '@/hooks';
+import { useDeckCrypt, useModalCardController } from '@/hooks';
 import { getKeyDisciplines } from '@/utils';
-import { CRYPT, CAPACITY, CLAN, GROUP, NAME, QUANTITYx, SECT } from '@/constants';
 
 const ReviewCrypt = ({ cardChange, deckFrom, cardsTo }) => {
   const { setShowFloatingButtons, cryptDeckSort, changeCryptDeckSort, isDesktop, isMobile } =

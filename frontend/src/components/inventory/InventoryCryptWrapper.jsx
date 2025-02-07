@@ -1,8 +1,8 @@
-import React, { useCallback, useState, useRef } from 'react';
+import { useCallback, useRef, useState } from 'react';
 import { useSnapshot } from 'valtio';
-import { NewCardSelect, InventoryCrypt } from '@/components';
-import { useApp, inventoryStore } from '@/context';
+import { InventoryCrypt, NewCardSelect } from '@/components';
 import { CRYPT, OK } from '@/constants';
+import { inventoryStore, useApp } from '@/context';
 
 const InventoryCryptWrapper = ({ sharedCrypt, category, onlyNotes, clan, setClan }) => {
   const { cryptCardBase } = useApp();

@@ -1,9 +1,8 @@
-import React from 'react';
 import { useSnapshot } from 'valtio';
-import { AccountLimitedSet } from '@/components';
-import { limitedSetChange, limitedFullStore } from '@/context';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
-import { DATE, SETS, PLAYTEST } from '@/constants';
+import { AccountLimitedSet } from '@/components';
+import { DATE, PLAYTEST, SETS } from '@/constants';
+import { limitedFullStore, limitedSetChange } from '@/context';
 
 const AccountLimitedSetSelection = () => {
   const BCP_START = '2018-01-01';
@@ -11,7 +10,7 @@ const AccountLimitedSetSelection = () => {
 
   return (
     <div className="flex flex-col gap-2">
-      <div className="text-lg font-bold text-fgSecondary underline dark:text-fgSecondaryDark">
+      <div className="text-fgSecondary dark:text-fgSecondaryDark text-lg font-bold underline">
         Sets:
       </div>
       <div className="flex gap-2 max-sm:flex-col">

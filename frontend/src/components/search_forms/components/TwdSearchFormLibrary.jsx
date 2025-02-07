@@ -1,15 +1,14 @@
-import React from 'react';
 import {
   CardPopover,
-  ResultName,
-  ResultModal,
-  NewCardSelect,
   ConditionalTooltip,
+  NewCardSelect,
+  ResultModal,
+  ResultName,
   TwdSearchFormQuantityButtons,
 } from '@/components';
+import { GT, LIBRARY } from '@/constants';
 import { useApp } from '@/context';
 import { useModalCardController } from '@/hooks';
-import { GT, LIBRARY } from '@/constants';
 
 const TwdSearchFormLibrary = ({ value, form }) => {
   const { libraryCardBase, setShowFloatingButtons, isMobile } = useApp();
@@ -40,7 +39,7 @@ const TwdSearchFormLibrary = ({ value, form }) => {
 
   return (
     <div className="flex flex-col gap-2">
-      <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Library:</div>
+      <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">Library:</div>
       <NewCardSelect target={LIBRARY} onChange={handleAdd} />
       <div className="flex flex-col gap-1">
         {Object.keys(value)

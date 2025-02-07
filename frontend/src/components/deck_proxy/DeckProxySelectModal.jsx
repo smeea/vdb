@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useImmer } from 'use-immer';
-import { FlexGapped, Modal, Button, DeckProxyCrypt, DeckProxyLibrary } from '@/components';
-import { useApp, usedStore, inventoryStore } from '@/context';
-import { getHardTotal, getSoftMax } from '@/utils';
+import { Button, DeckProxyCrypt, DeckProxyLibrary, FlexGapped, Modal } from '@/components';
+import { CRYPT, HARD, ID, INVENTORY_TYPE, LIBRARY, PRINT, SET, SOFT } from '@/constants';
+import { inventoryStore, useApp, usedStore } from '@/context';
 import { pdfServices } from '@/services';
-import { PRINT, SET, ID, INVENTORY_TYPE, SOFT, HARD, CRYPT, LIBRARY } from '@/constants';
+import { getHardTotal, getSoftMax } from '@/utils';
 
 const DeckProxySelectModal = ({ deck, setShow }) => {
   const {
@@ -164,7 +164,7 @@ const DeckProxySelectModal = ({ deck, setShow }) => {
         <div className="flex gap-5 max-md:flex-col">
           <div className="basis-full sm:basis-5/9">
             {deck[CRYPT] && (
-              <div className="sm:top-[22px] sm:z-10 sm:bg-bgPrimary sm:dark:bg-bgPrimaryDark">
+              <div className="sm:bg-bgPrimary sm:dark:bg-bgPrimaryDark sm:top-[22px] sm:z-10">
                 <DeckProxyCrypt
                   deck={deck}
                   handleProxySelector={handleProxySelector}

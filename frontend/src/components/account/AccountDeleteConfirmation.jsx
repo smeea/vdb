@@ -1,10 +1,10 @@
-import React, { useState, useActionState } from 'react';
+import { useActionState, useState } from 'react';
 import EyeFill from '@icons/eye-fill.svg?react';
 import EyeSlashFill from '@icons/eye-slash-fill.svg?react';
-import { FlexGapped, Spinner, Input, Modal, Button, ErrorOverlay } from '@/components';
+import { Button, ErrorOverlay, FlexGapped, Input, Modal, Spinner } from '@/components';
+import { PASSWORD } from '@/constants';
 import { useApp } from '@/context';
 import { userServices } from '@/services';
-import { PASSWORD } from '@/constants';
 
 const AccountDeleteConfirmation = ({ setShow }) => {
   const { setUsername, isMobile } = useApp();

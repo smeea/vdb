@@ -1,16 +1,16 @@
-import React, { useCallback, useState, useEffect } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router';
 import { useSnapshot } from 'valtio';
 import {
-  ButtonFloatSearch,
   ButtonFloatClose,
+  ButtonFloatSearch,
   Checkbox,
+  CryptSearchFormClan,
+  CryptSearchFormSect,
   PdaSearchFormSrcSelector,
   TwdSearchFormButtons,
   TwdSearchFormCapacity,
   TwdSearchFormCardtypes,
-  CryptSearchFormClan,
-  CryptSearchFormSect,
   TwdSearchFormCrypt,
   TwdSearchFormDate,
   TwdSearchFormDisciplines,
@@ -20,9 +20,6 @@ import {
   TwdSearchFormPlayer,
   TwdSearchFormTags,
 } from '@/components';
-import { sanitizeFormState } from '@/utils';
-import { useApp, setPdaResults, searchPdaForm, clearSearchForm } from '@/context';
-import { archiveServices } from '@/services';
 import {
   AUTHOR,
   CAPACITY,
@@ -36,16 +33,19 @@ import {
   MATCH_INVENTORY,
   MONOCLAN,
   NAME,
+  NEW,
   PDA,
+  RANDOM,
   SCALING,
   SECT,
   SRC,
   STAR,
   TAGS,
   TRAITS,
-  RANDOM,
-  NEW,
 } from '@/constants';
+import { clearSearchForm, searchPdaForm, setPdaResults, useApp } from '@/context';
+import { archiveServices } from '@/services';
+import { sanitizeFormState } from '@/utils';
 
 const PdaSearchForm = ({ error, setError }) => {
   const { username, cryptCardBase, libraryCardBase, showFloatingButtons, inventoryMode, isMobile } =

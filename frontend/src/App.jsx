@@ -1,16 +1,17 @@
-import React, { Suspense, lazy } from 'react';
-import { createBrowserRouter, createRoutesFromElements, Route, Navigate } from 'react-router';
+import { Suspense, lazy } from 'react';
+import { Navigate, Route, createBrowserRouter, createRoutesFromElements } from 'react-router';
 import { RouterProvider } from 'react-router/dom';
-import { useApp } from '@/context';
-import { DECKID, DECKID_FROM, DECKID_TO, ID, EVENT } from '@/constants';
-import { deckServices, miscServices } from '@/services';
-import RootLayout from './pages/RootLayout.jsx';
 import About from './pages/About.jsx';
 import Account from './pages/Account.jsx';
 import Cards from './pages/Cards.jsx';
 import Crypt from './pages/Crypt.jsx';
 import Decks from './pages/Decks.jsx';
 import Library from './pages/Library.jsx';
+import RootLayout from './pages/RootLayout.jsx';
+import { DECKID, DECKID_FROM, DECKID_TO, EVENT, ID } from '@/constants';
+import { useApp } from '@/context';
+import { deckServices, miscServices } from '@/services';
+
 const Changelog = lazy(() => import('./pages/Changelog.jsx'));
 const Diff = lazy(() => import('./pages/Diff.jsx'));
 const Documentation = lazy(() => import('./pages/Documentation.jsx'));

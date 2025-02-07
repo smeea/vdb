@@ -1,6 +1,4 @@
-import React from 'react';
-import { ResultPathImage, Checkbox } from '@/components';
-import { useApp } from '@/context';
+import { Checkbox, ResultPathImage } from '@/components';
 import {
   ADDITIONAL_STRIKE,
   ADVANCEMENT,
@@ -9,21 +7,21 @@ import {
   BLACK_HAND,
   BLEED_1,
   BLEED_2,
+  CAINE,
+  CATHARI,
+  DEATH,
   ENTER_COMBAT,
   FLIGHT,
   INFERNAL,
   INTERCEPT_1,
   MANEUVER,
   NON_TWD,
-  CAINE,
-  CATHARI,
-  DEATH,
-  POWER,
   PATH_CAINE,
   PATH_CATHARI,
   PATH_DEATH,
   PATH_POWER,
   PLAYTEST,
+  POWER,
   PRESS,
   PREVENT,
   RED_LIST,
@@ -34,13 +32,14 @@ import {
   TRAITS,
   UNLOCK,
 } from '@/constants';
+import { useApp } from '@/context';
 
 const CryptSearchFormTraits = ({ value, onChange }) => {
   const { playtestMode } = useApp();
 
   return (
     <div className="flex flex-col gap-1">
-      <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Traits:</div>
+      <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">Traits:</div>
       <div className="flex">
         <div className="flex basis-5/9 flex-col gap-0.5">
           {[

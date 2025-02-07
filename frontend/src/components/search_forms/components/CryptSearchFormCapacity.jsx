@@ -1,12 +1,11 @@
-import React from 'react';
 import {
-  Select,
   SearchAdditionalForms,
-  SearchFormButtonLogicToggle,
   SearchFormButtonAdd,
   SearchFormButtonDel,
+  SearchFormButtonLogicToggle,
+  Select,
 } from '@/components';
-import { LOGIC, CAPACITY, ANY, LE, GE, EQ } from '@/constants';
+import { ANY, CAPACITY, EQ, GE, LE, LOGIC } from '@/constants';
 
 const CryptSearchFormCapacity = ({ value, searchForm, onChange }) => {
   const name = CAPACITY;

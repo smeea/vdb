@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router';
 import Arrow90DegLeft from '@icons/arrow-90deg-left.svg?react';
-import { ButtonIconed, PlaytestManagePlayer, PlaytestManageAdd } from '@/components';
-import { useFetch } from '@/hooks';
-import { useApp } from '@/context';
+import { ButtonIconed, PlaytestManageAdd, PlaytestManagePlayer } from '@/components';
 import { USERNAME } from '@/constants';
+import { useApp } from '@/context';
+import { useFetch } from '@/hooks';
 
 const PlaytestManage = () => {
   const { isPlaytestAdmin, isMobile } = useApp();
@@ -29,8 +29,8 @@ const PlaytestManage = () => {
             text="Back"
           />
         </div>
-        <table className="w-full border-bgSecondary dark:border-bgSecondaryDark sm:border">
-          <thead className="h-9 bg-bgSecondary text-fgSecondary dark:bg-bgSecondaryDark dark:text-fgPrimaryDark">
+        <table className="border-bgSecondary dark:border-bgSecondaryDark w-full sm:border">
+          <thead className="bg-bgSecondary text-fgSecondary dark:bg-bgSecondaryDark dark:text-fgPrimaryDark h-9">
             <tr>
               <th className="text-center font-bold">Username</th>
               <th />

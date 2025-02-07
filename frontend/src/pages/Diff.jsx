@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { useSnapshot } from 'valtio';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
+import { useSnapshot } from 'valtio';
 import {
   ButtonFloatClose,
   ButtonFloatMenu,
@@ -15,24 +15,24 @@ import {
   FlexGapped,
   Modal,
 } from '@/components';
-import { useApp, deckStore, setDeck } from '@/context';
-import { deckServices } from '@/services';
-import { parseDeck, getRestrictions, getIsEditable } from '@/utils';
 import {
   BRANCHES,
   CARDS,
   CRYPT,
+  DECK,
   DECKID,
   DECKID_FROM,
   DECKID_TO,
+  DECKS,
   IS_BRANCHES,
   IS_PUBLIC,
   LIBRARY,
   MASTER,
   PUBLIC_PARENT,
-  DECK,
-  DECKS,
 } from '@/constants';
+import { deckStore, setDeck, useApp } from '@/context';
+import { deckServices } from '@/services';
+import { getIsEditable, getRestrictions, parseDeck } from '@/utils';
 
 const Diff = () => {
   const {
@@ -180,7 +180,7 @@ const Diff = () => {
         </FlexGapped>
         {!isMobile && (
           <div className="basis-2/12 max-lg:hidden">
-            <div className="top-[77px] z-20 bg-bgPrimary dark:bg-bgPrimaryDark">
+            <div className="bg-bgPrimary dark:bg-bgPrimaryDark top-[77px] z-20">
               <DiffButtons
                 deckFrom={deck}
                 deckTo={deckTo}

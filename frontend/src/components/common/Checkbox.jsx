@@ -1,5 +1,5 @@
-import React, { useCallback } from 'react';
 import { Checkbox as CheckboxHUI, Field, Label } from '@headlessui/react';
+import { useCallback } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { NAME, VALUE } from '@/constants';
 

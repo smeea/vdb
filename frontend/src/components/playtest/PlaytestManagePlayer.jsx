@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { Flag, Toggle, Tr } from '@/components';
-import { playtestServices } from '@/services';
 import { useApp } from '@/context';
+import { playtestServices } from '@/services';
 
 const PlaytestManagePlayer = ({ value }) => {
   const { isMobile } = useApp();

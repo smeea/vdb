@@ -1,14 +1,14 @@
-import React, { useState, useActionState } from 'react';
+import { useActionState, useState } from 'react';
 import DoorOpenFill from '@icons/door-open-fill.svg?react';
 import {
   AccountPasswordForm,
   AccountUsernameForm,
-  ErrorOverlay,
   ConditionalTooltipOrModal,
+  ErrorOverlay,
 } from '@/components';
+import { PASSWORD, USERNAME } from '@/constants';
 import { useApp } from '@/context';
 import { userServices } from '@/services';
-import { USERNAME, PASSWORD } from '@/constants';
 
 const LoginTooltipText = () => {
   return (
@@ -70,7 +70,7 @@ const AccountLogin = () => {
 
   return (
     <div className="flex flex-col gap-2">
-      <div className="flex items-center gap-2 text-xl font-bold text-fgSecondary dark:text-fgSecondaryDark">
+      <div className="text-fgSecondary dark:text-fgSecondaryDark flex items-center gap-2 text-xl font-bold">
         <div className="flex min-w-[23px] justify-center">
           <DoorOpenFill width="20" height="20" viewBox="0 0 16 16" />
         </div>
@@ -94,7 +94,7 @@ const AccountLogin = () => {
             overlay={<PasswordTooltipText />}
             title="Password reset"
           >
-            <div className="text-sm italic text-fgSecondary hover:underline dark:text-fgSecondaryDark">
+            <div className="text-fgSecondary dark:text-fgSecondaryDark text-sm italic hover:underline">
               Forgot password
             </div>
           </ConditionalTooltipOrModal>

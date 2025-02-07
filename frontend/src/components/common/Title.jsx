@@ -1,4 +1,3 @@
-import React from 'react';
 import { twMerge } from 'tailwind-merge';
 
 const Title = ({ center, id, children }) => {
@@ -6,7 +5,7 @@ const Title = ({ center, id, children }) => {
     <div
       id={id}
       className={twMerge(
-        'flex text-xl font-bold text-fgFourth underline dark:text-fgSecondaryDark',
+        'text-fgFourth dark:text-fgSecondaryDark flex text-xl font-bold underline',
         center && 'justify-center',
       )}
     >

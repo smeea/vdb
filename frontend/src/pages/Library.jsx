@@ -1,4 +1,4 @@
-import React, { useMemo, useEffect } from 'react';
+import { useEffect, useMemo } from 'react';
 import { useSearchParams } from 'react-router';
 import { twMerge } from 'tailwind-merge';
 import { useSnapshot } from 'valtio';
@@ -11,15 +11,15 @@ import {
   LibrarySearchForm,
   ResultLibrary,
 } from '@/components';
+import { DECK, DECKID, DECKS, LIBRARY, LIBRARY_COMPARE } from '@/constants';
 import {
-  useApp,
-  searchResults,
-  setLibraryResults,
-  setLibraryCompare,
-  setDeck,
   deckStore,
+  searchResults,
+  setDeck,
+  setLibraryCompare,
+  setLibraryResults,
+  useApp,
 } from '@/context';
-import { DECKID, LIBRARY, LIBRARY_COMPARE, DECK, DECKS } from '@/constants';
 import { getIsEditable } from '@/utils';
 
 const Library = () => {

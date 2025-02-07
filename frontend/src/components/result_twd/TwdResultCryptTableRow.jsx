@@ -1,18 +1,17 @@
-import React from 'react';
 import { twMerge } from 'tailwind-merge';
 import { useSnapshot } from 'valtio';
 import {
   CardPopover,
-  UsedPopover,
-  ResultName,
-  ResultCryptCapacity,
-  ResultClanImage,
   ConditionalTooltip,
+  ResultClanImage,
+  ResultCryptCapacity,
+  ResultName,
   Tr,
+  UsedPopover,
 } from '@/components';
+import { CLAN, CRYPT, HARD, ID } from '@/constants';
+import { inventoryStore, limitedStore, useApp, usedStore } from '@/context';
 import { getHardTotal } from '@/utils';
-import { useApp, limitedStore, inventoryStore, usedStore } from '@/context';
-import { ID, CLAN, HARD, CRYPT } from '@/constants';
 
 const TwdResultCryptTableRow = ({ card, handleClick, shouldShowModal }) => {
   const { limitedMode, inventoryMode, isMobile } = useApp();

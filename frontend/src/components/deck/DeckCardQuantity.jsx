@@ -1,8 +1,8 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { twMerge } from 'tailwind-merge';
-import { ConditionalTooltip, UsedPopover, ButtonCardChange } from '@/components';
-import { useApp } from '@/context';
+import { ButtonCardChange, ConditionalTooltip, UsedPopover } from '@/components';
 import { ID } from '@/constants';
+import { useApp } from '@/context';
 
 const DeckCardQuantity = ({
   deckid,

@@ -1,7 +1,6 @@
-import React from 'react';
 import { Menu } from '@headlessui/react';
 import ClipboardPlus from '@icons/clipboard-plus.svg?react';
-import { MenuItems, MenuItem, MenuItemDivider, MenuButton } from '@/components';
+import { MenuButton, MenuItem, MenuItemDivider, MenuItems } from '@/components';
 import { useApp } from '@/context';
 
 const DeckImportButton = ({

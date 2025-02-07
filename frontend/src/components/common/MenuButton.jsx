@@ -1,6 +1,5 @@
-import React from 'react';
-import { twMerge } from 'tailwind-merge';
 import { Menu } from '@headlessui/react';
+import { twMerge } from 'tailwind-merge';
 
 const MenuButton = ({ title, icon, variant = 'primary', className, text }) => {
   const mainStyle = {

@@ -1,16 +1,16 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 import Gem from '@icons/gem.svg?react';
 import {
-  FlexGapped,
-  DeckCrypt,
-  DeckLibrary,
-  DeckExportButton,
   ButtonIconed,
+  DeckCrypt,
+  DeckExportButton,
+  DeckLibrary,
+  FlexGapped,
   Modal,
 } from '@/components';
+import { CRYPT, LIBRARY, NAME } from '@/constants';
 import { useApp } from '@/context';
-import { NAME, CRYPT, LIBRARY } from '@/constants';
 
 const DeckMissingModal = ({ setShow, deck, missAllVtes, inInventory }) => {
   const { isMobile, setShowFloatingButtons, setShowMenuButtons } = useApp();
@@ -29,7 +29,7 @@ const DeckMissingModal = ({ setShow, deck, missAllVtes, inInventory }) => {
           <div className="basis-full md:basis-5/9">
             <div
               className={twMerge(
-                !(isMobile || inInventory) && 'top-[22px] z-10 bg-bgPrimary dark:bg-bgPrimaryDark',
+                !(isMobile || inInventory) && 'bg-bgPrimary dark:bg-bgPrimaryDark top-[22px] z-10',
               )}
             >
               <DeckCrypt

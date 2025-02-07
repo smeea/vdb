@@ -1,15 +1,14 @@
-import React from 'react';
 import {
+  Hr,
   PdaResultDescription,
-  TwdResultDescription,
   TwdResultCryptTable,
+  TwdResultDescription,
   TwdResultLibraryByTypeTable,
   TwdResultLibraryKeyCardsTable,
-  Hr,
 } from '@/components';
+import { CARDS, CRYPT, DECKID, LIBRARY } from '@/constants';
 import { useApp } from '@/context';
 import { parseDeck } from '@/utils';
-import { CARDS, DECKID, CRYPT, LIBRARY } from '@/constants';
 
 const TwdDeck = ({ deck, inPda }) => {
   const { cryptCardBase, libraryCardBase, isNarrow } = useApp();

@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { TwdCheckInput, TwdCheckEvent } from '@/components';
+import { useState } from 'react';
+import { TwdCheckEvent, TwdCheckInput } from '@/components';
 import { ID } from '@/constants';
 
 const TwdCheck = () => {
@@ -7,7 +7,7 @@ const TwdCheck = () => {
 
   return (
     <div className="search-container mx-auto">
-      <div className="flex w-9/12 justify-center text-lg font-bold text-fgSecondary dark:text-fgSecondaryDark">
+      <div className="text-fgSecondary dark:text-fgSecondaryDark flex w-9/12 justify-center text-lg font-bold">
         Check TWD {deckData?.[ID] ? ` - Event #${deckData[ID]}` : ''}
       </div>
       <div className="flex justify-center gap-2">

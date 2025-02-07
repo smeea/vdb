@@ -1,8 +1,7 @@
-import React from 'react';
-import { ResultLibraryType, DeckRecommendationLibraryTable, ResultModal } from '@/components';
-import { librarySort } from '@/utils';
-import { useModalCardController } from '@/hooks';
+import { DeckRecommendationLibraryTable, ResultLibraryType, ResultModal } from '@/components';
 import { GROUPED_TYPE, TYPE } from '@/constants';
+import { useModalCardController } from '@/hooks';
+import { librarySort } from '@/utils';
 
 const DeckRecommendationLibrary = ({ cards }) => {
   const sortedLibrary = librarySort(cards, GROUPED_TYPE);

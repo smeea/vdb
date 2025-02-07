@@ -1,4 +1,3 @@
-import React from 'react';
 import Dice3 from '@icons/dice-3-fill.svg?react';
 import { ButtonIconed } from '@/components';
 

@@ -1,7 +1,6 @@
-import React from 'react';
 import { useNavigate } from 'react-router';
 import ArrowLeftRight from '@icons/arrow-left-right.svg?react';
-import { DiffSelectDeck, Button, FlexGapped } from '@/components';
+import { Button, DiffSelectDeck, FlexGapped } from '@/components';
 import { FROM, TO } from '@/constants';
 
 const DiffSelect = ({ decks, deck, deckTo, deckidFrom, deckidTo }) => {

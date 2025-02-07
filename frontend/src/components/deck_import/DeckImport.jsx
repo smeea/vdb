@@ -1,10 +1,10 @@
-import React, { useState, useRef } from 'react';
+import { useRef, useState } from 'react';
 import { useNavigate } from 'react-router';
-import { ErrorOverlay, DeckImportButton } from '@/components';
-import { useApp, deckAdd } from '@/context';
+import { DeckImportButton, ErrorOverlay } from '@/components';
+import { AUTHOR, BAD_CARDS, CRYPT, DECKID, IS_ANONYMOUS, LIBRARY, NAME, SHOW } from '@/constants';
+import { deckAdd, useApp } from '@/context';
+import { deckServices, formatServices } from '@/services';
 import { importDeck } from '@/utils';
-import { formatServices, deckServices } from '@/services';
-import { SHOW, IS_ANONYMOUS, NAME, AUTHOR, CRYPT, LIBRARY, DECKID, BAD_CARDS } from '@/constants';
 
 const DeckImport = ({
   isOnlyNew,

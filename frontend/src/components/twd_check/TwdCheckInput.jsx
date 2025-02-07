@@ -1,11 +1,11 @@
-import React, { useState, useRef } from 'react';
-import X from '@icons/x.svg?react';
+import { useRef, useState } from 'react';
 import Download from '@icons/download.svg?react';
 import Upload from '@icons/upload.svg?react';
-import { Textarea, ButtonIconed, ErrorOverlay } from '@/components';
+import X from '@icons/x.svg?react';
+import { ButtonIconed, ErrorOverlay, Textarea } from '@/components';
+import { CRYPT, DATE, DECK, EVENT, FORMAT, ID, LIBRARY, LOCATION, PLAYERS } from '@/constants';
 import { useApp } from '@/context';
 import { importDeck } from '@/utils';
-import { EVENT, LOCATION, DATE, FORMAT, PLAYERS, DECK, ID, CRYPT, LIBRARY } from '@/constants';
 
 const TwdCheckInput = ({ deckData, setDeckData }) => {
   const { cryptCardBase, libraryCardBase } = useApp();
@@ -110,7 +110,7 @@ const TwdCheckInput = ({ deckData, setDeckData }) => {
             <pre className="font-mono text-sm">{fieldNames}</pre>
           </div>
           <div className="flex justify-end">
-            <pre className="font-mono text-sm text-midGray dark:text-midGrayDark">
+            <pre className="text-midGray dark:text-midGrayDark font-mono text-sm">
               {descriptionInfo}
             </pre>
           </div>
@@ -124,7 +124,7 @@ const TwdCheckInput = ({ deckData, setDeckData }) => {
             onChange={handleChange}
             autoFocus
           />
-          <pre className="mb-0 ml-1 font-mono text-sm text-midGray dark:text-midGrayDark">
+          <pre className="text-midGray dark:text-midGrayDark mb-0 ml-1 font-mono text-sm">
             {lengthMarker}
           </pre>
         </div>

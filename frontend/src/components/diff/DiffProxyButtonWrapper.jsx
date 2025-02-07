@@ -1,6 +1,5 @@
-import React from 'react';
-import { getDiffMissing } from '@/utils';
 import { DeckProxyButton } from '@/components';
+import { getDiffMissing } from '@/utils';
 
 const DiffProxyButtonWrapper = ({ deckFrom, deckTo, setShowProxySelect }) => {
   const { missingCrypt, missingLibrary } = getDiffMissing(deckFrom, deckTo);

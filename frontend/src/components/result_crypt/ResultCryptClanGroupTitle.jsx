@@ -1,6 +1,5 @@
-import React from 'react';
-import { ResultClanImage, ResultCryptSect, ResultCryptGroup, ResultCryptTitle } from '@/components';
-import { TITLE, CLAN, GROUP, SECT } from '@/constants';
+import { ResultClanImage, ResultCryptGroup, ResultCryptSect, ResultCryptTitle } from '@/components';
+import { CLAN, GROUP, SECT, TITLE } from '@/constants';
 
 const ResultCryptClanGroupTitle = ({ card }) => {
   return (

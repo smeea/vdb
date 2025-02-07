@@ -1,6 +1,5 @@
-import React from 'react';
-import { twMerge } from 'tailwind-merge';
 import { Menu } from '@headlessui/react';
+import { twMerge } from 'tailwind-merge';
 
 const MenuItems = ({ divided, anchor = { to: 'bottom end', gap: '2px' }, children }) => {
   return (

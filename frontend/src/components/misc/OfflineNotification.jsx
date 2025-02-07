@@ -1,4 +1,3 @@
-import React from 'react';
 import WifiOff from '@icons/wifi-off.svg?react';
 import { GlobalNotification } from '@/components';
 import { useApp } from '@/context';

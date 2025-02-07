@@ -1,29 +1,27 @@
-import React from 'react';
 import dayjs from 'dayjs';
+import { useNavigate } from 'react-router';
 import { twMerge } from 'tailwind-merge';
 import { useSnapshot } from 'valtio';
-import { useNavigate } from 'react-router';
-import EyeFill from '@icons/eye-fill.svg?react';
-import Shuffle from '@icons/shuffle.svg?react';
-import PinAngleFill from '@icons/pin-angle-fill.svg?react';
 import At from '@icons/at.svg?react';
+import EyeFill from '@icons/eye-fill.svg?react';
+import PinAngleFill from '@icons/pin-angle-fill.svg?react';
+import Shuffle from '@icons/shuffle.svg?react';
 import {
-  DeckPreview,
-  DeckTags,
-  DeckDeleteButton,
-  DeckHideButton,
-  DeckFreezeButton,
-  DeckBranchDeleteButton,
-  DeckCopyUrlButton,
-  DeckPublicToggleButton,
-  ResultClanImage,
-  ConditionalTooltip,
   ButtonIconed,
   Checkbox,
+  ConditionalTooltip,
+  DeckBranchDeleteButton,
+  DeckCopyUrlButton,
+  DeckDeleteButton,
+  DeckFreezeButton,
+  DeckHideButton,
+  DeckPreview,
+  DeckPublicToggleButton,
+  DeckTags,
+  ResultClanImage,
   ResultLegalIcon,
   Tr,
 } from '@/components';
-import { limitedStore, useApp, deckToggleInventoryState } from '@/context';
 import {
   BANNED,
   BRANCHES,
@@ -35,15 +33,16 @@ import {
   HAS_LIMITED,
   HAS_PLAYTEST,
   INVENTORY_TYPE,
+  IS_AUTHOR,
   IS_FROZEN,
   MASTER,
   NAME,
   PLAYTEST,
   S,
-  TIMESTAMP,
-  IS_AUTHOR,
   TAGS,
+  TIMESTAMP,
 } from '@/constants';
+import { deckToggleInventoryState, limitedStore, useApp } from '@/context';
 import { getClan, getRestrictions } from '@/utils';
 
 const DeckSelectAdvTableRow = ({

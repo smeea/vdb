@@ -1,7 +1,6 @@
-import React from 'react';
 import { DeckCryptTableRow } from '@/components';
+import { DECKID, ID, INVENTORY_TYPE } from '@/constants';
 import { getIsEditable } from '@/utils';
-import { INVENTORY_TYPE, DECKID, ID } from '@/constants';
 
 const DeckCryptTable = ({
   deck,

@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router';
 import { useSnapshot } from 'valtio';
-import { ButtonFloatClose, TwdResult, TwdSearchForm, ErrorMessage, FlexGapped } from '@/components';
-import { useApp, searchResults, setTwdResults } from '@/context';
+import { ButtonFloatClose, ErrorMessage, FlexGapped, TwdResult, TwdSearchForm } from '@/components';
 import { TWD } from '@/constants';
+import { searchResults, setTwdResults, useApp } from '@/context';
 
 const Twd = () => {
   const { showFloatingButtons, isMobile } = useApp();

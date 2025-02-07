@@ -1,4 +1,3 @@
-import React from 'react';
 import { twMerge } from 'tailwind-merge';
 import virtuesList from '@/assets/data/virtuesList.json';
 import { ANY } from '@/constants';

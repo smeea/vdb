@@ -1,22 +1,22 @@
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 import { BubbleChart } from '@/components';
-import { byName, getClan } from '@/utils';
-import { useApp } from '@/context';
 import {
-  IN_SEARCH,
-  CLAN,
-  SCORE,
-  PLAYERS,
-  RANK,
+  ANTITRIBU,
   AUTHOR,
+  CLAN,
   CRYPT,
+  INDEX,
+  IN_SEARCH,
   LIBRARY,
   MULTI,
-  ANTITRIBU,
+  PLAYERS,
+  RANK,
+  SCORE,
   TAGS,
   VALUE,
-  INDEX,
 } from '@/constants';
+import { useApp } from '@/context';
+import { byName, getClan } from '@/utils';
 
 const TdaChartsRankingClan = ({ info, decks, searchResults }) => {
   const { isMobile, isDesktop, isWide } = useApp();

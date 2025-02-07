@@ -1,7 +1,6 @@
-import React from 'react';
 import { RadioGroup } from '@headlessui/react';
 import { Radio } from '@/components';
-import { ALL, OK, NOK } from '@/constants';
+import { ALL, NOK, OK } from '@/constants';
 
 const InventoryShowSelect = ({ category, setCategory }) => {
   return (

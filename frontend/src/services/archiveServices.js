@@ -1,5 +1,5 @@
 import ky from 'ky';
-import { setTwdResults, setPdaResults } from '@/context';
+import { setPdaResults, setTwdResults } from '@/context';
 
 export const search = (query, inPda = false) => {
   const url = `${import.meta.env.VITE_API_URL}/search/${inPda ? 'pda' : 'twd'}`;

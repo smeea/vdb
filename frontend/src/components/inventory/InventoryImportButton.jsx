@@ -1,4 +1,3 @@
-import React from 'react';
 import Upload from '@icons/upload.svg?react';
 import { ButtonIconed } from '@/components';
 import { useApp } from '@/context';

@@ -1,4 +1,4 @@
-import React, { useCallback, useState, useEffect } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router';
 import { useSnapshot } from 'valtio';
 import {
@@ -17,8 +17,6 @@ import {
   TwdSearchFormLibraryTotal,
   TwdSearchFormTags,
 } from '@/components';
-import { filterDecks, sanitizeFormState } from '@/utils';
-import { useApp, setTdaResults, searchTdaForm, clearTdaForm, tdaStore } from '@/context';
 import {
   CAPACITY,
   CARDTYPES,
@@ -37,6 +35,8 @@ import {
   TDA,
   TRAITS,
 } from '@/constants';
+import { clearTdaForm, searchTdaForm, setTdaResults, tdaStore, useApp } from '@/context';
+import { filterDecks, sanitizeFormState } from '@/utils';
 
 const TdaSearchForm = () => {
   const { cryptCardBase, libraryCardBase, isMobile } = useApp();

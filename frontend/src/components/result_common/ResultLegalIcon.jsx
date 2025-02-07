@@ -1,9 +1,8 @@
-import React from 'react';
 import { twMerge } from 'tailwind-merge';
-import LightningChargeFill from '@icons/lightning-charge-fill.svg?react';
-import Hammer from '@icons/hammer.svg?react';
 import Exclamation from '@icons/exclamation-triangle.svg?react';
-import { DEFAULT, BANNED, PLAYTEST } from '@/constants';
+import Hammer from '@icons/hammer.svg?react';
+import LightningChargeFill from '@icons/lightning-charge-fill.svg?react';
+import { BANNED, DEFAULT, PLAYTEST } from '@/constants';
 
 const ResultLegalIcon = ({ value, type = DEFAULT, className }) => {
   const title = {
@@ -23,7 +22,7 @@ const ResultLegalIcon = ({ value, type = DEFAULT, className }) => {
   return (
     <div
       className={twMerge(
-        'inline-flex items-center whitespace-nowrap text-fgRed dark:text-fgRedDark',
+        'text-fgRed dark:text-fgRedDark inline-flex items-center whitespace-nowrap',
         className,
       )}
       title={title[type]}

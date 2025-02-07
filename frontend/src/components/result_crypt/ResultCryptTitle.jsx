@@ -1,17 +1,16 @@
-import React from 'react';
 import {
-  TITLED,
-  PRIMOGEN,
-  PRINCE,
-  JUSTICAR,
-  INNER_CIRCLE,
+  ARCHBISHOP,
   BARON,
   BISHOP,
-  ARCHBISHOP,
-  PRISCUS,
   CARDINAL,
-  REGENT,
+  INNER_CIRCLE,
+  JUSTICAR,
   MAGAJI,
+  PRIMOGEN,
+  PRINCE,
+  PRISCUS,
+  REGENT,
+  TITLED,
   VOTE_1,
   VOTE_2,
 } from '@/constants';
@@ -38,7 +37,7 @@ const ResultCryptTitle = ({ value, noTitle }) => {
 
   return (
     <div
-      className="text-fg-fgSecondary inline dark:text-fgSecondaryDark"
+      className="text-fg-fgSecondary dark:text-fgSecondaryDark inline"
       title={noTitle ? null : titles[value][0]}
     >
       {titles[value][1]}

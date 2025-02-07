@@ -1,4 +1,3 @@
-import React from 'react';
 import { Textarea as TextareaHUI } from '@headlessui/react';
 import { twMerge } from 'tailwind-merge';
 

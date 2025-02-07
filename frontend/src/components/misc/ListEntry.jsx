@@ -1,4 +1,3 @@
-import React from 'react';
 import { twMerge } from 'tailwind-merge';
 
 const ListEntry = ({ icon, title, children, forceNewLine, forceOneLine, basis = 4 }) => {
@@ -21,12 +20,12 @@ const ListEntry = ({ icon, title, children, forceNewLine, forceOneLine, basis = 
     >
       <div
         className={twMerge(
-          'flex items-center gap-2 text-lg text-fgSecondary dark:text-fgSecondaryDark',
+          'text-fgSecondary dark:text-fgSecondaryDark flex items-center gap-2 text-lg',
           !forceNewLine && basises[basis][0],
         )}
       >
         {icon && <div className="flex min-w-[23px] justify-center">{icon}</div>}
-        <div className="flex whitespace-nowrap font-bold">{title}</div>
+        <div className="flex font-bold whitespace-nowrap">{title}</div>
       </div>
       <div className={twMerge('flex items-center', !forceNewLine && basises[basis][1])}>
         {children}

@@ -1,7 +1,6 @@
-import React from 'react';
 import Exclamation from '@icons/exclamation-triangle.svg?react';
 import { ResultLegalIcon } from '@/components';
-import { ICON, TITLE, TEXT, LIMITED, GROUPS, BANNED, PLAYTEST } from '@/constants';
+import { BANNED, GROUPS, ICON, LIMITED, PLAYTEST, TEXT, TITLE } from '@/constants';
 
 const Warning = ({ type, value = 'WARNING', title = '' }) => {
   const types = {
@@ -27,7 +26,7 @@ const Warning = ({ type, value = 'WARNING', title = '' }) => {
 
   return (
     <div
-      className="dark:text-fgedDark flex items-center gap-0.5 whitespace-nowrap text-fgRed"
+      className="dark:text-fgedDark text-fgRed flex items-center gap-0.5 whitespace-nowrap"
       title={title ?? types?.[type]?.[TITLE]}
     >
       {types?.[type]?.[ICON] ?? <Exclamation width="15" height="15" viewBox="0 0 16 16" />}

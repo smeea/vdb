@@ -1,13 +1,12 @@
-import React from 'react';
-import { useApp } from '@/context';
 import { FlexGapped, Hr } from '@/components';
+import { useApp } from '@/context';
 
 const PlaytestReportsAllGeneral = ({ reports }) => {
   const { hidePlaytestNames } = useApp();
 
   return (
     <FlexGapped className="max-sm:flex-col print:break-after-page print:p-8">
-      <div className="flex font-bold text-fgSecondary dark:text-fgSecondaryDark sm:min-w-[320px]">
+      <div className="text-fgSecondary dark:text-fgSecondaryDark flex font-bold sm:min-w-[320px]">
         General Opinions
       </div>
       <div className="flex basis-full flex-col gap-4">
@@ -21,7 +20,7 @@ const PlaytestReportsAllGeneral = ({ reports }) => {
                 <div className="group flex flex-col gap-3" key={name}>
                   <div className="flex flex-col gap-3">
                     {!hidePlaytestNames && (
-                      <div className="flex w-full items-center text-fgName dark:text-fgNameDark print:dark:text-fgName">
+                      <div className="text-fgName dark:text-fgNameDark print:dark:text-fgName flex w-full items-center">
                         &lt;{name}&gt;
                       </div>
                     )}

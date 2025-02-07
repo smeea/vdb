@@ -1,4 +1,3 @@
-import React from 'react';
 import { DeckCrypt, DeckLibrary } from '@/components';
 import { IS_AUTHOR } from '@/constants';
 

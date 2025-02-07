@@ -1,18 +1,18 @@
-import { byTimestamp } from '@/utils';
 import {
+  CREATION_DATE,
   DATE,
-  NAME,
   DATE_NEW_OLD,
   DATE_OLD_NEW,
+  FAVORITED_BY,
   FAVORITES,
+  NAME,
   PLAYERS,
+  RANK,
   RANK_HIGH_LOW,
   RANK_LOW_HIGH,
-  RANK,
   SCORE,
-  FAVORITED_BY,
-  CREATION_DATE,
 } from '@/constants';
+import { byTimestamp } from '@/utils';
 
 const decksSort = (decks, sortMethod) => {
   const byRank = (a, b) => a[SCORE][RANK] - b[SCORE][RANK];

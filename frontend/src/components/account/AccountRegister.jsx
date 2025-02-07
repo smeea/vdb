@@ -1,4 +1,4 @@
-import React, { useState, useActionState } from 'react';
+import { useActionState, useState } from 'react';
 import PersonPlusFill from '@icons/person-plus-fill.svg?react';
 import {
   AccountEmailForm,
@@ -6,9 +6,9 @@ import {
   AccountUsernameForm,
   ErrorOverlay,
 } from '@/components';
+import { EMAIL, PASSWORD, USERNAME } from '@/constants';
 import { useApp } from '@/context';
 import { userServices } from '@/services';
-import { USERNAME, PASSWORD, EMAIL } from '@/constants';
 
 const AccountRegister = () => {
   const { setUsername, setEmail, setPublicName } = useApp();
@@ -46,7 +46,7 @@ const AccountRegister = () => {
 
   return (
     <div className="flex flex-col gap-2">
-      <div className="flex items-center gap-2 text-xl font-bold text-fgSecondary dark:text-fgSecondaryDark">
+      <div className="text-fgSecondary dark:text-fgSecondaryDark flex items-center gap-2 text-xl font-bold">
         <div className="flex min-w-[23px] justify-center">
           <PersonPlusFill width="22" height="22" viewBox="0 0 16 16" />
         </div>

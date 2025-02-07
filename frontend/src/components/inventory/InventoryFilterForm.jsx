@@ -1,11 +1,10 @@
-import React from 'react';
 import {
-  Select,
-  ResultLibraryTypeImage,
-  ResultDisciplineImage,
   ResultClanImage,
+  ResultDisciplineImage,
+  ResultLibraryTypeImage,
+  Select,
 } from '@/components';
-import { ALL, CRYPT, TYPE, DISCIPLINE, NONE } from '@/constants';
+import { ALL, CRYPT, DISCIPLINE, NONE, TYPE } from '@/constants';
 
 const InventoryFilterForm = ({ value, setValue, values, target, byTotal, byUnique }) => {
   const options = [];

@@ -1,7 +1,6 @@
-import React from 'react';
 import { twMerge } from 'tailwind-merge';
 import { TwdResultCryptTable, TwdResultLibraryKeyCardsTable, TwdResultTags } from '@/components';
-import { SUPERIOR, BASE, CLAN, TAGS, RANK, CRYPT, LIBRARY } from '@/constants';
+import { BASE, CLAN, CRYPT, LIBRARY, RANK, SUPERIOR, TAGS } from '@/constants';
 
 const BubbleChartTooltip = ({ active, payload }) => {
   const value = payload?.[0]?.payload;

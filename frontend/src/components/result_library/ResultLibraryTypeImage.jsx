@@ -1,4 +1,3 @@
-import React from 'react';
 import { ResultMiscImage } from '@/components';
 
 const ResultLibraryTypeImage = ({ value, size }) => {

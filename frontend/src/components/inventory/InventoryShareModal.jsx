@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import Link45Deg from '@icons/link-45deg.svg?react';
+import { useState } from 'react';
 import ClipboardFill from '@icons/clipboard-fill.svg?react';
-import { FlexGapped, Modal, Button, ButtonIconed } from '@/components';
+import Link45Deg from '@icons/link-45deg.svg?react';
+import { Button, ButtonIconed, FlexGapped, Modal } from '@/components';
 import { useApp } from '@/context';
 import { inventoryServices } from '@/services';
 
@@ -49,7 +49,7 @@ const InventoryShareModal = ({ setShow }) => {
             <>
               <a href={shareUrl}>{shareUrl}</a>
               <div
-                className="inline pl-1 text-fgSecondary hover:text-fgPrimary dark:text-fgSecondaryDark dark:hover:text-fgPrimaryDark"
+                className="text-fgSecondary hover:text-fgPrimary dark:text-fgSecondaryDark dark:hover:text-fgPrimaryDark inline pl-1"
                 onClick={() => navigator.clipboard.writeText(shareUrl)}
               >
                 <ClipboardFill className="inline" viewBox="0 0 18 18" />

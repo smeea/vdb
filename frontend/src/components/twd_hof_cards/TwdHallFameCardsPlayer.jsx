@@ -1,15 +1,12 @@
-import React, { useMemo } from 'react';
 import { Disclosure } from '@headlessui/react';
+import { useMemo } from 'react';
 import LightbulbFill from '@icons/lightbulb-fill.svg?react';
 import {
   ResultCryptTotal,
   ResultLibraryTotal,
-  TwdHallFameCardsCard,
   ResultModal,
+  TwdHallFameCardsCard,
 } from '@/components';
-import { cryptSort, librarySort } from '@/utils';
-import { useModalCardController } from '@/hooks';
-import { useApp } from '@/context';
 import {
   CAPACITY_MAX_MIN,
   CAPACITY_MIN_MAX,
@@ -18,12 +15,15 @@ import {
   COST_MAX_MIN,
   COST_MIN_MAX,
   GROUP,
+  ID,
   NAME,
   SECT,
-  TYPE,
-  ID,
   TWD_DATE,
+  TYPE,
 } from '@/constants';
+import { useApp } from '@/context';
+import { useModalCardController } from '@/hooks';
+import { cryptSort, librarySort } from '@/utils';
 
 const TwdHallFameCardsPlayer = ({ name, cards }) => {
   const {

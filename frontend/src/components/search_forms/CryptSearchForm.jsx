@@ -1,34 +1,23 @@
-import React, { useCallback, useState, useEffect } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router';
 import { useSnapshot } from 'valtio';
 import {
-  ButtonFloatSearch,
   ButtonFloatClose,
-  SearchFormTextAndButtons,
-  SearchFormSet,
-  SearchFormPrecon,
-  SearchFormArtist,
-  CryptSearchFormDisciplines,
-  CryptSearchFormVirtues,
+  ButtonFloatSearch,
   CryptSearchFormCapacity,
   CryptSearchFormClan,
-  CryptSearchFormSect,
-  CryptSearchFormVotes,
-  CryptSearchFormTitles,
+  CryptSearchFormDisciplines,
   CryptSearchFormGroup,
+  CryptSearchFormSect,
+  CryptSearchFormTitles,
   CryptSearchFormTraits,
+  CryptSearchFormVirtues,
+  CryptSearchFormVotes,
+  SearchFormArtist,
+  SearchFormPrecon,
+  SearchFormSet,
+  SearchFormTextAndButtons,
 } from '@/components';
-import { filterCrypt, getIsPlaytest, sanitizeFormState } from '@/utils';
-import { useDebounce } from '@/hooks';
-import {
-  useApp,
-  setCryptResults,
-  searchCryptForm,
-  clearSearchForm,
-  inventoryStore,
-  usedStore,
-  limitedStore,
-} from '@/context';
 import {
   AGE,
   ARTIST,
@@ -60,6 +49,17 @@ import {
   TRAITS,
   VOTES,
 } from '@/constants';
+import {
+  clearSearchForm,
+  inventoryStore,
+  limitedStore,
+  searchCryptForm,
+  setCryptResults,
+  useApp,
+  usedStore,
+} from '@/context';
+import { useDebounce } from '@/hooks';
+import { filterCrypt, getIsPlaytest, sanitizeFormState } from '@/utils';
 
 const CryptSearchForm = () => {
   const {

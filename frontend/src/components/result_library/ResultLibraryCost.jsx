@@ -1,7 +1,6 @@
-import React from 'react';
 import { twMerge } from 'tailwind-merge';
+import { BLOOD, CONVICTION, POOL } from '@/constants';
 import { capitalize } from '@/utils';
-import { BLOOD, POOL, CONVICTION } from '@/constants';
 
 const ResultLibraryCost = ({ card, className }) => {
   const target = card[BLOOD] ? BLOOD : card[POOL] ? POOL : CONVICTION;

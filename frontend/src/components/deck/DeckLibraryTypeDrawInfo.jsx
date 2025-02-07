@@ -1,5 +1,4 @@
-import React from 'react';
-import { Tooltip, DeckDrawProbabilityText } from '@/components';
+import { DeckDrawProbabilityText, Tooltip } from '@/components';
 import { drawProbability } from '@/utils';
 
 const DeckLibraryTypeDrawInfo = (props) => {

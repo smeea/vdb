@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router';
 import { useSnapshot } from 'valtio';
-import { ButtonFloatClose, PdaResult, PdaSearchForm, ErrorMessage, FlexGapped } from '@/components';
-import { useApp, searchResults, setPdaResults } from '@/context';
+import { ButtonFloatClose, ErrorMessage, FlexGapped, PdaResult, PdaSearchForm } from '@/components';
 import { PDA } from '@/constants';
+import { searchResults, setPdaResults, useApp } from '@/context';
 
 const Pda = () => {
   const { showFloatingButtons, isMobile } = useApp();

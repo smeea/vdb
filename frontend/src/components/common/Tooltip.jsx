@@ -1,19 +1,19 @@
-import React, { useState, useRef } from 'react';
-import { twMerge } from 'tailwind-merge';
 import {
-  useFloating,
-  autoUpdate,
-  offset,
-  flip,
-  shift,
-  arrow,
-  useHover,
-  useClick,
-  useFocus,
-  useDismiss,
-  useInteractions,
   FloatingPortal,
+  arrow,
+  autoUpdate,
+  flip,
+  offset,
+  shift,
+  useClick,
+  useDismiss,
+  useFloating,
+  useFocus,
+  useHover,
+  useInteractions,
 } from '@floating-ui/react';
+import { useRef, useState } from 'react';
+import { twMerge } from 'tailwind-merge';
 
 const Tooltip = ({
   children,
@@ -80,7 +80,7 @@ const Tooltip = ({
         {(show || open) && (
           <div
             className={twMerge(
-              'z-50 rounded-md border border-bgSecondary bg-bgPrimary text-fgPrimary dark:border-bgSecondaryDark dark:bg-bgPrimaryDark dark:text-fgPrimaryDark',
+              'border-bgSecondary bg-bgPrimary text-fgPrimary dark:border-bgSecondaryDark dark:bg-bgPrimaryDark dark:text-fgPrimaryDark z-50 rounded-md border',
               !noPadding && 'p-3',
               widthClass[size],
             )}
@@ -96,7 +96,7 @@ const Tooltip = ({
             <div
               ref={arrowRef}
               className={twMerge(
-                'absolute z-[-1] h-[12px] w-[12px] border-b border-l border-bgSecondary bg-bgPrimary dark:border-bgSecondaryDark dark:bg-bgPrimaryDark',
+                'border-bgSecondary bg-bgPrimary dark:border-bgSecondaryDark dark:bg-bgPrimaryDark absolute z-[-1] h-[12px] w-[12px] border-b border-l',
                 arrowOffset,
                 arrowRotate,
               )}

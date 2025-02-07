@@ -1,24 +1,24 @@
-import React, { useState } from 'react';
 import { Menu } from '@headlessui/react';
-import { useSnapshot } from 'valtio';
+import { useState } from 'react';
 import { useNavigate, useParams } from 'react-router';
+import { useSnapshot } from 'valtio';
 import Download from '@icons/download.svg?react';
 import TrashFill from '@icons/trash-fill.svg?react';
 import {
-  FlexGapped,
-  DeckSelectAdvTotal,
-  DeckSelectAdvTable,
-  Modal,
-  MenuItems,
-  MenuItem,
-  MenuButton,
   ButtonIconed,
+  DeckSelectAdvTable,
+  DeckSelectAdvTotal,
+  FlexGapped,
+  MenuButton,
+  MenuItem,
+  MenuItems,
+  Modal,
   ModalConfirmation,
 } from '@/components';
-import { useApp, deckStore } from '@/context';
-import { deckServices } from '@/services';
+import { DECKID, DECKS, JOL, LACKEY, NAME, TEXT, XLSX } from '@/constants';
+import { deckStore, useApp } from '@/context';
 import { useDecksTagsAll } from '@/hooks';
-import { DECKID, DECKS, NAME, JOL, LACKEY, TEXT, XLSX } from '@/constants';
+import { deckServices } from '@/services';
 
 const DeckSelectAdvModal = ({ onClick, setShow, short }) => {
   const { isMobile, setShowMenuButtons, setShowFloatingButtons } = useApp();

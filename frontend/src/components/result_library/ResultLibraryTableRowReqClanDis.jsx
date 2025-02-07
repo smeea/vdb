@@ -1,11 +1,10 @@
-import React from 'react';
 import {
   ResultLibraryClan,
   ResultLibraryDisciplines,
   ResultLibraryRequirements,
   ResultPathImage,
 } from '@/components';
-import { PATH, REQUIREMENT, DISCIPLINE, CLAN } from '@/constants';
+import { CLAN, DISCIPLINE, PATH, REQUIREMENT } from '@/constants';
 
 const ResultLibraryTableRowReqClanDis = ({ card, handleClick }) => {
   return (

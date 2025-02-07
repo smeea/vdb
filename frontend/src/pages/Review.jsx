@@ -1,24 +1,24 @@
-import React, { useState, useEffect } from 'react';
-import { useNavigate, useLocation, useParams, useLoaderData } from 'react-router';
-import { useSnapshot } from 'valtio';
+import { useEffect, useState } from 'react';
+import { useLoaderData, useLocation, useNavigate, useParams } from 'react-router';
 import { useImmer } from 'use-immer';
+import { useSnapshot } from 'valtio';
 import {
-  ButtonFloatMenu,
   ButtonFloatClose,
-  DeckNewCardFloating,
+  ButtonFloatMenu,
   DeckDetails,
+  DeckNewCardFloating,
   ErrorMessage,
+  FlexGapped,
   Modal,
   ReviewButtons,
   ReviewCrypt,
   ReviewLibrary,
-  FlexGapped,
 } from '@/components';
-import { useApp, deckStore } from '@/context';
 import {
   BRANCHES,
   CARDS,
   CRYPT,
+  DECK,
   DECKID,
   DECKS,
   DESCRIPTION,
@@ -28,11 +28,11 @@ import {
   IS_PUBLIC,
   LIBRARY,
   MASTER,
-  TAGS,
   PUBLIC_PARENT,
-  DECK,
+  TAGS,
 } from '@/constants';
-import { getTags, parseDeck, deepClone } from '@/utils';
+import { deckStore, useApp } from '@/context';
+import { deepClone, getTags, parseDeck } from '@/utils';
 
 const Review = () => {
   const {
@@ -227,7 +227,7 @@ const Review = () => {
           )}
         </FlexGapped>
         <div className="min-w-[175px] max-lg:hidden">
-          <div className="sticky z-20 w-full bg-bgPrimary dark:bg-bgPrimaryDark lg:top-10">
+          <div className="bg-bgPrimary dark:bg-bgPrimaryDark sticky z-20 w-full lg:top-10">
             <ReviewButtons deck={deckFrom} urlDiff={urlDiff} parentId={inDecks ? parentId : null} />
           </div>
         </div>

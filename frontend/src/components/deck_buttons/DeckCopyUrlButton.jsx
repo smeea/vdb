@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
 import { Menu } from '@headlessui/react';
+import { useState } from 'react';
 import Link45Deg from '@icons/link-45deg.svg?react';
-import { MenuItems, MenuItem, MenuButton } from '@/components';
-import { deckServices } from '@/services';
+import { MenuButton, MenuItem, MenuItems } from '@/components';
+import { DECK, DECKID } from '@/constants';
 import { useApp } from '@/context';
+import { deckServices } from '@/services';
 import { getDeckInUrl } from '@/utils';
-import { DECKID, DECK } from '@/constants';
 
 const DeckCopyUrlButton = ({ deck, noText, setQrUrl }) => {
   const { isDesktop, setShowMenuButtons, setShowFloatingButtons } = useApp();

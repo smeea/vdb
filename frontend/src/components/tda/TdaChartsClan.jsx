@@ -1,8 +1,8 @@
-import React, { useMemo } from 'react';
-import { PieChart, Pie, Tooltip } from 'recharts';
-import { getClan } from '@/utils';
+import { useMemo } from 'react';
+import { Pie, PieChart, Tooltip } from 'recharts';
+import { ANTITRIBU, CRYPT, MULTI, NAME, VALUE } from '@/constants';
 import { useApp } from '@/context';
-import { NAME, CRYPT, VALUE, MULTI, ANTITRIBU } from '@/constants';
+import { getClan } from '@/utils';
 
 const TdaChartsClan = ({ decks }) => {
   const { isMobile, isDesktop, isWide } = useApp();

@@ -1,4 +1,3 @@
-import React from 'react';
 import { useSnapshot } from 'valtio';
 import {
   Checkbox,
@@ -6,8 +5,8 @@ import {
   InventoryFreezeButton,
   InventoryShowSelect,
 } from '@/components';
-import { inventoryStore } from '@/context';
 import { OK } from '@/constants';
+import { inventoryStore } from '@/context';
 
 const InventoryMenu = ({
   sharedCrypt,
@@ -47,7 +46,7 @@ const InventoryMenu = ({
       />
       <InventoryFreezeButton isFrozen={isFrozen} />
       <InventoryShowSelect category={category} setCategory={setCategory} />
-      <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
+      <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">
         <Checkbox
           label="Only with Notes"
           checked={onlyNotes}

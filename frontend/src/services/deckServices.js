@@ -1,7 +1,6 @@
-import ky from 'ky';
 import dayjs from 'dayjs';
+import ky from 'ky';
 import { redirect } from 'react-router';
-import { getTags, getIsPlaytest, exportDeck, getTextDisciplines } from '@/utils';
 import {
   ADV,
   AUTHOR,
@@ -40,6 +39,7 @@ import {
   XLSX,
 } from '@/constants';
 import { deckStore } from '@/context';
+import { exportDeck, getIsPlaytest, getTags, getTextDisciplines } from '@/utils';
 
 export const update = (deckid, field, value) => {
   const url = `${import.meta.env.VITE_API_URL}/deck/${deckid}`;

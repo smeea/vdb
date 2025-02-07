@@ -1,10 +1,10 @@
-import React, { useState, useRef } from 'react';
+import { useRef, useState } from 'react';
 import { useNavigate } from 'react-router';
-import { FlexGapped, Textarea, Modal, Button, ErrorOverlay } from '@/components';
-import { useApp, deckAdd } from '@/context';
-import { importDeck } from '@/utils';
+import { Button, ErrorOverlay, FlexGapped, Modal, Textarea } from '@/components';
+import { BAD_CARDS, DECKID, IS_ANONYMOUS } from '@/constants';
+import { deckAdd, useApp } from '@/context';
 import { deckServices } from '@/services';
-import { IS_ANONYMOUS, DECKID, BAD_CARDS } from '@/constants';
+import { importDeck } from '@/utils';
 
 const DeckImportText = ({ isAnonymous, setBadCards, setShow }) => {
   const {

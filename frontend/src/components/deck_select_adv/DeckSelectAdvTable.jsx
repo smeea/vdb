@@ -1,7 +1,7 @@
-import React, { useState, useMemo } from 'react';
-import { getClan, decksSort } from '@/utils';
-import { DeckSelectAdvTableRow, DeckSelectAdvTableHeader, ResultClanImage } from '@/components';
-import { CRYPT, NAME, LIBRARY, TAGS, MASTER, DECKID, INVENTORY_TYPE, ANY } from '@/constants';
+import { useMemo, useState } from 'react';
+import { DeckSelectAdvTableHeader, DeckSelectAdvTableRow, ResultClanImage } from '@/components';
+import { ANY, CRYPT, DECKID, INVENTORY_TYPE, LIBRARY, MASTER, NAME, TAGS } from '@/constants';
+import { decksSort, getClan } from '@/utils';
 
 const DeckSelectAdvTable = ({
   allTagsOptions,

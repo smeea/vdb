@@ -1,29 +1,28 @@
-import React from 'react';
 import {
-  DeckSearchSimilarButton,
-  DeckCloneButton,
-  DeckDeleteButton,
-  DeckDeletePlaytestButton,
-  DeckCopyUrlButton,
-  DeckImport,
-  DeckExportButton,
-  DeckProxyButtonWrapper,
-  DeckMissingButton,
-  DeckRecommendationButton,
-  DeckDrawButton,
-  DeckDiffButton,
-  DeckReviewButton,
   DeckBranchCreateButton,
   DeckBranchDeleteButton,
+  DeckCloneButton,
+  DeckCopyUrlButton,
+  DeckDeleteButton,
+  DeckDeletePlaytestButton,
+  DeckDiffButton,
+  DeckDrawButton,
+  DeckExportButton,
+  DeckImport,
+  DeckMissingButton,
+  DeckProxyButtonWrapper,
   DeckPublicSwitchButton,
   DeckPublicSyncButton,
   DeckPublicToggleButton,
-  SeatingButton,
+  DeckRecommendationButton,
+  DeckReviewButton,
+  DeckSearchSimilarButton,
   PlaytestReportsOneButton,
+  SeatingButton,
 } from '@/components';
+import { DECK, DECKID, ID, NAME, PLAYTEST } from '@/constants';
 import { useApp } from '@/context';
 import { getRestrictions } from '@/utils';
-import { PLAYTEST, DECK, DECKID, NAME, ID } from '@/constants';
 
 const DeckButtons = ({
   deck,

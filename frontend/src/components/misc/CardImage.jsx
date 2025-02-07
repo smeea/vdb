@@ -1,8 +1,7 @@
-import React from 'react';
 import { twMerge } from 'tailwind-merge';
+import { CLAN, EN, ID, NAME } from '@/constants';
 import { useApp } from '@/context';
 import { getCardImageUrl } from '@/utils';
-import { NAME, CLAN, ID, EN } from '@/constants';
 
 const CardImage = ({ card, set, className = 'max-sm:w-full', size = 'md', onClick }) => {
   const { lang, showLegacyImage } = useApp();

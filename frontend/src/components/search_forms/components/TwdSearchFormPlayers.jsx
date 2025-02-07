@@ -1,6 +1,5 @@
-import React from 'react';
 import { Select } from '@/components';
-import { PLAYERS, ANY, FROM, TO } from '@/constants';
+import { ANY, FROM, PLAYERS, TO } from '@/constants';
 
 const TwdSearchFormPlayers = ({ value, onChange }) => {
   const name = PLAYERS;

@@ -1,8 +1,7 @@
-import React from 'react';
 import { twMerge } from 'tailwind-merge';
-import Star from '@icons/star.svg?react';
-import StarHalf from '@icons/star-half.svg?react';
 import StarFill from '@icons/star-fill.svg?react';
+import StarHalf from '@icons/star-half.svg?react';
+import Star from '@icons/star.svg?react';
 import { useApp } from '@/context';
 
 const PlaytestScores = ({ value, handleClick, disabled, isSmall }) => {
@@ -23,7 +22,7 @@ const PlaytestScores = ({ value, handleClick, disabled, isSmall }) => {
   ];
 
   return (
-    <div className="flex gap-1.5 px-1 sm:gap-2 print:dark:text-fgPrimary">
+    <div className="print:dark:text-fgPrimary flex gap-1.5 px-1 sm:gap-2">
       {Array.from(Array(10).keys()).map((i) => {
         return (
           <div

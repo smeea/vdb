@@ -1,9 +1,8 @@
-import React from 'react';
 import {
-  TdaChartsRankingStyle,
-  TdaChartsRankingClan,
-  TdaChartsStyle,
   TdaChartsClan,
+  TdaChartsRankingClan,
+  TdaChartsRankingStyle,
+  TdaChartsStyle,
   Title,
 } from '@/components';
 

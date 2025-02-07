@@ -1,8 +1,8 @@
-import React, { useState, useMemo } from 'react';
-import { TwdDeck, TwdDeckWrapper, TwdResultTotal, Button } from '@/components';
-import { decksSort } from '@/utils';
+import { useMemo, useState } from 'react';
+import { Button, TwdDeck, TwdDeckWrapper, TwdResultTotal } from '@/components';
+import { CARDS, DATE_NEW_OLD, DATE_OLD_NEW, DECKID, FAVORITES } from '@/constants';
 import { useApp } from '@/context';
-import { CARDS, DECKID, DATE_NEW_OLD, DATE_OLD_NEW, FAVORITES } from '@/constants';
+import { decksSort } from '@/utils';
 
 const PdaResult = ({ results }) => {
   const { pdaSearchSort, changePdaSearchSort } = useApp();

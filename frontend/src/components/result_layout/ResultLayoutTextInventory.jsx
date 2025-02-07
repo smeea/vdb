@@ -1,12 +1,11 @@
-import React from 'react';
 import { twMerge } from 'tailwind-merge';
 import { useSnapshot } from 'valtio';
 import ArchiveFill from '@icons/archive-fill.svg?react';
 import CalculatorFill from '@icons/calculator-fill.svg?react';
 import { InventoryText, UsedDescription } from '@/components';
-import { inventoryStore, usedStore, deckStore } from '@/context';
+import { CRYPT, DECKS, HARD, ID, LIBRARY, SOFT } from '@/constants';
+import { deckStore, inventoryStore, usedStore } from '@/context';
 import { getHardTotal, getSoftMax } from '@/utils';
-import { ID, SOFT, HARD, CRYPT, LIBRARY, DECKS } from '@/constants';
 
 const ResultLayoutTextInventory = ({ card, inPopover, setIsHotkeysDisabled }) => {
   const decks = useSnapshot(deckStore)[DECKS];

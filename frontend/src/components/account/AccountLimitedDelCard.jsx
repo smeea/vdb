@@ -1,7 +1,6 @@
-import React from 'react';
 import { Button } from '@/components';
-import { limitedCardChange } from '@/context';
 import { ALLOWED, ID } from '@/constants';
+import { limitedCardChange } from '@/context';
 
 const AccountLimitedDelCard = ({ cardid, target }) => {
   const card = { [ID]: cardid };

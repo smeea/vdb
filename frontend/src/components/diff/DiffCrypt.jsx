@@ -1,16 +1,16 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 import {
-  FlexGapped,
-  DiffCryptTable,
-  DiffCardsTotalDiff,
-  ResultModal,
   DeckCryptHeader,
+  DiffCardsTotalDiff,
+  DiffCryptTable,
+  FlexGapped,
+  ResultModal,
 } from '@/components';
+import { CAPACITY, CLAN, CRYPT, DECKID, GROUP, NAME, QUANTITYx, SECT } from '@/constants';
 import { useApp } from '@/context';
-import { getKeyDisciplines, getIsEditable } from '@/utils';
-import { useModalCardController, useDeckCrypt } from '@/hooks';
-import { CRYPT, DECKID, CAPACITY, CLAN, GROUP, NAME, QUANTITYx, SECT } from '@/constants';
+import { useDeckCrypt, useModalCardController } from '@/hooks';
+import { getIsEditable, getKeyDisciplines } from '@/utils';
 
 const DiffCrypt = ({ cardsTo, deck }) => {
   const { isMobile, cryptDeckSort, changeCryptDeckSort, setShowFloatingButtons } = useApp();
@@ -63,7 +63,7 @@ const DiffCrypt = ({ cardsTo, deck }) => {
     <FlexGapped
       className={twMerge(
         'flex-col',
-        !isMobile && 'sticky bg-bgPrimary dark:bg-bgPrimaryDark sm:top-10',
+        !isMobile && 'bg-bgPrimary dark:bg-bgPrimaryDark sticky sm:top-10',
       )}
     >
       <div>

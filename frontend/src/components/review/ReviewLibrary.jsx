@@ -1,15 +1,15 @@
-import React, { useCallback, useState } from 'react';
+import { useCallback, useState } from 'react';
 import {
-  DiffLibraryTable,
-  ResultLibraryType,
-  ResultModal,
   DeckDrawProbability,
   DeckLibraryHeader,
+  DiffLibraryTable,
   FlexGapped,
+  ResultLibraryType,
+  ResultModal,
 } from '@/components';
-import { useApp } from '@/context';
 import { LIBRARY, TYPE_MASTER } from '@/constants';
-import { useModalCardController, useDeckLibrary } from '@/hooks';
+import { useApp } from '@/context';
+import { useDeckLibrary, useModalCardController } from '@/hooks';
 
 const ReviewLibrary = ({ cardChange, deckFrom, cardsTo }) => {
   const { setShowFloatingButtons, isDesktop } = useApp();

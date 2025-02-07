@@ -1,8 +1,8 @@
 import { proxy } from 'valtio';
-import { getIsPlaytest, deepClone } from '@/utils';
-import { inventoryServices } from '@/services';
+import { CRYPT, HARD, ID, INVENTORY_TYPE, IS_FROZEN, LIBRARY, SOFT } from '@/constants';
 import { startCryptTimer } from '@/context';
-import { IS_FROZEN, ID, INVENTORY_TYPE, CRYPT, LIBRARY, SOFT, HARD } from '@/constants';
+import { inventoryServices } from '@/services';
+import { deepClone, getIsPlaytest } from '@/utils';
 
 export const inventoryStore = proxy({
   [CRYPT]: {},

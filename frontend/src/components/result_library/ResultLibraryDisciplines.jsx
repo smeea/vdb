@@ -1,4 +1,3 @@
-import React from 'react';
 import { ResultDisciplineImage } from '@/components';
 
 const ResultLibraryDisciplines = ({ value }) => {

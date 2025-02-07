@@ -1,10 +1,9 @@
-import React from 'react';
 import { twMerge } from 'tailwind-merge';
 import { ButtonAddCard, ResultLibraryTableRowCommon } from '@/components';
+import { DECKID, ID, LIBRARY } from '@/constants';
 import { deckCardChange } from '@/context';
-import { getIsEditable, getSwipedBg } from '@/utils';
 import { useSwipe } from '@/hooks';
-import { LIBRARY, ID, DECKID } from '@/constants';
+import { getIsEditable, getSwipedBg } from '@/utils';
 
 const DeckRecommendationLibraryTableRow = ({ card, handleClick, deck }) => {
   const inDeck = deck[LIBRARY][card[ID]]?.q || 0;
@@ -20,7 +19,7 @@ const DeckRecommendationLibraryTableRow = ({ card, handleClick, deck }) => {
     <tr
       {...swipeHandlers}
       className={twMerge(
-        'h-[38px] border-y border-bgSecondary dark:border-bgSecondaryDark',
+        'border-bgSecondary dark:border-bgSecondaryDark h-[38px] border-y',
         getSwipedBg(isSwiped),
       )}
     >

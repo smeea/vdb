@@ -1,8 +1,7 @@
-import React from 'react';
-import { Select } from '@/components';
 import cryptArtists from '@/assets/data/artistsCrypt.json';
 import libraryArtists from '@/assets/data/artistsLib.json';
-import { ARTIST, CRYPT, ANY } from '@/constants';
+import { Select } from '@/components';
+import { ANY, ARTIST, CRYPT } from '@/constants';
 
 const SearchFormArtist = ({ target, value, onChange }) => {
   const name = ARTIST;

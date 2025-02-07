@@ -1,16 +1,15 @@
-import React from 'react';
 import LockFill from '@icons/lock-fill.svg?react';
 import UnlockFill from '@icons/unlock-fill.svg?react';
 import { Button } from '@/components';
-import { useApp, inventoryUpdate } from '@/context';
 import { IS_FROZEN } from '@/constants';
+import { inventoryUpdate, useApp } from '@/context';
 
 const InventoryFreezeButton = ({ isFrozen, className, roundedStyle, borderStyle }) => {
   const { isDesktop } = useApp();
   const handleClick = () => inventoryUpdate(IS_FROZEN, !isFrozen);
 
   return (
-    <div className="flex items-center gap-2 text-fgPrimary dark:text-fgPrimaryDark">
+    <div className="text-fgPrimary dark:text-fgPrimaryDark flex items-center gap-2">
       <Button
         variant={isDesktop ? 'secondary' : 'primary'}
         onClick={handleClick}

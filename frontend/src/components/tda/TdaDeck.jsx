@@ -1,10 +1,9 @@
-import React from 'react';
 import {
+  Hr,
   TdaDeckDescription,
   TwdResultCryptTable,
   TwdResultLibraryByTypeTable,
   TwdResultLibraryKeyCardsTable,
-  Hr,
 } from '@/components';
 import { AUTHOR, CRYPT, LIBRARY } from '@/constants';
 

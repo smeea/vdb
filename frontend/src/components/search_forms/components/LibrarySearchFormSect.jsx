@@ -1,13 +1,12 @@
-import React from 'react';
+import sects from '@/assets/data/sectsList.json';
 import {
-  Select,
   SearchAdditionalForms,
-  SearchFormButtonLogicToggle,
   SearchFormButtonAdd,
   SearchFormButtonDel,
+  SearchFormButtonLogicToggle,
+  Select,
 } from '@/components';
-import { LOGIC, SECT, ANY, NOT_REQUIRED } from '@/constants';
-import sects from '@/assets/data/sectsList.json';
+import { ANY, LOGIC, NOT_REQUIRED, SECT } from '@/constants';
 
 const LibrarySearchFormSect = ({ value, searchForm, onChange }) => {
   const name = SECT;

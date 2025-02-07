@@ -1,13 +1,12 @@
-import React from 'react';
 import dayjs from 'dayjs';
-import { useApp } from '@/context';
 import {
   ResultCryptTableRowCommon,
   ResultLibraryTableRowCommon,
-  TwdOpenDeckButton,
   Tr,
+  TwdOpenDeckButton,
 } from '@/components';
-import { TWD_DATE, ID, DECKID, RELEASE_DATE } from '@/constants';
+import { DECKID, ID, RELEASE_DATE, TWD_DATE } from '@/constants';
+import { useApp } from '@/context';
 
 const TwdHallFameCardsCard = ({ card, handleClick }) => {
   const { isMobile } = useApp();

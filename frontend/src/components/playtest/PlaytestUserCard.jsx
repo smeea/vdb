@@ -1,18 +1,18 @@
-import React, { useState, useEffect } from 'react';
-import PersonFillExclamation from '@icons/person-fill-exclamation.svg?react';
+import { useEffect, useState } from 'react';
 import EightCircleFill from '@icons/8-circle-fill.svg?react';
 import Calendar2EventFill from '@icons/calendar2-event-fill.svg?react';
+import PersonFillExclamation from '@icons/person-fill-exclamation.svg?react';
 import PostcardHeartFill from '@icons/postcard-heart-fill.svg?react';
 import {
-  Input,
-  Textarea,
-  Select,
-  ListEntry,
   ConditionalTooltipOrModal,
+  Input,
+  ListEntry,
   PlaytestLanguageSelector,
+  Select,
+  Textarea,
 } from '@/components';
+import { GAMES, GENERAL, LIAISON, TIMESTAMP } from '@/constants';
 import { useApp } from '@/context';
-import { TIMESTAMP, GENERAL, GAMES, LIAISON } from '@/constants';
 
 const PlaytestUserCard = () => {
   const { isMobile, playtestProfile, updatePlaytestProfile } = useApp();

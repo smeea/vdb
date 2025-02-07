@@ -1,14 +1,13 @@
-import React from 'react';
+import cardtypeSorted from '@/assets/data/cardtypeSorted.json';
 import {
-  Select,
   ResultLibraryTypeImage,
   SearchAdditionalForms,
-  SearchFormButtonLogicToggle,
   SearchFormButtonAdd,
   SearchFormButtonDel,
+  SearchFormButtonLogicToggle,
+  Select,
 } from '@/components';
-import { LOGIC, TYPE, ANY } from '@/constants';
-import cardtypeSorted from '@/assets/data/cardtypeSorted.json';
+import { ANY, LOGIC, TYPE } from '@/constants';
 
 const LibrarySearchFormType = ({ value, onChange, searchForm }) => {
   const name = TYPE;

@@ -1,9 +1,8 @@
-import React from 'react';
 import {
-  DiffCopyUrlButton,
-  DiffBackButton,
-  DiffProxyButtonWrapper,
   DeckMissingButton,
+  DiffBackButton,
+  DiffCopyUrlButton,
+  DiffProxyButtonWrapper,
 } from '@/components';
 import { DECKID } from '@/constants';
 

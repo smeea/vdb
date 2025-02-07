@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { Button, ButtonCardChange } from '@/components';
+import { EQ, GT, LT, LT0 } from '@/constants';
 import { useApp } from '@/context';
-import { EQ, LT, LT0, GT } from '@/constants';
 
 const TwdSearchFormQuantityButtons = ({ value, form, id }) => {
   const { isMobile } = useApp();

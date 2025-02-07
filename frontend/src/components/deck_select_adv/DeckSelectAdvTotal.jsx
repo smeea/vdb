@@ -1,9 +1,8 @@
-import React from 'react';
 import { twMerge } from 'tailwind-merge';
 import { useSnapshot } from 'valtio';
-import { useApp, deckStore } from '@/context';
-import { Header, DeckSortButton } from '@/components';
-import { TAGS, DECKS } from '@/constants';
+import { DeckSortButton, Header } from '@/components';
+import { DECKS, TAGS } from '@/constants';
+import { deckStore, useApp } from '@/context';
 
 const DeckSelectAdvTotal = ({ sortMethod, setSortMethod, tagsFilter, setTagsFilter }) => {
   const { isMobile } = useApp();

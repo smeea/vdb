@@ -1,10 +1,8 @@
-import React from 'react';
-import XIcon from '@icons/x.svg?react';
 import InfoCircle from '@icons/info-circle.svg?react';
-import { ANY } from '@/constants';
-import { Button, SortButton, Header } from '@/components';
+import XIcon from '@icons/x.svg?react';
+import { Button, Header, SortButton } from '@/components';
+import { ANY, CAPACITY, GROUP, X } from '@/constants';
 import { setCryptCompare } from '@/context';
-import { X, GROUP, CAPACITY } from '@/constants';
 
 const ResultCryptTotal = ({
   cards,

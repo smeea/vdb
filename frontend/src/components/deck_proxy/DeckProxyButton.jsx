@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
 import { Menu } from '@headlessui/react';
+import { useState } from 'react';
 import Printer from '@icons/printer.svg?react';
-import { Spinner, MenuButton, MenuItems, MenuItem } from '@/components';
+import { MenuButton, MenuItem, MenuItems, Spinner } from '@/components';
 import { CRYPT, LIBRARY, NAME } from '@/constants';
 import { useApp } from '@/context';
 import { pdfServices } from '@/services';

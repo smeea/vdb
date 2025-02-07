@@ -1,6 +1,4 @@
-import React from 'react';
 import { twMerge } from 'tailwind-merge';
-import { useApp } from '@/context';
 import {
   ButtonCloseModal,
   CardPopover,
@@ -8,29 +6,30 @@ import {
   Hr,
   ResultClanImage,
   ResultCryptCapacity,
-  ResultCryptSect,
-  ResultCryptTitle,
   ResultCryptDisciplines,
   ResultCryptGroup,
-  ResultPathImage,
+  ResultCryptSect,
+  ResultCryptTitle,
+  ResultLayoutTextText,
   ResultName,
   ResultNameAka,
-  ResultLayoutTextText,
+  ResultPathImage,
 } from '@/components';
-import { getLegality } from '@/utils';
 import {
+  ADV,
+  AKA,
+  BANNED,
+  CLAN,
+  DISCIPLINES,
+  GROUP,
+  ID,
   PATH,
+  PLAYTEST,
   SECT,
   TITLE,
-  CLAN,
-  ADV,
-  ID,
-  DISCIPLINES,
-  BANNED,
-  GROUP,
-  AKA,
-  PLAYTEST,
 } from '@/constants';
+import { useApp } from '@/context';
+import { getLegality } from '@/utils';
 
 const ResultCryptLayoutText = ({ card, setCard, handleClose, noClose, inPopover }) => {
   const { isNarrow, isMobile, cryptCardBase } = useApp();

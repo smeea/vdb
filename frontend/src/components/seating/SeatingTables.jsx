@@ -1,4 +1,3 @@
-import React from 'react';
 import { SeatingTableLayout } from '@/components';
 
 const SeatingTables = ({ seating }) => {

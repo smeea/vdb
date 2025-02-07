@@ -1,7 +1,6 @@
-import React from 'react';
 import dayjs from 'dayjs';
 import { Select } from '@/components';
-import { DATE, ANY, FROM, TO } from '@/constants';
+import { ANY, DATE, FROM, TO } from '@/constants';
 
 const TwdSearchFormDate = ({ inPda, value, onChange }) => {
   const name = DATE;

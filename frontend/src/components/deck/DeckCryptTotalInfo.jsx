@@ -1,9 +1,8 @@
-import React from 'react';
 import { twMerge } from 'tailwind-merge';
 import { DisciplinesCryptSummary, ResultCryptCapacity } from '@/components';
+import { CAPACITY, X } from '@/constants';
 import { useApp } from '@/context';
-import { drawUniqueProbability, countCards, countTotalCost } from '@/utils';
-import { X, CAPACITY } from '@/constants';
+import { countCards, countTotalCost, drawUniqueProbability } from '@/utils';
 
 const UniqueDraw = ({ cards }) => {
   const { isMobile } = useApp();
@@ -26,7 +25,7 @@ const UniqueDraw = ({ cards }) => {
         {Object.keys(probs).map((i) => {
           return (
             <div className="inline" key={i} title="Chance to draw X unique vampires">
-              <div className="inline font-bold text-fgSecondary dark:text-fgSecondaryDark">
+              <div className="text-fgSecondary dark:text-fgSecondaryDark inline font-bold">
                 {i}:
               </div>{' '}
               {probs[i]}%
@@ -44,10 +43,10 @@ const DeckCryptTotalInfo = ({ cards, disciplinesDetailed }) => {
   const cryptAvg = Math.round((cryptTotalCap / cryptTotalQ) * 100) / 100;
 
   return (
-    <div className="flex flex-col gap-2 bg-bgSecondary p-2 dark:bg-bgSecondaryDark">
+    <div className="bg-bgSecondary dark:bg-bgSecondaryDark flex flex-col gap-2 p-2">
       <div className="flex justify-between">
         <div className="flex gap-0.5" title="Average capacity">
-          <div className="flex items-center gap-1 text-fgSecondary dark:text-fgSecondaryDark">
+          <div className="text-fgSecondary dark:text-fgSecondaryDark flex items-center gap-1">
             Avg.
             <ResultCryptCapacity card={{ [CAPACITY]: X }} />
           </div>

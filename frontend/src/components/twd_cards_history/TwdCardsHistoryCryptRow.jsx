@@ -1,17 +1,16 @@
-import React from 'react';
 import { twMerge } from 'tailwind-merge';
 import {
-  TwdCardsHistoryCardAppearance,
   CardPopover,
   ConditionalTooltip,
+  ResultClanImage,
   ResultCryptCapacity,
   ResultCryptDisciplines,
-  ResultName,
-  ResultClanImage,
   ResultCryptGroup,
   ResultCryptTitle,
+  ResultName,
+  TwdCardsHistoryCardAppearance,
 } from '@/components';
-import { PLAYER, DECKID, DISCIPLINES, TITLE, CLAN, GROUP } from '@/constants';
+import { CLAN, DECKID, DISCIPLINES, GROUP, PLAYER, TITLE } from '@/constants';
 import { useApp } from '@/context';
 
 const TwdCardsHistoryCryptRow = ({ card, players, handleClick }) => {

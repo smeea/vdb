@@ -1,14 +1,13 @@
-import React from 'react';
 import { Link } from 'react-router';
 import At from '@icons/at.svg?react';
-import Shuffle from '@icons/shuffle.svg?react';
-import SearchHeartFill from '@icons/search-heart-fill.svg?react';
-import PinAngleFill from '@icons/pin-angle-fill.svg?react';
 import ImageAlt from '@icons/image-alt.svg?react';
-import { Title, Banner } from '@/components';
+import PinAngleFill from '@icons/pin-angle-fill.svg?react';
+import SearchHeartFill from '@icons/search-heart-fill.svg?react';
+import Shuffle from '@icons/shuffle.svg?react';
+import { Banner, Title } from '@/components';
 
 const SubTitle = ({ children }) => {
-  return <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">{children}</div>;
+  return <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">{children}</div>;
 };
 
 const Documentation = () => {

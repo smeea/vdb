@@ -1,10 +1,7 @@
-import React, { useState, useRef } from 'react';
 import dayjs from 'dayjs';
+import { useRef, useState } from 'react';
 import { useNavigate } from 'react-router';
-import { Spinner, Modal, Input, Button, ErrorOverlay } from '@/components';
-import { useApp, deckAdd } from '@/context';
-import { deckServices } from '@/services';
-import { useFetch } from '@/hooks';
+import { Button, ErrorOverlay, Input, Modal, Spinner } from '@/components';
 import {
   AUTHOR,
   BRANCHES,
@@ -13,13 +10,16 @@ import {
   CRYPT,
   DECKID,
   DESCRIPTION,
-  LIBRARY,
-  NAME,
-  TITLE,
-  TIMESTAMP,
   IS_AUTHOR,
+  LIBRARY,
   MASTER,
+  NAME,
+  TIMESTAMP,
+  TITLE,
 } from '@/constants';
+import { deckAdd, useApp } from '@/context';
+import { useFetch } from '@/hooks';
+import { deckServices } from '@/services';
 
 const DeckImportAmaranth = ({ setShow }) => {
   const { setShowFloatingButtons, cryptCardBase, libraryCardBase, isMobile } = useApp();

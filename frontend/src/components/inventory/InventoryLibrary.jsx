@@ -1,8 +1,7 @@
-import React from 'react';
-import { InventoryLibraryTable, InventoryFilterForm, SortButton, Header } from '@/components';
+import { Header, InventoryFilterForm, InventoryLibraryTable, SortButton } from '@/components';
+import { ALL, CLAN_DISCIPLINE, DISCIPLINE, ID, NAME, QUANTITY, TYPE } from '@/constants';
 import { useApp } from '@/context';
 import { useInventoryLibrary } from '@/hooks';
-import { ID, ALL, CLAN_DISCIPLINE, NAME, QUANTITY, TYPE, DISCIPLINE } from '@/constants';
 
 const InventoryLibrary = ({
   compact,
@@ -66,7 +65,7 @@ const InventoryLibrary = ({
                   target={DISCIPLINE}
                 />
               </div>
-              <div className="flex justify-end font-bold text-midGray dark:text-midGrayDark">
+              <div className="text-midGray dark:text-midGrayDark flex justify-end font-bold">
                 {missingFilteredTotal ? (
                   <>
                     {missingFilteredTotal} ({Object.values(missingFiltered).length} uniq) miss

@@ -1,12 +1,11 @@
-import React from 'react';
+import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 import {
-  Select,
+  Checkbox,
   SearchAdditionalForms,
   SearchFormButtonAdd,
   SearchFormButtonDel,
-  Checkbox,
+  Select,
 } from '@/components';
-import { useApp } from '@/context';
 import {
   AGE,
   ANY,
@@ -27,7 +26,7 @@ import {
   SET,
   TITLE,
 } from '@/constants';
-import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
+import { useApp } from '@/context';
 
 const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
   const { playtestMode, isMobile } = useApp();

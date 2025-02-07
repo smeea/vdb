@@ -1,7 +1,7 @@
-import React, { useMemo } from 'react';
-import { Radar, RadarChart, PolarGrid, PolarAngleAxis } from 'recharts';
+import { useMemo } from 'react';
+import { PolarAngleAxis, PolarGrid, Radar, RadarChart } from 'recharts';
+import { BASE, NAME, SUPERIOR, TAGS, VALUE } from '@/constants';
 import { useApp } from '@/context';
-import { SUPERIOR, BASE, NAME, TAGS, VALUE } from '@/constants';
 
 const TdaChartsStyle = ({ decks }) => {
   const { isMobile, isDesktop, isWide } = useApp();

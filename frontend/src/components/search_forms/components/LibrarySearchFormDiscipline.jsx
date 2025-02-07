@@ -1,17 +1,16 @@
-import React from 'react';
+import disciplinesExtraList from '@/assets/data/disciplinesExtraList.json';
+import disciplinesList from '@/assets/data/disciplinesList.json';
+import virtuesList from '@/assets/data/virtuesList.json';
 import {
-  Select,
   ResultDisciplineImage,
   SearchAdditionalForms,
-  SearchFormButtonLogicToggle,
   SearchFormButtonAdd,
   SearchFormButtonDel,
+  SearchFormButtonLogicToggle,
+  Select,
 } from '@/components';
-import disciplinesList from '@/assets/data/disciplinesList.json';
-import disciplinesExtraList from '@/assets/data/disciplinesExtraList.json';
-import virtuesList from '@/assets/data/virtuesList.json';
+import { ANY, DISCIPLINE, LOGIC, NOT_REQUIRED } from '@/constants';
 import { useApp } from '@/context';
-import { LOGIC, DISCIPLINE, NOT_REQUIRED, ANY } from '@/constants';
 
 const LibrarySearchFormDiscipline = ({ value, onChange, searchForm }) => {
   const { isMobile } = useApp();

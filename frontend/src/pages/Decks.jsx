@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { useLoaderData, useLocation, useNavigate, useParams, useSearchParams } from 'react-router';
 import { useSnapshot } from 'valtio';
-import { useSearchParams, useNavigate, useLocation, useParams, useLoaderData } from 'react-router';
 import {
   ButtonFloatClose,
   ButtonFloatMenu,
@@ -26,9 +26,6 @@ import {
   Modal,
   Seating,
 } from '@/components';
-import { deckStore, useApp, setDeck } from '@/context';
-import { useDecksTagsAll } from '@/hooks';
-import { getTags, parseDeck, getRestrictions, getIsEditable, parseDeckHash } from '@/utils';
 import {
   AUTHOR,
   BRANCHES,
@@ -38,16 +35,20 @@ import {
   DECKID,
   DECKS,
   DESCRIPTION,
+  IS_ANONYMOUS,
+  IS_BRANCHES,
+  IS_PUBLIC,
   LIBRARY,
   MASTER,
   NAME,
-  TAGS,
   PUBLIC_PARENT,
-  IS_BRANCHES,
-  IS_PUBLIC,
-  IS_ANONYMOUS,
   SHOW,
+  TAGS,
 } from '@/constants';
+import { deckStore, setDeck, useApp } from '@/context';
+import { useDecksTagsAll } from '@/hooks';
+import { getIsEditable, getRestrictions, getTags, parseDeck, parseDeckHash } from '@/utils';
+
 const IS_FROM_URL = 'isFromUrl';
 
 const Decks = () => {
@@ -222,7 +223,7 @@ const Decks = () => {
           )}
         </FlexGapped>
         <div className="min-w-[175px] max-lg:hidden">
-          <div className="sticky z-20 w-full bg-bgPrimary dark:bg-bgPrimaryDark lg:top-10">
+          <div className="bg-bgPrimary dark:bg-bgPrimaryDark sticky z-20 w-full lg:top-10">
             <DeckButtons
               deck={deck}
               setQrUrl={setQrUrl}

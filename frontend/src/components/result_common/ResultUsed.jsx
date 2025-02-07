@@ -1,10 +1,9 @@
-import React from 'react';
 import { twMerge } from 'tailwind-merge';
 import { useSnapshot } from 'valtio';
-import { UsedPopover, Tooltip } from '@/components';
-import { getSoftMax, getHardTotal } from '@/utils';
-import { useApp, inventoryStore, usedStore } from '@/context';
-import { ID, CRYPT, LIBRARY } from '@/constants';
+import { Tooltip, UsedPopover } from '@/components';
+import { CRYPT, ID, LIBRARY } from '@/constants';
+import { inventoryStore, useApp, usedStore } from '@/context';
+import { getHardTotal, getSoftMax } from '@/utils';
 
 const ResultUsed = ({ card }) => {
   const { isDesktop } = useApp();
@@ -27,7 +26,7 @@ const ResultUsed = ({ card }) => {
           className={twMerge(
             'mx-1 flex items-center px-0.5',
             inInventory < softUsedMax + hardUsedTotal &&
-              'bg-bgError text-white dark:bg-bgErrorDark dark:text-whiteDark',
+              'bg-bgError dark:bg-bgErrorDark dark:text-whiteDark text-white',
           )}
         >
           <div className="flex basis-3/5 justify-center text-lg">

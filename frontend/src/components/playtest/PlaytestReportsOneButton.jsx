@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Download from '@icons/download.svg?react';
 import InboxesFill from '@icons/inboxes-fill.svg?react';
 import {
@@ -9,9 +9,9 @@ import {
   Modal,
   PlaytestReportEntryWrapper,
 } from '@/components';
+import { ID, NAME, SCORE, TEXT } from '@/constants';
 import { useApp } from '@/context';
 import { playtestServices } from '@/services';
-import { SCORE, TEXT, NAME, ID } from '@/constants';
 
 const PlaytestReportsOneButton = ({ value, isPrecon = false }) => {
   const { isMobile, isDesktop } = useApp();

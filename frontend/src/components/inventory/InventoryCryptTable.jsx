@@ -1,12 +1,12 @@
-import React, { useCallback, useMemo } from 'react';
-import { FixedSizeList } from 'react-window';
+import { useCallback, useMemo } from 'react';
 import AutoSizer from 'react-virtualized-auto-sizer';
+import { FixedSizeList } from 'react-window';
 import { twMerge } from 'tailwind-merge';
-import { WindowRows, ResultModal, InventoryCryptTableRow } from '@/components';
-import { getIsPlaytest } from '@/utils';
+import { InventoryCryptTableRow, ResultModal, WindowRows } from '@/components';
+import { ID } from '@/constants';
 import { useApp } from '@/context';
 import { useCryptSortWithTimer, useModalCardController } from '@/hooks';
-import { ID } from '@/constants';
+import { getIsPlaytest } from '@/utils';
 
 const InventoryCryptTable = ({ cards, sortMethod, compact, withCompact, newFocus, inShared }) => {
   const { playtestMode, setShowFloatingButtons, isDesktop } = useApp();

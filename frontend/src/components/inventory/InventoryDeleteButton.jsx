@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import TrashFill from '@icons/trash-fill.svg?react';
 import { ButtonIconed, ModalConfirmation } from '@/components';
 import { useApp } from '@/context';

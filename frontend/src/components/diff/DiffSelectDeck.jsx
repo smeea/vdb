@@ -1,19 +1,19 @@
-import React, { useState, useEffect } from 'react';
-import { twMerge } from 'tailwind-merge';
 import { RadioGroup } from '@headlessui/react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
+import { twMerge } from 'tailwind-merge';
 import Check2 from '@icons/check2.svg?react';
 import {
-  DeckSelectMy,
+  Button,
   DeckBranchSelect,
+  DeckSelectMy,
   DeckSelectPrecon,
   DeckSelectRecent,
-  Button,
-  Radio,
   Input,
+  Radio,
 } from '@/components';
+import { DECKID, FROM, IS_BRANCHES, MY, PRECONS, RECENT, URL } from '@/constants';
 import { useApp } from '@/context';
-import { IS_BRANCHES, DECKID, FROM, MY, RECENT, PRECONS, URL } from '@/constants';
 
 const DiffSelectDeck = ({ decks, deck, deckidFrom, deckidTo, target, title }) => {
   const { recentDecks, inventoryMode, username, isMobile } = useApp();

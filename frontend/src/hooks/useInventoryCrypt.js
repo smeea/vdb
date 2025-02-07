@@ -2,9 +2,9 @@ import { useMemo } from 'react';
 import { useSnapshot } from 'valtio';
 import imbuedClansList from '@/assets/data/imbuedClansList.json';
 import vampireClansList from '@/assets/data/vampireClansList.json';
-import { getIsPlaytest, getHardTotal, getSoftMax } from '@/utils';
-import { CLAN, SOFT, HARD, CRYPT, ALL, OK, NOK } from '@/constants';
+import { ALL, CLAN, CRYPT, HARD, NOK, OK, SOFT } from '@/constants';
 import { useApp, usedStore } from '@/context';
+import { getHardTotal, getIsPlaytest, getSoftMax } from '@/utils';
 
 const useInventoryCrypt = (crypt, category = OK, compact, onlyNotes) => {
   const usedCrypt = useSnapshot(usedStore)[CRYPT];

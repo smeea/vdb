@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Link45Deg from '@icons/link-45deg.svg?react';
-import { useApp } from '@/context';
 import { ButtonIconed } from '@/components';
+import { useApp } from '@/context';
 
 const ReviewCopyUrlButton = ({ deckid, urlDiff }) => {
   const { isDesktop, setShowFloatingButtons, setShowMenuButtons } = useApp();

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { ButtonFloat, DeckNewCard } from '@/components';
 import { CRYPT } from '@/constants';
 

@@ -1,7 +1,6 @@
-import React from 'react';
 import { Select } from '@/components';
+import { ANY, MATCH_INVENTORY } from '@/constants';
 import { capitalize } from '@/utils';
-import { MATCH_INVENTORY, ANY } from '@/constants';
 
 const TwdSearchFormMatchInventory = ({ value, target, onChange }) => {
   const name = MATCH_INVENTORY;
@@ -21,7 +20,7 @@ const TwdSearchFormMatchInventory = ({ value, target, onChange }) => {
   return (
     <div className="flex items-center">
       <div className="w-full">
-        <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
+        <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">
           In Inventory by {capitalize(target)}:
         </div>
       </div>

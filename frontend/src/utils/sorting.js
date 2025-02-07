@@ -8,11 +8,11 @@ import {
   GROUP,
   PLAYER,
   POOL,
+  RELEASE_DATE,
   SECT,
   TIMESTAMP,
   TWD_DATE,
   TYPE,
-  RELEASE_DATE,
 } from '@/constants';
 
 export const byName = (a, b) => a.localeCompare(b, 'en');

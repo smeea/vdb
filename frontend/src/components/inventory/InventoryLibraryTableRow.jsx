@@ -1,21 +1,18 @@
-import React, { useCallback } from 'react';
+import { useCallback } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { useSnapshot } from 'valtio';
 import {
   CardPopover,
+  ConditionalTooltip,
   InventoryCardQuantity,
   InventoryCardQuantityDiff,
   ResultLibraryClan,
   ResultLibraryCost,
-  ResultLibraryTypeImage,
   ResultLibraryDisciplines,
+  ResultLibraryTypeImage,
   ResultMiscImage,
   ResultName,
-  ConditionalTooltip,
 } from '@/components';
-import { getSwipedBg, getHardTotal, getSoftMax } from '@/utils';
-import { useApp, inventoryStore, usedStore, limitedStore, inventoryCardChange } from '@/context';
-import { useSwipe } from '@/hooks';
 import {
   BLOOD,
   BURN,
@@ -31,6 +28,9 @@ import {
   TRIFLE,
   TYPE,
 } from '@/constants';
+import { inventoryCardChange, inventoryStore, limitedStore, useApp, usedStore } from '@/context';
+import { useSwipe } from '@/hooks';
+import { getHardTotal, getSoftMax, getSwipedBg } from '@/utils';
 
 const InventoryLibraryTableRow = ({ card, compact, newFocus, inShared, handleClick }) => {
   const { isMobile, isNarrow, limitedMode } = useApp();

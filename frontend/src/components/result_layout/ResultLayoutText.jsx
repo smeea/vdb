@@ -1,20 +1,19 @@
-import React from 'react';
 import { useSnapshot } from 'valtio';
 import SearchHeartFill from '@icons/search-heart-fill.svg?react';
 import {
   ButtonCardCopyUrl,
-  ButtonIconed,
   ButtonClose,
+  ButtonIconed,
   ButtonPlayableBy,
   ButtonSearchCardInDecks,
   ButtonToggleShowImage,
+  PlaytestReportsOneButton,
   ResultCryptLayoutText,
   ResultLayoutTextCommon,
   ResultLibraryLayoutText,
-  PlaytestReportsOneButton,
 } from '@/components';
+import { ID, PDA, PLAYTEST_OLD, TWD, TYPE, TYPE_MASTER } from '@/constants';
 import { searchResults, setCryptCompare, setLibraryCompare, useApp } from '@/context';
-import { PLAYTEST_OLD, ID, TYPE, TYPE_MASTER, TWD, PDA } from '@/constants';
 import { getIsPlaytest } from '@/utils';
 
 const ResultLayoutText = ({

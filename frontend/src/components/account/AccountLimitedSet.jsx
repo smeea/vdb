@@ -1,6 +1,5 @@
-import React from 'react';
-import { Checkbox } from '@/components';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
+import { Checkbox } from '@/components';
 import { DATE, NAME } from '@/constants';
 
 const AccountLimitedSet = ({ isChecked, handleSetChange, setid }) => {

@@ -1,16 +1,14 @@
-import React from 'react';
+import paths from '@/assets/data/paths.json';
+import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 import {
+  Checkbox,
+  ResultPathImage,
   ResultPreconClan,
   SearchAdditionalForms,
   SearchFormButtonAdd,
   SearchFormButtonDel,
-  Checkbox,
   Select,
-  ResultPathImage,
 } from '@/components';
-import { useApp } from '@/context';
-import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
-import paths from '@/assets/data/paths.json';
 import {
   ANY,
   BCP,
@@ -26,6 +24,7 @@ import {
   REPRINT,
   TITLE,
 } from '@/constants';
+import { useApp } from '@/context';
 
 const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
   const { playtestMode, isMobile } = useApp();

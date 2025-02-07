@@ -1,6 +1,7 @@
-import { getTextDisciplines, cryptSort, librarySort } from '@/utils';
+import cardtypeSortedFull from '@/assets/data/cardtypeSortedFull.json';
 import {
   ADV,
+  ANY,
   ASCII,
   AUTHOR,
   CAPACITY,
@@ -8,11 +9,13 @@ import {
   CRYPT,
   DESCRIPTION,
   DISCIPLINES,
+  GROUP,
   ID,
   JOL,
   LACKEY,
   LIBRARY,
   NAME,
+  NEW,
   QUANTITY,
   TEXT,
   TITLE,
@@ -21,11 +24,8 @@ import {
   TWD_HINTS,
   TYPE,
   TYPE_MASTER,
-  GROUP,
-  ANY,
-  NEW,
 } from '@/constants';
-import cardtypeSortedFull from '@/assets/data/cardtypeSortedFull.json';
+import { cryptSort, getTextDisciplines, librarySort } from '@/utils';
 
 const getCryptTitle = (crypt) => {
   let cryptTotalCap = 0;

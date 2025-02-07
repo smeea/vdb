@@ -1,7 +1,6 @@
-import React from 'react';
-import { TwdResultDescriptionTextTr, Title } from '@/components';
+import { Title, TwdResultDescriptionTextTr } from '@/components';
+import { DATE, EVENT, LOCATION, PLAYERS, ROUNDS } from '@/constants';
 import { useApp } from '@/context';
-import { EVENT, LOCATION, ROUNDS, DATE, PLAYERS } from '@/constants';
 
 const TdaInfo = ({ info, decks }) => {
   const { isMobile } = useApp();

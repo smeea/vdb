@@ -1,4 +1,3 @@
-import React from 'react';
 import { twMerge } from 'tailwind-merge';
 import PeopleFill from '@icons/people-fill.svg?react';
 
@@ -6,10 +5,10 @@ const TwdResultDescriptionPlayers = ({ players }) => {
   return (
     <div
       className={twMerge(
-        'flex items-center justify-center gap-1 rounded-md border-dashed text-lg text-fgSecondary dark:text-fgSecondaryDark',
+        'text-fgSecondary dark:text-fgSecondaryDark flex items-center justify-center gap-1 rounded-md border-dashed text-lg',
         players >= 30
-          ? 'border-[3px] border-fgSecondary font-bold dark:border-fgSecondaryDark'
-          : 'border-2 border-borderPrimary dark:border-borderPrimaryDark',
+          ? 'border-fgSecondary dark:border-fgSecondaryDark border-[3px] font-bold'
+          : 'border-borderPrimary dark:border-borderPrimaryDark border-2',
       )}
     >
       <PeopleFill />

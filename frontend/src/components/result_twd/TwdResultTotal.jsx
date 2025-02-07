@@ -1,8 +1,7 @@
-import React from 'react';
 import { twMerge } from 'tailwind-merge';
-import { SortButton, Header } from '@/components';
-import { useApp } from '@/context';
+import { Header, SortButton } from '@/components';
 import { CREATION_DATE } from '@/constants';
+import { useApp } from '@/context';
 
 const TwdResultTotal = ({ results, sortMethods, sortMethod, setSortMethod }) => {
   const { isMobile } = useApp();

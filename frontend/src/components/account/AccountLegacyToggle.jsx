@@ -1,5 +1,4 @@
-import React from 'react';
-import { Toggle, ConditionalTooltipOrModal } from '@/components';
+import { ConditionalTooltipOrModal, Toggle } from '@/components';
 import { useApp } from '@/context';
 
 const TooltipText = () => {

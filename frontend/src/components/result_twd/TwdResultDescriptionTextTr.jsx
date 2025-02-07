@@ -1,10 +1,9 @@
-import React from 'react';
 import { twMerge } from 'tailwind-merge';
 
 const TwdResultDescriptionTextTr = ({ title, iconed, children }) => {
   return (
     <tr>
-      <td className="w-[35px] py-0.5 align-top text-fgSecondary dark:text-fgSecondaryDark">
+      <td className="text-fgSecondary dark:text-fgSecondaryDark w-[35px] py-0.5 align-top">
         <div
           className={twMerge(
             'flex font-bold sm:px-0',

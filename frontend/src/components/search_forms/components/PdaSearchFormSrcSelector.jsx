@@ -1,7 +1,6 @@
-import React from 'react';
 import { RadioGroup } from '@headlessui/react';
 import { Radio } from '@/components';
-import { MY, ANY, MY_NONPUBLIC, FAVORITES } from '@/constants';
+import { ANY, FAVORITES, MY, MY_NONPUBLIC } from '@/constants';
 
 const PdaSearchFormSrcSelector = ({ value, onChange }) => {
   return (

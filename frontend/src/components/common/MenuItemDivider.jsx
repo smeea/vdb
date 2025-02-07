@@ -1,4 +1,3 @@
-import React from 'react';
 import { Hr } from '@/components';
 
 const MenuItemDivider = () => {

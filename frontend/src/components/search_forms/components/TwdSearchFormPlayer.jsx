@@ -1,7 +1,6 @@
-import React from 'react';
 import { Select } from '@/components';
-import { useFetch } from '@/hooks';
 import { AUTHOR } from '@/constants';
+import { useFetch } from '@/hooks';
 
 const TwdSearchFormPlayer = ({ inPda, value, form }) => {
   const url = `${import.meta.env.VITE_API_URL}/${inPda ? 'pda' : 'twd'}/authors`;

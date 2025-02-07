@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
-import { useSearchParams } from 'react-router';
 import { setMany } from 'idb-keyval';
+import { useState } from 'react';
+import { useSearchParams } from 'react-router';
 import UiChecksGrid from '@icons/ui-checks-grid.svg?react';
 import { AccountLimitedModal, ButtonIconed } from '@/components';
-import { useApp } from '@/context';
 import {
   ALLOWED,
   BANNED,
   CRYPT,
+  FORMAT,
   LIBRARY,
   LIMITED_ALLOWED_CRYPT,
   LIMITED_ALLOWED_LIBRARY,
@@ -15,8 +15,8 @@ import {
   LIMITED_BANNED_LIBRARY,
   LIMITED_SETS,
   SETS,
-  FORMAT,
 } from '@/constants';
+import { useApp } from '@/context';
 
 const AccountLimitedButton = () => {
   const { setLimitedFormat } = useApp();

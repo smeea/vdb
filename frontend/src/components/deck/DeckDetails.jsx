@@ -1,23 +1,23 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 import {
-  DeckTags,
-  DeckChangeName,
-  DeckChangeBranchName,
   DeckChangeAuthor,
+  DeckChangeBranchName,
   DeckChangeDescription,
+  DeckChangeName,
+  DeckTags,
   PlaytestReportForm,
 } from '@/components';
-import { useApp } from '@/context';
 import {
-  PLAYTEST_OLD,
   DECKID,
   IS_AUTHOR,
-  IS_PUBLIC,
   IS_BRANCHES,
-  TAGS,
+  IS_PUBLIC,
   PLAYTEST,
+  PLAYTEST_OLD,
+  TAGS,
 } from '@/constants';
+import { useApp } from '@/context';
 
 const DeckDetails = ({ deck, allTagsOptions = [] }) => {
   const { isPlaytester, isMobile } = useApp();

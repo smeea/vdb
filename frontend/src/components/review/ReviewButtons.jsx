@@ -1,9 +1,8 @@
-import React from 'react';
 import {
-  ReviewApplyButton,
-  ReviewCopyUrlButton,
-  ReviewCopyTextButton,
   DiffBackButton,
+  ReviewApplyButton,
+  ReviewCopyTextButton,
+  ReviewCopyUrlButton,
 } from '@/components';
 import { DECKID } from '@/constants';
 

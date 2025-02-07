@@ -1,10 +1,10 @@
-import React, { useState, useActionState } from 'react';
+import { useActionState, useState } from 'react';
 import Check2 from '@icons/check2.svg?react';
 import PenFill from '@icons/pen-fill.svg?react';
-import { Spinner, Input, ConditionalTooltipOrModal, ErrorOverlay, Button } from '@/components';
+import { Button, ConditionalTooltipOrModal, ErrorOverlay, Input, Spinner } from '@/components';
+import { NAME } from '@/constants';
 import { useApp } from '@/context';
 import { userServices } from '@/services';
-import { NAME } from '@/constants';
 
 const TooltipText = () => {
   return (

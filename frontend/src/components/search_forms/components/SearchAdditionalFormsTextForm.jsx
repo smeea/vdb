@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Input } from '@/components';
-import { useDebounce } from '@/hooks';
 import { TYPE_DEBOUNCE_DELAY } from '@/constants';
+import { useDebounce } from '@/hooks';
 
 const SearchAdditionalFormsTextForm = ({ id, value, onChange }) => {
   const [text, setText] = useState('');

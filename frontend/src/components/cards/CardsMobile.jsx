@@ -1,10 +1,9 @@
-import React from 'react';
 import ArrowRepeat from '@icons/arrow-repeat.svg?react';
 import Dice3 from '@icons/dice-3-fill.svg?react';
-import { CardSelect, ResultLayoutText, CardImage, ButtonFloat, ErrorMessage } from '@/components';
+import { ButtonFloat, CardImage, CardSelect, ErrorMessage, ResultLayoutText } from '@/components';
+import { ID } from '@/constants';
 import { useApp } from '@/context';
 import { getIsPlaytest } from '@/utils';
-import { ID } from '@/constants';
 
 const CardsMobile = ({ card, openRandomCard, handleChange, handleSetCard }) => {
   const { showFloatingButtons, showImage, toggleShowImage, isMobile, playtestMode } = useApp();
@@ -37,7 +36,7 @@ const CardsMobile = ({ card, openRandomCard, handleChange, handleSetCard }) => {
           )}
         </>
       )}
-      <div className="fixed bottom-10 z-20 flex w-full bg-bgPrimary p-2 dark:bg-bgPrimaryDark">
+      <div className="bg-bgPrimary dark:bg-bgPrimaryDark fixed bottom-10 z-20 flex w-full p-2">
         <div className="w-full md:basis-8/12">
           <CardSelect autoFocus={!isMobile || !card?.[ID]} onChange={handleChange} value={null} />
         </div>

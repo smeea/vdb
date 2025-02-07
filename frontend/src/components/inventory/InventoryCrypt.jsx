@@ -1,17 +1,16 @@
-import React from 'react';
-import { InventoryCryptTable, InventoryFilterForm, SortButton, Header } from '@/components';
-import { useApp } from '@/context';
-import { useInventoryCrypt } from '@/hooks';
+import { Header, InventoryCryptTable, InventoryFilterForm, SortButton } from '@/components';
 import {
   ALL,
   CAPACITY_MAX_MIN,
   CAPACITY_MIN_MAX,
   CLANx,
-  GROUPx,
   CRYPT,
+  GROUPx,
   NAME,
   QUANTITY,
 } from '@/constants';
+import { useApp } from '@/context';
+import { useInventoryCrypt } from '@/hooks';
 
 const InventoryCrypt = ({
   compact,
@@ -52,7 +51,7 @@ const InventoryCrypt = ({
               byUnique={cardsByClanUnique}
               target={CRYPT}
             />
-            <div className="flex justify-end font-bold text-midGray dark:text-midGrayDark">
+            <div className="text-midGray dark:text-midGrayDark flex justify-end font-bold">
               {missingByClanTotal[clan] ? (
                 <>
                   {missingByClanTotal[clan]} ({Object.values(missingByClan[clan]).length} uniq) miss

@@ -1,8 +1,8 @@
-import React, { useCallback } from 'react';
-import { ResultModal, ResultLibraryTableRow } from '@/components';
+import { useCallback } from 'react';
+import { ResultLibraryTableRow, ResultModal } from '@/components';
+import { ID } from '@/constants';
 import { useApp } from '@/context';
 import { useModalCardController } from '@/hooks';
-import { ID } from '@/constants';
 
 const ResultLibraryTable = ({ resultCards, inLimited }) => {
   const { setShowFloatingButtons, isDesktop } = useApp();

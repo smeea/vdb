@@ -1,11 +1,7 @@
-import React from 'react';
-import { useSnapshot } from 'valtio';
 import { Menu } from '@headlessui/react';
+import { useSnapshot } from 'valtio';
 import Download from '@icons/download.svg?react';
-import { MenuItems, MenuItem, MenuItemDivider, MenuButton } from '@/components';
-import { exportDeck } from '@/utils';
-import { useApp, deckStore } from '@/context';
-import { deckServices } from '@/services';
+import { MenuButton, MenuItem, MenuItemDivider, MenuItems } from '@/components';
 import {
   BRANCHES,
   BRANCH_NAME,
@@ -22,6 +18,9 @@ import {
   TWD_HINTS,
   XLSX,
 } from '@/constants';
+import { deckStore, useApp } from '@/context';
+import { deckServices } from '@/services';
+import { exportDeck } from '@/utils';
 
 const SAVE = 'save';
 const COPY = 'copy';

@@ -1,24 +1,23 @@
-import React from 'react';
+import sectsOpts from '@/assets/data/sectsList.json';
 import { ResultCryptTitle } from '@/components';
-import { capitalize } from '@/utils';
 import {
+  ARCHBISHOP,
+  BARON,
+  BISHOP,
   CAPACITY,
+  CARDINAL,
+  INNER_CIRCLE,
+  JUSTICAR,
+  MAGAJI,
   PRIMOGEN,
   PRINCE,
-  JUSTICAR,
-  INNER_CIRCLE,
-  BARON,
+  PRISCUS,
+  REGENT,
+  TITLED,
   VOTE_1,
   VOTE_2,
-  BISHOP,
-  ARCHBISHOP,
-  PRISCUS,
-  CARDINAL,
-  REGENT,
-  MAGAJI,
-  TITLED,
 } from '@/constants';
-import sectsOpts from '@/assets/data/sectsList.json';
+import { capitalize } from '@/utils';
 
 const TitlesReq = ({ value }) => {
   if (value.length < 1) return;
@@ -37,7 +36,7 @@ const SectReq = ({ value }) => {
   const htmlTitle = value.map((v) => capitalize(v)).join(' or ');
 
   return (
-    <div title={htmlTitle} className="inline text-fgGreen dark:text-fgGreenDark">
+    <div title={htmlTitle} className="text-fgGreen dark:text-fgGreenDark inline">
       {value.map((v) => v[0].charAt(0).toUpperCase()).join('-')}
     </div>
   );

@@ -1,25 +1,26 @@
-import React, { useState, useEffect } from 'react';
-import ChevronBarExpand from '@icons/chevron-bar-expand.svg?react';
-import ChevronBarContract from '@icons/chevron-bar-contract.svg?react';
+import { useEffect, useState } from 'react';
 import ChatLeftQuoteFill from '@icons/chat-left-quote-fill.svg?react';
+import ChevronBarContract from '@icons/chevron-bar-contract.svg?react';
+import ChevronBarExpand from '@icons/chevron-bar-expand.svg?react';
 import {
   Button,
+  Checkbox,
+  ConditionalTooltipOrModal,
   Input,
   InputLabel,
-  Textarea,
-  ConditionalTooltipOrModal,
   PlaytestScores,
-  Checkbox,
+  Textarea,
 } from '@/components';
-import { useFetch } from '@/hooks';
+import { CARDS, ID, PRECONS, SCORE, TEXT, VALUE } from '@/constants';
 import { useApp } from '@/context';
+import { useFetch } from '@/hooks';
 import { playtestServices } from '@/services';
-import { ID, VALUE, PRECONS, TEXT, CARDS, SCORE } from '@/constants';
+
 const IS_PLAYED = 'isPlayed';
 
 const Title = ({ isPrecon }) => {
   return (
-    <div className="flex gap-3 whitespace-nowrap font-bold text-fgSecondary dark:text-fgSecondaryDark">
+    <div className="text-fgSecondary dark:text-fgSecondaryDark flex gap-3 font-bold whitespace-nowrap">
       Playtest Report:
       <ConditionalTooltipOrModal
         title="Public name"
@@ -51,7 +52,7 @@ const Title = ({ isPrecon }) => {
           </div>
         }
       >
-        <div className="font-bold text-fgThird dark:text-fgThirdDark">[?]</div>
+        <div className="text-fgThird dark:text-fgThirdDark font-bold">[?]</div>
       </ConditionalTooltipOrModal>
     </div>
   );

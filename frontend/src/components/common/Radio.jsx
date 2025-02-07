@@ -1,6 +1,5 @@
-import React from 'react';
-import { twMerge } from 'tailwind-merge';
 import { Field, Label, Radio as RadioHUI } from '@headlessui/react';
+import { twMerge } from 'tailwind-merge';
 
 const Radio = ({ value, label }) => {
   return (

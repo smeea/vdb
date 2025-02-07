@@ -1,21 +1,20 @@
-import React from 'react';
 import ArrowRepeat from '@icons/arrow-repeat.svg?react';
 import StackIcon from '@icons/stack.svg?react';
 import {
   Button,
-  Modal,
-  ResultModal,
   DeckDrawCryptTable,
   DeckDrawLibraryTable,
-  ResultLibraryCost,
-  ResultCryptCapacity,
   ErrorMessage,
-  Header,
   FlexGapped,
+  Header,
+  Modal,
+  ResultCryptCapacity,
+  ResultLibraryCost,
+  ResultModal,
 } from '@/components';
+import { BLOOD, CAPACITY, POOL, X } from '@/constants';
 import { useApp } from '@/context';
 import { useModalCardController } from '@/hooks';
-import { CAPACITY, BLOOD, POOL, X } from '@/constants';
 
 const DeckDrawModal = ({
   burnCrypt,
@@ -155,7 +154,7 @@ const DeckDrawModal = ({
             <div className="md:basis-5/9">
               {burnedCrypt.length > 0 && (
                 <div>
-                  <div className="flex h-10 justify-between bg-bgSecondary px-2 text-fgSecondary dark:bg-bgSecondaryDark dark:text-fgPrimaryDark">
+                  <div className="bg-bgSecondary text-fgSecondary dark:bg-bgSecondaryDark dark:text-fgPrimaryDark flex h-10 justify-between px-2">
                     <div className="flex items-center font-bold">Controlled</div>
                     <div className="flex items-center font-bold">{burnedCrypt.length}</div>
                     <div className="flex items-center gap-1" title="Total Capacity">
@@ -175,7 +174,7 @@ const DeckDrawModal = ({
             <div className="md:basis-4/9">
               {burnedLibrary.length > 0 && (
                 <div>
-                  <div className="flex h-10 justify-between bg-bgSecondary px-2 text-fgSecondary dark:bg-bgSecondaryDark dark:text-fgPrimaryDark">
+                  <div className="bg-bgSecondary text-fgSecondary dark:bg-bgSecondaryDark dark:text-fgPrimaryDark flex h-10 justify-between px-2">
                     <div className="flex items-center font-bold">Ash Heap</div>
                     <div className="flex items-center font-bold">{burnedLibrary.length}</div>
                     <div className="flex gap-3">

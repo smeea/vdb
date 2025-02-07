@@ -1,10 +1,10 @@
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 import { twMerge } from 'tailwind-merge';
-import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 import paths from '@/assets/data/paths.json';
-import { ResultPathImage, Select, ResultPreconClan } from '@/components';
+import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
+import { ResultPathImage, ResultPreconClan, Select } from '@/components';
+import { CLAN, DATE, NAME, PLAYTEST, PRECON, PRECONS } from '@/constants';
 import { useApp } from '@/context';
-import { DATE, NAME, CLAN, PRECONS, PRECON, PLAYTEST } from '@/constants';
 
 const DeckSelectPrecon = ({ deckid, handleSelect }) => {
   const { isMobile, playtestMode } = useApp();

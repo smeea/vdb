@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Check2 from '@icons/check2.svg?react';
-import { Spinner, Input, Button, ErrorOverlay } from '@/components';
-import { playtestServices } from '@/services';
+import { Button, ErrorOverlay, Input, Spinner } from '@/components';
 import { USERNAME } from '@/constants';
+import { playtestServices } from '@/services';
 
 const PlaytestManageAdd = ({ playtesters, newPlaytesters, setNewPlaytesters }) => {
   const [username, setUsername] = useState('');

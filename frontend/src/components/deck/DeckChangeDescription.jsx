@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import ChevronBarExpand from '@icons/chevron-bar-expand.svg?react';
-import ChevronBarContract from '@icons/chevron-bar-contract.svg?react';
+import { useEffect, useState } from 'react';
 import ChatLeftQuoteFill from '@icons/chat-left-quote-fill.svg?react';
-import { Input, InputLabel, Textarea, Button } from '@/components';
+import ChevronBarContract from '@icons/chevron-bar-contract.svg?react';
+import ChevronBarExpand from '@icons/chevron-bar-expand.svg?react';
+import { Button, Input, InputLabel, Textarea } from '@/components';
+import { DECKID, DESCRIPTION } from '@/constants';
 import { deckUpdate } from '@/context';
 import { getIsEditable } from '@/utils';
-import { DESCRIPTION, DECKID } from '@/constants';
 
 const DeckDescription = ({ deck, isFolded, setIsFolded }) => {
   const [value, setValue] = useState(deck[DESCRIPTION] || '');

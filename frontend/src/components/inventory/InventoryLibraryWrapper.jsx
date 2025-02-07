@@ -1,8 +1,8 @@
-import React, { useCallback, useState, useRef } from 'react';
+import { useCallback, useRef, useState } from 'react';
 import { useSnapshot } from 'valtio';
-import { NewCardSelect, InventoryLibrary } from '@/components';
-import { useApp, inventoryStore } from '@/context';
+import { InventoryLibrary, NewCardSelect } from '@/components';
 import { LIBRARY, OK } from '@/constants';
+import { inventoryStore, useApp } from '@/context';
 
 const InventoryLibraryWrapper = ({
   sharedLibrary,

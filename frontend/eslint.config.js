@@ -1,8 +1,8 @@
-import globals from 'globals';
 import js from '@eslint/js';
 import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
 import valtio from 'eslint-plugin-valtio';
+import globals from 'globals';
 
 export default [
   js.configs.recommended,

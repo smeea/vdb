@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { useSnapshot } from 'valtio';
 import { ButtonCardChange } from '@/components';
-import { useApp, inventoryStore, inventoryCardChange } from '@/context';
 import { IS_FROZEN } from '@/constants';
+import { inventoryCardChange, inventoryStore, useApp } from '@/context';
 
 const InventoryCardQuantity = ({ card, softUsedMax, hardUsedTotal, compact, newFocus }) => {
   const { isMobile } = useApp();

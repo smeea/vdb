@@ -12,10 +12,10 @@ import {
   NATIVE_CRYPT,
   NATIVE_LIBRARY,
   PLAYTEST,
+  PLAYTEST_OLD,
   PRECONS,
   TAGS,
   TEXT,
-  PLAYTEST_OLD,
 } from '@/constants';
 import { getTags, parseDeck } from '@/utils';
 

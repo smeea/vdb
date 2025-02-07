@@ -1,4 +1,4 @@
-import React, { useMemo, useEffect } from 'react';
+import { useEffect, useMemo } from 'react';
 import { useSearchParams } from 'react-router';
 import { twMerge } from 'tailwind-merge';
 import { useSnapshot } from 'valtio';
@@ -11,8 +11,8 @@ import {
   FlexGapped,
   ResultCrypt,
 } from '@/components';
-import { useApp, searchResults, setCryptResults, setDeck, deckStore } from '@/context';
-import { DECKID, CRYPT, CRYPT_COMPARE, DECK, DECKS } from '@/constants';
+import { CRYPT, CRYPT_COMPARE, DECK, DECKID, DECKS } from '@/constants';
+import { deckStore, searchResults, setCryptResults, setDeck, useApp } from '@/context';
 import { getIsEditable } from '@/utils';
 
 const Crypt = () => {

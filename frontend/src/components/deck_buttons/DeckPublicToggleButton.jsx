@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router';
-import People from '@icons/people.svg?react';
 import PeopleFill from '@icons/people-fill.svg?react';
-import { Spinner, DeckPublicToggleConfirmation, ButtonIconed } from '@/components';
-import { deckServices } from '@/services';
+import People from '@icons/people.svg?react';
+import { ButtonIconed, DeckPublicToggleConfirmation, Spinner } from '@/components';
+import { PUBLIC_CHILD, PUBLIC_PARENT } from '@/constants';
 import { useApp } from '@/context';
-import { PUBLIC_PARENT, PUBLIC_CHILD } from '@/constants';
+import { deckServices } from '@/services';
 
 const DeckPublicToggleButton = ({ deck, inAdv }) => {
   const { isDesktop, setShowMenuButtons, setShowFloatingButtons } = useApp();

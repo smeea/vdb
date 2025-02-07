@@ -1,25 +1,21 @@
-import React, { useState } from 'react';
-import ky from 'ky';
-import { useNavigate } from 'react-router';
 import { Tab } from '@headlessui/react';
+import ky from 'ky';
+import { useState } from 'react';
+import { useNavigate } from 'react-router';
+import Arrow90DegLeft from '@icons/arrow-90deg-left.svg?react';
 import Download from '@icons/download.svg?react';
 import Printer from '@icons/printer.svg?react';
-import Arrow90DegLeft from '@icons/arrow-90deg-left.svg?react';
 import {
-  TabButton,
   ButtonIconed,
   FlexGapped,
   Hr,
   PlaytestReportsAllCardsWrapper,
-  PlaytestReportsAllPreconsWrapper,
   PlaytestReportsAllGeneral,
+  PlaytestReportsAllPreconsWrapper,
   SortButton,
+  TabButton,
   Toggle,
 } from '@/components';
-import { useFetch } from '@/hooks';
-import { useApp } from '@/context';
-import { playtestServices } from '@/services';
-import { capitalize } from '@/utils';
 import {
   ALL,
   CARDS,
@@ -30,10 +26,14 @@ import {
   NAME,
   PLAYTEST,
   PRECONS,
+  SCORE,
   TEXT,
   XLSX,
-  SCORE,
 } from '@/constants';
+import { useApp } from '@/context';
+import { useFetch } from '@/hooks';
+import { playtestServices } from '@/services';
+import { capitalize } from '@/utils';
 
 const PlaytestReportsAll = () => {
   const {

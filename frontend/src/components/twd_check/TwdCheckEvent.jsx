@@ -1,18 +1,17 @@
-import React from 'react';
-import { useDeckCrypt, useDeckLibrary, useFetch } from '@/hooks';
 import {
   CRYPT,
   DATE,
   EVENT,
   FORMAT,
+  HAS_BANNED,
   ID,
   LIBRARY,
   LOCATION,
   NAME,
   PLAYERS,
   ROUNDS,
-  HAS_BANNED,
 } from '@/constants';
+import { useDeckCrypt, useDeckLibrary, useFetch } from '@/hooks';
 
 const getDateWithSuffix = (d) => {
   if (!d) return;
@@ -138,33 +137,33 @@ const TwdCheckEvent = ({ deckData }) => {
     <>
       {value && value.event_id === deckData[ID] ? (
         <div className="pt-[5px] font-mono text-sm">
-          <div className={deckData[EVENT] === veknEvent[NAME] ? '' : 'underline decoration-fgRed'}>
+          <div className={deckData[EVENT] === veknEvent[NAME] ? '' : 'decoration-fgRed underline'}>
             {veknEvent[NAME]}
           </div>
           <div
             className={
-              deckData[LOCATION] === veknEvent[LOCATION] ? '' : 'underline decoration-fgRed'
+              deckData[LOCATION] === veknEvent[LOCATION] ? '' : 'decoration-fgRed underline'
             }
           >
             {veknEvent[LOCATION]}
           </div>
-          <div className={deckData[DATE] === veknEvent[DATE] ? '' : 'underline decoration-fgRed'}>
+          <div className={deckData[DATE] === veknEvent[DATE] ? '' : 'decoration-fgRed underline'}>
             {veknEvent[DATE]}
           </div>
           <div
-            className={deckData[FORMAT] === veknEvent[FORMAT] ? '' : 'underline decoration-fgRed'}
+            className={deckData[FORMAT] === veknEvent[FORMAT] ? '' : 'decoration-fgRed underline'}
           >
             {veknEvent[FORMAT]}
           </div>
           <div
-            className={deckData[PLAYERS] === veknEvent[PLAYERS] ? '' : 'underline decoration-fgRed'}
+            className={deckData[PLAYERS] === veknEvent[PLAYERS] ? '' : 'decoration-fgRed underline'}
           >
             {veknEvent[PLAYERS]}
           </div>
           <br />
           <div>
             <a
-              className={deckData.url === veknEvent.url ? '' : 'underline decoration-fgRed'}
+              className={deckData.url === veknEvent.url ? '' : 'decoration-fgRed underline'}
               href={veknEvent.url}
               rel="noreferrer"
               target="_blank"

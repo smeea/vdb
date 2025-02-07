@@ -1,6 +1,6 @@
 import { proxy } from 'valtio';
 import defaultsTdaForm from '@/components/search_forms/forms_data/defaultsTdaForm.json';
-import { DECKS, RESULTS, INFO } from '@/constants';
+import { DECKS, INFO, RESULTS } from '@/constants';
 
 export const searchTdaForm = proxy({
   ...structuredClone(defaultsTdaForm),

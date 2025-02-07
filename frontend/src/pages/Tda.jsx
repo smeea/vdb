@@ -1,21 +1,19 @@
-import React, { useState, useEffect } from 'react';
 import ky from 'ky';
+import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router';
 import { useSnapshot } from 'valtio';
 import {
-  TdaLoadCustomButtons,
-  TdaLoadPreparedButtons,
-  TdaInfo,
-  TdaCharts,
-  TdaResult,
-  TdaSearchForm,
   ButtonClose,
   ErrorMessage,
   FlexGapped,
   Header,
+  TdaCharts,
+  TdaInfo,
+  TdaLoadCustomButtons,
+  TdaLoadPreparedButtons,
+  TdaResult,
+  TdaSearchForm,
 } from '@/components';
-import { tdaStore, clearTdaForm, setTdaDecks, setTdaInfo, setTdaResults, useApp } from '@/context';
-import { sanitizeScoreSheet, getTags, importDeck } from '@/utils';
 import {
   AUTHOR,
   CRYPT,
@@ -31,10 +29,12 @@ import {
   RANK,
   RESULTS,
   ROUNDS,
+  SCORE,
   TAGS,
   VP,
-  SCORE,
 } from '@/constants';
+import { clearTdaForm, setTdaDecks, setTdaInfo, setTdaResults, tdaStore, useApp } from '@/context';
+import { getTags, importDeck, sanitizeScoreSheet } from '@/utils';
 
 const TESTERS = ['1', 'crauseon'];
 

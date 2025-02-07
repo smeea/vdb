@@ -1,6 +1,4 @@
-import { deepClone } from '@/utils';
 import {
-  TDA,
   ANY,
   BLOOD,
   CAPACITY,
@@ -23,6 +21,7 @@ import {
   SECT,
   SET,
   TAGS,
+  TDA,
   TEXT,
   TITLE,
   TITLES,
@@ -31,6 +30,7 @@ import {
   TYPE,
   VALUE,
 } from '@/constants';
+import { deepClone } from '@/utils';
 
 const sanitizeFormState = (target, state) => {
   const input = deepClone(state);

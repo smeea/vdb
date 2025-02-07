@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Cart4 from '@icons/cart4.svg?react';
 import { ButtonIconed, InventoryMissingModalWrapper } from '@/components';
 import { useApp } from '@/context';

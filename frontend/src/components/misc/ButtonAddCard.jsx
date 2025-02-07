@@ -1,9 +1,9 @@
-import React, { useCallback } from 'react';
+import { useCallback } from 'react';
 import { useSnapshot } from 'valtio';
 import PlusLg from '@icons/plus-lg.svg?react';
 import { Button } from '@/components';
-import { deckStore, deckCardChange } from '@/context';
-import { NAME, DECKS } from '@/constants';
+import { DECKS, NAME } from '@/constants';
+import { deckCardChange, deckStore } from '@/context';
 
 const ButtonAddCard = ({ deckid, card, inDeck, inQuick, disabled }) => {
   const decks = useSnapshot(deckStore)[DECKS];

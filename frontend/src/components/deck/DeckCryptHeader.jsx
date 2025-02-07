@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import InfoCircle from '@icons/info-circle.svg?react';
 import PlusLg from '@icons/plus-lg.svg?react';
-import { DeckCryptTotalInfo, DeckNewCard, Warning, Button, SortButton, Header } from '@/components';
+import { Button, DeckCryptTotalInfo, DeckNewCard, Header, SortButton, Warning } from '@/components';
+import { BANNED, CRYPT, DECKID, GROUPS, LIMITED, PLAYTEST } from '@/constants';
 import { useApp } from '@/context';
-import { getIsEditable, getKeyDisciplines } from '@/utils';
 import { useDeckCrypt } from '@/hooks';
-import { DECKID, CRYPT, GROUPS, LIMITED, BANNED, PLAYTEST } from '@/constants';
+import { getIsEditable, getKeyDisciplines } from '@/utils';
 
 const DeckCryptHeader = ({
   cardChange,

@@ -1,14 +1,13 @@
-import React from 'react';
 import { useSnapshot } from 'valtio';
 import { DeckRecommendationLibraryTableRow } from '@/components';
-import { deckStore } from '@/context';
 import { DECK, ID } from '@/constants';
+import { deckStore } from '@/context';
 
 const DeckRecommendationLibraryTable = ({ handleClick, cards }) => {
   const deck = useSnapshot(deckStore)[DECK];
 
   return (
-    <table className="w-full border-bgSecondary dark:border-bgSecondaryDark sm:border">
+    <table className="border-bgSecondary dark:border-bgSecondaryDark w-full sm:border">
       <tbody>
         {cards.map((card) => {
           return (

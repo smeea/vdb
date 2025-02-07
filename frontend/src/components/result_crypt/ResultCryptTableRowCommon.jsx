@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import { useCallback } from 'react';
 import {
   CardPopover,
   ConditionalTooltip,
@@ -10,11 +10,11 @@ import {
   ResultCryptGroup,
   ResultCryptSect,
   ResultCryptTitle,
-  ResultPathImage,
   ResultName,
+  ResultPathImage,
 } from '@/components';
+import { CLAN, DISCIPLINES, GROUP, PATH, SECT, TITLE } from '@/constants';
 import { useApp } from '@/context';
-import { PATH, SECT, DISCIPLINES, TITLE, CLAN, GROUP } from '@/constants';
 
 const ResultCryptTableRowCommon = ({
   card,

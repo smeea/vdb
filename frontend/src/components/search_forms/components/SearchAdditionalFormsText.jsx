@@ -1,12 +1,11 @@
-import React from 'react';
 import {
   Checkbox,
+  SearchAdditionalFormsTextForm,
   SearchFormButtonAddText,
   SearchFormButtonDel,
   SearchFormButtonLogicToggle,
-  SearchAdditionalFormsTextForm,
 } from '@/components';
-import { NAME, TEXT, VALUE, LABEL, LOGIC, IN, REGEX } from '@/constants';
+import { IN, LABEL, LOGIC, NAME, REGEX, TEXT, VALUE } from '@/constants';
 
 const SearchAdditionalFormsText = ({ value, onChange, onChangeOptions, searchForm }) => {
   const options = [

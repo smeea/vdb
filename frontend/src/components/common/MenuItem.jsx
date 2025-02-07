@@ -1,9 +1,8 @@
-import React from 'react';
 import { Menu } from '@headlessui/react';
 
 const MenuItem = ({ onClick, children }) => {
   return (
-    <Menu.Item className="whitespace-nowrap px-3 py-1.5 hover:bg-borderPrimary dark:hover:bg-borderPrimaryDark">
+    <Menu.Item className="hover:bg-borderPrimary dark:hover:bg-borderPrimaryDark px-3 py-1.5 whitespace-nowrap">
       {({ active }) => (
         <div
           onClick={onClick}

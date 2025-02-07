@@ -1,4 +1,3 @@
-import React from 'react';
 import { SeatingTablePlayer } from '@/components';
 
 const Row = ({ children }) => {
@@ -7,7 +6,7 @@ const Row = ({ children }) => {
 
 const Table = ({ children }) => {
   return (
-    <div className="flex w-full flex-wrap rounded-full border-4 border-borderSecondary dark:border-borderSecondaryDark">
+    <div className="border-borderSecondary dark:border-borderSecondaryDark flex w-full flex-wrap rounded-full border-4">
       {children}
     </div>
   );

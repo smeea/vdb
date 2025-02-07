@@ -1,15 +1,14 @@
-import React from 'react';
 import { useSnapshot } from 'valtio';
 import {
-  DeckCardQuantityTd,
-  ResultLibraryTableRowCommon,
   Checkbox,
+  DeckCardQuantityTd,
   DeckProxyTableSetSelect,
+  ResultLibraryTableRowCommon,
   Tr,
 } from '@/components';
-import { useApp, usedStore, inventoryStore } from '@/context';
-import { getSoftMax, getHardTotal } from '@/utils';
-import { ID, PRINT, SET, SOFT, HARD, LIBRARY } from '@/constants';
+import { HARD, ID, LIBRARY, PRINT, SET, SOFT } from '@/constants';
+import { inventoryStore, useApp, usedStore } from '@/context';
+import { getHardTotal, getSoftMax } from '@/utils';
 
 const DeckProxyLibraryTableRow = ({
   handleClick,

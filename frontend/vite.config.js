@@ -1,10 +1,10 @@
-import { defineConfig } from 'vite';
-import { resolve } from 'path';
-import react from '@vitejs/plugin-react-swc';
-import legacy from '@vitejs/plugin-legacy';
-import svgr from 'vite-plugin-svgr';
-import { VitePWA } from 'vite-plugin-pwa';
 import tailwindcss from '@tailwindcss/vite';
+import legacy from '@vitejs/plugin-legacy';
+import react from '@vitejs/plugin-react-swc';
+import { resolve } from 'path';
+import { defineConfig } from 'vite';
+import { VitePWA } from 'vite-plugin-pwa';
+import svgr from 'vite-plugin-svgr';
 
 export default defineConfig({
   server: {

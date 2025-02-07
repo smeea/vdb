@@ -1,13 +1,12 @@
-import React from 'react';
 import { useNavigate } from 'react-router';
-import TrophyFill from '@icons/trophy-fill.svg?react';
-import PersonFill from '@icons/person-fill.svg?react';
-import TagFill from '@icons/tag-fill.svg?react';
 import CalendarEvent from '@icons/calendar-event.svg?react';
 import GeoAltFill from '@icons/geo-alt-fill.svg?react';
-import { TwdResultTags, TwdResultDescriptionTextTr } from '@/components';
-import { useApp, searchTwdForm, clearSearchForm } from '@/context';
-import { SUPERIOR, BASE, TAGS, NAME, LOCATION, CREATION_DATE, AUTHOR, TWD } from '@/constants';
+import PersonFill from '@icons/person-fill.svg?react';
+import TagFill from '@icons/tag-fill.svg?react';
+import TrophyFill from '@icons/trophy-fill.svg?react';
+import { TwdResultDescriptionTextTr, TwdResultTags } from '@/components';
+import { AUTHOR, BASE, CREATION_DATE, LOCATION, NAME, SUPERIOR, TAGS, TWD } from '@/constants';
+import { clearSearchForm, searchTwdForm, useApp } from '@/context';
 
 const TwdResultDescriptionText = ({ deck }) => {
   const { isMobile } = useApp();
@@ -43,7 +42,7 @@ const TwdResultDescriptionText = ({ deck }) => {
             title={isMobile ? <GeoAltFill /> : <>Place:</>}
           >
             <div
-              className="text-fgSecondary hover:underline dark:text-fgSecondaryDark"
+              className="text-fgSecondary dark:text-fgSecondaryDark hover:underline"
               onClick={() => handleClick(LOCATION, deck[LOCATION])}
             >
               {deck[LOCATION]}
@@ -54,7 +53,7 @@ const TwdResultDescriptionText = ({ deck }) => {
             title={isMobile ? <PersonFill /> : <>Player:</>}
           >
             <div
-              className="text-fgSecondary hover:underline dark:text-fgSecondaryDark"
+              className="text-fgSecondary dark:text-fgSecondaryDark hover:underline"
               onClick={() => handleClick(AUTHOR, deck[AUTHOR])}
             >
               {deck[AUTHOR]}

@@ -1,7 +1,6 @@
-import React from 'react';
 import { ModalConfirmation } from '@/components';
-import { getRestrictions, countCards } from '@/utils';
-import { LIBRARY, CRYPT, NAME, PUBLIC_PARENT, PUBLIC_CHILD } from '@/constants';
+import { CRYPT, LIBRARY, NAME, PUBLIC_CHILD, PUBLIC_PARENT } from '@/constants';
+import { countCards, getRestrictions } from '@/utils';
 
 const DeckPublicToggleConfirmation = ({ deck, handleConfirmation, setShow }) => {
   const isPublished = !!(deck[PUBLIC_PARENT] || deck[PUBLIC_CHILD]);

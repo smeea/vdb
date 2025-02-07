@@ -1,8 +1,7 @@
-import React from 'react';
-import { useApp } from '@/context';
 import { Select, SelectLabelCrypt, SelectLabelLibrary } from '@/components';
+import { CRYPT, ID, LIBRARY, NAME, TWD, VALUE } from '@/constants';
+import { useApp } from '@/context';
 import { filterCrypt, filterLibrary, getIsPlaytest } from '@/utils';
-import { ID, NAME, TWD, CRYPT, LIBRARY, VALUE } from '@/constants';
 
 const STARTING_WITH = 'startingWith';
 const OTHER = 'other';

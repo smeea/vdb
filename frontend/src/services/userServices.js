@@ -1,7 +1,8 @@
 import ky from 'ky';
+import { EMAIL, ERROR, NEW_PASSWORD, PASSWORD, PUBLIC_NAME, REMEMBER, USERNAME } from '@/constants';
+
 const ACCOUNT_URL = `${import.meta.env.VITE_API_URL}/account`;
 const LOGIN_URL = `${import.meta.env.VITE_API_URL}/login`;
-import { ERROR, USERNAME, PASSWORD, NEW_PASSWORD, REMEMBER, EMAIL, PUBLIC_NAME } from '@/constants';
 
 export const login = (username, password) => {
   const options = {

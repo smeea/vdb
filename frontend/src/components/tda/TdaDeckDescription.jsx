@@ -1,15 +1,14 @@
-import React from 'react';
-import TrophyFill from '@icons/trophy-fill.svg?react';
 import StarFill from '@icons/star-fill.svg?react';
+import TrophyFill from '@icons/trophy-fill.svg?react';
 import {
   DeckCloneButton,
   TwdOpenDeckButton,
-  TwdResultTags,
   TwdResultDescriptionTextTr,
+  TwdResultTags,
 } from '@/components';
+import { BASE, GW, RANK, SCORE, SUPERIOR, TAGS, VP } from '@/constants';
 import { useApp } from '@/context';
 import { getDeckInUrl } from '@/utils';
-import { SUPERIOR, BASE, SCORE, GW, VP, RANK, TAGS } from '@/constants';
 
 const TdaDeckDescription = ({ deck }) => {
   const { username, isMobile } = useApp();

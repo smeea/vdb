@@ -1,8 +1,7 @@
-import React from 'react';
 import Globe from '@icons/globe.svg?react';
-import { ConditionalTooltipOrModal, ListEntry, Flag, Select } from '@/components';
+import { ConditionalTooltipOrModal, Flag, ListEntry, Select } from '@/components';
+import { EN, ES, FR, LANG, PT } from '@/constants';
 import { useApp } from '@/context';
-import { LANG, EN, ES, FR, PT } from '@/constants';
 
 const PlaytestReportLanguageSelector = () => {
   const { isMobile, playtestProfile, updatePlaytestProfile } = useApp();

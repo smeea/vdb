@@ -1,4 +1,3 @@
-import React from 'react';
 import ThreeDots from '@icons/three-dots.svg?react';
 
 const Spinner = ({ className = '' }) => {

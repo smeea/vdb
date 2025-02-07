@@ -1,4 +1,5 @@
 export { default as useAsync } from './useAsync.js';
+export { default as useCryptSortWithTimer } from './useCryptSortWithTimer.js';
 export { default as useDebounce } from './useDebounce.js';
 export { default as useDeckCrypt } from './useDeckCrypt.js';
 export { default as useDeckInInventory } from './useDeckInInventory.js';
@@ -12,4 +13,3 @@ export { default as useModalCardController } from './useModalCardController.js';
 export { default as useSwipe } from './useSwipe.js';
 export { default as useTimeout } from './useTimeout.js';
 export { default as useWindowSize } from './useWindowSize.js';
-export { default as useCryptSortWithTimer } from './useCryptSortWithTimer.js';

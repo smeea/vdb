@@ -1,4 +1,3 @@
-import React from 'react';
 import XLg from '@icons/x-lg.svg?react';
 import { ButtonIconed } from '@/components';
 

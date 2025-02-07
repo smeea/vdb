@@ -1,21 +1,20 @@
-import React from 'react';
 import { Checkbox } from '@/components';
 import {
-  PRIMOGEN,
-  PRINCE,
-  NON_TITLED,
-  JUSTICAR,
-  INNER_CIRCLE,
+  ARCHBISHOP,
   BARON,
   BISHOP,
-  ARCHBISHOP,
-  PRISCUS,
   CARDINAL,
-  REGENT,
+  INNER_CIRCLE,
+  JUSTICAR,
   MAGAJI,
+  NON_TITLED,
+  PRIMOGEN,
+  PRINCE,
+  PRISCUS,
+  REGENT,
+  TITLES,
   VOTE_1,
   VOTE_2,
-  TITLES,
 } from '@/constants';
 
 const CryptSearchFormTitles = ({ value, onChange }) => {

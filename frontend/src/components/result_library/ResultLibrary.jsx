@@ -1,7 +1,6 @@
-import React from 'react';
-import { ResultTable, ResultLibraryTotal, ErrorMessage } from '@/components';
+import { ErrorMessage, ResultLibraryTotal, ResultTable } from '@/components';
+import { CLAN_DISCIPLINE, COST_MAX_MIN, COST_MIN_MAX, LIBRARY, NAME, TYPE } from '@/constants';
 import { useApp } from '@/context';
-import { LIBRARY, CLAN_DISCIPLINE, COST_MAX_MIN, COST_MIN_MAX, NAME, TYPE } from '@/constants';
 
 const ResultLibrary = ({ cards, inCompare }) => {
   const { librarySearchSort, changeLibrarySearchSort } = useApp();

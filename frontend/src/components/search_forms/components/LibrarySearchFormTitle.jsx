@@ -1,28 +1,27 @@
-import React from 'react';
 import {
-  Select,
   SearchAdditionalForms,
-  SearchFormButtonLogicToggle,
   SearchFormButtonAdd,
   SearchFormButtonDel,
+  SearchFormButtonLogicToggle,
+  Select,
 } from '@/components';
 import {
   ANY,
-  TITLED,
+  ARCHBISHOP,
+  BARON,
+  BISHOP,
+  CARDINAL,
+  INNER_CIRCLE,
+  JUSTICAR,
+  LOGIC,
+  MAGAJI,
   NON_TITLED,
   PRIMOGEN,
   PRINCE,
-  JUSTICAR,
-  INNER_CIRCLE,
-  BARON,
-  BISHOP,
-  ARCHBISHOP,
   PRISCUS,
-  CARDINAL,
   REGENT,
-  MAGAJI,
   TITLE,
-  LOGIC,
+  TITLED,
 } from '@/constants';
 
 const LibrarySearchFormTitle = ({ value, onChange, searchForm }) => {

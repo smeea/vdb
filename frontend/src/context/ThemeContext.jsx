@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { setLocalStorage, getLocalStorage } from '@/services/storageServices';
+import React, { useEffect, useState } from 'react';
 import { AUTO, DARK, LIGHT } from '@/constants';
+import { getLocalStorage, setLocalStorage } from '@/services/storageServices';
+
 const THEME = 'theme';
 const TOGGLE_THEME = 'toggleTheme';
 

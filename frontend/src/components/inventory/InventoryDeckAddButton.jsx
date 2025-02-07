@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Check2 from '@icons/check2.svg?react';
 import PlusLg from '@icons/plus-lg.svg?react';
 import { ButtonIconed, ModalConfirmation } from '@/components';
-import { useApp, inventoryCardsAdd } from '@/context';
-import { NAME, CRYPT, LIBRARY } from '@/constants';
+import { CRYPT, LIBRARY, NAME } from '@/constants';
+import { inventoryCardsAdd, useApp } from '@/context';
 
 const InventoryDeckAddButton = ({ deck, inInventory }) => {
   const { setShowFloatingButtons, setShowMenuButtons } = useApp();

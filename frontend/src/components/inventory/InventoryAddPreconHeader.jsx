@@ -1,7 +1,6 @@
-import React from 'react';
 import { ConditionalTooltipOrModal, DeckSortButton, Input } from '@/components';
-import { useApp } from '@/context';
 import { NAME, SET } from '@/constants';
+import { useApp } from '@/context';
 
 const TooltipText = () => {
   return (

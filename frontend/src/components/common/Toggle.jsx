@@ -1,8 +1,8 @@
-import React, { useCallback } from 'react';
 import { Switch } from '@headlessui/react';
+import { useCallback } from 'react';
 import { twMerge } from 'tailwind-merge';
-import ToggleOn from '@icons/toggle-on.svg?react';
 import ToggleOff from '@icons/toggle-off.svg?react';
+import ToggleOn from '@icons/toggle-on.svg?react';
 
 const Toggle = ({ isOn, handleClick, size = 'md', disabled, children, variant = 'primary' }) => {
   const customSize = {

@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import { useCallback } from 'react';
 import List from '@icons/list.svg?react';
 import { ButtonFloat } from '@/components';
 import { useApp } from '@/context';

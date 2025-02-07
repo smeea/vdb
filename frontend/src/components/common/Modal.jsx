@@ -1,6 +1,6 @@
-import React, { useRef } from 'react';
-import { twMerge } from 'tailwind-merge';
 import { Dialog } from '@headlessui/react';
+import { useRef } from 'react';
+import { twMerge } from 'tailwind-merge';
 import { ButtonCloseModal, ButtonFloatClose } from '@/components';
 
 const Modal = ({

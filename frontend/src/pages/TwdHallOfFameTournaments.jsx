@@ -1,8 +1,7 @@
-import React from 'react';
 import { Disclosure } from '@headlessui/react';
-import { byName } from '@/utils';
 import { TwdHallFameTournamentsPlayer } from '@/components';
 import { useFetch } from '@/hooks';
+import { byName } from '@/utils';
 
 const TwdHallOfFameTournaments = () => {
   const url = `${import.meta.env.VITE_API_URL}/twd/hall_of_fame`;

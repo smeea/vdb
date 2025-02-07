@@ -1,6 +1,5 @@
-import React from 'react';
 import { Select } from '@/components';
-import { VOTES, ANY } from '@/constants';
+import { ANY, VOTES } from '@/constants';
 
 const CryptSearchFormVotes = ({ value, onChange }) => {
   const name = VOTES;

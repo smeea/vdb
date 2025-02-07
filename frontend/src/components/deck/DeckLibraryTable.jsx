@@ -1,7 +1,6 @@
-import React from 'react';
 import { DeckLibraryTableRow } from '@/components';
+import { ASCII, DECKID, ID, INVENTORY_TYPE } from '@/constants';
 import { getIsEditable } from '@/utils';
-import { ASCII, INVENTORY_TYPE, DECKID, ID } from '@/constants';
 
 const DeckLibraryTable = ({
   deck,

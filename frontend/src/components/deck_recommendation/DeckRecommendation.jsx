@@ -1,8 +1,8 @@
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 import { DeckRecommendationModal } from '@/components';
+import { CARDS, CRYPT, ID, LIBRARY } from '@/constants';
 import { useApp } from '@/context';
 import { useFetch } from '@/hooks';
-import { CARDS, LIBRARY, CRYPT, ID } from '@/constants';
 
 const DeckRecommendation = ({ setShow, deck }) => {
   const { cryptCardBase, libraryCardBase, setShowFloatingButtons } = useApp();

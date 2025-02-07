@@ -1,10 +1,9 @@
-import React from 'react';
 import dayjs from 'dayjs';
-import { twMerge } from 'tailwind-merge';
 import { useNavigate } from 'react-router';
+import { twMerge } from 'tailwind-merge';
 import { TwdOpenDeckButton } from '@/components';
-import { useApp, clearSearchForm, searchTwdForm } from '@/context';
-import { RELEASE_DATE, TWD_DATE, DECKID, AUTHOR, PLAYER, CRYPT, LIBRARY, TWD } from '@/constants';
+import { AUTHOR, CRYPT, DECKID, LIBRARY, PLAYER, RELEASE_DATE, TWD, TWD_DATE } from '@/constants';
+import { clearSearchForm, searchTwdForm, useApp } from '@/context';
 
 const TwdCardsHistoryCardAppearance = ({ card, byPlayer }) => {
   const { isMobile } = useApp();
@@ -28,7 +27,7 @@ const TwdCardsHistoryCardAppearance = ({ card, byPlayer }) => {
       <div
         className={twMerge(
           'flex min-w-[45px] items-center justify-center sm:min-w-[60px]',
-          !card[DECKID] && 'font-bold text-fgSecondary dark:text-fgSecondaryDark',
+          !card[DECKID] && 'text-fgSecondary dark:text-fgSecondaryDark font-bold',
         )}
       >
         {card[RELEASE_DATE].slice(0, 4)}
@@ -41,14 +40,14 @@ const TwdCardsHistoryCardAppearance = ({ card, byPlayer }) => {
       <div
         className={twMerge(
           'flex min-w-[25px] items-center justify-center sm:min-w-[60px]',
-          !card[DECKID] && 'font-bold text-fgSecondary dark:text-fgSecondaryDark',
+          !card[DECKID] && 'text-fgSecondary dark:text-fgSecondaryDark font-bold',
         )}
       >
         {yearsToWin}
       </div>
       <div className="flex min-w-[90px] items-center justify-between sm:min-w-[250px]">
         <div
-          className="inline text-fgSecondary hover:underline dark:text-fgSecondaryDark max-sm:text-sm"
+          className="text-fgSecondary dark:text-fgSecondaryDark inline hover:underline max-sm:text-sm"
           onClick={() => handleClick(card[PLAYER])}
         >
           {card[PLAYER]}

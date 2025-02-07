@@ -1,18 +1,18 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import Check2 from '@icons/check2.svg?react';
 import {
-  SearchAdditionalFormsText,
-  SearchFormButtonLogicToggle,
-  SearchFormButtonAddText,
-  SearchFormButtonDel,
-  Input,
-  Checkbox,
   ButtonClose,
   ButtonIconed,
+  Checkbox,
+  Input,
+  SearchAdditionalFormsText,
+  SearchFormButtonAddText,
+  SearchFormButtonDel,
+  SearchFormButtonLogicToggle,
 } from '@/components';
-import { useDebounce } from '@/hooks';
+import { IN, LABEL, LOGIC, NAME, REGEX, TEXT, TYPE_DEBOUNCE_DELAY, VALUE } from '@/constants';
 import { useApp } from '@/context';
-import { TYPE_DEBOUNCE_DELAY, NAME, TEXT, LABEL, VALUE, LOGIC, IN, REGEX } from '@/constants';
+import { useDebounce } from '@/hooks';
 
 const SearchFormTextAndButtons = ({
   searchForm,

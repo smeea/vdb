@@ -3,6 +3,8 @@
 // in case of missing filter or matching them the method returns false, meaning there's no missing criteria
 // if the filter is present and the card dont match it the method returns true meaning the criteria is missing.
 // if some criteria is missing the main method return false and exits that card check.
+import sects from '@/assets/data/sectsList.json';
+import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 import {
   ADV,
   ADVANCEMENT,
@@ -34,6 +36,7 @@ import {
   JUSTICAR,
   KHOLO,
   LE,
+  LOGIC,
   MAGAJI,
   MULTI_DISCIPLINE,
   MULTI_TYPE,
@@ -49,6 +52,11 @@ import {
   OR,
   OR_NEWER,
   OR_OLDER,
+  PATH,
+  PATH_CAINE,
+  PATH_CATHARI,
+  PATH_DEATH,
+  PATH_POWER,
   PLAYTEST,
   POOL,
   PRECON,
@@ -65,11 +73,6 @@ import {
   TEXT,
   TITLE,
   TITLES,
-  PATH,
-  PATH_CAINE,
-  PATH_CATHARI,
-  PATH_DEATH,
-  PATH_POWER,
   TRAITS,
   TWD,
   TYPE,
@@ -77,12 +80,9 @@ import {
   VOTE_1,
   VOTE_2,
   X,
-  LOGIC,
 } from '@/constants';
 import { getIsPlaytest } from '@/utils';
 import { CryptTraitsRegexMap, LibraryTraitsRegexMap } from '@/utils/traitsRegexMaps';
-import sects from '@/assets/data/sectsList.json';
-import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 
 export const filterCrypt = (cards = {}, filter) => {
   return Object.values(cards).filter((card) => {

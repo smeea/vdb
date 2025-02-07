@@ -1,19 +1,18 @@
-import React from 'react';
 import EyeFill from '@icons/eye-fill.svg?react';
+import paths from '@/assets/data/paths.json';
+import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 import {
+  ConditionalTooltip,
   DeckPreview,
   InventoryDeckAddButton,
   InventoryDeckDeleteButton,
-  ResultPreconClan,
-  ConditionalTooltip,
   ResultPathImage,
+  ResultPreconClan,
   Tr,
 } from '@/components';
-import { useDeckInInventory } from '@/hooks';
+import { CLAN, DATE, DECKID, NAME, PRECONS } from '@/constants';
 import { useApp } from '@/context';
-import { DECKID, CLAN, NAME, PRECONS, DATE } from '@/constants';
-import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
-import paths from '@/assets/data/paths.json';
+import { useDeckInInventory } from '@/hooks';
 
 const InventoryAddPreconRow = ({ deck }) => {
   const { isMobile } = useApp();

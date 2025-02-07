@@ -1,9 +1,8 @@
-import React from 'react';
 import { Link } from 'react-router';
-import { CardImage, ConditionalTooltipOrModal } from '@/components';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
+import { CardImage, ConditionalTooltipOrModal } from '@/components';
+import { DATE, NAME, PLAYTEST, POD, PRECONS, PROMO, SET } from '@/constants';
 import { useApp } from '@/context';
-import { PRECONS, DATE, NAME, SET, POD, PLAYTEST, PROMO } from '@/constants';
 
 const PreconsDetailed = ({ sets, set }) => {
   return Object.keys(sets[set]).map((i) => {
@@ -75,12 +74,12 @@ const ResultLayoutTextSets = ({ card }) => {
                 size="lg"
                 noPadding
               >
-                <div className="flex text-fgSecondary dark:text-fgPrimaryDark">
+                <div className="text-fgSecondary dark:text-fgPrimaryDark flex">
                   {set == PLAYTEST ? 'PLAYTEST' : set}
-                  <div className="flex items-start text-sm text-fgFourth dark:text-fgFourthDark">
+                  <div className="text-fgFourth dark:text-fgFourthDark flex items-start text-sm">
                     {year ? `'${year}` : null}
                   </div>
-                  <div className="inline text-midGray dark:text-midGrayDark">
+                  <div className="text-midGray dark:text-midGrayDark inline">
                     {preconsShort ? `:${preconsShort}` : null}
                   </div>
                 </div>

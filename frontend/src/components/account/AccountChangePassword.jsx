@@ -1,8 +1,8 @@
-import React, { useState, useActionState } from 'react';
+import { useActionState, useState } from 'react';
 import LockFill from '@icons/lock-fill.svg?react';
 import { AccountPasswordForm, ErrorOverlay } from '@/components';
+import { NEW_PASSWORD, PASSWORD } from '@/constants';
 import { userServices } from '@/services';
-import { PASSWORD, NEW_PASSWORD } from '@/constants';
 
 const AccountChangePassword = () => {
   const [error, setError] = useState(false);
@@ -35,7 +35,7 @@ const AccountChangePassword = () => {
 
   return (
     <div className="flex flex-col gap-2">
-      <div className="flex items-center gap-2 text-lg font-bold text-fgSecondary dark:text-fgSecondaryDark">
+      <div className="text-fgSecondary dark:text-fgSecondaryDark flex items-center gap-2 text-lg font-bold">
         <div className="flex min-w-[23px] justify-center">
           <LockFill width="20" height="20" viewBox="0 0 16 16" />
         </div>

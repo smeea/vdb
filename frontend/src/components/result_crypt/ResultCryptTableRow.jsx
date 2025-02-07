@@ -1,4 +1,3 @@
-import React from 'react';
 import { twMerge } from 'tailwind-merge';
 import { useSnapshot } from 'valtio';
 import {
@@ -7,10 +6,10 @@ import {
   ResultCryptTableRowCommon,
   ResultUsed,
 } from '@/components';
-import { useApp, deckStore, deckCardChange } from '@/context';
+import { CRYPT, DECK, DECKID, ID } from '@/constants';
+import { deckCardChange, deckStore, useApp } from '@/context';
 import { useSwipe } from '@/hooks';
 import { getIsEditable, getSwipedBg } from '@/utils';
-import { DECKID, CRYPT, ID, DECK } from '@/constants';
 
 const ResultCryptTableRow = ({
   card,
@@ -35,7 +34,7 @@ const ResultCryptTableRow = ({
     <tr
       {...swipeHandlers}
       className={twMerge(
-        'h-[38px] border-y border-bgSecondary dark:border-bgSecondaryDark',
+        'border-bgSecondary dark:border-bgSecondaryDark h-[38px] border-y',
         getSwipedBg(isSwiped),
       )}
     >

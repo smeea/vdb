@@ -1,31 +1,31 @@
-import React, { useState, useMemo } from 'react';
-import { FixedSizeList } from 'react-window';
+import { useMemo, useState } from 'react';
 import AutoSizer from 'react-virtualized-auto-sizer';
+import { FixedSizeList } from 'react-window';
+import imbuedClansList from '@/assets/data/imbuedClansList.json';
+import vampireClansList from '@/assets/data/vampireClansList.json';
 import {
-  WindowRows,
-  TwdCardsHistoryCryptRow,
   InventoryFilterForm,
-  SortButton,
   ResultModal,
+  SortButton,
+  TwdCardsHistoryCryptRow,
+  WindowRows,
 } from '@/components';
 import {
   ALL,
   CAPACITY_MAX_MIN,
   CAPACITY_MIN_MAX,
   CLAN,
+  CRYPT,
   DATE_PRINT,
   DATE_WIN,
   GROUP,
+  ID,
   NAME,
   PLAYER,
-  CRYPT,
-  ID,
 } from '@/constants';
-import { cryptSort } from '@/utils';
 import { useApp } from '@/context';
 import { useModalCardController } from '@/hooks';
-import imbuedClansList from '@/assets/data/imbuedClansList.json';
-import vampireClansList from '@/assets/data/vampireClansList.json';
+import { cryptSort } from '@/utils';
 
 const TwdCardsHistoryCrypt = ({ cards, players }) => {
   const { isMobile } = useApp();
@@ -87,7 +87,7 @@ const TwdCardsHistoryCrypt = ({ cards, players }) => {
 
   return (
     <div className="h-[calc(100dvh-132px)] sm:h-[calc(100dvh-195px)]">
-      <div className="flex items-center justify-between bg-bgSecondary dark:bg-bgSecondaryDark">
+      <div className="bg-bgSecondary dark:bg-bgSecondaryDark flex items-center justify-between">
         <div className="w-3/4">
           <InventoryFilterForm
             value={clan}
@@ -105,7 +105,7 @@ const TwdCardsHistoryCrypt = ({ cards, players }) => {
           setSortMethod={setSortMethod}
         />
       </div>
-      <div className="flex w-full bg-bgSecondary font-bold text-fgSecondary dark:bg-bgSecondaryDark dark:text-fgSecondaryDark">
+      <div className="bg-bgSecondary text-fgSecondary dark:bg-bgSecondaryDark dark:text-fgSecondaryDark flex w-full font-bold">
         {!isMobile && <div className="flex min-w-[32px] sm:min-w-[40px]" />}
         {!isMobile && <div className="flex min-w-[170px] lg:min-w-[180px]" />}
         <div className="flex w-full" />

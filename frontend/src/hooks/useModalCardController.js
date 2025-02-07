@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useMemo, useState } from 'react';
 
 const SIDE_CARD_MODE = 'SIDE_CARD_MODE';
 const MAIN_CARD_MODE = 'MAIN_CARD_MODE';

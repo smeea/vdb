@@ -1,4 +1,3 @@
-import React from 'react';
 import Dash from '@icons/dash.svg?react';
 import { Button } from '@/components';
 import { TEXT } from '@/constants';

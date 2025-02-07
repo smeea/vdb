@@ -1,4 +1,3 @@
-import React from 'react';
 import LightningFill from '@icons/lightning-fill.svg?react';
 import { ButtonIconed } from '@/components';
 

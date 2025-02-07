@@ -1,4 +1,3 @@
-import React from 'react';
 import { ANY, X } from '@/constants';
 
 const ResultCryptGroup = ({ value }) => {

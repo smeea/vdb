@@ -1,4 +1,3 @@
-import React from 'react';
 import { twMerge } from 'tailwind-merge';
 import { useSnapshot } from 'valtio';
 import {
@@ -7,10 +6,10 @@ import {
   DiffQuantityDiffCard,
   ResultLibraryTableRowCommon,
 } from '@/components';
-import { getSwipedBg, getHardTotal, getSoftMax } from '@/utils';
-import { useApp, deckStore, usedStore, inventoryStore, deckCardChange } from '@/context';
+import { DECKS, HARD, ID, INVENTORY_TYPE, LIBRARY, NAME, SOFT } from '@/constants';
+import { deckCardChange, deckStore, inventoryStore, useApp, usedStore } from '@/context';
 import { useSwipe } from '@/hooks';
-import { ID, NAME, INVENTORY_TYPE, SOFT, HARD, DECKS, LIBRARY } from '@/constants';
+import { getHardTotal, getSoftMax, getSwipedBg } from '@/utils';
 
 const DiffLibraryTableRow = ({
   cardChange,
@@ -43,7 +42,7 @@ const DiffLibraryTableRow = ({
     <tr
       {...swipeHandlers}
       className={twMerge(
-        'h-[38px] border-y border-bgSecondary dark:border-bgSecondaryDark',
+        'border-bgSecondary dark:border-bgSecondaryDark h-[38px] border-y',
         getSwipedBg(isSwiped),
       )}
     >

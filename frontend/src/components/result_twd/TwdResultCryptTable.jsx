@@ -1,9 +1,8 @@
-import React from 'react';
 import { ResultModal, TwdResultCryptTableRow, Warning } from '@/components';
+import { BANNED, CAPACITY, GROUPS, ID } from '@/constants';
 import { useApp } from '@/context';
-import { countCards, countTotalCost } from '@/utils';
 import { useDeckCrypt, useModalCardController } from '@/hooks';
-import { ID, BANNED, GROUPS, CAPACITY } from '@/constants';
+import { countCards, countTotalCost } from '@/utils';
 
 const TwdResultCryptTable = ({ crypt }) => {
   const { cryptDeckSort, setShowFloatingButtons, isDesktop } = useApp();

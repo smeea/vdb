@@ -1,6 +1,5 @@
-import React from 'react';
 import { Select } from '@/components';
-import { BLOOD, ANY, LE, GE, EQ } from '@/constants';
+import { ANY, BLOOD, EQ, GE, LE } from '@/constants';
 
 const LibrarySearchFormBloodCost = ({ value, onChange }) => {
   const name = BLOOD;

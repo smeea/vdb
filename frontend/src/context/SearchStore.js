@@ -1,19 +1,19 @@
 import { proxy } from 'valtio';
-import defaultsPdaForm from '@/components/search_forms/forms_data/defaultsPdaForm.json';
-import defaultsTwdForm from '@/components/search_forms/forms_data/defaultsTwdForm.json';
 import defaultsCryptForm from '@/components/search_forms/forms_data/defaultsCryptForm.json';
 import defaultsLibraryForm from '@/components/search_forms/forms_data/defaultsLibraryForm.json';
+import defaultsPdaForm from '@/components/search_forms/forms_data/defaultsPdaForm.json';
+import defaultsTwdForm from '@/components/search_forms/forms_data/defaultsTwdForm.json';
 import {
-  TEXT,
-  VOTES,
-  ARTIST,
-  CRYPT_COMPARE,
-  LIBRARY_COMPARE,
-  CRYPT,
-  LIBRARY,
   ANY,
-  TWD,
+  ARTIST,
+  CRYPT,
+  CRYPT_COMPARE,
+  LIBRARY,
+  LIBRARY_COMPARE,
   PDA,
+  TEXT,
+  TWD,
+  VOTES,
 } from '@/constants';
 
 export const searchResults = proxy({});

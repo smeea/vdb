@@ -1,8 +1,7 @@
-import React from 'react';
 import X from '@icons/x.svg?react';
-import { Button, ResultLibraryTypeImage, SortButton, Header } from '@/components';
-import { setLibraryCompare } from '@/context';
+import { Button, Header, ResultLibraryTypeImage, SortButton } from '@/components';
 import { TYPE } from '@/constants';
+import { setLibraryCompare } from '@/context';
 
 const ResultLibraryTotal = ({
   cards,

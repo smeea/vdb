@@ -1,10 +1,10 @@
-import React from 'react';
-import { useNavigate } from 'react-router';
 import { Menu } from '@headlessui/react';
+import { useNavigate } from 'react-router';
 import SymmetryVertical from '@icons/symmetry-vertical.svg?react';
-import { MenuItems, MenuItem, MenuButton } from '@/components';
-import { useApp, clearSearchForm, searchTwdForm, searchPdaForm } from '@/context';
-import { DECKID, TWD, PDA } from '@/constants';
+import { MenuButton, MenuItem, MenuItems } from '@/components';
+import { DECKID, PDA, TWD } from '@/constants';
+import { clearSearchForm, searchPdaForm, searchTwdForm, useApp } from '@/context';
+
 const SIMILAR = 'similar';
 
 const DeckSearchSimilarButton = ({ deck }) => {

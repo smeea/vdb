@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { DeckDrawModal } from '@/components';
-import { POOL, BLOOD } from '@/constants';
-import { countCards, getCardsArray } from '@/utils';
+import { BLOOD, CAPACITY, CRYPT, LIBRARY, POOL } from '@/constants';
 import { useApp } from '@/context';
-import { CRYPT, LIBRARY, CAPACITY } from '@/constants';
+import { countCards, getCardsArray } from '@/utils';
 
 const getRandomInt = (max) => {
   return Math.floor(Math.random() * Math.floor(max));

@@ -1,12 +1,11 @@
-import React from 'react';
 import {
   CardImage,
   ResultCryptLayoutText,
-  ResultLibraryLayoutText,
   ResultLayoutTextCommon,
+  ResultLibraryLayoutText,
 } from '@/components';
-import { useApp } from '@/context';
 import { ID } from '@/constants';
+import { useApp } from '@/context';
 
 const CardPopover = ({ card }) => {
   const { showImage } = useApp();

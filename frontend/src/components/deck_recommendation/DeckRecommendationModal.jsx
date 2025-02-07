@@ -1,11 +1,10 @@
-import React from 'react';
 import {
-  FlexGapped,
-  Spinner,
-  ResultCryptTable,
   DeckRecommendationLibrary,
-  Modal,
+  FlexGapped,
   Header,
+  Modal,
+  ResultCryptTable,
+  Spinner,
 } from '@/components';
 import { useApp } from '@/context';
 

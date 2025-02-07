@@ -1,4 +1,3 @@
-import React from 'react';
 import X from '@icons/x.svg?react';
 import { ButtonFloat } from '@/components';
 

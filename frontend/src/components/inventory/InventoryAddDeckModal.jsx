@@ -1,9 +1,9 @@
-import React, { useState, useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import { useSnapshot } from 'valtio';
 import { InventoryAddDeckHeader, InventoryAddDeckRow, Modal } from '@/components';
+import { DECKID, DECKS, MASTER, NAME, TAGS } from '@/constants';
+import { deckStore, useApp } from '@/context';
 import { decksSort } from '@/utils';
-import { TAGS, MASTER, DECKID, DECKS, NAME } from '@/constants';
-import { useApp, deckStore } from '@/context';
 
 const InventoryAddDeckModal = ({ handleClose }) => {
   const { isMobile } = useApp();

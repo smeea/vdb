@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router';
 import Activity from '@icons/activity.svg?react';
-import { Spinner, Hr, Modal, ButtonIconed, TextWithLinks } from '@/components';
-import { useFetch } from '@/hooks';
-import { useApp } from '@/context';
 import lastChange from '@/LAST_CHANGE.json';
+import { ButtonIconed, Hr, Modal, Spinner, TextWithLinks } from '@/components';
+import { useApp } from '@/context';
+import { useFetch } from '@/hooks';
 
 const UpdateNotification = () => {
   const { setShowFloatingButtons } = useApp();
@@ -38,7 +38,7 @@ const UpdateNotification = () => {
           size="sm"
         >
           <div className="flex flex-col gap-4 sm:gap-5">
-            <div className="flex flex-col gap-0.5 text-fgRed dark:text-fgRedDark">
+            <div className="text-fgRed dark:text-fgRedDark flex flex-col gap-0.5">
               <div>FUTURE UPDATE NOTIFICATION:</div>
               <div>
                 In March 2025 VDB will drop support of older browsers versions and they will stop to
@@ -50,7 +50,7 @@ const UpdateNotification = () => {
               </div>
             </div>
             <div className="flex flex-col gap-1.5">
-              <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
+              <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">
                 Changes [{update.version}]:
               </div>
               <ul className="flex flex-col gap-1.5">

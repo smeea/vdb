@@ -1,8 +1,8 @@
-import React, { useState, useRef } from 'react';
-import { ErrorOverlay, InventoryImportButton, DeckImportBadCardsModal } from '@/components';
-import { useApp, inventoryCardsAdd } from '@/context';
+import { useRef, useState } from 'react';
+import { DeckImportBadCardsModal, ErrorOverlay, InventoryImportButton } from '@/components';
+import { BAD_CARDS, CRYPT, LIBRARY } from '@/constants';
+import { inventoryCardsAdd, useApp } from '@/context';
 import { importDeck } from '@/utils';
-import { CRYPT, LIBRARY, BAD_CARDS } from '@/constants';
 
 const InventoryImport = () => {
   const { cryptCardBase, libraryCardBase, setShowFloatingButtons, setShowMenuButtons } = useApp();

@@ -1,4 +1,3 @@
-import React from 'react';
 import { twMerge } from 'tailwind-merge';
 
 const WindowRows = ({ index, style, data }) => {
@@ -7,7 +6,7 @@ const WindowRows = ({ index, style, data }) => {
       style={style}
       className={twMerge(
         index % 2 ? 'bg-bgThird dark:bg-bgThirdDark' : 'bg-bgPrimary dark:bg-bgPrimaryDark',
-        'flex border-b border-bgSecondary dark:border-bgSecondaryDark',
+        'border-bgSecondary dark:border-bgSecondaryDark flex border-b',
       )}
     >
       {data[index]}

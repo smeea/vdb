@@ -1,8 +1,7 @@
-import React from 'react';
-import { ConditionalTooltipOrModal, DeckDrawProbabilityText } from '@/components';
-import { drawProbability } from '@/utils';
-import { useApp } from '@/context';
 import cardtypeSortedFull from '@/assets/data/cardtypeSortedFull.json';
+import { ConditionalTooltipOrModal, DeckDrawProbabilityText } from '@/components';
+import { useApp } from '@/context';
+import { drawProbability } from '@/utils';
 
 const DeckDrawProbability = ({ cardName, n, N, k }) => {
   const { setShowFloatingButtons } = useApp();

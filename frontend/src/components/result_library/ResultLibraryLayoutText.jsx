@@ -1,4 +1,3 @@
-import React from 'react';
 import { twMerge } from 'tailwind-merge';
 import {
   ButtonCloseModal,
@@ -8,30 +7,30 @@ import {
   ResultLibraryCost,
   ResultLibraryDisciplines,
   ResultLibraryRequirements,
+  ResultLibraryTypeImage,
   ResultMiscImage,
   ResultName,
-  ResultPathImage,
   ResultNameAka,
-  ResultLibraryTypeImage,
+  ResultPathImage,
 } from '@/components';
-import { getLegality } from '@/utils';
-import { useApp } from '@/context';
 import {
   AKA,
   BANNED,
   BLOOD,
   BURN,
   CLAN,
+  CONVICTION,
   DISCIPLINE,
   ID,
+  PATH,
   PLAYTEST,
   POOL,
   REQUIREMENT,
   TRIFLE,
   TYPE,
-  CONVICTION,
-  PATH,
 } from '@/constants';
+import { useApp } from '@/context';
+import { getLegality } from '@/utils';
 
 const Requirements = ({ card }) => {
   return (

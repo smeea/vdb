@@ -1,23 +1,23 @@
+import sects from '@/assets/data/sectsList.json';
 import {
-  PRIMOGEN,
-  PRINCE,
-  JUSTICAR,
-  INNER_CIRCLE,
+  ARCHBISHOP,
   BARON,
   BISHOP,
-  ARCHBISHOP,
-  PRISCUS,
-  CARDINAL,
-  REGENT,
-  MAGAJI,
-  TITLED,
-  NON_TITLED,
-  DISCIPLINE,
-  REQUIREMENT,
-  CLAN,
   CAPACITY,
+  CARDINAL,
+  CLAN,
+  DISCIPLINE,
+  INNER_CIRCLE,
+  JUSTICAR,
+  MAGAJI,
+  NON_TITLED,
+  PRIMOGEN,
+  PRINCE,
+  PRISCUS,
+  REGENT,
+  REQUIREMENT,
+  TITLED,
 } from '@/constants';
-import sects from '@/assets/data/sectsList.json';
 
 const getLibraryRequirements = (card) => {
   let isCapacity;

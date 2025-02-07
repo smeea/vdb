@@ -1,4 +1,3 @@
-import React from 'react';
 import { Tab } from '@headlessui/react';
 
 const TabButton = ({ children }) => {

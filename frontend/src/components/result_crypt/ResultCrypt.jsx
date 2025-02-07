@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { ResultTable, ResultCryptTotal, ResultCryptTotalInfo, ErrorMessage } from '@/components';
-import { CRYPT, CAPACITY_MAX_MIN, CAPACITY_MIN_MAX, CLAN, GROUP, NAME, SECT } from '@/constants';
+import { useState } from 'react';
+import { ErrorMessage, ResultCryptTotal, ResultCryptTotalInfo, ResultTable } from '@/components';
+import { CAPACITY_MAX_MIN, CAPACITY_MIN_MAX, CLAN, CRYPT, GROUP, NAME, SECT } from '@/constants';
 import { useApp } from '@/context';
 
 const ResultCrypt = ({ cards, inCompare }) => {
@@ -34,7 +34,7 @@ const ResultCrypt = ({ cards, inCompare }) => {
             setSortMethod={changeCryptSearchSort}
           />
           {showInfo && (
-            <div className="bg-bgSecondary p-2 dark:bg-bgSecondaryDark">
+            <div className="bg-bgSecondary dark:bg-bgSecondaryDark p-2">
               <ResultCryptTotalInfo cards={cards} />
             </div>
           )}

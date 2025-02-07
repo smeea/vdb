@@ -1,15 +1,15 @@
-import React, { useCallback } from 'react';
+import { useCallback } from 'react';
 import { twMerge } from 'tailwind-merge';
 import {
   CardPopover,
+  ConditionalTooltip,
   ResultLibraryCost,
   ResultLibraryTableRowReqClanDis,
-  ResultName,
-  ResultMiscImage,
   ResultLibraryTypeImage,
-  ConditionalTooltip,
+  ResultMiscImage,
+  ResultName,
 } from '@/components';
-import { TYPE, TRIFLE, BLOOD, BURN } from '@/constants';
+import { BLOOD, BURN, TRIFLE, TYPE } from '@/constants';
 import { useApp } from '@/context';
 
 const Type = ({ card, handleClick }) => {

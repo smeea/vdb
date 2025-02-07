@@ -1,17 +1,14 @@
-import React, { useMemo } from 'react';
 import dayjs from 'dayjs';
+import { useMemo } from 'react';
 import { useSnapshot } from 'valtio';
-import Shuffle from '@icons/shuffle.svg?react';
-import PinAngleFill from '@icons/pin-angle-fill.svg?react';
 import At from '@icons/at.svg?react';
+import PinAngleFill from '@icons/pin-angle-fill.svg?react';
+import Shuffle from '@icons/shuffle.svg?react';
 import paths from '@/assets/data/paths.json';
-import { ResultPathImage, Select, ResultPreconClan, ResultLegalIcon } from '@/components';
-import { limitedStore, deckStore, useApp } from '@/context';
-import { byTimestamp, getRestrictions, getClan } from '@/utils';
+import { ResultLegalIcon, ResultPathImage, ResultPreconClan, Select } from '@/components';
 import {
   BANNED,
   CRYPT,
-  LIBRARY,
   DECKS,
   H,
   HAS_BANNED,
@@ -19,12 +16,15 @@ import {
   HAS_PLAYTEST,
   INVENTORY_TYPE,
   IS_HIDDEN,
+  LIBRARY,
   MASTER,
   NAME,
   PLAYTEST,
   S,
   TIMESTAMP,
 } from '@/constants';
+import { deckStore, limitedStore, useApp } from '@/context';
+import { byTimestamp, getClan, getRestrictions } from '@/utils';
 
 const DeckSelectMy = ({ deckid, handleSelect }) => {
   const { limitedMode, inventoryMode, isMobile, isWide } = useApp();

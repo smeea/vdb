@@ -1,10 +1,10 @@
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 import { useSnapshot } from 'valtio';
 import { DeckMissingModal } from '@/components';
-import { useApp, inventoryStore } from '@/context';
-import { getIsPlaytest } from '@/utils';
+import { AUTHOR, CRYPT, DECKID, DESCRIPTION, ID, LIBRARY, NAME } from '@/constants';
+import { inventoryStore, useApp } from '@/context';
 import { useInventoryCrypt, useInventoryLibrary } from '@/hooks';
-import { ID, CRYPT, LIBRARY, NAME, AUTHOR, DESCRIPTION, DECKID } from '@/constants';
+import { getIsPlaytest } from '@/utils';
 
 const InventoryMissingModalWrapper = ({
   clan,

@@ -1,16 +1,15 @@
-import React from 'react';
 import Dice3 from '@icons/dice-3-fill.svg?react';
 import {
-  CardSelect,
-  ResultLayoutText,
   ButtonIconed,
   CardImage,
-  FlexGapped,
+  CardSelect,
   ErrorMessage,
+  FlexGapped,
+  ResultLayoutText,
 } from '@/components';
+import { ID } from '@/constants';
 import { useApp } from '@/context';
 import { getIsPlaytest } from '@/utils';
-import { ID } from '@/constants';
 
 const CardsDesktop = ({ card, openRandomCard, handleChange, handleSetCard }) => {
   const { cryptCardBase, libraryCardBase, isMobile, playtestMode } = useApp();
@@ -27,11 +26,11 @@ const CardsDesktop = ({ card, openRandomCard, handleChange, handleSetCard }) => 
         {card && (
           <>
             {playtestMode || !getIsPlaytest(card[ID]) ? (
-              <div className="flex border-bgSecondary dark:border-bgSecondaryDark">
+              <div className="border-bgSecondary dark:border-bgSecondaryDark flex">
                 <div>
                   <CardImage card={card} />
                 </div>
-                <div className="w-full pl-5 pt-1">
+                <div className="w-full pt-1 pl-5">
                   <ResultLayoutText card={card} setCard={handleSetCard} noClose />
                 </div>
               </div>
@@ -44,7 +43,7 @@ const CardsDesktop = ({ card, openRandomCard, handleChange, handleSetCard }) => 
         )}
       </FlexGapped>
       <div className="min-w-[175px] max-sm:hidden">
-        <div className="sticky z-30 flex w-full flex-col gap-1 bg-bgPrimary dark:bg-bgPrimaryDark lg:top-10">
+        <div className="bg-bgPrimary dark:bg-bgPrimaryDark sticky z-30 flex w-full flex-col gap-1 lg:top-10">
           <ButtonIconed
             variant="secondary"
             onClick={() => openRandomCard(true)}

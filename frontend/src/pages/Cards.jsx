@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router';
 import { useSnapshot } from 'valtio';
 import { CardsDesktop, CardsMobile } from '@/components';
-import { useApp, searchResults } from '@/context';
-import { getIsPlaytest } from '@/utils';
 import { ID } from '@/constants';
+import { searchResults, useApp } from '@/context';
+import { getIsPlaytest } from '@/utils';
 
 const Cards = () => {
   const params = useParams();

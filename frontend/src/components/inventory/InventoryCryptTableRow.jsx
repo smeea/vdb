@@ -1,23 +1,23 @@
-import React, { useCallback } from 'react';
+import { useCallback } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { useSnapshot } from 'valtio';
 import {
   CardPopover,
+  ConditionalTooltip,
   InventoryCardQuantity,
   InventoryCardQuantityDiff,
-  ResultCryptCapacity,
-  ResultCryptDisciplines,
-  ResultName,
   ResultClanImage,
+  ResultCryptCapacity,
+  ResultCryptClanGroupTitle,
+  ResultCryptDisciplines,
   ResultCryptGroup,
   ResultCryptTitle,
-  ResultCryptClanGroupTitle,
-  ConditionalTooltip,
+  ResultName,
 } from '@/components';
-import { getSwipedBg, getHardTotal, getSoftMax } from '@/utils';
-import { useApp, inventoryStore, usedStore, limitedStore, inventoryCardChange } from '@/context';
+import { CLAN, CRYPT, DISCIPLINES, GROUP, HARD, ID, IS_FROZEN, SOFT, TITLE } from '@/constants';
+import { inventoryCardChange, inventoryStore, limitedStore, useApp, usedStore } from '@/context';
 import { useSwipe } from '@/hooks';
-import { ID, DISCIPLINES, TITLE, GROUP, CLAN, IS_FROZEN, SOFT, HARD, CRYPT } from '@/constants';
+import { getHardTotal, getSoftMax, getSwipedBg } from '@/utils';
 
 const InventoryCryptTableRow = ({ card, compact, newFocus, inShared, handleClick }) => {
   const { isMobile, isNarrow, isWide, limitedMode } = useApp();

@@ -1,8 +1,8 @@
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 import { FlexGapped, PlaytestReportsAllCardOrPrecon } from '@/components';
-import { getIsPlaytest, cryptSort, librarySort } from '@/utils';
+import { CRYPT, ID, PLAYTEST_OLD } from '@/constants';
 import { useApp } from '@/context';
-import { PLAYTEST_OLD, CRYPT, ID } from '@/constants';
+import { cryptSort, getIsPlaytest, librarySort } from '@/utils';
 
 const PlaytestReportsAllCardsWrapper = ({ reports, target, sortMethod, maxSameScore }) => {
   const { cryptCardBase, libraryCardBase } = useApp();

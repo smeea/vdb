@@ -1,16 +1,15 @@
-import React from 'react';
 import { twMerge } from 'tailwind-merge';
 import { useSnapshot } from 'valtio';
-import { deckCardChange, useApp, usedStore, inventoryStore, limitedStore } from '@/context';
 import {
-  DeckCardToggleInventoryStateTd,
   DeckCardQuantityTd,
-  ResultCryptTableRowCommon,
+  DeckCardToggleInventoryStateTd,
   DeckDrawProbability,
+  ResultCryptTableRowCommon,
 } from '@/components';
+import { CRYPT, HARD, ID, NAME, SOFT } from '@/constants';
+import { deckCardChange, inventoryStore, limitedStore, useApp, usedStore } from '@/context';
 import { useSwipe } from '@/hooks';
-import { getSwipedBg, getSoftMax, getHardTotal } from '@/utils';
-import { ID, NAME, SOFT, HARD, CRYPT } from '@/constants';
+import { getHardTotal, getSoftMax, getSwipedBg } from '@/utils';
 
 const DeckCryptTableRow = ({
   handleClick,

@@ -1,12 +1,12 @@
-import React, { useMemo } from 'react';
-import dayjs from 'dayjs';
 import { Disclosure, Tab } from '@headlessui/react';
+import dayjs from 'dayjs';
+import { useMemo } from 'react';
+import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 import { TabButton, TwdHallFameCardsPlayer } from '@/components';
+import { DATE, DECKID, ID, PLAYER, POD, PROMO, RELEASE_DATE, SET, TWD_DATE } from '@/constants';
 import { useApp } from '@/context';
 import { useFetch } from '@/hooks';
 import { byName } from '@/utils';
-import { RELEASE_DATE, SET, DATE, PLAYER, DECKID, TWD_DATE, ID, POD, PROMO } from '@/constants';
-import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 
 const TwdHallOfFameCards = () => {
   const { cryptCardBase, libraryCardBase } = useApp();

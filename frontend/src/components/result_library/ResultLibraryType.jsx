@@ -1,4 +1,3 @@
-import React from 'react';
 import { ResultLibraryTypeImage } from '@/components';
 
 const ResultLibraryType = ({ cardtype, total, trifleTotal }) => {

@@ -1,34 +1,34 @@
-import React, { useState, useMemo } from 'react';
-import { FixedSizeList } from 'react-window';
+import { useMemo, useState } from 'react';
 import AutoSizer from 'react-virtualized-auto-sizer';
+import { FixedSizeList } from 'react-window';
+import cardtypeSorted from '@/assets/data/cardtypeSorted.json';
+import disciplinesExtraList from '@/assets/data/disciplinesExtraList.json';
+import disciplinesList from '@/assets/data/disciplinesList.json';
+import virtuesList from '@/assets/data/virtuesList.json';
 import {
-  WindowRows,
-  TwdCardsHistoryLibraryRow,
   InventoryFilterForm,
-  SortButton,
   ResultModal,
+  SortButton,
+  TwdCardsHistoryLibraryRow,
+  WindowRows,
 } from '@/components';
 import {
   ALL,
-  NONE,
   CLAN_DISCIPLINE,
   COST_MAX_MIN,
   COST_MIN_MAX,
   DATE_PRINT,
   DATE_WIN,
-  NAME,
-  PLAYER,
-  TYPE,
   DISCIPLINE,
   ID,
+  NAME,
+  NONE,
+  PLAYER,
+  TYPE,
 } from '@/constants';
-import { librarySort } from '@/utils';
 import { useApp } from '@/context';
 import { useModalCardController } from '@/hooks';
-import disciplinesList from '@/assets/data/disciplinesList.json';
-import disciplinesExtraList from '@/assets/data/disciplinesExtraList.json';
-import virtuesList from '@/assets/data/virtuesList.json';
-import cardtypeSorted from '@/assets/data/cardtypeSorted.json';
+import { librarySort } from '@/utils';
 
 const TwdCardsHistoryLibrary = ({ cards, players }) => {
   const { isMobile } = useApp();
@@ -173,7 +173,7 @@ const TwdCardsHistoryLibrary = ({ cards, players }) => {
 
   return (
     <div className="h-[calc(100dvh-174px)] sm:h-[calc(100dvh-240px)]">
-      <div className="flex items-center justify-between bg-bgSecondary dark:bg-bgSecondaryDark">
+      <div className="bg-bgSecondary dark:bg-bgSecondaryDark flex items-center justify-between">
         <div className="w-3/4">
           <div className="flex flex-col gap-1">
             <InventoryFilterForm
@@ -203,7 +203,7 @@ const TwdCardsHistoryLibrary = ({ cards, players }) => {
         />
       </div>
 
-      <div className="flex w-full bg-bgSecondary font-bold text-fgSecondary dark:bg-bgSecondaryDark dark:text-fgSecondaryDark">
+      <div className="bg-bgSecondary text-fgSecondary dark:bg-bgSecondaryDark dark:text-fgSecondaryDark flex w-full font-bold">
         {!isMobile && <div className="flex min-w-[30px]" />}
         {!isMobile && <div className="flex min-w-[40px]" />}
         <div className="flex w-full" />

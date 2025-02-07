@@ -3,6 +3,7 @@ import {
   ADDITIONAL_STRIKE,
   AGGRAVATED,
   ALLY,
+  BASE,
   BLEED,
   BLEED_1,
   BLOCK,
@@ -22,6 +23,7 @@ import {
   STEALTH_1,
   STRENGTH,
   STRENGTH_1,
+  SUPERIOR,
   SWARM,
   TEXT,
   TYPE,
@@ -33,11 +35,9 @@ import {
   UNLOCK,
   VOTE,
   VOTES_TITLE,
-  SUPERIOR,
-  BASE,
 } from '@/constants';
-import { CryptTraitsRegexMap, LibraryTraitsRegexMap } from '@/utils/traitsRegexMaps';
 import { missingTrait } from '@/utils/cardFilters';
+import { CryptTraitsRegexMap, LibraryTraitsRegexMap } from '@/utils/traitsRegexMaps';
 
 const getTags = (crypt, library) => {
   const deckTags = {

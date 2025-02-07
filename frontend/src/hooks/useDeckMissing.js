@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
-import { usedStore, inventoryStore } from '@/context';
+import { CRYPT, INVENTORY_TYPE, LIBRARY } from '@/constants';
+import { inventoryStore, usedStore } from '@/context';
 import { getHardTotal, getSoftMax } from '@/utils';
-import { INVENTORY_TYPE, CRYPT, LIBRARY } from '@/constants';
 
 const getMissing = (cards, inventoryType, used, inventory) => {
   const missingCards = {};

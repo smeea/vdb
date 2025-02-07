@@ -1,22 +1,18 @@
-import React from 'react';
 import dayjs from 'dayjs';
-import EyeFill from '@icons/eye-fill.svg?react';
-import Shuffle from '@icons/shuffle.svg?react';
-import PinAngleFill from '@icons/pin-angle-fill.svg?react';
 import At from '@icons/at.svg?react';
+import EyeFill from '@icons/eye-fill.svg?react';
+import PinAngleFill from '@icons/pin-angle-fill.svg?react';
+import Shuffle from '@icons/shuffle.svg?react';
 import {
+  Button,
+  ConditionalTooltip,
   DeckPreview,
   DeckTags,
   InventoryDeckAddButton,
   InventoryDeckDeleteButton,
   ResultClanImage,
-  ConditionalTooltip,
-  Button,
   Tr,
 } from '@/components';
-import { getClan } from '@/utils';
-import { useDeckInInventory } from '@/hooks';
-import { deckToggleInventoryState } from '@/context';
 import {
   BRANCHES,
   BRANCH_NAME,
@@ -30,6 +26,9 @@ import {
   S,
   TIMESTAMP,
 } from '@/constants';
+import { deckToggleInventoryState } from '@/context';
+import { useDeckInInventory } from '@/hooks';
+import { getClan } from '@/utils';
 
 const InventoryAddDeckRow = ({ deck, allTagsOptions }) => {
   const inInventory = useDeckInInventory(deck);
