@@ -1,14 +1,12 @@
 import { useEffect, useState } from 'react';
-import Check2 from '@icons/check2.svg?react';
 import PaletteFill from '@icons/palette-fill.svg?react';
-import { Button, Input, InputLabel } from '@/components';
+import { Input, InputLabel } from '@/components';
 import { BRANCH_NAME, DECKID, IS_AUTHOR } from '@/constants';
 import { deckUpdate } from '@/context';
 import { getIsEditable } from '@/utils';
 
 const DeckChangeBranchName = ({ deck }) => {
   const [value, setValue] = useState(deck[BRANCH_NAME] || '');
-  const [success, setSuccess] = useState(false);
   const isEditable = getIsEditable(deck);
 
   useEffect(() => {
@@ -21,10 +19,6 @@ const DeckChangeBranchName = ({ deck }) => {
 
   const deckChangeBranchName = () => {
     deckUpdate(deck[DECKID], BRANCH_NAME, value);
-    setSuccess(true);
-    setTimeout(() => {
-      setSuccess(false);
-    }, 1000);
   };
 
   const handleSubmit = (event) => {
@@ -50,15 +44,6 @@ const DeckChangeBranchName = ({ deck }) => {
         readOnly={!isEditable}
         roundedStyle="rounded-sm max-sm:rounded-none"
       />
-      {deck[IS_AUTHOR] && (
-        <Button
-          className="rounded-l-none sm:hidden"
-          variant={success ? 'success' : 'primary'}
-          type="submit"
-        >
-          <Check2 />
-        </Button>
-      )}
     </form>
   );
 };
