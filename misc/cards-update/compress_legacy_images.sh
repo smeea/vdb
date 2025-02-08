@@ -1,4 +1,4 @@
-src_path="../legacy-images"
+src_path="legacy-images"
 target_path="../../frontend/public/images/cards/legacy"
 
 for image in $src_path/*.jpg
