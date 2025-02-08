@@ -1256,7 +1256,7 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"[ANI] The press can only be used during the current round.",
+                "text":"[ANI] The optional press can only be used during the current round.",
                 "refs":{
                     "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
                 }
@@ -2177,7 +2177,7 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"The press can only be used during the current round.",
+                "text":"[CHI] The optional press can only be used during the current round.",
                 "refs":{
                     "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
                 }
@@ -4276,7 +4276,13 @@
                 }
             },
             {
-                "text":"[CHI] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}). The card cannot be played if the minion cannot afford to burn the blood.",
+                "text":"[CHI] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}).",
+                "refs":{
+                    "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
+                }
+            },
+            {
+                "text":"[CHI] The card cannot be played if the minion cannot afford to burn the blood.",
                 "refs":{
                     "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
                 }
@@ -5697,7 +5703,7 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"The press can only be used during the current round.",
+                "text":"The optional press can only be used during the current round.",
                 "refs":{
                     "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
                 }
@@ -5771,7 +5777,7 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"The press can only be used during the current round.",
+                "text":"The optional press can only be used during the current round.",
                 "refs":{
                     "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
                 }
@@ -8438,6 +8444,18 @@
                     "PIB 20150428":"https://www.vekn.net/forum/rules-questions/70714-card-replacement?start=6#70747",
                     "LSJ 20100206-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/reXyybyIYX8/m/jeCyjdiZ5T4J"
                 }
+            },
+            {
+                "text":"Ignores all \"do not replace\" clauses and special replacement effects on cards played from it.",
+                "refs":{
+                    "LSJ 20081126":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/EsG0EVCLqX4/m/US4l7Irgyh4J"
+                }
+            },
+            {
+                "text":"The card on it cannot be discarded or burned to satisfy another effect (eg. {Tension in the Ranks} or using political action cards for votes).",
+                "refs":{
+                    "LSJ 20050118":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/W784_3oyz7I/m/Cgek1j9Hv-8J"
+                }
             }
         ],
         "set":{
@@ -10042,12 +10060,6 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"[VIC] The press can only be used during the current round.",
-                "refs":{
-                    "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
-                }
-            },
-            {
                 "text":"[VIC] Immune means damage is not inflicted, even if non-preventable or outside combat.",
                 "refs":{
                     "LSJ 20010627":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NhNCVCCDyU0/m/I5Yph3-UUPsJ",
@@ -10065,6 +10077,12 @@
                 "text":"[VIC] Minions can (uselessly) gain additional strikes even if they cannot strike.",
                 "refs":{
                     "LSJ 19970814-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-NDAClfltxk/m/POeoheutXf0J"
+                }
+            },
+            {
+                "text":"[VIC] The optional press can only be used during the current round.",
+                "refs":{
+                    "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
                 }
             }
         ],
@@ -10196,6 +10214,13 @@
                 "refs":{
                     "LSJ 20050313":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/eSShNquHnXI/m/4H7zIau2DjoJ",
                     "ANK 20230408":"https://www.vekn.net/forum/rules-questions/80438-the-british-museum-london-bloodstone#107810"
+                }
+            },
+            {
+                "text":"The option to place the card on another minion can only be used when playing the card normally; for any other action or put into play effect, the card is placed on the playing minion.",
+                "refs":{
+                    "LSJ 20090824":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/vWBysQ7L4fM/m/SA1wFRHusXAJ",
+                    "LSJ 20051121":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/51XITiJtdjo/m/A9jSHsxBX8QJ"
                 }
             }
         ],
@@ -10722,12 +10747,6 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"[tha] The press can only be used during the current round.",
-                "refs":{
-                    "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
-                }
-            },
-            {
                 "text":"[vis] [VIS] The unlock effect takes place before the end of combat.",
                 "refs":{
                     "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ"
@@ -10745,6 +10764,12 @@
                 "refs":{
                     "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
                     "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+                }
+            },
+            {
+                "text":"[tha] The optional press can only be used during the current round.",
+                "refs":{
+                    "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
                 }
             }
         ],
@@ -12660,7 +12685,13 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"[NEC] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}). The card cannot be played if the minion cannot afford to burn the blood.",
+                "text":"[NEC] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}).",
+                "refs":{
+                    "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
+                }
+            },
+            {
+                "text":"[NEC] The card cannot be played if the minion cannot afford to burn the blood.",
                 "refs":{
                     "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
                 }
@@ -14530,12 +14561,6 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"[spi] The optional press can only be used during the current round.",
-                "refs":{
-                    "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
-                }
-            },
-            {
                 "text":"[SPI] If the action continues \"as if unblocked\", all action modifiers and reaction cards are still in effect, even those pertaining to a successful block.",
                 "refs":{
                     "RTR 19941109":"https://groups.google.com/d/msg/rec.games.deckmaster/_6CXoKTSLnw/FdG67-3HEAQJ",
@@ -14572,6 +14597,12 @@
                 "refs":{
                     "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
                     "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+                }
+            },
+            {
+                "text":"[spi] The optional press can only be used during the current round.",
+                "refs":{
+                    "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
                 }
             }
         ],
@@ -15186,7 +15217,13 @@
                 }
             },
             {
-                "text":"[aus][pre] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}). The card cannot be played if the minion cannot afford to burn the blood.",
+                "text":"[aus][pre] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}).",
+                "refs":{
+                    "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
+                }
+            },
+            {
+                "text":"[aus][pre] The card cannot be played if the minion cannot afford to burn the blood.",
                 "refs":{
                     "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
                 }
@@ -15379,6 +15416,13 @@
                     "LSJ 20010627":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NhNCVCCDyU0/m/I5Yph3-UUPsJ",
                     "LSJ 20010629":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/MhHKBY7II78/m/EyI_ise9M-kJ",
                     "LSJ 20090304-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/B7EQiAVOr1Q/m/gg-GkqQBRp8J"
+                }
+            },
+            {
+                "text":"The option to place the card on another minion can only be used when playing the card normally; for any other action or put into play effect, the card is placed on the playing minion.",
+                "refs":{
+                    "LSJ 20090824":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/vWBysQ7L4fM/m/SA1wFRHusXAJ",
+                    "LSJ 20051121":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/51XITiJtdjo/m/A9jSHsxBX8QJ"
                 }
             }
         ],
@@ -15746,7 +15790,13 @@
                 }
             },
             {
-                "text":"[VIC] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}). The card cannot be played if the minion cannot afford to burn the blood.",
+                "text":"[VIC] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}).",
+                "refs":{
+                    "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
+                }
+            },
+            {
+                "text":"[VIC] The card cannot be played if the minion cannot afford to burn the blood.",
                 "refs":{
                     "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
                 }
@@ -17017,7 +17067,7 @@
                 }
             },
             {
-                "text":"[NEC] The press can only be used during the current round.",
+                "text":"[NEC] The optional press can only be used during the current round.",
                 "refs":{
                     "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
                 }
@@ -17057,12 +17107,6 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"[tha] The press can only be used during the current round.",
-                "refs":{
-                    "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
-                }
-            },
-            {
                 "text":"[vis], [VIS] Does not prevent the opponent from dodging, the dodge just has no effect.",
                 "refs":{
                     "LSJ 20030902-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/mgZt4f2LyOg/m/FCeKmePPkxwJ",
@@ -17074,6 +17118,12 @@
                 "refs":{
                     "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
                     "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+                }
+            },
+            {
+                "text":"[tha] The optional press can only be used during the current round.",
+                "refs":{
+                    "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
                 }
             }
         ],
@@ -23925,7 +23975,13 @@
                 }
             },
             {
-                "text":"[abo] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}). The card cannot be played if the minion cannot afford to burn the blood.",
+                "text":"[abo] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}).",
+                "refs":{
+                    "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
+                }
+            },
+            {
+                "text":"[abo] The card cannot be played if the minion cannot afford to burn the blood.",
                 "refs":{
                     "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
                 }
@@ -23959,12 +24015,6 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"The press can only be used during the current round.",
-                "refs":{
-                    "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
-                }
-            },
-            {
                 "text":"[abo][REFLEX] Cards are not replaced during the \"as played\" window. The cancelation must be played immediately: no other effects can be used, except for wakes (eg. neither\u00a0{The Barrens}\u00a0nor {Dreams of the Sphinx}\u00a0can be used).",
                 "refs":{
                     "LSJ 20061207":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/nqcrJlhg4Ng/m/qQu7p-LLhfAJ",
@@ -23997,6 +24047,12 @@
                 "text":"[abo] [REFLEX] Any frenzy card that targets/selects/chooses/affects the minion when played, is considered being played on the minion.",
                 "refs":{
                     "LSJ 20051113":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/L-ctaLucuKU/m/dG0EKdSd4g0J"
+                }
+            },
+            {
+                "text":"The optional press can only be used during the current round.",
+                "refs":{
+                    "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
                 }
             }
         ],
@@ -24775,7 +24831,13 @@
                 }
             },
             {
-                "text":"The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}). The card cannot be played if the minion cannot afford to burn the blood.",
+                "text":"The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}).",
+                "refs":{
+                    "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
+                }
+            },
+            {
+                "text":"The card cannot be played if the minion cannot afford to burn the blood.",
                 "refs":{
                     "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
                 }
@@ -24996,7 +25058,7 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"[PRO] The press can only be used during the current round.",
+                "text":"[PRO] The optional press can only be used during the current round.",
                 "refs":{
                     "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
                 }
@@ -26755,16 +26817,16 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"The press and maneuver can only be used during the current round.",
-                "refs":{
-                    "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
-                }
-            },
-            {
                 "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
                 "refs":{
                     "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
                     "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+                }
+            },
+            {
+                "text":"[thn],[THN] The optional press can only be used during the current round.",
+                "refs":{
+                    "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
                 }
             }
         ],
@@ -26929,7 +26991,7 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"[pro] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}). The card cannot be played if the minion cannot afford to burn the blood.",
+                "text":"[pro] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}).",
                 "refs":{
                     "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
                 }
@@ -26939,6 +27001,12 @@
                 "refs":{
                     "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
                     "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+                }
+            },
+            {
+                "text":"[pro] The card cannot be played if the minion cannot afford to burn the blood.",
+                "refs":{
+                    "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
                 }
             }
         ],
@@ -27343,6 +27411,18 @@
                 "refs":{
                     "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
                     "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+                }
+            },
+            {
+                "text":"[MEL] Ignores all \"do not replace\" clauses and special replacement effects on cards played from it.",
+                "refs":{
+                    "LSJ 20081126":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/EsG0EVCLqX4/m/US4l7Irgyh4J"
+                }
+            },
+            {
+                "text":"[MEL] The card on it cannot be discarded or burned to satisfy another effect (eg. {Tension in the Ranks} or using political action cards for votes).",
+                "refs":{
+                    "LSJ 20050118":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/W784_3oyz7I/m/Cgek1j9Hv-8J"
                 }
             }
         ],
@@ -29520,12 +29600,6 @@
                 }
             },
             {
-                "text":"The card on it cannot be discarded or burned to satisfy another effect (eg. {Tension in the Ranks}).",
-                "refs":{
-                    "LSJ 20050118":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/W784_3oyz7I/m/Cgek1j9Hv-8J"
-                }
-            },
-            {
                 "text":"Can be used during an action, when the controller has the opportunity to play an effect.",
                 "refs":{
                     "ANK 20200616":"https://www.vekn.net/forum/rules-questions/78687-the-erciyes-fragments-fragment-of-the-book-of-nod-barrens-impulse#100110"
@@ -29535,6 +29609,18 @@
                 "text":"If it leaves play, the card on it is burned.",
                 "refs":{
                     "LSJ 20021128":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/6rqhybcysh8/m/hU-qIp2on-YJ"
+                }
+            },
+            {
+                "text":"Ignores all \"do not replace\" clauses and special replacement effects on cards played from it.",
+                "refs":{
+                    "LSJ 20081126":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/EsG0EVCLqX4/m/US4l7Irgyh4J"
+                }
+            },
+            {
+                "text":"The card on it cannot be discarded or burned to satisfy another effect (eg. {Tension in the Ranks} or using political action cards for votes).",
+                "refs":{
+                    "LSJ 20050118":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/W784_3oyz7I/m/Cgek1j9Hv-8J"
                 }
             }
         ],
@@ -33439,7 +33525,7 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"[tha] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}). The card cannot be played if the minion cannot afford to burn the blood.",
+                "text":"[tha] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}).",
                 "refs":{
                     "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
                 }
@@ -33449,6 +33535,12 @@
                 "refs":{
                     "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
                     "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+                }
+            },
+            {
+                "text":"[tha] The card cannot be played if the minion cannot afford to burn the blood.",
+                "refs":{
+                    "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
                 }
             }
         ],
@@ -33580,7 +33672,14 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"[CEL] The optional press can only be used during the current round.",
+                "refs":{
+                    "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
+                }
+            }
+        ],
         "set":{
             "Jyhad":{
                 "C":true
@@ -34910,7 +35009,7 @@
                 }
             },
             {
-                "text":"The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}). The card cannot be played if the minion cannot afford to burn the blood.",
+                "text":"The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}).",
                 "refs":{
                     "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
                 }
@@ -35128,7 +35227,14 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"[PRO] The optional press can only be used during the current round.",
+                "refs":{
+                    "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
+                }
+            }
+        ],
         "set":{
             "V5A":{
                 "PG":"2"
@@ -35783,6 +35889,12 @@
                 "text":"A vampire with no circle designation is in his own unique circle. Vampires with the same name (eg. {The Embrace}, non-unique vampires) do not share a circle by default, each has his own circle of one by default.",
                 "refs":{
                     "LSJ 20020609":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Q_Lk0DPHqC8/m/nAfGfCvsISgJ"
+                }
+            },
+            {
+                "text":"[SAN] The optional press can only be used during the current round.",
+                "refs":{
+                    "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
                 }
             }
         ],
@@ -37457,6 +37569,18 @@
                 "refs":{
                     "PIB 20150428":"https://www.vekn.net/forum/rules-questions/70714-card-replacement?start=6#70747"
                 }
+            },
+            {
+                "text":"Ignores all \"do not replace\" clauses and special replacement effects on cards played from it.",
+                "refs":{
+                    "LSJ 20081126":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/EsG0EVCLqX4/m/US4l7Irgyh4J"
+                }
+            },
+            {
+                "text":"The card on it cannot be discarded or burned to satisfy another effect (eg. {Tension in the Ranks} or using political action cards for votes).",
+                "refs":{
+                    "LSJ 20050118":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/W784_3oyz7I/m/Cgek1j9Hv-8J"
+                }
             }
         ],
         "set":{
@@ -38433,12 +38557,6 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"The press can only be used during the current round.",
-                "refs":{
-                    "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
-                }
-            },
-            {
                 "text":"[SER] No other effect can be used to reset next round's range, but other pre-range effects can be played.",
                 "refs":{
                     "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
@@ -38449,6 +38567,12 @@
                 "text":"[SER] If another effect was already setting next round's range (eg. {Neutral Guard}), that effect has priority.",
                 "refs":{
                     "PIB 20120214":"https://www.vekn.net/forum/rules-questions/22906-re-set-the-range?start=12#22999"
+                }
+            },
+            {
+                "text":"The optional press can only be used during the current round.",
+                "refs":{
+                    "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
                 }
             }
         ],
@@ -39024,7 +39148,13 @@
                 }
             },
             {
-                "text":"The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}). The card cannot be played if the minion cannot afford to burn the blood.",
+                "text":"The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}).",
+                "refs":{
+                    "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
+                }
+            },
+            {
+                "text":"The card cannot be played if the minion cannot afford to burn the blood.",
                 "refs":{
                     "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
                 }
@@ -39823,7 +39953,13 @@
                 }
             },
             {
-                "text":"[CHI] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}). The card cannot be played if the minion cannot afford to burn the blood.",
+                "text":"[CHI] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}).",
+                "refs":{
+                    "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
+                }
+            },
+            {
+                "text":"[CHI] The card cannot be played if the minion cannot afford to burn the blood.",
                 "refs":{
                     "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
                 }
@@ -40652,6 +40788,12 @@
                 "text":"Must be played after combat if the action is blocked",
                 "refs":{
                     "RTR 19980623":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/tSpd9dtTElc/m/-CuHJF54_n0J"
+                }
+            },
+            {
+                "text":"Ignores all \"do not replace\" clauses and special replacement effects on cards played from it.",
+                "refs":{
+                    "LSJ 20081126":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/EsG0EVCLqX4/m/US4l7Irgyh4J"
                 }
             },
             {
@@ -41546,15 +41688,15 @@
                 }
             },
             {
-                "text":"[FOR] The press can only be used during the current round.",
-                "refs":{
-                    "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
-                }
-            },
-            {
                 "text":"X can be zero.",
                 "refs":{
                     "LSJ 20030502":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qBa9CvBwqNA/m/ZuBgMjNgb6EJ"
+                }
+            },
+            {
+                "text":"[FOR] The optional press can only be used during the current round.",
+                "refs":{
+                    "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
                 }
             }
         ],
@@ -42950,7 +43092,7 @@
                 }
             },
             {
-                "text":"[DAI] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}). The card cannot be played if the minion cannot afford to burn the blood.",
+                "text":"[DAI] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}).",
                 "refs":{
                     "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
                 }
@@ -42960,6 +43102,12 @@
                 "refs":{
                     "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
                     "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+                }
+            },
+            {
+                "text":"[DAI] The card cannot be played if the minion cannot afford to burn the blood.",
+                "refs":{
+                    "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
                 }
             }
         ],
@@ -43285,17 +43433,17 @@
                 }
             },
             {
-                "text":"If grabbed by a \"this vampire employs\" effect (not the normal employ action), the vampire receiving Ilomba does not get to move Ilomba on to a new target.",
-                "refs":{
-                    "LSJ 20090824":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/vWBysQ7L4fM/m/SA1wFRHusXAJ",
-                    "LSJ 20051121":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/51XITiJtdjo/m/A9jSHsxBX8QJ"
-                }
-            },
-            {
                 "text":"Is neither a mortal nor a monster.",
                 "refs":{
                     "ANK 20200203-2":"https://www.vekn.net/forum/rules-questions/78415-is-ghoul-mortal#98872",
                     "LSJ 20060515":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/bzusnKlnYr8/m/OSMvzE7YjokJ"
+                }
+            },
+            {
+                "text":"The option to place the card on another minion can only be used when playing the card normally; for any other action or put into play effect, the card is placed on the playing minion.",
+                "refs":{
+                    "LSJ 20090824":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/vWBysQ7L4fM/m/SA1wFRHusXAJ",
+                    "LSJ 20051121":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/51XITiJtdjo/m/A9jSHsxBX8QJ"
                 }
             }
         ],
@@ -43359,7 +43507,14 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"[VIC] The optional press can only be used during the current round.",
+                "refs":{
+                    "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
+                }
+            }
+        ],
         "set":{
             "KMW":{
                 "R":true
@@ -43405,12 +43560,6 @@
                 }
             },
             {
-                "text":"The press can only be used during the current round.",
-                "refs":{
-                    "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
-                }
-            },
-            {
                 "text":"[POT] No other effect can be used to reset next round's range, but other pre-range effects can be played.",
                 "refs":{
                     "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
@@ -43421,6 +43570,12 @@
                 "text":"[POT] If another effect was already setting next round's range (eg. {Neutral Guard}), that effect has priority.",
                 "refs":{
                     "PIB 20120214":"https://www.vekn.net/forum/rules-questions/22906-re-set-the-range?start=12#22999"
+                }
+            },
+            {
+                "text":"[POT] The optional press can only be used during the current round.",
+                "refs":{
+                    "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
                 }
             }
         ],
@@ -43684,7 +43839,7 @@
                 }
             },
             {
-                "text":"[pro] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}). The card cannot be played if the minion cannot afford to burn the blood.",
+                "text":"[pro] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}).",
                 "refs":{
                     "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
                 }
@@ -44021,15 +44176,15 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"[FOR] The press can only be used during the current round.",
-                "refs":{
-                    "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
-                }
-            },
-            {
                 "text":"[for] Cannot be used if there is no damage to prevent.",
                 "refs":{
                     "LSJ 20001114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qXSlM7Grq1c/m/cSDoQ9mw0z4J"
+                }
+            },
+            {
+                "text":"[FOR] The optional press can only be used during the current round.",
+                "refs":{
+                    "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
                 }
             }
         ],
@@ -44757,6 +44912,13 @@
                 "text":"The vampire playing Inscription need not meet any of the requirements, other than the [tha]Blood Sorcery needed to play Inscription in the first place.",
                 "refs":{
                     "LSJ 20031116":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/RQBw8EnnD5s/m/NpdTwIuChy8J"
+                }
+            },
+            {
+                "text":"The option to place the card on another minion can only be used when playing the card normally; for any other action or put into play effect, the card is placed on the playing minion.",
+                "refs":{
+                    "LSJ 20090824":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/vWBysQ7L4fM/m/SA1wFRHusXAJ",
+                    "LSJ 20051121":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/51XITiJtdjo/m/A9jSHsxBX8QJ"
                 }
             }
         ],
@@ -46313,12 +46475,6 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"[ser] The press can only be used during the current round.",
-                "refs":{
-                    "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
-                }
-            },
-            {
                 "text":"[SER] Cards are not replaced during the \"as played\" window. The cancelation must be played immediately: no other effects can be used, except for wakes (eg. neither\u00a0{The Barrens}\u00a0nor {Dreams of the Sphinx}\u00a0can be used).",
                 "refs":{
                     "LSJ 20061207":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/nqcrJlhg4Ng/m/qQu7p-LLhfAJ",
@@ -46345,6 +46501,12 @@
                 "text":"[SER] If a limited effect is canceled (bleed, additional strike), then the limit is not triggered and another limited effect can be used.",
                 "refs":{
                     "LSJ 20030224":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/67261v339Ds/m/um8V7VVp2Y4J"
+                }
+            },
+            {
+                "text":"[ser] The optional press can only be used during the current round.",
+                "refs":{
+                    "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
                 }
             }
         ],
@@ -48225,7 +48387,7 @@
                 }
             },
             {
-                "text":"[VIC] The press can only be used during the current round.",
+                "text":"[VIC] The optional press can only be used during the current round.",
                 "refs":{
                     "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
                 }
@@ -48434,12 +48596,6 @@
                 }
             },
             {
-                "text":"[vic] The press can only be used during the current round.",
-                "refs":{
-                    "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
-                }
-            },
-            {
                 "text":"[vic] No other effect can be used to reset next round's range, but other pre-range effects can be played.",
                 "refs":{
                     "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
@@ -48457,6 +48613,12 @@
                 "refs":{
                     "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
                     "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+                }
+            },
+            {
+                "text":"[vic] The optional press can only be used during the current round.",
+                "refs":{
+                    "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
                 }
             }
         ],
@@ -48778,7 +48940,7 @@
                 }
             },
             {
-                "text":"[vis]/[VIS] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}). The card cannot be played if the minion cannot afford to burn the blood.",
+                "text":"[vis]/[VIS] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}).",
                 "refs":{
                     "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
                 }
@@ -50010,6 +50172,18 @@
                 "refs":{
                     "LSJ 20021128":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/6rqhybcysh8/m/hU-qIp2on-YJ"
                 }
+            },
+            {
+                "text":"Ignores all \"do not replace\" clauses and special replacement effects on cards played from it.",
+                "refs":{
+                    "LSJ 20081126":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/EsG0EVCLqX4/m/US4l7Irgyh4J"
+                }
+            },
+            {
+                "text":"The card on it cannot be discarded or burned to satisfy another effect (eg. {Tension in the Ranks} or using political action cards for votes).",
+                "refs":{
+                    "LSJ 20050118":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/W784_3oyz7I/m/Cgek1j9Hv-8J"
+                }
             }
         ],
         "set":{
@@ -51057,7 +51231,7 @@
                 }
             },
             {
-                "text":"[VAL] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}). The card cannot be played if the minion cannot afford to burn the blood.",
+                "text":"[VAL] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}).",
                 "refs":{
                     "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
                 }
@@ -53248,7 +53422,13 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"[PRE] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}). The card cannot be played if the minion cannot afford to burn the blood.",
+                "text":"[PRE] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}).",
+                "refs":{
+                    "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
+                }
+            },
+            {
+                "text":"[PRE] The card cannot be played if the minion cannot afford to burn the blood.",
                 "refs":{
                     "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
                 }
@@ -53452,7 +53632,7 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"[aus][obf] The press can only be used during the current round.",
+                "text":"[aus][obf] The optional press can only be used during the current round.",
                 "refs":{
                     "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
                 }
@@ -53668,6 +53848,18 @@
                 "text":"If it leaves play, the card on it is burned.",
                 "refs":{
                     "LSJ 20021128":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/6rqhybcysh8/m/hU-qIp2on-YJ"
+                }
+            },
+            {
+                "text":"Ignores all \"do not replace\" clauses and special replacement effects on cards played from it.",
+                "refs":{
+                    "LSJ 20081126":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/EsG0EVCLqX4/m/US4l7Irgyh4J"
+                }
+            },
+            {
+                "text":"The card on it cannot be discarded or burned to satisfy another effect (eg. {Tension in the Ranks} or using political action cards for votes).",
+                "refs":{
+                    "LSJ 20050118":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/W784_3oyz7I/m/Cgek1j9Hv-8J"
                 }
             }
         ],
@@ -55839,6 +56031,18 @@
                 "refs":{
                     "LSJ 20021128":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/6rqhybcysh8/m/hU-qIp2on-YJ"
                 }
+            },
+            {
+                "text":"Ignores all \"do not replace\" clauses and special replacement effects on cards played from it.",
+                "refs":{
+                    "LSJ 20081126":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/EsG0EVCLqX4/m/US4l7Irgyh4J"
+                }
+            },
+            {
+                "text":"The card on it cannot be discarded or burned to satisfy another effect (eg. {Tension in the Ranks} or using political action cards for votes).",
+                "refs":{
+                    "LSJ 20050118":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/W784_3oyz7I/m/Cgek1j9Hv-8J"
+                }
             }
         ],
         "set":{
@@ -55914,7 +56118,7 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"[SPI] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}). The card cannot be played if the minion cannot afford to burn the blood.",
+                "text":"[SPI] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}).",
                 "refs":{
                     "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
                 }
@@ -55924,6 +56128,12 @@
                 "refs":{
                     "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
                     "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+                }
+            },
+            {
+                "text":"[SPI] The card cannot be played if the minion cannot afford to burn the blood.",
+                "refs":{
+                    "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
                 }
             }
         ],
@@ -63111,6 +63321,18 @@
                     "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
                     "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
                 }
+            },
+            {
+                "text":"[mel]/[MEL] Ignores all \"do not replace\" clauses and special replacement effects on cards played from it.",
+                "refs":{
+                    "LSJ 20081126":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/EsG0EVCLqX4/m/US4l7Irgyh4J"
+                }
+            },
+            {
+                "text":"[mel]/[MEL] The card on it cannot be discarded or burned to satisfy another effect (eg. {Tension in the Ranks} or using political action cards for votes).",
+                "refs":{
+                    "LSJ 20050118":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/W784_3oyz7I/m/Cgek1j9Hv-8J"
+                }
             }
         ],
         "set":{
@@ -63213,7 +63435,7 @@
                 }
             },
             {
-                "text":"[DEM] The press can only be used during the current round.",
+                "text":"[DEM] The optional press can only be used during the current round.",
                 "refs":{
                     "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
                 }
@@ -63676,7 +63898,7 @@
                 }
             },
             {
-                "text":"[obt] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}). The card cannot be played if the minion cannot afford to burn the blood.",
+                "text":"[obt] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}).",
                 "refs":{
                     "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
                 }
@@ -64551,7 +64773,7 @@
                 }
             },
             {
-                "text":"The press can only be used during the current round.",
+                "text":"The optional press can only be used during the current round.",
                 "refs":{
                     "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
                 }
@@ -66792,7 +67014,13 @@
                 }
             },
             {
-                "text":"[CEL] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}). The card cannot be played if the minion cannot afford to burn the blood.",
+                "text":"[CEL] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}).",
+                "refs":{
+                    "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
+                }
+            },
+            {
+                "text":"[CEL] The card cannot be played if the minion cannot afford to burn the blood.",
                 "refs":{
                     "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
                 }
@@ -70783,7 +71011,7 @@
                 }
             },
             {
-                "text":"[TEM] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}). The card cannot be played if the minion cannot afford to burn the blood.",
+                "text":"[TEM] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}).",
                 "refs":{
                     "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
                 }
@@ -70793,6 +71021,12 @@
                 "refs":{
                     "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
                     "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+                }
+            },
+            {
+                "text":"[TEM] The card cannot be played if the minion cannot afford to burn the blood.",
+                "refs":{
+                    "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
                 }
             }
         ],
@@ -71209,7 +71443,7 @@
                 }
             },
             {
-                "text":"[dom] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}). The card cannot be played if the minion cannot afford to burn the blood.",
+                "text":"[dom] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}).",
                 "refs":{
                     "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
                 }
@@ -71219,6 +71453,12 @@
                 "refs":{
                     "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
                     "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+                }
+            },
+            {
+                "text":"[dom] The card cannot be played if the minion cannot afford to burn the blood.",
+                "refs":{
+                    "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
                 }
             }
         ],
@@ -71733,7 +71973,7 @@
                 }
             },
             {
-                "text":"[THN] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}). The card cannot be played if the minion cannot afford to burn the blood.",
+                "text":"[THN] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}).",
                 "refs":{
                     "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
                 }
@@ -71743,6 +71983,12 @@
                 "refs":{
                     "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
                     "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+                }
+            },
+            {
+                "text":"[THN] The card cannot be played if the minion cannot afford to burn the blood.",
+                "refs":{
+                    "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
                 }
             }
         ],
@@ -72319,7 +72565,7 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"[cel] [COMBAT] If used to maneuver, the optional press can only be used during the current round.",
+                "text":"[cel] The optional press can only be used during the current round.",
                 "refs":{
                     "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
                 }
@@ -73481,12 +73727,6 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"[thn], [THN] The press can only be used during the current round.",
-                "refs":{
-                    "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
-                }
-            },
-            {
                 "text":"[THN] Canceling a maneuver provided by a strike does not cancel the strike (eg. {Aid from Bats}, {.44 Magnum}). The chosen strike cannot be changed.",
                 "refs":{
                     "LSJ 20050228-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UHEZEmX22jA/m/u0IldHuItjgJ",
@@ -73510,6 +73750,12 @@
                 "refs":{
                     "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
                     "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+                }
+            },
+            {
+                "text":"[thn],[THN] The optional press can only be used during the current round.",
+                "refs":{
+                    "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
                 }
             }
         ],
@@ -74148,7 +74394,13 @@
                 }
             },
             {
-                "text":"[FOR] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}). The card cannot be played if the minion cannot afford to burn the blood.",
+                "text":"[FOR] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}).",
+                "refs":{
+                    "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
+                }
+            },
+            {
+                "text":"[FOR] The card cannot be played if the minion cannot afford to burn the blood.",
                 "refs":{
                     "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
                 }
@@ -76898,7 +77150,13 @@
                 }
             },
             {
-                "text":"The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}). The card cannot be played if the minion cannot afford to burn the blood.",
+                "text":"The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}).",
+                "refs":{
+                    "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
+                }
+            },
+            {
+                "text":"The card cannot be played if the minion cannot afford to burn the blood.",
                 "refs":{
                     "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
                 }
@@ -77320,7 +77578,13 @@
                 }
             },
             {
-                "text":"[QUI] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}). The card cannot be played if the minion cannot afford to burn the blood.",
+                "text":"[QUI] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}).",
+                "refs":{
+                    "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
+                }
+            },
+            {
+                "text":"[QUI] The card cannot be played if the minion cannot afford to burn the blood.",
                 "refs":{
                     "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
                 }
@@ -77878,7 +78142,7 @@
                 }
             },
             {
-                "text":"[PRE][SER] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}). The card cannot be played if the minion cannot afford to burn the blood.",
+                "text":"[PRE][SER] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}).",
                 "refs":{
                     "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
                 }
@@ -77888,6 +78152,12 @@
                 "refs":{
                     "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ",
                     "LSJ 19980109":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d2U51Uw0Hfg/m/uIPoVvPFePgJ"
+                }
+            },
+            {
+                "text":"[PRE][SER] The card cannot be played if the minion cannot afford to burn the blood.",
+                "refs":{
+                    "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
                 }
             }
         ],
@@ -78369,7 +78639,13 @@
                 }
             },
             {
-                "text":"[OBF][POT] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}). The card cannot be played if the minion cannot afford to burn the blood.",
+                "text":"[OBF][POT] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}).",
+                "refs":{
+                    "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
+                }
+            },
+            {
+                "text":"[OBF][POT] The card cannot be played if the minion cannot afford to burn the blood.",
                 "refs":{
                     "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
                 }
@@ -78740,7 +79016,7 @@
                 }
             },
             {
-                "text":"[PRO] The press can only be used during the current round.",
+                "text":"[PRO] The optional press can only be used during the current round.",
                 "refs":{
                     "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
                 }
@@ -78855,7 +79131,13 @@
                 }
             },
             {
-                "text":"[OBT] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}). The card cannot be played if the minion cannot afford to burn the blood.",
+                "text":"[OBT] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}).",
+                "refs":{
+                    "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
+                }
+            },
+            {
+                "text":"[OBT] The card cannot be played if the minion cannot afford to burn the blood.",
                 "refs":{
                     "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
                 }
@@ -78898,7 +79180,7 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"[OBT] The press can only be used during the current round.",
+                "text":"[OBT] The optional press can only be used during the current round.",
                 "refs":{
                     "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
                 }
@@ -79947,7 +80229,7 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"[THA] The press can only be used during the current round.",
+                "text":"[THA] The optional press can only be used during the current round.",
                 "refs":{
                     "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
                 }
@@ -80625,7 +80907,7 @@
                 }
             },
             {
-                "text":"[cel] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}). The card cannot be played if the minion cannot afford to burn the blood.",
+                "text":"[cel] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}).",
                 "refs":{
                     "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
                 }
@@ -80635,6 +80917,12 @@
                 "refs":{
                     "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
                     "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+                }
+            },
+            {
+                "text":"[cel] The card cannot be played if the minion cannot afford to burn the blood.",
+                "refs":{
+                    "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
                 }
             }
         ],
@@ -81093,7 +81381,7 @@
                 }
             },
             {
-                "text":"Can be played at any time blood is gained, including after action resolution (eg. {Games of Instinct}, {Perfectionist}).",
+                "text":"[SAN] Can be played at any time blood is gained during an action, including after action resolution (eg. {Games of Instinct}, {Perfectionist}).",
                 "refs":{
                     "LSJ 20100325":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PWhoejXDuuA/m/5565uQm2dpEJ"
                 }
@@ -83993,7 +84281,7 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"The press can only be used during the current round.",
+                "text":"The optional press can only be used during the current round.",
                 "refs":{
                     "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
                 }
@@ -84296,12 +84584,6 @@
                 }
             },
             {
-                "text":"[ani] [COMBAT] The press can only be used during the current round.",
-                "refs":{
-                    "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
-                }
-            },
-            {
                 "text":"[ani]/[dom] Is not replaced if the action is blocked; it is replaced when the action ends, after all combats.",
                 "refs":{
                     "LSJ 20001120":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Br8FPS5mRn4/m/2tbPhQquS7gJ"
@@ -84342,6 +84624,12 @@
                 "text":"If an effect prevents replacement ({Visit from the Capuchin}), then there is no opportunity to use the cards replacement text.",
                 "refs":{
                     "LSJ 20080723":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/p5qiUzuFDSU/m/33rg1G1lDA8J"
+                }
+            },
+            {
+                "text":"[ani] The optional press can only be used during the current round.",
+                "refs":{
+                    "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
                 }
             }
         ],
@@ -84571,7 +84859,7 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"[obt] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}). The card cannot be played if the minion cannot afford to burn the blood.",
+                "text":"[obt] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}).",
                 "refs":{
                     "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
                 }
@@ -84581,6 +84869,12 @@
                 "refs":{
                     "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
                     "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+                }
+            },
+            {
+                "text":"[obt] The card cannot be played if the minion cannot afford to burn the blood.",
+                "refs":{
+                    "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
                 }
             }
         ],
@@ -85126,7 +85420,7 @@
                 }
             },
             {
-                "text":"The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}). The card cannot be played if the minion cannot afford to burn the blood.",
+                "text":"The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}).",
                 "refs":{
                     "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
                 }
@@ -85221,7 +85515,13 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"[OBL] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}). The card cannot be played if the minion cannot afford to burn the blood.",
+                "text":"[OBL] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}).",
+                "refs":{
+                    "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
+                }
+            },
+            {
+                "text":"[OBL] The card cannot be played if the minion cannot afford to burn the blood.",
                 "refs":{
                     "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
                 }
@@ -85985,7 +86285,13 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"[FOR] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}). The card cannot be played if the minion cannot afford to burn the blood.",
+                "text":"[FOR] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}).",
+                "refs":{
+                    "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
+                }
+            },
+            {
+                "text":"[FOR] The card cannot be played if the minion cannot afford to burn the blood.",
                 "refs":{
                     "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
                 }
@@ -86424,12 +86730,6 @@
         "requirement":"laibon",
         "rulings":[
             {
-                "text":"If grabbed by a \"this vampire employs\" effect (not the normal employ action), the vampire receiving the Swarm does not get to move the Swarm on to a new target.",
-                "refs":{
-                    "LSJ 20051121":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/51XITiJtdjo/m/A9jSHsxBX8QJ"
-                }
-            },
-            {
                 "text":"If the action to employ the Swarm is blocked, the Swarm goes on the acting minion immediately, before combat, if any.",
                 "refs":{
                     "LSJ 20090601":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/bKo8zb6lBeU/m/R6rVeXZN8DUJ"
@@ -86440,6 +86740,13 @@
                 "refs":{
                     "ANK 20200203-2":"https://www.vekn.net/forum/rules-questions/78415-is-ghoul-mortal#98872",
                     "LSJ 20060515":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/bzusnKlnYr8/m/OSMvzE7YjokJ"
+                }
+            },
+            {
+                "text":"The option to place the card on another minion can only be used when playing the card normally; for any other action or put into play effect, the card is placed on the playing minion.",
+                "refs":{
+                    "LSJ 20090824":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/vWBysQ7L4fM/m/SA1wFRHusXAJ",
+                    "LSJ 20051121":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/51XITiJtdjo/m/A9jSHsxBX8QJ"
                 }
             }
         ],
@@ -89678,15 +89985,15 @@
         "requirement":"same circle",
         "rulings":[
             {
-                "text":"The press can only be used during the current round.",
-                "refs":{
-                    "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
-                }
-            },
-            {
                 "text":"A vampire with no circle designation is in his own unique circle. Vampires with the same name (eg. {The Embrace}, non-unique vampires) do not share a circle by default, each has his own circle of one by default.",
                 "refs":{
                     "LSJ 20020609":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Q_Lk0DPHqC8/m/nAfGfCvsISgJ"
+                }
+            },
+            {
+                "text":"The optional press can only be used during the current round.",
+                "refs":{
+                    "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
                 }
             }
         ],
@@ -89828,7 +90135,7 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"[POT] The press can only be used during the current round.",
+                "text":"[POT] The optional press can only be used during the current round.",
                 "refs":{
                     "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
                 }
@@ -90972,12 +91279,6 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"[DOM] The press can only be used during the current round.",
-                "refs":{
-                    "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
-                }
-            },
-            {
                 "text":"Cards are not replaced during the \"as played\" window. The cancelation must be played immediately: no other effects can be used, except for wakes (eg. neither\u00a0{The Barrens}\u00a0nor {Dreams of the Sphinx}\u00a0can be used).",
                 "refs":{
                     "LSJ 20061207":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/nqcrJlhg4Ng/m/qQu7p-LLhfAJ",
@@ -91004,6 +91305,12 @@
                 "text":"If a limited effect is canceled (bleed, additional strike), then the limit is not triggered and another limited effect can be used.",
                 "refs":{
                     "LSJ 20030224":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/67261v339Ds/m/um8V7VVp2Y4J"
+                }
+            },
+            {
+                "text":"[DOM] The optional press can only be used during the current round.",
+                "refs":{
+                    "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
                 }
             }
         ],
@@ -92714,7 +93021,7 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"[POT] The press can only be used during the current round.",
+                "text":"[POT] The optional press can only be used during the current round.",
                 "refs":{
                     "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
                 }
@@ -93045,12 +93352,6 @@
                 }
             },
             {
-                "text":"[for] Only provides one press for the current round, not the ones after that.",
-                "refs":{
-                    "ANK 20180110":"https://www.vekn.net/forum/rules-questions/76362-undead-persistence#84839"
-                }
-            },
-            {
                 "text":"[for] Cannot be used twice by the same vampire during the same combat: because of the first, the vampire is not going into torpor and does not meet the requirement to play it anymore.",
                 "refs":{
                     "LSJ 20030214":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/A3U-Dy1yx8Y/m/2LHXvLrmybwJ"
@@ -93079,6 +93380,12 @@
                 "text":"[FOR] Unused prevention does not carry over.",
                 "refs":{
                     "LSJ 20001114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qXSlM7Grq1c/m/cSDoQ9mw0z4J"
+                }
+            },
+            {
+                "text":"[for] The optional press can only be used during the current round.",
+                "refs":{
+                    "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
                 }
             }
         ],
@@ -94474,7 +94781,7 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"[CEL] The press can only be used during the current round.",
+                "text":"[CEL] The optional press can only be used during the current round.",
                 "refs":{
                     "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
                 }
@@ -96253,7 +96560,7 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"[tha] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}). The card cannot be played if the minion cannot afford to burn the blood.",
+                "text":"[tha] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}).",
                 "refs":{
                     "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
                 }
@@ -96263,6 +96570,12 @@
                 "refs":{
                     "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
                     "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+                }
+            },
+            {
+                "text":"[tha] The card cannot be played if the minion cannot afford to burn the blood.",
+                "refs":{
+                    "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
                 }
             }
         ],
@@ -98216,7 +98529,7 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"[POT] The press can only be used during the current round.",
+                "text":"[POT] The optional press can only be used during the current round.",
                 "refs":{
                     "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
                 }
