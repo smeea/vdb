@@ -102,6 +102,7 @@
     "aggravated": false,
     "enter combat": false,
     "unlock": false,
+    "hand size": false,
     "black hand": false,
     "seraph": false,
     "infernal": false,

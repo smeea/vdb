@@ -94,6 +94,7 @@ export const GROUPx = 'group ';
 export const GT = 'gt';
 export const GW = 'gw';
 export const H = 'h';
+export const HAND_SIZE = 'hand size';
 export const HARD = 'hard';
 export const HAS_BANNED = 'hasBanned';
 export const HAS_LIMITED = 'hasLimited';
