@@ -6024,9 +6024,9 @@
                 }
             },
             {
-                "text":"Arika's prey cannot end her unlock phase if she controls a location that she hasn't burned a pool for, even if she gained control of that location during that unlock phase.",
+                "text":"The effect only triggers once each unlock phase. Any Locations put into play after the effect is resolved are unaffected until their Methuselah's next unlock phase.",
                 "refs":{
-                    "LSJ 19990405":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Bg0kbrSMAy0/m/Bs4nknFcJGkJ"
+                    "ANK 20250121":"https://www.vekn.net/forum/rules-questions/79080-nightmares-upon-nightmares?start=6#113567"
                 }
             }
         ],

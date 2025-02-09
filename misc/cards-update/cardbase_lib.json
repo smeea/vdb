@@ -2022,19 +2022,13 @@
                 }
             },
             {
-                "text":"If the action continues \"as if unblocked\", Methuselah that had declined to block before do not get another opportunity to block.",
+                "text":"If the action continues \"as if unblocked\", any Methuselahs that have declined to block before do not get another opportunity to block.",
                 "refs":{
                     "ANK 20190116":"https://www.vekn.net/forum/rules-questions/77302-strike-combat-ends-continue-with-the-action#92916"
                 }
             },
             {
-                "text":"An action cannot continue \"as if unblocked\" after a combat resulting from a successful action (eg. {Bum's Rush}).",
-                "refs":{
-                    "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ"
-                }
-            },
-            {
-                "text":"\"continue as if unblocked\" moves the action card from the ash heap (where it went when the action was blocked) to limbo (where it should be if the action is not blocked). If the action card is not in the ash heap, then the action cannot be continued.",
+                "text":"For actions resulting from an action card, \"continue as if unblocked\" moves the action card from the ash heap (where it went when the action was blocked) to limbo (where it should be if the action is not blocked). If the action card is not in the ash heap, then the action cannot be continued.",
                 "refs":{
                     "LSJ 20070808-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jzMOxZ9oxOs/m/o0X7GUFmii0J"
                 }
@@ -10210,17 +10204,17 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"It's still an equip action (eg. It can benefit from {The British Museum, London} or {Filchware's Pawn Shop}).",
-                "refs":{
-                    "LSJ 20050313":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/eSShNquHnXI/m/4H7zIau2DjoJ",
-                    "ANK 20230408":"https://www.vekn.net/forum/rules-questions/80438-the-british-museum-london-bloodstone#107810"
-                }
-            },
-            {
                 "text":"The option to place the card on another minion can only be used when playing the card normally; for any other action or put into play effect, the card is placed on the playing minion.",
                 "refs":{
                     "LSJ 20090824":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/vWBysQ7L4fM/m/SA1wFRHusXAJ",
                     "LSJ 20051121":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/51XITiJtdjo/m/A9jSHsxBX8QJ"
+                }
+            },
+            {
+                "text":"The type of the action (equip/employ) does not change regardless of the target.",
+                "refs":{
+                    "ANK 20230408":"https://www.vekn.net/forum/rules-questions/80438-the-british-museum-london-bloodstone#107810",
+                    "LSJ 20050313":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/eSShNquHnXI/m/4H7zIau2DjoJ"
                 }
             }
         ],
@@ -14561,31 +14555,6 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"[SPI] If the action continues \"as if unblocked\", all action modifiers and reaction cards are still in effect, even those pertaining to a successful block.",
-                "refs":{
-                    "RTR 19941109":"https://groups.google.com/d/msg/rec.games.deckmaster/_6CXoKTSLnw/FdG67-3HEAQJ",
-                    "ANK 20190116":"https://www.vekn.net/forum/rules-questions/77302-strike-combat-ends-continue-with-the-action#92916"
-                }
-            },
-            {
-                "text":"[SPI] If the action continues \"as if unblocked\", Methuselah that had declined to block before do not get another opportunity to block.",
-                "refs":{
-                    "ANK 20190116":"https://www.vekn.net/forum/rules-questions/77302-strike-combat-ends-continue-with-the-action#92916"
-                }
-            },
-            {
-                "text":"[SPI] An action cannot continue \"as if unblocked\" after a combat resulting from a successful action (eg. {Bum's Rush}).",
-                "refs":{
-                    "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ"
-                }
-            },
-            {
-                "text":"[SPI] \"continue as if unblocked\" moves the action card from the ash heap (where it went when the action was blocked) to limbo (where it should be if the action is not blocked). If the action card is not in the ash heap, then the action cannot be continued.",
-                "refs":{
-                    "LSJ 20070808-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jzMOxZ9oxOs/m/o0X7GUFmii0J"
-                }
-            },
-            {
                 "text":"[SPI] If the combat continues or a new combat begins, the after combat effect does not happen/is not usable. (eg. {Psyche!}, {Telepathic Tracking})\n(Partial reversal of RTR 20010711)",
                 "refs":{
                     "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ",
@@ -14603,6 +14572,31 @@
                 "text":"[spi] The optional press can only be used during the current round.",
                 "refs":{
                     "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
+                }
+            },
+            {
+                "text":"[SPI] An action cannot continue \"as if unblocked\" after a combat resulting from a successful action (e.g. {Bum's Rush}).",
+                "refs":{
+                    "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ"
+                }
+            },
+            {
+                "text":"[SPI] If the action continues \"as if unblocked\", all action modifiers and reaction cards are still in effect, even those pertaining to a successful block.",
+                "refs":{
+                    "RTR 19941109":"https://groups.google.com/d/msg/rec.games.deckmaster/_6CXoKTSLnw/FdG67-3HEAQJ",
+                    "ANK 20190116":"https://www.vekn.net/forum/rules-questions/77302-strike-combat-ends-continue-with-the-action#92916"
+                }
+            },
+            {
+                "text":"[SPI] If the action continues \"as if unblocked\", any Methuselahs that have declined to block before do not get another opportunity to block.",
+                "refs":{
+                    "ANK 20190116":"https://www.vekn.net/forum/rules-questions/77302-strike-combat-ends-continue-with-the-action#92916"
+                }
+            },
+            {
+                "text":"[SPI] For actions resulting from an action card, \"continue as if unblocked\" moves the action card from the ash heap (where it went when the action was blocked) to limbo (where it should be if the action is not blocked). If the action card is not in the ash heap, then the action cannot be continued.",
+                "refs":{
+                    "LSJ 20070808-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jzMOxZ9oxOs/m/o0X7GUFmii0J"
                 }
             }
         ],
@@ -15393,19 +15387,13 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"Does nothing to an empty vampire which unlocks in torpor.",
-                "refs":{
-                    "RTR 19941109":"https://groups.google.com/d/msg/rec.games.deckmaster/_6CXoKTSLnw/FdG67-3HEAQJ"
-                }
-            },
-            {
                 "text":"Cannot be damaged by host, but does not stop host from using effects which would normally damage it.",
                 "refs":{
                     "RTR 19941109":"https://groups.google.com/d/msg/rec.games.deckmaster/_6CXoKTSLnw/FdG67-3HEAQJ"
                 }
             },
             {
-                "text":"Is not burn if the controller of the vampire it is on id ousted: it is removed from the game.",
+                "text":"Is not burned if the controller of the vampire it is on is ousted: it is removed from the game.",
                 "refs":{
                     "ANK 20180408":"https://www.vekn.net/forum/rules-questions/76500-charnas-the-imp#86191"
                 }
@@ -15423,6 +15411,13 @@
                 "refs":{
                     "LSJ 20090824":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/vWBysQ7L4fM/m/SA1wFRHusXAJ",
                     "LSJ 20051121":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/51XITiJtdjo/m/A9jSHsxBX8QJ"
+                }
+            },
+            {
+                "text":"The type of the action (equip/employ) does not change regardless of the target.",
+                "refs":{
+                    "ANK 20230408":"https://www.vekn.net/forum/rules-questions/80438-the-british-museum-london-bloodstone#107810",
+                    "LSJ 20050313":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/eSShNquHnXI/m/4H7zIau2DjoJ"
                 }
             }
         ],
@@ -20973,26 +20968,6 @@
                 }
             },
             {
-                "text":"If the action continues \"as if unblocked\", all action modifiers and reaction cards are still in effect, even those pertaining to a successful block.",
-                "refs":{
-                    "RTR 19941109":"https://groups.google.com/d/msg/rec.games.deckmaster/_6CXoKTSLnw/FdG67-3HEAQJ",
-                    "LSJ 20080611":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gvb3uijtpZw/m/ZRX2hunjsRYJ",
-                    "ANK 20190116":"https://www.vekn.net/forum/rules-questions/77302-strike-combat-ends-continue-with-the-action#92916"
-                }
-            },
-            {
-                "text":"If the action continues \"as if unblocked\", Methuselah that had declined to block before do not get another opportunity to block.",
-                "refs":{
-                    "ANK 20190116":"https://www.vekn.net/forum/rules-questions/77302-strike-combat-ends-continue-with-the-action#92916"
-                }
-            },
-            {
-                "text":"\"continue as if unblocked\" moves the action card from the ash heap (where it went when the action was blocked) to limbo (where it should be if the action is not blocked). If the action card is not in the ash heap, then the action cannot be continued.",
-                "refs":{
-                    "LSJ 20070808-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jzMOxZ9oxOs/m/o0X7GUFmii0J"
-                }
-            },
-            {
                 "text":"Damage is inflicted even against a dodge. A \"strike: combat ends\" ends combat before damage is applied, as will a combattant going to torpor during first strike.",
                 "refs":{
                     "RTR 19941109":"https://groups.google.com/d/msg/rec.games.deckmaster/_6CXoKTSLnw/FdG67-3HEAQJ",
@@ -21005,6 +20980,25 @@
                 "text":"Does not gain additional strikes from its owner.",
                 "refs":{
                     "RTR 19941109":"https://groups.google.com/d/msg/rec.games.deckmaster/_6CXoKTSLnw/FdG67-3HEAQJ"
+                }
+            },
+            {
+                "text":"If the action continues \"as if unblocked\", all action modifiers and reaction cards are still in effect, even those pertaining to a successful block.",
+                "refs":{
+                    "RTR 19941109":"https://groups.google.com/d/msg/rec.games.deckmaster/_6CXoKTSLnw/FdG67-3HEAQJ",
+                    "ANK 20190116":"https://www.vekn.net/forum/rules-questions/77302-strike-combat-ends-continue-with-the-action#92916"
+                }
+            },
+            {
+                "text":"If the action continues \"as if unblocked\", any Methuselahs that have declined to block before do not get another opportunity to block.",
+                "refs":{
+                    "ANK 20190116":"https://www.vekn.net/forum/rules-questions/77302-strike-combat-ends-continue-with-the-action#92916"
+                }
+            },
+            {
+                "text":"For actions resulting from an action card, \"continue as if unblocked\" moves the action card from the ash heap (where it went when the action was blocked) to limbo (where it should be if the action is not blocked). If the action card is not in the ash heap, then the action cannot be continued.",
+                "refs":{
+                    "LSJ 20070808-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jzMOxZ9oxOs/m/o0X7GUFmii0J"
                 }
             }
         ],
@@ -34000,31 +33994,6 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"[VIS] If the action continues \"as if unblocked\", all action modifiers and reaction cards are still in effect, even those pertaining to a successful block.",
-                "refs":{
-                    "RTR 19941109":"https://groups.google.com/d/msg/rec.games.deckmaster/_6CXoKTSLnw/FdG67-3HEAQJ",
-                    "ANK 20190116":"https://www.vekn.net/forum/rules-questions/77302-strike-combat-ends-continue-with-the-action#92916"
-                }
-            },
-            {
-                "text":"[VIS] If the action continues \"as if unblocked\", Methuselah that had declined to block before do not get another opportunity to block.",
-                "refs":{
-                    "ANK 20190116":"https://www.vekn.net/forum/rules-questions/77302-strike-combat-ends-continue-with-the-action#92916"
-                }
-            },
-            {
-                "text":"[VIS] An action cannot continue \"as if unblocked\" after a combat resulting from a successful action (eg. {Bum's Rush}).",
-                "refs":{
-                    "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ"
-                }
-            },
-            {
-                "text":"[VIS] \"continue as if unblocked\" moves the action card from the ash heap (where it went when the action was blocked) to limbo (where it should be if the action is not blocked). If the action card is not in the ash heap, then the action cannot be continued.",
-                "refs":{
-                    "LSJ 20070808-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jzMOxZ9oxOs/m/o0X7GUFmii0J"
-                }
-            },
-            {
                 "text":"[VIS] If the combat continues or a new combat begins, the after combat effect does not happen/is not usable. (eg. {Psyche!}, {Telepathic Tracking})\n(Partial reversal of RTR 20010711)",
                 "refs":{
                     "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ",
@@ -34036,6 +34005,31 @@
                 "refs":{
                     "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
                     "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+                }
+            },
+            {
+                "text":"[VIS] An action cannot continue \"as if unblocked\" after a combat resulting from a successful action (e.g. {Bum's Rush}).",
+                "refs":{
+                    "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ"
+                }
+            },
+            {
+                "text":"[VIS] If the action continues \"as if unblocked\", all action modifiers and reaction cards are still in effect, even those pertaining to a successful block.",
+                "refs":{
+                    "RTR 19941109":"https://groups.google.com/d/msg/rec.games.deckmaster/_6CXoKTSLnw/FdG67-3HEAQJ",
+                    "ANK 20190116":"https://www.vekn.net/forum/rules-questions/77302-strike-combat-ends-continue-with-the-action#92916"
+                }
+            },
+            {
+                "text":"[VIS] If the action continues \"as if unblocked\", any Methuselahs that have declined to block before do not get another opportunity to block.",
+                "refs":{
+                    "ANK 20190116":"https://www.vekn.net/forum/rules-questions/77302-strike-combat-ends-continue-with-the-action#92916"
+                }
+            },
+            {
+                "text":"[VIS] For actions resulting from an action card, \"continue as if unblocked\" moves the action card from the ash heap (where it went when the action was blocked) to limbo (where it should be if the action is not blocked). If the action card is not in the ash heap, then the action cannot be continued.",
+                "refs":{
+                    "LSJ 20070808-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jzMOxZ9oxOs/m/o0X7GUFmii0J"
                 }
             }
         ],
@@ -34676,19 +34670,13 @@
                 }
             },
             {
-                "text":"If the action continues \"as if unblocked\", Methuselah that had declined to block before do not get another opportunity to block.",
+                "text":"If the action continues \"as if unblocked\", any Methuselahs that have declined to block before do not get another opportunity to block.",
                 "refs":{
                     "ANK 20190116":"https://www.vekn.net/forum/rules-questions/77302-strike-combat-ends-continue-with-the-action#92916"
                 }
             },
             {
-                "text":"An action cannot continue \"as if unblocked\" after a combat resulting from a successful action (eg. {Bum's Rush}).",
-                "refs":{
-                    "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ"
-                }
-            },
-            {
-                "text":"\"continue as if unblocked\" moves the action card from the ash heap (where it went when the action was blocked) to limbo (where it should be if the action is not blocked). If the action card is not in the ash heap, then the action cannot be continued.",
+                "text":"For actions resulting from an action card, \"continue as if unblocked\" moves the action card from the ash heap (where it went when the action was blocked) to limbo (where it should be if the action is not blocked). If the action card is not in the ash heap, then the action cannot be continued.",
                 "refs":{
                     "LSJ 20070808-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jzMOxZ9oxOs/m/o0X7GUFmii0J"
                 }
@@ -34984,31 +34972,6 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"[PRO] If the action continues \"as if unblocked\", all action modifiers and reaction cards are still in effect, even those pertaining to a successful block.",
-                "refs":{
-                    "RTR 19941109":"https://groups.google.com/d/msg/rec.games.deckmaster/_6CXoKTSLnw/FdG67-3HEAQJ",
-                    "ANK 20190116":"https://www.vekn.net/forum/rules-questions/77302-strike-combat-ends-continue-with-the-action#92916"
-                }
-            },
-            {
-                "text":"[PRO] If the action continues \"as if unblocked\", Methuselah that had declined to block before do not get another opportunity to block.",
-                "refs":{
-                    "ANK 20190116":"https://www.vekn.net/forum/rules-questions/77302-strike-combat-ends-continue-with-the-action#92916"
-                }
-            },
-            {
-                "text":"[PRO] An action cannot continue \"as if unblocked\" after a combat resulting from a successful action (eg. {Bum's Rush}).",
-                "refs":{
-                    "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ"
-                }
-            },
-            {
-                "text":"[PRO] \"continue as if unblocked\" moves the action card from the ash heap (where it went when the action was blocked) to limbo (where it should be if the action is not blocked). If the action card is not in the ash heap, then the action cannot be continued.",
-                "refs":{
-                    "LSJ 20070808-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jzMOxZ9oxOs/m/o0X7GUFmii0J"
-                }
-            },
-            {
                 "text":"The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}).",
                 "refs":{
                     "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
@@ -35019,6 +34982,31 @@
                 "refs":{
                     "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ",
                     "LSJ 19980109":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d2U51Uw0Hfg/m/uIPoVvPFePgJ"
+                }
+            },
+            {
+                "text":"[PRO] An action cannot continue \"as if unblocked\" after a combat resulting from a successful action (e.g. {Bum's Rush}).",
+                "refs":{
+                    "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ"
+                }
+            },
+            {
+                "text":"[PRO] If the action continues \"as if unblocked\", all action modifiers and reaction cards are still in effect, even those pertaining to a successful block.",
+                "refs":{
+                    "RTR 19941109":"https://groups.google.com/d/msg/rec.games.deckmaster/_6CXoKTSLnw/FdG67-3HEAQJ",
+                    "ANK 20190116":"https://www.vekn.net/forum/rules-questions/77302-strike-combat-ends-continue-with-the-action#92916"
+                }
+            },
+            {
+                "text":"[PRO] If the action continues \"as if unblocked\", any Methuselahs that have declined to block before do not get another opportunity to block.",
+                "refs":{
+                    "ANK 20190116":"https://www.vekn.net/forum/rules-questions/77302-strike-combat-ends-continue-with-the-action#92916"
+                }
+            },
+            {
+                "text":"[PRO] For actions resulting from an action card, \"continue as if unblocked\" moves the action card from the ash heap (where it went when the action was blocked) to limbo (where it should be if the action is not blocked). If the action card is not in the ash heap, then the action cannot be continued.",
+                "refs":{
+                    "LSJ 20070808-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jzMOxZ9oxOs/m/o0X7GUFmii0J"
                 }
             }
         ],
@@ -43445,6 +43433,13 @@
                     "LSJ 20090824":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/vWBysQ7L4fM/m/SA1wFRHusXAJ",
                     "LSJ 20051121":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/51XITiJtdjo/m/A9jSHsxBX8QJ"
                 }
+            },
+            {
+                "text":"The type of the action (equip/employ) does not change regardless of the target.",
+                "refs":{
+                    "ANK 20230408":"https://www.vekn.net/forum/rules-questions/80438-the-british-museum-london-bloodstone#107810",
+                    "LSJ 20050313":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/eSShNquHnXI/m/4H7zIau2DjoJ"
+                }
             }
         ],
         "set":{
@@ -44919,6 +44914,13 @@
                 "refs":{
                     "LSJ 20090824":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/vWBysQ7L4fM/m/SA1wFRHusXAJ",
                     "LSJ 20051121":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/51XITiJtdjo/m/A9jSHsxBX8QJ"
+                }
+            },
+            {
+                "text":"The type of the action (equip/employ) does not change regardless of the target.",
+                "refs":{
+                    "ANK 20230408":"https://www.vekn.net/forum/rules-questions/80438-the-british-museum-london-bloodstone#107810",
+                    "LSJ 20050313":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/eSShNquHnXI/m/4H7zIau2DjoJ"
                 }
             }
         ],
@@ -55412,6 +55414,19 @@
         "requirement":"",
         "rulings":[
             {
+                "text":"[CHI] If the combat continues or a new combat begins, the after combat effect does not happen/is not usable. (eg. {Psyche!}, {Telepathic Tracking})\n(Partial reversal of RTR 20010711)",
+                "refs":{
+                    "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ",
+                    "LSJ 19980109":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d2U51Uw0Hfg/m/uIPoVvPFePgJ"
+                }
+            },
+            {
+                "text":"[CHI] An action cannot continue \"as if unblocked\" after a combat resulting from a successful action (e.g. {Bum's Rush}).",
+                "refs":{
+                    "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ"
+                }
+            },
+            {
                 "text":"[CHI] If the action continues \"as if unblocked\", all action modifiers and reaction cards are still in effect, even those pertaining to a successful block.",
                 "refs":{
                     "RTR 19941109":"https://groups.google.com/d/msg/rec.games.deckmaster/_6CXoKTSLnw/FdG67-3HEAQJ",
@@ -55419,28 +55434,15 @@
                 }
             },
             {
-                "text":"[CHI] If the action continues \"as if unblocked\", Methuselah that had declined to block before do not get another opportunity to block.",
+                "text":"[CHI] If the action continues \"as if unblocked\", any Methuselahs that have declined to block before do not get another opportunity to block.",
                 "refs":{
                     "ANK 20190116":"https://www.vekn.net/forum/rules-questions/77302-strike-combat-ends-continue-with-the-action#92916"
                 }
             },
             {
-                "text":"[CHI] An action cannot continue \"as if unblocked\" after a combat resulting from a successful action (eg. {Bum's Rush}).",
-                "refs":{
-                    "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ"
-                }
-            },
-            {
-                "text":"[CHI] \"continue as if unblocked\" moves the action card from the ash heap (where it went when the action was blocked) to limbo (where it should be if the action is not blocked). If the action card is not in the ash heap, then the action cannot be continued.",
+                "text":"[CHI] For actions resulting from an action card, \"continue as if unblocked\" moves the action card from the ash heap (where it went when the action was blocked) to limbo (where it should be if the action is not blocked). If the action card is not in the ash heap, then the action cannot be continued.",
                 "refs":{
                     "LSJ 20070808-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jzMOxZ9oxOs/m/o0X7GUFmii0J"
-                }
-            },
-            {
-                "text":"[CHI] If the combat continues or a new combat begins, the after combat effect does not happen/is not usable. (eg. {Psyche!}, {Telepathic Tracking})\n(Partial reversal of RTR 20010711)",
-                "refs":{
-                    "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ",
-                    "LSJ 19980109":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d2U51Uw0Hfg/m/uIPoVvPFePgJ"
                 }
             }
         ],
@@ -56205,31 +56207,6 @@
         "requirement":"capacity 7 or more",
         "rulings":[
             {
-                "text":"If the action continues \"as if unblocked\", all action modifiers and reaction cards are still in effect, even those pertaining to a successful block.",
-                "refs":{
-                    "RTR 19941109":"https://groups.google.com/d/msg/rec.games.deckmaster/_6CXoKTSLnw/FdG67-3HEAQJ",
-                    "ANK 20190116":"https://www.vekn.net/forum/rules-questions/77302-strike-combat-ends-continue-with-the-action#92916"
-                }
-            },
-            {
-                "text":"If the action continues \"as if unblocked\", Methuselah that had declined to block before do not get another opportunity to block.",
-                "refs":{
-                    "ANK 20190116":"https://www.vekn.net/forum/rules-questions/77302-strike-combat-ends-continue-with-the-action#92916"
-                }
-            },
-            {
-                "text":"An action cannot continue \"as if unblocked\" after a combat resulting from a successful action (eg. {Bum's Rush}).",
-                "refs":{
-                    "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ"
-                }
-            },
-            {
-                "text":"\"continue as if unblocked\" moves the action card from the ash heap (where it went when the action was blocked) to limbo (where it should be if the action is not blocked). If the action card is not in the ash heap, then the action cannot be continued.",
-                "refs":{
-                    "LSJ 20070808-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jzMOxZ9oxOs/m/o0X7GUFmii0J"
-                }
-            },
-            {
                 "text":"Can be used if a Slave locked to enter combat instead of the blocking minion, if the other conditions are met.",
                 "refs":{
                     "ANK 20200114":"https://www.vekn.net/forum/rules-questions/78321-slave-rule-and-acting-minion#98584"
@@ -56248,6 +56225,31 @@
                     "LSJ 20030103":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/TUDO_4FwdyY/m/DWOwgQL850gJ",
                     "ANK 20181219":"https://www.vekn.net/forum/rules-questions/77232-zephyr-timing#92505",
                     "ANK 20180906":"https://www.vekn.net/forum/rules-questions/76981-freak-drive-while-going-to-torpor#90451"
+                }
+            },
+            {
+                "text":"An action cannot continue \"as if unblocked\" after a combat resulting from a successful action (e.g. {Bum's Rush}).",
+                "refs":{
+                    "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ"
+                }
+            },
+            {
+                "text":"If the action continues \"as if unblocked\", all action modifiers and reaction cards are still in effect, even those pertaining to a successful block.",
+                "refs":{
+                    "RTR 19941109":"https://groups.google.com/d/msg/rec.games.deckmaster/_6CXoKTSLnw/FdG67-3HEAQJ",
+                    "ANK 20190116":"https://www.vekn.net/forum/rules-questions/77302-strike-combat-ends-continue-with-the-action#92916"
+                }
+            },
+            {
+                "text":"If the action continues \"as if unblocked\", any Methuselahs that have declined to block before do not get another opportunity to block.",
+                "refs":{
+                    "ANK 20190116":"https://www.vekn.net/forum/rules-questions/77302-strike-combat-ends-continue-with-the-action#92916"
+                }
+            },
+            {
+                "text":"For actions resulting from an action card, \"continue as if unblocked\" moves the action card from the ash heap (where it went when the action was blocked) to limbo (where it should be if the action is not blocked). If the action card is not in the ash heap, then the action cannot be continued.",
+                "refs":{
+                    "LSJ 20070808-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jzMOxZ9oxOs/m/o0X7GUFmii0J"
                 }
             }
         ],
@@ -56612,31 +56614,6 @@
                 }
             },
             {
-                "text":"[VAL] If the action continues \"as if unblocked\", all action modifiers and reaction cards are still in effect, even those pertaining to a successful block.",
-                "refs":{
-                    "RTR 19941109":"https://groups.google.com/d/msg/rec.games.deckmaster/_6CXoKTSLnw/FdG67-3HEAQJ",
-                    "ANK 20190116":"https://www.vekn.net/forum/rules-questions/77302-strike-combat-ends-continue-with-the-action#92916"
-                }
-            },
-            {
-                "text":"[VAL] If the action continues \"as if unblocked\", Methuselah that had declined to block before do not get another opportunity to block.",
-                "refs":{
-                    "ANK 20190116":"https://www.vekn.net/forum/rules-questions/77302-strike-combat-ends-continue-with-the-action#92916"
-                }
-            },
-            {
-                "text":"[VAL] An action cannot continue \"as if unblocked\" after a combat resulting from a successful action (eg. {Bum's Rush}).",
-                "refs":{
-                    "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ"
-                }
-            },
-            {
-                "text":"[VAL] \"continue as if unblocked\" moves the action card from the ash heap (where it went when the action was blocked) to limbo (where it should be if the action is not blocked). If the action card is not in the ash heap, then the action cannot be continued.",
-                "refs":{
-                    "LSJ 20070808-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jzMOxZ9oxOs/m/o0X7GUFmii0J"
-                }
-            },
-            {
                 "text":"[VAL] If the combat continues or a new combat begins, the after combat effect does not happen/is not usable. (eg. {Psyche!}, {Telepathic Tracking})\n(Partial reversal of RTR 20010711)",
                 "refs":{
                     "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ",
@@ -56648,6 +56625,31 @@
                 "refs":{
                     "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
                     "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+                }
+            },
+            {
+                "text":"[VAL] An action cannot continue \"as if unblocked\" after a combat resulting from a successful action (e.g. {Bum's Rush}).",
+                "refs":{
+                    "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ"
+                }
+            },
+            {
+                "text":"[VAL] If the action continues \"as if unblocked\", all action modifiers and reaction cards are still in effect, even those pertaining to a successful block.",
+                "refs":{
+                    "RTR 19941109":"https://groups.google.com/d/msg/rec.games.deckmaster/_6CXoKTSLnw/FdG67-3HEAQJ",
+                    "ANK 20190116":"https://www.vekn.net/forum/rules-questions/77302-strike-combat-ends-continue-with-the-action#92916"
+                }
+            },
+            {
+                "text":"[VAL] If the action continues \"as if unblocked\", any Methuselahs that have declined to block before do not get another opportunity to block.",
+                "refs":{
+                    "ANK 20190116":"https://www.vekn.net/forum/rules-questions/77302-strike-combat-ends-continue-with-the-action#92916"
+                }
+            },
+            {
+                "text":"[VAL] For actions resulting from an action card, \"continue as if unblocked\" moves the action card from the ash heap (where it went when the action was blocked) to limbo (where it should be if the action is not blocked). If the action card is not in the ash heap, then the action cannot be continued.",
+                "refs":{
+                    "LSJ 20070808-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jzMOxZ9oxOs/m/o0X7GUFmii0J"
                 }
             }
         ],
@@ -58597,12 +58599,6 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"You cannot end your unlock phase or pass the impulse if you control a minion you haven't locked or burned a card for.",
-                "refs":{
-                    "ANK 20210322":"https://www.vekn.net/forum/rules-questions/79080-nightmares-upon-nightmares#101906"
-                }
-            },
-            {
                 "text":"You can handle the effect by locking an already locked minion, then use his Infernal trait to unlock them.",
                 "refs":{
                     "ANK 20210322-2":"https://www.vekn.net/forum/rules-questions/79080-nightmares-upon-nightmares?start=6#101910"
@@ -58612,6 +58608,12 @@
                 "text":"Mortal allies are not affected, and vampires with capacity above the number of Gehenna cards in play are not affected.",
                 "refs":{
                     "LSJ 20040415":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/XTya9MiAiqc/m/4cejLmkUwEMJ"
+                }
+            },
+            {
+                "text":"The effect only triggers once each unlock phase. Any minions put into play after the effect is resolved are unaffected until their Methuselah's next unlock phase.",
+                "refs":{
+                    "ANK 20250121":"https://www.vekn.net/forum/rules-questions/79080-nightmares-upon-nightmares?start=6#113567"
                 }
             }
         ],
@@ -62829,6 +62831,13 @@
         "requirement":"",
         "rulings":[
             {
+                "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
+                "refs":{
+                    "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
+                    "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+                }
+            },
+            {
                 "text":"If the action continues \"as if unblocked\", all action modifiers and reaction cards are still in effect, even those pertaining to a successful block.",
                 "refs":{
                     "RTR 19941109":"https://groups.google.com/d/msg/rec.games.deckmaster/_6CXoKTSLnw/FdG67-3HEAQJ",
@@ -62836,22 +62845,15 @@
                 }
             },
             {
-                "text":"If the action continues \"as if unblocked\", Methuselah that had declined to block before do not get another opportunity to block.",
+                "text":"If the action continues \"as if unblocked\", any Methuselahs that have declined to block before do not get another opportunity to block.",
                 "refs":{
                     "ANK 20190116":"https://www.vekn.net/forum/rules-questions/77302-strike-combat-ends-continue-with-the-action#92916"
                 }
             },
             {
-                "text":"\"continue as if unblocked\" moves the action card from the ash heap (where it went when the action was blocked) to limbo (where it should be if the action is not blocked). If the action card is not in the ash heap, then the action cannot be continued.",
+                "text":"For actions resulting from an action card, \"continue as if unblocked\" moves the action card from the ash heap (where it went when the action was blocked) to limbo (where it should be if the action is not blocked). If the action card is not in the ash heap, then the action cannot be continued.",
                 "refs":{
                     "LSJ 20070808-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jzMOxZ9oxOs/m/o0X7GUFmii0J"
-                }
-            },
-            {
-                "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
-                "refs":{
-                    "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
-                    "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
                 }
             }
         ],
@@ -78533,6 +78535,19 @@
         "requirement":"",
         "rulings":[
             {
+                "text":"[OBT] If the combat continues or a new combat begins, the after combat effect does not happen/is not usable. (eg. {Psyche!}, {Telepathic Tracking})\n(Partial reversal of RTR 20010711)",
+                "refs":{
+                    "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ",
+                    "LSJ 19980109":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d2U51Uw0Hfg/m/uIPoVvPFePgJ"
+                }
+            },
+            {
+                "text":"[OBT] An action cannot continue \"as if unblocked\" after a combat resulting from a successful action (e.g. {Bum's Rush}).",
+                "refs":{
+                    "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ"
+                }
+            },
+            {
                 "text":"[OBT] If the action continues \"as if unblocked\", all action modifiers and reaction cards are still in effect, even those pertaining to a successful block.",
                 "refs":{
                     "RTR 19941109":"https://groups.google.com/d/msg/rec.games.deckmaster/_6CXoKTSLnw/FdG67-3HEAQJ",
@@ -78540,28 +78555,15 @@
                 }
             },
             {
-                "text":"[OBT] If the action continues \"as if unblocked\", Methuselah that had declined to block before do not get another opportunity to block.",
+                "text":"[OBT] If the action continues \"as if unblocked\", any Methuselahs that have declined to block before do not get another opportunity to block.",
                 "refs":{
                     "ANK 20190116":"https://www.vekn.net/forum/rules-questions/77302-strike-combat-ends-continue-with-the-action#92916"
                 }
             },
             {
-                "text":"[OBT] An action cannot continue \"as if unblocked\" after a combat resulting from a successful action (eg. {Bum's Rush}).",
-                "refs":{
-                    "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ"
-                }
-            },
-            {
-                "text":"[OBT] \"continue as if unblocked\" moves the action card from the ash heap (where it went when the action was blocked) to limbo (where it should be if the action is not blocked). If the action card is not in the ash heap, then the action cannot be continued.",
+                "text":"[OBT] For actions resulting from an action card, \"continue as if unblocked\" moves the action card from the ash heap (where it went when the action was blocked) to limbo (where it should be if the action is not blocked). If the action card is not in the ash heap, then the action cannot be continued.",
                 "refs":{
                     "LSJ 20070808-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jzMOxZ9oxOs/m/o0X7GUFmii0J"
-                }
-            },
-            {
-                "text":"[OBT] If the combat continues or a new combat begins, the after combat effect does not happen/is not usable. (eg. {Psyche!}, {Telepathic Tracking})\n(Partial reversal of RTR 20010711)",
-                "refs":{
-                    "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ",
-                    "LSJ 19980109":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d2U51Uw0Hfg/m/uIPoVvPFePgJ"
                 }
             }
         ],
@@ -78602,31 +78604,6 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"[OBF][POT][ACTION MODIFIER] If the action continues \"as if unblocked\", all action modifiers and reaction cards are still in effect, even those pertaining to a successful block.",
-                "refs":{
-                    "RTR 19941109":"https://groups.google.com/d/msg/rec.games.deckmaster/_6CXoKTSLnw/FdG67-3HEAQJ",
-                    "ANK 20190116":"https://www.vekn.net/forum/rules-questions/77302-strike-combat-ends-continue-with-the-action#92916"
-                }
-            },
-            {
-                "text":"[OBF][POT][ACTION MODIFIER] If the action continues \"as if unblocked\", Methuselah that had declined to block before do not get another opportunity to block.",
-                "refs":{
-                    "ANK 20190116":"https://www.vekn.net/forum/rules-questions/77302-strike-combat-ends-continue-with-the-action#92916"
-                }
-            },
-            {
-                "text":"[OBF][POT][ACTION MODIFIER] An action cannot continue \"as if unblocked\" after a combat resulting from a successful action (eg. {Bum's Rush}).",
-                "refs":{
-                    "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ"
-                }
-            },
-            {
-                "text":"[OBF][POT][ACTION MODIFIER] \"continue as if unblocked\" moves the action card from the ash heap (where it went when the action was blocked) to limbo (where it should be if the action is not blocked). If the action card is not in the ash heap, then the action cannot be continued.",
-                "refs":{
-                    "LSJ 20070808-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jzMOxZ9oxOs/m/o0X7GUFmii0J"
-                }
-            },
-            {
                 "text":"[OBF][POT][ACTION MODIFIER] Cannot be used by a Slave that entered combat instead of the acting minion.",
                 "refs":{
                     "ANK 20200114":"https://www.vekn.net/forum/rules-questions/78321-slave-rule-and-acting-minion#98584"
@@ -78648,6 +78625,31 @@
                 "text":"[OBF][POT] The card cannot be played if the minion cannot afford to burn the blood.",
                 "refs":{
                     "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
+                }
+            },
+            {
+                "text":"[OBF][POT] An action cannot continue \"as if unblocked\" after a combat resulting from a successful action (e.g. {Bum's Rush}).",
+                "refs":{
+                    "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ"
+                }
+            },
+            {
+                "text":"[POT][OBF] If the action continues \"as if unblocked\", all action modifiers and reaction cards are still in effect, even those pertaining to a successful block.",
+                "refs":{
+                    "RTR 19941109":"https://groups.google.com/d/msg/rec.games.deckmaster/_6CXoKTSLnw/FdG67-3HEAQJ",
+                    "ANK 20190116":"https://www.vekn.net/forum/rules-questions/77302-strike-combat-ends-continue-with-the-action#92916"
+                }
+            },
+            {
+                "text":"[POT][OBF] If the action continues \"as if unblocked\", any Methuselahs that have declined to block before do not get another opportunity to block.",
+                "refs":{
+                    "ANK 20190116":"https://www.vekn.net/forum/rules-questions/77302-strike-combat-ends-continue-with-the-action#92916"
+                }
+            },
+            {
+                "text":"[POT][OBF] For actions resulting from an action card, \"continue as if unblocked\" moves the action card from the ash heap (where it went when the action was blocked) to limbo (where it should be if the action is not blocked). If the action card is not in the ash heap, then the action cannot be continued.",
+                "refs":{
+                    "LSJ 20070808-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jzMOxZ9oxOs/m/o0X7GUFmii0J"
                 }
             }
         ],
@@ -86748,6 +86750,13 @@
                     "LSJ 20090824":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/vWBysQ7L4fM/m/SA1wFRHusXAJ",
                     "LSJ 20051121":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/51XITiJtdjo/m/A9jSHsxBX8QJ"
                 }
+            },
+            {
+                "text":"The type of the action (equip/employ) does not change regardless of the target.",
+                "refs":{
+                    "ANK 20230408":"https://www.vekn.net/forum/rules-questions/80438-the-british-museum-london-bloodstone#107810",
+                    "LSJ 20050313":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/eSShNquHnXI/m/4H7zIau2DjoJ"
+                }
             }
         ],
         "set":{
@@ -89787,19 +89796,6 @@
         "requirement":"laibon,capacity 5 or more",
         "rulings":[
             {
-                "text":"If the action continues \"as if unblocked\", all action modifiers and reaction cards are still in effect, even those pertaining to a successful block.",
-                "refs":{
-                    "RTR 19941109":"https://groups.google.com/d/msg/rec.games.deckmaster/_6CXoKTSLnw/FdG67-3HEAQJ",
-                    "ANK 20190116":"https://www.vekn.net/forum/rules-questions/77302-strike-combat-ends-continue-with-the-action#92916"
-                }
-            },
-            {
-                "text":"If the action continues \"as if unblocked\", Methuselah that had declined to block before do not get another opportunity to block.",
-                "refs":{
-                    "ANK 20190116":"https://www.vekn.net/forum/rules-questions/77302-strike-combat-ends-continue-with-the-action#92916"
-                }
-            },
-            {
                 "text":"Must be played (as well as other \"as the action is announced\" action modifiers) before action modifiers that are not explicitly played \"as the action is announced\" (e.g., {Conditioning}).",
                 "refs":{
                     "ANK 20190425":"https://www.vekn.net/forum/rules-questions/77581-action-modifiers-played-at-beginning-and-end-of-an-action#94652"
@@ -89809,6 +89805,25 @@
                 "text":"Replace the action card (if any) before playing it.",
                 "refs":{
                     "ANK 20181208":"https://www.vekn.net/forum/rules-questions/77210-touch-of-clarity-and-fast-reaction-is-posible-to-play-with-locked-minion?start=6#92308"
+                }
+            },
+            {
+                "text":"If the action continues \"as if unblocked\", all action modifiers and reaction cards are still in effect, even those pertaining to a successful block.",
+                "refs":{
+                    "RTR 19941109":"https://groups.google.com/d/msg/rec.games.deckmaster/_6CXoKTSLnw/FdG67-3HEAQJ",
+                    "ANK 20190116":"https://www.vekn.net/forum/rules-questions/77302-strike-combat-ends-continue-with-the-action#92916"
+                }
+            },
+            {
+                "text":"If the action continues \"as if unblocked\", any Methuselahs that have declined to block before do not get another opportunity to block.",
+                "refs":{
+                    "ANK 20190116":"https://www.vekn.net/forum/rules-questions/77302-strike-combat-ends-continue-with-the-action#92916"
+                }
+            },
+            {
+                "text":"For actions resulting from an action card, \"continue as if unblocked\" moves the action card from the ash heap (where it went when the action was blocked) to limbo (where it should be if the action is not blocked). If the action card is not in the ash heap, then the action cannot be continued.",
+                "refs":{
+                    "LSJ 20070808-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jzMOxZ9oxOs/m/o0X7GUFmii0J"
                 }
             }
         ],
@@ -90487,38 +90502,6 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"[mel] [MEL] If the action continues \"as if unblocked\", all action modifiers and reaction cards are still in effect, even those pertaining to a successful block.",
-                "refs":{
-                    "RTR 19941109":"https://groups.google.com/d/msg/rec.games.deckmaster/_6CXoKTSLnw/FdG67-3HEAQJ",
-                    "ANK 20190116":"https://www.vekn.net/forum/rules-questions/77302-strike-combat-ends-continue-with-the-action#92916"
-                }
-            },
-            {
-                "text":"[mel] [MEL] If the action continues \"as if unblocked\", Methuselah that had declined to block before do not get another opportunity to block.",
-                "refs":{
-                    "ANK 20190116":"https://www.vekn.net/forum/rules-questions/77302-strike-combat-ends-continue-with-the-action#92916"
-                }
-            },
-            {
-                "text":"[mel] [MEL] An action cannot continue \"as if unblocked\" after a combat resulting from a successful action (eg. {Bum's Rush}).",
-                "refs":{
-                    "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ"
-                }
-            },
-            {
-                "text":"[mel] [MEL] \"continue as if unblocked\" moves the action card from the ash heap (where it went when the action was blocked) to limbo (where it should be if the action is not blocked). If the action card is not in the ash heap, then the action cannot be continued.",
-                "refs":{
-                    "LSJ 20070808-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jzMOxZ9oxOs/m/o0X7GUFmii0J"
-                }
-            },
-            {
-                "text":"[mel] [MEL] If the combat continues or a new combat occurs, the \"action continues as if unblocked\" effect is lost.",
-                "refs":{
-                    "LSJ 19980109":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d2U51Uw0Hfg/m/uIPoVvPFePgJ",
-                    "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ"
-                }
-            },
-            {
                 "text":"[mel] If the combat continues or a new combat begins, the after combat effect does not happen/is not usable. (eg. {Psyche!}, {Telepathic Tracking})\n(Partial reversal of RTR 20010711)",
                 "refs":{
                     "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ",
@@ -90530,6 +90513,31 @@
                 "refs":{
                     "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
                     "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+                }
+            },
+            {
+                "text":"[mel],[MEL] An action cannot continue \"as if unblocked\" after a combat resulting from a successful action (e.g. {Bum's Rush}).",
+                "refs":{
+                    "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ"
+                }
+            },
+            {
+                "text":"[mel],[MEL] If the action continues \"as if unblocked\", all action modifiers and reaction cards are still in effect, even those pertaining to a successful block.",
+                "refs":{
+                    "RTR 19941109":"https://groups.google.com/d/msg/rec.games.deckmaster/_6CXoKTSLnw/FdG67-3HEAQJ",
+                    "ANK 20190116":"https://www.vekn.net/forum/rules-questions/77302-strike-combat-ends-continue-with-the-action#92916"
+                }
+            },
+            {
+                "text":"[mel],[MEL] If the action continues \"as if unblocked\", any Methuselahs that have declined to block before do not get another opportunity to block.",
+                "refs":{
+                    "ANK 20190116":"https://www.vekn.net/forum/rules-questions/77302-strike-combat-ends-continue-with-the-action#92916"
+                }
+            },
+            {
+                "text":"[mel],[MEL] For actions resulting from an action card, \"continue as if unblocked\" moves the action card from the ash heap (where it went when the action was blocked) to limbo (where it should be if the action is not blocked). If the action card is not in the ash heap, then the action cannot be continued.",
+                "refs":{
+                    "LSJ 20070808-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jzMOxZ9oxOs/m/o0X7GUFmii0J"
                 }
             }
         ],
@@ -90716,6 +90724,19 @@
         "requirement":"",
         "rulings":[
             {
+                "text":"[CEL] If the combat continues or a new combat begins, the after combat effect does not happen/is not usable. (eg. {Psyche!}, {Telepathic Tracking})\n(Partial reversal of RTR 20010711)",
+                "refs":{
+                    "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ",
+                    "LSJ 19980109":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d2U51Uw0Hfg/m/uIPoVvPFePgJ"
+                }
+            },
+            {
+                "text":"[CEL] An action cannot continue \"as if unblocked\" after a combat resulting from a successful action (e.g. {Bum's Rush}).",
+                "refs":{
+                    "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ"
+                }
+            },
+            {
                 "text":"[CEL] If the action continues \"as if unblocked\", all action modifiers and reaction cards are still in effect, even those pertaining to a successful block.",
                 "refs":{
                     "RTR 19941109":"https://groups.google.com/d/msg/rec.games.deckmaster/_6CXoKTSLnw/FdG67-3HEAQJ",
@@ -90723,28 +90744,15 @@
                 }
             },
             {
-                "text":"[CEL] If the action continues \"as if unblocked\", Methuselah that had declined to block before do not get another opportunity to block.",
+                "text":"[CEL] If the action continues \"as if unblocked\", any Methuselahs that have declined to block before do not get another opportunity to block.",
                 "refs":{
                     "ANK 20190116":"https://www.vekn.net/forum/rules-questions/77302-strike-combat-ends-continue-with-the-action#92916"
                 }
             },
             {
-                "text":"[CEL] An action cannot continue \"as if unblocked\" after a combat resulting from a successful action (eg. {Bum's Rush}).",
-                "refs":{
-                    "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ"
-                }
-            },
-            {
-                "text":"[CEL] \"continue as if unblocked\" moves the action card from the ash heap (where it went when the action was blocked) to limbo (where it should be if the action is not blocked). If the action card is not in the ash heap, then the action cannot be continued.",
+                "text":"[CEL] For actions resulting from an action card, \"continue as if unblocked\" moves the action card from the ash heap (where it went when the action was blocked) to limbo (where it should be if the action is not blocked). If the action card is not in the ash heap, then the action cannot be continued.",
                 "refs":{
                     "LSJ 20070808-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jzMOxZ9oxOs/m/o0X7GUFmii0J"
-                }
-            },
-            {
-                "text":"[CEL] If the combat continues or a new combat begins, the after combat effect does not happen/is not usable. (eg. {Psyche!}, {Telepathic Tracking})\n(Partial reversal of RTR 20010711)",
-                "refs":{
-                    "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ",
-                    "LSJ 19980109":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d2U51Uw0Hfg/m/uIPoVvPFePgJ"
                 }
             }
         ],
