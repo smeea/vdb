@@ -1,9 +1,10 @@
 import ky from 'ky';
-import { useEffect, useState } from 'react';
-import { useNavigate, useParams } from 'react-router';
+import { useCallback, useEffect, useState } from 'react';
+import { useNavigate, useParams, useSearchParams } from 'react-router';
 import { useSnapshot } from 'valtio';
 import {
   ButtonClose,
+  ButtonFloatClose,
   ErrorMessage,
   FlexGapped,
   Header,
@@ -42,8 +43,10 @@ const Tda = () => {
   const { username, cryptCardBase, libraryCardBase, isMobile } = useApp();
   const { [DECKS]: decks, [RESULTS]: results, [INFO]: info } = useSnapshot(tdaStore);
   const params = useParams();
+  const [searchParams, setSearchParams] = useSearchParams();
+  const query = JSON.parse(searchParams.get('q'));
   const navigate = useNavigate();
-
+  const [showForm, setShowForm] = useState(false);
   const [tempDecks, setTempDecks] = useState();
   const [tempArchon, setTempArchon] = useState();
   const [error, setError] = useState(false);
@@ -218,7 +221,7 @@ const Tda = () => {
     setTdaDecks(tdaDecks);
   };
 
-  const handleClear = () => {
+  const handleCloseEvent = () => {
     clearTdaForm();
     setError(false);
     setTempArchon();
@@ -228,6 +231,11 @@ const Tda = () => {
     setTdaResults();
     navigate('/tda');
   };
+
+  const handleClear = useCallback(() => {
+    setSearchParams();
+    setShowForm(true);
+  }, []);
 
   useEffect(() => {
     if (tempDecks && tempArchon) {
@@ -283,30 +291,37 @@ const Tda = () => {
             </div>
           </div>
         )}
-        <FlexGapped className="max-sm:flex-col">
-          <div className="flex basis-9/12 justify-center max-sm:order-last">
-            {decks && info && <TdaCharts info={info} decks={decks} searchResults={results ?? {}} />}
-          </div>
-          {info && decks && (
-            <FlexGapped className="basis-3/12 flex-col max-sm:px-2">
-              <ButtonClose handleClick={handleClear} text="Close Event" />
-              <TdaInfo info={info} decks={decks} />
-            </FlexGapped>
-          )}
-        </FlexGapped>
+        {(!showForm || !isMobile) && (
+          <FlexGapped className="max-sm:flex-col">
+            <div className="flex basis-9/12 justify-center max-sm:order-last">
+              {decks && info && (
+                <TdaCharts info={info} decks={decks} searchResults={results ?? {}} />
+              )}
+            </div>
+            {info && decks && (
+              <FlexGapped className="basis-3/12 flex-col max-sm:px-2">
+                <ButtonClose handleClick={handleCloseEvent} text="Close Event" />
+                <TdaInfo info={info} decks={decks} />
+              </FlexGapped>
+            )}
+          </FlexGapped>
+        )}
         {decks && info && (
           <FlexGapped>
-            <div className="flex flex-col gap-4 sm:basis-7/12 lg:basis-8/12 xl:basis-9/12">
-              <TdaResult decks={results ?? Object.values(decks)} />
-            </div>
-            {!(isMobile && decks && info) && (
+            {(!showForm || !isMobile) && (
+              <div className="flex basis-full flex-col gap-4 sm:basis-7/12 lg:basis-8/12 xl:basis-9/12">
+                <TdaResult decks={results ?? Object.values(decks)} />
+              </div>
+            )}
+            {((showForm && !query) || !isMobile) && (
               <div className="basis-full max-sm:p-2 sm:basis-5/12 lg:basis-4/12 xl:basis-3/12">
-                <TdaSearchForm />
+                <TdaSearchForm setShowForm={setShowForm} />
               </div>
             )}
           </FlexGapped>
         )}
       </FlexGapped>
+      {!showForm && <ButtonFloatClose handleClose={handleClear} />}
     </div>
   );
 };

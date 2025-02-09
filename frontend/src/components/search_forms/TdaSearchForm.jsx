@@ -38,7 +38,7 @@ import {
 import { clearTdaForm, searchTdaForm, setTdaResults, tdaStore, useApp } from '@/context';
 import { filterDecks, sanitizeFormState } from '@/utils';
 
-const TdaSearchForm = () => {
+const TdaSearchForm = ({ setShowForm }) => {
   const { cryptCardBase, libraryCardBase, isMobile } = useApp();
   const tdaFormState = useSnapshot(searchTdaForm);
   const decks = useSnapshot(tdaStore)[DECKS];
@@ -114,14 +114,14 @@ const TdaSearchForm = () => {
     clearTdaForm();
     setTdaResults();
     setError(false);
-  }, [clearTdaForm]);
+  }, []);
 
   const processSearch = () => {
     setError(false);
     const sanitizedForm = sanitizeFormState(TDA, searchTdaForm);
 
     if (Object.entries(sanitizedForm).length === 0) {
-      setError('EMPTY REQUEST');
+      setShowForm();
       return;
     }
 
@@ -134,6 +134,7 @@ const TdaSearchForm = () => {
 
     setSearchParams({ q: JSON.stringify(sanitizedForm) });
     setTdaResults(filteredDecks);
+    setShowForm();
   };
 
   return (
