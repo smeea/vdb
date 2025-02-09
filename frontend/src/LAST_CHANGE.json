@@ -1,9 +1,11 @@
 {
-  "version": "2025-02-02",
+  "version": "2025-02-09",
   "changes": [
-    "Add laibon legacy images. Now all clans are available in legacy layout! Great job, Thiago Sousa!",
-    "Improve 'binocular' deck selector on mobile (clan icon, flexible width tags)",
+    "Lots of performance optimizations",
+    "Add 'not' tag search options to TWD/PDA/TDA",
+    "Add Hand size trait for crypt search",
     "Update Rulings",
+    "Fix TDA search on mobile",
     "Small other fixes and improvements"
   ]
 }

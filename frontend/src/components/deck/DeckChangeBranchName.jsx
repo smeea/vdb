@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import PaletteFill from '@icons/palette-fill.svg?react';
 import { Input, InputLabel } from '@/components';
-import { BRANCH_NAME, DECKID, IS_AUTHOR } from '@/constants';
+import { BRANCH_NAME, DECKID } from '@/constants';
 import { deckUpdate } from '@/context';
 import { getIsEditable } from '@/utils';
 

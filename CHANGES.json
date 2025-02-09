@@ -1,5 +1,16 @@
 [
   {
+    "version": "2025-02-09",
+    "changes": [
+      "Lots of performance optimizations",
+      "Add 'not' tag search options to TWD/PDA/TDA",
+      "Add Hand size trait for crypt search",
+      "Update Rulings",
+      "Fix TDA search on mobile",
+      "Small other fixes and improvements"
+    ]
+  },
+  {
     "version": "2025-02-02",
     "changes": [
       "Add laibon legacy images. Now all clans are available in legacy layout! Great job, Thiago Sousa!",
