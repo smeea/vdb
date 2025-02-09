@@ -42,7 +42,7 @@ export const CryptTraitsRegexMap = {
     /([:.] \+[1-9] stealth.|gets \+[1-9] stealth on each of (his|her|they) actions)/i,
   [UNLOCK]: () => /(?!not )unlock(?! phase|ed)|wakes/i,
   [BLACK_HAND]: () => /black hand[ .:]/i,
-  [HAND_SIZE]: () => /(\+[1-9] hand size)|(hand size is.*(increased|larger))/i,
+  [HAND_SIZE]: () => /(\+[1-9X] hand size)|(hand size is.*(increased|larger))/i,
   [SERAPH]: () => /seraph[.:]/i,
   [INFERNAL]: () => /infernal[.:]/i,
   [RED_LIST]: () => /red list[.:]/i,
