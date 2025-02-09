@@ -15,30 +15,44 @@ import {
 import { BLOOD, CAPACITY, POOL, X } from '@/constants';
 import { useApp } from '@/context';
 import { useModalCardController } from '@/hooks';
+import { countCards } from '@/utils';
 
 const DeckDrawModal = ({
-  burnCrypt,
-  burnLibrary,
-  burnedBloodTotal,
-  burnedCapacityTotal,
   burnedCrypt,
   burnedLibrary,
-  burnedPoolTotal,
-  crypt,
-  cryptTotal,
   drawedCrypt,
   drawedLibrary,
-  handleClose,
+  restCrypt,
+  restLibrary,
+  handleBurnCrypt,
+  handleBurnLibrary,
   handleCryptHandSize,
   handleLibraryHandSize,
   handleReDrawCrypt,
   handleReDrawLibrary,
   initialTransfers,
-  libraryTotal,
-  restCrypt,
-  restLibrary,
+  handleClose,
 }) => {
   const { isMobile, isNarrow } = useApp();
+
+  const cryptTotal = countCards([...drawedCrypt, ...restCrypt, ...burnedCrypt]);
+  const libraryTotal = countCards([...drawedLibrary, ...restLibrary, ...burnedLibrary]);
+
+  let burnedCapacityTotal = 0;
+  burnedCrypt.forEach((card) => {
+    burnedCapacityTotal += parseInt(card[CAPACITY]);
+  });
+
+  let burnedPoolTotal = 0;
+  let burnedBloodTotal = 0;
+  burnedLibrary.forEach((card) => {
+    if (card[BLOOD] && !isNaN(card[BLOOD])) {
+      burnedBloodTotal += parseInt(card[BLOOD]);
+    }
+    if (card[POOL] && !isNaN(card[POOL])) {
+      burnedPoolTotal += parseInt(card[POOL]);
+    }
+  });
 
   const {
     currentModalCard,
@@ -97,8 +111,7 @@ const DeckDrawModal = ({
               </Header>
               {cryptTotal < 4 && <ErrorMessage>NOT ENOUGH CARDS FOR INITIAL DRAW</ErrorMessage>}
               <DeckDrawCryptTable
-                crypt={crypt}
-                handleClick={burnCrypt}
+                handleClick={handleBurnCrypt}
                 restCards={restCrypt}
                 resultCards={drawedCrypt}
               />
@@ -142,7 +155,7 @@ const DeckDrawModal = ({
             </Header>
             {libraryTotal < 7 && <ErrorMessage>NOT ENOUGH CARDS FOR INITIAL DRAW</ErrorMessage>}
             <DeckDrawLibraryTable
-              handleClick={burnLibrary}
+              handleClick={handleBurnLibrary}
               restCards={restLibrary}
               resultCards={drawedLibrary}
               placement={isNarrow ? 'bottom' : 'right'}

@@ -1,8 +1,14 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
+import { useImmer } from 'use-immer';
 import { DeckDrawModal } from '@/components';
-import { BLOOD, CAPACITY, CRYPT, LIBRARY, POOL } from '@/constants';
+import { CRYPT, LIBRARY } from '@/constants';
 import { useApp } from '@/context';
-import { countCards, getCardsArray } from '@/utils';
+import { getCardsArray } from '@/utils';
+
+const HAND = 'hand';
+const REST = 'rest';
+const DRAWED = 'drawed';
+const BURNED = 'burned';
 
 const getRandomInt = (max) => {
   return Math.floor(Math.random() * Math.floor(max));
@@ -15,170 +21,172 @@ const getRandomTransfers = () => {
 
 const DeckDraw = ({ deck, setShow }) => {
   const { setShowFloatingButtons } = useApp();
+  const cryptList = getCardsArray(deck[CRYPT]);
+  const libraryList = getCardsArray(deck[LIBRARY]);
+  const [initialTransfers, setInitialTransfers] = useState(getRandomTransfers());
 
-  const cryptTotal = countCards(Object.values(deck[CRYPT]));
-  const cryptArr = getCardsArray(deck[CRYPT]);
-  const libraryArr = getCardsArray(deck[LIBRARY]);
+  const [cryptDraw, setCryptDraw] = useImmer({
+    [HAND]: 4,
+    [DRAWED]: [],
+    [BURNED]: [],
+    [REST]: [...Array(cryptList.length).keys()],
+  });
+  const restCrypt = cryptDraw[REST].map((i) => cryptList[i]);
+  const drawedCrypt = cryptDraw[DRAWED].map((i) => cryptList[i]);
+  const burnedCrypt = cryptDraw[BURNED].map((i) => cryptList[i]);
+
+  const [libraryDraw, setLibraryDraw] = useImmer({
+    [HAND]: 7,
+    [DRAWED]: [],
+    [BURNED]: [],
+    [REST]: [...Array(libraryList.length).keys()],
+  });
+  const restLibrary = libraryDraw[REST].map((i) => libraryList[i]);
+  const drawedLibrary = libraryDraw[DRAWED].map((i) => libraryList[i]);
+  const burnedLibrary = libraryDraw[BURNED].map((i) => libraryList[i]);
 
   const drawCards = (cards, quantity) => {
     const restArray = [...cards];
     const drawArray = [];
-
-    while (quantity > 0) {
+    for (let i = 0; i < quantity; i++) {
       const randomId = getRandomInt(restArray.length);
       drawArray.push(restArray[randomId]);
       restArray.splice(randomId, 1);
-      quantity -= 1;
     }
     return [drawArray, restArray];
   };
 
-  const [showDrawModal, setShowDrawModal] = useState(true);
-  const [libraryHandSize, setLibraryHandSize] = useState(7);
-  const [cryptHandSize, setCryptHandSize] = useState(4);
-  const [restCrypt, setRestCrypt] = useState(cryptArr);
-  const [restLibrary, setRestLibrary] = useState(libraryArr);
-  const [drawedCrypt, setDrawedCrypt] = useState([]);
-  const [drawedLibrary, setDrawedLibrary] = useState([]);
-  const [burnedCrypt, setBurnedCrypt] = useState([]);
-  const [burnedLibrary, setBurnedLibrary] = useState([]);
-  const [initialTransfers, setInitialTransfers] = useState(getRandomTransfers());
-
-  const handleCloseDrawModal = () => {
-    setShowDrawModal(false);
+  const handleClose = useCallback(() => {
     setShow(false);
     setShowFloatingButtons(true);
-  };
+  }, []);
 
-  const handleReDrawCrypt = () => {
+  const handleReDrawCrypt = useCallback(() => {
     setInitialTransfers(getRandomTransfers());
-    setCryptHandSize(4);
-    const [draw, rest] = drawCards(cryptArr, 4);
-    setDrawedCrypt(draw);
-    setRestCrypt(rest);
-    setBurnedCrypt([]);
-  };
+    setCryptDraw((draft) => {
+      const [drawed, rest] = drawCards([...Array(cryptList.length).keys()], 4);
+      draft[HAND] = 4;
+      draft[DRAWED] = drawed;
+      draft[REST] = rest;
+      draft[BURNED] = [];
+    });
+  }, [deck[CRYPT]]);
 
-  const handleReDrawLibrary = () => {
-    setLibraryHandSize(7);
-    const [draw, rest] = drawCards(libraryArr, 7);
-    setDrawedLibrary(draw);
-    setRestLibrary(rest);
-    setBurnedLibrary([]);
-  };
+  const handleReDrawLibrary = useCallback(() => {
+    setLibraryDraw((draft) => {
+      const [drawed, rest] = drawCards([...Array(libraryList.length).keys()], 7);
+      draft[HAND] = 7;
+      draft[DRAWED] = drawed;
+      draft[REST] = rest;
+      draft[BURNED] = [];
+    });
+  }, [deck[LIBRARY]]);
 
-  const handleCryptHandSize = (q) => {
-    setCryptHandSize(cryptHandSize + q);
-  };
+  const handleCryptHandSize = useCallback(
+    (q) => {
+      setCryptDraw((draft) => {
+        draft[HAND] += q;
+      });
+    },
+    [cryptDraw[HAND]],
+  );
 
-  const handleLibraryHandSize = (q) => {
-    setLibraryHandSize(libraryHandSize + q);
-  };
+  const handleLibraryHandSize = useCallback(
+    (q) => {
+      setLibraryDraw((draft) => {
+        draft[HAND] += q;
+      });
+    },
+    [libraryDraw[HAND]],
+  );
 
-  const burnCrypt = (index) => {
-    const hand = drawedCrypt;
-    const burnedCard = hand.splice(index, 1)[0];
-    setBurnedCrypt([burnedCard, ...burnedCrypt]);
-    setDrawedCrypt(hand);
-    setCryptHandSize(cryptHandSize - 1);
-  };
+  const handleBurnCrypt = useCallback(
+    (idx) => {
+      setCryptDraw((draft) => {
+        const card = draft[DRAWED].splice(idx, 1)[0];
+        draft[BURNED].unshift(card);
+        if (draft[HAND] > 0) {
+          draft[HAND] -= 1;
+        }
+      });
+    },
+    [cryptDraw],
+  );
 
-  const burnLibrary = (index) => {
-    const hand = drawedLibrary;
-    const burnedCard = hand.splice(index, 1)[0];
-    setBurnedLibrary([burnedCard, ...burnedLibrary]);
-    let newDrawedCards = [];
-    let newRestCards = [];
-    if (restLibrary.length > 0) {
-      [newDrawedCards, newRestCards] = drawCards(restLibrary, 1);
-    } else {
-      setLibraryHandSize(libraryHandSize - 1);
-    }
-    const allDrawedCards = [...hand, ...newDrawedCards];
-    setDrawedLibrary(allDrawedCards);
-    setRestLibrary(newRestCards);
-  };
-
-  let burnedCapacityTotal = 0;
-  burnedCrypt.forEach((card) => {
-    burnedCapacityTotal += parseInt(card[CAPACITY]);
-  });
-
-  let burnedPoolTotal = 0;
-  let burnedBloodTotal = 0;
-
-  burnedLibrary.forEach((card) => {
-    if (card[BLOOD] && !isNaN(card[BLOOD])) {
-      burnedBloodTotal += parseInt(card[BLOOD]);
-    }
-    if (card[POOL] && !isNaN(card[POOL])) {
-      burnedPoolTotal += parseInt(card[POOL]);
-    }
-  });
+  const handleBurnLibrary = useCallback(
+    (idx) => {
+      setLibraryDraw((draft) => {
+        const card = draft[DRAWED].splice(idx, 1)[0];
+        draft[BURNED].unshift(card);
+        if (draft[REST].length > 0) {
+          const [newDrawedCards, newRestCards] = drawCards(draft[REST], 1);
+          draft[DRAWED].push(...newDrawedCards);
+          draft[REST] = newRestCards;
+        } else if (draft[HAND] > 0) {
+          draft[HAND] -= 1;
+        }
+      });
+    },
+    [libraryDraw],
+  );
 
   useEffect(() => {
-    if (restCrypt) {
-      if (drawedCrypt.length < cryptHandSize) {
-        if (cryptHandSize - drawedCrypt.length <= restCrypt.length) {
-          const diff = cryptHandSize - drawedCrypt.length;
-          const [draw, rest] = drawCards(restCrypt, diff);
-          setDrawedCrypt([...drawedCrypt, ...draw]);
-          setRestCrypt(rest);
-        }
-      } else if (drawedCrypt.length > cryptHandSize) {
-        const diff = drawedCrypt.length - cryptHandSize;
-        const overhead = drawedCrypt.slice(-diff);
-        setDrawedCrypt([...drawedCrypt.slice(0, drawedCrypt.length - diff)]);
-        setRestCrypt([...restCrypt, ...overhead]);
+    if (cryptDraw[DRAWED].length < cryptDraw[HAND]) {
+      if (cryptDraw[HAND] - drawedCrypt.length <= restCrypt.length) {
+        const diff = cryptDraw[HAND] - cryptDraw[DRAWED].length;
+        const [draw, rest] = drawCards(cryptDraw[REST], diff);
+        setCryptDraw((draft) => {
+          draft[DRAWED].push(...draw);
+          draft[REST] = rest;
+        });
       }
+    } else if (cryptDraw[DRAWED].length > cryptDraw[HAND]) {
+      setCryptDraw((draft) => {
+        const diff = draft[DRAWED].length - draft[HAND];
+        const overhead = draft[DRAWED].slice(-diff);
+        draft[DRAWED] = [...draft[DRAWED].slice(0, draft[DRAWED].length - diff)];
+        draft[REST].push(...overhead);
+      });
     }
-  }, [restCrypt, cryptHandSize]);
+  }, [cryptDraw[DRAWED], cryptDraw[HAND]]);
 
   useEffect(() => {
-    if (restLibrary) {
-      if (drawedLibrary.length < libraryHandSize) {
-        if (libraryHandSize - drawedLibrary.length <= restLibrary.length) {
-          const diff = libraryHandSize - drawedLibrary.length;
-          const [draw, rest] = drawCards(restLibrary, diff);
-          setDrawedLibrary([...drawedLibrary, ...draw]);
-          setRestLibrary(rest);
-        }
-      } else if (drawedLibrary.length > libraryHandSize) {
-        const diff = drawedLibrary.length - libraryHandSize;
-        const overhead = drawedLibrary.slice(-diff);
-        setDrawedLibrary([...drawedLibrary.slice(0, drawedLibrary.length - diff)]);
-        setRestLibrary([...restLibrary, ...overhead]);
+    if (libraryDraw[DRAWED].length < libraryDraw[HAND]) {
+      if (libraryDraw[HAND] - drawedLibrary.length <= restLibrary.length) {
+        const diff = libraryDraw[HAND] - libraryDraw[DRAWED].length;
+        const [draw, rest] = drawCards(libraryDraw[REST], diff);
+        setLibraryDraw((draft) => {
+          draft[DRAWED].push(...draw);
+          draft[REST] = rest;
+        });
       }
+    } else if (libraryDraw[DRAWED].length > libraryDraw[HAND]) {
+      setLibraryDraw((draft) => {
+        const diff = draft[DRAWED].length - draft[HAND];
+        const overhead = draft[DRAWED].slice(-diff);
+        draft[DRAWED] = [...draft[DRAWED].slice(0, draft[DRAWED].length - diff)];
+        draft[REST].push(...overhead);
+      });
     }
-  }, [restLibrary, libraryHandSize]);
+  }, [libraryDraw[DRAWED], libraryDraw[HAND]]);
 
   return (
-    <>
-      {showDrawModal && (
-        <DeckDrawModal
-          burnCrypt={burnCrypt}
-          burnLibrary={burnLibrary}
-          burnedBloodTotal={burnedBloodTotal}
-          burnedCapacityTotal={burnedCapacityTotal}
-          burnedCrypt={burnedCrypt}
-          burnedLibrary={burnedLibrary}
-          burnedPoolTotal={burnedPoolTotal}
-          crypt={deck[CRYPT]}
-          cryptTotal={cryptTotal}
-          drawedCrypt={drawedCrypt}
-          drawedLibrary={drawedLibrary}
-          handleClose={handleCloseDrawModal}
-          handleCryptHandSize={handleCryptHandSize}
-          handleLibraryHandSize={handleLibraryHandSize}
-          handleReDrawCrypt={handleReDrawCrypt}
-          handleReDrawLibrary={handleReDrawLibrary}
-          initialTransfers={initialTransfers}
-          libraryTotal={libraryArr.length}
-          restCrypt={restCrypt}
-          restLibrary={restLibrary}
-        />
-      )}
-    </>
+    <DeckDrawModal
+      burnedCrypt={burnedCrypt}
+      burnedLibrary={burnedLibrary}
+      drawedCrypt={drawedCrypt}
+      drawedLibrary={drawedLibrary}
+      handleClose={handleClose}
+      handleBurnCrypt={handleBurnCrypt}
+      handleBurnLibrary={handleBurnLibrary}
+      handleCryptHandSize={handleCryptHandSize}
+      handleLibraryHandSize={handleLibraryHandSize}
+      handleReDrawCrypt={handleReDrawCrypt}
+      handleReDrawLibrary={handleReDrawLibrary}
+      initialTransfers={initialTransfers}
+      restCrypt={restCrypt}
+      restLibrary={restLibrary}
+    />
   );
 };
 

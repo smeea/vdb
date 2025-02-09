@@ -32,8 +32,8 @@ const ResultCryptTableRowCommon = ({
   const ALIGN_DISCIPLINES_THRESHOLD = isMobile ? 13 : 17;
 
   const onClick = useCallback(() => {
-    handleClick(idx || card);
-  }, [card]);
+    handleClick(idx ?? card);
+  }, [idx, card]);
 
   return (
     <>

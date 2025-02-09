@@ -75,8 +75,8 @@ const ResultLibraryTableRowCommon = ({
   const { isNarrow } = useApp();
 
   const onClick = useCallback(() => {
-    handleClick(idx || card);
-  }, [card]);
+    handleClick(idx ?? card);
+  }, [idx, card]);
 
   return (
     <>
