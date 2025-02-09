@@ -29,7 +29,7 @@ const Link = ({ to, end, icon, text, title }) => {
       title={title}
       className={({ isActive }) =>
         twMerge(
-          'flex h-full w-full items-center justify-center outline-hidden hover:no-underline',
+          'flex h-full w-full items-center justify-center no-underline outline-hidden',
           icon ? 'sm:px-3' : 'pb-[2px] sm:px-2',
           isActive
             ? 'bg-borderNestModal dark:bg-borderNestModalDark dark:text-whiteDark text-white'

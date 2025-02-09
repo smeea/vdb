@@ -103,7 +103,9 @@
         }
     }
     a:hover {
-        text-decoration: underline
+        @media (min-width: 768px) {
+            text-decoration: underline;
+        }
     }
     ul {
         list-style-type: square;
