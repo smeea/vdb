@@ -39,6 +39,7 @@ const DeckDrawLibraryTable = ({
               <ResultLibraryTableRowCommon
                 card={card}
                 handleClick={onChange}
+                idx={idx}
                 shouldShowModal={shouldShowModal}
               />
               {!ashHeap && (

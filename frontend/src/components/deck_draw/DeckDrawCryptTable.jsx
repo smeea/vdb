@@ -45,6 +45,7 @@ const DeckDrawCryptTable = ({
                 handleClick={onChange}
                 keyDisciplines={keyDisciplines}
                 disciplinesSet={disciplinesSet}
+                idx={idx}
                 inDeck
               />
               {!ashHeap && (

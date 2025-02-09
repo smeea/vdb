@@ -70,11 +70,12 @@ const ResultLibraryTableRowCommon = ({
   shouldShowModal,
   noBurn,
   isBanned,
+  idx,
 }) => {
   const { isNarrow } = useApp();
 
   const onClick = useCallback(() => {
-    handleClick(card);
+    handleClick(idx || card);
   }, [card]);
 
   return (

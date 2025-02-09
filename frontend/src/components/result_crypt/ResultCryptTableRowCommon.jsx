@@ -26,12 +26,13 @@ const ResultCryptTableRowCommon = ({
   noDisciplines,
   shouldShowModal,
   isBanned,
+  idx,
 }) => {
   const { isMobile, isNarrow, isDesktop, isWide } = useApp();
   const ALIGN_DISCIPLINES_THRESHOLD = isMobile ? 13 : 17;
 
   const onClick = useCallback(() => {
-    handleClick(card);
+    handleClick(idx || card);
   }, [card]);
 
   return (
