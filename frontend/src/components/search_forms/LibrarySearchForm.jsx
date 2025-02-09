@@ -80,7 +80,7 @@ const LibrarySearchForm = () => {
   const [preresults, setPreresults] = useState();
   const [searchParams, setSearchParams] = useSearchParams();
   const query = JSON.parse(searchParams.get('q'));
-  const SHOW_LIMIT = 300;
+  const SHOW_LIMIT = 400;
 
   useEffect(() => {
     if (query) {
