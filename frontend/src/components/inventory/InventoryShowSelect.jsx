@@ -11,7 +11,7 @@ const InventoryShowSelect = ({ category, setCategory }) => {
       className="flex flex-col gap-0.5"
     >
       {[
-        [ALL, 'Show All'],
+        [ALL, 'Owned & Problems'],
         [OK, 'Only Owned'],
         [NOK, 'Only Problems'],
       ].map((i) => (
