@@ -1,4 +1,12 @@
 # FIX
+- Jack Drake sect
+- Swap card on mobile button
+- Group Nic Chang, Rico Loco not sorting by group
+- Playtest late fetch of resources
+- Open modal reference to update on list change
+- Lasombra G6 in crypt search
+- Show all inv rename
+- Menu nav items alignment on mobile
 
 # FIX ON HOLD
 - Deck-in-Url trimmed at first card - can't reproduce in dev environment
