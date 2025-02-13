@@ -1,6 +1,5 @@
 # FIX
 - Playtest late fetch of resources
-- Open modal reference to update on list change
 
 # FIX ON HOLD
 - Deck-in-Url trimmed at first card - can't reproduce in dev environment

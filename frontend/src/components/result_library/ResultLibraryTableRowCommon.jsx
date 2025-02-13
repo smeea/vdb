@@ -1,4 +1,3 @@
-import { useCallback } from 'react';
 import { twMerge } from 'tailwind-merge';
 import {
   CardPopover,
@@ -74,9 +73,9 @@ const ResultLibraryTableRowCommon = ({
 }) => {
   const { isNarrow } = useApp();
 
-  const onClick = useCallback(() => {
+  const onClick = () => {
     handleClick(idx ?? card);
-  }, [idx, card]);
+  };
 
   return (
     <>

@@ -1,4 +1,3 @@
-import { useCallback } from 'react';
 import {
   CardPopover,
   ConditionalTooltip,
@@ -31,9 +30,9 @@ const ResultCryptTableRowCommon = ({
   const { isMobile, isNarrow, isDesktop, isWide } = useApp();
   const ALIGN_DISCIPLINES_THRESHOLD = isMobile ? 13 : 17;
 
-  const onClick = useCallback(() => {
+  const onClick = () => {
     handleClick(idx ?? card);
-  }, [idx, card]);
+  };
 
   return (
     <>
