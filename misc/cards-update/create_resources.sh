@@ -1,4 +1,6 @@
 #!/bin/bash
+source ../../backend/.env
+
 # Check playtest files
 mkdir -p playtest
 [ ! -f playtest/vtescrypt_playtest.csv ] && touch playtest/vtescrypt_playtest.csv
@@ -14,9 +16,10 @@ python generate_playtest_precons.py
 python generate_precons.py
 mv cardbase_crypt.min.json ../../frontend/public/data/cardbase_crypt.json
 mv cardbase_lib.min.json ../../frontend/public/data/cardbase_lib.json
-mv playtest/cardbase_crypt_playtest.min.json ../../frontend/public/data/cardbase_crypt_playtest.json
-mv playtest/cardbase_lib_playtest.min.json ../../frontend/public/data/cardbase_lib_playtest.json
+mv playtest/cardbase_crypt_playtest.min.json ../../frontend/public/data/cardbase_crypt_playtest_$PLAYTEST_KEY.json
+mv playtest/cardbase_lib_playtest.min.json ../../frontend/public/data/cardbase_lib_playtest_$PLAYTEST_KEY.json
 mv precon_decks.min.json ../../frontend/public/data/precon_decks.json
+mv playtest/precon_decks_playtest.min.json ../../frontend/public/data/precon_decks_playtest_$PLAYTEST_KEY.json
 mv artistsCrypt.min.json ../../frontend/src/assets/data/artistsCrypt.json
 mv artistsLib.min.json ../../frontend/src/assets/data/artistsLib.json
 

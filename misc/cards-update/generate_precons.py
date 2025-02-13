@@ -170,6 +170,10 @@ with open("cardbase_crypt.json", "r") as crypt_file, open(
 ) as library_file, open("precon_decks.json", "w") as precons_file, open(
     "precon_decks.min.json", "w"
 ) as precons_file_min, open(
+    "playtest/precon_decks_playtest.json", "w"
+) as precons_file_playtest, open(
+    "playtest/precon_decks_playtest.min.json", "w"
+) as precons_file_playtest_min, open(
     "playtest/precons.json", "r"
 ) as playtest_precons_file:
     crypt = list(json.load(crypt_file).values())
@@ -186,10 +190,10 @@ with open("cardbase_crypt.json", "r") as crypt_file, open(
             crypt = crypt + list(json.load(crypt_playtest_file).values())
             library = library + list(json.load(library_playtest_file).values())
 
-            bundles = {
-                **playtest_bundles,
-                **bundles,
-            }
+            # bundles = {
+            #     **playtest_bundles,
+            #     **bundles,
+            # }
 
     except Exception as e:
         print(e)
@@ -200,6 +204,12 @@ with open("cardbase_crypt.json", "r") as crypt_file, open(
                 for precon in bundles[card_set].keys():
                     if precon in card_precons:
                         bundles[card_set][precon][card["id"]] = int(card_precons[precon])
+            if card_set in playtest_bundles:
+                for precon in playtest_bundles[card_set].keys():
+                    if precon in card_precons:
+                        playtest_bundles[card_set][precon][card["id"]] = int(card_precons[precon])
 
     json.dump(bundles, precons_file_min, separators=(",", ":"))
     json.dump(bundles, precons_file, indent=4, separators=(",", ":"))
+    json.dump(playtest_bundles, precons_file_playtest_min, separators=(",", ":"))
+    json.dump(playtest_bundles, precons_file_playtest, indent=4, separators=(",", ":"))

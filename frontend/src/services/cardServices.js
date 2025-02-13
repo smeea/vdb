@@ -21,21 +21,21 @@ import { getTags, parseDeck } from '@/utils';
 
 const CARD_VERSION = import.meta.env.VITE_CARD_VERSION;
 const BASE_URL = import.meta.env.VITE_BASE_URL;
-const urlCrypt = `${BASE_URL}/data/cardbase_crypt.json?v=${CARD_VERSION}`;
-const urlLibrary = `${BASE_URL}/data/cardbase_lib.json?v=${CARD_VERSION}`;
-const urlCryptPlaytest = `${BASE_URL}/data/cardbase_crypt_playtest.json?v=${CARD_VERSION}`;
-const urlLibraryPlaytest = `${BASE_URL}/data/cardbase_lib_playtest.json?v=${CARD_VERSION}`;
-const urlLocalizedCrypt = (lang) =>
-  `${BASE_URL}/data/cardbase_crypt.${lang}.json?v=${CARD_VERSION}`;
-const urlLocalizedLibrary = (lang) =>
-  `${BASE_URL}/data/cardbase_lib.${lang}.json?v=${CARD_VERSION}`;
-const urlPreconDecks = `${BASE_URL}/data/precon_decks.json?v=${CARD_VERSION}`;
 
-export const getCardBase = async () => {
+export const getCardBase = async (secret) => {
+  const urlCrypt = `${BASE_URL}/data/cardbase_crypt.json?v=${CARD_VERSION}`;
+  const urlLibrary = `${BASE_URL}/data/cardbase_lib.json?v=${CARD_VERSION}`;
+  const urlCryptPlaytest = `${BASE_URL}/data/cardbase_crypt_playtest_${secret}.json?v=${CARD_VERSION}`;
+  const urlLibraryPlaytest = `${BASE_URL}/data/cardbase_lib_playtest_${secret}.json?v=${CARD_VERSION}`;
+
   const crypt = await ky.get(urlCrypt).json();
   const library = await ky.get(urlLibrary).json();
-  const cryptPlaytest = await ky.get(urlCryptPlaytest, { throwHttpErrors: false }).json();
-  const libraryPlaytest = await ky.get(urlLibraryPlaytest, { throwHttpErrors: false }).json();
+  const cryptPlaytest = secret
+    ? await ky.get(urlCryptPlaytest, { throwHttpErrors: false }).json()
+    : {};
+  const libraryPlaytest = secret
+    ? await ky.get(urlLibraryPlaytest, { throwHttpErrors: false }).json()
+    : {};
 
   const nativeCrypt = {};
   const nativeLibrary = {};
@@ -61,6 +61,11 @@ export const getCardBase = async () => {
 };
 
 export const getLocalizedCardBase = async (lang) => {
+  const urlLocalizedCrypt = (lang) =>
+    `${BASE_URL}/data/cardbase_crypt.${lang}.json?v=${CARD_VERSION}`;
+  const urlLocalizedLibrary = (lang) =>
+    `${BASE_URL}/data/cardbase_lib.${lang}.json?v=${CARD_VERSION}`;
+
   const crypt = await ky.get(urlLocalizedCrypt(lang)).json();
   const library = await ky.get(urlLocalizedLibrary(lang)).json();
 
@@ -70,12 +75,17 @@ export const getLocalizedCardBase = async (lang) => {
   };
 };
 
-export const getPreconDecks = async (cryptCardBase, libraryCardBase) => {
+export const getPreconDecks = async (cryptCardBase, libraryCardBase, secret) => {
+  const urlPreconDecks = `${BASE_URL}/data/precon_decks.json?v=${CARD_VERSION}`;
+  const urlPreconPlaytestDecks = `${BASE_URL}/data/precon_decks_playtest_${secret}.json?v=${CARD_VERSION}`;
+
   const preconDecksData = await ky.get(urlPreconDecks).json();
+  const preconPlaytestDecksData = secret ? await ky.get(urlPreconPlaytestDecks).json() : {};
+  const preconData = { ...preconDecksData, ...preconPlaytestDecksData };
 
   const preconDecks = {};
-  Object.keys(preconDecksData).forEach((set) => {
-    Object.keys(preconDecksData[set]).forEach((precon) => {
+  Object.keys(preconData).forEach((set) => {
+    Object.keys(preconData[set]).forEach((precon) => {
       const deckid = `${set}:${precon}`;
       const name = setsAndPrecons[set][PRECONS][precon][NAME];
 
@@ -94,7 +104,7 @@ export const getPreconDecks = async (cryptCardBase, libraryCardBase) => {
         preconDecks[deckid][PLAYTEST_OLD] = true;
       }
 
-      const cardsData = parseDeck(preconDecksData[set][precon], cryptCardBase, libraryCardBase);
+      const cardsData = parseDeck(preconData[set][precon], cryptCardBase, libraryCardBase);
 
       let tags = [];
       if (set !== PLAYTEST || (cryptCardBase[210001] && libraryCardBase[110001])) {

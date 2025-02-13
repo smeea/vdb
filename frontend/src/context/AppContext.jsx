@@ -26,6 +26,7 @@ import {
   NATIVE_CRYPT,
   NATIVE_LIBRARY,
   PDA,
+  PLAYTEST,
   PUBLIC_PARENT,
   QUANTITYx,
   RANK_HIGH_LOW,
@@ -75,6 +76,7 @@ const LIBRARY_CARDBASE = 'libraryCardBase';
 const LOCALIZED_CRYPT = 'localizedCrypt';
 const LOCALIZED_LIBRARY = 'localizedLibrary';
 const PRECON_DECKS = 'preconDecks';
+const IS_PLAYTESTER = 'is_playtester';
 
 export const AppContext = React.createContext();
 
@@ -156,8 +158,8 @@ export const AppProvider = ({ children }) => {
 
   // CARD BASE
   const CARD_VERSION = import.meta.env.VITE_CARD_VERSION;
-  const fetchAndSetCardBase = (isIndexedDB = true) => {
-    cardServices.getCardBase().then((data) => {
+  const fetchAndSetCardBase = (isIndexedDB = true, secret) => {
+    cardServices.getCardBase(secret).then((data) => {
       if (isIndexedDB) {
         setMany([
           [CARD_VERSION_KEY, CARD_VERSION],
@@ -177,7 +179,7 @@ export const AppProvider = ({ children }) => {
       setLocalizedCrypt({ [EN]: data[NATIVE_CRYPT] });
       setLocalizedLibrary({ [EN]: data[NATIVE_LIBRARY] });
 
-      cardServices.getPreconDecks(data[CRYPT], data[LIBRARY]).then((preconData) => {
+      cardServices.getPreconDecks(data[CRYPT], data[LIBRARY], secret).then((preconData) => {
         if (isIndexedDB) set(PRECON_DECKS, deepClone(preconData));
         setPreconDecks(preconData);
       });
@@ -210,7 +212,7 @@ export const AppProvider = ({ children }) => {
     ])
       .then(([v, cb, lb, nc, nl, lc, ll, pd, lac, lal, lbc, lbl, ls]) => {
         if (!v || CARD_VERSION > v) {
-          fetchAndSetCardBase();
+          fetchAndSetCardBase(true);
         } else {
           limitedFullStore[CRYPT] = cb;
           limitedFullStore[LIBRARY] = lb;
@@ -232,6 +234,9 @@ export const AppProvider = ({ children }) => {
       if (data.success === false) {
         setUserData(null);
       } else {
+        if (data[PLAYTEST][IS_PLAYTESTER]) {
+          fetchAndSetCardBase(true, data[PLAYTEST].secret);
+        }
         setUserData(data);
       }
     });
@@ -262,10 +267,10 @@ export const AppProvider = ({ children }) => {
       setPublicName(data.public_name);
       setEmail(data.email);
       setInventoryKey(data.inventory_key);
-      setIsPlaytester(data.playtest.is_playtester);
-      setIsPlaytestAdmin(data.playtest.is_admin);
-      setPlaytestProfile(data.playtest.profile);
-      if (!data.playtest.is_playtester && !data.playtest.is_admin) setPlaytestMode(false);
+      setIsPlaytester(data[PLAYTEST][IS_PLAYTESTER]);
+      setIsPlaytestAdmin(data[PLAYTEST].is_admin);
+      setPlaytestProfile(data[PLAYTEST].profile);
+      if (!data[PLAYTEST][IS_PLAYTESTER] && !data[PLAYTEST].is_admin) setPlaytestMode(false);
       const {
         [IS_FROZEN]: isFrozen,
         [CRYPT]: crypt,

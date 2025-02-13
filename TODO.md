@@ -1,5 +1,4 @@
 # FIX
-- Playtest late fetch of resources
 
 # FIX ON HOLD
 - Deck-in-Url trimmed at first card - can't reproduce in dev environment

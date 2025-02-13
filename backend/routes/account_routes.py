@@ -4,6 +4,11 @@ from api import app, db, login
 from models import User
 from routes.decks_routes import parse_user_decks
 from routes.inventory_routes import parse_user_inventory
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+PLAYTEST_KEY = os.environ.get("PLAYTEST_KEY")
 
 
 @login.unauthorized_handler
@@ -37,6 +42,7 @@ def login_route():
         "is_playtester": current_user.playtester,
         "is_admin": current_user.playtest_admin,
         "profile": {**current_user.playtest_profile, "reports": total_reports},
+        "secret": os.environ.get("PLAYTEST_KEY") if current_user.playtester else None,
     }
     if "added_by" in playtest["profile"]:
         del playtest["profile"]["added_by"]
@@ -79,6 +85,7 @@ def who_am_i_route():
             "is_playtester": current_user.playtester,
             "is_admin": current_user.playtest_admin,
             "profile": {**current_user.playtest_profile, "reports": total_reports},
+            "secret": os.environ.get("PLAYTEST_KEY") if current_user.playtester else None,
         }
         if "added_by" in playtest["profile"]:
             del playtest["profile"]["added_by"]
