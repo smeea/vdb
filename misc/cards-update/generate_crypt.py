@@ -71,6 +71,8 @@ def generate_card(card):
         except ValueError:
             pass
 
+    card["Card Text"] = re.sub("[{}]", "", card["Card Text"])
+
     # Convert sets to dict
     if not card["Set"]:
         card["Set"] = {"playtest": {}}
@@ -238,7 +240,6 @@ def generate_card(card):
     if card["Clan"] == "Follower of Set":
         card["Clan"] = "Ministry"
 
-    card["Card Text"] = re.sub("[{}]", "", card["Card Text"])
     card["Card Text"] = (
         card["Card Text"]
         .replace("Assamites", "Banu Haqim")

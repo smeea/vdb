@@ -1,5 +1,4 @@
 # FIX
-- Jack Drake sect
 - Swap card on mobile button
 - Group Nic Chang, Rico Loco not sorting by group
 - Playtest late fetch of resources
