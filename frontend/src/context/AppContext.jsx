@@ -76,7 +76,9 @@ const LIBRARY_CARDBASE = 'libraryCardBase';
 const LOCALIZED_CRYPT = 'localizedCrypt';
 const LOCALIZED_LIBRARY = 'localizedLibrary';
 const PRECON_DECKS = 'preconDecks';
+const IS_PLAYTEST = 'isPlaytest';
 const IS_PLAYTESTER = 'is_playtester';
+const IS_ADMIN = 'is_admin';
 
 export const AppContext = React.createContext();
 
@@ -163,6 +165,7 @@ export const AppProvider = ({ children }) => {
       if (isIndexedDB) {
         setMany([
           [CARD_VERSION_KEY, CARD_VERSION],
+          [IS_PLAYTEST, !!secret],
           [CRYPT_CARDBASE, data[CRYPT]],
           [LIBRARY_CARDBASE, data[LIBRARY]],
           [NATIVE_CRYPT, data[NATIVE_CRYPT]],
@@ -197,6 +200,7 @@ export const AppProvider = ({ children }) => {
   useEffect(() => {
     getMany([
       CARD_VERSION_KEY,
+      IS_PLAYTEST,
       CRYPT_CARDBASE,
       LIBRARY_CARDBASE,
       NATIVE_CRYPT,
@@ -210,9 +214,9 @@ export const AppProvider = ({ children }) => {
       LIMITED_BANNED_LIBRARY,
       LIMITED_SETS,
     ])
-      .then(([v, cb, lb, nc, nl, lc, ll, pd, lac, lal, lbc, lbl, ls]) => {
-        if (!v || CARD_VERSION > v) {
-          fetchAndSetCardBase(true);
+      .then(([v, pt, cb, lb, nc, nl, lc, ll, pd, lac, lal, lbc, lbl, ls]) => {
+        if (!v || CARD_VERSION > v || (userData?.[PLAYTEST][IS_PLAYTESTER] && !pt)) {
+          fetchAndSetCardBase(true, userData?.[PLAYTEST]?.secret);
         } else {
           limitedFullStore[CRYPT] = cb;
           limitedFullStore[LIBRARY] = lb;
@@ -227,16 +231,15 @@ export const AppProvider = ({ children }) => {
         setLimitedFormat(lac, lal, lbc, lbl, ls);
       })
       .catch(() => {
-        fetchAndSetCardBase(false);
+        fetchAndSetCardBase(false, userData?.[PLAYTEST]?.secret);
       });
+  }, [userData]);
 
+  useEffect(() => {
     userServices.whoAmI().then((data) => {
       if (data.success === false) {
         setUserData(null);
       } else {
-        if (data[PLAYTEST][IS_PLAYTESTER]) {
-          fetchAndSetCardBase(true, data[PLAYTEST].secret);
-        }
         setUserData(data);
       }
     });
@@ -263,23 +266,25 @@ export const AppProvider = ({ children }) => {
 
   const initializeUserData = useCallback(
     (data) => {
-      setUsername(data.username);
-      setPublicName(data.public_name);
-      setEmail(data.email);
-      setInventoryKey(data.inventory_key);
-      setIsPlaytester(data[PLAYTEST][IS_PLAYTESTER]);
-      setIsPlaytestAdmin(data[PLAYTEST].is_admin);
-      setPlaytestProfile(data[PLAYTEST].profile);
-      if (!data[PLAYTEST][IS_PLAYTESTER] && !data[PLAYTEST].is_admin) setPlaytestMode(false);
-      const {
-        [IS_FROZEN]: isFrozen,
-        [CRYPT]: crypt,
-        [LIBRARY]: library,
-      } = parseInventoryData(data.inventory);
-      inventoryStore[IS_FROZEN] = isFrozen;
-      inventoryStore[CRYPT] = crypt;
-      inventoryStore[LIBRARY] = library;
-      deckStore[DECKS] = parseDecksData(data.decks);
+      if (cryptCardBase && libraryCardBase) {
+        setUsername(data.username);
+        setPublicName(data.public_name);
+        setEmail(data.email);
+        setInventoryKey(data.inventory_key);
+        setIsPlaytester(data[PLAYTEST][IS_PLAYTESTER]);
+        setIsPlaytestAdmin(data[PLAYTEST][IS_ADMIN]);
+        setPlaytestProfile(data[PLAYTEST].profile);
+        if (!data[PLAYTEST][IS_PLAYTESTER] && !data[PLAYTEST][IS_ADMIN]) setPlaytestMode(false);
+        const {
+          [IS_FROZEN]: isFrozen,
+          [CRYPT]: crypt,
+          [LIBRARY]: library,
+        } = parseInventoryData(data.inventory);
+        inventoryStore[IS_FROZEN] = isFrozen;
+        inventoryStore[CRYPT] = crypt;
+        inventoryStore[LIBRARY] = library;
+        deckStore[DECKS] = parseDecksData(data[DECKS]);
+      }
     },
     [deckStore, inventoryStore, cryptCardBase, libraryCardBase],
   );
@@ -478,32 +483,33 @@ export const AppProvider = ({ children }) => {
 
   // DECKS
   const parseDecksData = (decksData) => {
+    const parsedDecks = {};
     Object.keys(decksData).forEach((deckid) => {
       const cardsData = parseDeck(decksData[deckid][CARDS], cryptCardBase, libraryCardBase);
 
-      decksData[deckid] = { ...decksData[deckid], ...cardsData };
+      parsedDecks[deckid] = { ...decksData[deckid], ...cardsData };
       if (decksData[deckid].usedInInventory) {
         Object.keys(decksData[deckid].usedInInventory).forEach((cardid) => {
           if (cardid > 200000) {
             if (decksData[deckid][CRYPT][cardid]) {
-              decksData[deckid][CRYPT][cardid].i = decksData[deckid].usedInInventory[cardid];
+              parsedDecks[deckid][CRYPT][cardid].i = decksData[deckid].usedInInventory[cardid];
             }
           } else {
             if (decksData[deckid][LIBRARY][cardid]) {
-              decksData[deckid][LIBRARY][cardid].i = decksData[deckid].usedInInventory[cardid];
+              parsedDecks[deckid][LIBRARY][cardid].i = decksData[deckid].usedInInventory[cardid];
             }
           }
         });
       }
-      decksData[deckid][IS_AUTHOR] = true;
-      decksData[deckid][MASTER] = decksData[deckid][MASTER] || null;
-      decksData[deckid][IS_BRANCHES] = !!(
+      parsedDecks[deckid][IS_AUTHOR] = true;
+      parsedDecks[deckid][MASTER] = decksData[deckid][MASTER] || null;
+      parsedDecks[deckid][IS_BRANCHES] = !!(
         decksData[deckid][MASTER] || decksData[deckid][BRANCHES]?.length > 0
       );
-      delete decksData[deckid][CARDS];
+      delete parsedDecks[deckid][CARDS];
     });
 
-    return decksData;
+    return parsedDecks;
   };
 
   useEffect(() => {
