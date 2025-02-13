@@ -1,9 +1,6 @@
 # FIX
-- Swap card on mobile button
-- Group Nic Chang, Rico Loco not sorting by group
 - Playtest late fetch of resources
 - Open modal reference to update on list change
-- Lasombra G6 in crypt search
 
 # FIX ON HOLD
 - Deck-in-Url trimmed at first card - can't reproduce in dev environment

@@ -374,12 +374,12 @@ export const AppProvider = ({ children }) => {
   const toggleShowImage = useCallback(() => {
     setShowImage(!showImage);
     setLocalStorage(SHOW_IMAGE, !showImage);
-  }, []);
+  }, [showImage]);
 
   const toggleShowLegacyImage = useCallback(() => {
     setShowLegacyImage(!showLegacyImage);
     setLocalStorage(SHOW_LEGACY_IMAGE, !showLegacyImage);
-  }, []);
+  }, [showLegacyImage]);
 
   const toggleInventoryMode = useCallback(() => {
     setInventoryMode(!inventoryMode);
