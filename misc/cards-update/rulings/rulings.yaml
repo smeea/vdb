@@ -1516,11 +1516,6 @@
     with that ability would be treated (spends life for blood costs, for example). Similarly for {Mata Hari}'s ability. [LSJ
     20070301]
   - '{Left for Dead} can be used on the vampire. [LSJ 20100527]'
-100850|Grasp of the Python:
-  - "[SER] No other effect can be used to reset next round's range, but other pre-range effects can be played. [RTR 19970630]\
-    \ [ANK 20180720]"
-  - "[SER] If another effect was already setting next round's range (eg. {Neutral Guard}), that effect has priority. [PIB\
-    \ 20120214]"
 100851|Grasp the Ghostly:
   - If the equipment is burned before it runs out of pathos counters, it goes to its owner's ash heap and is not removed from
     the game. [LSJ 20060209]
@@ -1727,10 +1722,6 @@
     [TOM 19951217]
   - Is still considered played if it is canceled as it is played (eg. {Charismatic Aura}). A second one cannot be played in
     the same round as its card text forbids it. [ANK 20200525-2]
-  - "[POT] No other effect can be used to reset next round's range, but other pre-range effects can be played. [RTR 19970630]\
-    \ [ANK 20180720]"
-  - "[POT] If another effect was already setting next round's range (eg. {Neutral Guard}), that effect has priority. [PIB\
-    \ 20120214]"
 100962|Imposing Phantasm:
   - The opposing minion get their blood back even if they changed controller. [ANK 20220525]
 100964|Improvised Flamethrower:
@@ -1919,10 +1910,6 @@
   - '[VIC] The strike to steal 2 blood can be used on a minion with less than 2 blood or life. [RTR 20010711]'
 101071|Lam Into:
   - Additional damage inherits all of the properties of the base damage. [TOM 19960225]
-  - "[vic] No other effect can be used to reset next round's range, but other pre-range effects can be played. [RTR 19970630]\
-    \ [ANK 20180720]"
-  - "[vic] If another effect was already setting next round's range (eg. {Neutral Guard}), that effect has priority. [PIB\
-    \ 20120214]"
 101072|Lapse:
   - '[TEM] The opponent cannot play or use the maneuver from a strike (eg. {.44 Magnum}, {Thrown Gate}), since they cannot
     strike. [LSJ 20001126]'
@@ -2337,7 +2324,7 @@
   - Mortal allies are not affected, and vampires with capacity above the number of Gehenna cards in play are not affected.
     [LSJ 20040415]
   - The effect only triggers once each unlock phase. Any minions put into play after the effect is resolved are unaffected
-    until their Methuselah's next unlock phase. [ANK 20250121]
+    until their Methuselah's next unlock phase. [REVERSAL] [ANK 20250121]
 101287|Nightstick:
   - Can prevent up to 3 damage, it can prevent less. [RTR 20041202]
   - Both strikes are only effective at close range. [ANK 20220814-2]
@@ -3944,7 +3931,7 @@
 200135|Arika:
   - Arika's prey can use a location during her unlock phase before burning it. [ANK 20200629]
   - The effect only triggers once each unlock phase. Any Locations put into play after the effect is resolved are unaffected
-    until their Methuselah's next unlock phase. [ANK 20250121]
+    until their Methuselah's next unlock phase. [REVERSAL] [ANK 20250121]
 200136|Arishat:
   - Her ability applies to Priscus votes and ballots. [LSJ 19971001]
   - Her ability to force a vampire to abstain can cancel the votes and ballots of the vampire. [LSJ 20100311]
@@ -4930,3 +4917,7 @@ G00099|Action continue as if unblocked:
   - For actions resulting from an action card, "continue as if unblocked" moves the action card from the ash heap (where it
     went when the action was blocked) to limbo (where it should be if the action is not blocked). If the action card is not
     in the ash heap, then the action cannot be continued. [LSJ 20070808-1]
+G00100|Set range in next round:
+  - No other effect can be used to reset next round's range, but other pre-range effects can be played. [ANK 20180720] [RTR
+    19970630]
+  - If another effect was already setting next round's range (e.g. {Neutral Guard}), that effect has priority. [PIB 20120214]

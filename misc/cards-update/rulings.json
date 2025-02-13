@@ -7141,27 +7141,6 @@
             }
         }
     ],
-    "100850":[
-        {
-            "text":"[SER] No other effect can be used to reset next round's range, but other pre-range effects can be played.",
-            "refs":{
-                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
-                "ANK 20180720":"https://www.vekn.net/forum/rules-questions/76840-setting-range-and-pre-range#89125"
-            }
-        },
-        {
-            "text":"[SER] If another effect was already setting next round's range (eg. {Neutral Guard}), that effect has priority.",
-            "refs":{
-                "PIB 20120214":"https://www.vekn.net/forum/rules-questions/22906-re-set-the-range?start=12#22999"
-            }
-        },
-        {
-            "text":"The optional press can only be used during the current round.",
-            "refs":{
-                "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
-            }
-        }
-    ],
     "100851":[
         {
             "text":"If the equipment is burned before it runs out of pathos counters, it goes to its owner's ash heap and is not removed from the game.",
@@ -8270,22 +8249,22 @@
             }
         },
         {
-            "text":"[POT] No other effect can be used to reset next round's range, but other pre-range effects can be played.",
-            "refs":{
-                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
-                "ANK 20180720":"https://www.vekn.net/forum/rules-questions/76840-setting-range-and-pre-range#89125"
-            }
-        },
-        {
-            "text":"[POT] If another effect was already setting next round's range (eg. {Neutral Guard}), that effect has priority.",
-            "refs":{
-                "PIB 20120214":"https://www.vekn.net/forum/rules-questions/22906-re-set-the-range?start=12#22999"
-            }
-        },
-        {
             "text":"[POT] The optional press can only be used during the current round.",
             "refs":{
                 "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
+            }
+        },
+        {
+            "text":"[POT] No other effect can be used to reset next round's range, but other pre-range effects can be played.",
+            "refs":{
+                "ANK 20180720":"https://www.vekn.net/forum/rules-questions/76840-setting-range-and-pre-range#89125",
+                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ"
+            }
+        },
+        {
+            "text":"[POT] If another effect was already setting next round's range (e.g. {Neutral Guard}), that effect has priority.",
+            "refs":{
+                "PIB 20120214":"https://www.vekn.net/forum/rules-questions/22906-re-set-the-range?start=12#22999"
             }
         }
     ],
@@ -9290,19 +9269,6 @@
             }
         },
         {
-            "text":"[vic] No other effect can be used to reset next round's range, but other pre-range effects can be played.",
-            "refs":{
-                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
-                "ANK 20180720":"https://www.vekn.net/forum/rules-questions/76840-setting-range-and-pre-range#89125"
-            }
-        },
-        {
-            "text":"[vic] If another effect was already setting next round's range (eg. {Neutral Guard}), that effect has priority.",
-            "refs":{
-                "PIB 20120214":"https://www.vekn.net/forum/rules-questions/22906-re-set-the-range?start=12#22999"
-            }
-        },
-        {
             "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
             "refs":{
                 "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
@@ -9313,6 +9279,19 @@
             "text":"[vic] The optional press can only be used during the current round.",
             "refs":{
                 "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
+            }
+        },
+        {
+            "text":"[vic] No other effect can be used to reset next round's range, but other pre-range effects can be played.",
+            "refs":{
+                "ANK 20180720":"https://www.vekn.net/forum/rules-questions/76840-setting-range-and-pre-range#89125",
+                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ"
+            }
+        },
+        {
+            "text":"[vic] If another effect was already setting next round's range (e.g. {Neutral Guard}), that effect has priority.",
+            "refs":{
+                "PIB 20120214":"https://www.vekn.net/forum/rules-questions/22906-re-set-the-range?start=12#22999"
             }
         }
     ],
@@ -11257,7 +11236,7 @@
             }
         },
         {
-            "text":"The effect only triggers once each unlock phase. Any minions put into play after the effect is resolved are unaffected until their Methuselah's next unlock phase.",
+            "text":"The effect only triggers once each unlock phase. Any minions put into play after the effect is resolved are unaffected until their Methuselah's next unlock phase. [REVERSAL]",
             "refs":{
                 "ANK 20250121":"https://www.vekn.net/forum/rules-questions/79080-nightmares-upon-nightmares?start=6#113567"
             }
@@ -19719,7 +19698,7 @@
             }
         },
         {
-            "text":"The effect only triggers once each unlock phase. Any Locations put into play after the effect is resolved are unaffected until their Methuselah's next unlock phase.",
+            "text":"The effect only triggers once each unlock phase. Any Locations put into play after the effect is resolved are unaffected until their Methuselah's next unlock phase. [REVERSAL]",
             "refs":{
                 "ANK 20250121":"https://www.vekn.net/forum/rules-questions/79080-nightmares-upon-nightmares?start=6#113567"
             }
@@ -23960,6 +23939,21 @@
             "text":"For actions resulting from an action card, \"continue as if unblocked\" moves the action card from the ash heap (where it went when the action was blocked) to limbo (where it should be if the action is not blocked). If the action card is not in the ash heap, then the action cannot be continued.",
             "refs":{
                 "LSJ 20070808-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jzMOxZ9oxOs/m/o0X7GUFmii0J"
+            }
+        }
+    ],
+    "G00100":[
+        {
+            "text":"No other effect can be used to reset next round's range, but other pre-range effects can be played.",
+            "refs":{
+                "ANK 20180720":"https://www.vekn.net/forum/rules-questions/76840-setting-range-and-pre-range#89125",
+                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ"
+            }
+        },
+        {
+            "text":"If another effect was already setting next round's range (e.g. {Neutral Guard}), that effect has priority.",
+            "refs":{
+                "PIB 20120214":"https://www.vekn.net/forum/rules-questions/22906-re-set-the-range?start=12#22999"
             }
         }
     ],
@@ -32468,6 +32462,27 @@
             "text":"[CEL] The optional press can only be used during the current round.",
             "refs":{
                 "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
+            }
+        }
+    ],
+    "100850":[
+        {
+            "text":"The optional press can only be used during the current round.",
+            "refs":{
+                "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
+            }
+        },
+        {
+            "text":"[SER] No other effect can be used to reset next round's range, but other pre-range effects can be played.",
+            "refs":{
+                "ANK 20180720":"https://www.vekn.net/forum/rules-questions/76840-setting-range-and-pre-range#89125",
+                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ"
+            }
+        },
+        {
+            "text":"[SER] If another effect was already setting next round's range (e.g. {Neutral Guard}), that effect has priority.",
+            "refs":{
+                "PIB 20120214":"https://www.vekn.net/forum/rules-questions/22906-re-set-the-range?start=12#22999"
             }
         }
     ],
