@@ -1,5 +1,11 @@
 [
   {
+    "version": "2025-02-13",
+    "changes": [
+      "Fix issues from previous update"
+    ]
+  },
+  {
     "version": "2025-02-10",
     "changes": [
       "Lots of performance optimizations",

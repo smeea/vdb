@@ -1,11 +1,6 @@
 {
-  "version": "2025-02-10",
+  "version": "2025-02-13",
   "changes": [
-    "Lots of performance optimizations",
-    "Add 'not' tag search options to TWD/PDA/TDA",
-    "Add Hand size trait for crypt search",
-    "Update Rulings",
-    "Fix TDA search on mobile",
-    "Small other fixes and improvements"
+    "Fix issues from previous update"
   ]
 }
