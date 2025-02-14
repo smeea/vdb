@@ -486,18 +486,13 @@ export const AppProvider = ({ children }) => {
     const parsedDecks = {};
     Object.keys(decksData).forEach((deckid) => {
       const cardsData = parseDeck(decksData[deckid][CARDS], cryptCardBase, libraryCardBase);
-
       parsedDecks[deckid] = { ...decksData[deckid], ...cardsData };
+
       if (decksData[deckid].usedInInventory) {
         Object.keys(decksData[deckid].usedInInventory).forEach((cardid) => {
-          if (cardid > 200000) {
-            if (decksData[deckid][CRYPT][cardid]) {
-              parsedDecks[deckid][CRYPT][cardid].i = decksData[deckid].usedInInventory[cardid];
-            }
-          } else {
-            if (decksData[deckid][LIBRARY][cardid]) {
-              parsedDecks[deckid][LIBRARY][cardid].i = decksData[deckid].usedInInventory[cardid];
-            }
+          const target = cardid > 200000 ? CRYPT : LIBRARY;
+          if (parsedDecks[deckid][target][cardid]) {
+            parsedDecks[deckid][target][cardid].i = decksData[deckid].usedInInventory[cardid];
           }
         });
       }
