@@ -37847,6 +37847,9 @@
             },
             "SP":{
                 "PwN":"3"
+            },
+            "playtest":{
+                "SDS":2
             }
         },
         "text":"Do not replace until your unlock phase.\nPrevent 1 damage from the opposing minion's strike.",
@@ -53335,7 +53338,6 @@
                 "R":true
             },
             "playtest":{
-                "SDS":3,
                 "NH":2
             }
         },
@@ -66900,9 +66902,6 @@
                 "PB":1,
                 "PT":1,
                 "PV":1
-            },
-            "playtest":{
-                "SPIV":1
             }
         },
         "text":"Master: Discipline.\nPut this card on a vampire. This vampire gains 1 level of Presence [pre]. Capacity increases by 1: the vampire is one generation older. Cannot be placed on a vampire with superior Presence [PRE].",
@@ -71291,7 +71290,7 @@
                 "SKTr":"3"
             },
             "playtest":{
-                "SDS":2,
+                "SDS":3,
                 "NSal":2,
                 "NTz":1
             }

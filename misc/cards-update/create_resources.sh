@@ -2,7 +2,7 @@
 source ../../backend/.env
 
 # Check playtest files
-mkdir -p playtest
+mkdir -p playtest/images
 [ ! -f playtest/vtescrypt_playtest.csv ] && touch playtest/vtescrypt_playtest.csv
 [ ! -f playtest/vteslib_playtest.csv ] && touch playtest/vteslib_playtest.csv
 [ ! -f playtest/precons.json ] && echo '{}' > playtest/precons.json
@@ -22,6 +22,7 @@ mv precon_decks.min.json ../../frontend/public/data/precon_decks.json
 mv playtest/precon_decks_playtest.min.json ../../frontend/public/data/precon_decks_playtest_$PLAYTEST_KEY.json
 mv artistsCrypt.min.json ../../frontend/src/assets/data/artistsCrypt.json
 mv artistsLib.min.json ../../frontend/src/assets/data/artistsLib.json
+cp -r playtest/images ../../frontend/public/images/cards/playtest
 
 # Update Localizations
 python generate_localizations.py
