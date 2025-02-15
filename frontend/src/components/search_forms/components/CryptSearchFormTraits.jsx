@@ -93,7 +93,6 @@ const CryptSearchFormTraits = ({ value, onChange }) => {
             [ADVANCEMENT, 'Advancement'],
             [BANNED, 'Banned'],
             [NON_TWD, 'Not in TWD'],
-            [PLAYTEST, 'Playtest'],
             [
               PATH_DEATH,
               <div className="flex items-center gap-1.5">
@@ -106,6 +105,7 @@ const CryptSearchFormTraits = ({ value, onChange }) => {
                 Path of Power <ResultPathImage value={POWER} size="sm" />
               </div>,
             ],
+            [PLAYTEST, 'Playtest'],
           ]
             .filter((i) => ![PLAYTEST, PATH_DEATH, PATH_POWER].includes(i[0]) || playtestMode)
             .map((i) => {
