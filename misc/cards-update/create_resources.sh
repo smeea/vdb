@@ -22,7 +22,7 @@ mv precon_decks.min.json ../../frontend/public/data/precon_decks.json
 mv playtest/precon_decks_playtest.min.json ../../frontend/public/data/precon_decks_playtest_$PLAYTEST_KEY.json
 mv artistsCrypt.min.json ../../frontend/src/assets/data/artistsCrypt.json
 mv artistsLib.min.json ../../frontend/src/assets/data/artistsLib.json
-cp -r playtest/images ../../frontend/public/images/cards/playtest
+cp playtest/images/* ../../frontend/public/images/cards/playtest
 
 # Update Localizations
 python generate_localizations.py
