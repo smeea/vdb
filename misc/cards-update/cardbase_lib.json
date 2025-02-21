@@ -471,6 +471,12 @@
                 "refs":{
                     "RTR 19990712":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/x5k5Vw_hkI0/m/lCqkvlUz5yIJ"
                 }
+            },
+            {
+                "text":"If it would be put into the crypt for any reason, it is burned instead",
+                "refs":{
+                    "LSJ 20041201-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/DY1OggZnMvs/m/7rSTvY34PRAJ"
+                }
             }
         ],
         "set":{
@@ -741,7 +747,14 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Can be played any time during the action before resolution; a block attempt is not required.",
+                "refs":{
+                    "LSJ 20020612":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/sC0pTtJJDj4/m/bD04Jy4pM_cJ"
+                }
+            }
+        ],
         "set":{
             "LK":{
                 "":"4"
@@ -2122,7 +2135,7 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"Is played after resolution, after all combats are handled, but still during the action. Action modifiers and effects that can be played \"after resolution\" can be played before or after it.",
+                "text":"Is played after resolution, after all combats (if any) are handled, but still during the action. Action modifiers and effects that can be played \"after resolution\" can be played before or after it.",
                 "refs":{
                     "PIB 20150915":"https://www.vekn.net/forum/rules-questions/73134-learjet#73139",
                     "LSJ 19981028":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JZHY1bTCAa0/m/XqDVERty0roJ",
@@ -3670,7 +3683,14 @@
         "path":"",
         "pool":1,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Can be played/used any time during the action before resolution; a block attempt is not required.",
+                "refs":{
+                    "LSJ 20020612":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/sC0pTtJJDj4/m/bD04Jy4pM_cJ"
+                }
+            }
+        ],
         "set":{
             "Anarchs":{
                 "R":true
@@ -4732,7 +4752,7 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"Is played after resolution, after all combats are handled, but still during the action. Action modifiers and effects that can be played \"after resolution\" can be played before or after it.",
+                "text":"Is played after resolution, after all combats (if any) are handled, but still during the action. Action modifiers and effects that can be played \"after resolution\" can be played before or after it.",
                 "refs":{
                     "PIB 20150915":"https://www.vekn.net/forum/rules-questions/73134-learjet#73139",
                     "LSJ 19981028":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JZHY1bTCAa0/m/XqDVERty0roJ",
@@ -5135,7 +5155,7 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"[aus][REACTION] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Helena (ADV)}). The card cannot be played if the minion cannot afford to burn the blood.",
+                "text":"[aus] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}).",
                 "refs":{
                     "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
                 }
@@ -5145,6 +5165,12 @@
                 "refs":{
                     "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
                     "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+                }
+            },
+            {
+                "text":"[aus][REACTION] The card cannot be played if the minion cannot afford to burn the blood.",
+                "refs":{
+                    "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
                 }
             }
         ],
@@ -5667,7 +5693,14 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Sequencing rules apply. You must gain the impulse to be able to use the reaction, or use the effect (whichever is applicable).  Other Methuselahs must declare block attempts (or not) and pass the impulse to you as normal.",
+                "refs":{
+                    "ANK 20200607":"https://www.vekn.net/forum/rules-questions/78676-draba-timing#100043"
+                }
+            }
+        ],
         "set":{
             "BH":{
                 "C":true,
@@ -5998,6 +6031,12 @@
                 "text":"If moved to the uncontrolled region (eg. by {Banishment}), it stays a vampire and can be influenced.",
                 "refs":{
                     "RTR 19990712":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/x5k5Vw_hkI0/m/lCqkvlUz5yIJ"
+                }
+            },
+            {
+                "text":"If it would be put into the crypt for any reason, it is burned instead",
+                "refs":{
+                    "LSJ 20041201-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/DY1OggZnMvs/m/7rSTvY34PRAJ"
                 }
             }
         ],
@@ -6825,7 +6864,7 @@
         "requirement":"non-sterile",
         "rulings":[
             {
-                "text":"Is a 1-capacity vampire while uncontrolled (eg.\u00a0{Banishment}).",
+                "text":"Is a 1-capacity vampire if moved to the uncontrolled region (eg.\u00a0{Banishment}).",
                 "refs":{
                     "LSJ 20090625":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/C3daj-vYqu4/m/2V2yTyLebHEJ"
                 }
@@ -6840,6 +6879,12 @@
                 "text":"If moved to the uncontrolled region (eg. by {Banishment}), it stays a vampire and can be influenced.",
                 "refs":{
                     "RTR 19990712":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/x5k5Vw_hkI0/m/lCqkvlUz5yIJ"
+                }
+            },
+            {
+                "text":"If it would be put into the crypt for any reason, it is burned instead",
+                "refs":{
+                    "LSJ 20041201-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/DY1OggZnMvs/m/7rSTvY34PRAJ"
                 }
             }
         ],
@@ -11742,6 +11787,12 @@
                 "refs":{
                     "RTR 19990712":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/x5k5Vw_hkI0/m/lCqkvlUz5yIJ"
                 }
+            },
+            {
+                "text":"If it would be put into the crypt for any reason, it is burned instead",
+                "refs":{
+                    "LSJ 20041201-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/DY1OggZnMvs/m/7rSTvY34PRAJ"
+                }
             }
         ],
         "set":{
@@ -12335,6 +12386,14 @@
                     "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
                     "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
                 }
+            },
+            {
+                "text":"If the action is blocked, *all* effects that would be triggered by a successful block (eg. {Banshee Ironwail}) must be applied (ordered by the acting Methuselah).  Other effects and modifiers (eg. {Crypt's Sons}, {Change of Target}) can only be used after all triggered effects have been handled.",
+                "refs":{
+                    "ANK 20220116":"https://www.vekn.net/forum/rules-questions/79600-unleash-hell-s-fury-and-other-delayed-triggered-effects#104488",
+                    "ANK 20211207":"https://www.vekn.net/forum/rules-questions/79528-crypt-s-sons-versus-unleash-hell-s-fury?start=6#104139",
+                    "ANK 20210627":"https://www.vekn.net/forum/rules-questions/79192-mirror-walk-and-slave?start=12#102578"
+                }
             }
         ],
         "set":{
@@ -12747,6 +12806,12 @@
                 "text":"If moved to the uncontrolled region (eg. by {Banishment}), it stays a vampire and can be influenced.",
                 "refs":{
                     "RTR 19990712":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/x5k5Vw_hkI0/m/lCqkvlUz5yIJ"
+                }
+            },
+            {
+                "text":"If it would be put into the crypt for any reason, it is burned instead",
+                "refs":{
+                    "LSJ 20041201-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/DY1OggZnMvs/m/7rSTvY34PRAJ"
                 }
             }
         ],
@@ -15538,7 +15603,26 @@
         "path":"",
         "pool":0,
         "requirement":"non-sterile,baron,anarch",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Is not a vampire in the ash heap (eg. {Possession} cannot target it).",
+                "refs":{
+                    "LSJ 20020115":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/wG_tDLgfZso/m/6mKkp7Rw3OcJ"
+                }
+            },
+            {
+                "text":"If moved to the uncontrolled region (eg. by {Banishment}), it stays a vampire and can be influenced.",
+                "refs":{
+                    "RTR 19990712":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/x5k5Vw_hkI0/m/lCqkvlUz5yIJ"
+                }
+            },
+            {
+                "text":"If it would be put into the crypt for any reason, it is burned instead",
+                "refs":{
+                    "LSJ 20041201-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/DY1OggZnMvs/m/7rSTvY34PRAJ"
+                }
+            }
+        ],
         "set":{
             "NB2":{
                 "PB":"2"
@@ -19803,9 +19887,9 @@
         "requirement":"archbishop,priscus,cardinal,regent,non-sterile,sabbat",
         "rulings":[
             {
-                "text":"If moved to the uncontrolled region, it continues to be a vampire and can be influenced.",
+                "text":"The decision to move blood on the Creation Rites or not is taken upon resolution.",
                 "refs":{
-                    "RTR 19990712":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/x5k5Vw_hkI0/m/lCqkvlUz5yIJ"
+                    "PIB 20150418":"https://www.vekn.net/forum/rules-questions/70589-bima#70591"
                 }
             },
             {
@@ -19818,6 +19902,12 @@
                 "text":"If moved to the uncontrolled region (eg. by {Banishment}), it stays a vampire and can be influenced.",
                 "refs":{
                     "RTR 19990712":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/x5k5Vw_hkI0/m/lCqkvlUz5yIJ"
+                }
+            },
+            {
+                "text":"If it would be put into the crypt for any reason, it is burned instead",
+                "refs":{
+                    "LSJ 20041201-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/DY1OggZnMvs/m/7rSTvY34PRAJ"
                 }
             }
         ],
@@ -20021,7 +20111,7 @@
                 }
             },
             {
-                "text":"Is played after resolution, after all combats are handled, but still during the action. Action modifiers and effects that can be played \"after resolution\" can be played before or after it.",
+                "text":"Is played after resolution, after all combats (if any) are handled, but still during the action. Action modifiers and effects that can be played \"after resolution\" can be played before or after it.",
                 "refs":{
                     "PIB 20150915":"https://www.vekn.net/forum/rules-questions/73134-learjet#73139",
                     "LSJ 19981028":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JZHY1bTCAa0/m/XqDVERty0roJ",
@@ -20924,6 +21014,14 @@
                 "text":"If you manage to unlock it during the unlock phase, it does not need to burn.",
                 "refs":{
                     "LSJ 20031014":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/J8eZuZCZJUY/m/RsZFBMqFHKkJ"
+                }
+            },
+            {
+                "text":"If the action is blocked, *all* effects that would be triggered by a successful block (eg. {Banshee Ironwail}) must be applied (ordered by the acting Methuselah).  Other effects and modifiers (eg. {Crypt's Sons}, {Change of Target}) can only be used after all triggered effects have been handled.",
+                "refs":{
+                    "ANK 20220116":"https://www.vekn.net/forum/rules-questions/79600-unleash-hell-s-fury-and-other-delayed-triggered-effects#104488",
+                    "ANK 20211207":"https://www.vekn.net/forum/rules-questions/79528-crypt-s-sons-versus-unleash-hell-s-fury?start=6#104139",
+                    "ANK 20210627":"https://www.vekn.net/forum/rules-questions/79192-mirror-walk-and-slave?start=12#102578"
                 }
             }
         ],
@@ -22740,10 +22838,22 @@
         "requirement":"anarch",
         "rulings":[
             {
+                "text":"[pro] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}).",
+                "refs":{
+                    "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
+                }
+            },
+            {
                 "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
                 "refs":{
                     "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
                     "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+                }
+            },
+            {
+                "text":"[pro] The card cannot be played if the minion cannot afford to burn the blood.",
+                "refs":{
+                    "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
                 }
             }
         ],
@@ -25886,7 +25996,16 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"If the action is blocked, *all* effects that would be triggered by a successful block (eg. {Banshee Ironwail}) must be applied (ordered by the acting Methuselah).  Other effects and modifiers (eg. {Crypt's Sons}, {Change of Target}) can only be used after all triggered effects have been handled.",
+                "refs":{
+                    "ANK 20220116":"https://www.vekn.net/forum/rules-questions/79600-unleash-hell-s-fury-and-other-delayed-triggered-effects#104488",
+                    "ANK 20211207":"https://www.vekn.net/forum/rules-questions/79528-crypt-s-sons-versus-unleash-hell-s-fury?start=6#104139",
+                    "ANK 20210627":"https://www.vekn.net/forum/rules-questions/79192-mirror-walk-and-slave?start=12#102578"
+                }
+            }
+        ],
         "set":{
             "KMW":{
                 "R":true
@@ -25921,21 +26040,21 @@
                 }
             },
             {
-                "text":"[CHI] Can be played by a minion who is not attempting to block the action.",
-                "refs":{
-                    "ANK 20190628":"https://www.vekn.net/forum/rules-questions/77756-reactions-played-by-another-player-who-is-not-a-target-of-d-action#95655"
-                }
-            },
-            {
                 "text":"[CHI] Can be played on a minion with no or negative stealth, in which case it has no effect.",
                 "refs":{
                     "LSJ 20021211":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-J07wvmidOA/m/gPQ5ngEZ6HcJ"
                 }
             },
             {
-                "text":"If another Methuselah is the target, he must declare whether he attempts or declines to block before Draba can be used ([chi]) or played ([CHI]).",
+                "text":"Sequencing rules apply. You must gain the impulse to be able to use the reaction, or use the effect (whichever is applicable).  Other Methuselahs must declare block attempts (or not) and pass the impulse to you as normal.",
                 "refs":{
                     "ANK 20200607":"https://www.vekn.net/forum/rules-questions/78676-draba-timing#100043"
+                }
+            },
+            {
+                "text":"[CHI] Can be played/used any time during the action before resolution; a block attempt is not required.",
+                "refs":{
+                    "LSJ 20020612":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/sC0pTtJJDj4/m/bD04Jy4pM_cJ"
                 }
             }
         ],
@@ -26766,7 +26885,7 @@
         "requirement":"laibon",
         "rulings":[
             {
-                "text":"Is played after resolution, after all combats are handled, but still during the action. Action modifiers and effects that can be played \"after resolution\" can be played before or after it.",
+                "text":"Is played after resolution, after all combats (if any) are handled, but still during the action. Action modifiers and effects that can be played \"after resolution\" can be played before or after it.",
                 "refs":{
                     "PIB 20150915":"https://www.vekn.net/forum/rules-questions/73134-learjet#73139",
                     "LSJ 19981028":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JZHY1bTCAa0/m/XqDVERty0roJ",
@@ -28474,6 +28593,12 @@
                 "refs":{
                     "RTR 19990712":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/x5k5Vw_hkI0/m/lCqkvlUz5yIJ"
                 }
+            },
+            {
+                "text":"If it would be put into the crypt for any reason, it is burned instead",
+                "refs":{
+                    "LSJ 20041201-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/DY1OggZnMvs/m/7rSTvY34PRAJ"
+                }
             }
         ],
         "set":{
@@ -29110,7 +29235,7 @@
                 }
             },
             {
-                "text":"Is played after resolution, after all combats are handled, but still during the action. Action modifiers and effects that can be played \"after resolution\" can be played before or after it.",
+                "text":"Is played after resolution, after all combats (if any) are handled, but still during the action. Action modifiers and effects that can be played \"after resolution\" can be played before or after it.",
                 "refs":{
                     "PIB 20150915":"https://www.vekn.net/forum/rules-questions/73134-learjet#73139",
                     "LSJ 19981028":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JZHY1bTCAa0/m/XqDVERty0roJ",
@@ -30504,9 +30629,11 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"Is usable by a locked vampire",
+                "text":"Is played after resolution, after all combats (if any) are handled, but still during the action. Action modifiers and effects that can be played \"after resolution\" can be played before or after it.",
                 "refs":{
-                    "LSJ 20010725":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/2b0ITKe-WkE/m/ZI6UN0Lz-DoJ"
+                    "PIB 20150915":"https://www.vekn.net/forum/rules-questions/73134-learjet#73139",
+                    "LSJ 19981028":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JZHY1bTCAa0/m/XqDVERty0roJ",
+                    "ANK 20190425":"https://www.vekn.net/forum/rules-questions/77581-action-modifiers-played-at-beginning-and-end-of-an-action#94652"
                 }
             }
         ],
@@ -31344,12 +31471,6 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"[ani] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Dragos}). The card cannot be played if the minion cannot afford to burn the blood.",
-                "refs":{
-                    "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
-                }
-            },
-            {
                 "text":"[SPI] Only affects the rule restricting who gets to block an action. The vampire must still meet all other requirements to block. In particular, {Blood Bond}, {Day Operation}, {Seduction} and prior decision not to block are not circumvented.",
                 "refs":{
                     "RTR 19950413":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/zB2vyPBnO6g/m/i1myM9tD54AJ",
@@ -31364,10 +31485,22 @@
                 }
             },
             {
+                "text":"[ani] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}).",
+                "refs":{
+                    "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
+                }
+            },
+            {
                 "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
                 "refs":{
                     "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
                     "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+                }
+            },
+            {
+                "text":"[ani] The card cannot be played if the minion cannot afford to burn the blood.",
+                "refs":{
+                    "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
                 }
             }
         ],
@@ -31562,6 +31695,12 @@
                 "text":"If a limited effect is canceled (bleed, additional strike), then the limit is not triggered and another limited effect can be used.",
                 "refs":{
                     "LSJ 20030224":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/67261v339Ds/m/um8V7VVp2Y4J"
+                }
+            },
+            {
+                "text":"The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}).",
+                "refs":{
+                    "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
                 }
             }
         ],
@@ -32001,13 +32140,6 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"[CHI] [REACTION] Is played after resolution, but still during the action. Action modifiers and effects that can be played \"after resolution\" can be played before or after it.",
-                "refs":{
-                    "LSJ 19981028":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JZHY1bTCAa0/m/XqDVERty0roJ",
-                    "ANK 20190425":"https://www.vekn.net/forum/rules-questions/77581-action-modifiers-played-at-beginning-and-end-of-an-action#94652"
-                }
-            },
-            {
                 "text":"The target can burn it at unlock even if they're already unlocked, but cannot burn it if they do not unlock as normal (eg. {Sensory Deprivation}).",
                 "refs":{
                     "LSJ 20010814-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/4U6VYR9kBTA/m/1OjgFwTysAYJ",
@@ -32019,6 +32151,14 @@
                 "refs":{
                     "LSJ 20030902-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/mgZt4f2LyOg/m/FCeKmePPkxwJ",
                     "LSJ 20060808-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/7oK-hKbOs9g/m/EGeyVt3vfl4J"
+                }
+            },
+            {
+                "text":"[CHI][REACTION] Is played after resolution, after all combats (if any) are handled, but still during the action. Action modifiers and effects that can be played \"after resolution\" can be played before or after it.",
+                "refs":{
+                    "PIB 20150915":"https://www.vekn.net/forum/rules-questions/73134-learjet#73139",
+                    "LSJ 19981028":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JZHY1bTCAa0/m/XqDVERty0roJ",
+                    "ANK 20190425":"https://www.vekn.net/forum/rules-questions/77581-action-modifiers-played-at-beginning-and-end-of-an-action#94652"
                 }
             }
         ],
@@ -34170,15 +34310,9 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"[aus] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Helena (ADV)}). The card cannot be played if the minion cannot afford to burn the blood.",
+                "text":"[aus] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}).",
                 "refs":{
                     "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
-                }
-            },
-            {
-                "text":"[MYT] If another Methuselah is the target, he must declare whether he attempts or declines to block before Folderol can be played.",
-                "refs":{
-                    "ANK 20200607":"https://www.vekn.net/forum/rules-questions/78676-draba-timing#100043"
                 }
             },
             {
@@ -34186,6 +34320,18 @@
                 "refs":{
                     "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
                     "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+                }
+            },
+            {
+                "text":"[aus] The card cannot be played if the minion cannot afford to burn the blood.",
+                "refs":{
+                    "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
+                }
+            },
+            {
+                "text":"[MYT] Sequencing rules apply. You must gain the impulse to be able to use the reaction, or use the effect (whichever is applicable).  Other Methuselahs must declare block attempts (or not) and pass the impulse to you as normal.",
+                "refs":{
+                    "ANK 20200607":"https://www.vekn.net/forum/rules-questions/78676-draba-timing#100043"
                 }
             }
         ],
@@ -34264,16 +34410,11 @@
         "requirement":"black hand",
         "rulings":[
             {
-                "text":"If played on a vampire who successfully hunts with a {Perfectionist}, {Perfectionist} grants the blood before combat.",
+                "text":"Is played after resolution, after all combats (if any) are handled, but still during the action. Action modifiers and effects that can be played \"after resolution\" can be played before or after it.",
                 "refs":{
-                    "LSJ 20110308":"https://boardgamegeek.com/thread/628087/article/6401929"
-                }
-            },
-            {
-                "text":"Is played after resolution, but still during the action. Cards and effects that played \"after resolution\" (eg. {Freak Drive}) can be played before it, but not after.",
-                "refs":{
+                    "PIB 20150915":"https://www.vekn.net/forum/rules-questions/73134-learjet#73139",
                     "LSJ 19981028":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JZHY1bTCAa0/m/XqDVERty0roJ",
-                    "LSJ 20100206-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/reXyybyIYX8/m/jeCyjdiZ5T4J"
+                    "ANK 20190425":"https://www.vekn.net/forum/rules-questions/77581-action-modifiers-played-at-beginning-and-end-of-an-action#94652"
                 }
             }
         ],
@@ -34546,6 +34687,12 @@
                 "text":"Can be used to unlock if the action is successful, even if it has no effect due to lack of a suitable target.",
                 "refs":{
                     "LSJ 20070411":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/umdINigMKqs/m/l6GFRVKdkMsJ"
+                }
+            },
+            {
+                "text":"The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}).",
+                "refs":{
+                    "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
                 }
             },
             {
@@ -35789,7 +35936,7 @@
                 }
             },
             {
-                "text":"Is played after resolution, after all combats are handled, but still during the action. Action modifiers and effects that can be played \"after resolution\" can be played before or after it.",
+                "text":"Is played after resolution, after all combats (if any) are handled, but still during the action. Action modifiers and effects that can be played \"after resolution\" can be played before or after it.",
                 "refs":{
                     "PIB 20150915":"https://www.vekn.net/forum/rules-questions/73134-learjet#73139",
                     "LSJ 19981028":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JZHY1bTCAa0/m/XqDVERty0roJ",
@@ -35966,6 +36113,18 @@
                 "text":"Only prevents the use of equipment after it is played - it will not cancel the effects of equipment used before it is played.",
                 "refs":{
                     "TOM 19960326":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/8DA9p_p5v8s/m/lJlHFYXPTBYJ"
+                }
+            },
+            {
+                "text":"Can be played on a minion that cannot play or use presses (eg. Mukhtar Bey) and does provide the presses, the minion is not the one pressing.",
+                "refs":{
+                    "LSJ 20040521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Giv8nDnYVGo/m/RODFe7KlT1UJ"
+                }
+            },
+            {
+                "text":"The provided press is applied before any other press. Another press cannot be used to continue (eg. {Boxed In}, {Talbot's Chainsaw}) if there's already a press to continue.",
+                "refs":{
+                    "ANK 20200525-1":"https://www.vekn.net/forum/rules-questions/78650-trap-and-boxed-in#99933"
                 }
             }
         ],
@@ -38635,6 +38794,12 @@
         "pool":0,
         "requirement":"",
         "rulings":[
+            {
+                "text":"The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}).",
+                "refs":{
+                    "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
+                }
+            },
             {
                 "text":"If the action is unblocked when it resolves and the target is no longer in torpor, the action \"fizzles\" (cost, if any, is paid, and it is considered successful, but has no effect).",
                 "refs":{
@@ -41813,14 +41978,6 @@
                 }
             },
             {
-                "text":"[val], [VAL] Sequencing applies. For example, if another Methuselah is targeted by the action, they must declare if they attempt or decline to block before you can play Hide the Heart.",
-                "refs":{
-                    "LSJ 20100507":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/vJQTPYtp-Eg/m/6_nkxd28-v8J",
-                    "PIB 20150820":"https://www.vekn.net/forum/rules-questions/72462-hide-the-heart-timing-questions#72626",
-                    "RBK sequencing":"https://www.vekn.net/rulebook#sequencing"
-                }
-            },
-            {
                 "text":"[VAL] To reduce a bleed against another Methuselah, you need to be unlocked.",
                 "refs":{
                     "RBK wording-templates":"https://www.vekn.net/rulebook#wording-templates",
@@ -41832,6 +41989,12 @@
                 "refs":{
                     "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
                     "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+                }
+            },
+            {
+                "text":"[val],[VAL] Sequencing rules apply. You must gain the impulse to be able to use the reaction, or use the effect (whichever is applicable).  Other Methuselahs must declare block attempts (or not) and pass the impulse to you as normal.",
+                "refs":{
+                    "ANK 20200607":"https://www.vekn.net/forum/rules-questions/78676-draba-timing#100043"
                 }
             }
         ],
@@ -43032,9 +43195,15 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"If another Methuselah is the target, he must declare whether he attempts or declines to block before Ignis Fatuus can be played.",
+                "text":"Sequencing rules apply. You must gain the impulse to be able to use the reaction, or use the effect (whichever is applicable).  Other Methuselahs must declare block attempts (or not) and pass the impulse to you as normal.",
                 "refs":{
                     "ANK 20200607":"https://www.vekn.net/forum/rules-questions/78676-draba-timing#100043"
+                }
+            },
+            {
+                "text":"[chi] Can be played/used any time during the action before resolution; a block attempt is not required.",
+                "refs":{
+                    "LSJ 20020612":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/sC0pTtJJDj4/m/bD04Jy4pM_cJ"
                 }
             }
         ],
@@ -45104,7 +45273,7 @@
                 }
             },
             {
-                "text":"Is played after resolution, after all combats are handled, but still during the action. Action modifiers and effects that can be played \"after resolution\" can be played before or after it.",
+                "text":"Is played after resolution, after all combats (if any) are handled, but still during the action. Action modifiers and effects that can be played \"after resolution\" can be played before or after it.",
                 "refs":{
                     "PIB 20150915":"https://www.vekn.net/forum/rules-questions/73134-learjet#73139",
                     "LSJ 19981028":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JZHY1bTCAa0/m/XqDVERty0roJ",
@@ -48432,7 +48601,14 @@
         "path":"",
         "pool":2,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Sequencing rules apply. You must gain the impulse to be able to use the reaction, or use the effect (whichever is applicable).  Other Methuselahs must declare block attempts (or not) and pass the impulse to you as normal.",
+                "refs":{
+                    "ANK 20200607":"https://www.vekn.net/forum/rules-questions/78676-draba-timing#100043"
+                }
+            }
+        ],
         "set":{
             "Jyhad":{
                 "U":true
@@ -50221,7 +50397,14 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}).",
+                "refs":{
+                    "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
+                }
+            }
+        ],
         "set":{
             "Sabbat":{
                 "R":true
@@ -50805,7 +50988,14 @@
         "path":"",
         "pool":3,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Sequencing rules apply. You must gain the impulse to be able to use the reaction, or use the effect (whichever is applicable).  Other Methuselahs must declare block attempts (or not) and pass the impulse to you as normal.",
+                "refs":{
+                    "ANK 20200607":"https://www.vekn.net/forum/rules-questions/78676-draba-timing#100043"
+                }
+            }
+        ],
         "set":{
             "DS":{
                 "U":true
@@ -54891,11 +55081,11 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"If an action is blocked, no other effect can be used (eg. {Crypt's Sons}) before resolving Millicent's delayed effect. However, effects that trigger at the same moment (eg. {Unleash Hell's Fury}) are still applied and ordered by the acting Methuselah.",
+                "text":"If the action is blocked, *all* effects that would be triggered by a successful block (eg. {Banshee Ironwail}) must be applied (ordered by the acting Methuselah).  Other effects and modifiers (eg. {Crypt's Sons}, {Change of Target}) can only be used after all triggered effects have been handled.",
                 "refs":{
-                    "ANK 20210627":"https://www.vekn.net/forum/rules-questions/79192-mirror-walk-and-slave?start=12#102578",
+                    "ANK 20220116":"https://www.vekn.net/forum/rules-questions/79600-unleash-hell-s-fury-and-other-delayed-triggered-effects#104488",
                     "ANK 20211207":"https://www.vekn.net/forum/rules-questions/79528-crypt-s-sons-versus-unleash-hell-s-fury?start=6#104139",
-                    "ANK 20220116":"https://www.vekn.net/forum/rules-questions/79600-unleash-hell-s-fury-and-other-delayed-triggered-effects#104488"
+                    "ANK 20210627":"https://www.vekn.net/forum/rules-questions/79192-mirror-walk-and-slave?start=12#102578"
                 }
             }
         ],
@@ -55497,17 +55687,17 @@
                 }
             },
             {
-                "text":"[THA] If the action is blocked, no other effect can be used (eg. {Crypt's Sons}, {Promise of 1528}, slave rule, {Sowing Dissension}) before resolving Mirror Walk delayed effect. However, effects that trigger at the same moment (eg. {Banshee Ironwail}) are still applied and ordered by the acting Methuselah.",
-                "refs":{
-                    "ANK 20210627":"https://www.vekn.net/forum/rules-questions/79192-mirror-walk-and-slave?start=12#102578",
-                    "ANK 20211207":"https://www.vekn.net/forum/rules-questions/79528-crypt-s-sons-versus-unleash-hell-s-fury?start=6#104139",
-                    "ANK 20220116":"https://www.vekn.net/forum/rules-questions/79600-unleash-hell-s-fury-and-other-delayed-triggered-effects#104488"
-                }
-            },
-            {
                 "text":"[THA] If the action is blocked and it was leaving torpor, the blocker does not get an opportunity to diablerize.",
                 "refs":{
                     "PIB 20121216":"https://www.vekn.net/forum/rules-questions/42974-leave-from-torpor-question#43002"
+                }
+            },
+            {
+                "text":"[THA] If the action is blocked, *all* effects that would be triggered by a successful block (eg. {Banshee Ironwail}) must be applied (ordered by the acting Methuselah).  Other effects and modifiers (eg. {Crypt's Sons}, {Change of Target}) can only be used after all triggered effects have been handled.",
+                "refs":{
+                    "ANK 20220116":"https://www.vekn.net/forum/rules-questions/79600-unleash-hell-s-fury-and-other-delayed-triggered-effects#104488",
+                    "ANK 20211207":"https://www.vekn.net/forum/rules-questions/79528-crypt-s-sons-versus-unleash-hell-s-fury?start=6#104139",
+                    "ANK 20210627":"https://www.vekn.net/forum/rules-questions/79192-mirror-walk-and-slave?start=12#102578"
                 }
             }
         ],
@@ -55649,6 +55839,12 @@
                 "refs":{
                     "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
                     "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+                }
+            },
+            {
+                "text":"[cel],[mel] Can be played any time during the action before resolution; a block attempt is not required.",
+                "refs":{
+                    "LSJ 20020612":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/sC0pTtJJDj4/m/bD04Jy4pM_cJ"
                 }
             }
         ],
@@ -58506,21 +58702,9 @@
                 }
             },
             {
-                "text":"Can be played by a minion who is not attempting to block the action.",
-                "refs":{
-                    "ANK 20190628":"https://www.vekn.net/forum/rules-questions/77756-reactions-played-by-another-player-who-is-not-a-target-of-d-action#95655"
-                }
-            },
-            {
                 "text":"Can be played on a minion with no or negative stealth, in which case it has no effect.",
                 "refs":{
                     "LSJ 20021211":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-J07wvmidOA/m/gPQ5ngEZ6HcJ"
-                }
-            },
-            {
-                "text":"If another Methuselah is the target, he must declare whether he attempts or declines to block before Night Terrors can be played.",
-                "refs":{
-                    "ANK 20200607":"https://www.vekn.net/forum/rules-questions/78676-draba-timing#100043"
                 }
             },
             {
@@ -58534,6 +58718,18 @@
                 "text":"[OBF][PRE] The strike: combat ends is provided again if a second block happens on the same action (eg. after [PRO] {Form of Mist}).",
                 "refs":{
                     "LSJ 20010814-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/8MR4bq0Cxj4/m/SH4dKuz8qO0J"
+                }
+            },
+            {
+                "text":"Sequencing rules apply. You must gain the impulse to be able to use the reaction, or use the effect (whichever is applicable).  Other Methuselahs must declare block attempts (or not) and pass the impulse to you as normal.",
+                "refs":{
+                    "ANK 20200607":"https://www.vekn.net/forum/rules-questions/78676-draba-timing#100043"
+                }
+            },
+            {
+                "text":"Can be played/used any time during the action before resolution; a block attempt is not required.",
+                "refs":{
+                    "LSJ 20020612":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/sC0pTtJJDj4/m/bD04Jy4pM_cJ"
                 }
             }
         ],
@@ -58823,7 +59019,7 @@
                 }
             },
             {
-                "text":"Is played after resolution, after all combats are handled, but still during the action. Action modifiers and effects that can be played \"after resolution\" can be played before or after it.",
+                "text":"Is played after resolution, after all combats (if any) are handled, but still during the action. Action modifiers and effects that can be played \"after resolution\" can be played before or after it.",
                 "refs":{
                     "PIB 20150915":"https://www.vekn.net/forum/rules-questions/73134-learjet#73139",
                     "LSJ 19981028":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JZHY1bTCAa0/m/XqDVERty0roJ",
@@ -63117,6 +63313,12 @@
                 "refs":{
                     "PIB 20150105":"https://www.vekn.net/forum/rules-questions/68465-voting-is-complicated#68493",
                     "LSJ 19980107":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aUUs4VCR_Ec/m/PLecvfrEqbgJ"
+                }
+            },
+            {
+                "text":"[PRE] Can be played any time during the action before resolution; a block attempt is not required.",
+                "refs":{
+                    "LSJ 20020612":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/sC0pTtJJDj4/m/bD04Jy4pM_cJ"
                 }
             }
         ],
@@ -75065,7 +75267,14 @@
         "path":"",
         "pool":1,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Sequencing rules apply. You must gain the impulse to be able to use the reaction, or use the effect (whichever is applicable).  Other Methuselahs must declare block attempts (or not) and pass the impulse to you as normal.",
+                "refs":{
+                    "ANK 20200607":"https://www.vekn.net/forum/rules-questions/78676-draba-timing#100043"
+                }
+            }
+        ],
         "set":{
             "Sabbat":{
                 "U":true
@@ -75576,6 +75785,12 @@
                 "refs":{
                     "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
                     "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+                }
+            },
+            {
+                "text":"Can be played any time during the action before resolution; a block attempt is not required.",
+                "refs":{
+                    "LSJ 20020612":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/sC0pTtJJDj4/m/bD04Jy4pM_cJ"
                 }
             }
         ],
@@ -76446,16 +76661,22 @@
                 }
             },
             {
-                "text":"If another Methuselah is the target, he must declare whether he attempts or declines to block before Scobax can be played.",
+                "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
+                "refs":{
+                    "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
+                    "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+                }
+            },
+            {
+                "text":"[str],[STR] Sequencing rules apply. You must gain the impulse to be able to use the reaction, or use the effect (whichever is applicable).  Other Methuselahs must declare block attempts (or not) and pass the impulse to you as normal.",
                 "refs":{
                     "ANK 20200607":"https://www.vekn.net/forum/rules-questions/78676-draba-timing#100043"
                 }
             },
             {
-                "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
+                "text":"[str]/[STR] Can be played/used any time during the action before resolution; a block attempt is not required.",
                 "refs":{
-                    "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
-                    "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+                    "LSJ 20020612":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/sC0pTtJJDj4/m/bD04Jy4pM_cJ"
                 }
             }
         ],
@@ -77996,7 +78217,7 @@
                 }
             },
             {
-                "text":"Is played after resolution, after all combats are handled, but still during the action. Action modifiers and effects that can be played \"after resolution\" can be played before or after it.",
+                "text":"Is played after resolution, after all combats (if any) are handled, but still during the action. Action modifiers and effects that can be played \"after resolution\" can be played before or after it.",
                 "refs":{
                     "PIB 20150915":"https://www.vekn.net/forum/rules-questions/73134-learjet#73139",
                     "LSJ 19981028":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JZHY1bTCAa0/m/XqDVERty0roJ",
@@ -78689,7 +78910,7 @@
                 }
             },
             {
-                "text":"[OBL] Is played after resolution, after all combats are handled, but still during the action. Action modifiers and effects that can be played \"after resolution\" can be played before or after it.",
+                "text":"[OBL] Is played after resolution, after all combats (if any) are handled, but still during the action. Action modifiers and effects that can be played \"after resolution\" can be played before or after it.",
                 "refs":{
                     "PIB 20150915":"https://www.vekn.net/forum/rules-questions/73134-learjet#73139",
                     "LSJ 19981028":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JZHY1bTCAa0/m/XqDVERty0roJ",
@@ -78728,7 +78949,7 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"[OBL] Is played after resolution, after all combats are handled, but still during the action. Action modifiers and effects that can be played \"after resolution\" can be played before or after it.",
+                "text":"[OBL] Is played after resolution, after all combats (if any) are handled, but still during the action. Action modifiers and effects that can be played \"after resolution\" can be played before or after it.",
                 "refs":{
                     "PIB 20150915":"https://www.vekn.net/forum/rules-questions/73134-learjet#73139",
                     "LSJ 19981028":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JZHY1bTCAa0/m/XqDVERty0roJ",
@@ -81648,7 +81869,7 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"Is played after resolution, after all combats are handled, but still during the action. Action modifiers and effects that can be played \"after resolution\" can be played before or after it.",
+                "text":"Is played after resolution, after all combats (if any) are handled, but still during the action. Action modifiers and effects that can be played \"after resolution\" can be played before or after it.",
                 "refs":{
                     "PIB 20150915":"https://www.vekn.net/forum/rules-questions/73134-learjet#73139",
                     "LSJ 19981028":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JZHY1bTCAa0/m/XqDVERty0roJ",
@@ -84158,6 +84379,12 @@
                     "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
                     "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
                 }
+            },
+            {
+                "text":"[spi]/[SPI] Can be played any time during the action before resolution; a block attempt is not required.",
+                "refs":{
+                    "LSJ 20020612":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/sC0pTtJJDj4/m/bD04Jy4pM_cJ"
+                }
             }
         ],
         "set":{
@@ -84248,6 +84475,18 @@
                 "text":"A second copy allows a second use in the same combat.",
                 "refs":{
                     "ANK 20230316":"https://www.vekn.net/forum/rules-questions/80385-amulet-of-temporal-perception-burning-and-reuse#107638"
+                }
+            },
+            {
+                "text":"Sequencing rules apply. You must gain the impulse to be able to use the reaction, or use the effect (whichever is applicable).  Other Methuselahs must declare block attempts (or not) and pass the impulse to you as normal.",
+                "refs":{
+                    "ANK 20200607":"https://www.vekn.net/forum/rules-questions/78676-draba-timing#100043"
+                }
+            },
+            {
+                "text":"Can be played/used any time during the action before resolution; a block attempt is not required.",
+                "refs":{
+                    "LSJ 20020612":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/sC0pTtJJDj4/m/bD04Jy4pM_cJ"
                 }
             }
         ],
@@ -86756,6 +86995,14 @@
                     "ANK 20230408":"https://www.vekn.net/forum/rules-questions/80438-the-british-museum-london-bloodstone#107810",
                     "LSJ 20050313":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/eSShNquHnXI/m/4H7zIau2DjoJ"
                 }
+            },
+            {
+                "text":"If the action is blocked, *all* effects that would be triggered by a successful block (eg. {Banshee Ironwail}) must be applied (ordered by the acting Methuselah).  Other effects and modifiers (eg. {Crypt's Sons}, {Change of Target}) can only be used after all triggered effects have been handled.",
+                "refs":{
+                    "ANK 20220116":"https://www.vekn.net/forum/rules-questions/79600-unleash-hell-s-fury-and-other-delayed-triggered-effects#104488",
+                    "ANK 20211207":"https://www.vekn.net/forum/rules-questions/79528-crypt-s-sons-versus-unleash-hell-s-fury?start=6#104139",
+                    "ANK 20210627":"https://www.vekn.net/forum/rules-questions/79192-mirror-walk-and-slave?start=12#102578"
+                }
             }
         ],
         "set":{
@@ -87603,12 +87850,6 @@
         "pool":3,
         "requirement":"",
         "rulings":[
-            {
-                "text":"The press is mandatory.",
-                "refs":{
-                    "LSJ 19980823":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/eB1gNn8l3cU/m/FBBJ6DM8MEUJ"
-                }
-            },
             {
                 "text":"Using the Chainsaw action to enter combat or preventing damage with it does not force the minion to strike with it.",
                 "refs":{
@@ -89626,6 +89867,12 @@
                 "refs":{
                     "RTR 19990712":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/x5k5Vw_hkI0/m/lCqkvlUz5yIJ"
                 }
+            },
+            {
+                "text":"If it would be put into the crypt for any reason, it is burned instead",
+                "refs":{
+                    "LSJ 20041201-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/DY1OggZnMvs/m/7rSTvY34PRAJ"
+                }
             }
         ],
         "set":{
@@ -89700,12 +89947,6 @@
                 }
             },
             {
-                "text":"The Progeny is Camarilla Sect.",
-                "refs":{
-                    "RTR 20201130":"https://www.blackchantry.com/2020/12/25/rtr-30-11-2020/"
-                }
-            },
-            {
                 "text":"Is not a vampire in the ash heap (eg. {Possession} cannot target it).",
                 "refs":{
                     "LSJ 20020115":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/wG_tDLgfZso/m/6mKkp7Rw3OcJ"
@@ -89715,6 +89956,12 @@
                 "text":"If moved to the uncontrolled region (eg. by {Banishment}), it stays a vampire and can be influenced.",
                 "refs":{
                     "RTR 19990712":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/x5k5Vw_hkI0/m/lCqkvlUz5yIJ"
+                }
+            },
+            {
+                "text":"If it would be put into the crypt for any reason, it is burned instead",
+                "refs":{
+                    "LSJ 20041201-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/DY1OggZnMvs/m/7rSTvY34PRAJ"
                 }
             }
         ],
@@ -90969,7 +91216,7 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"Is played after resolution, after all combats are handled, but still during the action. Action modifiers and effects that can be played \"after resolution\" can be played before or after it.",
+                "text":"Is played after resolution, after all combats (if any) are handled, but still during the action. Action modifiers and effects that can be played \"after resolution\" can be played before or after it.",
                 "refs":{
                     "PIB 20150915":"https://www.vekn.net/forum/rules-questions/73134-learjet#73139",
                     "LSJ 19981028":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JZHY1bTCAa0/m/XqDVERty0roJ",
@@ -91474,15 +91721,15 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"The provided press must be handled first. Another press cannot be used to continue (eg. {Boxed In}) if there's already a press to continue.",
-                "refs":{
-                    "ANK 20200525-1":"https://www.vekn.net/forum/rules-questions/78650-trap-and-boxed-in#99933"
-                }
-            },
-            {
                 "text":"A minion that cannot play or use presses (eg. {Mukhtar Bey}) can play it and does provide the presses, the minion is not the one pressing.",
                 "refs":{
                     "LSJ 20040521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Giv8nDnYVGo/m/RODFe7KlT1UJ"
+                }
+            },
+            {
+                "text":"The provided press is applied before any other press. Another press cannot be used to continue (eg. {Boxed In}, {Talbot's Chainsaw}) if there's already a press to continue.",
+                "refs":{
+                    "ANK 20200525-1":"https://www.vekn.net/forum/rules-questions/78650-trap-and-boxed-in#99933"
                 }
             }
         ],
@@ -92424,6 +92671,12 @@
                 "refs":{
                     "RTR 19990712":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/x5k5Vw_hkI0/m/lCqkvlUz5yIJ"
                 }
+            },
+            {
+                "text":"If it would be put into the crypt for any reason, it is burned instead",
+                "refs":{
+                    "LSJ 20041201-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/DY1OggZnMvs/m/7rSTvY34PRAJ"
+                }
             }
         ],
         "set":{
@@ -92748,7 +93001,16 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"If the action is blocked, *all* effects that would be triggered by a successful block (eg. {Banshee Ironwail}) must be applied (ordered by the acting Methuselah).  Other effects and modifiers (eg. {Crypt's Sons}, {Change of Target}) can only be used after all triggered effects have been handled.",
+                "refs":{
+                    "ANK 20220116":"https://www.vekn.net/forum/rules-questions/79600-unleash-hell-s-fury-and-other-delayed-triggered-effects#104488",
+                    "ANK 20211207":"https://www.vekn.net/forum/rules-questions/79528-crypt-s-sons-versus-unleash-hell-s-fury?start=6#104139",
+                    "ANK 20210627":"https://www.vekn.net/forum/rules-questions/79192-mirror-walk-and-slave?start=12#102578"
+                }
+            }
+        ],
         "set":{
             "LoB":{
                 "C":true
@@ -92792,6 +93054,12 @@
                 "text":"If moved to the uncontrolled region (eg. by {Banishment}), it stays a vampire and can be influenced.",
                 "refs":{
                     "RTR 19990712":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/x5k5Vw_hkI0/m/lCqkvlUz5yIJ"
+                }
+            },
+            {
+                "text":"If it would be put into the crypt for any reason, it is burned instead",
+                "refs":{
+                    "LSJ 20041201-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/DY1OggZnMvs/m/7rSTvY34PRAJ"
                 }
             }
         ],
@@ -94117,7 +94385,7 @@
         "requirement":"infernal",
         "rulings":[
             {
-                "text":"If the action is blocked, no other effect can be used (eg. {Crypt's Sons}, {Change of Target}) before burning Unleash Hell's Fury and inflicting aggravated damage. However, effects that trigger at the same moment (eg. {Banshee Ironwail}) are still applied and ordered by the acting Methuselah. Other effects and modifiers can be played after (eg. {Change of Target}).   \"\"",
+                "text":"If the action is blocked, no other effect can be used (e.g. {Crypt's Sons}, {Change of Target}) before burning Unleash Hell's Fury and inflicting aggravated damage. However, effects that trigger at the same moment (e.g. {Mirror Walk}) are still applied and ordered by the acting Methuselah. Other effects and modifiers can be played after (e.g. {Change of Target}).",
                 "refs":{
                     "ANK 20210627":"https://www.vekn.net/forum/rules-questions/79192-mirror-walk-and-slave?start=12#102578",
                     "ANK 20211207":"https://www.vekn.net/forum/rules-questions/79528-crypt-s-sons-versus-unleash-hell-s-fury?start=6#104139",
@@ -94125,7 +94393,7 @@
                 }
             },
             {
-                "text":"If the block is successful, the aggravated damage is inflicted and the card burned even if the action is ended (eg. {Mirror Walk}) before block resolution.",
+                "text":"If the block is successful, the aggravated damage is inflicted and the card burned even if the action is ended (e.g. {Mirror Walk}) before block resolution.",
                 "refs":{
                     "LSJ 20100301":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/TcUDpHnvW8M/m/YznjkbV3JLoJ",
                     "ANK 20220116":"https://www.vekn.net/forum/rules-questions/79600-unleash-hell-s-fury-and-other-delayed-triggered-effects#104488"
@@ -94144,19 +94412,20 @@
                 }
             },
             {
-                "text":"If attempting to block requires to pay or burn blood (eg. {Dominion}), Unleash Hell's Fury cannot block.",
+                "text":"It is a Vampire with 0 blood while attempting to block.\nIt cannot pay blood costs to play cards (eg {Elder Intervention}).\nIt cannot \"burn x blood to attempt to block\" (eg {Tenebrous Form}).\nIt can block when \"any vampire attempting to block burns 1 blood\" (eg {Camarilla Exemplary}).",
                 "refs":{
+                    "LSJ 19970707":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KWekwiRSa2I/m/9pS17rzBBDYJ",
                     "ANK 20230226":"https://www.vekn.net/forum/rules-questions/31040-unleash-hells-fury-vs-burn-x-blood-to-attempt-to-block?start=6#107484"
                 }
             },
             {
-                "text":"Once it is attempting to block, its intercept can be affected by other cards normally (eg. {KRCG News Radio}).",
+                "text":"Once it is attempting to block, its intercept can be affected by other cards normally (e.g. {KRCG News Radio}).",
                 "refs":{
                     "ANK 20211112-2":"https://www.vekn.net/forum/rules-questions/79478-unleash-hell-s-fury-and-extra-intercept#103870"
                 }
             },
             {
-                "text":"Is not a minion when it burns (eg. does not trigger {Tension in the Ranks}).",
+                "text":"Is not a minion when it burns (e.g. does not trigger {Tension in the Ranks}).",
                 "refs":{
                     "ANK 20230317":"https://www.vekn.net/forum/rules-questions/76656-unleash-hell-s-fury-tension-in-the-ranks#107653"
                 }
@@ -94168,9 +94437,23 @@
                 }
             },
             {
+                "text":"Is considered the same minion for every block attempt. Cards that prevent future block attempts by the same minion (e.g. {Elder Impersonation}) affect Unleash Hell's Fury normally.",
+                "refs":{
+                    "LSJ 20100210":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HHJfsSbIEf0/m/6UxQ3UJT9aEJ"
+                }
+            },
+            {
                 "text":"The fact it is Unique has no bearing on the burn option. You cannot use the burn option if you meet the requirement, even if you already have a copy of the card in play.",
                 "refs":{
                     "LSJ 20100203-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/tKnhKlDo8lk/m/6k8b2vok7_kJ"
+                }
+            },
+            {
+                "text":"If the action is blocked, *all* effects that would be triggered by a successful block (eg. {Banshee Ironwail}) must be applied (ordered by the acting Methuselah).  Other effects and modifiers (eg. {Crypt's Sons}, {Change of Target}) can only be used after all triggered effects have been handled.",
+                "refs":{
+                    "ANK 20220116":"https://www.vekn.net/forum/rules-questions/79600-unleash-hell-s-fury-and-other-delayed-triggered-effects#104488",
+                    "ANK 20211207":"https://www.vekn.net/forum/rules-questions/79528-crypt-s-sons-versus-unleash-hell-s-fury?start=6#104139",
+                    "ANK 20210627":"https://www.vekn.net/forum/rules-questions/79192-mirror-walk-and-slave?start=12#102578"
                 }
             }
         ],
@@ -95185,6 +95468,18 @@
                 "text":"[CHI] The strike is not ranged.",
                 "refs":{
                     "TOM 19951215-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/m7KBKRKO-iE/m/8CVSzKVLPxYJ"
+                }
+            },
+            {
+                "text":"Sequencing rules apply. You must gain the impulse to be able to use the reaction, or use the effect (whichever is applicable).  Other Methuselahs must declare block attempts (or not) and pass the impulse to you as normal.",
+                "refs":{
+                    "ANK 20200607":"https://www.vekn.net/forum/rules-questions/78676-draba-timing#100043"
+                }
+            },
+            {
+                "text":"Can be played/used any time during the action before resolution; a block attempt is not required.",
+                "refs":{
+                    "LSJ 20020612":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/sC0pTtJJDj4/m/bD04Jy4pM_cJ"
                 }
             }
         ],
@@ -96646,7 +96941,7 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"Is played after resolution, after all combats are handled, but still during the action. Action modifiers and effects that can be played \"after resolution\" can be played before or after it.",
+                "text":"Is played after resolution, after all combats (if any) are handled, but still during the action. Action modifiers and effects that can be played \"after resolution\" can be played before or after it.",
                 "refs":{
                     "PIB 20150915":"https://www.vekn.net/forum/rules-questions/73134-learjet#73139",
                     "LSJ 19981028":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JZHY1bTCAa0/m/XqDVERty0roJ",
@@ -98030,6 +98325,12 @@
                 "refs":{
                     "RTR 19990712":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/x5k5Vw_hkI0/m/lCqkvlUz5yIJ"
                 }
+            },
+            {
+                "text":"If it would be put into the crypt for any reason, it is burned instead",
+                "refs":{
+                    "LSJ 20041201-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/DY1OggZnMvs/m/7rSTvY34PRAJ"
+                }
             }
         ],
         "set":{
@@ -99054,6 +99355,12 @@
                 "refs":{
                     "LSJ 20030502":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qBa9CvBwqNA/m/ZuBgMjNgb6EJ"
                 }
+            },
+            {
+                "text":"[chi] Can be played any time during the action before resolution; a block attempt is not required.",
+                "refs":{
+                    "LSJ 20020612":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/sC0pTtJJDj4/m/bD04Jy4pM_cJ"
+                }
             }
         ],
         "set":{
@@ -99275,6 +99582,12 @@
                 "text":"Does not consider blocks made before the effect was used (if the action has been continued with eg. {Form of Mist}).",
                 "refs":{
                     "ANK 20230319":"https://www.vekn.net/forum/rules-questions/80393-forced-awakening-and-wmrh-talk-radio-vs-form-of-mist#107674"
+                }
+            },
+            {
+                "text":"Sequencing rules apply. You must gain the impulse to be able to use the reaction, or use the effect (whichever is applicable).  Other Methuselahs must declare block attempts (or not) and pass the impulse to you as normal.",
+                "refs":{
+                    "ANK 20200607":"https://www.vekn.net/forum/rules-questions/78676-draba-timing#100043"
                 }
             }
         ],
@@ -100018,6 +100331,12 @@
                 "refs":{
                     "ANK 20200515":"https://www.vekn.net/forum/rules-questions/78634-blanket-of-night#99838"
                 }
+            },
+            {
+                "text":"Can be played any time during the action before resolution; a block attempt is not required.",
+                "refs":{
+                    "LSJ 20020612":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/sC0pTtJJDj4/m/bD04Jy4pM_cJ"
+                }
             }
         ],
         "set":{
@@ -100064,7 +100383,7 @@
                 }
             },
             {
-                "text":"Is played after resolution, after all combats are handled, but still during the action. Action modifiers and effects that can be played \"after resolution\" can be played before or after it.",
+                "text":"Is played after resolution, after all combats (if any) are handled, but still during the action. Action modifiers and effects that can be played \"after resolution\" can be played before or after it.",
                 "refs":{
                     "PIB 20150915":"https://www.vekn.net/forum/rules-questions/73134-learjet#73139",
                     "LSJ 19981028":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JZHY1bTCAa0/m/XqDVERty0roJ",

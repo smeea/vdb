@@ -226,9 +226,6 @@
   - Can be played with no card in the ash heap. [PIB 20130119]
   - 'Is played without announcing targets: they are only chosen once the third copy get into play. [LSJ 20091030]'
   - You must show which one goes in hand. [LSJ 20081129]
-100111|Aura Absorption:
-  - '[aus][REACTION] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Helena (ADV)}).
-    The card cannot be played if the minion cannot afford to burn the blood. [ANK 20210226]'
 100112|Aura of Invincibility:
   - If the initial referendum does not pass, then the card is not put into play and the vampire playing it is not sent to
     torpor. [LSJ 20040730]
@@ -298,7 +295,7 @@
     modifier or reaction cards. [ANK 20190425]'
   - '[ANI][PRO] Replace the action card (if any) before playing it. [ANK 20181208]'
 100147|Becoming, The:
-  - Is a 1-capacity vampire while uncontrolled (eg. {Banishment}). [LSJ 20090625]
+  - Is a 1-capacity vampire if moved to the uncontrolled region (eg. {Banishment}). [LSJ 20090625]
 100153|Bestial Vengeance:
   - Damage is environmental. [RTR 19970630]
   - Bestial Vengeance's damage is inflicted whether or not the opposing minion's strike burns the retainer. [LSJ 20090616]
@@ -817,7 +814,7 @@
 100440|Create Gargoyle:
   - Only requires one clan or the other (Tremere or Tremere antitribu) to be played. [ANK 20190203]
 100441|Creation Rites:
-  - If moved to the uncontrolled region, it continues to be a vampire and can be influenced. [RTR 19990712]
+  - The decision to move blood on the Creation Rites or not is taken upon resolution. [PIB 20150418]
 100446|CrimethInc.:
   - Can be played if the action is unblocked even if it has no effect due to lack of a suitable target. [LSJ 20070411]
   - An action requiring a Baron (eg. {Open War}) is an action requiring an Anarch. [LSJ 20080603] [LSJ 20050128]
@@ -1026,10 +1023,7 @@
 100578|Draba:
   - '[CHI] Effectively gives a -X stealth modifier to the action, where X is the amount of stealth reduced by Draba at the
     time it was played. [RTR 20030519]'
-  - '[CHI] Can be played by a minion who is not attempting to block the action. [ANK 20190628]'
   - '[CHI] Can be played on a minion with no or negative stealth, in which case it has no effect. [LSJ 20021211]'
-  - If another Methuselah is the target, he must declare whether he attempts or declines to block before Draba can be used
-    ([chi]) or played ([CHI]). [ANK 20200607]
 100579|Draeven Softfoot:
   - He can lock to use his ability the turn he is recruited. [ANK 20180517]
 100580|Dragon's Breath Rounds:
@@ -1205,8 +1199,6 @@
   - If the owner treats aggravated damage as normal, he is immune to them too. [LSJ 20040120]
 100673|Exile:
   - "[PRE] You may lock Orun cards the vampire has even if they're not Laibon. [ANK 20221208]"
-100675|Extortion:
-  - Is usable by a locked vampire [LSJ 20010725]
 100676|Extremis Boon:
   - The pool of the highest bidder goes to the target Methuselah. The loosers do not lose pool. [LSJ 20031121-1]
   - The starting bid must be enough to keep the target into play. [ANK 20190827]
@@ -1228,8 +1220,6 @@
   - '[myt], [MYT] The action has reached resolution, so is subject to NRA (Non Repeatable Action) rules. [RTR 20180719] [ANK
     20211015]'
 100694|Falcon's Eye:
-  - '[ani] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Dragos}). The card cannot
-    be played if the minion cannot afford to burn the blood. [ANK 20210226]'
   - '[SPI] Only affects the rule restricting who gets to block an action. The vampire must still meet all other requirements
     to block. In particular, {Blood Bond}, {Day Operation}, {Seduction} and prior decision not to block are not circumvented.
     [RTR 19950413] [LSJ 20020112] [RTR 20020501]'
@@ -1271,8 +1261,6 @@
     lost, except for unlock effects. [LSJ 19980109] [RTR 20020501]
   - Cannot be used to start a new combat if there is already a pending combat queued. [RTR 20020501]
 100706|Fata Amria:
-  - '[CHI] [REACTION] Is played after resolution, but still during the action. Action modifiers and effects that can be played
-    "after resolution" can be played before or after it. [LSJ 19981028] [ANK 20190425]'
   - The target can burn it at unlock even if they're already unlocked, but cannot burn it if they do not unlock as normal
     (eg. {Sensory Deprivation}). [LSJ 20010814-3] [LSJ 20020109]
   - Does not prevent the opponent from dodging, the dodge just has no effect. [LSJ 20030902-2] [LSJ 20060808-1]
@@ -1339,20 +1327,10 @@
   - The action to burn Fleshcraft suffers the -1 stealth penalty as well, so is usually at zero stealth to start (or -1 stealth
     if superior [VIC]). [LSJ 19970224]
   - The rest of the effect applies if the damage is prevented, it does not if it is dodged. [LSJ 19990106-2]
-100755|Folderol:
-  - '[aus] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Helena (ADV)}). The card
-    cannot be played if the minion cannot afford to burn the blood. [ANK 20210226]'
-  - '[MYT] If another Methuselah is the target, he must declare whether he attempts or declines to block before Folderol can
-    be played. [ANK 20200607]'
 100756|Follow the Alpha:
   - Effects that end combat and then do something else after combat (include continuing the action as if unblocked) will be
     lost, except for unlock effects. [LSJ 19980109] [RTR 20020501]
   - Cannot be used to start a new combat if there is already a pending combat queued. [RTR 20020501]
-100757|Follow the Blood:
-  - If played on a vampire who successfully hunts with a {Perfectionist}, {Perfectionist} grants the blood before combat.
-    [LSJ 20110308]
-  - Is played after resolution, but still during the action. Cards and effects that played "after resolution" (eg. {Freak
-    Drive}) can be played before it, but not after. [LSJ 19981028] [LSJ 20100206-2]
 100758|Force of Personality:
   - '[PRE] [ACTION MODIFIER] Cards and effects that are played "as the action is announced" must be played before playing
     "regular" action modifier or reaction cards. [ANK 20190425]'
@@ -1407,6 +1385,8 @@
 100791|Frenzy:
   - Only prevents the use of equipment after it is played - it will not cancel the effects of equipment used before it is
     played. [TOM 19960326]
+  - Can be played on a minion that cannot play or use presses (eg. Mukhtar Bey) and does provide the presses, the minion is
+    not the one pressing. [LSJ 20040521]
 100793|From a Sinking Ship:
   - Requirements do not apply when taking control of a card already in play. [TOM 19960226-1]
 100794|Frontal Assault:
@@ -1650,8 +1630,6 @@
   - '[val] If the action fails, it has reached resolution, so is subject to NRA (Non Repeatable Action) rules. [RTR 20180719]
     [ANK 20211015]'
   - '[val] An ally has life, not blood, he cannot pay. [LSJ 20050216] [ANK 20190701]'
-  - '[val], [VAL] Sequencing applies. For example, if another Methuselah is targeted by the action, they must declare if they
-    attempt or decline to block before you can play Hide the Heart. [LSJ 20100507] [PIB 20150820] [RBK sequencing]'
   - '[VAL] To reduce a bleed against another Methuselah, you need to be unlocked. [RBK wording-templates] [ANK 20230817]'
 100921|Hide the Mind:
   - Cannot be used to cancel a card that could be played with [aus] but has not been (eg. {Anesthetic Touch} played with [obe]).
@@ -1681,9 +1659,6 @@
   - If the vampire gains no blood from their hunt, it's not successful, so Hunger Moon's effect does not apply. [LSJ 20050720-2]
 100947|I am Legion:
   - '[DAI][OBF] Can be used to gain a pool after a successful action, without cancelling an [aus] card. [LSJ 20100902-2]'
-100948|Ignis Fatuus:
-  - If another Methuselah is the target, he must declare whether he attempts or declines to block before Ignis Fatuus can
-    be played. [ANK 20200607]
 100949|Ignore the Searing Flames:
   - '[DAI] Immune means damage is not inflicted, even if non-preventable or outside combat. [LSJ 20010627] [LSJ 20010629]
     [LSJ 20090304-1]'
@@ -2179,10 +2154,6 @@
   - Cannot be used if there is no equipment to steal. [RTR 19980928]
 101209|Mighty Grapple:
   - '[POT] Additional damage inherits all of the properties of the base damage. [TOM 19960225]'
-101210|Millicent Smith, Puritan Vampire Hunter:
-  - If an action is blocked, no other effect can be used (eg. {Crypt's Sons}) before resolving Millicent's delayed effect.
-    However, effects that trigger at the same moment (eg. {Unleash Hell's Fury}) are still applied and ordered by the acting
-    Methuselah. [ANK 20210627] [ANK 20211207] [ANK 20220116]
 101214|Mind of the Wilds:
   - 'The blocking minion is prohibited to strike: combat ends for the duration of the action (during any round of any combat).
     [LSJ 20100308]'
@@ -2210,9 +2181,6 @@
     \ is not locked from the block, but from Mirror Walk's effect. [ANK 20191204]"
   - '[THA] If the action is blocked, it ends unsuccessfully immediately, no other action modifier or reaction can be played
     afterwards (eg. {Freak Drive}, slave rule, {Sowing Dissension}). [RTR 20180719] [ANK 20200207] [ANK 20210627]'
-  - "[THA] If the action is blocked, no other effect can be used (eg. {Crypt's Sons}, {Promise of 1528}, slave rule, {Sowing\
-    \ Dissension}) before resolving Mirror Walk delayed effect. However, effects that trigger at the same moment (eg. {Banshee\
-    \ Ironwail}) are still applied and ordered by the acting Methuselah. [ANK 20210627] [ANK 20211207] [ANK 20220116]"
   - '[THA] If the action is blocked and it was leaving torpor, the blocker does not get an opportunity to diablerize. [PIB
     20121216]'
 101224|Mirror's Visage:
@@ -2863,8 +2831,6 @@
   - '[STR] If the action fails, modifiers and reactions that can be used at the end/after an action can still be used afterwards.
     [LSJ 20041022] [RTR 20180719] [ANK 20220118] [ANK 20221205].'
   - '[STR] If the action fails, it has reached resolution, so is subject to NRA (Non Repeatable Action) rules. [ANK 20211015]'
-  - If another Methuselah is the target, he must declare whether he attempts or declines to block before Scobax can be played.
-    [ANK 20200607]
 101692|Scorn of Adonis:
   - May be played at any time during the voting process and, when votes are tallied, will cause the loss of pool to Methuselahs
     voting 'no' before it is played, as well as to Methuselahs voting 'no' after it is played. [RTR 19951110]
@@ -3310,7 +3276,6 @@
   - While he can play cards that require [qui] or [tha], he does not actually have those Disciplines. He does not benefit
     from {Tremere Convocation}, for example. [LSJ 19980303]
 101931|Talbot's Chainsaw:
-  - The press is mandatory. [LSJ 19980823]
   - Using the Chainsaw action to enter combat or preventing damage with it does not force the minion to strike with it. [LSJ
     19971215]
   - The damage inflicted during the unlock phase is weapon damage, it is neither inflicted by the wearer nor environmental.
@@ -3430,7 +3395,6 @@
     [PIB 20150917] [RTR 20070707]
 '101973|Third Tradition: Progeny':
   - The decision to move blood on the Progeny or not is taken upon resolution. [PIB 20150418]
-  - The Progeny is Camarilla Sect. [RTR 20201130]
 101974|Thirst:
   - The hunt needs to be successful for a vampire to avoid the effect. [LSJ 20050727]
 101976|Thoughts Betrayed:
@@ -3462,8 +3426,6 @@
   - '[THN] Requirements do not apply when taking control of a card already in play. [TOM 19960226-1]'
   - '[THN] Environmental damage do not qualify, only damage inflicted by the acting vampire. [ANK 20200517]'
 102012|Trap:
-  - The provided press must be handled first. Another press cannot be used to continue (eg. {Boxed In}) if there's already
-    a press to continue. [ANK 20200525-1]
   - A minion that cannot play or use presses (eg. {Mukhtar Bey}) can play it and does provide the presses, the minion is not
     the one pressing. [LSJ 20040521]
 102013|Travelers Obey the Tenets:
@@ -3542,18 +3504,22 @@
 102074|Unity:
   - You can cut however you want (eg. count cards, cut only one or two). [LSJ 20060413]
 102076|Unleash Hell's Fury:
-  - If the action is blocked, no other effect can be used (eg. {Crypt's Sons}, {Change of Target}) before burning Unleash
-    Hell's Fury and inflicting aggravated damage. However, effects that trigger at the same moment (eg. {Banshee Ironwail})
-    are still applied and ordered by the acting Methuselah. Other effects and modifiers can be played after (eg. {Change of
-    Target}). [ANK 20210627] [ANK 20211207] [ANK 20220116]""
-  - If the block is successful, the aggravated damage is inflicted and the card burned even if the action is ended (eg. {Mirror
+  - If the action is blocked, no other effect can be used (e.g. {Crypt's Sons}, {Change of Target}) before burning Unleash
+    Hell's Fury and inflicting aggravated damage. However, effects that trigger at the same moment (e.g. {Mirror Walk}) are
+    still applied and ordered by the acting Methuselah. Other effects and modifiers can be played after (e.g. {Change of Target}).
+    [ANK 20210627] [ANK 20211207] [ANK 20220116]
+  - If the block is successful, the aggravated damage is inflicted and the card burned even if the action is ended (e.g. {Mirror
     Walk}) before block resolution. [LSJ 20100301] [ANK 20220116]
   - If {The Kiss of Ra} or {Elder Impersonation} are used, the block does not happen. [LSJ 20100210]
   - Unleash Hell's Fury is not locked if {Faceless Night} was played. Also, it can attempt to block even if locked. [LSJ 20100210]
-  - If attempting to block requires to pay or burn blood (eg. {Dominion}), Unleash Hell's Fury cannot block. [ANK 20230226]
-  - Once it is attempting to block, its intercept can be affected by other cards normally (eg. {KRCG News Radio}). [ANK 20211112-2]
-  - Is not a minion when it burns (eg. does not trigger {Tension in the Ranks}). [ANK 20230317]
+  - "It is a Vampire with 0 blood while attempting to block.\nIt cannot pay blood costs to play cards (eg {Elder Intervention}).\n\
+    It cannot \"burn x blood to attempt to block\" (eg {Tenebrous Form}).\nIt can block when \"any vampire attempting to block\
+    \ burns 1 blood\" (eg {Camarilla Exemplary}). [LSJ 19970707] [ANK 20230226]"
+  - Once it is attempting to block, its intercept can be affected by other cards normally (e.g. {KRCG News Radio}). [ANK 20211112-2]
+  - Is not a minion when it burns (e.g. does not trigger {Tension in the Ranks}). [ANK 20230317]
   - The burn option can be used if all your infernal vampires are in torpor. [LSJ 20091203]
+  - Is considered the same minion for every block attempt. Cards that prevent future block attempts by the same minion (e.g.
+    {Elder Impersonation}) affect Unleash Hell's Fury normally. [LSJ 20100210]
 102078|Unlicensed Taxicab:
   - Offers the additional stealth on actions to equip it from another friendly minion as well, even with other equipment in
     the same action. [LSJ 20060222]
@@ -3832,10 +3798,7 @@
 102254|Night Terrors:
   - Effectively gives a -X stealth modifier to the action, where X is the amount of stealth reduced by Night Terrors at the
     time it was played. [RTR 20030519]"
-  - Can be played by a minion who is not attempting to block the action. [ANK 20190628]
   - Can be played on a minion with no or negative stealth, in which case it has no effect. [LSJ 20021211]
-  - If another Methuselah is the target, he must declare whether he attempts or declines to block before Night Terrors can
-    be played. [ANK 20200607]
   - '[OBF][PRE] The strike: combat ends can only be used in the combat resulting from a successful block. It does not carry
     over to follow-up combats (eg. [CEL] {Psyche!}). [LSJ 20010813] [LSJ 20010819-2]'
   - '[OBF][PRE] The strike: combat ends is provided again if a second block happens on the same action (eg. after [PRO] {Form
@@ -4652,9 +4615,9 @@ G00004|Hunt bonus:
 G00005|Prevent normal unlock:
   - The "does not unlock as normal" effect is redundant with being infernal. If the minion is infernal, his controller can
     still pay a pool to unlock him. [LSJ 20050114]
-G00006|Modifier after resolution:
-  - Is played after resolution, after all combats are handled, but still during the action. Action modifiers and effects that
-    can be played "after resolution" can be played before or after it. [PIB 20150915] [LSJ 19981028] [ANK 20190425]
+G00006|Played after resolution:
+  - Is played after resolution, after all combats (if any) are handled, but still during the action. Action modifiers and
+    effects that can be played "after resolution" can be played before or after it. [PIB 20150915] [LSJ 19981028] [ANK 20190425]
 G00007|Modifier after combat:
   - Is played after all combats are handled. Can be played from torpor. [LSJ 20030103] [ANK 20181219] [ANK 20180906]
 G00008|Permanent not replaced:
@@ -4773,6 +4736,7 @@ G00052|Modifier as announced:
 G00054|Action creating vampire:
   - Is not a vampire in the ash heap (eg. {Possession} cannot target it). [LSJ 20020115]
   - If moved to the uncontrolled region (eg. by {Banishment}), it stays a vampire and can be influenced. [RTR 19990712]
+  - If it would be put into the crypt for any reason, it is burned instead [LSJ 20041201-2]
 G00056|Shuffle when burned:
   - If burned and shuffled into the library, other effects that apply when it is burned still apply (eg. {Set's Curse} puts
     an ally into play). [ANK 20200813]
@@ -4921,3 +4885,17 @@ G00100|Set range in next round:
   - No other effect can be used to reset next round's range, but other pre-range effects can be played. [ANK 20180720] [RTR
     19970630]
   - If another effect was already setting next round's range (e.g. {Neutral Guard}), that effect has priority. [PIB 20120214]
+G00101|Automatic environmental press:
+  - The provided press is applied before any other press. Another press cannot be used to continue (eg. {Boxed In}, {Talbot's
+    Chainsaw}) if there's already a press to continue. [ANK 20200525-1]
+G00102|Minus Intercept:
+  - Can be played any time during the action before resolution; a block attempt is not required. [LSJ 20020612]
+G00103|Reactions targeting another player:
+  - Sequencing rules apply. You must gain the impulse to be able to use the reaction, or use the effect (whichever is applicable).  Other
+    Methuselahs must declare block attempts (or not) and pass the impulse to you as normal. [ANK 20200607]
+G00104|Minus stealth:
+  - Can be played/used any time during the action before resolution; a block attempt is not required. [LSJ 20020612]
+G00105|Triggered by block:
+  - If the action is blocked, *all* effects that would be triggered by a successful block (eg. {Banshee Ironwail}) must be
+    applied (ordered by the acting Methuselah).  Other effects and modifiers (eg. {Crypt's Sons}, {Change of Target}) can
+    only be used after all triggered effects have been handled. [ANK 20220116] [ANK 20211207] [ANK 20210627]
