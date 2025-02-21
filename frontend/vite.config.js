@@ -1,5 +1,4 @@
 import tailwindcss from '@tailwindcss/vite';
-import legacy from '@vitejs/plugin-legacy';
 import react from '@vitejs/plugin-react-swc';
 import { resolve } from 'path';
 import { defineConfig } from 'vite';
@@ -14,11 +13,6 @@ export default defineConfig({
   },
   plugins: [
     tailwindcss(),
-    legacy({
-      targets: ['defaults', 'not IE 11'],
-      renderLegacyChunks: true,
-      modernPolyfills: true,
-    }),
     svgr({
       exportAsDefault: true,
     }),
