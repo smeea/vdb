@@ -4,7 +4,6 @@
 - Deck-in-Url trimmed at first card - can't reproduce in dev environment
 
 # FEATURES
-- Inventory 'target' q-ty -> for design consideration
 
 # FEATURES ON HOLD
 - TWD search with % V5-compatibility -> after BCP clarify V5
