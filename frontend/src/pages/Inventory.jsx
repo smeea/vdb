@@ -18,7 +18,9 @@ import {
 } from '@/components';
 import { ALL, CRYPT, LIBRARY } from '@/constants';
 import { useApp } from '@/context';
-import { inventoryServices } from '@/services';
+import { inventoryServices, storageServices } from '@/services';
+
+const INVENTORY_CATEGORY = 'inventoryCategory';
 
 const Inventory = () => {
   const {
@@ -73,7 +75,9 @@ const Inventory = () => {
     }
   }, [sharedKey, cryptCardBase, libraryCardBase]);
 
-  const [category, setCategory] = useState(ALL);
+  const [category, setCategory] = useState(
+    storageServices.getLocalStorage(INVENTORY_CATEGORY) || ALL,
+  );
   const [showAddDeck, setShowAddDeck] = useState(false);
   const [showAddPrecon, setShowAddPrecon] = useState(false);
   const [clan, setClan] = useState(ALL);
@@ -84,6 +88,11 @@ const Inventory = () => {
   const handleClose = () => {
     setShowMenuButtons(false);
     setShowFloatingButtons(true);
+  };
+
+  const handleSetCategory = (value) => {
+    setCategory(value);
+    storageServices.setLocalStorage(INVENTORY_CATEGORY, value);
   };
 
   return (
@@ -127,7 +136,7 @@ const Inventory = () => {
               discipline={discipline}
               isSharedInventory={isSharedInventory}
               onlyNotes={onlyNotes}
-              setCategory={setCategory}
+              setCategory={handleSetCategory}
               setOnlyNotes={setOnlyNotes}
               setSharedCrypt={setSharedCrypt}
               setSharedLibrary={setSharedLibrary}
@@ -163,7 +172,7 @@ const Inventory = () => {
             discipline={discipline}
             isSharedInventory={isSharedInventory}
             onlyNotes={onlyNotes}
-            setCategory={setCategory}
+            setCategory={handleSetCategory}
             setOnlyNotes={setOnlyNotes}
             setSharedCrypt={setSharedCrypt}
             setSharedLibrary={setSharedLibrary}
