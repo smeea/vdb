@@ -1,6 +1,14 @@
 [
   {
-    "version": "2025-02-15/1",
+    "version": "2025-02-24",
+    "changes": [
+      "Deprecation of older browsers (older than Chrome 117, Firefox 119, Safari 17.4)",
+      "Update TWDA",
+      "Update Rulings"
+    ]
+  },
+  {
+    "version": "2025-02-15",
     "changes": [
       "Fix issues from previous update"
     ]

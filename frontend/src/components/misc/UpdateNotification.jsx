@@ -38,17 +38,6 @@ const UpdateNotification = () => {
           size="sm"
         >
           <div className="flex flex-col gap-4 sm:gap-5">
-            <div className="text-fgRed dark:text-fgRedDark flex flex-col gap-0.5">
-              <div>FUTURE UPDATE NOTIFICATION:</div>
-              <div>
-                In March 2025 VDB will drop support of older browsers versions and they will stop to
-                work.
-              </div>
-              <div>
-                Supported versions (or newer): Chrome/Edge 117, Firefox 119, Safari 17.4, Opera 103,
-                Samsung Internet 26, Opera Mobile 80.
-              </div>
-            </div>
             <div className="flex flex-col gap-1.5">
               <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">
                 Changes [{update.version}]:
