@@ -1155,6 +1155,33 @@
         "type":"Master",
         "trifle":true
     },
+    "102286":{
+        "aka":"",
+        "artist":[
+            "Mark Kelly"
+        ],
+        "ascii":"Aggressive Corpse",
+        "banned":"",
+        "blood":2,
+        "burn":"",
+        "clan":"Hecata",
+        "conviction":0,
+        "discipline":"",
+        "id":102286,
+        "name":"Aggressive Corpse",
+        "path":"",
+        "pool":0,
+        "requirement":"",
+        "rulings":[],
+        "set":{
+            "V5H":{
+                "PH":"6"
+            }
+        },
+        "text":"Zombie with 3 life. 2 strength, 0 bleed.\nThis ally can enter combat with a minion as a (D) action. This ally cannot be the target of directed actions requiring Dominate [dom] or Presence [pre]. In combat, strikes made by this ally cannot be dodged. This ally cannot gain life (instead, any life it would gain goes to the blood bank).",
+        "twd":0,
+        "type":"Ally"
+    },
     "100026":{
         "aka":"",
         "artist":[
@@ -7570,6 +7597,33 @@
         "type":"Reaction",
         "Card Text":"Requires a minion with a /Kerrie/. Usable by a locked minion.\nPlay during an action directed at this minion or a card on this minion. Only usable when a vampire without Auspex [aus] is acting. The action ends (unsuccessfully), and no cost is paid. A minion may play only one Bind the Night-Walker each turn."
     },
+    "102287":{
+        "aka":"",
+        "artist":[
+            "Raquel Cornejo"
+        ],
+        "ascii":"Biotech Company Hunting Ground",
+        "banned":"",
+        "blood":0,
+        "burn":"",
+        "clan":"Hecata",
+        "conviction":0,
+        "discipline":"",
+        "id":102287,
+        "name":"Biotech Company Hunting Ground",
+        "path":"",
+        "pool":2,
+        "requirement":"",
+        "rulings":[],
+        "set":{
+            "V5H":{
+                "PH":"1"
+            }
+        },
+        "text":"Unique location. Hunting ground.\nDuring your unlock phase, a ready vampire you control can gain 1 blood. A vampire can gain blood from only one hunting ground each turn.",
+        "twd":0,
+        "type":"Master"
+    },
     "100162":{
         "aka":"",
         "artist":[
@@ -13050,7 +13104,7 @@
                 "PL":"2"
             }
         },
-        "text":"Requires a titled Camarilla vampire.\nChoose a Methuselah and allocate 5 points among two or more other Methuselahs. Successful referendum means the chosen Methuselah gains 1 pool and each Methuselah burns 1 pool for each point allocated.",
+        "text":"Requires a titled Camarilla vampire.\nChoose a Methuselah and allocate 5 points among two or more other Methuselahs. Successful referendum means each Methuselah burns 1 pool for each point allocated and the chosen Methuselah gains 1 pool.",
         "twd":28,
         "type":"Political Action"
     },
@@ -15007,9 +15061,12 @@
             },
             "SP":{
                 "DoF":"1"
+            },
+            "V5H":{
+                "PH":"1"
             }
         },
-        "text":"Unique location.\nLock to give a minion you control +2 intercept. Not usable during the first action in a minion phase.",
+        "text":"Unique location.\nYou can lock this card to give a minion you control +2 intercept. Not usable during the first action in a minion phase.",
         "twd":155,
         "type":"Master"
     },
@@ -18845,6 +18902,33 @@
         "twd":208,
         "type":"Political Action"
     },
+    "102288":{
+        "aka":"",
+        "artist":[
+            "Gin\u00e9s Qui\u00f1onero"
+        ],
+        "ascii":"Consign to Oblivion",
+        "banned":"",
+        "blood":1,
+        "burn":"",
+        "clan":"",
+        "conviction":0,
+        "discipline":"Oblivion",
+        "id":102288,
+        "name":"Consign to Oblivion",
+        "path":"",
+        "pool":0,
+        "requirement":"",
+        "rulings":[],
+        "set":{
+            "V5H":{
+                "PH":"4"
+            }
+        },
+        "text":"Only usable as the action is announced.\n[obl] Reaction cards cost +1 blood or life.\n[OBL] As above, and those cards are not replaced until the end of the action.",
+        "twd":0,
+        "type":"Action Modifier"
+    },
     "100415":{
         "aka":"",
         "artist":[
@@ -19678,9 +19762,12 @@
             },
             "25th":{
                 "":"1"
+            },
+            "V5H":{
+                "PH":"1"
             }
         },
-        "text":"Unique. Trifle.\nPut this card in play. Lock to add 2 blood to a ready vampire you control. During your discard phase, your predator takes control of The Coven.",
+        "text":"Unique. Trifle.\nPut this card in play. You can lock this card to add 2 blood to a ready vampire you control. During your discard phase, your predator takes control of The Coven.",
         "twd":532,
         "type":"Master",
         "trifle":true
@@ -20040,6 +20127,9 @@
             "SP":{
                 "LB":"1"
             },
+            "V5H":{
+                "PH":"1"
+            },
             "V5":{
                 "PTo":"1"
             },
@@ -20048,7 +20138,7 @@
                 "SPIV":1
             }
         },
-        "text":"Unique location.\nLock as a vampire you control announces an undirected action to give that vampire +1 stealth, even if stealth is not yet needed.",
+        "text":"Unique location.\nYou can lock this card as a vampire you control announces an undirected action to give that vampire +1 stealth, even if stealth is not yet needed.",
         "twd":256,
         "type":"Master"
     },
@@ -29198,9 +29288,6 @@
             },
             "V5C":{
                 "PSal":"2"
-            },
-            "playtest":{
-                "PH":3
             }
         },
         "text":"[aus] +1 intercept.\n[AUS] +2 intercept.",
@@ -30830,6 +30917,9 @@
                 "DoF":"4",
                 "PwN":"2"
             },
+            "V5H":{
+                "PH":"3"
+            },
             "V5":{
                 "PM":"5",
                 "PTr":"6"
@@ -30847,8 +30937,7 @@
             "playtest":{
                 "SCat":3,
                 "NSal":3,
-                "NH":2,
-                "PH":3
+                "NH":2
             }
         },
         "text":"[aus] Only usable during an action directed at you (or a card you control). +2 intercept.\n[AUS] Only usable by a locked vampire. This vampire wakes (they ignore the requirement to be unlocked for playing reaction cards and attempting to block until the end of the action).",
@@ -31715,6 +31804,34 @@
         "text":"[chi] Cancel a reaction card requiring Auspex [aus] or Dementation [dem] as it is played, and its cost is not paid.\n[CHI] +1 stealth, and once this action, this vampire can burn 1 blood to use the [chi] effect above.",
         "twd":16,
         "type":"Action Modifier"
+    },
+    "102289":{
+        "aka":"",
+        "artist":[
+            "Konrad Wa\u015bci\u0144ski"
+        ],
+        "ascii":"Family Gathering",
+        "banned":"",
+        "blood":0,
+        "burn":"",
+        "clan":"Hecata",
+        "conviction":0,
+        "discipline":"",
+        "id":102289,
+        "name":"Family Gathering",
+        "path":"",
+        "pool":0,
+        "requirement":"",
+        "rulings":[],
+        "set":{
+            "V5H":{
+                "PH":"3"
+            }
+        },
+        "text":"Trifle.\nReveal the top card of your crypt. If it is a Hecata, draw it and add 1 blood to it; otherwise, move it to the bottom of your crypt.",
+        "twd":0,
+        "type":"Master",
+        "trifle":true
     },
     "100698":{
         "aka":"",
@@ -35982,6 +36099,9 @@
             "25th":{
                 "":"3"
             },
+            "V5H":{
+                "PH":"4"
+            },
             "V5":{
                 "PV":"6"
             },
@@ -35994,8 +36114,7 @@
             "playtest":{
                 "SCat":4,
                 "SPIV":3,
-                "NSal":4,
-                "PH":4
+                "NSal":4
             }
         },
         "text":"Only usable after action resolution.\n[for] Only usable if the action was successful. Unlock this vampire.\n[FOR] Only usable if the action was blocked. Unlock this vampire.",
@@ -36928,6 +37047,33 @@
         "text":"Melee weapon.\n3 damage each strike. This weapon is only usable once each combat.",
         "twd":5,
         "type":"Equipment"
+    },
+    "102290":{
+        "aka":"",
+        "artist":[
+            "Francisco T\u00e9bar"
+        ],
+        "ascii":"Gate of Acheron, The",
+        "banned":"",
+        "blood":0,
+        "burn":"",
+        "clan":"Hecata",
+        "conviction":0,
+        "discipline":"",
+        "id":102290,
+        "name":"Gate of Acheron, The",
+        "path":"",
+        "pool":0,
+        "requirement":"",
+        "rulings":[],
+        "set":{
+            "V5H":{
+                "PH":"2"
+            }
+        },
+        "text":"+1 stealth action. Unique.\nPut this card in play with 1 counter. During your unlock phase, add 1 counter to this card. During your prey's unlock phase, for each counter on this card, they burn 1 pool or remove a library card at random in their ash heap from the game. Hecata you control with capacity 4 or more can add 1 counter to this card as a +1 stealth action. Vampires can burn this card as a (D) action.",
+        "twd":0,
+        "type":"Action"
     },
     "100812":{
         "aka":"",
@@ -59983,11 +60129,11 @@
         "requirement":"",
         "rulings":[],
         "set":{
+            "V5H":{
+                "PH":"1"
+            },
             "V5L":{
                 "PL":"1"
-            },
-            "playtest":{
-                "PH":1
             }
         },
         "text":"Discipline.\nPut this card on a vampire. This vampire gets +1 level of Oblivion [obl] and +1 capacity. Cannot be put on a vampire with superior Oblivion [OBL].",
@@ -60487,8 +60633,7 @@
             "playtest":{
                 "SCat":3,
                 "SPIV":4,
-                "NR":3,
-                "PH":3
+                "NR":3
             }
         },
         "text":"Only usable by a locked minion. A minion can play only one On the Qui Vive between their unlock phases.\nThis minion wakes (they ignore the requirement to be unlocked for playing reaction cards and attempting to block until the end of the action). If this minion is an ally, they do not unlock as normal during their next unlock phase.",
@@ -62158,13 +62303,15 @@
             }
         ],
         "set":{
+            "V5H":{
+                "PH":"4"
+            },
             "V5L":{
                 "PL":"4"
             },
             "playtest":{
                 "SDS":3,
-                "NH":4,
-                "PH":3
+                "NH":4
             }
         },
         "text":"[obl] Strike: combat ends.\n[OBL] Strike: combat ends. After combat ends, put this card on this vampire. This vampire can burn this card to get +1 stealth.",
@@ -63402,6 +63549,9 @@
             "SP":{
                 "LB":"2"
             },
+            "V5H":{
+                "PH":"1"
+            },
             "playtest":{
                 "NTz":1
             }
@@ -63929,6 +64079,33 @@
         "text":"Requires a ready Anarch.\nLock a ready unlocked Anarch you control. That Anarch recruits or employs an ally or retainer from your hand (requirements and cost apply as normal). This is not an action and cannot be blocked.",
         "twd":42,
         "type":"Master"
+    },
+    "102291":{
+        "aka":"",
+        "artist":[
+            "Pablo D. Hidalgo"
+        ],
+        "ascii":"Pit of Contemplation",
+        "banned":"",
+        "blood":0,
+        "burn":"",
+        "clan":"Hecata",
+        "conviction":0,
+        "discipline":"",
+        "id":102291,
+        "name":"Pit of Contemplation",
+        "path":"",
+        "pool":0,
+        "requirement":"",
+        "rulings":[],
+        "set":{
+            "V5H":{
+                "PH":"2"
+            }
+        },
+        "text":"+1 stealth action. Unique.\nPut this card in play with 1 counter. Hecata you control can add 1 counter to this card as a +1 stealth action. During your unlock phase, you can burn this card to move a vampire controlled by your predator or prey with capacity less than X to their owner's uncontrolled region, where X is the number of counters on this card. Vampires can burn this card as a (D) action.",
+        "twd":0,
+        "type":"Action"
     },
     "101402":{
         "aka":"",
@@ -66806,14 +66983,14 @@
             "FB":{
                 "PTr":"2"
             },
+            "V5H":{
+                "PH":"3"
+            },
             "V5":{
                 "PTr":"2"
             },
             "NB":{
                 "PTr":"1"
-            },
-            "playtest":{
-                "PH":3
             }
         },
         "text":"[aus] +1 intercept.\n[AUS] As above, and this vampire can prevent 1 damage during the first round of the resulting combat if they block.",
@@ -72703,9 +72880,6 @@
             },
             "Third":{
                 "U":true
-            },
-            "playtest":{
-                "PH":3
             }
         },
         "text":"[for] Prevent 1 damage.\n[FOR] Prevent 3 non-aggravated damage.",
@@ -74635,8 +74809,8 @@
             "V5C":{
                 "PSal":"2"
             },
-            "playtest":{
-                "PH":3
+            "V5H":{
+                "PH":"4"
             }
         },
         "text":"[for] Prevent 1 damage.\n[FOR] Burn 1 blood to prevent all damage from the opposing minion's strikes this round.",
@@ -76991,6 +77165,33 @@
         "twd":168,
         "type":"Action"
     },
+    "102292":{
+        "aka":"",
+        "artist":[
+            "Noora Hirvonen"
+        ],
+        "ascii":"Screamer",
+        "banned":"",
+        "blood":0,
+        "burn":"",
+        "clan":"Hecata",
+        "conviction":0,
+        "discipline":"",
+        "id":102292,
+        "name":"Screamer",
+        "path":"",
+        "pool":1,
+        "requirement":"",
+        "rulings":[],
+        "set":{
+            "V5H":{
+                "PH":"2"
+            }
+        },
+        "text":"Wraith with 1 life. 1 strength, 1 bleed.\nYou can burn this ally to give a minion controlled by your predator or prey -1 stealth. You can burn this ally as an action directed at an ally you control is announced to have it fail.",
+        "twd":0,
+        "type":"Ally"
+    },
     "101699":{
         "aka":"",
         "artist":[
@@ -78919,11 +79120,11 @@
             }
         ],
         "set":{
+            "V5H":{
+                "PH":"3"
+            },
             "V5L":{
                 "PL":"4"
-            },
-            "playtest":{
-                "PH":3
             }
         },
         "text":"[obl] +1 stealth.\n[OBL] Only usable after resolution of a successful directed action. Put this card on this vampire. During an action directed at the same Methuselah or same set of Methuselahs, this vampire can burn this card to get +1 stealth.",
@@ -78958,13 +79159,15 @@
             }
         ],
         "set":{
+            "V5H":{
+                "PH":"3"
+            },
             "V5L":{
                 "PL":"4"
             },
             "playtest":{
                 "SDS":3,
-                "NH":2,
-                "PH":3
+                "NH":2
             }
         },
         "text":"[obl] +1 stealth.\n[OBL] Only usable after resolution of a successful action. Put this card on this vampire. Minions without Auspex [aus] cannot perform actions directed at this vampire. During your unlock phase, burn this card.",
@@ -79326,6 +79529,33 @@
         "text":"[obt] +1 stealth.\n[OBT] +2 stealth.",
         "twd":200,
         "type":"Action Modifier"
+    },
+    "102294":{
+        "aka":"",
+        "artist":[
+            "Anastasiia Horbunova"
+        ],
+        "ascii":"Shadow Sentinel",
+        "banned":"",
+        "blood":0,
+        "burn":"",
+        "clan":"",
+        "conviction":0,
+        "discipline":"Oblivion",
+        "id":102294,
+        "name":"Shadow Sentinel",
+        "path":"",
+        "pool":0,
+        "requirement":"",
+        "rulings":[],
+        "set":{
+            "V5H":{
+                "PH":"3"
+            }
+        },
+        "text":"A vampire can play only one Shadow Sentinel between their unlock phases.\n[obl] Only usable by a locked vampire. This vampire wakes.\n[OBL] Usable by a locked vampire. Choose a locked wraith or zombie ally you control. The chosen ally wakes.",
+        "twd":0,
+        "type":"Reaction"
     },
     "101744":{
         "aka":"",
@@ -80623,6 +80853,33 @@
         "text":"[dom][obt] +1 stealth.\n[DOM][OBT] As above, and this vampire can strike: combat ends during the first round of the resulting combat if they are blocked.",
         "twd":162,
         "type":"Action Modifier"
+    },
+    "102295":{
+        "aka":"",
+        "artist":[
+            "Yanis Cardin"
+        ],
+        "ascii":"Shroud of Decay",
+        "banned":"",
+        "blood":0,
+        "burn":"",
+        "clan":"",
+        "conviction":0,
+        "discipline":"Oblivion",
+        "id":102295,
+        "name":"Shroud of Decay",
+        "path":"",
+        "pool":0,
+        "requirement":"",
+        "rulings":[],
+        "set":{
+            "V5H":{
+                "PH":"6"
+            }
+        },
+        "text":"[obl] (D) Bleed with +1 bleed. If the bleed is successful (for 1 or more), the target Methuselah discards 2 cards of their choice.\n[OBL] (D) Remove 7 cards in your prey's ash heap from the game to burn 3 of their pool.",
+        "twd":0,
+        "type":"Action"
     },
     "101775":{
         "aka":"",
@@ -83593,6 +83850,33 @@
         "twd":172,
         "type":"Action Modifier/Reaction"
     },
+    "102296":{
+        "aka":"",
+        "artist":[
+            "Paolo Puggioni"
+        ],
+        "ascii":"Spectral Servitor",
+        "banned":"",
+        "blood":1,
+        "burn":"",
+        "clan":"",
+        "conviction":0,
+        "discipline":"Oblivion",
+        "id":102296,
+        "name":"Spectral Servitor",
+        "path":"",
+        "pool":0,
+        "requirement":"",
+        "rulings":[],
+        "set":{
+            "V5H":{
+                "PH":"4"
+            }
+        },
+        "text":"Wraith with 1 life. 1 strength, 1 bleed.\n[obl] This ally can perform actions the turn it is recruited. Unlock this vampire if this is their first successful recruit ally action this turn. This ally can play non-action cards requiring Oblivion [obl] as a vampire. During your unlock phase, burn this ally.\n[OBL] As above, but during your unlock phase, you can burn 1 pool instead of burning this ally.",
+        "twd":0,
+        "type":"Ally"
+    },
     "101844":{
         "aka":"",
         "artist":[
@@ -85768,12 +86052,14 @@
             }
         ],
         "set":{
+            "V5H":{
+                "PH":"3"
+            },
             "V5L":{
                 "PL":"4"
             },
             "playtest":{
-                "NH":2,
-                "PH":3
+                "NH":2
             }
         },
         "text":"Only usable if a minion attempts to block.\n[obl] The blocking minion gets -1 intercept.\n[OBL] Burn 1 blood to have that attempt fail; the blocking minion cannot attempt to block this action again.",
@@ -88795,6 +89081,9 @@
                 "PTo":"4",
                 "PTr":"4"
             },
+            "V5H":{
+                "PH":"3"
+            },
             "V5":{
                 "PM":"5",
                 "PTr":"4"
@@ -88813,8 +89102,7 @@
             "playtest":{
                 "SCat":6,
                 "SDS":2,
-                "NH":3,
-                "PH":3
+                "NH":3
             }
         },
         "text":"[aus] +1 intercept.\n[AUS] Only usable if a minion is bleeding you, after blocks are declined. Lock this reacting vampire. Change the target of the bleed to another Methuselah other than the acting minion's controller (that Methuselah can attempt to block).",
@@ -92906,11 +93194,11 @@
         "requirement":"",
         "rulings":[],
         "set":{
+            "V5H":{
+                "PH":"3"
+            },
             "V5L":{
                 "PL":"2"
-            },
-            "playtest":{
-                "PH":3
             }
         },
         "text":"[obl] +1 intercept.\n[OBL] As above, and if this vampire blocks, they can burn 1 blood to unlock after block resolution.",
@@ -96416,6 +96704,9 @@
             "25th":{
                 "":"5"
             },
+            "V5H":{
+                "PH":"3"
+            },
             "V5L":{
                 "PL":"3"
             },
@@ -96433,8 +96724,7 @@
                 "":"6"
             },
             "playtest":{
-                "SPIV":3,
-                "PH":3
+                "SPIV":3
             }
         },
         "text":"Trifle.\nPut this card on a vampire you control who has any amount of blood and move 2 to 5 blood from that vampire to your pool. Cards named /Minion Tap/ cost you +1 pool to play. Villein costs +1 pool to play on this vampire.",
@@ -98980,13 +99270,15 @@
             }
         ],
         "set":{
+            "V5H":{
+                "PH":"3"
+            },
             "V5L":{
                 "PL":"4"
             },
             "playtest":{
                 "SDS":3,
-                "NH":2,
-                "PH":3
+                "NH":2
             }
         },
         "text":"[obl] +1 stealth.\n[OBL] As above, and minions without Oblivion [obl] must burn 1 blood to attempt to block (allies cannot burn blood).",

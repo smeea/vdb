@@ -1914,6 +1914,35 @@
         "title":"",
         "twd":9
     },
+    "201717":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Camille D\u00e9farge"
+        ],
+        "ascii":"Alek Konig",
+        "banned":"",
+        "capacity":3,
+        "clan":"Hecata",
+        "disciplines":{
+            "Oblivion":2
+        },
+        "group":"6",
+        "id":201717,
+        "name":"Alek K\u00f6nig",
+        "new":false,
+        "path":"",
+        "rulings":[],
+        "sect":"Independent",
+        "set":{
+            "V5H":{
+                "PH":"1"
+            }
+        },
+        "text":"Independent.",
+        "title":"",
+        "twd":0
+    },
     "200045":{
         "adv":"",
         "aka":"",
@@ -21413,6 +21442,40 @@
         "title":"",
         "twd":1
     },
+    "201718":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Gabriel de G\u00f3es Figueiredo"
+        ],
+        "ascii":"Gebeyehu Abdu",
+        "banned":"",
+        "capacity":5,
+        "clan":"Hecata",
+        "disciplines":{
+            "Fortitude":1,
+            "Auspex":2,
+            "Oblivion":2
+        },
+        "group":"6",
+        "id":201718,
+        "name":"Gebeyehu Abdu",
+        "new":false,
+        "path":"",
+        "rulings":[],
+        "sect":"Independent",
+        "set":{
+            "V5H":{
+                "PH":"1"
+            },
+            "playtest":{
+                "NH":1
+            }
+        },
+        "text":"Independent.",
+        "title":"",
+        "twd":0
+    },
     "201548":{
         "adv":"",
         "aka":"",
@@ -25617,6 +25680,68 @@
             }
         },
         "text":"Camarilla: While Hiram is ready, actions to burn a location you control cost 1 additional blood.",
+        "title":"",
+        "twd":0
+    },
+    "201719":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Amy Wilkins"
+        ],
+        "ascii":"Hiromitsu Asano",
+        "banned":"",
+        "capacity":4,
+        "clan":"Hecata",
+        "disciplines":{
+            "Auspex":1,
+            "Fortitude":1,
+            "Oblivion":1
+        },
+        "group":"6",
+        "id":201719,
+        "name":"Hiromitsu Asano",
+        "new":false,
+        "path":"",
+        "rulings":[],
+        "sect":"Independent",
+        "set":{
+            "V5H":{
+                "PH":"1"
+            }
+        },
+        "text":"Independent.",
+        "title":"",
+        "twd":0
+    },
+    "201720":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Francisco T\u00e9bar"
+        ],
+        "ascii":"Holliday \"Burgundy\" Hall",
+        "banned":"",
+        "capacity":5,
+        "clan":"Hecata",
+        "disciplines":{
+            "Auspex":1,
+            "Fortitude":2,
+            "Oblivion":2
+        },
+        "group":"6",
+        "id":201720,
+        "name":"Holliday \"Burgundy\" Hall",
+        "new":false,
+        "path":"",
+        "rulings":[],
+        "sect":"Independent",
+        "set":{
+            "V5H":{
+                "PH":"1"
+            }
+        },
+        "text":"Independent.",
         "title":"",
         "twd":0
     },
@@ -35282,6 +35407,37 @@
         "title":"",
         "twd":54
     },
+    "201721":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Ken Meyer, Jr."
+        ],
+        "ascii":"Lenelle, Mambo of Birmingham",
+        "banned":"",
+        "capacity":6,
+        "clan":"Hecata",
+        "disciplines":{
+            "Auspex":1,
+            "Fortitude":2,
+            "Oblivion":2
+        },
+        "group":"6",
+        "id":201721,
+        "name":"Lenelle, Mambo of Birmingham",
+        "new":false,
+        "path":"",
+        "rulings":[],
+        "sect":"Independent",
+        "set":{
+            "V5H":{
+                "PH":"1"
+            }
+        },
+        "text":"Independent: Lenelle can exchange a card from your hand for a library card in your ash heap as a +1 stealth action that costs 1 blood.",
+        "title":"",
+        "twd":0
+    },
     "201555":{
         "adv":"",
         "aka":"",
@@ -38783,6 +38939,39 @@
         "text":"Sabbat: If March is diablerized, no blood hunt can be called.",
         "title":"",
         "twd":57
+    },
+    "201722":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Anastasiia Horbunova"
+        ],
+        "ascii":"Marchesa Liliana",
+        "banned":"",
+        "capacity":9,
+        "clan":"Hecata",
+        "disciplines":{
+            "Dominate":1,
+            "Animalism":2,
+            "Auspex":2,
+            "Fortitude":2,
+            "Oblivion":2
+        },
+        "group":"6",
+        "id":201722,
+        "name":"Marchesa Liliana",
+        "new":false,
+        "path":"",
+        "rulings":[],
+        "sect":"Independent",
+        "set":{
+            "V5H":{
+                "PH":"1"
+            }
+        },
+        "text":"Independent: During a bleed action, Liliana can remove seven cards in your ash heap from the game to get an additional +1 bleed. +1 bleed.",
+        "title":"",
+        "twd":0
     },
     "200912":{
         "adv":"",
@@ -43023,6 +43212,40 @@
         "title":"",
         "twd":10
     },
+    "201723":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Mark Kelly"
+        ],
+        "ascii":"Monica Giovanni",
+        "banned":"",
+        "capacity":6,
+        "clan":"Hecata",
+        "disciplines":{
+            "Auspex":2,
+            "Fortitude":2,
+            "Oblivion":2
+        },
+        "group":"6",
+        "id":201723,
+        "name":"Monica Giovanni",
+        "new":false,
+        "path":"",
+        "rulings":[],
+        "sect":"Independent",
+        "set":{
+            "V5H":{
+                "PH":"1"
+            },
+            "playtest":{
+                "NH":1
+            }
+        },
+        "text":"Independent.",
+        "title":"",
+        "twd":0
+    },
     "201004":{
         "adv":"",
         "aka":"",
@@ -43216,6 +43439,38 @@
         "title":"",
         "twd":1
     },
+    "201724":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Mark Kelly"
+        ],
+        "ascii":"Mora, the Death Seer",
+        "banned":"",
+        "capacity":7,
+        "clan":"Hecata",
+        "disciplines":{
+            "Animalism":1,
+            "Auspex":2,
+            "Fortitude":2,
+            "Oblivion":2
+        },
+        "group":"6",
+        "id":201724,
+        "name":"Mora, the Death Seer",
+        "new":false,
+        "path":"",
+        "rulings":[],
+        "sect":"Independent",
+        "set":{
+            "V5H":{
+                "PH":"1"
+            }
+        },
+        "text":"Independent: If Mora is ready during your discard phase, you can move a library card from your ash heap to the bottom of your library. +1 bleed.",
+        "title":"",
+        "twd":0
+    },
     "201009":{
         "adv":"",
         "aka":"",
@@ -43404,6 +43659,42 @@
         "text":"Sabbat: Black Hand.",
         "title":"",
         "twd":44
+    },
+    "201725":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Ken Meyer, Jr."
+        ],
+        "ascii":"\"Mother\" Anja Giovanni",
+        "banned":"",
+        "capacity":8,
+        "clan":"Hecata",
+        "disciplines":{
+            "Dominate":1,
+            "Potence":1,
+            "Auspex":2,
+            "Fortitude":2,
+            "Oblivion":2
+        },
+        "group":"6",
+        "id":201725,
+        "name":"\"Mother\" Anja Giovanni",
+        "new":false,
+        "path":"",
+        "rulings":[],
+        "sect":"Independent",
+        "set":{
+            "V5H":{
+                "PH":"1"
+            },
+            "playtest":{
+                "NH":1
+            }
+        },
+        "text":"Independent: Once each turn, if she is ready, Anja can burn 1 blood after another Hecata you control performs a successful action requiring Hecata or Oblivion [obl] to unlock that Hecata.",
+        "title":"",
+        "twd":0
     },
     "201014":{
         "adv":"",
@@ -47054,6 +47345,38 @@
         "title":"",
         "twd":1
     },
+    "201726":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Gin\u00e9s Qui\u00f1onero"
+        ],
+        "ascii":"Parijat, the Dark Oracle",
+        "banned":"",
+        "capacity":7,
+        "clan":"Hecata",
+        "disciplines":{
+            "Auspex":2,
+            "Dominate":2,
+            "Fortitude":2,
+            "Oblivion":2
+        },
+        "group":"6",
+        "id":201726,
+        "name":"Parijat, the Dark Oracle",
+        "new":false,
+        "path":"",
+        "rulings":[],
+        "sect":"Independent",
+        "set":{
+            "V5H":{
+                "PH":"1"
+            }
+        },
+        "text":"Independent: While Parijat is ready, minions must burn the top card of their library to attempt to block wraith or zombie allies.",
+        "title":"",
+        "twd":0
+    },
     "201095":{
         "adv":"",
         "aka":"",
@@ -47926,6 +48249,35 @@
         "text":"While Peter is in combat with a monster, he may burn a conviction [1 CONVICTION] to get a maneuver.",
         "title":"",
         "twd":5
+    },
+    "201727":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Mar\u00eda Lor\u00e9n"
+        ],
+        "ascii":"Peter St. John",
+        "banned":"",
+        "capacity":2,
+        "clan":"Hecata",
+        "disciplines":{
+            "Oblivion":1
+        },
+        "group":"6",
+        "id":201727,
+        "name":"Peter St. John",
+        "new":false,
+        "path":"",
+        "rulings":[],
+        "sect":"Independent",
+        "set":{
+            "V5H":{
+                "PH":"1"
+            }
+        },
+        "text":"Independent.",
+        "title":"",
+        "twd":0
     },
     "201116":{
         "adv":"",
@@ -58964,6 +59316,42 @@
         "text":"Camarilla primogen: While Tomaine is ready and your prey controls a ready Sabbat vampire, you prey gets +1 hand size.",
         "title":"primogen",
         "twd":9
+    },
+    "201728":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Lawrence Snelly"
+        ],
+        "ascii":"Tommaso Sforza",
+        "banned":"",
+        "capacity":7,
+        "clan":"Hecata",
+        "disciplines":{
+            "Dominate":1,
+            "Fortitude":1,
+            "Auspex":2,
+            "Oblivion":2,
+            "Blood Sorcery":2
+        },
+        "group":"6",
+        "id":201728,
+        "name":"Tommaso Sforza",
+        "new":false,
+        "path":"",
+        "rulings":[],
+        "sect":"Independent",
+        "set":{
+            "V5H":{
+                "PH":"1"
+            },
+            "playtest":{
+                "NH":1
+            }
+        },
+        "text":"Independent: Once each turn, if he is ready, Tommaso can burn 1 blood before range is determined in a combat involving a wraith or zombie ally you control to end that combat.",
+        "title":"",
+        "twd":0
     },
     "201380":{
         "adv":"",

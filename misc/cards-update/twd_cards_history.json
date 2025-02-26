@@ -250,6 +250,9 @@
         "twdDate":"2003-07-05",
         "player":"Noel Somerfield"
     },
+    "201717":{
+        "deckid":null
+    },
     "200045":{
         "deckid":"mg2k",
         "twdDate":"2000-05-06",
@@ -2810,6 +2813,9 @@
         "twdDate":"2011-03-13",
         "player":"Leonardo Bensi"
     },
+    "201718":{
+        "deckid":null
+    },
     "201548":{
         "deckid":"9549",
         "twdDate":"2021-09-28",
@@ -3352,6 +3358,12 @@
         "player":"Otso Saariluoma"
     },
     "200599":{
+        "deckid":null
+    },
+    "201719":{
+        "deckid":null
+    },
+    "201720":{
         "deckid":null
     },
     "200600":{
@@ -4630,6 +4642,9 @@
         "twdDate":"1997-07-20",
         "player":"Alex Harmon"
     },
+    "201721":{
+        "deckid":null
+    },
     "201555":{
         "deckid":"2021fswp",
         "twdDate":"2021-06-26",
@@ -5070,6 +5085,9 @@
         "deckid":"steveholmer",
         "twdDate":"1997-11-01",
         "player":"Steve Holmer"
+    },
+    "201722":{
+        "deckid":null
     },
     "200912":{
         "deckid":null
@@ -5600,6 +5618,9 @@
         "twdDate":"2018-03-25",
         "player":"Jay Kristoff"
     },
+    "201723":{
+        "deckid":null
+    },
     "201004":{
         "deckid":"silentwar",
         "twdDate":"2001-07-14",
@@ -5625,6 +5646,9 @@
         "twdDate":"2012-03-25",
         "player":"Eetu Rautiainen"
     },
+    "201724":{
+        "deckid":null
+    },
     "201009":{
         "deckid":"2010pcstockholm",
         "twdDate":"2010-10-23",
@@ -5649,6 +5673,9 @@
         "deckid":"2k6gtossherbrooke",
         "twdDate":"2006-10-07",
         "player":"Martin Tremblay"
+    },
+    "201725":{
+        "deckid":null
     },
     "201014":{
         "deckid":"2k3baltipurge",
@@ -6124,6 +6151,9 @@
         "twdDate":"2014-07-05",
         "player":"Craig Love"
     },
+    "201726":{
+        "deckid":null
+    },
     "201095":{
         "deckid":"2k2bostonmay",
         "twdDate":"2002-05-26",
@@ -6238,6 +6268,9 @@
         "deckid":"2k6sydneyqualifier",
         "twdDate":"2006-08-27",
         "player":"Peter Rophail"
+    },
+    "201727":{
+        "deckid":null
     },
     "201116":{
         "deckid":"2k6wonWednesday",
@@ -7671,6 +7704,9 @@
         "twdDate":"2009-03-29",
         "player":"Matt Guinn"
     },
+    "201728":{
+        "deckid":null
+    },
     "201380":{
         "deckid":"memorial",
         "twdDate":"1999-08-15",
@@ -8496,6 +8532,9 @@
         "twdDate":"2009-02-06",
         "player":"Ben Peal"
     },
+    "102286":{
+        "deckid":null
+    },
     "100026":{
         "deckid":null
     },
@@ -9154,6 +9193,9 @@
         "player":"Rodolphe Danac"
     },
     "100161":{
+        "deckid":null
+    },
+    "102287":{
         "deckid":null
     },
     "100162":{
@@ -10377,6 +10419,9 @@
         "deckid":"steveholmer",
         "twdDate":"1997-11-01",
         "player":"Steve Holmer"
+    },
+    "102288":{
+        "deckid":null
     },
     "100415":{
         "deckid":"2k4sachamp",
@@ -11768,6 +11813,9 @@
         "twdDate":"2009-08-15",
         "player":"Rudolf Edlmayer"
     },
+    "102289":{
+        "deckid":null
+    },
     "100698":{
         "deckid":"steveholmer",
         "twdDate":"1997-11-01",
@@ -12339,6 +12387,9 @@
         "deckid":"2k2napervilleapr",
         "twdDate":"2002-05-11",
         "player":"Paul Foisy"
+    },
+    "102290":{
+        "deckid":null
     },
     "100812":{
         "deckid":"2k3originsfriday",
@@ -15217,6 +15268,9 @@
         "twdDate":"2008-06-28",
         "player":"Antonio Cobo Cuenca"
     },
+    "102291":{
+        "deckid":null
+    },
     "101402":{
         "deckid":"will-lee",
         "twdDate":"1999-04-01",
@@ -16666,6 +16720,9 @@
         "twdDate":"1998-05-01",
         "player":"Robert Goudie"
     },
+    "102292":{
+        "deckid":null
+    },
     "101699":{
         "deckid":null
     },
@@ -16898,6 +16955,9 @@
         "twdDate":"1998-06-27",
         "player":"Barney Baker"
     },
+    "102294":{
+        "deckid":null
+    },
     "101744":{
         "deckid":"2k2lastaustralia",
         "twdDate":"2002-12-07",
@@ -17047,6 +17107,9 @@
         "deckid":"2k2orccon1",
         "twdDate":"2002-02-16",
         "player":"Niki Stewart"
+    },
+    "102295":{
+        "deckid":null
     },
     "101775":{
         "deckid":"barney",
@@ -17372,6 +17435,9 @@
         "deckid":"crusade_atlanta_2k1",
         "twdDate":"2001-11-17",
         "player":"David Anderson-D\u00e1vila"
+    },
+    "102296":{
+        "deckid":null
     },
     "101844":{
         "deckid":"kuster2k1",

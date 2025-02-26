@@ -19,11 +19,6 @@
         "name": "Path of Power",
         "clan": "Power and the Inner Voice"
       },
-      "PH": {
-        "name": "Hecata",
-        "clan": "Hecata",
-        "playtest_old": true
-      },
       "NR": {
         "name": "New Blood: Ravnos",
         "clan": "Ravnos",
@@ -58,6 +53,16 @@
   "POD": {
     "name": "Print-on-Demand (DTC)",
     "date": ""
+  },
+  "V5H": {
+    "name": "Fifth Edition (Hecata)",
+    "date": "2025-02-28",
+    "precons": {
+      "PH": {
+        "name": "Hecata",
+        "clan": "Hecata"
+      }
+    }
   },
   "V5L": {
     "name": "Fifth Edition (Lasombra)",

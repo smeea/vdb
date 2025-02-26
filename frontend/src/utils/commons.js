@@ -98,8 +98,8 @@ export const getLegality = (card) => {
   if (sets.length == 0) return PLAYTEST;
 
   const setDate = dayjs(setsAndPrecons[sets[0]][DATE]);
-  if (dayjs().diff(setDate, 'day') > 30) return false;
-  const legalDate = setDate.add(30, 'day').format('YYYY-MM-DD');
+  if (dayjs().diff(setDate, 'day') >= 0) return false;
+  const legalDate = setsAndPrecons[sets[0]][DATE];
   return legalDate;
 };
 

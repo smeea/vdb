@@ -27,7 +27,7 @@ with app.app_context():
     # REMOVE OLD PLAYTEST CARDS FROM DECKS
     # REPLACE CARDID FOR PLAYTEST CARDS AFTER RELEASE
     changes = {
-        # 220005: 201708, #Aintz
+        220005: 201708,  # Aintz
     }
     for deck in Deck.query.all():
         new_cards = {}
