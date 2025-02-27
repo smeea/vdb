@@ -1,8 +1,7 @@
 {
-  "version": "2025-02-24",
+  "version": "2025-02-28",
   "changes": [
-    "Deprecation of older browsers (older than Chrome 117, Firefox 119, Safari 17.4)",
-    "Update TWDA",
-    "Update Rulings"
+    "Update with Hecata",
+    "Fix limited format indicator (was always 'on' for crypt/library)"
   ]
 }

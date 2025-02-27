@@ -269,9 +269,9 @@ const missingTitleCrypt = (filter, card) => {
 
 const missingTitleLibrary = (filter, card) => {
   const requirements = card[REQUIREMENT].toLowerCase();
-  const hasNoTitleRequirement = !requiredTitleList.some((title) => requirements.includes(title));
+  const hasNoRequirement = !requiredTitleList.some((title) => requirements.includes(title));
 
-  return missingRequirementsCheck(filter[LOGIC], filter.value, requirements, hasNoTitleRequirement);
+  return missingRequirementsCheck(filter[LOGIC], filter.value, requirements, hasNoRequirement);
 };
 
 const requiredTitleList = [
@@ -398,9 +398,9 @@ const missingSectCrypt = (filter, card) => {
 
 const missingSectLibrary = (filter, card) => {
   const requirements = card[REQUIREMENT].toLowerCase();
-  const hasNoTitleRequirement = !sects.some((sect) => requirements.includes(sect.toLowerCase()));
+  const hasNoRequirement = !sects.some((sect) => requirements.includes(sect.toLowerCase()));
 
-  return missingRequirementsCheck(filter[LOGIC], filter.value, requirements, hasNoTitleRequirement);
+  return missingRequirementsCheck(filter[LOGIC], filter.value, requirements, hasNoRequirement);
 };
 
 const missingGroup = (filter, card) => {

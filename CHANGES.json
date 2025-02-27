@@ -1,5 +1,12 @@
 [
   {
+    "version": "2025-02-28",
+    "changes": [
+      "Update with Hecata",
+      "Fix limited format indicator (was always 'on' for crypt/library)"
+    ]
+  },
+  {
     "version": "2025-02-24",
     "changes": [
       "Deprecation of older browsers (older than Chrome 117, Firefox 119, Safari 17.4)",
