@@ -35,7 +35,7 @@ const SearchAdditionalFormsText = ({ value, onChange, onChangeOptions, searchFor
             <div className="flex">
               <div className="flex w-1/5 gap-1">
                 <SearchFormButtonLogicToggle
-                  name={LOGIC}
+                  name={TEXT}
                   value={v[LOGIC]}
                   i={i}
                   searchForm={searchForm}
