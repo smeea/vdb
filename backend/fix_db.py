@@ -27,8 +27,27 @@ with app.app_context():
     # REMOVE OLD PLAYTEST CARDS FROM DECKS
     # REPLACE CARDID FOR PLAYTEST CARDS AFTER RELEASE
     changes = {
-        220005: 201708,  # Aintz
+        220013: 201727,  # Peter
+        220014: 201717,  # Alek
+        220015: 201719,  # Hiro
+        220016: 201720,  # Holi
+        220017: 201718,  # Gebe
+        220018: 201723,  # Moni
+        220019: 201721,  # Lene
+        220020: 201724,  # Mora
+        220021: 201728,  # Toma
+        220022: 201725,  # Moth
+        220023: 201726,  # Eat
+        220024: 201722,  # Marc
+        120001: 102287,  # Biot
+        120002: 102289,  # Fami
+        120003: 102286,  # Aggr
+        120004: 102292,  # Scre
+        120005: 102288,  # Cons
+        120006: 102290,  # Gate
+        120007: 102291,  # Pito
     }
+
     for deck in Deck.query.all():
         new_cards = {}
         new_used_cards = {}
