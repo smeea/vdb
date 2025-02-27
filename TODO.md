@@ -1,5 +1,4 @@
 # FIX
-- Limited decks indicator
 - Second filter
 
 # FIX ON HOLD

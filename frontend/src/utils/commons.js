@@ -73,7 +73,7 @@ export const getRestrictions = (deck, limitedCards) => {
     if (
       limitedCards &&
       ![...Object.keys(limitedCards[CRYPT]), ...Object.keys(limitedCards[LIBRARY])].includes(
-        card.c[ID],
+        card.c[ID].toString(),
       )
     ) {
       hasLimited = true;
