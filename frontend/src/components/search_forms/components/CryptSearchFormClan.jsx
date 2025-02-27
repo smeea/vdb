@@ -12,22 +12,20 @@ import { ANY, CLAN, LOGIC } from '@/constants';
 import { useApp } from '@/context';
 
 const CryptSearchFormClan = ({ value, searchForm, onChange }) => {
-  const { playtestMode, isMobile } = useApp();
+  const { isMobile } = useApp();
   const name = CLAN;
-  const options = ['ANY', ...vampireClansList, ...imbuedClansList]
-    .filter((clan) => playtestMode || clan !== 'Hecata')
-    .map((i) => ({
-      value: i.toLowerCase(),
-      name: name,
-      label: (
-        <div className="flex items-center">
-          <div className="flex min-w-[40px] justify-center">
-            {i.toLowerCase() !== ANY && <ResultClanImage value={i} />}
-          </div>
-          {i}
+  const options = ['ANY', ...vampireClansList, ...imbuedClansList].map((i) => ({
+    value: i.toLowerCase(),
+    name: name,
+    label: (
+      <div className="flex items-center">
+        <div className="flex min-w-[40px] justify-center">
+          {i.toLowerCase() !== ANY && <ResultClanImage value={i} />}
         </div>
-      ),
-    }));
+        {i}
+      </div>
+    ),
+  }));
 
   return (
     <>

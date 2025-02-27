@@ -1,5 +1,5 @@
 {
-  "version": "2025-02-28",
+  "version": "2025-02-28/1",
   "changes": [
     "Update with Hecata",
     "Fix limited format indicator (was always 'on' for crypt/library)"

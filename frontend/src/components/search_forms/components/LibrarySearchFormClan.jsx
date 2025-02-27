@@ -12,7 +12,7 @@ import { ANY, CLAN, LOGIC, NOT_REQUIRED } from '@/constants';
 import { useApp } from '@/context';
 
 const LibrarySearchFormClan = ({ value, searchForm, onChange }) => {
-  const { playtestMode, isMobile } = useApp();
+  const { isMobile } = useApp();
   const name = CLAN;
 
   const options = [
@@ -20,20 +20,18 @@ const LibrarySearchFormClan = ({ value, searchForm, onChange }) => {
     ['Not Required', NOT_REQUIRED],
     ...vampireClansList.map((c) => [c, c.toLowerCase()]),
     ...imbuedClansList.map((c) => [c, c.toLowerCase()]),
-  ]
-    .filter((clan) => playtestMode || clan !== 'Hecata')
-    .map((i) => ({
-      value: i[1],
-      name: name,
-      label: (
-        <div className="flex items-center">
-          <div className="flex w-[40px] justify-center">
-            {![ANY, NOT_REQUIRED].includes(i[1]) && <ResultLibraryClan value={i[1]} />}
-          </div>
-          {i[0]}
+  ].map((i) => ({
+    value: i[1],
+    name: name,
+    label: (
+      <div className="flex items-center">
+        <div className="flex w-[40px] justify-center">
+          {![ANY, NOT_REQUIRED].includes(i[1]) && <ResultLibraryClan value={i[1]} />}
         </div>
-      ),
-    }));
+        {i[0]}
+      </div>
+    ),
+  }));
 
   return (
     <>
