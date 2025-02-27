@@ -1,4 +1,7 @@
 # FIX
+- Limited decks indicator
+- Second filter
+- Add Hecata decks database cardids update
 
 # FIX ON HOLD
 - Deck-in-Url trimmed at first card - can't reproduce in dev environment
