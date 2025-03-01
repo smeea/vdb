@@ -1,8 +1,8 @@
 #!/bin/sh
 # Download resources for cards/twda updates
-wget https://www.vekn.net/images/stories/downloads/vtescsv_utf8.zip -O vtescsv_utf8.zip
-unzip -q -o vtescsv_utf8.zip
-rm vtescsv_utf8.zip vtessets.csv
+wget https://raw.githubusercontent.com/GiottoVerducci/vtescsv/refs/heads/main/vtescrypt.csv -O vtescrypt.csv
+wget https://raw.githubusercontent.com/GiottoVerducci/vtescsv/refs/heads/main/vteslib.csv -O vteslib.csv
+wget https://raw.githubusercontent.com/GiottoVerducci/vtescsv/refs/heads/main/vteslibmeta.csv -O vteslibmeta.csv
 
 wget https://www.vekn.net/images/stories/downloads/french/vtescsv_utf8.fr-FR.zip -O vtescsv_utf8.fr-FR.zip
 wget https://www.vekn.net/images/stories/downloads/spanish/vtescsv_utf8.es-ES.zip -O vtescsv_utf8.es-ES.zip
