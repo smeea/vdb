@@ -1,5 +1,5 @@
 # FIX
-- Bottom padding with virtual keyboard in cards
+- Hidden selector with virtual keyboard in Cards on Firefox/Android
 
 # FIX ON HOLD
 - Deck-in-Url trimmed at first card - can't reproduce in dev environment
@@ -13,3 +13,4 @@
 - Draft Cube support -> when draft cube info is available
 
 # TECH IMPROVEMENTS
+- Use vite-pwa/assets-generator
