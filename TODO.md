@@ -13,4 +13,3 @@
 - Draft Cube support -> when draft cube info is available
 
 # TECH IMPROVEMENTS
-- Use vite-pwa/assets-generator

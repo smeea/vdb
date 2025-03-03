@@ -8,7 +8,8 @@
     "preview": "vite preview",
     "stylelint": "npx stylelint \"src/assets/css/style.css\"",
     "eslint": "npx eslint \"src/**/*.{js,jsx}\"",
-    "prettier": "npx prettier --write ."
+    "prettier": "npx prettier --write .",
+    "generate-pwa-assets": "pwa-assets-generator"
   },
   "author": "Vadim Matveev",
   "license": "MIT",
@@ -59,5 +60,8 @@
     "vite-plugin-pwa": "^0.21.1",
     "vite-plugin-svgr": "^4.3.0",
     "xlsx": "^0.18.5"
+  },
+  "dependencies": {
+    "@vite-pwa/assets-generator": "^0.2.6"
   }
 }
