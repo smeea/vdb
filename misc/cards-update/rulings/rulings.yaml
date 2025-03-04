@@ -2963,8 +2963,9 @@
 101761|Shattering Crescendo:
   - '[mel], [MEL] Requires to have the second in hand to play it. [LSJ 20100208-2] [LSJ 20100823]'
 101765|Shepherd's Innocence:
-  - '[ANI] Is directed at all Methuselah controlling a card that require Animalism [ani]. [LSJ 20080809-1] [RTR 20081119]'
-  - '[ANI] Retainers and Equipments you control can also be rearranged. [LSJ 20080803-2] [LSJ 19981102]'
+  - '[ANI] Is directed at all Methuselah controlling a card that requires Animalism [ani]. [LSJ 20080809-1] [RTR 20081119]'
+  - '[ANI] Retainers and Equipments you control can also be moved between your vampires. Those on an ally must move to a vampire
+    you control (eg. {Raven Spy} on a {Tunnel Runner}). [LSJ 20080803-2] [LSJ 19981102]'
 101767|Shilmulo Tarot:
   - There is no limit to the number of cards it can store. [PIB 20110712-2]
   - If there is another copy in play, the cards are put on it before it enters contest. [ANK 20221028] [LSJ 20090428-1]
@@ -3131,20 +3132,14 @@
   - Does not restrict the opposing minion if no block occurred. [TOM 19951208-2]
   - Does not restrict the ability of retainers to use equipment. [RTR 19960112]
 101857|Spying Mission:
-  - Is played if you know the bleed is successful, after you would normally play reactions and action modifiers. [TOM 19960226-2]
-  - No reaction can be played afterwards to make the bleed unsuccessful and "beat" the Spying Mission. [TOM 19960303] [TOM
-    19960226-2]
-  - Once in play, it must be burned on the next successful bleed against the same Methuselah, it cannot be used to increase
-    an unsuccessful bleed of zero. [TOM 19950620]
-  - The bleed it is played on is considered unsuccessful. Previous Spying Missions won't trigger during that action. [RTR
-    19960530]
-  - '{Archon Investigation} cannot be played after a Spying Mission is burned for +2 bleed, since the bleed is about to resolve
-    at that point. [LSJ 19980105]'
-  - '{Mask of a Thousand Faces} cannot be played after playing a superior Spying Mission because Spying Mission is played
-    "when the action would resolve". [LSJ 19980105]'
-  - Is played when a bleed would be successful, before resolution. [LSJ 20110502]
-  - If it is cancelled (eg. {Direct Intervention}), it is too late for the target to play reactions. If the cost of the cancellation
-    ousts a player, handle the oust before resolving the bleed. [LSJ 20050607] [LSJ 20050608]
+  - '[OBF] Cards and effects (e.g. {Archon Investigation}) cannot be played or used after one or more Spying Missions are
+    burned to increase a bleed, until after action resolution. [LSJ 19980105]'
+  - '[OBF] Is played when a bleed is about to be successful, just before its resolution. Other modifiers and reactions cannot
+    be played until after action resolution. [LSJ 19980105] [LSJ 20110502]'
+  - '[OBF] If it is cancelled (eg. {Direct Intervention}), it is too late for the target to play reactions. If the cost of
+    the cancellation ousts a player, handle the oust before resolving the bleed. [LSJ 20050607] [LSJ 20050608]'
+  - '[OBF] A minion can have multiple spying missions against the same Methuselah. They all burn at once as soon as a bleed
+    against that methuselah is about to be successful, increasing the bleed by 2 each. [ANK 20200609]'
 101858|Squirrel Balance:
   - '[cel] Cards and effects that are played "as the action is announced" must be played before playing "regular" action modifier
     or reaction cards. [ANK 20190425]'
@@ -3396,7 +3391,7 @@
 '101973|Third Tradition: Progeny':
   - The decision to move blood on the Progeny or not is taken upon resolution. [PIB 20150418]
 101974|Thirst:
-  - The hunt needs to be successful for a vampire to avoid the effect. [LSJ 20050727]
+  - The hunt need not be successful for a vampire to avoid the effect. [LSJ 20050727]
 101976|Thoughts Betrayed:
   - '[dom] Damage is environmental. [RTR 19970630] [ANK 20200422]'
   - '[dom] Damage is inflicted even against a dodge. A "strike: combat ends" ends combat before damage is applied, as will
@@ -4088,7 +4083,8 @@
 200606|Horrock:
   - Card with disciplines choices (eg. [pro]/[obf]) are considered of the discipline they are played as. [PIB 20150924-2]
 200607|Howler:
-  - She cannot attempt an action to equip a weapon nor strike to steal a weapon. [LSJ 20050315] [LSJ 20010210]
+  - She can have and equip weapons, but not use them. [LSJ 20100321]
+  - A {Ghoul Retainer} on her can use a weapon she is holding [LSJ 20040607]
 200608|Hrothulf:
   - Only burns the Edge if the action is successful. [LSJ 20030519]
 200612|Hukros:

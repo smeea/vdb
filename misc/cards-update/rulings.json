@@ -14938,14 +14938,14 @@
     ],
     "101765":[
         {
-            "text":"[ANI] Is directed at all Methuselah controlling a card that require Animalism [ani].",
+            "text":"[ANI] Is directed at all Methuselah controlling a card that requires Animalism [ani].",
             "refs":{
                 "LSJ 20080809-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/1jW6GXrIRSU/m/7ywPFR39rb4J",
                 "RTR 20081119":"https://www.vekn.net/card-lists/140-keepers-of-tradition"
             }
         },
         {
-            "text":"[ANI] Retainers and Equipments you control can also be rearranged.",
+            "text":"[ANI] Retainers and Equipments you control can also be moved between your vampires. Those on an ally must move to a vampire you control (eg. {Raven Spy}\u00a0on a {Tunnel Runner}).",
             "refs":{
                 "LSJ 20080803-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/OknxGrvlaNk/m/khteZ5WaNE4J",
                 "LSJ 19981102":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Bz_7HWIe-6Y/m/fmPCchmOkCUJ"
@@ -15705,53 +15705,29 @@
     ],
     "101857":[
         {
-            "text":"Is played if you know the bleed is successful, after you would normally play reactions and action modifiers.",
-            "refs":{
-                "TOM 19960226-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/SEU6ztVpR94/m/Qfct6YcvnQwJ"
-            }
-        },
-        {
-            "text":"No reaction can be played afterwards to make the bleed unsuccessful and \"beat\" the Spying Mission.",
-            "refs":{
-                "TOM 19960303":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/SEU6ztVpR94/m/F8NmjGw8ml8J",
-                "TOM 19960226-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/SEU6ztVpR94/m/Qfct6YcvnQwJ"
-            }
-        },
-        {
-            "text":"Once in play, it must be burned on the next successful bleed against the same Methuselah, it cannot be used to increase an unsuccessful bleed of zero.",
-            "refs":{
-                "TOM 19950620":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/XfsJaaWK9as/m/wgtWif3sEsAJ"
-            }
-        },
-        {
-            "text":"The bleed it is played on is considered unsuccessful. Previous Spying Missions won't trigger during that action.",
-            "refs":{
-                "RTR 19960530":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/DpvF2Peet9o/m/dJwiudauzEwJ"
-            }
-        },
-        {
-            "text":"{Archon Investigation} cannot be played after a Spying Mission is burned for +2 bleed, since the bleed is about to resolve at that point.",
+            "text":"[OBF] Cards and effects (e.g. {Archon Investigation}) cannot be played or used after one or more Spying Missions are burned to increase a bleed, until after action resolution.",
             "refs":{
                 "LSJ 19980105":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PzVC-AeFuUQ/m/ncbtQyYNpFQJ"
             }
         },
         {
-            "text":"{Mask of a Thousand Faces} cannot be played after playing a superior Spying Mission because Spying Mission is played \"when the action would resolve\".",
+            "text":"[OBF] Is played when a bleed is about to be successful, just before its resolution. Other modifiers and reactions cannot be played until after action resolution.",
             "refs":{
-                "LSJ 19980105":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PzVC-AeFuUQ/m/ncbtQyYNpFQJ"
-            }
-        },
-        {
-            "text":"Is played when a bleed would be successful, before resolution.",
-            "refs":{
+                "LSJ 19980105":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PzVC-AeFuUQ/m/ncbtQyYNpFQJ",
                 "LSJ 20110502":"https://boardgamegeek.com/thread/648695/article/6701545"
             }
         },
         {
-            "text":"If it is cancelled (eg. {Direct Intervention}), it is too late for the target to play reactions. If the cost of the cancellation ousts a player, handle the oust before resolving the bleed.",
+            "text":"[OBF] If it is cancelled (eg. {Direct Intervention}), it is too late for the target to play reactions. If the cost of the cancellation ousts a player, handle the oust before resolving the bleed.",
             "refs":{
                 "LSJ 20050607":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/WLv9R8wA0Ow/m/gQyOMb3fEKQJ",
                 "LSJ 20050608":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/WLv9R8wA0Ow/m/dyAPpxSMoSYJ"
+            }
+        },
+        {
+            "text":"[OBF] A minion can have multiple spying missions against the same Methuselah. They all burn at once as soon as a bleed against that methuselah is about to be successful, increasing the bleed by 2 each.",
+            "refs":{
+                "ANK 20200609":"https://www.vekn.net/forum-es/news-and-announcements/78666-spying-mission?start=6#100052"
             }
         }
     ],
@@ -17174,7 +17150,7 @@
     ],
     "101974":[
         {
-            "text":"The hunt needs to be successful for a vampire to avoid the effect.",
+            "text":"The hunt need not be successful for a vampire to avoid the effect.",
             "refs":{
                 "LSJ 20050727":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/QfVIg4fJP38/m/wMJU5oik9G8J"
             }
@@ -20595,10 +20571,15 @@
     ],
     "200607":[
         {
-            "text":"She cannot attempt an action to equip a weapon nor strike to steal a weapon.",
+            "text":"She can have and equip weapons, but not use them.",
             "refs":{
-                "LSJ 20050315":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/COcJX2hHP-E/m/YLUW8FaGP0kJ",
-                "LSJ 20010210":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NtMa5w_NVOE/m/jtpqcS6CwpIJ"
+                "LSJ 20100321":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/5_OT62x3KcE/m/qJp_MKMvLfgJ"
+            }
+        },
+        {
+            "text":"A {Ghoul Retainer} on her can use a weapon she is holding",
+            "refs":{
+                "LSJ 20040607":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/w572O7_SofA/m/KbD3sGC4GLoJ"
             }
         }
     ],
