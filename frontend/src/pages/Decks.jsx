@@ -245,21 +245,18 @@ const Decks = () => {
           <LoginBlock>Login to create your decks</LoginBlock>
         </div>
       )}
-      {username && decks && Object.keys(decks).length === 0 && !deck && (
-        <div className="flex min-h-[70vh] place-items-center max-sm:px-2">
-          <div className="flex flex-col items-center justify-center gap-6">
-            <div className="flex flex-col gap-4 text-center text-lg">
-              <div>You do not have any decks in your collection yet</div>
-              <div>
-                Start by creating new one, import from Lackey / Amaranth / Text or browse official
-                preconstructed decks
-              </div>
+      {username && ((decks && Object.keys(decks).length === 0) || !decks) && !deck && (
+        <div className="flex min-h-[70vh] place-items-center justify-center max-sm:px-2">
+          <div className="flex flex-col items-center justify-center gap-6 sm:basis-1/2">
+            <div className="flex flex-col gap-4 text-center text-lg text-balance">
+              You do not have any decks in your collection yet Start by creating new one, import
+              from Lackey / Amaranth / Text or browse official preconstructed decks
             </div>
             <DeckImport
-              isOnlyNew={true}
               setShowImportAmaranth={setShowImportAmaranth}
               setShowImportText={setShowImportText}
               setBadImportCards={setBadImportCards}
+              isOnlyNew
             />
           </div>
         </div>

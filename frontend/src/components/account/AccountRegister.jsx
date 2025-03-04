@@ -6,8 +6,8 @@ import {
   AccountUsernameForm,
   ErrorOverlay,
 } from '@/components';
-import { EMAIL, PASSWORD, USERNAME } from '@/constants';
-import { useApp } from '@/context';
+import { DECKS, EMAIL, PASSWORD, USERNAME } from '@/constants';
+import { deckStore, useApp } from '@/context';
 import { userServices } from '@/services';
 
 const AccountRegister = () => {
@@ -33,6 +33,7 @@ const AccountRegister = () => {
         setUsername(formData.get(USERNAME));
         setPublicName(formData.get(USERNAME));
         setEmail(formData.get(EMAIL));
+        deckStore[DECKS] = {};
     }
 
     return {
