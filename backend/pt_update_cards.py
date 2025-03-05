@@ -1,11 +1,8 @@
 from api import app, db
-from models import Deck, User
+from models import Deck
 import json
-import copy
 import os
 from dotenv import load_dotenv
-
-# TEMPLATE FOR FUTURE FIXES DB FIXES
 
 with open("../frontend/public/data/cardbase_crypt.json", "r") as crypt_file, open(
     "../frontend/public/data/cardbase_lib.json", "r"
@@ -54,15 +51,5 @@ with app.app_context():
 
         deck.used_in_inventory = new_used_cards
         deck.cards = new_cards
-
-    # CLEAR PLAYTEST REPORTS
-    for u in User.query.filter_by(playtester=True).all():
-        u.playtest_report = {}
-        profile = copy.deepcopy(u.playtest_profile)
-        if "games" in profile:
-            del profile["games"]
-        if "general" in profile:
-            del profile["general"]
-        u.playtest_profile = profile
 
     db.session.commit()
