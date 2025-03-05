@@ -1,7 +1,8 @@
 {
-  "version": "2025-02-28/1",
+  "version": "2025-03-06",
   "changes": [
-    "Update with Hecata",
-    "Fix limited format indicator (was always 'on' for crypt/library)"
+    "Update TWDA",
+    "Update Rulings",
+    "Small other fixes and improvements"
   ]
 }
