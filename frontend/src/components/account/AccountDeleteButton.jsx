@@ -5,6 +5,8 @@ import { AccountDeleteConfirmation, ButtonIconed } from '@/components';
 const AccountDeleteButton = () => {
   const [showConfirmation, setShowConfirmation] = useState(false);
 
+  const handleClose = () => setShowConfirmation(false);
+
   return (
     <>
       <ButtonIconed
@@ -15,7 +17,7 @@ const AccountDeleteButton = () => {
         icon={<TrashFill />}
         text="Delete account"
       />
-      {showConfirmation && <AccountDeleteConfirmation setShow={setShowConfirmation} />}
+      {showConfirmation && <AccountDeleteConfirmation handleClose={handleClose} />}
     </>
   );
 };
