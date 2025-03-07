@@ -1,6 +1,5 @@
 import { Suspense, lazy } from 'react';
 import { Navigate, Route, createBrowserRouter, createRoutesFromElements } from 'react-router';
-import { RouterProvider } from 'react-router/dom';
 import About from './pages/About.jsx';
 import Account from './pages/Account.jsx';
 import Cards from './pages/Cards.jsx';
@@ -208,8 +207,4 @@ const router = createBrowserRouter(
   ),
 );
 
-const App = () => {
-  return <RouterProvider router={router} />;
-};
-
-export default App;
+export default router;
