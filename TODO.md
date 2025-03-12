@@ -1,5 +1,4 @@
 # FIX
-- Hidden selector with virtual keyboard in Cards on Firefox/Android
 
 # FIX ON HOLD
 - Deck-in-Url trimmed at first card - can't reproduce in dev environment
