@@ -65,7 +65,9 @@ const PlaytestScoresChart = ({ value, maxSameScore }) => {
       <XAxis dataKey={NAME}>
         <Label value="Score" offset={0} position="bottom" />
       </XAxis>
-      <YAxis label="#" type="number" domain={[0, maxSameScore]} allowDataOverflow />
+      <YAxis width={45} type="number" domain={[0, maxSameScore]} allowDataOverflow>
+        <Label value="#" offset={0} position="insideLeft" />
+      </YAxis>
       <Tooltip
         content={<ChartTooltip />}
         contentStyle={{
