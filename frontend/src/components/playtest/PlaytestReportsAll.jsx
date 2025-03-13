@@ -159,7 +159,7 @@ const PlaytestReportsAll = () => {
     <div className="playtest-reports-container mx-auto">
       <div className="flex flex-col gap-3 max-sm:p-2 sm:gap-4">
         <div className="flex justify-between gap-1 sm:gap-4 print:hidden">
-          <div className="flex justify-between gap-1 max-sm:w-full max-sm:flex-col sm:gap-4">
+          <div className="flex gap-1 max-sm:w-full max-sm:flex-col">
             <ButtonIconed
               className="w-full whitespace-nowrap"
               onClick={() => exportReports(CARDS)}
@@ -196,19 +196,21 @@ const PlaytestReportsAll = () => {
               icon={<Printer width="18" height="18" viewBox="0 0 18 16" />}
             />
           </div>
-          <div className="flex justify-between gap-1 max-sm:flex-col sm:gap-4">
-            <ButtonIconed
-              onClick={() => navigate('/playtest')}
-              title="Back"
-              icon={<Arrow90DegLeft />}
-              text="Back"
-            />
-            <SortButton
-              className="h-full min-w-[80px]"
-              sortMethods={sortMethods}
-              sortMethod={sortMethod}
-              setSortMethod={setSortMethod}
-            />
+          <div className="flex gap-1 max-sm:flex-col max-sm:justify-between sm:gap-3">
+            <div className="flex justify-between gap-1 max-sm:flex-col">
+              <ButtonIconed
+                onClick={() => navigate('/playtest')}
+                title="Back"
+                icon={<Arrow90DegLeft />}
+                text="Back"
+              />
+              <SortButton
+                className="h-full min-w-[80px]"
+                sortMethods={sortMethods}
+                sortMethod={sortMethod}
+                setSortMethod={setSortMethod}
+              />
+            </div>
             <div className="flex justify-end">
               <Toggle
                 isOn={hidePlaytestNames}
