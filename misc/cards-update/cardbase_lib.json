@@ -79551,6 +79551,11 @@
         "set":{
             "V5H":{
                 "PH":"3"
+            },
+            "playtest":{
+                "SDS":4,
+                "NH":3,
+                "NL":2
             }
         },
         "text":"A vampire can play only one Shadow Sentinel between their unlock phases.\n[obl] Only usable by a locked vampire. This vampire wakes.\n[OBL] Usable by a locked vampire. Choose a locked wraith or zombie ally you control. The chosen ally wakes.",
@@ -80875,6 +80880,9 @@
         "set":{
             "V5H":{
                 "PH":"6"
+            },
+            "playtest":{
+                "SDS":3
             }
         },
         "text":"[obl] (D) Bleed with +1 bleed. If the bleed is successful (for 1 or more), the target Methuselah discards 2 cards of their choice.\n[OBL] (D) Remove 7 cards in your prey's ash heap from the game to burn 3 of their pool.",

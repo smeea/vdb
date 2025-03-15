@@ -24,6 +24,7 @@ with app.app_context():
     # REMOVE OLD PLAYTEST CARDS FROM DECKS
     # REPLACE CARDID FOR PLAYTEST CARDS AFTER RELEASE
     changes = {
+        140021: 102294,  # Sentinel
         140109: 102295,  # Shroud
         140025: 102296,  # Spectral
     }
