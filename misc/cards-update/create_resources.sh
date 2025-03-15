@@ -1,11 +1,11 @@
 #!/bin/bash
-source ../../backend/.env
+if [ -f ../../backend/.env ]; then source ../../backend/.env; fi
 
 # Check playtest files
 mkdir -p playtest/images
-[ ! -f playtest/vtescrypt_playtest.csv ] && touch playtest/vtescrypt_playtest.csv
-[ ! -f playtest/vteslib_playtest.csv ] && touch playtest/vteslib_playtest.csv
-[ ! -f playtest/precons.json ] && echo '{}' > playtest/precons.json
+if [ ! -f playtest/vtescrypt_playtest.csv ]; then touch playtest/vtescrypt_playtest.csv; fi
+if [ ! -f playtest/vteslib_playtest.csv ]; then touch playtest/vteslib_playtest.csv; fi
+if [ ! -f playtest/precons.json ]; then echo '{}' > playtest/precons.json; fi
 
 # Update Card List
 uv run generate_rulings.py
@@ -22,7 +22,7 @@ mv precon_decks.min.json ../../frontend/public/data/precon_decks.json
 mv playtest/precon_decks_playtest.min.json ../../frontend/public/data/precon_decks_playtest_$PLAYTEST_KEY.json
 mv artistsCrypt.min.json ../../frontend/src/assets/data/artistsCrypt.json
 mv artistsLib.min.json ../../frontend/src/assets/data/artistsLib.json
-cp playtest/images/* ../../frontend/public/images/cards/playtest
+if [ ! -z "$( ls -A playtest/images )" ]; then cp playtest/images/* ../../frontend/public/images/cards/playtest; fi
 
 # Update Localizations
 uv run generate_localizations.py

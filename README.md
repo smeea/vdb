@@ -87,14 +87,11 @@ To update with new Playtest add resources and edit the following files:
 Download source files from upstream and create new resources (it will copy files where necessary):
 ```
     cd misc/cards-update
-    python -m venv venv                                  # ONLY ON FIRST RUN
-    source venv/bin/activate
-    python -m pip install -r requirements.txt            # ONLY ON FIRST RUN
     ./download_resources.sh
     ./create_resources.sh
-    python download_card_images.py                       # ONLY ENGLISH
-    ./compress_legacy_images.sh                          # ONLY FOR NEW IMAGES IN misc/legacy-images folder
-    ./convert_images_to_webp.sh
+    uv run download_card_images.py                       # ONLY ENGLISH
+    ./compress_legacy_images.sh                          # ONLY IF NEW IMAGES IN misc/legacy-images folder
+    ./convert_images_to_webp.sh                          # ONLY IF NEW CARD IMAGES ARE AVAILABLE
 ```
 Other than English languages and card scans from different sets only updated manually in `~/frontend/dist/images/cards/`.
 
