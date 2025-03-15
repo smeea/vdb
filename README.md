@@ -19,7 +19,7 @@ Serve the UI for the modern browsers using:
 Store user accounts (decks/inventory), generate proxy cards, using:
 
 ```
-   Python (v3.12+)
+   Python (v3.13+)
    Flask (v3)
 ```
  
@@ -35,16 +35,16 @@ On Windows and MacOS commands may be different (I recommend using WSL on Windows
     cd vdb
 ```
 
+First step is to install `uv` (https://docs.astral.sh/uv/) for backend dependencies, and `npm` (https://docs.npmjs.com/) for frontend.
+
 Start backend:
 ```
     cd backend
-    python -m venv venv                                  # ONLY ON FIRST RUN
-    source venv/bin/activate
-    python -m pip install -r requirements.txt            # ONLY ON FIRST RUN
-    flask db init                                        # ONLY ON FIRST RUN
-    flask db migrate                                     # ONLY ON FIRST RUN
-    flask db upgrade                                     # ONLY ON FIRST RUN
-    flask --debug run
+    uv sync                                              # ONLY ON FIRST RUN
+    uv run flask db init                                 # ONLY ON FIRST RUN
+    uv run flask db migrate                              # ONLY ON FIRST RUN
+    uv run flask db upgrade                              # ONLY ON FIRST RUN
+    uv run flask --debug run
 ```
 
 Start frontend:
@@ -102,9 +102,8 @@ Other than English languages and card scans from different sets only updated man
 ### PASSWORD CHANGE
 ```
     cd backend
-    source venv/bin/activate
-    python change_password $ACCOUNT_NAME x               # RANDOM PASWORD
-    python change_password $ACCOUNT_NAME $PASSWORD       # PASSWORD OF YOUR CHOICE
+    uv run change_password $ACCOUNT_NAME x               # RANDOM PASWORD
+    uv run change_password $ACCOUNT_NAME $PASSWORD       # PASSWORD OF YOUR CHOICE
 ```
 
 ### PLAYTESTING ACCESS
@@ -112,8 +111,7 @@ Playtesting of new cards enabled by Playtest Admins from web interface.
 To toggle Admin status for account:
 ```
     cd backend
-    source venv/bin/activate
-    python change_playtest_admin.py $ACCOUNT_NAME
+    uv run change_playtest_admin.py $ACCOUNT_NAME
 ```
 
 ## SUPPORT / HELP

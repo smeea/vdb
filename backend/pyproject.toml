@@ -1,2 +1,17 @@
+[project]
+name = "vdb-backend"
+version = "2025.3.15"
+requires-python = ">=3.13"
+dependencies = [
+    "dotenv>=0.9.9",
+    "flask>=3.1.0",
+    "flask-cors>=5.0.1",
+    "flask-login>=0.6.3",
+    "flask-migrate>=4.1.0",
+    "flask-sqlalchemy>=3.1.1",
+    "nanoid>=2.0.0",
+    "requests>=2.32.3",
+]
+
 [tool.black]
 line-length = 100
