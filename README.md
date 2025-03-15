@@ -40,7 +40,6 @@ First step is to install `uv` (https://docs.astral.sh/uv/) for backend dependenc
 Start backend:
 ```
     cd backend
-    uv sync                                              # ONLY ON FIRST RUN
     uv run flask db init                                 # ONLY ON FIRST RUN
     uv run flask db migrate                              # ONLY ON FIRST RUN
     uv run flask db upgrade                              # ONLY ON FIRST RUN

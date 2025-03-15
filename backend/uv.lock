@@ -325,7 +325,7 @@ wheels = [
 
 [[package]]
 name = "vdb-backend"
-version = "2024.3.15"
+version = "2025.3.15"
 source = { virtual = "." }
 dependencies = [
     { name = "dotenv" },
