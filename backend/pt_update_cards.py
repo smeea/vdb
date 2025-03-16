@@ -36,13 +36,13 @@ with app.app_context():
         for k, v in deck.cards.items():
             if k in changes.keys():
                 new_cards[changes[k]] = v
-                print(f"{k} to {changes[k]} in deck")
+                print(f"{k} to {changes[k]} in deck {deck.deckid}")
                 if k in deck.used_in_inventory:
                     print(f"{k} to {changes[k]} in used")
                     new_used_cards[changes[k]] = deck.used_in_inventory[k]
 
             elif str(k) not in cardlist:
-                print(f"{k} deleted from deck")
+                print(f"{k} deleted from deck {deck.deckid}")
                 continue
 
             else:
