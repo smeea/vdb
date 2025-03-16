@@ -1486,9 +1486,33 @@
         "path":"",
         "rulings":[
             {
+                "text":"Her ability can only be used after blocks are declined.",
+                "refs":{
+                    "LSJ 20000507":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/6-sMg4Wo7KE/m/s0fQkYbR5_QJ"
+                }
+            },
+            {
                 "text":"\"Once each turn\" means once during each player's turn.",
                 "refs":{
                     "ANK 20180719-4":"https://www.vekn.net/forum/rules-questions/76833-once-each-turn#89014"
+                }
+            },
+            {
+                "text":"Can be used when failing to block because of stealth: it is still declining to block.",
+                "refs":{
+                    "ANK 20211003":"https://www.vekn.net/forum/rules-questions/79372-fail-to-block-and-telepathic-misdirection#103416"
+                }
+            },
+            {
+                "text":"Must be used before action resolution, ie. before any modifier or reaction played \"as the action/bleed would be successful\" are played. It cannot be played after a {Spying Mission} on the vampire triggers.",
+                "refs":{
+                    "LSJ 19980105":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PzVC-AeFuUQ/m/ncbtQyYNpFQJ"
+                }
+            },
+            {
+                "text":"Cannot be used to direct a bleed to a Methuselah who would be an invalid target for a bleed.",
+                "refs":{
+                    "PIB 20130711":"https://www.vekn.net/forum/rules-questions/51279-big-boon-bounce?fbclid=IwAR3-kLQKFt415mAPpGL0sYpi4yx6ZzJbiyP57z3R6nkIW7V-g0F93z_ob-s#51307"
                 }
             }
         ],

@@ -4384,32 +4384,6 @@
             }
         }
     ],
-    "100518":[
-        {
-            "text":"Cannot be used to direct a bleed to a Methuselah who would be an invalid target for a bleed.",
-            "refs":{
-                "RTR 19950622":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/86Y38Vps-7E/m/BPIFvB_eLzQJ"
-            }
-        },
-        {
-            "text":"Declaring that one is not blocking is implicit in playing Deflection.",
-            "refs":{
-                "LSJ 20000507":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/6-sMg4Wo7KE/m/s0fQkYbR5_QJ"
-            }
-        },
-        {
-            "text":"Must be played before action resolution, ie. before any modifier or reaction played \"as the action/bleed would be successful\" are played. It cannot be played after a {Spying Mission} on the vampire triggers.",
-            "refs":{
-                "LSJ 19980105":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PzVC-AeFuUQ/m/ncbtQyYNpFQJ"
-            }
-        },
-        {
-            "text":"Can be played when failing to block because of stealth: it is still declining to block.",
-            "refs":{
-                "ANK 20211003":"https://www.vekn.net/forum/rules-questions/79372-fail-to-block-and-telepathic-misdirection#103416"
-            }
-        }
-    ],
     "100519":[
         {
             "text":"May be played before, during, or after votes and ballots have been cast.",
@@ -5037,9 +5011,16 @@
             }
         },
         {
-            "text":"The hand size bonus ends during the discard phase, it can be ordered as the acting Methuselah wishes against other end-of-turn and discard phase effects, following normal sequencing rules.",
+            "text":"The hand size bonus (as well as other \"at the end of the turn\" effects) ends at the end of the discard phase, that is when everyone passes the impulse to lead to the turn ending. Any discard phase actions and other \"during the discard phase\" effects must be handled first. In both cases,  normal sequencing rules are followed.",
             "refs":{
+                "LSJ 20100812":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/C4PUHWr_xSQ/m/Noc_YRNk7FYJ",
                 "LSJ 20020904-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ObuKimgcCpI/m/PVsmKoSZueoJ"
+            }
+        },
+        {
+            "text":"You cannot lock the card \"in response to\" another copy being played (in order to use it before it becomes contested).",
+            "refs":{
+                "RBK 2-card-types":"https://www.vekn.net/rulebook/2-card-types"
             }
         },
         {
@@ -10996,20 +10977,6 @@
             }
         }
     ],
-    "101259":[
-        {
-            "text":"[AUS] Must be played before action resolution, ie. before any modifier or reaction played \"as the action/bleed would be successful\" are played. It cannot be played after a {Spying Mission} on the vampire triggers.",
-            "refs":{
-                "LSJ 19980105":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PzVC-AeFuUQ/m/ncbtQyYNpFQJ"
-            }
-        },
-        {
-            "text":"[AUS] Can be played when failing to block because of stealth: it is still declining to block.",
-            "refs":{
-                "ANK 20211003":"https://www.vekn.net/forum/rules-questions/79372-fail-to-block-and-telepathic-misdirection#103416"
-            }
-        }
-    ],
     "101261":[
         {
             "text":"His action to unlock is undirected if the target is a vampire controlled by it's controller, directed otherwise.",
@@ -13137,20 +13104,6 @@
             }
         }
     ],
-    "101578":[
-        {
-            "text":"Must be played before action resolution, ie. before any modifier or reaction played \"as the action/bleed would be successful\" are played. It cannot be played after a {Spying Mission} on the vampire triggers.",
-            "refs":{
-                "LSJ 19980105":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PzVC-AeFuUQ/m/ncbtQyYNpFQJ"
-            }
-        },
-        {
-            "text":"Can be played when failing to block because of stealth: it is still declining to block.",
-            "refs":{
-                "ANK 20211003":"https://www.vekn.net/forum/rules-questions/79372-fail-to-block-and-telepathic-misdirection#103416"
-            }
-        }
-    ],
     "101579":[
         {
             "text":"Cannot target an uncontrolled Blood Brother.",
@@ -14938,14 +14891,13 @@
     ],
     "101765":[
         {
-            "text":"[ANI] Is directed at all Methuselah controlling a card that requires Animalism [ani].",
+            "text":"[ANI] Is directed at all Methuselahs controlling a card requiring Animalism [ani].",
             "refs":{
-                "LSJ 20080809-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/1jW6GXrIRSU/m/7ywPFR39rb4J",
-                "RTR 20081119":"https://www.vekn.net/card-lists/140-keepers-of-tradition"
+                "RBK who-may-attempt-to-block":"https://www.vekn.net/rulebook#who-may-attempt-to-block"
             }
         },
         {
-            "text":"[ANI] Retainers and Equipments you control can also be moved between your vampires. Those on an ally must move to a vampire you control (eg. {Raven Spy}\u00a0on a {Tunnel Runner}).",
+            "text":"[ANI] Retainers and equipments you control are also affected. You *must* put them on vampires you control (it can be the same vampire, but if the card is on an ally, it must move).",
             "refs":{
                 "LSJ 20080803-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/OknxGrvlaNk/m/khteZ5WaNE4J",
                 "LSJ 19981102":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Bz_7HWIe-6Y/m/fmPCchmOkCUJ"
@@ -16866,20 +16818,6 @@
             "refs":{
                 "TOM 19960303":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/SEU6ztVpR94/m/F8NmjGw8ml8J",
                 "LSJ 20061212":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/h3onVZ1NqpQ/m/JYIxdaT9wMEJ"
-            }
-        }
-    ],
-    "101949":[
-        {
-            "text":"[AUS] Must be played before action resolution, ie. before any modifier or reaction played \"as the action/bleed would be successful\" are played. It cannot be played after a {Spying Mission} on the vampire triggers.",
-            "refs":{
-                "LSJ 19980105":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PzVC-AeFuUQ/m/ncbtQyYNpFQJ"
-            }
-        },
-        {
-            "text":"[AUS] Can be played when failing to block because of stealth: it is still declining to block.",
-            "refs":{
-                "ANK 20211003":"https://www.vekn.net/forum/rules-questions/79372-fail-to-block-and-telepathic-misdirection#103416"
             }
         }
     ],
@@ -19427,6 +19365,38 @@
             "text":"\"Once each turn\" means once during each player's turn.",
             "refs":{
                 "ANK 20180719-4":"https://www.vekn.net/forum/rules-questions/76833-once-each-turn#89014"
+            }
+        }
+    ],
+    "200034":[
+        {
+            "text":"Her ability can only be used after blocks are declined.",
+            "refs":{
+                "LSJ 20000507":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/6-sMg4Wo7KE/m/s0fQkYbR5_QJ"
+            }
+        },
+        {
+            "text":"\"Once each turn\" means once during each player's turn.",
+            "refs":{
+                "ANK 20180719-4":"https://www.vekn.net/forum/rules-questions/76833-once-each-turn#89014"
+            }
+        },
+        {
+            "text":"Can be used when failing to block because of stealth: it is still declining to block.",
+            "refs":{
+                "ANK 20211003":"https://www.vekn.net/forum/rules-questions/79372-fail-to-block-and-telepathic-misdirection#103416"
+            }
+        },
+        {
+            "text":"Must be used before action resolution, ie. before any modifier or reaction played \"as the action/bleed would be successful\" are played. It cannot be played after a {Spying Mission} on the vampire triggers.",
+            "refs":{
+                "LSJ 19980105":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PzVC-AeFuUQ/m/ncbtQyYNpFQJ"
+            }
+        },
+        {
+            "text":"Cannot be used to direct a bleed to a Methuselah who would be an invalid target for a bleed.",
+            "refs":{
+                "PIB 20130711":"https://www.vekn.net/forum/rules-questions/51279-big-boon-bounce?fbclid=IwAR3-kLQKFt415mAPpGL0sYpi4yx6ZzJbiyP57z3R6nkIW7V-g0F93z_ob-s#51307"
             }
         }
     ],
@@ -24059,6 +24029,26 @@
             }
         }
     ],
+    "G00106":[
+        {
+            "text":"Can be used when failing to block because of stealth: it is still declining to block.",
+            "refs":{
+                "ANK 20211003":"https://www.vekn.net/forum/rules-questions/79372-fail-to-block-and-telepathic-misdirection#103416"
+            }
+        },
+        {
+            "text":"Must be used before action resolution, ie. before any modifier or reaction played \"as the action/bleed would be successful\" are played. It cannot be played after a {Spying Mission} on the vampire triggers.",
+            "refs":{
+                "LSJ 19980105":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PzVC-AeFuUQ/m/ncbtQyYNpFQJ"
+            }
+        },
+        {
+            "text":"Cannot be used to direct a bleed to a Methuselah who would be an invalid target for a bleed.",
+            "refs":{
+                "PIB 20130711":"https://www.vekn.net/forum/rules-questions/51279-big-boon-bounce?fbclid=IwAR3-kLQKFt415mAPpGL0sYpi4yx6ZzJbiyP57z3R6nkIW7V-g0F93z_ob-s#51307"
+            }
+        }
+    ],
     "101519":[
         {
             "text":"If one is ousted while having temporary control of a minion, the minion is removed from the game.",
@@ -25743,14 +25733,6 @@
         }
     ],
     "200029":[
-        {
-            "text":"\"Once each turn\" means once during each player's turn.",
-            "refs":{
-                "ANK 20180719-4":"https://www.vekn.net/forum/rules-questions/76833-once-each-turn#89014"
-            }
-        }
-    ],
-    "200034":[
         {
             "text":"\"Once each turn\" means once during each player's turn.",
             "refs":{
@@ -27752,6 +27734,24 @@
             "refs":{
                 "LSJ 20080603":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/LuT1iK1b4QIJ",
                 "LSJ 20050128":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HVy8iPUxNbI/m/ZHGTnprQjGUJ"
+            }
+        },
+        {
+            "text":"Can be used when failing to block because of stealth: it is still declining to block.",
+            "refs":{
+                "ANK 20211003":"https://www.vekn.net/forum/rules-questions/79372-fail-to-block-and-telepathic-misdirection#103416"
+            }
+        },
+        {
+            "text":"Must be used before action resolution, ie. before any modifier or reaction played \"as the action/bleed would be successful\" are played. It cannot be played after a {Spying Mission} on the vampire triggers.",
+            "refs":{
+                "LSJ 19980105":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PzVC-AeFuUQ/m/ncbtQyYNpFQJ"
+            }
+        },
+        {
+            "text":"Cannot be used to direct a bleed to a Methuselah who would be an invalid target for a bleed.",
+            "refs":{
+                "PIB 20130711":"https://www.vekn.net/forum/rules-questions/51279-big-boon-bounce?fbclid=IwAR3-kLQKFt415mAPpGL0sYpi4yx6ZzJbiyP57z3R6nkIW7V-g0F93z_ob-s#51307"
             }
         }
     ],
@@ -32971,6 +32971,126 @@
                 "ANK 20220116":"https://www.vekn.net/forum/rules-questions/79600-unleash-hell-s-fury-and-other-delayed-triggered-effects#104488",
                 "ANK 20211207":"https://www.vekn.net/forum/rules-questions/79528-crypt-s-sons-versus-unleash-hell-s-fury?start=6#104139",
                 "ANK 20210627":"https://www.vekn.net/forum/rules-questions/79192-mirror-walk-and-slave?start=12#102578"
+            }
+        }
+    ],
+    "100518":[
+        {
+            "text":"Can be used when failing to block because of stealth: it is still declining to block.",
+            "refs":{
+                "ANK 20211003":"https://www.vekn.net/forum/rules-questions/79372-fail-to-block-and-telepathic-misdirection#103416"
+            }
+        },
+        {
+            "text":"Must be used before action resolution, ie. before any modifier or reaction played \"as the action/bleed would be successful\" are played. It cannot be played after a {Spying Mission} on the vampire triggers.",
+            "refs":{
+                "LSJ 19980105":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PzVC-AeFuUQ/m/ncbtQyYNpFQJ"
+            }
+        },
+        {
+            "text":"Cannot be used to direct a bleed to a Methuselah who would be an invalid target for a bleed.",
+            "refs":{
+                "PIB 20130711":"https://www.vekn.net/forum/rules-questions/51279-big-boon-bounce?fbclid=IwAR3-kLQKFt415mAPpGL0sYpi4yx6ZzJbiyP57z3R6nkIW7V-g0F93z_ob-s#51307"
+            }
+        }
+    ],
+    "101256":[
+        {
+            "text":"[DOM] Can be used when failing to block because of stealth: it is still declining to block.",
+            "refs":{
+                "ANK 20211003":"https://www.vekn.net/forum/rules-questions/79372-fail-to-block-and-telepathic-misdirection#103416"
+            }
+        },
+        {
+            "text":"[DOM] Must be used before action resolution, ie. before any modifier or reaction played \"as the action/bleed would be successful\" are played. It cannot be played after a {Spying Mission} on the vampire triggers.",
+            "refs":{
+                "LSJ 19980105":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PzVC-AeFuUQ/m/ncbtQyYNpFQJ"
+            }
+        },
+        {
+            "text":"[DOM] Cannot be used to direct a bleed to a Methuselah who would be an invalid target for a bleed.",
+            "refs":{
+                "PIB 20130711":"https://www.vekn.net/forum/rules-questions/51279-big-boon-bounce?fbclid=IwAR3-kLQKFt415mAPpGL0sYpi4yx6ZzJbiyP57z3R6nkIW7V-g0F93z_ob-s#51307"
+            }
+        }
+    ],
+    "101259":[
+        {
+            "text":"[AUS] Can be used when failing to block because of stealth: it is still declining to block.",
+            "refs":{
+                "ANK 20211003":"https://www.vekn.net/forum/rules-questions/79372-fail-to-block-and-telepathic-misdirection#103416"
+            }
+        },
+        {
+            "text":"[AUS] Must be used before action resolution, ie. before any modifier or reaction played \"as the action/bleed would be successful\" are played. It cannot be played after a {Spying Mission} on the vampire triggers.",
+            "refs":{
+                "LSJ 19980105":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PzVC-AeFuUQ/m/ncbtQyYNpFQJ"
+            }
+        },
+        {
+            "text":"[AUS] Cannot be used to direct a bleed to a Methuselah who would be an invalid target for a bleed.",
+            "refs":{
+                "PIB 20130711":"https://www.vekn.net/forum/rules-questions/51279-big-boon-bounce?fbclid=IwAR3-kLQKFt415mAPpGL0sYpi4yx6ZzJbiyP57z3R6nkIW7V-g0F93z_ob-s#51307"
+            }
+        }
+    ],
+    "101578":[
+        {
+            "text":"Can be used when failing to block because of stealth: it is still declining to block.",
+            "refs":{
+                "ANK 20211003":"https://www.vekn.net/forum/rules-questions/79372-fail-to-block-and-telepathic-misdirection#103416"
+            }
+        },
+        {
+            "text":"Must be used before action resolution, ie. before any modifier or reaction played \"as the action/bleed would be successful\" are played. It cannot be played after a {Spying Mission} on the vampire triggers.",
+            "refs":{
+                "LSJ 19980105":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PzVC-AeFuUQ/m/ncbtQyYNpFQJ"
+            }
+        },
+        {
+            "text":"Cannot be used to direct a bleed to a Methuselah who would be an invalid target for a bleed.",
+            "refs":{
+                "PIB 20130711":"https://www.vekn.net/forum/rules-questions/51279-big-boon-bounce?fbclid=IwAR3-kLQKFt415mAPpGL0sYpi4yx6ZzJbiyP57z3R6nkIW7V-g0F93z_ob-s#51307"
+            }
+        }
+    ],
+    "101949":[
+        {
+            "text":"[AUS] Can be used when failing to block because of stealth: it is still declining to block.",
+            "refs":{
+                "ANK 20211003":"https://www.vekn.net/forum/rules-questions/79372-fail-to-block-and-telepathic-misdirection#103416"
+            }
+        },
+        {
+            "text":"[AUS] Must be used before action resolution, ie. before any modifier or reaction played \"as the action/bleed would be successful\" are played. It cannot be played after a {Spying Mission} on the vampire triggers.",
+            "refs":{
+                "LSJ 19980105":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PzVC-AeFuUQ/m/ncbtQyYNpFQJ"
+            }
+        },
+        {
+            "text":"[AUS] Cannot be used to direct a bleed to a Methuselah who would be an invalid target for a bleed.",
+            "refs":{
+                "PIB 20130711":"https://www.vekn.net/forum/rules-questions/51279-big-boon-bounce?fbclid=IwAR3-kLQKFt415mAPpGL0sYpi4yx6ZzJbiyP57z3R6nkIW7V-g0F93z_ob-s#51307"
+            }
+        }
+    ],
+    "102052":[
+        {
+            "text":"Can be used when failing to block because of stealth: it is still declining to block.",
+            "refs":{
+                "ANK 20211003":"https://www.vekn.net/forum/rules-questions/79372-fail-to-block-and-telepathic-misdirection#103416"
+            }
+        },
+        {
+            "text":"Must be used before action resolution, ie. before any modifier or reaction played \"as the action/bleed would be successful\" are played. It cannot be played after a {Spying Mission} on the vampire triggers.",
+            "refs":{
+                "LSJ 19980105":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PzVC-AeFuUQ/m/ncbtQyYNpFQJ"
+            }
+        },
+        {
+            "text":"Cannot be used to direct a bleed to a Methuselah who would be an invalid target for a bleed.",
+            "refs":{
+                "PIB 20130711":"https://www.vekn.net/forum/rules-questions/51279-big-boon-bounce?fbclid=IwAR3-kLQKFt415mAPpGL0sYpi4yx6ZzJbiyP57z3R6nkIW7V-g0F93z_ob-s#51307"
             }
         }
     ]

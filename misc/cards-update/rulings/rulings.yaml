@@ -904,12 +904,6 @@
   - The optional maneuvers cannot be used if the strike cannot be used (eg. {Hidden Lurker}). [LSJ 20021028]
 100517|Defender of the Haven:
   - Only requires one clan or the other (Tremere or Tremere antitribu) to be played. [ANK 20190203]
-100518|Deflection:
-  - Cannot be used to direct a bleed to a Methuselah who would be an invalid target for a bleed. [RTR 19950622]
-  - Declaring that one is not blocking is implicit in playing Deflection. [LSJ 20000507]
-  - Must be played before action resolution, ie. before any modifier or reaction played "as the action/bleed would be successful"
-    are played. It cannot be played after a {Spying Mission} on the vampire triggers. [LSJ 19980105]
-  - 'Can be played when failing to block because of stealth: it is still declining to block. [ANK 20211003]'
 100519|Delaying Tactics:
   - May be played before, during, or after votes and ballots have been cast. [LSJ 19980130]
   - The acting minion is still considered to have taken a political action, so cannot perform another in the same turn. [RTR
@@ -1045,8 +1039,11 @@
   - Cannot move blood to Imbued in the uncontrolled region. [LSJ 20070516]
   - Cannot be used when a card is played to draw a card that would cancel it "as it is played". [RTR 20040501]
   - Cards that are not replaced count against the hand size. [ANK 20180318]
-  - The hand size bonus ends during the discard phase, it can be ordered as the acting Methuselah wishes against other end-of-turn
-    and discard phase effects, following normal sequencing rules. [LSJ 20020904-2]
+  - The hand size bonus (as well as other "at the end of the turn" effects) ends at the end of the discard phase, that is
+    when everyone passes the impulse to lead to the turn ending. Any discard phase actions and other "during the discard phase"
+    effects must be handled first. In both cases,  normal sequencing rules are followed. [LSJ 20100812] [LSJ 20020904-2]
+  - You cannot lock the card "in response to" another copy being played (in order to use it before it becomes contested).
+    [RBK 2-card-types]
 100589|Drink the Blood of Ahriman:
   - During the unlock phase, the controller chooses between burning 1 blood or the card. Reversal of previous rulings. [ANK
     20220503]
@@ -2244,10 +2241,6 @@
     the retainer requires an Anarch). [LSJ 20100725]
 101258|Mustajib:
   - The target vampire is not Black Hand if he is not Sabbat. [LSJ 20070322]
-101259|My Enemy's Enemy:
-  - '[AUS] Must be played before action resolution, ie. before any modifier or reaction played "as the action/bleed would
-    be successful" are played. It cannot be played after a {Spying Mission} on the vampire triggers. [LSJ 19980105]'
-  - '[AUS] Can be played when failing to block because of stealth: it is still declining to block. [ANK 20211003]'
 101261|Mylan Horseed:
   - His action to unlock is undirected if the target is a vampire controlled by it's controller, directed otherwise. [PIB
     20121028]
@@ -2654,10 +2647,6 @@
     He immediately yields the title if it is contested or he receives a new one. [LSJ 20060904]
   - Does not make the action an action that "makes this vampire anarch" (eg. {CrimethInc.} cannot be played). [ANK 20180125]
   - The burn option cannot be used if you have a non-titled, non-Anarch vampire in torpor. [LSJ 20091204]
-101578|Redirection:
-  - Must be played before action resolution, ie. before any modifier or reaction played "as the action/bleed would be successful"
-    are played. It cannot be played after a {Spying Mission} on the vampire triggers. [LSJ 19980105]
-  - 'Can be played when failing to block because of stealth: it is still declining to block. [ANK 20211003]'
 101579|Redistribution:
   - Cannot target an uncontrolled Blood Brother. [LSJ 20061109]
 101581|Reform Body:
@@ -2963,9 +2952,9 @@
 101761|Shattering Crescendo:
   - '[mel], [MEL] Requires to have the second in hand to play it. [LSJ 20100208-2] [LSJ 20100823]'
 101765|Shepherd's Innocence:
-  - '[ANI] Is directed at all Methuselah controlling a card that requires Animalism [ani]. [LSJ 20080809-1] [RTR 20081119]'
-  - '[ANI] Retainers and Equipments you control can also be moved between your vampires. Those on an ally must move to a vampire
-    you control (eg. {Raven Spy} on a {Tunnel Runner}). [LSJ 20080803-2] [LSJ 19981102]'
+  - '[ANI] Is directed at all Methuselahs controlling a card requiring Animalism [ani]. [RBK who-may-attempt-to-block]'
+  - '[ANI] Retainers and equipments you control are also affected. You *must* put them on vampires you control (it can be
+    the same vampire, but if the card is on an ally, it must move). [LSJ 20080803-2] [LSJ 19981102]'
 101767|Shilmulo Tarot:
   - There is no limit to the number of cards it can store. [PIB 20110712-2]
   - If there is another copy in play, the cards are put on it before it enters contest. [ANK 20221028] [LSJ 20090428-1]
@@ -3328,10 +3317,6 @@
 101948|Telepathic Counter:
   - Must be played before the bleed can be considered successful (eg. before [OBF] {Spying Mission}), but can be played before
     or after block attempts. [TOM 19960303] [LSJ 20061212]
-101949|Telepathic Misdirection:
-  - '[AUS] Must be played before action resolution, ie. before any modifier or reaction played "as the action/bleed would
-    be successful" are played. It cannot be played after a {Spying Mission} on the vampire triggers. [LSJ 19980105]'
-  - '[AUS] Can be played when failing to block because of stealth: it is still declining to block. [ANK 20211003]'
 101950|Telepathic Tracking:
   - '[AUS] Effects that end combat and then do something else after combat (include continuing the action as if unblocked)
     will be lost, except for unlock effects. [LSJ 19980109] [RTR 20020501]'
@@ -3826,6 +3811,8 @@
   - If his ability is used to start a new combat, effects that end combat and then do something else after combat (include
     continuing the action as if unblocked) will be lost, except for unlock effects. [LSJ 19980109] [RTR 20020501]
   - His ability cannot be used to start a new combat if there is already a pending combat queued. [RTR 20020501]
+200034|Aksinya Daclau:
+  - Her ability can only be used after blocks are declined. [LSJ 20000507]
 200044|Alejandro Aguirre:
   - If a card transforms the damage he inflicts to aggravated (eg. {True Faith}), this includes the damage from his ability.
     [ANK 20210620]
@@ -4895,3 +4882,8 @@ G00105|Triggered by block:
   - If the action is blocked, *all* effects that would be triggered by a successful block (eg. {Banshee Ironwail}) must be
     applied (ordered by the acting Methuselah).  Other effects and modifiers (eg. {Crypt's Sons}, {Change of Target}) can
     only be used after all triggered effects have been handled. [ANK 20220116] [ANK 20211207] [ANK 20210627]
+G00106|Change the target of a bleed:
+  - 'Can be used when failing to block because of stealth: it is still declining to block. [ANK 20211003]'
+  - Must be used before action resolution, ie. before any modifier or reaction played "as the action/bleed would be successful"
+    are played. It cannot be played after a {Spying Mission} on the vampire triggers. [LSJ 19980105]
+  - Cannot be used to direct a bleed to a Methuselah who would be an invalid target for a bleed. [PIB 20130711]
