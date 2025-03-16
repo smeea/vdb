@@ -9,6 +9,7 @@ dependencies = [
     "flask-login>=0.6.3",
     "flask-migrate>=4.1.0",
     "flask-sqlalchemy>=3.1.1",
+    "gunicorn>=23.0.0",
     "nanoid>=2.0.0",
     "requests>=2.32.3",
 ]
