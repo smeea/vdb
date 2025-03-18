@@ -138,11 +138,7 @@ const TwdSearchForm = ({ error, setError }) => {
 
 	const handleMatchInventoryScalingChange = useCallback(
 		(e) => {
-			if (e.target.checked) {
-				searchTwdForm[MATCH_INVENTORY][SCALING] = e.target[NAME];
-			} else {
-				searchTwdForm[MATCH_INVENTORY][SCALING] = false;
-			}
+      searchTwdForm[MATCH_INVENTORY][SCALING] = e.currentTarget.value ? 0 : e.currentTarget[NAME];
 		},
 		[searchTwdForm],
 	);
@@ -233,17 +229,17 @@ const TwdSearchForm = ({ error, setError }) => {
 					/>
 					<div className="flex justify-end gap-6">
 						<Checkbox
-							name="60"
+							name={60}
 							label="Scale to 60 cards"
-							checked={twdFormState[MATCH_INVENTORY][SCALING] == 60}
-							value={twdFormState[MATCH_INVENTORY][SCALING]}
+							checked={twdFormState[MATCH_INVENTORY][SCALING] === 60}
+							value={twdFormState[MATCH_INVENTORY][SCALING] === 60}
 							onChange={handleMatchInventoryScalingChange}
 						/>
 						<Checkbox
-							name="75"
+							name={75}
 							label="Scale to 75 cards"
-							checked={twdFormState[MATCH_INVENTORY][SCALING] == 75}
-							value={twdFormState[MATCH_INVENTORY][SCALING]}
+							checked={twdFormState[MATCH_INVENTORY][SCALING] === 75}
+							value={twdFormState[MATCH_INVENTORY][SCALING] === 75}
 							onChange={handleMatchInventoryScalingChange}
 						/>
 					</div>

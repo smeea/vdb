@@ -13,3 +13,4 @@
 
 # TECH IMPROVEMENTS
 - Reconfigure biomejs
+- Fix lint issues

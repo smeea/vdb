@@ -135,11 +135,7 @@ const PdaSearchForm = ({ error, setError }) => {
 
 	const handleMatchInventoryScalingChange = useCallback(
 		(e) => {
-			if (e.target.checked) {
-				searchPdaForm[MATCH_INVENTORY][SCALING] = e.target[NAME];
-			} else {
-				searchPdaForm[MATCH_INVENTORY][SCALING] = false;
-			}
+      searchPdaForm[MATCH_INVENTORY][SCALING] = e.currentTarget.value ? 0 : e.currentTarget[NAME];
 		},
 		[searchPdaForm],
 	);
@@ -233,17 +229,17 @@ const PdaSearchForm = ({ error, setError }) => {
 					/>
 					<div className="flex justify-end gap-6">
 						<Checkbox
-							name="60"
+							name={60}
 							label="Scale to 60 cards"
-							checked={pdaFormState[MATCH_INVENTORY][SCALING] == 60}
-							value={pdaFormState[MATCH_INVENTORY][SCALING]}
+							checked={pdaFormState[MATCH_INVENTORY][SCALING] === 60}
+							value={pdaFormState[MATCH_INVENTORY][SCALING] === 60}
 							onChange={handleMatchInventoryScalingChange}
 						/>
 						<Checkbox
-							name="75"
+							name={75}
 							label="Scale to 75 cards"
-							checked={pdaFormState[MATCH_INVENTORY][SCALING] == 75}
-							value={pdaFormState[MATCH_INVENTORY][SCALING]}
+							checked={pdaFormState[MATCH_INVENTORY][SCALING] === 75}
+							value={pdaFormState[MATCH_INVENTORY][SCALING] === 75}
 							onChange={handleMatchInventoryScalingChange}
 						/>
 					</div>
