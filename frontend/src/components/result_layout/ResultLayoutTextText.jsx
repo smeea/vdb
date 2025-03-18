@@ -1,79 +1,79 @@
-import React from 'react';
-import reactStringReplace from 'react-string-replace';
-import { CardPopover, ConditionalTooltip, ResultMiscImage, ResultName } from '@/components';
-import { NAME, TEXT } from '@/constants';
-import { useApp } from '@/context';
+import React from "react";
+import reactStringReplace from "react-string-replace";
+import { CardPopover, ConditionalTooltip, ResultMiscImage, ResultName } from "@/components";
+import { NAME, TEXT } from "@/constants";
+import { useApp } from "@/context";
 
 const ResultLayoutTextText = ({ cardid }) => {
-  const { nativeCrypt, nativeLibrary, cryptCardBase, libraryCardBase, isMobile } = useApp();
+	const { nativeCrypt, nativeLibrary, cryptCardBase, libraryCardBase, isMobile } = useApp();
 
-  const cardBase = { ...nativeCrypt, ...nativeLibrary };
-  const cardNative = cardid > 200000 ? nativeCrypt[cardid] : nativeLibrary[cardid];
-  const cardTextNative = cardNative[TEXT].replace(/\(D\)/g, '\u24B9').split('\n');
+	const cardBase = { ...nativeCrypt, ...nativeLibrary };
+	const cardNative = cardid > 200000 ? nativeCrypt[cardid] : nativeLibrary[cardid];
+	const cardTextNative = cardNative[TEXT].replace(/\(D\)/g, "\u24B9").split("\n");
 
-  const refCards = [];
-  cardTextNative.map((i) => {
-    reactStringReplace(i, /\/(.*?)\//g, (match) => {
-      const refCardid = Object.keys(cardBase).find((j) => {
-        if (match.startsWith('The ')) {
-          match = `${match.replace(/^The /, '')}, The`;
-        }
-        return cardBase[j][NAME] == match;
-      });
+	const refCards = [];
+	cardTextNative.map((i) => {
+		reactStringReplace(i, /\/(.*?)\//g, (match) => {
+			const refCardid = Object.keys(cardBase).find((j) => {
+				if (match.startsWith("The ")) {
+					match = `${match.replace(/^The /, "")}, The`;
+				}
+				return cardBase[j][NAME] == match;
+			});
 
-      refCards.push(refCardid);
-    });
-  });
+			refCards.push(refCardid);
+		});
+	});
 
-  const c = cardid > 200000 ? cryptCardBase[cardid] : libraryCardBase[cardid];
-  const cardText = c[TEXT].replace(/\(D\)/g, '\u24B9').split('\n');
+	const c = cardid > 200000 ? cryptCardBase[cardid] : libraryCardBase[cardid];
+	const cardText = c[TEXT].replace(/\(D\)/g, "\u24B9").split("\n");
 
-  return (
-    <>
-      {cardText.map((i, idxText) => {
-        let replacedText = reactStringReplace(i, /\[(\w+ ?\w+)\]/g, (match, idx) => {
-          return (
-            <div
-              key={`${idxText}-${idx}`}
-              className="inline-block min-h-[25px] min-w-[25px] pr-0.5 text-center align-bottom"
-            >
-              <ResultMiscImage value={match} />
-            </div>
-          );
-        });
+	return (
+		<>
+			{cardText.map((i, idxText) => {
+				let replacedText = reactStringReplace(i, /\[(\w+ ?\w+)\]/g, (match, idx) => {
+					return (
+						<div
+							key={`${idxText}-${idx}`}
+							className="inline-block min-h-[25px] min-w-[25px] pr-0.5 text-center align-bottom"
+						>
+							<ResultMiscImage value={match} />
+						</div>
+					);
+				});
 
-        let counter = 0; // have no idea why index for replacedText don't work
-        replacedText = reactStringReplace(replacedText, /\/(.*?)\//g, (match) => {
-          const refCardid = refCards[counter++];
+				let counter = 0; // have no idea why index for replacedText don't work
+				replacedText = reactStringReplace(replacedText, /\/(.*?)\//g, (match) => {
+					const refCardid = refCards[counter++];
 
-          const card = refCardid > 200000 ? cryptCardBase[refCardid] : libraryCardBase[refCardid];
+					const card = refCardid > 200000 ? cryptCardBase[refCardid] : libraryCardBase[refCardid];
 
-          if (card) {
-            return (
-              <span key={counter}>
-                <ConditionalTooltip
-                  overlay={<CardPopover card={card} />}
-                  disabled={isMobile}
-                  noPadding
-                >
-                  <ResultName card={card} />
-                </ConditionalTooltip>
-              </span>
-            );
-          } else {
-            return <React.Fragment key={counter}>/{match}/</React.Fragment>;
-          }
-        });
+					if (card) {
+						return (
+							<span key={counter}>
+								<ConditionalTooltip
+									overlay={<CardPopover card={card} />}
+									disabled={isMobile}
+									noPadding
+								>
+									<ResultName card={card} />
+								</ConditionalTooltip>
+							</span>
+						);
+					} else {
+						return <React.Fragment key={counter}>/{match}/</React.Fragment>;
+					}
+				});
 
-        return (
-          <React.Fragment key={idxText}>
-            {replacedText}
-            <br />
-          </React.Fragment>
-        );
-      })}
-    </>
-  );
+				return (
+					<React.Fragment key={idxText}>
+						{replacedText}
+						<br />
+					</React.Fragment>
+				);
+			})}
+		</>
+	);
 };
 
 export default ResultLayoutTextText;

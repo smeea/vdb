@@ -1,63 +1,63 @@
-import ky from 'ky';
-import { CRYPT, ID, LIBRARY } from '@/constants';
-import { inventoryStore } from '@/context';
+import ky from "ky";
+import { CRYPT, ID, LIBRARY } from "@/constants";
+import { inventoryStore } from "@/context";
 
 export const addCards = (cards) => {
-  const url = `${import.meta.env.VITE_API_URL}/inventory`;
+	const url = `${import.meta.env.VITE_API_URL}/inventory`;
 
-  const c = {};
-  Object.values(cards).forEach((card) => {
-    if (card.q !== 0) {
-      c[card.c[ID]] = card.q;
-    }
-  });
+	const c = {};
+	Object.values(cards).forEach((card) => {
+		if (card.q !== 0) {
+			c[card.c[ID]] = card.q;
+		}
+	});
 
-  return ky.patch(url, { json: c });
+	return ky.patch(url, { json: c });
 };
 
 export const setCard = (cardid, count) => {
-  const url = `${import.meta.env.VITE_API_URL}/inventory`;
-  return ky.put(url, { json: { [cardid]: { q: count } } });
+	const url = `${import.meta.env.VITE_API_URL}/inventory`;
+	return ky.put(url, { json: { [cardid]: { q: count } } });
 };
 
 export const setCardText = (cardid, text) => {
-  const url = `${import.meta.env.VITE_API_URL}/inventory`;
-  return ky.put(url, { json: { [cardid]: { t: text } } });
+	const url = `${import.meta.env.VITE_API_URL}/inventory`;
+	return ky.put(url, { json: { [cardid]: { t: text } } });
 };
 
 export const update = (field, value) => {
-  const url = `${import.meta.env.VITE_API_URL}/inventory`;
-  return ky.put(url, { json: { [field]: value } });
+	const url = `${import.meta.env.VITE_API_URL}/inventory`;
+	return ky.put(url, { json: { [field]: value } });
 };
 
 export const getSharedInventory = (key, cryptCardBase, libraryCardBase) => {
-  const url = `${import.meta.env.VITE_API_URL}/inventory/${key}`;
+	const url = `${import.meta.env.VITE_API_URL}/inventory/${key}`;
 
-  return ky
-    .get(url)
-    .json()
-    .then((data) => {
-      const crypt = {};
-      const library = {};
-      Object.keys(data[CRYPT]).forEach((k) => {
-        crypt[k] = { ...data[CRYPT][k], c: cryptCardBase[k] };
-      });
-      Object.keys(data[LIBRARY]).forEach((k) => {
-        library[k] = { ...data[LIBRARY][k], c: libraryCardBase[k] };
-      });
-      return { crypt, library };
-    });
+	return ky
+		.get(url)
+		.json()
+		.then((data) => {
+			const crypt = {};
+			const library = {};
+			Object.keys(data[CRYPT]).forEach((k) => {
+				crypt[k] = { ...data[CRYPT][k], c: cryptCardBase[k] };
+			});
+			Object.keys(data[LIBRARY]).forEach((k) => {
+				library[k] = { ...data[LIBRARY][k], c: libraryCardBase[k] };
+			});
+			return { crypt, library };
+		});
 };
 
 export const createSharedInventory = (key) => {
-  const url = `${import.meta.env.VITE_API_URL}/account`;
-  return ky.put(url, { json: { inventoryKey: key } });
+	const url = `${import.meta.env.VITE_API_URL}/account`;
+	return ky.put(url, { json: { inventoryKey: key } });
 };
 
 export const deleteInventory = () => {
-  const url = `${import.meta.env.VITE_API_URL}/inventory`;
-  ky.delete(url).then(() => {
-    inventoryStore[CRYPT] = {};
-    inventoryStore[LIBRARY] = {};
-  });
+	const url = `${import.meta.env.VITE_API_URL}/inventory`;
+	ky.delete(url).then(() => {
+		inventoryStore[CRYPT] = {};
+		inventoryStore[LIBRARY] = {};
+	});
 };

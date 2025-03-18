@@ -1,42 +1,42 @@
-import { useState } from 'react';
-import { useSwipeable } from 'react-swipeable';
-import { useDebounce } from '@/hooks';
+import { useState } from "react";
+import { useSwipeable } from "react-swipeable";
+import { useDebounce } from "@/hooks";
 
 const useSwipe = (
-  actionLeft,
-  actionRight,
-  condition = true,
-  conditionLeft = true,
-  conditionRight = true,
+	actionLeft,
+	actionRight,
+	condition = true,
+	conditionLeft = true,
+	conditionRight = true,
 ) => {
-  const [isSwiped, setIsSwiped] = useState();
-  useDebounce(() => setIsSwiped(false), 500, [isSwiped]);
+	const [isSwiped, setIsSwiped] = useState();
+	useDebounce(() => setIsSwiped(false), 500, [isSwiped]);
 
-  const SWIPE_THRESHOLD = 50;
-  const SWIPE_IGNORED_LEFT_EDGE = 30;
+	const SWIPE_THRESHOLD = 50;
+	const SWIPE_IGNORED_LEFT_EDGE = 30;
 
-  const swipeHandlers = useSwipeable({
-    swipeDuration: 250,
-    onSwipedRight: (e) => {
-      if (
-        e.initial[0] > SWIPE_IGNORED_LEFT_EDGE &&
-        e.absX > SWIPE_THRESHOLD &&
-        condition &&
-        conditionRight
-      ) {
-        setIsSwiped('right');
-        actionRight();
-      }
-    },
-    onSwipedLeft: (e) => {
-      if (e.absX > SWIPE_THRESHOLD && condition && conditionLeft) {
-        setIsSwiped('left');
-        actionLeft();
-      }
-    },
-  });
+	const swipeHandlers = useSwipeable({
+		swipeDuration: 250,
+		onSwipedRight: (e) => {
+			if (
+				e.initial[0] > SWIPE_IGNORED_LEFT_EDGE &&
+				e.absX > SWIPE_THRESHOLD &&
+				condition &&
+				conditionRight
+			) {
+				setIsSwiped("right");
+				actionRight();
+			}
+		},
+		onSwipedLeft: (e) => {
+			if (e.absX > SWIPE_THRESHOLD && condition && conditionLeft) {
+				setIsSwiped("left");
+				actionLeft();
+			}
+		},
+	});
 
-  return { isSwiped, swipeHandlers };
+	return { isSwiped, swipeHandlers };
 };
 
 export default useSwipe;

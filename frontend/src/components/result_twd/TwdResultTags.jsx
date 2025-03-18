@@ -1,12 +1,12 @@
-import { DeckTags } from '@/components';
-import { TAGS } from '@/constants';
+import { DeckTags } from "@/components";
+import { TAGS } from "@/constants";
 
 const TwdResultTags = ({ tags }) => {
-  return (
-    <div className="flex">
-      <DeckTags deck={{ [TAGS]: tags }} allTagsOptions={[]} />
-    </div>
-  );
+	return (
+		<div className="flex">
+			<DeckTags deck={{ [TAGS]: tags }} allTagsOptions={[]} />
+		</div>
+	);
 };
 
 export default TwdResultTags;

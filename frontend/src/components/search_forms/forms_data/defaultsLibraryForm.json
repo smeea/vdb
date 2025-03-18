@@ -1,88 +1,88 @@
 {
-  "text": [
-    {
-      "value": "",
-      "regex": false,
-      "in": false,
-      "logic": "and"
-    }
-  ],
-  "type": {
-    "value": ["any"],
-    "logic": "or"
-  },
-  "discipline": {
-    "value": ["any"],
-    "logic": "or"
-  },
-  "blood": {
-    "blood": "any",
-    "moreless": "le"
-  },
-  "pool": {
-    "pool": "any",
-    "moreless": "le"
-  },
-  "capacity": {
-    "capacity": "any",
-    "moreless": "le"
-  },
-  "clan": {
-    "value": ["any"],
-    "logic": "or"
-  },
-  "sect": {
-    "value": ["any"],
-    "logic": "or"
-  },
-  "title": {
-    "value": ["any"],
-    "logic": "or"
-  },
-  "traits": {
-    "intercept": false,
-    "stealth": false,
-    "bleed": false,
-    "put blood": false,
-    "votes-title": false,
-    "strength": false,
-    "dodge": false,
-    "maneuver": false,
-    "additional strike": false,
-    "aggravated": false,
-    "prevent": false,
-    "press": false,
-    "combat ends": false,
-    "enter combat": false,
-    "bounce bleed": false,
-    "reduce bleed": false,
-    "unlock": false,
-    "black hand": false,
-    "seraph": false,
-    "anarch": false,
-    "infernal": false,
-    "embrace": false,
-    "banned": false,
-    "burn": false,
-    "non-twd": false,
-    "multi-discipline": false,
-    "multi-type": false,
-    "no-requirements": false,
-    "playtest": false,
-    "path-caine": false,
-    "path-cathari": false,
-    "path-death": false,
-    "path-power": false
-  },
-  "set": {
-    "value": ["any"],
-    "print": false,
-    "age": false
-  },
-  "precon": {
-    "value": ["any"],
-    "only in": false,
-    "first print": false
-  },
-  "artist": "any"
+	"text": [
+		{
+			"value": "",
+			"regex": false,
+			"in": false,
+			"logic": "and"
+		}
+	],
+	"type": {
+		"value": ["any"],
+		"logic": "or"
+	},
+	"discipline": {
+		"value": ["any"],
+		"logic": "or"
+	},
+	"blood": {
+		"blood": "any",
+		"moreless": "le"
+	},
+	"pool": {
+		"pool": "any",
+		"moreless": "le"
+	},
+	"capacity": {
+		"capacity": "any",
+		"moreless": "le"
+	},
+	"clan": {
+		"value": ["any"],
+		"logic": "or"
+	},
+	"sect": {
+		"value": ["any"],
+		"logic": "or"
+	},
+	"title": {
+		"value": ["any"],
+		"logic": "or"
+	},
+	"traits": {
+		"intercept": false,
+		"stealth": false,
+		"bleed": false,
+		"put blood": false,
+		"votes-title": false,
+		"strength": false,
+		"dodge": false,
+		"maneuver": false,
+		"additional strike": false,
+		"aggravated": false,
+		"prevent": false,
+		"press": false,
+		"combat ends": false,
+		"enter combat": false,
+		"bounce bleed": false,
+		"reduce bleed": false,
+		"unlock": false,
+		"black hand": false,
+		"seraph": false,
+		"anarch": false,
+		"infernal": false,
+		"embrace": false,
+		"banned": false,
+		"burn": false,
+		"non-twd": false,
+		"multi-discipline": false,
+		"multi-type": false,
+		"no-requirements": false,
+		"playtest": false,
+		"path-caine": false,
+		"path-cathari": false,
+		"path-death": false,
+		"path-power": false
+	},
+	"set": {
+		"value": ["any"],
+		"print": false,
+		"age": false
+	},
+	"precon": {
+		"value": ["any"],
+		"only in": false,
+		"first print": false
+	},
+	"artist": "any"
 }

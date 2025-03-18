@@ -1,83 +1,83 @@
-import { useRef } from 'react';
-import Upload from '@icons/upload.svg?react';
-import { ButtonIconed } from '@/components';
-import { AUTHOR } from '@/constants';
+import { useRef } from "react";
+import Upload from "@icons/upload.svg?react";
+import { ButtonIconed } from "@/components";
+import { AUTHOR } from "@/constants";
 
 const TdaLoadCustomButtons = ({ tempDecks, setTempDecks, setTempArchon, getDeck, setError }) => {
-  const fileInputDecks = useRef();
-  const fileInputArchon = useRef();
+	const fileInputDecks = useRef();
+	const fileInputArchon = useRef();
 
-  const handleLoadArchon = () => {
-    const file = fileInputArchon.current.files[0];
-    const reader = new FileReader();
-    reader.onload = async () => {
-      setTempArchon(reader.result);
-    };
+	const handleLoadArchon = () => {
+		const file = fileInputArchon.current.files[0];
+		const reader = new FileReader();
+		reader.onload = async () => {
+			setTempArchon(reader.result);
+		};
 
-    reader.readAsArrayBuffer(file);
-  };
+		reader.readAsArrayBuffer(file);
+	};
 
-  const handleLoadDecks = async () => {
-    setError(false);
-    const files = fileInputDecks.current.files;
+	const handleLoadDecks = async () => {
+		setError(false);
+		const files = fileInputDecks.current.files;
 
-    const decks = Object.keys(files).map(async (i) => {
-      const result = await new Promise((resolve) => {
-        const file = files[i];
-        let fileReader = new FileReader();
-        fileReader.onload = () => resolve(getDeck(fileReader.result));
-        fileReader.readAsText(file);
-      });
+		const decks = Object.keys(files).map(async (i) => {
+			const result = await new Promise((resolve) => {
+				const file = files[i];
+				let fileReader = new FileReader();
+				fileReader.onload = () => resolve(getDeck(fileReader.result));
+				fileReader.readAsText(file);
+			});
 
-      return result;
-    });
+			return result;
+		});
 
-    Promise.all(decks).then((v) => {
-      const d = {};
-      v.forEach((i) => {
-        d[parseInt(i[AUTHOR])] = i;
-      });
+		Promise.all(decks).then((v) => {
+			const d = {};
+			v.forEach((i) => {
+				d[parseInt(i[AUTHOR])] = i;
+			});
 
-      setTempDecks(d);
-    });
-  };
+			setTempDecks(d);
+		});
+	};
 
-  return (
-    <div className="flex flex-col gap-2">
-      {tempDecks ? (
-        <ButtonIconed
-          className="w-full"
-          onClick={() => fileInputArchon.current.click()}
-          title="Import Archon"
-          icon={<Upload />}
-          text="Import Archon (.xlsx)"
-        />
-      ) : (
-        <ButtonIconed
-          className="w-full"
-          onClick={() => fileInputDecks.current.click()}
-          title="Import Decks"
-          icon={<Upload />}
-          text="Import Decks (.txt)"
-        />
-      )}
-      <input
-        multiple
-        ref={fileInputDecks}
-        accept=".txt"
-        type="file"
-        onChange={() => handleLoadDecks()}
-        style={{ display: 'none' }}
-      />
-      <input
-        ref={fileInputArchon}
-        accept=".xlsx"
-        type="file"
-        onChange={() => handleLoadArchon()}
-        style={{ display: 'none' }}
-      />
-    </div>
-  );
+	return (
+		<div className="flex flex-col gap-2">
+			{tempDecks ? (
+				<ButtonIconed
+					className="w-full"
+					onClick={() => fileInputArchon.current.click()}
+					title="Import Archon"
+					icon={<Upload />}
+					text="Import Archon (.xlsx)"
+				/>
+			) : (
+				<ButtonIconed
+					className="w-full"
+					onClick={() => fileInputDecks.current.click()}
+					title="Import Decks"
+					icon={<Upload />}
+					text="Import Decks (.txt)"
+				/>
+			)}
+			<input
+				multiple
+				ref={fileInputDecks}
+				accept=".txt"
+				type="file"
+				onChange={() => handleLoadDecks()}
+				style={{ display: "none" }}
+			/>
+			<input
+				ref={fileInputArchon}
+				accept=".xlsx"
+				type="file"
+				onChange={() => handleLoadArchon()}
+				style={{ display: "none" }}
+			/>
+		</div>
+	);
 };
 
 export default TdaLoadCustomButtons;

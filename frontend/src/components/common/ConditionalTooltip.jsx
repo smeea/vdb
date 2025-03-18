@@ -1,33 +1,33 @@
-import { Tooltip } from '@/components';
+import { Tooltip } from "@/components";
 
 const ConditionalTooltip = ({
-  children,
-  className,
-  size,
-  noPadding,
-  placement,
-  overlay,
-  disabled,
-  noClick,
+	children,
+	className,
+	size,
+	noPadding,
+	placement,
+	overlay,
+	disabled,
+	noClick,
 }) => {
-  return (
-    <>
-      {!disabled ? (
-        <Tooltip
-          className={className}
-          placement={placement}
-          overlay={overlay}
-          noPadding={noPadding}
-          size={size}
-          noClick={noClick}
-        >
-          {children}
-        </Tooltip>
-      ) : (
-        children
-      )}
-    </>
-  );
+	return (
+		<>
+			{!disabled ? (
+				<Tooltip
+					className={className}
+					placement={placement}
+					overlay={overlay}
+					noPadding={noPadding}
+					size={size}
+					noClick={noClick}
+				>
+					{children}
+				</Tooltip>
+			) : (
+				children
+			)}
+		</>
+	);
 };
 
 export default ConditionalTooltip;

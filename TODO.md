@@ -12,3 +12,4 @@
 - Draft Cube support -> when draft cube info is available
 
 # TECH IMPROVEMENTS
+- Reconfigure biomejs
