@@ -6,7 +6,6 @@
 		"start": "vite",
 		"build": "vite build",
 		"preview": "vite preview",
-		"stylelint": "npx stylelint \"src/assets/css/style.css\"",
 		"lint": "npx @biomejs/biome lint .",
 		"prettier": "npx @biomejs/biome format --write .",
 		"generate-pwa-assets": "pwa-assets-generator"
@@ -42,10 +41,6 @@
 		"react-virtualized-auto-sizer": "^1.0.25",
 		"react-window": "^1.8.11",
 		"recharts": "^2.15.1",
-		"stylelint": "^16.16.0",
-		"stylelint-config-recommended-scss": "^14.1.0",
-		"stylelint-order": "^6.0.4",
-		"stylelint-scss": "^6.11.1",
 		"tailwind-merge": "^3.0.2",
 		"tailwindcss": "^4.0.14",
 		"unidecode": "^1.1.0",
