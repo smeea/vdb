@@ -1,35 +1,35 @@
-import { useState } from "react";
-import Check2 from "@icons/check2.svg?react";
-import { Button, Input } from "@/components";
+import { useState } from 'react';
+import Check2 from '@icons/check2.svg?react';
+import { Button, Input } from '@/components';
 
 const SeatingRandomDeckAddForm = ({ addDeck }) => {
-	const [name, setName] = useState("");
+  const [name, setName] = useState('');
 
-	const handleChange = (event) => {
-		setName(event.target.value);
-	};
+  const handleChange = (event) => {
+    setName(event.target.value);
+  };
 
-	const handleSubmit = (event) => {
-		event.preventDefault();
-		if (name) {
-			addDeck(name);
-			setName("");
-		}
-	};
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if (name) {
+      addDeck(name);
+      setName('');
+    }
+  };
 
-	return (
-		<form onSubmit={handleSubmit} className="flex">
-			<Input
-				placeholder="Add Random Deck"
-				value={name}
-				onChange={handleChange}
-				roundedStyle="rounded-sm rounded-r-none"
-			/>
-			<Button type="submit" className="rounded-l-none">
-				<Check2 />
-			</Button>
-		</form>
-	);
+  return (
+    <form onSubmit={handleSubmit} className="flex">
+      <Input
+        placeholder="Add Random Deck"
+        value={name}
+        onChange={handleChange}
+        roundedStyle="rounded-sm rounded-r-none"
+      />
+      <Button type="submit" className="rounded-l-none">
+        <Check2 />
+      </Button>
+    </form>
+  );
 };
 
 export default SeatingRandomDeckAddForm;

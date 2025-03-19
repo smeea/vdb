@@ -1,131 +1,131 @@
 {
-	"text": [
-		{
-			"value": "",
-			"regex": false,
-			"in": false,
-			"logic": "and"
-		}
-	],
-	"disciplines": {
-		"Abombwe": 0,
-		"Animalism": 0,
-		"Auspex": 0,
-		"Blood Sorcery": 0,
-		"Celerity": 0,
-		"Chimerstry": 0,
-		"Daimoinon": 0,
-		"Dementation": 0,
-		"Dominate": 0,
-		"Fortitude": 0,
-		"Melpominee": 0,
-		"Mytherceria": 0,
-		"Necromancy": 0,
-		"Obeah": 0,
-		"Obfuscate": 0,
-		"Oblivion": 0,
-		"Obtenebration": 0,
-		"Potence": 0,
-		"Presence": 0,
-		"Protean": 0,
-		"Quietus": 0,
-		"Sanguinus": 0,
-		"Serpentis": 0,
-		"Spiritus": 0,
-		"Temporis": 0,
-		"Thanatosis": 0,
-		"Valeren": 0,
-		"Vicissitude": 0,
-		"Visceratika": 0,
-		"Defense": 0,
-		"Innocence": 0,
-		"Judgment": 0,
-		"Martyrdom": 0,
-		"Redemption": 0,
-		"Vengeance": 0,
-		"Vision": 0
-	},
-	"capacity": {
-		"value": [
-			{
-				"capacity": "any",
-				"moreless": "le"
-			}
-		],
-		"logic": "or"
-	},
-	"clan": {
-		"value": ["any"],
-		"logic": "or"
-	},
-	"sect": {
-		"value": ["any"],
-		"logic": "or"
-	},
-	"votes": "any",
-	"titles": {
-		"primogen": false,
-		"prince": false,
-		"justicar": false,
-		"inner circle": false,
-		"baron": false,
-		"1 vote": false,
-		"2 votes": false,
-		"bishop": false,
-		"archbishop": false,
-		"priscus": false,
-		"cardinal": false,
-		"regent": false,
-		"magaji": false,
-		"non-titled": false
-	},
-	"group": {
-		"1": false,
-		"2": false,
-		"3": false,
-		"4": false,
-		"5": false,
-		"6": false,
-		"7": false
-	},
-	"traits": {
-		"1 intercept": false,
-		"1 stealth": false,
-		"1 bleed": false,
-		"2 bleed": false,
-		"1 strength": false,
-		"2 strength": false,
-		"additional strike": false,
-		"maneuver": false,
-		"press": false,
-		"prevent": false,
-		"aggravated": false,
-		"enter combat": false,
-		"unlock": false,
-		"hand size": false,
-		"black hand": false,
-		"seraph": false,
-		"infernal": false,
-		"red list": false,
-		"flight": false,
-		"advancement": false,
-		"banned": false,
-		"non-twd": false,
-		"playtest": false,
-		"path-caine": false,
-		"path-cathari": false,
-		"path-death": false,
-		"path-power": false
-	},
-	"set": {
-		"value": ["any"],
-		"print": false,
-		"age": false
-	},
-	"precon": {
-		"value": ["any"],
-		"only in": false,
-		"first print": false
-	},
-	"artist": "any"
+  "text": [
+    {
+      "value": "",
+      "regex": false,
+      "in": false,
+      "logic": "and"
+    }
+  ],
+  "disciplines": {
+    "Abombwe": 0,
+    "Animalism": 0,
+    "Auspex": 0,
+    "Blood Sorcery": 0,
+    "Celerity": 0,
+    "Chimerstry": 0,
+    "Daimoinon": 0,
+    "Dementation": 0,
+    "Dominate": 0,
+    "Fortitude": 0,
+    "Melpominee": 0,
+    "Mytherceria": 0,
+    "Necromancy": 0,
+    "Obeah": 0,
+    "Obfuscate": 0,
+    "Oblivion": 0,
+    "Obtenebration": 0,
+    "Potence": 0,
+    "Presence": 0,
+    "Protean": 0,
+    "Quietus": 0,
+    "Sanguinus": 0,
+    "Serpentis": 0,
+    "Spiritus": 0,
+    "Temporis": 0,
+    "Thanatosis": 0,
+    "Valeren": 0,
+    "Vicissitude": 0,
+    "Visceratika": 0,
+    "Defense": 0,
+    "Innocence": 0,
+    "Judgment": 0,
+    "Martyrdom": 0,
+    "Redemption": 0,
+    "Vengeance": 0,
+    "Vision": 0
+  },
+  "capacity": {
+    "value": [
+      {
+        "capacity": "any",
+        "moreless": "le"
+      }
+    ],
+    "logic": "or"
+  },
+  "clan": {
+    "value": ["any"],
+    "logic": "or"
+  },
+  "sect": {
+    "value": ["any"],
+    "logic": "or"
+  },
+  "votes": "any",
+  "titles": {
+    "primogen": false,
+    "prince": false,
+    "justicar": false,
+    "inner circle": false,
+    "baron": false,
+    "1 vote": false,
+    "2 votes": false,
+    "bishop": false,
+    "archbishop": false,
+    "priscus": false,
+    "cardinal": false,
+    "regent": false,
+    "magaji": false,
+    "non-titled": false
+  },
+  "group": {
+    "1": false,
+    "2": false,
+    "3": false,
+    "4": false,
+    "5": false,
+    "6": false,
+    "7": false
+  },
+  "traits": {
+    "1 intercept": false,
+    "1 stealth": false,
+    "1 bleed": false,
+    "2 bleed": false,
+    "1 strength": false,
+    "2 strength": false,
+    "additional strike": false,
+    "maneuver": false,
+    "press": false,
+    "prevent": false,
+    "aggravated": false,
+    "enter combat": false,
+    "unlock": false,
+    "hand size": false,
+    "black hand": false,
+    "seraph": false,
+    "infernal": false,
+    "red list": false,
+    "flight": false,
+    "advancement": false,
+    "banned": false,
+    "non-twd": false,
+    "playtest": false,
+    "path-caine": false,
+    "path-cathari": false,
+    "path-death": false,
+    "path-power": false
+  },
+  "set": {
+    "value": ["any"],
+    "print": false,
+    "age": false
+  },
+  "precon": {
+    "value": ["any"],
+    "only in": false,
+    "first print": false
+  },
+  "artist": "any"
 }

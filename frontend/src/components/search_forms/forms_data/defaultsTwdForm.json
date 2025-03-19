@@ -1,73 +1,73 @@
 {
-	"similar": "",
-	"event": "",
-	"author": "",
-	"location": {
-		"country": "",
-		"city": ""
-	},
-	"players": {
-		"from": "any",
-		"to": "any"
-	},
-	"date": {
-		"from": "any",
-		"to": "any"
-	},
-	"crypt": {},
-	"library": {},
-	"libraryTotal": {
-		"60-67": false,
-		"68-75": false,
-		"76-83": false,
-		"84-90": false
-	},
-	"clan": {
-		"value": ["any"],
-		"logic": "or"
-	},
-	"sect": {
-		"value": ["any"],
-		"logic": "or"
-	},
-	"capacity": {
-		"1-4": false,
-		"4-6": false,
-		"6-8": false,
-		"8-11": false
-	},
-	"disciplines": {},
-	"cardtypes": {
-		"master": "any",
-		"action": "any",
-		"political action": "any",
-		"ally": "any",
-		"equipment": "any",
-		"retainer": "any",
-		"action modifier": "any",
-		"reaction": "any",
-		"combat": "any",
-		"event": "any"
-	},
-	"traits": {
-		"star": false,
-		"monoclan": false
-	},
-	"tags": {
-		"accel": false,
-		"ally": false,
-		"bleed": false,
-		"block": false,
-		"combat": false,
-		"mmpa": false,
-		"rush": false,
-		"stealth": false,
-		"swarm": false,
-		"vote": false
-	},
-	"matchInventory": {
-		"crypt": "any",
-		"library": "any",
-		"scaling": "0"
-	}
+  "similar": "",
+  "event": "",
+  "author": "",
+  "location": {
+    "country": "",
+    "city": ""
+  },
+  "players": {
+    "from": "any",
+    "to": "any"
+  },
+  "date": {
+    "from": "any",
+    "to": "any"
+  },
+  "crypt": {},
+  "library": {},
+  "libraryTotal": {
+    "60-67": false,
+    "68-75": false,
+    "76-83": false,
+    "84-90": false
+  },
+  "clan": {
+    "value": ["any"],
+    "logic": "or"
+  },
+  "sect": {
+    "value": ["any"],
+    "logic": "or"
+  },
+  "capacity": {
+    "1-4": false,
+    "4-6": false,
+    "6-8": false,
+    "8-11": false
+  },
+  "disciplines": {},
+  "cardtypes": {
+    "master": "any",
+    "action": "any",
+    "political action": "any",
+    "ally": "any",
+    "equipment": "any",
+    "retainer": "any",
+    "action modifier": "any",
+    "reaction": "any",
+    "combat": "any",
+    "event": "any"
+  },
+  "traits": {
+    "star": false,
+    "monoclan": false
+  },
+  "tags": {
+    "accel": false,
+    "ally": false,
+    "bleed": false,
+    "block": false,
+    "combat": false,
+    "mmpa": false,
+    "rush": false,
+    "stealth": false,
+    "swarm": false,
+    "vote": false
+  },
+  "matchInventory": {
+    "crypt": "any",
+    "library": "any",
+    "scaling": "0"
+  }
 }

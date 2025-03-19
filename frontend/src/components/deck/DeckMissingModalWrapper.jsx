@@ -1,20 +1,20 @@
-import { DeckMissingModal } from "@/components";
-import { CRYPT, LIBRARY, NAME } from "@/constants";
-import { useDeckMissing } from "@/hooks";
+import { DeckMissingModal } from '@/components';
+import { CRYPT, LIBRARY, NAME } from '@/constants';
+import { useDeckMissing } from '@/hooks';
 
 const DeckMissingModalWrapper = ({ deck, setShow = { setShow } }) => {
-	const { missingCrypt, missingLibrary } = useDeckMissing(deck);
+  const { missingCrypt, missingLibrary } = useDeckMissing(deck);
 
-	return (
-		<DeckMissingModal
-			deck={{
-				[NAME]: `Missing card for ${deck[NAME]}`,
-				[CRYPT]: missingCrypt,
-				[LIBRARY]: missingLibrary,
-			}}
-			setShow={setShow}
-		/>
-	);
+  return (
+    <DeckMissingModal
+      deck={{
+        [NAME]: `Missing card for ${deck[NAME]}`,
+        [CRYPT]: missingCrypt,
+        [LIBRARY]: missingLibrary,
+      }}
+      setShow={setShow}
+    />
+  );
 };
 
 export default DeckMissingModalWrapper;

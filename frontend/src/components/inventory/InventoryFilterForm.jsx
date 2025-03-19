@@ -1,88 +1,88 @@
 import {
-	ResultClanImage,
-	ResultDisciplineImage,
-	ResultLibraryTypeImage,
-	Select,
-} from "@/components";
-import { ALL, CRYPT, DISCIPLINE, NONE, TYPE } from "@/constants";
+  ResultClanImage,
+  ResultDisciplineImage,
+  ResultLibraryTypeImage,
+  Select,
+} from '@/components';
+import { ALL, CRYPT, DISCIPLINE, NONE, TYPE } from '@/constants';
 
 const InventoryFilterForm = ({ value, setValue, values, target, byTotal, byUnique }) => {
-	const options = [];
+  const options = [];
 
-	values.map((i) => {
-		options.push({
-			value: i,
-			label: (
-				<div className="flex justify-between">
-					{target === CRYPT && (
-						<div>
-							{i === ALL ? (
-								<div className="flex items-center">
-									<div className="flex w-[40px]" />
-									All Clans
-								</div>
-							) : (
-								<div className="flex items-center">
-									<div className="flex w-[40px] justify-center">
-										<ResultClanImage value={i} />
-									</div>
-									{i}
-								</div>
-							)}
-						</div>
-					)}
+  values.map((i) => {
+    options.push({
+      value: i,
+      label: (
+        <div className="flex justify-between">
+          {target === CRYPT && (
+            <div>
+              {i === ALL ? (
+                <div className="flex items-center">
+                  <div className="flex w-[40px]" />
+                  All Clans
+                </div>
+              ) : (
+                <div className="flex items-center">
+                  <div className="flex w-[40px] justify-center">
+                    <ResultClanImage value={i} />
+                  </div>
+                  {i}
+                </div>
+              )}
+            </div>
+          )}
 
-					{target === TYPE && (
-						<div>
-							{i === ALL ? (
-								<div className="flex items-center">
-									<div className="flex w-[40px]" />
-									All Types
-								</div>
-							) : (
-								<div className="flex items-center">
-									<div className="flex w-[40px]">
-										<ResultLibraryTypeImage value={i} />
-									</div>
-									{i}
-								</div>
-							)}
-						</div>
-					)}
+          {target === TYPE && (
+            <div>
+              {i === ALL ? (
+                <div className="flex items-center">
+                  <div className="flex w-[40px]" />
+                  All Types
+                </div>
+              ) : (
+                <div className="flex items-center">
+                  <div className="flex w-[40px]">
+                    <ResultLibraryTypeImage value={i} />
+                  </div>
+                  {i}
+                </div>
+              )}
+            </div>
+          )}
 
-					{target === DISCIPLINE && (
-						<div>
-							{[ALL, NONE].includes(i) ? (
-								<div className="flex items-center">
-									<div className="flex w-[40px]" />
-									{i === ALL ? "All Disciplines" : NONE}
-								</div>
-							) : (
-								<div className="flex items-center">
-									<div className="flex w-[40px]">
-										<ResultDisciplineImage value={i} />
-									</div>
-									{i}
-								</div>
-							)}
-						</div>
-					)}
-					<div className="whitespace-nowrap">
-						{byTotal[i]} {byUnique ? `(${byUnique[i]} uniq)` : null}
-					</div>
-				</div>
-			),
-		});
-	});
+          {target === DISCIPLINE && (
+            <div>
+              {[ALL, NONE].includes(i) ? (
+                <div className="flex items-center">
+                  <div className="flex w-[40px]" />
+                  {i === ALL ? 'All Disciplines' : NONE}
+                </div>
+              ) : (
+                <div className="flex items-center">
+                  <div className="flex w-[40px]">
+                    <ResultDisciplineImage value={i} />
+                  </div>
+                  {i}
+                </div>
+              )}
+            </div>
+          )}
+          <div className="whitespace-nowrap">
+            {byTotal[i]} {byUnique ? `(${byUnique[i]} uniq)` : null}
+          </div>
+        </div>
+      ),
+    });
+  });
 
-	return (
-		<Select
-			options={options}
-			placeholder="Select Filter"
-			value={options.find((obj) => obj.value === value)}
-			onChange={(e) => setValue(e.value)}
-		/>
-	);
+  return (
+    <Select
+      options={options}
+      placeholder="Select Filter"
+      value={options.find((obj) => obj.value === value)}
+      onChange={(e) => setValue(e.value)}
+    />
+  );
 };
 
 export default InventoryFilterForm;

@@ -13,7 +13,5 @@
 
 # TECH IMPROVEMENTS
 - Reconfigure biomejs
-  - prettier
-  - stylelint
   - eslint
 - Fix lint issues

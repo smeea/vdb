@@ -6,8 +6,8 @@
 		"start": "vite",
 		"build": "vite build",
 		"preview": "vite preview",
-		"lint": "npx @biomejs/biome lint .",
-		"prettier": "npx @biomejs/biome format --write .",
+		"lint": "npx @biomejs/biome lint src",
+		"prettier": "npx @biomejs/biome format --write src",
 		"generate-pwa-assets": "pwa-assets-generator"
 	},
 	"author": "Vadim Matveev",

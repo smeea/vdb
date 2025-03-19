@@ -1,119 +1,119 @@
-import { useCallback, useState } from "react";
-import { twMerge } from "tailwind-merge";
-import { DeckCryptHeader, DiffCryptTable, FlexGapped, ResultModal } from "@/components";
-import { CAPACITY, CLAN, CRYPT, GROUP, NAME, QUANTITYx, SECT } from "@/constants";
-import { useApp } from "@/context";
-import { useDeckCrypt, useModalCardController } from "@/hooks";
-import { getKeyDisciplines } from "@/utils";
+import { useCallback, useState } from 'react';
+import { twMerge } from 'tailwind-merge';
+import { DeckCryptHeader, DiffCryptTable, FlexGapped, ResultModal } from '@/components';
+import { CAPACITY, CLAN, CRYPT, GROUP, NAME, QUANTITYx, SECT } from '@/constants';
+import { useApp } from '@/context';
+import { useDeckCrypt, useModalCardController } from '@/hooks';
+import { getKeyDisciplines } from '@/utils';
 
 const ReviewCrypt = ({ cardChange, deckFrom, cardsTo }) => {
-	const { setShowFloatingButtons, cryptDeckSort, changeCryptDeckSort, isDesktop, isMobile } =
-		useApp();
-	const [showInfo, setShowInfo] = useState(false);
+  const { setShowFloatingButtons, cryptDeckSort, changeCryptDeckSort, isDesktop, isMobile } =
+    useApp();
+  const [showInfo, setShowInfo] = useState(false);
 
-	const sortMethods = {
-		[CAPACITY]: "C",
-		[CLAN]: "CL",
-		[GROUP]: "G",
-		[NAME]: "N",
-		[QUANTITYx]: "Q",
-		[SECT]: "S",
-	};
+  const sortMethods = {
+    [CAPACITY]: 'C',
+    [CLAN]: 'CL',
+    [GROUP]: 'G',
+    [NAME]: 'N',
+    [QUANTITYx]: 'Q',
+    [SECT]: 'S',
+  };
 
-	const { crypt, cryptSide, sortedCards, sortedCardsSide, cryptTotal } = useDeckCrypt(
-		deckFrom[CRYPT],
-		cryptDeckSort,
-		cardsTo,
-	);
+  const { crypt, cryptSide, sortedCards, sortedCardsSide, cryptTotal } = useDeckCrypt(
+    deckFrom[CRYPT],
+    cryptDeckSort,
+    cardsTo,
+  );
 
-	const { disciplinesSet, keyDisciplines } = getKeyDisciplines(crypt);
+  const { disciplinesSet, keyDisciplines } = getKeyDisciplines(crypt);
 
-	const {
-		currentModalCard,
-		shouldShowModal,
-		handleModalCardOpen,
-		handleModalSideCardOpen,
-		handleModalCardChange,
-		handleModalCardClose,
-	} = useModalCardController(sortedCards, sortedCardsSide);
+  const {
+    currentModalCard,
+    shouldShowModal,
+    handleModalCardOpen,
+    handleModalSideCardOpen,
+    handleModalCardChange,
+    handleModalCardClose,
+  } = useModalCardController(sortedCards, sortedCardsSide);
 
-	const handleClick = useCallback(
-		(card) => {
-			handleModalCardOpen(card);
-			!isDesktop && setShowFloatingButtons(false);
-		},
-		[sortedCards, sortedCardsSide],
-	);
+  const handleClick = useCallback(
+    (card) => {
+      handleModalCardOpen(card);
+      !isDesktop && setShowFloatingButtons(false);
+    },
+    [sortedCards, sortedCardsSide],
+  );
 
-	const handleClickSide = useCallback(
-		(card) => {
-			handleModalSideCardOpen(card);
-			!isDesktop && setShowFloatingButtons(false);
-		},
-		[sortedCards, sortedCardsSide],
-	);
+  const handleClickSide = useCallback(
+    (card) => {
+      handleModalSideCardOpen(card);
+      !isDesktop && setShowFloatingButtons(false);
+    },
+    [sortedCards, sortedCardsSide],
+  );
 
-	const handleClose = useCallback(() => {
-		handleModalCardClose();
-		!isDesktop && setShowFloatingButtons(true);
-	}, [sortedCards, sortedCardsSide]);
+  const handleClose = useCallback(() => {
+    handleModalCardClose();
+    !isDesktop && setShowFloatingButtons(true);
+  }, [sortedCards, sortedCardsSide]);
 
-	return (
-		<FlexGapped
-			className={twMerge(
-				"flex-col",
-				!isMobile && "bg-bgPrimary dark:bg-bgPrimaryDark sticky sm:top-10",
-			)}
-		>
-			<div>
-				<DeckCryptHeader
-					cardChange={cardChange}
-					cards={crypt}
-					deck={deckFrom}
-					setShowInfo={setShowInfo}
-					setSortMethod={changeCryptDeckSort}
-					showInfo={showInfo}
-					sortMethod={cryptDeckSort}
-					sortMethods={sortMethods}
-					forceIsEditable
-				/>
-				<DiffCryptTable
-					isEditable
-					cardChange={cardChange}
-					handleClick={handleClick}
-					cards={sortedCards}
-					cardsFrom={deckFrom[CRYPT]}
-					cardsTo={cardsTo}
-					showInfo={showInfo}
-					cryptTotal={cryptTotal}
-					disciplinesSet={disciplinesSet}
-					keyDisciplines={keyDisciplines}
-				/>
-			</div>
-			{Object.keys(cryptSide).length > 0 && (
-				<div className="opacity-60 dark:opacity-50">
-					<div className="flex items-center justify-between font-bold">Side Crypt</div>
-					<DiffCryptTable
-						isEditable
-						cardChange={cardChange}
-						handleClick={handleClickSide}
-						cards={sortedCardsSide}
-						cardsFrom={deckFrom[CRYPT]}
-						cardsTo={cardsTo}
-						disciplinesSet={disciplinesSet}
-						keyDisciplines={keyDisciplines}
-					/>
-				</div>
-			)}
-			{shouldShowModal && (
-				<ResultModal
-					card={currentModalCard}
-					handleModalCardChange={handleModalCardChange}
-					handleClose={handleClose}
-				/>
-			)}
-		</FlexGapped>
-	);
+  return (
+    <FlexGapped
+      className={twMerge(
+        'flex-col',
+        !isMobile && 'bg-bgPrimary dark:bg-bgPrimaryDark sticky sm:top-10',
+      )}
+    >
+      <div>
+        <DeckCryptHeader
+          cardChange={cardChange}
+          cards={crypt}
+          deck={deckFrom}
+          setShowInfo={setShowInfo}
+          setSortMethod={changeCryptDeckSort}
+          showInfo={showInfo}
+          sortMethod={cryptDeckSort}
+          sortMethods={sortMethods}
+          forceIsEditable
+        />
+        <DiffCryptTable
+          isEditable
+          cardChange={cardChange}
+          handleClick={handleClick}
+          cards={sortedCards}
+          cardsFrom={deckFrom[CRYPT]}
+          cardsTo={cardsTo}
+          showInfo={showInfo}
+          cryptTotal={cryptTotal}
+          disciplinesSet={disciplinesSet}
+          keyDisciplines={keyDisciplines}
+        />
+      </div>
+      {Object.keys(cryptSide).length > 0 && (
+        <div className="opacity-60 dark:opacity-50">
+          <div className="flex items-center justify-between font-bold">Side Crypt</div>
+          <DiffCryptTable
+            isEditable
+            cardChange={cardChange}
+            handleClick={handleClickSide}
+            cards={sortedCardsSide}
+            cardsFrom={deckFrom[CRYPT]}
+            cardsTo={cardsTo}
+            disciplinesSet={disciplinesSet}
+            keyDisciplines={keyDisciplines}
+          />
+        </div>
+      )}
+      {shouldShowModal && (
+        <ResultModal
+          card={currentModalCard}
+          handleModalCardChange={handleModalCardChange}
+          handleClose={handleClose}
+        />
+      )}
+    </FlexGapped>
+  );
 };
 
 export default ReviewCrypt;
