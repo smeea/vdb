@@ -12,6 +12,7 @@
 - Draft Cube support -> when draft cube info is available
 
 # TECH IMPROVEMENTS
-- Reconfigure biomejs
-  - eslint
-- Fix lint issues
+- Fix biomejs:
+  - tailwindcss class sorting
+  - imports sorting with @
+  - lint issues or fix rules

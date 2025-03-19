@@ -86,7 +86,7 @@
             scroll-padding-top: calc(var(--spacing) * 16);
         }
         font-size: 1rem;
-        font-line-height: 1.5rem;
+        line-height: 1.5rem;
     }
     body {
         color: var(--color-fgPrimary);

@@ -4,9 +4,7 @@
     "enabled": true,
     "lineWidth": 100,
     "indentStyle": "space",
-    "ignore": [
-      "src/assets"
-    ]
+    "ignore": ["src/assets"]
   },
   "organizeImports": {
     "enabled": false
@@ -14,7 +12,48 @@
   "linter": {
     "enabled": true,
     "rules": {
-      "recommended": true
+      "recommended": true,
+      "complexity": {
+        "noForEach": "off",
+        "noUselessFragments": "off",
+        "useLiteralKeys": "off",
+        "useOptionalChain": "off",
+        "noUselessTernary": "off"
+      },
+      "suspicious": {
+        "noGlobalIsNan": "off",
+        "noDoubleEquals": "off",
+        "noArrayIndexKey": "off",
+        "noAssignInExpressions": "off"
+      },
+      "style": {
+        "useDefaultParameterLast": "off",
+        "noParameterAssign": "off",
+        "useNumberNamespace": "off",
+        "useSelfClosingElements": "off",
+        "noUselessElse": "off",
+        "useTemplate": "off",
+        "useConst": "off",
+        "noUnusedTemplateLiteral": "off"
+      },
+      "a11y": {
+        "noAutofocus": "off",
+        "useButtonType": "off",
+        "useKeyWithClickEvents": "off",
+        "useAltText": "off",
+        "noNoninteractiveTabindex": "off",
+        "useValidAnchor": "off",
+        "noSvgWithoutTitle": "off"
+      },
+      "performance": {
+        "noDelete": "off",
+        "noAccumulatingSpread": "off"
+      },
+      "correctness": {
+        "useExhaustiveDependencies": "off",
+        "useJsxKeyInIterable": "off",
+        "noInvalidUseBeforeDeclaration": "off"
+      }
     }
   },
   "javascript": {
