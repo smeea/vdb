@@ -24,7 +24,7 @@ const ReviewCopyTextButton = ({ urlDiff }) => {
       library[cardid] = {
         c: card,
         q: 1, // fake
-        diff: parseInt(q),
+        diff: Number.parseInt(q),
       };
     }
   });

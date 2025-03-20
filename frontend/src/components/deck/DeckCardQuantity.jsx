@@ -27,7 +27,7 @@ const DeckCardQuantity = ({
   }, [q]);
 
   const handleManualChange = (event) => {
-    setState(event.target.value ? parseInt(event.target.value) : '');
+    setState(event.target.value ? Number.parseInt(event.target.value) : '');
   };
 
   const handleSubmit = (event) => {

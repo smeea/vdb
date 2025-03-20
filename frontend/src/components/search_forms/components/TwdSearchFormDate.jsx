@@ -21,7 +21,7 @@ const TwdSearchFormDate = ({ inPda, value, onChange }) => {
 
   const fromOptions = years
     .filter(
-      (i) => i.toLowerCase() === ANY || value[TO] === ANY || !value[TO] || parseInt(i) <= value[TO],
+      (i) => i.toLowerCase() === ANY || value[TO] === ANY || !value[TO] || Number.parseInt(i) <= value[TO],
     )
     .map((i) => {
       return {
@@ -37,7 +37,7 @@ const TwdSearchFormDate = ({ inPda, value, onChange }) => {
         i.toLowerCase() === ANY ||
         value[FROM] === ANY ||
         !value[FROM] ||
-        parseInt(i) >= value[FROM],
+        Number.parseInt(i) >= value[FROM],
     )
     .map((i) => {
       return {

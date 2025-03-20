@@ -71,6 +71,7 @@ const ResultCryptLayoutText = ({ card, setCard, handleClose, noClose, inPopover 
                               <div className="inline-flex items-center">
                                 [has
                                 <img
+                                  aria-label="Advanced"
                                   className="ml-1 inline-flex items-center"
                                   src={`${import.meta.env.VITE_BASE_URL}/images/misc/advanced.svg`}
                                   title="Advanced"

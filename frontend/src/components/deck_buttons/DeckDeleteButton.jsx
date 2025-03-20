@@ -17,7 +17,7 @@ const DeckDeleteButton = ({ deck, noText }) => {
   const getLastDeckExcept = () => {
     const lastDecks = Object.values(decks)
       .filter((d) => {
-        if (d[BRANCHES] && d[BRANCHES].includes(deck[DECKID])) return false;
+        if (d[BRANCHES].includes(deck[DECKID])) return false;
         if (d[MASTER]) return false;
         if (d[DECKID] === deck[DECKID]) return false;
         return true;

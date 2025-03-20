@@ -40,7 +40,7 @@ const InventoryMissingModalWrapper = ({
         .filter((i) => {
           return missingByDiscipline[discipline][i.c[ID]];
         })
-        .map((i) => (missing[i.c[ID]] = i));
+        .forEach((i) => (missing[i.c[ID]] = i));
       return missing;
     }
     return {};

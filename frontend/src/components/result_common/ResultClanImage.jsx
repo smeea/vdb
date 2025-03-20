@@ -5,6 +5,7 @@ const ResultClanImage = ({ value, className }) => {
 
   return (
     <img
+      aria-label="Clan"
       className={twMerge(
         'inline dark:brightness-[0.65]',
         WIDE_ICON_CLANS.includes(value) ? 'h-[17px] sm:h-[20px]' : 'h-[21px] sm:h-[24px]',

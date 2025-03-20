@@ -14,36 +14,26 @@
     "rules": {
       "recommended": true,
       "complexity": {
-        "useOptionalChain": "off",
         "noForEach": "off"
       },
       "suspicious": {
-        "noDoubleEquals": "off",
         "noArrayIndexKey": "off",
+        "noDoubleEquals": "off",
         "noAssignInExpressions": "off"
       },
       "style": {
         "useDefaultParameterLast": "off",
         "noParameterAssign": "off",
-        "useNumberNamespace": "off",
         "noUselessElse": "off",
-        "useTemplate": "off",
         "noUnusedTemplateLiteral": "off"
       },
       "a11y": {
         "noAutofocus": "off",
-        "useButtonType": "off",
-        "useKeyWithClickEvents": "off",
-        "useAltText": "off",
-        "noNoninteractiveTabindex": "off"
-      },
-      "performance": {
-        "noDelete": "off",
-        "noAccumulatingSpread": "off"
+        "noNoninteractiveTabindex": "off",
+        "useKeyWithClickEvents": "off"
       },
       "correctness": {
-        "useExhaustiveDependencies": "off",
-        "noInvalidUseBeforeDeclaration": "off"
+        "useExhaustiveDependencies": "off"
       }
     }
   },

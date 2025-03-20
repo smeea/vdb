@@ -32,12 +32,12 @@ const sanitizeScoreSheet = (sheet) => {
   Object.keys(sheet).forEach((k) => {
     ['f', 'r', 'h'].forEach((i) => delete sheet[k][i]);
     if (k.includes('A')) {
-      const v = parseInt(k.replace('A', ''));
+      const v = Number.parseInt(k.replace('A', ''));
       if (v > maxA) maxA = v;
     }
   });
   sheet['!ref'] = `A1:AB${maxA}`;
-  delete sheet['!margins'];
+  sheet['!margins'] = undefined;
 
   return sheet;
 };

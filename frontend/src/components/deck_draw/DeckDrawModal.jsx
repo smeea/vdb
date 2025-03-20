@@ -40,17 +40,17 @@ const DeckDrawModal = ({
 
   let burnedCapacityTotal = 0;
   burnedCrypt.forEach((card) => {
-    burnedCapacityTotal += parseInt(card[CAPACITY]);
+    burnedCapacityTotal += Number.parseInt(card[CAPACITY]);
   });
 
   let burnedPoolTotal = 0;
   let burnedBloodTotal = 0;
   burnedLibrary.forEach((card) => {
     if (card[BLOOD] && !Number.isNaN(card[BLOOD])) {
-      burnedBloodTotal += parseInt(card[BLOOD]);
+      burnedBloodTotal += Number.parseInt(card[BLOOD]);
     }
     if (card[POOL] && !Number.isNaN(card[POOL])) {
-      burnedPoolTotal += parseInt(card[POOL]);
+      burnedPoolTotal += Number.parseInt(card[POOL]);
     }
   });
 

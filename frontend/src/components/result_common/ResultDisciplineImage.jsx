@@ -23,6 +23,7 @@ const ResultDisciplineImage = ({ value, isSuperior, name, size = 'md' }) => {
 
   return (
     <img
+      aria-label="Discipline"
       className={twMerge(
         'inline drop-shadow-[0px_0px_1px_#a0a0a0] dark:brightness-[0.85] dark:drop-shadow-[0px_0px_1px_#d0d0d0]',
         sizeStyle[size],

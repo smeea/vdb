@@ -24,6 +24,7 @@ const ResultName = ({ card, isBanned, isColored = true }) => {
       {card[ID] > 200000 && card[ADV][0] && (
         <div className="inline whitespace-nowrap">
           <img
+            aria-label="Advanced"
             className="mb-1 inline"
             src={`${import.meta.env.VITE_BASE_URL}/images/misc/advanced.svg`}
             title="Advanced"

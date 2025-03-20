@@ -87,7 +87,7 @@ const Review = () => {
       [IS_PUBLIC]: !!deckData[PUBLIC_PARENT],
       [IS_NON_EDITABLE]: false,
     };
-    delete d.cards;
+    d.cards = undefined;
 
     setDeckTo(d);
     setDeckFrom(d);
@@ -148,12 +148,12 @@ const Review = () => {
           const j = i.split('=');
           if (j[0] > 200000) {
             deckWithHash[CRYPT][j[0]] = {
-              q: (deckTo[CRYPT][j[0]]?.q || 0) + parseInt(j[1]),
+              q: (deckTo[CRYPT][j[0]]?.q || 0) + Number.parseInt(j[1]),
               c: cryptCardBase[j[0]],
             };
           } else {
             deckWithHash[LIBRARY][j[0]] = {
-              q: (deckTo[LIBRARY][j[0]]?.q || 0) + parseInt(j[1]),
+              q: (deckTo[LIBRARY][j[0]]?.q || 0) + Number.parseInt(j[1]),
               c: libraryCardBase[j[0]],
             };
           }

@@ -62,7 +62,7 @@ const Modal = ({
               </Dialog.Title>
             )}
             <div className={twMerge('max-h-0 max-w-0 opacity-0', noClose && 'hidden')}>
-              <button ref={ref} />
+              <button type="button" ref={ref} />
             </div>
             {children}
           </Dialog.Panel>

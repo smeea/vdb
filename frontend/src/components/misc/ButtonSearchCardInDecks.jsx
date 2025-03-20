@@ -11,7 +11,7 @@ import {
   setTwdResults,
 } from '@/context';
 
-const ButtonSearchCardInDecks = ({ cardid, target, handleClose }) => {
+const ButtonSearchCardInDecks = ({ cardid, target, handleClose = () => {} }) => {
   const navigate = useNavigate();
   const value = { [cardid]: { q: 1, m: GT } };
   const searchForm = target == PDA ? searchPdaForm : searchTwdForm;
@@ -26,8 +26,7 @@ const ButtonSearchCardInDecks = ({ cardid, target, handleClose }) => {
         cardid > 200000 ? CRYPT : LIBRARY
       }"%3A{"${cardid}"%3A{"q"%3A1%2C"m"%3A"gt"}}}`,
     );
-
-    handleClose && handleClose();
+    handleClose();
   };
 
   return (

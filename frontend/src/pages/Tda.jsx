@@ -109,10 +109,10 @@ const Tda = () => {
       const finalPlace = dataFinalTable
         .filter((i) => {
           const array = i.split(',');
-          return parseInt(array[0]) == playerNumber && array[21];
+          return Number.parseInt(array[0]) == playerNumber && array[21];
         })[0]
         .split(',')[21];
-      return parseInt(finalPlace);
+      return Number.parseInt(finalPlace);
     };
 
     const wsInfo = wb.Sheets['Tournament Info'];
@@ -131,7 +131,7 @@ const Tda = () => {
 
     dataInfo.forEach((n) => {
       const array = n.split(',');
-      if (array[0] === 'Number of Players:') totalPlayers = parseInt(array[1]);
+      if (array[0] === 'Number of Players:') totalPlayers = Number.parseInt(array[1]);
       if (array[0] === 'Number of Rounds (including final):') totalRounds = array[1];
       if (array[0] === 'Number of Event Matches:') totalMatches = array[1];
       if (array[0] === 'Event Name:') event = array[1];
@@ -149,18 +149,18 @@ const Tda = () => {
       if (idx < 6) return;
       const array = n.split(',');
       const playerId = array[4];
-      const playerNumber = parseInt(array[0]);
+      const playerNumber = Number.parseInt(array[0]);
       if (!playerId) return;
       archonIds.push(playerId);
 
       const rank =
         array[20] == 'DQ'
           ? 'DQ'
-          : parseInt(array[20]) > 5
-            ? parseInt(array[20])
+          : Number.parseInt(array[20]) > 5
+            ? Number.parseInt(array[20])
             : wb.Sheets['Final Round']
               ? getFinalPlace(playerNumber)
-              : parseInt(array[17]);
+              : Number.parseInt(array[17]);
 
       const name = `${array[1]} ${array[2]}`;
 

@@ -55,7 +55,7 @@ const ResultModal = ({ card, handleModalCardChange, handleClose, forceInventoryM
     >
       <div className="relative">
         <div className="max-h-0 max-w-0 opacity-0">
-          <button />
+          <button type="button"/>
         </div>
         {isMobile ? (
           <div {...swipeHandlers}>

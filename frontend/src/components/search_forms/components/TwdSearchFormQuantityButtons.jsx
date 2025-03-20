@@ -14,7 +14,7 @@ const TwdSearchFormQuantityButtons = ({ value, form, id }) => {
   }, [value[id].q]);
 
   const handleManualChange = (event) => {
-    setState(parseInt(event.target.value));
+    setState(Number.parseInt(event.target.value));
   };
 
   const handleSubmit = (event) => {

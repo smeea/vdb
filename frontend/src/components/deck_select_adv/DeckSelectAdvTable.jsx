@@ -104,7 +104,7 @@ const DeckSelectAdvTable = ({
         filtered = filtered.filter((deck) => {
           let counter = 0;
           tagsFilter.forEach((tag) => {
-            if (deck[TAGS] && deck[TAGS].includes(tag)) counter += 1;
+            if (deck[TAGS].includes(tag)) counter += 1;
           });
           if (counter >= tagsFilter.length) return true;
         });

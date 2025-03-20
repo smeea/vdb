@@ -7,6 +7,7 @@ const Banner = () => {
     <div className="border-borderSecondary bg-bgSecondary dark:border-borderSecondaryDark dark:bg-bgSecondaryDark flex w-full items-center justify-between border p-2">
       <div onClick={() => navigate('/')} className="flex cursor-pointer items-center">
         <img
+          aria-label="VDB Logo"
           className="dark:brightness-150"
           src={`${import.meta.env.VITE_BASE_URL}/images/misc/logo.svg`}
           title="logo"

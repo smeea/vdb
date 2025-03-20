@@ -183,7 +183,8 @@ export const getClan = (crypt) => {
       if (clans[c] > acc.q) {
         return { clan: c, q: clans[c], t: t };
       } else {
-        return { ...acc, t: t };
+        acc[t] = t;
+        return acc;
       }
     },
     { clan: null, q: 0, t: 0 },
@@ -216,7 +217,8 @@ export const getSect = (crypt) => {
       if (sects[c] > acc.q) {
         return { sect: c, q: sects[c], t: t };
       } else {
-        return { ...acc, t: t };
+        acc[t] = t;
+        return acc;
       }
     },
     { sect: null, q: 0, t: 0 },
@@ -274,12 +276,12 @@ export const parseDeckHash = (hash, cryptCardBase, libraryCardBase) => {
       const j = i.split('=');
       if (j[0] > 200000) {
         crypt[j[0]] = {
-          q: parseInt(j[1]),
+          q: Number.parseInt(j[1]),
           c: cryptCardBase[j[0]],
         };
       } else {
         library[j[0]] = {
-          q: parseInt(j[1]),
+          q: Number.parseInt(j[1]),
           c: libraryCardBase[j[0]],
         };
       }

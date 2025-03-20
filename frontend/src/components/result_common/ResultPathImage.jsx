@@ -11,6 +11,7 @@ const ResultPathImage = ({ value, size = 'md' }) => {
 
   return (
     <img
+      aria-label="Path"
       className={twMerge('inline dark:brightness-[0.65]', sizeStyle[size])}
       src={`${import.meta.env.VITE_BASE_URL}/images/misc/path${value.toLowerCase().replace(/ .*/, '')}.svg`}
       title={`Path of ${capitalize(value)}`}

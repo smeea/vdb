@@ -290,9 +290,9 @@ const requiredTitleList = [
 
 const missingVotes = (filter, card) => {
   const cardTitle = card[TITLE].toLowerCase() || NON_TITLED;
-  if (parseInt(filter) === 0) return !(cardTitle === NON_TITLED);
+  if (Number.parseInt(filter) === 0) return !(cardTitle === NON_TITLED);
 
-  return !(titleWorth[cardTitle] >= parseInt(filter));
+  return !(titleWorth[cardTitle] >= Number.parseInt(filter));
 };
 
 const titleWorth = {
@@ -321,7 +321,7 @@ const missingCapacityCrypt = (filter, card) => {
   switch (logic) {
     case OR:
       return !values.some((value) => {
-        const capacity = parseInt(value[CAPACITY]);
+        const capacity = Number.parseInt(value[CAPACITY]);
         const moreless = value.moreless;
 
         switch (moreless) {
@@ -335,7 +335,7 @@ const missingCapacityCrypt = (filter, card) => {
       });
     case NOT:
       return !values.every((value) => {
-        const capacity = parseInt(value[CAPACITY]);
+        const capacity = Number.parseInt(value[CAPACITY]);
         const moreless = value.moreless;
 
         switch (moreless) {
@@ -351,11 +351,11 @@ const missingCapacityCrypt = (filter, card) => {
 };
 
 const missingCapacityLibrary = (filter, card) => {
-  const capacity = parseInt(filter[CAPACITY]);
+  const capacity = Number.parseInt(filter[CAPACITY]);
   const moreless = filter.moreless;
 
-  const match1 = capacityRegex[moreless + '1'].exec(card[TEXT]);
-  const match2 = capacityRegex[moreless + '2'].exec(card[TEXT]);
+  const match1 = capacityRegex[`${moreless}1`].exec(card[TEXT]);
+  const match2 = capacityRegex[`${moreless}2`].exec(card[TEXT]);
 
   if (!match1 && !match2) return true;
 
@@ -531,7 +531,7 @@ const missingArtist = (filter, card) => {
 };
 
 const missingNameOrInitials = (filter, card) => {
-  const charRegExp = '^' + filter.split('').join('(\\S*[\\s-])?');
+  const charRegExp = `^${filter.split('').join('(\\S*[\\s-])?')}`;
 
   let checkInitials;
   try {
@@ -569,19 +569,19 @@ const missingRequirementsCheck = (logic, array, value, hasNoRequirement) => {
       return array.some(
         (name) =>
           !(
-            RegExp('(^|[, ])' + name, 'i').test(value) ||
+            RegExp(`(^|[, ])${name}`, 'i').test(value) ||
             (name === NOT_REQUIRED && hasNoRequirement)
           ),
       );
     case OR:
       return !array.some(
         (name) =>
-          RegExp('(^|[, ])' + name, 'i').test(value) || (name === NOT_REQUIRED && hasNoRequirement),
+          RegExp(`(^|[, ])${name}`, 'i').test(value) || (name === NOT_REQUIRED && hasNoRequirement),
       );
     case NOT:
       return array.some(
         (name) =>
-          RegExp('(^|[, ])' + name, 'i').test(value) || (name === NOT_REQUIRED && hasNoRequirement),
+          RegExp(`(^|[, ])${name}`, 'i').test(value) || (name === NOT_REQUIRED && hasNoRequirement),
       );
   }
 };

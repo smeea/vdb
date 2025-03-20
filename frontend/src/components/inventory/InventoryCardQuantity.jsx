@@ -22,13 +22,13 @@ const InventoryCardQuantity = ({ card, softUsedMax, hardUsedTotal, compact, newF
   const handleSubmit = (event) => {
     event.preventDefault();
     if (compact) newFocus();
-    inventoryCardChange(card.c, state ? parseInt(state) : 0);
+    inventoryCardChange(card.c, state ? Number.parseInt(state) : 0);
     setManual(false);
   };
 
   const handleQuantityChange = (diff) => {
     if (diff + state >= 0) setState(diff + state);
-    inventoryCardChange(card.c, parseInt(diff + state));
+    inventoryCardChange(card.c, Number.parseInt(diff + state));
   };
 
   return (

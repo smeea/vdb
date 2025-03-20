@@ -35,7 +35,7 @@ const TdaLoadCustomButtons = ({ tempDecks, setTempDecks, setTempArchon, getDeck,
     Promise.all(decks).then((v) => {
       const d = {};
       v.forEach((i) => {
-        d[parseInt(i[AUTHOR])] = i;
+        d[Number.parseInt(i[AUTHOR])] = i;
       });
 
       setTempDecks(d);

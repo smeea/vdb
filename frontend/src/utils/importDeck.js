@@ -50,7 +50,7 @@ const importDeck = async (deckText, cryptCardBase, libraryCardBase, isPlaytester
     if (i.includes('ADV')) {
       const regexp = /^([0-9]+) ?x?\s+(.*?)\s\(?ADV\)?.*/;
       const match = i.match(regexp);
-      q = parseInt(match[1]);
+      q = Number.parseInt(match[1]);
       let cardname = match[2];
       cardname = minifyCardName(cardname);
 
@@ -60,7 +60,7 @@ const importDeck = async (deckText, cryptCardBase, libraryCardBase, isPlaytester
     } else if (i.includes(' (G')) {
       const regexp = /^\s*([0-9]+) ?x?\s+(.*)\s\(G(.*)\)/;
       const match = i.match(regexp);
-      q = parseInt(match[1]);
+      q = Number.parseInt(match[1]);
       const cardname = minifyCardName(match[2]);
       const group = match[3];
       if (Object.keys(cardbase).includes(cardname)) {
@@ -72,7 +72,7 @@ const importDeck = async (deckText, cryptCardBase, libraryCardBase, isPlaytester
       let regexp = /^\s*([0-9]+) ?x?\s+(.*?)(\s+\d+.*):(.*)/;
       let match = i.match(regexp);
       if (match) {
-        q = parseInt(match[1]);
+        q = Number.parseInt(match[1]);
         const cardname = minifyCardName(match[2]);
         const group = match[4].toLowerCase();
         if (Object.keys(cardbase).includes(cardname)) {
@@ -83,7 +83,7 @@ const importDeck = async (deckText, cryptCardBase, libraryCardBase, isPlaytester
       } else {
         regexp = /^\s*([0-9]+) ?x?\s*(.*)/;
         match = i.match(regexp);
-        q = parseInt(match[1]);
+        q = Number.parseInt(match[1]);
         const cardname = minifyCardName(match[2]);
         if (Object.keys(cardbase).includes(cardname)) {
           id = cardbase[cardname][BASE];

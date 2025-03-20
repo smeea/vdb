@@ -24,6 +24,7 @@ const ResultMiscImage = ({ value, title, size = 'md' }) => {
         <ResultDisciplineImage isSuperior={isSuperior} value={discipline[0]} />
       ) : (
         <img
+          aria-label="Misc Icon"
           src={`${import.meta.env.VITE_BASE_URL}/images/${cardtextIcons[value]}.svg`}
           title={title ?? capitalize(value)}
           className={twMerge(

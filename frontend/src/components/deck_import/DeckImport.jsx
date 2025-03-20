@@ -11,7 +11,7 @@ const DeckImport = ({
   setBadImportCards,
   setShowImportAmaranth,
   setShowImportText,
-  setShowInfo,
+  setShowInfo = () => {},
 }) => {
   const {
     isPlaytester,
@@ -59,7 +59,7 @@ const DeckImport = ({
     deckServices
       .deckImport(d)
       .then((data) => {
-        setShowInfo && setShowInfo(true);
+        setShowInfo(true);
         setShowMenuButtons(false);
         setShowFloatingButtons(true);
         deckAdd({

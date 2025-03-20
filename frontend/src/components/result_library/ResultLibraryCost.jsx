@@ -15,6 +15,7 @@ const ResultLibraryCost = ({ card, className }) => {
 
   return (
     <img
+      aria-label="Cost"
       className={twMerge(styles[target], className)}
       title={`${capitalize(target)} Cost ${value}`}
       src={`${import.meta.env.VITE_BASE_URL}/images/misc/${target}${value}.${target == CONVICTION ? 'svg' : 'gif'}`}

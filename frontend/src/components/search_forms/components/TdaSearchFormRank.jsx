@@ -11,7 +11,7 @@ const TdaSearchFormRank = ({ value, onChange }) => {
         i.toLowerCase() === ANY ||
         value[TO] === ANY ||
         !value[TO] ||
-        parseInt(i) > value[TO] ||
+        Number.parseInt(i) > value[TO] ||
         (value[TO].includes('%') && i.includes('%') && i > value[TO])
       );
     })
@@ -27,7 +27,7 @@ const TdaSearchFormRank = ({ value, onChange }) => {
         i.toLowerCase() === ANY ||
         value[FROM] === ANY ||
         !value[FROM] ||
-        parseInt(i) < value[FROM] ||
+        Number.parseInt(i) < value[FROM] ||
         (value[FROM].includes('%') && i.includes('%') && i < value[FROM])
       );
     })

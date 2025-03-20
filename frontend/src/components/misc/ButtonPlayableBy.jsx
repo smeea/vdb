@@ -5,7 +5,7 @@ import { CRYPT, GE, LE } from '@/constants';
 import { clearSearchForm } from '@/context';
 import { getLibraryRequirements } from '@/utils';
 
-const ButtonPlayableBy = ({ card, handleClose }) => {
+const ButtonPlayableBy = ({ card, handleClose = () => {} }) => {
   const navigate = useNavigate();
 
   const {
@@ -66,8 +66,7 @@ const ButtonPlayableBy = ({ card, handleClose }) => {
 
     clearSearchForm(CRYPT);
     navigate(`/crypt?q={${queries.join('%2C')}}`);
-
-    handleClose && handleClose();
+    handleClose();
   };
 
   return (

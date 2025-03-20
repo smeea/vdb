@@ -21,7 +21,7 @@ const TdaChartsClan = ({ decks }) => {
     return Object.keys(result)
       .map((c) => {
         return {
-          name: isMobile && c.includes(ANTITRIBU) ? '!' + c.replace(` ${ANTITRIBU}`, '') : c,
+          name: isMobile && c.includes(ANTITRIBU) ? `!${c.replace(` ${ANTITRIBU}`, '')}` : c,
           value: result[c],
         };
       })
