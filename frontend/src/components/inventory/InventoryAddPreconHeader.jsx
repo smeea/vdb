@@ -35,7 +35,7 @@ const InventoryAddPreconHeader = ({
   return (
     <thead>
       <tr>
-        <th className="min-w-[50px]"></th>
+        <th className="min-w-[50px]" />
         <th className="py-1 pr-1 max-sm:w-full">
           <Input
             placeholder="Filter by Name"
@@ -46,7 +46,7 @@ const InventoryAddPreconHeader = ({
             onChange={handleChangeNameFilter}
           />
         </th>
-        {isDesktop && <th className="min-w-[40px]"></th>}
+        {isDesktop && <th className="min-w-[40px]" />}
         <th className="w-full">
           <Input
             placeholder="Filter by Set"

@@ -64,6 +64,7 @@ const Checkbox = ({
               )}
               viewBox="0 0 14 14"
               fill="none"
+              title="Check Mark"
             >
               <path
                 d="M3.5 7L5.5 9.5L10 4.5"

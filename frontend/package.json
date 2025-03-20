@@ -7,7 +7,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "lint": "npx @biomejs/biome lint src",
-    "lint-fix": "npx @biomejs/biome lint --write --unsafe src",
+    "lint-fix": "npx @biomejs/biome lint --write src",
+    "lint-fix-unsafe": "npx @biomejs/biome lint --write --unsafe src",
     "format": "npx @biomejs/biome format --write src",
     "generate-pwa-assets": "pwa-assets-generator"
   },

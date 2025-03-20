@@ -143,7 +143,7 @@ const getCryptTags = (card) => {
 };
 
 const getLibraryTags = (card) => {
-  let cardTags = [];
+  const cardTags = [];
   testLibraryAlly(card) && cardTags.push(ALLY);
   testLibraryBleed(card) && cardTags.push(BLEED);
   testLibraryAccel(card) && cardTags.push(ACCEL);

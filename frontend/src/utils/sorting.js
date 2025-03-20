@@ -69,18 +69,18 @@ export const byDiscipline = (a, b) => {
 export const byBloodCost = (a, b) => {
   const costA = a.c ? a.c[BLOOD] : a[BLOOD];
   const costB = b.c ? b.c[BLOOD] : b[BLOOD];
-  if (!isNaN(costA) && isNaN(costB)) return -1;
-  if (!isNaN(costB) && isNaN(costA)) return 1;
-  if (isNaN(costA) && isNaN(costB)) return 0;
+  if (!Number.isNaN(costA) && Number.isNaN(costB)) return -1;
+  if (!Number.isNaN(costB) && Number.isNaN(costA)) return 1;
+  if (Number.isNaN(costA) && Number.isNaN(costB)) return 0;
   return costB - costA;
 };
 
 export const byPoolCost = (a, b) => {
   const costA = a.c ? a.c[POOL] : a[POOL];
   const costB = b.c ? b.c[POOL] : b[POOL];
-  if (!isNaN(costA) && isNaN(costB)) return -1;
-  if (!isNaN(costB) && isNaN(costA)) return 1;
-  if (isNaN(costA) && isNaN(costB)) return 0;
+  if (!Number.isNaN(costA) && Number.isNaN(costB)) return -1;
+  if (!Number.isNaN(costB) && Number.isNaN(costA)) return 1;
+  if (Number.isNaN(costA) && Number.isNaN(costB)) return 0;
   return costB - costA;
 };
 

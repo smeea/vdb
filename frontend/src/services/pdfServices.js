@@ -33,7 +33,7 @@ export const proxyCards = async (
   const sheetW = format.isLetter ? 215.9 : 210;
   const sheetH = format.isLetter ? 279.4 : 297;
 
-  let { jsPDF } = await import('jspdf');
+  const { jsPDF } = await import('jspdf');
   const pdf = new jsPDF('p', 'mm', [sheetW, sheetH]);
 
   const w = 63;

@@ -30,7 +30,7 @@ const ResultUsed = ({ card }) => {
           )}
         >
           <div className="flex basis-3/5 justify-center text-lg">
-            {isInventoryNote && <div className="min-w-[4px]"></div>}
+            {isInventoryNote && <div className="min-w-[4px]" />}
             {inInventory}
             {isInventoryNote && <div className="max-w-[4px] text-sm">*</div>}
           </div>

@@ -57,7 +57,7 @@ const AccountLimitedModal = ({ setShow, setFormat }) => {
   };
 
   const exportFormat = async () => {
-    let { saveAs } = await import('file-saver');
+    const { saveAs } = await import('file-saver');
     const fileName = `Limited Format [${dayjs().format('YYYY-MM-DD')}].txt`;
     const formatText = JSON.stringify(minifyFormat(), null, '  ');
     const file = new File([formatText], fileName, {

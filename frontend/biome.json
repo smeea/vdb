@@ -14,10 +14,10 @@
     "rules": {
       "recommended": true,
       "complexity": {
+        "useOptionalChain": "off",
         "noForEach": "off"
       },
       "suspicious": {
-        "noGlobalIsNan": "off",
         "noDoubleEquals": "off",
         "noArrayIndexKey": "off",
         "noAssignInExpressions": "off"
@@ -26,10 +26,8 @@
         "useDefaultParameterLast": "off",
         "noParameterAssign": "off",
         "useNumberNamespace": "off",
-        "useSelfClosingElements": "off",
         "noUselessElse": "off",
         "useTemplate": "off",
-        "useConst": "off",
         "noUnusedTemplateLiteral": "off"
       },
       "a11y": {
@@ -37,9 +35,7 @@
         "useButtonType": "off",
         "useKeyWithClickEvents": "off",
         "useAltText": "off",
-        "noNoninteractiveTabindex": "off",
-        "useValidAnchor": "off",
-        "noSvgWithoutTitle": "off"
+        "noNoninteractiveTabindex": "off"
       },
       "performance": {
         "noDelete": "off",

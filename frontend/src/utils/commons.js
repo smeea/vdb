@@ -57,7 +57,7 @@ export const countDisciplines = (cardsList) => {
 export const countTotalCost = (cardsList, type) => {
   if (!cardsList.length) return 0;
   return cardsList
-    .filter((card) => !isNaN(card.c[type]))
+    .filter((card) => !Number.isNaN(card.c[type]))
     .reduce((acc, card) => acc + card.q * card.c[type], 0);
 };
 

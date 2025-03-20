@@ -60,7 +60,7 @@ const TwdCheckInput = ({ deckData, setDeckData }) => {
         type: 'text/plain;charset=utf-8',
       });
 
-      let { saveAs } = await import('file-saver');
+      const { saveAs } = await import('file-saver');
       saveAs(file);
     } else {
       setEmptyError(true);

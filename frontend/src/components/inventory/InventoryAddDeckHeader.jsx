@@ -18,8 +18,8 @@ const InventoryAddDeckHeader = ({
   return (
     <thead>
       <tr>
-        <th className="min-w-[45px]"></th>
-        <th className="min-w-[50px] max-sm:hidden"></th>
+        <th className="min-w-[45px]" />
+        <th className="min-w-[50px] max-sm:hidden" />
         <th className="py-1 max-sm:w-full sm:min-w-[250px] lg:min-w-[400px]">
           <Input
             placeholder="Filter by Name"
@@ -30,8 +30,8 @@ const InventoryAddDeckHeader = ({
             onChange={handleChangeNameFilter}
           />
         </th>
-        <th className="min-w-[40px] max-lg:hidden"></th>
-        <th className="min-w-[100px] max-sm:hidden"></th>
+        <th className="min-w-[40px] max-lg:hidden" />
+        <th className="min-w-[100px] max-sm:hidden" />
         <th className="w-full text-start max-sm:hidden max-sm:py-0.5 sm:p-1">
           <Select
             variant="creatable"

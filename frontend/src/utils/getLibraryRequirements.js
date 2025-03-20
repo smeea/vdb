@@ -26,7 +26,7 @@ const getLibraryRequirements = (card) => {
   let isNonSect;
   let isRedlist;
   let isSect;
-  let isTitle = [];
+  const isTitle = [];
   let isBlackHand;
   let isSeraph;
 

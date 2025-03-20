@@ -124,7 +124,7 @@ const Tda = () => {
     let totalVp = 0;
     let medianVp = 0;
     let medianGw = 0;
-    let reportedRanks = [];
+    const reportedRanks = [];
     let event;
     let date;
     let location;

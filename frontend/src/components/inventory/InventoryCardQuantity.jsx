@@ -45,7 +45,7 @@ const InventoryCardQuantity = ({ card, softUsedMax, hardUsedTotal, compact, newF
                     'bg-bgError dark:bg-bgErrorDark dark:text-whiteDark text-white',
                 )}
               >
-                {card.t && <div className="min-w-[4px]"></div>}
+                {card.t && <div className="min-w-[4px]" />}
                 {state == 0 ? <>&nbsp;</> : state}
                 {card.t && <div className="max-w-[4px] text-xs">*</div>}
               </div>
@@ -81,7 +81,7 @@ const InventoryCardQuantity = ({ card, softUsedMax, hardUsedTotal, compact, newF
                   </form>
                 ) : (
                   <>
-                    {card.t && <div className="min-w-[4px]"></div>}
+                    {card.t && <div className="min-w-[4px]" />}
                     {state == 0 ? <>&nbsp;</> : state}
                     {card.t && <div className="max-w-[4px] text-xs">*</div>}
                   </>
@@ -99,7 +99,7 @@ const InventoryCardQuantity = ({ card, softUsedMax, hardUsedTotal, compact, newF
               'bg-bgError dark:bg-bgErrorDark dark:text-whiteDark text-white',
           )}
         >
-          {card.t && <div className="min-w-[4px]"></div>}
+          {card.t && <div className="min-w-[4px]" />}
           {state == 0 ? <>&nbsp;</> : state}
           {card.t && <div className="max-w-[4px] text-xs">*</div>}
         </div>

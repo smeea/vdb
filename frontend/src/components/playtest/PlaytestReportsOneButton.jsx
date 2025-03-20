@@ -34,7 +34,7 @@ const PlaytestReportsOneButton = ({ value, isPrecon = false }) => {
       type: 'text/plain;charset=utf-8',
     });
 
-    let { saveAs } = await import('file-saver');
+    const { saveAs } = await import('file-saver');
     saveAs(file);
   };
 

@@ -82,12 +82,12 @@ const PlaytestReportsAll = () => {
           let name;
           switch (target) {
             case PRECONS:
-              if (id == GENERAL || !isNaN(id)) return;
+              if (id == GENERAL || !Number.isNaN(id)) return;
               name = preconDecks[`${PLAYTEST}:${id}`][NAME];
               exportText += `Precon: ${name}\n\n`;
               break;
             case CARDS:
-              if (isNaN(id)) return;
+              if (Number.isNaN(id)) return;
               try {
                 name = id > 200000 ? cryptCardBase[id][NAME] : libraryCardBase[id][NAME];
               } catch {
@@ -126,7 +126,7 @@ const PlaytestReportsAll = () => {
         });
     }
 
-    let { saveAs } = await import('file-saver');
+    const { saveAs } = await import('file-saver');
     saveAs(file);
   };
 

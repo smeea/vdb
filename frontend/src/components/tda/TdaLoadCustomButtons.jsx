@@ -24,7 +24,7 @@ const TdaLoadCustomButtons = ({ tempDecks, setTempDecks, setTempArchon, getDeck,
     const decks = Object.keys(files).map(async (i) => {
       const result = await new Promise((resolve) => {
         const file = files[i];
-        let fileReader = new FileReader();
+        const fileReader = new FileReader();
         fileReader.onload = () => resolve(getDeck(fileReader.result));
         fileReader.readAsText(file);
       });

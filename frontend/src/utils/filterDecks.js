@@ -190,7 +190,7 @@ const missingDisciplines = (filter, deck) => {
 };
 
 const missingCardtypes = (filter, deck) => {
-  let cardTypes = {};
+  const cardTypes = {};
   let libraryTotal = 0;
 
   Object.values(deck[LIBRARY]).forEach((card) => {
@@ -219,7 +219,7 @@ const missingCardtypes = (filter, deck) => {
 const missingTraits = (filter, deck) => {
   let cryptTotal = 0;
   let cryptMaxUnique = 0;
-  let clans = [];
+  const clans = [];
   Object.values(deck[CRYPT])
     .filter((card) => card[ID] !== 200076)
     .forEach((card) => {

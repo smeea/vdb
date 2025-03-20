@@ -108,7 +108,7 @@ const DeckExportButton = ({ deck, inMissing, inInventory }) => {
       });
     }
 
-    let { saveAs } = await import('file-saver');
+    const { saveAs } = await import('file-saver');
     saveAs(file, name);
 
     setShowMenuButtons(false);
