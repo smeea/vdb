@@ -65,22 +65,22 @@ const Navigation = () => {
   const limitedStoreState = useSnapshot(limitedStore);
 
   const pdaUrl =
-    JSON.stringify(pdaFormState) == JSON.stringify(pdaDefaults)
+    JSON.stringify(pdaFormState) === JSON.stringify(pdaDefaults)
       ? '/pda'
       : `/pda?q=${encodeURIComponent(JSON.stringify(sanitizeFormState(PDA, pdaFormState)))}`;
 
   const twdUrl =
-    JSON.stringify(twdFormState) == JSON.stringify(twdDefaults)
+    JSON.stringify(twdFormState) === JSON.stringify(twdDefaults)
       ? '/twd'
       : `/twd?q=${encodeURIComponent(JSON.stringify(sanitizeFormState(TWD, twdFormState)))}`;
 
   const cryptUrl =
-    JSON.stringify(cryptFormState) == JSON.stringify(cryptDefaults)
+    JSON.stringify(cryptFormState) === JSON.stringify(cryptDefaults)
       ? '/crypt'
       : `/crypt?q=${encodeURIComponent(JSON.stringify(sanitizeFormState(CRYPT, cryptFormState)))}`;
 
   const libraryUrl =
-    JSON.stringify(libraryFormState) == JSON.stringify(libraryDefaults)
+    JSON.stringify(libraryFormState) === JSON.stringify(libraryDefaults)
       ? '/library'
       : `/library?q=${encodeURIComponent(JSON.stringify(sanitizeFormState(LIBRARY, libraryFormState)))}`;
 
@@ -102,7 +102,7 @@ const Navigation = () => {
               <Toggle
                 isOn={inventoryMode}
                 handleClick={toggleInventoryMode}
-                disabled={location.pathname == '/inventory'}
+                disabled={location.pathname === '/inventory'}
                 variant="secondary"
               >
                 Inventory Mode

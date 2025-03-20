@@ -143,14 +143,14 @@ export const proxyCards = async (
         );
       }
 
-      if (counterX == 2) {
+      if (counterX === 2) {
         counterY += 1;
         counterX = 0;
       } else {
         counterX += 1;
       }
 
-      if (counterY == 3 && page * 9 < cardsTotal) {
+      if (counterY === 3 && page * 9 < cardsTotal) {
         page += 1;
         counterY = 0;
         pdf.addPage();

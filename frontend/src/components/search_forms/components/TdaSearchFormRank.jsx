@@ -18,7 +18,7 @@ const TdaSearchFormRank = ({ value, onChange }) => {
     .map((i) => ({
       value: i.toLowerCase(),
       name: FROM,
-      label: <div className="flex justify-center">{i.toLowerCase() == ANY ? i : `Top ${i}`}</div>,
+      label: <div className="flex justify-center">{i.toLowerCase() === ANY ? i : `Top ${i}`}</div>,
     }));
 
   const toOptions = steps
@@ -34,7 +34,7 @@ const TdaSearchFormRank = ({ value, onChange }) => {
     .map((i) => ({
       value: i.toLowerCase(),
       name: TO,
-      label: <div className="flex justify-center">{i.toLowerCase() == ANY ? i : `Top ${i}`}</div>,
+      label: <div className="flex justify-center">{i.toLowerCase() === ANY ? i : `Top ${i}`}</div>,
     }));
 
   return (

@@ -23,7 +23,7 @@ const DiffSelectDeck = ({ decks, deck, deckidFrom, deckidTo, target, title }) =>
   const [source, setSource] = useState(`${FROM}-${MY}`);
 
   const handleSelect = (e) => {
-    if (target == FROM) {
+    if (target === FROM) {
       navigate(`/diff/${e.value}/${deckidTo}`);
     } else {
       navigate(`/diff/${deckidFrom}/${e.value}`);
@@ -77,16 +77,16 @@ const DiffSelectDeck = ({ decks, deck, deckidFrom, deckidTo, target, title }) =>
         <div
           className={twMerge('z-20 flex gap-1', !inventoryMode && isMobile && 'justify-between')}
         >
-          <div className={deck?.[IS_BRANCHES] && source == `${target}-${MY}` ? 'w-3/4' : 'w-full'}>
-            {source == `${target}-${MY}` && decks ? (
+          <div className={deck?.[IS_BRANCHES] && source === `${target}-${MY}` ? 'w-3/4' : 'w-full'}>
+            {source === `${target}-${MY}` && decks ? (
               <DeckSelectMy handleSelect={handleSelect} deckid={deck?.[DECKID]} />
-            ) : source == `${target}-${RECENT}` ? (
+            ) : source === `${target}-${RECENT}` ? (
               <DeckSelectRecent handleSelect={handleSelect} deckid={deck?.[DECKID]} />
             ) : (
               <DeckSelectPrecon handleSelect={handleSelect} deckid={deck?.[DECKID]} />
             )}
           </div>
-          {source == `${target}-${MY}` && decks && deck?.[IS_BRANCHES] && (
+          {source === `${target}-${MY}` && decks && deck?.[IS_BRANCHES] && (
             <div className="w-1/4">
               <DeckBranchSelect handleSelect={handleSelect} deck={deck} />
             </div>

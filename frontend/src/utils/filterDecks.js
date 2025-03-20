@@ -263,7 +263,7 @@ const missingTags = (filter, deck) => {
 const compareQty = (cardQty, q, m) => {
   switch (m) {
     case EQ:
-      return cardQty == q;
+      return cardQty === q;
     case GT:
       return cardQty >= q;
     case LT:

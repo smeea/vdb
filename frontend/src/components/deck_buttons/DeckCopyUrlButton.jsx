@@ -47,7 +47,7 @@ const DeckCopyUrlButton = ({ deck, noText, setQrUrl }) => {
   };
 
   const handleSnapshot = () => {
-    if (typeof ClipboardItem == 'function' && !!navigator.clipboard.write) {
+    if (typeof ClipboardItem === 'function' && !!navigator.clipboard.write) {
       const url = new ClipboardItem({
         'text/plain': deckServices.deckSnapshot(deck).then((deckid) => {
           return new Blob([`${import.meta.env.VITE_BASE_URL}/decks/${deckid}`], {

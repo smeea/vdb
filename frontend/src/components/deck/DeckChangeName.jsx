@@ -31,7 +31,7 @@ const DeckChangeName = ({ deck }) => {
   };
 
   const handleOnBlur = () => {
-    if (value != deck[NAME]) {
+    if (value !== deck[NAME]) {
       deckChangeName();
     }
   };

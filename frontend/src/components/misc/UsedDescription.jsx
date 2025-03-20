@@ -8,7 +8,7 @@ const UsedDescriptionDeck = ({ deck, t, q }) => {
   return (
     <div className="flex items-center gap-1">
       <div className="opacity-40">
-        {t == S ? (
+        {t === S ? (
           <Shuffle width="16" height="16" viewBox="0 0 16 16" />
         ) : (
           <PinAngleFill width="16" height="16" viewBox="0 0 16 16" />

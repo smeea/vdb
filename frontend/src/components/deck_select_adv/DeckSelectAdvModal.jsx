@@ -55,7 +55,7 @@ const DeckSelectAdvModal = ({ onClick, setShow, short }) => {
       .forEach((deckid) => {
         const deck = decks[deckid];
         deckServices.deckDelete(deck).then(() => {
-          if (deckid == activeDeckid) navigate('/decks');
+          if (deckid === activeDeckid) navigate('/decks');
         });
       });
 

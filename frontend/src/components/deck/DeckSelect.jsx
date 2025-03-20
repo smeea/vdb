@@ -55,15 +55,15 @@ const DeckSelect = ({
     <div className="flex flex-col gap-2">
       <div className="z-20 flex gap-1">
         <div className="w-full">
-          {selectFrom == MY && decks ? (
+          {selectFrom === MY && decks ? (
             <DeckSelectMy handleSelect={handleSelect} deckid={deck?.[DECKID]} />
-          ) : selectFrom == RECENT ? (
+          ) : selectFrom === RECENT ? (
             <DeckSelectRecent handleSelect={handleSelect} deckid={deck?.[DECKID]} />
           ) : (
             <DeckSelectPrecon handleSelect={handleSelect} deckid={deck?.[DECKID]} />
           )}
         </div>
-        {selectFrom == MY && decks && deck?.[IS_BRANCHES] && (
+        {selectFrom === MY && decks && deck?.[IS_BRANCHES] && (
           <div className="min-w-[90px]">
             <DeckBranchSelect handleSelect={handleSelect} deck={deck} />
           </div>

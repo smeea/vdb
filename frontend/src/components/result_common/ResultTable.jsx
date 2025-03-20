@@ -6,13 +6,13 @@ import { cryptSort, librarySort } from '@/utils';
 
 const ResultTable = ({ cards, target }) => {
   const { addMode, isDesktop, cryptSearchSort, librarySearchSort } = useApp();
-  const sort = target == CRYPT ? cryptSort : librarySort;
-  const sortMethod = target == CRYPT ? cryptSearchSort : librarySearchSort;
+  const sort = target === CRYPT ? cryptSort : librarySort;
+  const sortMethod = target === CRYPT ? cryptSearchSort : librarySearchSort;
 
   return useMemo(() => {
     const sortedCards = sort(cards, sortMethod);
 
-    if (target == CRYPT) {
+    if (target === CRYPT) {
       return (
         <ResultCryptTable
           resultCards={sortedCards}

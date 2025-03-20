@@ -330,7 +330,7 @@ const missingCapacityCrypt = (filter, card) => {
           case LE:
             return card[CAPACITY] <= capacity;
           case EQ:
-            return card[CAPACITY] == capacity;
+            return card[CAPACITY] === capacity;
         }
       });
     case NOT:
@@ -344,7 +344,7 @@ const missingCapacityCrypt = (filter, card) => {
           case LE:
             return card[CAPACITY] > capacity;
           case EQ:
-            return card[CAPACITY] != capacity;
+            return card[CAPACITY] !== capacity;
         }
       });
   }
@@ -590,7 +590,7 @@ const missingCostCheck = (logic, filter, cardCost) => {
   return !(
     (logic === LE && cardCost <= filter) ||
     (logic === GE && cardCost >= filter) ||
-    (logic === EQ && cardCost == filter)
+    (logic === EQ && cardCost === filter)
   );
 };
 

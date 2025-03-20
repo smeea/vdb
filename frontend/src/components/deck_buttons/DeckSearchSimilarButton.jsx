@@ -13,7 +13,7 @@ const DeckSearchSimilarButton = ({ deck }) => {
 
   const handleClick = (target) => {
     clearSearchForm(target);
-    const searchForm = target == PDA ? searchPdaForm : searchTwdForm;
+    const searchForm = target === PDA ? searchPdaForm : searchTwdForm;
     searchForm[SIMILAR] = deck[DECKID];
     navigate(`/${target}?q={"${SIMILAR}"%3A"${deck[DECKID]}"}`);
     setShowMenuButtons(false);

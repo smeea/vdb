@@ -46,7 +46,7 @@ const InventoryCardQuantity = ({ card, softUsedMax, hardUsedTotal, compact, newF
                 )}
               >
                 {card.t && <div className="min-w-[4px]" />}
-                {state == 0 ? <>&nbsp;</> : state}
+                {state === 0 ? <>&nbsp;</> : state}
                 {card.t && <div className="max-w-[4px] text-xs">*</div>}
               </div>
               <ButtonCardChange onClick={() => handleQuantityChange(1)} isLink />
@@ -82,7 +82,7 @@ const InventoryCardQuantity = ({ card, softUsedMax, hardUsedTotal, compact, newF
                 ) : (
                   <>
                     {card.t && <div className="min-w-[4px]" />}
-                    {state == 0 ? <>&nbsp;</> : state}
+                    {state === 0 ? <>&nbsp;</> : state}
                     {card.t && <div className="max-w-[4px] text-xs">*</div>}
                   </>
                 )}
@@ -100,7 +100,7 @@ const InventoryCardQuantity = ({ card, softUsedMax, hardUsedTotal, compact, newF
           )}
         >
           {card.t && <div className="min-w-[4px]" />}
-          {state == 0 ? <>&nbsp;</> : state}
+          {state === 0 ? <>&nbsp;</> : state}
           {card.t && <div className="max-w-[4px] text-xs">*</div>}
         </div>
       )}

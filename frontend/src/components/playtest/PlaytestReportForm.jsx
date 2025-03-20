@@ -106,7 +106,7 @@ const PlaytestReportForm = ({ id, setIsHotkeysDisabled, isPrecon = false }) => {
   };
 
   const handleScoreChange = (value) => {
-    setReport((prevState) => ({ ...prevState, [SCORE]: value == prevState[SCORE] ? 0 : value }));
+    setReport((prevState) => ({ ...prevState, [SCORE]: value === prevState[SCORE] ? 0 : value }));
   };
 
   const handleTextChange = (event) => {

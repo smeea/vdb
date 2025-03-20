@@ -84,7 +84,7 @@ const DeckCardQuantity = ({
             <>
               <ButtonCardChange onClick={handleClickMinus} isLink isNegative />
               <div className={twMerge('mx-1 flex w-full justify-center', inventoryColor)}>
-                {q == 0 ? '' : q}
+                {q === 0 ? '' : q}
               </div>
               <ButtonCardChange onClick={handleClickPlus} isLink />
             </>
@@ -117,7 +117,7 @@ const DeckCardQuantity = ({
                       />
                     </form>
                   ) : (
-                    <>{q == 0 ? <>&nbsp;&nbsp;</> : q}</>
+                    <>{q === 0 ? <>&nbsp;&nbsp;</> : q}</>
                   )}
                 </ConditionalTooltip>
               </div>

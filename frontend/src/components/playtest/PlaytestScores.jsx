@@ -31,7 +31,7 @@ const PlaytestScores = ({ value, handleClick, disabled, isSmall }) => {
             onClick={() => (disabled ? null : handleClick(i + 1))}
             title={titles[i]}
           >
-            {i + 0.5 == value ? (
+            {i + 0.5 === value ? (
               <StarHalf width={SIZE} height={SIZE} />
             ) : i < value ? (
               <StarFill width={SIZE} height={SIZE} />

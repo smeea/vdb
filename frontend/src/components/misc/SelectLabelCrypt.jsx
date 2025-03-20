@@ -38,7 +38,7 @@ const SelectLabelCrypt = ({ cardid, inInventory }) => {
           <div className="text-midGray dark:text-midGrayDark inline">
             [G
             <div className="text-fgPrimary dark:text-fgPrimaryDark inline">
-              {card[GROUP] == ANY ? X : card[GROUP]}
+              {card[GROUP] === ANY ? X : card[GROUP]}
             </div>
             ]
           </div>

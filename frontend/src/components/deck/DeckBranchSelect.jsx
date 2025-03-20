@@ -30,7 +30,7 @@ const DeckBranchSelect = ({ deck, handleSelect }) => {
     });
   }
 
-  if (JSON.stringify(branches) != JSON.stringify(b)) {
+  if (JSON.stringify(branches) !== JSON.stringify(b)) {
     setBranches(b);
   }
 

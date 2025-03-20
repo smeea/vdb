@@ -80,7 +80,7 @@ const DeckProxyLibrary = ({
                 <ResultLibraryType
                   cardtype={cardtype}
                   total={libraryByTypeTotal[cardtype]}
-                  trifleTotal={cardtype == TYPE_MASTER && trifleTotal}
+                  trifleTotal={cardtype === TYPE_MASTER && trifleTotal}
                 />
               </div>
               <DeckProxyLibraryTable
@@ -107,7 +107,7 @@ const DeckProxyLibrary = ({
                 <ResultLibraryType
                   cardtype={cardtype}
                   total={0}
-                  trifleTotal={cardtype == TYPE_MASTER && trifleTotal}
+                  trifleTotal={cardtype === TYPE_MASTER && trifleTotal}
                 />
                 <DeckProxyLibraryTable
                   inventoryType={deck[INVENTORY_TYPE]}

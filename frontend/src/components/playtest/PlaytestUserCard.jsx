@@ -35,7 +35,7 @@ const PlaytestUserCard = () => {
     changeLiaison();
   };
   const handleLiaisonOnBlur = () => {
-    if (liaison != playtestProfile?.[LIAISON]) changeLiaison();
+    if (liaison !== playtestProfile?.[LIAISON]) changeLiaison();
   };
 
   useEffect(() => {
@@ -49,7 +49,7 @@ const PlaytestUserCard = () => {
     changeGeneral();
   };
   const handleGeneralOnBlur = () => {
-    if (general != playtestProfile?.[GENERAL]) changeGeneral();
+    if (general !== playtestProfile?.[GENERAL]) changeGeneral();
   };
 
   const handleGamesChange = (e) => updatePlaytestProfile(GAMES, e.value);

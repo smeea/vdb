@@ -23,7 +23,7 @@ const SearchAdditionalForms = ({
           <div key={i} className="flex items-center">
             <div className="flex w-1/4 justify-end">
               <div className="flex gap-1 px-1">
-                {i == value.value.length - 1 && (
+                {i === value.value.length - 1 && (
                   <SearchFormButtonAdd
                     name={name}
                     searchForm={searchForm}

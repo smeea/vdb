@@ -102,7 +102,7 @@ const SearchFormTextAndButtons = ({
                   i={0}
                   searchForm={searchForm}
                 />
-                {value.length == 1 ? (
+                {value.length === 1 ? (
                   <SearchFormButtonAddText searchForm={searchForm} />
                 ) : (
                   <SearchFormButtonDel searchForm={searchForm} i={0} />

@@ -93,7 +93,7 @@ const TwdResultLibraryByTypeTable = ({ library }) => {
                     >
                       <div className="text-fgName dark:text-fgNameDark cursor-pointer text-balance">
                         {cardtype} [{libraryByTypeTotal[cardtype]}]
-                        {cardtype == TYPE_MASTER && trifleTotal > 0 && <> - {trifleTotal} trifle</>}
+                        {cardtype === TYPE_MASTER && trifleTotal > 0 && <> - {trifleTotal} trifle</>}
                       </div>
                     </ConditionalTooltip>
                   </td>

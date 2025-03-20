@@ -27,7 +27,7 @@ const DeckChangeBranchName = ({ deck }) => {
   };
 
   const handleOnBlur = () => {
-    if (value != deck[BRANCH_NAME]) {
+    if (value !== deck[BRANCH_NAME]) {
       deckChangeBranchName();
     }
   };

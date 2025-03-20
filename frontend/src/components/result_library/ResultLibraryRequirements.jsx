@@ -84,7 +84,7 @@ const ResultLibraryRequirements = ({ value }) => {
         <div className="flex gap-1">
           <CapacityReq value={capacityReq} />
           <TitlesReq value={titleReq} />
-          {sectReq.length > 0 && (titleReq.length == 0 || titleReq[0] == 'titled') && (
+          {sectReq.length > 0 && (titleReq.length === 0 || titleReq[0] === TITLED) && (
             <SectReq value={sectReq} />
           )}
         </div>

@@ -127,7 +127,7 @@ const TdaSearchForm = ({ setShowForm }) => {
 
     const filteredDecks = filterDecks(decks, sanitizedForm);
 
-    if (isMobile && filteredDecks.length == 0) {
+    if (isMobile && filteredDecks.length === 0) {
       setError('NO DECKS FOUND');
       return;
     }

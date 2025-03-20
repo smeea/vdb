@@ -8,16 +8,16 @@ const CardImage = ({ card, set, className = 'max-sm:w-full', size = 'md', onClic
   const { baseUrl, otherUrl, legacyUrl, legacyScanUrl } = getCardImageUrl(card, set, lang);
 
   const url =
-    showLegacyImage && ((card[ID] > 200000 && card[CLAN] != 'Hecata') || legacyScanUrl)
+    showLegacyImage && ((card[ID] > 200000 && card[CLAN] !== 'Hecata') || legacyScanUrl)
       ? legacyScanUrl
         ? legacyScanUrl
         : legacyUrl
-      : lang == EN
+      : lang === EN
         ? baseUrl
         : otherUrl;
 
   const resetImgSrc = (event) => {
-    if (event.target.src != `${baseUrl}.jpg`) {
+    if (event.target.src !== `${baseUrl}.jpg`) {
       event.target.src = `${baseUrl}.jpg`;
     }
   };
@@ -29,7 +29,7 @@ const CardImage = ({ card, set, className = 'max-sm:w-full', size = 'md', onClic
 
   return (
     <>
-      {set || lang != EN ? (
+      {set || lang !== EN ? (
         <img
           className={twMerge(sizeStyle[size], className)}
           src={`${otherUrl}.jpg?v=${import.meta.env.VITE_IMAGE_VERSION}`}

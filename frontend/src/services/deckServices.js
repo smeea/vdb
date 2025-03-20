@@ -369,7 +369,7 @@ export const deckLoader = ({ params }) => {
   const deckid = params[DECKID];
 
   if (deckid === DECK || deckid.includes(':')) return null;
-  if (deckid.length == 32) {
+  if (deckid.length === 32) {
     return redirect(`/decks/${deckid.substring(0, 9)}`);
   }
 

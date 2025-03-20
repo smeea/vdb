@@ -90,7 +90,9 @@ const sanitizeFormState = (target, state) => {
   }
   forms.forEach((i) => {
     Object.keys(input[i]).forEach((k) => {
-      (input[i][k] == 0 || input[i][k] == ANY) && delete input[i][k];
+      if (!input[i][k] || input[i][k] === ANY) {
+        delete input[i][k];
+      }
     });
   });
 
@@ -104,7 +106,9 @@ const sanitizeFormState = (target, state) => {
   }
   forms.forEach((i) => {
     Object.keys(input[i]).forEach((k) => {
-      (input[i][k] == 0 || input[i][k] == ANY) && delete input[i][k];
+      if (!input[i][k] || input[i][k] === ANY) {
+        delete input[i][k];
+      }
     });
     if (!input[i][CRYPT] && !input[i][LIBRARY]) delete input[i];
   });
@@ -138,7 +142,7 @@ const sanitizeFormState = (target, state) => {
       forms = [];
   }
   forms.forEach((i) => {
-    if (input[i][i] == ANY) {
+    if (input[i][i] === ANY) {
       delete input[i];
     }
   });
@@ -189,13 +193,15 @@ const sanitizeFormState = (target, state) => {
   }
   forms.forEach((i) => {
     Object.keys(input[i]).forEach((k) => {
-      input[i][k] == -1 && delete input[i][k];
+      if (Number.parseInt(input[i][k]) === -1) {
+        delete input[i][k];
+      }
     });
   });
 
   Object.keys(input).forEach((k) => {
     if (
-      input[k] == ANY ||
+      input[k] === ANY ||
       !input[k] ||
       input[k].length === 0 ||
       (input[k].value && input[k].value.length === 0) ||

@@ -58,7 +58,7 @@ const TwdSearchFormDate = ({ inPda, value, onChange }) => {
             options={fromOptions}
             isSearchable={false}
             name={name}
-            value={fromOptions.find((obj) => obj.value == value[FROM])}
+            value={fromOptions.find((obj) => obj.value === value[FROM])}
             onChange={onChange}
           />
         </div>
@@ -68,7 +68,7 @@ const TwdSearchFormDate = ({ inPda, value, onChange }) => {
             options={toOptions}
             isSearchable={false}
             name={name}
-            value={toOptions.find((obj) => obj.value == value[TO])}
+            value={toOptions.find((obj) => obj.value === value[TO])}
             onChange={onChange}
           />
         </div>

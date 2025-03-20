@@ -94,7 +94,7 @@ const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
           <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">Set:</div>
           {value.value[0] !== ANY && (
             <div className="flex justify-end gap-1 px-1">
-              {value.value.length == 1 ? (
+              {value.value.length === 1 ? (
                 <SearchFormButtonAdd searchForm={searchForm} name={name} />
               ) : (
                 <SearchFormButtonDel searchForm={searchForm} i={0} name={name} />

@@ -109,7 +109,7 @@ const Tda = () => {
       const finalPlace = dataFinalTable
         .filter((i) => {
           const array = i.split(',');
-          return Number.parseInt(array[0]) == playerNumber && array[21];
+          return Number.parseInt(array[0]) === playerNumber && array[21];
         })[0]
         .split(',')[21];
       return Number.parseInt(finalPlace);
@@ -154,7 +154,7 @@ const Tda = () => {
       archonIds.push(playerId);
 
       const rank =
-        array[20] == 'DQ'
+        array[20] === 'DQ'
           ? 'DQ'
           : Number.parseInt(array[20]) > 5
             ? Number.parseInt(array[20])
@@ -173,7 +173,7 @@ const Tda = () => {
       };
 
       if (tempDecks[playerId]) {
-        reportedRanks.push(score[RANK] == 'DQ' ? totalPlayers : score[RANK]);
+        reportedRanks.push(score[RANK] === 'DQ' ? totalPlayers : score[RANK]);
         tdaDecks[playerId] = {
           ...tempDecks[playerId],
           [SCORE]: score,

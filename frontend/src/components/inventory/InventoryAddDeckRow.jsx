@@ -47,8 +47,8 @@ const InventoryAddDeckRow = ({ deck, allTagsOptions }) => {
                   : 'Virtual'
             }
           >
-            {deck[INVENTORY_TYPE] == S && <Shuffle />}
-            {deck[INVENTORY_TYPE] == H && <PinAngleFill />}
+            {deck[INVENTORY_TYPE] === S && <Shuffle />}
+            {deck[INVENTORY_TYPE] === H && <PinAngleFill />}
             {!deck[INVENTORY_TYPE] && <At />}
           </div>
         </Button>

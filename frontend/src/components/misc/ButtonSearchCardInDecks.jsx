@@ -14,8 +14,8 @@ import {
 const ButtonSearchCardInDecks = ({ cardid, target, handleClose = () => {} }) => {
   const navigate = useNavigate();
   const value = { [cardid]: { q: 1, m: GT } };
-  const searchForm = target == PDA ? searchPdaForm : searchTwdForm;
-  const setResults = target == PDA ? setPdaResults : setTwdResults;
+  const searchForm = target === PDA ? searchPdaForm : searchTwdForm;
+  const setResults = target === PDA ? setPdaResults : setTwdResults;
 
   const handleClick = () => {
     clearSearchForm(target);

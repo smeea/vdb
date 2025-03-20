@@ -148,7 +148,7 @@ const Decks = () => {
   useEffect(() => {
     if (cryptCardBase && libraryCardBase) {
       if (deckid) {
-        if (!deckStore[DECK] || deckStore[DECK][DECKID] != deckid) {
+        if (!deckStore[DECK] || deckStore[DECK][DECKID] !== deckid) {
           if (deckStore[DECKS]?.[deckid]) {
             setDeck(deckStore[DECKS][deckid]);
           } else if (deckid.includes(':') && preconDecks) {

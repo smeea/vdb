@@ -18,7 +18,6 @@
       },
       "suspicious": {
         "noArrayIndexKey": "off",
-        "noDoubleEquals": "off",
         "noAssignInExpressions": "off"
       },
       "style": {

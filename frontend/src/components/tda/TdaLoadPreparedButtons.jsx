@@ -32,7 +32,7 @@ const TdaLoadPreparedButtons = ({ setTempDecks, setTempArchon, setError }) => {
             onClick={() => handlePrepared(v[ID])}
             title={v[TITLE]}
             text={`${v[TITLE]} [${v[DATE]}]`}
-            icon={loadingDeck == v[ID] ? <Spinner /> : v.isNC ? <StarFill /> : null}
+            icon={loadingDeck === v[ID] ? <Spinner /> : v.isNC ? <StarFill /> : null}
           />
         );
       })}

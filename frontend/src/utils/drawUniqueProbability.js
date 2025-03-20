@@ -4,7 +4,7 @@ const P = 'p';
 
 const minusOne = (cards, i) => {
   return Object(cards).map((c, idx) => {
-    if (i != idx) {
+    if (i !== idx) {
       return c;
     } else {
       return Math.max(0, c - 1);
@@ -22,7 +22,7 @@ const product = (cards, draw) => {
 };
 
 const leafNodes = (tree) => {
-  if (tree[CHILDREN].length == 0) {
+  if (tree[CHILDREN].length === 0) {
     return [tree];
   } else {
     const res = [];
@@ -38,7 +38,7 @@ const leafNodes = (tree) => {
 };
 
 const probability = (children, m, p) => {
-  if (children.length == 0) {
+  if (children.length === 0) {
     return p;
   }
   return p * probability(children[m[0]][CHILDREN], m.slice(1), children[m[0]][P]);

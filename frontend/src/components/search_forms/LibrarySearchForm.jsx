@@ -206,7 +206,7 @@ const LibrarySearchForm = () => {
       sanitizedForm,
     ).filter((card) => playtestMode || !getIsPlaytest(card[ID]));
 
-    if (isMobile && filteredCards.length == 0) {
+    if (isMobile && filteredCards.length === 0) {
       setError('NO CARDS FOUND');
       return;
     }

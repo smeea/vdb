@@ -29,7 +29,7 @@ const DeckSelectPrecon = ({ deckid, handleSelect }) => {
                   <div
                     className={twMerge(
                       'flex items-center justify-center gap-1 pr-1',
-                      clans.length == 1 && 'w-[35px]',
+                      clans.length === 1 && 'w-[35px]',
                     )}
                   >
                     {clans.map((clan) => {
@@ -43,7 +43,7 @@ const DeckSelectPrecon = ({ deckid, handleSelect }) => {
                   {fullName}
                 </div>
                 <div className="text-sm">
-                  {set == PLAYTEST ? 'PLAYTEST' : set} {year && `'${year}`}
+                  {set === PLAYTEST ? 'PLAYTEST' : set} {year && `'${year}`}
                 </div>
               </div>
             ),

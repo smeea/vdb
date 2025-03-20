@@ -90,7 +90,7 @@ const Diff = () => {
 
   useEffect(() => {
     if (cryptCardBase && libraryCardBase && decks !== undefined) {
-      if (deckidFrom && deckStore[DECK]?.[DECKID] != deckidFrom) {
+      if (deckidFrom && deckStore[DECK]?.[DECKID] !== deckidFrom) {
         if (deckStore[DECKS][deckidFrom]) {
           setDeck(deckStore[DECKS][deckidFrom]);
         } else if (deckidFrom.includes(':')) {
@@ -109,7 +109,7 @@ const Diff = () => {
 
   useEffect(() => {
     if (cryptCardBase && libraryCardBase && deckStore[DECKS] !== undefined) {
-      if (deckidTo && deckTo?.[DECKID] != deckidTo) {
+      if (deckidTo && deckTo?.[DECKID] !== deckidTo) {
         if (deckStore[DECKS][deckidTo]) {
           setDeckTo(deckStore[DECKS][deckidTo]);
         } else if (deckidTo.includes(':')) {

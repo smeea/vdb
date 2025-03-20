@@ -88,7 +88,7 @@ const useInventoryLibrary = (library, category = OK, compact, type, discipline, 
             }
           }
 
-          if (category == NOK) {
+          if (category === NOK) {
             if (miss > 0) {
               types.forEach((t) => {
                 cardsByType[t][cardid] = cards[cardid];

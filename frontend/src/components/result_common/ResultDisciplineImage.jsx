@@ -33,7 +33,7 @@ const ResultDisciplineImage = ({ value, isSuperior, name, size = 'md' }) => {
         .replace(/\s/g, '')}${isSuperior ? 'sup' : ''}.svg`}
       name={name}
       id={value}
-      title={`${isSuperior ? 'Superior ' : ''}${value == ANY ? 'No Discipline' : value}`}
+      title={`${isSuperior ? 'Superior ' : ''}${value === ANY ? 'No Discipline' : value}`}
     />
   );
 };

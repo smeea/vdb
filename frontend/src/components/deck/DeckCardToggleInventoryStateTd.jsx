@@ -16,7 +16,7 @@ const DeckCardToggleInventoryStateTd = ({ card, isEditable, deckid, inventoryTyp
           )}
           onClick={() => isEditable && cardToggleInventoryState(deckid, card.c[ID])}
         >
-          {inventoryType == S ? <PinAngleFill /> : <Shuffle />}
+          {inventoryType === S ? <PinAngleFill /> : <Shuffle />}
         </div>
       </div>
     </td>

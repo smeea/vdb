@@ -13,7 +13,7 @@ const InventoryCardQuantityDiff = ({ card, softUsedMax, hardUsedTotal }) => {
     >
       <div
         className={
-          card.q == softUsedMax + hardUsedTotal
+          card.q === softUsedMax + hardUsedTotal
             ? 'text-midGray dark:text-midGrayDark'
             : card.q >= softUsedMax + hardUsedTotal
               ? 'text-fgGreen dark:text-fgGreenDark'

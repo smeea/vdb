@@ -95,7 +95,7 @@ export const getRestrictions = (deck, limitedCards) => {
 export const getLegality = (card) => {
   const sets = Object.keys(card[SET]).filter((s) => s !== PLAYTEST);
   if (sets.length > 1 || [POD, PROMO].includes(sets[0])) return false;
-  if (sets.length == 0) return PLAYTEST;
+  if (sets.length === 0) return PLAYTEST;
 
   const setDate = dayjs(setsAndPrecons[sets[0]][DATE]);
   if (dayjs().diff(setDate, 'day') >= 0) return false;
@@ -112,9 +112,9 @@ export const getGroups = (cards) => {
     .filter((card) => card.c[GROUP] !== ANY)
     .reduce((acc, card) => (acc = card.c[GROUP] > acc ? card.c[GROUP] : acc), 0);
 
-  if (cryptGroupMax - cryptGroupMin == 1) {
+  if (cryptGroupMax - cryptGroupMin === 1) {
     return { cryptGroups: `${cryptGroupMin}-${cryptGroupMax}` };
-  } else if (cryptGroupMax - cryptGroupMin == 0) {
+  } else if (cryptGroupMax - cryptGroupMin === 0) {
     return { cryptGroups: cryptGroupMax };
   }
 

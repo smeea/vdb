@@ -38,7 +38,7 @@ const CryptSearchFormCapacity = ({ value, searchForm, onChange }) => {
                 value={value[LOGIC]}
                 searchForm={searchForm}
               />
-              {value.value.length == 1 ? (
+              {value.value.length === 1 ? (
                 <SearchFormButtonAdd searchForm={searchForm} name={name} withMoreless />
               ) : (
                 <SearchFormButtonDel searchForm={searchForm} i={0} name={name} />

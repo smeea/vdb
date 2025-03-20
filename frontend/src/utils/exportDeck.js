@@ -105,7 +105,7 @@ const getCryptText = (crypt) => {
     result += `${' '.repeat(capacitySpaces)}${c[CAPACITY]} `;
     result += `${disciplines}${' '.repeat(disSpaces)}`;
     result += `${c[TITLE]}${' '.repeat(titleSpaces)}`;
-    result += `${c[CLAN]}:${c[GROUP] == ANY ? 'ANY' : c[GROUP]}\n`;
+    result += `${c[CLAN]}:${c[GROUP] === ANY ? 'ANY' : c[GROUP]}\n`;
   });
 
   return result;

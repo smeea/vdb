@@ -41,7 +41,7 @@ const ResultCryptTotal = ({
           return (
             <div key={k} className="inline-block px-2 whitespace-nowrap">
               <div className="text-fgSecondary dark:text-fgSecondaryDark inline pr-0.5 font-bold">
-                G{k == ANY ? X : k}:
+                G{k === ANY ? X : k}:
               </div>
               {byGroups[k]}
               {!inHoF && (

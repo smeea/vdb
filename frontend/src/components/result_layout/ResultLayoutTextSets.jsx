@@ -75,7 +75,7 @@ const ResultLayoutTextSets = ({ card }) => {
                 noPadding
               >
                 <div className="text-fgSecondary dark:text-fgPrimaryDark flex">
-                  {set == PLAYTEST ? 'PLAYTEST' : set}
+                  {set === PLAYTEST ? 'PLAYTEST' : set}
                   <div className="text-fgFourth dark:text-fgFourthDark flex items-start text-sm">
                     {year ? `'${year}` : null}
                   </div>

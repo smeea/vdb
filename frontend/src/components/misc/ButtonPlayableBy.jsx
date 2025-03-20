@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router';
 import Bullseye from '@icons/bullseye.svg?react';
 import { Button } from '@/components';
-import { CRYPT, GE, LE } from '@/constants';
+import { CRYPT, TITLED, GE, LE, SERAPH, BLACK_HAND, RED_LIST } from '@/constants';
 import { clearSearchForm } from '@/context';
 import { getLibraryRequirements } from '@/utils';
 
@@ -34,7 +34,7 @@ const ButtonPlayableBy = ({ card, handleClose = () => {} }) => {
       queries.push(`"clan"%3A{"value"%3A[${values.join('%2C')}]%2C"logic"%3A"or"}`);
     }
     if (isTitle.length > 0) {
-      if (isTitle[0] == 'titled') {
+      if (isTitle[0] === TITLED) {
         queries.push(`"votes"%3A"1"`);
       } else {
         const values = isTitle.map((i) => `"${i}"%3Atrue`);
@@ -55,9 +55,9 @@ const ButtonPlayableBy = ({ card, handleClose = () => {} }) => {
     if (isNonSect) {
       queries.push(`"sect"%3A{"value"%3A["${isNonSect}"]%2C"logic"%3A"not"}`);
     }
-    if (isRedlist) traits.push('red list');
-    if (isSeraph) traits.push('seraph');
-    if (isBlackHand) traits.push('black hand');
+    if (isRedlist) traits.push(RED_LIST);
+    if (isSeraph) traits.push(SERAPH);
+    if (isBlackHand) traits.push(BLACK_HAND);
 
     if (traits.length > 0) {
       const traitsQuery = traits.map((t) => `"${t}"%3Atrue`).join('%2C');

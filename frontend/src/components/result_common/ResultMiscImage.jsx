@@ -9,7 +9,7 @@ const ResultMiscImage = ({ value, title, size = 'md' }) => {
     ...Object.entries(disciplinesList),
     ['Maleficia', 'mal'],
     ['Striga', 'str'],
-  ].find((i) => i[1] == value.toLowerCase());
+  ].find((i) => i[1] === value.toLowerCase());
   const isSuperior = discipline && value !== value.toLowerCase();
 
   const sizeStyle = {

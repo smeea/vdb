@@ -5,7 +5,7 @@ import { ANY, ARTIST, CRYPT } from '@/constants';
 
 const SearchFormArtist = ({ target, value, onChange }) => {
   const name = ARTIST;
-  const artists = target == CRYPT ? cryptArtists : libraryArtists;
+  const artists = target === CRYPT ? cryptArtists : libraryArtists;
 
   const options = artists.map((artist) => {
     return {

@@ -452,7 +452,7 @@ export const AppProvider = ({ children }) => {
   }, []);
 
   const addRecentDeck = useCallback((recentDeck) => {
-    const src = recentDeck[DECKID].length != 9 ? TWD : recentDeck[PUBLIC_PARENT] ? PDA : 'shared';
+    const src = recentDeck[DECKID].length !== 9 ? TWD : recentDeck[PUBLIC_PARENT] ? PDA : 'shared';
     let d = [...recentDecks];
     const idx = recentDecks.map((v) => v[DECKID]).indexOf(recentDeck[DECKID]);
     if (idx !== -1) d.splice(idx, 1);

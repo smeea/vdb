@@ -85,8 +85,8 @@ const DeckSelectMy = ({ deckid, handleSelect }) => {
                 </div>
                 {inventoryMode && (
                   <div>
-                    {decks[i][INVENTORY_TYPE] == S && <Shuffle />}
-                    {decks[i][INVENTORY_TYPE] == H && <PinAngleFill />}
+                    {decks[i][INVENTORY_TYPE] === S && <Shuffle />}
+                    {decks[i][INVENTORY_TYPE] === H && <PinAngleFill />}
                     {!decks[i][INVENTORY_TYPE] && <At />}
                   </div>
                 )}
@@ -125,8 +125,8 @@ const DeckSelectMy = ({ deckid, handleSelect }) => {
               <div className="flex items-center gap-1">
                 {inventoryMode && (
                   <div>
-                    {decks[deckid][INVENTORY_TYPE] == S && <Shuffle />}
-                    {decks[deckid][INVENTORY_TYPE] == H && <PinAngleFill />}
+                    {decks[deckid][INVENTORY_TYPE] === S && <Shuffle />}
+                    {decks[deckid][INVENTORY_TYPE] === H && <PinAngleFill />}
                     {!decks[deckid][INVENTORY_TYPE] && <At />}
                   </div>
                 )}

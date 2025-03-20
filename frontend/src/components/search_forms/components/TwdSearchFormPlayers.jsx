@@ -20,7 +20,7 @@ const TwdSearchFormPlayers = ({ value, onChange }) => {
   const toOptions = steps
     .filter((i) => {
       return (
-        i.toLowerCase() == ANY || value[FROM] === ANY || !value[FROM] || Number.parseInt(i) > value[FROM]
+        i.toLowerCase() === ANY || value[FROM] === ANY || !value[FROM] || Number.parseInt(i) > value[FROM]
       );
     })
     .map((i) => ({

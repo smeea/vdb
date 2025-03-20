@@ -38,7 +38,7 @@ const Text = ({ text }) => {
     const cardBase = { ...nativeCrypt, ...nativeLibrary };
     const cardid = Object.keys(cardBase).find((j) => {
       if (match.startsWith('The ')) match = `${match.replace(/^The /, '')}, The`;
-      return cardBase[j][NAME] == match;
+      return cardBase[j][NAME] === match;
     });
 
     const card = cardid > 200000 ? cryptCardBase[cardid] : libraryCardBase[cardid];

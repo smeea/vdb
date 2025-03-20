@@ -82,7 +82,7 @@ const PlaytestReportsAll = () => {
           let name;
           switch (target) {
             case PRECONS:
-              if (id == GENERAL || !Number.isNaN(id)) return;
+              if (id === GENERAL || !Number.isNaN(id)) return;
               name = preconDecks[`${PLAYTEST}:${id}`][NAME];
               exportText += `Precon: ${name}\n\n`;
               break;
@@ -97,7 +97,7 @@ const PlaytestReportsAll = () => {
               exportText += `${id > 200000 ? 'Crypt' : 'Library'}: ${name}\n\n`;
               break;
             default:
-              if (id != GENERAL) return;
+              if (id !== GENERAL) return;
               exportText += 'General Opinions\n\n';
           }
 

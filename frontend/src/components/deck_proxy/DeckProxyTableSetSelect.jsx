@@ -16,7 +16,7 @@ const DeckProxyTableSetSelect = ({ card, value, handleSetSelector }) => {
   ];
 
   Object.keys(setsAndPrecons)
-    .filter((i) => playtestMode || i != PLAYTEST)
+    .filter((i) => playtestMode || i !== PLAYTEST)
     .forEach((i) => {
       if (card[SET][i] && i !== POD) {
         setOptions.push({

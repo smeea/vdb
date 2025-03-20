@@ -6,8 +6,8 @@ import { cryptSort, getIsPlaytest, librarySort } from '@/utils';
 
 const PlaytestReportsAllCardsWrapper = ({ reports, target, sortMethod, maxSameScore }) => {
   const { cryptCardBase, libraryCardBase } = useApp();
-  const sort = target == CRYPT ? cryptSort : librarySort;
-  const cardBase = target == CRYPT ? cryptCardBase : libraryCardBase;
+  const sort = target === CRYPT ? cryptSort : librarySort;
+  const cardBase = target === CRYPT ? cryptCardBase : libraryCardBase;
 
   const products = useMemo(
     () =>

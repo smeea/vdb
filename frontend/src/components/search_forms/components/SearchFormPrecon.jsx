@@ -71,7 +71,7 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
                 <div className="flex items-center">
                   <div
                     className={
-                      clans.length == 1 ? 'flex w-[40px] items-center justify-center' : 'inline'
+                      clans.length === 1 ? 'flex w-[40px] items-center justify-center' : 'inline'
                     }
                   >
                     {clans.map((clan) => {
@@ -85,7 +85,7 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
                   {fullName}
                 </div>
                 <div className="text-sm whitespace-nowrap">
-                  {set == PLAYTEST ? 'PLAYTEST' : set} {year && `'${year}`}
+                  {set === PLAYTEST ? 'PLAYTEST' : set} {year && `'${year}`}
                 </div>
               </div>
             ),
@@ -112,7 +112,7 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
           <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">Precon:</div>
           {value.value[0] !== ANY && (
             <div className="flex justify-end gap-1 px-1">
-              {value.value.length == 1 ? (
+              {value.value.length === 1 ? (
                 <SearchFormButtonAdd searchForm={searchForm} name={name} />
               ) : (
                 <SearchFormButtonDel searchForm={searchForm} i={0} name={name} />

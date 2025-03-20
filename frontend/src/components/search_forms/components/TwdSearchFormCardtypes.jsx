@@ -18,7 +18,7 @@ import {
 } from '@/constants';
 
 const TypeForm = ({ isManual, handleManual, value = ANY, name, options, onChange }) => {
-  const [min, max] = value == ANY ? [0, 100] : value.split(',');
+  const [min, max] = value === ANY ? [0, 100] : value.split(',');
 
   return (
     <div className="flex items-center gap-1">
@@ -78,7 +78,7 @@ const TwdSearchFormCardtypes = ({ value, onChange }) => {
   const handleManual = (e) => {
     const v = e.target.value;
     let [min, max] = value[e.target[NAME]].split(',');
-    if (e.target[ID] == 'min') {
+    if (e.target[ID] === 'min') {
       if (v >= 0) {
         min = e.target.value ?? 0;
       }

@@ -18,7 +18,7 @@ const ResultLayoutTextText = ({ cardid }) => {
         if (match.startsWith('The ')) {
           match = `${match.replace(/^The /, '')}, The`;
         }
-        return cardBase[j][NAME] == match;
+        return cardBase[j][NAME] === match;
       });
 
       refCards.push(refCardid);

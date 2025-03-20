@@ -37,7 +37,7 @@ const LibrarySearchFormType = ({ value, onChange, searchForm }) => {
                 searchForm={searchForm}
                 withAnd
               />
-              {value.value.length == 1 ? (
+              {value.value.length === 1 ? (
                 <SearchFormButtonAdd searchForm={searchForm} name={name} />
               ) : (
                 <SearchFormButtonDel searchForm={searchForm} i={0} name={name} />
