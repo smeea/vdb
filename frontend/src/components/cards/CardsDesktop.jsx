@@ -23,24 +23,21 @@ const CardsDesktop = ({ card, openRandomCard, handleChange, handleSetCard }) => 
             <CardSelect autoFocus={!isMobile || !card?.[ID]} onChange={handleChange} value={null} />
           </div>
         )}
-        {card && (
-          <>
-            {playtestMode || !getIsPlaytest(card[ID]) ? (
-              <div className="border-bgSecondary dark:border-bgSecondaryDark flex">
-                <div>
-                  <CardImage card={card} />
-                </div>
-                <div className="w-full pt-1 pl-5">
-                  <ResultLayoutText card={card} setCard={handleSetCard} noClose />
-                </div>
+        {card &&
+          (playtestMode || !getIsPlaytest(card[ID]) ? (
+            <div className="border-bgSecondary dark:border-bgSecondaryDark flex">
+              <div>
+                <CardImage card={card} />
               </div>
-            ) : (
-              <div className="flex">
-                <ErrorMessage>CONTAINS PLAYTEST CARDS</ErrorMessage>
+              <div className="w-full pt-1 pl-5">
+                <ResultLayoutText card={card} setCard={handleSetCard} noClose />
               </div>
-            )}
-          </>
-        )}
+            </div>
+          ) : (
+            <div className="flex">
+              <ErrorMessage>CONTAINS PLAYTEST CARDS</ErrorMessage>
+            </div>
+          ))}
       </FlexGapped>
       <div className="min-w-[175px] max-sm:hidden">
         <div className="bg-bgPrimary dark:bg-bgPrimaryDark sticky z-30 flex w-full flex-col gap-1 lg:top-10">

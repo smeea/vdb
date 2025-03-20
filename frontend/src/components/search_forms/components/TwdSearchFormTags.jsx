@@ -16,7 +16,7 @@ import {
 const TagCheckbox = ({ i, value, onChange }) => {
   const handleCheckbox = (e) => {
     const target = e.currentTarget.value;
-    onChange(TAGS, target, value[target] ? false : true);
+    onChange(TAGS, target, !value[target]);
   };
 
   const handleNegative = (e) => {

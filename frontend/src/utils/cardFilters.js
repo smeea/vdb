@@ -557,9 +557,9 @@ const missingNameOrInitials = (filter, card) => {
     nameASCII.replace(/[^a-z0-9]/gi, '').includes(filter) ||
     nameAKA.includes(filter) ||
     nameAKA.replace(/[^a-z0-9]/gi, '').includes(filter) ||
-    (checkInitials && checkInitials.test(name)) ||
-    (checkInitials && checkInitials.test(nameASCII)) ||
-    (checkInitials && checkInitials.test(nameAKA))
+    (checkInitials?.test(name)) ||
+    (checkInitials?.test(nameASCII)) ||
+    (checkInitials?.test(nameAKA))
   );
 };
 

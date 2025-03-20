@@ -38,8 +38,7 @@ const ResultLayoutTextInventory = ({ card, inPopover, setIsHotkeysDisabled }) =>
           </div>
         </div>
         {(softUsedMax > 0 || hardUsedTotal > 0) && (
-          <>
-            <div className="flex basis-full flex-col gap-0.5 md:basis-2/3">
+          <div className="flex basis-full flex-col gap-0.5 md:basis-2/3">
               {softUsedMax > 0 && (
                 <UsedDescription
                   usedCards={usedCards[SOFT][card[ID]]}
@@ -55,7 +54,6 @@ const ResultLayoutTextInventory = ({ card, inPopover, setIsHotkeysDisabled }) =>
                 />
               )}
             </div>
-          </>
         )}
       </div>
       {(!inPopover || text) && (

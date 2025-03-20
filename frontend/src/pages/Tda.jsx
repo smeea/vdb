@@ -139,7 +139,7 @@ const Tda = () => {
       if (array[0] === 'City:') location = array[1];
     });
 
-    const wsScores = sanitizeScoreSheet(wb.Sheets['Methuselahs']);
+    const wsScores = sanitizeScoreSheet(wb.Sheets.Methuselahs);
     const dataScores = utils.sheet_to_csv(wsScores).split('\n');
 
     const archonIds = [];

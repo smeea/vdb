@@ -65,13 +65,13 @@ const LibrarySearchFormTraits = ({ value, onChange }) => {
             [MULTI_DISCIPLINE, 'Multi-Discipline'],
             [
               PATH_CAINE,
-              <div className="flex items-center gap-1.5">
+              <div key={CAINE} className="flex items-center gap-1.5">
                 Path of Caine <ResultPathImage value={CAINE} size="sm" />
               </div>,
             ],
             [
               PATH_CATHARI,
-              <div className="flex items-center gap-1.5">
+              <div key={CATHARI} className="flex items-center gap-1.5">
                 Path of Cathari <ResultPathImage value={CATHARI} size="sm" />
               </div>,
             ],
@@ -105,13 +105,13 @@ const LibrarySearchFormTraits = ({ value, onChange }) => {
             [NO_REQUIREMENTS, 'No Requirement'],
             [
               PATH_DEATH,
-              <div className="flex items-center gap-1.5">
+              <div key={DEATH} className="flex items-center gap-1.5">
                 Path of Death <ResultPathImage value={DEATH} size="sm" />
               </div>,
             ],
             [
               PATH_POWER,
-              <div className="flex items-center gap-1.5">
+              <div key={POWER} className="flex items-center gap-1.5">
                 Path of Power <ResultPathImage value={POWER} size="sm" />
               </div>,
             ],

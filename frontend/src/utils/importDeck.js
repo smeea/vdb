@@ -3,6 +3,7 @@ import {
   ASCII,
   AUTHOR,
   BAD_CARDS,
+  BASE,
   CRYPT,
   DESCRIPTION,
   GROUP,
@@ -54,7 +55,7 @@ const importDeck = async (deckText, cryptCardBase, libraryCardBase, isPlaytester
       cardname = minifyCardName(cardname);
 
       if (Object.keys(cardbase).includes(cardname)) {
-        id = cardbase[cardname]['adv'];
+        id = cardbase[cardname][ADV];
       }
     } else if (i.includes(' (G')) {
       const regexp = /^\s*([0-9]+) ?x?\s+(.*)\s\(G(.*)\)/;
@@ -85,7 +86,7 @@ const importDeck = async (deckText, cryptCardBase, libraryCardBase, isPlaytester
         q = parseInt(match[1]);
         const cardname = minifyCardName(match[2]);
         if (Object.keys(cardbase).includes(cardname)) {
-          id = cardbase[cardname]['base'];
+          id = cardbase[cardname][BASE];
         }
       }
     }

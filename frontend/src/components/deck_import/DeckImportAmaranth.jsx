@@ -76,9 +76,9 @@ const DeckImportAmaranth = ({ setShow }) => {
       });
 
       let description = master[DESCRIPTION];
-      if (revision['comments']) {
+      if (revision.comments) {
         if (description) description += '\n\n';
-        description += revision['comments'];
+        description += revision.comments;
       }
 
       branches.push({

@@ -62,7 +62,7 @@ const getCryptText = (crypt) => {
     const c = card.c;
     const q = card.q;
     let name = c[NAME];
-    if (c[ADV] && c[ADV][0]) {
+    if (c[ADV]?.[0]) {
       name += ' (ADV)';
     }
     const disciplines = getTextDisciplines(c[DISCIPLINES]);
@@ -89,7 +89,7 @@ const getCryptText = (crypt) => {
     const c = card.c;
 
     let name = c[NAME];
-    if (c[ADV] && c[ADV][0]) {
+    if (c[ADV]?.[0]) {
       name += ' (ADV)';
     }
     const disciplines = getTextDisciplines(c[DISCIPLINES]);
@@ -177,7 +177,7 @@ const exportJol = (deck) => {
 
   sortedCrypt.forEach((card) => {
     let name = card.c[NAME];
-    if (card.c[ADV] && card.c[ADV][0]) {
+    if (card.c[ADV]?.[0]) {
       name += ' (ADV)';
     }
     if (card.c[NEW]) {
@@ -210,7 +210,7 @@ const exportLackey = (deck) => {
   sortedCrypt.forEach((card) => {
     const spaces = 8 - card.q.toString().length;
     let name = card.c[ASCII];
-    if (card.c[ADV] && card.c[ADV][0]) {
+    if (card.c[ADV]?.[0]) {
       name += ' (ADV)';
     }
     if (card.c[NEW]) {

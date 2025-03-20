@@ -14,11 +14,7 @@
     "rules": {
       "recommended": true,
       "complexity": {
-        "noForEach": "off",
-        "noUselessFragments": "off",
-        "useLiteralKeys": "off",
-        "useOptionalChain": "off",
-        "noUselessTernary": "off"
+        "noForEach": "off"
       },
       "suspicious": {
         "noGlobalIsNan": "off",
@@ -51,7 +47,6 @@
       },
       "correctness": {
         "useExhaustiveDependencies": "off",
-        "useJsxKeyInIterable": "off",
         "noInvalidUseBeforeDeclaration": "off"
       }
     }

@@ -50,8 +50,7 @@ const DeckSelectorAndDisplay = () => {
         )}
       </div>
       {deck && addMode && (
-        <>
-          {playtestMode || !hasPlaytest ? (
+        playtestMode || !hasPlaytest ? (
             <>
               <DeckCrypt deck={deck} inSearch />
               <DeckLibrary deck={deck} inSearch />
@@ -60,8 +59,7 @@ const DeckSelectorAndDisplay = () => {
             <div className="flex">
               <ErrorMessage>CONTAINS PLAYTEST CARDS</ErrorMessage>
             </div>
-          )}
-        </>
+          )
       )}
     </FlexGapped>
   );

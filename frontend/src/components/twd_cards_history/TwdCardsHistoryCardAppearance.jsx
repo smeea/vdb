@@ -34,7 +34,7 @@ const TwdCardsHistoryCardAppearance = ({ card, byPlayer }) => {
       </div>
       {!isMobile && (
         <div className="flex min-w-[45px] items-center justify-center sm:min-w-[60px]">
-          {card[TWD_DATE] && card[TWD_DATE].slice(0, 4)}
+          {card[TWD_DATE]?.slice(0, 4)}
         </div>
       )}
       <div

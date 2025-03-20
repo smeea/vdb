@@ -10,32 +10,29 @@ const CardsMobile = ({ card, openRandomCard, handleChange, handleSetCard }) => {
 
   return (
     <>
-      {card && (
-        <>
-          {playtestMode || !getIsPlaytest(card[ID]) ? (
-            <div className="pb-[59px]">
-              {showImage ? (
-                <CardImage card={card} />
-              ) : (
-                <div className="p-3 pb-0">
-                  <ResultLayoutText card={card} setCard={handleSetCard} noClose />
-                </div>
-              )}
-              {showFloatingButtons && (
-                <div className="fixed z-30">
-                  <ButtonFloat onClick={toggleShowImage}>
-                    <ArrowRepeat width="40" height="40" viewBox="0 0 16 16" />
-                  </ButtonFloat>
-                </div>
-              )}
-            </div>
-          ) : (
-            <div className="flex">
-              <ErrorMessage>CONTAINS PLAYTEST CARDS</ErrorMessage>
-            </div>
-          )}
-        </>
-      )}
+      {card &&
+        (playtestMode || !getIsPlaytest(card[ID]) ? (
+          <div className="pb-[59px]">
+            {showImage ? (
+              <CardImage card={card} />
+            ) : (
+              <div className="p-3 pb-0">
+                <ResultLayoutText card={card} setCard={handleSetCard} noClose />
+              </div>
+            )}
+            {showFloatingButtons && (
+              <div className="fixed z-30">
+                <ButtonFloat onClick={toggleShowImage}>
+                  <ArrowRepeat width="40" height="40" viewBox="0 0 16 16" />
+                </ButtonFloat>
+              </div>
+            )}
+          </div>
+        ) : (
+          <div className="flex">
+            <ErrorMessage>CONTAINS PLAYTEST CARDS</ErrorMessage>
+          </div>
+        ))}
       <div className="bg-bgPrimary dark:bg-bgPrimaryDark fixed bottom-10 z-20 flex w-full p-2">
         <div className="w-full md:basis-8/12">
           <CardSelect autoFocus={!isMobile || !card?.[ID]} onChange={handleChange} value={null} />

@@ -31,6 +31,7 @@ import {
   GROUP,
   HARD,
   ID,
+  IN,
   LE,
   NAME,
   NOT_NEWER,
@@ -152,8 +153,8 @@ const CryptSearchForm = () => {
       const { name, value } = event.currentTarget;
 
       if ([NAME, TEXT].includes(value)) {
-        searchCryptForm[TEXT][name]['in'] =
-          searchCryptForm[TEXT][name]['in'] === value ? false : value;
+        searchCryptForm[TEXT][name][IN] =
+          searchCryptForm[TEXT][name][IN] === value ? false : value;
       } else {
         searchCryptForm[TEXT][name][value] = !searchCryptForm[TEXT][name][value];
       }

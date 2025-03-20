@@ -36,8 +36,7 @@ const Cards = () => {
 
   return (
     <div className="cards-container mx-auto">
-      <>
-        {isMobile ? (
+      {isMobile ? (
           <CardsMobile
             card={card}
             openRandomCard={openRandomCard}
@@ -52,7 +51,6 @@ const Cards = () => {
             handleSetCard={handleSetCard}
           />
         )}
-      </>
     </div>
   );
 };

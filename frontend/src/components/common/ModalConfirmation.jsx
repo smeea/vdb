@@ -57,19 +57,17 @@ const ModalConfirmation = ({
         {children}
         <form action={action} className={twMerge('flex justify-end gap-2', !children && 'pt-3')}>
           {withWrittenConfirmation && (
-            <>
-              <div className="relative w-full">
-                <Input
-                  placeholder={`Type '${YES}' to confirm`}
-                  name={TEXT}
-                  defaultValue={data?.[TEXT]}
-                  autoFocus
-                />
-                {error && (
-                  <ErrorOverlay placement="bottom">Type &apos;{YES}&apos; to confirm</ErrorOverlay>
-                )}
-              </div>
-            </>
+            <div className="relative w-full">
+              <Input
+                placeholder={`Type '${YES}' to confirm`}
+                name={TEXT}
+                defaultValue={data?.[TEXT]}
+                autoFocus
+              />
+              {error && (
+                <ErrorOverlay placement="bottom">Type &apos;{YES}&apos; to confirm</ErrorOverlay>
+              )}
+            </div>
           )}
           <div className="flex justify-between gap-2">
             <Button disabled={disabled} variant={buttonVariant} type="submit">

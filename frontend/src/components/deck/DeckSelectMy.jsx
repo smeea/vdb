@@ -65,13 +65,11 @@ const DeckSelectMy = ({ deckid, handleSelect }) => {
               <div className="flex items-center">
                 <div className="flex w-[35px] items-center justify-center pr-1">
                   {clan && (
-                    <>
-                      {paths.includes(clan) ? (
+                    paths.includes(clan) ? (
                         <ResultPathImage value={clan} />
                       ) : (
                         <ResultPreconClan clan={clan} />
-                      )}
-                    </>
+                      )
                   )}
                 </div>
                 <div className="inline">

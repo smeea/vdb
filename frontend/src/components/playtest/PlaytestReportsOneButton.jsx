@@ -56,15 +56,13 @@ const PlaytestReportsOneButton = ({ value, isPrecon = false }) => {
           <FlexGapped className="max-sm:flex-col">
             <div className="flex flex-col gap-2 sm:gap-4">
               {!isMobile && (
-                <>
-                  {isPrecon ? (
+                isPrecon ? (
                     <div className="w-[358px]">
                       <DeckCrypt deck={value.deck} noDisciplines />
                     </div>
                   ) : (
                     <CardImage card={value} onClick={() => setShow(false)} />
-                  )}
-                </>
+                  )
               )}
               <ButtonIconed
                 onClick={() => exportReports()}

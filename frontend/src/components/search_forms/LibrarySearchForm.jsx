@@ -30,6 +30,7 @@ import {
   GE,
   HARD,
   ID,
+  IN,
   LE,
   LIBRARY,
   NAME,
@@ -130,8 +131,8 @@ const LibrarySearchForm = () => {
     (event) => {
       const { name, value } = event.currentTarget;
       if ([NAME, TEXT].includes(value)) {
-        searchLibraryForm[TEXT][name]['in'] =
-          searchLibraryForm[TEXT][name]['in'] === value ? false : value;
+        searchLibraryForm[TEXT][name][IN] =
+          searchLibraryForm[TEXT][name][IN] === value ? false : value;
       } else {
         searchLibraryForm[TEXT][name][value] = !searchLibraryForm[TEXT][name][value];
       }

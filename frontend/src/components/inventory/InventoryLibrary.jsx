@@ -40,8 +40,7 @@ const InventoryLibrary = ({
   return (
     <>
       {!compact && (
-        <>
-          <Header>
+        <Header>
             <div className="w-3/4 p-1">
               <div className="flex flex-col gap-1">
                 <InventoryFilterForm
@@ -79,7 +78,6 @@ const InventoryLibrary = ({
               setSortMethod={changeLibraryInventorySort}
             />
           </Header>
-        </>
       )}
       <InventoryLibraryTable
         sortMethod={libraryInventorySort}

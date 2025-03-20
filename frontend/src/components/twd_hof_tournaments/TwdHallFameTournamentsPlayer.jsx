@@ -2,7 +2,7 @@ import { Disclosure } from '@headlessui/react';
 import StarFill from '@icons/star-fill.svg?react';
 import TrophyFill from '@icons/trophy-fill.svg?react';
 import { TwdHallFameDeckHeader } from '@/components';
-import { AUTHOR, DATE, DECKID } from '@/constants';
+import { AUTHOR, DATE, DECKID, EVENT } from '@/constants';
 
 const testStar = (eventName) => {
   return (
@@ -16,7 +16,7 @@ const TwdHallFameTournamentsPlayer = ({ name, decks }) => {
   const getStars = (decks) => {
     let stars = 0;
     decks.forEach((deck) => {
-      if (testStar(deck['event'])) {
+      if (testStar(deck[EVENT])) {
         stars += 1;
       }
     });
@@ -60,7 +60,7 @@ const TwdHallFameTournamentsPlayer = ({ name, decks }) => {
               <TwdHallFameDeckHeader
                 key={deck[DECKID]}
                 deck={{ ...deck, [AUTHOR]: name }}
-                isStar={testStar(deck['event'])}
+                isStar={testStar(deck[EVENT])}
               />
             );
           })}

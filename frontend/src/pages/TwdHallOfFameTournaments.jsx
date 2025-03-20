@@ -14,16 +14,14 @@ const TwdHallOfFameTournaments = () => {
   return (
     <div className="hof-tournaments-container mx-auto flex flex-col gap-1.5">
       {value && (
-        <>
-          {Object.keys(value)
+        Object.keys(value)
             .toSorted(byName)
             .toSorted(byWins)
             .map((player) => (
               <Disclosure key={player}>
                 <TwdHallFameTournamentsPlayer name={player} decks={value[player]} />
               </Disclosure>
-            ))}
-        </>
+            ))
       )}
     </div>
   );

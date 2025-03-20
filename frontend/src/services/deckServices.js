@@ -324,7 +324,7 @@ export const exportXlsx = async (deck) => {
   const crypt = Object.values(deck[CRYPT]).map((card) => {
     const c = card.c;
     let name = c[NAME];
-    if (c[ADV] && c[ADV][0]) name += ' (ADV)';
+    if (c[ADV]?.[0]) name += ' (ADV)';
     if (c[NEW]) name += ` (G${c[GROUP]})`;
 
     return {
