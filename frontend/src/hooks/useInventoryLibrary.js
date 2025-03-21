@@ -8,7 +8,7 @@ import { ALL, DISCIPLINE, HARD, LIBRARY, NOK, NONE, OK, SOFT, TYPE } from '@/con
 import { useApp, usedStore } from '@/context';
 import { getHardTotal, getIsPlaytest, getSoftMax } from '@/utils';
 
-const useInventoryLibrary = (library, category = OK, compact, type, discipline, onlyNotes) => {
+const useInventoryLibrary = (library, category, compact, type, discipline, onlyNotes) => {
   const usedLibrary = useSnapshot(usedStore)[LIBRARY];
   const { libraryCardBase } = useApp();
 

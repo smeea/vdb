@@ -24,11 +24,10 @@ const TwdResultDescriptionText = ({ deck }) => {
 
   const handleClick = (target, value) => {
     clearSearchForm(TWD);
-    if (target === LOCATION) {
-      value = { city: value };
-    }
-    searchTwdForm[target] = value;
-    navigate(`/twd?q=${encodeURIComponent(JSON.stringify({ [target]: value }))}`);
+    const finalValue = target === LOCATION ? { city: value } : value;
+
+    searchTwdForm[target] = finalValue;
+    navigate(`/twd?q=${encodeURIComponent(JSON.stringify({ [target]: finalValue }))}`);
   };
 
   return (

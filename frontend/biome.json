@@ -20,10 +20,6 @@
         "noArrayIndexKey": "off",
         "noAssignInExpressions": "off"
       },
-      "style": {
-        "useDefaultParameterLast": "off",
-        "noParameterAssign": "off"
-      },
       "a11y": {
         "noAutofocus": "off",
         "noNoninteractiveTabindex": "off",

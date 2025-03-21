@@ -84,7 +84,7 @@ import {
 import { getIsPlaytest } from '@/utils';
 import { CryptTraitsRegexMap, LibraryTraitsRegexMap } from '@/utils/traitsRegexMaps';
 
-export const filterCrypt = (cards = {}, filter) => {
+export const filterCrypt = (filter, cards = {}) => {
   return Object.values(cards).filter((card) => {
     if (filter[DISCIPLINES] && missingDisciplinesCrypt(filter[DISCIPLINES], card)) return false;
     if (filter[TEXT] && missingTextQueries(filter[TEXT], card)) return false;
@@ -104,7 +104,7 @@ export const filterCrypt = (cards = {}, filter) => {
   });
 };
 
-export const filterLibrary = (cards = {}, filter) => {
+export const filterLibrary = (filter, cards = {}) => {
   return Object.values(cards).filter((card) => {
     if (filter[TEXT] && missingTextQueries(filter[TEXT], card)) return false;
     if (filter[DISCIPLINE] && missingDisciplinesLibrary(filter[DISCIPLINE], card)) return false;
@@ -541,21 +541,21 @@ const missingNameOrInitials = (filter, card) => {
   let nameASCII = card[ASCII].toLowerCase();
   let nameAKA = card[AKA] ? card[AKA].toLowerCase() : '';
 
-  filter = filter.toLowerCase();
-  if (/^the .*/.test(filter) && /, the$/.test(name)) {
+  let editedFilter = filter.toLowerCase();
+  if (/^the .*/.test(editedFilter) && /, the$/.test(name)) {
     name = `the ${name.replace(/, the$/, '')}`;
     nameASCII = `the ${nameASCII.replace(/, the$/, '')}`;
     nameAKA = `the ${nameAKA.replace(/, the$/, '')}`;
   }
-  filter = filter.replace(/[^\p{L}\d]/giu, '');
+  editedFilter = editedFilter.replace(/[^\p{L}\d]/giu, '');
 
   return !(
-    name.includes(filter) ||
-    name.replace(/[^a-z0-9]/gi, '').includes(filter) ||
-    nameASCII.includes(filter) ||
-    nameASCII.replace(/[^a-z0-9]/gi, '').includes(filter) ||
-    nameAKA.includes(filter) ||
-    nameAKA.replace(/[^a-z0-9]/gi, '').includes(filter) ||
+    name.includes(editedFilter) ||
+    name.replace(/[^a-z0-9]/gi, '').includes(editedFilter) ||
+    nameASCII.includes(editedFilter) ||
+    nameASCII.replace(/[^a-z0-9]/gi, '').includes(editedFilter) ||
+    nameAKA.includes(editedFilter) ||
+    nameAKA.replace(/[^a-z0-9]/gi, '').includes(editedFilter) ||
     checkInitials?.test(name) ||
     checkInitials?.test(nameASCII) ||
     checkInitials?.test(nameAKA)

@@ -233,8 +233,8 @@ const CryptSearchForm = () => {
     }
 
     const filteredCards = filterCrypt(
-      limitedMode ? limitedCrypt : cryptCardBase,
       sanitizedForm,
+      limitedMode ? limitedCrypt : cryptCardBase
     ).filter((card) => playtestMode || !getIsPlaytest(card[ID]));
 
     if (isMobile && filteredCards.length === 0) {

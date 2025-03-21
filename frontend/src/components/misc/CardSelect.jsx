@@ -58,8 +58,8 @@ const CardSelect = ({
   ref,
 }) => {
   const { cryptCardBase, libraryCardBase, playtestMode } = useApp();
-  const filterCryptAction = (filter) => filterCrypt(cryptCardBase, filter);
-  const filterLibraryAction = (filter) => filterLibrary(libraryCardBase, filter);
+  const filterCryptAction = (filter) => filterCrypt(filter, cryptCardBase);
+  const filterLibraryAction = (filter) => filterLibrary(filter, libraryCardBase);
 
   const getOptionLabel = (option) => {
     const cardid = option.value;

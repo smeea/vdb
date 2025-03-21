@@ -82,12 +82,12 @@ const PlaytestReportsAll = () => {
           let name;
           switch (target) {
             case PRECONS:
-              if (id === GENERAL || !Number.isNaN(id)) return;
+              if (id === GENERAL || Number.isInteger(id)) return;
               name = preconDecks[`${PLAYTEST}:${id}`][NAME];
               exportText += `Precon: ${name}\n\n`;
               break;
             case CARDS:
-              if (Number.isNaN(id)) return;
+              if (!Number.isInteger(id)) return;
               try {
                 name = id > 200000 ? cryptCardBase[id][NAME] : libraryCardBase[id][NAME];
               } catch {

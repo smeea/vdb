@@ -36,9 +36,12 @@ const Text = ({ text }) => {
 
   return reactStringReplace(textWithIcons, /{(.*?)}/g, (match, idx) => {
     const cardBase = { ...nativeCrypt, ...nativeLibrary };
+    let cardMatch = match
     const cardid = Object.keys(cardBase).find((j) => {
-      if (match.startsWith('The ')) match = `${match.replace(/^The /, '')}, The`;
-      return cardBase[j][NAME] === match;
+      if (cardMatch.startsWith('The ')) {
+        cardMatch = `${cardMatch.replace(/^The /, '')}, The`;
+      }
+      return cardBase[j][NAME] === cardMatch;
     });
 
     const card = cardid > 200000 ? cryptCardBase[cardid] : libraryCardBase[cardid];
@@ -46,7 +49,7 @@ const Text = ({ text }) => {
     if (card) {
       return (
         <ConditionalTooltip
-          key={`${match}-${idx}`}
+          key={`${cardMatch}-${idx}`}
           overlay={<CardPopover card={card} />}
           disabled={isMobile}
           noPadding
@@ -55,7 +58,7 @@ const Text = ({ text }) => {
         </ConditionalTooltip>
       );
     }
-    return <React.Fragment key={idx}>&#123;{match}&#125;</React.Fragment>;
+    return <React.Fragment key={idx}>&#123;{cardMatch}&#125;</React.Fragment>;
   });
 };
 

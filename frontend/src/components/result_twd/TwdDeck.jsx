@@ -12,9 +12,11 @@ import { parseDeck } from '@/utils';
 
 const TwdDeck = ({ deck, inPda }) => {
   const { cryptCardBase, libraryCardBase, isNarrow } = useApp();
+
+  // TODO fix mess
   const parsedDeck = {
     ...(deck || {}),
-    ...parseDeck(deck?.[CARDS], cryptCardBase, libraryCardBase),
+    ...parseDeck(cryptCardBase, libraryCardBase, deck?.[CARDS]),
   };
 
   return (

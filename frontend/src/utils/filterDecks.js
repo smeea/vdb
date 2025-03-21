@@ -33,7 +33,7 @@ import {
 } from '@/constants';
 import { countCards, countTotalCost, getClan, getSect } from '@/utils';
 
-const filterDecks = (decks = {}, filter) => {
+const filterDecks = (decks, filter) => {
   return Object.values(decks).filter((deck) => {
     if (filter[RANK] && missingRank(filter[RANK], deck)) return false;
     if (filter[CRYPT] && missingCrypt(filter[CRYPT], deck)) return false;

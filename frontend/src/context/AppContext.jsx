@@ -160,7 +160,7 @@ export const AppProvider = ({ children }) => {
 
   // CARD BASE
   const CARD_VERSION = import.meta.env.VITE_CARD_VERSION;
-  const fetchAndSetCardBase = (isIndexedDB = true, secret) => {
+  const fetchAndSetCardBase = (isIndexedDB, secret) => {
     cardServices.getCardBase(secret).then((data) => {
       if (isIndexedDB) {
         setMany([
@@ -485,7 +485,7 @@ export const AppProvider = ({ children }) => {
   const parseDecksData = (decksData) => {
     const parsedDecks = {};
     Object.keys(decksData).forEach((deckid) => {
-      const cardsData = parseDeck(decksData[deckid][CARDS], cryptCardBase, libraryCardBase);
+      const cardsData = parseDeck(cryptCardBase, libraryCardBase, decksData[deckid][CARDS]);
       parsedDecks[deckid] = { ...decksData[deckid], ...cardsData };
 
       if (decksData[deckid].usedInInventory) {

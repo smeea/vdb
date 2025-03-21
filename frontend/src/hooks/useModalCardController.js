@@ -12,12 +12,12 @@ const useModalCardController = (mainCards = [], sideCards = []) => {
 
   const handleModalCardOpen = (i) => {
     setMode(MAIN_CARD_MODE);
-    setCardid(Number.isNaN(i) ? mainList.indexOf(i) : i);
+    setCardid(Number.isInteger(i) ? i : mainList.indexOf(i));
   };
 
   const handleModalSideCardOpen = (i) => {
     setMode(SIDE_CARD_MODE);
-    setCardid(Number.isNaN(i) ? sideList.indexOf(i) : i);
+    setCardid(Number.isInteger(i) ? i : sideList.indexOf(i));
   };
 
   const handleModalCardChange = (d) => {

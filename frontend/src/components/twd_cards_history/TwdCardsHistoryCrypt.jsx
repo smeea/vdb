@@ -30,7 +30,7 @@ import { cryptSort } from '@/utils';
 const TwdCardsHistoryCrypt = ({ cards, players }) => {
   const { isMobile } = useApp();
   const [clan, setClan] = useState(ALL);
-  const [sortMethod, setSortMethod] = useState([NAME]);
+  const [sortMethod, setSortMethod] = useState(NAME);
   const sortMethods = {
     [NAME]: 'N',
     [PLAYER]: 'P',

@@ -1,5 +1,5 @@
-const parseDeck = (cards = {}, cryptCardBase, libraryCardBase) => {
-  const crypt = {};
+const parseDeck = (cryptCardBase, libraryCardBase, cards = {}) => {
+  const crypt = {}
   const library = {};
 
   Object.keys(cards).forEach((cardid) => {

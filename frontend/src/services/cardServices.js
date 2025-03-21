@@ -104,7 +104,7 @@ export const getPreconDecks = async (cryptCardBase, libraryCardBase, secret) => 
         preconDecks[deckid][PLAYTEST_OLD] = true;
       }
 
-      const cardsData = parseDeck(preconData[set][precon], cryptCardBase, libraryCardBase);
+      const cardsData = parseDeck(cryptCardBase, libraryCardBase, preconData[set][precon]);
 
       let tags = [];
       if (set !== PLAYTEST || (cryptCardBase[210001] && libraryCardBase[110001])) {

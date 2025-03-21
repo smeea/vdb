@@ -123,17 +123,18 @@ const TwdSearchFormCardtypes = ({ value, onChange }) => {
 
     i[1]
       .filter((i) => i !== 0)
-      .map((j, idx) => {
+      .forEach((j, idx) => {
+        let n = idx
         if (i[1][0] === 0) {
-          idx = idx + 1;
+          n = n + 1;
         }
-        if (idx < i[1].length - 1)
+        if (n < i[1].length - 1)
           options.push({
-            value: `${j},${i[1][idx + 1]}`,
+            value: `${j},${i[1][n + 1]}`,
             name: i[0].toLowerCase(),
             label: (
               <div className="flex justify-center">
-                {j}...{i[1][idx + 1]}%
+                {j}...{i[1][n + 1]}%
               </div>
             ),
           });
@@ -141,7 +142,7 @@ const TwdSearchFormCardtypes = ({ value, onChange }) => {
 
     i[1]
       .filter((i) => i !== 0)
-      .map((j) => {
+      .forEach((j) => {
         options.push({
           value: `${j},100`,
           name: i[0].toLowerCase(),

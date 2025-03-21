@@ -153,17 +153,18 @@ export const deckUpdate = (deckid, field, value) => {
   }
   changeMaster(deckid);
 
+  let finalValue = value
   if (field === CARDS) {
     const cards = {};
     Object.values({ ...value[CRYPT], ...value[LIBRARY] }).forEach((card) => {
       cards[card.c[ID]] = card.q;
     });
-    value = cards;
+    finalValue = cards;
   }
 
   deckStore[DECKS][deckid][TIMESTAMP] = dayjs().toISOString();
 
-  return deckServices.update(deckid, field, value).catch(() => {
+  return deckServices.update(deckid, field, finalValue).catch(() => {
     deckStore[DECK] = initialDeckState;
     deckStore[DECKS][deckid] = initialDecksState;
   });

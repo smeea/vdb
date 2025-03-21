@@ -57,7 +57,7 @@ export const countDisciplines = (cardsList) => {
 export const countTotalCost = (cardsList, type) => {
   if (!cardsList.length) return 0;
   return cardsList
-    .filter((card) => !Number.isNaN(card.c[type]))
+    .filter((card) => Number.isInteger(card.c[type]))
     .reduce((acc, card) => acc + card.q * card.c[type], 0);
 };
 
@@ -106,11 +106,11 @@ export const getLegality = (card) => {
 export const getGroups = (cards) => {
   const cryptGroupMin = cards
     .filter((card) => card.c[GROUP] !== ANY)
-    .reduce((acc, card) => (acc = card.c[GROUP] < acc ? card.c[GROUP] : acc), 10);
+    .reduce((acc, card) => (card.c[GROUP] < acc ? card.c[GROUP] : acc), 10);
 
   const cryptGroupMax = cards
     .filter((card) => card.c[GROUP] !== ANY)
-    .reduce((acc, card) => (acc = card.c[GROUP] > acc ? card.c[GROUP] : acc), 0);
+    .reduce((acc, card) => (card.c[GROUP] > acc ? card.c[GROUP] : acc), 0);
 
   if (cryptGroupMax - cryptGroupMin === 1) {
     return { cryptGroups: `${cryptGroupMin}-${cryptGroupMax}` };
@@ -144,13 +144,13 @@ export const containCard = (cards, card) => {
 export const getHardTotal = (hardList) => {
   if (!hardList) return 0;
 
-  return Object.values(hardList).reduce((acc, q) => (acc += q), 0);
+  return Object.values(hardList).reduce((acc, q) => (acc + q), 0);
 };
 
 export const getSoftMax = (softList) => {
   if (!softList) return 0;
 
-  return Object.values(softList).reduce((acc, q) => (acc = q > acc ? q : acc));
+  return Object.values(softList).reduce((acc, q) => (q > acc ? q : acc));
 };
 
 export const getCardsArray = (cardsList) => {

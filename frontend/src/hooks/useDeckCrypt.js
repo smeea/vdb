@@ -7,13 +7,12 @@ import {
   HAS_LIMITED,
   HAS_PLAYTEST,
   LIBRARY,
-  NAME,
 } from '@/constants';
 import { limitedStore, miscStore } from '@/context';
 import { useCryptSortWithTimer } from '@/hooks';
 import { containCard, countCards, getGroups, getRestrictions } from '@/utils';
 
-const useDeckCrypt = (cardsList, sortMethod = NAME, cardsToList) => {
+const useDeckCrypt = (cardsList, sortMethod, cardsToList) => {
   const timer = useSnapshot(miscStore)[CRYPT_TIMER];
   const cryptFrom = Object.values(cardsList).filter((card) => card.q > 0);
   const cryptTo = Object.values(cardsToList || {}).filter(

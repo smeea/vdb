@@ -13,11 +13,11 @@ const TwdHallFameDeckHeader = ({ deck, isStar }) => {
   };
 
   return (
-    <div className="border-borderPrimary bg-bgPrimary dark:border-borderPrimaryDark dark:bg-bgPrimaryDark rounded-md border-2">
+    <div className="cursor-pointer border-borderPrimary bg-bgPrimary dark:border-borderPrimaryDark dark:bg-bgPrimaryDark rounded-md border-2">
       <div
         onClick={handleClick}
         className={twMerge(
-          'text-fgSecondary dark:text-fgSecondaryDark flex justify-between p-2.5 hover:underline',
+          'text-fgSecondary dark:text-fgSecondaryDark flex justify-between p-2.5',
           isStar && 'font-bold',
         )}
       >

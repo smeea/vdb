@@ -6,7 +6,7 @@ import { ALL, CLAN, CRYPT, HARD, NOK, OK, SOFT } from '@/constants';
 import { useApp, usedStore } from '@/context';
 import { getHardTotal, getIsPlaytest, getSoftMax } from '@/utils';
 
-const useInventoryCrypt = (crypt, category = OK, compact, onlyNotes) => {
+const useInventoryCrypt = (crypt, category, compact, onlyNotes) => {
   const usedCrypt = useSnapshot(usedStore)[CRYPT];
   const { cryptCardBase } = useApp();
 

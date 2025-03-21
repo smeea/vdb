@@ -46,10 +46,10 @@ const DeckDrawModal = ({
   let burnedPoolTotal = 0;
   let burnedBloodTotal = 0;
   burnedLibrary.forEach((card) => {
-    if (card[BLOOD] && !Number.isNaN(card[BLOOD])) {
+    if (card[BLOOD] && Number.isInteger(card[BLOOD])) {
       burnedBloodTotal += Number.parseInt(card[BLOOD]);
     }
-    if (card[POOL] && !Number.isNaN(card[POOL])) {
+    if (card[POOL] && Number.isInteger(card[POOL])) {
       burnedPoolTotal += Number.parseInt(card[POOL]);
     }
   });

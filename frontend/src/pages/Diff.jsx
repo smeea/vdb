@@ -75,7 +75,7 @@ const Diff = () => {
     }
 
     setE(false);
-    const cardsData = parseDeck(deckData[CARDS], cryptCardBase, libraryCardBase);
+    const cardsData = parseDeck(cryptCardBase, libraryCardBase, deckData[CARDS]);
     const d = {
       ...deckData,
       [CRYPT]: cardsData[CRYPT],

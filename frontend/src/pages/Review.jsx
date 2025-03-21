@@ -71,7 +71,7 @@ const Review = () => {
     });
 
     setError(false);
-    const cardsData = parseDeck(deckData[CARDS], cryptCardBase, libraryCardBase);
+    const cardsData = parseDeck(cryptCardBase, libraryCardBase, deckData[CARDS]);
     if (deckid.length !== 9 || deckData[PUBLIC_PARENT]) {
       deckData[TAGS] = [];
       Object.values(getTags(cardsData[CRYPT], cardsData[LIBRARY])).forEach((v) => {

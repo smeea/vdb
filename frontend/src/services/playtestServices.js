@@ -43,14 +43,14 @@ export const exportXlsx = async (reports, users, cryptCardBase, libraryCardBase,
   const workbook = xlsx.utils.book_new();
 
   const cardsData = Object.keys(reports)
-    .filter((id) => !Number.isNaN(id))
+    .filter((id) => Number.isInteger(id))
     .reduce((obj, key) => {
       obj[key] = reports[key];
       return obj;
     }, {});
 
   const preconsData = Object.keys(reports)
-    .filter((id) => Number.isNaN(id) && id !== GENERAL)
+    .filter((id) => !Number.isInteger(id) && id !== GENERAL)
     .reduce((obj, key) => {
       obj[key] = reports[key];
       return obj;
