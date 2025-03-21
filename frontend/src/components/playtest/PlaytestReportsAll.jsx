@@ -1,4 +1,4 @@
-import { Tab } from '@headlessui/react';
+import { TabGroup, TabList, TabPanels, TabPanel } from '@headlessui/react';
 import ky from 'ky';
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
@@ -221,30 +221,30 @@ const PlaytestReportsAll = () => {
             </div>
           </div>
         </div>
-        <Tab.Group manual className="flex flex-col gap-3 sm:gap-4">
-          <Tab.List className="flex gap-1.5 print:hidden">
+        <TabGroup manual className="flex flex-col gap-3 sm:gap-4">
+          <TabList className="flex gap-1.5 print:hidden">
             <TabButton>Crypt</TabButton>
             <TabButton>Library</TabButton>
             <TabButton>General / Precons</TabButton>
-          </Tab.List>
-          <Tab.Panels>
-            <Tab.Panel>
+          </TabList>
+          <TabPanels>
+            <TabPanel>
               <PlaytestReportsAllCardsWrapper
                 maxSameScore={maxReportsSameScoreCrypt}
                 reports={reportsCrypt}
                 target={CRYPT}
                 sortMethod={sortMethod}
               />
-            </Tab.Panel>
-            <Tab.Panel>
+            </TabPanel>
+            <TabPanel>
               <PlaytestReportsAllCardsWrapper
                 maxSameScore={maxReportsSameScoreLibrary}
                 reports={reportsLibrary}
                 target={LIBRARY}
                 sortMethod={sortMethod}
               />
-            </Tab.Panel>
-            <Tab.Panel>
+            </TabPanel>
+            <TabPanel>
               <FlexGapped className="flex-col">
                 <PlaytestReportsAllGeneral reports={reportsGeneral} />
                 <Hr isThick className="print:hidden" />
@@ -253,9 +253,9 @@ const PlaytestReportsAll = () => {
                   maxSameScore={maxReportsSameScorePrecons}
                 />
               </FlexGapped>
-            </Tab.Panel>
-          </Tab.Panels>
-        </Tab.Group>
+            </TabPanel>
+          </TabPanels>
+        </TabGroup>
       </div>
     </div>
   );

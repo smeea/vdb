@@ -1,4 +1,4 @@
-import { Tab } from '@headlessui/react';
+import { TabGroup, TabList, TabPanels, TabPanel } from '@headlessui/react';
 import { useMemo } from 'react';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
 import { TabButton, TwdCardsHistoryCrypt, TwdCardsHistoryLibrary } from '@/components';
@@ -63,18 +63,18 @@ const TwdCardsHistory = () => {
 
   return (
     <div className="hof-history-container mx-auto flex flex-col gap-1.5">
-      <Tab.Group className="flex flex-col gap-2" manual>
-        <Tab.List className="flex gap-1.5">
+      <TabGroup className="flex flex-col gap-2" manual>
+        <TabList className="flex gap-1.5">
           <TabButton>Crypt</TabButton>
           <TabButton>Library</TabButton>
-        </Tab.List>
-        <Tab.Panels>
-          <Tab.Panel>{crypt && <TwdCardsHistoryCrypt cards={crypt} players={players} />}</Tab.Panel>
-          <Tab.Panel>
+        </TabList>
+        <TabPanels>
+          <TabPanel>{crypt && <TwdCardsHistoryCrypt cards={crypt} players={players} />}</TabPanel>
+          <TabPanel>
             {library && <TwdCardsHistoryLibrary cards={library} players={players} />}
-          </Tab.Panel>
-        </Tab.Panels>
-      </Tab.Group>
+          </TabPanel>
+        </TabPanels>
+      </TabGroup>
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import { Disclosure } from '@headlessui/react';
+import { DisclosureButton, DisclosurePanel } from '@headlessui/react';
 import { useMemo } from 'react';
 import LightbulbFill from '@icons/lightbulb-fill.svg?react';
 import {
@@ -88,7 +88,7 @@ const TwdHallFameCardsPlayer = ({ name, cards }) => {
 
   return (
     <div className="border-borderPrimary bg-bgThird dark:border-borderPrimaryDark dark:bg-bgThirdDark rounded-sm border">
-      <Disclosure.Button className="cursor-pointer w-full p-3">
+      <DisclosureButton className="cursor-pointer w-full p-3">
         <div className="text-fgName dark:text-fgNameDark flex items-center gap-4 px-2">
           <div className="flex items-center gap-1">
             <div>{Object.keys(cards).length}</div>
@@ -114,8 +114,8 @@ const TwdHallFameCardsPlayer = ({ name, cards }) => {
             </div>
           </div>
         </div>
-      </Disclosure.Button>
-      <Disclosure.Panel>
+      </DisclosureButton>
+      <DisclosurePanel>
         <ResultCryptTotal
           cards={cryptSorted}
           sortMethods={cryptSortMethods}
@@ -204,7 +204,7 @@ const TwdHallFameCardsPlayer = ({ name, cards }) => {
             })}
           </tbody>
         </table>
-      </Disclosure.Panel>
+      </DisclosurePanel>
       {shouldShowModal && (
         <ResultModal
           card={currentModalCard}

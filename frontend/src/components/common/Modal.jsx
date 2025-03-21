@@ -1,4 +1,4 @@
-import { Dialog } from '@headlessui/react';
+import { Dialog, DialogPanel, DialogTitle } from '@headlessui/react';
 import { useRef } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { ButtonCloseModal, ButtonFloatClose } from '@/components';
@@ -37,7 +37,7 @@ const Modal = ({
             withMobileMargin ? 'max-sm:p-2' : 'max-sm:p-0',
           )}
         >
-          <Dialog.Panel
+          <DialogPanel
             className={twMerge(
               'border-bgSecondary bg-bgPrimary dark:border-bgSecondaryDark dark:bg-bgPrimaryDark flex flex-col gap-1 rounded-sm',
               widthClass[size],
@@ -47,7 +47,7 @@ const Modal = ({
             )}
           >
             {(title || !noClose) && (
-              <Dialog.Title className="flex items-center justify-between border-none">
+              <DialogTitle className="flex items-center justify-between border-none">
                 <div
                   className={twMerge(
                     'text-fgSecondary dark:text-fgSecondaryDark text-lg font-bold',
@@ -59,13 +59,13 @@ const Modal = ({
                 <div className={twMerge('flex items-center max-md:hidden', noClose && 'hidden')}>
                   <ButtonCloseModal handleClick={handleClose} />
                 </div>
-              </Dialog.Title>
+              </DialogTitle>
             )}
             <div className={twMerge('max-h-0 max-w-0 opacity-0', noClose && 'hidden')}>
               <button type="button" ref={ref} />
             </div>
             {children}
-          </Dialog.Panel>
+          </DialogPanel>
         </div>
       </div>
       <div className="md:hidden">

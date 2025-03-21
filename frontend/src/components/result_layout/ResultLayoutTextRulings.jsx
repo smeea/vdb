@@ -36,7 +36,7 @@ const Text = ({ text }) => {
 
   return reactStringReplace(textWithIcons, /{(.*?)}/g, (match, idx) => {
     const cardBase = { ...nativeCrypt, ...nativeLibrary };
-    let cardMatch = match
+    let cardMatch = match;
     const cardid = Object.keys(cardBase).find((j) => {
       if (cardMatch.startsWith('The ')) {
         cardMatch = `${cardMatch.replace(/^The /, '')}, The`;

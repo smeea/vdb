@@ -15,4 +15,3 @@
 - Fix biomejs:
   - tailwindcss class sorting
   - imports sorting with @
-- HeadlessUI -> Disclosure deprecated elements

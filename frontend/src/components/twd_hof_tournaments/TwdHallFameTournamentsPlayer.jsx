@@ -1,4 +1,4 @@
-import { Disclosure } from '@headlessui/react';
+import { DisclosureButton, DisclosurePanel } from '@headlessui/react';
 import StarFill from '@icons/star-fill.svg?react';
 import TrophyFill from '@icons/trophy-fill.svg?react';
 import { TwdHallFameDeckHeader } from '@/components';
@@ -36,7 +36,7 @@ const TwdHallFameTournamentsPlayer = ({ name, decks }) => {
 
   return (
     <div className="border-borderPrimary bg-bgThird dark:border-borderPrimaryDark dark:bg-bgThirdDark rounded-sm border">
-      <Disclosure.Button className="cursor-pointer w-full p-3">
+      <DisclosureButton className="cursor-pointer w-full p-3">
         <div className="text-fgName dark:text-fgNameDark flex items-center gap-4 px-2">
           <div className="flex items-center gap-1">
             {Object.keys(decks).length}
@@ -52,8 +52,8 @@ const TwdHallFameTournamentsPlayer = ({ name, decks }) => {
             </div>
           </div>
         </div>
-      </Disclosure.Button>
-      <Disclosure.Panel>
+      </DisclosureButton>
+      <DisclosurePanel>
         <div className="flex flex-col gap-1.5 px-2">
           {decks.toSorted(byDate).map((deck) => {
             return (
@@ -65,7 +65,7 @@ const TwdHallFameTournamentsPlayer = ({ name, decks }) => {
             );
           })}
         </div>
-      </Disclosure.Panel>
+      </DisclosurePanel>
     </div>
   );
 };

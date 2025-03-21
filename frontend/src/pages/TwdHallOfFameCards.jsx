@@ -1,4 +1,4 @@
-import { Disclosure, Tab } from '@headlessui/react';
+import { Disclosure, TabGroup, TabList, TabPanels, TabPanel } from '@headlessui/react';
 import dayjs from 'dayjs';
 import { useMemo } from 'react';
 import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
@@ -95,13 +95,13 @@ const TwdHallOfFameCards = () => {
 
   return (
     <div className="hof-cards-container mx-auto flex flex-col gap-1.5">
-      <Tab.Group manual className="flex flex-col gap-2">
-        <Tab.List className="flex gap-1.5">
+      <TabGroup manual className="flex flex-col gap-2">
+        <TabList className="flex gap-1.5">
           <TabButton>By Total</TabButton>
           <TabButton>By Innovation</TabButton>
-        </Tab.List>
-        <Tab.Panels>
-          <Tab.Panel>
+        </TabList>
+        <TabPanels>
+          <TabPanel>
             <div className="flex flex-col gap-1.5">
               {players &&
                 Object.keys(players)
@@ -113,8 +113,8 @@ const TwdHallOfFameCards = () => {
                     </Disclosure>
                   ))}
             </div>
-          </Tab.Panel>
-          <Tab.Panel>
+          </TabPanel>
+          <TabPanel>
             <div className="flex flex-col gap-1.5">
               <div className="border-borderPrimary dark:border-borderPrimaryDark rounded-sm border p-3">
                 Only counts cards first appeared in TWD {INNOVATION_PERIOD / 365} years after card
@@ -135,9 +135,9 @@ const TwdHallOfFameCards = () => {
                     </Disclosure>
                   ))}
             </div>
-          </Tab.Panel>
-        </Tab.Panels>
-      </Tab.Group>
+          </TabPanel>
+        </TabPanels>
+      </TabGroup>
     </div>
   );
 };

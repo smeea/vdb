@@ -144,7 +144,7 @@ export const containCard = (cards, card) => {
 export const getHardTotal = (hardList) => {
   if (!hardList) return 0;
 
-  return Object.values(hardList).reduce((acc, q) => (acc + q), 0);
+  return Object.values(hardList).reduce((acc, q) => acc + q, 0);
 };
 
 export const getSoftMax = (softList) => {

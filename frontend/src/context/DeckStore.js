@@ -153,7 +153,7 @@ export const deckUpdate = (deckid, field, value) => {
   }
   changeMaster(deckid);
 
-  let finalValue = value
+  let finalValue = value;
   if (field === CARDS) {
     const cards = {};
     Object.values({ ...value[CRYPT], ...value[LIBRARY] }).forEach((card) => {

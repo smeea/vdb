@@ -124,7 +124,7 @@ const TwdSearchFormCardtypes = ({ value, onChange }) => {
     i[1]
       .filter((i) => i !== 0)
       .forEach((j, idx) => {
-        let n = idx
+        let n = idx;
         if (i[1][0] === 0) {
           n = n + 1;
         }
