@@ -33,13 +33,14 @@ const TwdCardsHistoryCryptRow = ({ card, players, handleClick }) => {
         </div>
       )}
       <div
-        className={twMerge('flex w-full items-center justify-start', !card[DECKID] && 'font-bold')}
+        className={twMerge('flex w-full cursor-pointer items-center justify-start', !card[DECKID] && 'font-bold')}
         onClick={() => handleClick(card)}
       >
         <ConditionalTooltip
-          placement={'right'}
           overlay={<CardPopover card={card} />}
           disabled={isMobile}
+          noPadding
+          noClick
         >
           <ResultName card={card} />
         </ConditionalTooltip>

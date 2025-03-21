@@ -12,6 +12,5 @@
 - Draft Cube support -> when draft cube info is available
 
 # TECH IMPROVEMENTS
-- Fix biomejs:
-  - tailwindcss class sorting
-  - imports sorting with @
+- Formating: tailwindcss class sorting
+- Formating: imports sorting with @

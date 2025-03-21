@@ -201,8 +201,7 @@ const TwdCardsHistoryLibrary = ({ cards, players }) => {
           setSortMethod={setSortMethod}
         />
       </div>
-
-      <div className="bg-bgSecondary text-fgSecondary dark:bg-bgSecondaryDark dark:text-fgSecondaryDark flex w-full font-bold">
+      <div className="min-h-[38px] bg-bgSecondary text-fgSecondary dark:bg-bgSecondaryDark dark:text-fgSecondaryDark flex w-full font-bold">
         {!isMobile && <div className="flex min-w-[30px]" />}
         {!isMobile && <div className="flex min-w-[40px]" />}
         <div className="flex w-full" />
