@@ -22,9 +22,7 @@
       },
       "style": {
         "useDefaultParameterLast": "off",
-        "noParameterAssign": "off",
-        "noUselessElse": "off",
-        "noUnusedTemplateLiteral": "off"
+        "noParameterAssign": "off"
       },
       "a11y": {
         "noAutofocus": "off",

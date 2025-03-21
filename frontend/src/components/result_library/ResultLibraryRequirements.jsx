@@ -78,9 +78,9 @@ const ResultLibraryRequirements = ({ value }) => {
   const sectReq = requirements.filter((i) => sectsOpts.includes(capitalize(i)));
   const hasRequirements = capacityReq || titleReq.length > 0 || sectReq.length > 0;
 
-  if (hasRequirements) {
-    return (
-      <>
+  return (
+    <>
+      {hasRequirements ? (
         <div className="flex gap-1">
           <CapacityReq value={capacityReq} />
           <TitlesReq value={titleReq} />
@@ -88,9 +88,9 @@ const ResultLibraryRequirements = ({ value }) => {
             <SectReq value={sectReq} />
           )}
         </div>
-      </>
-    );
-  } else return;
+      ) : null}
+    </>
+  );
 };
 
 export default ResultLibraryRequirements;

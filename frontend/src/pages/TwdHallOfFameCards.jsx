@@ -61,7 +61,8 @@ const TwdHallOfFameCards = () => {
       });
 
       return p;
-    } else return {};
+    }
+    return {};
   }, [value, cryptCardBase, libraryCardBase]);
 
   const byTotal = (a, b) => {

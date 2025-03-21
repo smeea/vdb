@@ -22,15 +22,13 @@ const UniqueDraw = ({ cards }) => {
   return (
     <div className={twMerge('flex', isMobile && Object.keys(probs).length > 2 ? 'gap-2' : 'gap-3')}>
       {Object.keys(probs).map((i) => {
-          return (
-            <div className="inline" key={i} title="Chance to draw X unique vampires">
-              <div className="text-fgSecondary dark:text-fgSecondaryDark inline font-bold">
-                {i}:
-              </div>{' '}
-              {probs[i]}%
-            </div>
-          );
-        })}
+        return (
+          <div className="inline" key={i} title="Chance to draw X unique vampires">
+            <div className="text-fgSecondary dark:text-fgSecondaryDark inline font-bold">{i}:</div>{' '}
+            {probs[i]}%
+          </div>
+        );
+      })}
     </div>
   );
 };

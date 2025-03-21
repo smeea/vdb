@@ -11,7 +11,8 @@ const ResultLibraryDisciplines = ({ value }) => {
         <ResultDisciplineImage value={disciplines[1]} />
       </div>
     );
-  } else if (value.indexOf('/') !== -1) {
+  }
+  if (value.indexOf('/') !== -1) {
     const disciplines = value.split('/');
     return (
       <div className="flex min-w-[55px] flex-wrap items-center justify-center">

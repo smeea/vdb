@@ -88,9 +88,8 @@ const Seating = ({ setShow }) => {
           if (!src.length > 0) return { [NAME]: 'ERROR', [DECKID]: null };
           const randomDeck = getRandomDeck(src);
           return { [NAME]: randomDeck[NAME], [DECKID]: randomDeck[DECKID] };
-        } else {
-          return { [NAME]: d[NAME] };
         }
+        return { [NAME]: d[NAME] };
       });
 
     if ([7, 11].includes(options.length)) {

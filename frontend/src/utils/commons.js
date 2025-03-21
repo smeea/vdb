@@ -114,7 +114,8 @@ export const getGroups = (cards) => {
 
   if (cryptGroupMax - cryptGroupMin === 1) {
     return { cryptGroups: `${cryptGroupMin}-${cryptGroupMax}` };
-  } else if (cryptGroupMax - cryptGroupMin === 0) {
+  }
+  if (cryptGroupMax - cryptGroupMin === 0) {
     return { cryptGroups: cryptGroupMax };
   }
 
@@ -182,19 +183,17 @@ export const getClan = (crypt) => {
 
       if (clans[c] > acc.q) {
         return { clan: c, q: clans[c], t: t };
-      } else {
-        acc[t] = t;
-        return acc;
       }
+      acc[t] = t;
+      return acc;
     },
     { clan: null, q: 0, t: 0 },
   );
 
   if (topClan.q / topClan.t > 0.5) {
     return topClan[CLAN];
-  } else {
-    return null;
   }
+  return null;
 };
 
 export const getSect = (crypt) => {
@@ -216,19 +215,17 @@ export const getSect = (crypt) => {
       const t = acc.t + sects[c];
       if (sects[c] > acc.q) {
         return { sect: c, q: sects[c], t: t };
-      } else {
-        acc[t] = t;
-        return acc;
       }
+      acc[t] = t;
+      return acc;
     },
     { sect: null, q: 0, t: 0 },
   );
 
   if (topSect.q / topSect.t > 0.65) {
     return topSect.sect;
-  } else {
-    return null;
   }
+  return null;
 };
 
 export const getSwipedBg = (isSwiped, inInventory) => {
@@ -236,11 +233,10 @@ export const getSwipedBg = (isSwiped, inInventory) => {
     return isSwiped === 'right'
       ? 'bg-bgSuccess dark:bg-bgSuccessDark'
       : 'bg-bgErrorSecondary dark:bg-bgErrorSecondaryDark';
-  } else {
-    return inInventory
-      ? ''
-      : 'odd:bg-bgPrimary odd:dark:bg-bgPrimaryDark even:bg-bgThird even:dark:bg-bgThirdDark';
   }
+  return inInventory
+    ? ''
+    : 'odd:bg-bgPrimary odd:dark:bg-bgPrimaryDark even:bg-bgThird even:dark:bg-bgThirdDark';
 };
 
 export const deepClone = (v) => JSON.parse(JSON.stringify(v));

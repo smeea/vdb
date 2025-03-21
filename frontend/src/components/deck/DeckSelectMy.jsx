@@ -64,13 +64,12 @@ const DeckSelectMy = ({ deckid, handleSelect }) => {
             <div className="flex items-center justify-between">
               <div className="flex items-center">
                 <div className="flex w-[35px] items-center justify-center pr-1">
-                  {clan && (
-                    paths.includes(clan) ? (
-                        <ResultPathImage value={clan} />
-                      ) : (
-                        <ResultPreconClan clan={clan} />
-                      )
-                  )}
+                  {clan &&
+                    (paths.includes(clan) ? (
+                      <ResultPathImage value={clan} />
+                    ) : (
+                      <ResultPreconClan clan={clan} />
+                    ))}
                 </div>
                 <div className="inline">
                   {decks[i][NAME].slice(0, inventoryMode ? (isWide ? 28 : 23) : 32)}
@@ -109,35 +108,31 @@ const DeckSelectMy = ({ deckid, handleSelect }) => {
       const v = options.find((obj) => {
         if (decks[deckid][MASTER]) {
           return obj.value === decks[deckid][MASTER];
-        } else {
-          return obj.value === deckid;
         }
+        return obj.value === deckid;
       });
 
       if (v) {
         return v;
-      } else {
-        return {
-          value: deckid,
-          label: (
-            <div className="flex items-center justify-between">
-              <div className="inline">{decks[deckid][NAME]}</div>
-              <div className="flex items-center gap-1">
-                {inventoryMode && (
-                  <div>
-                    {decks[deckid][INVENTORY_TYPE] === S && <Shuffle />}
-                    {decks[deckid][INVENTORY_TYPE] === H && <PinAngleFill />}
-                    {!decks[deckid][INVENTORY_TYPE] && <At />}
-                  </div>
-                )}
-                <div className="text-sm">
-                  {dayjs(decks[deckid][TIMESTAMP]).format('YYYY-MM-DD')}
-                </div>
-              </div>
-            </div>
-          ),
-        };
       }
+      return {
+        value: deckid,
+        label: (
+          <div className="flex items-center justify-between">
+            <div className="inline">{decks[deckid][NAME]}</div>
+            <div className="flex items-center gap-1">
+              {inventoryMode && (
+                <div>
+                  {decks[deckid][INVENTORY_TYPE] === S && <Shuffle />}
+                  {decks[deckid][INVENTORY_TYPE] === H && <PinAngleFill />}
+                  {!decks[deckid][INVENTORY_TYPE] && <At />}
+                </div>
+              )}
+              <div className="text-sm">{dayjs(decks[deckid][TIMESTAMP]).format('YYYY-MM-DD')}</div>
+            </div>
+          </div>
+        ),
+      };
     }
   };
 

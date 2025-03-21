@@ -21,9 +21,8 @@ const drawProbability = (x, N, n, k) => {
     if (k - (N - n) > i) {
       prob = 1;
       break;
-    } else {
-      prob += exactProbability(i, N, n, k);
     }
+    prob += exactProbability(i, N, n, k);
   }
   if (0.99 < prob && prob < 1) {
     prob = 0.99;

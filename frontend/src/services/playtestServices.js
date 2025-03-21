@@ -53,7 +53,7 @@ export const exportXlsx = async (reports, users, cryptCardBase, libraryCardBase,
     .filter((id) => Number.isNaN(id) && id !== GENERAL)
     .reduce((obj, key) => {
       obj[key] = reports[key];
-      return obj
+      return obj;
     }, {});
 
   const generalData = reports[GENERAL];

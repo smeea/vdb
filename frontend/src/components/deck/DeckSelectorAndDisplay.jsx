@@ -49,18 +49,18 @@ const DeckSelectorAndDisplay = () => {
           />
         )}
       </div>
-      {deck && addMode && (
-        playtestMode || !hasPlaytest ? (
-            <>
-              <DeckCrypt deck={deck} inSearch />
-              <DeckLibrary deck={deck} inSearch />
-            </>
-          ) : (
-            <div className="flex">
-              <ErrorMessage>CONTAINS PLAYTEST CARDS</ErrorMessage>
-            </div>
-          )
-      )}
+      {deck &&
+        addMode &&
+        (playtestMode || !hasPlaytest ? (
+          <>
+            <DeckCrypt deck={deck} inSearch />
+            <DeckLibrary deck={deck} inSearch />
+          </>
+        ) : (
+          <div className="flex">
+            <ErrorMessage>CONTAINS PLAYTEST CARDS</ErrorMessage>
+          </div>
+        ))}
     </FlexGapped>
   );
 };

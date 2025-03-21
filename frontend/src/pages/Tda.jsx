@@ -67,9 +67,8 @@ const Tda = () => {
       .then((response) => {
         if (response.status === 200 || response.status === 0) {
           return Promise.resolve(response.blob());
-        } else {
-          return Promise.reject(new Error(response.statusText));
         }
+        return Promise.reject(new Error(response.statusText));
       })
       .then(JSZip.loadAsync)
       .then((zip) => {

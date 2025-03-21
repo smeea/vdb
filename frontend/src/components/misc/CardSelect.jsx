@@ -66,9 +66,8 @@ const CardSelect = ({
 
     if (cardid > 200000) {
       return <SelectLabelCrypt cardid={cardid} inInventory={inInventory} />;
-    } else {
-      return <SelectLabelLibrary cardid={cardid} inInventory={inInventory} />;
     }
+    return <SelectLabelLibrary cardid={cardid} inInventory={inInventory} />;
   };
 
   const byTwd = (a, b) => {
@@ -100,7 +99,8 @@ const CardSelect = ({
           ...cryptMatches[STARTING_WITH].toSorted(byTwd),
           ...cryptMatches[OTHER].toSorted(byTwd),
         ];
-      } else if (target === LIBRARY) {
+      }
+      if (target === LIBRARY) {
         return [
           ...libraryMatches[STARTING_WITH].toSorted(byTwd),
           ...libraryMatches[OTHER].toSorted(byTwd),

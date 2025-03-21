@@ -29,7 +29,7 @@ const InventoryDelete = () => {
           withWrittenConfirmation={true}
           handleConfirm={handleClick}
           handleCancel={() => setShowConfirmation(false)}
-          title={`Delete Inventory`}
+          title="Delete Inventory"
           buttonText="Delete"
           buttonVariant="danger"
         />

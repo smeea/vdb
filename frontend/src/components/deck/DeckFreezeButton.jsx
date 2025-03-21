@@ -18,10 +18,10 @@ const DeckFreezeButton = ({ deck, className, roundedStyle, borderStyle }) => {
       borderStyle={borderStyle}
     >
       {deck[IS_FROZEN] ? (
-          <LockFill width="19" height="23" viewBox="0 0 16 16" />
-        ) : (
-          <UnlockFill width="19" height="23" viewBox="0 0 16 16" />
-        )}
+        <LockFill width="19" height="23" viewBox="0 0 16 16" />
+      ) : (
+        <UnlockFill width="19" height="23" viewBox="0 0 16 16" />
+      )}
     </Button>
   );
 };

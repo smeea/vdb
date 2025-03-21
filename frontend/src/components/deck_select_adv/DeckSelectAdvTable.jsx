@@ -115,7 +115,8 @@ const DeckSelectAdvTable = ({
       }
 
       return decksSort(filtered, sortMethod);
-    } else return [];
+    }
+    return [];
   }, [decks, invFilter, clanFilter, nameFilter, tagsFilter, revFilter, sortMethod]);
 
   const toggleSelect = (deckid) => {

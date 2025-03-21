@@ -420,9 +420,8 @@ const missingBloodCost = (filter, card) => {
 const testType = (card, type) => {
   if (type === 'reflex') {
     return card[TEXT].includes('[REFLEX]');
-  } else {
-    return card[TYPE].toLowerCase().split('/').includes(type);
   }
+  return card[TYPE].toLowerCase().split('/').includes(type);
 };
 
 const missingType = (filter, card) => {
@@ -452,7 +451,7 @@ const missingSet = (filter, card) => {
   return !sets.some((set) => {
     if (set === BCP) {
       if ((print === ONLY || print === FIRST) && dates.min >= BCP_START) return true;
-      else if (dates.max >= BCP_START) return true;
+      if (dates.max >= BCP_START) return true;
     } else {
       const setDate = setsAndPrecons[set][DATE] ?? FUTURE;
 
@@ -504,8 +503,7 @@ const missingPrecon = (filter, card) => {
     if (setAndSub === BCP) {
       if (print) {
         if (print === ONLY && dates.min >= BCP_START) return true;
-        else if (print === FIRST && dates.min >= BCP_START && dates.min <= dates.minPromo)
-          return true;
+        if (print === FIRST && dates.min >= BCP_START && dates.min <= dates.minPromo) return true;
       } else if (dates.max >= BCP_START) return true;
     } else if (
       Object.keys(card[SET]).includes(set) &&
@@ -521,7 +519,8 @@ const missingPrecon = (filter, card) => {
           case REPRINT:
             return dates.min < setDate || dates.minPromo < setDate;
         }
-      } else return true;
+      }
+      return true;
     }
   });
 };
@@ -557,9 +556,9 @@ const missingNameOrInitials = (filter, card) => {
     nameASCII.replace(/[^a-z0-9]/gi, '').includes(filter) ||
     nameAKA.includes(filter) ||
     nameAKA.replace(/[^a-z0-9]/gi, '').includes(filter) ||
-    (checkInitials?.test(name)) ||
-    (checkInitials?.test(nameASCII)) ||
-    (checkInitials?.test(nameAKA))
+    checkInitials?.test(name) ||
+    checkInitials?.test(nameASCII) ||
+    checkInitials?.test(nameAKA)
   );
 };
 

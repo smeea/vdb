@@ -22,12 +22,12 @@ const PreconsDetailed = ({ sets, set }) => {
           - {sets[set][i]}x
         </li>
       );
-    } else {
-      if (set === PROMO) {
-        return <li key={`${set}-${i}`}>{i}</li>;
-      } else if (i !== 'DTC') {
-        return <li key={`${set}-${i}`}>{abbrevs[i]}</li>;
-      }
+    }
+    if (set === PROMO) {
+      return <li key={`${set}-${i}`}>{i}</li>;
+    }
+    if (i !== 'DTC') {
+      return <li key={`${set}-${i}`}>{abbrevs[i]}</li>;
     }
   });
 };

@@ -60,9 +60,8 @@ const ResultLayoutTextText = ({ cardid }) => {
                 </ConditionalTooltip>
               </span>
             );
-          } else {
-            return <React.Fragment key={counter}>/{match}/</React.Fragment>;
           }
+          return <React.Fragment key={counter}>/{match}/</React.Fragment>;
         });
 
         return (

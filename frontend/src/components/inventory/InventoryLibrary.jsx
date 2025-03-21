@@ -41,43 +41,43 @@ const InventoryLibrary = ({
     <>
       {!compact && (
         <Header>
-            <div className="w-3/4 p-1">
-              <div className="flex flex-col gap-1">
-                <InventoryFilterForm
-                  value={type}
-                  setValue={setType}
-                  values={Object.keys(cardsByType).filter((i) => {
-                    return Object.keys(cardsFilteredByDiscipline[i]).length;
-                  })}
-                  byTotal={cardsFilteredByDisciplineTotal}
-                  byUnique={cardsFilteredByDisciplineUnique}
-                  target={TYPE}
-                />
-                <InventoryFilterForm
-                  value={discipline}
-                  setValue={setDiscipline}
-                  values={Object.keys(cardsByDiscipline).filter((i) => {
-                    return Object.keys(cardsFilteredByType[i]).length;
-                  })}
-                  byTotal={cardsFilteredByTypeTotal}
-                  byUnique={cardsFilteredByTypeUnique}
-                  target={DISCIPLINE}
-                />
-              </div>
-              <div className="text-midGray dark:text-midGrayDark flex justify-end font-bold">
-                {missingFilteredTotal ? (
-                  <>
-                    {missingFilteredTotal} ({Object.values(missingFiltered).length} uniq) miss
-                  </>
-                ) : null}
-              </div>
+          <div className="w-3/4 p-1">
+            <div className="flex flex-col gap-1">
+              <InventoryFilterForm
+                value={type}
+                setValue={setType}
+                values={Object.keys(cardsByType).filter((i) => {
+                  return Object.keys(cardsFilteredByDiscipline[i]).length;
+                })}
+                byTotal={cardsFilteredByDisciplineTotal}
+                byUnique={cardsFilteredByDisciplineUnique}
+                target={TYPE}
+              />
+              <InventoryFilterForm
+                value={discipline}
+                setValue={setDiscipline}
+                values={Object.keys(cardsByDiscipline).filter((i) => {
+                  return Object.keys(cardsFilteredByType[i]).length;
+                })}
+                byTotal={cardsFilteredByTypeTotal}
+                byUnique={cardsFilteredByTypeUnique}
+                target={DISCIPLINE}
+              />
             </div>
-            <SortButton
-              sortMethods={sortMethods}
-              sortMethod={libraryInventorySort}
-              setSortMethod={changeLibraryInventorySort}
-            />
-          </Header>
+            <div className="text-midGray dark:text-midGrayDark flex justify-end font-bold">
+              {missingFilteredTotal ? (
+                <>
+                  {missingFilteredTotal} ({Object.values(missingFiltered).length} uniq) miss
+                </>
+              ) : null}
+            </div>
+          </div>
+          <SortButton
+            sortMethods={sortMethods}
+            sortMethod={libraryInventorySort}
+            setSortMethod={changeLibraryInventorySort}
+          />
+        </Header>
       )}
       <InventoryLibraryTable
         sortMethod={libraryInventorySort}

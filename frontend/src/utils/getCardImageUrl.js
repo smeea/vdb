@@ -24,17 +24,17 @@ const getCardImageUrl = (card, set, language) => {
       : null;
 
     return { baseUrl, otherUrl, legacyUrl, legacyScanUrl };
-  } else {
-    const baseUrl = `${import.meta.env.VITE_BASE_URL}/images/cards/${
-      isPlaytest ? 'playtest' : EN
-    }/${cardNameFixed}`;
-
-    const otherUrl = `${import.meta.env.VITE_BASE_URL}/images/cards/${
-      set ? `set/${set}` : language
-    }/${cardNameFixed}`;
-
-    return { baseUrl, otherUrl };
   }
+
+  const baseUrl = `${import.meta.env.VITE_BASE_URL}/images/cards/${
+    isPlaytest ? 'playtest' : EN
+  }/${cardNameFixed}`;
+
+  const otherUrl = `${import.meta.env.VITE_BASE_URL}/images/cards/${
+    set ? `set/${set}` : language
+  }/${cardNameFixed}`;
+
+  return { baseUrl, otherUrl };
 };
 
 export default getCardImageUrl;

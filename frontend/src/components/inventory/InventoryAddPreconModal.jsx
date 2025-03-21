@@ -40,9 +40,8 @@ const InventoryAddPreconModal = ({ handleClose }) => {
       }
 
       return decksSort(filtered, sortMethod);
-    } else {
-      return [];
     }
+    return [];
   }, [preconDecks, nameFilter, setFilter, sortMethod]);
 
   return (

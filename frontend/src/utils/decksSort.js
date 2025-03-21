@@ -43,9 +43,8 @@ const decksSort = (decks, sortMethod) => {
       default:
         return decks;
     }
-  } else {
-    return null;
   }
+  return null;
 };
 
 export default decksSort;

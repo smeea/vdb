@@ -6,9 +6,8 @@ const minusOne = (cards, i) => {
   return Object(cards).map((c, idx) => {
     if (i !== idx) {
       return c;
-    } else {
-      return Math.max(0, c - 1);
     }
+    return Math.max(0, c - 1);
   });
 };
 
@@ -24,17 +23,16 @@ const product = (cards, draw) => {
 const leafNodes = (tree) => {
   if (tree[CHILDREN].length === 0) {
     return [tree];
-  } else {
-    const res = [];
-
-    tree[CHILDREN].forEach((child) => {
-      const l = leafNodes(child);
-      l.forEach((item) => {
-        res.push(item);
-      });
-    });
-    return res;
   }
+  const res = [];
+
+  tree[CHILDREN].forEach((child) => {
+    const l = leafNodes(child);
+    l.forEach((item) => {
+      res.push(item);
+    });
+  });
+  return res;
 };
 
 const probability = (children, m, p) => {

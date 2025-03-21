@@ -153,8 +153,7 @@ const CryptSearchForm = () => {
       const { name, value } = event.currentTarget;
 
       if ([NAME, TEXT].includes(value)) {
-        searchCryptForm[TEXT][name][IN] =
-          searchCryptForm[TEXT][name][IN] === value ? false : value;
+        searchCryptForm[TEXT][name][IN] = searchCryptForm[TEXT][name][IN] === value ? false : value;
       } else {
         searchCryptForm[TEXT][name][value] = !searchCryptForm[TEXT][name][value];
       }

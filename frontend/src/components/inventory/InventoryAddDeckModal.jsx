@@ -63,9 +63,8 @@ const InventoryAddDeckModal = ({ handleClose }) => {
       }
 
       return decksSort(filtered, sortMethod);
-    } else {
-      return [];
     }
+    return [];
   }, [decks, nameFilter, tagsFilter, revFilter, sortMethod]);
 
   return (

@@ -5,7 +5,17 @@ import PersonFill from '@icons/person-fill.svg?react';
 import TagFill from '@icons/tag-fill.svg?react';
 import TrophyFill from '@icons/trophy-fill.svg?react';
 import { TwdResultDescriptionTextTr, TwdResultTags } from '@/components';
-import { AUTHOR, BASE, EVENT, CREATION_DATE, LOCATION, NAME, SUPERIOR, TAGS, TWD } from '@/constants';
+import {
+  AUTHOR,
+  BASE,
+  EVENT,
+  CREATION_DATE,
+  LOCATION,
+  NAME,
+  SUPERIOR,
+  TAGS,
+  TWD,
+} from '@/constants';
 import { clearSearchForm, searchTwdForm, useApp } from '@/context';
 
 const TwdResultDescriptionText = ({ deck }) => {

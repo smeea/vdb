@@ -21,12 +21,16 @@ const ConditionalTooltipOrModal = ({
   const [showModal, setShowModal] = useState();
 
   const handleClick = useCallback(() => {
-    try{onClick()}catch{}
+    try {
+      onClick();
+    } catch {}
     setShowModal(true);
   }, [onClick]);
 
   const handleClose = useCallback(() => {
-    try{onClose()}catch{}
+    try {
+      onClose();
+    } catch {}
     setShowModal(false);
   }, [onClose]);
 

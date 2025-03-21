@@ -37,20 +37,20 @@ const Cards = () => {
   return (
     <div className="cards-container mx-auto">
       {isMobile ? (
-          <CardsMobile
-            card={card}
-            openRandomCard={openRandomCard}
-            handleChange={handleChange}
-            handleSetCard={handleSetCard}
-          />
-        ) : (
-          <CardsDesktop
-            card={card}
-            openRandomCard={openRandomCard}
-            handleChange={handleChange}
-            handleSetCard={handleSetCard}
-          />
-        )}
+        <CardsMobile
+          card={card}
+          openRandomCard={openRandomCard}
+          handleChange={handleChange}
+          handleSetCard={handleSetCard}
+        />
+      ) : (
+        <CardsDesktop
+          card={card}
+          openRandomCard={openRandomCard}
+          handleChange={handleChange}
+          handleSetCard={handleSetCard}
+        />
+      )}
     </div>
   );
 };

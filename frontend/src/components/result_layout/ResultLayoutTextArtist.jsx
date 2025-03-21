@@ -7,8 +7,8 @@ const ResultLayoutTextArtist = ({ handleClose, inCrypt, artists }) => {
 
   const handleClick = (value) => {
     clearSearchForm(inCrypt ? CRYPT : LIBRARY);
-    const form = inCrypt ? searchCryptForm : searchLibraryForm
-    form[ARTIST] = value
+    const form = inCrypt ? searchCryptForm : searchLibraryForm;
+    form[ARTIST] = value;
     navigate(
       `/${inCrypt ? CRYPT : LIBRARY}?q=${encodeURIComponent(JSON.stringify({ artist: value }))}`,
     );

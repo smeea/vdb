@@ -24,15 +24,14 @@ const InventoryAddPreconRow = ({ deck }) => {
     <Tr>
       <td className="min-w-[50px] sm:min-w-[70px]">
         <div className="flex justify-center">
-          {clans.length > 0 && (
+          {clans.length > 0 &&
             clans.map((clan) => {
-                return paths.includes(clan) ? (
-                  <ResultPathImage key={clan} value={clan} />
-                ) : (
-                  <ResultPreconClan key={clan} clan={clan} />
-                );
-              })
-          )}
+              return paths.includes(clan) ? (
+                <ResultPathImage key={clan} value={clan} />
+              ) : (
+                <ResultPreconClan key={clan} clan={clan} />
+              );
+            })}
         </div>
       </td>
       <td className="max-sm:w-full">

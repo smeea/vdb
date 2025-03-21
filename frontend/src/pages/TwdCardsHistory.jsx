@@ -57,7 +57,8 @@ const TwdCardsHistory = () => {
         library,
         players,
       };
-    } else return {};
+    }
+    return {};
   }, [value, cryptCardBase, libraryCardBase]);
 
   return (

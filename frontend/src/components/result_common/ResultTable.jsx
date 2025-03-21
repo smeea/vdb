@@ -19,14 +19,13 @@ const ResultTable = ({ cards, target }) => {
           placement={isDesktop || (!isDesktop && !addMode) ? 'right' : 'bottom'}
         />
       );
-    } else {
-      return (
-        <ResultLibraryTable
-          resultCards={sortedCards}
-          placement={isDesktop || (!isDesktop && !addMode) ? 'right' : 'bottom'}
-        />
-      );
     }
+    return (
+      <ResultLibraryTable
+        resultCards={sortedCards}
+        placement={isDesktop || (!isDesktop && !addMode) ? 'right' : 'bottom'}
+      />
+    );
   }, [cards, sortMethod]);
 };
 
