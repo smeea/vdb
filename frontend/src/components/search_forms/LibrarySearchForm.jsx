@@ -202,8 +202,8 @@ const LibrarySearchForm = () => {
       return;
     }
     const filteredCards = filterLibrary(
-      limitedMode ? limitedLibrary : libraryCardBase,
       sanitizedForm,
+      limitedMode ? limitedLibrary : libraryCardBase,
     ).filter((card) => playtestMode || !getIsPlaytest(card[ID]));
 
     if (isMobile && filteredCards.length === 0) {
