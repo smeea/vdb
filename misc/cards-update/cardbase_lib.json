@@ -19,7 +19,7 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"Provides only only maneuver each combat, even if the bearer changes.",
+                "text":"Provides only one maneuver each combat, even if the bearer changes.",
                 "refs":{
                     "LSJ 19980302-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9YVFkeiL3Js/m/4UZXMyicluwJ"
                 }
@@ -36962,10 +36962,11 @@
                 }
             },
             {
-                "text":"A card requiring a Baron (eg. {Open War}) is a card requiring an Anarch.",
+                "text":"Can only retrieve cards whose requirements explicitly include Anarch (e.g. {Reckless Agitation}) or Baron (e.g. {Open War}); cannot retrieve cards that have a negative requirement that does not exclude Anarch, like \"Non-Camarilla\" (e.g. {Jericho Founding}).",
                 "refs":{
-                    "LSJ 20050128":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HVy8iPUxNbI/m/ZHGTnprQjGUJ",
-                    "LSJ 20080603":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/LuT1iK1b4QIJ"
+                    "ANK 20250320":"https://www.vekn.net/forum/rules-questions/82172-garibaldi-and-jericho-founding#113984",
+                    "LSJ 20080603":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/LuT1iK1b4QIJ",
+                    "LSJ 20050128":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HVy8iPUxNbI/m/ZHGTnprQjGUJ"
                 }
             }
         ],
@@ -65197,6 +65198,19 @@
                 "text":"Damage done to the striking minion is environmental.",
                 "refs":{
                     "LSJ 19970801":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/7ZnLKTdPEn4/m/6L-nVarAJwMJ"
+                }
+            },
+            {
+                "text":"Minions can (uselessly) gain additional strikes even if they cannot strike.",
+                "refs":{
+                    "LSJ 19970814-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-NDAClfltxk/m/POeoheutXf0J"
+                }
+            },
+            {
+                "text":"If used with First Strike (e.g. Shadow Feint) it prevents the opponents normal non-dodge non-combat ends strike from resolving",
+                "refs":{
+                    "LSJ 20011214":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/hiKri5TMURU/m/QmDXmUwmjOoJ",
+                    "LSJ 20020624":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/IRtX9C5t0ZQ/m/Yhv0cp1h3_UJ"
                 }
             },
             {

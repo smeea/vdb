@@ -1,7 +1,7 @@
 {
     "100001":[
         {
-            "text":"Provides only only maneuver each combat, even if the bearer changes.",
+            "text":"Provides only one maneuver each combat, even if the bearer changes.",
             "refs":{
                 "LSJ 19980302-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9YVFkeiL3Js/m/4UZXMyicluwJ"
             }
@@ -6686,10 +6686,11 @@
             }
         },
         {
-            "text":"A card requiring a Baron (eg. {Open War}) is a card requiring an Anarch.",
+            "text":"Can only retrieve cards whose requirements explicitly include Anarch (e.g. {Reckless Agitation}) or Baron (e.g. {Open War}); cannot retrieve cards that have a negative requirement that does not exclude Anarch, like \"Non-Camarilla\" (e.g. {Jericho Founding}).",
             "refs":{
-                "LSJ 20050128":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HVy8iPUxNbI/m/ZHGTnprQjGUJ",
-                "LSJ 20080603":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/LuT1iK1b4QIJ"
+                "ANK 20250320":"https://www.vekn.net/forum/rules-questions/82172-garibaldi-and-jericho-founding#113984",
+                "LSJ 20080603":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/LuT1iK1b4QIJ",
+                "LSJ 20050128":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HVy8iPUxNbI/m/ZHGTnprQjGUJ"
             }
         }
     ],
@@ -12070,6 +12071,19 @@
             "text":"Damage done to the striking minion is environmental.",
             "refs":{
                 "LSJ 19970801":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/7ZnLKTdPEn4/m/6L-nVarAJwMJ"
+            }
+        },
+        {
+            "text":"Minions can (uselessly) gain additional strikes even if they cannot strike.",
+            "refs":{
+                "LSJ 19970814-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-NDAClfltxk/m/POeoheutXf0J"
+            }
+        },
+        {
+            "text":"If used with First Strike (e.g. Shadow Feint) it prevents the opponents normal non-dodge non-combat ends strike from resolving",
+            "refs":{
+                "LSJ 20011214":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/hiKri5TMURU/m/QmDXmUwmjOoJ",
+                "LSJ 20020624":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/IRtX9C5t0ZQ/m/Yhv0cp1h3_UJ"
             }
         },
         {
@@ -20157,13 +20171,7 @@
     ],
     "200386":[
         {
-            "text":"If his opponent plays superior {Terror Frenzy}, Dragos does not burn one additional blood for combat card he plays (reversal of previous rulings).",
-            "refs":{
-                "LSJ 20090107":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qPDLvbgqfCg/m/DlRVFoE_C64J"
-            }
-        },
-        {
-            "text":"A \"burn blood\" effect on a combat card is not a cost (eg. {Chiropteran Marauder}), it is unaffected by his ability.",
+            "text":"A \"burn blood\" effect on a combat card (eg. {Chiropteran Marauder}) is not a card cost, but an effect cost, and is thus unaffected by his ability.",
             "refs":{
                 "LSJ 20090107":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qPDLvbgqfCg/m/DlRVFoE_C64J",
                 "LSJ 20070829-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/sVXZw1J43ik/m/J018OOhbEoQJ"
@@ -22007,6 +22015,12 @@
             "refs":{
                 "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
             }
+        },
+        {
+            "text":"The passive ability applies even if the vampire is in torpor.",
+            "refs":{
+                "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
+            }
         }
     ],
     "201226":[
@@ -22473,6 +22487,12 @@
             "text":"Can still defect if in torpor, and will remain in torpor if he does so.",
             "refs":{
                 "RTR 19941109":"https://groups.google.com/d/msg/rec.games.deckmaster/_6CXoKTSLnw/FdG67-3HEAQJ"
+            }
+        },
+        {
+            "text":"The passive ability applies even if the vampire is in torpor.",
+            "refs":{
+                "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
             }
         }
     ],
@@ -24046,6 +24066,14 @@
             "text":"Cannot be used to direct a bleed to a Methuselah who would be an invalid target for a bleed.",
             "refs":{
                 "PIB 20130711":"https://www.vekn.net/forum/rules-questions/51279-big-boon-bounce?fbclid=IwAR3-kLQKFt415mAPpGL0sYpi4yx6ZzJbiyP57z3R6nkIW7V-g0F93z_ob-s#51307"
+            }
+        }
+    ],
+    "G00107":[
+        {
+            "text":"The passive ability applies even if the vampire is in torpor.",
+            "refs":{
+                "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
             }
         }
     ],
@@ -27033,7 +27061,31 @@
             }
         }
     ],
+    "200375":[
+        {
+            "text":"The ability can be used when in torpor.",
+            "refs":{
+                "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
+            }
+        }
+    ],
     "200486":[
+        {
+            "text":"The ability can be used when in torpor.",
+            "refs":{
+                "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
+            }
+        }
+    ],
+    "200548":[
+        {
+            "text":"The ability can be used when in torpor.",
+            "refs":{
+                "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
+            }
+        }
+    ],
+    "200579":[
         {
             "text":"The ability can be used when in torpor.",
             "refs":{
@@ -27050,6 +27102,51 @@
         }
     ],
     "200652":[
+        {
+            "text":"The ability can be used when in torpor.",
+            "refs":{
+                "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
+            }
+        }
+    ],
+    "200875":[
+        {
+            "text":"The ability can be used when in torpor.",
+            "refs":{
+                "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
+            }
+        },
+        {
+            "text":"Cards are not replaced during the \"as played\" window. The cancelation must be played immediately: no other effects can be used, except for wakes (eg. neither\u00a0{The Barrens}\u00a0nor {Dreams of the Sphinx}\u00a0can be used).",
+            "refs":{
+                "LSJ 20061207":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/nqcrJlhg4Ng/m/qQu7p-LLhfAJ",
+                "RBK playing-a-card":"https://www.vekn.net/rulebook#playing-a-card",
+                "LSJ 20061013":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/6w8K3yDtBH0/m/M_SZH9Id8n8J"
+            }
+        },
+        {
+            "text":"If the canceled card had a \"do not replace until\" clause (or alternate replacement like {Steely Tenacity}), that clause is canceled as well and the card is replaced normally.",
+            "refs":{
+                "LSJ 20080630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/nvuXBpEaKAA/m/ymiC3yAQVOwJ",
+                "LSJ 20011023":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/2GOLIrXAF8M/m/P4T3Dj6UNL0J"
+            }
+        },
+        {
+            "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again.",
+            "refs":{
+                "ANK 20190104":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
+                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "LSJ 19980212":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/fLFLlXZXHqA/m/ggjw8aGjdRoJ"
+            }
+        },
+        {
+            "text":"If a limited effect is canceled (bleed, additional strike), then the limit is not triggered and another limited effect can be used.",
+            "refs":{
+                "LSJ 20030224":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/67261v339Ds/m/um8V7VVp2Y4J"
+            }
+        }
+    ],
+    "200950":[
         {
             "text":"The ability can be used when in torpor.",
             "refs":{
@@ -27074,6 +27171,14 @@
         }
     ],
     "201061":[
+        {
+            "text":"The ability can be used when in torpor.",
+            "refs":{
+                "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
+            }
+        }
+    ],
+    "201217":[
         {
             "text":"The ability can be used when in torpor.",
             "refs":{
@@ -27127,14 +27232,6 @@
             }
         }
     ],
-    "201645":[
-        {
-            "text":"The ability can be used when in torpor.",
-            "refs":{
-                "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
-            }
-        }
-    ],
     "201646":[
         {
             "text":"The ability can be used when in torpor.",
@@ -27144,14 +27241,6 @@
         }
     ],
     "201652":[
-        {
-            "text":"The ability can be used when in torpor.",
-            "refs":{
-                "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
-            }
-        }
-    ],
-    "201662":[
         {
             "text":"The ability can be used when in torpor.",
             "refs":{
@@ -27181,14 +27270,6 @@
             }
         }
     ],
-    "201677":[
-        {
-            "text":"The ability can be used when in torpor.",
-            "refs":{
-                "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
-            }
-        }
-    ],
     "201680":[
         {
             "text":"The ability can be used when in torpor.",
@@ -27201,22 +27282,6 @@
             "refs":{
                 "LSJ 20040812-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/E7D1cVmAdqQ/m/MvPApbrT14gJ",
                 "PIB 20130327":"https://www.vekn.net/forum/rules-questions/46279-soak-vs-treat-agg-damage-as-normal-damage#46285"
-            }
-        }
-    ],
-    "201684":[
-        {
-            "text":"The ability can be used when in torpor.",
-            "refs":{
-                "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
-            }
-        }
-    ],
-    "201693":[
-        {
-            "text":"The ability can be used when in torpor.",
-            "refs":{
-                "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
             }
         }
     ],
@@ -30673,37 +30738,6 @@
             }
         }
     ],
-    "200875":[
-        {
-            "text":"Cards are not replaced during the \"as played\" window. The cancelation must be played immediately: no other effects can be used, except for wakes (eg. neither\u00a0{The Barrens}\u00a0nor {Dreams of the Sphinx}\u00a0can be used).",
-            "refs":{
-                "LSJ 20061207":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/nqcrJlhg4Ng/m/qQu7p-LLhfAJ",
-                "RBK playing-a-card":"https://www.vekn.net/rulebook#playing-a-card",
-                "LSJ 20061013":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/6w8K3yDtBH0/m/M_SZH9Id8n8J"
-            }
-        },
-        {
-            "text":"If the canceled card had a \"do not replace until\" clause (or alternate replacement like {Steely Tenacity}), that clause is canceled as well and the card is replaced normally.",
-            "refs":{
-                "LSJ 20080630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/nvuXBpEaKAA/m/ymiC3yAQVOwJ",
-                "LSJ 20011023":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/2GOLIrXAF8M/m/P4T3Dj6UNL0J"
-            }
-        },
-        {
-            "text":"The canceled card has still been played. The same reaction or modifier cannot be played again by the same minion. Any card which text prohibits to play more than once cannot be played again.",
-            "refs":{
-                "ANK 20190104":"https://www.vekn.net/forum/rules-questions/77254-canceling-cards-and-bold-text?start=6#92640",
-                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
-                "LSJ 19980212":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/fLFLlXZXHqA/m/ggjw8aGjdRoJ"
-            }
-        },
-        {
-            "text":"If a limited effect is canceled (bleed, additional strike), then the limit is not triggered and another limited effect can be used.",
-            "refs":{
-                "LSJ 20030224":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/67261v339Ds/m/um8V7VVp2Y4J"
-            }
-        }
-    ],
     "201001":[
         {
             "text":"Cards are not replaced during the \"as played\" window. The cancelation must be played immediately: no other effects can be used, except for wakes (eg. neither\u00a0{The Barrens}\u00a0nor {Dreams of the Sphinx}\u00a0can be used).",
@@ -33091,6 +33125,78 @@
             "text":"Cannot be used to direct a bleed to a Methuselah who would be an invalid target for a bleed.",
             "refs":{
                 "PIB 20130711":"https://www.vekn.net/forum/rules-questions/51279-big-boon-bounce?fbclid=IwAR3-kLQKFt415mAPpGL0sYpi4yx6ZzJbiyP57z3R6nkIW7V-g0F93z_ob-s#51307"
+            }
+        }
+    ],
+    "200546":[
+        {
+            "text":"The passive ability applies even if the vampire is in torpor.",
+            "refs":{
+                "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
+            }
+        }
+    ],
+    "200973":[
+        {
+            "text":"The passive ability applies even if the vampire is in torpor.",
+            "refs":{
+                "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
+            }
+        }
+    ],
+    "200993":[
+        {
+            "text":"The passive ability applies even if the vampire is in torpor.",
+            "refs":{
+                "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
+            }
+        }
+    ],
+    "201059":[
+        {
+            "text":"The passive ability applies even if the vampire is in torpor.",
+            "refs":{
+                "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
+            }
+        }
+    ],
+    "201645":[
+        {
+            "text":"The passive ability applies even if the vampire is in torpor.",
+            "refs":{
+                "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
+            }
+        }
+    ],
+    "201662":[
+        {
+            "text":"The passive ability applies even if the vampire is in torpor.",
+            "refs":{
+                "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
+            }
+        }
+    ],
+    "201677":[
+        {
+            "text":"The passive ability applies even if the vampire is in torpor.",
+            "refs":{
+                "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
+            }
+        }
+    ],
+    "201684":[
+        {
+            "text":"The passive ability applies even if the vampire is in torpor.",
+            "refs":{
+                "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
+            }
+        }
+    ],
+    "201693":[
+        {
+            "text":"The passive ability applies even if the vampire is in torpor.",
+            "refs":{
+                "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
             }
         }
     ]

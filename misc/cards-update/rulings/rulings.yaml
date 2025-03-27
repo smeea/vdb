@@ -56,7 +56,7 @@
 #    but we believe consistency with the existing reference is the stronger argument.
 #    Note different versions of the same vampires share the same name with different IDs (advanced, higher group).
 100001|.44 Magnum:
-  - Provides only only maneuver each combat, even if the bearer changes. [LSJ 19980302-2]
+  - Provides only one maneuver each combat, even if the bearer changes. [LSJ 19980302-2]
 100002|419 Operation:
   - You can burn the edge to burn the card if it has no counter. [ANK 20221011-3]
 100003|Aaron's Feeding Razor:
@@ -1411,7 +1411,9 @@
 100809|Garibaldi-Meucci Museum:
   - When ending combat, cards that are played at the end of round/combat can still be played (eg. {Taste of Vitae}, {Disarm}).
     [RTR 20001020] [LSJ 20001024]
-  - A card requiring a Baron (eg. {Open War}) is a card requiring an Anarch. [LSJ 20050128] [LSJ 20080603]
+  - Can only retrieve cards whose requirements explicitly include Anarch (e.g. {Reckless Agitation}) or Baron (e.g. {Open
+    War}); cannot retrieve cards that have a negative requirement that does not exclude Anarch, like "Non-Camarilla" (e.g.
+    {Jericho Founding}). [ANK 20250320] [LSJ 20080603] [LSJ 20050128]
 100810|Garrote:
   - The ability to burn an opponent going to torpor is not part of the strike. It can be used if the opponent dodges the strike
     but is still going to torpor. [ANK 20210612] [LSJ 20020416-2]
@@ -2451,6 +2453,9 @@
 101426|Pounce:
   - Additional damage inherits all of the properties of the base damage. [TOM 19960225]
   - Damage done to the striking minion is environmental. [LSJ 19970801]
+  - Minions can (uselessly) gain additional strikes even if they cannot strike. [LSJ 19970814-2]
+  - If used with First Strike (e.g. Shadow Feint) it prevents the opponents normal non-dodge non-combat ends strike from resolving
+    [LSJ 20011214] [LSJ 20020624]
 101429|Power of One:
   - '[pre] Can only be used during a bleed action. [ANK 20171023] [RTR 19941109]'
   - '[pot] A limited bleed modifier can be played before or after. [LSJ 20100218] [RTR 20180511-2]'
@@ -3976,10 +3981,8 @@
 200383|Dr. Solomon Grey:
   - You burn one pool before he enters contest if there is another one in play. [LSJ 20080526]
 200386|Dragos:
-  - If his opponent plays superior {Terror Frenzy}, Dragos does not burn one additional blood for combat card he plays (reversal
-    of previous rulings). [LSJ 20090107]
-  - A "burn blood" effect on a combat card is not a cost (eg. {Chiropteran Marauder}), it is unaffected by his ability. [LSJ
-    20090107] [LSJ 20070829-3]
+  - A "burn blood" effect on a combat card (eg. {Chiropteran Marauder}) is not a card cost, but an effect cost, and is thus
+    unaffected by his ability. [LSJ 20090107] [LSJ 20070829-3]
 200389|Drozodny:
   - When using his ability, the card to retrieve must be announced when declaring the action. [LSJ 20010627]
 200401|Edith Blount:
@@ -4887,3 +4890,5 @@ G00106|Change the target of a bleed:
   - Must be used before action resolution, ie. before any modifier or reaction played "as the action/bleed would be successful"
     are played. It cannot be played after a {Spying Mission} on the vampire triggers. [LSJ 19980105]
   - Cannot be used to direct a bleed to a Methuselah who would be an invalid target for a bleed. [PIB 20130711]
+G00107|Ability active in torpor:
+  - The passive ability applies even if the vampire is in torpor. [LSJ 20011022]

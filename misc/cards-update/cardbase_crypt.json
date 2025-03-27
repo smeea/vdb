@@ -4775,7 +4775,7 @@
         "path":"",
         "rulings":[
             {
-                "text":"The ability can be used when in torpor.",
+                "text":"The passive ability applies even if the vampire is in torpor.",
                 "refs":{
                     "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
                 }
@@ -7214,6 +7214,9 @@
         "set":{
             "V5L":{
                 "PL":"1"
+            },
+            "playtest":{
+                "NL":1
             }
         },
         "text":"Camarilla: Azucena gets +1 intercept against younger Lasombra and -1 intercept against older Lasombra.",
@@ -16511,7 +16514,14 @@
         "name":"Dr. Jest",
         "new":false,
         "path":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The ability can be used when in torpor.",
+                "refs":{
+                    "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
+                }
+            }
+        ],
         "sect":"Camarilla",
         "set":{
             "Jyhad":{
@@ -16975,13 +16985,7 @@
         "path":"",
         "rulings":[
             {
-                "text":"If his opponent plays superior {Terror Frenzy}, Dragos does not burn one additional blood for combat card he plays (reversal of previous rulings).",
-                "refs":{
-                    "LSJ 20090107":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qPDLvbgqfCg/m/DlRVFoE_C64J"
-                }
-            },
-            {
-                "text":"A \"burn blood\" effect on a combat card is not a cost (eg. {Chiropteran Marauder}), it is unaffected by his ability.",
+                "text":"A \"burn blood\" effect on a combat card (eg. {Chiropteran Marauder}) is not a card cost, but an effect cost, and is thus unaffected by his ability.",
                 "refs":{
                     "LSJ 20090107":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qPDLvbgqfCg/m/DlRVFoE_C64J",
                     "LSJ 20070829-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/sVXZw1J43ik/m/J018OOhbEoQJ"
@@ -23611,7 +23615,14 @@
         "name":"Guillermo Arsuaga",
         "new":false,
         "path":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The passive ability applies even if the vampire is in torpor.",
+                "refs":{
+                    "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
+                }
+            }
+        ],
         "sect":"Sabbat",
         "set":{
             "Gehenna":{
@@ -23676,7 +23687,14 @@
         "name":"Gunther, Beast Lord",
         "new":false,
         "path":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The ability can be used when in torpor.",
+                "refs":{
+                    "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
+                }
+            }
+        ],
         "sect":"Camarilla",
         "set":{
             "Jyhad":{
@@ -24877,7 +24895,14 @@
         "name":"Heather Florent, The Opportunist",
         "new":false,
         "path":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The ability can be used when in torpor.",
+                "refs":{
+                    "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
+                }
+            }
+        ],
         "sect":"Camarilla",
         "set":{
             "Jyhad":{
@@ -37471,6 +37496,12 @@
         "path":"",
         "rulings":[
             {
+                "text":"The ability can be used when in torpor.",
+                "refs":{
+                    "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
+                }
+            },
+            {
                 "text":"Cards are not replaced during the \"as played\" window. The cancelation must be played immediately: no other effects can be used, except for wakes (eg. neither\u00a0{The Barrens}\u00a0nor {Dreams of the Sphinx}\u00a0can be used).",
                 "refs":{
                     "LSJ 20061207":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/nqcrJlhg4Ng/m/qQu7p-LLhfAJ",
@@ -39577,7 +39608,7 @@
         "path":"",
         "rulings":[
             {
-                "text":"The ability can be used when in torpor.",
+                "text":"The passive ability applies even if the vampire is in torpor.",
                 "refs":{
                     "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
                 }
@@ -40660,7 +40691,14 @@
         "name":"Masika",
         "new":false,
         "path":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The ability can be used when in torpor.",
+                "refs":{
+                    "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
+                }
+            }
+        ],
         "sect":"Camarilla",
         "set":{
             "Jyhad":{
@@ -41797,7 +41835,14 @@
         "name":"Melissa Barton",
         "new":false,
         "path":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The passive ability applies even if the vampire is in torpor.",
+                "refs":{
+                    "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
+                }
+            }
+        ],
         "sect":"Camarilla",
         "set":{
             "Jyhad":{
@@ -42689,7 +42734,14 @@
         "name":"Miranda Sanova",
         "new":false,
         "path":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The passive ability applies even if the vampire is in torpor.",
+                "refs":{
+                    "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
+                }
+            }
+        ],
         "sect":"Camarilla",
         "set":{
             "Jyhad":{
@@ -43046,7 +43098,7 @@
         "path":"",
         "rulings":[
             {
-                "text":"The ability can be used when in torpor.",
+                "text":"The passive ability applies even if the vampire is in torpor.",
                 "refs":{
                     "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
                 }
@@ -45713,7 +45765,14 @@
         "name":"Nik",
         "new":false,
         "path":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The passive ability applies even if the vampire is in torpor.",
+                "refs":{
+                    "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
+                }
+            }
+        ],
         "sect":"Camarilla",
         "set":{
             "Jyhad":{
@@ -52145,7 +52204,7 @@
         "path":"",
         "rulings":[
             {
-                "text":"The ability can be used when in torpor.",
+                "text":"The passive ability applies even if the vampire is in torpor.",
                 "refs":{
                     "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
                 }
@@ -52473,6 +52532,12 @@
                 "refs":{
                     "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
                 }
+            },
+            {
+                "text":"The passive ability applies even if the vampire is in torpor.",
+                "refs":{
+                    "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
+                }
             }
         ],
         "sect":"Camarilla",
@@ -52604,7 +52669,14 @@
         "name":"Sabine Lafitte",
         "new":false,
         "path":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The ability can be used when in torpor.",
+                "refs":{
+                    "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
+                }
+            }
+        ],
         "sect":"Camarilla",
         "set":{
             "Jyhad":{
@@ -54707,7 +54779,7 @@
         "path":"",
         "rulings":[
             {
-                "text":"The ability can be used when in torpor.",
+                "text":"The passive ability applies even if the vampire is in torpor.",
                 "refs":{
                     "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
                 }
@@ -60758,6 +60830,12 @@
                 "text":"Can still defect if in torpor, and will remain in torpor if he does so.",
                 "refs":{
                     "RTR 19941109":"https://groups.google.com/d/msg/rec.games.deckmaster/_6CXoKTSLnw/FdG67-3HEAQJ"
+                }
+            },
+            {
+                "text":"The passive ability applies even if the vampire is in torpor.",
+                "refs":{
+                    "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
                 }
             }
         ],
