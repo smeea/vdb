@@ -35,7 +35,7 @@ const Button = ({
   return (
     <button
       className={twMerge(
-        'flex items-center justify-center font-normal hover:cursor-pointer',
+        'flex items-center justify-center font-normal cursor-pointer',
         mainStyle[variant],
         !noPadding && 'px-3 py-1.5',
         !noOutline &&

@@ -90,7 +90,7 @@ const Select = ({
         dropdownIndicator: () =>
           noDropdown
             ? 'max-w-0 max-h-0'
-            : 'px-2 hover:cursor-pointer text-borderSecondary dark:text-borderSecondaryDark',
+            : 'px-2 cursor-pointer text-borderSecondary dark:text-borderSecondaryDark',
         indicatorsContainer: () =>
           twMerge('rounded-sm', noDropdown ? 'max-h-0 max-w-0' : 'py-1.5 '),
         indicatorSeparator: () => 'bg-borderSecondary dark:bg-borderSecondaryDark',
@@ -109,7 +109,7 @@ const Select = ({
         /* no bg- in creatable */
         valueContainer: () =>
           twMerge(
-            'min-h-[40px] text-fgPrimary dark:text-fgPrimaryDark hover:cursor-pointer rounded-sm',
+            'min-h-[40px] text-fgPrimary dark:text-fgPrimaryDark cursor-pointer rounded-sm',
             !noBackground && 'bg-bgPrimary dark:bg-bgPrimaryDark',
             justifyRight && 'justify-end',
             variant === 'creatable' && !noBorder && 'p-1.5',
@@ -133,7 +133,7 @@ const Select = ({
         multiValueRemove: () =>
           noRemove
             ? 'max-w-0 max-h-0 hidden'
-            : 'pr-1 bg-bgButton dark:bg-bgButtonDark rounded-r border-r border-y border-borderSecondary dark:border-borderSecondaryDark hover:cursor-pointer',
+            : 'pr-1 bg-bgButton dark:bg-bgButtonDark rounded-r border-r border-y border-borderSecondary dark:border-borderSecondaryDark cursor-pointer',
       }}
       // Async
       cacheOptions={cacheOptions}

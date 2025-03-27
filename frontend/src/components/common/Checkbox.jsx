@@ -49,7 +49,7 @@ const Checkbox = ({
         {({ checked, disabled }) => (
           <div
             className={twMerge(
-              'border-borderPrimary block rounded-sm border dark:border-none',
+              'border-borderPrimary block rounded-sm border dark:border-none cursor-pointer',
               !checked && !disabled && 'dark:bg-whiteDark bg-white',
               checked &&
                 !disabled &&
@@ -76,7 +76,7 @@ const Checkbox = ({
           </div>
         )}
       </CheckboxHUI>
-      {label ? <Label className="text-start hover:cursor-pointer">{label}</Label> : null}
+      {label ? <Label className="text-start cursor-pointer">{label}</Label> : null}
     </Field>
   );
 };

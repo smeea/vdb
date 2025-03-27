@@ -6,7 +6,7 @@ const Radio = ({ value, label }) => {
     <Field className="flex items-center gap-2">
       <RadioHUI
         value={value}
-        className="group flex size-3.5 items-center justify-center rounded-full border bg-white hover:cursor-pointer focus:outline-hidden"
+        className="group flex size-3.5 items-center justify-center rounded-full border bg-white cursor-pointer focus:outline-hidden"
       >
         {({ checked, disabled }) => (
           <span
@@ -18,7 +18,7 @@ const Radio = ({ value, label }) => {
           />
         )}
       </RadioHUI>
-      <Label className="text-fgSecondary dark:text-fgSecondaryDark font-bold hover:cursor-pointer">
+      <Label className="text-fgSecondary dark:text-fgSecondaryDark font-bold cursor-pointer">
         {label}
       </Label>
     </Field>

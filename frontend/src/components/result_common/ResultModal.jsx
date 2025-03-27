@@ -75,7 +75,7 @@ const ResultModal = ({ card, handleModalCardChange, handleClose, forceInventoryM
           </div>
         ) : (
           <div className="flex">
-            <div className="border-bgSecondaryDark dark:border-bgSecondaryDark border-y border-l bg-black hover:cursor-pointer">
+            <div className="border-bgSecondaryDark dark:border-bgSecondaryDark border-y border-l bg-black cursor-pointer">
               <CardImage card={activeCard} onClick={handleClose} />
             </div>
             <div className="border-bgSecondary dark:border-bgSecondaryDark w-full rounded-r border-y border-r p-5">

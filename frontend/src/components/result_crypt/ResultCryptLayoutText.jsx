@@ -82,7 +82,7 @@ const ResultCryptLayoutText = ({ card, setCard, handleClose, noClose, inPopover 
                             )}
                           </>
                         ) : (
-                          <div className="hover:cursor-pointer">
+                          <div className="cursor-pointer">
                             [see {card[ADV][0] ? 'Base' : 'Adv'}]
                           </div>
                         )}

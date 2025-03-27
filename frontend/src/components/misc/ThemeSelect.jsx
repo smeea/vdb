@@ -58,7 +58,7 @@ const ThemeSelect = ({ setShowMenu }) => {
         </div>
       ) : (
         <div
-          className="flex h-full min-w-[40px] items-center justify-center text-white hover:cursor-pointer dark:text-white"
+          className="flex h-full min-w-[40px] items-center justify-center text-white cursor-pointer dark:text-white"
           onClick={handleClick}
           title="Switch Theme"
         >
