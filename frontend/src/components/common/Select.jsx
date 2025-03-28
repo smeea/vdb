@@ -90,9 +90,9 @@ const Select = ({
         dropdownIndicator: () =>
           noDropdown
             ? 'max-w-0 max-h-0'
-            : 'px-2 cursor-pointer text-borderSecondary dark:text-borderSecondaryDark',
+            : 'px-2 text-borderSecondary dark:text-borderSecondaryDark',
         indicatorsContainer: () =>
-          twMerge('rounded-sm', noDropdown ? 'max-h-0 max-w-0' : 'py-1.5 '),
+          twMerge('cursor-pointer rounded-sm', noDropdown ? 'max-h-0 max-w-0' : 'py-1.5 '),
         indicatorSeparator: () => 'bg-borderSecondary dark:bg-borderSecondaryDark',
         menu: () => 'my-2 rounded-sm border border-borderThird dark:border-borderThirdDark',
         menuList: () => 'rounded-sm bg-bgPrimary dark:bg-bgPrimaryDark',
@@ -133,7 +133,7 @@ const Select = ({
         multiValueRemove: () =>
           noRemove
             ? 'max-w-0 max-h-0 hidden'
-            : 'pr-1 bg-bgButton dark:bg-bgButtonDark rounded-r border-r border-y border-borderSecondary dark:border-borderSecondaryDark cursor-pointer',
+            : 'pr-1 bg-bgButton dark:bg-bgButtonDark rounded-r border-r border-y border-borderSecondary dark:border-borderSecondaryDark',
       }}
       // Async
       cacheOptions={cacheOptions}
