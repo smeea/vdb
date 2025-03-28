@@ -43,7 +43,7 @@ const InventoryAddPreconHeader = ({
             onChange={handleChangeNameFilter}
           />
         </th>
-        <th className="max-xl:hidden min-w-[40px]" />
+        <th className="max-lg:hidden min-w-[40px]" />
         <th className="w-full">
           <Input
             placeholder="Filter by Set"

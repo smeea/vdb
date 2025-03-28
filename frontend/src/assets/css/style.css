@@ -115,7 +115,7 @@
         padding-left: calc(var(--spacing) * 1.5);
     }
     th {
-        font-style: normal;
+        font-weight: normal;
     }
 }
 
