@@ -1,5 +1,5 @@
 # FIX
-- Add to inv from deck/precon modal
+- Hurry Up event
 
 # FIX ON HOLD
 - Deck-in-Url trimmed at first card - can't reproduce in dev environment
