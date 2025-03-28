@@ -7,7 +7,7 @@ import { useApp } from '@/context';
 import { deckServices } from '@/services';
 import { getDeckInUrl } from '@/utils';
 
-const DeckCopyUrlButton = ({ deck, noText, setQrUrl }) => {
+const DeckCopyUrlButton = ({ deck, noText, setQrUrl, className }) => {
   const { isDesktop, setShowMenuButtons, setShowFloatingButtons } = useApp();
   const [success, setSuccess] = useState(false);
 
@@ -68,57 +68,53 @@ const DeckCopyUrlButton = ({ deck, noText, setQrUrl }) => {
   return (
     <Menu>
       <MenuButton
+        className={className}
         title="Copy URL"
         icon={<Link45Deg width={noText ? 19 : 21} height={noText ? 19 : 21} viewBox="0 0 15 15" />}
         variant={success ? 'success' : noText || !isDesktop ? 'primary' : 'secondary'}
         text={noText ? null : success ? 'Copied' : 'Copy URL'}
       />
       <MenuItems divided>
-        <>
-          {deck[DECKID] !== DECK && (
-            <div>
-              <MenuItem
-                title="Copy URL (will follow deck changes, if any)"
-                onClick={handleStandard}
-              >
-                Standard URL
-              </MenuItem>
-              <MenuItem
-                title="Create QR with Standard URL (will follow deck changes, if any)"
-                onClick={handleStandardQr}
-              >
-                Standard URL - QR
-              </MenuItem>
+        {deck[DECKID] !== DECK && (
+          <div>
+            <MenuItem title="Copy URL (will follow deck changes, if any)" onClick={handleStandard}>
+              Standard URL
+            </MenuItem>
+            <MenuItem
+              title="Create QR with Standard URL (will follow deck changes, if any)"
+              onClick={handleStandardQr}
+            >
+              Standard URL - QR
+            </MenuItem>
+          </div>
+        )}
+        {(deck[DECKID].length === 9 || deck[DECKID] === DECK) && (
+          <div>
+            <div className="text-midGray dark:text-midGrayDark px-3 pt-2 text-sm">
+              Non-modifiable:
             </div>
-          )}
-          {(deck[DECKID].length === 9 || deck[DECKID] === DECK) && (
-            <div>
-              <div className="text-midGray dark:text-midGrayDark px-3 pt-2 text-sm">
-                Non-modifiable:
-              </div>
+            <MenuItem
+              title="Copy long URL containing full deck info (will not follow deck changes)"
+              onClick={handleDeckInUrl}
+            >
+              Deck-in-URL
+            </MenuItem>
+            <MenuItem
+              title="Create QR with long URL containing full deck info (will not follow deck changes)"
+              onClick={handleDeckInQr}
+            >
+              Deck-in-QR
+            </MenuItem>
+            {deck[DECKID].length === 9 && (
               <MenuItem
-                title="Copy long URL containing full deck info (will not follow deck changes)"
-                onClick={handleDeckInUrl}
+                title="Copy URL to snapshot of the deck (will not follow deck changes)"
+                onClick={handleSnapshot}
               >
-                Deck-in-URL
+                Snapshot URL
               </MenuItem>
-              <MenuItem
-                title="Create QR with long URL containing full deck info (will not follow deck changes)"
-                onClick={handleDeckInQr}
-              >
-                Deck-in-QR
-              </MenuItem>
-              {deck[DECKID].length === 9 && (
-                <MenuItem
-                  title="Copy URL to snapshot of the deck (will not follow deck changes)"
-                  onClick={handleSnapshot}
-                >
-                  Snapshot URL
-                </MenuItem>
-              )}
-            </div>
-          )}
-        </>
+            )}
+          </div>
+        )}
       </MenuItems>
     </Menu>
   );

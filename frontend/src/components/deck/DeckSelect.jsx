@@ -117,8 +117,8 @@ const DeckSelect = ({
               icon={<BinocularsFill width="18" height="18" viewBox="0 0 16 16" />}
             />
           )}
-          {isMobile && deck && (
-            <Button onClick={() => setShowInfo(!showInfo)}>
+          {deck && (
+            <Button className="max-sm:hidden" onClick={() => setShowInfo(!showInfo)}>
               <div className="flex">
                 <ChatLeftQuoteFill width="18" height="18" viewBox="0 0 16 16" />
               </div>

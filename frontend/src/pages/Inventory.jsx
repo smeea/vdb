@@ -148,8 +148,12 @@ const Inventory = () => {
               type={type}
             />
           </div>
-          {isMobile && showFloatingButtons && (
-            <ButtonFloat onClick={() => setShowCryptOnMobile(!showCryptOnMobile)} position="middle">
+          {showFloatingButtons && (
+            <ButtonFloat
+              className="sm:hidden"
+              onClick={() => setShowCryptOnMobile(!showCryptOnMobile)}
+              position="middle"
+            >
               <div className="text-2xl">{showCryptOnMobile ? 'LIB' : 'CR'}</div>
             </ButtonFloat>
           )}

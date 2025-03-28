@@ -151,8 +151,8 @@ const DeckSelectAdvTableRow = ({
                 )}
             </div>
           </div>
-          {isMobile && deck[TAGS].length > 0 && (
-            <div className="max-w-[160px] p-1">
+          {deck[TAGS].length > 0 && (
+            <div className="sm:hidden max-w-[160px] p-1">
               <DeckTags
                 deck={{ ...deck, [IS_AUTHOR]: false }}
                 allTagsOptions={allTagsOptions}
@@ -165,15 +165,13 @@ const DeckSelectAdvTableRow = ({
           )}
         </div>
       </td>
-      {isDesktop && (
-        <td className="min-w-[30px] sm:min-w-[45px]">
-          <div className="flex justify-center">
-            <ConditionalTooltip size="xl" overlay={<DeckPreview deck={deck} />}>
-              <EyeFill />
-            </ConditionalTooltip>
-          </div>
-        </td>
-      )}
+      <td className="min-xl:hidden min-w-[45px]">
+        <div className="flex justify-center">
+          <ConditionalTooltip size="xl" overlay={<DeckPreview deck={deck} />}>
+            <EyeFill />
+          </ConditionalTooltip>
+        </div>
+      </td>
       {(short || !isNarrow) && (
         <td
           className="min-w-[100px] cursor-pointer text-center whitespace-nowrap sm:min-w-[105px]"
@@ -195,17 +193,13 @@ const DeckSelectAdvTableRow = ({
           <td>
             <div className="flex justify-end gap-1">
               <DeckHideButton deck={deck} />
-              {!isMobile && <DeckFreezeButton deck={deck} />}
-              {isDesktop && (
-                <>
-                  <DeckPublicToggleButton deck={deck} inAdv />
-                  <DeckCopyUrlButton deck={deck} noText isAuthor />
-                  {revFilter && (deck[MASTER] || (deck[BRANCHES] && deck[BRANCHES].length > 0)) ? (
-                    <DeckBranchDeleteButton noText deck={deck} />
-                  ) : (
-                    <DeckDeleteButton noText deck={deck} />
-                  )}
-                </>
+              <DeckFreezeButton className="max-sm:hidden" deck={deck} />
+              <DeckPublicToggleButton className="max-xl:hidden" deck={deck} inAdv />
+              <DeckCopyUrlButton className="max-xl:hidden" deck={deck} noText isAuthor />
+              {revFilter && (deck[MASTER] || (deck[BRANCHES] && deck[BRANCHES].length > 0)) ? (
+                <DeckBranchDeleteButton className="max-xl:hidden" deck={deck} noText />
+              ) : (
+                <DeckDeleteButton className="max-xl:hidden" deck={deck} noText />
               )}
             </div>
           </td>

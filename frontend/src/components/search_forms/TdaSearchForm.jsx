@@ -39,7 +39,7 @@ import { clearTdaForm, searchTdaForm, setTdaResults, tdaStore, useApp } from '@/
 import { filterDecks, sanitizeFormState } from '@/utils';
 
 const TdaSearchForm = ({ setShowForm }) => {
-  const { cryptCardBase, libraryCardBase, isMobile } = useApp();
+  const { cryptCardBase, libraryCardBase, showFloatingButtons, isMobile } = useApp();
   const tdaFormState = useSnapshot(searchTdaForm);
   const decks = useSnapshot(tdaStore)[DECKS];
   const [error, setError] = useState(false);
@@ -185,10 +185,10 @@ const TdaSearchForm = ({ setShowForm }) => {
       />
       <TwdSearchFormCardtypes value={tdaFormState[CARDTYPES]} onChange={handleChangeWithOpt} />
       <TwdSearchFormTags value={tdaFormState[TAGS]} onChange={handleTagsChange} />
-      {isMobile && (
+      {showFloatingButtons && (
         <>
-          <ButtonFloatClose handleClose={handleClear} position="middle" />
-          <ButtonFloatSearch handleSearch={processSearch} error={error} />
+          <ButtonFloatClose className="sm:hidden" handleClose={handleClear} position="middle" />
+          <ButtonFloatSearch className="sm:hidden" handleSearch={processSearch} error={error} />
         </>
       )}
     </div>

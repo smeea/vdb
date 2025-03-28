@@ -1,6 +1,5 @@
 import { ConditionalTooltipOrModal, DeckSortButton, Input } from '@/components';
 import { NAME, SET } from '@/constants';
-import { useApp } from '@/context';
 
 const TooltipText = () => {
   return (
@@ -30,8 +29,6 @@ const InventoryAddPreconHeader = ({
   setFilter,
   handleChangeSetFilter,
 }) => {
-  const { isDesktop } = useApp();
-
   return (
     <thead>
       <tr>
@@ -46,7 +43,7 @@ const InventoryAddPreconHeader = ({
             onChange={handleChangeNameFilter}
           />
         </th>
-        {isDesktop && <th className="min-w-[40px]" />}
+        <th className="max-xl:hidden min-w-[40px]" />
         <th className="w-full">
           <Input
             placeholder="Filter by Set"

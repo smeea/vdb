@@ -102,8 +102,12 @@ const DeckLibraryHeader = ({
             >
               <InfoCircle />
             </Button>
-            {isEditable && !isMobile && (
-              <Button className="min-h-10" title="Add Card" onClick={() => setShowAdd(!showAdd)}>
+            {isEditable && (
+              <Button
+                className="max-sm:hidden min-h-10"
+                title="Add Card"
+                onClick={() => setShowAdd(!showAdd)}
+              >
                 <PlusLg width="15" height="15" viewBox="0 0 16 16" />
               </Button>
             )}

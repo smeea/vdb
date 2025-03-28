@@ -85,10 +85,10 @@ const Crypt = () => {
       {showToggleAddMode && (
         <ButtonFloatDeckOrSearch addMode={addMode} toggleAddMode={toggleAddMode} />
       )}
-      {isMobile && showFloatingButtons && showResultCol && (
+      {showFloatingButtons && showResultCol && (
         <>
-          <ButtonFloatClose handleClose={handleClear} />
-          {isEditable && <ButtonFloatAdd />}
+          <ButtonFloatClose className="sm:hidden" handleClose={handleClear} />
+          {isEditable && <ButtonFloatAdd className="sm:hidden" />}
         </>
       )}
     </div>

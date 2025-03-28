@@ -189,14 +189,16 @@ const Diff = () => {
           </div>
         </div>
       </FlexGapped>
-      {isEditable && isMobile && showFloatingButtons && (
+      {isEditable && showFloatingButtons && (
         <>
           <DeckNewCardFloating
+            className="sm:hidden"
             target={CRYPT}
             deckid={deck[DECKID]}
             cards={Object.values(deck[CRYPT])}
           />
           <DeckNewCardFloating
+            className="sm:hidden"
             target={LIBRARY}
             deckid={deck[DECKID]}
             cards={Object.values(deck[LIBRARY])}

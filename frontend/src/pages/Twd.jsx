@@ -20,20 +20,20 @@ const Twd = () => {
   return (
     <div className="twd-container mx-auto">
       <FlexGapped>
-        {!(isMobile && (error || !twdResults)) && (
+        {(!isMobile || (!error && twdResults)) && (
           <div className="basis-full sm:basis-7/12 lg:basis-8/12 xl:basis-9/12">
             {twdResults && <TwdResult results={twdResults} />}
             {error && <ErrorMessage sticky>{error}</ErrorMessage>}
           </div>
         )}
-        {!(isMobile && twdResults) && (
+        {(!isMobile || !twdResults) && (
           <div className="basis-full max-sm:p-2 sm:basis-5/12 lg:basis-4/12 xl:basis-3/12">
             <TwdSearchForm error={error} setError={setError} />
           </div>
         )}
       </FlexGapped>
-      {isMobile && showFloatingButtons && twdResults && (
-        <ButtonFloatClose handleClose={handleClear} />
+      {showFloatingButtons && twdResults && (
+        <ButtonFloatClose className="sm:hidden" handleClose={handleClear} />
       )}
     </div>
   );

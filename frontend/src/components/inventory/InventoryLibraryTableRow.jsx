@@ -130,12 +130,10 @@ const InventoryLibraryTableRow = ({ card, compact, newFocus, inShared, handleCli
           </div>
         </>
       )}
-      {!isNarrow && (
-        <div className="flex min-w-[30px] justify-center" onClick={onClick}>
-          {card.c[BURN] && <ResultMiscImage value={BURN} />}
-          {card.c[TRIFLE] && <ResultMiscImage value={TRIFLE} />}
-        </div>
-      )}
+      <div className="flex max-lg:hidden min-w-[30px] justify-center" onClick={onClick}>
+        {card.c[BURN] && <ResultMiscImage value={BURN} />}
+        {card.c[TRIFLE] && <ResultMiscImage value={TRIFLE} />}
+      </div>
     </div>
   );
 };

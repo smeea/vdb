@@ -73,24 +73,20 @@ const SearchFormTextAndButtons = ({
             borderStyle="max-sm:border sm:border-y sm:border-l"
             roundedStyle="sm:rounded-r-none rounded-sm"
           />
-          {!isMobile && (
-            <>
-              {preresults > showLimit && (
-                <ButtonIconed
-                  className="rounded-l-none rounded-r-none whitespace-nowrap"
-                  borderStyle="border-y border-l border-r-none"
-                  onClick={handleShowResults}
-                  text={`SHOW ${preresults}`}
-                  icon={<Check2 />}
-                />
-              )}
-              <ButtonClose
-                title="Clear Forms & Results"
-                className="rounded-l-none"
-                handleClick={handleClear}
-              />
-            </>
+          {preresults > showLimit && (
+            <ButtonIconed
+              className="max-sm:hidden rounded-l-none rounded-r-none whitespace-nowrap"
+              borderStyle="border-y border-l border-r-none"
+              onClick={handleShowResults}
+              text={`SHOW ${preresults}`}
+              icon={<Check2 />}
+            />
           )}
+          <ButtonClose
+            title="Clear Forms & Results"
+            className="max-sm:hidden rounded-l-none"
+            handleClick={handleClear}
+          />
         </div>
         <div className="flex justify-between">
           <div className="flex w-1/5 gap-1">

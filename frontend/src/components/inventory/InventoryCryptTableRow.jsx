@@ -20,7 +20,7 @@ import { useSwipe } from '@/hooks';
 import { getHardTotal, getSoftMax, getSwipedBg } from '@/utils';
 
 const InventoryCryptTableRow = ({ card, compact, newFocus, inShared, handleClick }) => {
-  const { isMobile, isNarrow, isWide, limitedMode } = useApp();
+  const { isMobile, isWide, limitedMode } = useApp();
   const usedCrypt = useSnapshot(usedStore)[CRYPT];
   const limitedCrypt = useSnapshot(limitedStore)[CRYPT];
   const inLimited = limitedCrypt[card.c[ID]];
@@ -74,11 +74,9 @@ const InventoryCryptTableRow = ({ card, compact, newFocus, inShared, handleClick
       <div className="flex min-w-[32px] justify-center sm:min-w-[40px]" onClick={onClick}>
         <ResultCryptCapacity card={card.c} />
       </div>
-      {!isMobile && !isNarrow && (
-        <div className="flex min-w-[170px] lg:min-w-[180px]" onClick={onClick}>
-          <ResultCryptDisciplines value={card.c[DISCIPLINES]} />
-        </div>
-      )}
+      <div className="flex max-lg:hidden min-w-[180px]" onClick={onClick}>
+        <ResultCryptDisciplines value={card.c[DISCIPLINES]} />
+      </div>
       <div className="flex w-full" onClick={onClick}>
         <ConditionalTooltip
           overlay={<CardPopover card={card.c} />}

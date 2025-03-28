@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { ButtonFloat, DeckNewCard } from '@/components';
 import { CRYPT } from '@/constants';
 
-const DeckNewCardFloating = ({ deckid, cards, cardChange, target }) => {
+const DeckNewCardFloating = ({ deckid, cards, cardChange, target, className }) => {
   const [showAdd, setShowAdd] = useState(false);
 
   const handleClick = () => {
@@ -15,7 +15,11 @@ const DeckNewCardFloating = ({ deckid, cards, cardChange, target }) => {
 
   return (
     <>
-      <ButtonFloat onClick={handleClick} position={target === CRYPT ? 'top' : 'middle'}>
+      <ButtonFloat
+        className={className}
+        onClick={handleClick}
+        position={target === CRYPT ? 'top' : 'middle'}
+      >
         <div className="flex items-center text-2xl">
           <div>+</div>
           <div>{target === CRYPT ? 'C' : 'L'}</div>

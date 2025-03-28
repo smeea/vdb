@@ -1,4 +1,5 @@
 # FIX
+- Add to inv from deck/precon modal
 
 # FIX ON HOLD
 - Deck-in-Url trimmed at first card - can't reproduce in dev environment
@@ -15,4 +16,3 @@
 # TECH IMPROVEMENTS
 - Formating: tailwindcss class sorting
 - Formating: imports sorting with @
-- Change isScreenSize && to size:hidden

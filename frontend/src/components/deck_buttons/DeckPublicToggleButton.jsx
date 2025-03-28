@@ -7,7 +7,7 @@ import { PUBLIC_CHILD, PUBLIC_PARENT } from '@/constants';
 import { useApp } from '@/context';
 import { deckServices } from '@/services';
 
-const DeckPublicToggleButton = ({ deck, inAdv }) => {
+const DeckPublicToggleButton = ({ deck, inAdv, className }) => {
   const { isDesktop, setShowMenuButtons, setShowFloatingButtons } = useApp();
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
@@ -32,6 +32,7 @@ const DeckPublicToggleButton = ({ deck, inAdv }) => {
   return (
     <>
       <ButtonIconed
+        className={className}
         variant={inAdv || !isDesktop ? 'primary' : 'secondary'}
         onClick={() => setShowConfirmation(true)}
         title={`${isPublished ? 'In' : 'Not in'} Public Deck Archive`}

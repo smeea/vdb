@@ -93,8 +93,13 @@ const ResultLayoutText = ({
             <PlaytestReportsOneButton value={card} />
           )}
         </div>
-        {!isNarrow && !noClose && (
-          <ButtonClose handleClick={() => !noClose && handleClose()} title="Close" text="Close" />
+        {!noClose && (
+          <ButtonClose
+            className="max-lg:hidden"
+            handleClick={() => !noClose && handleClose()}
+            title="Close"
+            text="Close"
+          />
         )}
       </div>
     </div>

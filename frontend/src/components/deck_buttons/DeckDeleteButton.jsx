@@ -8,7 +8,7 @@ import { deckStore, useApp } from '@/context';
 import { deckServices } from '@/services';
 import { byTimestamp } from '@/utils';
 
-const DeckDeleteButton = ({ deck, noText }) => {
+const DeckDeleteButton = ({ deck, noText, className }) => {
   const { isDesktop, setShowFloatingButtons, setShowMenuButtons } = useApp();
   const decks = useSnapshot(deckStore)[DECKS];
   const [showConfirmation, setShowConfirmation] = useState(false);
@@ -45,6 +45,7 @@ const DeckDeleteButton = ({ deck, noText }) => {
   return (
     <>
       <ButtonIconed
+        className={className}
         variant={noText || !isDesktop ? 'primary' : 'secondary'}
         onClick={() => setShowConfirmation(true)}
         title="Delete Deck"

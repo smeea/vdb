@@ -261,10 +261,16 @@ const Decks = () => {
           </div>
         </div>
       )}
-      {isEditable && isMobile && showFloatingButtons && (
+      {isEditable && showFloatingButtons && (
         <>
-          <DeckNewCardFloating target={CRYPT} deckid={deckid} cards={Object.values(deck[CRYPT])} />
           <DeckNewCardFloating
+            className="sm:hidden"
+            target={CRYPT}
+            deckid={deckid}
+            cards={Object.values(deck[CRYPT])}
+          />
+          <DeckNewCardFloating
+            className="sm:hidden"
             target={LIBRARY}
             deckid={deckid}
             cards={Object.values(deck[LIBRARY])}

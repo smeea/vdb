@@ -289,10 +289,15 @@ const PdaSearchForm = ({ error, setError }) => {
       <TwdSearchFormCardtypes value={pdaFormState[CARDTYPES]} onChange={handleChangeWithOpt} />
       <TwdSearchFormTags value={pdaFormState[TAGS]} onChange={handleTagsChange} />
       <TwdSearchFormPlayer value={pdaFormState[AUTHOR]} form={searchPdaForm} inPda />
-      {isMobile && showFloatingButtons && (
+      {showFloatingButtons && (
         <>
-          <ButtonFloatClose handleClose={handleClear} position="middle" />
-          <ButtonFloatSearch handleSearch={processSearch} error={error} isLoading={isLoading} />
+          <ButtonFloatClose className="sm:hidden" handleClose={handleClear} position="middle" />
+          <ButtonFloatSearch
+            className="sm:hidden"
+            handleSearch={processSearch}
+            error={error}
+            isLoading={isLoading}
+          />
         </>
       )}
     </div>

@@ -7,7 +7,7 @@ import { BRANCH_NAME, DECKID, DECKS, NAME } from '@/constants';
 import { deckStore, useApp } from '@/context';
 import { deckServices } from '@/services';
 
-const DeckBranchDeleteButton = ({ deck, noText }) => {
+const DeckBranchDeleteButton = ({ deck, noText, className }) => {
   const { isDesktop, setShowFloatingButtons, setShowMenuButtons } = useApp();
   const [showConfirmation, setShowConfirmation] = useState(false);
   const navigate = useNavigate();
@@ -29,6 +29,7 @@ const DeckBranchDeleteButton = ({ deck, noText }) => {
   return (
     <>
       <ButtonIconed
+        className={className}
         variant={noText || !isDesktop ? 'primary' : 'secondary'}
         onClick={() => setShowConfirmation(true)}
         title="Delete Revision"

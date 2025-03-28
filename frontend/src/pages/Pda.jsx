@@ -20,20 +20,20 @@ const Pda = () => {
   return (
     <div className="twd-container mx-auto">
       <FlexGapped>
-        {!(isMobile && (error || !pdaResults)) && (
+        {(!isMobile || (!error && pdaResults)) && (
           <div className="basis-full sm:basis-7/12 lg:basis-8/12 xl:basis-9/12">
             {pdaResults && <PdaResult results={pdaResults} />}
             {error && <ErrorMessage sticky>{error}</ErrorMessage>}
           </div>
         )}
-        {!(isMobile && pdaResults) && (
+        {(!isMobile || !pdaResults) && (
           <div className="basis-full max-sm:p-2 sm:basis-5/12 lg:basis-4/12 xl:basis-3/12">
             <PdaSearchForm error={error} setError={setError} />
           </div>
         )}
       </FlexGapped>
-      {isMobile && showFloatingButtons && pdaResults && (
-        <ButtonFloatClose handleClose={handleClear} />
+      {showFloatingButtons && pdaResults && (
+        <ButtonFloatClose className="sm:hidden" handleClose={handleClear} />
       )}
     </div>
   );

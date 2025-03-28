@@ -231,14 +231,16 @@ const Review = () => {
           </div>
         </div>
       </FlexGapped>
-      {isMobile && showFloatingButtons && (
+      {showFloatingButtons && (
         <>
           <DeckNewCardFloating
+            className="sm:hidden"
             target={CRYPT}
             deckid={deckFrom?.[DECKID]}
             cards={Object.values(deckFrom?.[CRYPT] ?? {})}
           />
           <DeckNewCardFloating
+            className="sm:hidden"
             target={LIBRARY}
             deckid={deckFrom?.[DECKID]}
             cards={Object.values(deckFrom?.[LIBRARY] ?? {})}

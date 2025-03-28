@@ -128,7 +128,7 @@ const InventoryButtons = ({
           </>
         )}
       </div>
-      {isNarrow && <ButtonFloatClose handleClose={handleClose} />}
+      <ButtonFloatClose className="lg:hidden" handleClose={handleClose} />
     </>
   );
 };

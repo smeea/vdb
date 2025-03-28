@@ -1,9 +1,9 @@
 import Check2 from '@icons/check2.svg?react';
 import { ButtonFloat, ErrorOverlay, Spinner } from '@/components';
 
-const ButtonFloatSearch = ({ handleSearch, error, isLoading }) => {
+const ButtonFloatSearch = ({ handleSearch, error, isLoading, className }) => {
   return (
-    <ButtonFloat onClick={handleSearch} variant="success">
+    <ButtonFloat className={className} onClick={handleSearch} variant="success">
       {!isLoading ? (
         <Check2 width="35" height="35" viewBox="0 0 16 16" />
       ) : (

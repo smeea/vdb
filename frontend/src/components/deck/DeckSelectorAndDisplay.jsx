@@ -15,7 +15,7 @@ import { deckStore, setDeck, useApp } from '@/context';
 import { getRestrictions } from '@/utils';
 
 const DeckSelectorAndDisplay = () => {
-  const { playtestMode, isDesktop, addMode, toggleAddMode } = useApp();
+  const { playtestMode, addMode, toggleAddMode } = useApp();
   const { deck } = useSnapshot(deckStore);
   const isBranches = deck ? deck[MASTER] || (deck[BRANCHES] && deck[BRANCHES].length > 0) : null;
   const { hasPlaytest } = getRestrictions(deck);
@@ -40,14 +40,13 @@ const DeckSelectorAndDisplay = () => {
             {deck?.[IS_AUTHOR] && !deck?.[IS_PUBLIC] && <DeckFreezeButton deck={deck} />}
           </>
         )}
-        {isDesktop && (
-          <ButtonIconed
-            title="Hide Deck Panel"
-            onClick={toggleAddMode}
-            icon={addMode ? <EyeSlashFill /> : null}
-            text={addMode ? null : <div className="whitespace-nowrap">Show Deck</div>}
-          />
-        )}
+        <ButtonIconed
+          className="max-xl:hidden"
+          title="Hide Deck Panel"
+          onClick={toggleAddMode}
+          icon={addMode ? <EyeSlashFill /> : null}
+          text={addMode ? null : <div className="whitespace-nowrap">Show Deck</div>}
+        />
       </div>
       {deck &&
         addMode &&
