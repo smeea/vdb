@@ -1,11 +1,9 @@
 # FIX
-- Hurry Up event
 
 # FIX ON HOLD
 - Deck-in-Url trimmed at first card - can't reproduce in dev environment
 
 # FEATURES
-- Add events (see discord)
 
 # FEATURES ON HOLD
 - TWD search with % V5-compatibility -> after BCP clarify V5
