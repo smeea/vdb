@@ -24,14 +24,12 @@ const TwdCardsHistoryCryptRow = ({ card, players, handleClick }) => {
       >
         <ResultCryptCapacity card={card} />
       </div>
-      {!isMobile && (
-        <div
-          className="flex min-w-[170px] items-center lg:min-w-[180px]"
-          onClick={() => handleClick(card)}
-        >
-          <ResultCryptDisciplines value={card[DISCIPLINES]} />
-        </div>
-      )}
+      <div
+        className="flex min-w-[170px] items-center lg:min-w-[180px] max-sm:hidden"
+        onClick={() => handleClick(card)}
+      >
+        <ResultCryptDisciplines value={card[DISCIPLINES]} />
+      </div>
       <div
         className={twMerge(
           'flex w-full cursor-pointer items-center justify-start',
@@ -48,21 +46,19 @@ const TwdCardsHistoryCryptRow = ({ card, players, handleClick }) => {
           <ResultName card={card} />
         </ConditionalTooltip>
       </div>
-      {!isMobile && (
-        <div className="min-w-[60px]" onClick={() => handleClick(card)}>
-          <div className="flex justify-center">
-            <ResultClanImage value={card[CLAN]} />
+      <div className="min-w-[60px] max-sm:hidden" onClick={() => handleClick(card)}>
+        <div className="flex justify-center">
+          <ResultClanImage value={card[CLAN]} />
+        </div>
+        <div className="flex justify-center gap-1 text-sm">
+          <div className="flex w-full justify-end font-bold">
+            {card[TITLE] && <ResultCryptTitle value={card[TITLE]} />}
           </div>
-          <div className="flex justify-center gap-1 text-sm">
-            <div className="flex w-full justify-end font-bold">
-              {card[TITLE] && <ResultCryptTitle value={card[TITLE]} />}
-            </div>
-            <div className="w-full">
-              <ResultCryptGroup value={card[GROUP]} />
-            </div>
+          <div className="w-full">
+            <ResultCryptGroup value={card[GROUP]} />
           </div>
         </div>
-      )}
+      </div>
       <TwdCardsHistoryCardAppearance card={card} byPlayer={players[card[PLAYER]]} />
     </>
   );

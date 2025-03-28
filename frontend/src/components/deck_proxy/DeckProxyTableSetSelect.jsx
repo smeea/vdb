@@ -4,7 +4,7 @@ import { CardImage, Select, Tooltip } from '@/components';
 import { DATE, ID, NAME, PLAYTEST, POD, SET } from '@/constants';
 import { useApp } from '@/context';
 
-const DeckProxyTableSetSelect = ({ card, value, handleSetSelector }) => {
+const DeckProxyTableSetSelect = ({ card, value, handleSetSelector, className }) => {
   const { playtestMode } = useApp();
 
   const setOptions = [
@@ -34,7 +34,7 @@ const DeckProxyTableSetSelect = ({ card, value, handleSetSelector }) => {
 
   return (
     <>
-      <td className="min-w-[165px]">
+      <td className={twMerge('min-w-[165px]', className)}>
         <Select
           options={setOptions}
           isSearchable={false}
@@ -44,7 +44,7 @@ const DeckProxyTableSetSelect = ({ card, value, handleSetSelector }) => {
           onChange={handleSetSelector}
         />
       </td>
-      <td className="min-w-[25px]">
+      <td className={twMerge('min-w-[25px]', className)}>
         <div className="flex items-center justify-center">
           <Tooltip overlay={<CardImage card={card} set={value ?? null} />} noPadding>
             <EyeFill />

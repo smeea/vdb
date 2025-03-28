@@ -178,18 +178,16 @@ const Diff = () => {
             </FlexGapped>
           )}
         </FlexGapped>
-        {!isMobile && (
-          <div className="basis-2/12 max-lg:hidden">
-            <div className="bg-bgPrimary dark:bg-bgPrimaryDark top-[77px] z-20">
-              <DiffButtons
-                deckFrom={deck}
-                deckTo={deckTo}
-                setShowMissing={setShowMissing}
-                setShowProxySelect={setShowProxySelect}
-              />
-            </div>
+        <div className="basis-2/12 max-lg:hidden">
+          <div className="bg-bgPrimary dark:bg-bgPrimaryDark top-[77px] z-20">
+            <DiffButtons
+              deckFrom={deck}
+              deckTo={deckTo}
+              setShowMissing={setShowMissing}
+              setShowProxySelect={setShowProxySelect}
+            />
           </div>
-        )}
+        </div>
       </FlexGapped>
       {isEditable && isMobile && showFloatingButtons && (
         <>

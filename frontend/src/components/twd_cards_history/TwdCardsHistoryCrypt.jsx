@@ -106,24 +106,22 @@ const TwdCardsHistoryCrypt = ({ cards, players }) => {
         />
       </div>
       <div className="min-h-[38px] bg-bgSecondary text-fgSecondary dark:bg-bgSecondaryDark dark:text-fgSecondaryDark flex w-full font-bold">
-        {!isMobile && <div className="flex min-w-[32px] sm:min-w-[40px]" />}
-        {!isMobile && <div className="flex min-w-[170px] lg:min-w-[180px]" />}
+        <div className="flex max-sm:hidden min-w-[40px]" />
+        <div className="flex max-sm:hidden min-w-[170px] lg:min-w-[180px]" />
         <div className="flex w-full" />
-        {!isMobile && <div className="flex min-w-[45px]" />}
+        <div className="flex max-sm:hidden min-w-[45px]" />
         <div
           className="flex min-w-[45px] items-center justify-center sm:min-w-[60px]"
           title="First Print Date"
         >
           Print
         </div>
-        {!isMobile && (
-          <div
-            className="flex min-w-[45px] items-center justify-center sm:min-w-[60px]"
-            title="First TWD Appearance Date"
-          >
-            Win
-          </div>
-        )}
+        <div
+          className="flex max-sm:hidden items-center justify-center min-w-[60px]"
+          title="First TWD Appearance Date"
+        >
+          Win
+        </div>
         <div
           className="flex min-w-[25px] items-center justify-center sm:min-w-[65px]"
           title="Years to Win"

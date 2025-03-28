@@ -21,7 +21,7 @@ import {
 } from '@/context';
 import { sanitizeFormState } from '@/utils';
 
-const Link = ({ to, end, icon, text, title }) => {
+const Link = ({ to, end, icon, text, title, className }) => {
   return (
     <NavLink
       to={to}
@@ -34,6 +34,7 @@ const Link = ({ to, end, icon, text, title }) => {
           isActive
             ? 'bg-borderNestModal dark:bg-borderNestModalDark dark:text-whiteDark text-white'
             : 'text-lightGray dark:text-lightGrayDark',
+          className,
         )
       }
     >
@@ -94,47 +95,44 @@ const Navigation = () => {
   return (
     <nav className="bg-bgNav dark:bg-bgNavDark z-50 max-sm:fixed max-sm:bottom-0 max-sm:w-full sm:sticky sm:top-0 print:hidden">
       <div className="navbar-container mx-auto flex h-10 justify-between sm:gap-3">
-        {!isMobile && (
-          <div className="flex items-center gap-6">
-            <LanguageSelectButton />
-            <ThemeSelect />
-            {username && (
-              <Toggle
-                isOn={inventoryMode}
-                handleClick={toggleInventoryMode}
-                disabled={location.pathname === '/inventory'}
-                variant="secondary"
-              >
-                Inventory Mode
-              </Toggle>
-            )}
-            {(isLimited || limitedMode) && (
-              <Toggle isOn={limitedMode} handleClick={toggleLimitedMode} variant="secondary">
-                Limited Mode
-              </Toggle>
-            )}
-            {isPlaytester && (
-              <Toggle isOn={playtestMode} handleClick={togglePlaytestMode} variant="secondary">
-                Playtest Mode
-              </Toggle>
-            )}
-          </div>
-        )}
+        <div className="flex items-center max-sm:hidden gap-6">
+          <LanguageSelectButton />
+          <ThemeSelect />
+          {username && (
+            <Toggle
+              isOn={inventoryMode}
+              handleClick={toggleInventoryMode}
+              disabled={location.pathname === '/inventory'}
+              variant="secondary"
+            >
+              Inventory Mode
+            </Toggle>
+          )}
+          {(isLimited || limitedMode) && (
+            <Toggle isOn={limitedMode} handleClick={toggleLimitedMode} variant="secondary">
+              Limited Mode
+            </Toggle>
+          )}
+          {isPlaytester && (
+            <Toggle isOn={playtestMode} handleClick={togglePlaytestMode} variant="secondary">
+              Playtest Mode
+            </Toggle>
+          )}
+        </div>
         <div className="flex items-center justify-end max-sm:w-full">
           <div className="flex h-full w-full items-center justify-between">
-            {isMobile && <NavMobileMenu isLimited={isLimited} />}
-            {!isMobile && (
-              <>
-                <Link
-                  to="/account"
-                  icon={username ? <PersonFill width="21" height="21" viewBox="0 1 16 16" /> : null}
-                  text={username ? null : 'Login'}
-                  title={username ? 'Account' : 'Login'}
-                />
-                {isPlaytester && <Link to="/playtest" text="Playtest" />}
-                <Link to="/" text="About" end />
-              </>
-            )}
+            <div className="sm:hidden">
+              <NavMobileMenu isLimited={isLimited} />
+            </div>
+            <Link
+              className="max-sm:hidden"
+              to="/account"
+              icon={username ? <PersonFill width="21" height="21" viewBox="0 1 16 16" /> : null}
+              text={username ? null : 'Login'}
+              title={username ? 'Account' : 'Login'}
+            />
+            {isPlaytester && <Link className="max-sm:hidden" to="/playtest" text="Playtest" />}
+            <Link className="max-sm:hidden" to="/" text="About" end />
             <Link to={pdaUrl} text="PDA" />
             <Link to="/tda" text="TDA" />
             <Link to={twdUrl} text="TWD" />

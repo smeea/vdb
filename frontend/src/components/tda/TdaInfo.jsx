@@ -1,13 +1,10 @@
 import { Title, TwdResultDescriptionTextTr } from '@/components';
 import { DATE, EVENT, LOCATION, PLAYERS, ROUNDS } from '@/constants';
-import { useApp } from '@/context';
 
 const TdaInfo = ({ info, decks }) => {
-  const { isMobile } = useApp();
-
   return (
     <div className="flex flex-col gap-1">
-      {!isMobile && <Title>General Info</Title>}
+      <Title className="max-sm:hidden">General Info</Title>
       <table>
         <tbody>
           <TwdResultDescriptionTextTr title="Event:">{info[EVENT]}</TwdResultDescriptionTextTr>

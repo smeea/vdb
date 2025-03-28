@@ -58,9 +58,11 @@ const TwdResultLibraryKeyCardsTableRow = ({ card, handleClick, shouldShowModal }
           </div>
         </ConditionalTooltip>
       </td>
-      {!isMobile && (
-        <ResultLibraryTableRowReqClanDis card={card.c} handleClick={() => handleClick(card.c)} />
-      )}
+      <ResultLibraryTableRowReqClanDis
+        className="max-sm:hidden"
+        card={card.c}
+        handleClick={() => handleClick(card.c)}
+      />
     </Tr>
   );
 };

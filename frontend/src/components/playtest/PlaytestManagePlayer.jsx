@@ -1,11 +1,9 @@
 import { useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { Flag, Toggle, Tr } from '@/components';
-import { useApp } from '@/context';
 import { playtestServices } from '@/services';
 
 const PlaytestManagePlayer = ({ value }) => {
-  const { isMobile } = useApp();
   const { username, lang, liaison, timestamp, added_by, added_date, is_admin, reports } = value;
   const [state, setState] = useState(true);
 
@@ -37,15 +35,11 @@ const PlaytestManagePlayer = ({ value }) => {
           </div>
         )}
       </td>
-      {!isMobile && (
-        <>
-          <td className="text-center">{reports ? reports : ''}</td>
-          <td className="text-center">{timestamp}</td>
-          <td className="text-center">{added_date}</td>
-          <td className="text-center">{added_by}</td>
-          <td className="text-center">{liaison}</td>
-        </>
-      )}
+      <td className="max-sm:hidden text-center">{reports ? reports : ''}</td>
+      <td className="max-sm:hidden text-center">{timestamp}</td>
+      <td className="max-sm:hidden text-center">{added_date}</td>
+      <td className="max-sm:hidden text-center">{added_by}</td>
+      <td className="max-sm:hidden text-center">{liaison}</td>
     </Tr>
   );
 };

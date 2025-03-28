@@ -21,7 +21,7 @@ const DeckProxyCryptTableRow = ({
   card,
   handleClick,
 }) => {
-  const { isMobile, isWide } = useApp();
+  const { isWide } = useApp();
   const inventoryCrypt = useSnapshot(inventoryStore)[CRYPT];
   const usedCrypt = useSnapshot(usedStore)[CRYPT];
   const inInventory = inventoryCrypt[card.c[ID]]?.q ?? 0;
@@ -61,13 +61,12 @@ const DeckProxyCryptTableRow = ({
         noDisciplines={!isWide}
         inDeck
       />
-      {!isMobile && (
-        <DeckProxyTableSetSelect
-          card={card.c}
-          handleSetSelector={handleSetSelector}
-          value={proxySelected[card.c[ID]]?.[SET]}
-        />
-      )}
+      <DeckProxyTableSetSelect
+        className="max-sm:hidden"
+        card={card.c}
+        handleSetSelector={handleSetSelector}
+        value={proxySelected[card.c[ID]]?.[SET]}
+      />
     </Tr>
   );
 };

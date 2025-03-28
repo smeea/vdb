@@ -7,7 +7,7 @@ import { useApp } from '@/context';
 import { useFetch } from '@/hooks';
 
 const PlaytestManage = () => {
-  const { isPlaytestAdmin, isMobile } = useApp();
+  const { isPlaytestAdmin } = useApp();
   const navigate = useNavigate();
   const [newPlaytesters, setNewPlaytesters] = useState([]);
   const url = `${import.meta.env.VITE_API_URL}/playtest/users`;
@@ -34,15 +34,11 @@ const PlaytestManage = () => {
             <tr>
               <th className="text-center font-bold">Username</th>
               <th />
-              {!isMobile && (
-                <>
-                  <th className="text-center font-bold">Reports</th>
-                  <th className="text-center font-bold">Last Activity</th>
-                  <th className="text-center font-bold">Added Date</th>
-                  <th className="text-center font-bold">Added By</th>
-                  <th className="text-center font-bold">Liaison</th>
-                </>
-              )}
+              <th className="max-sm:hidden text-center font-bold">Reports</th>
+              <th className="max-sm:hidden text-center font-bold">Last Activity</th>
+              <th className="max-sm:hidden text-center font-bold">Added Date</th>
+              <th className="max-sm:hidden text-center font-bold">Added By</th>
+              <th className="max-sm:hidden text-center font-bold">Liaison</th>
             </tr>
           </thead>
           <tbody>

@@ -57,28 +57,11 @@ const ResultModal = ({ card, handleModalCardChange, handleClose, forceInventoryM
         <div className="max-h-0 max-w-0 opacity-0">
           <button type="button" />
         </div>
-        {isMobile ? (
-          <div {...swipeHandlers}>
-            {showImage ? (
-              <CardImage card={activeCard} onClick={handleClose} />
-            ) : (
-              <div className="w-full">
-                <ResultLayoutText
-                  card={activeCard}
-                  setCard={setActiveCard}
-                  handleClose={handleClose}
-                  forceInventoryMode={forceInventoryMode}
-                  setIsHotkeysDisabled={setIsHotkeysDisabled}
-                />
-              </div>
-            )}
-          </div>
-        ) : (
-          <div className="flex">
-            <div className="border-bgSecondaryDark dark:border-bgSecondaryDark border-y border-l bg-black cursor-pointer">
-              <CardImage card={activeCard} onClick={handleClose} />
-            </div>
-            <div className="border-bgSecondary dark:border-bgSecondaryDark w-full rounded-r border-y border-r p-5">
+        <div className="sm:hidden" {...swipeHandlers}>
+          {showImage ? (
+            <CardImage card={activeCard} onClick={handleClose} />
+          ) : (
+            <div className="w-full">
               <ResultLayoutText
                 card={activeCard}
                 setCard={setActiveCard}
@@ -87,8 +70,22 @@ const ResultModal = ({ card, handleModalCardChange, handleClose, forceInventoryM
                 setIsHotkeysDisabled={setIsHotkeysDisabled}
               />
             </div>
+          )}
+        </div>
+        <div className="flex max-sm:hidden">
+          <div className="border-bgSecondaryDark dark:border-bgSecondaryDark border-y border-l bg-black cursor-pointer">
+            <CardImage card={activeCard} onClick={handleClose} />
           </div>
-        )}
+          <div className="border-bgSecondary dark:border-bgSecondaryDark w-full rounded-r border-y border-r p-5">
+            <ResultLayoutText
+              card={activeCard}
+              setCard={setActiveCard}
+              handleClose={handleClose}
+              forceInventoryMode={forceInventoryMode}
+              setIsHotkeysDisabled={setIsHotkeysDisabled}
+            />
+          </div>
+        </div>
         <div
           onClick={() => handleModalCardChange(-1)}
           className={twMerge(
@@ -107,11 +104,9 @@ const ResultModal = ({ card, handleModalCardChange, handleClose, forceInventoryM
         >
           <ChevronCompactRight width="48" height="64" viewBox="0 0 12 16" />
         </div>
-        {isMobile && (
-          <ButtonFloat onClick={toggleShowImage} position="middle">
-            <ArrowRepeat width="40" height="40" viewBox="0 0 16 16" />
-          </ButtonFloat>
-        )}
+        <ButtonFloat className="sm:hidden" onClick={toggleShowImage} position="middle">
+          <ArrowRepeat width="40" height="40" viewBox="0 0 16 16" />
+        </ButtonFloat>
       </div>
     </Modal>
   );

@@ -18,11 +18,9 @@ const TwdHallFameCardsCard = ({ card, handleClick }) => {
       ) : (
         <ResultLibraryTableRowCommon card={card} handleClick={handleClick} noBurn={isMobile} />
       )}
-      {!isMobile && (
-        <td className="min-w-[60px] text-center" onClick={() => handleClick(card)}>
-          {card[RELEASE_DATE].slice(0, 4)}
-        </td>
-      )}
+      <td className="min-w-[60px] text-center max-sm:hidden" onClick={() => handleClick(card)}>
+        {card[RELEASE_DATE].slice(0, 4)}
+      </td>
       <td className="min-w-[60px] text-center" onClick={() => handleClick(card)}>
         {card[TWD_DATE].slice(0, 4)}
       </td>

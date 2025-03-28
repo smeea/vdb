@@ -32,7 +32,6 @@ const TwdHallFameCardsPlayer = ({ name, cards }) => {
     librarySearchSort,
     changeLibrarySearchSort,
     isMobile,
-    isNarrow,
   } = useApp();
 
   const cryptSorted = useMemo(
@@ -127,17 +126,15 @@ const TwdHallFameCardsPlayer = ({ name, cards }) => {
           <thead className="bg-bgSecondary text-fgSecondary dark:bg-bgSecondaryDark dark:text-fgSecondaryDark font-bold">
             <tr>
               <th />
-              {!isMobile && <th />}
+              <th className="max-sm:hidden" />
               <th />
               <th />
-              {!isNarrow && <th />}
-              {!isNarrow && <th />}
-              {!isNarrow && <th />}
-              {!isMobile && (
-                <th className="text-center font-bold" title="First Print Date">
-                  Print
-                </th>
-              )}
+              <th className="max-lg:hidden" />
+              <th className="max-lg:hidden" />
+              <th className="max-lg:hidden" />
+              <th className="max-sm:hidden text-center font-bold" title="First Print Date">
+                Print
+              </th>
               <th className="text-center font-bold" title="First TWD Appearance Date">
                 Win
               </th>
@@ -174,12 +171,10 @@ const TwdHallFameCardsPlayer = ({ name, cards }) => {
               <th />
               <th />
               <th />
-              {!isMobile && <th />}
-              {!isMobile && (
-                <th className="text-center font-bold" title="First Print Date">
-                  Print
-                </th>
-              )}
+              <th className="max-sm:hidden" />
+              <th className="text-center font-bold max-sm:hidden" title="First Print Date">
+                Print
+              </th>
               <th className="text-center font-bold" title="First TWD Appearance Date">
                 Win
               </th>

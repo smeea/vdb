@@ -38,8 +38,7 @@ export const CryptTraitsRegexMap = {
   [STRENGTH_1]: () => /[:.] \+\d strength./i,
   [STRENGTH_2]: () => /[:.] \+[2-9] strength./i,
   [INTERCEPT_1]: () => /[:.] \+\d intercept./i,
-  [STEALTH_1]: () =>
-    /([:.] \+\d stealth.|gets \+\d stealth on each of (his|her|they) actions)/i,
+  [STEALTH_1]: () => /([:.] \+\d stealth.|gets \+\d stealth on each of (his|her|they) actions)/i,
   [UNLOCK]: () => /(?!not )unlock(?! phase|ed)|wakes/i,
   [BLACK_HAND]: () => /black hand[ .:]/i,
   [HAND_SIZE]: () => /(\+\d|X hand size)|(hand size is.*(increased|larger))/i,

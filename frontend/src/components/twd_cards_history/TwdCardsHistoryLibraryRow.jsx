@@ -18,25 +18,21 @@ const TwdCardsHistoryLibraryRow = ({ card, players, handleClick }) => {
 
   return (
     <>
-      {!isMobile && (
-        <>
-          <div
-            className={twMerge(
-              'flex min-w-[30px] items-center justify-center',
-              card[BLOOD] && 'pb-1',
-            )}
-            onClick={() => handleClick(card)}
-          >
-            <ResultLibraryCost card={card} />
-          </div>
-          <div
-            className="flex min-w-[40px] items-center justify-center"
-            onClick={() => handleClick(card)}
-          >
-            <ResultLibraryTypeImage value={card[TYPE]} />
-          </div>
-        </>
-      )}
+      <div
+        className={twMerge(
+          'flex min-w-[30px] items-center justify-center max-sm:hidden',
+          card[BLOOD] && 'pb-1',
+        )}
+        onClick={() => handleClick(card)}
+      >
+        <ResultLibraryCost card={card} />
+      </div>
+      <div
+        className="flex min-w-[40px] items-center justify-center max-sm:hidden"
+        onClick={() => handleClick(card)}
+      >
+        <ResultLibraryTypeImage value={card[TYPE]} />
+      </div>
       <div
         className="flex min-w-[32px] items-center justify-center gap-1.5 sm:min-w-[80px]"
         onClick={() => handleClick(card)}
@@ -60,14 +56,12 @@ const TwdCardsHistoryLibraryRow = ({ card, players, handleClick }) => {
           <ResultName card={card} />
         </ConditionalTooltip>
       </div>
-      {!isMobile && (
-        <div
-          className="flex min-w-[30px] items-center justify-center"
-          onClick={() => handleClick(card)}
-        >
-          {card[BURN] && <ResultMiscImage value={BURN} />}
-        </div>
-      )}
+      <div
+        className="flex min-w-[30px] items-center justify-center max-sm:hidden"
+        onClick={() => handleClick(card)}
+      >
+        {card[BURN] && <ResultMiscImage value={BURN} />}
+      </div>
       <TwdCardsHistoryCardAppearance card={card} byPlayer={players[card[PLAYER]]} />
     </>
   );

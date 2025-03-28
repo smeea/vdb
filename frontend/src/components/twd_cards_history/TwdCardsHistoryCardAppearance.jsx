@@ -32,11 +32,9 @@ const TwdCardsHistoryCardAppearance = ({ card, byPlayer }) => {
       >
         {card[RELEASE_DATE].slice(0, 4)}
       </div>
-      {!isMobile && (
-        <div className="flex min-w-[45px] items-center justify-center sm:min-w-[60px]">
-          {card[TWD_DATE]?.slice(0, 4)}
-        </div>
-      )}
+      <div className="flex max-sm:hidden items-center justify-center min-w-[60px]">
+        {card[TWD_DATE]?.slice(0, 4)}
+      </div>
       <div
         className={twMerge(
           'flex min-w-[25px] items-center justify-center sm:min-w-[60px]',
@@ -52,9 +50,9 @@ const TwdCardsHistoryCardAppearance = ({ card, byPlayer }) => {
         >
           {card[PLAYER]}
         </div>
-        {!isMobile && byPlayer && (
+        {byPlayer && (
           <div
-            className="inline"
+            className="inline max-sm:hidden"
             title={`First appearance in TWDA by Player:
 Crypt: ${byPlayer[CRYPT]}
 Library: ${byPlayer[LIBRARY]}`}

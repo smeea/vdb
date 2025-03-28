@@ -12,7 +12,6 @@ import {
   Textarea,
 } from '@/components';
 import { CARDS, ID, PRECONS, SCORE, TEXT, VALUE } from '@/constants';
-import { useApp } from '@/context';
 import { useFetch } from '@/hooks';
 import { playtestServices } from '@/services';
 
@@ -59,7 +58,6 @@ const Title = ({ isPrecon }) => {
 };
 
 const PlaytestReportForm = ({ id, setIsHotkeysDisabled, isPrecon = false }) => {
-  const { isMobile } = useApp();
   const [isFolded, setIsFolded] = useState(true);
   const [report, setReport] = useState({
     [TEXT]: '',
@@ -117,25 +115,23 @@ const PlaytestReportForm = ({ id, setIsHotkeysDisabled, isPrecon = false }) => {
     <div className="flex flex-col gap-3">
       <div className="flex justify-between">
         <Title />
-        {isMobile && (
-          <Checkbox
-            label="seen in play"
-            value={report[IS_PLAYED]}
-            checked={report[IS_PLAYED]}
-            onChange={handleIsPlayedChange}
-          />
-        )}
+        <Checkbox
+          className="sm:hidden"
+          label="seen in play"
+          value={report[IS_PLAYED]}
+          checked={report[IS_PLAYED]}
+          onChange={handleIsPlayedChange}
+        />
       </div>
       <div className="flex w-full items-center justify-between gap-4">
         <PlaytestScores value={report[SCORE]} handleClick={handleScoreChange} />
-        {!isMobile && (
-          <Checkbox
-            label="seen in play"
-            value={report[IS_PLAYED]}
-            checked={report[IS_PLAYED]}
-            onChange={handleIsPlayedChange}
-          />
-        )}
+        <Checkbox
+          className="max-sm:hidden"
+          label="seen in play"
+          value={report[IS_PLAYED]}
+          checked={report[IS_PLAYED]}
+          onChange={handleIsPlayedChange}
+        />
       </div>
       <form className="flex" onSubmit={submit}>
         <InputLabel title="Description">

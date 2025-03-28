@@ -7,7 +7,7 @@ import {
   Tr,
 } from '@/components';
 import { HARD, ID, LIBRARY, PRINT, SET, SOFT } from '@/constants';
-import { inventoryStore, useApp, usedStore } from '@/context';
+import { inventoryStore, usedStore } from '@/context';
 import { getHardTotal, getSoftMax } from '@/utils';
 
 const DeckProxyLibraryTableRow = ({
@@ -19,7 +19,6 @@ const DeckProxyLibraryTableRow = ({
   inventoryType,
   card,
 }) => {
-  const { isMobile } = useApp();
   const inventoryLibrary = useSnapshot(inventoryStore)[LIBRARY];
   const usedLibrary = useSnapshot(usedStore)[LIBRARY];
   const inInventory = inventoryLibrary[card.c[ID]]?.q ?? 0;
@@ -52,13 +51,12 @@ const DeckProxyLibraryTableRow = ({
         softUsedMax={softUsedMax}
       />
       <ResultLibraryTableRowCommon card={card.c} handleClick={handleClick} inDeck />
-      {!isMobile && (
-        <DeckProxyTableSetSelect
-          card={card.c}
-          handleSetSelector={handleSetSelector}
-          value={proxySelected[card.c[ID]]?.[SET]}
-        />
-      )}
+      <DeckProxyTableSetSelect
+        className="max-sm:hidden"
+        card={card.c}
+        handleSetSelector={handleSetSelector}
+        value={proxySelected[card.c[ID]]?.[SET]}
+      />
     </Tr>
   );
 };
