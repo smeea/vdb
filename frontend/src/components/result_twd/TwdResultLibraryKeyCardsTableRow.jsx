@@ -10,15 +10,12 @@ import {
   UsedPopover,
 } from '@/components';
 import { HARD, ID, LIBRARY, TYPE } from '@/constants';
-import { inventoryStore, limitedStore, useApp, usedStore } from '@/context';
+import { inventoryStore, useApp, usedStore } from '@/context';
 import { getHardTotal } from '@/utils';
 
 const TwdResultLibraryKeyCardsTableRow = ({ card, handleClick, shouldShowModal }) => {
-  const { limitedMode, inventoryMode, isMobile } = useApp();
-  const inventoryLibrary = useSnapshot(inventoryStore)[LIBRARY];
-  const limitedLibrary = useSnapshot(limitedStore)[LIBRARY];
+  const { inventoryMode, isMobile } = useApp();
   const usedLibrary = useSnapshot(usedStore)[LIBRARY];
-  const inLimited = limitedLibrary[card.c[ID]];
   const inInventory = inventoryLibrary[card.c[ID]]?.q ?? 0;
   const hardUsedTotal = getHardTotal(usedLibrary[HARD][card.c[ID]]);
 
@@ -54,7 +51,7 @@ const TwdResultLibraryKeyCardsTableRow = ({ card, handleClick, shouldShowModal }
           noPadding
         >
           <div className="flex cursor-pointer">
-            <ResultName card={card.c} isBanned={limitedMode && !inLimited} />
+            <ResultName card={card.c} />
           </div>
         </ConditionalTooltip>
       </td>

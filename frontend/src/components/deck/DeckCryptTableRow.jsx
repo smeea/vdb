@@ -7,7 +7,7 @@ import {
   ResultCryptTableRowCommon,
 } from '@/components';
 import { CRYPT, HARD, ID, NAME, SOFT } from '@/constants';
-import { deckCardChange, inventoryStore, limitedStore, useApp, usedStore } from '@/context';
+import { deckCardChange, inventoryStore, useApp, usedStore } from '@/context';
 import { useSwipe } from '@/hooks';
 import { getHardTotal, getSoftMax, getSwipedBg } from '@/utils';
 
@@ -27,10 +27,9 @@ const DeckCryptTableRow = ({
   deckid,
   inventoryType,
 }) => {
-  const { limitedMode, inventoryMode, isDesktop } = useApp();
+  const { inventoryMode, isDesktop } = useApp();
   const usedCrypt = useSnapshot(usedStore)[CRYPT];
   const inventoryCrypt = useSnapshot(inventoryStore)[CRYPT];
-  const limitedCrypt = useSnapshot(limitedStore)[CRYPT];
 
   const { isSwiped, swipeHandlers } = useSwipe(
     () => deckCardChange(deckid, card.c, card.q - 1),
@@ -38,7 +37,6 @@ const DeckCryptTableRow = ({
     isEditable,
   );
 
-  const inLimited = limitedCrypt[card.c[ID]];
   const inInventory = inventoryCrypt[card.c[ID]]?.q ?? 0;
   const softUsedMax = getSoftMax(usedCrypt[SOFT][card.c[ID]]) ?? 0;
   const hardUsedTotal = getHardTotal(usedCrypt[HARD][card.c[ID]]) ?? 0;
@@ -73,7 +71,6 @@ const DeckCryptTableRow = ({
         softUsedMax={softUsedMax}
       />
       <ResultCryptTableRowCommon
-        isBanned={limitedMode && !inLimited}
         card={card.c}
         handleClick={handleClick}
         keyDisciplines={keyDisciplines}

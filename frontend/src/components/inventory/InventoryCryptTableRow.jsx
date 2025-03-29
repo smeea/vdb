@@ -15,15 +15,13 @@ import {
   ResultName,
 } from '@/components';
 import { CLAN, CRYPT, DISCIPLINES, GROUP, HARD, ID, IS_FROZEN, SOFT, TITLE } from '@/constants';
-import { inventoryCardChange, inventoryStore, limitedStore, useApp, usedStore } from '@/context';
+import { inventoryCardChange, inventoryStore, useApp, usedStore } from '@/context';
 import { useSwipe } from '@/hooks';
 import { getHardTotal, getSoftMax, getSwipedBg } from '@/utils';
 
 const InventoryCryptTableRow = ({ card, compact, newFocus, inShared, handleClick }) => {
-  const { isMobile, isWide, limitedMode } = useApp();
+  const { isMobile, isWide } = useApp();
   const usedCrypt = useSnapshot(usedStore)[CRYPT];
-  const limitedCrypt = useSnapshot(limitedStore)[CRYPT];
-  const inLimited = limitedCrypt[card.c[ID]];
   const softUsedMax = getSoftMax(usedCrypt[SOFT][card.c[ID]]);
   const hardUsedTotal = getHardTotal(usedCrypt[HARD][card.c[ID]]);
   const isEditable = !useSnapshot(inventoryStore)[IS_FROZEN] && !inShared;
@@ -85,7 +83,7 @@ const InventoryCryptTableRow = ({ card, compact, newFocus, inShared, handleClick
           noPadding
         >
           <div className="flex cursor-pointer">
-            <ResultName card={card.c} isBanned={limitedMode && !inLimited} />
+            <ResultName card={card.c} />
           </div>
         </ConditionalTooltip>
       </div>

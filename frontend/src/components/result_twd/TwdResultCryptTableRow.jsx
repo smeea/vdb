@@ -10,14 +10,12 @@ import {
   UsedPopover,
 } from '@/components';
 import { CLAN, CRYPT, HARD, ID } from '@/constants';
-import { inventoryStore, limitedStore, useApp, usedStore } from '@/context';
+import { inventoryStore, useApp, usedStore } from '@/context';
 import { getHardTotal } from '@/utils';
 
 const TwdResultCryptTableRow = ({ card, handleClick, shouldShowModal }) => {
-  const { limitedMode, inventoryMode, isMobile } = useApp();
+  const { inventoryMode, isMobile } = useApp();
   const inventoryCrypt = useSnapshot(inventoryStore)[CRYPT];
-  const limitedCrypt = useSnapshot(limitedStore)[CRYPT];
-  const inLimited = limitedCrypt[card.c[ID]];
   const inInventory = inventoryCrypt[card.c[ID]]?.q ?? 0;
   const usedCrypt = useSnapshot(usedStore)[CRYPT];
   const hardUsedTotal = getHardTotal(usedCrypt[HARD][card.c[ID]]);
@@ -55,7 +53,7 @@ const TwdResultCryptTableRow = ({ card, handleClick, shouldShowModal }) => {
           noPadding
         >
           <div className="flex cursor-pointer">
-            <ResultName card={card.c} isBanned={limitedMode && !inLimited} />
+            <ResultName card={card.c} />
           </div>
         </ConditionalTooltip>
       </td>

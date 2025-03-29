@@ -24,7 +24,6 @@ const ResultCryptTableRowCommon = ({
   inDeck,
   noDisciplines,
   shouldShowModal,
-  isBanned,
   idx,
 }) => {
   const { isMobile, isNarrow, isDesktop, isWide } = useApp();
@@ -62,7 +61,7 @@ const ResultCryptTableRowCommon = ({
           noClick
         >
           <div className="flex cursor-pointer px-1">
-            <ResultName card={card} isBanned={isBanned} />
+            <ResultName card={card} />
           </div>
         </ConditionalTooltip>
       </td>

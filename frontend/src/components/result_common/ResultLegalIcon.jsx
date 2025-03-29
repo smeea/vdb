@@ -4,14 +4,14 @@ import Hammer from '@icons/hammer.svg?react';
 import LightningChargeFill from '@icons/lightning-charge-fill.svg?react';
 import { BANNED, DEFAULT, PLAYTEST } from '@/constants';
 
-const ResultLegalIcon = ({ value, type = DEFAULT, className }) => {
-  const title = {
+const ResultLegalIcon = ({ value, title, type = DEFAULT, className }) => {
+  const titleOptions = {
     [PLAYTEST]: 'Playtest',
     [BANNED]: `Banned in ${value}`,
     [DEFAULT]: '',
   };
 
-  const icons = {
+  const iconOptions = {
     [PLAYTEST]: (
       <LightningChargeFill className="inline" width="15" height="15" viewBox="0 0 16 16" />
     ),
@@ -25,9 +25,9 @@ const ResultLegalIcon = ({ value, type = DEFAULT, className }) => {
         'text-fgRed dark:text-fgRedDark inline-flex items-center whitespace-nowrap',
         className,
       )}
-      title={title[type]}
+      title={title ?? titleOptions[type]}
     >
-      {icons[type]}
+      {iconOptions[type]}
     </div>
   );
 };

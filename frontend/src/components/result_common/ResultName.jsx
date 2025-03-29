@@ -1,9 +1,15 @@
 import { twMerge } from 'tailwind-merge';
+import { useSnapshot } from 'valtio';
 import { ResultLegalIcon } from '@/components';
-import { ADV, BANNED, ID, NAME, PLAYTEST } from '@/constants';
+import { ADV, BANNED, ID, NAME, PLAYTEST, CRYPT, LIBRARY } from '@/constants';
+import { limitedStore, useApp } from '@/context';
 import { getLegality } from '@/utils';
 
-const ResultName = ({ card, isBanned, isColored = true }) => {
+const ResultName = ({ card, isColored = true }) => {
+  const { limitedMode } = useApp();
+  const limitedState =
+    card[ID] > 200000 ? useSnapshot(limitedStore)[CRYPT] : useSnapshot(limitedStore)[LIBRARY];
+  const isLimited = limitedMode && !limitedState[card[ID]]
   const legalRestriction = getLegality(card);
 
   return (
@@ -16,7 +22,7 @@ const ResultName = ({ card, isBanned, isColored = true }) => {
       <div
         className={twMerge(
           'inline whitespace-normal',
-          (card[BANNED] || isBanned) && 'line-through',
+          (card[BANNED] || isLimited) && 'line-through',
         )}
       >
         {card[NAME]}
@@ -33,7 +39,7 @@ const ResultName = ({ card, isBanned, isColored = true }) => {
         </div>
       )}
       {card[BANNED] && <ResultLegalIcon type={BANNED} value={card[BANNED]} />}
-      {isBanned && <div className="text-fgRed dark:text-fgRedDark inline">[Limited]</div>}
+      {isLimited && <ResultLegalIcon title="Limited" />}
       {legalRestriction && <ResultLegalIcon type={PLAYTEST} value={legalRestriction} />}
     </div>
   );

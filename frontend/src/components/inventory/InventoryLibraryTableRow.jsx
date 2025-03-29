@@ -28,15 +28,13 @@ import {
   TRIFLE,
   TYPE,
 } from '@/constants';
-import { inventoryCardChange, inventoryStore, limitedStore, useApp, usedStore } from '@/context';
+import { inventoryCardChange, inventoryStore, useApp, usedStore } from '@/context';
 import { useSwipe } from '@/hooks';
 import { getHardTotal, getSoftMax, getSwipedBg } from '@/utils';
 
 const InventoryLibraryTableRow = ({ card, compact, newFocus, inShared, handleClick }) => {
-  const { isMobile, isNarrow, limitedMode } = useApp();
+  const { isMobile, isNarrow } = useApp();
   const usedLibrary = useSnapshot(usedStore)[LIBRARY];
-  const limitedLibrary = useSnapshot(limitedStore)[LIBRARY];
-  const inLimited = limitedLibrary[card.c[ID]];
   const softUsedMax = getSoftMax(usedLibrary[SOFT][card.c[ID]]);
   const hardUsedTotal = getHardTotal(usedLibrary[HARD][card.c[ID]]);
   const isEditable = !useSnapshot(inventoryStore)[IS_FROZEN] && !inShared;
@@ -95,7 +93,7 @@ const InventoryLibraryTableRow = ({ card, compact, newFocus, inShared, handleCli
           noPadding
         >
           <div className="flex cursor-pointer">
-            <ResultName card={card.c} isBanned={limitedMode && !inLimited} />
+            <ResultName card={card.c} />
           </div>
         </ConditionalTooltip>
       </div>
