@@ -46,15 +46,14 @@ const Select = ({
 
   let Component;
   switch (variant) {
-    case 'select':
-      Component = ReactSelect;
-      break;
     case 'async':
       Component = AsyncSelect;
       break;
     case 'creatable':
       Component = ReactSelectCreatable;
       break;
+    default:
+      Component = ReactSelect;
   }
 
   return (

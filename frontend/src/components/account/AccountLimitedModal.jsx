@@ -1,4 +1,5 @@
 import dayjs from 'dayjs';
+import { useSnapshot } from 'valtio';
 import { useRef } from 'react';
 import Download from '@icons/download.svg?react';
 import Upload from '@icons/upload.svg?react';
@@ -13,6 +14,7 @@ import { ALLOWED, BANNED, CRYPT, LIBRARY, SETS } from '@/constants';
 import { limitedFullStore } from '@/context';
 
 const AccountLimitedModal = ({ setShow, setFormat }) => {
+  const limitedState = useSnapshot(limitedFullStore);
   const fileInput = useRef();
 
   const handleFileInputClick = () => {
@@ -29,37 +31,35 @@ const AccountLimitedModal = ({ setShow, setFormat }) => {
     };
   };
 
-  const minifyFormat = () => {
-    const minified = {
-      [SETS]: limitedFullStore[SETS],
-      [ALLOWED]: {
-        [CRYPT]: {},
-        [LIBRARY]: {},
-      },
-      [BANNED]: {
-        [CRYPT]: {},
-        [LIBRARY]: {},
-      },
-    };
-    Object.keys(limitedFullStore[ALLOWED][CRYPT]).forEach((c) => {
-      minified[ALLOWED][CRYPT][c] = true;
-    });
-    Object.keys(limitedFullStore[ALLOWED][LIBRARY]).forEach((c) => {
-      minified[ALLOWED][LIBRARY][c] = true;
-    });
-    Object.keys(limitedFullStore[BANNED][CRYPT]).forEach((c) => {
-      minified[BANNED][CRYPT][c] = true;
-    });
-    Object.keys(limitedFullStore[BANNED][LIBRARY]).forEach((c) => {
-      minified[BANNED][LIBRARY][c] = true;
-    });
-    return minified;
+  const minifiedFormat = {
+    [SETS]: limitedState[SETS],
+    [ALLOWED]: {
+      [CRYPT]: {},
+      [LIBRARY]: {},
+    },
+    [BANNED]: {
+      [CRYPT]: {},
+      [LIBRARY]: {},
+    },
   };
+
+  Object.keys(limitedState[ALLOWED][CRYPT]).forEach((c) => {
+    minifiedFormat[ALLOWED][CRYPT][c] = true;
+  });
+  Object.keys(limitedState[ALLOWED][LIBRARY]).forEach((c) => {
+    minifiedFormat[ALLOWED][LIBRARY][c] = true;
+  });
+  Object.keys(limitedState[BANNED][CRYPT]).forEach((c) => {
+    minifiedFormat[BANNED][CRYPT][c] = true;
+  });
+  Object.keys(limitedState[BANNED][LIBRARY]).forEach((c) => {
+    minifiedFormat[BANNED][LIBRARY][c] = true;
+  });
 
   const exportFormat = async () => {
     const { saveAs } = await import('file-saver');
     const fileName = `Limited Format [${dayjs().format('YYYY-MM-DD')}].txt`;
-    const formatText = JSON.stringify(minifyFormat(), null, '  ');
+    const formatText = JSON.stringify(minifiedFormat, null, '  ');
     const file = new File([formatText], fileName, {
       type: 'text/plain;charset=utf-8',
     });
@@ -74,7 +74,7 @@ const AccountLimitedModal = ({ setShow, setFormat }) => {
         <AccountLimitedCardSelection inBanned />
         <div className="flex justify-end gap-2 max-sm:flex-col">
           <AccountLimitedUrlButton
-            format={JSON.stringify(minifyFormat(), null, '').replace(/\n/g, '')}
+            format={JSON.stringify(minifiedFormat, null, '').replace(/\n/g, '')}
           />
           <ButtonIconed
             onClick={handleFileInputClick}
