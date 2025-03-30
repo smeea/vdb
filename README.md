@@ -16,7 +16,7 @@ Serve the UI for the modern browsers using:
 ```
 
 ### BACKEND
-Store user accounts (decks/inventory), generate proxy cards, using:
+Store user accounts (decks/inventory) using:
 
 ```
    Python (v3.13+)

@@ -7,13 +7,13 @@ const CardImage = ({ card, set, className = 'max-sm:w-full', size = 'md', onClic
   const { lang, showLegacyImage } = useApp();
   const { baseUrl, otherUrl, legacyUrl, legacyScanUrl } = getCardImageUrl(card, set, lang);
 
-  const hasLegacy = (card[ID] > 200000 && (card[CLAN] !== 'Hecata' && card[SECT] !== 'Imbued')) || ['Master'].includes(card[TYPE])
+  const hasLegacy =
+    (card[ID] > 200000 && card[CLAN] !== 'Hecata' && card[SECT] !== 'Imbued') ||
+    ['Master'].includes(card[TYPE]);
 
   const url =
-        showLegacyImage && (hasLegacy || legacyScanUrl)
-      ? legacyScanUrl
-        ? legacyScanUrl
-        : legacyUrl
+    showLegacyImage && (hasLegacy || legacyScanUrl)
+      ? (legacyScanUrl ?? legacyUrl)
       : lang === EN
         ? baseUrl
         : otherUrl;
