@@ -1,5 +1,5 @@
 import { twMerge } from 'tailwind-merge';
-import { CLAN, EN, ID, NAME } from '@/constants';
+import { CLAN, SECT, EN, ID, TYPE, NAME } from '@/constants';
 import { useApp } from '@/context';
 import { getCardImageUrl } from '@/utils';
 
@@ -7,8 +7,12 @@ const CardImage = ({ card, set, className = 'max-sm:w-full', size = 'md', onClic
   const { lang, showLegacyImage } = useApp();
   const { baseUrl, otherUrl, legacyUrl, legacyScanUrl } = getCardImageUrl(card, set, lang);
 
+  const hasLegacy = (card[ID] > 200000 && (card[CLAN] !== 'Hecata' || card[SECT] === 'Imbued')) || ['Master'].includes(card[TYPE])
+
+  console.log(legacyUrl)
+
   const url =
-    showLegacyImage && ((card[ID] > 200000 && card[CLAN] !== 'Hecata') || legacyScanUrl)
+        showLegacyImage && (hasLegacy || legacyScanUrl)
       ? legacyScanUrl
         ? legacyScanUrl
         : legacyUrl

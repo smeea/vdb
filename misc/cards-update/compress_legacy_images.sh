@@ -1,8 +1,10 @@
-src_path="legacy-images"
 target_path="../../frontend/public/images/cards/legacy"
 
-for image in $src_path/*.jpg
+for dir in crypt library
 do
-    filename=$(basename "$image")
-    convert "$image" -resize x500 "$target_path/$filename"
+    for image in legacy-images/$dir/*.jpg
+    do
+        filename=$(basename "$image")
+        convert "$image" -resize x500 "$target_path/$filename"
+    done
 done
