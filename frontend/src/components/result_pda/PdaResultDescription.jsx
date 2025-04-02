@@ -3,9 +3,9 @@ import {
   PdaFavoriteButton,
   PdaResultDescriptionText,
   TwdOpenDeckButton,
-} from '@/components';
-import { DECKID } from '@/constants';
-import { useApp } from '@/context';
+} from "@/components";
+import { DECKID } from "@/constants";
+import { useApp } from "@/context";
 
 const PdaResultDescription = ({ deck }) => {
   const { username } = useApp();

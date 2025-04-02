@@ -1,6 +1,6 @@
-const CHILDREN = 'children';
-const CARDS = 'cards';
-const P = 'p';
+const CHILDREN = "children";
+const CARDS = "cards";
+const P = "p";
 
 const minusOne = (cards, i) => {
   return Object(cards).map((c, idx) => {

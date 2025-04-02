@@ -1,11 +1,11 @@
-import dayjs from 'dayjs';
-import { useMemo } from 'react';
-import { useSnapshot } from 'valtio';
-import At from '@icons/at.svg?react';
-import PinAngleFill from '@icons/pin-angle-fill.svg?react';
-import Shuffle from '@icons/shuffle.svg?react';
-import paths from '@/assets/data/paths.json';
-import { ResultLegalIcon, ResultPathImage, ResultPreconClan, Select } from '@/components';
+import dayjs from "dayjs";
+import { useMemo } from "react";
+import { useSnapshot } from "valtio";
+import At from "@icons/at.svg?react";
+import PinAngleFill from "@icons/pin-angle-fill.svg?react";
+import Shuffle from "@icons/shuffle.svg?react";
+import paths from "@/assets/data/paths.json";
+import { ResultLegalIcon, ResultPathImage, ResultPreconClan, Select } from "@/components";
 import {
   BANNED,
   CRYPT,
@@ -22,9 +22,9 @@ import {
   PLAYTEST,
   S,
   TIMESTAMP,
-} from '@/constants';
-import { deckStore, limitedStore, useApp } from '@/context';
-import { byTimestamp, getClan, getRestrictions } from '@/utils';
+} from "@/constants";
+import { deckStore, limitedStore, useApp } from "@/context";
+import { byTimestamp, getClan, getRestrictions } from "@/utils";
 
 const DeckSelectMy = ({ deckid, handleSelect }) => {
   const { limitedMode, inventoryMode, isMobile, isWide } = useApp();
@@ -35,11 +35,11 @@ const DeckSelectMy = ({ deckid, handleSelect }) => {
       .filter((i) => !decks[i][MASTER] && !decks[i][IS_HIDDEN])
       .toSorted((a, b) => byTimestamp(decks[a], decks[b]))
       .map((i, idx) => {
-        const diffDays = dayjs().diff(dayjs(decks[i][TIMESTAMP]), 'day');
+        const diffDays = dayjs().diff(dayjs(decks[i][TIMESTAMP]), "day");
 
         let lastEdit;
         if (diffDays > 90) {
-          lastEdit = dayjs(decks[i][TIMESTAMP]).format('YYYY-MM-DD');
+          lastEdit = dayjs(decks[i][TIMESTAMP]).format("YYYY-MM-DD");
         } else if (diffDays > 30) {
           lastEdit = `${Math.round(diffDays / 30)}mo`;
         } else if (diffDays > 5) {
@@ -128,7 +128,7 @@ const DeckSelectMy = ({ deckid, handleSelect }) => {
                   {!decks[deckid][INVENTORY_TYPE] && <At />}
                 </div>
               )}
-              <div className="text-sm">{dayjs(decks[deckid][TIMESTAMP]).format('YYYY-MM-DD')}</div>
+              <div className="text-sm">{dayjs(decks[deckid][TIMESTAMP]).format("YYYY-MM-DD")}</div>
             </div>
           </div>
         ),

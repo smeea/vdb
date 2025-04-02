@@ -4,22 +4,22 @@ import {
   SearchFormButtonDel,
   SearchFormButtonLogicToggle,
   Select,
-} from '@/components';
-import { ANY, CAPACITY, EQ, GE, LE, LOGIC } from '@/constants';
+} from "@/components";
+import { ANY, CAPACITY, EQ, GE, LE, LOGIC } from "@/constants";
 
 const CryptSearchFormCapacity = ({ value, searchForm, onChange }) => {
   const name = CAPACITY;
 
-  const options = ['ANY', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11'].map((i) => ({
+  const options = ["ANY", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"].map((i) => ({
     value: i.toLowerCase(),
     name: name,
     label: <div className="flex justify-center">{i}</div>,
   }));
 
   const morelessOptions = [
-    [LE, '<='],
-    [EQ, '=='],
-    [GE, '>='],
+    [LE, "<="],
+    [EQ, "=="],
+    [GE, ">="],
   ].map((i) => ({
     value: i[0],
     name: name,
@@ -30,7 +30,7 @@ const CryptSearchFormCapacity = ({ value, searchForm, onChange }) => {
     <>
       <div className="flex items-center">
         <div className="w-1/4">
-          <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">Capacity:</div>
+          <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Capacity:</div>
           {value.value[0][name] !== ANY && (
             <div className="flex justify-end gap-1 px-1">
               <SearchFormButtonLogicToggle

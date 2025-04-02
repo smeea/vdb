@@ -1,8 +1,8 @@
-import { useActionState, useCallback, useState } from 'react';
-import { twMerge } from 'tailwind-merge';
-import { Button, ErrorOverlay, FlexGapped, Input, Modal } from '@/components';
-import { TEXT, YES } from '@/constants';
-import { useApp } from '@/context';
+import { useActionState, useCallback, useState } from "react";
+import { twMerge } from "tailwind-merge";
+import { Button, ErrorOverlay, FlexGapped, Input, Modal } from "@/components";
+import { TEXT, YES } from "@/constants";
+import { useApp } from "@/context";
 
 const ModalConfirmation = ({
   title,
@@ -11,11 +11,11 @@ const ModalConfirmation = ({
   handleConfirm,
   handleCancel,
   centered,
-  size = 'xs',
+  size = "xs",
   disabled,
   children,
-  buttonVariant = 'primary',
-  withMobileMargin = 'true',
+  buttonVariant = "primary",
+  withMobileMargin = "true",
 }) => {
   const { isMobile } = useApp();
   const [error, setError] = useState(false);
@@ -55,7 +55,7 @@ const ModalConfirmation = ({
     >
       <FlexGapped className="flex-col">
         {children}
-        <form action={action} className={twMerge('flex justify-end gap-2', !children && 'pt-3')}>
+        <form action={action} className={twMerge("flex justify-end gap-2", !children && "pt-3")}>
           {withWrittenConfirmation && (
             <div className="relative w-full">
               <Input

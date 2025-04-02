@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState } from "react";
 import {
   DeckDrawProbability,
   DeckLibraryHeader,
@@ -8,11 +8,11 @@ import {
   FlexGapped,
   ResultLibraryType,
   ResultModal,
-} from '@/components';
-import { DECKID, LIBRARY, TYPE_MASTER } from '@/constants';
-import { useApp } from '@/context';
-import { useDeckLibrary, useModalCardController } from '@/hooks';
-import { getIsEditable } from '@/utils';
+} from "@/components";
+import { DECKID, LIBRARY, TYPE_MASTER } from "@/constants";
+import { useApp } from "@/context";
+import { useDeckLibrary, useModalCardController } from "@/hooks";
+import { getIsEditable } from "@/utils";
 
 const BloodPoolDifference = ({ qTo, qFrom }) => {
   return (
@@ -77,7 +77,7 @@ const DiffLibrary = ({ cardsTo, deck }) => {
   return (
     <FlexGapped className="flex-col">
       <div className="flex flex-col gap-2">
-        <div className="sm:bg-bgPrimary sm:dark:bg-bgPrimaryDark sm:sticky sm:top-10 sm:z-10">
+        <div className="sm:sticky sm:top-10 sm:z-10 sm:bg-bgPrimary sm:dark:bg-bgPrimaryDark">
           <DeckLibraryHeader
             libraryTotalDiff={<DiffCardsTotalDiff qTo={libraryToTotal} qFrom={libraryTotal} />}
             bloodTotalDiff={<BloodPoolDifference qTo={bloodToTotal} qFrom={bloodTotal} />}
@@ -125,7 +125,7 @@ const DiffLibrary = ({ cardsTo, deck }) => {
       </div>
       {Object.keys(librarySide).length > 0 && (
         <div className="flex flex-col gap-2 opacity-60 dark:opacity-50">
-          <div className="bg-bgSecondary dark:bg-bgSecondaryDark flex h-[42px] items-center p-2 font-bold">
+          <div className="flex h-[42px] items-center bg-bgSecondary p-2 font-bold dark:bg-bgSecondaryDark">
             Side Library
           </div>
           <div className="flex flex-col gap-2">

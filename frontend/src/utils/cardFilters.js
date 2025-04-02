@@ -3,8 +3,8 @@
 // in case of missing filter or matching them the method returns false, meaning there's no missing criteria
 // if the filter is present and the card dont match it the method returns true meaning the criteria is missing.
 // if some criteria is missing the main method return false and exits that card check.
-import sects from '@/assets/data/sectsList.json';
-import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
+import sects from "@/assets/data/sectsList.json";
+import setsAndPrecons from "@/assets/data/setsAndPrecons.json";
 import {
   ADV,
   ADVANCEMENT,
@@ -80,9 +80,9 @@ import {
   VOTE_1,
   VOTE_2,
   X,
-} from '@/constants';
-import { getIsPlaytest } from '@/utils';
-import { CryptTraitsRegexMap, LibraryTraitsRegexMap } from '@/utils/traitsRegexMaps';
+} from "@/constants";
+import { getIsPlaytest } from "@/utils";
+import { CryptTraitsRegexMap, LibraryTraitsRegexMap } from "@/utils/traitsRegexMaps";
 
 export const filterCrypt = (filter, cards = {}) => {
   return Object.values(cards).filter((card) => {
@@ -173,7 +173,7 @@ const missingTextQuery = (query, card) => {
   const search = query.value.toLowerCase();
   const hasToMatch = query[LOGIC] === AND;
 
-  const cardText = card[TEXT].toLowerCase().replace('\n', ' ');
+  const cardText = card[TEXT].toLowerCase().replace("\n", " ");
   const cardName = card[NAME].toLowerCase();
   const cardASCII = card[ASCII].toLowerCase();
 
@@ -182,7 +182,7 @@ const missingTextQuery = (query, card) => {
   if (query.regex) {
     let regexExp;
     try {
-      regexExp = RegExp(search, 'i');
+      regexExp = RegExp(search, "i");
     } catch {}
 
     match =
@@ -222,25 +222,25 @@ export const missingTrait = (trait, card, traitsRegexMap) => {
     case NON_TWD:
       return card[TWD];
     case MULTI_DISCIPLINE:
-      return !(card[DISCIPLINE].includes('/') || card[DISCIPLINE].includes('&'));
+      return !(card[DISCIPLINE].includes("/") || card[DISCIPLINE].includes("&"));
     case MULTI_TYPE:
-      return !card[TYPE].includes('/');
+      return !card[TYPE].includes("/");
     case BURN:
       return !card[BURN];
     case PATH_CAINE:
     case PATH_CATHARI:
     case PATH_DEATH:
     case PATH_POWER:
-      return card[PATH].toLowerCase().replace(/ .*/, '') !== trait.replace('path-', '');
+      return card[PATH].toLowerCase().replace(/ .*/, "") !== trait.replace("path-", "");
     case NO_REQUIREMENTS:
       return (
         card[REQUIREMENT] ||
         card[DISCIPLINE] ||
         card[CLAN] ||
-        RegExp(/requires a/i, 'i').test(card[TEXT])
+        RegExp(/requires a/i, "i").test(card[TEXT])
       );
     default:
-      return !RegExp(traitsRegexMap[trait] ? traitsRegexMap[trait](card) : trait, 'i').test(
+      return !RegExp(traitsRegexMap[trait] ? traitsRegexMap[trait](card) : trait, "i").test(
         card[TEXT],
       );
   }
@@ -256,9 +256,9 @@ const missingTitleCrypt = (filter, card) => {
     card[ADV]?.[0] &&
     RegExp(
       `\\[MERGED\\].*(${titles
-        .map((t) => t.replace(VOTE_1, '1 vote (titled)').replace(VOTE_2, '2 votes (titled)'))
-        .join('|')})`,
-      'i',
+        .map((t) => t.replace(VOTE_1, "1 vote (titled)").replace(VOTE_2, "2 votes (titled)"))
+        .join("|")})`,
+      "i",
     ).test(card[TEXT])
   ) {
     return false;
@@ -381,12 +381,12 @@ const missingClan = (filterClan, card) => {
   switch (logic) {
     case OR:
       return !clans.some((clan) => {
-        if (card[CLAN].toLowerCase().split('/').includes(clan)) return true;
+        if (card[CLAN].toLowerCase().split("/").includes(clan)) return true;
         if (clan === NOT_REQUIRED && !card[CLAN]) return true;
       });
     case NOT:
       return clans.some((clan) => {
-        if (card[CLAN].toLowerCase().split('/').includes(clan)) return true;
+        if (card[CLAN].toLowerCase().split("/").includes(clan)) return true;
         if (clan === NOT_REQUIRED && !card[CLAN]) return true;
       });
   }
@@ -418,10 +418,10 @@ const missingBloodCost = (filter, card) => {
 };
 
 const testType = (card, type) => {
-  if (type === 'reflex') {
-    return card[TEXT].includes('[REFLEX]');
+  if (type === "reflex") {
+    return card[TEXT].includes("[REFLEX]");
   }
-  return card[TYPE].toLowerCase().split('/').includes(type);
+  return card[TYPE].toLowerCase().split("/").includes(type);
 };
 
 const missingType = (filter, card) => {
@@ -438,8 +438,8 @@ const missingType = (filter, card) => {
   }
 };
 
-const BCP_START = '2018-01-01';
-const FUTURE = '2077-01-01';
+const BCP_START = "2018-01-01";
+const FUTURE = "2077-01-01";
 
 const missingSet = (filter, card) => {
   const sets = filter.value;
@@ -498,7 +498,7 @@ const missingPrecon = (filter, card) => {
   const dates = cardDates(card, false);
 
   return !setsAndSub.some((setAndSub) => {
-    const [set, subSet] = setAndSub.split(':');
+    const [set, subSet] = setAndSub.split(":");
 
     if (setAndSub === BCP) {
       if (print) {
@@ -530,32 +530,32 @@ const missingArtist = (filter, card) => {
 };
 
 const missingNameOrInitials = (filter, card) => {
-  const charRegExp = `^${filter.split('').join('(\\S*[\\s-])?')}`;
+  const charRegExp = `^${filter.split("").join("(\\S*[\\s-])?")}`;
 
   let checkInitials;
   try {
-    checkInitials = RegExp(charRegExp, 'i');
+    checkInitials = RegExp(charRegExp, "i");
   } catch {}
 
   let name = card[NAME].toLowerCase();
   let nameASCII = card[ASCII].toLowerCase();
-  let nameAKA = card[AKA] ? card[AKA].toLowerCase() : '';
+  let nameAKA = card[AKA] ? card[AKA].toLowerCase() : "";
 
   let editedFilter = filter.toLowerCase();
   if (/^the .*/.test(editedFilter) && /, the$/.test(name)) {
-    name = `the ${name.replace(/, the$/, '')}`;
-    nameASCII = `the ${nameASCII.replace(/, the$/, '')}`;
-    nameAKA = `the ${nameAKA.replace(/, the$/, '')}`;
+    name = `the ${name.replace(/, the$/, "")}`;
+    nameASCII = `the ${nameASCII.replace(/, the$/, "")}`;
+    nameAKA = `the ${nameAKA.replace(/, the$/, "")}`;
   }
-  editedFilter = editedFilter.replace(/[^\p{L}\d]/giu, '');
+  editedFilter = editedFilter.replace(/[^\p{L}\d]/giu, "");
 
   return !(
     name.includes(editedFilter) ||
-    name.replace(/[^a-z0-9]/gi, '').includes(editedFilter) ||
+    name.replace(/[^a-z0-9]/gi, "").includes(editedFilter) ||
     nameASCII.includes(editedFilter) ||
-    nameASCII.replace(/[^a-z0-9]/gi, '').includes(editedFilter) ||
+    nameASCII.replace(/[^a-z0-9]/gi, "").includes(editedFilter) ||
     nameAKA.includes(editedFilter) ||
-    nameAKA.replace(/[^a-z0-9]/gi, '').includes(editedFilter) ||
+    nameAKA.replace(/[^a-z0-9]/gi, "").includes(editedFilter) ||
     checkInitials?.test(name) ||
     checkInitials?.test(nameASCII) ||
     checkInitials?.test(nameAKA)
@@ -568,19 +568,19 @@ const missingRequirementsCheck = (logic, array, value, hasNoRequirement) => {
       return array.some(
         (name) =>
           !(
-            RegExp(`(^|[, ])${name}`, 'i').test(value) ||
+            RegExp(`(^|[, ])${name}`, "i").test(value) ||
             (name === NOT_REQUIRED && hasNoRequirement)
           ),
       );
     case OR:
       return !array.some(
         (name) =>
-          RegExp(`(^|[, ])${name}`, 'i').test(value) || (name === NOT_REQUIRED && hasNoRequirement),
+          RegExp(`(^|[, ])${name}`, "i").test(value) || (name === NOT_REQUIRED && hasNoRequirement),
       );
     case NOT:
       return array.some(
         (name) =>
-          RegExp(`(^|[, ])${name}`, 'i').test(value) || (name === NOT_REQUIRED && hasNoRequirement),
+          RegExp(`(^|[, ])${name}`, "i").test(value) || (name === NOT_REQUIRED && hasNoRequirement),
       );
   }
 };

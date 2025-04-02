@@ -1,6 +1,6 @@
-import { DeckLibraryTableRow } from '@/components';
-import { ASCII, DECKID, ID, INVENTORY_TYPE } from '@/constants';
-import { getIsEditable } from '@/utils';
+import { DeckLibraryTableRow } from "@/components";
+import { ASCII, DECKID, ID, INVENTORY_TYPE } from "@/constants";
+import { getIsEditable } from "@/utils";
 
 const DeckLibraryTable = ({
   deck,
@@ -16,7 +16,7 @@ const DeckLibraryTable = ({
   const isEditable = getIsEditable(deck);
 
   return (
-    <table className="border-bgSecondary dark:border-bgSecondaryDark w-full sm:border">
+    <table className="w-full border-bgSecondary sm:border dark:border-bgSecondaryDark">
       <tbody>
         {sortedCards.map((card) => {
           return (

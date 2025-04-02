@@ -1,4 +1,4 @@
-import { DiffQuantityDiff } from '@/components';
+import { DiffQuantityDiff } from "@/components";
 
 const DiffCardsTotalDiff = ({ qTo, qFrom }) => {
   return (

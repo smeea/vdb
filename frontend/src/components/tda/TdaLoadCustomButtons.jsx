@@ -1,7 +1,7 @@
-import { useRef } from 'react';
-import Upload from '@icons/upload.svg?react';
-import { ButtonIconed } from '@/components';
-import { AUTHOR } from '@/constants';
+import { useRef } from "react";
+import Upload from "@icons/upload.svg?react";
+import { ButtonIconed } from "@/components";
+import { AUTHOR } from "@/constants";
 
 const TdaLoadCustomButtons = ({ tempDecks, setTempDecks, setTempArchon, getDeck, setError }) => {
   const fileInputDecks = useRef();
@@ -67,14 +67,14 @@ const TdaLoadCustomButtons = ({ tempDecks, setTempDecks, setTempArchon, getDeck,
         accept=".txt"
         type="file"
         onChange={() => handleLoadDecks()}
-        style={{ display: 'none' }}
+        style={{ display: "none" }}
       />
       <input
         ref={fileInputArchon}
         accept=".xlsx"
         type="file"
         onChange={() => handleLoadArchon()}
-        style={{ display: 'none' }}
+        style={{ display: "none" }}
       />
     </div>
   );

@@ -1,5 +1,5 @@
-import { twMerge } from 'tailwind-merge';
-import { useSnapshot } from 'valtio';
+import { twMerge } from "tailwind-merge";
+import { useSnapshot } from "valtio";
 import {
   ResultLibraryClan,
   ResultLibraryCost,
@@ -8,9 +8,9 @@ import {
   ResultLibraryTypeImage,
   ResultName,
   ResultPathImage,
-} from '@/components';
-import { CLAN, DISCIPLINE, LIBRARY, PATH, REQUIREMENT, TYPE } from '@/constants';
-import { inventoryStore, useApp } from '@/context';
+} from "@/components";
+import { CLAN, DISCIPLINE, LIBRARY, PATH, REQUIREMENT, TYPE } from "@/constants";
+import { inventoryStore, useApp } from "@/context";
 
 const SelectLabelLibrary = ({ cardid, inInventory }) => {
   const { libraryCardBase } = useApp();
@@ -24,9 +24,9 @@ const SelectLabelLibrary = ({ cardid, inInventory }) => {
           {inInventory && (
             <div
               className={twMerge(
-                'inline w-7 text-center text-lg',
+                "inline w-7 text-center text-lg",
                 inventoryLibrary[cardid] &&
-                  'border-midGray dark:border-midGrayDark rounded-md border-2',
+                  "rounded-md border-2 border-midGray dark:border-midGrayDark",
               )}
             >
               {inventoryLibrary[cardid]?.q}

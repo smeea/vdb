@@ -1,11 +1,11 @@
-import { Menu } from '@headlessui/react';
-import { useNavigate } from 'react-router';
-import SymmetryVertical from '@icons/symmetry-vertical.svg?react';
-import { MenuButton, MenuItem, MenuItems } from '@/components';
-import { DECKID, PDA, TWD } from '@/constants';
-import { clearSearchForm, searchPdaForm, searchTwdForm, useApp } from '@/context';
+import { Menu } from "@headlessui/react";
+import { useNavigate } from "react-router";
+import SymmetryVertical from "@icons/symmetry-vertical.svg?react";
+import { MenuButton, MenuItem, MenuItems } from "@/components";
+import { DECKID, PDA, TWD } from "@/constants";
+import { clearSearchForm, searchPdaForm, searchTwdForm, useApp } from "@/context";
 
-const SIMILAR = 'similar';
+const SIMILAR = "similar";
 
 const DeckSearchSimilarButton = ({ deck }) => {
   const { isDesktop, setShowFloatingButtons, setShowMenuButtons } = useApp();
@@ -25,7 +25,7 @@ const DeckSearchSimilarButton = ({ deck }) => {
       <MenuButton
         title="Search similar Decks in TWD/PDA"
         icon={<SymmetryVertical />}
-        variant={isDesktop ? 'secondary' : 'primary'}
+        variant={isDesktop ? "secondary" : "primary"}
         text="Similar Decks"
       />
       <MenuItems>

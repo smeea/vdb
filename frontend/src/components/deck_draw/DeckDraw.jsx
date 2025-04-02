@@ -1,14 +1,14 @@
-import { useCallback, useEffect, useState } from 'react';
-import { useImmer } from 'use-immer';
-import { DeckDrawModal } from '@/components';
-import { CRYPT, LIBRARY } from '@/constants';
-import { useApp } from '@/context';
-import { getCardsArray } from '@/utils';
+import { useCallback, useEffect, useState } from "react";
+import { useImmer } from "use-immer";
+import { DeckDrawModal } from "@/components";
+import { CRYPT, LIBRARY } from "@/constants";
+import { useApp } from "@/context";
+import { getCardsArray } from "@/utils";
 
-const HAND = 'hand';
-const REST = 'rest';
-const DRAWED = 'drawed';
-const BURNED = 'burned';
+const HAND = "hand";
+const REST = "rest";
+const DRAWED = "drawed";
+const BURNED = "burned";
 
 const getRandomInt = (max) => {
   return Math.floor(Math.random() * Math.floor(max));

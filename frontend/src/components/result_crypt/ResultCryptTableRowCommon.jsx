@@ -11,9 +11,9 @@ import {
   ResultCryptTitle,
   ResultName,
   ResultPathImage,
-} from '@/components';
-import { CLAN, DISCIPLINES, GROUP, PATH, SECT, TITLE } from '@/constants';
-import { useApp } from '@/context';
+} from "@/components";
+import { CLAN, DISCIPLINES, GROUP, PATH, SECT, TITLE } from "@/constants";
+import { useApp } from "@/context";
 
 const ResultCryptTableRowCommon = ({
   card,

@@ -1,16 +1,16 @@
-import { useEffect, useState } from 'react';
-import { twMerge } from 'tailwind-merge';
-import ChatLeftQuoteFill from '@icons/chat-left-quote-fill.svg?react';
-import { Textarea } from '@/components';
-import { inventoryCardTextChange } from '@/context';
+import { useEffect, useState } from "react";
+import { twMerge } from "tailwind-merge";
+import ChatLeftQuoteFill from "@icons/chat-left-quote-fill.svg?react";
+import { Textarea } from "@/components";
+import { inventoryCardTextChange } from "@/context";
 
 const InventoryText = ({ card, text, inPopover, setIsHotkeysDisabled }) => {
-  const [newText, setNewText] = useState(text || '');
+  const [newText, setNewText] = useState(text || "");
   const handleChange = (event) => setNewText(event.target.value);
-  const lines = newText.split('\n').length;
+  const lines = newText.split("\n").length;
 
   useEffect(() => {
-    if (newText !== text) setNewText(text ?? '');
+    if (newText !== text) setNewText(text ?? "");
   }, [text]);
 
   const handleOnBlur = () => {
@@ -20,7 +20,7 @@ const InventoryText = ({ card, text, inPopover, setIsHotkeysDisabled }) => {
 
   return (
     <div className="items-top flex gap-1.5">
-      <div className={twMerge('opacity-40', inPopover ? 'pt-1' : 'pt-2')}>
+      <div className={twMerge("opacity-40", inPopover ? "pt-1" : "pt-2")}>
         <ChatLeftQuoteFill width="14" height="14" viewBox="0 0 16 16" />
       </div>
       {inPopover ? (

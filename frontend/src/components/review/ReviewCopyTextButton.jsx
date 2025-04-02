@@ -1,24 +1,24 @@
-import { useState } from 'react';
-import PlusSlashMinus from '@icons/plus-slash-minus.svg?react';
-import { ButtonIconed } from '@/components';
-import { ADV, NAME } from '@/constants';
-import { useApp } from '@/context';
-import { useDeckLibrary } from '@/hooks';
+import { useState } from "react";
+import PlusSlashMinus from "@icons/plus-slash-minus.svg?react";
+import { ButtonIconed } from "@/components";
+import { ADV, NAME } from "@/constants";
+import { useApp } from "@/context";
+import { useDeckLibrary } from "@/hooks";
 
 const ReviewCopyTextButton = ({ urlDiff }) => {
   const { cryptCardBase, libraryCardBase, isDesktop, setShowFloatingButtons, setShowMenuButtons } =
     useApp();
   const [success, setSuccess] = useState(false);
 
-  const diffCards = urlDiff.split(';');
+  const diffCards = urlDiff.split(";");
   const cryptDiff = [];
   const library = {};
 
   diffCards.map((i) => {
-    const [cardid, q] = i.replace('"', '').split('=');
+    const [cardid, q] = i.replace('"', "").split("=");
     const card = cardid > 200000 ? cryptCardBase[cardid] : libraryCardBase[cardid];
     if (cardid > 200000) {
-      const cardDiff = `${q > 0 ? `+${q}` : q} ${card[NAME]}${card[ADV] ? ' ADV' : ''}`;
+      const cardDiff = `${q > 0 ? `+${q}` : q} ${card[NAME]}${card[ADV] ? " ADV" : ""}`;
       cryptDiff.push(cardDiff);
     } else {
       library[cardid] = {
@@ -37,7 +37,7 @@ const ReviewCopyTextButton = ({ urlDiff }) => {
       libraryDiff.push(cardDiff);
     });
   });
-  const diffText = [...cryptDiff, '', ...libraryDiff].join('\n');
+  const diffText = [...cryptDiff, "", ...libraryDiff].join("\n");
 
   const handleStandard = () => {
     navigator.clipboard.writeText(diffText);
@@ -51,11 +51,11 @@ const ReviewCopyTextButton = ({ urlDiff }) => {
 
   return (
     <ButtonIconed
-      variant={success ? 'success' : isDesktop ? 'secondary' : 'primary'}
+      variant={success ? "success" : isDesktop ? "secondary" : "primary"}
       onClick={handleStandard}
       title="Copy Text"
       icon={<PlusSlashMinus />}
-      text={success ? 'Copied' : 'Copy Text'}
+      text={success ? "Copied" : "Copy Text"}
     />
   );
 };

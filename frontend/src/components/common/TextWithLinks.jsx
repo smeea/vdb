@@ -1,11 +1,11 @@
-import React from 'react';
-import { Link } from 'react-router';
-import reactStringReplace from 'react-string-replace';
+import React from "react";
+import { Link } from "react-router";
+import reactStringReplace from "react-string-replace";
 
 const TextWithLinks = ({ children }) => {
   return reactStringReplace(children, /https:\/\/(.*?[ ),])/g, (match, idx) => {
-    const ending = match.endsWith('. ') ? '. ' : match.slice(-1);
-    const url = `https://${match.replace(ending, '')}`;
+    const ending = match.endsWith(". ") ? ". " : match.slice(-1);
+    const url = `https://${match.replace(ending, "")}`;
 
     return (
       <React.Fragment key={idx}>

@@ -1,6 +1,6 @@
-import { ConditionalTooltip, UsedPopover } from '@/components';
-import { ID } from '@/constants';
-import { useApp } from '@/context';
+import { ConditionalTooltip, UsedPopover } from "@/components";
+import { ID } from "@/constants";
+import { useApp } from "@/context";
 
 const InventoryCardQuantityDiff = ({ card, softUsedMax, hardUsedTotal }) => {
   const { isMobile } = useApp();
@@ -14,14 +14,14 @@ const InventoryCardQuantityDiff = ({ card, softUsedMax, hardUsedTotal }) => {
       <div
         className={
           card.q === softUsedMax + hardUsedTotal
-            ? 'text-midGray dark:text-midGrayDark'
+            ? "text-midGray dark:text-midGrayDark"
             : card.q >= softUsedMax + hardUsedTotal
-              ? 'text-fgGreen dark:text-fgGreenDark'
-              : 'text-fgRed dark:text-fgRedDark'
+              ? "text-fgGreen dark:text-fgGreenDark"
+              : "text-fgRed dark:text-fgRedDark"
         }
       >
         {card.q === softUsedMax + hardUsedTotal
-          ? '='
+          ? "="
           : card.q > softUsedMax + hardUsedTotal
             ? `+${card.q - softUsedMax - hardUsedTotal}`
             : card.q - softUsedMax - hardUsedTotal}

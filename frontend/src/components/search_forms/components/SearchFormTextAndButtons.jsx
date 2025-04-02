@@ -1,5 +1,5 @@
-import { useCallback, useEffect, useState } from 'react';
-import Check2 from '@icons/check2.svg?react';
+import { useCallback, useEffect, useState } from "react";
+import Check2 from "@icons/check2.svg?react";
 import {
   ButtonClose,
   ButtonIconed,
@@ -9,10 +9,10 @@ import {
   SearchFormButtonAddText,
   SearchFormButtonDel,
   SearchFormButtonLogicToggle,
-} from '@/components';
-import { IN, LABEL, LOGIC, NAME, REGEX, TEXT, TYPE_DEBOUNCE_DELAY, VALUE } from '@/constants';
-import { useApp } from '@/context';
-import { useDebounce } from '@/hooks';
+} from "@/components";
+import { IN, LABEL, LOGIC, NAME, REGEX, TEXT, TYPE_DEBOUNCE_DELAY, VALUE } from "@/constants";
+import { useApp } from "@/context";
+import { useDebounce } from "@/hooks";
 
 const SearchFormTextAndButtons = ({
   searchForm,
@@ -32,10 +32,10 @@ const SearchFormTextAndButtons = ({
     inventoryMode,
     isMobile,
   } = useApp();
-  const [text, setText] = useState('');
+  const [text, setText] = useState("");
 
   useEffect(() => {
-    setText(value[0][VALUE] ?? '');
+    setText(value[0][VALUE] ?? "");
   }, [value]);
 
   useDebounce(() => onChange(0, text), TYPE_DEBOUNCE_DELAY, [text]);
@@ -43,15 +43,15 @@ const SearchFormTextAndButtons = ({
   const options = [
     {
       [VALUE]: NAME,
-      [LABEL]: 'Only in Name',
+      [LABEL]: "Only in Name",
     },
     {
       [VALUE]: TEXT,
-      [LABEL]: 'Only in Text',
+      [LABEL]: "Only in Text",
     },
     {
       [VALUE]: REGEX,
-      [LABEL]: 'Regex',
+      [LABEL]: "Regex",
     },
   ];
 
@@ -75,7 +75,7 @@ const SearchFormTextAndButtons = ({
           />
           {preresults > showLimit && (
             <ButtonIconed
-              className="max-sm:hidden rounded-l-none rounded-r-none whitespace-nowrap"
+              className="whitespace-nowrap rounded-r-none rounded-l-none max-sm:hidden"
               borderStyle="border-y border-l border-r-none"
               onClick={handleShowResults}
               text={`SHOW ${preresults}`}
@@ -84,13 +84,13 @@ const SearchFormTextAndButtons = ({
           )}
           <ButtonClose
             title="Clear Forms & Results"
-            className="max-sm:hidden rounded-l-none"
+            className="rounded-l-none max-sm:hidden"
             handleClick={handleClear}
           />
         </div>
         <div className="flex justify-between">
           <div className="flex w-1/5 gap-1">
-            {value[0].value !== '' && (
+            {value[0].value !== "" && (
               <>
                 <SearchFormButtonLogicToggle
                   name={TEXT}

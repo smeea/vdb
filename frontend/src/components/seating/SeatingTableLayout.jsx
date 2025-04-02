@@ -1,4 +1,4 @@
-import { SeatingTablePlayer } from '@/components';
+import { SeatingTablePlayer } from "@/components";
 
 const Row = ({ children }) => {
   return <div className="flex w-full shrink-0 items-center justify-center py-4">{children}</div>;
@@ -6,7 +6,7 @@ const Row = ({ children }) => {
 
 const Table = ({ children }) => {
   return (
-    <div className="border-borderSecondary dark:border-borderSecondaryDark flex w-full flex-wrap rounded-full border-4">
+    <div className="flex w-full flex-wrap rounded-full border-4 border-borderSecondary dark:border-borderSecondaryDark">
       {children}
     </div>
   );

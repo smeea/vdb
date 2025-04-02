@@ -1,10 +1,10 @@
-import { useCallback, useMemo, useState } from 'react';
-import { twMerge } from 'tailwind-merge';
-import { DeckCryptHeader, DeckCryptTable, FlexGapped, ResultModal } from '@/components';
-import { CAPACITY, CLAN, CRYPT, GROUP, NAME, QUANTITYx, SECT } from '@/constants';
-import { useApp } from '@/context';
-import { useDeckCrypt, useModalCardController } from '@/hooks';
-import { getKeyDisciplines } from '@/utils';
+import { useCallback, useMemo, useState } from "react";
+import { twMerge } from "tailwind-merge";
+import { DeckCryptHeader, DeckCryptTable, FlexGapped, ResultModal } from "@/components";
+import { CAPACITY, CLAN, CRYPT, GROUP, NAME, QUANTITYx, SECT } from "@/constants";
+import { useApp } from "@/context";
+import { useDeckCrypt, useModalCardController } from "@/hooks";
+import { getKeyDisciplines } from "@/utils";
 
 const DeckCrypt = ({ inSearch, inPreview, inMissing, noDisciplines, deck }) => {
   const { setShowFloatingButtons, cryptDeckSort, changeCryptDeckSort, isDesktop, isMobile } =
@@ -12,12 +12,12 @@ const DeckCrypt = ({ inSearch, inPreview, inMissing, noDisciplines, deck }) => {
   const [showInfo, setShowInfo] = useState(false);
 
   const sortMethods = {
-    [CAPACITY]: 'C',
-    [CLAN]: 'CL',
-    [GROUP]: 'G',
-    [NAME]: 'N',
-    [QUANTITYx]: 'Q',
-    [SECT]: 'S',
+    [CAPACITY]: "C",
+    [CLAN]: "CL",
+    [GROUP]: "G",
+    [NAME]: "N",
+    [QUANTITYx]: "Q",
+    [SECT]: "S",
   };
 
   const { crypt, cryptSide, sortedCards, sortedCardsSide, cryptTotal } = useDeckCrypt(
@@ -62,12 +62,12 @@ const DeckCrypt = ({ inSearch, inPreview, inMissing, noDisciplines, deck }) => {
   return (
     <FlexGapped
       className={twMerge(
-        'flex-col',
+        "flex-col",
         !inPreview &&
           !inMissing &&
           !inSearch &&
           !isMobile &&
-          'bg-bgPrimary dark:bg-bgPrimaryDark sticky top-10',
+          "sticky top-10 bg-bgPrimary dark:bg-bgPrimaryDark",
       )}
     >
       <div>
@@ -97,7 +97,7 @@ const DeckCrypt = ({ inSearch, inPreview, inMissing, noDisciplines, deck }) => {
       </div>
       {Object.keys(cryptSide).length > 0 && (
         <div className="opacity-60 dark:opacity-50">
-          <div className="bg-bgSecondary dark:bg-bgSecondaryDark flex h-[42px] items-center p-2 font-bold">
+          <div className="flex h-[42px] items-center bg-bgSecondary p-2 font-bold dark:bg-bgSecondaryDark">
             Side Crypt
           </div>
           <DeckCryptTable

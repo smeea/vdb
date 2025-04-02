@@ -1,4 +1,4 @@
-import ky from 'ky';
+import ky from "ky";
 import {
   CARDS,
   GENERAL,
@@ -10,7 +10,7 @@ import {
   TEXT,
   USERNAME,
   XLSX,
-} from '@/constants';
+} from "@/constants";
 
 export const submitReport = (id, value, isPrecon) => {
   const url = `${import.meta.env.VITE_API_URL}/playtest/${isPrecon ? PRECONS : CARDS}/${id}`;
@@ -20,7 +20,7 @@ export const submitReport = (id, value, isPrecon) => {
 export const changePlaytester = (user, isAdd = true) => {
   const url = `${import.meta.env.VITE_API_URL}/playtest/users`;
   return ky(url, {
-    method: isAdd ? 'PUT' : 'DELETE',
+    method: isAdd ? "PUT" : "DELETE",
     json: { [USERNAME]: user },
   }).json();
 };
@@ -39,7 +39,7 @@ export const updateProfile = (target, value) => {
 };
 
 export const exportXlsx = async (reports, users, cryptCardBase, libraryCardBase, preconDecks) => {
-  const xlsx = await import('xlsx');
+  const xlsx = await import("xlsx");
   const workbook = xlsx.utils.book_new();
 
   const cardsData = Object.keys(reports)
@@ -65,7 +65,7 @@ export const exportXlsx = async (reports, users, cryptCardBase, libraryCardBase,
 
       return {
         User: username,
-        'Is Played': report.isPlayed ? 'Y' : 'N',
+        "Is Played": report.isPlayed ? "Y" : "N",
         Score: report[SCORE],
         Report: report[TEXT],
         Games: user.games,
@@ -87,15 +87,15 @@ export const exportXlsx = async (reports, users, cryptCardBase, libraryCardBase,
     };
   });
   const generalSheet = xlsx.utils.json_to_sheet(generalReports);
-  generalSheet['!cols'] = [{ wch: 15 }, { wch: 60 }, { wch: 8 }, { wch: 15 }];
-  xlsx.utils.book_append_sheet(workbook, generalSheet, 'General');
+  generalSheet["!cols"] = [{ wch: 15 }, { wch: 60 }, { wch: 8 }, { wch: 15 }];
+  xlsx.utils.book_append_sheet(workbook, generalSheet, "General");
 
   Object.entries(preconsData).forEach((i) => {
     const [id, reportsData] = i;
     if (!preconDecks[`${PLAYTEST}:${id}`]) return;
     const sheet = getSheet(reportsData);
-    sheet['!cols'] = [{ wch: 15 }, { wch: 8 }, { wch: 8 }, { wch: 60 }, { wch: 8 }, { wch: 15 }];
-    const sheetName = `P ${preconDecks[`${PLAYTEST}:${id}`][NAME].replace(/\W+/g, ' ').substring(0, 20)}`;
+    sheet["!cols"] = [{ wch: 15 }, { wch: 8 }, { wch: 8 }, { wch: 60 }, { wch: 8 }, { wch: 15 }];
+    const sheetName = `P ${preconDecks[`${PLAYTEST}:${id}`][NAME].replace(/\W+/g, " ").substring(0, 20)}`;
     xlsx.utils.book_append_sheet(workbook, sheet, sheetName);
   });
 
@@ -104,10 +104,10 @@ export const exportXlsx = async (reports, users, cryptCardBase, libraryCardBase,
     const cardBase = cardid > 200000 ? cryptCardBase : libraryCardBase;
     if (!cardBase[cardid]) return;
     const sheet = getSheet(reportsData);
-    sheet['!cols'] = [{ wch: 15 }, { wch: 8 }, { wch: 8 }, { wch: 60 }, { wch: 8 }, { wch: 15 }];
-    const sheetName = `${cardid > 200000 ? 'C' : 'L'} ${cardBase[cardid][NAME].replace(/\W+/g, ' ').substring(0, 20)}`;
+    sheet["!cols"] = [{ wch: 15 }, { wch: 8 }, { wch: 8 }, { wch: 60 }, { wch: 8 }, { wch: 15 }];
+    const sheetName = `${cardid > 200000 ? "C" : "L"} ${cardBase[cardid][NAME].replace(/\W+/g, " ").substring(0, 20)}`;
     xlsx.utils.book_append_sheet(workbook, sheet, sheetName);
   });
 
-  return xlsx.write(workbook, { type: 'array', bookType: XLSX });
+  return xlsx.write(workbook, { type: "array", bookType: XLSX });
 };

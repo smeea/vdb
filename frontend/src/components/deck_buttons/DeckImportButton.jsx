@@ -1,7 +1,7 @@
-import { Menu } from '@headlessui/react';
-import ClipboardPlus from '@icons/clipboard-plus.svg?react';
-import { MenuButton, MenuItem, MenuItemDivider, MenuItems } from '@/components';
-import { useApp } from '@/context';
+import { Menu } from "@headlessui/react";
+import ClipboardPlus from "@icons/clipboard-plus.svg?react";
+import { MenuButton, MenuItem, MenuItemDivider, MenuItems } from "@/components";
+import { useApp } from "@/context";
 
 const DeckImportButton = ({
   handleCreate,
@@ -17,7 +17,7 @@ const DeckImportButton = ({
       <MenuButton
         title="Create or Import Deck"
         icon={<ClipboardPlus size={24} />}
-        variant={variant ? variant : isDesktop ? 'secondary' : 'primary'}
+        variant={variant ? variant : isDesktop ? "secondary" : "primary"}
         text="New / Import"
       />
       <MenuItems>
@@ -31,7 +31,7 @@ const DeckImportButton = ({
             <MenuItemDivider />
           </>
         )}
-        <div className="text-midGray dark:text-midGrayDark flex px-3 py-1 text-sm">
+        <div className="flex px-3 py-1 text-midGray text-sm dark:text-midGrayDark">
           Anonymous (non-editable), useful only to share URL:
         </div>
         <MenuItem onClick={() => handleFileInputClick(true)}>Import w/o Acc. from File</MenuItem>

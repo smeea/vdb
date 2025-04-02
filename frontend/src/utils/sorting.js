@@ -1,4 +1,4 @@
-import dayjs from 'dayjs';
+import dayjs from "dayjs";
 import {
   ASCII,
   BLOOD,
@@ -13,9 +13,9 @@ import {
   TIMESTAMP,
   TWD_DATE,
   TYPE,
-} from '@/constants';
+} from "@/constants";
 
-export const byName = (a, b) => a.localeCompare(b, 'en');
+export const byName = (a, b) => a.localeCompare(b, "en");
 
 export const byCardName = (a, b) => {
   const nameA = a.c ? a.c[ASCII] : a[ASCII];

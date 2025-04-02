@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef } from 'react';
+import { useCallback, useEffect, useRef } from "react";
 
 const useTimeout = (callback, delay) => {
   const callbackRef = useRef(callback);

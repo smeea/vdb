@@ -1,11 +1,11 @@
-import { useState } from 'react';
-import At from '@icons/at.svg?react';
-import PinAngleFill from '@icons/pin-angle-fill.svg?react';
-import Shuffle from '@icons/shuffle.svg?react';
-import { Checkbox, DeckSelectAdvTagsFilter, Input, Select } from '@/components';
-import { ANY, H, NAME, S, TYPE_DEBOUNCE_DELAY } from '@/constants';
-import { useApp } from '@/context';
-import { useDebounce } from '@/hooks';
+import { useState } from "react";
+import At from "@icons/at.svg?react";
+import PinAngleFill from "@icons/pin-angle-fill.svg?react";
+import Shuffle from "@icons/shuffle.svg?react";
+import { Checkbox, DeckSelectAdvTagsFilter, Input, Select } from "@/components";
+import { ANY, H, NAME, S, TYPE_DEBOUNCE_DELAY } from "@/constants";
+import { useApp } from "@/context";
+import { useDebounce } from "@/hooks";
 
 const DeckSelectAdvTableHeader = ({
   allTagsOptions,
@@ -25,16 +25,16 @@ const DeckSelectAdvTableHeader = ({
 }) => {
   const { inventoryMode, isDesktop } = useApp();
 
-  const [debouncedNameFilter, setDebouncedNameFilter] = useState('');
+  const [debouncedNameFilter, setDebouncedNameFilter] = useState("");
   useDebounce(() => setNameFilter(debouncedNameFilter), TYPE_DEBOUNCE_DELAY, [debouncedNameFilter]);
 
   const invOptions = [
     {
       value: ANY,
-      label: 'ANY',
+      label: "ANY",
     },
     {
-      value: '',
+      value: "",
       label: (
         <div className="flex justify-center">
           <At />
@@ -118,8 +118,8 @@ const DeckSelectAdvTableHeader = ({
             onChange={handleChangeNameFilter}
           />
         </th>
-        {!short && <th className="max-xl:hidden min-w-[45px]" />}
-        {!short && <th className="max-lg:hidden min-w-[105px]" />}
+        {!short && <th className="min-w-[45px] max-xl:hidden" />}
+        {!short && <th className="min-w-[105px] max-lg:hidden" />}
         {!short && (
           <th className="w-full text-start max-sm:py-0.5 sm:p-1">
             <DeckSelectAdvTagsFilter
@@ -133,7 +133,7 @@ const DeckSelectAdvTableHeader = ({
           <div className="flex items-center justify-end">
             <Checkbox
               name="revFilter"
-              label={<div className="whitespace-nowrap">{isDesktop ? 'Show Revisions' : 'R'}</div>}
+              label={<div className="whitespace-nowrap">{isDesktop ? "Show Revisions" : "R"}</div>}
               checked={revFilter}
               onChange={() => setRevFilter(!revFilter)}
             />

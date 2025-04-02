@@ -1,5 +1,5 @@
-import { ResultClanImage, ResultCryptGroup, ResultCryptSect, ResultCryptTitle } from '@/components';
-import { CLAN, GROUP, SECT, TITLE } from '@/constants';
+import { ResultClanImage, ResultCryptGroup, ResultCryptSect, ResultCryptTitle } from "@/components";
+import { CLAN, GROUP, SECT, TITLE } from "@/constants";
 
 const ResultCryptClanGroupTitle = ({ card }) => {
   return (
@@ -7,7 +7,7 @@ const ResultCryptClanGroupTitle = ({ card }) => {
       <div className="flex justify-center">
         <ResultClanImage value={card[CLAN]} />
       </div>
-      <div className="flex justify-between gap-1 text-sm font-bold">
+      <div className="flex justify-between gap-1 font-bold text-sm">
         <div className="flex w-[16px] justify-center">
           {card[TITLE] ? (
             <ResultCryptTitle value={card[TITLE]} />

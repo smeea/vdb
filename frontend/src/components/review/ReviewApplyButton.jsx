@@ -1,8 +1,8 @@
-import { useState } from 'react';
-import Check2All from '@icons/check2-all.svg?react';
-import { ButtonIconed } from '@/components';
-import { CARDS, CRYPT, LIBRARY } from '@/constants';
-import { deckUpdate, useApp } from '@/context';
+import { useState } from "react";
+import Check2All from "@icons/check2-all.svg?react";
+import { ButtonIconed } from "@/components";
+import { CARDS, CRYPT, LIBRARY } from "@/constants";
+import { deckUpdate, useApp } from "@/context";
 
 const ReviewApplyButton = ({ deck, parentId }) => {
   const { isDesktop, setShowFloatingButtons, setShowMenuButtons } = useApp();
@@ -29,11 +29,11 @@ const ReviewApplyButton = ({ deck, parentId }) => {
 
   return (
     <ButtonIconed
-      variant={success ? 'success' : error ? 'danger' : isDesktop ? 'secondary' : 'primary'}
+      variant={success ? "success" : error ? "danger" : isDesktop ? "secondary" : "primary"}
       onClick={handleClick}
       title="Apply Changes"
       icon={<Check2All width="20" height="20" viewBox="0 0 16 16" />}
-      text={success ? 'Applied' : error ? 'Error' : 'Apply Changes'}
+      text={success ? "Applied" : error ? "Error" : "Apply Changes"}
     />
   );
 };

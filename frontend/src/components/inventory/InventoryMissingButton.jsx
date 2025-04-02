@@ -1,7 +1,7 @@
-import { useState } from 'react';
-import Cart4 from '@icons/cart4.svg?react';
-import { ButtonIconed, InventoryMissingModalWrapper } from '@/components';
-import { useApp } from '@/context';
+import { useState } from "react";
+import Cart4 from "@icons/cart4.svg?react";
+import { ButtonIconed, InventoryMissingModalWrapper } from "@/components";
+import { useApp } from "@/context";
 
 const InventoryMissingButton = ({
   clan,
@@ -18,7 +18,7 @@ const InventoryMissingButton = ({
   return (
     <>
       <ButtonIconed
-        variant={isDesktop ? 'secondary' : 'primary'}
+        variant={isDesktop ? "secondary" : "primary"}
         onClick={() => setShowModal(true)}
         title="Get Missing in Inventory Cards"
         icon={<Cart4 />}

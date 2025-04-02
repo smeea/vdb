@@ -1,11 +1,11 @@
-import { TabGroup, TabList, TabPanels, TabPanel } from '@headlessui/react';
-import { useMemo } from 'react';
-import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
-import { TabButton, TwdCardsHistoryCrypt, TwdCardsHistoryLibrary } from '@/components';
-import { CRYPT, DATE, DECKID, LIBRARY, PLAYER, POD, PROMO, RELEASE_DATE, SET } from '@/constants';
-import { useApp } from '@/context';
-import { useFetch } from '@/hooks';
-import { byCardName } from '@/utils';
+import { TabGroup, TabList, TabPanels, TabPanel } from "@headlessui/react";
+import { useMemo } from "react";
+import setsAndPrecons from "@/assets/data/setsAndPrecons.json";
+import { TabButton, TwdCardsHistoryCrypt, TwdCardsHistoryLibrary } from "@/components";
+import { CRYPT, DATE, DECKID, LIBRARY, PLAYER, POD, PROMO, RELEASE_DATE, SET } from "@/constants";
+import { useApp } from "@/context";
+import { useFetch } from "@/hooks";
+import { byCardName } from "@/utils";
 
 const TwdCardsHistory = () => {
   const { cryptCardBase, libraryCardBase } = useApp();

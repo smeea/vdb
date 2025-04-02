@@ -1,18 +1,18 @@
-import { useEffect, useState } from 'react';
-import ChatLeftQuoteFill from '@icons/chat-left-quote-fill.svg?react';
-import ChevronBarContract from '@icons/chevron-bar-contract.svg?react';
-import ChevronBarExpand from '@icons/chevron-bar-expand.svg?react';
-import { Button, Input, InputLabel, Textarea } from '@/components';
-import { DECKID, DESCRIPTION } from '@/constants';
-import { deckUpdate } from '@/context';
-import { getIsEditable } from '@/utils';
+import { useEffect, useState } from "react";
+import ChatLeftQuoteFill from "@icons/chat-left-quote-fill.svg?react";
+import ChevronBarContract from "@icons/chevron-bar-contract.svg?react";
+import ChevronBarExpand from "@icons/chevron-bar-expand.svg?react";
+import { Button, Input, InputLabel, Textarea } from "@/components";
+import { DECKID, DESCRIPTION } from "@/constants";
+import { deckUpdate } from "@/context";
+import { getIsEditable } from "@/utils";
 
 const DeckDescription = ({ deck, isFolded, setIsFolded }) => {
-  const [value, setValue] = useState(deck[DESCRIPTION] || '');
+  const [value, setValue] = useState(deck[DESCRIPTION] || "");
   const isEditable = getIsEditable(deck);
 
   useEffect(() => {
-    if (value !== deck[DESCRIPTION]) setValue(deck[DESCRIPTION] ?? '');
+    if (value !== deck[DESCRIPTION]) setValue(deck[DESCRIPTION] ?? "");
   }, [deck[DESCRIPTION]]);
 
   const handleChange = (event) => {
@@ -41,7 +41,7 @@ const DeckDescription = ({ deck, isFolded, setIsFolded }) => {
       </InputLabel>
       {isFolded ? (
         <Input
-          value={value.split('\n', 1)[0]}
+          value={value.split("\n", 1)[0]}
           onChange={handleChange}
           onBlur={handleOnBlur}
           readOnly={!isEditable}

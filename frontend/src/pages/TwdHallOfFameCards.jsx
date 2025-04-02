@@ -1,17 +1,17 @@
-import { Disclosure, TabGroup, TabList, TabPanels, TabPanel } from '@headlessui/react';
-import dayjs from 'dayjs';
-import { useMemo } from 'react';
-import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
-import { TabButton, TwdHallFameCardsPlayer } from '@/components';
-import { DATE, DECKID, ID, PLAYER, POD, PROMO, RELEASE_DATE, SET, TWD_DATE } from '@/constants';
-import { useApp } from '@/context';
-import { useFetch } from '@/hooks';
-import { byName } from '@/utils';
+import { Disclosure, TabGroup, TabList, TabPanels, TabPanel } from "@headlessui/react";
+import dayjs from "dayjs";
+import { useMemo } from "react";
+import setsAndPrecons from "@/assets/data/setsAndPrecons.json";
+import { TabButton, TwdHallFameCardsPlayer } from "@/components";
+import { DATE, DECKID, ID, PLAYER, POD, PROMO, RELEASE_DATE, SET, TWD_DATE } from "@/constants";
+import { useApp } from "@/context";
+import { useFetch } from "@/hooks";
+import { byName } from "@/utils";
 
 const TwdHallOfFameCards = () => {
   const { cryptCardBase, libraryCardBase } = useApp();
   const INNOVATION_PERIOD = 2 * 365;
-  const IGNORED_BEFORE_DATE = '1999-04-11'; // first was 1997-04-11
+  const IGNORED_BEFORE_DATE = "1999-04-11"; // first was 1997-04-11
 
   const url = `${import.meta.env.VITE_BASE_URL}/data/twd_cards_history.json`;
   const { value } = useFetch(url, {}, []);
@@ -70,7 +70,7 @@ const TwdHallOfFameCards = () => {
   };
 
   const isInnovation = (card) => {
-    const twdAppearanceDelay = dayjs(card[TWD_DATE]).diff(dayjs(card[RELEASE_DATE]), 'day');
+    const twdAppearanceDelay = dayjs(card[TWD_DATE]).diff(dayjs(card[RELEASE_DATE]), "day");
 
     if (card[TWD_DATE] < IGNORED_BEFORE_DATE) return false;
     return twdAppearanceDelay > INNOVATION_PERIOD;
@@ -116,9 +116,9 @@ const TwdHallOfFameCards = () => {
           </TabPanel>
           <TabPanel>
             <div className="flex flex-col gap-1.5">
-              <div className="border-borderPrimary dark:border-borderPrimaryDark rounded-sm border p-3">
+              <div className="rounded-sm border border-borderPrimary p-3 dark:border-borderPrimaryDark">
                 Only counts cards first appeared in TWD {INNOVATION_PERIOD / 365} years after card
-                print, and excluding cards from first 2 years of active tournaments (till{' '}
+                print, and excluding cards from first 2 years of active tournaments (till{" "}
                 {IGNORED_BEFORE_DATE})
               </div>
               {players &&

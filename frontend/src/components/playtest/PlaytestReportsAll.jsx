@@ -1,10 +1,10 @@
-import { TabGroup, TabList, TabPanels, TabPanel } from '@headlessui/react';
-import ky from 'ky';
-import { useState } from 'react';
-import { useNavigate } from 'react-router';
-import Arrow90DegLeft from '@icons/arrow-90deg-left.svg?react';
-import Download from '@icons/download.svg?react';
-import Printer from '@icons/printer.svg?react';
+import { TabGroup, TabList, TabPanels, TabPanel } from "@headlessui/react";
+import ky from "ky";
+import { useState } from "react";
+import { useNavigate } from "react-router";
+import Arrow90DegLeft from "@icons/arrow-90deg-left.svg?react";
+import Download from "@icons/download.svg?react";
+import Printer from "@icons/printer.svg?react";
 import {
   ButtonIconed,
   FlexGapped,
@@ -15,7 +15,7 @@ import {
   SortButton,
   TabButton,
   Toggle,
-} from '@/components';
+} from "@/components";
 import {
   ALL,
   CARDS,
@@ -29,11 +29,11 @@ import {
   SCORE,
   TEXT,
   XLSX,
-} from '@/constants';
-import { useApp } from '@/context';
-import { useFetch } from '@/hooks';
-import { playtestServices } from '@/services';
-import { capitalize } from '@/utils';
+} from "@/constants";
+import { useApp } from "@/context";
+import { useFetch } from "@/hooks";
+import { playtestServices } from "@/services";
+import { capitalize } from "@/utils";
 
 const PlaytestReportsAll = () => {
   const {
@@ -47,8 +47,8 @@ const PlaytestReportsAll = () => {
   const navigate = useNavigate();
   const [sortMethod, setSortMethod] = useState(NAME);
   const sortMethods = {
-    [NAME]: 'N',
-    [CLAN_DISCIPLINE]: 'C/D',
+    [NAME]: "N",
+    [CLAN_DISCIPLINE]: "C/D",
   };
 
   const exportReports = async (target, format) => {
@@ -59,7 +59,7 @@ const PlaytestReportsAll = () => {
       [GENERAL]: reportsGeneral,
     };
     let file;
-    let exportText = '';
+    let exportText = "";
 
     switch (format) {
       case XLSX: {
@@ -73,7 +73,7 @@ const PlaytestReportsAll = () => {
           preconDecks,
         );
         file = new File([data], `${target}.xlsx`, {
-          type: 'application/octet-stream',
+          type: "application/octet-stream",
         });
         break;
       }
@@ -94,11 +94,11 @@ const PlaytestReportsAll = () => {
                 console.log(`Skipping (not in this Round) - ${id}`);
                 break;
               }
-              exportText += `${id > 200000 ? 'Crypt' : 'Library'}: ${name}\n\n`;
+              exportText += `${id > 200000 ? "Crypt" : "Library"}: ${name}\n\n`;
               break;
             default:
               if (id !== GENERAL) return;
-              exportText += 'General Opinions\n\n';
+              exportText += "General Opinions\n\n";
           }
 
           Object.keys(reports[id]).forEach((user, uIdx) => {
@@ -109,24 +109,24 @@ const PlaytestReportsAll = () => {
                 break;
               default:
                 exportText += `Score: ${reports[id][user][SCORE]}\n`;
-                exportText += `Seen in Play: ${reports[id][user].isPlayed ? 'Yes' : 'No'}\n`;
+                exportText += `Seen in Play: ${reports[id][user].isPlayed ? "Yes" : "No"}\n`;
                 if (reports[id][user][TEXT]) exportText += `${reports[id][user][TEXT]}\n`;
             }
             if (uIdx + 1 < Object.keys(reports[id]).length) {
-              exportText += '\n-----\n\n';
+              exportText += "\n-----\n\n";
             }
           });
           if (idx + 1 < Object.keys(reports).length) {
-            exportText += '\n=====\n\n';
+            exportText += "\n=====\n\n";
           }
         });
 
         file = new File([exportText], `Reports - ${capitalize(target)}.txt`, {
-          type: 'text/plain;charset=utf-8',
+          type: "text/plain;charset=utf-8",
         });
     }
 
-    const { saveAs } = await import('file-saver');
+    const { saveAs } = await import("file-saver");
     saveAs(file);
   };
 
@@ -199,7 +199,7 @@ const PlaytestReportsAll = () => {
           <div className="flex gap-1 max-sm:flex-col max-sm:justify-between sm:gap-3">
             <div className="flex justify-between gap-1 max-sm:flex-col">
               <ButtonIconed
-                onClick={() => navigate('/playtest')}
+                onClick={() => navigate("/playtest")}
                 title="Back"
                 icon={<Arrow90DegLeft />}
                 text="Back"

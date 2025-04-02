@@ -1,8 +1,8 @@
-import { useMemo } from 'react';
-import { ResultCryptTable, ResultLibraryTable } from '@/components';
-import { CRYPT } from '@/constants';
-import { useApp } from '@/context';
-import { cryptSort, librarySort } from '@/utils';
+import { useMemo } from "react";
+import { ResultCryptTable, ResultLibraryTable } from "@/components";
+import { CRYPT } from "@/constants";
+import { useApp } from "@/context";
+import { cryptSort, librarySort } from "@/utils";
 
 const ResultTable = ({ cards, target }) => {
   const { addMode, isDesktop, cryptSearchSort, librarySearchSort } = useApp();
@@ -16,14 +16,14 @@ const ResultTable = ({ cards, target }) => {
       return (
         <ResultCryptTable
           resultCards={sortedCards}
-          placement={isDesktop || (!isDesktop && !addMode) ? 'right' : 'bottom'}
+          placement={isDesktop || (!isDesktop && !addMode) ? "right" : "bottom"}
         />
       );
     }
     return (
       <ResultLibraryTable
         resultCards={sortedCards}
-        placement={isDesktop || (!isDesktop && !addMode) ? 'right' : 'bottom'}
+        placement={isDesktop || (!isDesktop && !addMode) ? "right" : "bottom"}
       />
     );
   }, [cards, sortMethod]);

@@ -1,7 +1,7 @@
-import { useCallback } from 'react';
-import List from '@icons/list.svg?react';
-import { ButtonFloat } from '@/components';
-import { useApp } from '@/context';
+import { useCallback } from "react";
+import List from "@icons/list.svg?react";
+import { ButtonFloat } from "@/components";
+import { useApp } from "@/context";
 
 const ButtonFloatMenu = () => {
   const { showFloatingButtons, setShowFloatingButtons, setShowMenuButtons } = useApp();

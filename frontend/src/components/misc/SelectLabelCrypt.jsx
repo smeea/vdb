@@ -1,5 +1,5 @@
-import { twMerge } from 'tailwind-merge';
-import { useSnapshot } from 'valtio';
+import { twMerge } from "tailwind-merge";
+import { useSnapshot } from "valtio";
 import {
   ResultClanImage,
   ResultCryptCapacity,
@@ -7,9 +7,9 @@ import {
   ResultCryptSect,
   ResultName,
   ResultPathImage,
-} from '@/components';
-import { ANY, CLAN, CRYPT, DISCIPLINES, GROUP, PATH, SECT, X } from '@/constants';
-import { inventoryStore, useApp } from '@/context';
+} from "@/components";
+import { ANY, CLAN, CRYPT, DISCIPLINES, GROUP, PATH, SECT, X } from "@/constants";
+import { inventoryStore, useApp } from "@/context";
 
 const SelectLabelCrypt = ({ cardid, inInventory }) => {
   const { cryptCardBase } = useApp();
@@ -23,9 +23,9 @@ const SelectLabelCrypt = ({ cardid, inInventory }) => {
           {inInventory && (
             <div
               className={twMerge(
-                'inline w-7 text-center text-lg',
+                "inline w-7 text-center text-lg",
                 inventoryCrypt[cardid] &&
-                  'border-midGray dark:border-midGrayDark rounded-md border-2',
+                  "rounded-md border-2 border-midGray dark:border-midGrayDark",
               )}
             >
               {inventoryCrypt[cardid]?.q}
@@ -35,9 +35,9 @@ const SelectLabelCrypt = ({ cardid, inInventory }) => {
             <ResultCryptCapacity card={card} />
           </div>
           <ResultName card={card} isColored={false} />
-          <div className="text-midGray dark:text-midGrayDark inline">
+          <div className="inline text-midGray dark:text-midGrayDark">
             [G
-            <div className="text-fgPrimary dark:text-fgPrimaryDark inline">
+            <div className="inline text-fgPrimary dark:text-fgPrimaryDark">
               {card[GROUP] === ANY ? X : card[GROUP]}
             </div>
             ]

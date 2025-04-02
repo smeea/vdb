@@ -1,6 +1,6 @@
-import { NewCardSelect } from '@/components';
-import { CRYPT, ID } from '@/constants';
-import { deckCardChange, useApp } from '@/context';
+import { NewCardSelect } from "@/components";
+import { CRYPT, ID } from "@/constants";
+import { deckCardChange, useApp } from "@/context";
 
 const DeckNewCard = ({ target, cards, deckid, handleClose, cardChange, menuPlacement }) => {
   const { cryptCardBase, libraryCardBase } = useApp();

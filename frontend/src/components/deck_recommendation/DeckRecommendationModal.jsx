@@ -5,8 +5,8 @@ import {
   Modal,
   ResultCryptTable,
   Spinner,
-} from '@/components';
-import { useApp } from '@/context';
+} from "@/components";
+import { useApp } from "@/context";
 
 const DeckRecommendationModal = ({ handleClose, crypt, library }) => {
   const { isMobile } = useApp();

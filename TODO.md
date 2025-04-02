@@ -14,5 +14,4 @@
 - Draft Cube support -> when draft cube info is available
 
 # TECH IMPROVEMENTS
-- Formating: tailwindcss class sorting
 - Formating: imports sorting with @

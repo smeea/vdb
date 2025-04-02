@@ -1,6 +1,6 @@
-import Link45Deg from '@icons/link-45deg.svg?react';
-import { ButtonIconed } from '@/components';
-import { useApp } from '@/context';
+import Link45Deg from "@icons/link-45deg.svg?react";
+import { ButtonIconed } from "@/components";
+import { useApp } from "@/context";
 
 const InventoryShareButton = ({ setShow }) => {
   const { isDesktop, setShowMenuButtons, setShowFloatingButtons } = useApp();
@@ -13,7 +13,7 @@ const InventoryShareButton = ({ setShow }) => {
 
   return (
     <ButtonIconed
-      variant={isDesktop ? 'secondary' : 'primary'}
+      variant={isDesktop ? "secondary" : "primary"}
       title="Share Inventory"
       onClick={handleClick}
       icon={<Link45Deg width="21" height="21" viewBox="0 0 15 15" />}

@@ -1,6 +1,6 @@
-import Recycle from '@icons/recycle.svg?react';
-import { ButtonIconed } from '@/components';
-import { useApp } from '@/context';
+import Recycle from "@icons/recycle.svg?react";
+import { ButtonIconed } from "@/components";
+import { useApp } from "@/context";
 
 const SeatingButton = ({ setShow }) => {
   const { isDesktop, setShowFloatingButtons, setShowMenuButtons } = useApp();
@@ -12,7 +12,7 @@ const SeatingButton = ({ setShow }) => {
 
   return (
     <ButtonIconed
-      variant={isDesktop ? 'secondary' : 'primary'}
+      variant={isDesktop ? "secondary" : "primary"}
       onClick={handleClick}
       title="Table Seating"
       icon={<Recycle width="18" height="18" viewBox="0 0 16 16" />}

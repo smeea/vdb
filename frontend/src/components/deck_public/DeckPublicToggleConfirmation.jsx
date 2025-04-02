@@ -1,6 +1,6 @@
-import { ModalConfirmation } from '@/components';
-import { CRYPT, LIBRARY, NAME, PUBLIC_CHILD, PUBLIC_PARENT } from '@/constants';
-import { countCards, getRestrictions } from '@/utils';
+import { ModalConfirmation } from "@/components";
+import { CRYPT, LIBRARY, NAME, PUBLIC_CHILD, PUBLIC_PARENT } from "@/constants";
+import { countCards, getRestrictions } from "@/utils";
 
 const DeckPublicToggleConfirmation = ({ deck, handleConfirmation, setShow }) => {
   const isPublished = !!(deck[PUBLIC_PARENT] || deck[PUBLIC_CHILD]);
@@ -22,18 +22,18 @@ const DeckPublicToggleConfirmation = ({ deck, handleConfirmation, setShow }) => 
           : `Add "${deck[NAME]}" to Public Deck Archive?`
       }
       disabled={isWrongQtyCards || hasPlaytest}
-      buttonText={isPublished ? 'Remove Public' : 'Make Public'}
+      buttonText={isPublished ? "Remove Public" : "Make Public"}
     >
       {isWrongQtyCards ? (
         <div className="text-fgRed dark:text-fgRedDark">
           Public Deck must have 12-35 crypt and 60-90 library cards
         </div>
       ) : hasPlaytest ? (
-        'Public Deck cannot have playtest cards'
+        "Public Deck cannot have playtest cards"
       ) : isPublished ? (
-        'This will not remove the deck from your deck library, but will stop to show it in Public Deck Archive'
+        "This will not remove the deck from your deck library, but will stop to show it in Public Deck Archive"
       ) : (
-        'You can remove it from Public Deck Archive at any time'
+        "You can remove it from Public Deck Archive at any time"
       )}
     </ModalConfirmation>
   );

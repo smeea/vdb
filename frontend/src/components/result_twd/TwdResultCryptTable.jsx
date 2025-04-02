@@ -1,8 +1,8 @@
-import { ResultModal, TwdResultCryptTableRow, Warning } from '@/components';
-import { BANNED, CAPACITY, GROUPS, ID } from '@/constants';
-import { useApp } from '@/context';
-import { useDeckCrypt, useModalCardController } from '@/hooks';
-import { countCards, countTotalCost } from '@/utils';
+import { ResultModal, TwdResultCryptTableRow, Warning } from "@/components";
+import { BANNED, CAPACITY, GROUPS, ID } from "@/constants";
+import { useApp } from "@/context";
+import { useDeckCrypt, useModalCardController } from "@/hooks";
+import { countCards, countTotalCost } from "@/utils";
 
 const TwdResultCryptTable = ({ crypt }) => {
   const { cryptDeckSort, setShowFloatingButtons, isDesktop } = useApp();
@@ -35,7 +35,7 @@ const TwdResultCryptTable = ({ crypt }) => {
 
   return (
     <div>
-      <div className="text-fgSecondary dark:text-fgPrimaryDark flex h-[30px] items-center justify-between gap-2 px-1 font-bold">
+      <div className="flex h-[30px] items-center justify-between gap-2 px-1 font-bold text-fgSecondary dark:text-fgPrimaryDark">
         <div className="flex">
           Crypt [{cryptTotal}] {cryptGroups && <>G{cryptGroups}</>}
         </div>
@@ -45,7 +45,7 @@ const TwdResultCryptTable = ({ crypt }) => {
         </div>
         <div title="Average capacity">~{cryptAvg}</div>
       </div>
-      <table className="border-bgSecondary dark:border-bgSecondaryDark border-x">
+      <table className="border-bgSecondary border-x dark:border-bgSecondaryDark">
         <tbody>
           {sortedCards.map((card) => {
             return (

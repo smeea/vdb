@@ -1,5 +1,5 @@
-import { ButtonGroup } from '@/components';
-import { GROUP } from '@/constants';
+import { ButtonGroup } from "@/components";
+import { GROUP } from "@/constants";
 
 const CryptSearchFormGroup = ({ value, onChange }) => {
   const name = GROUP;
@@ -8,7 +8,7 @@ const CryptSearchFormGroup = ({ value, onChange }) => {
   return (
     <div className="flex items-center">
       <div className="w-1/4">
-        <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">Group:</div>
+        <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Group:</div>
       </div>
       <div className="flex w-3/4 justify-end">
         {options.map((i) => {

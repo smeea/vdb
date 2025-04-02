@@ -4,22 +4,22 @@ import {
   SearchFormButtonAddText,
   SearchFormButtonDel,
   SearchFormButtonLogicToggle,
-} from '@/components';
-import { IN, LABEL, LOGIC, NAME, REGEX, TEXT, VALUE } from '@/constants';
+} from "@/components";
+import { IN, LABEL, LOGIC, NAME, REGEX, TEXT, VALUE } from "@/constants";
 
 const SearchAdditionalFormsText = ({ value, onChange, onChangeOptions, searchForm }) => {
   const options = [
     {
       [VALUE]: NAME,
-      [LABEL]: 'Only in Name',
+      [LABEL]: "Only in Name",
     },
     {
       [VALUE]: TEXT,
-      [LABEL]: 'Only in Text',
+      [LABEL]: "Only in Text",
     },
     {
       [VALUE]: REGEX,
-      [LABEL]: 'Regex',
+      [LABEL]: "Regex",
     },
   ];
 

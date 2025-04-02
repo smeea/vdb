@@ -1,11 +1,11 @@
-import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
+import setsAndPrecons from "@/assets/data/setsAndPrecons.json";
 import {
   Checkbox,
   SearchAdditionalForms,
   SearchFormButtonAdd,
   SearchFormButtonDel,
   Select,
-} from '@/components';
+} from "@/components";
 import {
   AGE,
   ANY,
@@ -25,8 +25,8 @@ import {
   REPRINT,
   SET,
   TITLE,
-} from '@/constants';
-import { useApp } from '@/context';
+} from "@/constants";
+import { useApp } from "@/context";
 
 const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
   const { playtestMode, isMobile } = useApp();
@@ -91,7 +91,7 @@ const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
     <div className="flex flex-col gap-1">
       <div className="flex items-center">
         <div className="flex w-1/4 items-center justify-between">
-          <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">Set:</div>
+          <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Set:</div>
           {value.value[0] !== ANY && (
             <div className="flex justify-end gap-1 px-1">
               {value.value.length === 1 ? (
@@ -130,23 +130,23 @@ const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
           {[
             {
               value: OR_NEWER,
-              label: 'Or Newer',
-              title: 'Printed in selected set or any newer (can be in older sets too)',
+              label: "Or Newer",
+              title: "Printed in selected set or any newer (can be in older sets too)",
             },
             {
               value: OR_OLDER,
-              label: 'Or Older',
-              title: 'Printed in selected set or any older (can be in newer sets too)',
+              label: "Or Older",
+              title: "Printed in selected set or any older (can be in newer sets too)",
             },
             {
               value: NOT_NEWER,
-              label: 'Not Newer',
-              title: 'Not printed in newer set',
+              label: "Not Newer",
+              title: "Not printed in newer set",
             },
             {
               value: NOT_OLDER,
-              label: 'Not Older',
-              title: 'Not printed in older set',
+              label: "Not Older",
+              title: "Not printed in older set",
             },
           ].map((i) => {
             return (
@@ -173,18 +173,18 @@ const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
           {[
             {
               value: ONLY,
-              label: 'Only In',
-              title: 'Printed only in selected Set',
+              label: "Only In",
+              title: "Printed only in selected Set",
             },
             {
               value: FIRST,
-              label: 'First Print',
-              title: 'Printed first in selected Set',
+              label: "First Print",
+              title: "Printed first in selected Set",
             },
             {
               value: REPRINT,
-              label: 'Reprint',
-              title: 'Reprinted in selected Set',
+              label: "Reprint",
+              title: "Reprinted in selected Set",
             },
           ].map((i) => {
             return (

@@ -1,8 +1,8 @@
-import { RadioGroup } from '@headlessui/react';
-import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router';
-import { twMerge } from 'tailwind-merge';
-import Check2 from '@icons/check2.svg?react';
+import { RadioGroup } from "@headlessui/react";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router";
+import { twMerge } from "tailwind-merge";
+import Check2 from "@icons/check2.svg?react";
 import {
   Button,
   DeckBranchSelect,
@@ -11,15 +11,15 @@ import {
   DeckSelectRecent,
   Input,
   Radio,
-} from '@/components';
-import { DECKID, FROM, IS_BRANCHES, MY, PRECONS, RECENT, URL } from '@/constants';
-import { useApp } from '@/context';
+} from "@/components";
+import { DECKID, FROM, IS_BRANCHES, MY, PRECONS, RECENT, URL } from "@/constants";
+import { useApp } from "@/context";
 
 const DiffSelectDeck = ({ decks, deck, deckidFrom, deckidTo, target, title }) => {
   const { recentDecks, inventoryMode, username, isMobile } = useApp();
   const deckid = target === FROM ? deckidFrom : deckidTo;
   const navigate = useNavigate();
-  const [url, setUrl] = useState('');
+  const [url, setUrl] = useState("");
   const [source, setSource] = useState(`${FROM}-${MY}`);
 
   const handleSelect = (e) => {
@@ -36,7 +36,7 @@ const DiffSelectDeck = ({ decks, deck, deckidFrom, deckidTo, target, title }) =>
 
   const handleUrlSubmit = (e) => {
     e.preventDefault();
-    const newId = url.replace(`${import.meta.env.VITE_BASE_URL}/decks/`, '');
+    const newId = url.replace(`${import.meta.env.VITE_BASE_URL}/decks/`, "");
 
     if (target === FROM) {
       navigate(`/diff/${newId}/${deckidTo}`);
@@ -46,7 +46,7 @@ const DiffSelectDeck = ({ decks, deck, deckidFrom, deckidTo, target, title }) =>
   };
 
   useEffect(() => {
-    if (deckid?.includes(':')) {
+    if (deckid?.includes(":")) {
       setSource(`${target}-${PRECONS}`);
     } else if (decks?.[deckid]) {
       setSource(`${target}-${MY}`);
@@ -57,7 +57,7 @@ const DiffSelectDeck = ({ decks, deck, deckidFrom, deckidTo, target, title }) =>
 
   return (
     <div className="flex flex-col gap-1 sm:gap-2">
-      <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">{title}</div>
+      <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">{title}</div>
       {source === `${target}-${URL}` ? (
         <form name={target} onSubmit={handleUrlSubmit} className="min-w-[270px]">
           <div className="flex">
@@ -75,9 +75,9 @@ const DiffSelectDeck = ({ decks, deck, deckidFrom, deckidTo, target, title }) =>
         </form>
       ) : (
         <div
-          className={twMerge('z-20 flex gap-1', !inventoryMode && isMobile && 'justify-between')}
+          className={twMerge("z-20 flex gap-1", !inventoryMode && isMobile && "justify-between")}
         >
-          <div className={deck?.[IS_BRANCHES] && source === `${target}-${MY}` ? 'w-3/4' : 'w-full'}>
+          <div className={deck?.[IS_BRANCHES] && source === `${target}-${MY}` ? "w-3/4" : "w-full"}>
             {source === `${target}-${MY}` && decks ? (
               <DeckSelectMy handleSelect={handleSelect} deckid={deck?.[DECKID]} />
             ) : source === `${target}-${RECENT}` ? (
@@ -101,7 +101,7 @@ const DiffSelectDeck = ({ decks, deck, deckidFrom, deckidTo, target, title }) =>
           className="flex gap-4 sm:gap-6"
         >
           {username && decks && Object.keys(decks).length > 0 && (
-            <Radio value={`${target}-${MY}`} label={isMobile ? 'My' : 'My Decks'} />
+            <Radio value={`${target}-${MY}`} label={isMobile ? "My" : "My Decks"} />
           )}
           <Radio value={`${target}-${PRECONS}`} label="Precons" />
           {recentDecks.length > 0 && <Radio value={`${target}-${RECENT}`} label="Recent" />}

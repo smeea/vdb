@@ -1,17 +1,17 @@
-import dayjs from 'dayjs';
-import { useSnapshot } from 'valtio';
-import { useRef } from 'react';
-import Download from '@icons/download.svg?react';
-import Upload from '@icons/upload.svg?react';
+import dayjs from "dayjs";
+import { useSnapshot } from "valtio";
+import { useRef } from "react";
+import Download from "@icons/download.svg?react";
+import Upload from "@icons/upload.svg?react";
 import {
   AccountLimitedCardSelection,
   AccountLimitedSetSelection,
   AccountLimitedUrlButton,
   ButtonIconed,
   Modal,
-} from '@/components';
-import { ALLOWED, BANNED, CRYPT, LIBRARY, SETS } from '@/constants';
-import { limitedFullStore } from '@/context';
+} from "@/components";
+import { ALLOWED, BANNED, CRYPT, LIBRARY, SETS } from "@/constants";
+import { limitedFullStore } from "@/context";
 
 const AccountLimitedModal = ({ setShow, setFormat }) => {
   const limitedState = useSnapshot(limitedFullStore);
@@ -57,11 +57,11 @@ const AccountLimitedModal = ({ setShow, setFormat }) => {
   });
 
   const exportFormat = async () => {
-    const { saveAs } = await import('file-saver');
-    const fileName = `Limited Format [${dayjs().format('YYYY-MM-DD')}].txt`;
-    const formatText = JSON.stringify(minifiedFormat, null, '  ');
+    const { saveAs } = await import("file-saver");
+    const fileName = `Limited Format [${dayjs().format("YYYY-MM-DD")}].txt`;
+    const formatText = JSON.stringify(minifiedFormat, null, "  ");
     const file = new File([formatText], fileName, {
-      type: 'text/plain;charset=utf-8',
+      type: "text/plain;charset=utf-8",
     });
     saveAs(file, fileName);
   };
@@ -74,7 +74,7 @@ const AccountLimitedModal = ({ setShow, setFormat }) => {
         <AccountLimitedCardSelection inBanned />
         <div className="flex justify-end gap-2 max-sm:flex-col">
           <AccountLimitedUrlButton
-            format={JSON.stringify(minifiedFormat, null, '').replace(/\n/g, '')}
+            format={JSON.stringify(minifiedFormat, null, "").replace(/\n/g, "")}
           />
           <ButtonIconed
             onClick={handleFileInputClick}
@@ -96,7 +96,7 @@ const AccountLimitedModal = ({ setShow, setFormat }) => {
         accept=".txt"
         type="file"
         onChange={() => importFormat(fileInput)}
-        style={{ display: 'none' }}
+        style={{ display: "none" }}
       />
     </Modal>
   );

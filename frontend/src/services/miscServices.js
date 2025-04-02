@@ -1,4 +1,4 @@
-import ky from 'ky';
+import ky from "ky";
 
 export const changesLoader = async () => {
   const url = `${import.meta.env.VITE_API_URL}/changelog`;
@@ -7,5 +7,5 @@ export const changesLoader = async () => {
 
 export const pdaToggle = (deckid, isDelete) => {
   const url = `${import.meta.env.VITE_API_URL}/pda/favorite/${deckid}`;
-  return ky(url, { method: isDelete ? 'DELETE' : 'POST' });
+  return ky(url, { method: isDelete ? "DELETE" : "POST" });
 };

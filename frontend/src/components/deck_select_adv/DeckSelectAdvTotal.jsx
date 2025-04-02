@@ -1,8 +1,8 @@
-import { twMerge } from 'tailwind-merge';
-import { useSnapshot } from 'valtio';
-import { DeckSortButton, Header } from '@/components';
-import { DECKS, TAGS } from '@/constants';
-import { deckStore, useApp } from '@/context';
+import { twMerge } from "tailwind-merge";
+import { useSnapshot } from "valtio";
+import { DeckSortButton, Header } from "@/components";
+import { DECKS, TAGS } from "@/constants";
+import { deckStore, useApp } from "@/context";
 
 const DeckSelectAdvTotal = ({ sortMethod, setSortMethod, tagsFilter, setTagsFilter }) => {
   const { isMobile } = useApp();
@@ -32,11 +32,11 @@ const DeckSelectAdvTotal = ({ sortMethod, setSortMethod, tagsFilter, setTagsFilt
   return (
     <Header
       className={twMerge(
-        'sm:space-x-2',
-        isMobile && Object.keys(byTags).length > 10 ? 'block' : 'flex',
+        "sm:space-x-2",
+        isMobile && Object.keys(byTags).length > 10 ? "block" : "flex",
       )}
     >
-      <div className="p-1 font-bold whitespace-nowrap sm:p-2">
+      <div className="whitespace-nowrap p-1 font-bold sm:p-2">
         TOTAL: {Object.keys(decks).length}
       </div>
       <div>
@@ -47,9 +47,9 @@ const DeckSelectAdvTotal = ({ sortMethod, setSortMethod, tagsFilter, setTagsFilt
               <div
                 key={i}
                 onClick={() => handleClick(i)}
-                className="inline-block cursor-pointer px-2 whitespace-nowrap"
+                className="inline-block cursor-pointer whitespace-nowrap px-2"
               >
-                <div className="text-fgSecondary dark:text-fgSecondaryDark inline pr-0.5 font-bold">
+                <div className="inline pr-0.5 font-bold text-fgSecondary dark:text-fgSecondaryDark">
                   {i}:
                 </div>
                 {byTags[i]}

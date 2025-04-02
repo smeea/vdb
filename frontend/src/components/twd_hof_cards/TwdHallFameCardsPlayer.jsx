@@ -1,12 +1,12 @@
-import { DisclosureButton, DisclosurePanel } from '@headlessui/react';
-import { useMemo } from 'react';
-import LightbulbFill from '@icons/lightbulb-fill.svg?react';
+import { DisclosureButton, DisclosurePanel } from "@headlessui/react";
+import { useMemo } from "react";
+import LightbulbFill from "@icons/lightbulb-fill.svg?react";
 import {
   ResultCryptTotal,
   ResultLibraryTotal,
   ResultModal,
   TwdHallFameCardsCard,
-} from '@/components';
+} from "@/components";
 import {
   CAPACITY_MAX_MIN,
   CAPACITY_MIN_MAX,
@@ -20,10 +20,10 @@ import {
   SECT,
   TWD_DATE,
   TYPE,
-} from '@/constants';
-import { useApp } from '@/context';
-import { useModalCardController } from '@/hooks';
-import { cryptSort, librarySort } from '@/utils';
+} from "@/constants";
+import { useApp } from "@/context";
+import { useModalCardController } from "@/hooks";
+import { cryptSort, librarySort } from "@/utils";
 
 const TwdHallFameCardsPlayer = ({ name, cards }) => {
   const {
@@ -62,20 +62,20 @@ const TwdHallFameCardsPlayer = ({ name, cards }) => {
   } = useModalCardController([...cryptSorted, ...librarySorted]);
 
   const cryptSortMethods = {
-    [CAPACITY_MAX_MIN]: 'C↓',
-    [CAPACITY_MIN_MAX]: 'C↑',
-    [CLAN]: 'CL',
-    [GROUP]: 'G',
-    [NAME]: 'N',
-    [SECT]: 'S',
+    [CAPACITY_MAX_MIN]: "C↓",
+    [CAPACITY_MIN_MAX]: "C↑",
+    [CLAN]: "CL",
+    [GROUP]: "G",
+    [NAME]: "N",
+    [SECT]: "S",
   };
 
   const librarySortMethods = {
-    [CLAN_DISCIPLINE]: 'C/D',
-    [COST_MAX_MIN]: 'C↓',
-    [COST_MIN_MAX]: 'C↑',
-    [NAME]: 'N',
-    [TYPE]: 'T',
+    [CLAN_DISCIPLINE]: "C/D",
+    [COST_MAX_MIN]: "C↓",
+    [COST_MIN_MAX]: "C↑",
+    [NAME]: "N",
+    [TYPE]: "T",
   };
 
   let firstCardDate = null;
@@ -86,9 +86,9 @@ const TwdHallFameCardsPlayer = ({ name, cards }) => {
   });
 
   return (
-    <div className="border-borderPrimary bg-bgThird dark:border-borderPrimaryDark dark:bg-bgThirdDark rounded-sm border">
-      <DisclosureButton className="cursor-pointer w-full p-3">
-        <div className="text-fgName dark:text-fgNameDark flex items-center gap-4 px-2">
+    <div className="rounded-sm border border-borderPrimary bg-bgThird dark:border-borderPrimaryDark dark:bg-bgThirdDark">
+      <DisclosureButton className="w-full cursor-pointer p-3">
+        <div className="flex items-center gap-4 px-2 text-fgName dark:text-fgNameDark">
           <div className="flex items-center gap-1">
             <div>{Object.keys(cards).length}</div>
             <LightbulbFill height="13" width="13" viewBox="0 0 18 18" />
@@ -104,11 +104,11 @@ const TwdHallFameCardsPlayer = ({ name, cards }) => {
                 : `${firstCardDate.slice(0, 4)} - ${lastCardDate.slice(0, 4)}`}
             </div>
             <div className="flex whitespace-nowrap">
-              {isMobile ? 'C:' : 'Crypt: '}
+              {isMobile ? "C:" : "Crypt: "}
               {cryptSorted.length}
             </div>
             <div className="flex whitespace-nowrap">
-              {isMobile ? 'L:' : 'Library: '}
+              {isMobile ? "L:" : "Library: "}
               {librarySorted.length}
             </div>
           </div>
@@ -122,8 +122,8 @@ const TwdHallFameCardsPlayer = ({ name, cards }) => {
           setSortMethod={changeCryptSearchSort}
           inHoF={true}
         />
-        <table className="border-bgSecondary dark:border-bgSecondaryDark sm:border">
-          <thead className="bg-bgSecondary text-fgSecondary dark:bg-bgSecondaryDark dark:text-fgSecondaryDark font-bold">
+        <table className="border-bgSecondary sm:border dark:border-bgSecondaryDark">
+          <thead className="bg-bgSecondary font-bold text-fgSecondary dark:bg-bgSecondaryDark dark:text-fgSecondaryDark">
             <tr>
               <th />
               <th className="max-sm:hidden" />
@@ -132,7 +132,7 @@ const TwdHallFameCardsPlayer = ({ name, cards }) => {
               <th className="max-lg:hidden" />
               <th className="max-lg:hidden" />
               <th className="max-lg:hidden" />
-              <th className="max-sm:hidden text-center font-bold" title="First Print Date">
+              <th className="text-center font-bold max-sm:hidden" title="First Print Date">
                 Print
               </th>
               <th className="text-center font-bold" title="First TWD Appearance Date">
@@ -164,7 +164,7 @@ const TwdHallFameCardsPlayer = ({ name, cards }) => {
           setSortMethod={changeLibrarySearchSort}
           inHoF
         />
-        <table className="border-bgSecondary dark:border-bgSecondaryDark w-full sm:border">
+        <table className="w-full border-bgSecondary sm:border dark:border-bgSecondaryDark">
           <thead className="bg-bgSecondary text-fgSecondary dark:bg-bgSecondaryDark dark:text-fgSecondaryDark">
             <tr>
               <th />

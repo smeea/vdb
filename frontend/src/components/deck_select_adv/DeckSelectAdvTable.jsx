@@ -1,7 +1,7 @@
-import { useMemo, useState } from 'react';
-import { DeckSelectAdvTableHeader, DeckSelectAdvTableRow, ResultClanImage } from '@/components';
-import { ANY, CRYPT, DECKID, INVENTORY_TYPE, LIBRARY, MASTER, NAME, TAGS } from '@/constants';
-import { decksSort, getClan } from '@/utils';
+import { useMemo, useState } from "react";
+import { DeckSelectAdvTableHeader, DeckSelectAdvTableRow, ResultClanImage } from "@/components";
+import { ANY, CRYPT, DECKID, INVENTORY_TYPE, LIBRARY, MASTER, NAME, TAGS } from "@/constants";
+import { decksSort, getClan } from "@/utils";
 
 const DeckSelectAdvTable = ({
   allTagsOptions,
@@ -19,7 +19,7 @@ const DeckSelectAdvTable = ({
 }) => {
   const [invFilter, setInvFilter] = useState(ANY);
   const [revFilter, setRevFilter] = useState(false);
-  const [nameFilter, setNameFilter] = useState('');
+  const [nameFilter, setNameFilter] = useState("");
   const [clanFilter, setClanFilter] = useState(ANY);
 
   const allDecksClans = [];
@@ -34,11 +34,11 @@ const DeckSelectAdvTable = ({
   const clanOptions = [
     {
       value: ANY,
-      label: 'ANY',
+      label: "ANY",
     },
     {
-      value: '',
-      label: 'NONE',
+      value: "",
+      label: "NONE",
     },
   ];
 
@@ -52,14 +52,14 @@ const DeckSelectAdvTable = ({
   const isCardInDeck = (deck, query) => {
     const normalizedQuery = query
       .toLowerCase()
-      .normalize('NFD')
-      .replace(/\p{Diacritic}/gu, '');
+      .normalize("NFD")
+      .replace(/\p{Diacritic}/gu, "");
 
     return Object.values({ ...deck[CRYPT], ...deck[LIBRARY] }).some((card) => {
       const normalizedCardName = card.c[NAME]
         .toLowerCase()
-        .normalize('NFD')
-        .replace(/\p{Diacritic}/gu, '');
+        .normalize("NFD")
+        .replace(/\p{Diacritic}/gu, "");
 
       return normalizedCardName.includes(normalizedQuery);
     });
@@ -68,12 +68,12 @@ const DeckSelectAdvTable = ({
   const isDeckNameMatch = (deck, query) => {
     const normalizedNameFilter = query
       .toLowerCase()
-      .normalize('NFD')
-      .replace(/\p{Diacritic}/gu, '');
+      .normalize("NFD")
+      .replace(/\p{Diacritic}/gu, "");
     const normalizedDeckName = deck[NAME]
       .toLowerCase()
-      .normalize('NFD')
-      .replace(/\p{Diacritic}/gu, '');
+      .normalize("NFD")
+      .replace(/\p{Diacritic}/gu, "");
 
     return normalizedDeckName.includes(normalizedNameFilter);
   };
@@ -88,7 +88,7 @@ const DeckSelectAdvTable = ({
 
       if (clanFilter !== ANY) {
         filtered = filtered.filter((deck) => {
-          const clan = getClan(deck[CRYPT]) || '';
+          const clan = getClan(deck[CRYPT]) || "";
           return clan.toLowerCase() === clanFilter;
         });
       }
@@ -144,7 +144,7 @@ const DeckSelectAdvTable = ({
   };
 
   return (
-    <table className="border-bgSecondary dark:border-bgSecondaryDark sm:border">
+    <table className="border-bgSecondary sm:border dark:border-bgSecondaryDark">
       <DeckSelectAdvTableHeader
         allTagsOptions={allTagsOptions}
         clanOptions={clanOptions}

@@ -1,14 +1,14 @@
-import { useSnapshot } from 'valtio';
+import { useSnapshot } from "valtio";
 import {
   Checkbox,
   DeckCardQuantityTd,
   DeckProxyTableSetSelect,
   ResultCryptTableRowCommon,
   Tr,
-} from '@/components';
-import { CRYPT, HARD, ID, PRINT, SET, SOFT } from '@/constants';
-import { inventoryStore, useApp, usedStore } from '@/context';
-import { getHardTotal, getSoftMax } from '@/utils';
+} from "@/components";
+import { CRYPT, HARD, ID, PRINT, SET, SOFT } from "@/constants";
+import { inventoryStore, useApp, usedStore } from "@/context";
+import { getHardTotal, getSoftMax } from "@/utils";
 
 const DeckProxyCryptTableRow = ({
   proxySelected,

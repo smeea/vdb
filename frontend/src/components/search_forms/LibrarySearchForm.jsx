@@ -1,6 +1,6 @@
-import { useCallback, useEffect, useState } from 'react';
-import { useSearchParams } from 'react-router';
-import { useSnapshot } from 'valtio';
+import { useCallback, useEffect, useState } from "react";
+import { useSearchParams } from "react-router";
+import { useSnapshot } from "valtio";
 import {
   ButtonFloatClose,
   ButtonFloatSearch,
@@ -17,7 +17,7 @@ import {
   SearchFormPrecon,
   SearchFormSet,
   SearchFormTextAndButtons,
-} from '@/components';
+} from "@/components";
 import {
   AGE,
   ARTIST,
@@ -50,7 +50,7 @@ import {
   TITLE,
   TRAITS,
   TYPE,
-} from '@/constants';
+} from "@/constants";
 import {
   clearSearchForm,
   inventoryStore,
@@ -59,8 +59,8 @@ import {
   setLibraryResults,
   useApp,
   usedStore,
-} from '@/context';
-import { filterLibrary, getIsPlaytest, sanitizeFormState } from '@/utils';
+} from "@/context";
+import { filterLibrary, getIsPlaytest, sanitizeFormState } from "@/utils";
 
 const LibrarySearchForm = () => {
   const {
@@ -80,7 +80,7 @@ const LibrarySearchForm = () => {
   const [error, setError] = useState(false);
   const [preresults, setPreresults] = useState();
   const [searchParams, setSearchParams] = useSearchParams();
-  const query = JSON.parse(searchParams.get('q'));
+  const query = JSON.parse(searchParams.get("q"));
   const SHOW_LIMIT = 400;
 
   useEffect(() => {
@@ -198,7 +198,7 @@ const LibrarySearchForm = () => {
     const sanitizedForm = sanitizeFormState(LIBRARY, searchLibraryForm);
 
     if (Object.entries(sanitizedForm).length === 0) {
-      setError('EMPTY REQUEST');
+      setError("EMPTY REQUEST");
       return;
     }
     const filteredCards = filterLibrary(
@@ -207,7 +207,7 @@ const LibrarySearchForm = () => {
     ).filter((card) => playtestMode || !getIsPlaytest(card[ID]));
 
     if (isMobile && filteredCards.length === 0) {
-      setError('NO CARDS FOUND');
+      setError("NO CARDS FOUND");
       return;
     }
 

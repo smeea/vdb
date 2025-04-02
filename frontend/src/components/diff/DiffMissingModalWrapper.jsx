@@ -1,6 +1,6 @@
-import { DeckMissingModal } from '@/components';
-import { CRYPT, LIBRARY, NAME } from '@/constants';
-import { getDiffMissing } from '@/utils';
+import { DeckMissingModal } from "@/components";
+import { CRYPT, LIBRARY, NAME } from "@/constants";
+import { getDiffMissing } from "@/utils";
 
 const DiffMissingModalWrapper = ({ setShow, deckFrom, deckTo }) => {
   const { missingCrypt, missingLibrary } = getDiffMissing(deckFrom, deckTo);

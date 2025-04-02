@@ -1,4 +1,4 @@
-import { Header, InventoryCryptTable, InventoryFilterForm, SortButton } from '@/components';
+import { Header, InventoryCryptTable, InventoryFilterForm, SortButton } from "@/components";
 import {
   ALL,
   CAPACITY_MAX_MIN,
@@ -8,9 +8,9 @@ import {
   GROUPx,
   NAME,
   QUANTITY,
-} from '@/constants';
-import { useApp } from '@/context';
-import { useInventoryCrypt } from '@/hooks';
+} from "@/constants";
+import { useApp } from "@/context";
+import { useInventoryCrypt } from "@/hooks";
 
 const InventoryCrypt = ({
   compact,
@@ -25,12 +25,12 @@ const InventoryCrypt = ({
 }) => {
   const { cryptInventorySort, changeCryptInventorySort } = useApp();
   const sortMethods = {
-    [NAME]: 'N',
-    [QUANTITY]: 'Q',
-    [CLANx]: 'CL',
-    [GROUPx]: 'G',
-    [CAPACITY_MIN_MAX]: 'C↑',
-    [CAPACITY_MAX_MIN]: 'C↓',
+    [NAME]: "N",
+    [QUANTITY]: "Q",
+    [CLANx]: "CL",
+    [GROUPx]: "G",
+    [CAPACITY_MIN_MAX]: "C↑",
+    [CAPACITY_MAX_MIN]: "C↓",
   };
 
   const { cardsByClan, cardsByClanTotal, cardsByClanUnique, missingByClan, missingByClanTotal } =
@@ -51,7 +51,7 @@ const InventoryCrypt = ({
               byUnique={cardsByClanUnique}
               target={CRYPT}
             />
-            <div className="text-midGray dark:text-midGrayDark flex justify-end font-bold">
+            <div className="flex justify-end font-bold text-midGray dark:text-midGrayDark">
               {missingByClanTotal[clan] ? (
                 <>
                   {missingByClanTotal[clan]} ({Object.values(missingByClan[clan]).length} uniq) miss

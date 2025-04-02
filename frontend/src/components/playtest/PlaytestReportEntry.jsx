@@ -1,8 +1,8 @@
-import EyeFill from '@icons/eye-fill.svg?react';
-import EyeSlashFill from '@icons/eye-slash-fill.svg?react';
-import { Hr, PlaytestScores } from '@/components';
-import { SCORE, TEXT } from '@/constants';
-import { useApp } from '@/context';
+import EyeFill from "@icons/eye-fill.svg?react";
+import EyeSlashFill from "@icons/eye-slash-fill.svg?react";
+import { Hr, PlaytestScores } from "@/components";
+import { SCORE, TEXT } from "@/constants";
+import { useApp } from "@/context";
 
 const Report = ({ id, text, score, isPlayed }) => {
   const { hidePlaytestNames, isMobile } = useApp();
@@ -13,20 +13,20 @@ const Report = ({ id, text, score, isPlayed }) => {
       <div className="flex h-6 w-full items-center justify-between">
         <div
           title={id}
-          className="text-fgName dark:text-fgNameDark print:dark:text-fgName print:max-w-[150px] print:overflow-hidden print:text-ellipsis"
+          className="text-fgName dark:text-fgNameDark print:max-w-[150px] print:overflow-hidden print:text-ellipsis print:dark:text-fgName"
         >
           {!hidePlaytestNames && (
             <>
               &lt;{id.substring(0, maxLength)}
-              {id.length > maxLength && '…'}&gt;
+              {id.length > maxLength && "…"}&gt;
             </>
           )}
         </div>
         <div className="flex items-center justify-end gap-2 sm:gap-4">
           <PlaytestScores value={score} isSmall disabled />
           <div
-            className={isPlayed ? 'print:text-fgPrimary' : 'text-fgRed dark:text-fgRedDark'}
-            title={`Was ${isPlayed ? '' : 'not '}seen in play`}
+            className={isPlayed ? "print:text-fgPrimary" : "text-fgRed dark:text-fgRedDark"}
+            title={`Was ${isPlayed ? "" : "not "}seen in play`}
           >
             {isPlayed ? <EyeFill /> : <EyeSlashFill />}
           </div>
@@ -34,7 +34,7 @@ const Report = ({ id, text, score, isPlayed }) => {
       </div>
       {text && (
         <div className="print:dark:text-fgPrimary">
-          {text.split('\n').map((line, idx) => (
+          {text.split("\n").map((line, idx) => (
             <div key={idx}>{line}</div>
           ))}
         </div>

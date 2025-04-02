@@ -1,8 +1,8 @@
-import { useCallback } from 'react';
-import { ResultLibraryTableRow, ResultModal } from '@/components';
-import { ID } from '@/constants';
-import { useApp } from '@/context';
-import { useModalCardController } from '@/hooks';
+import { useCallback } from "react";
+import { ResultLibraryTableRow, ResultModal } from "@/components";
+import { ID } from "@/constants";
+import { useApp } from "@/context";
+import { useModalCardController } from "@/hooks";
 
 const ResultLibraryTable = ({ resultCards, inLimited }) => {
   const { setShowFloatingButtons, isDesktop } = useApp();
@@ -29,7 +29,7 @@ const ResultLibraryTable = ({ resultCards, inLimited }) => {
 
   return (
     <>
-      <table className="border-bgSecondary dark:border-bgSecondaryDark w-full sm:border">
+      <table className="w-full border-bgSecondary sm:border dark:border-bgSecondaryDark">
         <tbody>
           {resultCards.map((card) => {
             return (

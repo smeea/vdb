@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
-import { useLoaderData, useLocation, useNavigate, useParams, useSearchParams } from 'react-router';
-import { useSnapshot } from 'valtio';
+import { useEffect, useState } from "react";
+import { useLoaderData, useLocation, useNavigate, useParams, useSearchParams } from "react-router";
+import { useSnapshot } from "valtio";
 import {
   ButtonFloatClose,
   ButtonFloatMenu,
@@ -25,7 +25,7 @@ import {
   LoginBlock,
   Modal,
   Seating,
-} from '@/components';
+} from "@/components";
 import {
   AUTHOR,
   BRANCHES,
@@ -44,12 +44,12 @@ import {
   PUBLIC_PARENT,
   SHOW,
   TAGS,
-} from '@/constants';
-import { deckStore, setDeck, useApp } from '@/context';
-import { useDecksTagsAll } from '@/hooks';
-import { getIsEditable, getRestrictions, getTags, parseDeck, parseDeckHash } from '@/utils';
+} from "@/constants";
+import { deckStore, setDeck, useApp } from "@/context";
+import { useDecksTagsAll } from "@/hooks";
+import { getIsEditable, getRestrictions, getTags, parseDeck, parseDeckHash } from "@/utils";
 
-const IS_FROM_URL = 'isFromUrl';
+const IS_FROM_URL = "isFromUrl";
 
 const Decks = () => {
   const {
@@ -93,10 +93,10 @@ const Decks = () => {
     const deckData = await loaderData[DECK].catch((e) => {
       switch (e.response.status) {
         case 400:
-          setError('NO DECK WITH THIS ID');
+          setError("NO DECK WITH THIS ID");
           break;
         default:
-          setError('CONNECTION PROBLEM');
+          setError("CONNECTION PROBLEM");
       }
       setDeck(undefined);
     });
@@ -125,7 +125,7 @@ const Decks = () => {
   };
 
   const handleSelect = (e) => {
-    navigate(`/decks/${e.value.replace(' ', '_')}`);
+    navigate(`/decks/${e.value.replace(" ", "_")}`);
   };
 
   const allTagsOptions = useDecksTagsAll(decks);
@@ -136,9 +136,9 @@ const Decks = () => {
 
       setDeck({
         [DECKID]: DECK,
-        [NAME]: searchParams.get(NAME) ?? '',
-        [AUTHOR]: searchParams.get(AUTHOR) ?? '',
-        [DESCRIPTION]: searchParams.get(DESCRIPTION) ?? '',
+        [NAME]: searchParams.get(NAME) ?? "",
+        [AUTHOR]: searchParams.get(AUTHOR) ?? "",
+        [DESCRIPTION]: searchParams.get(DESCRIPTION) ?? "",
         [CRYPT]: crypt,
         [LIBRARY]: library,
       });
@@ -151,12 +151,12 @@ const Decks = () => {
         if (!deckStore[DECK] || deckStore[DECK][DECKID] !== deckid) {
           if (deckStore[DECKS]?.[deckid]) {
             setDeck(deckStore[DECKS][deckid]);
-          } else if (deckid.includes(':') && preconDecks) {
-            const deckidFixed = deckid.replace('_', ' ');
+          } else if (deckid.includes(":") && preconDecks) {
+            const deckidFixed = deckid.replace("_", " ");
             if (preconDecks[deckidFixed]) {
               setDeck(preconDecks[deckidFixed]);
             } else {
-              setError('NO DECK WITH THIS ID');
+              setError("NO DECK WITH THIS ID");
             }
           } else if (!hash) {
             getDeck();
@@ -223,7 +223,7 @@ const Decks = () => {
           )}
         </FlexGapped>
         <div className="min-w-[175px] max-lg:hidden">
-          <div className="bg-bgPrimary dark:bg-bgPrimaryDark sticky z-20 w-full lg:top-10">
+          <div className="sticky z-20 w-full bg-bgPrimary lg:top-10 dark:bg-bgPrimaryDark">
             <DeckButtons
               deck={deck}
               setQrUrl={setQrUrl}
@@ -248,7 +248,7 @@ const Decks = () => {
       {username && ((decks && Object.keys(decks).length === 0) || !decks) && !deck && (
         <div className="flex min-h-[70vh] place-items-center justify-center max-sm:px-2">
           <div className="flex flex-col items-center justify-center gap-6 sm:basis-1/2">
-            <div className="flex flex-col gap-4 text-center text-lg text-balance">
+            <div className="flex flex-col gap-4 text-balance text-center text-lg">
               You do not have any decks in your collection yet Start by creating new one, import
               from Lackey / Amaranth / Text or browse official preconstructed decks
             </div>

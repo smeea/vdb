@@ -1,10 +1,10 @@
-import { Menu } from '@headlessui/react';
-import { useState } from 'react';
-import { useNavigate } from 'react-router';
-import NodePlusFill from '@icons/node-plus-fill.svg?react';
-import { DeckSelectAdvModal, MenuButton, MenuItem, MenuItems } from '@/components';
-import { useApp } from '@/context';
-import { deckServices } from '@/services';
+import { Menu } from "@headlessui/react";
+import { useState } from "react";
+import { useNavigate } from "react-router";
+import NodePlusFill from "@icons/node-plus-fill.svg?react";
+import { DeckSelectAdvModal, MenuButton, MenuItem, MenuItems } from "@/components";
+import { useApp } from "@/context";
+import { deckServices } from "@/services";
 
 const DeckBranchCreateButton = ({ deck }) => {
   const { isDesktop, setShowFloatingButtons, setShowMenuButtons } = useApp();
@@ -31,7 +31,7 @@ const DeckBranchCreateButton = ({ deck }) => {
         <MenuButton
           title="Create New Revision of the Deck"
           icon={<NodePlusFill width="21" height="21" viewBox="0 0 16 16" />}
-          variant={isDesktop ? 'secondary' : 'primary'}
+          variant={isDesktop ? "secondary" : "primary"}
           text="Add Revision"
         />
         <MenuItems>

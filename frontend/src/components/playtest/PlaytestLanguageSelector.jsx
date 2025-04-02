@@ -1,16 +1,16 @@
-import Globe from '@icons/globe.svg?react';
-import { ConditionalTooltipOrModal, Flag, ListEntry, Select } from '@/components';
-import { EN, ES, FR, LANG, PT } from '@/constants';
-import { useApp } from '@/context';
+import Globe from "@icons/globe.svg?react";
+import { ConditionalTooltipOrModal, Flag, ListEntry, Select } from "@/components";
+import { EN, ES, FR, LANG, PT } from "@/constants";
+import { useApp } from "@/context";
 
 const PlaytestReportLanguageSelector = () => {
   const { isMobile, playtestProfile, updatePlaytestProfile } = useApp();
 
   const languages = {
-    [EN]: 'English',
-    [ES]: 'Spanish',
-    [FR]: 'French',
-    [PT]: 'Portuguese',
+    [EN]: "English",
+    [ES]: "Spanish",
+    [FR]: "French",
+    [PT]: "Portuguese",
   };
 
   const options = Object.keys(languages).map((i) => {

@@ -1,8 +1,8 @@
-import { twMerge } from 'tailwind-merge';
-import PinAngleFill from '@icons/pin-angle-fill.svg?react';
-import Shuffle from '@icons/shuffle.svg?react';
-import { ID, S } from '@/constants';
-import { cardToggleInventoryState } from '@/context';
+import { twMerge } from "tailwind-merge";
+import PinAngleFill from "@icons/pin-angle-fill.svg?react";
+import Shuffle from "@icons/shuffle.svg?react";
+import { ID, S } from "@/constants";
+import { cardToggleInventoryState } from "@/context";
 
 const DeckCardToggleInventoryStateTd = ({ card, isEditable, deckid, inventoryType }) => {
   return (
@@ -10,9 +10,9 @@ const DeckCardToggleInventoryStateTd = ({ card, isEditable, deckid, inventoryTyp
       <div className="relative flex items-center">
         <div
           className={twMerge(
-            'absolute left-[-24px]',
-            !card.i && 'opacity-0',
-            !card.i && isEditable && 'group-hover:opacity-[0.35]',
+            "absolute left-[-24px]",
+            !card.i && "opacity-0",
+            !card.i && isEditable && "group-hover:opacity-[0.35]",
           )}
           onClick={() => isEditable && cardToggleInventoryState(deckid, card.c[ID])}
         >

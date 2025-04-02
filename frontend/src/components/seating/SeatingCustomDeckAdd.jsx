@@ -1,9 +1,9 @@
-import { useState } from 'react';
-import Check2 from '@icons/check2.svg?react';
-import { Button, Input } from '@/components';
+import { useState } from "react";
+import Check2 from "@icons/check2.svg?react";
+import { Button, Input } from "@/components";
 
 const SeatingRandomDeckAddForm = ({ addDeck }) => {
-  const [name, setName] = useState('');
+  const [name, setName] = useState("");
 
   const handleChange = (event) => {
     setName(event.target.value);
@@ -13,7 +13,7 @@ const SeatingRandomDeckAddForm = ({ addDeck }) => {
     event.preventDefault();
     if (name) {
       addDeck(name);
-      setName('');
+      setName("");
     }
   };
 

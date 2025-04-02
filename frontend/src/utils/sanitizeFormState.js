@@ -29,8 +29,8 @@ import {
   TWD,
   TYPE,
   VALUE,
-} from '@/constants';
-import { deepClone } from '@/utils';
+} from "@/constants";
+import { deepClone } from "@/utils";
 
 const sanitizeFormState = (target, state) => {
   const input = deepClone(state);
@@ -50,7 +50,7 @@ const sanitizeFormState = (target, state) => {
       Object.entries(j).forEach(([key, value]) => {
         switch (key) {
           case VALUE:
-            input[i] = input[i].filter((i) => i.value !== '');
+            input[i] = input[i].filter((i) => i.value !== "");
             break;
           default:
             if (input[i][idx] && !value) delete input[i][idx][key];

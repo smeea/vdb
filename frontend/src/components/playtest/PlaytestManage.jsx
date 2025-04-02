@@ -1,10 +1,10 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router';
-import Arrow90DegLeft from '@icons/arrow-90deg-left.svg?react';
-import { ButtonIconed, PlaytestManageAdd, PlaytestManagePlayer } from '@/components';
-import { USERNAME } from '@/constants';
-import { useApp } from '@/context';
-import { useFetch } from '@/hooks';
+import { useState } from "react";
+import { useNavigate } from "react-router";
+import Arrow90DegLeft from "@icons/arrow-90deg-left.svg?react";
+import { ButtonIconed, PlaytestManageAdd, PlaytestManagePlayer } from "@/components";
+import { USERNAME } from "@/constants";
+import { useApp } from "@/context";
+import { useFetch } from "@/hooks";
 
 const PlaytestManage = () => {
   const { isPlaytestAdmin } = useApp();
@@ -23,22 +23,22 @@ const PlaytestManage = () => {
             setNewPlaytesters={setNewPlaytesters}
           />
           <ButtonIconed
-            onClick={() => navigate('/playtest')}
+            onClick={() => navigate("/playtest")}
             title="Back"
             icon={<Arrow90DegLeft />}
             text="Back"
           />
         </div>
-        <table className="border-bgSecondary dark:border-bgSecondaryDark w-full sm:border">
-          <thead className="bg-bgSecondary text-fgSecondary dark:bg-bgSecondaryDark dark:text-fgPrimaryDark h-9">
+        <table className="w-full border-bgSecondary sm:border dark:border-bgSecondaryDark">
+          <thead className="h-9 bg-bgSecondary text-fgSecondary dark:bg-bgSecondaryDark dark:text-fgPrimaryDark">
             <tr>
               <th className="text-center font-bold">Username</th>
               <th />
-              <th className="max-sm:hidden text-center font-bold">Reports</th>
-              <th className="max-sm:hidden text-center font-bold">Last Activity</th>
-              <th className="max-sm:hidden text-center font-bold">Added Date</th>
-              <th className="max-sm:hidden text-center font-bold">Added By</th>
-              <th className="max-sm:hidden text-center font-bold">Liaison</th>
+              <th className="text-center font-bold max-sm:hidden">Reports</th>
+              <th className="text-center font-bold max-sm:hidden">Last Activity</th>
+              <th className="text-center font-bold max-sm:hidden">Added Date</th>
+              <th className="text-center font-bold max-sm:hidden">Added By</th>
+              <th className="text-center font-bold max-sm:hidden">Liaison</th>
             </tr>
           </thead>
           <tbody>

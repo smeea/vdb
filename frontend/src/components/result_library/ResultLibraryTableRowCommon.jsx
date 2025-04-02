@@ -1,4 +1,4 @@
-import { twMerge } from 'tailwind-merge';
+import { twMerge } from "tailwind-merge";
 import {
   CardPopover,
   ConditionalTooltip,
@@ -7,9 +7,9 @@ import {
   ResultLibraryTypeImage,
   ResultMiscImage,
   ResultName,
-} from '@/components';
-import { BLOOD, BURN, TRIFLE, TYPE } from '@/constants';
-import { useApp } from '@/context';
+} from "@/components";
+import { BLOOD, BURN, TRIFLE, TYPE } from "@/constants";
+import { useApp } from "@/context";
 
 const Type = ({ card, handleClick }) => {
   return (
@@ -24,7 +24,7 @@ const Type = ({ card, handleClick }) => {
 const Cost = ({ card, handleClick }) => {
   return (
     <td className="min-w-[25px] sm:min-w-[30px]" onClick={handleClick}>
-      <div className={twMerge(card[BLOOD] && 'pb-1.5', 'flex justify-center')}>
+      <div className={twMerge(card[BLOOD] && "pb-1.5", "flex justify-center")}>
         <ResultLibraryCost card={card} />
       </div>
     </td>
@@ -80,11 +80,7 @@ const ResultLibraryTableRowCommon = ({
     <>
       {inDeck ? (
         <>
-          <Name
-            card={card}
-            handleClick={onClick}
-            shouldShowModal={shouldShowModal}
-          />
+          <Name card={card} handleClick={onClick} shouldShowModal={shouldShowModal} />
           {(!inSearch || !isNarrow) && <Cost card={card} handleClick={onClick} />}
           <ResultLibraryTableRowReqClanDis card={card} handleClick={onClick} />
           {(!inSearch || !isNarrow) && <BurnTrifle card={card} handleClick={onClick} />}
@@ -94,11 +90,7 @@ const ResultLibraryTableRowCommon = ({
           <Cost card={card} handleClick={onClick} />
           <Type card={card} handleClick={onClick} />
           <ResultLibraryTableRowReqClanDis card={card} handleClick={onClick} />
-          <Name
-            card={card}
-            handleClick={onClick}
-            shouldShowModal={shouldShowModal}
-          />
+          <Name card={card} handleClick={onClick} shouldShowModal={shouldShowModal} />
           {!noBurn && <BurnTrifle card={card} handleClick={onClick} />}
         </>
       )}

@@ -1,11 +1,11 @@
-import { Menu } from '@headlessui/react';
-import { useState } from 'react';
-import Link45Deg from '@icons/link-45deg.svg?react';
-import { MenuButton, MenuItem, MenuItems } from '@/components';
-import { DECK, DECKID } from '@/constants';
-import { useApp } from '@/context';
-import { deckServices } from '@/services';
-import { getDeckInUrl } from '@/utils';
+import { Menu } from "@headlessui/react";
+import { useState } from "react";
+import Link45Deg from "@icons/link-45deg.svg?react";
+import { MenuButton, MenuItem, MenuItems } from "@/components";
+import { DECK, DECKID } from "@/constants";
+import { useApp } from "@/context";
+import { deckServices } from "@/services";
+import { getDeckInUrl } from "@/utils";
 
 const DeckCopyUrlButton = ({ deck, noText, setQrUrl, className }) => {
   const { isDesktop, setShowMenuButtons, setShowFloatingButtons } = useApp();
@@ -21,13 +21,13 @@ const DeckCopyUrlButton = ({ deck, noText, setQrUrl, className }) => {
   };
 
   const handleStandard = () => {
-    const url = `${import.meta.env.VITE_BASE_URL}/decks/${deck[DECKID].replace(' ', '_')}`;
+    const url = `${import.meta.env.VITE_BASE_URL}/decks/${deck[DECKID].replace(" ", "_")}`;
     navigator.clipboard.writeText(url);
     handleSuccess();
   };
 
   const handleStandardQr = () => {
-    const url = `${import.meta.env.VITE_BASE_URL}/decks/${deck[DECKID].replace(' ', '_')}`;
+    const url = `${import.meta.env.VITE_BASE_URL}/decks/${deck[DECKID].replace(" ", "_")}`;
     setShowMenuButtons(false);
     setShowFloatingButtons(false);
     setQrUrl(url);
@@ -47,11 +47,11 @@ const DeckCopyUrlButton = ({ deck, noText, setQrUrl, className }) => {
   };
 
   const handleSnapshot = () => {
-    if (typeof ClipboardItem === 'function' && !!navigator.clipboard.write) {
+    if (typeof ClipboardItem === "function" && !!navigator.clipboard.write) {
       const url = new ClipboardItem({
-        'text/plain': deckServices.deckSnapshot(deck).then((deckid) => {
+        "text/plain": deckServices.deckSnapshot(deck).then((deckid) => {
           return new Blob([`${import.meta.env.VITE_BASE_URL}/decks/${deckid}`], {
-            type: 'text/plain',
+            type: "text/plain",
           });
         }),
       });
@@ -71,8 +71,8 @@ const DeckCopyUrlButton = ({ deck, noText, setQrUrl, className }) => {
         className={className}
         title="Copy URL"
         icon={<Link45Deg width={noText ? 19 : 21} height={noText ? 19 : 21} viewBox="0 0 15 15" />}
-        variant={success ? 'success' : noText || !isDesktop ? 'primary' : 'secondary'}
-        text={noText ? null : success ? 'Copied' : 'Copy URL'}
+        variant={success ? "success" : noText || !isDesktop ? "primary" : "secondary"}
+        text={noText ? null : success ? "Copied" : "Copy URL"}
       />
       <MenuItems divided>
         {deck[DECKID] !== DECK && (
@@ -90,7 +90,7 @@ const DeckCopyUrlButton = ({ deck, noText, setQrUrl, className }) => {
         )}
         {(deck[DECKID].length === 9 || deck[DECKID] === DECK) && (
           <div>
-            <div className="text-midGray dark:text-midGrayDark px-3 pt-2 text-sm">
+            <div className="px-3 pt-2 text-midGray text-sm dark:text-midGrayDark">
               Non-modifiable:
             </div>
             <MenuItem

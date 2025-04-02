@@ -1,11 +1,11 @@
-import { twMerge } from 'tailwind-merge';
-import { useSnapshot } from 'valtio';
-import ArchiveFill from '@icons/archive-fill.svg?react';
-import CalculatorFill from '@icons/calculator-fill.svg?react';
-import { InventoryText, UsedDescription } from '@/components';
-import { CRYPT, DECKS, HARD, ID, LIBRARY, SOFT } from '@/constants';
-import { deckStore, inventoryStore, usedStore } from '@/context';
-import { getHardTotal, getSoftMax } from '@/utils';
+import { twMerge } from "tailwind-merge";
+import { useSnapshot } from "valtio";
+import ArchiveFill from "@icons/archive-fill.svg?react";
+import CalculatorFill from "@icons/calculator-fill.svg?react";
+import { InventoryText, UsedDescription } from "@/components";
+import { CRYPT, DECKS, HARD, ID, LIBRARY, SOFT } from "@/constants";
+import { deckStore, inventoryStore, usedStore } from "@/context";
+import { getHardTotal, getSoftMax } from "@/utils";
 
 const ResultLayoutTextInventory = ({ card, inPopover, setIsHotkeysDisabled }) => {
   const decks = useSnapshot(deckStore)[DECKS];
@@ -20,7 +20,7 @@ const ResultLayoutTextInventory = ({ card, inPopover, setIsHotkeysDisabled }) =>
 
   return (
     <div className="flex flex-col gap-1.5">
-      <div className={twMerge('flex gap-1.5', inPopover ? 'flex-col' : 'max-md:flex-col')}>
+      <div className={twMerge("flex gap-1.5", inPopover ? "flex-col" : "max-md:flex-col")}>
         <div className="flex basis-full flex-col gap-0.5 md:basis-1/3">
           <div className="flex items-center gap-1.5">
             <div className="opacity-40">

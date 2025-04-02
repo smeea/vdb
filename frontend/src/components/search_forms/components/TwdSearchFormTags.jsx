@@ -1,4 +1,4 @@
-import { Button, Checkbox } from '@/components';
+import { Button, Checkbox } from "@/components";
 import {
   ACCEL,
   ALLY,
@@ -11,7 +11,7 @@ import {
   SWARM,
   TAGS,
   VOTE,
-} from '@/constants';
+} from "@/constants";
 
 const TagCheckbox = ({ i, value, onChange }) => {
   const handleCheckbox = (e) => {
@@ -33,7 +33,7 @@ const TagCheckbox = ({ i, value, onChange }) => {
         title={`Toggle NOT ${i[1]}`}
         noPadding
       >
-        {value[i[0]] === null ? '!' : ' '}
+        {value[i[0]] === null ? "!" : " "}
       </Button>
       <Checkbox
         name={TAGS}
@@ -49,32 +49,32 @@ const TagCheckbox = ({ i, value, onChange }) => {
 const TwdSearchFormTags = ({ value, onChange }) => {
   return (
     <div className="flex flex-col gap-1">
-      <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">Tags:</div>
+      <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Tags:</div>
       <div className="flex gap-4">
         <div className="flex basis-1/3 flex-col gap-0.5">
           {[
-            [ACCEL, 'Acceleration'],
-            [ALLY, 'Ally'],
-            [BLEED, 'Bleed'],
-            [BLOCK, 'Block'],
+            [ACCEL, "Acceleration"],
+            [ALLY, "Ally"],
+            [BLEED, "Bleed"],
+            [BLOCK, "Block"],
           ].map((i) => (
             <TagCheckbox key={i[0]} i={i} value={value} onChange={onChange} />
           ))}
         </div>
         <div className="flex basis-1/3 flex-col gap-0.5">
           {[
-            [COMBAT, 'Combat'],
-            [MMPA, 'MMPA'],
-            [RUSH, 'Rush'],
+            [COMBAT, "Combat"],
+            [MMPA, "MMPA"],
+            [RUSH, "Rush"],
           ].map((i) => (
             <TagCheckbox key={i[0]} i={i} value={value} onChange={onChange} />
           ))}
         </div>
         <div className="flex basis-1/3 flex-col gap-0.5">
           {[
-            [STEALTH, 'Stealth'],
-            [SWARM, 'Swarm'],
-            [VOTE, 'Vote'],
+            [STEALTH, "Stealth"],
+            [SWARM, "Swarm"],
+            [VOTE, "Vote"],
           ].map((i) => (
             <TagCheckbox key={i[0]} i={i} value={value} onChange={onChange} />
           ))}

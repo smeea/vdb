@@ -1,4 +1,4 @@
-import { twMerge } from 'tailwind-merge';
+import { twMerge } from "tailwind-merge";
 import {
   ButtonCloseModal,
   CardPopover,
@@ -14,7 +14,7 @@ import {
   ResultName,
   ResultNameAka,
   ResultPathImage,
-} from '@/components';
+} from "@/components";
 import {
   ADV,
   AKA,
@@ -27,9 +27,9 @@ import {
   PLAYTEST,
   SECT,
   TITLE,
-} from '@/constants';
-import { useApp } from '@/context';
-import { getLegality } from '@/utils';
+} from "@/constants";
+import { useApp } from "@/context";
+import { getLegality } from "@/utils";
 
 const ResultCryptLayoutText = ({ card, setCard, handleClose, noClose, inPopover }) => {
   const { isNarrow, isMobile, cryptCardBase } = useApp();
@@ -39,15 +39,15 @@ const ResultCryptLayoutText = ({ card, setCard, handleClose, noClose, inPopover 
     <div className="flex flex-col gap-3">
       <div
         className={twMerge(
-          'flex justify-between gap-3 whitespace-nowrap',
-          card[AKA] ? 'items-start' : 'items-center',
+          "flex justify-between gap-3 whitespace-nowrap",
+          card[AKA] ? "items-start" : "items-center",
         )}
       >
         <div className="flex items-center justify-between">
           <div
             className={twMerge(
-              (isMobile || inPopover) && 'flex-col',
-              'flex justify-between gap-1 whitespace-nowrap sm:gap-3',
+              (isMobile || inPopover) && "flex-col",
+              "flex justify-between gap-1 whitespace-nowrap sm:gap-3",
             )}
           >
             <div className="flex items-center justify-between gap-2 whitespace-nowrap">
@@ -62,7 +62,7 @@ const ResultCryptLayoutText = ({ card, setCard, handleClose, noClose, inPopover 
                       noPadding
                     >
                       <div
-                        className="text-fgSecondary dark:text-fgSecondaryDark inline"
+                        className="inline text-fgSecondary dark:text-fgSecondaryDark"
                         onClick={() => setCard(cryptCardBase[card[ADV][1]])}
                       >
                         {inPopover ? (
@@ -83,7 +83,7 @@ const ResultCryptLayoutText = ({ card, setCard, handleClose, noClose, inPopover 
                           </>
                         ) : (
                           <div className="cursor-pointer">
-                            [see {card[ADV][0] ? 'Base' : 'Adv'}]
+                            [see {card[ADV][0] ? "Base" : "Adv"}]
                           </div>
                         )}
                       </div>
@@ -100,8 +100,8 @@ const ResultCryptLayoutText = ({ card, setCard, handleClose, noClose, inPopover 
           <div
             className={
               noClose || inPopover || isNarrow
-                ? 'hidden max-h-0 max-w-0 opacity-0'
-                : 'flex justify-center'
+                ? "hidden max-h-0 max-w-0 opacity-0"
+                : "flex justify-center"
             }
           >
             <ButtonCloseModal handleClick={handleClose} />

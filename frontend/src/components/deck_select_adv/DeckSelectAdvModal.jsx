@@ -1,9 +1,9 @@
-import { Menu } from '@headlessui/react';
-import { useState } from 'react';
-import { useNavigate, useParams } from 'react-router';
-import { useSnapshot } from 'valtio';
-import Download from '@icons/download.svg?react';
-import TrashFill from '@icons/trash-fill.svg?react';
+import { Menu } from "@headlessui/react";
+import { useState } from "react";
+import { useNavigate, useParams } from "react-router";
+import { useSnapshot } from "valtio";
+import Download from "@icons/download.svg?react";
+import TrashFill from "@icons/trash-fill.svg?react";
 import {
   ButtonIconed,
   DeckSelectAdvTable,
@@ -14,11 +14,11 @@ import {
   MenuItems,
   Modal,
   ModalConfirmation,
-} from '@/components';
-import { DECKID, DECKS, JOL, LACKEY, NAME, TEXT, XLSX } from '@/constants';
-import { deckStore, useApp } from '@/context';
-import { useDecksTagsAll } from '@/hooks';
-import { deckServices } from '@/services';
+} from "@/components";
+import { DECKID, DECKS, JOL, LACKEY, NAME, TEXT, XLSX } from "@/constants";
+import { deckStore, useApp } from "@/context";
+import { useDecksTagsAll } from "@/hooks";
+import { deckServices } from "@/services";
 
 const DeckSelectAdvModal = ({ onClick, setShow, short }) => {
   const { isMobile, setShowMenuButtons, setShowFloatingButtons } = useApp();
@@ -55,7 +55,7 @@ const DeckSelectAdvModal = ({ onClick, setShow, short }) => {
       .forEach((deckid) => {
         const deck = decks[deckid];
         deckServices.deckDelete(deck).then(() => {
-          if (deckid === activeDeckid) navigate('/decks');
+          if (deckid === activeDeckid) navigate("/decks");
         });
       });
 
@@ -66,7 +66,7 @@ const DeckSelectAdvModal = ({ onClick, setShow, short }) => {
     <Modal
       noPadding={isMobile}
       handleClose={handleClose}
-      size={short ? 'sm' : 'xl'}
+      size={short ? "sm" : "xl"}
       title="Select Deck"
     >
       <FlexGapped className="flex-col">

@@ -1,14 +1,14 @@
-import dayjs from 'dayjs';
-import { Select } from '@/components';
-import { ANY, DATE, FROM, TO } from '@/constants';
+import dayjs from "dayjs";
+import { Select } from "@/components";
+import { ANY, DATE, FROM, TO } from "@/constants";
 
 const TwdSearchFormDate = ({ inPda, value, onChange }) => {
   const name = DATE;
-  const currentYear = dayjs().format('YYYY');
+  const currentYear = dayjs().format("YYYY");
   const TWD_START = 1997;
   const PDA_START = 2022;
 
-  const years = ['ANY'];
+  const years = ["ANY"];
   if (inPda) {
     for (let i = currentYear; i >= PDA_START; i--) {
       years.push(i.toString());
@@ -54,7 +54,7 @@ const TwdSearchFormDate = ({ inPda, value, onChange }) => {
   return (
     <div className="flex items-center gap-1">
       <div className="w-1/4">
-        <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">Year:</div>
+        <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Year:</div>
       </div>
       <div className="flex w-3/4 items-center gap-1">
         <div className="w-full">

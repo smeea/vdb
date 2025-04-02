@@ -1,4 +1,4 @@
-import { twMerge } from 'tailwind-merge';
+import { twMerge } from "tailwind-merge";
 import {
   CardPopover,
   ConditionalTooltip,
@@ -9,9 +9,9 @@ import {
   ResultMiscImage,
   ResultName,
   TwdCardsHistoryCardAppearance,
-} from '@/components';
-import { BLOOD, BURN, CLAN, DECKID, DISCIPLINE, PLAYER, TYPE } from '@/constants';
-import { useApp } from '@/context';
+} from "@/components";
+import { BLOOD, BURN, CLAN, DECKID, DISCIPLINE, PLAYER, TYPE } from "@/constants";
+import { useApp } from "@/context";
 
 const TwdCardsHistoryLibraryRow = ({ card, players, handleClick }) => {
   const { isMobile } = useApp();
@@ -20,8 +20,8 @@ const TwdCardsHistoryLibraryRow = ({ card, players, handleClick }) => {
     <>
       <div
         className={twMerge(
-          'flex min-w-[30px] items-center justify-center max-sm:hidden',
-          card[BLOOD] && 'pb-1',
+          "flex min-w-[30px] items-center justify-center max-sm:hidden",
+          card[BLOOD] && "pb-1",
         )}
         onClick={() => handleClick(card)}
       >
@@ -42,8 +42,8 @@ const TwdCardsHistoryLibraryRow = ({ card, players, handleClick }) => {
       </div>
       <div
         className={twMerge(
-          'flex w-full cursor-pointer items-center justify-start',
-          !card[DECKID] && 'font-bold',
+          "flex w-full cursor-pointer items-center justify-start",
+          !card[DECKID] && "font-bold",
         )}
         onClick={() => handleClick(card)}
       >

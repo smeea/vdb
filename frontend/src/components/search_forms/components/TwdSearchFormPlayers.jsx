@@ -1,9 +1,9 @@
-import { Select } from '@/components';
-import { ANY, FROM, PLAYERS, TO } from '@/constants';
+import { Select } from "@/components";
+import { ANY, FROM, PLAYERS, TO } from "@/constants";
 
 const TwdSearchFormPlayers = ({ value, onChange }) => {
   const name = PLAYERS;
-  const steps = ['ANY', '100', '50', '25', '12'];
+  const steps = ["ANY", "100", "50", "25", "12"];
 
   const fromOptions = steps
     .filter((i) => {
@@ -38,7 +38,7 @@ const TwdSearchFormPlayers = ({ value, onChange }) => {
     <>
       <div className="flex items-center gap-1">
         <div className="w-1/4">
-          <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">Players:</div>
+          <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Players:</div>
         </div>
         <div className="flex w-3/4 items-center gap-1">
           <div className="w-full">

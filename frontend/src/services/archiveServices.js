@@ -1,8 +1,8 @@
-import ky from 'ky';
-import { setPdaResults, setTwdResults } from '@/context';
+import ky from "ky";
+import { setPdaResults, setTwdResults } from "@/context";
 
 export const search = (query, inPda = false) => {
-  const url = `${import.meta.env.VITE_API_URL}/search/${inPda ? 'pda' : 'twd'}`;
+  const url = `${import.meta.env.VITE_API_URL}/search/${inPda ? "pda" : "twd"}`;
   const setResults = inPda ? setPdaResults : setTwdResults;
 
   return ky
@@ -12,7 +12,7 @@ export const search = (query, inPda = false) => {
 };
 
 export const getNewDecks = (q, inPda = false) => {
-  const url = `${import.meta.env.VITE_API_URL}/${inPda ? 'pda' : 'twd'}/new/${q}`;
+  const url = `${import.meta.env.VITE_API_URL}/${inPda ? "pda" : "twd"}/new/${q}`;
   const setResults = inPda ? setPdaResults : setTwdResults;
 
   return ky
@@ -22,7 +22,7 @@ export const getNewDecks = (q, inPda = false) => {
 };
 
 export const getRandomDecks = (q, inPda = false) => {
-  const url = `${import.meta.env.VITE_API_URL}/${inPda ? 'pda' : 'twd'}/random/${q}`;
+  const url = `${import.meta.env.VITE_API_URL}/${inPda ? "pda" : "twd"}/random/${q}`;
   const setResults = inPda ? setPdaResults : setTwdResults;
 
   return ky

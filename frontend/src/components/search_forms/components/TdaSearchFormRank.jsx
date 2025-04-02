@@ -1,9 +1,9 @@
-import { Select } from '@/components';
-import { ANY, FROM, RANK, TO } from '@/constants';
+import { Select } from "@/components";
+import { ANY, FROM, RANK, TO } from "@/constants";
 
 const TdaSearchFormRank = ({ value, onChange }) => {
   const name = RANK;
-  const steps = ['ANY', '5', '10', '20', '25%', '33%', '50%', '66%', '75%'];
+  const steps = ["ANY", "5", "10", "20", "25%", "33%", "50%", "66%", "75%"];
 
   const fromOptions = steps
     .filter((i) => {
@@ -12,7 +12,7 @@ const TdaSearchFormRank = ({ value, onChange }) => {
         value[TO] === ANY ||
         !value[TO] ||
         Number.parseInt(i) > value[TO] ||
-        (value[TO].includes('%') && i.includes('%') && i > value[TO])
+        (value[TO].includes("%") && i.includes("%") && i > value[TO])
       );
     })
     .map((i) => ({
@@ -28,7 +28,7 @@ const TdaSearchFormRank = ({ value, onChange }) => {
         value[FROM] === ANY ||
         !value[FROM] ||
         Number.parseInt(i) < value[FROM] ||
-        (value[FROM].includes('%') && i.includes('%') && i < value[FROM])
+        (value[FROM].includes("%") && i.includes("%") && i < value[FROM])
       );
     })
     .map((i) => ({
@@ -41,7 +41,7 @@ const TdaSearchFormRank = ({ value, onChange }) => {
     <>
       <div className="flex basis-full items-center gap-1">
         <div className="w-1/4">
-          <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">Place:</div>
+          <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Place:</div>
         </div>
         <div className="flex w-3/4 items-center gap-1">
           <div className="w-full">

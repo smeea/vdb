@@ -1,6 +1,6 @@
-import { useCallback, useEffect, useState } from 'react';
-import { useSearchParams } from 'react-router';
-import { useSnapshot } from 'valtio';
+import { useCallback, useEffect, useState } from "react";
+import { useSearchParams } from "react-router";
+import { useSnapshot } from "valtio";
 import {
   ButtonFloatClose,
   ButtonFloatSearch,
@@ -17,7 +17,7 @@ import {
   SearchFormPrecon,
   SearchFormSet,
   SearchFormTextAndButtons,
-} from '@/components';
+} from "@/components";
 import {
   AGE,
   ARTIST,
@@ -49,7 +49,7 @@ import {
   TITLES,
   TRAITS,
   VOTES,
-} from '@/constants';
+} from "@/constants";
 import {
   clearSearchForm,
   inventoryStore,
@@ -58,9 +58,9 @@ import {
   setCryptResults,
   useApp,
   usedStore,
-} from '@/context';
-import { useDebounce } from '@/hooks';
-import { filterCrypt, getIsPlaytest, sanitizeFormState } from '@/utils';
+} from "@/context";
+import { useDebounce } from "@/hooks";
+import { filterCrypt, getIsPlaytest, sanitizeFormState } from "@/utils";
 
 const CryptSearchForm = () => {
   const {
@@ -80,7 +80,7 @@ const CryptSearchForm = () => {
   const [error, setError] = useState(false);
   const [preresults, setPreresults] = useState();
   const [searchParams, setSearchParams] = useSearchParams();
-  const query = JSON.parse(searchParams.get('q'));
+  const query = JSON.parse(searchParams.get("q"));
   const SHOW_LIMIT = 400;
   const DISCIPLINES_DEBOUNCE_DELAY = 180;
 
@@ -228,7 +228,7 @@ const CryptSearchForm = () => {
     const sanitizedForm = sanitizeFormState(CRYPT, searchCryptForm);
 
     if (Object.entries(sanitizedForm).length === 0) {
-      setError('EMPTY REQUEST');
+      setError("EMPTY REQUEST");
       return;
     }
 
@@ -238,7 +238,7 @@ const CryptSearchForm = () => {
     ).filter((card) => playtestMode || !getIsPlaytest(card[ID]));
 
     if (isMobile && filteredCards.length === 0) {
-      setError('NO CARDS FOUND');
+      setError("NO CARDS FOUND");
       return;
     }
 

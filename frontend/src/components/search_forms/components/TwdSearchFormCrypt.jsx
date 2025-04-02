@@ -5,10 +5,10 @@ import {
   ResultModal,
   ResultName,
   TwdSearchFormQuantityButtons,
-} from '@/components';
-import { CRYPT, GROUP, GT, NEW } from '@/constants';
-import { useApp } from '@/context';
-import { useModalCardController } from '@/hooks';
+} from "@/components";
+import { CRYPT, GROUP, GT, NEW } from "@/constants";
+import { useApp } from "@/context";
+import { useModalCardController } from "@/hooks";
 
 const TwdSearchFormCrypt = ({ value, form }) => {
   const { cryptCardBase, setShowFloatingButtons, isMobile } = useApp();
@@ -39,7 +39,7 @@ const TwdSearchFormCrypt = ({ value, form }) => {
 
   return (
     <div className="flex flex-col gap-2">
-      <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">Crypt:</div>
+      <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Crypt:</div>
       <NewCardSelect target={CRYPT} onChange={handleAdd} />
       <div className="flex flex-col gap-1">
         {Object.keys(value)

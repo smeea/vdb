@@ -1,15 +1,15 @@
-import { useCallback } from 'react';
+import { useCallback } from "react";
 import {
   DeckProxyLibraryTable,
   FlexGapped,
   Header,
   ResultLibraryType,
   ResultModal,
-} from '@/components';
-import { INVENTORY_TYPE, LIBRARY, PRINT, TYPE_MASTER } from '@/constants';
-import { useApp } from '@/context';
-import { useDeckLibrary, useModalCardController } from '@/hooks';
-import { countCards } from '@/utils';
+} from "@/components";
+import { INVENTORY_TYPE, LIBRARY, PRINT, TYPE_MASTER } from "@/constants";
+import { useApp } from "@/context";
+import { useDeckLibrary, useModalCardController } from "@/hooks";
+import { countCards } from "@/utils";
 
 const DeckProxyLibrary = ({
   deck,

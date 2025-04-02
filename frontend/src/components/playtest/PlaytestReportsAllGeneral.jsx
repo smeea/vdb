@@ -1,12 +1,12 @@
-import { FlexGapped, Hr } from '@/components';
-import { useApp } from '@/context';
+import { FlexGapped, Hr } from "@/components";
+import { useApp } from "@/context";
 
 const PlaytestReportsAllGeneral = ({ reports }) => {
   const { hidePlaytestNames } = useApp();
 
   return (
     <FlexGapped className="max-sm:flex-col print:break-after-page print:p-8">
-      <div className="text-fgSecondary dark:text-fgSecondaryDark flex font-bold sm:min-w-[320px]">
+      <div className="flex font-bold text-fgSecondary sm:min-w-[320px] dark:text-fgSecondaryDark">
         General Opinions
       </div>
       <div className="flex basis-full flex-col gap-4">
@@ -20,12 +20,12 @@ const PlaytestReportsAllGeneral = ({ reports }) => {
                 <div className="group flex flex-col gap-3" key={name}>
                   <div className="flex flex-col gap-3">
                     {!hidePlaytestNames && (
-                      <div className="text-fgName dark:text-fgNameDark print:dark:text-fgName flex w-full items-center">
+                      <div className="flex w-full items-center text-fgName dark:text-fgNameDark print:dark:text-fgName">
                         &lt;{name}&gt;
                       </div>
                     )}
                     <div>
-                      {text.split('\n').map((line, lineIdx) => (
+                      {text.split("\n").map((line, lineIdx) => (
                         <div key={lineIdx}>{line}</div>
                       ))}
                     </div>

@@ -1,9 +1,9 @@
-import { useNavigate } from 'react-router';
-import PencilSquare from '@icons/pencil-square.svg?react';
-import { ButtonIconed } from '@/components';
-import { AUTHOR, DECKID, DESCRIPTION } from '@/constants';
-import { useApp } from '@/context';
-import { deckServices } from '@/services';
+import { useNavigate } from "react-router";
+import PencilSquare from "@icons/pencil-square.svg?react";
+import { ButtonIconed } from "@/components";
+import { AUTHOR, DECKID, DESCRIPTION } from "@/constants";
+import { useApp } from "@/context";
+import { deckServices } from "@/services";
 
 const DeckReviewButton = ({ deck }) => {
   const { isDesktop, setShowFloatingButtons, setShowMenuButtons, publicName } = useApp();
@@ -14,7 +14,7 @@ const DeckReviewButton = ({ deck }) => {
       .deckSnapshot({
         ...deck,
         [DESCRIPTION]: `Review of ${import.meta.env.VITE_BASE_URL}/decks/${deck[DECKID]}`,
-        [AUTHOR]: publicName ? `review by ${publicName}` : '',
+        [AUTHOR]: publicName ? `review by ${publicName}` : "",
       })
       .then((deckid) => {
         navigate(`/review/${deckid}`);
@@ -27,7 +27,7 @@ const DeckReviewButton = ({ deck }) => {
 
   return (
     <ButtonIconed
-      variant={isDesktop ? 'secondary' : 'primary'}
+      variant={isDesktop ? "secondary" : "primary"}
       onClick={handleClick}
       title="Review Deck"
       icon={<PencilSquare />}

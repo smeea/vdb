@@ -1,6 +1,6 @@
-import { SearchFormButtonAdd, SearchFormButtonDel, Select } from '@/components';
-import { ANY, CAPACITY, MORELESS } from '@/constants';
-import { useApp } from '@/context';
+import { SearchFormButtonAdd, SearchFormButtonDel, Select } from "@/components";
+import { ANY, CAPACITY, MORELESS } from "@/constants";
+import { useApp } from "@/context";
 
 const SearchAdditionalForms = ({
   value,

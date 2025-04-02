@@ -1,6 +1,6 @@
-import { useState } from 'react';
-import Link45Deg from '@icons/link-45deg.svg?react';
-import { ButtonIconed } from '@/components';
+import { useState } from "react";
+import Link45Deg from "@icons/link-45deg.svg?react";
+import { ButtonIconed } from "@/components";
 
 const ButtonCardCopyUrl = ({ cardid }) => {
   const [success, setSuccess] = useState(false);
@@ -17,10 +17,10 @@ const ButtonCardCopyUrl = ({ cardid }) => {
   return (
     <ButtonIconed
       icon={<Link45Deg width="22" height="22" viewBox="0 0 16 16" />}
-      variant={success ? 'success' : 'primary'}
+      variant={success ? "success" : "primary"}
       onClick={handleClick}
       title="Copy URL"
-      text={success ? 'Copied' : null}
+      text={success ? "Copied" : null}
     />
   );
 };

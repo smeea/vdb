@@ -1,4 +1,4 @@
-import { ANY, X } from '@/constants';
+import { ANY, X } from "@/constants";
 
 const ResultCryptGroup = ({ value }) => {
   return (

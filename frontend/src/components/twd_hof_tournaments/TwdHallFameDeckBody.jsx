@@ -3,11 +3,11 @@ import {
   TwdResultDescription,
   TwdResultLibraryByTypeTable,
   TwdResultLibraryKeyCardsTable,
-} from '@/components';
-import { CARDS, CRYPT, DECKID, LIBRARY } from '@/constants';
-import { useApp } from '@/context';
-import { useFetch } from '@/hooks';
-import { parseDeck } from '@/utils';
+} from "@/components";
+import { CARDS, CRYPT, DECKID, LIBRARY } from "@/constants";
+import { useApp } from "@/context";
+import { useFetch } from "@/hooks";
+import { parseDeck } from "@/utils";
 
 const TwdHallFameDeckBody = ({ deck }) => {
   const { cryptCardBase, libraryCardBase, isMobile } = useApp();

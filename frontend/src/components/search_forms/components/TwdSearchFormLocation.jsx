@@ -1,6 +1,6 @@
-import { Select } from '@/components';
-import { LOCATION } from '@/constants';
-import { useFetch } from '@/hooks';
+import { Select } from "@/components";
+import { LOCATION } from "@/constants";
+import { useFetch } from "@/hooks";
 
 const TwdSearchFormLocation = ({ value, form }) => {
   const urlCountries = `${import.meta.env.VITE_API_URL}/twd/countries`;
@@ -9,23 +9,23 @@ const TwdSearchFormLocation = ({ value, form }) => {
   const { value: cities } = useFetch(urlCities, {}, []);
 
   const handleChange = (v, target) => {
-    form[LOCATION][target] = v?.value ?? '';
-    if (target === 'country') {
-      form[LOCATION].city = '';
+    form[LOCATION][target] = v?.value ?? "";
+    if (target === "country") {
+      form[LOCATION].city = "";
     }
   };
 
   const loadOptions = async (inputValue, target) => {
     if (inputValue.length >= 3) {
-      const { default: unidecode } = await import('unidecode');
-      const data = target === 'cities' ? cities : countries;
+      const { default: unidecode } = await import("unidecode");
+      const data = target === "cities" ? cities : countries;
 
       return data
         .filter((v) => {
-          if (target === 'cities' && !v.includes(value.country)) {
+          if (target === "cities" && !v.includes(value.country)) {
             return false;
           }
-          return unidecode(v.replace(/,.*$/, ''))
+          return unidecode(v.replace(/,.*$/, ""))
             .toLowerCase()
             .includes(unidecode(inputValue).toLowerCase());
         })
@@ -39,18 +39,18 @@ const TwdSearchFormLocation = ({ value, form }) => {
   };
 
   const loadOptionsCountry = (inputValue) => {
-    return loadOptions(inputValue, 'countries');
+    return loadOptions(inputValue, "countries");
   };
 
   const loadOptionsCity = (inputValue) => {
-    return loadOptions(inputValue, 'cities');
+    return loadOptions(inputValue, "cities");
   };
 
   return (
     <div className="flex flex-col gap-2">
       <div className="flex items-center">
         <div className="w-1/4">
-          <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">Location:</div>
+          <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Location:</div>
         </div>
         <div className="w-3/4">
           <Select
@@ -68,7 +68,7 @@ const TwdSearchFormLocation = ({ value, form }) => {
                   }
                 : null
             }
-            onChange={(e) => handleChange(e, 'country')}
+            onChange={(e) => handleChange(e, "country")}
           />
         </div>
       </div>
@@ -90,7 +90,7 @@ const TwdSearchFormLocation = ({ value, form }) => {
                   }
                 : null
             }
-            onChange={(e) => handleChange(e, 'city')}
+            onChange={(e) => handleChange(e, "city")}
           />
         </div>
       </div>

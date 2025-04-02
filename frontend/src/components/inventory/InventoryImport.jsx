@@ -1,8 +1,8 @@
-import { useRef, useState } from 'react';
-import { DeckImportBadCardsModal, ErrorOverlay, InventoryImportButton } from '@/components';
-import { BAD_CARDS, CRYPT, LIBRARY } from '@/constants';
-import { inventoryCardsAdd, useApp } from '@/context';
-import { importDeck } from '@/utils';
+import { useRef, useState } from "react";
+import { DeckImportBadCardsModal, ErrorOverlay, InventoryImportButton } from "@/components";
+import { BAD_CARDS, CRYPT, LIBRARY } from "@/constants";
+import { inventoryCardsAdd, useApp } from "@/context";
+import { importDeck } from "@/utils";
 
 const InventoryImport = () => {
   const { cryptCardBase, libraryCardBase, setShowFloatingButtons, setShowMenuButtons } = useApp();
@@ -44,7 +44,7 @@ const InventoryImport = () => {
         accept=".txt"
         type="file"
         onChange={() => importDeckFromFile(fileInput)}
-        style={{ display: 'none' }}
+        style={{ display: "none" }}
       />
       {importError && <ErrorOverlay placement="left">CANNOT IMPORT THIS INVENTORY</ErrorOverlay>}
     </>

@@ -1,6 +1,6 @@
-import Dice3 from '@icons/dice-3-fill.svg?react';
-import { ButtonIconed } from '@/components';
-import { useApp } from '@/context';
+import Dice3 from "@icons/dice-3-fill.svg?react";
+import { ButtonIconed } from "@/components";
+import { useApp } from "@/context";
 
 const DeckDrawButton = ({ setShow }) => {
   const { isDesktop, setShowFloatingButtons, setShowMenuButtons } = useApp();
@@ -13,7 +13,7 @@ const DeckDrawButton = ({ setShow }) => {
 
   return (
     <ButtonIconed
-      variant={isDesktop ? 'secondary' : 'primary'}
+      variant={isDesktop ? "secondary" : "primary"}
       onClick={handleClick}
       title="Deck Draw Simulator"
       icon={<Dice3 />}

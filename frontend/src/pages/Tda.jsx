@@ -1,7 +1,7 @@
-import ky from 'ky';
-import { useCallback, useEffect, useState } from 'react';
-import { useNavigate, useParams, useSearchParams } from 'react-router';
-import { useSnapshot } from 'valtio';
+import ky from "ky";
+import { useCallback, useEffect, useState } from "react";
+import { useNavigate, useParams, useSearchParams } from "react-router";
+import { useSnapshot } from "valtio";
 import {
   ButtonClose,
   ButtonFloatClose,
@@ -14,7 +14,7 @@ import {
   TdaLoadPreparedButtons,
   TdaResult,
   TdaSearchForm,
-} from '@/components';
+} from "@/components";
 import {
   AUTHOR,
   CRYPT,
@@ -33,18 +33,18 @@ import {
   SCORE,
   TAGS,
   VP,
-} from '@/constants';
-import { clearTdaForm, setTdaDecks, setTdaInfo, setTdaResults, tdaStore, useApp } from '@/context';
-import { getTags, importDeck, sanitizeScoreSheet } from '@/utils';
+} from "@/constants";
+import { clearTdaForm, setTdaDecks, setTdaInfo, setTdaResults, tdaStore, useApp } from "@/context";
+import { getTags, importDeck, sanitizeScoreSheet } from "@/utils";
 
-const TESTERS = ['1', 'crauseon'];
+const TESTERS = ["1", "crauseon"];
 
 const Tda = () => {
   const { username, cryptCardBase, libraryCardBase, isMobile } = useApp();
   const { [DECKS]: decks, [RESULTS]: results, [INFO]: info } = useSnapshot(tdaStore);
   const params = useParams();
   const [searchParams, setSearchParams] = useSearchParams();
-  const query = JSON.parse(searchParams.get('q'));
+  const query = JSON.parse(searchParams.get("q"));
   const navigate = useNavigate();
   const [showForm, setShowForm] = useState(false);
   const [tempDecks, setTempDecks] = useState();
@@ -58,7 +58,7 @@ const Tda = () => {
   };
 
   const loadPrepared = async (id) => {
-    const { default: JSZip } = await import('jszip');
+    const { default: JSZip } = await import("jszip");
     setError(false);
 
     const url = `${import.meta.env.VITE_BASE_URL}/tournaments/${id}.zip`;
@@ -73,16 +73,16 @@ const Tda = () => {
       .then(JSZip.loadAsync)
       .then((zip) => {
         Object.values(zip.files).forEach(async (f) => {
-          if (f[NAME].includes('.xlsx')) {
-            const archon = await f.async('base64');
+          if (f[NAME].includes(".xlsx")) {
+            const archon = await f.async("base64");
             setTempArchon(archon);
           }
         });
 
         const fetchedDecks = Object.values(zip.files)
-          .filter((f) => !f[NAME].includes('.xlsx'))
+          .filter((f) => !f[NAME].includes(".xlsx"))
           .map(async (f) => {
-            const d = await f.async('string');
+            const d = await f.async("string");
             return getDeck(d);
           });
 
@@ -99,23 +99,23 @@ const Tda = () => {
   };
 
   const loadArchon = async (file) => {
-    const { read, utils } = await import('xlsx');
+    const { read, utils } = await import("xlsx");
     const wb = read(file);
 
     const getFinalPlace = (playerNumber) => {
-      const wsFinalTable = wb.Sheets['Final Round'];
-      const dataFinalTable = utils.sheet_to_csv(wsFinalTable).split('\n');
+      const wsFinalTable = wb.Sheets["Final Round"];
+      const dataFinalTable = utils.sheet_to_csv(wsFinalTable).split("\n");
       const finalPlace = dataFinalTable
         .filter((i) => {
-          const array = i.split(',');
+          const array = i.split(",");
           return Number.parseInt(array[0]) === playerNumber && array[21];
         })[0]
-        .split(',')[21];
+        .split(",")[21];
       return Number.parseInt(finalPlace);
     };
 
-    const wsInfo = wb.Sheets['Tournament Info'];
-    const dataInfo = utils.sheet_to_csv(wsInfo).split('\n');
+    const wsInfo = wb.Sheets["Tournament Info"];
+    const dataInfo = utils.sheet_to_csv(wsInfo).split("\n");
     let totalPlayers = 0;
     let totalRounds = 0;
     let totalMatches = 0;
@@ -129,35 +129,35 @@ const Tda = () => {
     let location;
 
     dataInfo.forEach((n) => {
-      const array = n.split(',');
-      if (array[0] === 'Number of Players:') totalPlayers = Number.parseInt(array[1]);
-      if (array[0] === 'Number of Rounds (including final):') totalRounds = array[1];
-      if (array[0] === 'Number of Event Matches:') totalMatches = array[1];
-      if (array[0] === 'Event Name:') event = array[1];
-      if (array[0] === 'Event Date (DD-MON-YY):') date = array[1];
-      if (array[0] === 'City:') location = array[1];
+      const array = n.split(",");
+      if (array[0] === "Number of Players:") totalPlayers = Number.parseInt(array[1]);
+      if (array[0] === "Number of Rounds (including final):") totalRounds = array[1];
+      if (array[0] === "Number of Event Matches:") totalMatches = array[1];
+      if (array[0] === "Event Name:") event = array[1];
+      if (array[0] === "Event Date (DD-MON-YY):") date = array[1];
+      if (array[0] === "City:") location = array[1];
     });
 
     const wsScores = sanitizeScoreSheet(wb.Sheets.Methuselahs);
-    const dataScores = utils.sheet_to_csv(wsScores).split('\n');
+    const dataScores = utils.sheet_to_csv(wsScores).split("\n");
 
     const archonIds = [];
     const tdaDecks = {};
 
     dataScores.forEach((n, idx) => {
       if (idx < 6) return;
-      const array = n.split(',');
+      const array = n.split(",");
       const playerId = array[4];
       const playerNumber = Number.parseInt(array[0]);
       if (!playerId) return;
       archonIds.push(playerId);
 
       const rank =
-        array[20] === 'DQ'
-          ? 'DQ'
+        array[20] === "DQ"
+          ? "DQ"
           : Number.parseInt(array[20]) > 5
             ? Number.parseInt(array[20])
-            : wb.Sheets['Final Round']
+            : wb.Sheets["Final Round"]
               ? getFinalPlace(playerNumber)
               : Number.parseInt(array[17]);
 
@@ -172,7 +172,7 @@ const Tda = () => {
       };
 
       if (tempDecks[playerId]) {
-        reportedRanks.push(score[RANK] === 'DQ' ? totalPlayers : score[RANK]);
+        reportedRanks.push(score[RANK] === "DQ" ? totalPlayers : score[RANK]);
         tdaDecks[playerId] = {
           ...tempDecks[playerId],
           [SCORE]: score,
@@ -228,7 +228,7 @@ const Tda = () => {
     setTdaInfo();
     setTdaDecks();
     setTdaResults();
-    navigate('/tda');
+    navigate("/tda");
   };
 
   const handleClear = useCallback(() => {

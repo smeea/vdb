@@ -1,6 +1,6 @@
-import { RadioGroup } from '@headlessui/react';
-import { Radio } from '@/components';
-import { ALL, NOK, OK } from '@/constants';
+import { RadioGroup } from "@headlessui/react";
+import { Radio } from "@/components";
+import { ALL, NOK, OK } from "@/constants";
 
 const InventoryShowSelect = ({ category, setCategory }) => {
   return (
@@ -11,9 +11,9 @@ const InventoryShowSelect = ({ category, setCategory }) => {
       className="flex flex-col gap-0.5"
     >
       {[
-        [ALL, 'Owned & Problems'],
-        [OK, 'Only Owned'],
-        [NOK, 'Only Problems'],
+        [ALL, "Owned & Problems"],
+        [OK, "Only Owned"],
+        [NOK, "Only Problems"],
       ].map((i) => (
         <Radio key={i[0]} value={i[0]} label={i[1]} />
       ))}

@@ -1,14 +1,14 @@
-import { useSnapshot } from 'valtio';
+import { useSnapshot } from "valtio";
 import {
   Checkbox,
   DeckCardQuantityTd,
   DeckProxyTableSetSelect,
   ResultLibraryTableRowCommon,
   Tr,
-} from '@/components';
-import { HARD, ID, LIBRARY, PRINT, SET, SOFT } from '@/constants';
-import { inventoryStore, usedStore } from '@/context';
-import { getHardTotal, getSoftMax } from '@/utils';
+} from "@/components";
+import { HARD, ID, LIBRARY, PRINT, SET, SOFT } from "@/constants";
+import { inventoryStore, usedStore } from "@/context";
+import { getHardTotal, getSoftMax } from "@/utils";
 
 const DeckProxyLibraryTableRow = ({
   handleClick,

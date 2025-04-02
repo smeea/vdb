@@ -1,7 +1,7 @@
-import { Header, InventoryFilterForm, InventoryLibraryTable, SortButton } from '@/components';
-import { ALL, CLAN_DISCIPLINE, DISCIPLINE, ID, NAME, QUANTITY, TYPE } from '@/constants';
-import { useApp } from '@/context';
-import { useInventoryLibrary } from '@/hooks';
+import { Header, InventoryFilterForm, InventoryLibraryTable, SortButton } from "@/components";
+import { ALL, CLAN_DISCIPLINE, DISCIPLINE, ID, NAME, QUANTITY, TYPE } from "@/constants";
+import { useApp } from "@/context";
+import { useInventoryLibrary } from "@/hooks";
 
 const InventoryLibrary = ({
   compact,
@@ -18,10 +18,10 @@ const InventoryLibrary = ({
 }) => {
   const { libraryInventorySort, changeLibraryInventorySort } = useApp();
   const sortMethods = {
-    [NAME]: 'N',
-    [QUANTITY]: 'Q',
-    [TYPE]: 'T',
-    [CLAN_DISCIPLINE]: 'C/D',
+    [NAME]: "N",
+    [QUANTITY]: "Q",
+    [TYPE]: "T",
+    [CLAN_DISCIPLINE]: "C/D",
   };
 
   const {
@@ -64,7 +64,7 @@ const InventoryLibrary = ({
                 target={DISCIPLINE}
               />
             </div>
-            <div className="text-midGray dark:text-midGrayDark flex justify-end font-bold">
+            <div className="flex justify-end font-bold text-midGray dark:text-midGrayDark">
               {missingFilteredTotal ? (
                 <>
                   {missingFilteredTotal} ({Object.values(missingFiltered).length} uniq) miss

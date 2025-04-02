@@ -1,8 +1,8 @@
-import { DECK } from '@/constants';
+import { DECK } from "@/constants";
 
 export const convertDekToText = (data) => {
   const parser = new DOMParser();
-  const xmlDoc = parser.parseFromString(data, 'text/xml');
+  const xmlDoc = parser.parseFromString(data, "text/xml");
   const xmlCrypt = xmlDoc.getElementsByTagName(DECK)[0].childNodes[5].children;
   const xmlLibrary = xmlDoc.getElementsByTagName(DECK)[0].childNodes[3].children;
 
@@ -24,7 +24,7 @@ export const convertDekToText = (data) => {
     library[cardName] += 1;
   });
 
-  let text = '';
+  let text = "";
   Object.keys(crypt).forEach((card) => {
     text += `${crypt[card]} ${card}\n`;
   });

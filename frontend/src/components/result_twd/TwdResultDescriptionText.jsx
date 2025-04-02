@@ -1,10 +1,10 @@
-import { useNavigate } from 'react-router';
-import CalendarEvent from '@icons/calendar-event.svg?react';
-import GeoAltFill from '@icons/geo-alt-fill.svg?react';
-import PersonFill from '@icons/person-fill.svg?react';
-import TagFill from '@icons/tag-fill.svg?react';
-import TrophyFill from '@icons/trophy-fill.svg?react';
-import { TwdResultDescriptionTextTr, TwdResultTags } from '@/components';
+import { useNavigate } from "react-router";
+import CalendarEvent from "@icons/calendar-event.svg?react";
+import GeoAltFill from "@icons/geo-alt-fill.svg?react";
+import PersonFill from "@icons/person-fill.svg?react";
+import TagFill from "@icons/tag-fill.svg?react";
+import TrophyFill from "@icons/trophy-fill.svg?react";
+import { TwdResultDescriptionTextTr, TwdResultTags } from "@/components";
 import {
   AUTHOR,
   BASE,
@@ -15,8 +15,8 @@ import {
   SUPERIOR,
   TAGS,
   TWD,
-} from '@/constants';
-import { clearSearchForm, searchTwdForm, useApp } from '@/context';
+} from "@/constants";
+import { clearSearchForm, searchTwdForm, useApp } from "@/context";
 
 const TwdResultDescriptionText = ({ deck }) => {
   const { isMobile } = useApp();
@@ -51,7 +51,7 @@ const TwdResultDescriptionText = ({ deck }) => {
             title={isMobile ? <GeoAltFill /> : <>Place:</>}
           >
             <div
-              className="text-fgSecondary dark:text-fgSecondaryDark hover:underline"
+              className="text-fgSecondary hover:underline dark:text-fgSecondaryDark"
               onClick={() => handleClick(LOCATION, deck[LOCATION])}
             >
               {deck[LOCATION]}
@@ -62,7 +62,7 @@ const TwdResultDescriptionText = ({ deck }) => {
             title={isMobile ? <PersonFill /> : <>Player:</>}
           >
             <div
-              className="text-fgSecondary dark:text-fgSecondaryDark hover:underline"
+              className="text-fgSecondary hover:underline dark:text-fgSecondaryDark"
               onClick={() => handleClick(AUTHOR, deck[AUTHOR])}
             >
               {deck[AUTHOR]}

@@ -1,7 +1,7 @@
-import dayjs from 'dayjs';
-import { useRef, useState } from 'react';
-import { useNavigate } from 'react-router';
-import { Button, ErrorOverlay, Input, Modal, Spinner } from '@/components';
+import dayjs from "dayjs";
+import { useRef, useState } from "react";
+import { useNavigate } from "react-router";
+import { Button, ErrorOverlay, Input, Modal, Spinner } from "@/components";
 import {
   AUTHOR,
   BRANCHES,
@@ -16,20 +16,20 @@ import {
   NAME,
   TIMESTAMP,
   TITLE,
-} from '@/constants';
-import { deckAdd, useApp } from '@/context';
-import { useFetch } from '@/hooks';
-import { deckServices } from '@/services';
+} from "@/constants";
+import { deckAdd, useApp } from "@/context";
+import { useFetch } from "@/hooks";
+import { deckServices } from "@/services";
 
 const DeckImportAmaranth = ({ setShow }) => {
   const { setShowFloatingButtons, cryptCardBase, libraryCardBase, isMobile } = useApp();
   const navigate = useNavigate();
-  const [deckUrl, setDeckUrl] = useState('');
+  const [deckUrl, setDeckUrl] = useState("");
   const [error, setError] = useState();
   const [isLoading, setIsLoading] = useState(false);
   const ref = useRef();
 
-  const VERSION = '2024-11-07';
+  const VERSION = "2024-11-07";
   const url = `${import.meta.env.VITE_BASE_URL}/data/amaranth_ids.json?v=${VERSION}`;
   const { value: idReference } = useFetch(url, {}, []);
 
@@ -41,7 +41,7 @@ const DeckImportAmaranth = ({ setShow }) => {
   const handleClick = () => {
     setError(null);
     if (!deckUrl) {
-      setError('ENTER URL');
+      setError("ENTER URL");
       return;
     }
 
@@ -53,14 +53,14 @@ const DeckImportAmaranth = ({ setShow }) => {
           .getDeckFromAmaranth(deckUrl)
           .then((deck) => importDeckFromAmaranth(deck))
           .then(() => {
-            setDeckUrl('');
+            setDeckUrl("");
             handleClose();
           })
-          .catch(() => setError('ERROR DURING IMPORT'))
+          .catch(() => setError("ERROR DURING IMPORT"))
           .finally(() => setIsLoading(false));
       }
     } else {
-      setError('ERROR IN URL');
+      setError("ERROR IN URL");
     }
   };
 
@@ -77,7 +77,7 @@ const DeckImportAmaranth = ({ setShow }) => {
 
       let description = master[DESCRIPTION];
       if (revision.comments) {
-        if (description) description += '\n\n';
+        if (description) description += "\n\n";
         description += revision.comments;
       }
 
@@ -93,10 +93,10 @@ const DeckImportAmaranth = ({ setShow }) => {
 
   const importDeckFromAmaranth = async (amaranth_deck) => {
     const deck = {
-      [BRANCH_NAME]: '#0',
+      [BRANCH_NAME]: "#0",
       [NAME]: amaranth_deck[TITLE],
-      [AUTHOR]: amaranth_deck[AUTHOR] || '',
-      [DESCRIPTION]: amaranth_deck[DESCRIPTION] || '',
+      [AUTHOR]: amaranth_deck[AUTHOR] || "",
+      [DESCRIPTION]: amaranth_deck[DESCRIPTION] || "",
       [CRYPT]: {},
       [LIBRARY]: {},
       [IS_AUTHOR]: true,
@@ -173,7 +173,7 @@ const DeckImportAmaranth = ({ setShow }) => {
           navigate(`/decks/${deck[DECKID]}`);
         }
       })
-      .catch(() => setError('ERROR DURING IMPORT'));
+      .catch(() => setError("ERROR DURING IMPORT"));
   };
 
   const onChange = (e) => {
@@ -204,7 +204,7 @@ const DeckImportAmaranth = ({ setShow }) => {
           {error && <ErrorOverlay placement="bottom">{error}</ErrorOverlay>}
         </div>
         <Button className="min-w-[72px] rounded-l-none" onClick={handleClick}>
-          {isLoading ? <Spinner className="size-5" /> : 'Import'}
+          {isLoading ? <Spinner className="size-5" /> : "Import"}
         </Button>
       </div>
     </Modal>

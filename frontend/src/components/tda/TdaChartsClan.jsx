@@ -1,8 +1,8 @@
-import { useMemo } from 'react';
-import { Pie, PieChart, Tooltip } from 'recharts';
-import { ANTITRIBU, CRYPT, MULTI, NAME, VALUE } from '@/constants';
-import { useApp } from '@/context';
-import { getClan } from '@/utils';
+import { useMemo } from "react";
+import { Pie, PieChart, Tooltip } from "recharts";
+import { ANTITRIBU, CRYPT, MULTI, NAME, VALUE } from "@/constants";
+import { useApp } from "@/context";
+import { getClan } from "@/utils";
 
 const TdaChartsClan = ({ decks }) => {
   const { isMobile, isDesktop, isWide } = useApp();
@@ -21,7 +21,7 @@ const TdaChartsClan = ({ decks }) => {
     return Object.keys(result)
       .map((c) => {
         return {
-          name: isMobile && c.includes(ANTITRIBU) ? `!${c.replace(` ${ANTITRIBU}`, '')}` : c,
+          name: isMobile && c.includes(ANTITRIBU) ? `!${c.replace(` ${ANTITRIBU}`, "")}` : c,
           value: result[c],
         };
       })
@@ -46,11 +46,11 @@ const TdaChartsClan = ({ decks }) => {
       />
       <Tooltip
         contentStyle={{
-          padding: '2px 9px 2px 2px',
-          border: '1px solid #606070',
-          background: '#404050',
+          padding: "2px 9px 2px 2px",
+          border: "1px solid #606070",
+          background: "#404050",
         }}
-        itemStyle={{ color: 'white' }}
+        itemStyle={{ color: "white" }}
       />
     </PieChart>
   );

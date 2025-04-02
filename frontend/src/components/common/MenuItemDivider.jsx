@@ -1,4 +1,4 @@
-import { Hr } from '@/components';
+import { Hr } from "@/components";
 
 const MenuItemDivider = () => {
   return (

@@ -1,10 +1,10 @@
-import { Menu } from '@headlessui/react';
-import { useState } from 'react';
-import Printer from '@icons/printer.svg?react';
-import { MenuButton, MenuItem, MenuItems, Spinner } from '@/components';
-import { CRYPT, LIBRARY, NAME } from '@/constants';
-import { useApp } from '@/context';
-import { pdfServices } from '@/services';
+import { Menu } from "@headlessui/react";
+import { useState } from "react";
+import Printer from "@icons/printer.svg?react";
+import { MenuButton, MenuItem, MenuItems, Spinner } from "@/components";
+import { CRYPT, LIBRARY, NAME } from "@/constants";
+import { useApp } from "@/context";
+import { pdfServices } from "@/services";
 
 const DeckProxyButton = ({ setShowProxySelect, missingCrypt, missingLibrary, deck, inDiff }) => {
   const {
@@ -64,7 +64,7 @@ const DeckProxyButton = ({ setShowProxySelect, missingCrypt, missingLibrary, dec
       <MenuButton
         title="Create PDF with Cards"
         icon={isLoading ? <Spinner /> : <Printer width="18" height="18" viewBox="0 0 18 16" />}
-        variant={isDesktop ? 'secondary' : 'primary'}
+        variant={isDesktop ? "secondary" : "primary"}
         text="PDF Proxy"
       />
       <MenuItems>
@@ -87,16 +87,16 @@ const DeckProxyButton = ({ setShowProxySelect, missingCrypt, missingLibrary, dec
         {(inventoryMode || inDiff) && (
           <>
             <MenuItem onClick={() => handleClickMissing(false, false)}>
-              {`${inDiff ? 'Changes' : 'Missing in Inventory'} - Gray gaps (A4)`}
+              {`${inDiff ? "Changes" : "Missing in Inventory"} - Gray gaps (A4)`}
             </MenuItem>
             <MenuItem onClick={() => handleClickMissing(true, false)}>
-              {`${inDiff ? 'Changes' : 'Missing in Inventory'} - White gaps (A4)`}
+              {`${inDiff ? "Changes" : "Missing in Inventory"} - White gaps (A4)`}
             </MenuItem>
             <MenuItem onClick={() => handleClickMissing(false, true)}>
-              {`${inDiff ? 'Changes' : 'Missing in Inventory'} - Gray gaps (Letter)`}
+              {`${inDiff ? "Changes" : "Missing in Inventory"} - Gray gaps (Letter)`}
             </MenuItem>
             <MenuItem onClick={() => handleClickMissing(true, true)}>
-              {`${inDiff ? 'Changes' : 'Missing in Inventory'} - White gaps (Letter)`}
+              {`${inDiff ? "Changes" : "Missing in Inventory"} - White gaps (Letter)`}
             </MenuItem>
           </>
         )}

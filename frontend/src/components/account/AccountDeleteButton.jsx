@@ -1,6 +1,6 @@
-import { useState } from 'react';
-import TrashFill from '@icons/trash-fill.svg?react';
-import { AccountDeleteConfirmation, ButtonIconed } from '@/components';
+import { useState } from "react";
+import TrashFill from "@icons/trash-fill.svg?react";
+import { AccountDeleteConfirmation, ButtonIconed } from "@/components";
 
 const AccountDeleteButton = () => {
   const [showConfirmation, setShowConfirmation] = useState(false);

@@ -1,22 +1,22 @@
-import { useEffect, useState } from 'react';
-import { twMerge } from 'tailwind-merge';
-import { useSnapshot } from 'valtio';
-import { ButtonCardChange } from '@/components';
-import { IS_FROZEN } from '@/constants';
-import { inventoryCardChange, inventoryStore, useApp } from '@/context';
+import { useEffect, useState } from "react";
+import { twMerge } from "tailwind-merge";
+import { useSnapshot } from "valtio";
+import { ButtonCardChange } from "@/components";
+import { IS_FROZEN } from "@/constants";
+import { inventoryCardChange, inventoryStore, useApp } from "@/context";
 
 const InventoryCardQuantity = ({ card, softUsedMax, hardUsedTotal, compact, newFocus }) => {
   const { isMobile } = useApp();
   const [manual, setManual] = useState(compact);
-  const [state, setState] = useState(card.q ?? '');
+  const [state, setState] = useState(card.q ?? "");
   const isEditable = !useSnapshot(inventoryStore)[IS_FROZEN];
 
   useEffect(() => {
-    if (state !== card.q) setState(card.q ?? '');
+    if (state !== card.q) setState(card.q ?? "");
   }, [card.q]);
 
   const handleManualChange = (event) => {
-    setState(event.target.value ?? '');
+    setState(event.target.value ?? "");
   };
 
   const handleSubmit = (event) => {
@@ -40,9 +40,9 @@ const InventoryCardQuantity = ({ card, softUsedMax, hardUsedTotal, compact, newF
               <ButtonCardChange onClick={() => handleQuantityChange(-1)} isLink isNegative />
               <div
                 className={twMerge(
-                  'mx-1 flex w-full justify-center',
+                  "mx-1 flex w-full justify-center",
                   state < softUsedMax + hardUsedTotal &&
-                    'bg-bgError dark:bg-bgErrorDark dark:text-whiteDark text-white',
+                    "bg-bgError text-white dark:bg-bgErrorDark dark:text-whiteDark",
                 )}
               >
                 {card.t && <div className="min-w-[4px]" />}
@@ -58,11 +58,11 @@ const InventoryCardQuantity = ({ card, softUsedMax, hardUsedTotal, compact, newF
                 tabIndex={0}
                 className={
                   manual
-                    ? ''
+                    ? ""
                     : `mx-1 flex w-full justify-center ${
                         state < softUsedMax + hardUsedTotal
-                          ? 'bg-bgError dark:bg-bgErrorDark dark:text-whiteDark text-white'
-                          : ''
+                          ? "bg-bgError text-white dark:bg-bgErrorDark dark:text-whiteDark"
+                          : ""
                       }`
                 }
                 onFocus={() => setManual(true)}
@@ -70,7 +70,7 @@ const InventoryCardQuantity = ({ card, softUsedMax, hardUsedTotal, compact, newF
                 {manual ? (
                   <form onSubmit={handleSubmit}>
                     <input
-                      className="border-bgSecondary bg-bgPrimary text-fgPrimary outline-bgCheckboxSelected dark:border-bgSecondaryDark dark:bg-bgPrimaryDark dark:text-fgPrimaryDark dark:outline-bgCheckboxSelectedDark w-[63px] rounded-sm border-2 text-center focus:outline"
+                      className="w-[63px] rounded-sm border-2 border-bgSecondary bg-bgPrimary text-center text-fgPrimary outline-bgCheckboxSelected focus:outline dark:border-bgSecondaryDark dark:bg-bgPrimaryDark dark:text-fgPrimaryDark dark:outline-bgCheckboxSelectedDark"
                       placeholder=""
                       type="number"
                       autoFocus={true}
@@ -94,9 +94,9 @@ const InventoryCardQuantity = ({ card, softUsedMax, hardUsedTotal, compact, newF
       ) : (
         <div
           className={twMerge(
-            'mx-1 my-2 flex w-full items-center justify-center',
+            "mx-1 my-2 flex w-full items-center justify-center",
             state < softUsedMax + hardUsedTotal &&
-              'bg-bgError dark:bg-bgErrorDark dark:text-whiteDark text-white',
+              "bg-bgError text-white dark:bg-bgErrorDark dark:text-whiteDark",
           )}
         >
           {card.t && <div className="min-w-[4px]" />}

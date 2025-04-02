@@ -1,5 +1,5 @@
-import { ButtonClose, TwdMoreButton, TwdNewDecksButton, TwdRandomButton } from '@/components';
-import { useApp } from '@/context';
+import { ButtonClose, TwdMoreButton, TwdNewDecksButton, TwdRandomButton } from "@/components";
+import { useApp } from "@/context";
 
 const TwdSearchFormButtons = ({ getRandom, getNew, handleClear, inPda }) => {
   const { isMobile } = useApp();

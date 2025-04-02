@@ -1,4 +1,4 @@
-import { twMerge } from 'tailwind-merge';
+import { twMerge } from "tailwind-merge";
 import {
   ButtonCloseModal,
   Hr,
@@ -12,7 +12,7 @@ import {
   ResultName,
   ResultNameAka,
   ResultPathImage,
-} from '@/components';
+} from "@/components";
 import {
   AKA,
   BANNED,
@@ -28,9 +28,9 @@ import {
   REQUIREMENT,
   TRIFLE,
   TYPE,
-} from '@/constants';
-import { useApp } from '@/context';
-import { getLegality } from '@/utils';
+} from "@/constants";
+import { useApp } from "@/context";
+import { getLegality } from "@/utils";
 
 const Requirements = ({ card }) => {
   return (
@@ -80,8 +80,8 @@ const ResultLibraryLayoutText = ({ card, handleClose, noClose, inPopover }) => {
       <div className="flex items-center justify-between">
         <div
           className={twMerge(
-            'flex justify-between gap-3 whitespace-nowrap',
-            (isMobile || inPopover) && 'flex-col gap-1.5',
+            "flex justify-between gap-3 whitespace-nowrap",
+            (isMobile || inPopover) && "flex-col gap-1.5",
           )}
         >
           <div className="flex items-center justify-between gap-2 whitespace-nowrap">
@@ -97,8 +97,8 @@ const ResultLibraryLayoutText = ({ card, handleClose, noClose, inPopover }) => {
         <div
           className={
             noClose || inPopover || isNarrow
-              ? 'hidden max-h-0 max-w-0 opacity-0'
-              : 'flex justify-center'
+              ? "hidden max-h-0 max-w-0 opacity-0"
+              : "flex justify-center"
           }
         >
           <ButtonCloseModal handleClick={handleClose} />

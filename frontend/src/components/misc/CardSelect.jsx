@@ -1,10 +1,10 @@
-import { Select, SelectLabelCrypt, SelectLabelLibrary } from '@/components';
-import { CRYPT, ID, LIBRARY, NAME, TWD, VALUE } from '@/constants';
-import { useApp } from '@/context';
-import { filterCrypt, filterLibrary, getIsPlaytest } from '@/utils';
+import { Select, SelectLabelCrypt, SelectLabelLibrary } from "@/components";
+import { CRYPT, ID, LIBRARY, NAME, TWD, VALUE } from "@/constants";
+import { useApp } from "@/context";
+import { filterCrypt, filterLibrary, getIsPlaytest } from "@/utils";
 
-const STARTING_WITH = 'startingWith';
-const OTHER = 'other';
+const STARTING_WITH = "startingWith";
+const OTHER = "other";
 
 const getMatches = (inputValue, filterAction, playtestMode, inInventory) => {
   const input = { [NAME]: inputValue };
@@ -51,7 +51,7 @@ const CardSelect = ({
   target,
   value,
   inInventory,
-  placeholder = 'Enter Card Name',
+  placeholder = "Enter Card Name",
   autoFocus,
   onChange,
   menuPlacement,
@@ -81,8 +81,8 @@ const CardSelect = ({
 
   const loadOptions = async (inputValue) => {
     if (
-      (inputValue.length > 2 && !inputValue.startsWith('the')) ||
-      (inputValue.length > 3 && !inputValue.startsWith('the ')) ||
+      (inputValue.length > 2 && !inputValue.startsWith("the")) ||
+      (inputValue.length > 3 && !inputValue.startsWith("the ")) ||
       inputValue.length > 4
     ) {
       const { cryptMatches, libraryMatches } = getAllMatches(

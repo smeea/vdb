@@ -1,7 +1,7 @@
-import { Menu } from '@headlessui/react';
-import { useSnapshot } from 'valtio';
-import Download from '@icons/download.svg?react';
-import { MenuButton, MenuItem, MenuItemDivider, MenuItems } from '@/components';
+import { Menu } from "@headlessui/react";
+import { useSnapshot } from "valtio";
+import Download from "@icons/download.svg?react";
+import { MenuButton, MenuItem, MenuItemDivider, MenuItems } from "@/components";
 import {
   BRANCHES,
   BRANCH_NAME,
@@ -17,14 +17,14 @@ import {
   TWD,
   TWD_HINTS,
   XLSX,
-} from '@/constants';
-import { deckStore, useApp } from '@/context';
-import { deckServices } from '@/services';
-import { exportDeck } from '@/utils';
+} from "@/constants";
+import { deckStore, useApp } from "@/context";
+import { deckServices } from "@/services";
+import { exportDeck } from "@/utils";
 
-const SAVE = 'save';
-const COPY = 'copy';
-const EXPORT_ALL = 'exportAll';
+const SAVE = "save";
+const COPY = "copy";
+const EXPORT_ALL = "exportAll";
 
 const DeckExportButton = ({ deck, inMissing, inInventory }) => {
   const {
@@ -40,18 +40,18 @@ const DeckExportButton = ({ deck, inMissing, inInventory }) => {
 
   const ExportDropdown = ({ action, format }) => {
     const formats = {
-      [TWD]: 'TWD',
-      [TWD_HINTS]: 'TWD (w/ hints)',
-      [TEXT]: 'Text',
-      [LACKEY]: 'Lackey',
-      [JOL]: 'JOL',
-      [XLSX]: 'Excel',
+      [TWD]: "TWD",
+      [TWD_HINTS]: "TWD (w/ hints)",
+      [TEXT]: "Text",
+      [LACKEY]: "Lackey",
+      [JOL]: "JOL",
+      [XLSX]: "Excel",
     };
 
     const actions = {
-      [SAVE]: [saveDeck, 'Save as File'],
-      [COPY]: [copyDeck, 'Clipboard'],
-      [EXPORT_ALL]: [exportAll, 'Export all Decks'],
+      [SAVE]: [saveDeck, "Save as File"],
+      [COPY]: [copyDeck, "Clipboard"],
+      [EXPORT_ALL]: [exportAll, "Export all Decks"],
     };
 
     return (
@@ -78,7 +78,7 @@ const DeckExportButton = ({ deck, inMissing, inInventory }) => {
     if (format === XLSX) {
       const data = await deckServices.exportXlsx(deck);
       file = new File([data], `${deckName}.xlsx`, {
-        type: 'application/octet-stream',
+        type: "application/octet-stream",
       });
     } else {
       let exportText = null;
@@ -104,11 +104,11 @@ const DeckExportButton = ({ deck, inMissing, inInventory }) => {
       }
 
       file = new File([exportText], `${deckName} [${format}].txt`, {
-        type: 'text/plain;charset=utf-8',
+        type: "text/plain;charset=utf-8",
       });
     }
 
-    const { saveAs } = await import('file-saver');
+    const { saveAs } = await import("file-saver");
     saveAs(file, name);
 
     setShowMenuButtons(false);
@@ -122,10 +122,10 @@ const DeckExportButton = ({ deck, inMissing, inInventory }) => {
   return (
     <Menu>
       <MenuButton
-        title={`Export ${inMissing ? 'Missing' : ''}`}
+        title={`Export ${inMissing ? "Missing" : ""}`}
         icon={<Download />}
-        variant={inMissing || !isDesktop ? 'primary' : 'secondary'}
-        text={`Export ${inMissing ? 'Missing' : ''}`}
+        variant={inMissing || !isDesktop ? "primary" : "secondary"}
+        text={`Export ${inMissing ? "Missing" : ""}`}
       />
       <MenuItems>
         {inInventory ? (

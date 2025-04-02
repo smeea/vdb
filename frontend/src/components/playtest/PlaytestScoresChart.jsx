@@ -1,16 +1,16 @@
-import { useMemo } from 'react';
-import { Bar, BarChart, Label, Legend, Tooltip, XAxis, YAxis } from 'recharts';
-import { NAME } from '@/constants';
+import { useMemo } from "react";
+import { Bar, BarChart, Label, Legend, Tooltip, XAxis, YAxis } from "recharts";
+import { NAME } from "@/constants";
 
-const SEEN = 'seen';
-const NOT_SEEN = 'notSeen';
-const BLUE = '6565cc';
-const ORANGE = 'd57020';
+const SEEN = "seen";
+const NOT_SEEN = "notSeen";
+const BLUE = "6565cc";
+const ORANGE = "d57020";
 
 const ChartTooltip = ({ active, payload }) => {
   const value = payload?.[0]?.payload;
   return (
-    <div className="border-bgSecondary bg-bgPrimary dark:border-bgSecondaryDark dark:bg-bgPrimaryDark z-50 flex flex-col gap-0.5 rounded-md border p-1">
+    <div className="z-50 flex flex-col gap-0.5 rounded-md border border-bgSecondary bg-bgPrimary p-1 dark:border-bgSecondaryDark dark:bg-bgPrimaryDark">
       {active && (
         <div className="flex flex-col gap-2 p-1">
           <div className={`text-[#${BLUE}] flex justify-between gap-2`}>
@@ -71,12 +71,12 @@ const PlaytestScoresChart = ({ value, maxSameScore }) => {
       <Tooltip
         content={<ChartTooltip />}
         contentStyle={{
-          padding: '6px',
-          border: '1px solid #606070',
-          borderRadius: '5px',
-          background: '#404050',
+          padding: "6px",
+          border: "1px solid #606070",
+          borderRadius: "5px",
+          background: "#404050",
         }}
-        itemStyle={{ color: 'white' }}
+        itemStyle={{ color: "white" }}
       />
       <Legend align="right" verticalAlign="top" />
       <Bar name="Seen in Play" dataKey={SEEN} stackId="a" fill={`#${BLUE}`} />

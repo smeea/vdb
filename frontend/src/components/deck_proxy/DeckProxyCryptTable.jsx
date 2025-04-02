@@ -1,6 +1,6 @@
-import { DeckProxyCryptTableRow } from '@/components';
-import { ID } from '@/constants';
-import { getKeyDisciplines } from '@/utils';
+import { DeckProxyCryptTableRow } from "@/components";
+import { ID } from "@/constants";
+import { getKeyDisciplines } from "@/utils";
 
 const DeckProxyCryptTable = ({
   handleClick,
@@ -14,7 +14,7 @@ const DeckProxyCryptTable = ({
   const { disciplinesSet, keyDisciplines } = getKeyDisciplines(cards);
 
   return (
-    <table className="border-bgSecondary dark:border-bgSecondaryDark w-full sm:border">
+    <table className="w-full border-bgSecondary sm:border dark:border-bgSecondaryDark">
       <tbody>
         {cards.map((card) => {
           return (

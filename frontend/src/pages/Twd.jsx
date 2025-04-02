@@ -1,16 +1,16 @@
-import { useEffect, useState } from 'react';
-import { useSearchParams } from 'react-router';
-import { useSnapshot } from 'valtio';
-import { ButtonFloatClose, ErrorMessage, FlexGapped, TwdResult, TwdSearchForm } from '@/components';
-import { TWD } from '@/constants';
-import { searchResults, setTwdResults, useApp } from '@/context';
+import { useEffect, useState } from "react";
+import { useSearchParams } from "react-router";
+import { useSnapshot } from "valtio";
+import { ButtonFloatClose, ErrorMessage, FlexGapped, TwdResult, TwdSearchForm } from "@/components";
+import { TWD } from "@/constants";
+import { searchResults, setTwdResults, useApp } from "@/context";
 
 const Twd = () => {
   const { showFloatingButtons, isMobile } = useApp();
   const twdResults = useSnapshot(searchResults)[TWD];
   const [error, setError] = useState();
   const [searchParams, setSearchParams] = useSearchParams();
-  const query = JSON.parse(searchParams.get('q'));
+  const query = JSON.parse(searchParams.get("q"));
   const handleClear = () => setSearchParams();
 
   useEffect(() => {

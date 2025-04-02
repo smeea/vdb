@@ -1,10 +1,10 @@
-import { Switch } from '@headlessui/react';
-import { useCallback } from 'react';
-import { twMerge } from 'tailwind-merge';
-import ToggleOff from '@icons/toggle-off.svg?react';
-import ToggleOn from '@icons/toggle-on.svg?react';
+import { Switch } from "@headlessui/react";
+import { useCallback } from "react";
+import { twMerge } from "tailwind-merge";
+import ToggleOff from "@icons/toggle-off.svg?react";
+import ToggleOn from "@icons/toggle-on.svg?react";
 
-const Toggle = ({ isOn, handleClick, size = 'md', disabled, children, variant = 'primary' }) => {
+const Toggle = ({ isOn, handleClick, size = "md", disabled, children, variant = "primary" }) => {
   const customSize = {
     sm: 22,
     md: 26,
@@ -13,11 +13,11 @@ const Toggle = ({ isOn, handleClick, size = 'md', disabled, children, variant = 
 
   const style = {
     primary: {
-      disabled: 'text-midGray dark:text-midGrayDark',
+      disabled: "text-midGray dark:text-midGrayDark",
     },
     secondary: {
-      main: 'text-white dark:text-whiteDark',
-      disabled: 'text-lightGray dark:text-lightGrayDark',
+      main: "text-white dark:text-whiteDark",
+      disabled: "text-lightGray dark:text-lightGrayDark",
     },
   };
 
@@ -30,7 +30,7 @@ const Toggle = ({ isOn, handleClick, size = 'md', disabled, children, variant = 
       {({ checked, disabled }) => (
         <div
           className={twMerge(
-            'flex items-center gap-2 cursor-pointer',
+            "flex cursor-pointer items-center gap-2",
             disabled || !checked ? style[variant].disabled : style[variant].main,
           )}
         >

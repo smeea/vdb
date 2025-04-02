@@ -1,8 +1,8 @@
-import { drawProbability } from '@/utils';
+import { drawProbability } from "@/utils";
 
 const DeckDrawProbabilityText = ({ N, n, k }) => {
   return (
-    <div className="text-fgSecondary dark:text-fgSecondaryDark flex flex-col items-start">
+    <div className="flex flex-col items-start text-fgSecondary dark:text-fgSecondaryDark">
       {[1, 2, 3, 4].map((i) => {
         return (
           <div key={i} className="flex w-full justify-between gap-3">

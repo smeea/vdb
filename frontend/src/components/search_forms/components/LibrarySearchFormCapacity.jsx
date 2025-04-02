@@ -1,17 +1,17 @@
-import { Select } from '@/components';
-import { ANY, CAPACITY, GE, LE } from '@/constants';
+import { Select } from "@/components";
+import { ANY, CAPACITY, GE, LE } from "@/constants";
 
 const LibrarySearchFormCapacity = ({ value, onChange }) => {
   const name = CAPACITY;
-  const options = ['ANY', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11'].map((i) => ({
+  const options = ["ANY", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"].map((i) => ({
     value: i.toLowerCase(),
     name: name,
     label: <div className="flex justify-center">{i}</div>,
   }));
 
   const morelessOptions = [
-    [LE, '<='],
-    [GE, '>='],
+    [LE, "<="],
+    [GE, ">="],
   ].map((i) => ({
     value: i[0],
     name: name,
@@ -21,7 +21,7 @@ const LibrarySearchFormCapacity = ({ value, onChange }) => {
   return (
     <div className="flex items-center">
       <div className="w-1/4">
-        <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">Capacity:</div>
+        <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Capacity:</div>
       </div>
       <div className="flex w-3/4 gap-1">
         <div className="w-1/2">

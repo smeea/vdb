@@ -1,7 +1,7 @@
-import { useState } from 'react';
-import Link45Deg from '@icons/link-45deg.svg?react';
-import { ButtonIconed } from '@/components';
-import { useApp } from '@/context';
+import { useState } from "react";
+import Link45Deg from "@icons/link-45deg.svg?react";
+import { ButtonIconed } from "@/components";
+import { useApp } from "@/context";
 
 const ReviewCopyUrlButton = ({ deckid, urlDiff }) => {
   const { isDesktop, setShowFloatingButtons, setShowMenuButtons } = useApp();
@@ -21,11 +21,11 @@ const ReviewCopyUrlButton = ({ deckid, urlDiff }) => {
 
   return (
     <ButtonIconed
-      variant={success ? 'success' : isDesktop ? 'secondary' : 'primary'}
+      variant={success ? "success" : isDesktop ? "secondary" : "primary"}
       onClick={handleStandard}
       title="Copy URL"
       icon={<Link45Deg width="19" height="19" viewBox="0 0 15 15" />}
-      text={success ? 'Copied' : 'Copy URL'}
+      text={success ? "Copied" : "Copy URL"}
     />
   );
 };

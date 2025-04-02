@@ -27,11 +27,11 @@ import {
   STRENGTH_2,
   UNLOCK,
   VOTES_TITLE,
-} from '@/constants';
+} from "@/constants";
 
 export const CryptTraitsRegexMap = {
   [ENTER_COMBAT]: (card) =>
-    `(he|she|it|they|${card[NAME].match(/^\S+/i)[0].replace(/,/, '')}) (can|may|attempt)(?! ?not)(.* to)? enter combat`,
+    `(he|she|it|they|${card[NAME].match(/^\S+/i)[0].replace(/,/, "")}) (can|may|attempt)(?! ?not)(.* to)? enter combat`,
   [PRESS]: () => /gets (.*)?optional press/i,
   [BLEED_1]: () => /[:.] \+\d bleed./i,
   [BLEED_2]: () => /[:.] \+[2-9] bleed./i,

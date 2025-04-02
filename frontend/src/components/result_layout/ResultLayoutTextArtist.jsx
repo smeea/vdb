@@ -1,6 +1,6 @@
-import { useNavigate } from 'react-router';
-import { ARTIST, CRYPT, LIBRARY } from '@/constants';
-import { clearSearchForm, searchCryptForm, searchLibraryForm } from '@/context';
+import { useNavigate } from "react-router";
+import { ARTIST, CRYPT, LIBRARY } from "@/constants";
+import { clearSearchForm, searchCryptForm, searchLibraryForm } from "@/context";
 
 const ResultLayoutTextArtist = ({ handleClose, inCrypt, artists }) => {
   const navigate = useNavigate();
@@ -20,7 +20,7 @@ const ResultLayoutTextArtist = ({ handleClose, inCrypt, artists }) => {
       {artists.map((artist, idx) => {
         return (
           <div
-            className="text-fgSecondary dark:text-fgSecondaryDark inline-block whitespace-nowrap cursor-pointer hover:underline"
+            className="inline-block cursor-pointer whitespace-nowrap text-fgSecondary hover:underline dark:text-fgSecondaryDark"
             key={idx}
             onClick={() => handleClick(artist)}
           >

@@ -1,4 +1,4 @@
-import { twMerge } from 'tailwind-merge';
+import { twMerge } from "tailwind-merge";
 import {
   CardPopover,
   ConditionalTooltip,
@@ -9,9 +9,9 @@ import {
   ResultCryptTitle,
   ResultName,
   TwdCardsHistoryCardAppearance,
-} from '@/components';
-import { CLAN, DECKID, DISCIPLINES, GROUP, PLAYER, TITLE } from '@/constants';
-import { useApp } from '@/context';
+} from "@/components";
+import { CLAN, DECKID, DISCIPLINES, GROUP, PLAYER, TITLE } from "@/constants";
+import { useApp } from "@/context";
 
 const TwdCardsHistoryCryptRow = ({ card, players, handleClick }) => {
   const { isMobile } = useApp();
@@ -25,15 +25,15 @@ const TwdCardsHistoryCryptRow = ({ card, players, handleClick }) => {
         <ResultCryptCapacity card={card} />
       </div>
       <div
-        className="flex min-w-[170px] items-center lg:min-w-[180px] max-sm:hidden"
+        className="flex min-w-[170px] items-center max-sm:hidden lg:min-w-[180px]"
         onClick={() => handleClick(card)}
       >
         <ResultCryptDisciplines value={card[DISCIPLINES]} />
       </div>
       <div
         className={twMerge(
-          'flex w-full cursor-pointer items-center justify-start',
-          !card[DECKID] && 'font-bold',
+          "flex w-full cursor-pointer items-center justify-start",
+          !card[DECKID] && "font-bold",
         )}
         onClick={() => handleClick(card)}
       >

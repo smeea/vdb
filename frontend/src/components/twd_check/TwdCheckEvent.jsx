@@ -10,12 +10,12 @@ import {
   NAME,
   PLAYERS,
   ROUNDS,
-} from '@/constants';
-import { useDeckCrypt, useDeckLibrary, useFetch } from '@/hooks';
+} from "@/constants";
+import { useDeckCrypt, useDeckLibrary, useFetch } from "@/hooks";
 
 const getDateWithSuffix = (d) => {
   if (!d) return;
-  const date = d.replace(/^0/, '');
+  const date = d.replace(/^0/, "");
 
   if (date > 20 || date < 10) {
     switch (date % 10) {
@@ -40,67 +40,67 @@ const TwdCheckEvent = ({ deckData }) => {
   const { value } = useFetch(url, {}, [deckData[ID]]);
 
   const countriesFixes = {
-    AT: 'Austria',
-    AU: 'Australia',
-    BE: 'Belgium',
-    BR: 'Brazil',
-    BY: 'Belarus',
-    CA: 'Canada',
-    CH: 'Switzerland',
-    CL: 'Chile',
-    CZ: 'Czech Republic',
-    DE: 'Germany',
-    DK: 'Denmark',
-    ES: 'Spain',
-    FI: 'Finland',
-    FR: 'France',
-    GB: 'United Kingdom',
-    GR: 'Greece',
-    HR: 'Croatia',
-    HU: 'Hungary',
-    IE: 'Ireland',
-    IS: 'Iceland',
-    IT: 'Italy',
-    JP: 'Japan',
-    LT: 'Lithuania',
-    MX: 'Mexico',
-    NL: 'Netherlands',
-    NO: 'Norway',
-    ONLINE: 'Online',
-    PH: 'Philipines',
-    PL: 'Poland',
-    PT: 'Portugal',
-    RS: 'Serbia',
-    RU: 'Russia',
-    SE: 'Sweden',
-    SG: 'Singapore',
-    SK: 'Slovakia',
-    US: 'USA',
-    ZA: 'South Africa',
+    AT: "Austria",
+    AU: "Australia",
+    BE: "Belgium",
+    BR: "Brazil",
+    BY: "Belarus",
+    CA: "Canada",
+    CH: "Switzerland",
+    CL: "Chile",
+    CZ: "Czech Republic",
+    DE: "Germany",
+    DK: "Denmark",
+    ES: "Spain",
+    FI: "Finland",
+    FR: "France",
+    GB: "United Kingdom",
+    GR: "Greece",
+    HR: "Croatia",
+    HU: "Hungary",
+    IE: "Ireland",
+    IS: "Iceland",
+    IT: "Italy",
+    JP: "Japan",
+    LT: "Lithuania",
+    MX: "Mexico",
+    NL: "Netherlands",
+    NO: "Norway",
+    ONLINE: "Online",
+    PH: "Philipines",
+    PL: "Poland",
+    PT: "Portugal",
+    RS: "Serbia",
+    RU: "Russia",
+    SE: "Sweden",
+    SG: "Singapore",
+    SK: "Slovakia",
+    US: "USA",
+    ZA: "South Africa",
   };
 
   const country = countriesFixes[value?.venue_country] ?? value?.venue_country;
   const city = value?.venue_city;
   const venue = value?.venue_name;
 
-  let location = country ? `${city}, ${country}` : 'Unknown';
+  let location = country ? `${city}, ${country}` : "Unknown";
   if (venue) location = `${venue}, ${location}`;
 
-  const [year, m, d] = value?.event_enddate.split('-') || [];
+  const [year, m, d] = value?.event_enddate.split("-") || [];
 
   const monthNames = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December',
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
   ];
 
   const month = monthNames[m - 1];
@@ -127,7 +127,7 @@ const TwdCheckEvent = ({ deckData }) => {
   const cryptQtyError = cryptTotal < 12;
   const libraryQtyError = libraryTotal > 90 || libraryTotal < 60;
 
-  const deckLocation = deckData[LOCATION].split(', ');
+  const deckLocation = deckData[LOCATION].split(", ");
   const deckCountry = deckLocation.at(-1);
   const deckCity = deckLocation.at(-2);
   const isUniqueCity = deckCity && cities && !cities.includes(`${deckCity}, ${deckCountry}`);
@@ -137,33 +137,33 @@ const TwdCheckEvent = ({ deckData }) => {
     <>
       {value && value.event_id === deckData[ID] ? (
         <div className="pt-[5px] font-mono text-sm">
-          <div className={deckData[EVENT] === veknEvent[NAME] ? '' : 'decoration-fgRed underline'}>
+          <div className={deckData[EVENT] === veknEvent[NAME] ? "" : "underline decoration-fgRed"}>
             {veknEvent[NAME]}
           </div>
           <div
             className={
-              deckData[LOCATION] === veknEvent[LOCATION] ? '' : 'decoration-fgRed underline'
+              deckData[LOCATION] === veknEvent[LOCATION] ? "" : "underline decoration-fgRed"
             }
           >
             {veknEvent[LOCATION]}
           </div>
-          <div className={deckData[DATE] === veknEvent[DATE] ? '' : 'decoration-fgRed underline'}>
+          <div className={deckData[DATE] === veknEvent[DATE] ? "" : "underline decoration-fgRed"}>
             {veknEvent[DATE]}
           </div>
           <div
-            className={deckData[FORMAT] === veknEvent[FORMAT] ? '' : 'decoration-fgRed underline'}
+            className={deckData[FORMAT] === veknEvent[FORMAT] ? "" : "underline decoration-fgRed"}
           >
             {veknEvent[FORMAT]}
           </div>
           <div
-            className={deckData[PLAYERS] === veknEvent[PLAYERS] ? '' : 'decoration-fgRed underline'}
+            className={deckData[PLAYERS] === veknEvent[PLAYERS] ? "" : "underline decoration-fgRed"}
           >
             {veknEvent[PLAYERS]}
           </div>
           <br />
           <div>
             <a
-              className={deckData.url === veknEvent.url ? '' : 'decoration-fgRed underline'}
+              className={deckData.url === veknEvent.url ? "" : "underline decoration-fgRed"}
               href={veknEvent.url}
               rel="noreferrer"
               target="_blank"

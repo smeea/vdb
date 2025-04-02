@@ -1,5 +1,5 @@
-import { useSnapshot } from 'valtio';
-import SearchHeartFill from '@icons/search-heart-fill.svg?react';
+import { useSnapshot } from "valtio";
+import SearchHeartFill from "@icons/search-heart-fill.svg?react";
 import {
   ButtonCardCopyUrl,
   ButtonClose,
@@ -11,10 +11,10 @@ import {
   ResultCryptLayoutText,
   ResultLayoutTextCommon,
   ResultLibraryLayoutText,
-} from '@/components';
-import { ID, PDA, PLAYTEST_OLD, TWD, TYPE, TYPE_MASTER } from '@/constants';
-import { searchResults, setCryptCompare, setLibraryCompare, useApp } from '@/context';
-import { getIsPlaytest } from '@/utils';
+} from "@/components";
+import { ID, PDA, PLAYTEST_OLD, TWD, TYPE, TYPE_MASTER } from "@/constants";
+import { searchResults, setCryptCompare, setLibraryCompare, useApp } from "@/context";
+import { getIsPlaytest } from "@/utils";
 
 const ResultLayoutText = ({
   card,
@@ -82,10 +82,10 @@ const ResultLayoutText = ({
           )}
           {!isMobile && <ButtonToggleShowImage />}
           <ButtonIconed
-            variant={inCompare ? 'third' : 'primary'}
+            variant={inCompare ? "third" : "primary"}
             onClick={handleCompare}
             title={`Add Card to Compare: it will be displayed above search results in ${
-              card[ID] > 200000 ? 'Crypt' : 'Library'
+              card[ID] > 200000 ? "Crypt" : "Library"
             }`}
             icon={<SearchHeartFill width="16" height="24" viewBox="0 0 16 16" />}
           />

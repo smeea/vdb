@@ -1,10 +1,10 @@
-import { useMemo } from 'react';
-import { twMerge } from 'tailwind-merge';
-import Spellcheck from '@icons/spellcheck.svg?react';
-import { ButtonIconed, Select } from '@/components';
-import { BASE, CRYPT, DECKID, LIBRARY, SUPERIOR, TAGS } from '@/constants';
-import { deckUpdate } from '@/context';
-import { getIsEditable, getTags } from '@/utils';
+import { useMemo } from "react";
+import { twMerge } from "tailwind-merge";
+import Spellcheck from "@icons/spellcheck.svg?react";
+import { ButtonIconed, Select } from "@/components";
+import { BASE, CRYPT, DECKID, LIBRARY, SUPERIOR, TAGS } from "@/constants";
+import { deckUpdate } from "@/context";
+import { getIsEditable, getTags } from "@/utils";
 
 const DeckTags = ({ deck, noAutotags, justifyRight, isBordered, noBackground, allTagsOptions }) => {
   const isEditable = getIsEditable(deck);
@@ -59,18 +59,18 @@ const DeckTags = ({ deck, noAutotags, justifyRight, isBordered, noBackground, al
   return (
     <div className="flex">
       <Select
-        borderStyle={isEditable && !noAutotags ? 'border-y border-l border-r-none' : 'border'}
+        borderStyle={isEditable && !noAutotags ? "border-y border-l border-r-none" : "border"}
         className="w-full"
         isDisabled={!isEditable}
         isMulti
         noBackground={noBackground}
         noBorder={!isBordered}
-        noOptionsMessage={() => 'Enter new tag'}
+        noOptionsMessage={() => "Enter new tag"}
         noRemove={!isEditable}
         onChange={handleChange}
         options={options}
-        placeholder={isEditable && 'Click to add tags'}
-        roundedStyle={twMerge('rounded-sm', isEditable && !noAutotags && 'rounded-r-none')}
+        placeholder={isEditable && "Click to add tags"}
+        roundedStyle={twMerge("rounded-sm", isEditable && !noAutotags && "rounded-r-none")}
         value={tagList}
         variant="creatable"
         justifyRight={justifyRight}

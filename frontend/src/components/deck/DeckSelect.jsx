@@ -1,10 +1,10 @@
-import { RadioGroup } from '@headlessui/react';
-import { useEffect, useState } from 'react';
-import At from '@icons/at.svg?react';
-import BinocularsFill from '@icons/binoculars-fill.svg?react';
-import ChatLeftQuoteFill from '@icons/chat-left-quote-fill.svg?react';
-import PinAngleFill from '@icons/pin-angle-fill.svg?react';
-import Shuffle from '@icons/shuffle.svg?react';
+import { RadioGroup } from "@headlessui/react";
+import { useEffect, useState } from "react";
+import At from "@icons/at.svg?react";
+import BinocularsFill from "@icons/binoculars-fill.svg?react";
+import ChatLeftQuoteFill from "@icons/chat-left-quote-fill.svg?react";
+import PinAngleFill from "@icons/pin-angle-fill.svg?react";
+import Shuffle from "@icons/shuffle.svg?react";
 import {
   Button,
   ButtonIconed,
@@ -13,7 +13,7 @@ import {
   DeckSelectPrecon,
   DeckSelectRecent,
   Radio,
-} from '@/components';
+} from "@/components";
 import {
   DECKID,
   H,
@@ -24,9 +24,9 @@ import {
   PRECONS,
   RECENT,
   S,
-} from '@/constants';
-import { deckToggleInventoryState, useApp } from '@/context';
-import { getIsEditable } from '@/utils';
+} from "@/constants";
+import { deckToggleInventoryState, useApp } from "@/context";
+import { getIsEditable } from "@/utils";
 
 const DeckSelect = ({
   deck,
@@ -42,7 +42,7 @@ const DeckSelect = ({
   const isEditable = getIsEditable(deck);
 
   useEffect(() => {
-    if (deckid?.includes(':') || !deckid) {
+    if (deckid?.includes(":") || !deckid) {
       setSelectFrom(PRECONS);
     } else if (decks?.[deckid]) {
       setSelectFrom(MY);
@@ -73,10 +73,10 @@ const DeckSelect = ({
             <ButtonIconed
               title={`Inventory Type: ${
                 !deck?.[INVENTORY_TYPE]
-                  ? 'VIRTUAL\nDo not use Inventory'
+                  ? "VIRTUAL\nDo not use Inventory"
                   : deck?.[INVENTORY_TYPE] === S
-                    ? 'FLEXIBLE\nLet cards to be reused with other Flexible Decks'
-                    : 'FIXED\nUse unique copies of cards from Inventory'
+                    ? "FLEXIBLE\nLet cards to be reused with other Flexible Decks"
+                    : "FIXED\nUse unique copies of cards from Inventory"
               }`}
               disabled={!isEditable}
               onClick={() => deckToggleInventoryState(deck?.[DECKID])}
@@ -101,7 +101,7 @@ const DeckSelect = ({
           className="flex gap-4 sm:gap-6"
         >
           {username && decks && Object.keys(decks).length > 0 && (
-            <Radio label={isMobile ? 'My' : 'My Decks'} value={MY} />
+            <Radio label={isMobile ? "My" : "My Decks"} value={MY} />
           )}
           <Radio label="Precons" value={PRECONS} />
           {recentDecks.length > 0 && <Radio label="Recent" value={RECENT} />}

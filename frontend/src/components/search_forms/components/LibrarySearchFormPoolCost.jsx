@@ -1,18 +1,18 @@
-import { Select } from '@/components';
-import { ANY, EQ, GE, LE, POOL } from '@/constants';
+import { Select } from "@/components";
+import { ANY, EQ, GE, LE, POOL } from "@/constants";
 
 const LibrarySearchFormPoolCost = ({ value, onChange }) => {
   const name = POOL;
-  const options = ['ANY', '0', '1', '2', '3', '4', '5', '6'].map((i) => ({
+  const options = ["ANY", "0", "1", "2", "3", "4", "5", "6"].map((i) => ({
     value: i.toLowerCase(),
     name: name,
     label: <div className="flex justify-center">{i}</div>,
   }));
 
   const morelessOptions = [
-    [LE, '<='],
-    [EQ, '=='],
-    [GE, '>='],
+    [LE, "<="],
+    [EQ, "=="],
+    [GE, ">="],
   ].map((i) => ({
     value: i[0],
     name: name,
@@ -23,7 +23,7 @@ const LibrarySearchFormPoolCost = ({ value, onChange }) => {
     <>
       <div className="flex items-center">
         <div className="w-1/4">
-          <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">Pool Cost:</div>
+          <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Pool Cost:</div>
         </div>
         <div className="flex w-3/4 gap-1">
           <div className="w-1/2">

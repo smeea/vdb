@@ -1,5 +1,5 @@
-import { ConditionalTooltipOrModal, DeckSortButton, Input } from '@/components';
-import { NAME, SET } from '@/constants';
+import { ConditionalTooltipOrModal, DeckSortButton, Input } from "@/components";
+import { NAME, SET } from "@/constants";
 
 const TooltipText = () => {
   return (
@@ -43,7 +43,7 @@ const InventoryAddPreconHeader = ({
             onChange={handleChangeNameFilter}
           />
         </th>
-        <th className="max-lg:hidden min-w-[40px]" />
+        <th className="min-w-[40px] max-lg:hidden" />
         <th className="w-full">
           <Input
             placeholder="Filter by Set"
@@ -61,7 +61,7 @@ const InventoryAddPreconHeader = ({
               title="Precon Quantity"
               overlay={<TooltipText />}
             >
-              <div className="text-fgThird dark:text-fgThirdDark flex justify-center">[?]</div>
+              <div className="flex justify-center text-fgThird dark:text-fgThirdDark">[?]</div>
             </ConditionalTooltipOrModal>
             <DeckSortButton sortMethod={sortMethod} onChange={setSortMethod} />
           </div>

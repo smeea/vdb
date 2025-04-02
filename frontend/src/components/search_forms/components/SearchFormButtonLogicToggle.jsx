@@ -1,6 +1,6 @@
-import Exclamation from '@icons/exclamation.svg?react';
-import { Button } from '@/components';
-import { AND, LOGIC, NOT, ONLY, OR, TEXT } from '@/constants';
+import Exclamation from "@icons/exclamation.svg?react";
+import { Button } from "@/components";
+import { AND, LOGIC, NOT, ONLY, OR, TEXT } from "@/constants";
 
 const SearchFormButtonLogicToggle = ({ name, i, value, searchForm, withAnd, withOnly }) => {
   const handleToggleForm = () => {
@@ -31,31 +31,31 @@ const SearchFormButtonLogicToggle = ({ name, i, value, searchForm, withAnd, with
     }
   };
 
-  let icon = '';
-  let title = '';
+  let icon = "";
+  let title = "";
 
   switch (value) {
     case AND:
-      icon = '&';
-      title = 'Logic: AND';
+      icon = "&";
+      title = "Logic: AND";
       break;
     case OR:
-      icon = '//';
-      title = 'Logic: OR';
+      icon = "//";
+      title = "Logic: OR";
       break;
     case NOT:
       icon = <Exclamation />;
-      title = 'Logic: NOT';
+      title = "Logic: NOT";
       break;
     case ONLY:
-      icon = '≡';
-      title = 'Logic: ONLY';
+      icon = "≡";
+      title = "Logic: ONLY";
       break;
   }
 
   return (
     <Button
-      className="text-2xs h-[18px] w-[18px]"
+      className="h-[18px] w-[18px] text-2xs"
       onClick={handleToggleForm}
       title={title}
       noPadding

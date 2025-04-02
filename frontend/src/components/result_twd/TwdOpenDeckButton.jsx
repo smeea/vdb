@@ -1,6 +1,6 @@
-import { Link } from 'react-router';
-import PlayFill from '@icons/play-fill.svg?react';
-import { ButtonIconed } from '@/components';
+import { Link } from "react-router";
+import PlayFill from "@icons/play-fill.svg?react";
+import { ButtonIconed } from "@/components";
 
 const TwdOpenDeckButton = ({ deckid, url, noText }) => {
   return (
@@ -8,7 +8,7 @@ const TwdOpenDeckButton = ({ deckid, url, noText }) => {
       <ButtonIconed
         className="w-full"
         icon={<PlayFill height="18" viewBox="0 0 12 14" />}
-        text={noText ? null : 'Open'}
+        text={noText ? null : "Open"}
       />
     </Link>
   );

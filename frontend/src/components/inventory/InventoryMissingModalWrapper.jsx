@@ -1,10 +1,10 @@
-import { useMemo } from 'react';
-import { useSnapshot } from 'valtio';
-import { DeckMissingModal } from '@/components';
-import { AUTHOR, CRYPT, DECKID, DESCRIPTION, ID, LIBRARY, NAME } from '@/constants';
-import { inventoryStore, useApp } from '@/context';
-import { useInventoryCrypt, useInventoryLibrary } from '@/hooks';
-import { getIsPlaytest } from '@/utils';
+import { useMemo } from "react";
+import { useSnapshot } from "valtio";
+import { DeckMissingModal } from "@/components";
+import { AUTHOR, CRYPT, DECKID, DESCRIPTION, ID, LIBRARY, NAME } from "@/constants";
+import { inventoryStore, useApp } from "@/context";
+import { useInventoryCrypt, useInventoryLibrary } from "@/hooks";
+import { getIsPlaytest } from "@/utils";
 
 const InventoryMissingModalWrapper = ({
   clan,
@@ -64,12 +64,12 @@ const InventoryMissingModalWrapper = ({
   return (
     <DeckMissingModal
       deck={{
-        [NAME]: 'Missing cards for Inventory',
+        [NAME]: "Missing cards for Inventory",
         [AUTHOR]: publicName,
-        [DESCRIPTION]: '',
+        [DESCRIPTION]: "",
         [CRYPT]: missingCrypt,
         [LIBRARY]: missingLibrary,
-        [DECKID]: 'missingInInventory',
+        [DECKID]: "missingInInventory",
       }}
       missAllVtes={{ [CRYPT]: missAllVtesCrypt, [LIBRARY]: missAllVtesLibrary }}
       setShow={setShow}

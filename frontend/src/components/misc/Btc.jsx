@@ -1,10 +1,10 @@
-import { useState } from 'react';
-import { twMerge } from 'tailwind-merge';
-import ClipboardFill from '@icons/clipboard-fill.svg?react';
+import { useState } from "react";
+import { twMerge } from "tailwind-merge";
+import ClipboardFill from "@icons/clipboard-fill.svg?react";
 
 const Btc = () => {
   const [success, setSuccess] = useState(false);
-  const BTC_WALLET = 'bc1qcj6zs57xskca9cua2lj5la6l2yz368j0wxdeap';
+  const BTC_WALLET = "bc1qcj6zs57xskca9cua2lj5la6l2yz368j0wxdeap";
 
   const handleClick = () => {
     navigator.clipboard.writeText(BTC_WALLET);
@@ -21,10 +21,10 @@ const Btc = () => {
       </a>
       <div
         className={twMerge(
-          'inline pl-1',
+          "inline pl-1",
           success
-            ? 'text-fgSecondaryDark hover:text-fgSecondaryDark dark:text-whiteDark dark:hover:text-fgSecondaryDark'
-            : 'text-fgSecondary hover:text-blue dark:text-fgSecondaryDark dark:hover:text-fgPrimaryDark',
+            ? "text-fgSecondaryDark hover:text-fgSecondaryDark dark:text-whiteDark dark:hover:text-fgSecondaryDark"
+            : "text-fgSecondary hover:text-blue dark:text-fgSecondaryDark dark:hover:text-fgPrimaryDark",
         )}
         onClick={handleClick}
       >

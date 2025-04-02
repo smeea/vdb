@@ -1,8 +1,8 @@
-import { useMemo, useState } from 'react';
-import { Button, TwdDeck, TwdDeckWrapper, TwdResultTotal } from '@/components';
-import { CARDS, DATE_NEW_OLD, DATE_OLD_NEW, DECKID, PLAYERS } from '@/constants';
-import { useApp } from '@/context';
-import { decksSort } from '@/utils';
+import { useMemo, useState } from "react";
+import { Button, TwdDeck, TwdDeckWrapper, TwdResultTotal } from "@/components";
+import { CARDS, DATE_NEW_OLD, DATE_OLD_NEW, DECKID, PLAYERS } from "@/constants";
+import { useApp } from "@/context";
+import { decksSort } from "@/utils";
 
 const TwdResult = ({ results }) => {
   const { twdSearchSort, changeTwdSearchSort } = useApp();
@@ -11,9 +11,9 @@ const TwdResult = ({ results }) => {
   const [showCounter, setShowCounter] = useState(SHOW_COUNTER_STEP);
 
   const sortMethods = {
-    [DATE_NEW_OLD]: 'D↓',
-    [DATE_OLD_NEW]: 'D↑',
-    [PLAYERS]: 'P',
+    [DATE_NEW_OLD]: "D↓",
+    [DATE_OLD_NEW]: "D↑",
+    [PLAYERS]: "P",
   };
 
   const sortedDecks = useMemo(() => {

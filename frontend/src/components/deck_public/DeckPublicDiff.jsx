@@ -1,5 +1,5 @@
-import { DiffCrypt, DiffLibrary, FlexGapped } from '@/components';
-import { CRYPT, LIBRARY } from '@/constants';
+import { DiffCrypt, DiffLibrary, FlexGapped } from "@/components";
+import { CRYPT, LIBRARY } from "@/constants";
 
 const DeckPublicDiff = ({ deckFrom, deckTo }) => {
   return (

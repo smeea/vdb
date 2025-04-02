@@ -1,4 +1,4 @@
-import cardtypeSorted from '@/assets/data/cardtypeSorted.json';
+import cardtypeSorted from "@/assets/data/cardtypeSorted.json";
 import {
   ResultLibraryTypeImage,
   SearchAdditionalForms,
@@ -6,12 +6,12 @@ import {
   SearchFormButtonDel,
   SearchFormButtonLogicToggle,
   Select,
-} from '@/components';
-import { ANY, LOGIC, TYPE } from '@/constants';
+} from "@/components";
+import { ANY, LOGIC, TYPE } from "@/constants";
 
 const LibrarySearchFormType = ({ value, onChange, searchForm }) => {
   const name = TYPE;
-  const options = ['ANY', ...cardtypeSorted].map((i) => ({
+  const options = ["ANY", ...cardtypeSorted].map((i) => ({
     value: i.toLowerCase(),
     name: TYPE,
     label: (
@@ -28,7 +28,7 @@ const LibrarySearchFormType = ({ value, onChange, searchForm }) => {
     <>
       <div className="flex items-center">
         <div className="flex w-1/4 items-center justify-between">
-          <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">Type:</div>
+          <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Type:</div>
           {value.value[0] !== ANY && (
             <div className="flex justify-end gap-1 px-1">
               <SearchFormButtonLogicToggle

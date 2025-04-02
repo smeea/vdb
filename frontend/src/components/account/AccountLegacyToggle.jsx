@@ -1,5 +1,5 @@
-import { ConditionalTooltipOrModal, Toggle } from '@/components';
-import { useApp } from '@/context';
+import { ConditionalTooltipOrModal, Toggle } from "@/components";
+import { useApp } from "@/context";
 
 const TooltipText = () => {
   return (
@@ -25,7 +25,7 @@ const AccountLegacyToggle = () => {
       <div className="flex items-center gap-2">
         <div>Legacy Crypt Images</div>
         <ConditionalTooltipOrModal title="Legacy Images" overlay={<TooltipText />}>
-          <div className="text-fgThird dark:text-fgThirdDark font-bold">[?]</div>
+          <div className="font-bold text-fgThird dark:text-fgThirdDark">[?]</div>
         </ConditionalTooltipOrModal>
       </div>
     </Toggle>

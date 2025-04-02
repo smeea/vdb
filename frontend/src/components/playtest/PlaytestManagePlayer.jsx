@@ -1,7 +1,7 @@
-import { useState } from 'react';
-import { twMerge } from 'tailwind-merge';
-import { Flag, Toggle, Tr } from '@/components';
-import { playtestServices } from '@/services';
+import { useState } from "react";
+import { twMerge } from "tailwind-merge";
+import { Flag, Toggle, Tr } from "@/components";
+import { playtestServices } from "@/services";
 
 const PlaytestManagePlayer = ({ value }) => {
   const { username, lang, liaison, timestamp, added_by, added_date, is_admin, reports } = value;
@@ -19,8 +19,8 @@ const PlaytestManagePlayer = ({ value }) => {
           <Toggle isOn={state} handleClick={handleClick} disabled={is_admin}>
             <div
               className={twMerge(
-                'flex items-center gap-2',
-                is_admin && 'text-fgSecondary dark:text-fgSecondaryDark font-bold',
+                "flex items-center gap-2",
+                is_admin && "font-bold text-fgSecondary dark:text-fgSecondaryDark",
               )}
             >
               {username}
@@ -35,11 +35,11 @@ const PlaytestManagePlayer = ({ value }) => {
           </div>
         )}
       </td>
-      <td className="max-sm:hidden text-center">{reports ? reports : ''}</td>
-      <td className="max-sm:hidden text-center">{timestamp}</td>
-      <td className="max-sm:hidden text-center">{added_date}</td>
-      <td className="max-sm:hidden text-center">{added_by}</td>
-      <td className="max-sm:hidden text-center">{liaison}</td>
+      <td className="text-center max-sm:hidden">{reports ? reports : ""}</td>
+      <td className="text-center max-sm:hidden">{timestamp}</td>
+      <td className="text-center max-sm:hidden">{added_date}</td>
+      <td className="text-center max-sm:hidden">{added_by}</td>
+      <td className="text-center max-sm:hidden">{liaison}</td>
     </Tr>
   );
 };

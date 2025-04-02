@@ -1,6 +1,6 @@
-import { useCallback, useEffect, useState } from 'react';
-import { useSearchParams } from 'react-router';
-import { useSnapshot } from 'valtio';
+import { useCallback, useEffect, useState } from "react";
+import { useSearchParams } from "react-router";
+import { useSnapshot } from "valtio";
 import {
   ButtonClose,
   ButtonFloatClose,
@@ -16,7 +16,7 @@ import {
   TwdSearchFormLibrary,
   TwdSearchFormLibraryTotal,
   TwdSearchFormTags,
-} from '@/components';
+} from "@/components";
 import {
   CAPACITY,
   CARDTYPES,
@@ -34,9 +34,9 @@ import {
   TAGS,
   TDA,
   TRAITS,
-} from '@/constants';
-import { clearTdaForm, searchTdaForm, setTdaResults, tdaStore, useApp } from '@/context';
-import { filterDecks, sanitizeFormState } from '@/utils';
+} from "@/constants";
+import { clearTdaForm, searchTdaForm, setTdaResults, tdaStore, useApp } from "@/context";
+import { filterDecks, sanitizeFormState } from "@/utils";
 
 const TdaSearchForm = ({ setShowForm }) => {
   const { cryptCardBase, libraryCardBase, showFloatingButtons, isMobile } = useApp();
@@ -44,7 +44,7 @@ const TdaSearchForm = ({ setShowForm }) => {
   const decks = useSnapshot(tdaStore)[DECKS];
   const [error, setError] = useState(false);
   const [searchParams, setSearchParams] = useSearchParams();
-  const query = JSON.parse(searchParams.get('q'));
+  const query = JSON.parse(searchParams.get("q"));
 
   useEffect(() => {
     if (query) {
@@ -128,7 +128,7 @@ const TdaSearchForm = ({ setShowForm }) => {
     const filteredDecks = filterDecks(decks, sanitizedForm);
 
     if (isMobile && filteredDecks.length === 0) {
-      setError('NO DECKS FOUND');
+      setError("NO DECKS FOUND");
       return;
     }
 

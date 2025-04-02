@@ -4,7 +4,7 @@ import {
   TdaChartsRankingStyle,
   TdaChartsStyle,
   Title,
-} from '@/components';
+} from "@/components";
 
 const TdaCharts = ({ info, decks, searchResults }) => {
   return (

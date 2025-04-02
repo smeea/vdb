@@ -1,10 +1,10 @@
-import { useCallback, useState } from 'react';
-import { twMerge } from 'tailwind-merge';
-import { DeckCryptHeader, DiffCryptTable, FlexGapped, ResultModal } from '@/components';
-import { CAPACITY, CLAN, CRYPT, GROUP, NAME, QUANTITYx, SECT } from '@/constants';
-import { useApp } from '@/context';
-import { useDeckCrypt, useModalCardController } from '@/hooks';
-import { getKeyDisciplines } from '@/utils';
+import { useCallback, useState } from "react";
+import { twMerge } from "tailwind-merge";
+import { DeckCryptHeader, DiffCryptTable, FlexGapped, ResultModal } from "@/components";
+import { CAPACITY, CLAN, CRYPT, GROUP, NAME, QUANTITYx, SECT } from "@/constants";
+import { useApp } from "@/context";
+import { useDeckCrypt, useModalCardController } from "@/hooks";
+import { getKeyDisciplines } from "@/utils";
 
 const ReviewCrypt = ({ cardChange, deckFrom, cardsTo }) => {
   const { setShowFloatingButtons, cryptDeckSort, changeCryptDeckSort, isDesktop, isMobile } =
@@ -12,12 +12,12 @@ const ReviewCrypt = ({ cardChange, deckFrom, cardsTo }) => {
   const [showInfo, setShowInfo] = useState(false);
 
   const sortMethods = {
-    [CAPACITY]: 'C',
-    [CLAN]: 'CL',
-    [GROUP]: 'G',
-    [NAME]: 'N',
-    [QUANTITYx]: 'Q',
-    [SECT]: 'S',
+    [CAPACITY]: "C",
+    [CLAN]: "CL",
+    [GROUP]: "G",
+    [NAME]: "N",
+    [QUANTITYx]: "Q",
+    [SECT]: "S",
   };
 
   const { crypt, cryptSide, sortedCards, sortedCardsSide, cryptTotal } = useDeckCrypt(
@@ -61,8 +61,8 @@ const ReviewCrypt = ({ cardChange, deckFrom, cardsTo }) => {
   return (
     <FlexGapped
       className={twMerge(
-        'flex-col',
-        !isMobile && 'bg-bgPrimary dark:bg-bgPrimaryDark sticky sm:top-10',
+        "flex-col",
+        !isMobile && "sticky bg-bgPrimary sm:top-10 dark:bg-bgPrimaryDark",
       )}
     >
       <div>

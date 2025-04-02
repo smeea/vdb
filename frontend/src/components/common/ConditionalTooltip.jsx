@@ -1,4 +1,4 @@
-import { Tooltip } from '@/components';
+import { Tooltip } from "@/components";
 
 const ConditionalTooltip = ({
   children,

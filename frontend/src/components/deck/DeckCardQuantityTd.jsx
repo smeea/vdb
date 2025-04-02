@@ -1,4 +1,4 @@
-import { DeckCardQuantity } from '@/components';
+import { DeckCardQuantity } from "@/components";
 
 const DeckCardQuantityTd = ({
   card,
@@ -18,8 +18,8 @@ const DeckCardQuantityTd = ({
     <td
       className={
         isEditable
-          ? 'min-w-[75px]'
-          : 'border-bgSecondary bg-blue/5 dark:border-bgSecondaryDark min-w-[32px] border-r sm:min-w-[40px]'
+          ? "min-w-[75px]"
+          : "min-w-[32px] border-bgSecondary border-r bg-blue/5 sm:min-w-[40px] dark:border-bgSecondaryDark"
       }
     >
       <DeckCardQuantity

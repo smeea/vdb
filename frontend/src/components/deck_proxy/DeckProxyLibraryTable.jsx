@@ -1,5 +1,5 @@
-import { DeckProxyLibraryTableRow } from '@/components';
-import { ID } from '@/constants';
+import { DeckProxyLibraryTableRow } from "@/components";
+import { ID } from "@/constants";
 
 const DeckProxyLibraryTable = ({
   inventoryType,
@@ -11,7 +11,7 @@ const DeckProxyLibraryTable = ({
   handleSetSelector,
 }) => {
   return (
-    <table className="border-bgSecondary dark:border-bgSecondaryDark w-full sm:border">
+    <table className="w-full border-bgSecondary sm:border dark:border-bgSecondaryDark">
       <tbody>
         {cards.map((card) => {
           return (

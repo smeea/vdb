@@ -1,4 +1,4 @@
-import sects from '@/assets/data/sectsList.json';
+import sects from "@/assets/data/sectsList.json";
 import {
   ARCHBISHOP,
   BARON,
@@ -17,7 +17,7 @@ import {
   REGENT,
   REQUIREMENT,
   TITLED,
-} from '@/constants';
+} from "@/constants";
 
 const getLibraryRequirements = (card) => {
   let isCapacity;
@@ -46,20 +46,20 @@ const getLibraryRequirements = (card) => {
     NON_TITLED,
   ];
 
-  const uselessReqs = ['non-sterile'];
+  const uselessReqs = ["non-sterile"];
 
   if (card) {
-    const requirements = card?.[REQUIREMENT].split(',');
+    const requirements = card?.[REQUIREMENT].split(",");
 
     if (card[CLAN]) {
-      isClan = card[CLAN].split('/');
+      isClan = card[CLAN].split("/");
     }
 
     if (card[DISCIPLINE]) {
-      if (card[DISCIPLINE].includes(' & ')) {
-        isDiscipline = card[DISCIPLINE].split(' & ');
+      if (card[DISCIPLINE].includes(" & ")) {
+        isDiscipline = card[DISCIPLINE].split(" & ");
       } else {
-        isDiscipline = card[DISCIPLINE].split('/');
+        isDiscipline = card[DISCIPLINE].split("/");
       }
     }
 
@@ -68,10 +68,10 @@ const getLibraryRequirements = (card) => {
       if (sects.map((s) => s.toLowerCase()).includes(req)) isSect = req;
       if (sects.map((s) => `non-${s.toLowerCase()}`).includes(req)) isNonSect = req;
       if (titles.includes(req)) isTitle.push(req);
-      if (req === 'red list') isRedlist = true;
-      if (req.includes(CAPACITY)) isCapacity = req.replace('capacity ', '');
-      if (req.includes('seraph')) isSeraph = true;
-      if (req.includes('black hand')) isBlackHand = true;
+      if (req === "red list") isRedlist = true;
+      if (req.includes(CAPACITY)) isCapacity = req.replace("capacity ", "");
+      if (req.includes("seraph")) isSeraph = true;
+      if (req.includes("black hand")) isBlackHand = true;
     });
   }
 

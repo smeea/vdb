@@ -1,6 +1,6 @@
-import { Checkbox, DeckSortButton, Input, Select } from '@/components';
-import { TEXT } from '@/constants';
-import { useApp } from '@/context';
+import { Checkbox, DeckSortButton, Input, Select } from "@/components";
+import { TEXT } from "@/constants";
+import { useApp } from "@/context";
 
 const InventoryAddDeckHeader = ({
   handleChangeNameFilter,
@@ -45,7 +45,7 @@ const InventoryAddDeckHeader = ({
         <th className="min-w-[110px] ps-1">
           <div className="flex justify-end gap-1 sm:gap-2">
             <Checkbox
-              label={isMobile ? 'Show Rev' : 'Show Revisions'}
+              label={isMobile ? "Show Rev" : "Show Revisions"}
               checked={revFilter}
               onChange={() => setRevFilter(!revFilter)}
             />

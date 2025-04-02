@@ -1,5 +1,5 @@
-import sectsOpts from '@/assets/data/sectsList.json';
-import { ResultCryptTitle } from '@/components';
+import sectsOpts from "@/assets/data/sectsList.json";
+import { ResultCryptTitle } from "@/components";
 import {
   ARCHBISHOP,
   BARON,
@@ -16,28 +16,28 @@ import {
   TITLED,
   VOTE_1,
   VOTE_2,
-} from '@/constants';
-import { capitalize } from '@/utils';
+} from "@/constants";
+import { capitalize } from "@/utils";
 
 const TitlesReq = ({ value }) => {
   if (value.length < 1) return;
-  const htmlTitle = value.map((v) => capitalize(v)).join(' or ');
+  const htmlTitle = value.map((v) => capitalize(v)).join(" or ");
 
   return (
     <div title={htmlTitle} className="text-fg-fgSecondary dark:text-fgSecondaryDark">
       <ResultCryptTitle value={value[0]} noTitle />
-      {value.length > 1 && '+'}
+      {value.length > 1 && "+"}
     </div>
   );
 };
 
 const SectReq = ({ value }) => {
   if (value.length < 1) return;
-  const htmlTitle = value.map((v) => capitalize(v)).join(' or ');
+  const htmlTitle = value.map((v) => capitalize(v)).join(" or ");
 
   return (
-    <div title={htmlTitle} className="text-fgGreen dark:text-fgGreenDark inline">
-      {value.map((v) => v[0].charAt(0).toUpperCase()).join('-')}
+    <div title={htmlTitle} className="inline text-fgGreen dark:text-fgGreenDark">
+      {value.map((v) => v[0].charAt(0).toUpperCase()).join("-")}
     </div>
   );
 };
@@ -48,14 +48,14 @@ const CapacityReq = ({ value }) => {
 
   return (
     <div title={capitalize(value)}>
-      {matches[0][2] === 'less' ? '≤' : '≥'}
+      {matches[0][2] === "less" ? "≤" : "≥"}
       {matches[0][1]}
     </div>
   );
 };
 
 const ResultLibraryRequirements = ({ value }) => {
-  const requirements = value.split(',');
+  const requirements = value.split(",");
   const titlesOpts = [
     PRIMOGEN,
     PRINCE,

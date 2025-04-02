@@ -1,6 +1,6 @@
-import { useState } from 'react';
-import { ButtonFloat, DeckNewCard } from '@/components';
-import { CRYPT } from '@/constants';
+import { useState } from "react";
+import { ButtonFloat, DeckNewCard } from "@/components";
+import { CRYPT } from "@/constants";
 
 const DeckNewCardFloating = ({ deckid, cards, cardChange, target, className }) => {
   const [showAdd, setShowAdd] = useState(false);
@@ -18,15 +18,15 @@ const DeckNewCardFloating = ({ deckid, cards, cardChange, target, className }) =
       <ButtonFloat
         className={className}
         onClick={handleClick}
-        position={target === CRYPT ? 'top' : 'middle'}
+        position={target === CRYPT ? "top" : "middle"}
       >
         <div className="flex items-center text-2xl">
           <div>+</div>
-          <div>{target === CRYPT ? 'C' : 'L'}</div>
+          <div>{target === CRYPT ? "C" : "L"}</div>
         </div>
       </ButtonFloat>
       {showAdd && (
-        <div className="bg-bgPrimary dark:bg-bgPrimaryDark fixed bottom-[40px] z-20 flex w-full p-2">
+        <div className="fixed bottom-[40px] z-20 flex w-full bg-bgPrimary p-2 dark:bg-bgPrimaryDark">
           <div className="w-full" onBlur={handleClose}>
             <DeckNewCard
               handleClose={handleClose}

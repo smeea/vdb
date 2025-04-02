@@ -1,9 +1,9 @@
-import dayjs from 'dayjs';
-import { useNavigate } from 'react-router';
-import { twMerge } from 'tailwind-merge';
-import { TwdOpenDeckButton } from '@/components';
-import { AUTHOR, CRYPT, DECKID, LIBRARY, PLAYER, RELEASE_DATE, TWD, TWD_DATE } from '@/constants';
-import { clearSearchForm, searchTwdForm, useApp } from '@/context';
+import dayjs from "dayjs";
+import { useNavigate } from "react-router";
+import { twMerge } from "tailwind-merge";
+import { TwdOpenDeckButton } from "@/components";
+import { AUTHOR, CRYPT, DECKID, LIBRARY, PLAYER, RELEASE_DATE, TWD, TWD_DATE } from "@/constants";
+import { clearSearchForm, searchTwdForm, useApp } from "@/context";
 
 const TwdCardsHistoryCardAppearance = ({ card, byPlayer }) => {
   const { isMobile } = useApp();
@@ -11,9 +11,9 @@ const TwdCardsHistoryCardAppearance = ({ card, byPlayer }) => {
 
   let yearsToWin = null;
   if (card[TWD_DATE]) {
-    yearsToWin = dayjs(card[TWD_DATE]).diff(dayjs(card[RELEASE_DATE]), 'year');
+    yearsToWin = dayjs(card[TWD_DATE]).diff(dayjs(card[RELEASE_DATE]), "year");
   } else {
-    yearsToWin = `${dayjs().format('YYYY') - card[RELEASE_DATE].slice(0, 4)}+`;
+    yearsToWin = `${dayjs().format("YYYY") - card[RELEASE_DATE].slice(0, 4)}+`;
   }
 
   const handleClick = (author) => {
@@ -26,26 +26,26 @@ const TwdCardsHistoryCardAppearance = ({ card, byPlayer }) => {
     <>
       <div
         className={twMerge(
-          'flex min-w-[45px] items-center justify-center sm:min-w-[60px]',
-          !card[DECKID] && 'text-fgSecondary dark:text-fgSecondaryDark font-bold',
+          "flex min-w-[45px] items-center justify-center sm:min-w-[60px]",
+          !card[DECKID] && "font-bold text-fgSecondary dark:text-fgSecondaryDark",
         )}
       >
         {card[RELEASE_DATE].slice(0, 4)}
       </div>
-      <div className="flex max-sm:hidden items-center justify-center min-w-[60px]">
+      <div className="flex min-w-[60px] items-center justify-center max-sm:hidden">
         {card[TWD_DATE]?.slice(0, 4)}
       </div>
       <div
         className={twMerge(
-          'flex min-w-[25px] items-center justify-center sm:min-w-[60px]',
-          !card[DECKID] && 'text-fgSecondary dark:text-fgSecondaryDark font-bold',
+          "flex min-w-[25px] items-center justify-center sm:min-w-[60px]",
+          !card[DECKID] && "font-bold text-fgSecondary dark:text-fgSecondaryDark",
         )}
       >
         {yearsToWin}
       </div>
       <div className="flex min-w-[90px] items-center justify-between sm:min-w-[250px]">
         <div
-          className="text-fgSecondary dark:text-fgSecondaryDark inline hover:underline max-sm:text-sm"
+          className="inline text-fgSecondary hover:underline max-sm:text-sm dark:text-fgSecondaryDark"
           onClick={() => handleClick(card[PLAYER])}
         >
           {card[PLAYER]}

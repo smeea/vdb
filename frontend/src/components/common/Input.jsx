@@ -1,4 +1,4 @@
-import { twMerge } from 'tailwind-merge';
+import { twMerge } from "tailwind-merge";
 
 const Input = ({
   name,
@@ -10,20 +10,20 @@ const Input = ({
   id,
   onFocus,
   required = false,
-  type = 'text',
-  autoComplete = 'off',
+  type = "text",
+  autoComplete = "off",
   spellCheck = false,
   autoFocus = false,
   readOnly = false,
   className,
-  borderStyle = 'border',
-  roundedStyle = 'rounded-sm',
+  borderStyle = "border",
+  roundedStyle = "rounded-sm",
   ref,
 }) => {
   return (
     <input
       className={twMerge(
-        'border-borderSecondary bg-bgPrimary outline-bgCheckboxSelected placeholder:text-midGray dark:border-borderSecondaryDark dark:bg-bgPrimaryDark dark:outline-bgCheckboxSelectedDark dark:placeholder:text-midGrayDark min-h-[42px] w-full px-2 focus:outline',
+        "min-h-[42px] w-full border-borderSecondary bg-bgPrimary px-2 outline-bgCheckboxSelected placeholder:text-midGray focus:outline dark:border-borderSecondaryDark dark:bg-bgPrimaryDark dark:outline-bgCheckboxSelectedDark dark:placeholder:text-midGrayDark",
         borderStyle,
         roundedStyle,
         className,

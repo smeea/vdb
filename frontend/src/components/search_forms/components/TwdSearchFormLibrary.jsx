@@ -5,10 +5,10 @@ import {
   ResultModal,
   ResultName,
   TwdSearchFormQuantityButtons,
-} from '@/components';
-import { GT, LIBRARY } from '@/constants';
-import { useApp } from '@/context';
-import { useModalCardController } from '@/hooks';
+} from "@/components";
+import { GT, LIBRARY } from "@/constants";
+import { useApp } from "@/context";
+import { useModalCardController } from "@/hooks";
 
 const TwdSearchFormLibrary = ({ value, form }) => {
   const { libraryCardBase, setShowFloatingButtons, isMobile } = useApp();
@@ -39,7 +39,7 @@ const TwdSearchFormLibrary = ({ value, form }) => {
 
   return (
     <div className="flex flex-col gap-2">
-      <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">Library:</div>
+      <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Library:</div>
       <NewCardSelect target={LIBRARY} onChange={handleAdd} />
       <div className="flex flex-col gap-1">
         {Object.keys(value)

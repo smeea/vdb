@@ -1,5 +1,5 @@
-import { useCallback, useState } from 'react';
-import { twMerge } from 'tailwind-merge';
+import { useCallback, useState } from "react";
+import { twMerge } from "tailwind-merge";
 import {
   DeckDrawProbability,
   DeckLibraryHeader,
@@ -7,10 +7,10 @@ import {
   FlexGapped,
   ResultLibraryType,
   ResultModal,
-} from '@/components';
-import { LIBRARY, TYPE_MASTER } from '@/constants';
-import { useApp } from '@/context';
-import { useDeckLibrary, useModalCardController } from '@/hooks';
+} from "@/components";
+import { LIBRARY, TYPE_MASTER } from "@/constants";
+import { useApp } from "@/context";
+import { useDeckLibrary, useModalCardController } from "@/hooks";
 
 const DeckLibrary = ({ inSearch, inPreview, inMissing, deck }) => {
   const { setShowFloatingButtons, isDesktop, isMobile, isNarrow } = useApp();
@@ -65,7 +65,7 @@ const DeckLibrary = ({ inSearch, inPreview, inMissing, deck }) => {
               !inMissing &&
               !inSearch &&
               !isMobile &&
-              'bg-bgPrimary dark:bg-bgPrimaryDark sticky top-10 z-10',
+              "sticky top-10 z-10 bg-bgPrimary dark:bg-bgPrimaryDark",
           )}
         >
           <DeckLibraryHeader
@@ -113,7 +113,7 @@ const DeckLibrary = ({ inSearch, inPreview, inMissing, deck }) => {
       </div>
       {librarySide.length > 0 && (
         <div className="flex flex-col gap-2 opacity-60 dark:opacity-50">
-          <div className="bg-bgSecondary dark:bg-bgSecondaryDark flex h-[42px] items-center p-2 font-bold">
+          <div className="flex h-[42px] items-center bg-bgSecondary p-2 font-bold dark:bg-bgSecondaryDark">
             Side Library
           </div>
           <div className="flex flex-col gap-2">
@@ -131,7 +131,7 @@ const DeckLibrary = ({ inSearch, inPreview, inMissing, deck }) => {
                     cards={librarySideByType[cardtype]}
                     inMissing={inMissing}
                     inSearch={inSearch}
-                    placement={isNarrow ? 'bottom' : 'right'}
+                    placement={isNarrow ? "bottom" : "right"}
                     shouldShowModal={shouldShowModal}
                   />
                 </div>

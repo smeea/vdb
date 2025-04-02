@@ -1,6 +1,6 @@
-import { useState } from 'react';
-import { useSwipeable } from 'react-swipeable';
-import { useDebounce } from '@/hooks';
+import { useState } from "react";
+import { useSwipeable } from "react-swipeable";
+import { useDebounce } from "@/hooks";
 
 const useSwipe = (
   actionLeft,
@@ -24,13 +24,13 @@ const useSwipe = (
         condition &&
         conditionRight
       ) {
-        setIsSwiped('right');
+        setIsSwiped("right");
         actionRight();
       }
     },
     onSwipedLeft: (e) => {
       if (e.absX > SWIPE_THRESHOLD && condition && conditionLeft) {
-        setIsSwiped('left');
+        setIsSwiped("left");
         actionLeft();
       }
     },

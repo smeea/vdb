@@ -1,5 +1,5 @@
-import dayjs from 'dayjs';
-import { proxy } from 'valtio';
+import dayjs from "dayjs";
+import { proxy } from "valtio";
 import {
   AUTHOR,
   BRANCHES,
@@ -26,10 +26,10 @@ import {
   TEXT,
   TIMESTAMP,
   USED_IN_INVENTORY,
-} from '@/constants';
-import { miscStore, startCryptTimer } from '@/context';
-import { deckServices } from '@/services';
-import { deepClone } from '@/utils';
+} from "@/constants";
+import { miscStore, startCryptTimer } from "@/context";
+import { deckServices } from "@/services";
+import { deepClone } from "@/utils";
 
 export const deckStore = proxy({
   [DECK]: undefined,
@@ -124,10 +124,10 @@ export const deckUpdate = (deckid, field, value) => {
       deckStore[DECKS][deckid][field] = value;
       if (field === INVENTORY_TYPE) {
         Object.keys(deckStore[DECKS][deckid][CRYPT]).forEach((cardid) => {
-          deckStore[DECKS][deckid][CRYPT][cardid].i = '';
+          deckStore[DECKS][deckid][CRYPT][cardid].i = "";
         });
         Object.keys(deckStore[DECKS][deckid][LIBRARY]).forEach((cardid) => {
-          deckStore[DECKS][deckid][LIBRARY][cardid].i = '';
+          deckStore[DECKS][deckid][LIBRARY][cardid].i = "";
         });
       }
 
@@ -135,10 +135,10 @@ export const deckUpdate = (deckid, field, value) => {
         deckStore[DECK][field] = value;
         if (field === INVENTORY_TYPE) {
           Object.keys(deckStore[DECK][CRYPT]).forEach((cardid) => {
-            deckStore[DECK][CRYPT][cardid].i = '';
+            deckStore[DECK][CRYPT][cardid].i = "";
           });
           Object.keys(deckStore[DECK][LIBRARY]).forEach((cardid) => {
-            deckStore[DECK][LIBRARY][cardid].i = '';
+            deckStore[DECK][LIBRARY][cardid].i = "";
           });
         }
       }
@@ -176,7 +176,7 @@ export const deckToggleInventoryState = (deckid) => {
       deckUpdate(deckid, INVENTORY_TYPE, H);
       break;
     case H:
-      deckUpdate(deckid, INVENTORY_TYPE, '');
+      deckUpdate(deckid, INVENTORY_TYPE, "");
       break;
     default:
       deckUpdate(deckid, INVENTORY_TYPE, S);
@@ -186,7 +186,7 @@ export const deckToggleInventoryState = (deckid) => {
 export const cardToggleInventoryState = (deckid, cardid) => {
   const deck = deckStore[DECKS][deckid];
   const target = cardid > 200000 ? CRYPT : LIBRARY;
-  const value = deck[target][cardid].i ? '' : deck[INVENTORY_TYPE] === S ? H : S;
+  const value = deck[target][cardid].i ? "" : deck[INVENTORY_TYPE] === S ? H : S;
   deckUpdate(deckid, USED_IN_INVENTORY, {
     [cardid]: value,
   });
@@ -195,12 +195,12 @@ export const cardToggleInventoryState = (deckid, cardid) => {
 export const deckAdd = (deck) => {
   const d = {
     [DECKID]: deck[DECKID],
-    [NAME]: deck[NAME] ?? '',
+    [NAME]: deck[NAME] ?? "",
     [MASTER]: deck[MASTER] ?? null,
     [BRANCHES]: deck[BRANCHES] ?? [],
-    [BRANCH_NAME]: deck[BRANCH_NAME] ?? '#0',
-    [DESCRIPTION]: deck[DESCRIPTION] ?? '',
-    [AUTHOR]: deck[AUTHOR] ?? '',
+    [BRANCH_NAME]: deck[BRANCH_NAME] ?? "#0",
+    [DESCRIPTION]: deck[DESCRIPTION] ?? "",
+    [AUTHOR]: deck[AUTHOR] ?? "",
     [CRYPT]: deck[CRYPT],
     [LIBRARY]: deck[LIBRARY],
     [TAGS]: deck[TAGS] ?? [],

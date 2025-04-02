@@ -10,16 +10,16 @@ import {
   ID,
   LIBRARY,
   NAME,
-} from '@/constants';
-import { getIsPlaytest } from '@/utils';
+} from "@/constants";
+import { getIsPlaytest } from "@/utils";
 
 const importDeck = async (deckText, cryptCardBase, libraryCardBase, isPlaytester) => {
-  const { default: unidecode } = await import('unidecode');
+  const { default: unidecode } = await import("unidecode");
 
   const cardbase = {};
   Object.values(cryptCardBase).forEach((card) => {
     const adv = !!card?.[ADV][0];
-    const name = card[ASCII].toLowerCase().replace(/\W/g, '');
+    const name = card[ASCII].toLowerCase().replace(/\W/g, "");
 
     if (!Object.keys(cardbase).includes(name)) {
       cardbase[name] = { base: card[ID], [card[GROUP]]: card[ID] };
@@ -31,23 +31,23 @@ const importDeck = async (deckText, cryptCardBase, libraryCardBase, isPlaytester
   });
 
   Object.values(libraryCardBase).forEach((card) => {
-    const name = card[ASCII].toLowerCase().replace(/\W/g, '');
+    const name = card[ASCII].toLowerCase().replace(/\W/g, "");
     cardbase[name] = { base: card[ID] };
   });
 
   const minifyCardName = (n) => {
     let name = unidecode(n).toLowerCase();
-    if (name.startsWith('the ')) {
-      name = `${name.replace(/^the /, '')}, the`;
+    if (name.startsWith("the ")) {
+      name = `${name.replace(/^the /, "")}, the`;
     }
-    return name.replace(/--.*$/, '').replace(/\W/g, '');
+    return name.replace(/--.*$/, "").replace(/\W/g, "");
   };
 
   const parseCard = (i) => {
     let id;
     let q;
 
-    if (i.includes('ADV')) {
+    if (i.includes("ADV")) {
       const regexp = /^([0-9]+) ?x?\s+(.*?)\s\(?ADV\)?.*/;
       const match = i.match(regexp);
       q = Number.parseInt(match[1]);
@@ -57,7 +57,7 @@ const importDeck = async (deckText, cryptCardBase, libraryCardBase, isPlaytester
       if (Object.keys(cardbase).includes(cardname)) {
         id = cardbase[cardname][ADV];
       }
-    } else if (i.includes(' (G')) {
+    } else if (i.includes(" (G")) {
       const regexp = /^\s*([0-9]+) ?x?\s+(.*)\s\(G(.*)\)/;
       const match = i.match(regexp);
       q = Number.parseInt(match[1]);
@@ -95,9 +95,9 @@ const importDeck = async (deckText, cryptCardBase, libraryCardBase, isPlaytester
   };
 
   const deck = {
-    [NAME]: 'New deck',
-    [AUTHOR]: '',
-    [DESCRIPTION]: '',
+    [NAME]: "New deck",
+    [AUTHOR]: "",
+    [DESCRIPTION]: "",
     [CRYPT]: {},
     [LIBRARY]: {},
     [BAD_CARDS]: [],
@@ -106,16 +106,16 @@ const importDeck = async (deckText, cryptCardBase, libraryCardBase, isPlaytester
   const deckArray = deckText.split(/\n/);
   deckArray.forEach((i) => {
     const line = i.trim();
-    if (line.startsWith('Deck Name: ')) {
-      deck[NAME] = line.replace('Deck Name: ', '');
+    if (line.startsWith("Deck Name: ")) {
+      deck[NAME] = line.replace("Deck Name: ", "");
       return;
     }
-    if (line.startsWith('Author: ')) {
-      deck[AUTHOR] = line.replace('Author: ', '');
+    if (line.startsWith("Author: ")) {
+      deck[AUTHOR] = line.replace("Author: ", "");
       return;
     }
-    if (line.startsWith('Description: ')) {
-      deck[DESCRIPTION] = line.replace('Description: ', '');
+    if (line.startsWith("Description: ")) {
+      deck[DESCRIPTION] = line.replace("Description: ", "");
       return;
     }
     if (!line || line.match(/^\D/)) {

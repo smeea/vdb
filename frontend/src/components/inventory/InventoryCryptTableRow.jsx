@@ -1,6 +1,6 @@
-import { useCallback } from 'react';
-import { twMerge } from 'tailwind-merge';
-import { useSnapshot } from 'valtio';
+import { useCallback } from "react";
+import { twMerge } from "tailwind-merge";
+import { useSnapshot } from "valtio";
 import {
   CardPopover,
   ConditionalTooltip,
@@ -13,11 +13,11 @@ import {
   ResultCryptGroup,
   ResultCryptTitle,
   ResultName,
-} from '@/components';
-import { CLAN, CRYPT, DISCIPLINES, GROUP, HARD, ID, IS_FROZEN, SOFT, TITLE } from '@/constants';
-import { inventoryCardChange, inventoryStore, useApp, usedStore } from '@/context';
-import { useSwipe } from '@/hooks';
-import { getHardTotal, getSoftMax, getSwipedBg } from '@/utils';
+} from "@/components";
+import { CLAN, CRYPT, DISCIPLINES, GROUP, HARD, ID, IS_FROZEN, SOFT, TITLE } from "@/constants";
+import { inventoryCardChange, inventoryStore, useApp, usedStore } from "@/context";
+import { useSwipe } from "@/hooks";
+import { getHardTotal, getSoftMax, getSwipedBg } from "@/utils";
 
 const InventoryCryptTableRow = ({ card, compact, newFocus, inShared, handleClick }) => {
   const { isMobile, isWide } = useApp();
@@ -38,14 +38,14 @@ const InventoryCryptTableRow = ({ card, compact, newFocus, inShared, handleClick
   return (
     <div
       {...swipeHandlers}
-      className={twMerge('flex w-full items-center', getSwipedBg(isSwiped, true))}
+      className={twMerge("flex w-full items-center", getSwipedBg(isSwiped, true))}
     >
       <div
         className={twMerge(
-          'flex items-center justify-center',
+          "flex items-center justify-center",
           isEditable
-            ? 'min-w-[84px]'
-            : 'border-bgSecondary bg-blue/5 dark:border-bgSecondaryDark h-full min-w-[42px] border-r sm:min-w-[48px]',
+            ? "min-w-[84px]"
+            : "h-full min-w-[42px] border-bgSecondary border-r bg-blue/5 sm:min-w-[48px] dark:border-bgSecondaryDark",
         )}
       >
         {inShared ? (
@@ -72,7 +72,7 @@ const InventoryCryptTableRow = ({ card, compact, newFocus, inShared, handleClick
       <div className="flex min-w-[32px] justify-center sm:min-w-[40px]" onClick={onClick}>
         <ResultCryptCapacity card={card.c} />
       </div>
-      <div className="flex max-lg:hidden min-w-[180px]" onClick={onClick}>
+      <div className="flex min-w-[180px] max-lg:hidden" onClick={onClick}>
         <ResultCryptDisciplines value={card.c[DISCIPLINES]} />
       </div>
       <div className="flex w-full" onClick={onClick}>

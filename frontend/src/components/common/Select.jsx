@@ -1,12 +1,12 @@
-import ReactSelect from 'react-select';
-import AsyncSelect from 'react-select/async';
-import ReactSelectCreatable from 'react-select/creatable';
-import { twMerge } from 'tailwind-merge';
-import { useApp } from '@/context';
+import ReactSelect from "react-select";
+import AsyncSelect from "react-select/async";
+import ReactSelectCreatable from "react-select/creatable";
+import { twMerge } from "tailwind-merge";
+import { useApp } from "@/context";
 
 const Select = ({
   autoFocus = false,
-  borderStyle = 'border',
+  borderStyle = "border",
   className,
   defaultMenuIsOpen = false,
   filterOption,
@@ -16,7 +16,7 @@ const Select = ({
   minMenuHeight,
   maxMenuHeight,
   menuHeight,
-  menuPlacement = 'auto',
+  menuPlacement = "auto",
   menuShouldScrollIntoView = true,
   name,
   noBorder,
@@ -24,9 +24,9 @@ const Select = ({
   onChange,
   options,
   placeholder,
-  roundedStyle = 'rounded-sm',
+  roundedStyle = "rounded-sm",
   value,
-  variant = 'select',
+  variant = "select",
   justifyRight,
   ref,
   noBackground,
@@ -46,10 +46,10 @@ const Select = ({
 
   let Component;
   switch (variant) {
-    case 'async':
+    case "async":
       Component = AsyncSelect;
       break;
-    case 'creatable':
+    case "creatable":
       Component = ReactSelectCreatable;
       break;
     default:
@@ -78,61 +78,61 @@ const Select = ({
       classNames={{
         control: (state) =>
           twMerge(
-            !noBackground && 'bg-bgPrimary dark:bg-bgPrimaryDark',
+            !noBackground && "bg-bgPrimary dark:bg-bgPrimaryDark",
             !noBorder && roundedStyle,
             !noBorder && borderStyle,
             !noBorder &&
               (state.isFocused
-                ? 'border-bgCheckboxSelected dark:border-bgCheckboxSelectedDark'
-                : 'border-borderSecondary dark:border-borderSecondaryDark'),
+                ? "border-bgCheckboxSelected dark:border-bgCheckboxSelectedDark"
+                : "border-borderSecondary dark:border-borderSecondaryDark"),
           ),
         dropdownIndicator: () =>
           noDropdown
-            ? 'max-w-0 max-h-0'
-            : 'px-2 text-borderSecondary dark:text-borderSecondaryDark',
+            ? "max-w-0 max-h-0"
+            : "px-2 text-borderSecondary dark:text-borderSecondaryDark",
         indicatorsContainer: () =>
-          twMerge('cursor-pointer rounded-sm', noDropdown ? 'max-h-0 max-w-0' : 'py-1.5 '),
-        indicatorSeparator: () => 'bg-borderSecondary dark:bg-borderSecondaryDark',
-        menu: () => 'my-2 rounded-sm border border-borderThird dark:border-borderThirdDark',
-        menuList: () => 'rounded-sm bg-bgPrimary dark:bg-bgPrimaryDark',
+          twMerge("cursor-pointer rounded-sm", noDropdown ? "max-h-0 max-w-0" : "py-1.5 "),
+        indicatorSeparator: () => "bg-borderSecondary dark:bg-borderSecondaryDark",
+        menu: () => "my-2 rounded-sm border border-borderThird dark:border-borderThirdDark",
+        menuList: () => "rounded-sm bg-bgPrimary dark:bg-bgPrimaryDark",
         option: (state) =>
           twMerge(
-            'p-2 text-fgPrimary dark:text-fgPrimaryDark',
+            "p-2 text-fgPrimary dark:text-fgPrimaryDark",
             state.isFocused
-              ? 'bg-borderPrimary dark:bg-bgCheckboxSelectedDark'
-              : state.isSelected && 'bg-borderSecondary dark:bg-borderPrimaryDark',
+              ? "bg-borderPrimary dark:bg-bgCheckboxSelectedDark"
+              : state.isSelected && "bg-borderSecondary dark:bg-borderPrimaryDark",
           ),
         container: () =>
-          twMerge(!noBackground && 'bg-bgPrimary dark:bg-bgPrimaryDark', roundedStyle, className),
-        placeholder: () => 'text-midGray dark:text-midGrayDark',
+          twMerge(!noBackground && "bg-bgPrimary dark:bg-bgPrimaryDark", roundedStyle, className),
+        placeholder: () => "text-midGray dark:text-midGrayDark",
         /* no bg- in creatable */
         valueContainer: () =>
           twMerge(
-            'min-h-[40px] text-fgPrimary dark:text-fgPrimaryDark cursor-pointer rounded-sm',
-            !noBackground && 'bg-bgPrimary dark:bg-bgPrimaryDark',
-            justifyRight && 'justify-end',
-            variant === 'creatable' && !noBorder && 'p-1.5',
-            variant === 'creatable' ? 'gap-1' : 'px-2',
+            "min-h-[40px] text-fgPrimary dark:text-fgPrimaryDark cursor-pointer rounded-sm",
+            !noBackground && "bg-bgPrimary dark:bg-bgPrimaryDark",
+            justifyRight && "justify-end",
+            variant === "creatable" && !noBorder && "p-1.5",
+            variant === "creatable" ? "gap-1" : "px-2",
           ),
-        noOptionsMessage: () => 'rounded-sm p-2',
-        clearIndicator: () => 'text-lightGray dark:text-lightGrayDark pr-2',
+        noOptionsMessage: () => "rounded-sm p-2",
+        clearIndicator: () => "text-lightGray dark:text-lightGrayDark pr-2",
         /* Async */
-        loadingMessage: () => 'rounded-sm p-2',
-        loadingIndicator: () => 'text-lightGray dark:text-lightGrayDark pr-2',
+        loadingMessage: () => "rounded-sm p-2",
+        loadingIndicator: () => "text-lightGray dark:text-lightGrayDark pr-2",
         /* Creatable */
-        input: () => (noRemove ? 'max-w-0 max-h-0' : ''),
-        multiValue: () => 'bg-bgButton dark:bg-bgButtonDark rounded-sm',
+        input: () => (noRemove ? "max-w-0 max-h-0" : ""),
+        multiValue: () => "bg-bgButton dark:bg-bgButtonDark rounded-sm",
         multiValueLabel: () =>
           twMerge(
-            'text-sm px-1.5 py-1 border-borderSecondary dark:border-borderSecondaryDark',
+            "text-sm px-1.5 py-1 border-borderSecondary dark:border-borderSecondaryDark",
             noRemove
-              ? 'border rounded-sm'
-              : 'border-l border-y border-borderSecondary dark:border-borderSecondaryDark rounded-l rounded-y',
+              ? "border rounded-sm"
+              : "border-l border-y border-borderSecondary dark:border-borderSecondaryDark rounded-l rounded-y",
           ),
         multiValueRemove: () =>
           noRemove
-            ? 'max-w-0 max-h-0 hidden'
-            : 'pr-1 bg-bgButton dark:bg-bgButtonDark rounded-r border-r border-y border-borderSecondary dark:border-borderSecondaryDark',
+            ? "max-w-0 max-h-0 hidden"
+            : "pr-1 bg-bgButton dark:bg-bgButtonDark rounded-r border-r border-y border-borderSecondary dark:border-borderSecondaryDark",
       }}
       // Async
       cacheOptions={cacheOptions}

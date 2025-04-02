@@ -1,5 +1,5 @@
-import imbuedClansList from '@/assets/data/imbuedClansList.json';
-import vampireClansList from '@/assets/data/vampireClansList.json';
+import imbuedClansList from "@/assets/data/imbuedClansList.json";
+import vampireClansList from "@/assets/data/vampireClansList.json";
 import {
   ResultClanImage,
   SearchAdditionalForms,
@@ -7,14 +7,14 @@ import {
   SearchFormButtonDel,
   SearchFormButtonLogicToggle,
   Select,
-} from '@/components';
-import { ANY, CLAN, LOGIC } from '@/constants';
-import { useApp } from '@/context';
+} from "@/components";
+import { ANY, CLAN, LOGIC } from "@/constants";
+import { useApp } from "@/context";
 
 const CryptSearchFormClan = ({ value, searchForm, onChange }) => {
   const { isMobile } = useApp();
   const name = CLAN;
-  const options = ['ANY', ...vampireClansList, ...imbuedClansList].map((i) => ({
+  const options = ["ANY", ...vampireClansList, ...imbuedClansList].map((i) => ({
     value: i.toLowerCase(),
     name: name,
     label: (
@@ -31,7 +31,7 @@ const CryptSearchFormClan = ({ value, searchForm, onChange }) => {
     <>
       <div className="flex items-center">
         <div className="flex w-1/4 items-center justify-between">
-          <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">Clan:</div>
+          <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Clan:</div>
           {value.value[0] !== ANY && (
             <div className="flex justify-end gap-1 px-1">
               <SearchFormButtonLogicToggle

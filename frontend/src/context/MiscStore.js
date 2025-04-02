@@ -1,7 +1,7 @@
-import { proxy } from 'valtio';
-import { CRYPT_TIMER } from '@/constants';
+import { proxy } from "valtio";
+import { CRYPT_TIMER } from "@/constants";
 
-const CRYPT_TIMERS = 'cryptTimers';
+const CRYPT_TIMERS = "cryptTimers";
 
 export const miscStore = proxy({
   [CRYPT_TIMER]: undefined,

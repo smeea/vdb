@@ -1,4 +1,4 @@
-import cardtypeSortedFull from '@/assets/data/cardtypeSortedFull.json';
+import cardtypeSortedFull from "@/assets/data/cardtypeSortedFull.json";
 import {
   ADV,
   ANY,
@@ -24,8 +24,8 @@ import {
   TWD_HINTS,
   TYPE,
   TYPE_MASTER,
-} from '@/constants';
-import { cryptSort, getTextDisciplines, librarySort } from '@/utils';
+} from "@/constants";
+import { cryptSort, getTextDisciplines, librarySort } from "@/utils";
 
 const getCryptTitle = (crypt) => {
   let cryptTotalCap = 0;
@@ -51,7 +51,7 @@ const getCryptTitle = (crypt) => {
 };
 
 const getCryptText = (crypt) => {
-  let result = '';
+  let result = "";
   let maxQtyLength = 0;
   let maxNameLength = 0;
   let maxTitleLength = 0;
@@ -63,7 +63,7 @@ const getCryptText = (crypt) => {
     const q = card.q;
     let name = c[NAME];
     if (c[ADV]?.[0]) {
-      name += ' (ADV)';
+      name += " (ADV)";
     }
     const disciplines = getTextDisciplines(c[DISCIPLINES]);
 
@@ -90,7 +90,7 @@ const getCryptText = (crypt) => {
 
     let name = c[NAME];
     if (c[ADV]?.[0]) {
-      name += ' (ADV)';
+      name += " (ADV)";
     }
     const disciplines = getTextDisciplines(c[DISCIPLINES]);
 
@@ -100,19 +100,19 @@ const getCryptText = (crypt) => {
     const capacitySpaces = maxCapacityLength - c[CAPACITY].toString().length;
     const titleSpaces = maxTitleLength - c[TITLE].length + 3;
 
-    result += `${q}x${' '.repeat(quantitySpaces)} `;
-    result += `${name}${' '.repeat(nameSpaces)}`;
-    result += `${' '.repeat(capacitySpaces)}${c[CAPACITY]} `;
-    result += `${disciplines}${' '.repeat(disSpaces)}`;
-    result += `${c[TITLE]}${' '.repeat(titleSpaces)}`;
-    result += `${c[CLAN]}:${c[GROUP] === ANY ? 'ANY' : c[GROUP]}\n`;
+    result += `${q}x${" ".repeat(quantitySpaces)} `;
+    result += `${name}${" ".repeat(nameSpaces)}`;
+    result += `${" ".repeat(capacitySpaces)}${c[CAPACITY]} `;
+    result += `${disciplines}${" ".repeat(disSpaces)}`;
+    result += `${c[TITLE]}${" ".repeat(titleSpaces)}`;
+    result += `${c[CLAN]}:${c[GROUP] === ANY ? "ANY" : c[GROUP]}\n`;
   });
 
   return result;
 };
 
 const getLibraryText = (library, format) => {
-  let result = '';
+  let result = "";
   const byType = {};
   const byTypeTotal = {};
   let libraryTotal = 0;
@@ -139,8 +139,8 @@ const getLibraryText = (library, format) => {
   const libraryTitle = `Library (${libraryTotal} cards)`;
   result += `${libraryTitle}\n`;
   if (format === TEXT) {
-    result += '='.repeat(libraryTitle.length);
-    result += '\n';
+    result += "=".repeat(libraryTitle.length);
+    result += "\n";
   }
 
   cardtypeSortedFull.forEach((type) => {
@@ -149,19 +149,19 @@ const getLibraryText = (library, format) => {
       if (type === TYPE_MASTER && triflesTotal) {
         typeTitle += `; ${triflesTotal} trifle`;
       }
-      typeTitle += ')\n';
+      typeTitle += ")\n";
       result += typeTitle;
 
       if (format === TEXT) {
-        result += '-'.repeat(typeTitle.length);
-        result += '\n';
+        result += "-".repeat(typeTitle.length);
+        result += "\n";
       }
 
       const sortedCards = Object.keys(byType[type]).toSorted();
       sortedCards.forEach((card) => {
         result += `${byType[type][card]}x ${card}\n`;
       });
-      result += '\n';
+      result += "\n";
     }
   });
 
@@ -171,14 +171,14 @@ const getLibraryText = (library, format) => {
 };
 
 const exportJol = (deck) => {
-  let result = '';
+  let result = "";
   const sortedCrypt = cryptSort(Object.values(deck[CRYPT]), NAME);
   const sortedLibrary = librarySort(Object.values(deck[LIBRARY]), NAME);
 
   sortedCrypt.forEach((card) => {
     let name = card.c[NAME];
     if (card.c[ADV]?.[0]) {
-      name += ' (ADV)';
+      name += " (ADV)";
     }
     if (card.c[NEW]) {
       name += ` (G${card.c[GROUP]})`;
@@ -195,29 +195,29 @@ const exportJol = (deck) => {
 };
 
 const exportLackey = (deck) => {
-  let result = '';
+  let result = "";
   const sortedCrypt = cryptSort(Object.values(deck[CRYPT]), NAME);
   const sortedLibrary = librarySort(Object.values(deck[LIBRARY]), NAME);
 
   sortedLibrary.forEach((card) => {
     const spaces = 8 - card.q.toString().length;
-    result += `${card.q}${' '.repeat(spaces)}`;
-    result += `${card.c[ASCII].replace(/\//g, '')}\n`;
+    result += `${card.q}${" ".repeat(spaces)}`;
+    result += `${card.c[ASCII].replace(/\//g, "")}\n`;
   });
 
-  result += 'Crypt:\n';
+  result += "Crypt:\n";
 
   sortedCrypt.forEach((card) => {
     const spaces = 8 - card.q.toString().length;
     let name = card.c[ASCII];
     if (card.c[ADV]?.[0]) {
-      name += ' (ADV)';
+      name += " (ADV)";
     }
     if (card.c[NEW]) {
       name += ` (G${card.c[GROUP]})`;
     }
 
-    result += `${card.q}${' '.repeat(spaces)}`;
+    result += `${card.q}${" ".repeat(spaces)}`;
     result += `${name}\n`;
   });
 
@@ -225,7 +225,7 @@ const exportLackey = (deck) => {
 };
 
 const exportTwd = (deck, withHints) => {
-  let result = '';
+  let result = "";
   const sortedCrypt = cryptSort(Object.values(deck[CRYPT]), QUANTITY);
 
   if (withHints) {
@@ -239,11 +239,11 @@ March 25th 2023                                    # Event Date
 Otso Saariluoma                                    # Winner
 https://www.vekn.net/event-calendar/event/10546    # Event Link
 
-Deck Name: ${deck[NAME]}${' '.repeat(39 - deck[NAME].length)} # OPTIONAL
+Deck Name: ${deck[NAME]}${" ".repeat(39 - deck[NAME].length)} # OPTIONAL
 Created by: Author Name                            # OPTIONAL, only if different from Winner
 Description:                                       # OPTIONAL
 ${
-  deck[DESCRIPTION].replace(/\n|\s/g, '').length > 0
+  deck[DESCRIPTION].replace(/\n|\s/g, "").length > 0
     ? deck[DESCRIPTION]
     : `Put your descriptiopn here.
 Empty lines in description are OK. Can take multiple lines.
@@ -271,19 +271,19 @@ Description:
 `;
   }
 
-  result += '\n';
+  result += "\n";
   result += `${getCryptTitle(deck[CRYPT])}\n`;
-  result += '-'.repeat(getCryptTitle(deck[CRYPT]).length);
-  result += '\n';
+  result += "-".repeat(getCryptTitle(deck[CRYPT]).length);
+  result += "\n";
   result += getCryptText(sortedCrypt);
-  result += '\n';
+  result += "\n";
   result += getLibraryText(deck[LIBRARY], TWD);
 
   return result;
 };
 
 const exportText = (deck) => {
-  let result = '';
+  let result = "";
   const sortedCrypt = cryptSort(Object.values(deck[CRYPT]), CAPACITY);
 
   result += `Deck Name: ${deck[NAME]}\n`;
@@ -291,12 +291,12 @@ const exportText = (deck) => {
   if (deck[DESCRIPTION]) {
     result += `Description: ${deck[DESCRIPTION]}\n`;
   }
-  result += '\n';
+  result += "\n";
   result += `${getCryptTitle(deck[CRYPT])}\n`;
-  result += '='.repeat(getCryptTitle(deck[CRYPT]).length);
-  result += '\n';
+  result += "=".repeat(getCryptTitle(deck[CRYPT]).length);
+  result += "\n";
   result += getCryptText(sortedCrypt);
-  result += '\n';
+  result += "\n";
   result += getLibraryText(deck[LIBRARY], TEXT);
 
   return result;

@@ -1,7 +1,7 @@
-import { useMemo, useState } from 'react';
+import { useMemo, useState } from "react";
 
-const SIDE_CARD_MODE = 'SIDE_CARD_MODE';
-const MAIN_CARD_MODE = 'MAIN_CARD_MODE';
+const SIDE_CARD_MODE = "SIDE_CARD_MODE";
+const MAIN_CARD_MODE = "MAIN_CARD_MODE";
 
 const useModalCardController = (mainCards = [], sideCards = []) => {
   const [cardid, setCardid] = useState(null);

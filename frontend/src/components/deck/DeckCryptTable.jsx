@@ -1,6 +1,6 @@
-import { DeckCryptTableRow } from '@/components';
-import { DECKID, ID, INVENTORY_TYPE } from '@/constants';
-import { getIsEditable } from '@/utils';
+import { DeckCryptTableRow } from "@/components";
+import { DECKID, ID, INVENTORY_TYPE } from "@/constants";
+import { getIsEditable } from "@/utils";
 
 const DeckCryptTable = ({
   deck,
@@ -19,7 +19,7 @@ const DeckCryptTable = ({
   const isEditable = getIsEditable(deck);
 
   return (
-    <table className="border-bgSecondary dark:border-bgSecondaryDark w-full sm:border">
+    <table className="w-full border-bgSecondary sm:border dark:border-bgSecondaryDark">
       <tbody>
         {cards.map((card) => {
           return (

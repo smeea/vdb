@@ -1,11 +1,11 @@
-import Plus from '@icons/plus.svg?react';
-import { Button } from '@/components';
-import { AND, TEXT } from '@/constants';
+import Plus from "@icons/plus.svg?react";
+import { Button } from "@/components";
+import { AND, TEXT } from "@/constants";
 
 const SearchFormButtonAddText = ({ searchForm }) => {
   const addForm = () => {
     searchForm[TEXT].push({
-      value: '',
+      value: "",
       regex: false,
       in: false,
       logic: AND,

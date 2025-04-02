@@ -1,10 +1,10 @@
-import { twMerge } from 'tailwind-merge';
+import { twMerge } from "tailwind-merge";
 
 const Tr = ({ children, className }) => {
   return (
     <tr
       className={twMerge(
-        'border-bgSecondary dark:border-bgSecondaryDark odd:bg-bgPrimary odd:dark:bg-bgPrimaryDark even:bg-bgThird even:dark:bg-bgThirdDark h-[38px] border-y',
+        "h-[38px] border-bgSecondary border-y odd:bg-bgPrimary even:bg-bgThird dark:border-bgSecondaryDark even:dark:bg-bgThirdDark odd:dark:bg-bgPrimaryDark",
         className,
       )}
     >

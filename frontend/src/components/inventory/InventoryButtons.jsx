@@ -1,8 +1,8 @@
-import dayjs from 'dayjs';
-import { useNavigate } from 'react-router';
-import { useSnapshot } from 'valtio';
-import Folder2Open from '@icons/folder2-open.svg?react';
-import FolderPlus from '@icons/folder-plus.svg?react';
+import dayjs from "dayjs";
+import { useNavigate } from "react-router";
+import { useSnapshot } from "valtio";
+import Folder2Open from "@icons/folder2-open.svg?react";
+import FolderPlus from "@icons/folder-plus.svg?react";
 import {
   ButtonFloatClose,
   ButtonIconed,
@@ -11,9 +11,9 @@ import {
   InventoryImport,
   InventoryMissingButton,
   InventoryShareButton,
-} from '@/components';
-import { AUTHOR, CRYPT, DECKS, IS_FROZEN, LIBRARY, NAME } from '@/constants';
-import { deckStore, inventoryStore, useApp } from '@/context';
+} from "@/components";
+import { AUTHOR, CRYPT, DECKS, IS_FROZEN, LIBRARY, NAME } from "@/constants";
+import { deckStore, inventoryStore, useApp } from "@/context";
 
 const InventoryButtons = ({
   setShowAddDeck,
@@ -59,13 +59,13 @@ const InventoryButtons = ({
       <div className="flex flex-col gap-1">
         {isSharedInventory && (
           <ButtonIconed
-            variant={isDesktop ? 'secondary' : 'primary'}
+            variant={isDesktop ? "secondary" : "primary"}
             onClick={() => {
               setShowMenuButtons(false);
               setShowFloatingButtons(true);
               setSharedCrypt(null);
               setSharedLibrary(null);
-              navigate('/inventory');
+              navigate("/inventory");
             }}
             title="Back to My Inventory"
             icon={<Folder2Open />}
@@ -74,7 +74,7 @@ const InventoryButtons = ({
         )}
         <DeckExportButton
           deck={{
-            [NAME]: `Inventory ${dayjs().format('YYYY-MM-DD')}`,
+            [NAME]: `Inventory ${dayjs().format("YYYY-MM-DD")}`,
             [AUTHOR]: publicName,
             [CRYPT]: crypt,
             [LIBRARY]: library,
@@ -88,7 +88,7 @@ const InventoryButtons = ({
                 <InventoryImport />
                 {decks && (
                   <ButtonIconed
-                    variant={isDesktop ? 'secondary' : 'primary'}
+                    variant={isDesktop ? "secondary" : "primary"}
                     onClick={() => {
                       setShowAddDeck(true);
                       setShowMenuButtons(false);
@@ -101,7 +101,7 @@ const InventoryButtons = ({
                 )}
                 {preconDecks && (
                   <ButtonIconed
-                    variant={isDesktop ? 'secondary' : 'primary'}
+                    variant={isDesktop ? "secondary" : "primary"}
                     onClick={() => {
                       setShowAddPrecon(true);
                       setShowMenuButtons(false);

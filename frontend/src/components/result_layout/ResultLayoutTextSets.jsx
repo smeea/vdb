@@ -1,16 +1,16 @@
-import { Link } from 'react-router';
-import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
-import { CardImage, ConditionalTooltipOrModal } from '@/components';
-import { DATE, NAME, PLAYTEST, POD, PRECONS, PROMO, SET } from '@/constants';
-import { useApp } from '@/context';
+import { Link } from "react-router";
+import setsAndPrecons from "@/assets/data/setsAndPrecons.json";
+import { CardImage, ConditionalTooltipOrModal } from "@/components";
+import { DATE, NAME, PLAYTEST, POD, PRECONS, PROMO, SET } from "@/constants";
+import { useApp } from "@/context";
 
 const PreconsDetailed = ({ sets, set }) => {
   return Object.keys(sets[set]).map((i) => {
     const abbrevs = {
-      U: 'Uncommon',
-      R: 'Rare',
-      C: 'Common',
-      V: 'Vampire',
+      U: "Uncommon",
+      R: "Rare",
+      C: "Common",
+      V: "Vampire",
     };
 
     if (setsAndPrecons[set][PRECONS]?.[i]) {
@@ -18,7 +18,7 @@ const PreconsDetailed = ({ sets, set }) => {
         <li key={`${set}-${i}`} className="whitespace-nowrap">
           <Link target="_blank" rel="noreferrer" to={`/decks/${set}:${i}`}>
             {setsAndPrecons[set][PRECONS][i][NAME]}
-          </Link>{' '}
+          </Link>{" "}
           - {sets[set][i]}x
         </li>
       );
@@ -26,7 +26,7 @@ const PreconsDetailed = ({ sets, set }) => {
     if (set === PROMO) {
       return <li key={`${set}-${i}`}>{i}</li>;
     }
-    if (i !== 'DTC') {
+    if (i !== "DTC") {
       return <li key={`${set}-${i}`}>{abbrevs[i]}</li>;
     }
   });
@@ -61,7 +61,7 @@ const ResultLayoutTextSets = ({ card }) => {
         .filter((set) => playtestMode || set !== PLAYTEST)
         .toSorted(byDate)
         .map((set) => {
-          const preconsShort = Object.keys(card[SET][set]).join('/');
+          const preconsShort = Object.keys(card[SET][set]).join("/");
           const year = setsAndPrecons[set][DATE].slice(2, 4) || null;
 
           return (
@@ -74,12 +74,12 @@ const ResultLayoutTextSets = ({ card }) => {
                 size="lg"
                 noPadding
               >
-                <div className="text-fgSecondary dark:text-fgPrimaryDark flex">
-                  {set === PLAYTEST ? 'PLAYTEST' : set}
-                  <div className="text-fgFourth dark:text-fgFourthDark flex items-start text-sm">
+                <div className="flex text-fgSecondary dark:text-fgPrimaryDark">
+                  {set === PLAYTEST ? "PLAYTEST" : set}
+                  <div className="flex items-start text-fgFourth text-sm dark:text-fgFourthDark">
                     {year ? `'${year}` : null}
                   </div>
-                  <div className="text-midGray dark:text-midGrayDark inline">
+                  <div className="inline text-midGray dark:text-midGrayDark">
                     {preconsShort ? `:${preconsShort}` : null}
                   </div>
                 </div>

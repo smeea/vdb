@@ -1,16 +1,16 @@
-import { useEffect, useState } from 'react';
-import { useSearchParams } from 'react-router';
-import { useSnapshot } from 'valtio';
-import { ButtonFloatClose, ErrorMessage, FlexGapped, PdaResult, PdaSearchForm } from '@/components';
-import { PDA } from '@/constants';
-import { searchResults, setPdaResults, useApp } from '@/context';
+import { useEffect, useState } from "react";
+import { useSearchParams } from "react-router";
+import { useSnapshot } from "valtio";
+import { ButtonFloatClose, ErrorMessage, FlexGapped, PdaResult, PdaSearchForm } from "@/components";
+import { PDA } from "@/constants";
+import { searchResults, setPdaResults, useApp } from "@/context";
 
 const Pda = () => {
   const { showFloatingButtons, isMobile } = useApp();
   const pdaResults = useSnapshot(searchResults)[PDA];
   const [error, setError] = useState();
   const [searchParams, setSearchParams] = useSearchParams();
-  const query = JSON.parse(searchParams.get('q'));
+  const query = JSON.parse(searchParams.get("q"));
   const handleClear = () => setSearchParams();
 
   useEffect(() => {

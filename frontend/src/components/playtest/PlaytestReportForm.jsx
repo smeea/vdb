@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react';
-import ChatLeftQuoteFill from '@icons/chat-left-quote-fill.svg?react';
-import ChevronBarContract from '@icons/chevron-bar-contract.svg?react';
-import ChevronBarExpand from '@icons/chevron-bar-expand.svg?react';
+import { useEffect, useState } from "react";
+import ChatLeftQuoteFill from "@icons/chat-left-quote-fill.svg?react";
+import ChevronBarContract from "@icons/chevron-bar-contract.svg?react";
+import ChevronBarExpand from "@icons/chevron-bar-expand.svg?react";
 import {
   Button,
   Checkbox,
@@ -10,16 +10,16 @@ import {
   InputLabel,
   PlaytestScores,
   Textarea,
-} from '@/components';
-import { CARDS, ID, PRECONS, SCORE, TEXT, VALUE } from '@/constants';
-import { useFetch } from '@/hooks';
-import { playtestServices } from '@/services';
+} from "@/components";
+import { CARDS, ID, PRECONS, SCORE, TEXT, VALUE } from "@/constants";
+import { useFetch } from "@/hooks";
+import { playtestServices } from "@/services";
 
-const IS_PLAYED = 'isPlayed';
+const IS_PLAYED = "isPlayed";
 
 const Title = ({ isPrecon }) => {
   return (
-    <div className="text-fgSecondary dark:text-fgSecondaryDark flex gap-3 font-bold whitespace-nowrap">
+    <div className="flex gap-3 whitespace-nowrap font-bold text-fgSecondary dark:text-fgSecondaryDark">
       Playtest Report:
       <ConditionalTooltipOrModal
         title="Public name"
@@ -30,7 +30,7 @@ const Title = ({ isPrecon }) => {
               more specific guidelines.
             </div>
             <div>
-              Score represent how STRONG {isPrecon ? 'precon' : 'card'} is, not how balanced or
+              Score represent how STRONG {isPrecon ? "precon" : "card"} is, not how balanced or
               well-designed it is:
             </div>
             <div>
@@ -51,7 +51,7 @@ const Title = ({ isPrecon }) => {
           </div>
         }
       >
-        <div className="text-fgThird dark:text-fgThirdDark font-bold">[?]</div>
+        <div className="font-bold text-fgThird dark:text-fgThirdDark">[?]</div>
       </ConditionalTooltipOrModal>
     </div>
   );
@@ -60,7 +60,7 @@ const Title = ({ isPrecon }) => {
 const PlaytestReportForm = ({ id, setIsHotkeysDisabled, isPrecon = false }) => {
   const [isFolded, setIsFolded] = useState(true);
   const [report, setReport] = useState({
-    [TEXT]: '',
+    [TEXT]: "",
     [SCORE]: 0,
     [IS_PLAYED]: false,
     [ID]: null,

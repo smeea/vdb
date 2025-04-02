@@ -3,9 +3,9 @@ import {
   ResultCryptLayoutText,
   ResultLayoutTextCommon,
   ResultLibraryLayoutText,
-} from '@/components';
-import { ID } from '@/constants';
-import { useApp } from '@/context';
+} from "@/components";
+import { ID } from "@/constants";
+import { useApp } from "@/context";
 
 const CardPopover = ({ card }) => {
   const { showImage } = useApp();

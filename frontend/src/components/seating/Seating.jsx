@@ -1,16 +1,16 @@
-import { useEffect, useState } from 'react';
-import { useImmer } from 'use-immer';
-import standardDecksData from '@/assets/data/standardDecks.json';
-import { SeatingModal } from '@/components';
-import { DECKID, NAME, RANDOM, STATE } from '@/constants';
-import { useApp } from '@/context';
-import { getLocalStorage, setLocalStorage } from '@/services/storageServices';
+import { useEffect, useState } from "react";
+import { useImmer } from "use-immer";
+import standardDecksData from "@/assets/data/standardDecks.json";
+import { SeatingModal } from "@/components";
+import { DECKID, NAME, RANDOM, STATE } from "@/constants";
+import { useApp } from "@/context";
+import { getLocalStorage, setLocalStorage } from "@/services/storageServices";
 
-const CUSTOM_DECKS = 'seatingCustomDecks';
-const STANDARD_DECKS = 'seatingStandardDecks';
-const WITH_CUSTOM = 'seatingWithCustom';
-const WITH_STANDARD = 'seatingWithStandard';
-const PLAYERS = 'seatingPlayers';
+const CUSTOM_DECKS = "seatingCustomDecks";
+const STANDARD_DECKS = "seatingStandardDecks";
+const WITH_CUSTOM = "seatingWithCustom";
+const WITH_STANDARD = "seatingWithStandard";
+const PLAYERS = "seatingPlayers";
 
 const getRandomDeck = (players) => {
   return players[Math.floor(Math.random() * Math.floor(players.length))];
@@ -33,7 +33,7 @@ const Seating = ({ setShow }) => {
   const [standardDecks, setStandardDecks] = useImmer(
     getLocalStorage(STANDARD_DECKS) ??
       Object.keys(standardDecksData)
-        .toSorted((a, b) => standardDecksData[a].localeCompare(standardDecksData[b], 'en'))
+        .toSorted((a, b) => standardDecksData[a].localeCompare(standardDecksData[b], "en"))
         .map((deckid) => ({
           [DECKID]: deckid,
           [NAME]: standardDecksData[deckid],
@@ -42,11 +42,11 @@ const Seating = ({ setShow }) => {
   );
   const [players, setPlayers] = useImmer(
     getLocalStorage(PLAYERS) ?? [
-      { [NAME]: 'Player 1', [RANDOM]: false, [STATE]: true },
-      { [NAME]: 'Player 2', [RANDOM]: false, [STATE]: true },
-      { [NAME]: 'Player 3', [RANDOM]: false, [STATE]: true },
-      { [NAME]: 'Player 4', [RANDOM]: false, [STATE]: true },
-      { [NAME]: 'Player 5', [RANDOM]: false, [STATE]: true },
+      { [NAME]: "Player 1", [RANDOM]: false, [STATE]: true },
+      { [NAME]: "Player 2", [RANDOM]: false, [STATE]: true },
+      { [NAME]: "Player 3", [RANDOM]: false, [STATE]: true },
+      { [NAME]: "Player 4", [RANDOM]: false, [STATE]: true },
+      { [NAME]: "Player 5", [RANDOM]: false, [STATE]: true },
     ],
   );
 
@@ -85,7 +85,7 @@ const Seating = ({ setShow }) => {
           const src = [];
           if (withCustom) src.push(...customDecks.filter((v) => v[STATE]));
           if (withStandard) src.push(...standardDecks.filter((v) => v[STATE]));
-          if (!src.length > 0) return { [NAME]: 'ERROR', [DECKID]: null };
+          if (!src.length > 0) return { [NAME]: "ERROR", [DECKID]: null };
           const randomDeck = getRandomDeck(src);
           return { [NAME]: randomDeck[NAME], [DECKID]: randomDeck[DECKID] };
         }
@@ -93,7 +93,7 @@ const Seating = ({ setShow }) => {
       });
 
     if ([7, 11].includes(options.length)) {
-      options.push({ name: 'First oust from another table' });
+      options.push({ name: "First oust from another table" });
     }
 
     const randomizedPlayers = randomizeArray(options);

@@ -1,6 +1,6 @@
-import { useState } from 'react';
-import Download from '@icons/download.svg?react';
-import InboxesFill from '@icons/inboxes-fill.svg?react';
+import { useState } from "react";
+import Download from "@icons/download.svg?react";
+import InboxesFill from "@icons/inboxes-fill.svg?react";
 import {
   ButtonIconed,
   CardImage,
@@ -8,10 +8,10 @@ import {
   FlexGapped,
   Modal,
   PlaytestReportEntryWrapper,
-} from '@/components';
-import { ID, NAME, SCORE, TEXT } from '@/constants';
-import { useApp } from '@/context';
-import { playtestServices } from '@/services';
+} from "@/components";
+import { ID, NAME, SCORE, TEXT } from "@/constants";
+import { useApp } from "@/context";
+import { playtestServices } from "@/services";
 
 const PlaytestReportsOneButton = ({ value, isPrecon = false }) => {
   const { isMobile, isDesktop } = useApp();
@@ -20,28 +20,28 @@ const PlaytestReportsOneButton = ({ value, isPrecon = false }) => {
   const exportReports = async () => {
     const result = await playtestServices.getReports(value, isPrecon);
 
-    let exportText = '';
+    let exportText = "";
     Object.keys(result).forEach((id, idx) => {
       exportText += `User: <${id}>\n`;
       exportText += `Score: ${result[id][SCORE]}\n`;
       exportText += `${result[id][TEXT]}\n`;
       if (idx + 1 < Object.keys(result).length) {
-        exportText += '\n-----\n\n';
+        exportText += "\n-----\n\n";
       }
     });
 
     const file = new File([exportText], `${value[NAME]}.txt`, {
-      type: 'text/plain;charset=utf-8',
+      type: "text/plain;charset=utf-8",
     });
 
-    const { saveAs } = await import('file-saver');
+    const { saveAs } = await import("file-saver");
     saveAs(file);
   };
 
   return (
     <>
       <ButtonIconed
-        variant={isDesktop && isPrecon ? 'secondary' : 'primary'}
+        variant={isDesktop && isPrecon ? "secondary" : "primary"}
         onClick={() => setShow(true)}
         title="Show Playtest Reports"
         text="Reports"

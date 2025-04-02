@@ -1,5 +1,5 @@
-import { EN, GROUPED_TYPE, ID, QUANTITYx, SET } from '@/constants';
-import { countCards, cryptSort, getCardImageUrl, librarySort } from '@/utils';
+import { EN, GROUPED_TYPE, ID, QUANTITYx, SET } from "@/constants";
+import { countCards, cryptSort, getCardImageUrl, librarySort } from "@/utils";
 
 export const proxyCards = async (
   crypt,
@@ -8,7 +8,7 @@ export const proxyCards = async (
   cryptSortMethod = QUANTITYx,
   lang = EN,
   showLegacyImage = false,
-  name = 'Deck',
+  name = "Deck",
 ) => {
   const cryptSorted = cryptSort(
     Object.values(crypt).filter((card) => card.q > 0),
@@ -33,8 +33,8 @@ export const proxyCards = async (
   const sheetW = format.isLetter ? 215.9 : 210;
   const sheetH = format.isLetter ? 279.4 : 297;
 
-  const { jsPDF } = await import('jspdf');
-  const pdf = new jsPDF('p', 'mm', [sheetW, sheetH]);
+  const { jsPDF } = await import("jspdf");
+  const pdf = new jsPDF("p", "mm", [sheetW, sheetH]);
 
   const w = 63;
   const h = 88;
@@ -107,7 +107,7 @@ export const proxyCards = async (
         marginTop + counterY * (h + gap),
         w + (counterX < 2 ? gap : 0),
         h + (counterY < 2 ? gap : 0),
-        'F',
+        "F",
       );
 
       try {
@@ -122,7 +122,7 @@ export const proxyCards = async (
           img.src = `${url}.jpg`;
           pdf.addImage(
             img,
-            'JPEG',
+            "JPEG",
             (w + gap) * counterX + marginLeft,
             (h + gap) * counterY + marginTop,
             w,
@@ -135,7 +135,7 @@ export const proxyCards = async (
         img.src = `${card.url.baseUrl}.jpg`;
         pdf.addImage(
           img,
-          'JPEG',
+          "JPEG",
           (w + gap) * counterX + marginLeft,
           (h + gap) * counterY + marginTop,
           w,

@@ -1,5 +1,5 @@
-import { DeckCrypt, DeckLibrary } from '@/components';
-import { IS_AUTHOR } from '@/constants';
+import { DeckCrypt, DeckLibrary } from "@/components";
+import { IS_AUTHOR } from "@/constants";
 
 const DeckPreview = ({ deck }) => {
   const d = { ...deck, [IS_AUTHOR]: false };

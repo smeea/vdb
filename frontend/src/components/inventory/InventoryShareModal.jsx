@@ -1,9 +1,9 @@
-import { useState } from 'react';
-import ClipboardFill from '@icons/clipboard-fill.svg?react';
-import Link45Deg from '@icons/link-45deg.svg?react';
-import { Button, ButtonIconed, FlexGapped, Modal } from '@/components';
-import { useApp } from '@/context';
-import { inventoryServices } from '@/services';
+import { useState } from "react";
+import ClipboardFill from "@icons/clipboard-fill.svg?react";
+import Link45Deg from "@icons/link-45deg.svg?react";
+import { Button, ButtonIconed, FlexGapped, Modal } from "@/components";
+import { useApp } from "@/context";
+import { inventoryServices } from "@/services";
 
 const InventoryShareModal = ({ setShow }) => {
   const { isMobile, setShowFloatingButtons, setShowMenuButtons, inventoryKey, setInventoryKey } =
@@ -49,7 +49,7 @@ const InventoryShareModal = ({ setShow }) => {
             <>
               <a href={shareUrl}>{shareUrl}</a>
               <div
-                className="text-fgSecondary hover:text-fgPrimary dark:text-fgSecondaryDark dark:hover:text-fgPrimaryDark inline pl-1"
+                className="inline pl-1 text-fgSecondary hover:text-fgPrimary dark:text-fgSecondaryDark dark:hover:text-fgPrimaryDark"
                 onClick={() => navigator.clipboard.writeText(shareUrl)}
               >
                 <ClipboardFill className="inline" viewBox="0 0 18 18" />
@@ -65,7 +65,7 @@ const InventoryShareModal = ({ setShow }) => {
         </div>
         <div className="flex justify-end gap-2 max-sm:flex-col">
           <ButtonIconed
-            variant={success ? 'success' : 'primary'}
+            variant={success ? "success" : "primary"}
             onClick={handleClick}
             title="Create URL"
             icon={<Link45Deg width="19" height="19" viewBox="0 0 14 14" />}

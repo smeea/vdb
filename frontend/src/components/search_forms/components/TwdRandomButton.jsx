@@ -1,5 +1,5 @@
-import Dice3 from '@icons/dice-3-fill.svg?react';
-import { ButtonIconed } from '@/components';
+import Dice3 from "@icons/dice-3-fill.svg?react";
+import { ButtonIconed } from "@/components";
 
 const TwdRandomButton = ({ getRandom, noText }) => {
   return (
@@ -7,7 +7,7 @@ const TwdRandomButton = ({ getRandom, noText }) => {
       onClick={() => getRandom(10)}
       title="Get 10 random TWD"
       icon={<Dice3 />}
-      text={noText ? null : 'Random'}
+      text={noText ? null : "Random"}
     />
   );
 };

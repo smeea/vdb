@@ -1,8 +1,8 @@
-import dayjs from 'dayjs';
-import At from '@icons/at.svg?react';
-import EyeFill from '@icons/eye-fill.svg?react';
-import PinAngleFill from '@icons/pin-angle-fill.svg?react';
-import Shuffle from '@icons/shuffle.svg?react';
+import dayjs from "dayjs";
+import At from "@icons/at.svg?react";
+import EyeFill from "@icons/eye-fill.svg?react";
+import PinAngleFill from "@icons/pin-angle-fill.svg?react";
+import Shuffle from "@icons/shuffle.svg?react";
 import {
   Button,
   ConditionalTooltip,
@@ -12,7 +12,7 @@ import {
   InventoryDeckDeleteButton,
   ResultClanImage,
   Tr,
-} from '@/components';
+} from "@/components";
 import {
   BRANCHES,
   BRANCH_NAME,
@@ -25,10 +25,10 @@ import {
   NAME,
   S,
   TIMESTAMP,
-} from '@/constants';
-import { deckToggleInventoryState } from '@/context';
-import { useDeckInInventory } from '@/hooks';
-import { getClan } from '@/utils';
+} from "@/constants";
+import { deckToggleInventoryState } from "@/context";
+import { useDeckInInventory } from "@/hooks";
+import { getClan } from "@/utils";
 
 const InventoryAddDeckRow = ({ deck, allTagsOptions }) => {
   const inInventory = useDeckInInventory(deck);
@@ -41,10 +41,10 @@ const InventoryAddDeckRow = ({ deck, allTagsOptions }) => {
           <div
             title={
               deck[INVENTORY_TYPE] === S
-                ? 'Flexible'
+                ? "Flexible"
                 : deck[INVENTORY_TYPE] === H
-                  ? 'Fixed'
-                  : 'Virtual'
+                  ? "Fixed"
+                  : "Virtual"
             }
           >
             {deck[INVENTORY_TYPE] === S && <Shuffle />}
@@ -58,7 +58,7 @@ const InventoryAddDeckRow = ({ deck, allTagsOptions }) => {
       </td>
       <td className="max-sm:w-full sm:min-w-[250px] lg:min-w-[400px]">
         <div
-          className="text-fgName dark:text-fgNameDark flex justify-between truncate"
+          className="flex justify-between truncate text-fgName dark:text-fgNameDark"
           title={deck[NAME]}
         >
           {deck[NAME]}
@@ -76,8 +76,8 @@ const InventoryAddDeckRow = ({ deck, allTagsOptions }) => {
           </ConditionalTooltip>
         </div>
       </td>
-      <td className="min-w-[100px] text-center whitespace-nowrap max-sm:hidden">
-        {dayjs(deck[TIMESTAMP]).format('YYYY-MM-DD')}
+      <td className="min-w-[100px] whitespace-nowrap text-center max-sm:hidden">
+        {dayjs(deck[TIMESTAMP]).format("YYYY-MM-DD")}
       </td>
       <td className="w-full px-1 max-sm:hidden">
         <DeckTags

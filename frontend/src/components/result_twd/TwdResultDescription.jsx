@@ -3,9 +3,9 @@ import {
   TwdOpenDeckButton,
   TwdResultDescriptionPlayers,
   TwdResultDescriptionText,
-} from '@/components';
-import { DECKID, PLAYERS } from '@/constants';
-import { useApp } from '@/context';
+} from "@/components";
+import { DECKID, PLAYERS } from "@/constants";
+import { useApp } from "@/context";
 
 const TwdResultDescription = ({ deck }) => {
   const { username } = useApp();

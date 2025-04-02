@@ -1,8 +1,8 @@
-import MoonFill from '@icons/moon-fill.svg?react';
-import PcDisplay from '@icons/pc-display.svg?react';
-import SunFill from '@icons/sun-fill.svg?react';
-import { AUTO, DARK, ICON, LIGHT, NAME } from '@/constants';
-import { useApp, useTheme } from '@/context';
+import MoonFill from "@icons/moon-fill.svg?react";
+import PcDisplay from "@icons/pc-display.svg?react";
+import SunFill from "@icons/sun-fill.svg?react";
+import { AUTO, DARK, ICON, LIGHT, NAME } from "@/constants";
+import { useApp, useTheme } from "@/context";
 
 const ThemeSelect = ({ setShowMenu }) => {
   const { theme, toggleTheme } = useTheme();
@@ -17,32 +17,32 @@ const ThemeSelect = ({ setShowMenu }) => {
     [AUTO]: {
       [ICON]: (
         <PcDisplay
-          width={isMobile ? '20' : '16'}
-          height={isMobile ? '20' : '16'}
+          width={isMobile ? "20" : "16"}
+          height={isMobile ? "20" : "16"}
           viewBox="0 0 16 16"
         />
       ),
-      [NAME]: 'System Theme',
+      [NAME]: "System Theme",
     },
     [DARK]: {
       [ICON]: (
         <MoonFill
-          width={isMobile ? '20' : '16'}
-          height={isMobile ? '20' : '16'}
+          width={isMobile ? "20" : "16"}
+          height={isMobile ? "20" : "16"}
           viewBox="0 0 16 16"
         />
       ),
-      [NAME]: 'Dark Theme',
+      [NAME]: "Dark Theme",
     },
     [LIGHT]: {
       [ICON]: (
         <SunFill
-          width={isMobile ? '20' : '16'}
-          height={isMobile ? '20' : '16'}
+          width={isMobile ? "20" : "16"}
+          height={isMobile ? "20" : "16"}
           viewBox="0 0 16 16"
         />
       ),
-      [NAME]: 'Light Theme',
+      [NAME]: "Light Theme",
     },
   };
 
@@ -50,7 +50,7 @@ const ThemeSelect = ({ setShowMenu }) => {
     <>
       {isMobile ? (
         <div
-          className="text-fgThird dark:text-fgPrimaryDark flex items-center gap-2 px-3 py-1.5"
+          className="flex items-center gap-2 px-3 py-1.5 text-fgThird dark:text-fgPrimaryDark"
           onClick={handleClick}
         >
           <div className="flex min-w-[30px] justify-center">{themeVisual[theme]?.[ICON]}</div>
@@ -58,7 +58,7 @@ const ThemeSelect = ({ setShowMenu }) => {
         </div>
       ) : (
         <div
-          className="flex h-full min-w-[40px] items-center justify-center text-white cursor-pointer dark:text-white"
+          className="flex h-full min-w-[40px] cursor-pointer items-center justify-center text-white dark:text-white"
           onClick={handleClick}
           title="Switch Theme"
         >

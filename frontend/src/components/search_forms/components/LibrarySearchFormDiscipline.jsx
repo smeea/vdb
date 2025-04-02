@@ -1,6 +1,6 @@
-import disciplinesExtraList from '@/assets/data/disciplinesExtraList.json';
-import disciplinesList from '@/assets/data/disciplinesList.json';
-import virtuesList from '@/assets/data/virtuesList.json';
+import disciplinesExtraList from "@/assets/data/disciplinesExtraList.json";
+import disciplinesList from "@/assets/data/disciplinesList.json";
+import virtuesList from "@/assets/data/virtuesList.json";
 import {
   ResultDisciplineImage,
   SearchAdditionalForms,
@@ -8,9 +8,9 @@ import {
   SearchFormButtonDel,
   SearchFormButtonLogicToggle,
   Select,
-} from '@/components';
-import { ANY, DISCIPLINE, LOGIC, NOT_REQUIRED } from '@/constants';
-import { useApp } from '@/context';
+} from "@/components";
+import { ANY, DISCIPLINE, LOGIC, NOT_REQUIRED } from "@/constants";
+import { useApp } from "@/context";
 
 const LibrarySearchFormDiscipline = ({ value, onChange, searchForm }) => {
   const { isMobile } = useApp();
@@ -18,8 +18,8 @@ const LibrarySearchFormDiscipline = ({ value, onChange, searchForm }) => {
   const disciplines = [...Object.keys(disciplinesList), ...disciplinesExtraList].toSorted();
 
   const options = [
-    ['ANY', ANY],
-    ['Not Required', NOT_REQUIRED],
+    ["ANY", ANY],
+    ["Not Required", NOT_REQUIRED],
     ...disciplines.map((d) => [d, d.toLowerCase()]),
     ...Object.keys(virtuesList).map((v) => [v, v.toLowerCase()]),
   ].map((i) => ({
@@ -39,7 +39,7 @@ const LibrarySearchFormDiscipline = ({ value, onChange, searchForm }) => {
     <>
       <div className="flex items-center">
         <div className="w-1/4">
-          <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">Discipline:</div>
+          <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Discipline:</div>
           {value.value[0] !== ANY && (
             <div className="flex justify-end gap-1 px-1">
               <SearchFormButtonLogicToggle

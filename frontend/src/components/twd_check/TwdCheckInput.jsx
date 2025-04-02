@@ -1,15 +1,15 @@
-import { useRef, useState } from 'react';
-import Download from '@icons/download.svg?react';
-import Upload from '@icons/upload.svg?react';
-import X from '@icons/x.svg?react';
-import { ButtonIconed, ErrorOverlay, Textarea } from '@/components';
-import { CRYPT, DATE, DECK, EVENT, FORMAT, ID, LIBRARY, LOCATION, PLAYERS } from '@/constants';
-import { useApp } from '@/context';
-import { importDeck } from '@/utils';
+import { useRef, useState } from "react";
+import Download from "@icons/download.svg?react";
+import Upload from "@icons/upload.svg?react";
+import X from "@icons/x.svg?react";
+import { ButtonIconed, ErrorOverlay, Textarea } from "@/components";
+import { CRYPT, DATE, DECK, EVENT, FORMAT, ID, LIBRARY, LOCATION, PLAYERS } from "@/constants";
+import { useApp } from "@/context";
+import { importDeck } from "@/utils";
 
 const TwdCheckInput = ({ deckData, setDeckData }) => {
   const { cryptCardBase, libraryCardBase } = useApp();
-  const [deckText, setDeckText] = useState('');
+  const [deckText, setDeckText] = useState("");
   const [emptyError, setEmptyError] = useState(false);
   const [importError, setImportError] = useState(false);
   const fileInput = useRef();
@@ -26,14 +26,14 @@ const TwdCheckInput = ({ deckData, setDeckData }) => {
 
   const handleClear = () => {
     setEmptyError(false);
-    setDeckText('');
+    setDeckText("");
     setDeckData();
   };
 
   const refreshDeckData = async (text) => {
-    const lines = text.split('\n');
+    const lines = text.split("\n");
     const url = text.match(/.*vekn.net\/event-calendar\/event\/\d+/g);
-    const id = url ? url[0].replace(/.*vekn.net\/event-calendar\/event\/(\d+)/g, '$1') : null;
+    const id = url ? url[0].replace(/.*vekn.net\/event-calendar\/event\/(\d+)/g, "$1") : null;
 
     const d = await importDeck(text, cryptCardBase, libraryCardBase);
     setDeckData({
@@ -57,10 +57,10 @@ const TwdCheckInput = ({ deckData, setDeckData }) => {
     if (text) {
       setEmptyError(false);
       const file = new File([text], `${name}.txt`, {
-        type: 'text/plain;charset=utf-8',
+        type: "text/plain;charset=utf-8",
       });
 
-      const { saveAs } = await import('file-saver');
+      const { saveAs } = await import("file-saver");
       saveAs(file);
     } else {
       setEmptyError(true);
@@ -77,7 +77,7 @@ const TwdCheckInput = ({ deckData, setDeckData }) => {
     };
   };
 
-  const placeholder = 'Paste deck here';
+  const placeholder = "Paste deck here";
   const fieldNames = `         Event:
       Location:
           Date:
@@ -100,7 +100,7 @@ const TwdCheckInput = ({ deckData, setDeckData }) => {
   (one long line)
 `;
 
-  const lengthMarker = `${' '.repeat(79)}90 letters | `;
+  const lengthMarker = `${" ".repeat(79)}90 letters | `;
 
   return (
     <div className="flex flex-col gap-2">
@@ -110,7 +110,7 @@ const TwdCheckInput = ({ deckData, setDeckData }) => {
             <pre className="font-mono text-sm">{fieldNames}</pre>
           </div>
           <div className="flex justify-end">
-            <pre className="text-midGray dark:text-midGrayDark font-mono text-sm">
+            <pre className="font-mono text-midGray text-sm dark:text-midGrayDark">
               {descriptionInfo}
             </pre>
           </div>
@@ -124,7 +124,7 @@ const TwdCheckInput = ({ deckData, setDeckData }) => {
             onChange={handleChange}
             autoFocus
           />
-          <pre className="text-midGray dark:text-midGrayDark mb-0 ml-1 font-mono text-sm">
+          <pre className="mb-0 ml-1 font-mono text-midGray text-sm dark:text-midGrayDark">
             {lengthMarker}
           </pre>
         </div>
@@ -158,7 +158,7 @@ const TwdCheckInput = ({ deckData, setDeckData }) => {
         accept=".txt, .dek"
         type="file"
         onChange={() => loadDeck(fileInput)}
-        style={{ display: 'none' }}
+        style={{ display: "none" }}
       />
     </div>
   );

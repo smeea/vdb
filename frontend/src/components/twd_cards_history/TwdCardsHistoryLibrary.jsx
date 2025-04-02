@@ -1,17 +1,17 @@
-import { useMemo, useState } from 'react';
-import AutoSizer from 'react-virtualized-auto-sizer';
-import { FixedSizeList } from 'react-window';
-import cardtypeSorted from '@/assets/data/cardtypeSorted.json';
-import disciplinesExtraList from '@/assets/data/disciplinesExtraList.json';
-import disciplinesList from '@/assets/data/disciplinesList.json';
-import virtuesList from '@/assets/data/virtuesList.json';
+import { useMemo, useState } from "react";
+import AutoSizer from "react-virtualized-auto-sizer";
+import { FixedSizeList } from "react-window";
+import cardtypeSorted from "@/assets/data/cardtypeSorted.json";
+import disciplinesExtraList from "@/assets/data/disciplinesExtraList.json";
+import disciplinesList from "@/assets/data/disciplinesList.json";
+import virtuesList from "@/assets/data/virtuesList.json";
 import {
   InventoryFilterForm,
   ResultModal,
   SortButton,
   TwdCardsHistoryLibraryRow,
   WindowRows,
-} from '@/components';
+} from "@/components";
 import {
   ALL,
   CLAN_DISCIPLINE,
@@ -25,10 +25,10 @@ import {
   NONE,
   PLAYER,
   TYPE,
-} from '@/constants';
-import { useApp } from '@/context';
-import { useModalCardController } from '@/hooks';
-import { librarySort } from '@/utils';
+} from "@/constants";
+import { useApp } from "@/context";
+import { useModalCardController } from "@/hooks";
+import { librarySort } from "@/utils";
 
 const TwdCardsHistoryLibrary = ({ cards, players }) => {
   const { isMobile } = useApp();
@@ -38,14 +38,14 @@ const TwdCardsHistoryLibrary = ({ cards, players }) => {
 
   const [sortMethod, setSortMethod] = useState(NAME);
   const sortMethods = {
-    [NAME]: 'N',
-    [PLAYER]: 'P',
-    [DATE_PRINT]: 'DP',
-    [DATE_WIN]: 'DW',
-    [TYPE]: 'T',
-    [CLAN_DISCIPLINE]: 'C/D',
-    [COST_MIN_MAX]: 'C↑',
-    [COST_MAX_MIN]: 'C↓',
+    [NAME]: "N",
+    [PLAYER]: "P",
+    [DATE_PRINT]: "DP",
+    [DATE_WIN]: "DW",
+    [TYPE]: "T",
+    [CLAN_DISCIPLINE]: "C/D",
+    [COST_MIN_MAX]: "C↑",
+    [COST_MAX_MIN]: "C↓",
   };
 
   const cardsByType = {};
@@ -65,13 +65,13 @@ const TwdCardsHistoryLibrary = ({ cards, players }) => {
   });
 
   cards.forEach((card) => {
-    const types = card[TYPE].split('/');
+    const types = card[TYPE].split("/");
     const d = card[DISCIPLINE];
     let disciplines = [NONE];
-    if (d.includes('/')) {
-      disciplines = d.split('/');
-    } else if (d.includes(' & ')) {
-      disciplines = d.split(' & ');
+    if (d.includes("/")) {
+      disciplines = d.split("/");
+    } else if (d.includes(" & ")) {
+      disciplines = d.split(" & ");
     } else if (d) {
       disciplines = [d];
     }
@@ -172,7 +172,7 @@ const TwdCardsHistoryLibrary = ({ cards, players }) => {
 
   return (
     <div className="h-[calc(100dvh-174px)] sm:h-[calc(100dvh-240px)]">
-      <div className="bg-bgSecondary dark:bg-bgSecondaryDark flex items-center justify-between">
+      <div className="flex items-center justify-between bg-bgSecondary dark:bg-bgSecondaryDark">
         <div className="w-3/4">
           <div className="flex flex-col gap-1">
             <InventoryFilterForm
@@ -201,11 +201,11 @@ const TwdCardsHistoryLibrary = ({ cards, players }) => {
           setSortMethod={setSortMethod}
         />
       </div>
-      <div className="min-h-[38px] bg-bgSecondary text-fgSecondary dark:bg-bgSecondaryDark dark:text-fgSecondaryDark flex w-full font-bold">
-        <div className="flex max-sm:hidden min-w-[30px]" />
-        <div className="flex max-sm:hidden min-w-[40px]" />
+      <div className="flex min-h-[38px] w-full bg-bgSecondary font-bold text-fgSecondary dark:bg-bgSecondaryDark dark:text-fgSecondaryDark">
+        <div className="flex min-w-[30px] max-sm:hidden" />
+        <div className="flex min-w-[40px] max-sm:hidden" />
         <div className="flex w-full" />
-        <div className="flex max-sm:hidden min-w-[80px]" />
+        <div className="flex min-w-[80px] max-sm:hidden" />
         <div
           className="flex min-w-[45px] items-center justify-center sm:min-w-[60px]"
           title="First Print Date"
@@ -213,7 +213,7 @@ const TwdCardsHistoryLibrary = ({ cards, players }) => {
           Print
         </div>
         <div
-          className="flex max-sm:hidden items-center justify-center min-w-[60px]"
+          className="flex min-w-[60px] items-center justify-center max-sm:hidden"
           title="First TWD Appearance Date"
         >
           Win
@@ -228,13 +228,13 @@ const TwdCardsHistoryLibrary = ({ cards, players }) => {
           Player
         </div>
         <div className="flex min-w-[45px] items-center justify-center sm:min-w-[110px]">
-          {isMobile ? 'D' : 'Deck'}
+          {isMobile ? "D" : "Deck"}
         </div>
       </div>
       <AutoSizer>
         {({ width, height }) => (
           <FixedSizeList
-            className="border-bgSecondary dark:border-bgSecondaryDark sm:border"
+            className="border-bgSecondary sm:border dark:border-bgSecondaryDark"
             height={height}
             width={width}
             itemCount={cardRows.length}

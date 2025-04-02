@@ -1,11 +1,11 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router';
-import { useSnapshot } from 'valtio';
-import NodeMinusFill from '@icons/node-minus-fill.svg?react';
-import { ButtonIconed, ModalConfirmation } from '@/components';
-import { BRANCH_NAME, DECKID, DECKS, NAME } from '@/constants';
-import { deckStore, useApp } from '@/context';
-import { deckServices } from '@/services';
+import { useState } from "react";
+import { useNavigate } from "react-router";
+import { useSnapshot } from "valtio";
+import NodeMinusFill from "@icons/node-minus-fill.svg?react";
+import { ButtonIconed, ModalConfirmation } from "@/components";
+import { BRANCH_NAME, DECKID, DECKS, NAME } from "@/constants";
+import { deckStore, useApp } from "@/context";
+import { deckServices } from "@/services";
 
 const DeckBranchDeleteButton = ({ deck, noText, className }) => {
   const { isDesktop, setShowFloatingButtons, setShowMenuButtons } = useApp();
@@ -30,17 +30,17 @@ const DeckBranchDeleteButton = ({ deck, noText, className }) => {
     <>
       <ButtonIconed
         className={className}
-        variant={noText || !isDesktop ? 'primary' : 'secondary'}
+        variant={noText || !isDesktop ? "primary" : "secondary"}
         onClick={() => setShowConfirmation(true)}
         title="Delete Revision"
         icon={
           <NodeMinusFill
-            width={noText ? '18' : '21'}
-            height={noText ? '22' : '21'}
+            width={noText ? "18" : "21"}
+            height={noText ? "22" : "21"}
             viewBox="0 0 16 16"
           />
         }
-        text={noText ? null : 'Delete Revision'}
+        text={noText ? null : "Delete Revision"}
       />
       {showConfirmation && (
         <ModalConfirmation

@@ -1,12 +1,12 @@
-import { useState } from 'react';
-import StarFill from '@icons/star-fill.svg?react';
-import Star from '@icons/star.svg?react';
-import { ButtonIconed } from '@/components';
-import { DECKID, FAVORITED_BY } from '@/constants';
-import { useApp } from '@/context';
-import { miscServices } from '@/services';
+import { useState } from "react";
+import StarFill from "@icons/star-fill.svg?react";
+import Star from "@icons/star.svg?react";
+import { ButtonIconed } from "@/components";
+import { DECKID, FAVORITED_BY } from "@/constants";
+import { useApp } from "@/context";
+import { miscServices } from "@/services";
 
-const IS_FAVORITED = 'isFavorited';
+const IS_FAVORITED = "isFavorited";
 
 const PdaFavoriteButton = ({ deck }) => {
   const { username } = useApp();
@@ -24,7 +24,7 @@ const PdaFavoriteButton = ({ deck }) => {
 
   return (
     <ButtonIconed
-      variant={isFavorited ? 'third' : 'primary'}
+      variant={isFavorited ? "third" : "primary"}
       className="w-full"
       onClick={handleClick}
       icon={isFavorited ? <StarFill /> : <Star />}

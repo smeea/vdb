@@ -1,15 +1,15 @@
-import { useMemo, useState } from 'react';
-import AutoSizer from 'react-virtualized-auto-sizer';
-import { FixedSizeList } from 'react-window';
-import imbuedClansList from '@/assets/data/imbuedClansList.json';
-import vampireClansList from '@/assets/data/vampireClansList.json';
+import { useMemo, useState } from "react";
+import AutoSizer from "react-virtualized-auto-sizer";
+import { FixedSizeList } from "react-window";
+import imbuedClansList from "@/assets/data/imbuedClansList.json";
+import vampireClansList from "@/assets/data/vampireClansList.json";
 import {
   InventoryFilterForm,
   ResultModal,
   SortButton,
   TwdCardsHistoryCryptRow,
   WindowRows,
-} from '@/components';
+} from "@/components";
 import {
   ALL,
   CAPACITY_MAX_MIN,
@@ -22,24 +22,24 @@ import {
   ID,
   NAME,
   PLAYER,
-} from '@/constants';
-import { useApp } from '@/context';
-import { useModalCardController } from '@/hooks';
-import { cryptSort } from '@/utils';
+} from "@/constants";
+import { useApp } from "@/context";
+import { useModalCardController } from "@/hooks";
+import { cryptSort } from "@/utils";
 
 const TwdCardsHistoryCrypt = ({ cards, players }) => {
   const { isMobile } = useApp();
   const [clan, setClan] = useState(ALL);
   const [sortMethod, setSortMethod] = useState(NAME);
   const sortMethods = {
-    [NAME]: 'N',
-    [PLAYER]: 'P',
-    [DATE_PRINT]: 'DP',
-    [DATE_WIN]: 'DW',
-    [CLAN]: 'CL',
-    [GROUP]: 'G',
-    [CAPACITY_MIN_MAX]: 'C↑',
-    [CAPACITY_MAX_MIN]: 'C↓',
+    [NAME]: "N",
+    [PLAYER]: "P",
+    [DATE_PRINT]: "DP",
+    [DATE_WIN]: "DW",
+    [CLAN]: "CL",
+    [GROUP]: "G",
+    [CAPACITY_MIN_MAX]: "C↑",
+    [CAPACITY_MAX_MIN]: "C↓",
   };
 
   const cardsByClan = {};
@@ -87,7 +87,7 @@ const TwdCardsHistoryCrypt = ({ cards, players }) => {
 
   return (
     <div className="h-[calc(100dvh-132px)] sm:h-[calc(100dvh-195px)]">
-      <div className="bg-bgSecondary dark:bg-bgSecondaryDark flex items-center justify-between">
+      <div className="flex items-center justify-between bg-bgSecondary dark:bg-bgSecondaryDark">
         <div className="w-3/4">
           <InventoryFilterForm
             value={clan}
@@ -105,11 +105,11 @@ const TwdCardsHistoryCrypt = ({ cards, players }) => {
           setSortMethod={setSortMethod}
         />
       </div>
-      <div className="min-h-[38px] bg-bgSecondary text-fgSecondary dark:bg-bgSecondaryDark dark:text-fgSecondaryDark flex w-full font-bold">
-        <div className="flex max-sm:hidden min-w-[40px]" />
-        <div className="flex max-sm:hidden min-w-[170px] lg:min-w-[180px]" />
+      <div className="flex min-h-[38px] w-full bg-bgSecondary font-bold text-fgSecondary dark:bg-bgSecondaryDark dark:text-fgSecondaryDark">
+        <div className="flex min-w-[40px] max-sm:hidden" />
+        <div className="flex min-w-[170px] max-sm:hidden lg:min-w-[180px]" />
         <div className="flex w-full" />
-        <div className="flex max-sm:hidden min-w-[45px]" />
+        <div className="flex min-w-[45px] max-sm:hidden" />
         <div
           className="flex min-w-[45px] items-center justify-center sm:min-w-[60px]"
           title="First Print Date"
@@ -117,7 +117,7 @@ const TwdCardsHistoryCrypt = ({ cards, players }) => {
           Print
         </div>
         <div
-          className="flex max-sm:hidden items-center justify-center min-w-[60px]"
+          className="flex min-w-[60px] items-center justify-center max-sm:hidden"
           title="First TWD Appearance Date"
         >
           Win
@@ -132,13 +132,13 @@ const TwdCardsHistoryCrypt = ({ cards, players }) => {
           Player
         </div>
         <div className="flex min-w-[45px] items-center justify-center sm:min-w-[110px]">
-          {isMobile ? 'D' : 'Deck'}
+          {isMobile ? "D" : "Deck"}
         </div>
       </div>
       <AutoSizer>
         {({ width, height }) => (
           <FixedSizeList
-            className="border-bgSecondary dark:border-bgSecondaryDark sm:border"
+            className="border-bgSecondary sm:border dark:border-bgSecondaryDark"
             height={height}
             width={width}
             itemCount={cardRows.length}

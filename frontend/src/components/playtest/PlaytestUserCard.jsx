@@ -1,8 +1,8 @@
-import { useEffect, useState } from 'react';
-import EightCircleFill from '@icons/8-circle-fill.svg?react';
-import Calendar2EventFill from '@icons/calendar2-event-fill.svg?react';
-import PersonFillExclamation from '@icons/person-fill-exclamation.svg?react';
-import PostcardHeartFill from '@icons/postcard-heart-fill.svg?react';
+import { useEffect, useState } from "react";
+import EightCircleFill from "@icons/8-circle-fill.svg?react";
+import Calendar2EventFill from "@icons/calendar2-event-fill.svg?react";
+import PersonFillExclamation from "@icons/person-fill-exclamation.svg?react";
+import PostcardHeartFill from "@icons/postcard-heart-fill.svg?react";
 import {
   ConditionalTooltipOrModal,
   Input,
@@ -10,22 +10,22 @@ import {
   PlaytestLanguageSelector,
   Select,
   Textarea,
-} from '@/components';
-import { GAMES, GENERAL, LIAISON, TIMESTAMP } from '@/constants';
-import { useApp } from '@/context';
+} from "@/components";
+import { GAMES, GENERAL, LIAISON, TIMESTAMP } from "@/constants";
+import { useApp } from "@/context";
 
 const PlaytestUserCard = () => {
   const { isMobile, playtestProfile, updatePlaytestProfile } = useApp();
-  const [liaison, setLiaison] = useState(playtestProfile?.[LIAISON] || '');
-  const [general, setGeneral] = useState(playtestProfile?.[GENERAL] || '');
+  const [liaison, setLiaison] = useState(playtestProfile?.[LIAISON] || "");
+  const [general, setGeneral] = useState(playtestProfile?.[GENERAL] || "");
 
-  const gamesOptions = ['0', '1-3', '4-6', '7+'].map((i) => ({
+  const gamesOptions = ["0", "1-3", "4-6", "7+"].map((i) => ({
     value: i,
     label: i,
   }));
 
   useEffect(() => {
-    if (liaison !== playtestProfile?.[LIAISON]) setLiaison(playtestProfile?.[LIAISON] ?? '');
+    if (liaison !== playtestProfile?.[LIAISON]) setLiaison(playtestProfile?.[LIAISON] ?? "");
   }, [playtestProfile?.[LIAISON]]);
 
   const handleLiaisonChange = (e) => setLiaison(e.target.value);
@@ -39,7 +39,7 @@ const PlaytestUserCard = () => {
   };
 
   useEffect(() => {
-    if (general !== playtestProfile?.[GENERAL]) setGeneral(playtestProfile?.[GENERAL] ?? '');
+    if (general !== playtestProfile?.[GENERAL]) setGeneral(playtestProfile?.[GENERAL] ?? "");
   }, [playtestProfile?.[GENERAL]]);
 
   const handleGeneralChange = (e) => setGeneral(e.target.value);

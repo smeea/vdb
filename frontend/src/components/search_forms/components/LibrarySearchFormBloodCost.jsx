@@ -1,18 +1,18 @@
-import { Select } from '@/components';
-import { ANY, BLOOD, EQ, GE, LE } from '@/constants';
+import { Select } from "@/components";
+import { ANY, BLOOD, EQ, GE, LE } from "@/constants";
 
 const LibrarySearchFormBloodCost = ({ value, onChange }) => {
   const name = BLOOD;
-  const options = ['ANY', '0', '1', '2', '3', '4'].map((i) => ({
+  const options = ["ANY", "0", "1", "2", "3", "4"].map((i) => ({
     value: i.toLowerCase(),
     name: name,
     label: <div className="flex justify-center">{i}</div>,
   }));
 
   const morelessOptions = [
-    [LE, '<='],
-    [EQ, '=='],
-    [GE, '>='],
+    [LE, "<="],
+    [EQ, "=="],
+    [GE, ">="],
   ].map((i) => ({
     value: i[0],
     name: name,
@@ -22,7 +22,7 @@ const LibrarySearchFormBloodCost = ({ value, onChange }) => {
   return (
     <div className="flex items-center">
       <div className="w-1/4">
-        <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">Blood Cost:</div>
+        <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Blood Cost:</div>
       </div>
       <div className="flex w-3/4 gap-1">
         <div className="w-1/2">

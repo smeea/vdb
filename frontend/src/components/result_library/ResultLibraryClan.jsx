@@ -1,9 +1,9 @@
-import React from 'react';
-import { ResultClanImage } from '@/components';
+import React from "react";
+import { ResultClanImage } from "@/components";
 
 const ResultLibraryClan = ({ value }) => {
   if (!value) return;
-  const clans = value.split('/');
+  const clans = value.split("/");
   if (clans.length < 1) return;
 
   return (

@@ -1,12 +1,12 @@
-import { Menu } from '@headlessui/react';
+import { Menu } from "@headlessui/react";
 
 const MenuItem = ({ onClick, children }) => {
   return (
-    <Menu.Item className="hover:bg-borderPrimary dark:hover:bg-borderPrimaryDark px-3 py-1.5 whitespace-nowrap cursor-pointer">
+    <Menu.Item className="cursor-pointer whitespace-nowrap px-3 py-1.5 hover:bg-borderPrimary dark:hover:bg-borderPrimaryDark">
       {({ active }) => (
         <div
           onClick={onClick}
-          className={active ? 'bg-borderPrimary dark:bg-borderPrimaryDark' : ''}
+          className={active ? "bg-borderPrimary dark:bg-borderPrimaryDark" : ""}
         >
           {children}
         </div>

@@ -1,8 +1,8 @@
-import { useCallback, useEffect, useState } from 'react';
-import { twMerge } from 'tailwind-merge';
-import { ButtonCardChange, ConditionalTooltip, UsedPopover } from '@/components';
-import { ID } from '@/constants';
-import { useApp } from '@/context';
+import { useCallback, useEffect, useState } from "react";
+import { twMerge } from "tailwind-merge";
+import { ButtonCardChange, ConditionalTooltip, UsedPopover } from "@/components";
+import { ID } from "@/constants";
+import { useApp } from "@/context";
 
 const DeckCardQuantity = ({
   deckid,
@@ -20,14 +20,14 @@ const DeckCardQuantity = ({
 }) => {
   const { inventoryMode, isMobile } = useApp();
   const [manual, setManual] = useState(false);
-  const [state, setState] = useState(q ? q : '');
+  const [state, setState] = useState(q ? q : "");
 
   useEffect(() => {
-    if (state !== q) setState(q ? q : '');
+    if (state !== q) setState(q ? q : "");
   }, [q]);
 
   const handleManualChange = (event) => {
-    setState(event.target.value ? Number.parseInt(event.target.value) : '');
+    setState(event.target.value ? Number.parseInt(event.target.value) : "");
   };
 
   const handleSubmit = (event) => {
@@ -53,22 +53,22 @@ const DeckCardQuantity = ({
       if (inventoryType) {
         if (inProxy) {
           return inInventory + (isSelected ? q : 0) < softUsedMax + hardUsedTotal
-            ? 'bg-bgError dark:bg-bgErrorDark text-white dark:text-whiteDark'
-            : '';
+            ? "bg-bgError dark:bg-bgErrorDark text-white dark:text-whiteDark"
+            : "";
         }
         return inInventory >= softUsedMax + hardUsedTotal
-          ? ''
+          ? ""
           : inInventory < q
-            ? 'bg-bgError dark:bg-bgErrorDark text-white dark:text-whiteDark'
-            : 'bg-bgWarning dark:bg-bgWarningDark';
+            ? "bg-bgError dark:bg-bgErrorDark text-white dark:text-whiteDark"
+            : "bg-bgWarning dark:bg-bgWarningDark";
       }
       return inInventory - softUsedMax - hardUsedTotal >= q
-        ? ''
+        ? ""
         : inInventory < q
-          ? 'bg-bgError dark:bg-bgErrorDark text-white dark:text-whiteDark'
-          : 'bg-bgWarning dark:bg-bgWarningDark';
+          ? "bg-bgError dark:bg-bgErrorDark text-white dark:text-whiteDark"
+          : "bg-bgWarning dark:bg-bgWarningDark";
     }
-    return '';
+    return "";
   };
 
   const inventoryColor = getInventoryColor();
@@ -80,8 +80,8 @@ const DeckCardQuantity = ({
           {isMobile ? (
             <>
               <ButtonCardChange onClick={handleClickMinus} isLink isNegative />
-              <div className={twMerge('mx-1 flex w-full justify-center', inventoryColor)}>
-                {q === 0 ? '' : q}
+              <div className={twMerge("mx-1 flex w-full justify-center", inventoryColor)}>
+                {q === 0 ? "" : q}
               </div>
               <ButtonCardChange onClick={handleClickPlus} isLink />
             </>
@@ -91,7 +91,7 @@ const DeckCardQuantity = ({
               <div
                 tabIndex={0}
                 className={twMerge(
-                  !manual && 'mx-1 flex w-full justify-center',
+                  !manual && "mx-1 flex w-full justify-center",
                   !manual && inventoryColor,
                 )}
                 onFocus={handleClickManual}
@@ -104,7 +104,7 @@ const DeckCardQuantity = ({
                   {manual ? (
                     <form onSubmit={handleSubmit}>
                       <input
-                        className="border-bgSecondary bg-bgPrimary text-fgPrimary outline-bgCheckboxSelected dark:border-bgSecondaryDark dark:bg-bgPrimaryDark dark:text-fgPrimaryDark dark:outline-bgCheckboxSelectedDark otline-1 w-[63px] rounded-sm border-2 text-center focus:outline"
+                        className="otline-1 w-[63px] rounded-sm border-2 border-bgSecondary bg-bgPrimary text-center text-fgPrimary outline-bgCheckboxSelected focus:outline dark:border-bgSecondaryDark dark:bg-bgPrimaryDark dark:text-fgPrimaryDark dark:outline-bgCheckboxSelectedDark"
                         placeholder=""
                         type="number"
                         value={state}
@@ -128,7 +128,7 @@ const DeckCardQuantity = ({
           overlay={<UsedPopover cardid={card[ID]} />}
           disabled={!inventoryMode || isMobile}
         >
-          <div className={twMerge('mx-1 flex items-center justify-center text-lg', inventoryColor)}>
+          <div className={twMerge("mx-1 flex items-center justify-center text-lg", inventoryColor)}>
             {q || null}
           </div>
         </ConditionalTooltip>

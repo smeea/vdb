@@ -1,12 +1,12 @@
-import { useMemo } from 'react';
-import { useSnapshot } from 'valtio';
-import cardtypeSorted from '@/assets/data/cardtypeSorted.json';
-import disciplinesExtraList from '@/assets/data/disciplinesExtraList.json';
-import disciplinesList from '@/assets/data/disciplinesList.json';
-import virtuesList from '@/assets/data/virtuesList.json';
-import { ALL, DISCIPLINE, HARD, LIBRARY, NOK, NONE, OK, SOFT, TYPE } from '@/constants';
-import { useApp, usedStore } from '@/context';
-import { getHardTotal, getIsPlaytest, getSoftMax } from '@/utils';
+import { useMemo } from "react";
+import { useSnapshot } from "valtio";
+import cardtypeSorted from "@/assets/data/cardtypeSorted.json";
+import disciplinesExtraList from "@/assets/data/disciplinesExtraList.json";
+import disciplinesList from "@/assets/data/disciplinesList.json";
+import virtuesList from "@/assets/data/virtuesList.json";
+import { ALL, DISCIPLINE, HARD, LIBRARY, NOK, NONE, OK, SOFT, TYPE } from "@/constants";
+import { useApp, usedStore } from "@/context";
+import { getHardTotal, getIsPlaytest, getSoftMax } from "@/utils";
 
 const useInventoryLibrary = (library, category, compact, type, discipline, onlyNotes) => {
   const usedLibrary = useSnapshot(usedStore)[LIBRARY];
@@ -47,13 +47,13 @@ const useInventoryLibrary = (library, category, compact, type, discipline, onlyN
           return true;
         })
         .forEach((cardid) => {
-          const types = cards[cardid].c[TYPE].split('/');
+          const types = cards[cardid].c[TYPE].split("/");
           const d = libraryCardBase[cardid][DISCIPLINE];
           let disciplines = [NONE];
-          if (d.includes('/')) {
-            disciplines = d.split('/');
-          } else if (d.includes(' & ')) {
-            disciplines = d.split(' & ');
+          if (d.includes("/")) {
+            disciplines = d.split("/");
+          } else if (d.includes(" & ")) {
+            disciplines = d.split(" & ");
           } else if (d) {
             disciplines = [d];
           }
@@ -124,13 +124,13 @@ const useInventoryLibrary = (library, category, compact, type, discipline, onlyN
       Object.keys(usedLibrary[SOFT])
         .filter((cardid) => !(getIsPlaytest(cardid) || cards[cardid]))
         .forEach((cardid) => {
-          const types = libraryCardBase[cardid][TYPE].split('/');
+          const types = libraryCardBase[cardid][TYPE].split("/");
           const d = libraryCardBase[cardid][DISCIPLINE];
           let disciplines = [NONE];
-          if (d.includes('/')) {
-            disciplines = d.split('/');
-          } else if (d.includes(' & ')) {
-            disciplines = d.split(' & ');
+          if (d.includes("/")) {
+            disciplines = d.split("/");
+          } else if (d.includes(" & ")) {
+            disciplines = d.split(" & ");
           } else if (d) {
             disciplines = [d];
           }
@@ -190,13 +190,13 @@ const useInventoryLibrary = (library, category, compact, type, discipline, onlyN
       Object.keys(usedLibrary[HARD])
         .filter((cardid) => !getIsPlaytest(cardid) && !cards[cardid])
         .forEach((cardid) => {
-          const types = libraryCardBase[cardid][TYPE].split('/');
+          const types = libraryCardBase[cardid][TYPE].split("/");
           const d = libraryCardBase[cardid][DISCIPLINE];
           let disciplines = [NONE];
-          if (d.includes('/')) {
-            disciplines = d.split('/');
-          } else if (d.includes(' & ')) {
-            disciplines = d.split(' & ');
+          if (d.includes("/")) {
+            disciplines = d.split("/");
+          } else if (d.includes(" & ")) {
+            disciplines = d.split(" & ");
           } else if (d) {
             disciplines = [d];
           }

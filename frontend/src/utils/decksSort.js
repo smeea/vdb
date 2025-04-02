@@ -11,8 +11,8 @@ import {
   RANK_HIGH_LOW,
   RANK_LOW_HIGH,
   SCORE,
-} from '@/constants';
-import { byTimestamp } from '@/utils';
+} from "@/constants";
+import { byTimestamp } from "@/utils";
 
 const byRank = (a, b) => a[SCORE][RANK] - b[SCORE][RANK];
 const byFavorites = (a, b) => b[FAVORITED_BY] - a[FAVORITED_BY];

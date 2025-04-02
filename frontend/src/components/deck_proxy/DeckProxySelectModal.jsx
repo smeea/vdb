@@ -1,10 +1,10 @@
-import { useState } from 'react';
-import { useImmer } from 'use-immer';
-import { Button, DeckProxyCrypt, DeckProxyLibrary, FlexGapped, Modal } from '@/components';
-import { CRYPT, HARD, ID, INVENTORY_TYPE, LIBRARY, PRINT, SET, SOFT } from '@/constants';
-import { inventoryStore, useApp, usedStore } from '@/context';
-import { pdfServices } from '@/services';
-import { getHardTotal, getSoftMax } from '@/utils';
+import { useState } from "react";
+import { useImmer } from "use-immer";
+import { Button, DeckProxyCrypt, DeckProxyLibrary, FlexGapped, Modal } from "@/components";
+import { CRYPT, HARD, ID, INVENTORY_TYPE, LIBRARY, PRINT, SET, SOFT } from "@/constants";
+import { inventoryStore, useApp, usedStore } from "@/context";
+import { pdfServices } from "@/services";
+import { getHardTotal, getSoftMax } from "@/utils";
 
 const DeckProxySelectModal = ({ deck, setShow }) => {
   const {
@@ -28,14 +28,14 @@ const DeckProxySelectModal = ({ deck, setShow }) => {
     Object.keys(deck[CRYPT]).forEach((cardid) => {
       cards[cardid] = {
         [PRINT]: false,
-        [SET]: '',
+        [SET]: "",
         q: deck[CRYPT][cardid].q,
       };
     });
     Object.keys(deck[LIBRARY]).forEach((cardid) => {
       cards[cardid] = {
         [PRINT]: false,
-        [SET]: '',
+        [SET]: "",
         q: deck[LIBRARY][cardid].q,
       };
     });
@@ -164,7 +164,7 @@ const DeckProxySelectModal = ({ deck, setShow }) => {
         <div className="flex gap-5 max-md:flex-col">
           <div className="basis-full sm:basis-5/9">
             {deck[CRYPT] && (
-              <div className="sm:bg-bgPrimary sm:dark:bg-bgPrimaryDark sm:top-[22px] sm:z-10">
+              <div className="sm:top-[22px] sm:z-10 sm:bg-bgPrimary sm:dark:bg-bgPrimaryDark">
                 <DeckProxyCrypt
                   deck={deck}
                   handleProxySelector={handleProxySelector}

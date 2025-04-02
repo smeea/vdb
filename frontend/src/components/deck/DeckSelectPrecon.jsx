@@ -1,10 +1,10 @@
-import { useMemo } from 'react';
-import { twMerge } from 'tailwind-merge';
-import paths from '@/assets/data/paths.json';
-import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
-import { ResultPathImage, ResultPreconClan, Select } from '@/components';
-import { CLAN, DATE, NAME, PLAYTEST, PRECON, PRECONS } from '@/constants';
-import { useApp } from '@/context';
+import { useMemo } from "react";
+import { twMerge } from "tailwind-merge";
+import paths from "@/assets/data/paths.json";
+import setsAndPrecons from "@/assets/data/setsAndPrecons.json";
+import { ResultPathImage, ResultPreconClan, Select } from "@/components";
+import { CLAN, DATE, NAME, PLAYTEST, PRECON, PRECONS } from "@/constants";
+import { useApp } from "@/context";
 
 const DeckSelectPrecon = ({ deckid, handleSelect }) => {
   const { isMobile, playtestMode } = useApp();
@@ -18,7 +18,7 @@ const DeckSelectPrecon = ({ deckid, handleSelect }) => {
 
         Object.keys(setsAndPrecons[set][PRECONS]).forEach((precon) => {
           const fullName = setsAndPrecons[set][PRECONS][precon][NAME];
-          const clans = setsAndPrecons[set][PRECONS][precon][CLAN].split('/');
+          const clans = setsAndPrecons[set][PRECONS][precon][CLAN].split("/");
 
           opts.push({
             value: `${set}:${precon}`,
@@ -28,8 +28,8 @@ const DeckSelectPrecon = ({ deckid, handleSelect }) => {
                 <div className="flex items-center">
                   <div
                     className={twMerge(
-                      'flex items-center justify-center gap-1 pr-1',
-                      clans.length === 1 && 'w-[35px]',
+                      "flex items-center justify-center gap-1 pr-1",
+                      clans.length === 1 && "w-[35px]",
                     )}
                   >
                     {clans.map((clan) => {
@@ -43,7 +43,7 @@ const DeckSelectPrecon = ({ deckid, handleSelect }) => {
                   {fullName}
                 </div>
                 <div className="text-sm">
-                  {set === PLAYTEST ? 'PLAYTEST' : set} {year && `'${year}`}
+                  {set === PLAYTEST ? "PLAYTEST" : set} {year && `'${year}`}
                 </div>
               </div>
             ),

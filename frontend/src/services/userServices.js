@@ -1,16 +1,16 @@
-import ky from 'ky';
-import { EMAIL, ERROR, NEW_PASSWORD, PASSWORD, PUBLIC_NAME, REMEMBER, USERNAME } from '@/constants';
+import ky from "ky";
+import { EMAIL, ERROR, NEW_PASSWORD, PASSWORD, PUBLIC_NAME, REMEMBER, USERNAME } from "@/constants";
 
 const ACCOUNT_URL = `${import.meta.env.VITE_API_URL}/account`;
 const LOGIN_URL = `${import.meta.env.VITE_API_URL}/login`;
 
 export const login = (username, password) => {
   const options = {
-    method: 'POST',
+    method: "POST",
     json: {
       [USERNAME]: username,
       [PASSWORD]: password,
-      [REMEMBER]: 'True',
+      [REMEMBER]: "True",
     },
   };
 
@@ -29,7 +29,7 @@ export const logout = () => ky.delete(LOGIN_URL);
 
 export const register = (username, password, email) => {
   const options = {
-    method: 'POST',
+    method: "POST",
     json: {
       [USERNAME]: username,
       [EMAIL]: email,
@@ -46,7 +46,7 @@ export const register = (username, password, email) => {
 
 export const changePassword = (password, newPassword) => {
   const options = {
-    method: 'PUT',
+    method: "PUT",
     json: {
       [PASSWORD]: password,
       [NEW_PASSWORD]: newPassword,
@@ -62,7 +62,7 @@ export const changePassword = (password, newPassword) => {
 
 export const changeEmail = async (password, email) => {
   const options = {
-    method: 'PUT',
+    method: "PUT",
     json: {
       [PASSWORD]: password,
       [EMAIL]: email,
@@ -78,7 +78,7 @@ export const changeEmail = async (password, email) => {
 
 export const changeName = (publicName) => {
   const options = {
-    method: 'PUT',
+    method: "PUT",
     json: { [PUBLIC_NAME]: publicName },
   };
 
@@ -91,7 +91,7 @@ export const changeName = (publicName) => {
 
 export const deleteAccount = (password) => {
   const options = {
-    method: 'DELETE',
+    method: "DELETE",
     json: { [PASSWORD]: password },
   };
 

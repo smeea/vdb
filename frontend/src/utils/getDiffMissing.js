@@ -1,4 +1,4 @@
-import { CRYPT, LIBRARY } from '@/constants';
+import { CRYPT, LIBRARY } from "@/constants";
 
 const getDiffMissing = (deckTo, deckFrom) => {
   const missingCrypt = {};

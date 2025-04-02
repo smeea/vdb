@@ -30,8 +30,8 @@ import {
   TAGS,
   TRAITS,
   TYPE,
-} from '@/constants';
-import { countCards, countTotalCost, getClan, getSect } from '@/utils';
+} from "@/constants";
+import { countCards, countTotalCost, getClan, getSect } from "@/utils";
 
 const filterDecks = (decks, filter) => {
   return Object.values(decks).filter((deck) => {
@@ -58,8 +58,8 @@ const missingRank = (filter, deck) => {
   let miss = false;
 
   if (from) {
-    if (from.includes('%')) {
-      if (deck[SCORE][RANK] > (deck[SCORE][PLAYERS] * from.split('%')[0]) / 100) {
+    if (from.includes("%")) {
+      if (deck[SCORE][RANK] > (deck[SCORE][PLAYERS] * from.split("%")[0]) / 100) {
         miss = true;
       }
     } else {
@@ -68,8 +68,8 @@ const missingRank = (filter, deck) => {
   }
 
   if (to) {
-    if (to.includes('%')) {
-      if (deck[SCORE][RANK] < (deck[SCORE][PLAYERS] * to.split('%')[0]) / 100) {
+    if (to.includes("%")) {
+      if (deck[SCORE][RANK] < (deck[SCORE][PLAYERS] * to.split("%")[0]) / 100) {
         miss = true;
       }
     } else {
@@ -113,7 +113,7 @@ const missingLibraryTotal = (filter, deck) => {
 
   if (
     Object.keys(filter).some((i) => {
-      const value = i.split('-');
+      const value = i.split("-");
       if (libraryTotal >= value[0] && libraryTotal <= value[1]) return true;
     })
   ) {
@@ -166,7 +166,7 @@ const missingCapacity = (filter, deck) => {
 
   if (
     Object.keys(filter).some((i) => {
-      const value = i.split('-');
+      const value = i.split("-");
       if (avgCapacity >= value[0] && avgCapacity <= value[1]) return true;
     })
   ) {
@@ -205,7 +205,7 @@ const missingCardtypes = (filter, deck) => {
 
   if (
     Object.keys(filter).every((t) => {
-      const value = filter[t].split(',');
+      const value = filter[t].split(",");
       const typeRatio = (cardTypes[t] / libraryTotal) * 100;
       if (typeRatio >= value[0] && typeRatio <= value[1]) return true;
     })

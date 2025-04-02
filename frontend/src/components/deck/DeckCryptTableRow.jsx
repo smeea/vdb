@@ -1,15 +1,15 @@
-import { twMerge } from 'tailwind-merge';
-import { useSnapshot } from 'valtio';
+import { twMerge } from "tailwind-merge";
+import { useSnapshot } from "valtio";
 import {
   DeckCardQuantityTd,
   DeckCardToggleInventoryStateTd,
   DeckDrawProbability,
   ResultCryptTableRowCommon,
-} from '@/components';
-import { CRYPT, HARD, ID, NAME, SOFT } from '@/constants';
-import { deckCardChange, inventoryStore, useApp, usedStore } from '@/context';
-import { useSwipe } from '@/hooks';
-import { getHardTotal, getSoftMax, getSwipedBg } from '@/utils';
+} from "@/components";
+import { CRYPT, HARD, ID, NAME, SOFT } from "@/constants";
+import { deckCardChange, inventoryStore, useApp, usedStore } from "@/context";
+import { useSwipe } from "@/hooks";
+import { getHardTotal, getSoftMax, getSwipedBg } from "@/utils";
 
 const DeckCryptTableRow = ({
   handleClick,
@@ -45,7 +45,7 @@ const DeckCryptTableRow = ({
     <tr
       {...swipeHandlers}
       className={twMerge(
-        'border-bgSecondary dark:border-bgSecondaryDark h-[38px] border-y',
+        "h-[38px] border-bgSecondary border-y dark:border-bgSecondaryDark",
         getSwipedBg(isSwiped),
       )}
     >

@@ -1,12 +1,12 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router';
-import { useSnapshot } from 'valtio';
-import TrashFill from '@icons/trash-fill.svg?react';
-import { ButtonIconed, ModalConfirmation } from '@/components';
-import { BRANCHES, DECKID, DECKS, IS_BRANCHES, MASTER, NAME } from '@/constants';
-import { deckStore, useApp } from '@/context';
-import { deckServices } from '@/services';
-import { byTimestamp } from '@/utils';
+import { useState } from "react";
+import { useNavigate } from "react-router";
+import { useSnapshot } from "valtio";
+import TrashFill from "@icons/trash-fill.svg?react";
+import { ButtonIconed, ModalConfirmation } from "@/components";
+import { BRANCHES, DECKID, DECKS, IS_BRANCHES, MASTER, NAME } from "@/constants";
+import { deckStore, useApp } from "@/context";
+import { deckServices } from "@/services";
+import { byTimestamp } from "@/utils";
 
 const DeckDeleteButton = ({ deck, noText, className }) => {
   const { isDesktop, setShowFloatingButtons, setShowMenuButtons } = useApp();
@@ -33,7 +33,7 @@ const DeckDeleteButton = ({ deck, noText, className }) => {
       .deckDelete(deck)
       .then(() => {
         const lastDeckId = getLastDeckExcept();
-        navigate(lastDeckId ? `/decks/${lastDeckId}` : '/decks');
+        navigate(lastDeckId ? `/decks/${lastDeckId}` : "/decks");
       })
       .finally(() => {
         setShowConfirmation(false);
@@ -46,17 +46,17 @@ const DeckDeleteButton = ({ deck, noText, className }) => {
     <>
       <ButtonIconed
         className={className}
-        variant={noText || !isDesktop ? 'primary' : 'secondary'}
+        variant={noText || !isDesktop ? "primary" : "secondary"}
         onClick={() => setShowConfirmation(true)}
         title="Delete Deck"
         icon={
           <TrashFill
-            width={noText ? '18' : '18'}
-            height={noText ? '22' : '18'}
+            width={noText ? "18" : "18"}
+            height={noText ? "22" : "18"}
             viewBox="0 0 18 16"
           />
         }
-        text={noText ? null : 'Delete'}
+        text={noText ? null : "Delete"}
       />
       {showConfirmation && (
         <ModalConfirmation

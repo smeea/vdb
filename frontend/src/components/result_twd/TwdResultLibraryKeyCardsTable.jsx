@@ -3,11 +3,11 @@ import {
   ResultLibraryCost,
   ResultModal,
   TwdResultLibraryKeyCardsTableRow,
-} from '@/components';
-import { ASCII, BANNED, BLOOD, GROUPED_TYPE, ID, POOL, X } from '@/constants';
-import { useApp } from '@/context';
-import { useDeckLibrary, useModalCardController } from '@/hooks';
-import { librarySort } from '@/utils';
+} from "@/components";
+import { ASCII, BANNED, BLOOD, GROUPED_TYPE, ID, POOL, X } from "@/constants";
+import { useApp } from "@/context";
+import { useDeckLibrary, useModalCardController } from "@/hooks";
+import { librarySort } from "@/utils";
 
 const TwdResultLibraryKeyCardsTable = ({ library, withHeader }) => {
   const { isMobile, isDesktop, setShowFloatingButtons } = useApp();
@@ -38,11 +38,11 @@ const TwdResultLibraryKeyCardsTable = ({ library, withHeader }) => {
 
   return (
     <div>
-      <div className="text-fgSecondary dark:text-whiteDark flex h-[30px] items-center justify-between gap-1.5 px-1 font-bold">
+      <div className="flex h-[30px] items-center justify-between gap-1.5 px-1 font-bold text-fgSecondary dark:text-whiteDark">
         {withHeader ? (
           <>
             <div className="whitespace-nowrap">
-              {isMobile ? 'L' : 'Library'} [{libraryTotal}], Keys:
+              {isMobile ? "L" : "Library"} [{libraryTotal}], Keys:
             </div>
             {hasBanned && <ResultLegalIcon type={BANNED} />}
             <div className="flex gap-1.5 sm:gap-3">
@@ -57,10 +57,10 @@ const TwdResultLibraryKeyCardsTable = ({ library, withHeader }) => {
             </div>
           </>
         ) : (
-          'Key Cards:'
+          "Key Cards:"
         )}
       </div>
-      <table className="border-bgSecondary dark:border-bgSecondaryDark border-x">
+      <table className="border-bgSecondary border-x dark:border-bgSecondaryDark">
         <tbody>
           {keyCards.map((card) => {
             return (

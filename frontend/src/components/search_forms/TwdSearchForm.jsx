@@ -1,6 +1,6 @@
-import { useCallback, useEffect, useState } from 'react';
-import { useSearchParams } from 'react-router';
-import { useSnapshot } from 'valtio';
+import { useCallback, useEffect, useState } from "react";
+import { useSearchParams } from "react-router";
+import { useSnapshot } from "valtio";
 import {
   ButtonFloatClose,
   ButtonFloatSearch,
@@ -21,7 +21,7 @@ import {
   TwdSearchFormPlayer,
   TwdSearchFormPlayers,
   TwdSearchFormTags,
-} from '@/components';
+} from "@/components";
 import {
   AUTHOR,
   CAPACITY,
@@ -46,17 +46,17 @@ import {
   TAGS,
   TRAITS,
   TWD,
-} from '@/constants';
-import { clearSearchForm, searchTwdForm, setTwdResults, useApp } from '@/context';
-import { archiveServices } from '@/services';
-import { sanitizeFormState } from '@/utils';
+} from "@/constants";
+import { clearSearchForm, searchTwdForm, setTwdResults, useApp } from "@/context";
+import { archiveServices } from "@/services";
+import { sanitizeFormState } from "@/utils";
 
 const TwdSearchForm = ({ error, setError }) => {
   const { cryptCardBase, libraryCardBase, showFloatingButtons, inventoryMode, isMobile } = useApp();
   const twdFormState = useSnapshot(searchTwdForm);
   const [isLoading, setIsLoading] = useState(false);
   const [searchParams, setSearchParams] = useSearchParams();
-  const query = JSON.parse(searchParams.get('q'));
+  const query = JSON.parse(searchParams.get("q"));
 
   useEffect(() => {
     if (query) {
@@ -152,10 +152,10 @@ const TwdSearchForm = ({ error, setError }) => {
   const handleError = (e) => {
     switch (e.response.status) {
       case 400:
-        setError('NO DECKS FOUND');
+        setError("NO DECKS FOUND");
         break;
       default:
-        setError('CONNECTION PROBLEM');
+        setError("CONNECTION PROBLEM");
     }
 
     setTwdResults(null);
@@ -169,7 +169,7 @@ const TwdSearchForm = ({ error, setError }) => {
     setError(false);
     const sanitizedForm = sanitizeFormState(TWD, searchTwdForm);
     if (Object.entries(sanitizedForm).length === 0) {
-      setError('EMPTY REQUEST');
+      setError("EMPTY REQUEST");
       return;
     }
 

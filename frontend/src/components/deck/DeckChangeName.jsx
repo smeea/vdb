@@ -1,20 +1,20 @@
-import { useEffect, useState } from 'react';
-import PeopleFill from '@icons/people-fill.svg?react';
-import Snow from '@icons/snow.svg?react';
-import TagFill from '@icons/tag-fill.svg?react';
-import TrophyFill from '@icons/trophy-fill.svg?react';
-import { DeckFreezeButton, Input, InputLabel } from '@/components';
-import { DECK, DECKID, IS_AUTHOR, IS_NON_EDITABLE, IS_PUBLIC, NAME } from '@/constants';
-import { deckUpdate } from '@/context';
-import { getIsEditable } from '@/utils';
+import { useEffect, useState } from "react";
+import PeopleFill from "@icons/people-fill.svg?react";
+import Snow from "@icons/snow.svg?react";
+import TagFill from "@icons/tag-fill.svg?react";
+import TrophyFill from "@icons/trophy-fill.svg?react";
+import { DeckFreezeButton, Input, InputLabel } from "@/components";
+import { DECK, DECKID, IS_AUTHOR, IS_NON_EDITABLE, IS_PUBLIC, NAME } from "@/constants";
+import { deckUpdate } from "@/context";
+import { getIsEditable } from "@/utils";
 
 const DeckChangeName = ({ deck }) => {
-  const [value, setValue] = useState(deck[NAME] || '');
+  const [value, setValue] = useState(deck[NAME] || "");
   const isEditable = getIsEditable(deck);
-  const isTwd = deck[DECKID] !== DECK && deck[DECKID].length !== 9 && !deck[DECKID].includes(':');
+  const isTwd = deck[DECKID] !== DECK && deck[DECKID].length !== 9 && !deck[DECKID].includes(":");
 
   useEffect(() => {
-    if (value !== deck[NAME]) setValue(deck[NAME] ?? '');
+    if (value !== deck[NAME]) setValue(deck[NAME] ?? "");
   }, [deck[NAME]]);
 
   const handleChange = (event) => {
@@ -47,13 +47,13 @@ const DeckChangeName = ({ deck }) => {
         onBlur={handleOnBlur}
         readOnly={!isEditable}
         roundedStyle={
-          deck[IS_AUTHOR] || deck[IS_NON_EDITABLE] || deck[IS_PUBLIC] || isTwd ? '' : 'rounded-r'
+          deck[IS_AUTHOR] || deck[IS_NON_EDITABLE] || deck[IS_PUBLIC] || isTwd ? "" : "rounded-r"
         }
         borderStyle={`border-y
-          ${deck[IS_AUTHOR] || deck[IS_NON_EDITABLE] || deck[IS_PUBLIC] || isTwd ? '' : 'border-r'}`}
+          ${deck[IS_AUTHOR] || deck[IS_NON_EDITABLE] || deck[IS_PUBLIC] || isTwd ? "" : "border-r"}`}
       />
       {(deck[IS_PUBLIC] || isTwd) && (
-        <InputLabel title={deck[IS_PUBLIC] ? 'Public Deck' : 'Tournament Winning Deck'} isLast>
+        <InputLabel title={deck[IS_PUBLIC] ? "Public Deck" : "Tournament Winning Deck"} isLast>
           {deck[IS_PUBLIC] ? <PeopleFill /> : <TrophyFill />}
         </InputLabel>
       )}

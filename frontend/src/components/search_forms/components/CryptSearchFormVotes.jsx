@@ -1,16 +1,16 @@
-import { Select } from '@/components';
-import { ANY, VOTES } from '@/constants';
+import { Select } from "@/components";
+import { ANY, VOTES } from "@/constants";
 
 const CryptSearchFormVotes = ({ value, onChange }) => {
   const name = VOTES;
 
   const options = [
-    [ANY, 'ANY'],
-    ['0', 'None'],
-    ['1', '1+'],
-    ['2', '2+'],
-    ['3', '3+'],
-    ['4', '4+'],
+    [ANY, "ANY"],
+    ["0", "None"],
+    ["1", "1+"],
+    ["2", "2+"],
+    ["3", "3+"],
+    ["4", "4+"],
   ].map((i) => ({
     value: i[0],
     name: name,
@@ -25,7 +25,7 @@ const CryptSearchFormVotes = ({ value, onChange }) => {
   return (
     <div className="flex items-center">
       <div className="w-1/4">
-        <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">Votes:</div>
+        <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Votes:</div>
       </div>
       <div className="w-3/4">
         <Select

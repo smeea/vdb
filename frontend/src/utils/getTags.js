@@ -35,9 +35,9 @@ import {
   UNLOCK,
   VOTE,
   VOTES_TITLE,
-} from '@/constants';
-import { missingTrait } from '@/utils/cardFilters';
-import { CryptTraitsRegexMap, LibraryTraitsRegexMap } from '@/utils/traitsRegexMaps';
+} from "@/constants";
+import { missingTrait } from "@/utils/cardFilters";
+import { CryptTraitsRegexMap, LibraryTraitsRegexMap } from "@/utils/traitsRegexMaps";
 
 const getTags = (crypt, library) => {
   const deckTags = {
@@ -177,7 +177,7 @@ const testCryptCombat = (card) => {
 };
 
 const testCryptMmpa = (card) => {
-  if (['Anson', 'Cybele', 'Nana Buruku', 'Huitzilopochtli', 'Isanwayen'].includes(card[NAME]))
+  if (["Anson", "Cybele", "Nana Buruku", "Huitzilopochtli", "Isanwayen"].includes(card[NAME]))
     return true;
 };
 
@@ -194,8 +194,8 @@ const testCryptStealth = (card) => {
 };
 
 const testLibraryAlly = (card) => {
-  if (card[TYPE].split('/').includes(TYPE_ALLY)) return true;
-  if (['FBI Special Affairs Division', 'Unmasking, The'].includes(card[NAME])) return true;
+  if (card[TYPE].split("/").includes(TYPE_ALLY)) return true;
+  if (["FBI Special Affairs Division", "Unmasking, The"].includes(card[NAME])) return true;
 };
 
 const testLibraryBleed = (card) => {
@@ -215,7 +215,7 @@ const testLibraryBlock = (card) => {
   }
   if (
     haveTraits([UNLOCK], card, LibraryTraitsRegexMap) &&
-    card[TYPE].split('/').includes(TYPE_REACTION)
+    card[TYPE].split("/").includes(TYPE_REACTION)
   ) {
     return true;
   }
@@ -228,7 +228,7 @@ const testLibrarySwarm = (card) => {
 };
 
 const testLibraryCombat = (card) => {
-  if (card[TYPE].split('/').includes(TYPE_COMBAT) && missingTrait(COMBAT_ENDS, card, {})) {
+  if (card[TYPE].split("/").includes(TYPE_COMBAT) && missingTrait(COMBAT_ENDS, card, {})) {
     return true;
   }
   if (
@@ -243,7 +243,7 @@ const testLibraryCombat = (card) => {
 };
 
 const testLibraryMmpa = (card) => {
-  if (['Parthenon, The', 'Rumors of Gehenna'].includes(card[NAME])) return true;
+  if (["Parthenon, The", "Rumors of Gehenna"].includes(card[NAME])) return true;
 };
 
 const testLibraryRush = (card) => {
@@ -260,7 +260,7 @@ const testLibraryStealth = (card) => {
 };
 
 const testLibraryVote = (card) => {
-  if (card[TYPE].split('/').includes(TYPE_POLITICAL_ACTION)) return true;
+  if (card[TYPE].split("/").includes(TYPE_POLITICAL_ACTION)) return true;
   if (haveTraits([VOTES_TITLE], card, LibraryTraitsRegexMap)) {
     return true;
   }
@@ -269,6 +269,6 @@ const testLibraryVote = (card) => {
 const haveTraits = (traits, card, traitsRegexMap) => {
   return traits.some((trait) => {
     const regex = traitsRegexMap[trait] ? traitsRegexMap[trait](card) : trait;
-    return RegExp(regex, 'i').test(card[TEXT]);
+    return RegExp(regex, "i").test(card[TEXT]);
   });
 };

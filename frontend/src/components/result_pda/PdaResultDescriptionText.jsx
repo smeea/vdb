@@ -1,16 +1,16 @@
-import dayjs from 'dayjs';
-import { useNavigate } from 'react-router';
-import CalendarEvent from '@icons/calendar-event.svg?react';
-import PersonFill from '@icons/person-fill.svg?react';
-import TagFill from '@icons/tag-fill.svg?react';
-import { TwdResultDescriptionTextTr, TwdResultTags } from '@/components';
-import { AUTHOR, BASE, CREATION_DATE, NAME, PDA, SUPERIOR, TAGS, TIMESTAMP } from '@/constants';
-import { clearSearchForm, searchPdaForm, useApp } from '@/context';
+import dayjs from "dayjs";
+import { useNavigate } from "react-router";
+import CalendarEvent from "@icons/calendar-event.svg?react";
+import PersonFill from "@icons/person-fill.svg?react";
+import TagFill from "@icons/tag-fill.svg?react";
+import { TwdResultDescriptionTextTr, TwdResultTags } from "@/components";
+import { AUTHOR, BASE, CREATION_DATE, NAME, PDA, SUPERIOR, TAGS, TIMESTAMP } from "@/constants";
+import { clearSearchForm, searchPdaForm, useApp } from "@/context";
 
 const PdaResultDescriptionText = ({ deck }) => {
   const { isMobile } = useApp();
   const navigate = useNavigate();
-  const lastUpdated = dayjs(deck[TIMESTAMP]).format('YYYY');
+  const lastUpdated = dayjs(deck[TIMESTAMP]).format("YYYY");
 
   const handleClick = (value) => {
     clearSearchForm(PDA);
@@ -27,7 +27,7 @@ const PdaResultDescriptionText = ({ deck }) => {
           </TwdResultDescriptionTextTr>
           <TwdResultDescriptionTextTr title={isMobile ? <PersonFill /> : <>Author:</>}>
             <div
-              className="text-fgSecondary dark:text-fgSecondaryDark hover:underline"
+              className="text-fgSecondary hover:underline dark:text-fgSecondaryDark"
               onClick={() => handleClick(deck[AUTHOR])}
             >
               {deck[AUTHOR]}

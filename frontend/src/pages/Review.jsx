@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react';
-import { useLoaderData, useLocation, useNavigate, useParams } from 'react-router';
-import { useImmer } from 'use-immer';
-import { useSnapshot } from 'valtio';
+import { useEffect, useState } from "react";
+import { useLoaderData, useLocation, useNavigate, useParams } from "react-router";
+import { useImmer } from "use-immer";
+import { useSnapshot } from "valtio";
 import {
   ButtonFloatClose,
   ButtonFloatMenu,
@@ -13,7 +13,7 @@ import {
   ReviewButtons,
   ReviewCrypt,
   ReviewLibrary,
-} from '@/components';
+} from "@/components";
 import {
   BRANCHES,
   CARDS,
@@ -30,9 +30,9 @@ import {
   MASTER,
   PUBLIC_PARENT,
   TAGS,
-} from '@/constants';
-import { deckStore, useApp } from '@/context';
-import { deepClone, getTags, parseDeck } from '@/utils';
+} from "@/constants";
+import { deckStore, useApp } from "@/context";
+import { deepClone, getTags, parseDeck } from "@/utils";
 
 const Review = () => {
   const {
@@ -61,10 +61,10 @@ const Review = () => {
     const deckData = await loaderData[DECK].catch((e) => {
       switch (e.response.status) {
         case 400:
-          setError('NO DECK WITH THIS ID');
+          setError("NO DECK WITH THIS ID");
           break;
         default:
-          setError('CONNECTION PROBLEM');
+          setError("CONNECTION PROBLEM");
       }
       setDeckTo(undefined);
       setDeckFrom(undefined);
@@ -118,7 +118,7 @@ const Review = () => {
         cards.push(`${card}=${diff[card]};`);
       });
 
-      const u = cards.toString().replace(/,/g, '').replace(/;$/, '');
+      const u = cards.toString().replace(/,/g, "").replace(/;$/, "");
       setUrlDiff(u);
       navigate(`/review/${deckid}#${u}`);
     }
@@ -143,9 +143,9 @@ const Review = () => {
 
       hash
         .slice(1)
-        .split(';')
+        .split(";")
         .forEach((i) => {
-          const j = i.split('=');
+          const j = i.split("=");
           if (j[0] > 200000) {
             deckWithHash[CRYPT][j[0]] = {
               q: (deckTo[CRYPT][j[0]]?.q || 0) + Number.parseInt(j[1]),
@@ -184,7 +184,7 @@ const Review = () => {
 
   const parentId = deckFrom?.[DESCRIPTION].replace(
     `Review of ${import.meta.env.VITE_BASE_URL}/decks/`,
-    '',
+    "",
   );
   const inDecks = decks ? Object.keys(decks).includes(parentId) : null;
 
@@ -226,7 +226,7 @@ const Review = () => {
           )}
         </FlexGapped>
         <div className="min-w-[175px] max-lg:hidden">
-          <div className="bg-bgPrimary dark:bg-bgPrimaryDark sticky z-20 w-full lg:top-10">
+          <div className="sticky z-20 w-full bg-bgPrimary lg:top-10 dark:bg-bgPrimaryDark">
             <ReviewButtons deck={deckFrom} urlDiff={urlDiff} parentId={inDecks ? parentId : null} />
           </div>
         </div>

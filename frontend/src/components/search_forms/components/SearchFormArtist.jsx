@@ -1,7 +1,7 @@
-import cryptArtists from '@/assets/data/artistsCrypt.json';
-import libraryArtists from '@/assets/data/artistsLib.json';
-import { Select } from '@/components';
-import { ANY, ARTIST, CRYPT } from '@/constants';
+import cryptArtists from "@/assets/data/artistsCrypt.json";
+import libraryArtists from "@/assets/data/artistsLib.json";
+import { Select } from "@/components";
+import { ANY, ARTIST, CRYPT } from "@/constants";
 
 const SearchFormArtist = ({ target, value, onChange }) => {
   const name = ARTIST;
@@ -29,7 +29,7 @@ const SearchFormArtist = ({ target, value, onChange }) => {
   return (
     <div className="flex items-center">
       <div className="w-1/4">
-        <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">Artist:</div>
+        <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Artist:</div>
       </div>
       <div className="w-3/4">
         <Select

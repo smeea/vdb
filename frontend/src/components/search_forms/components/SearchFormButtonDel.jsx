@@ -1,6 +1,6 @@
-import Dash from '@icons/dash.svg?react';
-import { Button } from '@/components';
-import { TEXT } from '@/constants';
+import Dash from "@icons/dash.svg?react";
+import { Button } from "@/components";
+import { TEXT } from "@/constants";
 
 const SearchFormButtonDel = ({ i, name, searchForm }) => {
   const delForm = (n) => {

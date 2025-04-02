@@ -1,4 +1,4 @@
-import cardtypeSortedFull from '@/assets/data/cardtypeSortedFull.json';
+import cardtypeSortedFull from "@/assets/data/cardtypeSortedFull.json";
 import {
   CLAN_DISCIPLINE,
   COST_MAX_MIN,
@@ -11,7 +11,7 @@ import {
   QUANTITY,
   TYPE,
   TYPEx,
-} from '@/constants';
+} from "@/constants";
 import {
   byBloodCost,
   byCardName,
@@ -24,7 +24,7 @@ import {
   byQuantity,
   byType,
   getCardProperty,
-} from '@/utils';
+} from "@/utils";
 
 const byGroupedType = (a, b) => {
   return (

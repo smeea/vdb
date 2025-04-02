@@ -1,5 +1,5 @@
-import ky from 'ky';
-import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
+import ky from "ky";
+import setsAndPrecons from "@/assets/data/setsAndPrecons.json";
 import {
   AUTHOR,
   CRYPT,
@@ -16,8 +16,8 @@ import {
   PRECONS,
   TAGS,
   TEXT,
-} from '@/constants';
-import { getTags, parseDeck } from '@/utils';
+} from "@/constants";
+import { getTags, parseDeck } from "@/utils";
 
 const CARD_VERSION = import.meta.env.VITE_CARD_VERSION;
 const BASE_URL = import.meta.env.VITE_BASE_URL;
@@ -92,9 +92,9 @@ export const getPreconDecks = async (cryptCardBase, libraryCardBase, secret) => 
       preconDecks[deckid] = {
         [NAME]: `${name}`,
         [DECKID]: deckid,
-        [AUTHOR]: 'VTES Team',
+        [AUTHOR]: "VTES Team",
         [DESCRIPTION]: `Preconstructed from "${setsAndPrecons[set][NAME]}"${
-          setsAndPrecons[set][DATE] ? ` [${setsAndPrecons[set][DATE]}]` : ''
+          setsAndPrecons[set][DATE] ? ` [${setsAndPrecons[set][DATE]}]` : ""
         }`,
         [CRYPT]: {},
         [LIBRARY]: {},

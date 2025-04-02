@@ -1,10 +1,10 @@
-import { useRef, useState } from 'react';
-import { useNavigate } from 'react-router';
-import { Button, ErrorOverlay, FlexGapped, Modal, Textarea } from '@/components';
-import { BAD_CARDS, DECKID, IS_ANONYMOUS } from '@/constants';
-import { deckAdd, useApp } from '@/context';
-import { deckServices } from '@/services';
-import { importDeck } from '@/utils';
+import { useRef, useState } from "react";
+import { useNavigate } from "react-router";
+import { Button, ErrorOverlay, FlexGapped, Modal, Textarea } from "@/components";
+import { BAD_CARDS, DECKID, IS_ANONYMOUS } from "@/constants";
+import { deckAdd, useApp } from "@/context";
+import { deckServices } from "@/services";
+import { importDeck } from "@/utils";
 
 const DeckImportText = ({ isAnonymous, setBadCards, setShow }) => {
   const {
@@ -16,7 +16,7 @@ const DeckImportText = ({ isAnonymous, setBadCards, setShow }) => {
     libraryCardBase,
   } = useApp();
   const navigate = useNavigate();
-  const [deckText, setDeckText] = useState('');
+  const [deckText, setDeckText] = useState("");
   const [error, setError] = useState();
   const ref = useRef();
 
@@ -26,7 +26,7 @@ const DeckImportText = ({ isAnonymous, setBadCards, setShow }) => {
   };
 
   const handleClose = () => {
-    setDeckText('');
+    setDeckText("");
     setShowMenuButtons(false);
     setShowFloatingButtons(true);
     setShow(false);
@@ -34,7 +34,7 @@ const DeckImportText = ({ isAnonymous, setBadCards, setShow }) => {
 
   const importDeckFromText = async () => {
     setError(null);
-    if (!deckText) return setError('ENTER DECK LIST');
+    if (!deckText) return setError("ENTER DECK LIST");
 
     const d = await importDeck(deckText, cryptCardBase, libraryCardBase, isPlaytester);
 
@@ -49,10 +49,10 @@ const DeckImportText = ({ isAnonymous, setBadCards, setShow }) => {
         setBadCards(d[BAD_CARDS]);
         setShowMenuButtons(false);
         setShowFloatingButtons(true);
-        setDeckText('');
+        setDeckText("");
         handleClose();
       })
-      .catch(() => setError('ERROR DURING IMPORT'));
+      .catch(() => setError("ERROR DURING IMPORT"));
   };
 
   const placeholder = `\
@@ -81,7 +81,7 @@ It will skip other (useless) lines, you don't have to remove it yourself.
         <div className="relative">
           <Textarea
             className="w-full font-mono"
-            rows={isMobile ? '20' : '25'}
+            rows={isMobile ? "20" : "25"}
             value={deckText}
             placeholder={placeholder}
             onChange={handleChange}

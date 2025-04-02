@@ -1,4 +1,4 @@
-import { SeatingTableLayout } from '@/components';
+import { SeatingTableLayout } from "@/components";
 
 const SeatingTables = ({ seating }) => {
   return (

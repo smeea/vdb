@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useState } from "react";
 import {
   DeckDrawProbability,
   DeckLibraryHeader,
@@ -6,10 +6,10 @@ import {
   FlexGapped,
   ResultLibraryType,
   ResultModal,
-} from '@/components';
-import { LIBRARY, TYPE_MASTER } from '@/constants';
-import { useApp } from '@/context';
-import { useDeckLibrary, useModalCardController } from '@/hooks';
+} from "@/components";
+import { LIBRARY, TYPE_MASTER } from "@/constants";
+import { useApp } from "@/context";
+import { useDeckLibrary, useModalCardController } from "@/hooks";
 
 const ReviewLibrary = ({ cardChange, deckFrom, cardsTo }) => {
   const { setShowFloatingButtons, isDesktop } = useApp();
@@ -58,7 +58,7 @@ const ReviewLibrary = ({ cardChange, deckFrom, cardsTo }) => {
   return (
     <FlexGapped className="flex-col">
       <div className="flex flex-col gap-2">
-        <div className="sm:bg-bgPrimary sm:dark:bg-bgPrimaryDark sm:sticky sm:top-10 sm:z-10">
+        <div className="sm:sticky sm:top-10 sm:z-10 sm:bg-bgPrimary sm:dark:bg-bgPrimaryDark">
           <DeckLibraryHeader
             deck={deckFrom}
             showInfo={showInfo}
@@ -105,7 +105,7 @@ const ReviewLibrary = ({ cardChange, deckFrom, cardsTo }) => {
       </div>
       {Object.keys(librarySide).length > 0 && (
         <div className="flex flex-col gap-2 opacity-60 dark:opacity-50">
-          <div className="bg-bgSecondary dark:bg-bgSecondaryDark flex h-[42px] items-center p-2 font-bold">
+          <div className="flex h-[42px] items-center bg-bgSecondary p-2 font-bold dark:bg-bgSecondaryDark">
             Side Library
           </div>
           <div className="flex flex-col gap-2">

@@ -1,5 +1,5 @@
-import paths from '@/assets/data/paths.json';
-import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
+import paths from "@/assets/data/paths.json";
+import setsAndPrecons from "@/assets/data/setsAndPrecons.json";
 import {
   Checkbox,
   ResultPathImage,
@@ -8,7 +8,7 @@ import {
   SearchFormButtonAdd,
   SearchFormButtonDel,
   Select,
-} from '@/components';
+} from "@/components";
 import {
   ANY,
   BCP,
@@ -23,8 +23,8 @@ import {
   PRINT,
   REPRINT,
   TITLE,
-} from '@/constants';
-import { useApp } from '@/context';
+} from "@/constants";
+import { useApp } from "@/context";
 
 const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
   const { playtestMode, isMobile } = useApp();
@@ -61,7 +61,7 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
 
         Object.keys(setsAndPrecons[set][PRECONS]).map((precon) => {
           const fullName = setsAndPrecons[set][PRECONS][precon][NAME];
-          const clans = setsAndPrecons[set][PRECONS][precon][CLAN].split('/');
+          const clans = setsAndPrecons[set][PRECONS][precon][CLAN].split("/");
 
           options.push({
             value: `${set}:${precon}`,
@@ -71,7 +71,7 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
                 <div className="flex items-center">
                   <div
                     className={
-                      clans.length === 1 ? 'flex w-[40px] items-center justify-center' : 'inline'
+                      clans.length === 1 ? "flex w-[40px] items-center justify-center" : "inline"
                     }
                   >
                     {clans.map((clan) => {
@@ -84,8 +84,8 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
                   </div>
                   {fullName}
                 </div>
-                <div className="text-sm whitespace-nowrap">
-                  {set === PLAYTEST ? 'PLAYTEST' : set} {year && `'${year}`}
+                <div className="whitespace-nowrap text-sm">
+                  {set === PLAYTEST ? "PLAYTEST" : set} {year && `'${year}`}
                 </div>
               </div>
             ),
@@ -109,7 +109,7 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
     <div className="flex flex-col gap-1">
       <div className="flex items-center">
         <div className="flex w-1/4 items-center justify-between">
-          <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">Precon:</div>
+          <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Precon:</div>
           {value.value[0] !== ANY && (
             <div className="flex justify-end gap-1 px-1">
               {value.value.length === 1 ? (
@@ -146,18 +146,18 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
         {[
           {
             value: ONLY,
-            label: 'Only In',
-            title: 'Printed only in selected Set',
+            label: "Only In",
+            title: "Printed only in selected Set",
           },
           {
             value: FIRST,
-            label: 'First Print',
-            title: 'Printed first in selected Set',
+            label: "First Print",
+            title: "Printed first in selected Set",
           },
           {
             value: REPRINT,
-            label: 'Reprint',
-            title: 'Reprinted in selected Set',
+            label: "Reprint",
+            title: "Reprinted in selected Set",
           },
         ].map((i) => {
           return (

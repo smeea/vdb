@@ -1,7 +1,7 @@
-import { useMemo } from 'react';
-import { FlexGapped, PlaytestReportsAllCardOrPrecon } from '@/components';
-import { DECKID, PLAYTEST, PLAYTEST_OLD } from '@/constants';
-import { useApp } from '@/context';
+import { useMemo } from "react";
+import { FlexGapped, PlaytestReportsAllCardOrPrecon } from "@/components";
+import { DECKID, PLAYTEST, PLAYTEST_OLD } from "@/constants";
+import { useApp } from "@/context";
 
 const PlaytestReportsAllPreconsWrapper = ({ reports, maxSameScore }) => {
   const { preconDecks } = useApp();
@@ -16,7 +16,7 @@ const PlaytestReportsAllPreconsWrapper = ({ reports, maxSameScore }) => {
   return (
     <FlexGapped className="flex-col">
       {products.map((i) => {
-        const id = i[DECKID].replace(`${PLAYTEST}:`, '');
+        const id = i[DECKID].replace(`${PLAYTEST}:`, "");
         return (
           <PlaytestReportsAllCardOrPrecon
             key={id}

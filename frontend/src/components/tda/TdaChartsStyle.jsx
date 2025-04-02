@@ -1,7 +1,7 @@
-import { useMemo } from 'react';
-import { PolarAngleAxis, PolarGrid, Radar, RadarChart } from 'recharts';
-import { BASE, NAME, SUPERIOR, TAGS, VALUE } from '@/constants';
-import { useApp } from '@/context';
+import { useMemo } from "react";
+import { PolarAngleAxis, PolarGrid, Radar, RadarChart } from "recharts";
+import { BASE, NAME, SUPERIOR, TAGS, VALUE } from "@/constants";
+import { useApp } from "@/context";
 
 const TdaChartsStyle = ({ decks }) => {
   const { isMobile, isDesktop, isWide } = useApp();
@@ -28,35 +28,35 @@ const TdaChartsStyle = ({ decks }) => {
 
     return [
       {
-        [NAME]: 'Bleed',
+        [NAME]: "Bleed",
         [VALUE]: result.bleed / qty || 0,
       },
       {
-        [NAME]: 'Stealth',
+        [NAME]: "Stealth",
         [VALUE]: result.stealth / qty || 0,
       },
       {
-        [NAME]: 'Block',
+        [NAME]: "Block",
         [VALUE]: result.block / qty || 0,
       },
       {
-        [NAME]: 'Rush',
+        [NAME]: "Rush",
         [VALUE]: result.rush / qty || 0,
       },
       {
-        [NAME]: 'Combat',
+        [NAME]: "Combat",
         [VALUE]: result.combat / qty || 0,
       },
       {
-        [NAME]: 'Ally',
+        [NAME]: "Ally",
         [VALUE]: result.ally / qty || 0,
       },
       {
-        [NAME]: 'Swarm',
+        [NAME]: "Swarm",
         [VALUE]: result.swarm / qty || 0,
       },
       {
-        [NAME]: 'Vote',
+        [NAME]: "Vote",
         [VALUE]: result.vote / qty || 0,
       },
     ];

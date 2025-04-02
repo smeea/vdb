@@ -1,23 +1,23 @@
-import React from 'react';
-import reactStringReplace from 'react-string-replace';
-import { CardPopover, ConditionalTooltip, ResultMiscImage, ResultName } from '@/components';
-import { NAME, TEXT } from '@/constants';
-import { useApp } from '@/context';
+import React from "react";
+import reactStringReplace from "react-string-replace";
+import { CardPopover, ConditionalTooltip, ResultMiscImage, ResultName } from "@/components";
+import { NAME, TEXT } from "@/constants";
+import { useApp } from "@/context";
 
 const ResultLayoutTextText = ({ cardid }) => {
   const { nativeCrypt, nativeLibrary, cryptCardBase, libraryCardBase, isMobile } = useApp();
 
   const cardBase = { ...nativeCrypt, ...nativeLibrary };
   const cardNative = cardid > 200000 ? nativeCrypt[cardid] : nativeLibrary[cardid];
-  const cardTextNative = cardNative[TEXT].replace(/\(D\)/g, '\u24B9').split('\n');
+  const cardTextNative = cardNative[TEXT].replace(/\(D\)/g, "\u24B9").split("\n");
 
   const refCards = [];
   cardTextNative.map((i) => {
     reactStringReplace(i, /\/(.*?)\//g, (match) => {
       let cardMatch = match;
       const refCardid = Object.keys(cardBase).find((j) => {
-        if (cardMatch.startsWith('The ')) {
-          cardMatch = `${cardMatch.replace(/^The /, '')}, The`;
+        if (cardMatch.startsWith("The ")) {
+          cardMatch = `${cardMatch.replace(/^The /, "")}, The`;
         }
         return cardBase[j][NAME] === cardMatch;
       });
@@ -27,7 +27,7 @@ const ResultLayoutTextText = ({ cardid }) => {
   });
 
   const c = cardid > 200000 ? cryptCardBase[cardid] : libraryCardBase[cardid];
-  const cardText = c[TEXT].replace(/\(D\)/g, '\u24B9').split('\n');
+  const cardText = c[TEXT].replace(/\(D\)/g, "\u24B9").split("\n");
 
   return (
     <>

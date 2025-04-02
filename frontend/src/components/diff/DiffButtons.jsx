@@ -3,8 +3,8 @@ import {
   DiffBackButton,
   DiffCopyUrlButton,
   DiffProxyButtonWrapper,
-} from '@/components';
-import { DECKID } from '@/constants';
+} from "@/components";
+import { DECKID } from "@/constants";
 
 const DiffButtons = ({ setShowProxySelect, setShowMissing, deckFrom, deckTo }) => {
   return (

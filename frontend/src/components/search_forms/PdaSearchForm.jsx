@@ -1,6 +1,6 @@
-import { useCallback, useEffect, useState } from 'react';
-import { useSearchParams } from 'react-router';
-import { useSnapshot } from 'valtio';
+import { useCallback, useEffect, useState } from "react";
+import { useSearchParams } from "react-router";
+import { useSnapshot } from "valtio";
 import {
   ButtonFloatClose,
   ButtonFloatSearch,
@@ -19,7 +19,7 @@ import {
   TwdSearchFormMatchInventory,
   TwdSearchFormPlayer,
   TwdSearchFormTags,
-} from '@/components';
+} from "@/components";
 import {
   AUTHOR,
   CAPACITY,
@@ -42,10 +42,10 @@ import {
   STAR,
   TAGS,
   TRAITS,
-} from '@/constants';
-import { clearSearchForm, searchPdaForm, setPdaResults, useApp } from '@/context';
-import { archiveServices } from '@/services';
-import { sanitizeFormState } from '@/utils';
+} from "@/constants";
+import { clearSearchForm, searchPdaForm, setPdaResults, useApp } from "@/context";
+import { archiveServices } from "@/services";
+import { sanitizeFormState } from "@/utils";
 
 const PdaSearchForm = ({ error, setError }) => {
   const { username, cryptCardBase, libraryCardBase, showFloatingButtons, inventoryMode, isMobile } =
@@ -53,7 +53,7 @@ const PdaSearchForm = ({ error, setError }) => {
   const pdaFormState = useSnapshot(searchPdaForm);
   const [isLoading, setIsLoading] = useState(false);
   const [searchParams, setSearchParams] = useSearchParams();
-  const query = JSON.parse(searchParams.get('q'));
+  const query = JSON.parse(searchParams.get("q"));
 
   useEffect(() => {
     if (query) {
@@ -149,10 +149,10 @@ const PdaSearchForm = ({ error, setError }) => {
   const handleError = (e) => {
     switch (e.response.status) {
       case 400:
-        setError('NO DECKS FOUND');
+        setError("NO DECKS FOUND");
         break;
       default:
-        setError('CONNECTION PROBLEM');
+        setError("CONNECTION PROBLEM");
     }
 
     setPdaResults(null);
@@ -166,7 +166,7 @@ const PdaSearchForm = ({ error, setError }) => {
     setError(false);
     const sanitizedForm = sanitizeFormState(PDA, searchPdaForm);
     if (Object.entries(sanitizedForm).length === 0) {
-      setError('EMPTY REQUEST');
+      setError("EMPTY REQUEST");
       return;
     }
 

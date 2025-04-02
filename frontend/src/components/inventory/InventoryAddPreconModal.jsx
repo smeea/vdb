@@ -1,15 +1,15 @@
-import { useMemo, useState } from 'react';
-import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
-import { InventoryAddPreconHeader, InventoryAddPreconRow, Modal } from '@/components';
-import { DATE, DECKID, NAME, PLAYTEST } from '@/constants';
-import { useApp } from '@/context';
-import { decksSort } from '@/utils';
+import { useMemo, useState } from "react";
+import setsAndPrecons from "@/assets/data/setsAndPrecons.json";
+import { InventoryAddPreconHeader, InventoryAddPreconRow, Modal } from "@/components";
+import { DATE, DECKID, NAME, PLAYTEST } from "@/constants";
+import { useApp } from "@/context";
+import { decksSort } from "@/utils";
 
 const InventoryAddPreconModal = ({ handleClose }) => {
   const { preconDecks, isMobile } = useApp();
   const [sortMethod, setSortMethod] = useState(DATE);
-  const [nameFilter, setNameFilter] = useState('');
-  const [setFilter, setSetFilter] = useState('');
+  const [nameFilter, setNameFilter] = useState("");
+  const [setFilter, setSetFilter] = useState("");
 
   const handleChangeNameFilter = (event) => {
     setNameFilter(event.target.value);
@@ -33,7 +33,7 @@ const InventoryAddPreconModal = ({ handleClose }) => {
 
       if (setFilter) {
         filtered = filtered.filter((deck) => {
-          const set = deck[DECKID].split(':')[0];
+          const set = deck[DECKID].split(":")[0];
           if (setsAndPrecons[set][NAME].toLowerCase().indexOf(setFilter.toLowerCase()) >= 0)
             return true;
         });
@@ -55,7 +55,7 @@ const InventoryAddPreconModal = ({ handleClose }) => {
           setFilter={setFilter}
           handleChangeSetFilter={handleChangeSetFilter}
         />
-        <tbody className="border-bgSecondary dark:border-bgSecondaryDark sm:border-x">
+        <tbody className="border-bgSecondary sm:border-x dark:border-bgSecondaryDark">
           {sortedDecks.map((deck) => {
             return <InventoryAddPreconRow key={deck[DECKID]} deck={deck} />;
           })}

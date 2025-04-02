@@ -1,8 +1,8 @@
-import { useActionState, useState } from 'react';
-import LockFill from '@icons/lock-fill.svg?react';
-import { AccountPasswordForm, ErrorOverlay } from '@/components';
-import { NEW_PASSWORD, PASSWORD } from '@/constants';
-import { userServices } from '@/services';
+import { useActionState, useState } from "react";
+import LockFill from "@icons/lock-fill.svg?react";
+import { AccountPasswordForm, ErrorOverlay } from "@/components";
+import { NEW_PASSWORD, PASSWORD } from "@/constants";
+import { userServices } from "@/services";
 
 const AccountChangePassword = () => {
   const [error, setError] = useState(false);
@@ -16,10 +16,10 @@ const AccountChangePassword = () => {
     );
     switch (result.error) {
       case 401:
-        setError('WRONG OLD PASSWORD');
+        setError("WRONG OLD PASSWORD");
         break;
       case 500:
-        setError('CONNECTION PROBLEM');
+        setError("CONNECTION PROBLEM");
         break;
       default:
         setSuccess(true);
@@ -28,14 +28,14 @@ const AccountChangePassword = () => {
         }, 1000);
     }
 
-    return { password: '', newPassword: formData.get(NEW_PASSWORD) };
+    return { password: "", newPassword: formData.get(NEW_PASSWORD) };
   };
 
   const [data, action] = useActionState(changePassword);
 
   return (
     <div className="flex flex-col gap-2">
-      <div className="text-fgSecondary dark:text-fgSecondaryDark flex items-center gap-2 text-lg font-bold">
+      <div className="flex items-center gap-2 font-bold text-fgSecondary text-lg dark:text-fgSecondaryDark">
         <div className="flex min-w-[23px] justify-center">
           <LockFill width="20" height="20" viewBox="0 0 16 16" />
         </div>

@@ -1,16 +1,16 @@
-import EyeFill from '@icons/eye-fill.svg?react';
-import { twMerge } from 'tailwind-merge'
-import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
-import { CardImage, Select, Tooltip } from '@/components';
-import { DATE, ID, NAME, PLAYTEST, POD, SET } from '@/constants';
-import { useApp } from '@/context';
+import EyeFill from "@icons/eye-fill.svg?react";
+import { twMerge } from "tailwind-merge";
+import setsAndPrecons from "@/assets/data/setsAndPrecons.json";
+import { CardImage, Select, Tooltip } from "@/components";
+import { DATE, ID, NAME, PLAYTEST, POD, SET } from "@/constants";
+import { useApp } from "@/context";
 
 const DeckProxyTableSetSelect = ({ card, value, handleSetSelector, className }) => {
   const { playtestMode } = useApp();
 
   const setOptions = [
     {
-      value: '',
+      value: "",
       id: card[ID],
       label: <div className="text-sm">Newest</div>,
     },
@@ -35,7 +35,7 @@ const DeckProxyTableSetSelect = ({ card, value, handleSetSelector, className }) 
 
   return (
     <>
-      <td className={twMerge('min-w-[165px]', className)}>
+      <td className={twMerge("min-w-[165px]", className)}>
         <Select
           options={setOptions}
           isSearchable={false}
@@ -45,7 +45,7 @@ const DeckProxyTableSetSelect = ({ card, value, handleSetSelector, className }) 
           onChange={handleSetSelector}
         />
       </td>
-      <td className={twMerge('min-w-[25px]', className)}>
+      <td className={twMerge("min-w-[25px]", className)}>
         <div className="flex items-center justify-center">
           <Tooltip overlay={<CardImage card={card} set={value ?? null} />} noPadding>
             <EyeFill />

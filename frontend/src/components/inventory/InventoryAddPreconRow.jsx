@@ -1,6 +1,6 @@
-import EyeFill from '@icons/eye-fill.svg?react';
-import paths from '@/assets/data/paths.json';
-import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
+import EyeFill from "@icons/eye-fill.svg?react";
+import paths from "@/assets/data/paths.json";
+import setsAndPrecons from "@/assets/data/setsAndPrecons.json";
 import {
   ConditionalTooltip,
   DeckPreview,
@@ -9,16 +9,16 @@ import {
   ResultPathImage,
   ResultPreconClan,
   Tr,
-} from '@/components';
-import { CLAN, DATE, DECKID, NAME, PRECONS } from '@/constants';
-import { useApp } from '@/context';
-import { useDeckInInventory } from '@/hooks';
+} from "@/components";
+import { CLAN, DATE, DECKID, NAME, PRECONS } from "@/constants";
+import { useApp } from "@/context";
+import { useDeckInInventory } from "@/hooks";
 
 const InventoryAddPreconRow = ({ deck }) => {
   const { isMobile } = useApp();
   const inInventory = useDeckInInventory(deck);
-  const [set, precon] = deck[DECKID].split(':');
-  const clans = setsAndPrecons[set][PRECONS][precon][CLAN].split('/');
+  const [set, precon] = deck[DECKID].split(":");
+  const clans = setsAndPrecons[set][PRECONS][precon][CLAN].split("/");
 
   return (
     <Tr>
@@ -36,7 +36,7 @@ const InventoryAddPreconRow = ({ deck }) => {
       </td>
       <td className="max-sm:w-full">
         <div
-          className="text-overflow text-fgName dark:text-fgNameDark flex justify-between sm:whitespace-nowrap"
+          className="flex justify-between text-fgName text-overflow sm:whitespace-nowrap dark:text-fgNameDark"
           title={deck[NAME]}
         >
           {deck[NAME]}
@@ -49,7 +49,7 @@ const InventoryAddPreconRow = ({ deck }) => {
           </ConditionalTooltip>
         </div>
       </td>
-      <td className="text-fgThird dark:text-fgThirdDark w-full">
+      <td className="w-full text-fgThird dark:text-fgThirdDark">
         {isMobile ? (
           <>
             <div>{setsAndPrecons[set][NAME]}</div>

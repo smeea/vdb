@@ -1,14 +1,14 @@
-import { useActionState, useState } from 'react';
-import DoorOpenFill from '@icons/door-open-fill.svg?react';
+import { useActionState, useState } from "react";
+import DoorOpenFill from "@icons/door-open-fill.svg?react";
 import {
   AccountPasswordForm,
   AccountUsernameForm,
   ConditionalTooltipOrModal,
   ErrorOverlay,
-} from '@/components';
-import { PASSWORD, USERNAME } from '@/constants';
-import { useApp } from '@/context';
-import { userServices } from '@/services';
+} from "@/components";
+import { PASSWORD, USERNAME } from "@/constants";
+import { useApp } from "@/context";
+import { userServices } from "@/services";
 
 const LoginTooltipText = () => {
   return (
@@ -26,10 +26,10 @@ const PasswordTooltipText = () => {
     <div className="flex flex-col gap-1">
       <div>There is no automatic password restoration yet.</div>
       <div>
-        Please{' '}
+        Please{" "}
         <a href="mailto:smeea@riseup.net?subject=VDB - Password reset&body=Account: <PUT YOUR ACCOUNT NAME HERE>">
           send me an email
-        </a>{' '}
+        </a>{" "}
         with your username and I will generate temporary password.
       </div>
       <div>Usually I do it within a day, but sometimes it takes a bit more.</div>
@@ -47,13 +47,13 @@ const AccountLogin = () => {
     const result = await userServices.login(formData.get(USERNAME), formData.get(PASSWORD));
     switch (result.error) {
       case 401:
-        setPasswordError('WRONG PASSWORD');
+        setPasswordError("WRONG PASSWORD");
         break;
       case 500:
-        setPasswordError('CONNECTION PROBLEM');
+        setPasswordError("CONNECTION PROBLEM");
         break;
       case 400:
-        setUsernameError('USER DOES NOT EXIST');
+        setUsernameError("USER DOES NOT EXIST");
         break;
       default:
         initializeUserData(result);
@@ -70,7 +70,7 @@ const AccountLogin = () => {
 
   return (
     <div className="flex flex-col gap-2">
-      <div className="text-fgSecondary dark:text-fgSecondaryDark flex items-center gap-2 text-xl font-bold">
+      <div className="flex items-center gap-2 font-bold text-fgSecondary text-xl dark:text-fgSecondaryDark">
         <div className="flex min-w-[23px] justify-center">
           <DoorOpenFill width="20" height="20" viewBox="0 0 16 16" />
         </div>
@@ -94,7 +94,7 @@ const AccountLogin = () => {
             overlay={<PasswordTooltipText />}
             title="Password reset"
           >
-            <div className="text-fgSecondary dark:text-fgSecondaryDark text-sm italic hover:underline">
+            <div className="text-fgSecondary text-sm italic hover:underline dark:text-fgSecondaryDark">
               Forgot password
             </div>
           </ConditionalTooltipOrModal>

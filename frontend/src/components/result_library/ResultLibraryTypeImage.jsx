@@ -1,7 +1,7 @@
-import { ResultMiscImage } from '@/components';
+import { ResultMiscImage } from "@/components";
 
 const ResultLibraryTypeImage = ({ value, size }) => {
-  const cardtypes = value.split('/');
+  const cardtypes = value.split("/");
 
   return (
     <>

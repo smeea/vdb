@@ -1,9 +1,9 @@
-import { useActionState, useState } from 'react';
-import EnvelopeFill from '@icons/envelope-fill.svg?react';
-import { AccountEmailForm, AccountPasswordForm, ErrorOverlay } from '@/components';
-import { EMAIL, PASSWORD } from '@/constants';
-import { useApp } from '@/context';
-import { userServices } from '@/services';
+import { useActionState, useState } from "react";
+import EnvelopeFill from "@icons/envelope-fill.svg?react";
+import { AccountEmailForm, AccountPasswordForm, ErrorOverlay } from "@/components";
+import { EMAIL, PASSWORD } from "@/constants";
+import { useApp } from "@/context";
+import { userServices } from "@/services";
 
 const AccountChangeEmail = () => {
   const { setEmail } = useApp();
@@ -14,10 +14,10 @@ const AccountChangeEmail = () => {
     const result = await userServices.changeEmail(formData.get(PASSWORD), formData.get(EMAIL));
     switch (result.error) {
       case 401:
-        setError('WRONG PASSWORD');
+        setError("WRONG PASSWORD");
         break;
       case 500:
-        setError('CONNECTION PROBLEM');
+        setError("CONNECTION PROBLEM");
         break;
       default:
         setEmail(formData.get(EMAIL));
@@ -34,7 +34,7 @@ const AccountChangeEmail = () => {
 
   return (
     <div className="flex flex-col gap-2">
-      <div className="text-fgSecondary dark:text-fgSecondaryDark flex items-center gap-2 text-lg font-bold">
+      <div className="flex items-center gap-2 font-bold text-fgSecondary text-lg dark:text-fgSecondaryDark">
         <div className="flex min-w-[23px] justify-center">
           <EnvelopeFill />
         </div>

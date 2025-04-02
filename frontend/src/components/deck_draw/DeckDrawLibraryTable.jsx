@@ -1,6 +1,6 @@
-import { useCallback } from 'react';
-import { DeckDrawProbability, ResultLibraryTableRowCommon, Tr } from '@/components';
-import { ID, NAME } from '@/constants';
+import { useCallback } from "react";
+import { DeckDrawProbability, ResultLibraryTableRowCommon, Tr } from "@/components";
+import { ID, NAME } from "@/constants";
 
 const DeckDrawLibraryTable = ({
   handleClick,
@@ -31,7 +31,7 @@ const DeckDrawLibraryTable = ({
   );
 
   return (
-    <table className="border-bgSecondary dark:border-bgSecondaryDark w-full sm:border">
+    <table className="w-full border-bgSecondary sm:border dark:border-bgSecondaryDark">
       <tbody>
         {resultCards.map((card, idx) => {
           return (
@@ -43,7 +43,7 @@ const DeckDrawLibraryTable = ({
                 shouldShowModal={shouldShowModal}
               />
               {!ashHeap && (
-                <td className="text-fgSecondary dark:text-fgSecondaryDark min-w-[45px] p-1 text-right max-sm:hidden">
+                <td className="min-w-[45px] p-1 text-right text-fgSecondary max-sm:hidden dark:text-fgSecondaryDark">
                   {!ashHeap && (
                     <DeckDrawProbability
                       cardName={card[NAME]}

@@ -4,7 +4,7 @@ import {
   SearchFormButtonDel,
   SearchFormButtonLogicToggle,
   Select,
-} from '@/components';
+} from "@/components";
 import {
   ANY,
   ARCHBISHOP,
@@ -22,26 +22,26 @@ import {
   REGENT,
   TITLE,
   TITLED,
-} from '@/constants';
+} from "@/constants";
 
 const LibrarySearchFormTitle = ({ value, onChange, searchForm }) => {
   const name = TITLE;
 
   const options = [
-    ['ANY', ANY],
-    ['Non-titled', NON_TITLED],
-    ['Titled', TITLED],
-    ['Primogen', PRIMOGEN],
-    ['Prince', PRINCE],
-    ['Justicar', JUSTICAR],
-    ['Inner Circle', INNER_CIRCLE],
-    ['Baron', BARON],
-    ['Bishop', BISHOP],
-    ['Archbishop', ARCHBISHOP],
-    ['Priscus', PRISCUS],
-    ['Cardinal', CARDINAL],
-    ['Regent', REGENT],
-    ['Magaji', MAGAJI],
+    ["ANY", ANY],
+    ["Non-titled", NON_TITLED],
+    ["Titled", TITLED],
+    ["Primogen", PRIMOGEN],
+    ["Prince", PRINCE],
+    ["Justicar", JUSTICAR],
+    ["Inner Circle", INNER_CIRCLE],
+    ["Baron", BARON],
+    ["Bishop", BISHOP],
+    ["Archbishop", ARCHBISHOP],
+    ["Priscus", PRISCUS],
+    ["Cardinal", CARDINAL],
+    ["Regent", REGENT],
+    ["Magaji", MAGAJI],
   ].map((i) => ({
     value: i[1],
     name: name,
@@ -57,7 +57,7 @@ const LibrarySearchFormTitle = ({ value, onChange, searchForm }) => {
     <>
       <div className="flex items-center">
         <div className="flex w-1/4 items-center justify-between">
-          <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">Title:</div>
+          <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Title:</div>
           {value.value[0] !== ANY && (
             <div className="flex justify-end gap-1 px-1">
               <SearchFormButtonLogicToggle

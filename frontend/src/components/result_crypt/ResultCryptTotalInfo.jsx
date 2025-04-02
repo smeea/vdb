@@ -1,6 +1,6 @@
-import { DisciplinesCryptSummary } from '@/components';
-import { ID } from '@/constants';
-import { getKeyDisciplines } from '@/utils';
+import { DisciplinesCryptSummary } from "@/components";
+import { ID } from "@/constants";
+import { getKeyDisciplines } from "@/utils";
 
 const ResultCryptTotalInfo = ({ cards }) => {
   const cardsById = {};

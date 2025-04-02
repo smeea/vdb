@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
-import { useSearchParams } from 'react-router';
-import { twMerge } from 'tailwind-merge';
+import { useEffect, useState } from "react";
+import { useSearchParams } from "react-router";
+import { twMerge } from "tailwind-merge";
 import {
   ButtonFloat,
   ButtonFloatClose,
@@ -15,12 +15,12 @@ import {
   InventoryShareModal,
   LoginBlock,
   Modal,
-} from '@/components';
-import { ALL, CRYPT, LIBRARY } from '@/constants';
-import { useApp } from '@/context';
-import { inventoryServices, storageServices } from '@/services';
+} from "@/components";
+import { ALL, CRYPT, LIBRARY } from "@/constants";
+import { useApp } from "@/context";
+import { inventoryServices, storageServices } from "@/services";
 
-const INVENTORY_CATEGORY = 'inventoryCategory';
+const INVENTORY_CATEGORY = "inventoryCategory";
 
 const Inventory = () => {
   const {
@@ -39,7 +39,7 @@ const Inventory = () => {
 
   const [inventoryError, setInventoryError] = useState();
   const [searchParams] = useSearchParams();
-  const sharedKey = searchParams.get('key');
+  const sharedKey = searchParams.get("key");
   const [sharedCrypt, setSharedCrypt] = useState();
   const [sharedLibrary, setSharedLibrary] = useState();
   const [showShareModal, setShowShareModal] = useState(false);
@@ -58,10 +58,10 @@ const Inventory = () => {
     } catch (e) {
       switch (e.response.status) {
         case 401:
-          setInventoryError('NO INVENTORY WITH THIS KEY');
+          setInventoryError("NO INVENTORY WITH THIS KEY");
           break;
         default:
-          setInventoryError('CONNECTION PROBLEM');
+          setInventoryError("CONNECTION PROBLEM");
       }
       return;
     }
@@ -101,8 +101,8 @@ const Inventory = () => {
         <FlexGapped>
           <div
             className={twMerge(
-              showCryptOnMobile ? 'flex' : 'hidden',
-              'basis-full flex-col sm:flex sm:basis-5/9 sm:gap-2 lg:gap-3 xl:gap-4',
+              showCryptOnMobile ? "flex" : "hidden",
+              "basis-full flex-col sm:flex sm:basis-5/9 sm:gap-2 lg:gap-3 xl:gap-4",
             )}
           >
             <InventoryCryptWrapper
@@ -115,8 +115,8 @@ const Inventory = () => {
           </div>
           <div
             className={twMerge(
-              showCryptOnMobile ? 'hidden' : 'flex',
-              'basis-full flex-col sm:flex sm:basis-4/9 sm:gap-2 lg:gap-3 xl:gap-4',
+              showCryptOnMobile ? "hidden" : "flex",
+              "basis-full flex-col sm:flex sm:basis-4/9 sm:gap-2 lg:gap-3 xl:gap-4",
             )}
           >
             <InventoryLibraryWrapper
@@ -154,7 +154,7 @@ const Inventory = () => {
               onClick={() => setShowCryptOnMobile(!showCryptOnMobile)}
               position="middle"
             >
-              <div className="text-2xl">{showCryptOnMobile ? 'LIB' : 'CR'}</div>
+              <div className="text-2xl">{showCryptOnMobile ? "LIB" : "CR"}</div>
             </ButtonFloat>
           )}
         </FlexGapped>

@@ -1,7 +1,7 @@
-import { DeckRecommendationLibraryTable, ResultLibraryType, ResultModal } from '@/components';
-import { GROUPED_TYPE, TYPE } from '@/constants';
-import { useModalCardController } from '@/hooks';
-import { librarySort } from '@/utils';
+import { DeckRecommendationLibraryTable, ResultLibraryType, ResultModal } from "@/components";
+import { GROUPED_TYPE, TYPE } from "@/constants";
+import { useModalCardController } from "@/hooks";
+import { librarySort } from "@/utils";
 
 const DeckRecommendationLibrary = ({ cards }) => {
   const sortedLibrary = librarySort(cards, GROUPED_TYPE);

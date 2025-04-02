@@ -1,11 +1,11 @@
-import dayjs from 'dayjs';
-import { useNavigate } from 'react-router';
-import { twMerge } from 'tailwind-merge';
-import { useSnapshot } from 'valtio';
-import At from '@icons/at.svg?react';
-import EyeFill from '@icons/eye-fill.svg?react';
-import PinAngleFill from '@icons/pin-angle-fill.svg?react';
-import Shuffle from '@icons/shuffle.svg?react';
+import dayjs from "dayjs";
+import { useNavigate } from "react-router";
+import { twMerge } from "tailwind-merge";
+import { useSnapshot } from "valtio";
+import At from "@icons/at.svg?react";
+import EyeFill from "@icons/eye-fill.svg?react";
+import PinAngleFill from "@icons/pin-angle-fill.svg?react";
+import Shuffle from "@icons/shuffle.svg?react";
 import {
   ButtonIconed,
   Checkbox,
@@ -21,7 +21,7 @@ import {
   ResultClanImage,
   ResultLegalIcon,
   Tr,
-} from '@/components';
+} from "@/components";
 import {
   BANNED,
   BRANCHES,
@@ -41,9 +41,9 @@ import {
   S,
   TAGS,
   TIMESTAMP,
-} from '@/constants';
-import { deckToggleInventoryState, limitedStore, useApp } from '@/context';
-import { getClan, getRestrictions } from '@/utils';
+} from "@/constants";
+import { deckToggleInventoryState, limitedStore, useApp } from "@/context";
+import { getClan, getRestrictions } from "@/utils";
 
 const DeckSelectAdvTableRow = ({
   deck,
@@ -96,10 +96,10 @@ const DeckSelectAdvTableRow = ({
               onClick={() => deckToggleInventoryState(deck[DECKID])}
               title={
                 deck[INVENTORY_TYPE] === S
-                  ? 'Flexible'
+                  ? "Flexible"
                   : deck[INVENTORY_TYPE] === H
-                    ? 'Fixed'
-                    : 'Virtual'
+                    ? "Fixed"
+                    : "Virtual"
               }
               icon={
                 !deck[INVENTORY_TYPE] ? (
@@ -120,20 +120,20 @@ const DeckSelectAdvTableRow = ({
       <td
         colSpan={isMobile ? 2 : 1}
         className={twMerge(
-          short || isMobile ? 'w-full' : 'min-w-[45vw]',
-          'cursor-pointer sm:min-w-[340px]',
+          short || isMobile ? "w-full" : "min-w-[45vw]",
+          "cursor-pointer sm:min-w-[340px]",
         )}
         onClick={handleClick}
       >
         <div className="flex w-full items-center justify-between gap-1">
           <div
-            className="text-fgName dark:text-fgNameDark flex justify-between gap-2"
+            className="flex justify-between gap-2 text-fgName dark:text-fgNameDark"
             title={deck[NAME]}
           >
             <div
               className={twMerge(
-                'flex items-center justify-center gap-0.5',
-                !clan && 'max-sm:ps-1',
+                "flex items-center justify-center gap-0.5",
+                !clan && "max-sm:ps-1",
               )}
             >
               {clan && <ResultClanImage className="w-[30px] sm:hidden" value={clan} />}
@@ -152,7 +152,7 @@ const DeckSelectAdvTableRow = ({
             </div>
           </div>
           {deck[TAGS].length > 0 && (
-            <div className="sm:hidden max-w-[160px] p-1">
+            <div className="max-w-[160px] p-1 sm:hidden">
               <DeckTags
                 deck={{ ...deck, [IS_AUTHOR]: false }}
                 allTagsOptions={allTagsOptions}
@@ -165,7 +165,7 @@ const DeckSelectAdvTableRow = ({
           )}
         </div>
       </td>
-      <td className="min-xl:hidden min-w-[45px]">
+      <td className="min-w-[45px] min-xl:hidden">
         <div className="flex justify-center">
           <ConditionalTooltip size="xl" overlay={<DeckPreview deck={deck} />}>
             <EyeFill />
@@ -174,10 +174,10 @@ const DeckSelectAdvTableRow = ({
       </td>
       {(short || !isNarrow) && (
         <td
-          className="min-w-[100px] cursor-pointer text-center whitespace-nowrap sm:min-w-[105px]"
+          className="min-w-[100px] cursor-pointer whitespace-nowrap text-center sm:min-w-[105px]"
           onClick={handleClick}
         >
-          {dayjs(deck[TIMESTAMP]).format('YYYY-MM-DD')}
+          {dayjs(deck[TIMESTAMP]).format("YYYY-MM-DD")}
         </td>
       )}
       {!short && (

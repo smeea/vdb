@@ -3,8 +3,8 @@ import {
   ReviewApplyButton,
   ReviewCopyTextButton,
   ReviewCopyUrlButton,
-} from '@/components';
-import { DECKID } from '@/constants';
+} from "@/components";
+import { DECKID } from "@/constants";
 
 const ReviewButtons = ({ parentId, deck, urlDiff }) => {
   return (

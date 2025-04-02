@@ -5,10 +5,10 @@ import {
   TwdResultDescription,
   TwdResultLibraryByTypeTable,
   TwdResultLibraryKeyCardsTable,
-} from '@/components';
-import { CARDS, CRYPT, DECKID, LIBRARY } from '@/constants';
-import { useApp } from '@/context';
-import { parseDeck } from '@/utils';
+} from "@/components";
+import { CARDS, CRYPT, DECKID, LIBRARY } from "@/constants";
+import { useApp } from "@/context";
+import { parseDeck } from "@/utils";
 
 const TwdDeck = ({ deck, inPda }) => {
   const { cryptCardBase, libraryCardBase, isNarrow } = useApp();

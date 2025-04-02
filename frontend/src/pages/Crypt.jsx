@@ -1,7 +1,7 @@
-import { useEffect, useMemo } from 'react';
-import { useSearchParams } from 'react-router';
-import { twMerge } from 'tailwind-merge';
-import { useSnapshot } from 'valtio';
+import { useEffect, useMemo } from "react";
+import { useSearchParams } from "react-router";
+import { twMerge } from "tailwind-merge";
+import { useSnapshot } from "valtio";
 import {
   ButtonFloatAdd,
   ButtonFloatClose,
@@ -10,17 +10,17 @@ import {
   DeckSelectorAndDisplay,
   FlexGapped,
   ResultCrypt,
-} from '@/components';
-import { CRYPT, CRYPT_COMPARE, DECK, DECKID, DECKS } from '@/constants';
-import { deckStore, searchResults, setCryptResults, setDeck, useApp } from '@/context';
-import { getIsEditable } from '@/utils';
+} from "@/components";
+import { CRYPT, CRYPT_COMPARE, DECK, DECKID, DECKS } from "@/constants";
+import { deckStore, searchResults, setCryptResults, setDeck, useApp } from "@/context";
+import { getIsEditable } from "@/utils";
 
 const Crypt = () => {
   const { addMode, toggleAddMode, isMobile, isDesktop, showFloatingButtons, lastDeckId } = useApp();
   const { [DECK]: deck, [DECKS]: decks } = useSnapshot(deckStore);
   const { [CRYPT]: cryptResults, [CRYPT_COMPARE]: cryptCompare } = useSnapshot(searchResults);
   const [searchParams, setSearchParams] = useSearchParams();
-  const query = JSON.parse(searchParams.get('q'));
+  const query = JSON.parse(searchParams.get("q"));
   const isEditable = getIsEditable(deck);
 
   const showSearchForm = useMemo(() => {
@@ -54,9 +54,9 @@ const Crypt = () => {
       <FlexGapped>
         <div
           className={twMerge(
-            'max-sm:hidden',
-            showSearchForm ? 'lg:basis-1/12' : 'sm:basis-5/12 lg:basis-6/12',
-            deck && addMode ? 'xl:basis-4/12' : 'xl:basis-2/12',
+            "max-sm:hidden",
+            showSearchForm ? "lg:basis-1/12" : "sm:basis-5/12 lg:basis-6/12",
+            deck && addMode ? "xl:basis-4/12" : "xl:basis-2/12",
           )}
         >
           {decks !== undefined && (isDesktop || (!isDesktop && !showSearchForm)) && (
@@ -78,7 +78,7 @@ const Crypt = () => {
             <div className="basis-full max-sm:p-2 sm:basis-5/12 lg:basis-4/12 xl:basis-3/12">
               <CryptSearchForm />
             </div>
-            <div className={deck && addMode ? 'hidden' : 'hidden lg:flex lg:basis-1/12'} />
+            <div className={deck && addMode ? "hidden" : "hidden lg:flex lg:basis-1/12"} />
           </>
         )}
       </FlexGapped>

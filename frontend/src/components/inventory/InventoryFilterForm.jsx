@@ -3,8 +3,8 @@ import {
   ResultDisciplineImage,
   ResultLibraryTypeImage,
   Select,
-} from '@/components';
-import { ALL, CRYPT, DISCIPLINE, NONE, TYPE } from '@/constants';
+} from "@/components";
+import { ALL, CRYPT, DISCIPLINE, NONE, TYPE } from "@/constants";
 
 const InventoryFilterForm = ({ value, setValue, values, target, byTotal, byUnique }) => {
   const options = [];
@@ -55,7 +55,7 @@ const InventoryFilterForm = ({ value, setValue, values, target, byTotal, byUniqu
               {[ALL, NONE].includes(i) ? (
                 <div className="flex items-center">
                   <div className="flex w-[40px]" />
-                  {i === ALL ? 'All Disciplines' : NONE}
+                  {i === ALL ? "All Disciplines" : NONE}
                 </div>
               ) : (
                 <div className="flex items-center">

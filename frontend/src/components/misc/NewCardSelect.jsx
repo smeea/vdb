@@ -1,5 +1,5 @@
-import { CardSelect } from '@/components';
-import { CRYPT } from '@/constants';
+import { CardSelect } from "@/components";
+import { CRYPT } from "@/constants";
 
 const NewCardSelect = ({ target, inInventory, onChange, autoFocus, menuPlacement, ref }) => {
   return (
@@ -7,7 +7,7 @@ const NewCardSelect = ({ target, inInventory, onChange, autoFocus, menuPlacement
       autoFocus={autoFocus}
       inInventory={inInventory}
       onChange={onChange}
-      placeholder={`Add ${target === CRYPT ? 'Crypt' : 'Library'} Card`}
+      placeholder={`Add ${target === CRYPT ? "Crypt" : "Library"} Card`}
       menuPlacement={menuPlacement}
       value={null}
       target={target}

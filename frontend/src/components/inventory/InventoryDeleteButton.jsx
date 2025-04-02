@@ -1,8 +1,8 @@
-import { useState } from 'react';
-import TrashFill from '@icons/trash-fill.svg?react';
-import { ButtonIconed, ModalConfirmation } from '@/components';
-import { useApp } from '@/context';
-import { inventoryServices } from '@/services';
+import { useState } from "react";
+import TrashFill from "@icons/trash-fill.svg?react";
+import { ButtonIconed, ModalConfirmation } from "@/components";
+import { useApp } from "@/context";
+import { inventoryServices } from "@/services";
 
 const InventoryDelete = () => {
   const { isDesktop, setShowMenuButtons, setShowFloatingButtons } = useApp();
@@ -18,7 +18,7 @@ const InventoryDelete = () => {
   return (
     <>
       <ButtonIconed
-        variant={isDesktop ? 'secondary' : 'primary'}
+        variant={isDesktop ? "secondary" : "primary"}
         onClick={() => setShowConfirmation(true)}
         title="Delete Inventory"
         icon={<TrashFill />}

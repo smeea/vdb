@@ -1,11 +1,11 @@
-import { useState } from 'react';
-import InfoCircle from '@icons/info-circle.svg?react';
-import PlusLg from '@icons/plus-lg.svg?react';
-import { Button, DeckCryptTotalInfo, DeckNewCard, Header, SortButton, Warning } from '@/components';
-import { BANNED, CRYPT, DECKID, GROUPS, LIMITED, PLAYTEST } from '@/constants';
-import { useApp } from '@/context';
-import { useDeckCrypt } from '@/hooks';
-import { getIsEditable, getKeyDisciplines } from '@/utils';
+import { useState } from "react";
+import InfoCircle from "@icons/info-circle.svg?react";
+import PlusLg from "@icons/plus-lg.svg?react";
+import { Button, DeckCryptTotalInfo, DeckNewCard, Header, SortButton, Warning } from "@/components";
+import { BANNED, CRYPT, DECKID, GROUPS, LIMITED, PLAYTEST } from "@/constants";
+import { useApp } from "@/context";
+import { useDeckCrypt } from "@/hooks";
+import { getIsEditable, getKeyDisciplines } from "@/utils";
 
 const DeckCryptHeader = ({
   cardChange,
@@ -35,7 +35,7 @@ const DeckCryptHeader = ({
           <div className="flex basis-full items-center justify-between gap-2 px-2 font-bold">
             <div className="flex">
               Crypt [{cryptTotalDiff ?? cryptTotal}
-              {!inMissing && cryptTotal < 12 && ' of 12+'}] {cryptGroups && <>G{cryptGroups}</>}
+              {!inMissing && cryptTotal < 12 && " of 12+"}] {cryptGroups && <>G{cryptGroups}</>}
             </div>
             <div className="flex gap-2">
               {!inMissing && (
@@ -67,7 +67,7 @@ const DeckCryptHeader = ({
             </Button>
             {isEditable && (
               <Button
-                className="max-sm:hidden min-h-10"
+                className="min-h-10 max-sm:hidden"
                 title="Add Card"
                 onClick={() => setShowAdd(!showAdd)}
               >

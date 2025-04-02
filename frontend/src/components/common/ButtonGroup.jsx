@@ -1,15 +1,15 @@
-import { twMerge } from 'tailwind-merge';
-import { Button } from '@/components';
+import { twMerge } from "tailwind-merge";
+import { Button } from "@/components";
 
 const ButtonGroup = ({ name, onClick, title, isSelected, value, children }) => {
   return (
     <Button
       className={twMerge(
-        'w-full',
-        !isSelected && 'hover:bg-borderSecondary dark:hover:bg-borderSecondaryDark',
+        "w-full",
+        !isSelected && "hover:bg-borderSecondary dark:hover:bg-borderSecondaryDark",
       )}
       name={name}
-      variant={isSelected ? 'groupSelected' : 'group'}
+      variant={isSelected ? "groupSelected" : "group"}
       title={title}
       value={value}
       onClick={onClick}

@@ -1,7 +1,7 @@
-import dayjs from 'dayjs';
-import disciplinesList from '@/assets/data/disciplinesList.json';
-import setsAndPrecons from '@/assets/data/setsAndPrecons.json';
-import virtuesList from '@/assets/data/virtuesList.json';
+import dayjs from "dayjs";
+import disciplinesList from "@/assets/data/disciplinesList.json";
+import setsAndPrecons from "@/assets/data/setsAndPrecons.json";
+import virtuesList from "@/assets/data/virtuesList.json";
 import {
   ANY,
   BANNED,
@@ -26,7 +26,7 @@ import {
   PROMO,
   SECT,
   SET,
-} from '@/constants';
+} from "@/constants";
 
 export const getCardProperty = (card, property) => {
   return card.c ? card.c[property] : card[property];
@@ -98,7 +98,7 @@ export const getLegality = (card) => {
   if (sets.length === 0) return PLAYTEST;
 
   const setDate = dayjs(setsAndPrecons[sets[0]][DATE]);
-  if (dayjs().diff(setDate, 'day') >= 0) return false;
+  if (dayjs().diff(setDate, "day") >= 0) return false;
   const legalDate = setsAndPrecons[sets[0]][DATE];
   return legalDate;
 };
@@ -167,7 +167,7 @@ export const getClan = (crypt) => {
   const clans = {};
 
   Object.values(crypt)
-    .filter((card) => card.c[NAME] !== 'Anarch Convert')
+    .filter((card) => card.c[NAME] !== "Anarch Convert")
     .forEach((card) => {
       const clan = card.c[PATH] ? card.c[PATH] : card.c[CLAN];
       if (clans[clan]) {
@@ -200,7 +200,7 @@ export const getSect = (crypt) => {
   const sects = {};
 
   Object.values(crypt)
-    .filter((card) => card.c[NAME] !== 'Anarch Convert')
+    .filter((card) => card.c[NAME] !== "Anarch Convert")
     .forEach((card) => {
       const sect = card.c[SECT];
       if (sects[sect]) {
@@ -230,13 +230,13 @@ export const getSect = (crypt) => {
 
 export const getSwipedBg = (isSwiped, inInventory) => {
   if (isSwiped) {
-    return isSwiped === 'right'
-      ? 'bg-bgSuccess dark:bg-bgSuccessDark'
-      : 'bg-bgErrorSecondary dark:bg-bgErrorSecondaryDark';
+    return isSwiped === "right"
+      ? "bg-bgSuccess dark:bg-bgSuccessDark"
+      : "bg-bgErrorSecondary dark:bg-bgErrorSecondaryDark";
   }
   return inInventory
-    ? ''
-    : 'odd:bg-bgPrimary odd:dark:bg-bgPrimaryDark even:bg-bgThird even:dark:bg-bgThirdDark';
+    ? ""
+    : "odd:bg-bgPrimary odd:dark:bg-bgPrimaryDark even:bg-bgThird even:dark:bg-bgThirdDark";
 };
 
 export const deepClone = (v) => JSON.parse(JSON.stringify(v));
@@ -258,7 +258,7 @@ export const getTextDisciplines = (disciplines) => {
     }
   });
 
-  return [...supDisciplines, ...baseDisciplines].join(' ');
+  return [...supDisciplines, ...baseDisciplines].join(" ");
 };
 
 export const parseDeckHash = (hash, cryptCardBase, libraryCardBase) => {
@@ -267,9 +267,9 @@ export const parseDeckHash = (hash, cryptCardBase, libraryCardBase) => {
 
   hash
     .slice(1)
-    .split(';')
+    .split(";")
     .forEach((i) => {
-      const j = i.split('=');
+      const j = i.split("=");
       if (j[0] > 200000) {
         crypt[j[0]] = {
           q: Number.parseInt(j[1]),

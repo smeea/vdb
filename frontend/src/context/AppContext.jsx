@@ -1,7 +1,7 @@
-import { getMany, set, setMany, update } from 'idb-keyval';
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { useImmer } from 'use-immer';
-import { useSnapshot } from 'valtio';
+import { getMany, set, setMany, update } from "idb-keyval";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
+import { useImmer } from "use-immer";
+import { useSnapshot } from "valtio";
 import {
   BRANCHES,
   CAPACITY_MIN_MAX,
@@ -34,7 +34,7 @@ import {
   TEXT,
   TWD,
   TYPE,
-} from '@/constants';
+} from "@/constants";
 import {
   deckLocalize,
   deckStore,
@@ -46,39 +46,39 @@ import {
   setLimitedBannedLibrary,
   setLimitedSets,
   setupUsedInventory,
-} from '@/context';
-import { useWindowSize } from '@/hooks';
-import { cardServices, playtestServices, userServices } from '@/services';
-import { getLocalStorage, setLocalStorage } from '@/services/storageServices';
-import { byTimestamp, deepClone, parseDeck } from '@/utils';
+} from "@/context";
+import { useWindowSize } from "@/hooks";
+import { cardServices, playtestServices, userServices } from "@/services";
+import { getLocalStorage, setLocalStorage } from "@/services/storageServices";
+import { byTimestamp, deepClone, parseDeck } from "@/utils";
 
-const CRYPT_SEARCH_SORT = 'cryptSearchSort';
-const CRYPT_DECK_SORT = 'cryptDeckSort';
-const CRYPT_INVENTORY_SORT = 'cryptInventorySort';
-const LIBRARY_SEARCH_SORT = 'libraryInventorySort';
-const LIBRARY_INVENTORY_SORT = 'libraryInventorySort';
-const TWD_SEARCH_SORT = 'twdSearchSort';
-const PDA_SEARCH_SORT = 'pdaSearchSort';
-const TDA_SEARCH_SORT = 'tdaSearchSort';
-const LANG = 'lang';
-const ADD_MODE = 'addMode';
-const INVENTORY_MODE = 'inventoryMode';
-const LIMITED_MODE = 'limitedMode';
-const PLAYTEST_MODE = 'playtestMode';
-const SHOW_IMAGE = 'showImage';
-const SHOW_LEGACY_IMAGE = 'showLegacyImage';
-const RECENT_DECKS = 'recentDecks';
-const ONLINE = 'online';
-const OFFLINE = 'offline';
-const CARD_VERSION_KEY = 'cardVersion';
-const CRYPT_CARDBASE = 'cryptCardBase';
-const LIBRARY_CARDBASE = 'libraryCardBase';
-const LOCALIZED_CRYPT = 'localizedCrypt';
-const LOCALIZED_LIBRARY = 'localizedLibrary';
-const PRECON_DECKS = 'preconDecks';
-const IS_PLAYTEST = 'isPlaytest';
-const IS_PLAYTESTER = 'is_playtester';
-const IS_ADMIN = 'is_admin';
+const CRYPT_SEARCH_SORT = "cryptSearchSort";
+const CRYPT_DECK_SORT = "cryptDeckSort";
+const CRYPT_INVENTORY_SORT = "cryptInventorySort";
+const LIBRARY_SEARCH_SORT = "libraryInventorySort";
+const LIBRARY_INVENTORY_SORT = "libraryInventorySort";
+const TWD_SEARCH_SORT = "twdSearchSort";
+const PDA_SEARCH_SORT = "pdaSearchSort";
+const TDA_SEARCH_SORT = "tdaSearchSort";
+const LANG = "lang";
+const ADD_MODE = "addMode";
+const INVENTORY_MODE = "inventoryMode";
+const LIMITED_MODE = "limitedMode";
+const PLAYTEST_MODE = "playtestMode";
+const SHOW_IMAGE = "showImage";
+const SHOW_LEGACY_IMAGE = "showLegacyImage";
+const RECENT_DECKS = "recentDecks";
+const ONLINE = "online";
+const OFFLINE = "offline";
+const CARD_VERSION_KEY = "cardVersion";
+const CRYPT_CARDBASE = "cryptCardBase";
+const LIBRARY_CARDBASE = "libraryCardBase";
+const LOCALIZED_CRYPT = "localizedCrypt";
+const LOCALIZED_LIBRARY = "localizedLibrary";
+const PRECON_DECKS = "preconDecks";
+const IS_PLAYTEST = "isPlaytest";
+const IS_PLAYTESTER = "is_playtester";
+const IS_ADMIN = "is_admin";
 
 export const AppContext = React.createContext();
 
@@ -452,7 +452,7 @@ export const AppProvider = ({ children }) => {
   }, []);
 
   const addRecentDeck = useCallback((recentDeck) => {
-    const src = recentDeck[DECKID].length !== 9 ? TWD : recentDeck[PUBLIC_PARENT] ? PDA : 'shared';
+    const src = recentDeck[DECKID].length !== 9 ? TWD : recentDeck[PUBLIC_PARENT] ? PDA : "shared";
     let d = [...recentDecks];
     const idx = recentDecks.map((v) => v[DECKID]).indexOf(recentDeck[DECKID]);
     if (idx !== -1) d.splice(idx, 1);

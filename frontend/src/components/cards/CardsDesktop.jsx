@@ -1,4 +1,4 @@
-import Dice3 from '@icons/dice-3-fill.svg?react';
+import Dice3 from "@icons/dice-3-fill.svg?react";
 import {
   ButtonIconed,
   CardImage,
@@ -6,10 +6,10 @@ import {
   ErrorMessage,
   FlexGapped,
   ResultLayoutText,
-} from '@/components';
-import { ID } from '@/constants';
-import { useApp } from '@/context';
-import { getIsPlaytest } from '@/utils';
+} from "@/components";
+import { ID } from "@/constants";
+import { useApp } from "@/context";
+import { getIsPlaytest } from "@/utils";
 
 const CardsDesktop = ({ card, openRandomCard, handleChange, handleSetCard }) => {
   const { cryptCardBase, libraryCardBase, isMobile, playtestMode } = useApp();
@@ -25,7 +25,7 @@ const CardsDesktop = ({ card, openRandomCard, handleChange, handleSetCard }) => 
         )}
         {card &&
           (playtestMode || !getIsPlaytest(card[ID]) ? (
-            <div className="border-bgSecondary dark:border-bgSecondaryDark flex">
+            <div className="flex border-bgSecondary dark:border-bgSecondaryDark">
               <div>
                 <CardImage card={card} />
               </div>
@@ -40,7 +40,7 @@ const CardsDesktop = ({ card, openRandomCard, handleChange, handleSetCard }) => 
           ))}
       </FlexGapped>
       <div className="min-w-[175px] max-sm:hidden">
-        <div className="bg-bgPrimary dark:bg-bgPrimaryDark sticky z-30 flex w-full flex-col gap-1 lg:top-10">
+        <div className="sticky z-30 flex w-full flex-col gap-1 bg-bgPrimary lg:top-10 dark:bg-bgPrimaryDark">
           <ButtonIconed
             variant="secondary"
             onClick={() => openRandomCard(true)}

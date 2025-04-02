@@ -19,10 +19,10 @@ import {
   DeckSearchSimilarButton,
   PlaytestReportsOneButton,
   SeatingButton,
-} from '@/components';
-import { DECK, DECKID, ID, NAME, PLAYTEST } from '@/constants';
-import { useApp } from '@/context';
-import { getRestrictions } from '@/utils';
+} from "@/components";
+import { DECK, DECKID, ID, NAME, PLAYTEST } from "@/constants";
+import { useApp } from "@/context";
+import { getRestrictions } from "@/utils";
 
 const DeckButtons = ({
   deck,
@@ -40,7 +40,7 @@ const DeckButtons = ({
   const { isPlaytestAdmin, playtestMode, inventoryMode, username } = useApp();
   const { publicChild, isPublic, isAuthor, isBranches } = deck || {};
   const playtestPrecon =
-    deck?.[DECKID].includes(`${PLAYTEST}:`) && deck[DECKID].replace(`${PLAYTEST}:`, '');
+    deck?.[DECKID].includes(`${PLAYTEST}:`) && deck[DECKID].replace(`${PLAYTEST}:`, "");
   const { hasPlaytest } = getRestrictions(deck);
   const isPlaytestSafe = playtestMode || !hasPlaytest;
 

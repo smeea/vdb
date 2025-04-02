@@ -1,18 +1,18 @@
-import sects from '@/assets/data/sectsList.json';
+import sects from "@/assets/data/sectsList.json";
 import {
   SearchAdditionalForms,
   SearchFormButtonAdd,
   SearchFormButtonDel,
   SearchFormButtonLogicToggle,
   Select,
-} from '@/components';
-import { ANY, LOGIC, NOT_REQUIRED, SECT } from '@/constants';
+} from "@/components";
+import { ANY, LOGIC, NOT_REQUIRED, SECT } from "@/constants";
 
 const CryptSearchFormSect = ({ value, searchForm, onChange }) => {
   const name = SECT;
   const options = [
-    ['ANY', ANY],
-    ['Not Required', NOT_REQUIRED],
+    ["ANY", ANY],
+    ["Not Required", NOT_REQUIRED],
     ...sects.map((s) => [s, s.toLowerCase()]),
   ].map((i) => ({
     value: i[1],
@@ -29,7 +29,7 @@ const CryptSearchFormSect = ({ value, searchForm, onChange }) => {
     <>
       <div className="flex items-center">
         <div className="flex w-1/4 items-center justify-between">
-          <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">Sect:</div>
+          <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Sect:</div>
           {value.value[0] !== ANY && (
             <div className="flex justify-end gap-1 px-1">
               <div>

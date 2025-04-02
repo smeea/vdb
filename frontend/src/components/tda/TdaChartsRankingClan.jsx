@@ -1,5 +1,5 @@
-import { useMemo } from 'react';
-import { BubbleChart } from '@/components';
+import { useMemo } from "react";
+import { BubbleChart } from "@/components";
 import {
   ANTITRIBU,
   AUTHOR,
@@ -14,9 +14,9 @@ import {
   SCORE,
   TAGS,
   VALUE,
-} from '@/constants';
-import { useApp } from '@/context';
-import { byName, getClan } from '@/utils';
+} from "@/constants";
+import { useApp } from "@/context";
+import { byName, getClan } from "@/utils";
 
 const TdaChartsRankingClan = ({ info, decks, searchResults }) => {
   const { isMobile, isDesktop, isWide } = useApp();
@@ -55,7 +55,7 @@ const TdaChartsRankingClan = ({ info, decks, searchResults }) => {
       {Object.keys(data)
         .toSorted(byName)
         .map((s) => {
-          const clan = isMobile && s.includes(ANTITRIBU) ? `!${s.replace(` ${ANTITRIBU}`, '')}` : s;
+          const clan = isMobile && s.includes(ANTITRIBU) ? `!${s.replace(` ${ANTITRIBU}`, "")}` : s;
 
           return (
             <BubbleChart

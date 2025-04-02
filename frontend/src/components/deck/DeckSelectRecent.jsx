@@ -1,8 +1,8 @@
-import PeopleFill from '@icons/people-fill.svg?react';
-import TrophyFill from '@icons/trophy-fill.svg?react';
-import { Select } from '@/components';
-import { DECK, DECKID, DECKS, NAME, PDA, TWD } from '@/constants';
-import { useApp } from '@/context';
+import PeopleFill from "@icons/people-fill.svg?react";
+import TrophyFill from "@icons/trophy-fill.svg?react";
+import { Select } from "@/components";
+import { DECK, DECKID, DECKS, NAME, PDA, TWD } from "@/constants";
+import { useApp } from "@/context";
 
 const DeckSelectRecent = ({ deckid, handleSelect }) => {
   const { recentDecks, isMobile } = useApp();
@@ -23,7 +23,7 @@ const DeckSelectRecent = ({ deckid, handleSelect }) => {
       label: (
         <div className="flex justify-between">
           {i[NAME]}
-          <div className="text-midGray dark:text-midGrayDark flex w-[20px] items-center justify-center">
+          <div className="flex w-[20px] items-center justify-center text-midGray dark:text-midGrayDark">
             {getIcon(i.src)}
           </div>
         </div>

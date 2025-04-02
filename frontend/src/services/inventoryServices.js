@@ -1,6 +1,6 @@
-import ky from 'ky';
-import { CRYPT, ID, LIBRARY } from '@/constants';
-import { inventoryStore } from '@/context';
+import ky from "ky";
+import { CRYPT, ID, LIBRARY } from "@/constants";
+import { inventoryStore } from "@/context";
 
 export const addCards = (cards) => {
   const url = `${import.meta.env.VITE_API_URL}/inventory`;

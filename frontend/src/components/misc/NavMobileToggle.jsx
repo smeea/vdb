@@ -1,7 +1,7 @@
-import { Switch } from '@headlessui/react';
-import { twMerge } from 'tailwind-merge';
-import ToggleOff from '@icons/toggle-off.svg?react';
-import ToggleOn from '@icons/toggle-on.svg?react';
+import { Switch } from "@headlessui/react";
+import { twMerge } from "tailwind-merge";
+import ToggleOff from "@icons/toggle-off.svg?react";
+import ToggleOn from "@icons/toggle-on.svg?react";
 
 const NavMobileToggle = ({ children, isOn, disabled, handleClick }) => {
   return (
@@ -9,10 +9,10 @@ const NavMobileToggle = ({ children, isOn, disabled, handleClick }) => {
       {({ checked, disabled }) => (
         <div
           className={twMerge(
-            'flex items-center gap-2 px-3 py-1.5',
+            "flex items-center gap-2 px-3 py-1.5",
             disabled || !checked
-              ? 'text-lightGray dark:text-lightGrayDark'
-              : 'text-fgThird dark:text-fgPrimaryDark',
+              ? "text-lightGray dark:text-lightGrayDark"
+              : "text-fgThird dark:text-fgPrimaryDark",
           )}
           onClick={handleClick}
         >
@@ -25,8 +25,8 @@ const NavMobileToggle = ({ children, isOn, disabled, handleClick }) => {
           </div>
           <div
             className={twMerge(
-              'whitespace-nowrap',
-              !checked && 'text-midGray dark:text-midGrayDark',
+              "whitespace-nowrap",
+              !checked && "text-midGray dark:text-midGrayDark",
             )}
           >
             {children && <div className="flex items-center">{children}</div>}

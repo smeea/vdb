@@ -1,9 +1,9 @@
-import { ResultLibraryClan, ResultLibraryDisciplines, ResultLibraryTypeImage } from '@/components';
-import { TYPE_MASTER } from '@/constants';
+import { ResultLibraryClan, ResultLibraryDisciplines, ResultLibraryTypeImage } from "@/components";
+import { TYPE_MASTER } from "@/constants";
 
 const IconTextPercents = ({ icon, text, percents }) => {
   return (
-    <div className="inline-block pr-5 whitespace-nowrap">
+    <div className="inline-block whitespace-nowrap pr-5">
       <div className="flex items-center gap-1">
         {icon}
         <div className="flex">{text}</div>
@@ -30,7 +30,7 @@ const DeckLibraryTotalInfo = ({ byClans, byTypes, byDisciplines }) => {
     : [];
 
   return (
-    <div className="bg-bgSecondary dark:bg-bgSecondaryDark flex flex-col gap-2 p-2">
+    <div className="flex flex-col gap-2 bg-bgSecondary p-2 dark:bg-bgSecondaryDark">
       <div>
         {Object.keys(byTypes).map((i) => {
           return (

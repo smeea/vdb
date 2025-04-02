@@ -1,5 +1,5 @@
-import { twMerge } from 'tailwind-merge';
-import { useSnapshot } from 'valtio';
+import { twMerge } from "tailwind-merge";
+import { useSnapshot } from "valtio";
 import {
   CardPopover,
   ConditionalTooltip,
@@ -8,10 +8,10 @@ import {
   ResultName,
   Tr,
   UsedPopover,
-} from '@/components';
-import { HARD, ID, LIBRARY, TYPE } from '@/constants';
-import { inventoryStore, useApp, usedStore } from '@/context';
-import { getHardTotal } from '@/utils';
+} from "@/components";
+import { HARD, ID, LIBRARY, TYPE } from "@/constants";
+import { inventoryStore, useApp, usedStore } from "@/context";
+import { getHardTotal } from "@/utils";
 
 const TwdResultLibraryKeyCardsTableRow = ({ card, handleClick, shouldShowModal }) => {
   const { inventoryMode, isMobile } = useApp();
@@ -22,15 +22,15 @@ const TwdResultLibraryKeyCardsTableRow = ({ card, handleClick, shouldShowModal }
 
   return (
     <Tr key={card.c[ID]}>
-      <td className="border-bgSecondary bg-blue/5 dark:border-bgSecondaryDark min-w-[28px] border-r sm:min-w-[35px]">
+      <td className="min-w-[28px] border-bgSecondary border-r bg-blue/5 sm:min-w-[35px] dark:border-bgSecondaryDark">
         {inventoryMode ? (
           <ConditionalTooltip overlay={<UsedPopover cardid={card.c[ID]} />} disabled={isMobile}>
             <div
               className={twMerge(
-                'flex justify-center text-lg',
+                "flex justify-center text-lg",
                 inInventory < card.q
-                  ? 'bg-bgError dark:bg-bgErrorDark dark:text-whiteDark text-white'
-                  : inInventory - hardUsedTotal < card.q && 'bg-bgWarning dark:bg-bgWarningDark',
+                  ? "bg-bgError text-white dark:bg-bgErrorDark dark:text-whiteDark"
+                  : inInventory - hardUsedTotal < card.q && "bg-bgWarning dark:bg-bgWarningDark",
               )}
             >
               {card.q}

@@ -1,6 +1,6 @@
-import { useState } from 'react';
-import InfoCircle from '@icons/info-circle.svg?react';
-import PlusLg from '@icons/plus-lg.svg?react';
+import { useState } from "react";
+import InfoCircle from "@icons/info-circle.svg?react";
+import PlusLg from "@icons/plus-lg.svg?react";
 import {
   Button,
   DeckLibraryTotalInfo,
@@ -8,11 +8,11 @@ import {
   Header,
   ResultLibraryCost,
   Warning,
-} from '@/components';
-import { BANNED, BLOOD, DECKID, LIBRARY, LIMITED, PLAYTEST, POOL, X } from '@/constants';
-import { useApp } from '@/context';
-import { useDeckLibrary } from '@/hooks';
-import { getIsEditable } from '@/utils';
+} from "@/components";
+import { BANNED, BLOOD, DECKID, LIBRARY, LIMITED, PLAYTEST, POOL, X } from "@/constants";
+import { useApp } from "@/context";
+import { useDeckLibrary } from "@/hooks";
+import { getIsEditable } from "@/utils";
 
 const DeckLibraryHeader = ({
   inMissing,
@@ -52,7 +52,7 @@ const DeckLibraryHeader = ({
           <div className="flex basis-full items-center justify-between gap-2 px-2 font-bold">
             <div className="flex">
               Library [{libraryTotalDiff ?? libraryTotal}
-              {!inMissing && (libraryTotal < 60 || libraryTotal > 90) && ' of 60-90'}]
+              {!inMissing && (libraryTotal < 60 || libraryTotal > 90) && " of 60-90"}]
             </div>
             <div className="flex gap-2">
               {!inMissing && (
@@ -70,11 +70,11 @@ const DeckLibraryHeader = ({
                   <b>{bloodTotalDiff ?? bloodTotal}</b>
                   {showInfo && !bloodTotalDiff && libraryTotal < 90 && (
                     <div
-                      className="text-midGray dark:text-midGrayDark flex items-end"
+                      className="flex items-end text-midGray dark:text-midGrayDark"
                       title="Rescaled for 90 cards library"
                     >
                       ({rescaledBloodTotal}
-                      <div className="text-2xs font-normal">90</div>)
+                      <div className="font-normal text-2xs">90</div>)
                     </div>
                   )}
                 </div>
@@ -83,11 +83,11 @@ const DeckLibraryHeader = ({
                   <b>{poolTotalDiff ?? poolTotal}</b>
                   {showInfo && !poolTotalDiff && libraryTotal < 90 && (
                     <div
-                      className="text-midGray dark:text-midGrayDark flex items-end"
+                      className="flex items-end text-midGray dark:text-midGrayDark"
                       title="Rescaled for 90 cards library"
                     >
                       ({rescaledPoolTotal}
-                      <div className="text-2xs font-normal">90</div>)
+                      <div className="font-normal text-2xs">90</div>)
                     </div>
                   )}
                 </div>
@@ -104,7 +104,7 @@ const DeckLibraryHeader = ({
             </Button>
             {isEditable && (
               <Button
-                className="max-sm:hidden min-h-10"
+                className="min-h-10 max-sm:hidden"
                 title="Add Card"
                 onClick={() => setShowAdd(!showAdd)}
               >

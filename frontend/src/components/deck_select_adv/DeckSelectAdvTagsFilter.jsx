@@ -1,6 +1,6 @@
-import { useMemo } from 'react';
-import { Select } from '@/components';
-import { useApp } from '@/context';
+import { useMemo } from "react";
+import { Select } from "@/components";
+import { useApp } from "@/context";
 
 const DeckSelectAdvTagsFilter = ({ tagsFilter, handleChangeTagsFilter, allTagsOptions }) => {
   const { isMobile } = useApp();

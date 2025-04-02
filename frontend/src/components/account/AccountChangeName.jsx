@@ -1,10 +1,10 @@
-import { useActionState, useState } from 'react';
-import Check2 from '@icons/check2.svg?react';
-import PenFill from '@icons/pen-fill.svg?react';
-import { Button, ConditionalTooltipOrModal, ErrorOverlay, Input, Spinner } from '@/components';
-import { NAME } from '@/constants';
-import { useApp } from '@/context';
-import { userServices } from '@/services';
+import { useActionState, useState } from "react";
+import Check2 from "@icons/check2.svg?react";
+import PenFill from "@icons/pen-fill.svg?react";
+import { Button, ConditionalTooltipOrModal, ErrorOverlay, Input, Spinner } from "@/components";
+import { NAME } from "@/constants";
+import { useApp } from "@/context";
+import { userServices } from "@/services";
 
 const TooltipText = () => {
   return (
@@ -30,7 +30,7 @@ const AccountChangeName = () => {
     const result = await userServices.changeName(formData.get(NAME));
     switch (result.error) {
       case 500:
-        setError('CONNECTION PROBLEM');
+        setError("CONNECTION PROBLEM");
         break;
       default:
         setPublicName(formData.get(NAME));
@@ -47,7 +47,7 @@ const AccountChangeName = () => {
 
   return (
     <div className="flex flex-col gap-2">
-      <div className="text-fgSecondary dark:text-fgSecondaryDark flex items-center gap-2 text-lg font-bold">
+      <div className="flex items-center gap-2 font-bold text-fgSecondary text-lg dark:text-fgSecondaryDark">
         <div className="flex min-w-[23px] justify-center">
           <PenFill />
         </div>
@@ -68,7 +68,7 @@ const AccountChangeName = () => {
             disabled={pending}
             roundedStyle="rounded-r"
             borderStyle="border-r border-y"
-            variant={success ? 'success' : 'primary'}
+            variant={success ? "success" : "primary"}
             type="submit"
           >
             {pending ? <Spinner /> : <Check2 />}
