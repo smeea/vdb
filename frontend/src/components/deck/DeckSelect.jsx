@@ -118,7 +118,7 @@ const DeckSelect = ({
             />
           )}
           {deck && (
-            <Button className="max-sm:hidden" onClick={() => setShowInfo(!showInfo)}>
+            <Button className="sm:hidden" onClick={() => setShowInfo(!showInfo)}>
               <div className="flex">
                 <ChatLeftQuoteFill width="18" height="18" viewBox="0 0 16 16" />
               </div>

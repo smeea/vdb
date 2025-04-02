@@ -12,7 +12,6 @@
   "linter": {
     "enabled": true,
     "rules": {
-      "recommended": true,
       "complexity": {
         "noForEach": "off"
       },
@@ -26,6 +25,7 @@
         "useKeyWithClickEvents": "off"
       },
       "correctness": {
+        "noUndeclaredVariables": "error",
         "useExhaustiveDependencies": "off"
       }
     }
