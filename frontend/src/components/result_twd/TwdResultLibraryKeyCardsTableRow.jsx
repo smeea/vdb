@@ -15,6 +15,7 @@ import { getHardTotal } from '@/utils';
 
 const TwdResultLibraryKeyCardsTableRow = ({ card, handleClick, shouldShowModal }) => {
   const { inventoryMode, isMobile } = useApp();
+  const { [LIBRARY]: inventoryLibrary } = useSnapshot(inventoryStore);
   const usedLibrary = useSnapshot(usedStore)[LIBRARY];
   const inInventory = inventoryLibrary[card.c[ID]]?.q ?? 0;
   const hardUsedTotal = getHardTotal(usedLibrary[HARD][card.c[ID]]);
