@@ -1,5 +1,13 @@
 [
   {
+    "version": "2025-04-02",
+    "changes": [
+      "Add Master cards legacy layout images",
+      "Add TDA events: Dutch NC 2024 in Netherlands and Hurry Up! in Hungary",
+      "Small other fixes and improvements"
+    ]
+  },
+  {
     "version": "2025-03-16",
     "changes": [
       "Update Rulings",
