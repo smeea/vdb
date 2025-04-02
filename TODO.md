@@ -4,6 +4,7 @@
 - Deck-in-Url trimmed at first card - can't reproduce in dev environment
 
 # FEATURES
+- Limited in TWD/PDA search
 
 # FEATURES ON HOLD
 - TWD search with % V5-compatibility -> after BCP clarify V5
