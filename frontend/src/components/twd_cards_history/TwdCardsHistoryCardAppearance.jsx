@@ -26,13 +26,13 @@ const TwdCardsHistoryCardAppearance = ({ card, byPlayer }) => {
     <>
       <div
         className={twMerge(
-          "flex min-w-[45px] items-center justify-center sm:min-w-[60px]",
+          "flex items-center justify-center min-w-[60px] max-sm:hidden",
           !card[DECKID] && "font-bold text-fgSecondary dark:text-fgSecondaryDark",
         )}
       >
         {card[RELEASE_DATE].slice(0, 4)}
       </div>
-      <div className="flex min-w-[60px] items-center justify-center max-sm:hidden">
+      <div className="flex min-w-[45px] sm:min-w-[60px] items-center justify-center">
         {card[TWD_DATE]?.slice(0, 4)}
       </div>
       <div

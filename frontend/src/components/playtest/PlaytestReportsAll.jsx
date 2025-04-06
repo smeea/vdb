@@ -83,7 +83,6 @@ const PlaytestReportsAll = () => {
           switch (target) {
             case PRECONS:
             if (id === GENERAL || Number.isInteger(Number.parseInt(id))) return;
-              console.log(id)
               name = preconDecks[`${PLAYTEST}:${id}`][NAME];
               exportText += `Precon: ${name}\n\n`;
               break;

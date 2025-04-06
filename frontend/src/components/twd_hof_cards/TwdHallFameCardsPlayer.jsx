@@ -129,9 +129,9 @@ const TwdHallFameCardsPlayer = ({ name, cards }) => {
               <th className="max-sm:hidden" />
               <th />
               <th />
-              <th className="max-lg:hidden" />
-              <th className="max-lg:hidden" />
-              <th className="max-lg:hidden" />
+              <th className="max-md:hidden lg:max-xl:hidden" />
+              <th className="max-md:hidden lg:max-xl:hidden" />
+              <th className="max-md:hidden lg:max-xl:hidden" />
               <th className="text-center font-bold max-sm:hidden" title="First Print Date">
                 Print
               </th>

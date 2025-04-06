@@ -6,7 +6,7 @@ import { useApp } from "@/context";
 
 const Report = ({ id, text, score, isPlayed }) => {
   const { hidePlaytestNames, isMobile } = useApp();
-  const maxLength = isMobile ? 10 : 25;
+  const maxLength = isMobile ? 15 : 30;
 
   return (
     <div className="flex flex-col gap-2 sm:gap-3">
@@ -17,8 +17,8 @@ const Report = ({ id, text, score, isPlayed }) => {
         >
           {!hidePlaytestNames && (
             <>
-              &lt;{id.substring(0, maxLength)}
-              {id.length > maxLength && "…"}&gt;
+              {id.substring(0, maxLength)}
+              {id.length > maxLength && "…"}
             </>
           )}
         </div>

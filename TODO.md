@@ -1,5 +1,4 @@
 # FIX
-- HoF cards - header in different layout
 
 # FIX ON HOLD
 - Deck-in-Url trimmed at first card - can't reproduce in dev environment
