@@ -22616,6 +22616,20 @@
             }
         }
     ],
+    "201449":[
+        {
+            "text":"Capacity reduction happens at end of combat even if {Psyche!} Is used",
+            "refs":{
+                "LSJ 20090215":"http://groups.google.com/group/rec.games.trading-cards.jyhad/msg/945f61ee4b1581c0?hl=fr&lr=&ie=UTF-8"
+            }
+        },
+        {
+            "text":"Strikes for 2 or more made with a {Bundi} are hand strikes and her capacity reduction special applies.",
+            "refs":{
+                "LSJ 20090902":"http://groups.google.com/group/rec.games.trading-cards.jyhad/msg/91bbad6a9565c6d9"
+            }
+        }
+    ],
     "201456":[
         {
             "text":"When playing a card requiring a title or a sect, he is treated as a such for all effects of the card, including duration effects. (eg. he can {Archon} himself and use its effect later)",
