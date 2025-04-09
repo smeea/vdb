@@ -1,5 +1,12 @@
 [
   {
+    "version": "2025-04-09",
+    "changes": [
+      "Update TWDA",
+      "Add TDA event: Italian Grand Prix 2025"
+    ]
+  },
+  {
     "version": "2025-04-05",
     "changes": [
       "Hotfix"
