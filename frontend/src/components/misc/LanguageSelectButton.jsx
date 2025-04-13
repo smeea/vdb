@@ -1,6 +1,6 @@
-import { Popover, PopoverButton, PopoverPanel } from "@headlessui/react";
 import { Flag, LanguageMenu } from "@/components";
 import { useApp } from "@/context";
+import { Popover, PopoverButton, PopoverPanel } from "@headlessui/react";
 
 const LanguageSelectButton = () => {
   const { lang } = useApp();

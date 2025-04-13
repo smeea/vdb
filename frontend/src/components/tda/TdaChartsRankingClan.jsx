@@ -1,4 +1,3 @@
-import { useMemo } from "react";
 import { BubbleChart } from "@/components";
 import {
   ANTITRIBU,
@@ -17,6 +16,7 @@ import {
 } from "@/constants";
 import { useApp } from "@/context";
 import { byName, getClan } from "@/utils";
+import { useMemo } from "react";
 
 const TdaChartsRankingClan = ({ info, decks, searchResults }) => {
   const { isMobile, isDesktop, isWide } = useApp();

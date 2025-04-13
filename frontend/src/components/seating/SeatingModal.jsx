@@ -1,7 +1,3 @@
-import { useState } from "react";
-import PencilSquare from "@icons/pencil-square.svg?react";
-import PersonFill from "@icons/person-fill.svg?react";
-import Recycle from "@icons/recycle.svg?react";
 import {
   ButtonIconed,
   Modal,
@@ -10,6 +6,10 @@ import {
   SeatingTables,
 } from "@/components";
 import { RANDOM, STATE } from "@/constants";
+import PencilSquare from "@icons/pencil-square.svg?react";
+import PersonFill from "@icons/person-fill.svg?react";
+import Recycle from "@icons/recycle.svg?react";
+import { useState } from "react";
 
 const SeatingModal = ({
   addCustomDeck,

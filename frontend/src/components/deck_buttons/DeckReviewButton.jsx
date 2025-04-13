@@ -1,9 +1,9 @@
-import { useNavigate } from "react-router";
-import PencilSquare from "@icons/pencil-square.svg?react";
 import { ButtonIconed } from "@/components";
 import { AUTHOR, DECKID, DESCRIPTION } from "@/constants";
 import { useApp } from "@/context";
 import { deckServices } from "@/services";
+import PencilSquare from "@icons/pencil-square.svg?react";
+import { useNavigate } from "react-router";
 
 const DeckReviewButton = ({ deck }) => {
   const { isDesktop, setShowFloatingButtons, setShowMenuButtons, publicName } = useApp();

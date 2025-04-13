@@ -1,11 +1,3 @@
-import dayjs from "dayjs";
-import { useNavigate } from "react-router";
-import { twMerge } from "tailwind-merge";
-import { useSnapshot } from "valtio";
-import At from "@icons/at.svg?react";
-import EyeFill from "@icons/eye-fill.svg?react";
-import PinAngleFill from "@icons/pin-angle-fill.svg?react";
-import Shuffle from "@icons/shuffle.svg?react";
 import {
   ButtonIconed,
   Checkbox,
@@ -44,6 +36,14 @@ import {
 } from "@/constants";
 import { deckToggleInventoryState, limitedStore, useApp } from "@/context";
 import { getClan, getRestrictions } from "@/utils";
+import At from "@icons/at.svg?react";
+import EyeFill from "@icons/eye-fill.svg?react";
+import PinAngleFill from "@icons/pin-angle-fill.svg?react";
+import Shuffle from "@icons/shuffle.svg?react";
+import dayjs from "dayjs";
+import { useNavigate } from "react-router";
+import { twMerge } from "tailwind-merge";
+import { useSnapshot } from "valtio";
 
 const DeckSelectAdvTableRow = ({
   deck,

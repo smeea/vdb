@@ -1,9 +1,3 @@
-import { Menu } from "@headlessui/react";
-import { useState } from "react";
-import { useNavigate, useParams } from "react-router";
-import { useSnapshot } from "valtio";
-import Download from "@icons/download.svg?react";
-import TrashFill from "@icons/trash-fill.svg?react";
 import {
   ButtonIconed,
   DeckSelectAdvTable,
@@ -19,6 +13,12 @@ import { DECKID, DECKS, JOL, LACKEY, NAME, TEXT, XLSX } from "@/constants";
 import { deckStore, useApp } from "@/context";
 import { useDecksTagsAll } from "@/hooks";
 import { deckServices } from "@/services";
+import { Menu } from "@headlessui/react";
+import Download from "@icons/download.svg?react";
+import TrashFill from "@icons/trash-fill.svg?react";
+import { useState } from "react";
+import { useNavigate, useParams } from "react-router";
+import { useSnapshot } from "valtio";
 
 const DeckSelectAdvModal = ({ onClick, setShow, short }) => {
   const { isMobile, setShowMenuButtons, setShowFloatingButtons } = useApp();

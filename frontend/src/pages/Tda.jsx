@@ -1,7 +1,3 @@
-import ky from "ky";
-import { useCallback, useEffect, useState } from "react";
-import { useNavigate, useParams, useSearchParams } from "react-router";
-import { useSnapshot } from "valtio";
 import {
   ButtonClose,
   ButtonFloatClose,
@@ -36,6 +32,10 @@ import {
 } from "@/constants";
 import { clearTdaForm, setTdaDecks, setTdaInfo, setTdaResults, tdaStore, useApp } from "@/context";
 import { getTags, importDeck, sanitizeScoreSheet } from "@/utils";
+import ky from "ky";
+import { useCallback, useEffect, useState } from "react";
+import { useNavigate, useParams, useSearchParams } from "react-router";
+import { useSnapshot } from "valtio";
 
 const TESTERS = ["1", "crauseon"];
 

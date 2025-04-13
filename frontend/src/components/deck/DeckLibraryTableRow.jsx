@@ -1,5 +1,3 @@
-import { twMerge } from "tailwind-merge";
-import { useSnapshot } from "valtio";
 import {
   DeckCardQuantityTd,
   DeckCardToggleInventoryStateTd,
@@ -10,6 +8,8 @@ import { HARD, ID, LIBRARY, NAME, SOFT } from "@/constants";
 import { deckCardChange, inventoryStore, useApp, usedStore } from "@/context";
 import { useSwipe } from "@/hooks";
 import { getHardTotal, getSoftMax, getSwipedBg } from "@/utils";
+import { twMerge } from "tailwind-merge";
+import { useSnapshot } from "valtio";
 
 const DeckLibraryTableRow = ({
   handleClick,

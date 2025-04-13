@@ -1,4 +1,3 @@
-import dayjs from "dayjs";
 import disciplinesList from "@/assets/data/disciplinesList.json";
 import setsAndPrecons from "@/assets/data/setsAndPrecons.json";
 import virtuesList from "@/assets/data/virtuesList.json";
@@ -27,6 +26,7 @@ import {
   SECT,
   SET,
 } from "@/constants";
+import dayjs from "dayjs";
 
 export const getCardProperty = (card, property) => {
   return card.c ? card.c[property] : card[property];

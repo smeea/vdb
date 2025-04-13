@@ -1,5 +1,5 @@
-import { proxy } from "valtio";
 import { CRYPT_TIMER } from "@/constants";
+import { proxy } from "valtio";
 
 const CRYPT_TIMERS = "cryptTimers";
 

@@ -1,8 +1,8 @@
-import { twMerge } from "tailwind-merge";
-import { useSnapshot } from "valtio";
 import { DeckSortButton, Header } from "@/components";
 import { DECKS, TAGS } from "@/constants";
 import { deckStore, useApp } from "@/context";
+import { twMerge } from "tailwind-merge";
+import { useSnapshot } from "valtio";
 
 const DeckSelectAdvTotal = ({ sortMethod, setSortMethod, tagsFilter, setTagsFilter }) => {
   const { isMobile } = useApp();

@@ -1,4 +1,3 @@
-import { proxy } from "valtio";
 import defaultsCryptForm from "@/components/search_forms/forms_data/defaultsCryptForm.json";
 import defaultsLibraryForm from "@/components/search_forms/forms_data/defaultsLibraryForm.json";
 import defaultsPdaForm from "@/components/search_forms/forms_data/defaultsPdaForm.json";
@@ -15,6 +14,7 @@ import {
   TWD,
   VOTES,
 } from "@/constants";
+import { proxy } from "valtio";
 
 export const searchResults = proxy({});
 

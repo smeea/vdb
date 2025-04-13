@@ -1,8 +1,8 @@
-import { useMemo } from "react";
-import { useSnapshot } from "valtio";
 import { CRYPT_TIMER, ID } from "@/constants";
 import { miscStore } from "@/context";
 import { cryptSort } from "@/utils";
+import { useMemo } from "react";
+import { useSnapshot } from "valtio";
 
 const useCryptSortWithTimer = (cardsList, sortMethod) => {
   const timer = useSnapshot(miscStore)[CRYPT_TIMER];

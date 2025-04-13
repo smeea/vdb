@@ -1,7 +1,3 @@
-import { useEffect, useState } from "react";
-import { useLoaderData, useLocation, useNavigate, useParams } from "react-router";
-import { useImmer } from "use-immer";
-import { useSnapshot } from "valtio";
 import {
   ButtonFloatClose,
   ButtonFloatMenu,
@@ -33,6 +29,10 @@ import {
 } from "@/constants";
 import { deckStore, useApp } from "@/context";
 import { deepClone, getTags, parseDeck } from "@/utils";
+import { useEffect, useState } from "react";
+import { useLoaderData, useLocation, useNavigate, useParams } from "react-router";
+import { useImmer } from "use-immer";
+import { useSnapshot } from "valtio";
 
 const Review = () => {
   const {

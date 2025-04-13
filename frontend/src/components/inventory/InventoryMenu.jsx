@@ -1,4 +1,3 @@
-import { useSnapshot } from "valtio";
 import {
   Checkbox,
   InventoryButtons,
@@ -7,6 +6,7 @@ import {
 } from "@/components";
 import { OK } from "@/constants";
 import { inventoryStore } from "@/context";
+import { useSnapshot } from "valtio";
 
 const InventoryMenu = ({
   sharedCrypt,

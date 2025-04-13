@@ -1,8 +1,8 @@
+import { AUTO, DARK, ICON, LIGHT, NAME } from "@/constants";
+import { useApp, useTheme } from "@/context";
 import MoonFill from "@icons/moon-fill.svg?react";
 import PcDisplay from "@icons/pc-display.svg?react";
 import SunFill from "@icons/sun-fill.svg?react";
-import { AUTO, DARK, ICON, LIGHT, NAME } from "@/constants";
-import { useApp, useTheme } from "@/context";
 
 const ThemeSelect = ({ setShowMenu }) => {
   const { theme, toggleTheme } = useTheme();

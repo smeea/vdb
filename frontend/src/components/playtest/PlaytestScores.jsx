@@ -1,8 +1,8 @@
-import { twMerge } from "tailwind-merge";
+import { useApp } from "@/context";
 import StarFill from "@icons/star-fill.svg?react";
 import StarHalf from "@icons/star-half.svg?react";
 import Star from "@icons/star.svg?react";
-import { useApp } from "@/context";
+import { twMerge } from "tailwind-merge";
 
 const PlaytestScores = ({ value, handleClick, disabled, isSmall }) => {
   const { isMobile } = useApp();

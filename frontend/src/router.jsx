@@ -1,3 +1,6 @@
+import { DECKID, DECKID_FROM, DECKID_TO, EVENT, ID } from "@/constants";
+import { useApp } from "@/context";
+import { deckServices, miscServices } from "@/services";
 import { Suspense, lazy } from "react";
 import { Navigate, Route, createBrowserRouter, createRoutesFromElements } from "react-router";
 import About from "./pages/About.jsx";
@@ -7,9 +10,6 @@ import Crypt from "./pages/Crypt.jsx";
 import Decks from "./pages/Decks.jsx";
 import Library from "./pages/Library.jsx";
 import RootLayout from "./pages/RootLayout.jsx";
-import { DECKID, DECKID_FROM, DECKID_TO, EVENT, ID } from "@/constants";
-import { useApp } from "@/context";
-import { deckServices, miscServices } from "@/services";
 
 const Changelog = lazy(() => import("./pages/Changelog.jsx"));
 const Diff = lazy(() => import("./pages/Diff.jsx"));

@@ -1,6 +1,3 @@
-import { useNavigate } from "react-router";
-import PeopleFill from "@icons/people-fill.svg?react";
-import TrophyFill from "@icons/trophy-fill.svg?react";
 import { Button } from "@/components";
 import { CRYPT, GT, LIBRARY, PDA } from "@/constants";
 import {
@@ -10,6 +7,9 @@ import {
   setPdaResults,
   setTwdResults,
 } from "@/context";
+import PeopleFill from "@icons/people-fill.svg?react";
+import TrophyFill from "@icons/trophy-fill.svg?react";
+import { useNavigate } from "react-router";
 
 const ButtonSearchCardInDecks = ({ cardid, target, handleClose = () => {} }) => {
   const navigate = useNavigate();

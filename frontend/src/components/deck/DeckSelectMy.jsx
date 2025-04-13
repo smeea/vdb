@@ -1,9 +1,3 @@
-import dayjs from "dayjs";
-import { useMemo } from "react";
-import { useSnapshot } from "valtio";
-import At from "@icons/at.svg?react";
-import PinAngleFill from "@icons/pin-angle-fill.svg?react";
-import Shuffle from "@icons/shuffle.svg?react";
 import paths from "@/assets/data/paths.json";
 import { ResultLegalIcon, ResultPathImage, ResultPreconClan, Select } from "@/components";
 import {
@@ -25,6 +19,12 @@ import {
 } from "@/constants";
 import { deckStore, limitedStore, useApp } from "@/context";
 import { byTimestamp, getClan, getRestrictions } from "@/utils";
+import At from "@icons/at.svg?react";
+import PinAngleFill from "@icons/pin-angle-fill.svg?react";
+import Shuffle from "@icons/shuffle.svg?react";
+import dayjs from "dayjs";
+import { useMemo } from "react";
+import { useSnapshot } from "valtio";
 
 const DeckSelectMy = ({ deckid, handleSelect }) => {
   const { limitedMode, inventoryMode, isMobile, isWide } = useApp();

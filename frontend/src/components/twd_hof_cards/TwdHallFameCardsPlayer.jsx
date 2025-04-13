@@ -1,6 +1,3 @@
-import { DisclosureButton, DisclosurePanel } from "@headlessui/react";
-import { useMemo } from "react";
-import LightbulbFill from "@icons/lightbulb-fill.svg?react";
 import {
   ResultCryptTotal,
   ResultLibraryTotal,
@@ -24,6 +21,9 @@ import {
 import { useApp } from "@/context";
 import { useModalCardController } from "@/hooks";
 import { cryptSort, librarySort } from "@/utils";
+import { DisclosureButton, DisclosurePanel } from "@headlessui/react";
+import LightbulbFill from "@icons/lightbulb-fill.svg?react";
+import { useMemo } from "react";
 
 const TwdHallFameCardsPlayer = ({ name, cards }) => {
   const {

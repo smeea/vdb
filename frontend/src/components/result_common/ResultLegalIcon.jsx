@@ -1,8 +1,8 @@
-import { twMerge } from "tailwind-merge";
+import { BANNED, DEFAULT, PLAYTEST } from "@/constants";
 import Exclamation from "@icons/exclamation-triangle.svg?react";
 import Hammer from "@icons/hammer.svg?react";
 import LightningChargeFill from "@icons/lightning-charge-fill.svg?react";
-import { BANNED, DEFAULT, PLAYTEST } from "@/constants";
+import { twMerge } from "tailwind-merge";
 
 const ResultLegalIcon = ({ value, title, type = DEFAULT, className }) => {
   const titleOptions = {

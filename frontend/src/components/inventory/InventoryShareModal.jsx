@@ -1,9 +1,9 @@
-import { useState } from "react";
-import ClipboardFill from "@icons/clipboard-fill.svg?react";
-import Link45Deg from "@icons/link-45deg.svg?react";
 import { Button, ButtonIconed, FlexGapped, Modal } from "@/components";
 import { useApp } from "@/context";
 import { inventoryServices } from "@/services";
+import ClipboardFill from "@icons/clipboard-fill.svg?react";
+import Link45Deg from "@icons/link-45deg.svg?react";
+import { useState } from "react";
 
 const InventoryShareModal = ({ setShow }) => {
   const { isMobile, setShowFloatingButtons, setShowMenuButtons, inventoryKey, setInventoryKey } =

@@ -1,6 +1,6 @@
-import { twMerge } from "tailwind-merge";
 import virtuesList from "@/assets/data/virtuesList.json";
 import { ResultDisciplineImage } from "@/components";
+import { twMerge } from "tailwind-merge";
 
 const CryptSearchFormVirtues = ({ value, onChange }) => {
   return (

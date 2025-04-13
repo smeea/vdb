@@ -1,5 +1,3 @@
-import { twMerge } from "tailwind-merge";
-import { useSnapshot } from "valtio";
 import {
   DeckCardQuantityTd,
   DeckDrawProbability,
@@ -10,6 +8,8 @@ import { CRYPT, DECKS, HARD, ID, INVENTORY_TYPE, NAME, SOFT } from "@/constants"
 import { deckCardChange, deckStore, inventoryStore, useApp, usedStore } from "@/context";
 import { useSwipe } from "@/hooks";
 import { getHardTotal, getSoftMax, getSwipedBg } from "@/utils";
+import { twMerge } from "tailwind-merge";
+import { useSnapshot } from "valtio";
 
 const DiffCryptTableRow = ({
   cardChange,

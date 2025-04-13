@@ -1,6 +1,3 @@
-import { Menu } from "@headlessui/react";
-import { useSnapshot } from "valtio";
-import Download from "@icons/download.svg?react";
 import { MenuButton, MenuItem, MenuItemDivider, MenuItems } from "@/components";
 import {
   BRANCHES,
@@ -21,6 +18,9 @@ import {
 import { deckStore, useApp } from "@/context";
 import { deckServices } from "@/services";
 import { exportDeck } from "@/utils";
+import { Menu } from "@headlessui/react";
+import Download from "@icons/download.svg?react";
+import { useSnapshot } from "valtio";
 
 const SAVE = "save";
 const COPY = "copy";

@@ -1,9 +1,9 @@
-import EyeFill from "@icons/eye-fill.svg?react";
-import { twMerge } from "tailwind-merge";
 import setsAndPrecons from "@/assets/data/setsAndPrecons.json";
 import { CardImage, Select, Tooltip } from "@/components";
 import { DATE, ID, NAME, PLAYTEST, POD, SET } from "@/constants";
 import { useApp } from "@/context";
+import EyeFill from "@icons/eye-fill.svg?react";
+import { twMerge } from "tailwind-merge";
 
 const DeckProxyTableSetSelect = ({ card, value, handleSetSelector, className }) => {
   const { playtestMode } = useApp();

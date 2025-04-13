@@ -1,7 +1,7 @@
-import { useState } from "react";
-import { twMerge } from "tailwind-merge";
 import { Flag, Toggle, Tr } from "@/components";
 import { playtestServices } from "@/services";
+import { useState } from "react";
+import { twMerge } from "tailwind-merge";
 
 const PlaytestManagePlayer = ({ value }) => {
   const { username, lang, liaison, timestamp, added_by, added_date, is_admin, reports } = value;

@@ -1,11 +1,11 @@
-import { Link } from "react-router";
+import lastChange from "@/LAST_CHANGE.json";
+import { Banner, Btc, ConditionalTooltipOrModal, TextWithLinks, Title } from "@/components";
 import Discord from "@icons/discord.svg?react";
 import EnvelopeFill from "@icons/envelope-fill.svg?react";
 import Github from "@icons/github.svg?react";
 import Globe2 from "@icons/globe2.svg?react";
 import Telegram from "@icons/telegram.svg?react";
-import lastChange from "@/LAST_CHANGE.json";
-import { Banner, Btc, ConditionalTooltipOrModal, TextWithLinks, Title } from "@/components";
+import { Link } from "react-router";
 
 const ContactLi = ({ icon, children }) => {
   return (

@@ -1,6 +1,6 @@
+import ClipboardFill from "@icons/clipboard-fill.svg?react";
 import { useState } from "react";
 import { twMerge } from "tailwind-merge";
-import ClipboardFill from "@icons/clipboard-fill.svg?react";
 
 const Btc = () => {
   const [success, setSuccess] = useState(false);

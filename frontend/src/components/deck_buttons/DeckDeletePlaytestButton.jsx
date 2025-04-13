@@ -1,8 +1,8 @@
-import TrashFill from "@icons/trash-fill.svg?react";
 import { ButtonIconed } from "@/components";
 import { CARDS, CRYPT, DECKID, LIBRARY } from "@/constants";
 import { deckUpdate, useApp } from "@/context";
 import { deepClone, getIsPlaytest } from "@/utils";
+import TrashFill from "@icons/trash-fill.svg?react";
 
 const DeckDeletePlaytestButton = ({ deck }) => {
   const { isDesktop, setShowFloatingButtons, setShowMenuButtons } = useApp();

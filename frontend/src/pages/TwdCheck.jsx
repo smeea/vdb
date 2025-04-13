@@ -1,6 +1,6 @@
-import { useState } from "react";
 import { TwdCheckEvent, TwdCheckInput } from "@/components";
 import { ID } from "@/constants";
+import { useState } from "react";
 
 const TwdCheck = () => {
   const [deckData, setDeckData] = useState();

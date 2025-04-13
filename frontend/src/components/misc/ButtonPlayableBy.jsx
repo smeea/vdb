@@ -1,9 +1,9 @@
-import { useNavigate } from "react-router";
-import Bullseye from "@icons/bullseye.svg?react";
 import { Button } from "@/components";
-import { CRYPT, TITLED, GE, LE, SERAPH, BLACK_HAND, RED_LIST } from "@/constants";
+import { BLACK_HAND, CRYPT, GE, LE, RED_LIST, SERAPH, TITLED } from "@/constants";
 import { clearSearchForm } from "@/context";
 import { getLibraryRequirements } from "@/utils";
+import Bullseye from "@icons/bullseye.svg?react";
+import { useNavigate } from "react-router";
 
 const ButtonPlayableBy = ({ card, handleClose = () => {} }) => {
   const navigate = useNavigate();

@@ -1,8 +1,8 @@
-import { useNavigate } from "react-router";
-import PeopleFill from "@icons/people-fill.svg?react";
 import { ButtonIconed } from "@/components";
 import { PUBLIC_CHILD, PUBLIC_PARENT } from "@/constants";
 import { useApp } from "@/context";
+import PeopleFill from "@icons/people-fill.svg?react";
+import { useNavigate } from "react-router";
 
 const DeckPublicSwitchButton = ({ deck }) => {
   const { isDesktop, setShowMenuButtons, setShowFloatingButtons } = useApp();

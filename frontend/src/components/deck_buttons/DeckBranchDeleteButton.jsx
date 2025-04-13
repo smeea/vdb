@@ -1,11 +1,11 @@
-import { useState } from "react";
-import { useNavigate } from "react-router";
-import { useSnapshot } from "valtio";
-import NodeMinusFill from "@icons/node-minus-fill.svg?react";
 import { ButtonIconed, ModalConfirmation } from "@/components";
 import { BRANCH_NAME, DECKID, DECKS, NAME } from "@/constants";
 import { deckStore, useApp } from "@/context";
 import { deckServices } from "@/services";
+import NodeMinusFill from "@icons/node-minus-fill.svg?react";
+import { useState } from "react";
+import { useNavigate } from "react-router";
+import { useSnapshot } from "valtio";
 
 const DeckBranchDeleteButton = ({ deck, noText, className }) => {
   const { isDesktop, setShowFloatingButtons, setShowMenuButtons } = useApp();

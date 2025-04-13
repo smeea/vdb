@@ -1,4 +1,3 @@
-import EyeFill from "@icons/eye-fill.svg?react";
 import paths from "@/assets/data/paths.json";
 import setsAndPrecons from "@/assets/data/setsAndPrecons.json";
 import {
@@ -13,6 +12,7 @@ import {
 import { CLAN, DATE, DECKID, NAME, PRECONS } from "@/constants";
 import { useApp } from "@/context";
 import { useDeckInInventory } from "@/hooks";
+import EyeFill from "@icons/eye-fill.svg?react";
 
 const InventoryAddPreconRow = ({ deck }) => {
   const { isMobile } = useApp();

@@ -1,4 +1,3 @@
-import { twMerge } from "tailwind-merge";
 import {
   CardPopover,
   ConditionalTooltip,
@@ -12,6 +11,7 @@ import {
 } from "@/components";
 import { CLAN, DECKID, DISCIPLINES, GROUP, PLAYER, TITLE } from "@/constants";
 import { useApp } from "@/context";
+import { twMerge } from "tailwind-merge";
 
 const TwdCardsHistoryCryptRow = ({ card, players, handleClick }) => {
   const { isMobile } = useApp();

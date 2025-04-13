@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { ResultLibraryTypeImage, Select, Toggle } from "@/components";
 import {
   ANY,
@@ -16,6 +15,7 @@ import {
   TYPE_REACTION,
   TYPE_RETAINER,
 } from "@/constants";
+import { useState } from "react";
 
 const TypeForm = ({ isManual, handleManual, value = ANY, name, options, onChange }) => {
   const [min, max] = value === ANY ? [0, 100] : value.split(",");

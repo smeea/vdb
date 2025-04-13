@@ -1,7 +1,3 @@
-import { useEffect, useMemo } from "react";
-import { useSearchParams } from "react-router";
-import { twMerge } from "tailwind-merge";
-import { useSnapshot } from "valtio";
 import {
   ButtonFloatAdd,
   ButtonFloatClose,
@@ -14,6 +10,10 @@ import {
 import { CRYPT, CRYPT_COMPARE, DECK, DECKID, DECKS } from "@/constants";
 import { deckStore, searchResults, setCryptResults, setDeck, useApp } from "@/context";
 import { getIsEditable } from "@/utils";
+import { useEffect, useMemo } from "react";
+import { useSearchParams } from "react-router";
+import { twMerge } from "tailwind-merge";
+import { useSnapshot } from "valtio";
 
 const Crypt = () => {
   const { addMode, toggleAddMode, isMobile, isDesktop, showFloatingButtons, lastDeckId } = useApp();

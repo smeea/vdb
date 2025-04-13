@@ -1,8 +1,8 @@
-import { Link } from "react-router";
 import setsAndPrecons from "@/assets/data/setsAndPrecons.json";
 import { CardImage, ConditionalTooltipOrModal } from "@/components";
 import { DATE, NAME, PLAYTEST, POD, PRECONS, PROMO, SET } from "@/constants";
 import { useApp } from "@/context";
+import { Link } from "react-router";
 
 const PreconsDetailed = ({ sets, set }) => {
   return Object.keys(sets[set]).map((i) => {

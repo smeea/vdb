@@ -1,10 +1,10 @@
-import { Link } from "react-router";
+import { Banner, Title } from "@/components";
 import At from "@icons/at.svg?react";
 import ImageAlt from "@icons/image-alt.svg?react";
 import PinAngleFill from "@icons/pin-angle-fill.svg?react";
 import SearchHeartFill from "@icons/search-heart-fill.svg?react";
 import Shuffle from "@icons/shuffle.svg?react";
-import { Banner, Title } from "@/components";
+import { Link } from "react-router";
 
 const SubTitle = ({ children }) => {
   return <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">{children}</div>;

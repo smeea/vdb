@@ -1,8 +1,8 @@
-import { useActionState, useState } from "react";
-import LockFill from "@icons/lock-fill.svg?react";
 import { AccountPasswordForm, ErrorOverlay } from "@/components";
 import { NEW_PASSWORD, PASSWORD } from "@/constants";
 import { userServices } from "@/services";
+import LockFill from "@icons/lock-fill.svg?react";
+import { useActionState, useState } from "react";
 
 const AccountChangePassword = () => {
   const [error, setError] = useState(false);

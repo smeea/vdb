@@ -1,5 +1,3 @@
-import { useMemo } from "react";
-import { useSnapshot } from "valtio";
 import cardtypeSorted from "@/assets/data/cardtypeSorted.json";
 import disciplinesExtraList from "@/assets/data/disciplinesExtraList.json";
 import disciplinesList from "@/assets/data/disciplinesList.json";
@@ -7,6 +5,8 @@ import virtuesList from "@/assets/data/virtuesList.json";
 import { ALL, DISCIPLINE, HARD, LIBRARY, NOK, NONE, OK, SOFT, TYPE } from "@/constants";
 import { useApp, usedStore } from "@/context";
 import { getHardTotal, getIsPlaytest, getSoftMax } from "@/utils";
+import { useMemo } from "react";
+import { useSnapshot } from "valtio";
 
 const useInventoryLibrary = (library, category, compact, type, discipline, onlyNotes) => {
   const usedLibrary = useSnapshot(usedStore)[LIBRARY];

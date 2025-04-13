@@ -1,5 +1,3 @@
-import { useCallback, useEffect, useState } from "react";
-import Check2 from "@icons/check2.svg?react";
 import {
   ButtonClose,
   ButtonIconed,
@@ -13,6 +11,8 @@ import {
 import { IN, LABEL, LOGIC, NAME, REGEX, TEXT, TYPE_DEBOUNCE_DELAY, VALUE } from "@/constants";
 import { useApp } from "@/context";
 import { useDebounce } from "@/hooks";
+import Check2 from "@icons/check2.svg?react";
+import { useCallback, useEffect, useState } from "react";
 
 const SearchFormTextAndButtons = ({
   searchForm,

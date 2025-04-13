@@ -1,5 +1,3 @@
-import StarFill from "@icons/star-fill.svg?react";
-import TrophyFill from "@icons/trophy-fill.svg?react";
 import {
   DeckCloneButton,
   TwdOpenDeckButton,
@@ -9,6 +7,8 @@ import {
 import { BASE, GW, RANK, SCORE, SUPERIOR, TAGS, VP } from "@/constants";
 import { useApp } from "@/context";
 import { getDeckInUrl } from "@/utils";
+import StarFill from "@icons/star-fill.svg?react";
+import TrophyFill from "@icons/trophy-fill.svg?react";
 
 const TdaDeckDescription = ({ deck }) => {
   const { username, isMobile } = useApp();

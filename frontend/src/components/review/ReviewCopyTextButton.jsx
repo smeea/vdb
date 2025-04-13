@@ -1,9 +1,9 @@
-import { useState } from "react";
-import PlusSlashMinus from "@icons/plus-slash-minus.svg?react";
 import { ButtonIconed } from "@/components";
 import { ADV, NAME } from "@/constants";
 import { useApp } from "@/context";
 import { useDeckLibrary } from "@/hooks";
+import PlusSlashMinus from "@icons/plus-slash-minus.svg?react";
+import { useState } from "react";
 
 const ReviewCopyTextButton = ({ urlDiff }) => {
   const { cryptCardBase, libraryCardBase, isDesktop, setShowFloatingButtons, setShowMenuButtons } =

@@ -1,6 +1,3 @@
-import { derive } from "derive-valtio";
-import { update } from "idb-keyval";
-import { proxy } from "valtio";
 import {
   ALLOWED,
   BANNED,
@@ -15,6 +12,9 @@ import {
   SET,
   SETS,
 } from "@/constants";
+import { derive } from "derive-valtio";
+import { update } from "idb-keyval";
+import { proxy } from "valtio";
 
 export const limitedFullStore = proxy({
   [CRYPT]: {},

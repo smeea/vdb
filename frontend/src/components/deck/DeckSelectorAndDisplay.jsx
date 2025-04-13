@@ -1,5 +1,3 @@
-import { useSnapshot } from "valtio";
-import EyeSlashFill from "@icons/eye-slash-fill.svg?react";
 import {
   ButtonIconed,
   DeckBranchSelect,
@@ -13,6 +11,8 @@ import {
 import { BRANCHES, DECKID, DECKS, IS_AUTHOR, IS_PUBLIC, MASTER } from "@/constants";
 import { deckStore, setDeck, useApp } from "@/context";
 import { getRestrictions } from "@/utils";
+import EyeSlashFill from "@icons/eye-slash-fill.svg?react";
+import { useSnapshot } from "valtio";
 
 const DeckSelectorAndDisplay = () => {
   const { playtestMode, addMode, toggleAddMode } = useApp();

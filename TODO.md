@@ -13,4 +13,4 @@
 - Draft Cube support -> when draft cube info is available
 
 # TECH IMPROVEMENTS
-- Formating: imports sorting with @
+- Update to Biome v2: format sort with @?

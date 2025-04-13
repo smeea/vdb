@@ -1,9 +1,9 @@
-import { useCallback } from "react";
 import { DeckProxyCryptTable, FlexGapped, Header, ResultModal } from "@/components";
 import { CRYPT, INVENTORY_TYPE, PRINT } from "@/constants";
 import { useApp } from "@/context";
 import { useDeckCrypt, useModalCardController } from "@/hooks";
 import { countCards } from "@/utils";
+import { useCallback } from "react";
 
 const DeckProxyCrypt = ({
   deck,

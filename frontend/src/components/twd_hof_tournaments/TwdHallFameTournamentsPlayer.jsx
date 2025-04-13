@@ -1,8 +1,8 @@
+import { TwdHallFameDeckHeader } from "@/components";
+import { AUTHOR, DATE, DECKID, EVENT } from "@/constants";
 import { DisclosureButton, DisclosurePanel } from "@headlessui/react";
 import StarFill from "@icons/star-fill.svg?react";
 import TrophyFill from "@icons/trophy-fill.svg?react";
-import { TwdHallFameDeckHeader } from "@/components";
-import { AUTHOR, DATE, DECKID, EVENT } from "@/constants";
 
 const testStar = (eventName) => {
   return (

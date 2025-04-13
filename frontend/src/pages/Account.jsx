@@ -1,5 +1,3 @@
-import { twMerge } from "tailwind-merge";
-import PersonFill from "@icons/person-fill.svg?react";
 import {
   AccountChangeEmail,
   AccountChangeName,
@@ -12,6 +10,8 @@ import {
   AccountRegister,
 } from "@/components";
 import { useApp } from "@/context";
+import PersonFill from "@icons/person-fill.svg?react";
+import { twMerge } from "tailwind-merge";
 
 const Account = () => {
   const { username } = useApp();

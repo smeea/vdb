@@ -1,11 +1,11 @@
+import { Hr, LanguageMenu, NavMobileToggle, ThemeSelect } from "@/components";
+import { useApp } from "@/context";
 import { Popover, PopoverButton, PopoverPanel } from "@headlessui/react";
-import { NavLink } from "react-router";
 import InfoCircleFill from "@icons/info-circle-fill.svg?react";
 import List from "@icons/list.svg?react";
 import PersonFill from "@icons/person-fill.svg?react";
 import StoplightsFill from "@icons/stoplights-fill.svg?react";
-import { Hr, LanguageMenu, NavMobileToggle, ThemeSelect } from "@/components";
-import { useApp } from "@/context";
+import { NavLink } from "react-router";
 
 const LinkItem = ({ target, icon, text, handleClose }) => {
   return (

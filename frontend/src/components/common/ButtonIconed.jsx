@@ -1,5 +1,5 @@
-import { twMerge } from "tailwind-merge";
 import { Button } from "@/components";
+import { twMerge } from "tailwind-merge";
 
 const ButtonIconed = ({
   className,

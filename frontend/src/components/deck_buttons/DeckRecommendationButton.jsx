@@ -1,6 +1,6 @@
-import LightbulbFill from "@icons/lightbulb-fill.svg?react";
 import { ButtonIconed } from "@/components";
 import { useApp } from "@/context";
+import LightbulbFill from "@icons/lightbulb-fill.svg?react";
 
 const DeckRecommendationButton = ({ setShowRecommendation }) => {
   const { isDesktop, setShowFloatingButtons, setShowMenuButtons } = useApp();

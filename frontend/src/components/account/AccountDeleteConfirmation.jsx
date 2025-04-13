@@ -1,10 +1,10 @@
-import { useActionState, useState } from "react";
-import EyeFill from "@icons/eye-fill.svg?react";
-import EyeSlashFill from "@icons/eye-slash-fill.svg?react";
 import { Button, ErrorOverlay, FlexGapped, Input, Modal, Spinner } from "@/components";
 import { PASSWORD } from "@/constants";
 import { useApp } from "@/context";
 import { userServices } from "@/services";
+import EyeFill from "@icons/eye-fill.svg?react";
+import EyeSlashFill from "@icons/eye-slash-fill.svg?react";
+import { useActionState, useState } from "react";
 
 const AccountDeleteConfirmation = ({ handleClose }) => {
   const { setUsername, isMobile } = useApp();

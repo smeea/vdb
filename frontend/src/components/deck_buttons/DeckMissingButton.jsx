@@ -1,6 +1,6 @@
-import Cart4 from "@icons/cart4.svg?react";
 import { ButtonIconed } from "@/components";
 import { useApp } from "@/context";
+import Cart4 from "@icons/cart4.svg?react";
 
 const DeckMissingButton = ({ setShow }) => {
   const { isDesktop, setShowFloatingButtons, setShowMenuButtons } = useApp();

@@ -1,6 +1,3 @@
-import { useState } from "react";
-import Download from "@icons/download.svg?react";
-import InboxesFill from "@icons/inboxes-fill.svg?react";
 import {
   ButtonIconed,
   CardImage,
@@ -12,6 +9,9 @@ import {
 import { ID, NAME, SCORE, TEXT } from "@/constants";
 import { useApp } from "@/context";
 import { playtestServices } from "@/services";
+import Download from "@icons/download.svg?react";
+import InboxesFill from "@icons/inboxes-fill.svg?react";
+import { useState } from "react";
 
 const PlaytestReportsOneButton = ({ value, isPrecon = false }) => {
   const { isMobile, isDesktop } = useApp();

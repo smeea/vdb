@@ -1,7 +1,7 @@
-import { useRef } from "react";
-import Upload from "@icons/upload.svg?react";
 import { ButtonIconed } from "@/components";
 import { AUTHOR } from "@/constants";
+import Upload from "@icons/upload.svg?react";
+import { useRef } from "react";
 
 const TdaLoadCustomButtons = ({ tempDecks, setTempDecks, setTempArchon, getDeck, setError }) => {
   const fileInputDecks = useRef();

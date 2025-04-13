@@ -1,4 +1,3 @@
-import { twMerge } from "tailwind-merge";
 import {
   CardPopover,
   ConditionalTooltip,
@@ -10,6 +9,7 @@ import {
 } from "@/components";
 import { BLOOD, BURN, TRIFLE, TYPE } from "@/constants";
 import { useApp } from "@/context";
+import { twMerge } from "tailwind-merge";
 
 const Type = ({ card, handleClick }) => {
   return (

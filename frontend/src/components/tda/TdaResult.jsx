@@ -1,8 +1,8 @@
-import { useMemo } from "react";
 import { TdaDeck, TdaResultTotal } from "@/components";
 import { AUTHOR, RANK_HIGH_LOW, RANK_LOW_HIGH } from "@/constants";
 import { useApp } from "@/context";
 import { decksSort } from "@/utils";
+import { useMemo } from "react";
 
 const TdaResult = ({ decks }) => {
   const { tdaSearchSort, changeTdaSearchSort } = useApp();

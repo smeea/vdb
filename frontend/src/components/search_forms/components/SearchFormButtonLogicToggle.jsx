@@ -1,6 +1,6 @@
-import Exclamation from "@icons/exclamation.svg?react";
 import { Button } from "@/components";
 import { AND, LOGIC, NOT, ONLY, OR, TEXT } from "@/constants";
+import Exclamation from "@icons/exclamation.svg?react";
 
 const SearchFormButtonLogicToggle = ({ name, i, value, searchForm, withAnd, withOnly }) => {
   const handleToggleForm = () => {

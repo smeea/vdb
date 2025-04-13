@@ -1,4 +1,3 @@
-import { useMemo } from "react";
 import { BubbleChart } from "@/components";
 import {
   ALLY,
@@ -26,6 +25,7 @@ import {
 } from "@/constants";
 import { useApp } from "@/context";
 import { capitalize, getClan } from "@/utils";
+import { useMemo } from "react";
 
 const TdaChartsRankingStyle = ({ info, decks, searchResults }) => {
   const { isMobile, isDesktop, isWide } = useApp();

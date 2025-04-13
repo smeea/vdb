@@ -1,7 +1,7 @@
-import { twMerge } from "tailwind-merge";
 import { SortButton } from "@/components";
 import { BASE, RANK, SCORE, SUPERIOR, TAGS } from "@/constants";
 import { useApp } from "@/context";
+import { twMerge } from "tailwind-merge";
 
 const TdaResultTotal = ({ results, sortMethods, sortMethod, setSortMethod }) => {
   const { isMobile } = useApp();

@@ -1,5 +1,5 @@
-import { twMerge } from "tailwind-merge";
 import PeopleFill from "@icons/people-fill.svg?react";
+import { twMerge } from "tailwind-merge";
 
 const TwdResultDescriptionPlayers = ({ players }) => {
   return (

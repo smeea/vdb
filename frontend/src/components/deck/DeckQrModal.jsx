@@ -1,8 +1,8 @@
-import React, { Suspense } from "react";
-import Snow from "@icons/snow.svg?react";
 import { Modal } from "@/components";
 import { IS_NON_EDITABLE, NAME } from "@/constants";
 import { useApp } from "@/context";
+import Snow from "@icons/snow.svg?react";
+import React, { Suspense } from "react";
 
 const DeckQrModal = ({ qrUrl, setQrUrl, deck }) => {
   const QRCode = React.lazy(() => import("react-qr-code"));

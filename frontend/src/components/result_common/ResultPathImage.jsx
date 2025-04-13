@@ -1,5 +1,5 @@
-import { twMerge } from "tailwind-merge";
 import { capitalize } from "@/utils";
+import { twMerge } from "tailwind-merge";
 
 const ResultPathImage = ({ value, size = "md" }) => {
   if (!value) return;

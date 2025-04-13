@@ -1,9 +1,9 @@
-import { twMerge } from "tailwind-merge";
-import { useSnapshot } from "valtio";
 import { Tooltip, UsedPopover } from "@/components";
 import { CRYPT, ID, LIBRARY } from "@/constants";
 import { inventoryStore, useApp, usedStore } from "@/context";
 import { getHardTotal, getSoftMax } from "@/utils";
+import { twMerge } from "tailwind-merge";
+import { useSnapshot } from "valtio";
 
 const ResultUsed = ({ card }) => {
   const { isDesktop } = useApp();

@@ -1,6 +1,3 @@
-import { useMemo, useState } from "react";
-import AutoSizer from "react-virtualized-auto-sizer";
-import { FixedSizeList } from "react-window";
 import cardtypeSorted from "@/assets/data/cardtypeSorted.json";
 import disciplinesExtraList from "@/assets/data/disciplinesExtraList.json";
 import disciplinesList from "@/assets/data/disciplinesList.json";
@@ -29,6 +26,9 @@ import {
 import { useApp } from "@/context";
 import { useModalCardController } from "@/hooks";
 import { librarySort } from "@/utils";
+import { useMemo, useState } from "react";
+import AutoSizer from "react-virtualized-auto-sizer";
+import { FixedSizeList } from "react-window";
 
 const TwdCardsHistoryLibrary = ({ cards, players }) => {
   const { isMobile } = useApp();

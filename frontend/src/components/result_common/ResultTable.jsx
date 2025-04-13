@@ -1,8 +1,8 @@
-import { useMemo } from "react";
 import { ResultCryptTable, ResultLibraryTable } from "@/components";
 import { CRYPT } from "@/constants";
 import { useApp } from "@/context";
 import { cryptSort, librarySort } from "@/utils";
+import { useMemo } from "react";
 
 const ResultTable = ({ cards, target }) => {
   const { addMode, isDesktop, cryptSearchSort, librarySearchSort } = useApp();

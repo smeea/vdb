@@ -1,6 +1,6 @@
+import { NAME } from "@/constants";
 import { useMemo } from "react";
 import { Bar, BarChart, Label, Legend, Tooltip, XAxis, YAxis } from "recharts";
-import { NAME } from "@/constants";
 
 const SEEN = "seen";
 const NOT_SEEN = "notSeen";

@@ -1,8 +1,8 @@
-import LightbulbFill from "@icons/lightbulb-fill.svg?react";
-import LightbulbOffFill from "@icons/lightbulb-off-fill.svg?react";
 import { ButtonIconed } from "@/components";
 import { DECKID, IS_HIDDEN } from "@/constants";
 import { deckUpdate } from "@/context";
+import LightbulbFill from "@icons/lightbulb-fill.svg?react";
+import LightbulbOffFill from "@icons/lightbulb-off-fill.svg?react";
 
 const DeckHideButton = ({ deck }) => {
   const handleClick = () => {

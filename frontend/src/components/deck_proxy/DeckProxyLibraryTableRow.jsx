@@ -1,4 +1,3 @@
-import { useSnapshot } from "valtio";
 import {
   Checkbox,
   DeckCardQuantityTd,
@@ -9,6 +8,7 @@ import {
 import { HARD, ID, LIBRARY, PRINT, SET, SOFT } from "@/constants";
 import { inventoryStore, usedStore } from "@/context";
 import { getHardTotal, getSoftMax } from "@/utils";
+import { useSnapshot } from "valtio";
 
 const DeckProxyLibraryTableRow = ({
   handleClick,

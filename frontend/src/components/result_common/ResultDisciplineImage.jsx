@@ -1,6 +1,6 @@
-import { twMerge } from "tailwind-merge";
 import virtuesList from "@/assets/data/virtuesList.json";
 import { ANY } from "@/constants";
+import { twMerge } from "tailwind-merge";
 
 const ResultDisciplineImage = ({ value, isSuperior, name, size = "md" }) => {
   const sizeStyle = {

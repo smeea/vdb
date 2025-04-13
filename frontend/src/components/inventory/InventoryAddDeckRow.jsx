@@ -1,8 +1,3 @@
-import dayjs from "dayjs";
-import At from "@icons/at.svg?react";
-import EyeFill from "@icons/eye-fill.svg?react";
-import PinAngleFill from "@icons/pin-angle-fill.svg?react";
-import Shuffle from "@icons/shuffle.svg?react";
 import {
   Button,
   ConditionalTooltip,
@@ -29,6 +24,11 @@ import {
 import { deckToggleInventoryState } from "@/context";
 import { useDeckInInventory } from "@/hooks";
 import { getClan } from "@/utils";
+import At from "@icons/at.svg?react";
+import EyeFill from "@icons/eye-fill.svg?react";
+import PinAngleFill from "@icons/pin-angle-fill.svg?react";
+import Shuffle from "@icons/shuffle.svg?react";
+import dayjs from "dayjs";
 
 const InventoryAddDeckRow = ({ deck, allTagsOptions }) => {
   const inInventory = useDeckInInventory(deck);

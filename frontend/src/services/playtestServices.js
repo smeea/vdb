@@ -1,4 +1,3 @@
-import ky from "ky";
 import {
   CARDS,
   GENERAL,
@@ -11,6 +10,7 @@ import {
   USERNAME,
   XLSX,
 } from "@/constants";
+import ky from "ky";
 
 export const submitReport = (id, value, isPrecon) => {
   const url = `${import.meta.env.VITE_API_URL}/playtest/${isPrecon ? PRECONS : CARDS}/${id}`;

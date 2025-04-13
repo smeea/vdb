@@ -1,4 +1,3 @@
-import ky from "ky";
 import setsAndPrecons from "@/assets/data/setsAndPrecons.json";
 import {
   AUTHOR,
@@ -18,6 +17,7 @@ import {
   TEXT,
 } from "@/constants";
 import { getTags, parseDeck } from "@/utils";
+import ky from "ky";
 
 const CARD_VERSION = import.meta.env.VITE_CARD_VERSION;
 const BASE_URL = import.meta.env.VITE_BASE_URL;

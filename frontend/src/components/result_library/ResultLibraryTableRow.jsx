@@ -1,5 +1,3 @@
-import { twMerge } from "tailwind-merge";
-import { useSnapshot } from "valtio";
 import {
   AccountLimitedDelCard,
   ButtonAddCard,
@@ -10,6 +8,8 @@ import { DECK, DECKID, ID, LIBRARY } from "@/constants";
 import { deckCardChange, deckStore, useApp } from "@/context";
 import { useSwipe } from "@/hooks";
 import { getIsEditable, getSwipedBg } from "@/utils";
+import { twMerge } from "tailwind-merge";
+import { useSnapshot } from "valtio";
 
 const ResultLibraryTableRow = ({ card, handleClick, inLimited, shouldShowModal }) => {
   const { addMode, inventoryMode } = useApp();

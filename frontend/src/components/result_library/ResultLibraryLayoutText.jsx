@@ -1,4 +1,3 @@
-import { twMerge } from "tailwind-merge";
 import {
   ButtonCloseModal,
   Hr,
@@ -31,6 +30,7 @@ import {
 } from "@/constants";
 import { useApp } from "@/context";
 import { getLegality } from "@/utils";
+import { twMerge } from "tailwind-merge";
 
 const Requirements = ({ card }) => {
   return (

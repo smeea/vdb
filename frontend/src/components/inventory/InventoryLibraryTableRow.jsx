@@ -1,6 +1,3 @@
-import { useCallback } from "react";
-import { twMerge } from "tailwind-merge";
-import { useSnapshot } from "valtio";
 import {
   CardPopover,
   ConditionalTooltip,
@@ -31,6 +28,9 @@ import {
 import { inventoryCardChange, inventoryStore, useApp, usedStore } from "@/context";
 import { useSwipe } from "@/hooks";
 import { getHardTotal, getSoftMax, getSwipedBg } from "@/utils";
+import { useCallback } from "react";
+import { twMerge } from "tailwind-merge";
+import { useSnapshot } from "valtio";
 
 const InventoryLibraryTableRow = ({ card, compact, newFocus, inShared, handleClick }) => {
   const { isMobile, isNarrow } = useApp();

@@ -1,8 +1,8 @@
-import { Link } from "react-router";
-import PlayFill from "@icons/play-fill.svg?react";
-import X from "@icons/x.svg?react";
 import { Toggle } from "@/components";
 import { DECKID, NAME, STATE } from "@/constants";
+import PlayFill from "@icons/play-fill.svg?react";
+import X from "@icons/x.svg?react";
+import { Link } from "react-router";
 
 const SeatingDeck = ({ toggle, i, deck, disabled, remove }) => {
   return (

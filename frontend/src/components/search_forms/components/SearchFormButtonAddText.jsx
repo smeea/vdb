@@ -1,6 +1,6 @@
-import Plus from "@icons/plus.svg?react";
 import { Button } from "@/components";
 import { AND, TEXT } from "@/constants";
+import Plus from "@icons/plus.svg?react";
 
 const SearchFormButtonAddText = ({ searchForm }) => {
   const addForm = () => {

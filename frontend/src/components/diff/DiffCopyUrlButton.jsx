@@ -1,7 +1,7 @@
-import { useState } from "react";
-import Link45Deg from "@icons/link-45deg.svg?react";
 import { ButtonIconed } from "@/components";
 import { useApp } from "@/context";
+import Link45Deg from "@icons/link-45deg.svg?react";
+import { useState } from "react";
 
 const DiffCopyUrlButton = ({ deckFromId, deckToId }) => {
   const { isDesktop, setShowFloatingButtons, setShowMenuButtons } = useApp();

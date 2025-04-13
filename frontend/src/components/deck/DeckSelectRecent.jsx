@@ -1,8 +1,8 @@
-import PeopleFill from "@icons/people-fill.svg?react";
-import TrophyFill from "@icons/trophy-fill.svg?react";
 import { Select } from "@/components";
 import { DECK, DECKID, DECKS, NAME, PDA, TWD } from "@/constants";
 import { useApp } from "@/context";
+import PeopleFill from "@icons/people-fill.svg?react";
+import TrophyFill from "@icons/trophy-fill.svg?react";
 
 const DeckSelectRecent = ({ deckid, handleSelect }) => {
   const { recentDecks, isMobile } = useApp();

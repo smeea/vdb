@@ -1,8 +1,8 @@
-import InfoCircle from "@icons/info-circle.svg?react";
-import XIcon from "@icons/x.svg?react";
 import { Button, Header, SortButton } from "@/components";
 import { ANY, CAPACITY, GROUP, X } from "@/constants";
 import { setCryptCompare } from "@/context";
+import InfoCircle from "@icons/info-circle.svg?react";
+import XIcon from "@icons/x.svg?react";
 
 const ResultCryptTotal = ({
   cards,

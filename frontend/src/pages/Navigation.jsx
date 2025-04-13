@@ -1,8 +1,3 @@
-import { NavLink, useLocation } from "react-router";
-import { twMerge } from "tailwind-merge";
-import { useSnapshot } from "valtio";
-import LightningFill from "@icons/lightning-fill.svg?react";
-import PersonFill from "@icons/person-fill.svg?react";
 import { LanguageSelectButton, NavMobileMenu, ThemeSelect, Toggle } from "@/components";
 import cryptDefaults from "@/components/search_forms/forms_data/defaultsCryptForm.json";
 import libraryDefaults from "@/components/search_forms/forms_data/defaultsLibraryForm.json";
@@ -20,6 +15,11 @@ import {
   useApp,
 } from "@/context";
 import { sanitizeFormState } from "@/utils";
+import LightningFill from "@icons/lightning-fill.svg?react";
+import PersonFill from "@icons/person-fill.svg?react";
+import { NavLink, useLocation } from "react-router";
+import { twMerge } from "tailwind-merge";
+import { useSnapshot } from "valtio";
 
 const Link = ({ to, end, icon, text, title, className }) => {
   return (

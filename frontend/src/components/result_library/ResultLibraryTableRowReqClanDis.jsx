@@ -4,8 +4,8 @@ import {
   ResultLibraryRequirements,
   ResultPathImage,
 } from "@/components";
-import { twMerge } from "tailwind-merge";
 import { CLAN, DISCIPLINE, PATH, REQUIREMENT } from "@/constants";
+import { twMerge } from "tailwind-merge";
 
 const ResultLibraryTableRowReqClanDis = ({ card, handleClick, className }) => {
   return (

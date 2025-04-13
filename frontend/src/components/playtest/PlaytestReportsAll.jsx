@@ -1,10 +1,3 @@
-import { TabGroup, TabList, TabPanels, TabPanel } from "@headlessui/react";
-import ky from "ky";
-import { useState } from "react";
-import { useNavigate } from "react-router";
-import Arrow90DegLeft from "@icons/arrow-90deg-left.svg?react";
-import Download from "@icons/download.svg?react";
-import Printer from "@icons/printer.svg?react";
 import {
   ButtonIconed,
   FlexGapped,
@@ -34,6 +27,13 @@ import { useApp } from "@/context";
 import { useFetch } from "@/hooks";
 import { playtestServices } from "@/services";
 import { capitalize } from "@/utils";
+import { TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/react";
+import Arrow90DegLeft from "@icons/arrow-90deg-left.svg?react";
+import Download from "@icons/download.svg?react";
+import Printer from "@icons/printer.svg?react";
+import ky from "ky";
+import { useState } from "react";
+import { useNavigate } from "react-router";
 
 const PlaytestReportsAll = () => {
   const {

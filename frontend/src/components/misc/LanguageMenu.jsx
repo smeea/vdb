@@ -1,7 +1,7 @@
-import { twMerge } from "tailwind-merge";
 import { Flag } from "@/components";
 import { EN, ES, FR, PT } from "@/constants";
 import { useApp } from "@/context";
+import { twMerge } from "tailwind-merge";
 
 const LanguageMenu = ({ handleClose }) => {
   const { lang, changeLang } = useApp();

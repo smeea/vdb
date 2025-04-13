@@ -1,7 +1,7 @@
-import { useNavigate } from "react-router";
-import Arrow90DegLeft from "@icons/arrow-90deg-left.svg?react";
 import { ButtonIconed } from "@/components";
 import { useApp } from "@/context";
+import Arrow90DegLeft from "@icons/arrow-90deg-left.svg?react";
+import { useNavigate } from "react-router";
 
 const DiffBackButton = ({ deckid }) => {
   const { isDesktop, setShowFloatingButtons, setShowMenuButtons } = useApp();

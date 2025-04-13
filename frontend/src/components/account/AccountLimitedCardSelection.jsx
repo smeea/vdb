@@ -1,7 +1,7 @@
-import { useSnapshot } from "valtio";
 import { FlexGapped, NewCardSelect, ResultCryptTable, ResultLibraryTable } from "@/components";
 import { ALLOWED, BANNED, CRYPT, ID, LIBRARY } from "@/constants";
 import { limitedCardChange, limitedFullStore, useApp } from "@/context";
+import { useSnapshot } from "valtio";
 
 const AccountLimitedCardSelection = ({ inBanned }) => {
   const { cryptCardBase, libraryCardBase } = useApp();

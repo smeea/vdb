@@ -1,4 +1,3 @@
-import dayjs from "dayjs";
 import {
   ResultCryptTableRowCommon,
   ResultLibraryTableRowCommon,
@@ -7,6 +6,7 @@ import {
 } from "@/components";
 import { DECKID, ID, RELEASE_DATE, TWD_DATE } from "@/constants";
 import { useApp } from "@/context";
+import dayjs from "dayjs";
 
 const TwdHallFameCardsCard = ({ card, handleClick }) => {
   const { isMobile } = useApp();

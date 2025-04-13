@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
-import { useLocation, useNavigate } from "react-router";
-import Activity from "@icons/activity.svg?react";
 import lastChange from "@/LAST_CHANGE.json";
 import { ButtonIconed, Hr, Modal, Spinner, TextWithLinks } from "@/components";
 import { useApp } from "@/context";
 import { useFetch } from "@/hooks";
+import Activity from "@icons/activity.svg?react";
+import { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router";
 
 const UpdateNotification = () => {
   const { setShowFloatingButtons } = useApp();

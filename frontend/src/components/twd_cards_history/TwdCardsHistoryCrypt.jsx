@@ -1,6 +1,3 @@
-import { useMemo, useState } from "react";
-import AutoSizer from "react-virtualized-auto-sizer";
-import { FixedSizeList } from "react-window";
 import imbuedClansList from "@/assets/data/imbuedClansList.json";
 import vampireClansList from "@/assets/data/vampireClansList.json";
 import {
@@ -26,6 +23,9 @@ import {
 import { useApp } from "@/context";
 import { useModalCardController } from "@/hooks";
 import { cryptSort } from "@/utils";
+import { useMemo, useState } from "react";
+import AutoSizer from "react-virtualized-auto-sizer";
+import { FixedSizeList } from "react-window";
 
 const TwdCardsHistoryCrypt = ({ cards, players }) => {
   const { isMobile } = useApp();

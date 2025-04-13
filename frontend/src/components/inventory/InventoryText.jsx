@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
-import { twMerge } from "tailwind-merge";
-import ChatLeftQuoteFill from "@icons/chat-left-quote-fill.svg?react";
 import { Textarea } from "@/components";
 import { inventoryCardTextChange } from "@/context";
+import ChatLeftQuoteFill from "@icons/chat-left-quote-fill.svg?react";
+import { useEffect, useState } from "react";
+import { twMerge } from "tailwind-merge";
 
 const InventoryText = ({ card, text, inPopover, setIsHotkeysDisabled }) => {
   const [newText, setNewText] = useState(text || "");

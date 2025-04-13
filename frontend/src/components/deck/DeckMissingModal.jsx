@@ -1,6 +1,3 @@
-import { useState } from "react";
-import { twMerge } from "tailwind-merge";
-import Gem from "@icons/gem.svg?react";
 import {
   ButtonIconed,
   DeckCrypt,
@@ -11,6 +8,9 @@ import {
 } from "@/components";
 import { CRYPT, LIBRARY, NAME } from "@/constants";
 import { useApp } from "@/context";
+import Gem from "@icons/gem.svg?react";
+import { useState } from "react";
+import { twMerge } from "tailwind-merge";
 
 const DeckMissingModal = ({ setShow, deck, missAllVtes, inInventory }) => {
   const { isMobile, setShowFloatingButtons, setShowMenuButtons } = useApp();

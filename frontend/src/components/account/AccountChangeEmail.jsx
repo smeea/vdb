@@ -1,9 +1,9 @@
-import { useActionState, useState } from "react";
-import EnvelopeFill from "@icons/envelope-fill.svg?react";
 import { AccountEmailForm, AccountPasswordForm, ErrorOverlay } from "@/components";
 import { EMAIL, PASSWORD } from "@/constants";
 import { useApp } from "@/context";
 import { userServices } from "@/services";
+import EnvelopeFill from "@icons/envelope-fill.svg?react";
+import { useActionState, useState } from "react";
 
 const AccountChangeEmail = () => {
   const { setEmail } = useApp();

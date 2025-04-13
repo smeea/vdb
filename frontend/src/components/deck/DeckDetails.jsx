@@ -1,5 +1,3 @@
-import { useState } from "react";
-import { twMerge } from "tailwind-merge";
 import {
   DeckChangeAuthor,
   DeckChangeBranchName,
@@ -18,6 +16,8 @@ import {
   TAGS,
 } from "@/constants";
 import { useApp } from "@/context";
+import { useState } from "react";
+import { twMerge } from "tailwind-merge";
 
 const DeckDetails = ({ deck, allTagsOptions = [] }) => {
   const { isPlaytester, isMobile } = useApp();
