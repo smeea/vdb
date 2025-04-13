@@ -118,7 +118,7 @@ const DeckSelectAdvTableRow = ({
         <div className="flex justify-center">{clan && <ResultClanImage value={clan} />}</div>
       </td>
       <td
-        colSpan={isMobile ? 2 : 1}
+        colSpan={short ? 2 : 1}
         className={twMerge(
           short || isMobile ? "w-full" : "min-w-[45vw]",
           "cursor-pointer sm:min-w-[340px]",
@@ -165,45 +165,40 @@ const DeckSelectAdvTableRow = ({
           )}
         </div>
       </td>
-      <td className="min-w-[45px] min-xl:hidden">
-        <div className="flex justify-center">
-          <ConditionalTooltip size="xl" overlay={<DeckPreview deck={deck} />}>
-            <EyeFill />
-          </ConditionalTooltip>
-        </div>
+      {!short && (
+        <td className="min-w-[45px] max-xl:hidden">
+          <div className="flex justify-center">
+            <ConditionalTooltip size="xl" overlay={<DeckPreview deck={deck} />}>
+              <EyeFill />
+            </ConditionalTooltip>
+          </div>
+        </td>
+      )}
+      <td
+        className="min-w-[100px] cursor-pointer whitespace-nowrap text-center max-md:hidden sm:min-w-[105px]"
+        onClick={handleClick}
+      >
+        {dayjs(deck[TIMESTAMP]).format("YYYY-MM-DD")}
       </td>
-      {(short || !isNarrow) && (
-        <td
-          className="min-w-[100px] cursor-pointer whitespace-nowrap text-center sm:min-w-[105px]"
-          onClick={handleClick}
-        >
-          {dayjs(deck[TIMESTAMP]).format("YYYY-MM-DD")}
+      {!short && (
+        <td className="w-full px-1 max-sm:hidden">
+          <DeckTags deck={deck} allTagsOptions={allTagsOptions} isBordered noAutotags={isMobile} />
         </td>
       )}
       {!short && (
-        <>
-          <td className="w-full px-1 max-sm:hidden">
-            <DeckTags
-              deck={deck}
-              allTagsOptions={allTagsOptions}
-              isBordered
-              noAutotags={isMobile}
-            />
-          </td>
-          <td>
-            <div className="flex justify-end gap-1">
-              <DeckHideButton deck={deck} />
-              <DeckFreezeButton className="max-sm:hidden" deck={deck} />
-              <DeckPublicToggleButton className="max-xl:hidden" deck={deck} inAdv />
-              <DeckCopyUrlButton className="max-xl:hidden" deck={deck} noText isAuthor />
-              {revFilter && (deck[MASTER] || (deck[BRANCHES] && deck[BRANCHES].length > 0)) ? (
-                <DeckBranchDeleteButton className="max-xl:hidden" deck={deck} noText />
-              ) : (
-                <DeckDeleteButton className="max-xl:hidden" deck={deck} noText />
-              )}
-            </div>
-          </td>
-        </>
+        <td>
+          <div className="flex justify-end gap-1">
+            <DeckHideButton deck={deck} />
+            <DeckFreezeButton className="max-sm:hidden" deck={deck} />
+            <DeckPublicToggleButton className="max-lg:hidden" deck={deck} inAdv />
+            <DeckCopyUrlButton className="max-lg:hidden" deck={deck} noText isAuthor />
+            {revFilter && (deck[MASTER] || (deck[BRANCHES] && deck[BRANCHES].length > 0)) ? (
+              <DeckBranchDeleteButton className="max-sm:hidden" deck={deck} noText />
+            ) : (
+              <DeckDeleteButton className="max-sm:hidden" deck={deck} noText />
+            )}
+          </div>
+        </td>
       )}
     </Tr>
   );

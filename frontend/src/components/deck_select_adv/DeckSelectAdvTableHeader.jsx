@@ -23,7 +23,7 @@ const DeckSelectAdvTableHeader = ({
   isSelectedAll,
   short,
 }) => {
-  const { inventoryMode, isDesktop } = useApp();
+  const { inventoryMode, isMobile } = useApp();
 
   const [debouncedNameFilter, setDebouncedNameFilter] = useState("");
   useDebounce(() => setNameFilter(debouncedNameFilter), TYPE_DEBOUNCE_DELAY, [debouncedNameFilter]);
@@ -119,9 +119,9 @@ const DeckSelectAdvTableHeader = ({
           />
         </th>
         {!short && <th className="min-w-[45px] max-xl:hidden" />}
-        {!short && <th className="min-w-[105px] max-lg:hidden" />}
+        {!short && <th className="min-w-[105px] max-md:hidden" />}
         {!short && (
-          <th className="w-full text-start max-sm:py-0.5 sm:p-1">
+          <th className="w-full p-1 text-start max-sm:hidden">
             <DeckSelectAdvTagsFilter
               tagsFilter={tagsFilter}
               handleChangeTagsFilter={handleChangeTagsFilter}
@@ -133,7 +133,7 @@ const DeckSelectAdvTableHeader = ({
           <div className="flex items-center justify-end">
             <Checkbox
               name="revFilter"
-              label={<div className="whitespace-nowrap">{isDesktop ? "Show Revisions" : "R"}</div>}
+              label={<div className="whitespace-nowrap">{isMobile ? "R" : "Show Revisions"}</div>}
               checked={revFilter}
               onChange={() => setRevFilter(!revFilter)}
             />

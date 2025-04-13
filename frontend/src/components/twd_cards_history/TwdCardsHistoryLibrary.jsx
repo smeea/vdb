@@ -207,13 +207,13 @@ const TwdCardsHistoryLibrary = ({ cards, players }) => {
         <div className="flex w-full" />
         <div className="flex min-w-[80px] max-sm:hidden" />
         <div
-          className="flex items-center justify-center min-w-[60px] max-sm:hidden"
+          className="flex min-w-[60px] items-center justify-center max-sm:hidden"
           title="First Print Date"
         >
           Print
         </div>
         <div
-          className="flex sm:min-w-[45px] min-w-[60px] items-center justify-center"
+          className="flex min-w-[60px] items-center justify-center sm:min-w-[45px]"
           title="First TWD Appearance Date"
         >
           Win
@@ -224,7 +224,10 @@ const TwdCardsHistoryLibrary = ({ cards, players }) => {
         >
           YtW
         </div>
-        <div className="flex min-w-[90px] max-sm:justify-center items-center sm:min-w-[250px]" title="First Winner">
+        <div
+          className="flex min-w-[90px] items-center max-sm:justify-center sm:min-w-[250px]"
+          title="First Winner"
+        >
           Player
         </div>
         <div className="flex min-w-[45px] items-center justify-center sm:min-w-[110px]">

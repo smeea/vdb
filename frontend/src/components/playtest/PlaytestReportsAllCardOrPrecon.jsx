@@ -13,7 +13,7 @@ import { useApp } from "@/context";
 const PlaytestReportsAllCardOrPrecon = ({ product, isPrecon, report, maxSameScore }) => {
   const { isMobile } = useApp();
 
-  const q = report && Object.values(report).filter(i => i[SCORE] > 0).length;
+  const q = report && Object.values(report).filter((i) => i[SCORE] > 0).length;
   const score = report && Object.values(report).reduce((acc, value) => acc + value[SCORE], 0) / q;
   const scoreRounded = Math.round(score * 10) / 10;
   const scoreRoundedHalf = Math.round(score * 2) / 2;

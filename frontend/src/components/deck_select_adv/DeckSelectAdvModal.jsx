@@ -94,8 +94,8 @@ const DeckSelectAdvModal = ({ onClick, setShow, short }) => {
             handleClose={handleClose}
           />
         </div>
-        {!(short || isMobile) && (
-          <div className="flex justify-end gap-2">
+        {!short && (
+          <div className="flex justify-end gap-2 max-sm:hidden">
             <ButtonIconed
               variant="danger"
               text="Delete Selected"
