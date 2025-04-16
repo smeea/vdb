@@ -4,43 +4,18 @@ import { getIsPlaytest } from "@/utils";
 const LEGACY_SETS = ["Jyhad", "VTES", "DS", "AH", "Sabbat", "SW", "FN", "BL"];
 
 const getCardImageUrl = (card, set, language) => {
-  const isPlaytest = getIsPlaytest(card[ID]);
-  const cardNameFixed = card[ASCII].toLowerCase().replace(/[\s,:!?'".\-()/]/g, "");
-  const legacyNameFixed = card[NAME].replace(/[,:!?'".\-()/]/g, "");
+  const urlPrefix = `${import.meta.env.VITE_BASE_URL}/images/cards`;
+  const legacyCryptPostfix = `${card[ADV]?.[0] ? " ADV" : ""}${card[NEW] ? ` G${card[GROUP]}` : ""}`;
+  const cardNameFixed = `${card[ASCII].toLowerCase().replace(/[\s,:!?'".\-()/]/g, "")}${card[ID] > 200000 ? `g${card[GROUP].toLowerCase()}${card[ADV][0] ? "adv" : ""}`: ""}`;
+  const legacyNameFixed = `${card[NAME].replace(/[,:!?'".\-()/]/g, "")}${card[ID] > 200000 ? legacyCryptPostfix : ""}`;
   const legacyScanSet = Object.keys(card[SET]).findLast((set) => LEGACY_SETS.includes(set));
 
-  let baseUrl;
-  let otherUrl;
-  let legacyUrl;
-  let legacyScanUrl;
-
-  if (card[ID] > 200000) {
-    baseUrl = `${import.meta.env.VITE_BASE_URL}/images/cards/${isPlaytest ? "playtest" : EN}/${cardNameFixed}g${card[GROUP].toLowerCase()}${card[ADV][0] ? "adv" : ""}`;
-
-    otherUrl = `${import.meta.env.VITE_BASE_URL}/images/cards/${
-      set ? `set/${set}` : language
-    }/${cardNameFixed}g${card[GROUP].toLowerCase()}${card[ADV][0] ? "adv" : ""}`;
-
-    legacyUrl = `${import.meta.env.VITE_BASE_URL}/images/cards/legacy/${legacyNameFixed}${card[ADV][0] ? " ADV" : ""}${card[NEW] ? ` G${card[GROUP]}` : ""}`;
-
-    legacyScanUrl = legacyScanSet
-      ? `${import.meta.env.VITE_BASE_URL}/images/cards/set/${legacyScanSet.toLowerCase()}/${cardNameFixed}g${card[GROUP].toLowerCase()}${card[ADV][0] ? "adv" : ""}`
-      : null;
-  } else {
-    baseUrl = `${import.meta.env.VITE_BASE_URL}/images/cards/${
-      isPlaytest ? "playtest" : EN
-    }/${cardNameFixed}`;
-
-    otherUrl = `${import.meta.env.VITE_BASE_URL}/images/cards/${
-      set ? `set/${set}` : language
-    }/${cardNameFixed}`;
-
-    legacyUrl = `${import.meta.env.VITE_BASE_URL}/images/cards/legacy/${legacyNameFixed}`;
-
-    legacyScanUrl = legacyScanSet
-      ? `${import.meta.env.VITE_BASE_URL}/images/cards/set/${legacyScanSet.toLowerCase()}/${cardNameFixed}`
-      : null;
-  }
+  const baseUrl = `${urlPrefix}/${getIsPlaytest(card[ID]) ? "playtest" : EN}/${cardNameFixed}`;
+  const otherUrl = `${urlPrefix}/${set ? `set/${set}` : language}/${cardNameFixed}`;
+  const legacyUrl = `${urlPrefix}/legacy/${legacyNameFixed}`;
+  const legacyScanUrl = legacyScanSet
+    ? `${urlPrefix}/set/${legacyScanSet.toLowerCase()}/${cardNameFixed}`
+    : null;
 
   return { baseUrl, otherUrl, legacyUrl, legacyScanUrl };
 };
