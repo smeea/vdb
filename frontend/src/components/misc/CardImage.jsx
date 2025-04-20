@@ -13,7 +13,7 @@ const CardImage = ({ card, set, className = "max-sm:w-full", size = "md", onClic
 
   const url =
     showLegacyImage && (hasLegacy || legacyScanUrl)
-      ? (legacyScanUrl ?? legacyUrl)
+      ? (legacyUrl ?? legacyScanUrl)
       : lang === EN
         ? baseUrl
         : otherUrl;
