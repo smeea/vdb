@@ -12,8 +12,8 @@ const CardImage = ({ card, set, className = "max-sm:w-full", size = "md", onClic
     ["Master"].includes(card[TYPE]);
 
   const url =
-    showLegacyImage && (hasLegacy || legacyScanUrl)
-      ? (legacyUrl ?? legacyScanUrl)
+    showLegacyImage && hasLegacy
+      ? legacyUrl
       : lang === EN
         ? baseUrl
         : otherUrl;
