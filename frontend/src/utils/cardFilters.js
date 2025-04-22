@@ -589,7 +589,7 @@ const missingCostCheck = (logic, filter, cardCost) => {
   return !(
     (logic === LE && cardCost <= filter) ||
     (logic === GE && cardCost >= filter) ||
-    (logic === EQ && cardCost === filter)
+    (logic === EQ && cardCost === Number.parseInt(filter))
   );
 };
 

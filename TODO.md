@@ -1,4 +1,5 @@
 # FIX
+- Focused bottom line on modal (button?)
 
 # FIX ON HOLD
 - Deck-in-Url trimmed at first card - can't reproduce in dev environment
@@ -14,3 +15,4 @@
 
 # TECH IMPROVEMENTS
 - Update to Biome v2: format sort with @?
+
