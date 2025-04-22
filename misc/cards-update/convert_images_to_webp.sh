@@ -1,3 +1,5 @@
+#!/bin/sh
+
 for folder in en-EN es-ES fr-FR pt-PT playtest legacy
 do
     path="../../frontend/public/images/cards/$folder"

@@ -13,7 +13,9 @@ const CardImage = ({ card, set, className = "max-sm:w-full", size = "md", onClic
 
   const url =
     showLegacyImage && hasLegacy
-      ? legacyUrl
+      ? card[ID] > 200000
+        ? legacyScanUrl ?? legacyUrl
+        : legacyUrl
       : lang === EN
         ? baseUrl
         : otherUrl;
