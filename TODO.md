@@ -6,6 +6,9 @@
 
 # FEATURES
 - Limited in TWD/PDA search
+- Resources links and acknowledgement to readme
+- Oceanic continentals event
+- Lock to floating
 
 # FEATURES ON HOLD
 - TWD search with % V5-compatibility -> after BCP clarify V5
@@ -15,4 +18,3 @@
 
 # TECH IMPROVEMENTS
 - Update to Biome v2: format sort with @?
-

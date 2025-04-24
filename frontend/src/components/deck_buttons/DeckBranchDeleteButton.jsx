@@ -48,6 +48,7 @@ const DeckBranchDeleteButton = ({ deck, noText, className }) => {
           handleCancel={() => setShowConfirmation(false)}
           title={`Delete revision "${deck[BRANCH_NAME]}" of deck "${deck[NAME]}"`}
           buttonText="Delete"
+          buttonVariant="danger"
         />
       )}
     </>
