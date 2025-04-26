@@ -7,7 +7,6 @@
 
 # FEATURES
 - Limited in TWD/PDA search
-- Lock to floating
 
 # FEATURES ON HOLD
 - TWD search with % V5-compatibility -> after BCP clarify V5
