@@ -6,19 +6,19 @@ import SunFill from "@icons/sun-fill.svg?react";
 
 const ThemeSelect = ({ setShowMenu }) => {
   const { theme, toggleTheme } = useTheme();
-  const { isMobile } = useApp();
+  const { isNarrow } = useApp();
 
   const handleClick = () => {
     toggleTheme();
-    isMobile && setShowMenu(false);
+    isNarrow && setShowMenu(false);
   };
 
   const themeVisual = {
     [AUTO]: {
       [ICON]: (
         <PcDisplay
-          width={isMobile ? "20" : "16"}
-          height={isMobile ? "20" : "16"}
+          width={isNarrow ? "20" : "16"}
+          height={isNarrow ? "20" : "16"}
           viewBox="0 0 16 16"
         />
       ),
@@ -27,8 +27,8 @@ const ThemeSelect = ({ setShowMenu }) => {
     [DARK]: {
       [ICON]: (
         <MoonFill
-          width={isMobile ? "20" : "16"}
-          height={isMobile ? "20" : "16"}
+          width={isNarrow ? "20" : "16"}
+          height={isNarrow ? "20" : "16"}
           viewBox="0 0 16 16"
         />
       ),
@@ -37,8 +37,8 @@ const ThemeSelect = ({ setShowMenu }) => {
     [LIGHT]: {
       [ICON]: (
         <SunFill
-          width={isMobile ? "20" : "16"}
-          height={isMobile ? "20" : "16"}
+          width={isNarrow ? "20" : "16"}
+          height={isNarrow ? "20" : "16"}
           viewBox="0 0 16 16"
         />
       ),
@@ -48,7 +48,7 @@ const ThemeSelect = ({ setShowMenu }) => {
 
   return (
     <>
-      {isMobile ? (
+      {isNarrow ? (
         <div
           className="flex items-center gap-2 px-3 py-1.5 text-fgThird dark:text-fgPrimaryDark"
           onClick={handleClick}

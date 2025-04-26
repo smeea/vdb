@@ -120,8 +120,8 @@ const DeckSelectAdvTableRow = ({
       <td
         colSpan={short ? 2 : 1}
         className={twMerge(
-          short || isMobile ? "w-full" : "min-w-[45vw]",
-          "cursor-pointer sm:min-w-[340px]",
+          short || isNarrow ? "w-full" : "min-w-[45vw]",
+          "cursor-pointer md:min-w-[340px]",
         )}
         onClick={handleClick}
       >
@@ -133,7 +133,7 @@ const DeckSelectAdvTableRow = ({
             <div
               className={twMerge(
                 "flex items-center justify-center gap-0.5",
-                !clan && "max-sm:ps-1",
+                !clan && "max-md:ps-1",
               )}
             >
               {clan && <ResultClanImage className="w-[30px] sm:hidden" value={clan} />}
@@ -152,7 +152,7 @@ const DeckSelectAdvTableRow = ({
             </div>
           </div>
           {deck[TAGS].length > 0 && (
-            <div className="max-w-[160px] p-1 sm:hidden">
+            <div className="max-w-[160px] p-1 md:hidden">
               <DeckTags
                 deck={{ ...deck, [IS_AUTHOR]: false }}
                 allTagsOptions={allTagsOptions}
@@ -181,7 +181,7 @@ const DeckSelectAdvTableRow = ({
         {dayjs(deck[TIMESTAMP]).format("YYYY-MM-DD")}
       </td>
       {!short && (
-        <td className="w-full px-1 max-sm:hidden">
+        <td className="w-full px-1 max-md:hidden">
           <DeckTags deck={deck} allTagsOptions={allTagsOptions} isBordered noAutotags={isMobile} />
         </td>
       )}

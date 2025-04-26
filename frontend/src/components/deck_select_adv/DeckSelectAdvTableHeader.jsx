@@ -121,7 +121,7 @@ const DeckSelectAdvTableHeader = ({
         {!short && <th className="min-w-[45px] max-xl:hidden" />}
         {!short && <th className="min-w-[105px] max-md:hidden" />}
         {!short && (
-          <th className="w-full p-1 text-start max-sm:hidden">
+          <th className="w-full p-1 text-start max-md:hidden">
             <DeckSelectAdvTagsFilter
               tagsFilter={tagsFilter}
               handleChangeTagsFilter={handleChangeTagsFilter}

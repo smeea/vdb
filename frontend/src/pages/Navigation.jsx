@@ -30,7 +30,7 @@ const Link = ({ to, end, icon, text, title, className }) => {
       className={({ isActive }) =>
         twMerge(
           "flex h-full w-full items-center justify-center no-underline outline-hidden",
-          icon ? "sm:px-3" : "pb-[2px] sm:px-2",
+          icon ? "md:px-3" : "pb-[2px] md:px-2",
           isActive
             ? "bg-borderNestModal text-white dark:bg-borderNestModalDark dark:text-whiteDark"
             : "text-lightGray dark:text-lightGrayDark",
@@ -93,9 +93,9 @@ const Navigation = () => {
     0;
 
   return (
-    <nav className="z-50 bg-bgNav max-sm:fixed max-sm:bottom-0 max-sm:w-full sm:sticky sm:top-0 dark:bg-bgNavDark print:hidden">
-      <div className="navbar-container mx-auto flex h-10 justify-between sm:gap-3">
-        <div className="flex items-center gap-6 max-sm:hidden">
+    <nav className="z-50 bg-bgNav max-md:fixed max-md:bottom-0 max-md:w-full md:sticky md:top-0 dark:bg-bgNavDark print:hidden">
+      <div className="navbar-container mx-auto flex h-10 justify-between md:gap-3">
+        <div className="flex items-center gap-6 max-md:hidden">
           <LanguageSelectButton />
           <ThemeSelect />
           {username && (
@@ -119,20 +119,20 @@ const Navigation = () => {
             </Toggle>
           )}
         </div>
-        <div className="flex items-center justify-end max-sm:w-full">
+        <div className="flex items-center justify-end max-md:w-full">
           <div className="flex h-full w-full items-center justify-between">
-            <div className="sm:hidden">
+            <div className="md:hidden">
               <NavMobileMenu isLimited={isLimited} />
             </div>
             <Link
-              className="max-sm:hidden"
+              className="max-md:hidden"
               to="/account"
               icon={username ? <PersonFill width="21" height="21" viewBox="0 1 16 16" /> : null}
               text={username ? null : "Login"}
               title={username ? "Account" : "Login"}
             />
-            {isPlaytester && <Link className="max-sm:hidden" to="/playtest" text="Playtest" />}
-            <Link className="max-sm:hidden" to="/" text="About" end />
+            {isPlaytester && <Link className="max-md:hidden" to="/playtest" text="Playtest" />}
+            <Link className="max-md:hidden" to="/" text="About" end />
             <Link to={pdaUrl} text="PDA" />
             <Link to="/tda" text="TDA" />
             <Link to={twdUrl} text="TWD" />
@@ -146,7 +146,7 @@ const Navigation = () => {
             title="Quick Card Search"
             className={({ isActive }) =>
               twMerge(
-                "flex h-full items-center justify-center px-2 outline-hidden hover:no-underline sm:px-3",
+                "flex h-full items-center justify-center px-2 outline-hidden hover:no-underline md:px-3",
                 isActive
                   ? "bg-borderNestModal text-white dark:bg-borderNestModalDark dark:text-whiteDark"
                   : "text-lightGray dark:text-lightGrayDark",

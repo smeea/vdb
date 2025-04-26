@@ -77,7 +77,7 @@ const DiffLibrary = ({ cardsTo, deck }) => {
   return (
     <FlexGapped className="flex-col">
       <div className="flex flex-col gap-2">
-        <div className="sm:sticky sm:top-10 sm:z-10 sm:bg-bgPrimary sm:dark:bg-bgPrimaryDark">
+        <div className="top-10 z-10 max-md:top-0 sm:sticky md:bg-bgPrimary md:dark:bg-bgPrimaryDark">
           <DeckLibraryHeader
             libraryTotalDiff={<DiffCardsTotalDiff qTo={libraryToTotal} qFrom={libraryTotal} />}
             bloodTotalDiff={<BloodPoolDifference qTo={bloodToTotal} qFrom={bloodTotal} />}

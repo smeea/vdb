@@ -58,7 +58,7 @@ const ReviewLibrary = ({ cardChange, deckFrom, cardsTo }) => {
   return (
     <FlexGapped className="flex-col">
       <div className="flex flex-col gap-2">
-        <div className="sm:sticky sm:top-10 sm:z-10 sm:bg-bgPrimary sm:dark:bg-bgPrimaryDark">
+        <div className="max-md:top-0 sm:sticky md:top-10 md:z-10 md:bg-bgPrimary md:dark:bg-bgPrimaryDark">
           <DeckLibraryHeader
             deck={deckFrom}
             showInfo={showInfo}
