@@ -32038,6 +32038,12 @@
         "path":"",
         "rulings":[
             {
+                "text":"When considered a Justicar, he is also implicitly considered Camarilla.",
+                "refs":{
+                    "LSJ 20050128":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HVy8iPUxNbI/m/ZHGTnprQjGUJ"
+                }
+            },
+            {
                 "text":"Keeps their title and votes if they changes sects.",
                 "refs":{
                     "LSJ 20010714":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-xrhpMEiMrw/m/Vnr8QIyt41cJ"

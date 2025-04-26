@@ -1172,7 +1172,15 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Does not prevent the opponent from dodging, the dodge just has no effect.",
+                "refs":{
+                    "LSJ 20030902-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/mgZt4f2LyOg/m/FCeKmePPkxwJ",
+                    "LSJ 20060808-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/7oK-hKbOs9g/m/EGeyVt3vfl4J"
+                }
+            }
+        ],
         "set":{
             "V5H":{
                 "PH":"6"
@@ -4542,9 +4550,22 @@
                 }
             },
             {
-                "text":"If one is ousted while having temporary control of a minion, the minion is removed from the game.",
+                "text":"If one is ousted while having temporary control of a minion, the minion is removed from the game.  (Reversal of Previous Rulings)",
                 "refs":{
+                    "ANK 20181110":"https://www.vekn.net/forum/rules-questions/76844-some-questions?start=6#91778",
                     "LSJ 20081105":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/CYjOJtTBMGU/m/H8kQXN1w2ycJ"
+                }
+            },
+            {
+                "text":"The stolen minion is removed from the game when he should return to a Methuselah who has been ousted.",
+                "refs":{
+                    "ANK 20181110":"https://www.vekn.net/forum/rules-questions/76844-some-questions?start=6#91778"
+                }
+            },
+            {
+                "text":"The stolen minion returns to his previous controller even if he is in torpor/incapacitated (but stays in torpor/incapacitated).",
+                "refs":{
+                    "LSJ 20010119":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/XB0IvK7I6PQ/m/foA7igsB8EEJ"
                 }
             }
         ],
@@ -17261,13 +17282,6 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"[vis], [VIS] Does not prevent the opponent from dodging, the dodge just has no effect.",
-                "refs":{
-                    "LSJ 20030902-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/mgZt4f2LyOg/m/FCeKmePPkxwJ",
-                    "LSJ 20060808-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/7oK-hKbOs9g/m/EGeyVt3vfl4J"
-                }
-            },
-            {
                 "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
                 "refs":{
                     "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
@@ -17278,6 +17292,13 @@
                 "text":"[tha] The optional press can only be used during the current round.",
                 "refs":{
                     "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
+                }
+            },
+            {
+                "text":"[vis],[VIS] Does not prevent the opponent from dodging, the dodge just has no effect.",
+                "refs":{
+                    "LSJ 20030902-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/mgZt4f2LyOg/m/FCeKmePPkxwJ",
+                    "LSJ 20060808-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/7oK-hKbOs9g/m/EGeyVt3vfl4J"
                 }
             }
         ],
@@ -27095,17 +27116,17 @@
                 }
             },
             {
-                "text":"[ani] Does not prevent the opponent from dodging, the dodge just has no effect.",
-                "refs":{
-                    "LSJ 20030902-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/mgZt4f2LyOg/m/FCeKmePPkxwJ",
-                    "LSJ 20060808-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/7oK-hKbOs9g/m/EGeyVt3vfl4J"
-                }
-            },
-            {
                 "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
                 "refs":{
                     "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
                     "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+                }
+            },
+            {
+                "text":"[ani] Does not prevent the opponent from dodging, the dodge just has no effect.",
+                "refs":{
+                    "LSJ 20030902-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/mgZt4f2LyOg/m/FCeKmePPkxwJ",
+                    "LSJ 20060808-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/7oK-hKbOs9g/m/EGeyVt3vfl4J"
                 }
             }
         ],
@@ -32283,18 +32304,18 @@
                 }
             },
             {
-                "text":"Does not prevent the opponent from dodging, the dodge just has no effect.",
-                "refs":{
-                    "LSJ 20030902-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/mgZt4f2LyOg/m/FCeKmePPkxwJ",
-                    "LSJ 20060808-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/7oK-hKbOs9g/m/EGeyVt3vfl4J"
-                }
-            },
-            {
                 "text":"[CHI][REACTION] Is played after resolution, after all combats (if any) are handled, but still during the action. Action modifiers and effects that can be played \"after resolution\" can be played before or after it.",
                 "refs":{
                     "PIB 20150915":"https://www.vekn.net/forum/rules-questions/73134-learjet#73139",
                     "LSJ 19981028":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JZHY1bTCAa0/m/XqDVERty0roJ",
                     "ANK 20190425":"https://www.vekn.net/forum/rules-questions/77581-action-modifiers-played-at-beginning-and-end-of-an-action#94652"
+                }
+            },
+            {
+                "text":"Does not prevent the opponent from dodging, the dodge just has no effect.",
+                "refs":{
+                    "LSJ 20030902-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/mgZt4f2LyOg/m/FCeKmePPkxwJ",
+                    "LSJ 20060808-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/7oK-hKbOs9g/m/EGeyVt3vfl4J"
                 }
             }
         ],
@@ -52638,13 +52659,7 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"Does not require control of a ready Malkavian.",
-                "refs":{
-                    "RTR 19951124":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/yqGqIgZpfPY/m/NMyos9OGCEMJ"
-                }
-            },
-            {
-                "text":"The loss of control happens at the start of unlock phase, before unlocking. This cannot be ordered among other unlock effects, the Malkavian is not unlocked.",
+                "text":"The effect ends at the start of the next unlock phase, before unlocking or deciding on contests. This cannot be ordered among other unlock effects, the Malkavian is not unlocked.",
                 "refs":{
                     "ANK 20200129":"https://www.vekn.net/forum/rules-questions/78701-replace-during-unlock-and-other-unlock-effects#100210",
                     "LSJ 20091208":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ptHbJM9MlVI/m/O61W2JkI_rIJ",
@@ -52658,9 +52673,22 @@
                 }
             },
             {
-                "text":"If one is ousted while having temporary control of a minion, the minion is removed from the game.",
+                "text":"If one is ousted while having temporary control of a minion, the minion is removed from the game.  (Reversal of Previous Rulings)",
                 "refs":{
+                    "ANK 20181110":"https://www.vekn.net/forum/rules-questions/76844-some-questions?start=6#91778",
                     "LSJ 20081105":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/CYjOJtTBMGU/m/H8kQXN1w2ycJ"
+                }
+            },
+            {
+                "text":"The stolen minion is removed from the game when he should return to a Methuselah who has been ousted.",
+                "refs":{
+                    "ANK 20181110":"https://www.vekn.net/forum/rules-questions/76844-some-questions?start=6#91778"
+                }
+            },
+            {
+                "text":"The stolen minion returns to his previous controller even if he is in torpor/incapacitated (but stays in torpor/incapacitated).",
+                "refs":{
+                    "LSJ 20010119":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/XB0IvK7I6PQ/m/foA7igsB8EEJ"
                 }
             }
         ],
@@ -55447,15 +55475,10 @@
                 }
             },
             {
-                "text":"[DOM] Can be burned to take control of the target at any point during the appropriate minion phase. It does not have to be done before non-mandatory actions.",
+                "text":"[DOM] If one is ousted while having temporary control of a minion, the minion is removed from the game.  (Reversal of Previous Rulings)",
                 "refs":{
-                    "LSJ 20001201":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/BPHZsY3p20E/m/S6HiRebyeX0J"
-                }
-            },
-            {
-                "text":"[DOM] Is removed if its controller (the Methuselah who played it) is ousted (rulings before 2008-11-19 have been reversed).",
-                "refs":{
-                    "ANK 20181110":"https://www.vekn.net/forum/rules-questions/76844-some-questions?start=6#91778"
+                    "ANK 20181110":"https://www.vekn.net/forum/rules-questions/76844-some-questions?start=6#91778",
+                    "LSJ 20081105":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/CYjOJtTBMGU/m/H8kQXN1w2ycJ"
                 }
             },
             {
@@ -55465,21 +55488,45 @@
                 }
             },
             {
-                "text":"[DOM] The stolen minion returns to his previous controller even if he is in torpor (but stays in torpor).",
+                "text":"[DOM] The stolen minion returns to his previous controller even if he is in torpor/incapacitated (but stays in torpor/incapacitated).",
                 "refs":{
                     "LSJ 20010119":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/XB0IvK7I6PQ/m/foA7igsB8EEJ"
                 }
             },
             {
-                "text":"If one is ousted while having temporary control of a minion, the minion is removed from the game.",
+                "text":"[DOM] The \"does not unlock as normal\" effect is redundant with being infernal. If the minion is infernal, his controller can still pay a pool to unlock him.",
                 "refs":{
-                    "LSJ 20081105":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/CYjOJtTBMGU/m/H8kQXN1w2ycJ"
+                    "LSJ 20050114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JWiZmyC2Y6s/m/q6JHYrE1zKYJ"
                 }
             },
             {
-                "text":"The \"does not unlock as normal\" effect is redundant with being infernal. If the minion is infernal, his controller can still pay a pool to unlock him.",
+                "text":"[DOM] If used to steal a vampire in combat, combat ends. Any damage yet to resolve still resolves before the change of control.",
                 "refs":{
-                    "LSJ 20050114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JWiZmyC2Y6s/m/q6JHYrE1zKYJ"
+                    "LSJ 20020618":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/DVGe6EsiMZ4/m/2-t1mFMkAX0J"
+                }
+            },
+            {
+                "text":"[DOM] If used to steal a minion attempting to block, the block attempt fails.",
+                "refs":{
+                    "LSJ 20080326":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KUQEznVQlOU/m/e_6GMg__zdMJ"
+                }
+            },
+            {
+                "text":"[DOM] If used to steal a minion during an action, Methuselahs who declined to block are still declining to block. The new controller, if he is eligible and has not declined to block yet, can block with the stolen minion even if the previous controller has declined to block.",
+                "refs":{
+                    "PIB 20150501":"https://www.vekn.net/forum/rules-questions/70780-change-of-control-during-the-action?start=6#70800"
+                }
+            },
+            {
+                "text":"[DOM] If used to steal a minion targeted by an action, the action continues with the same target. Methuselahs who declined to block do not get another opportunity. If the target is not legal anymore (eg. [DOM] {Slaughtering the Herd}), the action fizzles (ends successfully with no effect).",
+                "refs":{
+                    "LSJ 20020725":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/wCPFIH_g5ZE/m/inchZQXKRrsJ"
+                }
+            },
+            {
+                "text":"[DOM] Can be used to take control of the target at any point during the appropriate minion phase. It does not have to be done before non-mandatory actions.",
+                "refs":{
+                    "LSJ 20001201":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/BPHZsY3p20E/m/S6HiRebyeX0J"
                 }
             }
         ],
@@ -69063,9 +69110,22 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"If one is ousted while having temporary control of a minion, the minion is removed from the game.",
+                "text":"If one is ousted while having temporary control of a minion, the minion is removed from the game.  (Reversal of Previous Rulings)",
                 "refs":{
+                    "ANK 20181110":"https://www.vekn.net/forum/rules-questions/76844-some-questions?start=6#91778",
                     "LSJ 20081105":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/CYjOJtTBMGU/m/H8kQXN1w2ycJ"
+                }
+            },
+            {
+                "text":"The stolen minion is removed from the game when he should return to a Methuselah who has been ousted.",
+                "refs":{
+                    "ANK 20181110":"https://www.vekn.net/forum/rules-questions/76844-some-questions?start=6#91778"
+                }
+            },
+            {
+                "text":"The stolen minion returns to his previous controller even if he is in torpor/incapacitated (but stays in torpor/incapacitated).",
+                "refs":{
+                    "LSJ 20010119":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/XB0IvK7I6PQ/m/foA7igsB8EEJ"
                 }
             }
         ],
@@ -76279,7 +76339,15 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Does not prevent the opponent from dodging, the dodge just has no effect.",
+                "refs":{
+                    "LSJ 20030902-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/mgZt4f2LyOg/m/FCeKmePPkxwJ",
+                    "LSJ 20060808-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/7oK-hKbOs9g/m/EGeyVt3vfl4J"
+                }
+            }
+        ],
         "set":{
             "SoC":{
                 "C":true
@@ -84167,15 +84235,22 @@
                 }
             },
             {
-                "text":"[OBE] The minion is removed from the game when he should return to a Methuselah who has been ousted.",
+                "text":"[OBE] If one is ousted while having temporary control of a minion, the minion is removed from the game.  (Reversal of Previous Rulings)",
+                "refs":{
+                    "ANK 20181110":"https://www.vekn.net/forum/rules-questions/76844-some-questions?start=6#91778",
+                    "LSJ 20081105":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/CYjOJtTBMGU/m/H8kQXN1w2ycJ"
+                }
+            },
+            {
+                "text":"[OBE] The stolen minion is removed from the game when he should return to a Methuselah who has been ousted.",
                 "refs":{
                     "ANK 20181110":"https://www.vekn.net/forum/rules-questions/76844-some-questions?start=6#91778"
                 }
             },
             {
-                "text":"If one is ousted while having temporary control of a minion, the minion is removed from the game.",
+                "text":"[OBE] The stolen minion returns to his previous controller even if he is in torpor/incapacitated (but stays in torpor/incapacitated).",
                 "refs":{
-                    "LSJ 20081105":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/CYjOJtTBMGU/m/H8kQXN1w2ycJ"
+                    "LSJ 20010119":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/XB0IvK7I6PQ/m/foA7igsB8EEJ"
                 }
             },
             {
@@ -89399,9 +89474,35 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"If used to steal a vampire in combat, combat ends. Any damage yet to resolve still resolves before the change of control.",
+                "text":"If played on one of your own vampires, the action is undirected. Its effect can be used to unlock the vampire.",
                 "refs":{
-                    "LSJ 20020618":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/DVGe6EsiMZ4/m/2-t1mFMkAX0J"
+                    "LSJ 20010828":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KoP_nqv-feM/m/faZPeRBTL_QJ",
+                    "ANK 20180917":"https://www.vekn.net/forum/rules-questions/77011-condemn-the-sins-of-the-father#90639"
+                }
+            },
+            {
+                "text":"Multiple Temptations on the same minion are handled separately. Counters from one Temptation do not affect counters on another Temptation.",
+                "refs":{
+                    "LSJ 20010227":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/rdkVAtZFC2I/m/rW1nXhSsyVcJ"
+                }
+            },
+            {
+                "text":"There is no stack in VTES; no effect can be used in response to the decision to burn the counters (e.g. {Shalmath} cannot unlock).",
+                "refs":{
+                    "PIB 20121028":"https://www.vekn.net/forum/rules-questions/39816-ec-2012-can-you-answer-these?start=6#39843"
+                }
+            },
+            {
+                "text":"If Temptation has 0 counters, you may still burn all counters to unlock and take control of a vampire with 0 blood.",
+                "refs":{
+                    "LSJ 20010828-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KoP_nqv-feM/m/Ciz1UcTsTyUJ"
+                }
+            },
+            {
+                "text":"If one is ousted while having temporary control of a minion, the minion is removed from the game.  (Reversal of Previous Rulings)",
+                "refs":{
+                    "ANK 20181110":"https://www.vekn.net/forum/rules-questions/76844-some-questions?start=6#91778",
+                    "LSJ 20081105":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/CYjOJtTBMGU/m/H8kQXN1w2ycJ"
                 }
             },
             {
@@ -89411,28 +89512,15 @@
                 }
             },
             {
-                "text":"The stolen minion returns to his previous controller even if he is in torpor (but stays in torpor).",
+                "text":"The stolen minion returns to his previous controller even if he is in torpor/incapacitated (but stays in torpor/incapacitated).",
                 "refs":{
                     "LSJ 20010119":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/XB0IvK7I6PQ/m/foA7igsB8EEJ"
                 }
             },
             {
-                "text":"If played on one of your own vampires, the action is undirected. Its effect can be used to unlock the vampire.",
+                "text":"If used to steal a vampire in combat, combat ends. Any damage yet to resolve still resolves before the change of control.",
                 "refs":{
-                    "LSJ 20010828":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KoP_nqv-feM/m/faZPeRBTL_QJ",
-                    "ANK 20180917":"https://www.vekn.net/forum/rules-questions/77011-condemn-the-sins-of-the-father#90639"
-                }
-            },
-            {
-                "text":"Multiple Temptations on the same minion are handled separately: effects do not stack, stealing the minion only burns the counters on one of them.",
-                "refs":{
-                    "LSJ 20010227":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/rdkVAtZFC2I/m/rW1nXhSsyVcJ"
-                }
-            },
-            {
-                "text":"No effect can be used between the decision to burn the counters and the moment the vampire changes control: the effect is resolved at once. (eg. {Shalmath} cannot untap).",
-                "refs":{
-                    "PIB 20121028":"https://www.vekn.net/forum/rules-questions/39816-ec-2012-can-you-answer-these?start=6#39843"
+                    "LSJ 20020618":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/DVGe6EsiMZ4/m/2-t1mFMkAX0J"
                 }
             },
             {
@@ -89442,21 +89530,21 @@
                 }
             },
             {
-                "text":"If used to steal a minion targeted by an action, the action continues with the same target. Methuselahs who declined to block do not get another opportunity. If the target is not legal anymore (eg. [DOM] {Slaughtering the Herd}), the action ends with no effect.",
-                "refs":{
-                    "LSJ 20020725":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/wCPFIH_g5ZE/m/inchZQXKRrsJ"
-                }
-            },
-            {
                 "text":"If used to steal a minion during an action, Methuselahs who declined to block are still declining to block. The new controller, if he is eligible and has not declined to block yet, can block with the stolen minion even if the previous controller has declined to block.",
                 "refs":{
                     "PIB 20150501":"https://www.vekn.net/forum/rules-questions/70780-change-of-control-during-the-action?start=6#70800"
                 }
             },
             {
-                "text":"If one is ousted while having temporary control of a minion, the minion is removed from the game.",
+                "text":"If used to steal a minion targeted by an action, the action continues with the same target. Methuselahs who declined to block do not get another opportunity. If the target is not legal anymore (eg. [DOM] {Slaughtering the Herd}), the action fizzles (ends successfully with no effect).",
                 "refs":{
-                    "LSJ 20081105":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/CYjOJtTBMGU/m/H8kQXN1w2ycJ"
+                    "LSJ 20020725":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/wCPFIH_g5ZE/m/inchZQXKRrsJ"
+                }
+            },
+            {
+                "text":"Can be used to take control of the target at any point during the appropriate minion phase. It does not have to be done before non-mandatory actions.",
+                "refs":{
+                    "LSJ 20001201":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/BPHZsY3p20E/m/S6HiRebyeX0J"
                 }
             }
         ],
@@ -96138,17 +96226,17 @@
                 }
             },
             {
-                "text":"[val], [VAL] Does not prevent the opponent from dodging, the dodge just has no effect.",
-                "refs":{
-                    "LSJ 20030902-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/mgZt4f2LyOg/m/FCeKmePPkxwJ",
-                    "LSJ 20060808-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/7oK-hKbOs9g/m/EGeyVt3vfl4J"
-                }
-            },
-            {
                 "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
                 "refs":{
                     "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
                     "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+                }
+            },
+            {
+                "text":"[val],[VAL] Does not prevent the opponent from dodging, the dodge just has no effect.",
+                "refs":{
+                    "LSJ 20030902-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/mgZt4f2LyOg/m/FCeKmePPkxwJ",
+                    "LSJ 20060808-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/7oK-hKbOs9g/m/EGeyVt3vfl4J"
                 }
             }
         ],

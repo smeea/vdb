@@ -720,8 +720,6 @@
 100376|Cold Aura:
   - No other effect can be used to reset the range. Skip the determine range step on that round, but other pre-range effects
     can be played afterwards. [RTR 19970630] [ANK 20180720]
-100377|Collapse the Arches:
-  - '[vis], [VIS] Does not prevent the opponent from dodging, the dodge just has no effect. [LSJ 20030902-2] [LSJ 20060808-1]'
 100378|Coma:
   - Only effective at close range. [RBK resolve-strike] [LSJ 20000110]
   - The opponent is wounded (if they play {Undying Tenacity}, they go to torpor after combat). [LSJ 20090622-2]
@@ -1069,7 +1067,6 @@
   - '[ani] [pot] Additional damage inherits all of the properties of the base damage. [TOM 19960225]'
   - '[cel] The additional strike is not optional: you cannot play it for the dodge only if you already played it for a (limited)
     additional strike this round. [ANK 20220204]'
-  - '[ani] Does not prevent the opponent from dodging, the dodge just has no effect. [LSJ 20030902-2] [LSJ 20060808-1]'
 100598|Eagle's Sight:
   - '[AUS] Only affects the rule restricting who gets to block an action. The vampire must still meet all other requirements
     to block. In particular, {Blood Bond}, {Day Operation}, {Seduction} and prior decision not to block are not circumvented.
@@ -1080,7 +1077,6 @@
   - '[PRO] The vampire still unlocks if an effect continues the combat or begins a new combat. [RTR 20020501]'
 100604|Earthshock:
   - Can be used at long range to target a retainer, even if their employer has flight [FLIGHT]. [LSJ 20060509]
-  - Does not prevent the opponent from dodging, the dodge just has no effect. [LSJ 20030902-2] [LSJ 20060808-1]
 100607|Eccentric Billionaire:
   - The "lock to reduce the cost" effect can be used when the action is announced or when the cost is paid. [LSJ 20090705]
     [ANK 20170605]
@@ -1260,7 +1256,6 @@
 100706|Fata Amria:
   - The target can burn it at unlock even if they're already unlocked, but cannot burn it if they do not unlock as normal
     (eg. {Sensory Deprivation}). [LSJ 20010814-3] [LSJ 20020109]
-  - Does not prevent the opponent from dodging, the dodge just has no effect. [LSJ 20030902-2] [LSJ 20060808-1]
 100709|FBI Special Affairs Division:
   - Does not trigger if the ally is saved by {Left for Dead}. [PIB 20121028]
   - Does not trigger if the ally is considered the acting minion during the combat (eg. {Nar-Sheptha}). [ANK 20180913-2]
@@ -2053,9 +2048,8 @@
   - Can be used by a locked vampire. [PIB 20150720] [RTR 19941109]
   - Cannot be used by a vampire in torpor. [PIB 20150720] [RTR 19970306]
 101150|Malkavian Dementia:
-  - Does not require control of a ready Malkavian. [RTR 19951124]
-  - The loss of control happens at the start of unlock phase, before unlocking. This cannot be ordered among other unlock
-    effects, the Malkavian is not unlocked. [ANK 20200129] [LSJ 20091208] [RTR 19951017]
+  - The effect ends at the start of the next unlock phase, before unlocking or deciding on contests. This cannot be ordered
+    among other unlock effects, the Malkavian is not unlocked. [ANK 20200129] [LSJ 20091208] [RTR 19951017]
   - It makes no difference if the target changes clan afterwards. [ANK 20221208-2]
 '101151|Malkavian Derangement: Alternate Personality':
   - If the action fails, modifiers and reactions that can be used at the end/after an action can still be used afterwards.
@@ -2158,12 +2152,6 @@
     [LSJ 20100308]'
 101215|Puppet Master:
   - '[DOM] Can be played on a locked vampire. [PIB 20150412]'
-  - '[DOM] Can be burned to take control of the target at any point during the appropriate minion phase. It does not have
-    to be done before non-mandatory actions. [LSJ 20001201]'
-  - '[DOM] Is removed if its controller (the Methuselah who played it) is ousted (rulings before 2008-11-19 have been reversed).
-    [ANK 20181110]'
-  - '[DOM] The stolen minion is removed from the game when he should return to a Methuselah who has been ousted. [ANK 20181110]'
-  - '[DOM] The stolen minion returns to his previous controller even if he is in torpor (but stays in torpor). [LSJ 20010119]'
 101217|Minion Tap:
   - Pay the cost (if any, eg. {Secure Haven} or {Villein} on the target) at the same time you gain pool from it, you do not
     get ousted in between. [LSJ 20020620]
@@ -2513,7 +2501,6 @@
   - A minion who maneuvers with a gun may still use Projectile to shoot with that gun as his initial strike that round. [LSJ
     20050304]
   - Cannot be used to strike with a weapon whose strike isn't ranged. [LSJ 20050224-3]
-  - Does not prevent the opponent from dodging, the dodge just has no effect. [LSJ 20030902-2] [LSJ 20060808-1]
 101494|Promise of 1528:
   - The action ends unsuccessfully immediately, no other action modifier or reaction can be played afterwards. [RTR 20180719]
     [ANK 20200207]
@@ -2832,7 +2819,6 @@
     casts. [RTR 19951110]
 101693|Scorpion Sting:
   - Additional damage inherits all of the properties of the base damage. [TOM 19960225]
-  - '[ANI] Does not prevent the opponent from dodging, the dodge just has no effect. [LSJ 20030902-2] [LSJ 20060808-1]'
 101694|Scorpion's Touch:
   - If it is declared with first strike and if the opposing minion declared a strike based on strength, that minion’s strength
     is decreased by Scorpion’s Touch when it resolves. [PIB 20110830]
@@ -3116,7 +3102,6 @@
   - '[OBE] If the bleed is canceled, the vampire still returns to its original controller. [RTR 20020501]'
   - '[OBE] "After resolution" effects are applied before the target vampire is returned to his or her previous controller.
     [LSJ 20030219]'
-  - '[OBE] The minion is removed from the game when he should return to a Methuselah who has been ousted. [ANK 20181110]'
 101850|Spirit's Touch:
   - '[AUS] The maneuver can only be used if the block is successful, and only in the resulting (block-induced) combat. It
     does not carry over to a follow-up combat (eg. [CEL] {Psyche!}). [LSJ 20010813] [LSJ 20010819-2]'
@@ -3338,23 +3323,14 @@
   - 'Each copy of this card provides its own action: if the vampire manage to unlock during the minion phase, he can perform
     the action more than once (once per copy). [RTR 20030519]'
 101954|Temptation:
-  - If used to steal a vampire in combat, combat ends. Any damage yet to resolve still resolves before the change of control.
-    [LSJ 20020618]
-  - The stolen minion is removed from the game when he should return to a Methuselah who has been ousted. [ANK 20181110]
-  - The stolen minion returns to his previous controller even if he is in torpor (but stays in torpor). [LSJ 20010119]
   - If played on one of your own vampires, the action is undirected. Its effect can be used to unlock the vampire. [LSJ 20010828]
     [ANK 20180917]
-  - 'Multiple Temptations on the same minion are handled separately: effects do not stack, stealing the minion only burns
-    the counters on one of them. [LSJ 20010227]'
-  - 'No effect can be used between the decision to burn the counters and the moment the vampire changes control: the effect
-    is resolved at once. (eg. {Shalmath} cannot untap). [PIB 20121028]'
-  - If used to steal a minion attempting to block, the block attempt fails. [LSJ 20080326]
-  - If used to steal a minion targeted by an action, the action continues with the same target. Methuselahs who declined to
-    block do not get another opportunity. If the target is not legal anymore (eg. [DOM] {Slaughtering the Herd}), the action
-    ends with no effect. [LSJ 20020725]
-  - If used to steal a minion during an action, Methuselahs who declined to block are still declining to block. The new controller,
-    if he is eligible and has not declined to block yet, can block with the stolen minion even if the previous controller
-    has declined to block. [PIB 20150501]
+  - Multiple Temptations on the same minion are handled separately. Counters from one Temptation do not affect counters on
+    another Temptation. [LSJ 20010227]
+  - There is no stack in VTES; no effect can be used in response to the decision to burn the counters (e.g. {Shalmath} cannot
+    unlock). [PIB 20121028]
+  - If Temptation has 0 counters, you may still burn all counters to unlock and take control of a vampire with 0 blood. [LSJ
+    20010828-2]
 101956|Tend the Flock:
   - The blood comes from the blood bank. [ANK 20190511]
 101958|Tension in the Ranks:
@@ -3564,7 +3540,6 @@
     Delay}). [ANK 20181003] [LSJ 20010803-2] [ANK 20220127]
 102106|Vengeance of Samiel:
   - Additional damage inherits all of the properties of the base damage. [TOM 19960225]
-  - '[val], [VAL] Does not prevent the opponent from dodging, the dodge just has no effect. [LSJ 20030902-2] [LSJ 20060808-1]'
 102113|Vessel:
   - Can be used when the vampire is in torpor. [PIB 20150522]
 102118|Victim of Habit:
@@ -4579,6 +4554,8 @@
   - His ability can be used only once per master phase. [ANK 20220617]
 201613|Theo Bell:
   - Can be merged with {Theo Bell (ADV)} if you get to control one (eg. {Graverobbing}). [ANK 20220805-2]
+201621|Karl Schrekt:
+  - When considered a Justicar, he is also implicitly considered Camarilla. [LSJ 20050128]
 201627|Evan Klein:
   - Actions from minions of the same controller targeting him are undirected, so they are not affected by his ability. [LSJ
     20030214-2]
@@ -4593,7 +4570,11 @@
   - She can use her ability to pay for equipments that are locations while in play (eg. {Palatial Estate}). [LSJ 20080107]
     [LSJ 20080114]
 G00001|Temporary control:
-  - If one is ousted while having temporary control of a minion, the minion is removed from the game. [LSJ 20081105]
+  - If one is ousted while having temporary control of a minion, the minion is removed from the game.  (Reversal of Previous
+    Rulings) [ANK 20181110] [LSJ 20081105]
+  - The stolen minion is removed from the game when he should return to a Methuselah who has been ousted. [ANK 20181110]
+  - The stolen minion returns to his previous controller even if he is in torpor/incapacitated (but stays in torpor/incapacitated).
+    [LSJ 20010119]
 G00002|From ash heap to deck:
   - Crypt cards cannot be put in the library and library cards cannot be put in the crypt. [LSJ 20041201]
 G00003|Circle:
@@ -4895,3 +4876,17 @@ G00106|Change the target of a bleed:
   - Cannot be used to direct a bleed to a Methuselah who would be an invalid target for a bleed. [PIB 20130711]
 G00107|Ability active in torpor:
   - The passive ability applies even if the vampire is in torpor. [LSJ 20011022]
+G00108|can steal minion during an action:
+  - If used to steal a vampire in combat, combat ends. Any damage yet to resolve still resolves before the change of control.
+    [LSJ 20020618]
+  - If used to steal a minion attempting to block, the block attempt fails. [LSJ 20080326]
+  - If used to steal a minion during an action, Methuselahs who declined to block are still declining to block. The new controller,
+    if he is eligible and has not declined to block yet, can block with the stolen minion even if the previous controller
+    has declined to block. [PIB 20150501]
+  - If used to steal a minion targeted by an action, the action continues with the same target. Methuselahs who declined to
+    block do not get another opportunity. If the target is not legal anymore (eg. [DOM] {Slaughtering the Herd}), the action
+    fizzles (ends successfully with no effect). [LSJ 20020725]
+  - Can be used to take control of the target at any point during the appropriate minion phase. It does not have to be done
+    before non-mandatory actions. [LSJ 20001201]
+G00109|Cannot be dodged:
+  - Does not prevent the opponent from dodging, the dodge just has no effect. [LSJ 20030902-2] [LSJ 20060808-1]
