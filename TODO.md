@@ -8,7 +8,6 @@
 # FEATURES
 - Limited in TWD/PDA search
 - Resources links and acknowledgement to readme
-- Oceanic continentals event
 - Lock to floating
 
 # FEATURES ON HOLD
