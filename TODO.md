@@ -7,7 +7,6 @@
 
 # FEATURES
 - Limited in TWD/PDA search
-- Resources links and acknowledgement to readme
 - Lock to floating
 
 # FEATURES ON HOLD

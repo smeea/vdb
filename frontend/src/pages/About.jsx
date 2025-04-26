@@ -175,7 +175,7 @@ const About = () => {
               Cards scans from different sets by <a href="http://vtes.pl/">VTES.PL</a> and{" "}
               <a href="https://ccggamez.com">CCGAMEZ.COM</a>
             </li>
-            <li>Legacy crypt images by Thiago Sousa</li>
+            <li>Legacy cards images by Thiago Sousa</li>
             <li>
               <a href="https://github.com/vtes-biased/vtes-rulings">Rulings database</a> by Lionel
               &quot;Phoenix&quot; Panhaleux
