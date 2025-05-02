@@ -7214,6 +7214,9 @@
         "set":{
             "V5L":{
                 "PL":"1"
+            },
+            "playtest":{
+                "NL":1
             }
         },
         "text":"Camarilla: Azucena gets +1 intercept against younger Lasombra and -1 intercept against older Lasombra.",

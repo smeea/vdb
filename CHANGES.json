@@ -1,5 +1,11 @@
 [
   {
+    "version": "2025-05-03",
+    "changes": [
+      "Add TDA event: Praxis Seizure: Garou Rim"
+    ]
+  },
+  {
     "version": "2025-04-26",
     "changes": [
       "Update TWDA",

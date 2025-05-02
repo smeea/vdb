@@ -13830,7 +13830,6 @@
                 "PN":"2"
             },
             "playtest":{
-                "SCai":6,
                 "NR":3
             }
         },
@@ -20825,9 +20824,6 @@
             },
             "SW":{
                 "PV":1
-            },
-            "playtest":{
-                "SPIV":1
             }
         },
         "text":"Requires a Sabbat vampire. Title.\nIf this referendum passes, put this card on the acting vampire to represent the unique Sabbat title of Archbishop of Mexico City. This could lead to a contested title.",
@@ -21937,6 +21933,9 @@
             },
             "NB":{
                 "PV":"1"
+            },
+            "playtest":{
+                "SPIV":1
             }
         },
         "text":"[for] Vampires cannot block this action. This vampire takes 2 unpreventable environmental aggravated damage after action resolution.\n[FOR] As above, but this vampire takes 1 unpreventable environmental aggravated damage.",
@@ -23240,7 +23239,7 @@
                 "PTz":"3"
             },
             "playtest":{
-                "SPIV":6,
+                "SPIV":5,
                 "NTz":2,
                 "NL":3
             }
@@ -29057,6 +29056,9 @@
             "NB":{
                 "PTo":"5",
                 "PV":"4"
+            },
+            "playtest":{
+                "SPIV":6
             }
         },
         "text":"[pre] (D) Bleed with +1 bleed.\n[PRE] +1 stealth action. Add 2 blood to a younger vampire in your uncontrolled region.",
@@ -30345,9 +30347,6 @@
             },
             "HttB":{
                 "PKia":1
-            },
-            "playtest":{
-                "SPIV":2
             }
         },
         "text":"+1 stealth action. Requires a ready archbishop, priscus, cardinal or regent.\nPut this card on the acting vampire. During an action, this Sabbat vampire can burn 1 blood to unlock and attempt to block. Burn this card if this vampire goes to torpor.",
@@ -33130,9 +33129,6 @@
             },
             "Promo":{
                 "2023-09-16":true
-            },
-            "playtest":{
-                "SCai":1
             }
         },
         "text":"Only one Festivo dello Estinto can be played in a game.\nPut this card in play. Sabbat vampires get -1 stealth during hunt actions. Sabbat vampires successfully hunting gain enough blood from the blood bank to reach full capacity. During your unlock phase, burn this card.",
@@ -36153,7 +36149,7 @@
             },
             "playtest":{
                 "SCat":4,
-                "SPIV":3,
+                "SPIV":4,
                 "NSal":4
             }
         },
@@ -38687,7 +38683,6 @@
             },
             "playtest":{
                 "SDS":4,
-                "SPIV":6,
                 "NTz":4
             }
         },
@@ -55649,7 +55644,6 @@
                 "PTo":"2"
             },
             "playtest":{
-                "SCai":2,
                 "NH":2
             }
         },
@@ -60724,7 +60718,7 @@
             },
             "playtest":{
                 "SCat":3,
-                "SPIV":4,
+                "SPIV":5,
                 "NR":3
             }
         },
@@ -64851,9 +64845,6 @@
             },
             "30th":{
                 "":"1"
-            },
-            "playtest":{
-                "SPIV":1
             }
         },
         "text":"Only one Political Stranglehold can be played or called in a game.\nSuccessful referendum means each Methuselah gains 3 pool for each vampire they control with capacity 8 or more.",
@@ -65537,9 +65528,6 @@
             },
             "Third":{
                 "PTz":1
-            },
-            "playtest":{
-                "SCai":1
             }
         },
         "text":"Master: unique location.\nPut X blood on this card when it is played, where X is the capacity of a ready Sabbat vampire you control. During your unlock phase, you may move 1 blood from this card to your pool. Any vampire may burn this location as a (D) action. Titled vampires get +1 stealth on that action. Burn this card if it has no counters.",
@@ -75683,7 +75671,7 @@
                 "PBh":"1"
             },
             "playtest":{
-                "SDS":2
+                "SDS":1
             }
         },
         "text":"+1 stealth action.\n[tha] Put this card on this vampire, and this vampire takes 1 unpreventable environmental aggravated damage. Starting with your next turn, this vampire can unlock during your minion phase. A vampire can have only one Rutor's Hand.\n[THA] As above, and this vampire can burn 3 blood to be immune to this aggravated damage.",
@@ -88975,7 +88963,7 @@
                 "PB":"2"
             },
             "playtest":{
-                "SCai":3,
+                "SCai":4,
                 "NR":2,
                 "NSal":2,
                 "NL":3
@@ -89729,6 +89717,7 @@
                 "PBh":"1"
             },
             "playtest":{
+                "SCai":1,
                 "NSal":1
             }
         },
@@ -94296,7 +94285,8 @@
             },
             "playtest":{
                 "SCai":2,
-                "SCat":2
+                "SCat":2,
+                "SPIV":2
             }
         },
         "text":"+1 stealth action. Requires a titled Sabbat vampire. Unique.\nPut this card in play with 3 counters. Once each action, a Sabbat vampire you control can burn 1 counter from this card to unlock and attempt to block with +1 intercept, even if intercept is not yet needed. Burn this card if it has no counters.",
@@ -96876,6 +96866,7 @@
                 "":"6"
             },
             "playtest":{
+                "SCai":3,
                 "SPIV":3
             }
         },
