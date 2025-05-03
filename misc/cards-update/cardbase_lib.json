@@ -80994,6 +80994,9 @@
         "set":{
             "V5H":{
                 "PH":"6"
+            },
+            "playtest":{
+                "SDS":4
             }
         },
         "text":"[obl] (D) Bleed with +1 bleed. If the bleed is successful (for 1 or more), the target Methuselah discards 2 cards of their choice.\n[OBL] (D) Remove 7 cards in your prey's ash heap from the game to burn 3 of their pool.",
