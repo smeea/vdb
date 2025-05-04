@@ -27,7 +27,7 @@ const TwdResultCryptTableRow = ({ card, handleClick, shouldShowModal }) => {
           <ConditionalTooltip overlay={<UsedPopover cardid={card.c[ID]} />} disabled={isMobile}>
             <div
               className={twMerge(
-                "flex justify-center text-lg",
+                "mx-1 flex justify-center text-lg",
                 inInventory < card.q
                   ? "bg-bgError text-white dark:bg-bgErrorDark dark:text-whiteDark"
                   : inInventory - hardUsedTotal < card.q && "bg-bgWarning dark:bg-bgWarningDark",

@@ -94,7 +94,7 @@ const InventoryCardQuantity = ({ card, softUsedMax, hardUsedTotal, compact, newF
       ) : (
         <div
           className={twMerge(
-            "mx-1 my-2 flex w-full items-center justify-center",
+            "mx-1 flex w-full items-center justify-center py-1 text-lg",
             state < softUsedMax + hardUsedTotal &&
               "bg-bgError text-white dark:bg-bgErrorDark dark:text-whiteDark",
           )}
