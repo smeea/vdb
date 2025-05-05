@@ -1,6 +1,6 @@
 # FIX
-- Focused bottom line on modal (button?)
 - Test on iOS - bad CSS?
+- PDA decks favorted and created date (older decks)
 
 # FIX ON HOLD
 - Deck-in-Url trimmed at first card - can't reproduce in dev environment
