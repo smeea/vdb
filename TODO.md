@@ -10,6 +10,7 @@
 - Limited in TWD/PDA search
 - Add 2p mode
 - Change lang for testers
+- Add Polish Fee Stake Lublin event
 
 # FEATURES ON HOLD
 - TWD search with % V5-compatibility -> after BCP clarify V5
