@@ -1,6 +1,7 @@
 import json
 
 bundles = {
+    "NB3": {"PH": {}, "PL": {}},
     "V5H": {
         "PH": {},
     },
@@ -168,17 +169,15 @@ bundles = {
 playtest_bundles = {"playtest": {}}
 
 
-with open("cardbase_crypt.json", "r") as crypt_file, open(
-    "cardbase_lib.json", "r"
-) as library_file, open("precon_decks.json", "w") as precons_file, open(
-    "precon_decks.min.json", "w"
-) as precons_file_min, open(
-    "playtest/precon_decks_playtest.json", "w"
-) as precons_file_playtest, open(
-    "playtest/precon_decks_playtest.min.json", "w"
-) as precons_file_playtest_min, open(
-    "playtest/precons.json", "r"
-) as playtest_precons_file:
+with (
+    open("cardbase_crypt.json", "r") as crypt_file,
+    open("cardbase_lib.json", "r") as library_file,
+    open("precon_decks.json", "w") as precons_file,
+    open("precon_decks.min.json", "w") as precons_file_min,
+    open("playtest/precon_decks_playtest.json", "w") as precons_file_playtest,
+    open("playtest/precon_decks_playtest.min.json", "w") as precons_file_playtest_min,
+    open("playtest/precons.json", "r") as playtest_precons_file,
+):
     crypt = list(json.load(crypt_file).values())
     library = list(json.load(library_file).values())
     playtest_precons = json.load(playtest_precons_file)
@@ -187,9 +186,10 @@ with open("cardbase_crypt.json", "r") as crypt_file, open(
         playtest_bundles["playtest"][i] = {}
 
     try:
-        with open("playtest/cardbase_crypt_playtest.json", "r") as crypt_playtest_file, open(
-            "playtest/cardbase_lib_playtest.json", "r"
-        ) as library_playtest_file:
+        with (
+            open("playtest/cardbase_crypt_playtest.json", "r") as crypt_playtest_file,
+            open("playtest/cardbase_lib_playtest.json", "r") as library_playtest_file,
+        ):
             crypt = crypt + list(json.load(crypt_playtest_file).values())
             library = library + list(json.load(library_playtest_file).values())
 

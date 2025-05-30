@@ -7215,8 +7215,8 @@
             "V5L":{
                 "PL":"1"
             },
-            "playtest":{
-                "NL":1
+            "NB3":{
+                "PL":"1"
             }
         },
         "text":"Camarilla: Azucena gets +1 intercept against younger Lasombra and -1 intercept against older Lasombra.",
@@ -13619,6 +13619,38 @@
         "title":"",
         "twd":1
     },
+    "201729":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Ken Meyer, Jr."
+        ],
+        "ascii":"Dafina Hanganu",
+        "banned":"",
+        "capacity":8,
+        "clan":"Lasombra",
+        "disciplines":{
+            "Fortitude":1,
+            "Dominate":2,
+            "Oblivion":2,
+            "Potence":2
+        },
+        "group":"6",
+        "id":201729,
+        "name":"Dafina Hanganu",
+        "new":false,
+        "path":"",
+        "rulings":[],
+        "sect":"Camarilla",
+        "set":{
+            "NB3":{
+                "PL":"1"
+            }
+        },
+        "text":"Camarilla Prince of Constanza: Dafina can enter combat with a minion as a (D) action.",
+        "title":"prince",
+        "twd":0
+    },
     "200308":{
         "adv":"",
         "aka":"",
@@ -17672,6 +17704,38 @@
         "title":"",
         "twd":41
     },
+    "201730":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Anastasiia Horbunova"
+        ],
+        "ascii":"Egidia Arru",
+        "banned":"",
+        "capacity":8,
+        "clan":"Lasombra",
+        "disciplines":{
+            "Protean":1,
+            "Dominate":2,
+            "Oblivion":2,
+            "Potence":2
+        },
+        "group":"6",
+        "id":201730,
+        "name":"Egidia Arr\u00fa",
+        "new":false,
+        "path":"",
+        "rulings":[],
+        "sect":"Camarilla",
+        "set":{
+            "NB3":{
+                "PL":"1"
+            }
+        },
+        "text":"Camarilla: After a minion in combat with Egidia leaves the ready region, their controller burns 1 pool. +1 strength.",
+        "title":"",
+        "twd":0
+    },
     "200405":{
         "adv":"",
         "aka":"",
@@ -21496,8 +21560,8 @@
             "V5H":{
                 "PH":"1"
             },
-            "playtest":{
-                "NH":1
+            "NB3":{
+                "PH":"1"
             }
         },
         "text":"Independent.",
@@ -22710,8 +22774,8 @@
             "V5L":{
                 "PL":"2"
             },
-            "playtest":{
-                "NL":1
+            "NB3":{
+                "PL":"1"
             }
         },
         "text":"Camarilla Prince of Lima: If Aemilius is ready during your unlock phase, your prey chooses a ready minion they control; the chosen minion takes 1 unpreventable damage.",
@@ -25094,6 +25158,39 @@
         "text":"Sabbat priscus: Damage from Hektor's hand strikes is aggravated. Baali get +1 bleed when bleeding you.",
         "title":"priscus",
         "twd":21
+    },
+    "201731":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Raquel Cornejo"
+        ],
+        "ascii":"Hel-Bla",
+        "banned":"",
+        "capacity":9,
+        "clan":"Hecata",
+        "disciplines":{
+            "Obfuscate":1,
+            "Auspex":2,
+            "Fortitude":2,
+            "Oblivion":2,
+            "Potence":2
+        },
+        "group":"6",
+        "id":201731,
+        "name":"Hel-Bl\u00e1",
+        "new":false,
+        "path":"",
+        "rulings":[],
+        "sect":"Independent",
+        "set":{
+            "NB3":{
+                "PH":"1"
+            }
+        },
+        "text":"Independent: Hel-Bl\u00e1 can move an ally requiring Hecata or Oblivion [obl] from your ash heap to your ready region, locked with life equal to its starting life as a +1 stealth action that costs 1 blood.",
+        "title":"",
+        "twd":0
     },
     "200585":{
         "adv":"",
@@ -39509,8 +39606,8 @@
             "V5L":{
                 "PL":"2"
             },
-            "playtest":{
-                "NL":1
+            "NB3":{
+                "PL":"1"
             }
         },
         "text":"Camarilla Prince of Barcelona.",
@@ -43325,8 +43422,8 @@
             "V5H":{
                 "PH":"1"
             },
-            "playtest":{
-                "NH":1
+            "NB3":{
+                "PH":"1"
             }
         },
         "text":"Independent.",
@@ -43775,8 +43872,8 @@
             "V5H":{
                 "PH":"1"
             },
-            "playtest":{
-                "NH":1
+            "NB3":{
+                "PH":"1"
             }
         },
         "text":"Independent: Once each turn, if she is ready, Anja can burn 1 blood after another Hecata you control performs a successful action requiring Hecata or Oblivion [obl] to unlock that Hecata.",
@@ -51731,6 +51828,39 @@
         "title":"",
         "twd":1
     },
+    "201732":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Gin\u00e9s Qui\u00f1onero"
+        ],
+        "ascii":"Roger de Camden",
+        "banned":"",
+        "capacity":10,
+        "clan":"Hecata",
+        "disciplines":{
+            "Auspex":2,
+            "Fortitude":2,
+            "Obfuscate":2,
+            "Oblivion":2,
+            "Presence":2
+        },
+        "group":"6",
+        "id":201732,
+        "name":"Roger de Camden",
+        "new":false,
+        "path":"",
+        "rulings":[],
+        "sect":"Camarilla",
+        "set":{
+            "NB3":{
+                "PH":"1"
+            }
+        },
+        "text":"Camarilla Prince of Edinburgh: Cards requiring Hecata and/or Oblivion [obl] cost Roger -1 blood. Once each turn, if Roger is ready during a combat involving a minion you control, he can discard a card requiring Oblivion [obl] to give that minion 1 maneuver.",
+        "title":"prince",
+        "twd":0
+    },
     "201198":{
         "adv":"",
         "aka":"",
@@ -59452,8 +59582,8 @@
             "V5H":{
                 "PH":"1"
             },
-            "playtest":{
-                "NH":1
+            "NB3":{
+                "PH":"1"
             }
         },
         "text":"Independent: Once each turn, if he is ready, Tommaso can burn 1 blood before range is determined in a combat involving a wraith or zombie ally you control to end that combat.",
@@ -64146,8 +64276,8 @@
             "V5L":{
                 "PL":"2"
             },
-            "playtest":{
-                "NL":1
+            "NB3":{
+                "PL":"1"
             }
         },
         "text":"Camarilla Prince of Singapore: During the polling step of any referendum, Yewon can discard a card requiring Oblivion [obl] to get +1 vote.",

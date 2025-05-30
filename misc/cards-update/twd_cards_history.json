@@ -1786,6 +1786,9 @@
         "twdDate":"2016-03-12",
         "player":"Gilmar Mendes"
     },
+    "201729":{
+        "deckid":null
+    },
     "200308":{
         "deckid":null
     },
@@ -2307,6 +2310,9 @@
         "deckid":"2k6swedishqualifier",
         "twdDate":"2006-04-15",
         "player":"Erik Torstensson"
+    },
+    "201730":{
+        "deckid":null
     },
     "200405":{
         "deckid":"2k2umea",
@@ -3287,6 +3293,9 @@
         "deckid":"2k7shdallas",
         "twdDate":"2007-07-28",
         "player":"Ethan Burrow"
+    },
+    "201731":{
+        "deckid":null
     },
     "200585":{
         "deckid":null
@@ -6739,6 +6748,9 @@
         "twdDate":"2015-12-13",
         "player":"Guilhem Marrannes"
     },
+    "201732":{
+        "deckid":null
+    },
     "201198":{
         "deckid":"2k4pariscup",
         "twdDate":"2004-02-22",
@@ -9593,6 +9605,9 @@
         "twdDate":"1997-11-22",
         "player":"Danny McGrul"
     },
+    "102293":{
+        "deckid":null
+    },
     "100237":{
         "deckid":"rob2",
         "twdDate":"1998-09-07",
@@ -9874,6 +9889,9 @@
         "deckid":"2k4bloodworktotalcon",
         "twdDate":"2004-02-20",
         "player":"David Weesner"
+    },
+    "102298":{
+        "deckid":null
     },
     "100293":{
         "deckid":"2k4junenewark",
@@ -10901,6 +10919,9 @@
         "deckid":"2011nhhu",
         "twdDate":"2011-11-19",
         "player":"Asif Chaudhry"
+    },
+    "102299":{
+        "deckid":null
     },
     "100504":{
         "deckid":"2k3originsqualifier",
@@ -15180,6 +15201,9 @@
         "twdDate":"2005-04-30",
         "player":"Andreas Nusser"
     },
+    "102300":{
+        "deckid":null
+    },
     "101374":{
         "deckid":"2k2slovakben",
         "twdDate":"2002-12-07",
@@ -15493,6 +15517,9 @@
         "deckid":"jaykic",
         "twdDate":"2000-12-09",
         "player":"Jay Kristoff"
+    },
+    "102301":{
+        "deckid":null
     },
     "101440":{
         "deckid":"2k2winnipeg",
@@ -15857,6 +15884,9 @@
         "twdDate":"2006-03-25",
         "player":"Ferenc Vasadi"
     },
+    "102302":{
+        "deckid":null
+    },
     "101512":{
         "deckid":null
     },
@@ -15978,6 +16008,9 @@
         "deckid":"2k5Misericordia",
         "twdDate":"2005-06-26",
         "player":"Gin\u00e9s Qui\u00f1onero"
+    },
+    "102303":{
+        "deckid":null
     },
     "101538":{
         "deckid":"2k6nnjqual",
@@ -16546,6 +16579,9 @@
         "twdDate":"2000-05-06",
         "player":"Matt Green"
     },
+    "102304":{
+        "deckid":null
+    },
     "102215":{
         "deckid":"10009",
         "twdDate":"2021-12-19",
@@ -17000,6 +17036,9 @@
         "player":"Barney Baker"
     },
     "102294":{
+        "deckid":null
+    },
+    "102305":{
         "deckid":null
     },
     "101744":{
@@ -17529,6 +17568,9 @@
         "player":"David Anderson-D\u00e1vila"
     },
     "101853":{
+        "deckid":null
+    },
+    "102297":{
         "deckid":null
     },
     "101854":{
@@ -18476,6 +18518,9 @@
         "deckid":"2k8afbnewark",
         "twdDate":"2008-06-14",
         "player":"Brad Cashdollar"
+    },
+    "102306":{
+        "deckid":null
     },
     "102055":{
         "deckid":"2k7templecon",

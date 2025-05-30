@@ -33,16 +33,6 @@
         "name": "New Blood: Tzimisce",
         "clan": "Tzimisce",
         "playtest_old": true
-      },
-      "NH": {
-        "name": "New Blood: Hecata",
-        "clan": "Hecata",
-        "playtest_old": true
-      },
-      "NL": {
-        "name": "New Blood: Lasombra",
-        "clan": "Lasombra",
-        "playtest_old": true
       }
     }
   },
@@ -53,6 +43,20 @@
   "POD": {
     "name": "Print-on-Demand (DTC)",
     "date": ""
+  },
+  "NB3": {
+    "name": "New Blood III",
+    "date": "2025-05-31",
+    "precons": {
+      "PH": {
+        "name": "Hecata",
+        "clan": "Hecata"
+      },
+      "PL": {
+        "name": "Lasombra",
+        "clan": "Lasombra"
+      }
+    }
   },
   "V5H": {
     "name": "Fifth Edition (Hecata)",

@@ -1,6 +1,12 @@
 [
   {
-    "version": "2025-05-03/2",
+    "version": "2025-05-31",
+    "changes": [
+      "Add New Blood III (Hecata and Lasombra)"
+    ]
+  },
+  {
+    "version": "2025-05-03",
     "changes": [
       "Add TDA event: Praxis Seizure: Garou Rim"
     ]
