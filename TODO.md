@@ -11,7 +11,6 @@
 - Add 2p mode
 - Change lang for testers
 - Add Polish Fee Stake Lublin event
-- Player count / reported decka to TDA
 
 # FEATURES ON HOLD
 - TWD search with % V5-compatibility -> after BCP clarify V5

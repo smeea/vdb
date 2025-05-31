@@ -250,24 +250,26 @@ const Tda = () => {
 
   return (
     <div className="twd-container mx-auto flex flex-col gap-2">
-      <Header>
-        <div className="flex w-full flex-col p-2 text-lg max-sm:gap-2">
-          <div className="flex sm:justify-center">
-            Want more Tournaments here? Help your organizer to collect the data!
+      {!(info && decks) && (
+        <Header>
+          <div className="flex w-full flex-col p-2 text-lg max-sm:gap-2">
+            <div className="flex sm:justify-center">
+              Want more Tournaments here? Help your organizer to collect the data!
+            </div>
+            <div className="flex gap-1.5 sm:justify-center">
+              More details:
+              <a
+                target="_blank"
+                rel="noreferrer"
+                className="underline"
+                href="https://garourimgazette.wordpress.com/vtes-discussions/vtes-tournament-archive/"
+              >
+                TOURNAMENTS DECKS ARCHIVE
+              </a>
+            </div>
           </div>
-          <div className="flex gap-1.5 sm:justify-center">
-            More details:
-            <a
-              target="_blank"
-              rel="noreferrer"
-              className="underline"
-              href="https://garourimgazette.wordpress.com/vtes-discussions/vtes-tournament-archive/"
-            >
-              TOURNAMENTS DECKS ARCHIVE
-            </a>
-          </div>
-        </div>
-      </Header>
+        </Header>
+      )}
       {error && <ErrorMessage>NO DATA AVAILABLE FOR EVENT #{error}</ErrorMessage>}
       <FlexGapped className="flex-col">
         {!(info && decks) && (
