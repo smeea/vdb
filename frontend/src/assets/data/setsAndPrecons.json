@@ -44,6 +44,60 @@
     "name": "Print-on-Demand (DTC)",
     "date": ""
   },
+  "2P": {
+    "name": "Two Players",
+    "date": "",
+    "precons": {
+      "BH": {
+        "name": "Banu Haqim",
+        "clan": "Banu Haqim"
+      },
+      "B": {
+        "name": "Brujah",
+        "clan": "Brujah"
+      },
+      "G": {
+        "name": "Gangrel",
+        "clan": "Gangrel"
+      },
+      "L": {
+        "name": "Lasombra",
+        "clan": "Lasombra"
+      },
+      "M": {
+        "name": "Malkavian",
+        "clan": "Malkavian"
+      },
+      "Mi": {
+        "name": "Ministry",
+        "clan": "Ministry"
+      },
+      "N": {
+        "name": "Nosferatu",
+        "clan": "Nosferatu"
+      },
+      "Sal": {
+        "name": "Salubri",
+        "clan": "Salubri"
+      },
+      "To": {
+        "name": "Toreador",
+        "clan": "Toreador"
+      },
+      "Tr": {
+        "name": "Tremere",
+        "clan": "Tremere"
+      },
+      "Tz": {
+        "name": "Tzimisce",
+        "clan": "Tzimisce"
+      },
+      "V": {
+        "name": "Ventrue",
+        "clan": "Ventrue"
+      }
+    }
+  },
   "NB3": {
     "name": "New Blood III",
     "date": "2025-05-31",

@@ -116,6 +116,10 @@
         "set":{
             "V5A":{
                 "PB":"1"
+            },
+            "2P":{
+                "C":true,
+                "B":1
             }
         },
         "text":"Unique mortal with 2 life. 1 strength, 0 bleed.\nYou can burn 47th Street Royals to reduce a bleed against you by 3.",
@@ -2145,6 +2149,9 @@
             },
             "Promo":{
                 "2024-04-23":true
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"(D) Enter combat with a locked minion. This acting minion gets 1 optional maneuver during that combat.",
@@ -2194,6 +2201,10 @@
         "set":{
             "V5L":{
                 "PL":"4"
+            },
+            "2P":{
+                "C":true,
+                "L":2
             }
         },
         "text":"Only usable after resolution of a political action whose referendum passed.\nFor each vote by which the referendum passed, distribute 1 blood from the blood bank among the ready Lasombra you control and your pool. A vampire cannot gain more than 1 blood this way. You cannot gain more than 1 pool this way or more than 2 pool this way if this acting Lasombra is titled.",
@@ -4259,6 +4270,10 @@
         "set":{
             "V5L":{
                 "PL":"2"
+            },
+            "2P":{
+                "C":true,
+                "L":4
             }
         },
         "text":"[obl] Additional strike (limited).\n[OBL] Strike: dodge, with 1 additional strike (limited).",
@@ -4400,6 +4415,11 @@
             },
             "NB2":{
                 "PG":"1"
+            },
+            "2P":{
+                "C":true,
+                "G":1,
+                "N":1
             }
         },
         "text":"+1 stealth action.\n[ani] Put this card in play. During your unlock phase, your prey burns 1 pool. A Methuselah can burn only 1 pool each turn with Army of Rats cards. Minions can burn this card as a (D) action.",
@@ -5383,6 +5403,9 @@
             },
             "HttB":{
                 "PSal":1
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Master: Discipline.\nPut this card on a vampire. This vampire gains 1 level of Auspex [aus]. Capacity increases by 1: the vampire is one generation older. Cannot be placed on a vampire with superior Auspex [AUS].",
@@ -6846,6 +6869,10 @@
             },
             "V5A":{
                 "PG":"2"
+            },
+            "2P":{
+                "C":true,
+                "G":2
             }
         },
         "text":"Only usable before range is determined. A vampire can play only one Bear's Skin each combat.\n[ani][pro] This round, this vampire gets +1 strength and can prevent 1 damage.\n[ANI][PRO] This combat, this vampire gets +1 strength and can prevent 1 damage each round.",
@@ -7409,6 +7436,9 @@
             },
             "NB":{
                 "PTo":"2"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Only usable during the polling step of a political action.\n[pre] This vampire gets +2 votes.\n[PRE] This vampire gets +4 votes.",
@@ -9482,6 +9512,10 @@
             },
             "NB":{
                 "PTr":"2"
+            },
+            "2P":{
+                "C":true,
+                "Tr":3
             }
         },
         "text":"Only usable at close range.\n[tha] Strike: hand strike at +1 damage. Damage from this strike cannot be prevented by cards requiring Fortitude [for]. The opposing vampire's strikes with weapons inflict no damage this round.\n[THA] As above, but at +2 damage.",
@@ -10624,6 +10658,12 @@
             },
             "NB2":{
                 "PG":"1"
+            },
+            "2P":{
+                "C":true,
+                "G":2,
+                "Mi":2,
+                "Tz":2
             }
         },
         "text":"[pro] Strike: 2 aggravated damage.\n[PRO] Strike: 2R aggravated damage.",
@@ -10992,6 +11032,13 @@
             },
             "V5C":{
                 "PSal":"4"
+            },
+            "2P":{
+                "C":true,
+                "M":2,
+                "Sal":3,
+                "Tr":3,
+                "V":2
             }
         },
         "text":"Only usable during a bleed action.\n[dom] +1 bleed (limited).\n[DOM] +1 stealth and +1 bleed (limited).",
@@ -12362,6 +12409,9 @@
             },
             "Promo":{
                 "2023-05-07":true
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Do not replace until after this action.\n(D) Enter combat with a minion. This acting minion gets 1 optional maneuver during that combat.",
@@ -13885,6 +13935,12 @@
             "NB":{
                 "PN":"2"
             },
+            "2P":{
+                "C":true,
+                "G":4,
+                "N":4,
+                "Tz":5
+            },
             "playtest":{
                 "NR":3
             }
@@ -14263,6 +14319,11 @@
             "V5C":{
                 "PR":"4",
                 "PTz":"4"
+            },
+            "2P":{
+                "C":true,
+                "G":1,
+                "N":2
             }
         },
         "text":"[ani] Only usable by a locked vampire who has blocked, after block resolution. Unlock this vampire.\n[ANI] +1 intercept.",
@@ -14462,6 +14523,11 @@
             },
             "NB2":{
                 "PB":"1"
+            },
+            "2P":{
+                "C":true,
+                "B":1,
+                "To":1
             }
         },
         "text":"Discipline.\nPut this card on a vampire. This vampire gets +1 level of Celerity [cel] and +1 capacity. Cannot be put on a vampire with superior Celerity [CEL].",
@@ -15238,6 +15304,10 @@
             },
             "NB":{
                 "PTr":"1"
+            },
+            "2P":{
+                "C":true,
+                "Tr":1
             }
         },
         "text":"Unique location.\nYou can lock this card and burn 1 pool or 1 blood from a ready Tremere you control during your master phase to move a Tremere from torpor to their controller's ready region.",
@@ -16804,6 +16874,10 @@
             },
             "V5C":{
                 "PR":"4"
+            },
+            "2P":{
+                "C":true,
+                "M":2
             }
         },
         "text":"[obf] +1 stealth.\n[OBF] Only usable by a ready vampire other than the acting minion. The acting minion gets +1 stealth.",
@@ -20187,6 +20261,10 @@
             },
             "NB":{
                 "PN":"2"
+            },
+            "2P":{
+                "C":true,
+                "N":2
             }
         },
         "text":"+1 stealth action.\nX is the number of copies of this card you control. Put this card in play. During your unlock phase, your prey burns 1 pool. Minions can burn this card as a (D) action.",
@@ -23074,6 +23152,10 @@
             },
             "NB2":{
                 "PG":"3"
+            },
+            "2P":{
+                "C":true,
+                "G":3
             }
         },
         "text":"Requires an Anarch.\n[ani] Only usable during an action directed at you (or a card you control). +2 intercept.\n[for] Reduce a bleed against you by 2.\n[pro] Only usable by a locked vampire. This vampire burns 1 blood to unlock.",
@@ -23141,6 +23223,12 @@
             },
             "NB2":{
                 "PG":"2"
+            },
+            "2P":{
+                "C":true,
+                "G":4,
+                "N":4,
+                "Tz":4
             },
             "playtest":{
                 "NR":5
@@ -25344,6 +25432,10 @@
             },
             "NB2":{
                 "PB":"1"
+            },
+            "2P":{
+                "C":true,
+                "To":1
             }
         },
         "text":"Choose a location and a Methuselah. Successful referendum means the chosen Methuselah takes control of the chosen location.",
@@ -25568,6 +25660,9 @@
             },
             "NB2":{
                 "PB":"3"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Requires an Anarch.\n[cel] Additional strike (limited).\n[for] Prevent 2 damage.\n[tha] Strike, ranged: steal 1 blood or life (becoming blood), with 1 optional maneuver.",
@@ -25868,6 +25963,11 @@
             },
             "NB":{
                 "PTo":"1"
+            },
+            "2P":{
+                "C":true,
+                "BH":1,
+                "L":1
             }
         },
         "text":"Successful referendum means each Methuselah burns 1 pool for each locked minion they control.",
@@ -25979,6 +26079,9 @@
             },
             "NB":{
                 "PV":"1"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Discipline.\nPut this card on a vampire. This vampire gets +1 level of Dominate [dom] and +1 capacity. Cannot be put on a vampire with superior Dominate [DOM].",
@@ -26042,6 +26145,13 @@
             },
             "NB":{
                 "PV":"2"
+            },
+            "2P":{
+                "C":true,
+                "M":1,
+                "Sal":2,
+                "Tr":2,
+                "V":2
             }
         },
         "text":"[dom] +1 stealth action. (D) Bleed with +1 bleed.\n[DOM] (D) Steal a location.",
@@ -26180,6 +26290,10 @@
             },
             "V5A":{
                 "PG":"1"
+            },
+            "2P":{
+                "C":true,
+                "G":1
             }
         },
         "text":"Unique werewolf with 3 life. 1 strength, 1 bleed.\nDouble Deuce has +1 stealth. If Double Deuce has 2 or fewer life during your unlock phase, he gains 1 life.",
@@ -27076,6 +27190,10 @@
             },
             "NB":{
                 "PTo":"1"
+            },
+            "2P":{
+                "C":true,
+                "N":1
             }
         },
         "text":"Unique location.\nYou can burn this card if a minion is bleeding you to reduce the bleed amount by 2.",
@@ -27228,6 +27346,10 @@
             },
             "NB2":{
                 "PB":"4"
+            },
+            "2P":{
+                "C":true,
+                "B":6
             }
         },
         "text":"Requires an Anarch.\n[ani] Strike: hand strike at +1 damage. This strike cannot be dodged.\n[cel] Strike: dodge, with 1 additional strike (limited).\n[pot] Strike: hand strike at +2 damage.",
@@ -27391,6 +27513,11 @@
             },
             "V5C":{
                 "PTz":"3"
+            },
+            "2P":{
+                "C":true,
+                "G":2,
+                "Tz":4
             },
             "playtest":{
                 "NTz":2
@@ -28196,6 +28323,11 @@
             },
             "NB2":{
                 "PBH":"1"
+            },
+            "2P":{
+                "C":true,
+                "BH":2,
+                "V":2
             }
         },
         "text":"Only usable during a bleed action directed at you. Do not replace until after this action.\n+2 intercept. A vampire cannot play both Elder Intervention and cards named /Pack Tactics/ during the same action.",
@@ -29143,6 +29275,13 @@
             "NB":{
                 "PTo":"5",
                 "PV":"4"
+            },
+            "2P":{
+                "C":true,
+                "B":4,
+                "Mi":4,
+                "To":4,
+                "V":3
             },
             "playtest":{
                 "SPIV":6
@@ -31063,6 +31202,12 @@
             "NB3":{
                 "PH":"2"
             },
+            "2P":{
+                "C":true,
+                "M":2,
+                "Sal":2,
+                "Tr":2
+            },
             "playtest":{
                 "SCat":3,
                 "NSal":3
@@ -31323,6 +31468,10 @@
             },
             "NB2":{
                 "PG":"3"
+            },
+            "2P":{
+                "C":true,
+                "G":2
             }
         },
         "text":"Only usable by a locked Gangrel.\nThis Gangrel unlocks and attempts to block. During this action, this Gangrel can burn 1 blood to get +1 intercept. Lock this Gangrel after action resolution if they did not block this action.",
@@ -31401,6 +31550,11 @@
             },
             "NB2":{
                 "PMi":"1"
+            },
+            "2P":{
+                "C":true,
+                "M":2,
+                "Mi":2
             }
         },
         "text":"[obf] +1 stealth.\n[OBF] As above, and minions who attempt to block this action and fail become locked before action resolution.",
@@ -32036,6 +32190,13 @@
             },
             "NB":{
                 "PN":"1"
+            },
+            "2P":{
+                "C":true,
+                "BH":1,
+                "B":1,
+                "N":1,
+                "Tz":1
             },
             "playtest":{
                 "SCai":1,
@@ -33383,6 +33544,9 @@
             },
             "NB":{
                 "PV":"1"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"+1 stealth action. Requires a prince or justicar.\nAdd 4 blood to another vampire.",
@@ -34220,6 +34384,11 @@
             },
             "V5A":{
                 "PBh":"2"
+            },
+            "2P":{
+                "C":true,
+                "BH":4,
+                "B":2
             }
         },
         "text":"+1 stealth action.\n[cel] (D) Bleed.\n[CEL] (D) Enter combat with a locked minion. This acting vampire gets 1 optional maneuver during that combat.",
@@ -34867,6 +35036,11 @@
             "NB":{
                 "PN":"4",
                 "PTr":"3"
+            },
+            "2P":{
+                "C":true,
+                "N":2,
+                "Tr":1
             }
         },
         "text":"Only usable by a locked vampire.\nThis vampire wakes (they ignore the requirement to be unlocked for playing reaction cards and attempting to block until the end of the action). If they do not block this action, they burn 1 blood before action resolution.",
@@ -35482,6 +35656,11 @@
             "V5C":{
                 "PTz":"2"
             },
+            "2P":{
+                "C":true,
+                "Mi":2,
+                "Tz":2
+            },
             "playtest":{
                 "NTz":3
             }
@@ -35514,6 +35693,9 @@
             },
             "NB2":{
                 "PMi":"2"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"[pro] [COMBAT] Strike: steal 1 blood or life (becoming blood).\n[PRO] [ACTION MODIFIER] Only usable as the action is announced. +1 stealth, even if stealth is not yet needed.",
@@ -35941,6 +36123,9 @@
             },
             "NB2":{
                 "PBH":"2"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"+1 stealth action. Requires a prince or justicar.\nAdd 3 blood to a younger vampire in your uncontrolled region.",
@@ -39487,6 +39672,19 @@
             },
             "NB2":{
                 "PBH":"2"
+            },
+            "2P":{
+                "C":true,
+                "BH":2,
+                "B":2,
+                "G":2,
+                "L":2,
+                "M":2,
+                "Mi":2,
+                "N":2,
+                "Sal":2,
+                "To":2,
+                "V":2
             }
         },
         "text":"Move up to 3 blood from a ready vampire you control to a younger vampire of the same clan in your uncontrolled region.",
@@ -39700,6 +39898,11 @@
             },
             "V5C":{
                 "PR":"4"
+            },
+            "2P":{
+                "C":true,
+                "N":2,
+                "Tz":2
             }
         },
         "text":"Only usable by a locked vampire during a bleed action directed at you.\n[ani] Unlock this vampire.\n[ANI] As above, with 1 optional maneuver during the resulting combat if this vampire blocks.",
@@ -43272,6 +43475,10 @@
             },
             "NB2":{
                 "PBH":"6"
+            },
+            "2P":{
+                "C":true,
+                "BH":6
             }
         },
         "text":"Only usable before range is determined.\n[tha] This round, this vampire can strike, ranged: steal 1 blood or life (becoming blood).\n[THA] As above, but for 2 blood or life (becoming blood).",
@@ -45636,6 +45843,10 @@
             },
             "V5":{
                 "PN":"4"
+            },
+            "2P":{
+                "C":true,
+                "N":2
             }
         },
         "text":"Only usable if a minion controlled by your predator is acting.\n[ani] +1 intercept.\n[ANI] As above, with 1 optional maneuver during the resulting combat if this vampire blocks.",
@@ -48456,6 +48667,15 @@
             "30th":{
                 "":"2"
             },
+            "2P":{
+                "C":true,
+                "BH":1,
+                "B":2,
+                "L":3,
+                "Mi":2,
+                "To":4,
+                "V":3
+            },
             "playtest":{
                 "SPIV":5
             }
@@ -50568,6 +50788,16 @@
             },
             "NB":{
                 "PV":"2"
+            },
+            "2P":{
+                "C":true,
+                "G":2,
+                "L":2,
+                "M":2,
+                "Mi":2,
+                "Sal":2,
+                "Tz":3,
+                "V":2
             }
         },
         "text":"Trifle.\nAdd 1 blood to a ready vampire.",
@@ -50861,6 +51091,10 @@
             },
             "NB2":{
                 "PB":"3"
+            },
+            "2P":{
+                "C":true,
+                "B":4
             }
         },
         "text":"Requires an Anarch.\n[cel] (D) Steal 1 pool from another Methuselah.\n[pot] (D) Enter combat with a minion.\n[pre] (D) Bleed with +1 bleed.",
@@ -51535,6 +51769,11 @@
             },
             "V5C":{
                 "PR":"4"
+            },
+            "2P":{
+                "C":true,
+                "M":2,
+                "Mi":3
             }
         },
         "text":"[obf] +1 stealth. Lost in Crowds and cards named /Into Thin Air/ cannot both be played during the same action.\n[OBF] As above, but for +2 stealth.",
@@ -51603,6 +51842,10 @@
         "set":{
             "30th":{
                 "":"6"
+            },
+            "2P":{
+                "C":true,
+                "To":3
             }
         },
         "text":"Only one Loup can be played each turn.\nPut this card in play. Toreador get +1 stealth. Burn this card at the end of the turn or after a Toreador performs a successful action.",
@@ -54764,6 +55007,10 @@
             },
             "NB":{
                 "PTr":"1"
+            },
+            "2P":{
+                "C":true,
+                "Tr":1
             }
         },
         "text":"[aus] +1 intercept.\n[AUS] As above, and if this vampire blocks, put this card on the acting minion; you still control this card. During a bleed action against the controller of the attached minion, this reacting vampire can burn this card to get +1 bleed.",
@@ -56014,6 +56261,10 @@
             "V5":{
                 "PTr":"6"
             },
+            "2P":{
+                "C":true,
+                "Tr":3
+            },
             "playtest":{
                 "SDS":3
             }
@@ -56107,6 +56358,12 @@
             },
             "NB":{
                 "PV":"1"
+            },
+            "2P":{
+                "C":true,
+                "Sal":1,
+                "Tr":1,
+                "V":1
             },
             "playtest":{
                 "SCat":2
@@ -58028,6 +58285,11 @@
             },
             "Promo":{
                 "2024-02-29":true
+            },
+            "2P":{
+                "C":true,
+                "G":1,
+                "Tz":1
             }
         },
         "text":"Only usable before range is determined during the first round. A vampire can play only one Mythic Form each combat.\n[pro] This combat, this vampire gets +1 strength and can prevent 1 non-aggravated damage each round.\n[PRO] As above, but with 1 optional maneuver this round, and this vampire can strike: 2R aggravated damage once each round this combat.",
@@ -60231,6 +60493,10 @@
             "V5C":{
                 "PTz":"4"
             },
+            "2P":{
+                "C":true,
+                "Tz":3
+            },
             "playtest":{
                 "NTz":2
             }
@@ -60289,6 +60555,10 @@
             },
             "NB2":{
                 "PMi":"1"
+            },
+            "2P":{
+                "C":true,
+                "M":1
             }
         },
         "text":"Discipline.\nPut this card on a vampire. This vampire gets +1 level of Obfuscate [obf] and +1 capacity. Cannot be put on a vampire with superior Obfuscate [OBF].",
@@ -60319,6 +60589,9 @@
             },
             "V5L":{
                 "PL":"1"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Discipline.\nPut this card on a vampire. This vampire gets +1 level of Oblivion [obl] and +1 capacity. Cannot be put on a vampire with superior Oblivion [OBL].",
@@ -60608,6 +60881,11 @@
             },
             "NB":{
                 "PM":"2"
+            },
+            "2P":{
+                "C":true,
+                "BH":2,
+                "N":2
             }
         },
         "text":"Do not replace until your next unlock phase.\n[obf] Only usable during a bleed action. +1 bleed (limited).\n[OBF] Only usable during the polling step of a political action. This vampire gets +2 votes.",
@@ -60715,6 +60993,10 @@
         "set":{
             "V5L":{
                 "PL":"4"
+            },
+            "2P":{
+                "C":true,
+                "L":3
             }
         },
         "text":"Only usable during the polling step of a political action.\nThis Lasombra gets +3 votes.",
@@ -60815,6 +61097,13 @@
             "30th":{
                 "":"2"
             },
+            "2P":{
+                "C":true,
+                "Mi":2,
+                "Sal":2,
+                "To":2,
+                "Tz":2
+            },
             "playtest":{
                 "SCat":3,
                 "SPIV":5,
@@ -60872,6 +61161,10 @@
         "set":{
             "V5C":{
                 "PTz":"4"
+            },
+            "2P":{
+                "C":true,
+                "Tz":3
             },
             "playtest":{
                 "NTz":1
@@ -61244,6 +61537,11 @@
             },
             "V5C":{
                 "PTz":"3"
+            },
+            "2P":{
+                "C":true,
+                "B":4,
+                "G":3
             }
         },
         "text":"Requires a baron. Usable by a locked baron.\nAn Anarch you control gets +1 intercept. Also usable to unlock a locked Anarch you control; that Anarch attempts to block with +1 intercept, even if intercept is not yet needed.",
@@ -61776,6 +62074,10 @@
             },
             "NB":{
                 "PN":"1"
+            },
+            "2P":{
+                "C":true,
+                "N":1
             }
         },
         "text":"Animal with 1 life.\n[ani] While the employer is in combat, the opposing minion's controller plays with an open hand.\n[ANI] As above, but Owl Companion has 2 life.",
@@ -61809,6 +62111,10 @@
             },
             "NB2":{
                 "PB":"1"
+            },
+            "2P":{
+                "C":true,
+                "B":1
             }
         },
         "text":"Unique location.\nYou can lock this card and burn X pool during the polling step of a political action to get +2X votes.",
@@ -62331,6 +62637,13 @@
             },
             "NB3":{
                 "PL":"2"
+            },
+            "2P":{
+                "C":true,
+                "BH":2,
+                "L":2,
+                "To":2,
+                "V":2
             }
         },
         "text":"Requires a prince or justicar.\nChoose a Methuselah who has more pool than you do and allocate 3 of their pool among 1 or more other Methuselahs (including you). Successful referendum means the pool is distributed as you chose.",
@@ -62455,6 +62768,10 @@
             },
             "NB2":{
                 "PMi":"4"
+            },
+            "2P":{
+                "C":true,
+                "Mi":4
             }
         },
         "text":"Requires an Anarch.\n[obf] Reduce a bleed against you by 2.\n[pre] Only usable during the polling step of a political action. This vampire gets +2 votes.\n[pro] +1 intercept.",
@@ -63698,6 +64015,11 @@
             },
             "30th":{
                 "":"2"
+            },
+            "2P":{
+                "C":true,
+                "To":4,
+                "V":3
             }
         },
         "text":"[pre] Only usable during the polling step of a political action. This vampire gets +3 votes.\n[PRE] Allies and younger vampires get -1 intercept.",
@@ -64404,6 +64726,10 @@
             },
             "NB2":{
                 "PMi":"5"
+            },
+            "2P":{
+                "C":true,
+                "Mi":4
             }
         },
         "text":"Requires an Anarch. More than one Discipline can be used to play this card. (D) Bleed.\n[obf] This is a +1 stealth action.\n[pre] The bleed is with +1 bleed.\n[pro] Put 1 corruption counter on a minion controlled by the target Methuselah if the bleed is successful (for 1 or more).",
@@ -64729,6 +65055,10 @@
             },
             "NB":{
                 "PV":"1"
+            },
+            "2P":{
+                "C":true,
+                "V":1
             }
         },
         "text":"Unique mortal with 1 life. 0 strength, 3 bleed.",
@@ -65284,6 +65614,9 @@
             },
             "NB":{
                 "PN":"1"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Discipline.\nPut this card on a vampire. This vampire gets +1 level of Potence [pot] and +1 capacity. Cannot be put on a vampire with superior Potence [POT].",
@@ -67239,6 +67572,11 @@
             },
             "NB":{
                 "PTr":"1"
+            },
+            "2P":{
+                "C":true,
+                "Sal":1,
+                "Tr":2
             }
         },
         "text":"[aus] +1 intercept.\n[AUS] As above, and this vampire can prevent 1 damage during the first round of the resulting combat if they block.",
@@ -68271,6 +68609,9 @@
             },
             "NB2":{
                 "PG":"1"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Discipline.\nPut this card on a vampire. This vampire gets +1 level of Protean [pro] and +1 capacity. Cannot be put on a vampire with superior Protean [PRO].",
@@ -68331,6 +68672,10 @@
             },
             "NB":{
                 "PN":"2"
+            },
+            "2P":{
+                "C":true,
+                "N":2
             }
         },
         "text":"Requires a primogen. Only usable during a bleed action against you or during the polling step of a political action.\nReduce the bleed amount by 3 or this vampire gains +3 votes against the referendum.",
@@ -68436,6 +68781,11 @@
             },
             "V5C":{
                 "PR":"4"
+            },
+            "2P":{
+                "C":true,
+                "B":2,
+                "G":2
             },
             "playtest":{
                 "NR":2
@@ -69138,6 +69488,10 @@
             },
             "30th":{
                 "":"1"
+            },
+            "2P":{
+                "C":true,
+                "Sal":1
             }
         },
         "text":"Only usable at close range at the end of a round during which this minion successfully inflicted more damage than the opposing vampire. Not usable by a minion being burned or going to torpor.\nPut this card on the opposing vampire; this minion inflicts 1 damage on them. The attached vampire cannot hunt; if they must hunt, they go to torpor instead. Any vampire(s) can burn this card with two +1 stealth actions. A vampire can have only one Pulled Fangs.",
@@ -69476,6 +69830,12 @@
             "V5A":{
                 "PB":"2",
                 "PBh":"4"
+            },
+            "2P":{
+                "C":true,
+                "BH":4,
+                "B":3,
+                "To":2
             }
         },
         "text":"[cel] Maneuver.\n[CEL] Additional strike (limited).",
@@ -72406,6 +72766,11 @@
             },
             "NB":{
                 "PTr":"2"
+            },
+            "2P":{
+                "C":true,
+                "BH":2,
+                "Tr":3
             }
         },
         "text":"A vampire can play only one Rego Motum each round.\n[tha] Prevent 2 damage from the opposing minion's strike.\n[THA] Prevent 4 damage from the opposing minion's strike.",
@@ -73409,6 +73774,9 @@
             },
             "NB":{
                 "PV":"1"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"+1 stealth action.\n[for] This vampire gains 2 blood.\n[FOR] This vampire gains 3 blood.",
@@ -74175,6 +74543,9 @@
             },
             "NB2":{
                 "PMi":"1"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Requires a baron.\nChoose X ready unlocked Anarchs you control and allocate 2X points among one or more Methuselahs, locations, and equipment. Successful referendum means each chosen Anarch is locked, each Methuselah burns 1 pool for each point allocated, and each location or equipment allocated a point is burned.",
@@ -74220,6 +74591,10 @@
             },
             "NB2":{
                 "PG":"1"
+            },
+            "2P":{
+                "C":true,
+                "G":1
             }
         },
         "text":"(D) Burn a location and burn 2 pool from its controller.",
@@ -75132,6 +75507,12 @@
             },
             "V5H":{
                 "PH":"4"
+            },
+            "2P":{
+                "C":true,
+                "G":2,
+                "Sal":2,
+                "V":3
             }
         },
         "text":"[for] Prevent 1 damage.\n[FOR] Burn 1 blood to prevent all damage from the opposing minion's strikes this round.",
@@ -75816,6 +76197,10 @@
             },
             "NB":{
                 "PTr":"1"
+            },
+            "2P":{
+                "C":true,
+                "BH":1
             }
         },
         "text":"Unique location.\nYou can lock this card during an action to choose a vampire; the chosen vampire can burn 1 blood to get +1 intercept during that action.",
@@ -77001,6 +77386,10 @@
             },
             "NB":{
                 "PTo":"1"
+            },
+            "2P":{
+                "C":true,
+                "To":1
             }
         },
         "text":"Only usable during the polling step of a political action.\n[cel][pre] Choose a vampire who has cast votes or ballots in this referendum. The chosen vampire is locked and abstains (this cancels the chosen vampire's votes and ballots).\n[CEL][PRE] As above, and the chosen vampire burns 1 blood.",
@@ -77515,6 +77904,14 @@
             },
             "NB3":{
                 "PL":"4"
+            },
+            "2P":{
+                "C":true,
+                "L":4,
+                "M":6,
+                "Sal":5,
+                "Tr":5,
+                "Tz":4
             }
         },
         "text":"[dom] (D) Bleed with +1 bleed.\n[DOM] +1 stealth action. Add 2 blood to a younger vampire in your uncontrolled region.",
@@ -77988,6 +78385,14 @@
             },
             "NB3":{
                 "PL":"3"
+            },
+            "2P":{
+                "C":true,
+                "BH":5,
+                "L":2,
+                "To":2,
+                "Tr":2,
+                "V":2
             }
         },
         "text":"Requires a prince or justicar.\n[REACTION] +2 intercept.\n[REACTION] Only usable by a locked prince or justicar. This vampire burns 1 blood to unlock and attempt to block with +2 intercept, even if intercept is not yet needed.",
@@ -78295,6 +78700,11 @@
             },
             "V5C":{
                 "PSal":"2"
+            },
+            "2P":{
+                "C":true,
+                "Sal":3,
+                "V":2
             }
         },
         "text":"Only usable as the action is announced.\n[dom] Choose a younger vampire. The chosen vampire cannot block this action.\n[DOM] As above, but choose any vampire.",
@@ -78515,6 +78925,9 @@
             },
             "Promo":{
                 "2024-09-12":true
+            },
+            "2P":{
+                "C":true
             },
             "playtest":{
                 "SCai":4,
@@ -79481,6 +79894,10 @@
             },
             "V5L":{
                 "PL":"4"
+            },
+            "2P":{
+                "C":true,
+                "L":3
             }
         },
         "text":"[obl] +1 stealth.\n[OBL] Only usable after resolution of a successful directed action. Put this card on this vampire. During an action directed at the same Methuselah or same set of Methuselahs, this vampire can burn this card to get +1 stealth.",
@@ -79523,6 +79940,10 @@
             },
             "NB3":{
                 "PH":"2"
+            },
+            "2P":{
+                "C":true,
+                "L":3
             },
             "playtest":{
                 "SDS":3
@@ -79913,6 +80334,10 @@
             "NB3":{
                 "PH":"3",
                 "PL":"2"
+            },
+            "2P":{
+                "C":true,
+                "L":2
             },
             "playtest":{
                 "SDS":4
@@ -81420,6 +81845,12 @@
             },
             "NB2":{
                 "PBH":"2"
+            },
+            "2P":{
+                "C":true,
+                "BH":4,
+                "B":2,
+                "To":4
             }
         },
         "text":"[cel] Strike: dodge.\n[CEL] Additional strike (limited).",
@@ -82317,6 +82748,12 @@
             },
             "V5A":{
                 "PB":"4"
+            },
+            "2P":{
+                "C":true,
+                "B":4,
+                "L":2,
+                "N":4
             }
         },
         "text":"[pot] Strike: hand strike at +2 damage.\n[POT] As above, with 1 optional maneuver, only usable to get to close range.",
@@ -83169,6 +83606,12 @@
             },
             "NB":{
                 "PV":"2"
+            },
+            "2P":{
+                "C":true,
+                "G":2,
+                "Sal":2,
+                "V":2
             }
         },
         "text":"A vampire can play only one Soak each round.\n[for] Prevent 2 non-aggravated damage.\n[FOR] Prevent 4 non-aggravated damage.",
@@ -83251,6 +83694,9 @@
             },
             "NB":{
                 "PV":"2"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"[pre] (D) Bleed with +1 bleed.\n[PRE] As above, and gain 1 pool if the bleed is successful (for 1 or more).",
@@ -83655,6 +84101,10 @@
             },
             "V5A":{
                 "PBh":"2"
+            },
+            "2P":{
+                "C":true,
+                "Tr":1
             }
         },
         "text":"[tha] Strike: 1R damage. This damage cannot be prevented by cards requiring Fortitude [for]. The opposing vampire's strikes with weapons inflict no damage this round.\n[THA] As above, but for 2R damage.",
@@ -84659,6 +85109,11 @@
             },
             "NB":{
                 "PTr":"2"
+            },
+            "2P":{
+                "C":true,
+                "Sal":1,
+                "Tr":2
             }
         },
         "text":"[aus] +1 intercept.\n[AUS] As above, with 1 optional maneuver during the resulting combat if this vampire blocks.",
@@ -85012,6 +85467,11 @@
             },
             "NB":{
                 "PN":"1"
+            },
+            "2P":{
+                "C":true,
+                "M":2,
+                "Mi":1
             }
         },
         "text":"[obf] +1 stealth.\n[OBF] Only usable if a bleed would be successful. Instead, the bleed burns no pool, is unsuccessful, and this card is put on this vampire. The next time this vampire is about to successfully bleed the same Methuselah, burn this card and this vampire gets +2 bleed.",
@@ -87635,6 +88095,13 @@
             },
             "V5C":{
                 "PR":"4"
+            },
+            "2P":{
+                "C":true,
+                "BH":4,
+                "M":4,
+                "Mi":3,
+                "N":3
             }
         },
         "text":"[obf] [ACTION MODIFIER] +1 stealth.\n[OBF] [COMBAT] Maneuver.",
@@ -89267,6 +89734,11 @@
             "NB3":{
                 "PL":"3"
             },
+            "2P":{
+                "C":true,
+                "B":2,
+                "N":2
+            },
             "playtest":{
                 "SCai":4,
                 "NR":2,
@@ -89416,6 +89888,12 @@
             },
             "NB":{
                 "PTo":"2"
+            },
+            "2P":{
+                "C":true,
+                "M":4,
+                "Sal":3,
+                "To":4
             }
         },
         "text":"[aus] Reduce a bleed against you by 1.\n[AUS] Reduce a bleed against you by 2.",
@@ -89658,6 +90136,9 @@
             },
             "NB":{
                 "PM":"2"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Only usable during the polling step of a political action.\n[aus] Cancel the referendum. If you played a political action card to call this referendum, return it to its owner's hand (discard down afterward).\n[AUS] Force a vampire to abstain (this can cancel their votes and ballots).",
@@ -90406,6 +90887,10 @@
             },
             "NB":{
                 "PTr":"5"
+            },
+            "2P":{
+                "C":true,
+                "Tr":4
             }
         },
         "text":"[tha] Ranged strike: steal 1 blood or life (becoming blood).\n[THA] Ranged strike: steal 2 blood or life (becoming blood).",
@@ -90630,6 +91115,10 @@
             },
             "NB2":{
                 "PG":"5"
+            },
+            "2P":{
+                "C":true,
+                "G":4
             }
         },
         "text":"+1 stealth action.\nAdd 2 blood to a Gangrel in your uncontrolled region.",
@@ -90937,6 +91426,15 @@
             "NB":{
                 "PM":"2",
                 "PTr":"2"
+            },
+            "2P":{
+                "C":true,
+                "L":2,
+                "M":5,
+                "Sal":3,
+                "Tr":2,
+                "Tz":3,
+                "V":2
             }
         },
         "text":"Only usable during a bleed action.\n[dom] +1 bleed (limited).\n[DOM] +2 bleed (limited).",
@@ -91970,6 +92468,10 @@
         "set":{
             "V5C":{
                 "PSal":"3"
+            },
+            "2P":{
+                "C":true,
+                "Sal":3
             },
             "playtest":{
                 "NSal":3
@@ -93569,6 +94071,10 @@
             },
             "V5A":{
                 "PMin":"2"
+            },
+            "2P":{
+                "C":true,
+                "Mi":4
             }
         },
         "text":"[obf][pre] Only usable during a bleed action. +1 bleed (limited).\n[OBF][PRE] Only usable if a minion attempts to block. That attempt fails and the blocking minion cannot attempt to block this action again. The blocking minion's controller can burn 1 pool to cancel this card as it is played.",
@@ -93627,6 +94133,10 @@
             },
             "V5L":{
                 "PL":"2"
+            },
+            "2P":{
+                "C":true,
+                "L":2
             }
         },
         "text":"[obl] +1 intercept.\n[OBL] As above, and if this vampire blocks, they can burn 1 blood to unlock after block resolution.",
@@ -97403,6 +97913,10 @@
         "set":{
             "V5C":{
                 "PR":"4"
+            },
+            "2P":{
+                "C":true,
+                "Mi":2
             }
         },
         "text":"[obf][pre] Reduce a bleed against you by 3.\n[OBF][PRE] Lock this vampire to reduce a bleed against you to 0. (The acting minion can still increase the bleed amount.)",
@@ -97681,6 +98195,11 @@
         "set":{
             "V5C":{
                 "PR":"2"
+            },
+            "2P":{
+                "C":true,
+                "N":2,
+                "Tz":2
             }
         },
         "text":"[ani] Strike: dodge.\n[ANI] As above, with 1 additional ranged strike: burn weapon.",
@@ -97769,6 +98288,11 @@
             },
             "30th":{
                 "":"6"
+            },
+            "2P":{
+                "C":true,
+                "To":2,
+                "V":2
             },
             "playtest":{
                 "SPIV":2
@@ -98101,6 +98625,12 @@
             "NB":{
                 "PM":"3",
                 "PV":"3"
+            },
+            "2P":{
+                "C":true,
+                "M":2,
+                "Mi":2,
+                "V":2
             }
         },
         "text":"Only usable by a locked vampire. Do not replace until your next unlock phase.\nThis vampire wakes (they ignore the requirement to be unlocked for playing reaction cards and attempting to block until the end of the action).",
@@ -98600,6 +99130,10 @@
             },
             "NB":{
                 "PN":"2"
+            },
+            "2P":{
+                "C":true,
+                "N":2
             }
         },
         "text":"Only usable during an action directed at you (or a card you control).\n+2 intercept, with an additional +1 intercept if this Nosferatu is titled.",
@@ -98848,6 +99382,10 @@
             },
             "V5":{
                 "PTr":"1"
+            },
+            "2P":{
+                "C":true,
+                "Tr":1
             }
         },
         "text":"Unique location.\nDuring your master phase, a Tremere you control can move 1 blood from themselves to this card. Lock during your influence phase to move all counters on this card to a Tremere in your uncontrolled region. Any minion can burn this card as a (D) action; Malkavians get +1 stealth during that action.",
@@ -99541,6 +100079,13 @@
             },
             "V5C":{
                 "PSal":"4"
+            },
+            "2P":{
+                "C":true,
+                "M":2,
+                "Sal":3,
+                "To":3,
+                "V":3
             }
         },
         "text":"Only usable before range is determined during the first round.\nPut this card with 5 counters on it on this minion; it becomes a melee weapon equipment that can strike: strength+1 damage. For each damage inflicted by this strike (even if prevented), burn 1 counter from this card. Burn this card if it has no counters. A minion can have only one Weighted Walking Stick.",
@@ -99754,6 +100299,10 @@
             },
             "NB3":{
                 "PH":"2"
+            },
+            "2P":{
+                "C":true,
+                "L":2
             },
             "playtest":{
                 "SDS":3
@@ -100023,6 +100572,20 @@
             },
             "30th":{
                 "":"1"
+            },
+            "2P":{
+                "C":true,
+                "BH":1,
+                "B":1,
+                "G":1,
+                "L":1,
+                "M":1,
+                "Mi":1,
+                "N":1,
+                "Sal":1,
+                "To":1,
+                "Tz":1,
+                "V":1
             }
         },
         "text":"Trifle.\nPut this card in play. You can use 1 transfer to draw 1 card from your crypt and then remove a crypt card in your uncontrolled region from the game. You can use 4 transfers to burn this card and gain 2 pool.",
@@ -100218,6 +100781,10 @@
             },
             "NB2":{
                 "PBH":"1"
+            },
+            "2P":{
+                "C":true,
+                "Tr":2
             }
         },
         "text":"[tha] Strike: dodge.\n[THA] As above, with 1 additional strike: dodge (limited).",
@@ -100370,6 +100937,10 @@
             },
             "NB":{
                 "PN":"1"
+            },
+            "2P":{
+                "C":true,
+                "Tr":1
             }
         },
         "text":"Unique location.\nYou can lock this card to give a minion +1 intercept. If that minion does not block the action, burn 1 pool after action resolution.",

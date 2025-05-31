@@ -12,6 +12,7 @@ uv run generate_rulings.py
 uv run generate_crypt.py
 uv run generate_library.py
 uv run fix_crossrefs.py
+uv run generate_two_players.py
 uv run generate_playtest_precons.py
 uv run generate_precons.py
 mv cardbase_crypt.min.json ../../frontend/public/data/cardbase_crypt.json

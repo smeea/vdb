@@ -1,6 +1,20 @@
 import json
 
 bundles = {
+    "2P": {
+        "BH": {},
+        "B": {},
+        "G": {},
+        "L": {},
+        "M": {},
+        "Mi": {},
+        "N": {},
+        "Sal": {},
+        "To": {},
+        "Tr": {},
+        "Tz": {},
+        "V": {},
+    },
     "NB3": {"PH": {}, "PL": {}},
     "V5H": {
         "PH": {},
@@ -193,10 +207,10 @@ with (
             crypt = crypt + list(json.load(crypt_playtest_file).values())
             library = library + list(json.load(library_playtest_file).values())
 
-            # bundles = {
-            #     **playtest_bundles,
-            #     **bundles,
-            # }
+            bundles = {
+                **playtest_bundles,
+                **bundles,
+            }
 
     except Exception as e:
         print(e)
@@ -206,11 +220,15 @@ with (
             if card_set in bundles:
                 for precon in bundles[card_set].keys():
                     if precon in card_precons:
-                        bundles[card_set][precon][card["id"]] = int(card_precons[precon])
+                        bundles[card_set][precon][card["id"]] = int(
+                            card_precons[precon]
+                        )
             if card_set in playtest_bundles:
                 for precon in playtest_bundles[card_set].keys():
                     if precon in card_precons:
-                        playtest_bundles[card_set][precon][card["id"]] = int(card_precons[precon])
+                        playtest_bundles[card_set][precon][card["id"]] = int(
+                            card_precons[precon]
+                        )
 
     json.dump(bundles, precons_file_min, separators=(",", ":"))
     json.dump(bundles, precons_file, indent=4, separators=(",", ":"))

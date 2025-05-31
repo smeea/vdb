@@ -385,6 +385,10 @@
         "set":{
             "FoL":{
                 "":"2"
+            },
+            "2P":{
+                "C":true,
+                "M":2
             }
         },
         "text":"Camarilla: Abraham can play cards requiring a Tremere as if he were a Tremere. While he is ready, you get +1 hand size.",
@@ -1216,6 +1220,10 @@
         "set":{
             "V5L":{
                 "PL":"1"
+            },
+            "2P":{
+                "C":true,
+                "L":1
             }
         },
         "text":"Camarilla.",
@@ -2144,6 +2152,10 @@
             },
             "NB":{
                 "PV":"1"
+            },
+            "2P":{
+                "C":true,
+                "V":2
             }
         },
         "text":"Camarilla Prince of Melbourne: During the polling step of any referendum, Alexa can discard a card requiring Dominate [dom] to get +1 vote.",
@@ -2179,6 +2191,10 @@
             },
             "NB":{
                 "PM":"1"
+            },
+            "2P":{
+                "C":true,
+                "M":2
             }
         },
         "text":"Camarilla Prince of Birmingham: Vampires must burn 1 blood to cast votes and ballots against referendums called by Alexander.",
@@ -2419,6 +2435,10 @@
             },
             "NB":{
                 "PV":"1"
+            },
+            "2P":{
+                "C":true,
+                "V":2
             }
         },
         "text":"Camarilla Prince of Nairobi.",
@@ -3657,6 +3677,10 @@
             },
             "NB":{
                 "PM":"1"
+            },
+            "2P":{
+                "C":true,
+                "M":2
             }
         },
         "text":"Camarilla Prince of Taipei.",
@@ -3753,6 +3777,10 @@
             },
             "SoB":{
                 "":"10"
+            },
+            "2P":{
+                "C":true,
+                "G":1
             }
         },
         "text":"Camarilla: While Andr\u00e9 is ready, you get +2 hand size.",
@@ -4127,6 +4155,10 @@
         "set":{
             "V5C":{
                 "PTz":"2"
+            },
+            "2P":{
+                "C":true,
+                "Tz":4
             }
         },
         "text":"Anarch Baron of Ciudad Ju\u00e1rez.",
@@ -4436,6 +4468,10 @@
         "set":{
             "V5C":{
                 "PSal":"1"
+            },
+            "2P":{
+                "C":true,
+                "Sal":2
             }
         },
         "text":"Independent: Aniel can burn 1 corruption counter or a card requiring a Discipline from another ready minion as a +1 stealth (D) action that costs 1 blood.",
@@ -6790,6 +6826,10 @@
         "set":{
             "V5A":{
                 "PB":"2"
+            },
+            "2P":{
+                "C":true,
+                "B":2
             }
         },
         "text":"Anarch Baron of Mombasa.",
@@ -7004,6 +7044,10 @@
             },
             "NB":{
                 "PTr":"1"
+            },
+            "2P":{
+                "C":true,
+                "Tr":2
             }
         },
         "text":"Camarilla Prince of Addis Ababa.",
@@ -7217,6 +7261,10 @@
             },
             "NB3":{
                 "PL":"1"
+            },
+            "2P":{
+                "C":true,
+                "L":1
             }
         },
         "text":"Camarilla: Azucena gets +1 intercept against younger Lasombra and -1 intercept against older Lasombra.",
@@ -8453,6 +8501,10 @@
         "set":{
             "V5":{
                 "PN":"2"
+            },
+            "2P":{
+                "C":true,
+                "N":2
             }
         },
         "text":"Camarilla Prince of Copenhagen.",
@@ -9731,6 +9783,10 @@
         "set":{
             "V5C":{
                 "PTz":"2"
+            },
+            "2P":{
+                "C":true,
+                "Tz":2
             }
         },
         "text":"Anarch Baron of Sofia: While you have 9 or fewer pool, Branimira gets +1 intercept.",
@@ -10940,6 +10996,10 @@
         "set":{
             "NB":{
                 "PTo":"1"
+            },
+            "2P":{
+                "C":true,
+                "To":1
             }
         },
         "text":"Camarilla: While Carmelita is ready, you get +1 hand size.",
@@ -11224,6 +11284,10 @@
             },
             "NB2":{
                 "PG":"1"
+            },
+            "2P":{
+                "C":true,
+                "G":2
             }
         },
         "text":"Anarch Baron of Columbus.",
@@ -12225,6 +12289,10 @@
             },
             "NB":{
                 "PTr":"1"
+            },
+            "2P":{
+                "C":true,
+                "Tr":1
             }
         },
         "text":"Camarilla primogen.",
@@ -12319,6 +12387,10 @@
         "set":{
             "V5C":{
                 "PTz":"1"
+            },
+            "2P":{
+                "C":true,
+                "Tz":2
             },
             "playtest":{
                 "NTz":1
@@ -13507,6 +13579,10 @@
             },
             "NB2":{
                 "PMi":"1"
+            },
+            "2P":{
+                "C":true,
+                "Mi":2
             }
         },
         "text":"Anarch.",
@@ -14172,6 +14248,10 @@
         "set":{
             "V5A":{
                 "PG":"1"
+            },
+            "2P":{
+                "C":true,
+                "G":1
             }
         },
         "text":"Anarch.",
@@ -15084,6 +15164,10 @@
         "set":{
             "30th":{
                 "":"3"
+            },
+            "2P":{
+                "C":true,
+                "To":4
             }
         },
         "text":"Camarilla Toreador Justicar: During a referendum she calls, Diana can burn 1 blood to cancel a reaction card as it is played (cost is still paid). +1 bleed.",
@@ -16242,6 +16326,10 @@
             },
             "NB":{
                 "PM":"1"
+            },
+            "2P":{
+                "C":true,
+                "M":2
             }
         },
         "text":"Camarilla Prince of Pittsburgh.",
@@ -16416,6 +16504,10 @@
             },
             "NB":{
                 "PN":"1"
+            },
+            "2P":{
+                "C":true,
+                "N":2
             }
         },
         "text":"Camarilla primogen: The Dowager gets +1 intercept during directed actions.",
@@ -18096,6 +18188,10 @@
             },
             "NB2":{
                 "PMi":"1"
+            },
+            "2P":{
+                "C":true,
+                "Mi":2
             }
         },
         "text":"Anarch Baron of Pittsburgh.",
@@ -19858,6 +19954,10 @@
             },
             "NB2":{
                 "PBH":"1"
+            },
+            "2P":{
+                "C":true,
+                "BH":2
             }
         },
         "text":"Camarilla Prince of Detroit.",
@@ -20322,6 +20422,10 @@
         "set":{
             "Promo":{
                 "2021-10-15":true
+            },
+            "2P":{
+                "C":true,
+                "V":1
             }
         },
         "text":"Camarilla: If you burn the Edge for a vote, you get +1 vote. If you burn a political action card for a vote, you get +1 vote.",
@@ -21594,6 +21698,10 @@
         "set":{
             "V5":{
                 "PM":"1"
+            },
+            "2P":{
+                "C":true,
+                "M":1
             }
         },
         "text":"Camarilla.",
@@ -22776,6 +22884,10 @@
             },
             "NB3":{
                 "PL":"1"
+            },
+            "2P":{
+                "C":true,
+                "L":3
             }
         },
         "text":"Camarilla Prince of Lima: If Aemilius is ready during your unlock phase, your prey chooses a ready minion they control; the chosen minion takes 1 unpreventable damage.",
@@ -25619,6 +25731,9 @@
             },
             "POD":{
                 "DTC":true
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Independent: Hesha gets +1 stealth when hunting. +1 hunt.",
@@ -25655,6 +25770,10 @@
             },
             "Promo":{
                 "2023-10-07":true
+            },
+            "2P":{
+                "C":true,
+                "Mi":2
             }
         },
         "text":"Anarch: Hesha gets +1 bleed for each unique equipment attached to him.",
@@ -26014,6 +26133,10 @@
             },
             "NB":{
                 "PN":"1"
+            },
+            "2P":{
+                "C":true,
+                "N":1
             }
         },
         "text":"Camarilla.",
@@ -26206,6 +26329,10 @@
         "set":{
             "V5":{
                 "PV":"2"
+            },
+            "2P":{
+                "C":true,
+                "V":1
             }
         },
         "text":"Camarilla Prince of Mannheim.",
@@ -26585,6 +26712,10 @@
         "set":{
             "30th":{
                 "":"2"
+            },
+            "2P":{
+                "C":true,
+                "Tr":3
             }
         },
         "text":"Camarilla Tremere Justicar: Once each turn after a combat involving Ian ends, he can unlock if the opposing minion is not ready. +1 intercept.",
@@ -27279,6 +27410,10 @@
         "set":{
             "V5":{
                 "PTr":"2"
+            },
+            "2P":{
+                "C":true,
+                "Tr":2
             }
         },
         "text":"Camarilla Prince of Rio de Janeiro.",
@@ -29586,6 +29721,10 @@
         "set":{
             "V5A":{
                 "PMin":"1"
+            },
+            "2P":{
+                "C":true,
+                "Mi":1
             }
         },
         "text":"Anarch.",
@@ -31264,6 +31403,10 @@
         "set":{
             "30th":{
                 "":"2"
+            },
+            "2P":{
+                "C":true,
+                "M":3
             }
         },
         "text":"Camarilla Malkavian Justicar: After a referendum called by Juliet passes, you get +2 hand size until your next unlock phase. Juliet gets 1 optional maneuver each combat.",
@@ -31631,6 +31774,9 @@
             },
             "POD":{
                 "DTC":true
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Independent: Kalinda can bleed with +1 bleed as a +1 stealth (D) action that costs 2 blood. Blood cursed.",
@@ -31662,6 +31808,10 @@
         "set":{
             "V5A":{
                 "PBh":"1"
+            },
+            "2P":{
+                "C":true,
+                "BH":1
             }
         },
         "text":"Camarilla primogen: During your turn, you can burn the Edge to unlock Kalinda.",
@@ -31732,6 +31882,10 @@
         "set":{
             "V5L":{
                 "PL":"1"
+            },
+            "2P":{
+                "C":true,
+                "L":2
             }
         },
         "text":"Camarilla primogen.",
@@ -32183,6 +32337,10 @@
         "set":{
             "Promo":{
                 "2021-10-15":true
+            },
+            "2P":{
+                "C":true,
+                "Tr":3
             }
         },
         "text":"Camarilla. 2 votes (titled): Karl can play cards requiring a justicar as if he were a justicar. +1 intercept.",
@@ -32386,6 +32544,10 @@
             },
             "NB2":{
                 "PBH":"2"
+            },
+            "2P":{
+                "C":true,
+                "BH":2
             }
         },
         "text":"Camarilla Banu Haqim Justicar: Once each combat, Kasim can discard a political action card [POLITICAL ACTION] before range is determined to get +2 strength that combat. +1 bleed.",
@@ -32417,6 +32579,10 @@
         "set":{
             "V5A":{
                 "PBh":"2"
+            },
+            "2P":{
+                "C":true,
+                "BH":1
             }
         },
         "text":"Camarilla Prince of Thessaloniki.",
@@ -33222,6 +33388,10 @@
         "set":{
             "NB":{
                 "PV":"1"
+            },
+            "2P":{
+                "C":true,
+                "V":2
             }
         },
         "text":"Camarilla Prince of Chicago: Kevin gets +1 strength in combat with a Brujah. Brujah get +1 strength in combat with him.",
@@ -33253,6 +33423,10 @@
         "set":{
             "V5A":{
                 "PBh":"1"
+            },
+            "2P":{
+                "C":true,
+                "BH":1
             }
         },
         "text":"Camarilla primogen.",
@@ -34090,6 +34264,10 @@
             },
             "NB2":{
                 "PG":"1"
+            },
+            "2P":{
+                "C":true,
+                "G":2
             }
         },
         "text":"Anarch Baron of Santiago: Animals (allies and retainers) cost Kuy\u00e9n -1 blood or pool.",
@@ -34866,6 +35044,10 @@
             },
             "NB":{
                 "PN":"1"
+            },
+            "2P":{
+                "C":true,
+                "N":3
             }
         },
         "text":"Camarilla primogen: During a bleed action, Larissa can discard a card requiring Animalism [ani] to get +1 bleed.",
@@ -35757,6 +35939,10 @@
             },
             "NB2":{
                 "PB":"1"
+            },
+            "2P":{
+                "C":true,
+                "B":2
             }
         },
         "text":"Anarch Baron of Canberra.",
@@ -36299,6 +36485,10 @@
             },
             "NB":{
                 "PTr":"1"
+            },
+            "2P":{
+                "C":true,
+                "Tr":1
             }
         },
         "text":"Camarilla primogen.",
@@ -38506,6 +38696,10 @@
             },
             "NB":{
                 "PV":"1"
+            },
+            "2P":{
+                "C":true,
+                "V":1
             }
         },
         "text":"Camarilla.",
@@ -38579,6 +38773,10 @@
                 "2022-07-30":true,
                 "2022-11-05":true,
                 "2024-04-23":true
+            },
+            "2P":{
+                "C":true,
+                "To":1
             }
         },
         "text":"Camarilla primogen: If Maila is ready during your turn, you can discard a political action card [POLITICAL ACTION] to give a minion you control +1 stealth for the current action.",
@@ -38714,6 +38912,10 @@
         "set":{
             "V5C":{
                 "PSal":"2"
+            },
+            "2P":{
+                "C":true,
+                "Sal":3
             },
             "playtest":{
                 "NSal":1
@@ -39289,6 +39491,10 @@
         "set":{
             "30th":{
                 "":"1"
+            },
+            "2P":{
+                "C":true,
+                "To":2
             }
         },
         "text":"Camarilla Prince of Bogota: Methuselahs casting (including controlling a minion casting) votes or ballots against a referendum called by Marcos burn 1 pool once results are tallied.",
@@ -39608,6 +39814,10 @@
             },
             "NB3":{
                 "PL":"1"
+            },
+            "2P":{
+                "C":true,
+                "L":2
             }
         },
         "text":"Camarilla Prince of Barcelona.",
@@ -41016,6 +41226,10 @@
             },
             "NB2":{
                 "PG":"1"
+            },
+            "2P":{
+                "C":true,
+                "G":2
             }
         },
         "text":"Anarch Baron of Belo Horizonte: +1 strength.",
@@ -43280,6 +43494,10 @@
             },
             "NB":{
                 "PTo":"1"
+            },
+            "2P":{
+                "C":true,
+                "To":2
             }
         },
         "text":"Camarilla Prince of Cape Town.",
@@ -43319,6 +43537,10 @@
         "set":{
             "30th":{
                 "":"2"
+            },
+            "2P":{
+                "C":true,
+                "To":2
             }
         },
         "text":"Camarilla Prince of Gary: During the polling step of any referendum, Modius can discard a master card to get +1 vote.",
@@ -43351,6 +43573,10 @@
         "set":{
             "30th":{
                 "":"2"
+            },
+            "2P":{
+                "C":true,
+                "N":2
             }
         },
         "text":"Camarilla Nosferatu Justicar: Molly gets +1 vote and +1 bleed if your prey controls a non-Camarilla vampire. +1 strength.",
@@ -45516,6 +45742,10 @@
             "V5C":{
                 "PTz":"1"
             },
+            "2P":{
+                "C":true,
+                "Tz":2
+            },
             "playtest":{
                 "NTz":1
             }
@@ -45955,6 +46185,9 @@
             },
             "CE":{
                 "PN":1
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Camarilla Prince of Brussels: During your unlock phase, you may move 1 blood from Nikolaus to any Nosferatu in your uncontrolled region.",
@@ -45994,6 +46227,10 @@
         "set":{
             "30th":{
                 "":"2"
+            },
+            "2P":{
+                "C":true,
+                "N":2
             }
         },
         "text":"Camarilla Prince of Brussels: During your influence phase, you can burn the Edge to add 1 blood to a Nosferatu in your uncontrolled region.",
@@ -46484,6 +46721,10 @@
         "set":{
             "V5A":{
                 "PB":"1"
+            },
+            "2P":{
+                "C":true,
+                "B":1
             }
         },
         "text":"Anarch.",
@@ -46819,6 +47060,10 @@
         "set":{
             "NB2":{
                 "PBH":"1"
+            },
+            "2P":{
+                "C":true,
+                "BH":2
             }
         },
         "text":"Camarilla Prince of Lagos: Oluwafunmilayo gets +1 intercept during political actions.",
@@ -47047,6 +47292,10 @@
         "set":{
             "V5C":{
                 "PSal":"1"
+            },
+            "2P":{
+                "C":true,
+                "Sal":2
             },
             "playtest":{
                 "NSal":1
@@ -49457,6 +49706,9 @@
             },
             "CE":{
                 "PV":1
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Camarilla Prince of London: Anne gets an additional +1 bleed when bleeding a Methuselah who controls a ready Tremere. +1 bleed.",
@@ -49490,6 +49742,10 @@
         "set":{
             "FoL":{
                 "":"2"
+            },
+            "2P":{
+                "C":true,
+                "V":3
             }
         },
         "text":"Camarilla Prince of London: During the polling step of a referendum called by Anne, she can burn 1 blood to force a younger Camarilla vampire to abstain. After she diablerizes a vampire, she can unlock. +1 bleed.",
@@ -50053,6 +50309,10 @@
         "set":{
             "NB2":{
                 "PG":"1"
+            },
+            "2P":{
+                "C":true,
+                "G":4
             }
         },
         "text":"Anarch: Cards requiring Protean [pro] cost Ragnar -1 blood. Ragnar gets +1 strength in combat with an ally or younger vampire.",
@@ -53052,6 +53312,10 @@
             "V5C":{
                 "PSal":"1"
             },
+            "2P":{
+                "C":true,
+                "Sal":2
+            },
             "playtest":{
                 "NSal":1
             }
@@ -53090,6 +53354,10 @@
             },
             "Promo":{
                 "2023-07-29":true
+            },
+            "2P":{
+                "C":true,
+                "B":3
             }
         },
         "text":"Anarch Baron of Helsinki: Saku gets 1 optional maneuver each combat.",
@@ -54743,6 +55011,10 @@
         "set":{
             "V5C":{
                 "PSal":"1"
+            },
+            "2P":{
+                "C":true,
+                "Sal":3
             }
         },
         "text":"Independent: Seraphina can add 2 blood or life to a minion you control as a +1 stealth action, not to exceed starting life.",
@@ -54925,6 +55197,10 @@
         "set":{
             "NB2":{
                 "PMi":"1"
+            },
+            "2P":{
+                "C":true,
+                "Mi":3
             }
         },
         "text":"Anarch Baron of Santo Domingo: Minions with 1 or more of your corruption counters must burn 1 blood or life to attempt to block Sergio.",
@@ -55642,6 +55918,10 @@
         "set":{
             "V5A":{
                 "PB":"1"
+            },
+            "2P":{
+                "C":true,
+                "B":1
             }
         },
         "text":"Anarch.",
@@ -58454,6 +58734,9 @@
             },
             "POD":{
                 "DTC":true
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Camarilla: If Tegyrius is ready, any Banu Haqim can put 1 allegiance counter on themselves as a +1 stealth action. Any Banu Haqim with any allegiance counters is considered Camarilla. Blood cursed. +1 strength.",
@@ -58534,6 +58817,10 @@
             "Promo":{
                 "2023-05-01":true,
                 "2024-04-23":true
+            },
+            "2P":{
+                "C":true,
+                "BH":2
             }
         },
         "text":"Camarilla. 2 votes (titled): While /Victoria Ash/ is in your ready region, Tegyrius gets +2 votes. +1 strength.",
@@ -61341,6 +61628,10 @@
             },
             "NB2":{
                 "PB":"1"
+            },
+            "2P":{
+                "C":true,
+                "B":3
             }
         },
         "text":"Anarch Baron of Moscow: +1 strength.",
@@ -62730,6 +63021,10 @@
             },
             "NB2":{
                 "PMi":"1"
+            },
+            "2P":{
+                "C":true,
+                "Mi":2
             }
         },
         "text":"Anarch Baron of Johannesburg.",
@@ -63159,6 +63454,10 @@
             },
             "NB2":{
                 "PBH":"1"
+            },
+            "2P":{
+                "C":true,
+                "BH":1
             }
         },
         "text":"Camarilla Prince of Algiers.",
@@ -63379,6 +63678,10 @@
         "set":{
             "V5C":{
                 "PTz":"1"
+            },
+            "2P":{
+                "C":true,
+                "Tz":2
             },
             "playtest":{
                 "NTz":1
@@ -64278,6 +64581,10 @@
             },
             "NB3":{
                 "PL":"1"
+            },
+            "2P":{
+                "C":true,
+                "L":3
             }
         },
         "text":"Camarilla Prince of Singapore: During the polling step of any referendum, Yewon can discard a card requiring Oblivion [obl] to get +1 vote.",

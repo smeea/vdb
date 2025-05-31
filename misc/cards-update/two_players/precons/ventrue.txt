@@ -1,0 +1,43 @@
+Crypt (12 cards)
+3x Queen Anne 10 DOM FOR PRE aus obf prince Ventrue:6
+2x Alexa Draper 8 DOM PRE for pot prince Ventrue:6
+2x Alice Chen 7 FOR PRE dom obf prince Ventrue:6
+2x Kevin Jackson 7 DOM FOR PRE prince Ventrue:7
+1x Fiorenza Savona 7 DOM PRE aus for Ventrue:6
+1x Horst von Brühl 6 FOR aus dom pre prince Ventrue:6
+1x Madison 6 DOM FOR PRE Ventrue:6
+
+Library (42 cards)
+Master (6)
+2x Grooming the Protégé
+2x Life in the City
+1x Misdirection
+1x Wider View
+
+Action (5)
+2x Dominate Kine
+3x Enchant Kindred
+
+Political Action (5)
+3x Kine Resources Contested
+2x Parity Shift
+
+Ally (1)
+1x Political Ally
+
+Action Modifier (11)
+2x Bonding
+3x Perfect Paragon
+2x Seduction
+2x Threats
+2x Voter Captivation
+
+Reaction (6)
+2x Elder Intervention
+2x Second Tradition: Domain
+2x Wake with Evening's Freshness
+
+Combat (8)
+3x Rolling with the Punches
+2x Soak
+3x Weighted Walking Stick

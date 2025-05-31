@@ -18,6 +18,7 @@ import {
   NAME,
   ONLY,
   PLAYTEST,
+  TWO_P,
   PRECON,
   PRECONS,
   PRINT,
@@ -54,7 +55,7 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
   ];
 
   Object.keys(setsAndPrecons)
-    .filter((set) => playtestMode || set !== PLAYTEST)
+    .filter((set) => (playtestMode || set !== PLAYTEST) && set !== TWO_P)
     .map((set) => {
       if (setsAndPrecons[set][PRECONS]) {
         const year = setsAndPrecons[set][DATE] ? setsAndPrecons[set][DATE].slice(2, 4) : null;

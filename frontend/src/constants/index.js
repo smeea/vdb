@@ -251,6 +251,7 @@ export const TRIFLE = "trifle";
 export const TWD = "twd";
 export const TWD_DATE = "twdDate";
 export const TWD_HINTS = "twdHints";
+export const TWO_P = "2P";
 export const TYPE = "type";
 export const TYPE_ACTION = "Action";
 export const TYPE_ACTION_MODIFIER = "Action Modifier";
