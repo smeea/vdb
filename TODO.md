@@ -20,4 +20,3 @@
 
 # TECH IMPROVEMENTS
 - Update to Biome v2: format sort with @?
-- Migrate to ruff from black

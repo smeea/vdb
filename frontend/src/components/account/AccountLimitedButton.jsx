@@ -15,13 +15,13 @@ import {
 import { useApp } from "@/context";
 import UiChecksGrid from "@icons/ui-checks-grid.svg?react";
 import { setMany } from "idb-keyval";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router";
 
 const AccountLimitedButton = () => {
   const { setLimitedFormat } = useApp();
   const [showModal, setShowModal] = useState(false);
-  const [searchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
   const limitedFormat = JSON.parse(searchParams.get(FORMAT));
 
   const setFormat = (format) => {
@@ -42,7 +42,12 @@ const AccountLimitedButton = () => {
     ]);
   };
 
-  if (limitedFormat) setFormat(limitedFormat);
+  useEffect(() => {
+    if (limitedFormat) {
+      setFormat(limitedFormat);
+      setSearchParams();
+    }
+  }, [limitedFormat]);
 
   return (
     <>
