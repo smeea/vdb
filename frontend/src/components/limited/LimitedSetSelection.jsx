@@ -1,10 +1,10 @@
 import setsAndPrecons from "@/assets/data/setsAndPrecons.json";
-import { AccountLimitedSet } from "@/components";
+import { LimitedSet } from "@/components";
 import { DATE, PLAYTEST, SETS } from "@/constants";
 import { limitedFullStore, limitedSetChange } from "@/context";
 import { useSnapshot } from "valtio";
 
-const AccountLimitedSetSelection = () => {
+const LimitedSetSelection = () => {
   const BCP_START = "2018-01-01";
   const limitedSets = useSnapshot(limitedFullStore)[SETS];
 
@@ -19,7 +19,7 @@ const AccountLimitedSetSelection = () => {
             .filter((i) => i !== PLAYTEST && setsAndPrecons[i][DATE] > BCP_START)
             .map((i) => {
               return (
-                <AccountLimitedSet
+                <LimitedSet
                   key={i}
                   isChecked={limitedSets[i]}
                   handleSetChange={limitedSetChange}
@@ -33,7 +33,7 @@ const AccountLimitedSetSelection = () => {
             .filter((i) => i !== PLAYTEST && setsAndPrecons[i][DATE] < BCP_START)
             .map((i) => {
               return (
-                <AccountLimitedSet
+                <LimitedSet
                   key={i}
                   isChecked={limitedSets[i]}
                   handleSetChange={limitedSetChange}
@@ -47,4 +47,4 @@ const AccountLimitedSetSelection = () => {
   );
 };
 
-export default AccountLimitedSetSelection;
+export default LimitedSetSelection;

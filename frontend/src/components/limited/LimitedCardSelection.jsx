@@ -3,7 +3,7 @@ import { ALLOWED, BANNED, CRYPT, ID, LIBRARY } from "@/constants";
 import { limitedCardChange, limitedFullStore, useApp } from "@/context";
 import { useSnapshot } from "valtio";
 
-const AccountLimitedCardSelection = ({ inBanned }) => {
+const LimitedCardSelection = ({ inBanned }) => {
   const { cryptCardBase, libraryCardBase } = useApp();
   const limitedCrypt = useSnapshot(limitedFullStore)[inBanned ? BANNED : ALLOWED][CRYPT];
   const limitedLibrary = useSnapshot(limitedFullStore)[inBanned ? BANNED : ALLOWED][LIBRARY];
@@ -49,4 +49,4 @@ const AccountLimitedCardSelection = ({ inBanned }) => {
   );
 };
 
-export default AccountLimitedCardSelection;
+export default LimitedCardSelection;

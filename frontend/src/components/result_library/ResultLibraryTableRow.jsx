@@ -1,5 +1,5 @@
 import {
-  AccountLimitedDelCard,
+  LimitedDelCard,
   ButtonAddCard,
   ResultLibraryTableRowCommon,
   ResultUsed,
@@ -34,7 +34,7 @@ const ResultLibraryTableRow = ({ card, handleClick, inLimited, shouldShowModal }
     >
       {inLimited ? (
         <td className="min-w-[22px]">
-          <AccountLimitedDelCard cardid={card[ID]} target={inLimited} />
+          <LimitedDelCard cardid={card[ID]} target={inLimited} />
         </td>
       ) : (
         addMode && (

@@ -1,5 +1,5 @@
 import {
-  AccountLimitedDelCard,
+  LimitedDelCard,
   ButtonAddCard,
   ResultCryptTableRowCommon,
   ResultUsed,
@@ -40,7 +40,7 @@ const ResultCryptTableRow = ({
     >
       {inLimited ? (
         <td className="min-w-[22px]">
-          <AccountLimitedDelCard cardid={card[ID]} target={inLimited} />
+          <LimitedDelCard cardid={card[ID]} target={inLimited} />
         </td>
       ) : (
         (inRecommendation || addMode) && (

@@ -2,7 +2,7 @@ import setsAndPrecons from "@/assets/data/setsAndPrecons.json";
 import { Checkbox } from "@/components";
 import { DATE, NAME } from "@/constants";
 
-const AccountLimitedSet = ({ isChecked, handleSetChange, setid }) => {
+const LimitedSet = ({ isChecked, handleSetChange, setid }) => {
   return (
     <div className="flex gap-1">
       <Checkbox
@@ -25,4 +25,4 @@ const AccountLimitedSet = ({ isChecked, handleSetChange, setid }) => {
   );
 };
 
-export default AccountLimitedSet;
+export default LimitedSet;

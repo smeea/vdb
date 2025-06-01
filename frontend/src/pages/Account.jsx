@@ -4,10 +4,10 @@ import {
   AccountChangePassword,
   AccountDeleteButton,
   AccountLegacyToggle,
-  AccountLimitedButton,
   AccountLogin,
   AccountLogoutButton,
   AccountRegister,
+  Limited,
 } from "@/components";
 import { useApp } from "@/context";
 import PersonFill from "@icons/person-fill.svg?react";
@@ -36,7 +36,7 @@ const Account = () => {
             <AccountChangeEmail />
             <div className="flex flex-col gap-3 sm:gap-4">
               <AccountLegacyToggle />
-              <AccountLimitedButton />
+              <Limited />
               <div className="flex gap-3 sm:gap-4">
                 <AccountDeleteButton />
                 <AccountLogoutButton />
@@ -48,7 +48,7 @@ const Account = () => {
         <div className="flex w-full flex-col gap-16">
           <AccountLogin />
           <AccountRegister />
-          <AccountLimitedButton />
+          <Limited />
         </div>
       )}
     </div>

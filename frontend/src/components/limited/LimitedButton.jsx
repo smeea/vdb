@@ -1,4 +1,4 @@
-import { AccountLimitedModal, ButtonIconed } from "@/components";
+import { ButtonIconed, LimitedModal } from "@/components";
 import {
   ALLOWED,
   BANNED,
@@ -18,7 +18,7 @@ import { setMany } from "idb-keyval";
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router";
 
-const AccountLimitedButton = () => {
+const LimitedButton = () => {
   const { setLimitedFormat } = useApp();
   const [showModal, setShowModal] = useState(false);
   const [searchParams, setSearchParams] = useSearchParams();
@@ -56,11 +56,11 @@ const AccountLimitedButton = () => {
         onClick={() => setShowModal(true)}
         title="Manage Format"
         icon={<UiChecksGrid />}
-        text="Manage Limited Format"
+        text="Configure Format"
       />
-      {showModal && <AccountLimitedModal setShow={setShowModal} setFormat={setFormat} />}
+      {showModal && <LimitedModal setShow={setShowModal} setFormat={setFormat} />}
     </>
   );
 };
 
-export default AccountLimitedButton;
+export default LimitedButton;

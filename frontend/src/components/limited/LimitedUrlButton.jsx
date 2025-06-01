@@ -3,7 +3,7 @@ import { FORMAT } from "@/constants";
 import Link45Deg from "@icons/link-45deg.svg?react";
 import { useState } from "react";
 
-const AccountLimitedUrlButton = ({ format }) => {
+const LimitedUrlButton = ({ format }) => {
   const [success, setSuccess] = useState(false);
 
   const copyUrl = () => {
@@ -25,4 +25,4 @@ const AccountLimitedUrlButton = ({ format }) => {
   );
 };
 
-export default AccountLimitedUrlButton;
+export default LimitedUrlButton;

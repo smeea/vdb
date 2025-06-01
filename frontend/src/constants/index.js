@@ -279,3 +279,5 @@ export const VP = "vp";
 export const X = "X";
 export const XLSX = "xlsx";
 export const YES = "YES";
+export const CUSTOM = "custom";
+export const V5 = "v5";

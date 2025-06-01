@@ -2,7 +2,7 @@ import { Button } from "@/components";
 import { ALLOWED, ID } from "@/constants";
 import { limitedCardChange } from "@/context";
 
-const AccountLimitedDelCard = ({ cardid, target }) => {
+const LimitedDelCard = ({ cardid, target }) => {
   const card = { [ID]: cardid };
   const allowedDel = () => limitedCardChange(card, true, false);
   const bannedDel = () => limitedCardChange(card, false, false);
@@ -19,4 +19,4 @@ const AccountLimitedDelCard = ({ cardid, target }) => {
   );
 };
 
-export default AccountLimitedDelCard;
+export default LimitedDelCard;

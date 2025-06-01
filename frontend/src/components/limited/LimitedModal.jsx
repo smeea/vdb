@@ -1,7 +1,7 @@
 import {
-  AccountLimitedCardSelection,
-  AccountLimitedSetSelection,
-  AccountLimitedUrlButton,
+  LimitedCardSelection,
+  LimitedSetSelection,
+  LimitedUrlButton,
   ButtonIconed,
   Modal,
 } from "@/components";
@@ -13,7 +13,7 @@ import dayjs from "dayjs";
 import { useRef } from "react";
 import { useSnapshot } from "valtio";
 
-const AccountLimitedModal = ({ setShow, setFormat }) => {
+const LimitedModal = ({ setShow, setFormat }) => {
   const limitedState = useSnapshot(limitedFullStore);
   const fileInput = useRef();
 
@@ -69,11 +69,11 @@ const AccountLimitedModal = ({ setShow, setFormat }) => {
   return (
     <Modal handleClose={() => setShow(false)} size="lg" title="Manage Limited Format">
       <div className="flex flex-col gap-5">
-        <AccountLimitedSetSelection />
-        <AccountLimitedCardSelection />
-        <AccountLimitedCardSelection inBanned />
+        <LimitedSetSelection />
+        <LimitedCardSelection />
+        <LimitedCardSelection inBanned />
         <div className="flex justify-end gap-2 max-sm:flex-col">
-          <AccountLimitedUrlButton
+          <LimitedUrlButton
             format={JSON.stringify(minifiedFormat, null, "").replace(/\n/g, "")}
           />
           <ButtonIconed
@@ -93,7 +93,7 @@ const AccountLimitedModal = ({ setShow, setFormat }) => {
       </div>
       <input
         ref={fileInput}
-        accept=".txt"
+        accept=".txt,.json"
         type="file"
         onChange={() => importFormat(fileInput)}
         style={{ display: "none" }}
@@ -102,4 +102,4 @@ const AccountLimitedModal = ({ setShow, setFormat }) => {
   );
 };
 
-export default AccountLimitedModal;
+export default LimitedModal;
