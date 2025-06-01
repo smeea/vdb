@@ -2270,7 +2270,7 @@
     "200395":{
         "deckid":"2k8fspamplona",
         "twdDate":"2008-01-26",
-        "player":"I\u00f1aki Jimenez"
+        "player":"I\u00f1aki Jim\u00e9nez Alonso"
     },
     "200396":{
         "deckid":"2k3totalconben",
@@ -3164,7 +3164,7 @@
     "200559":{
         "deckid":"2k8erandiomq",
         "twdDate":"2008-06-21",
-        "player":"I\u00f1aki Jimenez"
+        "player":"I\u00f1aki Jim\u00e9nez Alonso"
     },
     "200560":{
         "deckid":"2k7losangelesqual",
@@ -6014,7 +6014,7 @@
     "201067":{
         "deckid":"12123",
         "twdDate":"2025-02-22",
-        "player":"Eric Procopio"
+        "player":"Erik Procopio"
     },
     "201068":{
         "deckid":"2k9mgesjdfb",
@@ -6870,7 +6870,7 @@
     "201215":{
         "deckid":"2k6cevpel",
         "twdDate":"2006-07-22",
-        "player":"I\u00f1aki Jimenez"
+        "player":"I\u00f1aki Jim\u00e9nez Alonso"
     },
     "201216":{
         "deckid":"2k9lvq",
@@ -6910,7 +6910,7 @@
     "201223":{
         "deckid":"2k8erandiomq",
         "twdDate":"2008-06-21",
-        "player":"I\u00f1aki Jimenez"
+        "player":"I\u00f1aki Jim\u00e9nez Alonso"
     },
     "201685":{
         "deckid":"11164",
@@ -7058,7 +7058,7 @@
     "201251":{
         "deckid":"2k7aomvitoria",
         "twdDate":"2007-04-15",
-        "player":"I\u00f1aki Jimenez"
+        "player":"I\u00f1aki Jim\u00e9nez Alonso"
     },
     "201252":{
         "deckid":"2k7templecon",
@@ -7408,7 +7408,7 @@
     "201317":{
         "deckid":"2k7aomvitoria",
         "twdDate":"2007-04-15",
-        "player":"I\u00f1aki Jimenez"
+        "player":"I\u00f1aki Jim\u00e9nez Alonso"
     },
     "201318":{
         "deckid":"2k6reinsboston",
@@ -7763,7 +7763,7 @@
     "201383":{
         "deckid":"12123",
         "twdDate":"2025-02-22",
-        "player":"Eric Procopio"
+        "player":"Erik Procopio"
     },
     "201384":{
         "deckid":"2k7crusadeseattle",
@@ -8902,7 +8902,9 @@
         "player":"Jay Kristoff"
     },
     "102275":{
-        "deckid":null
+        "deckid":"12051",
+        "twdDate":"2025-04-26",
+        "player":"Zolt\u00e1n Panyik"
     },
     "100091":{
         "deckid":"barney",
@@ -9830,7 +9832,7 @@
     "100282":{
         "deckid":"2k6cevpel",
         "twdDate":"2006-07-22",
-        "player":"I\u00f1aki Jimenez"
+        "player":"I\u00f1aki Jim\u00e9nez Alonso"
     },
     "100283":{
         "deckid":"2019cosmb",
@@ -10475,7 +10477,9 @@
         "player":"Steve Holmer"
     },
     "102288":{
-        "deckid":null
+        "deckid":"12276",
+        "twdDate":"2025-04-26",
+        "player":"Daniel Suzuki"
     },
     "100415":{
         "deckid":"2k4sachamp",
@@ -12362,7 +12366,7 @@
     "100794":{
         "deckid":"2k7aomvitoria",
         "twdDate":"2007-04-15",
-        "player":"I\u00f1aki Jimenez"
+        "player":"I\u00f1aki Jim\u00e9nez Alonso"
     },
     "100795":{
         "deckid":"2010mfecane",
@@ -16297,7 +16301,7 @@
     "101598":{
         "deckid":"2k8erandiomq",
         "twdDate":"2008-06-21",
-        "player":"I\u00f1aki Jimenez"
+        "player":"I\u00f1aki Jim\u00e9nez Alonso"
     },
     "101599":{
         "deckid":"2k9backinblack",
@@ -17036,7 +17040,9 @@
         "player":"Barney Baker"
     },
     "102294":{
-        "deckid":null
+        "deckid":"12276",
+        "twdDate":"2025-04-26",
+        "player":"Daniel Suzuki"
     },
     "102305":{
         "deckid":null
@@ -17522,7 +17528,9 @@
         "player":"David Anderson-D\u00e1vila"
     },
     "102296":{
-        "deckid":null
+        "deckid":"12276",
+        "twdDate":"2025-04-26",
+        "player":"Daniel Suzuki"
     },
     "101844":{
         "deckid":"kuster2k1",
@@ -18261,7 +18269,9 @@
         "player":"Michael Heyder"
     },
     "102283":{
-        "deckid":null
+        "deckid":"12276",
+        "twdDate":"2025-04-26",
+        "player":"Daniel Suzuki"
     },
     "101999":{
         "deckid":"2k8manserrrrock",

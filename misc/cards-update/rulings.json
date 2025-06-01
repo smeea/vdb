@@ -333,6 +333,14 @@
             "refs":{
                 "LSJ 20050331-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NLFFYNok1Ns/m/n7mHhZ_oTRQJ"
             }
+        },
+        {
+            "text":"Cards requiring a discipline come in play at the inferior version.",
+            "refs":{
+                "RBK equip":"https://www.vekn.net/rulebook#equip",
+                "RBK recruit-ally":"https://www.vekn.net/rulebook#recruit-ally",
+                "RBK employ-retainer":"https://www.vekn.net/rulebook#employ-retainer"
+            }
         }
     ],
     "100040":[
@@ -473,6 +481,13 @@
             "text":"Multiple similar effects (e.g. two {Infernal Familiar}, or {Ian Forestal} with an {Infernal Familiar}) cannot be used to meet the requirements of a multi-Discipline card that the minion is missing one or more Disciplines to play.",
             "refs":{
                 "LSJ 20020218":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/o59KNX0R1Ls/m/QHnuE-mmSj0J"
+            }
+        },
+        {
+            "text":"The ally counts as \"independent\" when playing cards as a vampire",
+            "refs":{
+                "LSJ 20020503":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/1DbOr3g3vP8/m/xF8dvxQZye4J",
+                "LSJ 20060126":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PBEBNFH61ik/m/MPf8Rs1F958J"
             }
         }
     ],
@@ -1077,6 +1092,12 @@
             "refs":{
                 "LSJ 20020425":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/_Rh8P34zTZo/m/u-WavRjp5uYJ"
             }
+        },
+        {
+            "text":"The ability to make the damage from the vampire's strikes aggravated that round must be used before strike resolution and damage prevention in order to affect the current strike. Can be played after both strikes have been chosen.",
+            "refs":{
+                "RTR 19960112":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d3n3StNS7no/m/k2NmZFUl9fAJ"
+            }
         }
     ],
     "100124":[
@@ -1272,6 +1293,14 @@
             "refs":{
                 "LSJ 20040726":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/LlqCB6LN64g/m/k98Xj1pwjPcJ",
                 "ANK 20191031":"https://www.vekn.net/forum/rules-questions/11417-eternal-mask-khobar-towers?start=6#97642"
+            }
+        },
+        {
+            "text":"Cards requiring a discipline come in play at the inferior version.",
+            "refs":{
+                "RBK equip":"https://www.vekn.net/rulebook#equip",
+                "RBK recruit-ally":"https://www.vekn.net/rulebook#recruit-ally",
+                "RBK employ-retainer":"https://www.vekn.net/rulebook#employ-retainer"
             }
         }
     ],
@@ -1505,6 +1534,13 @@
             "text":"Multiple similar effects (e.g. two {Infernal Familiar}, or {Ian Forestal} with an {Infernal Familiar}) cannot be used to meet the requirements of a multi-Discipline card that the minion is missing one or more Disciplines to play.",
             "refs":{
                 "LSJ 20020218":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/o59KNX0R1Ls/m/QHnuE-mmSj0J"
+            }
+        },
+        {
+            "text":"The ally counts as \"independent\" when playing cards as a vampire",
+            "refs":{
+                "LSJ 20020503":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/1DbOr3g3vP8/m/xF8dvxQZye4J",
+                "LSJ 20060126":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PBEBNFH61ik/m/MPf8Rs1F958J"
             }
         }
     ],
@@ -1853,10 +1889,15 @@
             }
         },
         {
-            "text":"[VAL] If the combat continues or a new combat begins, the after combat effect does not happen/is not usable. (eg. {Psyche!}, {Telepathic Tracking})\n(Partial reversal of RTR 20010711)",
+            "text":"[VAL] If the combat continues (e.g. {Telepathic Tracking}), the card has no effect (no new combat occurs afterwards).",
             "refs":{
-                "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ",
-                "LSJ 19980109":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d2U51Uw0Hfg/m/uIPoVvPFePgJ"
+                "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ"
+            }
+        },
+        {
+            "text":"[VAL] Queues a combat. No other combat can be queued afterwards (e.g. {Psyche!} cannot be used).",
+            "refs":{
+                "LSJ 19971003":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/mUZ2704tVsk/m/K4b9NjIeDhwJ"
             }
         },
         {
@@ -1872,14 +1913,6 @@
             "text":"[OBF] If a new combat begins (eg. {Psyche!}), you need to burn 1 blood again (or the card).",
             "refs":{
                 "ANK 20230527":"https://www.vekn.net/forum/rules-questions/80553-blithe-acceptance-and-multiple-combat#108178"
-            }
-        }
-    ],
-    "100192":[
-        {
-            "text":"Must be played before strike resolution and damage prevention in order to affect the current strike (can be played after both strikes have been chosen).",
-            "refs":{
-                "RTR 19960112":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d3n3StNS7no/m/k2NmZFUl9fAJ"
             }
         }
     ],
@@ -2177,14 +2210,6 @@
             "refs":{
                 "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
                 "ANK 20200207":"https://www.vekn.net/forum/rules-questions/78423-mental-maze-and-obedience#98906"
-            }
-        }
-    ],
-    "100228":[
-        {
-            "text":"Must be played before strike resolution and damage prevention in order to affect the current strike. (can be played after both strikes have been chosen)",
-            "refs":{
-                "RTR 19960112":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d3n3StNS7no/m/k2NmZFUl9fAJ"
             }
         }
     ],
@@ -3254,26 +3279,6 @@
             }
         }
     ],
-    "100344":[
-        {
-            "text":"[VIC] Must be played before strike resolution and damage prevention in order to affect the current strike (can be played after both strikes have been chosen).",
-            "refs":{
-                "RTR 19960112":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d3n3StNS7no/m/k2NmZFUl9fAJ"
-            }
-        },
-        {
-            "text":"[VIC] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}).",
-            "refs":{
-                "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
-            }
-        },
-        {
-            "text":"[VIC] The card cannot be played if the minion cannot afford to burn the blood.",
-            "refs":{
-                "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
-            }
-        }
-    ],
     "100347":[
         {
             "text":"Can put counters on locations that use \"blood\" or \"pool\" counters.",
@@ -3345,14 +3350,6 @@
             "text":"The action to put the card in play and the one once the card is in play are different (a vampire can take both in the same turn if they unlock in between).",
             "refs":{
                 "ANK 20220910":"https://www.vekn.net/forum/rules-questions/80021-clandestine-contrac-x-forced-march-freak#106314"
-            }
-        }
-    ],
-    "100356":[
-        {
-            "text":"[pro] Must be played before strike resolution and damage prevention in order to affect the current strike. Can be played after both strikes have been chosen.",
-            "refs":{
-                "RTR 19960112":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d3n3StNS7no/m/k2NmZFUl9fAJ"
             }
         }
     ],
@@ -3505,6 +3502,14 @@
             "refs":{
                 "LSJ 20020429":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/7ZfedGTVt9g/m/kQnfy7J_UYkJ"
             }
+        },
+        {
+            "text":"Cards requiring a discipline come in play at the inferior version.",
+            "refs":{
+                "RBK equip":"https://www.vekn.net/rulebook#equip",
+                "RBK recruit-ally":"https://www.vekn.net/rulebook#recruit-ally",
+                "RBK employ-retainer":"https://www.vekn.net/rulebook#employ-retainer"
+            }
         }
     ],
     "100389":[
@@ -3577,6 +3582,12 @@
             "text":"Paying from another source (eg. {Alan Sovereign (ADV)}) does not reduce the cost as seen by Concealed Weapon.",
             "refs":{
                 "LSJ 20080125":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HcCobkGPcFI/m/GlBdNwMvAjwJ"
+            }
+        },
+        {
+            "text":"Conditional damage effects (e.g. {Poker}'s aggravated damage against Kiasyd) are not considered when checking {Concealed Weapon}'s \"with a regular strike\" qualification.",
+            "refs":{
+                "LSJ 20020729":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/zjgrU0n0uCs/m/_WePYnK3rDEJ"
             }
         }
     ],
@@ -6145,12 +6156,6 @@
             }
         },
         {
-            "text":"If the target changes sect to a sect inappropriate for his title, he loses its benefit until his sect is appropriate. He immediately yields the title if it is contested or he receives a new one.",
-            "refs":{
-                "LSJ 20060904":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/L9D4GK0yNv8/m/H9vnUciv2psJ"
-            }
-        },
-        {
             "text":"The acting vampire must have a superior discipline to choose from.",
             "refs":{
                 "ANK 20180731-2":"https://www.vekn.net/forum/rules-questions/75386-field-training-question#89472"
@@ -6601,12 +6606,6 @@
             "refs":{
                 "LSJ 20100811":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/kGKWcs3k6vI/m/Uwx7TGC8lgYJ"
             }
-        },
-        {
-            "text":"If the target changes sect to a sect inappropriate for his title, he loses its benefit until his sect is appropriate. He immediately yields the title if it is contested or he receives a new one.",
-            "refs":{
-                "LSJ 20060904":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/L9D4GK0yNv8/m/H9vnUciv2psJ"
-            }
         }
     ],
     "100799":[
@@ -6874,6 +6873,13 @@
             "refs":{
                 "LSJ 20020218":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/o59KNX0R1Ls/m/QHnuE-mmSj0J"
             }
+        },
+        {
+            "text":"The ally counts as \"independent\" when playing cards as a vampire",
+            "refs":{
+                "LSJ 20020503":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/1DbOr3g3vP8/m/xF8dvxQZye4J",
+                "LSJ 20060126":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PBEBNFH61ik/m/MPf8Rs1F958J"
+            }
         }
     ],
     "100823":[
@@ -7038,12 +7044,6 @@
             "refs":{
                 "LSJ 20100811":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/kGKWcs3k6vI/m/Uwx7TGC8lgYJ"
             }
-        },
-        {
-            "text":"If the target changes sect to a sect inappropriate for his title, he loses its benefit until his sect is appropriate. He immediately yields the title if it is contested or he receives a new one.",
-            "refs":{
-                "LSJ 20060904":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/L9D4GK0yNv8/m/H9vnUciv2psJ"
-            }
         }
     ],
     "100841":[
@@ -7129,6 +7129,14 @@
             "text":"If the equipment is burned before it runs out of pathos counters, it goes to its owner's ash heap and is not removed from the game.",
             "refs":{
                 "LSJ 20060209":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ZuOfZorIhhU/m/X5G1JfqDPhcJ"
+            }
+        },
+        {
+            "text":"Cards requiring a discipline come in play at the inferior version.",
+            "refs":{
+                "RBK equip":"https://www.vekn.net/rulebook#equip",
+                "RBK recruit-ally":"https://www.vekn.net/rulebook#recruit-ally",
+                "RBK employ-retainer":"https://www.vekn.net/rulebook#employ-retainer"
             }
         }
     ],
@@ -7670,12 +7678,6 @@
             }
         },
         {
-            "text":"Cannot play Anarch cards.",
-            "refs":{
-                "ANK 20230810":"https://www.vekn.net/forum/rules-questions/80760-herald-of-tophet-cards-with-anarch-requirement#109002"
-            }
-        },
-        {
             "text":"If they use their last life to play an action modifier, the action fails. If they use their last life to play a strike, combat ends before strike resolution.",
             "refs":{
                 "ANK 20180928-1":"https://www.vekn.net/forum/rules-questions/77034-allies-and-vampire-disciplines-specifically-the-nocturn#90809"
@@ -7722,6 +7724,13 @@
             "text":"Multiple similar effects (e.g. two {Infernal Familiar}, or {Ian Forestal} with an {Infernal Familiar}) cannot be used to meet the requirements of a multi-Discipline card that the minion is missing one or more Disciplines to play.",
             "refs":{
                 "LSJ 20020218":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/o59KNX0R1Ls/m/QHnuE-mmSj0J"
+            }
+        },
+        {
+            "text":"The ally counts as \"independent\" when playing cards as a vampire",
+            "refs":{
+                "LSJ 20020503":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/1DbOr3g3vP8/m/xF8dvxQZye4J",
+                "LSJ 20060126":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PBEBNFH61ik/m/MPf8Rs1F958J"
             }
         }
     ],
@@ -8459,7 +8468,7 @@
             }
         },
         {
-            "text":"[CEL] If multiple cards need replacement (eg.\u00a0{Nicomedes}, {Blood Weakens}), replace and discard down to hand size one by one.",
+            "text":"[CEL] If an effect would force you to replace more than 1 card (e.g. {Nicomedes}, {Blood Weakens}), replace and draw extra cards individually (i.e. one replacement card draw at a time), discarding each time X cards (where X is the number of extra cards you drew).",
             "refs":{
                 "ANK 20180925-1":"https://www.vekn.net/forum/rules-questions/77029-order-of-draw-and-replace-for-concealed-weapon-under-infernal-pursuit?start=6#90750",
                 "LSJ 20100506":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/H6Jm74N0v7k/m/zPi11g24bBUJ"
@@ -8532,6 +8541,13 @@
             "text":"Multiple similar effects (e.g. two {Infernal Familiar}, or {Ian Forestal} with an {Infernal Familiar}) cannot be used to meet the requirements of a multi-Discipline card that the minion is missing one or more Disciplines to play.",
             "refs":{
                 "LSJ 20020218":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/o59KNX0R1Ls/m/QHnuE-mmSj0J"
+            }
+        },
+        {
+            "text":"The ally counts as \"independent\" when playing cards as a vampire",
+            "refs":{
+                "LSJ 20020503":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/1DbOr3g3vP8/m/xF8dvxQZye4J",
+                "LSJ 20060126":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PBEBNFH61ik/m/MPf8Rs1F958J"
             }
         }
     ],
@@ -8728,22 +8744,6 @@
             "text":"[abo] [REFLEX] Any frenzy card that targets/selects/chooses/affects the minion when played, is considered being played on the minion.",
             "refs":{
                 "LSJ 20051113":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/L-ctaLucuKU/m/dG0EKdSd4g0J"
-            }
-        }
-    ],
-    "101008":[
-        {
-            "text":"[pot][pre] Cannot be used during a referendum that is automatically passing.",
-            "refs":{
-                "PIB 20150105":"https://www.vekn.net/forum/rules-questions/68465-voting-is-complicated#68493",
-                "LSJ 19980107":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aUUs4VCR_Ec/m/PLecvfrEqbgJ"
-            }
-        },
-        {
-            "text":"[pot][pre] Cannot be used during a referendum that is automatically passing.",
-            "refs":{
-                "PIB 20150105":"https://www.vekn.net/forum/rules-questions/68465-voting-is-complicated#68493",
-                "LSJ 19980107":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aUUs4VCR_Ec/m/PLecvfrEqbgJ"
             }
         }
     ],
@@ -10898,6 +10898,13 @@
             "refs":{
                 "LSJ 20020218":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/o59KNX0R1Ls/m/QHnuE-mmSj0J"
             }
+        },
+        {
+            "text":"The ally counts as \"independent\" when playing cards as a vampire",
+            "refs":{
+                "LSJ 20020503":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/1DbOr3g3vP8/m/xF8dvxQZye4J",
+                "LSJ 20060126":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PBEBNFH61ik/m/MPf8Rs1F958J"
+            }
         }
     ],
     "101251":[
@@ -11337,6 +11344,13 @@
             "text":"Multiple similar effects (e.g. two {Infernal Familiar}, or {Ian Forestal} with an {Infernal Familiar}) cannot be used to meet the requirements of a multi-Discipline card that the minion is missing one or more Disciplines to play.",
             "refs":{
                 "LSJ 20020218":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/o59KNX0R1Ls/m/QHnuE-mmSj0J"
+            }
+        },
+        {
+            "text":"The ally counts as \"independent\" when playing cards as a vampire",
+            "refs":{
+                "LSJ 20020503":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/1DbOr3g3vP8/m/xF8dvxQZye4J",
+                "LSJ 20060126":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PBEBNFH61ik/m/MPf8Rs1F958J"
             }
         }
     ],
@@ -12341,6 +12355,21 @@
             "refs":{
                 "LSJ 20020218":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/o59KNX0R1Ls/m/QHnuE-mmSj0J"
             }
+        },
+        {
+            "text":"Cards requiring a discipline come in play at the inferior version.",
+            "refs":{
+                "RBK equip":"https://www.vekn.net/rulebook#equip",
+                "RBK recruit-ally":"https://www.vekn.net/rulebook#recruit-ally",
+                "RBK employ-retainer":"https://www.vekn.net/rulebook#employ-retainer"
+            }
+        },
+        {
+            "text":"The ally counts as \"independent\" when playing cards as a vampire",
+            "refs":{
+                "LSJ 20020503":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/1DbOr3g3vP8/m/xF8dvxQZye4J",
+                "LSJ 20060126":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PBEBNFH61ik/m/MPf8Rs1F958J"
+            }
         }
     ],
     "101482":[
@@ -13032,6 +13061,13 @@
             "refs":{
                 "LSJ 20020218":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/o59KNX0R1Ls/m/QHnuE-mmSj0J"
             }
+        },
+        {
+            "text":"The ally counts as \"independent\" when playing cards as a vampire",
+            "refs":{
+                "LSJ 20020503":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/1DbOr3g3vP8/m/xF8dvxQZye4J",
+                "LSJ 20060126":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PBEBNFH61ik/m/MPf8Rs1F958J"
+            }
         }
     ],
     "101565":[
@@ -13114,12 +13150,6 @@
             "text":"Is a change of the actual sect. A temporary effect overriding the sect has precedence and if it does, this card burns (eg. {Writ of Acceptance}).",
             "refs":{
                 "LSJ 20100811":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/kGKWcs3k6vI/m/Uwx7TGC8lgYJ"
-            }
-        },
-        {
-            "text":"If the target changes sect to a sect inappropriate for his title, he loses its benefit until his sect is appropriate. He immediately yields the title if it is contested or he receives a new one.",
-            "refs":{
-                "LSJ 20060904":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/L9D4GK0yNv8/m/H9vnUciv2psJ"
             }
         },
         {
@@ -13471,6 +13501,14 @@
             "refs":{
                 "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
                 "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+            }
+        },
+        {
+            "text":"[obe],[OBE] Cards requiring a discipline come in play at the inferior version.",
+            "refs":{
+                "RBK equip":"https://www.vekn.net/rulebook#equip",
+                "RBK recruit-ally":"https://www.vekn.net/rulebook#recruit-ally",
+                "RBK employ-retainer":"https://www.vekn.net/rulebook#employ-retainer"
             }
         }
     ],
@@ -14053,6 +14091,13 @@
             "text":"Multiple similar effects (e.g. two {Infernal Familiar}, or {Ian Forestal} with an {Infernal Familiar}) cannot be used to meet the requirements of a multi-Discipline card that the minion is missing one or more Disciplines to play.",
             "refs":{
                 "LSJ 20020218":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/o59KNX0R1Ls/m/QHnuE-mmSj0J"
+            }
+        },
+        {
+            "text":"The ally counts as \"independent\" when playing cards as a vampire",
+            "refs":{
+                "LSJ 20020503":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/1DbOr3g3vP8/m/xF8dvxQZye4J",
+                "LSJ 20060126":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PBEBNFH61ik/m/MPf8Rs1F958J"
             }
         }
     ],
@@ -14801,6 +14846,13 @@
             "text":"Multiple similar effects (e.g. two {Infernal Familiar}, or {Ian Forestal} with an {Infernal Familiar}) cannot be used to meet the requirements of a multi-Discipline card that the minion is missing one or more Disciplines to play.",
             "refs":{
                 "LSJ 20020218":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/o59KNX0R1Ls/m/QHnuE-mmSj0J"
+            }
+        },
+        {
+            "text":"The ally counts as \"independent\" when playing cards as a vampire",
+            "refs":{
+                "LSJ 20020503":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/1DbOr3g3vP8/m/xF8dvxQZye4J",
+                "LSJ 20060126":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PBEBNFH61ik/m/MPf8Rs1F958J"
             }
         }
     ],
@@ -15578,15 +15630,15 @@
     ],
     "101847":[
         {
-            "text":"[pro] Must be played before strike resolution (and damage prevention) in order to affect the current strike",
-            "refs":{
-                "RTR 19960112":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d3n3StNS7no/m/k2NmZFUl9fAJ"
-            }
-        },
-        {
             "text":"[SPI][PRO] The [pro] and [spi][pro] versions do not contest with it.",
             "refs":{
                 "ANK 20180629":"https://www.vekn.net/forum/rules-questions/76765-question-about-spirit-claws#88466"
+            }
+        },
+        {
+            "text":"[pro][COMBAT] The ability to make the damage from the vampire's strikes aggravated that round must be used before strike resolution and damage prevention in order to affect the current strike. Can be played after both strikes have been chosen.",
+            "refs":{
+                "RTR 19960112":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d3n3StNS7no/m/k2NmZFUl9fAJ"
             }
         }
     ],
@@ -16169,6 +16221,14 @@
             "refs":{
                 "LSJ 20030502":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qBa9CvBwqNA/m/ZuBgMjNgb6EJ"
             }
+        },
+        {
+            "text":"[tem] Cards requiring a discipline come in play at the inferior version.",
+            "refs":{
+                "RBK equip":"https://www.vekn.net/rulebook#equip",
+                "RBK recruit-ally":"https://www.vekn.net/rulebook#recruit-ally",
+                "RBK employ-retainer":"https://www.vekn.net/rulebook#employ-retainer"
+            }
         }
     ],
     "101898":[
@@ -16585,6 +16645,13 @@
             "text":"Multiple similar effects (e.g. two {Infernal Familiar}, or {Ian Forestal} with an {Infernal Familiar}) cannot be used to meet the requirements of a multi-Discipline card that the minion is missing one or more Disciplines to play.",
             "refs":{
                 "LSJ 20020218":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/o59KNX0R1Ls/m/QHnuE-mmSj0J"
+            }
+        },
+        {
+            "text":"The ally counts as \"independent\" when playing cards as a vampire",
+            "refs":{
+                "LSJ 20020503":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/1DbOr3g3vP8/m/xF8dvxQZye4J",
+                "LSJ 20060126":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PBEBNFH61ik/m/MPf8Rs1F958J"
             }
         }
     ],
@@ -17550,6 +17617,13 @@
             "text":"Multiple similar effects (e.g. two {Infernal Familiar}, or {Ian Forestal} with an {Infernal Familiar}) cannot be used to meet the requirements of a multi-Discipline card that the minion is missing one or more Disciplines to play.",
             "refs":{
                 "LSJ 20020218":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/o59KNX0R1Ls/m/QHnuE-mmSj0J"
+            }
+        },
+        {
+            "text":"The ally counts as \"independent\" when playing cards as a vampire",
+            "refs":{
+                "LSJ 20020503":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/1DbOr3g3vP8/m/xF8dvxQZye4J",
+                "LSJ 20060126":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PBEBNFH61ik/m/MPf8Rs1F958J"
             }
         }
     ],
@@ -18755,14 +18829,6 @@
             }
         }
     ],
-    "102190":[
-        {
-            "text":"[pro] Must be played before strike resolution and damage prevention in order to affect the current strike. Can be played after both strikes have been chosen.",
-            "refs":{
-                "RTR 19960112":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d3n3StNS7no/m/k2NmZFUl9fAJ"
-            }
-        }
-    ],
     "102192":[
         {
             "text":"If placed on a minion that cannot have equipment, the Stake is burned. The \"does not unlock as normal\" effect still applies.",
@@ -19878,6 +19944,12 @@
             "text":"\"Once each turn\" means once during each player's turn.",
             "refs":{
                 "ANK 20180719-4":"https://www.vekn.net/forum/rules-questions/76833-once-each-turn#89014"
+            }
+        },
+        {
+            "text":"The ability to make the damage from the vampire's strikes aggravated that round must be used before strike resolution and damage prevention in order to affect the current strike. Can be played after both strikes have been chosen.",
+            "refs":{
+                "RTR 19960112":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d3n3StNS7no/m/k2NmZFUl9fAJ"
             }
         }
     ],
@@ -22920,6 +22992,12 @@
             "refs":{
                 "ANK 20180524":"https://www.vekn.net/forum/rules-questions/76595-rules-team-rulings-rtr-11-05-2018?start=60#87433"
             }
+        },
+        {
+            "text":"[MERGED] The ability to make the damage from the vampire's strikes aggravated that round must be used before strike resolution and damage prevention in order to affect the current strike. Can be played after both strikes have been chosen.",
+            "refs":{
+                "RTR 19960112":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d3n3StNS7no/m/k2NmZFUl9fAJ"
+            }
         }
     ],
     "201506":[
@@ -24225,6 +24303,33 @@
             }
         }
     ],
+    "G00110":[
+        {
+            "text":"Cards requiring a discipline come in play at the inferior version.",
+            "refs":{
+                "RBK equip":"https://www.vekn.net/rulebook#equip",
+                "RBK recruit-ally":"https://www.vekn.net/rulebook#recruit-ally",
+                "RBK employ-retainer":"https://www.vekn.net/rulebook#employ-retainer"
+            }
+        }
+    ],
+    "G00111":[
+        {
+            "text":"The ally counts as \"independent\" when playing cards as a vampire",
+            "refs":{
+                "LSJ 20020503":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/1DbOr3g3vP8/m/xF8dvxQZye4J",
+                "LSJ 20060126":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PBEBNFH61ik/m/MPf8Rs1F958J"
+            }
+        }
+    ],
+    "G00112":[
+        {
+            "text":"The ability to make the damage from the vampire's strikes aggravated that round must be used before strike resolution and damage prevention in order to affect the current strike. Can be played after both strikes have been chosen.",
+            "refs":{
+                "RTR 19960112":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d3n3StNS7no/m/k2NmZFUl9fAJ"
+            }
+        }
+    ],
     "101519":[
         {
             "text":"If one is ousted while having temporary control of a minion, the minion is removed from the game.  (Reversal of Previous Rulings)",
@@ -24877,6 +24982,13 @@
             "refs":{
                 "LSJ 20010710":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GsI1UyH54jU/m/x9LfDZX1vR4J"
             }
+        },
+        {
+            "text":"The ally counts as \"independent\" when playing cards as a vampire",
+            "refs":{
+                "LSJ 20020503":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/1DbOr3g3vP8/m/xF8dvxQZye4J",
+                "LSJ 20060126":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PBEBNFH61ik/m/MPf8Rs1F958J"
+            }
         }
     ],
     "100039":[
@@ -24928,6 +25040,13 @@
             "refs":{
                 "LSJ 20020218":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/o59KNX0R1Ls/m/QHnuE-mmSj0J"
             }
+        },
+        {
+            "text":"The ally counts as \"independent\" when playing cards as a vampire",
+            "refs":{
+                "LSJ 20020503":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/1DbOr3g3vP8/m/xF8dvxQZye4J",
+                "LSJ 20060126":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PBEBNFH61ik/m/MPf8Rs1F958J"
+            }
         }
     ],
     "100821":[
@@ -24967,6 +25086,13 @@
             "refs":{
                 "ANK 20200203-2":"https://www.vekn.net/forum/rules-questions/78415-is-ghoul-mortal#98872",
                 "LSJ 20060515":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/bzusnKlnYr8/m/OSMvzE7YjokJ"
+            }
+        },
+        {
+            "text":"The ally counts as \"independent\" when playing cards as a vampire",
+            "refs":{
+                "LSJ 20020503":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/1DbOr3g3vP8/m/xF8dvxQZye4J",
+                "LSJ 20060126":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PBEBNFH61ik/m/MPf8Rs1F958J"
             }
         }
     ],
@@ -25025,6 +25151,13 @@
             "text":"Multiple similar effects (e.g. two {Infernal Familiar}, or {Ian Forestal} with an {Infernal Familiar}) cannot be used to meet the requirements of a multi-Discipline card that the minion is missing one or more Disciplines to play.",
             "refs":{
                 "LSJ 20020218":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/o59KNX0R1Ls/m/QHnuE-mmSj0J"
+            }
+        },
+        {
+            "text":"The ally counts as \"independent\" when playing cards as a vampire",
+            "refs":{
+                "LSJ 20020503":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/1DbOr3g3vP8/m/xF8dvxQZye4J",
+                "LSJ 20060126":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PBEBNFH61ik/m/MPf8Rs1F958J"
             }
         }
     ],
@@ -25096,6 +25229,13 @@
             "refs":{
                 "LSJ 20020218":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/o59KNX0R1Ls/m/QHnuE-mmSj0J"
             }
+        },
+        {
+            "text":"The ally counts as \"independent\" when playing cards as a vampire",
+            "refs":{
+                "LSJ 20020503":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/1DbOr3g3vP8/m/xF8dvxQZye4J",
+                "LSJ 20060126":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PBEBNFH61ik/m/MPf8Rs1F958J"
+            }
         }
     ],
     "101165":[
@@ -25160,6 +25300,13 @@
             "text":"Multiple similar effects (e.g. two {Infernal Familiar}, or {Ian Forestal} with an {Infernal Familiar}) cannot be used to meet the requirements of a multi-Discipline card that the minion is missing one or more Disciplines to play.",
             "refs":{
                 "LSJ 20020218":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/o59KNX0R1Ls/m/QHnuE-mmSj0J"
+            }
+        },
+        {
+            "text":"The ally counts as \"independent\" when playing cards as a vampire",
+            "refs":{
+                "LSJ 20020503":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/1DbOr3g3vP8/m/xF8dvxQZye4J",
+                "LSJ 20060126":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PBEBNFH61ik/m/MPf8Rs1F958J"
             }
         }
     ],
@@ -25238,6 +25385,13 @@
             "refs":{
                 "LSJ 20020218":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/o59KNX0R1Ls/m/QHnuE-mmSj0J"
             }
+        },
+        {
+            "text":"The ally counts as \"independent\" when playing cards as a vampire",
+            "refs":{
+                "LSJ 20020503":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/1DbOr3g3vP8/m/xF8dvxQZye4J",
+                "LSJ 20060126":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PBEBNFH61ik/m/MPf8Rs1F958J"
+            }
         }
     ],
     "101537":[
@@ -25302,6 +25456,13 @@
             "text":"Multiple similar effects (e.g. two {Infernal Familiar}, or {Ian Forestal} with an {Infernal Familiar}) cannot be used to meet the requirements of a multi-Discipline card that the minion is missing one or more Disciplines to play.",
             "refs":{
                 "LSJ 20020218":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/o59KNX0R1Ls/m/QHnuE-mmSj0J"
+            }
+        },
+        {
+            "text":"The ally counts as \"independent\" when playing cards as a vampire",
+            "refs":{
+                "LSJ 20020503":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/1DbOr3g3vP8/m/xF8dvxQZye4J",
+                "LSJ 20060126":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PBEBNFH61ik/m/MPf8Rs1F958J"
             }
         }
     ],
@@ -26881,6 +27042,15 @@
             }
         }
     ],
+    "101008":[
+        {
+            "text":"[pot][pre] Cannot be used during a referendum that is automatically passing.",
+            "refs":{
+                "PIB 20150105":"https://www.vekn.net/forum/rules-questions/68465-voting-is-complicated#68493",
+                "LSJ 19980107":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aUUs4VCR_Ec/m/PLecvfrEqbgJ"
+            }
+        }
+    ],
     "101010":[
         {
             "text":"Cannot be used during a referendum that is automatically passing.",
@@ -27179,6 +27349,14 @@
                 "LSJ 20010627":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NhNCVCCDyU0/m/I5Yph3-UUPsJ",
                 "LSJ 20010629":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/MhHKBY7II78/m/EyI_ise9M-kJ",
                 "LSJ 20090304-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/B7EQiAVOr1Q/m/gg-GkqQBRp8J"
+            }
+        },
+        {
+            "text":"Cards requiring a discipline come in play at the inferior version.",
+            "refs":{
+                "RBK equip":"https://www.vekn.net/rulebook#equip",
+                "RBK recruit-ally":"https://www.vekn.net/rulebook#recruit-ally",
+                "RBK employ-retainer":"https://www.vekn.net/rulebook#employ-retainer"
             }
         }
     ],
@@ -27645,6 +27823,14 @@
             "refs":{
                 "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
                 "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+            }
+        },
+        {
+            "text":"[spi],[SPI] Cards requiring a discipline come in play at the inferior version.",
+            "refs":{
+                "RBK equip":"https://www.vekn.net/rulebook#equip",
+                "RBK recruit-ally":"https://www.vekn.net/rulebook#recruit-ally",
+                "RBK employ-retainer":"https://www.vekn.net/rulebook#employ-retainer"
             }
         }
     ],
@@ -31023,6 +31209,26 @@
             }
         }
     ],
+    "100344":[
+        {
+            "text":"[VIC] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}).",
+            "refs":{
+                "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
+            }
+        },
+        {
+            "text":"[VIC] The card cannot be played if the minion cannot afford to burn the blood.",
+            "refs":{
+                "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
+            }
+        },
+        {
+            "text":"[VIC] The ability to make the damage from the vampire's strikes aggravated that round must be used before strike resolution and damage prevention in order to affect the current strike. Can be played after both strikes have been chosen.",
+            "refs":{
+                "RTR 19960112":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d3n3StNS7no/m/k2NmZFUl9fAJ"
+            }
+        }
+    ],
     "100599":[
         {
             "text":"[pro] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}).",
@@ -32491,6 +32697,14 @@
                 "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
                 "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
             }
+        },
+        {
+            "text":"[TEM] Cards requiring a discipline come in play at the inferior version.",
+            "refs":{
+                "RBK equip":"https://www.vekn.net/rulebook#equip",
+                "RBK recruit-ally":"https://www.vekn.net/rulebook#recruit-ally",
+                "RBK employ-retainer":"https://www.vekn.net/rulebook#employ-retainer"
+            }
         }
     ],
     "101079":[
@@ -33361,6 +33575,104 @@
             "refs":{
                 "LSJ 20030902-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/mgZt4f2LyOg/m/FCeKmePPkxwJ",
                 "LSJ 20060808-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/7oK-hKbOs9g/m/EGeyVt3vfl4J"
+            }
+        }
+    ],
+    "100162":[
+        {
+            "text":"Cards requiring a discipline come in play at the inferior version.",
+            "refs":{
+                "RBK equip":"https://www.vekn.net/rulebook#equip",
+                "RBK recruit-ally":"https://www.vekn.net/rulebook#recruit-ally",
+                "RBK employ-retainer":"https://www.vekn.net/rulebook#employ-retainer"
+            }
+        }
+    ],
+    "100192":[
+        {
+            "text":"The ability to make the damage from the vampire's strikes aggravated that round must be used before strike resolution and damage prevention in order to affect the current strike. Can be played after both strikes have been chosen.",
+            "refs":{
+                "RTR 19960112":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d3n3StNS7no/m/k2NmZFUl9fAJ"
+            }
+        }
+    ],
+    "100228":[
+        {
+            "text":"The ability to make the damage from the vampire's strikes aggravated that round must be used before strike resolution and damage prevention in order to affect the current strike. Can be played after both strikes have been chosen.",
+            "refs":{
+                "RTR 19960112":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d3n3StNS7no/m/k2NmZFUl9fAJ"
+            }
+        }
+    ],
+    "100356":[
+        {
+            "text":"[pro] The ability to make the damage from the vampire's strikes aggravated that round must be used before strike resolution and damage prevention in order to affect the current strike. Can be played after both strikes have been chosen.",
+            "refs":{
+                "RTR 19960112":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d3n3StNS7no/m/k2NmZFUl9fAJ"
+            }
+        }
+    ],
+    "102190":[
+        {
+            "text":"[pro] The ability to make the damage from the vampire's strikes aggravated that round must be used before strike resolution and damage prevention in order to affect the current strike. Can be played after both strikes have been chosen.",
+            "refs":{
+                "RTR 19960112":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d3n3StNS7no/m/k2NmZFUl9fAJ"
+            }
+        }
+    ],
+    "200162":[
+        {
+            "text":"The ability to make the damage from the vampire's strikes aggravated that round must be used before strike resolution and damage prevention in order to affect the current strike. Can be played after both strikes have been chosen.",
+            "refs":{
+                "RTR 19960112":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d3n3StNS7no/m/k2NmZFUl9fAJ"
+            }
+        }
+    ],
+    "200673":[
+        {
+            "text":"The ability to make the damage from the vampire's strikes aggravated that round must be used before strike resolution and damage prevention in order to affect the current strike. Can be played after both strikes have been chosen.",
+            "refs":{
+                "RTR 19960112":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d3n3StNS7no/m/k2NmZFUl9fAJ"
+            }
+        }
+    ],
+    "200685":[
+        {
+            "text":"The ability to make the damage from the vampire's strikes aggravated that round must be used before strike resolution and damage prevention in order to affect the current strike. Can be played after both strikes have been chosen.",
+            "refs":{
+                "RTR 19960112":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d3n3StNS7no/m/k2NmZFUl9fAJ"
+            }
+        }
+    ],
+    "200810":[
+        {
+            "text":"The ability to make the damage from the vampire's strikes aggravated that round must be used before strike resolution and damage prevention in order to affect the current strike. Can be played after both strikes have been chosen.",
+            "refs":{
+                "RTR 19960112":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d3n3StNS7no/m/k2NmZFUl9fAJ"
+            }
+        }
+    ],
+    "200948":[
+        {
+            "text":"The ability to make the damage from the vampire's strikes aggravated that round must be used before strike resolution and damage prevention in order to affect the current strike. Can be played after both strikes have been chosen.",
+            "refs":{
+                "RTR 19960112":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d3n3StNS7no/m/k2NmZFUl9fAJ"
+            }
+        }
+    ],
+    "201053":[
+        {
+            "text":"The ability to make the damage from the vampire's strikes aggravated that round must be used before strike resolution and damage prevention in order to affect the current strike. Can be played after both strikes have been chosen.",
+            "refs":{
+                "RTR 19960112":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d3n3StNS7no/m/k2NmZFUl9fAJ"
+            }
+        }
+    ],
+    "201516":[
+        {
+            "text":"The ability to make the damage from the vampire's strikes aggravated that round must be used before strike resolution and damage prevention in order to affect the current strike. Can be played after both strikes have been chosen.",
+            "refs":{
+                "RTR 19960112":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d3n3StNS7no/m/k2NmZFUl9fAJ"
             }
         }
     ]

@@ -379,11 +379,11 @@
   - '[VAL] If both vampires play it, the acting Methuselah decides which resolves first. The other is lost. [PIB 20120225]
     [LSJ 20011215]'
   - '[ani] Additional damage inherits all of the properties of the base damage. [TOM 19960225]'
+  - '[VAL] If the combat continues (e.g. {Telepathic Tracking}), the card has no effect (no new combat occurs afterwards).
+    [RTR 20020501]'
+  - '[VAL] Queues a combat. No other combat can be queued afterwards (e.g. {Psyche!} cannot be used). [LSJ 19971003]'
 100191|Blithe Acceptance:
   - '[OBF] If a new combat begins (eg. {Psyche!}), you need to burn 1 blood again (or the card). [ANK 20230527]'
-100192|Blood Agony:
-  - Must be played before strike resolution and damage prevention in order to affect the current strike (can be played after
-    both strikes have been chosen). [RTR 19960112]
 100195|Blood Brother Ambush:
   - Can be used by a Brujah Antitribu taking an action while in torpor. If this happens, the blocker loses the opportunity
     to commit diablerie. [RTR 20010710]
@@ -449,9 +449,6 @@
 100224|Bloodstorm of Chorazin:
   - The action ends unsuccessfully immediately, no other action modifier or reaction can be played afterwards. [RTR 20180719]
     [ANK 20200207]
-100228|Body Arsenal:
-  - Must be played before strike resolution and damage prevention in order to affect the current strike. (can be played after
-    both strikes have been chosen) [RTR 19960112]
 100229|Body Bag:
   - Can be equipped by a non-Anarch and would still count as a haven, although the rest of his effect does not apply. [LSJ
     20030607]
@@ -679,9 +676,6 @@
     voting 'no' before it is played, as well as to vampores voting 'no' after it is played. [RTR 19951110]
 100340|Children of Stone:
   - This is an "equip action" [TOM 19960130]
-100344|Chiropteran Marauder:
-  - '[VIC] Must be played before strike resolution and damage prevention in order to affect the current strike (can be played
-    after both strikes have been chosen). [RTR 19960112]'
 100347|Church of the Order of St. Blaise:
   - Can put counters on locations that use "blood" or "pool" counters. [PIB 20110712-1] [LSJ 20040518-2]
 100352|Claiming the Body:
@@ -699,9 +693,6 @@
 100355|Clandestine Contract:
   - The action to put the card in play and the one once the card is in play are different (a vampire can take both in the
     same turn if they unlock in between). [ANK 20220910]
-100356|Claws of the Dead:
-  - '[pro] Must be played before strike resolution and damage prevention in order to affect the current strike. Can be played
-    after both strikes have been chosen. [RTR 19960112]'
 100358|Cleave:
   - Additional damage inherits all of the properties of the base damage. [TOM 19960225]
   - The effect lasts until the end of the action. [LSJ 20060412]
@@ -749,6 +740,8 @@
     with a {Combat Shotgun}, {Centralized Background Check} makes {.44 Magnum} too costly). [LSJ 20040701] [LSJ 20080125]
     [ANK 20181216]
   - Paying from another source (eg. {Alan Sovereign (ADV)}) does not reduce the cost as seen by Concealed Weapon. [LSJ 20080125]
+  - Conditional damage effects (e.g. {Poker}'s aggravated damage against Kiasyd) are not considered when checking {Concealed
+    Weapon}'s "with a regular strike" qualification. [LSJ 20020729]
 100394|Concoction of Vitality:
   - Can be used after declaring an action using a discipline (eg. {Govern the Unaligned}). [LSJ 20100402]
 100395|Concordance:
@@ -1276,8 +1269,6 @@
 100725|Field Training:
   - Is a change of the actual sect. A temporary effect overriding the sect has precedence and if it does, this card burns
     (eg. {Writ of Acceptance}). [LSJ 20100811]
-  - If the target changes sect to a sect inappropriate for his title, he loses its benefit until his sect is appropriate.
-    He immediately yields the title if it is contested or he receives a new one. [LSJ 20060904]
   - The acting vampire must have a superior discipline to choose from. [ANK 20180731-2]
 100728|Filchware's Pawn Shop:
   - Cannot be used to replay a card that can be played only once in a game. [LSJ 20040518]
@@ -1386,8 +1377,6 @@
 100798|Galaric's Legacy:
   - Is a change of the actual sect. A temporary effect overriding the sect has precedence and if it does, this card burns
     (eg. {Writ of Acceptance}). [LSJ 20100811]
-  - If the target changes sect to a sect inappropriate for his title, he loses its benefit until his sect is appropriate.
-    He immediately yields the title if it is contested or he receives a new one. [LSJ 20060904]
 100799|Gambit Accepted:
   - If the controller of a Gambit in play withdraws, his or her predator gets a VP from the Gambit (the Methuselah who withdraws
     still gets a VP for withdrawing, of course). [RTR 20040501]
@@ -1470,8 +1459,6 @@
   - Is not the default action, no blood is paid to become Anarch. [ANK 20181017]
   - Is a change of the actual sect. A temporary effect overriding the sect has precedence and if it does, this card burns
     (eg. {Writ of Acceptance}). [LSJ 20100811]
-  - If the target changes sect to a sect inappropriate for his title, he loses its benefit until his sect is appropriate.
-    He immediately yields the title if it is contested or he receives a new one. [LSJ 20060904]
 100841|Goblinism:
   - '[pot] The action is directed at the Methuselah controlling the location, undirected if you control it. [RBK who-may-attempt-to-block]
     [LSJ 20090324]'
@@ -1596,7 +1583,6 @@
   - '[cel] A limited additional strike can be played before or after. [LSJ 20001206] [ANK 20211124]'
 100912|Herald of Topheth:
   - Can use {Charming Lobby} to call a referendum "as a vampire". [RTR 20020501]
-  - Cannot play Anarch cards. [ANK 20230810]
 100913|Heroic Might:
   - The strikes it provides are Potence [pot] strikes (eg. they benefit from {Increased Strength}). [LSJ 20081120-2]
 100916|Hidden Lurker:
@@ -1730,8 +1716,9 @@
   - '[CEL] If canceled as it is played, its effect is not applied and only one card is drawn as a replacement. [LSJ 20021022]'
   - '[CEL] Once successfully played, if a subsequent combat card played by this minion gets canceled as it is played, an additional
     card is drawn for replacement. [ANK 20191211]'
-  - '[CEL] If multiple cards need replacement (eg. {Nicomedes}, {Blood Weakens}), replace and discard down to hand size one
-    by one. [ANK 20180925-1] [LSJ 20100506]'
+  - '[CEL] If an effect would force you to replace more than 1 card (e.g. {Nicomedes}, {Blood Weakens}), replace and draw
+    extra cards individually (i.e. one replacement card draw at a time), discarding each time X cards (where X is the number
+    of extra cards you drew). [ANK 20180925-1] [LSJ 20100506]'
   - '[CEL] Effects that make you discard (eg. {Nicomedes}) are subject to Infernal Pursuit. [ANK 20180925-1]'
   - '[CEL] When played multiple times, each time you replace a card, draw all additional cards at once then discard down to
     hand size. [TOM 19950921-2]'
@@ -1774,8 +1761,6 @@
     He immediately yields the title if it is contested or he receives a new one. [LSJ 20060904]
 101005|Invoke Poison Glands:
   - Additional damage inherits all of the properties of the base damage. [TOM 19960225]
-101008|Iron Glare:
-  - '[pot][pre] Cannot be used during a referendum that is automatically passing. [PIB 20150105] [LSJ 19980107]'
 101009|Iron Heart:
   - Cannot be used to cancel a card that could be played with [pre] (or [dom]) but has not been (eg. {Virtuosa} play with
     [mel]). [PIB 20130704]
@@ -2635,8 +2620,6 @@
 101575|Red Question, The:
   - Is a change of the actual sect. A temporary effect overriding the sect has precedence and if it does, this card burns
     (eg. {Writ of Acceptance}). [LSJ 20100811]
-  - If the target changes sect to a sect inappropriate for his title, he loses its benefit until his sect is appropriate.
-    He immediately yields the title if it is contested or he receives a new one. [LSJ 20060904]
   - Does not make the action an action that "makes this vampire anarch" (eg. {CrimethInc.} cannot be played). [ANK 20180125]
   - The burn option cannot be used if you have a non-titled, non-Anarch vampire in torpor. [LSJ 20091204]
 101579|Redistribution:
@@ -3093,7 +3076,6 @@
     but not {Compel the Spirit}). [LSJ 20071014]
   - The mummies are not affected by {Wormwood}. [LSJ 20100716]
 101847|Spirit Claws:
-  - '[pro] Must be played before strike resolution (and damage prevention) in order to affect the current strike [RTR 19960112]'
   - '[SPI][PRO] The [pro] and [spi][pro] versions do not contest with it. [ANK 20180629]'
 101848|Spirit Marionette:
   - '[OBE] Requirements do not apply when taking control of a card already in play. [TOM 19960226-1]'
@@ -3656,9 +3638,6 @@
 102189|WMRH Talk Radio:
   - Does not consider blocks made before the effect was used (if the action has been continued with eg. {Form of Mist}). [ANK
     20230319]
-102190|Wolf Claws:
-  - '[pro] Must be played before strike resolution and damage prevention in order to affect the current strike. Can be played
-    after both strikes have been chosen. [RTR 19960112]'
 102192|Wooden Stake:
   - If placed on a minion that cannot have equipment, the Stake is burned. The "does not unlock as normal" effect still applies.
     [LSJ 19980831]
@@ -4890,3 +4869,10 @@ G00108|can steal minion during an action:
     before non-mandatory actions. [LSJ 20001201]
 G00109|Cannot be dodged:
   - Does not prevent the opponent from dodging, the dodge just has no effect. [LSJ 20030902-2] [LSJ 20060808-1]
+G00110|Put Card in play ignoring requirements:
+  - Cards requiring a discipline come in play at the inferior version. [RBK equip] [RBK recruit-ally] [RBK employ-retainer]
+G00111|Allies without a specified sect:
+  - The ally counts as "independent" when playing cards as a vampire [LSJ 20020503] [LSJ 20060126]
+G00112|Make strike aggravated:
+  - The ability to make the damage from the vampire's strikes aggravated that round must be used before strike resolution
+    and damage prevention in order to affect the current strike. Can be played after both strikes have been chosen. [RTR 19960112]
