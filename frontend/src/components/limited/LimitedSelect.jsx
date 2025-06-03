@@ -12,15 +12,15 @@ import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router";
 
 const LimitedSelect = ({ value, setValue }) => {
-  const [state, setState] = useState();
+  const { limitedMode, toggleLimitedMode } = useApp();
 
+  const handleSelect = (e) => setValue(e.value);
   const options = [
-    { value: null, label: "Disabled (default)" },
+    { value: false, label: "Unlimited (default VTES)" },
     { value: TWO_P, label: "Two Players" },
     { value: V5, label: "V5" },
     { value: CUSTOM, label: "Custom" },
   ];
-  const handleSelect = (e) => setValue(e.value);
 
   return (
     <Select

@@ -6,7 +6,6 @@ import twdDefaults from "@/components/search_forms/forms_data/defaultsTwdForm.js
 import { CRYPT, DECK, DECKID, ID, LIBRARY, PDA, TWD } from "@/constants";
 import {
   deckStore,
-  limitedStore,
   searchCryptForm,
   searchLibraryForm,
   searchPdaForm,
@@ -54,6 +53,7 @@ const Navigation = () => {
     isPlaytester,
     playtestMode,
     togglePlaytestMode,
+    limitedPreset
   } = useApp();
 
   const location = useLocation();
@@ -63,7 +63,6 @@ const Navigation = () => {
   const libraryFormState = useSnapshot(searchLibraryForm);
   const twdFormState = useSnapshot(searchTwdForm);
   const pdaFormState = useSnapshot(searchPdaForm);
-  const limitedStoreState = useSnapshot(limitedStore);
 
   const pdaUrl =
     JSON.stringify(pdaFormState) === JSON.stringify(pdaDefaults)
@@ -88,10 +87,6 @@ const Navigation = () => {
   const decksUrl = `/decks${deck?.[DECKID] ? `/${deck[DECKID]}` : ""}`;
   const cardsUrl = `/cards${quickCard ? `/${quickCard[ID]}` : ""}`;
 
-  const isLimited =
-    Object.keys(limitedStoreState[CRYPT]).length + Object.keys(limitedStoreState[LIBRARY]).length >
-    0;
-
   return (
     <nav className="z-50 bg-bgNav max-md:fixed max-md:bottom-0 max-md:w-full md:sticky md:top-0 dark:bg-bgNavDark print:hidden">
       <div className="navbar-container mx-auto flex h-10 justify-between md:gap-3">
@@ -108,7 +103,7 @@ const Navigation = () => {
               Inventory Mode
             </Toggle>
           )}
-          {(isLimited || limitedMode) && (
+          {(limitedPreset || limitedMode) && (
             <Toggle isOn={limitedMode} handleClick={toggleLimitedMode} variant="secondary">
               Limited Mode
             </Toggle>
@@ -122,7 +117,7 @@ const Navigation = () => {
         <div className="flex items-center justify-end max-md:w-full">
           <div className="flex h-full w-full items-center justify-between">
             <div className="md:hidden">
-              <NavMobileMenu isLimited={isLimited} />
+              <NavMobileMenu />
             </div>
             <Link
               className="max-md:hidden"

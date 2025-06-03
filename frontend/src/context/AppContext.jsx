@@ -3,11 +3,13 @@ import {
   CAPACITY_MIN_MAX,
   CARDS,
   CRYPT,
+  CUSTOM,
   DATE_NEW_OLD,
   DECK,
   DECKID,
   DECKS,
   EN,
+  ID,
   IS_AUTHOR,
   IS_BRANCHES,
   IS_FROZEN,
@@ -27,9 +29,12 @@ import {
   QUANTITYx,
   RANK_HIGH_LOW,
   SRC,
+  SET,
   TEXT,
   TWD,
+  TWO_P,
   TYPE,
+  V5,
 } from "@/constants";
 import {
   deckLocalize,
@@ -64,6 +69,7 @@ const LANG = "lang";
 const ADD_MODE = "addMode";
 const INVENTORY_MODE = "inventoryMode";
 const LIMITED_MODE = "limitedMode";
+const LIMITED_PRESET = "limitedPreset";
 const PLAYTEST_MODE = "playtestMode";
 const SHOW_IMAGE = "showImage";
 const SHOW_LEGACY_IMAGE = "showLegacyImage";
@@ -108,6 +114,7 @@ export const AppProvider = ({ children }) => {
   const [addMode, setAddMode] = useState(getLocalStorage(ADD_MODE) ?? isDesktop);
   const [inventoryMode, setInventoryMode] = useState(getLocalStorage(INVENTORY_MODE) ?? false);
   const [limitedMode, setLimitedMode] = useState(getLocalStorage(LIMITED_MODE) ?? false);
+  const [limitedPreset, setLimitedPreset] = useState(getLocalStorage(LIMITED_PRESET) ?? false);
   const [searchInventoryMode, setSearchInventoryMode] = useState();
   const [searchMissingInventoryMode, setSearchMissingInventoryMode] = useState();
   const [cryptDeckSort, setCryptDeckSort] = useState(getLocalStorage(CRYPT_DECK_SORT) ?? QUANTITYx);
@@ -150,6 +157,7 @@ export const AppProvider = ({ children }) => {
   const [localizedCrypt, setLocalizedCrypt] = useState();
   const [localizedLibrary, setLocalizedLibrary] = useState();
   const [preconDecks, setPreconDecks] = useState();
+  const [twoPlayersCards, setTwoPlayersCards ] = useState({})
 
   const { [DECKS]: decks } = useSnapshot(deckStore);
   const lastDeckArray = (decks && Object.values(decks).toSorted(byTimestamp)) ?? [
@@ -189,6 +197,48 @@ export const AppProvider = ({ children }) => {
     });
   };
 
+  useEffect(() => {
+    switch (limitedPreset) {
+      case V5:
+        if (!limitedMode) toggleLimitedMode();
+        return setLimitedFormat(
+          {},
+          {},
+          {},
+          {},
+          {
+            NB3: true,
+            V5H: true,
+            V5L: true,
+            "30th": true,
+            V5C: true,
+            NB2: true,
+            FoL: true,
+            NB: true,
+            V5A: true,
+            V5: true,
+          },
+        );
+      case TWO_P:
+        if (!limitedMode) toggleLimitedMode();
+        return setLimitedFormat(twoPlayersCards[CRYPT], twoPlayersCards[LIBRARY], {}, {}, {});
+      case CUSTOM:
+        if (!limitedMode) toggleLimitedMode();
+        getMany([
+          LIMITED_ALLOWED_CRYPT,
+          LIMITED_ALLOWED_LIBRARY,
+          LIMITED_BANNED_CRYPT,
+          LIMITED_BANNED_LIBRARY,
+          LIMITED_SETS,
+        ]).then(([lac, lal, lbc, lbl, ls]) => {
+          setLimitedFormat(lac, lal, lbc, lbl, ls);
+        });
+        break;
+      default:
+        if (limitedMode) toggleLimitedMode();
+    }
+  }, [limitedPreset, twoPlayersCards]);
+
   const setLimitedFormat = useCallback((lac, lal, lbc, lbl, ls) => {
     if (lac) setLimitedAllowedCrypt(lac);
     if (lal) setLimitedAllowedLibrary(lal);
@@ -208,11 +258,6 @@ export const AppProvider = ({ children }) => {
       LOCALIZED_CRYPT,
       LOCALIZED_LIBRARY,
       PRECON_DECKS,
-      LIMITED_ALLOWED_CRYPT,
-      LIMITED_ALLOWED_LIBRARY,
-      LIMITED_BANNED_CRYPT,
-      LIMITED_BANNED_LIBRARY,
-      LIMITED_SETS,
     ])
       .then(([v, pt, cb, lb, nc, nl, lc, ll, pd, lac, lal, lbc, lbl, ls]) => {
         if (!v || CARD_VERSION > v || (userData?.[PLAYTEST][IS_PLAYTESTER] && !pt)) {
@@ -228,7 +273,6 @@ export const AppProvider = ({ children }) => {
           setLocalizedLibrary(ll);
           setPreconDecks(pd);
         }
-        setLimitedFormat(lac, lal, lbc, lbl, ls);
       })
       .catch(() => {
         fetchAndSetCardBase(false, userData?.[PLAYTEST]?.secret);
@@ -293,6 +337,7 @@ export const AppProvider = ({ children }) => {
     setAddMode(false);
     setInventoryMode(false);
     setLimitedMode(false);
+    setLimitedPreset(false);
     setIsPlaytester(false);
     setIsPlaytestAdmin(false);
     setPlaytestMode(false);
@@ -313,6 +358,17 @@ export const AppProvider = ({ children }) => {
       } else if (userData) {
         initializeUserData(userData);
       }
+
+      const crypt2p = {}
+      const library2p = {}
+      Object.values(cryptCardBase)
+        .filter((c) => c[SET][TWO_P])
+        .forEach((c) => (crypt2p[c[ID]] = true));
+      Object.values(libraryCardBase)
+        .filter((c) => c[SET][TWO_P])
+        .forEach((c) => (library2p[c[ID]] = true));
+
+      setTwoPlayersCards({[CRYPT]: crypt2p, [LIBRARY]: library2p})
     }
   }, [userData, cryptCardBase, libraryCardBase]);
 
@@ -410,6 +466,14 @@ export const AppProvider = ({ children }) => {
     setAddMode(!addMode);
     setLocalStorage(ADD_MODE, !addMode);
   }, [addMode]);
+
+  const changeLimitedPreset = useCallback(
+    (value) => {
+      setLimitedPreset(value);
+      setLocalStorage(LIMITED_PRESET, value);
+    },
+    [limitedPreset],
+  );
 
   const changeCryptDeckSort = useCallback((method) => {
     setCryptDeckSort(method);
@@ -545,7 +609,8 @@ export const AppProvider = ({ children }) => {
         toggleInventoryMode,
         limitedMode,
         toggleLimitedMode,
-        setLimitedFormat,
+        limitedPreset,
+        changeLimitedPreset,
         setInventoryMode,
         addMode,
         toggleAddMode,

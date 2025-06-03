@@ -19,20 +19,12 @@ import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router";
 
 const LimitedButton = () => {
-  const { setLimitedFormat } = useApp();
+  const { setLimitedCustomPreset } = useApp();
   const [showModal, setShowModal] = useState(false);
   const [searchParams, setSearchParams] = useSearchParams();
   const limitedFormat = JSON.parse(searchParams.get(FORMAT));
 
   const setFormat = (format) => {
-    setLimitedFormat(
-      format[ALLOWED][CRYPT],
-      format[ALLOWED][LIBRARY],
-      format[BANNED][CRYPT],
-      format[BANNED][LIBRARY],
-      format[SETS],
-    );
-
     setMany([
       [LIMITED_ALLOWED_CRYPT, format[ALLOWED][CRYPT]],
       [LIMITED_ALLOWED_LIBRARY, format[ALLOWED][LIBRARY]],

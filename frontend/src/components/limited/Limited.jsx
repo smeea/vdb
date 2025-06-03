@@ -9,8 +9,7 @@ import { useApp } from "@/context";
 import { useState } from "react";
 
 const Limited = () => {
-  // const { setLimitedFormat } = useApp();
-  const [value, setValue] = useState(null);
+  const { limitedPreset, changeLimitedPreset } = useApp();
 
   return (
     <div className="flex flex-col gap-2">
@@ -23,11 +22,11 @@ const Limited = () => {
 
       <div className="flex justify-between gap-2">
         <div className="basis-full">
-          <LimitedSelect value={value} setValue={setValue} />
+          <LimitedSelect value={limitedPreset} setValue={changeLimitedPreset} />
         </div>
-        {value === CUSTOM && (
+        {limitedPreset === CUSTOM && (
           <div className="basis-full">
-            <LimitedButton value={value} setValue={setValue} />
+            <LimitedButton />
           </div>
         )}
       </div>

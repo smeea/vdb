@@ -4,14 +4,9 @@ import MoonFill from "@icons/moon-fill.svg?react";
 import PcDisplay from "@icons/pc-display.svg?react";
 import SunFill from "@icons/sun-fill.svg?react";
 
-const ThemeSelect = ({ setShowMenu }) => {
+const ThemeSelect = () => {
   const { theme, toggleTheme } = useTheme();
   const { isNarrow } = useApp();
-
-  const handleClick = () => {
-    toggleTheme();
-    isNarrow && setShowMenu(false);
-  };
 
   const themeVisual = {
     [AUTO]: {
@@ -51,7 +46,7 @@ const ThemeSelect = ({ setShowMenu }) => {
       {isNarrow ? (
         <div
           className="flex items-center gap-2 px-3 py-1.5 text-fgThird dark:text-fgPrimaryDark"
-          onClick={handleClick}
+          onClick={toggleTheme}
         >
           <div className="flex min-w-[30px] justify-center">{themeVisual[theme]?.[ICON]}</div>
           <div className="whitespace-nowrap">{themeVisual[theme]?.[NAME]}</div>
@@ -59,7 +54,7 @@ const ThemeSelect = ({ setShowMenu }) => {
       ) : (
         <div
           className="flex h-full min-w-[40px] cursor-pointer items-center justify-center text-white dark:text-white"
-          onClick={handleClick}
+          onClick={toggleTheme}
           title="Switch Theme"
         >
           {themeVisual[theme]?.[ICON]}

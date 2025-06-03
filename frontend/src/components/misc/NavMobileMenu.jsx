@@ -26,8 +26,9 @@ const LinkItem = ({ target, icon, text, handleClose }) => {
   );
 };
 
-const NavMobileMenu = ({ isLimited, setShowMenu }) => {
+const NavMobileMenu = () => {
   const {
+    limitedPreset,
     limitedMode,
     inventoryMode,
     toggleLimitedMode,
@@ -69,7 +70,7 @@ const NavMobileMenu = ({ isLimited, setShowMenu }) => {
               icon={<InfoCircleFill height="20" width="20" viewBox="0 0 16 16" />}
               handleClose={close}
             />
-            <ThemeSelect setShowMenu={setShowMenu} />
+            <ThemeSelect />
             {username && (
               <NavMobileToggle
                 isOn={inventoryMode}
@@ -81,7 +82,7 @@ const NavMobileMenu = ({ isLimited, setShowMenu }) => {
                 Inventory Mode
               </NavMobileToggle>
             )}
-            {(isLimited || limitedMode) && (
+            {(limitedPreset || limitedMode) && (
               <NavMobileToggle
                 isOn={limitedMode}
                 handleClick={() => {

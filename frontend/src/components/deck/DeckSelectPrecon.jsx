@@ -1,18 +1,18 @@
 import paths from "@/assets/data/paths.json";
 import setsAndPrecons from "@/assets/data/setsAndPrecons.json";
 import { ResultPathImage, ResultPreconClan, Select } from "@/components";
-import { CLAN, DATE, NAME, PLAYTEST, PRECON, PRECONS } from "@/constants";
+import { CLAN, DATE, NAME, PLAYTEST, PRECON, PRECONS, TWO_P } from "@/constants";
 import { useApp } from "@/context";
 import { useMemo } from "react";
 import { twMerge } from "tailwind-merge";
 
 const DeckSelectPrecon = ({ deckid, handleSelect }) => {
-  const { isMobile, playtestMode } = useApp();
+  const { isMobile, playtestMode, limitedPreset } = useApp();
 
   const options = useMemo(() => {
     const opts = [];
     Object.keys(setsAndPrecons)
-      .filter((i) => (playtestMode || i !== PLAYTEST) && setsAndPrecons[i][PRECONS])
+      .filter((i) => (playtestMode || i !== PLAYTEST) && (limitedPreset === TWO_P || i !== TWO_P) && setsAndPrecons[i][PRECONS])
       .forEach((set) => {
         const year = setsAndPrecons[set][DATE] ? setsAndPrecons[set][DATE].slice(2, 4) : null;
 
