@@ -14,6 +14,8 @@ import {
   IS_BRANCHES,
   IS_FROZEN,
   LIBRARY,
+  ALLOWED,
+  SETS,
   LIMITED_ALLOWED_CRYPT,
   LIMITED_ALLOWED_LIBRARY,
   LIMITED_BANNED_CRYPT,
@@ -56,6 +58,7 @@ import { getMany, set, setMany, update } from "idb-keyval";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { useImmer } from "use-immer";
 import { useSnapshot } from "valtio";
+import limitedV5 from "@/assets/data/limitedV5.json";
 
 const CRYPT_SEARCH_SORT = "cryptSearchSort";
 const CRYPT_DECK_SORT = "cryptDeckSort";
@@ -157,7 +160,6 @@ export const AppProvider = ({ children }) => {
   const [localizedCrypt, setLocalizedCrypt] = useState();
   const [localizedLibrary, setLocalizedLibrary] = useState();
   const [preconDecks, setPreconDecks] = useState();
-  const [twoPlayersCards, setTwoPlayersCards ] = useState({})
 
   const { [DECKS]: decks } = useSnapshot(deckStore);
   const lastDeckArray = (decks && Object.values(decks).toSorted(byTimestamp)) ?? [
@@ -201,27 +203,20 @@ export const AppProvider = ({ children }) => {
     switch (limitedPreset) {
       case V5:
         if (!limitedMode) toggleLimitedMode();
-        return setLimitedFormat(
-          {},
-          {},
-          {},
-          {},
-          {
-            NB3: true,
-            V5H: true,
-            V5L: true,
-            "30th": true,
-            V5C: true,
-            NB2: true,
-            FoL: true,
-            NB: true,
-            V5A: true,
-            V5: true,
-          },
-        );
+        setLimitedAllowedCrypt(limitedV5[ALLOWED][CRYPT]);
+        setLimitedAllowedLibrary(limitedV5[ALLOWED][LIBRARY]);
+        setLimitedSets(limitedV5[SETS]);
+        setLimitedBannedCrypt({});
+        setLimitedBannedLibrary({});
+        break;
       case TWO_P:
         if (!limitedMode) toggleLimitedMode();
-        return setLimitedFormat(twoPlayersCards[CRYPT], twoPlayersCards[LIBRARY], {}, {}, {});
+        setLimitedAllowedCrypt({});
+        setLimitedAllowedLibrary({});
+        setLimitedSets({ "2P": true });
+        setLimitedBannedCrypt({});
+        setLimitedBannedLibrary({});
+        break;
       case CUSTOM:
         if (!limitedMode) toggleLimitedMode();
         getMany([
@@ -237,7 +232,7 @@ export const AppProvider = ({ children }) => {
       default:
         if (limitedMode) toggleLimitedMode();
     }
-  }, [limitedPreset, twoPlayersCards]);
+  }, [limitedPreset]);
 
   const setLimitedFormat = useCallback((lac, lal, lbc, lbl, ls) => {
     if (lac) setLimitedAllowedCrypt(lac);
@@ -358,17 +353,6 @@ export const AppProvider = ({ children }) => {
       } else if (userData) {
         initializeUserData(userData);
       }
-
-      const crypt2p = {}
-      const library2p = {}
-      Object.values(cryptCardBase)
-        .filter((c) => c[SET][TWO_P])
-        .forEach((c) => (crypt2p[c[ID]] = true));
-      Object.values(libraryCardBase)
-        .filter((c) => c[SET][TWO_P])
-        .forEach((c) => (library2p[c[ID]] = true));
-
-      setTwoPlayersCards({[CRYPT]: crypt2p, [LIBRARY]: library2p})
     }
   }, [userData, cryptCardBase, libraryCardBase]);
 

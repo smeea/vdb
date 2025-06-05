@@ -1,0 +1,59 @@
+{
+  "sets": {
+    "30th": true,
+    "FoL": true,
+    "NB": true,
+    "NB2": true,
+    "NB3": true,
+    "SoB": true,
+    "V5": true,
+    "V5A": true,
+    "V5C": true,
+    "V5H": true,
+    "V5L": true
+  },
+  "allowed": {
+    "crypt": {
+      "200076": true,
+      "201525": true,
+      "201527": true,
+      "201528": true,
+      "201616": true,
+      "201617": true,
+      "201618": true,
+      "201619": true,
+      "201621": true,
+      "201633": true,
+      "201654": true
+    },
+    "library": {
+      "100018": true,
+      "100046": true,
+      "100073": true,
+      "100266": true,
+      "100332": true,
+      "100408": true,
+      "100526": true,
+      "100713": true,
+      "100714": true,
+      "100716": true,
+      "100723": true,
+      "101013": true,
+      "101019": true,
+      "101067": true,
+      "101156": true,
+      "101192": true,
+      "101214": true,
+      "101262": true,
+      "101297": true,
+      "101717": true,
+      "102020": true,
+      "102023": true,
+      "102088": true
+    }
+  },
+  "banned": {
+    "crypt": {},
+    "library": {}
+  }
+}
