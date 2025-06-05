@@ -1,5 +1,15 @@
 [
   {
+    "version": "2025-06-05",
+    "changes": [
+      "Add Two Players and V5 limited format. Select limited option you want in Account page, then switch it on/off using Limited Mode toggle",
+      "Add Finnish Nationals 2025 event",
+      "Add date and players/decks in events list in PDA",
+      "Add batch (all selected) lock/unlock decks in Binocular deck selection menu",
+      "Update Rulings"
+    ]
+  },
+  {
     "version": "2025-05-31",
     "changes": [
       "Add New Blood III (Hecata and Lasombra)",
