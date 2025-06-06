@@ -7,12 +7,12 @@ import { useMemo } from "react";
 import { twMerge } from "tailwind-merge";
 
 const DeckSelectPrecon = ({ deckid, handleSelect }) => {
-  const { isMobile, playtestMode, limitedPreset } = useApp();
+  const { isMobile, playtestMode, limitedMode, limitedPreset } = useApp();
 
   const options = useMemo(() => {
     const opts = [];
     Object.keys(setsAndPrecons)
-      .filter((i) => (playtestMode || i !== PLAYTEST) && (limitedPreset === TWO_P || i !== TWO_P) && setsAndPrecons[i][PRECONS])
+      .filter((i) => (playtestMode || i !== PLAYTEST) && ((limitedPreset === TWO_P && limitedMode) || i !== TWO_P) && setsAndPrecons[i][PRECONS])
       .forEach((set) => {
         const year = setsAndPrecons[set][DATE] ? setsAndPrecons[set][DATE].slice(2, 4) : null;
 
@@ -51,7 +51,7 @@ const DeckSelectPrecon = ({ deckid, handleSelect }) => {
         });
       });
     return opts;
-  }, [playtestMode]);
+  }, [playtestMode, limitedMode, limitedPreset]);
 
   const filterOption = ({ label }, string) => {
     const name = label.props.children[0].props.children[1];
