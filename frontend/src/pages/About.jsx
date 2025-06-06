@@ -57,6 +57,9 @@ const About = () => {
                 <Link to="/pda">Public Deck Archive</Link>
               </li>
               <li>
+                <Link to="/documentation#limited">Limited Formats (V5, 2-Players, Custom)</Link>
+              </li>
+              <li>
                 <Link to="/cards">Quick search Card by name</Link>
               </li>
               <li>

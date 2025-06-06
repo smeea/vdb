@@ -4,7 +4,6 @@
 - Fix PT precon report pdf export (text overlap)
 - Fix Bad imports (discord)
 - Fix avg TDA place with DQ (see Finnish Nationals)
-- Limited description
 
 # FIX ON HOLD
 - Deck-in-Url trimmed at first card - can't reproduce in dev environment

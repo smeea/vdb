@@ -54,6 +54,9 @@ const Documentation = () => {
               <li>
                 <a href="#tda">TDA search</a>
               </li>
+              <li>
+                <a href="#limited">Limited formats</a>
+              </li>
             </ul>
           </div>
         </div>
@@ -462,6 +465,17 @@ const Documentation = () => {
             let me or Rune know (contacts at the bottom of <Link to="/about">About page</Link>) and
             we will direct you.
           </div>
+        </div>
+
+        <div className="flex flex-col gap-1">
+          <Title id="limited">Limited</Title>
+          <div>
+            This feature will let you use VDB for Limited formats (V5, 2-players or custom format)
+            and will highlight what cards in the deck are not compatible, and will restrict search
+            to only compatible cards.
+          </div>
+          <div>
+            To use it go to <Link to="/account">Account page</Link> and select format you want in Limited dropdown menu. Limited toggle switch will show up in the top navigation bar (or burger menu on mobile), using it you can enable or disable the feature.</div>
         </div>
       </div>
     </div>
