@@ -3,7 +3,7 @@ import cryptDefaults from "@/components/search_forms/forms_data/defaultsCryptFor
 import libraryDefaults from "@/components/search_forms/forms_data/defaultsLibraryForm.json";
 import pdaDefaults from "@/components/search_forms/forms_data/defaultsPdaForm.json";
 import twdDefaults from "@/components/search_forms/forms_data/defaultsTwdForm.json";
-import { CRYPT, DECK, DECKID, ID, LIBRARY, PDA, TWD } from "@/constants";
+import { CUSTOM, CRYPT, DECK, DECKID, ID, LIBRARY, PDA, TWD } from "@/constants";
 import {
   deckStore,
   searchCryptForm,
@@ -100,17 +100,26 @@ const Navigation = () => {
               disabled={location.pathname === "/inventory"}
               variant="secondary"
             >
-              Inventory Mode
+              Inventory
             </Toggle>
           )}
           {(limitedPreset || limitedMode) && (
             <Toggle isOn={limitedMode} handleClick={toggleLimitedMode} variant="secondary">
-              Limited Mode
+              <div className="flex items-center gap-1">
+                Limited{" "}
+                {limitedPreset && limitedPreset !== CUSTOM && (
+                  <div className="flex gap-0.5">
+                    <div className="text-midGray dark:text-midGrayDark">[</div>
+                    {limitedPreset.toUpperCase()}
+                    <div className="dark:text-midGrayDark">]</div>
+                  </div>
+                )}
+              </div>
             </Toggle>
           )}
           {isPlaytester && (
             <Toggle isOn={playtestMode} handleClick={togglePlaytestMode} variant="secondary">
-              Playtest Mode
+              Playtest
             </Toggle>
           )}
         </div>
