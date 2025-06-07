@@ -8,7 +8,6 @@
 1 Amici Noctis
 1 Andi Liu
 1 André the Manipulator
-1 Ángel Guerrero
 1 Aniel
 1 Arms of Ahriman
 1 Army of Rats
@@ -74,8 +73,8 @@
 1 Horst von Brühl
 1 Hunger of Marduk
 1 Ian Carfax
-1 Inês Tristão
 1 Instinctive Reaction
+1 Inês Tristão
 1 Jenny Silver
 1 Juliet Parr
 1 Kalinda (G6)
@@ -178,13 +177,15 @@
 1 Vivian VI
 1 Voracious Vermin
 1 Voter Captivation
+1 WMRH Talk Radio
 1 Wake with Evening's Freshness
 1 Warmaksan
 1 Warrens, The
 1 Wasserschloss Anif, Austria
 1 Weighted Walking Stick
 1 Where the Veil Thins
+1 Whisper
 1 Wider View
 1 Wind Dance
-1 WMRH Talk Radio
 1 Yewon Ong
+1 Ángel Guerrero
