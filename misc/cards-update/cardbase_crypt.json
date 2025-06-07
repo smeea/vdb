@@ -25744,9 +25744,6 @@
             },
             "POD":{
                 "DTC":true
-            },
-            "2P":{
-                "C":true
             }
         },
         "text":"Independent: Hesha gets +1 stealth when hunting. +1 hunt.",
@@ -31801,9 +31798,6 @@
             },
             "POD":{
                 "DTC":true
-            },
-            "2P":{
-                "C":true
             }
         },
         "text":"Independent: Kalinda can bleed with +1 bleed as a +1 stealth (D) action that costs 2 blood. Blood cursed.",
@@ -46240,9 +46234,6 @@
             },
             "CE":{
                 "PN":1
-            },
-            "2P":{
-                "C":true
             }
         },
         "text":"Camarilla Prince of Brussels: During your unlock phase, you may move 1 blood from Nikolaus to any Nosferatu in your uncontrolled region.",
@@ -49761,9 +49752,6 @@
             },
             "CE":{
                 "PV":1
-            },
-            "2P":{
-                "C":true
             }
         },
         "text":"Camarilla Prince of London: Anne gets an additional +1 bleed when bleeding a Methuselah who controls a ready Tremere. +1 bleed.",
@@ -58789,9 +58777,6 @@
             },
             "POD":{
                 "DTC":true
-            },
-            "2P":{
-                "C":true
             }
         },
         "text":"Camarilla: If Tegyrius is ready, any Banu Haqim can put 1 allegiance counter on themselves as a +1 stealth action. Any Banu Haqim with any allegiance counters is considered Camarilla. Blood cursed. +1 strength.",

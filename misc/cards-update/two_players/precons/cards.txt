@@ -69,7 +69,7 @@
 1 Gnaeus Aemilius Augustinus
 1 Grooming the Protégé
 1 Guard Dogs
-1 Hesha Ruhadze
+1 Hesha Ruhadze (G6)
 1 Horace Radcliffe
 1 Horst von Brühl
 1 Hunger of Marduk
@@ -78,7 +78,7 @@
 1 Instinctive Reaction
 1 Jenny Silver
 1 Juliet Parr
-1 Kalinda
+1 Kalinda (G6)
 1 Kamaluddin
 1 Karl Schrekt
 1 Kasim Bayar
@@ -108,7 +108,7 @@
 1 Molly MacDonald
 1 Mythic Form
 1 Neserian
-1 Nikolaus Vermeulen
+1 Nikolaus Vermeulen (G6)
 1 Obedient Flesh
 1 Obfuscate
 1 Oblivion
@@ -134,7 +134,7 @@
 1 Protection Racket
 1 Pulled Fangs
 1 Pursuit
-1 Queen Anne
+1 Queen Anne (G6)
 1 Ragnar Nordstrom
 1 Rego Motum
 1 Restoration
@@ -164,7 +164,7 @@
 1 Spying Mission
 1 Swallowed by the Night
 1 Taste of Vitae
-1 Tegyrius, Vizier
+1 Tegyrius, Vizier (G6)
 1 Telepathic Counter
 1 Telepathic Vote Counting
 1 Theft of Vitae
