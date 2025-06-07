@@ -1,5 +1,5 @@
 import { SortButton } from "@/components";
-import { BASE, RANK, SCORE, SUPERIOR, TAGS } from "@/constants";
+import { DQ, BASE, RANK, SCORE, SUPERIOR, TAGS } from "@/constants";
 import { useApp } from "@/context";
 import { twMerge } from "tailwind-merge";
 
@@ -10,8 +10,8 @@ const TdaResultTotal = ({ results, sortMethods, sortMethod, setSortMethod }) => 
   let totalRank = 0;
 
   results.forEach((deck) => {
-    const rank = deck[SCORE][RANK];
-    totalRank += rank;
+    const rank = deck[SCORE][RANK]
+    if (rank !== DQ) totalRank += rank;
 
     if (byRank[rank]) {
       byRank[rank] += 1;

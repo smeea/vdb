@@ -70,6 +70,7 @@ export const DESCRIPTION = "description";
 export const DISCIPLINE = "discipline";
 export const DISCIPLINES = "disciplines";
 export const DODGE = "dodge";
+export const DQ = "DQ";
 export const EMAIL = "email";
 export const EMBRACE = "embrace";
 export const EN = "en-EN";

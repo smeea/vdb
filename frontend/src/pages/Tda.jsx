@@ -16,6 +16,7 @@ import {
   CRYPT,
   DATE,
   DECKS,
+  DQ,
   EVENT,
   GW,
   INFO,
@@ -153,8 +154,8 @@ const Tda = () => {
       archonIds.push(playerId);
 
       const rank =
-        array[20] === "DQ"
-          ? "DQ"
+        array[20] === DQ
+          ? DQ
           : Number.parseInt(array[20]) > 5
             ? Number.parseInt(array[20])
             : wb.Sheets["Final Round"]
@@ -172,7 +173,7 @@ const Tda = () => {
       };
 
       if (tempDecks[playerId]) {
-        reportedRanks.push(score[RANK] === "DQ" ? totalPlayers : score[RANK]);
+        reportedRanks.push(score[RANK] === DQ ? totalPlayers : score[RANK]);
         tdaDecks[playerId] = {
           ...tempDecks[playerId],
           [SCORE]: score,
