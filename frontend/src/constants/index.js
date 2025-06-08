@@ -74,6 +74,7 @@ export const DQ = "DQ";
 export const EMAIL = "email";
 export const EMBRACE = "embrace";
 export const EN = "en-EN";
+export const ENABLED = "enabled";
 export const ENTER_COMBAT = "enter combat";
 export const EQ = "eq";
 export const ERROR = "error";

@@ -7,7 +7,6 @@
 
 # FEATURES
 - Limited in TWD/PDA search
-- Change lang for testers
 - Add Polish Fee Stake Lublin event
 
 # FEATURES ON HOLD

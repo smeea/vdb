@@ -1,22 +1,67 @@
-import { Flag, Toggle, Tr } from "@/components";
+import { ENABLED, LANG, EN, FR, ES, PT } from "@/constants";
+import { Select, Flag, Toggle, Tr } from "@/components";
 import { playtestServices } from "@/services";
-import { useState } from "react";
+import { useImmer } from "use-immer";
 import { twMerge } from "tailwind-merge";
 
 const PlaytestManagePlayer = ({ value }) => {
   const { username, lang, liaison, timestamp, added_by, added_date, is_admin, reports } = value;
-  const [state, setState] = useState(true);
+  const [state, setState] = useImmer({[ENABLED]: true, [LANG]: lang});
 
-  const handleClick = () => {
-    playtestServices.changePlaytester(username, !state);
-    setState(!state);
+  const toggleOnOff = () => {
+    playtestServices.changePlaytester(username, ENABLED, !state[ENABLED]);
+    setState((draft) => {
+      draft[ENABLED] = !draft[ENABLED];
+    });
   };
+
+  const changeLang = (e) => {
+    playtestServices.changePlaytester(username, LANG, e.value);
+    setState((draft) => {
+      draft[LANG] = e.value;
+    })
+  };
+
+  const options = [
+    {
+      value: EN,
+      label: (
+        <div className="flex w-[23px] justify-end">
+          <Flag value={EN} />
+        </div>
+      ),
+    },
+    {
+      value: FR,
+      label: (
+        <div className="flex w-[23px] justify-end">
+          <Flag value={FR} />
+        </div>
+      ),
+    },
+    {
+      value: ES,
+      label: (
+        <div className="flex w-[23px] justify-end">
+          <Flag value={ES} />
+        </div>
+      ),
+    },
+    {
+      value: PT,
+      label: (
+        <div className="flex w-[23px] justify-end">
+          <Flag value={PT} />
+        </div>
+      ),
+    },
+  ];
 
   return (
     <Tr>
       <td>
         <div className="flex justify-between px-1">
-          <Toggle isOn={state} handleClick={handleClick} disabled={is_admin}>
+          <Toggle isOn={state[ENABLED]} handleClick={toggleOnOff} disabled={is_admin}>
             <div
               className={twMerge(
                 "flex items-center gap-2",
@@ -29,11 +74,12 @@ const PlaytestManagePlayer = ({ value }) => {
         </div>
       </td>
       <td>
-        {lang && (
-          <div className="flex items-center justify-center">
-            <Flag value={lang} />
-          </div>
-        )}
+        <Select
+          options={options}
+          placeholder={null}
+          value={options.find((obj) => obj.value === state[LANG])}
+          onChange={changeLang}
+        />
       </td>
       <td className="text-center max-sm:hidden">{reports ? reports : ""}</td>
       <td className="text-center max-sm:hidden">{timestamp}</td>

@@ -11,7 +11,7 @@ def unauthorized_handler():
     abort(401)
 
 
-@app.route("/api/playtest/users", methods=["GET", "PUT", "DELETE"])
+@app.route("/api/playtest/users", methods=["GET", "PUT", "POST", "DELETE"])
 @login_required
 def playtesters_route():
     if not current_user.playtest_admin:
@@ -22,28 +22,46 @@ def playtesters_route():
         result = {}
         for u in playtesters:
             cards_reports = (
-                len(u.playtest_report["cards"].keys()) if "cards" in u.playtest_report else 0
+                len(u.playtest_report["cards"].keys())
+                if "cards" in u.playtest_report
+                else 0
             )
             precons_reports = (
-                len(u.playtest_report["precons"].keys()) if "precons" in u.playtest_report else 0
+                len(u.playtest_report["precons"].keys())
+                if "precons" in u.playtest_report
+                else 0
             )
             total_reports = cards_reports + precons_reports
 
             result[u.username] = {
-                "lang": (u.playtest_profile["lang"] if "lang" in u.playtest_profile else None),
+                "lang": (
+                    u.playtest_profile["lang"] if "lang" in u.playtest_profile else None
+                ),
                 "added_by": (
-                    u.playtest_profile["added_by"] if "added_by" in u.playtest_profile else None
+                    u.playtest_profile["added_by"]
+                    if "added_by" in u.playtest_profile
+                    else None
                 ),
                 "added_date": (
-                    u.playtest_profile["added_date"] if "added_date" in u.playtest_profile else None
+                    u.playtest_profile["added_date"]
+                    if "added_date" in u.playtest_profile
+                    else None
                 ),
                 "timestamp": (
-                    u.playtest_profile["timestamp"] if "timestamp" in u.playtest_profile else None
+                    u.playtest_profile["timestamp"]
+                    if "timestamp" in u.playtest_profile
+                    else None
                 ),
                 "liaison": (
-                    u.playtest_profile["liaison"] if "liaison" in u.playtest_profile else None
+                    u.playtest_profile["liaison"]
+                    if "liaison" in u.playtest_profile
+                    else None
                 ),
-                "games": (u.playtest_profile["games"] if "games" in u.playtest_profile else None),
+                "games": (
+                    u.playtest_profile["games"]
+                    if "games" in u.playtest_profile
+                    else None
+                ),
                 "reports": total_reports,
                 "is_admin": u.playtest_admin,
             }
@@ -55,6 +73,20 @@ def playtesters_route():
         if not u:
             abort(400)
 
+        profile = copy.deepcopy(u.playtest_profile)
+        if request.json["lang"]:
+            profile["lang"] = request.json["lang"]
+
+        u.playtest_profile = profile
+        db.session.commit()
+
+        return jsonify({"success": True})
+
+    if request.method == "POST":
+        u = User.query.filter_by(username=request.json["username"].lower()).first()
+        if not u:
+            abort(400)
+
         u.playtester = True
         u.playtest_profile["added_by"] = current_user.username
         u.playtest_profile["added_date"] = date.today().strftime("%Y-%m-%d")
@@ -62,26 +94,44 @@ def playtesters_route():
         db.session.commit()
 
         cards_reports = (
-            len(u.playtest_report["cards"].keys()) if "cards" in u.playtest_report else 0
+            len(u.playtest_report["cards"].keys())
+            if "cards" in u.playtest_report
+            else 0
         )
         precons_reports = (
-            len(u.playtest_report["precons"].keys()) if "precons" in u.playtest_report else 0
+            len(u.playtest_report["precons"].keys())
+            if "precons" in u.playtest_report
+            else 0
         )
         total_reports = cards_reports + precons_reports
 
         profile = {
-            "lang": (u.playtest_profile["lang"] if "lang" in u.playtest_profile else None),
+            "lang": (
+                u.playtest_profile["lang"] if "lang" in u.playtest_profile else None
+            ),
             "added_by": (
-                u.playtest_profile["added_by"] if "added_by" in u.playtest_profile else None
+                u.playtest_profile["added_by"]
+                if "added_by" in u.playtest_profile
+                else None
             ),
             "added_date": (
-                u.playtest_profile["added_date"] if "added_date" in u.playtest_profile else None
+                u.playtest_profile["added_date"]
+                if "added_date" in u.playtest_profile
+                else None
             ),
             "timestamp": (
-                u.playtest_profile["timestamp"] if "timestamp" in u.playtest_profile else None
+                u.playtest_profile["timestamp"]
+                if "timestamp" in u.playtest_profile
+                else None
             ),
-            "liaison": (u.playtest_profile["liaison"] if "liaison" in u.playtest_profile else None),
-            "games": (u.playtest_profile["games"] if "games" in u.playtest_profile else None),
+            "liaison": (
+                u.playtest_profile["liaison"]
+                if "liaison" in u.playtest_profile
+                else None
+            ),
+            "games": (
+                u.playtest_profile["games"] if "games" in u.playtest_profile else None
+            ),
             "reports": total_reports,
             "is_admin": u.playtest_admin,
         }
@@ -118,14 +168,20 @@ def report_export_route(target, id):
 
     for p in playtesters:
         # defaulting lang to English if not specified
-        user_lang = p.playtest_profile["lang"] if "lang" in p.playtest_profile else "en-EN"
+        user_lang = (
+            p.playtest_profile["lang"] if "lang" in p.playtest_profile else "en-EN"
+        )
         if user_lang != lang:
             continue
 
         report = copy.deepcopy(p.playtest_report)
 
         if target == "general":
-            general = p.playtest_profile["general"] if "general" in p.playtest_profile else None
+            general = (
+                p.playtest_profile["general"]
+                if "general" in p.playtest_profile
+                else None
+            )
             if not general:
                 continue
 
@@ -152,7 +208,10 @@ def report_export_route(target, id):
                             reports[k] = {p.username: v}
 
                 elif id in report[target]:
-                    if report[target][id]["score"] == 0 and report[target][id]["text"] == "":
+                    if (
+                        report[target][id]["score"] == 0
+                        and report[target][id]["text"] == ""
+                    ):
                         continue
                     reports[p.username] = report[target][id]
 
