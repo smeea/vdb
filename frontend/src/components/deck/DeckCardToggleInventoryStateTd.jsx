@@ -1,8 +1,8 @@
-import { ID, S } from "@/constants";
-import { cardToggleInventoryState } from "@/context";
 import PinAngleFill from "@icons/pin-angle-fill.svg?react";
 import Shuffle from "@icons/shuffle.svg?react";
 import { twMerge } from "tailwind-merge";
+import { ID, S } from "@/constants";
+import { cardToggleInventoryState } from "@/context";
 
 const DeckCardToggleInventoryStateTd = ({ card, isEditable, deckid, inventoryType }) => {
   return (

@@ -1,3 +1,5 @@
+import SearchHeartFill from "@icons/search-heart-fill.svg?react";
+import { useSnapshot } from "valtio";
 import {
   ButtonCardCopyUrl,
   ButtonClose,
@@ -13,8 +15,6 @@ import {
 import { ID, PDA, PLAYTEST_OLD, TWD, TYPE, TYPE_MASTER } from "@/constants";
 import { searchResults, setCryptCompare, setLibraryCompare, useApp } from "@/context";
 import { getIsPlaytest } from "@/utils";
-import SearchHeartFill from "@icons/search-heart-fill.svg?react";
-import { useSnapshot } from "valtio";
 
 const ResultLayoutText = ({
   card,

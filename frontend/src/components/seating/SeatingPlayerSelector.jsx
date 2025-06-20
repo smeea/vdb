@@ -1,7 +1,7 @@
-import { Button, Input, Toggle } from "@/components";
-import { NAME, RANDOM, STATE } from "@/constants";
 import Dice3 from "@icons/dice-3-fill.svg?react";
 import X from "@icons/x.svg?react";
+import { Button, Input, Toggle } from "@/components";
+import { NAME, RANDOM, STATE } from "@/constants";
 
 const SeatingPlayerSelector = ({ setPlayer, delPlayer, i, player }) => {
   const handleChange = (event) => {

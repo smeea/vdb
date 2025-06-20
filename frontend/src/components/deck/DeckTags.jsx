@@ -1,10 +1,10 @@
+import Spellcheck from "@icons/spellcheck.svg?react";
+import { useMemo } from "react";
+import { twMerge } from "tailwind-merge";
 import { ButtonIconed, Select } from "@/components";
 import { BASE, CRYPT, DECKID, LIBRARY, SUPERIOR, TAGS } from "@/constants";
 import { deckUpdate } from "@/context";
 import { getIsEditable, getTags } from "@/utils";
-import Spellcheck from "@icons/spellcheck.svg?react";
-import { useMemo } from "react";
-import { twMerge } from "tailwind-merge";
 
 const DeckTags = ({ deck, noAutotags, justifyRight, isBordered, noBackground, allTagsOptions }) => {
   const isEditable = getIsEditable(deck);

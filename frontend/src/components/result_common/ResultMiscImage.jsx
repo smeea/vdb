@@ -1,8 +1,8 @@
+import { twMerge } from "tailwind-merge";
 import cardtextIcons from "@/assets/data/cardtextIcons.json";
 import disciplinesList from "@/assets/data/disciplinesList.json";
 import { ResultDisciplineImage } from "@/components";
 import { capitalize } from "@/utils";
-import { twMerge } from "tailwind-merge";
 
 const ResultMiscImage = ({ value, title, size = "md" }) => {
   const discipline = [

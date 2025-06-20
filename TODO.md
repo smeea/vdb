@@ -1,12 +1,9 @@
 # FIX
 - PDA decks favorted and created date (older decks)
 - Fix PT precon report pdf export (text overlap)
-<<<<<<< HEAD
 - Fix Bad imports (discord)
 - Fix legacy cards (telegram)
 - Check clan/path icon algo (discord)
-=======
->>>>>>> ce851a876ee032f8c599abbbcc7ec2ef4fa657d2
 
 # FIX ON HOLD
 - Deck-in-Url trimmed at first card - can't reproduce in dev environment

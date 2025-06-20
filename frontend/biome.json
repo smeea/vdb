@@ -4,13 +4,24 @@
     "enabled": true,
     "lineWidth": 100,
     "indentStyle": "space",
-    "includes": ["**", "!**/src/assets"]
+    "includes": [
+      "**",
+      "!**/src/assets"
+    ]
   },
   "assist": {
     "enabled": true,
     "actions": {
       "source": {
-        "organizeImports": "on"
+        "organizeImports": {
+          "level": "on",
+          "options": {
+            "groups": [
+              ":PACKAGE:",
+              ":ALIAS:"
+            ]
+          }
+        }
       }
     }
   },
@@ -20,6 +31,7 @@
       "a11y": {
         "noAutofocus": "off",
         "noNoninteractiveTabindex": "off",
+        "noStaticElementInteractions": "off",
         "useKeyWithClickEvents": "off"
       },
       "complexity": {

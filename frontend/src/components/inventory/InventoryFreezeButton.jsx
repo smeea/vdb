@@ -1,8 +1,8 @@
+import LockFill from "@icons/lock-fill.svg?react";
+import UnlockFill from "@icons/unlock-fill.svg?react";
 import { Button } from "@/components";
 import { IS_FROZEN } from "@/constants";
 import { inventoryUpdate, useApp } from "@/context";
-import LockFill from "@icons/lock-fill.svg?react";
-import UnlockFill from "@icons/unlock-fill.svg?react";
 
 const InventoryFreezeButton = ({ isFrozen, className, roundedStyle, borderStyle }) => {
   const { isDesktop } = useApp();

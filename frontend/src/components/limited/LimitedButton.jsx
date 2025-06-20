@@ -1,3 +1,7 @@
+import UiChecksGrid from "@icons/ui-checks-grid.svg?react";
+import { setMany } from "idb-keyval";
+import { useEffect, useState } from "react";
+import { useSearchParams } from "react-router";
 import { ButtonIconed, LimitedModal } from "@/components";
 import {
   ALLOWED,
@@ -13,10 +17,6 @@ import {
   SETS,
 } from "@/constants";
 import { useApp } from "@/context";
-import UiChecksGrid from "@icons/ui-checks-grid.svg?react";
-import { setMany } from "idb-keyval";
-import { useEffect, useState } from "react";
-import { useSearchParams } from "react-router";
 
 const LimitedButton = () => {
   const { setLimitedCustomPreset } = useApp();

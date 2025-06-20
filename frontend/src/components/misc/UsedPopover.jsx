@@ -1,11 +1,11 @@
-import { Hr, UsedDescription } from "@/components";
-import { CRYPT, DECKS, HARD, LIBRARY, SOFT } from "@/constants";
-import { deckStore, inventoryStore, usedStore } from "@/context";
-import { getHardTotal, getSoftMax } from "@/utils";
 import ArchiveFill from "@icons/archive-fill.svg?react";
 import CalculatorFill from "@icons/calculator-fill.svg?react";
 import ChatLeftQuoteFill from "@icons/chat-left-quote-fill.svg?react";
 import { useSnapshot } from "valtio";
+import { Hr, UsedDescription } from "@/components";
+import { CRYPT, DECKS, HARD, LIBRARY, SOFT } from "@/constants";
+import { deckStore, inventoryStore, usedStore } from "@/context";
+import { getHardTotal, getSoftMax } from "@/utils";
 
 const UsedPopover = ({ cardid }) => {
   const decks = useSnapshot(deckStore)[DECKS];

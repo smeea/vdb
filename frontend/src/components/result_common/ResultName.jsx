@@ -1,9 +1,9 @@
+import { twMerge } from "tailwind-merge";
+import { useSnapshot } from "valtio";
 import { ResultLegalIcon } from "@/components";
 import { ADV, BANNED, CRYPT, ID, LIBRARY, NAME, PLAYTEST } from "@/constants";
 import { limitedStore, useApp } from "@/context";
 import { getLegality } from "@/utils";
-import { twMerge } from "tailwind-merge";
-import { useSnapshot } from "valtio";
 
 const ResultName = ({ card, isColored = true }) => {
   const { limitedMode } = useApp();

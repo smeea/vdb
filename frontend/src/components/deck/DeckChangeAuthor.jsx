@@ -1,9 +1,9 @@
+import PersonFill from "@icons/person-fill.svg?react";
+import { useEffect, useState } from "react";
 import { Input, InputLabel } from "@/components";
 import { AUTHOR, DECKID } from "@/constants";
 import { deckUpdate } from "@/context";
 import { getIsEditable } from "@/utils";
-import PersonFill from "@icons/person-fill.svg?react";
-import { useEffect, useState } from "react";
 
 const DeckChangeAuthor = ({ deck }) => {
   const [value, setValue] = useState(deck[AUTHOR] || "");

@@ -1,8 +1,8 @@
+import Check2 from "@icons/check2.svg?react";
+import { useState } from "react";
 import { Button, ErrorOverlay, Input, Spinner } from "@/components";
 import { USERNAME } from "@/constants";
 import { playtestServices } from "@/services";
-import Check2 from "@icons/check2.svg?react";
-import { useState } from "react";
 
 const PlaytestManageAdd = ({ playtesters, newPlaytesters, setNewPlaytesters }) => {
   const [username, setUsername] = useState("");

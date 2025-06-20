@@ -1,3 +1,6 @@
+import { useEffect, useState } from "react";
+import { useParams } from "react-router";
+import { useSnapshot } from "valtio";
 import {
   ButtonFloatClose,
   ButtonFloatMenu,
@@ -30,9 +33,6 @@ import {
 import { deckStore, setDeck, useApp } from "@/context";
 import { deckServices } from "@/services";
 import { getIsEditable, getRestrictions, parseDeck } from "@/utils";
-import { useEffect, useState } from "react";
-import { useParams } from "react-router";
-import { useSnapshot } from "valtio";
 
 const Diff = () => {
   const {

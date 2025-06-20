@@ -1,3 +1,8 @@
+import EightCircleFill from "@icons/8-circle-fill.svg?react";
+import Calendar2EventFill from "@icons/calendar2-event-fill.svg?react";
+import PersonFillExclamation from "@icons/person-fill-exclamation.svg?react";
+import PostcardHeartFill from "@icons/postcard-heart-fill.svg?react";
+import { useEffect, useState } from "react";
 import {
   ConditionalTooltipOrModal,
   Input,
@@ -8,11 +13,6 @@ import {
 } from "@/components";
 import { GAMES, GENERAL, LIAISON, TIMESTAMP } from "@/constants";
 import { useApp } from "@/context";
-import EightCircleFill from "@icons/8-circle-fill.svg?react";
-import Calendar2EventFill from "@icons/calendar2-event-fill.svg?react";
-import PersonFillExclamation from "@icons/person-fill-exclamation.svg?react";
-import PostcardHeartFill from "@icons/postcard-heart-fill.svg?react";
-import { useEffect, useState } from "react";
 
 const PlaytestUserCard = () => {
   const { isMobile, playtestProfile, updatePlaytestProfile } = useApp();

@@ -1,3 +1,5 @@
+import PersonPlusFill from "@icons/person-plus-fill.svg?react";
+import { useActionState, useState } from "react";
 import {
   AccountEmailForm,
   AccountPasswordForm,
@@ -7,8 +9,6 @@ import {
 import { DECKS, EMAIL, PASSWORD, USERNAME } from "@/constants";
 import { deckStore, useApp } from "@/context";
 import { userServices } from "@/services";
-import PersonPlusFill from "@icons/person-plus-fill.svg?react";
-import { useActionState, useState } from "react";
 
 const AccountRegister = () => {
   const { setUsername, setEmail, setPublicName } = useApp();

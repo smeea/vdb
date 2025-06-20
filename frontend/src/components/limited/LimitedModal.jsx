@@ -1,17 +1,17 @@
-import {
-  LimitedCardSelection,
-  LimitedSetSelection,
-  LimitedUrlButton,
-  ButtonIconed,
-  Modal,
-} from "@/components";
-import { ALLOWED, BANNED, CRYPT, LIBRARY, SETS } from "@/constants";
-import { limitedFullStore } from "@/context";
 import Download from "@icons/download.svg?react";
 import Upload from "@icons/upload.svg?react";
 import dayjs from "dayjs";
 import { useRef } from "react";
 import { useSnapshot } from "valtio";
+import {
+  ButtonIconed,
+  LimitedCardSelection,
+  LimitedSetSelection,
+  LimitedUrlButton,
+  Modal,
+} from "@/components";
+import { ALLOWED, BANNED, CRYPT, LIBRARY, SETS } from "@/constants";
+import { limitedFullStore } from "@/context";
 
 const LimitedModal = ({ setShow, setFormat }) => {
   const limitedState = useSnapshot(limitedFullStore);
@@ -73,9 +73,7 @@ const LimitedModal = ({ setShow, setFormat }) => {
         <LimitedCardSelection />
         <LimitedCardSelection inBanned />
         <div className="flex justify-end gap-2 max-sm:flex-col">
-          <LimitedUrlButton
-            format={JSON.stringify(minifiedFormat, null, "").replace(/\n/g, "")}
-          />
+          <LimitedUrlButton format={JSON.stringify(minifiedFormat, null, "").replace(/\n/g, "")} />
           <ButtonIconed
             onClick={handleFileInputClick}
             title="Import Format"

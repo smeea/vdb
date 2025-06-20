@@ -1,15 +1,10 @@
-import {
-  LimitedDelCard,
-  ButtonAddCard,
-  ResultCryptTableRowCommon,
-  ResultUsed,
-} from "@/components";
+import { twMerge } from "tailwind-merge";
+import { useSnapshot } from "valtio";
+import { ButtonAddCard, LimitedDelCard, ResultCryptTableRowCommon, ResultUsed } from "@/components";
 import { CRYPT, DECK, DECKID, ID } from "@/constants";
 import { deckCardChange, deckStore, useApp } from "@/context";
 import { useSwipe } from "@/hooks";
 import { getIsEditable, getSwipedBg } from "@/utils";
-import { twMerge } from "tailwind-merge";
-import { useSnapshot } from "valtio";
 
 const ResultCryptTableRow = ({
   card,

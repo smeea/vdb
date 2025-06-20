@@ -1,7 +1,7 @@
-import { ButtonIconed, InventoryMissingModalWrapper } from "@/components";
-import { useApp } from "@/context";
 import Cart4 from "@icons/cart4.svg?react";
 import { useState } from "react";
+import { ButtonIconed, InventoryMissingModalWrapper } from "@/components";
+import { useApp } from "@/context";
 
 const InventoryMissingButton = ({
   clan,

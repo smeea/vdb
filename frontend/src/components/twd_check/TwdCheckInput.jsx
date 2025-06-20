@@ -1,11 +1,11 @@
-import { ButtonIconed, ErrorOverlay, Textarea } from "@/components";
-import { CRYPT, DATE, DECK, EVENT, FORMAT, ID, LIBRARY, LOCATION, PLAYERS } from "@/constants";
-import { useApp } from "@/context";
-import { importDeck } from "@/utils";
 import Download from "@icons/download.svg?react";
 import Upload from "@icons/upload.svg?react";
 import X from "@icons/x.svg?react";
 import { useRef, useState } from "react";
+import { ButtonIconed, ErrorOverlay, Textarea } from "@/components";
+import { CRYPT, DATE, DECK, EVENT, FORMAT, ID, LIBRARY, LOCATION, PLAYERS } from "@/constants";
+import { useApp } from "@/context";
+import { importDeck } from "@/utils";
 
 const TwdCheckInput = ({ deckData, setDeckData }) => {
   const { cryptCardBase, libraryCardBase } = useApp();

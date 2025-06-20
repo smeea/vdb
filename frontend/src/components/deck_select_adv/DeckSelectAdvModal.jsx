@@ -1,3 +1,11 @@
+import { Menu } from "@headlessui/react";
+import Download from "@icons/download.svg?react";
+import LockFill from "@icons/lock-fill.svg?react";
+import TrashFill from "@icons/trash-fill.svg?react";
+import UnlockFill from "@icons/unlock-fill.svg?react";
+import { useState } from "react";
+import { useNavigate, useParams } from "react-router";
+import { useSnapshot } from "valtio";
 import {
   ButtonIconed,
   DeckSelectAdvTable,
@@ -9,22 +17,14 @@ import {
   Modal,
   ModalConfirmation,
 } from "@/components";
-import { IS_FROZEN, DECKID, DECKS, JOL, LACKEY, NAME, TEXT, XLSX } from "@/constants";
-import { deckUpdate, deckStore, useApp } from "@/context";
+import { DECKID, DECKS, IS_FROZEN, JOL, LACKEY, NAME, TEXT, XLSX } from "@/constants";
+import { deckStore, deckUpdate, useApp } from "@/context";
 import { useDecksTagsAll } from "@/hooks";
 import { deckServices } from "@/services";
-import { Menu } from "@headlessui/react";
-import Download from "@icons/download.svg?react";
-import TrashFill from "@icons/trash-fill.svg?react";
-import LockFill from "@icons/lock-fill.svg?react";
-import UnlockFill from "@icons/unlock-fill.svg?react";
-import { useState } from "react";
-import { useNavigate, useParams } from "react-router";
-import { useSnapshot } from "valtio";
 
 const DeckSelectAdvModal = ({ onClick, setShow, short }) => {
   const { isMobile, setShowMenuButtons, setShowFloatingButtons } = useApp();
-  const [isLocked, setIsLocked] = useState()
+  const [isLocked, setIsLocked] = useState();
   const decks = useSnapshot(deckStore)[DECKS];
   const [showDeleteConfirmation, setShowDeleteConfirmation] = useState(false);
   const [sortMethod, setSortMethod] = useState(NAME);
@@ -72,7 +72,7 @@ const DeckSelectAdvModal = ({ onClick, setShow, short }) => {
         const deck = decks[deckid];
         deckUpdate(deck[DECKID], IS_FROZEN, !isLocked);
       });
-    setIsLocked(!isLocked)
+    setIsLocked(!isLocked);
   };
 
   return (

@@ -1,3 +1,5 @@
+import DoorOpenFill from "@icons/door-open-fill.svg?react";
+import { useActionState, useState } from "react";
 import {
   AccountPasswordForm,
   AccountUsernameForm,
@@ -7,8 +9,6 @@ import {
 import { PASSWORD, USERNAME } from "@/constants";
 import { useApp } from "@/context";
 import { userServices } from "@/services";
-import DoorOpenFill from "@icons/door-open-fill.svg?react";
-import { useActionState, useState } from "react";
 
 const LoginTooltipText = () => {
   return (
@@ -63,7 +63,10 @@ const AccountLogin = () => {
         }, 1000);
     }
 
-    return { [USERNAME]: formData.get(USERNAME), [PASSWORD]: formData.get(PASSWORD) };
+    return {
+      [USERNAME]: formData.get(USERNAME),
+      [PASSWORD]: formData.get(PASSWORD),
+    };
   };
 
   const [data, action] = useActionState(loginUser);

@@ -1,8 +1,8 @@
+import { lazy, Suspense } from "react";
+import { createBrowserRouter, createRoutesFromElements, Navigate, Route } from "react-router";
 import { DECKID, DECKID_FROM, DECKID_TO, EVENT, ID } from "@/constants";
 import { useApp } from "@/context";
 import { deckServices, miscServices } from "@/services";
-import { Suspense, lazy } from "react";
-import { Navigate, Route, createBrowserRouter, createRoutesFromElements } from "react-router";
 import About from "./pages/About.jsx";
 import Account from "./pages/Account.jsx";
 import Cards from "./pages/Cards.jsx";

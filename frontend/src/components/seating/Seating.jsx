@@ -1,10 +1,10 @@
+import { useEffect, useState } from "react";
+import { useImmer } from "use-immer";
 import standardDecksData from "@/assets/data/standardDecks.json";
 import { SeatingModal } from "@/components";
 import { DECKID, NAME, RANDOM, STATE } from "@/constants";
 import { useApp } from "@/context";
 import { getLocalStorage, setLocalStorage } from "@/services/storageServices";
-import { useEffect, useState } from "react";
-import { useImmer } from "use-immer";
 
 const CUSTOM_DECKS = "seatingCustomDecks";
 const STANDARD_DECKS = "seatingStandardDecks";

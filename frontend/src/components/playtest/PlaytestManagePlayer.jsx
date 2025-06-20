@@ -1,12 +1,12 @@
-import { ENABLED, LANG, EN, FR, ES, PT } from "@/constants";
-import { Select, Flag, Toggle, Tr } from "@/components";
-import { playtestServices } from "@/services";
-import { useImmer } from "use-immer";
 import { twMerge } from "tailwind-merge";
+import { useImmer } from "use-immer";
+import { Flag, Select, Toggle, Tr } from "@/components";
+import { EN, ENABLED, ES, FR, LANG, PT } from "@/constants";
+import { playtestServices } from "@/services";
 
 const PlaytestManagePlayer = ({ value }) => {
   const { username, lang, liaison, timestamp, added_by, added_date, is_admin, reports } = value;
-  const [state, setState] = useImmer({[ENABLED]: true, [LANG]: lang});
+  const [state, setState] = useImmer({ [ENABLED]: true, [LANG]: lang });
 
   const toggleOnOff = () => {
     playtestServices.changePlaytester(username, ENABLED, !state[ENABLED]);
@@ -19,7 +19,7 @@ const PlaytestManagePlayer = ({ value }) => {
     playtestServices.changePlaytester(username, LANG, e.value);
     setState((draft) => {
       draft[LANG] = e.value;
-    })
+    });
   };
 
   const options = [

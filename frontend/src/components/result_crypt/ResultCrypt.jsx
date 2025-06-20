@@ -1,7 +1,7 @@
+import { useState } from "react";
 import { ErrorMessage, ResultCryptTotal, ResultCryptTotalInfo, ResultTable } from "@/components";
 import { CAPACITY_MAX_MIN, CAPACITY_MIN_MAX, CLAN, CRYPT, GROUP, NAME, SECT } from "@/constants";
 import { useApp } from "@/context";
-import { useState } from "react";
 
 const ResultCrypt = ({ cards, inCompare }) => {
   const { cryptSearchSort, changeCryptSearchSort } = useApp();

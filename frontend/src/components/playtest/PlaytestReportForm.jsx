@@ -1,3 +1,7 @@
+import ChatLeftQuoteFill from "@icons/chat-left-quote-fill.svg?react";
+import ChevronBarContract from "@icons/chevron-bar-contract.svg?react";
+import ChevronBarExpand from "@icons/chevron-bar-expand.svg?react";
+import { useEffect, useState } from "react";
 import {
   Button,
   Checkbox,
@@ -10,10 +14,6 @@ import {
 import { CARDS, ID, PRECONS, SCORE, TEXT, VALUE } from "@/constants";
 import { useFetch } from "@/hooks";
 import { playtestServices } from "@/services";
-import ChatLeftQuoteFill from "@icons/chat-left-quote-fill.svg?react";
-import ChevronBarContract from "@icons/chevron-bar-contract.svg?react";
-import ChevronBarExpand from "@icons/chevron-bar-expand.svg?react";
-import { useEffect, useState } from "react";
 
 const IS_PLAYED = "isPlayed";
 
@@ -100,11 +100,17 @@ const PlaytestReportForm = ({ id, setIsHotkeysDisabled, isPrecon = false }) => {
   };
 
   const handleIsPlayedChange = (event) => {
-    setReport((prevState) => ({ ...prevState, [IS_PLAYED]: !event.currentTarget.value }));
+    setReport((prevState) => ({
+      ...prevState,
+      [IS_PLAYED]: !event.currentTarget.value,
+    }));
   };
 
   const handleScoreChange = (value) => {
-    setReport((prevState) => ({ ...prevState, [SCORE]: value === prevState[SCORE] ? 0 : value }));
+    setReport((prevState) => ({
+      ...prevState,
+      [SCORE]: value === prevState[SCORE] ? 0 : value,
+    }));
   };
 
   const handleTextChange = (event) => {

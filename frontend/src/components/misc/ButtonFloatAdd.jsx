@@ -1,6 +1,6 @@
+import Plus from "@icons/plus.svg?react";
 import { ButtonFloat } from "@/components";
 import { useApp } from "@/context";
-import Plus from "@icons/plus.svg?react";
 
 const ButtonFloatAdd = ({ className }) => {
   const { toggleAddMode } = useApp();

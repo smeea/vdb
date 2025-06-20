@@ -1,3 +1,6 @@
+import { useCallback, useEffect, useState } from "react";
+import { useSearchParams } from "react-router";
+import { useSnapshot } from "valtio";
 import {
   ButtonClose,
   ButtonFloatClose,
@@ -34,9 +37,6 @@ import {
 } from "@/constants";
 import { clearTdaForm, searchTdaForm, setTdaResults, tdaStore, useApp } from "@/context";
 import { filterDecks, sanitizeFormState } from "@/utils";
-import { useCallback, useEffect, useState } from "react";
-import { useSearchParams } from "react-router";
-import { useSnapshot } from "valtio";
 
 const TdaSearchForm = ({ setShowForm }) => {
   const { cryptCardBase, libraryCardBase, showFloatingButtons, isMobile } = useApp();

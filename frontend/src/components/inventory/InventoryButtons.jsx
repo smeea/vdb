@@ -1,3 +1,8 @@
+import FolderPlus from "@icons/folder-plus.svg?react";
+import Folder2Open from "@icons/folder2-open.svg?react";
+import dayjs from "dayjs";
+import { useNavigate } from "react-router";
+import { useSnapshot } from "valtio";
 import {
   ButtonFloatClose,
   ButtonIconed,
@@ -9,11 +14,6 @@ import {
 } from "@/components";
 import { AUTHOR, CRYPT, DECKS, IS_FROZEN, LIBRARY, NAME } from "@/constants";
 import { deckStore, inventoryStore, useApp } from "@/context";
-import FolderPlus from "@icons/folder-plus.svg?react";
-import Folder2Open from "@icons/folder2-open.svg?react";
-import dayjs from "dayjs";
-import { useNavigate } from "react-router";
-import { useSnapshot } from "valtio";
 
 const InventoryButtons = ({
   setShowAddDeck,

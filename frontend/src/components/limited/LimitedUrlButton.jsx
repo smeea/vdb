@@ -1,7 +1,7 @@
-import { ButtonIconed } from "@/components";
-import { FORMAT } from "@/constants";
 import Link45Deg from "@icons/link-45deg.svg?react";
 import { useState } from "react";
+import { ButtonIconed } from "@/components";
+import { FORMAT } from "@/constants";
 
 const LimitedUrlButton = ({ format }) => {
   const [success, setSuccess] = useState(false);

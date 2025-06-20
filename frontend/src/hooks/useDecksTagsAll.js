@@ -1,5 +1,5 @@
-import { TAGS } from "@/constants";
 import { useMemo } from "react";
+import { TAGS } from "@/constants";
 
 const useDecksTagsAll = (decks) => {
   return useMemo(() => {

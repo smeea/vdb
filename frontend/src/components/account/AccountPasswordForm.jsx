@@ -1,10 +1,10 @@
-import { Button, Input, Spinner } from "@/components";
-import { NEW_PASSWORD, PASSWORD } from "@/constants";
 import Check2 from "@icons/check2.svg?react";
 import EyeFill from "@icons/eye-fill.svg?react";
 import EyeSlashFill from "@icons/eye-slash-fill.svg?react";
 import { useState } from "react";
 import { useFormStatus } from "react-dom";
+import { Button, Input, Spinner } from "@/components";
+import { NEW_PASSWORD, PASSWORD } from "@/constants";
 
 const AccountPasswordForm = ({ defaultValue, success, isOld, isNew }) => {
   const [hidePassword, setHidePassword] = useState(true);

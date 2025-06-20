@@ -1,6 +1,6 @@
-import { useDebounce } from "@/hooks";
 import { useState } from "react";
 import { useSwipeable } from "react-swipeable";
+import { useDebounce } from "@/hooks";
 
 const useSwipe = (
   actionLeft,

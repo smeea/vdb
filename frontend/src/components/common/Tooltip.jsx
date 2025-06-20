@@ -1,7 +1,7 @@
 import {
-  FloatingPortal,
   arrow,
   autoUpdate,
+  FloatingPortal,
   flip,
   offset,
   shift,
@@ -36,9 +36,7 @@ const Tooltip = ({
   const arrowRef = useRef(null);
 
   const {
-    middlewareData: {
-      arrow: { x: arrowX, y: arrowY } = {},
-    },
+    middlewareData: { arrow: { x: arrowX, y: arrowY } = {} },
     placement: arrowPlacement,
     x,
     y,

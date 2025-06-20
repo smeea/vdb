@@ -1,11 +1,11 @@
+import People from "@icons/people.svg?react";
+import PeopleFill from "@icons/people-fill.svg?react";
+import { useState } from "react";
+import { useNavigate } from "react-router";
 import { ButtonIconed, DeckPublicToggleConfirmation, Spinner } from "@/components";
 import { PUBLIC_CHILD, PUBLIC_PARENT } from "@/constants";
 import { useApp } from "@/context";
 import { deckServices } from "@/services";
-import PeopleFill from "@icons/people-fill.svg?react";
-import People from "@icons/people.svg?react";
-import { useState } from "react";
-import { useNavigate } from "react-router";
 
 const DeckPublicToggleButton = ({ deck, inAdv, className }) => {
   const { isDesktop, setShowMenuButtons, setShowFloatingButtons } = useApp();

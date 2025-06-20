@@ -1,10 +1,10 @@
+import PeopleFill from "@icons/people-fill.svg?react";
+import { useState } from "react";
+import { useSnapshot } from "valtio";
 import { ButtonIconed, DeckPublicDiff, ModalConfirmation, Spinner } from "@/components";
 import { DECKS, NAME, PUBLIC_PARENT } from "@/constants";
 import { deckStore, useApp } from "@/context";
 import { deckServices } from "@/services";
-import PeopleFill from "@icons/people-fill.svg?react";
-import { useState } from "react";
-import { useSnapshot } from "valtio";
 
 const DeckPublicSyncButton = ({ deck }) => {
   const { isDesktop, setShowMenuButtons, setShowFloatingButtons } = useApp();

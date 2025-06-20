@@ -1,7 +1,7 @@
+import { twMerge } from "tailwind-merge";
 import disciplinesExtraList from "@/assets/data/disciplinesExtraList.json";
 import disciplinesList from "@/assets/data/disciplinesList.json";
 import { ResultDisciplineImage } from "@/components";
-import { twMerge } from "tailwind-merge";
 
 const CryptSearchFormDisciplines = ({ value, onChange, withExtra }) => {
   const disciplines = withExtra

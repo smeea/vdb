@@ -1,3 +1,5 @@
+import ArrowRepeat from "@icons/arrow-repeat.svg?react";
+import StackIcon from "@icons/stack.svg?react";
 import {
   Button,
   DeckDrawCryptTable,
@@ -14,8 +16,6 @@ import { BLOOD, CAPACITY, POOL, X } from "@/constants";
 import { useApp } from "@/context";
 import { useModalCardController } from "@/hooks";
 import { countCards } from "@/utils";
-import ArrowRepeat from "@icons/arrow-repeat.svg?react";
-import StackIcon from "@icons/stack.svg?react";
 
 const DeckDrawModal = ({
   burnedCrypt,

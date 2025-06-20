@@ -1,8 +1,8 @@
+import { useMemo, useState } from "react";
 import { Button, TwdDeck, TwdDeckWrapper, TwdResultTotal } from "@/components";
 import { CARDS, DATE_NEW_OLD, DATE_OLD_NEW, DECKID, PLAYERS } from "@/constants";
 import { useApp } from "@/context";
 import { decksSort } from "@/utils";
-import { useMemo, useState } from "react";
 
 const TwdResult = ({ results }) => {
   const { twdSearchSort, changeTwdSearchSort } = useApp();

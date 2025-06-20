@@ -1,6 +1,6 @@
-import { BRANCHES, BRANCH_NAME, MASTER, NAME, S } from "@/constants";
 import PinAngleFill from "@icons/pin-angle-fill.svg?react";
 import Shuffle from "@icons/shuffle.svg?react";
+import { BRANCH_NAME, BRANCHES, MASTER, NAME, S } from "@/constants";
 
 const UsedDescriptionDeck = ({ deck, t, q }) => {
   const isBranches = deck[MASTER] || (deck[BRANCHES] && deck[BRANCHES].length > 0);

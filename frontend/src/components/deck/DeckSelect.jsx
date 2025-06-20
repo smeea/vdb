@@ -1,3 +1,10 @@
+import { RadioGroup } from "@headlessui/react";
+import At from "@icons/at.svg?react";
+import BinocularsFill from "@icons/binoculars-fill.svg?react";
+import ChatLeftQuoteFill from "@icons/chat-left-quote-fill.svg?react";
+import PinAngleFill from "@icons/pin-angle-fill.svg?react";
+import Shuffle from "@icons/shuffle.svg?react";
+import { useEffect, useState } from "react";
 import {
   Button,
   ButtonIconed,
@@ -20,13 +27,6 @@ import {
 } from "@/constants";
 import { deckToggleInventoryState, useApp } from "@/context";
 import { getIsEditable } from "@/utils";
-import { RadioGroup } from "@headlessui/react";
-import At from "@icons/at.svg?react";
-import BinocularsFill from "@icons/binoculars-fill.svg?react";
-import ChatLeftQuoteFill from "@icons/chat-left-quote-fill.svg?react";
-import PinAngleFill from "@icons/pin-angle-fill.svg?react";
-import Shuffle from "@icons/shuffle.svg?react";
-import { useEffect, useState } from "react";
 
 const DeckSelect = ({
   deck,

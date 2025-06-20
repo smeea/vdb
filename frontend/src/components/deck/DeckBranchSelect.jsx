@@ -1,9 +1,9 @@
-import { Select } from "@/components";
-import { BRANCHES, BRANCH_NAME, DECK, DECKID, DECKS, MASTER, NAME, TIMESTAMP } from "@/constants";
-import { deckStore } from "@/context";
-import { byTimestamp } from "@/utils";
 import { useMemo, useState } from "react";
 import { useSnapshot } from "valtio";
+import { Select } from "@/components";
+import { BRANCH_NAME, BRANCHES, DECK, DECKID, DECKS, MASTER, NAME, TIMESTAMP } from "@/constants";
+import { deckStore } from "@/context";
+import { byTimestamp } from "@/utils";
 
 const DeckBranchSelect = ({ deck, handleSelect }) => {
   const decks = useSnapshot(deckStore)[DECKS];

@@ -19,13 +19,13 @@ import {
   OR_NEWER,
   OR_OLDER,
   PLAYTEST,
-  TWO_P,
   POD,
   PRINT,
   PROMO,
   REPRINT,
   SET,
   TITLE,
+  TWO_P,
 } from "@/constants";
 import { useApp } from "@/context";
 

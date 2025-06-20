@@ -1,12 +1,12 @@
+import { useCallback, useMemo } from "react";
+import AutoSizer from "react-virtualized-auto-sizer";
+import { FixedSizeList } from "react-window";
+import { twMerge } from "tailwind-merge";
 import { InventoryLibraryTableRow, ResultModal, WindowRows } from "@/components";
 import { ID } from "@/constants";
 import { useApp } from "@/context";
 import { useModalCardController } from "@/hooks";
 import { getIsPlaytest, librarySort } from "@/utils";
-import { useCallback, useMemo } from "react";
-import AutoSizer from "react-virtualized-auto-sizer";
-import { FixedSizeList } from "react-window";
-import { twMerge } from "tailwind-merge";
 
 const InventoryLibraryTable = ({ cards, sortMethod, compact, withCompact, newFocus, inShared }) => {
   const { playtestMode, setShowFloatingButtons, isDesktop } = useApp();

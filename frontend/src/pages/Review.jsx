@@ -1,3 +1,7 @@
+import { useEffect, useState } from "react";
+import { useLoaderData, useLocation, useNavigate, useParams } from "react-router";
+import { useImmer } from "use-immer";
+import { useSnapshot } from "valtio";
 import {
   ButtonFloatClose,
   ButtonFloatMenu,
@@ -29,10 +33,6 @@ import {
 } from "@/constants";
 import { deckStore, useApp } from "@/context";
 import { deepClone, getTags, parseDeck } from "@/utils";
-import { useEffect, useState } from "react";
-import { useLoaderData, useLocation, useNavigate, useParams } from "react-router";
-import { useImmer } from "use-immer";
-import { useSnapshot } from "valtio";
 
 const Review = () => {
   const {
@@ -139,7 +139,10 @@ const Review = () => {
 
   useEffect(() => {
     if (hash && deckTo) {
-      const deckWithHash = deepClone({ [CRYPT]: deckTo[CRYPT], [LIBRARY]: deckTo[LIBRARY] });
+      const deckWithHash = deepClone({
+        [CRYPT]: deckTo[CRYPT],
+        [LIBRARY]: deckTo[LIBRARY],
+      });
 
       hash
         .slice(1)
@@ -159,8 +162,10 @@ const Review = () => {
           }
         });
       if (
-        JSON.stringify({ [CRYPT]: deckFrom[CRYPT], [LIBRARY]: deckFrom[LIBRARY] }) !==
-        JSON.stringify(deckWithHash)
+        JSON.stringify({
+          [CRYPT]: deckFrom[CRYPT],
+          [LIBRARY]: deckFrom[LIBRARY],
+        }) !== JSON.stringify(deckWithHash)
       ) {
         setDeckFrom((draft) => {
           draft[CRYPT] = deckWithHash[CRYPT];

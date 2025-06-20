@@ -1,8 +1,8 @@
+import LockFill from "@icons/lock-fill.svg?react";
+import UnlockFill from "@icons/unlock-fill.svg?react";
 import { Button } from "@/components";
 import { DECKID, IS_FROZEN } from "@/constants";
 import { deckUpdate } from "@/context";
-import LockFill from "@icons/lock-fill.svg?react";
-import UnlockFill from "@icons/unlock-fill.svg?react";
 
 const DeckFreezeButton = ({ deck, className, roundedStyle, borderStyle }) => {
   const handleClick = () => {

@@ -1,12 +1,8 @@
-import { LimitedButton, LimitedSelect } from "@/components";
-import {
-  CUSTOM,
-  TWO_P,
-  V5,
-} from "@/constants";
 import EnvelopeFill from "@icons/envelope-fill.svg?react";
-import { useApp } from "@/context";
 import { useState } from "react";
+import { LimitedButton, LimitedSelect } from "@/components";
+import { CUSTOM, TWO_P, V5 } from "@/constants";
+import { useApp } from "@/context";
 
 const Limited = () => {
   const { limitedPreset, changeLimitedPreset } = useApp();

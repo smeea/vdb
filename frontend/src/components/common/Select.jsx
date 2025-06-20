@@ -1,8 +1,8 @@
-import { useApp } from "@/context";
 import ReactSelect from "react-select";
 import AsyncSelect from "react-select/async";
 import ReactSelectCreatable from "react-select/creatable";
 import { twMerge } from "tailwind-merge";
+import { useApp } from "@/context";
 
 const Select = ({
   autoFocus = false,

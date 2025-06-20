@@ -1,3 +1,4 @@
+import PencilSquare from "@icons/pencil-square.svg?react";
 import {
   Hr,
   PlaytestReportForm,
@@ -9,7 +10,6 @@ import {
 import { ARTIST, ID, PLAYTEST_OLD, RULINGS } from "@/constants";
 import { useApp } from "@/context";
 import { getIsPlaytest } from "@/utils";
-import PencilSquare from "@icons/pencil-square.svg?react";
 
 const ResultLayoutTextCommon = ({
   handleClose,

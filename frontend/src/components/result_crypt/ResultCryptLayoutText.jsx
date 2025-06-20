@@ -1,3 +1,4 @@
+import { twMerge } from "tailwind-merge";
 import {
   ButtonCloseModal,
   CardPopover,
@@ -29,7 +30,6 @@ import {
 } from "@/constants";
 import { useApp } from "@/context";
 import { getLegality } from "@/utils";
-import { twMerge } from "tailwind-merge";
 
 const ResultCryptLayoutText = ({ card, setCard, handleClose, noClose, inPopover }) => {
   const { isNarrow, isMobile, cryptCardBase } = useApp();

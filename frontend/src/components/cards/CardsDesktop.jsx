@@ -1,3 +1,4 @@
+import Dice3 from "@icons/dice-3-fill.svg?react";
 import {
   ButtonIconed,
   CardImage,
@@ -9,7 +10,6 @@ import {
 import { ID } from "@/constants";
 import { useApp } from "@/context";
 import { getIsPlaytest } from "@/utils";
-import Dice3 from "@icons/dice-3-fill.svg?react";
 
 const CardsDesktop = ({ card, openRandomCard, handleChange, handleSetCard }) => {
   const { cryptCardBase, libraryCardBase, isMobile, playtestMode } = useApp();

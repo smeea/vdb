@@ -1,7 +1,10 @@
+import { Menu } from "@headlessui/react";
+import Download from "@icons/download.svg?react";
+import { useSnapshot } from "valtio";
 import { MenuButton, MenuItem, MenuItemDivider, MenuItems } from "@/components";
 import {
-  BRANCHES,
   BRANCH_NAME,
+  BRANCHES,
   CRYPT,
   DECKS,
   EN,
@@ -18,9 +21,6 @@ import {
 import { deckStore, useApp } from "@/context";
 import { deckServices } from "@/services";
 import { exportDeck } from "@/utils";
-import { Menu } from "@headlessui/react";
-import Download from "@icons/download.svg?react";
-import { useSnapshot } from "valtio";
 
 const SAVE = "save";
 const COPY = "copy";
@@ -94,7 +94,10 @@ const DeckExportButton = ({ deck, inMissing, inInventory }) => {
         Object.keys(deck[LIBRARY]).forEach((cardid) => {
           enLibrary[cardid] = {
             ...deck[LIBRARY][cardid],
-            c: { ...deck[LIBRARY][cardid].c, [NAME]: nativeLibrary[cardid][NAME] },
+            c: {
+              ...deck[LIBRARY][cardid].c,
+              [NAME]: nativeLibrary[cardid][NAME],
+            },
           };
         });
 

@@ -1,7 +1,7 @@
+import { twMerge } from "tailwind-merge";
 import { Header, SortButton } from "@/components";
 import { CREATION_DATE } from "@/constants";
 import { useApp } from "@/context";
-import { twMerge } from "tailwind-merge";
 
 const TwdResultTotal = ({ results, sortMethods, sortMethod, setSortMethod }) => {
   const { isMobile } = useApp();

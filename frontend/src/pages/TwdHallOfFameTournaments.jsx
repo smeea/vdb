@@ -1,7 +1,7 @@
+import { Disclosure } from "@headlessui/react";
 import { TwdHallFameTournamentsPlayer } from "@/components";
 import { useFetch } from "@/hooks";
 import { byName } from "@/utils";
-import { Disclosure } from "@headlessui/react";
 
 const TwdHallOfFameTournaments = () => {
   const url = `${import.meta.env.VITE_API_URL}/twd/hall_of_fame`;

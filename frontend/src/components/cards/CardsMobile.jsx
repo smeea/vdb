@@ -1,9 +1,9 @@
+import ArrowRepeat from "@icons/arrow-repeat.svg?react";
+import Dice3 from "@icons/dice-3-fill.svg?react";
 import { ButtonFloat, CardImage, CardSelect, ErrorMessage, ResultLayoutText } from "@/components";
 import { ID } from "@/constants";
 import { useApp } from "@/context";
 import { getIsPlaytest } from "@/utils";
-import ArrowRepeat from "@icons/arrow-repeat.svg?react";
-import Dice3 from "@icons/dice-3-fill.svg?react";
 
 const CardsMobile = ({ card, openRandomCard, handleChange, handleSetCard }) => {
   const { showFloatingButtons, showImage, toggleShowImage, isMobile, playtestMode } = useApp();

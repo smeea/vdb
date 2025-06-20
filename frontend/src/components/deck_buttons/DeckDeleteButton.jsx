@@ -1,12 +1,12 @@
+import TrashFill from "@icons/trash-fill.svg?react";
+import { useState } from "react";
+import { useNavigate } from "react-router";
+import { useSnapshot } from "valtio";
 import { ButtonIconed, ModalConfirmation } from "@/components";
 import { BRANCHES, DECKID, DECKS, IS_BRANCHES, MASTER, NAME } from "@/constants";
 import { deckStore, useApp } from "@/context";
 import { deckServices } from "@/services";
 import { byTimestamp } from "@/utils";
-import TrashFill from "@icons/trash-fill.svg?react";
-import { useState } from "react";
-import { useNavigate } from "react-router";
-import { useSnapshot } from "valtio";
 
 const DeckDeleteButton = ({ deck, noText, className }) => {
   const { isDesktop, setShowFloatingButtons, setShowMenuButtons } = useApp();

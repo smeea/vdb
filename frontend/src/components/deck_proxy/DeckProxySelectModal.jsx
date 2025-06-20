@@ -1,10 +1,10 @@
+import { useState } from "react";
+import { useImmer } from "use-immer";
 import { Button, DeckProxyCrypt, DeckProxyLibrary, FlexGapped, Modal } from "@/components";
 import { CRYPT, HARD, ID, INVENTORY_TYPE, LIBRARY, PRINT, SET, SOFT } from "@/constants";
 import { inventoryStore, useApp, usedStore } from "@/context";
 import { pdfServices } from "@/services";
 import { getHardTotal, getSoftMax } from "@/utils";
-import { useState } from "react";
-import { useImmer } from "use-immer";
 
 const DeckProxySelectModal = ({ deck, setShow }) => {
   const {

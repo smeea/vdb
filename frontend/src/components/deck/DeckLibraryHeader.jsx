@@ -1,3 +1,6 @@
+import InfoCircle from "@icons/info-circle.svg?react";
+import PlusLg from "@icons/plus-lg.svg?react";
+import { useState } from "react";
 import {
   Button,
   DeckLibraryTotalInfo,
@@ -10,9 +13,6 @@ import { BANNED, BLOOD, DECKID, LIBRARY, LIMITED, PLAYTEST, POOL, X } from "@/co
 import { useApp } from "@/context";
 import { useDeckLibrary } from "@/hooks";
 import { getIsEditable } from "@/utils";
-import InfoCircle from "@icons/info-circle.svg?react";
-import PlusLg from "@icons/plus-lg.svg?react";
-import { useState } from "react";
 
 const DeckLibraryHeader = ({
   inMissing,

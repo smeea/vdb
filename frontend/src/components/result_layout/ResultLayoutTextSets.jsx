@@ -1,8 +1,8 @@
+import { Link } from "react-router";
 import setsAndPrecons from "@/assets/data/setsAndPrecons.json";
 import { CardImage, ConditionalTooltipOrModal } from "@/components";
-import { DATE, NAME, TWO_P, PLAYTEST, POD, PRECONS, PROMO, SET } from "@/constants";
+import { DATE, NAME, PLAYTEST, POD, PRECONS, PROMO, SET, TWO_P } from "@/constants";
 import { useApp } from "@/context";
-import { Link } from "react-router";
 
 const PreconsDetailed = ({ sets, set }) => {
   return Object.keys(sets[set]).map((i) => {
@@ -58,7 +58,7 @@ const ResultLayoutTextSets = ({ card }) => {
   return (
     <div className="flex flex-wrap gap-x-2.5 gap-y-0.5">
       {Object.keys(card[SET])
-       .filter((set) => (playtestMode || set !== PLAYTEST) && set !== TWO_P)
+        .filter((set) => (playtestMode || set !== PLAYTEST) && set !== TWO_P)
         .toSorted(byDate)
         .map((set) => {
           const preconsShort = Object.keys(card[SET][set]).join("/");

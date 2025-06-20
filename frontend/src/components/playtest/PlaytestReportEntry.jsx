@@ -1,8 +1,8 @@
+import EyeFill from "@icons/eye-fill.svg?react";
+import EyeSlashFill from "@icons/eye-slash-fill.svg?react";
 import { Hr, PlaytestScores } from "@/components";
 import { SCORE, TEXT } from "@/constants";
 import { useApp } from "@/context";
-import EyeFill from "@icons/eye-fill.svg?react";
-import EyeSlashFill from "@icons/eye-slash-fill.svg?react";
 
 const Report = ({ id, text, score, isPlayed }) => {
   const { hidePlaytestNames, isMobile } = useApp();

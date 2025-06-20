@@ -1,7 +1,7 @@
+import { useCallback } from "react";
 import { DeckDrawProbability, ResultCryptTableRowCommon, Tr } from "@/components";
 import { ID, NAME } from "@/constants";
 import { getKeyDisciplines } from "@/utils";
-import { useCallback } from "react";
 
 const DeckDrawCryptTable = ({
   handleClick,

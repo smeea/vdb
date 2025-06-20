@@ -1,3 +1,9 @@
+import CalendarEvent from "@icons/calendar-event.svg?react";
+import GeoAltFill from "@icons/geo-alt-fill.svg?react";
+import PersonFill from "@icons/person-fill.svg?react";
+import TagFill from "@icons/tag-fill.svg?react";
+import TrophyFill from "@icons/trophy-fill.svg?react";
+import { useNavigate } from "react-router";
 import { TwdResultDescriptionTextTr, TwdResultTags } from "@/components";
 import {
   AUTHOR,
@@ -11,12 +17,6 @@ import {
   TWD,
 } from "@/constants";
 import { clearSearchForm, searchTwdForm, useApp } from "@/context";
-import CalendarEvent from "@icons/calendar-event.svg?react";
-import GeoAltFill from "@icons/geo-alt-fill.svg?react";
-import PersonFill from "@icons/person-fill.svg?react";
-import TagFill from "@icons/tag-fill.svg?react";
-import TrophyFill from "@icons/trophy-fill.svg?react";
-import { useNavigate } from "react-router";
 
 const TwdResultDescriptionText = ({ deck }) => {
   const { isMobile } = useApp();

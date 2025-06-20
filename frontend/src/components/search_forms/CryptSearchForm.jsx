@@ -1,3 +1,6 @@
+import { useCallback, useEffect, useState } from "react";
+import { useSearchParams } from "react-router";
+import { useSnapshot } from "valtio";
 import {
   ButtonFloatClose,
   ButtonFloatSearch,
@@ -58,9 +61,6 @@ import {
 } from "@/context";
 import { useDebounce } from "@/hooks";
 import { filterCrypt, getIsPlaytest, sanitizeFormState } from "@/utils";
-import { useCallback, useEffect, useState } from "react";
-import { useSearchParams } from "react-router";
-import { useSnapshot } from "valtio";
 
 const CryptSearchForm = () => {
   const {

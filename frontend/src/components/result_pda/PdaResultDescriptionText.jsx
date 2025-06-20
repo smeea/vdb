@@ -1,11 +1,11 @@
-import { TwdResultDescriptionTextTr, TwdResultTags } from "@/components";
-import { AUTHOR, BASE, CREATION_DATE, NAME, PDA, SUPERIOR, TAGS, TIMESTAMP } from "@/constants";
-import { clearSearchForm, searchPdaForm, useApp } from "@/context";
 import CalendarEvent from "@icons/calendar-event.svg?react";
 import PersonFill from "@icons/person-fill.svg?react";
 import TagFill from "@icons/tag-fill.svg?react";
 import dayjs from "dayjs";
 import { useNavigate } from "react-router";
+import { TwdResultDescriptionTextTr, TwdResultTags } from "@/components";
+import { AUTHOR, BASE, CREATION_DATE, NAME, PDA, SUPERIOR, TAGS, TIMESTAMP } from "@/constants";
+import { clearSearchForm, searchPdaForm, useApp } from "@/context";
 
 const PdaResultDescriptionText = ({ deck }) => {
   const { isMobile } = useApp();

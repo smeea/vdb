@@ -1,6 +1,6 @@
-import { Button, Input } from "@/components";
 import Check2 from "@icons/check2.svg?react";
 import { useState } from "react";
+import { Button, Input } from "@/components";
 
 const SeatingRandomDeckAddForm = ({ addDeck }) => {
   const [name, setName] = useState("");

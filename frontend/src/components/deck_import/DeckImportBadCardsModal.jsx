@@ -1,8 +1,8 @@
+import { useCallback } from "react";
+import { useImmer } from "use-immer";
 import { CardSelect, DeckCardQuantity, Modal } from "@/components";
 import { ID } from "@/constants";
 import { deckCardChange, inventoryCardChange, useApp } from "@/context";
-import { useCallback } from "react";
-import { useImmer } from "use-immer";
 
 const DeckImportBadCardsModal = ({ deckid, badCards, setBadCards, inInventory }) => {
   const { cryptCardBase, libraryCardBase, isMobile } = useApp();

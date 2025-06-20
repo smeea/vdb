@@ -1,10 +1,10 @@
+import Check2 from "@icons/check2.svg?react";
+import PenFill from "@icons/pen-fill.svg?react";
+import { useActionState, useState } from "react";
 import { Button, ConditionalTooltipOrModal, ErrorOverlay, Input, Spinner } from "@/components";
 import { NAME } from "@/constants";
 import { useApp } from "@/context";
 import { userServices } from "@/services";
-import Check2 from "@icons/check2.svg?react";
-import PenFill from "@icons/pen-fill.svg?react";
-import { useActionState, useState } from "react";
 
 const TooltipText = () => {
   return (
@@ -43,7 +43,9 @@ const AccountChangeName = () => {
     return { [NAME]: formData.get(NAME) };
   };
 
-  const [data, action, pending] = useActionState(changeName, { [NAME]: publicName });
+  const [data, action, pending] = useActionState(changeName, {
+    [NAME]: publicName,
+  });
 
   return (
     <div className="flex flex-col gap-2">

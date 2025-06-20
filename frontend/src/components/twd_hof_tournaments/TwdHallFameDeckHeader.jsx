@@ -1,9 +1,9 @@
-import { Hr, TwdHallFameDeckBody } from "@/components";
-import { CREATION_DATE, DATE, EVENT, LOCATION, PLAYERS } from "@/constants";
-import { useApp } from "@/context";
 import PeopleFill from "@icons/people-fill.svg?react";
 import { useState } from "react";
 import { twMerge } from "tailwind-merge";
+import { Hr, TwdHallFameDeckBody } from "@/components";
+import { CREATION_DATE, DATE, EVENT, LOCATION, PLAYERS } from "@/constants";
+import { useApp } from "@/context";
 
 const TwdHallFameDeckHeader = ({ deck, isStar }) => {
   const { isMobile } = useApp();

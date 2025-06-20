@@ -1,7 +1,9 @@
+import dayjs from "dayjs";
+import { proxy } from "valtio";
 import {
   AUTHOR,
-  BRANCHES,
   BRANCH_NAME,
+  BRANCHES,
   CARDS,
   CRYPT,
   CRYPT_TIMER,
@@ -28,8 +30,6 @@ import {
 import { miscStore, startCryptTimer } from "@/context";
 import { deckServices } from "@/services";
 import { deepClone } from "@/utils";
-import dayjs from "dayjs";
-import { proxy } from "valtio";
 
 export const deckStore = proxy({
   [DECK]: undefined,

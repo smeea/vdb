@@ -1,6 +1,6 @@
+import { useCallback } from "react";
 import { DeckDrawProbability, ResultLibraryTableRowCommon, Tr } from "@/components";
 import { ID, NAME } from "@/constants";
-import { useCallback } from "react";
 
 const DeckDrawLibraryTable = ({
   handleClick,

@@ -1,6 +1,6 @@
+import { useCallback, useState } from "react";
 import { Modal, Tooltip } from "@/components";
 import { useApp } from "@/context";
-import { useCallback, useState } from "react";
 
 const ConditionalTooltipOrModal = ({
   children,

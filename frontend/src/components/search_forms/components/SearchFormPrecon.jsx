@@ -18,12 +18,12 @@ import {
   NAME,
   ONLY,
   PLAYTEST,
-  TWO_P,
   PRECON,
   PRECONS,
   PRINT,
   REPRINT,
   TITLE,
+  TWO_P,
 } from "@/constants";
 import { useApp } from "@/context";
 

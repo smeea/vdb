@@ -1,8 +1,8 @@
+import { useActionState, useCallback, useState } from "react";
+import { twMerge } from "tailwind-merge";
 import { Button, ErrorOverlay, FlexGapped, Input, Modal } from "@/components";
 import { TEXT, YES } from "@/constants";
 import { useApp } from "@/context";
-import { useActionState, useCallback, useState } from "react";
-import { twMerge } from "tailwind-merge";
 
 const ModalConfirmation = ({
   title,

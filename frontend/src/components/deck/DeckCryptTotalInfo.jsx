@@ -1,8 +1,8 @@
+import { twMerge } from "tailwind-merge";
 import { DisciplinesCryptSummary, ResultCryptCapacity } from "@/components";
 import { CAPACITY, X } from "@/constants";
 import { useApp } from "@/context";
 import { countCards, countTotalCost, drawUniqueProbability } from "@/utils";
-import { twMerge } from "tailwind-merge";
 
 const UniqueDraw = ({ cards }) => {
   const { isMobile } = useApp();

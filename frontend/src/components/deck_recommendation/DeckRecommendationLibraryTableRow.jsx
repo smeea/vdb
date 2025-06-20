@@ -1,9 +1,9 @@
+import { twMerge } from "tailwind-merge";
 import { ButtonAddCard, ResultLibraryTableRowCommon } from "@/components";
 import { DECKID, ID, LIBRARY } from "@/constants";
 import { deckCardChange } from "@/context";
 import { useSwipe } from "@/hooks";
 import { getIsEditable, getSwipedBg } from "@/utils";
-import { twMerge } from "tailwind-merge";
 
 const DeckRecommendationLibraryTableRow = ({ card, handleClick, deck }) => {
   const inDeck = deck[LIBRARY][card[ID]]?.q || 0;

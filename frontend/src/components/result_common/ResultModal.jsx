@@ -1,11 +1,11 @@
-import { ButtonFloat, CardImage, Modal, ResultLayoutText } from "@/components";
-import { useApp } from "@/context";
-import { useSwipe } from "@/hooks";
 import ArrowRepeat from "@icons/arrow-repeat.svg?react";
 import ChevronCompactLeft from "@icons/chevron-compact-left.svg?react";
 import ChevronCompactRight from "@icons/chevron-compact-right.svg?react";
 import { useEffect, useState } from "react";
 import { twMerge } from "tailwind-merge";
+import { ButtonFloat, CardImage, Modal, ResultLayoutText } from "@/components";
+import { useApp } from "@/context";
+import { useSwipe } from "@/hooks";
 
 const ResultModal = ({ card, handleModalCardChange, handleClose, forceInventoryMode }) => {
   const { showImage, toggleShowImage, isMobile } = useApp();

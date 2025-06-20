@@ -1,7 +1,7 @@
-import { ButtonCloseModal, ButtonFloatClose } from "@/components";
 import { Dialog, DialogPanel, DialogTitle } from "@headlessui/react";
 import { useRef } from "react";
 import { twMerge } from "tailwind-merge";
+import { ButtonCloseModal, ButtonFloatClose } from "@/components";
 
 const Modal = ({
   centered = false,

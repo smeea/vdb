@@ -1,6 +1,6 @@
+import { useState } from "react";
 import { ButtonFloat, DeckNewCard } from "@/components";
 import { CRYPT } from "@/constants";
-import { useState } from "react";
 
 const DeckNewCardFloating = ({ deckid, cards, cardChange, target, className }) => {
   const [showAdd, setShowAdd] = useState(false);

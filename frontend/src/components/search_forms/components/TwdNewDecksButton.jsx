@@ -1,5 +1,5 @@
-import { ButtonIconed } from "@/components";
 import LightningFill from "@icons/lightning-fill.svg?react";
+import { ButtonIconed } from "@/components";
 
 const TwdNewDecks = ({ getNew, noText }) => {
   return (
