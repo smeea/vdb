@@ -9,6 +9,7 @@ import {
   TEXT,
   USERNAME,
   XLSX,
+  ENABLED,
 } from "@/constants";
 import ky from "ky";
 
@@ -17,11 +18,11 @@ export const submitReport = (id, value, isPrecon) => {
   return ky.put(url, { json: value }).json();
 };
 
-export const changePlaytester = (user, isAdd = true) => {
+export const changePlaytester = (username, field, value) => {
   const url = `${import.meta.env.VITE_API_URL}/playtest/users`;
   return ky(url, {
-    method: isAdd ? "PUT" : "DELETE",
-    json: { [USERNAME]: user },
+    method: field === ENABLED ? (value ? "POST" : "DELETE") : "PUT",
+    json: { [USERNAME]: username, [field]: value },
   }).json();
 };
 

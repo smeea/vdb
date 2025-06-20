@@ -98,7 +98,7 @@ const DeckCardQuantity = ({
               >
                 <ConditionalTooltip
                   placement="bottom"
-                  overlay={<UsedPopover cardid={card[ID]} />}
+                  overlay={<UsedPopover cardid={card?.[ID]} />}
                   disabled={!inventoryMode || isMobile}
                 >
                   {manual ? (
@@ -125,7 +125,7 @@ const DeckCardQuantity = ({
       ) : (
         <ConditionalTooltip
           placement="bottom"
-          overlay={<UsedPopover cardid={card[ID]} />}
+          overlay={<UsedPopover cardid={card?.[ID]} />}
           disabled={!inventoryMode || isMobile}
         >
           <div className={twMerge("mx-1 flex items-center justify-center text-lg", inventoryColor)}>

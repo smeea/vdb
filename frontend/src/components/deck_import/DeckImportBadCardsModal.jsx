@@ -1,6 +1,7 @@
 import { CardSelect, DeckCardQuantity, Modal } from "@/components";
 import { ID } from "@/constants";
 import { deckCardChange, inventoryCardChange, useApp } from "@/context";
+import { useCallback } from "react";
 import { useImmer } from "use-immer";
 
 const DeckImportBadCardsModal = ({ deckid, badCards, setBadCards, inInventory }) => {
@@ -13,13 +14,14 @@ const DeckImportBadCardsModal = ({ deckid, badCards, setBadCards, inInventory })
     })),
   );
 
-  const handleCardChange = (deckid, idx, q) => {
-    if (cards[idx] && q >= 0) {
+  const handleCardChange = (deckid, card, q) => {
+    if (card && q >= 0) {
       if (inInventory) {
-        inventoryCardChange(cards[idx].c, q);
+        inventoryCardChange(card, q);
       } else {
-        deckCardChange(deckid, cards[idx].c, q);
+        deckCardChange(deckid, card, q);
       }
+      const idx = cards.findIndex((c) => c.c === card);
       setCards((draft) => {
         draft[idx].q = q;
       });
@@ -30,7 +32,7 @@ const DeckImportBadCardsModal = ({ deckid, badCards, setBadCards, inInventory })
     const card = v.value > 200000 ? cryptCardBase[v.value] : libraryCardBase[v.value];
 
     setCards((draft) => {
-      draft[idx].c = card;
+      draft[idx] = { c: card, q: 0 };
     });
   };
 
@@ -44,7 +46,7 @@ const DeckImportBadCardsModal = ({ deckid, badCards, setBadCards, inInventory })
               <DeckCardQuantity
                 deckid={deckid}
                 cardChange={handleCardChange}
-                card={idx}
+                card={cards[idx]?.c}
                 q={cards[idx]?.q}
                 isEditable
               />
