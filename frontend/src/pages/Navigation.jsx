@@ -3,12 +3,12 @@ import PersonFill from "@icons/person-fill.svg?react";
 import { NavLink, useLocation } from "react-router";
 import { twMerge } from "tailwind-merge";
 import { useSnapshot } from "valtio";
-import { LanguageSelectButton, NavMobileMenu, ThemeSelect, Toggle } from "@/components";
+import { LimitedSelect, LanguageSelectButton, NavMobileMenu, ThemeSelect, Toggle } from "@/components";
 import cryptDefaults from "@/components/search_forms/forms_data/defaultsCryptForm.json";
 import libraryDefaults from "@/components/search_forms/forms_data/defaultsLibraryForm.json";
 import pdaDefaults from "@/components/search_forms/forms_data/defaultsPdaForm.json";
 import twdDefaults from "@/components/search_forms/forms_data/defaultsTwdForm.json";
-import { CRYPT, CUSTOM, DECK, DECKID, ID, LIBRARY, PDA, TWD } from "@/constants";
+import { CRYPT, DECK, DECKID, ID, LIBRARY, PDA, TWD } from "@/constants";
 import {
   deckStore,
   searchCryptForm,
@@ -104,18 +104,12 @@ const Navigation = () => {
             </Toggle>
           )}
           {(limitedPreset || limitedMode) && (
-            <Toggle isOn={limitedMode} handleClick={toggleLimitedMode} variant="secondary">
-              <div className="flex items-center gap-1">
-                Limited{" "}
-                {limitedPreset && limitedPreset !== CUSTOM && (
-                  <div className="flex gap-0.5">
-                    <div className="text-midGray dark:text-midGrayDark">[</div>
-                    {limitedPreset.toUpperCase()}
-                    <div className="dark:text-midGrayDark">]</div>
-                  </div>
-                )}
-              </div>
-            </Toggle>
+            <div className="flex items-center gap-1">
+              <Toggle isOn={limitedMode} handleClick={toggleLimitedMode} variant="secondary">
+                Limited
+              </Toggle>
+              <LimitedSelect withoutDisabled />
+            </div>
           )}
           {isPlaytester && (
             <Toggle isOn={playtestMode} handleClick={togglePlaytestMode} variant="secondary">

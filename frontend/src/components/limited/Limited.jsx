@@ -1,11 +1,10 @@
 import EnvelopeFill from "@icons/envelope-fill.svg?react";
-import { useState } from "react";
 import { LimitedButton, LimitedSelect } from "@/components";
-import { CUSTOM, TWO_P, V5 } from "@/constants";
+import { CUSTOM } from "@/constants";
 import { useApp } from "@/context";
 
 const Limited = () => {
-  const { limitedPreset, changeLimitedPreset } = useApp();
+  const { limitedPreset } = useApp();
 
   return (
     <div className="flex flex-col gap-2">
@@ -18,7 +17,7 @@ const Limited = () => {
 
       <div className="flex justify-between gap-2">
         <div className="basis-full">
-          <LimitedSelect value={limitedPreset} setValue={changeLimitedPreset} />
+          <LimitedSelect />
         </div>
         {limitedPreset === CUSTOM && (
           <div className="basis-full">

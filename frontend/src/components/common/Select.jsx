@@ -22,6 +22,7 @@ const Select = ({
   noBorder,
   noDropdown,
   onChange,
+  noMinHeight = false,
   options,
   placeholder,
   roundedStyle = "rounded-sm",
@@ -108,9 +109,10 @@ const Select = ({
         /* no bg- in creatable */
         valueContainer: () =>
           twMerge(
-            "min-h-[40px] text-fgPrimary dark:text-fgPrimaryDark cursor-pointer rounded-sm",
+            "text-fgPrimary dark:text-fgPrimaryDark cursor-pointer rounded-sm",
             !noBackground && "bg-bgPrimary dark:bg-bgPrimaryDark",
             justifyRight && "justify-end",
+            !noMinHeight && "min-h-[40px]",
             variant === "creatable" && !noBorder && "p-1.5",
             variant === "creatable" ? "gap-1" : "px-2",
           ),

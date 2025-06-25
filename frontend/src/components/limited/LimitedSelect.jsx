@@ -1,28 +1,30 @@
-import UiChecksGrid from "@icons/ui-checks-grid.svg?react";
-import { setMany } from "idb-keyval";
-import { useEffect, useState } from "react";
-import { useSearchParams } from "react-router";
-import { ButtonIconed, LimitedModal, Select } from "@/components";
+import { Select } from "@/components";
 import { CUSTOM, TWO_P, V5 } from "@/constants";
 import { useApp } from "@/context";
 
-const LimitedSelect = ({ value, setValue }) => {
-  const { limitedMode, toggleLimitedMode } = useApp();
+const LimitedSelect = ({ withoutDisabled }) => {
+  const { limitedPreset, changeLimitedPreset } = useApp();
 
-  const handleSelect = (e) => setValue(e.value);
+  const handleSelect = (e) => changeLimitedPreset(e.value);
   const options = [
-    { value: false, label: "Unlimited (default VTES)" },
-    { value: TWO_P, label: "Two Players" },
+    { value: TWO_P, label: withoutDisabled ? "2P" : "Two Players" },
     { value: V5, label: "V5" },
-    { value: CUSTOM, label: "Custom" },
+    { value: CUSTOM, label: withoutDisabled ? "C" : "Custom" },
   ];
+
+  if (!withoutDisabled) options.unshift({ value: false, label: "Disabled (default VTES)" });
 
   return (
     <Select
+      className="min-w-[37px]"
+      noMinHeight={withoutDisabled}
+      isSearchable={false}
       options={options}
+      noBackground
       placeholder="Select Limited"
-      value={options.find((obj) => obj.value === value)}
+      value={options.find((obj) => obj.value === limitedPreset)}
       onChange={handleSelect}
+      noDropdown={withoutDisabled}
     />
   );
 };
