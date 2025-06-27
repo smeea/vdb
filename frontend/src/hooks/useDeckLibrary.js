@@ -16,6 +16,7 @@ import {
   TYPE_EVENT,
   TYPE_MASTER,
 } from "@/constants";
+import { useSnapshot } from "valtio";
 import { limitedStore } from "@/context";
 import {
   containCard,
@@ -27,6 +28,8 @@ import {
 } from "@/utils";
 
 const useDeckLibrary = (cardsList, cardsToList) => {
+  const limitedLibrary = useSnapshot(limitedStore)[LIBRARY];
+
   return useMemo(() => {
     const cardsFrom = Object.values(cardsList);
     const cardsTo = Object.values(cardsToList || {});
@@ -54,7 +57,10 @@ const useDeckLibrary = (cardsList, cardsToList) => {
       [HAS_BANNED]: hasBanned,
       [HAS_LIMITED]: hasLimited,
       [HAS_PLAYTEST]: hasPlaytest,
-    } = getRestrictions({ [CRYPT]: {}, [LIBRARY]: library }, limitedStore);
+    } = getRestrictions(
+      { [CRYPT]: {}, [LIBRARY]: library },
+      { [CRYPT]: {}, [LIBRARY]: limitedLibrary },
+    );
 
     const trifleTotal = countCards(library.filter((card) => card.c[TRIFLE]));
     const libraryTotal = countCards(cardsFrom);
@@ -107,7 +113,7 @@ const useDeckLibrary = (cardsList, cardsToList) => {
       libraryByClansTotal,
       libraryByDisciplinesTotal,
     };
-  }, [cardsList, cardsToList]);
+  }, [cardsList, cardsToList, limitedLibrary]);
 };
 
 export default useDeckLibrary;

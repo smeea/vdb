@@ -1,7 +1,7 @@
 import { useSnapshot } from "valtio";
 import setsAndPrecons from "@/assets/data/setsAndPrecons.json";
 import { LimitedSet } from "@/components";
-import { DATE, PLAYTEST, SETS } from "@/constants";
+import { DATE, PLAYTEST, POD, PROMO, TWO_P, SETS } from "@/constants";
 import { limitedFullStore, limitedSetChange } from "@/context";
 
 const LimitedSetSelection = () => {
@@ -16,7 +16,7 @@ const LimitedSetSelection = () => {
       <div className="flex gap-2 max-sm:flex-col">
         <div className="flex basis-full flex-col gap-2 sm:basis-1/2">
           {Object.keys(setsAndPrecons)
-            .filter((i) => i !== PLAYTEST && setsAndPrecons[i][DATE] > BCP_START)
+            .filter((i) => ![PLAYTEST, PROMO, POD, TWO_P].includes(i) && setsAndPrecons[i][DATE] > BCP_START)
             .map((i) => {
               return (
                 <LimitedSet
@@ -30,7 +30,9 @@ const LimitedSetSelection = () => {
         </div>
         <div className="flex basis-full flex-col gap-2 sm:basis-1/2">
           {Object.keys(setsAndPrecons)
-            .filter((i) => i !== PLAYTEST && setsAndPrecons[i][DATE] < BCP_START)
+            .filter(
+              (i) => ![PLAYTEST, PROMO, POD, TWO_P].includes(i) && setsAndPrecons[i][DATE] < BCP_START,
+            )
             .map((i) => {
               return (
                 <LimitedSet

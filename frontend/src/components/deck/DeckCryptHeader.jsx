@@ -20,7 +20,7 @@ const DeckCryptHeader = ({
   sortMethod,
   sortMethods,
 }) => {
-  const { limitedMode, isMobile } = useApp();
+  const { limitedMode } = useApp();
   const [showAdd, setShowAdd] = useState(false);
   const { disciplinesDetailed } = getKeyDisciplines(cards);
   const isEditable = forceIsEditable || getIsEditable(deck);
@@ -42,7 +42,17 @@ const DeckCryptHeader = ({
                 <>
                   {hasWrongGroups && <Warning type={GROUPS} />}
                   {hasBanned && <Warning type={BANNED} />}
-                  {limitedMode && hasLimited && <Warning type={LIMITED} />}
+                  {limitedMode && hasLimited && (
+                    <div className="flex gap-1">
+                      <Warning type={LIMITED} />
+                      <div
+                        className="flex font-normal text-fgRed dark:text-fgRedDark"
+                        title="Restricted Cards"
+                      >
+                        [{Math.round((hasLimited / cryptTotal) * 100)}%]
+                      </div>
+                    </div>
+                  )}
                   {hasPlaytest && <Warning type={PLAYTEST} />}
                 </>
               )}

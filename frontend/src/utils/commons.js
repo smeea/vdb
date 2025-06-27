@@ -66,7 +66,7 @@ export const getRestrictions = (deck, limitedCards) => {
 
   let hasPlaytest;
   let hasBanned;
-  let hasLimited;
+  let hasLimited = null;
   [...Object.values(deck[CRYPT]), ...Object.values(deck[LIBRARY])].forEach((card) => {
     if (card.q < 1) return;
     if (card.c[BANNED]) hasBanned = true;
@@ -76,7 +76,7 @@ export const getRestrictions = (deck, limitedCards) => {
         card.c[ID].toString(),
       )
     ) {
-      hasLimited = true;
+      hasLimited += card.q;
     }
 
     const legalRestriction = getLegality(card.c);

@@ -25,7 +25,7 @@ const DeckLibraryHeader = ({
   bloodTotalDiff,
   forceIsEditable,
 }) => {
-  const { limitedMode, isMobile } = useApp();
+  const { limitedMode } = useApp();
   const [showAdd, setShowAdd] = useState(false);
 
   const {
@@ -58,7 +58,14 @@ const DeckLibraryHeader = ({
               {!inMissing && (
                 <>
                   {hasBanned && <Warning type={BANNED} />}
-                  {limitedMode && hasLimited && <Warning type={LIMITED} />}
+                  {limitedMode && hasLimited && (
+                    <div className="flex gap-1">
+                      <Warning type={LIMITED} />
+                      <div className="flex font-normal text-fgRed dark:text-fgRedDark" title="Restricted Cards">
+                        [{Math.round((hasLimited / libraryTotal) * 100)}%]
+                      </div>
+                    </div>
+                  )}
                   {hasPlaytest && <Warning type={PLAYTEST} />}
                 </>
               )}
