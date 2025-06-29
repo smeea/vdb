@@ -169,12 +169,13 @@ export const getClan = (crypt) => {
   Object.values(crypt)
     .filter((card) => card.c[NAME] !== "Anarch Convert")
     .forEach((card) => {
-      const clan = card.c[PATH] ? card.c[PATH] : card.c[CLAN];
-      if (clans[clan]) {
-        clans[clan] += card.q;
-      } else {
-        clans[clan] = card.q;
-      }
+      [card.c[CLAN], card.c[PATH]].forEach(c => {
+        if (clans[c]) {
+          clans[c] += card.q;
+        } else {
+          clans[c] = card.q;
+        }
+      })
     });
 
   const topClan = Object.keys(clans).reduce(
@@ -190,9 +191,7 @@ export const getClan = (crypt) => {
     { clan: null, q: 0, t: 0 },
   );
 
-  if (topClan.q / topClan.t > 0.5) {
-    return topClan[CLAN];
-  }
+  if (topClan.q / topClan.t > 0.5) return topClan[CLAN];
   return null;
 };
 
