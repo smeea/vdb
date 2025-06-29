@@ -3,7 +3,7 @@ import { CUSTOM, TWO_P, V5 } from "@/constants";
 import { useApp } from "@/context";
 
 const LimitedSelect = ({ withoutDisabled }) => {
-  const { limitedPreset, changeLimitedPreset } = useApp();
+  const { limitedMode, limitedPreset, changeLimitedPreset } = useApp();
 
   const handleSelect = (e) => changeLimitedPreset(e.value);
   const options = [
@@ -17,6 +17,7 @@ const LimitedSelect = ({ withoutDisabled }) => {
   return (
     <Select
       className="min-w-[37px]"
+      textStyle={!limitedMode && withoutDisabled && 'text-lightGray dark:text-lightGrayDark'}
       noMinHeight={withoutDisabled}
       isSearchable={false}
       options={options}

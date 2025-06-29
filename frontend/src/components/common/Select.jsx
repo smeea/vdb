@@ -7,6 +7,7 @@ import { useApp } from "@/context";
 const Select = ({
   autoFocus = false,
   borderStyle = "border",
+  textStyle,
   className,
   defaultMenuIsOpen = false,
   filterOption,
@@ -109,7 +110,8 @@ const Select = ({
         /* no bg- in creatable */
         valueContainer: () =>
           twMerge(
-            "text-fgPrimary dark:text-fgPrimaryDark cursor-pointer rounded-sm",
+            "cursor-pointer rounded-sm",
+            textStyle ?? "text-fgPrimary dark:text-fgPrimaryDark",
             !noBackground && "bg-bgPrimary dark:bg-bgPrimaryDark",
             justifyRight && "justify-end",
             !noMinHeight && "min-h-[40px]",

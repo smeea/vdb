@@ -202,7 +202,6 @@ export const AppProvider = ({ children }) => {
   useEffect(() => {
     switch (limitedPreset) {
       case V5:
-        if (!limitedMode) toggleLimitedMode();
         setLimitedAllowedCrypt(limitedV5[ALLOWED][CRYPT]);
         setLimitedAllowedLibrary(limitedV5[ALLOWED][LIBRARY]);
         setLimitedSets(limitedV5[SETS]);
@@ -210,7 +209,6 @@ export const AppProvider = ({ children }) => {
         setLimitedBannedLibrary({});
         break;
       case TWO_P:
-        if (!limitedMode) toggleLimitedMode();
         setLimitedAllowedCrypt({});
         setLimitedAllowedLibrary({});
         setLimitedSets({ "2P": true });
@@ -218,7 +216,6 @@ export const AppProvider = ({ children }) => {
         setLimitedBannedLibrary({});
         break;
       case CUSTOM:
-        if (!limitedMode) toggleLimitedMode();
         getMany([
           LIMITED_ALLOWED_CRYPT,
           LIMITED_ALLOWED_LIBRARY,
