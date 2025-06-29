@@ -229,6 +229,12 @@
                     "RTR 20030519":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NOBWXWrd-vA/m/iEOpQp1uhvAJ",
                     "RTR 20180511":"https://www.vekn.net/forum/rules-questions/76595-rules-team-rulings-rtr-11-05-2018#86780"
                 }
+            },
+            {
+                "text":"A minion can only perform this special hunt once per turn.",
+                "refs":{
+                    "RBK action-card-or-card-in-play":"https://www.vekn.net/rulebook#action-card-or-card-in-play"
+                }
             }
         ],
         "set":{
@@ -268,6 +274,13 @@
                 "text":"Will not trigger the {Soul Gem of Etrius} since the vampire is removed from the game instead of being burned.",
                 "refs":{
                     "LSJ 20021010":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/IAamJNEJAug/m/iztHSQVIUcYJ"
+                }
+            },
+            {
+                "text":"The ability to increase bleed can only be used during a bleed action before Action Resolution.",
+                "refs":{
+                    "ANK 20231124":"https://www.vekn.net/forum/rules-questions/80984-haqim-s-law-retribution-efect-during-combat?start=12#109917",
+                    "LSJ 19970718":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/QujjxfQHYzw/m/S4tNTm4gpi8J"
                 }
             }
         ],
@@ -1915,7 +1928,15 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The ability to increase bleed can only be used during a bleed action before Action Resolution.",
+                "refs":{
+                    "ANK 20231124":"https://www.vekn.net/forum/rules-questions/80984-haqim-s-law-retribution-efect-during-combat?start=12#109917",
+                    "LSJ 19970718":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/QujjxfQHYzw/m/S4tNTm4gpi8J"
+                }
+            }
+        ],
         "set":{
             "LK":{
                 "":"2"
@@ -4033,12 +4054,6 @@
         "pool":3,
         "requirement":"",
         "rulings":[
-            {
-                "text":"Must be played after blocks are declined, playing it implicitly declines block attempts.",
-                "refs":{
-                    "LSJ 20070203":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/37EYK3FA30k/m/QynliahgIzQJ"
-                }
-            },
             {
                 "text":"Must be played before action resolution, before any modifier or reaction played \"as the action would be successful\" are played (eg. cannot be played after a {Spying Mission} on the vampire triggers).",
                 "refs":{
@@ -6381,6 +6396,12 @@
                 "refs":{
                     "ANK 20210627":"https://www.vekn.net/forum/rules-questions/79192-mirror-walk-and-slave?start=12#102578"
                 }
+            },
+            {
+                "text":"If an acting minion leaves the ready region before block resolution, the action ends immediately and the blocking minion is not locked.",
+                "refs":{
+                    "RBK resolve-the-action":"https://www.vekn.net/rulebook#resolve-the-action"
+                }
             }
         ],
         "set":{
@@ -6736,7 +6757,15 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The effect in the press step does not happen if the combat ends prematurely (e.g. from torpor or \"strike: combat ends\").",
+                "refs":{
+                    "LSJ 20010312":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Mz0Rs9faJ9o/m/bgYwj4yw0G0J",
+                    "LSJ 20001027":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/zUs5JBhRLgE/m/oyaUCsWe-EgJ"
+                }
+            }
+        ],
         "set":{
             "LoB":{
                 "C":true
@@ -7601,6 +7630,12 @@
                 }
             },
             {
+                "text":"When putting {Agent of Power} on Bima, its card text is applied as normal (Choose a discipline and burn it in your discard phase)",
+                "refs":{
+                    "LSJ 20071001-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/bb9ac-kN5WY/m/l8mfTxW6a6gJ"
+                }
+            },
+            {
                 "text":"If they use their last life to play an action modifier, the action fails. If they use their last life to play a strike, combat ends before strike resolution.",
                 "refs":{
                     "ANK 20180928-1":"https://www.vekn.net/forum/rules-questions/77034-allies-and-vampire-disciplines-specifically-the-nocturn#90809"
@@ -8097,7 +8132,7 @@
                 }
             },
             {
-                "text":"[QUI] The block attempt and subsequent combat still happen if the action lacks a suitable target because of the unlock (eg. {Ambush}).",
+                "text":"[QUI] If the action lacks a suitable target because of the unlock (e.g. {Ambush}), the block attempt still happens, as does the resulting combat if the block is successful.",
                 "refs":{
                     "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
                 }
@@ -11134,7 +11169,21 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"A copy that was recruited this turn can be locked to grant the bleed bonus.",
+                "refs":{
+                    "ANK 20180517":"https://www.vekn.net/forum/rules-questions/76447-rules-team-rulings-rtr-03-03-2018?start=30#87041"
+                }
+            },
+            {
+                "text":"The ability to increase bleed can only be used during a bleed action before Action Resolution.",
+                "refs":{
+                    "ANK 20231124":"https://www.vekn.net/forum/rules-questions/80984-haqim-s-law-retribution-efect-during-combat?start=12#109917",
+                    "LSJ 19970718":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/QujjxfQHYzw/m/S4tNTm4gpi8J"
+                }
+            }
+        ],
         "set":{
             "NB3":{
                 "PH":"6"
@@ -11914,7 +11963,7 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"She can lock to use her ability the turn she is recruited.",
+                "text":"They can lock to use their ability the turn they where recruited.",
                 "refs":{
                     "ANK 20180517":"https://www.vekn.net/forum/rules-questions/76447-rules-team-rulings-rtr-03-03-2018?start=30#87041"
                 }
@@ -13849,7 +13898,7 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"He can use his ability to burn a vampire who has committed diablerie the turn she is recruited.",
+                "text":"He can use his ability to burn a vampire who has committed diablerie the turn he is recruited.",
                 "refs":{
                     "ANK 20180517":"https://www.vekn.net/forum/rules-questions/76447-rules-team-rulings-rtr-03-03-2018?start=30#87041"
                 }
@@ -14650,7 +14699,15 @@
         "path":"",
         "pool":1,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The ability to increase bleed can only be used during a bleed action before Action Resolution.",
+                "refs":{
+                    "ANK 20231124":"https://www.vekn.net/forum/rules-questions/80984-haqim-s-law-retribution-efect-during-combat?start=12#109917",
+                    "LSJ 19970718":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/QujjxfQHYzw/m/S4tNTm4gpi8J"
+                }
+            }
+        ],
         "set":{
             "SoC":{
                 "R":true
@@ -16420,7 +16477,14 @@
         "path":"",
         "pool":3,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"They can lock to use their ability the turn they where recruited.",
+                "refs":{
+                    "ANK 20180517":"https://www.vekn.net/forum/rules-questions/76447-rules-team-rulings-rtr-03-03-2018?start=30#87041"
+                }
+            }
+        ],
         "set":{
             "Promo":{
                 "2021-07-01":true
@@ -19173,7 +19237,20 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Must be played (as well as other \"as the action is announced\" action modifiers) before action modifiers that are not explicitly played \"as the action is announced\" (e.g., {Conditioning}).",
+                "refs":{
+                    "ANK 20190425":"https://www.vekn.net/forum/rules-questions/77581-action-modifiers-played-at-beginning-and-end-of-an-action#94652"
+                }
+            },
+            {
+                "text":"Replace the action card (if any) before playing it.",
+                "refs":{
+                    "ANK 20181208":"https://www.vekn.net/forum/rules-questions/77210-touch-of-clarity-and-fast-reaction-is-posible-to-play-with-locked-minion?start=6#92308"
+                }
+            }
+        ],
         "set":{
             "V5H":{
                 "PH":"4"
@@ -19863,12 +19940,6 @@
                 "refs":{
                     "ANK 20180623":"https://www.vekn.net/forum/rules-questions/76748-black-sunrise#88361"
                 }
-            },
-            {
-                "text":"The block attempt and subsequent combat still happen if the action lacks a suitable target because of the unlock (eg. {Ambush}).",
-                "refs":{
-                    "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
-                }
             }
         ],
         "set":{
@@ -19948,6 +20019,12 @@
                 "text":"One Courier only lets you look at the top library card once per bleed.",
                 "refs":{
                     "LSJ 20001102-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/LlPyLJjLdx0/m/eVTwHPkEgOMJ"
+                }
+            },
+            {
+                "text":"They can lock to use their ability the turn they where recruited.",
+                "refs":{
+                    "ANK 20180517":"https://www.vekn.net/forum/rules-questions/76447-rules-team-rulings-rtr-03-03-2018?start=30#87041"
                 }
             }
         ],
@@ -20157,6 +20234,13 @@
                 "refs":{
                     "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
                     "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+                }
+            },
+            {
+                "text":"[VIS] The effect in the press step does not happen if the combat ends prematurely (e.g. from torpor or \"strike: combat ends\").",
+                "refs":{
+                    "LSJ 20010312":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Mz0Rs9faJ9o/m/bgYwj4yw0G0J",
+                    "LSJ 20001027":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/zUs5JBhRLgE/m/oyaUCsWe-EgJ"
                 }
             }
         ],
@@ -21831,16 +21915,22 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"This is not a directed action, even when targeting another Methuselah's ash heap.",
-                "refs":{
-                    "LSJ 20010627":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NhNCVCCDyU0/m/I5Yph3-UUPsJ",
-                    "ANK 20181129":"https://www.vekn.net/forum/rules-questions/77198-pressing-flesh-from-other-player-s-ash-heap#92145"
-                }
-            },
-            {
                 "text":"\"Since your last turn\" means between the end of your last turn and now. Your last turn does not qualify, your current turn does.",
                 "refs":{
                     "LSJ 20020429":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/7ZfedGTVt9g/m/kQnfy7J_UYkJ"
+                }
+            },
+            {
+                "text":"Is an undirected action, even when targeting another Methuselah's ash heap.",
+                "refs":{
+                    "LSJ 20010627":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NhNCVCCDyU0/m/I5Yph3-UUPsJ",
+                    "ANK 20180202":"https://www.vekn.net/forum/rules-questions/76402-pariah-vulture-s-buffet#85206"
+                }
+            },
+            {
+                "text":"Cannot be played if no target is available in any Methuselah's ash heap.",
+                "refs":{
+                    "ANK 20200420-3":"https://www.vekn.net/forum/rules-questions/78574-vulture-s-buffet#99642"
                 }
             }
         ],
@@ -21921,6 +22011,13 @@
                 "text":"[QUI] Additional damage inherits all of the properties of the base damage.",
                 "refs":{
                     "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
+                }
+            },
+            {
+                "text":"The effect in the press step does not happen if the combat ends prematurely (e.g. from torpor or \"strike: combat ends\").",
+                "refs":{
+                    "LSJ 20010312":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Mz0Rs9faJ9o/m/bgYwj4yw0G0J",
+                    "LSJ 20001027":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/zUs5JBhRLgE/m/oyaUCsWe-EgJ"
                 }
             }
         ],
@@ -22733,7 +22830,15 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The ability to increase bleed can only be used during a bleed action before Action Resolution.",
+                "refs":{
+                    "ANK 20231124":"https://www.vekn.net/forum/rules-questions/80984-haqim-s-law-retribution-efect-during-combat?start=12#109917",
+                    "LSJ 19970718":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/QujjxfQHYzw/m/S4tNTm4gpi8J"
+                }
+            }
+        ],
         "set":{
             "NB3":{
                 "PL":"1"
@@ -23929,21 +24034,9 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"Cannot be moved to a Malkavian nor to a Malkavian antitribu vampire.",
-                "refs":{
-                    "LSJ 19970224":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/80KRDjVFkyg/m/TBJso9Ra_9QJ"
-                }
-            },
-            {
                 "text":"The clan is set when the card is played, it does not depend on the clan of the vampire that has the card on them.",
                 "refs":{
                     "LSJ 20070707":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ZtRk5z2TcoI/m/gJWD0dT3kUwJ"
-                }
-            },
-            {
-                "text":"Does not change the sect of the target.",
-                "refs":{
-                    "RTR 20201130":"https://www.blackchantry.com/2020/12/25/rtr-30-11-2020/"
                 }
             },
             {
@@ -23954,7 +24047,7 @@
                 }
             },
             {
-                "text":"When removed, the vampire goes back to its underlying clan.",
+                "text":"When removed, the vampire goes back to its underlying clan and sect.",
                 "refs":{
                     "RTR 20201130":"https://www.blackchantry.com/2020/12/25/rtr-30-11-2020/",
                     "ANK 20200415":"https://www.vekn.net/forum/rules-questions/7516-re-derange-titles-and-bloodbrothers?start=6#99609"
@@ -26296,6 +26389,13 @@
                     "LSJ 20070403":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/TJ2ktt_1tjk/m/fdH_x9tDmN8J",
                     "LSJ 20070413":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/umdINigMKqs/m/lfUAxTnfttIJ"
                 }
+            },
+            {
+                "text":"[ACTION MODIFIER] The ability to increase bleed can only be used during a bleed action before Action Resolution.",
+                "refs":{
+                    "ANK 20231124":"https://www.vekn.net/forum/rules-questions/80984-haqim-s-law-retribution-efect-during-combat?start=12#109917",
+                    "LSJ 19970718":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/QujjxfQHYzw/m/S4tNTm4gpi8J"
+                }
             }
         ],
         "set":{
@@ -26496,15 +26596,15 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"He can lock to use his ability the turn he is recruited.",
-                "refs":{
-                    "ANK 20180517":"https://www.vekn.net/forum/rules-questions/76447-rules-team-rulings-rtr-03-03-2018?start=30#87041"
-                }
-            },
-            {
                 "text":"The fact it is Unique has no bearing on the burn option. You cannot use the burn option if you meet the requirement, even if you already have a copy of the card in play.",
                 "refs":{
                     "LSJ 20100203-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/tKnhKlDo8lk/m/6k8b2vok7_kJ"
+                }
+            },
+            {
+                "text":"They can lock to use their ability the turn they where recruited.",
+                "refs":{
+                    "ANK 20180517":"https://www.vekn.net/forum/rules-questions/76447-rules-team-rulings-rtr-03-03-2018?start=30#87041"
                 }
             }
         ],
@@ -26783,6 +26883,13 @@
                 "text":"[ANI] The additional damage done during the press step is environmental.",
                 "refs":{
                     "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ"
+                }
+            },
+            {
+                "text":"[ANI] The effect in the press step does not happen if the combat ends prematurely (e.g. from torpor or \"strike: combat ends\").",
+                "refs":{
+                    "LSJ 20010312":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Mz0Rs9faJ9o/m/bgYwj4yw0G0J",
+                    "LSJ 20001027":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/zUs5JBhRLgE/m/oyaUCsWe-EgJ"
                 }
             }
         ],
@@ -27725,6 +27832,12 @@
                     "RTR 20030519":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NOBWXWrd-vA/m/iEOpQp1uhvAJ",
                     "RTR 20180511":"https://www.vekn.net/forum/rules-questions/76595-rules-team-rulings-rtr-11-05-2018#86780"
                 }
+            },
+            {
+                "text":"A minion can only perform this special hunt once per turn.",
+                "refs":{
+                    "RBK action-card-or-card-in-play":"https://www.vekn.net/rulebook#action-card-or-card-in-play"
+                }
             }
         ],
         "set":{
@@ -27864,7 +27977,7 @@
                 }
             },
             {
-                "text":"He can lock to use his ability the turn he is recruited.",
+                "text":"They can lock to use their ability the turn they where recruited.",
                 "refs":{
                     "ANK 20180517":"https://www.vekn.net/forum/rules-questions/76447-rules-team-rulings-rtr-03-03-2018?start=30#87041"
                 }
@@ -28821,6 +28934,12 @@
                 "refs":{
                     "LSJ 20010714-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9U-jt3p3R_Q/m/WxDJwkgc25kJ"
                 }
+            },
+            {
+                "text":"If the action lacks a suitable target because of the unlock (e.g. {Ambush}), the block attempt still happens, as does the resulting combat if the block is successful.",
+                "refs":{
+                    "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
+                }
             }
         ],
         "set":{
@@ -29213,7 +29332,21 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Is an undirected action, even when targeting another Methuselah's ash heap.",
+                "refs":{
+                    "LSJ 20010627":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NhNCVCCDyU0/m/I5Yph3-UUPsJ",
+                    "ANK 20180202":"https://www.vekn.net/forum/rules-questions/76402-pariah-vulture-s-buffet#85206"
+                }
+            },
+            {
+                "text":"Cannot be played if no target is available in any Methuselah's ash heap.",
+                "refs":{
+                    "ANK 20200420-3":"https://www.vekn.net/forum/rules-questions/78574-vulture-s-buffet#99642"
+                }
+            }
+        ],
         "set":{
             "LoB":{
                 "R":true
@@ -30585,17 +30718,23 @@
                 }
             },
             {
-                "text":"[SER] is not a directed action, even when targeting another Methuselah's ash heap.",
-                "refs":{
-                    "LSJ 20010627":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NhNCVCCDyU0/m/I5Yph3-UUPsJ",
-                    "ANK 20181129":"https://www.vekn.net/forum/rules-questions/77198-pressing-flesh-from-other-player-s-ash-heap#92145"
-                }
-            },
-            {
                 "text":"If The Eternal Mask is burned by something else than its own effect (including when the vampire it is on is burned), the vampire that has been brought back is unaffected.",
                 "refs":{
                     "LSJ 20071206":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/B-5oDAJrwiI/m/ui9coMgXYUMJ",
                     "LSJ 20090725":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/isG743Sws-8/m/cjTJkGtfl_gJ"
+                }
+            },
+            {
+                "text":"[SER] Is an undirected action, even when targeting another Methuselah's ash heap.",
+                "refs":{
+                    "LSJ 20010627":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NhNCVCCDyU0/m/I5Yph3-UUPsJ",
+                    "ANK 20180202":"https://www.vekn.net/forum/rules-questions/76402-pariah-vulture-s-buffet#85206"
+                }
+            },
+            {
+                "text":"[SER] Cannot be played if no target is available in any Methuselah's ash heap.",
+                "refs":{
+                    "ANK 20200420-3":"https://www.vekn.net/forum/rules-questions/78574-vulture-s-buffet#99642"
                 }
             }
         ],
@@ -30642,7 +30781,7 @@
                 }
             },
             {
-                "text":"The block attempt and subsequent combat still happen if the action lacks a suitable target because of the unlock (eg. {Ambush}).",
+                "text":"If the action lacks a suitable target because of the unlock (e.g. {Ambush}), the block attempt still happens, as does the resulting combat if the block is successful.",
                 "refs":{
                     "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
                 }
@@ -31011,7 +31150,15 @@
         "path":"",
         "pool":0,
         "requirement":"imbued",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The effect in the press step does not happen if the combat ends prematurely (e.g. from torpor or \"strike: combat ends\").",
+                "refs":{
+                    "LSJ 20010312":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Mz0Rs9faJ9o/m/bgYwj4yw0G0J",
+                    "LSJ 20001027":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/zUs5JBhRLgE/m/oyaUCsWe-EgJ"
+                }
+            }
+        ],
         "set":{
             "NoR":{
                 "R":true
@@ -31236,15 +31383,21 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"[AUS] The vampire need not attempt to block nor play further reaction cards: that is merely an option.",
+                "text":"[AUS] The minion need not attempt to block nor play further reaction cards: that is merely an option.",
                 "refs":{
                     "TOM 19951129":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jjBzopH-yrQ/m/L51mbZ5KGLkJ"
                 }
             },
             {
-                "text":"[AUS] Can be played after action resolution to use a reaction card (eg. {Fast Reaction} after combat).",
+                "text":"[AUS] Can be played or used after action resolution (e.g. to use a reaction card like\u00a0{Fast Reaction} after combat).",
                 "refs":{
                     "LSJ 20091123":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Yt7LsvWFwiM/m/op6oRS8SLiYJ"
+                }
+            },
+            {
+                "text":"[AUS] Can be played or used during the \u201cas a card is played\u201d window, except in combat, or when there is no action.",
+                "refs":{
+                    "ANK 20210819":"https://www.vekn.net/forum/rules-questions/79275-wake-cards-during-the-as-play-window-and-other-exotic-cancelling-effects?start=0#102931"
                 }
             }
         ],
@@ -31547,7 +31700,14 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"If the action lacks a suitable target because of the unlock (e.g. {Ambush}), the block attempt still happens, as does the resulting combat if the block is successful.",
+                "refs":{
+                    "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
+                }
+            }
+        ],
         "set":{
             "V5A":{
                 "PG":"6"
@@ -35051,21 +35211,9 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"The vampire need not attempt to block nor play further reaction cards: that is merely an option.",
-                "refs":{
-                    "TOM 19951129":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jjBzopH-yrQ/m/L51mbZ5KGLkJ"
-                }
-            },
-            {
                 "text":"If he fails to block, the vampire only burns a blood when the action begins to resolve (successfully or not). He can pay for reactions after declining to block, before burning a blood.",
                 "refs":{
                     "LSJ 19990421":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/bYwaXWdJX84/m/qajsOL_I_LoJ"
-                }
-            },
-            {
-                "text":"Can be played after action resolution to use a reaction card (eg. {Fast Reaction} after combat).",
-                "refs":{
-                    "LSJ 20091123":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Yt7LsvWFwiM/m/op6oRS8SLiYJ"
                 }
             },
             {
@@ -35078,6 +35226,24 @@
                 "text":"Does not consider blocks made before the card was played (if the action has been continued with eg. {Form of Mist}).",
                 "refs":{
                     "ANK 20230319":"https://www.vekn.net/forum/rules-questions/80393-forced-awakening-and-wmrh-talk-radio-vs-form-of-mist#107674"
+                }
+            },
+            {
+                "text":"The minion need not attempt to block nor play further reaction cards: that is merely an option.",
+                "refs":{
+                    "TOM 19951129":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jjBzopH-yrQ/m/L51mbZ5KGLkJ"
+                }
+            },
+            {
+                "text":"Can be played or used after action resolution (e.g. to use a reaction card like\u00a0{Fast Reaction} after combat).",
+                "refs":{
+                    "LSJ 20091123":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Yt7LsvWFwiM/m/op6oRS8SLiYJ"
+                }
+            },
+            {
+                "text":"Can be played or used during the \u201cas a card is played\u201d window, except in combat, or when there is no action.",
+                "refs":{
+                    "ANK 20210819":"https://www.vekn.net/forum/rules-questions/79275-wake-cards-during-the-as-play-window-and-other-exotic-cancelling-effects?start=0#102931"
                 }
             }
         ],
@@ -36806,6 +36972,12 @@
                     "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
                     "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
                 }
+            },
+            {
+                "text":"If an acting minion leaves the ready region before block resolution, the action ends immediately and the blocking minion is not locked.",
+                "refs":{
+                    "RBK resolve-the-action":"https://www.vekn.net/rulebook#resolve-the-action"
+                }
             }
         ],
         "set":{
@@ -37640,13 +37812,6 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"This is not a directed action, even when targeting another Methuselah's ash heap.",
-                "refs":{
-                    "LSJ 20010627":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NhNCVCCDyU0/m/I5Yph3-UUPsJ",
-                    "ANK 20181129":"https://www.vekn.net/forum/rules-questions/77198-pressing-flesh-from-other-player-s-ash-heap#92145"
-                }
-            },
-            {
                 "text":"\"Since your last turn\" means between the end of your last turn and now. Your last turn does not qualify, your current turn does.",
                 "refs":{
                     "LSJ 20020429":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/7ZfedGTVt9g/m/kQnfy7J_UYkJ"
@@ -37657,6 +37822,25 @@
                 "refs":{
                     "RTR 20030519":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NOBWXWrd-vA/m/iEOpQp1uhvAJ",
                     "RTR 20180511":"https://www.vekn.net/forum/rules-questions/76595-rules-team-rulings-rtr-11-05-2018#86780"
+                }
+            },
+            {
+                "text":"A minion can only perform this special hunt once per turn.",
+                "refs":{
+                    "RBK action-card-or-card-in-play":"https://www.vekn.net/rulebook#action-card-or-card-in-play"
+                }
+            },
+            {
+                "text":"Is an undirected action, even when targeting another Methuselah's ash heap.",
+                "refs":{
+                    "LSJ 20010627":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NhNCVCCDyU0/m/I5Yph3-UUPsJ",
+                    "ANK 20180202":"https://www.vekn.net/forum/rules-questions/76402-pariah-vulture-s-buffet#85206"
+                }
+            },
+            {
+                "text":"Cannot be played if no target is available in any Methuselah's ash heap.",
+                "refs":{
+                    "ANK 20200420-3":"https://www.vekn.net/forum/rules-questions/78574-vulture-s-buffet#99642"
                 }
             }
         ],
@@ -38077,7 +38261,7 @@
                 }
             },
             {
-                "text":"She can lock to use her ability the turn she is recruited.",
+                "text":"They can lock to use their ability the turn they where recruited.",
                 "refs":{
                     "ANK 20180517":"https://www.vekn.net/forum/rules-questions/76447-rules-team-rulings-rtr-03-03-2018?start=30#87041"
                 }
@@ -38455,7 +38639,7 @@
                 }
             },
             {
-                "text":"She can lock to use her ability the turn she is recruited.",
+                "text":"They can lock to use their ability the turn they where recruited.",
                 "refs":{
                     "ANK 20180517":"https://www.vekn.net/forum/rules-questions/76447-rules-team-rulings-rtr-03-03-2018?start=30#87041"
                 }
@@ -39306,6 +39490,19 @@
                     "RBK equip":"https://www.vekn.net/rulebook#equip",
                     "RBK recruit-ally":"https://www.vekn.net/rulebook#recruit-ally",
                     "RBK employ-retainer":"https://www.vekn.net/rulebook#employ-retainer"
+                }
+            },
+            {
+                "text":"Is an undirected action, even when targeting another Methuselah's ash heap.",
+                "refs":{
+                    "LSJ 20010627":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NhNCVCCDyU0/m/I5Yph3-UUPsJ",
+                    "ANK 20180202":"https://www.vekn.net/forum/rules-questions/76402-pariah-vulture-s-buffet#85206"
+                }
+            },
+            {
+                "text":"Cannot be played if no target is available in any Methuselah's ash heap.",
+                "refs":{
+                    "ANK 20200420-3":"https://www.vekn.net/forum/rules-questions/78574-vulture-s-buffet#99642"
                 }
             }
         ],
@@ -40932,15 +41129,16 @@
                 }
             },
             {
-                "text":"Cannot be used during combat.",
-                "refs":{
-                    "ANK 20231124":"https://www.vekn.net/forum/rules-questions/80984-haqim-s-law-retribution-efect-during-combat?start=12#109917"
-                }
-            },
-            {
                 "text":"Can only be used by an acting bleeding minion.",
                 "refs":{
                     "ANK 20220502":"https://www.vekn.net/forum/rules-questions/79757-haqim-s-law-retribution-and-anu-diptinatpa#105140"
+                }
+            },
+            {
+                "text":"The ability to increase bleed can only be used during a bleed action before Action Resolution.",
+                "refs":{
+                    "ANK 20231124":"https://www.vekn.net/forum/rules-questions/80984-haqim-s-law-retribution-efect-during-combat?start=12#109917",
+                    "LSJ 19970718":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/QujjxfQHYzw/m/S4tNTm4gpi8J"
                 }
             }
         ],
@@ -43355,6 +43553,12 @@
                 "refs":{
                     "LSJ 19990104":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/QUUjL3FdUx0/m/9GAnSiNxOwEJ"
                 }
+            },
+            {
+                "text":"A Methuselah must be able to pay for their bid. Since the controller pays a reduce cost, they can bid up to twice their current pool total, while other Methuselahs can bid up to their pool total.",
+                "refs":{
+                    "LSJ 19990825":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/VY53PXuZASk/m/FB6y3af_PogJ"
+                }
             }
         ],
         "set":{
@@ -44597,6 +44801,13 @@
                     "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
                     "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
                 }
+            },
+            {
+                "text":"[aus] The effect in the press step does not happen if the combat ends prematurely (e.g. from torpor or \"strike: combat ends\").",
+                "refs":{
+                    "LSJ 20010312":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Mz0Rs9faJ9o/m/bgYwj4yw0G0J",
+                    "LSJ 20001027":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/zUs5JBhRLgE/m/oyaUCsWe-EgJ"
+                }
             }
         ],
         "set":{
@@ -44666,7 +44877,15 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The ability to increase bleed can only be used during a bleed action before Action Resolution.",
+                "refs":{
+                    "ANK 20231124":"https://www.vekn.net/forum/rules-questions/80984-haqim-s-law-retribution-efect-during-combat?start=12#109917",
+                    "LSJ 19970718":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/QujjxfQHYzw/m/S4tNTm4gpi8J"
+                }
+            }
+        ],
         "set":{
             "TU":{
                 "C":true
@@ -45300,12 +45519,6 @@
         "requirement":"infernal",
         "rulings":[
             {
-                "text":"The \"can act the turn it is recruited\" text does not let him act during an opponent turn if it was recruited then (eg. using {Madness Network}).",
-                "refs":{
-                    "ANK 20200813-3":"https://www.vekn.net/forum/rules-questions/78800-off-turn-nocturn#100536"
-                }
-            },
-            {
                 "text":"If they use their last life to play an action modifier, the action fails. If they use their last life to play a strike, combat ends before strike resolution.",
                 "refs":{
                     "ANK 20180928-1":"https://www.vekn.net/forum/rules-questions/77034-allies-and-vampire-disciplines-specifically-the-nocturn#90809"
@@ -45359,6 +45572,13 @@
                 "refs":{
                     "LSJ 20020503":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/1DbOr3g3vP8/m/xF8dvxQZye4J",
                     "LSJ 20060126":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PBEBNFH61ik/m/MPf8Rs1F958J"
+                }
+            },
+            {
+                "text":"The \"can act the turn it is recruited\" text does not let him act during an opponent's turn if it was recruited then (eg. using {Enkil Cog}).",
+                "refs":{
+                    "ANK 20200930":"https://www.vekn.net/forum/rules-questions/78800-off-turn-nocturn?start=6#100838",
+                    "ANK 20200813-3":"https://www.vekn.net/forum/rules-questions/78800-off-turn-nocturn#100536"
                 }
             }
         ],
@@ -48190,6 +48410,19 @@
                     "PIB 20130128-2":"https://www.vekn.net/forum/rules-questions/44232-khazar-s-diary-question#44504",
                     "LSJ 20100325-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aC6OOfaulbM/m/svWv9UqH6isJ"
                 }
+            },
+            {
+                "text":"Is an undirected action, even when targeting another Methuselah's ash heap.",
+                "refs":{
+                    "LSJ 20010627":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NhNCVCCDyU0/m/I5Yph3-UUPsJ",
+                    "ANK 20180202":"https://www.vekn.net/forum/rules-questions/76402-pariah-vulture-s-buffet#85206"
+                }
+            },
+            {
+                "text":"Cannot be played if no target is available in any Methuselah's ash heap.",
+                "refs":{
+                    "ANK 20200420-3":"https://www.vekn.net/forum/rules-questions/78574-vulture-s-buffet#99642"
+                }
             }
         ],
         "set":{
@@ -48948,6 +49181,19 @@
                     "RBK recruit-ally":"https://www.vekn.net/rulebook#recruit-ally",
                     "RBK employ-retainer":"https://www.vekn.net/rulebook#employ-retainer"
                 }
+            },
+            {
+                "text":"[TEM] Is an undirected action, even when targeting another Methuselah's ash heap.",
+                "refs":{
+                    "LSJ 20010627":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NhNCVCCDyU0/m/I5Yph3-UUPsJ",
+                    "ANK 20180202":"https://www.vekn.net/forum/rules-questions/76402-pariah-vulture-s-buffet#85206"
+                }
+            },
+            {
+                "text":"[TEM] Cannot be played if no target is available in any Methuselah's ash heap.",
+                "refs":{
+                    "ANK 20200420-3":"https://www.vekn.net/forum/rules-questions/78574-vulture-s-buffet#99642"
+                }
             }
         ],
         "set":{
@@ -48984,8 +49230,9 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"Can be played by an acting vampire in torpor.",
+                "text":"When used by an acting vampire in torpor, there is no opportunity to diablerize the acting vampire, as the action is ended without a successful block.",
                 "refs":{
+                    "RBK leave-torpor":"https://www.vekn.net/rulebook#leave-torpor",
                     "LSJ 19970325":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/R-t138q8688/m/Zj1Y_jlq29AJ"
                 }
             },
@@ -50131,41 +50378,44 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"The vampire must take the action directed at a vampire, even if no vampire has any blood left.",
+                "text":"Is affected by increases to Hunt value. Blood comes from the target of the hunt.",
                 "refs":{
-                    "LSJ 19970224":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/80KRDjVFkyg/m/TBJso9Ra_9QJ"
+                    "RTR 20030519":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NOBWXWrd-vA/m/iEOpQp1uhvAJ",
+                    "RTR 20180511":"https://www.vekn.net/forum/rules-questions/76595-rules-team-rulings-rtr-11-05-2018#86780"
                 }
             },
             {
-                "text":"When hunting on a target that has no blood to steal, the hunt action will simply have no effect, stealing zero blood.",
+                "text":"A minion can only perform this special hunt once per turn.",
                 "refs":{
-                    "LSJ 19970224":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/80KRDjVFkyg/m/TBJso9Ra_9QJ"
+                    "RBK action-card-or-card-in-play":"https://www.vekn.net/rulebook#action-card-or-card-in-play"
                 }
             },
             {
-                "text":"The vampire cannot hunt if there are no vampires at all.",
+                "text":"Other non-standard hunt actions are still permitted (e.g. {Abactor}). When performing such actions, their text apply: this card does not combine with them.",
                 "refs":{
-                    "LSJ 19970224":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/80KRDjVFkyg/m/TBJso9Ra_9QJ"
+                    "LSJ 20090606":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-hy9E1u2t_o/m/CPU8rltzhesJ",
+                    "ANK 20190707":"https://www.vekn.net/forum/rules-questions/77694-ok-a-new-round-of-doubts-for-a-noobie#95274",
+                    "LSJ 20060306":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/H-W0Wqx3t9w/m/jgTHm_Ac8dwJ"
                 }
             },
             {
-                "text":"If the vampire with the card \"cannot gain blood\", then the stolen blood is moved to the blood bank when he hunts.",
+                "text":"This special hunt cannot steal more blood than the target has. It can\u00a0target a vampire with no blood. If no blood is stolen, the hunt is unsuccessful, even if the action stays successful.",
+                "refs":{
+                    "LSJ 20050720-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/1vbIkgvKDJ0/m/3ErIIMXFgPIJ",
+                    "RTR 20010711":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GsI1UyH54jU/m/x9LfDZX1vR4J",
+                    "LSJ 20100915":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/lFLocuKV8NI/m/TcAPvYUfrWcJ"
+                }
+            },
+            {
+                "text":"The blood stolen by this special hunt goes to the blood bank if it cannot be gained by the vampire.",
                 "refs":{
                     "LSJ 20010809-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/LB6Zg4bEggc/m/g5eYOHiKrvUJ"
                 }
             },
             {
-                "text":"Cannot choose to target a vampire when using another non-standard hunt action (eg. {Abactor}).",
+                "text":"This special hunt must be directed at a vampire, even if none has any blood. It cannot be performed if there are no other vampires.",
                 "refs":{
-                    "LSJ 20090606":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-hy9E1u2t_o/m/CPU8rltzhesJ",
-                    "ANK 20190707":"https://www.vekn.net/forum/rules-questions/77694-ok-a-new-round-of-doubts-for-a-noobie#95274"
-                }
-            },
-            {
-                "text":"Is affected by increases to Hunt value. Blood comes from the target of the hunt.",
-                "refs":{
-                    "RTR 20030519":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NOBWXWrd-vA/m/iEOpQp1uhvAJ",
-                    "RTR 20180511":"https://www.vekn.net/forum/rules-questions/76595-rules-team-rulings-rtr-11-05-2018#86780"
+                    "LSJ 19970224":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/80KRDjVFkyg/m/TBJso9Ra_9QJ"
                 }
             }
         ],
@@ -50422,7 +50672,14 @@
         "path":"",
         "pool":0,
         "requirement":"capacity 8 or more",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"If an {Agent of Power} is choosen its card text is not appled. The created vampire has no dsiciplines, is still non-unique and does not burn in your discard phase.",
+                "refs":{
+                    "LSJ 20071001-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/bb9ac-kN5WY/m/l8mfTxW6a6gJ"
+                }
+            }
+        ],
         "set":{
             "Promo":{
                 "2003-09-01":true
@@ -51578,6 +51835,12 @@
                     "RTR 20030519":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NOBWXWrd-vA/m/iEOpQp1uhvAJ",
                     "RTR 20180511":"https://www.vekn.net/forum/rules-questions/76595-rules-team-rulings-rtr-11-05-2018#86780"
                 }
+            },
+            {
+                "text":"A minion can only perform this special hunt once per turn.",
+                "refs":{
+                    "RBK action-card-or-card-in-play":"https://www.vekn.net/rulebook#action-card-or-card-in-play"
+                }
             }
         ],
         "set":{
@@ -51951,7 +52214,14 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Can be used even if the stealth is not currently needed.",
+                "refs":{
+                    "LSJ 20011214-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/TinQ8ywzIHU/m/-zW_hcYbiD4J"
+                }
+            }
+        ],
         "set":{
             "30th":{
                 "":"6"
@@ -54380,12 +54650,6 @@
                 "refs":{
                     "ANK 20200515":"https://www.vekn.net/forum/rules-questions/78634-blanket-of-night#99838"
                 }
-            },
-            {
-                "text":"[OBF] Cannot be used if no stealth is needed yet.",
-                "refs":{
-                    "LSJ 20060409":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gsFQXsCGTG4/m/q5H8FvuKksIJ"
-                }
             }
         ],
         "set":{
@@ -55109,6 +55373,13 @@
                 "text":"Goes to the ash heap when played, if it has been removed when the vampire blocks, it has no effect.",
                 "refs":{
                     "ANK 20220805":"https://www.vekn.net/forum/rules-questions/79939-attachable-modifiers-reactions-being-removed-prior-to-attachment#105881"
+                }
+            },
+            {
+                "text":"[AUS] The ability to increase bleed can only be used during a bleed action before Action Resolution.",
+                "refs":{
+                    "ANK 20231124":"https://www.vekn.net/forum/rules-questions/80984-haqim-s-law-retribution-efect-during-combat?start=12#109917",
+                    "LSJ 19970718":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/QujjxfQHYzw/m/S4tNTm4gpi8J"
                 }
             }
         ],
@@ -56966,6 +57237,12 @@
                     "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
                     "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
                 }
+            },
+            {
+                "text":"[ani] If the action lacks a suitable target because of the unlock (e.g. {Ambush}), the block attempt still happens, as does the resulting combat if the block is successful.",
+                "refs":{
+                    "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
+                }
             }
         ],
         "set":{
@@ -58654,6 +58931,13 @@
                     "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
                     "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
                 }
+            },
+            {
+                "text":"[THN] The effect in the press step does not happen if the combat ends prematurely (e.g. from torpor or \"strike: combat ends\").",
+                "refs":{
+                    "LSJ 20010312":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Mz0Rs9faJ9o/m/bgYwj4yw0G0J",
+                    "LSJ 20001027":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/zUs5JBhRLgE/m/oyaUCsWe-EgJ"
+                }
             }
         ],
         "set":{
@@ -59033,6 +59317,12 @@
                 "refs":{
                     "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
                     "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+                }
+            },
+            {
+                "text":"[chi] If the action lacks a suitable target because of the unlock (e.g. {Ambush}), the block attempt still happens, as does the resulting combat if the block is successful.",
+                "refs":{
+                    "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
                 }
             }
         ],
@@ -59859,13 +60149,6 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"The \"can act the turn it is recruited\" text does not let him act during an opponent's turn if it was recruited then (eg. using {Madness Network}).",
-                "refs":{
-                    "ANK 20200813-3":"https://www.vekn.net/forum/rules-questions/78800-off-turn-nocturn#100536",
-                    "ANK 20200930":"https://www.vekn.net/forum/rules-questions/78800-off-turn-nocturn?start=6#100838"
-                }
-            },
-            {
                 "text":"If they use their last life to play an action modifier, the action fails. If they use their last life to play a strike, combat ends before strike resolution.",
                 "refs":{
                     "ANK 20180928-1":"https://www.vekn.net/forum/rules-questions/77034-allies-and-vampire-disciplines-specifically-the-nocturn#90809"
@@ -59926,6 +60209,13 @@
                 "refs":{
                     "LSJ 20020503":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/1DbOr3g3vP8/m/xF8dvxQZye4J",
                     "LSJ 20060126":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PBEBNFH61ik/m/MPf8Rs1F958J"
+                }
+            },
+            {
+                "text":"The \"can act the turn it is recruited\" text does not let him act during an opponent's turn if it was recruited then (eg. using {Enkil Cog}).",
+                "refs":{
+                    "ANK 20200930":"https://www.vekn.net/forum/rules-questions/78800-off-turn-nocturn?start=6#100838",
+                    "ANK 20200813-3":"https://www.vekn.net/forum/rules-questions/78800-off-turn-nocturn#100536"
                 }
             }
         ],
@@ -60968,6 +61258,12 @@
                 "refs":{
                     "ANK 20200714":"https://www.vekn.net/forum/rules-questions/78742-ohoyo-hopoksia#100352"
                 }
+            },
+            {
+                "text":"They can lock to use their ability the turn they where recruited.",
+                "refs":{
+                    "ANK 20180517":"https://www.vekn.net/forum/rules-questions/76447-rules-team-rulings-rtr-03-03-2018?start=30#87041"
+                }
             }
         ],
         "set":{
@@ -61164,15 +61460,21 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"The vampire need not attempt to block nor play further reaction cards: that is merely an option.",
+                "text":"The minion need not attempt to block nor play further reaction cards: that is merely an option.",
                 "refs":{
                     "TOM 19951129":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jjBzopH-yrQ/m/L51mbZ5KGLkJ"
                 }
             },
             {
-                "text":"Can be played after action resolution to use a reaction card (eg. {Fast Reaction} after combat).",
+                "text":"Can be played or used after action resolution (e.g. to use a reaction card like\u00a0{Fast Reaction} after combat).",
                 "refs":{
                     "LSJ 20091123":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Yt7LsvWFwiM/m/op6oRS8SLiYJ"
+                }
+            },
+            {
+                "text":"Can be played or used during the \u201cas a card is played\u201d window, except in combat, or when there is no action.",
+                "refs":{
+                    "ANK 20210819":"https://www.vekn.net/forum/rules-questions/79275-wake-cards-during-the-as-play-window-and-other-exotic-cancelling-effects?start=0#102931"
                 }
             }
         ],
@@ -61296,6 +61598,12 @@
                 "text":"[PRO] Minions can (uselessly) gain additional strikes even if they cannot strike.",
                 "refs":{
                     "LSJ 19970814-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-NDAClfltxk/m/POeoheutXf0J"
+                }
+            },
+            {
+                "text":"[PRO] If the action lacks a suitable target because of the unlock (e.g. {Ambush}), the block attempt still happens, as does the resulting combat if the block is successful.",
+                "refs":{
+                    "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
                 }
             }
         ],
@@ -61665,6 +61973,12 @@
                 "refs":{
                     "LSJ 20080603":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/LuT1iK1b4QIJ",
                     "LSJ 20050128":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HVy8iPUxNbI/m/ZHGTnprQjGUJ"
+                }
+            },
+            {
+                "text":"If the action lacks a suitable target because of the unlock (e.g. {Ambush}), the block attempt still happens, as does the resulting combat if the block is successful.",
+                "refs":{
+                    "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
                 }
             }
         ],
@@ -63558,7 +63872,20 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Must be played (as well as other \"as the action is announced\" action modifiers) before action modifiers that are not explicitly played \"as the action is announced\" (e.g., {Conditioning}).",
+                "refs":{
+                    "ANK 20190425":"https://www.vekn.net/forum/rules-questions/77581-action-modifiers-played-at-beginning-and-end-of-an-action#94652"
+                }
+            },
+            {
+                "text":"Replace the action card (if any) before playing it.",
+                "refs":{
+                    "ANK 20181208":"https://www.vekn.net/forum/rules-questions/77210-touch-of-clarity-and-fast-reaction-is-posible-to-play-with-locked-minion?start=6#92308"
+                }
+            }
+        ],
         "set":{
             "NB3":{
                 "PH":"4"
@@ -63951,8 +64278,9 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"The ability to increase bleed is treated as an action modifier: it can be used at any time during the action.",
+                "text":"The ability to increase bleed can only be used during a bleed action before Action Resolution.",
                 "refs":{
+                    "ANK 20231124":"https://www.vekn.net/forum/rules-questions/80984-haqim-s-law-retribution-efect-during-combat?start=12#109917",
                     "LSJ 19970718":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/QujjxfQHYzw/m/S4tNTm4gpi8J"
                 }
             }
@@ -68033,14 +68361,7 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"This is not a directed action, even when targeting another Methuselah's ash heap.",
-                "refs":{
-                    "LSJ 20010627":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NhNCVCCDyU0/m/I5Yph3-UUPsJ",
-                    "ANK 20181129":"https://www.vekn.net/forum/rules-questions/77198-pressing-flesh-from-other-player-s-ash-heap#92145"
-                }
-            },
-            {
-                "text":"Requirements need not to be met. If the ally requires a discipline, the inferior version is used. If the cost is X (eg. {Reanimated Corpse}), X is zero.",
+                "text":"Requirements need not to be met. If the cost is X (eg. {Reanimated Corpse}), X is zero.",
                 "refs":{
                     "LSJ 20071015":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Bom6ae7qjbI/m/1ov2qqChTdMJ",
                     "LSJ 20100302-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jmmm0WRUPvs/m/ny5F1OnSUsEJ"
@@ -68096,6 +68417,19 @@
                 "refs":{
                     "LSJ 20020503":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/1DbOr3g3vP8/m/xF8dvxQZye4J",
                     "LSJ 20060126":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PBEBNFH61ik/m/MPf8Rs1F958J"
+                }
+            },
+            {
+                "text":"Is an undirected action, even when targeting another Methuselah's ash heap.",
+                "refs":{
+                    "LSJ 20010627":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NhNCVCCDyU0/m/I5Yph3-UUPsJ",
+                    "ANK 20180202":"https://www.vekn.net/forum/rules-questions/76402-pariah-vulture-s-buffet#85206"
+                }
+            },
+            {
+                "text":"Cannot be played if no target is available in any Methuselah's ash heap.",
+                "refs":{
+                    "ANK 20200420-3":"https://www.vekn.net/forum/rules-questions/78574-vulture-s-buffet#99642"
                 }
             }
         ],
@@ -68611,6 +68945,13 @@
                 "refs":{
                     "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
                     "ANK 20200207":"https://www.vekn.net/forum/rules-questions/78423-mental-maze-and-obedience#98906"
+                }
+            },
+            {
+                "text":"Cannot be used during a referendum that is automatically passing.",
+                "refs":{
+                    "PIB 20150105":"https://www.vekn.net/forum/rules-questions/68465-voting-is-complicated#68493",
+                    "LSJ 19980107":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aUUs4VCR_Ec/m/PLecvfrEqbgJ"
                 }
             }
         ],
@@ -69448,7 +69789,34 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Is affected by increases to Hunt value. Blood comes from the target of the hunt.",
+                "refs":{
+                    "RTR 20030519":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NOBWXWrd-vA/m/iEOpQp1uhvAJ",
+                    "RTR 20180511":"https://www.vekn.net/forum/rules-questions/76595-rules-team-rulings-rtr-11-05-2018#86780"
+                }
+            },
+            {
+                "text":"A minion can only perform this special hunt once per turn.",
+                "refs":{
+                    "RBK action-card-or-card-in-play":"https://www.vekn.net/rulebook#action-card-or-card-in-play"
+                }
+            },
+            {
+                "text":"Is an undirected action, even when targeting another Methuselah's ash heap.",
+                "refs":{
+                    "LSJ 20010627":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NhNCVCCDyU0/m/I5Yph3-UUPsJ",
+                    "ANK 20180202":"https://www.vekn.net/forum/rules-questions/76402-pariah-vulture-s-buffet#85206"
+                }
+            },
+            {
+                "text":"Cannot be played if no target is available in any Methuselah's ash heap.",
+                "refs":{
+                    "ANK 20200420-3":"https://www.vekn.net/forum/rules-questions/78574-vulture-s-buffet#99642"
+                }
+            }
+        ],
         "set":{
             "NB3":{
                 "PH":"2"
@@ -71676,6 +72044,12 @@
                 "text":"[ANI][AUS] Can be used by a vampire who is already attempting to block.",
                 "refs":{
                     "ANK 20181122-2":"https://www.vekn.net/forum/rules-questions/77176-eagle-s-sight-and-guardian-vigil#91965"
+                }
+            },
+            {
+                "text":"[ANI][AUS] If the action lacks a suitable target because of the unlock (e.g. {Ambush}), the block attempt still happens, as does the resulting combat if the block is successful.",
+                "refs":{
+                    "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
                 }
             }
         ],
@@ -73966,12 +74340,6 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"A hunt is not successful if no blood is gained, even if the hunt action is still successful.",
-                "refs":{
-                    "LSJ 20050720-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/1vbIkgvKDJ0/m/3ErIIMXFgPIJ"
-                }
-            },
-            {
                 "text":"Is not replaced until the condition is met, even if it is burned.",
                 "refs":{
                     "LSJ 20080805":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/SIbzFAwWDKs/m/BDkEg19txtoJ"
@@ -73982,6 +74350,32 @@
                 "refs":{
                     "RTR 20030519":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NOBWXWrd-vA/m/iEOpQp1uhvAJ",
                     "RTR 20180511":"https://www.vekn.net/forum/rules-questions/76595-rules-team-rulings-rtr-11-05-2018#86780"
+                }
+            },
+            {
+                "text":"A minion can only perform this special hunt once per turn.",
+                "refs":{
+                    "RBK action-card-or-card-in-play":"https://www.vekn.net/rulebook#action-card-or-card-in-play"
+                }
+            },
+            {
+                "text":"This special hunt cannot steal more blood than the target has. It can\u00a0target a vampire with no blood. If no blood is stolen, the hunt is unsuccessful, even if the action stays successful.",
+                "refs":{
+                    "LSJ 20050720-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/1vbIkgvKDJ0/m/3ErIIMXFgPIJ",
+                    "RTR 20010711":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GsI1UyH54jU/m/x9LfDZX1vR4J",
+                    "LSJ 20100915":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/lFLocuKV8NI/m/TcAPvYUfrWcJ"
+                }
+            },
+            {
+                "text":"The blood stolen by this special hunt goes to the blood bank if it cannot be gained by the vampire.",
+                "refs":{
+                    "LSJ 20010809-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/LB6Zg4bEggc/m/g5eYOHiKrvUJ"
+                }
+            },
+            {
+                "text":"This special hunt must be directed at a vampire, even if none has any blood. It cannot be performed if there are no other vampires.",
+                "refs":{
+                    "LSJ 19970224":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/80KRDjVFkyg/m/TBJso9Ra_9QJ"
                 }
             }
         ],
@@ -74131,6 +74525,19 @@
                     "RBK equip":"https://www.vekn.net/rulebook#equip",
                     "RBK recruit-ally":"https://www.vekn.net/rulebook#recruit-ally",
                     "RBK employ-retainer":"https://www.vekn.net/rulebook#employ-retainer"
+                }
+            },
+            {
+                "text":"[obe] Is an undirected action, even when targeting another Methuselah's ash heap.",
+                "refs":{
+                    "LSJ 20010627":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NhNCVCCDyU0/m/I5Yph3-UUPsJ",
+                    "ANK 20180202":"https://www.vekn.net/forum/rules-questions/76402-pariah-vulture-s-buffet#85206"
+                }
+            },
+            {
+                "text":"[obe] Cannot be played if no target is available in any Methuselah's ash heap.",
+                "refs":{
+                    "ANK 20200420-3":"https://www.vekn.net/forum/rules-questions/78574-vulture-s-buffet#99642"
                 }
             }
         ],
@@ -74322,6 +74729,12 @@
                 "text":"[SER] When the acting minion gets stolen, the block still happens and the blocking minion locks.",
                 "refs":{
                     "ANK 20220127":"https://www.vekn.net/forum/rules-questions/79615-burn-counter-to-gain-control-of-steal-a-minion#104588"
+                }
+            },
+            {
+                "text":"If an acting minion leaves the ready region before block resolution, the action ends immediately and the blocking minion is not locked.",
+                "refs":{
+                    "RBK resolve-the-action":"https://www.vekn.net/rulebook#resolve-the-action"
                 }
             }
         ],
@@ -75150,6 +75563,12 @@
         "requirement":"1 gehenna",
         "rulings":[
             {
+                "text":"The title stays in play when the event is removed (eg {The Uncoiling}) but can't be claimed any more with the action.",
+                "refs":{
+                    "LSJ 20070125":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Q1hDq7fj0_Q/m/9nDah3fpJ1gJ"
+                }
+            },
+            {
                 "text":"Is not replaced until the condition is met, even if it is burned.",
                 "refs":{
                     "LSJ 20080805":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/SIbzFAwWDKs/m/BDkEg19txtoJ"
@@ -75710,7 +76129,7 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"He can lock to use his ability the turn he is recruited.",
+                "text":"They can lock to use their ability the turn they where recruited.",
                 "refs":{
                     "ANK 20180517":"https://www.vekn.net/forum/rules-questions/76447-rules-team-rulings-rtr-03-03-2018?start=30#87041"
                 }
@@ -75972,7 +76391,20 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"When paying their last life for the action, the action is still considerd succesful, but combat immediately ends.",
+                "refs":{
+                    "LSJ 20080512":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/z2DGSFph6sM/m/IjJB89nbtlsJ"
+                }
+            },
+            {
+                "text":"The acting vampire's controller can choose not to remove a minion from his or her ash heap and thus burn the Rotting Behemoth.",
+                "refs":{
+                    "LSJ 20030701-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/EFBCP5QI3D4/m/oU1yyA3yV04J"
+                }
+            }
+        ],
         "set":{
             "NB3":{
                 "PH":"4"
@@ -76490,12 +76922,6 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"She can lock to use her ability the turn she is recruited.",
-                "refs":{
-                    "ANK 20180517":"https://www.vekn.net/forum/rules-questions/76447-rules-team-rulings-rtr-03-03-2018?start=30#87041"
-                }
-            },
-            {
                 "text":"If burned and shuffled into the library, other effects that apply when it is burned still apply (eg. {Set's Curse} puts an ally into play).",
                 "refs":{
                     "ANK 20200813":"https://www.vekn.net/forum/rules-questions/78798-mummies-and-burning-effects#100529"
@@ -76505,6 +76931,19 @@
                 "text":"Is not shuffled into the library when it is discarded.",
                 "refs":{
                     "LSJ 20010710":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GsI1UyH54jU/m/x9LfDZX1vR4J"
+                }
+            },
+            {
+                "text":"The ability to increase bleed can only be used during a bleed action before Action Resolution.",
+                "refs":{
+                    "ANK 20231124":"https://www.vekn.net/forum/rules-questions/80984-haqim-s-law-retribution-efect-during-combat?start=12#109917",
+                    "LSJ 19970718":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/QujjxfQHYzw/m/S4tNTm4gpi8J"
+                }
+            },
+            {
+                "text":"They can lock to use their ability the turn they where recruited.",
+                "refs":{
+                    "ANK 20180517":"https://www.vekn.net/forum/rules-questions/76447-rules-team-rulings-rtr-03-03-2018?start=30#87041"
                 }
             }
         ],
@@ -77000,6 +77439,13 @@
                 "refs":{
                     "LSJ 20020503":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/1DbOr3g3vP8/m/xF8dvxQZye4J",
                     "LSJ 20060126":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PBEBNFH61ik/m/MPf8Rs1F958J"
+                }
+            },
+            {
+                "text":"The ability to increase bleed can only be used during a bleed action before Action Resolution.",
+                "refs":{
+                    "ANK 20231124":"https://www.vekn.net/forum/rules-questions/80984-haqim-s-law-retribution-efect-during-combat?start=12#109917",
+                    "LSJ 19970718":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/QujjxfQHYzw/m/S4tNTm4gpi8J"
                 }
             }
         ],
@@ -78499,12 +78945,6 @@
                 }
             },
             {
-                "text":"The block attempt and subsequent combat still happen if the action lacks a suitable target because of the unlock (eg. {Ambush}).",
-                "refs":{
-                    "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
-                }
-            },
-            {
                 "text":"The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}).",
                 "refs":{
                     "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
@@ -78514,6 +78954,12 @@
                 "text":"The card cannot be played if the minion cannot afford to burn the blood.",
                 "refs":{
                     "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
+                }
+            },
+            {
+                "text":"If the action lacks a suitable target because of the unlock (e.g. {Ambush}), the block attempt still happens, as does the resulting combat if the block is successful.",
+                "refs":{
+                    "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
                 }
             }
         ],
@@ -79089,7 +79535,7 @@
                 }
             },
             {
-                "text":"[ANI] The block attempt and subsequent combat still happen if the action lacks a suitable target because of the unlock (eg. {Ambush}).",
+                "text":"[ANI] If the action lacks a suitable target because of the unlock (e.g. {Ambush}), the block attempt still happens, as does the resulting combat if the block is successful.",
                 "refs":{
                     "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
                 }
@@ -80512,7 +80958,26 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The minion need not attempt to block nor play further reaction cards: that is merely an option.",
+                "refs":{
+                    "TOM 19951129":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jjBzopH-yrQ/m/L51mbZ5KGLkJ"
+                }
+            },
+            {
+                "text":"Can be played or used after action resolution (e.g. to use a reaction card like\u00a0{Fast Reaction} after combat).",
+                "refs":{
+                    "LSJ 20091123":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Yt7LsvWFwiM/m/op6oRS8SLiYJ"
+                }
+            },
+            {
+                "text":"Can be played or used during the \u201cas a card is played\u201d window, except in combat, or when there is no action.",
+                "refs":{
+                    "ANK 20210819":"https://www.vekn.net/forum/rules-questions/79275-wake-cards-during-the-as-play-window-and-other-exotic-cancelling-effects?start=0#102931"
+                }
+            }
+        ],
         "set":{
             "V5H":{
                 "PH":"3"
@@ -81606,6 +82071,12 @@
                 "refs":{
                     "LSJ 20030502":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qBa9CvBwqNA/m/ZuBgMjNgb6EJ"
                 }
+            },
+            {
+                "text":"If an {Agent of Power} is choosen its card text is not appled. The created vampire has no dsiciplines, is still non-unique and does not burn in your discard phase.",
+                "refs":{
+                    "LSJ 20071001-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/bb9ac-kN5WY/m/l8mfTxW6a6gJ"
+                }
             }
         ],
         "set":{
@@ -81873,7 +82344,14 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"[OBL] The cards to remove are chosen by the player playing it. There is no order to the ash heap.",
+                "refs":{
+                    "LSJ 20090710":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PBi3na64nkw/m/KOY1R8yWBsIJ"
+                }
+            }
+        ],
         "set":{
             "V5H":{
                 "PH":"6"
@@ -84381,6 +84859,12 @@
                     "RTR 20030519":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NOBWXWrd-vA/m/iEOpQp1uhvAJ",
                     "RTR 20180511":"https://www.vekn.net/forum/rules-questions/76595-rules-team-rulings-rtr-11-05-2018#86780"
                 }
+            },
+            {
+                "text":"A minion can only perform this special hunt once per turn.",
+                "refs":{
+                    "RBK action-card-or-card-in-play":"https://www.vekn.net/rulebook#action-card-or-card-in-play"
+                }
             }
         ],
         "set":{
@@ -84758,6 +85242,12 @@
                     "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
                     "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
                 }
+            },
+            {
+                "text":"[SPI] If the action lacks a suitable target because of the unlock (e.g. {Ambush}), the block attempt still happens, as does the resulting combat if the block is successful.",
+                "refs":{
+                    "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
+                }
             }
         ],
         "set":{
@@ -84794,6 +85284,12 @@
                 "text":"Can be used on a vampire who is already attempting to block\".",
                 "refs":{
                     "ANK 20181122-2":"https://www.vekn.net/forum/rules-questions/77176-eagle-s-sight-and-guardian-vigil#91965"
+                }
+            },
+            {
+                "text":"If the action lacks a suitable target because of the unlock (e.g. {Ambush}), the block attempt still happens, as does the resulting combat if the block is successful.",
+                "refs":{
+                    "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
                 }
             }
         ],
@@ -84897,7 +85393,78 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"If they use their last life to play an action modifier, the action fails. If they use their last life to play a strike, combat ends before strike resolution.",
+                "refs":{
+                    "ANK 20180928-1":"https://www.vekn.net/forum/rules-questions/77034-allies-and-vampire-disciplines-specifically-the-nocturn#90809"
+                }
+            },
+            {
+                "text":"If they takes aggravated damage from a card they plays as a vampire (eg. {Burst of Sunlight}), they lose one life but do not go to torpor.",
+                "refs":{
+                    "LSJ 20060409":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gsFQXsCGTG4/m/q5H8FvuKksIJ"
+                }
+            },
+            {
+                "text":"If they use their last life to pay for an action, the action still resolves fully. If that leads to an oust, the oust is resolved before resolving effects triggered by the fact that they burn.",
+                "refs":{
+                    "LSJ 20080512":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/z2DGSFph6sM/m/IjJB89nbtlsJ"
+                }
+            },
+            {
+                "text":"If a card they play as a vampire sends them to torpor (eg. {Reform Body}), they burn. REVERSAL of previous rulings.",
+                "refs":{
+                    "LSJ 20060409":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gsFQXsCGTG4/m/q5H8FvuKksIJ"
+                }
+            },
+            {
+                "text":"They cannot use a card to commit diablerie (eg. {Amaranth})",
+                "refs":{
+                    "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
+                    "LSJ 20080717":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/DMsE6V84GWI/m/af5Oggz9XlQJ"
+                }
+            },
+            {
+                "text":"Does not stack with similar effects (or another copy of itself) to provide superior version of the discipline(s) (e.g. {Leech} and {Putrescent Servitude} together does not provide superior [POT])",
+                "refs":{
+                    "ANK 20180111":"https://www.vekn.net/forum/rules-questions/76364-leech-putrescent-servitude#84864"
+                }
+            },
+            {
+                "text":"Can be used to meet one (but not more than one) of the normal Discipline requirements of a multi-Discipline card.",
+                "refs":{
+                    "LSJ 20011217":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/vZ13bh7FEvQ/m/KaZlbqc4LO0J",
+                    "LSJ 20090508":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/B7dz3qoIITQ/m/0YV5PNQvijsJ"
+                }
+            },
+            {
+                "text":"While a minion has an effect that allows them to play cards that require Discipline(s), they do not actually have those Discipline(s).",
+                "refs":{
+                    "LSJ 19980303":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Q_kKQiACZqk/m/Nu-cOlCq1cgJ"
+                }
+            },
+            {
+                "text":"Multiple similar effects (e.g. two {Infernal Familiar}, or {Ian Forestal} with an {Infernal Familiar}) cannot be used to meet the requirements of a multi-Discipline card that the minion is missing one or more Disciplines to play.",
+                "refs":{
+                    "LSJ 20020218":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/o59KNX0R1Ls/m/QHnuE-mmSj0J"
+                }
+            },
+            {
+                "text":"The ally counts as \"independent\" when playing cards as a vampire",
+                "refs":{
+                    "LSJ 20020503":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/1DbOr3g3vP8/m/xF8dvxQZye4J",
+                    "LSJ 20060126":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PBEBNFH61ik/m/MPf8Rs1F958J"
+                }
+            },
+            {
+                "text":"The \"can act the turn it is recruited\" text does not let him act during an opponent's turn if it was recruited then (eg. using {Enkil Cog}).",
+                "refs":{
+                    "ANK 20200930":"https://www.vekn.net/forum/rules-questions/78800-off-turn-nocturn?start=6#100838",
+                    "ANK 20200813-3":"https://www.vekn.net/forum/rules-questions/78800-off-turn-nocturn#100536"
+                }
+            }
+        ],
         "set":{
             "V5H":{
                 "PH":"4"
@@ -85447,7 +86014,16 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Cards requiring a discipline come in play at the inferior version.",
+                "refs":{
+                    "RBK equip":"https://www.vekn.net/rulebook#equip",
+                    "RBK recruit-ally":"https://www.vekn.net/rulebook#recruit-ally",
+                    "RBK employ-retainer":"https://www.vekn.net/rulebook#employ-retainer"
+                }
+            }
+        ],
         "set":{
             "NB3":{
                 "PH":"4"
@@ -87223,6 +87799,13 @@
                 "refs":{
                     "ANK 20180719-4":"https://www.vekn.net/forum/rules-questions/76833-once-each-turn#89014"
                 }
+            },
+            {
+                "text":"The ability to increase bleed can only be used during a bleed action before Action Resolution.",
+                "refs":{
+                    "ANK 20231124":"https://www.vekn.net/forum/rules-questions/80984-haqim-s-law-retribution-efect-during-combat?start=12#109917",
+                    "LSJ 19970718":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/QujjxfQHYzw/m/S4tNTm4gpi8J"
+                }
             }
         ],
         "set":{
@@ -88150,7 +88733,7 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"He can lock to use his ability the turn he is recruited.",
+                "text":"They can lock to use their ability the turn they where recruited.",
                 "refs":{
                     "ANK 20180517":"https://www.vekn.net/forum/rules-questions/76447-rules-team-rulings-rtr-03-03-2018?start=30#87041"
                 }
@@ -92610,7 +93193,14 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"[OBL] an opposing vampire is wounded (if they play {Undying Tenacity}, they go to torpor after combat).",
+                "refs":{
+                    "LSJ 20090622-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/1zt1SZb2TIk/m/CYNhVovmlk8J"
+                }
+            }
+        ],
         "set":{
             "V5L":{
                 "PL":"2"
@@ -93965,7 +94555,7 @@
                 }
             },
             {
-                "text":"When used to block, the block attempt and subsequent combat still happen if the action lacks a suitable target because of the unlock (eg. {Ambush}).",
+                "text":"If the action lacks a suitable target because of the unlock (e.g. {Ambush}), the block attempt still happens, as does the resulting combat if the block is successful.",
                 "refs":{
                     "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
                 }
@@ -95307,12 +95897,6 @@
                 }
             },
             {
-                "text":"The block attempt and subsequent combat still happen if the action lacks a suitable target because of the unlock (eg. {Ambush}).",
-                "refs":{
-                    "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
-                }
-            },
-            {
                 "text":"Can be used for intercept even if the vampire is already unlocked.",
                 "refs":{
                     "PIB 20150216":"https://www.vekn.net/forum/rules-questions/57153-can-you-untap-an-untapped-vampire-minion?start=6#69272"
@@ -95322,6 +95906,12 @@
                 "text":"Can be used by a vampire who is already attempting to block.",
                 "refs":{
                     "ANK 20181122-2":"https://www.vekn.net/forum/rules-questions/77176-eagle-s-sight-and-guardian-vigil#91965"
+                }
+            },
+            {
+                "text":"If the action lacks a suitable target because of the unlock (e.g. {Ambush}), the block attempt still happens, as does the resulting combat if the block is successful.",
+                "refs":{
+                    "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
                 }
             }
         ],
@@ -96427,15 +97017,15 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"He can lock to use his ability the turn he is recruited.",
-                "refs":{
-                    "ANK 20180517":"https://www.vekn.net/forum/rules-questions/76447-rules-team-rulings-rtr-03-03-2018?start=30#87041"
-                }
-            },
-            {
                 "text":"His ability cannot be used in the middle of a single damage resolution step.",
                 "refs":{
                     "LSJ 20001111":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/m23Hj3OW2A4/m/n23vvkXo6AkJ"
+                }
+            },
+            {
+                "text":"They can lock to use their ability the turn they where recruited.",
+                "refs":{
+                    "ANK 20180517":"https://www.vekn.net/forum/rules-questions/76447-rules-team-rulings-rtr-03-03-2018?start=30#87041"
                 }
             }
         ],
@@ -98689,18 +99279,6 @@
                 }
             },
             {
-                "text":"Cannot be played if there is no minion or retainer in any Methuselah's ash heap.",
-                "refs":{
-                    "ANK 20200420-3":"https://www.vekn.net/forum/rules-questions/78574-vulture-s-buffet#99642"
-                }
-            },
-            {
-                "text":"Is undirected.",
-                "refs":{
-                    "ANK 20180202":"https://www.vekn.net/forum/rules-questions/76402-pariah-vulture-s-buffet#85206"
-                }
-            },
-            {
                 "text":"Is affected by increases to Hunt value. Blood comes from the target of the hunt.",
                 "refs":{
                     "RTR 20030519":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NOBWXWrd-vA/m/iEOpQp1uhvAJ",
@@ -98708,10 +99286,29 @@
                 }
             },
             {
+                "text":"A minion can only perform this special hunt once per turn.",
+                "refs":{
+                    "RBK action-card-or-card-in-play":"https://www.vekn.net/rulebook#action-card-or-card-in-play"
+                }
+            },
+            {
                 "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
                 "refs":{
                     "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
                     "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+                }
+            },
+            {
+                "text":"Is an undirected action, even when targeting another Methuselah's ash heap.",
+                "refs":{
+                    "LSJ 20010627":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NhNCVCCDyU0/m/I5Yph3-UUPsJ",
+                    "ANK 20180202":"https://www.vekn.net/forum/rules-questions/76402-pariah-vulture-s-buffet#85206"
+                }
+            },
+            {
+                "text":"Cannot be played if no target is available in any Methuselah's ash heap.",
+                "refs":{
+                    "ANK 20200420-3":"https://www.vekn.net/forum/rules-questions/78574-vulture-s-buffet#99642"
                 }
             }
         ],
@@ -98771,23 +99368,29 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"The vampire need not attempt to block nor play further reaction cards: that is merely an option.",
-                "refs":{
-                    "TOM 19951129":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jjBzopH-yrQ/m/L51mbZ5KGLkJ"
-                }
-            },
-            {
-                "text":"Can be played after action resolution to use a reaction card (eg. {Fast Reaction} after combat).",
-                "refs":{
-                    "LSJ 20091123":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Yt7LsvWFwiM/m/op6oRS8SLiYJ"
-                }
-            },
-            {
                 "text":"Is replaced before unlocking cards: other unlock effects cannot be ordered before.",
                 "refs":{
                     "ANK 20200129":"https://www.vekn.net/forum/rules-questions/78701-replace-during-unlock-and-other-unlock-effects#100210",
                     "LSJ 20091208":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ptHbJM9MlVI/m/O61W2JkI_rIJ",
                     "RTR 19951017":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ouhNUbHYg50/m/rco157ZHyqEJ"
+                }
+            },
+            {
+                "text":"The minion need not attempt to block nor play further reaction cards: that is merely an option.",
+                "refs":{
+                    "TOM 19951129":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jjBzopH-yrQ/m/L51mbZ5KGLkJ"
+                }
+            },
+            {
+                "text":"Can be played or used after action resolution (e.g. to use a reaction card like\u00a0{Fast Reaction} after combat).",
+                "refs":{
+                    "LSJ 20091123":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Yt7LsvWFwiM/m/op6oRS8SLiYJ"
+                }
+            },
+            {
+                "text":"Can be played or used during the \u201cas a card is played\u201d window, except in combat, or when there is no action.",
+                "refs":{
+                    "ANK 20210819":"https://www.vekn.net/forum/rules-questions/79275-wake-cards-during-the-as-play-window-and-other-exotic-cancelling-effects?start=0#102931"
                 }
             }
         ],
@@ -99146,16 +99749,16 @@
                 }
             },
             {
-                "text":"Can use its ability to \"lock and burn to burn a location\" the turn it is recruited.",
-                "refs":{
-                    "ANK 20180517":"https://www.vekn.net/forum/rules-questions/76447-rules-team-rulings-rtr-03-03-2018?start=30#87041"
-                }
-            },
-            {
                 "text":"Ghouls are monsters, not mortal.",
                 "refs":{
                     "ANK 20200203-2":"https://www.vekn.net/forum/rules-questions/78415-is-ghoul-mortal#98872",
                     "LSJ 20060515":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/bzusnKlnYr8/m/OSMvzE7YjokJ"
+                }
+            },
+            {
+                "text":"They can lock to use their ability the turn they where recruited.",
+                "refs":{
+                    "ANK 20180517":"https://www.vekn.net/forum/rules-questions/76447-rules-team-rulings-rtr-03-03-2018?start=30#87041"
                 }
             }
         ],
@@ -100128,23 +100731,44 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"Ravnos can target a Ravnos with no blood with the +1 stealth hunt action.",
-                "refs":{
-                    "RTR 20010711":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GsI1UyH54jU/m/x9LfDZX1vR4J"
-                }
-            },
-            {
-                "text":"Cannot choose to target a vampire when using another non-standard hunt action (eg. {Abactor}).",
-                "refs":{
-                    "LSJ 20090606":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-hy9E1u2t_o/m/CPU8rltzhesJ",
-                    "ANK 20190707":"https://www.vekn.net/forum/rules-questions/77694-ok-a-new-round-of-doubts-for-a-noobie#95274"
-                }
-            },
-            {
                 "text":"Is affected by increases to Hunt value. Blood comes from the target of the hunt.",
                 "refs":{
                     "RTR 20030519":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NOBWXWrd-vA/m/iEOpQp1uhvAJ",
                     "RTR 20180511":"https://www.vekn.net/forum/rules-questions/76595-rules-team-rulings-rtr-11-05-2018#86780"
+                }
+            },
+            {
+                "text":"A minion can only perform this special hunt once per turn.",
+                "refs":{
+                    "RBK action-card-or-card-in-play":"https://www.vekn.net/rulebook#action-card-or-card-in-play"
+                }
+            },
+            {
+                "text":"Other non-standard hunt actions are still permitted (e.g. {Abactor}). When performing such actions, their text apply: this card does not combine with them.",
+                "refs":{
+                    "LSJ 20090606":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-hy9E1u2t_o/m/CPU8rltzhesJ",
+                    "ANK 20190707":"https://www.vekn.net/forum/rules-questions/77694-ok-a-new-round-of-doubts-for-a-noobie#95274",
+                    "LSJ 20060306":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/H-W0Wqx3t9w/m/jgTHm_Ac8dwJ"
+                }
+            },
+            {
+                "text":"This special hunt cannot steal more blood than the target has. It can\u00a0target a vampire with no blood. If no blood is stolen, the hunt is unsuccessful, even if the action stays successful.",
+                "refs":{
+                    "LSJ 20050720-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/1vbIkgvKDJ0/m/3ErIIMXFgPIJ",
+                    "RTR 20010711":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GsI1UyH54jU/m/x9LfDZX1vR4J",
+                    "LSJ 20100915":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/lFLocuKV8NI/m/TcAPvYUfrWcJ"
+                }
+            },
+            {
+                "text":"The blood stolen by this special hunt goes to the blood bank if it cannot be gained by the vampire.",
+                "refs":{
+                    "LSJ 20010809-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/LB6Zg4bEggc/m/g5eYOHiKrvUJ"
+                }
+            },
+            {
+                "text":"This special hunt must be directed at a vampire, even if none has any blood. It cannot be performed if there are no other vampires.",
+                "refs":{
+                    "LSJ 19970224":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/80KRDjVFkyg/m/TBJso9Ra_9QJ"
                 }
             }
         ],
@@ -101741,6 +102365,13 @@
                 "text":"The acting player has the opportunity to play \"as announced\" effects first (eg. {Seduction}).",
                 "refs":{
                     "LSJ 20081105":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/CYjOJtTBMGU/m/H8kQXN1w2ycJ"
+                }
+            },
+            {
+                "text":"Cannot be used during a referendum that is automatically passing.",
+                "refs":{
+                    "PIB 20150105":"https://www.vekn.net/forum/rules-questions/68465-voting-is-complicated#68493",
+                    "LSJ 19980107":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aUUs4VCR_Ec/m/PLecvfrEqbgJ"
                 }
             }
         ],

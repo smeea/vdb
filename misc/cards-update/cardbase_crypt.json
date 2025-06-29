@@ -5427,12 +5427,6 @@
         "path":"",
         "rulings":[
             {
-                "text":"Her ability cannot be used during combat.",
-                "refs":{
-                    "ANK 20231124":"https://www.vekn.net/forum/rules-questions/80984-haqim-s-law-retribution-efect-during-combat?start=12#109917"
-                }
-            },
-            {
                 "text":"Her ability can only be used on an acting bleeding minion.",
                 "refs":{
                     "ANK 20220502":"https://www.vekn.net/forum/rules-questions/79757-haqim-s-law-retribution-and-anu-diptinatpa#105140"
@@ -5442,6 +5436,13 @@
                 "text":"The scarce penalty considers the apparent clan while controlled (in case of {Clan Impersonation} and {Banishment}).",
                 "refs":{
                     "LSJ 20011015":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ZXW0ScxTsBA/m/OvbMemV2oXUJ"
+                }
+            },
+            {
+                "text":"The ability to increase bleed can only be used during a bleed action before Action Resolution.",
+                "refs":{
+                    "ANK 20231124":"https://www.vekn.net/forum/rules-questions/80984-haqim-s-law-retribution-efect-during-combat?start=12#109917",
+                    "LSJ 19970718":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/QujjxfQHYzw/m/S4tNTm4gpi8J"
                 }
             }
         ],
@@ -20779,7 +20780,15 @@
         "name":"Francisco Domingo de Polonia",
         "new":false,
         "path":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The ability to increase bleed can only be used during a bleed action before Action Resolution.",
+                "refs":{
+                    "ANK 20231124":"https://www.vekn.net/forum/rules-questions/80984-haqim-s-law-retribution-efect-during-combat?start=12#109917",
+                    "LSJ 19970718":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/QujjxfQHYzw/m/S4tNTm4gpi8J"
+                }
+            }
+        ],
         "sect":"Sabbat",
         "set":{
             "SW":{
@@ -22662,10 +22671,23 @@
         "path":"",
         "rulings":[
             {
+                "text":"His special is an undirected action",
+                "refs":{
+                    "ANK 20180202":"https://www.vekn.net/forum/rules-questions/76402-pariah-vulture-s-buffet#85206",
+                    "LSJ 20010627":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NhNCVCCDyU0/m/I5Yph3-UUPsJ"
+                }
+            },
+            {
                 "text":"Is affected by increases to Hunt value. Blood comes from the target of the hunt.",
                 "refs":{
                     "RTR 20030519":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NOBWXWrd-vA/m/iEOpQp1uhvAJ",
                     "RTR 20180511":"https://www.vekn.net/forum/rules-questions/76595-rules-team-rulings-rtr-11-05-2018#86780"
+                }
+            },
+            {
+                "text":"A minion can only perform this special hunt once per turn.",
+                "refs":{
+                    "RBK action-card-or-card-in-play":"https://www.vekn.net/rulebook#action-card-or-card-in-play"
                 }
             }
         ],
@@ -23098,7 +23120,26 @@
         "name":"Gracetius",
         "new":false,
         "path":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The minion need not attempt to block nor play further reaction cards: that is merely an option.",
+                "refs":{
+                    "TOM 19951129":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jjBzopH-yrQ/m/L51mbZ5KGLkJ"
+                }
+            },
+            {
+                "text":"Can be played or used after action resolution (e.g. to use a reaction card like\u00a0{Fast Reaction} after combat).",
+                "refs":{
+                    "LSJ 20091123":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Yt7LsvWFwiM/m/op6oRS8SLiYJ"
+                }
+            },
+            {
+                "text":"Can be played or used during the \u201cas a card is played\u201d window, except in combat, or when there is no action.",
+                "refs":{
+                    "ANK 20210819":"https://www.vekn.net/forum/rules-questions/79275-wake-cards-during-the-as-play-window-and-other-exotic-cancelling-effects?start=0#102931"
+                }
+            }
+        ],
         "sect":"Camarilla",
         "set":{
             "KoTR":{
@@ -23300,7 +23341,15 @@
         "name":"Greensleeves",
         "new":false,
         "path":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The ability to increase bleed can only be used during a bleed action before Action Resolution.",
+                "refs":{
+                    "ANK 20231124":"https://www.vekn.net/forum/rules-questions/80984-haqim-s-law-retribution-efect-during-combat?start=12#109917",
+                    "LSJ 19970718":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/QujjxfQHYzw/m/S4tNTm4gpi8J"
+                }
+            }
+        ],
         "sect":"Sabbat",
         "set":{
             "Third":{
@@ -25306,7 +25355,16 @@
         "name":"Hel-Bl\u00e1",
         "new":false,
         "path":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Cards requiring a discipline come in play at the inferior version.",
+                "refs":{
+                    "RBK equip":"https://www.vekn.net/rulebook#equip",
+                    "RBK recruit-ally":"https://www.vekn.net/rulebook#recruit-ally",
+                    "RBK employ-retainer":"https://www.vekn.net/rulebook#employ-retainer"
+                }
+            }
+        ],
         "sect":"Independent",
         "set":{
             "NB3":{
@@ -25911,7 +25969,15 @@
         "name":"Hillanvale",
         "new":false,
         "path":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The ability to increase bleed can only be used during a bleed action before Action Resolution.",
+                "refs":{
+                    "ANK 20231124":"https://www.vekn.net/forum/rules-questions/80984-haqim-s-law-retribution-efect-during-combat?start=12#109917",
+                    "LSJ 19970718":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/QujjxfQHYzw/m/S4tNTm4gpi8J"
+                }
+            }
+        ],
         "sect":"Independent",
         "set":{
             "HttBR":{
@@ -26256,6 +26322,13 @@
                 "text":"The ability can be used when in torpor.",
                 "refs":{
                     "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
+                }
+            },
+            {
+                "text":"The ability to increase bleed can only be used during a bleed action before Action Resolution.",
+                "refs":{
+                    "ANK 20231124":"https://www.vekn.net/forum/rules-questions/80984-haqim-s-law-retribution-efect-during-combat?start=12#109917",
+                    "LSJ 19970718":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/QujjxfQHYzw/m/S4tNTm4gpi8J"
                 }
             }
         ],
@@ -29249,7 +29322,15 @@
         "name":"Jason, The World's Voice",
         "new":false,
         "path":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The ability to increase bleed can only be used during a bleed action before Action Resolution.",
+                "refs":{
+                    "ANK 20231124":"https://www.vekn.net/forum/rules-questions/80984-haqim-s-law-retribution-efect-during-combat?start=12#109917",
+                    "LSJ 19970718":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/QujjxfQHYzw/m/S4tNTm4gpi8J"
+                }
+            }
+        ],
         "sect":"Camarilla",
         "set":{
             "CE":{
@@ -31358,7 +31439,15 @@
         "name":"Julia Prima",
         "new":false,
         "path":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The ability to increase bleed can only be used during a bleed action before Action Resolution.",
+                "refs":{
+                    "ANK 20231124":"https://www.vekn.net/forum/rules-questions/80984-haqim-s-law-retribution-efect-during-combat?start=12#109917",
+                    "LSJ 19970718":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/QujjxfQHYzw/m/S4tNTm4gpi8J"
+                }
+            }
+        ],
         "sect":"Sabbat",
         "set":{
             "BL":{
@@ -34351,34 +34440,44 @@
         "path":"",
         "rulings":[
             {
-                "text":"She can only perform the action provided by her ability once per turn.",
-                "refs":{
-                    "PIB 20121112":"https://www.vekn.net/forum/rules-questions/40755-kyoko-s-hunt-action#40831"
-                }
-            },
-            {
-                "text":"If other non-standard hunt actions are granted, she may choose from among those options.",
-                "refs":{
-                    "LSJ 20060306":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/H-W0Wqx3t9w/m/jgTHm_Ac8dwJ"
-                }
-            },
-            {
-                "text":"She cannot steal more blood than the target has when using a special hunt ability.",
-                "refs":{
-                    "LSJ 20100915":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/lFLocuKV8NI/m/TcAPvYUfrWcJ"
-                }
-            },
-            {
-                "text":"Cannot choose to target a vampire when using another non-standard hunt action (eg. {Abactor}).",
-                "refs":{
-                    "LSJ 20090606":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-hy9E1u2t_o/m/CPU8rltzhesJ"
-                }
-            },
-            {
                 "text":"Is affected by increases to Hunt value. Blood comes from the target of the hunt.",
                 "refs":{
                     "RTR 20030519":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NOBWXWrd-vA/m/iEOpQp1uhvAJ",
                     "RTR 20180511":"https://www.vekn.net/forum/rules-questions/76595-rules-team-rulings-rtr-11-05-2018#86780"
+                }
+            },
+            {
+                "text":"A minion can only perform this special hunt once per turn.",
+                "refs":{
+                    "RBK action-card-or-card-in-play":"https://www.vekn.net/rulebook#action-card-or-card-in-play"
+                }
+            },
+            {
+                "text":"Other non-standard hunt actions are still permitted (e.g. {Abactor}). When performing such actions, their text apply: this card does not combine with them.",
+                "refs":{
+                    "LSJ 20090606":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-hy9E1u2t_o/m/CPU8rltzhesJ",
+                    "ANK 20190707":"https://www.vekn.net/forum/rules-questions/77694-ok-a-new-round-of-doubts-for-a-noobie#95274",
+                    "LSJ 20060306":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/H-W0Wqx3t9w/m/jgTHm_Ac8dwJ"
+                }
+            },
+            {
+                "text":"This special hunt cannot steal more blood than the target has. It can\u00a0target a vampire with no blood. If no blood is stolen, the hunt is unsuccessful, even if the action stays successful.",
+                "refs":{
+                    "LSJ 20050720-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/1vbIkgvKDJ0/m/3ErIIMXFgPIJ",
+                    "RTR 20010711":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GsI1UyH54jU/m/x9LfDZX1vR4J",
+                    "LSJ 20100915":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/lFLocuKV8NI/m/TcAPvYUfrWcJ"
+                }
+            },
+            {
+                "text":"The blood stolen by this special hunt goes to the blood bank if it cannot be gained by the vampire.",
+                "refs":{
+                    "LSJ 20010809-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/LB6Zg4bEggc/m/g5eYOHiKrvUJ"
+                }
+            },
+            {
+                "text":"This special hunt must be directed at a vampire, even if none has any blood. It cannot be performed if there are no other vampires.",
+                "refs":{
+                    "LSJ 19970224":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/80KRDjVFkyg/m/TBJso9Ra_9QJ"
                 }
             }
         ],
@@ -35071,7 +35170,15 @@
         "name":"Larissa Moreira",
         "new":false,
         "path":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The ability to increase bleed can only be used during a bleed action before Action Resolution.",
+                "refs":{
+                    "ANK 20231124":"https://www.vekn.net/forum/rules-questions/80984-haqim-s-law-retribution-efect-during-combat?start=12#109917",
+                    "LSJ 19970718":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/QujjxfQHYzw/m/S4tNTm4gpi8J"
+                }
+            }
+        ],
         "sect":"Camarilla",
         "set":{
             "V5":{
@@ -36477,7 +36584,15 @@
         "name":"Lizette",
         "new":false,
         "path":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The ability to increase bleed can only be used during a bleed action before Action Resolution.",
+                "refs":{
+                    "ANK 20231124":"https://www.vekn.net/forum/rules-questions/80984-haqim-s-law-retribution-efect-during-combat?start=12#109917",
+                    "LSJ 19970718":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/QujjxfQHYzw/m/S4tNTm4gpi8J"
+                }
+            }
+        ],
         "sect":"Independent",
         "set":{
             "LotN":{
@@ -42810,7 +42925,15 @@
         "name":"Miguel Santo Domingo",
         "new":false,
         "path":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The ability to increase bleed can only be used during a bleed action before Action Resolution.",
+                "refs":{
+                    "ANK 20231124":"https://www.vekn.net/forum/rules-questions/80984-haqim-s-law-retribution-efect-during-combat?start=12#109917",
+                    "LSJ 19970718":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/QujjxfQHYzw/m/S4tNTm4gpi8J"
+                }
+            }
+        ],
         "sect":"Sabbat",
         "set":{
             "BH":{
@@ -43060,7 +43183,15 @@
         "name":"Mina Grotius",
         "new":false,
         "path":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The ability to increase bleed can only be used during a bleed action before Action Resolution.",
+                "refs":{
+                    "ANK 20231124":"https://www.vekn.net/forum/rules-questions/80984-haqim-s-law-retribution-efect-during-combat?start=12#109917",
+                    "LSJ 19970718":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/QujjxfQHYzw/m/S4tNTm4gpi8J"
+                }
+            }
+        ],
         "sect":"Laibon",
         "set":{
             "LoB":{
@@ -44134,7 +44265,14 @@
         "name":"\"Mother\" Anja Giovanni",
         "new":false,
         "path":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The after action resolution effect can be used if the action \"fizzles\" (is unblocked at resolution, but has no effect because some requirement cannot be met or cost can't be paid in full).",
+                "refs":{
+                    "ANK 20220218":"https://www.vekn.net/forum/rules-questions/79001-the-question-of-the-month-action-fizzles?start=12#104697"
+                }
+            }
+        ],
         "sect":"Independent",
         "set":{
             "V5H":{
@@ -46997,7 +47135,15 @@
         "name":"Oliver Thrace",
         "new":false,
         "path":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The ability to increase bleed can only be used during a bleed action before Action Resolution.",
+                "refs":{
+                    "ANK 20231124":"https://www.vekn.net/forum/rules-questions/80984-haqim-s-law-retribution-efect-during-combat?start=12#109917",
+                    "LSJ 19970718":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/QujjxfQHYzw/m/S4tNTm4gpi8J"
+                }
+            }
+        ],
         "sect":"Camarilla",
         "set":{
             "CE":{
@@ -47765,7 +47911,15 @@
         "name":"Papa Legba",
         "new":false,
         "path":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The ability to increase bleed can only be used during a bleed action before Action Resolution.",
+                "refs":{
+                    "ANK 20231124":"https://www.vekn.net/forum/rules-questions/80984-haqim-s-law-retribution-efect-during-combat?start=12#109917",
+                    "LSJ 19970718":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/QujjxfQHYzw/m/S4tNTm4gpi8J"
+                }
+            }
+        ],
         "sect":"Independent",
         "set":{
             "LotN":{
@@ -48185,6 +48339,13 @@
                 "refs":{
                     "ANK 20220705":"https://www.vekn.net/forum/rules-questions/79895-question-regarding-using-a-minion-card-text-ability-when-locked#105630",
                     "LSJ 20100705":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Dm_Zqyjdx8s/m/Fw-T7QAU8mkJ"
+                }
+            },
+            {
+                "text":"The ability to increase bleed can only be used during a bleed action before Action Resolution.",
+                "refs":{
+                    "ANK 20231124":"https://www.vekn.net/forum/rules-questions/80984-haqim-s-law-retribution-efect-during-combat?start=12#109917",
+                    "LSJ 19970718":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/QujjxfQHYzw/m/S4tNTm4gpi8J"
                 }
             }
         ],
@@ -49444,15 +49605,16 @@
                 }
             },
             {
-                "text":"He is the one to get the bleed bonus.",
-                "refs":{
-                    "ANK 20180511-2":"https://www.vekn.net/forum/rules-questions/76592-prejudice-special-ability#86767"
-                }
-            },
-            {
                 "text":"The scarce penalty considers the apparent clan while controlled (in case of {Clan Impersonation} and {Banishment}).",
                 "refs":{
                     "LSJ 20011015":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ZXW0ScxTsBA/m/OvbMemV2oXUJ"
+                }
+            },
+            {
+                "text":"The ability to increase bleed can only be used during a bleed action before Action Resolution.",
+                "refs":{
+                    "ANK 20231124":"https://www.vekn.net/forum/rules-questions/80984-haqim-s-law-retribution-efect-during-combat?start=12#109917",
+                    "LSJ 19970718":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/QujjxfQHYzw/m/S4tNTm4gpi8J"
                 }
             }
         ],
@@ -49895,7 +50057,15 @@
         "name":"Quentin King III",
         "new":false,
         "path":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The ability to increase bleed can only be used during a bleed action before Action Resolution.",
+                "refs":{
+                    "ANK 20231124":"https://www.vekn.net/forum/rules-questions/80984-haqim-s-law-retribution-efect-during-combat?start=12#109917",
+                    "LSJ 19970718":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/QujjxfQHYzw/m/S4tNTm4gpi8J"
+                }
+            }
+        ],
         "sect":"Camarilla",
         "set":{
             "Anarchs":{
@@ -54736,6 +54906,13 @@
                     "ANK 20210913":"https://www.vekn.net/forum/rules-questions/79322-piper-and-sebastien-goulet#103113",
                     "LSJ 20090116":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/RQ3ARP9Kvfk/m/e-o1t79x1gUJ"
                 }
+            },
+            {
+                "text":"The ability to increase bleed can only be used during a bleed action before Action Resolution.",
+                "refs":{
+                    "ANK 20231124":"https://www.vekn.net/forum/rules-questions/80984-haqim-s-law-retribution-efect-during-combat?start=12#109917",
+                    "LSJ 19970718":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/QujjxfQHYzw/m/S4tNTm4gpi8J"
+                }
             }
         ],
         "sect":"Sabbat",
@@ -55694,6 +55871,13 @@
                 "text":"The ability can be used when in torpor.",
                 "refs":{
                     "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
+                }
+            },
+            {
+                "text":"The ability to increase bleed can only be used during a bleed action before Action Resolution.",
+                "refs":{
+                    "ANK 20231124":"https://www.vekn.net/forum/rules-questions/80984-haqim-s-law-retribution-efect-during-combat?start=12#109917",
+                    "LSJ 19970718":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/QujjxfQHYzw/m/S4tNTm4gpi8J"
                 }
             }
         ],
@@ -59551,6 +59735,13 @@
                 "refs":{
                     "LSJ 20010714":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-xrhpMEiMrw/m/Vnr8QIyt41cJ"
                 }
+            },
+            {
+                "text":"The ability to increase bleed can only be used during a bleed action before Action Resolution.",
+                "refs":{
+                    "ANK 20231124":"https://www.vekn.net/forum/rules-questions/80984-haqim-s-law-retribution-efect-during-combat?start=12#109917",
+                    "LSJ 19970718":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/QujjxfQHYzw/m/S4tNTm4gpi8J"
+                }
             }
         ],
         "sect":"Independent",
@@ -59772,6 +59963,13 @@
                 "refs":{
                     "ANK 20220705":"https://www.vekn.net/forum/rules-questions/79895-question-regarding-using-a-minion-card-text-ability-when-locked#105630",
                     "LSJ 20100705":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Dm_Zqyjdx8s/m/Fw-T7QAU8mkJ"
+                }
+            },
+            {
+                "text":"The ability to increase bleed can only be used during a bleed action before Action Resolution.",
+                "refs":{
+                    "ANK 20231124":"https://www.vekn.net/forum/rules-questions/80984-haqim-s-law-retribution-efect-during-combat?start=12#109917",
+                    "LSJ 19970718":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/QujjxfQHYzw/m/S4tNTm4gpi8J"
                 }
             }
         ],
@@ -60647,7 +60845,15 @@
         "name":"Tyler",
         "new":false,
         "path":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The ability to increase bleed can only be used during a bleed action before Action Resolution.",
+                "refs":{
+                    "ANK 20231124":"https://www.vekn.net/forum/rules-questions/80984-haqim-s-law-retribution-efect-during-combat?start=12#109917",
+                    "LSJ 19970718":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/QujjxfQHYzw/m/S4tNTm4gpi8J"
+                }
+            }
+        ],
         "sect":"Camarilla",
         "set":{
             "CE":{
@@ -62522,7 +62728,15 @@
         "name":"Victoria Ash",
         "new":true,
         "path":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The ability to increase bleed can only be used during a bleed action before Action Resolution.",
+                "refs":{
+                    "ANK 20231124":"https://www.vekn.net/forum/rules-questions/80984-haqim-s-law-retribution-efect-during-combat?start=12#109917",
+                    "LSJ 19970718":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/QujjxfQHYzw/m/S4tNTm4gpi8J"
+                }
+            }
+        ],
         "sect":"Camarilla",
         "set":{
             "Promo":{
@@ -62904,7 +63118,15 @@
         "name":"Virginie, Prodigy",
         "new":false,
         "path":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The ability to increase bleed can only be used during a bleed action before Action Resolution.",
+                "refs":{
+                    "ANK 20231124":"https://www.vekn.net/forum/rules-questions/80984-haqim-s-law-retribution-efect-during-combat?start=12#109917",
+                    "LSJ 19970718":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/QujjxfQHYzw/m/S4tNTm4gpi8J"
+                }
+            }
+        ],
         "sect":"Sabbat",
         "set":{
             "Third":{
@@ -64611,6 +64833,12 @@
                 "text":"The ability can be used when in torpor.",
                 "refs":{
                     "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
+                }
+            },
+            {
+                "text":"The ability can be used while locked, only once per referendum.",
+                "refs":{
+                    "ANK 20220705":"https://www.vekn.net/forum/rules-questions/79895-question-regarding-using-a-minion-card-text-ability-when-locked#105630"
                 }
             }
         ],
