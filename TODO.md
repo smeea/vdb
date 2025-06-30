@@ -1,7 +1,5 @@
 # FIX
 - PDA decks favorted and created date (older decks)
-- Fix legacy cards (telegram)
-- Change limited preset to Custom from navbar
 
 # FIX ON HOLD
 - Deck-in-Url trimmed at first card - can't reproduce in dev environment
