@@ -156,7 +156,7 @@ const PlaytestReportsAll = () => {
   const maxReportsSameScorePrecons = reportsPrecons && getMaxReportsSameScore(reportsPrecons);
 
   return (
-    <div className="playtest-reports-container mx-auto">
+    <div className="playtest-reports-container mx-auto print:dark:bg-bgPrimary">
       <div className="flex flex-col gap-3 max-sm:p-2 sm:gap-4">
         <div className="flex justify-between gap-1 sm:gap-4 print:hidden">
           <div className="flex gap-1 max-sm:w-full max-sm:flex-col">

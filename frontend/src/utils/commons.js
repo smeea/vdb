@@ -235,7 +235,7 @@ export const getSwipedBg = (isSwiped, inInventory) => {
   }
   return inInventory
     ? ""
-    : "odd:bg-bgPrimary odd:dark:bg-bgPrimaryDark even:bg-bgThird even:dark:bg-bgThirdDark";
+    : "odd:bg-bgPrimary odd:dark:bg-bgPrimaryDark even:bg-bgThird even:dark:bg-bgThirdDark print:even:dark:bg-bgThird print:odd:dark:bg-bgPrimary";
 };
 
 export const deepClone = (v) => JSON.parse(JSON.stringify(v));

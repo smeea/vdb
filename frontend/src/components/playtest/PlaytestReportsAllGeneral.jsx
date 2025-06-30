@@ -6,7 +6,7 @@ const PlaytestReportsAllGeneral = ({ reports }) => {
 
   return (
     <FlexGapped className="max-sm:flex-col print:break-after-page print:p-8">
-      <div className="flex font-bold text-fgSecondary sm:min-w-[320px] dark:text-fgSecondaryDark">
+      <div className="flex font-bold text-fgSecondary sm:min-w-[320px] dark:text-fgSecondaryDark print:dark:text-fgSecondary">
         General Opinions
       </div>
       <div className="flex basis-full flex-col gap-4">
@@ -24,7 +24,7 @@ const PlaytestReportsAllGeneral = ({ reports }) => {
                         &lt;{name}&gt;
                       </div>
                     )}
-                    <div>
+                    <div className="print:dark:text-fgPrimary">
                       {text.split("\n").map((line, lineIdx) => (
                         <div key={lineIdx}>{line}</div>
                       ))}

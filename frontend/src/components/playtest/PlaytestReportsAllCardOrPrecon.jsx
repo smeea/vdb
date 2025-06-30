@@ -1,3 +1,4 @@
+import { twMerge } from "tailwind-merge";
 import {
   CardImage,
   DeckCrypt,
@@ -27,7 +28,12 @@ const PlaytestReportsAllCardOrPrecon = ({ product, isPrecon, report, maxSameScor
               {product[NAME]}
             </div>
           ) : (
-            <FlexGapped className="w-[320px] flex-col print:max-w-[250px]">
+            <FlexGapped
+              className={twMerge(
+                "w-[320px] flex-col",
+                isPrecon ? "print:max-w-[320px]" : "print:max-w-[250px]",
+              )}
+            >
               <div className="flex flex-col gap-1">
                 <div className="flex font-bold text-fgSecondary dark:text-fgSecondaryDark print:dark:text-fgSecondary">
                   {product[NAME]}

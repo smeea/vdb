@@ -87,7 +87,7 @@ const ResultCryptTableRowCommon = ({
             </div>
           </td>
           <td className="min-w-[30px]" onClick={onClick}>
-            <div className="flex justify-center">
+            <div className="flex justify-center print:dark:text-fgPrimary">
               <ResultCryptGroup value={card[GROUP]} />
             </div>
           </td>

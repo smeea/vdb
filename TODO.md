@@ -1,6 +1,5 @@
 # FIX
 - PDA decks favorted and created date (older decks)
-- Fix PT precon report pdf export (text overlap)
 - Fix legacy cards (telegram)
 - Change limited preset to Custom from navbar
 
