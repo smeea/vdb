@@ -13,7 +13,7 @@ const LimitedSetSelection = () => {
       <div className="font-bold text-fgSecondary text-lg underline dark:text-fgSecondaryDark">
         Sets:
       </div>
-      <div className="flex gap-2 max-sm:flex-col">
+      <div className="flex gap-2 sm:gap-8 max-sm:flex-col">
         <div className="flex basis-full flex-col gap-2 sm:basis-1/2">
           {Object.keys(setsAndPrecons)
             .filter((i) => ![PLAYTEST, PROMO, POD, TWO_P].includes(i) && setsAndPrecons[i][DATE] > BCP_START)
