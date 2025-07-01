@@ -19,5 +19,4 @@
 
 # TECH IMPROVEMENTS
 - Update to Recharts v3
-- Update to Vite v7
 - Update Biome rules/errors

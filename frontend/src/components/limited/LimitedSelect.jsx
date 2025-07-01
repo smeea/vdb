@@ -12,7 +12,7 @@ const LimitedSelect = ({ withoutDisabled }) => {
     { value: CUSTOM, label: withoutDisabled ? "C" : "Custom" },
   ];
 
-  if (!withoutDisabled) options.unshift({ value: false, label: "Disabled (default VTES)" });
+  if (!withoutDisabled) options.unshift({ value: false, label: "Disabled (regular VTES)" });
 
   return (
     <Select
