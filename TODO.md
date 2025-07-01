@@ -11,7 +11,6 @@
 - Filter 2P and V5 decks based on tags
 - TWD search with % V5-compatibility
 - Deck details show % V5-compatibility
-- Update 2P for 14/06/2025 card list
 
 # FEATURES ON HOLD
 - Indicator of inventory-perfect decks in selector -> performance issue for many decks

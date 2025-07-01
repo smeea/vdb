@@ -2155,7 +2155,7 @@
             },
             "2P":{
                 "C":true,
-                "V":2
+                "V":3
             }
         },
         "text":"Camarilla Prince of Melbourne: During the polling step of any referendum, Alexa can discard a card requiring Dominate [dom] to get +1 vote.",
@@ -21688,6 +21688,10 @@
             },
             "NB3":{
                 "PH":"1"
+            },
+            "2P":{
+                "C":true,
+                "H":2
             }
         },
         "text":"Independent.",
@@ -25369,6 +25373,10 @@
         "set":{
             "NB3":{
                 "PH":"1"
+            },
+            "2P":{
+                "C":true,
+                "H":2
             }
         },
         "text":"Independent: Hel-Bl\u00e1 can move an ally requiring Hecata or Oblivion [obl] from your ash heap to your ready region, locked with life equal to its starting life as a +1 stealth action that costs 1 blood.",
@@ -25802,6 +25810,9 @@
             },
             "POD":{
                 "DTC":true
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Independent: Hesha gets +1 stealth when hunting. +1 hunt.",
@@ -26080,6 +26091,10 @@
         "set":{
             "V5H":{
                 "PH":"1"
+            },
+            "2P":{
+                "C":true,
+                "H":2
             }
         },
         "text":"Independent.",
@@ -31887,6 +31902,9 @@
             },
             "POD":{
                 "DTC":true
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Independent: Kalinda can bleed with +1 bleed as a +1 stealth (D) action that costs 2 blood. Blood cursed.",
@@ -33501,7 +33519,7 @@
             },
             "2P":{
                 "C":true,
-                "V":2
+                "V":1
             }
         },
         "text":"Camarilla Prince of Chicago: Kevin gets +1 strength in combat with a Brujah. Brujah get +1 strength in combat with him.",
@@ -37823,6 +37841,9 @@
             },
             "BSC":{
                 "X":1
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Camarilla Ventrue Justicar: Lucinde can enter combat with any ready non-Camarilla vampire controlled by another Methuselah as a (D) action. During your unlock phase, you can burn the Edge to give Lucinde 1 blood from the blood bank.",
@@ -37864,6 +37885,10 @@
         "set":{
             "30th":{
                 "":"2"
+            },
+            "2P":{
+                "C":true,
+                "V":2
             }
         },
         "text":"Camarilla Ventrue Justicar: During your master phase, Lucinde can burn 1 blood to choose a vampire; this turn, Camarilla vampires you control can enter combat with the chosen vampire as a (D) action. +1 bleed.",
@@ -43823,6 +43848,10 @@
             },
             "NB3":{
                 "PH":"1"
+            },
+            "2P":{
+                "C":true,
+                "H":2
             }
         },
         "text":"Independent.",
@@ -46372,6 +46401,9 @@
             },
             "CE":{
                 "PN":1
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Camarilla Prince of Brussels: During your unlock phase, you may move 1 blood from Nikolaus to any Nosferatu in your uncontrolled region.",
@@ -48011,6 +48043,10 @@
         "set":{
             "V5H":{
                 "PH":"1"
+            },
+            "2P":{
+                "C":true,
+                "H":2
             }
         },
         "text":"Independent: While Parijat is ready, minions must burn the top card of their library to attempt to block wraith or zombie allies.",
@@ -49914,6 +49950,9 @@
             },
             "CE":{
                 "PV":1
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Camarilla Prince of London: Anne gets an additional +1 bleed when bleeding a Methuselah who controls a ready Tremere. +1 bleed.",
@@ -49950,7 +49989,7 @@
             },
             "2P":{
                 "C":true,
-                "V":3
+                "V":1
             }
         },
         "text":"Camarilla Prince of London: During the polling step of a referendum called by Anne, she can burn 1 blood to force a younger Camarilla vampire to abstain. After she diablerizes a vampire, she can unlock. +1 bleed.",
@@ -52328,6 +52367,10 @@
         "set":{
             "NB3":{
                 "PH":"1"
+            },
+            "2P":{
+                "C":true,
+                "H":2
             }
         },
         "text":"Camarilla Prince of Edinburgh: Cards requiring Hecata and/or Oblivion [obl] cost Roger -1 blood. Once each turn, if Roger is ready during a combat involving a minion you control, he can discard a card requiring Oblivion [obl] to give that minion 1 maneuver.",
@@ -58961,6 +59004,9 @@
             },
             "POD":{
                 "DTC":true
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Camarilla: If Tegyrius is ready, any Banu Haqim can put 1 allegiance counter on themselves as a +1 stealth action. Any Banu Haqim with any allegiance counters is considered Camarilla. Blood cursed. +1 strength.",

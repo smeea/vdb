@@ -6,8 +6,10 @@
 1 Alice Chen
 1 Ambush
 1 Amici Noctis
+1 Anarch Salon
 1 Andi Liu
 1 André the Manipulator
+1 Ángel Guerrero
 1 Aniel
 1 Arms of Ahriman
 1 Army of Rats
@@ -15,12 +17,14 @@
 1 Auspex
 1 Ayelech
 1 Azucena
-1 Bear's Skin
+1 Barrens, The
+1 Bear’s Skin
 1 Belinde
 1 Bewitching Oration
 1 Blood Fury
 1 Body Flare
 1 Bonding
+1 Bone Shambler
 1 Branimira
 1 Bum's Rush
 1 Carmelita Neillson
@@ -28,6 +32,7 @@
 1 Casey Snyder
 1 Cats' Guidance
 1 Celerity
+1 Change of Target
 1 Chantry
 1 Chrysanthemum
 1 Clara Hjortshøj
@@ -50,13 +55,20 @@
 1 Dust Up
 1 Earth Control
 1 Elder Intervention
+1 Elder 	Library
 1 Elisha Tucker
 1 Enchant Kindred
+1 Enhanced Coagulant
+1 Enhanced Senses
 1 Eyes of Argus
 1 Eyes of the Wild
 1 Faceless Night
 1 Fame
+1 Family Gathering
 1 Farah Sarroub
+1 Fee Stake: Corte
+1 Fee Stake: Los Angeles
+1 Fee Stake: Perth
 1 Fifth Tradition: Hospitality
 1 Fiorenza Savona
 1 Fleetness
@@ -64,20 +76,24 @@
 1 Form of the Bat
 1 Form of the Cobra
 1 Fourth Tradition: The Accounting
+1 Fragment of the Book of Nod
+1 Gebeyehu Abdu
 1 Gelasia Fotiou
 1 Gnaeus Aemilius Augustinus
 1 Grooming the Protégé
 1 Guard Dogs
-1 Hesha Ruhadze (G6)
+1 Hel-Blá
+1 Hesha Ruhadze
+1 Holliday "Burgundy" Hall
 1 Horace Radcliffe
 1 Horst von Brühl
 1 Hunger of Marduk
 1 Ian Carfax
-1 Instinctive Reaction
 1 Inês Tristão
+1 Instinctive Reaction
 1 Jenny Silver
 1 Juliet Parr
-1 Kalinda (G6)
+1 Kalinda
 1 Kamaluddin
 1 Karl Schrekt
 1 Kasim Bayar
@@ -90,14 +106,18 @@
 1 Leumeah
 1 Life in the City
 1 Line Brawl
+1 Line, The
 1 Lloyd Brooks
 1 Lost in Crowds
 1 Loup
+1 Lucinde, Alastor
 1 Madison
 1 Maila
 1 Malachi
+1 Malkavian Rider Clause
 1 Marcos Belegrad
 1 María del Toro
+1 Martyr’s Resilience
 1 Massimiliano
 1 Melange
 1 Mirror Walk
@@ -105,9 +125,10 @@
 1 Mkhokheli
 1 Modius
 1 Molly MacDonald
+1 Monica Giovanni
 1 Mythic Form
 1 Neserian
-1 Nikolaus Vermeulen (G6)
+1 Nikolaus Vermeulen
 1 Obedient Flesh
 1 Obfuscate
 1 Oblivion
@@ -121,24 +142,27 @@
 1 Organized Resistance
 1 Owl Companion
 1 Oxford University, England
+1 Parijat, The Dark Oracle
 1 Parity Shift
 1 Party Out Of Bounds
 1 Perfect Paragon
 1 Platinum Protocol, The
 1 Political Ally
 1 Potence
+1 Powerbase: Munich
 1 Precognition
 1 Protean
 1 Protected District
 1 Protection Racket
 1 Pulled Fangs
 1 Pursuit
-1 Queen Anne (G6)
+1 Queen Anne
 1 Ragnar Nordstrom
 1 Rego Motum
 1 Restoration
 1 Revolutionary Council
 1 Rewilding
+1 Roger de Camden
 1 Rolling with the Punches
 1 Rumor Mill, Tabloid Newspaper, The
 1 Sakhar
@@ -153,32 +177,36 @@
 1 Shadow Cast
 1 Shadow Cloak
 1 Shadow Sentinel
+1 Shadow Shift
+1 Shroud of Decay
 1 Siarhei Levchenko
 1 Side Strike
 1 Slam
 1 Soak
 1 Social Charm
 1 Soul Burn
-1 Spirit's Touch
+1 Spirit’s Touch
 1 Spying Mission
 1 Swallowed by the Night
 1 Taste of Vitae
-1 Tegyrius, Vizier (G6)
+1 Tegyrius, Vizier
 1 Telepathic Counter
 1 Telepathic Vote Counting
+1 Tension in the Ranks
 1 Theft of Vitae
 1 Thing
 1 Threats
+1 Tier of Souls
 1 Touch of Valeren
 1 True Love's Face
 1 Truth in Darkness
+1 Umbrous Clutch
 1 Valeriya Zinovieva
 1 Visions of Zapathasura
 1 Vivian VI
 1 Voracious Vermin
 1 Voter Captivation
-1 WMRH Talk Radio
-1 Wake with Evening's Freshness
+1 Wake with Evening’s Freshness
 1 Warmaksan
 1 Warrens, The
 1 Wasserschloss Anif, Austria
@@ -187,5 +215,5 @@
 1 Whisper
 1 Wider View
 1 Wind Dance
+1 WMRH Talk Radio
 1 Yewon Ong
-1 Ángel Guerrero

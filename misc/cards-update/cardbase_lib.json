@@ -2744,6 +2744,9 @@
             },
             "NB2":{
                 "PMi":"1"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Requires an Anarch.\nSuccessful referendum means each ready Anarch gains 1 blood and each Methuselah controlling an Anarch gains 1 pool.",
@@ -4325,6 +4328,7 @@
             },
             "2P":{
                 "C":true,
+                "H":4,
                 "L":4
             }
         },
@@ -6551,6 +6555,9 @@
             },
             "V5C":{
                 "PTz":"1"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Unique location.\nYou can lock this card to discard a card (draw up afterward).",
@@ -11187,6 +11194,10 @@
         "set":{
             "NB3":{
                 "PH":"6"
+            },
+            "2P":{
+                "C":true,
+                "H":4
             }
         },
         "text":"Zombie with 1 life. 1 strength, 1 bleed.\n[obl] This ally cannot have or use equipment or retainers. During a bleed action, you can lock another copy of this ally you control to give this ally +1 bleed.\n[OBL] As above, and during a bleed action, a Hecata you control can burn 1 blood to give this ally +1 bleed.",
@@ -15198,6 +15209,9 @@
             },
             "V5":{
                 "PTo":"2"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Only usable if this minion is blocked, before block resolution.\nUnlock this minion, and the action ends (unsuccessfully). This minion cannot perform the same action again this turn.",
@@ -28628,6 +28642,9 @@
             },
             "NB":{
                 "PM":"1"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Unique location.\n+1 hand size.",
@@ -29697,6 +29714,9 @@
         "set":{
             "FoL":{
                 "":"2"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Weapon.\nStrike: 3 unpreventable damage and put this card on the opposing vampire; it becomes a card with \"Cards requiring a Discipline cost this vampire +1 blood. After this vampire successfully hunts, burn this card\".",
@@ -29775,6 +29795,10 @@
             },
             "V5C":{
                 "PSal":"2"
+            },
+            "2P":{
+                "C":true,
+                "H":2
             }
         },
         "text":"[aus] +1 intercept.\n[AUS] +2 intercept.",
@@ -31443,6 +31467,7 @@
             },
             "2P":{
                 "C":true,
+                "H":2,
                 "M":2,
                 "Sal":2,
                 "Tr":2
@@ -32354,6 +32379,10 @@
         "set":{
             "V5H":{
                 "PH":"3"
+            },
+            "2P":{
+                "C":true,
+                "H":2
             }
         },
         "text":"Trifle.\nReveal the top card of your crypt. If it is a Hecata, draw it and add 1 blood to it; otherwise, move it to the bottom of your crypt.",
@@ -33162,6 +33191,9 @@
             "Promo":{
                 "2008-02-03":true,
                 "2022-11-01":true
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"+1 stealth action. Requires an Anarch with capacity 5 or more. Title.\nPut this card on this Anarch to represent the unique Anarch title of Baron of Corte. Vampires can call a referendum to burn this card as a +1 stealth political action; during that referendum, non-Anarch titles are worth -1 vote.",
@@ -33206,6 +33238,9 @@
             "Promo":{
                 "2008-02-03":true,
                 "2022-11-01":true
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"+1 stealth action. Requires an Anarch with capacity 5 or more. Title.\nPut this card on this Anarch to represent the unique Anarch title of Baron of Los Angeles. Vampires can call a referendum to burn this card as a +1 stealth political action; during that referendum, non-Anarch titles are worth -1 vote.",
@@ -33294,6 +33329,9 @@
             "Promo":{
                 "2008-02-03":true,
                 "2022-11-01":true
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"+1 stealth action. Requires an Anarch with capacity 5 or more. Title.\nPut this card on this Anarch to represent the unique Anarch title of Baron of Perth. Vampires can call a referendum to burn this card as a +1 stealth political action; during that referendum, non-Anarch titles are worth -1 vote.",
@@ -36516,6 +36554,9 @@
             },
             "NB":{
                 "PTr":"1"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Unique Nod fragment.\nPut this card in play. You can lock this card to draw 2 cards (discard down afterward). Vampires can steal this card as a (D) action.",
@@ -39965,6 +40006,7 @@
                 "BH":2,
                 "B":2,
                 "G":2,
+                "H":2,
                 "L":2,
                 "M":2,
                 "Mi":2,
@@ -51423,6 +51465,9 @@
             },
             "SoB":{
                 "":"1"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Unique location.\nYou can lock this location to reduce the cost of an action card a vampire you control plays by 1 blood (this location is not locked if that card is canceled as it is played). Vampires can steal this location as a (D) action.",
@@ -53642,6 +53687,9 @@
             },
             "Promo":{
                 "2021-10-15":true
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Only usable during the polling step of a political action before votes and ballots are cast.\nIf the referendum passes, the next referendum a vampire you control calls passes automatically (skip the polling step).",
@@ -54444,6 +54492,10 @@
             },
             "NB3":{
                 "PH":"2"
+            },
+            "2P":{
+                "C":true,
+                "H":2
             }
         },
         "text":"Only usable by an unlocked vampire not involved in the combat.\n[aus][for] Prevent 1 damage to a minion or retainer in combat.\n[AUS][FOR] Burn X blood to prevent X+1 damage to a minion or retainer in combat.",
@@ -56752,6 +56804,7 @@
             },
             "2P":{
                 "C":true,
+                "H":1,
                 "Sal":1,
                 "Tr":1,
                 "V":1
@@ -61542,6 +61595,7 @@
             },
             "2P":{
                 "C":true,
+                "H":2,
                 "Mi":2,
                 "Sal":2,
                 "To":2,
@@ -66777,6 +66831,10 @@
         "set":{
             "NB3":{
                 "PH":"1"
+            },
+            "2P":{
+                "C":true,
+                "H":1
             }
         },
         "text":"Unique location.\nDuring your master phase, you can lock this location to move 1 blood from a vampire with Oblivion [obl] you control to your pool or from your pool to a ready vampire with Oblivion [obl] you control. Independent vampires can burn this location as a (D) action that costs 1 blood.",
@@ -70015,7 +70073,8 @@
             },
             "2P":{
                 "C":true,
-                "Sal":1
+                "Sal":1,
+                "V":1
             }
         },
         "text":"Only usable at close range at the end of a round during which this minion successfully inflicted more damage than the opposing vampire. Not usable by a minion being burned or going to torpor.\nPut this card on the opposing vampire; this minion inflicts 1 damage on them. The attached vampire cannot hunt; if they must hunt, they go to torpor instead. Any vampire(s) can burn this card with two +1 stealth actions. A vampire can have only one Pulled Fangs.",
@@ -76102,6 +76161,7 @@
             "2P":{
                 "C":true,
                 "G":2,
+                "H":2,
                 "Sal":2,
                 "V":3
             }
@@ -80522,6 +80582,7 @@
             },
             "2P":{
                 "C":true,
+                "H":3,
                 "L":3
             }
         },
@@ -80568,6 +80629,7 @@
             },
             "2P":{
                 "C":true,
+                "H":3,
                 "L":3
             },
             "playtest":{
@@ -81019,6 +81081,9 @@
         "set":{
             "NB3":{
                 "PL":"6"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"[obl] Additional strike (limited).\n[OBL] Maneuver.",
@@ -82355,6 +82420,10 @@
         "set":{
             "V5H":{
                 "PH":"6"
+            },
+            "2P":{
+                "C":true,
+                "H":6
             },
             "playtest":{
                 "SDS":4
@@ -90683,6 +90752,7 @@
             },
             "2P":{
                 "C":true,
+                "H":3,
                 "M":4,
                 "Sal":3,
                 "To":4
@@ -91294,6 +91364,9 @@
             },
             "V5A":{
                 "PBh":"1"
+            },
+            "2P":{
+                "C":true
             },
             "playtest":{
                 "SCai":1,
@@ -92476,6 +92549,9 @@
             },
             "Promo":{
                 "2022-10-22":true
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"[ani] (D) Steal 1 blood or life from a minion controlled by your prey.\n[ANI] As above, and put this card on this vampire. This vampire gets +1 bleed against your prey. Minions can burn this card as a (D) action. A vampire can have only one Tier of Souls.",
@@ -95483,6 +95559,9 @@
         "set":{
             "NB3":{
                 "PL":"4"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"+1 stealth action.\n[obl] (D) Enter combat with a minion.\n[OBL] As above, and this acting vampire gets 1 optional maneuver during that combat.",
@@ -100925,7 +101004,7 @@
                 "M":2,
                 "Sal":3,
                 "To":3,
-                "V":3
+                "V":2
             }
         },
         "text":"Only usable before range is determined during the first round.\nPut this card with 5 counters on it on this minion; it becomes a melee weapon equipment that can strike: strength+1 damage. For each damage inflicted by this strike (even if prevented), burn 1 counter from this card. Burn this card if it has no counters. A minion can have only one Weighted Walking Stick.",
@@ -101142,6 +101221,7 @@
             },
             "2P":{
                 "C":true,
+                "H":3,
                 "L":2
             },
             "playtest":{
