@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
 import setsAndPrecons from "@/assets/data/setsAndPrecons.json";
 import { InventoryAddPreconHeader, InventoryAddPreconRow, Modal } from "@/components";
-import { DATE, DECKID, NAME, PLAYTEST } from "@/constants";
+import { TWO_P, DATE, DECKID, NAME, PLAYTEST } from "@/constants";
 import { useApp } from "@/context";
 import { decksSort } from "@/utils";
 
@@ -22,7 +22,7 @@ const InventoryAddPreconModal = ({ handleClose }) => {
   const sortedDecks = useMemo(() => {
     if (Object.values(preconDecks).length > 0) {
       let filtered = Object.values(preconDecks).filter((i) => {
-        return !i[DECKID].includes(PLAYTEST);
+        return !(i[DECKID].includes(PLAYTEST) || i[DECKID].includes(TWO_P));
       });
 
       if (nameFilter) {
