@@ -1,10 +1,13 @@
 {
-  "version": "2025-06-05",
+  "version": "2025-07-04",
   "changes": [
-    "Add Two Players and V5 limited format. Select limited option you want in Account page, then switch it on/off using Limited Mode toggle",
-    "Add Finnish Nationals 2025 event",
-    "Add date and players/decks in events list in PDA",
-    "Add batch (all selected) lock/unlock decks in Binocular deck selection menu",
-    "Update Rulings"
+    "Update 2P cards/decks lists",
+    "Add limited mode selector to navigation bar",
+    "Add % of restricted cards for current limited mode in deck crypt/library header",
+    "Add Lublin Fee Stake event",
+    "Update Rulings",
+    "Fix some legacy images",
+    "Fix deck clan/path icon sometimes being wrongly determined",
+    "Small other fixes and improvements"
   ]
 }
