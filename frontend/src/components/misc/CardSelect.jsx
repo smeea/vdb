@@ -116,6 +116,7 @@ const CardSelect = ({
   return (
     <Select
       variant="async"
+      isSearchable
       autoFocus={autoFocus}
       getOptionLabel={getOptionLabel}
       loadOptions={loadOptions}

@@ -35,6 +35,7 @@ const SearchFormArtist = ({ target, value, onChange }) => {
         <Select
           options={options}
           isClearable={value !== ANY}
+          isSearchable
           name={name}
           placeholder="Artist"
           value={options.find((obj) => obj.value === value)}

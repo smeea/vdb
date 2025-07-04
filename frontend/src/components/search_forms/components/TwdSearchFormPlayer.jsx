@@ -40,6 +40,7 @@ const TwdSearchFormPlayer = ({ inPda, value, form }) => {
           placeholder="Name"
           loadOptions={loadOptions}
           isClearable
+          isSearchable
           value={
             value
               ? {

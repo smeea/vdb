@@ -59,6 +59,7 @@ const TwdSearchFormLocation = ({ value, form }) => {
             autoFocus={false}
             placeholder="Country"
             loadOptions={loadOptionsCountry}
+            isSearchable
             isClearable
             value={
               value.country
@@ -81,6 +82,7 @@ const TwdSearchFormLocation = ({ value, form }) => {
             autoFocus={false}
             placeholder="City"
             loadOptions={loadOptionsCity}
+            isSearchable
             isClearable
             value={
               value.city
