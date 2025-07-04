@@ -7,7 +7,6 @@
 
 # FEATURES
 - Limited in TWD/PDA search
-- Add Polish Fee Stake Lublin event
 - Sort/filter playtesters
 - Filter 2P and V5 decks based on tags
 - TWD search with % V5-compatibility
