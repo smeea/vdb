@@ -38,7 +38,6 @@ const DeckProxyTableSetSelect = ({ card, value, handleSetSelector, className }) 
       <td className={twMerge("min-w-[165px]", className)}>
         <Select
           options={setOptions}
-          isSearchable={false}
           name={SET}
           placeholder="Set"
           value={setOptions.find((obj) => value && obj.value === value.toLowerCase)}

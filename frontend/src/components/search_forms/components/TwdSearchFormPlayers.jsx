@@ -43,7 +43,6 @@ const TwdSearchFormPlayers = ({ value, onChange }) => {
         <div className="w-full">
           <Select
             options={fromOptions}
-            isSearchable={false}
             name={name}
             value={fromOptions.find((obj) => obj.value === value[FROM])}
             onChange={onChange}
@@ -53,7 +52,6 @@ const TwdSearchFormPlayers = ({ value, onChange }) => {
         <div className="w-full">
           <Select
             options={toOptions}
-            isSearchable={false}
             name={name}
             value={toOptions.find((obj) => obj.value === value[TO])}
             onChange={onChange}

@@ -27,7 +27,6 @@ const LibrarySearchFormCapacity = ({ value, onChange }) => {
         <div className="w-1/2">
           <Select
             options={morelessOptions}
-            isSearchable={false}
             name={0}
             value={morelessOptions.find((obj) => obj.value === value.moreless)}
             onChange={onChange}
@@ -36,7 +35,6 @@ const LibrarySearchFormCapacity = ({ value, onChange }) => {
         <div className="w-1/2">
           <Select
             options={options}
-            isSearchable={false}
             isClearable={value[name] !== ANY}
             name={0}
             value={options.find((obj) => obj.value === value[name])}

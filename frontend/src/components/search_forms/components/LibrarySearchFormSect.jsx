@@ -49,7 +49,6 @@ const LibrarySearchFormSect = ({ value, searchForm, onChange }) => {
         <div className="w-3/4">
           <Select
             options={options}
-            isSearchable={false}
             isClearable={value.value[0] !== ANY}
             name={0}
             value={options.find((obj) => obj.value === value.value[0])}

@@ -38,7 +38,6 @@ const SearchAdditionalForms = ({
                 <div className="w-1/2">
                   <Select
                     options={morelessOptions}
-                    isSearchable={false}
                     menuPlacement={menuPlacement}
                     name={i}
                     value={morelessOptions.find((obj) => obj.value === value.value[i].moreless)}
@@ -48,7 +47,6 @@ const SearchAdditionalForms = ({
                 <div className="w-1/2">
                   <Select
                     options={options}
-                    isSearchable={false}
                     defaultMenuIsOpen={
                       value.value[i][
                         Object.keys(value.value[i]).filter((k) => {

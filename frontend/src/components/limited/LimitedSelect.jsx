@@ -19,7 +19,6 @@ const LimitedSelect = ({ withoutDisabled }) => {
       className="min-w-[37px]"
       textStyle={!limitedMode && withoutDisabled && "text-lightGray dark:text-lightGrayDark"}
       noMinHeight={withoutDisabled}
-      isSearchable={false}
       options={options}
       noBackground
       placeholder="Select Limited"

@@ -50,7 +50,6 @@ const DeckBranchSelect = ({ deck, handleSelect }) => {
   return (
     <Select
       options={options}
-      isSearchable={false}
       value={options.find((obj) => obj.value === deck[DECKID])}
       onChange={handleSelect}
     />

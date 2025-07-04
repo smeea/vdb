@@ -13,7 +13,7 @@ const Select = ({
   filterOption,
   isClearable = false,
   isDisabled = false,
-  isSearchable,
+  isSearchable = false,
   minMenuHeight,
   maxMenuHeight,
   menuHeight,

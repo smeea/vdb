@@ -49,7 +49,6 @@ const TypeForm = ({ isManual, handleManual, value = ANY, name, options, onChange
         ) : (
           <Select
             options={options}
-            isSearchable={false}
             name={CARDTYPES}
             value={options.find((obj) => obj.value === value)}
             onChange={onChange}

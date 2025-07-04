@@ -94,7 +94,6 @@ const DeckSelectAdvTableHeader = ({
               options={invOptions}
               onChange={(e) => setInvFilter(e.value)}
               value={invOptions.find((obj) => obj.value === invFilter)}
-              isSearchable={false}
               noDropdown
             />
           </th>
@@ -104,7 +103,7 @@ const DeckSelectAdvTableHeader = ({
             options={clanOptions}
             onChange={(e) => setClanFilter(e.value)}
             value={clanOptions.find((obj) => obj.value === clanFilter.toLowerCase())}
-            isSearchable
+            isSearchable={!isMobile}
             noDropdown
           />
         </th>

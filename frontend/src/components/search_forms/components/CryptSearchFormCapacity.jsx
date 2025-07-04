@@ -50,7 +50,6 @@ const CryptSearchFormCapacity = ({ value, searchForm, onChange }) => {
           <div className="w-1/2">
             <Select
               options={morelessOptions}
-              isSearchable={false}
               name={0}
               value={morelessOptions.find((obj) => obj.value === value.value[0].moreless)}
               onChange={onChange}
@@ -59,7 +58,6 @@ const CryptSearchFormCapacity = ({ value, searchForm, onChange }) => {
           <div className="w-1/2">
             <Select
               options={options}
-              isSearchable={false}
               isClearable={value.value[0][name] !== ANY}
               name={0}
               value={options.find((obj) => obj.value === value.value[0][name])}

@@ -27,7 +27,6 @@ const TwdSearchFormMatchInventory = ({ value, target, onChange }) => {
       <div className="w-full">
         <Select
           options={options}
-          isSearchable={false}
           name={name}
           value={options.find((obj) => obj.value === value.toLowerCase())}
           onChange={onChange}

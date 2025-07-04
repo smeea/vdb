@@ -30,7 +30,6 @@ const CryptSearchFormVotes = ({ value, onChange }) => {
       <div className="w-3/4">
         <Select
           options={options}
-          isSearchable={false}
           isClearable={value !== ANY}
           name={name}
           value={options.find((obj) => obj.value === value.toLowerCase())}
