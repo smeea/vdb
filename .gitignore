@@ -6,8 +6,6 @@
 backend/app.db
 backend/.env
 frontend/dist/
-frontend/public/data/cardbase_crypt_playtest_*.json
-frontend/public/data/cardbase_lib_playtest_*.json
-frontend/public/data/precon_decks_playtest_*.json
+frontend/public/data/*_playtest_*.json
 frontend/public/images/cards/playtest/
 misc/cards-update/playtest/
