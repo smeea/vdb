@@ -10963,9 +10963,10 @@
         "path":"",
         "rulings":[
             {
-                "text":"The card being retrieved is announced when the action is declared.",
+                "text":"Both the card in the ash heap and the card in hand have to be named when announcing the action or effect.",
                 "refs":{
-                    "LSJ 19970922":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/k0Lih9MQf3U/m/VEkGLwInIq8J"
+                    "LSJ 20000222":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/MkZPpcvlChQ/m/1l5f7ItJcS4J",
+                    "LSJ 20011023":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/2GOLIrXAF8M/m/P4T3Dj6UNL0J"
                 }
             }
         ],
@@ -11467,7 +11468,16 @@
         "name":"Castiel",
         "new":false,
         "path":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The equipment or retainer must be announced by name, and in hand, when the card or effect is declared (before the card, if any, is replaced), but need not to be shown until the effect resolves.",
+                "refs":{
+                    "LSJ 20100130":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/X8Uu7Sk56P4/m/twUvR4ZnBBkJ",
+                    "ANK 20180925-2":"https://www.vekn.net/forum/rules-questions/77029-order-of-draw-and-replace-for-concealed-weapon-under-infernal-pursuit?start=6#90757",
+                    "LSJ 19991207":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aQaOTYwC-fg/m/vdyo09QZoicJ"
+                }
+            }
+        ],
         "sect":"Sabbat",
         "set":{
             "LK":{
@@ -20108,6 +20118,14 @@
                 "text":"Can only use her ability when she is in combat herself.",
                 "refs":{
                     "ANK 20221021":"https://www.vekn.net/forum/rules-questions/80108-patagia#106628"
+                }
+            },
+            {
+                "text":"The equipment or retainer must be announced by name, and in hand, when the card or effect is declared (before the card, if any, is replaced), but need not to be shown until the effect resolves.",
+                "refs":{
+                    "LSJ 20100130":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/X8Uu7Sk56P4/m/twUvR4ZnBBkJ",
+                    "ANK 20180925-2":"https://www.vekn.net/forum/rules-questions/77029-order-of-draw-and-replace-for-concealed-weapon-under-infernal-pursuit?start=6#90757",
+                    "LSJ 19991207":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aQaOTYwC-fg/m/vdyo09QZoicJ"
                 }
             }
         ],
@@ -35926,7 +35944,15 @@
         "name":"Lenelle, Mambo of Birmingham",
         "new":false,
         "path":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Both the card in the ash heap and the card in hand have to be named when announcing the action or effect.",
+                "refs":{
+                    "LSJ 20000222":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/MkZPpcvlChQ/m/1l5f7ItJcS4J",
+                    "LSJ 20011023":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/2GOLIrXAF8M/m/P4T3Dj6UNL0J"
+                }
+            }
+        ],
         "sect":"Independent",
         "set":{
             "V5H":{
@@ -64039,6 +64065,14 @@
                 "refs":{
                     "LSJ 20070322":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Ww-4rYJxi4w/m/P3QchWVq2o4J",
                     "ANK 20180807":"https://www.vekn.net/forum/rules-questions/76905-going-anarch-as-black-hand#89735"
+                }
+            },
+            {
+                "text":"The equipment or retainer must be announced by name, and in hand, when the card or effect is declared (before the card, if any, is replaced), but need not to be shown until the effect resolves.",
+                "refs":{
+                    "LSJ 20100130":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/X8Uu7Sk56P4/m/twUvR4ZnBBkJ",
+                    "ANK 20180925-2":"https://www.vekn.net/forum/rules-questions/77029-order-of-draw-and-replace-for-concealed-weapon-under-infernal-pursuit?start=6#90757",
+                    "LSJ 19991207":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aQaOTYwC-fg/m/vdyo09QZoicJ"
                 }
             }
         ],

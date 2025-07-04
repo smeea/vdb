@@ -422,13 +422,6 @@
     ],
     "100051":[
         {
-            "text":"When setting the range for the round, no other effect can be used to reset the range. Skip the determine range step on that round, but other pre-range effects can be played afterwards.",
-            "refs":{
-                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
-                "ANK 20180720":"https://www.vekn.net/forum/rules-questions/76840-setting-range-and-pre-range#89125"
-            }
-        },
-        {
             "text":"Can use {Pack Alpha} to put a retainer requiring [ani] in play.",
             "refs":{
                 "LSJ 20060417":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/bW_XZDS-9iw/m/u_WVQXNXK0kJ"
@@ -501,6 +494,19 @@
             "refs":{
                 "LSJ 20020503":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/1DbOr3g3vP8/m/xF8dvxQZye4J",
                 "LSJ 20060126":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PBEBNFH61ik/m/MPf8Rs1F958J"
+            }
+        },
+        {
+            "text":"Once the range is set, no other effect can be used to reset the range that round, but other pre-range effects can be played afterwards. Skip the Determine Range step for that round.",
+            "refs":{
+                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
+                "ANK 20180720":"https://www.vekn.net/forum/rules-questions/76840-setting-range-and-pre-range#89125"
+            }
+        },
+        {
+            "text":"If another effect was already setting that round's range (e.g. {Neutral Guard}), that effect has priority.",
+            "refs":{
+                "PIB 20120214":"https://www.vekn.net/forum/rules-questions/22906-re-set-the-range?start=12#22999"
             }
         }
     ],
@@ -927,6 +933,19 @@
                 "ANK 20200203-2":"https://www.vekn.net/forum/rules-questions/78415-is-ghoul-mortal#98872",
                 "LSJ 20060515":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/bzusnKlnYr8/m/OSMvzE7YjokJ"
             }
+        },
+        {
+            "text":"Once the range is set, no other effect can be used to reset the range that round, but other pre-range effects can be played afterwards. Skip the Determine Range step for that round.",
+            "refs":{
+                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
+                "ANK 20180720":"https://www.vekn.net/forum/rules-questions/76840-setting-range-and-pre-range#89125"
+            }
+        },
+        {
+            "text":"If another effect was already setting that round's range (e.g. {Neutral Guard}), that effect has priority.",
+            "refs":{
+                "PIB 20120214":"https://www.vekn.net/forum/rules-questions/22906-re-set-the-range?start=12#22999"
+            }
         }
     ],
     "100105":[
@@ -1078,6 +1097,24 @@
             "text":"Can be used to cancel all action cards, including employ retainer, recruit ally and political action.",
             "refs":{
                 "ANK 20200813-2":"https://www.vekn.net/forum/rules-questions/78799-rewind-time-inf-and-action-cards#100526"
+            }
+        },
+        {
+            "text":"Can be used by a vampire who is already attempting to block.",
+            "refs":{
+                "ANK 20181122-2":"https://www.vekn.net/forum/rules-questions/77176-eagle-s-sight-and-guardian-vigil#91965"
+            }
+        },
+        {
+            "text":"Cannot be used if the vampire cannot attempt to block the action (eg. {Daring the Dawn}).",
+            "refs":{
+                "LSJ 20010714-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9U-jt3p3R_Q/m/WxDJwkgc25kJ"
+            }
+        },
+        {
+            "text":"Does not ignore the normal prey, predator or target restrictions.",
+            "refs":{
+                "ANK 20180623":"https://www.vekn.net/forum/rules-questions/76748-black-sunrise#88361"
             }
         }
     ],
@@ -1604,32 +1641,6 @@
             "text":"Damage done to the bearer is environmental.",
             "refs":{
                 "LSJ 19970801":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/7ZnLKTdPEn4/m/6L-nVarAJwMJ"
-            }
-        }
-    ],
-    "100171":[
-        {
-            "text":"Can be used by a vampire who is already attempting to block.",
-            "refs":{
-                "ANK 20181122-2":"https://www.vekn.net/forum/rules-questions/77176-eagle-s-sight-and-guardian-vigil#91965"
-            }
-        },
-        {
-            "text":"[QUI] Cannot be used if the vampire cannot attempt to block the action (eg. {Daring the Dawn}).",
-            "refs":{
-                "LSJ 20010714-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9U-jt3p3R_Q/m/WxDJwkgc25kJ"
-            }
-        },
-        {
-            "text":"[QUI] Does not ignore the normal prey, predator or target restrictions.",
-            "refs":{
-                "ANK 20180623":"https://www.vekn.net/forum/rules-questions/76748-black-sunrise#88361"
-            }
-        },
-        {
-            "text":"[QUI] If the action lacks a suitable target because of the unlock (e.g. {Ambush}), the block attempt still happens, as does the resulting combat if the block is successful.",
-            "refs":{
-                "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
             }
         }
     ],
@@ -2463,22 +2474,6 @@
             }
         }
     ],
-    "100252":[
-        {
-            "text":"[VIS] No other effect can be used to reset the range, but other pre-range effects can be played afterwards.",
-            "refs":{
-                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
-                "ANK 20180720":"https://www.vekn.net/forum/rules-questions/76840-setting-range-and-pre-range#89125"
-            }
-        },
-        {
-            "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
-            "refs":{
-                "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
-                "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
-            }
-        }
-    ],
     "100253":[
         {
             "text":"[POT] If it burns an ally as a result, this counts as a \u24b9 action burning an ally (eg. Trophies, {Predator's Transformation}).",
@@ -3099,14 +3094,7 @@
     ],
     "100330":[
         {
-            "text":"No other effect can be used to reset the range. Skip the determine range step on that round, but other pre-range effects can be played afterwards.",
-            "refs":{
-                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
-                "ANK 20180720":"https://www.vekn.net/forum/rules-questions/76840-setting-range-and-pre-range#89125"
-            }
-        },
-        {
-            "text":"Additional damage inherits all of the properties of the base damage.",
+            "text":"[spi]/[SPI] Additional damage inherits all of the properties of the base damage.",
             "refs":{
                 "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
             }
@@ -3124,6 +3112,19 @@
             "refs":{
                 "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
                 "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+            }
+        },
+        {
+            "text":"[spi]/[SPI] Once the range is set, no other effect can be used to reset the range that round, but other pre-range effects can be played afterwards. Skip the Determine Range step for that round.",
+            "refs":{
+                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
+                "ANK 20180720":"https://www.vekn.net/forum/rules-questions/76840-setting-range-and-pre-range#89125"
+            }
+        },
+        {
+            "text":"[spi]/[SPI] If another effect was already setting that round's range (e.g. {Neutral Guard}), that effect has priority.",
+            "refs":{
+                "PIB 20120214":"https://www.vekn.net/forum/rules-questions/22906-re-set-the-range?start=12#22999"
             }
         }
     ],
@@ -3277,7 +3278,7 @@
     ],
     "100340":[
         {
-            "text":"This is an \"equip action\"",
+            "text":"[tha] This is an equip action.",
             "refs":{
                 "TOM 19960130":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/wF82VdVPlm0/m/MmFo2E7lrY8J"
             }
@@ -3287,6 +3288,14 @@
             "refs":{
                 "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
                 "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+            }
+        },
+        {
+            "text":"[tha] The equipment or retainer must be announced by name, and in hand, when the card or effect is declared (before the card, if any, is replaced), but need not to be shown until the effect resolves.",
+            "refs":{
+                "LSJ 20100130":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/X8Uu7Sk56P4/m/twUvR4ZnBBkJ",
+                "ANK 20180925-2":"https://www.vekn.net/forum/rules-questions/77029-order-of-draw-and-replace-for-concealed-weapon-under-infernal-pursuit?start=6#90757",
+                "LSJ 19991207":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aQaOTYwC-fg/m/vdyo09QZoicJ"
             }
         }
     ],
@@ -3384,21 +3393,6 @@
             }
         }
     ],
-    "100359":[
-        {
-            "text":"[tem] The card to retrieve must be announced when declaring the action.",
-            "refs":{
-                "LSJ 20010627":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NhNCVCCDyU0/m/I5Yph3-UUPsJ"
-            }
-        },
-        {
-            "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
-            "refs":{
-                "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
-                "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
-            }
-        }
-    ],
     "100362":[
         {
             "text":"[OBF] Can only be played by the controller of the acting minion.",
@@ -3433,21 +3427,6 @@
             "text":"Allies (including Imbued) cannot use the provided action as they have no blood to pay with.",
             "refs":{
                 "PIB 20151101":"https://www.vekn.net/forum/rules-questions/73992-imbued-and-blood-costs-general-mechanics#73995"
-            }
-        }
-    ],
-    "100376":[
-        {
-            "text":"No other effect can be used to reset the range. Skip the determine range step on that round, but other pre-range effects can be played afterwards.",
-            "refs":{
-                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
-                "ANK 20180720":"https://www.vekn.net/forum/rules-questions/76840-setting-range-and-pre-range#89125"
-            }
-        },
-        {
-            "text":"[NEC] The optional press can only be used during the current round.",
-            "refs":{
-                "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
             }
         }
     ],
@@ -3561,14 +3540,6 @@
     ],
     "100392":[
         {
-            "text":"The weapon must be announced and in hand when the card is played, before it is replaced, but need not to be shown: it can be kept apart face down.",
-            "refs":{
-                "LSJ 19991207":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aQaOTYwC-fg/m/vdyo09QZoicJ",
-                "ANK 20180925-2":"https://www.vekn.net/forum/rules-questions/77029-order-of-draw-and-replace-for-concealed-weapon-under-infernal-pursuit?start=6#90757",
-                "LSJ 20100130":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/X8Uu7Sk56P4/m/twUvR4ZnBBkJ"
-            }
-        },
-        {
             "text":"A weapon's \"current damage\" is the amount of damage that it would inflict if used as a strike against a generic opponent.",
             "refs":{
                 "RTR 19980623":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/tSpd9dtTElc/m/-CuHJF54_n0J"
@@ -3599,6 +3570,14 @@
             "text":"Conditional damage effects (e.g. {Poker}'s aggravated damage against Kiasyd) are not considered when checking {Concealed Weapon}'s \"with a regular strike\" qualification.",
             "refs":{
                 "LSJ 20020729":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/zjgrU0n0uCs/m/_WePYnK3rDEJ"
+            }
+        },
+        {
+            "text":"The equipment or retainer must be announced by name, and in hand, when the card or effect is declared (before the card, if any, is replaced), but need not to be shown until the effect resolves.",
+            "refs":{
+                "LSJ 20100130":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/X8Uu7Sk56P4/m/twUvR4ZnBBkJ",
+                "ANK 20180925-2":"https://www.vekn.net/forum/rules-questions/77029-order-of-draw-and-replace-for-concealed-weapon-under-infernal-pursuit?start=6#90757",
+                "LSJ 19991207":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aQaOTYwC-fg/m/vdyo09QZoicJ"
             }
         }
     ],
@@ -3782,20 +3761,6 @@
             "refs":{
                 "ANK 20200203-2":"https://www.vekn.net/forum/rules-questions/78415-is-ghoul-mortal#98872",
                 "LSJ 20060515":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/bzusnKlnYr8/m/OSMvzE7YjokJ"
-            }
-        }
-    ],
-    "100432":[
-        {
-            "text":"Cannot be used if the vampires cannot attempt to block the action (eg. {Daring the Dawn}).",
-            "refs":{
-                "LSJ 20010714-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9U-jt3p3R_Q/m/WxDJwkgc25kJ"
-            }
-        },
-        {
-            "text":"Does not ignore the normal prey, predator or target restrictions.",
-            "refs":{
-                "ANK 20180623":"https://www.vekn.net/forum/rules-questions/76748-black-sunrise#88361"
             }
         }
     ],
@@ -4670,6 +4635,12 @@
                 "ANK 20191219":"https://www.vekn.net/forum/rules-questions/78241-relentless-reaper-vs-blissful-agony-and-scheduled-combat-rulings-ambiguity#98308",
                 "ANK 20180910-1":"https://www.vekn.net/forum/rules-questions/76990-correct-order-impulse-for-combat-cards-after-combat#90517"
             }
+        },
+        {
+            "text":"If the round ends before range is determined (e.g. {Alpha Glint}) Range is assumed to be at default (usually close, unless e.g. [dai]{Fear of the Void Below} was played), unless range was set by another effect (e.g. {Sniper Rifle}, [obe]{Neutral Guard})",
+            "refs":{
+                "LSJ 20100709":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/j98aqFIFjnE/m/h_FjFos8S2UJ"
+            }
         }
     ],
     "100550":[
@@ -4704,16 +4675,17 @@
     ],
     "100555":[
         {
-            "text":"The weapon is announced when the card is played, it must be in hand but need not to be shown. You can put the card apart face down when announcing it.",
-            "refs":{
-                "LSJ 19991207":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aQaOTYwC-fg/m/vdyo09QZoicJ",
-                "ANK 20180925-2":"https://www.vekn.net/forum/rules-questions/77029-order-of-draw-and-replace-for-concealed-weapon-under-infernal-pursuit?start=6#90757"
-            }
-        },
-        {
             "text":"If used to equip and contest a unique weapon already in play, neither weapon is available for use during the combat. If the opposing minion had already chosen that weapon as his strike, then the strike has no effect.",
             "refs":{
                 "LSJ 19980319":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/i1Eqqm5Ctv0/m/TQIvuprMrjsJ"
+            }
+        },
+        {
+            "text":"The equipment or retainer must be announced by name, and in hand, when the card or effect is declared (before the card, if any, is replaced), but need not to be shown until the effect resolves.",
+            "refs":{
+                "LSJ 20100130":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/X8Uu7Sk56P4/m/twUvR4ZnBBkJ",
+                "ANK 20180925-2":"https://www.vekn.net/forum/rules-questions/77029-order-of-draw-and-replace-for-concealed-weapon-under-infernal-pursuit?start=6#90757",
+                "LSJ 19991207":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aQaOTYwC-fg/m/vdyo09QZoicJ"
             }
         }
     ],
@@ -5314,26 +5286,6 @@
             }
         }
     ],
-    "100628":[
-        {
-            "text":"Can be used by a vampire who is already attempting to block.",
-            "refs":{
-                "ANK 20181122-2":"https://www.vekn.net/forum/rules-questions/77176-eagle-s-sight-and-guardian-vigil#91965"
-            }
-        },
-        {
-            "text":"Cannot be used if the vampire cannot attempt to block the action (eg. {Daring the Dawn}).",
-            "refs":{
-                "LSJ 20010714-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9U-jt3p3R_Q/m/WxDJwkgc25kJ"
-            }
-        },
-        {
-            "text":"If the action lacks a suitable target because of the unlock (e.g. {Ambush}), the block attempt still happens, as does the resulting combat if the block is successful.",
-            "refs":{
-                "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
-            }
-        }
-    ],
     "100631":[
         {
             "text":"When ending combat, cards that are played at the end of round/combat can still be played (eg. {Taste of Vitae}, {Disarm}).",
@@ -5605,26 +5557,6 @@
             "text":"[SER] Cannot be played if no target is available in any Methuselah's ash heap.",
             "refs":{
                 "ANK 20200420-3":"https://www.vekn.net/forum/rules-questions/78574-vulture-s-buffet#99642"
-            }
-        }
-    ],
-    "100666":[
-        {
-            "text":"Cannot be used if the vampire cannot attempt to block the action (eg. {Daring the Dawn}).",
-            "refs":{
-                "LSJ 20010714-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9U-jt3p3R_Q/m/WxDJwkgc25kJ"
-            }
-        },
-        {
-            "text":"When used to block, does not ignore the normal prey, predator or target restrictions.",
-            "refs":{
-                "ANK 20180623":"https://www.vekn.net/forum/rules-questions/76748-black-sunrise#88361"
-            }
-        },
-        {
-            "text":"If the action lacks a suitable target because of the unlock (e.g. {Ambush}), the block attempt still happens, as does the resulting combat if the block is successful.",
-            "refs":{
-                "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
             }
         }
     ],
@@ -6651,6 +6583,19 @@
             "refs":{
                 "ANK 20181208":"https://www.vekn.net/forum/rules-questions/77210-touch-of-clarity-and-fast-reaction-is-posible-to-play-with-locked-minion?start=6#92308"
             }
+        },
+        {
+            "text":"Once the range is set, no other effect can be used to reset the range that round, but other pre-range effects can be played afterwards. Skip the Determine Range step for that round.",
+            "refs":{
+                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
+                "ANK 20180720":"https://www.vekn.net/forum/rules-questions/76840-setting-range-and-pre-range#89125"
+            }
+        },
+        {
+            "text":"If another effect was already setting that round's range (e.g. {Neutral Guard}), that effect has priority.",
+            "refs":{
+                "PIB 20120214":"https://www.vekn.net/forum/rules-questions/22906-re-set-the-range?start=12#22999"
+            }
         }
     ],
     "100805":[
@@ -6683,6 +6628,13 @@
                 "ANK 20250320":"https://www.vekn.net/forum/rules-questions/82172-garibaldi-and-jericho-founding#113984",
                 "LSJ 20080603":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/LuT1iK1b4QIJ",
                 "LSJ 20050128":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HVy8iPUxNbI/m/ZHGTnprQjGUJ"
+            }
+        },
+        {
+            "text":"Both the card in the ash heap and the card in hand have to be named when announcing the action or effect.",
+            "refs":{
+                "LSJ 20000222":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/MkZPpcvlChQ/m/1l5f7ItJcS4J",
+                "LSJ 20011023":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/2GOLIrXAF8M/m/P4T3Dj6UNL0J"
             }
         }
     ],
@@ -6947,21 +6899,6 @@
             }
         }
     ],
-    "100832":[
-        {
-            "text":"When setting the range for the round, no other effect can be used to reset the range. Skip the determine range step this round, but other pre-range effects can be played afterwards.",
-            "refs":{
-                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
-                "ANK 20180720":"https://www.vekn.net/forum/rules-questions/76840-setting-range-and-pre-range#89125"
-            }
-        },
-        {
-            "text":"They can lock to use their ability the turn they where recruited.",
-            "refs":{
-                "ANK 20180517":"https://www.vekn.net/forum/rules-questions/76447-rules-team-rulings-rtr-03-03-2018?start=30#87041"
-            }
-        }
-    ],
     "100834":[
         {
             "text":"Cannot be used if there is no damage to prevent.",
@@ -7047,6 +6984,13 @@
             "text":"Can be used on your own crypt.",
             "refs":{
                 "TOM 19960419":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/McirQ-vDkEU/m/i1yZL4bj7TwJ"
+            }
+        },
+        {
+            "text":"Cannot be played when the target crypt is empty.",
+            "refs":{
+                "RTR 20000501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/MKrA0hBXuaU/m/1M5LOLftKWAJ",
+                "LSJ 20070411-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-B6BlRIT0Rg/m/VOYol5mcbO8J"
             }
         }
     ],
@@ -7397,12 +7341,6 @@
             }
         },
         {
-            "text":"Can be used by a vampire who is already attempting to block.",
-            "refs":{
-                "ANK 20181122-2":"https://www.vekn.net/forum/rules-questions/77176-eagle-s-sight-and-guardian-vigil#91965"
-            }
-        },
-        {
             "text":"[aus] The maneuver can only be used if the block is successful, and only in the resulting (block-induced) combat. It does not carry over to a follow-up combat (eg. [CEL] {Psyche!}).",
             "refs":{
                 "LSJ 20010813":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/8MR4bq0Cxj4/m/f_rAOuj3CboJ",
@@ -7414,6 +7352,24 @@
             "refs":{
                 "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
                 "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+            }
+        },
+        {
+            "text":"Can be used by a vampire who is already attempting to block.",
+            "refs":{
+                "ANK 20181122-2":"https://www.vekn.net/forum/rules-questions/77176-eagle-s-sight-and-guardian-vigil#91965"
+            }
+        },
+        {
+            "text":"Cannot be used if the vampire cannot attempt to block the action (eg. {Daring the Dawn}).",
+            "refs":{
+                "LSJ 20010714-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9U-jt3p3R_Q/m/WxDJwkgc25kJ"
+            }
+        },
+        {
+            "text":"Does not ignore the normal prey, predator or target restrictions.",
+            "refs":{
+                "ANK 20180623":"https://www.vekn.net/forum/rules-questions/76748-black-sunrise#88361"
             }
         }
     ],
@@ -7934,6 +7890,19 @@
                 "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
                 "ANK 20180720":"https://www.vekn.net/forum/rules-questions/76840-setting-range-and-pre-range#89125"
             }
+        },
+        {
+            "text":"[FLIGHT] Once the range is set, no other effect can be used to reset the range that round, but other pre-range effects can be played afterwards. Skip the Determine Range step for that round.",
+            "refs":{
+                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
+                "ANK 20180720":"https://www.vekn.net/forum/rules-questions/76840-setting-range-and-pre-range#89125"
+            }
+        },
+        {
+            "text":"[FLIGHT] If another effect was already setting that round's range (e.g. {Neutral Guard}), that effect has priority.",
+            "refs":{
+                "PIB 20120214":"https://www.vekn.net/forum/rules-questions/22906-re-set-the-range?start=12#22999"
+            }
         }
     ],
     "100927":[
@@ -8124,12 +8093,6 @@
             }
         },
         {
-            "text":"Cannot be played when your crypt is empty.",
-            "refs":{
-                "RTR 20000501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/MKrA0hBXuaU/m/1M5LOLftKWAJ"
-            }
-        },
-        {
             "text":"If the illusionary vampire does not enter combat, then they are removed from the game at the end of the current action.",
             "refs":{
                 "LSJ 19991110":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/5hDqAMewLtg/m/fib2UDF58CUJ"
@@ -8170,6 +8133,13 @@
             "text":"The effect is resolved fully (including the blood gain) before resolving other effects tied to the illusionary vampire entering play (eg.\u00a0{Erlik}'s ability).",
             "refs":{
                 "ANK 20240724":"https://www.vekn.net/forum/rules-questions/81635-erlik-and-illusions-of-the-kindred?start=6#112151"
+            }
+        },
+        {
+            "text":"Cannot be played when the target crypt is empty.",
+            "refs":{
+                "RTR 20000501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/MKrA0hBXuaU/m/1M5LOLftKWAJ",
+                "LSJ 20070411-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-B6BlRIT0Rg/m/VOYol5mcbO8J"
             }
         }
     ],
@@ -8236,14 +8206,14 @@
             }
         },
         {
-            "text":"[POT] No other effect can be used to reset next round's range, but other pre-range effects can be played.",
+            "text":"[POT] Once the range is set, no other effect can be used to reset the range that round, but other pre-range effects can be played afterwards. Skip the Determine Range step for that round.",
             "refs":{
-                "ANK 20180720":"https://www.vekn.net/forum/rules-questions/76840-setting-range-and-pre-range#89125",
-                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ"
+                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
+                "ANK 20180720":"https://www.vekn.net/forum/rules-questions/76840-setting-range-and-pre-range#89125"
             }
         },
         {
-            "text":"[POT] If another effect was already setting next round's range (e.g. {Neutral Guard}), that effect has priority.",
+            "text":"[POT] If another effect was already setting that round's range (e.g. {Neutral Guard}), that effect has priority.",
             "refs":{
                 "PIB 20120214":"https://www.vekn.net/forum/rules-questions/22906-re-set-the-range?start=12#22999"
             }
@@ -8618,17 +8588,23 @@
             }
         },
         {
-            "text":"[tem] No other effect can be used to reset the range, but other pre-range effects can be played afterwards.",
+            "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
+            "refs":{
+                "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
+                "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+            }
+        },
+        {
+            "text":"[tem] Once the range is set, no other effect can be used to reset the range that round, but other pre-range effects can be played afterwards. Skip the Determine Range step for that round.",
             "refs":{
                 "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
                 "ANK 20180720":"https://www.vekn.net/forum/rules-questions/76840-setting-range-and-pre-range#89125"
             }
         },
         {
-            "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
+            "text":"[tem] If another effect was already setting that round's range (e.g. {Neutral Guard}), that effect has priority.",
             "refs":{
-                "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
-                "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+                "PIB 20120214":"https://www.vekn.net/forum/rules-questions/22906-re-set-the-range?start=12#22999"
             }
         }
     ],
@@ -8749,14 +8725,6 @@
             }
         },
         {
-            "text":"The target card is announced when announcing the action, but is not discarded if the action fails. It must be in hand before replacing the Jack.",
-            "refs":{
-                "LSJ 20040519-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Tzc3IexT7oM/m/edZbR64ViKUJ",
-                "RTR 19991001":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/RAvWWmYoX3U/m/lb2bLOvJDhoJ",
-                "LSJ 20101210":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/QTAA0y6cANI/m/gU0hztzp8mUJ"
-            }
-        },
-        {
             "text":"Requirements apply but do not count as requirements for the action (eg. you cannot use {CrimethInc.}\u00a0if the card requires an Anarch).",
             "refs":{
                 "LSJ 20100725":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9d1zMZfsfNo/m/l3fbDtbr9xwJ",
@@ -8768,6 +8736,14 @@
             "text":"Does not prevent the acting vampire from playing the equipment or retainer directly this turn if he unlocks (not the same action).",
             "refs":{
                 "ANK 20180817":"https://www.vekn.net/forum/rules-questions/76933-cock-robin-jack-of-both-sides#90064"
+            }
+        },
+        {
+            "text":"The equipment or retainer must be announced by name, and in hand, when the card or effect is declared (before the card, if any, is replaced), but need not to be shown until the effect resolves.",
+            "refs":{
+                "LSJ 20100130":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/X8Uu7Sk56P4/m/twUvR4ZnBBkJ",
+                "ANK 20180925-2":"https://www.vekn.net/forum/rules-questions/77029-order-of-draw-and-replace-for-concealed-weapon-under-infernal-pursuit?start=6#90757",
+                "LSJ 19991207":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aQaOTYwC-fg/m/vdyo09QZoicJ"
             }
         }
     ],
@@ -9211,14 +9187,14 @@
             }
         },
         {
-            "text":"[vic] No other effect can be used to reset next round's range, but other pre-range effects can be played.",
+            "text":"[vic] Once the range is set, no other effect can be used to reset the range that round, but other pre-range effects can be played afterwards. Skip the Determine Range step for that round.",
             "refs":{
-                "ANK 20180720":"https://www.vekn.net/forum/rules-questions/76840-setting-range-and-pre-range#89125",
-                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ"
+                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
+                "ANK 20180720":"https://www.vekn.net/forum/rules-questions/76840-setting-range-and-pre-range#89125"
             }
         },
         {
-            "text":"[vic] If another effect was already setting next round's range (e.g. {Neutral Guard}), that effect has priority.",
+            "text":"[vic] If another effect was already setting that round's range (e.g. {Neutral Guard}), that effect has priority.",
             "refs":{
                 "PIB 20120214":"https://www.vekn.net/forum/rules-questions/22906-re-set-the-range?start=12#22999"
             }
@@ -10593,27 +10569,6 @@
             }
         }
     ],
-    "101233":[
-        {
-            "text":"[ani] Can be used by a vampire who is already attempting to block.",
-            "refs":{
-                "ANK 20181122-2":"https://www.vekn.net/forum/rules-questions/77176-eagle-s-sight-and-guardian-vigil#91965"
-            }
-        },
-        {
-            "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
-            "refs":{
-                "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
-                "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
-            }
-        },
-        {
-            "text":"[ani] If the action lacks a suitable target because of the unlock (e.g. {Ambush}), the block attempt still happens, as does the resulting combat if the block is successful.",
-            "refs":{
-                "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
-            }
-        }
-    ],
     "101235":[
         {
             "text":"If the opponent strikes: combat ends, this strike is not resolved and the Cocktail is not put on this minion, even if combat continues thanks to another effect like {Relentless Reaper}.",
@@ -10836,6 +10791,15 @@
             }
         }
     ],
+    "101248":[
+        {
+            "text":"Cannot be played if the vampire is Laibon and your crypt is empty.",
+            "refs":{
+                "LSJ 20070411-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-B6BlRIT0Rg/m/VOYol5mcbO8J",
+                "RTR 20000501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/MKrA0hBXuaU/m/1M5LOLftKWAJ"
+            }
+        }
+    ],
     "101251":[
         {
             "text":"The unlock effect takes place before the end of combat. The rest of the effect takes place after the end of combat.",
@@ -11001,15 +10965,6 @@
             }
         }
     ],
-    "101269":[
-        {
-            "text":"No other effect can be used to reset the range, but other pre-range effects can be played afterwards.",
-            "refs":{
-                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
-                "ANK 20180720":"https://www.vekn.net/forum/rules-questions/76840-setting-range-and-pre-range#89125"
-            }
-        }
-    ],
     "101272":[
         {
             "text":"His life total can exceed his starting life capacity (it is the case for all allies).",
@@ -11059,12 +11014,6 @@
             }
         },
         {
-            "text":"[chi] Can be used by a vampire who is already attempting to block.",
-            "refs":{
-                "ANK 20181122-2":"https://www.vekn.net/forum/rules-questions/77176-eagle-s-sight-and-guardian-vigil#91965"
-            }
-        },
-        {
             "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
             "refs":{
                 "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
@@ -11075,6 +11024,24 @@
             "text":"[chi] If the action lacks a suitable target because of the unlock (e.g. {Ambush}), the block attempt still happens, as does the resulting combat if the block is successful.",
             "refs":{
                 "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
+            }
+        },
+        {
+            "text":"[chi] Can be used by a vampire who is already attempting to block.",
+            "refs":{
+                "ANK 20181122-2":"https://www.vekn.net/forum/rules-questions/77176-eagle-s-sight-and-guardian-vigil#91965"
+            }
+        },
+        {
+            "text":"[chi] Cannot be used if the vampire cannot attempt to block the action (eg. {Daring the Dawn}).",
+            "refs":{
+                "LSJ 20010714-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9U-jt3p3R_Q/m/WxDJwkgc25kJ"
+            }
+        },
+        {
+            "text":"[chi] Does not ignore the normal prey, predator or target restrictions.",
+            "refs":{
+                "ANK 20180623":"https://www.vekn.net/forum/rules-questions/76748-black-sunrise#88361"
             }
         }
     ],
@@ -11097,6 +11064,19 @@
             "refs":{
                 "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
                 "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+            }
+        },
+        {
+            "text":"[obe]/[OBE] Once the range is set, no other effect can be used to reset the range that round, but other pre-range effects can be played afterwards. Skip the Determine Range step for that round.",
+            "refs":{
+                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
+                "ANK 20180720":"https://www.vekn.net/forum/rules-questions/76840-setting-range-and-pre-range#89125"
+            }
+        },
+        {
+            "text":"[obe]/[OBE] If another effect was already setting that round's range (e.g. {Neutral Guard}), that effect has priority.",
+            "refs":{
+                "PIB 20120214":"https://www.vekn.net/forum/rules-questions/22906-re-set-the-range?start=12#22999"
             }
         }
     ],
@@ -11341,30 +11321,6 @@
             }
         }
     ],
-    "101320":[
-        {
-            "text":"When setting the range for the round, no other effect can be used to reset the range. Skip the determine range step this round, but other pre-range effects can be played afterwards.",
-            "refs":{
-                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
-                "ANK 20180720":"https://www.vekn.net/forum/rules-questions/76840-setting-range-and-pre-range#89125"
-            }
-        },
-        {
-            "text":"Ghouls are monsters, not mortal.",
-            "refs":{
-                "ANK 20200203-2":"https://www.vekn.net/forum/rules-questions/78415-is-ghoul-mortal#98872",
-                "LSJ 20060515":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/bzusnKlnYr8/m/OSMvzE7YjokJ"
-            }
-        }
-    ],
-    "101322":[
-        {
-            "text":"Can be used by a vampire who is already attempting to block.",
-            "refs":{
-                "ANK 20181122-2":"https://www.vekn.net/forum/rules-questions/77176-eagle-s-sight-and-guardian-vigil#91965"
-            }
-        }
-    ],
     "101325":[
         {
             "text":"[SER][PRE] Can be used to cancel an action modifier player \"after the action/referendum is successful\" (eg. {Voter Captivation} or {Freak Drive}).",
@@ -11571,6 +11527,14 @@
                 "RTR 20070707":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/vSOt2c1uRzQ/m/MsRAv47Cd4YJ",
                 "ANK 20230824":"https://www.vekn.net/forum/news-and-announcements/80782-the-line-pack-alpha?start=6#109157"
             }
+        },
+        {
+            "text":"[ani] The equipment or retainer must be announced by name, and in hand, when the card or effect is declared (before the card, if any, is replaced), but need not to be shown until the effect resolves.",
+            "refs":{
+                "LSJ 20100130":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/X8Uu7Sk56P4/m/twUvR4ZnBBkJ",
+                "ANK 20180925-2":"https://www.vekn.net/forum/rules-questions/77029-order-of-draw-and-replace-for-concealed-weapon-under-infernal-pursuit?start=6#90757",
+                "LSJ 19991207":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aQaOTYwC-fg/m/vdyo09QZoicJ"
+            }
         }
     ],
     "101348":[
@@ -11737,12 +11701,6 @@
             "text":"\"Once each turn\" means once during each player's turn.",
             "refs":{
                 "ANK 20180719-4":"https://www.vekn.net/forum/rules-questions/76833-once-each-turn#89014"
-            }
-        },
-        {
-            "text":"The vampire's controller chooses to use the effect of the card or not.",
-            "refs":{
-                "ANK 20210309-3":"https://www.vekn.net/forum/rules-questions/79065-master-cards-attached-to-a-stolen-minion#101806"
             }
         }
     ],
@@ -12530,6 +12488,12 @@
             "refs":{
                 "ANK 20170202-2":"https://www.vekn.net/forum/rules-questions/75571-question-regarding-quincy-the-trapper?start=6#80479"
             }
+        },
+        {
+            "text":"If the round ends before range is determined (e.g. {Alpha Glint}) Range is assumed to be at default (usually close, unless e.g. [dai]{Fear of the Void Below} was played), unless range was set by another effect (e.g. {Sniper Rifle}, [obe]{Neutral Guard})",
+            "refs":{
+                "LSJ 20100709":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/j98aqFIFjnE/m/h_FjFos8S2UJ"
+            }
         }
     ],
     "101521":[
@@ -12841,20 +12805,6 @@
             "text":"Can be used to cancel all action cards, including employ retainer, recruit ally and political action.",
             "refs":{
                 "ANK 20200813-2":"https://www.vekn.net/forum/rules-questions/78799-rewind-time-inf-and-action-cards#100526"
-            }
-        }
-    ],
-    "101559":[
-        {
-            "text":"[ANI][AUS] Can be used by a vampire who is already attempting to block.",
-            "refs":{
-                "ANK 20181122-2":"https://www.vekn.net/forum/rules-questions/77176-eagle-s-sight-and-guardian-vigil#91965"
-            }
-        },
-        {
-            "text":"[ANI][AUS] If the action lacks a suitable target because of the unlock (e.g. {Ambush}), the block attempt still happens, as does the resulting combat if the block is successful.",
-            "refs":{
-                "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
             }
         }
     ],
@@ -14241,44 +14191,6 @@
             }
         }
     ],
-    "101706":[
-        {
-            "text":"Can be used by a locked a vampire who is already attempting to block (eg. if he played a wake effect before)\".",
-            "refs":{
-                "ANK 20181122-2":"https://www.vekn.net/forum/rules-questions/77176-eagle-s-sight-and-guardian-vigil#91965"
-            }
-        },
-        {
-            "text":"Cannot be used if the vampire cannot attempt to block the action (eg. {Daring the Dawn}).",
-            "refs":{
-                "LSJ 20010714-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9U-jt3p3R_Q/m/WxDJwkgc25kJ"
-            }
-        },
-        {
-            "text":"Does not ignore the normal prey, predator or target restrictions.",
-            "refs":{
-                "ANK 20180623":"https://www.vekn.net/forum/rules-questions/76748-black-sunrise#88361"
-            }
-        },
-        {
-            "text":"The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}).",
-            "refs":{
-                "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
-            }
-        },
-        {
-            "text":"The card cannot be played if the minion cannot afford to burn the blood.",
-            "refs":{
-                "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
-            }
-        },
-        {
-            "text":"If the action lacks a suitable target because of the unlock (e.g. {Ambush}), the block attempt still happens, as does the resulting combat if the block is successful.",
-            "refs":{
-                "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
-            }
-        }
-    ],
     "101707":[
         {
             "text":"If put into play with no counters (X=0), it burns immediately.",
@@ -14339,53 +14251,6 @@
             "text":"If contested, it will not be burned when the target (vampire) goes to torpor, nor will it be burned if it enters play while the target vampire is in torpor.",
             "refs":{
                 "RTR 19960124":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/wF82VdVPlm0/m/cSshmBFQs-EJ"
-            }
-        }
-    ],
-    "101714":[
-        {
-            "text":"[QUI] No other effect can be used to reset the range, but other pre-range effects can be played afterwards.",
-            "refs":{
-                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
-                "ANK 20180720":"https://www.vekn.net/forum/rules-questions/76840-setting-range-and-pre-range#89125"
-            }
-        },
-        {
-            "text":"[QUI] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}).",
-            "refs":{
-                "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
-            }
-        },
-        {
-            "text":"[QUI] The card cannot be played if the minion cannot afford to burn the blood.",
-            "refs":{
-                "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
-            }
-        }
-    ],
-    "101717":[
-        {
-            "text":"[ANI] Can be used by a vampire who is already attempting to block.",
-            "refs":{
-                "ANK 20181122-2":"https://www.vekn.net/forum/rules-questions/77176-eagle-s-sight-and-guardian-vigil#91965"
-            }
-        },
-        {
-            "text":"[ANI] Cannot be used if the vampire cannot attempt to block the action (eg. {Daring the Dawn}).",
-            "refs":{
-                "LSJ 20010714-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9U-jt3p3R_Q/m/WxDJwkgc25kJ"
-            }
-        },
-        {
-            "text":"[ANI] Does not ignore the normal prey, predator or target restrictions.",
-            "refs":{
-                "ANK 20180623":"https://www.vekn.net/forum/rules-questions/76748-black-sunrise#88361"
-            }
-        },
-        {
-            "text":"[ANI] If the action lacks a suitable target because of the unlock (e.g. {Ambush}), the block attempt still happens, as does the resulting combat if the block is successful.",
-            "refs":{
-                "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
             }
         }
     ],
@@ -14746,27 +14611,6 @@
             "text":"[PRO] The optional press can only be used during the current round.",
             "refs":{
                 "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
-            }
-        }
-    ],
-    "101744":[
-        {
-            "text":"[OBT] No other effect can be used to reset the range afterwards, but other pre-range effects can be played afterwards.",
-            "refs":{
-                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
-                "ANK 20180720":"https://www.vekn.net/forum/rules-questions/76840-setting-range-and-pre-range#89125"
-            }
-        },
-        {
-            "text":"[OBT] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}).",
-            "refs":{
-                "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
-            }
-        },
-        {
-            "text":"[OBT] The card cannot be played if the minion cannot afford to burn the blood.",
-            "refs":{
-                "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
             }
         }
     ],
@@ -15240,13 +15084,6 @@
     ],
     "101816":[
         {
-            "text":"When setting the range for the round, no other effect can be used to reset the range, but other pre-range effects can be played afterwards.",
-            "refs":{
-                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
-                "ANK 20180720":"https://www.vekn.net/forum/rules-questions/76840-setting-range-and-pre-range#89125"
-            }
-        },
-        {
             "text":"The bearer is not commited to use it if he or she uses another effect to set the range.",
             "refs":{
                 "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ"
@@ -15274,6 +15111,19 @@
             "text":"When used to set range, you may choose not to strike if another card gives the option not to strike (e.g. {Lucian, the Perfect}, {Dam the Heart's River}) was played after Sniper Rifle was used to set range",
             "refs":{
                 "LSJ 20071017":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Ei307R78l4A/m/PYe-fYT8BqkJ"
+            }
+        },
+        {
+            "text":"Once the range is set, no other effect can be used to reset the range that round, but other pre-range effects can be played afterwards. Skip the Determine Range step for that round.",
+            "refs":{
+                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
+                "ANK 20180720":"https://www.vekn.net/forum/rules-questions/76840-setting-range-and-pre-range#89125"
+            }
+        },
+        {
+            "text":"If another effect was already setting that round's range (e.g. {Neutral Guard}), that effect has priority.",
+            "refs":{
+                "PIB 20120214":"https://www.vekn.net/forum/rules-questions/22906-re-set-the-range?start=12#22999"
             }
         }
     ],
@@ -15439,41 +15289,6 @@
             "refs":{
                 "PIB 20150821":"https://www.vekn.net/forum/rules-questions/72609-sowing-dissension?start=6#72632",
                 "RTR 20080808":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/1jW6GXrIRSU/m/8QTYL98kB0gJ"
-            }
-        }
-    ],
-    "101840":[
-        {
-            "text":"[SPI] Can be used by a vampire who is already attempting to block.",
-            "refs":{
-                "ANK 20181122-2":"https://www.vekn.net/forum/rules-questions/77176-eagle-s-sight-and-guardian-vigil#91965"
-            }
-        },
-        {
-            "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
-            "refs":{
-                "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
-                "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
-            }
-        },
-        {
-            "text":"[SPI] If the action lacks a suitable target because of the unlock (e.g. {Ambush}), the block attempt still happens, as does the resulting combat if the block is successful.",
-            "refs":{
-                "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
-            }
-        }
-    ],
-    "101841":[
-        {
-            "text":"Can be used on a vampire who is already attempting to block\".",
-            "refs":{
-                "ANK 20181122-2":"https://www.vekn.net/forum/rules-questions/77176-eagle-s-sight-and-guardian-vigil#91965"
-            }
-        },
-        {
-            "text":"If the action lacks a suitable target because of the unlock (e.g. {Ambush}), the block attempt still happens, as does the resulting combat if the block is successful.",
-            "refs":{
-                "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
             }
         }
     ],
@@ -15669,13 +15484,6 @@
             }
         },
         {
-            "text":"[cel] If blocked, no other effect can be used to reset the range, but other pre-range effects can be played.",
-            "refs":{
-                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
-                "ANK 20180720":"https://www.vekn.net/forum/rules-questions/76840-setting-range-and-pre-range#89125"
-            }
-        },
-        {
             "text":"[cel] If another effect also sets the range, the first to resolve has priority (eg. {Asanbonsam Ghoul} and {Neutral Guard} resolve after).",
             "refs":{
                 "PIB 20120214":"https://www.vekn.net/forum/rules-questions/22906-re-set-the-range?start=12#22999"
@@ -15692,6 +15500,19 @@
             "text":"[spi]/[SPI] Can be played any time during the action before resolution; a block attempt is not required.",
             "refs":{
                 "LSJ 20020612":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/sC0pTtJJDj4/m/bD04Jy4pM_cJ"
+            }
+        },
+        {
+            "text":"[cel] Once the range is set, no other effect can be used to reset the range that round, but other pre-range effects can be played afterwards. Skip the Determine Range step for that round.",
+            "refs":{
+                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
+                "ANK 20180720":"https://www.vekn.net/forum/rules-questions/76840-setting-range-and-pre-range#89125"
+            }
+        },
+        {
+            "text":"[cel] If another effect was already setting that round's range (e.g. {Neutral Guard}), that effect has priority.",
+            "refs":{
+                "PIB 20120214":"https://www.vekn.net/forum/rules-questions/22906-re-set-the-range?start=12#22999"
             }
         }
     ],
@@ -15863,6 +15684,19 @@
     "101878":[
         {
             "text":"If another effect also sets the range, the first to resolve has priority.",
+            "refs":{
+                "PIB 20120214":"https://www.vekn.net/forum/rules-questions/22906-re-set-the-range?start=12#22999"
+            }
+        },
+        {
+            "text":"Once the range is set, no other effect can be used to reset the range that round, but other pre-range effects can be played afterwards. Skip the Determine Range step for that round.",
+            "refs":{
+                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
+                "ANK 20180720":"https://www.vekn.net/forum/rules-questions/76840-setting-range-and-pre-range#89125"
+            }
+        },
+        {
+            "text":"If another effect was already setting that round's range (e.g. {Neutral Guard}), that effect has priority.",
             "refs":{
                 "PIB 20120214":"https://www.vekn.net/forum/rules-questions/22906-re-set-the-range?start=12#22999"
             }
@@ -16659,13 +16493,6 @@
             }
         },
         {
-            "text":"When setting the range for the round, no other effect can be used to reset the range. Skip the determine range step on that round, but other pre-range effects can be played afterwards.",
-            "refs":{
-                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
-                "ANK 20180720":"https://www.vekn.net/forum/rules-questions/76840-setting-range-and-pre-range#89125"
-            }
-        },
-        {
             "text":"The additional damage is the same type as the strike's damage.",
             "refs":{
                 "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ"
@@ -16682,6 +16509,19 @@
             "refs":{
                 "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J",
                 "PIB 20130319":"https://www.vekn.net/forum/rules-questions/46164-catatonic-fear-and-loving-agony#46168"
+            }
+        },
+        {
+            "text":"Once the range is set, no other effect can be used to reset the range that round, but other pre-range effects can be played afterwards. Skip the Determine Range step for that round.",
+            "refs":{
+                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
+                "ANK 20180720":"https://www.vekn.net/forum/rules-questions/76840-setting-range-and-pre-range#89125"
+            }
+        },
+        {
+            "text":"If another effect was already setting that round's range (e.g. {Neutral Guard}), that effect has priority.",
+            "refs":{
+                "PIB 20120214":"https://www.vekn.net/forum/rules-questions/22906-re-set-the-range?start=12#22999"
             }
         }
     ],
@@ -17394,26 +17234,6 @@
             }
         }
     ],
-    "102031":[
-        {
-            "text":"Cannot be used to unlock if the vampire cannot attempt to block the action (eg. {Daring the Dawn}).",
-            "refs":{
-                "LSJ 20010714-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9U-jt3p3R_Q/m/WxDJwkgc25kJ"
-            }
-        },
-        {
-            "text":"When used to block, does not ignore the normal prey, predator or target restrictions.",
-            "refs":{
-                "ANK 20180623":"https://www.vekn.net/forum/rules-questions/76748-black-sunrise#88361"
-            }
-        },
-        {
-            "text":"If the action lacks a suitable target because of the unlock (e.g. {Ambush}), the block attempt still happens, as does the resulting combat if the block is successful.",
-            "refs":{
-                "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
-            }
-        }
-    ],
     "102032":[
         {
             "text":"Is a non-derivative hunting ground (ie. taken into account by {Poacher's Hunting Ground}), even if not active yet.",
@@ -17589,21 +17409,15 @@
     ],
     "102063":[
         {
-            "text":"Cannot be used to unlock if the vampire cannot attempt to block the action (eg. {Daring the Dawn}).",
-            "refs":{
-                "LSJ 20010714-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9U-jt3p3R_Q/m/WxDJwkgc25kJ"
-            }
-        },
-        {
-            "text":"When used to block, does not ignore the normal prey, predator or target restrictions.",
-            "refs":{
-                "ANK 20180623":"https://www.vekn.net/forum/rules-questions/76748-black-sunrise#88361"
-            }
-        },
-        {
             "text":"Can be used for intercept even if the vampire is already unlocked.",
             "refs":{
                 "PIB 20150216":"https://www.vekn.net/forum/rules-questions/57153-can-you-untap-an-untapped-vampire-minion?start=6#69272"
+            }
+        },
+        {
+            "text":"If the action lacks a suitable target because of the unlock (e.g. {Ambush}), the block attempt still happens, as does the resulting combat if the block is successful.",
+            "refs":{
+                "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
             }
         },
         {
@@ -17613,9 +17427,15 @@
             }
         },
         {
-            "text":"If the action lacks a suitable target because of the unlock (e.g. {Ambush}), the block attempt still happens, as does the resulting combat if the block is successful.",
+            "text":"Cannot be used if the vampire cannot attempt to block the action (eg. {Daring the Dawn}).",
             "refs":{
-                "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
+                "LSJ 20010714-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9U-jt3p3R_Q/m/WxDJwkgc25kJ"
+            }
+        },
+        {
+            "text":"Does not ignore the normal prey, predator or target restrictions.",
+            "refs":{
+                "ANK 20180623":"https://www.vekn.net/forum/rules-questions/76748-black-sunrise#88361"
             }
         }
     ],
@@ -18940,27 +18760,6 @@
             }
         }
     ],
-    "102230":[
-        {
-            "text":"Cannot be used if the vampire cannot attempt to block the action (eg. {Daring the Dawn}).",
-            "refs":{
-                "LSJ 20010714-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9U-jt3p3R_Q/m/WxDJwkgc25kJ"
-            }
-        },
-        {
-            "text":"Counts as requiring an Anarch (for eg. {Powerbase: Los Angeles}).",
-            "refs":{
-                "LSJ 20080603":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/LuT1iK1b4QIJ",
-                "LSJ 20050128":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HVy8iPUxNbI/m/ZHGTnprQjGUJ"
-            }
-        },
-        {
-            "text":"If the action lacks a suitable target because of the unlock (e.g. {Ambush}), the block attempt still happens, as does the resulting combat if the block is successful.",
-            "refs":{
-                "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
-            }
-        }
-    ],
     "102232":[
         {
             "text":"[pro] The minion getting the corruption counter is chosen at action resolution (not declaration).",
@@ -19024,15 +18823,6 @@
             "text":"Once used, it becomes a typeless card and cannot be used as a weapon anymore.",
             "refs":{
                 "ANK 20220818":"https://www.vekn.net/forum/rules-questions/79972-is-enhanced-coagulant-still-an-equipment-after-a-successful-strike?start=6#106039"
-            }
-        }
-    ],
-    "102239":[
-        {
-            "text":"If used to set the range, no other effect can be used to reset the range. Skip the determine range step on that round, but other pre-range effects can be played afterwards.",
-            "refs":{
-                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
-                "ANK 20180720":"https://www.vekn.net/forum/rules-questions/76840-setting-range-and-pre-range#89125"
             }
         }
     ],
@@ -19236,6 +19026,24 @@
             "text":"[PRO] If the action lacks a suitable target because of the unlock (e.g. {Ambush}), the block attempt still happens, as does the resulting combat if the block is successful.",
             "refs":{
                 "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
+            }
+        },
+        {
+            "text":"[PRO] Can be used by a vampire who is already attempting to block.",
+            "refs":{
+                "ANK 20181122-2":"https://www.vekn.net/forum/rules-questions/77176-eagle-s-sight-and-guardian-vigil#91965"
+            }
+        },
+        {
+            "text":"[PRO] Cannot be used if the vampire cannot attempt to block the action (eg. {Daring the Dawn}).",
+            "refs":{
+                "LSJ 20010714-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9U-jt3p3R_Q/m/WxDJwkgc25kJ"
+            }
+        },
+        {
+            "text":"[PRO] Does not ignore the normal prey, predator or target restrictions.",
+            "refs":{
+                "ANK 20180623":"https://www.vekn.net/forum/rules-questions/76748-black-sunrise#88361"
             }
         }
     ],
@@ -20017,14 +19825,6 @@
             }
         }
     ],
-    "200245":[
-        {
-            "text":"The card being retrieved is announced when the action is declared.",
-            "refs":{
-                "LSJ 19970922":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/k0Lih9MQf3U/m/VEkGLwInIq8J"
-            }
-        }
-    ],
     "200247":[
         {
             "text":"Her additional life ability applies and her stealth ability can be used when she is in torpor.",
@@ -20368,6 +20168,14 @@
             "text":"Can only use her ability when she is in combat herself.",
             "refs":{
                 "ANK 20221021":"https://www.vekn.net/forum/rules-questions/80108-patagia#106628"
+            }
+        },
+        {
+            "text":"The equipment or retainer must be announced by name, and in hand, when the card or effect is declared (before the card, if any, is replaced), but need not to be shown until the effect resolves.",
+            "refs":{
+                "LSJ 20100130":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/X8Uu7Sk56P4/m/twUvR4ZnBBkJ",
+                "ANK 20180925-2":"https://www.vekn.net/forum/rules-questions/77029-order-of-draw-and-replace-for-concealed-weapon-under-infernal-pursuit?start=6#90757",
+                "LSJ 19991207":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aQaOTYwC-fg/m/vdyo09QZoicJ"
             }
         }
     ],
@@ -22857,6 +22665,14 @@
                 "LSJ 20070322":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Ww-4rYJxi4w/m/P3QchWVq2o4J",
                 "ANK 20180807":"https://www.vekn.net/forum/rules-questions/76905-going-anarch-as-black-hand#89735"
             }
+        },
+        {
+            "text":"The equipment or retainer must be announced by name, and in hand, when the card or effect is declared (before the card, if any, is replaced), but need not to be shown until the effect resolves.",
+            "refs":{
+                "LSJ 20100130":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/X8Uu7Sk56P4/m/twUvR4ZnBBkJ",
+                "ANK 20180925-2":"https://www.vekn.net/forum/rules-questions/77029-order-of-draw-and-replace-for-concealed-weapon-under-infernal-pursuit?start=6#90757",
+                "LSJ 19991207":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aQaOTYwC-fg/m/vdyo09QZoicJ"
+            }
         }
     ],
     "201471":[
@@ -23421,14 +23237,6 @@
             "text":"Burning the card for a vote is not considered playing it.",
             "refs":{
                 "ANK 20210309-2":"https://www.vekn.net/forum/rules-questions/79005-rulebook-gaining-votes?start=6#101807"
-            }
-        }
-    ],
-    "G00031":[
-        {
-            "text":"The vampire's controller chooses to use the effect of the card or not.",
-            "refs":{
-                "ANK 20210309-3":"https://www.vekn.net/forum/rules-questions/79065-master-cards-attached-to-a-stolen-minion#101806"
             }
         }
     ],
@@ -24112,21 +23920,6 @@
             }
         }
     ],
-    "G00100":[
-        {
-            "text":"No other effect can be used to reset next round's range, but other pre-range effects can be played.",
-            "refs":{
-                "ANK 20180720":"https://www.vekn.net/forum/rules-questions/76840-setting-range-and-pre-range#89125",
-                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ"
-            }
-        },
-        {
-            "text":"If another effect was already setting next round's range (e.g. {Neutral Guard}), that effect has priority.",
-            "refs":{
-                "PIB 20120214":"https://www.vekn.net/forum/rules-questions/22906-re-set-the-range?start=12#22999"
-            }
-        }
-    ],
     "G00101":[
         {
             "text":"The provided press is applied before any other press. Another press cannot be used to continue (eg. {Boxed In}, {Talbot's Chainsaw}) if there's already a press to continue.",
@@ -24388,6 +24181,77 @@
             "text":"If the action lacks a suitable target because of the unlock (e.g. {Ambush}), the block attempt still happens, as does the resulting combat if the block is successful.",
             "refs":{
                 "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
+            }
+        }
+    ],
+    "G00124":[
+        {
+            "text":"Can be used by a vampire who is already attempting to block.",
+            "refs":{
+                "ANK 20181122-2":"https://www.vekn.net/forum/rules-questions/77176-eagle-s-sight-and-guardian-vigil#91965"
+            }
+        },
+        {
+            "text":"Cannot be used if the vampire cannot attempt to block the action (eg. {Daring the Dawn}).",
+            "refs":{
+                "LSJ 20010714-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9U-jt3p3R_Q/m/WxDJwkgc25kJ"
+            }
+        },
+        {
+            "text":"Does not ignore the normal prey, predator or target restrictions.",
+            "refs":{
+                "ANK 20180623":"https://www.vekn.net/forum/rules-questions/76748-black-sunrise#88361"
+            }
+        }
+    ],
+    "G00125":[
+        {
+            "text":"Both the card in the ash heap and the card in hand have to be named when announcing the action or effect.",
+            "refs":{
+                "LSJ 20000222":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/MkZPpcvlChQ/m/1l5f7ItJcS4J",
+                "LSJ 20011023":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/2GOLIrXAF8M/m/P4T3Dj6UNL0J"
+            }
+        }
+    ],
+    "G00126":[
+        {
+            "text":"Cannot be played when the target crypt is empty.",
+            "refs":{
+                "RTR 20000501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/MKrA0hBXuaU/m/1M5LOLftKWAJ",
+                "LSJ 20070411-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-B6BlRIT0Rg/m/VOYol5mcbO8J"
+            }
+        }
+    ],
+    "G00127":[
+        {
+            "text":"Once the range is set, no other effect can be used to reset the range that round, but other pre-range effects can be played afterwards. Skip the Determine Range step for that round.",
+            "refs":{
+                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
+                "ANK 20180720":"https://www.vekn.net/forum/rules-questions/76840-setting-range-and-pre-range#89125"
+            }
+        },
+        {
+            "text":"If another effect was already setting that round's range (e.g. {Neutral Guard}), that effect has priority.",
+            "refs":{
+                "PIB 20120214":"https://www.vekn.net/forum/rules-questions/22906-re-set-the-range?start=12#22999"
+            }
+        }
+    ],
+    "G00128":[
+        {
+            "text":"The equipment or retainer must be announced by name, and in hand, when the card or effect is declared (before the card, if any, is replaced), but need not to be shown until the effect resolves.",
+            "refs":{
+                "LSJ 20100130":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/X8Uu7Sk56P4/m/twUvR4ZnBBkJ",
+                "ANK 20180925-2":"https://www.vekn.net/forum/rules-questions/77029-order-of-draw-and-replace-for-concealed-weapon-under-infernal-pursuit?start=6#90757",
+                "LSJ 19991207":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aQaOTYwC-fg/m/vdyo09QZoicJ"
+            }
+        }
+    ],
+    "G00129":[
+        {
+            "text":"If the round ends before range is determined (e.g. {Alpha Glint}) Range is assumed to be at default (usually close, unless e.g. [dai]{Fear of the Void Below} was played), unless range was set by another effect (e.g. {Sniper Rifle}, [obe]{Neutral Guard})",
+            "refs":{
+                "LSJ 20100709":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/j98aqFIFjnE/m/h_FjFos8S2UJ"
             }
         }
     ],
@@ -28187,14 +28051,6 @@
             }
         }
     ],
-    "100425":[
-        {
-            "text":"The vampire's controller chooses to use the effect of the card or not.",
-            "refs":{
-                "ANK 20210309-3":"https://www.vekn.net/forum/rules-questions/79065-master-cards-attached-to-a-stolen-minion#101806"
-            }
-        }
-    ],
     "100242":[
         {
             "text":"X can be zero.",
@@ -28570,6 +28426,39 @@
             "text":"Cannot be used to direct a bleed to a Methuselah who would be an invalid target for a bleed.",
             "refs":{
                 "PIB 20130711":"https://www.vekn.net/forum/rules-questions/51279-big-boon-bounce?fbclid=IwAR3-kLQKFt415mAPpGL0sYpi4yx6ZzJbiyP57z3R6nkIW7V-g0F93z_ob-s#51307"
+            }
+        }
+    ],
+    "102230":[
+        {
+            "text":"Counts as requiring an Anarch (for eg. {Powerbase: Los Angeles}).",
+            "refs":{
+                "LSJ 20080603":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/LuT1iK1b4QIJ",
+                "LSJ 20050128":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HVy8iPUxNbI/m/ZHGTnprQjGUJ"
+            }
+        },
+        {
+            "text":"If the action lacks a suitable target because of the unlock (e.g. {Ambush}), the block attempt still happens, as does the resulting combat if the block is successful.",
+            "refs":{
+                "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
+            }
+        },
+        {
+            "text":"Can be used by a vampire who is already attempting to block.",
+            "refs":{
+                "ANK 20181122-2":"https://www.vekn.net/forum/rules-questions/77176-eagle-s-sight-and-guardian-vigil#91965"
+            }
+        },
+        {
+            "text":"Cannot be used if the vampire cannot attempt to block the action (eg. {Daring the Dawn}).",
+            "refs":{
+                "LSJ 20010714-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9U-jt3p3R_Q/m/WxDJwkgc25kJ"
+            }
+        },
+        {
+            "text":"Does not ignore the normal prey, predator or target restrictions.",
+            "refs":{
+                "ANK 20180623":"https://www.vekn.net/forum/rules-questions/76748-black-sunrise#88361"
             }
         }
     ],
@@ -29058,6 +28947,28 @@
             "refs":{
                 "ANK 20200203-2":"https://www.vekn.net/forum/rules-questions/78415-is-ghoul-mortal#98872",
                 "LSJ 20060515":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/bzusnKlnYr8/m/OSMvzE7YjokJ"
+            }
+        }
+    ],
+    "101320":[
+        {
+            "text":"Ghouls are monsters, not mortal.",
+            "refs":{
+                "ANK 20200203-2":"https://www.vekn.net/forum/rules-questions/78415-is-ghoul-mortal#98872",
+                "LSJ 20060515":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/bzusnKlnYr8/m/OSMvzE7YjokJ"
+            }
+        },
+        {
+            "text":"Once the range is set, no other effect can be used to reset the range that round, but other pre-range effects can be played afterwards. Skip the Determine Range step for that round.",
+            "refs":{
+                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
+                "ANK 20180720":"https://www.vekn.net/forum/rules-questions/76840-setting-range-and-pre-range#89125"
+            }
+        },
+        {
+            "text":"If another effect was already setting that round's range (e.g. {Neutral Guard}), that effect has priority.",
+            "refs":{
+                "PIB 20120214":"https://www.vekn.net/forum/rules-questions/22906-re-set-the-range?start=12#22999"
             }
         }
     ],
@@ -32018,6 +31929,98 @@
             }
         }
     ],
+    "101706":[
+        {
+            "text":"The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}).",
+            "refs":{
+                "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
+            }
+        },
+        {
+            "text":"The card cannot be played if the minion cannot afford to burn the blood.",
+            "refs":{
+                "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
+            }
+        },
+        {
+            "text":"If the action lacks a suitable target because of the unlock (e.g. {Ambush}), the block attempt still happens, as does the resulting combat if the block is successful.",
+            "refs":{
+                "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
+            }
+        },
+        {
+            "text":"Can be used by a vampire who is already attempting to block.",
+            "refs":{
+                "ANK 20181122-2":"https://www.vekn.net/forum/rules-questions/77176-eagle-s-sight-and-guardian-vigil#91965"
+            }
+        },
+        {
+            "text":"Cannot be used if the vampire cannot attempt to block the action (eg. {Daring the Dawn}).",
+            "refs":{
+                "LSJ 20010714-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9U-jt3p3R_Q/m/WxDJwkgc25kJ"
+            }
+        },
+        {
+            "text":"Does not ignore the normal prey, predator or target restrictions.",
+            "refs":{
+                "ANK 20180623":"https://www.vekn.net/forum/rules-questions/76748-black-sunrise#88361"
+            }
+        }
+    ],
+    "101714":[
+        {
+            "text":"[QUI] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}).",
+            "refs":{
+                "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
+            }
+        },
+        {
+            "text":"[QUI] The card cannot be played if the minion cannot afford to burn the blood.",
+            "refs":{
+                "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
+            }
+        },
+        {
+            "text":"[QUI] Once the range is set, no other effect can be used to reset the range that round, but other pre-range effects can be played afterwards. Skip the Determine Range step for that round.",
+            "refs":{
+                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
+                "ANK 20180720":"https://www.vekn.net/forum/rules-questions/76840-setting-range-and-pre-range#89125"
+            }
+        },
+        {
+            "text":"[QUI] If another effect was already setting that round's range (e.g. {Neutral Guard}), that effect has priority.",
+            "refs":{
+                "PIB 20120214":"https://www.vekn.net/forum/rules-questions/22906-re-set-the-range?start=12#22999"
+            }
+        }
+    ],
+    "101744":[
+        {
+            "text":"[OBT] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}).",
+            "refs":{
+                "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
+            }
+        },
+        {
+            "text":"[OBT] The card cannot be played if the minion cannot afford to burn the blood.",
+            "refs":{
+                "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
+            }
+        },
+        {
+            "text":"[OBT] Once the range is set, no other effect can be used to reset the range that round, but other pre-range effects can be played afterwards. Skip the Determine Range step for that round.",
+            "refs":{
+                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
+                "ANK 20180720":"https://www.vekn.net/forum/rules-questions/76840-setting-range-and-pre-range#89125"
+            }
+        },
+        {
+            "text":"[OBT] If another effect was already setting that round's range (e.g. {Neutral Guard}), that effect has priority.",
+            "refs":{
+                "PIB 20120214":"https://www.vekn.net/forum/rules-questions/22906-re-set-the-range?start=12#22999"
+            }
+        }
+    ],
     "101875":[
         {
             "text":"[obt] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}).",
@@ -33110,6 +33113,28 @@
             }
         }
     ],
+    "100252":[
+        {
+            "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
+            "refs":{
+                "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
+                "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+            }
+        },
+        {
+            "text":"[VIS] Once the range is set, no other effect can be used to reset the range that round, but other pre-range effects can be played afterwards. Skip the Determine Range step for that round.",
+            "refs":{
+                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
+                "ANK 20180720":"https://www.vekn.net/forum/rules-questions/76840-setting-range-and-pre-range#89125"
+            }
+        },
+        {
+            "text":"[VIS] If another effect was already setting that round's range (e.g. {Neutral Guard}), that effect has priority.",
+            "refs":{
+                "PIB 20120214":"https://www.vekn.net/forum/rules-questions/22906-re-set-the-range?start=12#22999"
+            }
+        }
+    ],
     "100270":[
         {
             "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
@@ -33145,12 +33170,35 @@
             }
         }
     ],
+    "100359":[
+        {
+            "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
+            "refs":{
+                "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
+                "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+            }
+        },
+        {
+            "text":"[tem] Both the card in the ash heap and the card in hand have to be named when announcing the action or effect.",
+            "refs":{
+                "LSJ 20000222":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/MkZPpcvlChQ/m/1l5f7ItJcS4J",
+                "LSJ 20011023":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/2GOLIrXAF8M/m/P4T3Dj6UNL0J"
+            }
+        }
+    ],
     "100365":[
         {
             "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
             "refs":{
                 "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
                 "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+            }
+        },
+        {
+            "text":"[obf] Cannot be played when the target crypt is empty.",
+            "refs":{
+                "RTR 20000501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/MKrA0hBXuaU/m/1M5LOLftKWAJ",
+                "LSJ 20070411-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-B6BlRIT0Rg/m/VOYol5mcbO8J"
             }
         }
     ],
@@ -33395,6 +33443,39 @@
             }
         }
     ],
+    "101233":[
+        {
+            "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
+            "refs":{
+                "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
+                "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+            }
+        },
+        {
+            "text":"[ani] If the action lacks a suitable target because of the unlock (e.g. {Ambush}), the block attempt still happens, as does the resulting combat if the block is successful.",
+            "refs":{
+                "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
+            }
+        },
+        {
+            "text":"[ani] Can be used by a vampire who is already attempting to block.",
+            "refs":{
+                "ANK 20181122-2":"https://www.vekn.net/forum/rules-questions/77176-eagle-s-sight-and-guardian-vigil#91965"
+            }
+        },
+        {
+            "text":"[ani] Cannot be used if the vampire cannot attempt to block the action (eg. {Daring the Dawn}).",
+            "refs":{
+                "LSJ 20010714-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9U-jt3p3R_Q/m/WxDJwkgc25kJ"
+            }
+        },
+        {
+            "text":"[ani] Does not ignore the normal prey, predator or target restrictions.",
+            "refs":{
+                "ANK 20180623":"https://www.vekn.net/forum/rules-questions/76748-black-sunrise#88361"
+            }
+        }
+    ],
     "101381":[
         {
             "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
@@ -33474,6 +33555,39 @@
             "refs":{
                 "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
                 "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+            }
+        }
+    ],
+    "101840":[
+        {
+            "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
+            "refs":{
+                "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
+                "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+            }
+        },
+        {
+            "text":"[SPI] If the action lacks a suitable target because of the unlock (e.g. {Ambush}), the block attempt still happens, as does the resulting combat if the block is successful.",
+            "refs":{
+                "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
+            }
+        },
+        {
+            "text":"[SPI] Can be used by a vampire who is already attempting to block.",
+            "refs":{
+                "ANK 20181122-2":"https://www.vekn.net/forum/rules-questions/77176-eagle-s-sight-and-guardian-vigil#91965"
+            }
+        },
+        {
+            "text":"[SPI] Cannot be used if the vampire cannot attempt to block the action (eg. {Daring the Dawn}).",
+            "refs":{
+                "LSJ 20010714-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9U-jt3p3R_Q/m/WxDJwkgc25kJ"
+            }
+        },
+        {
+            "text":"[SPI] Does not ignore the normal prey, predator or target restrictions.",
+            "refs":{
+                "ANK 20180623":"https://www.vekn.net/forum/rules-questions/76748-black-sunrise#88361"
             }
         }
     ],
@@ -33778,6 +33892,27 @@
             }
         }
     ],
+    "100376":[
+        {
+            "text":"[NEC] The optional press can only be used during the current round.",
+            "refs":{
+                "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
+            }
+        },
+        {
+            "text":"Once the range is set, no other effect can be used to reset the range that round, but other pre-range effects can be played afterwards. Skip the Determine Range step for that round.",
+            "refs":{
+                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
+                "ANK 20180720":"https://www.vekn.net/forum/rules-questions/76840-setting-range-and-pre-range#89125"
+            }
+        },
+        {
+            "text":"If another effect was already setting that round's range (e.g. {Neutral Guard}), that effect has priority.",
+            "refs":{
+                "PIB 20120214":"https://www.vekn.net/forum/rules-questions/22906-re-set-the-range?start=12#22999"
+            }
+        }
+    ],
     "100558":[
         {
             "text":"[PRO] The optional press can only be used during the current round.",
@@ -33802,14 +33937,14 @@
             }
         },
         {
-            "text":"[SER] No other effect can be used to reset next round's range, but other pre-range effects can be played.",
+            "text":"[SER] Once the range is set, no other effect can be used to reset the range that round, but other pre-range effects can be played afterwards. Skip the Determine Range step for that round.",
             "refs":{
-                "ANK 20180720":"https://www.vekn.net/forum/rules-questions/76840-setting-range-and-pre-range#89125",
-                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ"
+                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
+                "ANK 20180720":"https://www.vekn.net/forum/rules-questions/76840-setting-range-and-pre-range#89125"
             }
         },
         {
-            "text":"[SER] If another effect was already setting next round's range (e.g. {Neutral Guard}), that effect has priority.",
+            "text":"[SER] If another effect was already setting that round's range (e.g. {Neutral Guard}), that effect has priority.",
             "refs":{
                 "PIB 20120214":"https://www.vekn.net/forum/rules-questions/22906-re-set-the-range?start=12#22999"
             }
@@ -34659,6 +34794,27 @@
             }
         }
     ],
+    "100832":[
+        {
+            "text":"They can lock to use their ability the turn they where recruited.",
+            "refs":{
+                "ANK 20180517":"https://www.vekn.net/forum/rules-questions/76447-rules-team-rulings-rtr-03-03-2018?start=30#87041"
+            }
+        },
+        {
+            "text":"Once the range is set, no other effect can be used to reset the range that round, but other pre-range effects can be played afterwards. Skip the Determine Range step for that round.",
+            "refs":{
+                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
+                "ANK 20180720":"https://www.vekn.net/forum/rules-questions/76840-setting-range-and-pre-range#89125"
+            }
+        },
+        {
+            "text":"If another effect was already setting that round's range (e.g. {Neutral Guard}), that effect has priority.",
+            "refs":{
+                "PIB 20120214":"https://www.vekn.net/forum/rules-questions/22906-re-set-the-range?start=12#22999"
+            }
+        }
+    ],
     "101650":[
         {
             "text":"They can lock to use their ability the turn they where recruited.",
@@ -34698,11 +34854,373 @@
             }
         }
     ],
+    "100171":[
+        {
+            "text":"[QUI] If the action lacks a suitable target because of the unlock (e.g. {Ambush}), the block attempt still happens, as does the resulting combat if the block is successful.",
+            "refs":{
+                "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
+            }
+        },
+        {
+            "text":"Can be used by a vampire who is already attempting to block.",
+            "refs":{
+                "ANK 20181122-2":"https://www.vekn.net/forum/rules-questions/77176-eagle-s-sight-and-guardian-vigil#91965"
+            }
+        },
+        {
+            "text":"Cannot be used if the vampire cannot attempt to block the action (eg. {Daring the Dawn}).",
+            "refs":{
+                "LSJ 20010714-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9U-jt3p3R_Q/m/WxDJwkgc25kJ"
+            }
+        },
+        {
+            "text":"Does not ignore the normal prey, predator or target restrictions.",
+            "refs":{
+                "ANK 20180623":"https://www.vekn.net/forum/rules-questions/76748-black-sunrise#88361"
+            }
+        }
+    ],
+    "100628":[
+        {
+            "text":"If the action lacks a suitable target because of the unlock (e.g. {Ambush}), the block attempt still happens, as does the resulting combat if the block is successful.",
+            "refs":{
+                "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
+            }
+        },
+        {
+            "text":"Can be used by a vampire who is already attempting to block.",
+            "refs":{
+                "ANK 20181122-2":"https://www.vekn.net/forum/rules-questions/77176-eagle-s-sight-and-guardian-vigil#91965"
+            }
+        },
+        {
+            "text":"Cannot be used if the vampire cannot attempt to block the action (eg. {Daring the Dawn}).",
+            "refs":{
+                "LSJ 20010714-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9U-jt3p3R_Q/m/WxDJwkgc25kJ"
+            }
+        },
+        {
+            "text":"Does not ignore the normal prey, predator or target restrictions.",
+            "refs":{
+                "ANK 20180623":"https://www.vekn.net/forum/rules-questions/76748-black-sunrise#88361"
+            }
+        }
+    ],
+    "100666":[
+        {
+            "text":"If the action lacks a suitable target because of the unlock (e.g. {Ambush}), the block attempt still happens, as does the resulting combat if the block is successful.",
+            "refs":{
+                "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
+            }
+        },
+        {
+            "text":"Can be used by a vampire who is already attempting to block.",
+            "refs":{
+                "ANK 20181122-2":"https://www.vekn.net/forum/rules-questions/77176-eagle-s-sight-and-guardian-vigil#91965"
+            }
+        },
+        {
+            "text":"Cannot be used if the vampire cannot attempt to block the action (eg. {Daring the Dawn}).",
+            "refs":{
+                "LSJ 20010714-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9U-jt3p3R_Q/m/WxDJwkgc25kJ"
+            }
+        },
+        {
+            "text":"Does not ignore the normal prey, predator or target restrictions.",
+            "refs":{
+                "ANK 20180623":"https://www.vekn.net/forum/rules-questions/76748-black-sunrise#88361"
+            }
+        }
+    ],
+    "101559":[
+        {
+            "text":"[ANI][AUS] If the action lacks a suitable target because of the unlock (e.g. {Ambush}), the block attempt still happens, as does the resulting combat if the block is successful.",
+            "refs":{
+                "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
+            }
+        },
+        {
+            "text":"[AUS][ANI] Can be used by a vampire who is already attempting to block.",
+            "refs":{
+                "ANK 20181122-2":"https://www.vekn.net/forum/rules-questions/77176-eagle-s-sight-and-guardian-vigil#91965"
+            }
+        },
+        {
+            "text":"[AUS][ANI] Cannot be used if the vampire cannot attempt to block the action (eg. {Daring the Dawn}).",
+            "refs":{
+                "LSJ 20010714-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9U-jt3p3R_Q/m/WxDJwkgc25kJ"
+            }
+        },
+        {
+            "text":"[AUS][ANI] Does not ignore the normal prey, predator or target restrictions.",
+            "refs":{
+                "ANK 20180623":"https://www.vekn.net/forum/rules-questions/76748-black-sunrise#88361"
+            }
+        }
+    ],
+    "101717":[
+        {
+            "text":"[ANI] If the action lacks a suitable target because of the unlock (e.g. {Ambush}), the block attempt still happens, as does the resulting combat if the block is successful.",
+            "refs":{
+                "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
+            }
+        },
+        {
+            "text":"[ANI] Can be used by a vampire who is already attempting to block.",
+            "refs":{
+                "ANK 20181122-2":"https://www.vekn.net/forum/rules-questions/77176-eagle-s-sight-and-guardian-vigil#91965"
+            }
+        },
+        {
+            "text":"[ANI] Cannot be used if the vampire cannot attempt to block the action (eg. {Daring the Dawn}).",
+            "refs":{
+                "LSJ 20010714-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9U-jt3p3R_Q/m/WxDJwkgc25kJ"
+            }
+        },
+        {
+            "text":"[ANI] Does not ignore the normal prey, predator or target restrictions.",
+            "refs":{
+                "ANK 20180623":"https://www.vekn.net/forum/rules-questions/76748-black-sunrise#88361"
+            }
+        }
+    ],
+    "101841":[
+        {
+            "text":"If the action lacks a suitable target because of the unlock (e.g. {Ambush}), the block attempt still happens, as does the resulting combat if the block is successful.",
+            "refs":{
+                "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
+            }
+        },
+        {
+            "text":"Can be used by a vampire who is already attempting to block.",
+            "refs":{
+                "ANK 20181122-2":"https://www.vekn.net/forum/rules-questions/77176-eagle-s-sight-and-guardian-vigil#91965"
+            }
+        },
+        {
+            "text":"Cannot be used if the vampire cannot attempt to block the action (eg. {Daring the Dawn}).",
+            "refs":{
+                "LSJ 20010714-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9U-jt3p3R_Q/m/WxDJwkgc25kJ"
+            }
+        },
+        {
+            "text":"Does not ignore the normal prey, predator or target restrictions.",
+            "refs":{
+                "ANK 20180623":"https://www.vekn.net/forum/rules-questions/76748-black-sunrise#88361"
+            }
+        }
+    ],
+    "102031":[
+        {
+            "text":"If the action lacks a suitable target because of the unlock (e.g. {Ambush}), the block attempt still happens, as does the resulting combat if the block is successful.",
+            "refs":{
+                "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
+            }
+        },
+        {
+            "text":"Can be used by a vampire who is already attempting to block.",
+            "refs":{
+                "ANK 20181122-2":"https://www.vekn.net/forum/rules-questions/77176-eagle-s-sight-and-guardian-vigil#91965"
+            }
+        },
+        {
+            "text":"Cannot be used if the vampire cannot attempt to block the action (eg. {Daring the Dawn}).",
+            "refs":{
+                "LSJ 20010714-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9U-jt3p3R_Q/m/WxDJwkgc25kJ"
+            }
+        },
+        {
+            "text":"Does not ignore the normal prey, predator or target restrictions.",
+            "refs":{
+                "ANK 20180623":"https://www.vekn.net/forum/rules-questions/76748-black-sunrise#88361"
+            }
+        }
+    ],
     "102222":[
         {
             "text":"If the action lacks a suitable target because of the unlock (e.g. {Ambush}), the block attempt still happens, as does the resulting combat if the block is successful.",
             "refs":{
                 "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
+            }
+        },
+        {
+            "text":"Can be used by a vampire who is already attempting to block.",
+            "refs":{
+                "ANK 20181122-2":"https://www.vekn.net/forum/rules-questions/77176-eagle-s-sight-and-guardian-vigil#91965"
+            }
+        },
+        {
+            "text":"Cannot be used if the vampire cannot attempt to block the action (eg. {Daring the Dawn}).",
+            "refs":{
+                "LSJ 20010714-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9U-jt3p3R_Q/m/WxDJwkgc25kJ"
+            }
+        },
+        {
+            "text":"Does not ignore the normal prey, predator or target restrictions.",
+            "refs":{
+                "ANK 20180623":"https://www.vekn.net/forum/rules-questions/76748-black-sunrise#88361"
+            }
+        }
+    ],
+    "100432":[
+        {
+            "text":"Can be used by a vampire who is already attempting to block.",
+            "refs":{
+                "ANK 20181122-2":"https://www.vekn.net/forum/rules-questions/77176-eagle-s-sight-and-guardian-vigil#91965"
+            }
+        },
+        {
+            "text":"Cannot be used if the vampire cannot attempt to block the action (eg. {Daring the Dawn}).",
+            "refs":{
+                "LSJ 20010714-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9U-jt3p3R_Q/m/WxDJwkgc25kJ"
+            }
+        },
+        {
+            "text":"Does not ignore the normal prey, predator or target restrictions.",
+            "refs":{
+                "ANK 20180623":"https://www.vekn.net/forum/rules-questions/76748-black-sunrise#88361"
+            }
+        }
+    ],
+    "101322":[
+        {
+            "text":"Can be used by a vampire who is already attempting to block.",
+            "refs":{
+                "ANK 20181122-2":"https://www.vekn.net/forum/rules-questions/77176-eagle-s-sight-and-guardian-vigil#91965"
+            }
+        },
+        {
+            "text":"Cannot be used if the vampire cannot attempt to block the action (eg. {Daring the Dawn}).",
+            "refs":{
+                "LSJ 20010714-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9U-jt3p3R_Q/m/WxDJwkgc25kJ"
+            }
+        },
+        {
+            "text":"Does not ignore the normal prey, predator or target restrictions.",
+            "refs":{
+                "ANK 20180623":"https://www.vekn.net/forum/rules-questions/76748-black-sunrise#88361"
+            }
+        }
+    ],
+    "200245":[
+        {
+            "text":"Both the card in the ash heap and the card in hand have to be named when announcing the action or effect.",
+            "refs":{
+                "LSJ 20000222":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/MkZPpcvlChQ/m/1l5f7ItJcS4J",
+                "LSJ 20011023":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/2GOLIrXAF8M/m/P4T3Dj6UNL0J"
+            }
+        }
+    ],
+    "201721":[
+        {
+            "text":"Both the card in the ash heap and the card in hand have to be named when announcing the action or effect.",
+            "refs":{
+                "LSJ 20000222":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/MkZPpcvlChQ/m/1l5f7ItJcS4J",
+                "LSJ 20011023":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/2GOLIrXAF8M/m/P4T3Dj6UNL0J"
+            }
+        }
+    ],
+    "100616":[
+        {
+            "text":"Cannot be played when the target crypt is empty.",
+            "refs":{
+                "RTR 20000501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/MKrA0hBXuaU/m/1M5LOLftKWAJ",
+                "LSJ 20070411-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-B6BlRIT0Rg/m/VOYol5mcbO8J"
+            }
+        }
+    ],
+    "100987":[
+        {
+            "text":"Cannot be played when the target crypt is empty.",
+            "refs":{
+                "RTR 20000501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/MKrA0hBXuaU/m/1M5LOLftKWAJ",
+                "LSJ 20070411-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-B6BlRIT0Rg/m/VOYol5mcbO8J"
+            }
+        }
+    ],
+    "101050":[
+        {
+            "text":"Cannot be played when the target crypt is empty.",
+            "refs":{
+                "RTR 20000501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/MKrA0hBXuaU/m/1M5LOLftKWAJ",
+                "LSJ 20070411-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-B6BlRIT0Rg/m/VOYol5mcbO8J"
+            }
+        }
+    ],
+    "101206":[
+        {
+            "text":"Cannot be played when the target crypt is empty.",
+            "refs":{
+                "RTR 20000501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/MKrA0hBXuaU/m/1M5LOLftKWAJ",
+                "LSJ 20070411-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-B6BlRIT0Rg/m/VOYol5mcbO8J"
+            }
+        }
+    ],
+    "101570":[
+        {
+            "text":"Cannot be played when the target crypt is empty.",
+            "refs":{
+                "RTR 20000501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/MKrA0hBXuaU/m/1M5LOLftKWAJ",
+                "LSJ 20070411-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-B6BlRIT0Rg/m/VOYol5mcbO8J"
+            }
+        }
+    ],
+    "102289":[
+        {
+            "text":"Cannot be played when the target crypt is empty.",
+            "refs":{
+                "RTR 20000501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/MKrA0hBXuaU/m/1M5LOLftKWAJ",
+                "LSJ 20070411-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-B6BlRIT0Rg/m/VOYol5mcbO8J"
+            }
+        }
+    ],
+    "101269":[
+        {
+            "text":"Once the range is set, no other effect can be used to reset the range that round, but other pre-range effects can be played afterwards. Skip the Determine Range step for that round.",
+            "refs":{
+                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
+                "ANK 20180720":"https://www.vekn.net/forum/rules-questions/76840-setting-range-and-pre-range#89125"
+            }
+        },
+        {
+            "text":"If another effect was already setting that round's range (e.g. {Neutral Guard}), that effect has priority.",
+            "refs":{
+                "PIB 20120214":"https://www.vekn.net/forum/rules-questions/22906-re-set-the-range?start=12#22999"
+            }
+        }
+    ],
+    "102239":[
+        {
+            "text":"Once the range is set, no other effect can be used to reset the range that round, but other pre-range effects can be played afterwards. Skip the Determine Range step for that round.",
+            "refs":{
+                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
+                "ANK 20180720":"https://www.vekn.net/forum/rules-questions/76840-setting-range-and-pre-range#89125"
+            }
+        },
+        {
+            "text":"If another effect was already setting that round's range (e.g. {Neutral Guard}), that effect has priority.",
+            "refs":{
+                "PIB 20120214":"https://www.vekn.net/forum/rules-questions/22906-re-set-the-range?start=12#22999"
+            }
+        }
+    ],
+    "100072":[
+        {
+            "text":"The equipment or retainer must be announced by name, and in hand, when the card or effect is declared (before the card, if any, is replaced), but need not to be shown until the effect resolves.",
+            "refs":{
+                "LSJ 20100130":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/X8Uu7Sk56P4/m/twUvR4ZnBBkJ",
+                "ANK 20180925-2":"https://www.vekn.net/forum/rules-questions/77029-order-of-draw-and-replace-for-concealed-weapon-under-infernal-pursuit?start=6#90757",
+                "LSJ 19991207":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aQaOTYwC-fg/m/vdyo09QZoicJ"
+            }
+        }
+    ],
+    "200255":[
+        {
+            "text":"The equipment or retainer must be announced by name, and in hand, when the card or effect is declared (before the card, if any, is replaced), but need not to be shown until the effect resolves.",
+            "refs":{
+                "LSJ 20100130":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/X8Uu7Sk56P4/m/twUvR4ZnBBkJ",
+                "ANK 20180925-2":"https://www.vekn.net/forum/rules-questions/77029-order-of-draw-and-replace-for-concealed-weapon-under-infernal-pursuit?start=6#90757",
+                "LSJ 19991207":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aQaOTYwC-fg/m/vdyo09QZoicJ"
             }
         }
     ]

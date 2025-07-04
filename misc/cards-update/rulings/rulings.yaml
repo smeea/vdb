@@ -134,8 +134,6 @@
 100050|Anachronism:
   - All weapons that provide ranged strikes are considered "ranged weapons" (eg. {Kerrie}). [LSJ 20060825]
 100051|Ananasi Vampirephile:
-  - When setting the range for the round, no other effect can be used to reset the range. Skip the determine range step on
-    that round, but other pre-range effects can be played afterwards. [RTR 19970630] [ANK 20180720]
   - Can use {Pack Alpha} to put a retainer requiring [ani] in play. [LSJ 20060417]
 100052|Anarch Free Press, The:
   - A hunt is not successful if no blood is gained, even if the hunt action is still successful. [LSJ 20050720-2]
@@ -327,10 +325,6 @@
   - Cannot be attempted twice even if the first attempted was blocked and failed. [LSJ 20091224]
 100166|Black Gloves:
   - Damage done to the bearer is environmental. [LSJ 19970801]
-100171|Black Sunrise:
-  - Can be used by a vampire who is already attempting to block. [ANK 20181122-2]
-  - '[QUI] Cannot be used if the vampire cannot attempt to block the action (eg. {Daring the Dawn}). [LSJ 20010714-2]'
-  - '[QUI] Does not ignore the normal prey, predator or target restrictions. [ANK 20180623]'
 100172|Black Throne, The:
   - The contract effect can be used even if the target is burned or if the contract is burned when the target leaves the ready
     region (eg. {Priority Contract}). [PIB 20150512]
@@ -495,9 +489,6 @@
     on one that would benefit from {The Rack} if controlled again). [LSJ 20040728]
 100250|Breath of the Dragon:
   - Damage done to the striking minion is environmental. [LSJ 19970801]
-100252|Brick by Brick:
-  - '[VIS] No other effect can be used to reset the range, but other pre-range effects can be played afterwards. [RTR 19970630]
-    [ANK 20180720]'
 100253|Brick Laying:
   - "[POT] If it burns an ally as a result, this counts as a Ⓓ action burning an ally (eg. Trophies, {Predator's Transformation}).\
     \ [ANK 20220507]"
@@ -634,9 +625,7 @@
 100328|Channeling the Beast:
   - Additional damage inherits all of the properties of the base damage. [TOM 19960225]
 100330|Charge of the Buffalo:
-  - No other effect can be used to reset the range. Skip the determine range step on that round, but other pre-range effects
-    can be played afterwards. [RTR 19970630] [ANK 20180720]
-  - Additional damage inherits all of the properties of the base damage. [TOM 19960225]
+  - '[spi]/[SPI] Additional damage inherits all of the properties of the base damage. [TOM 19960225]'
 100331|Charigger, The Axe:
   - His replacement effect triggers before effects depending on the minion burning (eg. {Soul Gem of Etrius}), but other replacements
     effect can be played before (eg. {Heaven's Gate}), depending on sequencing. [LSJ 20071003-2] [ANK 20230816]
@@ -672,7 +661,7 @@
   - May be played at any time during the voting process and, when votes are tallied, will cause the loss of blood to vampires
     voting 'no' before it is played, as well as to vampores voting 'no' after it is played. [RTR 19951110]
 100340|Children of Stone:
-  - This is an "equip action" [TOM 19960130]
+  - '[tha] This is an equip action. [TOM 19960130]'
 100347|Church of the Order of St. Blaise:
   - Can put counters on locations that use "blood" or "pool" counters. [PIB 20110712-1] [LSJ 20040518-2]
 100352|Claiming the Body:
@@ -695,8 +684,6 @@
   - The effect lasts until the end of the action. [LSJ 20060412]
   - The weapon does not burn if it is temporarily out of play (eg. {Kerrie}, {Dagger}). The active Methuselah order the effects
     at the end of the action as they wish. [LSJ 20100211-2]
-100359|Clio's Kiss:
-  - '[tem] The card to retrieve must be announced when declaring the action. [LSJ 20010627]'
 100362|Cloak the Gathering:
   - '[OBF] Can only be played by the controller of the acting minion. [LSJ 19990425]'
   - '[OBF] Can be played by a locked vampire. [RTR 19941109] [LSJ 19980210]'
@@ -705,9 +692,6 @@
   - Does not make the action an action "requiring an Anarch". [ANK 20220317]
 100374|Codex of the Edenic Groundskeepers:
   - Allies (including Imbued) cannot use the provided action as they have no blood to pay with. [PIB 20151101]
-100376|Cold Aura:
-  - No other effect can be used to reset the range. Skip the determine range step on that round, but other pre-range effects
-    can be played afterwards. [RTR 19970630] [ANK 20180720]
 100378|Coma:
   - Only effective at close range. [RBK resolve-strike] [LSJ 20000110]
   - The opponent is wounded (if they play {Undying Tenacity}, they go to torpor after combat). [LSJ 20090622-2]
@@ -727,8 +711,6 @@
 100391|Conceal:
   - Is directed against the Methuselah controlling the equipment or location, not the minion it's on. [LSJ 20090324]
 100392|Concealed Weapon:
-  - 'The weapon must be announced and in hand when the card is played, before it is replaced, but need not to be shown: it
-    can be kept apart face down. [LSJ 19991207] [ANK 20180925-2] [LSJ 20100130]'
   - A weapon's "current damage" is the amount of damage that it would inflict if used as a strike against a generic opponent.
     [RTR 19980623]
   - Strength or other bonus from the minion or other cards in play are not counted for the damage limit. [LSJ 20020821] [LSJ
@@ -780,9 +762,6 @@
   - If recruited in the normal fashion, the card will have been replaced by the time the ally enters play. In other cases
     however, it won't have been and the Methuselah will have to work with only the cards in hand (or ash heap) to add life
     to it before replacing. [LSJ 20070707]
-100432|Coterie Tactics:
-  - Cannot be used if the vampires cannot attempt to block the action (eg. {Daring the Dawn}). [LSJ 20010714-2]
-  - Does not ignore the normal prey, predator or target restrictions. [ANK 20180623]
 100433|Council of Seraphim:
   - The burn option cannot be used if all your Seraph are in torpor. [LSJ 20091204]
 100434|Courier:
@@ -960,8 +939,6 @@
   - '[REACTION] Can be used only when reactions can be used (unlocked or with a wake effect). It does not count as playing
     a reaction card. [LSJ 20070403] [LSJ 20070413]'
 100555|Disguised Weapon:
-  - The weapon is announced when the card is played, it must be in hand but need not to be shown. You can put the card apart
-    face down when announcing it. [LSJ 19991207] [ANK 20180925-2]
   - If used to equip and contest a unique weapon already in play, neither weapon is available for use during the combat. If
     the opposing minion had already chosen that weapon as his strike, then the strike has no effect. [LSJ 19980319]
 100557|Disputed Territory:
@@ -1089,9 +1066,6 @@
   - '[for] Cannot be used if there is no damage to prevent. [LSJ 20001114]'
 100627|Elixir of Distillation:
   - Does not burn if combat ends before it resolves. [LSJ 20001127-2] [LSJ 20010806-1] [LSJ 19981006]
-100628|Eluding the Arms of Morpheus:
-  - Can be used by a vampire who is already attempting to block. [ANK 20181122-2]
-  - Cannot be used if the vampire cannot attempt to block the action (eg. {Daring the Dawn}). [LSJ 20010714-2]
 '100631|Elysium: The Arboretum':
   - When ending combat, cards that are played at the end of round/combat can still be played (eg. {Taste of Vitae}, {Disarm}).
     [RTR 20001020] [LSJ 20001024]
@@ -1153,9 +1127,6 @@
     20191031]
   - If The Eternal Mask is burned by something else than its own effect (including when the vampire it is on is burned), the
     vampire that has been brought back is unaffected. [LSJ 20071206] [LSJ 20090725]
-100666|Eternal Vigilance:
-  - Cannot be used if the vampire cannot attempt to block the action (eg. {Daring the Dawn}). [LSJ 20010714-2]
-  - When used to block, does not ignore the normal prey, predator or target restrictions. [ANK 20180623]
 100667|Eternals of Sirius, The:
   - Pay the cost at the same time you gain pool from it, you do not get ousted in between (ie. can be played when at 4 pool).
     [LSJ 20020620] [LSJ 20080612]
@@ -1421,9 +1392,6 @@
 100828|Gift of Sleep:
   - '[obe] [ACTION MODIFIER][REACTION] The action ends unsuccessfully immediately, no other action modifier or reaction can
     be played afterwards. [RTR 20180719] [ANK 20200207]'
-100832|Giulia Giovanni Abruzzina:
-  - When setting the range for the round, no other effect can be used to reset the range. Skip the determine range step this
-    round, but other pre-range effects can be played afterwards. [RTR 19970630] [ANK 20180720]
 100834|Glancing Blow:
   - Cannot be used if there is no damage to prevent. [LSJ 20001114]
 100836|Glaser Rounds:
@@ -1496,7 +1464,6 @@
     20180926]
   - All effects apply for the duration of the action. They still apply if the action "continues as if unblocked" (eg. [PRO]
     {Form of Mist}) and, if [aus] was used, the maneuver is provided again. [LSJ 20010814-2] [ANK 20181127]
-  - Can be used by a vampire who is already attempting to block. [ANK 20181122-2]
   - '[aus] The maneuver can only be used if the block is successful, and only in the resulting (block-induced) combat. It
     does not carry over to a follow-up combat (eg. [CEL] {Psyche!}). [LSJ 20010813] [LSJ 20010819-2]'
 100869|Guide and Mentor:
@@ -1631,7 +1598,6 @@
     combat occurs afterwards). [RTR 20020501]
   - Queues a combat. No other combat can be queued afterwards (eg. {Psyche!} cannot be used). [LSJ 19971003]
   - Cannot be used if there is already another combat queued. [RTR 20020501]
-  - Cannot be played when your crypt is empty. [RTR 20000501]
   - If the illusionary vampire does not enter combat, then they are removed from the game at the end of the current action.
     [LSJ 19991110]
   - If the illusionary vampire is burned in combat (aggravated damage or blood hunt referendum after an {Amaranth}), they
@@ -1728,8 +1694,6 @@
 100998|Internal Recursion:
   - Is played before the combat begins. [LSJ 20020204]
   - '[pre] The blocking vampire do not unlock if the vampire uses another effect to end combat as a strike. [RTR 20020501]'
-  - '[tem] No other effect can be used to reset the range, but other pre-range effects can be played afterwards. [RTR 19970630]
-    [ANK 20180720]'
 101000|Into the Fire:
   - Is a change of the actual sect. A temporary effect overriding the sect has precedence. [LSJ 20100811]
   - If the target changes sect to a sect inappropriate for his title, he loses its benefit until his sect is appropriate.
@@ -1743,8 +1707,6 @@
   - Provides no additional strength to a Priscus for his ballots. [RTR 19970630]
 101016|Jack of Both Sides:
   - Is an "equip action" when equipping an equipment, an "employ action" when employing an retainer. [TOM 19960130] [LSJ 20091110]
-  - The target card is announced when announcing the action, but is not discarded if the action fails. It must be in hand
-    before replacing the Jack. [LSJ 20040519-2] [RTR 19991001] [LSJ 20101210]
   - Requirements apply but do not count as requirements for the action (eg. you cannot use {CrimethInc.} if the card requires
     an Anarch). [LSJ 20100725] [LSJ 20100303] [ANK 20180817]
   - Does not prevent the acting vampire from playing the equipment or retainer directly this turn if he unlocks (not the same
@@ -2136,8 +2098,6 @@
   - If there is another copy in play, the cards are put on it before it enters contest. [ANK 20221028] [LSJ 20090428-1]
   - If it is not equipped but merely put into play (eg. {Alastor}), it does not get cards. It does is if it is equipped (eg.
     {Magic of the Smith}). [LSJ 20090506]
-101233|Mole, The:
-  - '[ani] Can be used by a vampire who is already attempting to block. [ANK 20181122-2]'
 101235|Molotov Cocktail:
   - 'If the opponent strikes: combat ends, this strike is not resolved and the Cocktail is not put on this minion, even if
     combat continues thanks to another effect like {Relentless Reaper}. [ANK 20200203-1]'
@@ -2169,6 +2129,8 @@
   - '[DOM] Can be played by a locked vampire. [LSJ 19980210]'
   - '[DOM] Multiple copies can be played by different minions on the same action. [ANK 20200515]'
   - '[DOM] Cannot be used to let the target play a [dom] action card. [LSJ 20100527]'
+101248|Mozambique Allure:
+  - Cannot be played if the vampire is Laibon and your crypt is empty. [LSJ 20070411-2] [RTR 20000501]
 101251|Mummify:
   - The unlock effect takes place before the end of combat. The rest of the effect takes place after the end of combat. [RTR
     19970630]
@@ -2198,9 +2160,6 @@
   - '[THN] If the strike is dodged, environmental damage is not applied. [ANK 20200517]'
   - '[THN] The environmental damage is not strike damage (eg. {Target Vitals} does not add to the environmental damage). [ANK
     20201228-2]'
-101269|Neebi:
-  - No other effect can be used to reset the range, but other pre-range effects can be played afterwards. [RTR 19970630] [ANK
-    20180720]
 101272|Nephandus:
   - His life total can exceed his starting life capacity (it is the case for all allies). [ANK 20171109]
   - Damage reduction applies to damage done outside of or after combat if it comes from a strike (eg. {Catatonic Fear}). [LSJ
@@ -2212,7 +2171,6 @@
 101275|Netwar:
   - '[aus] If another Methuselah is the target, he must declare whether he attempts or declines to block before Netwar can
     be played. [LSJ 20100507] [ANK 20210131-1]'
-  - '[chi] Can be used by a vampire who is already attempting to block. [ANK 20181122-2]'
 101276|Neutral Guard:
   - No other effect can be used to reset the range, but other pre-range effects can be played. [RTR 19970630] [ANK 20180720]
   - If another effect also sets the range, the first to resolve has priority (eg. {Squirrel Balance} and {Asanbonsam Ghoul}
@@ -2267,11 +2225,6 @@
   - Is a directed action if a vampire controlled by another Methuselah is chosen. [ANK 20190606]
 101317|Ohoyo Hopoksia (Bastet):
   - If her ability is used when a minion blocks an action, the blocking minion still locks for the block. [ANK 20200714]
-101320|Omael Kuman:
-  - When setting the range for the round, no other effect can be used to reset the range. Skip the determine range step this
-    round, but other pre-range effects can be played afterwards. [RTR 19970630] [ANK 20180720]
-101322|Open Dossier:
-  - Can be used by a vampire who is already attempting to block. [ANK 20181122-2]
 101325|Ophidian Gaze:
   - '[SER][PRE] Can be used to cancel an action modifier player "after the action/referendum is successful" (eg. {Voter Captivation}
     or {Freak Drive}). [ANK 20180909]'
@@ -2551,8 +2504,6 @@
   - If the canceled card had a "Do Not Replace Until" clause on it, that clause is canceled as well and the card is replaced
     normally. [LSJ 20011023]
   - Can be used to cancel all action cards, including employ retainer, recruit ally and political action. [ANK 20200813-2]
-101559|Read the Winds:
-  - '[ANI][AUS] Can be used by a vampire who is already attempting to block. [ANK 20181122-2]'
 101561|Reality Mirror:
   - Cannot be used to bypass restrictions (like Clan restriction or any other play restriction). [LSJ 20020426]
 101563|Reanimated Corpse:
@@ -2776,10 +2727,6 @@
     Fortitude levels. [LSJ 20070320-2]
   - 'Can be equipped by a vampire with capacity less than 6: he cannot use it to bleed but the disciplines bonus applies.
     [LSJ 20030607] [ANK 20180801]'
-'101706|Second Tradition: Domain':
-  - Can be used by a locked a vampire who is already attempting to block (eg. if he played a wake effect before)". [ANK 20181122-2]
-  - Cannot be used if the vampire cannot attempt to block the action (eg. {Daring the Dawn}). [LSJ 20010714-2]
-  - Does not ignore the normal prey, predator or target restrictions. [ANK 20180623]
 101707|Secret Horde:
   - If put into play with no counters (X=0), it burns immediately. [LSJ 20070308]
 101710|Secret Passage:
@@ -2797,13 +2744,6 @@
   - Can be played on a vampire in torpor. [LSJ 20010610]
   - If contested, it will not be burned when the target (vampire) goes to torpor, nor will it be burned if it enters play
     while the target vampire is in torpor. [RTR 19960124]
-101714|Selective Silence:
-  - '[QUI] No other effect can be used to reset the range, but other pre-range effects can be played afterwards. [RTR 19970630]
-    [ANK 20180720]'
-101717|Sense the Savage Way:
-  - '[ANI] Can be used by a vampire who is already attempting to block. [ANK 20181122-2]'
-  - '[ANI] Cannot be used if the vampire cannot attempt to block the action (eg. {Daring the Dawn}). [LSJ 20010714-2]'
-  - '[ANI] Does not ignore the normal prey, predator or target restrictions. [ANK 20180623]'
 101720|Sense Vitality:
   - '[val], [VAL] Is not the default action, no blood is paid for the rescue. [ANK 20181017]'
 101721|Sensory Deprivation:
@@ -2853,9 +2793,6 @@
   - '[CEL][OBF] Does not prevent the opponent from dodging, the dodge just has no effect. [LSJ 20030902-2] [LSJ 20060808-1]'
 101741|Shadow of the Wolf:
   - The +1 damage only applies to the additional strike. [LSJ 19970331]
-101744|Shadow Step:
-  - '[OBT] No other effect can be used to reset the range afterwards, but other pre-range effects can be played afterwards.
-    [RTR 19970630] [ANK 20180720]'
 101746|Shadow Twin:
   - '[OBT] has no additional effect on a retainer. [LSJ 20010303]'
 101751|Shambling Hordes:
@@ -2960,8 +2897,6 @@
     resolution (eg. {Rötschreck}). [LSJ 20001127-2] [LSJ 20010806-1]'
   - Still burns if the combat continues or a new combat begins. [RTR 20020501] [LSJ 20040602]
 101816|Sniper Rifle:
-  - When setting the range for the round, no other effect can be used to reset the range, but other pre-range effects can
-    be played afterwards. [RTR 19970630] [ANK 20180720]
   - The bearer is not commited to use it if he or she uses another effect to set the range. [RTR 20020501]
   - If a new combat occurs due to an effect like {Psyche!}, the Rifle cannot be used to set the range. [LSJ 20010814]
   - If a Slave locks to enter combat instead of a blocked minion, the opponent cannot use the Rifle to set the range [ANK
@@ -3011,10 +2946,6 @@
     be played before the Blood Hunt. [RTR 19991206]'
 101838|Sowing Dissension:
   - Is an action directed at all other Methuselahs [PIB 20150821] [RTR 20080808]
-101840|Speak with Spirits:
-  - '[SPI] Can be used by a vampire who is already attempting to block. [ANK 20181122-2]'
-101841|Special Report:
-  - Can be used on a vampire who is already attempting to block". [ANK 20181122-2]
 101845|Spell of Life:
   - The copies you burn need not be ones you control. [LSJ 20090428]
   - The mummies put into play are unique by card name. The name is "in play" for anything that cares. They contest unique
@@ -3055,8 +2986,6 @@
   - '[cel] Cards and effects that are played "as the action is announced" must be played before playing "regular" action modifier
     or reaction cards. [ANK 20190425]'
   - '[cel] Replace the action card (if any) before playing it. [ANK 20181208]'
-  - '[cel] If blocked, no other effect can be used to reset the range, but other pre-range effects can be played. [RTR 19970630]
-    [ANK 20180720]'
   - '[cel] If another effect also sets the range, the first to resolve has priority (eg. {Asanbonsam Ghoul} and {Neutral Guard}
     resolve after). [PIB 20120214]'
 101860|Starshell Grenade Launcher:
@@ -3200,8 +3129,6 @@
 101939|Target Head:
   - Is played during the Strike phase even if you commit to a strike in the Determine Range phase (eg. {Thrown Gate}). Cannot
     be played if the strike cannot be chosen anymore during the Strike phase (eg. {Immortal Grapple}). [LSJ 20080409]
-  - When setting the range for the round, no other effect can be used to reset the range. Skip the determine range step on
-    that round, but other pre-range effects can be played afterwards. [RTR 19970630] [ANK 20180720]
   - The additional damage is the same type as the strike's damage. [RTR 19970630]
   - If it is canceled, any blood cost (eg. {Terror Frenzy}) has to be paid. [PIB 20121031]
   - Can be played on a strike that does no damage, even a dodge or a combat ends, but has no effect in that case. [RTR 19960221]
@@ -3342,9 +3269,6 @@
 '102029|Trophy: Diablerie':
   - 'May be retrieved when diablerizing a Red List vampire prior to the blood hunt referendum: it protects the vampire in
     that referendum. All copies on the vampire are then burned at the end of that action. [LSJ 20050222]'
-'102031|Trophy: Domain':
-  - Cannot be used to unlock if the vampire cannot attempt to block the action (eg. {Daring the Dawn}). [LSJ 20010714-2]
-  - When used to block, does not ignore the normal prey, predator or target restrictions. [ANK 20180623]
 '102032|Trophy: Hunting Ground':
   - Is a non-derivative hunting ground (ie. taken into account by {Poacher's Hunting Ground}), even if not active yet. [ANK
     20170430] [LSJ 20080610]
@@ -3371,10 +3295,7 @@
 102061|Undead Strength:
   - Additional damage inherits all of the properties of the base damage. [TOM 19960225]
 102063|Under Siege:
-  - Cannot be used to unlock if the vampire cannot attempt to block the action (eg. {Daring the Dawn}). [LSJ 20010714-2]
-  - When used to block, does not ignore the normal prey, predator or target restrictions. [ANK 20180623]
   - Can be used for intercept even if the vampire is already unlocked. [PIB 20150216]
-  - Can be used by a vampire who is already attempting to block. [ANK 20181122-2]
 102065|Underbridge Stray:
   - He can burn 1 life to give a minion you control a press the turn he is recruited. [ANK 20180517]
 102067|Undue Influence:
@@ -3631,8 +3552,6 @@
   - Can only be used by an acting bleeding minion. [ANK 20220502]
 102227|Hunger of Marduk:
   - The provided strike can be chosen and used more than once during the round. [ANK 20220207]
-102230|Organized Resistance:
-  - Cannot be used if the vampire cannot attempt to block the action (eg. {Daring the Dawn}). [LSJ 20010714-2]
 102232|Platinum Protocol, The:
   - '[pro] The minion getting the corruption counter is chosen at action resolution (not declaration). [ANK 20240706] [LSJ
     20080608]'
@@ -3646,9 +3565,6 @@
   - The card stays there if the strike is dodged [ANK 20220923]
   - Cannot be used against an ally. [ANK 20220818] [ANK 20221102]
   - Once used, it becomes a typeless card and cannot be used as a weapon anymore. [ANK 20220818]
-102239|Michael Harris, the Incinerator:
-  - If used to set the range, no other effect can be used to reset the range. Skip the determine range step on that round,
-    but other pre-range effects can be played afterwards. [RTR 19970630] [ANK 20180720]
 102242|Mobile HQ, Operation Antigen:
   - The card is locked if used to enter combat, even if that action fails. [ANK 20221102]
 102244|Shard, London, The:
@@ -3837,8 +3753,6 @@
   - If his controller is not his original owner and he burns, he goes to his original owner ash heap, breaking all control
     effect, then to his owner's uncontrolled area. The Methuselah who was controlling him when he burned gets the additional
     transfers. [ANK 20200417]
-200245|Carlotta Giovanni:
-  - The card being retrieved is announced when the action is declared. [LSJ 19970922]
 200247|Carmine Giovanni:
   - Her additional life ability applies and her stealth ability can be used when she is in torpor. [LSJ 20011022] [LSJ 20100902-2]
 200249|Carolina Vález:
@@ -4574,8 +4488,6 @@ G00029|Retainer that strike:
   - Does not gain additional strikes from its owner. [RTR 19941109]
 G00030|Vote playable once per game:
   - Burning the card for a vote is not considered playing it. [ANK 20210309-2]
-G00031|Master on vampire who can use it:
-  - The vampire's controller chooses to use the effect of the card or not. [ANK 20210309-3]
 G00032|Cost X:
   - X can be zero. [LSJ 20030502]
 G00033|Prevent non-aggravated:
@@ -4772,10 +4684,6 @@ G00099|Action continue as if unblocked:
   - For actions resulting from an action card, "continue as if unblocked" moves the action card from the ash heap (where it
     went when the action was blocked) to limbo (where it should be if the action is not blocked). If the action card is not
     in the ash heap, then the action cannot be continued. [LSJ 20070808-1]
-G00100|Set range in next round:
-  - No other effect can be used to reset next round's range, but other pre-range effects can be played. [ANK 20180720] [RTR
-    19970630]
-  - If another effect was already setting next round's range (e.g. {Neutral Guard}), that effect has priority. [PIB 20120214]
 G00101|Automatic environmental press:
   - The provided press is applied before any other press. Another press cannot be used to continue (eg. {Boxed In}, {Talbot's
     Chainsaw}) if there's already a press to continue. [ANK 20200525-1]
@@ -4853,3 +4761,23 @@ G00122|Targets card in Ash Heap:
 G00123|Unlocks and attempts to block:
   - If the action lacks a suitable target because of the unlock (e.g. {Ambush}), the block attempt still happens, as does
     the resulting combat if the block is successful. [LSJ 20090514]
+G00124|Forces Block attempt:
+  - Can be used by a vampire who is already attempting to block. [ANK 20181122-2]
+  - Cannot be used if the vampire cannot attempt to block the action (eg. {Daring the Dawn}). [LSJ 20010714-2]
+  - Does not ignore the normal prey, predator or target restrictions. [ANK 20180623]
+G00125|Exchange card with ash heap:
+  - Both the card in the ash heap and the card in hand have to be named when announcing the action or effect. [LSJ 20000222]
+    [LSJ 20011023]
+G00126|Move or reveal card from crypt:
+  - Cannot be played when the target crypt is empty. [RTR 20000501] [LSJ 20070411-2]
+G00127|Set range:
+  - Once the range is set, no other effect can be used to reset the range that round, but other pre-range effects can be played
+    afterwards. Skip the Determine Range step for that round. [RTR 19970630] [ANK 20180720]
+  - If another effect was already setting that round's range (e.g. {Neutral Guard}), that effect has priority. [PIB 20120214]
+G00128|Equip or employ another card from hand:
+  - The equipment or retainer must be announced by name, and in hand, when the card or effect is declared (before the card,
+    if any, is replaced), but need not to be shown until the effect resolves. [LSJ 20100130] [ANK 20180925-2] [LSJ 19991207]
+G00129|End of round effects that care about the range:
+  - If the round ends before range is determined (e.g. {Alpha Glint}) Range is assumed to be at default (usually close, unless
+    e.g. [dai]{Fear of the Void Below} was played), unless range was set by another effect (e.g. {Sniper Rifle}, [obe]{Neutral
+    Guard}) [LSJ 20100709]
