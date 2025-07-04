@@ -1,5 +1,6 @@
 # FIX
 - PDA decks favorted and created date (older decks)
+- Bad network r.response error for lots of decks (discord)
 
 # FIX ON HOLD
 - Deck-in-Url trimmed at first card - can't reproduce in dev environment

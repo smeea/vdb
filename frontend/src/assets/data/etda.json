@@ -1,14 +1,16 @@
 [
   {
     "id": 12143,
-    "title": "Praxis Seizure: Garou Rim - Joensuu, Finland",
+    "title": "Praxis Seizure: Garou Rim",
+    "location": "Joensuu, Finland",
     "date": "2025-04-26",
     "players": 13,
     "decks": 12
   },
   {
     "id": 12069,
-    "title": "Finnish Nationals 2025 - Vantaa, Finland",
+    "title": "Finnish Nationals 2025",
+    "location": "Vantaa, Finland",
     "date": "2025-04-12",
     "isNC": true,
     "players": 39,
@@ -16,7 +18,8 @@
   },
   {
     "id": 11865,
-    "title": "Italian Grand Prix 2025 - Modena, Italy",
+    "title": "Italian Grand Prix 2025",
+    "location": "Modena, Italy",
     "date": "2025-03-01",
     "players": 70,
     "decks": 70
@@ -24,13 +27,15 @@
   {
     "id": 11945,
     "title": "Garou Rim: Louhi Winter Wonderland",
+    "location": "Joensuu, Finland",
     "date": "2024-12-28",
     "players": 15,
     "decks": 14
   },
   {
     "id": 11560,
-    "title": "Dutch Nationals 2024 - Wijchen, Netherlands",
+    "title": "Dutch Nationals 2024",
+    "location": "Wijchen, Netherlands",
     "date": "2024-11-24",
     "isNC": true,
     "players": 24,
@@ -38,21 +43,24 @@
   },
   {
     "id": 11594,
-    "title": "Camarilla Conclave Grand Prix 2024 - Palma, Spain",
+    "title": "Camarilla Conclave Grand Prix 2024",
+    "location": "Palma, Spain",
     "date": "2024-11-16",
     "players": 89,
     "decks": 87
   },
   {
     "id": 11855,
-    "title": "Hurry Up! - Vác, Hungary",
+    "title": "Hurry Up!",
+    "location": "Vác, Hungary",
     "date": "2024-11-10",
     "players": 10,
     "decks": 7
   },
   {
     "id": 11739,
-    "title": "Finnish Nationals 2024 - Kerava, Finland",
+    "title": "Finnish Nationals 2024",
+    "location": "Kerava, Finland",
     "date": "2024-11-09",
     "isNC": true,
     "players": 30,
@@ -60,7 +68,8 @@
   },
   {
     "id": 11487,
-    "title": "Portuguese Nationals 2024 - Lisbon, Portugal",
+    "title": "Portuguese Nationals 2024",
+    "location": "Lisbon, Portugal",
     "date": "2024-11-02",
     "isNC": true,
     "players": 33,
@@ -68,7 +77,8 @@
   },
   {
     "id": 11686,
-    "title": "Australian New Zealand Continental 2024 - Sydney, Australia",
+    "title": "Australian New Zealand Continental 2024",
+    "location": "Sydney, Australia",
     "date": "2024-10-26",
     "isNC": true,
     "players": 36,
@@ -76,21 +86,24 @@
   },
   {
     "id": 11707,
-    "title": "Garou Rim: Above the Law - Joensuu, Finland",
+    "title": "Garou Rim: Above the Law",
+    "location": "Joensuu, Finland",
     "date": "2024-10-26",
     "players": 10,
     "decks": 10
   },
   {
     "id": 11670,
-    "title": "VTES 30th Anniversary - Warsaw, Poland",
+    "title": "VTES 30th Anniversary",
+    "location": "Warsaw, Poland",
     "date": "2024-09-29",
     "players": 75,
     "decks": 11
   },
   {
     "id": 11669,
-    "title": "European Championship 2024 - Day 2 - Warsaw, Poland",
+    "title": "European Championship 2024 - Day 2",
+    "location": "Warsaw, Poland",
     "date": "2024-09-29",
     "isNC": true,
     "players": 75,
@@ -98,42 +111,48 @@
   },
   {
     "id": 11667,
-    "title": "European Championship 2024 - LCQ - Warsaw, Poland",
+    "title": "European Championship 2024 - LCQ",
+    "location": "Warsaw, Poland",
     "date": "2024-09-27",
     "players": 153,
     "decks": 50
   },
   {
     "id": 11665,
-    "title": "Week of Nightmares 2024 - Day 3 - Warsaw, Poland",
+    "title": "Week of Nightmares 2024 - Day 3",
+    "location": "Warsaw, Poland",
     "date": "2024-09-26",
     "players": 48,
     "decks": 10
   },
   {
     "id": 11664,
-    "title": "Week of Nightmares 2024 - Day 2 - Warsaw, Poland",
+    "title": "Week of Nightmares 2024 - Day 2",
+    "location": "Warsaw, Poland",
     "date": "2024-09-25",
     "players": 32,
     "decks": 6
   },
   {
     "id": 11663,
-    "title": "Week of Nightmares 2024 - Day 1 - Warsaw, Poland",
+    "title": "Week of Nightmares 2024 - Day 1",
+    "location": "Warsaw, Poland",
     "date": "2024-09-24",
     "players": 25,
     "decks": 8
   },
   {
     "id": 11730,
-    "title": "First 30th - Vác, Hungary",
+    "title": "First 30th",
+    "location": "Vác, Hungary",
     "date": "2024-09-22",
     "players": 17,
     "decks": 10
   },
   {
     "id": 11398,
-    "title": "German Nationals 2024 - Darmstadt-Arheilgen, Germany",
+    "title": "German Nationals 2024",
+    "location": "Darmstadt-Arheilgen, Germany",
     "date": "2024-09-07",
     "isNC": true,
     "players": 32,
@@ -141,42 +160,48 @@
   },
   {
     "id": 11480,
-    "title": "Ropecon 2024 Grand Prix - Helsinki, Finland",
+    "title": "Ropecon 2024 Grand Prix",
+    "location": "Helsinki, Finland",
     "date": "2024-07-20",
     "players": 54,
     "decks": 31
   },
   {
     "id": 11259,
-    "title": "Rise of the New Bloods - Ravenhall (VIC), Australia",
+    "title": "Rise of the New Bloods",
+    "location": "Ravenhall (VIC), Australia",
     "date": "2024-03-17",
     "players": 10,
     "decks": 7
   },
   {
     "id": 11196,
-    "title": "Salut Brie! - Norwich, United Kingdom",
+    "title": "Salut Brie!",
+    "location": "Norwich, United Kingdom",
     "date": "2024-03-09",
     "players": 14,
     "decks": 14
   },
   {
     "id": 11184,
-    "title": "Atlantic Cup - Online",
+    "title": "Atlantic Cup",
+    "location": "Online",
     "date": "2024-03-02",
     "players": 64,
     "decks": 64
   },
   {
     "id": 11192,
-    "title": "White Turtle - Vác, Hungary",
+    "title": "White Turtle",
+    "location": "Vác, Hungary",
     "date": "2024-01-27",
     "players": 20,
     "decks": 11
   },
   {
     "id": 10367,
-    "title": "Finnish Nationals 2022 - Espoo, Finland",
+    "title": "Finnish Nationals 2022",
+    "location": "Espoo, Finland",
     "date": "2022-11-05",
     "isNC": true,
     "players": 45,
@@ -184,7 +209,8 @@
   },
   {
     "id": 11023,
-    "title": "Finnish Nationals 2023 - Espoo, Finland",
+    "title": "Finnish Nationals 2023",
+    "location": "Espoo, Finland",
     "date": "2023-11-04",
     "isNC": true,
     "players": 33,

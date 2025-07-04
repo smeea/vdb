@@ -3,8 +3,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router";
 import tournaments from "@/assets/data/etda.json";
 import { Button, Spinner } from "@/components";
-import { DATE, DECKS, ID, PLAYERS, TITLE } from "@/constants";
-import { clearTdaForm, setTdaDecks, setTdaInfo, setTdaResults } from "@/context";
+import { DATE, LOCATION, DECKS, ID, PLAYERS, TITLE } from "@/constants";
+import { clearTdaForm, setTdaDecks, setTdaInfo, setTdaResults } from "@/context"
 
 const TdaLoadPreparedButtons = ({ setTempDecks, setTempArchon, setError }) => {
   const navigate = useNavigate();
@@ -33,9 +33,13 @@ const TdaLoadPreparedButtons = ({ setTempDecks, setTempArchon, setError }) => {
             title={v[TITLE]}
           >
             <div className="flex w-full items-center justify-between gap-2 sm:gap-5">
-              <div className="flex items-center justify-between text-sm">{v[DATE]}</div>
-              <div className="flex items-center justify-between gap-1">
-                {loadingDeck === v[ID] ? <Spinner /> : v.isNC ? <StarFill /> : null} {v[TITLE]}
+              <div className="flex items-center justify-between max-sm:text-sm">{v[DATE]}</div>
+              <div className="flex flex-col items-center gap-1">
+                <div className="flex items-center gap-1">
+                  {loadingDeck === v[ID] ? <Spinner /> : v.isNC ? <StarFill /> : null}
+                  {v[TITLE]}
+                </div>
+                <div className="text-sm">{v[LOCATION]}</div>
               </div>
               <div className="flex justify-between gap-0.5">
                 <div className="flex gap-0.5 text-sm">
