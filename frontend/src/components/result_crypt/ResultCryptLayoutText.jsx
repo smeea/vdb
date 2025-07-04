@@ -66,21 +66,19 @@ const ResultCryptLayoutText = ({ card, setCard, handleClose, noClose, inPopover 
                         onClick={() => setCard(cryptCardBase[card[ADV][1]])}
                       >
                         {inPopover ? (
-                          <>
-                            {!card[ADV][0] && (
-                              <div className="inline-flex items-center">
-                                [has
-                                <img
-                                  aria-label="Advanced"
-                                  className="ml-1 inline-flex items-center"
-                                  src={`${import.meta.env.VITE_BASE_URL}/images/misc/advanced.svg`}
-                                  title="Advanced"
-                                  width="12"
-                                />
-                                ]
-                              </div>
-                            )}
-                          </>
+                          !card[ADV][0] && (
+                            <div className="inline-flex items-center">
+                              [has
+                              <img
+                                aria-label="Advanced"
+                                className="ml-1 inline-flex items-center"
+                                src={`${import.meta.env.VITE_BASE_URL}/images/misc/advanced.svg`}
+                                title="Advanced"
+                                width="12"
+                              />
+                              ]
+                            </div>
+                          )
                         ) : (
                           <div className="cursor-pointer">
                             [see {card[ADV][0] ? "Base" : "Adv"}]

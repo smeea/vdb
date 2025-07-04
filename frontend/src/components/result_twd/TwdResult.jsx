@@ -25,34 +25,32 @@ const TwdResult = ({ results }) => {
   }, [sortedDecks, showCounter, twdSearchSort]);
 
   return (
-    <>
-      <div className="flex flex-col gap-4">
-        <div>
-          <TwdResultTotal
-            results={results}
-            sortMethods={sortMethods}
-            sortMethod={twdSearchSort}
-            setSortMethod={changeTwdSearchSort}
-          />
-          <div className="flex flex-col gap-4">
-            {showedDecks.map((d) => {
-              return d[CARDS] ? (
-                <TwdDeck key={d[DECKID]} deck={d} />
-              ) : (
-                <TwdDeckWrapper key={d[DECKID]} deckid={d[DECKID]} />
-              );
-            })}
-          </div>
+    <div className="flex flex-col gap-4">
+      <div>
+        <TwdResultTotal
+          results={results}
+          sortMethods={sortMethods}
+          sortMethod={twdSearchSort}
+          setSortMethod={changeTwdSearchSort}
+        />
+        <div className="flex flex-col gap-4">
+          {showedDecks.map((d) => {
+            return d[CARDS] ? (
+              <TwdDeck key={d[DECKID]} deck={d} />
+            ) : (
+              <TwdDeckWrapper key={d[DECKID]} deckid={d[DECKID]} />
+            );
+          })}
         </div>
-        {deckCounter > showCounter && (
-          <div className="flex justify-center">
-            <Button onClick={() => setShowCounter(showCounter + SHOW_COUNTER_STEP)}>
-              Show More ({deckCounter - showCounter} left)
-            </Button>
-          </div>
-        )}
       </div>
-    </>
+      {deckCounter > showCounter && (
+        <div className="flex justify-center">
+          <Button onClick={() => setShowCounter(showCounter + SHOW_COUNTER_STEP)}>
+            Show More ({deckCounter - showCounter} left)
+          </Button>
+        </div>
+      )}
+    </div>
   );
 };
 

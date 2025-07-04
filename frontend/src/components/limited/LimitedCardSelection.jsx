@@ -17,10 +17,10 @@ const LimitedCardSelection = ({ inBanned }) => {
     <div className="flex flex-col gap-2">
       <div>
         <div className="inline font-bold text-fgSecondary text-lg underline dark:text-fgSecondaryDark">
-          {inBanned ? <>Banned Cards </> : <>Allowed Cards </>}
+          {inBanned ? "Banned Cards" : "Allowed Cards"}
         </div>
         <div className="inline text-fgSecondary underline dark:text-fgSecondaryDark">
-          {inBanned ? <>(overwrite all):</> : <>(in addition to Set selection):</>}
+          {inBanned ? "(overwrite all):" : "(in addition to Set selection):"}
         </div>
       </div>
       <FlexGapped className="max-sm:flex-col">

@@ -20,34 +20,32 @@ const LibrarySearchFormPoolCost = ({ value, onChange }) => {
   }));
 
   return (
-    <>
-      <div className="flex items-center">
-        <div className="w-1/4">
-          <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Pool Cost:</div>
+    <div className="flex items-center">
+      <div className="w-1/4">
+        <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Pool Cost:</div>
+      </div>
+      <div className="flex w-3/4 gap-1">
+        <div className="w-1/2">
+          <Select
+            options={morelessOptions}
+            isSearchable={false}
+            name={`${name}-moreless`}
+            value={morelessOptions.find((obj) => obj.value === value.moreless)}
+            onChange={onChange}
+          />
         </div>
-        <div className="flex w-3/4 gap-1">
-          <div className="w-1/2">
-            <Select
-              options={morelessOptions}
-              isSearchable={false}
-              name={`${name}-moreless`}
-              value={morelessOptions.find((obj) => obj.value === value.moreless)}
-              onChange={onChange}
-            />
-          </div>
-          <div className="w-1/2">
-            <Select
-              options={options}
-              isSearchable={false}
-              isClearable={value[name] !== ANY}
-              name={name}
-              value={options.find((obj) => obj.value === value[name])}
-              onChange={(e, id) => (e ? onChange(e, id) : onChange({ name: name, value: ANY }, id))}
-            />
-          </div>
+        <div className="w-1/2">
+          <Select
+            options={options}
+            isSearchable={false}
+            isClearable={value[name] !== ANY}
+            name={name}
+            value={options.find((obj) => obj.value === value[name])}
+            onChange={(e, id) => (e ? onChange(e, id) : onChange({ name: name, value: ANY }, id))}
+          />
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

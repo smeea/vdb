@@ -41,7 +41,6 @@ const Diff = () => {
     playtestMode,
     cryptCardBase,
     libraryCardBase,
-    isMobile,
     showFloatingButtons,
     setShowFloatingButtons,
     showMenuButtons,

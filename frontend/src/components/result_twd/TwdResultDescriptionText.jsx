@@ -36,19 +36,19 @@ const TwdResultDescriptionText = ({ deck }) => {
         <tbody>
           <TwdResultDescriptionTextTr
             iconed={isMobile}
-            title={isMobile ? <CalendarEvent /> : <>Date:</>}
+            title={isMobile ? <CalendarEvent /> : "Date:"}
           >
             {deck[CREATION_DATE]}
           </TwdResultDescriptionTextTr>
           <TwdResultDescriptionTextTr
             iconed={isMobile}
-            title={isMobile ? <TrophyFill /> : <>Event:</>}
+            title={isMobile ? <TrophyFill /> : "Event:"}
           >
             {deck[EVENT]}
           </TwdResultDescriptionTextTr>
           <TwdResultDescriptionTextTr
             iconed={isMobile}
-            title={isMobile ? <GeoAltFill /> : <>Place:</>}
+            title={isMobile ? <GeoAltFill /> : "Place:"}
           >
             <div
               className="text-fgSecondary hover:underline dark:text-fgSecondaryDark"
@@ -59,7 +59,7 @@ const TwdResultDescriptionText = ({ deck }) => {
           </TwdResultDescriptionTextTr>
           <TwdResultDescriptionTextTr
             iconed={isMobile}
-            title={isMobile ? <PersonFill /> : <>Player:</>}
+            title={isMobile ? <PersonFill /> : "Player:"}
           >
             <div
               className="text-fgSecondary hover:underline dark:text-fgSecondaryDark"
@@ -68,7 +68,7 @@ const TwdResultDescriptionText = ({ deck }) => {
               {deck[AUTHOR]}
             </div>
           </TwdResultDescriptionTextTr>
-          <TwdResultDescriptionTextTr iconed={isMobile} title={isMobile ? <TagFill /> : <>Deck:</>}>
+          <TwdResultDescriptionTextTr iconed={isMobile} title={isMobile ? <TagFill /> : "Deck:"}>
             {deck[NAME]}
           </TwdResultDescriptionTextTr>
         </tbody>

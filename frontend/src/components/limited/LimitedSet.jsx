@@ -4,7 +4,7 @@ import { DATE, NAME } from "@/constants";
 
 const LimitedSet = ({ isChecked, handleSetChange, setid }) => {
   return (
-    <div className="flex sm:max-w-90 justify-between gap-1">
+    <div className="flex justify-between gap-1 sm:max-w-90">
       <Checkbox
         name={setid}
         label={setsAndPrecons[setid][NAME]}

@@ -303,21 +303,15 @@ const exportText = (deck) => {
 };
 
 const exportDeck = (deck, format) => {
-  const crypt = Object.values(deck[CRYPT])
-    .filter((card) => card.q > 0)
-    .reduce((obj, card) => {
-      return Object.assign(obj, {
-        [card.c[ID]]: deck[CRYPT][card.c[ID]],
-      });
-    }, {});
+  const crypt = {};
+  const library = {};
+  Object.values(deck[CRYPT]).forEach((card) => {
+    if (card.q > 0) crypt[card.c[ID]] = deck[CRYPT][card.c[ID]];
+  });
 
-  const library = Object.values(deck[LIBRARY])
-    .filter((card) => card.q > 0)
-    .reduce((obj, card) => {
-      return Object.assign(obj, {
-        [card.c[ID]]: deck[LIBRARY][card.c[ID]],
-      });
-    }, {});
+  Object.values(deck[LIBRARY]).forEach((card) => {
+    if (card.q > 0) library[card.c[ID]] = deck[LIBRARY][card.c[ID]];
+  });
 
   const d = { ...deck, [CRYPT]: crypt, [LIBRARY]: library };
 

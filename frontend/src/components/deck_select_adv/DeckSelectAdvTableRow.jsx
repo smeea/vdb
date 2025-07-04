@@ -55,7 +55,7 @@ const DeckSelectAdvTableRow = ({
   revFilter,
   short,
 }) => {
-  const { limitedMode, inventoryMode, isMobile, isNarrow, isDesktop } = useApp();
+  const { limitedMode, inventoryMode, isMobile, isNarrow } = useApp();
   const limitedCards = useSnapshot(limitedStore);
   const navigate = useNavigate();
 

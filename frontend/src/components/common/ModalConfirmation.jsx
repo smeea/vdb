@@ -26,7 +26,7 @@ const ModalConfirmation = ({
   }, [handleCancel]);
 
   const confirm = useCallback(
-    async (prevState, formData) => {
+    async (_prevState, formData) => {
       if (withWrittenConfirmation) {
         if (formData.get(TEXT) === YES) {
           setError(false);

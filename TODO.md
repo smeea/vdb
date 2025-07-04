@@ -19,4 +19,3 @@
 
 # TECH IMPROVEMENTS
 - Update to Recharts v3
-- Update Biome rules/errors

@@ -3,7 +3,13 @@ import PersonFill from "@icons/person-fill.svg?react";
 import { NavLink, useLocation } from "react-router";
 import { twMerge } from "tailwind-merge";
 import { useSnapshot } from "valtio";
-import { LimitedSelect, LanguageSelectButton, NavMobileMenu, ThemeSelect, Toggle } from "@/components";
+import {
+  LanguageSelectButton,
+  LimitedSelect,
+  NavMobileMenu,
+  ThemeSelect,
+  Toggle,
+} from "@/components";
 import cryptDefaults from "@/components/search_forms/forms_data/defaultsCryptForm.json";
 import libraryDefaults from "@/components/search_forms/forms_data/defaultsLibraryForm.json";
 import pdaDefaults from "@/components/search_forms/forms_data/defaultsPdaForm.json";

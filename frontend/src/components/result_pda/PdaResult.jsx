@@ -25,34 +25,32 @@ const PdaResult = ({ results }) => {
   }, [sortedDecks, showCounter, pdaSearchSort]);
 
   return (
-    <>
-      <div className="flex flex-col gap-4">
-        <div>
-          <TwdResultTotal
-            results={results}
-            sortMethods={sortMethods}
-            sortMethod={pdaSearchSort}
-            setSortMethod={changePdaSearchSort}
-          />
-          <div className="flex flex-col gap-4">
-            {showedDecks.map((d) => {
-              return d[CARDS] ? (
-                <TwdDeck key={d[DECKID]} deck={d} inPda />
-              ) : (
-                <TwdDeckWrapper key={d[DECKID]} deckid={d[DECKID]} inPda />
-              );
-            })}
-          </div>
+    <div className="flex flex-col gap-4">
+      <div>
+        <TwdResultTotal
+          results={results}
+          sortMethods={sortMethods}
+          sortMethod={pdaSearchSort}
+          setSortMethod={changePdaSearchSort}
+        />
+        <div className="flex flex-col gap-4">
+          {showedDecks.map((d) => {
+            return d[CARDS] ? (
+              <TwdDeck key={d[DECKID]} deck={d} inPda />
+            ) : (
+              <TwdDeckWrapper key={d[DECKID]} deckid={d[DECKID]} inPda />
+            );
+          })}
         </div>
-        {deckCounter > showCounter && (
-          <div className="flex justify-center">
-            <Button onClick={() => setShowCounter(showCounter + SHOW_COUNTER_STEP)}>
-              Show More ({deckCounter - showCounter} left)
-            </Button>
-          </div>
-        )}
       </div>
-    </>
+      {deckCounter > showCounter && (
+        <div className="flex justify-center">
+          <Button onClick={() => setShowCounter(showCounter + SHOW_COUNTER_STEP)}>
+            Show More ({deckCounter - showCounter} left)
+          </Button>
+        </div>
+      )}
+    </div>
   );
 };
 

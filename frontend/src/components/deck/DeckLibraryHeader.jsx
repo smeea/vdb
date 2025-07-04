@@ -61,7 +61,10 @@ const DeckLibraryHeader = ({
                   {limitedMode && hasLimited && (
                     <div className="flex gap-1">
                       <Warning type={LIMITED} />
-                      <div className="flex font-normal text-fgRed dark:text-fgRedDark" title="Restricted Cards">
+                      <div
+                        className="flex font-normal text-fgRed dark:text-fgRedDark"
+                        title="Restricted Cards"
+                      >
                         [{Math.round((hasLimited / libraryTotal) * 100)}%]
                       </div>
                     </div>

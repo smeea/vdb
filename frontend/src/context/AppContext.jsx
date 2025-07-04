@@ -15,7 +15,6 @@ import {
   DECKID,
   DECKS,
   EN,
-  ID,
   IS_AUTHOR,
   IS_BRANCHES,
   IS_FROZEN,
@@ -34,7 +33,6 @@ import {
   PUBLIC_PARENT,
   QUANTITYx,
   RANK_HIGH_LOW,
-  SET,
   SETS,
   SRC,
   TEXT,
@@ -251,7 +249,7 @@ export const AppProvider = ({ children }) => {
       LOCALIZED_LIBRARY,
       PRECON_DECKS,
     ])
-      .then(([v, pt, cb, lb, nc, nl, lc, ll, pd, lac, lal, lbc, lbl, ls]) => {
+      .then(([v, pt, cb, lb, nc, nl, lc, ll, pd, _lac, _lal, _lbc, _lbl, _ls]) => {
         if (!v || CARD_VERSION > v || (userData?.[PLAYTEST][IS_PLAYTESTER] && !pt)) {
           fetchAndSetCardBase(true, userData?.[PLAYTEST]?.secret);
         } else {

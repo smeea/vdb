@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
 import setsAndPrecons from "@/assets/data/setsAndPrecons.json";
 import { InventoryAddPreconHeader, InventoryAddPreconRow, Modal } from "@/components";
-import { TWO_P, DATE, DECKID, NAME, PLAYTEST } from "@/constants";
+import { DATE, DECKID, NAME, PLAYTEST, TWO_P } from "@/constants";
 import { useApp } from "@/context";
 import { decksSort } from "@/utils";
 

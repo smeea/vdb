@@ -33,7 +33,7 @@ import { useSwipe } from "@/hooks";
 import { getHardTotal, getSoftMax, getSwipedBg } from "@/utils";
 
 const InventoryLibraryTableRow = ({ card, compact, newFocus, inShared, handleClick }) => {
-  const { isMobile, isNarrow } = useApp();
+  const { isMobile } = useApp();
   const usedLibrary = useSnapshot(usedStore)[LIBRARY];
   const softUsedMax = getSoftMax(usedLibrary[SOFT][card.c[ID]]);
   const hardUsedTotal = getHardTotal(usedLibrary[HARD][card.c[ID]]);
@@ -62,7 +62,7 @@ const InventoryLibraryTableRow = ({ card, compact, newFocus, inShared, handleCli
         )}
       >
         {inShared ? (
-          <>{card.q || null}</>
+          card.q || null
         ) : (
           <InventoryCardQuantity
             card={card}

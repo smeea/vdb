@@ -22,10 +22,10 @@ const PdaResultDescriptionText = ({ deck }) => {
     <>
       <table>
         <tbody>
-          <TwdResultDescriptionTextTr title={isMobile ? <TagFill /> : <>Deck:</>}>
+          <TwdResultDescriptionTextTr title={isMobile ? <TagFill /> : "Deck:"}>
             {deck[NAME]}
           </TwdResultDescriptionTextTr>
-          <TwdResultDescriptionTextTr title={isMobile ? <PersonFill /> : <>Author:</>}>
+          <TwdResultDescriptionTextTr title={isMobile ? <PersonFill /> : "Author:"}>
             <div
               className="text-fgSecondary hover:underline dark:text-fgSecondaryDark"
               onClick={() => handleClick(deck[AUTHOR])}
@@ -33,11 +33,11 @@ const PdaResultDescriptionText = ({ deck }) => {
               {deck[AUTHOR]}
             </div>
           </TwdResultDescriptionTextTr>
-          <TwdResultDescriptionTextTr title={isMobile ? <CalendarEvent /> : <>Created:</>}>
+          <TwdResultDescriptionTextTr title={isMobile ? <CalendarEvent /> : "Created:"}>
             {deck[CREATION_DATE]}
           </TwdResultDescriptionTextTr>
           {lastUpdated !== deck[CREATION_DATE] && (
-            <TwdResultDescriptionTextTr title={isMobile ? <CalendarEvent /> : <>Updated:</>}>
+            <TwdResultDescriptionTextTr title={isMobile ? <CalendarEvent /> : "Updated:"}>
               {lastUpdated}
             </TwdResultDescriptionTextTr>
           )}

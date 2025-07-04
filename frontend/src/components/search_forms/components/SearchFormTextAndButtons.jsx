@@ -30,7 +30,6 @@ const SearchFormTextAndButtons = ({
     searchMissingInventoryMode,
     setSearchMissingInventoryMode,
     inventoryMode,
-    isMobile,
   } = useApp();
   const [text, setText] = useState("");
 

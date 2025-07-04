@@ -28,7 +28,10 @@ const useDeckCrypt = (cardsList, sortMethod, cardsToList) => {
       [HAS_BANNED]: hasBanned,
       [HAS_LIMITED]: hasLimited,
       [HAS_PLAYTEST]: hasPlaytest,
-    } = getRestrictions({ [CRYPT]: cryptFrom, [LIBRARY]: {} }, {[CRYPT]: limitedCrypt, [LIBRARY]: {}});
+    } = getRestrictions(
+      { [CRYPT]: cryptFrom, [LIBRARY]: {} },
+      { [CRYPT]: limitedCrypt, [LIBRARY]: {} },
+    );
 
     const cryptTotal = countCards(cryptFrom);
     const cryptToTotal = countCards(cryptTo);

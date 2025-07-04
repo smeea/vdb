@@ -15,7 +15,7 @@ const AccountRegister = () => {
   const [usernameError, setUsernameError] = useState(false);
   const [connectionError, setConnectionError] = useState(false);
 
-  const registerUser = async (prevState, formData) => {
+  const registerUser = async (_prevState, formData) => {
     const result = await userServices.register(
       formData.get(USERNAME),
       formData.get(PASSWORD),

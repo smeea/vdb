@@ -21,13 +21,13 @@ const TdaDeckDescription = ({ deck }) => {
           <tbody>
             <TwdResultDescriptionTextTr
               iconed={isMobile}
-              title={isMobile ? <TrophyFill /> : <>Place:</>}
+              title={isMobile ? <TrophyFill /> : "Place:"}
             >
               {deck[SCORE][RANK]}
             </TwdResultDescriptionTextTr>
             <TwdResultDescriptionTextTr
               iconed={isMobile}
-              title={isMobile ? <StarFill /> : <>Score:</>}
+              title={isMobile ? <StarFill /> : "Score:"}
             >
               {deck[SCORE][GW]}GW + {deck[SCORE][VP]}VP
             </TwdResultDescriptionTextTr>

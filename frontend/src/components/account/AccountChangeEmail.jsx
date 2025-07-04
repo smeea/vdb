@@ -10,7 +10,7 @@ const AccountChangeEmail = () => {
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
 
-  const changeEmail = async (prevState, formData) => {
+  const changeEmail = async (_prevState, formData) => {
     const result = await userServices.changeEmail(formData.get(PASSWORD), formData.get(EMAIL));
     switch (result.error) {
       case 401:

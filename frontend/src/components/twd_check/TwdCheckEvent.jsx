@@ -204,7 +204,7 @@ const TwdCheckEvent = ({ deckData }) => {
           </div>
         </div>
       ) : (
-        <>Loading...</>
+        "Loading..."
       )}
     </>
   );

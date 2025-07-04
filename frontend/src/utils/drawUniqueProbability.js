@@ -14,7 +14,7 @@ const minusOne = (cards, i) => {
 const product = (cards, draw) => {
   const arr = [];
   for (let i = 0; i < draw; i++) {
-    arr.push(cards.map((i, idx) => idx));
+    arr.push(cards.map((_i, idx) => idx));
   }
 
   return arr.reduce((a, b) => a.flatMap((d) => b.map((e) => [d, e].flat())));

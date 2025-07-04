@@ -7,8 +7,7 @@ import { getLegality } from "@/utils";
 
 const ResultName = ({ card, isColored = true }) => {
   const { limitedMode } = useApp();
-  const limitedState =
-    card[ID] > 200000 ? useSnapshot(limitedStore)[CRYPT] : useSnapshot(limitedStore)[LIBRARY];
+  const limitedState = useSnapshot(limitedStore)[card[ID] > 200000 ? CRYPT : LIBRARY];
   const isLimited = limitedMode && !limitedState[card[ID]];
   const legalRestriction = getLegality(card);
 

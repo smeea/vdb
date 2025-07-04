@@ -17,7 +17,7 @@ const SeatingTablePlayer = ({ deck, isFirst }) => {
           {deck[NAME]}
         </Link>
       ) : (
-        <>{deck[NAME]}</>
+        deck[NAME]
       )}
     </div>
   );

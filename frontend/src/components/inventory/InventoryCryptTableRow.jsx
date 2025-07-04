@@ -49,7 +49,7 @@ const InventoryCryptTableRow = ({ card, compact, newFocus, inShared, handleClick
         )}
       >
         {inShared ? (
-          <>{card.q || null}</>
+          card.q || null
         ) : (
           <InventoryCardQuantity
             card={card}

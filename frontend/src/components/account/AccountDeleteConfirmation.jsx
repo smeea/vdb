@@ -11,7 +11,7 @@ const AccountDeleteConfirmation = ({ handleClose }) => {
   const [hidePassword, setHidePassword] = useState(true);
   const [error, setError] = useState(false);
 
-  const deleteAccount = async (prevState, formData) => {
+  const deleteAccount = async (_prevState, formData) => {
     const result = await userServices.deleteAccount(formData.get(PASSWORD));
 
     switch (result.error) {

@@ -43,7 +43,7 @@ const AccountLogin = () => {
   const [passwordError, setPasswordError] = useState(false);
   const [success, setSuccess] = useState();
 
-  const loginUser = async (prevState, formData) => {
+  const loginUser = async (_prevState, formData) => {
     const result = await userServices.login(formData.get(USERNAME), formData.get(PASSWORD));
     switch (result.error) {
       case 401:

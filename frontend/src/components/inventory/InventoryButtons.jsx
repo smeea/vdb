@@ -30,14 +30,8 @@ const InventoryButtons = ({
   setSharedLibrary,
   setShowShareModal,
 }) => {
-  const {
-    preconDecks,
-    setShowFloatingButtons,
-    setShowMenuButtons,
-    publicName,
-    isNarrow,
-    isDesktop,
-  } = useApp();
+  const { preconDecks, setShowFloatingButtons, setShowMenuButtons, publicName, isDesktop } =
+    useApp();
 
   const {
     [IS_FROZEN]: isFrozen,

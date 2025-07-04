@@ -1,4 +1,4 @@
-import { ADV, ASCII, EN, GROUP, ID, NAME, NEW, SET } from "@/constants";
+import { ADV, ASCII, EN, GROUP, ID, NEW, SET } from "@/constants";
 import { getIsPlaytest } from "@/utils";
 
 const LEGACY_SETS = ["Jyhad", "VTES", "DS", "AH", "Sabbat", "SW", "FN", "BL"];

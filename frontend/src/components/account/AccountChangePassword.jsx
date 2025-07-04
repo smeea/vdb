@@ -8,7 +8,7 @@ const AccountChangePassword = () => {
   const [error, setError] = useState(false);
   const [success, setSuccess] = useState(false);
 
-  const changePassword = async (prevState, formData) => {
+  const changePassword = async (_prevState, formData) => {
     setError();
     const result = await userServices.changePassword(
       formData.get(PASSWORD),

@@ -282,24 +282,22 @@ const Decks = () => {
       </div>
       {showMenuButtons && (
         <Modal handleClose={handleClose} centered size="xs" withMobileMargin noClose={!isDesktop}>
-          <>
-            <DeckButtons
-              deck={deck}
-              setQrUrl={setQrUrl}
-              setShowDraw={setShowDraw}
-              setShowInfo={setShowInfo}
-              setShowMissing={setShowMissing}
-              setShowRecommendation={setShowRecommendation}
-              setShowSeating={setShowSeating}
-              setShowProxySelect={setShowProxySelect}
-              setShowImportAmaranth={setShowImportAmaranth}
-              setShowImportText={setShowImportText}
-              setBadImportCards={setBadImportCards}
-            />
-            <div className="lg:hidden">
-              <ButtonFloatClose handleClose={handleClose} />
-            </div>
-          </>
+          <DeckButtons
+            deck={deck}
+            setQrUrl={setQrUrl}
+            setShowDraw={setShowDraw}
+            setShowInfo={setShowInfo}
+            setShowMissing={setShowMissing}
+            setShowRecommendation={setShowRecommendation}
+            setShowSeating={setShowSeating}
+            setShowProxySelect={setShowProxySelect}
+            setShowImportAmaranth={setShowImportAmaranth}
+            setShowImportText={setShowImportText}
+            setBadImportCards={setBadImportCards}
+          />
+          <div className="lg:hidden">
+            <ButtonFloatClose handleClose={handleClose} />
+          </div>
         </Modal>
       )}
       {showSelect && <DeckSelectAdvModal setShow={setShowSelect} />}

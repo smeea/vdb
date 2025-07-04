@@ -16,10 +16,8 @@ import {
   LIMITED_SETS,
   SETS,
 } from "@/constants";
-import { useApp } from "@/context";
 
 const LimitedButton = () => {
-  const { setLimitedCustomPreset } = useApp();
   const [showModal, setShowModal] = useState(false);
   const [searchParams, setSearchParams] = useSearchParams();
   const limitedFormat = JSON.parse(searchParams.get(FORMAT));

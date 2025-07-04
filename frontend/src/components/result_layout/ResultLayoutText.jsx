@@ -24,7 +24,7 @@ const ResultLayoutText = ({
   noClose,
   setIsHotkeysDisabled,
 }) => {
-  const { isPlaytestAdmin, isMobile, isNarrow } = useApp();
+  const { isPlaytestAdmin, isMobile } = useApp();
   const { cryptCompare, libraryCompare } = useSnapshot(searchResults);
   const compare = card[ID] > 200000 ? cryptCompare : libraryCompare;
   const setCompare = card[ID] > 200000 ? setCryptCompare : setLibraryCompare;

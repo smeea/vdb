@@ -26,7 +26,7 @@ const AccountChangeName = () => {
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
 
-  const changeName = async (prevState, formData) => {
+  const changeName = async (_prevState, formData) => {
     const result = await userServices.changeName(formData.get(NAME));
     switch (result.error) {
       case 500:

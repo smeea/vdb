@@ -113,8 +113,10 @@ const DeckCardQuantity = ({
                         autoFocus
                       />
                     </form>
+                  ) : q === 0 ? (
+                    <>&nbsp;&nbsp;</>
                   ) : (
-                    <>{q === 0 ? <>&nbsp;&nbsp;</> : q}</>
+                    q
                   )}
                 </ConditionalTooltip>
               </div>

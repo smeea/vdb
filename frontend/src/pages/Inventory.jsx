@@ -27,7 +27,6 @@ const Inventory = () => {
     inventoryMode,
     setInventoryMode,
     username,
-    isMobile,
     isDesktop,
     showMenuButtons,
     setShowMenuButtons,

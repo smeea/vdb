@@ -17,7 +17,7 @@ const LimitedSelect = ({ withoutDisabled }) => {
   return (
     <Select
       className="min-w-[37px]"
-      textStyle={!limitedMode && withoutDisabled && 'text-lightGray dark:text-lightGrayDark'}
+      textStyle={!limitedMode && withoutDisabled && "text-lightGray dark:text-lightGrayDark"}
       noMinHeight={withoutDisabled}
       isSearchable={false}
       options={options}

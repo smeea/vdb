@@ -96,7 +96,7 @@ const TwdSearchFormQuantityButtons = ({ value, form, id }) => {
             />
           </form>
         ) : (
-          <>{value[id].q}</>
+          value[id].q
         )}
       </div>
       {(!manual || isMobile) && (

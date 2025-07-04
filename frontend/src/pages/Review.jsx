@@ -36,7 +36,6 @@ import { deepClone, getTags, parseDeck } from "@/utils";
 
 const Review = () => {
   const {
-    isMobile,
     cryptCardBase,
     libraryCardBase,
     preconDecks,

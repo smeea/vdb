@@ -18,7 +18,7 @@ const BloodPoolDifference = ({ qTo, qFrom }) => {
   return (
     <>
       {qTo === qFrom ? (
-        <>{qTo}</>
+        qTo
       ) : (
         <div className="flex">
           {qFrom}
