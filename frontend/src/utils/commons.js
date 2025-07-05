@@ -170,6 +170,7 @@ export const getClan = (crypt) => {
     .filter((card) => card.c[NAME] !== "Anarch Convert")
     .forEach((card) => {
       [card.c[CLAN], card.c[PATH]].forEach((c) => {
+        if (!c) return
         if (clans[c]) {
           clans[c] += card.q;
         } else {

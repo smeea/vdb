@@ -106,7 +106,6 @@ const Tda = () => {
     const getFinalPlace = (playerNumber) => {
       const wsFinalTable = wb.Sheets["Final Round"];
       const dataFinalTable = utils.sheet_to_csv(wsFinalTable).split("\n");
-      console.log(dataFinalTable)
       const finalPlace = dataFinalTable
         .filter((i) => {
           const array = i.split(",");
@@ -218,12 +217,11 @@ const Tda = () => {
       medianPlayerVp: medianVp,
       medianRank: totalPlayers / 2,
       medianReportedRank: medianReportedRank,
-    }
+    };
 
-    setTdaInfo(info)
+    setTdaInfo(info);
     setTdaDecks(tdaDecks);
   };
-
 
   const handleCloseEvent = () => {
     clearTdaForm();
