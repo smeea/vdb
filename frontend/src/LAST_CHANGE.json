@@ -1,8 +1,9 @@
 {
-  "version": "2025-07-04/2",
+  "version": "2025-07-05",
   "changes": [
     "Update 2P cards/decks lists",
     "Add limited mode selector to navigation bar",
+    "Add option to only show 2P or V5 decks in deck selector when limited mode is on. To use it toggle 'Only show Limited decks in Deck Selector' in /account page and add '2P' and/or 'V5' tags to the decks you want to see in selector for respective limited mode",
     "Add % of restricted cards for current limited mode in deck crypt/library header",
     "Add Lublin Fee Stake event",
     "Update Rulings",
