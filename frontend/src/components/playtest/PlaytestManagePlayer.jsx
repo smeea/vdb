@@ -1,7 +1,7 @@
 import { twMerge } from "tailwind-merge";
 import { useImmer } from "use-immer";
-import { Flag, Select, Toggle, Tr } from "@/components";
-import { EN, ENABLED, ES, FR, LANG, PT } from "@/constants";
+import { PlaytestLanguageSelectShort, Toggle, Tr } from "@/components";
+import { ENABLED, LANG } from "@/constants";
 import { playtestServices } from "@/services";
 
 const PlaytestManagePlayer = ({ value }) => {
@@ -22,41 +22,6 @@ const PlaytestManagePlayer = ({ value }) => {
     });
   };
 
-  const options = [
-    {
-      value: EN,
-      label: (
-        <div className="flex w-[23px] justify-end">
-          <Flag value={EN} />
-        </div>
-      ),
-    },
-    {
-      value: FR,
-      label: (
-        <div className="flex w-[23px] justify-end">
-          <Flag value={FR} />
-        </div>
-      ),
-    },
-    {
-      value: ES,
-      label: (
-        <div className="flex w-[23px] justify-end">
-          <Flag value={ES} />
-        </div>
-      ),
-    },
-    {
-      value: PT,
-      label: (
-        <div className="flex w-[23px] justify-end">
-          <Flag value={PT} />
-        </div>
-      ),
-    },
-  ];
-
   return (
     <Tr>
       <td>
@@ -74,12 +39,7 @@ const PlaytestManagePlayer = ({ value }) => {
         </div>
       </td>
       <td>
-        <Select
-          options={options}
-          placeholder={null}
-          value={options.find((obj) => obj.value === state[LANG])}
-          onChange={changeLang}
-        />
+        <PlaytestLanguageSelectShort value={state[LANG]} onChange={changeLang} />
       </td>
       <td className="text-center max-sm:hidden">{reports ? reports : ""}</td>
       <td className="text-center max-sm:hidden">{timestamp}</td>

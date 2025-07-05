@@ -110,7 +110,6 @@ const DeckSelectAdvModal = ({ onClick, setShow, short }) => {
         {!short && (
           <div className="flex justify-end gap-2 max-sm:hidden">
             <ButtonIconed
-              /* variant="danger" */
               text="Lock Selected"
               title="Lock Selected Decks"
               onClick={lockSelected}

@@ -3,7 +3,7 @@ import { ConditionalTooltipOrModal, Flag, ListEntry, Select } from "@/components
 import { EN, ES, FR, LANG, PT } from "@/constants";
 import { useApp } from "@/context";
 
-const PlaytestReportLanguageSelector = () => {
+const PlaytestReportLanguageSelect = () => {
   const { isMobile, playtestProfile, updatePlaytestProfile } = useApp();
 
   const languages = {
@@ -65,4 +65,4 @@ const PlaytestReportLanguageSelector = () => {
   );
 };
 
-export default PlaytestReportLanguageSelector;
+export default PlaytestReportLanguageSelect;

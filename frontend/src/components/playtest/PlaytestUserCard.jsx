@@ -7,7 +7,7 @@ import {
   ConditionalTooltipOrModal,
   Input,
   ListEntry,
-  PlaytestLanguageSelector,
+  PlaytestLanguageSelect,
   Select,
   Textarea,
 } from "@/components";
@@ -56,7 +56,7 @@ const PlaytestUserCard = () => {
 
   return (
     <div className="flex flex-col gap-5 sm:gap-6">
-      <PlaytestLanguageSelector />
+      <PlaytestLanguageSelect />
       <ListEntry
         icon={<PersonFillExclamation width="20" height="20" viewBox="0 0 16 16" />}
         title="Liaison"
