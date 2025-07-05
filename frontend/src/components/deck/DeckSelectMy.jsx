@@ -9,6 +9,7 @@ import { ResultLegalIcon, ResultPathImage, ResultPreconClan, Select } from "@/co
 import {
   BANNED,
   CRYPT,
+  CUSTOM,
   DECKS,
   H,
   HAS_BANNED,
@@ -21,18 +22,26 @@ import {
   NAME,
   PLAYTEST,
   S,
+  TAGS,
   TIMESTAMP,
 } from "@/constants";
 import { deckStore, limitedStore, useApp } from "@/context";
 import { byTimestamp, getClan, getRestrictions } from "@/utils";
 
 const DeckSelectMy = ({ deckid, handleSelect }) => {
-  const { limitedMode, inventoryMode, isMobile, isWide } = useApp();
+  const { limitedOnlyDecks, limitedPreset, limitedMode, inventoryMode, isMobile, isWide } =
+    useApp();
   const decks = useSnapshot(deckStore)[DECKS];
 
   const options = useMemo(() => {
     return Object.keys(decks)
       .filter((i) => !decks[i][MASTER] && !decks[i][IS_HIDDEN])
+      .filter((i) => {
+        if (limitedMode && limitedOnlyDecks && limitedPreset !== CUSTOM) {
+          if (!decks[i][TAGS].includes(limitedPreset.toUpperCase())) return false;
+        }
+        return true;
+      })
       .toSorted((a, b) => byTimestamp(decks[a], decks[b]))
       .map((i, idx) => {
         const diffDays = dayjs().diff(dayjs(decks[i][TIMESTAMP]), "day");
@@ -100,7 +109,7 @@ const DeckSelectMy = ({ deckid, handleSelect }) => {
           ),
         };
       });
-  }, [decks, limitedMode, inventoryMode]);
+  }, [decks, limitedPreset, limitedMode, inventoryMode]);
 
   const filterOption = ({ label }, string) => {
     const name = label.props.children[0].props.children[1].props.children;

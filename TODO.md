@@ -8,7 +8,6 @@
 # FEATURES
 - Limited in TWD/PDA search
 - Sort/filter playtesters
-- Filter 2P and V5 decks based on tags
 - TWD search with % V5-compatibility
 - Deck details show % V5-compatibility
 

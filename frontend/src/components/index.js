@@ -182,6 +182,7 @@ export { default as LimitedButton } from "./limited/LimitedButton";
 export { default as LimitedCardSelection } from "./limited/LimitedCardSelection";
 export { default as LimitedDelCard } from "./limited/LimitedDelCard";
 export { default as LimitedModal } from "./limited/LimitedModal";
+export { default as LimitedOnlyDecksToggle } from "./limited/LimitedOnlyDecksToggle";
 export { default as LimitedSelect } from "./limited/LimitedSelect";
 export { default as LimitedSet } from "./limited/LimitedSet";
 export { default as LimitedSetSelection } from "./limited/LimitedSetSelection";

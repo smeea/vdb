@@ -1,5 +1,5 @@
 import EnvelopeFill from "@icons/envelope-fill.svg?react";
-import { LimitedButton, LimitedSelect } from "@/components";
+import { LimitedButton, LimitedOnlyDecksToggle, LimitedSelect } from "@/components";
 import { CUSTOM } from "@/constants";
 import { useApp } from "@/context";
 
@@ -14,6 +14,8 @@ const Limited = () => {
         </div>
         <div className="flex">Limited Mode</div>
       </div>
+
+      <LimitedOnlyDecksToggle />
 
       <div className="flex justify-between gap-2">
         <div className="basis-full">

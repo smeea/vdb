@@ -23,6 +23,7 @@ import {
   LIMITED_ALLOWED_LIBRARY,
   LIMITED_BANNED_CRYPT,
   LIMITED_BANNED_LIBRARY,
+  LIMITED_ONLY_DECKS,
   LIMITED_SETS,
   MASTER,
   NAME,
@@ -116,6 +117,9 @@ export const AppProvider = ({ children }) => {
   const [inventoryMode, setInventoryMode] = useState(getLocalStorage(INVENTORY_MODE) ?? false);
   const [limitedMode, setLimitedMode] = useState(getLocalStorage(LIMITED_MODE) ?? false);
   const [limitedPreset, setLimitedPreset] = useState(getLocalStorage(LIMITED_PRESET) ?? false);
+  const [limitedOnlyDecks, setLimitedOnlyDecks] = useState(
+    getLocalStorage(LIMITED_ONLY_DECKS) ?? false,
+  );
   const [searchInventoryMode, setSearchInventoryMode] = useState();
   const [searchMissingInventoryMode, setSearchMissingInventoryMode] = useState();
   const [cryptDeckSort, setCryptDeckSort] = useState(getLocalStorage(CRYPT_DECK_SORT) ?? QUANTITYx);
@@ -328,6 +332,7 @@ export const AppProvider = ({ children }) => {
     setInventoryMode(false);
     setLimitedMode(false);
     setLimitedPreset(false);
+    setLimitedOnlyDecks(false);
     setIsPlaytester(false);
     setIsPlaytestAdmin(false);
     setPlaytestMode(false);
@@ -440,6 +445,11 @@ export const AppProvider = ({ children }) => {
     setPlaytestMode(!playtestMode);
     setLocalStorage(PLAYTEST_MODE, !playtestMode);
   }, [playtestMode]);
+
+  const toggleLimitedOnlyDecks = useCallback(() => {
+    setLimitedOnlyDecks(!limitedOnlyDecks);
+    setLocalStorage(LIMITED_ONLY_DECKS, !limitedOnlyDecks);
+  }, [limitedOnlyDecks]);
 
   const toggleAddMode = useCallback(() => {
     setAddMode(!addMode);
@@ -590,6 +600,8 @@ export const AppProvider = ({ children }) => {
         toggleLimitedMode,
         limitedPreset,
         changeLimitedPreset,
+        limitedOnlyDecks,
+        toggleLimitedOnlyDecks,
         setInventoryMode,
         addMode,
         toggleAddMode,

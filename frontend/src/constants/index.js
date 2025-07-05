@@ -283,3 +283,4 @@ export const VP = "vp";
 export const X = "X";
 export const XLSX = "xlsx";
 export const YES = "YES";
+export const LIMITED_ONLY_DECKS = "limitedOnlyDecks";

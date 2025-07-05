@@ -62,6 +62,7 @@ const DeckTags = ({ deck, noAutotags, justifyRight, isBordered, noBackground, al
         borderStyle={isEditable && !noAutotags ? "border-y border-l border-r-none" : "border"}
         className="w-full"
         isDisabled={!isEditable}
+        isSearchable
         isMulti
         noBackground={noBackground}
         noBorder={!isBordered}
