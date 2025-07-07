@@ -7,10 +7,10 @@
 # FEATURES
 - Limited in TWD/PDA search
 - TWD search with % V5-compatibility
+- Update V5 card list
 
 # FEATURES ON HOLD
 - Indicator of inventory-perfect decks in selector -> performance issue for many decks
 - Draft Cube support -> when draft cube info is available
 
 # TECH IMPROVEMENTS
-- Update to Recharts v3

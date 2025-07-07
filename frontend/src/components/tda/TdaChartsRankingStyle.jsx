@@ -25,7 +25,7 @@ import {
   VOTE,
 } from "@/constants";
 import { useApp } from "@/context";
-import { capitalize, getClan } from "@/utils";
+import { deepClone, capitalize, getClan } from "@/utils";
 
 const TdaChartsRankingStyle = ({ info, decks, searchResults }) => {
   const { isMobile, isDesktop, isWide } = useApp();
@@ -71,7 +71,7 @@ const TdaChartsRankingStyle = ({ info, decks, searchResults }) => {
           };
         });
     });
-    return d;
+    return deepClone(d);
   }, [searchResults, decks, info]);
 
   return (
