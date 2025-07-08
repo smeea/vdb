@@ -74,7 +74,7 @@ def playtesters_route():
             abort(400)
 
         profile = copy.deepcopy(u.playtest_profile)
-        if request.json["lang"]:
+        if "lang" in request.json:
             profile["lang"] = request.json["lang"]
 
         u.playtest_profile = profile
