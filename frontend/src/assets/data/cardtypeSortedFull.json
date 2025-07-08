@@ -13,10 +13,7 @@
   "Action Modifier/Combat",
   "Action Modifier/Reaction",
   "Reaction",
-  "Reaction/Action Modifier",
-  "Reaction/Combat",
   "Combat",
-  "Combat/Action Modifier",
   "Combat/Reaction",
   "Event"
 ]
