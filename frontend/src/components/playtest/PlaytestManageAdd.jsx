@@ -1,7 +1,7 @@
 import Check2 from "@icons/check2.svg?react";
 import { useState } from "react";
 import { Button, ErrorOverlay, Input, Spinner } from "@/components";
-import { USERNAME } from "@/constants";
+import { USERNAME, ENABLED, } from "@/constants";
 import { playtestServices } from "@/services";
 
 const PlaytestManageAdd = ({ playtesters, newPlaytesters, setNewPlaytesters }) => {
@@ -19,7 +19,7 @@ const PlaytestManageAdd = ({ playtesters, newPlaytesters, setNewPlaytesters }) =
     setError(false);
 
     playtestServices
-      .changePlaytester(username)
+      .changePlaytester(username, ENABLED, true)
       .then((data) => {
         setNewPlaytesters([
           ...newPlaytesters,
