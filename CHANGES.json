@@ -1,5 +1,14 @@
 [
   {
+    "version": "2025-07-08",
+    "changes": [
+      "Update TWDA",
+      "Update Rulings",
+      "Update V5 card list",
+      "Add legacy action modifiers images"
+    ]
+  },
+  {
     "version": "2025-07-05",
     "changes": [
       "Update 2P cards/decks lists",
