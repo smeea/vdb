@@ -1823,7 +1823,7 @@ G00120|Prohibits hunt as normal:
   101086|Legacy of Caine: ''
   102166|Week of Nightmares: ''
   200798|Kyoko Shinsegawa: ''
-G00121|Steal Blood as a Hunt action:
+G00121|Steal blood as a Hunt action:
   101086|Legacy of Caine: ''
   101614|Restricted Vitae: ''
   102166|Week of Nightmares: ''
@@ -1927,3 +1927,9 @@ G00128|Equip or employ another card from hand:
 G00129|End of round effects that care about the range:
   100549|Disarm: ''
   101515|Pulled Fangs: ''
+G00130|Lock to reduce cost:
+  100607|Eccentric Billionaire: ''
+  101110|Line, The: ''
+  '101443|Powerbase: Tshwane': ''
+  101904|Sunset Strip, Hollywood: ''
+  102244|Shard, London, The: ''

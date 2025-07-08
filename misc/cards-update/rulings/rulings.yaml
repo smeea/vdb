@@ -1626,6 +1626,8 @@
 100964|Improvised Flamethrower:
   - If any ranged damage is inflicted at long range, even if it is prevented or ignored, the Flamethrower will burn and inflict
     damage. [LSJ 20040802]
+  - When range was set to long (e.g. {Neutral Guard}, {Sniper Rifle}), or the range default is long (e.g. [dai]{Fear of the
+    Void Below}), [TEM]{Outside the Hourglass} triggers the Flamethrower [LSJ 20100709]
 100965|Improvised Tactics:
   - '[pot] Is a strike that requires Potence, so would be enhanced by {Increased Strength}. [LSJ 20030611]'
 100966|Impundulu:
@@ -1872,11 +1874,7 @@
 101109|Lily Prelude:
   - Can allocate more points than a Methuselah has pool. [LSJ 20020819]
 101110|Line, The:
-  - Can be locked to reduce the cost at any point before resolution, from when the action is announced to just before the
-    cost is paid. [ANK 20170605] [ANK 20230620]
   - Can reduce the cost in blood (not in pool) of any action (ally, retainer, equipment, political). [ANK 20181007]
-  - Can reduce the cost of an action card even if it is not played as an action (ie. a retainer played with {Pack Alpha}).
-    [RTR 20070707] [ANK 20230824]
   - Cannot be used by an ally acting "as a vampire". [ANK 20200605]
 101112|Liquidation:
   - Is not playable if you have less than 7 cards in your library. [LSJ 20070901]
@@ -2359,11 +2357,6 @@
   - Takes into account effects that change who is considered the acting vampire in combat (eg.{Deep Song}). [ANK 20230814]
 '101443|Powerbase: Tshwane':
   - The cost reduction applies to minion cards, they are also played by the Methuselah. [ANK 20221102]
-  - Can be locked to reduce the cost at any point before resolution, from when the action is announced to just before the
-    cost is paid. [ANK 20230620]
-  - Can be used to allow to play cards which cost could not be paid otherwise. [ANK 20230621]
-  - Can reduce the cost of an action card even if it is not played as an action (ie. a retainer played with Pack Alpha). [ANK
-    20230824] [RTR 20070707]
 101475|Precognition:
   - '[AUS] The damage prevention can only be used if the block is successful, and only in the resulting (block-induced) combat.
     [LSJ 20010813]'
@@ -3066,12 +3059,6 @@
   - '[PRE] The ally cannot act this turn. [LSJ 20080630] [RTR 20180303]'
   - "[PRE] The ally card itself cannot be cancelled (eg. {Louhi (G4)}'s ability cannot cancel it). [ANK 20201229]"
   - '[PRE] Is a recruit action. [TOM 19960130]'
-101904|Sunset Strip, Hollywood:
-  - The "lock to reduce the cost" effect can be used when the action is announced or when the cost is paid. [LSJ 20090705]
-  - 'Allows to play a card that could otherwise not be afforded: in this case it must be locked when the action is announced.
-    [LSJ 20030917] [LSJ 20090705]'
-  - Can reduce the cost of an action card even if it is not played as an action (ie. a retainer played with {Pack Alpha}).
-    [ANK 20230824] [RTR 20070707]
 101906|Supernatural Resistance:
   - If used to cancel the opposing minion's strike, that minion must still choose a strike and could play the same one again.
     [RBK cancel-a-card] [LSJ 20090818]
@@ -3569,13 +3556,8 @@
   - The card is locked if used to enter combat, even if that action fails. [ANK 20221102]
 102244|Shard, London, The:
   - The cost reduction applies to minion cards, they are also played by the Methuselah. [ANK 20221102]
-  - Can be locked to reduce the cost at any point before resolution, from when the action is announced to just before the
-    cost is paid. [ANK 20230620]
-  - Can be used to allow to play cards which cost could not be paid otherwise. [ANK 20230621]
   - Can allow allies to play cards that otherwise cost blood (eg. {Procurer}), if they do not otherwise require a vampire
     (eg. clan or discipline). [ANK 20230621]
-  - Can reduce the cost of an action card even if it is not played as an action (ie. a retainer played with {Pack Alpha}).
-    [RTR 20070707] [ANK 20230824]
 102247|Break the Bonds:
   - '[pre] There must be an uncontrolled vampire, and it is chosen upon declaration. [ANK 20240706]'
   - '[obf] The prey need not control a minion, the target is chosen upon resolution. [ANK 20240706]'
@@ -4568,7 +4550,6 @@ G00063|Cancel with no action:
   - Can be used if there is no action, but that allowance does not extend to other reactions (eg. wake effects). [PIB 20120808]
   - Cannot be played during combat. [LSJ 20080618]
 G00064|Special Hunt action:
-  - Is affected by increases to Hunt value. Blood comes from the target of the hunt. [RTR 20030519] [RTR 20180511]
   - A minion can only perform this special hunt once per turn. [RBK action-card-or-card-in-play]
 G00065|Burn blood for effect:
   - The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}). [ANK 20210226]
@@ -4749,12 +4730,14 @@ G00119|Allies with "lock this ally to" abilities:
 G00120|Prohibits hunt as normal:
   - 'Other non-standard hunt actions are still permitted (e.g. {Abactor}). When performing such actions, their text apply:
     this card does not combine with them. [LSJ 20090606] [ANK 20190707] [LSJ 20060306]'
-G00121|Steal Blood as a Hunt action:
+G00121|Steal blood as a Hunt action:
   - This special hunt cannot steal more blood than the target has. It can target a vampire with no blood. If no blood is stolen,
     the hunt is unsuccessful, even if the action stays successful. [LSJ 20050720-2] [RTR 20010711] [LSJ 20100915]
   - The blood stolen by this special hunt goes to the blood bank if it cannot be gained by the vampire. [LSJ 20010809-1]
   - This special hunt must be directed at a vampire, even if none has any blood. It cannot be performed if there are no other
     vampires. [LSJ 19970224]
+  - Is affected by Hunt value. All blood that is gained from the Hunt is taken from the target minion. ({Festivo dello Estinto}
+    is not blood gained from the hunt) [RTR 20180511] [RTR 20030519]
 G00122|Targets card in Ash Heap:
   - Is an undirected action, even when targeting another Methuselah's ash heap. [LSJ 20010627] [ANK 20180202]
   - Cannot be played if no target is available in any Methuselah's ash heap. [ANK 20200420-3]
@@ -4781,3 +4764,11 @@ G00129|End of round effects that care about the range:
   - If the round ends before range is determined (e.g. {Alpha Glint}) Range is assumed to be at default (usually close, unless
     e.g. [dai]{Fear of the Void Below} was played), unless range was set by another effect (e.g. {Sniper Rifle}, [obe]{Neutral
     Guard}) [LSJ 20100709]
+G00130|Lock to reduce cost:
+  - Can be locked to reduce the cost at any point before resolution, from when the action is announced to just before the
+    cost is paid. If it is used when announcing an action, and the action is cancelled as played (e.g. {Direct Intervention}),
+    it is not locked. [ANK 20230620] [ANK 20170605] [LSJ 20090705]
+  - Can reduce the cost of an action card even if it is not played as an action (e.g. a weapon played with {Concealed Weapon}
+    or an Ally with {Piper}). [ANK 20230824] [RTR 20070707]
+  - Allows to play a card that could otherwise not be afforded, in which case, it must be locked when the action is announced.
+    [LSJ 20090705] [LSJ 20030917] [ANK 20230621]
