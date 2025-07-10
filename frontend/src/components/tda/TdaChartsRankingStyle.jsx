@@ -25,7 +25,7 @@ import {
   VOTE,
 } from "@/constants";
 import { useApp } from "@/context";
-import { deepClone, capitalize, getClan } from "@/utils";
+import { capitalize, deepClone, getClan } from "@/utils";
 
 const TdaChartsRankingStyle = ({ info, decks, searchResults }) => {
   const { isMobile, isDesktop, isWide } = useApp();

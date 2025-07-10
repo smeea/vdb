@@ -2,7 +2,7 @@ import { Flag, Select } from "@/components";
 import { ANY, EN, ES, FR, PT } from "@/constants";
 
 const PlaytestLanguageSelectShort = ({ value, onChange, withAny }) => {
-  const languages = [EN, ES, FR, PT]
+  const languages = [EN, ES, FR, PT];
   const options = languages.map((i) => {
     return {
       value: i,
@@ -13,7 +13,6 @@ const PlaytestLanguageSelectShort = ({ value, onChange, withAny }) => {
       ),
     };
   });
-
 
   if (withAny) {
     options.unshift({
@@ -32,4 +31,4 @@ const PlaytestLanguageSelectShort = ({ value, onChange, withAny }) => {
   );
 };
 
-export default PlaytestLanguageSelectShort
+export default PlaytestLanguageSelectShort;

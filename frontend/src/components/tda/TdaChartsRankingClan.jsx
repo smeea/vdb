@@ -16,7 +16,7 @@ import {
   VALUE,
 } from "@/constants";
 import { useApp } from "@/context";
-import { deepClone, byName, getClan } from "@/utils";
+import { byName, deepClone, getClan } from "@/utils";
 
 const TdaChartsRankingClan = ({ info, decks, searchResults }) => {
   const { isMobile, isDesktop, isWide } = useApp();

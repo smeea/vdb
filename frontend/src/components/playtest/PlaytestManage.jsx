@@ -1,10 +1,17 @@
 import Arrow90DegLeft from "@icons/arrow-90deg-left.svg?react";
 import { useMemo, useState } from "react";
 import { useNavigate } from "react-router";
-import { PlaytestLanguageSelectShort, SortButton, ButtonIconed, PlaytestManageAdd, PlaytestManagePlayer } from "@/components";
-import { LANG, NAME, ANY, TIMESTAMP, USERNAME } from "@/constants";
+import {
+  ButtonIconed,
+  PlaytestLanguageSelectShort,
+  PlaytestManageAdd,
+  PlaytestManagePlayer,
+  SortButton,
+} from "@/components";
+import { ANY, LANG, NAME, TIMESTAMP, USERNAME } from "@/constants";
 import { useApp } from "@/context";
 import { useFetch } from "@/hooks";
+
 const REPORTS = "reports";
 const ACTIVITY = "activity";
 const ADDED_DATE = "added_date";
@@ -55,7 +62,6 @@ const playersSort = (players, sortMethod) => {
   }
 };
 
-
 const PlaytestManage = () => {
   const { isPlaytestAdmin } = useApp();
   const navigate = useNavigate();
@@ -66,14 +72,21 @@ const PlaytestManage = () => {
   const url = `${import.meta.env.VITE_API_URL}/playtest/users`;
   const { value: playtesters } = useFetch(url, {}, [isPlaytestAdmin]);
 
-  const sortMethods = { [NAME]: "N", [LANG]: "L", [REPORTS]: "R", [ACTIVITY]: "A", [ADDED_DATEx]: "D", [ADDED_BYx]: "B" };
+  const sortMethods = {
+    [NAME]: "N",
+    [LANG]: "L",
+    [REPORTS]: "R",
+    [ACTIVITY]: "A",
+    [ADDED_DATEx]: "D",
+    [ADDED_BYx]: "B",
+  };
 
   const sortedPlayers = useMemo(() => {
     if (!playtesters) return [];
 
     const filtered = Object.keys(playtesters)
-          .filter((p) => langFilter === ANY || playtesters[p][LANG] === langFilter)
-          .map((p) => ({ ...playtesters[p], [USERNAME]: p }))
+      .filter((p) => langFilter === ANY || playtesters[p][LANG] === langFilter)
+      .map((p) => ({ ...playtesters[p], [USERNAME]: p }));
 
     return playersSort(filtered, sortMethod);
   }, [playtesters, langFilter, sortMethod]);
@@ -105,10 +118,10 @@ const PlaytestManage = () => {
                   withAny
                 />
               </th>
-              <th className="text-center font-bold sm:w-[75px] max-sm:hidden">Reports</th>
-              <th className="text-center font-bold sm:w-[120px] max-sm:hidden">Last Activity</th>
-              <th className="text-center font-bold sm:w-[120px] max-sm:hidden">Added Date</th>
-              <th className="text-center font-bold sm:w-[140px] max-sm:hidden">Added By</th>
+              <th className="text-center font-bold max-sm:hidden sm:w-[75px]">Reports</th>
+              <th className="text-center font-bold max-sm:hidden sm:w-[120px]">Last Activity</th>
+              <th className="text-center font-bold max-sm:hidden sm:w-[120px]">Added Date</th>
+              <th className="text-center font-bold max-sm:hidden sm:w-[140px]">Added By</th>
               <th className="text-center max-sm:hidden">
                 <div className="flex items-center justify-between">
                   <div className="w-[42px]" />
@@ -137,4 +150,4 @@ const PlaytestManage = () => {
   );
 };
 
-export default PlaytestManage
+export default PlaytestManage;
