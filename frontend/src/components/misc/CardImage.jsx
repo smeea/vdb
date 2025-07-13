@@ -40,32 +40,20 @@ const CardImage = ({ card, set, className = "max-sm:w-full", size = "md", onClic
   };
 
   return (
-    <>
-      {set || lang !== EN ? (
-        <img
-          className={twMerge(sizeStyle[size], className)}
-          src={`${otherUrl}.jpg?v=${import.meta.env.VITE_IMAGE_VERSION}`}
-          alt={card[NAME]}
-          onClick={onClick}
-          onError={resetImgSrc}
-        />
-      ) : (
-        <picture>
-          <source
-            media="(max-width: 576px)"
-            srcSet={`${url}.webp?v=${import.meta.env.VITE_IMAGE_VERSION}`}
-            type="image/webp"
-          />
-          <img
-            className={twMerge(sizeStyle[size], className)}
-            src={`${url}.jpg?v=${import.meta.env.VITE_IMAGE_VERSION}`}
-            alt={card[NAME]}
-            onClick={onClick}
-            onError={resetImgSrc}
-          />
-        </picture>
-      )}
-    </>
+    <picture>
+      <source
+        media="(max-width: 576px)"
+        srcSet={`${url}.webp?v=${import.meta.env.VITE_IMAGE_VERSION}`}
+        type="image/webp"
+      />
+      <img
+        className={twMerge(sizeStyle[size], className)}
+        src={`${url}.jpg?v=${import.meta.env.VITE_IMAGE_VERSION}`}
+        alt={card[NAME]}
+        onClick={onClick}
+        onError={resetImgSrc}
+      />
+    </picture>
   );
 };
 
