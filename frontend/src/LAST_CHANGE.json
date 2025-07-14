@@ -1,9 +1,8 @@
 {
-  "version": "2025-07-08/1",
+  "version": "2025-07-14",
   "changes": [
-    "Update TWDA",
+    "Update 2P card list",
     "Update Rulings",
-    "Update V5 card list",
-    "Add legacy action modifiers images"
+    "Fix some legacy images on mobile"
   ]
 }

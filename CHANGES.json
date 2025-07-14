@@ -1,6 +1,14 @@
 [
   {
-    "version": "2025-07-08/1",
+    "version": "2025-07-14",
+    "changes": [
+      "Update 2P card list",
+      "Update Rulings",
+      "Fix some legacy images on mobile"
+    ]
+  },
+  {
+    "version": "2025-07-08",
     "changes": [
       "Update TWDA",
       "Update Rulings",
