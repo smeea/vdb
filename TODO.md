@@ -7,7 +7,6 @@
 # FEATURES
 - Limited in TWD/PDA search
 - TWD search with % V5-compatibility
-- Update 2P format
 
 # FEATURES ON HOLD
 - Indicator of inventory-perfect decks in selector -> performance issue for many decks

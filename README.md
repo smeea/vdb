@@ -90,7 +90,7 @@ Download source files from upstream and create new resources (it will copy files
     ./download_resources.sh
     ./create_resources.sh
     uv run download_card_images.py                       # ONLY ENGLISH
-    ./compress_legacy_images.sh                          # ONLY IF NEW IMAGES IN misc/legacy-images folder
+    ./compress_legacy_images.sh                          # ONLY IF NEW IMAGES IN misc/legacy_images folder
     ./convert_images_to_webp.sh                          # ONLY IF NEW CARD IMAGES ARE AVAILABLE
 ```
 Other than English languages and card scans from different sets only updated manually in `~/frontend/dist/images/cards/`.
