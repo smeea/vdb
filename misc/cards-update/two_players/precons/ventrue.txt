@@ -12,31 +12,28 @@ Library (42 cards)
 Master (6)
 2x Grooming the Protégé
 2x Life in the City
-1x Misdirection
+1x Perfectionist
 1x Wider View
 
-Action (5)
-2x Dominate Kine
+Action (6)
+1x Dominate Kine
 3x Enchant Kindred
+2x Propaganda
 
 Political Action (5)
 3x Kine Resources Contested
 2x Parity Shift
 
-Ally (1)
-1x Political Ally
-
-Action Modifier (11)
+Action Modifier (13)
 2x Bonding
 3x Perfect Paragon
 2x Seduction
+2x Sleeping Mind, The
 2x Threats
 2x Voter Captivation
 
-Reaction (6)
-2x Elder Intervention
-2x Second Tradition: Domain
-2x Wake with Evening's Freshness
+Reaction (4)
+4x Second Tradition: Domain
 
 Combat (8)
 1x Pulled Fangs

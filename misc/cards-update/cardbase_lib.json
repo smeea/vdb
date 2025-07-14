@@ -6997,8 +6997,7 @@
                 "PG":"2"
             },
             "2P":{
-                "C":true,
-                "G":2
+                "C":true
             }
         },
         "text":"Only usable before range is determined. A vampire can play only one Bear's Skin each combat.\n[ani][pro] This round, this vampire gets +1 strength and can prevent 1 damage.\n[ANI][PRO] This combat, this vampire gets +1 strength and can prevent 1 damage each round.",
@@ -11738,6 +11737,10 @@
         "set":{
             "V5C":{
                 "PR":"8"
+            },
+            "2P":{
+                "C":true,
+                "R":5
             }
         },
         "text":"Requires an Anarch. More than one Discipline can be used to play this card. (D) Bleed.\n[ani] The bleed is with +1 bleed.\n[obf] If the bleed is successful, you can lock a minion controlled by the target Methuselah.\n[pre] If the bleed is successful, add 1 blood to a vampire in your uncontrolled region.",
@@ -16564,6 +16567,10 @@
             },
             "V5C":{
                 "PR":"1"
+            },
+            "2P":{
+                "C":true,
+                "R":1
             }
         },
         "text":"Mortal with 2 life. 0 strength, 0 bleed.\nThis ally can strike: 1R damage. This ally gets 1 optional maneuver each combat. This ally can lock to give a Ravnos you control +1 stealth.",
@@ -17087,7 +17094,8 @@
             },
             "2P":{
                 "C":true,
-                "M":2
+                "M":2,
+                "R":3
             }
         },
         "text":"[obf] +1 stealth.\n[OBF] Only usable by a ready vampire other than the acting minion. The acting minion gets +1 stealth.",
@@ -26238,7 +26246,6 @@
             },
             "2P":{
                 "C":true,
-                "BH":1,
                 "L":1
             }
         },
@@ -26423,7 +26430,7 @@
                 "M":1,
                 "Sal":2,
                 "Tr":2,
-                "V":2
+                "V":1
             }
         },
         "text":"[dom] +1 stealth action. (D) Bleed with +1 bleed.\n[DOM] (D) Steal a location.",
@@ -27479,7 +27486,8 @@
             },
             "2P":{
                 "C":true,
-                "N":1
+                "N":1,
+                "R":1
             }
         },
         "text":"Unique location.\nYou can burn this card if a minion is bleeding you to reduce the bleed amount by 2.",
@@ -27802,7 +27810,7 @@
             },
             "2P":{
                 "C":true,
-                "G":2,
+                "G":4,
                 "Tz":4
             },
             "playtest":{
@@ -28642,8 +28650,7 @@
             },
             "2P":{
                 "C":true,
-                "BH":2,
-                "V":2
+                "BH":2
             }
         },
         "text":"Only usable during a bleed action directed at you. Do not replace until after this action.\n+2 intercept. A vampire cannot play both Elder Intervention and cards named /Pack Tactics/ during the same action.",
@@ -31958,7 +31965,8 @@
             "2P":{
                 "C":true,
                 "M":2,
-                "Mi":2
+                "Mi":2,
+                "R":3
             }
         },
         "text":"[obf] +1 stealth.\n[OBF] As above, and minions who attempt to block this action and fail become locked before action resolution.",
@@ -35493,6 +35501,10 @@
         "set":{
             "V5C":{
                 "PSal":"4"
+            },
+            "2P":{
+                "C":true,
+                "Sal":2
             }
         },
         "text":"Only usable if a minion attempts to block.\n[dom] The blocking minion gets -1 intercept.\n[DOM] That attempt fails and the blocking minion cannot attempt to block this action again.",
@@ -40398,6 +40410,7 @@
             "2P":{
                 "C":true,
                 "N":2,
+                "R":2,
                 "Tz":2
             }
         },
@@ -49270,7 +49283,7 @@
             },
             "2P":{
                 "C":true,
-                "BH":1,
+                "BH":2,
                 "B":2,
                 "L":3,
                 "Mi":2,
@@ -51428,6 +51441,7 @@
                 "L":2,
                 "M":2,
                 "Mi":2,
+                "R":1,
                 "Sal":2,
                 "Tz":3,
                 "V":2
@@ -52417,7 +52431,8 @@
             "2P":{
                 "C":true,
                 "M":2,
-                "Mi":3
+                "Mi":3,
+                "R":3
             }
         },
         "text":"[obf] +1 stealth. Lost in Crowds and cards named /Into Thin Air/ cannot both be played during the same action.\n[OBF] As above, but for +2 stealth.",
@@ -57042,9 +57057,7 @@
             "2P":{
                 "C":true,
                 "H":1,
-                "Sal":1,
-                "Tr":1,
-                "V":1
+                "Tr":1
             },
             "playtest":{
                 "SCat":2
@@ -61891,6 +61904,7 @@
                 "C":true,
                 "H":2,
                 "Mi":2,
+                "R":2,
                 "Sal":2,
                 "To":2,
                 "Tz":2
@@ -64949,6 +64963,11 @@
             "V5H":{
                 "PH":"1"
             },
+            "2P":{
+                "C":true,
+                "R":1,
+                "V":1
+            },
             "playtest":{
                 "NTz":1
             }
@@ -65918,8 +65937,7 @@
                 "PV":"1"
             },
             "2P":{
-                "C":true,
-                "V":1
+                "C":true
             }
         },
         "text":"Unique mortal with 1 life. 0 strength, 3 bleed.",
@@ -69403,6 +69421,10 @@
             },
             "NB2":{
                 "PMi":"1"
+            },
+            "2P":{
+                "C":true,
+                "V":2
             }
         },
         "text":"[pre] (D) Bleed with +1 bleed. Titled vampires cannot block this action.\n[PRE] As above, and the target Methuselah locks a ready unlocked minion they control.",
@@ -79438,7 +79460,7 @@
                 "L":2,
                 "To":2,
                 "Tr":2,
-                "V":2
+                "V":4
             }
         },
         "text":"Requires a prince or justicar.\n[REACTION] +2 intercept.\n[REACTION] Only usable by a locked prince or justicar. This vampire burns 1 blood to unlock and attempt to block with +2 intercept, even if intercept is not yet needed.",
@@ -79749,7 +79771,7 @@
             },
             "2P":{
                 "C":true,
-                "Sal":3,
+                "Sal":2,
                 "V":2
             }
         },
@@ -82484,6 +82506,10 @@
             },
             "V5C":{
                 "PR":"1"
+            },
+            "2P":{
+                "C":true,
+                "R":1
             }
         },
         "text":"Unique.\nMove the top 2 cards of your library to this equipment, face down and out of play (you can look at the cards at any time). While this Ravnos is ready, if you would draw a card from your library, you can draw one of these cards instead. During your unlock phase, you can move the top card of your library to this equipment.",
@@ -84139,6 +84165,11 @@
             },
             "V5L":{
                 "PL":"2"
+            },
+            "2P":{
+                "C":true,
+                "Sal":2,
+                "V":2
             }
         },
         "text":"Only usable as the action is announced.\n[dom] Choose a locked vampire. The chosen vampire cannot block this action.\n[DOM] During this action, minions cannot unlock.",
@@ -86702,7 +86733,8 @@
             "2P":{
                 "C":true,
                 "M":2,
-                "Mi":1
+                "Mi":1,
+                "R":2
             }
         },
         "text":"[obf] +1 stealth.\n[OBF] Only usable if a bleed would be successful. Instead, the bleed burns no pool, is unsuccessful, and this card is put on this vampire. The next time this vampire is about to successfully bleed the same Methuselah, burn this card and this vampire gets +2 bleed.",
@@ -89377,7 +89409,8 @@
                 "BH":4,
                 "M":4,
                 "Mi":3,
-                "N":3
+                "N":3,
+                "R":2
             }
         },
         "text":"[obf] [ACTION MODIFIER] +1 stealth.\n[OBF] [COMBAT] Maneuver.",
@@ -92979,7 +93012,8 @@
                 "2022-10-22":true
             },
             "2P":{
-                "C":true
+                "C":true,
+                "R":2
             }
         },
         "text":"[ani] (D) Steal 1 blood or life from a minion controlled by your prey.\n[ANI] As above, and put this card on this vampire. This vampire gets +1 bleed against your prey. Minions can burn this card as a (D) action. A vampire can have only one Tier of Souls.",
@@ -93774,7 +93808,7 @@
             },
             "2P":{
                 "C":true,
-                "Sal":3
+                "Sal":2
             },
             "playtest":{
                 "NSal":3
@@ -95383,7 +95417,8 @@
             },
             "2P":{
                 "C":true,
-                "Mi":4
+                "Mi":4,
+                "R":5
             }
         },
         "text":"[obf][pre] Only usable during a bleed action. +1 bleed (limited).\n[OBF][PRE] Only usable if a minion attempts to block. That attempt fails and the blocking minion cannot attempt to block this action again. The blocking minion's controller can burn 1 pool to cancel this card as it is played.",
@@ -99235,7 +99270,8 @@
             },
             "2P":{
                 "C":true,
-                "Mi":2
+                "Mi":2,
+                "R":4
             }
         },
         "text":"[obf][pre] Reduce a bleed against you by 3.\n[OBF][PRE] Lock this vampire to reduce a bleed against you to 0. (The acting minion can still increase the bleed amount.)",
@@ -99518,6 +99554,7 @@
             "2P":{
                 "C":true,
                 "N":2,
+                "R":3,
                 "Tz":2
             }
         },
@@ -99954,8 +99991,7 @@
             "2P":{
                 "C":true,
                 "M":2,
-                "Mi":2,
-                "V":2
+                "Mi":2
             }
         },
         "text":"Only usable by a locked vampire. Do not replace until your next unlock phase.\nThis vampire wakes (they ignore the requirement to be unlocked for playing reaction cards and attempting to block until the end of the action).",
@@ -101429,7 +101465,7 @@
             "2P":{
                 "C":true,
                 "M":2,
-                "Sal":3,
+                "Sal":2,
                 "To":3,
                 "V":2
             }
@@ -101929,6 +101965,7 @@
                 "M":1,
                 "Mi":1,
                 "N":1,
+                "R":1,
                 "Sal":1,
                 "To":1,
                 "Tz":1,

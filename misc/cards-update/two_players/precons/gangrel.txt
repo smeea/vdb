@@ -21,8 +21,8 @@ Action (10)
 Ally (1)
 1x Double Deuce
 
-Action modifier (2)
-2x Earth Control
+Action modifier (4)
+4x Earth Control
 
 Reaction (11)
 1x Cats' Guidance
@@ -31,8 +31,7 @@ Reaction (11)
 3x Organized Resistance
 2x Protection Racket
 
-Combat (13)
-2x Bear’s Skin
+Combat (11)
 2x Body Flare
 4x Carrion Crows
 1x Mythic Form

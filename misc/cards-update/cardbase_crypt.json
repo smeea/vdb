@@ -15556,6 +15556,10 @@
             "V5C":{
                 "PR":"1"
             },
+            "2P":{
+                "C":true,
+                "R":2
+            },
             "playtest":{
                 "NR":1
             }
@@ -21598,6 +21602,10 @@
         "set":{
             "V5C":{
                 "PR":"1"
+            },
+            "2P":{
+                "C":true,
+                "R":1
             }
         },
         "text":"Anarch: During an action Gathii performs, you can reveal the top card of your library. If it is a master card, he burns 1 blood; otherwise, he gets +1 stealth.",
@@ -32721,7 +32729,7 @@
             },
             "2P":{
                 "C":true,
-                "BH":1
+                "BH":2
             }
         },
         "text":"Camarilla Prince of Thessaloniki.",
@@ -37782,6 +37790,10 @@
         "set":{
             "V5C":{
                 "PR":"1"
+            },
+            "2P":{
+                "C":true,
+                "R":1
             },
             "playtest":{
                 "NR":1
@@ -49151,6 +49163,10 @@
         "set":{
             "V5C":{
                 "PR":"1"
+            },
+            "2P":{
+                "C":true,
+                "R":2
             }
         },
         "text":"Anarch: Once each combat, Phaibun can discard a card at random to strike: dodge.",
@@ -52181,6 +52197,10 @@
         "set":{
             "V5C":{
                 "PR":"1"
+            },
+            "2P":{
+                "C":true,
+                "R":2
             },
             "playtest":{
                 "NR":1
@@ -57228,6 +57248,10 @@
         "set":{
             "V5C":{
                 "PR":"2"
+            },
+            "2P":{
+                "C":true,
+                "R":4
             }
         },
         "text":"Anarch: If Sreelekha is ready at the start of your discard phase, you get +1 discard phase action. +1 bleed.",
@@ -59106,10 +59130,6 @@
             "Promo":{
                 "2023-05-01":true,
                 "2024-04-23":true
-            },
-            "2P":{
-                "C":true,
-                "BH":2
             }
         },
         "text":"Camarilla. 2 votes (titled): While /Victoria Ash/ is in your ready region, Tegyrius gets +2 votes. +1 strength.",
@@ -63784,7 +63804,7 @@
             },
             "2P":{
                 "C":true,
-                "BH":1
+                "BH":2
             }
         },
         "text":"Camarilla Prince of Algiers.",
