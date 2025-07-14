@@ -11,6 +11,7 @@ const PdaResultDescriptionText = ({ deck }) => {
   const { isMobile } = useApp();
   const navigate = useNavigate();
   const lastUpdated = dayjs(deck[TIMESTAMP]).format("YYYY-MM-DD");
+  const hasTags = [...deck[TAGS][SUPERIOR], ...deck[TAGS][BASE]].length > 0;
 
   const handleClick = (value) => {
     clearSearchForm(PDA);
@@ -43,9 +44,7 @@ const PdaResultDescriptionText = ({ deck }) => {
           )}
         </tbody>
       </table>
-      {(deck[TAGS][SUPERIOR].length > 0 || deck[TAGS][BASE].length > 0) && (
-        <TwdResultTags tags={deck[TAGS]} />
-      )}
+      {hasTags && <TwdResultTags tags={deck[TAGS]} />}
     </>
   );
 };

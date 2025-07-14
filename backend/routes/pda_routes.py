@@ -128,16 +128,18 @@ def get_missing_fields(source):
 
 
 def sanitize_pda(d):
+    tags = d.tags if isinstance(d.tags, dict) else {"superior": [], "base": d.tags}
+
     deck = {
         "deckid": d.deckid,
         "name": d.name,
         "author": d.author_public_name,
         "isFavorited": False,
         "favoritedBy": len(d.favorited),
-        "creation_date": (d.creation_date if d.creation_date else d.timestamp.strftime("%Y-%m-%d")),
+        "creation_date": d.creation_date,
         "timestamp": d.timestamp,
         "cards": d.cards,
-        "tags": d.tags,
+        "tags": tags,
     }
 
     if current_user.is_authenticated and current_user.id in d.favorited:
@@ -147,10 +149,7 @@ def sanitize_pda(d):
 
 
 def minify_pda(d):
-    deck = {
-        "deckid": d.deckid,
-        "creation_date": (d.creation_date if d.creation_date else d.timestamp.strftime("%Y-%m-%d")),
-    }
+    deck = {"deckid": d.deckid, "creation_date": d.creation_date}
 
     if current_user.is_authenticated and current_user.id in d.favorited:
         deck["isFavorited"] = True
@@ -165,10 +164,12 @@ def get_pda(deckid):
         abort(400)
 
     is_author = current_user == d.author
+    tags = d.tags if isinstance(d.tags, dict) else {"superior": [], "base": d.tags}
 
     deck = {
         "author": d.author_public_name,
         "cards": d.cards,
+        "creation_date": d.creation_date,
         "deckid": d.deckid,
         "description": d.description,
         "favorited": d.favorited,
@@ -177,7 +178,7 @@ def get_pda(deckid):
         "name": d.name,
         "publicChild": d.public_child if is_author else bool(d.public_child),
         "publicParent": d.public_parent if is_author else bool(d.public_parent),
-        "tags": d.tags,
+        "tags": tags,
         "timestamp": d.timestamp,
     }
 
@@ -209,33 +210,38 @@ def get_pda_authors_route():
 def search_pda_route():
     pda_decks = []
     decks = []
-    if "src" in request.json and request.json["src"] == "my-nonpublic":
+    if "src" in request.json and request.json["src"] in ["my-nonpublic", "my"]:
         decks = (
-            Deck.query.filter(Deck.author == current_user).order_by(Deck.creation_date.desc()).all()
+            Deck.query.filter(Deck.author == current_user)
+            .order_by(Deck.creation_date.desc())
+            .all()
         )
     else:
         decks = (
-            Deck.query.filter(Deck.public_parent != None).order_by(Deck.creation_date.desc()).all()
+            Deck.query.filter(Deck.public_parent != None)
+            .order_by(Deck.creation_date.desc())
+            .all()
         )
 
     for d in decks:
+        tags = d.tags if isinstance(d.tags, dict) else {"superior": [], "base": d.tags}
+
         deck = {
             "deckid": d.deckid,
             "capacity": d.capacity,
             "cardtypes_ratio": d.cardtypes_ratio,
             "clan": d.clan,
             "sect": d.sect,
-            "tags": d.tags,
+            "tags": tags,
             "crypt": {},
             "crypt_total": d.crypt_total,
-            "creation_date": (
-                d.creation_date if d.creation_date else d.timestamp.strftime("%Y-%m-%d")
-            ),
+            "creation_date": d.creation_date,
             "disciplines": d.disciplines,
             "library": {},
             "library_total": d.library_total,
             "author": d.author_public_name,
             "traits": d.traits,
+            "public_parent": d.public_parent,
             "owner": d.author,
         }
 
@@ -265,12 +271,18 @@ def search_pda_route():
         "similar",
     ]
 
-    queries = [{"option": q, "value": request.json[q]} for q in query_priority if q in request.json]
+    queries = [
+        {"option": q, "value": request.json[q]}
+        for q in query_priority
+        if q in request.json
+    ]
     result = search_decks(queries, pda_decks)
 
     if "matchInventory" in request.json:
         if result:
-            result = match_inventory(request.json["matchInventory"], current_user.inventory, result)
+            result = match_inventory(
+                request.json["matchInventory"], current_user.inventory, result
+            )
         else:
             result = match_inventory(
                 request.json["matchInventory"], current_user.inventory, pda_decks
@@ -386,7 +398,9 @@ def get_new_pda_route(quantity):
 
     counter = 0
     for d in (
-        Deck.query.filter(Deck.public_parent != None).order_by(Deck.creation_date.desc()).all()
+        Deck.query.filter(Deck.public_parent != None)
+        .order_by(Deck.creation_date.desc())
+        .all()
     ):
         if counter == quantity:
             break
@@ -410,7 +424,9 @@ def get_random_pda_route(quantity):
             decks_id.append(id)
 
     for idx, id in enumerate(decks_id):
-        decks.append(minify_pda(all_decks[id]) if idx > 9 else sanitize_pda(all_decks[id]))
+        decks.append(
+            minify_pda(all_decks[id]) if idx > 9 else sanitize_pda(all_decks[id])
+        )
 
     return jsonify(decks)
 
