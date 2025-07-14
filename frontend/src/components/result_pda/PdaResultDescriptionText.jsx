@@ -10,7 +10,7 @@ import { clearSearchForm, searchPdaForm, useApp } from "@/context";
 const PdaResultDescriptionText = ({ deck }) => {
   const { isMobile } = useApp();
   const navigate = useNavigate();
-  const lastUpdated = dayjs(deck[TIMESTAMP]).format("YYYY");
+  const lastUpdated = dayjs(deck[TIMESTAMP]).format("YYYY-MM-DD");
 
   const handleClick = (value) => {
     clearSearchForm(PDA);
@@ -36,7 +36,7 @@ const PdaResultDescriptionText = ({ deck }) => {
           <TwdResultDescriptionTextTr title={isMobile ? <CalendarEvent /> : "Created:"}>
             {deck[CREATION_DATE]}
           </TwdResultDescriptionTextTr>
-          {lastUpdated !== deck[CREATION_DATE] && (
+          {lastUpdated > deck[CREATION_DATE] && (
             <TwdResultDescriptionTextTr title={isMobile ? <CalendarEvent /> : "Updated:"}>
               {lastUpdated}
             </TwdResultDescriptionTextTr>
