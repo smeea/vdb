@@ -1688,11 +1688,10 @@ G00109|Cannot be dodged:
   101693|Scorpion Sting: '[ANI]'
   102106|Vengeance of Samiel: '[val],[VAL]'
   102286|Aggressive Corpse: ''
-G00110|Put Card in play ignoring requirements:
+G00110|Put card in play ignoring requirements:
   100038|Alastor: ''
   100044|Ambrosius, The Ferryman: ''
   100142|Bauble: ''
-  100162|Biothaumaturgic Experiment: ''
   100388|Compel the Spirit: ''
   100851|Grasp the Ghostly: ''
   101061|Kiss of Lachesis: '[TEM]'
@@ -1882,6 +1881,7 @@ G00125|Exchange card with ash heap:
   200245|Carlotta Giovanni: ''
   201721|Lenelle, Mambo of Birmingham: ''
 G00126|Move or reveal card from crypt:
+  100144|Bear-Baiting: ''
   100365|Clotho's Gift: '[obf]'
   100616|Effective Management: ''
   100843|Goodnight, Sweet Prince: ''
@@ -1889,6 +1889,7 @@ G00126|Move or reveal card from crypt:
   100987|Innocent Bystander: ''
   101050|Kindred Intelligence: ''
   101206|Mesu Bedshet: ''
+  101396|Petra Resonance: ''
   101570|Recruitment Exercise: ''
   102289|Family Gathering: ''
 G00127|Set range:
@@ -1933,3 +1934,27 @@ G00130|Lock to reduce cost:
   '101443|Powerbase: Tshwane': ''
   101904|Sunset Strip, Hollywood: ''
   102244|Shard, London, The: ''
+G00131|Equip/employ/recruit outside of an action:
+  100067|Angel of Berlin: ''
+  100392|Concealed Weapon: ''
+  100555|Disguised Weapon: ''
+  100825|Gift of Bellona: '[VAL]'
+  101297|Nosferatu Bestial: ''
+  101342|Pack Alpha: '[ani]'
+  101401|Piper: ''
+  '102036|Trophy: Retainers': ''
+  200255|Castiel: ''
+  200459|Fatima al-Faqadi: ''
+  201467|White Lily: ''
+G00132|Equip/Employ/Recruit action:
+  100072|Anonymous Freight: ''
+  100340|Children of Stone: ''
+  101016|Jack of Both Sides: ''
+  101143|Magic of the Smith: ''
+  101255|Muricia's Call: ''
+  101902|Summoning, The: '[PRE]'
+  201098|Patrizia Giovanni, Collector of Secrets: ''
+G00133|Allies with equip actions:
+  101961|Terrorists: ''
+  102235|Dark Web Procurer: ''
+  102239|Michael Harris, the Incinerator: ''

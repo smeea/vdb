@@ -11476,6 +11476,40 @@
                     "ANK 20180925-2":"https://www.vekn.net/forum/rules-questions/77029-order-of-draw-and-replace-for-concealed-weapon-under-infernal-pursuit?start=6#90757",
                     "LSJ 19991207":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aQaOTYwC-fg/m/vdyo09QZoicJ"
                 }
+            },
+            {
+                "text":"Requirements apply but do not count as requirements for the action (eg. you cannot use CrimethInc. if the card requires an Anarch).",
+                "refs":{
+                    "LSJ 20100725":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9d1zMZfsfNo/m/l3fbDtbr9xwJ",
+                    "LSJ 20100303":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jmmm0WRUPvs/m/x9pv1OmWFS4J",
+                    "ANK 20180817":"https://www.vekn.net/forum/rules-questions/76933-cock-robin-jack-of-both-sides#90064"
+                }
+            },
+            {
+                "text":"This does not count as performing the action to employ/recruit/equip this retainer/ally/equipment in respect to section 3 of the rules. The same vampire can play the respective card in a normal fashion during their turn, if unlocked.",
+                "refs":{
+                    "LSJ 20080815":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0_1JBbdwi74/m/c1GepnS4ylEJ"
+                }
+            },
+            {
+                "text":"This is not an action, so cost reductions referring to an action do not apply.  (e.g. {Charisma}, {Erichtho})",
+                "refs":{
+                    "LSJ 20090115-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/RQ3ARP9Kvfk/m/dBN_M7SnIHAJ",
+                    "ANK 20170309":"https://www.vekn.net/forum/rules-questions/75649-reduce-ally-cost-and-piper-combo#81049"
+                }
+            },
+            {
+                "text":"The ally card is not \"played\" by the minion (e.g. {Louhi}'s ability cannot cancel it).",
+                "refs":{
+                    "ANK 20201229":"https://www.vekn.net/forum/rules-questions/78959-louhi-and-piper#101325"
+                }
+            },
+            {
+                "text":"Cost reductions that are not referring to an action apply .",
+                "refs":{
+                    "ANK 20230824":"https://www.vekn.net/forum/news-and-announcements/80782-the-line-pack-alpha?start=6#109157",
+                    "RTR 20070707":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/vSOt2c1uRzQ/m/MsRAv47Cd4YJ"
+                }
             }
         ],
         "sect":"Sabbat",
@@ -20130,6 +20164,40 @@
                     "LSJ 20100130":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/X8Uu7Sk56P4/m/twUvR4ZnBBkJ",
                     "ANK 20180925-2":"https://www.vekn.net/forum/rules-questions/77029-order-of-draw-and-replace-for-concealed-weapon-under-infernal-pursuit?start=6#90757",
                     "LSJ 19991207":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aQaOTYwC-fg/m/vdyo09QZoicJ"
+                }
+            },
+            {
+                "text":"Requirements apply but do not count as requirements for the action (eg. you cannot use CrimethInc. if the card requires an Anarch).",
+                "refs":{
+                    "LSJ 20100725":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9d1zMZfsfNo/m/l3fbDtbr9xwJ",
+                    "LSJ 20100303":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jmmm0WRUPvs/m/x9pv1OmWFS4J",
+                    "ANK 20180817":"https://www.vekn.net/forum/rules-questions/76933-cock-robin-jack-of-both-sides#90064"
+                }
+            },
+            {
+                "text":"This does not count as performing the action to employ/recruit/equip this retainer/ally/equipment in respect to section 3 of the rules. The same vampire can play the respective card in a normal fashion during their turn, if unlocked.",
+                "refs":{
+                    "LSJ 20080815":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0_1JBbdwi74/m/c1GepnS4ylEJ"
+                }
+            },
+            {
+                "text":"This is not an action, so cost reductions referring to an action do not apply.  (e.g. {Charisma}, {Erichtho})",
+                "refs":{
+                    "LSJ 20090115-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/RQ3ARP9Kvfk/m/dBN_M7SnIHAJ",
+                    "ANK 20170309":"https://www.vekn.net/forum/rules-questions/75649-reduce-ally-cost-and-piper-combo#81049"
+                }
+            },
+            {
+                "text":"The ally card is not \"played\" by the minion (e.g. {Louhi}'s ability cannot cancel it).",
+                "refs":{
+                    "ANK 20201229":"https://www.vekn.net/forum/rules-questions/78959-louhi-and-piper#101325"
+                }
+            },
+            {
+                "text":"Cost reductions that are not referring to an action apply .",
+                "refs":{
+                    "ANK 20230824":"https://www.vekn.net/forum/news-and-announcements/80782-the-line-pack-alpha?start=6#109157",
+                    "RTR 20070707":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/vSOt2c1uRzQ/m/MsRAv47Cd4YJ"
                 }
             }
         ],
@@ -48262,6 +48330,32 @@
                 "refs":{
                     "LSJ 20010627":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NhNCVCCDyU0/m/I5Yph3-UUPsJ"
                 }
+            },
+            {
+                "text":"Does not prevent the acting vampire from playing the equipment/retainer/ally directly this turn if he unlocks (not the same action).",
+                "refs":{
+                    "ANK 20180817":"https://www.vekn.net/forum/rules-questions/76933-cock-robin-jack-of-both-sides#90064"
+                }
+            },
+            {
+                "text":"Requirements apply but do not count as requirements for the action (eg. you cannot use {CrimethInc.} if the chosen card requires an Anarch).",
+                "refs":{
+                    "ANK 20180817":"https://www.vekn.net/forum/rules-questions/76933-cock-robin-jack-of-both-sides#90064",
+                    "LSJ 20100303":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jmmm0WRUPvs/m/x9pv1OmWFS4J",
+                    "LSJ 20100725":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9d1zMZfsfNo/m/l3fbDtbr9xwJ"
+                }
+            },
+            {
+                "text":"When choosing a card whose effect depend on Discipline level, the vampire decides in respect to his disciplines the normal way.",
+                "refs":{
+                    "LSJ 20080803":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/VgARso4nY7w/m/cAl0o7WpblAJ"
+                }
+            },
+            {
+                "text":"Is an action of the appropriate type for the chosen card (recruit/employ/equip).",
+                "refs":{
+                    "TOM 19960130":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/wF82VdVPlm0/m/MmFo2E7lrY8J"
+                }
             }
         ],
         "sect":"Independent",
@@ -64062,12 +64156,6 @@
         "path":"",
         "rulings":[
             {
-                "text":"Requirements need to be met.",
-                "refs":{
-                    "LSJ 20080702-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/sCHpPQkjeAE/m/SLhxvwuWksMJ"
-                }
-            },
-            {
                 "text":"Can only use her ability when she is in combat herself.",
                 "refs":{
                     "ANK 20221021":"https://www.vekn.net/forum/rules-questions/80108-patagia#106628"
@@ -64086,6 +64174,40 @@
                     "LSJ 20100130":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/X8Uu7Sk56P4/m/twUvR4ZnBBkJ",
                     "ANK 20180925-2":"https://www.vekn.net/forum/rules-questions/77029-order-of-draw-and-replace-for-concealed-weapon-under-infernal-pursuit?start=6#90757",
                     "LSJ 19991207":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aQaOTYwC-fg/m/vdyo09QZoicJ"
+                }
+            },
+            {
+                "text":"Requirements apply but do not count as requirements for the action (eg. you cannot use CrimethInc. if the card requires an Anarch).",
+                "refs":{
+                    "LSJ 20100725":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9d1zMZfsfNo/m/l3fbDtbr9xwJ",
+                    "LSJ 20100303":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jmmm0WRUPvs/m/x9pv1OmWFS4J",
+                    "ANK 20180817":"https://www.vekn.net/forum/rules-questions/76933-cock-robin-jack-of-both-sides#90064"
+                }
+            },
+            {
+                "text":"This does not count as performing the action to employ/recruit/equip this retainer/ally/equipment in respect to section 3 of the rules. The same vampire can play the respective card in a normal fashion during their turn, if unlocked.",
+                "refs":{
+                    "LSJ 20080815":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0_1JBbdwi74/m/c1GepnS4ylEJ"
+                }
+            },
+            {
+                "text":"This is not an action, so cost reductions referring to an action do not apply.  (e.g. {Charisma}, {Erichtho})",
+                "refs":{
+                    "LSJ 20090115-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/RQ3ARP9Kvfk/m/dBN_M7SnIHAJ",
+                    "ANK 20170309":"https://www.vekn.net/forum/rules-questions/75649-reduce-ally-cost-and-piper-combo#81049"
+                }
+            },
+            {
+                "text":"The ally card is not \"played\" by the minion (e.g. {Louhi}'s ability cannot cancel it).",
+                "refs":{
+                    "ANK 20201229":"https://www.vekn.net/forum/rules-questions/78959-louhi-and-piper#101325"
+                }
+            },
+            {
+                "text":"Cost reductions that are not referring to an action apply .",
+                "refs":{
+                    "ANK 20230824":"https://www.vekn.net/forum/news-and-announcements/80782-the-line-pack-alpha?start=6#109157",
+                    "RTR 20070707":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/vSOt2c1uRzQ/m/MsRAv47Cd4YJ"
                 }
             }
         ],

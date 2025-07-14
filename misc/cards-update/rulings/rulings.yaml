@@ -278,7 +278,6 @@
   - Still cannot be burned if the target equipment was burned and somehow returned to play. [LSJ 20040726] [ANK 20191031]
 100144|Bear-Baiting:
   - Damage is environmental. [RTR 19970630]
-  - Cannot be played if the blocker's crypt is empty. [LSJ 20031107]
   - '{Change of Target} can be played after Bear-Baiting (younger, older, or the same age). [LSJ 20040312]'
   - If the combat is canceled, the action is still blocked, {Mask of a Thousand Faces} cannot be used to continue it, but
     an effect can be used to continue the action as if unblocked (eg. {Crypt's Sons}, {Momentary Delay}). [LSJ 20090322] [ANK
@@ -319,6 +318,13 @@
 100161|Bind the Night-Walker:
   - The action ends immediately, no other action modifier or reaction can be played afterwards. [RTR 20180719]
   - The action has reached resolution, so is subject to NRA (Non Repeatable Action) rules. [ANK 20211015]
+100162|Biothaumaturgic Experiment:
+  - Does not prevent the acting vampire from playing the equipment/retainer/ally directly this turn if he unlocks (not the
+    same action). [ANK 20180817]
+  - Does not count as requirements for the action (eg. you cannot use {CrimethInc.} if the card requires an Anarch). [LSJ
+    20100725] [LSJ 20100303] [ANK 20180817]
+  - When choosing a card whose effect depend on Discipline level, the chosen vampire decides in respect to his disciplines
+    the normal way. [LSJ 20080803]
 100163|Bitter and Sweet Story, The:
   - When the controller is ousted, their predator does not draw cards. [ANK 20230527-2]
 100165|Black Forest Base:
@@ -1707,12 +1713,6 @@
     [mel]). [PIB 20130704]
 101013|Island of Yiaros:
   - Provides no additional strength to a Priscus for his ballots. [RTR 19970630]
-101016|Jack of Both Sides:
-  - Is an "equip action" when equipping an equipment, an "employ action" when employing an retainer. [TOM 19960130] [LSJ 20091110]
-  - Requirements apply but do not count as requirements for the action (eg. you cannot use {CrimethInc.} if the card requires
-    an Anarch). [LSJ 20100725] [LSJ 20100303] [ANK 20180817]
-  - Does not prevent the acting vampire from playing the equipment or retainer directly this turn if he unlocks (not the same
-    action). [ANK 20180817]
 101019|Jake Washington:
   - Is not an ally in the ash heap (eg. {Compel the Spirit} cannot be played on him). [LSJ 20071014] [LSJ 20020115] [LSJ 20030128]
   - His "starting life amount" is 1 ({Vagabond Mystic} cannot give hime more life). [LSJ 20030520-2]
@@ -1943,7 +1943,6 @@
   - '[MEL] When used as an action modifier, the acting vampire gains one blood if he does not abstain, as he can only vote
     in agreement with himself. [LSJ 20020123]'
 101143|Magic of the Smith:
-  - This is an equip action. [TOM 19960130]
   - The equipment need not be declared, it is chosen upon resolution. [RBK search]
   - Can fetch an equipment that is a location when in play. [LSJ 19971001-2]
 101144|Majesty:
@@ -2135,12 +2134,6 @@
   - If combat continues or a new combat begins, the vampire unlocks but does not go to torpor. [RTR 20020501] [LSJ 20020505]
 101254|Murder of Crows:
   - Are neither mortal nor monster. [ANK 20200203-2] [LSJ 20060515]
-101255|Muricia's Call:
-  - Requirements must be met to employ the retainer. [LSJ 20100303]
-  - Does not prevent the acting vampire from playing the retainer directly this turn if he unlocks (not the same action).
-    [ANK 20180817]
-  - The requirements and cost of the retainer do not count as requirements nor cost for the action (eg. you cannot use {CrimethInc.} if
-    the retainer requires an Anarch). [LSJ 20100725]
 101258|Mustajib:
   - The target vampire is not Black Hand if he is not Sabbat. [LSJ 20070322]
 101261|Mylan Horseed:
@@ -2197,6 +2190,9 @@
   - It does not provide the ability to play reaction cards while locked (this is not a wake). [LSJ 20070208]
 101295|Nod:
   - Choose for each equipment which minion will receive it, then transfer all the equipment accordingly. [ANK 20190717-1]
+101297|Nosferatu Bestial:
+  - When employing an retainer whose effect depend on Discipline level, the chosen vampire decides in respect to his disciplines
+    the normal way. [LSJ 20080803]
 101302|Nosferatu Putrescence:
   - Can be used by a vampire in torpor. [LSJ 20020416]
   - Can be played by a minion of a Methuselah not involved in the current combat. [ANK 20181101]
@@ -2257,7 +2253,6 @@
     damaging effect is played then, all damages are prevented and mended together. [ANK 20170930]
   - The damage is applied even if the combat ends prematurely (eg. {Illusions of the Kindred}) [ANK 20180104] [LSJ 19971110]
 101342|Pack Alpha:
-  - Requirements (clan, discipline) apply. [LSJ 20051207]
   - Cost reductions apply. [RTR 20070707] [ANK 20230824]
 101348|Panacea:
   - '[aus] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Helena (ADV)}). The card
@@ -2298,14 +2293,9 @@
   - Can provide intercept only once during each action. [RBK wording-templates] [ANK 20230116]
   - Grants intercept even if the bearer is not blocking yet. [LSJ 20100329]
 101401|Piper:
-  - When used to recruit an ally, the ally cannot act this turn. [LSJ 20080630] [RTR 20180303]
-  - This is not an action, so cost reductions refering to an action like {Charisma} or {Erichtho} do not apply. [LSJ 20090115-1]
-    [ANK 20170309]
-  - This does not count as performing the action to recruit this ally in respect to section 3 of the rules. The same vampire
-    can recruit the same ally the normal way later this turn if he unlocks (and/or Piper it a second time). [LSJ 20080815]
+  - When used to recruit an ally, the ally cannot act this turn. [RBK recruit-ally]
   - When recruiting an ally or retainer whose effect depend on Discipline level, the chosen vampire decides in respect to
     his disciplines the normal way. [LSJ 20080803]
-  - The ally card is not "played" by the vampire (eg. {Louhi}'s ability cannot cancel it). [ANK 20201229]
 101405|Pocket Out of Time:
   - '[TEM] Cannot be used to start a new combat if there is already a pending combat queued. [RTR 20020501]'
   - '[TEM] Cannot be used to start a new combat if the opponent is not ready. [ANK 20220429]'
@@ -3052,13 +3042,8 @@
 101898|Summon Soul:
   - '[NEC] Is removed from play as part of the resolution, it cannot be retrieved by {Shroudsight}. [ANK 20170331]'
 101902|Summoning, The:
-  - '[PRE] Does not prevent the acting vampire from playing the ally directly this turn if he unlocks (not the same action).
-    [ANK 20180817] [PIB 20110915-2]'
-  - '[PRE] The requirements and cost of the ally do not count as requirements nor cost for the action (eg. you cannot use
-    {CrimethInc.} if the ally requires an Anarch). [ANK 20180817] [LSJ 20100303] [LSJ 20100725]'
-  - '[PRE] The ally cannot act this turn. [LSJ 20080630] [RTR 20180303]'
+  - '[PRE] The ally cannot act this turn. [RBK recruit-ally]'
   - "[PRE] The ally card itself cannot be cancelled (eg. {Louhi (G4)}'s ability cannot cancel it). [ANK 20201229]"
-  - '[PRE] Is a recruit action. [TOM 19960130]'
 101906|Supernatural Resistance:
   - If used to cancel the opposing minion's strike, that minion must still choose a strike and could play the same one again.
     [RBK cancel-a-card] [LSJ 20090818]
@@ -3183,8 +3168,6 @@
   - '[ANI] It affects card costs, cost reductions from other effects do apply. [LSJ 20070829-1]'
   - '[ANI] Also affects the cost of combat cards played at then of a round or combat (eg. {Disarm}, {Telepathic Tracking},
     {Psyche!}, {Taste of Vitae}). [ANK 20191221]'
-101961|Terrorists:
-  - The provided action is an "equip action" [TOM 19960130]
 101964|Thanks for the Donation:
   - If your prey cannot afford to contest, she pays what she has, she is ousted, and you still yield. [RTR 20010710]
 101966|Theft of Vitae:
@@ -3259,6 +3242,9 @@
 '102032|Trophy: Hunting Ground':
   - Is a non-derivative hunting ground (ie. taken into account by {Poacher's Hunting Ground}), even if not active yet. [ANK
     20170430] [LSJ 20080610]
+'102036|Trophy: Retainers':
+  - When recruiting an ally or retainer whose effect depend on Discipline level, the chosen vampire decides in respect to
+    his disciplines the normal way. [LSJ 20080803]
 102044|Truth of a Thousand Lies:
   - '[SER] Cards and effects that can be played "after resolution" (and only them) can be played after it. [ANK 20190425]'
 102047|Tunnel Runner:
@@ -4335,7 +4321,6 @@
   - Can use his ability even if he's going to torpor. [LSJ 20021007]
   - Can only use his ability when he is in combat himself. [ANK 20221021]
 201467|White Lily:
-  - Requirements need to be met. [LSJ 20080702-3]
   - Can only use her ability when she is in combat herself. [ANK 20221021]
 201471|Winterlich:
   - You can still use the burn options of cards with a requirement he could meet when you play them, but does not meet while
@@ -4700,7 +4685,7 @@ G00108|Can steal minion during an action:
     before non-mandatory actions. [LSJ 20001201]
 G00109|Cannot be dodged:
   - Does not prevent the opponent from dodging, the dodge just has no effect. [LSJ 20030902-2] [LSJ 20060808-1]
-G00110|Put Card in play ignoring requirements:
+G00110|Put card in play ignoring requirements:
   - Cards requiring a discipline come in play at the inferior version. [RBK equip] [RBK recruit-ally] [RBK employ-retainer]
 G00111|Allies without a specified sect:
   - The ally counts as "independent" when playing cards as a vampire [LSJ 20020503] [LSJ 20060126]
@@ -4772,3 +4757,26 @@ G00130|Lock to reduce cost:
     or an Ally with {Piper}). [ANK 20230824] [RTR 20070707]
   - Allows to play a card that could otherwise not be afforded, in which case, it must be locked when the action is announced.
     [LSJ 20090705] [LSJ 20030917] [ANK 20230621]
+G00131|Equip/employ/recruit outside of an action:
+  - Requirements apply but do not count as requirements for the action (eg. you cannot use CrimethInc. if the card requires
+    an Anarch). [LSJ 20100725] [LSJ 20100303] [ANK 20180817]
+  - This does not count as performing the action to employ/recruit/equip this retainer/ally/equipment in respect to section
+    3 of the rules. The same vampire can play the respective card in a normal fashion during their turn, if unlocked. [LSJ
+    20080815]
+  - This is not an action, so cost reductions referring to an action do not apply.  (e.g. {Charisma}, {Erichtho}) [LSJ 20090115-1]
+    [ANK 20170309]
+  - The ally card is not "played" by the minion (e.g. {Louhi}'s ability cannot cancel it). [ANK 20201229]
+  - Cost reductions that are not referring to an action apply . [ANK 20230824] [RTR 20070707]
+G00132|Equip/Employ/Recruit action:
+  - Does not prevent the acting vampire from playing the equipment/retainer/ally directly this turn if he unlocks (not the
+    same action). [ANK 20180817]
+  - Requirements apply but do not count as requirements for the action (eg. you cannot use {CrimethInc.} if the chosen card
+    requires an Anarch). [ANK 20180817] [LSJ 20100303] [LSJ 20100725]
+  - When choosing a card whose effect depend on Discipline level, the vampire decides in respect to his disciplines the normal
+    way. [LSJ 20080803]
+  - Is an action of the appropriate type for the chosen card (recruit/employ/equip). [TOM 19960130]
+G00133|Allies with equip actions:
+  - Does not prevent the acting ally from playing the equipment directly this turn if he unlocks (not the same action). [ANK
+    20180817]
+  - Their special is an equip action. [TOM 19960130]
+  - Requirements apply. [ANK 20180817] [LSJ 20100303] [LSJ 20100725]
