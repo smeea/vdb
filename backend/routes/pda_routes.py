@@ -210,12 +210,13 @@ def get_pda_authors_route():
 def search_pda_route():
     pda_decks = []
     decks = []
-    if "src" in request.json and request.json["src"] in ["my-nonpublic", "my"]:
+    if request.json.get("src") in ["my-nonpublic", "my"]:
         decks = (
             Deck.query.filter(Deck.author == current_user)
             .order_by(Deck.creation_date.desc())
             .all()
         )
+
     else:
         decks = (
             Deck.query.filter(Deck.public_parent != None)
@@ -278,15 +279,11 @@ def search_pda_route():
     ]
     result = search_decks(queries, pda_decks)
 
-    if "matchInventory" in request.json:
-        if result:
-            result = match_inventory(
-                request.json["matchInventory"], current_user.inventory, result
-            )
-        else:
-            result = match_inventory(
-                request.json["matchInventory"], current_user.inventory, pda_decks
-            )
+    matchInventory = request.json.get("matchInventory")
+    if matchInventory:
+        result = match_inventory(
+            matchInventory, current_user.inventory, result or pda_decks
+        )
 
     if not result:
         abort(400)

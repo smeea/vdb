@@ -79,8 +79,10 @@ def inventory_update_route():
         merged_cards = copy.deepcopy(current_user.inventory)
         merged_cards["frozen"] = request.json["isFrozen"]
         current_user.inventory = merged_cards
+
     elif current_user.inventory.get("frozen"):
         abort(409)
+
     else:
         new_cards = request.json
         merged_cards = copy.deepcopy(current_user.inventory)

@@ -61,7 +61,9 @@ def get_event(event_id):
     base_url = "https://www.vekn.net/api/vekn"
     token_valid = None
     if "vekn_timestamp" in session and "vekn_token" in session:
-        token_age = datetime.now().timestamp() - session["vekn_timestamp"].timestamp() - 18000
+        token_age = (
+            datetime.now().timestamp() - session["vekn_timestamp"].timestamp() - 18000
+        )
         if token_age > (60 * 4):
             token_valid = True
 
@@ -74,7 +76,9 @@ def get_event(event_id):
         session["vekn_timestamp"] = datetime.now()
 
     event_url = f"{base_url}/event/{event_id}"
-    r = requests.get(event_url, headers={"Authorization": f"Bearer {session['vekn_token']}"})
+    r = requests.get(
+        event_url, headers={"Authorization": f"Bearer {session['vekn_token']}"}
+    )
     data = r.json()["data"]["events"][0]
 
     return data
@@ -103,7 +107,9 @@ def get_twd_hof_players():
 @app.route("/api/twd/new/<int:quantity>", methods=["GET"])
 def get_new_twd_route(quantity):
     decks = []
-    sorted_decks = sorted(list(twd_decks.values()), key=lambda x: x["creation_date"], reverse=True)
+    sorted_decks = sorted(
+        list(twd_decks.values()), key=lambda x: x["creation_date"], reverse=True
+    )
     for i in range(quantity):
         deck = sorted_decks[i]
         decks.append(minify_twd(deck) if i > 9 else sanitize_twd(deck))
@@ -123,7 +129,9 @@ def get_random_twd_route(quantity):
             decks_id.append(id)
 
     for idx, id in enumerate(decks_id):
-        decks.append(minify_twd(all_decks[id]) if idx > 9 else sanitize_twd(all_decks[id]))
+        decks.append(
+            minify_twd(all_decks[id]) if idx > 9 else sanitize_twd(all_decks[id])
+        )
 
     return jsonify(decks)
 
@@ -157,23 +165,25 @@ def search_twd_route():
         "cardtypes",
         "similar",
     ]
-    queries = [{"option": q, "value": request.json[q]} for q in query_priority if q in request.json]
+    queries = [
+        {"option": q, "value": request.json[q]}
+        for q in query_priority
+        if q in request.json
+    ]
 
     result = search_decks(queries, twd_decks.values())
 
-    if "matchInventory" in request.json:
-        if result:
-            result = match_inventory(request.json["matchInventory"], current_user.inventory, result)
-        else:
-            result = match_inventory(
-                request.json["matchInventory"],
-                current_user.inventory,
-                twd_decks.values(),
-            )
+    matchInventory = request.json.get("matchInventory")
+    if matchInventory:
+        result = match_inventory(
+            matchInventory, current_user.inventory, result or twd_decks.values()
+        )
 
     if not result:
         abort(400)
 
     result.sort(key=lambda x: x["creation_date"], reverse=True)
 
-    return jsonify([sanitize_twd(d) for d in result[0:10]] + [minify_twd(d) for d in result[10:]])
+    return jsonify(
+        [sanitize_twd(d) for d in result[0:10]] + [minify_twd(d) for d in result[10:]]
+    )

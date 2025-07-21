@@ -25,7 +25,7 @@ def login_route():
     if not user.check_password(request.json["password"]):
         abort(401)
 
-    remember = request.json["remember"] if "remember" in request.json else False
+    remember = bool(request.json.get("remember"))
     login_user(user, remember=remember)
     cards_reports = (
         len(current_user.playtest_report["cards"].keys())
@@ -68,103 +68,104 @@ def logout_route():
 
 @app.route("/api/account", methods=["GET"])
 def who_am_i_route():
-    if current_user.is_authenticated:
-        cards_reports = (
-            len(current_user.playtest_report["cards"].keys())
-            if "cards" in current_user.playtest_report
-            else 0
-        )
-        precons_reports = (
-            len(current_user.playtest_report["precons"].keys())
-            if "precons" in current_user.playtest_report
-            else 0
-        )
-        total_reports = cards_reports + precons_reports
-
-        playtest = {
-            "is_playtester": current_user.playtester,
-            "is_admin": current_user.playtest_admin,
-            "profile": {**current_user.playtest_profile, "reports": total_reports},
-            "secret": os.environ.get("PLAYTEST_KEY") if current_user.playtester else None,
-        }
-        if "added_by" in playtest["profile"]:
-            del playtest["profile"]["added_by"]
-
-        return jsonify(
-            {
-                "username": current_user.username,
-                "email": current_user.email,
-                "playtest": playtest,
-                "public_name": current_user.public_name,
-                "decks": parse_user_decks(current_user.decks.all()),
-                "inventory": parse_user_inventory(current_user.inventory),
-                "inventory_key": current_user.inventory_key,
-            }
-        )
-    else:
+    if not current_user.is_authenticated:
         return jsonify(success=False)
+
+    cards_reports = (
+        len(current_user.playtest_report["cards"].keys())
+        if "cards" in current_user.playtest_report
+        else 0
+    )
+    precons_reports = (
+        len(current_user.playtest_report["precons"].keys())
+        if "precons" in current_user.playtest_report
+        else 0
+    )
+    total_reports = cards_reports + precons_reports
+
+    playtest = {
+        "is_playtester": current_user.playtester,
+        "is_admin": current_user.playtest_admin,
+        "profile": {**current_user.playtest_profile, "reports": total_reports},
+        "secret": os.environ.get("PLAYTEST_KEY") if current_user.playtester else None,
+    }
+    if "added_by" in playtest["profile"]:
+        del playtest["profile"]["added_by"]
+
+    return jsonify(
+        {
+            "username": current_user.username,
+            "email": current_user.email,
+            "playtest": playtest,
+            "public_name": current_user.public_name,
+            "decks": parse_user_decks(current_user.decks.all()),
+            "inventory": parse_user_inventory(current_user.inventory),
+            "inventory_key": current_user.inventory_key,
+        }
+    )
 
 
 @app.route("/api/account", methods=["POST"])
 def account_create_route():
     if current_user.is_authenticated:
         return jsonify({"already logged as:": current_user.username})
+
     if not request.json["password"] or not request.json["username"]:
         abort(400)
+
     if User.query.filter_by(username=request.json["username"].lower()).first():
         abort(409)
-    else:
-        user = User(
-            username=request.json["username"].lower(),
-            email=request.json["email"],
-            public_name=request.json["username"],
-        )
-        user.set_password(request.json["password"])
-        db.session.add(user)
-        db.session.commit()
-        login_user(user)
-        return jsonify({"username": user.username, "email": user.email})
+
+    user = User(
+        username=request.json["username"].lower(),
+        email=request.json["email"],
+        public_name=request.json["username"],
+    )
+    user.set_password(request.json["password"])
+    db.session.add(user)
+    db.session.commit()
+    login_user(user)
+    return jsonify({"username": user.username, "email": user.email})
 
 
 @app.route("/api/account", methods=["PUT"])
 @login_required
 def account_update_route():
-    if "publicName" in request.json:
-        current_user.public_name = request.json["publicName"]
-        db.session.commit()
-        return jsonify(success=True)
+    for k, v in request.json.items():
+        match k:
+            case "publicName":
+                current_user.public_name = request.json["publicName"]
+                db.session.commit()
+                return jsonify(success=True)
 
-    elif "email" in request.json:
-        if not current_user.check_password(request.json["password"]):
-            abort(401)
+            case "email":
+                if not current_user.check_password(request.json["password"]):
+                    abort(401)
 
-        current_user.email = request.json["email"]
-        db.session.commit()
-        return jsonify(success=True)
+                current_user.email = request.json["email"]
+                db.session.commit()
+                return jsonify(success=True)
 
-    elif "inventoryKey" in request.json:
-        current_user.inventory_key = request.json["inventoryKey"]
-        db.session.commit()
-        return jsonify(success=True)
+            case "inventoryKey":
+                current_user.inventory_key = request.json["inventoryKey"]
+                db.session.commit()
+                return jsonify(success=True)
 
-    elif "newPassword" in request.json:
-        if not current_user.check_password(request.json["password"]):
-            abort(401)
+            case "newPassword":
+                if not current_user.check_password(request.json["password"]):
+                    abort(401)
 
-        current_user.set_password(request.json["newPassword"])
-        db.session.commit()
-        return jsonify(success=True)
+                current_user.set_password(request.json["newPassword"])
+                db.session.commit()
+                return jsonify(success=True)
 
 
 @app.route("/api/account", methods=["DELETE"])
 @login_required
 def delete_account_route():
-    if current_user.check_password(request.json["password"]):
-        try:
-            db.session.delete(current_user)
-            db.session.commit()
-            return jsonify({"account deleted": current_user.username})
-        except Exception:
-            pass
-    else:
+    if not current_user.check_password(request.json["password"]):
         abort(401)
+
+    db.session.delete(current_user)
+    db.session.commit()
+    return jsonify({"account deleted": current_user.username})

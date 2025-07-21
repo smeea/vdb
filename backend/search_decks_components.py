@@ -121,8 +121,8 @@ def get_decks_by_event(event, decks):
 
 
 def get_decks_by_date(request, decks):
-    date_from = int(request["from"]) if "from" in request else 1997
-    date_to = int(request["to"]) if "to" in request else 2077
+    date_from = int(request.get("from") or 1997)
+    date_to = int(request.get("to") or 2077)
     match_decks = []
 
     for deck in decks:
@@ -134,8 +134,8 @@ def get_decks_by_date(request, decks):
 
 
 def get_decks_by_players(request, decks):
-    players_from = int(request["from"]) if "from" in request else 1
-    players_to = int(request["to"]) if "to" in request else 1000
+    players_from = int(request.get("from") or 1)
+    players_to = int(request.get("to") or 1000)
     match_decks = []
 
     for deck in decks:
@@ -315,9 +315,9 @@ def get_decks_by_libraryTotal(total_input, decks):
 
 
 def match_inventory(request, inventory, decks):
-    crypt_ratio = float(request["crypt"]) if "crypt" in request else None
-    library_ratio = float(request["library"]) if "library" in request else None
-    scaling = int(request["scaling"]) if "scaling" in request else False
+    crypt_ratio = float(request.get("crypt") or 0)
+    library_ratio = float(request.get("library") or 0)
+    scaling = int(request.get("scaling") or 0)
 
     match_decks = []
 

@@ -119,11 +119,11 @@ def new_deck_route():
     while Deck.query.get(new_deckid):
         new_deckid = non_secure_generate("1234567890abcdef", 9)
 
-    name = request.json["name"] if "name" in request.json else "New deck"
-    author_public_name = request.json["author"] if "author" in request.json else ""
-    description = request.json["description"] if "description" in request.json else ""
-    tags = request.json["tags"] if "tags" in request.json else []
-    input_cards = request.json["cards"] if "cards" in request.json else {}
+    name = request.json.get("name") or "New deck"
+    author_public_name = request.json.get("author") or ""
+    description = request.json.get("description") or ""
+    tags = request.json.get("tags") or []
+    input_cards = request.json.get("cards") or {}
 
     cards = {}
     for k, v in input_cards.items():
@@ -226,10 +226,12 @@ def update_deck_route(deckid):
     d = Deck.query.get(deckid)
     if not d:
         abort(400)
+
     elif not d.author:
         # For newly anonymous imported decks to fix bad imports
         if (datetime.now() - d.timestamp).seconds > 900:
             abort(401)
+
     elif d.author != current_user:
         abort(401)
 
@@ -242,75 +244,77 @@ def update_deck_route(deckid):
     else:
         d.timestamp = datetime.now()
 
-    if "cards" in request.json:
-        new_cards = request.json["cards"]
-        merged_cards = d.cards.copy()
+    for k, v in request.json.items():
+        match k:
+            case "cards":
+                new_cards = v
+                merged_cards = d.cards.copy()
 
-        for k, v in new_cards.items():
-            k = int(k)
-            if v < 0:
-                if k in merged_cards:
-                    del merged_cards[k]
-                if k in d.used_in_inventory:
-                    used_cards = d.used_in_inventory.copy()
-                    del used_cards[k]
-                    d.used_in_inventory = used_cards.copy()
-            else:
-                merged_cards[k] = v
+                for k, v in new_cards.items():
+                    k = int(k)
+                    if v < 0:
+                        if k in merged_cards:
+                            del merged_cards[k]
+                        if k in d.used_in_inventory:
+                            used_cards = d.used_in_inventory.copy()
+                            del used_cards[k]
+                            d.used_in_inventory = used_cards.copy()
+                    else:
+                        merged_cards[k] = v
 
-        d.cards = merged_cards.copy()
+                d.cards = merged_cards.copy()
 
-    if "name" in request.json:
-        d.name = request.json["name"]
+            case "name":
+                d.name = v
 
-        if d.master:
-            master = Deck.query.get(d.master)
-            master.name = request.json["name"]
+                if d.master:
+                    master = Deck.query.get(d.master)
+                    master.name = v
 
-            for i in master.branches:
-                j = Deck.query.get(i)
-                j.name = request.json["name"]
+                    for i in master.branches:
+                        j = Deck.query.get(i)
+                        j.name = v
 
-        elif d.branches:
-            for i in d.branches:
-                j = Deck.query.get(i)
-                j.name = request.json["name"]
+                elif d.branches:
+                    for i in d.branches:
+                        j = Deck.query.get(i)
+                        j.name = v
 
-    if "description" in request.json:
-        d.description = request.json["description"]
+            case "description":
+                d.description = v
 
-    if "author" in request.json:
-        d.author_public_name = request.json["author"] or ""
+            case "author":
+                d.author_public_name = v or ""
 
-        if d.master:
-            master = Deck.query.get(d.master)
-            master.author_public_name = request.json["author"]
+                if d.master:
+                    master = Deck.query.get(d.master)
+                    master.author_public_name = v
 
-            for i in master.branches:
-                j = Deck.query.get(i)
-                j.author_public_name = request.json["author"]
+                    for i in master.branches:
+                        j = Deck.query.get(i)
+                        j.author_public_name = v
 
-        elif d.branches:
-            for i in d.branches:
-                j = Deck.query.get(i)
-                j.author_public_name = request.json["author"]
+                elif d.branches:
+                    for i in d.branches:
+                        j = Deck.query.get(i)
+                        j.author_public_name = v
 
-    if "branchName" in request.json:
-        d.branch_name = request.json["branchName"] or ""
+            case "branchName":
+                d.branch_name = v or ""
 
-    if "inventoryType" in request.json:
-        d.used_in_inventory = {}
-        d.inventory_type = request.json["inventoryType"]
+            case "inventoryType":
+                d.used_in_inventory = {}
+                d.inventory_type = v
 
-    if "usedInInventory" in request.json:
-        used = d.used_in_inventory.copy()
-        for k, v in request.json["usedInInventory"].items():
-            used[int(k)] = v
+            case "usedInInventory":
+                used = d.used_in_inventory.copy()
+                for i, j in v.items():
+                    used[int(i)] = j
 
-        d.used_in_inventory = used
+                d.used_in_inventory = used
 
-    if "tags" in request.json:
-        d.tags = request.json["tags"]
+            case "tags":
+                d.tags = v
 
     if d.master:
         old_master = Deck.query.get(d.master)
@@ -333,6 +337,7 @@ def get_recommendation_route():
     cards = {}
     for k, v in request.json["cards"].items():
         cards[int(k)] = v
+
     recommends = deck_recommendation(cards)
     return {"crypt": recommends["crypt"], "library": recommends["library"]}
 
@@ -347,6 +352,7 @@ def create_branch_route(deckid):
     new_branches = []
     if "branches" in request.json:
         new_branches = request.json["branches"]
+
     elif "deckid" in request.json:
         d = Deck.query.get(request.json["deckid"])
         source = {
@@ -362,7 +368,9 @@ def create_branch_route(deckid):
 
     for i, b in enumerate(new_branches):
         branch_name = (
-            f"#{len(master.branches) + 1}" if master.branches else f"#{len(new_branches) - i}"
+            f"#{len(master.branches) + 1}"
+            if master.branches
+            else f"#{len(new_branches) - i}"
         )
         new_deckid = non_secure_generate("1234567890abcdef", 9)
         while Deck.query.get(new_deckid):
@@ -402,22 +410,19 @@ def remove_branch_route(deckid):
 
     if d.master:
         master = Deck.query.get(d.master)
-
         branches = master.branches.copy()
         branches.remove(d.deckid)
         master.branches = branches
 
     else:
         j = Deck.query.get(d.branches[-1])
-
         branches = d.branches.copy()
         branches.remove(j.deckid)
         j.branches = branches
+        j.master = ""
         for i in branches:
             k = Deck.query.get(i)
             k.master = j.deckid
-
-        j.master = ""
 
     db.session.delete(d)
     db.session.commit()
