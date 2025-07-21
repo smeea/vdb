@@ -2,7 +2,7 @@ import { Select } from "@/components";
 import { ANY, MATCH_INVENTORY } from "@/constants";
 import { capitalize } from "@/utils";
 
-const TwdSearchFormMatchInventory = ({ value, target, onChange }) => {
+const TwdSearchFormMatchInventory = ({ value = ANY, target, onChange }) => {
   const name = MATCH_INVENTORY;
 
   const options = [
