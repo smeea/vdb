@@ -10,6 +10,7 @@ do
     do
         dir=$(dirname "$image")
         filename=$(basename "$image" .jpg).webp
-        convert "$image" -quality 40 "$dir/$filename"
+        convert "$image" -quality 40 "$dir/$filename" &
     done
+    cd ..
 done
