@@ -17,6 +17,8 @@ const CardImage = ({ card, set, className = "max-sm:w-full", size = "md", onClic
       "Action Modifier",
       "Action Modifier/Combat",
       "Action Modifier/Reaction",
+      "Combat/Reaction",
+      "Reaction",
     ].includes(card[TYPE]);
 
   const url =
