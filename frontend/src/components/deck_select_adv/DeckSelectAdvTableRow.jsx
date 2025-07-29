@@ -6,6 +6,7 @@ import dayjs from "dayjs";
 import { useNavigate } from "react-router";
 import { twMerge } from "tailwind-merge";
 import { useSnapshot } from "valtio";
+import paths from "@/assets/data/paths.json";
 import {
   ButtonIconed,
   Checkbox,
@@ -20,6 +21,7 @@ import {
   DeckTags,
   ResultClanImage,
   ResultLegalIcon,
+  ResultPathImage,
   Tr,
 } from "@/components";
 import {
@@ -115,7 +117,14 @@ const DeckSelectAdvTableRow = ({
         </td>
       )}
       <td className="max-sm:hidden max-sm:min-w-[60px] sm:min-w-[70px]" onClick={handleClick}>
-        <div className="flex justify-center">{clan && <ResultClanImage value={clan} />}</div>
+        <div className="flex justify-center">
+          {clan &&
+            (paths.includes(clan) ? (
+              <ResultPathImage value={clan} />
+            ) : (
+              <ResultClanImage value={clan} />
+            ))}
+        </div>
       </td>
       <td
         colSpan={short ? 2 : 1}
@@ -136,7 +145,15 @@ const DeckSelectAdvTableRow = ({
                 !clan && "max-md:ps-1",
               )}
             >
-              {clan && <ResultClanImage className="w-[30px] sm:hidden" value={clan} />}
+              {clan && (
+                <div className="w-[30px] sm:hidden">
+                  {paths.includes(clan) ? (
+                    <ResultPathImage value={clan} />
+                  ) : (
+                    <ResultClanImage value={clan} />
+                  )}
+                </div>
+              )}
               {deck[NAME]}
             </div>
             <div className="flex items-center justify-end gap-3">
