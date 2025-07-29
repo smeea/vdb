@@ -1,5 +1,14 @@
 [
   {
+    "id": 12293,
+    "title": "Polish Championship 2025",
+    "location": "Warsaw, Poland",
+    "date": "2025-07-06",
+    "isNC": true,
+    "players": 53,
+    "decks": 53
+  },
+  {
     "id": 12325,
     "title": "Fee Stake: Lublin",
     "location": "Lublin, Poland",
