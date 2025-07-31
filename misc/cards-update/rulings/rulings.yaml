@@ -746,7 +746,6 @@
     is. [LSJ 20090922] [ANK 20220916]'
 100414|Conservative Agitation:
   - Cannot allocate all X points to a single Methuselah, but you can allocate points to yourself. [LSJ 20000622]
-  - Can allocate more points than a Methuselah has pool. [LSJ 20020819]
 100415|Consignment to Duat:
   - '[ser] Can target a vampire with no blood. [RTR 20010711]'
   - "[ser] If it burns an ally as a result, this counts as a Ⓓ action burning an ally (eg. Trophies, {Predator's Transformation}).\
@@ -1788,7 +1787,6 @@
     the vampire could burn 1 blood to prevent one of the Games from moving on. [RTR 19951017]
 101056|Kine Resources Contested:
   - Cannot allocate 4 points to a single Methuselah, but you can allocate points to yourself. [LSJ 20000622]
-  - Can allocate more points than a Methuselah has pool. [LSJ 20020819]
 101057|King of the Mountain:
   - '[FOR] Damage dealt to the opponent is environmental. [RTR 19970630] [LSJ 19970801]'
 101062|Kiss of Ra, The:
@@ -1871,8 +1869,6 @@
     not burned until a total of one victory point has been awarded. [RTR 19991206]
   - If the effect ousting the target simultaneously ousts the target's prey (eg. {Kine Resources Contested}), the victory
     point goes to the Mathusalah who played Life Boon and the target gets 6 pool. [LSJ 20021029]
-101109|Lily Prelude:
-  - Can allocate more points than a Methuselah has pool. [LSJ 20020819]
 101110|Line, The:
   - Can reduce the cost in blood (not in pool) of any action (ally, retainer, equipment, political). [ANK 20181007]
   - Cannot be used by an ally acting "as a vampire". [ANK 20200605]
@@ -2219,6 +2215,10 @@
   - Is a directed action if a vampire controlled by another Methuselah is chosen. [ANK 20190606]
 101317|Ohoyo Hopoksia (Bastet):
   - If her ability is used when a minion blocks an action, the blocking minion still locks for the block. [ANK 20200714]
+101322|Open Dossier:
+  - Does not give the ability to play reaction cards as if unlocked. [LSJ 20080605]
+  - The block attempt only applies to one block attempt (the +2 intercept remains for the entire action). If the action later
+    continues as if unblocked (e.g. {Form of Mist}), another one is needed. [LSJ 20030227]
 101325|Ophidian Gaze:
   - '[SER][PRE] Can be used to cancel an action modifier player "after the action/referendum is successful" (eg. {Voter Captivation}
     or {Freak Drive}). [ANK 20180909]'
@@ -2497,7 +2497,6 @@
 101567|Reckless Agitation:
   - Cannot allocate 6 points to a single Methuselah, nor any point to yourself. Cannot be played if there is only one opponent
     left. [LSJ 20000622] [LSJ 20100129]
-  - Can allocate more points than a Methuselah has pool. [LSJ 20020819]
 101571|Recure of the Homeland:
   - Is not the default action, no blood is paid to leave torpor. [ANK 20181017]
 101573|Red Herring:
@@ -2539,8 +2538,6 @@
     the end of it. [ANK 20191219]'
   - '[THN] Must be played after presses, can be played if the round ends prematurely and can be played before or after effects
     that are played "at then of the round" (eg. {Taste of Vitae}). [LSJ 20021113] [RTR 20030519] [ANK 20180910-1]'
-101602|Renegade Garou:
-  - The additional strike is mandatory. [PIB 20121028]
 101603|Renewed Vigor:
   - '[obe], [OBE]: Is undirected if you control the target, directed at the controller of the target otherwise. [PIB 20121210]'
 101605|Repo Man:
@@ -2980,9 +2977,6 @@
     number of Aye as Orun. [LSJ 20051127]'
 101869|Steely Tenacity:
   - '[ani] [COMBAT] Additional damage inherits all of the properties of the base damage. [TOM 19960225]'
-101872|Stolen Police Cruiser:
-  - Can be equipped by a non-Anarch and would count as a vehicle, although the rest of his effect does not apply. [LSJ 20030607]
-  - Equipping it does not count as an action requiring an Anarch (eg. for {CrimethInc.}). [ANK 20170918]
 101876|Stonestrength:
   - Unused prevention does not carry over. [LSJ 20001114]
   - '[VIS] Cannot be used if there is no damage to prevent. [LSJ 20001114]'
@@ -3566,6 +3560,9 @@
     [LSJ 20010814-2]'
 102263|Unleashing the Bestial Soul:
   - An opponent can play a reaction to wake as the card is played, before its effects apply. [ANK 20231028]
+102270|Camarilla's Iron Fist:
+  - Cannot allocate 5 points to a single Methuselah, nor any point to the methuselah gaining pool. Cannot be played if there
+    is only one opponent left. [ANK 20241106] [LSJ 20100129] [LSJ 20000622]
 102273|Loup:
   - Can be used even if the stealth is not currently needed. [LSJ 20011214-2]
 102280|Shadow Cast:
@@ -4780,3 +4777,7 @@ G00133|Allies with equip actions:
     20180817]
   - Their special is an equip action. [TOM 19960130]
   - Requirements apply. [ANK 20180817] [LSJ 20100303] [LSJ 20100725]
+G00134|Mandatory additional strike:
+  - The additional strike is mandatory. [PIB 20121028]
+G00135|Allocate points for pool damage:
+  - Can allocate more points than a Methuselah has pool. [LSJ 20020819]

@@ -295,6 +295,7 @@ G00015|Vote damaging multiple players:
   101271|Neonate Breach: ''
   101567|Reckless Agitation: ''
   101591|Reins of Power: ''
+  102270|Camarilla's Iron Fist: ''
 G00016|Retainer doing damage:
   100593|Duma Rafiki: ''
   100626|Elephant Guardian: ''
@@ -1958,3 +1959,16 @@ G00133|Allies with equip actions:
   101961|Terrorists: ''
   102235|Dark Web Procurer: ''
   102239|Michael Harris, the Incinerator: ''
+G00134|Mandatory additional strike:
+  100010|Abomination: ''
+  100141|Battle Frenzy: ''
+  100170|Black Spiral Buddy: ''
+  100929|High Top: ''
+  101602|Renegade Garou: ''
+G00135|Allocate points for pool damage:
+  100414|Conservative Agitation: ''
+  101056|Kine Resources Contested: ''
+  101109|Lily Prelude: ''
+  101567|Reckless Agitation: ''
+  101631|Revolutionary Council: ''
+  102270|Camarilla's Iron Fist: ''
