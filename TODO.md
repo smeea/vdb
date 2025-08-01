@@ -1,5 +1,4 @@
 # FIX
-- Save sort method adv select
 
 # FIX ON HOLD
 - Deck-in-Url trimmed at first card - can't reproduce in dev environment

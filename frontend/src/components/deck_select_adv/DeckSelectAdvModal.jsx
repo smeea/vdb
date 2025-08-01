@@ -23,11 +23,11 @@ import { useDecksTagsAll } from "@/hooks";
 import { deckServices } from "@/services";
 
 const DeckSelectAdvModal = ({ onClick, setShow, short }) => {
-  const { isMobile, setShowMenuButtons, setShowFloatingButtons } = useApp();
+  const { isMobile, decksAdvSort, changeDecksAdvSort, setShowMenuButtons, setShowFloatingButtons } =
+    useApp();
   const [isLocked, setIsLocked] = useState();
   const decks = useSnapshot(deckStore)[DECKS];
   const [showDeleteConfirmation, setShowDeleteConfirmation] = useState(false);
-  const [sortMethod, setSortMethod] = useState(NAME);
   const [isSelectedAll, setIsSelectedAll] = useState(false);
   const [selectedDecks, setSelectedDecks] = useState({});
   const [tagsFilter, setTagsFilter] = useState([]);
@@ -88,15 +88,15 @@ const DeckSelectAdvModal = ({ onClick, setShow, short }) => {
             <DeckSelectAdvTotal
               tagsFilter={tagsFilter}
               setTagsFilter={setTagsFilter}
-              sortMethod={sortMethod}
-              setSortMethod={setSortMethod}
+              sortMethod={decksAdvSort}
+              setSortMethod={changeDecksAdvSort}
             />
           )}
           <DeckSelectAdvTable
             allTagsOptions={allTagsOptions}
             short={short}
             decks={decks}
-            sortMethod={sortMethod}
+            sortMethod={decksAdvSort}
             tagsFilter={tagsFilter}
             setTagsFilter={setTagsFilter}
             selectedDecks={selectedDecks}

@@ -64,6 +64,7 @@ const CRYPT_DECK_SORT = "cryptDeckSort";
 const CRYPT_INVENTORY_SORT = "cryptInventorySort";
 const LIBRARY_SEARCH_SORT = "libraryInventorySort";
 const LIBRARY_INVENTORY_SORT = "libraryInventorySort";
+const DECKS_ADV_SORT = "decksAdvSort";
 const TWD_SEARCH_SORT = "twdSearchSort";
 const PDA_SEARCH_SORT = "pdaSearchSort";
 const TDA_SEARCH_SORT = "tdaSearchSort";
@@ -125,6 +126,9 @@ export const AppProvider = ({ children }) => {
   const [cryptDeckSort, setCryptDeckSort] = useState(getLocalStorage(CRYPT_DECK_SORT) ?? QUANTITYx);
   const [cryptSearchSort, setCryptSearchSort] = useState(
     getLocalStorage(CRYPT_SEARCH_SORT) ?? CAPACITY_MIN_MAX,
+  );
+  const [decksAdvSort, setDecksAdvSort] = useState(
+    getLocalStorage(DECKS_ADV_SORT) ?? NAME,
   );
   const [cryptInventorySort, setCryptInventorySort] = useState(
     getLocalStorage(CRYPT_INVENTORY_SORT) ?? NAME,
@@ -464,6 +468,11 @@ export const AppProvider = ({ children }) => {
     [limitedPreset],
   );
 
+  const changeDecksAdvSort = useCallback((method) => {
+    setDecksAdvSort(method);
+    setLocalStorage(DECKS_ADV_SORT, method);
+  }, []);
+
   const changeCryptDeckSort = useCallback((method) => {
     setCryptDeckSort(method);
     setLocalStorage(CRYPT_DECK_SORT, method);
@@ -660,6 +669,8 @@ export const AppProvider = ({ children }) => {
         changePdaSearchSort,
         tdaSearchSort,
         changeTdaSearchSort,
+        decksAdvSort,
+        changeDecksAdvSort,
         cryptDeckSort,
         changeCryptDeckSort,
         cryptInventorySort,
