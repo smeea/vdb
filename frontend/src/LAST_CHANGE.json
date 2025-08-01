@@ -1,8 +1,8 @@
 {
-  "version": "2025-07-15",
+  "version": "2025-08-02",
   "changes": [
-    "Update 2P card list",
-    "Update Rulings",
-    "Fix some legacy images on mobile"
+    "Add Polish Championship 2025 event to TDA",
+    "Add legacy reaction images",
+    "Small other fixes and improvements"
   ]
 }
