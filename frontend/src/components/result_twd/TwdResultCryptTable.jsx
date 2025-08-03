@@ -6,10 +6,8 @@ import { countCards, countTotalCost } from "@/utils";
 
 const TwdResultCryptTable = ({ crypt }) => {
   const { limitedMode, cryptDeckSort, setShowFloatingButtons, isDesktop } = useApp();
-  const { cryptGroups, hasLimited, hasBanned, hasWrongGroups, cryptTotal, sortedCards } = useDeckCrypt(
-    crypt,
-    cryptDeckSort,
-  );
+  const { cryptGroups, hasLimited, hasBanned, hasWrongGroups, cryptTotal, sortedCards } =
+    useDeckCrypt(crypt, cryptDeckSort);
 
   const {
     currentModalCard,
