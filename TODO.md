@@ -1,5 +1,4 @@
 # FIX
-- Tda style graph
 - TDA floating close button
 
 # FIX ON HOLD
