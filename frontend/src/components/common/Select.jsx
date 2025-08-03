@@ -83,9 +83,9 @@ const Select = ({
             !noBackground && "bg-bgPrimary dark:bg-bgPrimaryDark",
             !noBorder && roundedStyle,
             !noBorder &&
-            (state.isFocused
-              ? "border-bgCheckboxSelected dark:border-bgCheckboxSelectedDark"
-              : "border-borderSecondary dark:border-borderSecondaryDark"),
+              (state.isFocused
+                ? "border-bgCheckboxSelected dark:border-bgCheckboxSelectedDark"
+                : "border-borderSecondary dark:border-borderSecondaryDark"),
             !noBorder && borderStyle,
           ),
         dropdownIndicator: () =>

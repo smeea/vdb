@@ -127,9 +127,7 @@ export const AppProvider = ({ children }) => {
   const [cryptSearchSort, setCryptSearchSort] = useState(
     getLocalStorage(CRYPT_SEARCH_SORT) ?? CAPACITY_MIN_MAX,
   );
-  const [decksAdvSort, setDecksAdvSort] = useState(
-    getLocalStorage(DECKS_ADV_SORT) ?? NAME,
-  );
+  const [decksAdvSort, setDecksAdvSort] = useState(getLocalStorage(DECKS_ADV_SORT) ?? NAME);
   const [cryptInventorySort, setCryptInventorySort] = useState(
     getLocalStorage(CRYPT_INVENTORY_SORT) ?? NAME,
   );

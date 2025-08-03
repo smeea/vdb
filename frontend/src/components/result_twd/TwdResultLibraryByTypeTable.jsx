@@ -13,7 +13,7 @@ import { useApp } from "@/context";
 import { useDeckLibrary, useModalCardController } from "@/hooks";
 
 const TwdResultLibraryByTypeTable = ({ library }) => {
-  const { setShowFloatingButtons, isDesktop } = useApp();
+  const { limitedMode, setShowFloatingButtons, isDesktop } = useApp();
 
   const handleClickCard = (card) => {
     handleModalCardOpen(card);
@@ -28,6 +28,7 @@ const TwdResultLibraryByTypeTable = ({ library }) => {
   const {
     libraryByType,
     hasBanned,
+    hasLimited,
     trifleTotal,
     libraryTotal,
     libraryByTypeTotal,
@@ -54,7 +55,18 @@ const TwdResultLibraryByTypeTable = ({ library }) => {
     <div>
       <div className="flex h-[30px] items-center justify-between gap-2 px-1 font-bold text-fgSecondary dark:text-whiteDark">
         <div className="flex items-center gap-1.5 whitespace-nowrap">Library [{libraryTotal}]</div>
-        <div className="flex">{hasBanned && <ResultLegalIcon type={BANNED} />}</div>
+        <div className="flex gap-2">
+          {hasBanned && <ResultLegalIcon type={BANNED} />}
+          {limitedMode && hasLimited && (
+            <div
+              className="flex gap-0.5 font-normal text-fgRed dark:text-fgRedDark"
+              title="Restricted Cards"
+            >
+              <ResultLegalIcon />
+              {Math.round((hasLimited / libraryTotal) * 100)}%
+            </div>
+          )}
+        </div>
         <div className="flex gap-1.5 sm:gap-3">
           <div className="flex items-center gap-1" title="Total Blood Cost">
             <ResultLibraryCost card={{ [BLOOD]: X }} className="h-[30px] pb-1" />
