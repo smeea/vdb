@@ -325,7 +325,7 @@ const Tda = () => {
           </FlexGapped>
         )}
       </FlexGapped>
-      {!(info && decks) || !showForm && <ButtonFloatClose handleClose={handleClear} />}
+      {!showForm && <ButtonFloatClose className="sm:hidden" handleClose={handleClear} />}
     </div>
   );
 };
