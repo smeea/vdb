@@ -1,11 +1,11 @@
 import { useState } from "react";
 import {
+  DeckLibrary,
   ResultLegalIcon,
   ResultLibraryCost,
   ResultModal,
-  TwdResultLibraryKeyCardsTableRow,
-  DeckLibrary,
   Toggle,
+  TwdResultLibraryKeyCardsTableRow,
 } from "@/components";
 import { ASCII, BANNED, BLOOD, GROUPED_TYPE, ID, POOL, X } from "@/constants";
 import { useApp } from "@/context";

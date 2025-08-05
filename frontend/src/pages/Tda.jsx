@@ -225,7 +225,7 @@ const Tda = () => {
 
   const handleCloseEvent = () => {
     clearTdaForm();
-    setShowForm()
+    setShowForm();
     setError(false);
     setTempArchon();
     setTempDecks();
@@ -251,8 +251,6 @@ const Tda = () => {
       loadPrepared(params[EVENT]);
     }
   }, [params[EVENT], cryptCardBase, libraryCardBase]);
-
-
 
   return (
     <div className="twd-container mx-auto flex flex-col gap-2">
@@ -321,8 +319,7 @@ const Tda = () => {
               </div>
             )}
             {((showForm && !query) || !isMobile) && (
-              <div className="flex flex-col gap-2 basis-full max-sm:p-2 sm:basis-5/12 lg:basis-4/12 xl:basis-3/12">
-
+              <div className="flex basis-full flex-col gap-2 max-sm:p-2 sm:basis-5/12 lg:basis-4/12 xl:basis-3/12">
                 {isMobile && <ButtonClose handleClick={handleCloseEvent} text="Close Event" />}
                 <TdaSearchForm setShowForm={setShowForm} />
               </div>
@@ -330,7 +327,9 @@ const Tda = () => {
           </FlexGapped>
         )}
       </FlexGapped>
-      {!showForm && decks && info && <ButtonFloatClose className="sm:hidden" handleClose={handleClear} />}
+      {!showForm && decks && info && (
+        <ButtonFloatClose className="sm:hidden" handleClose={handleClear} />
+      )}
     </div>
   );
 };
