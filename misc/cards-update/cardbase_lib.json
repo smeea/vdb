@@ -487,6 +487,12 @@
                 "refs":{
                     "LSJ 20041201-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/DY1OggZnMvs/m/7rSTvY34PRAJ"
                 }
+            },
+            {
+                "text":"The additional strike is mandatory.",
+                "refs":{
+                    "PIB 20121028":"https://www.vekn.net/forum/rules-questions/39816-ec-2012-can-you-answer-these?start=6#39843"
+                }
             }
         ],
         "set":{
@@ -6870,6 +6876,12 @@
                     "LSJ 20010312":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Mz0Rs9faJ9o/m/bgYwj4yw0G0J",
                     "LSJ 20001027":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/zUs5JBhRLgE/m/oyaUCsWe-EgJ"
                 }
+            },
+            {
+                "text":"The additional strike is mandatory.",
+                "refs":{
+                    "PIB 20121028":"https://www.vekn.net/forum/rules-questions/39816-ec-2012-can-you-answer-these?start=6#39843"
+                }
             }
         ],
         "set":{
@@ -8197,7 +8209,14 @@
         "path":"",
         "pool":4,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The additional strike is mandatory.",
+                "refs":{
+                    "PIB 20121028":"https://www.vekn.net/forum/rules-questions/39816-ec-2012-can-you-answer-these?start=6#39843"
+                }
+            }
+        ],
         "set":{
             "Sabbat":{
                 "U":true
@@ -13466,7 +13485,28 @@
         "path":"",
         "pool":0,
         "requirement":"camarilla,titled",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Cannot allocate 5 points to a single Methuselah, nor any point to the methuselah gaining pool. Cannot be played if there is only one opponent left.",
+                "refs":{
+                    "ANK 20241106":"https://www.vekn.net/forum/rules-questions/81873-camarilla-iron-first-and-reckless-agitation?start=6#113016",
+                    "LSJ 20100129":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/X8Uu7Sk56P4/m/fgP7NfnDpCkJ",
+                    "LSJ 20000622":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/znQHUWouQkw/m/-T_Tx-YRwrAJ"
+                }
+            },
+            {
+                "text":"If multiple ousts happen, players whose prey gets ousted get a victory point, even if they are being ousted themselves. Only the surviving ones get 6 pool from the oust of their prey (not of their grand-prey).",
+                "refs":{
+                    "LSJ 20000309":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ykAzsCzPkvg/m/bVefVZeCoQwJ"
+                }
+            },
+            {
+                "text":"Can allocate more points than a Methuselah has pool.",
+                "refs":{
+                    "LSJ 20020819":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/WONdURITUdk/m/9EnfVPy0P-MJ"
+                }
+            }
+        ],
         "set":{
             "30th":{
                 "":"5"
@@ -19400,15 +19440,15 @@
                 }
             },
             {
-                "text":"Can allocate more points than a Methuselah has pool.",
-                "refs":{
-                    "LSJ 20020819":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/WONdURITUdk/m/9EnfVPy0P-MJ"
-                }
-            },
-            {
                 "text":"If multiple ousts happen, players whose prey gets ousted get a victory point, even if they are being ousted themselves. Only the surviving ones get 6 pool from the oust of their prey (not of their grand-prey).",
                 "refs":{
                     "LSJ 20000309":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ykAzsCzPkvg/m/bVefVZeCoQwJ"
+                }
+            },
+            {
+                "text":"Can allocate more points than a Methuselah has pool.",
+                "refs":{
+                    "LSJ 20020819":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/WONdURITUdk/m/9EnfVPy0P-MJ"
                 }
             }
         ],
@@ -24295,7 +24335,7 @@
                 }
             },
             {
-                "text":"When removed, the vampire goes back to its underlying clan and sect.",
+                "text":"When removed, the vampire goes back to its underlying clan.",
                 "refs":{
                     "RTR 20201130":"https://www.blackchantry.com/2020/12/25/rtr-30-11-2020/",
                     "ANK 20200415":"https://www.vekn.net/forum/rules-questions/7516-re-derange-titles-and-bloodbrothers?start=6#99609"
@@ -24311,6 +24351,12 @@
                 "text":"If another effect also changes the clan (eg. {Clan Impersonation}), the most recent one takes precedenced.",
                 "refs":{
                     "LSJ 20021209":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/kQpR-Cn9nW0/m/0cNMARSt9PIJ"
+                }
+            },
+            {
+                "text":"Does not change the sect of the target. [As of now the RTR takes precedent over the Cards text in the Card List]",
+                "refs":{
+                    "RTR 20201130":"https://www.blackchantry.com/2020/12/25/rtr-30-11-2020/"
                 }
             },
             {
@@ -43628,6 +43674,12 @@
                     "LSJ 20020503":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/1DbOr3g3vP8/m/xF8dvxQZye4J",
                     "LSJ 20060126":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PBEBNFH61ik/m/MPf8Rs1F958J"
                 }
+            },
+            {
+                "text":"The additional strike is mandatory.",
+                "refs":{
+                    "PIB 20121028":"https://www.vekn.net/forum/rules-questions/39816-ec-2012-can-you-answer-these?start=6#39843"
+                }
             }
         ],
         "set":{
@@ -49442,15 +49494,15 @@
                 }
             },
             {
-                "text":"Can allocate more points than a Methuselah has pool.",
-                "refs":{
-                    "LSJ 20020819":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/WONdURITUdk/m/9EnfVPy0P-MJ"
-                }
-            },
-            {
                 "text":"If multiple ousts happen, players whose prey gets ousted get a victory point, even if they are being ousted themselves. Only the surviving ones get 6 pool from the oust of their prey (not of their grand-prey).",
                 "refs":{
                     "LSJ 20000309":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ykAzsCzPkvg/m/bVefVZeCoQwJ"
+                }
+            },
+            {
+                "text":"Can allocate more points than a Methuselah has pool.",
+                "refs":{
+                    "LSJ 20020819":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/WONdURITUdk/m/9EnfVPy0P-MJ"
                 }
             }
         ],
@@ -51849,15 +51901,15 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"Can allocate more points than a Methuselah has pool.",
-                "refs":{
-                    "LSJ 20020819":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/WONdURITUdk/m/9EnfVPy0P-MJ"
-                }
-            },
-            {
                 "text":"If multiple ousts happen, players whose prey gets ousted get a victory point, even if they are being ousted themselves. Only the surviving ones get 6 pool from the oust of their prey (not of their grand-prey).",
                 "refs":{
                     "LSJ 20000309":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ykAzsCzPkvg/m/bVefVZeCoQwJ"
+                }
+            },
+            {
+                "text":"Can allocate more points than a Methuselah has pool.",
+                "refs":{
+                    "LSJ 20020819":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/WONdURITUdk/m/9EnfVPy0P-MJ"
                 }
             }
         ],
@@ -52122,21 +52174,15 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"May be put on any minion if the controller changes. If the new controller has no minions, it is burned.",
-                "refs":{
-                    "RTR 19960112":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d3n3StNS7no/m/k2NmZFUl9fAJ"
-                }
-            },
-            {
-                "text":"An action targeting it (eg. {Conceal}) is directed at the Methuselah controlling it, not the minion it is on. \"",
+                "text":"An action targeting it (eg. {Conceal}) is directed at the Methuselah controlling it, not the minion it is on.",
                 "refs":{
                     "LSJ 20090324":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Zc_ogoVhsug/m/tJ2VBYI7resJ"
                 }
             },
             {
-                "text":"Is an equipment while in hand, library or ash heap, both equipment and location when played (eg. for cost-related effects), and just a location while in play.",
+                "text":"May be put on any minion if the controller changes. If the new controller has no minions, it is burned.",
                 "refs":{
-                    "LSJ 20080114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aMum-K7LEeo/m/94iN92zwYTcJ"
+                    "RTR 19960112":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d3n3StNS7no/m/k2NmZFUl9fAJ"
                 }
             }
         ],
@@ -62337,6 +62383,18 @@
         "pool":0,
         "requirement":"",
         "rulings":[
+            {
+                "text":"Does not give the ability to play reaction cards as if unlocked.",
+                "refs":{
+                    "LSJ 20080605":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/3N0y_jEokRo/m/RvPnfUTVGoQJ"
+                }
+            },
+            {
+                "text":"The block attempt only applies to one block attempt (the +2 intercept remains for the entire action). If the action later continues as if unblocked (e.g. {Form of Mist}), another one is needed.",
+                "refs":{
+                    "LSJ 20030227":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/c9KLhUd-Isg/m/Zz0zAzvZ8TYJ"
+                }
+            },
             {
                 "text":"Can be used by a vampire who is already attempting to block.",
                 "refs":{
@@ -73212,15 +73270,15 @@
                 }
             },
             {
-                "text":"Can allocate more points than a Methuselah has pool.",
-                "refs":{
-                    "LSJ 20020819":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/WONdURITUdk/m/9EnfVPy0P-MJ"
-                }
-            },
-            {
                 "text":"If multiple ousts happen, players whose prey gets ousted get a victory point, even if they are being ousted themselves. Only the surviving ones get 6 pool from the oust of their prey (not of their grand-prey).",
                 "refs":{
                     "LSJ 20000309":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ykAzsCzPkvg/m/bVefVZeCoQwJ"
+                }
+            },
+            {
+                "text":"Can allocate more points than a Methuselah has pool.",
+                "refs":{
+                    "LSJ 20020819":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/WONdURITUdk/m/9EnfVPy0P-MJ"
                 }
             }
         ],
@@ -75927,6 +75985,12 @@
                 "refs":{
                     "LSJ 20080603":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/LuT1iK1b4QIJ",
                     "LSJ 20050128":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HVy8iPUxNbI/m/ZHGTnprQjGUJ"
+                }
+            },
+            {
+                "text":"Can allocate more points than a Methuselah has pool.",
+                "refs":{
+                    "LSJ 20020819":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/WONdURITUdk/m/9EnfVPy0P-MJ"
                 }
             }
         ],
@@ -87752,20 +87816,7 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[
-            {
-                "text":"Can be equipped by a non-Anarch and would count as a vehicle, although the rest of his effect does not apply.",
-                "refs":{
-                    "LSJ 20030607":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/DG7s60pwv1U/m/FPqlZYJ3upcJ"
-                }
-            },
-            {
-                "text":"Equipping it does not count as an action requiring an Anarch (eg. for {CrimethInc.}).",
-                "refs":{
-                    "ANK 20170918":"https://www.vekn.net/forum/rules-questions/76179-stolen-police-cruiser-crimethinc#83587"
-                }
-            }
-        ],
+        "rulings":[],
         "set":{
             "Anarchs":{
                 "R":true

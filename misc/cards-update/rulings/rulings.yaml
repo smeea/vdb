@@ -890,9 +890,11 @@
     20070707]
   - If the target changes clan to a clan inappropriate for his title, he loses its benefit until his clan is appropriate.
     He immediately yields the title if it is contested or he receives a new one. [RTR 20201130] [LSJ 20060904]
-  - When removed, the vampire goes back to its underlying clan and sect. [RTR 20201130] [ANK 20200415]
+  - When removed, the vampire goes back to its underlying clan. [RTR 20201130] [ANK 20200415]
   - Only requires one clan or the other (Malkavian or Malkavian antitribu) to be played. [ANK 20190203]
   - If another effect also changes the clan (eg. {Clan Impersonation}), the most recent one takes precedenced. [LSJ 20021209]
+  - Does not change the sect of the target. [As of now the RTR takes precedent over the Cards text in the Card List] [RTR
+    20201130]
 100528|Descent into Darkness:
   - Breaks any temporary control effects, so the vampire is given, face down and out of play, to his current permanent controller,
     with the Descent into Darkness card which, as a minion card, is then controlled by that permanent controller. [LSJ 20040526]
@@ -1874,6 +1876,9 @@
   - Cannot be used by an ally acting "as a vampire". [ANK 20200605]
 101112|Liquidation:
   - Is not playable if you have less than 7 cards in your library. [LSJ 20070901]
+101114|Living Manse:
+  - An action targeting it (eg. {Conceal}) is directed at the Methuselah controlling it, not the minion it is on. [LSJ 20090324]
+  - May be put on any minion if the controller changes. If the new controller has no minions, it is burned. [RTR 19960112]
 101118|Lock:
   - Once in play, applies to an action if any one of its targets would be enough to enable his effect. [LSJ 20080809-2] [KOT
     20081119]
@@ -3837,6 +3842,8 @@
     token, it is burned. [ANK 20180524]'
   - '[MERGED] Immune means damage is not inflicted, even if non-preventable or outside combat. [LSJ 20010627] [LSJ 20010629]
     [LSJ 20090304-1]'
+  - Can choose any number for X for [aus] and [dom] reaction cards that cost X (e.g. {Kindred Coercion}), and still pay no
+    blood. [LSJ 20051117]
 200590|Henry Taylor:
   - A card with multiple types (eg. {Swallowed by the Night}) needs to have been played as a combat card to be eligible. [LSJ
     20031221]
