@@ -47,7 +47,7 @@ const Tda = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const query = JSON.parse(searchParams.get("q"));
   const navigate = useNavigate();
-  const [showForm, setShowForm] = useState(false);
+  const [showForm, setShowForm] = useState();
   const [tempDecks, setTempDecks] = useState();
   const [tempArchon, setTempArchon] = useState();
   const [error, setError] = useState(false);
@@ -225,6 +225,7 @@ const Tda = () => {
 
   const handleCloseEvent = () => {
     clearTdaForm();
+    setShowForm()
     setError(false);
     setTempArchon();
     setTempDecks();
@@ -250,6 +251,8 @@ const Tda = () => {
       loadPrepared(params[EVENT]);
     }
   }, [params[EVENT], cryptCardBase, libraryCardBase]);
+
+
 
   return (
     <div className="twd-container mx-auto flex flex-col gap-2">
@@ -318,14 +321,16 @@ const Tda = () => {
               </div>
             )}
             {((showForm && !query) || !isMobile) && (
-              <div className="basis-full max-sm:p-2 sm:basis-5/12 lg:basis-4/12 xl:basis-3/12">
+              <div className="flex flex-col gap-2 basis-full max-sm:p-2 sm:basis-5/12 lg:basis-4/12 xl:basis-3/12">
+
+                {isMobile && <ButtonClose handleClick={handleCloseEvent} text="Close Event" />}
                 <TdaSearchForm setShowForm={setShowForm} />
               </div>
             )}
           </FlexGapped>
         )}
       </FlexGapped>
-      {!showForm && <ButtonFloatClose className="sm:hidden" handleClose={handleClear} />}
+      {!showForm && decks && info && <ButtonFloatClose className="sm:hidden" handleClose={handleClear} />}
     </div>
   );
 };
