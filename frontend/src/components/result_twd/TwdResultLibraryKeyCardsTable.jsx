@@ -1,8 +1,11 @@
+import { useState } from "react";
 import {
   ResultLegalIcon,
   ResultLibraryCost,
   ResultModal,
   TwdResultLibraryKeyCardsTableRow,
+  DeckLibrary,
+  Toggle,
 } from "@/components";
 import { ASCII, BANNED, BLOOD, GROUPED_TYPE, ID, POOL, X } from "@/constants";
 import { useApp } from "@/context";
@@ -11,6 +14,7 @@ import { librarySort } from "@/utils";
 
 const TwdResultLibraryKeyCardsTable = ({ library, withHeader }) => {
   const { isMobile, isDesktop, setShowFloatingButtons } = useApp();
+  const [showFullLibrary, setShowFullLibrary] = useState();
   const sortedLibrary = librarySort(Object.values(library), GROUPED_TYPE);
   const keyCards = sortedLibrary
     .filter((card) => card.q >= 4)
@@ -57,21 +61,33 @@ const TwdResultLibraryKeyCardsTable = ({ library, withHeader }) => {
             </div>
           </>
         ) : (
-          "Key Cards:"
+          <Toggle
+            offValue="Key Cards"
+            isOn={showFullLibrary}
+            handleClick={() => setShowFullLibrary(!showFullLibrary)}
+          >
+            Full Library
+          </Toggle>
         )}
       </div>
       <table className="border-bgSecondary border-x dark:border-bgSecondaryDark">
         <tbody>
-          {keyCards.map((card) => {
-            return (
-              <TwdResultLibraryKeyCardsTableRow
-                key={card.c[ID]}
-                card={card}
-                handleClick={handleClick}
-                shouldShowModal={shouldShowModal}
-              />
-            );
-          })}
+          {showFullLibrary ? (
+            <DeckLibrary deck={{ library: library }} handleClick={handleClick} />
+          ) : (
+            <>
+              {keyCards.map((card) => {
+                return (
+                  <TwdResultLibraryKeyCardsTableRow
+                    key={card.c[ID]}
+                    card={card}
+                    handleClick={handleClick}
+                    shouldShowModal={shouldShowModal}
+                  />
+                );
+              })}
+            </>
+          )}
         </tbody>
       </table>
       {shouldShowModal && (

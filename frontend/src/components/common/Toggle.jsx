@@ -4,7 +4,15 @@ import ToggleOn from "@icons/toggle-on.svg?react";
 import { useCallback } from "react";
 import { twMerge } from "tailwind-merge";
 
-const Toggle = ({ isOn, handleClick, size = "md", disabled, children, variant = "primary" }) => {
+const Toggle = ({
+  isOn,
+  offValue,
+  handleClick,
+  size = "md",
+  disabled,
+  children,
+  variant = "primary",
+}) => {
   const customSize = {
     sm: 22,
     md: 26,
@@ -31,9 +39,14 @@ const Toggle = ({ isOn, handleClick, size = "md", disabled, children, variant = 
         <div
           className={twMerge(
             "flex cursor-pointer items-center gap-2",
-            disabled || !checked ? style[variant].disabled : style[variant].main,
+            !offValue && (disabled || !checked ? style[variant].disabled : style[variant].main),
           )}
         >
+          {offValue && (
+            <div className={disabled || checked ? style[variant].disabled : style[variant].main}>
+              {offValue}
+            </div>
+          )}
           <div>
             {checked ? (
               <ToggleOn width={customSize[size]} height={customSize[size]} viewBox="0 0 16 16" />
@@ -41,7 +54,20 @@ const Toggle = ({ isOn, handleClick, size = "md", disabled, children, variant = 
               <ToggleOff width={customSize[size]} height={customSize[size]} viewBox="0 0 16 16" />
             )}
           </div>
-          {children && <div className="flex items-center">{children}</div>}
+
+          {children && (
+            <div
+              className={
+                offValue
+                  ? disabled || !checked
+                    ? style[variant].disabled
+                    : style[variant].main
+                  : "flex items-center"
+              }
+            >
+              {children}
+            </div>
+          )}
         </div>
       )}
     </Switch>

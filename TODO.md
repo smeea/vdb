@@ -1,6 +1,5 @@
 # FIX
 - Floating close button TDA select
-- Twd show all library?
 
 # FIX ON HOLD
 - Deck-in-Url trimmed at first card - can't reproduce in dev environment
