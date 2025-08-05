@@ -3,7 +3,7 @@ import { TwdResultCryptTable, TwdResultLibraryKeyCardsTable, TwdResultTags } fro
 import { BASE, CLAN, CRYPT, LIBRARY, RANK, SUPERIOR, TAGS } from "@/constants";
 
 const BubbleChartTooltip = ({ active, payload }) => {
-  if (!active || !payload[0].payload.value) return null;
+  if (!active || !payload?.[0]?.payload?.value) return null;
   const value = payload[0].payload;
   const hasTags = value[TAGS] && [...value[TAGS][SUPERIOR], ...value[TAGS][BASE]].length > 0;
 
