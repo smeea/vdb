@@ -1,8 +1,12 @@
 {
-  "version": "2025-08-02",
+  "version": "2025-08-06",
   "changes": [
-    "Add Polish Championship 2025 event to TDA",
-    "Add legacy reaction images",
-    "Small other fixes and improvements"
+    "Add limited % in the deck to TWD and PDA",
+    "Add Garou Rim: Life in the City event to TDA",
+    "Add country flags to TDA events list",
+    "Add show full library button to TWD/PDA (toggle switch to select between Key Cards and Full)",
+    "Update Rulings",
+    "Slightly increased popup border contrast to better separate its content from the background",
+    "Fix TDA on mobile"
   ]
 }
