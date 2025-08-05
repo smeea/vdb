@@ -1,4 +1,4 @@
-import Globe from "@icons/globe.svg?react";
+import Globe2 from "@icons/globe2.svg?react";
 import { ConditionalTooltipOrModal, Flag, ListEntry, Select } from "@/components";
 import { EN, ES, FR, LANG, PT } from "@/constants";
 import { useApp } from "@/context";
@@ -32,7 +32,7 @@ const PlaytestReportLanguageSelect = () => {
 
   return (
     <ListEntry
-      icon={<Globe />}
+      icon={<Globe2 />}
       title={
         <div className="flex gap-2">
           Language

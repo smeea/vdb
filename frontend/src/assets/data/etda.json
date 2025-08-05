@@ -5,7 +5,8 @@
     "location": "Joensuu, Finland",
     "date": "2025-07-19",
     "players": 9,
-    "decks": 9
+    "decks": 9,
+    "country": "FI"
   },
   {
     "id": 12293,
@@ -14,7 +15,8 @@
     "date": "2025-07-06",
     "isNC": true,
     "players": 53,
-    "decks": 53
+    "decks": 53,
+    "country": "PL"
   },
   {
     "id": 12325,
@@ -22,7 +24,8 @@
     "location": "Lublin, Poland",
     "date": "2025-05-17",
     "players": 20,
-    "decks": 20
+    "decks": 20,
+    "country": "PL"
   },
   {
     "id": 12143,
@@ -30,7 +33,8 @@
     "location": "Joensuu, Finland",
     "date": "2025-04-26",
     "players": 13,
-    "decks": 12
+    "decks": 12,
+    "country": "FI"
   },
   {
     "id": 12069,
@@ -39,7 +43,8 @@
     "date": "2025-04-12",
     "isNC": true,
     "players": 39,
-    "decks": 39
+    "decks": 39,
+    "country": "FI"
   },
   {
     "id": 11865,
@@ -47,7 +52,8 @@
     "location": "Modena, Italy",
     "date": "2025-03-01",
     "players": 70,
-    "decks": 70
+    "decks": 70,
+    "country": "IT"
   },
   {
     "id": 11945,
@@ -55,7 +61,8 @@
     "location": "Joensuu, Finland",
     "date": "2024-12-28",
     "players": 15,
-    "decks": 14
+    "decks": 14,
+    "country": "FI"
   },
   {
     "id": 11560,
@@ -64,7 +71,8 @@
     "date": "2024-11-24",
     "isNC": true,
     "players": 24,
-    "decks": 20
+    "decks": 20,
+    "country": "NL"
   },
   {
     "id": 11594,
@@ -72,7 +80,8 @@
     "location": "Palma, Spain",
     "date": "2024-11-16",
     "players": 89,
-    "decks": 87
+    "decks": 87,
+    "country": "ES"
   },
   {
     "id": 11855,
@@ -80,7 +89,8 @@
     "location": "Vác, Hungary",
     "date": "2024-11-10",
     "players": 10,
-    "decks": 7
+    "decks": 7,
+    "country": "HU"
   },
   {
     "id": 11739,
@@ -89,7 +99,8 @@
     "date": "2024-11-09",
     "isNC": true,
     "players": 30,
-    "decks": 30
+    "decks": 30,
+    "country": "FI"
   },
   {
     "id": 11487,
@@ -98,7 +109,8 @@
     "date": "2024-11-02",
     "isNC": true,
     "players": 33,
-    "decks": 32
+    "decks": 32,
+    "country": "PT"
   },
   {
     "id": 11686,
@@ -107,7 +119,8 @@
     "date": "2024-10-26",
     "isNC": true,
     "players": 36,
-    "decks": 23
+    "decks": 23,
+    "country": "NZ"
   },
   {
     "id": 11707,
@@ -115,7 +128,8 @@
     "location": "Joensuu, Finland",
     "date": "2024-10-26",
     "players": 10,
-    "decks": 10
+    "decks": 10,
+    "country": "FI"
   },
   {
     "id": 11670,
@@ -123,7 +137,8 @@
     "location": "Warsaw, Poland",
     "date": "2024-09-29",
     "players": 75,
-    "decks": 11
+    "decks": 11,
+    "country": "PL"
   },
   {
     "id": 11669,
@@ -132,7 +147,8 @@
     "date": "2024-09-29",
     "isNC": true,
     "players": 75,
-    "decks": 25
+    "decks": 25,
+    "country": "EU"
   },
   {
     "id": 11667,
@@ -140,7 +156,8 @@
     "location": "Warsaw, Poland",
     "date": "2024-09-27",
     "players": 153,
-    "decks": 50
+    "decks": 50,
+    "country": "EU"
   },
   {
     "id": 11665,
@@ -148,7 +165,8 @@
     "location": "Warsaw, Poland",
     "date": "2024-09-26",
     "players": 48,
-    "decks": 10
+    "decks": 10,
+    "country": "PL"
   },
   {
     "id": 11664,
@@ -156,7 +174,8 @@
     "location": "Warsaw, Poland",
     "date": "2024-09-25",
     "players": 32,
-    "decks": 6
+    "decks": 6,
+    "country": "PL"
   },
   {
     "id": 11663,
@@ -164,7 +183,8 @@
     "location": "Warsaw, Poland",
     "date": "2024-09-24",
     "players": 25,
-    "decks": 8
+    "decks": 8,
+    "country": "PL"
   },
   {
     "id": 11730,
@@ -172,7 +192,8 @@
     "location": "Vác, Hungary",
     "date": "2024-09-22",
     "players": 17,
-    "decks": 10
+    "decks": 10,
+    "country": "HU"
   },
   {
     "id": 11398,
@@ -181,7 +202,8 @@
     "date": "2024-09-07",
     "isNC": true,
     "players": 32,
-    "decks": 27
+    "decks": 27,
+    "country": "DE"
   },
   {
     "id": 11480,
@@ -189,7 +211,8 @@
     "location": "Helsinki, Finland",
     "date": "2024-07-20",
     "players": 54,
-    "decks": 31
+    "decks": 31,
+    "country": "FI"
   },
   {
     "id": 11259,
@@ -197,7 +220,8 @@
     "location": "Ravenhall (VIC), Australia",
     "date": "2024-03-17",
     "players": 10,
-    "decks": 7
+    "decks": 7,
+    "country": "AU"
   },
   {
     "id": 11196,
@@ -205,7 +229,8 @@
     "location": "Norwich, United Kingdom",
     "date": "2024-03-09",
     "players": 14,
-    "decks": 14
+    "decks": 14,
+    "country": "GB"
   },
   {
     "id": 11184,
@@ -213,7 +238,8 @@
     "location": "Online",
     "date": "2024-03-02",
     "players": 64,
-    "decks": 64
+    "decks": 64,
+    "country": "ZZ"
   },
   {
     "id": 11192,
@@ -221,7 +247,8 @@
     "location": "Vác, Hungary",
     "date": "2024-01-27",
     "players": 20,
-    "decks": 11
+    "decks": 11,
+    "country": "HU"
   },
   {
     "id": 10367,
@@ -230,7 +257,8 @@
     "date": "2022-11-05",
     "isNC": true,
     "players": 45,
-    "decks": 24
+    "decks": 24,
+    "country": "FI"
   },
   {
     "id": 11023,
@@ -239,6 +267,7 @@
     "date": "2023-11-04",
     "isNC": true,
     "players": 33,
-    "decks": 33
+    "decks": 33,
+    "country": "FI"
   }
 ]
