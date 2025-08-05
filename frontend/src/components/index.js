@@ -20,6 +20,7 @@ export { default as ButtonIconed } from "./common/ButtonIconed.jsx";
 export { default as Checkbox } from "./common/Checkbox.jsx";
 export { default as ConditionalTooltip } from "./common/ConditionalTooltip.jsx";
 export { default as ConditionalTooltipOrModal } from "./common/ConditionalTooltipOrModal.jsx";
+export { default as DoubleToggle } from "./common/DoubleToggle.jsx";
 export { default as ErrorMessage } from "./common/ErrorMessage.jsx";
 export { default as ErrorOverlay } from "./common/ErrorOverlay.jsx";
 export { default as FlexGapped } from "./common/FlexGapped.jsx";
