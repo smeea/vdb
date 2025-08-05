@@ -1,6 +1,5 @@
 # FIX
 - Floating close button TDA select
-- TWD type popup outline
 - Twd show all library?
 
 # FIX ON HOLD
