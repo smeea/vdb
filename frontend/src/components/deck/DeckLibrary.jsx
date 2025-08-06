@@ -12,7 +12,7 @@ import { LIBRARY, TYPE_MASTER } from "@/constants";
 import { useApp } from "@/context";
 import { useDeckLibrary, useModalCardController } from "@/hooks";
 
-const DeckLibrary = ({ inSearch, inPreview, inMissing, deck }) => {
+const DeckLibrary = ({ inTwd, inSearch, inPreview, inMissing, deck }) => {
   const { setShowFloatingButtons, isDesktop, isMobile, isNarrow } = useApp();
   const [showInfo, setShowInfo] = useState(false);
 
@@ -66,6 +66,7 @@ const DeckLibrary = ({ inSearch, inPreview, inMissing, deck }) => {
               !inSearch &&
               !isMobile &&
               "sticky top-10 z-10 bg-bgPrimary max-md:top-0 dark:bg-bgPrimaryDark",
+            inTwd && "hidden"
           )}
         >
           <DeckLibraryHeader
@@ -105,6 +106,7 @@ const DeckLibrary = ({ inSearch, inPreview, inMissing, deck }) => {
                   inMissing={inMissing}
                   inSearch={inSearch}
                   shouldShowModal={shouldShowModal}
+                  inTwd={inTwd}
                 />
               </div>
             );

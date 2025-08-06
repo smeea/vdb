@@ -10,6 +10,7 @@ const DeckLibraryTable = ({
   handleClick,
   inSearch,
   inMissing,
+  inTwd,
   shouldShowModal,
 }) => {
   const sortedCards = cards.toSorted((a, b) => a.c[ASCII] - b.c[ASCII]);
@@ -28,6 +29,7 @@ const DeckLibraryTable = ({
               libraryTotal={libraryTotal}
               inSearch={inSearch}
               inMissing={inMissing}
+              inTwd={inTwd}
               shouldShowModal={shouldShowModal}
               isEditable={isEditable}
               deckid={deck[DECKID]}

@@ -66,6 +66,7 @@ const ResultLibraryTableRowCommon = ({
   handleClick,
   inSearch,
   inDeck,
+  inTwd,
   shouldShowModal,
   noBurn,
   idx,
@@ -81,9 +82,9 @@ const ResultLibraryTableRowCommon = ({
       {inDeck ? (
         <>
           <Name card={card} handleClick={onClick} shouldShowModal={shouldShowModal} />
-          {(!inSearch || !isNarrow) && <Cost card={card} handleClick={onClick} />}
-          <ResultLibraryTableRowReqClanDis card={card} handleClick={onClick} />
-          {(!inSearch || !isNarrow) && <BurnTrifle card={card} handleClick={onClick} />}
+          {(!inSearch || !isNarrow) && !inTwd && <Cost card={card} handleClick={onClick} />}
+          <ResultLibraryTableRowReqClanDis inTwd={inTwd} card={card} handleClick={onClick} />
+          {(!inSearch || !isNarrow) && !inTwd && <BurnTrifle card={card} handleClick={onClick} />}
         </>
       ) : (
         <>

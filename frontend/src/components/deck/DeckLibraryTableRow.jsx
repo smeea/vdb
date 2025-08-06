@@ -18,6 +18,7 @@ const DeckLibraryTableRow = ({
   libraryTotal,
   inSearch,
   inMissing,
+  inTwd,
   shouldShowModal,
   isEditable,
   deckid,
@@ -45,7 +46,7 @@ const DeckLibraryTableRow = ({
         getSwipedBg(isSwiped),
       )}
     >
-      {inventoryMode && inventoryType && !inMissing && !inSearch && isDesktop && (
+      {inventoryMode && inventoryType && !inMissing && !inSearch && isDesktop && !inTwd && (
         <DeckCardToggleInventoryStateTd
           isEditable={isEditable}
           card={card}
@@ -70,6 +71,7 @@ const DeckLibraryTableRow = ({
         handleClick={handleClick}
         inSearch={inSearch}
         shouldShowModal={shouldShowModal}
+        inTwd={inTwd}
         inDeck
       />
       {showInfo && (

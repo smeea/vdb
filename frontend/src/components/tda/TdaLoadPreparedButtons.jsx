@@ -5,7 +5,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router";
 import tournaments from "@/assets/data/etda.json";
 import { Button, Spinner } from "@/components";
-import { DATE, DECKS, ID, LOCATION, PLAYERS, TITLE } from "@/constants";
+import { COUNTRY, DATE, DECKS, ID, LOCATION, PLAYERS, TITLE } from "@/constants";
 import { clearTdaForm, setTdaDecks, setTdaInfo, setTdaResults } from "@/context";
 
 const TdaLoadPreparedButtons = ({ setTempDecks, setTempArchon, setError }) => {
@@ -42,7 +42,13 @@ const TdaLoadPreparedButtons = ({ setTempDecks, setTempArchon, setError }) => {
                   {v[TITLE]}
                 </div>
                 <div className="flex w-full items-center justify-center gap-1 text-sm">
-                  <div>{v.country ? getUnicodeFlagIcon(v.country) : <Globe2 width="15" height="15" />}</div>
+                  <div>
+                    {v[COUNTRY] ? (
+                      getUnicodeFlagIcon(v[COUNTRY])
+                    ) : (
+                      <Globe2 width="15" height="15" />
+                    )}
+                  </div>
                   <div>{v[LOCATION]}</div>
                 </div>
               </div>

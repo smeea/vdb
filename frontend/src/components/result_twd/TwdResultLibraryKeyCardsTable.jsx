@@ -7,7 +7,7 @@ import {
   Toggle,
   TwdResultLibraryKeyCardsTableRow,
 } from "@/components";
-import { ASCII, BANNED, BLOOD, GROUPED_TYPE, ID, POOL, X } from "@/constants";
+import { ASCII, BANNED, BLOOD, LIBRARY, GROUPED_TYPE, ID, POOL, X } from "@/constants";
 import { useApp } from "@/context";
 import { useDeckLibrary, useModalCardController } from "@/hooks";
 import { librarySort } from "@/utils";
@@ -73,20 +73,16 @@ const TwdResultLibraryKeyCardsTable = ({ library, withHeader }) => {
       <table className="border-bgSecondary border-x dark:border-bgSecondaryDark">
         <tbody>
           {showFullLibrary ? (
-            <DeckLibrary deck={{ library: library }} handleClick={handleClick} />
+            <DeckLibrary deck={{ [LIBRARY]: library }} handleClick={handleClick} inTwd />
           ) : (
-            <>
-              {keyCards.map((card) => {
-                return (
-                  <TwdResultLibraryKeyCardsTableRow
-                    key={card.c[ID]}
-                    card={card}
-                    handleClick={handleClick}
-                    shouldShowModal={shouldShowModal}
-                  />
-                );
-              })}
-            </>
+            keyCards.map((card) => (
+              <TwdResultLibraryKeyCardsTableRow
+                key={card.c[ID]}
+                card={card}
+                handleClick={handleClick}
+                shouldShowModal={shouldShowModal}
+              />
+            ))
           )}
         </tbody>
       </table>
