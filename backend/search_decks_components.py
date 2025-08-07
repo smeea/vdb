@@ -278,7 +278,6 @@ def get_decks_by_traits(traits, decks):
 
 
 def get_decks_by_src(src, decks):
-    print(src)
     match_decks = []
 
     for deck in decks:
