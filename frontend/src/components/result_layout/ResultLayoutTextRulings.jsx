@@ -1,7 +1,7 @@
 import React from "react";
 import reactStringReplace from "react-string-replace";
 import { CardPopover, ConditionalTooltip, ResultMiscImage, ResultName } from "@/components";
-import { NAME, TEXT } from "@/constants";
+import { ADV, NAME, TEXT } from "@/constants";
 import { useApp } from "@/context";
 
 const Refs = ({ refs }) => {
@@ -41,7 +41,8 @@ const Text = ({ text }) => {
       if (cardMatch.startsWith("The ")) {
         cardMatch = `${cardMatch.replace(/^The /, "")}, The`;
       }
-      return cardBase[j][NAME] === cardMatch;
+      const cardName = cardBase[j][ADV] ? `${cardBase[j][NAME]} (ADV)` : cardBase[j][NAME]
+      return cardName === cardMatch;
     });
 
     const card = cardid > 200000 ? cryptCardBase[cardid] : libraryCardBase[cardid];

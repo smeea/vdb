@@ -1,5 +1,4 @@
 # FIX
-- ADV vampire reference in rulings (e.g. concealed weapon)
 
 # FIX ON HOLD
 - Deck-in-Url trimmed at first card - can't reproduce in dev environment

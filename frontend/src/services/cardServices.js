@@ -1,6 +1,7 @@
 import ky from "ky";
 import setsAndPrecons from "@/assets/data/setsAndPrecons.json";
 import {
+  ADV,
   AUTHOR,
   CRYPT,
   DATE,
@@ -50,6 +51,7 @@ export const getCardBase = async (secret) => {
       [NAME]: card[NAME],
       [TEXT]: card[TEXT],
     };
+    if (card[ID] > 200000) target[card[ID]][ADV] = card[ADV][0]
   });
 
   return {
