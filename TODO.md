@@ -4,7 +4,6 @@
 - Deck-in-Url trimmed at first card - can't reproduce in dev environment
 
 # FEATURES
-- Brazil NYC pt
 - Limited in TWD/PDA search
 - TWD search with % V5-compatibility
 

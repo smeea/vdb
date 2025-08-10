@@ -3,21 +3,33 @@
     "name": "PLAYTEST",
     "date": "",
     "precons": {
+      "BbN": {
+        "name": "Brazil By Night",
+        "clan": "Bundle"
+      },
+      "SoNY": {
+        "name": "Shadows of New York",
+        "clan": "Bundle"
+      },
       "SCai": {
         "name": "Path of Caine",
-        "clan": "Caine"
+        "clan": "Caine",
+        "playtest_old": true
       },
       "SCat": {
         "name": "Path of Cathari",
-        "clan": "Cathari"
+        "clan": "Cathari",
+        "playtest_old": true
       },
       "SDS": {
         "name": "Path of Death",
-        "clan": "Death and the Soul"
+        "clan": "Death and the Soul",
+        "playtest_old": true
       },
       "SPIV": {
         "name": "Path of Power",
-        "clan": "Power and the Inner Voice"
+        "clan": "Power and the Inner Voice",
+        "playtest_old": true
       },
       "NR": {
         "name": "New Blood: Ravnos",

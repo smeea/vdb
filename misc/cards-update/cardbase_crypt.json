@@ -1378,6 +1378,9 @@
             },
             "CE":{
                 "PTr":1
+            },
+            "playtest":{
+                "SoNY":2
             }
         },
         "text":"Camarilla: Younger Tremere cannot block Aisling.",
@@ -12449,9 +12452,6 @@
             "2P":{
                 "C":true,
                 "Tz":2
-            },
-            "playtest":{
-                "NTz":1
             }
         },
         "text":"Anarch.",
@@ -46059,9 +46059,6 @@
             "2P":{
                 "C":true,
                 "Tz":2
-            },
-            "playtest":{
-                "NTz":1
             }
         },
         "text":"Anarch: While you control no locations, Neserian gets -1 bleed. While you control 1 or more locations, Neserian gets +1 vote.",
@@ -64129,9 +64126,6 @@
             "2P":{
                 "C":true,
                 "Tz":2
-            },
-            "playtest":{
-                "NTz":1
             }
         },
         "text":"Anarch.",
