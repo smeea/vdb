@@ -19,6 +19,15 @@
     "country": "PL"
   },
   {
+    "id": 12126,
+    "title": "Polish Grand Prix 20025",
+    "location": "Warsaw, Poland",
+    "date": "2025-07-05",
+    "players": 56,
+    "decks": 56,
+    "country": "PL"
+  },
+  {
     "id": 12325,
     "title": "Fee Stake: Lublin",
     "location": "Lublin, Poland",
