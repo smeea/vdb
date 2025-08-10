@@ -3309,7 +3309,7 @@
                 }
             },
             {
-                "text":"The ally card is not \"played\" by the minion (e.g. {Louhi}'s ability cannot cancel it).",
+                "text":"The card is not \"played\" by the minion (e.g. {Louhi}'s ability cannot cancel it).",
                 "refs":{
                     "ANK 20201229":"https://www.vekn.net/forum/rules-questions/78959-louhi-and-piper#101325"
                 }
@@ -18438,7 +18438,7 @@
                 }
             },
             {
-                "text":"Cost modifications that are not limited to cards \"played\" apply before checking for card cost (eg. {Black Cat} can equip with a {Combat Shotgun}, {Centralized Background Check} makes {.44 Magnum} too costly).",
+                "text":"Cost modifications that are not limited to cards \"played\" are considered before checking for card cost (eg. {Black Cat} can equip with a {Combat Shotgun}, {Centralized Background Check} makes {.44 Magnum} too costly).",
                 "refs":{
                     "LSJ 20040701":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/O7cT51Yl2Uk/m/RvMWaiqAFS8J",
                     "LSJ 20080125":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HcCobkGPcFI/m/GlBdNwMvAjwJ",
@@ -18487,7 +18487,7 @@
                 }
             },
             {
-                "text":"The ally card is not \"played\" by the minion (e.g. {Louhi}'s ability cannot cancel it).",
+                "text":"The card is not \"played\" by the minion (e.g. {Louhi}'s ability cannot cancel it).",
                 "refs":{
                     "ANK 20201229":"https://www.vekn.net/forum/rules-questions/78959-louhi-and-piper#101325"
                 }
@@ -25777,7 +25777,7 @@
                 }
             },
             {
-                "text":"The ally card is not \"played\" by the minion (e.g. {Louhi}'s ability cannot cancel it).",
+                "text":"The card is not \"played\" by the minion (e.g. {Louhi}'s ability cannot cancel it).",
                 "refs":{
                     "ANK 20201229":"https://www.vekn.net/forum/rules-questions/78959-louhi-and-piper#101325"
                 }
@@ -38811,7 +38811,7 @@
                 }
             },
             {
-                "text":"[VAL] The ally card is not \"played\" by the minion (e.g. {Louhi}'s ability cannot cancel it).",
+                "text":"[VAL] The card is not \"played\" by the minion (e.g. {Louhi}'s ability cannot cancel it).",
                 "refs":{
                     "ANK 20201229":"https://www.vekn.net/forum/rules-questions/78959-louhi-and-piper#101325"
                 }
@@ -61040,7 +61040,7 @@
                 }
             },
             {
-                "text":"The ally card is not \"played\" by the minion (e.g. {Louhi}'s ability cannot cancel it).",
+                "text":"The card is not \"played\" by the minion (e.g. {Louhi}'s ability cannot cancel it).",
                 "refs":{
                     "ANK 20201229":"https://www.vekn.net/forum/rules-questions/78959-louhi-and-piper#101325"
                 }
@@ -63375,7 +63375,7 @@
                 }
             },
             {
-                "text":"[ani] The ally card is not \"played\" by the minion (e.g. {Louhi}'s ability cannot cancel it).",
+                "text":"[ani] The card is not \"played\" by the minion (e.g. {Louhi}'s ability cannot cancel it).",
                 "refs":{
                     "ANK 20201229":"https://www.vekn.net/forum/rules-questions/78959-louhi-and-piper#101325"
                 }
@@ -65851,7 +65851,7 @@
                 }
             },
             {
-                "text":"The ally card is not \"played\" by the minion (e.g. {Louhi}'s ability cannot cancel it).",
+                "text":"The card is not \"played\" by the minion (e.g. {Louhi}'s ability cannot cancel it).",
                 "refs":{
                     "ANK 20201229":"https://www.vekn.net/forum/rules-questions/78959-louhi-and-piper#101325"
                 }
@@ -95681,7 +95681,7 @@
                 }
             },
             {
-                "text":"The ally card is not \"played\" by the minion (e.g. {Louhi}'s ability cannot cancel it).",
+                "text":"The card is not \"played\" by the minion (e.g. {Louhi}'s ability cannot cancel it).",
                 "refs":{
                     "ANK 20201229":"https://www.vekn.net/forum/rules-questions/78959-louhi-and-piper#101325"
                 }

@@ -1,6 +1,13 @@
 [
   {
-    "version": "2025-08-06/1",
+    "version": "2025-08-10",
+    "changes": [
+      "Add Polish Grand Prix 2025 event to TDA",
+      "Small other fixes and improvements"
+    ]
+  },
+  {
+    "version": "2025-08-06",
     "changes": [
       "Add limited % in the deck to TWD and PDA",
       "Add Garou Rim: Life in the City event to TDA",
