@@ -28,7 +28,7 @@ const AccountChangePassword = () => {
         }, 1000);
     }
 
-    return { password: "", newPassword: formData.get(NEW_PASSWORD) };
+    return { [PASSWORD]: "", [NEW_PASSWORD]: formData.get(NEW_PASSWORD) };
   };
 
   const [data, action] = useActionState(changePassword);

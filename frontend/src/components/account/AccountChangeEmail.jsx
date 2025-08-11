@@ -6,7 +6,7 @@ import { useApp } from "@/context";
 import { userServices } from "@/services";
 
 const AccountChangeEmail = () => {
-  const { setEmail } = useApp();
+  const { email, setEmail } = useApp();
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
 
@@ -30,7 +30,9 @@ const AccountChangeEmail = () => {
     return { [PASSWORD]: formData.get(PASSWORD), [EMAIL]: formData.get(EMAIL) };
   };
 
-  const [data, action] = useActionState(changeEmail);
+  const [data, action] = useActionState(changeEmail, {
+    [EMAIL]: email,
+  });
 
   return (
     <div className="flex flex-col gap-2">
