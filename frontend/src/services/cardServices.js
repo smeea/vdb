@@ -107,17 +107,9 @@ export const getPreconDecks = async (cryptCardBase, libraryCardBase, secret) => 
       }
 
       const cardsData = parseDeck(cryptCardBase, libraryCardBase, preconData[set][precon]);
-
-      let tags = [];
-      if (set !== PLAYTEST || (cryptCardBase[210001] && libraryCardBase[110001])) {
-        Object.values(getTags(cardsData[CRYPT], cardsData[LIBRARY])).forEach((v) => {
-          tags = tags.concat(v);
-        });
-      }
-
       preconDecks[deckid][CRYPT] = cardsData[CRYPT];
       preconDecks[deckid][LIBRARY] = cardsData[LIBRARY];
-      preconDecks[deckid][TAGS] = tags;
+      preconDecks[deckid][TAGS] = Object.values(getTags(cardsData[CRYPT], cardsData[LIBRARY])).flat();
     });
   });
 
