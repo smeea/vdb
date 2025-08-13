@@ -4,7 +4,13 @@ import copy
 
 with app.app_context():
     for u in User.query.filter_by(playtester=True).all():
-        u.playtest_report = {}
+        if "cards" in u.playtest_report:
+            cards = copy.deepcopy(u.playtest_report["cards"])
+            for id in u.playtest_report["cards"].keys():
+                if not id.startswith("16") and not id.startswith("25"):
+                    del cards[id]
+
+            u.playtest_report["cards"] = copy.deepcopy(cards)
         profile = copy.deepcopy(u.playtest_profile)
         if "games" in profile:
             del profile["games"]
