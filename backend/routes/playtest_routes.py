@@ -133,7 +133,7 @@ def report_export_route(target, id):
         report = copy.deepcopy(p.playtest_report)
 
         if target == "general":
-            general = p.playtest_profileget("general")
+            general = p.playtest_profile.get("general")
             if not general:
                 continue
 
