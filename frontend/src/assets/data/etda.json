@@ -65,6 +65,14 @@
     "country": "FI"
   },
   {
+    "id": "online1",
+    "title": "Cardinal Benediction (JOL)",
+    "location": "Online",
+    "date": "2025-04-01",
+    "players": 25,
+    "decks": 25
+  },
+  {
     "id": 11865,
     "title": "Italian Grand Prix 2025",
     "location": "Modena, Italy",
