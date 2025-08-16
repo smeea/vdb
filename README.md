@@ -59,7 +59,7 @@ Now go to http://localhost:5173 in the browser and you are ready to go.
 
 For production, in addition to the steps above, you should at least:
 * setup web-server instead of `npm start` (`vite`) embedded server
-* setup wsgi-server instead of `flask run` embedded server
+* setup wsgi-server instead of `uv run flask` embedded server
 * build frontend for production (`npm run build`)
 * change `app.config['SECRET_KEY']` in `backend/config.py`
 
