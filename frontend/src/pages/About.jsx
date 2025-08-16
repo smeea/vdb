@@ -77,6 +77,9 @@ const About = () => {
             app try to delete it and reinstall from{" "}
             <a href={import.meta.env.VITE_BASE_URL}>{import.meta.env.VITE_BASE_URL}</a>
           </div>
+          <div>
+            VDB will not work on browsers older than: Chrome 117, Firefox 119, Safari 17.4
+          </div>
           <div>If this does not help, please contact me (see below)</div>
         </div>
 
