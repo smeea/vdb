@@ -51,7 +51,7 @@ export const getCardBase = async (secret) => {
       [NAME]: card[NAME],
       [TEXT]: card[TEXT],
     };
-    if (card[ID] > 200000) target[card[ID]][ADV] = card[ADV][0]
+    if (card[ID] > 200000) target[card[ID]][ADV] = card[ADV][0];
   });
 
   return {
@@ -109,7 +109,9 @@ export const getPreconDecks = async (cryptCardBase, libraryCardBase, secret) => 
       const cardsData = parseDeck(cryptCardBase, libraryCardBase, preconData[set][precon]);
       preconDecks[deckid][CRYPT] = cardsData[CRYPT];
       preconDecks[deckid][LIBRARY] = cardsData[LIBRARY];
-      preconDecks[deckid][TAGS] = Object.values(getTags(cardsData[CRYPT], cardsData[LIBRARY])).flat();
+      preconDecks[deckid][TAGS] = Object.values(
+        getTags(cardsData[CRYPT], cardsData[LIBRARY]),
+      ).flat();
     });
   });
 

@@ -41,7 +41,7 @@ const Text = ({ text }) => {
       if (cardMatch.startsWith("The ")) {
         cardMatch = `${cardMatch.replace(/^The /, "")}, The`;
       }
-      const cardName = cardBase[j][ADV] ? `${cardBase[j][NAME]} (ADV)` : cardBase[j][NAME]
+      const cardName = cardBase[j][ADV] ? `${cardBase[j][NAME]} (ADV)` : cardBase[j][NAME];
       return cardName === cardMatch;
     });
 

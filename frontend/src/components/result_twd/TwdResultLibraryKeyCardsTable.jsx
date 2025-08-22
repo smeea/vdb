@@ -7,7 +7,7 @@ import {
   Toggle,
   TwdResultLibraryKeyCardsTableRow,
 } from "@/components";
-import { ASCII, BANNED, BLOOD, LIBRARY, GROUPED_TYPE, ID, POOL, X } from "@/constants";
+import { ASCII, BANNED, BLOOD, GROUPED_TYPE, ID, LIBRARY, POOL, X } from "@/constants";
 import { useApp } from "@/context";
 import { useDeckLibrary, useModalCardController } from "@/hooks";
 import { librarySort } from "@/utils";

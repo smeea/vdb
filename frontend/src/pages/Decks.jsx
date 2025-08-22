@@ -104,7 +104,7 @@ const Decks = () => {
     setError(false);
     const cardsData = parseDeck(cryptCardBase, libraryCardBase, deckData[CARDS]);
     if (deckid.length !== 9 || deckData[PUBLIC_PARENT]) {
-      deckData[TAGS] = Object.values(getTags(cardsData[CRYPT], cardsData[LIBRARY])).flat()
+      deckData[TAGS] = Object.values(getTags(cardsData[CRYPT], cardsData[LIBRARY])).flat();
     }
 
     const d = {
@@ -153,7 +153,9 @@ const Decks = () => {
             if (preconDecks[deckidFixed]) {
               setDeck({
                 ...preconDecks[deckidFixed],
-                [TAGS]: Object.values(getTags(preconDecks[deckidFixed][CRYPT], preconDecks[deckidFixed][LIBRARY])).flat(),
+                [TAGS]: Object.values(
+                  getTags(preconDecks[deckidFixed][CRYPT], preconDecks[deckidFixed][LIBRARY]),
+                ).flat(),
               });
             } else {
               setError("NO DECK WITH THIS ID");

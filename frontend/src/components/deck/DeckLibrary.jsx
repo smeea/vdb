@@ -66,7 +66,7 @@ const DeckLibrary = ({ inTwd, inSearch, inPreview, inMissing, deck }) => {
               !inSearch &&
               !isMobile &&
               "sticky top-10 z-10 bg-bgPrimary max-md:top-0 dark:bg-bgPrimaryDark",
-            inTwd && "hidden"
+            inTwd && "hidden",
           )}
         >
           <DeckLibraryHeader
