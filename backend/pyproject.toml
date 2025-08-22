@@ -14,5 +14,5 @@ dependencies = [
     "requests>=2.32.3",
 ]
 
-[tool.black]
+[tool.ruff]
 line-length = 100
