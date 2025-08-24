@@ -32378,9 +32378,24 @@
         "path":"",
         "rulings":[
             {
-                "text":"She keeps her title if {Fall of the Camarilla} is played. She can be chosen for {Recalled to the Founder}, but does not burn. Allies still benefit from {The Unmasking} intercept when trying to block her.",
+                "text":"She can't take actions provided by Gehenna events in play ({The New Inquisition}, {Break the Code}, {Restricted Vitae}). She keeps her title if {Fall of the Camarilla} is played. Her controller doesn't reveal cards due to {Veil of Darkness} when she plays cards requiring disciplines.\nShe doesn't become immune to blood hunts via {Fueled by Heart's Blood}.",
                 "refs":{
+                    "LSJ 20100121":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/RACHn4FzID8/m/nRvqfZ5oWgYJ",
                     "LSJ 20081120-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/e2PNDpg-l_c/m/wqEDxGHKJQgJ"
+                }
+            },
+            {
+                "text":"She can be chosen for the effects of a Gehenna event, but stays unaffected: she can be chosen for {Recalled to the Founder}, but doesn't burn. Her controller can choose to discard a card for her for {Nightmares upon Nightmares}, but she isn't locked if they don't.\u00a0{Blood Trade}\u00a0can't move blood from her, and blood moved to her go to the blood bank instead.",
+                "refs":{
+                    "LSJ 20081120-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/e2PNDpg-l_c/m/wqEDxGHKJQgJ",
+                    "LSJ 20100121":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/RACHn4FzID8/m/nRvqfZ5oWgYJ"
+                }
+            },
+            {
+                "text":"Her immunity does not extend to other things affected by events: Allies still benefit from {The Unmasking}\u00a0intercept when trying to block her.\u00a0Locations on her are affected by {Conquest of Humanity}.\u00a0Her controller burns pool to\u00a0{Dragonbound} while she is in Torpor.",
+                "refs":{
+                    "LSJ 20081120-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/e2PNDpg-l_c/m/wqEDxGHKJQgJ",
+                    "LSJ 20100121":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/RACHn4FzID8/m/nRvqfZ5oWgYJ"
                 }
             }
         ],
@@ -37819,6 +37834,12 @@
                 "text":"If an effect granting a strike (e.g. {.44 Magnum}) is played/used after another effect that adds a cost to strike, you must pay the additional cost to use that first effect.",
                 "refs":{
                     "LSJ 20090529":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/LpFSLRuWONA/m/daxDmJiGX0AJ"
+                }
+            },
+            {
+                "text":"Strikes are paid at declaration. If an ally spends their last life on a strike, combat ends before strike resolution. If the strike damage depends on the amount of life/blood of the striking minion, it is calculated after the strike is paid for (e.g. {Shambling Hordes}).",
+                "refs":{
+                    "LSJ 20090703":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/utj6J5KZ-aA/m/I_9JuLKLwZ8J"
                 }
             }
         ],

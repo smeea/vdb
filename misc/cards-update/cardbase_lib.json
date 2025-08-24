@@ -1320,6 +1320,12 @@
         "requirement":"",
         "rulings":[
             {
+                "text":"The optional maneuver cannot be used if the strike cannot be used (eg. {Hidden Lurker}).",
+                "refs":{
+                    "LSJ 20021028":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/g0GGiVIxyis/m/35WA-O9XrroJ"
+                }
+            },
+            {
                 "text":"[ANI] The optional press can only be used during the current round.",
                 "refs":{
                     "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
@@ -12022,6 +12028,12 @@
         "requirement":"",
         "rulings":[
             {
+                "text":"[vis] The optional maneuver cannot be used if the strike cannot be used (eg. {Hidden Lurker}).",
+                "refs":{
+                    "LSJ 20021028":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/g0GGiVIxyis/m/35WA-O9XrroJ"
+                }
+            },
+            {
                 "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
                 "refs":{
                     "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
@@ -22367,6 +22379,12 @@
                 "text":"[QUI] If an effect granting a strike (e.g. {.44 Magnum}) is played/used after another effect that adds a cost to strike, you must pay the additional cost to use that first effect.",
                 "refs":{
                     "LSJ 20090529":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/LpFSLRuWONA/m/daxDmJiGX0AJ"
+                }
+            },
+            {
+                "text":"[QUI] Strikes are paid at declaration. If an ally spends their last life on a strike, combat ends before strike resolution. If the strike damage depends on the amount of life/blood of the striking minion, it is calculated after the strike is paid for (e.g. {Shambling Hordes}).",
+                "refs":{
+                    "LSJ 20090703":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/utj6J5KZ-aA/m/I_9JuLKLwZ8J"
                 }
             }
         ],
@@ -38070,7 +38088,14 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The actions provided by Open war are considered Actions requiring a Hecata.",
+                "refs":{
+                    "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
+                }
+            }
+        ],
         "set":{
             "V5H":{
                 "PH":"2"
@@ -38189,6 +38214,12 @@
                 "text":"Does not protect the minion's equipment, retainers, or any other cards on him. Just him and his blood.",
                 "refs":{
                     "LSJ 20031118":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9IzmBh8PWe0/m/J1F_TzPbITsJ"
+                }
+            },
+            {
+                "text":"[obf] The optional maneuver cannot be used if the strike cannot be used (eg. {Hidden Lurker}).",
+                "refs":{
+                    "LSJ 20021028":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/g0GGiVIxyis/m/35WA-O9XrroJ"
                 }
             }
         ],
@@ -45227,6 +45258,12 @@
                 "refs":{
                     "LSJ 20090529":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/LpFSLRuWONA/m/daxDmJiGX0AJ"
                 }
+            },
+            {
+                "text":"Strikes are paid at declaration. If an ally spends their last life on a strike, combat ends before strike resolution. If the strike damage depends on the amount of life/blood of the striking minion, it is calculated after the strike is paid for (e.g. {Shambling Hordes}).",
+                "refs":{
+                    "LSJ 20090703":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/utj6J5KZ-aA/m/I_9JuLKLwZ8J"
+                }
             }
         ],
         "set":{
@@ -50184,6 +50221,12 @@
                 "text":"Additional damage inherits all of the properties of the base damage.",
                 "refs":{
                     "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
+                }
+            },
+            {
+                "text":"[for] The optional maneuver cannot be used if the strike cannot be used (eg. {Hidden Lurker}).",
+                "refs":{
+                    "LSJ 20021028":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/g0GGiVIxyis/m/35WA-O9XrroJ"
                 }
             },
             {
@@ -56258,7 +56301,14 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"[cel] The optional maneuver cannot be used if the strike cannot be used (eg. {Hidden Lurker}).",
+                "refs":{
+                    "LSJ 20021028":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/g0GGiVIxyis/m/35WA-O9XrroJ"
+                }
+            }
+        ],
         "set":{
             "LotN":{
                 "C":true
@@ -60230,6 +60280,12 @@
                 "refs":{
                     "LSJ 20101021":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/g3CuP9Eqffg/m/plIFW0oYuDQJ"
                 }
+            },
+            {
+                "text":"Changing the controller of a location has no other effect, unless specified by card text. Exception: A location \"on\" another controlled card is moved onto an appropriate card controlled by the new controller of the location.",
+                "refs":{
+                    "RTR 19980623":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/tSpd9dtTElc/m/-CuHJF54_n0J"
+                }
             }
         ],
         "set":{
@@ -62474,6 +62530,12 @@
         "pool":0,
         "requirement":"baron,anarch",
         "rulings":[
+            {
+                "text":"The actions provided by Open war are considered actions requiring an Anarch.",
+                "refs":{
+                    "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
+                }
+            },
             {
                 "text":"The two actions provided are not cross-restrictive. Each can be performed once during the same turn by the same minion.",
                 "refs":{
@@ -65937,7 +65999,14 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The actions provided by Open war are considered Actions requiring a Hecata.",
+                "refs":{
+                    "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
+                }
+            }
+        ],
         "set":{
             "V5H":{
                 "PH":"2"
@@ -81990,6 +82059,12 @@
         "requirement":"",
         "rulings":[
             {
+                "text":"The optional maneuver cannot be used if the strike cannot be used (eg. {Hidden Lurker}).",
+                "refs":{
+                    "LSJ 20021028":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/g0GGiVIxyis/m/35WA-O9XrroJ"
+                }
+            },
+            {
                 "text":"[OBT] The optional press can only be used during the current round.",
                 "refs":{
                     "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
@@ -84297,6 +84372,12 @@
                 "text":"Additional damage inherits all of the properties of the base damage.",
                 "refs":{
                     "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
+                }
+            },
+            {
+                "text":"[POT] The optional maneuver cannot be used if the strike cannot be used (eg. {Hidden Lurker}).",
+                "refs":{
+                    "LSJ 20021028":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/g0GGiVIxyis/m/35WA-O9XrroJ"
                 }
             }
         ],
@@ -87894,6 +87975,12 @@
         "pool":0,
         "requirement":"",
         "rulings":[
+            {
+                "text":"[vis],[VIS] The optional maneuver cannot be used if the strike cannot be used (eg. {Hidden Lurker}).",
+                "refs":{
+                    "LSJ 20021028":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/g0GGiVIxyis/m/35WA-O9XrroJ"
+                }
+            },
             {
                 "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
                 "refs":{
@@ -93317,7 +93404,14 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The optional maneuver cannot be used if the strike cannot be used (eg. {Hidden Lurker}).",
+                "refs":{
+                    "LSJ 20021028":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/g0GGiVIxyis/m/35WA-O9XrroJ"
+                }
+            }
+        ],
         "set":{
             "Jyhad":{
                 "C":true
@@ -103729,6 +103823,12 @@
                 "text":"No damage is done to the bearer if he does not strike with the gun (eg. if it is destroyed with first strike).",
                 "refs":{
                     "LSJ 20100310":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/hYN6L3COpqw/m/RPdTARngQLgJ"
+                }
+            },
+            {
+                "text":"The optional maneuver cannot be used if the strike cannot be used (eg. {Hidden Lurker}).",
+                "refs":{
+                    "LSJ 20021028":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/g0GGiVIxyis/m/35WA-O9XrroJ"
                 }
             }
         ],

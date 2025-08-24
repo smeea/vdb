@@ -2224,6 +2224,8 @@
   - Does not give the ability to play reaction cards as if unlocked. [LSJ 20080605]
   - The block attempt only applies to one block attempt (the +2 intercept remains for the entire action). If the action later
     continues as if unblocked (e.g. {Form of Mist}), another one is needed. [LSJ 20030227]
+101324|Open War:
+  - The actions provided by Open war are considered actions requiring an Anarch. [LSJ 20080604]
 101325|Ophidian Gaze:
   - '[SER][PRE] Can be used to cancel an action modifier player "after the action/referendum is successful" (eg. {Voter Captivation}
     or {Freak Drive}). [ANK 20180909]'
@@ -3191,8 +3193,6 @@
   - '[DOM] Cards that merely provide the ability to strike (eg. {.44 Magnum}), are allowed. [ANK 20210928-2]'
   - '[DOM] Strike cards that are played during the Determine Range step because they provide a maneuver (eg. {Aid from Bats})
     are not allowed. [ANK 20210928-2]'
-101985|Tinglestripe:
-  - '[MYT] The optional maneuver cannot be used if the strike cannot be used (eg. {Hidden Lurker}). [LSJ 20021028]'
 101988|Tongue of the Serpent:
   - Can target a minion with less blood than the amount stolen. [RTR 20010711]
 101989|Toreador Grand Ball:
@@ -3575,6 +3575,10 @@
     considered as part of that set of Methuselahs. [LSJ 20100527]
 102283|Touch of Oblivion:
   - '[OBL] an opposing vampire is wounded (if they play {Undying Tenacity}, they go to torpor after combat). [LSJ 20090622-2]'
+102290|Gate of Acheron, The:
+  - The actions provided by Open war are considered Actions requiring a Hecata. [LSJ 20080604]
+102291|Pit of Contemplation:
+  - The actions provided by Open war are considered Actions requiring a Hecata. [LSJ 20080604]
 102293|Bone Shambler:
   - A copy that was recruited this turn can be locked to grant the bleed bonus. [ANK 20180517]
 102295|Shroud of Decay:
@@ -3915,8 +3919,17 @@
 200742|Kahina the Sorceress:
   - Her ability inflicts a total of one damage to a minion with one or more corruption counters. [LSJ 20030820]
 200753|Karen Suadela:
-  - She keeps her title if {Fall of the Camarilla} is played. She can be chosen for {Recalled to the Founder}, but does not
-    burn. Allies still benefit from {The Unmasking} intercept when trying to block her. [LSJ 20081120-2]
+  - "She can't take actions provided by Gehenna events in play ({The New Inquisition}, {Break the Code}, {Restricted Vitae}).\
+    \ She keeps her title if {Fall of the Camarilla} is played. Her controller doesn't reveal cards due to {Veil of Darkness}\
+    \ when she plays cards requiring disciplines.\nShe doesn't become immune to blood hunts via {Fueled by Heart's Blood}.\
+    \ [LSJ 20100121] [LSJ 20081120-2]"
+  - "She can be chosen for the effects of a Gehenna event, but stays unaffected: she can be chosen for {Recalled to the Founder},\
+    \ but doesn't burn. Her controller can choose to discard a card for her for {Nightmares upon Nightmares}, but she isn't\
+    \ locked if they don't. {Blood Trade} can't move blood from her, and blood moved to her go to the blood bank instead.\
+    \ [LSJ 20081120-2] [LSJ 20100121]"
+  - 'Her immunity does not extend to other things affected by events: Allies still benefit from {The Unmasking} intercept
+    when trying to block her. Locations on her are affected by {Conquest of Humanity}. Her controller burns pool to {Dragonbound}
+    while she is in Torpor. [LSJ 20081120-2] [LSJ 20100121]'
 200754|Karif al Numair:
   - His ability applies when he is in torpor. [LSJ 20011022] [LSJ 20100902-2]
 200758|Karsh:
@@ -4444,7 +4457,7 @@ G00022|Usable during the polling step:
   - Cannot be used during a referendum that is automatically passing. [PIB 20150105] [LSJ 19980107]
 G00023|Can draw during action:
   - Can be used during an action, when the controller has the opportunity to play an effect. [ANK 20200616]
-G00024|Weapon with optional maneuver:
+G00024|Strikes with optional maneuver:
   - The optional maneuver cannot be used if the strike cannot be used (eg. {Hidden Lurker}). [LSJ 20021028]
 G00025|Replace next turn:
   - 'Is replaced before unlocking cards: other unlock effects cannot be ordered before. [ANK 20200129] [LSJ 20091208] [RTR
@@ -4571,6 +4584,9 @@ G00074|Adding costs to a strike:
     {Dam the Heart's River}), you may choose not to strike. [LSJ 20071017]
   - If an effect granting a strike (e.g. {.44 Magnum}) is played/used after another effect that adds a cost to strike, you
     must pay the additional cost to use that first effect. [LSJ 20090529]
+  - Strikes are paid at declaration. If an ally spends their last life on a strike, combat ends before strike resolution.
+    If the strike damage depends on the amount of life/blood of the striking minion, it is calculated after the strike is
+    paid for (e.g. {Shambling Hordes}). [LSJ 20090703]
 G00075|Discounts for rescue:
   - The discount applies to the action, regardless of who pays. [PIB 20110918] [LSJ 20020304-2]
 G00076|Is affected by BCAN:

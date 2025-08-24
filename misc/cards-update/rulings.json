@@ -4243,6 +4243,12 @@
             "refs":{
                 "LSJ 20090529":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/LpFSLRuWONA/m/daxDmJiGX0AJ"
             }
+        },
+        {
+            "text":"[QUI] Strikes are paid at declaration. If an ally spends their last life on a strike, combat ends before strike resolution. If the strike damage depends on the amount of life/blood of the striking minion, it is calculated after the strike is paid for (e.g. {Shambling Hordes}).",
+            "refs":{
+                "LSJ 20090703":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/utj6J5KZ-aA/m/I_9JuLKLwZ8J"
+            }
         }
     ],
     "100490":[
@@ -6861,6 +6867,12 @@
             "refs":{
                 "LSJ 20031118":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9IzmBh8PWe0/m/J1F_TzPbITsJ"
             }
+        },
+        {
+            "text":"[obf] The optional maneuver cannot be used if the strike cannot be used (eg. {Hidden Lurker}).",
+            "refs":{
+                "LSJ 20021028":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/g0GGiVIxyis/m/35WA-O9XrroJ"
+            }
         }
     ],
     "100817":[
@@ -9362,6 +9374,12 @@
             }
         },
         {
+            "text":"[for] The optional maneuver cannot be used if the strike cannot be used (eg. {Hidden Lurker}).",
+            "refs":{
+                "LSJ 20021028":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/g0GGiVIxyis/m/35WA-O9XrroJ"
+            }
+        },
+        {
             "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
             "refs":{
                 "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
@@ -11314,6 +11332,12 @@
             "refs":{
                 "LSJ 20101021":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/g3CuP9Eqffg/m/plIFW0oYuDQJ"
             }
+        },
+        {
+            "text":"Changing the controller of a location has no other effect, unless specified by card text. Exception: A location \"on\" another controlled card is moved onto an appropriate card controlled by the new controller of the location.",
+            "refs":{
+                "RTR 19980623":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/tSpd9dtTElc/m/-CuHJF54_n0J"
+            }
         }
     ],
     "101285":[
@@ -11582,6 +11606,34 @@
             "text":"Does not ignore the normal prey, predator or target restrictions.",
             "refs":{
                 "ANK 20180623":"https://www.vekn.net/forum/rules-questions/76748-black-sunrise#88361"
+            }
+        }
+    ],
+    "101324":[
+        {
+            "text":"The actions provided by Open war are considered actions requiring an Anarch.",
+            "refs":{
+                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
+            }
+        },
+        {
+            "text":"The two actions provided are not cross-restrictive. Each can be performed once during the same turn by the same minion.",
+            "refs":{
+                "LSJ 20100909":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9Mn1QueD1I4/m/5hwidUeZH6EJ"
+            }
+        },
+        {
+            "text":"An action directed at a card controlled by another Methuselah is directed at that Methuselah.",
+            "refs":{
+                "RBK who-may-attempt-to-block":"https://www.vekn.net/rulebook#who-may-attempt-to-block",
+                "LSJ 20090324":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Zc_ogoVhsug/m/tJ2VBYI7resJ"
+            }
+        },
+        {
+            "text":"Counts as requiring an Anarch (for eg. {Powerbase: Los Angeles}).",
+            "refs":{
+                "LSJ 20080603":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/LuT1iK1b4QIJ",
+                "LSJ 20050128":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HVy8iPUxNbI/m/ZHGTnprQjGUJ"
             }
         }
     ],
@@ -15257,6 +15309,12 @@
             "refs":{
                 "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
             }
+        },
+        {
+            "text":"[POT] The optional maneuver cannot be used if the strike cannot be used (eg. {Hidden Lurker}).",
+            "refs":{
+                "LSJ 20021028":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/g0GGiVIxyis/m/35WA-O9XrroJ"
+            }
         }
     ],
     "101803":[
@@ -17231,14 +17289,6 @@
             }
         }
     ],
-    "101985":[
-        {
-            "text":"[MYT] The optional maneuver cannot be used if the strike cannot be used (eg. {Hidden Lurker}).",
-            "refs":{
-                "LSJ 20021028":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/g0GGiVIxyis/m/35WA-O9XrroJ"
-            }
-        }
-    ],
     "101988":[
         {
             "text":"Can target a minion with less blood than the amount stolen.",
@@ -19011,6 +19061,12 @@
             "refs":{
                 "LSJ 20100310":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/hYN6L3COpqw/m/RPdTARngQLgJ"
             }
+        },
+        {
+            "text":"The optional maneuver cannot be used if the strike cannot be used (eg. {Hidden Lurker}).",
+            "refs":{
+                "LSJ 20021028":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/g0GGiVIxyis/m/35WA-O9XrroJ"
+            }
         }
     ],
     "102223":[
@@ -19413,6 +19469,22 @@
             "text":"[OBL] an opposing vampire is wounded (if they play {Undying Tenacity}, they go to torpor after combat).",
             "refs":{
                 "LSJ 20090622-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/1zt1SZb2TIk/m/CYNhVovmlk8J"
+            }
+        }
+    ],
+    "102290":[
+        {
+            "text":"The actions provided by Open war are considered Actions requiring a Hecata.",
+            "refs":{
+                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
+            }
+        }
+    ],
+    "102291":[
+        {
+            "text":"The actions provided by Open war are considered Actions requiring a Hecata.",
+            "refs":{
+                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
             }
         }
     ],
@@ -21002,9 +21074,24 @@
     ],
     "200753":[
         {
-            "text":"She keeps her title if {Fall of the Camarilla} is played. She can be chosen for {Recalled to the Founder}, but does not burn. Allies still benefit from {The Unmasking} intercept when trying to block her.",
+            "text":"She can't take actions provided by Gehenna events in play ({The New Inquisition}, {Break the Code}, {Restricted Vitae}). She keeps her title if {Fall of the Camarilla} is played. Her controller doesn't reveal cards due to {Veil of Darkness} when she plays cards requiring disciplines.\nShe doesn't become immune to blood hunts via {Fueled by Heart's Blood}.",
             "refs":{
+                "LSJ 20100121":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/RACHn4FzID8/m/nRvqfZ5oWgYJ",
                 "LSJ 20081120-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/e2PNDpg-l_c/m/wqEDxGHKJQgJ"
+            }
+        },
+        {
+            "text":"She can be chosen for the effects of a Gehenna event, but stays unaffected: she can be chosen for {Recalled to the Founder}, but doesn't burn. Her controller can choose to discard a card for her for {Nightmares upon Nightmares}, but she isn't locked if they don't.\u00a0{Blood Trade}\u00a0can't move blood from her, and blood moved to her go to the blood bank instead.",
+            "refs":{
+                "LSJ 20081120-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/e2PNDpg-l_c/m/wqEDxGHKJQgJ",
+                "LSJ 20100121":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/RACHn4FzID8/m/nRvqfZ5oWgYJ"
+            }
+        },
+        {
+            "text":"Her immunity does not extend to other things affected by events: Allies still benefit from {The Unmasking}\u00a0intercept when trying to block her.\u00a0Locations on her are affected by {Conquest of Humanity}.\u00a0Her controller burns pool to\u00a0{Dragonbound} while she is in Torpor.",
+            "refs":{
+                "LSJ 20081120-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/e2PNDpg-l_c/m/wqEDxGHKJQgJ",
+                "LSJ 20100121":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/RACHn4FzID8/m/nRvqfZ5oWgYJ"
             }
         }
     ],
@@ -21389,6 +21476,12 @@
             "text":"If an effect granting a strike (e.g. {.44 Magnum}) is played/used after another effect that adds a cost to strike, you must pay the additional cost to use that first effect.",
             "refs":{
                 "LSJ 20090529":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/LpFSLRuWONA/m/daxDmJiGX0AJ"
+            }
+        },
+        {
+            "text":"Strikes are paid at declaration. If an ally spends their last life on a strike, combat ends before strike resolution. If the strike damage depends on the amount of life/blood of the striking minion, it is calculated after the strike is paid for (e.g. {Shambling Hordes}).",
+            "refs":{
+                "LSJ 20090703":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/utj6J5KZ-aA/m/I_9JuLKLwZ8J"
             }
         }
     ],
@@ -24045,6 +24138,12 @@
             "text":"If an effect granting a strike (e.g. {.44 Magnum}) is played/used after another effect that adds a cost to strike, you must pay the additional cost to use that first effect.",
             "refs":{
                 "LSJ 20090529":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/LpFSLRuWONA/m/daxDmJiGX0AJ"
+            }
+        },
+        {
+            "text":"Strikes are paid at declaration. If an ally spends their last life on a strike, combat ends before strike resolution. If the strike damage depends on the amount of life/blood of the striking minion, it is calculated after the strike is paid for (e.g. {Shambling Hordes}).",
+            "refs":{
+                "LSJ 20090703":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/utj6J5KZ-aA/m/I_9JuLKLwZ8J"
             }
         }
     ],
@@ -28006,6 +28105,20 @@
             }
         }
     ],
+    "100029":[
+        {
+            "text":"The optional maneuver cannot be used if the strike cannot be used (eg. {Hidden Lurker}).",
+            "refs":{
+                "LSJ 20021028":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/g0GGiVIxyis/m/35WA-O9XrroJ"
+            }
+        },
+        {
+            "text":"[ANI] The optional press can only be used during the current round.",
+            "refs":{
+                "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
+            }
+        }
+    ],
     "100032":[
         {
             "text":"The optional maneuver cannot be used if the strike cannot be used (eg. {Hidden Lurker}).",
@@ -28030,6 +28143,34 @@
             }
         }
     ],
+    "100252":[
+        {
+            "text":"[vis] The optional maneuver cannot be used if the strike cannot be used (eg. {Hidden Lurker}).",
+            "refs":{
+                "LSJ 20021028":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/g0GGiVIxyis/m/35WA-O9XrroJ"
+            }
+        },
+        {
+            "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
+            "refs":{
+                "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
+                "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+            }
+        },
+        {
+            "text":"[VIS] Once the range is set, no other effect can be used to reset the range that round, but other pre-range effects can be played afterwards. Skip the Determine Range step for that round.",
+            "refs":{
+                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
+                "ANK 20180720":"https://www.vekn.net/forum/rules-questions/76840-setting-range-and-pre-range#89125"
+            }
+        },
+        {
+            "text":"[VIS] If another effect was already setting that round's range (e.g. {Neutral Guard}), that effect has priority.",
+            "refs":{
+                "PIB 20120214":"https://www.vekn.net/forum/rules-questions/22906-re-set-the-range?start=12#22999"
+            }
+        }
+    ],
     "100754":[
         {
             "text":"The optional maneuver cannot be used if the strike cannot be used (eg. {Hidden Lurker}).",
@@ -28046,6 +28187,14 @@
             }
         }
     ],
+    "101202":[
+        {
+            "text":"[cel] The optional maneuver cannot be used if the strike cannot be used (eg. {Hidden Lurker}).",
+            "refs":{
+                "LSJ 20021028":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/g0GGiVIxyis/m/35WA-O9XrroJ"
+            }
+        }
+    ],
     "101682":[
         {
             "text":"The optional maneuver cannot be used if the strike cannot be used (eg. {Hidden Lurker}).",
@@ -28054,9 +28203,54 @@
             }
         }
     ],
+    "101745":[
+        {
+            "text":"The optional maneuver cannot be used if the strike cannot be used (eg. {Hidden Lurker}).",
+            "refs":{
+                "LSJ 20021028":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/g0GGiVIxyis/m/35WA-O9XrroJ"
+            }
+        },
+        {
+            "text":"[OBT] The optional press can only be used during the current round.",
+            "refs":{
+                "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
+            }
+        }
+    ],
+    "101874":[
+        {
+            "text":"[vis],[VIS] The optional maneuver cannot be used if the strike cannot be used (eg. {Hidden Lurker}).",
+            "refs":{
+                "LSJ 20021028":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/g0GGiVIxyis/m/35WA-O9XrroJ"
+            }
+        },
+        {
+            "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
+            "refs":{
+                "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
+                "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+            }
+        }
+    ],
     "101891":[
         {
             "text":"The optional maneuver cannot be used if the strike cannot be used (eg. {Hidden Lurker}).",
+            "refs":{
+                "LSJ 20021028":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/g0GGiVIxyis/m/35WA-O9XrroJ"
+            }
+        }
+    ],
+    "101982":[
+        {
+            "text":"The optional maneuver cannot be used if the strike cannot be used (eg. {Hidden Lurker}).",
+            "refs":{
+                "LSJ 20021028":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/g0GGiVIxyis/m/35WA-O9XrroJ"
+            }
+        }
+    ],
+    "101985":[
+        {
+            "text":"[MYT] The optional maneuver cannot be used if the strike cannot be used (eg. {Hidden Lurker}).",
             "refs":{
                 "LSJ 20021028":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/g0GGiVIxyis/m/35WA-O9XrroJ"
             }
@@ -28815,28 +29009,6 @@
             "text":"The fact it is Unique has no bearing on the burn option. You cannot use the burn option if you meet the requirement, even if you already have a copy of the card in play.",
             "refs":{
                 "LSJ 20100203-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/tKnhKlDo8lk/m/6k8b2vok7_kJ"
-            }
-        }
-    ],
-    "101324":[
-        {
-            "text":"The two actions provided are not cross-restrictive. Each can be performed once during the same turn by the same minion.",
-            "refs":{
-                "LSJ 20100909":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9Mn1QueD1I4/m/5hwidUeZH6EJ"
-            }
-        },
-        {
-            "text":"An action directed at a card controlled by another Methuselah is directed at that Methuselah.",
-            "refs":{
-                "RBK who-may-attempt-to-block":"https://www.vekn.net/rulebook#who-may-attempt-to-block",
-                "LSJ 20090324":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Zc_ogoVhsug/m/tJ2VBYI7resJ"
-            }
-        },
-        {
-            "text":"Counts as requiring an Anarch (for eg. {Powerbase: Los Angeles}).",
-            "refs":{
-                "LSJ 20080603":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/LuT1iK1b4QIJ",
-                "LSJ 20050128":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HVy8iPUxNbI/m/ZHGTnprQjGUJ"
             }
         }
     ],
@@ -33199,6 +33371,12 @@
             "refs":{
                 "LSJ 20090529":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/LpFSLRuWONA/m/daxDmJiGX0AJ"
             }
+        },
+        {
+            "text":"Strikes are paid at declaration. If an ally spends their last life on a strike, combat ends before strike resolution. If the strike damage depends on the amount of life/blood of the striking minion, it is calculated after the strike is paid for (e.g. {Shambling Hordes}).",
+            "refs":{
+                "LSJ 20090703":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/utj6J5KZ-aA/m/I_9JuLKLwZ8J"
+            }
         }
     ],
     "100943":[
@@ -33625,28 +33803,6 @@
             "refs":{
                 "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
                 "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
-            }
-        }
-    ],
-    "100252":[
-        {
-            "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
-            "refs":{
-                "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
-                "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
-            }
-        },
-        {
-            "text":"[VIS] Once the range is set, no other effect can be used to reset the range that round, but other pre-range effects can be played afterwards. Skip the Determine Range step for that round.",
-            "refs":{
-                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
-                "ANK 20180720":"https://www.vekn.net/forum/rules-questions/76840-setting-range-and-pre-range#89125"
-            }
-        },
-        {
-            "text":"[VIS] If another effect was already setting that round's range (e.g. {Neutral Guard}), that effect has priority.",
-            "refs":{
-                "PIB 20120214":"https://www.vekn.net/forum/rules-questions/22906-re-set-the-range?start=12#22999"
             }
         }
     ],
@@ -34115,15 +34271,6 @@
             }
         }
     ],
-    "101874":[
-        {
-            "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
-            "refs":{
-                "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
-                "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
-            }
-        }
-    ],
     "101883":[
         {
             "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
@@ -34375,14 +34522,6 @@
             }
         }
     ],
-    "100029":[
-        {
-            "text":"[ANI] The optional press can only be used during the current round.",
-            "refs":{
-                "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
-            }
-        }
-    ],
     "100047":[
         {
             "text":"[CHI] The optional press can only be used during the current round.",
@@ -34484,14 +34623,6 @@
     "101610":[
         {
             "text":"[cel] The optional press can only be used during the current round.",
-            "refs":{
-                "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
-            }
-        }
-    ],
-    "101745":[
-        {
-            "text":"[OBT] The optional press can only be used during the current round.",
             "refs":{
                 "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
             }

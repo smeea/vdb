@@ -435,16 +435,27 @@ G00023|Can draw during action:
   100588|Dreams of the Sphinx: ''
   100656|Erciyes Fragments, The: ''
   100785|Fragment of the Book of Nod: ''
-G00024|Weapon with optional maneuver:
+G00024|Strikes with optional maneuver:
   100001|.44 Magnum: ''
+  100029|Aid from Bats: ''
   100032|AK-47: ''
   100107|Assault Rifle: ''
   100152|Beretta 9mm: ''
   100175|Blade of Bellona: ''
+  100252|Brick by Brick: '[vis]'
   100754|Foldable Machine Gun: ''
+  100814|Gemini's Mirror: '[obf]'
   101065|Kpist m/45: ''
+  101071|Lam Into: '[for]'
+  101202|Mercury's Arrow: '[cel]'
   101682|Saturday-Night Special: ''
+  101745|Shadow Strike: ''
+  101798|Slam: '[POT]'
+  101874|Stone Quills: '[vis],[VIS]'
   101891|Submachine Gun: ''
+  101982|Thrown Gate: ''
+  101985|Tinglestripe: '[MYT]'
+  102208|Zip Gun: ''
 G00025|Replace next turn:
   100668|Evil Eye: ''
   100681|Eyes of Blades: ''
@@ -1001,6 +1012,7 @@ G00065|Burn blood for effect:
 G00066|Changes controller of location:
   100557|Disputed Territory: ''
   100573|Dominate Kine: ''
+  101280|New Management: ''
 G00067|Stealth from random effect:
   201528|Bolesław Gutowski: ''
   201672|Gathii: ''
