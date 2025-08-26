@@ -41,7 +41,6 @@ const PlaytestReportsOneButton = ({ value, isPrecon = false }) => {
   return (
     <>
       <ButtonIconed
-        variant={isDesktop && isPrecon ? "secondary" : "primary"}
         onClick={() => setShow(true)}
         title="Show Playtest Reports"
         text="Reports"
@@ -63,12 +62,6 @@ const PlaytestReportsOneButton = ({ value, isPrecon = false }) => {
                 ) : (
                   <CardImage card={value} onClick={() => setShow(false)} />
                 ))}
-              <ButtonIconed
-                onClick={() => exportReports()}
-                title="Save Reports"
-                text="Save Reports"
-                icon={<Download />}
-              />
             </div>
             <PlaytestReportEntryWrapper id={value[ID]} isPrecon={isPrecon} />
           </FlexGapped>

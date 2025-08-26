@@ -39,8 +39,6 @@ const DeckButtons = ({
 }) => {
   const { isPlaytestAdmin, playtestMode, inventoryMode, username } = useApp();
   const { publicChild, isPublic, isAuthor, isBranches } = deck || {};
-  const playtestPrecon =
-    deck?.[DECKID].includes(`${PLAYTEST}:`) && deck[DECKID].replace(`${PLAYTEST}:`, "");
   const { hasPlaytest } = getRestrictions(deck);
   const isPlaytestSafe = playtestMode || !hasPlaytest;
 
@@ -60,12 +58,6 @@ const DeckButtons = ({
       )}
       {deck && isPlaytestSafe && (
         <>
-          {playtestMode && playtestPrecon && isPlaytestAdmin && (
-            <PlaytestReportsOneButton
-              value={{ [DECK]: deck, [NAME]: deck[NAME], [ID]: playtestPrecon }}
-              isPrecon
-            />
-          )}
           {username && <DeckCloneButton deck={deck} />}
           <DeckExportButton deck={deck} />
           {isAuthor && (
