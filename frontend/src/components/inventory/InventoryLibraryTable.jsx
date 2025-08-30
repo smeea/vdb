@@ -1,9 +1,8 @@
-import { useCallback, useMemo } from "react";
-import AutoSizer from "react-virtualized-auto-sizer";
-import { FixedSizeList } from "react-window";
+import { useCallback } from "react";
+import { List } from "react-window";
 import { twMerge } from "tailwind-merge";
 import { InventoryLibraryTableRow, ResultModal, WindowRows } from "@/components";
-import { ID } from "@/constants";
+import { VALUE, ID } from "@/constants";
 import { useApp } from "@/context";
 import { useModalCardController } from "@/hooks";
 import { getIsPlaytest, librarySort } from "@/utils";
@@ -33,11 +32,9 @@ const InventoryLibraryTable = ({ cards, sortMethod, compact, withCompact, newFoc
     !isDesktop && setShowFloatingButtons(true);
   }, [sortedCards]);
 
-  const cardRows = useMemo(() => {
-    return sortedCards
-      .filter((card) => playtestMode || !getIsPlaytest(card.c[ID]))
-      .map((card) => {
-        return (
+  const cardRows = sortedCards
+        .filter((card) => playtestMode || !getIsPlaytest(card.c[ID]))
+        .map((card) => (
           <InventoryLibraryTableRow
             key={card.c[ID]}
             card={card}
@@ -46,9 +43,7 @@ const InventoryLibraryTable = ({ cards, sortMethod, compact, withCompact, newFoc
             inShared={inShared}
             handleClick={handleClick}
           />
-        );
-      });
-  }, [sortedCards]);
+        ));
 
   return (
     <>
@@ -66,20 +61,13 @@ const InventoryLibraryTable = ({ cards, sortMethod, compact, withCompact, newFoc
               "h-[calc(100dvh-160px)] sm:h-[calc(100dvh-190px)] lg:h-[calc(100dvh-200px)] xl:h-[calc(100dvh-210px)]",
           )}
         >
-          <AutoSizer>
-            {({ width, height }) => (
-              <FixedSizeList
-                className="border-bgSecondary sm:border dark:border-bgSecondaryDark"
-                height={height}
-                width={width}
-                itemCount={cardRows.length}
-                itemSize={45}
-                itemData={cardRows}
-              >
-                {WindowRows}
-              </FixedSizeList>
-            )}
-          </AutoSizer>
+          <List
+            className="border-bgSecondary sm:border dark:border-bgSecondaryDark"
+            rowComponent={WindowRows}
+            rowCount={cardRows.length}
+            rowHeight={45}
+            rowProps={{ [VALUE]: cardRows }}
+          />
         </div>
       )}
       {shouldShowModal && (

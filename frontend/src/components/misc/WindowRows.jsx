@@ -1,6 +1,6 @@
 import { twMerge } from "tailwind-merge";
 
-const WindowRows = ({ index, style, data }) => {
+const WindowRows = ({ index, style, value }) => {
   return (
     <div
       style={style}
@@ -9,7 +9,7 @@ const WindowRows = ({ index, style, data }) => {
         "flex border-bgSecondary border-b dark:border-bgSecondaryDark",
       )}
     >
-      {data[index]}
+      {value[index]}
     </div>
   );
 };

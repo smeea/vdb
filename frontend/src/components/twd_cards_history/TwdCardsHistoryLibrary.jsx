@@ -1,6 +1,5 @@
-import { useMemo, useState } from "react";
-import AutoSizer from "react-virtualized-auto-sizer";
-import { FixedSizeList } from "react-window";
+import { useState } from "react";
+import { List } from "react-window";
 import cardtypeSorted from "@/assets/data/cardtypeSorted.json";
 import disciplinesExtraList from "@/assets/data/disciplinesExtraList.json";
 import disciplinesList from "@/assets/data/disciplinesList.json";
@@ -25,6 +24,7 @@ import {
   NONE,
   PLAYER,
   TYPE,
+  VALUE,
 } from "@/constants";
 import { useApp } from "@/context";
 import { useModalCardController } from "@/hooks";
@@ -157,21 +157,17 @@ const TwdCardsHistoryLibrary = ({ cards, players }) => {
     handleModalCardClose,
   } = useModalCardController(sortedCards);
 
-  const cardRows = useMemo(() => {
-    return sortedCards.map((card) => {
-      return (
-        <TwdCardsHistoryLibraryRow
-          key={card[ID]}
-          card={card}
-          players={players}
-          handleClick={handleModalCardOpen}
-        />
-      );
-    });
-  }, [sortedCards]);
+  const cardRows = sortedCards.map((card) => (
+    <TwdCardsHistoryLibraryRow
+      key={card[ID]}
+      card={card}
+      players={players}
+      handleClick={handleModalCardOpen}
+    />
+  ));
 
   return (
-    <div className="h-[calc(100dvh-174px)] sm:h-[calc(100dvh-240px)]">
+    <div className="h-[calc(100dvh-212px)] sm:h-[calc(100dvh-270px)]">
       <div className="flex items-center justify-between bg-bgSecondary dark:bg-bgSecondaryDark">
         <div className="w-3/4">
           <div className="flex flex-col gap-1">
@@ -234,20 +230,13 @@ const TwdCardsHistoryLibrary = ({ cards, players }) => {
           {isMobile ? "D" : "Deck"}
         </div>
       </div>
-      <AutoSizer>
-        {({ width, height }) => (
-          <FixedSizeList
-            className="border-bgSecondary sm:border dark:border-bgSecondaryDark"
-            height={height}
-            width={width}
-            itemCount={cardRows.length}
-            itemSize={45}
-            itemData={cardRows}
-          >
-            {WindowRows}
-          </FixedSizeList>
-        )}
-      </AutoSizer>
+      <List
+        className="border-bgSecondary sm:border dark:border-bgSecondaryDark"
+        rowComponent={WindowRows}
+        rowCount={cardRows.length}
+        rowHeight={45}
+        rowProps={{ [VALUE]: cardRows }}
+      />
       {shouldShowModal && (
         <ResultModal
           card={currentModalCard}

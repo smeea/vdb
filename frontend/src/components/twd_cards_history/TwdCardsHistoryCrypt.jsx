@@ -1,6 +1,5 @@
-import { useMemo, useState } from "react";
-import AutoSizer from "react-virtualized-auto-sizer";
-import { FixedSizeList } from "react-window";
+import { useState } from "react";
+import { List } from "react-window";
 import imbuedClansList from "@/assets/data/imbuedClansList.json";
 import vampireClansList from "@/assets/data/vampireClansList.json";
 import {
@@ -22,6 +21,7 @@ import {
   ID,
   NAME,
   PLAYER,
+  VALUE,
 } from "@/constants";
 import { useApp } from "@/context";
 import { useModalCardController } from "@/hooks";
@@ -72,21 +72,17 @@ const TwdCardsHistoryCrypt = ({ cards, players }) => {
     handleModalCardClose,
   } = useModalCardController(sortedCards);
 
-  const cardRows = useMemo(() => {
-    return sortedCards.map((card) => {
-      return (
-        <TwdCardsHistoryCryptRow
-          key={card[ID]}
-          card={card}
-          players={players}
-          handleClick={handleModalCardOpen}
-        />
-      );
-    });
-  }, [sortedCards]);
+  const cardRows = sortedCards.map((card) => (
+    <TwdCardsHistoryCryptRow
+      key={card[ID]}
+      card={card}
+      players={players}
+      handleClick={handleModalCardOpen}
+    />
+  ));
 
   return (
-    <div className="h-[calc(100dvh-132px)] sm:h-[calc(100dvh-195px)]">
+    <div className="h-[calc(100dvh-166px)] sm:h-[calc(100dvh-225px)]">
       <div className="flex items-center justify-between bg-bgSecondary dark:bg-bgSecondaryDark">
         <div className="w-3/4">
           <InventoryFilterForm
@@ -138,20 +134,13 @@ const TwdCardsHistoryCrypt = ({ cards, players }) => {
           {isMobile ? "D" : "Deck"}
         </div>
       </div>
-      <AutoSizer>
-        {({ width, height }) => (
-          <FixedSizeList
-            className="border-bgSecondary sm:border dark:border-bgSecondaryDark"
-            height={height}
-            width={width}
-            itemCount={cardRows.length}
-            itemSize={45}
-            itemData={cardRows}
-          >
-            {WindowRows}
-          </FixedSizeList>
-        )}
-      </AutoSizer>
+      <List
+        className="border-bgSecondary sm:border dark:border-bgSecondaryDark"
+        rowComponent={WindowRows}
+        rowCount={cardRows.length}
+        rowHeight={45}
+        rowProps={{ [VALUE]: cardRows }}
+      />
       {shouldShowModal && (
         <ResultModal
           card={currentModalCard}
