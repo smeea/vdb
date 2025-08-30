@@ -4,7 +4,7 @@ import { EN, ES, FR, LANG, PT } from "@/constants";
 import { useApp } from "@/context";
 
 const PlaytestReportLanguageSelect = () => {
-  const { isMobile, playtestProfile, updatePlaytestProfile } = useApp();
+  const { isMobile, playtestProfile } = useApp();
 
   const languages = {
     [EN]: "English",
@@ -12,23 +12,6 @@ const PlaytestReportLanguageSelect = () => {
     [FR]: "French",
     [PT]: "Portuguese",
   };
-
-  const options = Object.keys(languages).map((i) => {
-    return {
-      value: i,
-      name: languages[i],
-      label: (
-        <div className="flex items-center">
-          <div className="flex w-[40px] justify-center">
-            <Flag value={i} noTitle />
-          </div>
-          {languages[i]}
-        </div>
-      ),
-    };
-  });
-
-  const handleChange = (e) => updatePlaytestProfile(LANG, e.value);
 
   return (
     <ListEntry
@@ -44,6 +27,7 @@ const PlaytestReportLanguageSelect = () => {
                   Language of playtest reports (only affects which of the coordinators will receive
                   it)
                 </div>
+                <div>Contact your Playtest Coordinator to change it</div>
                 <div>Independent from selected language of card text</div>
               </div>
             }
@@ -55,12 +39,10 @@ const PlaytestReportLanguageSelect = () => {
       basis={isMobile ? 2 : 3}
       forceOneLine
     >
-      <Select
-        className="w-full"
-        options={options}
-        value={options.find((obj) => obj.value === playtestProfile?.[LANG])}
-        onChange={handleChange}
-      />
+      <div className="flex items-center gap-2">
+          <Flag value={playtestProfile?.[LANG]} noTitle />
+        {languages[playtestProfile?.[LANG]]}
+      </div>
     </ListEntry>
   );
 };

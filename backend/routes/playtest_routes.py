@@ -22,14 +22,10 @@ def playtesters_route():
         result = {}
         for u in playtesters:
             cards_reports = (
-                len(u.playtest_report["cards"].keys())
-                if "cards" in u.playtest_report
-                else 0
+                len(u.playtest_report["cards"].keys()) if "cards" in u.playtest_report else 0
             )
             precons_reports = (
-                len(u.playtest_report["precons"].keys())
-                if "precons" in u.playtest_report
-                else 0
+                len(u.playtest_report["precons"].keys()) if "precons" in u.playtest_report else 0
             )
             total_reports = cards_reports + precons_reports
 
@@ -72,14 +68,10 @@ def playtesters_route():
         db.session.commit()
 
         cards_reports = (
-            len(u.playtest_report["cards"].keys())
-            if "cards" in u.playtest_report
-            else 0
+            len(u.playtest_report["cards"].keys()) if "cards" in u.playtest_report else 0
         )
         precons_reports = (
-            len(u.playtest_report["precons"].keys())
-            if "precons" in u.playtest_report
-            else 0
+            len(u.playtest_report["precons"].keys()) if "precons" in u.playtest_report else 0
         )
         total_reports = cards_reports + precons_reports
 
@@ -160,10 +152,7 @@ def report_export_route(target, id):
                             reports[k] = {p.username: v}
 
                 elif id in report[target]:
-                    if (
-                        report[target][id]["score"] == 0
-                        and report[target][id]["text"] == ""
-                    ):
+                    if report[target][id]["score"] == 0 and report[target][id]["text"] == "":
                         continue
                     reports[p.username] = report[target][id]
 
@@ -216,8 +205,6 @@ def update_profile_route():
         match k:
             case "liaison":
                 profile["liaison"] = v
-            case "lang":
-                profile["lang"] = v
             case "games":
                 profile["games"] = v
             case "general":
