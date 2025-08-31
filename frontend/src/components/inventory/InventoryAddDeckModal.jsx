@@ -42,7 +42,7 @@ const InventoryAddDeckModal = ({ handleClose }) => {
 
       if (nameFilter) {
         filtered = filtered.filter((deck) => {
-          if (deck[NAME].toLowerCase().indexOf(nameFilter.toLowerCase()) >= 0) return true;
+          return deck[NAME].toLowerCase().indexOf(nameFilter.toLowerCase()) >= 0;
         });
       }
 
@@ -52,13 +52,13 @@ const InventoryAddDeckModal = ({ handleClose }) => {
           tagsFilter.forEach((tag) => {
             if (deck[TAGS].includes(tag)) counter += 1;
           });
-          if (counter >= tagsFilter.length) return true;
+          return counter >= tagsFilter.length;
         });
       }
 
       if (!revFilter) {
         filtered = filtered.filter((deck) => {
-          if (!deck[MASTER]) return true;
+          return !deck[MASTER];
         });
       }
 

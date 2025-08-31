@@ -22,9 +22,22 @@ import { deckStore, useApp } from "@/context";
 import { deckServices } from "@/services";
 import { exportDeck } from "@/utils";
 
-const SAVE = "save";
-const COPY = "copy";
-const EXPORT_ALL = "exportAll";
+const ExportDropdown = ({ action, title, format }) => {
+  const formats = {
+    [TWD]: "TWD",
+    [TWD_HINTS]: "TWD (w/ hints)",
+    [TEXT]: "Text",
+    [LACKEY]: "Lackey",
+    [JOL]: "JOL",
+    [XLSX]: "Excel",
+  };
+
+  return (
+    <MenuItem onClick={() => action(format)}>
+      {title} - {formats[format]}
+    </MenuItem>
+  );
+};
 
 const DeckExportButton = ({ deck, inMissing, inInventory }) => {
   const {
@@ -37,29 +50,6 @@ const DeckExportButton = ({ deck, inMissing, inInventory }) => {
     lang,
   } = useApp();
   const decks = useSnapshot(deckStore)[DECKS];
-
-  const ExportDropdown = ({ action, format }) => {
-    const formats = {
-      [TWD]: "TWD",
-      [TWD_HINTS]: "TWD (w/ hints)",
-      [TEXT]: "Text",
-      [LACKEY]: "Lackey",
-      [JOL]: "JOL",
-      [XLSX]: "Excel",
-    };
-
-    const actions = {
-      [SAVE]: [saveDeck, "Save as File"],
-      [COPY]: [copyDeck, "Clipboard"],
-      [EXPORT_ALL]: [exportAll, "Export all Decks"],
-    };
-
-    return (
-      <MenuItem onClick={() => actions[action][0](format)}>
-        {actions[action][1]} - {formats[format]}
-      </MenuItem>
-    );
-  };
 
   const copyDeck = (format) => {
     const exportText = exportDeck(deck, format);
@@ -133,42 +123,42 @@ const DeckExportButton = ({ deck, inMissing, inInventory }) => {
       <MenuItems>
         {inInventory ? (
           <>
-            <ExportDropdown action={SAVE} format={TEXT} />
-            <ExportDropdown action={SAVE} format={LACKEY} />
-            <ExportDropdown action={SAVE} format={XLSX} />
+            <ExportDropdown action={saveDeck} title="Save as File" format={TEXT} />
+            <ExportDropdown action={saveDeck} title="Save as File" format={LACKEY} />
+            <ExportDropdown action={saveDeck} title="Save as File" format={XLSX} />
             <MenuItemDivider />
-            <ExportDropdown action={COPY} format={TEXT} />
-            <ExportDropdown action={COPY} format={LACKEY} />
+            <ExportDropdown action={copyDeck} title="Clipboard" format={TEXT} />
+            <ExportDropdown action={copyDeck} title="Clipboard" format={LACKEY} />
           </>
         ) : (
           <>
-            <ExportDropdown action={SAVE} format={TEXT} />
+            <ExportDropdown action={saveDeck} title="Save as File" format={TEXT} />
             {!inMissing && (
               <>
-                <ExportDropdown action={SAVE} format={TWD} />
-                <ExportDropdown action={SAVE} format={TWD_HINTS} />
-                <ExportDropdown action={SAVE} format={LACKEY} />
-                <ExportDropdown action={SAVE} format={JOL} />
+                <ExportDropdown action={saveDeck} title="Save as File" format={TWD} />
+                <ExportDropdown action={saveDeck} title="Save as File" format={TWD_HINTS} />
+                <ExportDropdown action={saveDeck} title="Save as File" format={LACKEY} />
+                <ExportDropdown action={saveDeck} title="Save as File" format={JOL} />
               </>
             )}
-            <ExportDropdown action={SAVE} format={XLSX} />
+            <ExportDropdown action={saveDeck} title="Save as File" format={XLSX} />
             <MenuItemDivider />
-            <ExportDropdown action={COPY} format={TEXT} />
+            <ExportDropdown action={copyDeck} title="Clipboard" format={TEXT} />
             {!inMissing && (
               <>
-                <ExportDropdown action={COPY} format={TWD} />
-                <ExportDropdown action={COPY} format={TWD_HINTS} />
-                <ExportDropdown action={COPY} format={LACKEY} />
-                <ExportDropdown action={COPY} format={JOL} />
+                <ExportDropdown action={copyDeck} title="Clipboard" format={TWD} />
+                <ExportDropdown action={copyDeck} title="Clipboard" format={TWD_HINTS} />
+                <ExportDropdown action={copyDeck} title="Clipboard" format={LACKEY} />
+                <ExportDropdown action={copyDeck} title="Clipboard" format={JOL} />
               </>
             )}
             {!inMissing && username && decks && Object.keys(decks).length > 1 && (
               <>
                 <MenuItemDivider />
-                <ExportDropdown action={EXPORT_ALL} format={TEXT} />
-                <ExportDropdown action={EXPORT_ALL} format={LACKEY} />
-                <ExportDropdown action={EXPORT_ALL} format={JOL} />
-                <ExportDropdown action={EXPORT_ALL} format={XLSX} />
+                <ExportDropdown action={exportAll} title="Export all Decks" format={TEXT} />
+                <ExportDropdown action={exportAll} title="Export all Decks" format={LACKEY} />
+                <ExportDropdown action={exportAll} title="Export all Decks" format={JOL} />
+                <ExportDropdown action={exportAll} title="Export all Decks" format={XLSX} />
               </>
             )}
           </>

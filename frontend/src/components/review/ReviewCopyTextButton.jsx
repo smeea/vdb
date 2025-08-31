@@ -14,7 +14,7 @@ const ReviewCopyTextButton = ({ urlDiff }) => {
   const cryptDiff = [];
   const library = {};
 
-  diffCards.map((i) => {
+  diffCards.forEach((i) => {
     const [cardid, q] = i.replace('"', "").split("=");
     const card = cardid > 200000 ? cryptCardBase[cardid] : libraryCardBase[cardid];
     if (cardid > 200000) {

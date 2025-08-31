@@ -80,7 +80,7 @@ const TwdHallFameCardsPlayer = ({ name, cards }) => {
 
   let firstCardDate = null;
   let lastCardDate = null;
-  Object.values(cards).map((card) => {
+  Object.values(cards).forEach((card) => {
     if (!firstCardDate || card[TWD_DATE] < firstCardDate) firstCardDate = card[TWD_DATE];
     if (!lastCardDate || card[TWD_DATE] > lastCardDate) lastCardDate = card[TWD_DATE];
   });

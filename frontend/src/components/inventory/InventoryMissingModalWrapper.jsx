@@ -40,7 +40,9 @@ const InventoryMissingModalWrapper = ({
         .filter((i) => {
           return missingByDiscipline[discipline][i.c[ID]];
         })
-        .forEach((i) => (missing[i.c[ID]] = i));
+        .forEach((i) => {
+          missing[i.c[ID]] = i;
+        });
       return missing;
     }
     return {};
@@ -53,13 +55,17 @@ const InventoryMissingModalWrapper = ({
     .filter((cardid) => {
       return !getIsPlaytest(cardid) && (!inventoryCrypt[cardid] || !inventoryCrypt[cardid]?.q);
     })
-    .forEach((cardid) => (missAllVtesCrypt[cardid] = { q: 1, c: cryptCardBase[cardid] }));
+    .forEach((cardid) => {
+      missAllVtesCrypt[cardid] = { q: 1, c: cryptCardBase[cardid] };
+    });
 
   Object.keys(libraryCardBase)
     .filter((cardid) => {
       return !getIsPlaytest(cardid) && (!inventoryLibrary[cardid] || !inventoryLibrary[cardid]?.q);
     })
-    .forEach((cardid) => (missAllVtesLibrary[cardid] = { q: 1, c: libraryCardBase[cardid] }));
+    .forEach((cardid) => {
+      missAllVtesLibrary[cardid] = { q: 1, c: libraryCardBase[cardid] };
+    });
 
   return (
     <DeckMissingModal

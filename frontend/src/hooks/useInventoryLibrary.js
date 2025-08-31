@@ -42,10 +42,7 @@ const useInventoryLibrary = (library, category, compact, type, discipline, onlyN
       });
     } else {
       Object.keys(cards)
-        .filter((cardid) => {
-          if (onlyNotes) return cards[cardid].t;
-          return true;
-        })
+        .filter((cardid) => (onlyNotes ? cards[cardid].t : true))
         .forEach((cardid) => {
           const types = cards[cardid].c[TYPE].split("/");
           const d = libraryCardBase[cardid][DISCIPLINE];

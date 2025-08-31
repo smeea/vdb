@@ -141,26 +141,26 @@ const missingDisciplinesLibrary = (filter, card) => {
     case AND:
       return !disciplines.every((discipline) => {
         if (discipline === NOT_REQUIRED && !card[DISCIPLINE]) return true;
-        if (card[DISCIPLINE].toLowerCase().includes(discipline)) return true;
+        return card[DISCIPLINE].toLowerCase().includes(discipline);
       });
 
     case OR:
       return !disciplines.some((discipline) => {
         if (discipline === NOT_REQUIRED && !card[DISCIPLINE]) return true;
-        if (card[DISCIPLINE].toLowerCase().includes(discipline)) return true;
+        return card[DISCIPLINE].toLowerCase().includes(discipline);
       });
 
     case NOT:
       return disciplines.some((discipline) => {
         if (discipline === NOT_REQUIRED && !card[DISCIPLINE]) return true;
-        if (card[DISCIPLINE].toLowerCase().includes(discipline)) return true;
+        return card[DISCIPLINE].toLowerCase().includes(discipline);
       });
 
     case ONLY:
       if (card[DISCIPLINE].split(/[/&]/).length > disciplines.length) return true;
       return !disciplines.every((discipline) => {
         if (discipline === NOT_REQUIRED && !card[DISCIPLINE]) return true;
-        if (card[DISCIPLINE].toLowerCase().includes(discipline)) return true;
+        return card[DISCIPLINE].toLowerCase().includes(discipline);
       });
   }
 };
@@ -329,7 +329,7 @@ const missingCapacityCrypt = (filter, card) => {
             return card[CAPACITY] >= capacity;
           case LE:
             return card[CAPACITY] <= capacity;
-          case EQ:
+          default:
             return card[CAPACITY] === capacity;
         }
       });
@@ -343,7 +343,7 @@ const missingCapacityCrypt = (filter, card) => {
             return card[CAPACITY] < capacity;
           case LE:
             return card[CAPACITY] > capacity;
-          case EQ:
+          default:
             return card[CAPACITY] !== capacity;
         }
       });
@@ -382,12 +382,12 @@ const missingClan = (filterClan, card) => {
     case OR:
       return !clans.some((clan) => {
         if (card[CLAN].toLowerCase().split("/").includes(clan)) return true;
-        if (clan === NOT_REQUIRED && !card[CLAN]) return true;
+        return clan === NOT_REQUIRED && !card[CLAN];
       });
     case NOT:
       return clans.some((clan) => {
         if (card[CLAN].toLowerCase().split("/").includes(clan)) return true;
-        if (clan === NOT_REQUIRED && !card[CLAN]) return true;
+        return clan === NOT_REQUIRED && !card[CLAN];
       });
   }
 };
@@ -451,43 +451,42 @@ const missingSet = (filter, card) => {
   return !sets.some((set) => {
     if (set === BCP) {
       if ((print === ONLY || print === FIRST) && dates.min >= BCP_START) return true;
-      if (dates.max >= BCP_START) return true;
-    } else {
-      const setDate = setsAndPrecons[set][DATE] ?? FUTURE;
-
-      switch (age) {
-        case OR_NEWER:
-          if (setDate > dates.max) return false;
-          break;
-        case OR_OLDER:
-          if (setDate < dates.min) return false;
-          break;
-        case NOT_NEWER:
-          if (setDate < dates.max) return false;
-          break;
-        case NOT_OLDER:
-          if (setDate > dates.min) return false;
-          break;
-        default:
-          if (!(set in card[SET])) return false;
-      }
-
-      switch (print) {
-        case ONLY:
-          if (Object.keys(card[SET]).length !== 1) return false;
-          break;
-
-        case FIRST:
-          if (!((set === PROMO && dates.minPromo <= dates.min) || dates.min === setDate))
-            return false;
-          break;
-        case REPRINT:
-          if (dates.min >= setDate) return false;
-          break;
-      }
-
-      return true;
+      return dates.max >= BCP_START;
     }
+    const setDate = setsAndPrecons[set][DATE] ?? FUTURE;
+
+    switch (age) {
+      case OR_NEWER:
+        if (setDate > dates.max) return false;
+        break;
+      case OR_OLDER:
+        if (setDate < dates.min) return false;
+        break;
+      case NOT_NEWER:
+        if (setDate < dates.max) return false;
+        break;
+      case NOT_OLDER:
+        if (setDate > dates.min) return false;
+        break;
+      default:
+        if (!(set in card[SET])) return false;
+    }
+
+    switch (print) {
+      case ONLY:
+        if (Object.keys(card[SET]).length !== 1) return false;
+        break;
+
+      case FIRST:
+        if (!((set === PROMO && dates.minPromo <= dates.min) || dates.min === setDate))
+          return false;
+        break;
+      case REPRINT:
+        if (dates.min >= setDate) return false;
+        break;
+    }
+
+    return true;
   });
 };
 
@@ -503,12 +502,11 @@ const missingPrecon = (filter, card) => {
     if (setAndSub === BCP) {
       if (print) {
         if (print === ONLY && dates.min >= BCP_START) return true;
-        if (print === FIRST && dates.min >= BCP_START && dates.min <= dates.minPromo) return true;
-      } else if (dates.max >= BCP_START) return true;
-    } else if (
-      Object.keys(card[SET]).includes(set) &&
-      Object.keys(card[SET][set]).includes(subSet)
-    ) {
+        return print === FIRST && dates.min >= BCP_START && dates.min <= dates.minPromo;
+      }
+      return dates.max >= BCP_START;
+    }
+    if (Object.keys(card[SET]).includes(set) && Object.keys(card[SET][set]).includes(subSet)) {
       if (print) {
         const setDate = set !== BCP ? setsAndPrecons[set][DATE] : null;
         switch (print) {
@@ -522,6 +520,7 @@ const missingPrecon = (filter, card) => {
       }
       return true;
     }
+    return false;
   });
 };
 

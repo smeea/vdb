@@ -17,7 +17,7 @@ const ResultCryptTotal = ({
   const byGroupsCapacityTotal = {};
   let total = 0;
 
-  cards.map((card) => {
+  cards.forEach((card) => {
     if (byGroups[card[GROUP]]) {
       byGroups[card[GROUP]] += 1;
     } else {

@@ -90,8 +90,12 @@ export const deckClone = (deck) => {
   const url = `${import.meta.env.VITE_API_URL}/deck`;
   const name = `${deck[NAME]} [by ${deck[AUTHOR]}]`;
   const cards = {};
-  Object.keys(deck[CRYPT]).forEach((cardid) => (cards[cardid] = deck[CRYPT][cardid].q));
-  Object.keys(deck[LIBRARY]).forEach((cardid) => (cards[cardid] = deck[LIBRARY][cardid].q));
+  Object.keys(deck[CRYPT]).forEach((cardid) => {
+    cards[cardid] = deck[CRYPT][cardid].q;
+  });
+  Object.keys(deck[LIBRARY]).forEach((cardid) => {
+    cards[cardid] = deck[LIBRARY][cardid].q;
+  });
 
   const tags =
     deck[TAGS][BASE] && deck[TAGS][SUPERIOR]
@@ -135,8 +139,12 @@ export const deckClone = (deck) => {
 export const deckSnapshot = (deck) => {
   const url = `${import.meta.env.VITE_API_URL}/deck`;
   const cards = {};
-  Object.keys(deck[CRYPT]).forEach((cardid) => (cards[cardid] = deck[CRYPT][cardid].q));
-  Object.keys(deck[LIBRARY]).forEach((cardid) => (cards[cardid] = deck[LIBRARY][cardid].q));
+  Object.keys(deck[CRYPT]).forEach((cardid) => {
+    cards[cardid] = deck[CRYPT][cardid].q;
+  });
+  Object.keys(deck[LIBRARY]).forEach((cardid) => {
+    cards[cardid] = deck[LIBRARY][cardid].q;
+  });
 
   return ky
     .post(url, {

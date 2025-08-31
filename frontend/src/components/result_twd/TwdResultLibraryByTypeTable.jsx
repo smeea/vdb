@@ -36,12 +36,9 @@ const TwdResultLibraryByTypeTable = ({ library }) => {
     bloodTotal,
   } = useDeckLibrary(library);
 
-  const cards = [];
-  cardtypeSortedFull
+  const cards = cardtypeSortedFull
     .filter((cardtype) => libraryByType[cardtype] !== undefined)
-    .map((cardtype) => {
-      cards.push(...libraryByType[cardtype]);
-    });
+    .map((cardtype) => libraryByType[cardtype]);
 
   const {
     currentModalCard,

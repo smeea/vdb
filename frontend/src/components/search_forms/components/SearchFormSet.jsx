@@ -58,7 +58,7 @@ const SearchFormSet = ({ value, searchForm, onChange, onChangeOptions }) => {
 
   Object.keys(setsAndPrecons)
     .filter((set) => (playtestMode || set !== PLAYTEST) && set !== TWO_P)
-    .map((set) => {
+    .forEach((set) => {
       const year = set === PLAYTEST ? null : setsAndPrecons[set][DATE].slice(2, 4);
       const fullName = setsAndPrecons[set][NAME];
 

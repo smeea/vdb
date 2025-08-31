@@ -4,7 +4,7 @@ import { getKeyDisciplines } from "@/utils";
 
 const ResultCryptTotalInfo = ({ cards }) => {
   const cardsById = {};
-  cards.map((c) => {
+  cards.forEach((c) => {
     cardsById[c[ID]] = {
       c: c,
       q: 1,

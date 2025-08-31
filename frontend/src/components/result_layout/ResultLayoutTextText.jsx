@@ -12,7 +12,7 @@ const ResultLayoutTextText = ({ cardid }) => {
   const cardTextNative = cardNative[TEXT].replace(/\(D\)/g, "\u24B9").split("\n");
 
   const refCards = [];
-  cardTextNative.map((i) => {
+  cardTextNative.forEach((i) => {
     reactStringReplace(i, /\/(.*?)\//g, (match) => {
       let cardMatch = match;
       const refCardid = Object.keys(cardBase).find((j) => {

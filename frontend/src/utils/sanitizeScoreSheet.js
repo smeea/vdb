@@ -30,7 +30,9 @@ const sanitizeScoreSheet = (sheet) => {
 
   let maxA = 1;
   Object.keys(sheet).forEach((k) => {
-    ["f", "r", "h"].forEach((i) => delete sheet[k][i]);
+    ["f", "r", "h"].forEach((i) => {
+      delete sheet[k][i];
+    });
     if (k.includes("A")) {
       const v = Number.parseInt(k.replace("A", ""));
       if (v > maxA) maxA = v;

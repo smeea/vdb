@@ -33,7 +33,7 @@ const TypeForm = ({ isManual, handleManual, value = ANY, name, options, onChange
               type="number"
               value={min}
               name={name.toLowerCase()}
-              id="min"
+              id={`${name.toLowerCase()}-min`}
               onChange={handleManual}
             />
             -
@@ -41,7 +41,7 @@ const TypeForm = ({ isManual, handleManual, value = ANY, name, options, onChange
               className="min-h-[42px] w-full rounded-sm border border-borderSecondary bg-bgPrimary text-center text-fgPrimary outline-bgCheckboxSelected focus:outline dark:border-borderSecondaryDark dark:bg-bgPrimaryDark dark:text-fgPrimaryDark dark:outline-bgCheckboxSelectedDark"
               type="number"
               name={name.toLowerCase()}
-              id="max"
+              id={`${name.toLowerCase()}-max`}
               value={max}
               onChange={handleManual}
             />
@@ -77,7 +77,7 @@ const TwdSearchFormCardtypes = ({ value, onChange }) => {
   const handleManual = (e) => {
     const v = e.target.value;
     let [min, max] = value[e.target[NAME]].split(",");
-    if (e.target[ID] === "min") {
+    if (e.target[ID].includes("-min")) {
       if (v >= 0) {
         min = e.target.value ?? 0;
       }
@@ -112,7 +112,7 @@ const TwdSearchFormCardtypes = ({ value, onChange }) => {
 
     i[1]
       .filter((i) => i !== 0)
-      .map((j) => {
+      .forEach((j) => {
         options.push({
           value: `0,${j}`,
           name: i[0].toLowerCase(),

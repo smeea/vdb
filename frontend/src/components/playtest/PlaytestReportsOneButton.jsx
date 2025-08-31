@@ -1,4 +1,3 @@
-import Download from "@icons/download.svg?react";
 import InboxesFill from "@icons/inboxes-fill.svg?react";
 import { useState } from "react";
 import {
@@ -9,34 +8,12 @@ import {
   Modal,
   PlaytestReportEntryWrapper,
 } from "@/components";
-import { ID, NAME, SCORE, TEXT } from "@/constants";
+import { ID, NAME } from "@/constants";
 import { useApp } from "@/context";
-import { playtestServices } from "@/services";
 
 const PlaytestReportsOneButton = ({ value, isPrecon = false }) => {
-  const { isMobile, isDesktop } = useApp();
+  const { isMobile } = useApp();
   const [show, setShow] = useState();
-
-  const exportReports = async () => {
-    const result = await playtestServices.getReports(value, isPrecon);
-
-    let exportText = "";
-    Object.keys(result).forEach((id, idx) => {
-      exportText += `User: <${id}>\n`;
-      exportText += `Score: ${result[id][SCORE]}\n`;
-      exportText += `${result[id][TEXT]}\n`;
-      if (idx + 1 < Object.keys(result).length) {
-        exportText += "\n-----\n\n";
-      }
-    });
-
-    const file = new File([exportText], `${value[NAME]}.txt`, {
-      type: "text/plain;charset=utf-8",
-    });
-
-    const { saveAs } = await import("file-saver");
-    saveAs(file);
-  };
 
   return (
     <>

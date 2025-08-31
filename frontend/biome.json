@@ -40,7 +40,8 @@
       },
       "correctness": {
         "noUndeclaredVariables": "error",
-        "useExhaustiveDependencies": "off"
+        "useExhaustiveDependencies": "off",
+        "useParseIntRadix": "off"
       },
       "nursery": {
         "useSortedClasses": {
@@ -65,5 +66,17 @@
         "noUselessElse": "error"
       }
     }
-  }
+  },
+  "overrides": [
+    {
+      "includes": ["src/pages/Documentation.jsx"],
+      "linter": {
+        "rules": {
+          "correctness": {
+            "useUniqueElementIds": "off"
+          }
+        }
+      }
+    }
+  ]
 }

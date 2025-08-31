@@ -35,10 +35,7 @@ const useInventoryCrypt = (crypt, category, compact, onlyNotes) => {
       });
     } else {
       Object.keys(cards)
-        .filter((cardid) => {
-          if (onlyNotes) return cards[cardid].t;
-          return true;
-        })
+        .filter((cardid) => (onlyNotes ? cards[cardid].t : true))
         .forEach((cardid) => {
           const clan = cards[cardid].c[CLAN];
           const softUsedMax = getSoftMax(usedCrypt[SOFT][cardid]);

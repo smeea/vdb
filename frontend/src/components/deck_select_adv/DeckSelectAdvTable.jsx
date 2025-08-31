@@ -96,7 +96,7 @@ const DeckSelectAdvTable = ({
       if (nameFilter.length > 2) {
         filtered = filtered.filter((deck) => {
           if (isDeckNameMatch(deck, nameFilter)) return true;
-          if (isCardInDeck(deck, nameFilter)) return true;
+          return isCardInDeck(deck, nameFilter);
         });
       }
 
@@ -106,7 +106,7 @@ const DeckSelectAdvTable = ({
           tagsFilter.forEach((tag) => {
             if (deck[TAGS].includes(tag)) counter += 1;
           });
-          if (counter >= tagsFilter.length) return true;
+          return counter >= tagsFilter.length;
         });
       }
 

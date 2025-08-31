@@ -7,10 +7,8 @@ import {
 import { ALL, CRYPT, DISCIPLINE, NONE, TYPE } from "@/constants";
 
 const InventoryFilterForm = ({ value, setValue, values, target, byTotal, byUnique }) => {
-  const options = [];
-
-  values.map((i) => {
-    options.push({
+  const options = values.map((i) => {
+    return {
       value: i,
       label: (
         <div className="flex justify-between">
@@ -72,7 +70,7 @@ const InventoryFilterForm = ({ value, setValue, values, target, byTotal, byUniqu
           </div>
         </div>
       ),
-    });
+    };
   });
 
   return (

@@ -20,7 +20,7 @@ const DeckBranchSelect = ({ deck, handleSelect }) => {
   };
 
   if (target[BRANCHES]) {
-    target[BRANCHES].map((i) => {
+    target[BRANCHES].forEach((i) => {
       b[i] = {
         [DECKID]: decks[i][DECKID],
         [BRANCH_NAME]: decks[i][BRANCH_NAME],
@@ -38,13 +38,11 @@ const DeckBranchSelect = ({ deck, handleSelect }) => {
     return Object.keys(branches)
       .filter((i) => decks[i])
       .toSorted((a, b) => byTimestamp(decks[a], decks[b]))
-      .map((i) => {
-        return {
-          value: i,
-          name: DECK,
-          label: decks[i][BRANCH_NAME],
-        };
-      });
+      .map((i) => ({
+        value: i,
+        name: DECK,
+        label: decks[i][BRANCH_NAME],
+      }));
   }, [branches]);
 
   return (

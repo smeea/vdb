@@ -2,7 +2,7 @@ import { useCallback } from "react";
 import { List } from "react-window";
 import { twMerge } from "tailwind-merge";
 import { InventoryCryptTableRow, ResultModal, WindowRows } from "@/components";
-import { VALUE, ID } from "@/constants";
+import { ID, VALUE } from "@/constants";
 import { useApp } from "@/context";
 import { useCryptSortWithTimer, useModalCardController } from "@/hooks";
 import { getIsPlaytest } from "@/utils";
@@ -33,17 +33,17 @@ const InventoryCryptTable = ({ cards, sortMethod, compact, withCompact, newFocus
   }, [sortedCards]);
 
   const cardRows = sortedCards
-        .filter((card) => playtestMode || !getIsPlaytest(card.c[ID]))
-        .map((card) => (
-          <InventoryCryptTableRow
-            key={card.c[ID]}
-            card={card}
-            compact={compact}
-            newFocus={newFocus}
-            inShared={inShared}
-            handleClick={handleClick}
-          />
-        ))
+    .filter((card) => playtestMode || !getIsPlaytest(card.c[ID]))
+    .map((card) => (
+      <InventoryCryptTableRow
+        key={card.c[ID]}
+        card={card}
+        compact={compact}
+        newFocus={newFocus}
+        inShared={inShared}
+        handleClick={handleClick}
+      />
+    ));
 
   return (
     <>

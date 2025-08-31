@@ -27,15 +27,14 @@ const InventoryAddPreconModal = ({ handleClose }) => {
 
       if (nameFilter) {
         filtered = filtered.filter((deck) => {
-          if (deck[NAME].toLowerCase().indexOf(nameFilter.toLowerCase()) >= 0) return true;
+          return deck[NAME].toLowerCase().indexOf(nameFilter.toLowerCase()) >= 0;
         });
       }
 
       if (setFilter) {
         filtered = filtered.filter((deck) => {
           const set = deck[DECKID].split(":")[0];
-          if (setsAndPrecons[set][NAME].toLowerCase().indexOf(setFilter.toLowerCase()) >= 0)
-            return true;
+          return setsAndPrecons[set][NAME].toLowerCase().indexOf(setFilter.toLowerCase()) >= 0;
         });
       }
 

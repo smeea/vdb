@@ -56,11 +56,11 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
 
   Object.keys(setsAndPrecons)
     .filter((set) => (playtestMode || set !== PLAYTEST) && set !== TWO_P)
-    .map((set) => {
+    .forEach((set) => {
       if (setsAndPrecons[set][PRECONS]) {
         const year = setsAndPrecons[set][DATE] ? setsAndPrecons[set][DATE].slice(2, 4) : null;
 
-        Object.keys(setsAndPrecons[set][PRECONS]).map((precon) => {
+        Object.keys(setsAndPrecons[set][PRECONS]).forEach((precon) => {
           const fullName = setsAndPrecons[set][PRECONS][precon][NAME];
           const clans = setsAndPrecons[set][PRECONS][precon][CLAN].split("/");
 

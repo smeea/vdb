@@ -2,7 +2,7 @@ import { useCallback } from "react";
 import { List } from "react-window";
 import { twMerge } from "tailwind-merge";
 import { InventoryLibraryTableRow, ResultModal, WindowRows } from "@/components";
-import { VALUE, ID } from "@/constants";
+import { ID, VALUE } from "@/constants";
 import { useApp } from "@/context";
 import { useModalCardController } from "@/hooks";
 import { getIsPlaytest, librarySort } from "@/utils";
@@ -33,17 +33,17 @@ const InventoryLibraryTable = ({ cards, sortMethod, compact, withCompact, newFoc
   }, [sortedCards]);
 
   const cardRows = sortedCards
-        .filter((card) => playtestMode || !getIsPlaytest(card.c[ID]))
-        .map((card) => (
-          <InventoryLibraryTableRow
-            key={card.c[ID]}
-            card={card}
-            compact={compact}
-            newFocus={newFocus}
-            inShared={inShared}
-            handleClick={handleClick}
-          />
-        ));
+    .filter((card) => playtestMode || !getIsPlaytest(card.c[ID]))
+    .map((card) => (
+      <InventoryLibraryTableRow
+        key={card.c[ID]}
+        card={card}
+        compact={compact}
+        newFocus={newFocus}
+        inShared={inShared}
+        handleClick={handleClick}
+      />
+    ));
 
   return (
     <>

@@ -17,10 +17,9 @@ import {
   DeckRecommendationButton,
   DeckReviewButton,
   DeckSearchSimilarButton,
-  PlaytestReportsOneButton,
   SeatingButton,
 } from "@/components";
-import { DECK, DECKID, ID, NAME, PLAYTEST } from "@/constants";
+import { DECKID } from "@/constants";
 import { useApp } from "@/context";
 import { getRestrictions } from "@/utils";
 
@@ -37,7 +36,7 @@ const DeckButtons = ({
   setShowImportText,
   setBadImportCards,
 }) => {
-  const { isPlaytestAdmin, playtestMode, inventoryMode, username } = useApp();
+  const { playtestMode, inventoryMode, username } = useApp();
   const { publicChild, isPublic, isAuthor, isBranches } = deck || {};
   const { hasPlaytest } = getRestrictions(deck);
   const isPlaytestSafe = playtestMode || !hasPlaytest;

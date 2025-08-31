@@ -13,9 +13,9 @@ const DeckSelectAdvTotal = ({ tagsFilter, setTagsFilter }) => {
     }
   };
 
-  Object.values(decks).map((deck) => {
+  Object.values(decks).forEach((deck) => {
     if (deck[TAGS]) {
-      deck[TAGS].map((tag) => {
+      deck[TAGS].forEach((tag) => {
         if (byTags[tag]) {
           byTags[tag] += 1;
         } else {

@@ -111,16 +111,10 @@ const missingLibrary = (filter, deck) => {
 const missingLibraryTotal = (filter, deck) => {
   const libraryTotal = countCards(Object.values(deck[LIBRARY]));
 
-  if (
-    Object.keys(filter).some((i) => {
-      const value = i.split("-");
-      if (libraryTotal >= value[0] && libraryTotal <= value[1]) return true;
-    })
-  ) {
-    return false;
-  }
-
-  return true;
+  return !Object.keys(filter).some((i) => {
+    const value = i.split("-");
+    return libraryTotal >= value[0] && libraryTotal <= value[1];
+  });
 };
 
 const missingClan = (filter, deck) => {
@@ -129,13 +123,9 @@ const missingClan = (filter, deck) => {
 
   switch (logic) {
     case OR:
-      return !value.some((i) => {
-        if (clan && clan.toLowerCase() === i) return true;
-      });
+      return !value.some((i) => clan && clan.toLowerCase() === i);
     case NOT:
-      return value.some((i) => {
-        if (clan && clan.toLowerCase() === i) return true;
-      });
+      return value.some((i) => clan && clan.toLowerCase() === i);
   }
 
   return true;
@@ -147,13 +137,9 @@ const missingSect = (filter, deck) => {
 
   switch (logic) {
     case OR:
-      return !value.some((i) => {
-        if (sect && sect.toLowerCase() === i) return true;
-      });
+      return !value.some((i) => sect && sect.toLowerCase() === i);
     case NOT:
-      return value.some((i) => {
-        if (sect && sect.toLowerCase() === i) return true;
-      });
+      return value.some((i) => sect && sect.toLowerCase() === i);
   }
 
   return true;
@@ -164,29 +150,18 @@ const missingCapacity = (filter, deck) => {
   const cryptTotalCap = countTotalCost(Object.values(deck[CRYPT]), CAPACITY);
   const avgCapacity = cryptTotalCap / cryptTotal;
 
-  if (
-    Object.keys(filter).some((i) => {
-      const value = i.split("-");
-      if (avgCapacity >= value[0] && avgCapacity <= value[1]) return true;
-    })
-  ) {
-    return false;
-  }
-
-  return true;
+  return !Object.keys(filter).some((i) => {
+    const value = i.split("-");
+    return avgCapacity >= value[0] && avgCapacity <= value[1];
+  });
 };
 
 const missingDisciplines = (filter, deck) => {
-  if (
-    Object.keys(filter).every((d) => {
-      return Object.values(deck[LIBRARY]).some((card) => {
-        return card.c[DISCIPLINE].includes(d);
-      });
-    })
-  ) {
-    return false;
-  }
-  return true;
+  return !Object.keys(filter).every((d) => {
+    return Object.values(deck[LIBRARY]).some((card) => {
+      return card.c[DISCIPLINE].includes(d);
+    });
+  });
 };
 
 const missingCardtypes = (filter, deck) => {
@@ -203,17 +178,11 @@ const missingCardtypes = (filter, deck) => {
     }
   });
 
-  if (
-    Object.keys(filter).every((t) => {
-      const value = filter[t].split(",");
-      const typeRatio = (cardTypes[t] / libraryTotal) * 100;
-      if (typeRatio >= value[0] && typeRatio <= value[1]) return true;
-    })
-  ) {
-    return false;
-  }
-
-  return true;
+  return !Object.keys(filter).every((t) => {
+    const value = filter[t].split(",");
+    const typeRatio = (cardTypes[t] / libraryTotal) * 100;
+    return typeRatio >= value[0] && typeRatio <= value[1];
+  });
 };
 
 const missingTraits = (filter, deck) => {

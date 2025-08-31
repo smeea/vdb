@@ -1,5 +1,5 @@
 import Globe2 from "@icons/globe2.svg?react";
-import { ConditionalTooltipOrModal, Flag, ListEntry, Select } from "@/components";
+import { ConditionalTooltipOrModal, Flag, ListEntry } from "@/components";
 import { EN, ES, FR, LANG, PT } from "@/constants";
 import { useApp } from "@/context";
 
@@ -40,7 +40,7 @@ const PlaytestReportLanguageSelect = () => {
       forceOneLine
     >
       <div className="flex items-center gap-2">
-          <Flag value={playtestProfile?.[LANG]} noTitle />
+        <Flag value={playtestProfile?.[LANG]} noTitle />
         {languages[playtestProfile?.[LANG]]}
       </div>
     </ListEntry>

@@ -99,7 +99,7 @@ const Seating = ({ setShow }) => {
     const randomizedPlayers = randomizeArray(options);
     const tablesWithQty = getTablesWithQty(randomizedPlayers.length);
     const tablesWithPlayers = [];
-    tablesWithQty.map((n) => {
+    tablesWithQty.forEach((n) => {
       tablesWithPlayers.push(randomizedPlayers.slice(0, n));
       randomizedPlayers.splice(0, n);
     });

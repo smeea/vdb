@@ -6,6 +6,7 @@ import { useApp } from "@/context";
 
 const PreconsDetailed = ({ sets, set }) => {
   return Object.keys(sets[set]).map((i) => {
+    if (i === "DTC") return null;
     const abbrevs = {
       U: "Uncommon",
       R: "Rare",
@@ -26,9 +27,8 @@ const PreconsDetailed = ({ sets, set }) => {
     if (set === PROMO) {
       return <li key={`${set}-${i}`}>{i}</li>;
     }
-    if (i !== "DTC") {
-      return <li key={`${set}-${i}`}>{abbrevs[i]}</li>;
-    }
+
+    return <li key={`${set}-${i}`}>{abbrevs[i]}</li>;
   });
 };
 

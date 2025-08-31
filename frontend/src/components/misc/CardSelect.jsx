@@ -16,9 +16,9 @@ const getMatches = (inputValue, filterAction, playtestMode, inInventory) => {
 
       if (card[NAME].toLowerCase().startsWith(inputValue.toLowerCase())) {
         startingWith.push({ [VALUE]: card[ID] });
-      } else {
-        return true;
+        return false;
       }
+      return true;
     })
     .map((card) => ({
       [VALUE]: card[ID],
