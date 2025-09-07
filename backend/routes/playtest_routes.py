@@ -138,8 +138,10 @@ def report_export_route(target, id):
                     for k, v in report[t].items():
                         if v["score"] == 0 and v["text"] == "":
                             continue
+
                         if (
-                            target == "crypt"
+                            not k.isdigit()
+                            or target == "crypt"
                             and int(k) < 200000
                             or target == "library"
                             and int(k) > 200000
