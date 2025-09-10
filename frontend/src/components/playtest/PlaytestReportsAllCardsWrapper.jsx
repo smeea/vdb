@@ -9,14 +9,15 @@ const PlaytestReportsAllCardsWrapper = ({ reports, target, sortMethod, maxSameSc
   const sort = target === CRYPT ? cryptSort : librarySort;
   const cardBase = target === CRYPT ? cryptCardBase : libraryCardBase;
 
+  // TODO: refactor because 'reports' already filtered
   const products = useMemo(
     () =>
-      sort(
-        Object.values(cardBase || {}).filter((card) => {
-          return getIsPlaytest(card[ID]) && !card[PLAYTEST_OLD];
-        }),
-        sortMethod,
-      ),
+    sort(
+      Object.values(cardBase || {}).filter((card) => {
+        return getIsPlaytest(card[ID]) && !card[PLAYTEST_OLD];
+      }),
+      sortMethod,
+    ),
     [sortMethod, cardBase],
   );
 
