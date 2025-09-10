@@ -58,6 +58,7 @@ const PlaytestReportsAll = () => {
       ...reportsPrecons,
       [GENERAL]: reportsGeneral,
     };
+
     let file;
     let exportText = "";
 

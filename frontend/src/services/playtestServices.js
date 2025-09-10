@@ -44,14 +44,14 @@ export const exportXlsx = async (reports, users, cryptCardBase, libraryCardBase,
   const workbook = xlsx.utils.book_new();
 
   const cardsData = Object.keys(reports)
-    .filter((id) => Number.isInteger(id))
+    .filter((id) => !Number.isNaN(Number(id)))
     .reduce((obj, key) => {
       obj[key] = reports[key];
       return obj;
     }, {});
 
   const preconsData = Object.keys(reports)
-    .filter((id) => !Number.isInteger(id) && id !== GENERAL)
+    .filter((id) => Number.isNaN(Number(id)) && id !== GENERAL)
     .reduce((obj, key) => {
       obj[key] = reports[key];
       return obj;
@@ -90,6 +90,8 @@ export const exportXlsx = async (reports, users, cryptCardBase, libraryCardBase,
   const generalSheet = xlsx.utils.json_to_sheet(generalReports);
   generalSheet["!cols"] = [{ wch: 15 }, { wch: 60 }, { wch: 8 }, { wch: 15 }];
   xlsx.utils.book_append_sheet(workbook, generalSheet, "General");
+
+  // console.log(cardsData)
 
   Object.entries(preconsData).forEach((i) => {
     const [id, reportsData] = i;
