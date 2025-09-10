@@ -140,7 +140,8 @@ def report_export_route(target, id):
                             continue
 
                         if (
-                            not k.isdigit()
+                            target in ["crypt", "library"]
+                            and not k.isdigit()
                             or target == "crypt"
                             and int(k) < 200000
                             or target == "library"

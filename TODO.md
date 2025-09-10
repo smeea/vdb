@@ -1,4 +1,5 @@
 # FIX
+- Clan/Group sorting use name as second factor instead of capacity
 
 # FIX ON HOLD
 - Deck-in-Url trimmed at first card - can't reproduce in dev environment
@@ -7,6 +8,7 @@
 - Limited in TWD/PDA search
 - TWD search with % V5-compatibility
 - Or disciplines search
+- Click on scan image to close modal on mobile (need refactor)
 
 # FEATURES ON HOLD
 - Indicator of inventory-perfect decks in selector -> performance issue for many decks
