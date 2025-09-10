@@ -1,9 +1,6 @@
 {
-  "version": "2025-08-25",
+  "version": "2025-09-10",
   "changes": [
-    "Update TWDA",
-    "Update Rulings",
-    "Add Cardinal Benediction event to TDA",
-    "Add political, hecata, oblivion legacy images"
+    "Hotfix"
   ]
 }

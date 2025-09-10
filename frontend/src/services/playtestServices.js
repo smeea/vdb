@@ -91,8 +91,6 @@ export const exportXlsx = async (reports, users, cryptCardBase, libraryCardBase,
   generalSheet["!cols"] = [{ wch: 15 }, { wch: 60 }, { wch: 8 }, { wch: 15 }];
   xlsx.utils.book_append_sheet(workbook, generalSheet, "General");
 
-  // console.log(cardsData)
-
   Object.entries(preconsData).forEach((i) => {
     const [id, reportsData] = i;
     if (!preconDecks[`${PLAYTEST}:${id}`]) return;

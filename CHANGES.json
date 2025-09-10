@@ -1,5 +1,11 @@
 [
   {
+    "version": "2025-09-10",
+    "changes": [
+      "Hotfix"
+    ]
+  },
+  {
     "version": "2025-08-25",
     "changes": [
       "Update TWDA",
