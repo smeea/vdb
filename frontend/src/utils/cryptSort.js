@@ -44,11 +44,11 @@ const cryptSort = (cards, sortMethod) => {
       case CLAN:
         return cards.toSorted(byCardName).toSorted(byCapacity).toSorted(byClan);
       case CLANx:
-        return cards.toSorted(byCardName).toSorted(byCapacity).toSorted(byGroup).toSorted(byClan);
+        return cards.toSorted(byCardName).toSorted(byClan);
       case GROUP:
         return cards.toSorted(byCardName).toSorted(byCapacity).toSorted(byGroup);
       case GROUPx:
-        return cards.toSorted(byCardName).toSorted(byCapacity).toSorted(byClan).toSorted(byGroup);
+        return cards.toSorted(byCardName).toSorted(byGroup);
       case SECT:
         return cards.toSorted(byCardName).toSorted(byCapacity).toSorted(bySect);
       case PLAYER:
