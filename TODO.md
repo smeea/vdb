@@ -8,7 +8,6 @@
 - TWD search with % V5-compatibility
 - Or disciplines search
 - Click on scan image to close modal on mobile (need refactor)
-- Show crypt path in narrow layout
 
 # FEATURES ON HOLD
 - Indicator of inventory-perfect decks in selector -> performance issue for many decks
