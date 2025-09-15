@@ -44,12 +44,9 @@ const TwdResultLibraryByTypeTable = ({ library }) => {
   } = useModalCardController(cards);
 
   const handleClickCard = (card) => {
-    console.log('click', card)
     handleModalCardOpen(card);
     !isDesktop && setShowFloatingButtons(false);
   };
-
-  console.log('current', currentModalCard)
 
   return (
     <div>

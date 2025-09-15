@@ -73,9 +73,11 @@ const TwdResultDescriptionText = ({ deck }) => {
           </TwdResultDescriptionTextTr>
         </tbody>
       </table>
-      {(deck[TAGS][SUPERIOR].length > 0 || deck[TAGS][BASE].length > 0) && (
-        <TwdResultTags tags={deck[TAGS]} />
-      )}
+      <div className='max-sm:hidden'>
+        {(deck[TAGS][SUPERIOR].length > 0 || deck[TAGS][BASE].length > 0) && (
+          <TwdResultTags tags={deck[TAGS]} />
+        )}
+      </div>
     </>
   );
 };
