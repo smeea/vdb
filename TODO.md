@@ -1,6 +1,5 @@
 # FIX
 - Clan/Group sorting use name as second factor instead of capacity
-- Update deck selector on deck change
 
 # FIX ON HOLD
 - Deck-in-Url trimmed at first card - can't reproduce in dev environment
