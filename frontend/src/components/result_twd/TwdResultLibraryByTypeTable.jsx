@@ -15,11 +15,6 @@ import { useDeckLibrary, useModalCardController } from "@/hooks";
 const TwdResultLibraryByTypeTable = ({ library }) => {
   const { limitedMode, setShowFloatingButtons, isDesktop } = useApp();
 
-  const handleClickCard = (card) => {
-    handleModalCardOpen(card);
-    !isDesktop && setShowFloatingButtons(false);
-  };
-
   const handleClose = () => {
     handleModalCardClose();
     !isDesktop && setShowFloatingButtons(true);
@@ -37,8 +32,8 @@ const TwdResultLibraryByTypeTable = ({ library }) => {
   } = useDeckLibrary(library);
 
   const cards = cardtypeSortedFull
-    .filter((cardtype) => libraryByType[cardtype] !== undefined)
-    .map((cardtype) => libraryByType[cardtype]);
+        .filter((cardtype) => libraryByType[cardtype] !== undefined)
+        .flatMap((cardtype) => libraryByType[cardtype]);
 
   const {
     currentModalCard,
@@ -47,6 +42,14 @@ const TwdResultLibraryByTypeTable = ({ library }) => {
     handleModalCardChange,
     handleModalCardClose,
   } = useModalCardController(cards);
+
+  const handleClickCard = (card) => {
+    console.log('click', card)
+    handleModalCardOpen(card);
+    !isDesktop && setShowFloatingButtons(false);
+  };
+
+  console.log('current', currentModalCard)
 
   return (
     <div>
