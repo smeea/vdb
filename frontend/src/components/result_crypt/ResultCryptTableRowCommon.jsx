@@ -72,7 +72,7 @@ const ResultCryptTableRowCommon = ({
               <ResultCryptTitle value={card[TITLE]} />
             </div>
           </td>
-          <td className="min-w-[25px]" onClick={onClick}>
+          <td className="min-w-[28px]" onClick={onClick}>
             <div className="flex justify-center">
               {card[PATH] ? (
                 <ResultPathImage value={card[PATH]} />
@@ -93,7 +93,7 @@ const ResultCryptTableRowCommon = ({
           </td>
         </>
       ) : (
-        <td className="min-w-[40px]" onClick={onClick}>
+        <td className="min-w-[45px] sm:min-w-[50px]" onClick={onClick}>
           <ResultCryptClanGroupTitle card={card} />
         </td>
       )}

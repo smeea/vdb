@@ -9,13 +9,15 @@ const ResultCryptClanGroupTitle = ({ card }) => {
         <ResultClanImage value={card[CLAN]} />
       </div>
       <div className="flex justify-between gap-1 font-bold text-sm">
-        <div className="flex w-[16px] gap-0.5 justify-center">
+        <div className="flex w-[22px] justify-center">
           {card[TITLE]
            ? <ResultCryptTitle value={card[TITLE]} />
            : <ResultCryptSect value={card[SECT]} />
           }
         </div>
-        <ResultCryptGroup value={card[GROUP]} />
+        <div className="flex pe-0.5 justify-center">
+          <ResultCryptGroup value={card[GROUP]} />
+        </div>
       </div>
     </>
   );
