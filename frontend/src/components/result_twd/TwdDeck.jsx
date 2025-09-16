@@ -14,24 +14,27 @@ import { useDeckLibrary } from "@/hooks";
 import { parseDeck } from "@/utils";
 
 const TwdDeck = ({ deck, inPda }) => {
+  if (!deck) return;
+
   const { cryptCardBase, libraryCardBase, isNarrow } = useApp();
   const { [CRYPT]: crypt, [LIBRARY]: library } = parseDeck(
     cryptCardBase,
     libraryCardBase,
     deck?.[CARDS],
   );
+  const parsedDeck = {...deck, [CRYPT]: crypt, [LIBRARY]: library}
+  delete parsedDeck[CARDS]
 
   const { libraryByTypeTotal } = useDeckLibrary(library);
 
-  if (!deck) return;
   return (
     <div className="group flex flex-col gap-6">
       <div className="flex sm:gap-2 max-lg:flex-col">
         <div className="basis-full lg:basis-1/4">
-          {inPda ? <PdaResultDescription deck={deck} /> : <TwdResultDescription deck={{...deck, [LIBRARY]: library}} />}
+          {inPda ? <PdaResultDescription deck={parsedDeck} /> : <TwdResultDescription deck={parsedDeck} />}
           <div className='sm:hidden'>
-            {!inPda && (deck[TAGS][SUPERIOR].length > 0 || deck[TAGS][BASE].length > 0) && (
-              <TwdResultTags tags={deck[TAGS]} />
+            {!inPda && (parsedDeck[TAGS][SUPERIOR].length > 0 || parsedDeck[TAGS][BASE].length > 0) && (
+              <TwdResultTags tags={parsedDeck[TAGS]} />
             )}
             {Object.keys(libraryByTypeTotal).map((i) => (
               <div key={i} className="inline-block whitespace-nowrap pr-2.5">
