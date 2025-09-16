@@ -314,6 +314,7 @@ export { default as CryptSearchForm } from "./search_forms/CryptSearchForm.jsx";
 export { default as CryptSearchFormCapacity } from "./search_forms/components/CryptSearchFormCapacity.jsx";
 export { default as CryptSearchFormClan } from "./search_forms/components/CryptSearchFormClan.jsx";
 export { default as CryptSearchFormDisciplines } from "./search_forms/components/CryptSearchFormDisciplines.jsx";
+export { default as CryptSearchFormDisciplinesOr } from "./search_forms/components/CryptSearchFormDisciplinesOr.jsx";
 export { default as CryptSearchFormGroup } from "./search_forms/components/CryptSearchFormGroup.jsx";
 export { default as CryptSearchFormSect } from "./search_forms/components/CryptSearchFormSect.jsx";
 export { default as CryptSearchFormTitles } from "./search_forms/components/CryptSearchFormTitles.jsx";

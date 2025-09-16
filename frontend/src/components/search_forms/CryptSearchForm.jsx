@@ -7,6 +7,7 @@ import {
   CryptSearchFormCapacity,
   CryptSearchFormClan,
   CryptSearchFormDisciplines,
+  CryptSearchFormDisciplinesOr,
   CryptSearchFormGroup,
   CryptSearchFormSect,
   CryptSearchFormTitles,
@@ -25,6 +26,7 @@ import {
   CLAN,
   CRYPT,
   DISCIPLINES,
+  DISCIPLINES_OR,
   EQ,
   FIRST,
   GE,
@@ -213,6 +215,18 @@ const CryptSearchForm = () => {
     [searchCryptForm],
   );
 
+  const handleDisciplinesOrChange = useCallback(
+    (name, value) => {
+      console.log(name, value)
+      // if (searchCryptForm[DISCIPLINES]['or'][name] < max) {
+      //   searchCryptForm[DISCIPLINES][name] += 1;
+      // } else {
+      //   searchCryptForm[DISCIPLINES][name] = 0;
+      // }
+    },
+    [searchCryptForm],
+  );
+
   const handleClear = useCallback(() => {
     setSearchParams();
     clearSearchForm(CRYPT);
@@ -288,6 +302,11 @@ const CryptSearchForm = () => {
       <CryptSearchFormDisciplines
         value={cryptFormState[DISCIPLINES]}
         onChange={handleDisciplinesChange}
+      />
+
+      <CryptSearchFormDisciplinesOr
+        value={cryptFormState[DISCIPLINES_OR]}
+        onChange={handleDisciplinesOrChange}
       />
       <CryptSearchFormVirtues
         value={cryptFormState[DISCIPLINES]}
