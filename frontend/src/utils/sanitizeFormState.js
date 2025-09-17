@@ -8,6 +8,7 @@ import {
   DATE,
   DISCIPLINE,
   DISCIPLINES,
+  DISCIPLINES_OR,
   GROUP,
   LIBRARY,
   LIBRARY_TOTAL,
@@ -164,17 +165,17 @@ const sanitizeFormState = (target, state) => {
   });
 
   switch (target) {
-    case CRYPT:
-    case TDA:
-    case PDA:
-    case TWD:
-      forms = [CLAN, SECT];
-      break;
-    case LIBRARY:
-      forms = [CLAN, SECT, TITLE];
-      break;
-    default:
-      forms = [];
+  case CRYPT:
+  case TDA:
+  case PDA:
+  case TWD:
+    forms = [CLAN, SECT];
+    break;
+  case LIBRARY:
+    forms = [CLAN, SECT, TITLE];
+    break;
+  default:
+    forms = [];
   }
   forms.forEach((i) => {
     input[i].value = input[i].value.filter((i) => {
@@ -183,13 +184,13 @@ const sanitizeFormState = (target, state) => {
   });
 
   switch (target) {
-    case TDA:
-    case PDA:
-    case TWD:
-      forms = [CRYPT, LIBRARY];
-      break;
-    default:
-      forms = [];
+  case TDA:
+  case PDA:
+  case TWD:
+    forms = [CRYPT, LIBRARY];
+    break;
+  default:
+    forms = [];
   }
   forms.forEach((i) => {
     Object.keys(input[i]).forEach((k) => {
@@ -198,6 +199,14 @@ const sanitizeFormState = (target, state) => {
       }
     });
   });
+
+  if (target === CRYPT) {
+    input[DISCIPLINES_OR].forEach((i, idx) => {
+      if (Object.keys(i).length < 2) {
+        input[DISCIPLINES_OR].splice(idx, 1)
+      }
+    })
+  }
 
   Object.keys(input).forEach((k) => {
     if (

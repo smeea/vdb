@@ -6,7 +6,6 @@
 # FEATURES
 - Limited in TWD/PDA search
 - TWD search with % V5-compatibility
-- Or disciplines search
 - Click on scan image to close modal on mobile (need refactor)
 
 # FEATURES ON HOLD

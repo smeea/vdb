@@ -45,7 +45,7 @@
     "Vengeance": 0,
     "Vision": 0
   },
-  "disciplinesOr": [],
+  "disciplinesOr": [{}],
   "capacity": {
     "value": [
       {

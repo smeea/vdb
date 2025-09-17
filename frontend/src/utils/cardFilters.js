@@ -26,6 +26,7 @@ import {
   DATE,
   DISCIPLINE,
   DISCIPLINES,
+  DISCIPLINES_OR,
   EQ,
   FIRST,
   GE,
@@ -87,6 +88,7 @@ import { CryptTraitsRegexMap, LibraryTraitsRegexMap } from "@/utils/traitsRegexM
 export const filterCrypt = (filter, cards = {}) => {
   return Object.values(cards).filter((card) => {
     if (filter[DISCIPLINES] && missingDisciplinesCrypt(filter[DISCIPLINES], card)) return false;
+    if (filter[DISCIPLINES_OR] && missingDisciplinesOrCrypt(filter[DISCIPLINES_OR], card)) return false;
     if (filter[TEXT] && missingTextQueries(filter[TEXT], card)) return false;
     if (filter[TRAITS] && missingTraitsCrypt(filter[TRAITS], card)) return false;
     if (filter[TITLES] && missingTitleCrypt(filter[TITLES], card)) return false;
@@ -133,35 +135,45 @@ const missingDisciplinesCrypt = (filter, card) => {
   );
 };
 
+const missingDisciplinesOrCrypt = (filter, card) => {
+  return filter.some(
+    (value) =>
+    Object.keys(value).every(
+      (name) =>
+      (!card[DISCIPLINES] || !card[DISCIPLINES][name] || card[DISCIPLINES][name] < value[name]),
+    )
+  )
+};
+
 const missingDisciplinesLibrary = (filter, card) => {
   const disciplines = filter.value;
   const logic = filter[LOGIC];
 
   switch (logic) {
-    case AND:
-      return !disciplines.every((discipline) => {
-        if (discipline === NOT_REQUIRED && !card[DISCIPLINE]) return true;
-        return card[DISCIPLINE].toLowerCase().includes(discipline);
-      });
+  case AND:
+    return !disciplines.every((discipline) => {
+      if (discipline === NOT_REQUIRED && !card[DISCIPLINE]) return true;
+      return card[DISCIPLINE].toLowerCase().includes(discipline);
+    });
 
-    case OR:
-      return !disciplines.some((discipline) => {
-        if (discipline === NOT_REQUIRED && !card[DISCIPLINE]) return true;
-        return card[DISCIPLINE].toLowerCase().includes(discipline);
-      });
+  case OR:
+    return !disciplines.some((discipline) => {
+      if (discipline === NOT_REQUIRED && !card[DISCIPLINE]) return true;
+      return card[DISCIPLINE].toLowerCase().includes(discipline);
+    });
 
-    case NOT:
-      return disciplines.some((discipline) => {
-        if (discipline === NOT_REQUIRED && !card[DISCIPLINE]) return true;
-        return card[DISCIPLINE].toLowerCase().includes(discipline);
-      });
+  case NOT:
+    return disciplines.some((discipline) => {
+      if (discipline === NOT_REQUIRED && !card[DISCIPLINE]) return true;
+      return card[DISCIPLINE].toLowerCase().includes(discipline);
+    });
 
-    case ONLY:
-      if (card[DISCIPLINE].split(/[/&]/).length > disciplines.length) return true;
-      return !disciplines.every((discipline) => {
-        if (discipline === NOT_REQUIRED && !card[DISCIPLINE]) return true;
-        return card[DISCIPLINE].toLowerCase().includes(discipline);
-      });
+  case ONLY:
+    if (card[DISCIPLINE].split(/[/&]/).length > disciplines.length) return true;
+    return !disciplines.every((discipline) => {
+      if (discipline === NOT_REQUIRED && !card[DISCIPLINE]) return true;
+      return card[DISCIPLINE].toLowerCase().includes(discipline);
+    });
   }
 };
 
@@ -213,36 +225,36 @@ const missingTraits = (filter, card, traitsRegexMap) => {
 
 export const missingTrait = (trait, card, traitsRegexMap) => {
   switch (trait) {
-    case PLAYTEST:
-      return !getIsPlaytest(card[ID]);
-    case ADVANCEMENT:
-      return !card[ADV];
-    case BANNED:
-      return !card[BANNED];
-    case NON_TWD:
-      return card[TWD];
-    case MULTI_DISCIPLINE:
-      return !(card[DISCIPLINE].includes("/") || card[DISCIPLINE].includes("&"));
-    case MULTI_TYPE:
-      return !card[TYPE].includes("/");
-    case BURN:
-      return !card[BURN];
-    case PATH_CAINE:
-    case PATH_CATHARI:
-    case PATH_DEATH:
-    case PATH_POWER:
-      return card[PATH].toLowerCase().replace(/ .*/, "") !== trait.replace("path-", "");
-    case NO_REQUIREMENTS:
-      return (
-        card[REQUIREMENT] ||
+  case PLAYTEST:
+    return !getIsPlaytest(card[ID]);
+  case ADVANCEMENT:
+    return !card[ADV];
+  case BANNED:
+    return !card[BANNED];
+  case NON_TWD:
+    return card[TWD];
+  case MULTI_DISCIPLINE:
+    return !(card[DISCIPLINE].includes("/") || card[DISCIPLINE].includes("&"));
+  case MULTI_TYPE:
+    return !card[TYPE].includes("/");
+  case BURN:
+    return !card[BURN];
+  case PATH_CAINE:
+  case PATH_CATHARI:
+  case PATH_DEATH:
+  case PATH_POWER:
+    return card[PATH].toLowerCase().replace(/ .*/, "") !== trait.replace("path-", "");
+  case NO_REQUIREMENTS:
+    return (
+      card[REQUIREMENT] ||
         card[DISCIPLINE] ||
         card[CLAN] ||
         RegExp(/requires a/i, "i").test(card[TEXT])
-      );
-    default:
-      return !RegExp(traitsRegexMap[trait] ? traitsRegexMap[trait](card) : trait, "i").test(
-        card[TEXT],
-      );
+    );
+  default:
+    return !RegExp(traitsRegexMap[trait] ? traitsRegexMap[trait](card) : trait, "i").test(
+      card[TEXT],
+    );
   }
 };
 
@@ -254,12 +266,12 @@ const missingTitleCrypt = (filter, card) => {
 
   if (
     card[ADV]?.[0] &&
-    RegExp(
-      `\\[MERGED\\].*(${titles
+      RegExp(
+        `\\[MERGED\\].*(${titles
         .map((t) => t.replace(VOTE_1, "1 vote (titled)").replace(VOTE_2, "2 votes (titled)"))
         .join("|")})`,
-      "i",
-    ).test(card[TEXT])
+        "i",
+      ).test(card[TEXT])
   ) {
     return false;
   }
@@ -319,34 +331,34 @@ const missingCapacityCrypt = (filter, card) => {
   const logic = filter[LOGIC];
 
   switch (logic) {
-    case OR:
-      return !values.some((value) => {
-        const capacity = Number.parseInt(value[CAPACITY]);
-        const moreless = value.moreless;
+  case OR:
+    return !values.some((value) => {
+      const capacity = Number.parseInt(value[CAPACITY]);
+      const moreless = value.moreless;
 
-        switch (moreless) {
-          case GE:
-            return card[CAPACITY] >= capacity;
-          case LE:
-            return card[CAPACITY] <= capacity;
-          default:
-            return card[CAPACITY] === capacity;
-        }
-      });
-    case NOT:
-      return !values.every((value) => {
-        const capacity = Number.parseInt(value[CAPACITY]);
-        const moreless = value.moreless;
+      switch (moreless) {
+      case GE:
+        return card[CAPACITY] >= capacity;
+      case LE:
+        return card[CAPACITY] <= capacity;
+      default:
+        return card[CAPACITY] === capacity;
+      }
+    });
+  case NOT:
+    return !values.every((value) => {
+      const capacity = Number.parseInt(value[CAPACITY]);
+      const moreless = value.moreless;
 
-        switch (moreless) {
-          case GE:
-            return card[CAPACITY] < capacity;
-          case LE:
-            return card[CAPACITY] > capacity;
-          default:
-            return card[CAPACITY] !== capacity;
-        }
-      });
+      switch (moreless) {
+      case GE:
+        return card[CAPACITY] < capacity;
+      case LE:
+        return card[CAPACITY] > capacity;
+      default:
+        return card[CAPACITY] !== capacity;
+      }
+    });
   }
 };
 
@@ -361,9 +373,9 @@ const missingCapacityLibrary = (filter, card) => {
 
   return !(
     (moreless === LE &&
-      ((match1 && match1[1] <= capacity + 1) || (match2 && match2[1] <= capacity))) ||
-    (moreless === GE &&
-      ((match1 && match1[1] >= capacity) || (match2 && match2[1] >= capacity - 1)))
+     ((match1 && match1[1] <= capacity + 1) || (match2 && match2[1] <= capacity))) ||
+      (moreless === GE &&
+       ((match1 && match1[1] >= capacity) || (match2 && match2[1] >= capacity - 1)))
   );
 };
 
@@ -379,16 +391,16 @@ const missingClan = (filterClan, card) => {
   const logic = filterClan[LOGIC];
 
   switch (logic) {
-    case OR:
-      return !clans.some((clan) => {
-        if (card[CLAN].toLowerCase().split("/").includes(clan)) return true;
-        return clan === NOT_REQUIRED && !card[CLAN];
-      });
-    case NOT:
-      return clans.some((clan) => {
-        if (card[CLAN].toLowerCase().split("/").includes(clan)) return true;
-        return clan === NOT_REQUIRED && !card[CLAN];
-      });
+  case OR:
+    return !clans.some((clan) => {
+      if (card[CLAN].toLowerCase().split("/").includes(clan)) return true;
+      return clan === NOT_REQUIRED && !card[CLAN];
+    });
+  case NOT:
+    return clans.some((clan) => {
+      if (card[CLAN].toLowerCase().split("/").includes(clan)) return true;
+      return clan === NOT_REQUIRED && !card[CLAN];
+    });
   }
 };
 
@@ -428,13 +440,13 @@ const missingType = (filter, card) => {
   const types = filter.value;
 
   switch (filter[LOGIC]) {
-    case AND:
-      return !types.every((type) => testType(card, type));
+  case AND:
+    return !types.every((type) => testType(card, type));
 
-    case OR:
-      return !types.some((type) => testType(card, type));
-    case NOT:
-      return types.some((type) => testType(card, type));
+  case OR:
+    return !types.some((type) => testType(card, type));
+  case NOT:
+    return types.some((type) => testType(card, type));
   }
 };
 
@@ -456,34 +468,34 @@ const missingSet = (filter, card) => {
     const setDate = setsAndPrecons[set][DATE] ?? FUTURE;
 
     switch (age) {
-      case OR_NEWER:
-        if (setDate > dates.max) return false;
-        break;
-      case OR_OLDER:
-        if (setDate < dates.min) return false;
-        break;
-      case NOT_NEWER:
-        if (setDate < dates.max) return false;
-        break;
-      case NOT_OLDER:
-        if (setDate > dates.min) return false;
-        break;
-      default:
-        if (!(set in card[SET])) return false;
+    case OR_NEWER:
+      if (setDate > dates.max) return false;
+      break;
+    case OR_OLDER:
+      if (setDate < dates.min) return false;
+      break;
+    case NOT_NEWER:
+      if (setDate < dates.max) return false;
+      break;
+    case NOT_OLDER:
+      if (setDate > dates.min) return false;
+      break;
+    default:
+      if (!(set in card[SET])) return false;
     }
 
     switch (print) {
-      case ONLY:
-        if (Object.keys(card[SET]).length !== 1) return false;
-        break;
+    case ONLY:
+      if (Object.keys(card[SET]).length !== 1) return false;
+      break;
 
-      case FIRST:
-        if (!((set === PROMO && dates.minPromo <= dates.min) || dates.min === setDate))
-          return false;
-        break;
-      case REPRINT:
-        if (dates.min >= setDate) return false;
-        break;
+    case FIRST:
+      if (!((set === PROMO && dates.minPromo <= dates.min) || dates.min === setDate))
+        return false;
+      break;
+    case REPRINT:
+      if (dates.min >= setDate) return false;
+      break;
     }
 
     return true;
@@ -510,12 +522,12 @@ const missingPrecon = (filter, card) => {
       if (print) {
         const setDate = set !== BCP ? setsAndPrecons[set][DATE] : null;
         switch (print) {
-          case ONLY:
-            return Object.keys(card[SET]).length === 1 && Object.keys(card[SET][set]).length === 1;
-          case FIRST:
-            return dates.min === setDate && dates.min < dates.minPromo;
-          case REPRINT:
-            return dates.min < setDate || dates.minPromo < setDate;
+        case ONLY:
+          return Object.keys(card[SET]).length === 1 && Object.keys(card[SET][set]).length === 1;
+        case FIRST:
+          return dates.min === setDate && dates.min < dates.minPromo;
+        case REPRINT:
+          return dates.min < setDate || dates.minPromo < setDate;
         }
       }
       return true;
@@ -550,58 +562,58 @@ const missingNameOrInitials = (filter, card) => {
 
   return !(
     name.includes(editedFilter) ||
-    name.replace(/[^a-z0-9]/gi, "").includes(editedFilter) ||
-    nameASCII.includes(editedFilter) ||
-    nameASCII.replace(/[^a-z0-9]/gi, "").includes(editedFilter) ||
-    nameAKA.includes(editedFilter) ||
-    nameAKA.replace(/[^a-z0-9]/gi, "").includes(editedFilter) ||
-    checkInitials?.test(name) ||
-    checkInitials?.test(nameASCII) ||
-    checkInitials?.test(nameAKA)
+      name.replace(/[^a-z0-9]/gi, "").includes(editedFilter) ||
+      nameASCII.includes(editedFilter) ||
+      nameASCII.replace(/[^a-z0-9]/gi, "").includes(editedFilter) ||
+      nameAKA.includes(editedFilter) ||
+      nameAKA.replace(/[^a-z0-9]/gi, "").includes(editedFilter) ||
+      checkInitials?.test(name) ||
+      checkInitials?.test(nameASCII) ||
+      checkInitials?.test(nameAKA)
   );
 };
 
 const missingRequirementsCheck = (logic, array, value, hasNoRequirement) => {
   switch (logic) {
-    case AND:
-      return array.some(
-        (name) =>
-          !(
-            RegExp(`(^|[, ])${name}`, "i").test(value) ||
-            (name === NOT_REQUIRED && hasNoRequirement)
-          ),
-      );
-    case OR:
-      return !array.some(
-        (name) =>
-          RegExp(`(^|[, ])${name}`, "i").test(value) || (name === NOT_REQUIRED && hasNoRequirement),
-      );
-    case NOT:
-      return array.some(
-        (name) =>
-          RegExp(`(^|[, ])${name}`, "i").test(value) || (name === NOT_REQUIRED && hasNoRequirement),
-      );
+  case AND:
+    return array.some(
+      (name) =>
+      !(
+        RegExp(`(^|[, ])${name}`, "i").test(value) ||
+          (name === NOT_REQUIRED && hasNoRequirement)
+      ),
+    );
+  case OR:
+    return !array.some(
+      (name) =>
+      RegExp(`(^|[, ])${name}`, "i").test(value) || (name === NOT_REQUIRED && hasNoRequirement),
+    );
+  case NOT:
+    return array.some(
+      (name) =>
+      RegExp(`(^|[, ])${name}`, "i").test(value) || (name === NOT_REQUIRED && hasNoRequirement),
+    );
   }
 };
 
 const missingCostCheck = (logic, filter, cardCost) => {
   return !(
     (logic === LE && cardCost <= filter) ||
-    (logic === GE && cardCost >= filter) ||
-    (logic === EQ && cardCost === Number.parseInt(filter))
+      (logic === GE && cardCost >= filter) ||
+      (logic === EQ && cardCost === Number.parseInt(filter))
   );
 };
 
 const cardDates = (card, addPromo = false) => {
   const cardSets = Object.keys(card[SET]).filter((set) => set !== PROMO && set !== PLAYTEST);
   const setsDates = cardSets
-    .map((key) => setsAndPrecons[key][DATE])
-    .filter((date) => date)
-    .toSorted();
+        .map((key) => setsAndPrecons[key][DATE])
+        .filter((date) => date)
+        .toSorted();
   const promoDates = card[SET].Promo ? Object.keys(card[SET].Promo).toSorted() : [];
 
   const allDates =
-    addPromo && promoDates ? setsDates.concat(promoDates).toSorted() : setsDates.toSorted();
+        addPromo && promoDates ? setsDates.concat(promoDates).toSorted() : setsDates.toSorted();
 
   const minDate = allDates.length > 0 ? allDates[0] : FUTURE;
   const maxDate = allDates.length > 0 ? allDates.at(-1) : FUTURE;

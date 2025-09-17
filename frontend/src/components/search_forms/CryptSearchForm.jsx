@@ -125,6 +125,7 @@ const CryptSearchForm = () => {
 
   useDebounce(() => textInputsAndSearch(), DISCIPLINES_DEBOUNCE_DELAY, [
     cryptFormState[DISCIPLINES],
+    cryptFormState[DISCIPLINES_OR],
     searchInventoryMode,
     searchMissingInventoryMode,
     inventoryMode,
@@ -216,13 +217,8 @@ const CryptSearchForm = () => {
   );
 
   const handleDisciplinesOrChange = useCallback(
-    (name, value) => {
-      console.log(name, value)
-      // if (searchCryptForm[DISCIPLINES]['or'][name] < max) {
-      //   searchCryptForm[DISCIPLINES][name] += 1;
-      // } else {
-      //   searchCryptForm[DISCIPLINES][name] = 0;
-      // }
+    (value) => {
+      searchCryptForm[DISCIPLINES_OR] = value
     },
     [searchCryptForm],
   );
@@ -306,7 +302,7 @@ const CryptSearchForm = () => {
 
       <CryptSearchFormDisciplinesOr
         value={cryptFormState[DISCIPLINES_OR]}
-        onChange={handleDisciplinesOrChange}
+        setValue={handleDisciplinesOrChange}
       />
       <CryptSearchFormVirtues
         value={cryptFormState[DISCIPLINES]}
