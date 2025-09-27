@@ -15,6 +15,8 @@ const CardImage = ({ card, set, className = "max-sm:w-full", size = "md", onClic
       "Action/Reaction",
       "Action/Combat",
       "Political Action",
+      "Ally",
+      "Retainer",
       "Action Modifier",
       "Action Modifier/Combat",
       "Action Modifier/Reaction",
