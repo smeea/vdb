@@ -903,7 +903,7 @@
             {
                 "text":"A weapon available from his ability can be chosen for a {Concealed Weapon}.",
                 "refs":{
-                    "LSJ 20060913":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GpSAQnN6GnY/m/6EqRGDT3u08J"
+                    "LSJ 20050913":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GpSAQnN6GnY/m/6EqRGDT3u08J"
                 }
             },
             {
@@ -2231,16 +2231,16 @@
                 }
             },
             {
-                "text":"If she locks a Toreador who was attempting to block, then that block will fail.",
-                "refs":{
-                    "TOM 19951007":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HUipqz0LFSw/m/pY6uEa3f8-gJ",
-                    "LSJ 19991025":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/R94tyTGJ6VQ/m/KxvkGm1aon8J"
-                }
-            },
-            {
                 "text":"The ability can be used when in torpor.",
                 "refs":{
                     "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
+                }
+            },
+            {
+                "text":"If a minion who is attempting to block is locked, then that block will fail.",
+                "refs":{
+                    "TOM 19951007":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HUipqz0LFSw/m/pY6uEa3f8-gJ",
+                    "LSJ 19991025":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/R94tyTGJ6VQ/m/KxvkGm1aon8J"
                 }
             }
         ],
@@ -32448,6 +32448,13 @@
                     "LSJ 20070322":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Ww-4rYJxi4w/m/P3QchWVq2o4J",
                     "ANK 20180807":"https://www.vekn.net/forum/rules-questions/76905-going-anarch-as-black-hand#89735"
                 }
+            },
+            {
+                "text":"If a minion who is attempting to block is locked, then that block will fail.",
+                "refs":{
+                    "TOM 19951007":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HUipqz0LFSw/m/pY6uEa3f8-gJ",
+                    "LSJ 19991025":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/R94tyTGJ6VQ/m/KxvkGm1aon8J"
+                }
             }
         ],
         "sect":"Sabbat",
@@ -37138,6 +37145,13 @@
                 "refs":{
                     "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ",
                     "LSJ 20100902-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/mFpx91METxM/m/ETLGtyQfvksJ"
+                }
+            },
+            {
+                "text":"If a minion who is attempting to block is locked, then that block will fail.",
+                "refs":{
+                    "TOM 19951007":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HUipqz0LFSw/m/pY6uEa3f8-gJ",
+                    "LSJ 19991025":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/R94tyTGJ6VQ/m/KxvkGm1aon8J"
                 }
             }
         ],

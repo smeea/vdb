@@ -1871,6 +1871,8 @@
     not burned until a total of one victory point has been awarded. [RTR 19991206]
   - If the effect ousting the target simultaneously ousts the target's prey (eg. {Kine Resources Contested}), the victory
     point goes to the Mathusalah who played Life Boon and the target gets 6 pool. [LSJ 20021029]
+  - If you played a Life Boon on your predator, you will not get the VP when you are ousted.  (Reversal of RTR 19990712) [RTR
+    20000501] [LSJ 20020622]
 101110|Line, The:
   - Can reduce the cost in blood (not in pool) of any action (ally, retainer, equipment, political). [ANK 20181007]
   - Cannot be used by an ally acting "as a vampire". [ANK 20200605]
@@ -3599,7 +3601,7 @@
     them as normal, but you cannot draw in your prey's library until you control Agaitas anew. [LSJ 20100304]
   - Cards from his ability that go into an ash heap, hand, or library always go into their owner's ash heap, hand, or library
     (eg. using {Heart of Nizchetus}). [RTR 19970425] [LSJ 20060921]
-  - A weapon available from his ability can be chosen for a {Concealed Weapon}. [LSJ 20060913]
+  - A weapon available from his ability can be chosen for a {Concealed Weapon}. [LSJ 20050913]
   - His ability only applies when the card is played. Any delay in the replacement prevents it (eg. {The Meddling of Semsith}, {Bum's
     Rush}). [LSJ 20020718]
 200033|Akram:
@@ -3613,7 +3615,6 @@
     [ANK 20210620]
 200049|Alexandra:
   - Can use her unlock ability at any point during the turn, including during a political action. [TOM 19960214]
-  - If she locks a Toreador who was attempting to block, then that block will fail. [TOM 19951007] [LSJ 19991025]
 200063|Alvaro, The Scion of Angelica:
   - He gains blood if he casts no vote, even if he has lost his title or is in torpor. [LSJ 20010526]
 200070|Ambrosio Luis Monçada, Plenipotentiary:
@@ -4804,3 +4805,5 @@ G00134|Mandatory additional strike:
   - The additional strike is mandatory. [PIB 20121028]
 G00135|Allocate points for pool damage:
   - Can allocate more points than a Methuselah has pool. [LSJ 20020819]
+G00136|Lock a minion during block attempt:
+  - If a minion who is attempting to block is locked, then that block will fail. [TOM 19951007] [LSJ 19991025]
