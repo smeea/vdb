@@ -48,6 +48,7 @@ const DiffLibrary = ({ cardsTo, deck }) => {
     bloodTotal,
     bloodToTotal,
     libraryByTypeTotal,
+    libraryByTypeToTotal,
   } = useDeckLibrary(cardsFrom, cardsTo);
 
   const {
@@ -95,6 +96,7 @@ const DiffLibrary = ({ cardsTo, deck }) => {
                   <ResultLibraryType
                     cardtype={cardtype}
                     total={libraryByTypeTotal[cardtype]}
+                    totalDiff={<DiffCardsTotalDiff qTo={libraryByTypeToTotal[cardtype]} qFrom={libraryByTypeTotal[cardtype]} />}
                     trifleTotal={cardtype === TYPE_MASTER && trifleTotal}
                   />
                   {showInfo && (

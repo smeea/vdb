@@ -69,7 +69,8 @@ const useDeckLibrary = (cardsList, cardsToList) => {
     const poolToTotal = countTotalCost(cardsTo, POOL);
     const bloodTotal = countTotalCost(cardsFrom, BLOOD);
     const bloodToTotal = countTotalCost(cardsTo, BLOOD);
-    const libraryByTypeTotal = getTotalCardsGroupedBy(library, TYPE);
+    const libraryByTypeTotal = getTotalCardsGroupedBy(cardsFrom, TYPE);
+    const libraryByTypeToTotal = getTotalCardsGroupedBy(cardsTo, TYPE);
     const libraryByDisciplinesTotal = getTotalCardsGroupedBy(
       library.filter((card) => card.c[DISCIPLINE]),
       DISCIPLINE,
@@ -110,6 +111,7 @@ const useDeckLibrary = (cardsList, cardsToList) => {
       bloodTotal,
       bloodToTotal,
       libraryByTypeTotal,
+      libraryByTypeToTotal,
       libraryByClansTotal,
       libraryByDisciplinesTotal,
     };
