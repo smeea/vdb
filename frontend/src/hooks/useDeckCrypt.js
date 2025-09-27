@@ -8,14 +8,17 @@ import { containCard, countCards, getGroups, getRestrictions } from "@/utils";
 const useDeckCrypt = (cardsList, sortMethod, cardsToList) => {
   const limitedCrypt = useSnapshot(limitedStore)[CRYPT];
   const timer = useSnapshot(miscStore)[CRYPT_TIMER];
-  const cryptFrom = Object.values(cardsList).filter((card) => card.q > 0);
-  const cryptTo = Object.values(cardsToList || {}).filter(
+
+  const cardsFrom = Object.values(cardsList);
+  const cardsTo = Object.values(cardsToList || {});
+  const cryptFrom = cardsFrom.filter((card) => card.q > 0);
+  const cryptTo = cardsTo.filter(
     (card) => card.q > 0 && !containCard(cryptFrom, card),
   );
-  const cryptFromSide = Object.values(cardsList).filter(
+  const cryptFromSide = cardsFrom.filter(
     (card) => card.q <= 0 && !containCard(cryptTo, card),
   );
-  const cryptToSide = Object.values(cardsToList || {}).filter(
+  const cryptToSide = cardsTo.filter(
     (card) => card.q <= 0 && !containCard(cryptFrom, card) && !containCard(cryptFromSide, card),
   );
   const crypt = [...cryptFrom, ...cryptTo.map((card) => ({ q: 0, c: card.c }))];
@@ -33,8 +36,8 @@ const useDeckCrypt = (cardsList, sortMethod, cardsToList) => {
       { [CRYPT]: limitedCrypt, [LIBRARY]: {} },
     );
 
-    const cryptTotal = countCards(cryptFrom);
-    const cryptToTotal = countCards(cryptTo);
+    const cryptTotal = countCards(cardsFrom);
+    const cryptToTotal = countCards(cardsTo);
     const { hasWrongGroups, cryptGroups } = getGroups(cryptFrom);
 
     return {
