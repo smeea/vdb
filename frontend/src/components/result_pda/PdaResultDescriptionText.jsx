@@ -3,13 +3,15 @@ import PersonFill from "@icons/person-fill.svg?react";
 import TagFill from "@icons/tag-fill.svg?react";
 import dayjs from "dayjs";
 import { useNavigate } from "react-router";
-import { TwdResultDescriptionTextTr, TwdResultTags } from "@/components";
-import { AUTHOR, BASE, CREATION_DATE, NAME, PDA, SUPERIOR, TAGS, TIMESTAMP } from "@/constants";
+import { ResultLibraryTypeImage, TwdResultDescriptionTextTr, TwdResultTags } from "@/components";
+import { AUTHOR, BASE, CREATION_DATE, LIBRARY, NAME, PDA, SUPERIOR, TAGS, TIMESTAMP } from "@/constants";
+import { useDeckLibrary } from "@/hooks";
 import { clearSearchForm, searchPdaForm, useApp } from "@/context";
 
 const PdaResultDescriptionText = ({ deck }) => {
   const { isMobile } = useApp();
   const navigate = useNavigate();
+  const { libraryByTypeTotal } = useDeckLibrary(deck[LIBRARY]);
   const lastUpdated = dayjs(deck[TIMESTAMP]).format("YYYY-MM-DD");
   const hasTags = [...deck[TAGS][SUPERIOR], ...deck[TAGS][BASE]].length > 0;
 
@@ -44,7 +46,19 @@ const PdaResultDescriptionText = ({ deck }) => {
           )}
         </tbody>
       </table>
-      {hasTags && <TwdResultTags tags={deck[TAGS]} />}
+      <div className='flex flex-col gap-1 max-sm:hidden'>
+        {hasTags && <TwdResultTags tags={deck[TAGS]} />}
+        <div>
+          {Object.keys(libraryByTypeTotal).map((i) => (
+            <div key={i} className="inline-block whitespace-nowrap pr-2.5">
+              <div className="flex items-center gap-0.5">
+                <ResultLibraryTypeImage value={i} />
+                <div className="flex">{libraryByTypeTotal[i]}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
     </>
   );
 };

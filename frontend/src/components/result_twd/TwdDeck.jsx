@@ -24,7 +24,6 @@ const TwdDeck = ({ deck, inPda }) => {
   );
   const parsedDeck = {...deck, [CRYPT]: crypt, [LIBRARY]: library}
   delete parsedDeck[CARDS]
-
   const { libraryByTypeTotal } = useDeckLibrary(library);
 
   return (
@@ -32,18 +31,20 @@ const TwdDeck = ({ deck, inPda }) => {
       <div className="flex sm:gap-2 max-lg:flex-col">
         <div className="basis-full lg:basis-1/4">
           {inPda ? <PdaResultDescription deck={parsedDeck} /> : <TwdResultDescription deck={parsedDeck} />}
-          <div className='sm:hidden'>
+          <div className='px-2 sm:hidden'>
             {!inPda && (parsedDeck[TAGS][SUPERIOR].length > 0 || parsedDeck[TAGS][BASE].length > 0) && (
               <TwdResultTags tags={parsedDeck[TAGS]} />
             )}
-            {Object.keys(libraryByTypeTotal).map((i) => (
-              <div key={i} className="inline-block whitespace-nowrap pr-2.5">
-                <div className="flex items-center gap-0.5">
-                  <ResultLibraryTypeImage value={i} />
-                  <div className="flex">{libraryByTypeTotal[i]}</div>
+            <div>
+              {Object.keys(libraryByTypeTotal).map((i) => (
+                <div key={i} className="inline-block whitespace-nowrap pr-2.5">
+                  <div className="flex items-center gap-0.5">
+                    <ResultLibraryTypeImage value={i} />
+                    <div className="flex">{libraryByTypeTotal[i]}</div>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
         <div className="flex basis-full gap-2 lg:basis-3/4">
