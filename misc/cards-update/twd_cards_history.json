@@ -9636,7 +9636,9 @@
         "player":"Danny McGrul"
     },
     "102293":{
-        "deckid":null
+        "deckid":"12560",
+        "twdDate":"2025-09-06",
+        "player":"Otto Kallokoski"
     },
     "100237":{
         "deckid":"rob2",
@@ -16855,7 +16857,9 @@
         "player":"Robert Goudie"
     },
     "102292":{
-        "deckid":null
+        "deckid":"12560",
+        "twdDate":"2025-09-06",
+        "player":"Otto Kallokoski"
     },
     "101699":{
         "deckid":null
@@ -17979,7 +17983,9 @@
         "player":"Ben Peal"
     },
     "101925":{
-        "deckid":null
+        "deckid":"12149",
+        "twdDate":"2025-05-18",
+        "player":"Darby Keeney"
     },
     "101926":{
         "deckid":null
@@ -18991,9 +18997,7 @@
         "deckid":null
     },
     "102267":{
-        "deckid":"11332",
-        "twdDate":"2024-03-24",
-        "player":"Daniel Gargul\u00e1k"
+        "deckid":null
     },
     "102134":{
         "deckid":"2k6slcqual",
