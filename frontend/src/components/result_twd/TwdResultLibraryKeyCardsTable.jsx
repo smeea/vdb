@@ -70,22 +70,22 @@ const TwdResultLibraryKeyCardsTable = ({ library, withHeader }) => {
           </Toggle>
         )}
       </div>
-      <table className="border-bgSecondary border-x dark:border-bgSecondaryDark">
-        <tbody>
-          {showFullLibrary ? (
-            <DeckLibrary deck={{ [LIBRARY]: library }} handleClick={handleClick} inTwd />
-          ) : (
-            keyCards.map((card) => (
+      {showFullLibrary ? (
+        <DeckLibrary deck={{ [LIBRARY]: library }} handleClick={handleClick} inTwd />
+      ) : (
+        <table className="border-bgSecondary border-x dark:border-bgSecondaryDark">
+          <tbody>
+            {keyCards.map((card) => (
               <TwdResultLibraryKeyCardsTableRow
                 key={card.c[ID]}
                 card={card}
                 handleClick={handleClick}
                 shouldShowModal={shouldShowModal}
               />
-            ))
-          )}
-        </tbody>
-      </table>
+            ))}
+          </tbody>
+        </table>
+      )}
       {shouldShowModal && (
         <ResultModal
           card={currentModalCard}

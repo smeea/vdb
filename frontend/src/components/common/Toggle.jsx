@@ -5,7 +5,7 @@ import { useCallback } from "react";
 import { twMerge } from "tailwind-merge";
 
 const Toggle = ({
-  isOn,
+  isOn = false,
   offValue,
   handleClick,
   size = "md",
