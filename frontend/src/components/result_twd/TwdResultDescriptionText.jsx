@@ -17,8 +17,8 @@ import {
   TAGS,
   TWD,
 } from "@/constants";
-import { useDeckLibrary } from "@/hooks";
 import { clearSearchForm, searchTwdForm, useApp } from "@/context";
+import { useDeckLibrary } from "@/hooks";
 
 const TwdResultDescriptionText = ({ deck }) => {
   const { isMobile } = useApp();
@@ -77,7 +77,7 @@ const TwdResultDescriptionText = ({ deck }) => {
           </TwdResultDescriptionTextTr>
         </tbody>
       </table>
-      <div className='flex flex-col gap-1 max-sm:hidden'>
+      <div className="flex flex-col gap-1 max-sm:hidden">
         {hasTags && <TwdResultTags tags={deck[TAGS]} />}
         <div>
           {Object.keys(libraryByTypeTotal).map((i) => (

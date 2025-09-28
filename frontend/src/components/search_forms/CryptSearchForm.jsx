@@ -218,7 +218,7 @@ const CryptSearchForm = () => {
 
   const handleDisciplinesOrChange = useCallback(
     (value) => {
-      searchCryptForm[DISCIPLINES_OR] = value
+      searchCryptForm[DISCIPLINES_OR] = value;
     },
     [searchCryptForm],
   );

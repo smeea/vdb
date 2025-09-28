@@ -32,8 +32,8 @@ const TwdResultLibraryByTypeTable = ({ library }) => {
   } = useDeckLibrary(library);
 
   const cards = cardtypeSortedFull
-        .filter((cardtype) => libraryByType[cardtype] !== undefined)
-        .flatMap((cardtype) => libraryByType[cardtype]);
+    .filter((cardtype) => libraryByType[cardtype] !== undefined)
+    .flatMap((cardtype) => libraryByType[cardtype]);
 
   const {
     currentModalCard,

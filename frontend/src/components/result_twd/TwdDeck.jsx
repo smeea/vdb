@@ -8,33 +8,36 @@ import {
   TwdResultLibraryKeyCardsTable,
   TwdResultTags,
 } from "@/components";
-import { CARDS, CRYPT, LIBRARY, TAGS, SUPERIOR, BASE } from "@/constants";
+import { BASE, CARDS, CRYPT, LIBRARY, SUPERIOR, TAGS } from "@/constants";
 import { useApp } from "@/context";
 import { useDeckLibrary } from "@/hooks";
 import { parseDeck } from "@/utils";
 
 const TwdDeck = ({ deck, inPda }) => {
-  if (!deck) return;
-
   const { cryptCardBase, libraryCardBase, isNarrow } = useApp();
   const { [CRYPT]: crypt, [LIBRARY]: library } = parseDeck(
     cryptCardBase,
     libraryCardBase,
     deck?.[CARDS],
   );
-  const parsedDeck = {...deck, [CRYPT]: crypt, [LIBRARY]: library}
-  delete parsedDeck[CARDS]
+  const parsedDeck = { ...deck, [CRYPT]: crypt, [LIBRARY]: library };
+  delete parsedDeck[CARDS];
   const { libraryByTypeTotal } = useDeckLibrary(library);
 
   return (
     <div className="group flex flex-col gap-6">
-      <div className="flex sm:gap-2 max-lg:flex-col">
+      <div className="flex max-lg:flex-col sm:gap-2">
         <div className="basis-full lg:basis-1/4">
-          {inPda ? <PdaResultDescription deck={parsedDeck} /> : <TwdResultDescription deck={parsedDeck} />}
-          <div className='px-2 sm:hidden'>
-            {!inPda && (parsedDeck[TAGS][SUPERIOR].length > 0 || parsedDeck[TAGS][BASE].length > 0) && (
-              <TwdResultTags tags={parsedDeck[TAGS]} />
-            )}
+          {inPda ? (
+            <PdaResultDescription deck={parsedDeck} />
+          ) : (
+            <TwdResultDescription deck={parsedDeck} />
+          )}
+          <div className="px-2 sm:hidden">
+            {!inPda &&
+              (parsedDeck[TAGS][SUPERIOR].length > 0 || parsedDeck[TAGS][BASE].length > 0) && (
+                <TwdResultTags tags={parsedDeck[TAGS]} />
+              )}
             <div>
               {Object.keys(libraryByTypeTotal).map((i) => (
                 <div key={i} className="inline-block whitespace-nowrap pr-2.5">

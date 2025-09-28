@@ -5,7 +5,6 @@ import Printer from "@icons/printer.svg?react";
 import ky from "ky";
 import { useState } from "react";
 import { useNavigate } from "react-router";
-import { getIsPlaytest } from "@/utils";
 import {
   ButtonIconed,
   FlexGapped,
@@ -25,18 +24,17 @@ import {
   GENERAL,
   LIBRARY,
   NAME,
-  DECKID,
   PLAYTEST,
+  PLAYTEST_OLD,
   PRECONS,
   SCORE,
   TEXT,
   XLSX,
-  PLAYTEST_OLD,
 } from "@/constants";
 import { useApp } from "@/context";
 import { useFetch } from "@/hooks";
 import { playtestServices } from "@/services";
-import { capitalize } from "@/utils";
+import { capitalize, getIsPlaytest } from "@/utils";
 
 const PlaytestReportsAll = () => {
   const {
@@ -144,18 +142,18 @@ const PlaytestReportsAll = () => {
   const { value: reportsGeneral } = useFetch(urlReportsGeneral, {}, [isPlaytestAdmin]);
 
   Object.keys(reportsCrypt || {}).forEach((id) => {
-    if (!getIsPlaytest(id) || cryptCardBase[id][PLAYTEST_OLD]) delete reportsCrypt[id]
-  })
+    if (!getIsPlaytest(id) || cryptCardBase[id][PLAYTEST_OLD]) delete reportsCrypt[id];
+  });
 
   Object.keys(reportsLibrary || {}).forEach((id) => {
-    if (!getIsPlaytest(id) || libraryCardBase[id][PLAYTEST_OLD]) delete reportsLibrary[id]
-  })
+    if (!getIsPlaytest(id) || libraryCardBase[id][PLAYTEST_OLD]) delete reportsLibrary[id];
+  });
 
   Object.keys(reportsPrecons || {}).forEach((id) => {
-    const ptDeckid = `${PLAYTEST}:${id}`
-    if (!preconDecks[ptDeckid] || preconDecks?.[ptDeckid]?.[PLAYTEST_OLD]) delete reportsPrecons[id]
-  })
-
+    const ptDeckid = `${PLAYTEST}:${id}`;
+    if (!preconDecks[ptDeckid] || preconDecks?.[ptDeckid]?.[PLAYTEST_OLD])
+      delete reportsPrecons[id];
+  });
 
   const getMaxReportsSameScore = (data) => {
     return Object.entries(data).reduce((acc, value) => {

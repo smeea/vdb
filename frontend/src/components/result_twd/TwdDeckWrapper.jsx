@@ -5,7 +5,7 @@ const TwdDeckWrapper = ({ deckid, inPda }) => {
   const url = `${import.meta.env.VITE_API_URL}/${inPda ? "pda" : "twd"}/${deckid}`;
   const { value } = useFetch(url, {}, []);
 
-  return <TwdDeck deck={value} inPda={inPda} />;
+  if (value) return <TwdDeck deck={value} inPda={inPda} />;
 };
 
 export default TwdDeckWrapper;

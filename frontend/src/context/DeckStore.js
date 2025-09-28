@@ -31,7 +31,7 @@ import { miscStore, startCryptTimer } from "@/context";
 import { deckServices } from "@/services";
 import { deepClone } from "@/utils";
 
-const VDB_GMT_OFFSET = 3
+const VDB_GMT_OFFSET = 3;
 
 export const deckStore = proxy({
   [DECK]: undefined,
@@ -72,7 +72,7 @@ export const deckCardChange = (deckid, card, q) => {
 
   if (cardSrc === CRYPT) startCryptTimer();
 
-  deckStore[DECKS][deckid][TIMESTAMP] = dayjs().add(VDB_GMT_OFFSET, 'hour').toString()
+  deckStore[DECKS][deckid][TIMESTAMP] = dayjs().add(VDB_GMT_OFFSET, "hour").toString();
 
   deckServices.cardChange(deckid, card[ID], q).catch(() => {
     deckStore[DECK] = initialDeckState;

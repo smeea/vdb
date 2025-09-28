@@ -4,9 +4,19 @@ import TagFill from "@icons/tag-fill.svg?react";
 import dayjs from "dayjs";
 import { useNavigate } from "react-router";
 import { ResultLibraryTypeImage, TwdResultDescriptionTextTr, TwdResultTags } from "@/components";
-import { AUTHOR, BASE, CREATION_DATE, LIBRARY, NAME, PDA, SUPERIOR, TAGS, TIMESTAMP } from "@/constants";
-import { useDeckLibrary } from "@/hooks";
+import {
+  AUTHOR,
+  BASE,
+  CREATION_DATE,
+  LIBRARY,
+  NAME,
+  PDA,
+  SUPERIOR,
+  TAGS,
+  TIMESTAMP,
+} from "@/constants";
 import { clearSearchForm, searchPdaForm, useApp } from "@/context";
+import { useDeckLibrary } from "@/hooks";
 
 const PdaResultDescriptionText = ({ deck }) => {
   const { isMobile } = useApp();
@@ -46,7 +56,7 @@ const PdaResultDescriptionText = ({ deck }) => {
           )}
         </tbody>
       </table>
-      <div className='flex flex-col gap-1 max-sm:hidden'>
+      <div className="flex flex-col gap-1 max-sm:hidden">
         {hasTags && <TwdResultTags tags={deck[TAGS]} />}
         <div>
           {Object.keys(libraryByTypeTotal).map((i) => (

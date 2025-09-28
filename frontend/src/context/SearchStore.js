@@ -7,8 +7,8 @@ import {
   ANY,
   ARTIST,
   CRYPT,
-  DISCIPLINES_OR,
   CRYPT_COMPARE,
+  DISCIPLINES_OR,
   LIBRARY,
   LIBRARY_COMPARE,
   PDA,
@@ -61,11 +61,11 @@ export const setLibraryCompare = (v) => {
 
 export const clearSearchForm = (target) => {
   switch (target) {
-  case CRYPT:
-    searchCryptForm[TEXT] = structuredClone(defaultsCryptForm[TEXT]);
-    searchCryptForm[VOTES] = ANY;
-    searchCryptForm[ARTIST] = ANY;
-    searchCryptForm[DISCIPLINES_OR] = [{}];
+    case CRYPT:
+      searchCryptForm[TEXT] = structuredClone(defaultsCryptForm[TEXT]);
+      searchCryptForm[VOTES] = ANY;
+      searchCryptForm[ARTIST] = ANY;
+      searchCryptForm[DISCIPLINES_OR] = [{}];
 
       Object.keys(defaultsCryptForm).forEach((k) => {
         if ([TEXT, VOTES, ARTIST].includes(k)) return;

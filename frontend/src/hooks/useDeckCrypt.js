@@ -12,12 +12,8 @@ const useDeckCrypt = (cardsList, sortMethod, cardsToList) => {
   const cardsFrom = Object.values(cardsList);
   const cardsTo = Object.values(cardsToList || {});
   const cryptFrom = cardsFrom.filter((card) => card.q > 0);
-  const cryptTo = cardsTo.filter(
-    (card) => card.q > 0 && !containCard(cryptFrom, card),
-  );
-  const cryptFromSide = cardsFrom.filter(
-    (card) => card.q <= 0 && !containCard(cryptTo, card),
-  );
+  const cryptTo = cardsTo.filter((card) => card.q > 0 && !containCard(cryptFrom, card));
+  const cryptFromSide = cardsFrom.filter((card) => card.q <= 0 && !containCard(cryptTo, card));
   const cryptToSide = cardsTo.filter(
     (card) => card.q <= 0 && !containCard(cryptFrom, card) && !containCard(cryptFromSide, card),
   );
