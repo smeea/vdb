@@ -1,6 +1,11 @@
 {
-  "version": "2025-09-11",
+  "version": "2025-09-28",
   "changes": [
-    "Hotfix"
+    "Add disciplines OR-logic filter to crypt search",
+    "Add card types breakdown to TWD/PDA decks description",
+    "Add legacy ally and retainer images",
+    "Update TWDA",
+    "Update Rulings",
+    "Other fixes and improvements"
   ]
 }
