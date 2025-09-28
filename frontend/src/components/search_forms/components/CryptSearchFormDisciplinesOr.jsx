@@ -81,9 +81,23 @@ const CryptSearchFormDisciplinesOr = ({ value, setValue }) => {
               </>
             )}
             {Object.keys(i).length < 2 && <Box onClick={() => openForm(idx)} />}
+            {idx === activeForm && (
+              <div className="flex h-[39px] items-center justify-center px-1">
+                <Button
+                  className="h-[20px] w-[20px]"
+                  noPadding
+                  title="Remove active filter"
+                  onClick={clearForm}
+                >
+                  <div className="flex items-center justify-center">
+                    <XLg width="13" height="13" viewBox="0 0 16 16" />
+                  </div>
+                </Button>
+              </div>
+            )}
           </div>
         ))}
-        <Button className="mx-1 h-[39px] w-[34px] text-sm" onClick={addForm}>
+        <Button className="h-[39px] w-[34px] text-sm" onClick={addForm}>
           +OR DIS
         </Button>
       </div>
@@ -109,13 +123,6 @@ const CryptSearchFormDisciplinesOr = ({ value, setValue }) => {
             >
               <div className="flex items-center justify-center gap-2">
                 <ChevronBarContract width="19" height="19" viewBox="0 0 16 16" />
-              </div>
-            </Button>
-          </div>
-          <div className="flex h-[39px] w-[39px] items-center justify-center">
-            <Button className="h-[25px] w-[25px]" title="Remove active filter" onClick={clearForm}>
-              <div className="flex items-center justify-center gap-2">
-                <XLg width="14" height="14" viewBox="0 0 16 16" />
               </div>
             </Button>
           </div>
