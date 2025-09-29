@@ -7,6 +7,7 @@
 - Limited in TWD/PDA search
 - TWD search with % V5-compatibility
 - Click on scan image to close modal on mobile (need refactor)
+- Add score chart to pt card reports in card view
 
 # FEATURES ON HOLD
 - Indicator of inventory-perfect decks in selector -> performance issue for many decks

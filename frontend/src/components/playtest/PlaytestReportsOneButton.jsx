@@ -8,7 +8,7 @@ import {
   Modal,
   PlaytestReportEntryWrapper,
 } from "@/components";
-import { ID, NAME } from "@/constants";
+import { ID, NAME, DECK } from "@/constants";
 import { useApp } from "@/context";
 
 const PlaytestReportsOneButton = ({ value, isPrecon = false }) => {
@@ -34,7 +34,7 @@ const PlaytestReportsOneButton = ({ value, isPrecon = false }) => {
               {!isMobile &&
                 (isPrecon ? (
                   <div className="w-[358px]">
-                    <DeckCrypt deck={value.deck} noDisciplines />
+                    <DeckCrypt deck={value[DECK]} noDisciplines />
                   </div>
                 ) : (
                   <CardImage card={value} onClick={() => setShow(false)} />

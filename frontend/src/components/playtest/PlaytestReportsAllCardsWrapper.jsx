@@ -9,7 +9,6 @@ const PlaytestReportsAllCardsWrapper = ({ reports, target, sortMethod, maxSameSc
   const sort = target === CRYPT ? cryptSort : librarySort;
   const cardBase = target === CRYPT ? cryptCardBase : libraryCardBase;
 
-  // TODO: refactor because 'reports' already filtered
   const products = useMemo(
     () =>
       sort(

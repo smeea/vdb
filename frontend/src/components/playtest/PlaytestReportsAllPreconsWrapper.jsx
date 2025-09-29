@@ -6,7 +6,6 @@ import { useApp } from "@/context";
 const PlaytestReportsAllPreconsWrapper = ({ reports, maxSameScore }) => {
   const { preconDecks } = useApp();
 
-  // TODO: refactor because 'reports' already filtered
   const products = useMemo(
     () =>
       Object.values(preconDecks || {}).filter((i) => {
