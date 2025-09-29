@@ -1,3 +1,4 @@
+import cardtypeSortedFull from "@/assets/data/cardtypeSortedFull.json";
 import {
   Hr,
   PdaResultDescription,
@@ -33,20 +34,24 @@ const TwdDeck = ({ deck, inPda }) => {
           ) : (
             <TwdResultDescription deck={parsedDeck} />
           )}
-          <div className="px-2 sm:hidden">
+          <div className="flex px-2 sm:hidden">
             {!inPda &&
               (parsedDeck[TAGS][SUPERIOR].length > 0 || parsedDeck[TAGS][BASE].length > 0) && (
-                <TwdResultTags tags={parsedDeck[TAGS]} />
-              )}
-            <div>
-              {Object.keys(libraryByTypeTotal).map((i) => (
-                <div key={i} className="inline-block whitespace-nowrap pr-2.5">
-                  <div className="flex items-center gap-0.5">
-                    <ResultLibraryTypeImage value={i} />
-                    <div className="flex">{libraryByTypeTotal[i]}</div>
-                  </div>
+                <div className="basis-4/9">
+                  <TwdResultTags tags={parsedDeck[TAGS]} />
                 </div>
-              ))}
+              )}
+            <div className="basis-5/9">
+              {cardtypeSortedFull
+                .filter((t) => libraryByTypeTotal[t])
+                .map((i) => (
+                  <div key={i} className="inline-block whitespace-nowrap pr-2.5">
+                    <div className="flex items-center gap-0.5">
+                      <ResultLibraryTypeImage value={i} />
+                      <div className="flex">{libraryByTypeTotal[i]}</div>
+                    </div>
+                  </div>
+                ))}
             </div>
           </div>
         </div>

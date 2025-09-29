@@ -4,13 +4,12 @@ import PersonFill from "@icons/person-fill.svg?react";
 import TagFill from "@icons/tag-fill.svg?react";
 import TrophyFill from "@icons/trophy-fill.svg?react";
 import { useNavigate } from "react-router";
-import { ResultLibraryTypeImage, TwdResultDescriptionTextTr, TwdResultTags } from "@/components";
+import { TwdResultDescriptionTextTr, TwdResultTags } from "@/components";
 import {
   AUTHOR,
   BASE,
   CREATION_DATE,
   EVENT,
-  LIBRARY,
   LOCATION,
   NAME,
   SUPERIOR,
@@ -18,12 +17,10 @@ import {
   TWD,
 } from "@/constants";
 import { clearSearchForm, searchTwdForm, useApp } from "@/context";
-import { useDeckLibrary } from "@/hooks";
 
 const TwdResultDescriptionText = ({ deck }) => {
   const { isMobile } = useApp();
   const navigate = useNavigate();
-  const { libraryByTypeTotal } = useDeckLibrary(deck[LIBRARY]);
   const hasTags = [...deck[TAGS][SUPERIOR], ...deck[TAGS][BASE]].length > 0;
 
   const handleClick = (target, value) => {
@@ -77,19 +74,7 @@ const TwdResultDescriptionText = ({ deck }) => {
           </TwdResultDescriptionTextTr>
         </tbody>
       </table>
-      <div className="flex flex-col gap-1 max-sm:hidden">
-        {hasTags && <TwdResultTags tags={deck[TAGS]} />}
-        <div>
-          {Object.keys(libraryByTypeTotal).map((i) => (
-            <div key={i} className="inline-block whitespace-nowrap pr-2.5">
-              <div className="flex items-center gap-0.5">
-                <ResultLibraryTypeImage value={i} />
-                <div className="flex">{libraryByTypeTotal[i]}</div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
+      {!isMobile && hasTags && <TwdResultTags tags={deck[TAGS]} />}
     </>
   );
 };
