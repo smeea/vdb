@@ -230,7 +230,6 @@ export { default as PlaytestManage } from "./playtest/PlaytestManage";
 export { default as PlaytestManageAdd } from "./playtest/PlaytestManageAdd";
 export { default as PlaytestManagePlayer } from "./playtest/PlaytestManagePlayer";
 export { default as PlaytestReportEntry } from "./playtest/PlaytestReportEntry.jsx";
-export { default as PlaytestReportEntryWrapper } from "./playtest/PlaytestReportEntryWrapper.jsx";
 export { default as PlaytestReportForm } from "./playtest/PlaytestReportForm.jsx";
 export { default as PlaytestReportsAll } from "./playtest/PlaytestReportsAll.jsx";
 export { default as PlaytestReportsAllCardOrPrecon } from "./playtest/PlaytestReportsAllCardOrPrecon.jsx";
