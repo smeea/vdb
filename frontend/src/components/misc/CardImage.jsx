@@ -9,11 +9,7 @@ const CardImage = ({ card, set, className = "max-sm:w-full", size = "md", onClic
 
   const hasLegacy =
     (card[ID] > 200000 && card[CLAN] !== "Hecata" && card[SECT] !== "Imbued") ||
-    ![
-      "Conviction",
-      "Power",
-      "Event"
-    ].includes(card[TYPE]);
+    !["Conviction", "Power", "Event"].includes(card[TYPE]);
 
   const url =
     showLegacyImage && hasLegacy

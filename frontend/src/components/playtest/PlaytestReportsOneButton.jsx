@@ -1,27 +1,24 @@
 import InboxesFill from "@icons/inboxes-fill.svg?react";
-import { twMerge } from "tailwind-merge";
 import { useState } from "react";
-import { useFetch } from "@/hooks";
 import {
   ButtonIconed,
   CardImage,
   DeckCrypt,
   FlexGapped,
   Modal,
+  PlaytestReportEntry,
   PlaytestScores,
   PlaytestScoresChart,
-  PlaytestReportEntry,
 } from "@/components";
-import { SCORE, PRECONS, ID, CARDS, NAME, DECK } from "@/constants";
+import { CARDS, DECK, ID, NAME, PRECONS, SCORE } from "@/constants";
 import { useApp } from "@/context";
-
+import { useFetch } from "@/hooks";
 
 const PlaytestReportsOneButton = ({ value, isPrecon = false }) => {
   const { isMobile } = useApp();
   const [show, setShow] = useState();
   const url = `${import.meta.env.VITE_API_URL}/playtest/export/${isPrecon ? PRECONS : CARDS}/${value[ID]}`;
   const { value: report } = useFetch(url, {}, [value[ID]]);
-
 
   // TODO refactor with DRY => PlaytestReportsAllCardOrPrecon
   const q = report && Object.values(report).filter((i) => i[SCORE] > 0).length;
@@ -46,13 +43,13 @@ const PlaytestReportsOneButton = ({ value, isPrecon = false }) => {
           <FlexGapped className="max-sm:flex-col">
             <div className="flex flex-col gap-2 sm:gap-4">
               {!isMobile &&
-               (isPrecon ? (
-                 <div className="w-[358px]">
-                   <DeckCrypt deck={value[DECK]} noDisciplines />
-                 </div>
-               ) : (
-                 <CardImage card={value} onClick={() => setShow(false)} />
-               ))}
+                (isPrecon ? (
+                  <div className="w-[358px]">
+                    <DeckCrypt deck={value[DECK]} noDisciplines />
+                  </div>
+                ) : (
+                  <CardImage card={value} onClick={() => setShow(false)} />
+                ))}
               {score > 0 && (
                 <FlexGapped className="flex-col">
                   <div className="flex items-center justify-center">
