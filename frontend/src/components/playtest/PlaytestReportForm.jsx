@@ -9,7 +9,7 @@ import {
   Input,
   InputLabel,
   PlaytestReportsOneButton,
-  PlaytestScores,
+  PlaytestScoresStars,
   Textarea,
 } from "@/components";
 import { CARDS, DECK, ID, NAME, PRECONS, SCORE, TEXT, VALUE } from "@/constants";
@@ -133,7 +133,7 @@ const PlaytestReportForm = ({ id, deck, setIsHotkeysDisabled, isPrecon = false }
         />
       </div>
       <div className="flex w-full items-center justify-between gap-4">
-        <PlaytestScores value={report[SCORE]} handleClick={handleScoreChange} />
+        <PlaytestScoresStars value={report[SCORE]} handleClick={handleScoreChange} />
         <div className="flex items-center justify-between gap-2">
           <Checkbox
             className="max-sm:hidden"

@@ -1,47 +1,39 @@
-import Star from "@icons/star.svg?react";
-import StarFill from "@icons/star-fill.svg?react";
-import StarHalf from "@icons/star-half.svg?react";
-import { twMerge } from "tailwind-merge";
-import { useApp } from "@/context";
+import { FlexGapped, PlaytestScoresChart, PlaytestScoresStars } from "@/components";
+import { SCORE } from "@/constants";
 
-const PlaytestScores = ({ value, handleClick, disabled, isSmall }) => {
-  const { isMobile } = useApp();
-  const SIZE = isSmall ? (isMobile ? "16" : "20") : "24";
-
-  const titles = [
-    "Useless / Unplayable",
-    "Extremely weak",
-    "Very weak",
-    "Weak",
-    "Average, on the weaker side",
-    "Average, on the stronger side",
-    "Strong",
-    "Very strong",
-    "Extremely Strong",
-    "Overpowered / Broken",
-  ];
+const PlaytestScores = ({ report, maxSameScore }) => {
+  const q = report && Object.values(report).filter((i) => i[SCORE] > 0).length;
+  const score = report && Object.values(report).reduce((acc, value) => acc + value[SCORE], 0) / q;
+  const scoreRounded = Math.round(score * 10) / 10;
+  const scoreRoundedHalf = Math.round(score * 2) / 2;
 
   return (
-    <div className="flex gap-1.5 px-1 sm:gap-2 print:dark:text-fgPrimary">
-      {Array.from(Array(10).keys()).map((i) => {
-        return (
-          <div
-            key={i}
-            className={twMerge("flex print:max-w-[14px]", !disabled && "cursor-pointer")}
-            onClick={() => (disabled ? null : handleClick(i + 1))}
-            title={titles[i]}
-          >
-            {i + 0.5 === value ? (
-              <StarHalf width={SIZE} height={SIZE} />
-            ) : i < value ? (
-              <StarFill width={SIZE} height={SIZE} />
-            ) : (
-              <Star width={SIZE} height={SIZE} />
-            )}
+    <>
+      {score > 0 && (
+        <FlexGapped className="flex-col">
+          <div className="flex items-center justify-center">
+            <PlaytestScoresStars value={scoreRoundedHalf} disabled />
           </div>
-        );
-      })}
-    </div>
+          <div className="flex flex-col gap-2">
+            <div className="flex items-center">
+              <PlaytestScoresChart value={report} maxSameScore={maxSameScore} />
+            </div>
+            <div className="flex justify-between">
+              <div className="min-w-[80px] font-bold text-fgSecondary dark:text-fgSecondaryDark print:dark:text-fgSecondary">
+                Avg. score:
+              </div>
+              <div className="print:dark:text-fgPrimary">{scoreRounded}</div>
+            </div>
+            <div className="flex justify-between">
+              <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark print:dark:text-fgSecondary">
+                Reports:
+              </div>
+              <div className="print:dark:text-fgPrimary">{q}</div>
+            </div>
+          </div>
+        </FlexGapped>
+      )}
+    </>
   );
 };
 

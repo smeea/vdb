@@ -8,9 +8,8 @@ import {
   Modal,
   PlaytestReportEntry,
   PlaytestScores,
-  PlaytestScoresChart,
 } from "@/components";
-import { CARDS, DECK, ID, NAME, PRECONS, SCORE } from "@/constants";
+import { CARDS, DECK, ID, NAME, PRECONS } from "@/constants";
 import { useApp } from "@/context";
 import { useFetch } from "@/hooks";
 
@@ -19,12 +18,6 @@ const PlaytestReportsOneButton = ({ value, isPrecon = false }) => {
   const [show, setShow] = useState();
   const url = `${import.meta.env.VITE_API_URL}/playtest/export/${isPrecon ? PRECONS : CARDS}/${value[ID]}`;
   const { value: report } = useFetch(url, {}, [value[ID]]);
-
-  // TODO refactor with DRY => PlaytestReportsAllCardOrPrecon
-  const q = report && Object.values(report).filter((i) => i[SCORE] > 0).length;
-  const score = report && Object.values(report).reduce((acc, value) => acc + value[SCORE], 0) / q;
-  const scoreRounded = Math.round(score * 10) / 10;
-  const scoreRoundedHalf = Math.round(score * 2) / 2;
 
   return (
     <>
@@ -35,11 +28,7 @@ const PlaytestReportsOneButton = ({ value, isPrecon = false }) => {
         icon={<InboxesFill />}
       />
       {show && (
-        <Modal
-          size="lg"
-          title={`Playtest Report - ${value[NAME]}`}
-          handleClose={() => setShow(false)}
-        >
+        <Modal size="lg" title={value[NAME]} handleClose={() => setShow(false)}>
           <FlexGapped className="max-sm:flex-col">
             <div className="flex flex-col gap-2 sm:gap-4">
               {!isMobile &&
@@ -50,30 +39,8 @@ const PlaytestReportsOneButton = ({ value, isPrecon = false }) => {
                 ) : (
                   <CardImage card={value} onClick={() => setShow(false)} />
                 ))}
-              {score > 0 && (
-                <FlexGapped className="flex-col">
-                  <div className="flex items-center justify-center">
-                    <PlaytestScores value={scoreRoundedHalf} disabled />
-                  </div>
-                  <div className="flex flex-col gap-2">
-                    <div className="flex items-center">
-                      <PlaytestScoresChart value={report} />
-                    </div>
-                    <div className="flex justify-between">
-                      <div className="min-w-[80px] font-bold text-fgSecondary dark:text-fgSecondaryDark print:dark:text-fgSecondary">
-                        Avg. score:
-                      </div>
-                      <div className="print:dark:text-fgPrimary">{scoreRounded}</div>
-                    </div>
-                    <div className="flex justify-between">
-                      <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark print:dark:text-fgSecondary">
-                        Reports:
-                      </div>
-                      <div className="print:dark:text-fgPrimary">{q}</div>
-                    </div>
-                  </div>
-                </FlexGapped>
-              )}
+
+              <PlaytestScores report={report} />
             </div>
 
             {report && <PlaytestReportEntry value={report} />}

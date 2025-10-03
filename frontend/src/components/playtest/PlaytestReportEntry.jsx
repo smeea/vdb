@@ -1,6 +1,6 @@
 import EyeFill from "@icons/eye-fill.svg?react";
 import EyeSlashFill from "@icons/eye-slash-fill.svg?react";
-import { Hr, PlaytestScores } from "@/components";
+import { Hr, PlaytestScoresStars } from "@/components";
 import { SCORE, TEXT } from "@/constants";
 import { useApp } from "@/context";
 
@@ -23,7 +23,7 @@ const Report = ({ id, text, score, isPlayed }) => {
           )}
         </div>
         <div className="flex items-center justify-end gap-2 sm:gap-4">
-          <PlaytestScores value={score} isSmall disabled />
+          <PlaytestScoresStars value={score} isSmall disabled />
           <div
             className={isPlayed ? "print:text-fgPrimary" : "text-fgRed dark:text-fgRedDark"}
             title={`Was ${isPlayed ? "" : "not "}seen in play`}

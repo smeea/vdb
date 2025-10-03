@@ -239,6 +239,7 @@ export { default as PlaytestReportsAllPreconsWrapper } from "./playtest/Playtest
 export { default as PlaytestReportsOneButton } from "./playtest/PlaytestReportsOneButton.jsx";
 export { default as PlaytestScores } from "./playtest/PlaytestScores.jsx";
 export { default as PlaytestScoresChart } from "./playtest/PlaytestScoresChart.jsx";
+export { default as PlaytestScoresStars } from "./playtest/PlaytestScoresStars.jsx";
 export { default as PlaytestUserCard } from "./playtest/PlaytestUserCard.jsx";
 export { default as ResultClanImage } from "./result_common/ResultClanImage.jsx";
 export { default as ResultDisciplineImage } from "./result_common/ResultDisciplineImage.jsx";
