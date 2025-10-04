@@ -1,5 +1,4 @@
 # FIX
-- Hand size filter
 
 # FIX ON HOLD
 - Deck-in-Url trimmed at first card - can't reproduce in dev environment
