@@ -1,17 +1,11 @@
 import { DiffQuantityDiff } from "@/components";
 
-const DiffCardsTotalDiff = ({ qTo, qFrom }) => {
+const DiffCardsTotalDiff = ({ qTo = 0, qFrom = 0 }) => {
   return (
-    <>
-      {qTo === qFrom ? (
-        qTo
-      ) : (
-        <div className="flex">
-          {qFrom}
-          <DiffQuantityDiff qFrom={qFrom} qTo={qTo} />
-        </div>
-      )}
-    </>
+    <div className="flex">
+      {qFrom}
+      {qTo !== qFrom && <DiffQuantityDiff qFrom={qFrom} qTo={qTo} />}
+    </div>
   );
 };
 

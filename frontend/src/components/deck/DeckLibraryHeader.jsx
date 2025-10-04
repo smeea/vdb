@@ -51,8 +51,12 @@ const DeckLibraryHeader = ({
         <div className="flex basis-full justify-between">
           <div className="flex basis-full items-center justify-between gap-2 px-2 font-bold">
             <div className="flex">
-              Library [{libraryTotalDiff ?? libraryTotal}
-              {!inMissing && (libraryTotal < 60 || libraryTotal > 90) && " of 60-90"}]
+              Library [
+              <div className="flex gap-1">
+                <div>{libraryTotalDiff ?? libraryTotal}</div>
+                {!inMissing && (libraryTotal < 60 || libraryTotal > 90) && "of 60-90"}
+              </div>
+              ]
             </div>
             <div className="flex gap-2">
               {!inMissing && (
