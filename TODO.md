@@ -7,7 +7,6 @@
 - Limited in TWD/PDA search
 - TWD search with % V5-compatibility
 - Click on scan image to close modal on mobile (need refactor)
-- Extra lib title requirements
 
 # FEATURES ON HOLD
 - Indicator of inventory-perfect decks in selector -> performance issue for many decks
@@ -15,4 +14,3 @@
 
 # TECH IMPROVEMENTS
 - Refactor with useEffectEvent https://react.dev/learn/separating-events-from-effects#extracting-non-reactive-logic-out-of-effects
-- Refactor with Activity https://react.dev/reference/react/Activity

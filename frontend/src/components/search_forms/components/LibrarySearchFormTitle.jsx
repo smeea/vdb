@@ -22,6 +22,7 @@ import {
   REGENT,
   TITLE,
   TITLED,
+  TITLED_SPEC,
 } from "@/constants";
 
 const LibrarySearchFormTitle = ({ value, onChange, searchForm }) => {
@@ -30,7 +31,8 @@ const LibrarySearchFormTitle = ({ value, onChange, searchForm }) => {
   const options = [
     ["ANY", ANY],
     ["Non-titled", NON_TITLED],
-    ["Titled", TITLED],
+    ["Titled (any)", TITLED],
+    ["Titled (specific)", TITLED_SPEC],
     ["Primogen", PRIMOGEN],
     ["Prince", PRINCE],
     ["Justicar", JUSTICAR],

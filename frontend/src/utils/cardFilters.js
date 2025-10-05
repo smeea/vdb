@@ -73,6 +73,7 @@ import {
   SET,
   TEXT,
   TITLE,
+  TITLED_SPEC,
   TITLES,
   TRAITS,
   TWD,
@@ -280,8 +281,12 @@ const missingTitleCrypt = (filter, card) => {
 };
 
 const missingTitleLibrary = (filter, card) => {
-  const requirements = card[REQUIREMENT].toLowerCase();
+  let requirements = card[REQUIREMENT].toLowerCase();
   const hasNoRequirement = !requiredTitleList.some((title) => requirements.includes(title));
+
+  if (filter.value.includes(TITLED_SPEC) && !hasNoRequirement) {
+    requirements += `,${TITLED_SPEC}`;
+  }
 
   return missingRequirementsCheck(filter[LOGIC], filter.value, requirements, hasNoRequirement);
 };
@@ -601,8 +606,7 @@ const missingCostCheck = (logic, filter, cardCost) => {
     (logic === LE && cardCost <= filter) ||
     (logic === GE && cardCost >= filter) ||
     (logic === EQ && cardCost === Number.parseInt(filter))
-  );
-};
+  );};
 
 const cardDates = (card, addPromo = false) => {
   const cardSets = Object.keys(card[SET]).filter((set) => set !== PROMO && set !== PLAYTEST);

@@ -250,6 +250,7 @@ export const TEXT = "text";
 export const TIMESTAMP = "timestamp";
 export const TITLE = "title";
 export const TITLED = "titled";
+export const TITLED_SPEC = "titled specific";
 export const TITLES = "titles";
 export const TO = "to";
 export const TRAITS = "traits";
