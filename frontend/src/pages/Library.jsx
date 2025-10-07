@@ -1,4 +1,4 @@
-import { useEffect, useMemo } from "react";
+import { Activity, useEffect, useMemo } from "react";
 import { useSearchParams } from "react-router";
 import { twMerge } from "tailwind-merge";
 import { useSnapshot } from "valtio";
@@ -71,36 +71,32 @@ const Library = () => {
             <DeckSelectorAndDisplay />
           )}
         </div>
-        {showResultCol && (
+        <Activity mode={showResultCol ? "visible" : "hidden"}>
           <div className="basis-full sm:basis-7/12 lg:basis-6/12 xl:basis-5/12">
             {((isMobile && libraryCompare && libraryResults) || (!isMobile && libraryCompare)) && (
               <div>
                 <ResultLibrary cards={libraryCompare} setCards={setLibraryCompare} inCompare />
               </div>
             )}
-            {libraryResults !== undefined && (
+            <Activity mode={libraryResults !== undefined ? "visible" : "hidden"}>
               <ResultLibrary cards={libraryResults} setCards={setLibraryResults} />
-            )}
+            </Activity>
           </div>
-        )}
-        {showSearchForm && (
-          <>
-            <div className="basis-full max-sm:p-2 sm:basis-5/12 lg:basis-4/12 xl:basis-3/12">
-              <LibrarySearchForm />
-            </div>
-            <div className={deck && addMode ? "hidden" : "hidden lg:flex lg:basis-1/12"} />
-          </>
-        )}
+        </Activity>
+        <Activity mode={showSearchForm ? "visible" : "hidden"}>
+          <div className="basis-full max-sm:p-2 sm:basis-5/12 lg:basis-4/12 xl:basis-3/12">
+            <LibrarySearchForm />
+          </div>
+          <div className={deck && addMode ? "hidden" : "hidden lg:flex lg:basis-1/12"} />
+        </Activity>
       </FlexGapped>
-      {showToggleAddMode && (
+      <Activity mode={showToggleAddMode ? "visible" : "hidden"}>
         <ButtonFloatDeckOrSearch addMode={addMode} toggleAddMode={toggleAddMode} />
-      )}
-      {showFloatingButtons && showResultCol && (
-        <>
-          <ButtonFloatClose className="sm:hidden" handleClose={handleClear} />
-          {isEditable && <ButtonFloatAdd className="sm:hidden" />}
-        </>
-      )}
+      </Activity>
+      <Activity mode={showFloatingButtons && showResultCol ? "visible" : "hidden"}>
+        <ButtonFloatClose className="sm:hidden" handleClose={handleClear} />
+        {isEditable && <ButtonFloatAdd className="sm:hidden" />}
+      </Activity>
     </div>
   );
 };

@@ -606,7 +606,8 @@ const missingCostCheck = (logic, filter, cardCost) => {
     (logic === LE && cardCost <= filter) ||
     (logic === GE && cardCost >= filter) ||
     (logic === EQ && cardCost === Number.parseInt(filter))
-  );};
+  );
+};
 
 const cardDates = (card, addPromo = false) => {
   const cardSets = Object.keys(card[SET]).filter((set) => set !== PROMO && set !== PLAYTEST);

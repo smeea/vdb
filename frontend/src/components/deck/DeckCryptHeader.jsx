@@ -1,6 +1,6 @@
 import InfoCircle from "@icons/info-circle.svg?react";
 import PlusLg from "@icons/plus-lg.svg?react";
-import { useState } from "react";
+import { Activity, useState } from "react";
 import { Button, DeckCryptTotalInfo, DeckNewCard, Header, SortButton, Warning } from "@/components";
 import { BANNED, CRYPT, DECKID, GROUPS, LIMITED, PLAYTEST } from "@/constants";
 import { useApp } from "@/context";
@@ -87,8 +87,10 @@ const DeckCryptHeader = ({
           </div>
         </div>
       </Header>
-      {showInfo && <DeckCryptTotalInfo disciplinesDetailed={disciplinesDetailed} cards={cards} />}
-      {showAdd && (
+      <Activity mode={showInfo ? "visible" : "hidden"}>
+        <DeckCryptTotalInfo disciplinesDetailed={disciplinesDetailed} cards={cards} />
+      </Activity>
+      <Activity mode={showAdd ? "visible" : "hidden"}>
         <DeckNewCard
           handleClose={() => setShowAdd(false)}
           cards={cards}
@@ -96,7 +98,7 @@ const DeckCryptHeader = ({
           target={CRYPT}
           cardChange={cardChange}
         />
-      )}
+      </Activity>
     </>
   );
 };

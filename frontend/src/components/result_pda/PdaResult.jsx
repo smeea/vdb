@@ -4,10 +4,10 @@ import { CARDS, DATE_NEW_OLD, DATE_OLD_NEW, DECKID, FAVORITES } from "@/constant
 import { useApp } from "@/context";
 import { decksSort } from "@/utils";
 
-const PdaResult = ({ results }) => {
+const PdaResult = ({ results = [] }) => {
   const { pdaSearchSort, changePdaSearchSort } = useApp();
   const SHOW_COUNTER_STEP = 10;
-  const deckCounter = results.length || 0;
+  const deckCounter = results.length;
   const [showCounter, setShowCounter] = useState(SHOW_COUNTER_STEP);
 
   const sortMethods = {

@@ -4,10 +4,10 @@ import { CARDS, DATE_NEW_OLD, DATE_OLD_NEW, DECKID, PLAYERS } from "@/constants"
 import { useApp } from "@/context";
 import { decksSort } from "@/utils";
 
-const TwdResult = ({ results }) => {
+const TwdResult = ({ results = [] }) => {
   const { twdSearchSort, changeTwdSearchSort } = useApp();
   const SHOW_COUNTER_STEP = 10;
-  const deckCounter = results.length || 0;
+  const deckCounter = results.length;
   const [showCounter, setShowCounter] = useState(SHOW_COUNTER_STEP);
 
   const sortMethods = {

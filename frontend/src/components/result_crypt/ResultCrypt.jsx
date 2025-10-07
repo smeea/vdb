@@ -3,7 +3,7 @@ import { ErrorMessage, ResultCryptTotal, ResultCryptTotalInfo, ResultTable } fro
 import { CAPACITY_MAX_MIN, CAPACITY_MIN_MAX, CLAN, CRYPT, GROUP, NAME, SECT } from "@/constants";
 import { useApp } from "@/context";
 
-const ResultCrypt = ({ cards, inCompare }) => {
+const ResultCrypt = ({ cards = [], inCompare }) => {
   const { cryptSearchSort, changeCryptSearchSort } = useApp();
   const [showInfo, setShowInfo] = useState(false);
   const toggleShowInfo = () => setShowInfo(!showInfo);

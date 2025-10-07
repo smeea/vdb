@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { Activity, useEffect, useState } from "react";
 import { useSearchParams } from "react-router";
 import { twMerge } from "tailwind-merge";
 import {
@@ -167,7 +167,7 @@ const Inventory = () => {
       <div className="lg:hidden">
         <ButtonFloatMenu />
       </div>
-      {showMenuButtons && (
+      <Activity mode={showMenuButtons ? "visible" : "hidden"}>
         <Modal handleClose={handleClose} centered size="xs" withMobileMargin noClose={!isDesktop}>
           <InventoryMenu
             category={category}
@@ -190,8 +190,8 @@ const Inventory = () => {
             <ButtonFloatClose handleClose={handleClose} />
           </div>
         </Modal>
-      )}
-      {showAddDeck && (
+      </Activity>
+      <Activity mode={showAddDeck ? "visible" : "hidden"}>
         <InventoryAddDeckModal
           handleClose={() => {
             setShowAddDeck(false);
@@ -199,8 +199,8 @@ const Inventory = () => {
             setShowFloatingButtons(true);
           }}
         />
-      )}
-      {showAddPrecon && (
+      </Activity>
+      <Activity mode={showAddPrecon ? "visible" : "hidden"}>
         <InventoryAddPreconModal
           handleClose={() => {
             setShowAddPrecon(false);
@@ -208,7 +208,7 @@ const Inventory = () => {
             setShowFloatingButtons(true);
           }}
         />
-      )}
+      </Activity>
       {showShareModal && <InventoryShareModal show={showShareModal} setShow={setShowShareModal} />}
     </div>
   );

@@ -5,7 +5,6 @@ import TrashFill from "@icons/trash-fill.svg?react";
 import UnlockFill from "@icons/unlock-fill.svg?react";
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router";
-import { useSnapshot } from "valtio";
 import {
   ButtonIconed,
   DeckSelectAdvTable,
@@ -17,16 +16,15 @@ import {
   Modal,
   ModalConfirmation,
 } from "@/components";
-import { DECKID, DECKS, IS_FROZEN, JOL, LACKEY, NAME, TEXT, XLSX } from "@/constants";
-import { deckStore, deckUpdate, useApp } from "@/context";
+import { DECKID, IS_FROZEN, JOL, LACKEY, NAME, TEXT, XLSX } from "@/constants";
+import { deckUpdate, useApp } from "@/context";
 import { useDecksTagsAll } from "@/hooks";
 import { deckServices } from "@/services";
 
-const DeckSelectAdvModal = ({ onClick, setShow, short }) => {
+const DeckSelectAdvModal = ({ decks, onClick, setShow, short }) => {
   const { isMobile, decksAdvSort, changeDecksAdvSort, setShowMenuButtons, setShowFloatingButtons } =
     useApp();
   const [isLocked, setIsLocked] = useState();
-  const decks = useSnapshot(deckStore)[DECKS];
   const [showDeleteConfirmation, setShowDeleteConfirmation] = useState(false);
   const [isSelectedAll, setIsSelectedAll] = useState(false);
   const [selectedDecks, setSelectedDecks] = useState({});
@@ -86,6 +84,7 @@ const DeckSelectAdvModal = ({ onClick, setShow, short }) => {
         <div>
           {!short && (
             <DeckSelectAdvTotal
+              decks={decks}
               tagsFilter={tagsFilter}
               setTagsFilter={setTagsFilter}
               sortMethod={decksAdvSort}

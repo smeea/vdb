@@ -1,6 +1,6 @@
 import InfoCircle from "@icons/info-circle.svg?react";
 import PlusLg from "@icons/plus-lg.svg?react";
-import { useState } from "react";
+import { Activity, useState } from "react";
 import {
   Button,
   DeckLibraryTotalInfo,
@@ -128,14 +128,14 @@ const DeckLibraryHeader = ({
           </div>
         </div>
       </Header>
-      {showInfo && (
+      <Activity mode={showInfo ? "visible" : "hidden"}>
         <DeckLibraryTotalInfo
           byTypes={libraryByTypeTotal}
           byClans={libraryByClansTotal}
           byDisciplines={libraryByDisciplinesTotal}
         />
-      )}
-      {showAdd && (
+      </Activity>
+      <Activity mode={showAdd ? "visible" : "hidden"}>
         <DeckNewCard
           handleClose={() => setShowAdd(false)}
           cards={library}
@@ -143,7 +143,7 @@ const DeckLibraryHeader = ({
           target={LIBRARY}
           cardChange={cardChange}
         />
-      )}
+      </Activity>
     </>
   );
 };

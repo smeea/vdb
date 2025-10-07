@@ -8,7 +8,7 @@ const DeckSelectAdvTable = ({
   tagsFilter,
   setTagsFilter,
   short,
-  decks,
+  decks = {},
   sortMethod,
   onClick,
   handleClose,

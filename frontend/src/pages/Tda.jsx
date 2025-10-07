@@ -1,5 +1,5 @@
 import ky from "ky";
-import { useCallback, useEffect, useState } from "react";
+import { Activity, useCallback, useEffect, useState } from "react";
 import { useNavigate, useParams, useSearchParams } from "react-router";
 import { useSnapshot } from "valtio";
 import {
@@ -313,17 +313,17 @@ const Tda = () => {
         )}
         {decks && info && (
           <FlexGapped>
-            {(!showForm || !isMobile) && (
+            <Activity mode={!showForm || !isMobile ? "visible" : "hidden"}>
               <div className="flex basis-full flex-col gap-4 sm:basis-7/12 lg:basis-8/12 xl:basis-9/12">
                 <TdaResult decks={results ?? Object.values(decks)} />
               </div>
-            )}
-            {((showForm && !query) || !isMobile) && (
+            </Activity>
+            <Activity mode={(showForm && !query) || !isMobile ? "visible" : "hidden"}>
               <div className="flex basis-full flex-col gap-2 max-sm:p-2 sm:basis-5/12 lg:basis-4/12 xl:basis-3/12">
                 {isMobile && <ButtonClose handleClick={handleCloseEvent} text="Close Event" />}
                 <TdaSearchForm setShowForm={setShowForm} />
               </div>
-            )}
+            </Activity>
           </FlexGapped>
         )}
       </FlexGapped>

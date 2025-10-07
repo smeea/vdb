@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { Activity, useEffect, useState } from "react";
 import { useLoaderData, useLocation, useNavigate, useParams, useSearchParams } from "react-router";
 import { useSnapshot } from "valtio";
 import {
@@ -302,7 +302,9 @@ const Decks = () => {
           </div>
         </Modal>
       )}
-      {showSelect && <DeckSelectAdvModal setShow={setShowSelect} />}
+      <Activity mode={showSelect ? "visible" : "hidden"}>
+        <DeckSelectAdvModal decks={decks} setShow={setShowSelect} />
+      </Activity>
       {showDraw && <DeckDraw setShow={setShowDraw} deck={deck} />}
       {showSeating && <Seating setShow={setShowSeating} />}
       {showRecommendation && <DeckRecommendation deck={deck} setShow={setShowRecommendation} />}
