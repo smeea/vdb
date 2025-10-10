@@ -15,28 +15,9 @@ import {
   TdaResult,
   TdaSearchForm,
 } from "@/components";
-import {
-  AUTHOR,
-  CRYPT,
-  DATE,
-  DECKS,
-  DQ,
-  EVENT,
-  GW,
-  INFO,
-  LIBRARY,
-  LOCATION,
-  NAME,
-  PLAYERS,
-  RANK,
-  RESULTS,
-  ROUNDS,
-  SCORE,
-  TAGS,
-  VP,
-} from "@/constants";
+import { AUTHOR, CRYPT, DECKS, EVENT, INFO, LIBRARY, NAME, RESULTS, TAGS } from "@/constants";
 import { clearTdaForm, setTdaDecks, setTdaInfo, setTdaResults, tdaStore, useApp } from "@/context";
-import { getTags, importDeck, sanitizeScoreSheet } from "@/utils";
+import { getTags, importDeck, parseArchon } from "@/utils";
 
 const TESTERS = ["1", "crauseon"];
 
@@ -100,124 +81,7 @@ const Tda = () => {
   };
 
   const loadArchon = async (file) => {
-    const { read, utils } = await import("xlsx");
-    const wb = read(file);
-
-    const getFinalPlace = (playerNumber) => {
-      const wsFinalTable = wb.Sheets["Final Round"];
-      const dataFinalTable = utils.sheet_to_csv(wsFinalTable).split("\n");
-      const finalPlace = dataFinalTable
-        .filter((i) => {
-          const array = i.split(",");
-          return Number.parseInt(array[0]) === playerNumber && array[21];
-        })[0]
-        .split(",")[21];
-      return Number.parseInt(finalPlace);
-    };
-
-    const wsInfo = wb.Sheets["Tournament Info"];
-    const dataInfo = utils.sheet_to_csv(wsInfo).split("\n");
-    let totalPlayers = 0;
-    let totalRounds = 0;
-    let totalMatches = 0;
-    let totalGw = 0;
-    let totalVp = 0;
-    let medianVp = 0;
-    let medianGw = 0;
-    const reportedRanks = [];
-    let event;
-    let date;
-    let location;
-
-    dataInfo.forEach((n) => {
-      const array = n.split(",");
-      if (array[0] === "Number of Players:") totalPlayers = Number.parseInt(array[1]);
-      if (array[0] === "Number of Rounds (including final):") totalRounds = array[1];
-      if (array[0] === "Number of Event Matches:") totalMatches = array[1];
-      if (array[0] === "Event Name:") event = array[1];
-      if (array[0] === "Event Date (DD-MON-YY):") date = array[1];
-      if (array[0] === "City:") location = array[1];
-    });
-
-    const wsScores = sanitizeScoreSheet(wb.Sheets.Methuselahs);
-    const dataScores = utils.sheet_to_csv(wsScores).split("\n");
-
-    const archonIds = [];
-    const tdaDecks = {};
-
-    dataScores.forEach((n, idx) => {
-      if (idx < 6) return;
-      const array = n.split(",");
-      const playerId = array[4];
-      const playerNumber = Number.parseInt(array[0]);
-      if (!playerId) return;
-      archonIds.push(playerId);
-
-      const rank =
-        array[20] === DQ
-          ? DQ
-          : Number.parseInt(array[20]) > 5
-            ? Number.parseInt(array[20])
-            : wb.Sheets["Final Round"]
-              ? getFinalPlace(playerNumber)
-              : Number.parseInt(array[17]);
-
-      const name = `${array[1]} ${array[2]}`;
-
-      const score = {
-        [NAME]: name,
-        [RANK]: rank,
-        [GW]: Number(array[7]),
-        [VP]: Number(array[8]),
-        [PLAYERS]: totalPlayers,
-      };
-
-      if (tempDecks[playerId]) {
-        reportedRanks.push(score[RANK] === DQ ? totalPlayers : score[RANK]);
-        tdaDecks[playerId] = {
-          ...tempDecks[playerId],
-          [SCORE]: score,
-        };
-      }
-
-      if (score[RANK] > Math.ceil(totalPlayers / 2)) {
-        if (medianVp < score[VP]) medianVp = score[VP];
-        if (medianGw < score[GW]) medianGw = score[GW];
-      }
-      totalGw += score[GW];
-      totalVp += score[VP];
-    });
-
-    Object.keys(tdaDecks).forEach((deckid) => {
-      if (!archonIds.includes(deckid)) console.log(`Deck ${deckid} is not in Archon`);
-    });
-
-    let medianReportedRank;
-    reportedRanks.sort((a, b) => a > b);
-    if (reportedRanks.length % 2) {
-      medianReportedRank = reportedRanks[(reportedRanks.length - 1) / 2];
-    } else {
-      const min = reportedRanks[reportedRanks.length / 2 + 1];
-      const max = reportedRanks[reportedRanks.length / 2 - 1];
-      medianReportedRank = (min + max) / 2;
-    }
-
-    const info = {
-      [EVENT]: event,
-      [DATE]: date,
-      [LOCATION]: location,
-      [PLAYERS]: totalPlayers,
-      [ROUNDS]: totalRounds,
-      matches: totalMatches,
-      totalGw: totalGw,
-      totalVp: totalVp,
-      avgMatchGw: Math.round((totalGw / totalMatches) * 10) / 10,
-      avgMatchVp: Math.round((totalVp / totalMatches) * 10) / 10,
-      medianPlayerGw: medianGw,
-      medianPlayerVp: medianVp,
-      medianRank: totalPlayers / 2,
-      medianReportedRank: medianReportedRank,
-    };
+    const { info, tdaDecks } = await parseArchon(file, tempDecks);
 
     setTdaInfo(info);
     setTdaDecks(tdaDecks);
@@ -254,7 +118,7 @@ const Tda = () => {
 
   return (
     <div className="twd-container mx-auto flex flex-col gap-2">
-      {!(info && decks) && (
+      <Activity mode={!(info && decks) ? "visible" : "hidden"}>
         <Header>
           <div className="flex w-full flex-col p-2 text-lg max-sm:gap-2">
             <div className="flex sm:justify-center">
@@ -273,7 +137,7 @@ const Tda = () => {
             </div>
           </div>
         </Header>
-      )}
+      </Activity>
       {error && <ErrorMessage>NO DATA AVAILABLE FOR EVENT #{error}</ErrorMessage>}
       <FlexGapped className="flex-col">
         {!(info && decks) && (
@@ -293,29 +157,35 @@ const Tda = () => {
                   setError={setError}
                 />
               )}
-            </div>
+            </div>{" "}
+            {decks && info && (
+              <FlexGapped className="basis-3/12 flex-col max-sm:p-2">
+                <ButtonClose handleClick={handleCloseEvent} text="Close Event" />
+                <TdaInfo info={info} decks={decks} />
+              </FlexGapped>
+            )}
           </div>
         )}
-        {(!showForm || !isMobile) && (
+        <Activity mode={!showForm || !isMobile ? "visible" : "hidden"}>
           <FlexGapped className="max-sm:flex-col">
             <div className="flex basis-9/12 justify-center max-sm:order-last">
               {decks && info && (
                 <TdaCharts info={info} decks={decks} searchResults={results ?? {}} />
               )}
             </div>
-            {info && decks && (
+            {decks && info && (
               <FlexGapped className="basis-3/12 flex-col max-sm:p-2">
                 <ButtonClose handleClick={handleCloseEvent} text="Close Event" />
                 <TdaInfo info={info} decks={decks} />
               </FlexGapped>
             )}
           </FlexGapped>
-        )}
-        {decks && info && (
+        </Activity>
+        <Activity mode={decks && info ? "visible" : "hidden"}>
           <FlexGapped>
             <Activity mode={!showForm || !isMobile ? "visible" : "hidden"}>
               <div className="flex basis-full flex-col gap-4 sm:basis-7/12 lg:basis-8/12 xl:basis-9/12">
-                <TdaResult decks={results ?? Object.values(decks)} />
+                <TdaResult decks={results ?? Object.values(decks ?? {})} />
               </div>
             </Activity>
             <Activity mode={(showForm && !query) || !isMobile ? "visible" : "hidden"}>
@@ -325,7 +195,7 @@ const Tda = () => {
               </div>
             </Activity>
           </FlexGapped>
-        )}
+        </Activity>
       </FlexGapped>
       {!showForm && decks && info && (
         <ButtonFloatClose className="sm:hidden" handleClose={handleClear} />

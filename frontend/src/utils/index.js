@@ -14,6 +14,7 @@ export { default as getLibraryRequirements } from "./getLibraryRequirements.js";
 export { default as getTags } from "./getTags.js";
 export { default as importDeck } from "./importDeck.js";
 export { default as librarySort } from "./librarySort.js";
+export { default as parseArchon } from "./parseArchon.js";
 export { default as parseDeck } from "./parseDeck.js";
 export { default as sanitizeFormState } from "./sanitizeFormState.js";
 export { default as sanitizeScoreSheet } from "./sanitizeScoreSheet.js";
