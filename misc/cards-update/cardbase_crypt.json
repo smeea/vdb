@@ -32541,6 +32541,12 @@
                 }
             },
             {
+                "text":"When he changes Sects, he can't play votes that \"requires a titled camarilla Vampire\" (e.g. {Camarilla's Iron Fist})",
+                "refs":{
+                    "ANK 20250410":"https://www.vekn.net/forum/rules-questions/82214-karl-schrekt-spoofing-a-justicar-title-to-play-camarilla-s-iron-fist#114177"
+                }
+            },
+            {
                 "text":"Keeps their title and votes if they changes sects.",
                 "refs":{
                     "LSJ 20010714":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-xrhpMEiMrw/m/Vnr8QIyt41cJ"
@@ -33347,7 +33353,7 @@
         "path":"",
         "rulings":[
             {
-                "text":"[MERGED] If she plays a political action requiring a Justicar, she is not seen as such by other cards or effects during the referendum (eg. if another vampire plays {Closed Session} and she's not Camarilla she will not be able to vote. If she plays it, she can vote).",
+                "text":"[MERGED] If she plays a political action requiring a Justicar, she is not seen as such by other cards or effects during the referendum (eg. another vampire can't play {Promise of 1528}, and she doesnt gain votes from  {Elysium: The Palace of Versailles} ) If she plays {Closed Session}, she can still vote, because she played it as a Camarilal Vampire.",
                 "refs":{
                     "LSJ 20050128-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HVy8iPUxNbI/m/jXmrJxMaJ9MJ",
                     "ANK 20221011-4":"https://www.vekn.net/forum/rules-questions/79988-keminitiri-closed-session#106540",

@@ -3941,8 +3941,9 @@
   - Her ability to force a vampire to abstain can cancel the votes and ballots of the vampire. [LSJ 20100311]
 200770|Kemintiri:
   - "[MERGED] If she plays a political action requiring a Justicar, she is not seen as such by other cards or effects during\
-    \ the referendum (eg. if another vampire plays {Closed Session} and she's not Camarilla she will not be able to vote.\
-    \ If she plays it, she can vote). [LSJ 20050128-2] [ANK 20221011-4] [RTR 20070707]"
+    \ the referendum (eg. another vampire can't play {Promise of 1528}, and she doesnt gain votes from  {Elysium: The Palace\
+    \ of Versailles} ) If she plays {Closed Session}, she can still vote, because she played it as a Camarilal Vampire. [LSJ\
+    \ 20050128-2] [ANK 20221011-4] [RTR 20070707]"
   - '[MERGED] Does not enable you to play master cards, it only enables her to play certain minion cards. [LSJ 20050721]'
   - '[MERGED] When considered a Justicar, she is also implicitly considered Camarilla. [LSJ 20050128]'
 200775|Kestrelle Hayes:
@@ -4375,6 +4376,8 @@
   - Can be merged with {Theo Bell (ADV)} if you get to control one (eg. {Graverobbing}). [ANK 20220805-2]
 201621|Karl Schrekt:
   - When considered a Justicar, he is also implicitly considered Camarilla. [LSJ 20050128]
+  - When he changes Sects, he can't play votes that "requires a titled camarilla Vampire" (e.g. {Camarilla's Iron Fist}) [ANK
+    20250410]
 201627|Evan Klein:
   - Actions from minions of the same controller targeting him are undirected, so they are not affected by his ability. [LSJ
     20030214-2]
