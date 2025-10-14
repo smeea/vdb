@@ -41,7 +41,7 @@ const DeckSelectorAndDisplay = () => {
           </>
         )}
         <ButtonIconed
-          className="max-xl:hidden"
+          className="max-lg:hidden"
           title="Hide Deck Panel"
           onClick={toggleAddMode}
           icon={addMode ? <EyeSlashFill /> : null}
