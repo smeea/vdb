@@ -67,17 +67,17 @@ const Library = () => {
             "max-sm:hidden",
           )}
         >
-          {decks !== undefined && (isDesktop || (!isDesktop && !showSearchForm)) && (
-            <DeckSelectorAndDisplay />
-          )}
+          <Activity mode={decks !== undefined && (isDesktop || (!isDesktop && !showSearchForm)) ? 'visible' : 'hidden'}>
+              <DeckSelectorAndDisplay />
+          </Activity>
         </div>
         <Activity mode={showResultCol ? "visible" : "hidden"}>
           <div className="basis-full sm:basis-7/12 lg:basis-6/12 xl:basis-5/12">
-            {((isMobile && libraryCompare && libraryResults) || (!isMobile && libraryCompare)) && (
+            <Activity mode={((isMobile && libraryCompare && libraryResults) || (!isMobile && libraryCompare)) ? "visible" : "hidden"}>
               <div>
                 <ResultLibrary cards={libraryCompare} setCards={setLibraryCompare} inCompare />
               </div>
-            )}
+            </Activity>
             <Activity mode={libraryResults !== undefined ? "visible" : "hidden"}>
               <ResultLibrary cards={libraryResults} setCards={setLibraryResults} />
             </Activity>

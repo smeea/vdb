@@ -59,17 +59,17 @@ const Crypt = () => {
             deck && addMode ? "xl:basis-4/12" : "xl:basis-2/12",
           )}
         >
-          {decks !== undefined && (isDesktop || (!isDesktop && !showSearchForm)) && (
+          <Activity mode={decks !== undefined && (isDesktop || (!isDesktop && !showSearchForm)) ? 'visible' : 'hidden'}>
             <DeckSelectorAndDisplay />
-          )}
+          </Activity>
         </div>
         <Activity mode={showResultCol ? "visible" : "hidden"}>
           <div className="basis-full sm:basis-7/12 lg:basis-6/12 xl:basis-5/12">
-            {((isMobile && cryptCompare && cryptResults) || (!isMobile && cryptCompare)) && (
+            <Activity mode={((isMobile && cryptCompare && cryptResults) || (!isMobile && cryptCompare)) ? "visible" : "hidden"}>
               <div>
                 <ResultCrypt cards={cryptCompare} inCompare />
               </div>
-            )}
+            </Activity>
             <Activity mode={cryptResults !== undefined ? "visible" : "hidden"}>
               <ResultCrypt cards={cryptResults} />
             </Activity>
