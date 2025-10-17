@@ -88,9 +88,9 @@ const Diff = () => {
   };
 
   useEffect(() => {
-    if (cryptCardBase && libraryCardBase && decks !== undefined) {
-      if (deckidFrom && deckStore[DECK]?.[DECKID] !== deckidFrom) {
-        if (deckStore[DECKS][deckidFrom]) {
+    if (cryptCardBase && libraryCardBase) {
+      if (deckidFrom && deck?.[DECKID] !== deckidFrom) {
+        if (deckStore?.[DECKS]?.[deckidFrom]) {
           setDeck(deckStore[DECKS][deckidFrom]);
         } else if (deckidFrom.includes(":")) {
           if (preconDecks?.[deckidFrom]) {
@@ -107,9 +107,9 @@ const Diff = () => {
   }, [deckidFrom, decks, preconDecks, cryptCardBase, libraryCardBase]);
 
   useEffect(() => {
-    if (cryptCardBase && libraryCardBase && deckStore[DECKS] !== undefined) {
+    if (cryptCardBase && libraryCardBase) {
       if (deckidTo && deckTo?.[DECKID] !== deckidTo) {
-        if (deckStore[DECKS][deckidTo]) {
+        if (deckStore?.[DECKS]?.[deckidTo]) {
           setDeckTo(deckStore[DECKS][deckidTo]);
         } else if (deckidTo.includes(":")) {
           if (preconDecks?.[deckidTo]) {
