@@ -2634,7 +2634,8 @@
   - Can be played and is effective even if the opponent treats aggravated damage as normal. [ANK 20200130-1]
   - 'Combat ends immediately, strikes are not resolved (including strike: combat ends), damage prevention cannot be played,
     and a second Rötschreck cannot be played. [LSJ 19990217] [LSJ 20020715] [LSJ 20060803]'
-  - Combat cards usable "when the opposing vampire is going / should go into torpor" cannot be used. [LSJ 20020402]
+  - Ends combat with both minions still ready, so cards and effects usable "when the opposing vampire is going to torpor /
+    should go into torpor / is not ready" cannot be used. [LSJ 20070709-2] [LSJ 20020402]
   - If the combat continues or a new combat begins, the card is put on the vampire, he is not locked and does not go to torpor.
     He still does not unlock as normal. [RTR 20020501] [LSJ 20071009]
   - The "does not unlock as normal" effect stops if Rötschreck is burned or removed. [ANK 20191025]

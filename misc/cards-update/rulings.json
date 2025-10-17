@@ -14052,8 +14052,9 @@
             }
         },
         {
-            "text":"Combat cards usable \"when the opposing vampire is going / should go into torpor\" cannot be used.",
+            "text":"Ends combat with both minions still ready, so cards and effects usable \"when the opposing vampire is going to torpor / should go into torpor / is not ready\" cannot be used.",
             "refs":{
+                "LSJ 20070709-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/cfyYrNIp6ME/m/eTMjxOHItVoJ",
                 "LSJ 20020402":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/eQCXHND3j5o/m/LMv8SYYE3OoJ"
             }
         },
