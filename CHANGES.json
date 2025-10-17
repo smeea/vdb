@@ -1,5 +1,15 @@
 [
   {
+    "version": "2025-10-17",
+    "changes": [
+      "Add 'Titled (specific)' filter option to library search which will show cards requiring any specific title (vs just requiring titled vampire as old 'Titled' option)",
+      "Add legacy equipment images",
+      "Update TWDA",
+      "Update Rulings",
+      "Many fixes"
+    ]
+  },
+  {
     "version": "2025-09-28",
     "changes": [
       "Add disciplines OR-logic filter to crypt search",

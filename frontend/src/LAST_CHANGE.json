@@ -1,11 +1,10 @@
 {
-  "version": "2025-09-28",
+  "version": "2025-10-17",
   "changes": [
-    "Add disciplines OR-logic filter to crypt search",
-    "Add card types breakdown to TWD/PDA decks description",
-    "Add legacy ally and retainer images",
+    "Add 'Titled (specific)' filter option to library search which will show cards requiring any specific title (vs just requiring titled vampire as old 'Titled' option)",
+    "Add legacy equipment images",
     "Update TWDA",
     "Update Rulings",
-    "Other fixes and improvements"
+    "Many fixes"
   ]
 }
