@@ -1,6 +1,7 @@
 import PinAngleFill from "@icons/pin-angle-fill.svg?react";
 import Shuffle from "@icons/shuffle.svg?react";
-import { BRANCH_NAME, BRANCHES, MASTER, NAME, S } from "@/constants";
+import { NavLink } from "react-router";
+import { DECKID, BRANCH_NAME, BRANCHES, MASTER, NAME, S } from "@/constants";
 
 const UsedDescriptionDeck = ({ deck, t, q }) => {
   const isBranches = deck[MASTER] || (deck[BRANCHES] && deck[BRANCHES].length > 0);
@@ -15,8 +16,11 @@ const UsedDescriptionDeck = ({ deck, t, q }) => {
         )}
       </div>
       <b>{q}</b>
+      -
       <div className="truncate sm:max-w-[265px] md:max-w-[290px]">
-        {` - ${deck[NAME]}${isBranches ? ` [${deck[BRANCH_NAME]}]` : ""} `}
+        <NavLink to={`/decks/${deck[DECKID]}`}>
+          {deck[NAME]}{isBranches ? ` [${deck[BRANCH_NAME]}]` : ""}
+        </NavLink>
       </div>
     </div>
   );
