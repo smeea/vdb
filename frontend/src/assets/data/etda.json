@@ -29,12 +29,21 @@
   },
   {
     "id": 12126,
-    "title": "Polish Grand Prix 20025",
+    "title": "Polish Grand Prix 2025",
     "location": "Warsaw, Poland",
     "date": "2025-07-05",
     "players": 56,
     "decks": 56,
     "country": "PL"
+  },
+  {
+    "id": 12224,
+    "title": "Brazil Nationals 2025",
+    "location": "Rio de Janeiro, Brazil",
+    "date": "2025-06-07",
+    "players": 114,
+    "decks": 110,
+    "country": "BR"
   },
   {
     "id": 12325,
