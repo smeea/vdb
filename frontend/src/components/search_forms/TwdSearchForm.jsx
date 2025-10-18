@@ -158,7 +158,7 @@ const TwdSearchForm = ({ error, setError }) => {
         setError("CONNECTION PROBLEM");
     }
 
-    setTwdResults(null);
+    setTwdResults();
     if (isMobile) {
       setIsLoading(false);
       setSearchParams();

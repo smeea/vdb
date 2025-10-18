@@ -24,8 +24,8 @@ const Pda = () => {
           <div className="basis-full sm:basis-7/12 lg:basis-8/12 xl:basis-9/12">
             <Activity mode={pdaResults ? "visible" : "hidden"}>
               <PdaResult results={pdaResults} />
-              {error && <ErrorMessage sticky>{error}</ErrorMessage>}
             </Activity>
+            {error && <ErrorMessage sticky>{error}</ErrorMessage>}
           </div>
         </Activity>
         <Activity mode={!isMobile || !pdaResults ? "visible" : "hidden"}>

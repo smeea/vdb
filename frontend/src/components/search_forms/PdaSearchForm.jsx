@@ -155,7 +155,7 @@ const PdaSearchForm = ({ error, setError }) => {
         setError("CONNECTION PROBLEM");
     }
 
-    setPdaResults(null);
+    setPdaResults();
     if (isMobile) {
       setIsLoading(false);
       setSearchParams();
