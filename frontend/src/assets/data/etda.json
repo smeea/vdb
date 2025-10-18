@@ -41,6 +41,7 @@
     "title": "Brazil Nationals 2025",
     "location": "Rio de Janeiro, Brazil",
     "date": "2025-06-07",
+    "isNC": true,
     "players": 114,
     "decks": 110,
     "country": "BR"
