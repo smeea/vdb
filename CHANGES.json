@@ -1,6 +1,6 @@
 [
   {
-    "version": "2025-10-18",
+    "version": "2025-10-18/1",
     "changes": [
       "Add 'Titled (specific)' filter option to library search which will show cards requiring any specific title (vs just requiring titled vampire as old 'Titled' option)",
       "Add legacy equipment images",
