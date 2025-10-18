@@ -1,9 +1,10 @@
 [
   {
-    "version": "2025-10-17",
+    "version": "2025-10-18",
     "changes": [
       "Add 'Titled (specific)' filter option to library search which will show cards requiring any specific title (vs just requiring titled vampire as old 'Titled' option)",
       "Add legacy equipment images",
+      "Add Brazil Nationals 2025 to TDA",
       "Update TWDA",
       "Update Rulings",
       "Many fixes"
