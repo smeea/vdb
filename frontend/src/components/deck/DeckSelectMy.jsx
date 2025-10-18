@@ -34,7 +34,7 @@ const DeckSelectMy = ({ deckid, handleSelect }) => {
   const decks = useSnapshot(deckStore)[DECKS];
 
   const options = useMemo(() => {
-    return Object.keys(decks)
+    return Object.keys(decks ?? {})
       .filter((i) => !decks[i][MASTER] && !decks[i][IS_HIDDEN])
       .filter((i) => {
         if (limitedMode && limitedOnlyDecks && limitedPreset !== CUSTOM) {
@@ -59,18 +59,18 @@ const DeckSelectMy = ({ deckid, handleSelect }) => {
 
         const clan = getClan(decks[i][CRYPT]);
 
-        let restrictions = {};
-        if (idx < 15 || diffDays < 90) {
-          restrictions = getRestrictions(
-            decks[i],
-            limitedMode
-              ? {
+        const restrictions =
+          idx < 15 || diffDays < 90
+            ? getRestrictions(
+              decks[i],
+              limitedMode
+                ? {
                   [CRYPT]: limitedStore[CRYPT],
                   [LIBRARY]: limitedStore[LIBRARY],
                 }
-              : null,
-          );
-        }
+                : null,
+              )
+            : {};
 
         return {
           value: i,
@@ -117,38 +117,10 @@ const DeckSelectMy = ({ deckid, handleSelect }) => {
     return true;
   };
 
-  const getValue = () => {
-    if (decks[deckid]) {
-      const v = options.find((obj) => {
-        if (decks[deckid][MASTER]) {
-          return obj.value === decks[deckid][MASTER];
-        }
-        return obj.value === deckid;
-      });
+  const value = options.find((obj) => {
+    return decks?.[deckid]?.[MASTER] ? obj.value === decks?.[deckid]?.[MASTER] : obj.value === deckid;
+  });
 
-      if (v) {
-        return v;
-      }
-      return {
-        value: deckid,
-        label: (
-          <div className="flex items-center justify-between">
-            <div className="inline">{decks[deckid][NAME]}</div>
-            <div className="flex items-center gap-1">
-              {inventoryMode && (
-                <div>
-                  {decks[deckid][INVENTORY_TYPE] === S && <Shuffle />}
-                  {decks[deckid][INVENTORY_TYPE] === H && <PinAngleFill />}
-                  {!decks[deckid][INVENTORY_TYPE] && <At />}
-                </div>
-              )}
-              <div className="text-sm">{dayjs(decks[deckid][TIMESTAMP]).format("YYYY-MM-DD")}</div>
-            </div>
-          </div>
-        ),
-      };
-    }
-  };
 
   return (
     <Select
@@ -157,7 +129,7 @@ const DeckSelectMy = ({ deckid, handleSelect }) => {
       filterOption={filterOption}
       maxMenuHeight={isMobile ? window.screen.height - 200 : 600}
       placeholder="Select Deck"
-      value={getValue()}
+      value={value}
       onChange={handleSelect}
     />
   );
