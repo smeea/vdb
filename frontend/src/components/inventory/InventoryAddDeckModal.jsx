@@ -23,7 +23,7 @@ const InventoryAddDeckModal = ({ handleClose }) => {
   };
 
   const allTags = new Set();
-  Object.keys(decks).forEach((deckid) => {
+  Object.keys(decks ?? {}).forEach((deckid) => {
     if (decks[deckid][TAGS]) {
       decks[deckid][TAGS].forEach((tag) => {
         allTags.add(tag);
