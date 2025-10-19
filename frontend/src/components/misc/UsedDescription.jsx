@@ -7,7 +7,7 @@ const UsedDescriptionDeck = ({ deck, t, q }) => {
   const isBranches = deck[MASTER] || (deck[BRANCHES] && deck[BRANCHES].length > 0);
 
   return (
-    <div className="flex items-center gap-1">
+    <div className="flex items-center gap-1.5">
       <div className="opacity-40">
         {t === S ? (
           <Shuffle width="16" height="16" viewBox="0 0 16 16" />
