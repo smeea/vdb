@@ -410,7 +410,9 @@ const Documentation = () => {
             </p>
             <p>
               Additionally you can set status per-card (i.e. if your deck is fixed except few
-              Masters you swap between decks). To do so, hover mouse to the left from card q-ty buttons in the deck list and inventory status icon for this card will show up. All other cards of the deck will continue to be of the deck status
+              Masters you swap between decks). To do so, hover mouse to the left from card q-ty
+              buttons in the deck list and inventory status icon for this card will show up. All
+              other cards of the deck will continue to be of the deck status
             </p>
           </div>
         </div>

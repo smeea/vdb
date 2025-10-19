@@ -35,7 +35,12 @@ const CardsMobile = ({ card, openRandomCard, handleChange, handleSetCard }) => {
         ))}
       <div className="fixed bottom-10 z-20 flex w-full bg-bgPrimary p-2 dark:bg-bgPrimaryDark">
         <div className="w-full md:basis-8/12">
-          <CardSelect menuPlacement={isMobile ? "top" : "auto"} autoFocus={!isMobile || !card?.[ID]} onChange={handleChange} value={null} />
+          <CardSelect
+            menuPlacement={isMobile ? "top" : "auto"}
+            autoFocus={!isMobile || !card?.[ID]}
+            onChange={handleChange}
+            value={null}
+          />
         </div>
       </div>
       <div className="fixed z-10">

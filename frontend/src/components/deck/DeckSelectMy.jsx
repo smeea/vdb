@@ -62,13 +62,13 @@ const DeckSelectMy = ({ deckid, handleSelect }) => {
         const restrictions =
           idx < 15 || diffDays < 90
             ? getRestrictions(
-              decks[i],
-              limitedMode
-                ? {
-                  [CRYPT]: limitedStore[CRYPT],
-                  [LIBRARY]: limitedStore[LIBRARY],
-                }
-                : null,
+                decks[i],
+                limitedMode
+                  ? {
+                      [CRYPT]: limitedStore[CRYPT],
+                      [LIBRARY]: limitedStore[LIBRARY],
+                    }
+                  : null,
               )
             : {};
 
@@ -118,9 +118,10 @@ const DeckSelectMy = ({ deckid, handleSelect }) => {
   };
 
   const value = options.find((obj) => {
-    return decks?.[deckid]?.[MASTER] ? obj.value === decks?.[deckid]?.[MASTER] : obj.value === deckid;
+    return decks?.[deckid]?.[MASTER]
+      ? obj.value === decks?.[deckid]?.[MASTER]
+      : obj.value === deckid;
   });
-
 
   return (
     <Select
