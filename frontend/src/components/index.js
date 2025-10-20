@@ -172,7 +172,7 @@ export { default as InventoryLibraryTableRow } from "./inventory/InventoryLibrar
 export { default as InventoryLibraryWrapper } from "./inventory/InventoryLibraryWrapper.jsx";
 export { default as InventoryMenu } from "./inventory/InventoryMenu.jsx";
 export { default as InventoryMissingButton } from "./inventory/InventoryMissingButton.jsx";
-export { default as InventoryMissingModalWrapper } from "./inventory/InventoryMissingModalWrapper.jsx";
+export { default as InventoryMissingModal } from "./inventory/InventoryMissingModal.jsx";
 export { default as InventoryShareButton } from "./inventory/InventoryShareButton.jsx";
 export { default as InventoryShareModal } from "./inventory/InventoryShareModal.jsx";
 export { default as InventoryShowSelect } from "./inventory/InventoryShowSelect.jsx";

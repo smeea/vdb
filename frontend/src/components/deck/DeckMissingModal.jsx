@@ -1,20 +1,10 @@
-import Gem from "@icons/gem.svg?react";
-import { useState } from "react";
 import { twMerge } from "tailwind-merge";
-import {
-  ButtonIconed,
-  DeckCrypt,
-  DeckExportButton,
-  DeckLibrary,
-  FlexGapped,
-  Modal,
-} from "@/components";
+import { DeckCrypt, DeckExportButton, DeckLibrary, FlexGapped, Modal } from "@/components";
 import { CRYPT, LIBRARY, NAME } from "@/constants";
 import { useApp } from "@/context";
 
-const DeckMissingModal = ({ setShow, deck, missAllVtes, inInventory }) => {
+const DeckMissingModal = ({ setShow, deck }) => {
   const { isMobile, setShowFloatingButtons, setShowMenuButtons } = useApp();
-  const [showMissAll, setShowMissAll] = useState();
 
   const handleClose = () => {
     setShow(false);
@@ -28,13 +18,11 @@ const DeckMissingModal = ({ setShow, deck, missAllVtes, inInventory }) => {
         <FlexGapped className="max-sm:flex-col">
           <div className="basis-full md:basis-5/9">
             <div
-              className={twMerge(
-                !(isMobile || inInventory) && "top-[22px] z-10 bg-bgPrimary dark:bg-bgPrimaryDark",
-              )}
+              className={twMerge(!isMobile && "top-[22px] z-10 bg-bgPrimary dark:bg-bgPrimaryDark")}
             >
               <DeckCrypt
                 deck={{
-                  [CRYPT]: showMissAll ? missAllVtes[CRYPT] : deck[CRYPT],
+                  [CRYPT]: deck[CRYPT],
                 }}
                 inMissing
               />
@@ -43,29 +31,18 @@ const DeckMissingModal = ({ setShow, deck, missAllVtes, inInventory }) => {
           <div className="basis-full md:basis-4/9">
             <DeckLibrary
               deck={{
-                [LIBRARY]: showMissAll ? missAllVtes[LIBRARY] : deck[LIBRARY],
+                [LIBRARY]: deck[LIBRARY],
               }}
               inMissing
             />
           </div>
         </FlexGapped>
         <div className="flex justify-end gap-2 max-sm:flex-col max-sm:p-2 max-sm:pt-0">
-          {inInventory && (
-            <ButtonIconed
-              onClick={() => setShowMissAll(!showMissAll)}
-              text={
-                showMissAll
-                  ? "Show Missing In Inventory"
-                  : "Show Missing for Complete Collection (SLOW!)"
-              }
-              icon={<Gem />}
-            />
-          )}
           <DeckExportButton
             deck={{
               [NAME]: deck[NAME],
-              [CRYPT]: showMissAll ? missAllVtes[CRYPT] : deck[CRYPT],
-              [LIBRARY]: showMissAll ? missAllVtes[LIBRARY] : deck[LIBRARY],
+              [CRYPT]: deck[CRYPT],
+              [LIBRARY]: deck[LIBRARY],
             }}
             inMissing
           />

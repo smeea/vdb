@@ -1,6 +1,6 @@
 import Cart4 from "@icons/cart4.svg?react";
 import { useState } from "react";
-import { ButtonIconed, InventoryMissingModalWrapper } from "@/components";
+import { ButtonIconed, InventoryMissingModal } from "@/components";
 import { useApp } from "@/context";
 
 const InventoryMissingButton = ({
@@ -25,7 +25,7 @@ const InventoryMissingButton = ({
         text="Missing Cards"
       />
       {showModal && (
-        <InventoryMissingModalWrapper
+        <InventoryMissingModal
           crypt={crypt}
           library={library}
           category={category}

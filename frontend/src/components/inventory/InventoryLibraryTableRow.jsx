@@ -32,12 +32,12 @@ import { inventoryCardChange, inventoryStore, useApp, usedStore } from "@/contex
 import { useSwipe } from "@/hooks";
 import { getHardTotal, getSoftMax, getSwipedBg } from "@/utils";
 
-const InventoryLibraryTableRow = ({ card, compact, newFocus, inShared, handleClick }) => {
+const InventoryLibraryTableRow = ({ card, compact, newFocus, forceNonEditable, handleClick }) => {
   const { isMobile } = useApp();
   const usedLibrary = useSnapshot(usedStore)[LIBRARY];
   const softUsedMax = getSoftMax(usedLibrary[SOFT][card.c[ID]]);
   const hardUsedTotal = getHardTotal(usedLibrary[HARD][card.c[ID]]);
-  const isEditable = !useSnapshot(inventoryStore)[IS_FROZEN] && !inShared;
+  const isEditable = !useSnapshot(inventoryStore)[IS_FROZEN] && !forceNonEditable;
 
   const { isSwiped, swipeHandlers } = useSwipe(
     () => inventoryCardChange(card.c, card.q - 1),
@@ -61,7 +61,7 @@ const InventoryLibraryTableRow = ({ card, compact, newFocus, inShared, handleCli
             : "h-full min-w-[42px] border-bgSecondary border-r bg-blue/5 sm:min-w-[48px] dark:border-bgSecondaryDark",
         )}
       >
-        {inShared ? (
+        {forceNonEditable ? (
           card.q || null
         ) : (
           <InventoryCardQuantity
@@ -73,7 +73,7 @@ const InventoryLibraryTableRow = ({ card, compact, newFocus, inShared, handleCli
           />
         )}
       </div>
-      {!inShared && (
+      {!forceNonEditable && (
         <div className="flex min-w-[40px] justify-center">
           <InventoryCardQuantityDiff
             card={card}

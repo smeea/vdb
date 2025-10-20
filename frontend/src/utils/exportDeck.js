@@ -287,7 +287,9 @@ const exportText = (deck) => {
   const sortedCrypt = cryptSort(Object.values(deck[CRYPT]), CAPACITY);
 
   result += `Deck Name: ${deck[NAME]}\n`;
-  result += `Author: ${deck[AUTHOR]}\n`;
+  if (deck[AUTHOR]) {
+    result += `Author: ${deck[AUTHOR]}\n`;
+  }
   if (deck[DESCRIPTION]) {
     result += `Description: ${deck[DESCRIPTION]}\n`;
   }

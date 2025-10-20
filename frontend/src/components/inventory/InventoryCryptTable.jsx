@@ -7,7 +7,15 @@ import { useApp } from "@/context";
 import { useCryptSortWithTimer, useModalCardController } from "@/hooks";
 import { getIsPlaytest } from "@/utils";
 
-const InventoryCryptTable = ({ cards, sortMethod, compact, withCompact, newFocus, inShared }) => {
+const InventoryCryptTable = ({
+  cards,
+  sortMethod,
+  compact,
+  withCompact,
+  newFocus,
+  inMissing,
+  inShared,
+}) => {
   const { playtestMode, setShowFloatingButtons, isDesktop } = useApp();
   const sortedCards = useCryptSortWithTimer(cards, sortMethod);
 
@@ -40,7 +48,7 @@ const InventoryCryptTable = ({ cards, sortMethod, compact, withCompact, newFocus
         card={card}
         compact={compact}
         newFocus={newFocus}
-        inShared={inShared}
+        forceNonEditable={inShared || inMissing}
         handleClick={handleClick}
       />
     ));
@@ -53,13 +61,13 @@ const InventoryCryptTable = ({ cards, sortMethod, compact, withCompact, newFocus
         </div>
       ) : (
         <div
-          className={twMerge(
-            !inShared && withCompact
+          className={
+            withCompact
               ? "h-[calc(100dvh-216px)] sm:h-[calc(100dvh-245px)] lg:h-[calc(100dvh-268px)] xl:h-[calc(100dvh-294px)]"
-              : "h-[calc(100dvh-172px)] sm:h-[calc(100dvh-192px)] lg:h-[calc(100dvh-212px)] xl:h-[calc(100dvh-232px)]",
-            inShared &&
-              "h-[calc(100dvh-114px)] sm:h-[calc(100dvh-144px)] lg:h-[calc(100dvh-154px)] xl:h-[calc(100dvh-164px)]",
-          )}
+              : inShared
+                ? "h-[calc(100dvh-114px)] sm:h-[calc(100dvh-144px)] lg:h-[calc(100dvh-154px)] xl:h-[calc(100dvh-164px)]"
+                : "h-[calc(100dvh-172px)] sm:h-[calc(100dvh-192px)] lg:h-[calc(100dvh-212px)] xl:h-[calc(100dvh-232px)]"
+          }
         >
           <List
             className="border-bgSecondary sm:border dark:border-bgSecondaryDark"
