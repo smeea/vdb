@@ -29,11 +29,13 @@ const UsedDescriptionDeck = ({ deck, t, q }) => {
 const UsedDescription = ({ usedCards, decks, inventoryType }) => {
   return (
     <>
-      {Object.keys(usedCards).map((id) => {
-        return (
-          <UsedDescriptionDeck key={id} q={usedCards[id]} deck={decks[id]} t={inventoryType} />
-        );
-      })}
+      {Object.keys(usedCards)
+        .filter((id) => usedCards[id] > 0)
+        .map((id) => {
+          return (
+            <UsedDescriptionDeck key={id} q={usedCards[id]} deck={decks[id]} t={inventoryType} />
+          );
+        })}
     </>
   );
 };

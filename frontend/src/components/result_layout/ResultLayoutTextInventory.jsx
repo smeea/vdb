@@ -18,6 +18,8 @@ const ResultLayoutTextInventory = ({ card, inPopover, setIsHotkeysDisabled }) =>
     card[ID] > 200000 ? inventoryCrypt[card[ID]]?.q || 0 : inventoryLibrary[card[ID]]?.q || 0;
   const text = card[ID] > 200000 ? inventoryCrypt[card[ID]]?.t : inventoryLibrary[card[ID]]?.t;
 
+  console.log(usedCards[HARD][card[ID]]);
+
   return (
     <div className="flex flex-col gap-1.5">
       <div className={twMerge("flex gap-1.5", inPopover ? "flex-col" : "max-md:flex-col")}>
