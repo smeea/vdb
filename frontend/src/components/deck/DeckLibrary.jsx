@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { useEffect, useCallback, useState } from "react";
 import { twMerge } from "tailwind-merge";
 import {
   DeckDrawProbability,
@@ -8,7 +8,7 @@ import {
   ResultLibraryType,
   ResultModal,
 } from "@/components";
-import { LIBRARY, TYPE_MASTER } from "@/constants";
+import { DECKID, LIBRARY, TYPE_MASTER } from "@/constants";
 import { useApp } from "@/context";
 import { useDeckLibrary, useModalCardController } from "@/hooks";
 
@@ -55,6 +55,10 @@ const DeckLibrary = ({ inTwd, inSearch, inPreview, inMissing, deck }) => {
     handleModalCardClose();
     !isDesktop && setShowFloatingButtons(true);
   }, [library, librarySide]);
+
+  useEffect(() => {
+    currentModalCard && handleModalCardClose();
+  }, [deck[DECKID]])
 
   return (
     <FlexGapped className="flex-col">

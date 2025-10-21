@@ -1,7 +1,7 @@
-import { useCallback, useMemo, useState } from "react";
+import { useEffect, useCallback, useMemo, useState } from "react";
 import { twMerge } from "tailwind-merge";
 import { DeckCryptHeader, DeckCryptTable, FlexGapped, ResultModal } from "@/components";
-import { CAPACITY, CLAN, CRYPT, GROUP, NAME, QUANTITYx, SECT } from "@/constants";
+import { DECKID, CAPACITY, CLAN, CRYPT, GROUP, NAME, QUANTITYx, SECT } from "@/constants";
 import { useApp } from "@/context";
 import { useDeckCrypt, useModalCardController } from "@/hooks";
 import { getKeyDisciplines } from "@/utils";
@@ -58,6 +58,10 @@ const DeckCrypt = ({ inSearch, inPreview, inMissing, noDisciplines, deck }) => {
     handleModalCardClose();
     !isDesktop && setShowFloatingButtons(true);
   }, [sortedCards, sortedCardsSide]);
+
+  useEffect(() => {
+    currentModalCard && handleModalCardClose();
+  }, [deck[DECKID]]);
 
   return (
     <FlexGapped
