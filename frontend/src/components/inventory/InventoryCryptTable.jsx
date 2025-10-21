@@ -1,6 +1,5 @@
 import { useCallback } from "react";
 import { List } from "react-window";
-import { twMerge } from "tailwind-merge";
 import { InventoryCryptTableRow, ResultModal, WindowRows } from "@/components";
 import { ID, VALUE } from "@/constants";
 import { useApp } from "@/context";

@@ -123,11 +123,13 @@ export const setupUsedInventory = (decks) => {
   Object.keys(decks).forEach((deckid) => {
     if (decks[deckid][INVENTORY_TYPE]) {
       Object.entries(decks[deckid][CRYPT]).forEach(([id, card]) => {
+        if (!card.q) return;
         const target = crypts[card.i || decks[deckid][INVENTORY_TYPE]];
         if (!target[id]) target[id] = {};
         target[id][deckid] = card.q;
       });
       Object.entries(decks[deckid][LIBRARY]).forEach(([id, card]) => {
+        if (!card.q) return;
         const target = libraries[card.i || decks[deckid][INVENTORY_TYPE]];
         if (!target[id]) target[id] = {};
         target[id][deckid] = card.q;

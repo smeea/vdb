@@ -1,6 +1,5 @@
 import { useCallback } from "react";
 import { List } from "react-window";
-import { twMerge } from "tailwind-merge";
 import { InventoryLibraryTableRow, ResultModal, WindowRows } from "@/components";
 import { ID, VALUE } from "@/constants";
 import { useApp } from "@/context";
@@ -61,15 +60,15 @@ const InventoryLibraryTable = ({
         </div>
       ) : (
         <div
-          className={twMerge(
+          className={
             withCompact
               ? "h-[calc(100dvh-262px)] sm:h-[calc(100dvh-291px)] lg:h-[calc(100dvh-314px)] xl:h-[calc(100dvh-340px)]"
               : inShared
                 ? "h-[calc(100dvh-160px)] sm:h-[calc(100dvh-190px)] lg:h-[calc(100dvh-200px)] xl:h-[calc(100dvh-210px)]"
                 : inMissing
                   ? "h-[calc(100dvh-172px)] sm:h-[calc(100dvh-192px)] lg:h-[calc(100dvh-212px)] xl:h-[calc(100dvh-232px)]"
-                  : "h-[calc(100dvh-217px)] sm:h-[calc(100dvh-237px)] lg:h-[calc(100dvh-257px)] xl:h-[calc(100dvh-277px)]",
-          )}
+                  : "h-[calc(100dvh-217px)] sm:h-[calc(100dvh-237px)] lg:h-[calc(100dvh-257px)] xl:h-[calc(100dvh-277px)]"
+          }
         >
           <List
             className="border-bgSecondary sm:border dark:border-bgSecondaryDark"

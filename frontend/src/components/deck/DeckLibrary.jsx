@@ -1,4 +1,4 @@
-import { useEffect, useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { twMerge } from "tailwind-merge";
 import {
   DeckDrawProbability,
@@ -58,7 +58,7 @@ const DeckLibrary = ({ inTwd, inSearch, inPreview, inMissing, deck }) => {
 
   useEffect(() => {
     currentModalCard && handleModalCardClose();
-  }, [deck[DECKID]])
+  }, [deck[DECKID]]);
 
   return (
     <FlexGapped className="flex-col">
