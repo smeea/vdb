@@ -1,4 +1,9 @@
-import { ResultLibraryClan, ResultLibraryDisciplines, ResultLibraryTypeImage } from "@/components";
+import {
+  ResultLibraryClan,
+  ResultLibraryDisciplines,
+  ResultLibraryTypeImage,
+  ResultPathImage,
+} from "@/components";
 import { TYPE_MASTER } from "@/constants";
 
 const IconTextPercents = ({ icon, text, percents }) => {
@@ -13,13 +18,19 @@ const IconTextPercents = ({ icon, text, percents }) => {
   );
 };
 
-const DeckLibraryTotalInfo = ({ byClans, byTypes, byDisciplines }) => {
+const DeckLibraryTotalInfo = ({ byClans, byTypes, byPaths, byDisciplines }) => {
   const total = Object.values(byTypes).reduce((a, b) => a + b, 0);
   const totalExMasters = total - (byTypes[TYPE_MASTER] || 0);
 
   const byDisciplinesSorted = byDisciplines
     ? Object.keys(byDisciplines).toSorted((a, b) => {
         return byDisciplines[b] - byDisciplines[a];
+      })
+    : [];
+
+  const byPathsSorted = byPaths
+    ? Object.keys(byPaths).toSorted((a, b) => {
+        return byPaths[b] - byPaths[a];
       })
     : [];
 
@@ -44,7 +55,7 @@ const DeckLibraryTotalInfo = ({ byClans, byTypes, byDisciplines }) => {
         })}
       </div>
       <div className="flex flex-col gap-1">
-        <div className="text-fgSecondary dark:text-fgSecondaryDark">Excluding Master / Event:</div>
+        <div className="text-fgSecondary dark:text-fgSecondaryDark">Excluding Master:</div>
         <div>
           {byDisciplinesSorted.map((i) => {
             return (
@@ -58,7 +69,7 @@ const DeckLibraryTotalInfo = ({ byClans, byTypes, byDisciplines }) => {
           })}
         </div>
       </div>
-      {byClansSorted.length > 0 && (
+      {byClansSorted.length + byPathsSorted.length > 0 && (
         <div>
           {byClansSorted.map((i) => {
             return (
@@ -67,6 +78,16 @@ const DeckLibraryTotalInfo = ({ byClans, byTypes, byDisciplines }) => {
                 icon={<ResultLibraryClan value={i} />}
                 text={byClans[i]}
                 percents={Math.round((byClans[i] / total) * 100)}
+              />
+            );
+          })}
+          {byPathsSorted.map((i) => {
+            return (
+              <IconTextPercents
+                key={i}
+                icon={<ResultPathImage value={i} />}
+                text={byPaths[i]}
+                percents={Math.round((byPaths[i] / total) * 100)}
               />
             );
           })}

@@ -11,10 +11,10 @@ import {
   HAS_LIMITED,
   HAS_PLAYTEST,
   LIBRARY,
+  PATH,
   POOL,
   TRIFLE,
   TYPE,
-  TYPE_EVENT,
   TYPE_MASTER,
 } from "@/constants";
 import { limitedStore } from "@/context";
@@ -76,18 +76,18 @@ const useDeckLibrary = (cardsList, cardsToList) => {
       DISCIPLINE,
     );
     const libraryByClansTotal = getTotalCardsGroupedBy(
-      library.filter(
-        (card) => card.c[CLAN] && card.c[TYPE] !== TYPE_MASTER && card.c[TYPE] !== TYPE_EVENT,
-      ),
+      library.filter((card) => card.c[CLAN] && card.c[TYPE] !== TYPE_MASTER),
       CLAN,
     );
+
+    const libraryByPathsTotal = getTotalCardsGroupedBy(
+      library.filter((card) => card.c[PATH] && card.c[TYPE] !== TYPE_MASTER),
+      PATH,
+    );
+
     const anyDisciplines = countCards(
       library.filter(
-        (card) =>
-          !card.c[CLAN] &&
-          !card.c[DISCIPLINE] &&
-          card.c[TYPE] !== TYPE_MASTER &&
-          card.c[TYPE] !== TYPE_EVENT,
+        (card) => !card.c[CLAN] && !card.c[DISCIPLINE] && card.c[TYPE] !== TYPE_MASTER,
       ),
     );
 
@@ -113,6 +113,7 @@ const useDeckLibrary = (cardsList, cardsToList) => {
       libraryByTypeTotal,
       libraryByTypeToTotal,
       libraryByClansTotal,
+      libraryByPathsTotal,
       libraryByDisciplinesTotal,
     };
   }, [cardsList, cardsToList, limitedLibrary]);

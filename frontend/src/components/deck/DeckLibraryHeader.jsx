@@ -39,6 +39,7 @@ const DeckLibraryHeader = ({
     libraryByClansTotal,
     libraryByTypeTotal,
     libraryByDisciplinesTotal,
+    libraryByPathsTotal,
   } = useDeckLibrary(deck[LIBRARY]);
   const isEditable = forceIsEditable || getIsEditable(deck);
 
@@ -133,6 +134,7 @@ const DeckLibraryHeader = ({
           byTypes={libraryByTypeTotal}
           byClans={libraryByClansTotal}
           byDisciplines={libraryByDisciplinesTotal}
+          byPaths={libraryByPathsTotal}
         />
       </Activity>
       <Activity mode={showAdd ? "visible" : "hidden"}>
