@@ -33,6 +33,42 @@
         "title":"",
         "twd":3
     },
+    "201733":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Noora Hirvonen"
+        ],
+        "ascii":"Aaradhya, The Callous Tyrant",
+        "banned":"",
+        "capacity":10,
+        "clan":"Ventrue",
+        "disciplines":{
+            "Animalism":2,
+            "Dominate":2,
+            "Fortitude":2,
+            "Potence":2,
+            "Presence":2
+        },
+        "group":"6",
+        "id":201733,
+        "name":"Aaradhya, The Callous Tyrant",
+        "new":false,
+        "path":"Power and the Inner Voice",
+        "rulings":[],
+        "sect":"Sabbat",
+        "set":{
+            "SV5":{
+                "PPower":"1"
+            },
+            "playtest":{
+                "SPIV":1
+            }
+        },
+        "text":"Sabbat cardinal: Aaradhya can unlock after performing a successful political action (even if the referendum failed). +1 bleed.",
+        "title":"cardinal",
+        "twd":0
+    },
     "200002":{
         "adv":"",
         "aka":"",
@@ -207,6 +243,42 @@
         "text":"Independent: Abdelsobek can unlock a vampire or mummy you control as a +1 stealth action.",
         "title":"",
         "twd":26
+    },
+    "201734":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Francisco T\u00e9bar"
+        ],
+        "ascii":"Abderrahim, Death's Hand",
+        "banned":"",
+        "capacity":9,
+        "clan":"Lasombra",
+        "disciplines":{
+            "Blood Sorcery":1,
+            "Auspex":2,
+            "Dominate":2,
+            "Oblivion":2,
+            "Potence":2
+        },
+        "group":"6",
+        "id":201734,
+        "name":"Abderrahim, Death's Hand",
+        "new":false,
+        "path":"Death and the Soul",
+        "rulings":[],
+        "sect":"Sabbat",
+        "set":{
+            "SV5":{
+                "PDeath":"1"
+            },
+            "playtest":{
+                "SDS":1
+            }
+        },
+        "text":"Sabbat: During an action, Abderrahim can burn 1 blood to give an ally or younger vampire you control +1 stealth. +1 strength.",
+        "title":"",
+        "twd":0
     },
     "200006":{
         "adv":"",
@@ -775,6 +847,42 @@
         "title":"baron",
         "twd":50
     },
+    "201735":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Anastasiia Horbunova"
+        ],
+        "ascii":"Aelswith, The Irresistible",
+        "banned":"",
+        "capacity":9,
+        "clan":"Malkavian",
+        "disciplines":{
+            "Potence":1,
+            "Auspex":2,
+            "Dominate":2,
+            "Fortitude":2,
+            "Obfuscate":2
+        },
+        "group":"6",
+        "id":201735,
+        "name":"Aelswith, The Irresistible",
+        "new":false,
+        "path":"Cathari",
+        "rulings":[],
+        "sect":"Sabbat",
+        "set":{
+            "SV5":{
+                "PCathari":"1"
+            },
+            "playtest":{
+                "SCat":1
+            }
+        },
+        "text":"Sabbat cardinal: If Aelswith is blocked, the blocking minion's controller burns 1 pool before block resolution.",
+        "title":"cardinal",
+        "twd":0
+    },
     "200017":{
         "adv":"",
         "aka":"",
@@ -986,6 +1094,43 @@
         "text":"Sabbat: Cards requiring Sanguinus [san] cost \u00c1gi 1 fewer blood. Budapest circle. Sterile.",
         "title":"",
         "twd":4
+    },
+    "201736":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Krzysztof Bieniawski"
+        ],
+        "ascii":"Agnieszka, Tempter of Legions",
+        "banned":"",
+        "capacity":10,
+        "clan":"Ministry",
+        "disciplines":{
+            "Fortitude":1,
+            "Potence":1,
+            "Auspex":2,
+            "Obfuscate":2,
+            "Presence":2,
+            "Protean":2
+        },
+        "group":"6",
+        "id":201736,
+        "name":"Agnieszka, Tempter of Legions",
+        "new":false,
+        "path":"Cathari",
+        "rulings":[],
+        "sect":"Sabbat",
+        "set":{
+            "SV5":{
+                "PCathari":"1"
+            },
+            "playtest":{
+                "SCat":1
+            }
+        },
+        "text":"Sabbat Archbishop of Gdansk: Agnieszka can burn 1 blood to strike: combat ends. +1 bleed.",
+        "title":"archbishop",
+        "twd":0
     },
     "200022":{
         "adv":"",
@@ -1383,6 +1528,38 @@
         "text":"Camarilla: Younger Tremere cannot block Aisling.",
         "title":"",
         "twd":79
+    },
+    "201737":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Marta Ruiz Anguera"
+        ],
+        "ascii":"Aitana, The Unholy",
+        "banned":"",
+        "capacity":6,
+        "clan":"Hecata",
+        "disciplines":{
+            "Fortitude":1,
+            "Blood Sorcery":1,
+            "Auspex":2,
+            "Oblivion":2
+        },
+        "group":"6",
+        "id":201737,
+        "name":"Aitana, The Unholy",
+        "new":false,
+        "path":"Death and the Soul",
+        "rulings":[],
+        "sect":"Sabbat",
+        "set":{
+            "SV5":{
+                "PDeath":"1"
+            }
+        },
+        "text":"Sabbat.",
+        "title":"",
+        "twd":0
     },
     "200032":{
         "adv":"",
@@ -2372,6 +2549,38 @@
         "text":"Sabbat bishop: If Alfred is ready, he can lock before range is determined to end combat involving two other Sabbat vampires.\n[MERGED] Archbishop of Montreal: During the polling step of any referendum, he can burn 1 blood to get +1 vote.",
         "title":"bishop",
         "twd":4
+    },
+    "201738":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Mar\u00eda Lor\u00e9n"
+        ],
+        "ascii":"Algirdas, The Solar Prophet",
+        "banned":"",
+        "capacity":7,
+        "clan":"Banu Haqim",
+        "disciplines":{
+            "Potence":1,
+            "Animalism":2,
+            "Celerity":2,
+            "Blood Sorcery":2
+        },
+        "group":"6",
+        "id":201738,
+        "name":"Algirdas, The Solar Prophet",
+        "new":false,
+        "path":"Caine",
+        "rulings":[],
+        "sect":"Sabbat",
+        "set":{
+            "SV5":{
+                "PCaine":"1"
+            }
+        },
+        "text":"Sabbat bishop: Strike cards cost opposing younger vampires +1 blood.",
+        "title":"bishop",
+        "twd":0
     },
     "200053":{
         "adv":"",
@@ -4964,6 +5173,41 @@
         "title":"justicar",
         "twd":95
     },
+    "201739":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Francisco T\u00e9bar"
+        ],
+        "ascii":"Anousha, The Maniac",
+        "banned":"",
+        "capacity":7,
+        "clan":"Tzimisce",
+        "disciplines":{
+            "Dominate":1,
+            "Animalism":2,
+            "Protean":2,
+            "Blood Sorcery":2
+        },
+        "group":"6",
+        "id":201739,
+        "name":"Anousha, The Maniac",
+        "new":false,
+        "path":"Caine",
+        "rulings":[],
+        "sect":"Sabbat",
+        "set":{
+            "SV5":{
+                "PCaine":"1"
+            },
+            "playtest":{
+                "SCai":1
+            }
+        },
+        "text":"Sabbat bishop: +1 strength.",
+        "title":"bishop",
+        "twd":0
+    },
     "200107":{
         "adv":"",
         "aka":"",
@@ -5531,6 +5775,41 @@
         "text":"Independent: Blood cursed.",
         "title":"",
         "twd":4
+    },
+    "201740":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Gin\u00e9s Qui\u00f1onero"
+        ],
+        "ascii":"Anxo Vilela",
+        "banned":"",
+        "capacity":6,
+        "clan":"Tremere",
+        "disciplines":{
+            "Dominate":1,
+            "Oblivion":1,
+            "Auspex":2,
+            "Blood Sorcery":2
+        },
+        "group":"6",
+        "id":201740,
+        "name":"Anxo Vilela",
+        "new":false,
+        "path":"Death and the Soul",
+        "rulings":[],
+        "sect":"Sabbat",
+        "set":{
+            "SV5":{
+                "PDeath":"1"
+            },
+            "playtest":{
+                "SDS":1
+            }
+        },
+        "text":"Sabbat: While you have the Edge, Anxo gets +1 strength.",
+        "title":"",
+        "twd":0
     },
     "200122":{
         "adv":"",
@@ -6679,6 +6958,42 @@
         "text":"Camarilla.",
         "title":"",
         "twd":20
+    },
+    "201741":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Samuel Araya"
+        ],
+        "ascii":"Ashur-uballit, Son of the Abyss",
+        "banned":"",
+        "capacity":10,
+        "clan":"Hecata",
+        "disciplines":{
+            "Auspex":2,
+            "Dominate":2,
+            "Fortitude":2,
+            "Oblivion":2,
+            "Blood Sorcery":2
+        },
+        "group":"6",
+        "id":201741,
+        "name":"Ashur-uballit, Son of the Abyss",
+        "new":false,
+        "path":"Death and the Soul",
+        "rulings":[],
+        "sect":"Sabbat",
+        "set":{
+            "SV5":{
+                "PDeath":"1"
+            },
+            "playtest":{
+                "SDS":1
+            }
+        },
+        "text":"Sabbat cardinal: While Ashur-uballit is ready, zombies (allies and retainers) you recruit or employ get +1 starting life. +1 bleed.",
+        "title":"cardinal",
+        "twd":0
     },
     "201578":{
         "adv":"",
@@ -8663,6 +8978,40 @@
         "text":"Camarilla Prince of Washington, D.C.: Benjamin can call a referendum to give you +1 hand size until the end of the game as a +1 stealth political action.",
         "title":"prince",
         "twd":18
+    },
+    "201742":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Krasen Maximov"
+        ],
+        "ascii":"Berenguela, The Vicious",
+        "banned":"",
+        "capacity":6,
+        "clan":"Nosferatu",
+        "disciplines":{
+            "Animalism":2,
+            "Obfuscate":2,
+            "Potence":2
+        },
+        "group":"6",
+        "id":201742,
+        "name":"Berenguela, The Vicious",
+        "new":false,
+        "path":"Caine",
+        "rulings":[],
+        "sect":"Sabbat",
+        "set":{
+            "SV5":{
+                "PCaine":"1"
+            },
+            "playtest":{
+                "SCai":1
+            }
+        },
+        "text":"Sabbat.",
+        "title":"",
+        "twd":0
     },
     "200191":{
         "adv":"",
@@ -12743,6 +13092,36 @@
         "title":"",
         "twd":9
     },
+    "201661":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Ken Meyer, Jr."
+        ],
+        "ascii":"\"Coach\" Tyrone Soros",
+        "banned":"",
+        "capacity":3,
+        "clan":"Ministry",
+        "disciplines":{
+            "Obfuscate":1,
+            "Presence":1
+        },
+        "group":"6",
+        "id":201661,
+        "name":"\"Coach\" Tyrone Soros",
+        "new":false,
+        "path":"",
+        "rulings":[],
+        "sect":"Anarch",
+        "set":{
+            "NB2":{
+                "PMi":"1"
+            }
+        },
+        "text":"Anarch.",
+        "title":"",
+        "twd":14
+    },
     "200284":{
         "adv":"",
         "aka":"",
@@ -12779,35 +13158,36 @@
         "title":"justicar",
         "twd":18
     },
-    "201661":{
+    "201743":{
         "adv":"",
         "aka":"",
         "artist":[
-            "Ken Meyer, Jr."
+            "Camille D\u00e9farge"
         ],
-        "ascii":"\"Coach\" Tyrone Soros",
+        "ascii":"Coco Thorn",
         "banned":"",
-        "capacity":3,
-        "clan":"Ministry",
+        "capacity":4,
+        "clan":"Malkavian",
         "disciplines":{
-            "Obfuscate":1,
-            "Presence":1
+            "Dominate":1,
+            "Fortitude":1,
+            "Obfuscate":1
         },
         "group":"6",
-        "id":201661,
-        "name":"\"Coach\" Tyrone Soros",
+        "id":201743,
+        "name":"Coco Thorn",
         "new":false,
-        "path":"",
+        "path":"Cathari",
         "rulings":[],
-        "sect":"Anarch",
+        "sect":"Sabbat",
         "set":{
-            "NB2":{
-                "PMi":"1"
+            "SV5":{
+                "PCathari":"1"
             }
         },
-        "text":"Anarch.",
+        "text":"Sabbat.",
         "title":"",
-        "twd":14
+        "twd":0
     },
     "200285":{
         "adv":"",
@@ -12985,6 +13365,38 @@
         "text":"Sabbat.",
         "title":"",
         "twd":2
+    },
+    "201744":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Mar\u00eda Lor\u00e9n"
+        ],
+        "ascii":"Concordia",
+        "banned":"",
+        "capacity":6,
+        "clan":"Ventrue",
+        "disciplines":{
+            "Fortitude":1,
+            "Potence":1,
+            "Dominate":2,
+            "Presence":2
+        },
+        "group":"6",
+        "id":201744,
+        "name":"Concordia",
+        "new":false,
+        "path":"Power and the Inner Voice",
+        "rulings":[],
+        "sect":"Sabbat",
+        "set":{
+            "SV5":{
+                "PPower":"1"
+            }
+        },
+        "text":"Sabbat bishop.",
+        "title":"bishop",
+        "twd":0
     },
     "200288":{
         "adv":"",
@@ -13533,6 +13945,38 @@
         "title":"",
         "twd":21
     },
+    "201745":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Gin\u00e9s Qui\u00f1onero"
+        ],
+        "ascii":"Crossbreaker",
+        "banned":"",
+        "capacity":8,
+        "clan":"Nosferatu",
+        "disciplines":{
+            "Animalism":2,
+            "Obfuscate":2,
+            "Potence":2,
+            "Blood Sorcery":2
+        },
+        "group":"6",
+        "id":201745,
+        "name":"Crossbreaker",
+        "new":false,
+        "path":"Caine",
+        "rulings":[],
+        "sect":"Sabbat",
+        "set":{
+            "SV5":{
+                "PCaine":"1"
+            }
+        },
+        "text":"Sabbat bishop: Once each round of combat, Crossbreaker can burn 1 blood to make the damage from his hand strikes aggravated that round.",
+        "title":"bishop",
+        "twd":0
+    },
     "200303":{
         "adv":"",
         "aka":"",
@@ -13646,6 +14090,35 @@
         "text":"Anarch.",
         "title":"",
         "twd":50
+    },
+    "201746":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Helena Garc\u00eda Huang"
+        ],
+        "ascii":"Cyan Sin",
+        "banned":"",
+        "capacity":2,
+        "clan":"Toreador",
+        "disciplines":{
+            "Celerity":1
+        },
+        "group":"6",
+        "id":201746,
+        "name":"Cyan Sin",
+        "new":false,
+        "path":"Cathari",
+        "rulings":[],
+        "sect":"Sabbat",
+        "set":{
+            "SV5":{
+                "PCathari":"1"
+            }
+        },
+        "text":"Sabbat.",
+        "title":"",
+        "twd":0
     },
     "200305":{
         "adv":"",
@@ -13925,6 +14398,42 @@
         "text":"Sabbat.",
         "title":"",
         "twd":85
+    },
+    "201747":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Gin\u00e9s Qui\u00f1onero"
+        ],
+        "ascii":"Damian",
+        "banned":"",
+        "capacity":8,
+        "clan":"Lasombra",
+        "disciplines":{
+            "Fortitude":1,
+            "Presence":1,
+            "Dominate":2,
+            "Oblivion":2,
+            "Potence":2
+        },
+        "group":"6",
+        "id":201747,
+        "name":"Damian",
+        "new":false,
+        "path":"Power and the Inner Voice",
+        "rulings":[],
+        "sect":"Sabbat",
+        "set":{
+            "SV5":{
+                "PPower":"1"
+            },
+            "playtest":{
+                "SPIV":1
+            }
+        },
+        "text":"Sabbat Archbishop of Pittsburgh: While you control a ready cardinal, Damian gets +1 bleed.",
+        "title":"archbishop",
+        "twd":0
     },
     "200312":{
         "adv":"",
@@ -15091,6 +15600,41 @@
         "text":"Sabbat.",
         "title":"",
         "twd":96
+    },
+    "201748":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Ken Meyer, Jr."
+        ],
+        "ascii":"Devorah",
+        "banned":"",
+        "capacity":5,
+        "clan":"Brujah",
+        "disciplines":{
+            "Celerity":1,
+            "Fortitude":1,
+            "Potence":1,
+            "Presence":2
+        },
+        "group":"6",
+        "id":201748,
+        "name":"Devorah",
+        "new":false,
+        "path":"Cathari",
+        "rulings":[],
+        "sect":"Sabbat",
+        "set":{
+            "SV5":{
+                "PCathari":"1"
+            },
+            "playtest":{
+                "SCat":1
+            }
+        },
+        "text":"Sabbat: While you have 5 or fewer pool, Devorah gets +1 stealth.",
+        "title":"",
+        "twd":0
     },
     "200340":{
         "adv":"",
@@ -17955,6 +18499,36 @@
         "title":"",
         "twd":54
     },
+    "201749":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Camille D\u00e9farge"
+        ],
+        "ascii":"El Monsenor",
+        "banned":"",
+        "capacity":4,
+        "clan":"Lasombra",
+        "disciplines":{
+            "Dominate":1,
+            "Oblivion":2
+        },
+        "group":"6",
+        "id":201749,
+        "name":"El Monse\u00f1or",
+        "new":false,
+        "path":"Death and the Soul",
+        "rulings":[],
+        "sect":"Sabbat",
+        "set":{
+            "SV5":{
+                "PDeath":"1"
+            }
+        },
+        "text":"Sabbat.",
+        "title":"",
+        "twd":0
+    },
     "201585":{
         "adv":"",
         "aka":"",
@@ -19416,6 +19990,41 @@
         "title":"",
         "twd":34
     },
+    "201750":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Raquel Cornejo"
+        ],
+        "ascii":"Eulogio Sanchez de los Reyes",
+        "banned":"",
+        "capacity":8,
+        "clan":"Tremere",
+        "disciplines":{
+            "Auspex":2,
+            "Dominate":2,
+            "Oblivion":2,
+            "Blood Sorcery":2
+        },
+        "group":"6",
+        "id":201750,
+        "name":"Eulogio S\u00e1nchez de los Reyes",
+        "new":false,
+        "path":"Death and the Soul",
+        "rulings":[],
+        "sect":"Sabbat",
+        "set":{
+            "SV5":{
+                "PDeath":"1"
+            },
+            "playtest":{
+                "SDS":1
+            }
+        },
+        "text":"Sabbat: Eulogio can look at and reorder the top 5 cards of your library, and unlock as a +1 stealth action that costs 1 blood.",
+        "title":"",
+        "twd":0
+    },
     "200443":{
         "adv":"",
         "aka":"",
@@ -20743,6 +21352,42 @@
         "title":"",
         "twd":13
     },
+    "201751":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Ken Meyer, Jr."
+        ],
+        "ascii":"Fotini Katsikaris",
+        "banned":"",
+        "capacity":7,
+        "clan":"Malkavian",
+        "disciplines":{
+            "Fortitude":1,
+            "Potence":1,
+            "Auspex":2,
+            "Dominate":2,
+            "Obfuscate":2
+        },
+        "group":"6",
+        "id":201751,
+        "name":"Fotini Katsikaris",
+        "new":false,
+        "path":"Cathari",
+        "rulings":[],
+        "sect":"Sabbat",
+        "set":{
+            "SV5":{
+                "PCathari":"1"
+            },
+            "playtest":{
+                "SCat":1
+            }
+        },
+        "text":"Sabbat: After Fotini successfully bleeds (for 1 or more), you get +1 hand size until your next discard phase.",
+        "title":"",
+        "twd":0
+    },
     "200473":{
         "adv":"",
         "aka":"",
@@ -21093,6 +21738,39 @@
         "text":"Camarilla.",
         "title":"",
         "twd":3
+    },
+    "201752":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Lawrence Snelly"
+        ],
+        "ascii":"Frau Schadel",
+        "banned":"",
+        "capacity":7,
+        "clan":"Tremere",
+        "disciplines":{
+            "Auspex":1,
+            "Dominate":1,
+            "Fortitude":1,
+            "Oblivion":2,
+            "Blood Sorcery":2
+        },
+        "group":"6",
+        "id":201752,
+        "name":"Frau Sch\u00e4del",
+        "new":false,
+        "path":"Death and the Soul",
+        "rulings":[],
+        "sect":"Sabbat",
+        "set":{
+            "SV5":{
+                "PDeath":"1"
+            }
+        },
+        "text":"Sabbat: Frau Sch\u00e4del gets +1 stealth during recruit and employ actions.",
+        "title":"",
+        "twd":0
     },
     "200482":{
         "adv":"",
@@ -22899,6 +23577,38 @@
         "title":"",
         "twd":15
     },
+    "201753":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Mar\u00eda Lor\u00e9n"
+        ],
+        "ascii":"Glissando",
+        "banned":"",
+        "capacity":6,
+        "clan":"Toreador",
+        "disciplines":{
+            "Obfuscate":1,
+            "Presence":1,
+            "Auspex":2,
+            "Celerity":2
+        },
+        "group":"6",
+        "id":201753,
+        "name":"Glissando",
+        "new":false,
+        "path":"Cathari",
+        "rulings":[],
+        "sect":"Sabbat",
+        "set":{
+            "SV5":{
+                "PCathari":"1"
+            }
+        },
+        "text":"Sabbat.",
+        "title":"",
+        "twd":0
+    },
     "200525":{
         "adv":"",
         "aka":"",
@@ -23152,6 +23862,38 @@
         "text":"Advanced, Camarilla: Goratrix can burn a Tremere antitribu as a (D) action.\n[MERGED] Once each action, Goratrix may burn 1 blood to get an additional +1 bleed.",
         "title":"",
         "twd":2
+    },
+    "201754":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Anastasiia Horbunova"
+        ],
+        "ascii":"Gostoso",
+        "banned":"",
+        "capacity":5,
+        "clan":"Ministry",
+        "disciplines":{
+            "Fortitude":1,
+            "Obfuscate":1,
+            "Potence":1,
+            "Presence":2
+        },
+        "group":"6",
+        "id":201754,
+        "name":"Gostoso",
+        "new":false,
+        "path":"Cathari",
+        "rulings":[],
+        "sect":"Sabbat",
+        "set":{
+            "SV5":{
+                "PCathari":"1"
+            }
+        },
+        "text":"Sabbat: After Gostoso successfully bleeds your prey (for 1 or more), he can gain 1 blood.",
+        "title":"",
+        "twd":0
     },
     "200530":{
         "adv":"",
@@ -23410,6 +24152,40 @@
         "text":"Sabbat priscus: During a political action, if Gravitnir is ready, he may burn a blood to force the acting vampire to abstain (this can cancel that vampire's votes and ballots).",
         "title":"priscus",
         "twd":6
+    },
+    "201755":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Amy Wilkins"
+        ],
+        "ascii":"Grazyna \"Butcher\" Olesinska",
+        "banned":"",
+        "capacity":5,
+        "clan":"Tzimisce",
+        "disciplines":{
+            "Protean":1,
+            "Animalism":2,
+            "Blood Sorcery":2
+        },
+        "group":"6",
+        "id":201755,
+        "name":"Gra\u017cyna \"Butcher\" Olesi\u0144ska",
+        "new":false,
+        "path":"Caine",
+        "rulings":[],
+        "sect":"Sabbat",
+        "set":{
+            "SV5":{
+                "PCaine":"1"
+            },
+            "playtest":{
+                "SCai":1
+            }
+        },
+        "text":"Sabbat bishop.",
+        "title":"bishop",
+        "twd":0
     },
     "200536":{
         "adv":"",
@@ -25390,6 +26166,40 @@
         "title":"",
         "twd":32
     },
+    "201756":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Michele Bertilorenzi"
+        ],
+        "ascii":"Hekla \"Bonecrusher\" Jonasdottir",
+        "banned":"",
+        "capacity":5,
+        "clan":"Banu Haqim",
+        "disciplines":{
+            "Celerity":1,
+            "Potence":2,
+            "Blood Sorcery":2
+        },
+        "group":"6",
+        "id":201756,
+        "name":"Hekla \"Bonecrusher\" J\u00f3nasd\u00f3ttir",
+        "new":false,
+        "path":"Caine",
+        "rulings":[],
+        "sect":"Sabbat",
+        "set":{
+            "SV5":{
+                "PCaine":"1"
+            },
+            "playtest":{
+                "SCai":1
+            }
+        },
+        "text":"Sabbat.",
+        "title":"",
+        "twd":0
+    },
     "200584":{
         "adv":"",
         "aka":"",
@@ -26766,6 +27576,42 @@
             }
         },
         "text":"Sabbat: During your unlock phase, you may move a card from your hand to Hukros face down. You may look at the card at any time. Hukros may play that card as if from your hand.",
+        "title":"",
+        "twd":0
+    },
+    "201757":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Pau L\u00f3pez Vila"
+        ],
+        "ascii":"Huldu, The Desecrator",
+        "banned":"",
+        "capacity":8,
+        "clan":"Hecata",
+        "disciplines":{
+            "Obfuscate":1,
+            "Blood Sorcery":1,
+            "Auspex":2,
+            "Fortitude":2,
+            "Oblivion":2
+        },
+        "group":"6",
+        "id":201757,
+        "name":"Huldu, The Desecrator",
+        "new":false,
+        "path":"Death and the Soul",
+        "rulings":[],
+        "sect":"Sabbat",
+        "set":{
+            "SV5":{
+                "PDeath":"1"
+            },
+            "playtest":{
+                "SDS":1
+            }
+        },
+        "text":"Sabbat: Once each combat involving another minion you control, if Huldu is ready, she can burn 1 blood to prevent 1 damage to that minion. +1 bleed.",
         "title":"",
         "twd":0
     },
@@ -31742,6 +32588,41 @@
         "title":"",
         "twd":6
     },
+    "201758":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Gin\u00e9s Qui\u00f1onero"
+        ],
+        "ascii":"Jurgen, The Libertine",
+        "banned":"",
+        "capacity":8,
+        "clan":"Toreador",
+        "disciplines":{
+            "Obfuscate":1,
+            "Auspex":2,
+            "Celerity":2,
+            "Presence":2
+        },
+        "group":"6",
+        "id":201758,
+        "name":"J\u00fcrgen, The Libertine",
+        "new":false,
+        "path":"Cathari",
+        "rulings":[],
+        "sect":"Sabbat",
+        "set":{
+            "SV5":{
+                "PCathari":"1"
+            },
+            "playtest":{
+                "SCat":1
+            }
+        },
+        "text":"Sabbat Archbishop of Mannheim: Minions must burn 1 blood or life to attempt to block J\u00fcrgen.",
+        "title":"archbishop",
+        "twd":0
+    },
     "200739":{
         "adv":"",
         "aka":"",
@@ -32076,6 +32957,42 @@
         "text":"Camarilla.",
         "title":"",
         "twd":15
+    },
+    "201759":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Helena Garc\u00eda Huang"
+        ],
+        "ascii":"Kalyani, Agent of Doom",
+        "banned":"",
+        "capacity":7,
+        "clan":"Banu Haqim",
+        "disciplines":{
+            "Obfuscate":1,
+            "Potence":1,
+            "Animalism":2,
+            "Celerity":2,
+            "Blood Sorcery":2
+        },
+        "group":"6",
+        "id":201759,
+        "name":"Kalyani, Agent of Doom",
+        "new":false,
+        "path":"Caine",
+        "rulings":[],
+        "sect":"Sabbat",
+        "set":{
+            "SV5":{
+                "PCaine":"1"
+            },
+            "playtest":{
+                "SCai":1
+            }
+        },
+        "text":"Sabbat bishop: Kalyani gets -1 stealth when hunting. +1 strength.",
+        "title":"bishop",
+        "twd":0
     },
     "201713":{
         "adv":"",
@@ -33896,6 +34813,41 @@
         "title":"",
         "twd":25
     },
+    "201760":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Matheus Calza"
+        ],
+        "ascii":"Khin Aye",
+        "banned":"",
+        "capacity":7,
+        "clan":"Ventrue",
+        "disciplines":{
+            "Dominate":1,
+            "Fortitude":1,
+            "Potence":2,
+            "Presence":2
+        },
+        "group":"6",
+        "id":201760,
+        "name":"Khin Aye",
+        "new":false,
+        "path":"Power and the Inner Voice",
+        "rulings":[],
+        "sect":"Sabbat",
+        "set":{
+            "SV5":{
+                "PPower":"1"
+            },
+            "playtest":{
+                "SPIV":1
+            }
+        },
+        "text":"Sabbat priscus: While your predator controls more ready minions than you, you get +1 hand size.",
+        "title":"priscus",
+        "twd":0
+    },
     "200781":{
         "adv":"",
         "aka":"",
@@ -35499,6 +36451,39 @@
         "title":"",
         "twd":32
     },
+    "201761":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Gin\u00e9s Qui\u00f1onero"
+        ],
+        "ascii":"Lawbringer",
+        "banned":"",
+        "capacity":3,
+        "clan":"Tzimisce",
+        "disciplines":{
+            "Animalism":1,
+            "Protean":1
+        },
+        "group":"6",
+        "id":201761,
+        "name":"Lawbringer",
+        "new":false,
+        "path":"Caine",
+        "rulings":[],
+        "sect":"Sabbat",
+        "set":{
+            "SV5":{
+                "PCaine":"1"
+            },
+            "playtest":{
+                "SCai":1
+            }
+        },
+        "text":"Sabbat.",
+        "title":"",
+        "twd":0
+    },
     "200818":{
         "adv":"",
         "aka":"",
@@ -36270,6 +37255,39 @@
         "text":"Independent.",
         "title":"",
         "twd":111
+    },
+    "201762":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Heather V. Kreiter"
+        ],
+        "ascii":"Lika, The Purger",
+        "banned":"",
+        "capacity":3,
+        "clan":"Lasombra",
+        "disciplines":{
+            "Dominate":1,
+            "Potence":1
+        },
+        "group":"6",
+        "id":201762,
+        "name":"Lika, The Purger",
+        "new":false,
+        "path":"Power and the Inner Voice",
+        "rulings":[],
+        "sect":"Sabbat",
+        "set":{
+            "SV5":{
+                "PPower":"1"
+            },
+            "playtest":{
+                "SPIV":1
+            }
+        },
+        "text":"Sabbat.",
+        "title":"",
+        "twd":0
     },
     "200835":{
         "adv":"",
@@ -37519,6 +38537,39 @@
         "text":"Anarch.\n[MERGED] Louis gets +1 level of Dominate [dom] and Presence [pre].",
         "title":"",
         "twd":1
+    },
+    "201763":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Alan Mayoral"
+        ],
+        "ascii":"Loyiso, The Ruthless",
+        "banned":"",
+        "capacity":4,
+        "clan":"Nosferatu",
+        "disciplines":{
+            "Animalism":1,
+            "Potence":2
+        },
+        "group":"6",
+        "id":201763,
+        "name":"Loyiso, The Ruthless",
+        "new":false,
+        "path":"Caine",
+        "rulings":[],
+        "sect":"Sabbat",
+        "set":{
+            "SV5":{
+                "PCaine":"1"
+            },
+            "playtest":{
+                "SCai":1
+            }
+        },
+        "text":"Sabbat.",
+        "title":"",
+        "twd":0
     },
     "200864":{
         "adv":"",
@@ -38841,6 +39892,41 @@
         "text":"Camarilla: Lynn cannot have a haven (instead any haven that she would receive is burned).",
         "title":"",
         "twd":6
+    },
+    "201764":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Noora Hirvonen"
+        ],
+        "ascii":"Lyyli Yosydan",
+        "banned":"",
+        "capacity":5,
+        "clan":"Lasombra",
+        "disciplines":{
+            "Dominate":1,
+            "Fortitude":1,
+            "Oblivion":1,
+            "Potence":2
+        },
+        "group":"6",
+        "id":201764,
+        "name":"Lyyli Y\u00f6syd\u00e4n",
+        "new":false,
+        "path":"Power and the Inner Voice",
+        "rulings":[],
+        "sect":"Sabbat",
+        "set":{
+            "SV5":{
+                "PPower":"1"
+            },
+            "playtest":{
+                "SPIV":1
+            }
+        },
+        "text":"Sabbat.",
+        "title":"",
+        "twd":0
     },
     "200894":{
         "adv":"",
@@ -44995,6 +46081,39 @@
         "title":"",
         "twd":1
     },
+    "201765":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Amy Wilkins"
+        ],
+        "ascii":"Nadezhda",
+        "banned":"",
+        "capacity":3,
+        "clan":"Hecata",
+        "disciplines":{
+            "Auspex":1,
+            "Oblivion":1
+        },
+        "group":"6",
+        "id":201765,
+        "name":"Nadezhda",
+        "new":false,
+        "path":"Death and the Soul",
+        "rulings":[],
+        "sect":"Sabbat",
+        "set":{
+            "SV5":{
+                "PDeath":"1"
+            },
+            "playtest":{
+                "SDS":1
+            }
+        },
+        "text":"Sabbat.",
+        "title":"",
+        "twd":0
+    },
     "201029":{
         "adv":"",
         "aka":"",
@@ -47623,6 +48742,40 @@
         "title":"",
         "twd":5
     },
+    "201766":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Daniel Argudo"
+        ],
+        "ascii":"Onkabetse, Arriviste",
+        "banned":"",
+        "capacity":4,
+        "clan":"Brujah",
+        "disciplines":{
+            "Fortitude":1,
+            "Potence":1,
+            "Presence":1
+        },
+        "group":"6",
+        "id":201766,
+        "name":"Onkabetse, Arriviste",
+        "new":false,
+        "path":"Power and the Inner Voice",
+        "rulings":[],
+        "sect":"Sabbat",
+        "set":{
+            "SV5":{
+                "PPower":"1"
+            },
+            "playtest":{
+                "SPIV":1
+            }
+        },
+        "text":"Sabbat.",
+        "title":"",
+        "twd":0
+    },
     "201680":{
         "adv":"",
         "aka":"",
@@ -47819,6 +48972,41 @@
         "text":"Camarilla: Osric can burn a location you control to get +1 stealth for the current action.",
         "title":"",
         "twd":10
+    },
+    "201767":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Gin\u00e9s Qui\u00f1onero"
+        ],
+        "ascii":"Osvaldo Kuhnemann",
+        "banned":"",
+        "capacity":6,
+        "clan":"Brujah",
+        "disciplines":{
+            "Fortitude":1,
+            "Potence":1,
+            "Celerity":2,
+            "Presence":2
+        },
+        "group":"6",
+        "id":201767,
+        "name":"Osvaldo K\u00fchnemann",
+        "new":false,
+        "path":"Cathari",
+        "rulings":[],
+        "sect":"Sabbat",
+        "set":{
+            "SV5":{
+                "PCathari":"1"
+            },
+            "playtest":{
+                "SCat":1
+            }
+        },
+        "text":"Sabbat: Osvaldo gets +1 bleed against a Methuselah controlling a Toreador or Ventrue.",
+        "title":"",
+        "twd":0
     },
     "201086":{
         "adv":"",
@@ -49938,6 +51126,41 @@
         "title":"",
         "twd":30
     },
+    "201768":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Alan Rabinowitz"
+        ],
+        "ascii":"Przemyslaw, War Beast",
+        "banned":"",
+        "capacity":6,
+        "clan":"Tzimisce",
+        "disciplines":{
+            "Celerity":1,
+            "Blood Sorcery":1,
+            "Animalism":2,
+            "Protean":2
+        },
+        "group":"6",
+        "id":201768,
+        "name":"Przemys\u0142aw, War Beast",
+        "new":false,
+        "path":"Caine",
+        "rulings":[],
+        "sect":"Sabbat",
+        "set":{
+            "SV5":{
+                "PCaine":"1"
+            },
+            "playtest":{
+                "SCai":1
+            }
+        },
+        "text":"Sabbat bishop.",
+        "title":"bishop",
+        "twd":0
+    },
     "201135":{
         "adv":"",
         "aka":"",
@@ -51184,6 +52407,41 @@
         "title":"",
         "twd":27
     },
+    "201769":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Ludovic Salvador"
+        ],
+        "ascii":"Rasha Tarabzouni",
+        "banned":"",
+        "capacity":6,
+        "clan":"Lasombra",
+        "disciplines":{
+            "Oblivion":1,
+            "Presence":1,
+            "Dominate":2,
+            "Potence":2
+        },
+        "group":"6",
+        "id":201769,
+        "name":"Rasha Tarabzouni",
+        "new":false,
+        "path":"Power and the Inner Voice",
+        "rulings":[],
+        "sect":"Sabbat",
+        "set":{
+            "SV5":{
+                "PPower":"1"
+            },
+            "playtest":{
+                "SPIV":1
+            }
+        },
+        "text":"Sabbat bishop.",
+        "title":"bishop",
+        "twd":0
+    },
     "201166":{
         "adv":"",
         "aka":"",
@@ -51950,6 +53208,41 @@
         "text":"Sabbat: Combat cards cost Rex +1 blood.",
         "title":"",
         "twd":17
+    },
+    "201770":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Gin\u00e9s Qui\u00f1onero"
+        ],
+        "ascii":"Rexton \"Savage\" Abernathy",
+        "banned":"",
+        "capacity":8,
+        "clan":"Brujah",
+        "disciplines":{
+            "Celerity":1,
+            "Dominate":2,
+            "Potence":2,
+            "Presence":2
+        },
+        "group":"6",
+        "id":201770,
+        "name":"Rexton \"Savage\" Abernathy",
+        "new":false,
+        "path":"Power and the Inner Voice",
+        "rulings":[],
+        "sect":"Sabbat",
+        "set":{
+            "SV5":{
+                "PPower":"1"
+            },
+            "playtest":{
+                "SPIV":1
+            }
+        },
+        "text":"Sabbat Archbishop of Geneva: Allies and vampires with capacity 3 or less cannot block Rexton.",
+        "title":"archbishop",
+        "twd":0
     },
     "201185":{
         "adv":"",
@@ -53800,6 +55093,43 @@
         "title":"baron",
         "twd":31
     },
+    "201771":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "G\u00e1bor N\u00e9meth"
+        ],
+        "ascii":"Sakura, The Merciless",
+        "banned":"",
+        "capacity":7,
+        "clan":"Lasombra",
+        "disciplines":{
+            "Auspex":1,
+            "Potence":1,
+            "Dominate":2,
+            "Oblivion":2,
+            "Blood Sorcery":2
+        },
+        "group":"6",
+        "id":201771,
+        "name":"Sakura, The Merciless",
+        "new":false,
+        "path":"Death and the Soul",
+        "rulings":[],
+        "sect":"Sabbat",
+        "set":{
+            "SV5":{
+                "PDeath":"1"
+            },
+            "playtest":{
+                "SDS":1
+            }
+        },
+        "text":"Sabbat: During your turn, Sakura can burn 1 blood to unlock after performing a successful action requiring the Path of Death and the Soul.",
+        "title":"",
+        "twd":0,
+        "Card Text":"Sabbat: During your turn, Sakura can burn 1 blood to unlock after performing a successful action requiring the /Path of Death and the Soul/."
+    },
     "201224":{
         "adv":"",
         "aka":"",
@@ -55649,6 +56979,42 @@
         "text":"Anarch Baron of Santo Domingo: Minions with 1 or more of your corruption counters must burn 1 blood or life to attempt to block Sergio.",
         "title":"baron",
         "twd":36
+    },
+    "201772":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Marta Ruiz Anguera"
+        ],
+        "ascii":"Serhat Gunde, Combat Junkie",
+        "banned":"",
+        "capacity":7,
+        "clan":"Nosferatu",
+        "disciplines":{
+            "Fortitude":1,
+            "Blood Sorcery":1,
+            "Animalism":2,
+            "Obfuscate":2,
+            "Potence":2
+        },
+        "group":"6",
+        "id":201772,
+        "name":"Serhat Gunde, Combat Junkie",
+        "new":false,
+        "path":"Caine",
+        "rulings":[],
+        "sect":"Sabbat",
+        "set":{
+            "SV5":{
+                "PCaine":"1"
+            },
+            "playtest":{
+                "SCai":1
+            }
+        },
+        "text":"Sabbat: Serhat gets 1 optional press each combat.",
+        "title":"",
+        "twd":0
     },
     "201268":{
         "adv":"",
@@ -58039,6 +59405,38 @@
         "title":"",
         "twd":1
     },
+    "201773":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Alan Mayoral"
+        ],
+        "ascii":"Surapong",
+        "banned":"",
+        "capacity":2,
+        "clan":"Nosferatu",
+        "disciplines":{
+            "Animalism":1
+        },
+        "group":"6",
+        "id":201773,
+        "name":"Surapong",
+        "new":false,
+        "path":"Caine",
+        "rulings":[],
+        "sect":"Sabbat",
+        "set":{
+            "SV5":{
+                "PCaine":"1"
+            },
+            "playtest":{
+                "SCai":1
+            }
+        },
+        "text":"Sabbat.",
+        "title":"",
+        "twd":0
+    },
     "201688":{
         "adv":"",
         "aka":"",
@@ -58118,6 +59516,38 @@
         "text":"Independent. 2 votes (titled): You can gain 1 pool after resolution of any successful action to recruit a mummy ally. During your unlock phase, you can move 1 blood between Sutekh and another Minister you control. +1 bleed.",
         "title":"2 votes",
         "twd":7
+    },
+    "201774":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Heather V. Kreiter"
+        ],
+        "ascii":"Suwira",
+        "banned":"",
+        "capacity":2,
+        "clan":"Ventrue",
+        "disciplines":{
+            "Presence":1
+        },
+        "group":"6",
+        "id":201774,
+        "name":"Suwira",
+        "new":false,
+        "path":"Power and the Inner Voice",
+        "rulings":[],
+        "sect":"Sabbat",
+        "set":{
+            "SV5":{
+                "PPower":"1"
+            },
+            "playtest":{
+                "SPIV":1
+            }
+        },
+        "text":"Sabbat.",
+        "title":"",
+        "twd":0
     },
     "201328":{
         "adv":"",
@@ -61701,6 +63131,39 @@
         "title":"",
         "twd":10
     },
+    "201775":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "G\u00e1bor N\u00e9meth"
+        ],
+        "ascii":"Uresseg",
+        "banned":"",
+        "capacity":8,
+        "clan":"Brujah",
+        "disciplines":{
+            "Dominate":1,
+            "Fortitude":1,
+            "Celerity":2,
+            "Potence":2,
+            "Presence":2
+        },
+        "group":"6",
+        "id":201775,
+        "name":"\u00dcress\u00e9g",
+        "new":false,
+        "path":"Power and the Inner Voice",
+        "rulings":[],
+        "sect":"Sabbat",
+        "set":{
+            "SV5":{
+                "PPower":"1"
+            }
+        },
+        "text":"Sabbat Archbishop of Budapest: While your prey has 10 or fewer pool, \u00dcress\u00e9g gets +1 vote and +1 bleed.",
+        "title":"archbishop",
+        "twd":0
+    },
     "201415":{
         "adv":"",
         "aka":"",
@@ -62549,6 +64012,42 @@
         "title":"cardinal",
         "twd":22
     },
+    "201776":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Raquel Cornejo"
+        ],
+        "ascii":"Venceslava, The Implacable",
+        "banned":"",
+        "capacity":9,
+        "clan":"Brujah",
+        "disciplines":{
+            "Celerity":1,
+            "Dominate":2,
+            "Fortitude":2,
+            "Potence":2,
+            "Presence":2
+        },
+        "group":"6",
+        "id":201776,
+        "name":"V\u011bnceslava, The Implacable",
+        "new":false,
+        "path":"Power and the Inner Voice",
+        "rulings":[],
+        "sect":"Sabbat",
+        "set":{
+            "SV5":{
+                "PPower":"1"
+            },
+            "playtest":{
+                "SPIV":1
+            }
+        },
+        "text":"Sabbat Archbishop of Ostrava: Once each turn, after resolution of an action performed by V\u011bnceslava during which your prey burned 1 or more pool, you can gain 1 pool.",
+        "title":"archbishop",
+        "twd":0
+    },
     "201435":{
         "adv":"",
         "aka":"",
@@ -62618,6 +64117,42 @@
         "text":"Camarilla: As Verbruch enters play, you can search your crypt for a Tremere, reveal them, and move them to your uncontrolled region. Flight [FLIGHT]. Tremere slave.",
         "title":"",
         "twd":3
+    },
+    "201777":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Noora Hirvonen"
+        ],
+        "ascii":"Verrix, Naughty Boy",
+        "banned":"",
+        "capacity":7,
+        "clan":"Ministry",
+        "disciplines":{
+            "Celerity":1,
+            "Obfuscate":1,
+            "Protean":1,
+            "Auspex":2,
+            "Presence":2
+        },
+        "group":"6",
+        "id":201777,
+        "name":"Verrix, Naughty Boy",
+        "new":false,
+        "path":"Cathari",
+        "rulings":[],
+        "sect":"Sabbat",
+        "set":{
+            "SV5":{
+                "PCathari":"1"
+            },
+            "playtest":{
+                "SCat":1
+            }
+        },
+        "text":"Sabbat bishop: Verrix gets +1 stealth during bleed actions.",
+        "title":"bishop",
+        "twd":0
     },
     "201437":{
         "adv":"",
@@ -64819,6 +66354,39 @@
         "title":"",
         "twd":22
     },
+    "201778":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Amy Wilkins"
+        ],
+        "ascii":"Ximena",
+        "banned":"",
+        "capacity":3,
+        "clan":"Ministry",
+        "disciplines":{
+            "Obfuscate":1,
+            "Presence":1
+        },
+        "group":"6",
+        "id":201778,
+        "name":"Ximena",
+        "new":false,
+        "path":"Cathari",
+        "rulings":[],
+        "sect":"Sabbat",
+        "set":{
+            "SV5":{
+                "PCathari":"1"
+            },
+            "playtest":{
+                "SCat":1
+            }
+        },
+        "text":"Sabbat.",
+        "title":"",
+        "twd":0
+    },
     "201482":{
         "adv":"",
         "aka":"",
@@ -65330,6 +66898,38 @@
         "title":"",
         "twd":16
     },
+    "201779":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Ken Meyer, Jr."
+        ],
+        "ascii":"Yurena, The Boor",
+        "banned":"",
+        "capacity":2,
+        "clan":"Tremere",
+        "disciplines":{
+            "Blood Sorcery":1
+        },
+        "group":"6",
+        "id":201779,
+        "name":"Yurena, The Boor",
+        "new":false,
+        "path":"Death and the Soul",
+        "rulings":[],
+        "sect":"Sabbat",
+        "set":{
+            "SV5":{
+                "PDeath":"1"
+            },
+            "playtest":{
+                "SDS":1
+            }
+        },
+        "text":"Sabbat.",
+        "title":"",
+        "twd":0
+    },
     "201493":{
         "adv":"",
         "aka":"",
@@ -65758,6 +67358,41 @@
         "text":"Independent: Zayyat has 2 votes (titled). Zayyat can move up to 3 blood from himself to a younger vampire in your uncontrolled region as a +1 stealth action. Once each turn, he can burn 2 blood to get +2 stealth for the current action.",
         "title":"2 votes",
         "twd":7
+    },
+    "201780":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Ludovic Salvador"
+        ],
+        "ascii":"Zbigniew, Hunter of Mekhet",
+        "banned":"",
+        "capacity":5,
+        "clan":"Lasombra",
+        "disciplines":{
+            "Auspex":1,
+            "Dominate":1,
+            "Blood Sorcery":1,
+            "Oblivion":2
+        },
+        "group":"6",
+        "id":201780,
+        "name":"Zbigniew, Hunter of Mekhet",
+        "new":false,
+        "path":"Death and the Soul",
+        "rulings":[],
+        "sect":"Sabbat",
+        "set":{
+            "SV5":{
+                "PDeath":"1"
+            },
+            "playtest":{
+                "SDS":1
+            }
+        },
+        "text":"Sabbat.",
+        "title":"",
+        "twd":0
     },
     "201503":{
         "adv":"",

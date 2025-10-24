@@ -17,6 +17,7 @@ bundles = {
         "Tz": {},
         "V": {},
     },
+    "SV5": {"PCaine": {}, "PCathari": {}, "PDeath": {}, "PPower": {}},
     "NB3": {"PH": {}, "PL": {}},
     "V5H": {
         "PH": {},
@@ -222,15 +223,11 @@ with (
             if card_set in bundles:
                 for precon in bundles[card_set].keys():
                     if precon in card_precons:
-                        bundles[card_set][precon][card["id"]] = int(
-                            card_precons[precon]
-                        )
+                        bundles[card_set][precon][card["id"]] = int(card_precons[precon])
             if card_set in playtest_bundles:
                 for precon in playtest_bundles[card_set].keys():
                     if precon in card_precons:
-                        playtest_bundles[card_set][precon][card["id"]] = int(
-                            card_precons[precon]
-                        )
+                        playtest_bundles[card_set][precon][card["id"]] = int(card_precons[precon])
 
     json.dump(bundles, precons_file_min, separators=(",", ":"))
     json.dump(bundles, precons_file, indent=4, separators=(",", ":"))

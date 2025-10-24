@@ -118,6 +118,28 @@
       }
     }
   },
+  "SV5": {
+    "name": "V5 Sabbat",
+    "date": "2025-10-26",
+    "precons": {
+      "PCaine": {
+        "name": "Path of Caine",
+        "clan": "Caine"
+      },
+      "PCathari": {
+        "name": "Path of Cathari",
+        "clan": "Cathari"
+      },
+      "PDeath": {
+        "name": "Path of Death",
+        "clan": "Death and the Soul"
+      },
+      "PPower": {
+        "name": "Path of Power",
+        "clan": "Power and the Inner Voice"
+      }
+    }
+  },
   "NB3": {
     "name": "New Blood III",
     "date": "2025-05-31",
