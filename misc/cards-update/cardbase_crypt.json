@@ -60,9 +60,6 @@
         "set":{
             "SV5":{
                 "PPower":"1"
-            },
-            "playtest":{
-                "SPIV":1
             }
         },
         "text":"Sabbat cardinal: Aaradhya can unlock after performing a successful political action (even if the referendum failed). +1 bleed.",
@@ -271,9 +268,6 @@
         "set":{
             "SV5":{
                 "PDeath":"1"
-            },
-            "playtest":{
-                "SDS":1
             }
         },
         "text":"Sabbat: During an action, Abderrahim can burn 1 blood to give an ally or younger vampire you control +1 stealth. +1 strength.",
@@ -874,9 +868,6 @@
         "set":{
             "SV5":{
                 "PCathari":"1"
-            },
-            "playtest":{
-                "SCat":1
             }
         },
         "text":"Sabbat cardinal: If Aelswith is blocked, the blocking minion's controller burns 1 pool before block resolution.",
@@ -1123,9 +1114,6 @@
         "set":{
             "SV5":{
                 "PCathari":"1"
-            },
-            "playtest":{
-                "SCat":1
             }
         },
         "text":"Sabbat Archbishop of Gdansk: Agnieszka can burn 1 blood to strike: combat ends. +1 bleed.",
@@ -5199,9 +5187,6 @@
         "set":{
             "SV5":{
                 "PCaine":"1"
-            },
-            "playtest":{
-                "SCai":1
             }
         },
         "text":"Sabbat bishop: +1 strength.",
@@ -5802,9 +5787,6 @@
         "set":{
             "SV5":{
                 "PDeath":"1"
-            },
-            "playtest":{
-                "SDS":1
             }
         },
         "text":"Sabbat: While you have the Edge, Anxo gets +1 strength.",
@@ -6986,9 +6968,6 @@
         "set":{
             "SV5":{
                 "PDeath":"1"
-            },
-            "playtest":{
-                "SDS":1
             }
         },
         "text":"Sabbat cardinal: While Ashur-uballit is ready, zombies (allies and retainers) you recruit or employ get +1 starting life. +1 bleed.",
@@ -9004,9 +8983,6 @@
         "set":{
             "SV5":{
                 "PCaine":"1"
-            },
-            "playtest":{
-                "SCai":1
             }
         },
         "text":"Sabbat.",
@@ -14426,9 +14402,6 @@
         "set":{
             "SV5":{
                 "PPower":"1"
-            },
-            "playtest":{
-                "SPIV":1
             }
         },
         "text":"Sabbat Archbishop of Pittsburgh: While you control a ready cardinal, Damian gets +1 bleed.",
@@ -15627,9 +15600,6 @@
         "set":{
             "SV5":{
                 "PCathari":"1"
-            },
-            "playtest":{
-                "SCat":1
             }
         },
         "text":"Sabbat: While you have 5 or fewer pool, Devorah gets +1 stealth.",
@@ -20016,9 +19986,6 @@
         "set":{
             "SV5":{
                 "PDeath":"1"
-            },
-            "playtest":{
-                "SDS":1
             }
         },
         "text":"Sabbat: Eulogio can look at and reorder the top 5 cards of your library, and unlock as a +1 stealth action that costs 1 blood.",
@@ -21379,9 +21346,6 @@
         "set":{
             "SV5":{
                 "PCathari":"1"
-            },
-            "playtest":{
-                "SCat":1
             }
         },
         "text":"Sabbat: After Fotini successfully bleeds (for 1 or more), you get +1 hand size until your next discard phase.",
@@ -24178,9 +24142,6 @@
         "set":{
             "SV5":{
                 "PCaine":"1"
-            },
-            "playtest":{
-                "SCai":1
             }
         },
         "text":"Sabbat bishop.",
@@ -26191,9 +26152,6 @@
         "set":{
             "SV5":{
                 "PCaine":"1"
-            },
-            "playtest":{
-                "SCai":1
             }
         },
         "text":"Sabbat.",
@@ -27606,9 +27564,6 @@
         "set":{
             "SV5":{
                 "PDeath":"1"
-            },
-            "playtest":{
-                "SDS":1
             }
         },
         "text":"Sabbat: Once each combat involving another minion you control, if Huldu is ready, she can burn 1 blood to prevent 1 damage to that minion. +1 bleed.",
@@ -32614,9 +32569,6 @@
         "set":{
             "SV5":{
                 "PCathari":"1"
-            },
-            "playtest":{
-                "SCat":1
             }
         },
         "text":"Sabbat Archbishop of Mannheim: Minions must burn 1 blood or life to attempt to block J\u00fcrgen.",
@@ -32985,9 +32937,6 @@
         "set":{
             "SV5":{
                 "PCaine":"1"
-            },
-            "playtest":{
-                "SCai":1
             }
         },
         "text":"Sabbat bishop: Kalyani gets -1 stealth when hunting. +1 strength.",
@@ -34839,9 +34788,6 @@
         "set":{
             "SV5":{
                 "PPower":"1"
-            },
-            "playtest":{
-                "SPIV":1
             }
         },
         "text":"Sabbat priscus: While your predator controls more ready minions than you, you get +1 hand size.",
@@ -36475,9 +36421,6 @@
         "set":{
             "SV5":{
                 "PCaine":"1"
-            },
-            "playtest":{
-                "SCai":1
             }
         },
         "text":"Sabbat.",
@@ -37280,9 +37223,6 @@
         "set":{
             "SV5":{
                 "PPower":"1"
-            },
-            "playtest":{
-                "SPIV":1
             }
         },
         "text":"Sabbat.",
@@ -38562,9 +38502,6 @@
         "set":{
             "SV5":{
                 "PCaine":"1"
-            },
-            "playtest":{
-                "SCai":1
             }
         },
         "text":"Sabbat.",
@@ -39919,9 +39856,6 @@
         "set":{
             "SV5":{
                 "PPower":"1"
-            },
-            "playtest":{
-                "SPIV":1
             }
         },
         "text":"Sabbat.",
@@ -46105,9 +46039,6 @@
         "set":{
             "SV5":{
                 "PDeath":"1"
-            },
-            "playtest":{
-                "SDS":1
             }
         },
         "text":"Sabbat.",
@@ -48767,9 +48698,6 @@
         "set":{
             "SV5":{
                 "PPower":"1"
-            },
-            "playtest":{
-                "SPIV":1
             }
         },
         "text":"Sabbat.",
@@ -48999,9 +48927,6 @@
         "set":{
             "SV5":{
                 "PCathari":"1"
-            },
-            "playtest":{
-                "SCat":1
             }
         },
         "text":"Sabbat: Osvaldo gets +1 bleed against a Methuselah controlling a Toreador or Ventrue.",
@@ -51152,9 +51077,6 @@
         "set":{
             "SV5":{
                 "PCaine":"1"
-            },
-            "playtest":{
-                "SCai":1
             }
         },
         "text":"Sabbat bishop.",
@@ -52433,9 +52355,6 @@
         "set":{
             "SV5":{
                 "PPower":"1"
-            },
-            "playtest":{
-                "SPIV":1
             }
         },
         "text":"Sabbat bishop.",
@@ -53235,9 +53154,6 @@
         "set":{
             "SV5":{
                 "PPower":"1"
-            },
-            "playtest":{
-                "SPIV":1
             }
         },
         "text":"Sabbat Archbishop of Geneva: Allies and vampires with capacity 3 or less cannot block Rexton.",
@@ -55120,9 +55036,6 @@
         "set":{
             "SV5":{
                 "PDeath":"1"
-            },
-            "playtest":{
-                "SDS":1
             }
         },
         "text":"Sabbat: During your turn, Sakura can burn 1 blood to unlock after performing a successful action requiring the Path of Death and the Soul.",
@@ -57007,9 +56920,6 @@
         "set":{
             "SV5":{
                 "PCaine":"1"
-            },
-            "playtest":{
-                "SCai":1
             }
         },
         "text":"Sabbat: Serhat gets 1 optional press each combat.",
@@ -59428,9 +59338,6 @@
         "set":{
             "SV5":{
                 "PCaine":"1"
-            },
-            "playtest":{
-                "SCai":1
             }
         },
         "text":"Sabbat.",
@@ -59540,9 +59447,6 @@
         "set":{
             "SV5":{
                 "PPower":"1"
-            },
-            "playtest":{
-                "SPIV":1
             }
         },
         "text":"Sabbat.",
@@ -64039,9 +63943,6 @@
         "set":{
             "SV5":{
                 "PPower":"1"
-            },
-            "playtest":{
-                "SPIV":1
             }
         },
         "text":"Sabbat Archbishop of Ostrava: Once each turn, after resolution of an action performed by V\u011bnceslava during which your prey burned 1 or more pool, you can gain 1 pool.",
@@ -64145,9 +64046,6 @@
         "set":{
             "SV5":{
                 "PCathari":"1"
-            },
-            "playtest":{
-                "SCat":1
             }
         },
         "text":"Sabbat bishop: Verrix gets +1 stealth during bleed actions.",
@@ -66378,9 +66276,6 @@
         "set":{
             "SV5":{
                 "PCathari":"1"
-            },
-            "playtest":{
-                "SCat":1
             }
         },
         "text":"Sabbat.",
@@ -66921,9 +66816,6 @@
         "set":{
             "SV5":{
                 "PDeath":"1"
-            },
-            "playtest":{
-                "SDS":1
             }
         },
         "text":"Sabbat.",
@@ -67385,9 +67277,6 @@
         "set":{
             "SV5":{
                 "PDeath":"1"
-            },
-            "playtest":{
-                "SDS":1
             }
         },
         "text":"Sabbat.",

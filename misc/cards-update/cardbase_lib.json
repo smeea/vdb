@@ -323,9 +323,6 @@
             },
             "SV5":{
                 "PCaine":"2"
-            },
-            "playtest":{
-                "SCai":2
             }
         },
         "text":"+1 stealth action. Requires a Sabbat vampire.\nPut this card on this Sabbat vampire and unlock them. This Sabbat vampire gets +1 intercept during actions directed at their controller. A vampire can have only one Abbot.",
@@ -2898,9 +2895,6 @@
             },
             "SV5":{
                 "PCathari":"1"
-            },
-            "playtest":{
-                "SCat":1
             }
         },
         "text":"Unique.\nPut this card in play. During your unlock phase, you can give your prey control of the Anarch Troublemaker and either lock up to two vampires they control or burn an equipment on one of their minions.",
@@ -6536,9 +6530,6 @@
             },
             "SV5":{
                 "PPower":"2"
-            },
-            "playtest":{
-                "SPIV":2
             }
         },
         "text":"Choose a ready younger vampire. Successful referendum means the chosen vampire is moved to the uncontrolled region (breaking any temporary control effects); any cards and counters on the chosen vampire stay with them but are out of play as long as the chosen vampire remains uncontrolled.",
@@ -8152,9 +8143,6 @@
             },
             "SV5":{
                 "PPower":"1"
-            },
-            "playtest":{
-                "SPIV":1
             }
         },
         "text":"Unique location. Requires a ready Sabbat vampire.\nOnce each turn, a Sabbat vampire can call a referendum to have their controller gain 2 pool as a +1 stealth political action. Changeling allies can burn this location as a +1 stealth (D) action.",
@@ -9740,8 +9728,6 @@
                 "PDeath":"3"
             },
             "playtest":{
-                "SCat":3,
-                "SDS":3,
                 "NTz":2
             }
         },
@@ -14080,9 +14066,6 @@
             },
             "SV5":{
                 "PPower":"1"
-            },
-            "playtest":{
-                "SPIV":1
             }
         },
         "text":"Title. Requires a Sabbat vampire.\nChoose a Sabbat vampire with capacity 7 or more. Successful referendum means this card is put on the chosen vampire to represent the Sabbat title of cardinal. During this referendum, non-Sabbat vampires cannot cast votes or ballots.",
@@ -14667,9 +14650,6 @@
             },
             "SV5":{
                 "PPower":"3"
-            },
-            "playtest":{
-                "SPIV":3
             }
         },
         "text":"[pre] Strike: combat ends.\n[PRE] As above, and after combat ends, if the range is close, this vampire inflicts 1 unpreventable damage on the opposing minion.",
@@ -15897,7 +15877,6 @@
                 "PDeath":"1"
             },
             "playtest":{
-                "SDS":1,
                 "NTz":1
             }
         },
@@ -20917,10 +20896,6 @@
             },
             "SV5":{
                 "PPower":"1"
-            },
-            "playtest":{
-                "SDS":1,
-                "SPIV":1
             }
         },
         "text":"Unique location.\nYou can lock this card as a vampire you control announces an undirected action to give that vampire +1 stealth, even if stealth is not yet needed.",
@@ -22783,9 +22758,6 @@
             },
             "SV5":{
                 "PPower":"1"
-            },
-            "playtest":{
-                "SPIV":1
             }
         },
         "text":"[for] Vampires cannot block this action. This vampire takes 2 unpreventable environmental aggravated damage after action resolution.\n[FOR] As above, but this vampire takes 1 unpreventable environmental aggravated damage.",
@@ -24161,7 +24133,6 @@
                 "PPower":"5"
             },
             "playtest":{
-                "SPIV":5,
                 "NTz":2
             }
         },
@@ -24566,9 +24537,6 @@
             },
             "SV5":{
                 "PCaine":"1"
-            },
-            "playtest":{
-                "SCai":1
             }
         },
         "text":"Unique.\nPut this card on a ready vampire you control. This vampire gets +1 strength. This vampire gets +1 stealth during diablerie actions. This vampire cannot recruit allies or employ retainers.",
@@ -25372,9 +25340,6 @@
             },
             "SV5":{
                 "PPower":"1"
-            },
-            "playtest":{
-                "SPIV":1
             }
         },
         "text":"Only one D\u00eda de los Muertos can be played in a game.\nThe first referendum a Sabbat vampire you control calls on this turn passes automatically (skip the polling step).",
@@ -27764,9 +27729,6 @@
             },
             "SV5":{
                 "PCathari":"1"
-            },
-            "playtest":{
-                "SCat":1
             }
         },
         "text":"Unique.\nPut this card in play. Add 1 counter to this card each time you lock it. You can lock this card to get +2 hand size until the end of the turn. You can lock this card during your unlock phase to gain 1 pool if you have the Edge. You can lock this card to add 1 blood to a vampire in your uncontrolled region. Burn this card if it has 3 counters.",
@@ -30230,9 +30192,6 @@
                 "Mi":4,
                 "To":4,
                 "V":3
-            },
-            "playtest":{
-                "SPIV":6
             }
         },
         "text":"[pre] (D) Bleed with +1 bleed.\n[PRE] +1 stealth action. Add 2 blood to a younger vampire in your uncontrolled region.",
@@ -30950,9 +30909,6 @@
             },
             "SV5":{
                 "PCathari":"2"
-            },
-            "playtest":{
-                "SCat":2
             }
         },
         "text":"[pre] (D) Bleed with +1 bleed.\n[PRE] +1 stealth action. (D) Steal an ally controlled by another Methuselah.",
@@ -32251,7 +32207,6 @@
                 "Tr":2
             },
             "playtest":{
-                "SCat":3,
                 "NSal":3
             }
         },
@@ -33239,7 +33194,6 @@
                 "Tz":1
             },
             "playtest":{
-                "SCai":1,
                 "NR":1,
                 "NTz":1
             }
@@ -34614,9 +34568,6 @@
             },
             "SV5":{
                 "PCaine":"2"
-            },
-            "playtest":{
-                "SCai":2
             }
         },
         "text":"Requires a Sabbat vampire.\n(D) Bleed with +1 bleed. Anarchs get -1 intercept during this action. If this vampire is Tzimisce and the bleed is successful, this Tzimisce can burn 1 blood during your next discard phase to unlock.",
@@ -37606,8 +37557,6 @@
                 "PPower":"4"
             },
             "playtest":{
-                "SCat":4,
-                "SPIV":4,
                 "NSal":4
             }
         },
@@ -39796,9 +39745,6 @@
             },
             "SV5":{
                 "PDeath":"3"
-            },
-            "playtest":{
-                "SDS":2
             }
         },
         "text":"Do not replace until your next unlock phase.\nPrevent 1 damage from the opposing minion's strike.",
@@ -40293,7 +40239,6 @@
                 "PDeath":"4"
             },
             "playtest":{
-                "SDS":4,
                 "NTz":4
             }
         },
@@ -40681,9 +40626,6 @@
             },
             "SV5":{
                 "PDeath":"2"
-            },
-            "playtest":{
-                "SDS":2
             }
         },
         "text":"[dom] (D) Steal a vampire in torpor controlled by another Methuselah.\n[DOM] As above, and this acting vampire can burn 2 blood to move the stolen vampire to your ready region.",
@@ -42761,9 +42703,6 @@
             },
             "SV5":{
                 "PCaine":"1"
-            },
-            "playtest":{
-                "SCai":1
             }
         },
         "text":"Put this card on a ready vampire. Minions can enter combat with this vampire as a +1 stealth (D) action. This vampire can burn this card as a +1 stealth (D) action.",
@@ -45019,9 +44958,6 @@
             },
             "SV5":{
                 "PCathari":"1"
-            },
-            "playtest":{
-                "SCat":1
             }
         },
         "text":"Unique location.\nSabbat vampires you control get +1 hunt.",
@@ -48038,9 +47974,6 @@
             },
             "SV5":{
                 "PPower":"2"
-            },
-            "playtest":{
-                "SPIV":2
             }
         },
         "text":"[pot][pre] Only usable during the polling step of a political action. This vampire gets +2 votes.\n[POT][PRE] Only usable during a bleed action. +2 bleed (limited).",
@@ -50280,9 +50213,6 @@
                 "Mi":2,
                 "To":4,
                 "V":3
-            },
-            "playtest":{
-                "SPIV":5
             }
         },
         "text":"Allocate 4 points among two or more Methuselahs. Successful referendum means each Methuselah burns 1 pool for each point allocated.",
@@ -50790,9 +50720,6 @@
             },
             "SV5":{
                 "PDeath":"1"
-            },
-            "playtest":{
-                "SDS":1
             }
         },
         "text":"Unique location.\nYou can lock this card to give a minion you control +1 intercept. You can lock this card and burn 1 pool to give a minion controlled by another Methuselah +1 intercept.",
@@ -51950,9 +51877,6 @@
             },
             "25th":{
                 "":"1"
-            },
-            "playtest":{
-                "SPIV":1
             }
         },
         "text":"Unique.\nPut this card on a vampire with capacity 7 or more who entered your ready region during your last influence phase. This vampire gets +2 bleed and +2 votes. Any vampire can call a referendum to burn this card as a +1 stealth political action.",
@@ -54495,9 +54419,6 @@
             },
             "SV5":{
                 "PPower":"3"
-            },
-            "playtest":{
-                "SPIV":3
             }
         },
         "text":"[pre] Strike: combat ends.\n[PRE] As above, and unlock this vampire before combat ends.",
@@ -57492,9 +57413,6 @@
             },
             "SV5":{
                 "PCathari":"4"
-            },
-            "playtest":{
-                "SCat":4
             }
         },
         "text":"[pre] (D) Stun an unlocked vampire.\n[PRE] As above, and this is a +1 stealth action.",
@@ -57979,9 +57897,6 @@
             "2P":{
                 "C":true,
                 "Tr":3
-            },
-            "playtest":{
-                "SDS":3
             }
         },
         "text":"Do not replace until your next discard phase.\n[tha] +1 stealth.\n[THA] As above, and if this action is blocked, lock the blocking minion and end the action before block resolution.",
@@ -58081,9 +57996,6 @@
                 "C":true,
                 "H":1,
                 "Tr":1
-            },
-            "playtest":{
-                "SCat":2
             }
         },
         "text":"Lock a minion.",
@@ -58307,9 +58219,6 @@
             },
             "SV5":{
                 "PDeath":"1"
-            },
-            "playtest":{
-                "SDS":1
             }
         },
         "text":"Unique.\nPut this card in play. You can lock this card to give a minion you control 1 press, only usable to continue combat. Minions can burn this card as a (D) action.",
@@ -59010,9 +58919,6 @@
             },
             "SV5":{
                 "PCaine":"1"
-            },
-            "playtest":{
-                "SCai":1
             }
         },
         "text":"Archetype.\nPut this card on a ready vampire you control. Once each turn after a combat involving this vampire ends, this vampire can burn 1 blood to unlock if the opposing minion is not ready. A vampire can have only one archetype.",
@@ -59969,7 +59875,6 @@
                 "PCathari":"2"
             },
             "playtest":{
-                "SCat":2,
                 "NSal":2
             }
         },
@@ -62364,9 +62269,6 @@
             },
             "SV5":{
                 "PDeath":"2"
-            },
-            "playtest":{
-                "SDS":2
             }
         },
         "text":"Only usable if this vampire is about to enter combat with an acting younger vampire.\n[dom] Unlock the acting vampire and end the action. (Do not lock this vampire if they are blocking.) The acting vampire cannot perform the same action this turn.\n[DOM] As above, but do not unlock the acting vampire.",
@@ -63031,8 +62933,6 @@
                 "Tz":2
             },
             "playtest":{
-                "SCat":3,
-                "SPIV":5,
                 "NR":3
             }
         },
@@ -64850,9 +64750,6 @@
             },
             "SV5":{
                 "PDeath":"3"
-            },
-            "playtest":{
-                "SDS":3
             }
         },
         "text":"[obl] Strike: combat ends.\n[OBL] Strike: combat ends. After combat ends, put this card on this vampire. This vampire can burn this card to get +1 stealth.",
@@ -65923,9 +65820,6 @@
             },
             "SV5":{
                 "PCathari":"1"
-            },
-            "playtest":{
-                "SCat":1
             }
         },
         "text":"Unique.\nPut this card on a ready minion. This minion cannot block. Other minions can burn this card as a (D) action.",
@@ -68312,9 +68206,6 @@
             },
             "SV5":{
                 "PPower":"1"
-            },
-            "playtest":{
-                "SPIV":1
             }
         },
         "text":"Unique location.\nIf this card has 3 or fewer counters during your unlock phase, you can add 1 counter to it. You can lock this card during the polling step of any referendum to give a titled Sabbat vampire +1 vote for each counter on this card. Vampires controlled by other Methuselahs can burn all the counters from this card as a (D) action.",
@@ -70451,9 +70342,6 @@
             },
             "SV5":{
                 "PPower":"2"
-            },
-            "playtest":{
-                "SPIV":2
             }
         },
         "text":"Requires an archbishop, priscus, cardinal or regent. Only usable during the polling step of a political action before votes and ballots are cast.\nNon-Sabbat vampires cannot cast votes or ballots during this referendum.",
@@ -74751,7 +74639,6 @@
                 "PDeath":"3"
             },
             "playtest":{
-                "SDS":3,
                 "NSal":2,
                 "NTz":1
             }
@@ -78798,9 +78685,6 @@
             },
             "SV5":{
                 "PDeath":"1"
-            },
-            "playtest":{
-                "SDS":1
             }
         },
         "text":"+1 stealth action.\n[tha] Put this card on this vampire, locked; this vampire takes 1 unpreventable environmental aggravated damage. During your minion phase, this vampire can lock this card to unlock. A vampire can have only one Rutor's Hand.\n[THA] As above, and this vampire can burn 3 blood to be immune to this aggravated damage.",
@@ -81496,7 +81380,6 @@
                 "C":true
             },
             "playtest":{
-                "SCai":4,
                 "NTz":3
             }
         },
@@ -82542,9 +82425,6 @@
                 "C":true,
                 "H":3,
                 "L":3
-            },
-            "playtest":{
-                "SDS":3
             }
         },
         "text":"[obl] +1 stealth.\n[OBL] Only usable after resolution of a successful action. Put this card on this vampire. Minions without Auspex [aus] cannot perform actions directed at this vampire. During your unlock phase, burn this card.",
@@ -82965,9 +82845,6 @@
             "2P":{
                 "C":true,
                 "L":2
-            },
-            "playtest":{
-                "SDS":4
             }
         },
         "text":"A vampire can play only one Shadow Sentinel between their unlock phases.\n[obl] Only usable by a locked vampire. This vampire wakes.\n[OBL] Usable by a locked vampire. Choose a locked wraith or zombie ally you control. The chosen ally wakes.",
@@ -84361,9 +84238,6 @@
             "2P":{
                 "C":true,
                 "H":6
-            },
-            "playtest":{
-                "SDS":4
             }
         },
         "text":"[obl] (D) Bleed with +1 bleed. If the bleed is successful (for 1 or more), the target Methuselah discards 2 cards of their choice.\n[OBL] (D) Remove 7 cards in your prey's ash heap from the game to burn 3 of their pool.",
@@ -92496,9 +92370,6 @@
             },
             "SV5":{
                 "PDeath":"4"
-            },
-            "playtest":{
-                "SDS":3
             }
         },
         "text":"Aim. Only usable as this minion chooses a strike. A minion can play only one aim each strike.\nIf any damage from this strike is successfully inflicted on the opposing minion, they take +2 damage from this strike, and they cannot press this round. They can discard two combat cards to cancel this card as it is played.",
@@ -92686,7 +92557,6 @@
                 "N":2
             },
             "playtest":{
-                "SCai":4,
                 "NR":2,
                 "NSal":2
             }
@@ -92942,10 +92812,6 @@
             "SV5":{
                 "PCathari":"6",
                 "PDeath":"2"
-            },
-            "playtest":{
-                "SCat":6,
-                "SDS":2
             }
         },
         "text":"[aus] +1 intercept.\n[AUS] Only usable if a minion is bleeding you, after blocks are declined. Lock this reacting vampire. Change the target of the bleed to another Methuselah other than the acting minion's controller (that Methuselah can attempt to block).",
@@ -93461,7 +93327,6 @@
                 "C":true
             },
             "playtest":{
-                "SCai":1,
                 "NSal":1
             }
         },
@@ -98231,11 +98096,6 @@
                 "PCaine":"2",
                 "PCathari":"2",
                 "PPower":"2"
-            },
-            "playtest":{
-                "SCai":2,
-                "SCat":2,
-                "SPIV":2
             }
         },
         "text":"+1 stealth action. Unique. Requires a titled Sabbat vampire.\nPut this card in play with 3 counters. Once each action, a Sabbat vampire you control can burn 1 counter from this card to unlock and attempt to block with +1 intercept, even if intercept is not yet needed. If this card has no counters, burn it.",
@@ -100872,10 +100732,6 @@
             "SV5":{
                 "PCaine":"3",
                 "PPower":"3"
-            },
-            "playtest":{
-                "SCai":3,
-                "SPIV":3
             }
         },
         "text":"Trifle.\nPut this card on a vampire you control who has any amount of blood and move 2 to 5 blood from that vampire to your pool. Cards named /Minion Tap/ cost you +1 pool to play. Villein costs +1 pool to play on this vampire.",
@@ -101463,9 +101319,6 @@
                 "C":true,
                 "To":2,
                 "V":2
-            },
-            "playtest":{
-                "SPIV":2
             }
         },
         "text":"Only usable after resolution of a political action whose referendum passed.\n[pre] This vampire gains 1 blood for each vote by which the referendum passed.\n[PRE] As above, but move up to 2 of those blood to your pool instead of this vampire.",
@@ -102034,9 +101887,6 @@
             },
             "SV5":{
                 "PDeath":"1"
-            },
-            "playtest":{
-                "SDS":1
             }
         },
         "text":"Unique location.\nDuring an undirected action, you can lock this location to give a minion you control +1 intercept. A minion you control can lock this location to attempt to move 1 counter from an investment card to your pool as a +1 stealth (D) action.",
@@ -103560,9 +103410,6 @@
                 "C":true,
                 "H":3,
                 "L":2
-            },
-            "playtest":{
-                "SDS":3
             }
         },
         "text":"[obl] +1 stealth.\n[OBL] As above, and minions without Oblivion [obl] must burn 1 blood to attempt to block (allies cannot burn blood).",
@@ -104714,9 +104561,6 @@
             },
             "SV5":{
                 "PCaine":"1"
-            },
-            "playtest":{
-                "SCai":1
             }
         },
         "text":"Unique location. Requires a ready Sabbat vampire.\nIf a political action is successful, before the referendum, you can lock this location and a ready unlocked Sabbat vampire you control to have that vampire enter combat with the acting vampire. If the acting vampire is still ready at the end of combat, the Sabbat vampire takes 2 environmental damage and the referendum is conducted as normal.",
