@@ -1,11 +1,10 @@
 {
-  "version": "2025-10-19",
+  "version": "2025-10-25",
   "changes": [
-    "Add 'Titled (specific)' filter option to library search which will show cards requiring any specific title (vs just requiring titled vampire as old 'Titled' option)",
-    "Add legacy equipment images",
-    "Add Brazil Nationals 2025 to TDA",
-    "Update TWDA",
-    "Update Rulings",
-    "Many fixes"
+    "Add Sabbat V5 set",
+    "Add Sabbat V5 legacy images",
+    "Improve Inventory Missing performance",
+    "Add Paths usage to Deck Library info",
+    "Small other fixes and improvements"
   ]
 }
