@@ -3,10 +3,17 @@
   "files": {
     "includes": [
       "src/**",
-      "!src/assets/css",
       "!src/assets/data/artistsCrypt.json",
       "!src/assets/data/artistsLib.json"
     ]
+  },
+  "css": {
+    "parser": {
+      "tailwindDirectives": true
+    },
+    "linter": {
+      "enabled": false
+    }
   },
   "formatter": {
     "enabled": true,
