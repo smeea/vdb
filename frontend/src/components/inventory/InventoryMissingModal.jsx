@@ -13,8 +13,8 @@ import {
 } from "@/components";
 import { CRYPT, ID, LIBRARY, NAME } from "@/constants";
 import { inventoryStore, useApp } from "@/context";
-import { useInventoryCrypt, useInventoryLibrary } from "@/hooks";
-import { getIsPlaytest } from "@/utils";
+import { useCryptSortWithTimer, useInventoryCrypt, useInventoryLibrary } from "@/hooks";
+import { getIsPlaytest, librarySort } from "@/utils";
 
 const InventoryMissingModal = ({
   clan,
@@ -61,24 +61,28 @@ const InventoryMissingModal = ({
     return {};
   }, [type, discipline, missingByType, missingByDiscipline]);
 
-  const missAllVtesCrypt = {};
-  const missAllVtesLibrary = {};
+  const missingCryptSorted = useCryptSortWithTimer(Object.values(missingCrypt), NAME);
+  const missingLibrarySorted = librarySort(Object.values(missingLibrary), NAME);
 
-  Object.keys(cryptCardBase)
-    .filter((cardid) => {
-      return !getIsPlaytest(cardid) && (!inventoryCrypt[cardid] || !inventoryCrypt[cardid]?.q);
-    })
-    .forEach((cardid) => {
-      missAllVtesCrypt[cardid] = { q: 1, c: cryptCardBase[cardid] };
-    });
+  const missAllVtesCryptSorted = useCryptSortWithTimer(
+    Object.keys(cryptCardBase)
+      .filter((cardid) => {
+        return !getIsPlaytest(cardid) && (!inventoryCrypt[cardid] || !inventoryCrypt[cardid]?.q);
+      })
+      .map((cardid) => ({ q: 1, c: cryptCardBase[cardid] })),
+    NAME,
+  );
 
-  Object.keys(libraryCardBase)
-    .filter((cardid) => {
-      return !getIsPlaytest(cardid) && (!inventoryLibrary[cardid] || !inventoryLibrary[cardid]?.q);
-    })
-    .forEach((cardid) => {
-      missAllVtesLibrary[cardid] = { q: 1, c: libraryCardBase[cardid] };
-    });
+  const missAllVtesLibrarySorted = librarySort(
+    Object.keys(libraryCardBase)
+      .filter((cardid) => {
+        return (
+          !getIsPlaytest(cardid) && (!inventoryLibrary[cardid] || !inventoryLibrary[cardid]?.q)
+        );
+      })
+      .map((cardid) => ({ q: 1, c: libraryCardBase[cardid] })),
+    NAME,
+  );
 
   const handleClose = () => {
     setShow(false);
@@ -103,7 +107,7 @@ const InventoryMissingModal = ({
           >
             <InventoryCryptTable
               inMissing
-              cards={Object.values(showMissAll ? missAllVtesCrypt : missingCrypt)}
+              cards={showMissAll ? missAllVtesCryptSorted : missingCryptSorted}
             />
           </div>
           <div
@@ -114,7 +118,7 @@ const InventoryMissingModal = ({
           >
             <InventoryLibraryTable
               inMissing
-              cards={Object.values(showMissAll ? missAllVtesLibrary : missingLibrary)}
+              cards={showMissAll ? missAllVtesLibrarySorted : missingLibrarySorted}
             />
           </div>
         </FlexGapped>
@@ -127,8 +131,8 @@ const InventoryMissingModal = ({
           <DeckExportButton
             deck={{
               [NAME]: "Missing cards for Inventory",
-              [CRYPT]: showMissAll ? missAllVtesCrypt : missingCrypt,
-              [LIBRARY]: showMissAll ? missAllVtesLibrary : missingLibrary,
+              [CRYPT]: showMissAll ? missAllVtesCryptSorted : missingCryptSorted,
+              [LIBRARY]: showMissAll ? missAllVtesLibrarySorted : missingLibrarySorted,
             }}
             inMissing
           />
