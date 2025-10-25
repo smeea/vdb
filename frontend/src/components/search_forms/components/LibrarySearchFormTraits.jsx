@@ -76,7 +76,6 @@ const LibrarySearchFormTraits = ({ value, onChange }) => {
               </div>,
             ],
           ]
-            .filter((i) => ![PATH_CAINE, PATH_CATHARI].includes(i[0]) || playtestMode)
             .map((i) => (
               <Checkbox
                 key={i[0]}
@@ -117,7 +116,7 @@ const LibrarySearchFormTraits = ({ value, onChange }) => {
             ],
             [PLAYTEST, "Playtest"],
           ]
-            .filter((i) => ![PLAYTEST, PATH_DEATH, PATH_POWER].includes(i[0]) || playtestMode)
+            .filter((i) => ![PLAYTEST].includes(i[0]) || playtestMode)
             .map((i) => (
               <Checkbox
                 key={i[0]}

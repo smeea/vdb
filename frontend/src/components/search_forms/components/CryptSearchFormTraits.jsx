@@ -67,18 +67,16 @@ const CryptSearchFormTraits = ({ value, onChange }) => {
                 Path of Cathari <ResultPathImage value={CATHARI} size="sm" />
               </div>,
             ],
-          ]
-            .filter((i) => ![PATH_CAINE, PATH_CATHARI].includes(i[0]) || playtestMode)
-            .map((i) => (
-              <Checkbox
-                key={i[0]}
-                name={TRAITS}
-                value={i[0]}
-                label={i[1]}
-                checked={value[i[0]]}
-                onChange={onChange}
-              />
-            ))}
+          ].map((i) => (
+            <Checkbox
+              key={i[0]}
+              name={TRAITS}
+              value={i[0]}
+              label={i[1]}
+              checked={value[i[0]]}
+              onChange={onChange}
+            />
+          ))}
         </div>
         <div className="flex basis-4/9 flex-col gap-0.5">
           {[
@@ -107,7 +105,7 @@ const CryptSearchFormTraits = ({ value, onChange }) => {
             ],
             [PLAYTEST, "Playtest"],
           ]
-            .filter((i) => ![PLAYTEST, PATH_DEATH, PATH_POWER].includes(i[0]) || playtestMode)
+            .filter((i) => ![PLAYTEST].includes(i[0]) || playtestMode)
             .map((i) => {
               return (
                 <Checkbox
