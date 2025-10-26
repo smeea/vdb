@@ -5,6 +5,7 @@ import { twMerge } from "tailwind-merge";
 import { useApp } from "@/context";
 
 const Select = ({
+  autoComplete,
   autoFocus = false,
   borderStyle = "border",
   textStyle,
@@ -60,6 +61,7 @@ const Select = ({
 
   return (
     <Component
+      autoComplete={autoComplete}
       autoFocus={autoFocus}
       defaultMenuIsOpen={defaultMenuIsOpen}
       filterOption={filterOption}
