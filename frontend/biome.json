@@ -2,9 +2,7 @@
   "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
   "files": {
     "includes": [
-      "src/**",
-      "!src/assets/data/artistsCrypt.json",
-      "!src/assets/data/artistsLib.json"
+      "src/**"
     ]
   },
   "css": {

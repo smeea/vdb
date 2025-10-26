@@ -75,17 +75,16 @@ const LibrarySearchFormTraits = ({ value, onChange }) => {
                 Path of Cathari <ResultPathImage value={CATHARI} size="sm" />
               </div>,
             ],
-          ]
-            .map((i) => (
-              <Checkbox
-                key={i[0]}
-                name={TRAITS}
-                value={i[0]}
-                label={i[1]}
-                checked={value[i[0]]}
-                onChange={onChange}
-              />
-            ))}
+          ].map((i) => (
+            <Checkbox
+              key={i[0]}
+              name={TRAITS}
+              value={i[0]}
+              label={i[1]}
+              checked={value[i[0]]}
+              onChange={onChange}
+            />
+          ))}
         </div>
         <div className="flex basis-4/9 flex-col gap-0.5">
           {[
