@@ -1,4 +1,7 @@
 # FIX
+- Update scan images
+- Fix scans Anthology I
+- Fix scans POD
 
 # FIX ON HOLD
 - Deck-in-Url trimmed at first card - can't reproduce in dev environment
