@@ -13,7 +13,7 @@
   "author": "Vadim Matveev",
   "license": "MIT",
   "devDependencies": {
-    "@biomejs/biome": "^2.3.0",
+    "@biomejs/biome": "^2.3.2",
     "@floating-ui/react": "^0.27.16",
     "@headlessui/react": "^2.2.9",
     "@tailwindcss/vite": "^4.1.16",
@@ -36,7 +36,7 @@
     "react-select": "^5.10.2",
     "react-string-replace": "^1.1.1",
     "react-swipeable": "^7.0.2",
-    "react-window": "^2.2.1",
+    "react-window": "^2.2.2",
     "recharts": "^3.3.0",
     "tailwind-merge": "^3.3.1",
     "tailwindcss": "^4.1.16",
@@ -46,6 +46,6 @@
     "vite": "^7.1.12",
     "vite-plugin-pwa": "^1.1.0",
     "vite-plugin-svgr": "^4.5.0",
-    "xlsx": "^0.18.5"
+    "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz"
   }
 }
