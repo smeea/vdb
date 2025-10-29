@@ -48,10 +48,12 @@ const DeckCryptTotalInfo = ({ cards, disciplinesDetailed }) => {
           </div>
           <div>: {cryptAvg}</div>
         </div>
-        <div className="flex gap-3">
-          <div className="text-fgSecondary dark:text-fgSecondaryDark">Uniq:</div>
-          <UniqueDraw cards={cards} />
-        </div>
+        {cards.length < 30 && (
+          <div className="flex gap-3">
+            <div className="text-fgSecondary dark:text-fgSecondaryDark">Uniq:</div>
+            <UniqueDraw cards={cards} />
+          </div>
+        )      }
       </div>
       <DisciplinesCryptSummary disciplinesDetailed={disciplinesDetailed} />
     </div>
