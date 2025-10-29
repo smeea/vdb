@@ -80,7 +80,7 @@ const DeckCryptTableRow = ({
         noDisciplines={noDisciplines}
         inDeck
       />
-      {showInfo && (
+      {showInfo && cryptTotal <= 35 && (
         <td className="min-w-[45px] text-right sm:p-1">
           {!inSide && (
             <DeckDrawProbability cardName={card.c[NAME]} N={cryptTotal} n={4} k={card.q} />

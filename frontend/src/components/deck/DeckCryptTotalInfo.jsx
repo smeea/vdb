@@ -48,7 +48,7 @@ const DeckCryptTotalInfo = ({ cards, disciplinesDetailed }) => {
           </div>
           <div>: {cryptAvg}</div>
         </div>
-        {cards.length < 30 && (
+        {cards.length < 20 && (
           <div className="flex gap-3">
             <div className="text-fgSecondary dark:text-fgSecondaryDark">Uniq:</div>
             <UniqueDraw cards={cards} />

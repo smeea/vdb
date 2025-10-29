@@ -74,7 +74,7 @@ const DeckLibraryTableRow = ({
         inTwd={inTwd}
         inDeck
       />
-      {showInfo && (
+      {showInfo && libraryTotal <= 100 && (
         <td className="min-w-[45px] text-right sm:p-1">
           <DeckDrawProbability cardName={card.c[NAME]} N={libraryTotal} n={7} k={card.q} />
         </td>
