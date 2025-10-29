@@ -100,7 +100,7 @@ const DeckSelect = ({
           aria-label="Server size"
           className="flex gap-4 sm:gap-6"
         >
-          {username && decks && Object.keys(decks).length > 0 && (
+          {username && Object.keys(decks).length > 0 && (
             <Radio label={isMobile ? "My" : "My Decks"} value={MY} />
           )}
           <Radio label="Precons" value={PRECONS} />

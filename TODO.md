@@ -1,4 +1,5 @@
 # FIX
+- Too long decks see discord
 
 # FIX ON HOLD
 - Deck-in-Url trimmed at first card - can't reproduce in dev environment

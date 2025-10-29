@@ -247,7 +247,7 @@ const Decks = () => {
           <LoginBlock>Login to create your decks</LoginBlock>
         </div>
       )}
-      {username && ((decks && Object.keys(decks).length === 0) || !decks) && !deck && (
+      {username && Object.keys(decks).length === 0 && !deck && (
         <div className="flex min-h-[70vh] place-items-center justify-center max-sm:px-2">
           <div className="flex flex-col items-center justify-center gap-6 sm:basis-1/2">
             <div className="flex flex-col gap-4 text-balance text-center text-lg">

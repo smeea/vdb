@@ -100,7 +100,7 @@ const DiffSelectDeck = ({ decks, deck, deckidFrom, deckidTo, target, title }) =>
           aria-label="Server size"
           className="flex gap-4 sm:gap-6"
         >
-          {username && decks && Object.keys(decks).length > 0 && (
+          {username && Object.keys(decks).length > 0 && (
             <Radio value={`${target}-${MY}`} label={isMobile ? "My" : "My Decks"} />
           )}
           <Radio value={`${target}-${PRECONS}`} label="Precons" />

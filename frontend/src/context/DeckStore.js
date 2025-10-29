@@ -35,7 +35,7 @@ const VDB_GMT_OFFSET = 3;
 
 export const deckStore = proxy({
   [DECK]: undefined,
-  [DECKS]: undefined,
+  [DECKS]: {},
 });
 
 export const setDeck = (v) => {

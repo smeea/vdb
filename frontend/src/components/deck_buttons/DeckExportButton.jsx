@@ -152,7 +152,7 @@ const DeckExportButton = ({ deck, inMissing, inInventory }) => {
                 <ExportDropdown action={copyDeck} title="Clipboard" format={JOL} />
               </>
             )}
-            {!inMissing && username && decks && Object.keys(decks).length > 1 && (
+            {!inMissing && username && Object.keys(decks).length > 1 && (
               <>
                 <MenuItemDivider />
                 <ExportDropdown action={exportAll} title="Export all Decks" format={TEXT} />
