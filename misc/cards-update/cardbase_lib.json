@@ -14603,7 +14603,7 @@
                 }
             },
             {
-                "text":"[PRE] If the combat continues or a new combat begins, the after combat effect does not happen/is not usable. (eg. {Psyche!}, {Telepathic Tracking})\n(Partial reversal of RTR 20010711)",
+                "text":"[PRE] If the combat continues or a new combat begins, the after combat effect does not happen/is not usable (e.g. {Psyche!}, {Telepathic Tracking}).\n(Partial reversal of RTR 20010711)",
                 "refs":{
                     "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ",
                     "LSJ 19980109":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d2U51Uw0Hfg/m/uIPoVvPFePgJ"
@@ -15258,7 +15258,7 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"[SPI] If the combat continues or a new combat begins, the after combat effect does not happen/is not usable. (eg. {Psyche!}, {Telepathic Tracking})\n(Partial reversal of RTR 20010711)",
+                "text":"[SPI] If the combat continues or a new combat begins, the after combat effect does not happen/is not usable (e.g. {Psyche!}, {Telepathic Tracking}).\n(Partial reversal of RTR 20010711)",
                 "refs":{
                     "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ",
                     "LSJ 19980109":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d2U51Uw0Hfg/m/uIPoVvPFePgJ"
@@ -35636,7 +35636,7 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"[VIS] If the combat continues or a new combat begins, the after combat effect does not happen/is not usable. (eg. {Psyche!}, {Telepathic Tracking})\n(Partial reversal of RTR 20010711)",
+                "text":"[VIS] If the combat continues or a new combat begins, the after combat effect does not happen/is not usable (e.g. {Psyche!}, {Telepathic Tracking}).\n(Partial reversal of RTR 20010711)",
                 "refs":{
                     "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ",
                     "LSJ 19980109":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d2U51Uw0Hfg/m/uIPoVvPFePgJ"
@@ -36642,7 +36642,7 @@
                 }
             },
             {
-                "text":"[PRO] If the combat continues or a new combat begins, the after combat effect does not happen/is not usable. (eg. {Psyche!}, {Telepathic Tracking})\n(Partial reversal of RTR 20010711)",
+                "text":"[PRO] If the combat continues or a new combat begins, the after combat effect does not happen/is not usable (e.g. {Psyche!}, {Telepathic Tracking}).\n(Partial reversal of RTR 20010711)",
                 "refs":{
                     "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ",
                     "LSJ 19980109":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d2U51Uw0Hfg/m/uIPoVvPFePgJ"
@@ -50363,7 +50363,15 @@
         "path":"Cathari",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"[OBF]/[PRE] If the combat continues or a new combat begins, the after combat effect does not happen/is not usable (e.g. {Psyche!}, {Telepathic Tracking}).\n(Partial reversal of RTR 20010711)",
+                "refs":{
+                    "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ",
+                    "LSJ 19980109":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d2U51Uw0Hfg/m/uIPoVvPFePgJ"
+                }
+            }
+        ],
         "set":{
             "SV5":{
                 "PCathari":"6"
@@ -53576,7 +53584,7 @@
                 }
             },
             {
-                "text":"[val]/[VAL] If the combat continues or a new combat begins, the after combat effect does not happen/is not usable. (eg. {Psyche!}, {Telepathic Tracking})\n(Partial reversal of RTR 20010711)",
+                "text":"[val]/[VAL] If the combat continues or a new combat begins, the after combat effect does not happen/is not usable (e.g. {Psyche!}, {Telepathic Tracking}).\n(Partial reversal of RTR 20010711)",
                 "refs":{
                     "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ",
                     "LSJ 19980109":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d2U51Uw0Hfg/m/uIPoVvPFePgJ"
@@ -57783,7 +57791,7 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"[CHI] If the combat continues or a new combat begins, the after combat effect does not happen/is not usable. (eg. {Psyche!}, {Telepathic Tracking})\n(Partial reversal of RTR 20010711)",
+                "text":"[CHI] If the combat continues or a new combat begins, the after combat effect does not happen/is not usable (e.g. {Psyche!}, {Telepathic Tracking}).\n(Partial reversal of RTR 20010711)",
                 "refs":{
                     "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ",
                     "LSJ 19980109":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d2U51Uw0Hfg/m/uIPoVvPFePgJ"
@@ -59047,7 +59055,7 @@
                 }
             },
             {
-                "text":"[VAL] If the combat continues or a new combat begins, the after combat effect does not happen/is not usable. (eg. {Psyche!}, {Telepathic Tracking})\n(Partial reversal of RTR 20010711)",
+                "text":"[VAL] If the combat continues or a new combat begins, the after combat effect does not happen/is not usable (e.g. {Psyche!}, {Telepathic Tracking}).\n(Partial reversal of RTR 20010711)",
                 "refs":{
                     "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ",
                     "LSJ 19980109":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d2U51Uw0Hfg/m/uIPoVvPFePgJ"
@@ -59407,7 +59415,7 @@
                 }
             },
             {
-                "text":"If the combat continues or a new combat begins, the after combat effect does not happen/is not usable. (eg. {Psyche!}, {Telepathic Tracking})\n(Partial reversal of RTR 20010711)",
+                "text":"If the combat continues or a new combat begins, the after combat effect does not happen/is not usable (e.g. {Psyche!}, {Telepathic Tracking}).\n(Partial reversal of RTR 20010711)",
                 "refs":{
                     "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ",
                     "LSJ 19980109":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d2U51Uw0Hfg/m/uIPoVvPFePgJ"
@@ -63682,7 +63690,7 @@
                 }
             },
             {
-                "text":"[OBT] If the combat continues or a new combat begins, the after combat effect does not happen/is not usable. (eg. {Psyche!}, {Telepathic Tracking})\n(Partial reversal of RTR 20010711)",
+                "text":"[OBT] If the combat continues or a new combat begins, the after combat effect does not happen/is not usable (e.g. {Psyche!}, {Telepathic Tracking}).\n(Partial reversal of RTR 20010711)",
                 "refs":{
                     "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ",
                     "LSJ 19980109":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d2U51Uw0Hfg/m/uIPoVvPFePgJ"
@@ -64731,7 +64739,7 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"[OBL] If the combat continues or a new combat begins, the after combat effect does not happen/is not usable. (eg. {Psyche!}, {Telepathic Tracking})\n(Partial reversal of RTR 20010711)",
+                "text":"[OBL] If the combat continues or a new combat begins, the after combat effect does not happen/is not usable (e.g. {Psyche!}, {Telepathic Tracking}).\n(Partial reversal of RTR 20010711)",
                 "refs":{
                     "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ",
                     "LSJ 19980109":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d2U51Uw0Hfg/m/uIPoVvPFePgJ"
@@ -77255,7 +77263,7 @@
                 }
             },
             {
-                "text":"If the combat continues or a new combat begins, the after combat effect does not happen/is not usable. (eg. {Psyche!}, {Telepathic Tracking})\n(Partial reversal of RTR 20010711)",
+                "text":"If the combat continues or a new combat begins, the after combat effect does not happen/is not usable (e.g. {Psyche!}, {Telepathic Tracking}).\n(Partial reversal of RTR 20010711)",
                 "refs":{
                     "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ",
                     "LSJ 19980109":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d2U51Uw0Hfg/m/uIPoVvPFePgJ"
@@ -81816,7 +81824,7 @@
                 }
             },
             {
-                "text":"[PRE][SER] If the combat continues or a new combat begins, the after combat effect does not happen/is not usable. (eg. {Psyche!}, {Telepathic Tracking})\n(Partial reversal of RTR 20010711)",
+                "text":"[PRE][SER] If the combat continues or a new combat begins, the after combat effect does not happen/is not usable (e.g. {Psyche!}, {Telepathic Tracking}).\n(Partial reversal of RTR 20010711)",
                 "refs":{
                     "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ",
                     "LSJ 19980109":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d2U51Uw0Hfg/m/uIPoVvPFePgJ"
@@ -82201,7 +82209,7 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"[OBT] If the combat continues or a new combat begins, the after combat effect does not happen/is not usable. (eg. {Psyche!}, {Telepathic Tracking})\n(Partial reversal of RTR 20010711)",
+                "text":"[OBT] If the combat continues or a new combat begins, the after combat effect does not happen/is not usable (e.g. {Psyche!}, {Telepathic Tracking}).\n(Partial reversal of RTR 20010711)",
                 "refs":{
                     "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ",
                     "LSJ 19980109":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d2U51Uw0Hfg/m/uIPoVvPFePgJ"
@@ -94836,7 +94844,7 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"[mel] If the combat continues or a new combat begins, the after combat effect does not happen/is not usable. (eg. {Psyche!}, {Telepathic Tracking})\n(Partial reversal of RTR 20010711)",
+                "text":"[mel] If the combat continues or a new combat begins, the after combat effect does not happen/is not usable (e.g. {Psyche!}, {Telepathic Tracking}).\n(Partial reversal of RTR 20010711)",
                 "refs":{
                     "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ",
                     "LSJ 19980109":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d2U51Uw0Hfg/m/uIPoVvPFePgJ"
@@ -95058,7 +95066,7 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"[CEL] If the combat continues or a new combat begins, the after combat effect does not happen/is not usable. (eg. {Psyche!}, {Telepathic Tracking})\n(Partial reversal of RTR 20010711)",
+                "text":"[CEL] If the combat continues or a new combat begins, the after combat effect does not happen/is not usable (e.g. {Psyche!}, {Telepathic Tracking}).\n(Partial reversal of RTR 20010711)",
                 "refs":{
                     "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ",
                     "LSJ 19980109":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d2U51Uw0Hfg/m/uIPoVvPFePgJ"
@@ -98479,7 +98487,7 @@
                 }
             },
             {
-                "text":"[PRE] If the combat continues or a new combat begins, the after combat effect does not happen/is not usable. (eg. {Psyche!}, {Telepathic Tracking})\n(Partial reversal of RTR 20010711)",
+                "text":"[PRE] If the combat continues or a new combat begins, the after combat effect does not happen/is not usable (e.g. {Psyche!}, {Telepathic Tracking}).\n(Partial reversal of RTR 20010711)",
                 "refs":{
                     "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ",
                     "LSJ 19980109":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d2U51Uw0Hfg/m/uIPoVvPFePgJ"

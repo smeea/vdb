@@ -732,7 +732,7 @@ G00044|Ghoul:
   101644|Robert Carter: ''
   102128|Vivienne Géroux: ''
   102144|War Ghoul: ''
-  102267|Vozhd of Sofia: ''
+  102267|Vozhd of Sofia, The: ''
 G00045|Weapon once per combat:
   100246|Brass Knuckles: ''
   100317|Chainsaw: ''
@@ -1088,6 +1088,7 @@ G00071|After Combat Ends:
   101995|Torrent: '[CEL]'
   102072|Unholy Penance: '[PRE]'
   102279|Pass Through Shadow: '[OBL]'
+  102330|Kiss of Cathari: '[OBF]/[PRE]'
   200133|Arianne, The Conqueror: ''
   200929|Mariel, Lady Thunder: ''
 G00072|Impersonating requirements for cards not played normally:

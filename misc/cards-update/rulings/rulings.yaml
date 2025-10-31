@@ -4575,8 +4575,8 @@ G00070|Impersonating title for non-existent sect:
   - Can meet a sect-specific title (e.g. Justicar) requirement even if the sect does not exist anymore (eg. {Fall of the Camarilla}).
     [ANK 20230503] [LSJ 20050124]
 G00071|After Combat Ends:
-  - "If the combat continues or a new combat begins, the after combat effect does not happen/is not usable. (eg. {Psyche!},\
-    \ {Telepathic Tracking})\n(Partial reversal of RTR 20010711) [RTR 20020501] [LSJ 19980109]"
+  - "If the combat continues or a new combat begins, the after combat effect does not happen/is not usable (e.g. {Psyche!},\
+    \ {Telepathic Tracking}).\n(Partial reversal of RTR 20010711) [RTR 20020501] [LSJ 19980109]"
 G00072|Impersonating requirements for cards not played normally:
   - The ability ability cannot be used to fulfill card requirements if they are not played normally, like when using {Concealed
     Weapon} for an equipment or {Piper} or {The Summoning} for an ally. [LSJ 20050119]
