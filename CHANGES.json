@@ -1,5 +1,14 @@
 [
   {
+    "version": "2025-10-31",
+    "changes": [
+      "Fix Sabbat V5 in limited",
+      "Fix decks with dozens of crypt card to freeze the browser",
+      "Fix direct open of vdb.im/inventory throwing error",
+      "Add more card scans"
+    ]
+  },
+  {
     "version": "2025-10-26",
     "changes": [
       "Add Sabbat V5 set",

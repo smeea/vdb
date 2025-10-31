@@ -1,10 +1,9 @@
 {
-  "version": "2025-10-26",
+  "version": "2025-10-31",
   "changes": [
-    "Add Sabbat V5 set",
-    "Add Sabbat V5 legacy images",
-    "Improve Inventory Missing performance",
-    "Add Paths usage to Deck Library info",
-    "Small other fixes and improvements"
+    "Fix Sabbat V5 in limited",
+    "Fix decks with dozens of crypt card to freeze the browser",
+    "Fix direct open of vdb.im/inventory throwing error",
+    "Add more card scans"
   ]
 }
