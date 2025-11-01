@@ -20,7 +20,6 @@ import {
   setLibraryResults,
   useApp,
 } from "@/context";
-import { getIsEditable } from "@/utils";
 
 const Library = () => {
   const { addMode, toggleAddMode, isMobile, isDesktop, showFloatingButtons, lastDeckId } = useApp();
@@ -29,7 +28,6 @@ const Library = () => {
     useSnapshot(searchResults);
   const [searchParams, setSearchParams] = useSearchParams();
   const query = JSON.parse(searchParams.get("q"));
-  const isEditable = getIsEditable(deck);
 
   const showSearchForm = useMemo(() => {
     return (
@@ -107,7 +105,7 @@ const Library = () => {
       </Activity>
       <Activity mode={showFloatingButtons && showResultCol ? "visible" : "hidden"}>
         <ButtonFloatClose className="sm:hidden" handleClose={handleClear} />
-        {isEditable && <ButtonFloatAdd className="sm:hidden" />}
+        <ButtonFloatAdd className="sm:hidden" />
       </Activity>
     </div>
   );

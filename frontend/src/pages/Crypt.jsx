@@ -13,7 +13,6 @@ import {
 } from "@/components";
 import { CRYPT, CRYPT_COMPARE, DECK, DECKID, DECKS } from "@/constants";
 import { deckStore, searchResults, setCryptResults, setDeck, useApp } from "@/context";
-import { getIsEditable } from "@/utils";
 
 const Crypt = () => {
   const { addMode, toggleAddMode, isMobile, isDesktop, showFloatingButtons, lastDeckId } = useApp();
@@ -21,7 +20,6 @@ const Crypt = () => {
   const { [CRYPT]: cryptResults, [CRYPT_COMPARE]: cryptCompare } = useSnapshot(searchResults);
   const [searchParams, setSearchParams] = useSearchParams();
   const query = JSON.parse(searchParams.get("q"));
-  const isEditable = getIsEditable(deck);
 
   const showSearchForm = useMemo(() => {
     return (
@@ -99,7 +97,7 @@ const Crypt = () => {
       </Activity>
       <Activity mode={showFloatingButtons && showResultCol ? "visible" : "hidden"}>
         <ButtonFloatClose className="sm:hidden" handleClose={handleClear} />
-        {isEditable && <ButtonFloatAdd className="sm:hidden" />}
+        <ButtonFloatAdd className="sm:hidden" />
       </Activity>
     </div>
   );
