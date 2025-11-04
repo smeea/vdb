@@ -63,14 +63,13 @@ const playersSort = (players, sortMethod) => {
 };
 
 const PlaytestManage = () => {
-  const { isPlaytestAdmin } = useApp();
   const navigate = useNavigate();
   const [newPlaytesters, setNewPlaytesters] = useState([]);
   const [sortMethod, setSortMethod] = useState(NAME);
   const [langFilter, setLangFilter] = useState(ANY);
 
   const url = `${import.meta.env.VITE_API_URL}/playtest/users`;
-  const { value: playtesters } = useFetch(url, {}, [isPlaytestAdmin]);
+  const { value: playtesters } = useFetch(url, {});
 
   const sortMethods = {
     [NAME]: "N",

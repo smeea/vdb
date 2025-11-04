@@ -136,10 +136,10 @@ const PlaytestReportsAll = () => {
   const urlReportsLibrary = `${import.meta.env.VITE_API_URL}/playtest/export/${LIBRARY}/all`;
   const urlReportsPrecons = `${import.meta.env.VITE_API_URL}/playtest/export/${PRECONS}/all`;
   const urlReportsGeneral = `${import.meta.env.VITE_API_URL}/playtest/export/${GENERAL}/all`;
-  const { value: reportsCrypt } = useFetch(urlReportsCrypt, {}, [isPlaytestAdmin]);
-  const { value: reportsLibrary } = useFetch(urlReportsLibrary, {}, [isPlaytestAdmin]);
-  const { value: reportsPrecons } = useFetch(urlReportsPrecons, {}, [isPlaytestAdmin]);
-  const { value: reportsGeneral } = useFetch(urlReportsGeneral, {}, [isPlaytestAdmin]);
+  const { value: reportsCrypt } = useFetch(urlReportsCrypt, {});
+  const { value: reportsLibrary } = useFetch(urlReportsLibrary, {});
+  const { value: reportsPrecons } = useFetch(urlReportsPrecons, {});
+  const { value: reportsGeneral } = useFetch(urlReportsGeneral, {});
 
   Object.keys(reportsCrypt || {}).forEach((id) => {
     if (!getIsPlaytest(id) || cryptCardBase[id]?.[PLAYTEST_OLD]) delete reportsCrypt[id];

@@ -12,7 +12,7 @@ import { parseDeck } from "@/utils";
 const TwdHallFameDeckBody = ({ deck }) => {
   const { cryptCardBase, libraryCardBase, isMobile } = useApp();
   const url = `${import.meta.env.VITE_API_URL}/deck/${deck[DECKID]}`;
-  const { value } = useFetch(url, {}, []);
+  const { value } = useFetch(url, {});
   const cards = parseDeck(cryptCardBase, libraryCardBase, value?.[CARDS]);
 
   return (

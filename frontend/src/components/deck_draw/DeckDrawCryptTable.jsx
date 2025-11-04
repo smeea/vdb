@@ -1,4 +1,3 @@
-import { useCallback } from "react";
 import { DeckDrawProbability, ResultCryptTableRowCommon, Tr } from "@/components";
 import { ID, NAME } from "@/constants";
 import { getKeyDisciplines } from "@/utils";
@@ -26,12 +25,7 @@ const DeckDrawCryptTable = ({
     });
   }
 
-  const onChange = useCallback(
-    (idx) => {
-      handleClick(idx);
-    },
-    [handleClick],
-  );
+  const onChange = (idx) => handleClick(idx);
 
   return (
     <table className="w-full border-bgSecondary sm:border dark:border-bgSecondaryDark">

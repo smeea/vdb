@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router";
 import { useSnapshot } from "valtio";
 import {
@@ -86,65 +86,44 @@ const PdaSearchForm = ({ error, setError }) => {
     }
   }, [pdaFormState, cryptCardBase, libraryCardBase]);
 
-  const handleMultiSelectChange = useCallback(
-    (event, id) => {
+  const handleMultiSelectChange =     (event, id) => {
       const i = id[NAME];
       const { name, value } = event;
       searchPdaForm[name].value[i] = value;
-    },
-    [searchPdaForm],
-  );
+    }
 
-  const handleChangeWithOpt = useCallback(
-    (event, id) => {
+  const handleChangeWithOpt =     (event, id) => {
       const i = id[NAME];
       const { name, value } = event;
       searchPdaForm[i][name] = value;
-    },
-    [searchPdaForm],
-  );
+    }
 
-  const handleSrcChange = useCallback(
-    (value) => {
+  const handleSrcChange =     (value) => {
       searchPdaForm[SRC] = value;
-    },
-    [searchPdaForm],
-  );
+    }
 
-  const handleDisciplinesChange = useCallback(
-    (name) => {
+  const handleDisciplinesChange =     (name) => {
       searchPdaForm[DISCIPLINES][name] = !searchPdaForm[DISCIPLINES][name];
-    },
-    [searchPdaForm],
-  );
+    }
 
-  const handleMultiChange = useCallback(
-    (event) => {
+  const handleMultiChange =     (event) => {
       const { name, value } = event.currentTarget;
       searchPdaForm[name][value] = !searchPdaForm[name][value];
-    },
-    [searchPdaForm],
-  );
+    }
 
-  const handleTagsChange = useCallback(
-    (name, target, value) => {
+  const handleTagsChange =     (name, target, value) => {
       searchPdaForm[name][target] = value;
-    },
-    [searchPdaForm],
-  );
+    }
 
-  const handleMatchInventoryScalingChange = useCallback(
-    (e) => {
+  const handleMatchInventoryScalingChange =     (e) => {
       searchPdaForm[MATCH_INVENTORY][SCALING] = e.currentTarget.value ? 0 : e.currentTarget[NAME];
-    },
-    [searchPdaForm],
-  );
+    }
 
-  const handleClear = useCallback(() => {
+  const handleClear = () => {
     setSearchParams();
     clearSearchForm(PDA);
     setError(false);
-  }, [clearSearchForm]);
+  }
 
   const handleError = (e) => {
     switch (e.response.status) {

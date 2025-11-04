@@ -1,4 +1,3 @@
-import { useCallback } from "react";
 import { List } from "react-window";
 import { InventoryLibraryTableRow, ResultModal, WindowRows } from "@/components";
 import { ID, VALUE } from "@/constants";
@@ -26,18 +25,15 @@ const InventoryLibraryTable = ({
     handleModalCardClose,
   } = useModalCardController(sortedCards);
 
-  const handleClick = useCallback(
-    (card) => {
+  const handleClick = (card) => {
       handleModalCardOpen(card);
       !isDesktop && setShowFloatingButtons(false);
-    },
-    [sortedCards],
-  );
+    }
 
-  const handleClose = useCallback(() => {
+  const handleClose = () => {
     handleModalCardClose();
     !isDesktop && setShowFloatingButtons(true);
-  }, [sortedCards]);
+  }
 
   const cardRows = sortedCards
     .filter((card) => playtestMode || !getIsPlaytest(card.c[ID]))

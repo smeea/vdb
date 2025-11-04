@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { useState } from "react";
 import { Modal, Tooltip } from "@/components";
 import { useApp } from "@/context";
 
@@ -20,19 +20,19 @@ const ConditionalTooltipOrModal = ({
   const withModal = isModal !== undefined ? isModal : isMobile;
   const [showModal, setShowModal] = useState();
 
-  const handleClick = useCallback(() => {
+  const handleClick = () => {
     try {
       onClick();
     } catch {}
     setShowModal(true);
-  }, [onClick]);
+  }
 
-  const handleClose = useCallback(() => {
+  const handleClose = () => {
     try {
       onClose();
     } catch {}
     setShowModal(false);
-  }, [onClose]);
+  }
 
   return (
     <>

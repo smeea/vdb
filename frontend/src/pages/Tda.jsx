@@ -1,5 +1,5 @@
 import ky from "ky";
-import { Activity, useCallback, useEffect, useState } from "react";
+import { Activity, useEffect, useState } from "react";
 import { useNavigate, useParams, useSearchParams } from "react-router";
 import { useSnapshot } from "valtio";
 import {
@@ -99,10 +99,10 @@ const Tda = () => {
     navigate("/tda");
   };
 
-  const handleClear = useCallback(() => {
+  const handleClear = () => {
     setSearchParams();
     setShowForm(true);
-  }, []);
+  }
 
   useEffect(() => {
     if (tempDecks && tempArchon) {

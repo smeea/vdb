@@ -31,7 +31,7 @@ const DeckImportAmaranth = ({ setShow }) => {
 
   const VERSION = "2024-11-07";
   const url = `${import.meta.env.VITE_BASE_URL}/data/amaranth_ids.json?v=${VERSION}`;
-  const { value: idReference } = useFetch(url, {}, []);
+  const { value: idReference } = useFetch(url, {});
 
   const handleClose = () => {
     setShow(false);

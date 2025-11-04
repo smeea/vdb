@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useImmer } from "use-immer";
 import { DeckDrawModal } from "@/components";
 import { CRYPT, LIBRARY } from "@/constants";
@@ -56,12 +56,12 @@ const DeckDraw = ({ deck, setShow }) => {
     return [drawArray, restArray];
   };
 
-  const handleClose = useCallback(() => {
+  const handleClose = () => {
     setShow(false);
     setShowFloatingButtons(true);
-  }, []);
+  }
 
-  const handleReDrawCrypt = useCallback(() => {
+  const handleReDrawCrypt = () => {
     setInitialTransfers(getRandomTransfers());
     setCryptDraw((draft) => {
       const [drawed, rest] = drawCards([...Array(cryptList.length).keys()], 4);
@@ -70,9 +70,9 @@ const DeckDraw = ({ deck, setShow }) => {
       draft[REST] = rest;
       draft[BURNED] = [];
     });
-  }, [deck[CRYPT]]);
+  }
 
-  const handleReDrawLibrary = useCallback(() => {
+  const handleReDrawLibrary = () => {
     setLibraryDraw((draft) => {
       const [drawed, rest] = drawCards([...Array(libraryList.length).keys()], 7);
       draft[HAND] = 7;
@@ -80,28 +80,21 @@ const DeckDraw = ({ deck, setShow }) => {
       draft[REST] = rest;
       draft[BURNED] = [];
     });
-  }, [deck[LIBRARY]]);
+  }
 
-  const handleCryptHandSize = useCallback(
-    (q) => {
+  const handleCryptHandSize = (q) => {
       setCryptDraw((draft) => {
         draft[HAND] += q;
       });
-    },
-    [cryptDraw[HAND]],
-  );
+    }
 
-  const handleLibraryHandSize = useCallback(
-    (q) => {
+  const handleLibraryHandSize = (q) => {
       setLibraryDraw((draft) => {
         draft[HAND] += q;
       });
-    },
-    [libraryDraw[HAND]],
-  );
+    }
 
-  const handleBurnCrypt = useCallback(
-    (idx) => {
+  const handleBurnCrypt = (idx) => {
       setCryptDraw((draft) => {
         const card = draft[DRAWED].splice(idx, 1)[0];
         draft[BURNED].unshift(card);
@@ -109,12 +102,9 @@ const DeckDraw = ({ deck, setShow }) => {
           draft[HAND] -= 1;
         }
       });
-    },
-    [cryptDraw],
-  );
+    }
 
-  const handleBurnLibrary = useCallback(
-    (idx) => {
+  const handleBurnLibrary = (idx) => {
       setLibraryDraw((draft) => {
         const card = draft[DRAWED].splice(idx, 1)[0];
         draft[BURNED].unshift(card);
@@ -126,9 +116,7 @@ const DeckDraw = ({ deck, setShow }) => {
           draft[HAND] -= 1;
         }
       });
-    },
-    [libraryDraw],
-  );
+    }
 
   useEffect(() => {
     if (cryptDraw[DRAWED].length < cryptDraw[HAND]) {

@@ -1,4 +1,3 @@
-import { useCallback } from "react";
 import cardtypeSortedFull from "@/assets/data/cardtypeSortedFull.json";
 import { ConditionalTooltipOrModal, DeckDrawProbabilityText } from "@/components";
 import { useApp } from "@/context";
@@ -7,13 +6,8 @@ import { drawProbability } from "@/utils";
 const DeckDrawProbability = ({ cardName, n, N, k }) => {
   const { setShowFloatingButtons } = useApp();
 
-  const handleClose = useCallback(() => {
-    setShowFloatingButtons(true);
-  }, []);
-
-  const handleClick = useCallback(() => {
-    setShowFloatingButtons(false);
-  }, []);
+  const handleClick = () => setShowFloatingButtons(false);
+  const handleClose = () => setShowFloatingButtons(true);
 
   return (
     <ConditionalTooltipOrModal

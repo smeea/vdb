@@ -1,4 +1,3 @@
-export { default as useAsync } from "./useAsync.js";
 export { default as useCryptSortWithTimer } from "./useCryptSortWithTimer.js";
 export { default as useDebounce } from "./useDebounce.js";
 export { default as useDeckCrypt } from "./useDeckCrypt.js";

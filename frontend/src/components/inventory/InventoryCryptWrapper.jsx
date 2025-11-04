@@ -1,4 +1,4 @@
-import { useCallback, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { useSnapshot } from "valtio";
 import { InventoryCrypt, NewCardSelect } from "@/components";
 import { CRYPT, OK } from "@/constants";
@@ -10,10 +10,7 @@ const InventoryCryptWrapper = ({ sharedCrypt, category, onlyNotes, clan, setClan
   const [newCardId, setNewCardId] = useState();
   const newCardFocus = () => newCardRef.current.focus();
   const newCardRef = useRef();
-
-  const handleClick = useCallback((e) => {
-    setNewCardId(e.value);
-  }, []);
+  const handleClick = (e) => setNewCardId(e.value);
 
   return (
     <>

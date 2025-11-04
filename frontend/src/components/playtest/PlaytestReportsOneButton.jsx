@@ -18,7 +18,7 @@ const PlaytestReportsOneButton = ({ value, isPrecon = false }) => {
   const { isMobile } = useApp();
   const [show, setShow] = useState();
   const url = `${import.meta.env.VITE_API_URL}/playtest/export/${isPrecon ? PRECONS : CARDS}/${value[ID]}`;
-  const { value: report } = useFetch(url, {}, [value[ID]]);
+  const { value: report } = useFetch(url, {});
 
   return (
     <>

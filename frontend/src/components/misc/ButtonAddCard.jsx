@@ -1,5 +1,4 @@
 import PlusLg from "@icons/plus-lg.svg?react";
-import { useCallback } from "react";
 import { useSnapshot } from "valtio";
 import { Button } from "@/components";
 import { DECKS, NAME } from "@/constants";
@@ -8,9 +7,7 @@ import { deckCardChange, deckStore } from "@/context";
 const ButtonAddCard = ({ deckid, card, inDeck, inQuick, disabled }) => {
   const decks = useSnapshot(deckStore)[DECKS];
 
-  const handleClick = useCallback(() => {
-    deckCardChange(deckid, card, inDeck + 1);
-  }, [deckid, card, inDeck]);
+  const handleClick = () => deckCardChange(deckid, card, inDeck + 1);
 
   let title = "Add to Deck";
   if (inQuick && decks?.[deckid]) {

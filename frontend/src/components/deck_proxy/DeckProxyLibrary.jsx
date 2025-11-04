@@ -1,4 +1,3 @@
-import { useCallback } from "react";
 import {
   DeckProxyLibraryTable,
   FlexGapped,
@@ -46,26 +45,20 @@ const DeckProxyLibrary = ({
     handleModalCardClose,
   } = useModalCardController(library, librarySide);
 
-  const handleClick = useCallback(
-    (card) => {
+  const handleClick =     (card) => {
       handleModalCardOpen(card);
       !isDesktop && setShowFloatingButtons(false);
-    },
-    [library, librarySide],
-  );
+    }
 
-  const handleClickSide = useCallback(
-    (card) => {
+  const handleClickSide =     (card) => {
       handleModalSideCardOpen(card);
       !isDesktop && setShowFloatingButtons(false);
-    },
-    [library, librarySide],
-  );
+    }
 
-  const handleClose = useCallback(() => {
+  const handleClose = () => {
     handleModalCardClose();
     !isDesktop && setShowFloatingButtons(true);
-  }, [library, librarySide]);
+  }
 
   return (
     <FlexGapped className="flex-col">

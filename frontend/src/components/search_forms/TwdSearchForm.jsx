@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router";
 import { useSnapshot } from "valtio";
 import {
@@ -89,65 +89,44 @@ const TwdSearchForm = ({ error, setError }) => {
     }
   }, [twdFormState, cryptCardBase, libraryCardBase]);
 
-  const handleEventChange = useCallback(
-    (event) => {
+  const handleEventChange = (event) => {
       searchTwdForm[EVENT] = event.target.value;
-    },
-    [searchTwdForm],
-  );
+    }
 
-  const handleMultiSelectChange = useCallback(
-    (event, id) => {
+  const handleMultiSelectChange = (event, id) => {
       const i = id[NAME];
       const { name, value } = event;
       searchTwdForm[name].value[i] = value;
-    },
-    [searchTwdForm],
-  );
+    }
 
-  const handleChangeWithOpt = useCallback(
-    (event, id) => {
+  const handleChangeWithOpt = (event, id) => {
       const i = id[NAME];
       const { name, value } = event;
       searchTwdForm[i][name] = value;
-    },
-    [searchTwdForm],
-  );
+    }
 
-  const handleDisciplinesChange = useCallback(
-    (name) => {
+  const handleDisciplinesChange = (name) => {
       searchTwdForm[DISCIPLINES][name] = !searchTwdForm[DISCIPLINES][name];
-    },
-    [searchTwdForm],
-  );
+    }
 
-  const handleMultiChange = useCallback(
-    (event) => {
+  const handleMultiChange = (event) => {
       const { name, value } = event.currentTarget;
       searchTwdForm[name][value] = !searchTwdForm[name][value];
-    },
-    [searchTwdForm],
-  );
+    }
 
-  const handleTagsChange = useCallback(
-    (name, target, value) => {
+  const handleTagsChange = (name, target, value) => {
       searchTwdForm[name][target] = value;
-    },
-    [searchTwdForm],
-  );
+    }
 
-  const handleMatchInventoryScalingChange = useCallback(
-    (e) => {
+  const handleMatchInventoryScalingChange = (e) => {
       searchTwdForm[MATCH_INVENTORY][SCALING] = e.currentTarget.value ? 0 : e.currentTarget[NAME];
-    },
-    [searchTwdForm],
-  );
+    }
 
-  const handleClear = useCallback(() => {
+  const handleClear = () => {
     setSearchParams();
     clearSearchForm(TWD);
     setError(false);
-  }, [clearSearchForm]);
+  }
 
   const handleError = (e) => {
     switch (e.response.status) {

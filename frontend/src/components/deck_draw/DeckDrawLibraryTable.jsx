@@ -1,4 +1,3 @@
-import { useCallback } from "react";
 import { DeckDrawProbability, ResultLibraryTableRowCommon, Tr } from "@/components";
 import { ID, NAME } from "@/constants";
 
@@ -23,12 +22,7 @@ const DeckDrawLibraryTable = ({
     });
   }
 
-  const onChange = useCallback(
-    (idx) => {
-      handleClick(idx);
-    },
-    [handleClick],
-  );
+  const onChange = (idx) => handleClick(idx);
 
   return (
     <table className="w-full border-bgSecondary sm:border dark:border-bgSecondaryDark">

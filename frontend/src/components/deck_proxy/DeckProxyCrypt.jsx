@@ -1,4 +1,3 @@
-import { useCallback } from "react";
 import { DeckProxyCryptTable, FlexGapped, Header, ResultModal } from "@/components";
 import { CRYPT, INVENTORY_TYPE, PRINT } from "@/constants";
 import { useApp } from "@/context";
@@ -32,26 +31,20 @@ const DeckProxyCrypt = ({
     handleModalCardClose,
   } = useModalCardController(sortedCards, sortedCardsSide);
 
-  const handleClick = useCallback(
-    (card) => {
+  const handleClick =     (card) => {
       handleModalCardOpen(card);
       !isDesktop && setShowFloatingButtons(false);
-    },
-    [sortedCards, sortedCardsSide],
-  );
+    }
 
-  const handleClickSide = useCallback(
-    (card) => {
+  const handleClickSide =     (card) => {
       handleModalSideCardOpen(card);
       !isDesktop && setShowFloatingButtons(false);
-    },
-    [sortedCards, sortedCardsSide],
-  );
+    }
 
-  const handleClose = useCallback(() => {
+  const handleClose = () => {
     handleModalCardClose();
     !isDesktop && setShowFloatingButtons(true);
-  }, [sortedCards, sortedCardsSide]);
+  }
 
   return (
     <FlexGapped className="flex-col">

@@ -1,5 +1,5 @@
 import Check2 from "@icons/check2.svg?react";
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import {
   ButtonClose,
   ButtonIconed,
@@ -54,12 +54,7 @@ const SearchFormTextAndButtons = ({
     },
   ];
 
-  const handleChange = useCallback(
-    (e) => {
-      setText(e.target.value);
-    },
-    [setText],
-  );
+  const handleChange =     (e) => setText(e.target.value);
 
   return (
     <div className="flex flex-col gap-2">

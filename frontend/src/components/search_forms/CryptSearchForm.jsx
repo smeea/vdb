@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router";
 import { useSnapshot } from "valtio";
 import {
@@ -144,15 +144,11 @@ const CryptSearchForm = () => {
     }
   }, [preresults]);
 
-  const handleTextChange = useCallback(
-    (formId, value) => {
+  const handleTextChange = (formId, value) => {
       searchCryptForm[TEXT][formId].value = value;
-    },
-    [searchCryptForm],
-  );
+    }
 
-  const handleTextCheckboxesChange = useCallback(
-    (event) => {
+  const handleTextCheckboxesChange = (event) => {
       const { name, value } = event.currentTarget;
 
       if ([NAME, TEXT].includes(value)) {
@@ -160,20 +156,14 @@ const CryptSearchForm = () => {
       } else {
         searchCryptForm[TEXT][name][value] = !searchCryptForm[TEXT][name][value];
       }
-    },
-    [searchCryptForm],
-  );
+    }
 
-  const handleSelectChange = useCallback(
-    (event) => {
+  const handleSelectChange =   (event) => {
       const { name, value } = event;
       searchCryptForm[name] = value;
-    },
-    [searchCryptForm],
-  );
+    }
 
-  const handleMultiSelectChange = useCallback(
-    (event, id) => {
+  const handleMultiSelectChange = (event, id) => {
       const i = id[NAME];
       const { name, value } = event;
 
@@ -186,12 +176,9 @@ const CryptSearchForm = () => {
       } else {
         searchCryptForm[name].value[i] = value;
       }
-    },
-    [searchCryptForm],
-  );
+    }
 
-  const handleMultiChange = useCallback(
-    (event) => {
+  const handleMultiChange = (event) => {
       const { name, value } = event.currentTarget;
 
       if ([OR_NEWER, OR_OLDER, NOT_NEWER, NOT_OLDER].includes(value)) {
@@ -201,33 +188,25 @@ const CryptSearchForm = () => {
       } else {
         searchCryptForm[name][value] = !searchCryptForm[name][value];
       }
-    },
-    [searchCryptForm],
-  );
+    }
 
-  const handleDisciplinesChange = useCallback(
-    (name, max) => {
+  const handleDisciplinesChange =     (name, max) => {
       if (searchCryptForm[DISCIPLINES][name] < max) {
         searchCryptForm[DISCIPLINES][name] += 1;
       } else {
         searchCryptForm[DISCIPLINES][name] = 0;
       }
-    },
-    [searchCryptForm],
-  );
+    }
 
-  const handleDisciplinesOrChange = useCallback(
-    (value) => {
+  const handleDisciplinesOrChange =     (value) => {
       searchCryptForm[DISCIPLINES_OR] = value;
-    },
-    [searchCryptForm],
-  );
+    }
 
-  const handleClear = useCallback(() => {
+  const handleClear = () => {
     setSearchParams();
     clearSearchForm(CRYPT);
     setError(false);
-  }, [clearSearchForm]);
+  }
 
   const handleShowResults = () => {
     setCryptResults(preresults);

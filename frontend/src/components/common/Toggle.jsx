@@ -1,7 +1,6 @@
 import { Switch } from "@headlessui/react";
 import ToggleOff from "@icons/toggle-off.svg?react";
 import ToggleOn from "@icons/toggle-on.svg?react";
-import { useCallback } from "react";
 import { twMerge } from "tailwind-merge";
 
 const Toggle = ({
@@ -29,9 +28,7 @@ const Toggle = ({
     },
   };
 
-  const onChange = useCallback(() => {
-    !disabled && handleClick();
-  }, [disabled, handleClick]);
+  const onChange = () => !disabled && handleClick();
 
   return (
     <Switch checked={isOn} onChange={onChange} disabled={disabled}>

@@ -10,7 +10,7 @@ const TwdCardsHistory = () => {
   const { cryptCardBase, libraryCardBase } = useApp();
 
   const url = `${import.meta.env.VITE_BASE_URL}/data/twd_cards_history.json`;
-  const { value } = useFetch(url, {}, []);
+  const { value } = useFetch(url, {});
   let crypt
   let library
   const players = {}

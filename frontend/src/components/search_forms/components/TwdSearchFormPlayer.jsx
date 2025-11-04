@@ -4,7 +4,7 @@ import { useFetch } from "@/hooks";
 
 const TwdSearchFormPlayer = ({ inPda, value, form }) => {
   const url = `${import.meta.env.VITE_API_URL}/${inPda ? "pda" : "twd"}/authors`;
-  const { value: players } = useFetch(url, {}, []);
+  const { value: players } = useFetch(url, {});
 
   const handleChange = (v) => {
     form[AUTHOR] = v?.value ?? "";

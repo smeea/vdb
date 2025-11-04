@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { twMerge } from "tailwind-merge";
 import {
   DeckDrawProbability,
@@ -35,26 +35,20 @@ const DeckLibrary = ({ inTwd, inSearch, inPreview, inMissing, deck }) => {
     handleModalCardClose,
   } = useModalCardController(library, librarySide);
 
-  const handleClick = useCallback(
-    (card) => {
+  const handleClick =     (card) => {
       handleModalCardOpen(card);
       !isDesktop && setShowFloatingButtons(false);
-    },
-    [library, librarySide],
-  );
+    }
 
-  const handleClickSide = useCallback(
-    (card) => {
+  const handleClickSide =     (card) => {
       handleModalSideCardOpen(card);
       !isDesktop && setShowFloatingButtons(false);
-    },
-    [library, librarySide],
-  );
+    }
 
-  const handleClose = useCallback(() => {
+  const handleClose = () => {
     handleModalCardClose();
     !isDesktop && setShowFloatingButtons(true);
-  }, [library, librarySide]);
+  }
 
   useEffect(() => {
     currentModalCard && handleModalCardClose();

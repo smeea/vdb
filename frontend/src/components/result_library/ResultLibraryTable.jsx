@@ -1,4 +1,3 @@
-import { useCallback } from "react";
 import { ResultLibraryTableRow, ResultModal } from "@/components";
 import { ID } from "@/constants";
 import { useApp } from "@/context";
@@ -14,18 +13,15 @@ const ResultLibraryTable = ({ resultCards, inLimited }) => {
     handleModalCardClose,
   } = useModalCardController(resultCards);
 
-  const handleClick = useCallback(
-    (card) => {
+  const handleClick = (card) => {
       handleModalCardOpen(card);
       !isDesktop && setShowFloatingButtons(false);
-    },
-    [resultCards],
-  );
+    }
 
-  const handleClose = useCallback(() => {
+  const handleClose = () => {
     handleModalCardClose();
     !isDesktop && setShowFloatingButtons(true);
-  }, [resultCards]);
+  }
 
   return (
     <>

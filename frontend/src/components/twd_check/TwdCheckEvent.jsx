@@ -33,11 +33,11 @@ const getDateWithSuffix = (d) => {
 const TwdCheckEvent = ({ deckData }) => {
   const urlCountries = `${import.meta.env.VITE_API_URL}/twd/countries`;
   const urlCities = `${import.meta.env.VITE_API_URL}/twd/cities`;
-  const { value: countries } = useFetch(urlCountries, {}, []);
-  const { value: cities } = useFetch(urlCities, {}, []);
+  const { value: countries } = useFetch(urlCountries, {});
+  const { value: cities } = useFetch(urlCities, {});
 
   const url = `${import.meta.env.VITE_API_URL}/twd/event/${deckData[ID]}`;
-  const { value } = useFetch(url, {}, [deckData[ID]]);
+  const { value } = useFetch(url, {});
 
   const countriesFixes = {
     AT: "Austria",

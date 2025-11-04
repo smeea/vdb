@@ -13,7 +13,7 @@ const TwdHallOfFameCards = () => {
   const IGNORED_BEFORE_DATE = "1999-04-11"; // first was 1997-04-11
 
   const url = `${import.meta.env.VITE_BASE_URL}/data/twd_cards_history.json`;
-  const { value } = useFetch(url, {}, []);
+  const { value } = useFetch(url, {});
 
   const players = {}
     if (value && cryptCardBase && libraryCardBase) {

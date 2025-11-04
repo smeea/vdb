@@ -5,7 +5,7 @@ import { byName } from "@/utils";
 
 const TwdHallOfFameTournaments = () => {
   const url = `${import.meta.env.VITE_API_URL}/twd/hall_of_fame`;
-  const { value } = useFetch(url, {}, []);
+  const { value } = useFetch(url, {});
 
   const byWins = (a, b) => {
     return Object.keys(value[b]).length - Object.keys(value[a]).length;

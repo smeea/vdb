@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import {  useEffect, useState } from "react";
 import { twMerge } from "tailwind-merge";
 import { ButtonCardChange, ConditionalTooltip, UsedPopover } from "@/components";
 import { ID } from "@/constants";
@@ -36,17 +36,15 @@ const DeckCardQuantity = ({
     setManual(false);
   };
 
-  const handleClickPlus = useCallback(() => {
+  const handleClickPlus = () => {
     cardChange(deckid, card, q + 1);
-  }, [deckid, card, q]);
+  }
 
-  const handleClickMinus = useCallback(() => {
+  const handleClickMinus = () => {
     cardChange(deckid, card, q - 1);
-  }, [deckid, card, q]);
+  }
 
-  const handleClickManual = useCallback(() => {
-    setManual(true);
-  }, []);
+  const handleClickManual = () => setManual(true);
 
   const getInventoryColor = () => {
     if (inventoryMode && !inMissing) {

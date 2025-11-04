@@ -13,7 +13,7 @@ const UpdateNotification = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const url = `${import.meta.env.VITE_API_URL}/version`;
-  const { value } = useFetch(url, {}, []);
+  const { value } = useFetch(url, {});
 
   useEffect(() => {
     if (update === undefined && value?.version > lastChange.version) {

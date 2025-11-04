@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router";
 import { useSnapshot } from "valtio";
 import {
@@ -120,15 +120,11 @@ const LibrarySearchForm = () => {
     }
   }, [preresults]);
 
-  const handleTextChange = useCallback(
-    (formId, value) => {
+  const handleTextChange = (formId, value) => {
       searchLibraryForm[TEXT][formId].value = value;
-    },
-    [searchLibraryForm],
-  );
+    }
 
-  const handleTextCheckboxesChange = useCallback(
-    (event) => {
+  const handleTextCheckboxesChange = (event) => {
       const { name, value } = event.currentTarget;
       if ([NAME, TEXT].includes(value)) {
         searchLibraryForm[TEXT][name][IN] =
@@ -136,20 +132,14 @@ const LibrarySearchForm = () => {
       } else {
         searchLibraryForm[TEXT][name][value] = !searchLibraryForm[TEXT][name][value];
       }
-    },
-    [searchLibraryForm],
-  );
+    }
 
-  const handleSelectChange = useCallback(
-    (event) => {
+  const handleSelectChange = (event) => {
       const { name, value } = event;
       searchLibraryForm[name] = value;
-    },
-    [searchLibraryForm],
-  );
+    }
 
-  const handleMultiSelectChange = useCallback(
-    (event, id) => {
+  const handleMultiSelectChange = (event, id) => {
       const i = id[NAME];
       const { name, value } = event;
 
@@ -162,12 +152,9 @@ const LibrarySearchForm = () => {
       } else {
         searchLibraryForm[name].value[i] = value;
       }
-    },
-    [searchLibraryForm],
-  );
+    }
 
-  const handleMultiChange = useCallback(
-    (event) => {
+  const handleMultiChange = (event) => {
       const { name, value } = event.currentTarget;
 
       if ([OR_NEWER, OR_OLDER, NOT_NEWER, NOT_OLDER].includes(value)) {
@@ -177,17 +164,15 @@ const LibrarySearchForm = () => {
       } else {
         searchLibraryForm[name][value] = !searchLibraryForm[name][value];
       }
-    },
-    [searchLibraryForm],
-  );
+    }
 
-  const handleClear = useCallback(() => {
+  const handleClear = () => {
     setSearchParams();
     clearSearchForm(LIBRARY);
     setLibraryResults(undefined);
     setPreresults(undefined);
     setError(false);
-  }, [clearSearchForm]);
+  }
 
   const handleShowResults = () => {
     setLibraryResults(preresults);

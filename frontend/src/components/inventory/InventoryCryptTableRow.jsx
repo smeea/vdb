@@ -1,4 +1,3 @@
-import { useCallback } from "react";
 import { twMerge } from "tailwind-merge";
 import { useSnapshot } from "valtio";
 import {
@@ -25,15 +24,13 @@ const InventoryCryptTableRow = ({ card, compact, newFocus, forceNonEditable, han
   const softUsedMax = getSoftMax(usedCrypt[SOFT][card.c[ID]]);
   const hardUsedTotal = getHardTotal(usedCrypt[HARD][card.c[ID]]);
   const isEditable = !useSnapshot(inventoryStore)[IS_FROZEN] && !forceNonEditable;
+  const onClick = () => handleClick(card.c);
 
   const { isSwiped, swipeHandlers } = useSwipe(
     () => inventoryCardChange(card.c, card.q - 1),
     () => inventoryCardChange(card.c, card.q + 1),
   );
 
-  const onClick = useCallback(() => {
-    handleClick(card.c);
-  }, [card]);
 
   return (
     <div

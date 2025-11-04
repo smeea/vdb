@@ -1,4 +1,4 @@
-import { useCallback, useRef, useState } from "react";
+import {  useRef, useState } from "react";
 import { useSnapshot } from "valtio";
 import { InventoryLibrary, NewCardSelect } from "@/components";
 import { LIBRARY, OK } from "@/constants";
@@ -18,10 +18,7 @@ const InventoryLibraryWrapper = ({
   const [newCardId, setNewCardId] = useState();
   const newCardFocus = () => newCardRef.current.focus();
   const newCardRef = useRef();
-
-  const handleClick = useCallback((e) => {
-    setNewCardId(e.value);
-  }, []);
+  const handleClick = (e) => setNewCardId(e.value);
 
   return (
     <>

@@ -5,8 +5,8 @@ import { useFetch } from "@/hooks";
 const TwdSearchFormLocation = ({ value, form }) => {
   const urlCountries = `${import.meta.env.VITE_API_URL}/twd/countries`;
   const urlCities = `${import.meta.env.VITE_API_URL}/twd/cities`;
-  const { value: countries } = useFetch(urlCountries, {}, []);
-  const { value: cities } = useFetch(urlCities, {}, []);
+  const { value: countries } = useFetch(urlCountries, {});
+  const { value: cities } = useFetch(urlCities, {});
 
   const handleChange = (v, target) => {
     form[LOCATION][target] = v?.value ?? "";

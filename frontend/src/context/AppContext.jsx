@@ -1,5 +1,5 @@
 import { getMany, set, setMany, update } from "idb-keyval";
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useImmer } from "use-immer";
 import { useSnapshot } from "valtio";
 import limitedV5 from "@/assets/data/limitedV5.json";
@@ -149,13 +149,13 @@ export const AppProvider = ({ children }) => {
   const [showFloatingButtons, setShowFloatingButtons] = useState(true);
   const [showMenuButtons, setShowMenuButtons] = useState();
 
-  const updatePlaytestProfile = useCallback((target, value) => {
+  const updatePlaytestProfile = (target, value) =>   {
     setPlaytestProfile((prevState) => ({
       ...prevState,
       [target]: value,
     }));
     playtestServices.updateProfile(target, value);
-  }, []);
+  }
 
   const [cryptCardBase, setCryptCardBase] = useImmer();
   const [libraryCardBase, setLibraryCardBase] = useImmer();
@@ -235,13 +235,13 @@ export const AppProvider = ({ children }) => {
     }
   }, [limitedPreset]);
 
-  const setLimitedFormat = useCallback((lac, lal, lbc, lbl, ls) => {
+  const setLimitedFormat = (lac, lal, lbc, lbl, ls) => {
     if (lac) setLimitedAllowedCrypt(lac);
     if (lal) setLimitedAllowedLibrary(lal);
     if (lbc) setLimitedBannedCrypt(lbc);
     if (lbl) setLimitedBannedLibrary(lbl);
     if (ls) setLimitedSets(ls);
-  }, []);
+  }
 
   useEffect(() => {
     getMany([
@@ -304,8 +304,7 @@ export const AppProvider = ({ children }) => {
     return inventoryData;
   };
 
-  const initializeUserData = useCallback(
-    (data) => {
+  const initializeUserData = (data) => {
       if (cryptCardBase && libraryCardBase) {
         setUsername(data.username);
         setPublicName(data.public_name);
@@ -325,11 +324,9 @@ export const AppProvider = ({ children }) => {
         inventoryStore[LIBRARY] = library;
         deckStore[DECKS] = parseDecksData(data[DECKS]);
       }
-    },
-    [deckStore, inventoryStore, cryptCardBase, libraryCardBase],
-  );
+    }
 
-  const initializeUnauthenticatedUser = useCallback(() => {
+  const initializeUnauthenticatedUser = () => {
     setAddMode(false);
     setInventoryMode(false);
     setLimitedMode(false);
@@ -346,7 +343,7 @@ export const AppProvider = ({ children }) => {
       deckStore[DECK] = undefined;
     }
     deckStore[DECKS] = {};
-  }, [deckStore, inventoryStore]);
+  }
 
   useEffect(() => {
     if (cryptCardBase && libraryCardBase) {
@@ -359,10 +356,10 @@ export const AppProvider = ({ children }) => {
   }, [userData, cryptCardBase, libraryCardBase]);
 
   // LANGUAGE
-  const changeLang = useCallback((lang) => {
+  const changeLang = (lang) => {
     setLang(lang);
     setLocalStorage(LANG, lang);
-  }, []);
+  }
 
   const changeBaseTextToLocalizedText = (setCardBase, localizedInfo, nativeInfo) => {
     setCardBase((draft) => {
@@ -423,95 +420,92 @@ export const AppProvider = ({ children }) => {
   }, [deckStore[DECK]?.[DECKID], lang, localizedCrypt, localizedLibrary]);
 
   // APP DATA
-  const toggleShowImage = useCallback(() => {
+  const toggleShowImage = () => {
     setShowImage(!showImage);
     setLocalStorage(SHOW_IMAGE, !showImage);
-  }, [showImage]);
+  }
 
-  const toggleShowLegacyImage = useCallback(() => {
+  const toggleShowLegacyImage = () => {
     setShowLegacyImage(!showLegacyImage);
     setLocalStorage(SHOW_LEGACY_IMAGE, !showLegacyImage);
-  }, [showLegacyImage]);
+  }
 
-  const toggleInventoryMode = useCallback(() => {
+  const toggleInventoryMode = () => {
     setInventoryMode(!inventoryMode);
     setLocalStorage(INVENTORY_MODE, !inventoryMode);
-  }, [inventoryMode]);
+  }
 
-  const toggleLimitedMode = useCallback(() => {
+  const toggleLimitedMode = () => {
     setLimitedMode(!limitedMode);
     setLocalStorage(LIMITED_MODE, !limitedMode);
-  }, [limitedMode]);
+  }
 
-  const togglePlaytestMode = useCallback(() => {
+  const togglePlaytestMode = () => {
     setPlaytestMode(!playtestMode);
     setLocalStorage(PLAYTEST_MODE, !playtestMode);
-  }, [playtestMode]);
+  }
 
-  const toggleLimitedOnlyDecks = useCallback(() => {
+  const toggleLimitedOnlyDecks = () => {
     setLimitedOnlyDecks(!limitedOnlyDecks);
     setLocalStorage(LIMITED_ONLY_DECKS, !limitedOnlyDecks);
-  }, [limitedOnlyDecks]);
+  }
 
-  const toggleAddMode = useCallback(() => {
+  const toggleAddMode = () => {
     setAddMode(!addMode);
     setLocalStorage(ADD_MODE, !addMode);
-  }, [addMode]);
+  }
 
-  const changeLimitedPreset = useCallback(
-    (value) => {
+  const changeLimitedPreset = (value) => {
       setLimitedPreset(value);
       setLocalStorage(LIMITED_PRESET, value);
-    },
-    [limitedPreset],
-  );
+    }
 
-  const changeDecksAdvSort = useCallback((method) => {
+  const changeDecksAdvSort = (method) => {
     setDecksAdvSort(method);
     setLocalStorage(DECKS_ADV_SORT, method);
-  }, []);
+  }
 
-  const changeCryptDeckSort = useCallback((method) => {
+  const changeCryptDeckSort = (method) => {
     setCryptDeckSort(method);
     setLocalStorage(CRYPT_DECK_SORT, method);
-  }, []);
+  }
 
-  const changeCryptSearchSort = useCallback((method) => {
+  const changeCryptSearchSort = (method) => {
     setCryptSearchSort(method);
     setLocalStorage(CRYPT_SEARCH_SORT, method);
-  }, []);
+  }
 
-  const changeCryptInventorySort = useCallback((method) => {
+  const changeCryptInventorySort = (method) => {
     setCryptInventorySort(method);
     setLocalStorage(CRYPT_INVENTORY_SORT, method);
-  }, []);
+  }
 
-  const changeLibrarySearchSort = useCallback((method) => {
+  const changeLibrarySearchSort = (method) => {
     setLibrarySearchSort(method);
     setLocalStorage(LIBRARY_SEARCH_SORT, method);
-  }, []);
+  }
 
-  const changeLibraryInventorySort = useCallback((method) => {
+  const changeLibraryInventorySort = (method) => {
     setLibraryInventorySort(method);
     setLocalStorage(LIBRARY_INVENTORY_SORT, method);
-  }, []);
+  }
 
-  const changeTwdSearchSort = useCallback((method) => {
+  const changeTwdSearchSort = (method) => {
     setTwdSearchSort(method);
     setLocalStorage(TWD_SEARCH_SORT, method);
-  }, []);
+  }
 
-  const changePdaSearchSort = useCallback((method) => {
+  const changePdaSearchSort = (method) => {
     setPdaSearchSort(method);
     setLocalStorage(PDA_SEARCH_SORT, method);
-  }, []);
+  }
 
-  const changeTdaSearchSort = useCallback((method) => {
+  const changeTdaSearchSort = (method) => {
     setTdaSearchSort(method);
     setLocalStorage(TDA_SEARCH_SORT, method);
-  }, []);
+  }
 
-  const addRecentDeck = useCallback((recentDeck) => {
+  const addRecentDeck = (recentDeck) => {
     const src = recentDeck[DECKID].length !== 9 ? TWD : recentDeck[PUBLIC_PARENT] ? PDA : "shared";
     let d = [...recentDecks];
     const idx = recentDecks.map((v) => v[DECKID]).indexOf(recentDeck[DECKID]);
@@ -524,12 +518,12 @@ export const AppProvider = ({ children }) => {
     if (d.length > 10) d = d.slice(0, 10);
     setRecentDecks(d);
     setLocalStorage(RECENT_DECKS, d);
-  }, []);
+  }
 
-  const updateRecentDecks = useCallback((recentDecks) => {
+  const updateRecentDecks = (recentDecks) => {
     setRecentDecks(recentDecks);
     setLocalStorage(RECENT_DECKS, recentDecks);
-  }, []);
+  }
 
   useEffect(() => {
     window.addEventListener(OFFLINE, () => setIsOnline(false));
