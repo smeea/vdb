@@ -5,26 +5,26 @@ import { getClan } from "@/utils";
 
 const TdaChartsClan = ({ decks }) => {
   const { isMobile, isDesktop, isWide } = useApp();
-    const result = {};
+  const result = {};
 
-    Object.values(decks).forEach((deck) => {
-      const clan = getClan(deck[CRYPT]) || MULTI;
-      if (result[clan]) {
-        result[clan] += 1;
-      } else {
-        result[clan] = 1;
-      }
-    });
+  Object.values(decks).forEach((deck) => {
+    const clan = getClan(deck[CRYPT]) || MULTI;
+    if (result[clan]) {
+      result[clan] += 1;
+    } else {
+      result[clan] = 1;
+    }
+  });
 
-    const data = Object.keys(result)
-      .map((c) => {
-        return {
-          name: isMobile && c.includes(ANTITRIBU) ? `!${c.replace(` ${ANTITRIBU}`, "")}` : c,
-          value: result[c],
-        };
-      })
-      .toSorted((a, b) => a[NAME] > b[NAME])
-      .toSorted((a, b) => b.value > a.value);
+  const data = Object.keys(result)
+    .map((c) => {
+      return {
+        name: isMobile && c.includes(ANTITRIBU) ? `!${c.replace(` ${ANTITRIBU}`, "")}` : c,
+        value: result[c],
+      };
+    })
+    .toSorted((a, b) => a[NAME] > b[NAME])
+    .toSorted((a, b) => b.value > a.value);
 
   return (
     <PieChart

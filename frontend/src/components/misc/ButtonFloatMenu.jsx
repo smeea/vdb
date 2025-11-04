@@ -8,7 +8,7 @@ const ButtonFloatMenu = () => {
   const handleClick = () => {
     setShowMenuButtons(true);
     setShowFloatingButtons(false);
-  }
+  };
 
   return (
     <>

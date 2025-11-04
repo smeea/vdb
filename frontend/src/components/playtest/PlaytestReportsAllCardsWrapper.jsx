@@ -9,11 +9,11 @@ const PlaytestReportsAllCardsWrapper = ({ reports, target, sortMethod, maxSameSc
   const cardBase = target === CRYPT ? cryptCardBase : libraryCardBase;
 
   const products = sort(
-        Object.values(cardBase || {}).filter((card) => {
-          return getIsPlaytest(card[ID]) && !card[PLAYTEST_OLD];
-        }),
-        sortMethod,
-      )
+    Object.values(cardBase || {}).filter((card) => {
+      return getIsPlaytest(card[ID]) && !card[PLAYTEST_OLD];
+    }),
+    sortMethod,
+  );
 
   return (
     <FlexGapped className="flex-col">

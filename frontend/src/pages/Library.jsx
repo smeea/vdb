@@ -29,11 +29,12 @@ const Library = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const query = JSON.parse(searchParams.get("q"));
 
-  const showSearchForm = isDesktop ||
-      (!isDesktop && !isMobile && !(addMode && libraryResults)) ||
-      (isMobile && !libraryResults)
+  const showSearchForm =
+    isDesktop ||
+    (!isDesktop && !isMobile && !(addMode && libraryResults)) ||
+    (isMobile && !libraryResults);
   const showToggleAddMode = deckStore[DECK] && libraryResults && !isMobile && !isDesktop;
-  const showResultCol = !(isMobile && !libraryResults)
+  const showResultCol = !(isMobile && !libraryResults);
 
   const handleClear = () => setSearchParams();
 

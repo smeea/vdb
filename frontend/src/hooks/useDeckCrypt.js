@@ -20,32 +20,32 @@ const useDeckCrypt = (cardsList, sortMethod, cardsToList) => {
   const sortedCards = useCryptSortWithTimer(crypt, sortMethod);
   const sortedCardsSide = useCryptSortWithTimer(cryptSide, sortMethod);
 
-    const {
-      [HAS_BANNED]: hasBanned,
-      [HAS_LIMITED]: hasLimited,
-      [HAS_PLAYTEST]: hasPlaytest,
-    } = getRestrictions(
-      { [CRYPT]: cryptFrom, [LIBRARY]: {} },
-      { [CRYPT]: limitedCrypt, [LIBRARY]: {} },
-    );
+  const {
+    [HAS_BANNED]: hasBanned,
+    [HAS_LIMITED]: hasLimited,
+    [HAS_PLAYTEST]: hasPlaytest,
+  } = getRestrictions(
+    { [CRYPT]: cryptFrom, [LIBRARY]: {} },
+    { [CRYPT]: limitedCrypt, [LIBRARY]: {} },
+  );
 
-    const cryptTotal = countCards(cardsFrom);
-    const cryptToTotal = countCards(cardsTo);
-    const { hasWrongGroups, cryptGroups } = getGroups(cryptFrom);
+  const cryptTotal = countCards(cardsFrom);
+  const cryptToTotal = countCards(cardsTo);
+  const { hasWrongGroups, cryptGroups } = getGroups(cryptFrom);
 
-    return {
-      crypt,
-      cryptSide,
-      hasBanned,
-      hasLimited,
-      hasPlaytest,
-      cryptTotal,
-      cryptToTotal,
-      cryptGroups,
-      hasWrongGroups,
-      sortedCards,
-      sortedCardsSide,
-    };
+  return {
+    crypt,
+    cryptSide,
+    hasBanned,
+    hasLimited,
+    hasPlaytest,
+    cryptTotal,
+    cryptToTotal,
+    cryptGroups,
+    hasWrongGroups,
+    sortedCards,
+    sortedCardsSide,
+  };
 };
 
 export default useDeckCrypt;

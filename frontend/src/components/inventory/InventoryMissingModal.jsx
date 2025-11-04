@@ -41,9 +41,9 @@ const InventoryMissingModal = ({
   const [showCryptOnMobile, setShowCryptOnMobile] = useState(true);
   const [showMissAll, setShowMissAll] = useState();
 
-  const missingCrypt = missingByClan ? missingByClan[clan] : {}
+  const missingCrypt = missingByClan ? missingByClan[clan] : {};
 
-  const missingLibrary = {}
+  const missingLibrary = {};
   if (missingByDiscipline && missingByType) {
     Object.values(missingByType[type])
       .filter((i) => {

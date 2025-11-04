@@ -121,50 +121,50 @@ const LibrarySearchForm = () => {
   }, [preresults]);
 
   const handleTextChange = (formId, value) => {
-      searchLibraryForm[TEXT][formId].value = value;
-    }
+    searchLibraryForm[TEXT][formId].value = value;
+  };
 
   const handleTextCheckboxesChange = (event) => {
-      const { name, value } = event.currentTarget;
-      if ([NAME, TEXT].includes(value)) {
-        searchLibraryForm[TEXT][name][IN] =
-          searchLibraryForm[TEXT][name][IN] === value ? false : value;
-      } else {
-        searchLibraryForm[TEXT][name][value] = !searchLibraryForm[TEXT][name][value];
-      }
+    const { name, value } = event.currentTarget;
+    if ([NAME, TEXT].includes(value)) {
+      searchLibraryForm[TEXT][name][IN] =
+        searchLibraryForm[TEXT][name][IN] === value ? false : value;
+    } else {
+      searchLibraryForm[TEXT][name][value] = !searchLibraryForm[TEXT][name][value];
     }
+  };
 
   const handleSelectChange = (event) => {
-      const { name, value } = event;
-      searchLibraryForm[name] = value;
-    }
+    const { name, value } = event;
+    searchLibraryForm[name] = value;
+  };
 
   const handleMultiSelectChange = (event, id) => {
-      const i = id[NAME];
-      const { name, value } = event;
+    const i = id[NAME];
+    const { name, value } = event;
 
-      if ([BLOOD, POOL, CAPACITY].includes(name)) {
-        if ([LE, GE, EQ].includes(value)) {
-          searchLibraryForm[name].moreless = value;
-        } else {
-          searchLibraryForm[name][name] = value;
-        }
+    if ([BLOOD, POOL, CAPACITY].includes(name)) {
+      if ([LE, GE, EQ].includes(value)) {
+        searchLibraryForm[name].moreless = value;
       } else {
-        searchLibraryForm[name].value[i] = value;
+        searchLibraryForm[name][name] = value;
       }
+    } else {
+      searchLibraryForm[name].value[i] = value;
     }
+  };
 
   const handleMultiChange = (event) => {
-      const { name, value } = event.currentTarget;
+    const { name, value } = event.currentTarget;
 
-      if ([OR_NEWER, OR_OLDER, NOT_NEWER, NOT_OLDER].includes(value)) {
-        searchLibraryForm[name][AGE] = searchLibraryForm[name][AGE] === value ? false : value;
-      } else if ([ONLY, FIRST, REPRINT].includes(value)) {
-        searchLibraryForm[name][PRINT] = searchLibraryForm[name][PRINT] === value ? false : value;
-      } else {
-        searchLibraryForm[name][value] = !searchLibraryForm[name][value];
-      }
+    if ([OR_NEWER, OR_OLDER, NOT_NEWER, NOT_OLDER].includes(value)) {
+      searchLibraryForm[name][AGE] = searchLibraryForm[name][AGE] === value ? false : value;
+    } else if ([ONLY, FIRST, REPRINT].includes(value)) {
+      searchLibraryForm[name][PRINT] = searchLibraryForm[name][PRINT] === value ? false : value;
+    } else {
+      searchLibraryForm[name][value] = !searchLibraryForm[name][value];
     }
+  };
 
   const handleClear = () => {
     setSearchParams();
@@ -172,7 +172,7 @@ const LibrarySearchForm = () => {
     setLibraryResults(undefined);
     setPreresults(undefined);
     setError(false);
-  }
+  };
 
   const handleShowResults = () => {
     setLibraryResults(preresults);

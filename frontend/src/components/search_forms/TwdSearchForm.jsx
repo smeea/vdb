@@ -90,43 +90,43 @@ const TwdSearchForm = ({ error, setError }) => {
   }, [twdFormState, cryptCardBase, libraryCardBase]);
 
   const handleEventChange = (event) => {
-      searchTwdForm[EVENT] = event.target.value;
-    }
+    searchTwdForm[EVENT] = event.target.value;
+  };
 
   const handleMultiSelectChange = (event, id) => {
-      const i = id[NAME];
-      const { name, value } = event;
-      searchTwdForm[name].value[i] = value;
-    }
+    const i = id[NAME];
+    const { name, value } = event;
+    searchTwdForm[name].value[i] = value;
+  };
 
   const handleChangeWithOpt = (event, id) => {
-      const i = id[NAME];
-      const { name, value } = event;
-      searchTwdForm[i][name] = value;
-    }
+    const i = id[NAME];
+    const { name, value } = event;
+    searchTwdForm[i][name] = value;
+  };
 
   const handleDisciplinesChange = (name) => {
-      searchTwdForm[DISCIPLINES][name] = !searchTwdForm[DISCIPLINES][name];
-    }
+    searchTwdForm[DISCIPLINES][name] = !searchTwdForm[DISCIPLINES][name];
+  };
 
   const handleMultiChange = (event) => {
-      const { name, value } = event.currentTarget;
-      searchTwdForm[name][value] = !searchTwdForm[name][value];
-    }
+    const { name, value } = event.currentTarget;
+    searchTwdForm[name][value] = !searchTwdForm[name][value];
+  };
 
   const handleTagsChange = (name, target, value) => {
-      searchTwdForm[name][target] = value;
-    }
+    searchTwdForm[name][target] = value;
+  };
 
   const handleMatchInventoryScalingChange = (e) => {
-      searchTwdForm[MATCH_INVENTORY][SCALING] = e.currentTarget.value ? 0 : e.currentTarget[NAME];
-    }
+    searchTwdForm[MATCH_INVENTORY][SCALING] = e.currentTarget.value ? 0 : e.currentTarget[NAME];
+  };
 
   const handleClear = () => {
     setSearchParams();
     clearSearchForm(TWD);
     setError(false);
-  }
+  };
 
   const handleError = (e) => {
     switch (e.response.status) {

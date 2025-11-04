@@ -36,31 +36,31 @@ const InventoryAddDeckModal = ({ handleClose }) => {
     value: tag,
   }));
 
-      let filtered = Object.values(decks);
+  let filtered = Object.values(decks);
 
-      if (nameFilter) {
-        filtered = filtered.filter((deck) => {
-          return deck[NAME].toLowerCase().indexOf(nameFilter.toLowerCase()) >= 0;
-        });
-      }
+  if (nameFilter) {
+    filtered = filtered.filter((deck) => {
+      return deck[NAME].toLowerCase().indexOf(nameFilter.toLowerCase()) >= 0;
+    });
+  }
 
-      if (tagsFilter) {
-        filtered = filtered.filter((deck) => {
-          let counter = 0;
-          tagsFilter.forEach((tag) => {
-            if (deck[TAGS].includes(tag)) counter += 1;
-          });
-          return counter >= tagsFilter.length;
-        });
-      }
+  if (tagsFilter) {
+    filtered = filtered.filter((deck) => {
+      let counter = 0;
+      tagsFilter.forEach((tag) => {
+        if (deck[TAGS].includes(tag)) counter += 1;
+      });
+      return counter >= tagsFilter.length;
+    });
+  }
 
-      if (!revFilter) {
-        filtered = filtered.filter((deck) => {
-          return !deck[MASTER];
-        });
-      }
+  if (!revFilter) {
+    filtered = filtered.filter((deck) => {
+      return !deck[MASTER];
+    });
+  }
 
-      const sortedDecks = decksSort(filtered, sortMethod);
+  const sortedDecks = decksSort(filtered, sortMethod);
 
   return (
     <Modal

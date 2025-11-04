@@ -86,44 +86,44 @@ const PdaSearchForm = ({ error, setError }) => {
     }
   }, [pdaFormState, cryptCardBase, libraryCardBase]);
 
-  const handleMultiSelectChange =     (event, id) => {
-      const i = id[NAME];
-      const { name, value } = event;
-      searchPdaForm[name].value[i] = value;
-    }
+  const handleMultiSelectChange = (event, id) => {
+    const i = id[NAME];
+    const { name, value } = event;
+    searchPdaForm[name].value[i] = value;
+  };
 
-  const handleChangeWithOpt =     (event, id) => {
-      const i = id[NAME];
-      const { name, value } = event;
-      searchPdaForm[i][name] = value;
-    }
+  const handleChangeWithOpt = (event, id) => {
+    const i = id[NAME];
+    const { name, value } = event;
+    searchPdaForm[i][name] = value;
+  };
 
-  const handleSrcChange =     (value) => {
-      searchPdaForm[SRC] = value;
-    }
+  const handleSrcChange = (value) => {
+    searchPdaForm[SRC] = value;
+  };
 
-  const handleDisciplinesChange =     (name) => {
-      searchPdaForm[DISCIPLINES][name] = !searchPdaForm[DISCIPLINES][name];
-    }
+  const handleDisciplinesChange = (name) => {
+    searchPdaForm[DISCIPLINES][name] = !searchPdaForm[DISCIPLINES][name];
+  };
 
-  const handleMultiChange =     (event) => {
-      const { name, value } = event.currentTarget;
-      searchPdaForm[name][value] = !searchPdaForm[name][value];
-    }
+  const handleMultiChange = (event) => {
+    const { name, value } = event.currentTarget;
+    searchPdaForm[name][value] = !searchPdaForm[name][value];
+  };
 
-  const handleTagsChange =     (name, target, value) => {
-      searchPdaForm[name][target] = value;
-    }
+  const handleTagsChange = (name, target, value) => {
+    searchPdaForm[name][target] = value;
+  };
 
-  const handleMatchInventoryScalingChange =     (e) => {
-      searchPdaForm[MATCH_INVENTORY][SCALING] = e.currentTarget.value ? 0 : e.currentTarget[NAME];
-    }
+  const handleMatchInventoryScalingChange = (e) => {
+    searchPdaForm[MATCH_INVENTORY][SCALING] = e.currentTarget.value ? 0 : e.currentTarget[NAME];
+  };
 
   const handleClear = () => {
     setSearchParams();
     clearSearchForm(PDA);
     setError(false);
-  }
+  };
 
   const handleError = (e) => {
     switch (e.response.status) {

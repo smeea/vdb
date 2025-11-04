@@ -23,22 +23,22 @@ const ModalConfirmation = ({
   const handleClose = () => {
     setError(false);
     handleCancel();
-  }
+  };
 
   const confirm = async (_prevState, formData) => {
-      if (withWrittenConfirmation) {
-        if (formData.get(TEXT) === YES) {
-          setError(false);
-          handleConfirm();
-        } else {
-          setError(true);
-        }
-      } else {
+    if (withWrittenConfirmation) {
+      if (formData.get(TEXT) === YES) {
+        setError(false);
         handleConfirm();
+      } else {
+        setError(true);
       }
-
-      return { [TEXT]: formData.get(TEXT) };
+    } else {
+      handleConfirm();
     }
+
+    return { [TEXT]: formData.get(TEXT) };
+  };
 
   const [data, action] = useActionState(confirm);
 

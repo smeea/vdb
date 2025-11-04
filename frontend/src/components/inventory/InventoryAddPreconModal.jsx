@@ -19,22 +19,22 @@ const InventoryAddPreconModal = ({ handleClose }) => {
     setSetFilter(event.target.value);
   };
 
-    let filtered = Object.values(preconDecks).filter((i) => {
-      return !(i[DECKID].includes(PLAYTEST) || i[DECKID].includes(TWO_P));
+  let filtered = Object.values(preconDecks).filter((i) => {
+    return !(i[DECKID].includes(PLAYTEST) || i[DECKID].includes(TWO_P));
+  });
+
+  if (nameFilter) {
+    filtered = filtered.filter((deck) => {
+      return deck[NAME].toLowerCase().indexOf(nameFilter.toLowerCase()) >= 0;
     });
+  }
 
-    if (nameFilter) {
-      filtered = filtered.filter((deck) => {
-        return deck[NAME].toLowerCase().indexOf(nameFilter.toLowerCase()) >= 0;
-      });
-    }
-
-    if (setFilter) {
-      filtered = filtered.filter((deck) => {
-        const set = deck[DECKID].split(":")[0];
-        return setsAndPrecons[set][NAME].toLowerCase().indexOf(setFilter.toLowerCase()) >= 0;
-      });
-    }
+  if (setFilter) {
+    filtered = filtered.filter((deck) => {
+      const set = deck[DECKID].split(":")[0];
+      return setsAndPrecons[set][NAME].toLowerCase().indexOf(setFilter.toLowerCase()) >= 0;
+    });
+  }
 
   const sortedDecks = decksSort(filtered, sortMethod);
 

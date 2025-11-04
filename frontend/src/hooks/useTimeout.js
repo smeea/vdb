@@ -1,4 +1,4 @@
-import {  useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 
 const useTimeout = (callback, delay) => {
   const callbackRef = useRef(callback);
@@ -8,7 +8,7 @@ const useTimeout = (callback, delay) => {
     callbackRef.current = callback;
   }, [callback]);
 
-  const set = () => timeoutRef.current = setTimeout(() => callbackRef.current(), delay);
+  const set = () => (timeoutRef.current = setTimeout(() => callbackRef.current(), delay));
   const clear = () => timeoutRef.current && clearTimeout(timeoutRef.current);
   const reset = () => {
     clear();

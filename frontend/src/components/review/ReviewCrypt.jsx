@@ -1,4 +1,4 @@
-import {  useState } from "react";
+import { useState } from "react";
 import { twMerge } from "tailwind-merge";
 import { DeckCryptHeader, DiffCryptTable, FlexGapped, ResultModal } from "@/components";
 import { CAPACITY, CLAN, CRYPT, GROUP, NAME, QUANTITYx, SECT } from "@/constants";
@@ -37,20 +37,20 @@ const ReviewCrypt = ({ cardChange, deckFrom, cardsTo }) => {
     handleModalCardClose,
   } = useModalCardController(sortedCards, sortedCardsSide);
 
-  const handleClick =     (card) => {
-      handleModalCardOpen(card);
-      !isDesktop && setShowFloatingButtons(false);
-    }
+  const handleClick = (card) => {
+    handleModalCardOpen(card);
+    !isDesktop && setShowFloatingButtons(false);
+  };
 
-  const handleClickSide =     (card) => {
-      handleModalSideCardOpen(card);
-      !isDesktop && setShowFloatingButtons(false);
-    }
+  const handleClickSide = (card) => {
+    handleModalSideCardOpen(card);
+    !isDesktop && setShowFloatingButtons(false);
+  };
 
   const handleClose = () => {
     handleModalCardClose();
     !isDesktop && setShowFloatingButtons(true);
-  }
+  };
 
   return (
     <FlexGapped

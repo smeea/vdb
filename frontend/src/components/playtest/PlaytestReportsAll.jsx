@@ -37,14 +37,8 @@ import { playtestServices } from "@/services";
 import { capitalize, getIsPlaytest } from "@/utils";
 
 const PlaytestReportsAll = () => {
-  const {
-    hidePlaytestNames,
-    setHidePlaytestNames,
-    isPlaytestAdmin,
-    preconDecks,
-    cryptCardBase,
-    libraryCardBase,
-  } = useApp();
+  const { hidePlaytestNames, setHidePlaytestNames, preconDecks, cryptCardBase, libraryCardBase } =
+    useApp();
   const navigate = useNavigate();
   const [sortMethod, setSortMethod] = useState(NAME);
   const sortMethods = {

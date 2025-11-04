@@ -59,7 +59,7 @@ const DeckDraw = ({ deck, setShow }) => {
   const handleClose = () => {
     setShow(false);
     setShowFloatingButtons(true);
-  }
+  };
 
   const handleReDrawCrypt = () => {
     setInitialTransfers(getRandomTransfers());
@@ -70,7 +70,7 @@ const DeckDraw = ({ deck, setShow }) => {
       draft[REST] = rest;
       draft[BURNED] = [];
     });
-  }
+  };
 
   const handleReDrawLibrary = () => {
     setLibraryDraw((draft) => {
@@ -80,43 +80,43 @@ const DeckDraw = ({ deck, setShow }) => {
       draft[REST] = rest;
       draft[BURNED] = [];
     });
-  }
+  };
 
   const handleCryptHandSize = (q) => {
-      setCryptDraw((draft) => {
-        draft[HAND] += q;
-      });
-    }
+    setCryptDraw((draft) => {
+      draft[HAND] += q;
+    });
+  };
 
   const handleLibraryHandSize = (q) => {
-      setLibraryDraw((draft) => {
-        draft[HAND] += q;
-      });
-    }
+    setLibraryDraw((draft) => {
+      draft[HAND] += q;
+    });
+  };
 
   const handleBurnCrypt = (idx) => {
-      setCryptDraw((draft) => {
-        const card = draft[DRAWED].splice(idx, 1)[0];
-        draft[BURNED].unshift(card);
-        if (draft[HAND] > 0) {
-          draft[HAND] -= 1;
-        }
-      });
-    }
+    setCryptDraw((draft) => {
+      const card = draft[DRAWED].splice(idx, 1)[0];
+      draft[BURNED].unshift(card);
+      if (draft[HAND] > 0) {
+        draft[HAND] -= 1;
+      }
+    });
+  };
 
   const handleBurnLibrary = (idx) => {
-      setLibraryDraw((draft) => {
-        const card = draft[DRAWED].splice(idx, 1)[0];
-        draft[BURNED].unshift(card);
-        if (draft[REST].length > 0) {
-          const [newDrawedCards, newRestCards] = drawCards(draft[REST], 1);
-          draft[DRAWED].push(...newDrawedCards);
-          draft[REST] = newRestCards;
-        } else if (draft[HAND] > 0) {
-          draft[HAND] -= 1;
-        }
-      });
-    }
+    setLibraryDraw((draft) => {
+      const card = draft[DRAWED].splice(idx, 1)[0];
+      draft[BURNED].unshift(card);
+      if (draft[REST].length > 0) {
+        const [newDrawedCards, newRestCards] = drawCards(draft[REST], 1);
+        draft[DRAWED].push(...newDrawedCards);
+        draft[REST] = newRestCards;
+      } else if (draft[HAND] > 0) {
+        draft[HAND] -= 1;
+      }
+    });
+  };
 
   useEffect(() => {
     if (cryptDraw[DRAWED].length < cryptDraw[HAND]) {

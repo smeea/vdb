@@ -4,69 +4,69 @@ import { useApp } from "@/context";
 
 const TdaChartsStyle = ({ decks }) => {
   const { isMobile, isDesktop, isWide } = useApp();
-    const qty = Object.keys(decks).length;
+  const qty = Object.keys(decks).length;
 
-    const result = {};
+  const result = {};
 
-    Object.values(decks).forEach((deck) => {
-      deck[TAGS][SUPERIOR].forEach((t) => {
-        if (result[t]) {
-          result[t] += 1.5;
-        } else {
-          result[t] = 1.5;
-        }
-      });
-      deck[TAGS][BASE].forEach((t) => {
-        if (result[t]) {
-          result[t] += 1;
-        } else {
-          result[t] = 1;
-        }
-      });
+  Object.values(decks).forEach((deck) => {
+    deck[TAGS][SUPERIOR].forEach((t) => {
+      if (result[t]) {
+        result[t] += 1.5;
+      } else {
+        result[t] = 1.5;
+      }
     });
+    deck[TAGS][BASE].forEach((t) => {
+      if (result[t]) {
+        result[t] += 1;
+      } else {
+        result[t] = 1;
+      }
+    });
+  });
 
-    const data = [
-      {
-        [NAME]: "Bleed",
-        [VALUE]: (result.bleed / qty) * 10 || 0,
-        fullMark: 10,
-      },
-      {
-        [NAME]: "Stealth",
-        [VALUE]: (result.stealth / qty) * 10 || 0,
-        fullMark: 10,
-      },
-      {
-        [NAME]: "Block",
-        [VALUE]: (result.block / qty) * 10 || 0,
-        fullMark: 10,
-      },
-      {
-        [NAME]: "Rush",
-        [VALUE]: (result.rush / qty) * 10 || 0,
-        fullMark: 10,
-      },
-      {
-        [NAME]: "Combat",
-        [VALUE]: (result.combat / qty) * 10 || 0,
-        fullMark: 10,
-      },
-      {
-        [NAME]: "Ally",
-        [VALUE]: (result.ally / qty) * 10 || 0,
-        fullMark: 10,
-      },
-      {
-        [NAME]: "Swarm",
-        [VALUE]: (result.swarm / qty) * 10 || 0,
-        fullMark: 10,
-      },
-      {
-        [NAME]: "Vote",
-        [VALUE]: (result.vote / qty) * 10 || 0,
-        fullMark: 10,
-      },
-    ];
+  const data = [
+    {
+      [NAME]: "Bleed",
+      [VALUE]: (result.bleed / qty) * 10 || 0,
+      fullMark: 10,
+    },
+    {
+      [NAME]: "Stealth",
+      [VALUE]: (result.stealth / qty) * 10 || 0,
+      fullMark: 10,
+    },
+    {
+      [NAME]: "Block",
+      [VALUE]: (result.block / qty) * 10 || 0,
+      fullMark: 10,
+    },
+    {
+      [NAME]: "Rush",
+      [VALUE]: (result.rush / qty) * 10 || 0,
+      fullMark: 10,
+    },
+    {
+      [NAME]: "Combat",
+      [VALUE]: (result.combat / qty) * 10 || 0,
+      fullMark: 10,
+    },
+    {
+      [NAME]: "Ally",
+      [VALUE]: (result.ally / qty) * 10 || 0,
+      fullMark: 10,
+    },
+    {
+      [NAME]: "Swarm",
+      [VALUE]: (result.swarm / qty) * 10 || 0,
+      fullMark: 10,
+    },
+    {
+      [NAME]: "Vote",
+      [VALUE]: (result.vote / qty) * 10 || 0,
+      fullMark: 10,
+    },
+  ];
 
   return (
     <RadarChart

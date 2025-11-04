@@ -70,36 +70,36 @@ const TdaSearchForm = ({ setShowForm }) => {
   }, [tdaFormState, cryptCardBase, libraryCardBase]);
 
   const handleMultiSelectChange = (event, id) => {
-      const i = id[NAME];
-      const { name, value } = event;
-      searchTdaForm[name].value[i] = value;
-    }
+    const i = id[NAME];
+    const { name, value } = event;
+    searchTdaForm[name].value[i] = value;
+  };
 
   const handleChangeWithOpt = (event, id) => {
-      const i = id[NAME];
-      const { name, value } = event;
+    const i = id[NAME];
+    const { name, value } = event;
 
-      searchTdaForm[i][name] = value;
-    }
+    searchTdaForm[i][name] = value;
+  };
 
   const handleDisciplinesChange = (name) => {
-      searchTdaForm[DISCIPLINES][name] = !searchTdaForm[DISCIPLINES][name];
-    }
+    searchTdaForm[DISCIPLINES][name] = !searchTdaForm[DISCIPLINES][name];
+  };
 
   const handleMultiChange = (event) => {
-      const { name, value } = event.currentTarget;
-      searchTdaForm[name][value] = !searchTdaForm[name][value];
-    }
+    const { name, value } = event.currentTarget;
+    searchTdaForm[name][value] = !searchTdaForm[name][value];
+  };
 
   const handleTagsChange = (name, target, value) => {
-      searchTdaForm[name][target] = value;
-    }
+    searchTdaForm[name][target] = value;
+  };
 
   const handleClear = () => {
     clearTdaForm();
     setTdaResults();
     setError(false);
-  }
+  };
 
   const processSearch = () => {
     setError(false);

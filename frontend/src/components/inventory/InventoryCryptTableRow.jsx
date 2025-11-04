@@ -31,7 +31,6 @@ const InventoryCryptTableRow = ({ card, compact, newFocus, forceNonEditable, han
     () => inventoryCardChange(card.c, card.q + 1),
   );
 
-
   return (
     <div
       {...swipeHandlers}

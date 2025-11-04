@@ -8,31 +8,31 @@ import { getIsEditable, getTags } from "@/utils";
 const DeckTags = ({ deck, noAutotags, justifyRight, isBordered, noBackground, allTagsOptions }) => {
   const isEditable = getIsEditable(deck);
 
-    const tagList = [];
+  const tagList = [];
 
-    if (deck[TAGS]) {
-      if (deck[TAGS][BASE] && deck[TAGS][SUPERIOR]) {
-        deck[TAGS][SUPERIOR].forEach((tag) => {
-          tagList.push({
-            label: <b>{tag}</b>,
-            value: tag,
-          });
+  if (deck[TAGS]) {
+    if (deck[TAGS][BASE] && deck[TAGS][SUPERIOR]) {
+      deck[TAGS][SUPERIOR].forEach((tag) => {
+        tagList.push({
+          label: <b>{tag}</b>,
+          value: tag,
         });
-        deck[TAGS][BASE].forEach((tag) => {
-          tagList.push({
-            label: tag,
-            value: tag,
-          });
+      });
+      deck[TAGS][BASE].forEach((tag) => {
+        tagList.push({
+          label: tag,
+          value: tag,
         });
-      } else {
-        deck[TAGS].forEach((tag) => {
-          tagList.push({
-            label: tag,
-            value: tag,
-          });
+      });
+    } else {
+      deck[TAGS].forEach((tag) => {
+        tagList.push({
+          label: tag,
+          value: tag,
         });
-      }
+      });
     }
+  }
 
   const handleChange = (event) => {
     const v = event.map((t) => t.value);

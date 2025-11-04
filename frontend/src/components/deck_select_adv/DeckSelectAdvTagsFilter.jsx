@@ -5,11 +5,11 @@ const DeckSelectAdvTagsFilter = ({ tagsFilter, handleChangeTagsFilter, allTagsOp
   const { isMobile } = useApp();
 
   const tagList = tagsFilter
-      ? tagsFilter.map((tag) => ({
-          label: tag,
-          value: tag,
-        }))
-      : null;
+    ? tagsFilter.map((tag) => ({
+        label: tag,
+        value: tag,
+      }))
+    : null;
 
   return (
     <Select

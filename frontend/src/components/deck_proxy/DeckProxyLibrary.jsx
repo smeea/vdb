@@ -45,20 +45,20 @@ const DeckProxyLibrary = ({
     handleModalCardClose,
   } = useModalCardController(library, librarySide);
 
-  const handleClick =     (card) => {
-      handleModalCardOpen(card);
-      !isDesktop && setShowFloatingButtons(false);
-    }
+  const handleClick = (card) => {
+    handleModalCardOpen(card);
+    !isDesktop && setShowFloatingButtons(false);
+  };
 
-  const handleClickSide =     (card) => {
-      handleModalSideCardOpen(card);
-      !isDesktop && setShowFloatingButtons(false);
-    }
+  const handleClickSide = (card) => {
+    handleModalSideCardOpen(card);
+    !isDesktop && setShowFloatingButtons(false);
+  };
 
   const handleClose = () => {
     handleModalCardClose();
     !isDesktop && setShowFloatingButtons(true);
-  }
+  };
 
   return (
     <FlexGapped className="flex-col">

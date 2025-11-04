@@ -35,13 +35,13 @@ const DeckBranchSelect = ({ deck, handleSelect }) => {
   }
 
   const options = Object.keys(branches)
-      .filter((i) => decks[i])
-      .toSorted((a, b) => byTimestamp(decks[a], decks[b]))
-      .map((i) => ({
-        value: i,
-        name: DECK,
-        label: decks[i][BRANCH_NAME],
-      }));
+    .filter((i) => decks[i])
+    .toSorted((a, b) => byTimestamp(decks[a], decks[b]))
+    .map((i) => ({
+      value: i,
+      name: DECK,
+      label: decks[i][BRANCH_NAME],
+    }));
 
   return (
     <Select

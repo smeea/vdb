@@ -33,80 +33,80 @@ const DeckSelectMy = ({ deckid, handleSelect }) => {
   const decks = useSnapshot(deckStore)[DECKS];
 
   const options = Object.keys(decks ?? {})
-      .filter((i) => !decks[i][MASTER] && !decks[i][IS_HIDDEN])
-      .filter((i) => {
-        if (limitedMode && limitedOnlyDecks && limitedPreset !== CUSTOM) {
-          if (!decks[i][TAGS].includes(limitedPreset.toUpperCase())) return false;
-        }
-        return true;
-      })
-      .toSorted((a, b) => byTimestamp(decks[a], decks[b]))
-      .map((i, idx) => {
-        const diffDays = dayjs().diff(dayjs(decks[i][TIMESTAMP]), "day");
+    .filter((i) => !decks[i][MASTER] && !decks[i][IS_HIDDEN])
+    .filter((i) => {
+      if (limitedMode && limitedOnlyDecks && limitedPreset !== CUSTOM) {
+        if (!decks[i][TAGS].includes(limitedPreset.toUpperCase())) return false;
+      }
+      return true;
+    })
+    .toSorted((a, b) => byTimestamp(decks[a], decks[b]))
+    .map((i, idx) => {
+      const diffDays = dayjs().diff(dayjs(decks[i][TIMESTAMP]), "day");
 
-        let lastEdit;
-        if (diffDays > 90) {
-          lastEdit = dayjs(decks[i][TIMESTAMP]).format("YYYY-MM-DD");
-        } else if (diffDays > 30) {
-          lastEdit = `${Math.round(diffDays / 30)}mo`;
-        } else if (diffDays > 5) {
-          lastEdit = `${Math.round(diffDays / 7)}wk`;
-        } else if (diffDays >= 1) {
-          lastEdit = `${diffDays}d`;
-        }
+      let lastEdit;
+      if (diffDays > 90) {
+        lastEdit = dayjs(decks[i][TIMESTAMP]).format("YYYY-MM-DD");
+      } else if (diffDays > 30) {
+        lastEdit = `${Math.round(diffDays / 30)}mo`;
+      } else if (diffDays > 5) {
+        lastEdit = `${Math.round(diffDays / 7)}wk`;
+      } else if (diffDays >= 1) {
+        lastEdit = `${diffDays}d`;
+      }
 
-        const clan = getClan(decks[i][CRYPT]);
+      const clan = getClan(decks[i][CRYPT]);
 
-        const restrictions =
-          idx < 15 || diffDays < 90
-            ? getRestrictions(
-                decks[i],
-                limitedMode
-                  ? {
-                      [CRYPT]: limitedStore[CRYPT],
-                      [LIBRARY]: limitedStore[LIBRARY],
-                    }
-                  : null,
-              )
-            : {};
+      const restrictions =
+        idx < 15 || diffDays < 90
+          ? getRestrictions(
+              decks[i],
+              limitedMode
+                ? {
+                    [CRYPT]: limitedStore[CRYPT],
+                    [LIBRARY]: limitedStore[LIBRARY],
+                  }
+                : null,
+            )
+          : {};
 
-        return {
-          value: i,
-          label: (
-            <div className="flex items-center justify-between">
-              <div className="flex items-center">
-                <div className="flex w-[35px] items-center justify-center pr-1">
-                  {clan &&
-                    (paths.includes(clan) ? (
-                      <ResultPathImage value={clan} />
-                    ) : (
-                      <ResultPreconClan clan={clan} />
-                    ))}
-                </div>
-                <div className="inline">
-                  {decks[i][NAME].slice(0, inventoryMode ? (isWide ? 28 : 23) : 32)}
-                </div>
+      return {
+        value: i,
+        label: (
+          <div className="flex items-center justify-between">
+            <div className="flex items-center">
+              <div className="flex w-[35px] items-center justify-center pr-1">
+                {clan &&
+                  (paths.includes(clan) ? (
+                    <ResultPathImage value={clan} />
+                  ) : (
+                    <ResultPreconClan clan={clan} />
+                  ))}
               </div>
-
-              <div className="flex items-center gap-2">
-                <div className="flex items-center justify-end gap-2">
-                  {restrictions[HAS_BANNED] && <ResultLegalIcon type={BANNED} />}
-                  {restrictions[HAS_LIMITED] && limitedMode && <ResultLegalIcon />}
-                  {restrictions[HAS_PLAYTEST] && <ResultLegalIcon type={PLAYTEST} />}
-                </div>
-                {inventoryMode && (
-                  <div>
-                    {decks[i][INVENTORY_TYPE] === S && <Shuffle />}
-                    {decks[i][INVENTORY_TYPE] === H && <PinAngleFill />}
-                    {!decks[i][INVENTORY_TYPE] && <At />}
-                  </div>
-                )}
-                <div className="text-sm">{lastEdit}</div>
+              <div className="inline">
+                {decks[i][NAME].slice(0, inventoryMode ? (isWide ? 28 : 23) : 32)}
               </div>
             </div>
-          ),
-        };
-      });
+
+            <div className="flex items-center gap-2">
+              <div className="flex items-center justify-end gap-2">
+                {restrictions[HAS_BANNED] && <ResultLegalIcon type={BANNED} />}
+                {restrictions[HAS_LIMITED] && limitedMode && <ResultLegalIcon />}
+                {restrictions[HAS_PLAYTEST] && <ResultLegalIcon type={PLAYTEST} />}
+              </div>
+              {inventoryMode && (
+                <div>
+                  {decks[i][INVENTORY_TYPE] === S && <Shuffle />}
+                  {decks[i][INVENTORY_TYPE] === H && <PinAngleFill />}
+                  {!decks[i][INVENTORY_TYPE] && <At />}
+                </div>
+              )}
+              <div className="text-sm">{lastEdit}</div>
+            </div>
+          </div>
+        ),
+      };
+    });
 
   const filterOption = ({ label }, string) => {
     const name = label.props.children[0].props.children[1].props.children;

@@ -145,68 +145,68 @@ const CryptSearchForm = () => {
   }, [preresults]);
 
   const handleTextChange = (formId, value) => {
-      searchCryptForm[TEXT][formId].value = value;
-    }
+    searchCryptForm[TEXT][formId].value = value;
+  };
 
   const handleTextCheckboxesChange = (event) => {
-      const { name, value } = event.currentTarget;
+    const { name, value } = event.currentTarget;
 
-      if ([NAME, TEXT].includes(value)) {
-        searchCryptForm[TEXT][name][IN] = searchCryptForm[TEXT][name][IN] === value ? false : value;
-      } else {
-        searchCryptForm[TEXT][name][value] = !searchCryptForm[TEXT][name][value];
-      }
+    if ([NAME, TEXT].includes(value)) {
+      searchCryptForm[TEXT][name][IN] = searchCryptForm[TEXT][name][IN] === value ? false : value;
+    } else {
+      searchCryptForm[TEXT][name][value] = !searchCryptForm[TEXT][name][value];
     }
+  };
 
-  const handleSelectChange =   (event) => {
-      const { name, value } = event;
-      searchCryptForm[name] = value;
-    }
+  const handleSelectChange = (event) => {
+    const { name, value } = event;
+    searchCryptForm[name] = value;
+  };
 
   const handleMultiSelectChange = (event, id) => {
-      const i = id[NAME];
-      const { name, value } = event;
+    const i = id[NAME];
+    const { name, value } = event;
 
-      if ([CAPACITY].includes(name)) {
-        if ([LE, GE, EQ].includes(value)) {
-          searchCryptForm[name].value[i].moreless = value;
-        } else {
-          searchCryptForm[name].value[i][name] = value;
-        }
+    if ([CAPACITY].includes(name)) {
+      if ([LE, GE, EQ].includes(value)) {
+        searchCryptForm[name].value[i].moreless = value;
       } else {
-        searchCryptForm[name].value[i] = value;
+        searchCryptForm[name].value[i][name] = value;
       }
+    } else {
+      searchCryptForm[name].value[i] = value;
     }
+  };
 
   const handleMultiChange = (event) => {
-      const { name, value } = event.currentTarget;
+    const { name, value } = event.currentTarget;
 
-      if ([OR_NEWER, OR_OLDER, NOT_NEWER, NOT_OLDER].includes(value)) {
-        searchCryptForm[name][AGE] = searchCryptForm[name][AGE] === value ? false : value;
-      } else if ([ONLY, FIRST, REPRINT].includes(value)) {
-        searchCryptForm[name][PRINT] = searchCryptForm[name][PRINT] === value ? false : value;
-      } else {
-        searchCryptForm[name][value] = !searchCryptForm[name][value];
-      }
+    if ([OR_NEWER, OR_OLDER, NOT_NEWER, NOT_OLDER].includes(value)) {
+      searchCryptForm[name][AGE] = searchCryptForm[name][AGE] === value ? false : value;
+    } else if ([ONLY, FIRST, REPRINT].includes(value)) {
+      searchCryptForm[name][PRINT] = searchCryptForm[name][PRINT] === value ? false : value;
+    } else {
+      searchCryptForm[name][value] = !searchCryptForm[name][value];
     }
+  };
 
-  const handleDisciplinesChange =     (name, max) => {
-      if (searchCryptForm[DISCIPLINES][name] < max) {
-        searchCryptForm[DISCIPLINES][name] += 1;
-      } else {
-        searchCryptForm[DISCIPLINES][name] = 0;
-      }
+  const handleDisciplinesChange = (name, max) => {
+    if (searchCryptForm[DISCIPLINES][name] < max) {
+      searchCryptForm[DISCIPLINES][name] += 1;
+    } else {
+      searchCryptForm[DISCIPLINES][name] = 0;
     }
+  };
 
-  const handleDisciplinesOrChange =     (value) => {
-      searchCryptForm[DISCIPLINES_OR] = value;
-    }
+  const handleDisciplinesOrChange = (value) => {
+    searchCryptForm[DISCIPLINES_OR] = value;
+  };
 
   const handleClear = () => {
     setSearchParams();
     clearSearchForm(CRYPT);
     setError(false);
-  }
+  };
 
   const handleShowResults = () => {
     setCryptResults(preresults);

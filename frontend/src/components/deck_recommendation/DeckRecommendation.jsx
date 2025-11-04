@@ -21,16 +21,16 @@ const DeckRecommendation = ({ setShow, deck }) => {
   );
 
   const crypt = value
-      ? value[CRYPT].map((cardid) => {
-          return cryptCardBase[cardid];
-        })
-      : null;
+    ? value[CRYPT].map((cardid) => {
+        return cryptCardBase[cardid];
+      })
+    : null;
 
   const library = value
-      ? value[LIBRARY].map((cardid) => {
-          return libraryCardBase[cardid];
-        })
-      : null;
+    ? value[LIBRARY].map((cardid) => {
+        return libraryCardBase[cardid];
+      })
+    : null;
 
   const handleCloseModal = () => {
     setShow(false);

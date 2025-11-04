@@ -37,19 +37,19 @@ const DeckCrypt = ({ inSearch, inPreview, inMissing, noDisciplines, deck }) => {
   } = useModalCardController(sortedCards, sortedCardsSide);
 
   const handleClick = (card) => {
-      handleModalCardOpen(card);
-      !isDesktop && setShowFloatingButtons(false);
-    }
+    handleModalCardOpen(card);
+    !isDesktop && setShowFloatingButtons(false);
+  };
 
   const handleClickSide = (card) => {
-      handleModalSideCardOpen(card);
-      !isDesktop && setShowFloatingButtons(false);
-    }
+    handleModalSideCardOpen(card);
+    !isDesktop && setShowFloatingButtons(false);
+  };
 
   const handleClose = () => {
     handleModalCardClose();
     !isDesktop && setShowFloatingButtons(true);
-  }
+  };
 
   useEffect(() => {
     currentModalCard && handleModalCardClose();

@@ -7,22 +7,22 @@ const ResultTable = ({ cards, target }) => {
   const { addMode, isDesktop, cryptSearchSort, librarySearchSort } = useApp();
   const sort = target === CRYPT ? cryptSort : librarySort;
   const sortMethod = target === CRYPT ? cryptSearchSort : librarySearchSort;
-    const sortedCards = sort(cards, sortMethod);
+  const sortedCards = sort(cards, sortMethod);
 
-    if (target === CRYPT) {
-      return (
-        <ResultCryptTable
-          resultCards={sortedCards}
-          placement={isDesktop || (!isDesktop && !addMode) ? "right" : "bottom"}
-        />
-      );
-    }
+  if (target === CRYPT) {
     return (
-      <ResultLibraryTable
+      <ResultCryptTable
         resultCards={sortedCards}
         placement={isDesktop || (!isDesktop && !addMode) ? "right" : "bottom"}
       />
     );
+  }
+  return (
+    <ResultLibraryTable
+      resultCards={sortedCards}
+      placement={isDesktop || (!isDesktop && !addMode) ? "right" : "bottom"}
+    />
+  );
 };
 
 export default ResultTable;

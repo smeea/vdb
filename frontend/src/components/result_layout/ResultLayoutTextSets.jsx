@@ -46,7 +46,7 @@ const PopoverSet = ({ card, set }) => {
           </ul>
         )}
       </div>
-      <CardImage size="sm" card={card} set={set.toLowerCase().replace(' ', '_')} />
+      <CardImage size="sm" card={card} set={set.toLowerCase().replace(" ", "_")} />
     </div>
   );
 };

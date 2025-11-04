@@ -11,47 +11,45 @@ const TwdCardsHistory = () => {
 
   const url = `${import.meta.env.VITE_BASE_URL}/data/twd_cards_history.json`;
   const { value } = useFetch(url, {});
-  let crypt
-  let library
-  const players = {}
+  let crypt;
+  let library;
+  const players = {};
 
-    if (value && cryptCardBase && libraryCardBase) {
-      const c = {};
-      const l = {};
+  if (value && cryptCardBase && libraryCardBase) {
+    const c = {};
+    const l = {};
 
-      Object.keys(value).forEach((cardid) => {
-        const target = cardid > 200000 ? c : l;
-        const cardBase = cardid > 200000 ? cryptCardBase : libraryCardBase;
-        target[cardid] = { ...value[cardid], ...cardBase[cardid] };
+    Object.keys(value).forEach((cardid) => {
+      const target = cardid > 200000 ? c : l;
+      const cardBase = cardid > 200000 ? cryptCardBase : libraryCardBase;
+      target[cardid] = { ...value[cardid], ...cardBase[cardid] };
 
-        Object.keys(cardBase[cardid][SET])
-          .filter((set) => set !== POD)
-          .forEach((set) => {
-            const d =
-              set === PROMO
-                ? Object.keys(cardBase[cardid][SET].Promo)[0]
-                : setsAndPrecons[set][DATE];
+      Object.keys(cardBase[cardid][SET])
+        .filter((set) => set !== POD)
+        .forEach((set) => {
+          const d =
+            set === PROMO ? Object.keys(cardBase[cardid][SET].Promo)[0] : setsAndPrecons[set][DATE];
 
-            if (!target[cardid][RELEASE_DATE] || target[cardid][RELEASE_DATE] > d) {
-              target[cardid][RELEASE_DATE] = d;
-            }
-          });
-
-        if (value[cardid][DECKID]) {
-          if (!players[value[cardid][PLAYER]]) {
-            players[value[cardid][PLAYER]] = { [CRYPT]: 0, [LIBRARY]: 0 };
+          if (!target[cardid][RELEASE_DATE] || target[cardid][RELEASE_DATE] > d) {
+            target[cardid][RELEASE_DATE] = d;
           }
-          if (cardid > 200000) {
-            players[value[cardid][PLAYER]][CRYPT] += 1;
-          } else {
-            players[value[cardid][PLAYER]][LIBRARY] += 1;
-          }
+        });
+
+      if (value[cardid][DECKID]) {
+        if (!players[value[cardid][PLAYER]]) {
+          players[value[cardid][PLAYER]] = { [CRYPT]: 0, [LIBRARY]: 0 };
         }
-      });
+        if (cardid > 200000) {
+          players[value[cardid][PLAYER]][CRYPT] += 1;
+        } else {
+          players[value[cardid][PLAYER]][LIBRARY] += 1;
+        }
+      }
+    });
 
-      crypt = Object.values(c).toSorted(byCardName);
-      library = Object.values(l).toSorted(byCardName);
-    }
+    crypt = Object.values(c).toSorted(byCardName);
+    library = Object.values(l).toSorted(byCardName);
+  }
 
   return (
     <div className="hof-history-container mx-auto flex flex-col gap-1.5">

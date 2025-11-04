@@ -25,14 +25,14 @@ const ConditionalTooltipOrModal = ({
       onClick();
     } catch {}
     setShowModal(true);
-  }
+  };
 
   const handleClose = () => {
     try {
       onClose();
     } catch {}
     setShowModal(false);
-  }
+  };
 
   return (
     <>

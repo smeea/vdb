@@ -25,24 +25,24 @@ const ChartTooltip = ({ active, payload }) => {
 };
 
 const PlaytestScoresChart = ({ value, maxSameScore }) => {
-    const data = Array.apply(null, Array(10)).map((_, i) => {
-      return {
-        [NAME]: i + 1,
-        [SEEN]: 0,
-        [NOT_SEEN]: 0,
-      };
-    });
+  const data = Array.apply(null, Array(10)).map((_, i) => {
+    return {
+      [NAME]: i + 1,
+      [SEEN]: 0,
+      [NOT_SEEN]: 0,
+    };
+  });
 
-    Object.values(value).forEach((v) => {
-      const { isPlayed, score } = v;
-      if (!score) return;
+  Object.values(value).forEach((v) => {
+    const { isPlayed, score } = v;
+    if (!score) return;
 
-      if (isPlayed) {
-        data[score - 1][SEEN] += 1;
-      } else {
-        data[score - 1][NOT_SEEN] += 1;
-      }
-    });
+    if (isPlayed) {
+      data[score - 1][SEEN] += 1;
+    } else {
+      data[score - 1][NOT_SEEN] += 1;
+    }
+  });
 
   return (
     <BarChart

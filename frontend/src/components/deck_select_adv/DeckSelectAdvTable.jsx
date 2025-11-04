@@ -78,39 +78,39 @@ const DeckSelectAdvTable = ({
     return normalizedDeckName.includes(normalizedNameFilter);
   };
 
-      let filtered = Object.values(decks);
+  let filtered = Object.values(decks);
 
-      if (invFilter !== ANY) {
-        filtered = filtered.filter((deck) => deck[INVENTORY_TYPE] === invFilter);
-      }
+  if (invFilter !== ANY) {
+    filtered = filtered.filter((deck) => deck[INVENTORY_TYPE] === invFilter);
+  }
 
-      if (clanFilter !== ANY) {
-        filtered = filtered.filter((deck) => {
-          const clan = getClan(deck[CRYPT]) || "";
-          return clan.toLowerCase() === clanFilter;
-        });
-      }
+  if (clanFilter !== ANY) {
+    filtered = filtered.filter((deck) => {
+      const clan = getClan(deck[CRYPT]) || "";
+      return clan.toLowerCase() === clanFilter;
+    });
+  }
 
-      if (nameFilter.length > 2) {
-        filtered = filtered.filter((deck) => {
-          if (isDeckNameMatch(deck, nameFilter)) return true;
-          return isCardInDeck(deck, nameFilter);
-        });
-      }
+  if (nameFilter.length > 2) {
+    filtered = filtered.filter((deck) => {
+      if (isDeckNameMatch(deck, nameFilter)) return true;
+      return isCardInDeck(deck, nameFilter);
+    });
+  }
 
-      if (tagsFilter) {
-        filtered = filtered.filter((deck) => {
-          let counter = 0;
-          tagsFilter.forEach((tag) => {
-            if (deck[TAGS].includes(tag)) counter += 1;
-          });
-          return counter >= tagsFilter.length;
-        });
-      }
+  if (tagsFilter) {
+    filtered = filtered.filter((deck) => {
+      let counter = 0;
+      tagsFilter.forEach((tag) => {
+        if (deck[TAGS].includes(tag)) counter += 1;
+      });
+      return counter >= tagsFilter.length;
+    });
+  }
 
-      if (!revFilter) {
-        filtered = filtered.filter((deck) => !deck[MASTER]);
-      }
+  if (!revFilter) {
+    filtered = filtered.filter((deck) => !deck[MASTER]);
+  }
 
   const sortedDecks = decksSort(filtered, sortMethod);
 

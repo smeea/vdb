@@ -33,11 +33,9 @@ const useModalCardController = (mainCards = [], sideCards = []) => {
 
   const handleModalCardClose = () => setCardid(null);
 
-  const shouldShowModal = cardid !== null
-  const isSideMode = mode === SIDE_CARD_MODE
-  const currentModalCard = cardid === null
-        ? null
-      : (isSideMode ? sideList : mainList)[cardid];
+  const shouldShowModal = cardid !== null;
+  const isSideMode = mode === SIDE_CARD_MODE;
+  const currentModalCard = cardid === null ? null : (isSideMode ? sideList : mainList)[cardid];
 
   return {
     handleModalCardOpen,

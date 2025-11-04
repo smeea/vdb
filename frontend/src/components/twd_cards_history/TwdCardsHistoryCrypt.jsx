@@ -59,7 +59,7 @@ const TwdCardsHistoryCrypt = ({ cards, players }) => {
     cardsByClanTotal[c] = Object.keys(cardsByClan[c]).length;
   });
 
-  const sortedCards = cryptSort(Object.values(cardsByClan[clan]), sortMethod)
+  const sortedCards = cryptSort(Object.values(cardsByClan[clan]), sortMethod);
 
   const {
     currentModalCard,

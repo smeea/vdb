@@ -139,11 +139,11 @@ const TwdCardsHistoryLibrary = ({ cards, players }) => {
   });
 
   const sortedCards = librarySort(
-        Object.values(cardsByType[type]).filter((i) => {
-          return cardsByDiscipline[discipline][i[ID]];
-        }),
-        sortMethod,
-      )
+    Object.values(cardsByType[type]).filter((i) => {
+      return cardsByDiscipline[discipline][i[ID]];
+    }),
+    sortMethod,
+  );
 
   const {
     currentModalCard,

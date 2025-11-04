@@ -53,7 +53,7 @@ const DeckCryptTotalInfo = ({ cards, disciplinesDetailed }) => {
             <div className="text-fgSecondary dark:text-fgSecondaryDark">Uniq:</div>
             <UniqueDraw cards={cards} />
           </div>
-        )      }
+        )}
       </div>
       <DisciplinesCryptSummary disciplinesDetailed={disciplinesDetailed} />
     </div>

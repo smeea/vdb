@@ -19,31 +19,31 @@ import { byName, deepClone, getClan } from "@/utils";
 
 const TdaChartsRankingClan = ({ info, decks, searchResults }) => {
   const { isMobile, isDesktop, isWide } = useApp();
-    const d = {};
+  const d = {};
 
-    Object.values(decks).forEach((deck) => {
-      const position = info[PLAYERS] - deck[SCORE][RANK];
-      const inSearch = Object.values(searchResults).some((d) => d[AUTHOR] === deck[AUTHOR]);
-      const clan = getClan(deck[CRYPT]) || MULTI;
+  Object.values(decks).forEach((deck) => {
+    const position = info[PLAYERS] - deck[SCORE][RANK];
+    const inSearch = Object.values(searchResults).some((d) => d[AUTHOR] === deck[AUTHOR]);
+    const clan = getClan(deck[CRYPT]) || MULTI;
 
-      if (!d[clan]) {
-        d[clan] = [];
-        for (let i = 0; i < info[PLAYERS]; i++) {
-          d[clan].push({ [INDEX]: -1, [VALUE]: 0, [RANK]: info[PLAYERS] - i });
-        }
+    if (!d[clan]) {
+      d[clan] = [];
+      for (let i = 0; i < info[PLAYERS]; i++) {
+        d[clan].push({ [INDEX]: -1, [VALUE]: 0, [RANK]: info[PLAYERS] - i });
       }
+    }
 
-      d[clan][position] = {
-        [CLAN]: clan,
-        [CRYPT]: deck[CRYPT],
-        [LIBRARY]: deck[LIBRARY],
-        [TAGS]: deck[TAGS],
-        [IN_SEARCH]: inSearch,
-        [INDEX]: -1,
-        [VALUE]: 1,
-        [RANK]: deck[SCORE][RANK],
-      };
-    });
+    d[clan][position] = {
+      [CLAN]: clan,
+      [CRYPT]: deck[CRYPT],
+      [LIBRARY]: deck[LIBRARY],
+      [TAGS]: deck[TAGS],
+      [IN_SEARCH]: inSearch,
+      [INDEX]: -1,
+      [VALUE]: 1,
+      [RANK]: deck[SCORE][RANK],
+    };
+  });
 
   const data = deepClone(d);
 

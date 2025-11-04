@@ -1,4 +1,4 @@
-import {  useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { twMerge } from "tailwind-merge";
 import { ButtonCardChange, ConditionalTooltip, UsedPopover } from "@/components";
 import { ID } from "@/constants";
@@ -38,11 +38,11 @@ const DeckCardQuantity = ({
 
   const handleClickPlus = () => {
     cardChange(deckid, card, q + 1);
-  }
+  };
 
   const handleClickMinus = () => {
     cardChange(deckid, card, q - 1);
-  }
+  };
 
   const handleClickManual = () => setManual(true);
 

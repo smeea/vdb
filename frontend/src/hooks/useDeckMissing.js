@@ -26,18 +26,20 @@ const getMissing = (cards, inventoryType, used, inventory) => {
 };
 
 const useDeckMissing = (deck, isEmpty) => {
-  const missingCrypt = isEmpty || !deck
-        ? null
-    : getMissing(deck[CRYPT], deck[INVENTORY_TYPE], usedStore[CRYPT], inventoryStore[CRYPT])
+  const missingCrypt =
+    isEmpty || !deck
+      ? null
+      : getMissing(deck[CRYPT], deck[INVENTORY_TYPE], usedStore[CRYPT], inventoryStore[CRYPT]);
 
-  const missingLibrary = isEmpty || !deck
-        ? null
-    : getMissing(
-      deck[LIBRARY],
-      deck[INVENTORY_TYPE],
-      usedStore[LIBRARY],
-      inventoryStore[LIBRARY],
-    );
+  const missingLibrary =
+    isEmpty || !deck
+      ? null
+      : getMissing(
+          deck[LIBRARY],
+          deck[INVENTORY_TYPE],
+          usedStore[LIBRARY],
+          inventoryStore[LIBRARY],
+        );
 
   return { missingCrypt, missingLibrary };
 };

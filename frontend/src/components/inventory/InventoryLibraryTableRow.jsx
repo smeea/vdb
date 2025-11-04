@@ -44,7 +44,6 @@ const InventoryLibraryTableRow = ({ card, compact, newFocus, forceNonEditable, h
     () => inventoryCardChange(card.c, card.q + 1),
   );
 
-
   return (
     <div
       {...swipeHandlers}

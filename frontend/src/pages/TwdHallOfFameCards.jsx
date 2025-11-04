@@ -15,47 +15,48 @@ const TwdHallOfFameCards = () => {
   const url = `${import.meta.env.VITE_BASE_URL}/data/twd_cards_history.json`;
   const { value } = useFetch(url, {});
 
-  const players = {}
-    if (value && cryptCardBase && libraryCardBase) {
-      Object.keys(value).forEach((cardid) => {
-        const cardBase = cardid > 200000 ? cryptCardBase : libraryCardBase;
-        const card = cardBase[cardid];
-        const player = value[cardid][PLAYER];
-        const deckid = value[cardid][DECKID];
+  const players = {};
+  if (value && cryptCardBase && libraryCardBase) {
+    Object.keys(value).forEach((cardid) => {
+      const cardBase = cardid > 200000 ? cryptCardBase : libraryCardBase;
+      const card = cardBase[cardid];
+      const player = value[cardid][PLAYER];
+      const deckid = value[cardid][DECKID];
 
-        let releaseDate = null;
+      let releaseDate = null;
 
-        Object.keys(card[SET])
-          .filter((set) => set !== POD)
-          .forEach((set) => {
-            const d = set === PROMO ? Object.keys(card[SET].Promo)[0] : setsAndPrecons[set][DATE];
+      Object.keys(card[SET])
+        .filter((set) => set !== POD)
+        .forEach((set) => {
+          const d = set === PROMO ? Object.keys(card[SET].Promo)[0] : setsAndPrecons[set][DATE];
 
-            if (!releaseDate || releaseDate > d) {
-              releaseDate = d;
-            }
-          });
+          if (!releaseDate || releaseDate > d) {
+            releaseDate = d;
+          }
+        });
 
-        const twdDate = value[cardid][TWD_DATE];
-        if (twdDate) {
-          if (!players[player]) {
-            players[player] = {
-              [cardid]: {
-                ...card,
-                [DECKID]: deckid,
-                [TWD_DATE]: twdDate,
-                [RELEASE_DATE]: releaseDate,
-              },
-            };
-          } else {
-            players[player][cardid] = {
+      const twdDate = value[cardid][TWD_DATE];
+      if (twdDate) {
+        if (!players[player]) {
+          players[player] = {
+            [cardid]: {
               ...card,
               [DECKID]: deckid,
               [TWD_DATE]: twdDate,
               [RELEASE_DATE]: releaseDate,
-            };
-          }
+            },
+          };
+        } else {
+          players[player][cardid] = {
+            ...card,
+            [DECKID]: deckid,
+            [TWD_DATE]: twdDate,
+            [RELEASE_DATE]: releaseDate,
+          };
         }
-      });
+      }
+    });
+  }
 
   const byTotal = (a, b) => {
     return Object.keys(players[b]).length - Object.keys(players[a]).length;

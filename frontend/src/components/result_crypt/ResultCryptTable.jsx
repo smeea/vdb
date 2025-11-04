@@ -14,14 +14,14 @@ const ResultCryptTable = ({ resultCards, inRecommendation, inLimited }) => {
   } = useModalCardController(resultCards);
 
   const handleClick = (card) => {
-      handleModalCardOpen(card);
-      !isDesktop && setShowFloatingButtons(false);
-    }
+    handleModalCardOpen(card);
+    !isDesktop && setShowFloatingButtons(false);
+  };
 
   const handleClose = () => {
     handleModalCardClose();
     !isDesktop && setShowFloatingButtons(true);
-  }
+  };
 
   return (
     <>

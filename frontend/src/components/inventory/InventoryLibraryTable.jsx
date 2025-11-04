@@ -26,14 +26,14 @@ const InventoryLibraryTable = ({
   } = useModalCardController(sortedCards);
 
   const handleClick = (card) => {
-      handleModalCardOpen(card);
-      !isDesktop && setShowFloatingButtons(false);
-    }
+    handleModalCardOpen(card);
+    !isDesktop && setShowFloatingButtons(false);
+  };
 
   const handleClose = () => {
     handleModalCardClose();
     !isDesktop && setShowFloatingButtons(true);
-  }
+  };
 
   const cardRows = sortedCards
     .filter((card) => playtestMode || !getIsPlaytest(card.c[ID]))

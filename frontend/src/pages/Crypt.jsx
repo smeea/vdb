@@ -21,11 +21,12 @@ const Crypt = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const query = JSON.parse(searchParams.get("q"));
 
-  const showSearchForm = isDesktop ||
-      (!isDesktop && !isMobile && !(addMode && cryptResults)) ||
-      (isMobile && !cryptResults)
+  const showSearchForm =
+    isDesktop ||
+    (!isDesktop && !isMobile && !(addMode && cryptResults)) ||
+    (isMobile && !cryptResults);
   const showToggleAddMode = deckStore[DECK] && cryptResults && !isMobile && !isDesktop;
-  const showResultCol = !(isMobile && !cryptResults)
+  const showResultCol = !(isMobile && !cryptResults);
 
   const handleClear = () => setSearchParams();
 

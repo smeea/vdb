@@ -31,7 +31,7 @@ const Checkbox = ({
         [VALUE]: value,
       },
     });
-  }
+  };
 
   return (
     <Field disabled={disabled} className={twMerge("items-top flex", textStyle[size], className)}>

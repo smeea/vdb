@@ -102,7 +102,7 @@ const Tda = () => {
   const handleClear = () => {
     setSearchParams();
     setShowForm(true);
-  }
+  };
 
   useEffect(() => {
     if (tempDecks && tempArchon) {

@@ -9,7 +9,6 @@ import {
   SortButton,
 } from "@/components";
 import { ANY, LANG, NAME, TIMESTAMP, USERNAME } from "@/constants";
-import { useApp } from "@/context";
 import { useFetch } from "@/hooks";
 
 const REPORTS = "reports";
@@ -81,10 +80,13 @@ const PlaytestManage = () => {
   };
 
   const sortedPlayers = !playtesters
-        ? []
-        : playersSort(Object.keys(playtesters)
-    .filter((p) => langFilter === ANY || playtesters[p][LANG] === langFilter)
-    .map((p) => ({ ...playtesters[p], [USERNAME]: p })), sortMethod);
+    ? []
+    : playersSort(
+        Object.keys(playtesters)
+          .filter((p) => langFilter === ANY || playtesters[p][LANG] === langFilter)
+          .map((p) => ({ ...playtesters[p], [USERNAME]: p })),
+        sortMethod,
+      );
 
   return (
     <div className="playtest-manage-container mx-auto">

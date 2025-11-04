@@ -34,14 +34,14 @@ const TwdHallFameCardsPlayer = ({ name, cards }) => {
   } = useApp();
 
   const cryptSorted = cryptSort(
-        Object.values(cards).filter((card) => card[ID] > 200000),
-        cryptSearchSort,
-      )
+    Object.values(cards).filter((card) => card[ID] > 200000),
+    cryptSearchSort,
+  );
 
   const librarySorted = librarySort(
-        Object.values(cards).filter((card) => card[ID] < 200000),
-        librarySearchSort,
-      )
+    Object.values(cards).filter((card) => card[ID] < 200000),
+    librarySearchSort,
+  );
 
   const {
     currentModalCard,

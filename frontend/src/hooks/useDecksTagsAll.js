@@ -16,22 +16,22 @@ const sort = (a, b) => {
 const useDecksTagsAll = (decks) => {
   const { limitedPreset, limitedMode } = useApp();
 
-    if (!decks) return [];
-    const allTags = new Set();
+  if (!decks) return [];
+  const allTags = new Set();
 
-    if (limitedMode && limitedPreset === V5) allTags.add(V5u);
-    if (limitedMode && limitedPreset === TWO_P) allTags.add(TWO_Pu);
+  if (limitedMode && limitedPreset === V5) allTags.add(V5u);
+  if (limitedMode && limitedPreset === TWO_P) allTags.add(TWO_Pu);
 
-    Object.keys(decks).forEach((id) => {
-      if (decks[id][TAGS].includes(V5u)) allTags.add(V5u);
-      if (decks[id][TAGS].includes(TWO_Pu)) allTags.add(TWO_Pu);
+  Object.keys(decks).forEach((id) => {
+    if (decks[id][TAGS].includes(V5u)) allTags.add(V5u);
+    if (decks[id][TAGS].includes(TWO_Pu)) allTags.add(TWO_Pu);
 
-      decks[id][TAGS].forEach((tag) => {
-        allTags.add(tag);
-      });
+    decks[id][TAGS].forEach((tag) => {
+      allTags.add(tag);
     });
+  });
 
-    return [...allTags].toSorted(sort);
+  return [...allTags].toSorted(sort);
 };
 
 export default useDecksTagsAll;

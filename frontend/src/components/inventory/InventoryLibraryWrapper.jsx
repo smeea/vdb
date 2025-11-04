@@ -1,4 +1,4 @@
-import {  useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { useSnapshot } from "valtio";
 import { InventoryLibrary, NewCardSelect } from "@/components";
 import { LIBRARY, OK } from "@/constants";

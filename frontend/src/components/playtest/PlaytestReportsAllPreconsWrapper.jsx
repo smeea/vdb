@@ -6,8 +6,8 @@ const PlaytestReportsAllPreconsWrapper = ({ reports, maxSameScore }) => {
   const { preconDecks } = useApp();
 
   const products = Object.values(preconDecks || {}).filter((i) => {
-        return i[DECKID].includes(`${PLAYTEST}:`) && !i[PLAYTEST_OLD];
-      })
+    return i[DECKID].includes(`${PLAYTEST}:`) && !i[PLAYTEST_OLD];
+  });
 
   return (
     <FlexGapped className="flex-col">

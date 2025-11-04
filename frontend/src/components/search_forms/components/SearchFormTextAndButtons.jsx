@@ -54,7 +54,7 @@ const SearchFormTextAndButtons = ({
     },
   ];
 
-  const handleChange =     (e) => setText(e.target.value);
+  const handleChange = (e) => setText(e.target.value);
 
   return (
     <div className="flex flex-col gap-2">
