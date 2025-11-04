@@ -33,7 +33,7 @@ const CardsMobile = ({ card, openRandomCard, handleChange, handleSetCard }) => {
             <ErrorMessage>CONTAINS PLAYTEST CARDS</ErrorMessage>
           </div>
         ))}
-      <div className="fixed bottom-10 z-20 flex w-full bg-bgPrimary p-2 dark:bg-bgPrimaryDark">
+      <div className="fixed bottom-[40px] z-20 flex w-full bg-bgPrimary p-2 dark:bg-bgPrimaryDark">
         <div className="w-full md:basis-8/12">
           <CardSelect
             menuPlacement={isMobile ? "top" : "auto"}

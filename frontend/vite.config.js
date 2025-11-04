@@ -13,9 +13,7 @@ export default defineConfig({
 	},
 	plugins: [
 		tailwindcss(),
-		svgr({
-			exportAsDefault: true,
-		}),
+		svgr(),
 		react({
       babel: {
         plugins: ['babel-plugin-react-compiler'],
@@ -63,8 +61,5 @@ export default defineConfig({
 			{ find: "@", replacement: resolve(__dirname, "src") },
 			{ find: "@icons", replacement: resolve(__dirname, "node_modules/bootstrap-icons/icons") },
 		],
-	},
-	build: {
-		chunkSizeWarningLimit: 1024,
 	},
 });
