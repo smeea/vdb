@@ -142,11 +142,11 @@ const PlaytestReportsAll = () => {
   const { value: reportsGeneral } = useFetch(urlReportsGeneral, {}, [isPlaytestAdmin]);
 
   Object.keys(reportsCrypt || {}).forEach((id) => {
-    if (!getIsPlaytest(id) || cryptCardBase[id][PLAYTEST_OLD]) delete reportsCrypt[id];
+    if (!getIsPlaytest(id) || cryptCardBase[id]?.[PLAYTEST_OLD]) delete reportsCrypt[id];
   });
 
   Object.keys(reportsLibrary || {}).forEach((id) => {
-    if (!getIsPlaytest(id) || libraryCardBase[id][PLAYTEST_OLD]) delete reportsLibrary[id];
+    if (!getIsPlaytest(id) || libraryCardBase[id]?.[PLAYTEST_OLD]) delete reportsLibrary[id];
   });
 
   Object.keys(reportsPrecons || {}).forEach((id) => {
