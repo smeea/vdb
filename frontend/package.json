@@ -5,7 +5,7 @@
   "scripts": {
     "start": "vite",
     "build": "vite build",
-    "preview": "vite preview",
+    "analyze": "npx vite-bundle-visualizer",
     "check": "npx @biomejs/biome check src",
     "fix": "npx @biomejs/biome check --write src",
     "generate-pwa-assets": "pwa-assets-generator"
@@ -18,7 +18,8 @@
     "@headlessui/react": "^2.2.9",
     "@tailwindcss/vite": "^4.1.16",
     "@vite-pwa/assets-generator": "^1.0.2",
-    "@vitejs/plugin-react-swc": "^4.2.0",
+    "@vitejs/plugin-react": "^5.1.0",
+    "babel-plugin-react-compiler": "^1.0.0",
     "bootstrap-icons": "^1.13.1",
     "country-flag-icons": "^1.5.21",
     "dayjs": "^1.11.18",

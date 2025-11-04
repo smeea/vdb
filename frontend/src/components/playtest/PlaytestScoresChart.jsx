@@ -1,4 +1,3 @@
-import { useMemo } from "react";
 import { Bar, BarChart, Label, Legend, Tooltip, XAxis, YAxis } from "recharts";
 import { NAME } from "@/constants";
 
@@ -26,8 +25,7 @@ const ChartTooltip = ({ active, payload }) => {
 };
 
 const PlaytestScoresChart = ({ value, maxSameScore }) => {
-  const data = useMemo(() => {
-    const d = Array.apply(null, Array(10)).map((_, i) => {
+    const data = Array.apply(null, Array(10)).map((_, i) => {
       return {
         [NAME]: i + 1,
         [SEEN]: 0,
@@ -40,14 +38,11 @@ const PlaytestScoresChart = ({ value, maxSameScore }) => {
       if (!score) return;
 
       if (isPlayed) {
-        d[score - 1][SEEN] += 1;
+        data[score - 1][SEEN] += 1;
       } else {
-        d[score - 1][NOT_SEEN] += 1;
+        data[score - 1][NOT_SEEN] += 1;
       }
     });
-
-    return d;
-  }, [value]);
 
   return (
     <BarChart

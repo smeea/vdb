@@ -1,4 +1,3 @@
-import { useMemo } from "react";
 import { ResultCryptTable, ResultLibraryTable } from "@/components";
 import { CRYPT } from "@/constants";
 import { useApp } from "@/context";
@@ -8,8 +7,6 @@ const ResultTable = ({ cards, target }) => {
   const { addMode, isDesktop, cryptSearchSort, librarySearchSort } = useApp();
   const sort = target === CRYPT ? cryptSort : librarySort;
   const sortMethod = target === CRYPT ? cryptSearchSort : librarySearchSort;
-
-  return useMemo(() => {
     const sortedCards = sort(cards, sortMethod);
 
     if (target === CRYPT) {
@@ -26,7 +23,6 @@ const ResultTable = ({ cards, target }) => {
         placement={isDesktop || (!isDesktop && !addMode) ? "right" : "bottom"}
       />
     );
-  }, [cards, sortMethod]);
 };
 
 export default ResultTable;

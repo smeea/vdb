@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { twMerge } from "tailwind-merge";
 import { DeckCryptHeader, DeckCryptTable, FlexGapped, ResultModal } from "@/components";
 import { CAPACITY, CLAN, CRYPT, DECKID, GROUP, NAME, QUANTITYx, SECT } from "@/constants";
@@ -25,9 +25,7 @@ const DeckCrypt = ({ inSearch, inPreview, inMissing, noDisciplines, deck }) => {
     cryptDeckSort,
   );
 
-  const { disciplinesSet, keyDisciplines } = useMemo(() => {
-    return getKeyDisciplines(deck[CRYPT]);
-  }, [deck[CRYPT]]);
+  const { disciplinesSet, keyDisciplines } = getKeyDisciplines(deck[CRYPT]);
 
   const {
     currentModalCard,

@@ -1,13 +1,11 @@
-import { useMemo } from "react";
 import { useSnapshot } from "valtio";
-import { CRYPT, CRYPT_TIMER, HAS_BANNED, HAS_LIMITED, HAS_PLAYTEST, LIBRARY } from "@/constants";
-import { limitedStore, miscStore } from "@/context";
+import { CRYPT, HAS_BANNED, HAS_LIMITED, HAS_PLAYTEST, LIBRARY } from "@/constants";
+import { limitedStore } from "@/context";
 import { useCryptSortWithTimer } from "@/hooks";
 import { containCard, countCards, getGroups, getRestrictions } from "@/utils";
 
 const useDeckCrypt = (cardsList, sortMethod, cardsToList) => {
   const limitedCrypt = useSnapshot(limitedStore)[CRYPT];
-  const timer = useSnapshot(miscStore)[CRYPT_TIMER];
 
   const cardsFrom = Object.values(cardsList);
   const cardsTo = Object.values(cardsToList || {});
@@ -22,7 +20,6 @@ const useDeckCrypt = (cardsList, sortMethod, cardsToList) => {
   const sortedCards = useCryptSortWithTimer(crypt, sortMethod);
   const sortedCardsSide = useCryptSortWithTimer(cryptSide, sortMethod);
 
-  return useMemo(() => {
     const {
       [HAS_BANNED]: hasBanned,
       [HAS_LIMITED]: hasLimited,
@@ -49,7 +46,6 @@ const useDeckCrypt = (cardsList, sortMethod, cardsToList) => {
       sortedCards,
       sortedCardsSide,
     };
-  }, [cardsList, cardsToList, timer, limitedCrypt, sortMethod]);
 };
 
 export default useDeckCrypt;

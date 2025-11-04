@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { List } from "react-window";
 import cardtypeSorted from "@/assets/data/cardtypeSorted.json";
 import disciplinesExtraList from "@/assets/data/disciplinesExtraList.json";
@@ -138,16 +138,12 @@ const TwdCardsHistoryLibrary = ({ cards, players }) => {
     });
   });
 
-  const sortedCards = useMemo(
-    () =>
-      librarySort(
+  const sortedCards = librarySort(
         Object.values(cardsByType[type]).filter((i) => {
           return cardsByDiscipline[discipline][i[ID]];
         }),
         sortMethod,
-      ),
-    [cardsByType, cardsByDiscipline, sortMethod],
-  );
+      )
 
   const {
     currentModalCard,

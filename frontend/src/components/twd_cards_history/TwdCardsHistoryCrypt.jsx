@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { List } from "react-window";
 import imbuedClansList from "@/assets/data/imbuedClansList.json";
 import vampireClansList from "@/assets/data/vampireClansList.json";
@@ -59,10 +59,7 @@ const TwdCardsHistoryCrypt = ({ cards, players }) => {
     cardsByClanTotal[c] = Object.keys(cardsByClan[c]).length;
   });
 
-  const sortedCards = useMemo(
-    () => cryptSort(Object.values(cardsByClan[clan]), sortMethod),
-    [cardsByClan, sortMethod],
-  );
+  const sortedCards = cryptSort(Object.values(cardsByClan[clan]), sortMethod)
 
   const {
     currentModalCard,

@@ -1,4 +1,3 @@
-import { useMemo } from "react";
 import { useSnapshot } from "valtio";
 import imbuedClansList from "@/assets/data/imbuedClansList.json";
 import vampireClansList from "@/assets/data/vampireClansList.json";
@@ -10,7 +9,6 @@ const useInventoryCrypt = (crypt, category, compact, onlyNotes) => {
   const usedCrypt = useSnapshot(usedStore)[CRYPT];
   const { cryptCardBase } = useApp();
 
-  const value = useMemo(() => {
     const cards = crypt || {};
     const cardsByClan = {};
     const cardsByClanTotal = {};
@@ -145,16 +143,13 @@ const useInventoryCrypt = (crypt, category, compact, onlyNotes) => {
       });
     }
 
-    return {
+  return {
       cardsByClan,
       cardsByClanTotal,
       cardsByClanUnique,
       missingByClan,
       missingByClanTotal,
     };
-  }, [crypt, category, compact, onlyNotes, usedCrypt]);
-
-  return value;
 };
 
 export default useInventoryCrypt;

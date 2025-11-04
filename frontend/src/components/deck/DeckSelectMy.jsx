@@ -2,7 +2,6 @@ import At from "@icons/at.svg?react";
 import PinAngleFill from "@icons/pin-angle-fill.svg?react";
 import Shuffle from "@icons/shuffle.svg?react";
 import dayjs from "dayjs";
-import { useMemo } from "react";
 import { useSnapshot } from "valtio";
 import paths from "@/assets/data/paths.json";
 import { ResultLegalIcon, ResultPathImage, ResultPreconClan, Select } from "@/components";
@@ -33,8 +32,7 @@ const DeckSelectMy = ({ deckid, handleSelect }) => {
     useApp();
   const decks = useSnapshot(deckStore)[DECKS];
 
-  const options = useMemo(() => {
-    return Object.keys(decks ?? {})
+  const options = Object.keys(decks ?? {})
       .filter((i) => !decks[i][MASTER] && !decks[i][IS_HIDDEN])
       .filter((i) => {
         if (limitedMode && limitedOnlyDecks && limitedPreset !== CUSTOM) {
@@ -109,7 +107,6 @@ const DeckSelectMy = ({ deckid, handleSelect }) => {
           ),
         };
       });
-  }, [decks, limitedPreset, limitedMode, inventoryMode]);
 
   const filterOption = ({ label }, string) => {
     const name = label.props.children[0].props.children[1].props.children;

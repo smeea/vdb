@@ -1,4 +1,4 @@
-import { Activity, useEffect, useMemo } from "react";
+import { Activity, useEffect } from "react";
 import { useSearchParams } from "react-router";
 import { twMerge } from "tailwind-merge";
 import { useSnapshot } from "valtio";
@@ -21,19 +21,11 @@ const Crypt = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const query = JSON.parse(searchParams.get("q"));
 
-  const showSearchForm = useMemo(() => {
-    return (
-      isDesktop ||
+  const showSearchForm = isDesktop ||
       (!isDesktop && !isMobile && !(addMode && cryptResults)) ||
       (isMobile && !cryptResults)
-    );
-  }, [isMobile, isDesktop, addMode, cryptResults]);
-
-  const showToggleAddMode = useMemo(() => {
-    return deckStore[DECK] && cryptResults && !isMobile && !isDesktop;
-  }, [deckStore[DECK]?.[DECKID], isMobile, isDesktop, cryptResults]);
-
-  const showResultCol = useMemo(() => !(isMobile && !cryptResults), [isMobile, cryptResults]);
+  const showToggleAddMode = deckStore[DECK] && cryptResults && !isMobile && !isDesktop;
+  const showResultCol = !(isMobile && !cryptResults)
 
   const handleClear = () => setSearchParams();
 

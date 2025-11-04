@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { Button, TwdDeck, TwdDeckWrapper, TwdResultTotal } from "@/components";
 import { CARDS, DATE_NEW_OLD, DATE_OLD_NEW, DECKID, FAVORITES } from "@/constants";
 import { useApp } from "@/context";
@@ -15,14 +15,8 @@ const PdaResult = ({ results = [] }) => {
     [DATE_OLD_NEW]: "D↑",
     [FAVORITES]: "F",
   };
-
-  const sortedDecks = useMemo(() => {
-    return decksSort(results, pdaSearchSort);
-  }, [results, pdaSearchSort]);
-
-  const showedDecks = useMemo(() => {
-    return sortedDecks.slice(0, showCounter);
-  }, [sortedDecks, showCounter, pdaSearchSort]);
+  const sortedDecks = decksSort(results, pdaSearchSort);
+  const showedDecks = sortedDecks.slice(0, showCounter);
 
   return (
     <div className="flex flex-col gap-4">

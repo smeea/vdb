@@ -1,4 +1,3 @@
-import { useMemo } from "react";
 import { Pie, PieChart, Tooltip } from "recharts";
 import { ANTITRIBU, CRYPT, MULTI, NAME, VALUE } from "@/constants";
 import { useApp } from "@/context";
@@ -6,7 +5,6 @@ import { getClan } from "@/utils";
 
 const TdaChartsClan = ({ decks }) => {
   const { isMobile, isDesktop, isWide } = useApp();
-  const data = useMemo(() => {
     const result = {};
 
     Object.values(decks).forEach((deck) => {
@@ -18,7 +16,7 @@ const TdaChartsClan = ({ decks }) => {
       }
     });
 
-    return Object.keys(result)
+    const data = Object.keys(result)
       .map((c) => {
         return {
           name: isMobile && c.includes(ANTITRIBU) ? `!${c.replace(` ${ANTITRIBU}`, "")}` : c,
@@ -27,7 +25,6 @@ const TdaChartsClan = ({ decks }) => {
       })
       .toSorted((a, b) => a[NAME] > b[NAME])
       .toSorted((a, b) => b.value > a.value);
-  }, [decks]);
 
   return (
     <PieChart

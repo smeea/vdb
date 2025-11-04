@@ -1,4 +1,3 @@
-import { useMemo } from "react";
 import { useSnapshot } from "valtio";
 import cardtypeSorted from "@/assets/data/cardtypeSorted.json";
 import disciplinesExtraList from "@/assets/data/disciplinesExtraList.json";
@@ -12,7 +11,6 @@ const useInventoryLibrary = (library, category, compact, type, discipline, onlyN
   const usedLibrary = useSnapshot(usedStore)[LIBRARY];
   const { libraryCardBase } = useApp();
 
-  const value = useMemo(() => {
     const cards = library || {};
     const cardsByType = {};
     const cardsByDiscipline = {};
@@ -327,9 +325,6 @@ const useInventoryLibrary = (library, category, compact, type, discipline, onlyN
       missingFiltered,
       missingFilteredTotal,
     };
-  }, [library, category, compact, type, discipline, onlyNotes, usedLibrary]);
-
-  return value;
 };
 
 export default useInventoryLibrary;

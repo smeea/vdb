@@ -1,4 +1,3 @@
-import { useMemo } from "react";
 import { twMerge } from "tailwind-merge";
 import paths from "@/assets/data/paths.json";
 import setsAndPrecons from "@/assets/data/setsAndPrecons.json";
@@ -9,8 +8,7 @@ import { useApp } from "@/context";
 const DeckSelectPrecon = ({ deckid, handleSelect }) => {
   const { isMobile, playtestMode, limitedMode, limitedPreset } = useApp();
 
-  const options = useMemo(() => {
-    const opts = [];
+    const options = [];
     Object.keys(setsAndPrecons)
       .filter(
         (i) =>
@@ -25,7 +23,7 @@ const DeckSelectPrecon = ({ deckid, handleSelect }) => {
           const fullName = setsAndPrecons[set][PRECONS][precon][NAME];
           const clans = setsAndPrecons[set][PRECONS][precon][CLAN].split("/");
 
-          opts.push({
+          options.push({
             value: `${set}:${precon}`,
             name: PRECON,
             label: (
@@ -55,8 +53,6 @@ const DeckSelectPrecon = ({ deckid, handleSelect }) => {
           });
         });
       });
-    return opts;
-  }, [playtestMode, limitedMode, limitedPreset]);
 
   const filterOption = ({ label }, string) => {
     const name = label.props.children[0].props.children[1];

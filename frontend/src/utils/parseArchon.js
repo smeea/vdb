@@ -2,12 +2,12 @@ import { DATE, DQ, EVENT, GW, LOCATION, NAME, PLAYERS, RANK, ROUNDS, SCORE, VP }
 import { sanitizeScoreSheet } from "@/utils";
 
 const parseArchon = async (file, decks) => {
-  const { read, utils } = await import("xlsx");
-  const wb = read(file);
+  const xlsx = await import("xlsx");
+  const wb = xlsx.read(file);
 
   const getFinalPlace = (playerNumber) => {
     const wsFinalTable = wb.Sheets["Final Round"];
-    const dataFinalTable = utils.sheet_to_csv(wsFinalTable).split("\n");
+    const dataFinalTable = xlsx.utils.sheet_to_csv(wsFinalTable).split("\n");
     const finalPlace = dataFinalTable
       .filter((i) => {
         const array = i.split(",");
@@ -18,7 +18,7 @@ const parseArchon = async (file, decks) => {
   };
 
   const wsInfo = wb.Sheets["Tournament Info"];
-  const dataInfo = utils.sheet_to_csv(wsInfo).split("\n");
+  const dataInfo = xlsx.utils.sheet_to_csv(wsInfo).split("\n");
   let totalPlayers = 0;
   let totalRounds = 0;
   let totalMatches = 0;
@@ -42,7 +42,7 @@ const parseArchon = async (file, decks) => {
   });
 
   const wsScores = sanitizeScoreSheet(wb.Sheets.Methuselahs);
-  const dataScores = utils.sheet_to_csv(wsScores).split("\n");
+  const dataScores = xlsx.utils.sheet_to_csv(wsScores).split("\n");
 
   const archonIds = [];
   const tdaDecks = {};

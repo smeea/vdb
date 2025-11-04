@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { useSnapshot } from "valtio";
 import { Select } from "@/components";
 import { BRANCH_NAME, BRANCHES, DECK, DECKID, DECKS, MASTER, NAME, TIMESTAMP } from "@/constants";
@@ -34,8 +34,7 @@ const DeckBranchSelect = ({ deck, handleSelect }) => {
     setBranches(b);
   }
 
-  const options = useMemo(() => {
-    return Object.keys(branches)
+  const options = Object.keys(branches)
       .filter((i) => decks[i])
       .toSorted((a, b) => byTimestamp(decks[a], decks[b]))
       .map((i) => ({
@@ -43,7 +42,6 @@ const DeckBranchSelect = ({ deck, handleSelect }) => {
         name: DECK,
         label: decks[i][BRANCH_NAME],
       }));
-  }, [branches]);
 
   return (
     <Select

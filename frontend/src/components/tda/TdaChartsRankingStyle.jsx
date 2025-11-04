@@ -1,4 +1,3 @@
-import { useMemo } from "react";
 import { BubbleChart } from "@/components";
 import {
   ALLY,
@@ -31,7 +30,6 @@ const TdaChartsRankingStyle = ({ info, decks, searchResults }) => {
   const { isMobile, isDesktop, isWide } = useApp();
   const allowedTags = [BLEED, STEALTH, BLOCK, RUSH, COMBAT, ALLY, SWARM, VOTE];
 
-  const data = useMemo(() => {
     const d = {};
 
     allowedTags.forEach((s) => {
@@ -71,8 +69,8 @@ const TdaChartsRankingStyle = ({ info, decks, searchResults }) => {
           };
         });
     });
-    return deepClone(d);
-  }, [searchResults, decks, info]);
+
+    const data = deepClone(d);
 
   return (
     <div className="flex basis-full flex-col items-center">

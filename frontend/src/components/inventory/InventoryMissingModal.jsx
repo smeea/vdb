@@ -1,5 +1,5 @@
 import Gem from "@icons/gem.svg?react";
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { twMerge } from "tailwind-merge";
 import { useSnapshot } from "valtio";
 import {
@@ -41,25 +41,18 @@ const InventoryMissingModal = ({
   const [showCryptOnMobile, setShowCryptOnMobile] = useState(true);
   const [showMissAll, setShowMissAll] = useState();
 
-  const missingCrypt = useMemo(() => {
-    if (missingByClan) return missingByClan[clan];
-    return {};
-  }, [clan, missingByClan]);
+  const missingCrypt = missingByClan ? missingByClan[clan] : {}
 
-  const missingLibrary = useMemo(() => {
-    if (missingByDiscipline && missingByType) {
-      const missing = {};
-      Object.values(missingByType[type])
-        .filter((i) => {
-          return missingByDiscipline[discipline][i.c[ID]];
-        })
-        .forEach((i) => {
-          missing[i.c[ID]] = i;
-        });
-      return missing;
-    }
-    return {};
-  }, [type, discipline, missingByType, missingByDiscipline]);
+  const missingLibrary = {}
+  if (missingByDiscipline && missingByType) {
+    Object.values(missingByType[type])
+      .filter((i) => {
+        return missingByDiscipline[discipline][i.c[ID]];
+      })
+      .forEach((i) => {
+        missingLibrary[i.c[ID]] = i;
+      });
+  }
 
   const missingCryptSorted = useCryptSortWithTimer(Object.values(missingCrypt), NAME);
   const missingLibrarySorted = librarySort(Object.values(missingLibrary), NAME);

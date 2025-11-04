@@ -1,11 +1,9 @@
-import { useMemo } from "react";
 import { PolarAngleAxis, PolarGrid, Radar, RadarChart } from "recharts";
 import { BASE, NAME, SUPERIOR, TAGS, VALUE } from "@/constants";
 import { useApp } from "@/context";
 
 const TdaChartsStyle = ({ decks }) => {
   const { isMobile, isDesktop, isWide } = useApp();
-  const data = useMemo(() => {
     const qty = Object.keys(decks).length;
 
     const result = {};
@@ -27,7 +25,7 @@ const TdaChartsStyle = ({ decks }) => {
       });
     });
 
-    return [
+    const data = [
       {
         [NAME]: "Bleed",
         [VALUE]: (result.bleed / qty) * 10 || 0,
@@ -69,7 +67,6 @@ const TdaChartsStyle = ({ decks }) => {
         fullMark: 10,
       },
     ];
-  }, [decks]);
 
   return (
     <RadarChart

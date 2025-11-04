@@ -1,5 +1,4 @@
 import { TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/react";
-import { useMemo } from "react";
 import setsAndPrecons from "@/assets/data/setsAndPrecons.json";
 import { TabButton, TwdCardsHistoryCrypt, TwdCardsHistoryLibrary } from "@/components";
 import { CRYPT, DATE, DECKID, LIBRARY, PLAYER, POD, PROMO, RELEASE_DATE, SET } from "@/constants";
@@ -12,12 +11,13 @@ const TwdCardsHistory = () => {
 
   const url = `${import.meta.env.VITE_BASE_URL}/data/twd_cards_history.json`;
   const { value } = useFetch(url, {}, []);
+  let crypt
+  let library
+  const players = {}
 
-  const { crypt, library, players } = useMemo(() => {
     if (value && cryptCardBase && libraryCardBase) {
       const c = {};
       const l = {};
-      const players = {};
 
       Object.keys(value).forEach((cardid) => {
         const target = cardid > 200000 ? c : l;
@@ -49,17 +49,9 @@ const TwdCardsHistory = () => {
         }
       });
 
-      const crypt = Object.values(c).toSorted(byCardName);
-      const library = Object.values(l).toSorted(byCardName);
-
-      return {
-        crypt,
-        library,
-        players,
-      };
+      crypt = Object.values(c).toSorted(byCardName);
+      library = Object.values(l).toSorted(byCardName);
     }
-    return {};
-  }, [value, cryptCardBase, libraryCardBase]);
 
   return (
     <div className="hof-history-container mx-auto flex flex-col gap-1.5">

@@ -1,6 +1,5 @@
 import { Disclosure, TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/react";
 import dayjs from "dayjs";
-import { useMemo } from "react";
 import setsAndPrecons from "@/assets/data/setsAndPrecons.json";
 import { TabButton, TwdHallFameCardsPlayer } from "@/components";
 import { DATE, DECKID, ID, PLAYER, POD, PROMO, RELEASE_DATE, SET, TWD_DATE } from "@/constants";
@@ -16,10 +15,8 @@ const TwdHallOfFameCards = () => {
   const url = `${import.meta.env.VITE_BASE_URL}/data/twd_cards_history.json`;
   const { value } = useFetch(url, {}, []);
 
-  const players = useMemo(() => {
+  const players = {}
     if (value && cryptCardBase && libraryCardBase) {
-      const p = {};
-
       Object.keys(value).forEach((cardid) => {
         const cardBase = cardid > 200000 ? cryptCardBase : libraryCardBase;
         const card = cardBase[cardid];
@@ -40,8 +37,8 @@ const TwdHallOfFameCards = () => {
 
         const twdDate = value[cardid][TWD_DATE];
         if (twdDate) {
-          if (!p[player]) {
-            p[player] = {
+          if (!players[player]) {
+            players[player] = {
               [cardid]: {
                 ...card,
                 [DECKID]: deckid,
@@ -50,7 +47,7 @@ const TwdHallOfFameCards = () => {
               },
             };
           } else {
-            p[player][cardid] = {
+            players[player][cardid] = {
               ...card,
               [DECKID]: deckid,
               [TWD_DATE]: twdDate,
@@ -59,11 +56,6 @@ const TwdHallOfFameCards = () => {
           }
         }
       });
-
-      return p;
-    }
-    return {};
-  }, [value, cryptCardBase, libraryCardBase]);
 
   const byTotal = (a, b) => {
     return Object.keys(players[b]).length - Object.keys(players[a]).length;

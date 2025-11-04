@@ -1,5 +1,5 @@
 import Arrow90DegLeft from "@icons/arrow-90deg-left.svg?react";
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router";
 import {
   ButtonIconed,
@@ -81,15 +81,11 @@ const PlaytestManage = () => {
     [ADDED_BYx]: "B",
   };
 
-  const sortedPlayers = useMemo(() => {
-    if (!playtesters) return [];
-
-    const filtered = Object.keys(playtesters)
-      .filter((p) => langFilter === ANY || playtesters[p][LANG] === langFilter)
-      .map((p) => ({ ...playtesters[p], [USERNAME]: p }));
-
-    return playersSort(filtered, sortMethod);
-  }, [playtesters, langFilter, sortMethod]);
+  const sortedPlayers = !playtesters
+        ? []
+        : playersSort(Object.keys(playtesters)
+    .filter((p) => langFilter === ANY || playtesters[p][LANG] === langFilter)
+    .map((p) => ({ ...playtesters[p], [USERNAME]: p })), sortMethod);
 
   return (
     <div className="playtest-manage-container mx-auto">

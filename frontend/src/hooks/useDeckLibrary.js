@@ -1,4 +1,3 @@
-import { useMemo } from "react";
 import { useSnapshot } from "valtio";
 import {
   ANY,
@@ -30,7 +29,6 @@ import {
 const useDeckLibrary = (cardsList, cardsToList) => {
   const limitedLibrary = useSnapshot(limitedStore)[LIBRARY];
 
-  return useMemo(() => {
     const cardsFrom = Object.values(cardsList);
     const cardsTo = Object.values(cardsToList || {});
     const libraryFrom = cardsFrom.filter((card) => card.q > 0);
@@ -116,7 +114,6 @@ const useDeckLibrary = (cardsList, cardsToList) => {
       libraryByPathsTotal,
       libraryByDisciplinesTotal,
     };
-  }, [cardsList, cardsToList, limitedLibrary]);
 };
 
 export default useDeckLibrary;

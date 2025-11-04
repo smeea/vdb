@@ -1,4 +1,3 @@
-import { useMemo } from "react";
 import { DeckRecommendationModal } from "@/components";
 import { CARDS, CRYPT, ID, LIBRARY } from "@/constants";
 import { useApp } from "@/context";
@@ -21,21 +20,17 @@ const DeckRecommendation = ({ setShow, deck }) => {
     [],
   );
 
-  const crypt = useMemo(() => {
-    return value
+  const crypt = value
       ? value[CRYPT].map((cardid) => {
           return cryptCardBase[cardid];
         })
       : null;
-  }, [value?.[CRYPT]]);
 
-  const library = useMemo(() => {
-    return value
+  const library = value
       ? value[LIBRARY].map((cardid) => {
           return libraryCardBase[cardid];
         })
       : null;
-  }, [value?.[LIBRARY]]);
 
   const handleCloseModal = () => {
     setShow(false);

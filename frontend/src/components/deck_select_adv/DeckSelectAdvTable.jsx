@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { DeckSelectAdvTableHeader, DeckSelectAdvTableRow, ResultClanImage } from "@/components";
 import { ANY, CRYPT, DECKID, INVENTORY_TYPE, LIBRARY, MASTER, NAME, TAGS } from "@/constants";
 import { decksSort, getClan } from "@/utils";
@@ -78,8 +78,6 @@ const DeckSelectAdvTable = ({
     return normalizedDeckName.includes(normalizedNameFilter);
   };
 
-  const sortedDecks = useMemo(() => {
-    if (Object.values(decks).length > 0) {
       let filtered = Object.values(decks);
 
       if (invFilter !== ANY) {
@@ -114,10 +112,7 @@ const DeckSelectAdvTable = ({
         filtered = filtered.filter((deck) => !deck[MASTER]);
       }
 
-      return decksSort(filtered, sortMethod);
-    }
-    return [];
-  }, [decks, invFilter, clanFilter, nameFilter, tagsFilter, revFilter, sortMethod]);
+  const sortedDecks = decksSort(filtered, sortMethod);
 
   const toggleSelect = (deckid) => {
     setSelectedDecks((prevState) => ({

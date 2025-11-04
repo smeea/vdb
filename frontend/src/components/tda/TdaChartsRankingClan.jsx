@@ -1,4 +1,3 @@
-import { useMemo } from "react";
 import { BubbleChart } from "@/components";
 import {
   ANTITRIBU,
@@ -20,7 +19,6 @@ import { byName, deepClone, getClan } from "@/utils";
 
 const TdaChartsRankingClan = ({ info, decks, searchResults }) => {
   const { isMobile, isDesktop, isWide } = useApp();
-  const data = useMemo(() => {
     const d = {};
 
     Object.values(decks).forEach((deck) => {
@@ -47,8 +45,7 @@ const TdaChartsRankingClan = ({ info, decks, searchResults }) => {
       };
     });
 
-    return deepClone(d);
-  }, [searchResults, decks, info]);
+  const data = deepClone(d);
 
   return (
     <div className="flex basis-full flex-col items-center">

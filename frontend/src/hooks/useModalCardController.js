@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useState } from "react";
 
 const SIDE_CARD_MODE = "SIDE_CARD_MODE";
 const MAIN_CARD_MODE = "MAIN_CARD_MODE";
@@ -33,12 +33,11 @@ const useModalCardController = (mainCards = [], sideCards = []) => {
 
   const handleModalCardClose = () => setCardid(null);
 
-  const shouldShowModal = useMemo(() => cardid !== null, [cardid]);
-  const isSideMode = useMemo(() => mode === SIDE_CARD_MODE, [mode]);
-  const currentModalCard = useMemo(() => {
-    if (cardid === null) return null;
-    return (isSideMode ? sideList : mainList)[cardid];
-  }, [mainList, sideList, mode, cardid]);
+  const shouldShowModal = cardid !== null
+  const isSideMode = mode === SIDE_CARD_MODE
+  const currentModalCard = cardid === null
+        ? null
+      : (isSideMode ? sideList : mainList)[cardid];
 
   return {
     handleModalCardOpen,

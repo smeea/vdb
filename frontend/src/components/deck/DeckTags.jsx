@@ -1,5 +1,4 @@
 import Spellcheck from "@icons/spellcheck.svg?react";
-import { useMemo } from "react";
 import { twMerge } from "tailwind-merge";
 import { ButtonIconed, Select } from "@/components";
 import { BASE, CRYPT, DECKID, LIBRARY, SUPERIOR, TAGS } from "@/constants";
@@ -9,35 +8,31 @@ import { getIsEditable, getTags } from "@/utils";
 const DeckTags = ({ deck, noAutotags, justifyRight, isBordered, noBackground, allTagsOptions }) => {
   const isEditable = getIsEditable(deck);
 
-  const tagList = useMemo(() => {
-    const t = [];
+    const tagList = [];
 
     if (deck[TAGS]) {
       if (deck[TAGS][BASE] && deck[TAGS][SUPERIOR]) {
         deck[TAGS][SUPERIOR].forEach((tag) => {
-          t.push({
+          tagList.push({
             label: <b>{tag}</b>,
             value: tag,
           });
         });
         deck[TAGS][BASE].forEach((tag) => {
-          t.push({
+          tagList.push({
             label: tag,
             value: tag,
           });
         });
       } else {
         deck[TAGS].forEach((tag) => {
-          t.push({
+          tagList.push({
             label: tag,
             value: tag,
           });
         });
       }
     }
-
-    return t;
-  }, [deck[TAGS]]);
 
   const handleChange = (event) => {
     const v = event.map((t) => t.value);

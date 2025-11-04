@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { useSnapshot } from "valtio";
 import { InventoryAddDeckHeader, InventoryAddDeckRow, Modal } from "@/components";
 import { DECKID, DECKS, MASTER, NAME, TAGS } from "@/constants";
@@ -36,8 +36,6 @@ const InventoryAddDeckModal = ({ handleClose }) => {
     value: tag,
   }));
 
-  const sortedDecks = useMemo(() => {
-    if (Object.values(decks).length > 0) {
       let filtered = Object.values(decks);
 
       if (nameFilter) {
@@ -62,10 +60,7 @@ const InventoryAddDeckModal = ({ handleClose }) => {
         });
       }
 
-      return decksSort(filtered, sortMethod);
-    }
-    return [];
-  }, [decks, nameFilter, tagsFilter, revFilter, sortMethod]);
+      const sortedDecks = decksSort(filtered, sortMethod);
 
   return (
     <Modal

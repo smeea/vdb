@@ -1,4 +1,3 @@
-import { useMemo } from "react";
 import { FlexGapped, PlaytestReportsAllCardOrPrecon } from "@/components";
 import { CRYPT, ID, PLAYTEST_OLD } from "@/constants";
 import { useApp } from "@/context";
@@ -9,16 +8,12 @@ const PlaytestReportsAllCardsWrapper = ({ reports, target, sortMethod, maxSameSc
   const sort = target === CRYPT ? cryptSort : librarySort;
   const cardBase = target === CRYPT ? cryptCardBase : libraryCardBase;
 
-  const products = useMemo(
-    () =>
-      sort(
+  const products = sort(
         Object.values(cardBase || {}).filter((card) => {
           return getIsPlaytest(card[ID]) && !card[PLAYTEST_OLD];
         }),
         sortMethod,
-      ),
-    [sortMethod, cardBase],
-  );
+      )
 
   return (
     <FlexGapped className="flex-col">

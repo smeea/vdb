@@ -1,4 +1,3 @@
-import { useMemo } from "react";
 import { CRYPT, INVENTORY_TYPE, LIBRARY } from "@/constants";
 import { inventoryStore, usedStore } from "@/context";
 import { getHardTotal, getSoftMax } from "@/utils";
@@ -27,22 +26,18 @@ const getMissing = (cards, inventoryType, used, inventory) => {
 };
 
 const useDeckMissing = (deck, isEmpty) => {
-  const missingCrypt = useMemo(() => {
-    if (isEmpty || !deck) return null;
+  const missingCrypt = isEmpty || !deck
+        ? null
+    : getMissing(deck[CRYPT], deck[INVENTORY_TYPE], usedStore[CRYPT], inventoryStore[CRYPT])
 
-    return getMissing(deck[CRYPT], deck[INVENTORY_TYPE], usedStore[CRYPT], inventoryStore[CRYPT]);
-  }, [deck[CRYPT], deck[INVENTORY_TYPE], isEmpty]);
-
-  const missingLibrary = useMemo(() => {
-    if (isEmpty || !deck) return null;
-
-    return getMissing(
+  const missingLibrary = isEmpty || !deck
+        ? null
+    : getMissing(
       deck[LIBRARY],
       deck[INVENTORY_TYPE],
       usedStore[LIBRARY],
       inventoryStore[LIBRARY],
     );
-  }, [deck[LIBRARY], deck[INVENTORY_TYPE], isEmpty]);
 
   return { missingCrypt, missingLibrary };
 };

@@ -1,4 +1,3 @@
-import { useMemo } from "react";
 import { TdaDeck, TdaResultTotal } from "@/components";
 import { AUTHOR, RANK_HIGH_LOW, RANK_LOW_HIGH } from "@/constants";
 import { useApp } from "@/context";
@@ -12,9 +11,7 @@ const TdaResult = ({ decks }) => {
     [RANK_LOW_HIGH]: "R↑",
   };
 
-  const sortedDecks = useMemo(() => {
-    return decksSort(decks, tdaSearchSort);
-  }, [decks, tdaSearchSort]);
+  const sortedDecks = decksSort(decks, tdaSearchSort);
 
   return (
     <div>

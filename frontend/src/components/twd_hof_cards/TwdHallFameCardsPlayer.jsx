@@ -1,6 +1,5 @@
 import { DisclosureButton, DisclosurePanel } from "@headlessui/react";
 import LightbulbFill from "@icons/lightbulb-fill.svg?react";
-import { useMemo } from "react";
 import {
   ResultCryptTotal,
   ResultLibraryTotal,
@@ -34,25 +33,16 @@ const TwdHallFameCardsPlayer = ({ name, cards }) => {
     isMobile,
   } = useApp();
 
-  const cryptSorted = useMemo(
-    () =>
-      cryptSort(
+  const cryptSorted = cryptSort(
         Object.values(cards).filter((card) => card[ID] > 200000),
         cryptSearchSort,
-      ),
-    [cards, cryptSearchSort],
-  );
+      )
 
-  const librarySorted = useMemo(
-    () =>
-      librarySort(
+  const librarySorted = librarySort(
         Object.values(cards).filter((card) => card[ID] < 200000),
         librarySearchSort,
-      ),
-    [cards, librarySearchSort],
-  );
+      )
 
-  // Modal Card Controller
   const {
     currentModalCard,
     shouldShowModal,

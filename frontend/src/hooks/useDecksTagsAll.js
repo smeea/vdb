@@ -1,4 +1,3 @@
-import { useMemo } from "react";
 import { TAGS, TWO_P, V5 } from "@/constants";
 import { useApp } from "@/context";
 
@@ -17,7 +16,6 @@ const sort = (a, b) => {
 const useDecksTagsAll = (decks) => {
   const { limitedPreset, limitedMode } = useApp();
 
-  return useMemo(() => {
     if (!decks) return [];
     const allTags = new Set();
 
@@ -34,7 +32,6 @@ const useDecksTagsAll = (decks) => {
     });
 
     return [...allTags].toSorted(sort);
-  }, [decks, limitedMode, limitedPreset]);
 };
 
 export default useDecksTagsAll;

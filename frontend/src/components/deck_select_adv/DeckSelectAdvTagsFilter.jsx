@@ -1,18 +1,15 @@
-import { useMemo } from "react";
 import { Select } from "@/components";
 import { useApp } from "@/context";
 
 const DeckSelectAdvTagsFilter = ({ tagsFilter, handleChangeTagsFilter, allTagsOptions }) => {
   const { isMobile } = useApp();
 
-  const tagList = useMemo(() => {
-    return tagsFilter
+  const tagList = tagsFilter
       ? tagsFilter.map((tag) => ({
           label: tag,
           value: tag,
         }))
-      : undefined;
-  }, [tagsFilter]);
+      : null;
 
   return (
     <Select
