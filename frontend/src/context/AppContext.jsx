@@ -345,7 +345,7 @@ export const AppProvider = ({ children }) => {
     if (deckStore[DECKS]?.[deckStore[DECK]?.[DECKID]]) {
       deckStore[DECK] = undefined;
     }
-    deckStore[DECKS] = undefined;
+    deckStore[DECKS] = {};
   }, [deckStore, inventoryStore]);
 
   useEffect(() => {
