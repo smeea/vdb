@@ -1,5 +1,14 @@
 [
   {
+    "id": 12556,
+    "title": "Bleeding in Wroclaw",
+    "location": "Wroclaw, Poland",
+    "date": "2025-09-13",
+    "players": 31,
+    "decks": 28,
+    "country": "PL"
+  },
+  {
     "id": 12418,
     "title": "Ropecon 2025 (In Memoriam Lauri Salmi)",
     "location": "Helsinki, Finland",
