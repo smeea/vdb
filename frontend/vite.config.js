@@ -62,4 +62,7 @@ export default defineConfig({
 			{ find: "@icons", replacement: resolve(__dirname, "node_modules/bootstrap-icons/icons") },
 		],
 	},
+	build: {
+		chunkSizeWarningLimit: Infinity,
+	},
 });
