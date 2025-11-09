@@ -74,6 +74,7 @@ const CryptSearchForm = () => {
     isMobile,
     playtestMode,
     limitedMode,
+    limitedPreset,
   } = useApp();
   const inventoryCrypt = useSnapshot(inventoryStore)[CRYPT];
   const usedCrypt = useSnapshot(usedStore)[CRYPT];
@@ -118,6 +119,7 @@ const CryptSearchForm = () => {
       searchMissingInventoryMode,
       inventoryMode,
       limitedMode,
+      limitedPreset,
       playtestMode,
       cryptCardBase,
     ],
@@ -130,6 +132,7 @@ const CryptSearchForm = () => {
     searchMissingInventoryMode,
     inventoryMode,
     limitedMode,
+    limitedPreset,
     playtestMode,
     cryptCardBase,
   ]);

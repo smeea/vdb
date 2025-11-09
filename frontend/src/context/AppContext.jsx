@@ -5,6 +5,7 @@ import { useSnapshot } from "valtio";
 import limitedV5 from "@/assets/data/limitedV5.json";
 import {
   ALLOWED,
+  BANNED,
   BRANCHES,
   CAPACITY_MIN_MAX,
   CARDS,
@@ -29,6 +30,7 @@ import {
   NAME,
   NATIVE_CRYPT,
   NATIVE_LIBRARY,
+  NO_BANNED,
   PDA,
   PLAYTEST,
   PUBLIC_PARENT,
@@ -219,6 +221,21 @@ export const AppProvider = ({ children }) => {
         setLimitedBannedCrypt({});
         setLimitedBannedLibrary({});
         break;
+      case NO_BANNED:
+        const allCrypt = {}
+        const allLibrary = {};
+        Object.keys(cryptCardBase ?? {}).forEach((cardid) => {
+          if (!cryptCardBase[cardid][BANNED]) allCrypt[cardid] = true;
+        })
+        Object.keys(libraryCardBase ?? {}).forEach((cardid) => {
+          if (!libraryCardBase[cardid][BANNED]) allLibrary[cardid] = true
+        })
+        setLimitedAllowedCrypt(allCrypt);
+        setLimitedAllowedLibrary(allLibrary);
+        setLimitedSets({});
+        setLimitedBannedCrypt({});
+        setLimitedBannedLibrary({});
+        break;
       case CUSTOM:
         getMany([
           LIMITED_ALLOWED_CRYPT,
@@ -233,7 +250,7 @@ export const AppProvider = ({ children }) => {
       default:
         if (limitedMode) toggleLimitedMode();
     }
-  }, [limitedPreset]);
+  }, [limitedPreset, cryptCardBase, libraryCardBase]);
 
   const setLimitedFormat = (lac, lal, lbc, lbl, ls) => {
     if (lac) setLimitedAllowedCrypt(lac);

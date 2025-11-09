@@ -171,6 +171,7 @@ export const NOT = "not";
 export const NOT_NEWER = "not-newer";
 export const NOT_OLDER = "not-older";
 export const NOT_REQUIRED = "not required";
+export const NO_BANNED = "NO_BANNED";
 export const NO_REQUIREMENTS = "no-requirements";
 export const OK = "ok";
 export const ONLY = "only";

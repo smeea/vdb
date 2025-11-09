@@ -1,5 +1,5 @@
 import { Select } from "@/components";
-import { CUSTOM, TWO_P, V5 } from "@/constants";
+import { CUSTOM, TWO_P, V5, NO_BANNED } from "@/constants";
 import { useApp } from "@/context";
 
 const LimitedSelect = ({ withoutDisabled }) => {
@@ -10,6 +10,7 @@ const LimitedSelect = ({ withoutDisabled }) => {
     { value: TWO_P, label: withoutDisabled ? "2P" : "Two Players" },
     { value: V5, label: "V5" },
     { value: CUSTOM, label: withoutDisabled ? "C" : "Custom" },
+    { value: NO_BANNED, label: withoutDisabled ? "!B" : "No Banned" },
   ];
 
   if (!withoutDisabled) options.unshift({ value: false, label: "Disabled (regular VTES)" });
