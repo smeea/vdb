@@ -1,31 +1,18 @@
-import dayjs from "dayjs";
 import disciplinesList from "@/assets/data/disciplinesList.json";
-import setsAndPrecons from "@/assets/data/setsAndPrecons.json";
 import virtuesList from "@/assets/data/virtuesList.json";
 import {
   ANY,
-  BANNED,
   CLAN,
-  CRYPT,
-  DATE,
   DISCIPLINES,
   GROUP,
-  HAS_BANNED,
-  HAS_LIMITED,
-  HAS_PLAYTEST,
   ID,
   IS_AUTHOR,
   IS_FROZEN,
   IS_NON_EDITABLE,
   IS_PUBLIC,
-  LIBRARY,
   NAME,
   PATH,
-  PLAYTEST,
-  POD,
-  PROMO,
   SECT,
-  SET,
 } from "@/constants";
 
 export const getCardProperty = (card, property) => {
@@ -59,48 +46,6 @@ export const countTotalCost = (cardsList, type) => {
   return cardsList
     .filter((card) => Number.isInteger(card.c[type]))
     .reduce((acc, card) => acc + card.q * card.c[type], 0);
-};
-
-export const getRestrictions = (deck, limitedCards) => {
-  if (!deck) return {};
-
-  let hasPlaytest;
-  let hasBanned;
-  let hasLimited = null;
-  [...Object.values(deck[CRYPT]), ...Object.values(deck[LIBRARY])].forEach((card) => {
-    if (card.q < 1) return;
-    if (card.c[BANNED]) hasBanned = true;
-    if (
-      limitedCards &&
-      ![...Object.keys(limitedCards[CRYPT]), ...Object.keys(limitedCards[LIBRARY])].includes(
-        card.c[ID].toString(),
-      )
-    ) {
-      hasLimited += card.q;
-    }
-
-    const legalRestriction = getLegality(card.c);
-    if (legalRestriction === PLAYTEST) {
-      hasPlaytest = true;
-    }
-  });
-
-  return {
-    [HAS_BANNED]: hasBanned,
-    [HAS_LIMITED]: hasLimited,
-    [HAS_PLAYTEST]: hasPlaytest,
-  };
-};
-
-export const getLegality = (card) => {
-  const sets = Object.keys(card[SET]).filter((s) => s !== PLAYTEST);
-  if (sets.length > 1 || [POD, PROMO].includes(sets[0])) return false;
-  if (sets.length === 0) return PLAYTEST;
-
-  const setDate = dayjs(setsAndPrecons[sets[0]][DATE]);
-  if (dayjs().diff(setDate, "day") >= 0) return false;
-  const legalDate = setsAndPrecons[sets[0]][DATE];
-  return legalDate;
 };
 
 export const getGroups = (cards) => {

@@ -1,5 +1,6 @@
 # FIX
 - Re-search on limited modes selection change
+- Refactor adv select with react-window for many decks
 
 # FIX ON HOLD
 - Deck-in-Url trimmed at first card - can't reproduce in dev environment

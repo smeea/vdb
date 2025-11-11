@@ -1,5 +1,5 @@
 import { Select } from "@/components";
-import { CUSTOM, TWO_P, V5, NO_BANNED } from "@/constants";
+import { CUSTOM, NO_BANNED, TWO_P, V5 } from "@/constants";
 import { useApp } from "@/context";
 
 const LimitedSelect = ({ withoutDisabled }) => {
