@@ -5,9 +5,16 @@ import { BASE, CRYPT, DECKID, LIBRARY, SUPERIOR, TAGS } from "@/constants";
 import { deckUpdate } from "@/context";
 import { getIsEditable, getTags } from "@/utils";
 
-const DeckTags = ({ deck, noAutotags, justifyRight, isBordered, noBackground, allTagsOptions }) => {
-  const isEditable = getIsEditable(deck);
-
+const DeckTags = ({
+  deck,
+  noAutotags,
+  justifyRight,
+  isNonEditable,
+  isBordered,
+  noBackground,
+  allTagsOptions,
+}) => {
+  const isEditable = isNonEditable ? false : getIsEditable(deck);
   const tagList = [];
 
   if (deck[TAGS]) {

@@ -1,6 +1,5 @@
 # FIX
 - Re-search on limited modes selection change
-- Refactor adv select with react-window for many decks
 
 # FIX ON HOLD
 - Deck-in-Url trimmed at first card - can't reproduce in dev environment
@@ -18,3 +17,4 @@
 
 # TECH IMPROVEMENTS
 - Refactor with useEffectEvent https://react.dev/learn/separating-events-from-effects#extracting-non-reactive-logic-out-of-effects
+- Refactor getLegality/getRestrictions for decks/cards into store properties

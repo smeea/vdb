@@ -35,7 +35,6 @@ import {
   HAS_LIMITED,
   HAS_PLAYTEST,
   INVENTORY_TYPE,
-  IS_AUTHOR,
   IS_FROZEN,
   MASTER,
   NAME,
@@ -57,7 +56,7 @@ const DeckSelectAdvTableRow = ({
   revFilter,
   short,
 }) => {
-  const { limitedMode, inventoryMode, isMobile, isNarrow } = useApp();
+  const { limitedMode, inventoryMode, isNarrow } = useApp();
   const limitedCards = useSnapshot(limitedStore);
   const navigate = useNavigate();
 
@@ -78,13 +77,16 @@ const DeckSelectAdvTableRow = ({
 
   const clan = getClan(deck[CRYPT]);
 
+  const handleCheckboxClick = () => toggleSelect(deck[DECKID]);
+  const handleToggleInventoryState = () => deckToggleInventoryState(deck[DECKID]);
+
   return (
     <Tr>
       {!short && (
         <td className="min-w-[30px] max-sm:hidden">
           <Checkbox
             checked={selectedDecks[deck[DECKID]] ?? false}
-            onChange={() => toggleSelect(deck[DECKID])}
+            onChange={handleCheckboxClick}
             className="justify-center"
           />
         </td>
@@ -95,7 +97,7 @@ const DeckSelectAdvTableRow = ({
             <ButtonIconed
               className="w-full"
               disabled={deck[IS_FROZEN]}
-              onClick={() => deckToggleInventoryState(deck[DECKID])}
+              onClick={handleToggleInventoryState}
               title={
                 deck[INVENTORY_TYPE] === S
                   ? "Flexible"
@@ -171,8 +173,9 @@ const DeckSelectAdvTableRow = ({
           {deck[TAGS].length > 0 && (
             <div className="max-w-[160px] p-1 md:hidden">
               <DeckTags
-                deck={{ ...deck, [IS_AUTHOR]: false }}
+                deck={deck}
                 allTagsOptions={allTagsOptions}
+                isNonEditable
                 noAutotags
                 noBackground
                 noBorder
@@ -199,7 +202,7 @@ const DeckSelectAdvTableRow = ({
       </td>
       {!short && (
         <td className="w-full px-1 max-md:hidden">
-          <DeckTags deck={deck} allTagsOptions={allTagsOptions} isBordered noAutotags={isMobile} />
+          <DeckTags deck={deck} allTagsOptions={allTagsOptions} isBordered />
         </td>
       )}
       {!short && (
