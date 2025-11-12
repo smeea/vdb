@@ -61,7 +61,7 @@ import {
 import { useWindowSize } from "@/hooks";
 import { cardServices, playtestServices, userServices } from "@/services";
 import { getLocalStorage, setLocalStorage } from "@/services/storageServices";
-import { getLegality, byTimestamp, deepClone, parseDeck } from "@/utils";
+import { byTimestamp, deepClone, getLegality, parseDeck } from "@/utils";
 
 const CRYPT_SEARCH_SORT = "cryptSearchSort";
 const CRYPT_DECK_SORT = "cryptDeckSort";
@@ -199,7 +199,6 @@ export const AppProvider = ({ children }) => {
           [LOCALIZED_LIBRARY, { [EN]: data[NATIVE_LIBRARY] }],
         ]);
       }
-
 
       setCryptCardBase(data[CRYPT]);
       setLibraryCardBase(data[LIBRARY]);

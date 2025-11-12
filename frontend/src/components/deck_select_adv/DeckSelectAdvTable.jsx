@@ -1,5 +1,10 @@
 import { useState } from "react";
-import { DeckSelectAdvTableHeader, DeckSelectAdvTableRow, ResultClanImage } from "@/components";
+import {
+  DeckSelectAdvTableHeader,
+  DeckSelectAdvTableRow,
+  ResultClanImage,
+  Button,
+} from "@/components";
 import { ANY, CRYPT, DECKID, INVENTORY_TYPE, LIBRARY, MASTER, NAME, TAGS } from "@/constants";
 import { decksSort, getClan } from "@/utils";
 
@@ -17,6 +22,8 @@ const DeckSelectAdvTable = ({
   isSelectedAll,
   setIsSelectedAll,
 }) => {
+  const INITIAL_SHOW = 50;
+  const [showAll, setShowAll] = useState();
   const [invFilter, setInvFilter] = useState(ANY);
   const [revFilter, setRevFilter] = useState(false);
   const [nameFilter, setNameFilter] = useState("");
@@ -139,41 +146,52 @@ const DeckSelectAdvTable = ({
   };
 
   return (
-    <table className="border-bgSecondary sm:border dark:border-bgSecondaryDark">
-      <DeckSelectAdvTableHeader
-        allTagsOptions={allTagsOptions}
-        clanOptions={clanOptions}
-        setClanFilter={setClanFilter}
-        setInvFilter={setInvFilter}
-        setNameFilter={setNameFilter}
-        setRevFilter={setRevFilter}
-        setTagsFilter={setTagsFilter}
-        clanFilter={clanFilter}
-        invFilter={invFilter}
-        revFilter={revFilter}
-        tagsFilter={tagsFilter}
-        toggleSelectAll={toggleSelectAll}
-        isSelectedAll={isSelectedAll}
-        short={short}
-      />
-      <tbody>
-        {sortedDecks.map((deck) => {
-          return (
-            <DeckSelectAdvTableRow
-              key={deck[DECKID]}
-              deck={deck}
-              onClick={onClick}
-              handleClose={handleClose}
-              allTagsOptions={allTagsOptions}
-              selectedDecks={selectedDecks}
-              toggleSelect={toggleSelect}
-              revFilter={revFilter}
-              short={short}
-            />
-          );
-        })}
-      </tbody>
-    </table>
+    <div className="flex flex-col gap-4">
+      <table className="border-bgSecondary sm:border dark:border-bgSecondaryDark">
+        <DeckSelectAdvTableHeader
+          allTagsOptions={allTagsOptions}
+          clanOptions={clanOptions}
+          setClanFilter={setClanFilter}
+          setInvFilter={setInvFilter}
+          setNameFilter={setNameFilter}
+          setRevFilter={setRevFilter}
+          setTagsFilter={setTagsFilter}
+          clanFilter={clanFilter}
+          invFilter={invFilter}
+          revFilter={revFilter}
+          tagsFilter={tagsFilter}
+          toggleSelectAll={toggleSelectAll}
+          isSelectedAll={isSelectedAll}
+          short={short}
+        />
+        <tbody>
+          {sortedDecks
+            .filter((_, idx) => showAll || idx < INITIAL_SHOW)
+            .map((deck) => {
+              return (
+                <DeckSelectAdvTableRow
+                  key={deck[DECKID]}
+                  deck={deck}
+                  onClick={onClick}
+                  handleClose={handleClose}
+                  allTagsOptions={allTagsOptions}
+                  selectedDecks={selectedDecks}
+                  toggleSelect={toggleSelect}
+                  revFilter={revFilter}
+                  short={short}
+                />
+              );
+            })}
+        </tbody>
+      </table>
+      {!showAll && sortedDecks.length > INITIAL_SHOW && (
+        <div className="flex justify-center">
+          <Button onClick={() => setShowAll(true)}>
+            Show All ({sortedDecks.length - INITIAL_SHOW} left)
+          </Button>
+        </div>
+      )}
+    </div>
   );
 };
 

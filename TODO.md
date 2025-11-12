@@ -17,4 +17,3 @@
 
 # TECH IMPROVEMENTS
 - Refactor with useEffectEvent https://react.dev/learn/separating-events-from-effects#extracting-non-reactive-logic-out-of-effects
-- Test refactor decks in adv select to react-window

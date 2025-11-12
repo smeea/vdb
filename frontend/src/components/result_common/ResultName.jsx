@@ -1,7 +1,7 @@
 import { twMerge } from "tailwind-merge";
 import { useSnapshot } from "valtio";
 import { ResultLegalIcon } from "@/components";
-import { LEGAL_RESTRICTIONS, ADV, BANNED, CRYPT, ID, LIBRARY, NAME, PLAYTEST } from "@/constants";
+import { ADV, BANNED, CRYPT, ID, LEGAL_RESTRICTIONS, LIBRARY, NAME, PLAYTEST } from "@/constants";
 import { limitedStore, useApp } from "@/context";
 
 const ResultName = ({ card, isColored = true }) => {
@@ -37,7 +37,9 @@ const ResultName = ({ card, isColored = true }) => {
       )}
       {card[BANNED] && <ResultLegalIcon type={BANNED} value={card[BANNED]} />}
       {isLimited && <ResultLegalIcon title="Limited" />}
-      {card[LEGAL_RESTRICTIONS] && <ResultLegalIcon type={PLAYTEST} value={card[LEGAL_RESTRICTIONS]} />}
+      {card[LEGAL_RESTRICTIONS] && (
+        <ResultLegalIcon type={PLAYTEST} value={card[LEGAL_RESTRICTIONS]} />
+      )}
     </div>
   );
 };

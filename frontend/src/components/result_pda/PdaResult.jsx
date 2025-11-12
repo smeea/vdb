@@ -7,16 +7,14 @@ import { decksSort } from "@/utils";
 const PdaResult = ({ results = [] }) => {
   const { pdaSearchSort, changePdaSearchSort } = useApp();
   const SHOW_COUNTER_STEP = 10;
-  const deckCounter = results.length;
   const [showCounter, setShowCounter] = useState(SHOW_COUNTER_STEP);
+  const sortedDecks = decksSort(results, pdaSearchSort);
 
   const sortMethods = {
     [DATE_NEW_OLD]: "D↓",
     [DATE_OLD_NEW]: "D↑",
     [FAVORITES]: "F",
   };
-  const sortedDecks = decksSort(results, pdaSearchSort);
-  const showedDecks = sortedDecks.slice(0, showCounter);
 
   return (
     <div className="flex flex-col gap-4">
@@ -28,19 +26,21 @@ const PdaResult = ({ results = [] }) => {
           setSortMethod={changePdaSearchSort}
         />
         <div className="flex flex-col gap-4">
-          {showedDecks.map((d) => {
-            return d[CARDS] ? (
-              <TwdDeck key={d[DECKID]} deck={d} inPda />
-            ) : (
-              <TwdDeckWrapper key={d[DECKID]} deckid={d[DECKID]} inPda />
-            );
-          })}
+          {sortedDecks
+            .filter((_, idx) => idx > showCounter)
+            .map((d) => {
+              return d[CARDS] ? (
+                <TwdDeck key={d[DECKID]} deck={d} inPda />
+              ) : (
+                <TwdDeckWrapper key={d[DECKID]} deckid={d[DECKID]} inPda />
+              );
+            })}
         </div>
       </div>
-      {deckCounter > showCounter && (
+      {results.length > showCounter && (
         <div className="flex justify-center">
           <Button onClick={() => setShowCounter(showCounter + SHOW_COUNTER_STEP)}>
-            Show More ({deckCounter - showCounter} left)
+            Show More ({results.length - showCounter} left)
           </Button>
         </div>
       )}
