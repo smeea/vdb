@@ -16,9 +16,11 @@ import {
   DECKID,
   DECKS,
   EN,
+  ID,
   IS_AUTHOR,
   IS_BRANCHES,
   IS_FROZEN,
+  LEGAL_RESTRICTIONS,
   LIBRARY,
   LIMITED_ALLOWED_CRYPT,
   LIMITED_ALLOWED_LIBRARY,
@@ -59,7 +61,7 @@ import {
 import { useWindowSize } from "@/hooks";
 import { cardServices, playtestServices, userServices } from "@/services";
 import { getLocalStorage, setLocalStorage } from "@/services/storageServices";
-import { byTimestamp, deepClone, parseDeck } from "@/utils";
+import { getLegality, byTimestamp, deepClone, parseDeck } from "@/utils";
 
 const CRYPT_SEARCH_SORT = "cryptSearchSort";
 const CRYPT_DECK_SORT = "cryptDeckSort";
@@ -178,6 +180,13 @@ export const AppProvider = ({ children }) => {
   const CARD_VERSION = import.meta.env.VITE_CARD_VERSION;
   const fetchAndSetCardBase = (isIndexedDB, secret) => {
     cardServices.getCardBase(secret).then((data) => {
+      Object.values(data[CRYPT]).forEach((card) => {
+        data[CRYPT][card[ID]][LEGAL_RESTRICTIONS] = getLegality(card);
+      });
+      Object.values(data[LIBRARY]).forEach((card) => {
+        data[LIBRARY][card[ID]][LEGAL_RESTRICTIONS] = getLegality(card);
+      });
+
       if (isIndexedDB) {
         setMany([
           [CARD_VERSION_KEY, CARD_VERSION],
@@ -190,6 +199,7 @@ export const AppProvider = ({ children }) => {
           [LOCALIZED_LIBRARY, { [EN]: data[NATIVE_LIBRARY] }],
         ]);
       }
+
 
       setCryptCardBase(data[CRYPT]);
       setLibraryCardBase(data[LIBRARY]);

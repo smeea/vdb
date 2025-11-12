@@ -22,6 +22,7 @@ import {
   CLAN,
   DISCIPLINES,
   GROUP,
+  LEGAL_RESTRICTIONS,
   ID,
   PATH,
   PLAYTEST,
@@ -29,11 +30,9 @@ import {
   TITLE,
 } from "@/constants";
 import { useApp } from "@/context";
-import { getLegality } from "@/utils";
 
 const ResultCryptLayoutText = ({ card, setCard, handleClose, noClose, inPopover }) => {
   const { isNarrow, isMobile, cryptCardBase } = useApp();
-  const legalRestriction = getLegality(card);
 
   return (
     <div className="flex flex-col gap-3">
@@ -131,12 +130,12 @@ const ResultCryptLayoutText = ({ card, setCard, handleClose, noClose, inPopover 
           Banned in {card[BANNED]}
         </div>
       )}
-      {legalRestriction && legalRestriction !== PLAYTEST && (
+      {card[LEGAL_RESTRICTIONS] && card[LEGAL_RESTRICTIONS] !== PLAYTEST && (
         <div
           className="text-fgRed dark:text-fgRedDark"
-          title={`Not Tournament Legal until ${legalRestriction}`}
+          title={`Not Tournament Legal until ${card[LEGAL_RESTRICTIONS]}`}
         >
-          Not Tournament Legal until {legalRestriction}
+          Not Tournament Legal until {card[LEGAL_RESTRICTIONS]}
         </div>
       )}
     </div>

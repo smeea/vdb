@@ -130,6 +130,7 @@ export const LABEL = "label";
 export const LACKEY = "lackey";
 export const LANG = "lang";
 export const LE = "le";
+export const LEGAL_RESTRICTIONS = "legalRestrictions";
 export const LIAISON = "liaison";
 export const LIBRARY = "library";
 export const LIBRARY_COMPARE = "libraryCompare";

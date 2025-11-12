@@ -1,15 +1,13 @@
 import { twMerge } from "tailwind-merge";
 import { useSnapshot } from "valtio";
 import { ResultLegalIcon } from "@/components";
-import { ADV, BANNED, CRYPT, ID, LIBRARY, NAME, PLAYTEST } from "@/constants";
+import { LEGAL_RESTRICTIONS, ADV, BANNED, CRYPT, ID, LIBRARY, NAME, PLAYTEST } from "@/constants";
 import { limitedStore, useApp } from "@/context";
-import { getLegality } from "@/utils";
 
 const ResultName = ({ card, isColored = true }) => {
   const { limitedMode } = useApp();
   const limitedState = useSnapshot(limitedStore)[card[ID] > 200000 ? CRYPT : LIBRARY];
   const isLimited = limitedMode && !limitedState[card[ID]];
-  const legalRestriction = getLegality(card);
 
   return (
     <div
@@ -39,7 +37,7 @@ const ResultName = ({ card, isColored = true }) => {
       )}
       {card[BANNED] && <ResultLegalIcon type={BANNED} value={card[BANNED]} />}
       {isLimited && <ResultLegalIcon title="Limited" />}
-      {legalRestriction && <ResultLegalIcon type={PLAYTEST} value={legalRestriction} />}
+      {card[LEGAL_RESTRICTIONS] && <ResultLegalIcon type={PLAYTEST} value={card[LEGAL_RESTRICTIONS]} />}
     </div>
   );
 };

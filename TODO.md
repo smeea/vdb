@@ -17,4 +17,4 @@
 
 # TECH IMPROVEMENTS
 - Refactor with useEffectEvent https://react.dev/learn/separating-events-from-effects#extracting-non-reactive-logic-out-of-effects
-- Refactor getLegality/getRestrictions for decks/cards into store properties
+- Test refactor decks in adv select to react-window

@@ -21,6 +21,7 @@ import {
   CLAN,
   CONVICTION,
   DISCIPLINE,
+  LEGAL_RESTRICTIONS,
   ID,
   PATH,
   PLAYTEST,
@@ -30,7 +31,6 @@ import {
   TYPE,
 } from "@/constants";
 import { useApp } from "@/context";
-import { getLegality } from "@/utils";
 
 const Requirements = ({ card }) => {
   return (
@@ -62,7 +62,6 @@ const Requirements = ({ card }) => {
 
 const ResultLibraryLayoutText = ({ card, handleClose, noClose, inPopover }) => {
   const { isNarrow, isMobile } = useApp();
-  const legalRestriction = getLegality(card);
   const hasRequirements = !!(
     card[REQUIREMENT] ||
     card[CLAN] ||
@@ -120,12 +119,12 @@ const ResultLibraryLayoutText = ({ card, handleClose, noClose, inPopover }) => {
           Banned in {card[BANNED]}
         </div>
       )}
-      {legalRestriction && legalRestriction !== PLAYTEST && (
+      {card[LEGAL_RESTRICTIONS] && card[LEGAL_RESTRICTIONS] !== PLAYTEST && (
         <div
           className="text-fgRed dark:text-fgRedDark"
-          title={`Not Tournament Legal until ${legalRestriction}`}
+          title={`Not Tournament Legal until ${card[LEGAL_RESTRICTIONS]}`}
         >
-          Not Tournament Legal until {legalRestriction}
+          Not Tournament Legal until {card[LEGAL_RESTRICTIONS]}
         </div>
       )}
     </div>
