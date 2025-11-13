@@ -12,7 +12,6 @@
 - Update cards translation
 
 # FEATURES ON HOLD
-- Indicator of inventory-perfect decks in selector -> performance issue for many decks
 - Draft Cube support -> when draft cube info is available
 
 # TECH IMPROVEMENTS

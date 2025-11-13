@@ -22,21 +22,12 @@ const DeckSelectAdvTable = ({
   isSelectedAll,
   setIsSelectedAll,
 }) => {
-  const INITIAL_SHOW = 50;
+  const INITIAL_SHOW = 30;
   const [showAll, setShowAll] = useState();
   const [invFilter, setInvFilter] = useState(ANY);
   const [revFilter, setRevFilter] = useState(false);
   const [nameFilter, setNameFilter] = useState("");
   const [clanFilter, setClanFilter] = useState(ANY);
-
-  const allDecksClans = [];
-  Object.values(decks).forEach((deck) => {
-    const clan = getClan(deck[CRYPT]);
-
-    if (clan && !allDecksClans.includes(clan)) {
-      allDecksClans.push(clan);
-    }
-  });
 
   const clanOptions = [
     {
@@ -48,6 +39,12 @@ const DeckSelectAdvTable = ({
       label: "NONE",
     },
   ];
+
+  const allDecksClans = Object.values(decks).reduce((acc, deck) => {
+    const clan = getClan(deck[CRYPT]);
+    if (clan && !acc.includes(clan)) acc.push(clan);
+    return acc;
+  }, []);
 
   allDecksClans.toSorted().forEach((i) => {
     clanOptions.push({
@@ -85,39 +82,24 @@ const DeckSelectAdvTable = ({
     return normalizedDeckName.includes(normalizedNameFilter);
   };
 
-  let filtered = Object.values(decks);
+  const filtered = Object.values(decks).filter((deck) => {
+    if (invFilter !== ANY && deck[INVENTORY_TYPE] !== invFilter) return false;
 
-  if (invFilter !== ANY) {
-    filtered = filtered.filter((deck) => deck[INVENTORY_TYPE] === invFilter);
-  }
+    const clan = getClan(deck[CRYPT]) || "";
+    if (clanFilter !== ANY && clan.toLowerCase() !== clanFilter) return false;
 
-  if (clanFilter !== ANY) {
-    filtered = filtered.filter((deck) => {
-      const clan = getClan(deck[CRYPT]) || "";
-      return clan.toLowerCase() === clanFilter;
-    });
-  }
+    if (
+      nameFilter.length > 2 &&
+      !(isDeckNameMatch(deck, nameFilter) || isCardInDeck(deck, nameFilter))
+    )
+      return false;
 
-  if (nameFilter.length > 2) {
-    filtered = filtered.filter((deck) => {
-      if (isDeckNameMatch(deck, nameFilter)) return true;
-      return isCardInDeck(deck, nameFilter);
-    });
-  }
+    if (tagsFilter.some((tag) => !deck[TAGS].includes(tag))) return false;
 
-  if (tagsFilter) {
-    filtered = filtered.filter((deck) => {
-      let counter = 0;
-      tagsFilter.forEach((tag) => {
-        if (deck[TAGS].includes(tag)) counter += 1;
-      });
-      return counter >= tagsFilter.length;
-    });
-  }
+    if (!revFilter && deck[MASTER]) return false;
 
-  if (!revFilter) {
-    filtered = filtered.filter((deck) => !deck[MASTER]);
-  }
+    return true;
+  });
 
   const sortedDecks = decksSort(filtered, sortMethod);
 
