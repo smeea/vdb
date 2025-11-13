@@ -1,9 +1,11 @@
 import { useState } from "react";
+import paths from "@/assets/data/paths.json";
 import {
+  Button,
   DeckSelectAdvTableHeader,
   DeckSelectAdvTableRow,
   ResultClanImage,
-  Button,
+  ResultPathImage,
 } from "@/components";
 import { ANY, CRYPT, DECKID, INVENTORY_TYPE, LIBRARY, MASTER, NAME, TAGS } from "@/constants";
 import { decksSort, getClan } from "@/utils";
@@ -49,7 +51,7 @@ const DeckSelectAdvTable = ({
   allDecksClans.toSorted().forEach((i) => {
     clanOptions.push({
       value: i.toLowerCase(),
-      label: <ResultClanImage value={i} />,
+      label: paths.includes(i) ? <ResultPathImage value={i} /> : <ResultClanImage value={i} />,
     });
   });
 

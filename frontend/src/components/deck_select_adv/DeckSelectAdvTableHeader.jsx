@@ -75,6 +75,10 @@ const DeckSelectAdvTableHeader = ({
     };
   });
 
+  const handleChangeInvFilter = (e) => setInvFilter(e.value);
+  const handleChangeClanFilter = (e) => setClanFilter(e.value);
+  const handleChangeRevFilter = () => setRevFilter(!revFilter);
+
   return (
     <thead>
       <tr>
@@ -92,7 +96,7 @@ const DeckSelectAdvTableHeader = ({
           <th className="min-w-[52px] py-1 max-sm:hidden">
             <Select
               options={invOptions}
-              onChange={(e) => setInvFilter(e.value)}
+              onChange={handleChangeInvFilter}
               value={invOptions.find((obj) => obj.value === invFilter)}
               noDropdown
             />
@@ -101,7 +105,7 @@ const DeckSelectAdvTableHeader = ({
         <th className="min-w-[60px] p-1 max-sm:hidden sm:min-w-[70px]">
           <Select
             options={clanOptions}
-            onChange={(e) => setClanFilter(e.value)}
+            onChange={handleChangeClanFilter}
             value={clanOptions.find((obj) => obj.value === clanFilter.toLowerCase())}
             isSearchable={!isMobile}
             noDropdown
@@ -134,7 +138,7 @@ const DeckSelectAdvTableHeader = ({
               name="revFilter"
               label={<div className="whitespace-nowrap">{isMobile ? "R" : "Show Revisions"}</div>}
               checked={revFilter}
-              onChange={() => setRevFilter(!revFilter)}
+              onChange={handleChangeRevFilter}
             />
           </div>
         </th>
