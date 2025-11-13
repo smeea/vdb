@@ -308,6 +308,7 @@ G00016|Retainer doing damage:
   102107|Vengeful Spirit: ''
   102191|Wolf Companion: ''
   102210|Zombie: ''
+  102317|Dread Mastiff: ''
 G00017|Environmental damage:
   100153|Bestial Vengeance: ''
   100301|Carrion Crows: ''
@@ -515,6 +516,7 @@ G00027|Ability usable in torpor:
   201705|Nikolaus Vermeulen: ''
   201706|Silvian Popescu: ''
   201716|Yewon Ong: ''
+  201734|Abderrahim, Death's Hand: ''
 G00028|Cards holding cards:
   100343|Chiram's Hold: ''
   100375|Cold Amber's Hold: ''
@@ -1989,3 +1991,10 @@ G00136|Lock a minion during block attempt:
   200049|Alexandra: ''
   200754|Karif al Numair: ''
   200856|Lord Tremere: ''
+G00137|Prohibits additional strikes:
+  100187|Blight: '[NEC]'
+  100512|Decompose: ''
+  101636|Rigor Mortis: ''
+  101889|Stutter-Step: '[CEL]'
+  101923|Sympathetic Agony: '[CHI][FOR]'
+  101939|Target Head: ''

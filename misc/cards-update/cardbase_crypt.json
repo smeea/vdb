@@ -263,7 +263,14 @@
         "name":"Abderrahim, Death's Hand",
         "new":false,
         "path":"Death and the Soul",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The ability can be used when in torpor.",
+                "refs":{
+                    "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
+                }
+            }
+        ],
         "sect":"Sabbat",
         "set":{
             "SV5":{
@@ -1820,9 +1827,12 @@
         "set":{
             "LoB":{
                 "U":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Independent: During your unlock phase, you may burn a Caitiff you control to give Al-Muntaquim +1 bleed for the remainder of the game. Al-Muntaquim unlocks whenever a Gehenna card is played. He cannot use cards that require Celerity [cel]. Scarce.",
+        "text":"Independent: During your unlock phase, you can burn a Caitiff you control to give Al-Muntaquim +1 bleed until the end of the game. After a Gehenna event is played, he can unlock. He cannot use cards requiring Celerity [cel]. Scarce.",
         "title":"",
         "twd":3
     },
@@ -1877,9 +1887,12 @@
             },
             "HttB":{
                 "U":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Sabbat: If you control four or more True Brujah, burn Al-Muntathir. He cannot use cards requiring Celerity [cel]. Black Hand. Scarce.",
+        "text":"Sabbat: If you control 4 or more True Brujah, burn Al-Muntathir. He cannot use cards requiring Celerity [cel]. Black Hand. Scarce.",
         "title":"",
         "twd":16
     },
@@ -27841,9 +27854,12 @@
         "set":{
             "LoB":{
                 "U":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Independent: During your discard phase, Ibn Khaldun may burn a blood to unlock. He cannot use cards that require Celerity [cel]. Scarce.",
+        "text":"Independent: During your discard phase, Ibn Khaldun can burn 1 blood to unlock. He cannot use cards requiring Celerity [cel]. Scarce.",
         "title":"",
         "twd":0
     },
@@ -35264,9 +35280,12 @@
         "set":{
             "BL":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Independent: Once each turn, when blocked, Krassimir can unlock and cancel the current action and combat (do not lock the blocking minion). Krassimir cannot use cards that require Celerity [cel]. Scarce.",
+        "text":"Independent: Once each turn, if Krassimir is blocked, he can unlock and end the action before block resolution. He cannot use cards requiring Celerity [cel]. Scarce.",
         "title":"",
         "twd":2
     },
@@ -39753,6 +39772,9 @@
             },
             "HttB":{
                 "U":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "text":"Independent. 1 vote (titled): During an action, Lydia can burn 1 blood to get +1 stealth. She cannot use cards requiring Celerity [cel]. Scarce.",
@@ -44178,9 +44200,12 @@
             },
             "HttB":{
                 "U":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Independent: As Mikael chooses a gun strike, he can use the first aim card found in your library (shuffle afterward). He cannot use cards requiring Celerity [cel]. Scarce. +1 hand size.",
+        "text":"Independent: As Mikael chooses a gun strike, he can use the first aim card you find in your library (shuffle afterward). He cannot use cards requiring Celerity [cel]. Scarce. +1 hand size.",
         "title":"",
         "twd":0
     },
@@ -46879,9 +46904,12 @@
         "set":{
             "LoB":{
                 "U":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Independent: Nehemiah has 2 votes (titled). During your unlock phase, you may move up to two cards from your hand to the bottom of your library (draw afterward). Nehemiah cannot use cards that require Celerity [cel]. Scarce.",
+        "text":"Independent. 2 votes (titled): During your unlock phase, you can move up to two cards from your hand to the bottom of your library (draw up afterward). Nehemiah cannot use cards requiring Celerity [cel]. Scarce.",
         "title":"2 votes",
         "twd":9
     },
@@ -47960,9 +47988,12 @@
         "set":{
             "BL":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Independent: Once during your minion phase, Nu can burn a blood to unlock. Nu cannot use cards that require Celerity [cel]. Scarce.",
+        "text":"Independent: During your minion phase, Nu can burn 1 blood to unlock. Nu cannot use cards requiring Celerity [cel]. Scarce.",
         "title":"",
         "twd":1
     },
@@ -57211,6 +57242,9 @@
             },
             "HttB":{
                 "U":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "text":"Independent: Once each turn, Shalmath can unlock. He cannot use cards requiring Celerity [cel]. Scarce.",
@@ -59652,9 +59686,12 @@
         "set":{
             "BL":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Independent: Synesios has 2 votes (titled). You may pay a pool when you play a Master: Out-of-Turn card to gain an extra master phase action in your next master phase. Synesios cannot use cards that require Celerity [cel]. Scarce.",
+        "text":"Independent. 2 votes (titled): You can burn 1 pool as you play an out-of-turn master card to get +1 master phase action at the start of your next master phase. Synesios cannot use cards requiring Celerity [cel]. Scarce.",
         "title":"2 votes",
         "twd":8
     },

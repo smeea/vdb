@@ -2595,8 +2595,6 @@
   - '[THN] Canceling a maneuver provided by a strike does not cancel the strike (eg. {Aid from Bats}, {.44 Magnum}). The chosen
     strike cannot be changed. [LSJ 20050228-3] [ANK 20230111]'
   - '[THN] Canceling a maneuver that provides a press does cancel the press. [ANK 20230114]'
-  - The opponent cannot play a card that provides an additional strike, even if just to benefit from another effect (eg. {Acrobatics}).
-    [LSJ 20011214-5]
 101637|Riposte:
   - '[cel] [CEL] The damage is only dealt if the strike was resolved at close range. [LSJ 19970915]'
   - '[cel] [CEL] If the strike is dodged, no damage is done. [LSJ 19980526] [RTR 20041202]'
@@ -4811,3 +4809,6 @@ G00135|Allocate points for pool damage:
   - Can allocate more points than a Methuselah has pool. [LSJ 20020819]
 G00136|Lock a minion during block attempt:
   - If a minion who is attempting to block is locked, then that block will fail. [TOM 19951007] [LSJ 19991025]
+G00137|Prohibits additional strikes:
+  - "The affected minion cannot play a card that provides an additional strike, even if just to benefit from another effect\
+    \ (e.g.\n{Acrobatics}). [LSJ 20011214-5]"

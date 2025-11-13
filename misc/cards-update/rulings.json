@@ -13818,12 +13818,6 @@
             }
         },
         {
-            "text":"The opponent cannot play a card that provides an additional strike, even if just to benefit from another effect (eg. {Acrobatics}).",
-            "refs":{
-                "LSJ 20011214-5":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gI44SEC82Yk/m/Kgipu7IXwWkJ"
-            }
-        },
-        {
             "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
             "refs":{
                 "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
@@ -13834,6 +13828,12 @@
             "text":"[thn],[THN] The optional press can only be used during the current round.",
             "refs":{
                 "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
+            }
+        },
+        {
+            "text":"The affected minion cannot play a card that provides an additional strike, even if just to benefit from another effect (e.g.\n{Acrobatics}).",
+            "refs":{
+                "LSJ 20011214-5":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gI44SEC82Yk/m/Kgipu7IXwWkJ"
             }
         }
     ],
@@ -16171,6 +16171,12 @@
             "refs":{
                 "ANK 20180913-1":"https://www.vekn.net/forum/rules-questions/77003-stutter-step-question#90610"
             }
+        },
+        {
+            "text":"[CEL] The affected minion cannot play a card that provides an additional strike, even if just to benefit from another effect (e.g.\n{Acrobatics}).",
+            "refs":{
+                "LSJ 20011214-5":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gI44SEC82Yk/m/Kgipu7IXwWkJ"
+            }
         }
     ],
     "101892":[
@@ -16871,6 +16877,12 @@
             "text":"If another effect was already setting that round's range (e.g. {Neutral Guard}), that effect has priority.",
             "refs":{
                 "PIB 20120214":"https://www.vekn.net/forum/rules-questions/22906-re-set-the-range?start=12#22999"
+            }
+        },
+        {
+            "text":"The affected minion cannot play a card that provides an additional strike, even if just to benefit from another effect (e.g.\n{Acrobatics}).",
+            "refs":{
+                "LSJ 20011214-5":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gI44SEC82Yk/m/Kgipu7IXwWkJ"
             }
         }
     ],
@@ -24941,6 +24953,14 @@
             }
         }
     ],
+    "G00137":[
+        {
+            "text":"The affected minion cannot play a card that provides an additional strike, even if just to benefit from another effect (e.g.\n{Acrobatics}).",
+            "refs":{
+                "LSJ 20011214-5":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gI44SEC82Yk/m/Kgipu7IXwWkJ"
+            }
+        }
+    ],
     "101519":[
         {
             "text":"If one is ousted while having temporary control of a minion, the minion is removed from the game.  (Reversal of Previous Rulings)",
@@ -27454,6 +27474,15 @@
             }
         }
     ],
+    "102317":[
+        {
+            "text":"The damage is environmental, the retainer is the damage source. Immunity to retainer or retainer type works against it.",
+            "refs":{
+                "ANK 20180612":"https://www.vekn.net/forum/rules-questions/76717-retainers-damage-and-disciplines#88129",
+                "ANK 20211127":"https://www.vekn.net/forum/rules-questions/76687-retainers-inflicting-damage-environmental?start=6#104017"
+            }
+        }
+    ],
     "100301":[
         {
             "text":"Damage is inflicted even against a dodge. A \"strike: combat ends\" ends combat before damage is applied, as will a combattant going to torpor during first strike.",
@@ -28727,6 +28756,14 @@
             "text":"The ability can be used while locked, only once per referendum.",
             "refs":{
                 "ANK 20220705":"https://www.vekn.net/forum/rules-questions/79895-question-regarding-using-a-minion-card-text-ability-when-locked#105630"
+            }
+        }
+    ],
+    "201734":[
+        {
+            "text":"The ability can be used when in torpor.",
+            "refs":{
+                "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
             }
         }
     ],
@@ -36134,6 +36171,30 @@
             "text":"The additional strike is mandatory.",
             "refs":{
                 "PIB 20121028":"https://www.vekn.net/forum/rules-questions/39816-ec-2012-can-you-answer-these?start=6#39843"
+            }
+        }
+    ],
+    "100187":[
+        {
+            "text":"[NEC] The affected minion cannot play a card that provides an additional strike, even if just to benefit from another effect (e.g.\n{Acrobatics}).",
+            "refs":{
+                "LSJ 20011214-5":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gI44SEC82Yk/m/Kgipu7IXwWkJ"
+            }
+        }
+    ],
+    "100512":[
+        {
+            "text":"The affected minion cannot play a card that provides an additional strike, even if just to benefit from another effect (e.g.\n{Acrobatics}).",
+            "refs":{
+                "LSJ 20011214-5":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gI44SEC82Yk/m/Kgipu7IXwWkJ"
+            }
+        }
+    ],
+    "101923":[
+        {
+            "text":"[CHI][FOR] The affected minion cannot play a card that provides an additional strike, even if just to benefit from another effect (e.g.\n{Acrobatics}).",
+            "refs":{
+                "LSJ 20011214-5":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gI44SEC82Yk/m/Kgipu7IXwWkJ"
             }
         }
     ]

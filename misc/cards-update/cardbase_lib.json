@@ -2424,9 +2424,12 @@
             },
             "HttB":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Unique.\nThis vampire can burn 1 blood to play a card requiring basic Temporis [tem] from your hand. This equipment can be used only once each turn.",
+        "text":"Unique.\nThis vampire can burn 1 blood to play a card requiring Temporis [tem] as if they had basic Temporis. This equipment can be used only once each turn.",
         "twd":2,
         "type":"Equipment"
     },
@@ -9049,7 +9052,14 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"[NEC] The affected minion cannot play a card that provides an additional strike, even if just to benefit from another effect (e.g.\n{Acrobatics}).",
+                "refs":{
+                    "LSJ 20011214-5":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gI44SEC82Yk/m/Kgipu7IXwWkJ"
+                }
+            }
+        ],
         "set":{
             "TU":{
                 "C":true
@@ -16195,9 +16205,12 @@
             },
             "HttB":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"[pre] (D) Bleed with +2 bleed.\n[tem] (D) Bleed. Minions without Temporis [tem] cannot block, and this vampire cannot play other cards requiring any Discipline this action.\n[TEM] As [tem] above, and unlock this vampire.",
+        "text":"[pre] (D) Bleed with +2 bleed.\n[tem] (D) Bleed. Minions without Temporis [tem] cannot block this action and this vampire cannot play other cards requiring 1 or more Disciplines this action.\n[TEM] As [tem] above, and unlock this vampire.",
         "twd":0,
         "type":"Action"
     },
@@ -17198,9 +17211,12 @@
             },
             "LoB":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"+1 stealth action.\n[dom] (D) Burn 1 pool from a Methuselah who is contesting a card with you.\n[tem] Exchange any card in your hand for any non-master, non-unique library card in your ash heap.\n[TEM] (D) Choose a vampire card another Methuselah is contesting with you. That Methuselah yields that copy. If there are no other Methuselahs contesting the vampire, place your copy of the vampire face up in your controlled region, unlocked.",
+        "text":"+1 stealth action.\n[dom] (D) Burn 1 pool from a Methuselah who is contesting a card with you.\n[tem] Exchange a card from your hand for a non-unique non-master library card in your ash heap.\n[TEM] (D) Choose a Methuselah who is contesting a vampire with you. That Methuselah yields their copy. If no other Methuselah is contesting the vampire, turn the vampire face up (unlocked).",
         "twd":1,
         "type":"Action"
     },
@@ -17487,9 +17503,12 @@
             },
             "LoB":{
                 "C":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"+1 stealth action.\n[obf] Move the top card from your crypt to your uncontrolled region.\n[tem] Move 2 blood from the blood bank to a younger vampire in your uncontrolled region.\n[TEM] Put this card on this acting vampire. Beginning with your next turn, once during each of your minion phases, this vampire can burn 1 blood to unlock.",
+        "text":"+1 stealth action.\n[obf] Draw 1 card from your crypt.\n[tem] Add 2 blood to a younger vampire in your uncontrolled region.\n[TEM] Put this card on this vampire, locked. During your minion phase, this vampire can lock this card and burn 1 blood to unlock.",
         "twd":30,
         "type":"Action"
     },
@@ -23712,7 +23731,14 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The affected minion cannot play a card that provides an additional strike, even if just to benefit from another effect (e.g.\n{Acrobatics}).",
+                "refs":{
+                    "LSJ 20011214-5":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gI44SEC82Yk/m/Kgipu7IXwWkJ"
+                }
+            }
+        ],
         "set":{
             "HttBR":{
                 "A":"2"
@@ -26773,9 +26799,12 @@
             },
             "LoB":{
                 "C":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"[obf] +1 stealth.\n[tem] If this action is blocked, all damage done to vampires in the resulting combat is aggravated.\n[TEM] Only usable when an action is successful. Usable after resolution. Unlock this acting vampire. A vampire can play only one Domain of Evernight at superior each turn.",
+        "text":"[obf] +1 stealth.\n[tem] If this action is blocked, all damage inflicted on vampires during the resulting combat is aggravated.\n[TEM] Only usable after resolution of a successful action. Unlock this vampire. A vampire can play only one Domain of Evernight at superior each turn.",
         "twd":103,
         "type":"Action Modifier"
     },
@@ -27596,7 +27625,15 @@
         "path":"Caine",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The damage is environmental, the retainer is the damage source. Immunity to retainer or retainer type works against it.",
+                "refs":{
+                    "ANK 20180612":"https://www.vekn.net/forum/rules-questions/76717-retainers-damage-and-disciplines#88129",
+                    "ANK 20211127":"https://www.vekn.net/forum/rules-questions/76687-retainers-inflicting-damage-environmental?start=6#104017"
+                }
+            }
+        ],
         "set":{
             "SV5":{
                 "PCaine":"2"
@@ -37905,7 +37942,7 @@
                 "DTC":true
             }
         },
-        "text":"+1 stealth action. A Methuselah can have only one Frozen Object.\n[ser] (D) Look at any Methuselah's hand and discard all equipment cards from it.\n[tem] Put this card on this vampire. If this vampire blocks a directed action, you can burn this card to inflict 2 unpreventable environmental damage on the acting minion before block resolution.\n[TEM] Put this card in play. You can burn this card after a minion successfully bleeds you to inflict 2 unpreventable environmental damage on the bleeding minion.",
+        "text":"+1 stealth action. A Methuselah can have only one Frozen Object.\n[ser] (D) Look at a Methuselah's hand and discard all equipment cards from it.\n[tem] Put this card on this vampire. If this vampire blocks a directed action, you can burn this card to inflict 2 unpreventable environmental damage on the acting minion before block resolution.\n[TEM] Put this card in play. You can burn this card after a minion successfully bleeds you to inflict 2 unpreventable environmental damage on them.",
         "twd":1,
         "type":"Action"
     },
@@ -41874,9 +41911,12 @@
         "set":{
             "LoB":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Only usable during a referendum.\n[dom] [ACTION MODIFIER] Requires a vampire with capacity above 4. This vampire gains 2 votes.\n[tem] [ACTION MODIFIER][REACTION] Cancel a reaction card as it is played by a younger vampire who does not have Temporis [tem] (no cost is paid).\n[TEM] [ACTION MODIFIER][REACTION] Multiplier. Only usable by a ready unlocked vampire other than the acting vampire. The acting vampire's votes are doubled when the votes are tallied. Only one multiplier can be played on a vampire each action.",
+        "text":"Only usable during the polling step of a political action.\n[dom] [ACTION MODIFIER] Requires a vampire with capacity 5 or more. This vampire gets +2 votes.\n[tem] [ACTION MODIFIER][REACTION] Cancel a reaction card as it is played by a younger vampire without Temporis [tem], and its cost is not paid.\n[TEM] [ACTION MODIFIER][REACTION] Multiplier. Only usable by a ready unlocked vampire other than the acting vampire. The acting vampire's votes are doubled when tallying results. Only one multiplier can be played on a vampire each action.",
         "twd":5,
         "type":"Action Modifier/Reaction"
     },
@@ -44768,9 +44808,12 @@
         "set":{
             "LoB":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"+1 stealth action.\n[pot] Draw three cards. Discard afterward.\n[tem] Draw four cards then put four cards from your hand on top of your library in any order and unlock this vampire.\n[TEM] Put this card on this acting vampire. During your unlock phase, this vampire may burn 2 blood to add a counter to this card. While this vampire is ready, you get +X hand size, where X is the number of counters on this card.",
+        "text":"+1 stealth action.\n[pot] Draw 3 cards (discard down afterward).\n[tem] Draw 4 cards without discarding, then move four cards from your hand to the top of your library in any order. Unlock this vampire.\n[TEM] Put this card on this vampire. During your unlock phase, this vampire can burn 2 blood to add 1 counter to this card. While this vampire is ready, you get +1 hand size for each counter on this card.",
         "twd":11,
         "type":"Action"
     },
@@ -47478,9 +47521,12 @@
             },
             "LoB":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Only usable by a vampire who successfully blocks.\n[pre] This blocking vampire can end combat as a strike during the resulting combat. If he or she does so and the acting minion is an ally or a younger vampire, this blocking vampire unlocks.\n[tem] This blocking minion sets the range for the first round of the resulting combat. Skip the determine range step for that round.\n[TEM] The acting minion doesn't unlock during his or her next unlock phase.",
+        "text":"Only usable if this vampire blocks, before block resolution.\n[pre] During the resulting combat, this vampire can strike: combat ends. If they do so and the acting minion is an ally or younger vampire, unlock this blocking vampire before combat ends.\n[tem] This blocking vampire sets the range for the first round of the resulting combat.\n[TEM] The acting minion does not unlock during their next unlock phase.",
         "twd":0,
         "type":"Reaction"
     },
@@ -50439,7 +50485,7 @@
                 "DTC":true
             }
         },
-        "text":"+1 stealth action.\n[ser] (D) Burn a retainer or a non-unique equipment.\n[tem] (D) Burn an ally, retainer or non-unique equipment.\n[TEM] Move a non-unique equipment card from any Methuselah's ash heap to this vampire. If the equipment card comes from your ash heap, pay half the cost rounded down, otherwise pay no cost.",
+        "text":"+1 stealth action.\n[ser] (D) Burn a retainer or non-unique equipment.\n[tem] (D) Burn an ally, retainer or non-unique equipment.\n[TEM] Move a non-unique equipment card from an ash heap to this vampire. If the equipment card is moved from your ash heap, pay half the cost rounded down; otherwise, pay no cost.",
         "twd":2,
         "type":"Action"
     },
@@ -50947,9 +50993,12 @@
             },
             "LoB":{
                 "C":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Only usable before range is determined.\n[pot] This vampire gets +2 strength this round.\n[tem] The opposing minion cannot maneuver this round.\n[TEM] The opposing minion cannot strike during the initial strike phase this round (other strike resolution effects are not affected).",
+        "text":"Only usable before range is determined.\n[pot] This round, this vampire gets +2 strength.\n[tem] This round, the opposing minion cannot maneuver.\n[TEM] This round, the opposing minion cannot strike during the initial strike step (other strike resolution effects are not affected).",
         "twd":3,
         "type":"Combat"
     },
@@ -63878,9 +63927,12 @@
             },
             "HttB":{
                 "C":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"[obf] Strike: dodge.\n[tem] Maneuver, or strike: dodge, with 1 optional maneuver.\n[TEM] Only usable before range is determined. Inflict 2 damage on the opposing minion. A vampire can play only one Outside the Hourglass at superior each round.",
+        "text":"[obf] Strike: dodge.\n[tem] Maneuver, or strike: dodge, with 1 optional maneuver.\n[TEM] Only usable before range is determined. This vampire inflicts 2 damage on the opposing minion. A vampire can play only one Outside the Hourglass at superior each round.",
         "twd":26,
         "type":"Combat"
     },
@@ -65275,9 +65327,12 @@
         "set":{
             "LoB":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"+1 stealth action. Path.\nPut this card on the acting True Brujah and unlock him or her. Frenzy cards cannot be played on this True Brujah. While this True Brujah is acting, minions cannot play reaction cards that require Presence [pre]. Minions opposing this True Brujah in combat cannot play cards that require Presence. A vampire can have only one path.",
+        "text":"+1 stealth action. Path.\nPut this card on this True Brujah and unlock them. Frenzy cards cannot be used on this True Brujah. While this True Brujah is acting or in combat, minions controlled by other Methuselahs cannot play cards requiring Presence [pre]. A vampire can follow only one path.",
         "twd":7,
         "type":"Action"
     },
@@ -66856,7 +66911,7 @@
                 "DTC":true
             }
         },
-        "text":"[obt] Burn 1 blood to get +1 stealth.\n[tem] +1 stealth.\n[TEM] Usable after combat. After any combat this action, this vampire can burn 1 blood to start a new combat with the opposing minion (if both combatants are still ready).",
+        "text":"[obt] Burn 1 blood to get +1 stealth.\n[tem] +1 stealth.\n[TEM] Usable after combat. After each combat this action, this vampire can burn 1 blood to start a new combat with the opposing minion (if both combatants are still ready).",
         "twd":10,
         "type":"Action Modifier"
     },
@@ -69450,6 +69505,33 @@
         },
         "text":"Requires a Camarilla vampire. Title.\nIf this referendum is successful, put this card on the acting vampire to represent the unique Camarilla title of Prince of Washington, D.C.",
         "twd":11,
+        "type":"Political Action"
+    },
+    "102307":{
+        "aka":"",
+        "artist":[
+            "Noora Hirvonen"
+        ],
+        "ascii":"Praxis Seizure: York",
+        "banned":"",
+        "blood":0,
+        "burn":"",
+        "clan":"",
+        "conviction":0,
+        "discipline":"",
+        "id":102307,
+        "name":"Praxis Seizure: York",
+        "path":"",
+        "pool":0,
+        "requirement":"",
+        "rulings":[],
+        "set":{
+            "Promo":{
+                "2025-06-20":true
+            }
+        },
+        "text":"Title. Requires a Camarilla vampire.\nSuccessful referendum means this card is put on this vampire to represent the unique Camarilla title of Prince of York.",
+        "twd":0,
         "type":"Political Action"
     },
     "101473":{
@@ -72504,9 +72586,12 @@
         "set":{
             "LoB":{
                 "C":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"[aus] [REACTION] +1 intercept.\n[tem] [REACTION] Reduce a bleed against you by 2.\n[aus][tem] [ACTION MODIFIER][REACTION] Only usable during a referendum. Force a younger vampire to abstain (this can cancel that vampire's votes and ballots).\n[AUS][TEM] [ACTION MODIFIER] Only usable during a bleed action. +2 bleed that does not count against the limit.",
+        "text":"[aus] [REACTION] +1 intercept.\n[tem] [REACTION] Reduce a bleed against you by 2.\n[aus][tem] [ACTION MODIFIER][REACTION] Only usable during the polling step of a political action. Force a younger vampire to abstain (this can cancel their votes and ballots).\n[AUS][TEM] [ACTION MODIFIER] Only usable during a bleed action. +2 bleed, not counting against the limit.",
         "twd":11,
         "type":"Action Modifier/Reaction"
     },
@@ -74388,9 +74473,12 @@
         "set":{
             "LoB":{
                 "C":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Only usable when the action is announced.\n[pre] Choose an ally. He or she cannot block this action. Only one Recurring Contemplation may be played each turn.\n[tem] As [pre] above, but choose an ally or younger vampire.\n[TEM] As [tem] above, and burn 1 blood to lock the chosen minion.",
+        "text":"Only usable as the action is announced. Only one Recurring Contemplation can be played each turn.\n[pre] Choose an ally. The chosen minion cannot block this action.\n[tem] As [pre] above, but choose an ally or younger vampire.\n[TEM] As [tem] above, and burn 1 blood to lock the chosen minion.",
         "twd":12,
         "type":"Action Modifier"
     },
@@ -77077,9 +77165,12 @@
             },
             "LoB":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"[pre] Reduce a bleed against you by 1.\n[tem] Cancel an action card as it is played (the acting minion is not locked).\n[TEM] Usable by a ready, unlocked vampire even though there is no action. Cancel a non-out-of-turn master card as it is played during any other Methuselah's master phase (no cost is paid). The Methuselah who played that card gains another master phase action.",
+        "text":"[pre] Reduce a bleed against you by 1.\n[tem] Cancel an action card as it is played (the acting minion does not lock).\n[TEM] Usable even though there is no action. Cancel a non-out-of-turn master card as it is played by another Methuselah, and its cost is not paid. That Methuselah gets +1 master phase action.",
         "twd":10,
         "type":"Reaction"
     },
@@ -77192,12 +77283,6 @@
                 }
             },
             {
-                "text":"The opponent cannot play a card that provides an additional strike, even if just to benefit from another effect (eg. {Acrobatics}).",
-                "refs":{
-                    "LSJ 20011214-5":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gI44SEC82Yk/m/Kgipu7IXwWkJ"
-                }
-            },
-            {
                 "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
                 "refs":{
                     "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
@@ -77208,6 +77293,12 @@
                 "text":"[thn],[THN] The optional press can only be used during the current round.",
                 "refs":{
                     "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
+                }
+            },
+            {
+                "text":"The affected minion cannot play a card that provides an additional strike, even if just to benefit from another effect (e.g.\n{Acrobatics}).",
+                "refs":{
+                    "LSJ 20011214-5":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gI44SEC82Yk/m/Kgipu7IXwWkJ"
                 }
             }
         ],
@@ -89587,6 +89678,12 @@
                 "refs":{
                     "ANK 20180913-1":"https://www.vekn.net/forum/rules-questions/77003-stutter-step-question#90610"
                 }
+            },
+            {
+                "text":"[CEL] The affected minion cannot play a card that provides an additional strike, even if just to benefit from another effect (e.g.\n{Acrobatics}).",
+                "refs":{
+                    "LSJ 20011214-5":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gI44SEC82Yk/m/Kgipu7IXwWkJ"
+                }
             }
         ],
         "set":{
@@ -90121,9 +90218,12 @@
             },
             "Anthology I":{
                 "":"3"
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"[tem] Search your library (shuffle afterward) and/or ash heap for an ally, retainer or equipment whose cost is X or less and put that card in play, on this vampire and with life equal to its starting life if applicable.\n[TEM] Search your crypt (shuffle afterward) and/or ash heap for a non-scarce vampire with capacity X or less and put that vampire in play (with no blood).",
+        "text":"[tem] Search your library (shuffle afterward) and/or ash heap for an ally, retainer or equipment card costing X or fewer blood or pool and put that card in play, on this vampire and with life equal to its starting life if applicable.\n[TEM] Search your crypt (shuffle afterward) and/or ash heap for a non-scarce vampire card with capacity X or less and put that vampire in play (with no blood).",
         "twd":28,
         "type":"Action"
     },
@@ -91375,7 +91475,14 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"[CHI][FOR] The affected minion cannot play a card that provides an additional strike, even if just to benefit from another effect (e.g.\n{Acrobatics}).",
+                "refs":{
+                    "LSJ 20011214-5":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gI44SEC82Yk/m/Kgipu7IXwWkJ"
+                }
+            }
+        ],
         "set":{
             "LotN":{
                 "R":true
@@ -91419,9 +91526,12 @@
             },
             "LoB":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Unique master.\nPut this card in play. Your hand size is one card larger. During your unlock phase, a True Brujah you control gains 1 blood from the blood bank. Any vampire can call a referendum to burn this card as a +1 stealth political action; in that referendum, you get one additional vote.",
+        "text":"Unique.\nPut this card in play. You get +1 hand size. During your unlock phase, a True Brujah you control can gain 1 blood. Vampires can call a referendum to burn this card as a +1 stealth political action; during that referendum, you get +1 vote.",
         "twd":33,
         "type":"Master"
     },
@@ -92056,9 +92166,12 @@
             },
             "Promo":{
                 "2019-06-14":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Only usable if a minion attempts to block.\n[pot] Cancel the action and unlock this vampire. (The action is not blocked. Do not lock the blocking minion.)\n[tem] As [pot] above, and take the action card, if any, back in your hand (discard down afterward).\n[TEM] As [tem] above, and this vampire gets +1 stealth on their next action this turn.",
+        "text":"Only usable if a minion attempts to block.\n[pot] Cancel the action and unlock this vampire. (The action is not blocked. Do not lock the blocking minion.)\n[tem] As [pot] above, and if an action card was played, take it back in your hand (discard down afterward).\n[TEM] As [tem] above, and this vampire gets +1 stealth during their next action this turn.",
         "twd":26,
         "type":"Action Modifier"
     },
@@ -92213,6 +92326,12 @@
                 "text":"If another effect was already setting that round's range (e.g. {Neutral Guard}), that effect has priority.",
                 "refs":{
                     "PIB 20120214":"https://www.vekn.net/forum/rules-questions/22906-re-set-the-range?start=12#22999"
+                }
+            },
+            {
+                "text":"The affected minion cannot play a card that provides an additional strike, even if just to benefit from another effect (e.g.\n{Acrobatics}).",
+                "refs":{
+                    "LSJ 20011214-5":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gI44SEC82Yk/m/Kgipu7IXwWkJ"
                 }
             }
         ],
@@ -92415,9 +92534,12 @@
             },
             "CE":{
                 "R":true
+            },
+            "Promo":{
+                "2025-06-20":true
             }
         },
-        "text":"Unique mortal with 1 life.\nThe minion with this retainer gets +1 bleed.",
+        "text":"Unique mortal with 1 life.\nThe employer gets +1 bleed.",
         "twd":216,
         "type":"Retainer"
     },
@@ -99576,9 +99698,12 @@
             },
             "HttB":{
                 "C":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"+3 stealth action.\n(D) Look at each Methuselah's hand and discard 1 card from among all those hands (even from your own hand).",
+        "text":"+3 stealth action.\n(D) Look at each Methuselah's hand and discard a card of your choice from among all those hands (including your own hand).",
         "twd":17,
         "type":"Action"
     },
