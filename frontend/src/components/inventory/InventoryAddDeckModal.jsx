@@ -36,29 +36,16 @@ const InventoryAddDeckModal = ({ handleClose }) => {
     value: tag,
   }));
 
-  let filtered = Object.values(decks);
+  const filtered = Object.values(decks).filter((deck) => {
+    if (nameFilter && deck[NAME].toLowerCase().indexOf(nameFilter.toLowerCase()) === -1)
+      return false;
 
-  if (nameFilter) {
-    filtered = filtered.filter((deck) => {
-      return deck[NAME].toLowerCase().indexOf(nameFilter.toLowerCase()) >= 0;
-    });
-  }
+    if (tagsFilter.some((tag) => !deck[TAGS].includes(tag))) return false;
 
-  if (tagsFilter) {
-    filtered = filtered.filter((deck) => {
-      let counter = 0;
-      tagsFilter.forEach((tag) => {
-        if (deck[TAGS].includes(tag)) counter += 1;
-      });
-      return counter >= tagsFilter.length;
-    });
-  }
+    if (!revFilter && deck[MASTER]) return false;
 
-  if (!revFilter) {
-    filtered = filtered.filter((deck) => {
-      return !deck[MASTER];
-    });
-  }
+    return true;
+  });
 
   const sortedDecks = decksSort(filtered, sortMethod);
 
