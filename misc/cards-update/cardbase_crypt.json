@@ -870,7 +870,14 @@
         "name":"Aelswith, The Irresistible",
         "new":false,
         "path":"Cathari",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The passive ability applies even if the vampire is in torpor.",
+                "refs":{
+                    "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
+                }
+            }
+        ],
         "sect":"Sabbat",
         "set":{
             "SV5":{
@@ -2415,8 +2422,9 @@
                 }
             },
             {
-                "text":"If a minion who is attempting to block is locked, then that block will fail.",
+                "text":"If a minion who is attempting to block is locked, then that block will fail, unless they woke earlier during the action.",
                 "refs":{
+                    "LSJ 20010702":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jvIS3SDulqU/m/V8wtgvqoFOAJ",
                     "TOM 19951007":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HUipqz0LFSw/m/pY6uEa3f8-gJ",
                     "LSJ 19991025":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/R94tyTGJ6VQ/m/KxvkGm1aon8J"
                 }
@@ -21354,7 +21362,14 @@
         "name":"Fotini Katsikaris",
         "new":false,
         "path":"Cathari",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The passive ability applies even if the vampire is in torpor.",
+                "refs":{
+                    "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
+                }
+            }
+        ],
         "sect":"Sabbat",
         "set":{
             "SV5":{
@@ -32580,7 +32595,14 @@
         "name":"J\u00fcrgen, The Libertine",
         "new":false,
         "path":"Cathari",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The passive ability applies even if the vampire is in torpor.",
+                "refs":{
+                    "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
+                }
+            }
+        ],
         "sect":"Sabbat",
         "set":{
             "SV5":{
@@ -33332,8 +33354,9 @@
                 }
             },
             {
-                "text":"If a minion who is attempting to block is locked, then that block will fail.",
+                "text":"If a minion who is attempting to block is locked, then that block will fail, unless they woke earlier during the action.",
                 "refs":{
+                    "LSJ 20010702":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jvIS3SDulqU/m/V8wtgvqoFOAJ",
                     "TOM 19951007":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HUipqz0LFSw/m/pY6uEa3f8-gJ",
                     "LSJ 19991025":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/R94tyTGJ6VQ/m/KxvkGm1aon8J"
                 }
@@ -34799,7 +34822,14 @@
         "name":"Khin Aye",
         "new":false,
         "path":"Power and the Inner Voice",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The passive ability applies even if the vampire is in torpor.",
+                "refs":{
+                    "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
+                }
+            }
+        ],
         "sect":"Sabbat",
         "set":{
             "SV5":{
@@ -38131,8 +38161,9 @@
                 }
             },
             {
-                "text":"If a minion who is attempting to block is locked, then that block will fail.",
+                "text":"If a minion who is attempting to block is locked, then that block will fail, unless they woke earlier during the action.",
                 "refs":{
+                    "LSJ 20010702":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jvIS3SDulqU/m/V8wtgvqoFOAJ",
                     "TOM 19951007":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HUipqz0LFSw/m/pY6uEa3f8-gJ",
                     "LSJ 19991025":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/R94tyTGJ6VQ/m/KxvkGm1aon8J"
                 }
@@ -40780,6 +40811,14 @@
                 "text":"Her ability to give intercept can be used when she is in torpor.",
                 "refs":{
                     "LSJ 20010813-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/zkKhvgZy9hA/m/8uH5sgbQaSoJ"
+                }
+            },
+            {
+                "text":"If a minion who is attempting to block is locked, then that block will fail, unless they woke earlier during the action.",
+                "refs":{
+                    "LSJ 20010702":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jvIS3SDulqU/m/V8wtgvqoFOAJ",
+                    "TOM 19951007":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HUipqz0LFSw/m/pY6uEa3f8-gJ",
+                    "LSJ 19991025":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/R94tyTGJ6VQ/m/KxvkGm1aon8J"
                 }
             }
         ],
@@ -53180,7 +53219,14 @@
         "name":"Rexton \"Savage\" Abernathy",
         "new":false,
         "path":"Power and the Inner Voice",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The passive ability applies even if the vampire is in torpor.",
+                "refs":{
+                    "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
+                }
+            }
+        ],
         "sect":"Sabbat",
         "set":{
             "SV5":{
@@ -67529,7 +67575,16 @@
         "name":"Zizi",
         "new":false,
         "path":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"If a minion who is attempting to block is locked, then that block will fail, unless they woke earlier during the action.",
+                "refs":{
+                    "LSJ 20010702":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jvIS3SDulqU/m/V8wtgvqoFOAJ",
+                    "TOM 19951007":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HUipqz0LFSw/m/pY6uEa3f8-gJ",
+                    "LSJ 19991025":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/R94tyTGJ6VQ/m/KxvkGm1aon8J"
+                }
+            }
+        ],
         "sect":"Sabbat",
         "set":{
             "LK":{

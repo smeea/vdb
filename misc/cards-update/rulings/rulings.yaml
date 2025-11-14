@@ -179,7 +179,6 @@
 100083|Arcanum Investigator:
   - His action is directed against the Methuselah controlling the equipment, not the minion it's on. [LSJ 20090324]"
 100084|Archon:
-  - If a vampire blocks an Archon, they burn 1 blood regardless of which action the Archon was taking. [RTR 19960221]
   - 'Each copy of this card provides its own action: if the vampire manage to unlock during the minion phase, he can perform
     the action more than once (once per copy). [RTR 20030519]'
   - Burn blood effects are cumulative. [LSJ 19980225]
@@ -690,6 +689,7 @@
   - The effect lasts until the end of the action. [LSJ 20060412]
   - The weapon does not burn if it is temporarily out of play (eg. {Kerrie}, {Dagger}). The active Methuselah order the effects
     at the end of the action as they wish. [LSJ 20100211-2]
+  - Is an equipment if put into play as a weapon. [LSJ 20060608]
 100362|Cloak the Gathering:
   - '[OBF] Can only be played by the controller of the acting minion. [LSJ 19990425]'
   - '[OBF] Can be played by a locked vampire. [RTR 19941109] [LSJ 19980210]'
@@ -1742,8 +1742,6 @@
     It is still considered successful if not blocked. [RTR 19960221]
 101035|Kaymakli Fragment:
   - 'Does not make the vampire Sabbat nor infernal: it merely gives the option to such vampires. [PIB 20150809]'
-  - Coutinuous effects stop tracking cards shuffled back into the crypt. Any previous effect affecting one of the crypt card
-    is voided. [LSJ 20071014]
 101036|Kaymakli Nightmares:
   - '"Any crypt cards" means all of them. [LSJ 20080229]'
 101039|Kerrie:
@@ -2979,7 +2977,6 @@
 101860|Starshell Grenade Launcher:
   - Using the Launcher to reduce stealth does not force the minion to strike with it if he blocks. [LSJ 19971215]
   - Can be used to reduce stealth multiple times in the same action if the bearer manages to unlock. [LSJ 20011023-2]
-  - Locking to reduce stealth makes the bearer unable to block if he does not unlock or wake. [LSJ 20010702]
 101862|Static Virtue:
   - 'For a Laibon moved into the ready region in the last influence phase, you must retrieve Aye and Orun in pairs: the same
     number of Aye as Orun. [LSJ 20051127]'
@@ -4808,7 +4805,8 @@ G00134|Mandatory additional strike:
 G00135|Allocate points for pool damage:
   - Can allocate more points than a Methuselah has pool. [LSJ 20020819]
 G00136|Lock a minion during block attempt:
-  - If a minion who is attempting to block is locked, then that block will fail. [TOM 19951007] [LSJ 19991025]
+  - If a minion who is attempting to block is locked, then that block will fail, unless they woke earlier during the action.
+    [LSJ 20010702] [TOM 19951007] [LSJ 19991025]
 G00137|Prohibits additional strikes:
   - "The affected minion cannot play a card that provides an additional strike, even if just to benefit from another effect\
     \ (e.g.\n{Acrobatics}). [LSJ 20011214-5]"

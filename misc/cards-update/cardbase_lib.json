@@ -4123,12 +4123,6 @@
         "requirement":"prince,justicar,camarilla",
         "rulings":[
             {
-                "text":"If a vampire blocks an Archon, they burn 1 blood regardless of which action the Archon was taking.",
-                "refs":{
-                    "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
-                }
-            },
-            {
                 "text":"Each copy of this card provides its own action: if the vampire manage to unlock during the minion phase, he can perform the action more than once (once per copy).",
                 "refs":{
                     "RTR 20030519":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NOBWXWrd-vA/m/iEOpQp1uhvAJ"
@@ -17161,6 +17155,12 @@
                 "refs":{
                     "LSJ 20100211-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/pL63VXEPGME/m/n2dEkxwYyjcJ"
                 }
+            },
+            {
+                "text":"Is an equipment if put into play as a weapon.",
+                "refs":{
+                    "LSJ 20060608":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gPbb45oGDjA/m/vtvKV3Nk5LsJ"
+                }
             }
         ],
         "set":{
@@ -29348,6 +29348,14 @@
                 "text":"If it leaves play, the card on it is burned.",
                 "refs":{
                     "LSJ 20021128":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/6rqhybcysh8/m/hU-qIp2on-YJ"
+                }
+            },
+            {
+                "text":"If a minion who is attempting to block is locked, then that block will fail, unless they woke earlier during the action.",
+                "refs":{
+                    "LSJ 20010702":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jvIS3SDulqU/m/V8wtgvqoFOAJ",
+                    "TOM 19951007":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HUipqz0LFSw/m/pY6uEa3f8-gJ",
+                    "LSJ 19991025":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/R94tyTGJ6VQ/m/KxvkGm1aon8J"
                 }
             }
         ],
@@ -49202,12 +49210,6 @@
                 }
             },
             {
-                "text":"Coutinuous effects stop tracking cards shuffled back into the crypt. Any previous effect affecting one of the crypt card is voided.",
-                "refs":{
-                    "LSJ 20071014":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Bom6ae7qjbI/m/OznLIo66qgsJ"
-                }
-            },
-            {
                 "text":"The two actions provided are not cross-restrictive. Each can be performed once during the same turn by the same minion.",
                 "refs":{
                     "LSJ 20100909":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9Mn1QueD1I4/m/5hwidUeZH6EJ"
@@ -53553,8 +53555,9 @@
                 }
             },
             {
-                "text":"If a minion who is attempting to block is locked, then that block will fail.",
+                "text":"If a minion who is attempting to block is locked, then that block will fail, unless they woke earlier during the action.",
                 "refs":{
+                    "LSJ 20010702":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jvIS3SDulqU/m/V8wtgvqoFOAJ",
                     "TOM 19951007":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HUipqz0LFSw/m/pY6uEa3f8-gJ",
                     "LSJ 19991025":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/R94tyTGJ6VQ/m/KxvkGm1aon8J"
                 }
@@ -67910,6 +67913,14 @@
                 "text":"Cannot be played during combat.",
                 "refs":{
                     "LSJ 20080618":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9FAkwIsuYZc/m/gCoYa59TEGIJ"
+                }
+            },
+            {
+                "text":"If a minion who is attempting to block is locked, then that block will fail, unless they woke earlier during the action.",
+                "refs":{
+                    "LSJ 20010702":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jvIS3SDulqU/m/V8wtgvqoFOAJ",
+                    "TOM 19951007":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HUipqz0LFSw/m/pY6uEa3f8-gJ",
+                    "LSJ 19991025":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/R94tyTGJ6VQ/m/KxvkGm1aon8J"
                 }
             }
         ],
@@ -88423,12 +88434,6 @@
                 }
             },
             {
-                "text":"Locking to reduce stealth makes the bearer unable to block if he does not unlock or wake.",
-                "refs":{
-                    "LSJ 20010702":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jvIS3SDulqU/m/V8wtgvqoFOAJ"
-                }
-            },
-            {
                 "text":"A second copy allows a second use in the same combat.",
                 "refs":{
                     "ANK 20230316":"https://www.vekn.net/forum/rules-questions/80385-amulet-of-temporal-perception-burning-and-reuse#107638"
@@ -88444,6 +88449,14 @@
                 "text":"Can be played/used any time during the action before resolution; a block attempt is not required.",
                 "refs":{
                     "LSJ 20020612":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/sC0pTtJJDj4/m/bD04Jy4pM_cJ"
+                }
+            },
+            {
+                "text":"If a minion who is attempting to block is locked, then that block will fail, unless they woke earlier during the action.",
+                "refs":{
+                    "LSJ 20010702":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jvIS3SDulqU/m/V8wtgvqoFOAJ",
+                    "TOM 19951007":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HUipqz0LFSw/m/pY6uEa3f8-gJ",
+                    "LSJ 19991025":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/R94tyTGJ6VQ/m/KxvkGm1aon8J"
                 }
             }
         ],
@@ -95374,6 +95387,14 @@
                 "refs":{
                     "LSJ 20021011":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9WWIzxek9Nc/m/PlIwI11sNpkJ"
                 }
+            },
+            {
+                "text":"[dem] If a minion who is attempting to block is locked, then that block will fail, unless they woke earlier during the action.",
+                "refs":{
+                    "LSJ 20010702":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jvIS3SDulqU/m/V8wtgvqoFOAJ",
+                    "TOM 19951007":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HUipqz0LFSw/m/pY6uEa3f8-gJ",
+                    "LSJ 19991025":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/R94tyTGJ6VQ/m/KxvkGm1aon8J"
+                }
             }
         ],
         "set":{
@@ -101063,7 +101084,16 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"[OBF][PRE] If a minion who is attempting to block is locked, then that block will fail, unless they woke earlier during the action.",
+                "refs":{
+                    "LSJ 20010702":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jvIS3SDulqU/m/V8wtgvqoFOAJ",
+                    "TOM 19951007":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HUipqz0LFSw/m/pY6uEa3f8-gJ",
+                    "LSJ 19991025":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/R94tyTGJ6VQ/m/KxvkGm1aon8J"
+                }
+            }
+        ],
         "set":{
             "V5C":{
                 "PR":"4"
