@@ -1,7 +1,9 @@
 import imbuedClansList from "@/assets/data/imbuedClansList.json";
+import paths from "@/assets/data/paths.json";
 import vampireClansList from "@/assets/data/vampireClansList.json";
 import {
   ResultClanImage,
+  ResultPathImage,
   SearchAdditionalForms,
   SearchFormButtonAdd,
   SearchFormButtonDel,
@@ -14,15 +16,20 @@ import { useApp } from "@/context";
 const CryptSearchFormClan = ({ value, searchForm, onChange }) => {
   const { isMobile } = useApp();
   const name = CLAN;
-  const options = ["ANY", ...vampireClansList, ...imbuedClansList].map((i) => ({
+  const options = ["ANY", ...paths, ...vampireClansList, ...imbuedClansList].map((i) => ({
     value: i.toLowerCase(),
     name: name,
     label: (
       <div className="flex items-center">
         <div className="flex min-w-[40px] justify-center">
-          {i.toLowerCase() !== ANY && <ResultClanImage value={i} />}
+          {i.toLowerCase() !== ANY &&
+           (paths.includes(i) ? (
+             <ResultPathImage value={i} />
+           ) : (
+             <ResultClanImage value={i} />
+           ))}
         </div>
-        {i}
+        {paths.includes(i) ? `Path of ${i.split(" ")[0]}` : i}
       </div>
     ),
   }));
@@ -31,7 +38,7 @@ const CryptSearchFormClan = ({ value, searchForm, onChange }) => {
     <>
       <div className="flex items-center">
         <div className="flex w-1/4 items-center justify-between">
-          <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Clan:</div>
+          <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Clan / Path:</div>
           {value.value[0] !== ANY && (
             <div className="flex justify-end gap-1 px-1">
               <SearchFormButtonLogicToggle

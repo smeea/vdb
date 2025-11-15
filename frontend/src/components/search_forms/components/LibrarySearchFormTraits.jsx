@@ -1,4 +1,4 @@
-import { Checkbox, ResultPathImage } from "@/components";
+import { Checkbox } from "@/components";
 import {
   ADDITIONAL_STRIKE,
   AGGRAVATED,
@@ -7,10 +7,7 @@ import {
   BLEED,
   BOUNCE_BLEED,
   BURN,
-  CAINE,
-  CATHARI,
   COMBAT_ENDS,
-  DEATH,
   DODGE,
   EMBRACE,
   ENTER_COMBAT,
@@ -21,12 +18,7 @@ import {
   MULTI_TYPE,
   NO_REQUIREMENTS,
   NON_TWD,
-  PATH_CAINE,
-  PATH_CATHARI,
-  PATH_DEATH,
-  PATH_POWER,
   PLAYTEST,
-  POWER,
   PRESS,
   PREVENT,
   PUT_BLOOD,
@@ -63,18 +55,6 @@ const LibrarySearchFormTraits = ({ value, onChange }) => {
             [COMBAT_ENDS, "Combat Ends"],
             [MULTI_TYPE, "Multi-Type"],
             [MULTI_DISCIPLINE, "Multi-Discipline"],
-            [
-              PATH_CAINE,
-              <div key={CAINE} className="flex items-center gap-1.5">
-                Path of Caine <ResultPathImage value={CAINE} size="sm" />
-              </div>,
-            ],
-            [
-              PATH_CATHARI,
-              <div key={CATHARI} className="flex items-center gap-1.5">
-                Path of Cathari <ResultPathImage value={CATHARI} size="sm" />
-              </div>,
-            ],
           ].map((i) => (
             <Checkbox
               key={i[0]}
@@ -101,18 +81,6 @@ const LibrarySearchFormTraits = ({ value, onChange }) => {
             [BANNED, "Banned"],
             [NON_TWD, "Not in TWD"],
             [NO_REQUIREMENTS, "No Requirement"],
-            [
-              PATH_DEATH,
-              <div key={DEATH} className="flex items-center gap-1.5">
-                Path of Death <ResultPathImage value={DEATH} size="sm" />
-              </div>,
-            ],
-            [
-              PATH_POWER,
-              <div key={POWER} className="flex items-center gap-1.5">
-                Path of Power <ResultPathImage value={POWER} size="sm" />
-              </div>,
-            ],
             [PLAYTEST, "Playtest"],
           ]
             .filter((i) => ![PLAYTEST].includes(i[0]) || playtestMode)

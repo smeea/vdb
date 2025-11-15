@@ -1,7 +1,9 @@
 import imbuedClansList from "@/assets/data/imbuedClansList.json";
+import paths from "@/assets/data/paths.json";
 import vampireClansList from "@/assets/data/vampireClansList.json";
 import {
-  ResultLibraryClan,
+  ResultPathImage,
+  ResultClanImage,
   SearchAdditionalForms,
   SearchFormButtonAdd,
   SearchFormButtonDel,
@@ -14,21 +16,26 @@ import { useApp } from "@/context";
 const LibrarySearchFormClan = ({ value, searchForm, onChange }) => {
   const { isMobile } = useApp();
   const name = CLAN;
-
   const options = [
-    ["ANY", ANY],
-    ["Not Required", NOT_REQUIRED],
-    ...vampireClansList.map((c) => [c, c.toLowerCase()]),
-    ...imbuedClansList.map((c) => [c, c.toLowerCase()]),
+    "ANY",
+    "Not Required",
+     ...paths,
+     ...vampireClansList,
+     ...imbuedClansList,
   ].map((i) => ({
-    value: i[1],
+    value: i.toLowerCase(),
     name: name,
     label: (
       <div className="flex items-center">
         <div className="flex w-[40px] justify-center">
-          {![ANY, NOT_REQUIRED].includes(i[1]) && <ResultLibraryClan value={i[1]} />}
+          {![ANY, NOT_REQUIRED].includes(i.toLowerCase()) &&
+            (paths.includes(i) ? (
+              <ResultPathImage value={i} />
+            ) : (
+              <ResultClanImage value={i} />
+             ))}
         </div>
-        {i[0]}
+        {paths.includes(i) ? `Path of ${i.split(" ")[0]}` : i}
       </div>
     ),
   }));
@@ -37,7 +44,7 @@ const LibrarySearchFormClan = ({ value, searchForm, onChange }) => {
     <>
       <div className="flex items-center">
         <div className="flex w-1/4 items-center justify-between">
-          <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Clan:</div>
+          <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Clan / Path:</div>
           {value.value[0] !== ANY && (
             <div className="flex justify-end gap-1 px-1">
               <SearchFormButtonLogicToggle

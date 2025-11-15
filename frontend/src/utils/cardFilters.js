@@ -54,10 +54,6 @@ import {
   OR_NEWER,
   OR_OLDER,
   PATH,
-  PATH_CAINE,
-  PATH_CATHARI,
-  PATH_DEATH,
-  PATH_POWER,
   PLAYTEST,
   POOL,
   PRECON,
@@ -240,11 +236,6 @@ export const missingTrait = (trait, card, traitsRegexMap) => {
       return !card[TYPE].includes("/");
     case BURN:
       return !card[BURN];
-    case PATH_CAINE:
-    case PATH_CATHARI:
-    case PATH_DEATH:
-    case PATH_POWER:
-      return card[PATH].toLowerCase().replace(/ .*/, "") !== trait.replace("path-", "");
     case NO_REQUIREMENTS:
       return (
         card[REQUIREMENT] ||
@@ -398,8 +389,8 @@ const missingClan = (filterClan, card) => {
   switch (logic) {
     case OR:
       return !clans.some((clan) => {
-        if (card[CLAN].toLowerCase().split("/").includes(clan)) return true;
-        return clan === NOT_REQUIRED && !card[CLAN];
+        if ([card[PATH].toLowerCase(), ...card[CLAN].toLowerCase().split("/")].includes(clan)) return true;
+        return clan === NOT_REQUIRED && !card[CLAN] && !card[PATH];
       });
     case NOT:
       return clans.some((clan) => {
