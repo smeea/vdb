@@ -23,11 +23,7 @@ const CryptSearchFormClan = ({ value, searchForm, onChange }) => {
       <div className="flex items-center">
         <div className="flex min-w-[40px] justify-center">
           {i.toLowerCase() !== ANY &&
-           (paths.includes(i) ? (
-             <ResultPathImage value={i} />
-           ) : (
-             <ResultClanImage value={i} />
-           ))}
+            (paths.includes(i) ? <ResultPathImage value={i} /> : <ResultClanImage value={i} />)}
         </div>
         {paths.includes(i) ? `Path of ${i.split(" ")[0]}` : i}
       </div>

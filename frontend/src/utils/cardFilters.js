@@ -389,7 +389,8 @@ const missingClan = (filterClan, card) => {
   switch (logic) {
     case OR:
       return !clans.some((clan) => {
-        if ([card[PATH].toLowerCase(), ...card[CLAN].toLowerCase().split("/")].includes(clan)) return true;
+        if ([card[PATH].toLowerCase(), ...card[CLAN].toLowerCase().split("/")].includes(clan))
+          return true;
         return clan === NOT_REQUIRED && !card[CLAN] && !card[PATH];
       });
     case NOT:

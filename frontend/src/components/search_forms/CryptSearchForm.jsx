@@ -223,7 +223,6 @@ const CryptSearchForm = () => {
       return;
     }
 
-
     const filteredCards = filterCrypt(
       sanitizedForm,
       limitedMode ? limitedCrypt : cryptCardBase,

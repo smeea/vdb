@@ -233,7 +233,7 @@ export const AppProvider = ({ children }) => {
       case NO_BANNED: {
         const allowedCrypt = {};
         const allowedLibrary = {};
-        const bannedCrypt = {}
+        const bannedCrypt = {};
         const bannedLibrary = {};
         Object.keys(cryptCardBase ?? {}).forEach((cardid) => {
           const target = cryptCardBase[cardid][BANNED] ? bannedCrypt : allowedCrypt;

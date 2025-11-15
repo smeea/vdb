@@ -2,8 +2,8 @@ import imbuedClansList from "@/assets/data/imbuedClansList.json";
 import paths from "@/assets/data/paths.json";
 import vampireClansList from "@/assets/data/vampireClansList.json";
 import {
-  ResultPathImage,
   ResultClanImage,
+  ResultPathImage,
   SearchAdditionalForms,
   SearchFormButtonAdd,
   SearchFormButtonDel,
@@ -16,29 +16,21 @@ import { useApp } from "@/context";
 const LibrarySearchFormClan = ({ value, searchForm, onChange }) => {
   const { isMobile } = useApp();
   const name = CLAN;
-  const options = [
-    "ANY",
-    "Not Required",
-     ...paths,
-     ...vampireClansList,
-     ...imbuedClansList,
-  ].map((i) => ({
-    value: i.toLowerCase(),
-    name: name,
-    label: (
-      <div className="flex items-center">
-        <div className="flex w-[40px] justify-center">
-          {![ANY, NOT_REQUIRED].includes(i.toLowerCase()) &&
-            (paths.includes(i) ? (
-              <ResultPathImage value={i} />
-            ) : (
-              <ResultClanImage value={i} />
-             ))}
+  const options = ["ANY", "Not Required", ...paths, ...vampireClansList, ...imbuedClansList].map(
+    (i) => ({
+      value: i.toLowerCase(),
+      name: name,
+      label: (
+        <div className="flex items-center">
+          <div className="flex w-[40px] justify-center">
+            {![ANY, NOT_REQUIRED].includes(i.toLowerCase()) &&
+              (paths.includes(i) ? <ResultPathImage value={i} /> : <ResultClanImage value={i} />)}
+          </div>
+          {paths.includes(i) ? `Path of ${i.split(" ")[0]}` : i}
         </div>
-        {paths.includes(i) ? `Path of ${i.split(" ")[0]}` : i}
-      </div>
-    ),
-  }));
+      ),
+    }),
+  );
 
   return (
     <>

@@ -21,8 +21,8 @@ mv playtest/cardbase_crypt_playtest.min.json ../../frontend/public/data/cardbase
 mv playtest/cardbase_lib_playtest.min.json ../../frontend/public/data/cardbase_lib_playtest_$PLAYTEST_KEY.json
 mv precon_decks.min.json ../../frontend/public/data/precon_decks.json
 mv playtest/precon_decks_playtest.min.json ../../frontend/public/data/precon_decks_playtest_$PLAYTEST_KEY.json
-mv artistsCrypt.min.json ../../frontend/src/assets/data/artistsCrypt.json
-mv artistsLib.min.json ../../frontend/src/assets/data/artistsLib.json
+cp artistsCrypt.json ../../frontend/src/assets/data/artistsCrypt.json
+cp artistsLib.json ../../frontend/src/assets/data/artistsLib.json
 if [ ! -z "$( ls -A playtest/images )" ]; then cp playtest/images/* ../../frontend/public/images/cards/playtest; fi
 
 # Update Localizations

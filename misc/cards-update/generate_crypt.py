@@ -5,9 +5,12 @@ from unidecode import unidecode
 import multiprocessing
 
 
-with open("../../frontend/src/assets/data/disciplinesList.json", "r") as disciplines_file, open(
-    "../../frontend/src/assets/data/virtuesList.json", "r"
-) as virtues_file, open("rulings.json", "r") as rulings_file, open("twda.json", "r") as twda_input:
+with (
+    open("../../frontend/src/assets/data/disciplinesList.json", "r") as disciplines_file,
+    open("../../frontend/src/assets/data/virtuesList.json", "r") as virtues_file,
+    open("rulings.json", "r") as rulings_file,
+    open("twda.json", "r") as twda_input,
+):
     rulings = json.load(rulings_file)
     twda = json.load(twda_input)
     disciplines_list = json.load(disciplines_file)
@@ -50,7 +53,7 @@ artist_fixes = {
 integer_fields = ["Id", "Capacity"]
 
 
-def generate_artists(csv_cards, artists_file, artists_file_min):
+def generate_artists(csv_cards, artists_file):
     artists = set()
     for card in csv_cards:
         for artist in re.split("; | & ", card["Artist"]):
@@ -59,7 +62,6 @@ def generate_artists(csv_cards, artists_file, artists_file_min):
             else:
                 artists.add(artist)
 
-    json.dump(sorted(artists), artists_file_min, separators=(",", ":"))
     json.dump(sorted(artists), artists_file, indent=4, separators=(",", ":"))
 
 
@@ -297,26 +299,25 @@ def generate_cards(csv_cards, cardbase_file, cardbase_file_min):
     json.dump(cardbase, cardbase_file, indent=4, separators=(",", ":"))
 
 
-with open("artistsCrypt.json", "w", encoding="utf8") as artists_file, open(
-    "artistsCrypt.min.json", "w", encoding="utf8"
-) as artists_file_min, open("vtescrypt.csv", "r", encoding="utf-8-sig") as cardbase_csv_main, open(
-    "cardbase_crypt.json", "w", encoding="utf8"
-) as cardbase_file, open(
-    "cardbase_crypt.min.json", "w", encoding="utf8"
-) as cardbase_file_min:
+with (
+    open("artistsCrypt.json", "w", encoding="utf8") as artists_file,
+    open("vtescrypt.csv", "r", encoding="utf-8-sig") as cardbase_csv_main,
+    open("cardbase_crypt.json", "w", encoding="utf8") as cardbase_file,
+    open("cardbase_crypt.min.json", "w", encoding="utf8") as cardbase_file_min,
+):
     reader_main = csv.reader(cardbase_csv_main)
     fieldnames_main = next(reader_main)
     csv_cards_main = list(csv.DictReader(cardbase_csv_main, fieldnames_main))
     generate_cards(csv_cards_main, cardbase_file, cardbase_file_min)
-    generate_artists(csv_cards_main, artists_file, artists_file_min)
+    generate_artists(csv_cards_main, artists_file)
 
-with open(
-    "playtest/vtescrypt_playtest.csv", "r", encoding="utf-8-sig"
-) as cardbase_csv_playtest, open(
-    "playtest/cardbase_crypt_playtest.json", "w", encoding="utf8"
-) as cardbase_file_playtest, open(
-    "playtest/cardbase_crypt_playtest.min.json", "w", encoding="utf8"
-) as cardbase_file_min_playtest:
+with (
+    open("playtest/vtescrypt_playtest.csv", "r", encoding="utf-8-sig") as cardbase_csv_playtest,
+    open("playtest/cardbase_crypt_playtest.json", "w", encoding="utf8") as cardbase_file_playtest,
+    open(
+        "playtest/cardbase_crypt_playtest.min.json", "w", encoding="utf8"
+    ) as cardbase_file_min_playtest,
+):
     success = False
     try:
         reader_playtest = csv.reader(cardbase_csv_playtest)

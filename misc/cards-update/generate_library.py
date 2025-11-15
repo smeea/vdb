@@ -46,7 +46,7 @@ artist_fixes = {
 integer_fields = ["Id"]
 
 
-def generate_artists(csv_cards, artists_file, artists_file_min):
+def generate_artists(csv_cards, artists_file):
     artists = set()
     for card in csv_cards:
         for artist in re.split("; | & ", card["Artist"]):
@@ -55,7 +55,6 @@ def generate_artists(csv_cards, artists_file, artists_file_min):
             else:
                 artists.add(artist)
 
-    json.dump(sorted(artists), artists_file_min, separators=(",", ":"))
     json.dump(sorted(artists), artists_file, indent=4, separators=(",", ":"))
 
 
@@ -342,13 +341,12 @@ with (
     open("cardbase_lib.json", "w", encoding="utf8") as cardbase_file,
     open("cardbase_lib.min.json", "w", encoding="utf8") as cardbase_file_min,
     open("artistsLib.json", "w", encoding="utf8") as artists_file,
-    open("artistsLib.min.json", "w", encoding="utf8") as artists_file_min,
 ):
     reader_main = csv.reader(cardbase_csv_main)
     fieldnames_main = next(reader_main)
     csv_cards = list(csv.DictReader(cardbase_csv_main, fieldnames_main))
     generate_cards(csv_cards, cardbase_file, cardbase_file_min)
-    generate_artists(csv_cards, artists_file, artists_file_min)
+    generate_artists(csv_cards, artists_file)
 
 with (
     open("playtest/vteslib_playtest.csv", "r", encoding="utf-8-sig") as cardbase_csv_playtest,
