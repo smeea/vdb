@@ -72,7 +72,6 @@ const LibrarySearchForm = () => {
     isMobile,
     playtestMode,
     limitedMode,
-    limitedPreset,
   } = useApp();
   const inventoryLibrary = useSnapshot(inventoryStore)[LIBRARY];
   const usedLibrary = useSnapshot(usedStore)[LIBRARY];
@@ -106,7 +105,7 @@ const LibrarySearchForm = () => {
       searchMissingInventoryMode,
       inventoryMode,
       limitedMode,
-      limitedPreset,
+      limitedLibrary,
       playtestMode,
       libraryCardBase,
     ],

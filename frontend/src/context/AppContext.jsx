@@ -231,19 +231,23 @@ export const AppProvider = ({ children }) => {
         setLimitedBannedLibrary({});
         break;
       case NO_BANNED: {
-        const allCrypt = {};
-        const allLibrary = {};
+        const allowedCrypt = {};
+        const allowedLibrary = {};
+        const bannedCrypt = {}
+        const bannedLibrary = {};
         Object.keys(cryptCardBase ?? {}).forEach((cardid) => {
-          if (!cryptCardBase[cardid][BANNED]) allCrypt[cardid] = true;
+          const target = cryptCardBase[cardid][BANNED] ? bannedCrypt : allowedCrypt;
+          target[cardid] = true;
         });
         Object.keys(libraryCardBase ?? {}).forEach((cardid) => {
-          if (!libraryCardBase[cardid][BANNED]) allLibrary[cardid] = true;
+          const target = libraryCardBase[cardid][BANNED] ? bannedLibrary : allowedLibrary;
+          target[cardid] = true;
         });
-        setLimitedAllowedCrypt(allCrypt);
-        setLimitedAllowedLibrary(allLibrary);
+        setLimitedAllowedCrypt(allowedCrypt);
+        setLimitedAllowedLibrary(allowedLibrary);
         setLimitedSets({});
-        setLimitedBannedCrypt({});
-        setLimitedBannedLibrary({});
+        setLimitedBannedCrypt(bannedCrypt);
+        setLimitedBannedLibrary(bannedLibrary);
         break;
       }
       case CUSTOM:

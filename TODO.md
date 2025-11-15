@@ -1,5 +1,4 @@
 # FIX
-- Re-search on limited modes selection change
 
 # FIX ON HOLD
 - Deck-in-Url trimmed at first card - can't reproduce in dev environment
@@ -10,6 +9,7 @@
 - Click on scan image to close modal on mobile (need refactor)
 - Inventory wish list / target card q-ty
 - Update cards translation
+- Path dropdown, with No Path (Sabbat)
 
 # FEATURES ON HOLD
 - Draft Cube support -> when draft cube info is available
