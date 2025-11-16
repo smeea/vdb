@@ -45,6 +45,7 @@ import {
   TWO_P,
   TYPE,
   V5,
+  WISHLIST,
 } from "@/constants";
 import {
   deckLocalize,
@@ -353,6 +354,7 @@ export const AppProvider = ({ children }) => {
       inventoryStore[IS_FROZEN] = isFrozen;
       inventoryStore[CRYPT] = crypt;
       inventoryStore[LIBRARY] = library;
+      inventoryStore[WISHLIST] = data.inventory_wishlist;
       deckStore[DECKS] = parseDecksData(data[DECKS]);
     }
   };

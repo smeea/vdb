@@ -109,3 +109,25 @@ def inventory_update_route():
 
     db.session.commit()
     return jsonify(success=True)
+
+
+@app.route("/api/inventory_wishlist", methods=["PUT"])
+@login_required
+def inventory_wishlist_update_route():
+    if current_user.inventory.get("frozen"):
+        abort(409)
+
+    else:
+        new_cards = request.json
+        merged_cards = copy.deepcopy(current_user.inventory_wishlist)
+        for k, v in new_cards.items():
+            k = int(k)
+            if k in merged_cards:
+                merged_cards[k][v["field"]] = v["value"]
+            else:
+                merged_cards[k] = {v["field"]: v["value"]}
+
+        current_user.inventory_wishlist = merged_cards
+
+    db.session.commit()
+    return jsonify(success=True)

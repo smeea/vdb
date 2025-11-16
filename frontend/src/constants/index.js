@@ -281,3 +281,7 @@ export const VP = "vp";
 export const X = "X";
 export const XLSX = "xlsx";
 export const YES = "YES";
+export const WISHLIST = "wishlist";
+export const SURPLUS_USED = "surplusUsed";
+export const SURPLUS_FIXED = "surplusFixed";
+export const FIELD = "field";

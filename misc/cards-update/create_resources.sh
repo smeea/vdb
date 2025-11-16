@@ -21,6 +21,7 @@ mv playtest/cardbase_crypt_playtest.min.json ../../frontend/public/data/cardbase
 mv playtest/cardbase_lib_playtest.min.json ../../frontend/public/data/cardbase_lib_playtest_$PLAYTEST_KEY.json
 mv precon_decks.min.json ../../frontend/public/data/precon_decks.json
 mv playtest/precon_decks_playtest.min.json ../../frontend/public/data/precon_decks_playtest_$PLAYTEST_KEY.json
+npx @biomejs/biome format --write artistsCrypt.json artistsLib.json >/dev/null 2>&1
 cp artistsCrypt.json ../../frontend/src/assets/data/artistsCrypt.json
 cp artistsLib.json ../../frontend/src/assets/data/artistsLib.json
 if [ ! -z "$( ls -A playtest/images )" ]; then cp playtest/images/* ../../frontend/public/images/cards/playtest; fi
@@ -41,7 +42,7 @@ mv amaranth_ids.min.json ../../frontend/public/data/amaranth_ids.json
 # Update TWD and Card recommendations
 uv run generate_twd_decks.py
 node generate_twd_decks_tags.js
-npx @biomejs/biome format --write twd_decks.json
+npx @biomejs/biome format --write twd_decks.json >/dev/null 2>&1
 uv run generate_twd_cards_compatibility.py
 uv run generate_twd_cards_history.py
 cp twd_decks.json twd_locations.json twd_players.json cards_compatibility.json ../../backend/

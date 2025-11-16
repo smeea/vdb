@@ -1,5 +1,5 @@
 import { proxy } from "valtio";
-import { CRYPT, HARD, ID, INVENTORY_TYPE, IS_FROZEN, LIBRARY, SOFT } from "@/constants";
+import { CRYPT, HARD, ID, INVENTORY_TYPE, IS_FROZEN, LIBRARY, SOFT, WISHLIST } from "@/constants";
 import { startCryptTimer } from "@/context";
 import { inventoryServices } from "@/services";
 import { deepClone, getIsPlaytest } from "@/utils";
@@ -8,6 +8,7 @@ export const inventoryStore = proxy({
   [CRYPT]: {},
   [LIBRARY]: {},
   [IS_FROZEN]: false,
+  [WISHLIST]: {},
 });
 
 export const usedStore = proxy({
@@ -145,4 +146,18 @@ export const setupUsedInventory = (decks) => {
     soft: softLibrary,
     hard: hardLibrary,
   };
+};
+
+export const wishlistUpdate = (cardid, field, value) => {
+  const initialState = inventoryStore[WISHLIST];
+
+  if (inventoryStore[WISHLIST][cardid]) {
+    inventoryStore[WISHLIST][cardid][field] = value;
+  } else {
+    inventoryStore[WISHLIST][cardid] = { [field]: value };
+  }
+
+  inventoryServices.updateWishlist(cardid, field, value).catch(() => {
+    inventoryStore[WISHLIST] = initialState;
+  });
 };

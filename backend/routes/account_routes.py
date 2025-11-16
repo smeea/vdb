@@ -100,6 +100,7 @@ def who_am_i_route():
             "public_name": current_user.public_name,
             "decks": parse_user_decks(current_user.decks.all()),
             "inventory": parse_user_inventory(current_user.inventory),
+            "inventory_wishlist": current_user.inventory_wishlist,
             "inventory_key": current_user.inventory_key,
         }
     )

@@ -1,5 +1,5 @@
 import ky from "ky";
-import { CRYPT, ID, LIBRARY } from "@/constants";
+import { CRYPT, FIELD, ID, LIBRARY, VALUE } from "@/constants";
 import { inventoryStore } from "@/context";
 
 export const addCards = (cards) => {
@@ -59,5 +59,17 @@ export const deleteInventory = () => {
   ky.delete(url).then(() => {
     inventoryStore[CRYPT] = {};
     inventoryStore[LIBRARY] = {};
+  });
+};
+
+export const updateWishlist = (cardid, field, value) => {
+  const url = `${import.meta.env.VITE_API_URL}/inventory_wishlist`;
+  return ky.put(url, {
+    json: {
+      [cardid]: {
+        [FIELD]: field,
+        [VALUE]: value,
+      },
+    },
   });
 };

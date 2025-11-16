@@ -401,3 +401,5 @@ export { default as TwdHallFameCardsPlayer } from "./twd_hof_cards/TwdHallFameCa
 export { default as TwdHallFameDeckBody } from "./twd_hof_tournaments/TwdHallFameDeckBody.jsx";
 export { default as TwdHallFameDeckHeader } from "./twd_hof_tournaments/TwdHallFameDeckHeader.jsx";
 export { default as TwdHallFameTournamentsPlayer } from "./twd_hof_tournaments/TwdHallFameTournamentsPlayer.jsx";
+export { default as WishlistSelectMethod } from "./wishlist/WishlistSelectMethod.jsx";
+export { default as WishlistSetValue } from "./wishlist/WishlistSetValue.jsx";
