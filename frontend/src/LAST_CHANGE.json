@@ -1,8 +1,11 @@
 {
-  "version": "2025-11-06",
+  "version": "2025-11-16",
   "changes": [
-    "Add legacy combat images",
-    "Add Bleeding in Wroclaw event to TDA",
+    "Improve Decks (including binocular decks selector) performance for users with A LOT of decks",
+    "Move Paths into Clans search filters",
+    "Added No Banned option to 'limited' mode to filter out all banned cards from search",
+    "Update card images (older cards reprinted in Sabbat)",
+    "Update rulings",
     "Small other fixes and improvements"
   ]
 }
