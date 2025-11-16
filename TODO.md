@@ -1,7 +1,6 @@
 # FIX
 
 # FIX ON HOLD
-- Deck-in-Url trimmed at first card - can't reproduce in dev environment
 
 # FEATURES
 - Limited in TWD/PDA search

@@ -334,13 +334,6 @@
             }
         },
         {
-            "text":"Requirements do not apply. If a discipline is required (eg. {Inscription}) and the Alastor vampire does not have it, the inferior version is used.",
-            "refs":{
-                "ANK 20200901":"https://www.vekn.net/forum/rules-questions/78830-alastor-and-ankara-citadel#100653",
-                "LSJ 20040518-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/4emymfUPwAM/m/JF_o7OOoCbkJ"
-            }
-        },
-        {
             "text":"Finding equipment is optional. When no equipment is found, alastor is still attached.",
             "refs":{
                 "LSJ 20050331-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NLFFYNok1Ns/m/n7mHhZ_oTRQJ"
@@ -352,6 +345,14 @@
                 "RBK equip":"https://www.vekn.net/rulebook#equip",
                 "RBK recruit-ally":"https://www.vekn.net/rulebook#recruit-ally",
                 "RBK employ-retainer":"https://www.vekn.net/rulebook#employ-retainer"
+            }
+        },
+        {
+            "text":"Requirements do not apply. If the cost is X (e.g. {Reanimated Corpse}), X is zero. If the effect puts/moves a minion into the ready region, that minion can act this turn.",
+            "refs":{
+                "LSJ 20100204":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/o5Xnzc8G774/m/yovVizGngKsJ",
+                "LSJ 20040518-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/4emymfUPwAM/m/JF_o7OOoCbkJ",
+                "LSJ 20100302-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jmmm0WRUPvs/m/ny5F1OnSUsEJ"
             }
         }
     ],
@@ -814,6 +815,12 @@
             "text":"The two actions provided are not cross-restrictive. Each can be performed once during the same turn by the same minion.",
             "refs":{
                 "LSJ 20100909":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9Mn1QueD1I4/m/5hwidUeZH6EJ"
+            }
+        },
+        {
+            "text":"The action provided by this card is considered to be an action requiring the listed clan/sect/capacity/title (e.g. the action provided by {Open War} is considered an action that requires an Anarch, the action provided by {The Gate of Acheron} is considered an action that requires Hecata).",
+            "refs":{
+                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
             }
         }
     ],
@@ -1379,6 +1386,14 @@
                 "RBK recruit-ally":"https://www.vekn.net/rulebook#recruit-ally",
                 "RBK employ-retainer":"https://www.vekn.net/rulebook#employ-retainer"
             }
+        },
+        {
+            "text":"Requirements do not apply. If the cost is X (e.g. {Reanimated Corpse}), X is zero. If the effect puts/moves a minion into the ready region, that minion can act this turn.",
+            "refs":{
+                "LSJ 20100204":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/o5Xnzc8G774/m/yovVizGngKsJ",
+                "LSJ 20040518-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/4emymfUPwAM/m/JF_o7OOoCbkJ",
+                "LSJ 20100302-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jmmm0WRUPvs/m/ny5F1OnSUsEJ"
+            }
         }
     ],
     "100144":[
@@ -1683,6 +1698,12 @@
             "text":"\"Once each turn\" means once during each player's turn.",
             "refs":{
                 "ANK 20180719-4":"https://www.vekn.net/forum/rules-questions/76833-once-each-turn#89014"
+            }
+        },
+        {
+            "text":"The action provided by this card is considered to be an action requiring the listed clan/sect/capacity/title (e.g. the action provided by {Open War} is considered an action that requires an Anarch, the action provided by {The Gate of Acheron} is considered an action that requires Hecata).",
+            "refs":{
+                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
             }
         }
     ],
@@ -2690,12 +2711,6 @@
     ],
     "100280":[
         {
-            "text":"The action to put a counter on the card is an action that requires Baali.",
-            "refs":{
-                "LSJ 20050112":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/p-v5jrPSEUc/m/3LsqQl9ZFLkJ"
-            }
-        },
-        {
             "text":"The action to put the 11th counter on it is an action to put a vampire into play, a sterile vampire cannot do it (eg. {Blood Cult Awareness Network} gives it -1 stealth).",
             "refs":{
                 "LSJ 20060815":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/nxExSHh-QjA/m/QFBqiTmg3scJ",
@@ -2718,6 +2733,12 @@
             "text":"If it would be put into the crypt for any reason, it is burned instead",
             "refs":{
                 "LSJ 20041201-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/DY1OggZnMvs/m/7rSTvY34PRAJ"
+            }
+        },
+        {
+            "text":"The action provided by this card is considered to be an action requiring the listed clan/sect/capacity/title (e.g. the action provided by {Open War} is considered an action that requires an Anarch, the action provided by {The Gate of Acheron} is considered an action that requires Hecata).",
+            "refs":{
+                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
             }
         }
     ],
@@ -2987,6 +3008,12 @@
             "text":"The provided action ends with no effect, if the acting minion does not possess the equipment when the action resolves. It is still considered successful if not blocked.",
             "refs":{
                 "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
+            }
+        },
+        {
+            "text":"The action provided by this card is considered to be an action requiring the listed clan/sect/capacity/title (e.g. the action provided by {Open War} is considered an action that requires an Anarch, the action provided by {The Gate of Acheron} is considered an action that requires Hecata).",
+            "refs":{
+                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
             }
         }
     ],
@@ -3447,6 +3474,12 @@
             "refs":{
                 "ANK 20220910":"https://www.vekn.net/forum/rules-questions/80021-clandestine-contrac-x-forced-march-freak#106314"
             }
+        },
+        {
+            "text":"The action provided by this card is considered to be an action requiring the listed clan/sect/capacity/title (e.g. the action provided by {Open War} is considered an action that requires an Anarch, the action provided by {The Gate of Acheron} is considered an action that requires Hecata).",
+            "refs":{
+                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
+            }
         }
     ],
     "100358":[
@@ -3504,14 +3537,6 @@
             }
         }
     ],
-    "100374":[
-        {
-            "text":"Allies (including Imbued) cannot use the provided action as they have no blood to pay with.",
-            "refs":{
-                "PIB 20151101":"https://www.vekn.net/forum/rules-questions/73992-imbued-and-blood-costs-general-mechanics#73995"
-            }
-        }
-    ],
     "100378":[
         {
             "text":"Only effective at close range.",
@@ -3557,13 +3582,6 @@
             }
         },
         {
-            "text":"Requirements need not to be met. If the ally requires a discipline, the inferior version is used. If the cost is X (eg. {Reanimated Corpse}), X is zero.",
-            "refs":{
-                "LSJ 20071015":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Bom6ae7qjbI/m/1ov2qqChTdMJ",
-                "LSJ 20100302-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jmmm0WRUPvs/m/ny5F1OnSUsEJ"
-            }
-        },
-        {
             "text":"Cannot be used if the ally in the ash heap was representing something else while in play (eg. {Khazar's Diary (Endless Night)}).",
             "refs":{
                 "LSJ 20071014":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Bom6ae7qjbI/m/OznLIo66qgsJ"
@@ -3576,11 +3594,19 @@
             }
         },
         {
-            "text":"Cards requiring a discipline come in play at the inferior version.",
+            "text":"[NEC] Cards requiring a discipline come in play at the inferior version.",
             "refs":{
                 "RBK equip":"https://www.vekn.net/rulebook#equip",
                 "RBK recruit-ally":"https://www.vekn.net/rulebook#recruit-ally",
                 "RBK employ-retainer":"https://www.vekn.net/rulebook#employ-retainer"
+            }
+        },
+        {
+            "text":"[NEC] Requirements do not apply. If the cost is X (e.g. {Reanimated Corpse}), X is zero. If the effect puts/moves a minion into the ready region, that minion can act this turn.",
+            "refs":{
+                "LSJ 20100204":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/o5Xnzc8G774/m/yovVizGngKsJ",
+                "LSJ 20040518-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/4emymfUPwAM/m/JF_o7OOoCbkJ",
+                "LSJ 20100302-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jmmm0WRUPvs/m/ny5F1OnSUsEJ"
             }
         }
     ],
@@ -5478,6 +5504,12 @@
                 "RTR 20001020":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GvxNYsYsWJ4/m/EY7NOjdsGCsJ",
                 "LSJ 20001024":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GvxNYsYsWJ4/m/8PDeV_mQ8XEJ"
             }
+        },
+        {
+            "text":"The action provided by this card is considered to be an action requiring the listed clan/sect/capacity/title (e.g. the action provided by {Open War} is considered an action that requires an Anarch, the action provided by {The Gate of Acheron} is considered an action that requires Hecata).",
+            "refs":{
+                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
+            }
         }
     ],
     "100634":[
@@ -7289,6 +7321,14 @@
             }
         },
         {
+            "text":"Requirements do not apply. If the cost is X (e.g. {Reanimated Corpse}), X is zero. If the effect puts/moves a minion into the ready region, that minion can act this turn.",
+            "refs":{
+                "LSJ 20100204":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/o5Xnzc8G774/m/yovVizGngKsJ",
+                "LSJ 20040518-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/4emymfUPwAM/m/JF_o7OOoCbkJ",
+                "LSJ 20100302-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jmmm0WRUPvs/m/ny5F1OnSUsEJ"
+            }
+        },
+        {
             "text":"Is an undirected action, even when targeting another Methuselah's ash heap.",
             "refs":{
                 "LSJ 20010627":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NhNCVCCDyU0/m/I5Yph3-UUPsJ",
@@ -7635,14 +7675,6 @@
             "text":"The minion cannot use the discipline provided if some effect prevents him to use the equipment (eg. {Drawing Out the Beast}).",
             "refs":{
                 "RTR 20010710":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GsI1UyH54jU/m/x9LfDZX1vR4J"
-            }
-        }
-    ],
-    "100884":[
-        {
-            "text":"The provided action is considered as an action that requires an Anarch or an Independent. (eg {CrimethInc.} can be used).",
-            "refs":{
-                "ANK 20180529":"https://www.vekn.net/forum/rules-questions/76595-rules-team-rulings-rtr-11-05-2018?start=66#87662"
             }
         }
     ],
@@ -9001,6 +9033,12 @@
             "refs":{
                 "ANK 20180719-3":"https://www.vekn.net/forum/rules-questions/76834-moving-equipment-with-requirements#89044"
             }
+        },
+        {
+            "text":"The action provided by this card is considered to be an action requiring the listed clan/sect/capacity/title (e.g. the action provided by {Open War} is considered an action that requires an Anarch, the action provided by {The Gate of Acheron} is considered an action that requires Hecata).",
+            "refs":{
+                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
+            }
         }
     ],
     "101021":[
@@ -9071,6 +9109,12 @@
             "refs":{
                 "ANK 20180719-3":"https://www.vekn.net/forum/rules-questions/76834-moving-equipment-with-requirements#89044"
             }
+        },
+        {
+            "text":"The action provided by this card is considered to be an action requiring the listed clan/sect/capacity/title (e.g. the action provided by {Open War} is considered an action that requires an Anarch, the action provided by {The Gate of Acheron} is considered an action that requires Hecata).",
+            "refs":{
+                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
+            }
         }
     ],
     "101035":[
@@ -9084,6 +9128,12 @@
             "text":"The two actions provided are not cross-restrictive. Each can be performed once during the same turn by the same minion.",
             "refs":{
                 "LSJ 20100909":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9Mn1QueD1I4/m/5hwidUeZH6EJ"
+            }
+        },
+        {
+            "text":"The action provided by this card is considered to be an action requiring the listed clan/sect/capacity/title (e.g. the action provided by {Open War} is considered an action that requires an Anarch, the action provided by {The Gate of Acheron} is considered an action that requires Hecata).",
+            "refs":{
+                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
             }
         }
     ],
@@ -9161,13 +9211,6 @@
     ],
     "101046":[
         {
-            "text":"The action to put a minion from any ash heap into play is not a directed action, even when targeting another Methuselah's ash heap.",
-            "refs":{
-                "LSJ 20010627":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NhNCVCCDyU0/m/I5Yph3-UUPsJ",
-                "ANK 20181129":"https://www.vekn.net/forum/rules-questions/77198-pressing-flesh-from-other-player-s-ash-heap#92145"
-            }
-        },
-        {
             "text":"Wraiths minions can act the turn they are put into play.",
             "refs":{
                 "LSJ 20080426":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/VIV521VtVfk/m/qQRxntT52F4J"
@@ -9191,6 +9234,12 @@
             "text":"Cannot be played if no target is available in any Methuselah's ash heap.",
             "refs":{
                 "ANK 20200420-3":"https://www.vekn.net/forum/rules-questions/78574-vulture-s-buffet#99642"
+            }
+        },
+        {
+            "text":"The action provided by this card is considered to be an action requiring the listed clan/sect/capacity/title (e.g. the action provided by {Open War} is considered an action that requires an Anarch, the action provided by {The Gate of Acheron} is considered an action that requires Hecata).",
+            "refs":{
+                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
             }
         }
     ],
@@ -9584,6 +9633,12 @@
             "refs":{
                 "LSJ 20010819":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/2dXfHhG98Rs/m/RMqiA8RXDncJ",
                 "PIB 20130722":"https://www.vekn.net/forum/rules-questions/52017-legacy-of-pander#52019"
+            }
+        },
+        {
+            "text":"The action provided by this card is considered to be an action requiring the listed clan/sect/capacity/title (e.g. the action provided by {Open War} is considered an action that requires an Anarch, the action provided by {The Gate of Acheron} is considered an action that requires Hecata).",
+            "refs":{
+                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
             }
         }
     ],
@@ -10447,6 +10502,12 @@
             "text":"Does not affect merging (base with advanced vampire cards).",
             "refs":{
                 "LSJ 20030527":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/1hViTSXv544/m/nOXqGMitwP0J"
+            }
+        },
+        {
+            "text":"The action provided by this card is considered to be an action requiring the listed clan/sect/capacity/title (e.g. the action provided by {Open War} is considered an action that requires an Anarch, the action provided by {The Gate of Acheron} is considered an action that requires Hecata).",
+            "refs":{
+                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
             }
         }
     ],
@@ -11315,6 +11376,12 @@
             "refs":{
                 "PIB 20121031":"https://www.vekn.net/forum/rules-questions/39816-ec-2012-can-you-answer-these?start=18#39908"
             }
+        },
+        {
+            "text":"The action provided by this card is considered to be an action requiring the listed clan/sect/capacity/title (e.g. the action provided by {Open War} is considered an action that requires an Anarch, the action provided by {The Gate of Acheron} is considered an action that requires Hecata).",
+            "refs":{
+                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
+            }
         }
     ],
     "101280":[
@@ -11615,34 +11682,6 @@
             "text":"Does not ignore the normal prey, predator or target restrictions.",
             "refs":{
                 "ANK 20180623":"https://www.vekn.net/forum/rules-questions/76748-black-sunrise#88361"
-            }
-        }
-    ],
-    "101324":[
-        {
-            "text":"The actions provided by Open war are considered actions requiring an Anarch.",
-            "refs":{
-                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
-            }
-        },
-        {
-            "text":"The two actions provided are not cross-restrictive. Each can be performed once during the same turn by the same minion.",
-            "refs":{
-                "LSJ 20100909":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9Mn1QueD1I4/m/5hwidUeZH6EJ"
-            }
-        },
-        {
-            "text":"An action directed at a card controlled by another Methuselah is directed at that Methuselah.",
-            "refs":{
-                "RBK who-may-attempt-to-block":"https://www.vekn.net/rulebook#who-may-attempt-to-block",
-                "LSJ 20090324":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Zc_ogoVhsug/m/tJ2VBYI7resJ"
-            }
-        },
-        {
-            "text":"Counts as requiring an Anarch (for eg. {Powerbase: Los Angeles}).",
-            "refs":{
-                "LSJ 20080603":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/LuT1iK1b4QIJ",
-                "LSJ 20050128":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HVy8iPUxNbI/m/ZHGTnprQjGUJ"
             }
         }
     ],
@@ -12350,6 +12389,12 @@
             }
         },
         {
+            "text":"The action to move blood to this card is considered to be an action requiring Ventrue.",
+            "refs":{
+                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
+            }
+        },
+        {
             "text":"The two actions provided are not cross-restrictive. Each can be performed once during the same turn by the same minion.",
             "refs":{
                 "LSJ 20100909":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9Mn1QueD1I4/m/5hwidUeZH6EJ"
@@ -12363,6 +12408,12 @@
                 "LSJ 20050128":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HVy8iPUxNbI/m/ZHGTnprQjGUJ",
                 "LSJ 20080603":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/LuT1iK1b4QIJ"
             }
+        },
+        {
+            "text":"The action provided by this card is considered to be an action requiring the listed clan/sect/capacity/title (e.g. the action provided by {Open War} is considered an action that requires an Anarch, the action provided by {The Gate of Acheron} is considered an action that requires Hecata).",
+            "refs":{
+                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
+            }
         }
     ],
     "101440":[
@@ -12370,6 +12421,12 @@
             "text":"The action to steal the blood from your powerbase cannot be attempted by your own vampires.",
             "refs":{
                 "RTR 19980928":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Xva4_IRavxM/m/F-_fjzTmo88J"
+            }
+        },
+        {
+            "text":"The action provided by this card is considered to be an action requiring the listed clan/sect/capacity/title (e.g. the action provided by {Open War} is considered an action that requires an Anarch, the action provided by {The Gate of Acheron} is considered an action that requires Hecata).",
+            "refs":{
+                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
             }
         }
     ],
@@ -12409,6 +12466,12 @@
                 "LSJ 20090705":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/3Ekxk6uQ_wo/m/Y25g9tS6qSoJ",
                 "LSJ 20030917":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/i3Ugq5AQWFI/m/TxPoXM78hFAJ",
                 "ANK 20230621":"https://www.vekn.net/forum/rules-questions/80691-procurer-recruiting-another-with-the-shard?start=12#108765"
+            }
+        },
+        {
+            "text":"The action provided by this card is considered to be an action requiring the listed clan/sect/capacity/title (e.g. the action provided by {Open War} is considered an action that requires an Anarch, the action provided by {The Gate of Acheron} is considered an action that requires Hecata).",
+            "refs":{
+                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
             }
         }
     ],
@@ -12489,13 +12552,6 @@
     ],
     "101481":[
         {
-            "text":"Requirements need not to be met. If the cost is X (eg. {Reanimated Corpse}), X is zero.",
-            "refs":{
-                "LSJ 20071015":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Bom6ae7qjbI/m/1ov2qqChTdMJ",
-                "LSJ 20100302-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jmmm0WRUPvs/m/ny5F1OnSUsEJ"
-            }
-        },
-        {
             "text":"Can be used on an Imbued, it comes back as a zombie ally and is not an Imbued anymore. It has no Creed and cannot use Virtues, nor does it get Convictions.",
             "refs":{
                 "LSJ 20100211":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/pL63VXEPGME/m/gBjYSBLMwlYJ"
@@ -12538,6 +12594,14 @@
                 "RBK equip":"https://www.vekn.net/rulebook#equip",
                 "RBK recruit-ally":"https://www.vekn.net/rulebook#recruit-ally",
                 "RBK employ-retainer":"https://www.vekn.net/rulebook#employ-retainer"
+            }
+        },
+        {
+            "text":"Requirements do not apply. If the cost is X (e.g. {Reanimated Corpse}), X is zero. If the effect puts/moves a minion into the ready region, that minion can act this turn.",
+            "refs":{
+                "LSJ 20100204":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/o5Xnzc8G774/m/yovVizGngKsJ",
+                "LSJ 20040518-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/4emymfUPwAM/m/JF_o7OOoCbkJ",
+                "LSJ 20100302-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jmmm0WRUPvs/m/ny5F1OnSUsEJ"
             }
         },
         {
@@ -12635,6 +12699,12 @@
             "text":"You still gain the trifle master phase action, even if this card contests when played.",
             "refs":{
                 "RBK contested-cards":"https://www.vekn.net/rulebook#Contested-cards"
+            }
+        },
+        {
+            "text":"The action provided by this card is considered to be an action requiring the listed clan/sect/capacity/title (e.g. the action provided by {Open War} is considered an action that requires an Anarch, the action provided by {The Gate of Acheron} is considered an action that requires Hecata).",
+            "refs":{
+                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
             }
         }
     ],
@@ -13674,6 +13744,14 @@
                 "RBK equip":"https://www.vekn.net/rulebook#equip",
                 "RBK recruit-ally":"https://www.vekn.net/rulebook#recruit-ally",
                 "RBK employ-retainer":"https://www.vekn.net/rulebook#employ-retainer"
+            }
+        },
+        {
+            "text":"[obe],[OBE] Requirements do not apply. If the cost is X (e.g. {Reanimated Corpse}), X is zero. If the effect puts/moves a minion into the ready region, that minion can act this turn.",
+            "refs":{
+                "LSJ 20100204":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/o5Xnzc8G774/m/yovVizGngKsJ",
+                "LSJ 20040518-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/4emymfUPwAM/m/JF_o7OOoCbkJ",
+                "LSJ 20100302-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jmmm0WRUPvs/m/ny5F1OnSUsEJ"
             }
         },
         {
@@ -15021,6 +15099,12 @@
             "refs":{
                 "LSJ 20100206-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/reXyybyIYX8/m/jeCyjdiZ5T4J"
             }
+        },
+        {
+            "text":"The action provided by this card is considered to be an action requiring the listed clan/sect/capacity/title (e.g. the action provided by {Open War} is considered an action that requires an Anarch, the action provided by {The Gate of Acheron} is considered an action that requires Hecata).",
+            "refs":{
+                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
+            }
         }
     ],
     "101758":[
@@ -16292,12 +16376,6 @@
     ],
     "101897":[
         {
-            "text":"Requirements do not apply. If the card is an ally, it can act this turn.",
-            "refs":{
-                "LSJ 20100204":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/o5Xnzc8G774/m/yovVizGngKsJ"
-            }
-        },
-        {
             "text":"You must decide the value of X (blood cost) when playing the card.",
             "refs":{
                 "LSJ 20100314":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/MeBSRw3OJC0/m/QZbO0FOx7roJ"
@@ -16321,6 +16399,14 @@
                 "RBK equip":"https://www.vekn.net/rulebook#equip",
                 "RBK recruit-ally":"https://www.vekn.net/rulebook#recruit-ally",
                 "RBK employ-retainer":"https://www.vekn.net/rulebook#employ-retainer"
+            }
+        },
+        {
+            "text":"[tem] Requirements do not apply. If the cost is X (e.g. {Reanimated Corpse}), X is zero. If the effect puts/moves a minion into the ready region, that minion can act this turn.",
+            "refs":{
+                "LSJ 20100204":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/o5Xnzc8G774/m/yovVizGngKsJ",
+                "LSJ 20040518-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/4emymfUPwAM/m/JF_o7OOoCbkJ",
+                "LSJ 20100302-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jmmm0WRUPvs/m/ny5F1OnSUsEJ"
             }
         }
     ],
@@ -17069,6 +17155,12 @@
             "refs":{
                 "LSJ 20100909":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9Mn1QueD1I4/m/5hwidUeZH6EJ"
             }
+        },
+        {
+            "text":"The action provided by this card is considered to be an action requiring the listed clan/sect/capacity/title (e.g. the action provided by {Open War} is considered an action that requires an Anarch, the action provided by {The Gate of Acheron} is considered an action that requires Hecata).",
+            "refs":{
+                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
+            }
         }
     ],
     "101954":[
@@ -17433,6 +17525,14 @@
             }
         }
     ],
+    "102003":[
+        {
+            "text":"The action to enter combat is considered to be an action requiring Salubri antitribu.",
+            "refs":{
+                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
+            }
+        }
+    ],
     "102009":[
         {
             "text":"The burn option can only be used if there is no Laibon with at least three Aye and three Orun.",
@@ -17528,6 +17628,12 @@
             "text":"\"Since your last turn\" means between the end of your last turn and now. Your last turn does not qualify, your current turn does.",
             "refs":{
                 "LSJ 20020429":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/7ZfedGTVt9g/m/kQnfy7J_UYkJ"
+            }
+        },
+        {
+            "text":"The action provided by this card is considered to be an action requiring the listed clan/sect/capacity/title (e.g. the action provided by {Open War} is considered an action that requires an Anarch, the action provided by {The Gate of Acheron} is considered an action that requires Hecata).",
+            "refs":{
+                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
             }
         }
     ],
@@ -17717,6 +17823,14 @@
             "refs":{
                 "LSJ 20020503":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/1DbOr3g3vP8/m/xF8dvxQZye4J",
                 "LSJ 20060126":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PBEBNFH61ik/m/MPf8Rs1F958J"
+            }
+        }
+    ],
+    "102055":[
+        {
+            "text":"The action to enter combat with this vampire is considered to be an action requiring Nosferatu antitribu.",
+            "refs":{
+                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
             }
         }
     ],
@@ -19501,22 +19615,6 @@
             "text":"[OBL] an opposing vampire is wounded (if they play {Undying Tenacity}, they go to torpor after combat).",
             "refs":{
                 "LSJ 20090622-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/1zt1SZb2TIk/m/CYNhVovmlk8J"
-            }
-        }
-    ],
-    "102290":[
-        {
-            "text":"The actions provided by Open war are considered Actions requiring a Hecata.",
-            "refs":{
-                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
-            }
-        }
-    ],
-    "102291":[
-        {
-            "text":"The actions provided by Open war are considered Actions requiring a Hecata.",
-            "refs":{
-                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
             }
         }
     ],
@@ -21603,6 +21701,12 @@
             "refs":{
                 "ANK 20180524":"https://www.vekn.net/forum/rules-questions/76595-rules-team-rulings-rtr-11-05-2018?start=60#87433"
             }
+        },
+        {
+            "text":"The action provided by this card is considered to be an action requiring the listed clan/sect/capacity/title (e.g. the action provided by {Open War} is considered an action that requires an Anarch, the action provided by {The Gate of Acheron} is considered an action that requires Hecata).",
+            "refs":{
+                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
+            }
         }
     ],
     "200921":[
@@ -22739,6 +22843,12 @@
             "text":"The allegiance counter is a continuous effect: an Assamite with it stays Camarilla even if he changes his underlying sect (eg. rulebook action to become anarch).",
             "refs":{
                 "ANK 20180626-2":"https://www.vekn.net/forum/rules-questions/76752-tygerius-allegiance-counters-and-going-anarch#88401"
+            }
+        },
+        {
+            "text":"The action provided by this card is considered to be an action requiring the listed clan/sect/capacity/title (e.g. the action provided by {Open War} is considered an action that requires an Anarch, the action provided by {The Gate of Acheron} is considered an action that requires Hecata).",
+            "refs":{
+                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
             }
         }
     ],
@@ -24610,6 +24720,14 @@
                 "RBK recruit-ally":"https://www.vekn.net/rulebook#recruit-ally",
                 "RBK employ-retainer":"https://www.vekn.net/rulebook#employ-retainer"
             }
+        },
+        {
+            "text":"Requirements do not apply. If the cost is X (e.g. {Reanimated Corpse}), X is zero. If the effect puts/moves a minion into the ready region, that minion can act this turn.",
+            "refs":{
+                "LSJ 20100204":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/o5Xnzc8G774/m/yovVizGngKsJ",
+                "LSJ 20040518-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/4emymfUPwAM/m/JF_o7OOoCbkJ",
+                "LSJ 20100302-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jmmm0WRUPvs/m/ny5F1OnSUsEJ"
+            }
         }
     ],
     "G00111":[
@@ -24978,6 +25096,14 @@
             }
         }
     ],
+    "G00138":[
+        {
+            "text":"The action provided by this card is considered to be an action requiring the listed clan/sect/capacity/title (e.g. the action provided by {Open War} is considered an action that requires an Anarch, the action provided by {The Gate of Acheron} is considered an action that requires Hecata).",
+            "refs":{
+                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
+            }
+        }
+    ],
     "101519":[
         {
             "text":"If one is ousted while having temporary control of a minion, the minion is removed from the game.  (Reversal of Previous Rulings)",
@@ -25074,6 +25200,12 @@
             "text":"A vampire with no circle designation is in his own unique circle. Vampires with the same name (eg. {The Embrace}, non-unique vampires) do not share a circle by default, each has his own circle of one by default.",
             "refs":{
                 "LSJ 20020609":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Q_Lk0DPHqC8/m/nAfGfCvsISgJ"
+            }
+        },
+        {
+            "text":"The action provided by this card is considered to be an action requiring the listed clan/sect/capacity/title (e.g. the action provided by {Open War} is considered an action that requires an Anarch, the action provided by {The Gate of Acheron} is considered an action that requires Hecata).",
+            "refs":{
+                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
             }
         }
     ],
@@ -25185,6 +25317,12 @@
             "text":"The fact it is Unique has no bearing on the burn option. You cannot use the burn option if you meet the requirement, even if you already have a copy of the card in play.",
             "refs":{
                 "LSJ 20100203-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/tKnhKlDo8lk/m/6k8b2vok7_kJ"
+            }
+        },
+        {
+            "text":"The action provided by this card is considered to be an action requiring the listed clan/sect/capacity/title (e.g. the action provided by {Open War} is considered an action that requires an Anarch, the action provided by {The Gate of Acheron} is considered an action that requires Hecata).",
+            "refs":{
+                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
             }
         }
     ],
@@ -25555,6 +25693,22 @@
             "text":"\"Since your last turn\" means between the end of your last turn and now. Your last turn does not qualify, your current turn does.",
             "refs":{
                 "LSJ 20020429":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/7ZfedGTVt9g/m/kQnfy7J_UYkJ"
+            }
+        },
+        {
+            "text":"Cards requiring a discipline come in play at the inferior version.",
+            "refs":{
+                "RBK equip":"https://www.vekn.net/rulebook#equip",
+                "RBK recruit-ally":"https://www.vekn.net/rulebook#recruit-ally",
+                "RBK employ-retainer":"https://www.vekn.net/rulebook#employ-retainer"
+            }
+        },
+        {
+            "text":"Requirements do not apply. If the cost is X (e.g. {Reanimated Corpse}), X is zero. If the effect puts/moves a minion into the ready region, that minion can act this turn.",
+            "refs":{
+                "LSJ 20100204":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/o5Xnzc8G774/m/yovVizGngKsJ",
+                "LSJ 20040518-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/4emymfUPwAM/m/JF_o7OOoCbkJ",
+                "LSJ 20100302-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jmmm0WRUPvs/m/ny5F1OnSUsEJ"
             }
         },
         {
@@ -27403,6 +27557,12 @@
                 "PIB 20140324":"https://www.vekn.net/forum/rules-questions/60259-carrion-crows-first-strike-strikes-not-anaesthetic-touch?start=0#60260",
                 "ANK 20200422":"https://www.vekn.net/forum/rules-questions/78582-thoughts-betrayed-interaction-with-different-striking-situation#99680"
             }
+        },
+        {
+            "text":"The action provided by this card is considered to be an action requiring the listed clan/sect/capacity/title (e.g. the action provided by {Open War} is considered an action that requires an Anarch, the action provided by {The Gate of Acheron} is considered an action that requires Hecata).",
+            "refs":{
+                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
+            }
         }
     ],
     "102107":[
@@ -28442,6 +28602,14 @@
                 "RBK recruit-ally":"https://www.vekn.net/rulebook#recruit-ally",
                 "RBK employ-retainer":"https://www.vekn.net/rulebook#employ-retainer"
             }
+        },
+        {
+            "text":"Requirements do not apply. If the cost is X (e.g. {Reanimated Corpse}), X is zero. If the effect puts/moves a minion into the ready region, that minion can act this turn.",
+            "refs":{
+                "LSJ 20100204":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/o5Xnzc8G774/m/yovVizGngKsJ",
+                "LSJ 20040518-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/4emymfUPwAM/m/JF_o7OOoCbkJ",
+                "LSJ 20100302-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jmmm0WRUPvs/m/ny5F1OnSUsEJ"
+            }
         }
     ],
     "101419":[
@@ -28950,6 +29118,14 @@
                 "RBK recruit-ally":"https://www.vekn.net/rulebook#recruit-ally",
                 "RBK employ-retainer":"https://www.vekn.net/rulebook#employ-retainer"
             }
+        },
+        {
+            "text":"[spi],[SPI] Requirements do not apply. If the cost is X (e.g. {Reanimated Corpse}), X is zero. If the effect puts/moves a minion into the ready region, that minion can act this turn.",
+            "refs":{
+                "LSJ 20100204":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/o5Xnzc8G774/m/yovVizGngKsJ",
+                "LSJ 20040518-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/4emymfUPwAM/m/JF_o7OOoCbkJ",
+                "LSJ 20100302-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jmmm0WRUPvs/m/ny5F1OnSUsEJ"
+            }
         }
     ],
     "101082":[
@@ -29094,6 +29270,12 @@
             "refs":{
                 "LSJ 20100909":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9Mn1QueD1I4/m/5hwidUeZH6EJ"
             }
+        },
+        {
+            "text":"The action provided by this card is considered to be an action requiring the listed clan/sect/capacity/title (e.g. the action provided by {Open War} is considered an action that requires an Anarch, the action provided by {The Gate of Acheron} is considered an action that requires Hecata).",
+            "refs":{
+                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
+            }
         }
     ],
     "101024":[
@@ -29101,6 +29283,12 @@
             "text":"The two actions provided are not cross-restrictive. Each can be performed once during the same turn by the same minion.",
             "refs":{
                 "LSJ 20100909":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9Mn1QueD1I4/m/5hwidUeZH6EJ"
+            }
+        },
+        {
+            "text":"The action provided by this card is considered to be an action requiring the listed clan/sect/capacity/title (e.g. the action provided by {Open War} is considered an action that requires an Anarch, the action provided by {The Gate of Acheron} is considered an action that requires Hecata).",
+            "refs":{
+                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
             }
         }
     ],
@@ -29115,6 +29303,40 @@
             "text":"The fact it is Unique has no bearing on the burn option. You cannot use the burn option if you meet the requirement, even if you already have a copy of the card in play.",
             "refs":{
                 "LSJ 20100203-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/tKnhKlDo8lk/m/6k8b2vok7_kJ"
+            }
+        },
+        {
+            "text":"The action provided by this card is considered to be an action requiring the listed clan/sect/capacity/title (e.g. the action provided by {Open War} is considered an action that requires an Anarch, the action provided by {The Gate of Acheron} is considered an action that requires Hecata).",
+            "refs":{
+                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
+            }
+        }
+    ],
+    "101324":[
+        {
+            "text":"The two actions provided are not cross-restrictive. Each can be performed once during the same turn by the same minion.",
+            "refs":{
+                "LSJ 20100909":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9Mn1QueD1I4/m/5hwidUeZH6EJ"
+            }
+        },
+        {
+            "text":"An action directed at a card controlled by another Methuselah is directed at that Methuselah.",
+            "refs":{
+                "RBK who-may-attempt-to-block":"https://www.vekn.net/rulebook#who-may-attempt-to-block",
+                "LSJ 20090324":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Zc_ogoVhsug/m/tJ2VBYI7resJ"
+            }
+        },
+        {
+            "text":"Counts as requiring an Anarch (for eg. {Powerbase: Los Angeles}).",
+            "refs":{
+                "LSJ 20080603":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/LuT1iK1b4QIJ",
+                "LSJ 20050128":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HVy8iPUxNbI/m/ZHGTnprQjGUJ"
+            }
+        },
+        {
+            "text":"The action provided by this card is considered to be an action requiring the listed clan/sect/capacity/title (e.g. the action provided by {Open War} is considered an action that requires an Anarch, the action provided by {The Gate of Acheron} is considered an action that requires Hecata).",
+            "refs":{
+                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
             }
         }
     ],
@@ -29131,6 +29353,12 @@
             "text":"The two actions provided are not cross-restrictive. Each can be performed once during the same turn by the same minion.",
             "refs":{
                 "LSJ 20100909":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9Mn1QueD1I4/m/5hwidUeZH6EJ"
+            }
+        },
+        {
+            "text":"The action provided by this card is considered to be an action requiring the listed clan/sect/capacity/title (e.g. the action provided by {Open War} is considered an action that requires an Anarch, the action provided by {The Gate of Acheron} is considered an action that requires Hecata).",
+            "refs":{
+                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
             }
         }
     ],
@@ -29163,6 +29391,12 @@
             "text":"The two actions provided are not cross-restrictive. Each can be performed once during the same turn by the same minion.",
             "refs":{
                 "LSJ 20100909":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9Mn1QueD1I4/m/5hwidUeZH6EJ"
+            }
+        },
+        {
+            "text":"The action provided by this card is considered to be an action requiring the listed clan/sect/capacity/title (e.g. the action provided by {Open War} is considered an action that requires an Anarch, the action provided by {The Gate of Acheron} is considered an action that requires Hecata).",
+            "refs":{
+                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
             }
         }
     ],
@@ -29600,6 +29834,12 @@
             "refs":{
                 "LSJ 20070808-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gaFBeSrs7fU/m/v0VVEOJd2HYJ"
             }
+        },
+        {
+            "text":"The action provided by this card is considered to be an action requiring the listed clan/sect/capacity/title (e.g. the action provided by {Open War} is considered an action that requires an Anarch, the action provided by {The Gate of Acheron} is considered an action that requires Hecata).",
+            "refs":{
+                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
+            }
         }
     ],
     "200057":[
@@ -29754,6 +29994,12 @@
             "refs":{
                 "ANK 20200203-2":"https://www.vekn.net/forum/rules-questions/78415-is-ghoul-mortal#98872",
                 "LSJ 20060515":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/bzusnKlnYr8/m/OSMvzE7YjokJ"
+            }
+        },
+        {
+            "text":"The action provided by this card is considered to be an action requiring the listed clan/sect/capacity/title (e.g. the action provided by {Open War} is considered an action that requires an Anarch, the action provided by {The Gate of Acheron} is considered an action that requires Hecata).",
+            "refs":{
+                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
             }
         }
     ],
@@ -30002,6 +30248,12 @@
             "text":"Is an equipment while in hand, library or ash heap, both equipment and location when played (eg. for cost-related effects), and just a location while in play.",
             "refs":{
                 "LSJ 20080114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aMum-K7LEeo/m/94iN92zwYTcJ"
+            }
+        },
+        {
+            "text":"The action provided by this card is considered to be an action requiring the listed clan/sect/capacity/title (e.g. the action provided by {Open War} is considered an action that requires an Anarch, the action provided by {The Gate of Acheron} is considered an action that requires Hecata).",
+            "refs":{
+                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
             }
         }
     ],
@@ -32441,6 +32693,12 @@
                 "RTR 20180511":"https://www.vekn.net/forum/rules-questions/76595-rules-team-rulings-rtr-11-05-2018#86780",
                 "RTR 20030519":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NOBWXWrd-vA/m/iEOpQp1uhvAJ"
             }
+        },
+        {
+            "text":"The action provided by this card is considered to be an action requiring the listed clan/sect/capacity/title (e.g. the action provided by {Open War} is considered an action that requires an Anarch, the action provided by {The Gate of Acheron} is considered an action that requires Hecata).",
+            "refs":{
+                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
+            }
         }
     ],
     "102302":[
@@ -33527,6 +33785,12 @@
                 "PIB 20110918":"https://www.vekn.net/forum/rules-questions/10458-frondator#10459",
                 "LSJ 20020304-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/L-8OGYP5xsE/m/h5WnSofVrfUJ"
             }
+        },
+        {
+            "text":"The action provided by this card is considered to be an action requiring the listed clan/sect/capacity/title (e.g. the action provided by {Open War} is considered an action that requires an Anarch, the action provided by {The Gate of Acheron} is considered an action that requires Hecata).",
+            "refs":{
+                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
+            }
         }
     ],
     "200485":[
@@ -33851,6 +34115,12 @@
             "text":"You still gain the trifle master phase action, even if this card contests when played.",
             "refs":{
                 "RBK contested-cards":"https://www.vekn.net/rulebook#Contested-cards"
+            }
+        },
+        {
+            "text":"The action provided by this card is considered to be an action requiring the listed clan/sect/capacity/title (e.g. the action provided by {Open War} is considered an action that requires an Anarch, the action provided by {The Gate of Acheron} is considered an action that requires Hecata).",
+            "refs":{
+                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
             }
         }
     ],
@@ -34188,6 +34458,14 @@
                 "RBK equip":"https://www.vekn.net/rulebook#equip",
                 "RBK recruit-ally":"https://www.vekn.net/rulebook#recruit-ally",
                 "RBK employ-retainer":"https://www.vekn.net/rulebook#employ-retainer"
+            }
+        },
+        {
+            "text":"[TEM] Requirements do not apply. If the cost is X (e.g. {Reanimated Corpse}), X is zero. If the effect puts/moves a minion into the ready region, that minion can act this turn.",
+            "refs":{
+                "LSJ 20100204":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/o5Xnzc8G774/m/yovVizGngKsJ",
+                "LSJ 20040518-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/4emymfUPwAM/m/JF_o7OOoCbkJ",
+                "LSJ 20100302-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jmmm0WRUPvs/m/ny5F1OnSUsEJ"
             }
         },
         {
@@ -34538,6 +34816,12 @@
             "text":"The fact it is Unique has no bearing on the burn option. You cannot use the burn option if you meet the requirement, even if you already have a copy of the card in play.",
             "refs":{
                 "LSJ 20100203-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/tKnhKlDo8lk/m/6k8b2vok7_kJ"
+            }
+        },
+        {
+            "text":"The action provided by this card is considered to be an action requiring the listed clan/sect/capacity/title (e.g. the action provided by {Open War} is considered an action that requires an Anarch, the action provided by {The Gate of Acheron} is considered an action that requires Hecata).",
+            "refs":{
+                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
             }
         }
     ],
@@ -34909,6 +35193,12 @@
             "refs":{
                 "LSJ 20020612":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/sC0pTtJJDj4/m/bD04Jy4pM_cJ"
             }
+        },
+        {
+            "text":"The action provided by this card is considered to be an action requiring the listed clan/sect/capacity/title (e.g. the action provided by {Open War} is considered an action that requires an Anarch, the action provided by {The Gate of Acheron} is considered an action that requires Hecata).",
+            "refs":{
+                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
+            }
         }
     ],
     "100577":[
@@ -35199,6 +35489,14 @@
                 "RBK recruit-ally":"https://www.vekn.net/rulebook#recruit-ally",
                 "RBK employ-retainer":"https://www.vekn.net/rulebook#employ-retainer"
             }
+        },
+        {
+            "text":"Requirements do not apply. If the cost is X (e.g. {Reanimated Corpse}), X is zero. If the effect puts/moves a minion into the ready region, that minion can act this turn.",
+            "refs":{
+                "LSJ 20100204":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/o5Xnzc8G774/m/yovVizGngKsJ",
+                "LSJ 20040518-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/4emymfUPwAM/m/JF_o7OOoCbkJ",
+                "LSJ 20100302-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jmmm0WRUPvs/m/ny5F1OnSUsEJ"
+            }
         }
     ],
     "201731":[
@@ -35208,6 +35506,14 @@
                 "RBK equip":"https://www.vekn.net/rulebook#equip",
                 "RBK recruit-ally":"https://www.vekn.net/rulebook#recruit-ally",
                 "RBK employ-retainer":"https://www.vekn.net/rulebook#employ-retainer"
+            }
+        },
+        {
+            "text":"Requirements do not apply. If the cost is X (e.g. {Reanimated Corpse}), X is zero. If the effect puts/moves a minion into the ready region, that minion can act this turn.",
+            "refs":{
+                "LSJ 20100204":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/o5Xnzc8G774/m/yovVizGngKsJ",
+                "LSJ 20040518-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/4emymfUPwAM/m/JF_o7OOoCbkJ",
+                "LSJ 20100302-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jmmm0WRUPvs/m/ny5F1OnSUsEJ"
             }
         }
     ],
@@ -36288,6 +36594,294 @@
             "text":"[CHI][FOR] The affected minion cannot play a card that provides an additional strike, even if just to benefit from another effect (e.g.\n{Acrobatics}).",
             "refs":{
                 "LSJ 20011214-5":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gI44SEC82Yk/m/Kgipu7IXwWkJ"
+            }
+        }
+    ],
+    "100101":[
+        {
+            "text":"The action provided by this card is considered to be an action requiring the listed clan/sect/capacity/title (e.g. the action provided by {Open War} is considered an action that requires an Anarch, the action provided by {The Gate of Acheron} is considered an action that requires Hecata).",
+            "refs":{
+                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
+            }
+        }
+    ],
+    "100295":[
+        {
+            "text":"The action provided by this card is considered to be an action requiring the listed clan/sect/capacity/title (e.g. the action provided by {Open War} is considered an action that requires an Anarch, the action provided by {The Gate of Acheron} is considered an action that requires Hecata).",
+            "refs":{
+                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
+            }
+        }
+    ],
+    "100311":[
+        {
+            "text":"The action provided by this card is considered to be an action requiring the listed clan/sect/capacity/title (e.g. the action provided by {Open War} is considered an action that requires an Anarch, the action provided by {The Gate of Acheron} is considered an action that requires Hecata).",
+            "refs":{
+                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
+            }
+        }
+    ],
+    "100420":[
+        {
+            "text":"The action provided by this card is considered to be an action requiring the listed clan/sect/capacity/title (e.g. the action provided by {Open War} is considered an action that requires an Anarch, the action provided by {The Gate of Acheron} is considered an action that requires Hecata).",
+            "refs":{
+                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
+            }
+        }
+    ],
+    "100530":[
+        {
+            "text":"The action provided by this card is considered to be an action requiring the listed clan/sect/capacity/title (e.g. the action provided by {Open War} is considered an action that requires an Anarch, the action provided by {The Gate of Acheron} is considered an action that requires Hecata).",
+            "refs":{
+                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
+            }
+        }
+    ],
+    "100546":[
+        {
+            "text":"The action provided by this card is considered to be an action requiring the listed clan/sect/capacity/title (e.g. the action provided by {Open War} is considered an action that requires an Anarch, the action provided by {The Gate of Acheron} is considered an action that requires Hecata).",
+            "refs":{
+                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
+            }
+        }
+    ],
+    "100654":[
+        {
+            "text":"The action provided by this card is considered to be an action requiring the listed clan/sect/capacity/title (e.g. the action provided by {Open War} is considered an action that requires an Anarch, the action provided by {The Gate of Acheron} is considered an action that requires Hecata).",
+            "refs":{
+                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
+            }
+        }
+    ],
+    "100884":[
+        {
+            "text":"The action provided by this card is considered to be an action requiring the listed clan/sect/capacity/title (e.g. the action provided by {Open War} is considered an action that requires an Anarch, the action provided by {The Gate of Acheron} is considered an action that requires Hecata).",
+            "refs":{
+                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
+            }
+        }
+    ],
+    "100940":[
+        {
+            "text":"The action provided by this card is considered to be an action requiring the listed clan/sect/capacity/title (e.g. the action provided by {Open War} is considered an action that requires an Anarch, the action provided by {The Gate of Acheron} is considered an action that requires Hecata).",
+            "refs":{
+                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
+            }
+        }
+    ],
+    "100953":[
+        {
+            "text":"The action provided by this card is considered to be an action requiring the listed clan/sect/capacity/title (e.g. the action provided by {Open War} is considered an action that requires an Anarch, the action provided by {The Gate of Acheron} is considered an action that requires Hecata).",
+            "refs":{
+                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
+            }
+        }
+    ],
+    "100961":[
+        {
+            "text":"The action provided by this card is considered to be an action requiring the listed clan/sect/capacity/title (e.g. the action provided by {Open War} is considered an action that requires an Anarch, the action provided by {The Gate of Acheron} is considered an action that requires Hecata).",
+            "refs":{
+                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
+            }
+        }
+    ],
+    "101176":[
+        {
+            "text":"The action provided by this card is considered to be an action requiring the listed clan/sect/capacity/title (e.g. the action provided by {Open War} is considered an action that requires an Anarch, the action provided by {The Gate of Acheron} is considered an action that requires Hecata).",
+            "refs":{
+                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
+            }
+        }
+    ],
+    "101294":[
+        {
+            "text":"The action provided by this card is considered to be an action requiring the listed clan/sect/capacity/title (e.g. the action provided by {Open War} is considered an action that requires an Anarch, the action provided by {The Gate of Acheron} is considered an action that requires Hecata).",
+            "refs":{
+                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
+            }
+        }
+    ],
+    "101308":[
+        {
+            "text":"The action provided by this card is considered to be an action requiring the listed clan/sect/capacity/title (e.g. the action provided by {Open War} is considered an action that requires an Anarch, the action provided by {The Gate of Acheron} is considered an action that requires Hecata).",
+            "refs":{
+                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
+            }
+        }
+    ],
+    "101433":[
+        {
+            "text":"The action provided by this card is considered to be an action requiring the listed clan/sect/capacity/title (e.g. the action provided by {Open War} is considered an action that requires an Anarch, the action provided by {The Gate of Acheron} is considered an action that requires Hecata).",
+            "refs":{
+                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
+            }
+        }
+    ],
+    "101438":[
+        {
+            "text":"The action provided by this card is considered to be an action requiring the listed clan/sect/capacity/title (e.g. the action provided by {Open War} is considered an action that requires an Anarch, the action provided by {The Gate of Acheron} is considered an action that requires Hecata).",
+            "refs":{
+                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
+            }
+        }
+    ],
+    "101520":[
+        {
+            "text":"The action provided by this card is considered to be an action requiring the listed clan/sect/capacity/title (e.g. the action provided by {Open War} is considered an action that requires an Anarch, the action provided by {The Gate of Acheron} is considered an action that requires Hecata).",
+            "refs":{
+                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
+            }
+        }
+    ],
+    "101599":[
+        {
+            "text":"The action provided by this card is considered to be an action requiring the listed clan/sect/capacity/title (e.g. the action provided by {Open War} is considered an action that requires an Anarch, the action provided by {The Gate of Acheron} is considered an action that requires Hecata).",
+            "refs":{
+                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
+            }
+        }
+    ],
+    "101748":[
+        {
+            "text":"The action provided by this card is considered to be an action requiring the listed clan/sect/capacity/title (e.g. the action provided by {Open War} is considered an action that requires an Anarch, the action provided by {The Gate of Acheron} is considered an action that requires Hecata).",
+            "refs":{
+                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
+            }
+        }
+    ],
+    "101789":[
+        {
+            "text":"The action provided by this card is considered to be an action requiring the listed clan/sect/capacity/title (e.g. the action provided by {Open War} is considered an action that requires an Anarch, the action provided by {The Gate of Acheron} is considered an action that requires Hecata).",
+            "refs":{
+                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
+            }
+        }
+    ],
+    "102042":[
+        {
+            "text":"The action provided by this card is considered to be an action requiring the listed clan/sect/capacity/title (e.g. the action provided by {Open War} is considered an action that requires an Anarch, the action provided by {The Gate of Acheron} is considered an action that requires Hecata).",
+            "refs":{
+                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
+            }
+        }
+    ],
+    "102101":[
+        {
+            "text":"The action provided by this card is considered to be an action requiring the listed clan/sect/capacity/title (e.g. the action provided by {Open War} is considered an action that requires an Anarch, the action provided by {The Gate of Acheron} is considered an action that requires Hecata).",
+            "refs":{
+                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
+            }
+        }
+    ],
+    "102102":[
+        {
+            "text":"The action provided by this card is considered to be an action requiring the listed clan/sect/capacity/title (e.g. the action provided by {Open War} is considered an action that requires an Anarch, the action provided by {The Gate of Acheron} is considered an action that requires Hecata).",
+            "refs":{
+                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
+            }
+        }
+    ],
+    "102167":[
+        {
+            "text":"The action provided by this card is considered to be an action requiring the listed clan/sect/capacity/title (e.g. the action provided by {Open War} is considered an action that requires an Anarch, the action provided by {The Gate of Acheron} is considered an action that requires Hecata).",
+            "refs":{
+                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
+            }
+        }
+    ],
+    "102257":[
+        {
+            "text":"The action provided by this card is considered to be an action requiring the listed clan/sect/capacity/title (e.g. the action provided by {Open War} is considered an action that requires an Anarch, the action provided by {The Gate of Acheron} is considered an action that requires Hecata).",
+            "refs":{
+                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
+            }
+        }
+    ],
+    "102290":[
+        {
+            "text":"The action provided by this card is considered to be an action requiring the listed clan/sect/capacity/title (e.g. the action provided by {Open War} is considered an action that requires an Anarch, the action provided by {The Gate of Acheron} is considered an action that requires Hecata).",
+            "refs":{
+                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
+            }
+        }
+    ],
+    "102291":[
+        {
+            "text":"The action provided by this card is considered to be an action requiring the listed clan/sect/capacity/title (e.g. the action provided by {Open War} is considered an action that requires an Anarch, the action provided by {The Gate of Acheron} is considered an action that requires Hecata).",
+            "refs":{
+                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
+            }
+        }
+    ],
+    "102301":[
+        {
+            "text":"The action provided by this card is considered to be an action requiring the listed clan/sect/capacity/title (e.g. the action provided by {Open War} is considered an action that requires an Anarch, the action provided by {The Gate of Acheron} is considered an action that requires Hecata).",
+            "refs":{
+                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
+            }
+        }
+    ],
+    "200235":[
+        {
+            "text":"The action provided by this card is considered to be an action requiring the listed clan/sect/capacity/title (e.g. the action provided by {Open War} is considered an action that requires an Anarch, the action provided by {The Gate of Acheron} is considered an action that requires Hecata).",
+            "refs":{
+                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
+            }
+        }
+    ],
+    "200502":[
+        {
+            "text":"The action provided by this card is considered to be an action requiring the listed clan/sect/capacity/title (e.g. the action provided by {Open War} is considered an action that requires an Anarch, the action provided by {The Gate of Acheron} is considered an action that requires Hecata).",
+            "refs":{
+                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
+            }
+        }
+    ],
+    "200514":[
+        {
+            "text":"The action provided by this card is considered to be an action requiring the listed clan/sect/capacity/title (e.g. the action provided by {Open War} is considered an action that requires an Anarch, the action provided by {The Gate of Acheron} is considered an action that requires Hecata).",
+            "refs":{
+                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
+            }
+        }
+    ],
+    "200609":[
+        {
+            "text":"The action provided by this card is considered to be an action requiring the listed clan/sect/capacity/title (e.g. the action provided by {Open War} is considered an action that requires an Anarch, the action provided by {The Gate of Acheron} is considered an action that requires Hecata).",
+            "refs":{
+                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
+            }
+        }
+    ],
+    "200743":[
+        {
+            "text":"The action provided by this card is considered to be an action requiring the listed clan/sect/capacity/title (e.g. the action provided by {Open War} is considered an action that requires an Anarch, the action provided by {The Gate of Acheron} is considered an action that requires Hecata).",
+            "refs":{
+                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
+            }
+        }
+    ],
+    "200769":[
+        {
+            "text":"The action provided by this card is considered to be an action requiring the listed clan/sect/capacity/title (e.g. the action provided by {Open War} is considered an action that requires an Anarch, the action provided by {The Gate of Acheron} is considered an action that requires Hecata).",
+            "refs":{
+                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
+            }
+        }
+    ],
+    "200853":[
+        {
+            "text":"The action provided by this card is considered to be an action requiring the listed clan/sect/capacity/title (e.g. the action provided by {Open War} is considered an action that requires an Anarch, the action provided by {The Gate of Acheron} is considered an action that requires Hecata).",
+            "refs":{
+                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
+            }
+        }
+    ],
+    "200918":[
+        {
+            "text":"The action provided by this card is considered to be an action requiring the listed clan/sect/capacity/title (e.g. the action provided by {Open War} is considered an action that requires an Anarch, the action provided by {The Gate of Acheron} is considered an action that requires Hecata).",
+            "refs":{
+                "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
             }
         }
     ]

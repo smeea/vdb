@@ -120,8 +120,6 @@
   - '[OBE] If one is ousted while having temporary control of a minion, the minion is removed from the game. [LSJ 20081105]'
 100038|Alastor:
   - If the weapon retrieved costs blood, that cost is paid by the vampire chosen by the terms. [LSJ 20040518]
-  - Requirements do not apply. If a discipline is required (eg. {Inscription}) and the Alastor vampire does not have it, the
-    inferior version is used. [ANK 20200901] [LSJ 20040518-2]
   - Finding equipment is optional. When no equipment is found, alastor is still attached. [LSJ 20050331-2]
 100040|Alpha Glint:
   - Cards that are played at the end of round/combat can still be played (eg. {Taste of Vitae}, {Disarm}). [RTR 20001020]
@@ -536,7 +534,6 @@
 100275|Cadet:
   - The target vampire is not Black Hand if he is not Sabbat. [LSJ 20070322]
 100280|Call the Great Beast:
-  - The action to put a counter on the card is an action that requires Baali. [LSJ 20050112]
   - The action to put the 11th counter on it is an action to put a vampire into play, a sterile vampire cannot do it (eg.
     {Blood Cult Awareness Network} gives it -1 stealth). [LSJ 20060815] [LSJ 20011212]
 100281|Call the Lamprey:
@@ -696,8 +693,6 @@
   - '[OBF] Multiple copies can be played by different minions on the same action. [ANK 20200515]'
 100366|Club Illusion:
   - Does not make the action an action "requiring an Anarch". [ANK 20220317]
-100374|Codex of the Edenic Groundskeepers:
-  - Allies (including Imbued) cannot use the provided action as they have no blood to pay with. [PIB 20151101]
 100378|Coma:
   - Only effective at close range. [RBK resolve-strike] [LSJ 20000110]
   - The opponent is wounded (if they play {Undying Tenacity}, they go to torpor after combat). [LSJ 20090622-2]
@@ -707,8 +702,6 @@
   - Can only be played if the ally or retainer is in the ash heap, not if he was moved elsewhere. [RTR 19980928] [LSJ 19980929]
   - The ally or retainer retrieved is considered a new ally or retainer for all game purposes. In particular, he is not bound
     to not repeat an action his previous incarnation has already performed this turn. [LSJ 20010627]
-  - Requirements need not to be met. If the ally requires a discipline, the inferior version is used. If the cost is X (eg.
-    {Reanimated Corpse}), X is zero. [LSJ 20071015] [LSJ 20100302-1]
   - Cannot be used if the ally in the ash heap was representing something else while in play (eg. {Khazar's Diary (Endless
     Night)}). [LSJ 20071014]
 100389|Compress:
@@ -1485,9 +1478,6 @@
 100882|Hand of Conrad:
   - The minion cannot use the discipline provided if some effect prevents him to use the equipment (eg. {Drawing Out the Beast}).
     [RTR 20010710]
-"100884|Haqim's Law: Judgment":
-  - The provided action is considered as an action that requires an Anarch or an Independent. (eg {CrimethInc.} can be used).
-    [ANK 20180529]
 100886|Harass:
   - If the action is not blocked and the target has now more then 3 blood and is unlocked, the action "fizzles" (cost, if
     any, is paid, and it is considered successful, but has no effect). [LSJ 20070411] [LSJ 20090514]
@@ -1758,8 +1748,6 @@
 '101044|Khabar: Honor, The':
   - Additional damage inherits all of the properties of the base damage. [TOM 19960225]
 101046|Khazar's Diary (Endless Night):
-  - The action to put a minion from any ash heap into play is not a directed action, even when targeting another Methuselah's
-    ash heap. [LSJ 20010627] [ANK 20181129]
   - Wraiths minions can act the turn they are put into play. [LSJ 20080426]
   - Minions put into play by the Diary go back to their owner's ash heap when burned. They do not count has allies burned
     from play (eg. for {Pressing Flesh}). [PIB 20130128-2] [LSJ 20100325-2]
@@ -2224,8 +2212,6 @@
   - Does not give the ability to play reaction cards as if unlocked. [LSJ 20080605]
   - The block attempt only applies to one block attempt (the +2 intercept remains for the entire action). If the action later
     continues as if unblocked (e.g. {Form of Mist}), another one is needed. [LSJ 20030227]
-101324|Open War:
-  - The actions provided by Open war are considered actions requiring an Anarch. [LSJ 20080604]
 101325|Ophidian Gaze:
   - '[SER][PRE] Can be used to cancel an action modifier player "after the action/referendum is successful" (eg. {Voter Captivation}
     or {Freak Drive}). [ANK 20180909]'
@@ -2346,6 +2332,7 @@
     20050105-1]'
 '101432|Powerbase: Berlin':
   - Blood moved to it by a Ventrue action comes from the Ventrue. [LSJ 19970414]
+  - The action to move blood to this card is considered to be an action requiring Ventrue. [LSJ 20080604]
 '101435|Powerbase: Los Angeles':
   - A card requiring a Baron (eg. {Open War}) is a card requiring an Anarch. [LSJ 20050128] [LSJ 20080603]
 '101440|Powerbase: New York':
@@ -2367,7 +2354,6 @@
     "regular" action modifier or reaction cards. [ANK 20190425]'
   - '[abo] [ACTION MODIFIER] Replace the action card (if any) before playing it. [ANK 20181208]'
 101481|Pressing Flesh:
-  - Requirements need not to be met. If the cost is X (eg. {Reanimated Corpse}), X is zero. [LSJ 20071015] [LSJ 20100302-1]
   - Can be used on an Imbued, it comes back as a zombie ally and is not an Imbued anymore. It has no Creed and cannot use
     Virtues, nor does it get Convictions. [LSJ 20100211]
   - A card burned while representing something else (eg. an ally raised by {Khazar's Diary (Endless Night)}) is not a valid
@@ -3034,7 +3020,6 @@
   - If used to cancel a Trifle, the target does not get an extra Master Phase Action from the canceled Trifle. [LSJ 20090126]
     [RBK trifle]
 101897|Summon History:
-  - Requirements do not apply. If the card is an ally, it can act this turn. [LSJ 20100204]
   - You must decide the value of X (blood cost) when playing the card. [LSJ 20100314]
   - If used to fetch a card with a variable cost of X, X is zero (eg. {Reanimated Corpse}), whatever cost was announced and
     paid for Summon History. [PIB 20111101]
@@ -3205,6 +3190,8 @@
 101998|Touch of Clarity:
   - Can be used as an action modifier by a non-acting ready unlocked minion controlled by the controller of the acting minion.
     [LSJ 20090425] [LSJ 19990425]
+102003|Tracker's Mark:
+  - The action to enter combat is considered to be an action requiring Salubri antitribu. [LSJ 20080604]
 102009|Transcendent Laibon:
   - The burn option can only be used if there is no Laibon with at least three Aye and three Orun. [LSJ 20110611-2]
 102011|Transfusion:
@@ -3248,6 +3235,8 @@
   - Damage done from stealing blood to the Runner is environmental. [RTR 19970630]
   - 'Damage done from stealing blood is done at the same time strike damage is done: a single instantaneous prevention card
     (eg. {Soak}) can prevent both. [ANK 20200517-2]'
+102055|Unacceptable Appearance:
+  - The action to enter combat with this vampire is considered to be an action requiring Nosferatu antitribu. [LSJ 20080604]
 102058|Uncontrollable Rage:
   - Additional damage inherits all of the properties of the base damage. [TOM 19960225]
   - All the damage is aggravated. [LSJ 20011204]
@@ -3573,10 +3562,6 @@
     considered as part of that set of Methuselahs. [LSJ 20100527]
 102283|Touch of Oblivion:
   - '[OBL] an opposing vampire is wounded (if they play {Undying Tenacity}, they go to torpor after combat). [LSJ 20090622-2]'
-102290|Gate of Acheron, The:
-  - The actions provided by Open war are considered Actions requiring a Hecata. [LSJ 20080604]
-102291|Pit of Contemplation:
-  - The actions provided by Open war are considered Actions requiring a Hecata. [LSJ 20080604]
 102293|Bone Shambler:
   - A copy that was recruited this turn can be locked to grant the bleed bonus. [ANK 20180517]
 102295|Shroud of Decay:
@@ -4707,6 +4692,8 @@ G00109|Cannot be dodged:
   - Does not prevent the opponent from dodging, the dodge just has no effect. [LSJ 20030902-2] [LSJ 20060808-1]
 G00110|Put card in play ignoring requirements:
   - Cards requiring a discipline come in play at the inferior version. [RBK equip] [RBK recruit-ally] [RBK employ-retainer]
+  - Requirements do not apply. If the cost is X (e.g. {Reanimated Corpse}), X is zero. If the effect puts/moves a minion into
+    the ready region, that minion can act this turn. [LSJ 20100204] [LSJ 20040518-2] [LSJ 20100302-1]
 G00111|Allies without a specified sect:
   - The ally counts as "independent" when playing cards as a vampire [LSJ 20020503] [LSJ 20060126]
 G00112|Make strike aggravated:
@@ -4810,3 +4797,7 @@ G00136|Lock a minion during block attempt:
 G00137|Prohibits additional strikes:
   - "The affected minion cannot play a card that provides an additional strike, even if just to benefit from another effect\
     \ (e.g.\n{Acrobatics}). [LSJ 20011214-5]"
+G00138|Action requirements from a card in play:
+  - The action provided by this card is considered to be an action requiring the listed clan/sect/capacity/title (e.g. the
+    action provided by {Open War} is considered an action that requires an Anarch, the action provided by {The Gate of Acheron}
+    is considered an action that requires Hecata). [LSJ 20080604]
