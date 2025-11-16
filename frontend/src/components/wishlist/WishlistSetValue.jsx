@@ -41,10 +41,13 @@ const WishlistSetValue = ({ cardid }) => {
         <div className="flex w-full items-center justify-between text-lg">
           {isMobile ? (
             <>
-              <ButtonCardChange onClick={() => handleQuantityChange(-1)} isLink isNegative isDisabled/>
-              <div className="mx-1 flex w-full justify-center">
-                {state}
-              </div>
+              <ButtonCardChange
+                onClick={() => handleQuantityChange(-1)}
+                isLink
+                isNegative
+                isDisabled
+              />
+              <div className="mx-1 flex w-full justify-center">{state}</div>
               <ButtonCardChange onClick={() => handleQuantityChange(1)} isLink />
             </>
           ) : (
@@ -67,18 +70,16 @@ const WishlistSetValue = ({ cardid }) => {
                       onChange={handleManualChange}
                     />
                   </form>
-                ) :
+                ) : (
                   state
-                }
+                )}
               </div>
               {!manual && <ButtonCardChange onClick={() => handleQuantityChange(1)} />}
             </>
           )}
         </div>
       ) : (
-        <div className="mx-1 flex w-full items-center justify-center py-1 text-lg">
-          {state}
-        </div>
+        <div className="mx-1 flex w-full items-center justify-center py-1 text-lg">{state}</div>
       )}
     </>
   );

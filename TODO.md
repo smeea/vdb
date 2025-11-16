@@ -1,5 +1,4 @@
 # FIX
-- Hide popover in Inventory on modal
 
 # FIX ON HOLD
 

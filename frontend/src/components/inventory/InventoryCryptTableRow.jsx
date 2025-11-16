@@ -18,7 +18,14 @@ import { inventoryCardChange, inventoryStore, useApp, usedStore } from "@/contex
 import { useSwipe } from "@/hooks";
 import { getHardTotal, getSoftMax, getSwipedBg } from "@/utils";
 
-const InventoryCryptTableRow = ({ card, compact, newFocus, forceNonEditable, handleClick }) => {
+const InventoryCryptTableRow = ({
+  card,
+  compact,
+  newFocus,
+  forceNonEditable,
+  shouldShowModal,
+  handleClick,
+}) => {
   const { isMobile, isWide } = useApp();
   const usedCrypt = useSnapshot(usedStore)[CRYPT];
   const softUsedMax = getSoftMax(usedCrypt[SOFT][card.c[ID]]);
@@ -74,7 +81,7 @@ const InventoryCryptTableRow = ({ card, compact, newFocus, forceNonEditable, han
       <div className="flex w-full" onClick={onClick}>
         <ConditionalTooltip
           overlay={<CardPopover card={card.c} />}
-          disabled={isMobile}
+          disabled={isMobile || shouldShowModal}
           className="flex w-full"
           noPadding
         >

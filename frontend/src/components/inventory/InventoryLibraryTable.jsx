@@ -45,6 +45,7 @@ const InventoryLibraryTable = ({
         newFocus={newFocus}
         forceNonEditable={inShared || inMissing}
         handleClick={handleClick}
+        shouldShowModal={shouldShowModal}
       />
     ));
 

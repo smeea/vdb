@@ -31,7 +31,14 @@ import { inventoryCardChange, inventoryStore, useApp, usedStore } from "@/contex
 import { useSwipe } from "@/hooks";
 import { getHardTotal, getSoftMax, getSwipedBg } from "@/utils";
 
-const InventoryLibraryTableRow = ({ card, compact, newFocus, forceNonEditable, handleClick }) => {
+const InventoryLibraryTableRow = ({
+  card,
+  compact,
+  newFocus,
+  forceNonEditable,
+  shouldShowModal,
+  handleClick,
+}) => {
   const { isMobile } = useApp();
   const usedLibrary = useSnapshot(usedStore)[LIBRARY];
   const softUsedMax = getSoftMax(usedLibrary[SOFT][card.c[ID]]);
@@ -84,7 +91,7 @@ const InventoryLibraryTableRow = ({ card, compact, newFocus, forceNonEditable, h
       <div className="flex w-full" onClick={onClick}>
         <ConditionalTooltip
           overlay={<CardPopover card={card.c} />}
-          disabled={isMobile}
+          disabled={isMobile || shouldShowModal}
           className="flex w-full"
           noPadding
         >
