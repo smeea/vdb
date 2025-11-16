@@ -59,6 +59,12 @@ def generate_twd(i):
             else:
                 clans[clan] = q
 
+            if path := c["path"]:
+                if path in clans:
+                    clans[path] += q
+                else:
+                    clans[path] = q
+
         if (sect := c["sect"]) in sects:
             sects[sect] += q
         else:
@@ -128,16 +134,17 @@ with open("twda.json", "r") as twd_input, open("twd_decks.json", "w") as twd_dec
 
     for deck in decks:
         if len(deck["deckid"]) == 9:
-            deck["deckid"] = f'{deck["deckid"]}0'
+            deck["deckid"] = f"{deck['deckid']}0"
 
         decks_by_id[deck["deckid"]] = deck
 
     json.dump(decks_by_id, twd_decks_file, indent=4, separators=(",", ":"))
 
-with open("twda.json", "r") as twd_input, open(
-    "twd_locations.json", "w"
-) as twd_locations_file, open("twd_players.json", "w") as twd_players_file:
-
+with (
+    open("twda.json", "r") as twd_input,
+    open("twd_locations.json", "w") as twd_locations_file,
+    open("twd_players.json", "w") as twd_players_file,
+):
     twda = json.load(twd_input)
     cities = set(())
     countries = set(())
