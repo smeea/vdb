@@ -31,18 +31,20 @@ const UsedPopover = ({ cardid }) => {
           <Hr />
         </>
       )}
-      <div className="flex items-center gap-1">
-        <div className="opacity-40">
+      <div className="flex items-center gap-1.5">
+        <div className="flex min-w-[16px] justify-center opacity-40">
           <CalculatorFill width="14" height="14" viewBox="0 0 16 16" />
         </div>
-        <b>{softUsedMax + hardUsedTotal}</b>
+        <div className="flex min-w-[18px] justify-center font-bold">
+          {softUsedMax + hardUsedTotal}
+        </div>
         <div>- Total Used</div>
       </div>
-      <div className="flex items-center gap-1">
-        <div className="opacity-40">
+      <div className="flex items-center gap-1.5">
+        <div className="flex min-w-[16px] justify-center opacity-40">
           <ArchiveFill width="14" height="14" viewBox="0 0 16 16" />
         </div>
-        <b>{inInventory}</b>
+        <div className="flex min-w-[18px] justify-center font-bold">{inInventory}</div>
         <div>- In Inventory</div>
       </div>
       {text && (

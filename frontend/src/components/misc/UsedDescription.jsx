@@ -8,14 +8,14 @@ const UsedDescriptionDeck = ({ deck, t, q }) => {
 
   return (
     <div className="flex items-center gap-1.5">
-      <div className="opacity-40">
+      <div className="flex min-w-[16px] justify-center opacity-40">
         {t === S ? (
           <Shuffle width="16" height="16" viewBox="0 0 16 16" />
         ) : (
           <PinAngleFill width="16" height="16" viewBox="0 0 16 16" />
         )}
       </div>
-      <b>{q}</b>-
+      <div className="flex min-w-[18px] justify-center font-bold">{q}</div>-
       <div className="truncate sm:max-w-[265px] md:max-w-[290px]">
         <NavLink to={`/decks/${deck[DECKID]}`}>
           {deck[NAME]}

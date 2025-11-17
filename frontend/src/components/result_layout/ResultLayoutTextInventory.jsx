@@ -50,23 +50,35 @@ const ResultLayoutTextInventory = ({ card, inPopover, setIsHotkeysDisabled }) =>
       <div className={twMerge("flex gap-1.5", inPopover ? "flex-col" : "max-md:flex-col")}>
         <div className="flex basis-full flex-col gap-0.5 md:basis-1/3">
           <div className="flex items-center gap-1.5">
-            <div className="opacity-40">
+            <div className="flex min-w-[16px] justify-center opacity-40">
               <CalculatorFill width="14" height="14" viewBox="0 0 16 16" />
             </div>
-            <b>{softUsedMax + hardUsedTotal}</b>-<div>Total Used</div>
+            <div className="flex min-w-[18px] justify-center font-bold">
+              {softUsedMax + hardUsedTotal}
+            </div>
+            -<div>Total Used</div>
           </div>
           <div className="flex items-center gap-1.5">
-            <div className="opacity-40">
+            <div className="flex min-w-[16px] justify-center opacity-40">
               <ArchiveFill width="14" height="14" viewBox="0 0 16 16" />
             </div>
-            <b>{inInventory}</b>-<div>In Inventory</div>
+            <div className="flex min-w-[18px] justify-center font-bold">{inInventory}</div>-
+            <div>In Inventory</div>
           </div>
           {wishlistLogic && (
             <div className="flex items-center gap-1.5">
-              <div className="opacity-40">
+              <div className="flex min-w-[16px] justify-center opacity-40">
                 <PlusCircleFill width="14" height="14" viewBox="0 0 16 16" />
               </div>
-              <b>{surplus}</b>-<div>Surplus</div>
+              <div
+                className={twMerge(
+                  "flex min-w-[18px] justify-center font-bold",
+                  surplus < 0 && "text-fgRed dark:text-fgRedDark",
+                )}
+              >
+                {surplus}
+              </div>
+              -<div>Surplus</div>
             </div>
           )}
         </div>
