@@ -22,10 +22,14 @@ import {
   ID,
   IS_FROZEN,
   LIBRARY,
+  LOGIC,
   POOL,
   SOFT,
+  SURPLUS_USED,
   TRIFLE,
   TYPE,
+  VALUE,
+  WISHLIST,
 } from "@/constants";
 import { inventoryCardChange, inventoryStore, useApp, usedStore } from "@/context";
 import { useSwipe } from "@/hooks";
@@ -43,7 +47,17 @@ const InventoryLibraryTableRow = ({
   const usedLibrary = useSnapshot(usedStore)[LIBRARY];
   const softUsedMax = getSoftMax(usedLibrary[SOFT][card.c[ID]]);
   const hardUsedTotal = getHardTotal(usedLibrary[HARD][card.c[ID]]);
-  const isEditable = !useSnapshot(inventoryStore)[IS_FROZEN] && !forceNonEditable;
+
+  const { [WISHLIST]: wishlist, [IS_FROZEN]: isFrozen } = useSnapshot(inventoryStore);
+  const isEditable = !isFrozen && !forceNonEditable;
+
+  const wishlistLogic = wishlist[card.c[ID]]?.[LOGIC];
+  const surplus = wishlistLogic
+    ? wishlistLogic === SURPLUS_USED
+      ? card.q - (softUsedMax + hardUsedTotal + (wishlist[card.c[ID]]?.[VALUE] || 0))
+      : card.q - (wishlist[card.c[ID]]?.[VALUE] || 0)
+    : null;
+
   const onClick = () => handleClick(card.c);
 
   const { isSwiped, swipeHandlers } = useSwipe(
@@ -80,6 +94,7 @@ const InventoryLibraryTableRow = ({
         <div className="flex min-w-[40px] justify-center">
           <InventoryCardQuantityDiff
             card={card}
+            surplus={surplus}
             softUsedMax={softUsedMax}
             hardUsedTotal={hardUsedTotal}
           />

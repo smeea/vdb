@@ -7,8 +7,8 @@
 - TWD search with % V5-compatibility
 - Click on scan image to close modal on mobile (need refactor)
 - Inventory wish list / target card q-ty
-  - Columns in Inventory Table
   - Get missing using wishlist
+  - Documentation
 - Update cards translation
 
 # FEATURES ON HOLD

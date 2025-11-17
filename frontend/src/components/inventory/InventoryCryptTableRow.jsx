@@ -13,7 +13,21 @@ import {
   ResultCryptTitle,
   ResultName,
 } from "@/components";
-import { CLAN, CRYPT, DISCIPLINES, GROUP, HARD, ID, IS_FROZEN, SOFT, TITLE } from "@/constants";
+import {
+  CLAN,
+  CRYPT,
+  DISCIPLINES,
+  GROUP,
+  HARD,
+  ID,
+  IS_FROZEN,
+  LOGIC,
+  SOFT,
+  SURPLUS_USED,
+  TITLE,
+  VALUE,
+  WISHLIST,
+} from "@/constants";
 import { inventoryCardChange, inventoryStore, useApp, usedStore } from "@/context";
 import { useSwipe } from "@/hooks";
 import { getHardTotal, getSoftMax, getSwipedBg } from "@/utils";
@@ -30,7 +44,17 @@ const InventoryCryptTableRow = ({
   const usedCrypt = useSnapshot(usedStore)[CRYPT];
   const softUsedMax = getSoftMax(usedCrypt[SOFT][card.c[ID]]);
   const hardUsedTotal = getHardTotal(usedCrypt[HARD][card.c[ID]]);
-  const isEditable = !useSnapshot(inventoryStore)[IS_FROZEN] && !forceNonEditable;
+
+  const { [WISHLIST]: wishlist, [IS_FROZEN]: isFrozen } = useSnapshot(inventoryStore);
+  const isEditable = !isFrozen && !forceNonEditable;
+
+  const wishlistLogic = wishlist[card.c[ID]]?.[LOGIC];
+  const surplus = wishlistLogic
+    ? wishlistLogic === SURPLUS_USED
+      ? card.q - (softUsedMax + hardUsedTotal + (wishlist[card.c[ID]]?.[VALUE] || 0))
+      : card.q - (wishlist[card.c[ID]]?.[VALUE] || 0)
+    : null;
+
   const onClick = () => handleClick(card.c);
 
   const { isSwiped, swipeHandlers } = useSwipe(
@@ -67,6 +91,7 @@ const InventoryCryptTableRow = ({
         <div className="flex min-w-[40px] justify-center">
           <InventoryCardQuantityDiff
             card={card}
+            surplus={surplus}
             softUsedMax={softUsedMax}
             hardUsedTotal={hardUsedTotal}
           />
