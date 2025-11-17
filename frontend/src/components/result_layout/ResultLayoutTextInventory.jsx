@@ -73,10 +73,14 @@ const ResultLayoutTextInventory = ({ card, inPopover, setIsHotkeysDisabled }) =>
               <div
                 className={twMerge(
                   "flex min-w-[18px] justify-center font-bold",
-                  surplus < 0 && "text-fgRed dark:text-fgRedDark",
+                  surplus === 0
+                    ? "text-midGray dark:text-midGrayDark"
+                    : surplus > 0
+                      ? "text-fgGreen dark:text-fgGreenDark"
+                      : "text-fgRed dark:text-fgRedDark",
                 )}
               >
-                {surplus}
+                {surplus > 0 ? `+${surplus}` : surplus}
               </div>
               -<div>Surplus</div>
             </div>

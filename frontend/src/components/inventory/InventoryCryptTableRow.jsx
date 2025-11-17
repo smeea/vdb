@@ -88,7 +88,7 @@ const InventoryCryptTableRow = ({
         )}
       </div>
       {!forceNonEditable && (
-        <div className="flex min-w-[40px] justify-center">
+        <div className="flex min-w-[55px] justify-center">
           <InventoryCardQuantityDiff
             card={card}
             surplus={surplus}
@@ -97,7 +97,7 @@ const InventoryCryptTableRow = ({
           />
         </div>
       )}
-      <div className="flex min-w-[32px] justify-center sm:min-w-[40px]" onClick={onClick}>
+      <div className="flex min-w-[32px]" onClick={onClick}>
         <ResultCryptCapacity card={card.c} />
       </div>
       <div className="flex min-w-[180px] max-lg:hidden" onClick={onClick}>

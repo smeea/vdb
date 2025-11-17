@@ -91,7 +91,7 @@ const InventoryLibraryTableRow = ({
         )}
       </div>
       {!forceNonEditable && (
-        <div className="flex min-w-[40px] justify-center">
+        <div className="flex min-w-[55px] justify-center">
           <InventoryCardQuantityDiff
             card={card}
             surplus={surplus}

@@ -21,7 +21,7 @@ const InventoryCardQuantityDiff = ({ card, surplus = null, softUsedMax, hardUsed
                 : "text-fgRed dark:text-fgRedDark"
           }
         >
-          [{surplus}]
+          [{surplus > 0 ? `+${surplus}` : surplus}]
         </div>
       ) : (
         <div
