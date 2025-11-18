@@ -27,7 +27,7 @@ const PdaResult = ({ results = [] }) => {
         />
         <div className="flex flex-col gap-4">
           {sortedDecks
-            .filter((_, idx) => idx > showCounter)
+            .filter((_, idx) => idx < showCounter)
             .map((d) => {
               return d[CARDS] ? (
                 <TwdDeck key={d[DECKID]} deck={d} inPda />
