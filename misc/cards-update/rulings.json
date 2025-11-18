@@ -20819,13 +20819,13 @@
     ],
     "200534":[
         {
-            "text":"If {Fall of the Sabbat} is in play, Priscii do not benefit from their title and have no ballot. The Priscii subreferendum still happens and Gratiano benefits from his bonus ballot.",
+            "text":"If Gratino looses (eg. {Fall of the Sabbat}) or changes his title, he still gets one ballot to cast in the Prisi Sub-Referendum.",
             "refs":{
                 "LSJ 20040519":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/fz-EAPmmqZY/m/bj4sR5CxnmQJ"
             }
         },
         {
-            "text":"His votes (if any) and ballots must be cast on the same side (for or against).",
+            "text":"The vampire's votes (if any) and ballots must be cast on the same side (for or against).",
             "refs":{
                 "RBK gaining-votes":"https://www.vekn.net/rulebook#gaining-votes",
                 "LSJ 20051113-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/O2cgcyCHBSI/m/7vfAvsEbiU8J"
@@ -22003,6 +22003,44 @@
             }
         }
     ],
+    "200988":[
+        {
+            "text":"The \"first\" aim implies working down from the top of the library.",
+            "refs":{
+                "LSJ 20101105":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/g7KzVg2xLwk/m/caVhAlgfnE8J"
+            }
+        },
+        {
+            "text":"Mikael must meet the requirement of the aim card, but does not pay its cost.",
+            "refs":{
+                "LSJ 20101105":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/g7KzVg2xLwk/m/caVhAlgfnE8J"
+            }
+        },
+        {
+            "text":"His ability cannot be used if he has already played or used another aim that was cancelled.",
+            "refs":{
+                "LSJ 20101105":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/g7KzVg2xLwk/m/caVhAlgfnE8J"
+            }
+        },
+        {
+            "text":"Aims that are used with his ability can be moved to a {Light Intensifying Goggles} on him.",
+            "refs":{
+                "LSJ 20100209":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/u9iNuSpdXKc/m/vnU4r4HnOwcJ"
+            }
+        },
+        {
+            "text":"Can use a multi-discipline card with a potential (unused) Celerity [cel] effect.",
+            "refs":{
+                "LSJ 20050322-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jiavUD9IgIA/m/SuMUFkb5uLMJ"
+            }
+        },
+        {
+            "text":"The scarce penalty considers the apparent clan while controlled (in case of {Clan Impersonation} and {Banishment}).",
+            "refs":{
+                "LSJ 20011015":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ZXW0ScxTsBA/m/OvbMemV2oXUJ"
+            }
+        }
+    ],
     "201006":[
         {
             "text":"His ability to provide stealth can be used while locked or in torpor.",
@@ -22147,6 +22185,26 @@
             "text":"Cannot choose to be part of the \"Inner Circle\" and get the title. The Inner Circle title and a Blood Brothers circle are different things.",
             "refs":{
                 "ANK 20190117-2":"https://www.vekn.net/forum/rules-questions/77306-new-blood-is-overpowered#92966"
+            }
+        }
+    ],
+    "201067":[
+        {
+            "text":"He can unlock during an action, for instance during the polling step of a {Domain Challenge} so that their controller loses 1 fewer pool.",
+            "refs":{
+                "LSJ 20020309":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Sj5g-gULMjE/m/Og4sSKsR7DMJ"
+            }
+        },
+        {
+            "text":"Can use a multi-discipline card with a potential (unused) Celerity [cel] effect.",
+            "refs":{
+                "LSJ 20050322-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jiavUD9IgIA/m/SuMUFkb5uLMJ"
+            }
+        },
+        {
+            "text":"The scarce penalty considers the apparent clan while controlled (in case of {Clan Impersonation} and {Banishment}).",
+            "refs":{
+                "LSJ 20011015":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ZXW0ScxTsBA/m/OvbMemV2oXUJ"
             }
         }
     ],
@@ -29780,20 +29838,6 @@
             }
         }
     ],
-    "200988":[
-        {
-            "text":"Can use a multi-discipline card with a potential (unused) Celerity [cel] effect.",
-            "refs":{
-                "LSJ 20050322-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jiavUD9IgIA/m/SuMUFkb5uLMJ"
-            }
-        },
-        {
-            "text":"The scarce penalty considers the apparent clan while controlled (in case of {Clan Impersonation} and {Banishment}).",
-            "refs":{
-                "LSJ 20011015":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ZXW0ScxTsBA/m/OvbMemV2oXUJ"
-            }
-        }
-    ],
     "201044":[
         {
             "text":"Can use a multi-discipline card with a potential (unused) Celerity [cel] effect.",
@@ -29811,20 +29855,6 @@
             "text":"Keeps their title and votes if they changes sects.",
             "refs":{
                 "LSJ 20010714":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-xrhpMEiMrw/m/Vnr8QIyt41cJ"
-            }
-        }
-    ],
-    "201067":[
-        {
-            "text":"Can use a multi-discipline card with a potential (unused) Celerity [cel] effect.",
-            "refs":{
-                "LSJ 20050322-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jiavUD9IgIA/m/SuMUFkb5uLMJ"
-            }
-        },
-        {
-            "text":"The scarce penalty considers the apparent clan while controlled (in case of {Clan Impersonation} and {Banishment}).",
-            "refs":{
-                "LSJ 20011015":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ZXW0ScxTsBA/m/OvbMemV2oXUJ"
             }
         }
     ],

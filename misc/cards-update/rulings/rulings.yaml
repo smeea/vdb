@@ -3805,9 +3805,9 @@
   - '[MERGED] Is Camarilla. If the base version was the one in play, it changes sect as it is merged. If it had an anarch
     token, it is burned. [ANK 20180524]'
 200534|Gratiano:
-  - If {Fall of the Sabbat} is in play, Priscii do not benefit from their title and have no ballot. The Priscii subreferendum
-    still happens and Gratiano benefits from his bonus ballot. [LSJ 20040519]
-  - His votes (if any) and ballots must be cast on the same side (for or against). [RBK gaining-votes] [LSJ 20051113-2]
+  - If Gratino looses (eg. {Fall of the Sabbat}) or changes his title, he still gets one ballot to cast in the Prisi Sub-Referendum.
+    [LSJ 20040519]
+  - The vampire's votes (if any) and ballots must be cast on the same side (for or against). [RBK gaining-votes] [LSJ 20051113-2]
 200541|Grotesque:
   - If Grotesque enters play when you control no locations (or no selectable locations), it immediately removes itself from
     the game. [LSJ 20091216]
@@ -4048,6 +4048,11 @@
   - His ability is only usable once each referendum, even if he unlocks somehow during the referendum. [LSJ 20041207]
 200983|Michaela:
   - Can only use her ability when she is in combat herself. [ANK 20221021]
+200988|Mikael Birkholm:
+  - The "first" aim implies working down from the top of the library. [LSJ 20101105]
+  - Mikael must meet the requirement of the aim card, but does not pay its cost. [LSJ 20101105]
+  - His ability cannot be used if he has already played or used another aim that was cancelled. [LSJ 20101105]
+  - Aims that are used with his ability can be moved to a {Light Intensifying Goggles} on him. [LSJ 20100209]
 201006|Montano:
   - His ability to provide stealth can be used while locked or in torpor. [ANK 20220705] [LSJ 20100705]
 201017|Muaziz, Archon of Ulugh Beg:
@@ -4083,6 +4088,9 @@
     Bloods are in different circles (eg. for {Unwholesome Bond}). [ANK 20211113]
   - Cannot choose to be part of the "Inner Circle" and get the title. The Inner Circle title and a Blood Brothers circle are
     different things. [ANK 20190117-2]
+201067|Nu, The Pillar:
+  - He can unlock during an action, for instance during the polling step of a {Domain Challenge} so that their controller
+    loses 1 fewer pool. [LSJ 20020309]
 201085|Osric Vladislav:
   - His ability can be used more than once during an action, but only if he is acting and stealth is needed. [LSJ 20020814]
     [ANK 20221229]
