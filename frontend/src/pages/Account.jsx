@@ -48,7 +48,10 @@ const Account = () => {
         <div className="flex w-full flex-col gap-16">
           <AccountLogin />
           <AccountRegister />
-          <Limited />
+          <div className="flex flex-col gap-3 sm:gap-4">
+            <AccountLegacyToggle />
+            <Limited />
+          </div>
         </div>
       )}
     </div>
