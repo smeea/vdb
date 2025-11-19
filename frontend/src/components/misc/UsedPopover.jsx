@@ -35,7 +35,7 @@ const UsedPopover = ({ cardid }) => {
   const text = cardid > 200000 ? inventoryCrypt[cardid]?.t : inventoryLibrary[cardid]?.t;
   if (!inInventory) inInventory = 0;
 
-  const wishlistLogic = wishlist[cardid]?.[LOGIC];
+  const wishlistLogic = wishlist?.[cardid]?.[LOGIC];
   const surplus =
     wishlistLogic === SURPLUS_USED
       ? inInventory - (softUsedMax + hardUsedTotal + (wishlist[cardid]?.[VALUE] || 0))

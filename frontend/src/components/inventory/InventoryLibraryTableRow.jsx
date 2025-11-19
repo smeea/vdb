@@ -51,7 +51,7 @@ const InventoryLibraryTableRow = ({
   const { [WISHLIST]: wishlist, [IS_FROZEN]: isFrozen } = useSnapshot(inventoryStore);
   const isEditable = !isFrozen && !forceNonEditable;
 
-  const wishlistLogic = wishlist[card.c[ID]]?.[LOGIC];
+  const wishlistLogic = wishlist?.[card.c[ID]]?.[LOGIC];
   const surplus = wishlistLogic
     ? wishlistLogic === SURPLUS_USED
       ? card.q - (softUsedMax + hardUsedTotal + (wishlist[card.c[ID]]?.[VALUE] || 0))

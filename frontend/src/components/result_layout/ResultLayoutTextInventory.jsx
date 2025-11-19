@@ -39,7 +39,7 @@ const ResultLayoutTextInventory = ({ card, inPopover, setIsHotkeysDisabled }) =>
     card[ID] > 200000 ? inventoryCrypt[card[ID]]?.q || 0 : inventoryLibrary[card[ID]]?.q || 0;
   const text = card[ID] > 200000 ? inventoryCrypt[card[ID]]?.t : inventoryLibrary[card[ID]]?.t;
 
-  const wishlistLogic = wishlist[card[ID]]?.[LOGIC];
+  const wishlistLogic = wishlist?.[card[ID]]?.[LOGIC];
   const surplus =
     wishlistLogic === SURPLUS_USED
       ? inInventory - (softUsedMax + hardUsedTotal + (wishlist[card[ID]]?.[VALUE] || 0))
