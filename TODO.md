@@ -1,4 +1,5 @@
 # FIX
+- Tags filter on mobile in adv select new line
 
 # FIX ON HOLD
 
@@ -10,6 +11,7 @@
   - Get missing using wishlist
   - Documentation
 - Update cards translation
+- Block fail trait
 
 # FEATURES ON HOLD
 - Draft Cube support -> when draft cube info is available

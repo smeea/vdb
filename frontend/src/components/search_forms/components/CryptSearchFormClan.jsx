@@ -41,6 +41,7 @@ const CryptSearchFormClan = ({ value, searchForm, onChange }) => {
                 name={name}
                 value={value[LOGIC]}
                 searchForm={searchForm}
+                withAnd
               />
               {value.value.length === 1 ? (
                 <SearchFormButtonAdd searchForm={searchForm} name={name} />

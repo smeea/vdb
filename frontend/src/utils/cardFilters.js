@@ -393,6 +393,11 @@ const missingClan = (filterClan, card) => {
           return true;
         return clan === NOT_REQUIRED && !card[CLAN] && !card[PATH];
       });
+    case AND:
+      return !clans.every((clan) => {
+        if (clan === NOT_REQUIRED && !card[CLAN] && !card[PATH]) return true
+        return ([card[PATH].toLowerCase(), ...card[CLAN].toLowerCase().split("/")].includes(clan))
+      });
     case NOT:
       return clans.some((clan) => {
         if (card[CLAN].toLowerCase().split("/").includes(clan)) return true;
