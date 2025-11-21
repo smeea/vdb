@@ -286,3 +286,4 @@ export const WISHLIST = "wishlist";
 export const X = "X";
 export const XLSX = "xlsx";
 export const YES = "YES";
+export const NO_PATH = "no path";

@@ -23,6 +23,7 @@ import {
   CAPACITY,
   CARDINAL,
   CLAN,
+  NO_PATH,
   DATE,
   DISCIPLINE,
   DISCIPLINES,
@@ -389,17 +390,20 @@ const missingClan = (filterClan, card) => {
   switch (logic) {
     case OR:
       return !clans.some((clan) => {
+        if (clan === NO_PATH && card[PATH] === "") return true;
         if ([card[PATH].toLowerCase(), ...card[CLAN].toLowerCase().split("/")].includes(clan))
           return true;
         return clan === NOT_REQUIRED && !card[CLAN] && !card[PATH];
       });
     case AND:
       return !clans.every((clan) => {
+        if (clan === NO_PATH && card[PATH] === "") return true;
         if (clan === NOT_REQUIRED && !card[CLAN] && !card[PATH]) return true;
         return [card[PATH].toLowerCase(), ...card[CLAN].toLowerCase().split("/")].includes(clan);
       });
     case NOT:
       return clans.some((clan) => {
+        if (clan === NO_PATH && card[PATH] === "") return true;
         if ([card[PATH].toLowerCase(), ...card[CLAN].toLowerCase().split("/")].includes(clan))
           return true;
         return clan === NOT_REQUIRED && !card[CLAN] && !card[PATH];
