@@ -2203,6 +2203,12 @@
                 "refs":{
                     "LSJ 20070808-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jzMOxZ9oxOs/m/o0X7GUFmii0J"
                 }
+            },
+            {
+                "text":"The action provided by the equipment to the attached minion fizzles (resolves successfully for no effect) if the equipment is not attached to the acting minion when the action resolves unblocked.",
+                "refs":{
+                    "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
+                }
             }
         ],
         "set":{
@@ -7522,6 +7528,12 @@
                 }
             },
             {
+                "text":"Damage is effective at long range",
+                "refs":{
+                    "LSJ 20090610":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/MKJghrVVAMw/m/UCh2_EbE9AEJ"
+                }
+            },
+            {
                 "text":"Damage is inflicted even against a dodge. A \"strike: combat ends\" ends combat before damage is applied, as will a combattant going to torpor during first strike.",
                 "refs":{
                     "RTR 19941109":"https://groups.google.com/d/msg/rec.games.deckmaster/_6CXoKTSLnw/FdG67-3HEAQJ",
@@ -11204,13 +11216,6 @@
                 }
             },
             {
-                "text":"The provided action ends with no effect if the acting minion does not possess the equipment when the action resolves. It is still considered successful if not blocked.",
-                "refs":{
-                    "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J",
-                    "LSJ 20020926":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/C7vgb-0Mcbo/m/6UHJsQjBs9wJ"
-                }
-            },
-            {
                 "text":"When used as a strike, it does not burn if combat ends before it resolves (eg. if the opponent uses a \"strike: combat ends\").",
                 "refs":{
                     "LSJ 19981006":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/RU5yM2Ov5Mg/m/n8Phcid1tCQJ",
@@ -11223,6 +11228,12 @@
                 "refs":{
                     "RBK who-may-attempt-to-block":"https://www.vekn.net/rulebook#who-may-attempt-to-block",
                     "LSJ 20090324":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Zc_ogoVhsug/m/tJ2VBYI7resJ"
+                }
+            },
+            {
+                "text":"The action provided by the equipment to the attached minion fizzles (resolves successfully for no effect) if the equipment is not attached to the acting minion when the action resolves unblocked.",
+                "refs":{
+                    "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
                 }
             }
         ],
@@ -13787,7 +13798,7 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"The provided action ends with no effect if the acting minion does not possess the equipment when the action resolves. It is still considered successful if not blocked.",
+                "text":"The action provided by the equipment to the attached minion fizzles (resolves successfully for no effect) if the equipment is not attached to the acting minion when the action resolves unblocked.",
                 "refs":{
                     "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
                 }
@@ -15237,15 +15248,15 @@
         "requirement":"priscus,cardinal,regent,sabbat",
         "rulings":[
             {
-                "text":"The provided action ends with no effect, if the acting minion does not possess the equipment when the action resolves. It is still considered successful if not blocked.",
-                "refs":{
-                    "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
-                }
-            },
-            {
                 "text":"The action provided by this card is considered to be an action requiring the listed clan/sect/capacity/title (e.g. the action provided by {Open War} is considered an action that requires an Anarch, the action provided by {The Gate of Acheron} is considered an action that requires Hecata).",
                 "refs":{
                     "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
+                }
+            },
+            {
+                "text":"The action provided by the equipment to the attached minion fizzles (resolves successfully for no effect) if the equipment is not attached to the acting minion when the action resolves unblocked.",
+                "refs":{
+                    "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
                 }
             }
         ],
@@ -17864,7 +17875,14 @@
         "path":"",
         "pool":1,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The action provided by the equipment to the attached minion fizzles (resolves successfully for no effect) if the equipment is not attached to the acting minion when the action resolves unblocked.",
+                "refs":{
+                    "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
+                }
+            }
+        ],
         "set":{
             "Promo":{
                 "2009-09-29":true
@@ -32245,7 +32263,14 @@
         "path":"",
         "pool":3,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The action provided by the equipment to the attached minion fizzles (resolves successfully for no effect) if the equipment is not attached to the acting minion when the action resolves unblocked.",
+                "refs":{
+                    "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
+                }
+            }
+        ],
         "set":{
             "Promo":{
                 "2002-11-01":true
@@ -41489,7 +41514,7 @@
         "requirement":"black hand",
         "rulings":[
             {
-                "text":"The provided action ends with no effect, if the acting minion does not possess the equipment when the action resolves. It is still considered successful if not blocked.",
+                "text":"The action provided by the equipment to the attached minion fizzles (resolves successfully for no effect) if the equipment is not attached to the acting minion when the action resolves unblocked.",
                 "refs":{
                     "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
                 }
@@ -42221,6 +42246,12 @@
                 "text":"The minion cannot use the discipline provided if some effect prevents him to use the equipment (eg. {Drawing Out the Beast}).",
                 "refs":{
                     "RTR 20010710":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GsI1UyH54jU/m/x9LfDZX1vR4J"
+                }
+            },
+            {
+                "text":"The action provided by the equipment to the attached minion fizzles (resolves successfully for no effect) if the equipment is not attached to the acting minion when the action resolves unblocked.",
+                "refs":{
+                    "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
                 }
             }
         ],
@@ -48728,12 +48759,6 @@
                 }
             },
             {
-                "text":"The provided action ends with no effect if the acting minion does not possess the equipment when the action resolves. It is still considered successful if not blocked.",
-                "refs":{
-                    "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
-                }
-            },
-            {
                 "text":"{Ghoul Retainer} is not the bearer so he can use the Jar even if it has no counter on it.",
                 "refs":{
                     "ANK 20171003":"https://www.vekn.net/forum/rules-questions/76205-ghoul-retainer-and-jar-of-skin-eaters#83712"
@@ -48757,6 +48782,12 @@
                 "text":"The action provided by this card is considered to be an action requiring the listed clan/sect/capacity/title (e.g. the action provided by {Open War} is considered an action that requires an Anarch, the action provided by {The Gate of Acheron} is considered an action that requires Hecata).",
                 "refs":{
                     "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
+                }
+            },
+            {
+                "text":"The action provided by the equipment to the attached minion fizzles (resolves successfully for no effect) if the equipment is not attached to the acting minion when the action resolves unblocked.",
+                "refs":{
+                    "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
                 }
             }
         ],
@@ -49305,12 +49336,6 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"The provided action ends with no effect if the acting minion does not possess the equipment when the action resolves. It is still considered successful if not blocked.",
-                "refs":{
-                    "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
-                }
-            },
-            {
                 "text":"Once in play, can be equipped from the minion it's on (rulebook action) by another minion that does not meet the requirements.",
                 "refs":{
                     "ANK 20180719-3":"https://www.vekn.net/forum/rules-questions/76834-moving-equipment-with-requirements#89044"
@@ -49320,6 +49345,12 @@
                 "text":"The action provided by this card is considered to be an action requiring the listed clan/sect/capacity/title (e.g. the action provided by {Open War} is considered an action that requires an Anarch, the action provided by {The Gate of Acheron} is considered an action that requires Hecata).",
                 "refs":{
                     "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
+                }
+            },
+            {
+                "text":"The action provided by the equipment to the attached minion fizzles (resolves successfully for no effect) if the equipment is not attached to the acting minion when the action resolves unblocked.",
+                "refs":{
+                    "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
                 }
             }
         ],
@@ -49396,6 +49427,12 @@
                 "text":"The action provided by this card is considered to be an action requiring the listed clan/sect/capacity/title (e.g. the action provided by {Open War} is considered an action that requires an Anarch, the action provided by {The Gate of Acheron} is considered an action that requires Hecata).",
                 "refs":{
                     "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
+                }
+            },
+            {
+                "text":"The action provided by the equipment to the attached minion fizzles (resolves successfully for no effect) if the equipment is not attached to the acting minion when the action resolves unblocked.",
+                "refs":{
+                    "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
                 }
             }
         ],
@@ -72730,7 +72767,14 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Only one damage is inflicted means only one damage needs be prevented.",
+                "refs":{
+                    "LSJ 20071117":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gjBI6LbWox0/m/dMgimn9Z9eYJ"
+                }
+            }
+        ],
         "set":{
             "LotN":{
                 "C":true
@@ -75931,6 +75975,12 @@
                 "refs":{
                     "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
                 }
+            },
+            {
+                "text":"The action provided by the equipment to the attached minion fizzles (resolves successfully for no effect) if the equipment is not attached to the acting minion when the action resolves unblocked.",
+                "refs":{
+                    "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
+                }
             }
         ],
         "set":{
@@ -78033,6 +78083,12 @@
                 "refs":{
                     "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
                 }
+            },
+            {
+                "text":"The action provided by the equipment to the attached minion fizzles (resolves successfully for no effect) if the equipment is not attached to the acting minion when the action resolves unblocked.",
+                "refs":{
+                    "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
+                }
             }
         ],
         "set":{
@@ -79917,6 +79973,12 @@
                 "refs":{
                     "LSJ 20050228":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UHEZEmX22jA/m/6_EZbs5DKb8J"
                 }
+            },
+            {
+                "text":"The action provided by the equipment to the attached minion fizzles (resolves successfully for no effect) if the equipment is not attached to the acting minion when the action resolves unblocked.",
+                "refs":{
+                    "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
+                }
             }
         ],
         "set":{
@@ -81087,6 +81149,12 @@
                 "refs":{
                     "LSJ 20030607":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/DG7s60pwv1U/m/FPqlZYJ3upcJ",
                     "ANK 20180801":"https://www.vekn.net/forum/rules-questions/76839-seal-of-veddartha#89529"
+                }
+            },
+            {
+                "text":"The action provided by the equipment to the attached minion fizzles (resolves successfully for no effect) if the equipment is not attached to the acting minion when the action resolves unblocked.",
+                "refs":{
+                    "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
                 }
             }
         ],
@@ -92360,6 +92428,12 @@
                     "LSJ 20090304-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/B7EQiAVOr1Q/m/gg-GkqQBRp8J",
                     "LSJ 20100514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Mz_fcIldfAY/m/Ys_W0MtwqLgJ"
                 }
+            },
+            {
+                "text":"The action provided by the equipment to the attached minion fizzles (resolves successfully for no effect) if the equipment is not attached to the acting minion when the action resolves unblocked.",
+                "refs":{
+                    "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
+                }
             }
         ],
         "set":{
@@ -92607,7 +92681,14 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The action provided by the equipment to the attached minion fizzles (resolves successfully for no effect) if the equipment is not attached to the acting minion when the action resolves unblocked.",
+                "refs":{
+                    "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
+                }
+            }
+        ],
         "set":{
             "Gehenna":{
                 "R":true

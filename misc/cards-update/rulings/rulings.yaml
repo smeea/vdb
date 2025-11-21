@@ -292,6 +292,7 @@
 100153|Bestial Vengeance:
   - Damage is environmental. [RTR 19970630]
   - Bestial Vengeance's damage is inflicted whether or not the opposing minion's strike burns the retainer. [LSJ 20090616]
+  - Damage is effective at long range [LSJ 20090610]
 100156|Betrayer:
   - The affected Methuselah is named when the card is played. [RTR 19980928]
   - Each of their turns, the person subjected to Betrayer can name a vampire. If the guess is correct, Betrayer is burned.
@@ -457,8 +458,6 @@
 100233|Bomb:
   - Using the provided action does not force the minion to strike with it if he is blocked. [LSJ 19971215]
   - Damage done to the bearer is environmental. [LSJ 19970801]
-  - The provided action ends with no effect if the acting minion does not possess the equipment when the action resolves.
-    It is still considered successful if not blocked. [RTR 19960221] [LSJ 20020926]
   - 'When used as a strike, it does not burn if combat ends before it resolves (eg. if the opponent uses a "strike: combat
     ends"). [LSJ 19981006] [LSJ 20001127-2] [LSJ 20010806-1]'
 100234|Bond:
@@ -551,9 +550,6 @@
   - Is neither a Ghoul nor a mortal, it has no subtype. [ANK 20230308]
   - The vampire keeps his chosen Discipline at superior until his controller's next unlock phase even if the retainer is burned
     or stolen. [LSJ 19970224]
-100287|Camera Phone:
-  - The provided action ends with no effect if the acting minion does not possess the equipment when the action resolves.
-    It is still considered successful if not blocked. [RTR 19960221]
 100289|Can't Take it with You:
   - Each Methuselah burns 1 pool for each equipment, each location and each retainer. [LSJ 20071005-2]
 100290|Canine Horde:
@@ -588,9 +584,6 @@
   - Cannot bring more than one copy of a unique vampire out, by the rule prohibiting self-contesting. [LSJ 20040722]
   - If a commanded vampire is burned (eg. {Daring the Dawn}), he is not brought back to the crypt. [LSJ 20040616]
   - If none of the vampires can bleed (eg. {Aabbt Kindred}), they all go to the bottom of the crypt. [LSJ 20040518-2]
-100319|Chalice of Kinship:
-  - The provided action ends with no effect, if the acting minion does not possess the equipment when the action resolves.
-    It is still considered successful if not blocked. [RTR 19960221]
 100320|Chameleon:
   - 'Cannot be used on a vampire who merged last turn: merging is not entering play. [PIB 20150728]'
   - Can be used on one of your own vampire to make it Anarch. [LSJ 20080803-2]
@@ -1456,9 +1449,6 @@
   - When used to block, does not ignore the normal prey, predator or target restrictions. [ANK 20180623]
   - If used to unlock, the block attempt and subsequent combat still happen if the action lacks a suitable target because
     of the unlock (eg. {Ambush}). [LSJ 20090514]
-100865|Guarded Rubrics:
-  - The provided action ends with no effect, if the acting minion does not possess the equipment when the action resolves.
-    It is still considered successful if not blocked. [RTR 19960221]
 100868|Guardian Vigil:
   - Must be played before block is successful, but can be played after the acting Methuselah declined to add stealth. [ANK
     20180926]
@@ -1710,8 +1700,6 @@
 101020|Jar of Skin Eaters:
   - Only requires one clan or the other (Tremere or Tremere antitribu) to be played. [ANK 20190203]
   - Using the Jar action does not force the minion to strike with it if he is blocked. [LSJ 19971215]
-  - The provided action ends with no effect if the acting minion does not possess the equipment when the action resolves.
-    It is still considered successful if not blocked. [RTR 19960221]
   - '{Ghoul Retainer} is not the bearer so he can use the Jar even if it has no counter on it. [ANK 20171003]'
   - 'When used as a strike, it does not burn if combat ends before it resolves (eg. if the opponent uses a "strike: combat
     ends"). [LSJ 20001127-2] [LSJ 20010806-1] [LSJ 19981006]'
@@ -1727,9 +1715,6 @@
     burns the last non-Camarilla vampire, no pool is lost. [ANK 20181016]
 101031|Justicar Retribution:
   - Counts the bleed amount that each vampire would have when attempting to bleed his prey. [RTR 19980623]
-101033|Karavalanisha Vrana:
-  - The provided action ends with no effect if the acting minion does not possess the equipment when the action resolves.
-    It is still considered successful if not blocked. [RTR 19960221]
 101035|Kaymakli Fragment:
   - 'Does not make the vampire Sabbat nor infernal: it merely gives the option to such vampires. [PIB 20150809]'
 101036|Kaymakli Nightmares:
@@ -2435,6 +2420,8 @@
     \ [LSJ 20090528-2-2]"
 101526|Putrescent Servitude:
   - Requirements do not apply when taking control of a card already in play. [TOM 19960226-1]
+101529|Quick Jab:
+  - Only one damage is inflicted means only one damage needs be prevented. [LSJ 20071117]
 101532|Quickness:
   - '[CEL] A limited additional strike can be played before or after. [LSJ 20001206] [ANK 20211124]'
 101533|Quicksilver Contemplation:
@@ -4809,3 +4796,6 @@ G00138|Action requirements from a card in play:
   - The action provided by this card is considered to be an action requiring the listed clan/sect/capacity/title (e.g. the
     action provided by {Open War} is considered an action that requires an Anarch, the action provided by {The Gate of Acheron}
     is considered an action that requires Hecata). [LSJ 20080604]
+G00139|Action provided to equipped minion:
+  - The action provided by the equipment to the attached minion fizzles (resolves successfully for no effect) if the equipment
+    is not attached to the acting minion when the action resolves unblocked. [RTR 19960221]
