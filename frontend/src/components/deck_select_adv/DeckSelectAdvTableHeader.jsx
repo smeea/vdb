@@ -111,7 +111,7 @@ const DeckSelectAdvTableHeader = ({
             noDropdown
           />
         </th>
-        <th className="flex flex-col gap-1 min-w-[45vw] max-sm:p-1 sm:min-w-[340px] sm:py-1">
+        <th className="flex min-w-[45vw] flex-col gap-1 max-sm:p-1 sm:min-w-[340px] sm:py-1">
           <Input
             placeholder="Filter by Deck or Card Name"
             name={NAME}
