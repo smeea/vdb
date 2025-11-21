@@ -400,8 +400,9 @@ const missingClan = (filterClan, card) => {
       });
     case NOT:
       return clans.some((clan) => {
-        if (card[CLAN].toLowerCase().split("/").includes(clan)) return true;
-        return clan === NOT_REQUIRED && !card[CLAN];
+        if ([card[PATH].toLowerCase(), ...card[CLAN].toLowerCase().split("/")].includes(clan))
+          return true;
+        return clan === NOT_REQUIRED && !card[CLAN] && !card[PATH];
       });
   }
 };
