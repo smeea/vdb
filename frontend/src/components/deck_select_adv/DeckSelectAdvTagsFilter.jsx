@@ -18,7 +18,7 @@ const DeckSelectAdvTagsFilter = ({ tagsFilter, handleChangeTagsFilter, allTagsOp
       options={allTagsOptions}
       onChange={handleChangeTagsFilter}
       value={tagList}
-      placeholder={<div className="text-center">Filter by Tags</div>}
+      placeholder='Filter by Tags'
       isSearchable={!isMobile}
     />
   );

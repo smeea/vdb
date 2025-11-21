@@ -1,5 +1,4 @@
 # FIX
-- Tags filter on mobile in adv select new line
 
 # FIX ON HOLD
 

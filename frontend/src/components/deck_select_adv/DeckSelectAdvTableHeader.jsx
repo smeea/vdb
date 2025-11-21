@@ -111,7 +111,7 @@ const DeckSelectAdvTableHeader = ({
             noDropdown
           />
         </th>
-        <th className="min-w-[45vw] max-sm:p-1 sm:min-w-[340px] sm:py-1">
+        <th className="flex flex-col gap-1 min-w-[45vw] max-sm:p-1 sm:min-w-[340px] sm:py-1">
           <Input
             placeholder="Filter by Deck or Card Name"
             name={NAME}
@@ -120,6 +120,13 @@ const DeckSelectAdvTableHeader = ({
             value={debouncedNameFilter}
             onChange={handleChangeNameFilter}
           />
+          <div className="md:hidden">
+            <DeckSelectAdvTagsFilter
+              tagsFilter={tagsFilter}
+              handleChangeTagsFilter={handleChangeTagsFilter}
+              allTagsOptions={options}
+            />
+          </div>
         </th>
         {!short && <th className="min-w-[45px] max-xl:hidden" />}
         {!short && <th className="min-w-[105px] max-md:hidden" />}

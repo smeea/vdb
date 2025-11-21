@@ -108,7 +108,7 @@ const Select = ({
           ),
         container: () =>
           twMerge(!noBackground && "bg-bgPrimary dark:bg-bgPrimaryDark", roundedStyle, className),
-        placeholder: () => "text-midGray dark:text-midGrayDark",
+        placeholder: () => "text-start text-midGray dark:text-midGrayDark",
         /* no bg- in creatable */
         valueContainer: () =>
           twMerge(
