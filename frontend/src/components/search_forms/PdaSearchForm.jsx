@@ -245,6 +245,7 @@ const PdaSearchForm = ({ error, setError }) => {
         value={pdaFormState[CLAN]}
         onChange={handleMultiSelectChange}
         searchForm={searchPdaForm}
+        withoutNoPath
       />
       <div className="flex justify-end">
         <Checkbox

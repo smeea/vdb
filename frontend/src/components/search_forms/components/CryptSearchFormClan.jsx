@@ -10,10 +10,10 @@ import {
   SearchFormButtonLogicToggle,
   Select,
 } from "@/components";
-import { ANY, NO_PATH, CLAN, LOGIC } from "@/constants";
+import { ANY, CLAN, LOGIC, NO_PATH } from "@/constants";
 import { useApp } from "@/context";
 
-const CryptSearchFormClan = ({ value, searchForm, onChange }) => {
+const CryptSearchFormClan = ({ value, searchForm, onChange, withoutNoPath }) => {
   const { isMobile } = useApp();
   const name = CLAN;
   const options = [
@@ -22,19 +22,25 @@ const CryptSearchFormClan = ({ value, searchForm, onChange }) => {
     ...paths.map((i) => [i, i.toLowerCase()]),
     ...vampireClansList.map((i) => [i, i.toLowerCase()]),
     ...imbuedClansList.map((i) => [i, i.toLowerCase()]),
-  ].map((i) => ({
-    value: i[1],
-    name: name,
-    label: (
-      <div className="flex items-center">
-        <div className="flex min-w-[40px] justify-center">
-          {![ANY, NO_PATH].includes(i[1]) &&
-            (paths.includes(i[0]) ? <ResultPathImage value={i[0]} /> : <ResultClanImage value={i[0]} />)}
+  ]
+    .filter((i) => !(withoutNoPath && i[1] === NO_PATH))
+    .map((i) => ({
+      value: i[1],
+      name: name,
+      label: (
+        <div className="flex items-center">
+          <div className="flex min-w-[40px] justify-center">
+            {![ANY, NO_PATH].includes(i[1]) &&
+              (paths.includes(i[0]) ? (
+                <ResultPathImage value={i[0]} />
+              ) : (
+                <ResultClanImage value={i[0]} />
+              ))}
+          </div>
+          {paths.includes(i[0]) ? `Path of ${i[0].split(" ")[0]}` : i[0]}
         </div>
-        {paths.includes(i[0]) ? `Path of ${i[0].split(" ")[0]}` : i[0]}
-      </div>
-    ),
-  }));
+      ),
+    }));
 
   return (
     <>

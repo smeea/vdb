@@ -1,4 +1,5 @@
 # FIX
+- Remove vtes-hook from About (not working)?
 
 # FIX ON HOLD
 

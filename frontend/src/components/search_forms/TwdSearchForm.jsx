@@ -246,6 +246,7 @@ const TwdSearchForm = ({ error, setError }) => {
         value={twdFormState[CLAN]}
         onChange={handleMultiSelectChange}
         searchForm={searchTwdForm}
+        withoutNoPath
       />
       <div className="flex justify-end">
         <Checkbox
