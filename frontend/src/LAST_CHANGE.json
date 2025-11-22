@@ -1,10 +1,10 @@
 {
-  "version": "2025-11-16",
+  "version": "2025-11-22",
   "changes": [
-    "Improve Decks (including binocular decks selector) performance for users with A LOT of decks",
-    "Move Paths into Clans search filters",
-    "Added No Banned option to 'limited' mode to filter out all banned cards from search",
-    "Update card images (older cards reprinted in Sabbat)",
+    "Inventory card q-ty 'target' feature (in popup card window), that allows to set fixed q-ty of card you want to have, or desired surplus in addition to calculated (from decks) required q-ty. When used for the card, this will replace +/- q-ty column in inventory info with this instead of decks-based calculation (square [brackets] will tell you if 'target' feature is used)",
+    "Add AND logic to crypt clan filter (allow Path + Clan), add No Path filter",
+    "Add Block Denial to library trait filter",
+    "Update TWDA",
     "Update rulings",
     "Small other fixes and improvements"
   ]

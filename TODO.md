@@ -17,3 +17,4 @@
 # TECH IMPROVEMENTS
 - Refactor with useEffectEvent https://react.dev/learn/separating-events-from-effects#extracting-non-reactive-logic-out-of-effects
 - Refactor onClick anonymous functions
+- Migrate from dayjs to date-fns
