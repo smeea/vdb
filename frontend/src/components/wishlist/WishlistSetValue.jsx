@@ -24,11 +24,13 @@ const WishlistSetValue = ({ cardid }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    wishlistUpdate(cardid, [VALUE], state ? Number.parseInt(state) : 0);
+    wishlistUpdate(cardid, VALUE, state ? Number.parseInt(state) : 0);
     setManual(false);
   };
 
   const handleQuantityChange = (diff) => {
+    console.log(diff)
+
     if (diff + state >= 0) {
       setState(diff + state);
       wishlistUpdate(cardid, VALUE, Number.parseInt(diff + state));
