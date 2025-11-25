@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
 import { useSnapshot } from "valtio";
 import { ButtonCardChange } from "@/components";
-import { IS_FROZEN, VALUE, WISHLIST } from "@/constants";
+import { LOGIC, IS_FROZEN, VALUE, WISHLIST, SURPLUS_FIXED } from "@/constants";
 import { inventoryStore, useApp, wishlistUpdate } from "@/context";
 
 const WishlistSetValue = ({ cardid }) => {
   const { isMobile } = useApp();
   const wishlist = useSnapshot(inventoryStore)[WISHLIST];
   const value = wishlist?.[cardid]?.[VALUE] ?? 0;
+  const logic = wishlist?.[cardid]?.[LOGIC] || null;
   const [manual, setManual] = useState();
   const [state, setState] = useState(value ?? "");
   const isEditable = !useSnapshot(inventoryStore)[IS_FROZEN];
@@ -17,6 +18,7 @@ const WishlistSetValue = ({ cardid }) => {
   }, [value]);
 
   const handleManualChange = (event) => {
+    if (state === 0 && !logic) wishlistUpdate(cardid, LOGIC, SURPLUS_FIXED)
     if (event.target.value >= 0) {
       setState(event.target.value ?? "");
     }
@@ -29,9 +31,8 @@ const WishlistSetValue = ({ cardid }) => {
   };
 
   const handleQuantityChange = (diff) => {
-    console.log(diff)
-
     if (diff + state >= 0) {
+      if (state === 0 && !logic) wishlistUpdate(cardid, LOGIC, SURPLUS_FIXED)
       setState(diff + state);
       wishlistUpdate(cardid, VALUE, Number.parseInt(diff + state));
     }

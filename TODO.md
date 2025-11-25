@@ -1,7 +1,7 @@
 # FIX
 - Remove vtes-hook from About (not working)?
-- Targey default to fixed on first enter
 - Vdb discord bug (Hobbesgoblin)
+- 'urplusFixed' typo
 
 # FIX ON HOLD
 
