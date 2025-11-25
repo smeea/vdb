@@ -40,7 +40,7 @@ const DeckSelectAdvTotal = ({
         isMobile && Object.keys(byTags).length > 10 ? "block" : "flex",
       )}
     >
-      <div className="whitespace-nowrap p-1 font-bold sm:p-2">
+      <div className="whitespace-nowrap p-1 font-bold max-sm:hidden p-2">
         TOTAL: {Object.keys(decks).length}
       </div>
       <div>
@@ -61,7 +61,10 @@ const DeckSelectAdvTotal = ({
             );
           })}
       </div>
-      <div className="flex justify-end">
+      <div className="flex justify-between sm:justify-end">
+        <div className="whitespace-nowrap p-1 font-bold sm:hidden p-2">
+          TOTAL: {Object.keys(decks).length}
+        </div>
         <DeckSortButton sortMethod={sortMethod} onChange={setSortMethod} />
       </div>
     </Header>

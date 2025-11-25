@@ -1,6 +1,5 @@
 # FIX
 - Remove vtes-hook from About (not working)?
-- Total to sort on mobile in adv tags selector
 - Targey default to fixed on first enter
 - Vdb discord bug (Hobbesgoblin)
 
