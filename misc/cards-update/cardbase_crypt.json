@@ -55,7 +55,14 @@
         "name":"Aaradhya, The Callous Tyrant",
         "new":false,
         "path":"Power and the Inner Voice",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The ability can be used when in torpor.",
+                "refs":{
+                    "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
+                }
+            }
+        ],
         "sect":"Sabbat",
         "set":{
             "SV5":{
@@ -2580,7 +2587,26 @@
         "name":"Algirdas, The Solar Prophet",
         "new":false,
         "path":"Caine",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"If an effect granting a strike is played/used before another effect that adds a cost to strike (e.g. {Dam the Heart's River}), you may choose not to strike.",
+                "refs":{
+                    "LSJ 20071017":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Ei307R78l4A/m/PYe-fYT8BqkJ"
+                }
+            },
+            {
+                "text":"If an effect granting a strike (e.g. {.44 Magnum}) is played/used after another effect that adds a cost to strike, you must pay the additional cost to use that first effect.",
+                "refs":{
+                    "LSJ 20090529":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/LpFSLRuWONA/m/daxDmJiGX0AJ"
+                }
+            },
+            {
+                "text":"Strikes are paid at declaration. If an ally spends their last life on a strike, combat ends before strike resolution. If the strike damage depends on the amount of life/blood of the striking minion, it is calculated after the strike is paid for (e.g. {Shambling Hordes}).",
+                "refs":{
+                    "LSJ 20090703":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/utj6J5KZ-aA/m/I_9JuLKLwZ8J"
+                }
+            }
+        ],
         "sect":"Sabbat",
         "set":{
             "SV5":{
@@ -15623,7 +15649,14 @@
         "name":"Devorah",
         "new":false,
         "path":"Cathari",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The passive ability applies even if the vampire is in torpor.",
+                "refs":{
+                    "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
+                }
+            }
+        ],
         "sect":"Sabbat",
         "set":{
             "SV5":{
@@ -38940,7 +38973,7 @@
                 }
             },
             {
-                "text":"If an effect granting a strike is played/used before another effect that adds a cost to strike (e.g. {Lucian, the Perfect}, {Dam the Heart's River}), you may choose not to strike.",
+                "text":"If an effect granting a strike is played/used before another effect that adds a cost to strike (e.g. {Dam the Heart's River}), you may choose not to strike.",
                 "refs":{
                     "LSJ 20071017":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Ei307R78l4A/m/PYe-fYT8BqkJ"
                 }
@@ -38955,6 +38988,12 @@
                 "text":"Strikes are paid at declaration. If an ally spends their last life on a strike, combat ends before strike resolution. If the strike damage depends on the amount of life/blood of the striking minion, it is calculated after the strike is paid for (e.g. {Shambling Hordes}).",
                 "refs":{
                     "LSJ 20090703":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/utj6J5KZ-aA/m/I_9JuLKLwZ8J"
+                }
+            },
+            {
+                "text":"It affects card costs, cost reductions from other effects do apply.",
+                "refs":{
+                    "LSJ 20070829-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/sVXZw1J43ik/m/OByFPgQsynwJ"
                 }
             }
         ],
@@ -64127,7 +64166,20 @@
         "name":"V\u011bnceslava, The Implacable",
         "new":false,
         "path":"Power and the Inner Voice",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Their ability is not applied if his controller is ousted by the referendum effects (reversal of previous rulings).",
+                "refs":{
+                    "ANK 20220808":"https://www.vekn.net/forum/rules-questions/79952-when-does-lutz-ability-trigger#105913"
+                }
+            },
+            {
+                "text":"The ability can be used when in torpor.",
+                "refs":{
+                    "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
+                }
+            }
+        ],
         "sect":"Sabbat",
         "set":{
             "SV5":{

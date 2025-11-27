@@ -1,10 +1,7 @@
 {
-  "version": "2025-11-22",
+  "version": "2025-11-27",
   "changes": [
-    "Inventory card q-ty 'target' feature (in popup card window), that allows to set fixed q-ty of card you want to have, or desired surplus in addition to calculated (from decks) required q-ty. When used for the card, this will replace +/- q-ty column in inventory info with this instead of decks-based calculation (square [brackets] will tell you if 'target' feature is used)",
-    "Add AND logic to crypt clan filter (allow Path + Clan), add No Path filter",
-    "Add Block Denial to library trait filter",
-    "Update TWDA",
+    "Inventory Target logic will now changes from Disabled to Fixed when changing q-ty from 0 to something",
     "Update rulings",
     "Small other fixes and improvements"
   ]

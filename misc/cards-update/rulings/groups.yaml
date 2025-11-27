@@ -326,6 +326,7 @@ G00017|Environmental damage:
   102107|Vengeful Spirit: ''
   102191|Wolf Companion: ''
   102210|Zombie: ''
+  102317|Dread Mastiff: ''
   200017|Aeron: ''
   200908|Mambo Jeanne: ''
 G00018|Retainer with discipline level:
@@ -516,7 +517,9 @@ G00027|Ability usable in torpor:
   201705|Nikolaus Vermeulen: ''
   201706|Silvian Popescu: ''
   201716|Yewon Ong: ''
+  201733|Aaradhya, The Callous Tyrant: ''
   201734|Abderrahim, Death's Hand: ''
+  201776|Věnceslava, The Implacable: ''
 G00028|Cards holding cards:
   100343|Chiram's Hold: ''
   100375|Cold Amber's Hold: ''
@@ -805,6 +808,8 @@ G00052|Modifier as announced:
   102138|Walk of Caine: ''
   102288|Consign to Oblivion: ''
   102300|Paths in Two Worlds: ''
+  102316|Dominant Personality: '[POT]/[PRE]'
+  102338|Seeds of Terror: ''
 G00054|Action creating vampire:
   100010|Abomination: ''
   100129|Bamba: ''
@@ -1076,6 +1081,7 @@ G00070|Impersonating title for non-existent sect:
 G00071|After Combat Ends:
   100307|Catatonic Fear: '[PRE]'
   100321|Chameleon's Colors: '[SPI]'
+  100745|Flash Grenade: ''
   100751|Flow Within the Mountain: '[VIS]'
   100771|Form of Mist: '[PRO]'
   101128|Loving Agony: '[val]/[VAL]'
@@ -1122,10 +1128,12 @@ G00073|Impersonating requirements to play cards:
   201621|Karl Schrekt: ''
   201634|Abraham Mellon: ''
   201643|Lady Scarlett Churchill: ''
-G00074|Adding costs to a strike:
+G00074|Adding costs to a strike or strike card:
   100489|Dam the Heart's River: '[QUI]'
   100963|Imprison: ''
+  102319|Ensnare a Beast: '[ANI]/[CEL]'
   200871|Lucian, the Perfect: ''
+  201738|Algirdas, The Solar Prophet: ''
 G00075|Discounts for rescue:
   100306|Catacombs: ''
   100943|Humanitas: ''
@@ -1459,12 +1467,36 @@ G00086|Multi-discipline:
   102232|Platinum Protocol, The: ''
   102247|Break the Bonds: ''
   102251|Invigorate: ''
+  102315|Dance with the Devil: ''
+  102316|Dominant Personality: ''
+  102319|Ensnare a Beast: ''
+  102320|Enthrall: ''
+  102321|Fever Pitch: ''
+  102324|Freakish Conglomeration: ''
+  102325|Gifts From Hereafter: ''
+  102328|Hedonism: ''
+  102329|Hunting the Quarry: ''
+  102330|Kiss of Cathari: ''
+  102331|Magnetic Authority: ''
+  102332|Morbidity: ''
+  102335|Putrescent Sustenance: ''
+  102336|Rage of Apedemak: ''
+  102337|Relentlessness: ''
+  102338|Seeds of Terror: ''
+  102339|Sentry Signal: ''
+  102340|Soulgrinder: ''
+  102341|Subversion: ''
+  102342|Swift Cover: ''
+  102346|Unthinkable Humiliation: ''
+  102347|Wall of Filth: ''
 G00087|Pool gain after referendum:
   102131|Voter Captivation: ''
   102274|Amici Noctis: ''
 G00088|Burn blood to attempt to block:
   101957|Tenebrous Form: '[OBT]'
   102285|Where the Veil Thins: '[OBL]'
+  102338|Seeds of Terror: ''
+  102346|Unthinkable Humiliation: ''
 G00089|Cards that replace themselves:
   101648|Roll: ''
   101869|Steely Tenacity: ''
@@ -1632,12 +1664,13 @@ G00101|Automatic environmental press:
   102012|Trap: ''
 G00102|Minus Intercept:
   100016|Acheron Vortex: ''
-  101226|Missing Voice, The: '[cel],[mel]'
+  101226|Missing Voice, The: '[cel]/[mel]'
   101387|Perfect Paragon: '[PRE]'
   101673|Safe Passage: ''
-  101858|Squirrel Balance: '[spi]/[SPI]'
+  101858|Squirrel Balance: '[SPI],[spi]'
   102183|Will-o'-the-Wisp: '[chi]'
   102204|Zapaderin: ''
+  102346|Unthinkable Humiliation: '[POT]/[PRE]'
 G00103|Reactions targeting another player:
   100122|Babble: ''
   100578|Draba: ''
@@ -1691,6 +1724,7 @@ G00107|Ability active in torpor:
   201684|Roy: ''
   201693|Annabelle Triabell: ''
   201735|Aelswith, The Irresistible: ''
+  201748|Devorah: ''
   201751|Fotini Katsikaris: ''
   201758|Jürgen, The Libertine: ''
   201760|Khin Aye: ''
@@ -1839,6 +1873,7 @@ G00119|Allies with "lock this ally to" abilities:
   102087|Vagabond Mystic: ''
   102144|War Ghoul: ''
   102234|City Star Taxi: ''
+  102322|Fiorella, Empty One: ''
 G00120|Prohibits hunt as normal:
   101086|Legacy of Caine: ''
   102166|Week of Nightmares: ''
@@ -1896,6 +1931,7 @@ G00124|Forces Block attempt:
   102222|Eyes of the Wild: ''
   102230|Organized Resistance: ''
   102256|One With the Land: '[PRO]'
+  102339|Sentry Signal: '[ani]/[tha]'
 G00125|Exchange card with ash heap:
   100359|Clio's Kiss: '[tem]'
   100809|Garibaldi-Meucci Museum: ''
@@ -2105,3 +2141,30 @@ G00139|Action provided to equipped minion:
   101703|Seal of Veddartha: ''
   101931|Talbot's Chainsaw: ''
   101936|Tapestry of Blood: ''
+G00140|Play another action card as part of the action:
+  100265|Bujo: ''
+  100334|Charming Lobby: ''
+G00141|Prevent discipline based prevention:
+  100201|Blood Fury: ''
+  100208|Blood Rage: ''
+  100232|Bollix: '[tha]'
+  100503|Dead Hand: '[NEC]'
+  100508|Death of the Drum: '[mel],[MEL]'
+  101829|Soul Burn: ''
+  102340|Soulgrinder: '[POT]/[THA]'
+G00142|Playable "when combat would end" or "is about to end":
+  101595|Relentless Reaper: ''
+  101950|Telepathic Tracking: ''
+  102329|Hunting the Quarry: ''
+G00143|Lock after combat ends:
+  100745|Flash Grenade: ''
+  101727|Serpent's Numbing Kiss: '[PRE][SER]'
+  102330|Kiss of Cathari: '[OBF]/[PRE]'
+G00144|Increasing strike costs:
+  100489|Dam the Heart's River: ''
+  100963|Imprison: ''
+  200871|Lucian, the Perfect: ''
+G00145|Continue combat:
+  101595|Relentless Reaper: '[THN]'
+  101950|Telepathic Tracking: '[AUS]'
+  102329|Hunting the Quarry: '[CEL]/[THA]'

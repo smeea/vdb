@@ -1058,6 +1058,12 @@
             }
         },
         {
+            "text":"Can't be played for cycling if the minion already has one Aura of Invincibility",
+            "refs":{
+                "LSJ 20040730-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/vCZw1_QnhfE/m/MXC817Z7qJkJ"
+            }
+        },
+        {
             "text":"Cannot be used during a referendum that is automatically passing.",
             "refs":{
                 "PIB 20150105":"https://www.vekn.net/forum/rules-questions/68465-voting-is-complicated#68493",
@@ -2118,7 +2124,7 @@
             }
         },
         {
-            "text":"The opponent cannot play [for] prevention cards (eg. for cycling).",
+            "text":"The opponent cannot play prevention cards of that discipline (eg. for cycling).",
             "refs":{
                 "LSJ 20050628":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/lN3eieA3xgs/m/c4ZoOWHUsPEJ"
             }
@@ -2186,7 +2192,7 @@
             }
         },
         {
-            "text":"The opponent cannot play [for] prevention cards (eg. for cycling).",
+            "text":"The opponent cannot play prevention cards of that discipline (eg. for cycling).",
             "refs":{
                 "LSJ 20050628":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/lN3eieA3xgs/m/c4ZoOWHUsPEJ"
             }
@@ -2344,12 +2350,6 @@
             }
         },
         {
-            "text":"[tha] The opponent cannot play [for] prevention cards (eg. for cycling).",
-            "refs":{
-                "LSJ 20050628":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/lN3eieA3xgs/m/c4ZoOWHUsPEJ"
-            }
-        },
-        {
             "text":"[tha] Does not protect from weapons if played at long range.",
             "refs":{
                 "ANK 20230823":"https://www.vekn.net/forum/rules-questions/75182-can-you-use-bollix-tha-as-defense-against-long-range-strike?start=6#109132"
@@ -2389,6 +2389,12 @@
             "refs":{
                 "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
                 "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+            }
+        },
+        {
+            "text":"[tha] The opponent cannot play prevention cards of that discipline (eg. for cycling).",
+            "refs":{
+                "LSJ 20050628":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/lN3eieA3xgs/m/c4ZoOWHUsPEJ"
             }
         }
     ],
@@ -2637,6 +2643,34 @@
             "text":"The \"make a melee strike\" option can be used with {Bundi} while {Immortal Grapple} is in effect.",
             "refs":{
                 "LSJ 20090114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/fZIdIRDDxdo/m/dtdSNVk_IIkJ"
+            }
+        }
+    ],
+    "100265":[
+        {
+            "text":"The chosen action card does not provide its +1 Vote, since it was not played to call the Referendum. Another Political Action card can be discarded by the acting mehtuselah to gain +1 vote.",
+            "refs":{
+                "LSJ 20080219":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gxT47AMJaJM/m/3PTub605SywJ"
+            }
+        },
+        {
+            "text":"Cannot choose a Political action that cannot be played anymore. (e.g. {Veles' Hunt})",
+            "refs":{
+                "LSJ 20050308":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GaCLECFWD9k/m/fb2Kqg1KEL8J"
+            }
+        },
+        {
+            "text":"When {Delaying Tactics} is played during the referendum called by Bujo, the card is not returned to anyone's hand.",
+            "refs":{
+                "LSJ 20100527":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Tr3X4DsZr-8/m/O06iXN6LtzsJ"
+            }
+        },
+        {
+            "text":"Requirements apply but do not count as requirements for the action (eg. you cannot use {CrimethInc.} if the chosen card requires an Anarch).",
+            "refs":{
+                "LSJ 20100725":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9d1zMZfsfNo/m/l3fbDtbr9xwJ",
+                "LSJ 20100303":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jmmm0WRUPvs/m/x9pv1OmWFS4J",
+                "ANK 20180817":"https://www.vekn.net/forum/rules-questions/76933-cock-robin-jack-of-both-sides#90064"
             }
         }
     ],
@@ -3282,6 +3316,14 @@
                 "ANK 20220704":"https://www.vekn.net/forum/rules-questions/79890-charming-lobby-a-political-action-card-krc?start=0#105616",
                 "LSJ 20070927":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/VaSQ7JL2N2Y/m/BenDHsAETG4J",
                 "LSJ 20050407":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/fDl3t2lJ3Pc/m/pdmWZOwllPMJ"
+            }
+        },
+        {
+            "text":"Requirements apply but do not count as requirements for the action (eg. you cannot use {CrimethInc.} if the chosen card requires an Anarch).",
+            "refs":{
+                "LSJ 20100725":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9d1zMZfsfNo/m/l3fbDtbr9xwJ",
+                "LSJ 20100303":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jmmm0WRUPvs/m/x9pv1OmWFS4J",
+                "ANK 20180817":"https://www.vekn.net/forum/rules-questions/76933-cock-robin-jack-of-both-sides#90064"
             }
         }
     ],
@@ -4242,7 +4284,7 @@
             }
         },
         {
-            "text":"[QUI] If an effect granting a strike is played/used before another effect that adds a cost to strike (e.g. {Lucian, the Perfect}, {Dam the Heart's River}), you may choose not to strike.",
+            "text":"[QUI] If an effect granting a strike is played/used before another effect that adds a cost to strike (e.g. {Dam the Heart's River}), you may choose not to strike.",
             "refs":{
                 "LSJ 20071017":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Ei307R78l4A/m/PYe-fYT8BqkJ"
             }
@@ -4257,6 +4299,12 @@
             "text":"[QUI] Strikes are paid at declaration. If an ally spends their last life on a strike, combat ends before strike resolution. If the strike damage depends on the amount of life/blood of the striking minion, it is calculated after the strike is paid for (e.g. {Shambling Hordes}).",
             "refs":{
                 "LSJ 20090703":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/utj6J5KZ-aA/m/I_9JuLKLwZ8J"
+            }
+        },
+        {
+            "text":"It affects card costs, cost reductions from other effects do apply.",
+            "refs":{
+                "LSJ 20070829-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/sVXZw1J43ik/m/OByFPgQsynwJ"
             }
         }
     ],
@@ -4357,7 +4405,7 @@
             }
         },
         {
-            "text":"[NEC] The opponent cannot play [for] prevention cards (eg. for cycling).",
+            "text":"[NEC] The opponent cannot play prevention cards of that discipline (eg. for cycling).",
             "refs":{
                 "LSJ 20050628":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/lN3eieA3xgs/m/c4ZoOWHUsPEJ"
             }
@@ -6393,19 +6441,6 @@
             }
         },
         {
-            "text":"If the combat continues or a new combat begins, the \"is locked and does not unlock as normal\" effect do not apply, but it still burns.  ,",
-            "refs":{
-                "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ",
-                "LSJ 20040602":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/bEvYg3Za-fc/m/eK2rBRFelmoJ"
-            }
-        },
-        {
-            "text":"If the opponent unlocks before combat ends (eg. {Majesty}), the Grenade locks them again after it ends.",
-            "refs":{
-                "LSJ 20040601":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/bEvYg3Za-fc/m/p0CSDyi5MWkJ"
-            }
-        },
-        {
             "text":"Still burns when used if the opponent uses a \"strike: combat ends\" too. It does not if combat ends before strike resolution (eg. {R\u00f6tschreck}).",
             "refs":{
                 "LSJ 20001127-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KInac4MQMuA/m/LnpxH08HVbMJ",
@@ -6416,6 +6451,19 @@
             "text":"The \"does not unlock as normal\" effect is redundant with being infernal. If the minion is infernal, his controller can still pay a pool to unlock him.",
             "refs":{
                 "LSJ 20050114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JWiZmyC2Y6s/m/q6JHYrE1zKYJ"
+            }
+        },
+        {
+            "text":"If the combat continues or a new combat begins, the after combat effect does not happen/is not usable (e.g. {Psyche!}, {Telepathic Tracking}).\n(Partial reversal of RTR 20010711)",
+            "refs":{
+                "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ",
+                "LSJ 19980109":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d2U51Uw0Hfg/m/uIPoVvPFePgJ"
+            }
+        },
+        {
+            "text":"If the opponent unlocks before combat ends (eg. {Majesty}), the effect locks them again after it ends.",
+            "refs":{
+                "LSJ 20040601":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/bEvYg3Za-fc/m/p0CSDyi5MWkJ"
             }
         }
     ],
@@ -8308,6 +8356,14 @@
             "text":"A weapon's \"current damage\" is the amount of damage that it would inflict if used as a strike by the bearer against a generic opponent.",
             "refs":{
                 "RTR 19980623":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/tSpd9dtTElc/m/-CuHJF54_n0J"
+            }
+        },
+        {
+            "text":"Cost modifications that are not limited to cards \"played\" are considered before checking for card cost.",
+            "refs":{
+                "ANK 20181216":"https://www.vekn.net/forum/rules-questions/77213-discussion-card-costs-and-presentation?start=36#92386",
+                "LSJ 20080125":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HcCobkGPcFI/m/GlBdNwMvAjwJ",
+                "LSJ 20040701":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/O7cT51Yl2Uk/m/RvMWaiqAFS8J"
             }
         }
     ],
@@ -13522,27 +13578,6 @@
             }
         },
         {
-            "text":"[THN] Effects that end combat and then do something else after combat (include continuing the action as if unblocked) will be lost, except for unlock effects.",
-            "refs":{
-                "LSJ 19980109":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d2U51Uw0Hfg/m/uIPoVvPFePgJ",
-                "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ"
-            }
-        },
-        {
-            "text":"[THN] Cannot be played after [CEL] {Psyche!}. When played before, combat continues and {Psyche!} can only be played at the end of it.",
-            "refs":{
-                "ANK 20191219":"https://www.vekn.net/forum/rules-questions/78241-relentless-reaper-vs-blissful-agony-and-scheduled-combat-rulings-ambiguity#98308"
-            }
-        },
-        {
-            "text":"[THN] Must be played after presses, can be played if the round ends prematurely and can be played before or after effects that are played \"at then of the round\" (eg. {Taste of Vitae}).",
-            "refs":{
-                "LSJ 20021113":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/df2P8YHZex8/m/mGCmsxDjI_YJ",
-                "RTR 20030519":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NOBWXWrd-vA/m/iEOpQp1uhvAJ",
-                "ANK 20180910-1":"https://www.vekn.net/forum/rules-questions/76990-correct-order-impulse-for-combat-cards-after-combat#90517"
-            }
-        },
-        {
             "text":"[THN] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}).",
             "refs":{
                 "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
@@ -13559,6 +13594,33 @@
             "text":"[THN] The card cannot be played if the minion cannot afford to burn the blood.",
             "refs":{
                 "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
+            }
+        },
+        {
+            "text":"Can be played before of after effects that are played \"at the end of combat\".",
+            "refs":{
+                "LSJ 20021113":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/df2P8YHZex8/m/mGCmsxDjI_YJ",
+                "ANK 20191219":"https://www.vekn.net/forum/rules-questions/78241-relentless-reaper-vs-blissful-agony-and-scheduled-combat-rulings-ambiguity#98308",
+                "ANK 20180910-1":"https://www.vekn.net/forum/rules-questions/76990-correct-order-impulse-for-combat-cards-after-combat#90517"
+            }
+        },
+        {
+            "text":"[THN] Effects that end combat and then do something else after combat (include continuing the action as if unblocked) will be lost, except for unlock effects.",
+            "refs":{
+                "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ",
+                "LSJ 19980109":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d2U51Uw0Hfg/m/uIPoVvPFePgJ"
+            }
+        },
+        {
+            "text":"[THN] Cannot be played after [CEL] {Psyche!}. When played before, combat continues and Psyche! can only be played at the end of it.",
+            "refs":{
+                "ANK 20191219":"https://www.vekn.net/forum/rules-questions/78241-relentless-reaper-vs-blissful-agony-and-scheduled-combat-rulings-ambiguity#98308"
+            }
+        },
+        {
+            "text":"[THN] Must be played after presses, can be played if the round ends prematurely.",
+            "refs":{
+                "RTR 20030519":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NOBWXWrd-vA/m/iEOpQp1uhvAJ"
             }
         }
     ],
@@ -14787,6 +14849,12 @@
             "refs":{
                 "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
             }
+        },
+        {
+            "text":"[PRE][SER] If the opponent unlocks before combat ends (eg. {Majesty}), the effect locks them again after it ends.",
+            "refs":{
+                "LSJ 20040601":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/bEvYg3Za-fc/m/p0CSDyi5MWkJ"
+            }
         }
     ],
     "101730":[
@@ -15260,31 +15328,25 @@
     ],
     "101786":[
         {
-            "text":"[mel] [MEL] Can only be played by the controller of the acting minion.",
+            "text":"[mel]/[MEL] Can only be played by the controller of the acting minion.",
             "refs":{
                 "LSJ 19990425":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Mmfn07ib6Yw/m/YfwpUlqEdrEJ"
             }
         },
         {
-            "text":"[mel] [MEL] Cannot be played to queue a second combat after a combat is already set up for later (e.g. by a previous Siren's Lure).",
-            "refs":{
-                "LSJ 20020125":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/dF5BNipvcQ8/m/aB0krwu_PMAJ"
-            }
-        },
-        {
-            "text":"[mel] [MEL] Other effects that queue a combat cannot be used until the new combat begins.",
+            "text":"[mel]/[MEL] Other effects that queue a combat cannot be used until the new combat begins.",
             "refs":{
                 "LSJ 20021121":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UddkVI7G8iA/m/qqR2EMYZKIYJ"
             }
         },
         {
-            "text":"[mel] [MEL] Combat does not occur if the action ends prematurely.",
+            "text":"[mel]/[MEL] Combat does not occur if the action ends prematurely.",
             "refs":{
                 "LSJ 20090826":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KTwa1Hf_gHI/m/IlgyfFaqqeEJ"
             }
         },
         {
-            "text":"[mel] [MEL] The new combat is still part of the action (eg. {Heidelberg Castle, Germany} cannot be used between combats).",
+            "text":"[mel]/[MEL] The new combat is still part of the action (eg. {Heidelberg Castle, Germany} cannot be used between combats).",
             "refs":{
                 "ANK 20170918-2":"https://www.vekn.net/forum/rules-questions/76178-siren-s-lure-and-heidelberg-castle-timing-question#83580"
             }
@@ -15649,7 +15711,7 @@
             }
         },
         {
-            "text":"The opponent cannot play [for] prevention cards (eg. for cycling).",
+            "text":"The opponent cannot play prevention cards of that discipline (eg. for cycling).",
             "refs":{
                 "LSJ 20050628":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/lN3eieA3xgs/m/c4ZoOWHUsPEJ"
             }
@@ -15944,7 +16006,7 @@
             }
         },
         {
-            "text":"[spi]/[SPI] Can be played any time during the action before resolution; a block attempt is not required.",
+            "text":"[SPI],[spi] Can be played any time during the action before resolution; a block attempt is not required.",
             "refs":{
                 "LSJ 20020612":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/sC0pTtJJDj4/m/bD04Jy4pM_cJ"
             }
@@ -17084,37 +17146,6 @@
             }
         }
     ],
-    "101950":[
-        {
-            "text":"[AUS] Effects that end combat and then do something else after combat (include continuing the action as if unblocked) will be lost, except for unlock effects.",
-            "refs":{
-                "LSJ 19980109":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d2U51Uw0Hfg/m/uIPoVvPFePgJ",
-                "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ"
-            }
-        },
-        {
-            "text":"[AUS] Cannot be played after [CEL] {Psyche!}. When played before, combat continues and {Psyche!} can only be played at the end of it.",
-            "refs":{
-                "ANK 20191219":"https://www.vekn.net/forum/rules-questions/78241-relentless-reaper-vs-blissful-agony-and-scheduled-combat-rulings-ambiguity#98308"
-            }
-        },
-        {
-            "text":"[AUS] Must be played after presses, can be played if the round ends prematurely and can be played before or after effects that are played \"at then of the round\" (eg. {Taste of Vitae}).",
-            "refs":{
-                "LSJ 20021113":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/df2P8YHZex8/m/mGCmsxDjI_YJ",
-                "RTR 20030519":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NOBWXWrd-vA/m/iEOpQp1uhvAJ",
-                "ANK 20180910-1":"https://www.vekn.net/forum/rules-questions/76990-correct-order-impulse-for-combat-cards-after-combat#90517"
-            }
-        },
-        {
-            "text":"[AUS] Can be played before of after effects that are played \"at the end of combat\".",
-            "refs":{
-                "LSJ 20021113":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/df2P8YHZex8/m/mGCmsxDjI_YJ",
-                "ANK 20191219":"https://www.vekn.net/forum/rules-questions/78241-relentless-reaper-vs-blissful-agony-and-scheduled-combat-rulings-ambiguity#98308",
-                "ANK 20180910-1":"https://www.vekn.net/forum/rules-questions/76990-correct-order-impulse-for-combat-cards-after-combat#90517"
-            }
-        }
-    ],
     "101951":[
         {
             "text":"May be played before, during, or after votes and ballots have been cast.",
@@ -17249,12 +17280,6 @@
         }
     ],
     "101960":[
-        {
-            "text":"[ANI] It affects card costs, cost reductions from other effects do apply.",
-            "refs":{
-                "LSJ 20070829-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/sVXZw1J43ik/m/OByFPgQsynwJ"
-            }
-        },
         {
             "text":"[ANI] Also affects the cost of combat cards played at then of a round or combat (eg. {Disarm}, {Telepathic Tracking}, {Psyche!}, {Taste of Vitae}).",
             "refs":{
@@ -17627,6 +17652,14 @@
             "text":"The action provided by this card is considered to be an action requiring the listed clan/sect/capacity/title (e.g. the action provided by {Open War} is considered an action that requires an Anarch, the action provided by {The Gate of Acheron} is considered an action that requires Hecata).",
             "refs":{
                 "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
+            }
+        }
+    ],
+    "102018":[
+        {
+            "text":"A Minister who has a higher level of [tha] Blood Sorcery than [ser] Serpentis (eg\u00a0{Vivian VI}) has their level of Blood Sorcery lowered to match their level of Serpentis. Likewise, for Tremere who have levels of Serpentis.",
+            "refs":{
+                "LSJ 20080205":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/iETx30Ot9zQ/m/h6YiCTUafRcJ"
             }
         }
     ],
@@ -19648,6 +19681,75 @@
             }
         }
     ],
+    "102328":[
+        {
+            "text":"[for]/[pre] Other effects that queue a combat cannot be used until the new combat begins.",
+            "refs":{
+                "LSJ 20021121":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UddkVI7G8iA/m/qqR2EMYZKIYJ"
+            }
+        },
+        {
+            "text":"[for]/[pre] Combat does not occur if the action ends prematurely.",
+            "refs":{
+                "LSJ 20090826":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KTwa1Hf_gHI/m/IlgyfFaqqeEJ"
+            }
+        },
+        {
+            "text":"[for]/[pre] The new combat is still part of the action (eg. {Heidelberg Castle, Germany}\u00a0cannot be used between combats).",
+            "refs":{
+                "ANK 20170918-2":"https://www.vekn.net/forum/rules-questions/76178-siren-s-lure-and-heidelberg-castle-timing-question#83580"
+            }
+        },
+        {
+            "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
+            "refs":{
+                "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
+                "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+            }
+        }
+    ],
+    "102329":[
+        {
+            "text":"[cel]/[tha]\u00a0effects that are played when a combat \"would end\" (eg. {Telepathic Tracking}) cannot be play afterwards.",
+            "refs":{
+                "ANK 20191219":"https://www.vekn.net/forum/rules-questions/78241-relentless-reaper-vs-blissful-agony-and-scheduled-combat-rulings-ambiguity#98308"
+            }
+        },
+        {
+            "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
+            "refs":{
+                "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
+                "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+            }
+        },
+        {
+            "text":"Can be played before of after effects that are played \"at the end of combat\".",
+            "refs":{
+                "LSJ 20021113":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/df2P8YHZex8/m/mGCmsxDjI_YJ",
+                "ANK 20191219":"https://www.vekn.net/forum/rules-questions/78241-relentless-reaper-vs-blissful-agony-and-scheduled-combat-rulings-ambiguity#98308",
+                "ANK 20180910-1":"https://www.vekn.net/forum/rules-questions/76990-correct-order-impulse-for-combat-cards-after-combat#90517"
+            }
+        },
+        {
+            "text":"[CEL]/[THA] Effects that end combat and then do something else after combat (include continuing the action as if unblocked) will be lost, except for unlock effects.",
+            "refs":{
+                "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ",
+                "LSJ 19980109":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d2U51Uw0Hfg/m/uIPoVvPFePgJ"
+            }
+        },
+        {
+            "text":"[CEL]/[THA] Cannot be played after [CEL] {Psyche!}. When played before, combat continues and Psyche! can only be played at the end of it.",
+            "refs":{
+                "ANK 20191219":"https://www.vekn.net/forum/rules-questions/78241-relentless-reaper-vs-blissful-agony-and-scheduled-combat-rulings-ambiguity#98308"
+            }
+        },
+        {
+            "text":"[CEL]/[THA] Must be played after presses, can be played if the round ends prematurely.",
+            "refs":{
+                "RTR 20030519":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NOBWXWrd-vA/m/iEOpQp1uhvAJ"
+            }
+        }
+    ],
     "200011":[
         {
             "text":"Card with multiple types (eg. Combat/Action Modifier) are considered of the type they are played as, not both.",
@@ -21607,7 +21709,7 @@
             }
         },
         {
-            "text":"If an effect granting a strike is played/used before another effect that adds a cost to strike (e.g. {Lucian, the Perfect}, {Dam the Heart's River}), you may choose not to strike.",
+            "text":"If an effect granting a strike is played/used before another effect that adds a cost to strike (e.g. {Dam the Heart's River}), you may choose not to strike.",
             "refs":{
                 "LSJ 20071017":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Ei307R78l4A/m/PYe-fYT8BqkJ"
             }
@@ -21622,6 +21724,12 @@
             "text":"Strikes are paid at declaration. If an ally spends their last life on a strike, combat ends before strike resolution. If the strike damage depends on the amount of life/blood of the striking minion, it is calculated after the strike is paid for (e.g. {Shambling Hordes}).",
             "refs":{
                 "LSJ 20090703":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/utj6J5KZ-aA/m/I_9JuLKLwZ8J"
+            }
+        },
+        {
+            "text":"It affects card costs, cost reductions from other effects do apply.",
+            "refs":{
+                "LSJ 20070829-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/sVXZw1J43ik/m/OByFPgQsynwJ"
             }
         }
     ],
@@ -23672,6 +23780,20 @@
             }
         }
     ],
+    "201776":[
+        {
+            "text":"Their ability is not applied if his controller is ousted by the referendum effects (reversal of previous rulings).",
+            "refs":{
+                "ANK 20220808":"https://www.vekn.net/forum/rules-questions/79952-when-does-lutz-ability-trigger#105913"
+            }
+        },
+        {
+            "text":"The ability can be used when in torpor.",
+            "refs":{
+                "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
+            }
+        }
+    ],
     "G00001":[
         {
             "text":"If one is ousted while having temporary control of a minion, the minion is removed from the game.  (Reversal of Previous Rulings)",
@@ -24353,7 +24475,7 @@
     ],
     "G00074":[
         {
-            "text":"If an effect granting a strike is played/used before another effect that adds a cost to strike (e.g. {Lucian, the Perfect}, {Dam the Heart's River}), you may choose not to strike.",
+            "text":"If an effect granting a strike is played/used before another effect that adds a cost to strike (e.g. {Dam the Heart's River}), you may choose not to strike.",
             "refs":{
                 "LSJ 20071017":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Ei307R78l4A/m/PYe-fYT8BqkJ"
             }
@@ -25160,6 +25282,71 @@
             "text":"The action provided by the equipment to the attached minion fizzles (resolves successfully for no effect) if the equipment is not attached to the acting minion when the action resolves unblocked.",
             "refs":{
                 "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
+            }
+        }
+    ],
+    "G00140":[
+        {
+            "text":"Requirements apply but do not count as requirements for the action (eg. you cannot use {CrimethInc.} if the chosen card requires an Anarch).",
+            "refs":{
+                "LSJ 20100725":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9d1zMZfsfNo/m/l3fbDtbr9xwJ",
+                "LSJ 20100303":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jmmm0WRUPvs/m/x9pv1OmWFS4J",
+                "ANK 20180817":"https://www.vekn.net/forum/rules-questions/76933-cock-robin-jack-of-both-sides#90064"
+            }
+        }
+    ],
+    "G00141":[
+        {
+            "text":"The opponent cannot play prevention cards of that discipline (eg. for cycling).",
+            "refs":{
+                "LSJ 20050628":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/lN3eieA3xgs/m/c4ZoOWHUsPEJ"
+            }
+        }
+    ],
+    "G00142":[
+        {
+            "text":"Can be played before of after effects that are played \"at the end of combat\".",
+            "refs":{
+                "LSJ 20021113":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/df2P8YHZex8/m/mGCmsxDjI_YJ",
+                "ANK 20191219":"https://www.vekn.net/forum/rules-questions/78241-relentless-reaper-vs-blissful-agony-and-scheduled-combat-rulings-ambiguity#98308",
+                "ANK 20180910-1":"https://www.vekn.net/forum/rules-questions/76990-correct-order-impulse-for-combat-cards-after-combat#90517"
+            }
+        }
+    ],
+    "G00143":[
+        {
+            "text":"If the opponent unlocks before combat ends (eg. {Majesty}), the effect locks them again after it ends.",
+            "refs":{
+                "LSJ 20040601":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/bEvYg3Za-fc/m/p0CSDyi5MWkJ"
+            }
+        }
+    ],
+    "G00144":[
+        {
+            "text":"It affects card costs, cost reductions from other effects do apply.",
+            "refs":{
+                "LSJ 20070829-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/sVXZw1J43ik/m/OByFPgQsynwJ"
+            }
+        }
+    ],
+    "G00145":[
+        {
+            "text":"Effects that end combat and then do something else after combat (include continuing the action as if unblocked) will be lost, except for unlock effects.",
+            "refs":{
+                "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ",
+                "LSJ 19980109":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d2U51Uw0Hfg/m/uIPoVvPFePgJ"
+            }
+        },
+        {
+            "text":"Cannot be played after [CEL] {Psyche!}. When played before, combat continues and Psyche! can only be played at the end of it.",
+            "refs":{
+                "ANK 20191219":"https://www.vekn.net/forum/rules-questions/78241-relentless-reaper-vs-blissful-agony-and-scheduled-combat-rulings-ambiguity#98308"
+            }
+        },
+        {
+            "text":"Must be played after presses, can be played if the round ends prematurely.",
+            "refs":{
+                "RTR 20030519":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NOBWXWrd-vA/m/iEOpQp1uhvAJ"
             }
         }
     ],
@@ -27743,6 +27930,15 @@
                 "ANK 20180612":"https://www.vekn.net/forum/rules-questions/76717-retainers-damage-and-disciplines#88129",
                 "ANK 20211127":"https://www.vekn.net/forum/rules-questions/76687-retainers-inflicting-damage-environmental?start=6#104017"
             }
+        },
+        {
+            "text":"Damage is inflicted even against a dodge. A \"strike: combat ends\" ends combat before damage is applied, as will a combattant going to torpor during first strike.",
+            "refs":{
+                "RTR 19941109":"https://groups.google.com/d/msg/rec.games.deckmaster/_6CXoKTSLnw/FdG67-3HEAQJ",
+                "TOM 19951216":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0G-jqB_fcyE/m/8jUhfCXRtPUJ",
+                "PIB 20140324":"https://www.vekn.net/forum/rules-questions/60259-carrion-crows-first-strike-strikes-not-anaesthetic-touch?start=0#60260",
+                "ANK 20200422":"https://www.vekn.net/forum/rules-questions/78582-thoughts-betrayed-interaction-with-different-striking-situation#99680"
+            }
         }
     ],
     "100301":[
@@ -29026,6 +29222,14 @@
             "text":"The ability can be used while locked, only once per referendum.",
             "refs":{
                 "ANK 20220705":"https://www.vekn.net/forum/rules-questions/79895-question-regarding-using-a-minion-card-text-ability-when-locked#105630"
+            }
+        }
+    ],
+    "201733":[
+        {
+            "text":"The ability can be used when in torpor.",
+            "refs":{
+                "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
             }
         }
     ],
@@ -30850,6 +31054,54 @@
             "text":"Replace the action card (if any) before playing it.",
             "refs":{
                 "ANK 20181208":"https://www.vekn.net/forum/rules-questions/77210-touch-of-clarity-and-fast-reaction-is-posible-to-play-with-locked-minion?start=6#92308"
+            }
+        }
+    ],
+    "102316":[
+        {
+            "text":"[POT]/[PRE] Must be played (as well as other \"as the action is announced\" action modifiers) before action modifiers that are not explicitly played \"as the action is announced\" (e.g., {Conditioning}).",
+            "refs":{
+                "ANK 20190425":"https://www.vekn.net/forum/rules-questions/77581-action-modifiers-played-at-beginning-and-end-of-an-action#94652"
+            }
+        },
+        {
+            "text":"[POT]/[PRE] Replace the action card (if any) before playing it.",
+            "refs":{
+                "ANK 20181208":"https://www.vekn.net/forum/rules-questions/77210-touch-of-clarity-and-fast-reaction-is-posible-to-play-with-locked-minion?start=6#92308"
+            }
+        },
+        {
+            "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
+            "refs":{
+                "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
+                "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+            }
+        }
+    ],
+    "102338":[
+        {
+            "text":"Must be played (as well as other \"as the action is announced\" action modifiers) before action modifiers that are not explicitly played \"as the action is announced\" (e.g., {Conditioning}).",
+            "refs":{
+                "ANK 20190425":"https://www.vekn.net/forum/rules-questions/77581-action-modifiers-played-at-beginning-and-end-of-an-action#94652"
+            }
+        },
+        {
+            "text":"Replace the action card (if any) before playing it.",
+            "refs":{
+                "ANK 20181208":"https://www.vekn.net/forum/rules-questions/77210-touch-of-clarity-and-fast-reaction-is-posible-to-play-with-locked-minion?start=6#92308"
+            }
+        },
+        {
+            "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
+            "refs":{
+                "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
+                "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+            }
+        },
+        {
+            "text":"A minion previously attempting to block can resign his attempt and pay no blood.",
+            "refs":{
+                "LSJ 20031121-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/1khXmKPU0ws/m/Je_X4gvv72kJ"
             }
         }
     ],
@@ -33695,6 +33947,19 @@
                 "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ",
                 "LSJ 19980109":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d2U51Uw0Hfg/m/uIPoVvPFePgJ"
             }
+        },
+        {
+            "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
+            "refs":{
+                "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
+                "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+            }
+        },
+        {
+            "text":"[OBF]/[PRE] If the opponent unlocks before combat ends (eg. {Majesty}), the effect locks them again after it ends.",
+            "refs":{
+                "LSJ 20040601":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/bEvYg3Za-fc/m/p0CSDyi5MWkJ"
+            }
         }
     ],
     "200133":[
@@ -33799,7 +34064,60 @@
     ],
     "100963":[
         {
-            "text":"If an effect granting a strike is played/used before another effect that adds a cost to strike (e.g. {Lucian, the Perfect}, {Dam the Heart's River}), you may choose not to strike.",
+            "text":"If an effect granting a strike is played/used before another effect that adds a cost to strike (e.g. {Dam the Heart's River}), you may choose not to strike.",
+            "refs":{
+                "LSJ 20071017":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Ei307R78l4A/m/PYe-fYT8BqkJ"
+            }
+        },
+        {
+            "text":"If an effect granting a strike (e.g. {.44 Magnum}) is played/used after another effect that adds a cost to strike, you must pay the additional cost to use that first effect.",
+            "refs":{
+                "LSJ 20090529":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/LpFSLRuWONA/m/daxDmJiGX0AJ"
+            }
+        },
+        {
+            "text":"Strikes are paid at declaration. If an ally spends their last life on a strike, combat ends before strike resolution. If the strike damage depends on the amount of life/blood of the striking minion, it is calculated after the strike is paid for (e.g. {Shambling Hordes}).",
+            "refs":{
+                "LSJ 20090703":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/utj6J5KZ-aA/m/I_9JuLKLwZ8J"
+            }
+        },
+        {
+            "text":"It affects card costs, cost reductions from other effects do apply.",
+            "refs":{
+                "LSJ 20070829-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/sVXZw1J43ik/m/OByFPgQsynwJ"
+            }
+        }
+    ],
+    "102319":[
+        {
+            "text":"[ANI]/[CEL] If an effect granting a strike is played/used before another effect that adds a cost to strike (e.g. {Dam the Heart's River}), you may choose not to strike.",
+            "refs":{
+                "LSJ 20071017":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Ei307R78l4A/m/PYe-fYT8BqkJ"
+            }
+        },
+        {
+            "text":"[ANI]/[CEL] If an effect granting a strike (e.g. {.44 Magnum}) is played/used after another effect that adds a cost to strike, you must pay the additional cost to use that first effect.",
+            "refs":{
+                "LSJ 20090529":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/LpFSLRuWONA/m/daxDmJiGX0AJ"
+            }
+        },
+        {
+            "text":"[ANI]/[CEL] Strikes are paid at declaration. If an ally spends their last life on a strike, combat ends before strike resolution. If the strike damage depends on the amount of life/blood of the striking minion, it is calculated after the strike is paid for (e.g. {Shambling Hordes}).",
+            "refs":{
+                "LSJ 20090703":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/utj6J5KZ-aA/m/I_9JuLKLwZ8J"
+            }
+        },
+        {
+            "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
+            "refs":{
+                "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
+                "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+            }
+        }
+    ],
+    "201738":[
+        {
+            "text":"If an effect granting a strike is played/used before another effect that adds a cost to strike (e.g. {Dam the Heart's River}), you may choose not to strike.",
             "refs":{
                 "LSJ 20071017":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Ei307R78l4A/m/PYe-fYT8BqkJ"
             }
@@ -34388,6 +34706,12 @@
                 "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
                 "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
             }
+        },
+        {
+            "text":"[mel],[MEL] The opponent cannot play prevention cards of that discipline (eg. for cycling).",
+            "refs":{
+                "LSJ 20050628":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/lN3eieA3xgs/m/c4ZoOWHUsPEJ"
+            }
         }
     ],
     "100596":[
@@ -34566,7 +34890,7 @@
             }
         },
         {
-            "text":"[cel],[mel] Can be played any time during the action before resolution; a block attempt is not required.",
+            "text":"[cel]/[mel] Can be played any time during the action before resolution; a block attempt is not required.",
             "refs":{
                 "LSJ 20020612":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/sC0pTtJJDj4/m/bD04Jy4pM_cJ"
             }
@@ -34802,6 +35126,186 @@
         }
     ],
     "102251":[
+        {
+            "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
+            "refs":{
+                "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
+                "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+            }
+        }
+    ],
+    "102315":[
+        {
+            "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
+            "refs":{
+                "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
+                "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+            }
+        }
+    ],
+    "102320":[
+        {
+            "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
+            "refs":{
+                "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
+                "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+            }
+        }
+    ],
+    "102321":[
+        {
+            "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
+            "refs":{
+                "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
+                "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+            }
+        }
+    ],
+    "102324":[
+        {
+            "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
+            "refs":{
+                "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
+                "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+            }
+        }
+    ],
+    "102325":[
+        {
+            "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
+            "refs":{
+                "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
+                "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+            }
+        }
+    ],
+    "102331":[
+        {
+            "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
+            "refs":{
+                "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
+                "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+            }
+        }
+    ],
+    "102332":[
+        {
+            "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
+            "refs":{
+                "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
+                "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+            }
+        }
+    ],
+    "102335":[
+        {
+            "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
+            "refs":{
+                "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
+                "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+            }
+        }
+    ],
+    "102336":[
+        {
+            "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
+            "refs":{
+                "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
+                "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+            }
+        }
+    ],
+    "102337":[
+        {
+            "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
+            "refs":{
+                "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
+                "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+            }
+        }
+    ],
+    "102339":[
+        {
+            "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
+            "refs":{
+                "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
+                "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+            }
+        },
+        {
+            "text":"[ani]/[tha] Can be used by a vampire who is already attempting to block.",
+            "refs":{
+                "ANK 20181122-2":"https://www.vekn.net/forum/rules-questions/77176-eagle-s-sight-and-guardian-vigil#91965"
+            }
+        },
+        {
+            "text":"[ani]/[tha] Cannot be used if the vampire cannot attempt to block the action (eg. {Daring the Dawn}).",
+            "refs":{
+                "LSJ 20010714-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9U-jt3p3R_Q/m/WxDJwkgc25kJ"
+            }
+        },
+        {
+            "text":"[ani]/[tha] Does not ignore the normal prey, predator or target restrictions.",
+            "refs":{
+                "ANK 20180623":"https://www.vekn.net/forum/rules-questions/76748-black-sunrise#88361"
+            }
+        }
+    ],
+    "102340":[
+        {
+            "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
+            "refs":{
+                "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
+                "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+            }
+        },
+        {
+            "text":"[POT]/[THA] The opponent cannot play prevention cards of that discipline (eg. for cycling).",
+            "refs":{
+                "LSJ 20050628":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/lN3eieA3xgs/m/c4ZoOWHUsPEJ"
+            }
+        }
+    ],
+    "102341":[
+        {
+            "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
+            "refs":{
+                "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
+                "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+            }
+        }
+    ],
+    "102342":[
+        {
+            "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
+            "refs":{
+                "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
+                "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+            }
+        }
+    ],
+    "102346":[
+        {
+            "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
+            "refs":{
+                "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
+                "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+            }
+        },
+        {
+            "text":"A minion previously attempting to block can resign his attempt and pay no blood.",
+            "refs":{
+                "LSJ 20031121-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/1khXmKPU0ws/m/Je_X4gvv72kJ"
+            }
+        },
+        {
+            "text":"[POT]/[PRE] Can be played any time during the action before resolution; a block attempt is not required.",
+            "refs":{
+                "LSJ 20020612":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/sC0pTtJJDj4/m/bD04Jy4pM_cJ"
+            }
+        }
+    ],
+    "102347":[
         {
             "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
             "refs":{
@@ -35494,6 +35998,14 @@
             }
         }
     ],
+    "201748":[
+        {
+            "text":"The passive ability applies even if the vampire is in torpor.",
+            "refs":{
+                "LSJ 20011022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KMg4MwD-Jn0/m/Vl-TD6DfyhoJ"
+            }
+        }
+    ],
     "201751":[
         {
             "text":"The passive ability applies even if the vampire is in torpor.",
@@ -36006,6 +36518,14 @@
         }
     ],
     "102234":[
+        {
+            "text":"They can lock to use their ability the turn they where recruited.",
+            "refs":{
+                "ANK 20180517":"https://www.vekn.net/forum/rules-questions/76447-rules-team-rulings-rtr-03-03-2018?start=30#87041"
+            }
+        }
+    ],
+    "102322":[
         {
             "text":"They can lock to use their ability the turn they where recruited.",
             "refs":{
@@ -37005,6 +37525,35 @@
             "text":"The action provided by the equipment to the attached minion fizzles (resolves successfully for no effect) if the equipment is not attached to the acting minion when the action resolves unblocked.",
             "refs":{
                 "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
+            }
+        }
+    ],
+    "101950":[
+        {
+            "text":"Can be played before of after effects that are played \"at the end of combat\".",
+            "refs":{
+                "LSJ 20021113":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/df2P8YHZex8/m/mGCmsxDjI_YJ",
+                "ANK 20191219":"https://www.vekn.net/forum/rules-questions/78241-relentless-reaper-vs-blissful-agony-and-scheduled-combat-rulings-ambiguity#98308",
+                "ANK 20180910-1":"https://www.vekn.net/forum/rules-questions/76990-correct-order-impulse-for-combat-cards-after-combat#90517"
+            }
+        },
+        {
+            "text":"[AUS] Effects that end combat and then do something else after combat (include continuing the action as if unblocked) will be lost, except for unlock effects.",
+            "refs":{
+                "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ",
+                "LSJ 19980109":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d2U51Uw0Hfg/m/uIPoVvPFePgJ"
+            }
+        },
+        {
+            "text":"[AUS] Cannot be played after [CEL] {Psyche!}. When played before, combat continues and Psyche! can only be played at the end of it.",
+            "refs":{
+                "ANK 20191219":"https://www.vekn.net/forum/rules-questions/78241-relentless-reaper-vs-blissful-agony-and-scheduled-combat-rulings-ambiguity#98308"
+            }
+        },
+        {
+            "text":"[AUS] Must be played after presses, can be played if the round ends prematurely.",
+            "refs":{
+                "RTR 20030519":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NOBWXWrd-vA/m/iEOpQp1uhvAJ"
             }
         }
     ]
