@@ -126,13 +126,6 @@ const About = () => {
             </div>
 
             <div>
-              <a href="https://vtes-hook.com/">
-                <b>VTES Hook</b>
-              </a>
-              <div>Events portal</div>
-            </div>
-
-            <div>
               <a href="http://www.vekn.net/forum/v-tes-inventory-deckbuilding-programs">
                 <b>There are more!</b>
               </a>

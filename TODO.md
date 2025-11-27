@@ -1,5 +1,4 @@
 # FIX
-- Remove vtes-hook from About (not working)?
 - Vdb discord bug (Hobbesgoblin)
 - 'urplusFixed' typo
 
