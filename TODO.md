@@ -1,6 +1,8 @@
 # FIX
 - Vdb discord bug (Hobbesgoblin)
 - 'urplusFixed' typo
+- Not-newer filter with POD
+- Change in limited-mode
 
 # FIX ON HOLD
 

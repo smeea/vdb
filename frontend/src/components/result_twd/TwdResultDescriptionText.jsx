@@ -3,13 +3,14 @@ import GeoAltFill from "@icons/geo-alt-fill.svg?react";
 import PersonFill from "@icons/person-fill.svg?react";
 import TagFill from "@icons/tag-fill.svg?react";
 import TrophyFill from "@icons/trophy-fill.svg?react";
-import { useNavigate } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { TwdResultDescriptionTextTr, TwdResultTags } from "@/components";
 import {
   AUTHOR,
   BASE,
   CREATION_DATE,
   EVENT,
+  DECKID,
   LOCATION,
   NAME,
   SUPERIOR,
@@ -45,7 +46,9 @@ const TwdResultDescriptionText = ({ deck }) => {
             iconed={isMobile}
             title={isMobile ? <TrophyFill /> : "Event:"}
           >
-            {deck[EVENT]}
+            <Link target="_blank" rel="noreferrer" to={`https://www.vekn.net/event-calendar/event/${deck[DECKID]}`}>
+              {deck[EVENT]}
+            </Link>
           </TwdResultDescriptionTextTr>
           <TwdResultDescriptionTextTr
             iconed={isMobile}
