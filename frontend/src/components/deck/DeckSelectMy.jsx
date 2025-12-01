@@ -1,7 +1,7 @@
 import At from "@icons/at.svg?react";
 import PinAngleFill from "@icons/pin-angle-fill.svg?react";
 import Shuffle from "@icons/shuffle.svg?react";
-import dayjs from "dayjs";
+import { format, differenceInDays } from "date-fns";
 import { useSnapshot } from "valtio";
 import paths from "@/assets/data/paths.json";
 import { ResultLegalIcon, ResultPathImage, ResultPreconClan, Select } from "@/components";
@@ -42,11 +42,11 @@ const DeckSelectMy = ({ deckid, handleSelect }) => {
     })
     .toSorted((a, b) => byTimestamp(decks[a], decks[b]))
     .map((i, idx) => {
-      const diffDays = dayjs().diff(dayjs(decks[i][TIMESTAMP]), "day");
+      const diffDays = differenceInDays(new Date(), decks[i][TIMESTAMP]);
 
       let lastEdit;
       if (diffDays > 90) {
-        lastEdit = dayjs(decks[i][TIMESTAMP]).format("YYYY-MM-DD");
+        lastEdit = format(decks[i][TIMESTAMP], "yyyy-MM-dd");
       } else if (diffDays > 30) {
         lastEdit = `${Math.round(diffDays / 30)}mo`;
       } else if (diffDays > 5) {

@@ -22,7 +22,7 @@
     "babel-plugin-react-compiler": "^1.0.0",
     "bootstrap-icons": "^1.13.1",
     "country-flag-icons": "^1.6.4",
-    "dayjs": "^1.11.19",
+    "date-fns": "^4.1.0",
     "derive-valtio": "^0.2.0",
     "dotenv": "^17.2.3",
     "file-saver": "^2.0.5",

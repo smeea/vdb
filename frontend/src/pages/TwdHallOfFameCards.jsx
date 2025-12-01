@@ -1,8 +1,8 @@
 import { Disclosure, TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/react";
-import dayjs from "dayjs";
+import { differenceInDays } from "date-fns";
 import setsAndPrecons from "@/assets/data/setsAndPrecons.json";
 import { TabButton, TwdHallFameCardsPlayer } from "@/components";
-import { DATE, DECKID, ID, PLAYER, POD, PROMO, RELEASE_DATE, SET, TWD_DATE } from "@/constants";
+import { DATE, DECKID, ID, PLAYER, POD, TWO_P, PLAYTEST, PROMO, RELEASE_DATE, SET, TWD_DATE } from "@/constants";
 import { useApp } from "@/context";
 import { useFetch } from "@/hooks";
 import { byName } from "@/utils";
@@ -26,7 +26,7 @@ const TwdHallOfFameCards = () => {
       let releaseDate = null;
 
       Object.keys(card[SET])
-        .filter((set) => set !== POD)
+        .filter((set) => ![POD, TWO_P, PLAYTEST].includes(set))
         .forEach((set) => {
           const d = set === PROMO ? Object.keys(card[SET].Promo)[0] : setsAndPrecons[set][DATE];
 
@@ -63,9 +63,9 @@ const TwdHallOfFameCards = () => {
   };
 
   const isInnovation = (card) => {
-    const twdAppearanceDelay = dayjs(card[TWD_DATE]).diff(dayjs(card[RELEASE_DATE]), "day");
-
     if (card[TWD_DATE] < IGNORED_BEFORE_DATE) return false;
+
+    const twdAppearanceDelay = differenceInDays(card[TWD_DATE], card[RELEASE_DATE]);
     return twdAppearanceDelay > INNOVATION_PERIOD;
   };
 

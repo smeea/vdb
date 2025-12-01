@@ -1,6 +1,6 @@
 import Download from "@icons/download.svg?react";
 import Upload from "@icons/upload.svg?react";
-import dayjs from "dayjs";
+import { format } from "date-fns";
 import { useRef } from "react";
 import { useSnapshot } from "valtio";
 import {
@@ -58,7 +58,7 @@ const LimitedModal = ({ setShow, setFormat }) => {
 
   const exportFormat = async () => {
     const { saveAs } = await import("file-saver");
-    const fileName = `Limited Format [${dayjs().format("YYYY-MM-DD")}].txt`;
+    const fileName = `Limited Format [${format(new Date(), "yyyy-MM-dd")}].txt`;
     const formatText = JSON.stringify(minifiedFormat, null, "  ");
     const file = new File([formatText], fileName, {
       type: "text/plain;charset=utf-8",

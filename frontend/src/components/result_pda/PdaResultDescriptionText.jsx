@@ -1,7 +1,7 @@
 import CalendarEvent from "@icons/calendar-event.svg?react";
 import PersonFill from "@icons/person-fill.svg?react";
 import TagFill from "@icons/tag-fill.svg?react";
-import dayjs from "dayjs";
+import { format } from "date-fns";
 import { useNavigate } from "react-router";
 import { ResultLibraryTypeImage, TwdResultDescriptionTextTr, TwdResultTags } from "@/components";
 import {
@@ -22,7 +22,7 @@ const PdaResultDescriptionText = ({ deck }) => {
   const { isMobile } = useApp();
   const navigate = useNavigate();
   const { libraryByTypeTotal } = useDeckLibrary(deck[LIBRARY]);
-  const lastUpdated = dayjs(deck[TIMESTAMP]).format("YYYY-MM-DD");
+  const lastUpdated = format(deck[TIMESTAMP], "yyyy-MM-dd");
   const hasTags = [...deck[TAGS][SUPERIOR], ...deck[TAGS][BASE]].length > 0;
 
   const handleClick = (value) => {

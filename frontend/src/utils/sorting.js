@@ -1,4 +1,4 @@
-import dayjs from "dayjs";
+import { differenceInSeconds } from "date-fns";
 import {
   ASCII,
   BLOOD,
@@ -91,7 +91,7 @@ export const bySect = (a, b) => {
 };
 
 export const byTimestamp = (a, b) => {
-  return dayjs(b[TIMESTAMP]) - dayjs(a[TIMESTAMP]);
+  return differenceInSeconds(b[TIMESTAMP], a[TIMESTAMP]);
 };
 
 export const byPlayer = (a, b) => {

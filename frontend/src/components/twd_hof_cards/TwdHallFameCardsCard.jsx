@@ -1,4 +1,4 @@
-import dayjs from "dayjs";
+import { differenceInYears } from "date-fns";
 import {
   ResultCryptTableRowCommon,
   ResultLibraryTableRowCommon,
@@ -25,7 +25,7 @@ const TwdHallFameCardsCard = ({ card, handleClick }) => {
         {card[TWD_DATE].slice(0, 4)}
       </td>
       <td className="min-w-[25px] text-center sm:min-w-[60px]">
-        {dayjs(card[TWD_DATE]).diff(dayjs(card[RELEASE_DATE]), "year")}
+        {differenceInYears(card[TWD_DATE], card[RELEASE_DATE])}
       </td>
       <td className="min-w-[45px] sm:min-w-[110px]">
         {card[DECKID] && (

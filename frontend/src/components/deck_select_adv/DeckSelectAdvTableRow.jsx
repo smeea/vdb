@@ -2,7 +2,7 @@ import At from "@icons/at.svg?react";
 import EyeFill from "@icons/eye-fill.svg?react";
 import PinAngleFill from "@icons/pin-angle-fill.svg?react";
 import Shuffle from "@icons/shuffle.svg?react";
-import dayjs from "dayjs";
+import { format } from "date-fns";
 import { useNavigate } from "react-router";
 import { twMerge } from "tailwind-merge";
 import { useSnapshot } from "valtio";
@@ -198,7 +198,7 @@ const DeckSelectAdvTableRow = ({
         className="min-w-[100px] cursor-pointer whitespace-nowrap text-center max-md:hidden sm:min-w-[105px]"
         onClick={handleClick}
       >
-        {dayjs(deck[TIMESTAMP]).format("YYYY-MM-DD")}
+        {format(deck[TIMESTAMP], "yyyy-MM-dd")}
       </td>
       {!short && (
         <td className="w-full px-1 max-md:hidden">

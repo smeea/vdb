@@ -1,4 +1,4 @@
-import dayjs from "dayjs";
+import { differenceInYears } from "date-fns";
 import { useNavigate } from "react-router";
 import { twMerge } from "tailwind-merge";
 import { TwdOpenDeckButton } from "@/components";
@@ -11,9 +11,9 @@ const TwdCardsHistoryCardAppearance = ({ card, byPlayer }) => {
 
   let yearsToWin = null;
   if (card[TWD_DATE]) {
-    yearsToWin = dayjs(card[TWD_DATE]).diff(dayjs(card[RELEASE_DATE]), "year");
+    yearsToWin = differenceInYears(card[TWD_DATE], card[RELEASE_DATE]);
   } else {
-    yearsToWin = `${dayjs().format("YYYY") - card[RELEASE_DATE].slice(0, 4)}+`;
+    yearsToWin = `${differenceInYears(new Date(), card[RELEASE_DATE])}+`;
   }
 
   const handleClick = (author) => {

@@ -1,4 +1,4 @@
-import dayjs from "dayjs";
+import { addHours } from "date-fns";
 import { proxy } from "valtio";
 import {
   AUTHOR,
@@ -72,7 +72,7 @@ export const deckCardChange = (deckid, card, q) => {
 
   if (cardSrc === CRYPT) startCryptTimer();
 
-  deckStore[DECKS][deckid][TIMESTAMP] = dayjs().add(VDB_GMT_OFFSET, "hour").toString();
+  deckStore[DECKS][deckid][TIMESTAMP] = addHours(new Date(), VDB_GMT_OFFSET)
 
   deckServices.cardChange(deckid, card[ID], q).catch(() => {
     deckStore[DECK] = initialDeckState;
@@ -166,7 +166,7 @@ export const deckUpdate = (deckid, field, value) => {
     finalValue = cards;
   }
 
-  deckStore[DECKS][deckid][TIMESTAMP] = dayjs().toISOString();
+  deckStore[DECKS][deckid][TIMESTAMP] = new Date().toISOString();
 
   return deckServices.update(deckid, field, finalValue).catch(() => {
     deckStore[DECK] = initialDeckState;
@@ -208,7 +208,7 @@ export const deckAdd = (deck) => {
     [CRYPT]: deck[CRYPT],
     [LIBRARY]: deck[LIBRARY],
     [TAGS]: deck[TAGS] ?? [],
-    [TIMESTAMP]: dayjs().toISOString(),
+    [TIMESTAMP]: new Date().toISOString(),
     [IS_AUTHOR]: true,
     [IS_PUBLIC]: Boolean(deck[PUBLIC_PARENT]),
     [IS_BRANCHES]: Boolean(deck[MASTER] || deck[BRANCHES]?.length > 0),

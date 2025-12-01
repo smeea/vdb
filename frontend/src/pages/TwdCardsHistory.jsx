@@ -1,7 +1,7 @@
 import { TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/react";
 import setsAndPrecons from "@/assets/data/setsAndPrecons.json";
 import { TabButton, TwdCardsHistoryCrypt, TwdCardsHistoryLibrary } from "@/components";
-import { CRYPT, DATE, DECKID, LIBRARY, PLAYER, POD, PROMO, RELEASE_DATE, SET } from "@/constants";
+import { CRYPT, DATE, DECKID, LIBRARY, PLAYER, POD, TWO_P, PLAYTEST, PROMO, RELEASE_DATE, SET } from "@/constants";
 import { useApp } from "@/context";
 import { useFetch } from "@/hooks";
 import { byCardName } from "@/utils";
@@ -25,7 +25,7 @@ const TwdCardsHistory = () => {
       target[cardid] = { ...value[cardid], ...cardBase[cardid] };
 
       Object.keys(cardBase[cardid][SET])
-        .filter((set) => set !== POD)
+        .filter((set) => ![POD, TWO_P, PLAYTEST].includes(set))
         .forEach((set) => {
           const d =
             set === PROMO ? Object.keys(cardBase[cardid][SET].Promo)[0] : setsAndPrecons[set][DATE];

@@ -1,4 +1,3 @@
-import dayjs from "dayjs";
 import { useRef, useState } from "react";
 import { useNavigate } from "react-router";
 import { Button, ErrorOverlay, Input, Modal, Spinner } from "@/components";
@@ -100,7 +99,7 @@ const DeckImportAmaranth = ({ setShow }) => {
       [CRYPT]: {},
       [LIBRARY]: {},
       [IS_AUTHOR]: true,
-      [TIMESTAMP]: dayjs().toISOString(),
+      [TIMESTAMP]: new Date().toISOString(),
     };
 
     Object.keys(amaranth_deck[CARDS]).forEach((i) => {
@@ -155,7 +154,7 @@ const DeckImportAmaranth = ({ setShow }) => {
                 [IS_AUTHOR]: true,
                 [MASTER]: deck[DECKID],
                 [NAME]: deck[NAME],
-                [TIMESTAMP]: dayjs().toISOString(),
+                [TIMESTAMP]: new Date().toISOString(),
               };
 
               branches[d[DECKID]] = d;

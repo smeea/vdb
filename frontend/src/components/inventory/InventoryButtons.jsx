@@ -1,6 +1,6 @@
 import FolderPlus from "@icons/folder-plus.svg?react";
 import Folder2Open from "@icons/folder2-open.svg?react";
-import dayjs from "dayjs";
+import { format } from "date-fns";
 import { useNavigate } from "react-router";
 import { useSnapshot } from "valtio";
 import {
@@ -68,7 +68,7 @@ const InventoryButtons = ({
         )}
         <DeckExportButton
           deck={{
-            [NAME]: `Inventory ${dayjs().format("YYYY-MM-DD")}`,
+            [NAME]: `Inventory ${format(new Date(), "yyyy-MM-dd")}`,
             [AUTHOR]: publicName,
             [CRYPT]: crypt,
             [LIBRARY]: library,

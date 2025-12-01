@@ -2,7 +2,7 @@ import At from "@icons/at.svg?react";
 import EyeFill from "@icons/eye-fill.svg?react";
 import PinAngleFill from "@icons/pin-angle-fill.svg?react";
 import Shuffle from "@icons/shuffle.svg?react";
-import dayjs from "dayjs";
+import { format } from "date-fns";
 import {
   Button,
   ConditionalTooltip,
@@ -77,7 +77,7 @@ const InventoryAddDeckRow = ({ deck, allTagsOptions }) => {
         </div>
       </td>
       <td className="min-w-[100px] whitespace-nowrap text-center max-sm:hidden">
-        {dayjs(deck[TIMESTAMP]).format("YYYY-MM-DD")}
+        {format(deck[TIMESTAMP], "yyyy-MM-dd")}
       </td>
       <td className="w-full px-1 max-sm:hidden">
         <DeckTags

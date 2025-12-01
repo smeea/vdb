@@ -1,5 +1,5 @@
-import dayjs from "dayjs";
 import ky from "ky";
+import { format } from "date-fns";
 import { redirect } from "react-router";
 import {
   ADV,
@@ -123,7 +123,7 @@ export const deckClone = (deck) => {
           [DECKID]: data[DECKID],
           [MASTER]: null,
           [NAME]: name,
-          [TIMESTAMP]: dayjs().toISOString(),
+          [TIMESTAMP]: new Date().toISOString(),
           [TAGS]: tags,
           [AUTHOR]: deck[AUTHOR],
           [DESCRIPTION]: deck[DESCRIPTION],
@@ -208,7 +208,7 @@ export const branchDelete = (deckid, decks) => {
 export const branchCreate = (deck, branch) => {
   const master = deck[MASTER] ?? deck[DECKID];
   const url = `${import.meta.env.VITE_API_URL}/deck/${master}/branch`;
-  const date = dayjs().format("YYYY-MM-DD");
+  const date = format(new Date(), "yyyy-MM-dd");
 
   return ky
     .post(url, { json: { [DECKID]: branch[DECKID] } })
@@ -232,7 +232,7 @@ export const branchCreate = (deck, branch) => {
         [BRANCH_NAME]: data[0][BRANCH_NAME],
         [IS_PUBLIC]: false,
         [IS_BRANCHES]: true,
-        [TIMESTAMP]: dayjs().toISOString(),
+        [TIMESTAMP]: new Date().toISOString(),
       };
       return data[0][DECKID];
     });
@@ -284,12 +284,12 @@ export const getDeckFromAmaranth = async (deckUrl) => {
   return deck.result;
 };
 
-export const exportDecks = async (decks, format) => {
+export const exportDecks = async (decks, exportFormat) => {
   const { default: JSzip } = await import("jszip");
   const zip = JSzip();
-  const date = dayjs().format("YYYY-MM-DD");
+  const date = format(new Date(), "yyyy-MM-dd");
 
-  if (format === XLSX) {
+  if (exportFormat === XLSX) {
     const fetchPromises = Object.values(decks).map((deck) => {
       let deckName = deck[NAME];
       if (deck[BRANCH_NAME] && (deck[MASTER] || deck[BRANCHES].length > 0)) {
@@ -299,7 +299,7 @@ export const exportDecks = async (decks, format) => {
       return { [NAME]: deckName, file: exportXlsx(deck) };
     });
 
-    const folder = zip.folder(`Decks ${date} [${format}]`);
+    const folder = zip.folder(`Decks ${date} [${exportFormat}]`);
     Promise.all(fetchPromises).then((deckExports) => {
       deckExports.forEach((d) => {
         folder.file(`${d[NAME]}.xlsx`, d.file, {
@@ -309,7 +309,7 @@ export const exportDecks = async (decks, format) => {
 
       zip
         .generateAsync({ type: "blob" })
-        .then((blob) => saveFile(blob, `Decks ${date} [${format}].zip`));
+        .then((blob) => saveFile(blob, `Decks ${date} [${exportFormat}].zip`));
     });
   } else {
     Object.values(decks).forEach((deck) => {
@@ -318,12 +318,12 @@ export const exportDecks = async (decks, format) => {
         deckName += ` [${deck[BRANCH_NAME]}]`;
       }
 
-      zip.folder(`Decks ${date} [${format}]`).file(`${deckName}.txt`, exportDeck(deck, format));
+      zip.folder(`Decks ${date} [${exportFormat}]`).file(`${deckName}.txt`, exportDeck(deck, exportFormat));
     });
 
     zip
       .generateAsync({ type: "blob" })
-      .then((blob) => saveFile(blob, `Decks ${date} [${format}].zip`));
+      .then((blob) => saveFile(blob, `Decks ${date} [${exportFormat}].zip`));
   }
 };
 

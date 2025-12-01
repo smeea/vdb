@@ -1,4 +1,5 @@
-import dayjs from "dayjs";
+import { differenceInDays } from "date-fns";
+
 import setsAndPrecons from "@/assets/data/setsAndPrecons.json";
 import { DATE, PLAYTEST, POD, PROMO, SET } from "@/constants";
 
@@ -7,9 +8,9 @@ export const getLegality = (card) => {
   if (sets.length > 1 || [POD, PROMO].includes(sets[0])) return false;
   if (sets.length === 0) return PLAYTEST;
 
-  const setDate = dayjs(setsAndPrecons[sets[0]][DATE]);
-  if (dayjs().diff(setDate, "day") >= 0) return false;
   const legalDate = setsAndPrecons[sets[0]][DATE];
+
+  if (differenceInDays(legalDate, new Date()) < 0) return false;
   return legalDate;
 };
 

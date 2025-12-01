@@ -1,10 +1,11 @@
-import dayjs from "dayjs";
+import { format } from "date-fns";
 import { Select } from "@/components";
 import { ANY, DATE, FROM, TO } from "@/constants";
 
 const TwdSearchFormDate = ({ inPda, value, onChange }) => {
   const name = DATE;
-  const currentYear = dayjs().format("YYYY");
+
+  const currentYear = format(new Date(), "yyyy");
   const TWD_START = 1997;
   const PDA_START = 2022;
 
