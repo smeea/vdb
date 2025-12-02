@@ -89,6 +89,18 @@ const Inventory = () => {
     setShowFloatingButtons(true);
   };
 
+  const handleCloseAddDeck = () => {
+    setShowAddDeck(false);
+    setShowMenuButtons(false);
+    setShowFloatingButtons(true);
+  };
+
+  const handleCloseAddPrecon = () => {
+    setShowAddPrecon(false);
+    setShowMenuButtons(false);
+    setShowFloatingButtons(true);
+  };
+
   const handleSetCategory = (value) => {
     setCategory(value);
     storageServices.setLocalStorage(INVENTORY_CATEGORY, value);
@@ -193,20 +205,12 @@ const Inventory = () => {
       </Activity>
       <Activity mode={showAddDeck ? "visible" : "hidden"}>
         <InventoryAddDeckModal
-          handleClose={() => {
-            setShowAddDeck(false);
-            setShowMenuButtons(false);
-            setShowFloatingButtons(true);
-          }}
+          handleClose={handleCloseAddDeck}
         />
       </Activity>
       <Activity mode={showAddPrecon ? "visible" : "hidden"}>
         <InventoryAddPreconModal
-          handleClose={() => {
-            setShowAddPrecon(false);
-            setShowMenuButtons(false);
-            setShowFloatingButtons(true);
-          }}
+          handleClose={handleCloseAddPrecon}
         />
       </Activity>
       {showShareModal && <InventoryShareModal show={showShareModal} setShow={setShowShareModal} />}

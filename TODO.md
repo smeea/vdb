@@ -13,6 +13,8 @@
 - Inventory wish list / target card q-ty
   - Get missing using wishlist
   - Missing to show surpluses too
+  - Modify inventory from modal
+  - Modify wishlist from main list
   - Documentation
 - Update cards translation
 

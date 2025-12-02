@@ -20,13 +20,13 @@ const TwdCardsHistoryCryptRow = ({ card, players, handleClick }) => {
     <>
       <div
         className="flex min-w-[32px] items-center justify-center sm:min-w-[40px]"
-        onClick={() => handleClick(card)}
+        onClick={handleClick}
       >
         <ResultCryptCapacity card={card} />
       </div>
       <div
         className="flex min-w-[170px] items-center max-sm:hidden lg:min-w-[180px]"
-        onClick={() => handleClick(card)}
+        onClick={handleClick}
       >
         <ResultCryptDisciplines value={card[DISCIPLINES]} />
       </div>
@@ -35,7 +35,7 @@ const TwdCardsHistoryCryptRow = ({ card, players, handleClick }) => {
           "flex w-full cursor-pointer items-center justify-start",
           !card[DECKID] && "font-bold",
         )}
-        onClick={() => handleClick(card)}
+        onClick={handleClick}
       >
         <ConditionalTooltip
           overlay={<CardPopover card={card} />}
@@ -46,7 +46,9 @@ const TwdCardsHistoryCryptRow = ({ card, players, handleClick }) => {
           <ResultName card={card} />
         </ConditionalTooltip>
       </div>
-      <div className="min-w-[60px] max-sm:hidden" onClick={() => handleClick(card)}>
+      <div className="min-w-[60px] max-sm:hidden"
+           onClick={handleClick}
+      >
         <div className="flex justify-center">
           <ResultClanImage value={card[CLAN]} />
         </div>
