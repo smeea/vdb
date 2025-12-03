@@ -63,6 +63,9 @@ const DeckDrawModal = ({
     handleModalCardClose,
   } = useModalCardController(burnedCrypt, burnedLibrary);
 
+  const handSizeMinus = () => handleCryptHandSize(-1);
+  const handSizePlus = () => handleCryptHandSize(1);
+
   return (
     <Modal size="lg" handleClose={handleClose} title="Deck Draw" noPadding={isMobile}>
       <FlexGapped className="flex-col">
@@ -92,7 +95,7 @@ const DeckDrawModal = ({
                   </Button>
                   <Button
                     title="Hand Size -1"
-                    onClick={() => handleCryptHandSize(-1)}
+                    onClick={handSizeMinus}
                     disabled={drawedCrypt.length < 1}
                   >
                     -1
@@ -102,7 +105,7 @@ const DeckDrawModal = ({
                   </Button>
                   <Button
                     title="Hand Size +1"
-                    onClick={() => handleCryptHandSize(1)}
+                    onClick={handSizePlus}
                     disabled={restCrypt.length < 1}
                   >
                     +1
@@ -136,7 +139,7 @@ const DeckDrawModal = ({
                 </Button>
                 <Button
                   title="Hand Size -1"
-                  onClick={() => handleLibraryHandSize(-1)}
+                  onClick={handSizeMinus}
                   disabled={drawedLibrary.length < 1}
                 >
                   -1
@@ -146,7 +149,7 @@ const DeckDrawModal = ({
                 </Button>
                 <Button
                   title="Hand Size +1"
-                  onClick={() => handleLibraryHandSize(1)}
+                  onClick={handSizePlus}
                   disabled={restLibrary.length < 1}
                 >
                   +1

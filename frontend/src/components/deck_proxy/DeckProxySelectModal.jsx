@@ -153,6 +153,27 @@ const DeckProxySelectModal = ({ deck, setShow }) => {
     handleClose();
   };
 
+  const generateWhiteA4 = () => {
+    handleGenerate({
+      isWhite: true,
+    });
+  };
+
+  const generateWhiteLetter = () => {
+    handleGenerate({
+      isWhite: true,
+      isLetter: true,
+    });
+  };
+
+  const generateGrayA4 = () => handleGenerate({});
+
+  const generateGrayLetter = () => {
+    handleGenerate({
+      isLetter: true,
+    });
+  };
+
   return (
     <Modal
       handleClose={handleClose}
@@ -188,46 +209,10 @@ const DeckProxySelectModal = ({ deck, setShow }) => {
           </div>
         </div>
         <div className="flex justify-end gap-2 max-sm:flex-col max-sm:p-2 max-sm:pt-0">
-          <Button
-            onClick={() =>
-              handleGenerate({
-                isWhite: false,
-                isLetter: false,
-              })
-            }
-          >
-            Generate - Gray gaps (A4)
-          </Button>
-          <Button
-            onClick={() =>
-              handleGenerate({
-                isWhite: true,
-                isLetter: false,
-              })
-            }
-          >
-            Generate - White gaps (A4)
-          </Button>
-          <Button
-            onClick={() =>
-              handleGenerate({
-                isWhite: false,
-                isLetter: true,
-              })
-            }
-          >
-            Generate - Gray gaps (Letter)
-          </Button>
-          <Button
-            onClick={() =>
-              handleGenerate({
-                isWhite: true,
-                isLetter: true,
-              })
-            }
-          >
-            Generate - White gaps (Letter)
-          </Button>
+          <Button onClick={generateGrayA4}>Generate - Gray gaps (A4)</Button>
+          <Button onClick={generateWhiteA4}>Generate - White gaps (A4)</Button>
+          <Button onClick={generateGrayLetter}>Generate - Gray gaps (Letter)</Button>
+          <Button onClick={generateWhiteLetter}>Generate - White gaps (Letter)</Button>
           <Button onClick={handleToggleSelect}>Select / Deselect All</Button>
           {inventoryMode && <Button onClick={handleToggleResolve}>Add Missing in Inventory</Button>}
         </div>

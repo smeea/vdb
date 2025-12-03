@@ -72,7 +72,7 @@ export const deckCardChange = (deckid, card, q) => {
 
   if (cardSrc === CRYPT) startCryptTimer();
 
-  deckStore[DECKS][deckid][TIMESTAMP] = addHours(new Date(), VDB_GMT_OFFSET)
+  deckStore[DECKS][deckid][TIMESTAMP] = addHours(new Date(), VDB_GMT_OFFSET);
 
   deckServices.cardChange(deckid, card[ID], q).catch(() => {
     deckStore[DECK] = initialDeckState;

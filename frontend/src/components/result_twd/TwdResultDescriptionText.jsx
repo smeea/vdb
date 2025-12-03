@@ -9,8 +9,8 @@ import {
   AUTHOR,
   BASE,
   CREATION_DATE,
-  EVENT,
   DECKID,
+  EVENT,
   LOCATION,
   NAME,
   SUPERIOR,
@@ -46,7 +46,11 @@ const TwdResultDescriptionText = ({ deck }) => {
             iconed={isMobile}
             title={isMobile ? <TrophyFill /> : "Event:"}
           >
-            <Link target="_blank" rel="noreferrer" to={`https://www.vekn.net/event-calendar/event/${deck[DECKID]}`}>
+            <Link
+              target="_blank"
+              rel="noreferrer"
+              to={`https://www.vekn.net/event-calendar/event/${deck[DECKID]}`}
+            >
               {deck[EVENT]}
             </Link>
           </TwdResultDescriptionTextTr>

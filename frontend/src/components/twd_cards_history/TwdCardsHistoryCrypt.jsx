@@ -69,18 +69,18 @@ const TwdCardsHistoryCrypt = ({ cards, players }) => {
     handleModalCardClose,
   } = useModalCardController(sortedCards);
 
-  const handleClick = (card) => {
-    handleModalCardOpen(card);
-  };
+  const cardRows = sortedCards.map((card) => {
+    const handleClick = () => handleModalCardOpen(card);
 
-  const cardRows = sortedCards.map((card) => (
-    <TwdCardsHistoryCryptRow
-      key={card[ID]}
-      card={card}
-      players={players}
-      handleClick={handleModalCardOpen}
-    />
-  ));
+    return (
+      <TwdCardsHistoryCryptRow
+        key={card[ID]}
+        card={card}
+        players={players}
+        handleClick={handleClick}
+      />
+    );
+  });
 
   return (
     <div className="h-[calc(100dvh-166px)] sm:h-[calc(100dvh-225px)]">

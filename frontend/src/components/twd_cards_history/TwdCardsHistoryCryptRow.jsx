@@ -46,9 +46,7 @@ const TwdCardsHistoryCryptRow = ({ card, players, handleClick }) => {
           <ResultName card={card} />
         </ConditionalTooltip>
       </div>
-      <div className="min-w-[60px] max-sm:hidden"
-           onClick={handleClick}
-      >
+      <div className="min-w-[60px] max-sm:hidden" onClick={handleClick}>
         <div className="flex justify-center">
           <ResultClanImage value={card[CLAN]} />
         </div>

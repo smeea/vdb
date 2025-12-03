@@ -31,13 +31,16 @@ const InventoryCardQuantity = ({ card, softUsedMax, hardUsedTotal, compact, newF
     inventoryCardChange(card.c, Number.parseInt(diff + state));
   };
 
+  const handleQuantityMinus = () => handleQuantityChange(-1);
+  const handleQuantityPlus = () => handleQuantityChange(1);
+
   return (
     <>
       {isEditable ? (
         <div className="flex w-full items-center justify-between text-lg">
           {isMobile ? (
             <>
-              <ButtonCardChange onClick={() => handleQuantityChange(-1)} isLink isNegative />
+              <ButtonCardChange onClick={handleQuantityMinus} isLink isNegative />
               <div
                 className={twMerge(
                   "mx-1 flex w-full justify-center",
@@ -49,11 +52,11 @@ const InventoryCardQuantity = ({ card, softUsedMax, hardUsedTotal, compact, newF
                 {state === 0 ? <>&nbsp;</> : state}
                 {card.t && <div className="max-w-[4px] text-xs">*</div>}
               </div>
-              <ButtonCardChange onClick={() => handleQuantityChange(1)} isLink />
+              <ButtonCardChange onClick={handleQuantityPlus} isLink />
             </>
           ) : (
             <>
-              {!manual && <ButtonCardChange onClick={() => handleQuantityChange(-1)} isNegative />}
+              {!manual && <ButtonCardChange onClick={handleQuantityMinus} isNegative />}
               <div
                 tabIndex={0}
                 className={
@@ -87,7 +90,7 @@ const InventoryCardQuantity = ({ card, softUsedMax, hardUsedTotal, compact, newF
                   </>
                 )}
               </div>
-              {!manual && <ButtonCardChange onClick={() => handleQuantityChange(1)} />}
+              {!manual && <ButtonCardChange onClick={handleQuantityPlus} />}
             </>
           )}
         </div>

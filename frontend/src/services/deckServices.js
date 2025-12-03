@@ -1,5 +1,5 @@
-import ky from "ky";
 import { format } from "date-fns";
+import ky from "ky";
 import { redirect } from "react-router";
 import {
   ADV,
@@ -318,7 +318,9 @@ export const exportDecks = async (decks, exportFormat) => {
         deckName += ` [${deck[BRANCH_NAME]}]`;
       }
 
-      zip.folder(`Decks ${date} [${exportFormat}]`).file(`${deckName}.txt`, exportDeck(deck, exportFormat));
+      zip
+        .folder(`Decks ${date} [${exportFormat}]`)
+        .file(`${deckName}.txt`, exportDeck(deck, exportFormat));
     });
 
     zip

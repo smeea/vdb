@@ -2,7 +2,19 @@ import { Disclosure, TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/
 import { differenceInDays } from "date-fns";
 import setsAndPrecons from "@/assets/data/setsAndPrecons.json";
 import { TabButton, TwdHallFameCardsPlayer } from "@/components";
-import { DATE, DECKID, ID, PLAYER, POD, TWO_P, PLAYTEST, PROMO, RELEASE_DATE, SET, TWD_DATE } from "@/constants";
+import {
+  DATE,
+  DECKID,
+  ID,
+  PLAYER,
+  PLAYTEST,
+  POD,
+  PROMO,
+  RELEASE_DATE,
+  SET,
+  TWD_DATE,
+  TWO_P,
+} from "@/constants";
 import { useApp } from "@/context";
 import { useFetch } from "@/hooks";
 import { byName } from "@/utils";

@@ -204,14 +204,10 @@ const Inventory = () => {
         </Modal>
       </Activity>
       <Activity mode={showAddDeck ? "visible" : "hidden"}>
-        <InventoryAddDeckModal
-          handleClose={handleCloseAddDeck}
-        />
+        <InventoryAddDeckModal handleClose={handleCloseAddDeck} />
       </Activity>
       <Activity mode={showAddPrecon ? "visible" : "hidden"}>
-        <InventoryAddPreconModal
-          handleClose={handleCloseAddPrecon}
-        />
+        <InventoryAddPreconModal handleClose={handleCloseAddPrecon} />
       </Activity>
       {showShareModal && <InventoryShareModal show={showShareModal} setShow={setShowShareModal} />}
     </div>

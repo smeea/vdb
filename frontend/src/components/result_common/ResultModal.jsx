@@ -9,17 +9,19 @@ import { useSwipe } from "@/hooks";
 
 const ResultModal = ({ card, handleModalCardChange, handleClose, forceInventoryMode }) => {
   const { showImage, toggleShowImage, isMobile } = useApp();
-
   const [activeCard, setActiveCard] = useState(card);
   const [isHotkeysDisabled, setIsHotkeysDisabled] = useState(false);
+
+  const handleModalCardPlus = () => handleModalCardChange(1);
+  const handleModalCardMinus = () => handleModalCardChange(-1);
 
   const handleKeyDown = (event) => {
     switch (event.key) {
       case "ArrowLeft":
-        handleModalCardChange(-1);
+        handleModalCardMinus;
         break;
       case "ArrowRight":
-        handleModalCardChange(1);
+        handleModalCardPlus;
         break;
       default:
         break;
@@ -38,10 +40,7 @@ const ResultModal = ({ card, handleModalCardChange, handleClose, forceInventoryM
     }
   }, [card, isHotkeysDisabled]);
 
-  const { swipeHandlers } = useSwipe(
-    () => handleModalCardChange(1),
-    () => handleModalCardChange(-1),
-  );
+  const { swipeHandlers } = useSwipe(handleModalCardPlus, handleModalCardMinus);
 
   return (
     <Modal
@@ -87,7 +86,7 @@ const ResultModal = ({ card, handleModalCardChange, handleClose, forceInventoryM
           </div>
         </div>
         <div
-          onClick={() => handleModalCardChange(-1)}
+          onClick={handleModalCardMinus}
           className={twMerge(
             "absolute bottom-1/2 left-[-40px] text-darkGray/50 sm:text-white dark:text-midGray/50 sm:dark:text-whiteDark",
             showImage ? "h-[50px] max-sm:left-[0px]" : "h-[48px] max-sm:left-[-20px]",
@@ -96,7 +95,7 @@ const ResultModal = ({ card, handleModalCardChange, handleClose, forceInventoryM
           <ChevronCompactLeft width="48" height="64" viewBox="4 0 12 16" />
         </div>
         <div
-          onClick={() => handleModalCardChange(1)}
+          onClick={handleModalCardPlus}
           className={twMerge(
             "absolute right-[-40px] bottom-1/2 text-darkGray/50 sm:text-white dark:text-midGray/50 sm:dark:text-whiteDark",
             showImage ? "h-[50px] max-sm:right-[0px]" : "h-[48px] max-sm:right-[-20px]",

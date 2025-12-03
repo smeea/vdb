@@ -59,6 +59,16 @@ const DeckProxyButton = ({ setShowProxySelect, missingCrypt, missingLibrary, dec
     setShowMenuButtons(false);
   };
 
+  const generateWhiteA4 = () => handleClickDeck(true, false);
+  const generateWhiteLetter = () => handleClickDeck(true, true);
+  const generateGrayA4 = () => handleClickDeck(false, false);
+  const generateGrayLetter = () => handleClickDeck(false, true);
+
+  const generateMissingWhiteA4 = () => handleClickMissing(true, false);
+  const generateMissingWhiteLetter = () => handleClickMissing(true, true);
+  const generateMissingGrayA4 = () => handleClickMissing(false, false);
+  const generateMissingGrayLetter = () => handleClickMissing(false, true);
+
   return (
     <Menu>
       <MenuButton
@@ -70,32 +80,24 @@ const DeckProxyButton = ({ setShowProxySelect, missingCrypt, missingLibrary, dec
       <MenuItems>
         {!inDiff && (
           <>
-            <MenuItem onClick={() => handleClickDeck(false, false)}>
-              Full Deck - Gray gaps (A4)
-            </MenuItem>
-            <MenuItem onClick={() => handleClickDeck(true, false)}>
-              Full Deck - White gaps (A4)
-            </MenuItem>
-            <MenuItem onClick={() => handleClickDeck(false, true)}>
-              Full Deck - Gray gaps (Letter)
-            </MenuItem>
-            <MenuItem onClick={() => handleClickDeck(true, true)}>
-              Full Deck - White gaps (Letter)
-            </MenuItem>
+            <MenuItem onClick={generateGrayA4}>Full Deck - Gray gaps (A4)</MenuItem>
+            <MenuItem onClick={generateWhiteA4}>Full Deck - White gaps (A4)</MenuItem>
+            <MenuItem onClick={generateGrayLetter}>Full Deck - Gray gaps (Letter)</MenuItem>
+            <MenuItem onClick={generateWhiteLetter}>Full Deck - White gaps (Letter)</MenuItem>
           </>
         )}
         {(inventoryMode || inDiff) && (
           <>
-            <MenuItem onClick={() => handleClickMissing(false, false)}>
+            <MenuItem onClick={generateMissingGrayA4}>
               {`${inDiff ? "Changes" : "Missing in Inventory"} - Gray gaps (A4)`}
             </MenuItem>
-            <MenuItem onClick={() => handleClickMissing(true, false)}>
+            <MenuItem onClick={generateMissingWhiteA4}>
               {`${inDiff ? "Changes" : "Missing in Inventory"} - White gaps (A4)`}
             </MenuItem>
-            <MenuItem onClick={() => handleClickMissing(false, true)}>
+            <MenuItem onClick={generateMissingGrayLetter}>
               {`${inDiff ? "Changes" : "Missing in Inventory"} - Gray gaps (Letter)`}
             </MenuItem>
-            <MenuItem onClick={() => handleClickMissing(true, true)}>
+            <MenuItem onClick={generateMissingWhiteLetter}>
               {`${inDiff ? "Changes" : "Missing in Inventory"} - White gaps (Letter)`}
             </MenuItem>
           </>

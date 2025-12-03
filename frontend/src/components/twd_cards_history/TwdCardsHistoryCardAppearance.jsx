@@ -16,10 +16,10 @@ const TwdCardsHistoryCardAppearance = ({ card, byPlayer }) => {
     yearsToWin = `${differenceInYears(new Date(), card[RELEASE_DATE])}+`;
   }
 
-  const handleClick = (author) => {
+  const handleClick = () => {
     clearSearchForm(TWD);
-    searchTwdForm[AUTHOR] = author;
-    navigate(`/twd?q=${encodeURIComponent(JSON.stringify({ [AUTHOR]: author }))}`);
+    searchTwdForm[AUTHOR] = card[PLAYER];
+    navigate(`/twd?q=${encodeURIComponent(JSON.stringify({ [AUTHOR]: card[PLAYER] }))}`);
   };
 
   return (
@@ -46,7 +46,7 @@ const TwdCardsHistoryCardAppearance = ({ card, byPlayer }) => {
       <div className="flex min-w-[90px] items-center justify-between sm:min-w-[250px]">
         <div
           className="inline text-fgSecondary hover:underline max-sm:text-sm dark:text-fgSecondaryDark"
-          onClick={() => handleClick(card[PLAYER])}
+          onClick={handleClick}
         >
           {card[PLAYER]}
         </div>

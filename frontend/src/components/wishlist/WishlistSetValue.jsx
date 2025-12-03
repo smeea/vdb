@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useSnapshot } from "valtio";
 import { ButtonCardChange } from "@/components";
-import { LOGIC, IS_FROZEN, VALUE, WISHLIST, SURPLUS_FIXED } from "@/constants";
+import { IS_FROZEN, LOGIC, SURPLUS_FIXED, VALUE, WISHLIST } from "@/constants";
 import { inventoryStore, useApp, wishlistUpdate } from "@/context";
 
 const WishlistSetValue = ({ cardid }) => {
@@ -18,7 +18,7 @@ const WishlistSetValue = ({ cardid }) => {
   }, [value]);
 
   const handleManualChange = (event) => {
-    if (state === 0 && !logic) wishlistUpdate(cardid, LOGIC, SURPLUS_FIXED)
+    if (state === 0 && !logic) wishlistUpdate(cardid, LOGIC, SURPLUS_FIXED);
     if (event.target.value >= 0) {
       setState(event.target.value ?? "");
     }
@@ -32,11 +32,14 @@ const WishlistSetValue = ({ cardid }) => {
 
   const handleQuantityChange = (diff) => {
     if (diff + state >= 0) {
-      if (state === 0 && !logic) wishlistUpdate(cardid, LOGIC, SURPLUS_FIXED)
+      if (state === 0 && !logic) wishlistUpdate(cardid, LOGIC, SURPLUS_FIXED);
       setState(diff + state);
       wishlistUpdate(cardid, VALUE, Number.parseInt(diff + state));
     }
   };
+
+  const handleQuantityMinus = () => handleQuantityChange(-1);
+  const handleQuantityPlus = () => handleQuantityChange(1);
 
   return (
     <>
@@ -44,18 +47,13 @@ const WishlistSetValue = ({ cardid }) => {
         <div className="flex w-full items-center justify-between text-lg">
           {isMobile ? (
             <>
-              <ButtonCardChange
-                onClick={() => handleQuantityChange(-1)}
-                isLink
-                isNegative
-                isDisabled
-              />
+              <ButtonCardChange onClick={handleQuantityMinus} isLink isNegative isDisabled />
               <div className="mx-1 flex w-full justify-center">{state}</div>
-              <ButtonCardChange onClick={() => handleQuantityChange(1)} isLink />
+              <ButtonCardChange onClick={handleQuantityPlus} isLink />
             </>
           ) : (
             <>
-              {!manual && <ButtonCardChange onClick={() => handleQuantityChange(-1)} isNegative />}
+              {!manual && <ButtonCardChange onClick={handleQuantityMinus} isNegative />}
               <div
                 tabIndex={0}
                 className={manual ? "" : "mx-1 flex w-full justify-center"}
@@ -77,7 +75,7 @@ const WishlistSetValue = ({ cardid }) => {
                   state
                 )}
               </div>
-              {!manual && <ButtonCardChange onClick={() => handleQuantityChange(1)} />}
+              {!manual && <ButtonCardChange onClick={handleQuantityPlus} />}
             </>
           )}
         </div>

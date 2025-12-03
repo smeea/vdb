@@ -1,7 +1,19 @@
 import { TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/react";
 import setsAndPrecons from "@/assets/data/setsAndPrecons.json";
 import { TabButton, TwdCardsHistoryCrypt, TwdCardsHistoryLibrary } from "@/components";
-import { CRYPT, DATE, DECKID, LIBRARY, PLAYER, POD, TWO_P, PLAYTEST, PROMO, RELEASE_DATE, SET } from "@/constants";
+import {
+  CRYPT,
+  DATE,
+  DECKID,
+  LIBRARY,
+  PLAYER,
+  PLAYTEST,
+  POD,
+  PROMO,
+  RELEASE_DATE,
+  SET,
+  TWO_P,
+} from "@/constants";
 import { useApp } from "@/context";
 import { useFetch } from "@/hooks";
 import { byCardName } from "@/utils";

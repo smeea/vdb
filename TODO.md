@@ -3,6 +3,7 @@
 - Not-newer filter with POD
 - Change in limited-mode when logging in
 - Inventory target buttons under floating on mobile
+- TWD Card History sort by date win to start with no win
 
 # FIX ON HOLD
 

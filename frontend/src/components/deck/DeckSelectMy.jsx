@@ -1,7 +1,7 @@
 import At from "@icons/at.svg?react";
 import PinAngleFill from "@icons/pin-angle-fill.svg?react";
 import Shuffle from "@icons/shuffle.svg?react";
-import { format, differenceInDays } from "date-fns";
+import { differenceInDays, format } from "date-fns";
 import { useSnapshot } from "valtio";
 import paths from "@/assets/data/paths.json";
 import { ResultLegalIcon, ResultPathImage, ResultPreconClan, Select } from "@/components";
