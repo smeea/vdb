@@ -44,8 +44,7 @@ const TwdCardsHistoryCrypt = ({ cards, players }) => {
 
   const cardsByClan = {};
   const cardsByClanTotal = {};
-  const clansSorted = [ALL, ...vampireClansList, ...imbuedClansList];
-  clansSorted.forEach((i) => {
+  [ALL, ...vampireClansList, ...imbuedClansList].forEach((i) => {
     cardsByClan[i] = {};
     cardsByClanTotal[i] = 0;
   });

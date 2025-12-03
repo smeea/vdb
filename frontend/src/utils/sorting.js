@@ -102,12 +102,12 @@ export const byPlayer = (a, b) => {
 };
 
 export const byDateWin = (a, b) => {
-  if (a[TWD_DATE] && !b[TWD_DATE]) return -1;
-  if (!a[TWD_DATE] && b[TWD_DATE]) return 1;
+  if (a[TWD_DATE] && !b[TWD_DATE]) return 1;
+  if (!a[TWD_DATE] && b[TWD_DATE]) return -1;
   if (!a[TWD_DATE] && !b[TWD_DATE]) return 0;
   return a[TWD_DATE] < b[TWD_DATE];
 };
 
 export const byDatePrint = (a, b) => {
-  return b[RELEASE_DATE] > a[RELEASE_DATE];
+  return a[RELEASE_DATE] < b[RELEASE_DATE];
 };
