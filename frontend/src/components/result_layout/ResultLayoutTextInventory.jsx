@@ -108,11 +108,11 @@ const ResultLayoutTextInventory = ({ card, inPopover, setIsHotkeysDisabled }) =>
       {!inPopover && (
         <div className="flex items-center gap-2">
           <div className="whitespace-nowrap">Target:</div>
-          <div className="w-full">
-            <WishlistSelectMethod cardid={card[ID]} />
-          </div>
           <div className="min-w-[84px]">
             <WishlistSetValue cardid={card[ID]} />
+          </div>
+          <div className="w-full">
+            <WishlistSelectMethod cardid={card[ID]} />
           </div>
         </div>
       )}

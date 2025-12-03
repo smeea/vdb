@@ -2,7 +2,6 @@
 - 'urplusFixed' typo
 - Not-newer filter with POD
 - Change in limited-mode when logging in
-- Inventory target buttons under floating on mobile
 
 # FIX ON HOLD
 
