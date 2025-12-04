@@ -12,6 +12,7 @@ import { LEGAL_RESTRICTIONS } from "../constants";
 
 export const getRestrictions = (deck, limitedCards) => {
   if (!deck) return {};
+
   let hasPlaytest;
   let hasBanned;
   let hasLimited = null;

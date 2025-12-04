@@ -53,7 +53,7 @@ const useDeckLibrary = (cardsList, cardsToList) => {
     [HAS_LIMITED]: hasLimited,
     [HAS_PLAYTEST]: hasPlaytest,
   } = getRestrictions(
-    { [CRYPT]: {}, [LIBRARY]: library },
+    { [CRYPT]: {}, [LIBRARY]: cardsList },
     { [CRYPT]: {}, [LIBRARY]: limitedLibrary },
   );
 

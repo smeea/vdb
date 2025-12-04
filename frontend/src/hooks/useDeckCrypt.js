@@ -25,7 +25,7 @@ const useDeckCrypt = (cardsList, sortMethod, cardsToList) => {
     [HAS_LIMITED]: hasLimited,
     [HAS_PLAYTEST]: hasPlaytest,
   } = getRestrictions(
-    { [CRYPT]: cryptFrom, [LIBRARY]: {} },
+    { [CRYPT]: cardsList, [LIBRARY]: {} },
     { [CRYPT]: limitedCrypt, [LIBRARY]: {} },
   );
 
