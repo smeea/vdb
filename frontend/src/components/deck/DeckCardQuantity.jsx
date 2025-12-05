@@ -1,7 +1,5 @@
-import { useEffect, useState } from "react";
-import { twMerge } from "tailwind-merge";
-import { ValueSetter, ButtonCardChange, ConditionalTooltip, UsedPopover } from "@/components";
-import { ERROR, WARNING, ID } from "@/constants";
+import { UsedPopover, ValueSetter } from "@/components";
+import { ERROR, ID, WARNING } from "@/constants";
 import { useApp } from "@/context";
 
 const DeckCardQuantity = ({
@@ -18,41 +16,41 @@ const DeckCardQuantity = ({
   isEditable,
   inMissing,
 }) => {
-  const { inventoryMode, isMobile } = useApp();
+  const { inventoryMode } = useApp();
 
   const getInventoryColor = () => {
     if (inventoryMode && !inMissing) {
       if (inventoryType) {
         if (inProxy) {
-          return inInventory + (isSelected ? q : 0) < softUsedMax + hardUsedTotal
-            ? ERROR
-            : null
+          return inInventory + (isSelected ? q : 0) < softUsedMax + hardUsedTotal ? ERROR : null;
         }
         return inInventory >= softUsedMax + hardUsedTotal
           ? null
           : inInventory < q
-          ? ERROR
-          : WARNING
+            ? ERROR
+            : WARNING;
       }
       return inInventory - softUsedMax - hardUsedTotal >= q
         ? null
         : inInventory < q
-        ? ERROR
-        : WARNING
+          ? ERROR
+          : WARNING;
     }
-    return null
+    return null;
   };
   const inventoryColor = getInventoryColor();
 
-  const handleChange = (qty) => cardChange(deckid, card, qty)
+  const handleChange = (qty) => cardChange(deckid, card, qty);
 
   return (
     <ValueSetter
       color={inventoryColor}
       overlay={<UsedPopover cardid={card?.[ID]} />}
-      handleChange={handleChange} isEditable={isEditable}
+      handleChange={handleChange}
+      isEditable={isEditable}
       value={q}
-      inDeck/>
+      inDeck
+    />
   );
 };
 

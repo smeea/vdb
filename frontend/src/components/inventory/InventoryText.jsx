@@ -20,7 +20,12 @@ const InventoryText = ({ card, text, inPopover, setIsHotkeysDisabled }) => {
 
   return (
     <div className="items-top flex gap-2">
-      <div className={twMerge("flex min-w-[16px] justify-center opacity-40", inPopover ? "pt-1" : "pt-2")}>
+      <div
+        className={twMerge(
+          "flex min-w-[16px] justify-center opacity-40",
+          inPopover ? "pt-1" : "pt-2",
+        )}
+      >
         <ChatLeftQuoteFill width="14" height="14" viewBox="0 0 16 16" />
       </div>
       {inPopover ? (

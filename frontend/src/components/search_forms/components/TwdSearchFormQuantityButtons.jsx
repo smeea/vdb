@@ -1,23 +1,18 @@
-import { useEffect, useState } from "react";
-import { twMerge } from "tailwind-merge";
-import { ValueSetter, Button, ButtonCardChange } from "@/components";
+import { Button, ValueSetter } from "@/components";
 import { EQ, GT, LT, LT0 } from "@/constants";
-import { useApp } from "@/context";
 
 const TwdSearchFormQuantityButtons = ({ value, form, id }) => {
-  const { isMobile } = useApp();
-
   const handleToggleMoreLess = () => {
     const toggle = () => {
       switch (value[id].m) {
-      case GT:
-        return LT;
-      case LT:
-        return LT0;
-      case LT0:
-        return EQ;
-      default:
-        return GT;
+        case GT:
+          return LT;
+        case LT:
+          return LT0;
+        case LT0:
+          return EQ;
+        default:
+          return GT;
       }
     };
 
@@ -26,14 +21,14 @@ const TwdSearchFormQuantityButtons = ({ value, form, id }) => {
 
   const getIconAndText = (s) => {
     switch (s) {
-    case GT:
-      return ["≥", "More than or equal"];
-    case LT0:
-      return ["0≤", "Less than or equal, and can be 0"];
-    case LT:
-      return ["1≤", "Less than or equal, but not less than 1"];
-    default:
-      return ["==", "Equal"];
+      case GT:
+        return ["≥", "More than or equal"];
+      case LT0:
+        return ["0≤", "Less than or equal, and can be 0"];
+      case LT:
+        return ["1≤", "Less than or equal, but not less than 1"];
+      default:
+        return ["==", "Equal"];
     }
   };
 
@@ -43,7 +38,7 @@ const TwdSearchFormQuantityButtons = ({ value, form, id }) => {
     } else {
       delete form[id];
     }
-  }
+  };
 
   return (
     <div className="flex items-center justify-between gap-1">
@@ -55,7 +50,7 @@ const TwdSearchFormQuantityButtons = ({ value, form, id }) => {
       >
         {getIconAndText(value[id].m)[0]}
       </Button>
-      <ValueSetter value={value[id].q} handleChange ={handleChange} />
+      <ValueSetter value={value[id].q} handleChange={handleChange} />
     </div>
   );
 };

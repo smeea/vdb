@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
 import { twMerge } from "tailwind-merge";
-import { useSnapshot } from "valtio";
-import { ConditionalTooltip, ButtonCardChange } from "@/components";
-import { ERROR, WARNING, IS_FROZEN, LOGIC, SURPLUS_FIXED, VALUE, WISHLIST } from "@/constants";
-import { inventoryStore, useApp, wishlistUpdate } from "@/context";
+import { ButtonCardChange, ConditionalTooltip } from "@/components";
+import { ERROR, WARNING } from "@/constants";
+import { useApp } from "@/context";
 
 const ValueSetter = ({
   value,
@@ -13,9 +12,8 @@ const ValueSetter = ({
   isManual,
   newFocus,
   overlay,
-  inWishlist,
   inDeck,
-  withNote
+  withNote,
 }) => {
   const { isMobile } = useApp();
   const [manual, setManual] = useState(isManual);
@@ -44,11 +42,12 @@ const ValueSetter = ({
   const handleQuantityMinus = () => handleQuantityChange(-1);
   const handleQuantityPlus = () => handleQuantityChange(1);
 
-  const colorStyle = color === ERROR
-        ? 'bg-bgError dark:bg-bgErrorDark text-white dark:text-whiteDark'
-        : color === WARNING
-        ? 'bg-bgWarning dark:bg-bgWarningDark'
-        : ''
+  const colorStyle =
+    color === ERROR
+      ? "bg-bgError dark:bg-bgErrorDark text-white dark:text-whiteDark"
+      : color === WARNING
+        ? "bg-bgWarning dark:bg-bgWarningDark"
+        : "";
 
   return (
     <>
@@ -57,9 +56,7 @@ const ValueSetter = ({
           {isMobile ? (
             <>
               <ButtonCardChange onClick={handleQuantityMinus} isLink isNegative />
-              <div className={twMerge("mx-1 flex w-full justify-center",
-                                      colorStyle,
-                                     )}>
+              <div className={twMerge("mx-1 flex w-full justify-center", colorStyle)}>
                 {withNote && <div className="min-w-[4px]" />}
                 {inDeck && state === 0 ? "" : state}
                 {withNote && <div className="max-w-[4px] text-xs">*</div>}
@@ -71,19 +68,10 @@ const ValueSetter = ({
               {!manual && <ButtonCardChange onClick={handleQuantityMinus} isNegative />}
               <div
                 tabIndex={0}
-                className={manual
-                           ? ""
-                           : twMerge("mx-1 flex w-full justify-center",
-                                      colorStyle,
-                  )}
+                className={manual ? "" : twMerge("mx-1 flex w-full justify-center", colorStyle)}
                 onFocus={() => setManual(true)}
               >
-
-                <ConditionalTooltip
-                  placement="bottom"
-                  overlay={overlay}
-                  disabled={!overlay}
-                >
+                <ConditionalTooltip placement="bottom" overlay={overlay} disabled={!overlay}>
                   {manual ? (
                     <form onSubmit={handleSubmit}>
                       <input
@@ -110,15 +98,13 @@ const ValueSetter = ({
           )}
         </div>
       ) : (
-        <ConditionalTooltip
-          placement="bottom"
-          overlay={<UsedPopover cardid={card?.[ID]} />}
-          disabled={!inventoryMode || isMobile}
-        >
-          <div className={twMerge(
-            "mx-1 flex w-full items-center justify-center py-1 text-lg",
-            colorStyle,
-          )}>
+        <ConditionalTooltip placement="bottom" overlay={overlay} disabled={!overlay}>
+          <div
+            className={twMerge(
+              "mx-1 flex w-full items-center justify-center py-1 text-lg",
+              colorStyle,
+            )}
+          >
             {state || null}
           </div>
         </ConditionalTooltip>
