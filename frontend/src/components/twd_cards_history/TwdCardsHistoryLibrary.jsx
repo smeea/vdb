@@ -57,7 +57,12 @@ const TwdCardsHistoryLibrary = ({ cards, players }) => {
 
   const cardsByDiscipline = {};
   const cardsByDisciplineTotal = {};
-  [ALL, NONE, ...[...Object.keys(disciplinesList), ...disciplinesExtraList].toSorted(), ...Object.keys(virtuesList)].forEach((i) => {
+  [
+    ALL,
+    NONE,
+    ...[...Object.keys(disciplinesList), ...disciplinesExtraList].toSorted(),
+    ...Object.keys(virtuesList),
+  ].forEach((i) => {
     cardsByDiscipline[i] = {};
     cardsByDisciplineTotal[i] = 0;
   });

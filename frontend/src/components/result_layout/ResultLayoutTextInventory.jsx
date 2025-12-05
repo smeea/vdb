@@ -4,6 +4,7 @@ import PlusCircleFill from "@icons/plus-circle-fill.svg?react";
 import { twMerge } from "tailwind-merge";
 import { useSnapshot } from "valtio";
 import {
+  InventoryCardQuantity,
   InventoryText,
   UsedDescription,
   WishlistSelectMethod,
@@ -35,9 +36,9 @@ const ResultLayoutTextInventory = ({ card, inPopover, setIsHotkeysDisabled }) =>
   const usedCards = card[ID] > 200000 ? usedCrypt : usedLibrary;
   const softUsedMax = getSoftMax(usedCards[SOFT][card[ID]]);
   const hardUsedTotal = getHardTotal(usedCards[HARD][card[ID]]);
-  const inInventory =
-    card[ID] > 200000 ? inventoryCrypt[card[ID]]?.q || 0 : inventoryLibrary[card[ID]]?.q || 0;
-  const text = card[ID] > 200000 ? inventoryCrypt[card[ID]]?.t : inventoryLibrary[card[ID]]?.t;
+  const inventoryCard = card[ID] > 200000 ? inventoryCrypt[card[ID]] : inventoryLibrary[card[ID]]
+  const inInventory = inventoryCard?.q || 0
+  const text = inventoryCard?.t
 
   const wishlistLogic = wishlist?.[card[ID]]?.[LOGIC];
   const surplus =
@@ -46,7 +47,38 @@ const ResultLayoutTextInventory = ({ card, inPopover, setIsHotkeysDisabled }) =>
       : inInventory - (wishlist[card[ID]]?.[VALUE] || 0);
 
   return (
-    <div className="flex flex-col gap-1.5">
+    <div className="flex flex-col gap-1">
+      <div className="flex flex-col">
+        <div className="flex items-center gap-1.5">
+          {inPopover ?
+           <div className="flex items-center gap-1.5">
+             <div className="flex min-w-[16px] justify-center opacity-40">
+               <ArchiveFill width="14" height="14" viewBox="0 0 16 16" />
+             </div>
+             <div className="flex min-w-[18px] justify-center font-bold">
+               {inInventory}
+             </div>
+           </div>
+           :
+           <div className="min-w-[84px]">
+             <InventoryCardQuantity card={inventoryCard} forceIsNonEditable={inPopover}/>
+           </div>
+          }
+          {inPopover ? '- ' :''}
+          <div>In Inventory</div>
+        </div>
+        {!inPopover && (
+          <div className="flex items-center gap-2">
+            <div className="min-w-[84px]">
+              <WishlistSetValue cardid={card[ID]} />
+            </div>
+            <div className="whitespace-nowrap">Target</div>
+            <div className="w-full">
+              <WishlistSelectMethod cardid={card[ID]} />
+            </div>
+          </div>
+        )}
+      </div>
       <div className={twMerge("flex gap-1.5", inPopover ? "flex-col" : "max-md:flex-col")}>
         <div className="flex basis-full flex-col gap-0.5 md:basis-1/3">
           <div className="flex items-center gap-1.5">
@@ -57,13 +89,6 @@ const ResultLayoutTextInventory = ({ card, inPopover, setIsHotkeysDisabled }) =>
               {softUsedMax + hardUsedTotal}
             </div>
             -<div>Total Used</div>
-          </div>
-          <div className="flex items-center gap-1.5">
-            <div className="flex min-w-[16px] justify-center opacity-40">
-              <ArchiveFill width="14" height="14" viewBox="0 0 16 16" />
-            </div>
-            <div className="flex min-w-[18px] justify-center font-bold">{inInventory}</div>-
-            <div>In Inventory</div>
           </div>
           {wishlistLogic && (
             <div className="flex items-center gap-1.5">
@@ -76,8 +101,8 @@ const ResultLayoutTextInventory = ({ card, inPopover, setIsHotkeysDisabled }) =>
                   surplus === 0
                     ? "text-midGray dark:text-midGrayDark"
                     : surplus > 0
-                      ? "text-fgGreen dark:text-fgGreenDark"
-                      : "text-fgRed dark:text-fgRedDark",
+                    ? "text-fgGreen dark:text-fgGreenDark"
+                    : "text-fgRed dark:text-fgRedDark",
                 )}
               >
                 {surplus > 0 ? `+${surplus}` : surplus}
@@ -105,17 +130,6 @@ const ResultLayoutTextInventory = ({ card, inPopover, setIsHotkeysDisabled }) =>
           </div>
         )}
       </div>
-      {!inPopover && (
-        <div className="flex items-center gap-2">
-          <div className="whitespace-nowrap">Target:</div>
-          <div className="min-w-[84px]">
-            <WishlistSetValue cardid={card[ID]} />
-          </div>
-          <div className="w-full">
-            <WishlistSelectMethod cardid={card[ID]} />
-          </div>
-        </div>
-      )}
       {(!inPopover || text) && (
         <InventoryText
           setIsHotkeysDisabled={setIsHotkeysDisabled}

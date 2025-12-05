@@ -1,47 +1,23 @@
 import { useEffect, useState } from "react";
 import { twMerge } from "tailwind-merge";
-import { Button, ButtonCardChange } from "@/components";
+import { ValueSetter, Button, ButtonCardChange } from "@/components";
 import { EQ, GT, LT, LT0 } from "@/constants";
 import { useApp } from "@/context";
 
 const TwdSearchFormQuantityButtons = ({ value, form, id }) => {
   const { isMobile } = useApp();
-  const [manual, setManual] = useState(false);
-  const [state, setState] = useState(value[id].q);
-
-  useEffect(() => {
-    if (state !== value[id].q) setState(value[id].q);
-  }, [value[id].q]);
-
-  const handleManualChange = (event) => {
-    setState(Number.parseInt(event.target.value));
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    handleChangeQ(state);
-    setManual(false);
-  };
-
-  const handleChangeQ = (q) => {
-    if (q >= 0) {
-      form[id].q = q;
-    } else {
-      delete form[id];
-    }
-  };
 
   const handleToggleMoreLess = () => {
     const toggle = () => {
       switch (value[id].m) {
-        case GT:
-          return LT;
-        case LT:
-          return LT0;
-        case LT0:
-          return EQ;
-        default:
-          return GT;
+      case GT:
+        return LT;
+      case LT:
+        return LT0;
+      case LT0:
+        return EQ;
+      default:
+        return GT;
       }
     };
 
@@ -50,16 +26,24 @@ const TwdSearchFormQuantityButtons = ({ value, form, id }) => {
 
   const getIconAndText = (s) => {
     switch (s) {
-      case GT:
-        return ["≥", "More than or equal"];
-      case LT0:
-        return ["0≤", "Less than or equal, and can be 0"];
-      case LT:
-        return ["1≤", "Less than or equal, but not less than 1"];
-      default:
-        return ["==", "Equal"];
+    case GT:
+      return ["≥", "More than or equal"];
+    case LT0:
+      return ["0≤", "Less than or equal, and can be 0"];
+    case LT:
+      return ["1≤", "Less than or equal, but not less than 1"];
+    default:
+      return ["==", "Equal"];
     }
   };
+
+  const handleChange = (q) => {
+    if (q >= 0) {
+      form[id].q = q;
+    } else {
+      delete form[id];
+    }
+  }
 
   return (
     <div className="flex items-center justify-between gap-1">
@@ -71,37 +55,7 @@ const TwdSearchFormQuantityButtons = ({ value, form, id }) => {
       >
         {getIconAndText(value[id].m)[0]}
       </Button>
-      {(!manual || isMobile) && (
-        <ButtonCardChange
-          onClick={() => handleChangeQ(value[id].q - 1)}
-          isLink={isMobile}
-          isNegative
-        />
-      )}
-      <div
-        tabIndex={0}
-        className={twMerge(!manual && "flex w-[20px] justify-center")}
-        onFocus={() => setManual(true)}
-      >
-        {manual ? (
-          <form onSubmit={handleSubmit}>
-            <input
-              className="w-[63px] rounded-sm border-2 border-bgSecondary bg-bgPrimary text-center text-fgPrimary outline-bgCheckboxSelected focus:outline dark:border-bgSecondaryDark dark:bg-bgPrimaryDark dark:text-fgPrimaryDark dark:outline-bgCheckboxSelectedDark"
-              placeholder=""
-              type="number"
-              value={state}
-              onBlur={handleSubmit}
-              onChange={handleManualChange}
-              autoFocus
-            />
-          </form>
-        ) : (
-          value[id].q
-        )}
-      </div>
-      {(!manual || isMobile) && (
-        <ButtonCardChange isLink={isMobile} onClick={() => handleChangeQ(value[id].q + 1)} />
-      )}
+      <ValueSetter value={value[id].q} handleChange ={handleChange} />
     </div>
   );
 };

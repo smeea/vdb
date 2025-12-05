@@ -58,18 +58,17 @@ const DeckSelectMy = ({ deckid, handleSelect }) => {
       const clan = getClan(decks[i][CRYPT]);
 
       const restrictions =
-            idx < 50 || diffDays < 90
-            ? getRestrictions(
+        idx < 50 || diffDays < 90
+          ? getRestrictions(
               decks[i],
               limitedMode
                 ? {
-                  [CRYPT]: limitedStore[CRYPT],
-                  [LIBRARY]: limitedStore[LIBRARY],
-                }
-              : null,
+                    [CRYPT]: limitedStore[CRYPT],
+                    [LIBRARY]: limitedStore[LIBRARY],
+                  }
+                : null,
             )
-            : {};
-
+          : {};
 
       return {
         value: i,

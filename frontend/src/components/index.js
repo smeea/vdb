@@ -222,6 +222,7 @@ export { default as ThemeSelect } from "./misc/ThemeSelect.jsx";
 export { default as UpdateNotification } from "./misc/UpdateNotification.jsx";
 export { default as UsedDescription } from "./misc/UsedDescription.jsx";
 export { default as UsedPopover } from "./misc/UsedPopover.jsx";
+export { default as ValueSetter } from "./misc/ValueSetter.jsx";
 export { default as Warning } from "./misc/Warning.jsx";
 export { default as WindowRows } from "./misc/WindowRows.jsx";
 export { default as PlaytestLanguageSelect } from "./playtest/PlaytestLanguageSelect.jsx";

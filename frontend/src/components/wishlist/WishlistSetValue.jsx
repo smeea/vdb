@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useSnapshot } from "valtio";
-import { ButtonCardChange } from "@/components";
+import { ValueSetter, ButtonCardChange } from "@/components";
 import { IS_FROZEN, LOGIC, SURPLUS_FIXED, VALUE, WISHLIST } from "@/constants";
 import { inventoryStore, useApp, wishlistUpdate } from "@/context";
 
@@ -9,80 +9,15 @@ const WishlistSetValue = ({ cardid }) => {
   const wishlist = useSnapshot(inventoryStore)[WISHLIST];
   const value = wishlist?.[cardid]?.[VALUE] ?? 0;
   const logic = wishlist?.[cardid]?.[LOGIC] || null;
-  const [manual, setManual] = useState();
-  const [state, setState] = useState(value ?? "");
   const isEditable = !useSnapshot(inventoryStore)[IS_FROZEN];
 
-  useEffect(() => {
-    if (state !== value) setState(value ?? "");
-  }, [value]);
-
-  const handleManualChange = (event) => {
+  const handleChange = (q, state) => {
     if (state === 0 && !logic) wishlistUpdate(cardid, LOGIC, SURPLUS_FIXED);
-    if (event.target.value >= 0) {
-      setState(event.target.value ?? "");
-    }
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    wishlistUpdate(cardid, VALUE, state ? Number.parseInt(state) : 0);
-    setManual(false);
-  };
-
-  const handleQuantityChange = (diff) => {
-    if (diff + state >= 0) {
-      if (state === 0 && !logic) wishlistUpdate(cardid, LOGIC, SURPLUS_FIXED);
-      setState(diff + state);
-      wishlistUpdate(cardid, VALUE, Number.parseInt(diff + state));
-    }
-  };
-
-  const handleQuantityMinus = () => handleQuantityChange(-1);
-  const handleQuantityPlus = () => handleQuantityChange(1);
+    wishlistUpdate(cardid, VALUE, q)
+  }
 
   return (
-    <>
-      {isEditable ? (
-        <div className="flex w-full items-center justify-between text-lg">
-          {isMobile ? (
-            <>
-              <ButtonCardChange onClick={handleQuantityMinus} isLink isNegative isDisabled />
-              <div className="mx-1 flex w-full justify-center">{state}</div>
-              <ButtonCardChange onClick={handleQuantityPlus} isLink />
-            </>
-          ) : (
-            <>
-              {!manual && <ButtonCardChange onClick={handleQuantityMinus} isNegative />}
-              <div
-                tabIndex={0}
-                className={manual ? "" : "mx-1 flex w-full justify-center"}
-                onFocus={() => setManual(true)}
-              >
-                {manual ? (
-                  <form onSubmit={handleSubmit}>
-                    <input
-                      className="w-[63px] rounded-sm border-2 border-bgSecondary bg-bgPrimary text-center text-fgPrimary outline-bgCheckboxSelected focus:outline dark:border-bgSecondaryDark dark:bg-bgPrimaryDark dark:text-fgPrimaryDark dark:outline-bgCheckboxSelectedDark"
-                      placeholder=""
-                      type="number"
-                      autoFocus={true}
-                      value={state}
-                      onBlur={handleSubmit}
-                      onChange={handleManualChange}
-                    />
-                  </form>
-                ) : (
-                  state
-                )}
-              </div>
-              {!manual && <ButtonCardChange onClick={handleQuantityPlus} />}
-            </>
-          )}
-        </div>
-      ) : (
-        <div className="mx-1 flex w-full items-center justify-center py-1 text-lg">{state}</div>
-      )}
-    </>
+    <ValueSetter handleChange={handleChange} isEditable={isEditable} value={value} inWishlist />
   );
 };
 
