@@ -14,8 +14,6 @@ with app.app_context():
         user = User.query.filter_by(email=q).first()
 
     if len(argv) == 2:
-        print(f"Username: '{user.username}'")
-        print(f"Email: '{user.email}'")
         if len(user.decks.all()) < 15:
             print(f"Decks: {sorted([deck.name for deck in user.decks.all()])}", sep="\n")
         else:
@@ -30,6 +28,9 @@ with app.app_context():
                     )
                 )
             )
+
+        print(f"Username: '{user.username}'")
+        print(f"Email: '{user.email}'")
         print(f"Inventory: '{len(user.inventory)}'")
 
     elif argv[2] == "x":
