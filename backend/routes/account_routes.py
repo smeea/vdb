@@ -56,6 +56,7 @@ def login_route():
             "decks": parse_user_decks(current_user.decks.all()),
             "inventory": parse_user_inventory(current_user.inventory),
             "inventory_key": current_user.inventory_key,
+            "inventory_wishlist": current_user.inventory_wishlist,
         }
     )
 

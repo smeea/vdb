@@ -372,6 +372,7 @@ export const AppProvider = ({ children }) => {
     setEmail(undefined);
     inventoryStore[CRYPT] = {};
     inventoryStore[LIBRARY] = {};
+    inventoryStore[WISHLIST] = {};
     if (deckStore[DECKS]?.[deckStore[DECK]?.[DECKID]]) {
       deckStore[DECK] = undefined;
     }
