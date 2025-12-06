@@ -80,16 +80,12 @@ const useInventoryCrypt = (crypt, category, compact, onlyNotes) => {
           };
         }
 
-        if (category === NOK) {
-          if (miss > 0) {
+        if ((category === NOK && miss >  0) || category !== NOK) {
             cardsByClan[clan][cardid] = cards[cardid];
             cardsByClan[ALL][cardid] = cards[cardid];
-          }
-        } else {
-          cardsByClan[clan][cardid] = cards[cardid];
-          cardsByClan[ALL][cardid] = cards[cardid];
         }
       });
+
     [...Object.keys(usedCrypt[SOFT]), ...Object.keys(usedCrypt[HARD])]
       .filter((cardid) => !(getIsPlaytest(cardid) || cards[cardid]))
       .forEach((cardid) => {

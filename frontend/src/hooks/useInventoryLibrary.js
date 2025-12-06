@@ -92,7 +92,7 @@ const useInventoryLibrary = (library, category, compact, type, discipline, onlyN
 
         const missEntry = { q: miss, c: cards[cardid].c };
 
-        if (miss > 0 || category !== NOK) {
+        if ((category === NOK && miss > 0) || category !== NOK) {
           types.forEach((t) => {
             cardsByType[t][cardid] = cards[cardid];
             if (miss > 0) missingByType[t][cardid] = missEntry;
@@ -102,10 +102,11 @@ const useInventoryLibrary = (library, category, compact, type, discipline, onlyN
             cardsByDiscipline[i][cardid] = cards[cardid];
             if (miss > 0) missingByDiscipline[i][cardid] = missEntry;
           });
+
+          cardsByType[ALL][cardid] = cards[cardid];
+          cardsByDiscipline[ALL][cardid] = cards[cardid];
         }
 
-        cardsByType[ALL][cardid] = cards[cardid];
-        cardsByDiscipline[ALL][cardid] = cards[cardid];
         if (miss > 0) {
           missingByType[ALL][cardid] = missEntry;
           missingByDiscipline[ALL][cardid] = missEntry;
@@ -185,6 +186,7 @@ const useInventoryLibrary = (library, category, compact, type, discipline, onlyN
         disciplines.forEach((i) => {
           missingByDiscipline[i][cardid] = missEntry;
         });
+
         missingByDiscipline[ALL][cardid] = missEntry;
       });
   }
