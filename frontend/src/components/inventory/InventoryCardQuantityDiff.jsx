@@ -2,8 +2,15 @@ import { ConditionalTooltip, UsedPopover } from "@/components";
 import { ID } from "@/constants";
 import { useApp } from "@/context";
 
-const InventoryCardQuantityDiff = ({ card, surplus = null, softUsedMax, hardUsedTotal }) => {
+const InventoryCardQuantityDiff = ({ card, surplus, isWishlist }) => {
   const { isMobile } = useApp();
+
+  const colorStyle =
+    surplus > 0
+      ? "text-fgGreen dark:text-fgGreenDark"
+      : surplus < 0
+        ? "text-fgRed dark:text-fgRedDark"
+        : "text-midGray dark:text-midGrayDark"
 
   return (
     <ConditionalTooltip
@@ -11,35 +18,9 @@ const InventoryCardQuantityDiff = ({ card, surplus = null, softUsedMax, hardUsed
       overlay={<UsedPopover cardid={card.c[ID]} />}
       disabled={isMobile}
     >
-      {surplus !== null ? (
-        <div
-          className={
-            surplus === 0
-              ? "text-midGray dark:text-midGrayDark"
-              : surplus > 0
-                ? "text-fgGreen dark:text-fgGreenDark"
-                : "text-fgRed dark:text-fgRedDark"
-          }
-        >
-          [{surplus > 0 ? `+${surplus}` : surplus}]
+        <div className={colorStyle}>
+          {isWishlist ? '[' :''}{surplus === 0 ? "=" : surplus > 0 ? `+${surplus}` : surplus}{isWishlist ? ']' :''}
         </div>
-      ) : (
-        <div
-          className={
-            card.q === softUsedMax + hardUsedTotal
-              ? "text-midGray dark:text-midGrayDark"
-              : card.q >= softUsedMax + hardUsedTotal
-                ? "text-fgGreen dark:text-fgGreenDark"
-                : "text-fgRed dark:text-fgRedDark"
-          }
-        >
-          {card.q === softUsedMax + hardUsedTotal
-            ? "="
-            : card.q > softUsedMax + hardUsedTotal
-              ? `+${card.q - softUsedMax - hardUsedTotal}`
-              : card.q - softUsedMax - hardUsedTotal}
-        </div>
-      )}
     </ConditionalTooltip>
   );
 };

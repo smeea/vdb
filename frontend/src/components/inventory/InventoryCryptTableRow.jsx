@@ -53,7 +53,7 @@ const InventoryCryptTableRow = ({
     ? wishlistLogic === SURPLUS_USED
       ? card.q - (softUsedMax + hardUsedTotal + (wishlist[card.c[ID]]?.[VALUE] || 0))
       : card.q - (wishlist[card.c[ID]]?.[VALUE] || 0)
-    : null;
+    : card.q - (softUsedMax + hardUsedTotal);
 
   const onClick = () => handleClick(card.c);
 
@@ -80,10 +80,9 @@ const InventoryCryptTableRow = ({
         ) : (
           <InventoryCardQuantity
             card={card}
-            softUsedMax={softUsedMax}
-            hardUsedTotal={hardUsedTotal}
             compact={compact}
             newFocus={newFocus}
+            surplus={surplus}
           />
         )}
       </div>
@@ -92,8 +91,7 @@ const InventoryCryptTableRow = ({
           <InventoryCardQuantityDiff
             card={card}
             surplus={surplus}
-            softUsedMax={softUsedMax}
-            hardUsedTotal={hardUsedTotal}
+            isWishlist={wishlistLogic}
           />
         </div>
       )}

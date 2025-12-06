@@ -56,7 +56,7 @@ const InventoryLibraryTableRow = ({
     ? wishlistLogic === SURPLUS_USED
       ? card.q - (softUsedMax + hardUsedTotal + (wishlist[card.c[ID]]?.[VALUE] || 0))
       : card.q - (wishlist[card.c[ID]]?.[VALUE] || 0)
-    : null;
+    : card.q - (softUsedMax + hardUsedTotal);
 
   const onClick = () => handleClick(card.c);
 
@@ -83,8 +83,7 @@ const InventoryLibraryTableRow = ({
         ) : (
           <InventoryCardQuantity
             card={card}
-            softUsedMax={softUsedMax}
-            hardUsedTotal={hardUsedTotal}
+            surplus={surplus}
             compact={compact}
             newFocus={newFocus}
           />
@@ -95,8 +94,7 @@ const InventoryLibraryTableRow = ({
           <InventoryCardQuantityDiff
             card={card}
             surplus={surplus}
-            softUsedMax={softUsedMax}
-            hardUsedTotal={hardUsedTotal}
+            isWishlist={wishlistLogic}
           />
         </div>
       )}

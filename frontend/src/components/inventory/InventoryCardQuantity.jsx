@@ -5,15 +5,14 @@ import { inventoryCardChange, inventoryStore } from "@/context";
 
 const InventoryCardQuantity = ({
   card,
-  softUsedMax,
   forceIsNonEditable,
-  hardUsedTotal,
+  surplus,
   compact,
   newFocus,
 }) => {
   const isFrozen = useSnapshot(inventoryStore)[IS_FROZEN];
   const isEditable = forceIsNonEditable ? false : !isFrozen;
-  const color = card.q < softUsedMax + hardUsedTotal ? ERROR : null;
+  const color = surplus < 0 ? ERROR : null;
 
   const handleChange = (q) => inventoryCardChange(card.c, q);
 

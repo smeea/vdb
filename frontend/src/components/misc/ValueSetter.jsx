@@ -66,7 +66,7 @@ const ValueSetter = ({
               <ButtonCardChange onClick={handleQuantityMinus} isLink isNegative />
               <div className={twMerge("mx-1 flex w-full justify-center", colorStyle)}>
                 {withNote && <div className="min-w-[4px]" />}
-                {inDeck && state === 0 ? "" : state}
+                {state || <>&nbsp;&nbsp;</>}
                 {withNote && <div className="max-w-[4px] text-xs">*</div>}
               </div>
               <ButtonCardChange onClick={handleQuantityPlus} isLink />
@@ -110,11 +110,11 @@ const ValueSetter = ({
         <ConditionalTooltip placement="bottom" overlay={overlay} disabled={!overlay}>
           <div
             className={twMerge(
-              "mx-1 flex w-full items-center justify-center py-1 text-lg",
+              "flex w-full items-center justify-center py-1 text-lg",
               colorStyle,
             )}
           >
-            {state || null}
+            {state || <>&nbsp;&nbsp;</>}
           </div>
         </ConditionalTooltip>
       )}
