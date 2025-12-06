@@ -6,10 +6,10 @@ import {
   DiffQuantityDiffCard,
   ResultLibraryTableRowCommon,
 } from "@/components";
-import { DECKS, HARD, ID, INVENTORY_TYPE, LIBRARY, NAME, SOFT } from "@/constants";
-import { deckCardChange, deckStore, inventoryStore, useApp, usedStore } from "@/context";
+import { DECKS, ID, INVENTORY_TYPE, NAME } from "@/constants";
+import { deckCardChange, deckStore, useApp } from "@/context";
 import { useSwipe } from "@/hooks";
-import { getHardTotal, getSoftMax, getSwipedBg } from "@/utils";
+import { getSwipedBg } from "@/utils";
 
 const DiffLibraryTableRow = ({
   cardChange,
@@ -24,11 +24,6 @@ const DiffLibraryTableRow = ({
 }) => {
   const { inventoryMode } = useApp();
   const decks = useSnapshot(deckStore)[DECKS];
-  const inventoryLibrary = useSnapshot(inventoryStore)[LIBRARY];
-  const usedLibrary = useSnapshot(usedStore)[LIBRARY];
-  const softUsedMax = getSoftMax(usedLibrary[SOFT][card.c[ID]]);
-  const hardUsedTotal = getHardTotal(usedLibrary[HARD][card.c[ID]]);
-  const inInventory = inventoryLibrary[card.c[ID]]?.q ?? 0;
   const qFrom = cardsFrom[card.c[ID]]?.q ?? 0;
   const qTo = cardsTo[card.c[ID]]?.q ?? 0;
 
@@ -51,12 +46,9 @@ const DiffLibraryTableRow = ({
         cardChange={cardChange ?? deckCardChange}
         deckid={cardChange ? null : deckid}
         disabledTooltip={!inventoryMode}
-        hardUsedTotal={hardUsedTotal}
-        inInventory={inInventory}
         inventoryType={decks?.[deckid]?.[INVENTORY_TYPE]}
         isEditable={isEditable}
         q={qFrom}
-        softUsedMax={softUsedMax}
       />
       <DiffQuantityDiffCard qFrom={qFrom} qTo={qTo} />
       <ResultLibraryTableRowCommon card={card.c} handleClick={handleClick} inDeck />

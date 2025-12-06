@@ -1,4 +1,3 @@
-import { useSnapshot } from "valtio";
 import {
   Checkbox,
   DeckCardQuantityTd,
@@ -6,9 +5,8 @@ import {
   ResultCryptTableRowCommon,
   Tr,
 } from "@/components";
-import { CRYPT, HARD, ID, PRINT, SET, SOFT } from "@/constants";
-import { inventoryStore, useApp, usedStore } from "@/context";
-import { getHardTotal, getSoftMax } from "@/utils";
+import { ID, PRINT, SET } from "@/constants";
+import { useApp } from "@/context";
 
 const DeckProxyCryptTableRow = ({
   proxySelected,
@@ -22,11 +20,6 @@ const DeckProxyCryptTableRow = ({
   handleClick,
 }) => {
   const { isWide } = useApp();
-  const inventoryCrypt = useSnapshot(inventoryStore)[CRYPT];
-  const usedCrypt = useSnapshot(usedStore)[CRYPT];
-  const inInventory = inventoryCrypt[card.c[ID]]?.q ?? 0;
-  const softUsedMax = getSoftMax(usedCrypt[SOFT][card.c[ID]]) ?? 0;
-  const hardUsedTotal = getHardTotal(usedCrypt[HARD][card.c[ID]]) ?? 0;
 
   return (
     <Tr key={card.c[ID]}>
@@ -44,14 +37,11 @@ const DeckProxyCryptTableRow = ({
         card={card.c}
         cardChange={handleProxyCounter}
         deckid={null}
-        hardUsedTotal={hardUsedTotal}
-        inInventory={inInventory}
         inProxy
         inventoryType={inventoryType}
         isEditable
         isSelected={proxySelected[card.c[ID]]?.[PRINT]}
         q={proxySelected[card.c[ID]] ? proxySelected[card.c[ID]].q : 0}
-        softUsedMax={softUsedMax}
       />
       <ResultCryptTableRowCommon
         card={card.c}

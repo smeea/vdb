@@ -1,15 +1,14 @@
 import { twMerge } from "tailwind-merge";
-import { useSnapshot } from "valtio";
 import {
   DeckCardQuantityTd,
   DeckCardToggleInventoryStateTd,
   DeckDrawProbability,
   ResultCryptTableRowCommon,
 } from "@/components";
-import { CRYPT, HARD, ID, NAME, SOFT } from "@/constants";
-import { deckCardChange, inventoryStore, useApp, usedStore } from "@/context";
+import { NAME } from "@/constants";
+import { deckCardChange, useApp } from "@/context";
 import { useSwipe } from "@/hooks";
-import { getHardTotal, getSoftMax, getSwipedBg } from "@/utils";
+import { getSwipedBg } from "@/utils";
 
 const DeckCryptTableRow = ({
   handleClick,
@@ -28,18 +27,12 @@ const DeckCryptTableRow = ({
   inventoryType,
 }) => {
   const { inventoryMode, isDesktop } = useApp();
-  const usedCrypt = useSnapshot(usedStore)[CRYPT];
-  const inventoryCrypt = useSnapshot(inventoryStore)[CRYPT];
 
   const { isSwiped, swipeHandlers } = useSwipe(
     () => deckCardChange(deckid, card.c, card.q - 1),
     () => deckCardChange(deckid, card.c, card.q + 1),
     isEditable,
   );
-
-  const inInventory = inventoryCrypt[card.c[ID]]?.q ?? 0;
-  const softUsedMax = getSoftMax(usedCrypt[SOFT][card.c[ID]]) ?? 0;
-  const hardUsedTotal = getHardTotal(usedCrypt[HARD][card.c[ID]]) ?? 0;
 
   return (
     <tr
@@ -62,13 +55,10 @@ const DeckCryptTableRow = ({
         cardChange={deckCardChange}
         deckid={deckid}
         disabledTooltip={!inventoryMode}
-        hardUsedTotal={hardUsedTotal}
-        inInventory={inInventory}
         inMissing={inMissing}
         inventoryType={inventoryType}
         isEditable={isEditable}
         q={card.q}
-        softUsedMax={softUsedMax}
       />
       <ResultCryptTableRowCommon
         card={card.c}

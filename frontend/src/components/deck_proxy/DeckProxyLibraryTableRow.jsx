@@ -1,4 +1,3 @@
-import { useSnapshot } from "valtio";
 import {
   Checkbox,
   DeckCardQuantityTd,
@@ -6,9 +5,7 @@ import {
   ResultLibraryTableRowCommon,
   Tr,
 } from "@/components";
-import { HARD, ID, LIBRARY, PRINT, SET, SOFT } from "@/constants";
-import { inventoryStore, usedStore } from "@/context";
-import { getHardTotal, getSoftMax } from "@/utils";
+import { ID, PRINT, SET } from "@/constants";
 
 const DeckProxyLibraryTableRow = ({
   handleClick,
@@ -19,12 +16,6 @@ const DeckProxyLibraryTableRow = ({
   inventoryType,
   card,
 }) => {
-  const inventoryLibrary = useSnapshot(inventoryStore)[LIBRARY];
-  const usedLibrary = useSnapshot(usedStore)[LIBRARY];
-  const inInventory = inventoryLibrary[card.c[ID]]?.q ?? 0;
-  const softUsedMax = getSoftMax(usedLibrary[SOFT][card.c[ID]]) ?? 0;
-  const hardUsedTotal = getHardTotal(usedLibrary[HARD][card.c[ID]]) ?? 0;
-
   return (
     <Tr key={card.c[ID]}>
       <td className="min-w-[30px]">
@@ -41,14 +32,11 @@ const DeckProxyLibraryTableRow = ({
         card={card.c}
         cardChange={handleProxyCounter}
         deckid={null}
-        hardUsedTotal={hardUsedTotal}
-        inInventory={inInventory}
         inProxy
         inventoryType={inventoryType}
         isEditable
         isSelected={proxySelected[card.c[ID]]?.[PRINT]}
         q={proxySelected[card.c[ID]] ? proxySelected[card.c[ID]].q : 0}
-        softUsedMax={softUsedMax}
       />
       <ResultLibraryTableRowCommon card={card.c} handleClick={handleClick} inDeck />
       <DeckProxyTableSetSelect

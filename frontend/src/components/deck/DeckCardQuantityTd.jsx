@@ -4,15 +4,12 @@ const DeckCardQuantityTd = ({
   card,
   cardChange,
   deckid,
-  hardUsedTotal,
-  inInventory,
   inMissing,
   inProxy,
   inventoryType,
   isEditable,
   isSelected,
   q,
-  softUsedMax,
 }) => {
   return (
     <td
@@ -27,9 +24,6 @@ const DeckCardQuantityTd = ({
         q={q}
         deckid={deckid}
         cardChange={cardChange}
-        inInventory={inInventory}
-        softUsedMax={softUsedMax}
-        hardUsedTotal={hardUsedTotal}
         inventoryType={inventoryType}
         isEditable={isEditable}
         inMissing={inMissing}

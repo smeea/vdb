@@ -1,15 +1,26 @@
+import { useSnapshot } from "valtio";
 import { UsedPopover, ValueSetter } from "@/components";
-import { ERROR, ID, WARNING } from "@/constants";
-import { useApp } from "@/context";
+import {
+  CRYPT,
+  ERROR,
+  HARD,
+  ID,
+  LIBRARY,
+  LOGIC,
+  SOFT,
+  SURPLUS_USED,
+  VALUE,
+  WARNING,
+  WISHLIST,
+} from "@/constants";
+import { inventoryStore, useApp, usedStore } from "@/context";
+import { getHardTotal, getSoftMax } from "@/utils";
 
 const DeckCardQuantity = ({
   deckid,
   card,
   q,
   inventoryType,
-  inInventory,
-  softUsedMax,
-  hardUsedTotal,
   isSelected,
   cardChange,
   inProxy,
@@ -18,33 +29,47 @@ const DeckCardQuantity = ({
 }) => {
   const { inventoryMode } = useApp();
 
-  const getInventoryColor = () => {
-    if (inventoryMode && !inMissing) {
-      if (inventoryType) {
-        if (inProxy) {
-          return inInventory + (isSelected ? q : 0) < softUsedMax + hardUsedTotal ? ERROR : null;
-        }
-        return inInventory >= softUsedMax + hardUsedTotal
-          ? null
-          : inInventory < q
-            ? ERROR
-            : WARNING;
-      }
-      return inInventory - softUsedMax - hardUsedTotal >= q
+  const { [CRYPT]: usedCrypt, [LIBRARY]: usedLibrary } = useSnapshot(usedStore);
+  const {
+    [CRYPT]: inventoryCrypt,
+    [LIBRARY]: inventoryLibrary,
+    [WISHLIST]: wishlist,
+  } = useSnapshot(inventoryStore);
+  const inInventory =
+    (card[ID] > 200000 ? inventoryCrypt[card[ID]]?.q : inventoryLibrary[card[ID]]?.q) ?? 0;
+  const softUsedMax =
+    getSoftMax(card[ID] > 200000 ? usedCrypt[SOFT][card[ID]] : usedLibrary[SOFT][card[ID]]) ?? 0;
+  const hardUsedTotal =
+    getHardTotal(card[ID] > 200000 ? usedCrypt[HARD][card[ID]] : usedLibrary[HARD][card[ID]]) ?? 0;
+
+  const wishlistLogic = wishlist?.[card[ID]]?.[LOGIC];
+  const surplus = wishlistLogic
+    ? wishlistLogic === SURPLUS_USED
+      ? inInventory - (softUsedMax + hardUsedTotal + (wishlist[card[ID]]?.[VALUE] || 0))
+      : inInventory - (wishlist[card[ID]]?.[VALUE] || 0)
+    : inInventory - (softUsedMax + hardUsedTotal);
+
+  const inventoryColor = inventoryType
+    ? inProxy
+      ? surplus + (isSelected ? q : 0) >= 0
         ? null
-        : inInventory < q
-          ? ERROR
-          : WARNING;
-    }
-    return null;
-  };
-  const inventoryColor = getInventoryColor();
+        : ERROR
+      : surplus >= 0
+        ? null
+        : inInventory >= q
+          ? WARNING
+          : ERROR
+    : surplus >= q
+      ? null
+      : inInventory >= q
+        ? WARNING
+        : ERROR;
 
   const handleChange = (qty) => cardChange(deckid, card, qty);
 
   return (
     <ValueSetter
-      color={inventoryColor}
+      color={inventoryMode && !inMissing && inventoryColor}
       overlay={inventoryMode && <UsedPopover cardid={card?.[ID]} />}
       handleChange={handleChange}
       isEditable={isEditable}

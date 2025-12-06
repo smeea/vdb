@@ -1,15 +1,14 @@
 import { twMerge } from "tailwind-merge";
-import { useSnapshot } from "valtio";
 import {
   DeckCardQuantityTd,
   DeckCardToggleInventoryStateTd,
   DeckDrawProbability,
   ResultLibraryTableRowCommon,
 } from "@/components";
-import { HARD, ID, LIBRARY, NAME, SOFT } from "@/constants";
-import { deckCardChange, inventoryStore, useApp, usedStore } from "@/context";
+import { NAME } from "@/constants";
+import { deckCardChange, useApp } from "@/context";
 import { useSwipe } from "@/hooks";
-import { getHardTotal, getSoftMax, getSwipedBg } from "@/utils";
+import { getSwipedBg } from "@/utils";
 
 const DeckLibraryTableRow = ({
   handleClick,
@@ -25,18 +24,12 @@ const DeckLibraryTableRow = ({
   inventoryType,
 }) => {
   const { inventoryMode, isDesktop } = useApp();
-  const usedLibrary = useSnapshot(usedStore)[LIBRARY];
-  const inventoryLibrary = useSnapshot(inventoryStore)[LIBRARY];
 
   const { isSwiped, swipeHandlers } = useSwipe(
     () => deckCardChange(deckid, card.c, card.q - 1),
     () => deckCardChange(deckid, card.c, card.q + 1),
     isEditable,
   );
-
-  const inInventory = inventoryLibrary[card.c[ID]]?.q ?? 0;
-  const softUsedMax = getSoftMax(usedLibrary[SOFT][card.c[ID]]) ?? 0;
-  const hardUsedTotal = getHardTotal(usedLibrary[HARD][card.c[ID]]) ?? 0;
 
   return (
     <tr
@@ -58,13 +51,10 @@ const DeckLibraryTableRow = ({
         card={card.c}
         cardChange={deckCardChange}
         deckid={deckid}
-        hardUsedTotal={hardUsedTotal}
-        inInventory={inInventory}
         inMissing={inMissing}
         inventoryType={inventoryType}
         isEditable={isEditable}
         q={card.q}
-        softUsedMax={softUsedMax}
       />
       <ResultLibraryTableRowCommon
         card={card.c}
