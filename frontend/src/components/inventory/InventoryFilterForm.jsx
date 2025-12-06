@@ -53,7 +53,7 @@ const InventoryFilterForm = ({ value, setValue, values, target, byTotal, byUniqu
               {[ALL, NONE].includes(i) ? (
                 <div className="flex items-center">
                   <div className="flex w-[40px]" />
-                  {i === ALL ? "All Disciplines" : NONE}
+                  {i === ALL ? "All Disciplines" : 'None'}
                 </div>
               ) : (
                 <div className="flex items-center">
