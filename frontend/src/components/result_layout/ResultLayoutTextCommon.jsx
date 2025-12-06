@@ -14,7 +14,6 @@ import { getIsPlaytest } from "@/utils";
 const ResultLayoutTextCommon = ({
   handleClose,
   card,
-  forceInventoryMode,
   inPopover,
   setIsHotkeysDisabled,
 }) => {
@@ -52,16 +51,12 @@ const ResultLayoutTextCommon = ({
           <ResultLayoutTextRulings rulings={card[RULINGS]} />
         </div>
       )}
-      {!isPlaytest && (forceInventoryMode || inventoryMode) && (
+      {!isPlaytest && !inPopover && inventoryMode && (
         <>
           <Hr />
           <div className="flex flex-col gap-1">
             <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Inventory:</div>
-            <ResultLayoutTextInventory
-              card={card}
-              inPopover={inPopover}
-              setIsHotkeysDisabled={setIsHotkeysDisabled}
-            />
+            <ResultLayoutTextInventory card={card} setIsHotkeysDisabled={setIsHotkeysDisabled} />
           </div>
         </>
       )}

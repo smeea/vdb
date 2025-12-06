@@ -79,7 +79,6 @@ const InventoryCryptTable = ({
           card={currentModalCard}
           handleModalCardChange={handleModalCardChange}
           handleClose={handleClose}
-          forceInventoryMode
         />
       )}
     </>

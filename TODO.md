@@ -12,7 +12,6 @@
 - Inventory wish list / target card q-ty
   - Modify wishlist from main list
   - Documentation
-  - Wishlist info to q-ty popover
 - Update cards translation
 - Hungary event discord
 

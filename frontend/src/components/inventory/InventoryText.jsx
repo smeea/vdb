@@ -1,10 +1,9 @@
 import ChatLeftQuoteFill from "@icons/chat-left-quote-fill.svg?react";
 import { useEffect, useState } from "react";
-import { twMerge } from "tailwind-merge";
 import { Textarea } from "@/components";
 import { inventoryCardTextChange } from "@/context";
 
-const InventoryText = ({ card, text, inPopover, setIsHotkeysDisabled }) => {
+const InventoryText = ({ card, text, setIsHotkeysDisabled }) => {
   const [newText, setNewText] = useState(text || "");
   const handleChange = (event) => setNewText(event.target.value);
   const lines = newText.split("\n").length;
@@ -20,28 +19,19 @@ const InventoryText = ({ card, text, inPopover, setIsHotkeysDisabled }) => {
 
   return (
     <div className="items-top flex gap-2">
-      <div
-        className={twMerge(
-          "flex min-w-[16px] justify-center opacity-40",
-          inPopover ? "pt-1" : "pt-2",
-        )}
-      >
+      <div className="flex min-w-[16px] justify-center pt-2 opacity-40">
         <ChatLeftQuoteFill width="14" height="14" viewBox="0 0 16 16" />
       </div>
-      {inPopover ? (
-        <div className="text-sm">{newText}</div>
-      ) : (
-        <Textarea
-          className="text-sm"
-          rows={lines}
-          onBlur={handleOnBlur}
-          onFocus={() => {
-            if (setIsHotkeysDisabled) setIsHotkeysDisabled(true);
-          }}
-          onChange={handleChange}
-          value={newText}
-        />
-      )}
+      <Textarea
+        className="text-sm"
+        rows={lines}
+        onBlur={handleOnBlur}
+        onFocus={() => {
+          if (setIsHotkeysDisabled) setIsHotkeysDisabled(true);
+        }}
+        onChange={handleChange}
+        value={newText}
+      />
     </div>
   );
 };

@@ -7,7 +7,7 @@ import { ButtonFloat, CardImage, Modal, ResultLayoutText } from "@/components";
 import { useApp } from "@/context";
 import { useSwipe } from "@/hooks";
 
-const ResultModal = ({ card, handleModalCardChange, handleClose, forceInventoryMode }) => {
+const ResultModal = ({ card, handleModalCardChange, handleClose }) => {
   const { showImage, toggleShowImage, isMobile } = useApp();
   const [activeCard, setActiveCard] = useState(card);
   const [isHotkeysDisabled, setIsHotkeysDisabled] = useState(false);
@@ -65,7 +65,6 @@ const ResultModal = ({ card, handleModalCardChange, handleClose, forceInventoryM
                 card={activeCard}
                 setCard={setActiveCard}
                 handleClose={handleClose}
-                forceInventoryMode={forceInventoryMode}
                 setIsHotkeysDisabled={setIsHotkeysDisabled}
               />
             </div>
@@ -80,7 +79,6 @@ const ResultModal = ({ card, handleModalCardChange, handleClose, forceInventoryM
               card={activeCard}
               setCard={setActiveCard}
               handleClose={handleClose}
-              forceInventoryMode={forceInventoryMode}
               setIsHotkeysDisabled={setIsHotkeysDisabled}
             />
           </div>

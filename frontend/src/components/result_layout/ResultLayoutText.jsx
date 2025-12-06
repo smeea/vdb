@@ -20,7 +20,6 @@ const ResultLayoutText = ({
   card,
   setCard,
   handleClose,
-  forceInventoryMode,
   noClose,
   setIsHotkeysDisabled,
 }) => {
@@ -60,7 +59,6 @@ const ResultLayoutText = ({
         <ResultLayoutTextCommon
           handleClose={handleClose}
           card={card}
-          forceInventoryMode={forceInventoryMode}
           setIsHotkeysDisabled={setIsHotkeysDisabled}
         />
       </div>

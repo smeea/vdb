@@ -81,7 +81,6 @@ const InventoryLibraryTable = ({
           card={currentModalCard}
           handleModalCardChange={handleModalCardChange}
           handleClose={handleClose}
-          forceInventoryMode
         />
       )}
     </>
