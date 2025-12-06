@@ -18,6 +18,7 @@ const ValueSetter = ({
   const { isMobile } = useApp();
   const [manual, setManual] = useState(isManual);
   const [state, setState] = useState(value ?? "");
+  const [oldManualState, setOldManualState] = useState(null)
 
   useEffect(() => {
     if (state !== value) setState(value ?? "");
@@ -30,7 +31,9 @@ const ValueSetter = ({
   const handleSubmit = (event) => {
     event.preventDefault();
     if (newFocus) newFocus();
-    handleChange(state ? Number.parseInt(state) : 0, state);
+    const prevState = oldManualState !== null ? oldManualState : state;
+    handleChange(state ? Number.parseInt(state) : 0, prevState);
+    setOldManualState(null);
     setManual(false);
   };
 
@@ -48,6 +51,11 @@ const ValueSetter = ({
       : color === WARNING
         ? "bg-bgWarning dark:bg-bgWarningDark"
         : "";
+
+  const handleManualClick = () => {
+    setManual(true)
+    setOldManualState(state)
+  }
 
   return (
     <>
@@ -69,7 +77,7 @@ const ValueSetter = ({
               <div
                 tabIndex={0}
                 className={manual ? "" : twMerge("mx-1 flex w-full justify-center", colorStyle)}
-                onFocus={() => setManual(true)}
+                onFocus={handleManualClick}
               >
                 <ConditionalTooltip placement="bottom" overlay={overlay} disabled={!overlay}>
                   {manual ? (
@@ -80,6 +88,7 @@ const ValueSetter = ({
                         type="number"
                         autoFocus={true}
                         value={state}
+                        onClick={handleManualClick}
                         onBlur={handleSubmit}
                         onChange={handleManualChange}
                       />

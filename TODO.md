@@ -3,7 +3,6 @@
 - Not-newer filter with POD
 - Change in limited-mode when logging in
 - Change wishlist logic on backend when changing from 0 => crypt only
-- Change wishlist logic on manual change
 
 # FIX ON HOLD
 
