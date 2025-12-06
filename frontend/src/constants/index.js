@@ -82,7 +82,6 @@ export const ES = "es-ES";
 export const EVENT = "event";
 export const FAVORITED_BY = "favoritedBy";
 export const FAVORITES = "favorites";
-export const FIELD = "field";
 export const FIRST = "first";
 export const FLIGHT = "flight";
 export const FORMAT = "format";

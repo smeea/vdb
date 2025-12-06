@@ -1,5 +1,5 @@
 import ky from "ky";
-import { CRYPT, FIELD, ID, LIBRARY, VALUE } from "@/constants";
+import { CRYPT, ID, LIBRARY } from "@/constants";
 import { inventoryStore } from "@/context";
 
 export const addCards = (cards) => {
@@ -31,6 +31,7 @@ export const update = (field, value) => {
 };
 
 export const getSharedInventory = (key, cryptCardBase, libraryCardBase) => {
+  // TODO check for async refactor
   const url = `${import.meta.env.VITE_API_URL}/inventory/${key}`;
 
   return ky
@@ -62,14 +63,9 @@ export const deleteInventory = () => {
   });
 };
 
-export const updateWishlist = (cardid, field, value) => {
+export const updateWishlist = (cardid, payload) => {
   const url = `${import.meta.env.VITE_API_URL}/inventory_wishlist`;
   return ky.put(url, {
-    json: {
-      [cardid]: {
-        [FIELD]: field,
-        [VALUE]: value,
-      },
-    },
+    json: { [cardid]: payload },
   });
 };

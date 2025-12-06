@@ -6,7 +6,7 @@ import { inventoryStore, wishlistUpdate } from "@/context";
 const WishlistSelectMethod = ({ cardid }) => {
   const wishlist = useSnapshot(inventoryStore)[WISHLIST];
   const value = wishlist?.[cardid]?.[LOGIC] || null;
-  const handleSelect = (e) => wishlistUpdate(cardid, LOGIC, e.value);
+  const handleSelect = (e) => wishlistUpdate(cardid, { [LOGIC]: e.value });
 
   const options = [
     {

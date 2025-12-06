@@ -148,16 +148,18 @@ export const setupUsedInventory = (decks) => {
   };
 };
 
-export const wishlistUpdate = (cardid, field, value) => {
+export const wishlistUpdate = (cardid, payload) => {
   const initialState = inventoryStore[WISHLIST];
 
-  if (inventoryStore[WISHLIST][cardid]) {
-    inventoryStore[WISHLIST][cardid][field] = value;
-  } else {
-    inventoryStore[WISHLIST][cardid] = { [field]: value };
-  }
+  Object.entries(payload).forEach(([field, value]) => {
+    if (inventoryStore[WISHLIST][cardid]) {
+      inventoryStore[WISHLIST][cardid][field] = value;
+    } else {
+      inventoryStore[WISHLIST][cardid] = { [field]: value };
+    }
+  });
 
-  inventoryServices.updateWishlist(cardid, field, value).catch(() => {
+  inventoryServices.updateWishlist(cardid, payload).catch(() => {
     inventoryStore[WISHLIST] = initialState;
   });
 };

@@ -18,7 +18,7 @@ const ValueSetter = ({
   const { isMobile } = useApp();
   const [manual, setManual] = useState(isManual);
   const [state, setState] = useState(value ?? "");
-  const [oldManualState, setOldManualState] = useState(null)
+  const [oldManualState, setOldManualState] = useState(null);
 
   useEffect(() => {
     if (state !== value) setState(value ?? "");
@@ -53,9 +53,9 @@ const ValueSetter = ({
         : "";
 
   const handleManualClick = () => {
-    setManual(true)
-    setOldManualState(state)
-  }
+    setManual(true);
+    setOldManualState(state);
+  };
 
   return (
     <>

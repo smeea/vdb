@@ -10,8 +10,14 @@ const WishlistSetValue = ({ cardid }) => {
   const isEditable = !useSnapshot(inventoryStore)[IS_FROZEN];
 
   const handleChange = (q, state) => {
-    if (state === 0 && !logic) wishlistUpdate(cardid, LOGIC, SURPLUS_FIXED);
-    wishlistUpdate(cardid, VALUE, q);
+    if (state === 0 && !logic) {
+      wishlistUpdate(cardid, {
+        [LOGIC]: SURPLUS_FIXED,
+        [VALUE]: q,
+      });
+    } else {
+      wishlistUpdate(cardid, { [VALUE]: q });
+    }
   };
 
   return <ValueSetter handleChange={handleChange} isEditable={isEditable} value={value} />;

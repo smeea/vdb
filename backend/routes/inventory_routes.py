@@ -122,10 +122,15 @@ def inventory_wishlist_update_route():
         merged_cards = copy.deepcopy(current_user.inventory_wishlist)
         for k, v in new_cards.items():
             k = int(k)
-            if k in merged_cards:
-                merged_cards[k][v["field"]] = v["value"]
-            else:
-                merged_cards[k] = {v["field"]: v["value"]}
+            payload = {}
+            target = merged_cards[k] if k in merged_cards else payload
+            if "value" in v:
+                target["value"] = v["value"]
+            if "logic" in v:
+                target["logic"] = v["logic"]
+
+            if k not in merged_cards:
+                merged_cards[k] = payload
 
         current_user.inventory_wishlist = merged_cards
 
