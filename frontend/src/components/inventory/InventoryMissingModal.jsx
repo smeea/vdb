@@ -13,8 +13,8 @@ import {
 } from "@/components";
 import { CRYPT, ID, LIBRARY, NAME } from "@/constants";
 import { inventoryStore, useApp } from "@/context";
-import { useCryptSortWithTimer, useInventoryCrypt, useInventoryLibrary } from "@/hooks";
-import { getIsPlaytest, librarySort } from "@/utils";
+import { useInventoryCrypt, useInventoryLibrary } from "@/hooks";
+import { cryptSort, getIsPlaytest, librarySort } from "@/utils";
 
 const InventoryMissingModal = ({
   clan,
@@ -54,10 +54,10 @@ const InventoryMissingModal = ({
       });
   }
 
-  const missingCryptSorted = useCryptSortWithTimer(Object.values(missingCrypt), NAME);
+  const missingCryptSorted = cryptSort(Object.values(missingCrypt), NAME);
   const missingLibrarySorted = librarySort(Object.values(missingLibrary), NAME);
 
-  const missAllVtesCryptSorted = useCryptSortWithTimer(
+  const missAllVtesCryptSorted = cryptSort(
     Object.keys(cryptCardBase)
       .filter((cardid) => {
         return !getIsPlaytest(cardid) && (!inventoryCrypt[cardid] || !inventoryCrypt[cardid]?.q);

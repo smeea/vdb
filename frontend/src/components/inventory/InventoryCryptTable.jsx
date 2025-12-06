@@ -2,8 +2,8 @@ import { List } from "react-window";
 import { InventoryCryptTableRow, ResultModal, WindowRows } from "@/components";
 import { ID, VALUE } from "@/constants";
 import { useApp } from "@/context";
-import { useCryptSortWithTimer, useModalCardController } from "@/hooks";
-import { getIsPlaytest } from "@/utils";
+import { useModalCardController } from "@/hooks";
+import { cryptSort, getIsPlaytest } from "@/utils";
 
 const InventoryCryptTable = ({
   cards,
@@ -15,7 +15,7 @@ const InventoryCryptTable = ({
   inShared,
 }) => {
   const { playtestMode, setShowFloatingButtons, isDesktop } = useApp();
-  const sortedCards = useCryptSortWithTimer(cards, sortMethod);
+  const sortedCards = cryptSort(cards, sortMethod);
 
   const {
     currentModalCard,
