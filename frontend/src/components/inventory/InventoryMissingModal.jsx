@@ -25,26 +25,35 @@ const InventoryMissingModal = ({
   category,
   onlyNotes,
   setShow,
+  isSurplus,
 }) => {
   const { cryptCardBase, libraryCardBase, isMobile, setShowFloatingButtons, setShowMenuButtons } =
     useApp();
   const { [CRYPT]: inventoryCrypt, [LIBRARY]: inventoryLibrary } = useSnapshot(inventoryStore);
-  const { missingByClan } = useInventoryCrypt(crypt, category, false, onlyNotes);
-  const { missingByType, missingByDiscipline } = useInventoryLibrary(
-    library,
-    category,
-    false,
-    type,
-    discipline,
-    onlyNotes,
-  );
+  const { surplusByClan, missingByClan } = useInventoryCrypt(crypt, category, false, onlyNotes);
+  const { surplusByType, surplusByDiscipline, missingByType, missingByDiscipline } =
+    useInventoryLibrary(library, category, false, type, discipline, onlyNotes);
   const [showCryptOnMobile, setShowCryptOnMobile] = useState(true);
   const [showMissAll, setShowMissAll] = useState();
 
-  const missingCrypt = missingByClan ? missingByClan[clan] : {};
+  const missingCrypt = isSurplus
+    ? surplusByClan
+      ? surplusByClan[clan]
+      : {}
+    : missingByClan
+      ? missingByClan[clan]
+      : {};
 
   const missingLibrary = {};
-  if (missingByDiscipline && missingByType) {
+  if (isSurplus) {
+    Object.values(surplusByType[type])
+      .filter((i) => {
+        return surplusByDiscipline[discipline][i.c[ID]];
+      })
+      .forEach((i) => {
+        missingLibrary[i.c[ID]] = i;
+      });
+  } else {
     Object.values(missingByType[type])
       .filter((i) => {
         return missingByDiscipline[discipline][i.c[ID]];
@@ -87,7 +96,7 @@ const InventoryMissingModal = ({
     <Modal
       handleClose={handleClose}
       size="lg"
-      title="Missing cards for Inventory"
+      title={`${isSurplus ? "Surplus" : "Missing"} Inventory Cards`}
       noPadding={isMobile}
     >
       <FlexGapped className="flex-col">
@@ -116,14 +125,16 @@ const InventoryMissingModal = ({
           </div>
         </FlexGapped>
         <div className="flex justify-end gap-2 max-sm:flex-col max-sm:p-2 max-sm:pt-0">
-          <ButtonIconed
-            onClick={() => setShowMissAll(!showMissAll)}
-            text={showMissAll ? "Show Missing for Decks" : "Show Missing for Complete Collection"}
-            icon={<Gem />}
-          />
+          {!isSurplus && (
+            <ButtonIconed
+              onClick={() => setShowMissAll(!showMissAll)}
+              text={showMissAll ? "Show Missing for Decks" : "Show Missing for Complete Collection"}
+              icon={<Gem />}
+            />
+          )}
           <DeckExportButton
             deck={{
-              [NAME]: "Missing cards for Inventory",
+              [NAME]: `${isSurplus ? "Surplus" : "Missing"} Inventory Cards`,
               [CRYPT]: showMissAll ? missAllVtesCryptSorted : missingCryptSorted,
               [LIBRARY]: showMissAll ? missAllVtesLibrarySorted : missingLibrarySorted,
             }}

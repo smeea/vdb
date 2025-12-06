@@ -10,6 +10,7 @@ import {
   NOK,
   OK,
   SOFT,
+  SURPLUS,
   SURPLUS_FIXED,
   SURPLUS_USED,
   VALUE,
@@ -29,6 +30,7 @@ const useInventoryCrypt = (crypt, category, compact, onlyNotes) => {
   const cardsByClanUnique = {};
   const missingByClan = {};
   const missingByClanTotal = {};
+  const surplusByClan = {};
 
   const clansSorted = [ALL, ...vampireClansList, ...imbuedClansList];
   clansSorted.forEach((clan) => {
@@ -37,6 +39,7 @@ const useInventoryCrypt = (crypt, category, compact, onlyNotes) => {
     cardsByClanUnique[clan] = 0;
     missingByClan[clan] = {};
     missingByClanTotal[clan] = 0;
+    surplusByClan[clan] = {};
   });
 
   if (compact) {
@@ -80,9 +83,21 @@ const useInventoryCrypt = (crypt, category, compact, onlyNotes) => {
           };
         }
 
-        if ((category === NOK && miss >  0) || category !== NOK) {
-            cardsByClan[clan][cardid] = cards[cardid];
-            cardsByClan[ALL][cardid] = cards[cardid];
+        if (miss < 0) {
+          surplusByClan[clan][cardid] = { q: miss, c: cards[cardid].c };
+          surplusByClan[ALL][cardid] = {
+            q: -miss,
+            c: cards[cardid].c,
+          };
+        }
+
+        if (
+          (category === NOK && miss > 0) ||
+          (category === SURPLUS && miss < 0) ||
+          [ALL, OK].includes(category)
+        ) {
+          cardsByClan[clan][cardid] = cards[cardid];
+          cardsByClan[ALL][cardid] = cards[cardid];
         }
       });
 
@@ -91,7 +106,7 @@ const useInventoryCrypt = (crypt, category, compact, onlyNotes) => {
       .forEach((cardid) => {
         const clan = cryptCardBase[cardid][CLAN];
 
-        if (category !== OK && !onlyNotes) {
+        if (![OK, SURPLUS].includes(category) && !onlyNotes) {
           cardsByClan[clan][cardid] = {
             q: 0,
             c: cryptCardBase[cardid],
@@ -161,6 +176,7 @@ const useInventoryCrypt = (crypt, category, compact, onlyNotes) => {
     cardsByClanUnique,
     missingByClan,
     missingByClanTotal,
+    surplusByClan,
   };
 };
 

@@ -1,6 +1,6 @@
 import { RadioGroup } from "@headlessui/react";
 import { Radio } from "@/components";
-import { ALL, NOK, OK } from "@/constants";
+import { ALL, NOK, OK, SURPLUS } from "@/constants";
 
 const InventoryShowSelect = ({ category, setCategory }) => {
   return (
@@ -14,6 +14,7 @@ const InventoryShowSelect = ({ category, setCategory }) => {
         [ALL, "Owned & Problems"],
         [OK, "Only Owned"],
         [NOK, "Only Problems"],
+        [SURPLUS, "Only Surplus"],
       ].map((i) => (
         <Radio key={i[0]} value={i[0]} label={i[1]} />
       ))}

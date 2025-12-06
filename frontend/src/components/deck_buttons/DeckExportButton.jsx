@@ -115,10 +115,10 @@ const DeckExportButton = ({ deck, inMissing, inInventory }) => {
   return (
     <Menu>
       <MenuButton
-        title={`Export ${inMissing ? "Missing" : ""}`}
+        title="Export"
         icon={<Download />}
         variant={inMissing || !isDesktop ? "primary" : "secondary"}
-        text={`Export ${inMissing ? "Missing" : ""}`}
+        text="Export"
       />
       <MenuItems>
         {inInventory ? (

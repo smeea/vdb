@@ -1,6 +1,8 @@
-import Cart4 from "@icons/cart4.svg?react";
+import CartDash from "@icons/cart-dash.svg?react";
+import CartPlus from "@icons/cart-plus.svg?react";
 import { useState } from "react";
 import { ButtonIconed, InventoryMissingModal } from "@/components";
+import { SURPLUS } from "@/constants";
 import { useApp } from "@/context";
 
 const InventoryMissingButton = ({
@@ -19,9 +21,16 @@ const InventoryMissingButton = ({
     <>
       <ButtonIconed
         variant={isDesktop ? "secondary" : "primary"}
+        onClick={() => setShowModal(SURPLUS)}
+        title="Show Surplus Inventory Cards"
+        icon={<CartPlus />}
+        text="Surplus Cards"
+      />
+      <ButtonIconed
+        variant={isDesktop ? "secondary" : "primary"}
         onClick={() => setShowModal(true)}
-        title="Get Missing in Inventory Cards"
-        icon={<Cart4 />}
+        title="Show Missing Inventory Cards"
+        icon={<CartDash />}
         text="Missing Cards"
       />
       {showModal && (
@@ -34,6 +43,7 @@ const InventoryMissingButton = ({
           type={type}
           discipline={discipline}
           setShow={setShowModal}
+          isSurplus={showModal === SURPLUS}
         />
       )}
     </>

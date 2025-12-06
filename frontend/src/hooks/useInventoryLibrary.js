@@ -13,6 +13,7 @@ import {
   NONE,
   OK,
   SOFT,
+  SURPLUS,
   SURPLUS_FIXED,
   SURPLUS_USED,
   TYPE,
@@ -32,17 +33,21 @@ const useInventoryLibrary = (library, category, compact, type, discipline, onlyN
   const cardsByDiscipline = {};
   const missingByType = {};
   const missingByDiscipline = {};
+  const surplusByType = {};
+  const surplusByDiscipline = {};
 
   const typesSorted = [ALL, ...cardtypeSorted];
   typesSorted.forEach((i) => {
     cardsByType[i] = {};
     missingByType[i] = {};
+    surplusByType[i] = {};
   });
 
   const disciplines = [...Object.keys(disciplinesList), ...disciplinesExtraList].toSorted();
   [ALL, NONE, ...disciplines, ...Object.keys(virtuesList)].forEach((i) => {
     cardsByDiscipline[i] = {};
     missingByDiscipline[i] = {};
+    surplusByDiscipline[i] = {};
   });
 
   if (compact) {
@@ -91,16 +96,23 @@ const useInventoryLibrary = (library, category, compact, type, discipline, onlyN
         }
 
         const missEntry = { q: miss, c: cards[cardid].c };
+        const surplusEntry = { q: -miss, c: cards[cardid].c };
 
-        if ((category === NOK && miss > 0) || category !== NOK) {
+        if (
+          (category === NOK && miss > 0) ||
+          (category === SURPLUS && miss < 0) ||
+          [ALL, OK].includes(category)
+        ) {
           types.forEach((t) => {
             cardsByType[t][cardid] = cards[cardid];
             if (miss > 0) missingByType[t][cardid] = missEntry;
+            if (miss < 0) surplusByType[t][cardid] = surplusEntry;
           });
 
           disciplines.forEach((i) => {
             cardsByDiscipline[i][cardid] = cards[cardid];
             if (miss > 0) missingByDiscipline[i][cardid] = missEntry;
+            if (miss < 0) surplusByDiscipline[i][cardid] = surplusEntry;
           });
 
           cardsByType[ALL][cardid] = cards[cardid];
@@ -110,6 +122,11 @@ const useInventoryLibrary = (library, category, compact, type, discipline, onlyN
         if (miss > 0) {
           missingByType[ALL][cardid] = missEntry;
           missingByDiscipline[ALL][cardid] = missEntry;
+        }
+
+        if (miss < 0) {
+          surplusByType[ALL][cardid] = surplusEntry;
+          surplusByDiscipline[ALL][cardid] = surplusEntry;
         }
       });
 
@@ -127,7 +144,7 @@ const useInventoryLibrary = (library, category, compact, type, discipline, onlyN
           disciplines = [d];
         }
 
-        if (category !== OK && !onlyNotes) {
+        if (![OK, SURPLUS].includes(category) && !onlyNotes) {
           types.forEach((t) => {
             cardsByType[t][cardid] = { q: 0, c: libraryCardBase[cardid] };
           });
@@ -248,8 +265,10 @@ const useInventoryLibrary = (library, category, compact, type, discipline, onlyN
   return {
     cardsByType,
     missingByType,
+    surplusByType,
     cardsByDiscipline,
     missingByDiscipline,
+    surplusByDiscipline,
     cardsFilteredByType,
     cardsFilteredByTypeTotal,
     cardsFilteredByTypeUnique,

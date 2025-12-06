@@ -1,4 +1,4 @@
-import Cart4 from "@icons/cart4.svg?react";
+import CartDash from "@icons/cart-dash.svg?react";
 import { ButtonIconed } from "@/components";
 import { useApp } from "@/context";
 
@@ -15,8 +15,8 @@ const DeckMissingButton = ({ setShow }) => {
     <ButtonIconed
       variant={isDesktop ? "secondary" : "primary"}
       onClick={handleClick}
-      title="Get Missing in Inventory Cards"
-      icon={<Cart4 />}
+      title="Show Missing Cards"
+      icon={<CartDash />}
       text="Missing Cards"
     />
   );
