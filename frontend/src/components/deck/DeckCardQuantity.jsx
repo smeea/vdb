@@ -45,7 +45,7 @@ const DeckCardQuantity = ({
   return (
     <ValueSetter
       color={inventoryColor}
-      overlay={<UsedPopover cardid={card?.[ID]} />}
+      overlay={inventoryMode && <UsedPopover cardid={card?.[ID]} />}
       handleChange={handleChange}
       isEditable={isEditable}
       value={q}

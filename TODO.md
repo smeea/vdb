@@ -2,7 +2,7 @@
 - 'urplusFixed' typo
 - Not-newer filter with POD
 - Change in limited-mode when logging in
-- DeckCardQuantity to respect wishlist
+- Twd and Deck card q-ty to respect wishlist
 
 # FIX ON HOLD
 
@@ -13,6 +13,7 @@
 - Inventory wish list / target card q-ty
   - Modify wishlist from main list
   - Documentation
+  - Wishlist info to q-ty popover
 - Update cards translation
 - Hungary event discord
 
