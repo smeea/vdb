@@ -9,32 +9,37 @@ import {
   Tr,
   UsedPopover,
 } from "@/components";
-import { HARD, ID, LIBRARY, TYPE } from "@/constants";
+import { HARD, ID, LIBRARY, LOGIC, SURPLUS_USED, TYPE, VALUE, WISHLIST } from "@/constants";
 import { inventoryStore, useApp, usedStore } from "@/context";
 import { getHardTotal } from "@/utils";
 
 const TwdResultLibraryKeyCardsTableRow = ({ card, handleClick, shouldShowModal }) => {
   const { inventoryMode, isMobile } = useApp();
-  const { [LIBRARY]: inventoryLibrary } = useSnapshot(inventoryStore);
-  const usedLibrary = useSnapshot(usedStore)[LIBRARY];
+  const { [LIBRARY]: inventoryLibrary, [WISHLIST]: wishlist } = useSnapshot(inventoryStore);
+  const { [LIBRARY]: usedLibrary } = useSnapshot(usedStore);
+
   const inInventory = inventoryLibrary[card.c[ID]]?.q ?? 0;
   const hardUsedTotal = getHardTotal(usedLibrary[HARD][card.c[ID]]);
+  const wishlistLogic = wishlist?.[card.c[ID]]?.[LOGIC];
+  const surplus = wishlistLogic
+    ? wishlistLogic === SURPLUS_USED
+      ? inInventory - (hardUsedTotal + (wishlist[card.c[ID]]?.[VALUE] || 0))
+      : inInventory - (wishlist[card.c[ID]]?.[VALUE] || 0)
+    : inInventory - hardUsedTotal;
+
+  const colorStyle =
+    surplus < card.q
+      ? inInventory < card.q
+        ? "bg-bgError text-white dark:bg-bgErrorDark dark:text-whiteDark"
+        : "bg-bgWarning dark:bg-bgWarningDark"
+      : null;
 
   return (
     <Tr key={card.c[ID]}>
       <td className="min-w-[28px] border-bgSecondary border-r bg-blue/5 sm:min-w-[35px] dark:border-bgSecondaryDark">
         {inventoryMode ? (
           <ConditionalTooltip overlay={<UsedPopover cardid={card.c[ID]} />} disabled={isMobile}>
-            <div
-              className={twMerge(
-                "mx-1 flex justify-center text-lg",
-                inInventory < card.q
-                  ? "bg-bgError text-white dark:bg-bgErrorDark dark:text-whiteDark"
-                  : inInventory - hardUsedTotal < card.q && "bg-bgWarning dark:bg-bgWarningDark",
-              )}
-            >
-              {card.q}
-            </div>
+            <div className={twMerge("mx-1 flex justify-center text-lg", colorStyle)}>{card.q}</div>
           </ConditionalTooltip>
         ) : (
           <div className="flex justify-center text-lg">{card.q}</div>

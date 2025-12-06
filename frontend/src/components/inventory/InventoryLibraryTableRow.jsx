@@ -91,11 +91,7 @@ const InventoryLibraryTableRow = ({
       </div>
       {!forceNonEditable && (
         <div className="flex min-w-[55px] justify-center">
-          <InventoryCardQuantityDiff
-            card={card}
-            surplus={surplus}
-            isWishlist={wishlistLogic}
-          />
+          <InventoryCardQuantityDiff card={card} surplus={surplus} isWishlist={wishlistLogic} />
         </div>
       )}
       <div className="flex min-w-[40px] justify-center" onClick={onClick}>

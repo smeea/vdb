@@ -2,7 +2,7 @@
 - 'urplusFixed' typo
 - Not-newer filter with POD
 - Change in limited-mode when logging in
-- Twd and Deck card q-ty to respect wishlist
+- Deck card q-ty to respect wishlist
 
 # FIX ON HOLD
 

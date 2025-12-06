@@ -42,12 +42,11 @@ const InventoryCryptTableRow = ({
 }) => {
   const { isMobile, isWide } = useApp();
   const usedCrypt = useSnapshot(usedStore)[CRYPT];
-  const softUsedMax = getSoftMax(usedCrypt[SOFT][card.c[ID]]);
-  const hardUsedTotal = getHardTotal(usedCrypt[HARD][card.c[ID]]);
-
   const { [WISHLIST]: wishlist, [IS_FROZEN]: isFrozen } = useSnapshot(inventoryStore);
   const isEditable = !isFrozen && !forceNonEditable;
 
+  const softUsedMax = getSoftMax(usedCrypt[SOFT][card.c[ID]]);
+  const hardUsedTotal = getHardTotal(usedCrypt[HARD][card.c[ID]]);
   const wishlistLogic = wishlist?.[card.c[ID]]?.[LOGIC];
   const surplus = wishlistLogic
     ? wishlistLogic === SURPLUS_USED
@@ -88,11 +87,7 @@ const InventoryCryptTableRow = ({
       </div>
       {!forceNonEditable && (
         <div className="flex min-w-[55px] justify-center">
-          <InventoryCardQuantityDiff
-            card={card}
-            surplus={surplus}
-            isWishlist={wishlistLogic}
-          />
+          <InventoryCardQuantityDiff card={card} surplus={surplus} isWishlist={wishlistLogic} />
         </div>
       )}
       <div className="flex min-w-[32px]" onClick={onClick}>

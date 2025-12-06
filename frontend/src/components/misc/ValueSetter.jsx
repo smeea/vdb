@@ -109,10 +109,7 @@ const ValueSetter = ({
       ) : (
         <ConditionalTooltip placement="bottom" overlay={overlay} disabled={!overlay}>
           <div
-            className={twMerge(
-              "flex w-full items-center justify-center py-1 text-lg",
-              colorStyle,
-            )}
+            className={twMerge("flex w-full items-center justify-center py-1 text-lg", colorStyle)}
           >
             {state || <>&nbsp;&nbsp;</>}
           </div>

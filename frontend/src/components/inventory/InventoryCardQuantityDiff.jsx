@@ -10,7 +10,7 @@ const InventoryCardQuantityDiff = ({ card, surplus, isWishlist }) => {
       ? "text-fgGreen dark:text-fgGreenDark"
       : surplus < 0
         ? "text-fgRed dark:text-fgRedDark"
-        : "text-midGray dark:text-midGrayDark"
+        : "text-midGray dark:text-midGrayDark";
 
   return (
     <ConditionalTooltip
@@ -18,9 +18,11 @@ const InventoryCardQuantityDiff = ({ card, surplus, isWishlist }) => {
       overlay={<UsedPopover cardid={card.c[ID]} />}
       disabled={isMobile}
     >
-        <div className={colorStyle}>
-          {isWishlist ? '[' :''}{surplus === 0 ? "=" : surplus > 0 ? `+${surplus}` : surplus}{isWishlist ? ']' :''}
-        </div>
+      <div className={colorStyle}>
+        {isWishlist ? "[" : ""}
+        {surplus === 0 ? "=" : surplus > 0 ? `+${surplus}` : surplus}
+        {isWishlist ? "]" : ""}
+      </div>
     </ConditionalTooltip>
   );
 };
