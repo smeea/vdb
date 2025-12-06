@@ -76,10 +76,18 @@ const ValueSetter = ({
               {!manual && <ButtonCardChange onClick={handleQuantityMinus} isNegative />}
               <div
                 tabIndex={0}
-                className={manual ? "" : twMerge("mx-1 flex w-full justify-center", colorStyle)}
+                className={twMerge(
+                  !manual && "mx-1 flex w-full justify-center",
+                  !manual && colorStyle,
+                )}
                 onFocus={handleManualClick}
               >
-                <ConditionalTooltip placement="bottom" overlay={overlay} disabled={!overlay}>
+                <ConditionalTooltip
+                  className="flex w-full items-center justify-center"
+                  placement="bottom"
+                  overlay={overlay}
+                  disabled={!overlay}
+                >
                   {manual ? (
                     <form onSubmit={handleSubmit}>
                       <input
@@ -108,9 +116,7 @@ const ValueSetter = ({
         </div>
       ) : (
         <ConditionalTooltip placement="bottom" overlay={overlay} disabled={!overlay}>
-          <div
-            className={twMerge("flex w-full items-center justify-center py-1 text-lg", colorStyle)}
-          >
+          <div className={twMerge("m-1 flex items-center justify-center text-lg", colorStyle)}>
             {state || <>&nbsp;&nbsp;</>}
           </div>
         </ConditionalTooltip>

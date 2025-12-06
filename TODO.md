@@ -3,6 +3,7 @@
 - Not-newer filter with POD
 - Change in limited-mode when logging in
 - Deck card q-ty to respect wishlist
+- Refactor DeckCardQuantity to accept color
 
 # FIX ON HOLD
 

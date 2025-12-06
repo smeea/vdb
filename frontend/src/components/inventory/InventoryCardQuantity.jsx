@@ -1,6 +1,6 @@
 import { useSnapshot } from "valtio";
-import { ValueSetter } from "@/components";
-import { ERROR, IS_FROZEN } from "@/constants";
+import { UsedPopover, ValueSetter } from "@/components";
+import { ERROR, ID, IS_FROZEN } from "@/constants";
 import { inventoryCardChange, inventoryStore } from "@/context";
 
 const InventoryCardQuantity = ({ card, forceIsNonEditable, surplus, compact, newFocus }) => {
@@ -11,15 +11,18 @@ const InventoryCardQuantity = ({ card, forceIsNonEditable, surplus, compact, new
   const handleChange = (q) => inventoryCardChange(card.c, q);
 
   return (
-    <ValueSetter
-      color={color}
-      newFocus={newFocus}
-      handleChange={handleChange}
-      isEditable={isEditable}
-      isManual={compact}
-      value={card.q}
-      withNote={card.t}
-    />
+    <div className="w-full">
+      <ValueSetter
+        overlay={<UsedPopover cardid={card.c[ID]} />}
+        color={color}
+        newFocus={newFocus}
+        handleChange={handleChange}
+        isEditable={isEditable}
+        isManual={compact}
+        value={card.q}
+        withNote={card.t}
+      />
+    </div>
   );
 };
 
