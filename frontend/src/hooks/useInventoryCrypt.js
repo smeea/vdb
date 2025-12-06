@@ -1,12 +1,26 @@
 import { useSnapshot } from "valtio";
 import imbuedClansList from "@/assets/data/imbuedClansList.json";
 import vampireClansList from "@/assets/data/vampireClansList.json";
-import { ALL, CLAN, CRYPT, HARD, NOK, OK, SOFT } from "@/constants";
-import { useApp, usedStore } from "@/context";
+import {
+  ALL,
+  CLAN,
+  CRYPT,
+  HARD,
+  LOGIC,
+  NOK,
+  OK,
+  SOFT,
+  SURPLUS_FIXED,
+  SURPLUS_USED,
+  VALUE,
+  WISHLIST,
+} from "@/constants";
+import { inventoryStore, useApp, usedStore } from "@/context";
 import { getHardTotal, getIsPlaytest, getSoftMax } from "@/utils";
 
 const useInventoryCrypt = (crypt, category, compact, onlyNotes) => {
   const usedCrypt = useSnapshot(usedStore)[CRYPT];
+  const wishlist = useSnapshot(inventoryStore)[WISHLIST];
   const { cryptCardBase } = useApp();
 
   const cards = crypt || {};
@@ -36,9 +50,27 @@ const useInventoryCrypt = (crypt, category, compact, onlyNotes) => {
       .filter((cardid) => (onlyNotes ? cards[cardid].t : true))
       .forEach((cardid) => {
         const clan = cards[cardid].c[CLAN];
-        const softUsedMax = getSoftMax(usedCrypt[SOFT][cardid]);
-        const hardUsedTotal = getHardTotal(usedCrypt[HARD][cardid]);
-        const miss = softUsedMax + hardUsedTotal - cards[cardid].q;
+
+        const wishlistLogic = wishlist[cardid]?.[LOGIC];
+        const wishlistValue = wishlist[cardid]?.[VALUE];
+        let miss;
+        switch (wishlistLogic) {
+          case SURPLUS_FIXED:
+            miss = wishlistValue - cards[cardid].q;
+            break;
+          case SURPLUS_USED:
+            {
+              const softUsedMax = getSoftMax(usedCrypt[SOFT][cardid]);
+              const hardUsedTotal = getHardTotal(usedCrypt[HARD][cardid]);
+              miss = softUsedMax + hardUsedTotal + wishlistValue - cards[cardid].q;
+            }
+            break;
+          default: {
+            const softUsedMax = getSoftMax(usedCrypt[SOFT][cardid]);
+            const hardUsedTotal = getHardTotal(usedCrypt[HARD][cardid]);
+            miss = softUsedMax + hardUsedTotal - cards[cardid].q;
+          }
+        }
 
         if (miss > 0) {
           missingByClan[clan][cardid] = { q: miss, c: cards[cardid].c };
@@ -58,8 +90,7 @@ const useInventoryCrypt = (crypt, category, compact, onlyNotes) => {
           cardsByClan[ALL][cardid] = cards[cardid];
         }
       });
-
-    Object.keys(usedCrypt[SOFT])
+    [...Object.keys(usedCrypt[SOFT]), ...Object.keys(usedCrypt[HARD])]
       .filter((cardid) => !(getIsPlaytest(cardid) || cards[cardid]))
       .forEach((cardid) => {
         const clan = cryptCardBase[cardid][CLAN];
@@ -75,49 +106,34 @@ const useInventoryCrypt = (crypt, category, compact, onlyNotes) => {
           };
         }
 
-        const softUsedMax = getSoftMax(usedCrypt[SOFT][cardid]);
-
-        missingByClan[clan][cardid] = {
-          q: softUsedMax,
-          c: cryptCardBase[cardid],
-        };
-        missingByClan[ALL][cardid] = {
-          q: softUsedMax,
-          c: cryptCardBase[cardid],
-        };
-      });
-
-    Object.keys(usedCrypt[HARD])
-      .filter((cardid) => !getIsPlaytest(cardid) && !cards[cardid])
-      .forEach((cardid) => {
-        const clan = cryptCardBase[cardid][CLAN];
-
-        if (category !== OK && !onlyNotes) {
-          cardsByClan[clan][cardid] = {
-            q: cards[cardid] ? cards[cardid].q : 0,
-            c: cryptCardBase[cardid],
-          };
-          cardsByClan[ALL][cardid] = {
-            q: cards[cardid] ? cards[cardid].q : 0,
-            c: cryptCardBase[cardid],
-          };
+        const wishlistLogic = wishlist[cardid]?.[LOGIC];
+        const wishlistValue = wishlist[cardid]?.[VALUE];
+        let miss;
+        switch (wishlistLogic) {
+          case SURPLUS_FIXED:
+            miss = wishlistValue;
+            break;
+          case SURPLUS_USED:
+            {
+              const softUsedMax = getSoftMax(usedCrypt[SOFT]?.[cardid]);
+              const hardUsedTotal = getHardTotal(usedCrypt[HARD]?.[cardid]);
+              miss = softUsedMax + hardUsedTotal + wishlistValue;
+            }
+            break;
+          default: {
+            const softUsedMax = getSoftMax(usedCrypt[SOFT]?.[cardid]);
+            const hardUsedTotal = getHardTotal(usedCrypt[HARD]?.[cardid]);
+            miss = softUsedMax + hardUsedTotal;
+          }
         }
 
-        const hardUsedTotal = getHardTotal(usedCrypt[HARD][cardid]);
+        const missEntry = {
+          q: miss,
+          c: cryptCardBase[cardid],
+        };
 
-        if (missingByClan[clan][cardid]) {
-          missingByClan[clan][cardid].q += hardUsedTotal;
-          missingByClan[ALL][cardid].q += hardUsedTotal;
-        } else {
-          missingByClan[clan][cardid] = {
-            q: hardUsedTotal,
-            c: cryptCardBase[cardid],
-          };
-          missingByClan[ALL][cardid] = {
-            q: hardUsedTotal,
-            c: cryptCardBase[cardid],
-          };
-        }
+        missingByClan[clan][cardid] = missEntry;
+        missingByClan[ALL][cardid] = missEntry;
       });
 
     Object.keys(missingByClan).forEach((clan) => {

@@ -3,12 +3,28 @@ import cardtypeSorted from "@/assets/data/cardtypeSorted.json";
 import disciplinesExtraList from "@/assets/data/disciplinesExtraList.json";
 import disciplinesList from "@/assets/data/disciplinesList.json";
 import virtuesList from "@/assets/data/virtuesList.json";
-import { ALL, DISCIPLINE, HARD, LIBRARY, NOK, NONE, OK, SOFT, TYPE } from "@/constants";
-import { useApp, usedStore } from "@/context";
+import {
+  ALL,
+  DISCIPLINE,
+  HARD,
+  LIBRARY,
+  LOGIC,
+  NOK,
+  NONE,
+  OK,
+  SOFT,
+  SURPLUS_FIXED,
+  SURPLUS_USED,
+  TYPE,
+  VALUE,
+  WISHLIST,
+} from "@/constants";
+import { inventoryStore, useApp, usedStore } from "@/context";
 import { getHardTotal, getIsPlaytest, getSoftMax } from "@/utils";
 
 const useInventoryLibrary = (library, category, compact, type, discipline, onlyNotes) => {
   const usedLibrary = useSnapshot(usedStore)[LIBRARY];
+  const wishlist = useSnapshot(inventoryStore)[WISHLIST];
   const { libraryCardBase } = useApp();
 
   const cards = library || {};
@@ -53,70 +69,50 @@ const useInventoryLibrary = (library, category, compact, type, discipline, onlyN
           disciplines = [d];
         }
 
-        const softUsedMax = getSoftMax(usedLibrary[SOFT][cardid]);
-        const hardUsedTotal = getHardTotal(usedLibrary[HARD][cardid]);
-        const miss = softUsedMax + hardUsedTotal - cards[cardid].q;
-
-        if (miss > 0) {
-          types.forEach((t) => {
-            missingByType[t][cardid] = {
-              q: miss,
-              c: cards[cardid].c,
-            };
-          });
-          missingByType[ALL][cardid] = {
-            q: miss,
-            c: cards[cardid].c,
-          };
-
-          if (disciplines) {
-            disciplines.forEach((i) => {
-              missingByDiscipline[i][cardid] = {
-                q: miss,
-                c: cards[cardid].c,
-              };
-              missingByDiscipline[ALL][cardid] = {
-                q: miss,
-                c: cards[cardid].c,
-              };
-            });
+        const wishlistLogic = wishlist[cardid]?.[LOGIC];
+        const wishlistValue = wishlist[cardid]?.[VALUE];
+        let miss;
+        switch (wishlistLogic) {
+          case SURPLUS_FIXED:
+            miss = wishlistValue - cards[cardid].q;
+            break;
+          case SURPLUS_USED:
+            {
+              const softUsedMax = getSoftMax(usedLibrary[SOFT][cardid]);
+              const hardUsedTotal = getHardTotal(usedLibrary[HARD][cardid]);
+              miss = softUsedMax + hardUsedTotal + wishlistValue - cards[cardid].q;
+            }
+            break;
+          default: {
+            const softUsedMax = getSoftMax(usedLibrary[SOFT][cardid]);
+            const hardUsedTotal = getHardTotal(usedLibrary[HARD][cardid]);
+            miss = softUsedMax + hardUsedTotal - cards[cardid].q;
           }
         }
 
-        if (category === NOK) {
-          if (miss > 0) {
-            types.forEach((t) => {
-              cardsByType[t][cardid] = cards[cardid];
-            });
-            cardsByType[ALL][cardid] = cards[cardid];
-            cardsByDiscipline[ALL][cardid] = cards[cardid];
+        const missEntry = { q: miss, c: cards[cardid].c };
 
-            if (disciplines) {
-              disciplines.forEach((i) => {
-                cardsByDiscipline[i][cardid] = cards[cardid];
-              });
-            } else {
-              cardsByDiscipline[NONE][cardid] = cards[cardid];
-            }
-          }
-        } else {
+        if (miss > 0 || category !== NOK) {
           types.forEach((t) => {
             cardsByType[t][cardid] = cards[cardid];
+            if (miss > 0) missingByType[t][cardid] = missEntry;
           });
-          cardsByType[ALL][cardid] = cards[cardid];
-          cardsByDiscipline[ALL][cardid] = cards[cardid];
 
-          if (disciplines) {
-            disciplines.forEach((i) => {
-              cardsByDiscipline[i][cardid] = cards[cardid];
-            });
-          } else {
-            cardsByDiscipline[NONE][cardid] = cards[cardid];
-          }
+          disciplines.forEach((i) => {
+            cardsByDiscipline[i][cardid] = cards[cardid];
+            if (miss > 0) missingByDiscipline[i][cardid] = missEntry;
+          });
+        }
+
+        cardsByType[ALL][cardid] = cards[cardid];
+        cardsByDiscipline[ALL][cardid] = cards[cardid];
+        if (miss > 0) {
+          missingByType[ALL][cardid] = missEntry;
+          missingByDiscipline[ALL][cardid] = missEntry;
         }
       });
 
-    Object.keys(usedLibrary[SOFT])
+    [...Object.keys(usedLibrary[SOFT]), ...Object.keys(usedLibrary[HARD])]
       .filter((cardid) => !(getIsPlaytest(cardid) || cards[cardid]))
       .forEach((cardid) => {
         const types = libraryCardBase[cardid][TYPE].split("/");
@@ -155,105 +151,41 @@ const useInventoryLibrary = (library, category, compact, type, discipline, onlyN
           }
         }
 
-        const softUsedMax = getSoftMax(usedLibrary[SOFT][cardid]);
-
-        types.forEach((t) => {
-          missingByType[t][cardid] = {
-            q: softUsedMax,
-            c: libraryCardBase[cardid],
-          };
-        });
-        missingByType[ALL][cardid] = {
-          q: softUsedMax,
-          c: libraryCardBase[cardid],
-        };
-
-        if (disciplines) {
-          disciplines.forEach((i) => {
-            missingByDiscipline[i][cardid] = {
-              q: softUsedMax,
-              c: libraryCardBase[cardid],
-            };
-            missingByDiscipline[ALL][cardid] = {
-              q: softUsedMax,
-              c: libraryCardBase[cardid],
-            };
-          });
-        }
-      });
-
-    Object.keys(usedLibrary[HARD])
-      .filter((cardid) => !getIsPlaytest(cardid) && !cards[cardid])
-      .forEach((cardid) => {
-        const types = libraryCardBase[cardid][TYPE].split("/");
-        const d = libraryCardBase[cardid][DISCIPLINE];
-        let disciplines = [NONE];
-        if (d.includes("/")) {
-          disciplines = d.split("/");
-        } else if (d.includes(" & ")) {
-          disciplines = d.split(" & ");
-        } else if (d) {
-          disciplines = [d];
-        }
-
-        if (category !== OK && !onlyNotes) {
-          types.forEach((t) => {
-            cardsByType[t][cardid] = { q: 0, c: libraryCardBase[cardid] };
-          });
-          cardsByType[ALL][cardid] = { q: 0, c: libraryCardBase[cardid] };
-          cardsByDiscipline[ALL][cardid] = {
-            q: 0,
-            c: libraryCardBase[cardid],
-          };
-
-          if (disciplines) {
-            disciplines.forEach((i) => {
-              cardsByDiscipline[i][cardid] = {
-                q: 0,
-                c: libraryCardBase[cardid],
-              };
-            });
-          } else {
-            cardsByDiscipline[NONE][cardid] = {
-              q: 0,
-              c: libraryCardBase[cardid],
-            };
-          }
-        }
-
-        const hardUsedTotal = getHardTotal(usedLibrary[HARD][cardid]);
-
-        types.forEach((t) => {
-          if (missingByType[t][cardid]) {
-            missingByType[t][cardid].q += hardUsedTotal;
-          } else {
-            missingByType[t][cardid] = {
-              q: hardUsedTotal,
-              c: libraryCardBase[cardid],
-            };
-          }
-        });
-        missingByType[ALL][cardid] = {
-          q: hardUsedTotal,
-          c: libraryCardBase[cardid],
-        };
-
-        if (disciplines) {
-          disciplines.forEach((i) => {
-            if (missingByDiscipline[i][cardid]) {
-              missingByDiscipline[i][cardid].q += hardUsedTotal;
-            } else {
-              missingByDiscipline[i][cardid] = {
-                q: hardUsedTotal,
-                c: libraryCardBase[cardid],
-              };
+        const wishlistLogic = wishlist[cardid]?.[LOGIC];
+        const wishlistValue = wishlist[cardid]?.[VALUE];
+        let miss;
+        switch (wishlistLogic) {
+          case SURPLUS_FIXED:
+            miss = wishlistValue;
+            break;
+          case SURPLUS_USED:
+            {
+              const softUsedMax = getSoftMax(usedLibrary[SOFT]?.[cardid]);
+              const hardUsedTotal = getHardTotal(usedLibrary[HARD]?.[cardid]);
+              miss = softUsedMax + hardUsedTotal + wishlistValue;
             }
-          });
+            break;
+          default: {
+            const softUsedMax = getSoftMax(usedLibrary[SOFT]?.[cardid]);
+            const hardUsedTotal = getHardTotal(usedLibrary[HARD]?.[cardid]);
+            miss = softUsedMax + hardUsedTotal;
+          }
         }
-        missingByDiscipline[ALL][cardid] = {
-          q: hardUsedTotal,
+
+        const missEntry = {
+          q: miss,
           c: libraryCardBase[cardid],
         };
+
+        types.forEach((t) => {
+          missingByType[t][cardid] = missEntry;
+        });
+        missingByType[ALL][cardid] = missEntry;
+
+        disciplines.forEach((i) => {
+          missingByDiscipline[i][cardid] = missEntry;
+        });
+        missingByDiscipline[ALL][cardid] = missEntry;
       });
   }
 
