@@ -9,15 +9,14 @@
 - Limited in TWD/PDA search
 - TWD search with % V5-compatibility
 - Click on scan image to close modal on mobile (need refactor)
-- Inventory wish list / target card q-ty
-  - Modify wishlist from main list
-  - Documentation
-  - Wishlist info to xlsx export
-- Update cards translation
+- Inventory target modify from inventory table
+- Inventory target documentation
+- Inventory target info to xlsx export
 - Hungary event discord
 
 # FEATURES ON HOLD
 - Draft Cube support -> when draft cube info is available
+- Update cards translation -> BCP updated translation files
 
 # TECH IMPROVEMENTS
 - Refactor with useEffectEvent https://react.dev/learn/separating-events-from-effects#extracting-non-reactive-logic-out-of-effects

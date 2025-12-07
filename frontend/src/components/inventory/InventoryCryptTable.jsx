@@ -44,6 +44,7 @@ const InventoryCryptTable = ({
         compact={compact}
         newFocus={newFocus}
         forceNonEditable={inShared || inMissing}
+        inMissing={inMissing}
         handleClick={handleClick}
         shouldShowModal={shouldShowModal}
       />

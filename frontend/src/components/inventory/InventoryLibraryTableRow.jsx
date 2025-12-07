@@ -42,6 +42,7 @@ const InventoryLibraryTableRow = ({
   forceNonEditable,
   shouldShowModal,
   handleClick,
+  inMissing,
 }) => {
   const { isMobile } = useApp();
   const usedLibrary = useSnapshot(usedStore)[LIBRARY];
@@ -71,22 +72,20 @@ const InventoryLibraryTableRow = ({
     >
       <div
         className={twMerge(
-          "flex items-center justify-center",
+          "flex h-full items-center justify-center",
           isEditable
             ? "min-w-[84px]"
             : "min-w-[42px] border-bgSecondary border-r bg-blue/5 sm:min-w-[48px] dark:border-bgSecondaryDark",
         )}
       >
-        {forceNonEditable ? (
-          card.q || null
-        ) : (
-          <InventoryCardQuantity
-            card={card}
-            surplus={surplus}
-            compact={compact}
-            newFocus={newFocus}
-          />
-        )}
+        <InventoryCardQuantity
+          card={card}
+          surplus={surplus}
+          compact={compact}
+          newFocus={newFocus}
+          forceNonEditable={forceNonEditable}
+          noColor={inMissing}
+        />
       </div>
       {!forceNonEditable && (
         <div className="flex min-w-[55px] justify-center">

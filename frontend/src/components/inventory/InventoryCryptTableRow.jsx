@@ -39,6 +39,7 @@ const InventoryCryptTableRow = ({
   forceNonEditable,
   shouldShowModal,
   handleClick,
+  inMissing,
 }) => {
   const { isMobile, isWide } = useApp();
   const usedCrypt = useSnapshot(usedStore)[CRYPT];
@@ -68,22 +69,20 @@ const InventoryCryptTableRow = ({
     >
       <div
         className={twMerge(
-          "flex items-center justify-center",
+          "flex h-full items-center justify-center",
           isEditable
             ? "min-w-[84px]"
             : "min-w-[42px] border-bgSecondary border-r bg-blue/5 sm:min-w-[48px] dark:border-bgSecondaryDark",
         )}
       >
-        {forceNonEditable ? (
-          card.q || null
-        ) : (
-          <InventoryCardQuantity
-            card={card}
-            compact={compact}
-            newFocus={newFocus}
-            surplus={surplus}
-          />
-        )}
+        <InventoryCardQuantity
+          card={card}
+          compact={compact}
+          newFocus={newFocus}
+          surplus={surplus}
+          forceNonEditable={forceNonEditable}
+          noColor={inMissing}
+        />
       </div>
       {!forceNonEditable && (
         <div className="flex min-w-[55px] justify-center">

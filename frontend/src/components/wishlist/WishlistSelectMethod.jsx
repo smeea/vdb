@@ -1,12 +1,13 @@
 import { useSnapshot } from "valtio";
 import { Select } from "@/components";
-import { LOGIC, SURPLUS_FIXED, SURPLUS_USED, WISHLIST } from "@/constants";
+import { IS_FROZEN, LOGIC, SURPLUS_FIXED, SURPLUS_USED, WISHLIST } from "@/constants";
 import { inventoryStore, wishlistUpdate } from "@/context";
 
 const WishlistSelectMethod = ({ cardid }) => {
   const wishlist = useSnapshot(inventoryStore)[WISHLIST];
   const value = wishlist?.[cardid]?.[LOGIC] || null;
   const handleSelect = (e) => wishlistUpdate(cardid, { [LOGIC]: e.value });
+  const isEditable = !useSnapshot(inventoryStore)[IS_FROZEN];
 
   const options = [
     {
@@ -28,6 +29,7 @@ const WishlistSelectMethod = ({ cardid }) => {
       options={options}
       value={options.find((obj) => obj.value === value)}
       onChange={handleSelect}
+      isDisabled={!isEditable}
     />
   );
 };

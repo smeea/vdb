@@ -43,9 +43,10 @@ const DeckCardQuantity = ({
     getHardTotal(card[ID] > 200000 ? usedCrypt[HARD][card[ID]] : usedLibrary[HARD][card[ID]]) ?? 0;
 
   const wishlistLogic = wishlist?.[card[ID]]?.[LOGIC];
-  const surplus = wishlistLogic === SURPLUS_USED
-        ? inInventory - (softUsedMax + hardUsedTotal + (wishlist[card[ID]]?.[VALUE] || 0))
-        : inInventory - (softUsedMax + hardUsedTotal);
+  const surplus =
+    wishlistLogic === SURPLUS_USED
+      ? inInventory - (softUsedMax + hardUsedTotal + (wishlist[card[ID]]?.[VALUE] || 0))
+      : inInventory - (softUsedMax + hardUsedTotal);
 
   const inventoryColor =
     inventoryType && inProxy
@@ -56,7 +57,7 @@ const DeckCardQuantity = ({
         ? null
         : inInventory >= q
           ? WARNING
-          : ERROR
+          : ERROR;
 
   const handleChange = (qty) => cardChange(deckid, card, qty);
 

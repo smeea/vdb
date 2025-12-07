@@ -11,12 +11,7 @@ import { ARTIST, ID, PLAYTEST_OLD, RULINGS } from "@/constants";
 import { useApp } from "@/context";
 import { getIsPlaytest } from "@/utils";
 
-const ResultLayoutTextCommon = ({
-  handleClose,
-  card,
-  inPopover,
-  setIsHotkeysDisabled,
-}) => {
+const ResultLayoutTextCommon = ({ handleClose, card, inPopover, setIsHotkeysDisabled }) => {
   const { isPlaytester, inventoryMode } = useApp();
   const isPlaytest = getIsPlaytest(card[ID]);
 

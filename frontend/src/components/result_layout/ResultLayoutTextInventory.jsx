@@ -51,25 +51,27 @@ const ResultLayoutTextInventory = ({ card, setIsHotkeysDisabled }) => {
         ? inInventory - (wishlist[card[ID]]?.[VALUE] || 0)
         : inInventory - (softUsedMax + hardUsedTotal);
 
+  const colorStyle =
+    surplus > 0
+      ? "text-fgGreen dark:text-fgGreenDark"
+      : surplus < 0
+        ? "text-fgRed dark:text-fgRedDark"
+        : "text-midGray dark:text-midGrayDark";
+
   return (
     <div className="flex flex-col gap-1.5">
       <div className="flex flex-col">
         <div className="flex items-center gap-2">
           <div className="min-w-[84px]">
-            <InventoryCardQuantity card={inventoryCard} />
+            <InventoryCardQuantity card={inventoryCard} noColor noOverlay />
           </div>
           <div>In Inventory</div>
-          <div
-            className={twMerge(
-              "flex min-w-[18px] gap-0.5 pb-0.5 text-lg",
-              surplus === 0
-                ? "text-midGray dark:text-midGrayDark"
-                : surplus > 0
-                  ? "text-fgGreen dark:text-fgGreenDark"
-                  : "text-fgRed dark:text-fgRedDark",
-            )}
-          >
-            [<div title="Missing / Surplus">{surplus > 0 ? `+${surplus}` : surplus}</div>]
+          <div className={twMerge("flex min-w-[18px] gap-0.5 pb-0.5 text-lg", colorStyle)}>
+            [
+            <div title="Missing / Surplus">
+              {surplus === 0 ? "=" : surplus > 0 ? `+${surplus}` : surplus}
+            </div>
+            ]
           </div>
         </div>
         <div className="flex items-center gap-2">

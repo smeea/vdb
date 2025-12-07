@@ -16,13 +16,7 @@ import { ID, PDA, PLAYTEST_OLD, TWD, TYPE, TYPE_MASTER } from "@/constants";
 import { searchResults, setCryptCompare, setLibraryCompare, useApp } from "@/context";
 import { getIsPlaytest } from "@/utils";
 
-const ResultLayoutText = ({
-  card,
-  setCard,
-  handleClose,
-  noClose,
-  setIsHotkeysDisabled,
-}) => {
+const ResultLayoutText = ({ card, setCard, handleClose, noClose, setIsHotkeysDisabled }) => {
   const { isPlaytestAdmin, isMobile } = useApp();
   const { cryptCompare, libraryCompare } = useSnapshot(searchResults);
   const compare = card[ID] > 200000 ? cryptCompare : libraryCompare;
