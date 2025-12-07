@@ -12,7 +12,6 @@
 - Inventory target modify from inventory table
 - Inventory target documentation
 - Inventory target info to xlsx export
-- Hungary event discord
 
 # FEATURES ON HOLD
 - Draft Cube support -> when draft cube info is available
