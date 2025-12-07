@@ -45,12 +45,11 @@ const InventoryLibraryTableRow = ({
 }) => {
   const { isMobile } = useApp();
   const usedLibrary = useSnapshot(usedStore)[LIBRARY];
-  const softUsedMax = getSoftMax(usedLibrary[SOFT][card.c[ID]]);
-  const hardUsedTotal = getHardTotal(usedLibrary[HARD][card.c[ID]]);
-
   const { [WISHLIST]: wishlist, [IS_FROZEN]: isFrozen } = useSnapshot(inventoryStore);
   const isEditable = !isFrozen && !forceNonEditable;
 
+  const softUsedMax = getSoftMax(usedLibrary[SOFT][card.c[ID]]);
+  const hardUsedTotal = getHardTotal(usedLibrary[HARD][card.c[ID]]);
   const wishlistLogic = wishlist?.[card.c[ID]]?.[LOGIC];
   const surplus = wishlistLogic
     ? wishlistLogic === SURPLUS_USED

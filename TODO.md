@@ -1,5 +1,5 @@
 # FIX
-- 'urplusFixed' typo
+- 'urplusFixed' typo, wishlist[VALUE] to q
 - Not-newer filter with POD
 - Change in limited-mode when logging in
 

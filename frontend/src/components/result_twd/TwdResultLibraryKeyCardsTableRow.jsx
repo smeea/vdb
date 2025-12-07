@@ -17,15 +17,14 @@ const TwdResultLibraryKeyCardsTableRow = ({ card, handleClick, shouldShowModal }
   const { inventoryMode, isMobile } = useApp();
   const { [LIBRARY]: inventoryLibrary, [WISHLIST]: wishlist } = useSnapshot(inventoryStore);
   const { [LIBRARY]: usedLibrary } = useSnapshot(usedStore);
-
   const inInventory = inventoryLibrary[card.c[ID]]?.q ?? 0;
   const hardUsedTotal = getHardTotal(usedLibrary[HARD][card.c[ID]]);
+
   const wishlistLogic = wishlist?.[card.c[ID]]?.[LOGIC];
-  const surplus = wishlistLogic
-    ? wishlistLogic === SURPLUS_USED
+  const surplus =
+    wishlistLogic === SURPLUS_USED
       ? inInventory - (hardUsedTotal + (wishlist[card.c[ID]]?.[VALUE] || 0))
-      : inInventory - (wishlist[card.c[ID]]?.[VALUE] || 0)
-    : inInventory - hardUsedTotal;
+      : inInventory - hardUsedTotal;
 
   const colorStyle =
     surplus < card.q

@@ -6,7 +6,7 @@ import { useApp } from "@/context";
 
 const ValueSetter = ({
   value,
-  isEditable = true,
+  isEditable,
   color,
   handleChange,
   isManual,
