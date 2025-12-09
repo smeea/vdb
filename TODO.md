@@ -1,5 +1,4 @@
 # FIX
-- 'urplusFixed' typo, wishlist[VALUE] to q
 - Not-newer filter with POD
 - Change in limited-mode when logging in
 
@@ -21,3 +20,4 @@
 - Refactor with useEffectEvent https://react.dev/learn/separating-events-from-effects#extracting-non-reactive-logic-out-of-effects
 - Refactor onClick anonymous functions
 - Refactor backend db with MutableDict
+- Refactor 'urplusFixed' typo, wishlist[VALUE] to q
