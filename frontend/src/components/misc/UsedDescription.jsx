@@ -15,7 +15,7 @@ const UsedDescriptionDeck = ({ deck, t, q }) => {
           <PinAngleFill width="16" height="16" viewBox="0 0 16 16" />
         )}
       </div>
-      <div className="flex min-w-[18px] justify-center font-bold">{q}</div>-
+      <div className="flex min-w-[18px] justify-center">{q}</div>-
       <div className="truncate sm:max-w-[265px] md:max-w-[290px]">
         <NavLink to={`/decks/${deck[DECKID]}`}>
           {deck[NAME]}

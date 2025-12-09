@@ -4,13 +4,15 @@
 
 # FIX ON HOLD
 
+
 # FEATURES
 - Limited in TWD/PDA search
 - TWD search with % V5-compatibility
 - Click on scan image to close modal on mobile (need refactor)
 - Inventory target modify from inventory table
 - Inventory target documentation
-- Inventory target info to xlsx export
+- Inventory disciplines and wishlist info to xlsx export
+- Inventory filter by clan
 
 # FEATURES ON HOLD
 - Draft Cube support -> when draft cube info is available

@@ -1,4 +1,6 @@
 import CalculatorFill from "@icons/calculator-fill.svg?react";
+import Bullseye from "@icons/bullseye.svg?react";
+import ArchiveFill from "@icons/archive-fill.svg?react";
 import { twMerge } from "tailwind-merge";
 import { useSnapshot } from "valtio";
 import {
@@ -21,6 +23,7 @@ import {
   SURPLUS_USED,
   VALUE,
   WISHLIST,
+  IS_FROZEN,
 } from "@/constants";
 import { deckStore, inventoryStore, usedStore } from "@/context";
 import { getHardTotal, getSoftMax } from "@/utils";
@@ -31,6 +34,7 @@ const ResultLayoutTextInventory = ({ card, setIsHotkeysDisabled }) => {
     [WISHLIST]: wishlist,
     [CRYPT]: inventoryCrypt,
     [LIBRARY]: inventoryLibrary,
+    [IS_FROZEN]: isFrozen,
   } = useSnapshot(inventoryStore);
   const { [CRYPT]: usedCrypt, [LIBRARY]: usedLibrary } = useSnapshot(usedStore);
   const usedCards = card[ID] > 200000 ? usedCrypt : usedLibrary;
@@ -61,39 +65,65 @@ const ResultLayoutTextInventory = ({ card, setIsHotkeysDisabled }) => {
   return (
     <div className="flex flex-col gap-1.5">
       <div className="flex flex-col">
-        <div className="flex items-center gap-2">
-          <div className="min-w-[84px]">
-            <InventoryCardQuantity card={inventoryCard} noColor noOverlay />
-          </div>
-          <div>In Inventory</div>
-          <div className={twMerge("flex min-w-[18px] gap-0.5 pb-0.5 text-lg", colorStyle)}>
-            [
-            <div title="Missing / Surplus">
-              {surplus === 0 ? "=" : surplus > 0 ? `+${surplus}` : surplus}
+        <div className={twMerge("flex items-center", isFrozen ? "gap-0.5" : "gap-2")}>
+          <div className={twMerge("flex items-center", isFrozen ? "min-w-[62px]" : "min-w-[84px]")}>
+            {isFrozen && (
+              <div className="flex min-w-[18px] justify-center opacity-40">
+                <ArchiveFill />
+              </div>
+            )}
+            <div className={isFrozen ? "min-w-[30px]" : "min-w-[84px]"}>
+              <InventoryCardQuantity card={inventoryCard} noColor noOverlay />
             </div>
-            ]
+            {isFrozen && <div className="flex min-w-[12px] justify-center">-</div>}
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="whitespace-nowrap">In Inventory</div>
+            <div className={twMerge("flex min-w-[18px] gap-0.5 pb-0.5", colorStyle)}>
+              [
+              <div title="Missing / Surplus">
+                {surplus === 0 ? "=" : surplus > 0 ? `+${surplus}` : surplus}
+              </div>
+              ]
+            </div>
           </div>
         </div>
-        <div className="flex items-center gap-2">
-          <div className="min-w-[84px]">
-            <WishlistSetValue cardid={card[ID]} />
+        <div className={twMerge("flex items-center", isFrozen ? "gap-0.5" : "gap-2")}>
+          <div className={twMerge("flex items-center", isFrozen ? "min-w-[62px]" : "min-w-[84px]")}>
+            {isFrozen && (
+              <div className="flex min-w-[18px] justify-center opacity-40">
+                <Bullseye />
+              </div>
+            )}
+            <div className={isFrozen ? "min-w-[30px]" : "min-w-[84px]"}>
+              <WishlistSetValue cardid={card[ID]} />
+            </div>
+            {isFrozen && <div className="flex min-w-[12px] justify-center">-</div>}
           </div>
+
+          <div className="flex w-full items-center gap-2">
           <div className="whitespace-nowrap">Target</div>
           <div className="w-full">
             <WishlistSelectMethod cardid={card[ID]} />
           </div>
+          </div>
         </div>
-        <div className="flex items-center gap-2">
-          <div className="flex min-w-[84px] items-center text-lg">
+        <div className={twMerge("flex items-center", isFrozen ? "gap-0.5" : "gap-2")}>
+          <div className={twMerge("flex items-center", isFrozen ? "min-w-[62px]" : "min-w-[84px]")}>
             <div className="flex min-w-[18px] justify-center opacity-40">
               <CalculatorFill />
             </div>
-            <div className="mx-1 flex min-w-[40px] justify-center">
+            <div
+              className={twMerge(
+                "flex justify-center text-lg",
+                isFrozen ? "min-w-[30px]" : "mx-1 min-w-[40px]",
+              )}
+            >
               {softUsedMax + hardUsedTotal}
             </div>
-            <div className="flex min-w-[18px] justify-center">-</div>
+            <div className={twMerge("flex justify-center", isFrozen ? 'min-w-[12px]' : 'min-w-[18px]')}>-</div>
           </div>
-          <div>Total Used</div>
+          <div className="whitespace-nowrap">Total Used</div>
         </div>
       </div>
       {(softUsedMax > 0 || hardUsedTotal > 0) && (
