@@ -1,9 +1,9 @@
 # FIX
 - Not-newer filter with POD
 - Change in limited-mode when logging in
+- Playtest (discord)
 
 # FIX ON HOLD
-
 
 # FEATURES
 - Limited in TWD/PDA search

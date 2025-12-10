@@ -65,7 +65,9 @@ const ResultLayoutTextInventory = ({ card, setIsHotkeysDisabled }) => {
   return (
     <div className="flex flex-col gap-1.5">
       <div className="flex flex-col">
-        <div className={twMerge("flex items-center", isFrozen ? "gap-0.5" : "gap-2")}>
+        <div
+          className={twMerge("flex items-center min-h-[36px]", isFrozen ? "gap-0.5" : "gap-2")}
+        >
           <div className={twMerge("flex items-center", isFrozen ? "min-w-[62px]" : "min-w-[84px]")}>
             {isFrozen && (
               <div className="flex min-w-[18px] justify-center opacity-40">
@@ -88,7 +90,9 @@ const ResultLayoutTextInventory = ({ card, setIsHotkeysDisabled }) => {
             </div>
           </div>
         </div>
-        <div className={twMerge("flex items-center", isFrozen ? "gap-0.5" : "gap-2")}>
+        <div
+          className={twMerge("flex items-center", isFrozen ? "gap-0.5" : "gap-2")}
+        >
           <div className={twMerge("flex items-center", isFrozen ? "min-w-[62px]" : "min-w-[84px]")}>
             {isFrozen && (
               <div className="flex min-w-[18px] justify-center opacity-40">
@@ -102,13 +106,15 @@ const ResultLayoutTextInventory = ({ card, setIsHotkeysDisabled }) => {
           </div>
 
           <div className="flex w-full items-center gap-2">
-          <div className="whitespace-nowrap">Target</div>
-          <div className="w-full">
-            <WishlistSelectMethod cardid={card[ID]} />
-          </div>
+            <div className="whitespace-nowrap">Target</div>
+            <div className="w-full">
+              <WishlistSelectMethod cardid={card[ID]} />
+            </div>
           </div>
         </div>
-        <div className={twMerge("flex items-center", isFrozen ? "gap-0.5" : "gap-2")}>
+        <div
+          className={twMerge("flex items-center min-h-[36px]", isFrozen ? "gap-0.5" : "gap-2")}
+        >
           <div className={twMerge("flex items-center", isFrozen ? "min-w-[62px]" : "min-w-[84px]")}>
             <div className="flex min-w-[18px] justify-center opacity-40">
               <CalculatorFill />
@@ -121,7 +127,11 @@ const ResultLayoutTextInventory = ({ card, setIsHotkeysDisabled }) => {
             >
               {softUsedMax + hardUsedTotal}
             </div>
-            <div className={twMerge("flex justify-center", isFrozen ? 'min-w-[12px]' : 'min-w-[18px]')}>-</div>
+            <div
+              className={twMerge("flex justify-center", isFrozen ? "min-w-[12px]" : "min-w-[18px]")}
+            >
+              -
+            </div>
           </div>
           <div className="whitespace-nowrap">Total Used</div>
         </div>

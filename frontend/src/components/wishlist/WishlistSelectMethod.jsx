@@ -26,6 +26,7 @@ const WishlistSelectMethod = ({ cardid }) => {
 
   return (
     <Select
+      noMinHeight
       options={options}
       value={options.find((obj) => obj.value === value)}
       onChange={handleSelect}
