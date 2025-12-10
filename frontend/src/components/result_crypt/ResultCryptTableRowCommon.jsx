@@ -35,8 +35,8 @@ const ResultCryptTableRowCommon = ({
 
   return (
     <>
-      <td className="min-w-[28px] md:min-w-[35px]" onClick={onClick}>
-        <div className="flex items-center justify-center">
+      <td className="min-w-[32px] md:min-w-[35px]" onClick={onClick}>
+        <div className="flex items-center justify-center ps-0.5">
           <ResultCryptCapacity card={card} />
         </div>
       </td>

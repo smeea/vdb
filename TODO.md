@@ -1,7 +1,5 @@
 # FIX
 - Not-newer filter with POD
-- Change in limited-mode when logging in
-- Playtest (discord)
 
 # FIX ON HOLD
 
@@ -9,7 +7,6 @@
 - Limited in TWD/PDA search
 - TWD search with % V5-compatibility
 - Click on scan image to close modal on mobile (need refactor)
-- Inventory target modify from inventory table
 - Inventory target documentation
 - Inventory disciplines and wishlist info to xlsx export
 - Inventory filter by clan
