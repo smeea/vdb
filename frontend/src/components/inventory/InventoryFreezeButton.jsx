@@ -9,22 +9,22 @@ const InventoryFreezeButton = ({ isFrozen, className, roundedStyle, borderStyle 
   const handleClick = () => inventoryUpdate(IS_FROZEN, !isFrozen);
 
   return (
-      <ButtonIconed
-        variant={isDesktop ? "secondary" : "primary"}
-        onClick={handleClick}
-        title={`${isFrozen ? "Disabled" : "Enabled"} Editing`}
-        className={className}
-        roundedStyle={roundedStyle}
-        borderStyle={borderStyle}
-        icon={
-          isFrozen ? (
-            <LockFill width="18" height="23" viewBox="0 0 16 16" />
-          ) : (
-            <UnlockFill width="18" height="23" viewBox="0 0 16 16" />
-          )
-        }
-        text={`Edit ${isFrozen ? "disabled" : "enabled"}`}
-      />
+    <ButtonIconed
+      variant={isDesktop ? "secondary" : "primary"}
+      onClick={handleClick}
+      title={`${isFrozen ? "Disabled" : "Enabled"} Editing`}
+      className={className}
+      roundedStyle={roundedStyle}
+      borderStyle={borderStyle}
+      icon={
+        isFrozen ? (
+          <LockFill width="18" height="23" viewBox="0 0 16 16" />
+        ) : (
+          <UnlockFill width="18" height="23" viewBox="0 0 16 16" />
+        )
+      }
+      text={`Edit ${isFrozen ? "disabled" : "enabled"}`}
+    />
   );
 };
 

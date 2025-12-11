@@ -8,7 +8,6 @@
 - TWD search with % V5-compatibility
 - Click on scan image to close modal on mobile (need refactor)
 - Inventory target documentation
-- Inventory disciplines and wishlist info to xlsx export
 - Inventory filter by clan
 
 # FEATURES ON HOLD

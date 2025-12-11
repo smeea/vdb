@@ -16,6 +16,7 @@ import {
   DECKID,
   DECKS,
   DESCRIPTION,
+  DISCIPLINE,
   DISCIPLINES,
   GROUP,
   ID,
@@ -25,17 +26,24 @@ import {
   IS_BRANCHES,
   IS_PUBLIC,
   LIBRARY,
+  LOGIC,
   MASTER,
   NAME,
   NEW,
   POOL,
   PUBLIC_CHILD,
   PUBLIC_PARENT,
+  SECT,
   SUPERIOR,
+  SURPLUS,
+  SURPLUS_FIXED,
+  SURPLUS_USED,
   TAGS,
   TEXT,
   TIMESTAMP,
   TYPE,
+  VALUE,
+  WISHLIST,
   XLSX,
 } from "@/constants";
 import { deckStore } from "@/context";
@@ -337,28 +345,62 @@ export const exportXlsx = async (deck) => {
     if (c[ADV]?.[0]) name += " (ADV)";
     if (c[NEW]) name += ` (G${c[GROUP]})`;
 
-    return {
+    const value = {
       Quantity: card.q,
       Card: name,
       Disciplines: getTextDisciplines(c[DISCIPLINES]),
       Capacity: c[CAPACITY],
       Group: c[GROUP],
       Clan: c[CLAN],
+      Sect: c[SECT],
       Text: c[TEXT].replace(/ ?\[\w+\]/g, ""),
     };
+
+    if (card[WISHLIST]) {
+      value.Target = card[WISHLIST][VALUE] || "";
+      switch (card[WISHLIST][LOGIC]) {
+        case SURPLUS_USED:
+          value.Logic = "Surplus over used";
+          break;
+        case SURPLUS_FIXED:
+          value.Logic = "Surplus over used";
+          break;
+      }
+      value.Surplus = card[WISHLIST][SURPLUS] || "";
+    }
+
+    return value;
   });
 
   const library = Object.values(deck[LIBRARY]).map((card) => {
     const c = card.c;
-    return {
+
+    const value = {
       Quantity: card.q,
+      Discipline: c[DISCIPLINE],
       Card: c[NAME],
       Type: c[TYPE],
       Clan: c[CLAN],
+      Sect: c[SECT],
       "Blood Cost": c[BLOOD],
       "Pool Cost": c[POOL],
       Text: c[TEXT].replace(/ ?\[\w+\]/g, ""),
     };
+
+    if (card[WISHLIST]) {
+      value.Target = card[WISHLIST][VALUE] || "";
+      switch (card[WISHLIST][LOGIC]) {
+        case SURPLUS_USED:
+          value.Logic = "Surplus over used";
+          break;
+        case SURPLUS_FIXED:
+          value.Logic = "Surplus over used";
+          break;
+      }
+      value.Surplus = card[WISHLIST][SURPLUS] || "";
+    }
+
+    return value;
   });
 
   const cryptSheet = xlsx.utils.json_to_sheet(crypt);

@@ -1,6 +1,6 @@
-import CalculatorFill from "@icons/calculator-fill.svg?react";
-import Bullseye from "@icons/bullseye.svg?react";
 import ArchiveFill from "@icons/archive-fill.svg?react";
+import Bullseye from "@icons/bullseye.svg?react";
+import CalculatorFill from "@icons/calculator-fill.svg?react";
 import { twMerge } from "tailwind-merge";
 import { useSnapshot } from "valtio";
 import {
@@ -16,6 +16,7 @@ import {
   DECKS,
   HARD,
   ID,
+  IS_FROZEN,
   LIBRARY,
   LOGIC,
   SOFT,
@@ -23,7 +24,6 @@ import {
   SURPLUS_USED,
   VALUE,
   WISHLIST,
-  IS_FROZEN,
 } from "@/constants";
 import { deckStore, inventoryStore, usedStore } from "@/context";
 import { getHardTotal, getSoftMax } from "@/utils";
@@ -65,9 +65,7 @@ const ResultLayoutTextInventory = ({ card, setIsHotkeysDisabled }) => {
   return (
     <div className="flex flex-col gap-1.5">
       <div className="flex flex-col">
-        <div
-          className={twMerge("flex items-center min-h-[36px]", isFrozen ? "gap-0.5" : "gap-2")}
-        >
+        <div className={twMerge("flex min-h-[36px] items-center", isFrozen ? "gap-0.5" : "gap-2")}>
           <div className={twMerge("flex items-center", isFrozen ? "min-w-[62px]" : "min-w-[84px]")}>
             {isFrozen && (
               <div className="flex min-w-[18px] justify-center opacity-40">
@@ -90,9 +88,7 @@ const ResultLayoutTextInventory = ({ card, setIsHotkeysDisabled }) => {
             </div>
           </div>
         </div>
-        <div
-          className={twMerge("flex items-center", isFrozen ? "gap-0.5" : "gap-2")}
-        >
+        <div className={twMerge("flex items-center", isFrozen ? "gap-0.5" : "gap-2")}>
           <div className={twMerge("flex items-center", isFrozen ? "min-w-[62px]" : "min-w-[84px]")}>
             {isFrozen && (
               <div className="flex min-w-[18px] justify-center opacity-40">
@@ -112,9 +108,7 @@ const ResultLayoutTextInventory = ({ card, setIsHotkeysDisabled }) => {
             </div>
           </div>
         </div>
-        <div
-          className={twMerge("flex items-center min-h-[36px]", isFrozen ? "gap-0.5" : "gap-2")}
-        >
+        <div className={twMerge("flex min-h-[36px] items-center", isFrozen ? "gap-0.5" : "gap-2")}>
           <div className={twMerge("flex items-center", isFrozen ? "min-w-[62px]" : "min-w-[84px]")}>
             <div className="flex min-w-[18px] justify-center opacity-40">
               <CalculatorFill />

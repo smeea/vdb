@@ -8,19 +8,27 @@ import {
   CRYPT,
   DECKS,
   EN,
+  HARD,
+  ID,
   JOL,
   LACKEY,
   LIBRARY,
+  LOGIC,
   MASTER,
   NAME,
+  SOFT,
+  SURPLUS,
+  SURPLUS_USED,
   TEXT,
   TWD,
   TWD_HINTS,
+  VALUE,
+  WISHLIST,
   XLSX,
 } from "@/constants";
-import { deckStore, useApp } from "@/context";
+import { deckStore, inventoryStore, useApp, usedStore } from "@/context";
 import { deckServices } from "@/services";
-import { exportDeck } from "@/utils";
+import { deepClone, exportDeck, getHardTotal, getSoftMax } from "@/utils";
 
 const ExportDropdown = ({ action, title, format }) => {
   const formats = {
@@ -50,6 +58,8 @@ const DeckExportButton = ({ deck, inMissing, inInventory }) => {
     lang,
   } = useApp();
   const decks = useSnapshot(deckStore)[DECKS];
+  const { [CRYPT]: usedCrypt, [LIBRARY]: usedLibrary } = useSnapshot(usedStore);
+  const { [WISHLIST]: wishlist } = useSnapshot(inventoryStore);
 
   const copyDeck = (format) => {
     const exportText = exportDeck(deck, format);
@@ -66,7 +76,30 @@ const DeckExportButton = ({ deck, inMissing, inInventory }) => {
     let file;
 
     if (format === XLSX) {
-      const data = await deckServices.exportXlsx(deck);
+      const d = deepClone(deck);
+      if (inInventory) {
+        Object.values({ ...d[CRYPT], ...d[LIBRARY] }).forEach((card) => {
+          const usedTarget = card.c[ID] > 200000 ? usedCrypt : usedLibrary;
+          const softUsedMax = getSoftMax(usedTarget[SOFT][card.c[ID]]);
+          const hardUsedTotal = getHardTotal(usedTarget[HARD][card.c[ID]]);
+          const wishlistLogic = wishlist?.[card.c[ID]]?.[LOGIC];
+          const value = wishlist?.[card.c[ID]]?.[VALUE];
+          const surplus = wishlistLogic
+            ? wishlistLogic === SURPLUS_USED
+              ? card.q - (softUsedMax + hardUsedTotal + (value || 0))
+              : card.q - (value || 0)
+            : card.q - (softUsedMax + hardUsedTotal);
+
+          const target = card.c[ID] > 200000 ? d[CRYPT] : d[LIBRARY];
+          target[card.c[ID]][WISHLIST] = {
+            [VALUE]: value,
+            [LOGIC]: wishlistLogic,
+            [SURPLUS]: surplus,
+          };
+        });
+      }
+
+      const data = await deckServices.exportXlsx(d);
       file = new File([data], `${deckName}.xlsx`, {
         type: "application/octet-stream",
       });
