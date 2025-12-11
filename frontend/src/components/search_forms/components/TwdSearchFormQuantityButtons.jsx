@@ -50,7 +50,7 @@ const TwdSearchFormQuantityButtons = ({ value, form, id }) => {
       >
         {getIconAndText(value[id].m)[0]}
       </Button>
-      <ValueSetter value={value[id].q} handleChange={handleChange} />
+      <ValueSetter isEditable value={value[id].q} handleChange={handleChange} />
     </div>
   );
 };
