@@ -1,5 +1,16 @@
 [
   {
+    "version": "2025-12-13",
+    "changes": [
+      "Add Lapos Test Match event to TDA",
+      "Rework inventory block in card info window (main: now allow changes from there)",
+      "Add Surplus Cards to Inventory menu, which is similar to Missing, but shows extra cards above your target (if it is set) or usage in decks",
+      "Add inventory target/surplus information to inventory export",
+      "Exclude inventory information from card name mouse hover popup (this information is still available when hovering over card q-ty)",
+      "Small other fixes and improvements"
+    ]
+  },
+  {
     "version": "2025-11-27",
     "changes": [
       "Inventory Target logic will now changes from Disabled to Fixed when changing q-ty from 0 to something",
