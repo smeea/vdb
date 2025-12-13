@@ -56,6 +56,7 @@ import {
   OR_OLDER,
   PATH,
   PLAYTEST,
+  POD,
   POOL,
   PRECON,
   PRIMOGEN,
@@ -472,6 +473,9 @@ const missingSet = (filter, card) => {
       if ((print === ONLY || print === FIRST) && dates.min >= BCP_START) return true;
       return dates.max >= BCP_START;
     }
+
+    if (age === NOT_NEWER && POD in card[SET]) return false;
+
     const setDate = setsAndPrecons[set][DATE] ?? FUTURE;
 
     switch (age) {
@@ -612,7 +616,7 @@ const missingCostCheck = (logic, filter, cardCost) => {
 };
 
 const cardDates = (card, addPromo = false) => {
-  const cardSets = Object.keys(card[SET]).filter((set) => set !== PROMO && set !== PLAYTEST);
+  const cardSets = Object.keys(card[SET]).filter((set) => ![PROMO, PLAYTEST].includes(set));
   const setsDates = cardSets
     .map((key) => setsAndPrecons[key][DATE])
     .filter((date) => date)
