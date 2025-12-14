@@ -29,6 +29,7 @@ const InventoryCardQuantity = ({
         isManual={compact}
         value={card.q}
         withNote={card.t}
+        inInventory
       />
     </div>
   );
