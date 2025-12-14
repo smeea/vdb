@@ -13,6 +13,7 @@ const ValueSetter = ({
   newFocus,
   overlay,
   inDeck,
+  inInventory,
   withNote,
 }) => {
   const { isMobile } = useApp();
@@ -66,7 +67,7 @@ const ValueSetter = ({
               <ButtonCardChange onClick={handleQuantityMinus} isLink isNegative />
               <div className={twMerge("mx-1 flex w-full justify-center", colorStyle)}>
                 {withNote && <div className="min-w-[4px]" />}
-                {state || <>&nbsp;&nbsp;</>}
+                {(inInventory || inDeck) && state === 0 ? <>&nbsp;&nbsp;</> : state}
                 {withNote && <div className="max-w-[4px] text-xs">*</div>}
               </div>
               <ButtonCardChange onClick={handleQuantityPlus} isLink />
@@ -104,7 +105,7 @@ const ValueSetter = ({
                   ) : (
                     <>
                       {withNote && <div className="min-w-[4px]" />}
-                      {inDeck && state === 0 ? <>&nbsp;&nbsp;</> : state}
+                      {(inInventory || inDeck) && state === 0 ? <>&nbsp;&nbsp;</> : state}
                       {withNote && <div className="max-w-[4px] text-xs">*</div>}
                     </>
                   )}
@@ -117,7 +118,7 @@ const ValueSetter = ({
       ) : (
         <ConditionalTooltip placement="bottom" overlay={overlay} disabled={!overlay}>
           <div className={twMerge("m-1 flex items-center justify-center text-lg", colorStyle)}>
-            {state || <>&nbsp;&nbsp;</>}
+            {(inInventory || inDeck) && state === 0 ? <>&nbsp;&nbsp;</> : state}
           </div>
         </ConditionalTooltip>
       )}

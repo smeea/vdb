@@ -1,4 +1,5 @@
 # FIX
+- Surplus on hover in Surplus cards modal
 
 # FIX ON HOLD
 
