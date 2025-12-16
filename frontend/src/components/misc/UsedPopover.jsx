@@ -13,6 +13,7 @@ import {
   LOGIC,
   SOFT,
   SURPLUS_USED,
+  SURPLUS_FIXED,
   VALUE,
   WISHLIST,
 } from "@/constants";
@@ -36,10 +37,13 @@ const UsedPopover = ({ cardid }) => {
   if (!inInventory) inInventory = 0;
 
   const wishlistLogic = wishlist?.[cardid]?.[LOGIC];
+
   const surplus =
     wishlistLogic === SURPLUS_USED
       ? inInventory - (softUsedMax + hardUsedTotal + (wishlist[cardid]?.[VALUE] || 0))
-      : inInventory - (wishlist[cardid]?.[VALUE] || 0);
+      : wishlistLogic === SURPLUS_FIXED
+        ? inInventory - (wishlist[cardid]?.[VALUE] || 0)
+        : inInventory - (softUsedMax + hardUsedTotal);
 
   const colorStyle =
     surplus > 0
