@@ -29,6 +29,7 @@ with app.app_context():
                 )
             )
 
+        print("")
         print(f"Username: '{user.username}'")
         print(f"Email: '{user.email}'")
         print(f"Inventory: '{len(user.inventory)}'")
