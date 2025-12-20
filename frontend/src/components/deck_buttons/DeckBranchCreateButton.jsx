@@ -2,12 +2,15 @@ import { Menu } from "@headlessui/react";
 import NodePlusFill from "@icons/node-plus-fill.svg?react";
 import { useState } from "react";
 import { useNavigate } from "react-router";
+import { useSnapshot } from "valtio";
 import { DeckSelectAdvModal, MenuButton, MenuItem, MenuItems } from "@/components";
-import { useApp } from "@/context";
+import { DECKS } from "@/constants";
+import { deckStore, useApp } from "@/context";
 import { deckServices } from "@/services";
 
 const DeckBranchCreateButton = ({ deck }) => {
   const { isDesktop, setShowFloatingButtons, setShowMenuButtons } = useApp();
+  const decks = useSnapshot(deckStore)[DECKS];
   const navigate = useNavigate();
   const [showSelect, setShowSelect] = useState();
 
@@ -39,7 +42,9 @@ const DeckBranchCreateButton = ({ deck }) => {
           <MenuItem onClick={handleShowAdv}>Select From Decks</MenuItem>
         </MenuItems>
       </Menu>
-      {showSelect && <DeckSelectAdvModal setShow={setShowSelect} onClick={handleClick} short />}
+      {showSelect && (
+        <DeckSelectAdvModal decks={decks} setShow={setShowSelect} onClick={handleClick} short />
+      )}
     </>
   );
 };

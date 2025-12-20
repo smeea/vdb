@@ -12,8 +12,8 @@ import {
   LIBRARY,
   LOGIC,
   SOFT,
-  SURPLUS_USED,
   SURPLUS_FIXED,
+  SURPLUS_USED,
   VALUE,
   WISHLIST,
 } from "@/constants";
