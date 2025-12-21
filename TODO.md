@@ -1,5 +1,4 @@
 # FIX
-- Close set modal not to show add c/l buttons on mobile
 
 # FIX ON HOLD
 

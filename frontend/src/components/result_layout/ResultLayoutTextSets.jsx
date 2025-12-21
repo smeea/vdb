@@ -52,7 +52,7 @@ const PopoverSet = ({ card, set }) => {
 };
 
 const ResultLayoutTextSets = ({ card }) => {
-  const { setShowFloatingButtons, playtestMode } = useApp();
+  const { playtestMode } = useApp();
   const byDate = (a, b) => setsAndPrecons[a][DATE] > setsAndPrecons[b][DATE];
 
   return (
@@ -67,8 +67,6 @@ const ResultLayoutTextSets = ({ card }) => {
           return (
             <div className="inline-block whitespace-nowrap" key={set}>
               <ConditionalTooltipOrModal
-                onClick={() => setShowFloatingButtons(false)}
-                onClose={() => setShowFloatingButtons(true)}
                 overlay={<PopoverSet card={card} set={set} />}
                 placement="bottom"
                 size="lg"
