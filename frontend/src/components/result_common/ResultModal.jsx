@@ -18,10 +18,10 @@ const ResultModal = ({ card, handleModalCardChange, handleClose }) => {
   const handleKeyDown = (event) => {
     switch (event.key) {
       case "ArrowLeft":
-        handleModalCardMinus;
+        handleModalCardMinus();
         break;
       case "ArrowRight":
-        handleModalCardPlus;
+        handleModalCardPlus();
         break;
       default:
         break;
