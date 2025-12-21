@@ -1407,6 +1407,8 @@
   - Your Goth Band cannot move a counter from a card you control. [RTR 19980707]
 100845|Govern the Unaligned:
   - '[DOM] You do not reveal the target vampire. [LSJ 20010108]'
+100847|Gran Madre di Dio, Italy:
+  - Is a unique equipment while not in play. [RTR 20111202] [LSJ 20020726]
 100849|Grandest Trick, The:
   - The vampire as an ally has no "starting life" trait so {Vagabond Mystic} cannot give him life. [LSJ 20011214-1]
   - If the vampire has an ability to play Discipline-requiring cards "as if" he has that Discipline ({Ian Forestal}, for example),
@@ -2494,6 +2496,8 @@
     (eg. {Writ of Acceptance}). [LSJ 20100811]
   - Does not make the action an action that "makes this vampire anarch" (eg. {CrimethInc.} cannot be played). [ANK 20180125]
   - The burn option cannot be used if you have a non-titled, non-Anarch vampire in torpor. [LSJ 20091204]
+  - If the action required another (non-Anarch) sect and is not blocked, the action fizzles (is successful but has no effect).
+    [ANK 20210124]
 101579|Redistribution:
   - Cannot target an uncontrolled Blood Brother. [LSJ 20061109]
 101581|Reform Body:
@@ -4744,6 +4748,7 @@ G00127|Set range:
 G00128|Equip or employ another card from hand:
   - The equipment or retainer must be announced by name, and in hand, when the card or effect is declared (before the card,
     if any, is replaced), but need not to be shown until the effect resolves. [LSJ 20100130] [ANK 20180925-2] [LSJ 19991207]
+  - Cannot select cards that are "playable as if in hand" (e.g. from {The Erciyes Fragments}) [LSJ 20050913]
 G00129|End of round effects that care about the range:
   - If the round ends before range is determined (e.g. {Alpha Glint}) Range is assumed to be at default (usually close, unless
     e.g. [dai]{Fear of the Void Below} was played), unless range was set by another effect (e.g. {Sniper Rifle}, [obe]{Neutral
@@ -4813,3 +4818,6 @@ G00145|Continue combat:
   - Cannot be played after [CEL] {Psyche!}. When played before, combat continues and Psyche! can only be played at the end
     of it. [ANK 20191219]
   - Must be played after presses, can be played if the round ends prematurely. [RTR 20030519]
+G00146|Vote reduction:
+  - A vampire can have net negative votes, but net negative votes do not subtract from the total when votes are tallied. [ANK
+    20251125] [LSJ 20050221-2]

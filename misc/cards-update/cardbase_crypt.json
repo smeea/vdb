@@ -11857,6 +11857,12 @@
                 }
             },
             {
+                "text":"Cannot select cards that are \"playable as if in hand\" (e.g. from {The Erciyes Fragments})",
+                "refs":{
+                    "LSJ 20050913":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GpSAQnN6GnY/m/6EqRGDT3u08J"
+                }
+            },
+            {
                 "text":"Requirements apply but do not count as requirements for the action (eg. you cannot use CrimethInc. if the card requires an Anarch).",
                 "refs":{
                     "LSJ 20100725":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9d1zMZfsfNo/m/l3fbDtbr9xwJ",
@@ -20469,6 +20475,13 @@
                 "refs":{
                     "PIB 20150713":"https://www.vekn.net/forum/rules-questions/72007-fabrizia-contreraz?start=6#72030"
                 }
+            },
+            {
+                "text":"A vampire can have net negative votes, but net negative votes do not subtract from the total when votes are tallied.",
+                "refs":{
+                    "ANK 20251125":"https://www.vekn.net/forum/rules-questions/82686-negative-values#115870",
+                    "LSJ 20050221-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/XJqubVDYzxQ/m/e9dBxVQGhUMJ"
+                }
             }
         ],
         "sect":"Sabbat",
@@ -20801,6 +20814,12 @@
                     "LSJ 20100130":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/X8Uu7Sk56P4/m/twUvR4ZnBBkJ",
                     "ANK 20180925-2":"https://www.vekn.net/forum/rules-questions/77029-order-of-draw-and-replace-for-concealed-weapon-under-infernal-pursuit?start=6#90757",
                     "LSJ 19991207":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aQaOTYwC-fg/m/vdyo09QZoicJ"
+                }
+            },
+            {
+                "text":"Cannot select cards that are \"playable as if in hand\" (e.g. from {The Erciyes Fragments})",
+                "refs":{
+                    "LSJ 20050913":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GpSAQnN6GnY/m/6EqRGDT3u08J"
                 }
             },
             {
@@ -65901,6 +65920,12 @@
                     "LSJ 20100130":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/X8Uu7Sk56P4/m/twUvR4ZnBBkJ",
                     "ANK 20180925-2":"https://www.vekn.net/forum/rules-questions/77029-order-of-draw-and-replace-for-concealed-weapon-under-infernal-pursuit?start=6#90757",
                     "LSJ 19991207":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aQaOTYwC-fg/m/vdyo09QZoicJ"
+                }
+            },
+            {
+                "text":"Cannot select cards that are \"playable as if in hand\" (e.g. from {The Erciyes Fragments})",
+                "refs":{
+                    "LSJ 20050913":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GpSAQnN6GnY/m/6EqRGDT3u08J"
                 }
             },
             {

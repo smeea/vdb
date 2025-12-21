@@ -593,7 +593,15 @@
         "path":"Power and the Inner Voice",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"A vampire can have net negative votes, but net negative votes do not subtract from the total when votes are tallied.",
+                "refs":{
+                    "ANK 20251125":"https://www.vekn.net/forum/rules-questions/82686-negative-values#115870",
+                    "LSJ 20050221-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/XJqubVDYzxQ/m/e9dBxVQGhUMJ"
+                }
+            }
+        ],
         "set":{
             "SV5":{
                 "PPower":"3"
@@ -3610,6 +3618,12 @@
                     "LSJ 20100130":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/X8Uu7Sk56P4/m/twUvR4ZnBBkJ",
                     "ANK 20180925-2":"https://www.vekn.net/forum/rules-questions/77029-order-of-draw-and-replace-for-concealed-weapon-under-infernal-pursuit?start=6#90757",
                     "LSJ 19991207":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aQaOTYwC-fg/m/vdyo09QZoicJ"
+                }
+            },
+            {
+                "text":"Cannot select cards that are \"playable as if in hand\" (e.g. from {The Erciyes Fragments})",
+                "refs":{
+                    "LSJ 20050913":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GpSAQnN6GnY/m/6EqRGDT3u08J"
                 }
             },
             {
@@ -13618,7 +13632,15 @@
         "path":"",
         "pool":0,
         "requirement":"justicar,inner circle,camarilla",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"A vampire can have net negative votes, but net negative votes do not subtract from the total when votes are tallied.",
+                "refs":{
+                    "ANK 20251125":"https://www.vekn.net/forum/rules-questions/82686-negative-values#115870",
+                    "LSJ 20050221-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/XJqubVDYzxQ/m/e9dBxVQGhUMJ"
+                }
+            }
+        ],
         "set":{
             "30th":{
                 "":"2"
@@ -16516,6 +16538,12 @@
                 }
             },
             {
+                "text":"[tha] Cannot select cards that are \"playable as if in hand\" (e.g. from {The Erciyes Fragments})",
+                "refs":{
+                    "LSJ 20050913":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GpSAQnN6GnY/m/6EqRGDT3u08J"
+                }
+            },
+            {
                 "text":"Does not prevent the acting vampire from playing the equipment/retainer/ally directly this turn if he unlocks (not the same action).",
                 "refs":{
                     "ANK 20180817":"https://www.vekn.net/forum/rules-questions/76933-cock-robin-jack-of-both-sides#90064"
@@ -18772,6 +18800,12 @@
                 }
             },
             {
+                "text":"Cannot select cards that are \"playable as if in hand\" (e.g. from {The Erciyes Fragments})",
+                "refs":{
+                    "LSJ 20050913":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GpSAQnN6GnY/m/6EqRGDT3u08J"
+                }
+            },
+            {
                 "text":"Requirements apply but do not count as requirements for the action (eg. you cannot use CrimethInc. if the card requires an Anarch).",
                 "refs":{
                     "LSJ 20100725":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9d1zMZfsfNo/m/l3fbDtbr9xwJ",
@@ -19134,6 +19168,13 @@
                 "refs":{
                     "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
                     "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+                }
+            },
+            {
+                "text":"A vampire can have net negative votes, but net negative votes do not subtract from the total when votes are tallied.",
+                "refs":{
+                    "ANK 20251125":"https://www.vekn.net/forum/rules-questions/82686-negative-values#115870",
+                    "LSJ 20050221-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/XJqubVDYzxQ/m/e9dBxVQGhUMJ"
                 }
             }
         ],
@@ -26215,6 +26256,12 @@
                     "LSJ 20100130":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/X8Uu7Sk56P4/m/twUvR4ZnBBkJ",
                     "ANK 20180925-2":"https://www.vekn.net/forum/rules-questions/77029-order-of-draw-and-replace-for-concealed-weapon-under-infernal-pursuit?start=6#90757",
                     "LSJ 19991207":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aQaOTYwC-fg/m/vdyo09QZoicJ"
+                }
+            },
+            {
+                "text":"Cannot select cards that are \"playable as if in hand\" (e.g. from {The Erciyes Fragments})",
+                "refs":{
+                    "LSJ 20050913":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GpSAQnN6GnY/m/6EqRGDT3u08J"
                 }
             },
             {
@@ -40660,6 +40707,13 @@
         "requirement":"",
         "rulings":[
             {
+                "text":"Is a unique equipment while not in play.",
+                "refs":{
+                    "RTR 20111202":"https://www.vekn.net/forum/rules-questions/16769-rules-team-rulings-02-dec-11#16769",
+                    "LSJ 20020726":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/1tTqTZp3bi0/m/vEmfGDZKpn4J"
+                }
+            },
+            {
                 "text":"May be put on any minion if the controller changes. If the new controller has no minions, it is burned.",
                 "refs":{
                     "RTR 19960112":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d3n3StNS7no/m/k2NmZFUl9fAJ"
@@ -48789,6 +48843,12 @@
                     "LSJ 20100130":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/X8Uu7Sk56P4/m/twUvR4ZnBBkJ",
                     "ANK 20180925-2":"https://www.vekn.net/forum/rules-questions/77029-order-of-draw-and-replace-for-concealed-weapon-under-infernal-pursuit?start=6#90757",
                     "LSJ 19991207":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aQaOTYwC-fg/m/vdyo09QZoicJ"
+                }
+            },
+            {
+                "text":"Cannot select cards that are \"playable as if in hand\" (e.g. from {The Erciyes Fragments})",
+                "refs":{
+                    "LSJ 20050913":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GpSAQnN6GnY/m/6EqRGDT3u08J"
                 }
             },
             {
@@ -61318,7 +61378,15 @@
         "path":"",
         "pool":3,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"A vampire can have net negative votes, but net negative votes do not subtract from the total when votes are tallied.",
+                "refs":{
+                    "ANK 20251125":"https://www.vekn.net/forum/rules-questions/82686-negative-values#115870",
+                    "LSJ 20050221-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/XJqubVDYzxQ/m/e9dBxVQGhUMJ"
+                }
+            }
+        ],
         "set":{
             "KoTR":{
                 "A":"1"
@@ -64663,6 +64731,12 @@
                     "LSJ 20100130":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/X8Uu7Sk56P4/m/twUvR4ZnBBkJ",
                     "ANK 20180925-2":"https://www.vekn.net/forum/rules-questions/77029-order-of-draw-and-replace-for-concealed-weapon-under-infernal-pursuit?start=6#90757",
                     "LSJ 19991207":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aQaOTYwC-fg/m/vdyo09QZoicJ"
+                }
+            },
+            {
+                "text":"[ani] Cannot select cards that are \"playable as if in hand\" (e.g. from {The Erciyes Fragments})",
+                "refs":{
+                    "LSJ 20050913":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GpSAQnN6GnY/m/6EqRGDT3u08J"
                 }
             },
             {
@@ -75248,6 +75322,12 @@
                 "text":"The burn option cannot be used if you have a non-titled, non-Anarch vampire in torpor.",
                 "refs":{
                     "LSJ 20091204":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JBdmMh1udN8/m/1bdYBRBxCAEJ"
+                }
+            },
+            {
+                "text":"If the action required another (non-Anarch) sect and is not blocked, the action fizzles (is successful but has no effect).",
+                "refs":{
+                    "ANK 20210124":"https://www.vekn.net/forum/rules-questions/79001-the-question-of-the-month-action-fizzles#101492"
                 }
             }
         ],
