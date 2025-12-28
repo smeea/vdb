@@ -487,6 +487,7 @@
     cards) about a previously revealed vampire's position, you have to take a bet. In case multiple copies of the same vampire
     are subject to different effects, the controller must track them, but they can do it secretly (eg. {Banishment} was used
     on one that would benefit from {The Rack} if controlled again). [LSJ 20040728]
+  - A brainwashed advanced vampire can still merge with their base version in play. [LSJ 20030422]
 100250|Breath of the Dragon:
   - Damage done to the striking minion is environmental. [LSJ 19970801]
 100253|Brick Laying:
@@ -836,6 +837,9 @@
 100501|Dawn Operation:
   - Only applies to damage done in combat, not damage done after combat like {Catatonic Fear}. [LSJ 20020314] [PIB 20130319]
   - Applies to environmental and retainer damage too. [PIB 20150603-1]
+100502|Day Operation:
+  - When played together with post-resolution, aggravated damage effects (e.g. {Force of Will}), the acting Methuselah can
+    resolve these effects in any order. [LSJ 20040120-2]
 100503|Dead Hand:
   - Additional damage inherits all of the properties of the base damage. [TOM 19960225]
 100510|Death Seeker:

@@ -2546,6 +2546,12 @@
             "refs":{
                 "LSJ 20040728":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/LlqCB6LN64g/m/SUqRp4DoJIEJ"
             }
+        },
+        {
+            "text":"A brainwashed advanced vampire can still merge with their base version in play.",
+            "refs":{
+                "LSJ 20030422":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/b88kmSp3YS0/m/sL42lxCpT5QJ"
+            }
         }
     ],
     "100250":[
@@ -4413,6 +4419,26 @@
             "text":"Applies to environmental and retainer damage too.",
             "refs":{
                 "PIB 20150603-1":"https://www.vekn.net/forum/rules-questions/71468-dawn-operation-and-environmental-damage#71470"
+            }
+        }
+    ],
+    "100502":[
+        {
+            "text":"When played together with post-resolution, aggravated damage effects (e.g. {Force of Will}), the acting Methuselah can resolve these effects in any order.",
+            "refs":{
+                "LSJ 20040120-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0ginNDVuJvg/m/0AMPap62rvEJ"
+            }
+        },
+        {
+            "text":"Must be played (as well as other \"as the action is announced\" action modifiers) before action modifiers that are not explicitly played \"as the action is announced\" (e.g., {Conditioning}).",
+            "refs":{
+                "ANK 20190425":"https://www.vekn.net/forum/rules-questions/77581-action-modifiers-played-at-beginning-and-end-of-an-action#94652"
+            }
+        },
+        {
+            "text":"Replace the action card (if any) before playing it.",
+            "refs":{
+                "ANK 20181208":"https://www.vekn.net/forum/rules-questions/77210-touch-of-clarity-and-fast-reaction-is-posible-to-play-with-locked-minion?start=6#92308"
             }
         }
     ],
@@ -30807,20 +30833,6 @@
             "text":"Cannot be played on an opponent's weapon.",
             "refs":{
                 "LSJ 20020425":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/_Rh8P34zTZo/m/u-WavRjp5uYJ"
-            }
-        }
-    ],
-    "100502":[
-        {
-            "text":"Must be played (as well as other \"as the action is announced\" action modifiers) before action modifiers that are not explicitly played \"as the action is announced\" (e.g., {Conditioning}).",
-            "refs":{
-                "ANK 20190425":"https://www.vekn.net/forum/rules-questions/77581-action-modifiers-played-at-beginning-and-end-of-an-action#94652"
-            }
-        },
-        {
-            "text":"Replace the action card (if any) before playing it.",
-            "refs":{
-                "ANK 20181208":"https://www.vekn.net/forum/rules-questions/77210-touch-of-clarity-and-fast-reaction-is-posible-to-play-with-locked-minion?start=6#92308"
             }
         }
     ],
