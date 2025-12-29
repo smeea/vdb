@@ -11,6 +11,7 @@ import {
   ResultCryptCapacity,
   ResultLibraryCost,
   ResultModal,
+  ButtonFloat,
 } from "@/components";
 import { BLOOD, CAPACITY, POOL, X } from "@/constants";
 import { useApp } from "@/context";
@@ -62,6 +63,11 @@ const DeckDrawModal = ({
     handleModalCardChange,
     handleModalCardClose,
   } = useModalCardController(burnedCrypt, burnedLibrary);
+
+  const handleRedrawAll = () => {
+    handleReDrawCrypt()
+    handleReDrawLibrary()
+  }
 
   return (
     <Modal size="lg" handleClose={handleClose} title="Deck Draw" noPadding={isMobile}>
@@ -214,6 +220,11 @@ const DeckDrawModal = ({
           </FlexGapped>
         )}
       </FlexGapped>
+      {isMobile && !shouldShowModal &&
+       <ButtonFloat position="middle" onClick={handleRedrawAll} >
+        <ArrowRepeat width="40" height="40" viewBox="0 0 16 16"/>
+      </ButtonFloat>
+      }
       {shouldShowModal && (
         <ResultModal
           card={currentModalCard}
