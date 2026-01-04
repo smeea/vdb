@@ -11,6 +11,7 @@ const InventoryCardQuantity = ({
   surplus,
   compact,
   newFocus,
+  isEmptyZero
 }) => {
   const isFrozen = useSnapshot(inventoryStore)[IS_FROZEN];
   const isEditable = forceNonEditable ? false : !isFrozen;
@@ -29,7 +30,7 @@ const InventoryCardQuantity = ({
         isManual={compact}
         value={card.q}
         withNote={card.t}
-        inInventory
+        isEmptyZero={isEmptyZero}
       />
     </div>
   );

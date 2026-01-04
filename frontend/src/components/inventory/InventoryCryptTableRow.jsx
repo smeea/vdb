@@ -82,6 +82,7 @@ const InventoryCryptTableRow = ({
           surplus={surplus}
           forceNonEditable={forceNonEditable}
           noColor={inMissing}
+          isEmptyZero
         />
       </div>
       {!forceNonEditable && (

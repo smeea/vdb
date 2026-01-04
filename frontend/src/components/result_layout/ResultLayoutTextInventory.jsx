@@ -100,7 +100,6 @@ const ResultLayoutTextInventory = ({ card, setIsHotkeysDisabled }) => {
             </div>
             {isFrozen && <div className="flex min-w-[12px] justify-center">-</div>}
           </div>
-
           <div className="flex w-full items-center gap-2">
             <div className="whitespace-nowrap">Target</div>
             <div className="w-full">

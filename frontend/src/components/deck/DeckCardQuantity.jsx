@@ -68,7 +68,7 @@ const DeckCardQuantity = ({
       handleChange={handleChange}
       isEditable={isEditable}
       value={q}
-      inDeck
+      isEmptyZero
     />
   );
 };

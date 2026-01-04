@@ -85,6 +85,7 @@ const InventoryLibraryTableRow = ({
           newFocus={newFocus}
           forceNonEditable={forceNonEditable}
           noColor={inMissing}
+          isEmptyZero
         />
       </div>
       {!forceNonEditable && (
