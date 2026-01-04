@@ -1965,7 +1965,8 @@
 101160|Manstopper Rounds:
   - Additional damage inherits all of the properties of the base damage. [TOM 19960225]
 101169|Marked Path:
-  - Can be burned during an action that targets only part of the Methuselah that were targeted by the first action. [LSJ 20100527]
+  - If the set of Methuselahs includes the controller of the vampire this card is on, the controller of the vampire is not
+    considered as part of that set of Methuselahs. [LSJ 20100527]
 101174|Martinelli's Ring:
   - The bearer cannot use [ser] or [dem] cards on themselves (eg. {Mummify}). [LSJ 20080212]
 101175|Martyr's Resilience:
@@ -3539,8 +3540,8 @@
 102273|Loup:
   - Can be used even if the stealth is not currently needed. [LSJ 20011214-2]
 102280|Shadow Cast:
-  - If the set of Methuselahs includes the controller of the vampire this card is on, the controller of the vampire is not
-    considered as part of that set of Methuselahs. [LSJ 20100527]
+  - '[OBL] If the set of Methuselahs includes the controller of the vampire this card is on, the controller of the vampire
+    is not considered as part of that set of Methuselahs. [LSJ 20100527]'
 102283|Touch of Oblivion:
   - '[OBL] an opposing vampire is wounded (if they play {Undying Tenacity}, they go to torpor after combat). [LSJ 20090622-2]'
 102293|Bone Shambler:
@@ -4458,7 +4459,7 @@ G00029|Retainer that strike:
 G00030|Vote playable once per game:
   - Burning the card for a vote is not considered playing it. [ANK 20210309-2]
 G00032|Cost X:
-  - X can be zero. [LSJ 20030502]
+  - X can be zero, but not less than zero. [LSJ 20030502]
 G00033|Prevent non-aggravated:
   - Cannot be used to prevent aggravated damage, even if the minion treats them as normal damage (eg. {Skin of Night}). [LSJ
     20040812-2] [PIB 20130327]
@@ -4604,6 +4605,9 @@ G00085|Meets missing disciplines:
     Discipline(s). [LSJ 19980303]
   - Multiple similar effects (e.g. two {Infernal Familiar}, or {Ian Forestal} with an {Infernal Familiar}) cannot be used
     to meet the requirements of a multi-Discipline card that the minion is missing one or more Disciplines to play. [LSJ 20020218]
+  - While using their ability to meet a discipline requirement, they also meet that requirement for any other cards associated
+    with the original effect (e.g. meeting the [ani] requirement for {Pack Alpha} or {Muricia's Call} also meets the [ani]
+    requirement for the {Raven Spy} employed by that effect). [LSJ 20080205-2] [LSJ 20060417]
 G00086|Multi-discipline:
   - When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap,
     the card is considered to require any and/or all Disciplines listed on it. [LSJ 20011204-3] [PIB 20130704]
@@ -4679,7 +4683,7 @@ G00107|Ability active in torpor:
 G00108|Can steal minion during an action:
   - If used to steal a vampire in combat, combat ends. Any damage yet to resolve still resolves before the change of control.
     [LSJ 20020618]
-  - If used to steal a minion attempting to block, the block attempt fails. [LSJ 20080326]
+  - If used to steal a minion attempting to block, if the block attempt becomes illegal, the block attempt fails. [LSJ 20080326]
   - If used to steal a minion during an action, Methuselahs who declined to block are still declining to block. The new controller,
     if he is eligible and has not declined to block yet, can block with the stolen minion even if the previous controller
     has declined to block. [PIB 20150501]
@@ -4825,3 +4829,6 @@ G00145|Continue combat:
 G00146|Vote reduction:
   - A vampire can have net negative votes, but net negative votes do not subtract from the total when votes are tallied. [ANK
     20251125] [LSJ 20050221-2]
+G00147|Fail an action as announced:
+  - The ability to fail an action must be used before action modifiers or reactions that are not explicitly played "as the
+    action is announced". [ANK 20190425]
