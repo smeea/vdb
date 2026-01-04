@@ -8,7 +8,6 @@
 - Click on scan image to close modal on mobile (need refactor)
 - Inventory target documentation
 - Inventory filter by clan
-- Lock deck to menu
 
 # FEATURES ON HOLD
 - Draft Cube support -> when draft cube info is available

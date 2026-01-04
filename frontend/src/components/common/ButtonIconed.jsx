@@ -10,6 +10,7 @@ const ButtonIconed = ({
   title,
   type,
   variant = "primary",
+  roundedStyle,
   borderStyle,
   noOutline,
 }) => {
@@ -31,6 +32,7 @@ const ButtonIconed = ({
       variant={variant}
       type={type}
       borderStyle={borderStyle}
+      roundedStyle={roundedStyle}
       noOutline={noOutline}
     >
       <div className="flex items-center justify-center gap-2">
