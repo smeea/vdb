@@ -40,7 +40,7 @@ const PlaytestReportLanguageSelect = () => {
       forceOneLine
     >
       <div className="flex items-center gap-2">
-        <Flag value={playtestProfile?.[LANG]} noTitle />
+        {playtestProfile[LANG] && <Flag value={playtestProfile[LANG]} noTitle />}
         {languages[playtestProfile?.[LANG]]}
       </div>
     </ListEntry>
