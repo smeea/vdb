@@ -15,5 +15,6 @@
 
 # TECH IMPROVEMENTS
 - Refactor with useEffectEvent https://react.dev/learn/separating-events-from-effects#extracting-non-reactive-logic-out-of-effects
+- Refactor debounce with Tanstack Pacer
 - Refactor backend db with MutableDict
 - Refactor 'urplusFixed' typo, wishlist[VALUE] to q
