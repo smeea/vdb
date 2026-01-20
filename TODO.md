@@ -1,4 +1,5 @@
 # FIX
+- Bituin v5 legal
 
 # FIX ON HOLD
 
@@ -8,6 +9,7 @@
 - Click on scan image to close modal on mobile (need refactor)
 - Inventory target documentation
 - Inventory filter by clan
+- Show card q-ty for Sets in modal
 
 # FEATURES ON HOLD
 - Draft Cube support -> when draft cube info is available
