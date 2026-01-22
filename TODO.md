@@ -10,6 +10,7 @@
 - Inventory target documentation
 - Inventory filter by clan
 - Show card q-ty for Sets in modal
+- NB legacy images
 
 # FEATURES ON HOLD
 - Draft Cube support -> when draft cube info is available

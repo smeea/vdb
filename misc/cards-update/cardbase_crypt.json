@@ -2716,9 +2716,12 @@
         "set":{
             "Gehenna":{
                 "U":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Sabbat Archbishop of Mexico City: If you control the Edge during your unlock phase, you may look at the hand of another Methuselah and discard up to two Gehenna cards from it.",
+        "text":"Sabbat Archbishop of Mexico City: During your unlock phase, if you have the Edge, you can look at another Methuselah's hand and discard up to 2 Gehenna event cards from it.",
         "title":"archbishop",
         "twd":24
     },
@@ -5867,6 +5870,9 @@
             "Third":{
                 "PM":"2",
                 "SKM":"1"
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "text":"Sabbat.",
@@ -6536,9 +6542,12 @@
             "BH":{
                 "U":true,
                 "PM":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Sabbat: While Aristotle is ready, every Methuselah has +1 hand size. +1 stealth.",
+        "text":"Sabbat: While Aristotle is ready, each Methuselah gets +1 hand size. +1 stealth.",
         "title":"",
         "twd":12
     },
@@ -6778,6 +6787,9 @@
             },
             "BH":{
                 "PM":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "text":"Sabbat.",
@@ -8638,6 +8650,9 @@
             "Third":{
                 "PM":"2",
                 "SKM":"1"
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "text":"Sabbat.",
@@ -8785,7 +8800,7 @@
                 "PM":"1"
             }
         },
-        "text":"Independent: Bela cannot take political actions. -1 stealth.",
+        "text":"Independent: Bela cannot perform political actions. -1 stealth.",
         "title":"",
         "twd":13
     },
@@ -9756,6 +9771,9 @@
             "Third":{
                 "PM":1,
                 "SKM":"1"
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "text":"Sabbat.",
@@ -10037,6 +10055,9 @@
             },
             "BH":{
                 "PM":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "text":"Sabbat.",
@@ -11710,7 +11731,21 @@
         "name":"Casino Reeds",
         "new":false,
         "path":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Adding damage to a strike that does not deal damage has no effect, so the strike still will not do damage.",
+                "refs":{
+                    "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
+                }
+            },
+            {
+                "text":"Additional damage inherits all of the properties of the base damage.",
+                "refs":{
+                    "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
+                    "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
+                }
+            }
+        ],
         "sect":"Camarilla",
         "set":{
             "CE":{
@@ -13058,6 +13093,9 @@
             },
             "SW":{
                 "U":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "text":"Sabbat.",
@@ -13365,9 +13403,12 @@
         "set":{
             "BH":{
                 "PM":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Sabbat. Black Hand.",
+        "text":"Sabbat: Black Hand.",
         "title":"",
         "twd":23
     },
@@ -16377,6 +16418,9 @@
             },
             "BH":{
                 "PM":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "text":"Sabbat.",
@@ -17714,7 +17758,21 @@
         "name":"Dracon, The",
         "new":false,
         "path":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Adding damage to a strike that does not deal damage has no effect, so the strike still will not do damage.",
+                "refs":{
+                    "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
+                }
+            },
+            {
+                "text":"Additional damage inherits all of the properties of the base damage.",
+                "refs":{
+                    "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
+                    "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
+                }
+            }
+        ],
         "sect":"Independent",
         "set":{
             "Promo":{
@@ -17880,9 +17938,12 @@
             },
             "KSU":{
                 "DM":"2"
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Sabbat bishop: Drozodny can move a political action card from your ash heap to your hand as a +1 stealth action (discard afterward).",
+        "text":"Sabbat bishop: Drozodny can move a political action card [POLITICAL ACTION] from your ash heap to your hand as a +1 stealth action (discard down afterward).",
         "title":"bishop",
         "twd":10
     },
@@ -17912,9 +17973,12 @@
         "set":{
             "Third":{
                 "V":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Sabbat: Drusilla may give you control of a ready Ventrue for the remainder of the turn as a (D) action that costs 2 blood.",
+        "text":"Sabbat: Drusilla can take control of a ready Ventrue until the end of the turn as a (D) action that costs 2 blood.",
         "title":"",
         "twd":9
     },
@@ -18704,7 +18768,21 @@
         "name":"Elihu",
         "new":false,
         "path":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Adding damage to a strike that does not deal damage has no effect, so the strike still will not do damage.",
+                "refs":{
+                    "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
+                }
+            },
+            {
+                "text":"Additional damage inherits all of the properties of the base damage.",
+                "refs":{
+                    "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
+                    "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
+                }
+            }
+        ],
         "sect":"Independent",
         "set":{
             "KMW":{
@@ -20488,9 +20566,12 @@
         "set":{
             "Third":{
                 "V":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Sabbat Archbishop of Miami: If your prey controls no ready Camarilla vampires, Fabrizia gets two fewer votes in each referendum.",
+        "text":"Sabbat Archbishop of Miami: While your prey controls no ready Camarilla vampires, Fabrizia gets -2 votes.",
         "title":"archbishop",
         "twd":18
     },
@@ -22685,9 +22766,12 @@
             },
             "Third":{
                 "PM":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Sabbat bishop: Perfidio may burn 1 blood to unlock and attempt to block an action directed at a location you control.",
+        "text":"Sabbat bishop: Perfidio can burn 1 blood to unlock and attempt to block an action directed at a location you control.",
         "title":"bishop",
         "twd":33
     },
@@ -24212,9 +24296,12 @@
         "set":{
             "Third":{
                 "V":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Sabbat priscus: During a political action, if Gravitnir is ready, he may burn a blood to force the acting vampire to abstain (this can cancel that vampire's votes and ballots).",
+        "text":"Sabbat priscus: During the polling step of a political action, if Gravitnir is ready, he can burn 1 blood to force the acting vampire to abstain.",
         "title":"priscus",
         "twd":6
     },
@@ -25356,9 +25443,12 @@
         "set":{
             "SoC":{
                 "V":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Sabbat. Black Hand: While Hagar is ready, you have +1 hand size. While Hagar is unlocked, do not replace cards you play on your turn until Hagar locks or your turn ends.",
+        "text":"Sabbat: While Hagar is ready, you get +1 hand size. While he is unlocked, you do not replace cards you play during your turn until he locks or your turn ends. Black Hand.",
         "title":"",
         "twd":23
     },
@@ -25565,9 +25655,12 @@
             "BH":{
                 "U":true,
                 "PM":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Sabbat cardinal: Hannibal may steal up to 2 blood from any Sabbat vampire as a (D) action.",
+        "text":"Sabbat cardinal: Hannibal can steal up to 2 blood from a Sabbat vampire as a (D) action.",
         "title":"cardinal",
         "twd":13
     },
@@ -25601,9 +25694,12 @@
         "set":{
             "Promo":{
                 "2004-04-09":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Advanced, Sabbat cardinal: Once during each Methuselah's minion phase, Hannibal may burn 2 blood to unlock.",
+        "text":"Sabbat cardinal: During each Methuselah's minion phase, Hannibal can burn 2 blood to unlock.",
         "title":"cardinal",
         "twd":5
     },
@@ -25784,7 +25880,7 @@
                 "PN":"1"
             }
         },
-        "text":"Camarilla: In combat, the controller of the minion opposing Harold plays with an open hand.",
+        "text":"Camarilla: The controller of the minion in combat with Harold plays with an open hand.",
         "title":"",
         "twd":7
     },
@@ -25816,9 +25912,12 @@
             "Third":{
                 "PM":1,
                 "SKM":"1"
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Sabbat: Giovanni get +1 bleed when bleeding you. +1 stealth.",
+        "text":"Sabbat: Giovanni get +1 bleed against you. +1 stealth.",
         "title":"",
         "twd":4
     },
@@ -28030,9 +28129,12 @@
         "set":{
             "SW":{
                 "C":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Sabbat: If Idalia successfully performs an equip action, unlock her at the end of the turn.",
+        "text":"Sabbat: If Idalia performs a successful equip action, she can unlock during the next discard phase.",
         "title":"",
         "twd":56
     },
@@ -28467,9 +28569,12 @@
             },
             "BH":{
                 "PM":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Sabbat Archbishop of Miami: Imogen may exchange a random card from the hand of your prey or predator with a library card from that Methuselah's ash heap as a +1 stealth (D) action.",
+        "text":"Sabbat Archbishop of Miami: Imogen can exchange one random card from the hand of your prey or predator for one library card from that Methuselah's ash heap as a +1 stealth (D) action.",
         "title":"archbishop",
         "twd":4
     },
@@ -29503,6 +29608,9 @@
         "set":{
             "Third":{
                 "V":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "text":"Sabbat.",
@@ -30241,7 +30349,21 @@
         "name":"Janni",
         "new":false,
         "path":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Adding damage to a strike that does not deal damage has no effect, so the strike still will not do damage.",
+                "refs":{
+                    "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
+                }
+            },
+            {
+                "text":"Additional damage inherits all of the properties of the base damage.",
+                "refs":{
+                    "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
+                    "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
+                }
+            }
+        ],
         "sect":"Independent",
         "set":{
             "KMW":{
@@ -30317,6 +30439,19 @@
                 "text":"When using the action provided by his ability, if some minions cannot be targeted because of another effect, the action will simply have no effect on the things it cannot target.",
                 "refs":{
                     "RTR 20080808":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/1jW6GXrIRSU/m/8QTYL98kB0gJ"
+                }
+            },
+            {
+                "text":"Adding damage to a strike that does not deal damage has no effect, so the strike still will not do damage.",
+                "refs":{
+                    "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
+                }
+            },
+            {
+                "text":"Additional damage inherits all of the properties of the base damage.",
+                "refs":{
+                    "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
+                    "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
                 }
             }
         ],
@@ -31507,7 +31642,7 @@
                 "PV":"1"
             }
         },
-        "text":"Camarilla: While Jo\u00e3o has no title, he cannot block titled vampires. He gets +1 stealth on actions to put vampires in play.",
+        "text":"Camarilla: While Jo\u00e3o has no title, he cannot block titled vampires. He gets +1 stealth during actions to put vampires in play.",
         "title":"",
         "twd":35
     },
@@ -31563,7 +31698,21 @@
         "name":"Joaquin Murietta",
         "new":false,
         "path":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Adding damage to a strike that does not deal damage has no effect, so the strike still will not do damage.",
+                "refs":{
+                    "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
+                }
+            },
+            {
+                "text":"Additional damage inherits all of the properties of the base damage.",
+                "refs":{
+                    "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
+                    "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
+                }
+            }
+        ],
         "sect":"Camarilla",
         "set":{
             "CE":{
@@ -35144,6 +35293,9 @@
             },
             "BH":{
                 "PM":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "text":"Sabbat bishop: +1 intercept.",
@@ -35322,6 +35474,9 @@
             },
             "BH":{
                 "PM":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "text":"Sabbat priscus.",
@@ -35554,7 +35709,7 @@
         "path":"",
         "rulings":[
             {
-                "text":"His ability works on allies recruited in a non-standard way (eg. {Piper}).",
+                "text":"Their ability works on allies recruited in a non-standard way (eg. {Piper}).",
                 "refs":{
                     "ANK 20210913":"https://www.vekn.net/forum/rules-questions/79322-piper-and-sebastien-goulet#103113",
                     "LSJ 20090116":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/RQ3ARP9Kvfk/m/e-o1t79x1gUJ"
@@ -37943,7 +38098,7 @@
                 "PV":"1"
             }
         },
-        "text":"Camarilla Prince of Chicago: Lodin can prevent 1 damage from an opposing minion's strike once each combat.",
+        "text":"Camarilla Prince of Chicago: Once each combat, Lodin can prevent 1 damage from an opposing minion's strike.",
         "title":"prince",
         "twd":64
     },
@@ -38518,9 +38673,12 @@
         "set":{
             "KMW":{
                 "U":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Sabbat cardinal: Once each turn, if Louhi is ready, she may burn 1 blood to cancel an action card played by a vampire controlled by your predator as it is played (the acting minion doesn't lock).",
+        "text":"Sabbat cardinal: Once each turn, if Louhi is ready, she can burn 1 blood to cancel an action card as it is played by a vampire controlled by your predator (the acting minion does not lock).",
         "title":"cardinal",
         "twd":11
     },
@@ -38775,9 +38933,12 @@
         "set":{
             "Third":{
                 "V":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Sabbat: Luc gets +1 stealth on diablerie actions. He may give you +3 hand size until your next unlock phase as a +1 stealth action.",
+        "text":"Sabbat: Luc gets +1 stealth during diablerie actions. He can give you +3 hand size until your next unlock phase as a +1 stealth action.",
         "title":"",
         "twd":20
     },
@@ -41237,9 +41398,12 @@
         "set":{
             "SoC":{
                 "V":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Sabbat. Black Hand.",
+        "text":"Sabbat: Black Hand.",
         "title":"",
         "twd":10
     },
@@ -41612,9 +41776,12 @@
         "set":{
             "Gehenna":{
                 "U":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Sabbat Archbishop of Geneva: Once each combat, Marie can burn 1 blood to dodge as a strike. Non-weapon equipment cards cost her 1 less blood or pool to equip.",
+        "text":"Sabbat Archbishop of Geneva: Once each combat, Marie can burn 1 blood to strike: dodge. Non-weapon equipment cost her -1 blood or pool to equip.",
         "title":"archbishop",
         "twd":18
     },
@@ -42163,9 +42330,12 @@
         "set":{
             "Third":{
                 "V":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Sabbat: When Marta diablerizes an older vampire, she gains a blood (after receiving a master: Discipline card, if any).",
+        "text":"Sabbat: After Marta diablerizes an older vampire, she can gain 1 blood.",
         "title":"",
         "twd":24
     },
@@ -44250,9 +44420,12 @@
         "set":{
             "BH":{
                 "U":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Sabbat: Infernal. Animal retainers lose their abilities while Midget is acting or is in combat.",
+        "text":"Sabbat: While Midget is acting or is in combat, animal retainers lose their abilities. Infernal.",
         "title":"",
         "twd":63
     },
@@ -46089,6 +46262,9 @@
             },
             "SW":{
                 "U":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "text":"Sabbat: +1 strength.",
@@ -46167,7 +46343,7 @@
                 "PV":"1"
             }
         },
-        "text":"Camarilla Prince of Istanbul: During the polling step of a political action, any older Toreador controlled by another Methuselah can move 1 blood from themselves to Mustafa to force him to cast his votes and ballots as that Toreador's controller chooses.",
+        "text":"Camarilla Prince of Istanbul: During the polling step of a political action, each older Toreador controlled by another Methuselah can move 1 blood from themselves to Mustafa to force him to cast his votes and ballots as that Toreador's controller chooses.",
         "title":"prince",
         "twd":64
     },
@@ -48256,7 +48432,21 @@
         "name":"Nuriel",
         "new":false,
         "path":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Adding damage to a strike that does not deal damage has no effect, so the strike still will not do damage.",
+                "refs":{
+                    "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
+                }
+            },
+            {
+                "text":"Additional damage inherits all of the properties of the base damage.",
+                "refs":{
+                    "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
+                    "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
+                }
+            }
+        ],
         "sect":"Sabbat",
         "set":{
             "LK":{
@@ -50055,6 +50245,9 @@
             },
             "Anthology I":{
                 "":"1"
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "text":"Sabbat.",
@@ -50228,6 +50421,9 @@
             "Third":{
                 "PM":"2",
                 "SKM":"1"
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "text":"Sabbat: +1 bleed.",
@@ -51812,6 +52008,9 @@
             },
             "Tenth":{
                 "B":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "text":"Sabbat: +1 bleed.",
@@ -53933,6 +54132,9 @@
             },
             "Third":{
                 "PM":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "text":"Sabbat bishop: +1 bleed.",
@@ -54040,9 +54242,12 @@
         "set":{
             "BH":{
                 "PM":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Sabbat. Black Hand.",
+        "text":"Sabbat: Black Hand.",
         "title":"",
         "twd":25
     },
@@ -59023,6 +59228,9 @@
         "set":{
             "Third":{
                 "V":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "text":"Sabbat priscus.",
@@ -61328,9 +61536,12 @@
         "set":{
             "FN":{
                 "U":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Sabbat: Theron can put a derangement counter on any vampire as a (D) action. If the number of derangement counters equals or exceeds the vampire's capacity, that vampire is considered to be Malkavian antitribu.",
+        "text":"Sabbat: Theron can put 1 derangement counter on a vampire as a (D) action. If the number of derangement counters equals or exceeds the vampire's capacity, that vampire is considered to be Malkavian antitribu.",
         "title":"",
         "twd":6
     },
@@ -62713,7 +62924,7 @@
                 "PTo":"1"
             }
         },
-        "text":"Camarilla: In a referendum, Tyler gets +1 vote after any Methuselah burns the Edge for a vote. He cannot block Nosferatu.",
+        "text":"Camarilla: In a referendum, Tyler gets +1 vote after a Methuselah burns the Edge for a vote. He cannot block Nosferatu.",
         "title":"",
         "twd":36
     },
@@ -63058,6 +63269,9 @@
             },
             "BSC":{
                 "X":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "text":"Sabbat.",
@@ -63907,9 +64121,12 @@
             },
             "SW":{
                 "U":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Sabbat: Vasantasena gets +1 stealth when bleeding a Methuselah who does not control a ready titled vampire. +1 bleed.",
+        "text":"Sabbat: Vasantasena gets +1 stealth during bleed actions directed at a Methuselah controlling no ready titled vampire. +1 bleed.",
         "title":"",
         "twd":16
     },
@@ -64014,7 +64231,7 @@
                 "PTo":"1"
             }
         },
-        "text":"Camarilla Prince of Prague: Contesting a title costs Vasily 1 additional blood unless you have the Edge.",
+        "text":"Camarilla Prince of Prague: Contesting a title costs Vasily +1 blood unless you have the Edge.",
         "title":"prince",
         "twd":4
     },
@@ -64388,7 +64605,7 @@
                 "PV":"1"
             }
         },
-        "text":"Camarilla Prince of Atlanta: If a /Golconda: Inner Peace/ you play is canceled, you can move that card from your ash heap to your library (shuffle afterward).",
+        "text":"Camarilla Prince of Atlanta: If a card named /Golconda: Inner Peace/ you play is canceled, you can move that card from your ash heap to your library (shuffle afterward).",
         "title":"prince",
         "twd":55
     },
@@ -65018,9 +65235,12 @@
             },
             "BH":{
                 "PM":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Sabbat bishop: Virgil may steal a retainer from any minion as a (D) action. He may steal all of the life from a retainer he has as a +1 stealth action.",
+        "text":"Sabbat bishop: Virgil can steal a retainer as a (D) action. He can steal all of the life from a retainer attached to him as a +1 stealth action.",
         "title":"bishop",
         "twd":12
     },
@@ -65977,9 +66197,12 @@
             },
             "Third":{
                 "PM":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Sabbat. Black Hand: Once per combat, before range is determined, White Lily may equip with a weapon from your hand. (Pay cost as normal.)",
+        "text":"Sabbat: Once each combat, before range is determined, White Lily can equip with a weapon from your hand (requirements and cost apply as normal). Black Hand.",
         "title":"",
         "twd":10
     },
@@ -66998,6 +67221,9 @@
             },
             "SW":{
                 "U":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "text":"Sabbat.",

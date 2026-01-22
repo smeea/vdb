@@ -365,14 +365,6 @@
             }
         }
     ],
-    "100043":[
-        {
-            "text":"If both minions want to play a card \"when a vampire should go into torpor\", the acting minion goes first. If played first, {Undead Persistence} would prevent the opponent to play {Amaranth} and vice-versa.",
-            "refs":{
-                "RTR 20010710":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GsI1UyH54jU/m/x9LfDZX1vR4J"
-            }
-        }
-    ],
     "100048":[
         {
             "text":"A second copy allows a second use in the same turn.",
@@ -1800,12 +1792,6 @@
     ],
     "100180":[
         {
-            "text":"Additional damage inherits all of the properties of the base damage.",
-            "refs":{
-                "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
-            }
-        },
-        {
             "text":"A minion who maneuvers with a weapon (eg. {Blade of Bellona}) may still use Blessed Blade to strike with that weapon as his initial strike that round.",
             "refs":{
                 "ANK 20180704":"https://www.vekn.net/forum/rules-questions/76784-blessed-blade-blade-of-bellona#88556",
@@ -1839,6 +1825,19 @@
             "text":"[val][REFLEX] If a limited effect is canceled (bleed, additional strike), then the limit is not triggered and another limited effect can be used.",
             "refs":{
                 "LSJ 20030224":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/67261v339Ds/m/um8V7VVp2Y4J"
+            }
+        },
+        {
+            "text":"Adding damage to a strike that does not deal damage has no effect, so the strike still will not do damage.",
+            "refs":{
+                "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
+            }
+        },
+        {
+            "text":"Additional damage inherits all of the properties of the base damage.",
+            "refs":{
+                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
+                "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
             }
         }
     ],
@@ -1884,14 +1883,6 @@
             "text":"The card on it cannot be discarded or burned to satisfy another effect (eg. {Tension in the Ranks} or using political action cards for votes).",
             "refs":{
                 "LSJ 20050118":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/W784_3oyz7I/m/Cgek1j9Hv-8J"
-            }
-        }
-    ],
-    "100185":[
-        {
-            "text":"Additional damage inherits all of the properties of the base damage.",
-            "refs":{
-                "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
             }
         }
     ],
@@ -2245,14 +2236,6 @@
             "text":"Prevents up to 2 damage, it can be used to prevent less.",
             "refs":{
                 "RTR 20041202":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/WUWh7AdooDU/m/vojisZMCSnsJ"
-            }
-        }
-    ],
-    "100213":[
-        {
-            "text":"Additional damage inherits all of the properties of the base damage.",
-            "refs":{
-                "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
             }
         }
     ],
@@ -2668,15 +2651,22 @@
     ],
     "100264":[
         {
-            "text":"Additional damage inherits all of the properties of the base damage.",
-            "refs":{
-                "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
-            }
-        },
-        {
             "text":"The \"make a melee strike\" option can be used with {Bundi} while {Immortal Grapple} is in effect.",
             "refs":{
                 "LSJ 20090114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/fZIdIRDDxdo/m/dtdSNVk_IIkJ"
+            }
+        },
+        {
+            "text":"Adding damage to a strike that does not deal damage has no effect, so the strike still will not do damage.",
+            "refs":{
+                "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
+            }
+        },
+        {
+            "text":"Additional damage inherits all of the properties of the base damage.",
+            "refs":{
+                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
+                "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
             }
         }
     ],
@@ -3212,11 +3202,12 @@
             }
         }
     ],
-    "100328":[
+    "100327":[
         {
-            "text":"Additional damage inherits all of the properties of the base damage.",
+            "text":"Cannot be used if the first action was cancelled \"as played\" ({Direct Intervention}) but can be used when the first action was cancelled after it was played ({Tangle Atropos' Hand}).",
             "refs":{
-                "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
+                "LSJ 20100505":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/nAzGpZHw8eA/m/tt8m7vuD6ZAJ",
+                "ANK 20210124":"https://www.vekn.net/forum/rules-questions/79001-the-question-of-the-month-action-fizzles#101492"
             }
         }
     ],
@@ -4306,18 +4297,6 @@
             }
         },
         {
-            "text":"Adding damage to strikes which are not damage dealing strikes will not deal damage",
-            "refs":{
-                "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
-            }
-        },
-        {
-            "text":"The additional damage is the same type as the strike's damage.",
-            "refs":{
-                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ"
-            }
-        },
-        {
             "text":"Applies to environmental damage inflicted to the opposing minion.",
             "refs":{
                 "ANK 20181128":"https://www.vekn.net/forum/rules-questions/77187-dam-the-heart-s-river-and-weather-control#92076"
@@ -4358,6 +4337,19 @@
             "text":"It affects card costs, cost reductions from other effects do apply.",
             "refs":{
                 "LSJ 20070829-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/sVXZw1J43ik/m/OByFPgQsynwJ"
+            }
+        },
+        {
+            "text":"Adding damage to a strike that does not deal damage has no effect, so the strike still will not do damage.",
+            "refs":{
+                "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
+            }
+        },
+        {
+            "text":"Additional damage inherits all of the properties of the base damage.",
+            "refs":{
+                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
+                "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
             }
         }
     ],
@@ -4529,20 +4521,6 @@
             }
         }
     ],
-    "100511":[
-        {
-            "text":"[pot] Additional damage inherits all of the properties of the base damage.",
-            "refs":{
-                "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
-            }
-        },
-        {
-            "text":"\"when a vampire is going into torpor\" and \"when a vampire should go into torpor\" are the same window. If both minions want to play a card, acting minion goes first. If played first, {Undead Persistence} would prevent the opponent to play {Decapitate} and vice-versa.",
-            "refs":{
-                "RTR 20010710":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GsI1UyH54jU/m/x9LfDZX1vR4J"
-            }
-        }
-    ],
     "100513":[
         {
             "text":"[QUI] An opponent can play a reaction to wake as the card is played, before its effects apply.",
@@ -4668,20 +4646,20 @@
     ],
     "100527":[
         {
-            "text":"The clan is set when the card is played, it does not depend on the clan of the vampire that has the card on them.",
+            "text":"The clan and sect assigned to Derange is set when the card is played and does not change when it is moved.",
             "refs":{
                 "LSJ 20070707":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ZtRk5z2TcoI/m/gJWD0dT3kUwJ"
             }
         },
         {
-            "text":"If the target changes clan to a clan inappropriate for his title, he loses its benefit until his clan is appropriate. He immediately yields the title if it is contested or he receives a new one.",
+            "text":"If the target changes clan or sect to a clan or sect inappropriate for their title, they lose its benefit until their clan or sect is appropriate. They immediately yield the title if it is contested or they receives a new one.",
             "refs":{
                 "RTR 20201130":"https://www.blackchantry.com/2020/12/25/rtr-30-11-2020/",
                 "LSJ 20060904":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/L9D4GK0yNv8/m/H9vnUciv2psJ"
             }
         },
         {
-            "text":"When removed, the vampire goes back to its underlying clan.",
+            "text":"When removed, the vampire goes back to its underlying clan and sect.",
             "refs":{
                 "RTR 20201130":"https://www.blackchantry.com/2020/12/25/rtr-30-11-2020/",
                 "ANK 20200415":"https://www.vekn.net/forum/rules-questions/7516-re-derange-titles-and-bloodbrothers?start=6#99609"
@@ -4694,15 +4672,16 @@
             }
         },
         {
-            "text":"If another effect also changes the clan (eg. {Clan Impersonation}), the most recent one takes precedenced.",
+            "text":"If another effect also changes the clan or sect (eg. {Clan Impersonation}, {Into the Fire}), the most recent one takes precedence.",
             "refs":{
                 "LSJ 20021209":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/kQpR-Cn9nW0/m/0cNMARSt9PIJ"
             }
         },
         {
-            "text":"Does not change the sect of the target. [As of now the RTR takes precedent over the Cards text in the Card List]",
+            "text":"Is a temporary effect that overrides the underlying sect. The most recent override takes precedence. It stays active if another effect changes the underlying sect, like using the default action to become Anarch.",
             "refs":{
-                "RTR 20201130":"https://www.blackchantry.com/2020/12/25/rtr-30-11-2020/"
+                "LSJ 20100811":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/kGKWcs3k6vI/m/Uwx7TGC8lgYJ",
+                "ANK 20190619":"https://www.vekn.net/forum/rules-questions/77723-writ-of-acceptance-and-anarch-and-hackerspace#95462"
             }
         },
         {
@@ -6733,14 +6712,6 @@
             }
         }
     ],
-    "100767":[
-        {
-            "text":"Additional damage inherits all of the properties of the base damage.",
-            "refs":{
-                "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
-            }
-        }
-    ],
     "100778":[
         {
             "text":"A hunt is not successful if no blood is gained, even if the hunt action is still successful.",
@@ -7681,14 +7652,6 @@
             "text":"The card cannot be played if the minion cannot afford to burn the blood.",
             "refs":{
                 "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
-            }
-        }
-    ],
-    "100862":[
-        {
-            "text":"Additional damage inherits all of the properties of the base damage.",
-            "refs":{
-                "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
             }
         }
     ],
@@ -9566,46 +9529,6 @@
             }
         }
     ],
-    "101071":[
-        {
-            "text":"Additional damage inherits all of the properties of the base damage.",
-            "refs":{
-                "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
-            }
-        },
-        {
-            "text":"[for] The optional maneuver cannot be used if the strike cannot be used (eg. {Hidden Lurker}).",
-            "refs":{
-                "LSJ 20021028":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/g0GGiVIxyis/m/35WA-O9XrroJ"
-            }
-        },
-        {
-            "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
-            "refs":{
-                "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
-                "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
-            }
-        },
-        {
-            "text":"[vic] The optional press can only be used during the current round.",
-            "refs":{
-                "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
-            }
-        },
-        {
-            "text":"[vic] Once the range is set, no other effect can be used to reset the range that round, but other pre-range effects can be played afterwards. Skip the Determine Range step for that round.",
-            "refs":{
-                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
-                "ANK 20180720":"https://www.vekn.net/forum/rules-questions/76840-setting-range-and-pre-range#89125"
-            }
-        },
-        {
-            "text":"[vic] If another effect was already setting that round's range (e.g. {Neutral Guard}), that effect has priority.",
-            "refs":{
-                "PIB 20120214":"https://www.vekn.net/forum/rules-questions/22906-re-set-the-range?start=12#22999"
-            }
-        }
-    ],
     "101072":[
         {
             "text":"[TEM] The opponent cannot play or use the maneuver from a strike (eg. {.44 Magnum}, {Thrown Gate}), since they cannot strike.",
@@ -9701,7 +9624,7 @@
     ],
     "101078":[
         {
-            "text":"The votes include bonus votes from cards or ability (eg. {Eze, The Demon Prince}, {Firebrand}) but not conditional votes (eg. {Sundown}, {Aura of Invincibility}).",
+            "text":"The votes include bonus votes from cards or ability (eg. {Eze, The Demon Prince}, {Legendary Vampire}) but not conditional votes (eg. {Sundown}, {Aura of Invincibility}).",
             "refs":{
                 "ANK 20211009":"https://www.vekn.net/forum/rules-questions/79388-political-struggle-and-victim-priscus#103481",
                 "LSJ 20040518-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/4emymfUPwAM/m/JF_o7OOoCbkJ"
@@ -10143,7 +10066,13 @@
     ],
     "101131":[
         {
-            "text":"Adding damage to strikes which are not damage dealing strikes will not deal damage",
+            "text":"You cannot use another strike card as the hand strike for Lucky Blow.",
+            "refs":{
+                "LSJ 20010627":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NhNCVCCDyU0/m/I5Yph3-UUPsJ"
+            }
+        },
+        {
+            "text":"Adding damage to a strike that does not deal damage has no effect, so the strike still will not do damage.",
             "refs":{
                 "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
             }
@@ -10151,13 +10080,8 @@
         {
             "text":"Additional damage inherits all of the properties of the base damage.",
             "refs":{
+                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
                 "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
-            }
-        },
-        {
-            "text":"You cannot use another strike card as the hand strike for Lucky Blow.",
-            "refs":{
-                "LSJ 20010627":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NhNCVCCDyU0/m/I5Yph3-UUPsJ"
             }
         }
     ],
@@ -10685,15 +10609,22 @@
     ],
     "101185":[
         {
-            "text":"Additional damage inherits all of the properties of the base damage.",
-            "refs":{
-                "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
-            }
-        },
-        {
             "text":"Multiple copies stack their bonuses.",
             "refs":{
                 "LSJ 20020904":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Qmi4hFk6QqE/m/VmoU2tfLMgEJ"
+            }
+        },
+        {
+            "text":"Adding damage to a strike that does not deal damage has no effect, so the strike still will not do damage.",
+            "refs":{
+                "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
+            }
+        },
+        {
+            "text":"Additional damage inherits all of the properties of the base damage.",
+            "refs":{
+                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
+                "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
             }
         }
     ],
@@ -10809,20 +10740,6 @@
             "text":"Cannot be used if there is no equipment to steal.",
             "refs":{
                 "RTR 19980928":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Xva4_IRavxM/m/F-_fjzTmo88J"
-            }
-        }
-    ],
-    "101209":[
-        {
-            "text":"[POT] Additional damage inherits all of the properties of the base damage.",
-            "refs":{
-                "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
-            }
-        },
-        {
-            "text":"[POT] The optional press can only be used during the current round.",
-            "refs":{
-                "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
             }
         }
     ],
@@ -12393,13 +12310,13 @@
     ],
     "101406":[
         {
-            "text":"Any decrease in pool (burning, paying, ...) is considered \"loosing pool\".",
+            "text":"Any decrease in pool (burning, paying, ...) is considered \"losing pool\".",
             "refs":{
                 "ANK 20180719-2":"https://www.vekn.net/forum/rules-questions/76835-burn-lose-pay-pool-and-poison-pill-kindred-segregation#89046"
             }
         },
         {
-            "text":"Gaining pool does not count as a negative loss. If a vote entails both a gain and a loss (eg. {Ancient Influence}), only the loss is counted, not the difference.",
+            "text":"Gaining pool does not count as a negative loss. If the effects of the referendum results in both gain and loss (eg. {Ancient Influence}), only the loss is counted, not the difference.",
             "refs":{
                 "ANK 20180813":"https://www.vekn.net/forum/rules-questions/76917-poison-pill-ancient-influence#89940",
                 "LSJ 20041025":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/sbfkGmojYao/m/obMvk67O5PYJ"
@@ -12435,7 +12352,7 @@
             }
         },
         {
-            "text":"The votes include bonus votes from cards or ability (eg. {Eze, The Demon Prince}, {Firebrand}) but not conditional votes (eg. {Sundown}, {Aura of Invincibility}).",
+            "text":"The votes include bonus votes from cards or ability (eg. {Eze, The Demon Prince}, {Legendary Vampire}) but not conditional votes (eg. {Sundown}, {Aura of Invincibility}).",
             "refs":{
                 "ANK 20211009":"https://www.vekn.net/forum/rules-questions/79388-political-struggle-and-victim-priscus#103481",
                 "LSJ 20040518-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/4emymfUPwAM/m/JF_o7OOoCbkJ"
@@ -13143,14 +13060,6 @@
             "refs":{
                 "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
                 "ANK 20211015":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#103563"
-            }
-        }
-    ],
-    "101524":[
-        {
-            "text":"Additional damage inherits all of the properties of the base damage.",
-            "refs":{
-                "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
             }
         }
     ],
@@ -16282,63 +16191,6 @@
             }
         }
     ],
-    "101869":[
-        {
-            "text":"[ani] [COMBAT] Additional damage inherits all of the properties of the base damage.",
-            "refs":{
-                "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
-            }
-        },
-        {
-            "text":"[ani]/[dom] Is not replaced if the action is blocked; it is replaced when the action ends, after all combats.",
-            "refs":{
-                "LSJ 20001120":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Br8FPS5mRn4/m/2tbPhQquS7gJ"
-            }
-        },
-        {
-            "text":"[ani]/[dom] The card is replaced after all \"after resolution\" cards and effects (e.g. {Freak Drive}). No more cards can be played on that action; the action has ended.",
-            "refs":{
-                "LSJ 20101021":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/g3CuP9Eqffg/m/plIFW0oYuDQJ"
-            }
-        },
-        {
-            "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
-            "refs":{
-                "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
-                "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
-            }
-        },
-        {
-            "text":"The card must be present in the ash heap to be redrawn.",
-            "refs":{
-                "RBK targeting-of-cards":"https://www.vekn.net/rulebook#targeting-of-cards"
-            }
-        },
-        {
-            "text":"If the card is cancelled, the self-replacing clause is also cancelled.",
-            "refs":{
-                "LSJ 20080630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/nvuXBpEaKAA/m/ymiC3yAQVOwJ"
-            }
-        },
-        {
-            "text":"If an effect delays when the redraw occurs (e.g. {The Meddling of Semsith}), you can still redraw this card from the ash heap when the delay effect allows a redraw.",
-            "refs":{
-                "LSJ 20100527":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Tr3X4DsZr-8/m/O06iXN6LtzsJ"
-            }
-        },
-        {
-            "text":"If an effect prevents replacement ({Visit from the Capuchin}), then there is no opportunity to use the cards replacement text.",
-            "refs":{
-                "LSJ 20080723":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/p5qiUzuFDSU/m/33rg1G1lDA8J"
-            }
-        },
-        {
-            "text":"[ani] The optional press can only be used during the current round.",
-            "refs":{
-                "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
-            }
-        }
-    ],
     "101876":[
         {
             "text":"Unused prevention does not carry over.",
@@ -16440,33 +16292,25 @@
             }
         }
     ],
-    "101885":[
-        {
-            "text":"[QUI] The additional damage is the same type as the strike's damage.",
-            "refs":{
-                "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ",
-                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ"
-            }
-        },
-        {
-            "text":"\"Before resolution\" means after strikes have been declared but before they resolve.",
-            "refs":{
-                "RTR 19990105":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/2LT2jSX4Nlk/m/vNjIMCxSYTIJ"
-            }
-        },
-        {
-            "text":"Cannot be played on an opponent's weapon.",
-            "refs":{
-                "LSJ 20020425":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/_Rh8P34zTZo/m/u-WavRjp5uYJ"
-            }
-        }
-    ],
     "101886":[
         {
             "text":"If the action to bleed is blocked or canceled, Strike with Conviction is not burned.",
             "refs":{
                 "LSJ 20060421":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/5_Y7HxiR7wo/m/qLgr38ocXA8J",
                 "RTR 20111202":"https://www.vekn.net/forum/rules-questions/16769-rules-team-rulings-02-dec-11#16769"
+            }
+        },
+        {
+            "text":"Adding damage to a strike that does not deal damage has no effect, so the strike still will not do damage.",
+            "refs":{
+                "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
+            }
+        },
+        {
+            "text":"Additional damage inherits all of the properties of the base damage.",
+            "refs":{
+                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
+                "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
             }
         }
     ],
@@ -16887,21 +16731,6 @@
             }
         }
     ],
-    "101921":[
-        {
-            "text":"Additional damage inherits all of the properties of the base damage.",
-            "refs":{
-                "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
-            }
-        },
-        {
-            "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
-            "refs":{
-                "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
-                "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
-            }
-        }
-    ],
     "101925":[
         {
             "text":"Additional damage inherits all of the properties of the base damage.",
@@ -17202,12 +17031,6 @@
             }
         },
         {
-            "text":"The additional damage is the same type as the strike's damage.",
-            "refs":{
-                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ"
-            }
-        },
-        {
             "text":"If it is canceled, any blood cost (eg. {Terror Frenzy}) has to be paid.",
             "refs":{
                 "PIB 20121031":"https://www.vekn.net/forum/rules-questions/39816-ec-2012-can-you-answer-these?start=18#39908"
@@ -17237,6 +17060,19 @@
             "text":"The affected minion cannot play a card that provides an additional strike, even if just to benefit from another effect (e.g.\n{Acrobatics}).",
             "refs":{
                 "LSJ 20011214-5":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gI44SEC82Yk/m/Kgipu7IXwWkJ"
+            }
+        },
+        {
+            "text":"Adding damage to a strike that does not deal damage has no effect, so the strike still will not do damage.",
+            "refs":{
+                "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
+            }
+        },
+        {
+            "text":"Additional damage inherits all of the properties of the base damage.",
+            "refs":{
+                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
+                "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
             }
         }
     ],
@@ -17272,6 +17108,19 @@
             "refs":{
                 "PIB 20121031":"https://www.vekn.net/forum/rules-questions/39816-ec-2012-can-you-answer-these?start=18#39908"
             }
+        },
+        {
+            "text":"Adding damage to a strike that does not deal damage has no effect, so the strike still will not do damage.",
+            "refs":{
+                "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
+            }
+        },
+        {
+            "text":"Additional damage inherits all of the properties of the base damage.",
+            "refs":{
+                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
+                "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
+            }
         }
     ],
     "101942":[
@@ -17298,6 +17147,19 @@
             "refs":{
                 "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J",
                 "PIB 20130319":"https://www.vekn.net/forum/rules-questions/46164-catatonic-fear-and-loving-agony#46168"
+            }
+        },
+        {
+            "text":"Adding damage to a strike that does not deal damage has no effect, so the strike still will not do damage.",
+            "refs":{
+                "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
+            }
+        },
+        {
+            "text":"Additional damage inherits all of the properties of the base damage.",
+            "refs":{
+                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
+                "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
             }
         }
     ],
@@ -18111,12 +17973,6 @@
     ],
     "102060":[
         {
-            "text":"[for] The vampire can play cards which are not usable by vampires going to torpor.",
-            "refs":{
-                "LSJ 19970303":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/CiDrKyoNEBA/m/Tx55C65lJqgJ"
-            }
-        },
-        {
             "text":"[for] Cannot be used twice by the same vampire during the same combat: because of the first, the vampire is not going into torpor and does not meet the requirement to play it anymore.",
             "refs":{
                 "LSJ 20030214":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/A3U-Dy1yx8Y/m/2LHXvLrmybwJ"
@@ -18152,13 +18008,11 @@
             "refs":{
                 "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
             }
-        }
-    ],
-    "102061":[
+        },
         {
-            "text":"Additional damage inherits all of the properties of the base damage.",
+            "text":"Sequencing rules apply, and if played first, effects that stop a vampire from going to torpor would prevent the use of effects that are only usable on a vampire going to torpor.",
             "refs":{
-                "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
+                "RTR 20010711":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GsI1UyH54jU/m/x9LfDZX1vR4J"
             }
         }
     ],
@@ -18228,14 +18082,6 @@
             "refs":{
                 "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
                 "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
-            }
-        }
-    ],
-    "102068":[
-        {
-            "text":"[for] The vampire can play cards which are not usable by vampires going to torpor.",
-            "refs":{
-                "LSJ 19970303":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/CiDrKyoNEBA/m/Tx55C65lJqgJ"
             }
         }
     ],
@@ -18552,8 +18398,9 @@
             }
         },
         {
-            "text":"[OBF] If an action is canceled after it has been played (eg. {Tangle Atropos' Hand} but not {Direct Intervention}) it still counts as \"one of the next X actions\".",
+            "text":"[OBF] If an action is cancelled after it has been played (e.g. {Tangle Atropos' Hand} but not {Direct Intervention}) it still counts as \"one of the next X actions\".",
             "refs":{
+                "LSJ 20070526":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/hm8eaW_dBD0/m/ND0ijM9PibIJ",
                 "ANK 20210124":"https://www.vekn.net/forum/rules-questions/79001-the-question-of-the-month-action-fizzles#101492"
             }
         }
@@ -18636,28 +18483,6 @@
                 "ANK 20181003":"https://www.vekn.net/forum/rules-questions/77036-continuing-an-action-after-stealing-with-venenation#90942",
                 "LSJ 20010803-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/s1lJEsLMf-8/m/3CwIMglRboIJ",
                 "ANK 20220127":"https://www.vekn.net/forum/rules-questions/79615-burn-counter-to-gain-control-of-steal-a-minion#104588"
-            }
-        }
-    ],
-    "102106":[
-        {
-            "text":"Additional damage inherits all of the properties of the base damage.",
-            "refs":{
-                "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
-            }
-        },
-        {
-            "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
-            "refs":{
-                "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
-                "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
-            }
-        },
-        {
-            "text":"[val],[VAL] Does not prevent the opponent from dodging, the dodge just has no effect.",
-            "refs":{
-                "LSJ 20030902-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/mgZt4f2LyOg/m/FCeKmePPkxwJ",
-                "LSJ 20060808-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/7oK-hKbOs9g/m/EGeyVt3vfl4J"
             }
         }
     ],
@@ -18840,6 +18665,14 @@
             "text":"Cannot be played if no target is available in any Methuselah's ash heap.",
             "refs":{
                 "ANK 20200420-3":"https://www.vekn.net/forum/rules-questions/78574-vulture-s-buffet#99642"
+            }
+        }
+    ],
+    "102136":[
+        {
+            "text":"If an action is cancelled after it has been played (e.g. {Tangle Atropos' Hand} but not {Direct Intervention}) it still counts as taken.",
+            "refs":{
+                "ANK 20210124":"https://www.vekn.net/forum/rules-questions/79001-the-question-of-the-month-action-fizzles#101492"
             }
         }
     ],
@@ -19134,14 +18967,6 @@
             "text":"Full damage is applied if there are any counter left, even just 1.",
             "refs":{
                 "ANK 20201229-2":"https://www.vekn.net/forum/rules-questions/78958-weighted-walking-stick-with-1-counter-remaining#101326"
-            }
-        }
-    ],
-    "102173":[
-        {
-            "text":"Additional damage inherits all of the properties of the base damage.",
-            "refs":{
-                "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
             }
         }
     ],
@@ -21455,6 +21280,19 @@
             "text":"When using the action provided by his ability, if some minions cannot be targeted because of another effect, the action will simply have no effect on the things it cannot target.",
             "refs":{
                 "RTR 20080808":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/1jW6GXrIRSU/m/8QTYL98kB0gJ"
+            }
+        },
+        {
+            "text":"Adding damage to a strike that does not deal damage has no effect, so the strike still will not do damage.",
+            "refs":{
+                "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
+            }
+        },
+        {
+            "text":"Additional damage inherits all of the properties of the base damage.",
+            "refs":{
+                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
+                "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
             }
         }
     ],
@@ -23851,7 +23689,7 @@
     ],
     "201574":[
         {
-            "text":"His ability works on allies recruited in a non-standard way (eg. {Piper}).",
+            "text":"Their ability works on allies recruited in a non-standard way (eg. {Piper}).",
             "refs":{
                 "ANK 20210913":"https://www.vekn.net/forum/rules-questions/79322-piper-and-sebastien-goulet#103113",
                 "LSJ 20090116":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/RQ3ARP9Kvfk/m/e-o1t79x1gUJ"
@@ -25625,6 +25463,29 @@
             "text":"The ability to fail an action must be used before action modifiers or reactions that are not explicitly played \"as the action is announced\".",
             "refs":{
                 "ANK 20190425":"https://www.vekn.net/forum/rules-questions/77581-action-modifiers-played-at-beginning-and-end-of-an-action#94652"
+            }
+        }
+    ],
+    "G00148":[
+        {
+            "text":"Adding damage to a strike that does not deal damage has no effect, so the strike still will not do damage.",
+            "refs":{
+                "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
+            }
+        },
+        {
+            "text":"Additional damage inherits all of the properties of the base damage.",
+            "refs":{
+                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
+                "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
+            }
+        }
+    ],
+    "G00149":[
+        {
+            "text":"Sequencing rules apply, and if played first, effects that stop a vampire from going to torpor would prevent the use of effects that are only usable on a vampire going to torpor.",
+            "refs":{
+                "RTR 20010711":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GsI1UyH54jU/m/x9LfDZX1vR4J"
             }
         }
     ],
@@ -28481,6 +28342,70 @@
             }
         }
     ],
+    "101869":[
+        {
+            "text":"[ani]/[dom] Is not replaced if the action is blocked; it is replaced when the action ends, after all combats.",
+            "refs":{
+                "LSJ 20001120":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Br8FPS5mRn4/m/2tbPhQquS7gJ"
+            }
+        },
+        {
+            "text":"[ani]/[dom] The card is replaced after all \"after resolution\" cards and effects (e.g. {Freak Drive}). No more cards can be played on that action; the action has ended.",
+            "refs":{
+                "LSJ 20101021":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/g3CuP9Eqffg/m/plIFW0oYuDQJ"
+            }
+        },
+        {
+            "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
+            "refs":{
+                "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
+                "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+            }
+        },
+        {
+            "text":"The card must be present in the ash heap to be redrawn.",
+            "refs":{
+                "RBK targeting-of-cards":"https://www.vekn.net/rulebook#targeting-of-cards"
+            }
+        },
+        {
+            "text":"If the card is cancelled, the self-replacing clause is also cancelled.",
+            "refs":{
+                "LSJ 20080630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/nvuXBpEaKAA/m/ymiC3yAQVOwJ"
+            }
+        },
+        {
+            "text":"If an effect delays when the redraw occurs (e.g. {The Meddling of Semsith}), you can still redraw this card from the ash heap when the delay effect allows a redraw.",
+            "refs":{
+                "LSJ 20100527":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Tr3X4DsZr-8/m/O06iXN6LtzsJ"
+            }
+        },
+        {
+            "text":"If an effect prevents replacement ({Visit from the Capuchin}), then there is no opportunity to use the cards replacement text.",
+            "refs":{
+                "LSJ 20080723":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/p5qiUzuFDSU/m/33rg1G1lDA8J"
+            }
+        },
+        {
+            "text":"[ani] The optional press can only be used during the current round.",
+            "refs":{
+                "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
+            }
+        },
+        {
+            "text":"[ani] Adding damage to a strike that does not deal damage has no effect, so the strike still will not do damage.",
+            "refs":{
+                "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
+            }
+        },
+        {
+            "text":"[ani] Additional damage inherits all of the properties of the base damage.",
+            "refs":{
+                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
+                "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
+            }
+        }
+    ],
     "100712":[
         {
             "text":"The votes provided by the Priscii sub-referendum are not affected.",
@@ -29056,6 +28981,53 @@
             "text":"The optional maneuver cannot be used if the strike cannot be used (eg. {Hidden Lurker}).",
             "refs":{
                 "LSJ 20021028":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/g0GGiVIxyis/m/35WA-O9XrroJ"
+            }
+        }
+    ],
+    "101071":[
+        {
+            "text":"[for] The optional maneuver cannot be used if the strike cannot be used (eg. {Hidden Lurker}).",
+            "refs":{
+                "LSJ 20021028":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/g0GGiVIxyis/m/35WA-O9XrroJ"
+            }
+        },
+        {
+            "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
+            "refs":{
+                "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
+                "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+            }
+        },
+        {
+            "text":"[vic] The optional press can only be used during the current round.",
+            "refs":{
+                "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
+            }
+        },
+        {
+            "text":"[vic] Once the range is set, no other effect can be used to reset the range that round, but other pre-range effects can be played afterwards. Skip the Determine Range step for that round.",
+            "refs":{
+                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
+                "ANK 20180720":"https://www.vekn.net/forum/rules-questions/76840-setting-range-and-pre-range#89125"
+            }
+        },
+        {
+            "text":"[vic] If another effect was already setting that round's range (e.g. {Neutral Guard}), that effect has priority.",
+            "refs":{
+                "PIB 20120214":"https://www.vekn.net/forum/rules-questions/22906-re-set-the-range?start=12#22999"
+            }
+        },
+        {
+            "text":"Adding damage to a strike that does not deal damage has no effect, so the strike still will not do damage.",
+            "refs":{
+                "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
+            }
+        },
+        {
+            "text":"Additional damage inherits all of the properties of the base damage.",
+            "refs":{
+                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
+                "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
             }
         }
     ],
@@ -31056,6 +31028,33 @@
             "text":"Cannot be played on an opponent's weapon.",
             "refs":{
                 "LSJ 20020425":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/_Rh8P34zTZo/m/u-WavRjp5uYJ"
+            }
+        }
+    ],
+    "101885":[
+        {
+            "text":"\"Before resolution\" means after strikes have been declared but before they resolve.",
+            "refs":{
+                "RTR 19990105":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/2LT2jSX4Nlk/m/vNjIMCxSYTIJ"
+            }
+        },
+        {
+            "text":"Cannot be played on an opponent's weapon.",
+            "refs":{
+                "LSJ 20020425":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/_Rh8P34zTZo/m/u-WavRjp5uYJ"
+            }
+        },
+        {
+            "text":"[QUI] Adding damage to a strike that does not deal damage has no effect, so the strike still will not do damage.",
+            "refs":{
+                "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
+            }
+        },
+        {
+            "text":"[QUI] Additional damage inherits all of the properties of the base damage.",
+            "refs":{
+                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
+                "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
             }
         }
     ],
@@ -35398,6 +35397,28 @@
             }
         }
     ],
+    "101921":[
+        {
+            "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
+            "refs":{
+                "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
+                "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+            }
+        },
+        {
+            "text":"Adding damage to a strike that does not deal damage has no effect, so the strike still will not do damage.",
+            "refs":{
+                "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
+            }
+        },
+        {
+            "text":"Additional damage inherits all of the properties of the base damage.",
+            "refs":{
+                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
+                "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
+            }
+        }
+    ],
     "102000":[
         {
             "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
@@ -35431,6 +35452,35 @@
             "refs":{
                 "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
                 "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+            }
+        }
+    ],
+    "102106":[
+        {
+            "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
+            "refs":{
+                "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
+                "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+            }
+        },
+        {
+            "text":"[val],[VAL] Does not prevent the opponent from dodging, the dodge just has no effect.",
+            "refs":{
+                "LSJ 20030902-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/mgZt4f2LyOg/m/FCeKmePPkxwJ",
+                "LSJ 20060808-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/7oK-hKbOs9g/m/EGeyVt3vfl4J"
+            }
+        },
+        {
+            "text":"Adding damage to a strike that does not deal damage has no effect, so the strike still will not do damage.",
+            "refs":{
+                "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
+            }
+        },
+        {
+            "text":"Additional damage inherits all of the properties of the base damage.",
+            "refs":{
+                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
+                "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
             }
         }
     ],
@@ -35912,6 +35962,27 @@
             "text":"[aus][obf] The optional press can only be used during the current round.",
             "refs":{
                 "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
+            }
+        }
+    ],
+    "101209":[
+        {
+            "text":"[POT] The optional press can only be used during the current round.",
+            "refs":{
+                "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
+            }
+        },
+        {
+            "text":"[POT] Adding damage to a strike that does not deal damage has no effect, so the strike still will not do damage.",
+            "refs":{
+                "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
+            }
+        },
+        {
+            "text":"[POT] Additional damage inherits all of the properties of the base damage.",
+            "refs":{
+                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
+                "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
             }
         }
     ],
@@ -37962,6 +38033,253 @@
             "text":"The ability to fail an action must be used before action modifiers or reactions that are not explicitly played \"as the action is announced\".",
             "refs":{
                 "ANK 20190425":"https://www.vekn.net/forum/rules-questions/77581-action-modifiers-played-at-beginning-and-end-of-an-action#94652"
+            }
+        }
+    ],
+    "100185":[
+        {
+            "text":"Adding damage to a strike that does not deal damage has no effect, so the strike still will not do damage.",
+            "refs":{
+                "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
+            }
+        },
+        {
+            "text":"Additional damage inherits all of the properties of the base damage.",
+            "refs":{
+                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
+                "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
+            }
+        }
+    ],
+    "100213":[
+        {
+            "text":"Adding damage to a strike that does not deal damage has no effect, so the strike still will not do damage.",
+            "refs":{
+                "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
+            }
+        },
+        {
+            "text":"Additional damage inherits all of the properties of the base damage.",
+            "refs":{
+                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
+                "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
+            }
+        }
+    ],
+    "100328":[
+        {
+            "text":"Adding damage to a strike that does not deal damage has no effect, so the strike still will not do damage.",
+            "refs":{
+                "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
+            }
+        },
+        {
+            "text":"Additional damage inherits all of the properties of the base damage.",
+            "refs":{
+                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
+                "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
+            }
+        }
+    ],
+    "100511":[
+        {
+            "text":"[pot] Adding damage to a strike that does not deal damage has no effect, so the strike still will not do damage.",
+            "refs":{
+                "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
+            }
+        },
+        {
+            "text":"[pot] Additional damage inherits all of the properties of the base damage.",
+            "refs":{
+                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
+                "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
+            }
+        },
+        {
+            "text":"Sequencing rules apply, and if played first, effects that stop a vampire from going to torpor would prevent the use of effects that are only usable on a vampire going to torpor.",
+            "refs":{
+                "RTR 20010711":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GsI1UyH54jU/m/x9LfDZX1vR4J"
+            }
+        }
+    ],
+    "100767":[
+        {
+            "text":"Adding damage to a strike that does not deal damage has no effect, so the strike still will not do damage.",
+            "refs":{
+                "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
+            }
+        },
+        {
+            "text":"Additional damage inherits all of the properties of the base damage.",
+            "refs":{
+                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
+                "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
+            }
+        }
+    ],
+    "100862":[
+        {
+            "text":"Adding damage to a strike that does not deal damage has no effect, so the strike still will not do damage.",
+            "refs":{
+                "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
+            }
+        },
+        {
+            "text":"Additional damage inherits all of the properties of the base damage.",
+            "refs":{
+                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
+                "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
+            }
+        }
+    ],
+    "101524":[
+        {
+            "text":"Adding damage to a strike that does not deal damage has no effect, so the strike still will not do damage.",
+            "refs":{
+                "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
+            }
+        },
+        {
+            "text":"Additional damage inherits all of the properties of the base damage.",
+            "refs":{
+                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
+                "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
+            }
+        }
+    ],
+    "102061":[
+        {
+            "text":"Adding damage to a strike that does not deal damage has no effect, so the strike still will not do damage.",
+            "refs":{
+                "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
+            }
+        },
+        {
+            "text":"Additional damage inherits all of the properties of the base damage.",
+            "refs":{
+                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
+                "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
+            }
+        }
+    ],
+    "102173":[
+        {
+            "text":"Adding damage to a strike that does not deal damage has no effect, so the strike still will not do damage.",
+            "refs":{
+                "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
+            }
+        },
+        {
+            "text":"Additional damage inherits all of the properties of the base damage.",
+            "refs":{
+                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
+                "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
+            }
+        }
+    ],
+    "200252":[
+        {
+            "text":"Adding damage to a strike that does not deal damage has no effect, so the strike still will not do damage.",
+            "refs":{
+                "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
+            }
+        },
+        {
+            "text":"Additional damage inherits all of the properties of the base damage.",
+            "refs":{
+                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
+                "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
+            }
+        }
+    ],
+    "200385":[
+        {
+            "text":"Adding damage to a strike that does not deal damage has no effect, so the strike still will not do damage.",
+            "refs":{
+                "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
+            }
+        },
+        {
+            "text":"Additional damage inherits all of the properties of the base damage.",
+            "refs":{
+                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
+                "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
+            }
+        }
+    ],
+    "200409":[
+        {
+            "text":"Adding damage to a strike that does not deal damage has no effect, so the strike still will not do damage.",
+            "refs":{
+                "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
+            }
+        },
+        {
+            "text":"Additional damage inherits all of the properties of the base damage.",
+            "refs":{
+                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
+                "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
+            }
+        }
+    ],
+    "200676":[
+        {
+            "text":"Adding damage to a strike that does not deal damage has no effect, so the strike still will not do damage.",
+            "refs":{
+                "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
+            }
+        },
+        {
+            "text":"Additional damage inherits all of the properties of the base damage.",
+            "refs":{
+                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
+                "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
+            }
+        }
+    ],
+    "200708":[
+        {
+            "text":"Adding damage to a strike that does not deal damage has no effect, so the strike still will not do damage.",
+            "refs":{
+                "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
+            }
+        },
+        {
+            "text":"Additional damage inherits all of the properties of the base damage.",
+            "refs":{
+                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
+                "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
+            }
+        }
+    ],
+    "201069":[
+        {
+            "text":"Adding damage to a strike that does not deal damage has no effect, so the strike still will not do damage.",
+            "refs":{
+                "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
+            }
+        },
+        {
+            "text":"Additional damage inherits all of the properties of the base damage.",
+            "refs":{
+                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
+                "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
+            }
+        }
+    ],
+    "100043":[
+        {
+            "text":"Sequencing rules apply, and if played first, effects that stop a vampire from going to torpor would prevent the use of effects that are only usable on a vampire going to torpor.",
+            "refs":{
+                "RTR 20010711":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GsI1UyH54jU/m/x9LfDZX1vR4J"
+            }
+        }
+    ],
+    "102068":[
+        {
+            "text":"Sequencing rules apply, and if played first, effects that stop a vampire from going to torpor would prevent the use of effects that are only usable on a vampire going to torpor.",
+            "refs":{
+                "RTR 20010711":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GsI1UyH54jU/m/x9LfDZX1vR4J"
             }
         }
     ]

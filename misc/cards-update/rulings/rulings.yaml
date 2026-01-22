@@ -124,9 +124,6 @@
 100040|Alpha Glint:
   - Cards that are played at the end of round/combat can still be played (eg. {Taste of Vitae}, {Disarm}). [RTR 20001020]
     [LSJ 20001024]
-100043|Amaranth:
-  - If both minions want to play a card "when a vampire should go into torpor", the acting minion goes first. If played first,
-    {Undead Persistence} would prevent the opponent to play {Amaranth} and vice-versa. [RTR 20010710]
 100048|Amulet of Temporal Perception:
   - A second copy allows a second use in the same turn. [ANK 20230316]
 100050|Anachronism:
@@ -347,7 +344,6 @@
   - '[OBT] Can only be played by the controller of the acting minion. [LSJ 19990425]'
   - '[OBT] Multiple copies can be played by different minions on the same action. [ANK 20200515]'
 100180|Blessed Blade:
-  - Additional damage inherits all of the properties of the base damage. [TOM 19960225]
   - A minion who maneuvers with a weapon (eg. {Blade of Bellona}) may still use Blessed Blade to strike with that weapon as
     his initial strike that round. [ANK 20180704] [LSJ 20050304]
 100181|Blessed Resilience:
@@ -360,8 +356,6 @@
 100184|Blessing of the Beast:
   - The number of cards to put on it is announced when the card is played, they must be in hand before drawing the replacement
     for this card. [PIB 20150428] [LSJ 20100206-2]
-100185|Blessing of the Name:
-  - Additional damage inherits all of the properties of the base damage. [TOM 19960225]
 100189|Bliss:
   - '[dom][pre] [COMBAT] Can be used during a combat by a vampire in torpor. [LSJ 20020416]'
   - '[dom][pre] [COMBAT][REACTION] Can be played by a minion of a Methuselah not involved in the current combat. [ANK 20181101]'
@@ -421,8 +415,6 @@
     [LSJ 20090528-1]
 100212|Blood Tears of Kephran:
   - Prevents up to 2 damage, it can be used to prevent less. [RTR 20041202]
-100213|Blood Tempering:
-  - Additional damage inherits all of the properties of the base damage. [TOM 19960225]
 100214|Blood to Water:
   - Must be played after range is chosen, can be played before or after strikes are chosen. [ANK 20200703] [LSJ 20031008]
 100215|Blood Trade:
@@ -511,7 +503,6 @@
   - "You may lock Orun cards the vampire has even if they're not Laibon: in this case none burns because of the bleed. [ANK\
     \ 20221208]"
 100264|Brute Force:
-  - Additional damage inherits all of the properties of the base damage. [TOM 19960225]
   - The "make a melee strike" option can be used with {Bundi} while {Immortal Grapple} is in effect. [LSJ 20090114]
 100265|Bujo:
   - The chosen action card does not provide its +1 Vote, since it was not played to call the Referendum. Another Political
@@ -622,8 +613,9 @@
   - The superior Obfuscate is not optional. [RTR 19980707] [LSJ 19980722]
 100326|Chanjelin Ward:
   - Applies to an action if any one of its targets would be enough to enable his effect. [LSJ 20080809-2] [RTR 20081119]
-100328|Channeling the Beast:
-  - Additional damage inherits all of the properties of the base damage. [TOM 19960225]
+100327|Channel 10:
+  - Cannot be used if the first action was cancelled "as played" ({Direct Intervention}) but can be used when the first action
+    was cancelled after it was played ({Tangle Atropos' Hand}). [LSJ 20100505] [ANK 20210124]
 100330|Charge of the Buffalo:
   - '[spi]/[SPI] Additional damage inherits all of the properties of the base damage. [TOM 19960225]'
 100331|Charigger, The Axe:
@@ -810,8 +802,6 @@
   - '[QUI] Additional damage inherits all of the properties of the base damage. [TOM 19960225]'
 100489|Dam the Heart's River:
   - The opponent is the one affected by frenzy (eg. for {Blade of Enoch}). [ANK 20220409]
-  - Adding damage to strikes which are not damage dealing strikes will not deal damage [RTR 19960221]
-  - The additional damage is the same type as the strike's damage. [RTR 19970630]
   - Applies to environmental damage inflicted to the opposing minion. [ANK 20181128]
   - Applies to damage played in combat that are resolved after combat (eg. {Catatonic Fear}). [ANK 20170111] [LSJ 20071011]
   - '[QUI] The opponent must pay 1 blood to use a strike that provides a maneuver if he plays it when choosing range. [ANK
@@ -846,11 +836,6 @@
   - If used to cancel a strike, another strike is chosen. [RBK cancel-a-card] [LSJ 20100206]
   - 'Can be used to cancel a card played at the end of a round (eg. {Disarm}) or "when combat would end" (eg. {Psyche!}):
     it then counts as having been played during that ending round. [ANK 20180910-2] [ANK 20191221]'
-100511|Decapitate:
-  - '[pot] Additional damage inherits all of the properties of the base damage. [TOM 19960225]'
-  - '"when a vampire is going into torpor" and "when a vampire should go into torpor" are the same window. If both minions
-    want to play a card, acting minion goes first. If played first, {Undead Persistence} would prevent the opponent to play
-    {Decapitate} and vice-versa. [RTR 20010710]'
 100513|Deed the Heart's Desire:
   - '[QUI] An opponent can play a reaction to wake as the card is played, before its effects apply. [ANK 20231028]'
 100514|Deep Cover Agent:
@@ -879,15 +864,16 @@
   - If played on a referendum provided by a card in play (eg. {Anarch Revolt}), does not prevent referendums provided by another
     copy of the same card in play. [LSJ 20020201]
 100527|Derange:
-  - The clan is set when the card is played, it does not depend on the clan of the vampire that has the card on them. [LSJ
-    20070707]
-  - If the target changes clan to a clan inappropriate for his title, he loses its benefit until his clan is appropriate.
-    He immediately yields the title if it is contested or he receives a new one. [RTR 20201130] [LSJ 20060904]
-  - When removed, the vampire goes back to its underlying clan. [RTR 20201130] [ANK 20200415]
+  - The clan and sect assigned to Derange is set when the card is played and does not change when it is moved. [LSJ 20070707]
+  - If the target changes clan or sect to a clan or sect inappropriate for their title, they lose its benefit until their
+    clan or sect is appropriate. They immediately yield the title if it is contested or they receives a new one. [RTR 20201130]
+    [LSJ 20060904]
+  - When removed, the vampire goes back to its underlying clan and sect. [RTR 20201130] [ANK 20200415]
   - Only requires one clan or the other (Malkavian or Malkavian antitribu) to be played. [ANK 20190203]
-  - If another effect also changes the clan (eg. {Clan Impersonation}), the most recent one takes precedenced. [LSJ 20021209]
-  - Does not change the sect of the target. [As of now the RTR takes precedent over the Cards text in the Card List] [RTR
-    20201130]
+  - If another effect also changes the clan or sect (eg. {Clan Impersonation}, {Into the Fire}), the most recent one takes
+    precedence. [LSJ 20021209]
+  - Is a temporary effect that overrides the underlying sect. The most recent override takes precedence. It stays active if
+    another effect changes the underlying sect, like using the default action to become Anarch. [LSJ 20100811] [ANK 20190619]
 100528|Descent into Darkness:
   - Breaks any temporary control effects, so the vampire is given, face down and out of play, to his current permanent controller,
     with the Descent into Darkness card which, as a minion card, is then controlled by that permanent controller. [LSJ 20040526]
@@ -1298,8 +1284,6 @@
 100766|Forest of Shadows:
   - May be used anytime it is unlocked, even if it has been used previously during the same action (it must be unlocked by
     some method, of course). [TOM 19960109]
-100767|Forger's Hammer:
-  - Additional damage inherits all of the properties of the base damage. [TOM 19960225]
 100778|Foul Blood:
   - A hunt is not successful if no blood is gained, even if the hunt action is still successful. [LSJ 20050720-2]
 100784|Fractured Armament:
@@ -1443,8 +1427,6 @@
   - Can cancel superior {Thoughts Betrayed} and {Shape Mastery} (when the latter is used to cancel a strike). [LSJ 20050224-2]
   - Cannot cancel a card that destroys or steals an equipment or weapon. [LSJ 20050221]
   - Cannot cancel a card restricting the use of disciplines. [LSJ 20050221]
-100862|Growing Fury:
-  - Additional damage inherits all of the properties of the base damage. [TOM 19960225]
 100863|Guard Dogs:
   - '[ANI] The maneuver can only be used if the block is successful, and only in the resulting (block-induced) combat. It
     does not carry over to a follow-up combat (eg. [CEL] {Psyche!}). [LSJ 20010813] [LSJ 20010819-2]'
@@ -1781,8 +1763,6 @@
 101066|Kraken's Kiss:
   - Does not count the damage inflicted before the card was played. [LSJ 20010610]
   - '[VIC] The strike to steal 2 blood can be used on a minion with less than 2 blood or life. [RTR 20010711]'
-101071|Lam Into:
-  - Additional damage inherits all of the properties of the base damage. [TOM 19960225]
 101072|Lapse:
   - '[TEM] The opponent cannot play or use the maneuver from a strike (eg. {.44 Magnum}, {Thrown Gate}), since they cannot
     strike. [LSJ 20001126]'
@@ -1807,8 +1787,8 @@
 101077|Lead Fist:
   - Additional damage inherits all of the properties of the base damage. [TOM 19960225]
 101078|Leadership Vacuum:
-  - The votes include bonus votes from cards or ability (eg. {Eze, The Demon Prince}, {Firebrand}) but not conditional votes
-    (eg. {Sundown}, {Aura of Invincibility}). [ANK 20211009] [LSJ 20040518-2]
+  - The votes include bonus votes from cards or ability (eg. {Eze, The Demon Prince}, {Legendary Vampire}) but not conditional
+    votes (eg. {Sundown}, {Aura of Invincibility}). [ANK 20211009] [LSJ 20040518-2]
   - Priscus ballots are not taken into account. [ANK 20211009] [LSJ 20041025]
   - Changing the numbers on counters on the card does not change the X value (eg. {Goth Band}). [ANK 20221024]
 101080|Learjet:
@@ -1890,8 +1870,6 @@
   - If the Loyalist vampire's votes are changed to be in favor, the votes granted by Loyalist are silenced (not cast). [LSJ
     20031115]
 101131|Lucky Blow:
-  - Adding damage to strikes which are not damage dealing strikes will not deal damage [RTR 19960221]
-  - Additional damage inherits all of the properties of the base damage. [TOM 19960225]
   - You cannot use another strike card as the hand strike for Lucky Blow. [LSJ 20010627]
 101132|Lunatic Eruption:
   - The mandatory attack action must be taken before any non-mandatory actions. [LSJ 20001127]
@@ -2011,7 +1989,6 @@
 101184|Masquerade Enforcement:
   - Does not affect merging (base with advanced vampire cards). [LSJ 20030527]
 101185|Mass Reality:
-  - Additional damage inherits all of the properties of the base damage. [TOM 19960225]
   - Multiple copies stack their bonuses. [LSJ 20020904]
 101192|Meddling of Semsith, The:
   - Stays in play and still reduces your handsize when the target is ousted. [LSJ 20021008]
@@ -2039,8 +2016,6 @@
   - The blood is not gained if an effect continues the combat or begins a new combat. [RTR 20020501]
 101205|Mesmerize:
   - Cannot be used if there is no equipment to steal. [RTR 19980928]
-101209|Mighty Grapple:
-  - '[POT] Additional damage inherits all of the properties of the base damage. [TOM 19960225]'
 101214|Mind of the Wilds:
   - 'The blocking minion is prohibited to strike: combat ends for the duration of the action (during any round of any combat).
     [LSJ 20100308]'
@@ -2287,17 +2262,17 @@
   - '[TEM] Cannot be used to start a new combat if there is already a pending combat queued. [RTR 20020501]'
   - '[TEM] Cannot be used to start a new combat if the opponent is not ready. [ANK 20220429]'
 101406|Poison Pill:
-  - Any decrease in pool (burning, paying, ...) is considered "loosing pool". [ANK 20180719-2]
-  - Gaining pool does not count as a negative loss. If a vote entails both a gain and a loss (eg. {Ancient Influence}), only
-    the loss is counted, not the difference. [ANK 20180813] [LSJ 20041025]
+  - Any decrease in pool (burning, paying, ...) is considered "losing pool". [ANK 20180719-2]
+  - Gaining pool does not count as a negative loss. If the effects of the referendum results in both gain and loss (eg. {Ancient
+    Influence}), only the loss is counted, not the difference. [ANK 20180813] [LSJ 20041025]
 101416|Political Seizure:
   - If you yield the Political Seizure, the location it was contesting does not come into play under your control. [LSJ 19980223]
 101418|Political Struggle:
   - The acting vampire gains X votes if the vampire with this card is burned, no matter how that vampire is burned. [LSJ 19990119]
   - If the victim is burned by diablerie, the votes gained from Political Struggle are gained before the blood hunt referendum.
     [LSJ 20050707]
-  - The votes include bonus votes from cards or ability (eg. {Eze, The Demon Prince}, {Firebrand}) but not conditional votes
-    (eg. {Sundown}, {Aura of Invincibility}). [ANK 20211009] [LSJ 20040518-2]
+  - The votes include bonus votes from cards or ability (eg. {Eze, The Demon Prince}, {Legendary Vampire}) but not conditional
+    votes (eg. {Sundown}, {Aura of Invincibility}). [ANK 20211009] [LSJ 20040518-2]
   - Priscus ballots are not taken into account. [ANK 20211009] [LSJ 20041025]
 101420|Port Authority:
   - 'The cards are replaced before unlocking cards: other unlock effects cannot be ordered before. [ANK 20200129] [LSJ 20091208]'
@@ -2419,8 +2394,6 @@
   - '[QUI] Modifiers and reactions that can be used at the end/after an action can still be used afterwards. [LSJ 20041022]
     [RTR 20180719] [ANK 20221205]'
   - '[QUI] The action has reached resolution, so is subject to NRA (Non Repeatable Action) rules. [RTR 20180719] [ANK 20211015]'
-101524|Pushing the Limit:
-  - Additional damage inherits all of the properties of the base damage. [TOM 19960225]
 101525|Putrefaction:
   - '[THN] Damage is environmental. [RTR 19970630]'
   - '[thn] [THN] It can still be burned if the vampire is already prevented from unlocking as normal by another effect. [RTR
@@ -2955,8 +2928,6 @@
 101862|Static Virtue:
   - 'For a Laibon moved into the ready region in the last influence phase, you must retrieve Aye and Orun in pairs: the same
     number of Aye as Orun. [LSJ 20051127]'
-101869|Steely Tenacity:
-  - '[ani] [COMBAT] Additional damage inherits all of the properties of the base damage. [TOM 19960225]'
 101876|Stonestrength:
   - Unused prevention does not carry over. [LSJ 20001114]
   - '[VIS] Cannot be used if there is no damage to prevent. [LSJ 20001114]'
@@ -2976,8 +2947,6 @@
   - Must be played after the presses are handled and can be played if the round ends prematurely. [RTR 20030519]
   - Can be played before or after effects that are played at the end of the round or "when the combat would end" (eg. [AUS]
     {Telepathic Tracking}). Can be played after [CEL] {Psyche!} [LSJ 20021113] [ANK 20191219] [ANK 20180910-1]
-101885|Strike at the True Flesh:
-  - "[QUI] The additional damage is the same type as the strike's damage. [TOM 19960225] [RTR 19970630]"
 101886|Strike with Conviction:
   - If the action to bleed is blocked or canceled, Strike with Conviction is not burned. [LSJ 20060421] [RTR 20111202]
 101887|Strix:
@@ -3037,8 +3006,6 @@
   - Aggravated damage are not healed by default, so they are not doubled. If the target can heal them (eg. {Repair the Undead
     Flesh}), he must pay double. [LSJ 20031219] [LSJ 20100527]
   - If the wielder uses {Taste of Vitae}, he gains as much blood as the opponent has lost. [PIB 20130415]
-101921|Sword of the Righteous:
-  - Additional damage inherits all of the properties of the base damage. [TOM 19960225]
 101925|Tainted Spring:
   - Additional damage inherits all of the properties of the base damage. [TOM 19960225]
 101926|Tainted Vitae:
@@ -3074,7 +3041,6 @@
 101939|Target Head:
   - Is played during the Strike phase even if you commit to a strike in the Determine Range phase (eg. {Thrown Gate}). Cannot
     be played if the strike cannot be chosen anymore during the Strike phase (eg. {Immortal Grapple}). [LSJ 20080409]
-  - The additional damage is the same type as the strike's damage. [RTR 19970630]
   - If it is canceled, any blood cost (eg. {Terror Frenzy}) has to be paid. [PIB 20121031]
   - Can be played on a strike that does no damage, even a dodge or a combat ends, but has no effect in that case. [RTR 19960221]
     [PIB 20130319]
@@ -3223,7 +3189,6 @@
   - Additional damage inherits all of the properties of the base damage. [TOM 19960225]
   - All the damage is aggravated. [LSJ 20011204]
 102060|Undead Persistence:
-  - '[for] The vampire can play cards which are not usable by vampires going to torpor. [LSJ 19970303]'
   - '[for] Cannot be used twice by the same vampire during the same combat: because of the first, the vampire is not going
     into torpor and does not meet the requirement to play it anymore. [LSJ 20030214]'
   - '[for] If an effect causes a new combat to occur at the end of combat, then the "go to torpor" effect will be delayed
@@ -3233,16 +3198,12 @@
   - '[FOR] Cannot be used if there is no damage to prevent. [LSJ 20001114]'
   - '[FOR] Prevents up to 2 damage, it can be used to prevent less. [RTR 20041202]'
   - '[FOR] Unused prevention does not carry over. [LSJ 20001114]'
-102061|Undead Strength:
-  - Additional damage inherits all of the properties of the base damage. [TOM 19960225]
 102063|Under Siege:
   - Can be used for intercept even if the vampire is already unlocked. [PIB 20150216]
 102065|Underbridge Stray:
   - He can burn 1 life to give a minion you control a press the turn he is recruited. [ANK 20180517]
 102067|Undue Influence:
   - Cannot be played with no vampire in the uncontrolled region. [LSJ 20060623]
-102068|Undying Tenacity:
-  - '[for] The vampire can play cards which are not usable by vampires going to torpor. [LSJ 19970303]'
 102069|Undying Thirst:
   - If the vampire is empty, he must either hunt or diablerize, this is a mandatory action. [LSJ 20081213-2]
   - Has no effect on a vampire that cannot commit diablerie (eg. because of {Humanitas}). [LSJ 20050324-2]
@@ -3307,8 +3268,8 @@
     [LSJ 20100728] [LSJ 20090213]
 102097|Veil the Legions:
   - Can only be played by the controller of the acting minion. [LSJ 19990425]
-  - "[OBF] If an action is canceled after it has been played (eg. {Tangle Atropos' Hand} but not {Direct Intervention}) it\
-    \ still counts as \"one of the next X actions\". [ANK 20210124]"
+  - "[OBF] If an action is cancelled after it has been played (e.g. {Tangle Atropos' Hand} but not {Direct Intervention})\
+    \ it still counts as \"one of the next X actions\". [LSJ 20070526] [ANK 20210124]"
 102098|Veiled Sight:
   - '[CHI] The strike can be used on a minion with no blood. [RTR 20010711]'
   - '[CHI] The strike is not ranged. [TOM 19951215-2]'
@@ -3325,8 +3286,6 @@
   - If the combat is canceled by Venenation, the action is still blocked, the blocking minion locks. {Mask of a Thousand Faces}
     cannot be used to continue it, but an effect can be used to continue the action as if unblocked (eg. {Crypt's Sons}, {Momentary
     Delay}). [ANK 20181003] [LSJ 20010803-2] [ANK 20220127]
-102106|Vengeance of Samiel:
-  - Additional damage inherits all of the properties of the base damage. [TOM 19960225]
 102113|Vessel:
   - Can be used when the vampire is in torpor. [PIB 20150522]
 102118|Victim of Habit:
@@ -3355,6 +3314,9 @@
   - May still be "canceled as it is played" when used as an out-of-turn master. [LSJ 20031201]
 102135|Vulture's Buffet:
   - Is a hunt action. [ANK 20200421]
+102136|Waiting Game:
+  - If an action is cancelled after it has been played (e.g. {Tangle Atropos' Hand} but not {Direct Intervention}) it still
+    counts as taken. [ANK 20210124]
 102141|Walks-With-Might:
   - Only affects the cost of masters played by his controller. [LSJ 20081124-1]
 102143|Wanderer's Counsel:
@@ -3412,8 +3374,6 @@
   - If the damage is reduced (eg. {Nephandus}) or not inflicted (eg. {Blood Fury}), the corresponding token is not burned
     (contrary to prevented damage). [LSJ 20100519]
   - Full damage is applied if there are any counter left, even just 1. [ANK 20201229-2]
-102173|Wendell Delburton:
-  - Additional damage inherits all of the properties of the base damage. [TOM 19960225]
 102175|Whispers from the Dead:
   - The card to retrieve must be announced when declaring the action. [LSJ 20010627]
 102179|White Phosphorus Grenade:
@@ -4340,7 +4300,7 @@
     to counter them). [LSJ 20060530-2]
   - Her ability does not work with {Piper} (not an action). [LSJ 20090115-1] [ANK 20170309]
 201574|Kuyén:
-  - His ability works on allies recruited in a non-standard way (eg. {Piper}). [ANK 20210913] [LSJ 20090116]
+  - Their ability works on allies recruited in a non-standard way (eg. {Piper}). [ANK 20210913] [LSJ 20090116]
 201576|Aline Gädeke:
   - Can unlock after a vampire performs an action to become Anarch. [ANK 20220814]
 201585|Elen Kamjian:
@@ -4832,3 +4792,9 @@ G00146|Vote reduction:
 G00147|Fail an action as announced:
   - The ability to fail an action must be used before action modifiers or reactions that are not explicitly played "as the
     action is announced". [ANK 20190425]
+G00148|Adding damage to strikes:
+  - Adding damage to a strike that does not deal damage has no effect, so the strike still will not do damage. [RTR 19960221]
+  - Additional damage inherits all of the properties of the base damage. [RTR 19970630] [TOM 19960225]
+G00149|Usable when going to torpor:
+  - Sequencing rules apply, and if played first, effects that stop a vampire from going to torpor would prevent the use of
+    effects that are only usable on a vampire going to torpor. [RTR 20010711]

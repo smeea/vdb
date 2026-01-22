@@ -283,9 +283,12 @@
             },
             "Third":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Only usable by a vampire being burned. Usable by a vampire in torpor.\n[dem] Remove this vampire from the game instead (diablerie, if any, is still successful), and put this card into play. You may not play this card if you already have an Abandoning the Flesh in play. Lock during a bleed action to give an acting vampire with Dementation [dem] +1 bleed.",
+        "text":"Only usable if this vampire would be burned. Usable by a vampire in torpor.\n[dem] Instead, remove this vampire from the game (diablerie, if any, is canceled) and put this card in play. You can lock this card during a bleed action to give an acting vampire with Dementation [dem] +1 bleed. A Methuselah can have only one Abandoning the Flesh.",
         "twd":6,
         "type":"Combat/Reaction"
     },
@@ -935,7 +938,7 @@
                 "2021-10-15":true
             }
         },
-        "text":"Put this card on any Toreador. If this Toreador is blocked, the blocking minion's controller burns 1 pool before block resolution.",
+        "text":"Put this card on a Toreador. If this Toreador is blocked, the blocking minion's controller burns 1 pool before block resolution.",
         "twd":39,
         "type":"Master"
     },
@@ -2090,9 +2093,9 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"If both minions want to play a card \"when a vampire should go into torpor\", the acting minion goes first. If played first, {Undead Persistence} would prevent the opponent to play {Amaranth} and vice-versa.",
+                "text":"Sequencing rules apply, and if played first, effects that stop a vampire from going to torpor would prevent the use of effects that are only usable on a vampire going to torpor.",
                 "refs":{
-                    "RTR 20010710":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GsI1UyH54jU/m/x9LfDZX1vR4J"
+                    "RTR 20010711":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GsI1UyH54jU/m/x9LfDZX1vR4J"
                 }
             }
         ],
@@ -4671,7 +4674,7 @@
                 "N":1
             }
         },
-        "text":"+1 stealth action.\n[ani] Put this card in play. During your unlock phase, your prey burns 1 pool. A Methuselah can burn only 1 pool each turn with Army of Rats cards. Minions can burn this card as a (D) action.",
+        "text":"+1 stealth action.\n[ani] Put this card in play. During your unlock phase, your prey burns 1 pool. You can burn only 1 pool each turn with Army of Rats cards. Minions can burn this card as a (D) action.",
         "twd":301,
         "type":"Action"
     },
@@ -6102,9 +6105,12 @@
             "BH":{
                 "C":true,
                 "PM":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"[dem] Give another ready minion +1 intercept.\n[DEM] Lock this vampire to unlock another ready minion. Not usable by a blocking minion.",
+        "text":"[dem] Give another ready minion +1 intercept.\n[DEM] Not usable by a blocking minion. Lock this vampire to unlock another ready minion.",
         "twd":5,
         "type":"Reaction"
     },
@@ -8840,12 +8846,6 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"Additional damage inherits all of the properties of the base damage.",
-                "refs":{
-                    "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
-                }
-            },
-            {
                 "text":"A minion who maneuvers with a weapon (eg. {Blade of Bellona}) may still use Blessed Blade to strike with that weapon as his initial strike that round.",
                 "refs":{
                     "ANK 20180704":"https://www.vekn.net/forum/rules-questions/76784-blessed-blade-blade-of-bellona#88556",
@@ -8879,6 +8879,19 @@
                 "text":"[val][REFLEX] If a limited effect is canceled (bleed, additional strike), then the limit is not triggered and another limited effect can be used.",
                 "refs":{
                     "LSJ 20030224":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/67261v339Ds/m/um8V7VVp2Y4J"
+                }
+            },
+            {
+                "text":"Adding damage to a strike that does not deal damage has no effect, so the strike still will not do damage.",
+                "refs":{
+                    "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
+                }
+            },
+            {
+                "text":"Additional damage inherits all of the properties of the base damage.",
+                "refs":{
+                    "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
+                    "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
                 }
             }
         ],
@@ -9083,8 +9096,15 @@
         "requirement":"",
         "rulings":[
             {
+                "text":"Adding damage to a strike that does not deal damage has no effect, so the strike still will not do damage.",
+                "refs":{
+                    "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
+                }
+            },
+            {
                 "text":"Additional damage inherits all of the properties of the base damage.",
                 "refs":{
+                    "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
                     "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
                 }
             }
@@ -10442,8 +10462,15 @@
         "requirement":"",
         "rulings":[
             {
+                "text":"Adding damage to a strike that does not deal damage has no effect, so the strike still will not do damage.",
+                "refs":{
+                    "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
+                }
+            },
+            {
                 "text":"Additional damage inherits all of the properties of the base damage.",
                 "refs":{
+                    "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
                     "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
                 }
             }
@@ -12779,15 +12806,22 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"Additional damage inherits all of the properties of the base damage.",
-                "refs":{
-                    "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
-                }
-            },
-            {
                 "text":"The \"make a melee strike\" option can be used with {Bundi} while {Immortal Grapple} is in effect.",
                 "refs":{
                     "LSJ 20090114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/fZIdIRDDxdo/m/dtdSNVk_IIkJ"
+                }
+            },
+            {
+                "text":"Adding damage to a strike that does not deal damage has no effect, so the strike still will not do damage.",
+                "refs":{
+                    "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
+                }
+            },
+            {
+                "text":"Additional damage inherits all of the properties of the base damage.",
+                "refs":{
+                    "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
+                    "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
                 }
             }
         ],
@@ -13432,9 +13466,12 @@
             },
             "Third":{
                 "PM":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"+1 stealth action.\n[aus][dem] Move 2 blood from the blood bank to a younger vampire with Dementation [dem] in your uncontrolled region.\n[AUS][DEM] As above, but move 3 blood.",
+        "text":"+1 stealth action.\n[aus][dem] Add 2 blood to a younger vampire with Dementation [dem] in your uncontrolled region.\n[AUS][DEM] As above, but add 3 blood.",
         "twd":64,
         "type":"Action"
     },
@@ -14528,7 +14565,7 @@
                 "NR":3
             }
         },
-        "text":"Only usable before range is determined. A vampire can play only one Carrion Crows each combat.\n[ani] The opposing minion takes 1R environmental damage each round this combat during normal strike resolution.\n[ANI] As above, but for 2R environmental damage.",
+        "text":"Only usable before range is determined. A vampire can play only one Carrion Crows each combat.\n[ani] This combat, the opposing minion takes 1R environmental damage each round during normal strike resolution.\n[ANI] As above, but for 2R environmental damage.",
         "twd":436,
         "type":"Combat"
     },
@@ -15678,7 +15715,7 @@
                 "C":true
             }
         },
-        "text":"Only usable if this minion is blocked, before block resolution.\nUnlock this minion, and the action ends (unsuccessfully). This minion cannot perform the same action again this turn.",
+        "text":"Only usable if this minion is blocked, before block resolution.\nUnlock this minion. The action ends (unsuccessfully). This minion cannot perform the same action again this turn.",
         "twd":249,
         "type":"Action Modifier"
     },
@@ -15817,7 +15854,15 @@
         "path":"",
         "pool":2,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Cannot be used if the first action was cancelled \"as played\" ({Direct Intervention}) but can be used when the first action was cancelled after it was played ({Tangle Atropos' Hand}).",
+                "refs":{
+                    "LSJ 20100505":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/nAzGpZHw8eA/m/tt8m7vuD6ZAJ",
+                    "ANK 20210124":"https://www.vekn.net/forum/rules-questions/79001-the-question-of-the-month-action-fizzles#101492"
+                }
+            }
+        ],
         "set":{
             "Tenth":{
                 "A":1,
@@ -15856,8 +15901,15 @@
         "requirement":"",
         "rulings":[
             {
+                "text":"Adding damage to a strike that does not deal damage has no effect, so the strike still will not do damage.",
+                "refs":{
+                    "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
+                }
+            },
+            {
                 "text":"Additional damage inherits all of the properties of the base damage.",
                 "refs":{
+                    "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
                     "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
                 }
             }
@@ -16347,7 +16399,7 @@
                 "PTr":"1"
             }
         },
-        "text":"Unique demon with 1 life.\nPut Charnas on any minion (this is a +1 stealth (D) action if that target minion is controlled by another Methuselah). Charnas inflicts 1 damage on the employer during their unlock phase. Charnas is immune to damage from the employer. If the employer is about to be burned, their controller can put Charnas on any other minion.",
+        "text":"Unique demon with 1 life.\nPut Charnas on a minion (this is a +1 stealth (D) action if the target minion is controlled by another Methuselah). Charnas inflicts 1 damage on the employer during their unlock phase. Charnas is immune to damage from the employer. If the employer is about to be burned, their controller can put Charnas on another minion.",
         "twd":17,
         "type":"Retainer"
     },
@@ -18236,9 +18288,12 @@
             },
             "FB":{
                 "PM":"1"
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"[dem] Strike: send the opposing vampire to torpor.\n[DEM] As above, and that opposing vampire does not unlock as normal during their next unlock phase.",
+        "text":"[dem] Strike: send the opposing vampire to torpor.\n[DEM] As above, and the opposing vampire does not unlock as normal during their next unlock phase.",
         "twd":42,
         "type":"Combat"
     },
@@ -19477,6 +19532,9 @@
             },
             "FB":{
                 "PM":"4"
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "text":"Only usable during a bleed action.\n[dem] +1 bleed (limited).\n[DEM] +1 stealth and +1 bleed (limited).",
@@ -20860,9 +20918,12 @@
         "set":{
             "Third":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Master. Do not replace until your discard phase.\nPlay Rock-Paper-Scissors with any other Methuselah. If you tie, you each discard a card at random. Otherwise, the loser discards his or her hand and draws a new hand.",
+        "text":"Do not replace until your next discard phase.\nPlay Rock-Paper-Scissors with another Methuselah. If you tie, you each discard 1 card at random. Otherwise, the loser discards their hand.",
         "twd":0,
         "type":"Master"
     },
@@ -21360,7 +21421,7 @@
                 "PTo":"2"
             }
         },
-        "text":"Only usable if an ally or younger vampire attempts to block.\n[aus] That attempt fails and that blocking minion's controller cannot attempt to block this action again. That blocking minion can burn 1 blood or life to cancel this card as it is played.\n[AUS] As above, but canceling this card requires 1 additional blood or life.",
+        "text":"Only usable if an ally or younger vampire attempts to block.\n[aus] That attempt fails and the blocking minion's controller cannot attempt to block this action again. The blocking minion can burn 1 blood or life to cancel this card as it is played.\n[AUS] As above, but canceling this card requires 1 additional blood or life.",
         "twd":70,
         "type":"Action Modifier"
     },
@@ -21671,9 +21732,12 @@
         "set":{
             "Gehenna":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Requires a Sabbat vampire. Title.\nIf this referendum passes, put this card on the acting vampire to represent the unique Sabbat title of Archbishop of Geneva. This could lead to a contested title. If this vampire is Malkavian antitribu, he or she unlocks during your next discard phase.",
+        "text":"Title. Requires a Sabbat vampire.\nSuccessful referendum means this card is put on this vampire to represent the unique Sabbat title of Archbishop of Geneva. If this vampire is Malkavian antitribu, they unlock during your next discard phase.",
         "twd":12,
         "type":"Political Action"
     },
@@ -22763,18 +22827,6 @@
                 }
             },
             {
-                "text":"Adding damage to strikes which are not damage dealing strikes will not deal damage",
-                "refs":{
-                    "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
-                }
-            },
-            {
-                "text":"The additional damage is the same type as the strike's damage.",
-                "refs":{
-                    "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ"
-                }
-            },
-            {
                 "text":"Applies to environmental damage inflicted to the opposing minion.",
                 "refs":{
                     "ANK 20181128":"https://www.vekn.net/forum/rules-questions/77187-dam-the-heart-s-river-and-weather-control#92076"
@@ -22815,6 +22867,19 @@
                 "text":"It affects card costs, cost reductions from other effects do apply.",
                 "refs":{
                     "LSJ 20070829-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/sVXZw1J43ik/m/OByFPgQsynwJ"
+                }
+            },
+            {
+                "text":"Adding damage to a strike that does not deal damage has no effect, so the strike still will not do damage.",
+                "refs":{
+                    "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
+                }
+            },
+            {
+                "text":"Additional damage inherits all of the properties of the base damage.",
+                "refs":{
+                    "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
+                    "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
                 }
             }
         ],
@@ -23952,15 +24017,22 @@
         "requirement":"",
         "rulings":[
             {
+                "text":"[pot] Adding damage to a strike that does not deal damage has no effect, so the strike still will not do damage.",
+                "refs":{
+                    "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
+                }
+            },
+            {
                 "text":"[pot] Additional damage inherits all of the properties of the base damage.",
                 "refs":{
+                    "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
                     "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
                 }
             },
             {
-                "text":"\"when a vampire is going into torpor\" and \"when a vampire should go into torpor\" are the same window. If both minions want to play a card, acting minion goes first. If played first, {Undead Persistence} would prevent the opponent to play {Decapitate} and vice-versa.",
+                "text":"Sequencing rules apply, and if played first, effects that stop a vampire from going to torpor would prevent the use of effects that are only usable on a vampire going to torpor.",
                 "refs":{
-                    "RTR 20010710":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GsI1UyH54jU/m/x9LfDZX1vR4J"
+                    "RTR 20010711":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GsI1UyH54jU/m/x9LfDZX1vR4J"
                 }
             }
         ],
@@ -24627,9 +24699,12 @@
             },
             "KoT":{
                 "PM":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Master: Discipline.\nPut this card on a vampire. This vampire gains 1 level of Dementation [dem]. Capacity increases by 1: the vampire is one generation older. Cannot be placed on a vampire with superior Dementation [DEM].",
+        "text":"Discipline.\nPut this card on a vampire. This vampire gets +1 level of Dementation [dem] and +1 capacity. Cannot be put on a vampire with superior Dementation [DEM].",
         "twd":65,
         "type":"Master"
     },
@@ -24777,6 +24852,9 @@
             },
             "KoT":{
                 "PM":"2"
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "text":"[dem] [COMBAT] Press.\n[DEM] [ACTION MODIFIER] +1 stealth.",
@@ -24880,20 +24958,20 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"The clan is set when the card is played, it does not depend on the clan of the vampire that has the card on them.",
+                "text":"The clan and sect assigned to Derange is set when the card is played and does not change when it is moved.",
                 "refs":{
                     "LSJ 20070707":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ZtRk5z2TcoI/m/gJWD0dT3kUwJ"
                 }
             },
             {
-                "text":"If the target changes clan to a clan inappropriate for his title, he loses its benefit until his clan is appropriate. He immediately yields the title if it is contested or he receives a new one.",
+                "text":"If the target changes clan or sect to a clan or sect inappropriate for their title, they lose its benefit until their clan or sect is appropriate. They immediately yield the title if it is contested or they receives a new one.",
                 "refs":{
                     "RTR 20201130":"https://www.blackchantry.com/2020/12/25/rtr-30-11-2020/",
                     "LSJ 20060904":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/L9D4GK0yNv8/m/H9vnUciv2psJ"
                 }
             },
             {
-                "text":"When removed, the vampire goes back to its underlying clan.",
+                "text":"When removed, the vampire goes back to its underlying clan and sect.",
                 "refs":{
                     "RTR 20201130":"https://www.blackchantry.com/2020/12/25/rtr-30-11-2020/",
                     "ANK 20200415":"https://www.vekn.net/forum/rules-questions/7516-re-derange-titles-and-bloodbrothers?start=6#99609"
@@ -24906,15 +24984,16 @@
                 }
             },
             {
-                "text":"If another effect also changes the clan (eg. {Clan Impersonation}), the most recent one takes precedenced.",
+                "text":"If another effect also changes the clan or sect (eg. {Clan Impersonation}, {Into the Fire}), the most recent one takes precedence.",
                 "refs":{
                     "LSJ 20021209":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/kQpR-Cn9nW0/m/0cNMARSt9PIJ"
                 }
             },
             {
-                "text":"Does not change the sect of the target. [As of now the RTR takes precedent over the Cards text in the Card List]",
+                "text":"Is a temporary effect that overrides the underlying sect. The most recent override takes precedence. It stays active if another effect changes the underlying sect, like using the default action to become Anarch.",
                 "refs":{
-                    "RTR 20201130":"https://www.blackchantry.com/2020/12/25/rtr-30-11-2020/"
+                    "LSJ 20100811":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/kGKWcs3k6vI/m/Uwx7TGC8lgYJ",
+                    "ANK 20190619":"https://www.vekn.net/forum/rules-questions/77723-writ-of-acceptance-and-anarch-and-hackerspace#95462"
                 }
             },
             {
@@ -24933,9 +25012,12 @@
             },
             "Third":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"This is a +1 stealth action.\n(D) Put this card on a younger vampire. The vampire with this card is considered to be the same clan and sect as the acting vampire. The vampire with this card does not unlock as normal. During his or her controller's unlock phase, he or she may burn 1 blood to unlock. The vampire with this card may move it to another vampire as a (D) action. This card cannot be placed on a Malkavian or Malkavian antitribu.",
+        "text":"+1 stealth action.\n(D) Put this card on a younger vampire. The attached vampire is considered the same clan and sect as this acting vampire. The attached vampire does not unlock as normal. During their unlock phase, they can burn 1 blood to unlock. The attached vampire can move this card to another vampire as a (D) action. Cannot be put on a Malkavian or Malkavian antitribu.",
         "twd":18,
         "type":"Action"
     },
@@ -26706,9 +26788,12 @@
             },
             "KoT":{
                 "C":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"+1 stealth action.\n[dem] This vampire gains superior Dementation [DEM] until the end of the turn and unlocks.\n[DEM] Put this card on the acting vampire. The vampire with this card gets +1 bleed. Any older vampire can burn this card as a (D) action. A vampire can have no more than two Dive into Madness cards.",
+        "text":"+1 stealth action.\n[dem] This vampire gets superior Dementation [DEM] until the end of the turn and unlocks.\n[DEM] Put this card on this vampire. This vampire gets +1 bleed. Older vampires can burn this card as a (D) action. A vampire can have no more than two Dive into Madness.",
         "twd":17,
         "type":"Action"
     },
@@ -30637,9 +30722,12 @@
             },
             "Third":{
                 "PM":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Unique equipment.\nThe Malkavian antitribu with this equipment gets +1 bleed and +1 stealth when bleeding.",
+        "text":"Unique.\nThis Malkavian antitribu gets +1 bleed and +1 stealth during bleed actions.",
         "twd":26,
         "type":"Equipment"
     },
@@ -31724,9 +31812,12 @@
                 "U":true,
                 "PM":1,
                 "SKM":"1"
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Mortal with 1 life. 1 strength, 0 bleed.\nEscaped Mental Patient can enter combat with any minion controlled by another Methuselah as a (D) action. The Patient can strike: hand strike at +1 damage, aggravated. Burn him at the end of combat if he does so.",
+        "text":"Mortal with 1 life. 1 strength, 0 bleed.\nThis ally can strike: hand strike at +1 damage, aggravated; burn him at the end of combat if this strike has resolved. This ally can enter combat with a minion as a (D) action.",
         "twd":8,
         "type":"Ally"
     },
@@ -32750,6 +32841,9 @@
             },
             "FB":{
                 "PM":"4"
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "text":"Only usable during a bleed action.\n[dem] +1 bleed (limited).\n[DEM] +2 bleed (limited).",
@@ -33644,7 +33738,7 @@
                 "NTz":1
             }
         },
-        "text":"Unique.\nPut this card on a ready vampire. The controller of this vampire burns 3 pool after this vampire goes to torpor. During each Methuselah's unlock phase, if this vampire is in torpor, that Methuselah burns 1 pool.",
+        "text":"Unique.\nPut this card on a ready vampire. After this vampire goes to torpor, their controller burns 3 pool. During each Methuselah's unlock phase, if this vampire is in torpor, that Methuselah burns 1 pool.",
         "twd":804,
         "type":"Master"
     },
@@ -35184,9 +35278,12 @@
         "set":{
             "TR":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Requires an anarch.\n[aus] Play when the acting vampire would gain 1 or more blood. The acting vampire and this reacting anarch each gain 1 blood instead.\n[dem] Gain 4 votes.\n[for] Only usable when an ally is acting. The action fails and the ally takes 1 damage. Lock this reacting anarch.",
+        "text":"Requires an Anarch.\n[aus] Only usable if the acting vampire would gain 1 or more blood. Instead, the acting vampire and this reacting Anarch each gain 1 blood.\n[dem] Only usable during the polling step of a political action. This vampire gets +4 votes.\n[for] Only usable if an ally is acting. The action fails and the ally takes 1 environmental damage. Lock this Anarch.",
         "twd":2,
         "type":"Reaction"
     },
@@ -36930,8 +37027,15 @@
         "requirement":"",
         "rulings":[
             {
+                "text":"Adding damage to a strike that does not deal damage has no effect, so the strike still will not do damage.",
+                "refs":{
+                    "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
+                }
+            },
+            {
                 "text":"Additional damage inherits all of the properties of the base damage.",
                 "refs":{
+                    "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
                     "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
                 }
             }
@@ -41651,8 +41755,15 @@
         "requirement":"",
         "rulings":[
             {
+                "text":"Adding damage to a strike that does not deal damage has no effect, so the strike still will not do damage.",
+                "refs":{
+                    "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
+                }
+            },
+            {
                 "text":"Additional damage inherits all of the properties of the base damage.",
                 "refs":{
+                    "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
                     "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
                 }
             }
@@ -43080,9 +43191,12 @@
             },
             "KoT":{
                 "C":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"[dem] (D) Put this card on any minion. The minion with this card burns 1 blood or life during his or her unlock phase. Any minion can burn this card as an action. A minion can have only one The Haunting.\n[DEM] As above, but this action is at +1 stealth.",
+        "text":"[dem] (D) Put this card on a minion. The attached minion burns 1 blood or life during their unlock phase. Minions can burn this card as an action. A minion can have only one The Haunting.\n[DEM] As above, and this is a +1 stealth action.",
         "twd":3,
         "type":"Action"
     },
@@ -48041,9 +48155,12 @@
             "Third":{
                 "PM":1,
                 "SKM":"1"
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Master: unique location. Hunting ground.\nDuring your unlock phase, you may move 1 blood from the blood bank to a ready vampire you control. A vampire can gain blood from only one hunting ground card each turn.",
+        "text":"Unique location. Hunting ground.\nDuring your unlock phase, a ready vampire you control can gain 1 blood. A vampire can gain blood from only one hunting ground each turn.",
         "twd":48,
         "type":"Master"
     },
@@ -50797,9 +50914,12 @@
             },
             "FB":{
                 "PM":"8"
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"[dem] (D) Bleed any Methuselah. Gain 1 pool if this bleed is successful (for 1 or more).\n[DEM] As above, with +1 bleed.",
+        "text":"[dem] (D) Bleed any Methuselah. Gain 1 pool if the bleed is successful (for 1 or more).\n[DEM] As above, with +1 bleed.",
         "twd":180,
         "type":"Action"
     },
@@ -51573,12 +51693,6 @@
         "requirement":"anarch",
         "rulings":[
             {
-                "text":"Additional damage inherits all of the properties of the base damage.",
-                "refs":{
-                    "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
-                }
-            },
-            {
                 "text":"[for] The optional maneuver cannot be used if the strike cannot be used (eg. {Hidden Lurker}).",
                 "refs":{
                     "LSJ 20021028":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/g0GGiVIxyis/m/35WA-O9XrroJ"
@@ -51608,6 +51722,19 @@
                 "text":"[vic] If another effect was already setting that round's range (e.g. {Neutral Guard}), that effect has priority.",
                 "refs":{
                     "PIB 20120214":"https://www.vekn.net/forum/rules-questions/22906-re-set-the-range?start=12#22999"
+                }
+            },
+            {
+                "text":"Adding damage to a strike that does not deal damage has no effect, so the strike still will not do damage.",
+                "refs":{
+                    "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
+                }
+            },
+            {
+                "text":"Additional damage inherits all of the properties of the base damage.",
+                "refs":{
+                    "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
+                    "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
                 }
             }
         ],
@@ -51983,7 +52110,7 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"The votes include bonus votes from cards or ability (eg. {Eze, The Demon Prince}, {Firebrand}) but not conditional votes (eg. {Sundown}, {Aura of Invincibility}).",
+                "text":"The votes include bonus votes from cards or ability (eg. {Eze, The Demon Prince}, {Legendary Vampire}) but not conditional votes (eg. {Sundown}, {Aura of Invincibility}).",
                 "refs":{
                     "ANK 20211009":"https://www.vekn.net/forum/rules-questions/79388-political-struggle-and-victim-priscus#103481",
                     "LSJ 20040518-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/4emymfUPwAM/m/JF_o7OOoCbkJ"
@@ -54469,7 +54596,13 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"Adding damage to strikes which are not damage dealing strikes will not deal damage",
+                "text":"You cannot use another strike card as the hand strike for Lucky Blow.",
+                "refs":{
+                    "LSJ 20010627":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NhNCVCCDyU0/m/I5Yph3-UUPsJ"
+                }
+            },
+            {
+                "text":"Adding damage to a strike that does not deal damage has no effect, so the strike still will not do damage.",
                 "refs":{
                     "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
                 }
@@ -54477,13 +54610,8 @@
             {
                 "text":"Additional damage inherits all of the properties of the base damage.",
                 "refs":{
+                    "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
                     "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
-                }
-            },
-            {
-                "text":"You cannot use another strike card as the hand strike for Lucky Blow.",
-                "refs":{
-                    "LSJ 20010627":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NhNCVCCDyU0/m/I5Yph3-UUPsJ"
                 }
             }
         ],
@@ -54564,9 +54692,12 @@
             },
             "Third":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"[dem] (D) Put this card on any ready minion. During his or her minion phase, the minion with this card must enter combat with a ready minion controlled by his or her prey as a (D) action (unless the minion must hunt). Any minion may burn this card as an action.\n[DEM] As above, and the minion taking the action to burn this card takes 1 unpreventable damage when this card is burned.",
+        "text":"[dem] (D) Put this card on a ready minion. During their minion phase, the attached minion must enter combat with a minion controlled by their prey as a (D) action unless they must hunt. Minions can burn this card as an action.\n[DEM] As above, and burning this card as an action inflicts 1 unpreventable environmental damage on the acting minion.",
         "twd":10,
         "type":"Action"
     },
@@ -54793,9 +54924,12 @@
         "set":{
             "BL":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"[aus][dem] (D) Bleed at +2 bleed.\n[AUS][DEM] (D) Put this card on any ready minion controlled by your prey. Not usable if a Madman's Quill is already on any of your prey's minions. When a vampire with Dementation [dem] bleeds this minion's controller, that acting vampire gets +1 bleed. Any vampire can burn this card as an action that costs 2 blood.",
+        "text":"[aus][dem] (D) Bleed with +2 bleed.\n[AUS][DEM] (D) Put this card on a ready minion controlled by your prey. Not usable if a Madman's Quill is already on any minion controlled by your prey. Vampires with Dementation [dem] get +1 bleed against the attached minion's controller. Vampires can burn this card as an action that costs 2 blood.",
         "twd":49,
         "type":"Action"
     },
@@ -55534,9 +55668,12 @@
             },
             "SW":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Master.\nPut this card on a Malkavian antitribu. The vampire with this card cannot perform actions. Any vampire may burn this card as a (D) action.",
+        "text":"Put this card on a Malkavian antitribu. This vampire cannot perform actions. Vampires can burn this card as a (D) action.",
         "twd":1,
         "type":"Master"
     },
@@ -55567,9 +55704,12 @@
             },
             "Third":{
                 "PM":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Master.\nPlay Rock-Paper-Scissors with any other Methuselah. The winner steals 2 pool from the loser. Each time you tie, play again, but for an additional pool.",
+        "text":"Play Rock-Paper-Scissors with another Methuselah. The winner steals 2 pool from the loser. Each time you tie, play again, but for 1 additional pool.",
         "twd":3,
         "type":"Master"
     },
@@ -56986,15 +57126,22 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"Additional damage inherits all of the properties of the base damage.",
-                "refs":{
-                    "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
-                }
-            },
-            {
                 "text":"Multiple copies stack their bonuses.",
                 "refs":{
                     "LSJ 20020904":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Qmi4hFk6QqE/m/VmoU2tfLMgEJ"
+                }
+            },
+            {
+                "text":"Adding damage to a strike that does not deal damage has no effect, so the strike still will not do damage.",
+                "refs":{
+                    "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
+                }
+            },
+            {
+                "text":"Additional damage inherits all of the properties of the base damage.",
+                "refs":{
+                    "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
+                    "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
                 }
             }
         ],
@@ -57648,6 +57795,9 @@
             },
             "KSU":{
                 "AU":"2"
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "text":"Requires an Anarch. Only usable as the action is announced. More than one Discipline can be used to play this card.\n[dem] Choose a titled vampire or a younger vampire. The chosen vampire cannot block this action.\n[obf] +1 stealth, even if stealth is not yet needed.\n[pre] If this action is blocked, this Anarch can strike: combat ends during the first round of the resulting combat.",
@@ -58066,15 +58216,22 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"[POT] Additional damage inherits all of the properties of the base damage.",
-                "refs":{
-                    "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
-                }
-            },
-            {
                 "text":"[POT] The optional press can only be used during the current round.",
                 "refs":{
                     "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
+                }
+            },
+            {
+                "text":"[POT] Adding damage to a strike that does not deal damage has no effect, so the strike still will not do damage.",
+                "refs":{
+                    "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
+                }
+            },
+            {
+                "text":"[POT] Additional damage inherits all of the properties of the base damage.",
+                "refs":{
+                    "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
+                    "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
                 }
             }
         ],
@@ -58230,9 +58387,12 @@
             },
             "CE":{
                 "U":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"[dem] (D) Put this card on any vampire. The vampire with this card cannot play cards that require Disciplines. Any vampire can burn this card as a +1 stealth action.\n[DEM] As above, and the capacity of the vampire with this card is reduced by 1 (but not below 1). Remove excess blood.",
+        "text":"[dem] (D) Put this card on a vampire. The attached vampire cannot play cards requiring Disciplines. Vampires can burn this card as a +1 stealth action.\n[DEM] As above, and the attached vampire gets -1 capacity (to a minimum of 1).",
         "twd":2,
         "type":"Action"
     },
@@ -58257,9 +58417,12 @@
         "set":{
             "KMW":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"+1 stealth action.\n[dem] (D) Put this card on a ready minion. This minion gets +1 strength. Burn this card when a combat involving this minion ends. During this minion's discard phase, burn this card, and this minion's controller must inflict 2 damage on another ready minion he or she controls.\n[DEM] As above, and lock this minion when this card is burned.",
+        "text":"+1 stealth action.\n[dem] (D) Put this card on a ready minion. The attached minion gets +1 strength. Burn this card after a combat involving them ends. During their discard phase, burn this card, and their controller must inflict 2 unpreventable environmental damage on another ready minion they control.\n[DEM] As above, and lock the attached minion after this card is burned.",
         "twd":1,
         "type":"Action"
     },
@@ -58331,6 +58494,9 @@
             },
             "FB":{
                 "PM":"3"
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "text":"[dem] +1 stealth.\n[DEM] As above, with 1 optional maneuver or press during the resulting combat if this vampire is blocked.",
@@ -61454,6 +61620,9 @@
             },
             "KSU":{
                 "AU":"2"
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "text":"Requires an Anarch.\n[aus] Look at the acting Methuselah's hand.\n[chi] Choose another ready minion you control. The chosen minion unlocks and attempts to block.\n[dem] Give another minion you control +1 intercept.",
@@ -66392,9 +66561,12 @@
             },
             "Third":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"[dem] Only usable when a bleed is successful. Look at the top card in the library of the Methuselah being bled.\n[DEM] Only usable when a bleed is successful. Look at the cards in the hand of the Methuselah being bled.",
+        "text":"Only usable after resolution of a successful bleed.\n[dem] Look at the top card of the library of the target Methuselah.\n[DEM] Look at the target Methuselah's hand.",
         "twd":3,
         "type":"Action Modifier"
     },
@@ -67148,9 +67320,12 @@
             },
             "CE":{
                 "C":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Only usable at close range.\n[dem] Strike: 1 damage. This damage cannot be prevented by equipment or cards that require Fortitude [for]. If the opposing vampire attempts to strike with a weapon this round, he or she does no damage.\n[DEM] As above, with an optional press, only usable to end combat.",
+        "text":"Only usable at close range.\n[dem] Strike: 1 damage. This damage cannot be prevented by equipment or cards requiring Fortitude [for]. The opposing vampire's strikes with weapons inflict no damage this round.\n[DEM] As above, with 1 optional press, only usable to end combat.",
         "twd":2,
         "type":"Combat"
     },
@@ -67733,13 +67908,13 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"Any decrease in pool (burning, paying, ...) is considered \"loosing pool\".",
+                "text":"Any decrease in pool (burning, paying, ...) is considered \"losing pool\".",
                 "refs":{
                     "ANK 20180719-2":"https://www.vekn.net/forum/rules-questions/76835-burn-lose-pay-pool-and-poison-pill-kindred-segregation#89046"
                 }
             },
             {
-                "text":"Gaining pool does not count as a negative loss. If a vote entails both a gain and a loss (eg. {Ancient Influence}), only the loss is counted, not the difference.",
+                "text":"Gaining pool does not count as a negative loss. If the effects of the referendum results in both gain and loss (eg. {Ancient Influence}), only the loss is counted, not the difference.",
                 "refs":{
                     "ANK 20180813":"https://www.vekn.net/forum/rules-questions/76917-poison-pill-ancient-influence#89940",
                     "LSJ 20041025":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/sbfkGmojYao/m/obMvk67O5PYJ"
@@ -68204,7 +68379,7 @@
                 }
             },
             {
-                "text":"The votes include bonus votes from cards or ability (eg. {Eze, The Demon Prince}, {Firebrand}) but not conditional votes (eg. {Sundown}, {Aura of Invincibility}).",
+                "text":"The votes include bonus votes from cards or ability (eg. {Eze, The Demon Prince}, {Legendary Vampire}) but not conditional votes (eg. {Sundown}, {Aura of Invincibility}).",
                 "refs":{
                     "ANK 20211009":"https://www.vekn.net/forum/rules-questions/79388-political-struggle-and-victim-priscus#103481",
                     "LSJ 20040518-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/4emymfUPwAM/m/JF_o7OOoCbkJ"
@@ -71256,9 +71431,12 @@
         "set":{
             "SoC":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"[dem] +1 stealth action. (D) Burn an ally or retainer.\n[DEM] (D) Put this card on a vampire. This vampire has -1 stealth and -2 intercept. Any vampire(s) can burn this card with three +1 stealth actions. A vampire can have only one Prison of the Mind.",
+        "text":"[dem] +1 stealth action. (D) Burn an ally or retainer.\n[DEM] (D) Put this card on a vampire. The attached vampire gets -1 stealth and -2 intercept. Any vampire(s) can burn this card with three +1 stealth actions. A vampire can have only one Prison of the Mind.",
         "twd":3,
         "type":"Action"
     },
@@ -73022,8 +73200,15 @@
         "requirement":"",
         "rulings":[
             {
+                "text":"Adding damage to a strike that does not deal damage has no effect, so the strike still will not do damage.",
+                "refs":{
+                    "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
+                }
+            },
+            {
                 "text":"Additional damage inherits all of the properties of the base damage.",
                 "refs":{
+                    "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
                     "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
                 }
             }
@@ -73900,9 +74085,12 @@
             "BH":{
                 "C":true,
                 "PM":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"[aus][dem] +1 intercept.\n[AUS][DEM] Only usable when a minion is attempting to block this acting vampire. The blocking minion gets -1 intercept.",
+        "text":"[aus][dem] [REACTION] +1 intercept.\n[AUS][DEM] [ACTION MODIFIER] Only usable if a minion attempts to block. The blocking minion gets -1 intercept.",
         "twd":18,
         "type":"Action Modifier/Reaction"
     },
@@ -74887,9 +75075,12 @@
             },
             "Third":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Choose a combat card in the opposing minion's controller's ash heap and use the ability of that card as if that card had been played from your hand (pay cost as normal). If the card requires a Discipline this vampire does not have, you can only use the basic ability of that card. Only one Reality Mirror can be played during a game.",
+        "text":"Only one Reality Mirror can be played in a game.\nPlay a combat card from the opposing minion's controller's ash heap as if from your hand. If the card requires a Discipline this vampire does not have, you can play the card as if this vampire had the basic level of 1 of the Discipline(s) required (if any).",
         "twd":10,
         "type":"Combat"
     },
@@ -77263,9 +77454,12 @@
             },
             "Third":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"[dem] (D) Put this card on any ally. This ally does not unlock as normal during his or her controller's unlock phase. His or her controller can burn a pool during his or her unlock phase to unlock this ally.\n[DEM] (D) Take control of an ally controlled by another Methuselah.",
+        "text":"[dem] (D) Put this card on an ally. The attached ally does not unlock as normal. Their controller can burn 1 pool during their unlock phase to unlock the attached ally.\n[DEM] (D) Steal an ally controlled by another Methuselah.",
         "twd":46,
         "type":"Action"
     },
@@ -81193,7 +81387,7 @@
                 "PTo":"1"
             }
         },
-        "text":"Only usable during the polling step of a political action.\nMethuselahs casting (including having a vampire casting) votes or ballots against the referendum burn 1 pool once results are tallied.",
+        "text":"Only usable during the polling step of a political action.\nMethuselahs casting (including controlling a minion casting) votes or ballots against the referendum burn 1 pool once results are tallied.",
         "twd":10,
         "type":"Action Modifier"
     },
@@ -84739,9 +84933,12 @@
             "KoT":{
                 "U":true,
                 "PM":"2"
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Only usable when this vampire successfully blocks an ally or younger vampire bleeding you.\n[dem] Put this card on the acting minion and end the action (with no combat). The minion with this card gets -1 bleed. He or she may burn it as an action that costs 1 blood. A minion may have only one Shattered Mirror.\n[DEM] As above, and this reacting vampire doesn't lock for successfully blocking the action.",
+        "text":"Only usable if this vampire blocks an ally or younger vampire bleeding you, before block resolution.\n[dem] Put this card on the acting minion, lock this vampire, and end the action. The attached minion gets -1 bleed. The attached vampire can burn this card as an action that costs 1 blood. A minion can have only one Shattered Mirror.\n[DEM] As above, but do not lock this vampire.",
         "twd":8,
         "type":"Reaction"
     },
@@ -85560,9 +85757,12 @@
             },
             "Third":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"+1 stealth action.\nThis action costs X blood, where X is the number of Sibyl's Tongues in your ash heap. Choose a card by name. Search your library for a copy of that card, show it to all players, and move it to your hand. Discard down to your hand size and shuffle your library afterward.",
+        "text":"+1 stealth action.\nX is the number of Sibyl's Tongues in your ash heap. Choose a card by name. Search your library for a copy of the chosen card, reveal it and move it to your hand (shuffle and discard down afterward).",
         "twd":29,
         "type":"Action"
     },
@@ -86693,6 +86893,9 @@
             "KoT":{
                 "C":true,
                 "PM":"2"
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "text":"[dem] (D) Send a younger vampire with 0 or 1 blood to torpor.\n[DEM] As above, but the vampire can be the same age or older.",
@@ -86976,9 +87179,12 @@
             "Anarchs":{
                 "C":true,
                 "PAG":"3"
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Requires a ready anarch.\n[ani] +1 stealth action. (D) Burn 2 life from an ally or retainer.\n[dem] (D) Bleed at +1 bleed.\n[pot] +1 stealth action. (D) Burn a location controlled by your prey or predator.",
+        "text":"Requires an Anarch.\n[ani] +1 stealth action. (D) Burn 2 life from an ally or retainer.\n[dem] (D) Bleed with +1 bleed.\n[pot] +1 stealth action. (D) Burn a location controlled by your predator or prey.",
         "twd":11,
         "type":"Action"
     },
@@ -89918,12 +90124,6 @@
         "requirement":"anarch",
         "rulings":[
             {
-                "text":"[ani] [COMBAT] Additional damage inherits all of the properties of the base damage.",
-                "refs":{
-                    "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
-                }
-            },
-            {
                 "text":"[ani]/[dom] Is not replaced if the action is blocked; it is replaced when the action ends, after all combats.",
                 "refs":{
                     "LSJ 20001120":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Br8FPS5mRn4/m/2tbPhQquS7gJ"
@@ -89970,6 +90170,19 @@
                 "text":"[ani] The optional press can only be used during the current round.",
                 "refs":{
                     "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
+                }
+            },
+            {
+                "text":"[ani] Adding damage to a strike that does not deal damage has no effect, so the strike still will not do damage.",
+                "refs":{
+                    "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
+                }
+            },
+            {
+                "text":"[ani] Additional damage inherits all of the properties of the base damage.",
+                "refs":{
+                    "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
+                    "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
                 }
             }
         ],
@@ -90641,13 +90854,6 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"[QUI] The additional damage is the same type as the strike's damage.",
-                "refs":{
-                    "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ",
-                    "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ"
-                }
-            },
-            {
                 "text":"\"Before resolution\" means after strikes have been declared but before they resolve.",
                 "refs":{
                     "RTR 19990105":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/2LT2jSX4Nlk/m/vNjIMCxSYTIJ"
@@ -90657,6 +90863,19 @@
                 "text":"Cannot be played on an opponent's weapon.",
                 "refs":{
                     "LSJ 20020425":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/_Rh8P34zTZo/m/u-WavRjp5uYJ"
+                }
+            },
+            {
+                "text":"[QUI] Adding damage to a strike that does not deal damage has no effect, so the strike still will not do damage.",
+                "refs":{
+                    "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
+                }
+            },
+            {
+                "text":"[QUI] Additional damage inherits all of the properties of the base damage.",
+                "refs":{
+                    "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
+                    "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
                 }
             }
         ],
@@ -90695,6 +90914,19 @@
                 "refs":{
                     "LSJ 20060421":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/5_Y7HxiR7wo/m/qLgr38ocXA8J",
                     "RTR 20111202":"https://www.vekn.net/forum/rules-questions/16769-rules-team-rulings-02-dec-11#16769"
+                }
+            },
+            {
+                "text":"Adding damage to a strike that does not deal damage has no effect, so the strike still will not do damage.",
+                "refs":{
+                    "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
+                }
+            },
+            {
+                "text":"Additional damage inherits all of the properties of the base damage.",
+                "refs":{
+                    "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
+                    "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
                 }
             }
         ],
@@ -92568,16 +92800,23 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"Additional damage inherits all of the properties of the base damage.",
-                "refs":{
-                    "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
-                }
-            },
-            {
                 "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
                 "refs":{
                     "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
                     "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+                }
+            },
+            {
+                "text":"Adding damage to a strike that does not deal damage has no effect, so the strike still will not do damage.",
+                "refs":{
+                    "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
+                }
+            },
+            {
+                "text":"Additional damage inherits all of the properties of the base damage.",
+                "refs":{
+                    "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
+                    "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
                 }
             }
         ],
@@ -93492,12 +93731,6 @@
                 }
             },
             {
-                "text":"The additional damage is the same type as the strike's damage.",
-                "refs":{
-                    "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ"
-                }
-            },
-            {
                 "text":"If it is canceled, any blood cost (eg. {Terror Frenzy}) has to be paid.",
                 "refs":{
                     "PIB 20121031":"https://www.vekn.net/forum/rules-questions/39816-ec-2012-can-you-answer-these?start=18#39908"
@@ -93527,6 +93760,19 @@
                 "text":"The affected minion cannot play a card that provides an additional strike, even if just to benefit from another effect (e.g.\n{Acrobatics}).",
                 "refs":{
                     "LSJ 20011214-5":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gI44SEC82Yk/m/Kgipu7IXwWkJ"
+                }
+            },
+            {
+                "text":"Adding damage to a strike that does not deal damage has no effect, so the strike still will not do damage.",
+                "refs":{
+                    "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
+                }
+            },
+            {
+                "text":"Additional damage inherits all of the properties of the base damage.",
+                "refs":{
+                    "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
+                    "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
                 }
             }
         ],
@@ -93614,6 +93860,19 @@
                 "refs":{
                     "PIB 20121031":"https://www.vekn.net/forum/rules-questions/39816-ec-2012-can-you-answer-these?start=18#39908"
                 }
+            },
+            {
+                "text":"Adding damage to a strike that does not deal damage has no effect, so the strike still will not do damage.",
+                "refs":{
+                    "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
+                }
+            },
+            {
+                "text":"Additional damage inherits all of the properties of the base damage.",
+                "refs":{
+                    "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
+                    "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
+                }
             }
         ],
         "set":{
@@ -93671,6 +93930,19 @@
                 "refs":{
                     "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J",
                     "PIB 20130319":"https://www.vekn.net/forum/rules-questions/46164-catatonic-fear-and-loving-agony#46168"
+                }
+            },
+            {
+                "text":"Adding damage to a strike that does not deal damage has no effect, so the strike still will not do damage.",
+                "refs":{
+                    "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
+                }
+            },
+            {
+                "text":"Additional damage inherits all of the properties of the base damage.",
+                "refs":{
+                    "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
+                    "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
                 }
             }
         ],
@@ -94897,7 +95169,7 @@
         "id":101963,
         "name":"Thadius Zho",
         "path":"",
-        "pool":4,
+        "pool":3,
         "requirement":"",
         "rulings":[],
         "set":{
@@ -94914,7 +95186,7 @@
                 "PTr":"1"
             }
         },
-        "text":"Unique mage with 2 life. 0 strength, 2 bleed.\nThadius Zho can strike: 2R damage. He gets 1 optional maneuver each combat. He can burn 1 blood from any vampire as a +1 stealth (D) action.",
+        "text":"Unique mage with 2 life. 0 strength, 2 bleed.\nThadius Zho can strike: 2R damage. He gets 1 optional maneuver each combat. He can burn 1 blood from a vampire as a +1 stealth (D) action.",
         "twd":14,
         "type":"Ally"
     },
@@ -95079,7 +95351,7 @@
                 "Tr":4
             }
         },
-        "text":"[tha] Ranged strike: steal 1 blood or life (becoming blood).\n[THA] Ranged strike: steal 2 blood or life (becoming blood).",
+        "text":"[tha] Strike, ranged: steal 1 blood or life (becoming blood).\n[THA] Strike, ranged: steal 2 blood or life (becoming blood).",
         "twd":161,
         "type":"Combat"
     },
@@ -96484,9 +96756,12 @@
             },
             "Third":{
                 "C":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"[dem] (D) Put this card on an ally or a younger vampire. The minion with this card has -1 stealth. During this minion's unlock phase, add a counter to this card. Burn this card when it has 3 counters on it.\n[DEM] As above, and the minion with this card cannot play action cards.",
+        "text":"[dem] (D) Put this card on an ally or younger vampire. The attached minion gets -1 stealth. During their unlock phase, add 1 counter to this card. Burn this card if it has 3 counters.\n[DEM] As above, and the attached minion cannot play action cards.",
         "twd":2,
         "type":"Action"
     },
@@ -96583,9 +96858,12 @@
             },
             "KoT":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Usable by an acting minion or any ready unlocked minion.\n[dem] Cancel a non-combat card requiring Dementation [dem], Dominate [dom] or Presence [pre] as it is played, and its cost is not paid. Lock this vampire.\n[DEM] As above, but do not lock this vampire.",
+        "text":"Usable by a ready unlocked vampire other than the acting minion.\n[dem] Cancel a non-combat card requiring Dementation [dem], Dominate [dom] or Presence [pre] as it is played, and its cost is not paid. Lock this vampire.\n[DEM] As above, but do not lock this vampire.",
         "twd":55,
         "type":"Action Modifier/Reaction"
     },
@@ -99231,12 +99509,6 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"[for] The vampire can play cards which are not usable by vampires going to torpor.",
-                "refs":{
-                    "LSJ 19970303":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/CiDrKyoNEBA/m/Tx55C65lJqgJ"
-                }
-            },
-            {
                 "text":"[for] Cannot be used twice by the same vampire during the same combat: because of the first, the vampire is not going into torpor and does not meet the requirement to play it anymore.",
                 "refs":{
                     "LSJ 20030214":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/A3U-Dy1yx8Y/m/2LHXvLrmybwJ"
@@ -99271,6 +99543,12 @@
                 "text":"[for] The optional press can only be used during the current round.",
                 "refs":{
                     "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
+                }
+            },
+            {
+                "text":"Sequencing rules apply, and if played first, effects that stop a vampire from going to torpor would prevent the use of effects that are only usable on a vampire going to torpor.",
+                "refs":{
+                    "RTR 20010711":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GsI1UyH54jU/m/x9LfDZX1vR4J"
                 }
             }
         ],
@@ -99315,8 +99593,15 @@
         "requirement":"",
         "rulings":[
             {
+                "text":"Adding damage to a strike that does not deal damage has no effect, so the strike still will not do damage.",
+                "refs":{
+                    "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
+                }
+            },
+            {
                 "text":"Additional damage inherits all of the properties of the base damage.",
                 "refs":{
+                    "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
                     "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
                 }
             }
@@ -99674,9 +99959,9 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"[for] The vampire can play cards which are not usable by vampires going to torpor.",
+                "text":"Sequencing rules apply, and if played first, effects that stop a vampire from going to torpor would prevent the use of effects that are only usable on a vampire going to torpor.",
                 "refs":{
-                    "LSJ 19970303":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/CiDrKyoNEBA/m/Tx55C65lJqgJ"
+                    "RTR 20010711":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GsI1UyH54jU/m/x9LfDZX1vR4J"
                 }
             }
         ],
@@ -100925,7 +101210,7 @@
                 "NSal":1
             }
         },
-        "text":"Put this card on a ready minion you control. If you control this minion, they can equip with the first equipment you find in your library as a +1 stealth action (working down from the top; requirements and cost apply as normal; shuffle afterward).",
+        "text":"Put this card on a ready minion you control. If you control this minion, they can equip with the first equipment you find in your library as a +1 stealth equip action (working down from the top; requirements and cost apply as normal; shuffle afterward).",
         "twd":34,
         "type":"Master"
     },
@@ -101098,8 +101383,9 @@
                 }
             },
             {
-                "text":"[OBF] If an action is canceled after it has been played (eg. {Tangle Atropos' Hand} but not {Direct Intervention}) it still counts as \"one of the next X actions\".",
+                "text":"[OBF] If an action is cancelled after it has been played (e.g. {Tangle Atropos' Hand} but not {Direct Intervention}) it still counts as \"one of the next X actions\".",
                 "refs":{
+                    "LSJ 20070526":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/hm8eaW_dBD0/m/ND0ijM9PibIJ",
                     "ANK 20210124":"https://www.vekn.net/forum/rules-questions/79001-the-question-of-the-month-action-fizzles#101492"
                 }
             }
@@ -101483,12 +101769,6 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"Additional damage inherits all of the properties of the base damage.",
-                "refs":{
-                    "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
-                }
-            },
-            {
                 "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
                 "refs":{
                     "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
@@ -101500,6 +101780,19 @@
                 "refs":{
                     "LSJ 20030902-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/mgZt4f2LyOg/m/FCeKmePPkxwJ",
                     "LSJ 20060808-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/7oK-hKbOs9g/m/EGeyVt3vfl4J"
+                }
+            },
+            {
+                "text":"Adding damage to a strike that does not deal damage has no effect, so the strike still will not do damage.",
+                "refs":{
+                    "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
+                }
+            },
+            {
+                "text":"Additional damage inherits all of the properties of the base damage.",
+                "refs":{
+                    "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
+                    "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
                 }
             }
         ],
@@ -101640,7 +101933,7 @@
                 "PV":"1"
             }
         },
-        "text":"Unique location.\nLock during the polling step of any referendum to get +3 votes.",
+        "text":"Unique location.\nYou can lock this card during the polling step of any referendum to get +3 votes.",
         "twd":158,
         "type":"Master"
     },
@@ -102557,9 +102850,12 @@
             "KoT":{
                 "U":true,
                 "PM":"2"
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Only usable when this vampire successfully blocks an ally or younger vampire.\n[dem] Lock this reacting vampire. Combat does not occur.\n[DEM] As above, and the acting minion burns 1 blood or life.",
+        "text":"Only usable if this vampire blocks an ally or younger vampire, before block resolution.\n[dem] Lock this vampire and end the action.\n[DEM] As above, and the acting minion burns 1 blood or life.",
         "twd":13,
         "type":"Reaction"
     },
@@ -102966,7 +103262,14 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"If an action is cancelled after it has been played (e.g. {Tangle Atropos' Hand} but not {Direct Intervention}) it still counts as taken.",
+                "refs":{
+                    "ANK 20210124":"https://www.vekn.net/forum/rules-questions/79001-the-question-of-the-month-action-fizzles#101492"
+                }
+            }
+        ],
         "set":{
             "KoT":{
                 "R":true
@@ -103183,7 +103486,7 @@
                 "PBh":"2"
             }
         },
-        "text":"Not usable during the first round of combat.\n[tha] Strike: 1R aggravated damage.\n[THA] Strike: 2R aggravated damage.",
+        "text":"Not usable during the first round.\n[tha] Strike: 1R aggravated damage.\n[THA] Strike: 2R aggravated damage.",
         "twd":62,
         "type":"Combat"
     },
@@ -103211,9 +103514,12 @@
             },
             "SW":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Flip a coin. If it comes up heads, this action is unblockable. If it comes up tails, the Malkavian antitribu takes one damage. This damage is not preventable.",
+        "text":"Flip a coin. If it is heads, this action is unblockable. If it is tails, this vampire takes 1 unpreventable environmental damage.",
         "twd":7,
         "type":"Action Modifier"
     },
@@ -104762,8 +105068,15 @@
         "requirement":"",
         "rulings":[
             {
+                "text":"Adding damage to a strike that does not deal damage has no effect, so the strike still will not do damage.",
+                "refs":{
+                    "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
+                }
+            },
+            {
                 "text":"Additional damage inherits all of the properties of the base damage.",
                 "refs":{
+                    "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
                     "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
                 }
             }
@@ -105888,6 +106201,9 @@
             },
             "KoT":{
                 "C":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "text":"[dem] Reduce a bleed against you by 2.\n[DEM] Only usable during the polling step of a political action. This vampire gets +4 votes against the referendum.",
