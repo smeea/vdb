@@ -5,8 +5,13 @@ import { IS_FROZEN } from "@/constants";
 import { inventoryUpdate, useApp } from "@/context";
 
 const InventoryFreezeButton = ({ isFrozen, className, roundedStyle, borderStyle }) => {
-  const { isDesktop } = useApp();
-  const handleClick = () => inventoryUpdate(IS_FROZEN, !isFrozen);
+  const { isDesktop, setShowFloatingButtons, setShowMenuButtons } = useApp();
+
+  const handleClick = () => {
+    inventoryUpdate(IS_FROZEN, !isFrozen);
+    setShowMenuButtons(false);
+    setShowFloatingButtons(true);
+  };
 
   return (
     <ButtonIconed

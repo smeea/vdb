@@ -5,9 +5,13 @@ import { DECKID, IS_FROZEN } from "@/constants";
 import { useApp, deckUpdate } from "@/context";
 
 const DeckFreezeButton = ({ deck, withText, className, roundedStyle, borderStyle }) => {
-  const { isDesktop } = useApp();
+  const { isDesktop, setShowFloatingButtons, setShowMenuButtons } = useApp();
 
-  const handleClick = () => deckUpdate(deck[DECKID], IS_FROZEN, !deck[IS_FROZEN]);
+  const handleClick = () => {
+    deckUpdate(deck[DECKID], IS_FROZEN, !deck[IS_FROZEN])
+    setShowMenuButtons(false);
+    setShowFloatingButtons(true);
+  };
 
   return (
     <ButtonIconed
