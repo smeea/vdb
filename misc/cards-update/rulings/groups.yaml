@@ -2218,3 +2218,15 @@ G00149|Usable when going to torpor:
   100511|Decapitate: ''
   102060|Undead Persistence: ''
   102068|Undying Tenacity: ''
+G00150|Allies with enter play effects:
+  100160|Bima: ''
+  100429|Corrupt Construction: ''
+  101563|Reanimated Corpse: ''
+  101737|Shadow Court Satyr: ''
+  101751|Shambling Hordes: ''
+  102144|War Ghoul: ''
+  102267|Vozhd of Sofia, The: ''
+  102304|Rotting Behemoth: ''
+G00151|Allies that burn an ally when entering play:
+  102144|War Ghoul: ''
+  102267|Vozhd of Sofia, The: ''

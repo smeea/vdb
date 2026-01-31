@@ -160,6 +160,9 @@
   - Does not end combat until after strike resolution, so the damage can be prevented or healed as normal. [LSJ 20011210-3]
 100067|Angel of Berlin:
   - May be played after a block is successful before combat begins. [LSJ 20060410]
+100068|Anima Gathering:
+  - Anima Gathering does not burn if the vampire moves through the uncontrolled region (via {Banishment}, etc.) and returns
+    to play unlocked. [LSJ 20060808-2] [LSJ 20060213]
 100071|Ankara Citadel, Turkey, The:
   - Concerning the cost of the cards, multiplications and divisions are applied first, followed by additions and subtractions.
     [RTR 20070707]
@@ -746,10 +749,6 @@
   - Must be played after the presses are handled and can be played if the round ends prematurely. [RTR 20030519]
 100428|Corpse Minion:
   - May be used any number of times during a single action. [TOM 19960109]
-100429|Corrupt Construction:
-  - If recruited in the normal fashion, the card will have been replaced by the time the ally enters play. In other cases
-    however, it won't have been and the Methuselah will have to work with only the cards in hand (or ash heap) to add life
-    to it before replacing. [LSJ 20070707]
 100433|Council of Seraphim:
   - The burn option cannot be used if all your Seraph are in torpor. [LSJ 20091204]
 100434|Courier:
@@ -2248,6 +2247,9 @@
   - Cards and effects that can be played "after resolution" can be played after the gain blood effect. [ANK 20190113]
   - The blood can be gained if the action is unblocked even if it has no effect (due to lack of a suitable target, for example).
     [LSJ 20070411]
+101392|Persistent Echo:
+  - A vampire can use any effect on the stored card, if they otherwise fulfill its requirements (e.g. [chi] on {Phantom Speaker},
+    if they have [chi]) [LSJ 20051114]
 101395|Personal Scourge:
   - If the opponent dodges this strike, his weapons are unaffected and do damage this round. [LSJ 20040928]
   - Does not protect the target from self-inflicted damage from a weapon. [LSJ 19980216]
@@ -3323,9 +3325,6 @@
   - '[ACTION MODIFIER] A hunt is not successful if no blood is gained, even if the hunt action is still successful. [LSJ 20050720-2]'
   - '[ACTION MODIFIER][REACTION] Cannot be used during a referendum that is automatically passing. [PIB 20150105] [LSJ 19980107]'
 102144|War Ghoul:
-  - If you have no other allies and no retainers in play when it is recruited, then you burn it. [RTR 19961113]
-  - An ally or retainer must be burn when it comes into play, regardless of how it did come into play (eg. {Pressing Flesh}).
-    [ANK 20170309-2]
   - Can use its ability to "lock and burn to burn a location" during an action that would steal it (eg. [PRE] {Entrancement}).
     The action will have no effect but is still successful if unblocked and must then be paid. [PIB 20121031]
 102146|Warding the Beast:
@@ -4294,8 +4293,9 @@
 201499|Zack North:
   - '[MERGED] Is Anarch. If the base version was the one in play, it changes sect as it is merged. [ANK 20180524]'
 201506|Zhenga:
-  - She can choose the order in which the allies brought by her ability come into play (eg. bring a first ally, then {War
-    Ghoul} second burning the first one). [LSJ 20060530-1]
+  - She can choose the order in which the allies brought by her ability come into play (e.g. bring a first ally, then {War
+    Ghoul} second burning the first one), but cards are not replaced in between (e.g. {Corrupt Construction}). [LSJ 20070707]
+    [LSJ 20060530-1]
   - The allies brought into play by her ability are not "played in the normal way" (eg. {Direct Intervention} cannot be used
     to counter them). [LSJ 20060530-2]
   - Her ability does not work with {Piper} (not an action). [LSJ 20090115-1] [ANK 20170309]
@@ -4604,6 +4604,7 @@ G00095|Play stored card as if from hand:
   - Ignores all "do not replace" clauses and special replacement effects on cards played from it. [LSJ 20081126]
   - The card on it cannot be discarded or burned to satisfy another effect (eg. {Tension in the Ranks} or using political
     action cards for votes). [LSJ 20050118]
+  - A card played "as if from hand" can be canceled "as played" [LSJ 20060106]
 G00096|Optional press:
   - The optional press can only be used during the current round. [TOM 19960521]
 G00097|Burn blood for effect (mandatory):
@@ -4798,3 +4799,9 @@ G00148|Adding damage to strikes:
 G00149|Usable when going to torpor:
   - Sequencing rules apply, and if played first, effects that stop a vampire from going to torpor would prevent the use of
     effects that are only usable on a vampire going to torpor. [RTR 20010711]
+G00150|Allies with enter play effects:
+  - The enter play effect happens regardless of how it comes into play (e.g, {Pressing Flesh}). [ANK 20170309-2]
+G00151|Allies that burn an ally when entering play:
+  - An ally or retainer must be burned when it comes into play, regardless of how it enters play (e.g, {Pressing Flesh}).
+    [ANK 20170309-2]
+  - If you have no other allies or retainers in play when it enters play, it must burn itself. [RTR 19961113]

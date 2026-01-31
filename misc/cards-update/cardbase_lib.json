@@ -3458,7 +3458,15 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Anima Gathering does not burn if the vampire moves through the uncontrolled region (via {Banishment}, etc.) and returns to play unlocked.",
+                "refs":{
+                    "LSJ 20060808-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/a-o5oB0-_Sc/m/Pz4TP0UiVIYJ",
+                    "LSJ 20060213":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ZZkDUiO9qOw/m/2j1gRMDx0BgJ"
+                }
+            }
+        ],
         "set":{
             "KMW":{
                 "C":true
@@ -8015,6 +8023,12 @@
                     "LSJ 20020503":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/1DbOr3g3vP8/m/xF8dvxQZye4J",
                     "LSJ 20060126":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PBEBNFH61ik/m/MPf8Rs1F958J"
                 }
+            },
+            {
+                "text":"The enter play effect happens regardless of how it comes into play (e.g, {Pressing Flesh}).",
+                "refs":{
+                    "ANK 20170309-2":"https://www.vekn.net/forum/rules-questions/75650-pressing-flesh#81050"
+                }
             }
         ],
         "set":{
@@ -9062,6 +9076,12 @@
                 "text":"The card on it cannot be discarded or burned to satisfy another effect (eg. {Tension in the Ranks} or using political action cards for votes).",
                 "refs":{
                     "LSJ 20050118":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/W784_3oyz7I/m/Cgek1j9Hv-8J"
+                }
+            },
+            {
+                "text":"A card played \"as if from hand\" can be canceled \"as played\"",
+                "refs":{
+                    "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
                 }
             }
         ],
@@ -20539,16 +20559,16 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"If recruited in the normal fashion, the card will have been replaced by the time the ally enters play. In other cases however, it won't have been and the Methuselah will have to work with only the cards in hand (or ash heap) to add life to it before replacing.",
-                "refs":{
-                    "LSJ 20070707":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ZtRk5z2TcoI/m/gJWD0dT3kUwJ"
-                }
-            },
-            {
                 "text":"Ghouls are monsters, not mortal.",
                 "refs":{
                     "ANK 20200203-2":"https://www.vekn.net/forum/rules-questions/78415-is-ghoul-mortal#98872",
                     "LSJ 20060515":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/bzusnKlnYr8/m/OSMvzE7YjokJ"
+                }
+            },
+            {
+                "text":"The enter play effect happens regardless of how it comes into play (e.g, {Pressing Flesh}).",
+                "refs":{
+                    "ANK 20170309-2":"https://www.vekn.net/forum/rules-questions/75650-pressing-flesh#81050"
                 }
             }
         ],
@@ -29193,6 +29213,12 @@
                 "refs":{
                     "LSJ 20050118":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/W784_3oyz7I/m/Cgek1j9Hv-8J"
                 }
+            },
+            {
+                "text":"[MEL] A card played \"as if from hand\" can be canceled \"as played\"",
+                "refs":{
+                    "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
+                }
             }
         ],
         "set":{
@@ -31590,6 +31616,12 @@
                 "text":"The card on it cannot be discarded or burned to satisfy another effect (eg. {Tension in the Ranks} or using political action cards for votes).",
                 "refs":{
                     "LSJ 20050118":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/W784_3oyz7I/m/Cgek1j9Hv-8J"
+                }
+            },
+            {
+                "text":"A card played \"as if from hand\" can be canceled \"as played\"",
+                "refs":{
+                    "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
                 }
             }
         ],
@@ -40016,6 +40048,12 @@
                 "text":"The card on it cannot be discarded or burned to satisfy another effect (eg. {Tension in the Ranks} or using political action cards for votes).",
                 "refs":{
                     "LSJ 20050118":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/W784_3oyz7I/m/Cgek1j9Hv-8J"
+                }
+            },
+            {
+                "text":"A card played \"as if from hand\" can be canceled \"as played\"",
+                "refs":{
+                    "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
                 }
             }
         ],
@@ -53347,6 +53385,12 @@
                 "refs":{
                     "LSJ 20050118":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/W784_3oyz7I/m/Cgek1j9Hv-8J"
                 }
+            },
+            {
+                "text":"A card played \"as if from hand\" can be canceled \"as played\"",
+                "refs":{
+                    "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
+                }
             }
         ],
         "set":{
@@ -57195,6 +57239,12 @@
                 "refs":{
                     "LSJ 20050118":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/W784_3oyz7I/m/Cgek1j9Hv-8J"
                 }
+            },
+            {
+                "text":"A card played \"as if from hand\" can be canceled \"as played\"",
+                "refs":{
+                    "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
+                }
             }
         ],
         "set":{
@@ -59383,6 +59433,12 @@
                 "text":"The card on it cannot be discarded or burned to satisfy another effect (eg. {Tension in the Ranks} or using political action cards for votes).",
                 "refs":{
                     "LSJ 20050118":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/W784_3oyz7I/m/Cgek1j9Hv-8J"
+                }
+            },
+            {
+                "text":"A card played \"as if from hand\" can be canceled \"as played\"",
+                "refs":{
+                    "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
                 }
             }
         ],
@@ -67183,6 +67239,12 @@
         "requirement":"",
         "rulings":[
             {
+                "text":"A vampire can use any effect on the stored card, if they otherwise fulfill its requirements (e.g. [chi] on {Phantom Speaker}, if they have [chi])",
+                "refs":{
+                    "LSJ 20051114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/5I-tx7stM58/m/fQst_m20MzAJ"
+                }
+            },
+            {
                 "text":"If it leaves play, the card on it is burned.",
                 "refs":{
                     "LSJ 20021128":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/6rqhybcysh8/m/hU-qIp2on-YJ"
@@ -67205,6 +67267,12 @@
                 "text":"[mel]/[MEL] The card on it cannot be discarded or burned to satisfy another effect (eg. {Tension in the Ranks} or using political action cards for votes).",
                 "refs":{
                     "LSJ 20050118":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/W784_3oyz7I/m/Cgek1j9Hv-8J"
+                }
+            },
+            {
+                "text":"[mel]/[MEL] A card played \"as if from hand\" can be canceled \"as played\"",
+                "refs":{
+                    "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
                 }
             }
         ],
@@ -75216,6 +75284,12 @@
                     "LSJ 20020503":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/1DbOr3g3vP8/m/xF8dvxQZye4J",
                     "LSJ 20060126":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PBEBNFH61ik/m/MPf8Rs1F958J"
                 }
+            },
+            {
+                "text":"The enter play effect happens regardless of how it comes into play (e.g, {Pressing Flesh}).",
+                "refs":{
+                    "ANK 20170309-2":"https://www.vekn.net/forum/rules-questions/75650-pressing-flesh#81050"
+                }
             }
         ],
         "set":{
@@ -79465,6 +79539,12 @@
                 "text":"The acting vampire's controller can choose not to remove a minion from his or her ash heap and thus burn the Rotting Behemoth.",
                 "refs":{
                     "LSJ 20030701-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/EFBCP5QI3D4/m/oU1yyA3yV04J"
+                }
+            },
+            {
+                "text":"The enter play effect happens regardless of how it comes into play (e.g, {Pressing Flesh}).",
+                "refs":{
+                    "ANK 20170309-2":"https://www.vekn.net/forum/rules-questions/75650-pressing-flesh#81050"
                 }
             }
         ],
@@ -83933,6 +84013,12 @@
                     "LSJ 20020503":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/1DbOr3g3vP8/m/xF8dvxQZye4J",
                     "LSJ 20060126":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PBEBNFH61ik/m/MPf8Rs1F958J"
                 }
+            },
+            {
+                "text":"The enter play effect happens regardless of how it comes into play (e.g, {Pressing Flesh}).",
+                "refs":{
+                    "ANK 20170309-2":"https://www.vekn.net/forum/rules-questions/75650-pressing-flesh#81050"
+                }
             }
         ],
         "set":{
@@ -84578,6 +84664,12 @@
                 "refs":{
                     "LSJ 20030307":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/zhdj4jnSdrM/m/tAU_FosRtbwJ",
                     "LSJ 20100119":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/1eULCGaVcO0/m/eefMWzjoK0IJ"
+                }
+            },
+            {
+                "text":"The enter play effect happens regardless of how it comes into play (e.g, {Pressing Flesh}).",
+                "refs":{
+                    "ANK 20170309-2":"https://www.vekn.net/forum/rules-questions/75650-pressing-flesh#81050"
                 }
             }
         ],
@@ -103134,6 +103226,24 @@
                     "ANK 20200203-2":"https://www.vekn.net/forum/rules-questions/78415-is-ghoul-mortal#98872",
                     "LSJ 20060515":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/bzusnKlnYr8/m/OSMvzE7YjokJ"
                 }
+            },
+            {
+                "text":"The enter play effect happens regardless of how it comes into play (e.g, {Pressing Flesh}).",
+                "refs":{
+                    "ANK 20170309-2":"https://www.vekn.net/forum/rules-questions/75650-pressing-flesh#81050"
+                }
+            },
+            {
+                "text":"An ally or retainer must be burned when it comes into play, regardless of how it enters play (e.g, {Pressing Flesh}).",
+                "refs":{
+                    "ANK 20170309-2":"https://www.vekn.net/forum/rules-questions/75650-pressing-flesh#81050"
+                }
+            },
+            {
+                "text":"If you have no other allies or retainers in play when it enters play, it must burn itself.",
+                "refs":{
+                    "RTR 19961113":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/VbMEQmJjI_w/m/hkDh73Y1IukJ"
+                }
             }
         ],
         "set":{
@@ -103699,18 +103809,6 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"If you have no other allies and no retainers in play when it is recruited, then you burn it.",
-                "refs":{
-                    "RTR 19961113":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/VbMEQmJjI_w/m/hkDh73Y1IukJ"
-                }
-            },
-            {
-                "text":"An ally or retainer must be burn when it comes into play, regardless of how it did come into play (eg. {Pressing Flesh}).",
-                "refs":{
-                    "ANK 20170309-2":"https://www.vekn.net/forum/rules-questions/75650-pressing-flesh#81050"
-                }
-            },
-            {
                 "text":"Can use its ability to \"lock and burn to burn a location\" during an action that would steal it (eg. [PRE] {Entrancement}). The action will have no effect but is still successful if unblocked and must then be paid.",
                 "refs":{
                     "PIB 20121031":"https://www.vekn.net/forum/rules-questions/39816-ec-2012-can-you-answer-these?start=18#39908"
@@ -103727,6 +103825,24 @@
                 "text":"They can lock to use their ability the turn they where recruited.",
                 "refs":{
                     "ANK 20180517":"https://www.vekn.net/forum/rules-questions/76447-rules-team-rulings-rtr-03-03-2018?start=30#87041"
+                }
+            },
+            {
+                "text":"The enter play effect happens regardless of how it comes into play (e.g, {Pressing Flesh}).",
+                "refs":{
+                    "ANK 20170309-2":"https://www.vekn.net/forum/rules-questions/75650-pressing-flesh#81050"
+                }
+            },
+            {
+                "text":"An ally or retainer must be burned when it comes into play, regardless of how it enters play (e.g, {Pressing Flesh}).",
+                "refs":{
+                    "ANK 20170309-2":"https://www.vekn.net/forum/rules-questions/75650-pressing-flesh#81050"
+                }
+            },
+            {
+                "text":"If you have no other allies or retainers in play when it enters play, it must burn itself.",
+                "refs":{
+                    "RTR 19961113":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/VbMEQmJjI_w/m/hkDh73Y1IukJ"
                 }
             }
         ],

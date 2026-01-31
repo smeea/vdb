@@ -67914,8 +67914,9 @@
         "path":"",
         "rulings":[
             {
-                "text":"She can choose the order in which the allies brought by her ability come into play (eg. bring a first ally, then {War Ghoul} second burning the first one).",
+                "text":"She can choose the order in which the allies brought by her ability come into play (e.g. bring a first ally, then {War Ghoul} second burning the first one), but cards are not replaced in between (e.g. {Corrupt Construction}).",
                 "refs":{
+                    "LSJ 20070707":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ZtRk5z2TcoI/m/gJWD0dT3kUwJ",
                     "LSJ 20060530-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/7ezcZoziFWw/m/bkivGTQIO3wJ"
                 }
             },
