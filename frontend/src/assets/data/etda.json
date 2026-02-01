@@ -1,5 +1,13 @@
 [
   {
+    "id": "online2",
+    "title": "Empires Fall",
+    "location": "Online",
+    "date": "2026-01-25",
+    "players": 23,
+    "decks": 23
+  },
+  {
     "id": 12635,
     "title": "Lapos Test Match",
     "location": "Vác, Hungary",
