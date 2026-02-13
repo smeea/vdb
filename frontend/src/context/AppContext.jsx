@@ -288,7 +288,7 @@ export const AppProvider = ({ children }) => {
       PRECON_DECKS,
     ])
       .then(([v, pt, cb, lb, nc, nl, lc, ll, pd, _lac, _lal, _lbc, _lbl, _ls]) => {
-        if (!v || CARD_VERSION > v || (userData?.[PLAYTEST][IS_PLAYTESTER] && !pt)) {
+        if (!v || CARD_VERSION > v || (userData?.[PLAYTEST]?.[IS_PLAYTESTER] && !pt)) {
           fetchAndSetCardBase(true, userData?.[PLAYTEST]?.secret);
         } else {
           limitedFullStore[CRYPT] = cb;
@@ -308,13 +308,18 @@ export const AppProvider = ({ children }) => {
   }, [userData]);
 
   useEffect(() => {
-    userServices.whoAmI().then((data) => {
-      if (data.success === false) {
+    userServices
+      .whoAmI()
+      .then((data) => {
+        if (data.success === false) {
+          setUserData(null);
+        } else {
+          setUserData(data);
+        }
+      })
+      .catch(() => {
         setUserData(null);
-      } else {
-        setUserData(data);
-      }
-    });
+      });
   }, []);
 
   const parseInventoryData = (inventoryData) => {
@@ -342,10 +347,10 @@ export const AppProvider = ({ children }) => {
       setPublicName(data.public_name);
       setEmail(data.email);
       setInventoryKey(data.inventory_key);
-      setIsPlaytester(data[PLAYTEST][IS_PLAYTESTER]);
-      setIsPlaytestAdmin(data[PLAYTEST][IS_ADMIN]);
-      setPlaytestProfile(data[PLAYTEST].profile);
-      if (!data[PLAYTEST][IS_PLAYTESTER] && !data[PLAYTEST][IS_ADMIN]) setPlaytestMode(false);
+      setIsPlaytester(data[PLAYTEST]?.[IS_PLAYTESTER] ?? false);
+      setIsPlaytestAdmin(data[PLAYTEST]?.[IS_ADMIN] ?? false);
+      setPlaytestProfile(data[PLAYTEST]?.profile);
+      if (!data[PLAYTEST]?.[IS_PLAYTESTER] && !data[PLAYTEST]?.[IS_ADMIN]) setPlaytestMode(false);
       const {
         [IS_FROZEN]: isFrozen,
         [CRYPT]: crypt,
