@@ -1,5 +1,6 @@
 # FIX
 - Bituin v5 legal
+- Legacy images see tg
 
 # FIX ON HOLD
 

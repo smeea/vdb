@@ -46,21 +46,23 @@ const AccountLogin = () => {
   const loginUser = async (_prevState, formData) => {
     const result = await userServices.login(formData.get(USERNAME), formData.get(PASSWORD));
     switch (result.error) {
-      case 401:
-        setPasswordError("WRONG PASSWORD");
-        break;
-      case 500:
-        setPasswordError("CONNECTION PROBLEM");
-        break;
-      case 400:
-        setUsernameError("USER DOES NOT EXIST");
-        break;
-      default:
+      case undefined:
+        setUsernameError();
+        setPasswordError();
         initializeUserData(result);
         setSuccess(true);
         setTimeout(() => {
           setSuccess(false);
         }, 1000);
+        break;
+      case 401:
+        setPasswordError("WRONG PASSWORD");
+        break;
+      case 400:
+        setUsernameError("USER DOES NOT EXIST");
+        break;
+      default:
+        setPasswordError("CONNECTION PROBLEM");
     }
 
     return {

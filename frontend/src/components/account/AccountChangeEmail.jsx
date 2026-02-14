@@ -13,18 +13,19 @@ const AccountChangeEmail = () => {
   const changeEmail = async (_prevState, formData) => {
     const result = await userServices.changeEmail(formData.get(PASSWORD), formData.get(EMAIL));
     switch (result.error) {
-      case 401:
-        setError("WRONG PASSWORD");
-        break;
-      case 500:
-        setError("CONNECTION PROBLEM");
-        break;
-      default:
+      case undefined:
+        setError();
         setEmail(formData.get(EMAIL));
         setSuccess(true);
         setTimeout(() => {
           setSuccess(false);
         }, 1000);
+        break;
+      case 401:
+        setError("WRONG PASSWORD");
+        break;
+      default:
+        setError("CONNECTION PROBLEM");
     }
 
     return { [PASSWORD]: formData.get(PASSWORD), [EMAIL]: formData.get(EMAIL) };

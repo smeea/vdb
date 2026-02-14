@@ -13,16 +13,16 @@ const AccountDeleteConfirmation = ({ handleClose }) => {
 
   const deleteAccount = async (_prevState, formData) => {
     const result = await userServices.deleteAccount(formData.get(PASSWORD));
-
     switch (result.error) {
+      case undefined:
+        setError();
+        setUsername(undefined);
+        break;
       case 401:
         setError("WRONG PASSWORD");
         break;
-      case 500:
-        setError("CONNECTION PROBLEM");
-        break;
       default:
-        setUsername(undefined);
+        setError("CONNECTION PROBLEM");
     }
 
     return { [PASSWORD]: formData.get(PASSWORD) };

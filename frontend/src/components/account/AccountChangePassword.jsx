@@ -9,23 +9,23 @@ const AccountChangePassword = () => {
   const [success, setSuccess] = useState(false);
 
   const changePassword = async (_prevState, formData) => {
-    setError();
     const result = await userServices.changePassword(
       formData.get(PASSWORD),
       formData.get(NEW_PASSWORD),
     );
     switch (result.error) {
-      case 401:
-        setError("WRONG OLD PASSWORD");
-        break;
-      case 500:
-        setError("CONNECTION PROBLEM");
-        break;
-      default:
+      case undefined:
+        setError();
         setSuccess(true);
         setTimeout(() => {
           setSuccess(false);
         }, 1000);
+        break;
+      case 401:
+        setError("WRONG OLD PASSWORD");
+        break;
+      default:
+        setError("CONNECTION PROBLEM");
     }
 
     return { [PASSWORD]: "", [NEW_PASSWORD]: formData.get(NEW_PASSWORD) };

@@ -29,15 +29,16 @@ const AccountChangeName = () => {
   const changeName = async (_prevState, formData) => {
     const result = await userServices.changeName(formData.get(NAME));
     switch (result.error) {
-      case 500:
-        setError("CONNECTION PROBLEM");
-        break;
-      default:
+      case undefined:
+        setError();
         setPublicName(formData.get(NAME));
         setSuccess(true);
         setTimeout(() => {
           setSuccess(false);
         }, 1000);
+        break;
+      default:
+        setError("CONNECTION PROBLEM");
     }
 
     return { [NAME]: formData.get(NAME) };

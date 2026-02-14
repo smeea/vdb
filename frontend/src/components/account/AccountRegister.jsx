@@ -23,17 +23,19 @@ const AccountRegister = () => {
     );
 
     switch (result.error) {
-      case 409:
-        setUsernameError("USER ALREADY EXIST");
-        break;
-      case 500:
-        setConnectionError("CONNECTION PROBLEM");
-        break;
-      default:
+      case undefined:
+        setUsernameError();
+        setConnectionError();
         setUsername(formData.get(USERNAME));
         setPublicName(formData.get(USERNAME));
         setEmail(formData.get(EMAIL));
         deckStore[DECKS] = {};
+        break;
+      case 409:
+        setUsernameError("USER ALREADY EXIST");
+        break;
+      default:
+        setConnectionError("CONNECTION PROBLEM");
     }
 
     return {
