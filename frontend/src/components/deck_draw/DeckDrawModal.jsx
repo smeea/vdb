@@ -2,6 +2,7 @@ import ArrowRepeat from "@icons/arrow-repeat.svg?react";
 import StackIcon from "@icons/stack.svg?react";
 import {
   Button,
+  ButtonFloat,
   DeckDrawCryptTable,
   DeckDrawLibraryTable,
   ErrorMessage,
@@ -11,7 +12,6 @@ import {
   ResultCryptCapacity,
   ResultLibraryCost,
   ResultModal,
-  ButtonFloat,
 } from "@/components";
 import { BLOOD, CAPACITY, POOL, X } from "@/constants";
 import { useApp } from "@/context";
@@ -65,9 +65,9 @@ const DeckDrawModal = ({
   } = useModalCardController(burnedCrypt, burnedLibrary);
 
   const handleRedrawAll = () => {
-    handleReDrawCrypt()
-    handleReDrawLibrary()
-  }
+    handleReDrawCrypt();
+    handleReDrawLibrary();
+  };
 
   return (
     <Modal size="lg" handleClose={handleClose} title="Deck Draw" noPadding={isMobile}>
@@ -220,11 +220,11 @@ const DeckDrawModal = ({
           </FlexGapped>
         )}
       </FlexGapped>
-      {isMobile && !shouldShowModal &&
-       <ButtonFloat position="middle" onClick={handleRedrawAll} >
-        <ArrowRepeat width="40" height="40" viewBox="0 0 16 16"/>
-      </ButtonFloat>
-      }
+      {isMobile && !shouldShowModal && (
+        <ButtonFloat position="middle" onClick={handleRedrawAll}>
+          <ArrowRepeat width="40" height="40" viewBox="0 0 16 16" />
+        </ButtonFloat>
+      )}
       {shouldShowModal && (
         <ResultModal
           card={currentModalCard}

@@ -8,8 +8,8 @@ import {
   DeckDiffButton,
   DeckDrawButton,
   DeckExportButton,
-  DeckImport,
   DeckFreezeButton,
+  DeckImport,
   DeckMissingButton,
   DeckProxyButtonWrapper,
   DeckPublicSwitchButton,
@@ -20,7 +20,7 @@ import {
   DeckSearchSimilarButton,
   SeatingButton,
 } from "@/components";
-import { IS_PUBLIC, IS_BRANCHES, PUBLIC_CHILD, IS_AUTHOR, DECKID } from "@/constants";
+import { DECKID, IS_AUTHOR, IS_BRANCHES, IS_PUBLIC, PUBLIC_CHILD } from "@/constants";
 import { useApp } from "@/context";
 import { getRestrictions } from "@/utils";
 
@@ -38,7 +38,12 @@ const DeckButtons = ({
   setBadImportCards,
 }) => {
   const { playtestMode, inventoryMode, username } = useApp();
-  const { [PUBLIC_CHILD]: publicChild, [IS_PUBLIC]: isPublic, [IS_AUTHOR]: isAuthor, [IS_BRANCHES]: isBranches } = deck || {};
+  const {
+    [PUBLIC_CHILD]: publicChild,
+    [IS_PUBLIC]: isPublic,
+    [IS_AUTHOR]: isAuthor,
+    [IS_BRANCHES]: isBranches,
+  } = deck || {};
   const { hasPlaytest } = getRestrictions(deck);
   const isPlaytestSafe = playtestMode || !hasPlaytest;
 

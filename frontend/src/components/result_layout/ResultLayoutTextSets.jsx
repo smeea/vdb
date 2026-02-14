@@ -51,20 +51,22 @@ const PopoverSet = ({ card, set }) => {
   );
 };
 
-const PreconsList = ({value}) => {
-  return(
-    <div className="inline ">
-      {Object.keys(value).map(i => {
-        const q = value[i]
-        return(<div className="inline group">
-                                <div className="inline text-midGray dark:text-midGrayDark">{i}</div>
-                                <div className="inline font-bold text-midGrayDark dark:text-lightGrayDark">{q}</div>
-                                <div className="group-last:hidden inline text-midGray dark:text-midGrayDark">/</div>
-                              </div>)
+const PreconsList = ({ value }) => {
+  return (
+    <div className="inline">
+      {Object.keys(value).map((i) => {
+        const q = value[i];
+        return (
+          <div key={i} className="group inline">
+            <div className="inline text-midGray dark:text-midGrayDark">{i}</div>
+            <div className="inline font-bold text-midGrayDark dark:text-lightGrayDark">{q}</div>
+            <div className="inline text-midGray group-last:hidden dark:text-midGrayDark">/</div>
+          </div>
+        );
       })}
     </div>
-  )
-}
+  );
+};
 
 const ResultLayoutTextSets = ({ card }) => {
   const { playtestMode } = useApp();
@@ -73,32 +75,35 @@ const ResultLayoutTextSets = ({ card }) => {
   return (
     <div className="flex flex-wrap gap-x-2.5 gap-y-0.5">
       {Object.keys(card[SET])
-       .filter((set) => (playtestMode || set !== PLAYTEST) && set !== TWO_P)
-       .toSorted(byDate)
-       .map((set) => {
-         const isPrecons = !!Object.keys(card[SET][set]).length
-         const year = setsAndPrecons[set][DATE].slice(2, 4) || null;
+        .filter((set) => (playtestMode || set !== PLAYTEST) && set !== TWO_P)
+        .toSorted(byDate)
+        .map((set) => {
+          const isPrecons = !!Object.keys(card[SET][set]).length;
+          const year = setsAndPrecons[set][DATE].slice(2, 4) || null;
 
-         return (
-           <div className="inline-block whitespace-nowrap" key={set}>
-             <ConditionalTooltipOrModal
-               overlay={<PopoverSet card={card} set={set} />}
-               placement="bottom"
-               size="lg"
-               noPadding
-             >
-               <div className="flex text-fgSecondary dark:text-fgPrimaryDark">
-                 {set === PLAYTEST ? "PLAYTEST" : set}
-                 <div className="flex items-start text-fgFourth text-sm dark:text-fgFourthDark">
-                   {year ? `'${year}` : null}
-                 </div>
-                 {isPrecons && <div className="flex">
-                                             <div className="flex text-midGray dark:text-midGrayDark">:</div><PreconsList value={card[SET][set]}/>
-                                           </div>}
-               </div>
-             </ConditionalTooltipOrModal>
-           </div>
-         );
+          return (
+            <div className="inline-block whitespace-nowrap" key={set}>
+              <ConditionalTooltipOrModal
+                overlay={<PopoverSet card={card} set={set} />}
+                placement="bottom"
+                size="lg"
+                noPadding
+              >
+                <div className="flex text-fgSecondary dark:text-fgPrimaryDark">
+                  {set === PLAYTEST ? "PLAYTEST" : set}
+                  <div className="flex items-start text-fgFourth text-sm dark:text-fgFourthDark">
+                    {year ? `'${year}` : null}
+                  </div>
+                  {isPrecons && (
+                    <div className="flex">
+                      <div className="flex text-midGray dark:text-midGrayDark">:</div>
+                      <PreconsList value={card[SET][set]} />
+                    </div>
+                  )}
+                </div>
+              </ConditionalTooltipOrModal>
+            </div>
+          );
         })}
     </div>
   );

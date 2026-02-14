@@ -13,7 +13,6 @@ const ValueSetter = ({
   newFocus,
   overlay,
   isEmptyZero,
-  inInventory,
   withNote,
 }) => {
   const { isMobile } = useApp();

@@ -82,6 +82,15 @@
           }
         }
       }
+    },
+    {
+      "includes": [
+        "CHANGES.json",
+        "src/LAST_CHANGE.json"
+      ],
+      "formatter": {
+        "expand": "always"
+      }
     }
   ]
 }
