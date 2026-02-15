@@ -177,7 +177,7 @@ export { default as InventoryShareButton } from "./inventory/InventoryShareButto
 export { default as InventoryShareModal } from "./inventory/InventoryShareModal.jsx";
 export { default as InventoryShowSelect } from "./inventory/InventoryShowSelect.jsx";
 export { default as InventoryText } from "./inventory/InventoryText.jsx";
-export { default as Limited } from "./limited/Limited";
+export { default as LimitedModeSelect } from "./limited/LimitedModeSelect";
 export { default as LimitedButton } from "./limited/LimitedButton";
 export { default as LimitedCardSelection } from "./limited/LimitedCardSelection";
 export { default as LimitedDelCard } from "./limited/LimitedDelCard";

@@ -9,12 +9,15 @@ import {
   AccountLogin,
   AccountLogoutButton,
   AccountRegister,
-  Limited,
+  LimitedModeSelect,
+  LimitedOnlyDecksToggle,
 } from "@/components";
 import { useApp } from "@/context";
+import { TWO_P, V5 } from "@/constants";
 
 const Account = () => {
-  const { username } = useApp();
+  const { username, limitedPreset } = useApp();
+
   return (
     <div
       className={twMerge(
@@ -36,7 +39,10 @@ const Account = () => {
             <AccountChangeEmail />
             <div className="flex flex-col gap-3 sm:gap-4">
               <AccountLegacyToggle />
-              <Limited />
+              <LimitedModeSelect />
+              {[TWO_P, V5].includes(limitedPreset) && (
+                <LimitedOnlyDecksToggle />
+              )}
               <div className="flex gap-3 sm:gap-4">
                 <AccountDeleteButton />
                 <AccountLogoutButton />
@@ -50,7 +56,10 @@ const Account = () => {
           <AccountRegister />
           <div className="flex flex-col gap-3 sm:gap-4">
             <AccountLegacyToggle />
-            <Limited />
+            <LimitedModeSelect />
+            {[TWO_P, V5].includes(limitedPreset) && (
+              <LimitedOnlyDecksToggle />
+            )}
           </div>
         </div>
       )}

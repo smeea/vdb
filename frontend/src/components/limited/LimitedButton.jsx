@@ -1,8 +1,7 @@
-import UiChecksGrid from "@icons/ui-checks-grid.svg?react";
 import { setMany } from "idb-keyval";
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router";
-import { ButtonIconed, LimitedModal } from "@/components";
+import { Button, LimitedModal } from "@/components";
 import {
   ALLOWED,
   BANNED,
@@ -41,13 +40,13 @@ const LimitedButton = () => {
 
   return (
     <>
-      <ButtonIconed
-        className="w-full"
+      <Button
+        className="min-h-[41px]"
         onClick={() => setShowModal(true)}
-        title="Manage Format"
-        icon={<UiChecksGrid />}
-        text="Configure Format"
-      />
+        title="Configure Format"
+      >
+        Configure
+      </Button>
       {showModal && <LimitedModal setShow={setShowModal} setFormat={setFormat} />}
     </>
   );
