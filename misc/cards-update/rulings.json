@@ -179,7 +179,7 @@
             }
         },
         {
-            "text":"A burned ghoul is removed from the game but is still burned first, triggering cards such as {Tension in the Ranks}.",
+            "text":"A burned ghoul is removed from the game, but it is still burned (e.g. it triggers {Tension in the Ranks}). However, when Absimillard's Army is removed from the game, the ghouls are removed without burning (will not trigger {Tension in the Ranks}).",
             "refs":{
                 "LSJ 20090920":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/mCPE3I6343Y/m/KqkCJgjur5IJ"
             }
@@ -744,15 +744,16 @@
             }
         },
         {
-            "text":"[CHI] Prevents up to 2 damage, it can prevent less.",
+            "text":"[CHI] If fewer points of (preventable) damage are being resolved, then the effect prevents all of those points.",
             "refs":{
                 "RTR 20041202":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/WUWh7AdooDU/m/vojisZMCSnsJ"
             }
         },
         {
-            "text":"[CHI] Can prevent 1 damage twice on separated strikes in the same round.",
+            "text":"[CHI] Unused prevention points can't be carried over unless optional ('can/may prevent').",
             "refs":{
-                "ANK 20200318":"https://www.vekn.net/forum/rules-questions/78525-apparition#99356"
+                "ANK 20200318":"https://www.vekn.net/forum/rules-questions/78525-apparition#99356",
+                "LSJ 20001114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qXSlM7Grq1c/m/cSDoQ9mw0z4J"
             }
         }
     ],
@@ -854,27 +855,6 @@
             }
         }
     ],
-    "100087":[
-        {
-            "text":"[VAL] Prevents up to 2 damage, it can prevent less.",
-            "refs":{
-                "RTR 20041202":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/WUWh7AdooDU/m/vojisZMCSnsJ"
-            }
-        },
-        {
-            "text":"[VAL] Can prevent 2 damage per round, from any strike, can prevent 2 times 1 damage from two different strikes.",
-            "refs":{
-                "ANK 20180117":"https://www.vekn.net/forum/rules-questions/76367-armor-of-caine-s-fury#84946"
-            }
-        },
-        {
-            "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
-            "refs":{
-                "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
-                "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
-            }
-        }
-    ],
     "100088":[
         {
             "text":"[vis], [VIS] Can be used by a non-slave Gargoyle.",
@@ -887,26 +867,6 @@
             "refs":{
                 "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
                 "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
-            }
-        }
-    ],
-    "100089":[
-        {
-            "text":"Prevents up to 3 damage, it can be used to prevent less.",
-            "refs":{
-                "RTR 20041202":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/WUWh7AdooDU/m/vojisZMCSnsJ"
-            }
-        },
-        {
-            "text":"Cannot be used if there is no damage to prevent.",
-            "refs":{
-                "LSJ 20001114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qXSlM7Grq1c/m/cSDoQ9mw0z4J"
-            }
-        },
-        {
-            "text":"Unused prevention does not carry over.",
-            "refs":{
-                "LSJ 20001114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qXSlM7Grq1c/m/cSDoQ9mw0z4J"
             }
         }
     ],
@@ -1036,6 +996,12 @@
             "refs":{
                 "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
                 "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+            }
+        },
+        {
+            "text":"[thn] Cannot be used if there is no damage to prevent.",
+            "refs":{
+                "LSJ 20001114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qXSlM7Grq1c/m/cSDoQ9mw0z4J"
             }
         }
     ],
@@ -2249,14 +2215,6 @@
             "text":"Once in play, can be equipped from the minion it's on (rulebook action) by another minion that does not meet the requirements.",
             "refs":{
                 "ANK 20180719-3":"https://www.vekn.net/forum/rules-questions/76834-moving-equipment-with-requirements#89044"
-            }
-        }
-    ],
-    "100212":[
-        {
-            "text":"Prevents up to 2 damage, it can be used to prevent less.",
-            "refs":{
-                "RTR 20041202":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/WUWh7AdooDU/m/vojisZMCSnsJ"
             }
         }
     ],
@@ -4316,19 +4274,7 @@
             }
         },
         {
-            "text":"[QUI] The opponent must pay 1 blood to use a strike that provides a maneuver if he plays it when choosing range.",
-            "refs":{
-                "ANK 20181026":"https://www.vekn.net/forum/rules-questions/77117-dam-the-heart-s-river-vs-thrown-gate#91508"
-            }
-        },
-        {
-            "text":"[QUI] If an effect granting a strike is played/used before another effect that adds a cost to strike (e.g. {Dam the Heart's River}), you may choose not to strike.",
-            "refs":{
-                "LSJ 20071017":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Ei307R78l4A/m/PYe-fYT8BqkJ"
-            }
-        },
-        {
-            "text":"[QUI] If an effect granting a strike (e.g. {.44 Magnum}) is played/used after another effect that adds a cost to strike, you must pay the additional cost to use that first effect.",
+            "text":"[QUI] If an opponent then plays an effect that grants a strike (e.g, {Aid from Bats}), they pay the additional cost.",
             "refs":{
                 "LSJ 20090529":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/LpFSLRuWONA/m/daxDmJiGX0AJ"
             }
@@ -4356,6 +4302,12 @@
             "refs":{
                 "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
                 "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
+            }
+        },
+        {
+            "text":"[QUI] If the opponent has played an effect that grants a strike before (e.g, {Sniper Rifle}), they may choose not to strike.",
+            "refs":{
+                "LSJ 20071017":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Ei307R78l4A/m/PYe-fYT8BqkJ"
             }
         }
     ],
@@ -5028,6 +4980,25 @@
                 "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
                 "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
             }
+        },
+        {
+            "text":"[for] If fewer points of (preventable) damage are being resolved, then the effect prevents all of those points.",
+            "refs":{
+                "RTR 20041202":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/WUWh7AdooDU/m/vojisZMCSnsJ"
+            }
+        },
+        {
+            "text":"[for] Unused prevention points can't be carried over unless optional ('can/may prevent').",
+            "refs":{
+                "ANK 20200318":"https://www.vekn.net/forum/rules-questions/78525-apparition#99356",
+                "LSJ 20001114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qXSlM7Grq1c/m/cSDoQ9mw0z4J"
+            }
+        },
+        {
+            "text":"[for] Cannot be used if there is no damage to prevent.",
+            "refs":{
+                "LSJ 20001114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qXSlM7Grq1c/m/cSDoQ9mw0z4J"
+            }
         }
     ],
     "100565":[
@@ -5570,21 +5541,6 @@
             "text":"If you play {Voter Captivation} on the referendum, you can move up to 2 counters to your pool, and 0 to your vampire.",
             "refs":{
                 "LSJ 20081002":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/OUYG4nuy3Oo/m/MsxvJfM9vuQJ"
-            }
-        }
-    ],
-    "100625":[
-        {
-            "text":"[for] Cannot be used if there is no damage to prevent.",
-            "refs":{
-                "LSJ 20001114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qXSlM7Grq1c/m/cSDoQ9mw0z4J"
-            }
-        },
-        {
-            "text":"[for] Cannot be used to prevent aggravated damage, even if the minion treats them as normal damage (eg. {Skin of Night}).",
-            "refs":{
-                "LSJ 20040812-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/E7D1cVmAdqQ/m/MvPApbrT14gJ",
-                "PIB 20130327":"https://www.vekn.net/forum/rules-questions/46279-soak-vs-treat-agg-damage-as-normal-damage#46285"
             }
         }
     ],
@@ -6698,14 +6654,6 @@
             }
         }
     ],
-    "100763":[
-        {
-            "text":"Prevents up to 2 damage, it can be used to prevent less.",
-            "refs":{
-                "RTR 20041202":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/WUWh7AdooDU/m/vojisZMCSnsJ"
-            }
-        }
-    ],
     "100765":[
         {
             "text":"[DOM] Can be played against a target with 10 or more pool and does not count against the limit in this case: it will only have a lingering effect (+3 bleed if the target happens to have 9 or less).",
@@ -7265,22 +7213,6 @@
             "refs":{
                 "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
                 "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
-            }
-        }
-    ],
-    "100834":[
-        {
-            "text":"Cannot be used if there is no damage to prevent.",
-            "refs":{
-                "LSJ 20001114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qXSlM7Grq1c/m/cSDoQ9mw0z4J"
-            }
-        },
-        {
-            "text":"Is replaced before unlocking cards: other unlock effects cannot be ordered before.",
-            "refs":{
-                "ANK 20200129":"https://www.vekn.net/forum/rules-questions/78701-replace-during-unlock-and-other-unlock-effects#100210",
-                "LSJ 20091208":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ptHbJM9MlVI/m/O61W2JkI_rIJ",
-                "RTR 19951017":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ouhNUbHYg50/m/rco157ZHyqEJ"
             }
         }
     ],
@@ -7909,12 +7841,6 @@
     ],
     "100907":[
         {
-            "text":"[nec] Cannot be used if there is no damage to prevent.",
-            "refs":{
-                "LSJ 20001114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qXSlM7Grq1c/m/cSDoQ9mw0z4J"
-            }
-        },
-        {
             "text":"[obe], [OBE] Forbids any combat with the ally afterwards. Cards that would start a new combat cannot be played (eg. {Psyche!}, {Bum's Rush}).",
             "refs":{
                 "ANK 20220429":"https://www.vekn.net/forum/rules-questions/79754-heavens-gate-new-wording#105112"
@@ -7931,6 +7857,12 @@
             "refs":{
                 "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
                 "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+            }
+        },
+        {
+            "text":"[nec] Cannot be used if there is no damage to prevent.",
+            "refs":{
+                "LSJ 20001114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qXSlM7Grq1c/m/cSDoQ9mw0z4J"
             }
         }
     ],
@@ -8441,6 +8373,12 @@
             "refs":{
                 "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
             }
+        },
+        {
+            "text":"[dai] Cannot be used if there is no damage to prevent.",
+            "refs":{
+                "LSJ 20001114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qXSlM7Grq1c/m/cSDoQ9mw0z4J"
+            }
         }
     ],
     "100950":[
@@ -8767,20 +8705,6 @@
             }
         }
     ],
-    "100973":[
-        {
-            "text":"[for] Cannot be used if there is no damage to prevent.",
-            "refs":{
-                "LSJ 20001114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qXSlM7Grq1c/m/cSDoQ9mw0z4J"
-            }
-        },
-        {
-            "text":"[FOR] The optional press can only be used during the current round.",
-            "refs":{
-                "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
-            }
-        }
-    ],
     "100975":[
         {
             "text":"It does not require an anarch so it cannot be played on vampires that can fake requirements for you (eg. {Mata Hari}).",
@@ -8801,6 +8725,12 @@
             "refs":{
                 "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
                 "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+            }
+        },
+        {
+            "text":"[for]/[thn] Cannot be used if there is no damage to prevent.",
+            "refs":{
+                "LSJ 20001114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qXSlM7Grq1c/m/cSDoQ9mw0z4J"
             }
         }
     ],
@@ -9305,15 +9235,22 @@
     ],
     "101040":[
         {
-            "text":"Prevents up to 2 damage from gun strikes, it can be used to prevent less.",
+            "text":"Can be used to prevent the damage from two separated gun strikes doing one damage each.",
+            "refs":{
+                "LSJ 20081210":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/pUUGH1nSKpc/m/aRxHUjHMxZsJ"
+            }
+        },
+        {
+            "text":"If fewer points of (preventable) damage are being resolved, then the effect prevents all of those points.",
             "refs":{
                 "RTR 20041202":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/WUWh7AdooDU/m/vojisZMCSnsJ"
             }
         },
         {
-            "text":"Can be used to prevent the damage from two separated gun strikes doing one damage each.",
+            "text":"Unused prevention points can't be carried over unless optional ('can/may prevent').",
             "refs":{
-                "LSJ 20081210":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/pUUGH1nSKpc/m/aRxHUjHMxZsJ"
+                "ANK 20200318":"https://www.vekn.net/forum/rules-questions/78525-apparition#99356",
+                "LSJ 20001114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qXSlM7Grq1c/m/cSDoQ9mw0z4J"
             }
         }
     ],
@@ -9500,6 +9437,12 @@
             "refs":{
                 "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
                 "LSJ 19970801":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/7ZnLKTdPEn4/m/6L-nVarAJwMJ"
+            }
+        },
+        {
+            "text":"[for] Cannot be used if there is no damage to prevent.",
+            "refs":{
+                "LSJ 20001114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qXSlM7Grq1c/m/cSDoQ9mw0z4J"
             }
         }
     ],
@@ -9761,7 +9704,7 @@
             }
         },
         {
-            "text":"Is played during combat. Combat cards can be played to continue combat or begin a new combat.",
+            "text":"Is played during combat.",
             "refs":{
                 "ANK 20200109":"https://www.vekn.net/forum/rules-questions/78291-legacy-of-power-and-continue-combat-effects-like-psyche#98484"
             }
@@ -10489,27 +10432,15 @@
             }
         },
         {
-            "text":"Cannot be used if there is no damage to prevent.",
-            "refs":{
-                "LSJ 20001114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qXSlM7Grq1c/m/cSDoQ9mw0z4J"
-            }
-        },
-        {
-            "text":"[AUS][FOR] Prevents up to X+1 damage, it can prevent less.",
-            "refs":{
-                "RTR 20041202":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/WUWh7AdooDU/m/vojisZMCSnsJ"
-            }
-        },
-        {
-            "text":"[AUS][FOR] Unused prevention does not carry over.",
-            "refs":{
-                "LSJ 20001114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qXSlM7Grq1c/m/cSDoQ9mw0z4J"
-            }
-        },
-        {
             "text":"[AUS][FOR] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Una}). The card cannot be played if the minion cannot afford to burn the blood.",
             "refs":{
                 "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
+            }
+        },
+        {
+            "text":"Cannot be used if there is no damage to prevent.",
+            "refs":{
+                "LSJ 20001114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qXSlM7Grq1c/m/cSDoQ9mw0z4J"
             }
         }
     ],
@@ -11564,12 +11495,6 @@
     ],
     "101287":[
         {
-            "text":"Can prevent up to 3 damage, it can prevent less.",
-            "refs":{
-                "RTR 20041202":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/WUWh7AdooDU/m/vojisZMCSnsJ"
-            }
-        },
-        {
             "text":"Both strikes are only effective at close range.",
             "refs":{
                 "ANK 20220814-2":"https://www.vekn.net/forum/rules-questions/79960-nightstick-and-defensive-strikes?start=6#105963"
@@ -11579,6 +11504,19 @@
             "text":"A second copy allows a second use in the same round.",
             "refs":{
                 "ANK 20230316":"https://www.vekn.net/forum/rules-questions/80385-amulet-of-temporal-perception-burning-and-reuse#107638"
+            }
+        },
+        {
+            "text":"If fewer points of (preventable) damage are being resolved, then the effect prevents all of those points.",
+            "refs":{
+                "RTR 20041202":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/WUWh7AdooDU/m/vojisZMCSnsJ"
+            }
+        },
+        {
+            "text":"Unused prevention points can't be carried over unless optional ('can/may prevent').",
+            "refs":{
+                "ANK 20200318":"https://www.vekn.net/forum/rules-questions/78525-apparition#99356",
+                "LSJ 20001114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qXSlM7Grq1c/m/cSDoQ9mw0z4J"
             }
         }
     ],
@@ -13701,26 +13639,6 @@
             }
         }
     ],
-    "101588":[
-        {
-            "text":"Prevents up to 2 or 4 damage, it can be used to prevent less.",
-            "refs":{
-                "RTR 20041202":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/WUWh7AdooDU/m/vojisZMCSnsJ"
-            }
-        },
-        {
-            "text":"Cannot be used if there is no damage to prevent.",
-            "refs":{
-                "LSJ 20001114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qXSlM7Grq1c/m/cSDoQ9mw0z4J"
-            }
-        },
-        {
-            "text":"Unused prevention does not carry over.",
-            "refs":{
-                "LSJ 20001114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qXSlM7Grq1c/m/cSDoQ9mw0z4J"
-            }
-        }
-    ],
     "101589":[
         {
             "text":"Only requires one clan or the other (Tremere or Tremere antitribu) to be played.",
@@ -13746,60 +13664,6 @@
             "text":"Burning the card for a vote is not considered playing it.",
             "refs":{
                 "ANK 20210309-2":"https://www.vekn.net/forum/rules-questions/79005-rulebook-gaining-votes?start=6#101807"
-            }
-        }
-    ],
-    "101595":[
-        {
-            "text":"[for] Cannot be used if there is no damage to prevent.",
-            "refs":{
-                "LSJ 20001114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qXSlM7Grq1c/m/cSDoQ9mw0z4J"
-            }
-        },
-        {
-            "text":"[THN] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}).",
-            "refs":{
-                "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
-            }
-        },
-        {
-            "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
-            "refs":{
-                "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
-                "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
-            }
-        },
-        {
-            "text":"[THN] The card cannot be played if the minion cannot afford to burn the blood.",
-            "refs":{
-                "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
-            }
-        },
-        {
-            "text":"Can be played before of after effects that are played \"at the end of combat\".",
-            "refs":{
-                "LSJ 20021113":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/df2P8YHZex8/m/mGCmsxDjI_YJ",
-                "ANK 20191219":"https://www.vekn.net/forum/rules-questions/78241-relentless-reaper-vs-blissful-agony-and-scheduled-combat-rulings-ambiguity#98308",
-                "ANK 20180910-1":"https://www.vekn.net/forum/rules-questions/76990-correct-order-impulse-for-combat-cards-after-combat#90517"
-            }
-        },
-        {
-            "text":"[THN] Effects that end combat and then do something else after combat (include continuing the action as if unblocked) will be lost, except for unlock effects.",
-            "refs":{
-                "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ",
-                "LSJ 19980109":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d2U51Uw0Hfg/m/uIPoVvPFePgJ"
-            }
-        },
-        {
-            "text":"[THN] Cannot be played after [CEL] {Psyche!}. When played before, combat continues and Psyche! can only be played at the end of it.",
-            "refs":{
-                "ANK 20191219":"https://www.vekn.net/forum/rules-questions/78241-relentless-reaper-vs-blissful-agony-and-scheduled-combat-rulings-ambiguity#98308"
-            }
-        },
-        {
-            "text":"[THN] Must be played after presses, can be played if the round ends prematurely.",
-            "refs":{
-                "RTR 20030519":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NOBWXWrd-vA/m/iEOpQp1uhvAJ"
             }
         }
     ],
@@ -13866,33 +13730,6 @@
             "refs":{
                 "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
                 "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
-            }
-        }
-    ],
-    "101608":[
-        {
-            "text":"Cannot be used if there is no damage to prevent.",
-            "refs":{
-                "LSJ 20001114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qXSlM7Grq1c/m/cSDoQ9mw0z4J"
-            }
-        },
-        {
-            "text":"Prevents up to 3 non-aggravated damage, it can be used to prevent less.",
-            "refs":{
-                "RTR 20041202":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/WUWh7AdooDU/m/vojisZMCSnsJ"
-            }
-        },
-        {
-            "text":"Unused prevention does not carry over.",
-            "refs":{
-                "LSJ 20001114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qXSlM7Grq1c/m/cSDoQ9mw0z4J"
-            }
-        },
-        {
-            "text":"[FOR] Cannot be used to prevent aggravated damage, even if the minion treats them as normal damage (eg. {Skin of Night}).",
-            "refs":{
-                "LSJ 20040812-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/E7D1cVmAdqQ/m/MvPApbrT14gJ",
-                "PIB 20130327":"https://www.vekn.net/forum/rules-questions/46279-soak-vs-treat-agg-damage-as-normal-damage#46285"
             }
         }
     ],
@@ -14253,25 +14090,11 @@
                 "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
                 "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
             }
-        }
-    ],
-    "101649":[
+        },
         {
-            "text":"[for] Cannot be used if there is no damage to prevent.",
+            "text":"[vis] Cannot be used if there is no damage to prevent.",
             "refs":{
                 "LSJ 20001114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qXSlM7Grq1c/m/cSDoQ9mw0z4J"
-            }
-        },
-        {
-            "text":"[FOR] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}).",
-            "refs":{
-                "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
-            }
-        },
-        {
-            "text":"[FOR] The card cannot be played if the minion cannot afford to burn the blood.",
-            "refs":{
-                "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
             }
         }
     ],
@@ -15470,14 +15293,6 @@
             }
         }
     ],
-    "101779":[
-        {
-            "text":"[CEL] Cannot be used if there is no damage to prevent.",
-            "refs":{
-                "LSJ 20001114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qXSlM7Grq1c/m/cSDoQ9mw0z4J"
-            }
-        }
-    ],
     "101781":[
         {
             "text":"{Unleash Hell's Fury} cannot block the bearer.",
@@ -15573,28 +15388,6 @@
             "text":"[cel] The card cannot be played if the minion cannot afford to burn the blood.",
             "refs":{
                 "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
-            }
-        }
-    ],
-    "101790":[
-        {
-            "text":"[FOR] Cannot be used if there is no damage to prevent.",
-            "refs":{
-                "LSJ 20001114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qXSlM7Grq1c/m/cSDoQ9mw0z4J"
-            }
-        }
-    ],
-    "101791":[
-        {
-            "text":"Cannot be used if there is no damage to prevent.",
-            "refs":{
-                "LSJ 20001114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qXSlM7Grq1c/m/cSDoQ9mw0z4J"
-            }
-        },
-        {
-            "text":"Unused prevention does not carry over.",
-            "refs":{
-                "LSJ 20001114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qXSlM7Grq1c/m/cSDoQ9mw0z4J"
             }
         }
     ],
@@ -15838,33 +15631,6 @@
             "text":"If another effect was already setting that round's range (e.g. {Neutral Guard}), that effect has priority.",
             "refs":{
                 "PIB 20120214":"https://www.vekn.net/forum/rules-questions/22906-re-set-the-range?start=12#22999"
-            }
-        }
-    ],
-    "101817":[
-        {
-            "text":"Cannot be used if there is no damage to prevent.",
-            "refs":{
-                "LSJ 20001114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qXSlM7Grq1c/m/cSDoQ9mw0z4J"
-            }
-        },
-        {
-            "text":"Prevents up to 2 or 4 non-aggravated damage, it can prevent less.",
-            "refs":{
-                "RTR 20041202":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/WUWh7AdooDU/m/vojisZMCSnsJ"
-            }
-        },
-        {
-            "text":"Unused prevention does not carry over.",
-            "refs":{
-                "LSJ 20001114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qXSlM7Grq1c/m/cSDoQ9mw0z4J"
-            }
-        },
-        {
-            "text":"Cannot be used to prevent aggravated damage, even if the minion treats them as normal damage (eg. {Skin of Night}).",
-            "refs":{
-                "LSJ 20040812-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/E7D1cVmAdqQ/m/MvPApbrT14gJ",
-                "PIB 20130327":"https://www.vekn.net/forum/rules-questions/46279-soak-vs-treat-agg-damage-as-normal-damage#46285"
             }
         }
     ],
@@ -16278,27 +16044,6 @@
             }
         }
     ],
-    "101876":[
-        {
-            "text":"Unused prevention does not carry over.",
-            "refs":{
-                "LSJ 20001114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qXSlM7Grq1c/m/cSDoQ9mw0z4J"
-            }
-        },
-        {
-            "text":"[VIS] Cannot be used if there is no damage to prevent.",
-            "refs":{
-                "LSJ 20001114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qXSlM7Grq1c/m/cSDoQ9mw0z4J"
-            }
-        },
-        {
-            "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
-            "refs":{
-                "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
-                "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
-            }
-        }
-    ],
     "101877":[
         {
             "text":"If it is stolen, the card on it goes with it and the new controller will be able to take it in hand. The card is returned to the owner's ash heap or library if it would be moved to an ash heap or library.",
@@ -16412,20 +16157,6 @@
             "text":"The burn option can be used if all your vampires with [str] are in torpor.",
             "refs":{
                 "LSJ 20091203":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JBdmMh1udN8/m/5f5UX4qfOMMJ"
-            }
-        }
-    ],
-    "101888":[
-        {
-            "text":"[POT] Prevents up to 2 damage, it can prevent less.",
-            "refs":{
-                "RTR 20041202":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/WUWh7AdooDU/m/vojisZMCSnsJ"
-            }
-        },
-        {
-            "text":"The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}).",
-            "refs":{
-                "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
             }
         }
     ],
@@ -18073,24 +17804,6 @@
             }
         },
         {
-            "text":"[FOR] Cannot be used if there is no damage to prevent.",
-            "refs":{
-                "LSJ 20001114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qXSlM7Grq1c/m/cSDoQ9mw0z4J"
-            }
-        },
-        {
-            "text":"[FOR] Prevents up to 2 damage, it can be used to prevent less.",
-            "refs":{
-                "RTR 20041202":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/WUWh7AdooDU/m/vojisZMCSnsJ"
-            }
-        },
-        {
-            "text":"[FOR] Unused prevention does not carry over.",
-            "refs":{
-                "LSJ 20001114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qXSlM7Grq1c/m/cSDoQ9mw0z4J"
-            }
-        },
-        {
             "text":"[for] The optional press can only be used during the current round.",
             "refs":{
                 "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
@@ -18100,6 +17813,25 @@
             "text":"Sequencing rules apply, and if played first, effects that stop a vampire from going to torpor would prevent the use of effects that are only usable on a vampire going to torpor.",
             "refs":{
                 "RTR 20010711":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GsI1UyH54jU/m/x9LfDZX1vR4J"
+            }
+        },
+        {
+            "text":"[FOR] If fewer points of (preventable) damage are being resolved, then the effect prevents all of those points.",
+            "refs":{
+                "RTR 20041202":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/WUWh7AdooDU/m/vojisZMCSnsJ"
+            }
+        },
+        {
+            "text":"[FOR] Unused prevention points can't be carried over unless optional ('can/may prevent').",
+            "refs":{
+                "ANK 20200318":"https://www.vekn.net/forum/rules-questions/78525-apparition#99356",
+                "LSJ 20001114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qXSlM7Grq1c/m/cSDoQ9mw0z4J"
+            }
+        },
+        {
+            "text":"[FOR] Cannot be used if there is no damage to prevent.",
+            "refs":{
+                "LSJ 20001114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qXSlM7Grq1c/m/cSDoQ9mw0z4J"
             }
         }
     ],
@@ -18183,14 +17915,6 @@
             "text":"Has no effect on a vampire that cannot commit diablerie (eg. because of {Humanitas}).",
             "refs":{
                 "LSJ 20050324-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aIzKlsTs51k/m/D07dQjMzaj4J"
-            }
-        }
-    ],
-    "102071":[
-        {
-            "text":"[for] Cannot be used if there is no damage to prevent.",
-            "refs":{
-                "LSJ 20001114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qXSlM7Grq1c/m/cSDoQ9mw0z4J"
             }
         }
     ],
@@ -18401,7 +18125,7 @@
             }
         },
         {
-            "text":"The counter is placed after range is determined, before strikes are chosen (defensive strikes like dodge or combat ends do not avoid it).",
+            "text":"The counter is placed before strikes are chosen (i.e. after range is determined, in the same step as {Immortal Grapple}). The second vampire does not get a counter if this step is skipped but will get a counter even if they play defensive strikes like dodge or combat ends.",
             "refs":{
                 "ANK 20210422":"https://www.vekn.net/forum/rules-questions/79111-vampiric-disease-and-dodge#102098",
                 "LSJ 20040830":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KHMhiNiSKo4/m/MCfo9aA-EjcJ"
@@ -18987,6 +18711,18 @@
             "text":"Card text was changed in 2007, previous rulings do not apply.",
             "refs":{
                 "ANK 20200408-1":"https://www.vekn.net/forum/rules-questions/78563-card-rulings-wave-of-lethargy#99531"
+            }
+        },
+        {
+            "text":"[QUI] If an opponent then plays an effect that grants a strike (e.g, {Aid from Bats}), they pay the additional cost.",
+            "refs":{
+                "LSJ 20090529":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/LpFSLRuWONA/m/daxDmJiGX0AJ"
+            }
+        },
+        {
+            "text":"[QUI] Strikes are paid at declaration. If an ally spends their last life on a strike, combat ends before strike resolution. If the strike damage depends on the amount of life/blood of the striking minion, it is calculated after the strike is paid for (e.g. {Shambling Hordes}).",
+            "refs":{
+                "LSJ 20090703":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/utj6J5KZ-aA/m/I_9JuLKLwZ8J"
             }
         }
     ],
@@ -21875,9 +21611,8 @@
     ],
     "200871":[
         {
-            "text":"Strikes that do not target him (dodge, combat ends) do not cost more. They do if they plan to damage him after combat (eg. [PRE] {Catatonic Fear}).",
+            "text":"Strikes that deal damage after combat are affected (eg. [PRE] {Catatonic Fear}).",
             "refs":{
-                "LSJ 20090528-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/LpFSLRuWONA/m/m0Alg1iD6gEJ",
                 "LSJ 20031118":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9IzmBh8PWe0/m/J1F_TzPbITsJ"
             }
         },
@@ -21888,13 +21623,13 @@
             }
         },
         {
-            "text":"If an effect granting a strike is played/used before another effect that adds a cost to strike (e.g. {Dam the Heart's River}), you may choose not to strike.",
+            "text":"When using a card that locks you into a strike (eg {.44 Magnum} s maneuver) you cannot chose not to strike",
             "refs":{
-                "LSJ 20071017":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Ei307R78l4A/m/PYe-fYT8BqkJ"
+                "LSJ 20090528-2-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/LpFSLRuWONA/m/ZwZEHVFOrRYJ"
             }
         },
         {
-            "text":"If an effect granting a strike (e.g. {.44 Magnum}) is played/used after another effect that adds a cost to strike, you must pay the additional cost to use that first effect.",
+            "text":"If an opponent then plays an effect that grants a strike (e.g, {Aid from Bats}), they pay the additional cost.",
             "refs":{
                 "LSJ 20090529":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/LpFSLRuWONA/m/daxDmJiGX0AJ"
             }
@@ -23966,6 +23701,20 @@
             }
         }
     ],
+    "201726":[
+        {
+            "text":"If a card forces a block attempt (eg,\u00a0{Second Tradition: Domain}) the blocking methuselah burns a card from the top of their library, before they redraw.",
+            "refs":{
+                "ANK 20260216":"https://www.vekn.net/forum/rules-questions/82837-parijat-special-order#116447"
+            }
+        },
+        {
+            "text":"If you cannot burn a card from the top of your library (eg, your library is empty), you cannot attempt to block wraith or zombie allies while Parijat is ready.",
+            "refs":{
+                "ANK 20260216":"https://www.vekn.net/forum/rules-questions/82837-parijat-special-order#116447"
+            }
+        }
+    ],
     "201776":[
         {
             "text":"Their ability is not applied if his controller is ousted by the referendum effects (reversal of previous rulings).",
@@ -24661,13 +24410,7 @@
     ],
     "G00074":[
         {
-            "text":"If an effect granting a strike is played/used before another effect that adds a cost to strike (e.g. {Dam the Heart's River}), you may choose not to strike.",
-            "refs":{
-                "LSJ 20071017":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Ei307R78l4A/m/PYe-fYT8BqkJ"
-            }
-        },
-        {
-            "text":"If an effect granting a strike (e.g. {.44 Magnum}) is played/used after another effect that adds a cost to strike, you must pay the additional cost to use that first effect.",
+            "text":"If an opponent then plays an effect that grants a strike (e.g, {Aid from Bats}), they pay the additional cost.",
             "refs":{
                 "LSJ 20090529":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/LpFSLRuWONA/m/daxDmJiGX0AJ"
             }
@@ -25617,6 +25360,37 @@
             }
         }
     ],
+    "G00152":[
+        {
+            "text":"If the opponent has played an effect that grants a strike before (e.g, {Sniper Rifle}), they may choose not to strike.",
+            "refs":{
+                "LSJ 20071017":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Ei307R78l4A/m/PYe-fYT8BqkJ"
+            }
+        }
+    ],
+    "G00153":[
+        {
+            "text":"If fewer points of (preventable) damage are being resolved, then the effect prevents all of those points.",
+            "refs":{
+                "RTR 20041202":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/WUWh7AdooDU/m/vojisZMCSnsJ"
+            }
+        },
+        {
+            "text":"Unused prevention points can't be carried over unless optional ('can/may prevent').",
+            "refs":{
+                "ANK 20200318":"https://www.vekn.net/forum/rules-questions/78525-apparition#99356",
+                "LSJ 20001114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qXSlM7Grq1c/m/cSDoQ9mw0z4J"
+            }
+        }
+    ],
+    "G00154":[
+        {
+            "text":"Cannot be used if there is no damage to prevent.",
+            "refs":{
+                "LSJ 20001114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qXSlM7Grq1c/m/cSDoQ9mw0z4J"
+            }
+        }
+    ],
     "101519":[
         {
             "text":"If one is ousted while having temporary control of a minion, the minion is removed from the game.  (Reversal of Previous Rulings)",
@@ -25667,6 +25441,19 @@
             "text":"A vampire with no circle designation is in his own unique circle. Vampires with the same name (eg. {The Embrace}, non-unique vampires) do not share a circle by default, each has his own circle of one by default.",
             "refs":{
                 "LSJ 20020609":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Q_Lk0DPHqC8/m/nAfGfCvsISgJ"
+            }
+        },
+        {
+            "text":"[SAN] If fewer points of (preventable) damage are being resolved, then the effect prevents all of those points.",
+            "refs":{
+                "RTR 20041202":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/WUWh7AdooDU/m/vojisZMCSnsJ"
+            }
+        },
+        {
+            "text":"[SAN] Unused prevention points can't be carried over unless optional ('can/may prevent').",
+            "refs":{
+                "ANK 20200318":"https://www.vekn.net/forum/rules-questions/78525-apparition#99356",
+                "LSJ 20001114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qXSlM7Grq1c/m/cSDoQ9mw0z4J"
             }
         }
     ],
@@ -29250,6 +29037,22 @@
             }
         }
     ],
+    "100834":[
+        {
+            "text":"Is replaced before unlocking cards: other unlock effects cannot be ordered before.",
+            "refs":{
+                "ANK 20200129":"https://www.vekn.net/forum/rules-questions/78701-replace-during-unlock-and-other-unlock-effects#100210",
+                "LSJ 20091208":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ptHbJM9MlVI/m/O61W2JkI_rIJ",
+                "RTR 19951017":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ouhNUbHYg50/m/rco157ZHyqEJ"
+            }
+        },
+        {
+            "text":"Cannot be used if there is no damage to prevent.",
+            "refs":{
+                "LSJ 20001114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qXSlM7Grq1c/m/cSDoQ9mw0z4J"
+            }
+        }
+    ],
     "101001":[
         {
             "text":"Is replaced before unlocking cards: other unlock effects cannot be ordered before.",
@@ -29843,6 +29646,21 @@
             }
         }
     ],
+    "100625":[
+        {
+            "text":"[for] Cannot be used to prevent aggravated damage, even if the minion treats them as normal damage (eg. {Skin of Night}).",
+            "refs":{
+                "LSJ 20040812-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/E7D1cVmAdqQ/m/MvPApbrT14gJ",
+                "PIB 20130327":"https://www.vekn.net/forum/rules-questions/46279-soak-vs-treat-agg-damage-as-normal-damage#46285"
+            }
+        },
+        {
+            "text":"[for] Cannot be used if there is no damage to prevent.",
+            "refs":{
+                "LSJ 20001114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qXSlM7Grq1c/m/cSDoQ9mw0z4J"
+            }
+        }
+    ],
     "101082":[
         {
             "text":"Cannot be used to prevent aggravated damage, even if the minion treats them as normal damage (eg. {Skin of Night}).",
@@ -29858,6 +29676,62 @@
             "refs":{
                 "LSJ 20040812-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/E7D1cVmAdqQ/m/MvPApbrT14gJ",
                 "PIB 20130327":"https://www.vekn.net/forum/rules-questions/46279-soak-vs-treat-agg-damage-as-normal-damage#46285"
+            }
+        }
+    ],
+    "101608":[
+        {
+            "text":"[FOR] Cannot be used to prevent aggravated damage, even if the minion treats them as normal damage (eg. {Skin of Night}).",
+            "refs":{
+                "LSJ 20040812-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/E7D1cVmAdqQ/m/MvPApbrT14gJ",
+                "PIB 20130327":"https://www.vekn.net/forum/rules-questions/46279-soak-vs-treat-agg-damage-as-normal-damage#46285"
+            }
+        },
+        {
+            "text":"[FOR] If fewer points of (preventable) damage are being resolved, then the effect prevents all of those points.",
+            "refs":{
+                "RTR 20041202":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/WUWh7AdooDU/m/vojisZMCSnsJ"
+            }
+        },
+        {
+            "text":"[FOR] Unused prevention points can't be carried over unless optional ('can/may prevent').",
+            "refs":{
+                "ANK 20200318":"https://www.vekn.net/forum/rules-questions/78525-apparition#99356",
+                "LSJ 20001114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qXSlM7Grq1c/m/cSDoQ9mw0z4J"
+            }
+        },
+        {
+            "text":"Cannot be used if there is no damage to prevent.",
+            "refs":{
+                "LSJ 20001114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qXSlM7Grq1c/m/cSDoQ9mw0z4J"
+            }
+        }
+    ],
+    "101817":[
+        {
+            "text":"Cannot be used to prevent aggravated damage, even if the minion treats them as normal damage (eg. {Skin of Night}).",
+            "refs":{
+                "LSJ 20040812-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/E7D1cVmAdqQ/m/MvPApbrT14gJ",
+                "PIB 20130327":"https://www.vekn.net/forum/rules-questions/46279-soak-vs-treat-agg-damage-as-normal-damage#46285"
+            }
+        },
+        {
+            "text":"If fewer points of (preventable) damage are being resolved, then the effect prevents all of those points.",
+            "refs":{
+                "RTR 20041202":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/WUWh7AdooDU/m/vojisZMCSnsJ"
+            }
+        },
+        {
+            "text":"Unused prevention points can't be carried over unless optional ('can/may prevent').",
+            "refs":{
+                "ANK 20200318":"https://www.vekn.net/forum/rules-questions/78525-apparition#99356",
+                "LSJ 20001114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qXSlM7Grq1c/m/cSDoQ9mw0z4J"
+            }
+        },
+        {
+            "text":"Cannot be used if there is no damage to prevent.",
+            "refs":{
+                "LSJ 20001114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qXSlM7Grq1c/m/cSDoQ9mw0z4J"
             }
         }
     ],
@@ -33755,6 +33629,80 @@
             }
         }
     ],
+    "101595":[
+        {
+            "text":"[THN] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}).",
+            "refs":{
+                "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
+            }
+        },
+        {
+            "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
+            "refs":{
+                "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
+                "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+            }
+        },
+        {
+            "text":"[THN] The card cannot be played if the minion cannot afford to burn the blood.",
+            "refs":{
+                "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
+            }
+        },
+        {
+            "text":"Can be played before of after effects that are played \"at the end of combat\".",
+            "refs":{
+                "LSJ 20021113":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/df2P8YHZex8/m/mGCmsxDjI_YJ",
+                "ANK 20191219":"https://www.vekn.net/forum/rules-questions/78241-relentless-reaper-vs-blissful-agony-and-scheduled-combat-rulings-ambiguity#98308",
+                "ANK 20180910-1":"https://www.vekn.net/forum/rules-questions/76990-correct-order-impulse-for-combat-cards-after-combat#90517"
+            }
+        },
+        {
+            "text":"[THN] Effects that end combat and then do something else after combat (include continuing the action as if unblocked) will be lost, except for unlock effects.",
+            "refs":{
+                "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ",
+                "LSJ 19980109":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/d2U51Uw0Hfg/m/uIPoVvPFePgJ"
+            }
+        },
+        {
+            "text":"[THN] Cannot be played after [CEL] {Psyche!}. When played before, combat continues and Psyche! can only be played at the end of it.",
+            "refs":{
+                "ANK 20191219":"https://www.vekn.net/forum/rules-questions/78241-relentless-reaper-vs-blissful-agony-and-scheduled-combat-rulings-ambiguity#98308"
+            }
+        },
+        {
+            "text":"[THN] Must be played after presses, can be played if the round ends prematurely.",
+            "refs":{
+                "RTR 20030519":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NOBWXWrd-vA/m/iEOpQp1uhvAJ"
+            }
+        },
+        {
+            "text":"[for] Cannot be used if there is no damage to prevent.",
+            "refs":{
+                "LSJ 20001114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qXSlM7Grq1c/m/cSDoQ9mw0z4J"
+            }
+        }
+    ],
+    "101649":[
+        {
+            "text":"[FOR] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}).",
+            "refs":{
+                "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
+            }
+        },
+        {
+            "text":"[FOR] The card cannot be played if the minion cannot afford to burn the blood.",
+            "refs":{
+                "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
+            }
+        },
+        {
+            "text":"Cannot be used if there is no damage to prevent.",
+            "refs":{
+                "LSJ 20001114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qXSlM7Grq1c/m/cSDoQ9mw0z4J"
+            }
+        }
+    ],
     "101706":[
         {
             "text":"The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}).",
@@ -33868,6 +33816,27 @@
             }
         }
     ],
+    "101888":[
+        {
+            "text":"The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}).",
+            "refs":{
+                "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
+            }
+        },
+        {
+            "text":"[POT] If fewer points of (preventable) damage are being resolved, then the effect prevents all of those points.",
+            "refs":{
+                "RTR 20041202":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/WUWh7AdooDU/m/vojisZMCSnsJ"
+            }
+        },
+        {
+            "text":"[POT] Unused prevention points can't be carried over unless optional ('can/may prevent').",
+            "refs":{
+                "ANK 20200318":"https://www.vekn.net/forum/rules-questions/78525-apparition#99356",
+                "LSJ 20001114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qXSlM7Grq1c/m/cSDoQ9mw0z4J"
+            }
+        }
+    ],
     "101905":[
         {
             "text":"[FOR] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}).",
@@ -33879,6 +33848,12 @@
             "text":"[FOR] The card cannot be played if the minion cannot afford to burn the blood.",
             "refs":{
                 "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
+            }
+        },
+        {
+            "text":"Cannot be used if there is no damage to prevent.",
+            "refs":{
+                "LSJ 20001114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qXSlM7Grq1c/m/cSDoQ9mw0z4J"
             }
         }
     ],
@@ -34522,13 +34497,7 @@
     ],
     "100963":[
         {
-            "text":"If an effect granting a strike is played/used before another effect that adds a cost to strike (e.g. {Dam the Heart's River}), you may choose not to strike.",
-            "refs":{
-                "LSJ 20071017":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Ei307R78l4A/m/PYe-fYT8BqkJ"
-            }
-        },
-        {
-            "text":"If an effect granting a strike (e.g. {.44 Magnum}) is played/used after another effect that adds a cost to strike, you must pay the additional cost to use that first effect.",
+            "text":"If an opponent then plays an effect that grants a strike (e.g, {Aid from Bats}), they pay the additional cost.",
             "refs":{
                 "LSJ 20090529":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/LpFSLRuWONA/m/daxDmJiGX0AJ"
             }
@@ -34544,17 +34513,17 @@
             "refs":{
                 "LSJ 20070829-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/sVXZw1J43ik/m/OByFPgQsynwJ"
             }
+        },
+        {
+            "text":"If the opponent has played an effect that grants a strike before (e.g, {Sniper Rifle}), they may choose not to strike.",
+            "refs":{
+                "LSJ 20071017":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Ei307R78l4A/m/PYe-fYT8BqkJ"
+            }
         }
     ],
     "102319":[
         {
-            "text":"[ANI]/[CEL] If an effect granting a strike is played/used before another effect that adds a cost to strike (e.g. {Dam the Heart's River}), you may choose not to strike.",
-            "refs":{
-                "LSJ 20071017":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Ei307R78l4A/m/PYe-fYT8BqkJ"
-            }
-        },
-        {
-            "text":"[ANI]/[CEL] If an effect granting a strike (e.g. {.44 Magnum}) is played/used after another effect that adds a cost to strike, you must pay the additional cost to use that first effect.",
+            "text":"[ANI]/[CEL] If an opponent then plays an effect that grants a strike (e.g, {Aid from Bats}), they pay the additional cost.",
             "refs":{
                 "LSJ 20090529":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/LpFSLRuWONA/m/daxDmJiGX0AJ"
             }
@@ -34575,13 +34544,7 @@
     ],
     "201738":[
         {
-            "text":"If an effect granting a strike is played/used before another effect that adds a cost to strike (e.g. {Dam the Heart's River}), you may choose not to strike.",
-            "refs":{
-                "LSJ 20071017":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Ei307R78l4A/m/PYe-fYT8BqkJ"
-            }
-        },
-        {
-            "text":"If an effect granting a strike (e.g. {.44 Magnum}) is played/used after another effect that adds a cost to strike, you must pay the additional cost to use that first effect.",
+            "text":"If an opponent then plays an effect that grants a strike (e.g, {Aid from Bats}), they pay the additional cost.",
             "refs":{
                 "LSJ 20090529":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/LpFSLRuWONA/m/daxDmJiGX0AJ"
             }
@@ -35016,6 +34979,28 @@
             "refs":{
                 "LSJ 20080205-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qkq18YMacnQ/m/i4gTLAr3IQcJ",
                 "LSJ 20060417":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/bW_XZDS-9iw/m/u_WVQXNXK0kJ"
+            }
+        }
+    ],
+    "100087":[
+        {
+            "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
+            "refs":{
+                "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
+                "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+            }
+        },
+        {
+            "text":"[VAL] If fewer points of (preventable) damage are being resolved, then the effect prevents all of those points.",
+            "refs":{
+                "RTR 20041202":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/WUWh7AdooDU/m/vojisZMCSnsJ"
+            }
+        },
+        {
+            "text":"[VAL] Unused prevention points can't be carried over unless optional ('can/may prevent').",
+            "refs":{
+                "ANK 20200318":"https://www.vekn.net/forum/rules-questions/78525-apparition#99356",
+                "LSJ 20001114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qXSlM7Grq1c/m/cSDoQ9mw0z4J"
             }
         }
     ],
@@ -35525,6 +35510,34 @@
             }
         }
     ],
+    "101876":[
+        {
+            "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
+            "refs":{
+                "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
+                "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+            }
+        },
+        {
+            "text":"[VIS] If fewer points of (preventable) damage are being resolved, then the effect prevents all of those points.",
+            "refs":{
+                "RTR 20041202":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/WUWh7AdooDU/m/vojisZMCSnsJ"
+            }
+        },
+        {
+            "text":"[VIS] Unused prevention points can't be carried over unless optional ('can/may prevent').",
+            "refs":{
+                "ANK 20200318":"https://www.vekn.net/forum/rules-questions/78525-apparition#99356",
+                "LSJ 20001114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qXSlM7Grq1c/m/cSDoQ9mw0z4J"
+            }
+        },
+        {
+            "text":"[VIS] Cannot be used if there is no damage to prevent.",
+            "refs":{
+                "LSJ 20001114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qXSlM7Grq1c/m/cSDoQ9mw0z4J"
+            }
+        }
+    ],
     "101883":[
         {
             "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
@@ -35835,6 +35848,19 @@
                 "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
                 "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
             }
+        },
+        {
+            "text":"If fewer points of (preventable) damage are being resolved, then the effect prevents all of those points.",
+            "refs":{
+                "RTR 20041202":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/WUWh7AdooDU/m/vojisZMCSnsJ"
+            }
+        },
+        {
+            "text":"Unused prevention points can't be carried over unless optional ('can/may prevent').",
+            "refs":{
+                "ANK 20200318":"https://www.vekn.net/forum/rules-questions/78525-apparition#99356",
+                "LSJ 20001114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qXSlM7Grq1c/m/cSDoQ9mw0z4J"
+            }
         }
     ],
     "101957":[
@@ -36100,6 +36126,20 @@
             "text":"[VIC] The optional press can only be used during the current round.",
             "refs":{
                 "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
+            }
+        }
+    ],
+    "100973":[
+        {
+            "text":"[FOR] The optional press can only be used during the current round.",
+            "refs":{
+                "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
+            }
+        },
+        {
+            "text":"Cannot be used if there is no damage to prevent.",
+            "refs":{
+                "LSJ 20001114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qXSlM7Grq1c/m/cSDoQ9mw0z4J"
             }
         }
     ],
@@ -38426,6 +38466,155 @@
             "text":"Sequencing rules apply, and if played first, effects that stop a vampire from going to torpor would prevent the use of effects that are only usable on a vampire going to torpor.",
             "refs":{
                 "RTR 20010711":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GsI1UyH54jU/m/x9LfDZX1vR4J"
+            }
+        }
+    ],
+    "100089":[
+        {
+            "text":"If fewer points of (preventable) damage are being resolved, then the effect prevents all of those points.",
+            "refs":{
+                "RTR 20041202":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/WUWh7AdooDU/m/vojisZMCSnsJ"
+            }
+        },
+        {
+            "text":"Unused prevention points can't be carried over unless optional ('can/may prevent').",
+            "refs":{
+                "ANK 20200318":"https://www.vekn.net/forum/rules-questions/78525-apparition#99356",
+                "LSJ 20001114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qXSlM7Grq1c/m/cSDoQ9mw0z4J"
+            }
+        },
+        {
+            "text":"Cannot be used if there is no damage to prevent.",
+            "refs":{
+                "LSJ 20001114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qXSlM7Grq1c/m/cSDoQ9mw0z4J"
+            }
+        }
+    ],
+    "100212":[
+        {
+            "text":"If fewer points of (preventable) damage are being resolved, then the effect prevents all of those points.",
+            "refs":{
+                "RTR 20041202":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/WUWh7AdooDU/m/vojisZMCSnsJ"
+            }
+        },
+        {
+            "text":"Unused prevention points can't be carried over unless optional ('can/may prevent').",
+            "refs":{
+                "ANK 20200318":"https://www.vekn.net/forum/rules-questions/78525-apparition#99356",
+                "LSJ 20001114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qXSlM7Grq1c/m/cSDoQ9mw0z4J"
+            }
+        }
+    ],
+    "100763":[
+        {
+            "text":"If fewer points of (preventable) damage are being resolved, then the effect prevents all of those points.",
+            "refs":{
+                "RTR 20041202":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/WUWh7AdooDU/m/vojisZMCSnsJ"
+            }
+        },
+        {
+            "text":"Unused prevention points can't be carried over unless optional ('can/may prevent').",
+            "refs":{
+                "ANK 20200318":"https://www.vekn.net/forum/rules-questions/78525-apparition#99356",
+                "LSJ 20001114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qXSlM7Grq1c/m/cSDoQ9mw0z4J"
+            }
+        }
+    ],
+    "101588":[
+        {
+            "text":"If fewer points of (preventable) damage are being resolved, then the effect prevents all of those points.",
+            "refs":{
+                "RTR 20041202":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/WUWh7AdooDU/m/vojisZMCSnsJ"
+            }
+        },
+        {
+            "text":"Unused prevention points can't be carried over unless optional ('can/may prevent').",
+            "refs":{
+                "ANK 20200318":"https://www.vekn.net/forum/rules-questions/78525-apparition#99356",
+                "LSJ 20001114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qXSlM7Grq1c/m/cSDoQ9mw0z4J"
+            }
+        },
+        {
+            "text":"Cannot be used if there is no damage to prevent.",
+            "refs":{
+                "LSJ 20001114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qXSlM7Grq1c/m/cSDoQ9mw0z4J"
+            }
+        }
+    ],
+    "101791":[
+        {
+            "text":"[FOR] If fewer points of (preventable) damage are being resolved, then the effect prevents all of those points.",
+            "refs":{
+                "RTR 20041202":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/WUWh7AdooDU/m/vojisZMCSnsJ"
+            }
+        },
+        {
+            "text":"[FOR] Unused prevention points can't be carried over unless optional ('can/may prevent').",
+            "refs":{
+                "ANK 20200318":"https://www.vekn.net/forum/rules-questions/78525-apparition#99356",
+                "LSJ 20001114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qXSlM7Grq1c/m/cSDoQ9mw0z4J"
+            }
+        },
+        {
+            "text":"Cannot be used if there is no damage to prevent.",
+            "refs":{
+                "LSJ 20001114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qXSlM7Grq1c/m/cSDoQ9mw0z4J"
+            }
+        }
+    ],
+    "100021":[
+        {
+            "text":"[PRO] Cannot be used if there is no damage to prevent.",
+            "refs":{
+                "LSJ 20001114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qXSlM7Grq1c/m/cSDoQ9mw0z4J"
+            }
+        }
+    ],
+    "101081":[
+        {
+            "text":"Cannot be used if there is no damage to prevent.",
+            "refs":{
+                "LSJ 20001114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qXSlM7Grq1c/m/cSDoQ9mw0z4J"
+            }
+        }
+    ],
+    "101779":[
+        {
+            "text":"[CEL] Cannot be used if there is no damage to prevent.",
+            "refs":{
+                "LSJ 20001114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qXSlM7Grq1c/m/cSDoQ9mw0z4J"
+            }
+        }
+    ],
+    "101790":[
+        {
+            "text":"[FOR] Cannot be used if there is no damage to prevent.",
+            "refs":{
+                "LSJ 20001114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qXSlM7Grq1c/m/cSDoQ9mw0z4J"
+            }
+        }
+    ],
+    "101792":[
+        {
+            "text":"Cannot be used if there is no damage to prevent.",
+            "refs":{
+                "LSJ 20001114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qXSlM7Grq1c/m/cSDoQ9mw0z4J"
+            }
+        }
+    ],
+    "102071":[
+        {
+            "text":"[for] Cannot be used if there is no damage to prevent.",
+            "refs":{
+                "LSJ 20001114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qXSlM7Grq1c/m/cSDoQ9mw0z4J"
+            }
+        }
+    ],
+    "102262":[
+        {
+            "text":"[COMBAT] Cannot be used if there is no damage to prevent.",
+            "refs":{
+                "LSJ 20001114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qXSlM7Grq1c/m/cSDoQ9mw0z4J"
             }
         }
     ]

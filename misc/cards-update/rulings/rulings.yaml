@@ -89,8 +89,9 @@
   - Putting the top card of your library in play as a ghoul does not count as playing the card. [LSJ 20040531]
   - The card used to represent the ally is face up, but the name on that card is ignored if something goes looking for a card
     by name. They do not contest. [LSJ 20040623] [LSJ 20071003]
-  - A burned ghoul is removed from the game but is still burned first, triggering cards such as {Tension in the Ranks}. [LSJ
-    20090920]
+  - A burned ghoul is removed from the game, but it is still burned (e.g. it triggers {Tension in the Ranks}). However, when
+    Absimillard's Army is removed from the game, the ghouls are removed without burning (will not trigger {Tension in the
+    Ranks}). [LSJ 20090920]
 100013|Absorb the Mind:
   - Can be played against a vampire with no blood. [RTR 20010711]
   - '[MYT] cannot be used to steal a discipline that could not be played on the stealing vampire (e.g. Dominate is ineligible
@@ -168,8 +169,6 @@
     [RTR 20070707]
 100076|Apparition:
   - Can be played at any time in combat, even if there is no damage to prevent yet. [LSJ 20010315]
-  - '[CHI] Prevents up to 2 damage, it can prevent less. [RTR 20041202]'
-  - '[CHI] Can prevent 1 damage twice on separated strikes in the same round. [ANK 20200318]'
 100078|Approximation of Loyalty:
   - '[pre] Cards and effects that are played "as the action is announced" must be played before playing "regular" action modifier
     or reaction cards. [ANK 20190425]'
@@ -186,16 +185,8 @@
     played (eg. cannot be played after a {Spying Mission} on the vampire triggers). [LSJ 19980105]
   - Targets the bleeding vampire (eg. costs one more against {Secure Haven}, cannot be played on {Mimir}). [LSJ 20010817]
     [PIB 20131013]
-100087|Armor of Caine's Fury:
-  - '[VAL] Prevents up to 2 damage, it can prevent less. [RTR 20041202]'
-  - '[VAL] Can prevent 2 damage per round, from any strike, can prevent 2 times 1 damage from two different strikes. [ANK
-    20180117]'
 100088|Armor of Terra:
   - '[vis], [VIS] Can be used by a non-slave Gargoyle. [LSJ 20011204-2]'
-100089|Armor of Vitality:
-  - Prevents up to 3 damage, it can be used to prevent less. [RTR 20041202]
-  - Cannot be used if there is no damage to prevent. [LSJ 20001114]
-  - Unused prevention does not carry over. [LSJ 20001114]
 100096|Art of Love, The:
   - Requirements do not apply when taking control of a card already in play. [TOM 19960226-1]
   - Effects applied during the discard phase are applied before you return the ally. If you lose control of the ally before
@@ -416,8 +407,6 @@
   - The blood is burned by the opponent when the owner prevents damage, immediately, before loosing blood to heal strike damage.
     Depending on the sequencing order, it can be before or after he has the opportunity to play damage prevention themselves.
     [LSJ 20090528-1]
-100212|Blood Tears of Kephran:
-  - Prevents up to 2 damage, it can be used to prevent less. [RTR 20041202]
 100214|Blood to Water:
   - Must be played after range is chosen, can be played before or after strikes are chosen. [ANK 20200703] [LSJ 20031008]
 100215|Blood Trade:
@@ -803,8 +792,6 @@
   - The opponent is the one affected by frenzy (eg. for {Blade of Enoch}). [ANK 20220409]
   - Applies to environmental damage inflicted to the opposing minion. [ANK 20181128]
   - Applies to damage played in combat that are resolved after combat (eg. {Catatonic Fear}). [ANK 20170111] [LSJ 20071011]
-  - '[QUI] The opponent must pay 1 blood to use a strike that provides a maneuver if he plays it when choosing range. [ANK
-    20181026]'
 100490|Damned, The:
   - The acting player decides the order of (and can play other) "after resolving the action" effects. [ANK 20180206]
 100492|Daring the Dawn:
@@ -1047,8 +1034,6 @@
 100623|Eldest Command Undeath, The:
   - If you play {Voter Captivation} on the referendum, you can move up to 2 counters to your pool, and 0 to your vampire.
     [LSJ 20081002]
-100625|Elemental Stoicism:
-  - '[for] Cannot be used if there is no damage to prevent. [LSJ 20001114]'
 100627|Elixir of Distillation:
   - Does not burn if combat ends before it resolves. [LSJ 20001127-2] [LSJ 20010806-1] [LSJ 19981006]
 '100631|Elysium: The Arboretum':
@@ -1273,8 +1258,6 @@
   - '[cel][for] Is played after resolution, but still during the action. Action modifiers and effects that can be played "after
     resolution" can be played before or after it. [LSJ 19981028] [ANK 20190425]'
   - Can be used to unlock if the action is successful, even if it has no effect due to lack of a suitable target. [LSJ 20070411]
-100763|Forearm Block:
-  - Prevents up to 2 damage, it can be used to prevent less. [RTR 20041202]
 100765|Foreshadowing Destruction:
   - '[DOM] Can be played against a target with 10 or more pool and does not count against the limit in this case: it will
     only have a lingering effect (+3 bleed if the target happens to have 9 or less). [PIB 20110817] [RTR 20191031]'
@@ -1372,8 +1355,6 @@
 100828|Gift of Sleep:
   - '[obe] [ACTION MODIFIER][REACTION] The action ends unsuccessfully immediately, no other action modifier or reaction can
     be played afterwards. [RTR 20180719] [ANK 20200207]'
-100834|Glancing Blow:
-  - Cannot be used if there is no damage to prevent. [LSJ 20001114]
 100836|Glaser Rounds:
   - Must wait until the second time a given gun is used in a given combat to play it. [RTR 19941109]
   - Additional damage inherits all of the properties of the base damage. [TOM 19960225]
@@ -1477,7 +1458,6 @@
 100901|Healing Touch:
   - '[OBE] Is not the default action, no blood is paid for the rescue. [ANK 20181017]'
 100907|Heaven's Gate:
-  - '[nec] Cannot be used if there is no damage to prevent. [LSJ 20001114]'
   - "[obe], [OBE] Forbids any combat with the ally afterwards. Cards that would start a new combat cannot be played (eg. {Psyche!},\
     \ {Bum's Rush}). [ANK 20220429]"
   - '[obe], [OBE] Can be played before another replacement effect triggers (eg. {Charigger, The Axe}), depending on sequencing.
@@ -1622,8 +1602,6 @@
     new possessor (and can now block whoever used to have it). [TOM 19960114] [LSJ 20020514]
   - If it is not equipped but merely put into play (eg. {Alastor}), no minion is chosen. One is if it is equipped (eg. {Magic
     of the Smith}). [LSJ 20090506]
-100973|Indomitability:
-  - '[for] Cannot be used if there is no damage to prevent. [LSJ 20001114]'
 100975|Infamous Insurgent:
   - It does not require an anarch so it cannot be played on vampires that can fake requirements for you (eg. {Mata Hari}).
     [ANK 20220718]
@@ -1712,7 +1690,6 @@
   - The damage done from the ranged strike is damage from the weapon, so it can be modified by effects that modify melee weapon
     damage. [LSJ 20051220]
 101040|Kevlar Vest:
-  - Prevents up to 2 damage from gun strikes, it can be used to prevent less. [RTR 20041202]
   - Can be used to prevent the damage from two separated gun strikes doing one damage each. [LSJ 20081210]
 101041|Keystone Kine:
   - '[obf] The ally is chosen at action resolution (not declaration). [ANK 20240706] [LSJ 20080608]'
@@ -1806,7 +1783,7 @@
 101088|Legacy of Power:
   - May be used if one of your vampires is in combat with an ally. In this case, your vampire goes into torpor and the ally
     is unaffected. [RTR 19960112]
-  - Is played during combat. Combat cards can be played to continue combat or begin a new combat. [ANK 20200109]
+  - Is played during combat. [ANK 20200109]
   - If the combat continues or a new combat begins (eg. {Psyche!}), the vampires do not go into torpor. [RTR 20020501] [LSJ
     20021126]
 101090|Legend of the Leopard:
@@ -1949,9 +1926,6 @@
 101175|Martyr's Resilience:
   - Can be used by a vampire in torpor. [LSJ 20020416]
   - Can be played by a minion of a Methuselah not involved in the current combat. [ANK 20181101]
-  - Cannot be used if there is no damage to prevent. [LSJ 20001114]
-  - '[AUS][FOR] Prevents up to X+1 damage, it can prevent less. [RTR 20041202]'
-  - '[AUS][FOR] Unused prevention does not carry over. [LSJ 20001114]'
   - '[AUS][FOR] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Una}). The card cannot
     be played if the minion cannot afford to burn the blood. [ANK 20210226]'
 101179|Mask of a Thousand Faces:
@@ -2135,7 +2109,6 @@
   - The effect only triggers once each unlock phase. Any minions put into play after the effect is resolved are unaffected
     until their Methuselah's next unlock phase. [REVERSAL] [ANK 20250121]
 101287|Nightstick:
-  - Can prevent up to 3 damage, it can prevent less. [RTR 20041202]
   - Both strikes are only effective at close range. [ANK 20220814-2]
 101290|No Confidence:
   - Is not a card requiring an Anarch. [LSJ 20080812]
@@ -2487,17 +2460,11 @@
   - Cannot be played when burned as a result of a Blood Hunt referendum. [LSJ 20010814-4] [LSJ 20070417]
 101582|Reformation:
   - '[chi] Cannot be used if there is no equipment to destroy. [RTR 19980928]'
-101588|Rego Motum:
-  - Prevents up to 2 or 4 damage, it can be used to prevent less. [RTR 20041202]
-  - Cannot be used if there is no damage to prevent. [LSJ 20001114]
-  - Unused prevention does not carry over. [LSJ 20001114]
 101589|Reindoctrination:
   - Only requires one clan or the other (Tremere or Tremere antitribu) to be played. [ANK 20190203]
 101591|Reins of Power:
   - Applies a pool gain then a pool loss. {Poison Pill} ignores the gain and only takes the loss into account, a Methuselah
     cannot withdraw even if the total was positive. [ANK 20180813]
-101595|Relentless Reaper:
-  - '[for] Cannot be used if there is no damage to prevent. [LSJ 20001114]'
 101603|Renewed Vigor:
   - '[obe], [OBE]: Is undirected if you control the target, directed at the controller of the target otherwise. [PIB 20121210]'
 101605|Repo Man:
@@ -2508,10 +2475,6 @@
   - '[pre] Cards and effects that are played "as the action is announced" must be played before playing "regular" action modifier
     or reaction cards. [ANK 20190425]'
   - '[pre] Replace the action card (if any) before playing it. [ANK 20181208]'
-101608|Resilience:
-  - Cannot be used if there is no damage to prevent. [LSJ 20001114]
-  - Prevents up to 3 non-aggravated damage, it can be used to prevent less. [RTR 20041202]
-  - Unused prevention does not carry over. [LSJ 20001114]
 101609|Resilient Mind:
   - Can be used when a {Form of Corruption} is put into play to protect that vampire from that {Form of Corruption}. [LSJ
     20031223]
@@ -2567,8 +2530,6 @@
   - Can be played after a diablerie, before the blood hunt. [ANK 20201228]
 101646|Rockheart:
   - '[VIS] Superior still prevents only half of the current strike. [PIB 20120116]'
-101649|Rolling with the Punches:
-  - '[for] Cannot be used if there is no damage to prevent. [LSJ 20001114]'
 101652|Root of Vitality:
   - '[vic] Is not the default action, no blood is paid for the rescue. [ANK 20181017]'
 101654|Rötschreck:
@@ -2767,8 +2728,6 @@
   - '[NEC] Cards and effects that are played "as the action is announced" must be played before playing "regular" action modifier
     or reaction cards. [ANK 20190425]'
   - '[NEC] Replace the action card (if any) before playing it. [ANK 20181208]'
-101779|Sideslip:
-  - '[CEL] Cannot be used if there is no damage to prevent. [LSJ 20001114]'
 101781|Signet of King Saul, The:
   - "{Unleash Hell's Fury} cannot block the bearer. [ANK 20190501]"
 101783|Sins of the Cauchemar:
@@ -2787,11 +2746,6 @@
   - '[mel]/[MEL] Combat does not occur if the action ends prematurely. [LSJ 20090826]'
   - '[mel]/[MEL] The new combat is still part of the action (eg. {Heidelberg Castle, Germany} cannot be used between combats).
     [ANK 20170918-2]'
-101790|Skin of Night:
-  - '[FOR] Cannot be used if there is no damage to prevent. [LSJ 20001114]'
-101791|Skin of Rock:
-  - Cannot be used if there is no damage to prevent. [LSJ 20001114]
-  - Unused prevention does not carry over. [LSJ 20001114]
 101794|Skin of the Chameleon:
   - '[tha] Cards and effects that are played "as the action is announced" must be played before playing "regular" action modifier
     or reaction cards. [ANK 20190425]'
@@ -2842,10 +2796,6 @@
     Weapon} after the block). [LSJ 20021028]
   - When used to set range, you may choose not to strike if another card gives the option not to strike (e.g. {Lucian, the
     Perfect}, {Dam the Heart's River}) was played after Sniper Rifle was used to set range [LSJ 20071017]
-101817|Soak:
-  - Cannot be used if there is no damage to prevent. [LSJ 20001114]
-  - Prevents up to 2 or 4 non-aggravated damage, it can prevent less. [RTR 20041202]
-  - Unused prevention does not carry over. [LSJ 20001114]
 101820|Social Ladder:
   - Can be played with no older vampire in the uncontrolled region, though the ready vampire would be removed and his blood
     lost. [LSJ 20041015]
@@ -2930,9 +2880,6 @@
 101862|Static Virtue:
   - 'For a Laibon moved into the ready region in the last influence phase, you must retrieve Aye and Orun in pairs: the same
     number of Aye as Orun. [LSJ 20051127]'
-101876|Stonestrength:
-  - Unused prevention does not carry over. [LSJ 20001114]
-  - '[VIS] Cannot be used if there is no damage to prevent. [LSJ 20001114]'
 101877|Storage Annex:
   - If it is stolen, the card on it goes with it and the new controller will be able to take it in hand. The card is returned
     to the owner's ash heap or library if it would be moved to an ash heap or library. [LSJ 20001031] [PIB 20121220]
@@ -2955,8 +2902,6 @@
   - '[STR] The bleed is considered successful and the Edge gained. The action is resolved before entering combat, effects
     happening "after action resolution" happen after combat. [ANK 20200221]'
   - The burn option can be used if all your vampires with [str] are in torpor. [LSJ 20091203]
-101888|Stunt Cycle:
-  - '[POT] Prevents up to 2 damage, it can prevent less. [RTR 20041202]'
 101889|Stutter-Step:
   - It is both a hand strike and a dodge. It cannot be used if only hand strikes or only dodges are allowed. [LSJ 20010919]
   - The dodge part protects from the opponent's strike (even if done with First Strike), the hand strike part inflicts damage
@@ -3197,9 +3142,6 @@
     until after that new combat. However, the vampire will no longer benefit from Undead Persistence in the new combat, so
     it will end immediately with the vampire not ready unless he plays a new Undead Persistence in the new combat. [LSJ 20030214]
     [ANK 20190624]'
-  - '[FOR] Cannot be used if there is no damage to prevent. [LSJ 20001114]'
-  - '[FOR] Prevents up to 2 damage, it can be used to prevent less. [RTR 20041202]'
-  - '[FOR] Unused prevention does not carry over. [LSJ 20001114]'
 102063|Under Siege:
   - Can be used for intercept even if the vampire is already unlocked. [PIB 20150216]
 102065|Underbridge Stray:
@@ -3209,8 +3151,6 @@
 102069|Undying Thirst:
   - If the vampire is empty, he must either hunt or diablerize, this is a mandatory action. [LSJ 20081213-2]
   - Has no effect on a vampire that cannot commit diablerie (eg. because of {Humanitas}). [LSJ 20050324-2]
-102071|Unflinching Persistence:
-  - '[for] Cannot be used if there is no damage to prevent. [LSJ 20001114]'
 102072|Unholy Penance:
   - '[PRE] The additional effect takes place after the end of combat. [RTR 19970630]'
 102074|Unity:
@@ -3250,8 +3190,9 @@
     "during" the unlock phase. [ANK 20180702]
   - Unlocking an already unlocked vampire does not trigger the effect. [ANK 20170227] [LSJ 20020408]
   - Any unlock, even one costing blood already, triggers the burning blood effect (eg. {Freak Drive}, {Derange}). [ANK 20221210-2]
-  - The counter is placed after range is determined, before strikes are chosen (defensive strikes like dodge or combat ends
-    do not avoid it). [ANK 20210422] [LSJ 20040830]
+  - The counter is placed before strikes are chosen (i.e. after range is determined, in the same step as {Immortal Grapple}).
+    The second vampire does not get a counter if this step is skipped but will get a counter even if they play defensive strikes
+    like dodge or combat ends. [ANK 20210422] [LSJ 20040830]
 102092|Vast Wealth:
   - The provided action is an "equip action" [TOM 19960130] [RTR 19960124]
   - You only search your library if the action is successful. [TOM 19951107]
@@ -3924,9 +3865,9 @@
   - Cannot attempt to steal a piece of equipment that he is prohibited from having (eg. a second {Leather Jacket}). [LSJ 19980206]
   - The stolen equipment cannot be used until the next round. [LSJ 19980206] [RBK steal-equipment]
 200871|Lucian, the Perfect:
-  - Strikes that do not target him (dodge, combat ends) do not cost more. They do if they plan to damage him after combat
-    (eg. [PRE] {Catatonic Fear}). [LSJ 20090528-2] [LSJ 20031118]
+  - Strikes that deal damage after combat are affected (eg. [PRE] {Catatonic Fear}). [LSJ 20031118]
   - Strikes that target cards on him, are not affected (eg. {Target Retainer}, {Canine Horde}). [LSJ 20090528-2]
+  - When using a card that locks you into a strike (eg {.44 Magnum} s maneuver) you cannot chose not to strike [LSJ 20090528-2-2]
 200885|Luna Giovanni:
   - Her ability does not apply to the political action card played for a current action (it is in limbo). [LSJ 20070927]
 200890|Lutz von Hohenzollern:
@@ -4330,6 +4271,11 @@
 201648|Regina Blake:
   - She can use her ability to pay for equipments that are locations while in play (eg. {Palatial Estate}). [LSJ 20080107]
     [LSJ 20080114]
+201726|Parijat, the Dark Oracle:
+  - 'If a card forces a block attempt (eg, {Second Tradition: Domain}) the blocking methuselah burns a card from the top of
+    their library, before they redraw. [ANK 20260216]'
+  - If you cannot burn a card from the top of your library (eg, your library is empty), you cannot attempt to block wraith
+    or zombie allies while Parijat is ready. [ANK 20260216]
 201776|Věnceslava, The Implacable:
   - Their ability is not applied if his controller is ousted by the referendum effects (reversal of previous rulings). [ANK
     20220808]
@@ -4526,10 +4472,7 @@ G00073|Impersonating requirements to play cards:
     including duration effects. The vampire is not treated as meeting the requirements for effects the card has from being
     in play. [LSJ 20101013] [ANK 20190228] [ANK 20200703-3] [LSJ 20070708] [RTR 20070707]
 G00074|Adding costs to a strike or strike card:
-  - If an effect granting a strike is played/used before another effect that adds a cost to strike (e.g. {Dam the Heart's
-    River}), you may choose not to strike. [LSJ 20071017]
-  - If an effect granting a strike (e.g. {.44 Magnum}) is played/used after another effect that adds a cost to strike, you
-    must pay the additional cost to use that first effect. [LSJ 20090529]
+  - If an opponent then plays an effect that grants a strike (e.g, {Aid from Bats}), they pay the additional cost. [LSJ 20090529]
   - Strikes are paid at declaration. If an ally spends their last life on a strike, combat ends before strike resolution.
     If the strike damage depends on the amount of life/blood of the striking minion, it is calculated after the strike is
     paid for (e.g. {Shambling Hordes}). [LSJ 20090703]
@@ -4805,3 +4748,11 @@ G00151|Allies that burn an ally when entering play:
   - An ally or retainer must be burned when it comes into play, regardless of how it enters play (e.g, {Pressing Flesh}).
     [ANK 20170309-2]
   - If you have no other allies or retainers in play when it enters play, it must burn itself. [RTR 19961113]
+G00152|Adding costs to non-card strike:
+  - If the opponent has played an effect that grants a strike before (e.g, {Sniper Rifle}), they may choose not to strike.
+    [LSJ 20071017]
+G00153|Prevents more than 1 damage:
+  - If fewer points of (preventable) damage are being resolved, then the effect prevents all of those points. [RTR 20041202]
+  - Unused prevention points can't be carried over unless optional ('can/may prevent'). [ANK 20200318] [LSJ 20001114]
+G00154|Immideate damage prevention:
+  - Cannot be used if there is no damage to prevent. [LSJ 20001114]

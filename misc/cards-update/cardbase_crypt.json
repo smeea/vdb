@@ -2589,13 +2589,7 @@
         "path":"Caine",
         "rulings":[
             {
-                "text":"If an effect granting a strike is played/used before another effect that adds a cost to strike (e.g. {Dam the Heart's River}), you may choose not to strike.",
-                "refs":{
-                    "LSJ 20071017":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Ei307R78l4A/m/PYe-fYT8BqkJ"
-                }
-            },
-            {
-                "text":"If an effect granting a strike (e.g. {.44 Magnum}) is played/used after another effect that adds a cost to strike, you must pay the additional cost to use that first effect.",
+                "text":"If an opponent then plays an effect that grants a strike (e.g, {Aid from Bats}), they pay the additional cost.",
                 "refs":{
                     "LSJ 20090529":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/LpFSLRuWONA/m/daxDmJiGX0AJ"
                 }
@@ -39147,9 +39141,8 @@
         "path":"",
         "rulings":[
             {
-                "text":"Strikes that do not target him (dodge, combat ends) do not cost more. They do if they plan to damage him after combat (eg. [PRE] {Catatonic Fear}).",
+                "text":"Strikes that deal damage after combat are affected (eg. [PRE] {Catatonic Fear}).",
                 "refs":{
-                    "LSJ 20090528-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/LpFSLRuWONA/m/m0Alg1iD6gEJ",
                     "LSJ 20031118":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9IzmBh8PWe0/m/J1F_TzPbITsJ"
                 }
             },
@@ -39160,13 +39153,13 @@
                 }
             },
             {
-                "text":"If an effect granting a strike is played/used before another effect that adds a cost to strike (e.g. {Dam the Heart's River}), you may choose not to strike.",
+                "text":"When using a card that locks you into a strike (eg {.44 Magnum} s maneuver) you cannot chose not to strike",
                 "refs":{
-                    "LSJ 20071017":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Ei307R78l4A/m/PYe-fYT8BqkJ"
+                    "LSJ 20090528-2-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/LpFSLRuWONA/m/ZwZEHVFOrRYJ"
                 }
             },
             {
-                "text":"If an effect granting a strike (e.g. {.44 Magnum}) is played/used after another effect that adds a cost to strike, you must pay the additional cost to use that first effect.",
+                "text":"If an opponent then plays an effect that grants a strike (e.g, {Aid from Bats}), they pay the additional cost.",
                 "refs":{
                     "LSJ 20090529":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/LpFSLRuWONA/m/daxDmJiGX0AJ"
                 }
@@ -49722,7 +49715,20 @@
         "name":"Parijat, the Dark Oracle",
         "new":false,
         "path":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"If a card forces a block attempt (eg,\u00a0{Second Tradition: Domain}) the blocking methuselah burns a card from the top of their library, before they redraw.",
+                "refs":{
+                    "ANK 20260216":"https://www.vekn.net/forum/rules-questions/82837-parijat-special-order#116447"
+                }
+            },
+            {
+                "text":"If you cannot burn a card from the top of your library (eg, your library is empty), you cannot attempt to block wraith or zombie allies while Parijat is ready.",
+                "refs":{
+                    "ANK 20260216":"https://www.vekn.net/forum/rules-questions/82837-parijat-special-order#116447"
+                }
+            }
+        ],
         "sect":"Independent",
         "set":{
             "V5H":{
