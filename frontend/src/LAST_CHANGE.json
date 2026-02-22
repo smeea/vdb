@@ -1,8 +1,10 @@
 {
-  "version": "2026-01-09",
+  "version": "2026-02-22",
   "changes": [
-    "Update TWDA",
+    "Add Back from Torpor event",
     "Update Rulings",
+    "Update card base with !Malkavian/Dementation POD addition",
+    "Update legacy and True Brujah/Temporis images",
     "Small other fixes and improvements"
   ]
 }
