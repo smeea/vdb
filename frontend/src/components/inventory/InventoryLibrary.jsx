@@ -1,5 +1,5 @@
 import { Header, InventoryFilterForm, InventoryLibraryTable, SortButton } from "@/components";
-import { ALL, CLAN_DISCIPLINE, DISCIPLINE, ID, NAME, QUANTITY, TYPE } from "@/constants";
+import { ALL, CLAN, CLAN_DISCIPLINE, DISCIPLINE, ID, NAME, QUANTITY, TYPE } from "@/constants";
 import { useApp } from "@/context";
 import { useInventoryLibrary } from "@/hooks";
 
@@ -12,6 +12,8 @@ const InventoryLibrary = ({
   setType,
   discipline,
   setDiscipline,
+  clan,
+  setClan,
   newFocus,
   inShared,
   onlyNotes,
@@ -27,15 +29,19 @@ const InventoryLibrary = ({
   const {
     cardsByType,
     cardsByDiscipline,
+    cardsByClan,
     cardsFilteredByType,
     cardsFilteredByTypeTotal,
     cardsFilteredByTypeUnique,
     cardsFilteredByDiscipline,
     cardsFilteredByDisciplineTotal,
     cardsFilteredByDisciplineUnique,
+    cardsFilteredByClan,
+    cardsFilteredByClanTotal,
+    cardsFilteredByClanUnique,
     missingFiltered,
     missingFilteredTotal,
-  } = useInventoryLibrary(cards, category, compact, type, discipline, onlyNotes);
+  } = useInventoryLibrary(cards, category, compact, type, discipline, clan, onlyNotes);
 
   return (
     <>
@@ -46,22 +52,26 @@ const InventoryLibrary = ({
               <InventoryFilterForm
                 value={type}
                 setValue={setType}
-                values={Object.keys(cardsByType).filter((i) => {
-                  return Object.keys(cardsFilteredByDiscipline[i]).length;
-                })}
-                byTotal={cardsFilteredByDisciplineTotal}
-                byUnique={cardsFilteredByDisciplineUnique}
+                values={cardsFilteredByType}
+                byTotal={cardsFilteredByTypeTotal}
+                byUnique={cardsFilteredByTypeUnique}
                 target={TYPE}
               />
               <InventoryFilterForm
                 value={discipline}
                 setValue={setDiscipline}
-                values={Object.keys(cardsByDiscipline).filter((i) => {
-                  return Object.keys(cardsFilteredByType[i]).length;
-                })}
-                byTotal={cardsFilteredByTypeTotal}
-                byUnique={cardsFilteredByTypeUnique}
+                values={cardsFilteredByDiscipline}
+                byTotal={cardsFilteredByDisciplineTotal}
+                byUnique={cardsFilteredByDisciplineUnique}
                 target={DISCIPLINE}
+              />
+              <InventoryFilterForm
+                value={clan}
+                setValue={setClan}
+                values={cardsFilteredByClan}
+                byTotal={cardsFilteredByClanTotal}
+                byUnique={cardsFilteredByClanUnique}
+                target={CLAN}
               />
             </div>
             <div className="flex justify-end font-bold text-midGray dark:text-midGrayDark">

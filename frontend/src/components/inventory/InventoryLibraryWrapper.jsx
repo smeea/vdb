@@ -12,6 +12,8 @@ const InventoryLibraryWrapper = ({
   setDiscipline,
   type,
   setType,
+  clan,
+  setClan,
 }) => {
   const { libraryCardBase } = useApp();
   const inventoryLibrary = useSnapshot(inventoryStore)[LIBRARY];
@@ -48,6 +50,8 @@ const InventoryLibraryWrapper = ({
           setDiscipline={setDiscipline}
           type={type}
           setType={setType}
+          clan={clan}
+          setClan={setClan}
           inShared={!!sharedLibrary}
           onlyNotes={onlyNotes}
           withCompact={newCardId}

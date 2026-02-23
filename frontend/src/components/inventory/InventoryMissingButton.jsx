@@ -6,7 +6,8 @@ import { SURPLUS } from "@/constants";
 import { useApp } from "@/context";
 
 const InventoryMissingButton = ({
-  clan,
+  cryptClan,
+  libraryClan,
   type,
   discipline,
   crypt,
@@ -39,7 +40,8 @@ const InventoryMissingButton = ({
           library={library}
           category={category}
           onlyNotes={onlyNotes}
-          clan={clan}
+          cryptClan={cryptClan}
+          libraryClan={libraryClan}
           type={type}
           discipline={discipline}
           setShow={setShowModal}

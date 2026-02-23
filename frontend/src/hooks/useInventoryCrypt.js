@@ -32,8 +32,7 @@ const useInventoryCrypt = (crypt, category, compact, onlyNotes) => {
   const missingByClanTotal = {};
   const surplusByClan = {};
 
-  const clansSorted = [ALL, ...vampireClansList, ...imbuedClansList];
-  clansSorted.forEach((clan) => {
+  [ALL, ...vampireClansList, ...imbuedClansList].forEach((clan) => {
     cardsByClan[clan] = {};
     cardsByClanTotal[clan] = 0;
     cardsByClanUnique[clan] = 0;

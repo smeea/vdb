@@ -4,10 +4,10 @@ import {
   ResultLibraryTypeImage,
   Select,
 } from "@/components";
-import { ALL, CRYPT, DISCIPLINE, NONE, TYPE } from "@/constants";
+import { ALL, CRYPT, CLAN, DISCIPLINE, NONE, TYPE } from "@/constants";
 
 const InventoryFilterForm = ({ value, setValue, values, target, byTotal, byUnique }) => {
-  const options = values.map((i) => {
+  const options = Object.keys(values).filter(i => Object.keys(values[i]).length).map((i) => {
     return {
       value: i,
       label: (
@@ -65,6 +65,25 @@ const InventoryFilterForm = ({ value, setValue, values, target, byTotal, byUniqu
               )}
             </div>
           )}
+
+          {target === CLAN && (
+            <div>
+              {[ALL, NONE].includes(i) ? (
+                <div className="flex items-center">
+                  <div className="flex w-[40px]" />
+                  {i === ALL ? "All Clans" : "None"}
+                </div>
+              ) : (
+                <div className="flex items-center">
+                  <div className="flex w-[40px]">
+                    <ResultClanImage value={i} />
+                  </div>
+                  {i}
+                </div>
+              )}
+            </div>
+          )}
+
           <div className="whitespace-nowrap">
             {byTotal[i]} {byUnique ? `(${byUnique[i]} uniq)` : null}
           </div>

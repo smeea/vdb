@@ -44,9 +44,7 @@ const InventoryCrypt = ({
             <InventoryFilterForm
               value={clan}
               setValue={setClan}
-              values={Object.keys(cardsByClan).filter((i) => {
-                return Object.keys(cardsByClan[i]).length;
-              })}
+              values={cardsByClan}
               byTotal={cardsByClanTotal}
               byUnique={cardsByClanUnique}
               target={CRYPT}

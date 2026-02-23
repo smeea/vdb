@@ -7,7 +7,7 @@
 - TWD search with % V5-compatibility
 - Click on scan image to close modal on mobile (need refactor)
 - Inventory target documentation
-- Inventory filter by clan
+- Missing by clan in inventory
 
 # FEATURES ON HOLD
 - Draft Cube support -> when draft cube info is available

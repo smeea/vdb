@@ -79,7 +79,8 @@ const Inventory = () => {
   );
   const [showAddDeck, setShowAddDeck] = useState(false);
   const [showAddPrecon, setShowAddPrecon] = useState(false);
-  const [clan, setClan] = useState(ALL);
+  const [cryptClan, setCryptClan] = useState(ALL);
+  const [libraryClan, setLibraryClan] = useState(ALL);
   const [type, setType] = useState(ALL);
   const [discipline, setDiscipline] = useState(ALL);
   const [onlyNotes, setOnlyNotes] = useState(false);
@@ -120,8 +121,8 @@ const Inventory = () => {
               sharedCrypt={sharedCrypt}
               category={category}
               onlyNotes={onlyNotes}
-              clan={clan}
-              setClan={setClan}
+              clan={cryptClan}
+              setClan={setCryptClan}
             />
           </div>
           <div
@@ -138,12 +139,15 @@ const Inventory = () => {
               setDiscipline={setDiscipline}
               type={type}
               setType={setType}
+              clan={libraryClan}
+              setClan={setLibraryClan}
             />
           </div>
           <div className="min-w-[180px] max-lg:hidden">
             <InventoryMenu
               category={category}
-              clan={clan}
+              cryptClan={cryptClan}
+              libraryClan={libraryClan}
               discipline={discipline}
               isSharedInventory={isSharedInventory}
               onlyNotes={onlyNotes}
@@ -183,7 +187,8 @@ const Inventory = () => {
         <Modal handleClose={handleClose} centered size="xs" withMobileMargin noClose={!isDesktop}>
           <InventoryMenu
             category={category}
-            clan={clan}
+            cryptClan={cryptClan}
+            libraryClan={libraryClan}
             discipline={discipline}
             isSharedInventory={isSharedInventory}
             onlyNotes={onlyNotes}

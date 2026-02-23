@@ -18,7 +18,8 @@ import { deckStore, inventoryStore, useApp } from "@/context";
 const InventoryButtons = ({
   setShowAddDeck,
   setShowAddPrecon,
-  clan,
+  cryptClan,
+  libraryClan,
   type,
   discipline,
   category,
@@ -114,7 +115,8 @@ const InventoryButtons = ({
               library={library}
               category={category}
               onlyNotes={onlyNotes}
-              clan={clan}
+              cryptClan={cryptClan}
+              libraryClan={libraryClan}
               type={type}
               discipline={discipline}
             />

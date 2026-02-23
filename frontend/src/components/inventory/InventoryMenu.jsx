@@ -16,7 +16,8 @@ const InventoryMenu = ({
   setShowAddDeck,
   setShowAddPrecon,
   setShowShareModal,
-  clan,
+  cryptClan,
+  libraryClan,
   discipline,
   type,
   onlyNotes,
@@ -37,7 +38,8 @@ const InventoryMenu = ({
         setShowAddDeck={setShowAddDeck}
         setShowAddPrecon={setShowAddPrecon}
         setShowShareModal={setShowShareModal}
-        clan={clan}
+        cryptClan={cryptClan}
+        libraryClan={libraryClan}
         discipline={discipline}
         type={type}
         category={isSharedInventory ? OK : category}

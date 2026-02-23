@@ -17,7 +17,8 @@ import { useInventoryCrypt, useInventoryLibrary } from "@/hooks";
 import { cryptSort, getIsPlaytest, librarySort } from "@/utils";
 
 const InventoryMissingModal = ({
-  clan,
+  cryptClan,
+  libraryClan,
   type,
   discipline,
   crypt,
@@ -30,18 +31,20 @@ const InventoryMissingModal = ({
   const { cryptCardBase, libraryCardBase, isMobile, setShowFloatingButtons, setShowMenuButtons } =
     useApp();
   const { [CRYPT]: inventoryCrypt, [LIBRARY]: inventoryLibrary } = useSnapshot(inventoryStore);
-  const { surplusByClan, missingByClan } = useInventoryCrypt(crypt, category, false, onlyNotes);
-  const { surplusByType, surplusByDiscipline, missingByType, missingByDiscipline } =
-    useInventoryLibrary(library, category, false, type, discipline, onlyNotes);
+  const { surplusByClan: surplusByCryptClan, missingByClan: missingByCryptClan } = useInventoryCrypt(crypt, category, false, onlyNotes);
+  const { surplusByClan: surplusByLibraryClan, surplusByType, surplusByDiscipline, missingByClan: missingByLibraryClan, missingByType, missingByDiscipline } =
+        useInventoryLibrary(library, category, false, type, discipline, libraryClan, onlyNotes);
   const [showCryptOnMobile, setShowCryptOnMobile] = useState(true);
   const [showMissAll, setShowMissAll] = useState();
 
+  // TODO: add Library Clan support
+
   const missingCrypt = isSurplus
-    ? surplusByClan
-      ? surplusByClan[clan]
+    ? surplusByCryptClan
+      ? surplusByCryptClan[cryptClan]
       : {}
-    : missingByClan
-      ? missingByClan[clan]
+    : missingByCryptClan
+      ? missingByCryptClan[cryptClan]
       : {};
 
   const missingLibrary = {};

@@ -60,12 +60,12 @@ const InventoryLibraryTable = ({
         <div
           className={
             withCompact
-              ? "h-[calc(100dvh-262px)] sm:h-[calc(100dvh-291px)] lg:h-[calc(100dvh-314px)] xl:h-[calc(100dvh-340px)]"
+              ? "h-[calc(100dvh-309px)] sm:h-[calc(100dvh-337px)] lg:h-[calc(100dvh-360px)] xl:h-[calc(100dvh-384px)]"
               : inShared
-                ? "h-[calc(100dvh-160px)] sm:h-[calc(100dvh-190px)] lg:h-[calc(100dvh-200px)] xl:h-[calc(100dvh-210px)]"
+                ? "h-[calc(100dvh-207px)] sm:h-[calc(100dvh-236px)] lg:h-[calc(100dvh-246px)] xl:h-[calc(100dvh-256px)]"
                 : inMissing
-                  ? "h-[calc(100dvh-172px)] sm:h-[calc(100dvh-192px)] lg:h-[calc(100dvh-212px)] xl:h-[calc(100dvh-232px)]"
-                  : "h-[calc(100dvh-217px)] sm:h-[calc(100dvh-237px)] lg:h-[calc(100dvh-257px)] xl:h-[calc(100dvh-277px)]"
+                  ? "h-[calc(100dvh-219px)] sm:h-[calc(100dvh-238px)] lg:h-[calc(100dvh-258px)] xl:h-[calc(100dvh-278px)]"
+              : "h-[calc(100dvh-264px)] sm:h-[calc(100dvh-283px)] lg:h-[calc(100dvh-303px)] xl:h-[calc(100dvh-323px)]"
           }
         >
           <List
