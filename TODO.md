@@ -8,6 +8,7 @@
 - Click on scan image to close modal on mobile (need refactor)
 - Inventory target documentation
 - Inventory filter by clan
+- Reversal icon in ruling (see Arika)
 
 # FEATURES ON HOLD
 - Draft Cube support -> when draft cube info is available

@@ -267,16 +267,16 @@ const Decks = () => {
         <>
           <DeckNewCardFloating
             className="sm:hidden"
-            target={CRYPT}
+            /* target={CRYPT} */
             deckid={deckid}
-            cards={Object.values(deck[CRYPT])}
+            cards={Object.values({...deck[CRYPT], ...deck[LIBRARY]})}
           />
-          <DeckNewCardFloating
-            className="sm:hidden"
-            target={LIBRARY}
-            deckid={deckid}
-            cards={Object.values(deck[LIBRARY])}
-          />
+          {/* <DeckNewCardFloating */}
+          {/*   className="sm:hidden" */}
+          {/*   target={LIBRARY} */}
+          {/*   deckid={deckid} */}
+          {/*   cards={Object.values(deck[LIBRARY])} */}
+          {/* /> */}
         </>
       )}
       <div className="lg:hidden">

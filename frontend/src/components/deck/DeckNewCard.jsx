@@ -1,4 +1,4 @@
-import { NewCardSelect } from "@/components";
+import { CardSelect } from "@/components";
 import { CRYPT, ID } from "@/constants";
 import { deckCardChange, useApp } from "@/context";
 
@@ -8,22 +8,21 @@ const DeckNewCard = ({ target, cards, deckid, handleClose, cardChange, menuPlace
 
   const handleChange = (event) => {
     const cardid = event.value;
-    let currentQ = 0;
-    cards.forEach((card) => {
-      if (card.c[ID] === cardid) currentQ = card.q;
-    });
+    const currentQ = cards.find(c => c.c[ID] === cardid)?.q ?? 0
 
-    const card = target === CRYPT ? cryptCardBase[cardid] : libraryCardBase[cardid];
+    const card = cardid > 200000 ? cryptCardBase[cardid] : libraryCardBase[cardid];
     changeAction(deckid, card, currentQ + 1);
     handleClose();
   };
 
   return (
-    <NewCardSelect
-      onChange={handleChange}
+    <CardSelect
       autoFocus
+      onChange={handleChange}
+      placeholder={target ? `Add ${target === CRYPT ? "Crypt" : "Library"} Card` : "Add Card"}
       target={target}
       menuPlacement={menuPlacement}
+      value={null}
     />
   );
 };
