@@ -17,6 +17,7 @@
   "REACTION": "types/reaction",
   "REFLEX": "types/reflex",
   "RETAINER": "types/retainer",
+  "REVERSAL": "misc/reversal",
   "trifle": "misc/trifle",
   "burn": "misc/burn"
 }
