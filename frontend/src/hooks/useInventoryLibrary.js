@@ -90,7 +90,7 @@ const useInventoryLibrary = (library, category, compact, type, discipline, clan,
       .filter((cardid) => (onlyNotes ? cards[cardid].t : true))
       .forEach((cardid) => {
         const { types, disciplines, clans, hasGoodRequirements } = getRequirements(cardid, libraryCardBase, requirements)
-        const miss = getMissing(cardid, usedLibrary, wishlist)
+        const miss = getMissing(cardid, usedLibrary, wishlist, cards[cardid].q)
 
         if (
           (category === NOK && miss > 0) ||
@@ -234,6 +234,7 @@ const useInventoryLibrary = (library, category, compact, type, discipline, clan,
     filteredCards,
     missing,
     missingTotal,
+    surplus,
   };
 };
 

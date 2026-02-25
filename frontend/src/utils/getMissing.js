@@ -8,25 +8,25 @@ import {
 } from "@/constants";
 import { getHardTotal, getSoftMax } from "@/utils";
 
-const getMissing = (cardid, usedBase, wishlist) => {
+const getMissing = (cardid, usedBase, wishlist, currentQ = 0) => {
   const wishlistLogic = wishlist[cardid]?.[LOGIC];
   const wishlistValue = wishlist[cardid]?.[VALUE];
   let miss;
   switch (wishlistLogic) {
     case SURPLUS_FIXED:
-      miss = wishlistValue;
+      miss = wishlistValue - currentQ;
       break;
     case SURPLUS_USED:
       {
         const softUsedMax = getSoftMax(usedBase[SOFT]?.[cardid]);
         const hardUsedTotal = getHardTotal(usedBase[HARD]?.[cardid]);
-        miss = softUsedMax + hardUsedTotal + wishlistValue;
+        miss = softUsedMax + hardUsedTotal + wishlistValue - currentQ;
       }
       break;
     default: {
       const softUsedMax = getSoftMax(usedBase[SOFT]?.[cardid]);
       const hardUsedTotal = getHardTotal(usedBase[HARD]?.[cardid]);
-      miss = softUsedMax + hardUsedTotal;
+      miss = softUsedMax + hardUsedTotal - currentQ;
     }
   }
 

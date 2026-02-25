@@ -11,7 +11,7 @@ import {
   InventoryLibraryTable,
   Modal,
 } from "@/components";
-import { CRYPT, ID, LIBRARY, NAME } from "@/constants";
+import { MISSING, SURPLUS, CRYPT, ID, LIBRARY, NAME } from "@/constants";
 import { inventoryStore, useApp } from "@/context";
 import { useInventoryCrypt, useInventoryLibrary } from "@/hooks";
 import { cryptSort, getIsPlaytest, librarySort } from "@/utils";
@@ -31,62 +31,28 @@ const InventoryMissingModal = ({
   const { cryptCardBase, libraryCardBase, isMobile, setShowFloatingButtons, setShowMenuButtons } =
     useApp();
   const { [CRYPT]: inventoryCrypt, [LIBRARY]: inventoryLibrary } = useSnapshot(inventoryStore);
-  const { surplusByClan: surplusByCryptClan, missingByClan: missingByCryptClan } = useInventoryCrypt(crypt, category, false, onlyNotes);
-  const { surplusByClan: surplusByLibraryClan, surplusByType, surplusByDiscipline, missingByClan: missingByLibraryClan, missingByType, missingByDiscipline } =
-        useInventoryLibrary(library, category, false, type, discipline, libraryClan, onlyNotes);
+  const { [SURPLUS]: surplusCrypt, [MISSING]: missingCrypt } = useInventoryCrypt(crypt, category, false, cryptClan, onlyNotes);
+  const { [SURPLUS]: surplusLiberary, [MISSING]: missingLibrary } = useInventoryLibrary(library, category, false, type, discipline, libraryClan, onlyNotes);
   const [showCryptOnMobile, setShowCryptOnMobile] = useState(true);
-  const [showMissAll, setShowMissAll] = useState();
+  const [showAll, setShowAll] = useState();
 
   // TODO: refactor with new useInventory
 
-  const missingCrypt = isSurplus
-    ? surplusByCryptClan
-      ? surplusByCryptClan[cryptClan]
-      : {}
-    : missingByCryptClan
-      ? missingByCryptClan[cryptClan]
-      : {};
+  const cryptSorted = cryptSort(Object.values(isSurplus ? surplusCrypt : missingCrypt), NAME);
+  const librarySorted = librarySort(Object.values(isSurplus ? surplusLibrary : missingLibrary), NAME);
 
-  const missingLibrary = {};
-  if (isSurplus) {
-    Object.values(surplusByType[type])
-      .filter((i) => {
-        return surplusByDiscipline[discipline][i.c[ID]];
-      })
-      .forEach((i) => {
-        missingLibrary[i.c[ID]] = i;
-      });
-  } else {
-    Object.values(missingByType[type])
-      .filter((i) => {
-        return missingByDiscipline[discipline][i.c[ID]];
-      })
-      .forEach((i) => {
-        missingLibrary[i.c[ID]] = i;
-      });
-  }
-
-  const missingCryptSorted = cryptSort(Object.values(missingCrypt), NAME);
-  const missingLibrarySorted = librarySort(Object.values(missingLibrary), NAME);
-
-  const missAllVtesCryptSorted = cryptSort(
+  const allVtesCryptSorted = cryptSort(
     Object.keys(cryptCardBase)
-      .filter((cardid) => {
-        return !getIsPlaytest(cardid) && (!inventoryCrypt[cardid] || !inventoryCrypt[cardid]?.q);
-      })
+      .filter((cardid) => !getIsPlaytest(cardid) && !inventoryCrypt?.[cardid]?.q)
       .map((cardid) => ({ q: 1, c: cryptCardBase[cardid] })),
-    NAME,
+    NAME
   );
 
-  const missAllVtesLibrarySorted = librarySort(
+  const allVtesLibrarySorted = librarySort(
     Object.keys(libraryCardBase)
-      .filter((cardid) => {
-        return (
-          !getIsPlaytest(cardid) && (!inventoryLibrary[cardid] || !inventoryLibrary[cardid]?.q)
-        );
-      })
+      .filter((cardid) => !getIsPlaytest(cardid) && !inventoryLibrary?.[cardid]?.q)
       .map((cardid) => ({ q: 1, c: libraryCardBase[cardid] })),
-    NAME,
+    NAME
   );
 
   const handleClose = () => {
@@ -112,7 +78,7 @@ const InventoryMissingModal = ({
           >
             <InventoryCryptTable
               inMissing
-              cards={showMissAll ? missAllVtesCryptSorted : missingCryptSorted}
+              cards={showAll ? allVtesCryptSorted : cryptSorted}
             />
           </div>
           <div
@@ -123,23 +89,23 @@ const InventoryMissingModal = ({
           >
             <InventoryLibraryTable
               inMissing
-              cards={showMissAll ? missAllVtesLibrarySorted : missingLibrarySorted}
+              cards={showAll ? allVtesLibrarySorted : librarySorted}
             />
           </div>
         </FlexGapped>
         <div className="flex justify-end gap-2 max-sm:flex-col max-sm:p-2 max-sm:pt-0">
           {!isSurplus && (
             <ButtonIconed
-              onClick={() => setShowMissAll(!showMissAll)}
-              text={showMissAll ? "Show Missing for Decks" : "Show Missing for Complete Collection"}
+              onClick={() => setShowAll(!showAll)}
+              text={showAll ? "Show Missing for Decks" : "Show Missing for Complete Collection"}
               icon={<Gem />}
             />
           )}
           <DeckExportButton
             deck={{
               [NAME]: `${isSurplus ? "Surplus" : "Missing"} Inventory Cards`,
-              [CRYPT]: showMissAll ? missAllVtesCryptSorted : missingCryptSorted,
-              [LIBRARY]: showMissAll ? missAllVtesLibrarySorted : missingLibrarySorted,
+              [CRYPT]: showAll ? allVtesCryptSorted : cryptSorted,
+              [LIBRARY]: showAll ? allVtesLibrarySorted : librarySorted,
             }}
             inMissing
           />

@@ -52,7 +52,7 @@ const useInventoryCrypt = (crypt, category, compact, clan, onlyNotes) => {
       .filter((cardid) => (onlyNotes ? cards[cardid].t : true))
       .forEach((cardid) => {
         const { clan, hasGoodRequirements } = getRequirements(cardid, cryptCardBase, requirements)
-        const miss = getMissing(cardid, usedCrypt, wishlist)
+        const miss = getMissing(cardid, usedCrypt, wishlist, cards[cardid].q)
 
         if (
           (category === NOK && miss > 0) ||
@@ -126,6 +126,7 @@ const useInventoryCrypt = (crypt, category, compact, clan, onlyNotes) => {
     filteredCards,
     missing,
     missingTotal,
+    surplus
   };
 };
 

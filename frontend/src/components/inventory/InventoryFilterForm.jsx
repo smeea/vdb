@@ -72,7 +72,7 @@ const InventoryFilterForm = ({ value, setValue, values, target }) => {
           )}
 
           <div className="whitespace-nowrap">
-            {total} {unique ? `(${unique} uniq)` : '(has missing)'}
+            {total} {unique ? `(${unique} uniq)` : null}
           </div>
         </div>
       ),
