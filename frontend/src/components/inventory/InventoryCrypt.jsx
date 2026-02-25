@@ -4,6 +4,7 @@ import {
   CAPACITY_MAX_MIN,
   CAPACITY_MIN_MAX,
   CLANx,
+  CLAN,
   CRYPT,
   GROUPx,
   NAME,
@@ -33,8 +34,11 @@ const InventoryCrypt = ({
     [CAPACITY_MAX_MIN]: "C↓",
   };
 
-  const { cardsByClan, cardsByClanTotal, cardsByClanUnique, missingByClan, missingByClanTotal } =
-    useInventoryCrypt(cards, category, compact, onlyNotes);
+  const { cardsByClan,
+          cardsFilteredBy,
+          missing,
+          missingTotal,
+        } = useInventoryCrypt(cards, category, compact, clan, onlyNotes);
 
   return (
     <>
@@ -44,15 +48,13 @@ const InventoryCrypt = ({
             <InventoryFilterForm
               value={clan}
               setValue={setClan}
-              values={cardsByClan}
-              byTotal={cardsByClanTotal}
-              byUnique={cardsByClanUnique}
-              target={CRYPT}
+              values={cardsFilteredBy}
+              target={CLAN}
             />
             <div className="flex justify-end font-bold text-midGray dark:text-midGrayDark">
-              {missingByClanTotal[clan] ? (
+              {missingTotal ? (
                 <>
-                  {missingByClanTotal[clan]} ({Object.values(missingByClan[clan]).length} uniq) miss
+                  {missingTotal} ({Object.values(missing).length} uniq) miss
                 </>
               ) : null}
             </div>

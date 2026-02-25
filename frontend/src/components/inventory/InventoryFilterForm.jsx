@@ -4,32 +4,19 @@ import {
   ResultLibraryTypeImage,
   Select,
 } from "@/components";
-import { ALL, CRYPT, CLAN, DISCIPLINE, NONE, TYPE } from "@/constants";
+import { ALL, CLAN, DISCIPLINE, NONE, TYPE, TOTAL, UNIQUE, CARDS } from "@/constants";
 
-const InventoryFilterForm = ({ value, setValue, values, target, byTotal, byUnique }) => {
-  const options = Object.keys(values).filter(i => Object.keys(values[i]).length).map((i) => {
+const InventoryFilterForm = ({ value, setValue, values, target }) => {
+  const options = Object.keys(values[target]).filter(i => {
+    return Object.keys(values[target][i][CARDS]).length
+  }).map((i) => {
+    const total = values[target][i][TOTAL]
+    const unique = values[target][i][UNIQUE]
+
     return {
       value: i,
       label: (
         <div className="flex justify-between">
-          {target === CRYPT && (
-            <div>
-              {i === ALL ? (
-                <div className="flex items-center">
-                  <div className="flex w-[40px]" />
-                  All Clans
-                </div>
-              ) : (
-                <div className="flex items-center">
-                  <div className="flex w-[40px] justify-center">
-                    <ResultClanImage value={i} />
-                  </div>
-                  {i}
-                </div>
-              )}
-            </div>
-          )}
-
           {target === TYPE && (
             <div>
               {i === ALL ? (
@@ -85,7 +72,7 @@ const InventoryFilterForm = ({ value, setValue, values, target, byTotal, byUniqu
           )}
 
           <div className="whitespace-nowrap">
-            {byTotal[i]} {byUnique ? `(${byUnique[i]} uniq)` : null}
+            {total} {unique ? `(${unique} uniq)` : '(has missing)'}
           </div>
         </div>
       ),

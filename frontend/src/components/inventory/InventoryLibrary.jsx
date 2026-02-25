@@ -30,17 +30,10 @@ const InventoryLibrary = ({
     cardsByType,
     cardsByDiscipline,
     cardsByClan,
-    cardsFilteredByType,
-    cardsFilteredByTypeTotal,
-    cardsFilteredByTypeUnique,
-    cardsFilteredByDiscipline,
-    cardsFilteredByDisciplineTotal,
-    cardsFilteredByDisciplineUnique,
-    cardsFilteredByClan,
-    cardsFilteredByClanTotal,
-    cardsFilteredByClanUnique,
-    missingFiltered,
-    missingFilteredTotal,
+    cardsFilteredBy,
+    filteredCards,
+    missing,
+    missingTotal,
   } = useInventoryLibrary(cards, category, compact, type, discipline, clan, onlyNotes);
 
   return (
@@ -52,32 +45,26 @@ const InventoryLibrary = ({
               <InventoryFilterForm
                 value={type}
                 setValue={setType}
-                values={cardsFilteredByType}
-                byTotal={cardsFilteredByTypeTotal}
-                byUnique={cardsFilteredByTypeUnique}
+                values={cardsFilteredBy}
                 target={TYPE}
               />
               <InventoryFilterForm
                 value={discipline}
                 setValue={setDiscipline}
-                values={cardsFilteredByDiscipline}
-                byTotal={cardsFilteredByDisciplineTotal}
-                byUnique={cardsFilteredByDisciplineUnique}
+                values={cardsFilteredBy}
                 target={DISCIPLINE}
               />
               <InventoryFilterForm
                 value={clan}
                 setValue={setClan}
-                values={cardsFilteredByClan}
-                byTotal={cardsFilteredByClanTotal}
-                byUnique={cardsFilteredByClanUnique}
+                values={cardsFilteredBy}
                 target={CLAN}
               />
             </div>
             <div className="flex justify-end font-bold text-midGray dark:text-midGrayDark">
-              {missingFilteredTotal ? (
+              {missingTotal ? (
                 <>
-                  {missingFilteredTotal} ({Object.values(missingFiltered).length} uniq) miss
+                  {missingTotal} ({Object.values(missing).length} uniq) miss
                 </>
               ) : null}
             </div>
@@ -96,9 +83,7 @@ const InventoryLibrary = ({
         cards={
           compact
             ? Object.values(cardsByType[ALL])
-            : Object.values(cardsByType[type]).filter((i) => {
-                return cardsByDiscipline[discipline][i.c[ID]];
-              })
+            : Object.values(filteredCards)
         }
         newFocus={newFocus}
         inShared={inShared}

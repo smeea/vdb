@@ -11,178 +11,120 @@ import {
   CLAN,
   HARD,
   LIBRARY,
-  LOGIC,
   NOK,
   NONE,
   OK,
   SOFT,
   SURPLUS,
-  SURPLUS_FIXED,
-  SURPLUS_USED,
   TYPE,
-  VALUE,
   WISHLIST,
+  CARDS,
+  TOTAL,
+  UNIQUE
 } from "@/constants";
 import { inventoryStore, useApp, usedStore } from "@/context";
-import { getHardTotal, getIsPlaytest, getSoftMax } from "@/utils";
+import { getMissing, getIsPlaytest } from "@/utils";
+
+const getRequirements = (cardid, cardBase, requirements) => {
+  const types = cardBase[cardid][TYPE].split("/");
+
+  let disciplines = [NONE];
+  const d = cardBase[cardid][DISCIPLINE];
+  if (d.includes("/")) {
+    disciplines = d.split("/");
+  } else if (d.includes(" & ")) {
+    disciplines = d.split(" & ");
+  } else if (d) {
+    disciplines = [d];
+  }
+
+  let clans = [NONE];
+  const c = cardBase[cardid][CLAN];
+  if (c.includes("/")) {
+    clans = c.split("/");
+  } else if (c) {
+    clans = [c];
+  }
+
+  const hasGoodRequirements = !!((clans.includes(requirements[CLAN]) || requirements[CLAN] === ALL) && (disciplines.includes(requirements[DISCIPLINE]) || requirements[DISCIPLINE] === ALL) && (types.includes(requirements[TYPE]) || requirements[TYPE] === ALL))
+
+  return { disciplines, clans, types, hasGoodRequirements }
+}
 
 const useInventoryLibrary = (library, category, compact, type, discipline, clan, onlyNotes) => {
   const usedLibrary = useSnapshot(usedStore)[LIBRARY];
   const wishlist = useSnapshot(inventoryStore)[WISHLIST];
   const { libraryCardBase } = useApp();
 
+  const requirements = {
+    [CLAN]: clan,
+    [DISCIPLINE]: discipline,
+    [TYPE]: type
+  }
+
   const cards = library || {};
   const cardsByType = {};
   const cardsByDiscipline = {};
   const cardsByClan = {};
-  const missingByType = {};
-  const missingByDiscipline = {};
-  const missingByClan = {};
-  const surplusByType = {};
-  const surplusByDiscipline = {};
-  const surplusByClan = {};
+  const filteredCards = {}
+  const missing = {};
+  let missingTotal = 0
+  const surplus = {};
 
   [ALL, ...cardtypeSorted].forEach((i) => {
     cardsByType[i] = {};
-    missingByType[i] = {};
-    surplusByType[i] = {};
   });
 
   [ALL, NONE, ...[...Object.keys(disciplinesList), ...disciplinesExtraList].toSorted(), ...Object.keys(virtuesList)].forEach((i) => {
     cardsByDiscipline[i] = {};
-    missingByDiscipline[i] = {};
-    surplusByDiscipline[i] = {};
   });
 
   [ALL, NONE, ...vampireClansList, ...imbuedClansList].forEach((i) => {
     cardsByClan[i] = {};
-    missingByClan[i] = {};
-    surplusByClan[i] = {};
   });
 
   if (compact) {
-    Object.keys(cards).forEach((card) => {
-      cardsByType[ALL] = {
-        [card]: cards[card],
-      };
-      cardsByDiscipline[ALL] = {
-        [card]: cards[card],
-      };
-      cardsByClan[ALL] = {
-        [card]: cards[card],
-      };
-    });
+    filteredCards = cards
   } else {
     Object.keys(cards)
       .filter((cardid) => (onlyNotes ? cards[cardid].t : true))
       .forEach((cardid) => {
-        const types = libraryCardBase[cardid][TYPE].split("/");
-
-        let disciplines = [NONE];
-        const d = libraryCardBase[cardid][DISCIPLINE];
-        if (d.includes("/")) {
-          disciplines = d.split("/");
-        } else if (d.includes(" & ")) {
-          disciplines = d.split(" & ");
-        } else if (d) {
-          disciplines = [d];
-        }
-
-        let clans = [NONE];
-        const c = libraryCardBase[cardid][CLAN];
-        if (c.includes("/")) {
-          clans = c.split("/");
-        } else if (c) {
-          clans = [c];
-        }
-
-        const wishlistLogic = wishlist[cardid]?.[LOGIC];
-        const wishlistValue = wishlist[cardid]?.[VALUE];
-        let miss;
-        switch (wishlistLogic) {
-          case SURPLUS_FIXED:
-            miss = wishlistValue - cards[cardid].q;
-            break;
-          case SURPLUS_USED:
-            {
-              const softUsedMax = getSoftMax(usedLibrary[SOFT][cardid]);
-              const hardUsedTotal = getHardTotal(usedLibrary[HARD][cardid]);
-              miss = softUsedMax + hardUsedTotal + wishlistValue - cards[cardid].q;
-            }
-            break;
-          default: {
-            const softUsedMax = getSoftMax(usedLibrary[SOFT][cardid]);
-            const hardUsedTotal = getHardTotal(usedLibrary[HARD][cardid]);
-            miss = softUsedMax + hardUsedTotal - cards[cardid].q;
-          }
-        }
-
-        const missEntry = { q: miss, c: cards[cardid].c };
-        const surplusEntry = { q: -miss, c: cards[cardid].c };
+        const { types, disciplines, clans, hasGoodRequirements } = getRequirements(cardid, libraryCardBase, requirements)
+        const miss = getMissing(cardid, usedLibrary, wishlist)
 
         if (
           (category === NOK && miss > 0) ||
           (category === SURPLUS && miss < 0) ||
           [ALL, OK].includes(category)
         ) {
+          if (hasGoodRequirements) {
+            if (miss > 0) missing[cardid] = { q: miss, c: libraryCardBase[cardid] };
+            if (miss < 0) surplus[cardid] = { q: -miss, c: libraryCardBase[cardid] };
+            filteredCards[cardid] = cards[cardid]
+          }
+
           types.forEach((i) => {
             cardsByType[i][cardid] = cards[cardid];
-            if (miss > 0) missingByType[i][cardid] = missEntry;
-            if (miss < 0) surplusByType[i][cardid] = surplusEntry;
           });
 
           disciplines.forEach((i) => {
             cardsByDiscipline[i][cardid] = cards[cardid];
-            if (miss > 0) missingByDiscipline[i][cardid] = missEntry;
-            if (miss < 0) surplusByDiscipline[i][cardid] = surplusEntry;
           });
 
           clans.forEach((i) => {
             cardsByClan[i][cardid] = cards[cardid];
-            if (miss > 0) missingByClan[i][cardid] = missEntry;
-            if (miss < 0) surplusByClan[i][cardid] = surplusEntry;
           });
 
           cardsByType[ALL][cardid] = cards[cardid];
           cardsByDiscipline[ALL][cardid] = cards[cardid];
           cardsByClan[ALL][cardid] = cards[cardid];
         }
-
-        if (miss > 0) {
-          missingByType[ALL][cardid] = missEntry;
-          missingByDiscipline[ALL][cardid] = missEntry;
-          missingByClan[ALL][cardid] = missEntry;
-        }
-
-        if (miss < 0) {
-          surplusByType[ALL][cardid] = surplusEntry;
-          surplusByDiscipline[ALL][cardid] = surplusEntry;
-          surplusByClan[ALL][cardid] = surplusEntry;
-        }
       });
 
     [...Object.keys(usedLibrary[SOFT]), ...Object.keys(usedLibrary[HARD])]
       .filter((cardid) => !(getIsPlaytest(cardid) || cards[cardid]))
       .forEach((cardid) => {
-        const types = libraryCardBase[cardid][TYPE].split("/");
-
-        let disciplines = [NONE];
-        const d = libraryCardBase[cardid][DISCIPLINE];
-        if (d.includes("/")) {
-          disciplines = d.split("/");
-        } else if (d.includes(" & ")) {
-          disciplines = d.split(" & ");
-        } else if (d) {
-          disciplines = [d];
-        }
-
-        let clans = [NONE];
-        const c = libraryCardBase[cardid][CLAN];
-        if (c.includes("/")) {
-          clans = c.split("/");
-        } else if (c) {
-          clans = [c];
-        }
+        const { types, disciplines, clans, hasGoodRequirements } = getRequirements(cardid, libraryCardBase, requirements)
 
         if (![OK, SURPLUS].includes(category) && !onlyNotes) {
           types.forEach((t) => {
@@ -214,139 +156,84 @@ const useInventoryLibrary = (library, category, compact, type, discipline, clan,
           };
         }
 
-        const wishlistLogic = wishlist[cardid]?.[LOGIC];
-        const wishlistValue = wishlist[cardid]?.[VALUE];
-        let miss;
-        switch (wishlistLogic) {
-          case SURPLUS_FIXED:
-            miss = wishlistValue;
-            break;
-          case SURPLUS_USED:
-            {
-              const softUsedMax = getSoftMax(usedLibrary[SOFT]?.[cardid]);
-              const hardUsedTotal = getHardTotal(usedLibrary[HARD]?.[cardid]);
-              miss = softUsedMax + hardUsedTotal + wishlistValue;
-            }
-            break;
-          default: {
-            const softUsedMax = getSoftMax(usedLibrary[SOFT]?.[cardid]);
-            const hardUsedTotal = getHardTotal(usedLibrary[HARD]?.[cardid]);
-            miss = softUsedMax + hardUsedTotal;
-          }
+        if (hasGoodRequirements) {
+          missing[cardid] = { q: getMissing(cardid, usedLibrary, wishlist), c: libraryCardBase[cardid] };
+          filteredCards[cardid] = { q: 0, c: libraryCardBase[cardid]}
         }
-
-        const missEntry = {
-          q: miss,
-          c: libraryCardBase[cardid],
-        };
-
-        types.forEach((t) => {
-          missingByType[t][cardid] = missEntry;
-        });
-        missingByType[ALL][cardid] = missEntry;
-
-        disciplines.forEach((i) => {
-          missingByDiscipline[i][cardid] = missEntry;
-        });
-        missingByDiscipline[ALL][cardid] = missEntry;
-
-        clans.forEach((i) => {
-          missingByClan[i][cardid] = missEntry;
-        });
-        missingByClan[ALL][cardid] = missEntry;
       });
+
+    Object.values(missing).forEach((i) => {
+      missingTotal += i.q;
+    });
   }
 
-  const cardsFilteredByType = {};
-  const cardsFilteredByTypeTotal = {};
-  const cardsFilteredByTypeUnique = {};
-  const cardsFilteredByDiscipline = {};
-  const cardsFilteredByDisciplineTotal = {};
-  const cardsFilteredByDisciplineUnique = {};
-  const cardsFilteredByClan = {};
-  const cardsFilteredByClanTotal = {};
-  const cardsFilteredByClanUnique = {};
-  const missingFiltered = {};
-  let missingFilteredTotal = 0;
+  const cardsFilteredBy = {
+    [TYPE]: {},
+    [DISCIPLINE]: {},
+    [CLAN]: {}
+  };
 
   if (!compact) {
     Object.keys(cardsByType).forEach(i => {
-      cardsFilteredByType[i] = {};
-      cardsFilteredByTypeTotal[i] = 0;
-      cardsFilteredByTypeUnique[i] = 0;
-
+      cardsFilteredBy[TYPE][i] = {
+        [CARDS]: {},
+        [TOTAL]: 0,
+        [UNIQUE]: 0
+      };
       Object.keys(cardsByType[i]).forEach(cardid => {
         if (cardsByClan[clan][cardid] && cardsByDiscipline[discipline][cardid]) {
-          cardsFilteredByType[i][cardid] = cardsByType[i][cardid];
-          cardsFilteredByTypeTotal[i] += cardsByType[i][cardid].q;
+          cardsFilteredBy[TYPE][i][CARDS][cardid] = cardsByType[i][cardid];
+          cardsFilteredBy[TYPE][i][TOTAL] += cardsByType[i][cardid].q;
           if (cardsByType[i][cardid].q) {
-            cardsFilteredByTypeUnique[i] += 1;
+            cardsFilteredBy[TYPE][i][UNIQUE] += 1;
           }
         }
       })
     });
 
     Object.keys(cardsByClan).forEach(i => {
-      cardsFilteredByClan[i] = {};
-      cardsFilteredByClanTotal[i] = 0;
-      cardsFilteredByClanUnique[i] = 0;
-
+      cardsFilteredBy[CLAN][i] = {
+        [CARDS]: {},
+        [TOTAL]: 0,
+        [UNIQUE]: 0
+      };
       Object.keys(cardsByClan[i]).forEach(cardid => {
         if (cardsByType[type][cardid] && cardsByDiscipline[discipline][cardid]) {
-          cardsFilteredByClan[i][cardid] = cardsByClan[i][cardid];
-          cardsFilteredByClanTotal[i] += cardsByClan[i][cardid].q;
+          cardsFilteredBy[CLAN][i][CARDS][cardid] = cardsByClan[i][cardid];
+          cardsFilteredBy[CLAN][i][TOTAL] += cardsByClan[i][cardid].q;
           if (cardsByClan[i][cardid].q) {
-            cardsFilteredByClanUnique[i] += 1;
+            cardsFilteredBy[CLAN][i][UNIQUE] += 1;
           }
         }
       })
     });
 
     Object.keys(cardsByDiscipline).forEach(i => {
-      cardsFilteredByDiscipline[i] = {};
-      cardsFilteredByDisciplineTotal[i] = 0;
-      cardsFilteredByDisciplineUnique[i] = 0;
-
+      cardsFilteredBy[DISCIPLINE][i] = {
+        [CARDS]: {},
+        [TOTAL]: 0,
+        [UNIQUE]: 0
+      };
       Object.keys(cardsByDiscipline[i]).forEach(cardid => {
-        if (cardsByType[type][cardid] && cardsByClan[clan][cardid]) {
-          cardsFilteredByDiscipline[i][cardid] = cardsByDiscipline[i][cardid];
-          cardsFilteredByDisciplineTotal[i] += cardsByDiscipline[i][cardid].q;
+        if (cardsByClan[clan][cardid] && cardsByType[type][cardid]) {
+          cardsFilteredBy[DISCIPLINE][i][CARDS][cardid] = cardsByDiscipline[i][cardid];
+          cardsFilteredBy[DISCIPLINE][i][TOTAL] += cardsByDiscipline[i][cardid].q;
           if (cardsByDiscipline[i][cardid].q) {
-            cardsFilteredByDisciplineUnique[i] += 1;
+            cardsFilteredBy[DISCIPLINE][i][UNIQUE] += 1;
           }
         }
       })
     });
-
-    Object.keys(missingByType[type])
-      .filter((card) => missingByDiscipline[discipline][card] && missingByClan[clan][card] )
-      .forEach((cardid) => {
-        missingFiltered[cardid] = missingByType[type][cardid];
-        missingFilteredTotal += missingByType[type][cardid].q;
-      });
   }
 
   return {
     cardsByType,
-    missingByType,
-    surplusByType,
     cardsByDiscipline,
-    missingByDiscipline,
-    surplusByDiscipline,
     cardsByClan,
-    missingByClan,
-    surplusByClan,
-    cardsFilteredByType,
-    cardsFilteredByTypeTotal,
-    cardsFilteredByTypeUnique,
-    cardsFilteredByDiscipline,
-    cardsFilteredByDisciplineTotal,
-    cardsFilteredByDisciplineUnique,
-    cardsFilteredByClan,
-    cardsFilteredByClanTotal,
-    cardsFilteredByClanUnique,
-    missingFiltered,
-    missingFilteredTotal,
+    cardsFilteredBy,
+    filteredCards,
+    missing,
+    missingTotal,
   };
 };
 

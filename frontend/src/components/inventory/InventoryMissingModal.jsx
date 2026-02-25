@@ -37,7 +37,7 @@ const InventoryMissingModal = ({
   const [showCryptOnMobile, setShowCryptOnMobile] = useState(true);
   const [showMissAll, setShowMissAll] = useState();
 
-  // TODO: add Library Clan support
+  // TODO: refactor with new useInventory
 
   const missingCrypt = isSurplus
     ? surplusByCryptClan
