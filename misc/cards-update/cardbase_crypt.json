@@ -169,9 +169,6 @@
             },
             "NB3C":{
                 "PS":"1"
-            },
-            "playtest":{
-                "NSal":1
             }
         },
         "text":"Independent: Abaddon gets 1 optional maneuver and 1 optional press each combat.",
@@ -8040,9 +8037,6 @@
         "set":{
             "NB3C":{
                 "PS":"1"
-            },
-            "playtest":{
-                "NSal":1
             }
         },
         "text":"Independent: Barachiel can enter combat with a minion as a (D) action.",
@@ -12904,9 +12898,6 @@
             "2P":{
                 "C":true,
                 "Tz":2
-            },
-            "playtest":{
-                "NTz":1
             }
         },
         "text":"Anarch.",
@@ -16123,9 +16114,6 @@
         "set":{
             "NB3C":{
                 "PS":"1"
-            },
-            "playtest":{
-                "NSal":1
             }
         },
         "text":"Independent: In combat, strike cards cost the opposing minion +1 blood or life. +1 stealth.",
@@ -16289,9 +16277,6 @@
             "2P":{
                 "C":true,
                 "R":2
-            },
-            "playtest":{
-                "NR":1
             }
         },
         "text":"Anarch: Rescuing a vampire from torpor costs Doc Martina -1 blood.",
@@ -25497,9 +25482,6 @@
         "set":{
             "NB3C":{
                 "PR":"1"
-            },
-            "playtest":{
-                "NR":1
             }
         },
         "text":"Anarch: +1 intercept.",
@@ -39341,9 +39323,6 @@
             "2P":{
                 "C":true,
                 "R":1
-            },
-            "playtest":{
-                "NR":1
             }
         },
         "text":"Anarch: During your discard phase, you can move an animal retainer from a vampire you control to another vampire you control.",
@@ -40446,9 +40425,6 @@
         "set":{
             "NB3C":{
                 "PT":"2"
-            },
-            "playtest":{
-                "NTz":2
             }
         },
         "text":"Anarch: Allies and retainers requiring a Tzimisce cost M\u00e1ddji -1 blood or pool.",
@@ -40742,9 +40718,6 @@
             "2P":{
                 "C":true,
                 "Sal":3
-            },
-            "playtest":{
-                "NSal":1
             }
         },
         "text":"Independent.",
@@ -47704,9 +47677,6 @@
             "2P":{
                 "C":true,
                 "Tz":2
-            },
-            "playtest":{
-                "NTz":1
             }
         },
         "text":"Anarch: While you control no locations, Neserian gets -1 bleed. While you control 1 or more locations, Neserian gets +1 vote.",
@@ -48384,9 +48354,6 @@
         "set":{
             "NB3C":{
                 "PR":"1"
-            },
-            "playtest":{
-                "NR":1
             }
         },
         "text":"Anarch: Noluthando inflicts +1 damage with ranged strikes (even at close range).",
@@ -49363,9 +49330,6 @@
             "2P":{
                 "C":true,
                 "Sal":2
-            },
-            "playtest":{
-                "NSal":1
             }
         },
         "text":"Independent: Once each combat involving a vampire you control, Opikun can burn 1 blood to prevent up to 2 non-aggravated damage to that vampire from the opposing minion's strike.",
@@ -54199,9 +54163,6 @@
             "2P":{
                 "C":true,
                 "R":2
-            },
-            "playtest":{
-                "NR":1
             }
         },
         "text":"Anarch.",
@@ -55369,9 +55330,6 @@
         "set":{
             "NB3C":{
                 "PT":"1"
-            },
-            "playtest":{
-                "NTz":1
             }
         },
         "text":"Anarch: Saankal\u00e1xt can steal an equipment as a (D) action that costs 1 blood.",
@@ -55652,9 +55610,6 @@
             "2P":{
                 "C":true,
                 "Sal":2
-            },
-            "playtest":{
-                "NSal":1
             }
         },
         "text":"Independent: Sakhar can search your library for an equipment card, reveal it and move it to your hand as a +1 stealth action.",
@@ -62826,9 +62781,6 @@
             },
             "NB3C":{
                 "PR":"1"
-            },
-            "playtest":{
-                "NR":1
             }
         },
         "text":"Anarch.",
@@ -66347,9 +66299,6 @@
             "2P":{
                 "C":true,
                 "Tz":2
-            },
-            "playtest":{
-                "NTz":1
             }
         },
         "text":"Anarch.",
