@@ -167,6 +167,9 @@
             "V5C":{
                 "PSal":"2"
             },
+            "NB3C":{
+                "PS":"1"
+            },
             "playtest":{
                 "NSal":1
             }
@@ -8011,6 +8014,41 @@
         "title":"",
         "twd":71
     },
+    "201781":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Gin\u00e9s Qui\u00f1onero"
+        ],
+        "ascii":"Barachiel",
+        "banned":"",
+        "capacity":7,
+        "clan":"Salubri",
+        "disciplines":{
+            "Animalism":1,
+            "Auspex":2,
+            "Dominate":2,
+            "Fortitude":2
+        },
+        "group":"7",
+        "id":201781,
+        "name":"Barachiel",
+        "new":false,
+        "path":"",
+        "rulings":[],
+        "sect":"Independent",
+        "set":{
+            "NB3C":{
+                "PS":"1"
+            },
+            "playtest":{
+                "NSal":1
+            }
+        },
+        "text":"Independent: Barachiel can enter combat with a minion as a (D) action.",
+        "title":"",
+        "twd":0
+    },
     "200166":{
         "adv":"",
         "aka":"",
@@ -12860,6 +12898,9 @@
             "V5C":{
                 "PTz":"1"
             },
+            "NB3C":{
+                "PT":"1"
+            },
             "2P":{
                 "C":true,
                 "Tz":2
@@ -16055,6 +16096,42 @@
         "title":"",
         "twd":8
     },
+    "201782":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Noora Hirvonen"
+        ],
+        "ascii":"Djeneba",
+        "banned":"",
+        "capacity":9,
+        "clan":"Salubri",
+        "disciplines":{
+            "Obfuscate":1,
+            "Animalism":2,
+            "Auspex":2,
+            "Dominate":2,
+            "Fortitude":2
+        },
+        "group":"7",
+        "id":201782,
+        "name":"Djeneba",
+        "new":false,
+        "path":"",
+        "rulings":[],
+        "sect":"Independent",
+        "set":{
+            "NB3C":{
+                "PS":"1"
+            },
+            "playtest":{
+                "NSal":1
+            }
+        },
+        "text":"Independent: In combat, strike cards cost the opposing minion +1 blood or life. +1 stealth.",
+        "title":"",
+        "twd":0
+    },
     "200348":{
         "adv":"",
         "aka":"",
@@ -16204,6 +16281,9 @@
         "sect":"Anarch",
         "set":{
             "V5C":{
+                "PR":"1"
+            },
+            "NB3C":{
                 "PR":"1"
             },
             "2P":{
@@ -25390,6 +25470,41 @@
         "text":"Camarilla: Camarilla vampires must burn 1 blood to attempt to block Hafsa. Banu Haqim get +1 bleed against you. Blood cursed.",
         "title":"",
         "twd":26
+    },
+    "201783":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Francisco T\u00e9bar"
+        ],
+        "ascii":"Hafthor Thorsteinsson",
+        "banned":"",
+        "capacity":7,
+        "clan":"Ravnos",
+        "disciplines":{
+            "Potence":1,
+            "Animalism":2,
+            "Obfuscate":2,
+            "Presence":2
+        },
+        "group":"7",
+        "id":201783,
+        "name":"Hafthor Thorsteinsson",
+        "new":false,
+        "path":"",
+        "rulings":[],
+        "sect":"Anarch",
+        "set":{
+            "NB3C":{
+                "PR":"1"
+            },
+            "playtest":{
+                "NR":1
+            }
+        },
+        "text":"Anarch: +1 intercept.",
+        "title":"",
+        "twd":0
     },
     "200560":{
         "adv":"",
@@ -39220,6 +39335,9 @@
             "V5C":{
                 "PR":"1"
             },
+            "NB3C":{
+                "PR":"1"
+            },
             "2P":{
                 "C":true,
                 "R":1
@@ -40302,6 +40420,41 @@
         "title":"justicar",
         "twd":15
     },
+    "201784":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Gin\u00e9s Qui\u00f1onero"
+        ],
+        "ascii":"Maddji, Mistress of Szlachtas",
+        "banned":"",
+        "capacity":7,
+        "clan":"Tzimisce",
+        "disciplines":{
+            "Fortitude":1,
+            "Animalism":2,
+            "Dominate":2,
+            "Protean":2
+        },
+        "group":"6",
+        "id":201784,
+        "name":"M\u00e1ddji, Mistress of Szlachtas",
+        "new":false,
+        "path":"",
+        "rulings":[],
+        "sect":"Anarch",
+        "set":{
+            "NB3C":{
+                "PT":"2"
+            },
+            "playtest":{
+                "NTz":2
+            }
+        },
+        "text":"Anarch: Allies and retainers requiring a Tzimisce cost M\u00e1ddji -1 blood or pool.",
+        "title":"",
+        "twd":0
+    },
     "200897":{
         "adv":"",
         "aka":"",
@@ -40582,6 +40735,9 @@
         "set":{
             "V5C":{
                 "PSal":"2"
+            },
+            "NB3C":{
+                "PS":"1"
             },
             "2P":{
                 "C":true,
@@ -47542,6 +47698,9 @@
             "V5C":{
                 "PTz":"1"
             },
+            "NB3C":{
+                "PT":"1"
+            },
             "2P":{
                 "C":true,
                 "Tz":2
@@ -48197,6 +48356,42 @@
         "text":"Laibon magaji: Lasombra cannot cast votes or ballots in referendums called by Nkule. While he is ready, if you burn the Edge for a vote, you gain an additional 2 votes.",
         "title":"magaji",
         "twd":21
+    },
+    "201785":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Mark Kelly"
+        ],
+        "ascii":"Noluthando",
+        "banned":"",
+        "capacity":8,
+        "clan":"Ravnos",
+        "disciplines":{
+            "Auspex":1,
+            "Celerity":1,
+            "Animalism":2,
+            "Obfuscate":2,
+            "Presence":2
+        },
+        "group":"7",
+        "id":201785,
+        "name":"Noluthando",
+        "new":false,
+        "path":"",
+        "rulings":[],
+        "sect":"Anarch",
+        "set":{
+            "NB3C":{
+                "PR":"1"
+            },
+            "playtest":{
+                "NR":1
+            }
+        },
+        "text":"Anarch: Noluthando inflicts +1 damage with ranged strikes (even at close range).",
+        "title":"",
+        "twd":0
     },
     "201608":{
         "adv":"",
@@ -49161,6 +49356,9 @@
         "set":{
             "V5C":{
                 "PSal":"1"
+            },
+            "NB3C":{
+                "PS":"1"
             },
             "2P":{
                 "C":true,
@@ -53995,6 +54193,9 @@
             "V5C":{
                 "PR":"1"
             },
+            "NB3C":{
+                "PR":"1"
+            },
             "2P":{
                 "C":true,
                 "R":2
@@ -55142,6 +55343,41 @@
         "title":"bishop",
         "twd":4
     },
+    "201786":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Sol Devia"
+        ],
+        "ascii":"Saankalaxt",
+        "banned":"",
+        "capacity":7,
+        "clan":"Tzimisce",
+        "disciplines":{
+            "Auspex":1,
+            "Animalism":2,
+            "Dominate":2,
+            "Protean":2
+        },
+        "group":"6",
+        "id":201786,
+        "name":"Saankal\u00e1xt",
+        "new":false,
+        "path":"",
+        "rulings":[],
+        "sect":"Anarch",
+        "set":{
+            "NB3C":{
+                "PT":"1"
+            },
+            "playtest":{
+                "NTz":1
+            }
+        },
+        "text":"Anarch: Saankal\u00e1xt can steal an equipment as a (D) action that costs 1 blood.",
+        "title":"",
+        "twd":0
+    },
     "201217":{
         "adv":"",
         "aka":"",
@@ -55409,6 +55645,9 @@
         "set":{
             "V5C":{
                 "PSal":"1"
+            },
+            "NB3C":{
+                "PS":"1"
             },
             "2P":{
                 "C":true,
@@ -62585,6 +62824,9 @@
             "V5C":{
                 "PR":"1"
             },
+            "NB3C":{
+                "PR":"1"
+            },
             "playtest":{
                 "NR":1
             }
@@ -66098,6 +66340,9 @@
         "set":{
             "V5C":{
                 "PTz":"1"
+            },
+            "NB3C":{
+                "PT":"1"
             },
             "2P":{
                 "C":true,

@@ -1427,6 +1427,9 @@
             "FB":{
                 "PN":"6"
             },
+            "NB3C":{
+                "PR":"3"
+            },
             "playtest":{
                 "NR":3
             }
@@ -1560,11 +1563,14 @@
             "LotN":{
                 "R":true
             },
+            "NB3C":{
+                "PR":"1"
+            },
             "playtest":{
                 "NR":1
             }
         },
-        "text":"Weapon. Gun.\n2R damage each strike, with an optional maneuver each combat. When bearer strikes with this gun, he or she gets an optional additional strike (limited) this round, only usable to strike with this gun.",
+        "text":"Weapon: gun.\nStrike: 2R damage, with 1 optional maneuver each combat. After the bearer strikes with this gun, they get 1 optional additional strike (limited), only usable to strike with this gun, this round.",
         "twd":17,
         "type":"Equipment"
     },
@@ -3448,6 +3454,33 @@
         "twd":83,
         "type":"Master"
     },
+    "102349":{
+        "aka":"",
+        "artist":[
+            "Gin\u00e9s Qui\u00f1onero"
+        ],
+        "ascii":"Angel's Gift",
+        "banned":"",
+        "blood":0,
+        "burn":"",
+        "clan":"Salubri",
+        "conviction":0,
+        "discipline":"",
+        "id":102349,
+        "name":"Angel's Gift",
+        "path":"",
+        "pool":0,
+        "requirement":"",
+        "rulings":[],
+        "set":{
+            "NB3C":{
+                "PS":"4"
+            }
+        },
+        "text":"Only usable before range is determined. A vampire can play only one Angel's Gift each round.\n[COMBAT] Equip this vampire with a melee weapon from your hand (requirements and cost apply as normal).\n[COMBAT] This round, this vampire gets 1 optional maneuver, only usable to get to close range.",
+        "twd":0,
+        "type":"Combat"
+    },
     "100068":{
         "aka":"",
         "artist":[
@@ -3765,6 +3798,33 @@
         "twd":322,
         "type":"Event"
     },
+    "102350":{
+        "aka":"",
+        "artist":[
+            "Raquel Cornejo"
+        ],
+        "ascii":"Anticipation",
+        "banned":"",
+        "blood":0,
+        "burn":"",
+        "clan":"Salubri",
+        "conviction":0,
+        "discipline":"Auspex",
+        "id":102350,
+        "name":"Anticipation",
+        "path":"",
+        "pool":0,
+        "requirement":"",
+        "rulings":[],
+        "set":{
+            "NB3C":{
+                "PS":"2"
+            }
+        },
+        "text":"[aus] Strike: hand strike or use a melee weapon strike. This strike is at +2 damage.\n[AUS] Burn 1 blood to cancel the opposing minion's strike card as it is played, and its cost is not paid (the minion chooses a strike again).",
+        "twd":0,
+        "type":"Combat"
+    },
     "100075":{
         "aka":"",
         "artist":[
@@ -4019,6 +4079,9 @@
             },
             "SoB":{
                 "":"1"
+            },
+            "NB3C":{
+                "PR":"1"
             },
             "playtest":{
                 "NR":1
@@ -5387,11 +5450,14 @@
             "KoT":{
                 "U":true
             },
+            "NB3C":{
+                "PR":"1"
+            },
             "playtest":{
                 "NR":1
             }
         },
-        "text":"Weapon: gun.\nStrike: 4R damage, with an optional maneuver each combat.",
+        "text":"Weapon: gun.\nStrike: 4R damage, with 1 optional maneuver each combat.",
         "twd":63,
         "type":"Equipment"
     },
@@ -7325,11 +7391,14 @@
             "25th":{
                 "":"1"
             },
+            "NB3C":{
+                "PT":"2"
+            },
             "playtest":{
                 "NTz":2
             }
         },
-        "text":"[ani][pro] +1 stealth. If this vampire is blocked, they can prevent 1 damage in the resulting combat.\n[ANI][PRO] Only usable as a non-bleed action is announced. Vampires cannot block this action.",
+        "text":"[ani][pro] +1 stealth. If this vampire is blocked, they can prevent 1 damage during the resulting combat.\n[ANI][PRO] Only usable as a non-bleed action is announced. Vampires cannot block this action.",
         "twd":45,
         "type":"Action Modifier"
     },
@@ -8381,6 +8450,33 @@
         "text":"+1 stealth action. Requires a ready Black Hand vampire.\nUnlock a younger Black Hand vampire or (D) burn any Gehenna card in play. Any \"Do not replace until\" directive on that card is ended (and the controller draws to replace it, if it hadn't been replaced yet).",
         "twd":10,
         "type":"Action"
+    },
+    "102351":{
+        "aka":"",
+        "artist":[
+            "Mitch Mueller"
+        ],
+        "ascii":"Black Market Cache",
+        "banned":"",
+        "blood":0,
+        "burn":"",
+        "clan":"Ravnos",
+        "conviction":0,
+        "discipline":"",
+        "id":102351,
+        "name":"Black Market Cache",
+        "path":"",
+        "pool":0,
+        "requirement":"",
+        "rulings":[],
+        "set":{
+            "NB3C":{
+                "PR":"1"
+            }
+        },
+        "text":"Unique location.\nSearch your library (shuffle afterward) for up to three non-unique equipment cards and put them on this location, face up and out of play. If you would draw a card from your library, you can draw one of those cards instead. If this location has no cards on it, burn it.",
+        "twd":0,
+        "type":"Master"
     },
     "100169":{
         "aka":"",
@@ -9898,6 +9994,9 @@
             },
             "NB3":{
                 "PL":"2"
+            },
+            "NB3C":{
+                "PT":"2"
             },
             "SV5":{
                 "PCathari":"3",
@@ -14598,6 +14697,9 @@
             "NB":{
                 "PN":"2"
             },
+            "NB3C":{
+                "PR":"3"
+            },
             "2P":{
                 "C":true,
                 "G":4,
@@ -16150,6 +16252,9 @@
             },
             "SV5":{
                 "PDeath":"1"
+            },
+            "NB3C":{
+                "PT":"1"
             },
             "playtest":{
                 "NTz":1
@@ -17838,11 +17943,14 @@
             "V5C":{
                 "PR":"1"
             },
+            "NB3C":{
+                "PT":"1"
+            },
             "playtest":{
                 "NTz":1
             }
         },
-        "text":"Unique location.\nAn Anarch can burn 1 blood once as they announce a bleed action to get +1 bleed for that action.",
+        "text":"Unique location.\nAn Anarch can burn 1 blood once as they announce a bleed action to get +1 bleed during that action.",
         "twd":210,
         "type":"Master"
     },
@@ -18115,11 +18223,14 @@
             "V5A":{
                 "PMin":"1"
             },
+            "NB3C":{
+                "PR":"1"
+            },
             "playtest":{
                 "NR":1
             }
         },
-        "text":"Unique.\nThe bearer gets -2 stealth when bleeding. This vampire can bleed as a (D) action that costs 1 blood; this action gets +3 bleed if the target Methuselah does not control a ready unlocked minion.",
+        "text":"Unique.\nThe bearer gets -2 stealth during bleed actions. This vampire can bleed as a (D) action that costs 1 blood; this action gets +3 bleed if the target Methuselah controls no ready unlocked minions.",
         "twd":73,
         "type":"Equipment"
     },
@@ -20247,6 +20358,33 @@
         "twd":6,
         "type":"Master"
     },
+    "102352":{
+        "aka":"",
+        "artist":[
+            "Mar\u00eda Lor\u00e9n"
+        ],
+        "ascii":"Contraband",
+        "banned":"",
+        "blood":0,
+        "burn":"",
+        "clan":"Ravnos",
+        "conviction":0,
+        "discipline":"Obfuscate",
+        "id":102352,
+        "name":"Contraband",
+        "path":"",
+        "pool":0,
+        "requirement":"",
+        "rulings":[],
+        "set":{
+            "NB3C":{
+                "PR":"3"
+            }
+        },
+        "text":"Only usable before range is determined. A vampire can play only one Contraband each combat.\n[obf] Equip this vampire with a non-unique equipment from your hand (requirements and cost apply as normal).\n[OBF] As above, and this vampire can pay up to half the cost rounded down of that equipment with their blood.",
+        "twd":0,
+        "type":"Combat"
+    },
     "100420":{
         "aka":"",
         "artist":[
@@ -22313,11 +22451,14 @@
             "TR":{
                 "R":true
             },
+            "NB3C":{
+                "PT":"1"
+            },
             "playtest":{
                 "NTz":1
             }
         },
-        "text":"Unique mortal with 3 life. Requires an anarch.\nWhenever this anarch is blocked, he or she may burn a life from the Sons to cancel combat and continue the action as if unblocked. The Sons inflict 1R damage each round of combat during normal strike resolution.",
+        "text":"Unique mortal with 3 life. Requires an Anarch.\nIf this Anarch is blocked, they can burn 1 life from this retainer before block resolution to lock the blocking minion and continue the action as if unblocked. This retainer inflicts 1R damage on the opposing minion each round of combat during normal strike resolution.",
         "twd":21,
         "type":"Retainer"
     },
@@ -23625,11 +23766,14 @@
             "HttB":{
                 "PSal":"2"
             },
+            "NB3C":{
+                "PS":"1"
+            },
             "playtest":{
                 "NSal":1
             }
         },
-        "text":"[for] If this action is blocked, all damage inflicted to vampires in the resulting combat is aggravated. Any vampire attempting to block may now choose not to block.\n[FOR] As above, but vampires attempting to block cannot back out.",
+        "text":"[for] If this action is blocked, all damage inflicted on vampires during the resulting combat is aggravated. If a vampire is currently attempting to block, they can cancel their block attempt.\n[FOR] As above, but without the option to cancel their block attempt.",
         "twd":14,
         "type":"Action Modifier"
     },
@@ -24354,6 +24498,9 @@
             "NB2":{
                 "PG":"2"
             },
+            "NB3C":{
+                "PR":"5"
+            },
             "2P":{
                 "C":true,
                 "G":4,
@@ -24541,6 +24688,9 @@
             },
             "NB3":{
                 "PL":"3"
+            },
+            "NB3C":{
+                "PT":"2"
             },
             "SV5":{
                 "PPower":"5"
@@ -27124,6 +27274,33 @@
         "twd":40,
         "type":"Retainer"
     },
+    "102353":{
+        "aka":"",
+        "artist":[
+            "Peter Scholtz"
+        ],
+        "ascii":"Dogged Pursuit",
+        "banned":"",
+        "blood":0,
+        "burn":"",
+        "clan":"Ravnos",
+        "conviction":0,
+        "discipline":"Animalism",
+        "id":102353,
+        "name":"Dogged Pursuit",
+        "path":"",
+        "pool":0,
+        "requirement":"",
+        "rulings":[],
+        "set":{
+            "NB3C":{
+                "PR":"3"
+            }
+        },
+        "text":"Only usable by a locked vampire.\n[ani] This vampire unlocks and attempts to block. If this vampire does not block this action, lock them after action resolution.\n[ANI] As above, and if this vampire does not block this action, put this card on them after action resolution. This vampire can burn this card to get +1 intercept. A vampire can have only one Dogged Pursuit.",
+        "twd":0,
+        "type":"Reaction"
+    },
     "100569":{
         "aka":"",
         "artist":[
@@ -28873,6 +29050,9 @@
             },
             "V5C":{
                 "PTz":"3"
+            },
+            "NB3C":{
+                "PT":"2"
             },
             "2P":{
                 "C":true,
@@ -32808,6 +32988,9 @@
             "NB3":{
                 "PH":"2"
             },
+            "NB3C":{
+                "PS":"3"
+            },
             "SV5":{
                 "PCathari":"3"
             },
@@ -33801,6 +33984,10 @@
             "NB":{
                 "PN":"1"
             },
+            "NB3C":{
+                "PR":"1",
+                "PT":"1"
+            },
             "2P":{
                 "C":true,
                 "BH":1,
@@ -34041,11 +34228,14 @@
             "Third":{
                 "R":true
             },
+            "NB3C":{
+                "PT":"1"
+            },
             "playtest":{
                 "NTz":1
             }
         },
-        "text":"+1 stealth action.\n[dom] (D) The acting vampire takes control of a retainer controlled by another vampire.\n[DOM] (D) Take control of an ally controlled by another Methuselah.",
+        "text":"+1 stealth action.\n[dom] (D) Steal a retainer controlled by another vampire.\n[DOM] (D) Steal an ally controlled by another Methuselah.",
         "twd":205,
         "type":"Action"
     },
@@ -34475,11 +34665,14 @@
             "V5C":{
                 "PSal":"4"
             },
+            "NB3C":{
+                "PS":"3"
+            },
             "playtest":{
                 "NSal":3
             }
         },
-        "text":"[dom] (D) Bleed with +2 bleed.\n[DOM] As above, and if the bleed is successful, add 2 blood to a younger vampire you control or in your uncontrolled region.",
+        "text":"[dom] (D) Bleed with +2 bleed.\n[DOM] As above, and if the bleed is successful (for 1 or more), add 2 blood to a younger vampire you control or in your uncontrolled region.",
         "twd":8,
         "type":"Action"
     },
@@ -34865,6 +35058,9 @@
             },
             "POD":{
                 "DTC":true
+            },
+            "NB3C":{
+                "PT":"1"
             },
             "playtest":{
                 "NTz":1
@@ -35826,8 +36022,8 @@
     "100742":{
         "aka":"Flame Thrower",
         "artist":[
-            "Matt Wilson",
-            "Brian Snoddy"
+            "Brian Snoddy",
+            "Matt Wilson"
         ],
         "ascii":"Flamethrower",
         "banned":"",
@@ -35861,11 +36057,14 @@
             "Third":{
                 "U":true
             },
+            "NB3C":{
+                "PR":"1"
+            },
             "playtest":{
                 "NR":1
             }
         },
-        "text":"Weapon.\n2R aggravated damage each strike.",
+        "text":"Weapon.\nStrike: 2R aggravated damage.",
         "twd":30,
         "type":"Equipment"
     },
@@ -36249,6 +36448,33 @@
         "text":"[vic] Strike: 1 damage and put this card on the opposing minion. The attached minion gets -1 stealth. The attached minion can burn this card as a +1 stealth action.\n[VIC] As above, but the attached minion minion gets -2 stealth.",
         "twd":0,
         "type":"Combat"
+    },
+    "102354":{
+        "aka":"",
+        "artist":[
+            "Konrad Wa\u015bci\u0144ski"
+        ],
+        "ascii":"Fleshforge Chamber",
+        "banned":"",
+        "blood":0,
+        "burn":"",
+        "clan":"Tzimisce",
+        "conviction":0,
+        "discipline":"",
+        "id":102354,
+        "name":"Fleshforge Chamber",
+        "path":"",
+        "pool":0,
+        "requirement":"",
+        "rulings":[],
+        "set":{
+            "NB3C":{
+                "PT":"1"
+            }
+        },
+        "text":"Unique location.\nDuring your master phase, you can put a ghoul (ally or retainer) from your hand on this location, face up and out of play. Tzimisce you control can play cards from this location as if from your hand (requirements and cost apply as normal).",
+        "twd":0,
+        "type":"Master"
     },
     "100751":{
         "aka":"",
@@ -36899,11 +37125,14 @@
             "KoT":{
                 "C":true
             },
+            "NB3C":{
+                "PS":"2"
+            },
             "playtest":{
                 "NSal":2
             }
         },
-        "text":"[for] Only usable by a locked vampire immediately after he or she blocks (play after combat, if any). Unlock this reacting vampire.\n[FOR] Only usable by a locked vampire during an action directed at you (or something you control). Unlock this vampire.",
+        "text":"[for] Only usable by a locked vampire who has blocked, after block resolution. Unlock this vampire.\n[FOR] Only usable by a locked vampire during an action directed at you (or a card you control). Unlock this vampire.",
         "twd":12,
         "type":"Reaction"
     },
@@ -37354,11 +37583,14 @@
             "V5C":{
                 "PTz":"3"
             },
+            "NB3C":{
+                "PT":"2"
+            },
             "playtest":{
                 "NTz":2
             }
         },
-        "text":"[pro] Strike: dodge.\n[PRO] Strike: combat ends. After combat ends, if this vampire was blocked while performing an action, they can burn 1 blood to continue the action with +1 stealth as if unblocked, even if stealth is not yet needed. A vampire can play only one Form of Mist at superior each action.",
+        "text":"[pro] Strike: dodge.\n[PRO] Strike: combat ends. After combat ends, if this vampire was blocked, they can burn 1 blood to continue the action with +1 stealth as if unblocked, even if stealth is not yet needed. A vampire can play only one Form of Mist at superior each action.",
         "twd":442,
         "type":"Combat"
     },
@@ -37403,6 +37635,9 @@
             },
             "V5C":{
                 "PTz":"2"
+            },
+            "NB3C":{
+                "PT":"3"
             },
             "2P":{
                 "C":true,
@@ -38202,6 +38437,9 @@
             "SV5":{
                 "PCathari":"4",
                 "PPower":"4"
+            },
+            "NB3C":{
+                "PS":"4"
             },
             "playtest":{
                 "NSal":4
@@ -40664,6 +40902,33 @@
         "twd":8,
         "type":"Action"
     },
+    "102355":{
+        "aka":"",
+        "artist":[
+            "Gin\u00e9s Qui\u00f1onero"
+        ],
+        "ascii":"Go-getter",
+        "banned":"",
+        "blood":0,
+        "burn":"",
+        "clan":"Ravnos",
+        "conviction":0,
+        "discipline":"Obfuscate",
+        "id":102355,
+        "name":"Go-getter",
+        "path":"",
+        "pool":0,
+        "requirement":"",
+        "rulings":[],
+        "set":{
+            "NB3C":{
+                "PR":"4"
+            }
+        },
+        "text":"Not usable during a bleed action.\n[obf] +1 stealth.\n[OBF] Only usable after resolution of a blocked action. This vampire burns 1 blood to continue the action as if unblocked.",
+        "twd":0,
+        "type":"Action Modifier"
+    },
     "100841":{
         "aka":"",
         "artist":[
@@ -40747,6 +41012,9 @@
             },
             "SoB":{
                 "":"1"
+            },
+            "NB3C":{
+                "PS":"1"
             },
             "playtest":{
                 "NSal":1
@@ -40919,6 +41187,9 @@
             },
             "SV5":{
                 "PDeath":"4"
+            },
+            "NB3C":{
+                "PT":"4"
             },
             "playtest":{
                 "NTz":4
@@ -42069,11 +42340,14 @@
             "V5C":{
                 "PSal":"1"
             },
+            "NB3C":{
+                "PS":"1"
+            },
             "playtest":{
                 "NSal":1
             }
         },
-        "text":"Put this card on a ready vampire you control. This vampire gets +1 intercept during bleed actions against you. This vampire can prevent 1 damage each combat. Burn this card if this vampire is in torpor.",
+        "text":"Put this card on a ready vampire you control. This vampire gets +1 intercept during bleed actions directed at you. This vampire can prevent 1 damage each combat. If this vampire is in torpor, burn this card.",
         "twd":219,
         "type":"Master"
     },
@@ -44696,11 +44970,14 @@
             "LotN":{
                 "R":true
             },
+            "NB3C":{
+                "PR":"1"
+            },
             "playtest":{
                 "NR":1
             }
         },
-        "text":"[obf] [COMBAT] Cancel a combat card that requires Auspex [aus] as it is played. No cost is paid.\n[OBF] [ACTION MODIFIER] Cancel a reaction card that requires Auspex as it is played. No cost is paid.",
+        "text":"[obf] [COMBAT] Cancel a combat card requiring Auspex [aus] as it is played, and its cost is not paid.\n[OBF] [ACTION MODIFIER] Cancel a reaction card requiring Auspex as it is played, and its cost is not paid.",
         "twd":79,
         "type":"Action Modifier/Combat"
     },
@@ -45785,6 +46062,33 @@
         },
         "text":"[cel][tha] (D) Enter combat with a minion. This acting vampire gets 1 optional press during that combat.\n[CEL][THA] As above, and the opposing minion cannot strike: combat ends during the first round of that combat.",
         "twd":33,
+        "type":"Action"
+    },
+    "102356":{
+        "aka":"",
+        "artist":[
+            "Francisco T\u00e9bar"
+        ],
+        "ascii":"Hunting the Beast",
+        "banned":"",
+        "blood":0,
+        "burn":"",
+        "clan":"Salubri",
+        "conviction":0,
+        "discipline":"Auspex",
+        "id":102356,
+        "name":"Hunting the Beast",
+        "path":"",
+        "pool":0,
+        "requirement":"",
+        "rulings":[],
+        "set":{
+            "NB3C":{
+                "PS":"4"
+            }
+        },
+        "text":"+1 stealth action.\n[aus] (D) Enter combat with a vampire.\n[AUS] As above, and at the end of that combat, if this vampire is ready and the opposing vampire is not, add 2 blood to a Salubri in your uncontrolled region.",
+        "twd":0,
         "type":"Action"
     },
     "102329":{
@@ -51706,11 +52010,14 @@
             "POD":{
                 "DTC":true
             },
+            "NB3C":{
+                "PR":"1"
+            },
             "playtest":{
                 "NR":1
             }
         },
-        "text":"Unique.\nPut this card in play. Lock to give a Ravnos with capacity 5 or more you control +1 intercept.",
+        "text":"Unique.\nPut this card in play. You can lock this card to give a Ravnos with capacity 5 or more you control +1 intercept.",
         "twd":7,
         "type":"Master"
     },
@@ -60965,6 +61272,9 @@
             "NB3":{
                 "PH":"2"
             },
+            "NB3C":{
+                "PS":"2"
+            },
             "SV5":{
                 "PCathari":"2"
             },
@@ -62204,11 +62514,14 @@
             "V5C":{
                 "PR":"4"
             },
+            "NB3C":{
+                "PR":"2"
+            },
             "playtest":{
                 "NR":2
             }
         },
-        "text":"[obf][pre] Reduce the acting minion's stealth to 0. (The minion can still increase their stealth.)\n[OBF][PRE] As above, and this vampire can strike: combat ends during the first round of the resulting combat if they block.",
+        "text":"[obf][pre] Reduce the acting minion's stealth to 0. (The acting minion can still increase their stealth.)\n[OBF][PRE] As above, and if this vampire blocks, they can strike: combat ends during the first round of the resulting combat.",
         "twd":6,
         "type":"Reaction"
     },
@@ -63443,6 +63756,9 @@
             "V5C":{
                 "PTz":"4"
             },
+            "NB3C":{
+                "PT":"2"
+            },
             "2P":{
                 "C":true,
                 "Tz":3
@@ -63451,7 +63767,7 @@
                 "NTz":2
             }
         },
-        "text":"[dom][pro] [ACTION MODIFIER] +1 stealth. Allies get -1 intercept.\n[DOM][PRO] [COMBAT] Only usable before range is determined. This round, this vampire gets +1 strength, 1 optional maneuver and can prevent 1 damage. A vampire can play only one Obedient Flesh each round.",
+        "text":"[dom][pro] [ACTION MODIFIER] +1 stealth. Allies get -1 intercept.\n[DOM][PRO] [COMBAT] Only usable before range is determined. This round, this vampire gets +1 strength and 1 optional maneuver, and can prevent 1 damage. A vampire can play only one Obedient Flesh each round.",
         "twd":15,
         "type":"Action Modifier/Combat"
     },
@@ -64069,6 +64385,9 @@
                 "PCathari":"3",
                 "PPower":"5"
             },
+            "NB3C":{
+                "PR":"3"
+            },
             "2P":{
                 "C":true,
                 "H":2,
@@ -64157,6 +64476,9 @@
         "set":{
             "V5C":{
                 "PTz":"4"
+            },
+            "NB3C":{
+                "PT":"1"
             },
             "2P":{
                 "C":true,
@@ -64629,9 +64951,12 @@
             },
             "SW":{
                 "R":true
+            },
+            "Promo":{
+                "2026-01-01":true
             }
         },
-        "text":"Only usable when a minion you control burns an ally controlled by another Methuselah.\nEach of your vampires gains X blood from the blood bank, where X is the recruitment cost of the ally. (Remove excess blood.)",
+        "text":"Only usable if a minion you control burns an ally controlled by another Methuselah.\nEach vampire you control gains X blood, where X is the cost to recruit the ally.",
         "twd":4,
         "type":"Combat"
     },
@@ -67197,6 +67522,9 @@
             "V5H":{
                 "PH":"1"
             },
+            "NB3C":{
+                "PT":"1"
+            },
             "2P":{
                 "C":true,
                 "R":1,
@@ -67206,7 +67534,7 @@
                 "NTz":1
             }
         },
-        "text":"Archetype.\nPut this card on a vampire you control. Once each turn, this vampire can gain 1 blood after performing a successful action during which no reaction cards are played. A vampire can have only one archetype.",
+        "text":"Archetype.\nPut this card on a vampire you control. Once each turn, this vampire can gain 1 blood after performing a successful action during which no reaction cards were played. A vampire can have only one archetype.",
         "twd":550,
         "type":"Master"
     },
@@ -67512,6 +67840,33 @@
         "twd":10,
         "type":"Action"
     },
+    "102358":{
+        "aka":"",
+        "artist":[
+            "Yanis Cardin"
+        ],
+        "ascii":"Phantasmagoria",
+        "banned":"",
+        "blood":1,
+        "burn":"",
+        "clan":"Ravnos",
+        "conviction":0,
+        "discipline":"Presence",
+        "id":102358,
+        "name":"Phantasmagoria",
+        "path":"",
+        "pool":0,
+        "requirement":"",
+        "rulings":[],
+        "set":{
+            "NB3C":{
+                "PR":"2"
+            }
+        },
+        "text":"+1 stealth action.\n[pre] (D) Put this card on a minion; you still control this card. The attached minion gets -1 stealth. Minions can burn this card as a (D) action.\n[PRE] As above, and if the attached minion is blocked, they burn 1 blood or life before block resolution.",
+        "twd":0,
+        "type":"Action"
+    },
     "101397":{
         "aka":"",
         "artist":[
@@ -67785,6 +68140,9 @@
             },
             "Promo":{
                 "2023-10-14":true
+            },
+            "NB3C":{
+                "PT":"1"
             },
             "playtest":{
                 "NTz":1
@@ -72130,6 +72488,9 @@
             "V5C":{
                 "PR":"4"
             },
+            "NB3C":{
+                "PR":"2"
+            },
             "2P":{
                 "C":true,
                 "B":2,
@@ -73962,11 +74323,14 @@
             "V5A":{
                 "PG":"1"
             },
+            "NB3C":{
+                "PR":"1"
+            },
             "playtest":{
                 "NR":1
             }
         },
-        "text":"Unique location.\nAs this card is played or its controller changes, its controller chooses a ready vampire they control. During this card's controller's unlock phase, the chosen vampire can gain 2 blood. A vampire controlled by another Methuselah can steal this location as a (D) action.",
+        "text":"Unique location.\nAs this location is played or its controller changes, its controller chooses a ready vampire they control. During this location's controller's unlock phase, the chosen vampire can gain 2 blood. Vampires controlled by another Methuselah can steal this location as a (D) action.",
         "twd":695,
         "type":"Master"
     },
@@ -74308,6 +74672,9 @@
             },
             "NB2":{
                 "PMi":"2"
+            },
+            "NB3C":{
+                "PT":"2"
             },
             "playtest":{
                 "NTz":2
@@ -74767,11 +75134,14 @@
             "POD":{
                 "DTC":true
             },
+            "NB3C":{
+                "PR":"1"
+            },
             "playtest":{
                 "NR":1
             }
         },
-        "text":"Unique location.\nDuring your master phase, you can move 1 counter from your pool to this card and add 1 counter (from the blood bank). A minion you control can lock this card to use these counters to pay some or all of the blood or pool cost of an equipment they equip.",
+        "text":"Unique location.\nDuring your master phase, you can move 1 counter from your pool to this location and add 1 counter (from the blood bank) to it. Minions you control can lock this location to use those counters to pay some or all of the blood or pool cost of equipment they equip.",
         "twd":0,
         "type":"Master"
     },
@@ -74827,11 +75197,14 @@
             "POD":{
                 "DTC":true
             },
+            "NB3C":{
+                "PR":"1"
+            },
             "playtest":{
                 "NR":1
             }
         },
-        "text":"Unique location.\nThis card comes into play with 1 counter for each Ravnos you control. Ravnos you control can use these counters to pay some or all of the blood cost of action cards they play. Burn this card if it has no counters.",
+        "text":"Unique location.\nThis location comes into play with 1 counter for each Ravnos you control. Ravnos you control can use those counters to pay some or all of the blood cost of action cards they play. If this location has no counters, burn it.",
         "twd":28,
         "type":"Master"
     },
@@ -76004,6 +76377,10 @@
             },
             "SV5":{
                 "PDeath":"3"
+            },
+            "NB3C":{
+                "PS":"2",
+                "PT":"1"
             },
             "playtest":{
                 "NSal":2,
@@ -78567,6 +78944,33 @@
         "text":"Only usable if this vampire is ready and the opposing minion is not.\nPut this card on this vampire. This vampire gets +2 bleed. Burn this card if this vampire is about to leave the ready region. A vampire can have only one Righteous Aura.",
         "twd":5,
         "type":"Combat"
+    },
+    "102359":{
+        "aka":"",
+        "artist":[
+            "Pablo D. Hidalgo"
+        ],
+        "ascii":"Righteous Blade",
+        "banned":"",
+        "blood":0,
+        "burn":"",
+        "clan":"Salubri",
+        "conviction":0,
+        "discipline":"",
+        "id":102359,
+        "name":"Righteous Blade",
+        "path":"",
+        "pool":0,
+        "requirement":"",
+        "rulings":[],
+        "set":{
+            "NB3C":{
+                "PS":"4"
+            }
+        },
+        "text":"Melee weapon.\nStrike: strength+1 damage, with 1 optional press, only usable to continue combat, each combat.",
+        "twd":0,
+        "type":"Equipment"
     },
     "101636":{
         "aka":"",
@@ -82067,11 +82471,14 @@
             "V5C":{
                 "PTz":"4"
             },
+            "NB3C":{
+                "PT":"2"
+            },
             "playtest":{
                 "NTz":2
             }
         },
-        "text":"[pro] Strike: hand strike, aggravated.\n[PRO] Strike: hand strike at +1 damage, and put this card on the opposing minion. During their unlock phase, the attached minion burns 1 blood or life. Minions can burn this card as a +1 stealth action.",
+        "text":"[pro] Strike: hand strike, aggravated.\n[PRO] Strike: hand strike at +1 damage and put this card on the opposing minion. During their unlock phase, the attached minion burns 1 blood or life. Minions can burn this card as a +1 stealth action.",
         "twd":9,
         "type":"Combat"
     },
@@ -82886,6 +83293,9 @@
             },
             "SV5":{
                 "PCaine":"4"
+            },
+            "NB3C":{
+                "PT":"3"
             },
             "2P":{
                 "C":true
@@ -86078,6 +86488,9 @@
             },
             "POD":{
                 "DTC":true
+            },
+            "NB3C":{
+                "PS":"1"
             },
             "playtest":{
                 "NSal":1
@@ -93121,6 +93534,60 @@
         "twd":0,
         "type":"Combat"
     },
+    "102360":{
+        "aka":"",
+        "artist":[
+            "Felipe Headley"
+        ],
+        "ascii":"Szlachta Assistant",
+        "banned":"",
+        "blood":0,
+        "burn":"",
+        "clan":"Tzimisce",
+        "conviction":0,
+        "discipline":"",
+        "id":102360,
+        "name":"Szlachta Assistant",
+        "path":"",
+        "pool":0,
+        "requirement":"",
+        "rulings":[],
+        "set":{
+            "NB3C":{
+                "PT":"4"
+            }
+        },
+        "text":"Ghoul with 2 life.\nThe employer can burn this retainer to reduce the cost of a ghoul ally requiring a Tzimisce they recruit by 2 blood or pool.",
+        "twd":0,
+        "type":"Retainer"
+    },
+    "102361":{
+        "aka":"",
+        "artist":[
+            "Pablo D. Hidalgo"
+        ],
+        "ascii":"Szlachta Bodyguard",
+        "banned":"",
+        "blood":1,
+        "burn":"",
+        "clan":"Tzimisce",
+        "conviction":0,
+        "discipline":"",
+        "id":102361,
+        "name":"Szlachta Bodyguard",
+        "path":"",
+        "pool":0,
+        "requirement":"",
+        "rulings":[],
+        "set":{
+            "NB3C":{
+                "PT":"2"
+            }
+        },
+        "text":"Ghoul with 2 life.\nThe employer can lock this retainer to prevent 1 damage in combat. You can burn this retainer to have an action directed at a minion you control fail.",
+        "twd":0,
+        "type":"Retainer"
+    },
     "101924":{
         "aka":"",
         "artist":[
@@ -94357,8 +94824,9 @@
             "NB3":{
                 "PL":"3"
             },
-            "SV5":{
-                "PCaine":"4"
+            "NB3C":{
+                "PR":"2",
+                "PS":"2"
             },
             "2P":{
                 "C":true,
@@ -94688,6 +95156,9 @@
             },
             "NB":{
                 "PTr":"2"
+            },
+            "NB3C":{
+                "PS":"2"
             },
             "playtest":{
                 "NSal":2
@@ -95136,6 +95607,9 @@
             "SV5":{
                 "PCaine":"1"
             },
+            "NB3C":{
+                "PS":"1"
+            },
             "2P":{
                 "C":true
             },
@@ -95278,11 +95752,14 @@
             "LoB":{
                 "PG":1
             },
+            "NB3C":{
+                "PR":"2"
+            },
             "playtest":{
                 "NR":2
             }
         },
-        "text":"Frenzy.\n[ani] Only usable before range is determined on the first round. During this combat, the opposing minion cannot use maneuvers to maneuver to close range, cannot use presses to continue combat and cannot use equipment.\n[ANI] Only usable before range is determined. Combat cards cost the opposing vampire an additional blood this combat. A vampire may play only one Terror Frenzy at superior each combat.",
+        "text":"Frenzy. Only usable before range is determined.\n[ani] Only usable during the first round. This combat, the opposing minion cannot maneuver to close range, press to continue combat or use equipment.\n[ANI] This combat, combat cards cost the opposing vampire +1 blood. A vampire can play only one Terror Frenzy at superior each combat.",
         "twd":116,
         "type":"Combat"
     },
@@ -97178,6 +97655,9 @@
             "V5C":{
                 "PSal":"3"
             },
+            "NB3C":{
+                "PS":"3"
+            },
             "2P":{
                 "C":true,
                 "Sal":2
@@ -97186,7 +97666,7 @@
                 "NSal":3
             }
         },
-        "text":"[for] [ACTION] +1 stealth action. Add 3 blood or life to a minion, not to exceed starting life.\n[for] [COMBAT] Prevent all damage from the opposing minion's strike.\n[FOR] [COMBAT] Only usable by a ready vampire not involved in the combat involving another minion you control. Prevent all damage to that minion from the opposing minion's strike.",
+        "text":"[for] [ACTION] +1 stealth action. Add 3 blood or life to a minion, not to exceed their starting life.\n[for] [COMBAT] Prevent all damage from the opposing minion's strike.\n[FOR] [COMBAT] Only usable by a ready vampire not involved in the combat involving another minion you control. Prevent all damage to that minion from the opposing minion's strike.",
         "twd":5,
         "type":"Action/Combat"
     },
@@ -97508,6 +97988,33 @@
             }
         },
         "text":"Only usable by a ready vampire not involved in combat.\n[dom] Cancel a frenzy card as it is played (no cost is paid).\n[DOM] As above, and the target of the frenzy card gets an optional press, only usable to end combat.",
+        "twd":0,
+        "type":"Combat"
+    },
+    "102362":{
+        "aka":"",
+        "artist":[
+            "Mark Kelly"
+        ],
+        "ascii":"Tranquility Shield",
+        "banned":"",
+        "blood":1,
+        "burn":"",
+        "clan":"Salubri",
+        "conviction":0,
+        "discipline":"Fortitude",
+        "id":102362,
+        "name":"Tranquility Shield",
+        "path":"",
+        "pool":0,
+        "requirement":"",
+        "rulings":[],
+        "set":{
+            "NB3C":{
+                "PS":"3"
+            }
+        },
+        "text":"Only usable before range is determined during the first round.\n[for] This combat, this vampire can prevent 1 damage each round. This combat, frenzy cards cannot be used on this vampire; cancel the effects of frenzy cards that have already been used on this vampire this combat.\n[FOR] As above, but this vampire can prevent 2 damage each round.",
         "twd":0,
         "type":"Combat"
     },
@@ -100717,11 +101224,14 @@
             "Anarchs":{
                 "C":true
             },
+            "NB3C":{
+                "PT":"1"
+            },
             "playtest":{
                 "NTz":1
             }
         },
-        "text":"Vehicle. The action to equip with this vehicle is at an additional +1 stealth.\nThe minion with this vehicle gets +1 stealth when hunting, employing a retainer or recruiting an ally. If this minion is blocked by a prince or an archbishop (during any action), burn this vehicle. A minion may have only one vehicle.",
+        "text":"Vehicle. The action to equip with this vehicle is with an additional +1 stealth.\nThis minion gets +1 stealth during hunt, recruit and employ actions. If this minion is blocked by a prince or an archbishop (during any action), burn this vehicle. A minion can have only one vehicle.",
         "twd":33,
         "type":"Equipment"
     },
@@ -101148,11 +101658,14 @@
             "Third":{
                 "U":true
             },
+            "NB3C":{
+                "PT":"1"
+            },
             "playtest":{
                 "NTz":1
             }
         },
-        "text":"Unique mortal with 2 life. 0 strength, 0 bleed.\nLock Vagabond Mystic to move 1 life counter from the blood bank to an ally you control who has fewer life than his or her starting amount. The Vagabond Mystic cannot block vampires.",
+        "text":"Unique mortal with 2 life. 0 strength, 0 bleed.\nVagabond Mystic can lock to add 1 life to an ally you control who has fewer life than its starting life. Vagabond Mystic cannot block vampires.",
         "twd":213,
         "type":"Ally"
     },
@@ -101186,7 +101699,8 @@
     "102088":{
         "aka":"",
         "artist":[
-            "Mark Tedin"
+            "Mark Tedin",
+            "Gin\u00e9s Qui\u00f1onero"
         ],
         "ascii":"Vampiric Disease",
         "banned":"",
@@ -101237,9 +101751,12 @@
             },
             "Tenth":{
                 "A":1
+            },
+            "Promo":{
+                "2024-11-16":true
             }
         },
-        "text":"Master.\nPut a disease counter on any vampire. Each time a vampire with a disease counter is in combat at close range with another vampire, the second vampire gets a counter as well. An afflicted vampire cannot gain blood by hunting. When an afflicted vampire unlocks, he or she burns a blood or, if unable, burns the disease counter. A vampire can have only one disease counter.",
+        "text":"Put 1 disease counter on a vampire. If a vampire with a disease counter is in combat at close range with another vampire, the second vampire gets a disease counter before strikes are chosen. A vampire with a disease counter cannot gain blood by hunting. Each time a vampire with a disease counter unlocks, they burn 1 blood or, if unable, burn the disease counter. A vampire can have only one disease counter.",
         "twd":35,
         "type":"Master"
     },
@@ -101425,6 +101942,9 @@
             },
             "FB":{
                 "PTr":"1"
+            },
+            "NB3C":{
+                "PS":"1"
             },
             "playtest":{
                 "NSal":1
@@ -102317,12 +102837,16 @@
             "V5C":{
                 "PSal":"2"
             },
+            "NB3C":{
+                "PR":"2",
+                "PS":"2"
+            },
             "playtest":{
                 "NR":2,
                 "NSal":2
             }
         },
-        "text":"Trifle.\nPut this card on a vampire, and you can burn a card named /Blood Doll/ (if any). During their unlock phase, this vampire's controller can move 1 blood from this vampire to their pool or from their pool to this vampire.",
+        "text":"Trifle.\nPut this card on a vampire and you can burn a card named /Blood Doll/ (if any). During their unlock phase, this vampire's controller can move 1 blood from this vampire to their pool or from their pool to this vampire.",
         "twd":1352,
         "type":"Master",
         "trifle":true
@@ -103330,6 +103854,60 @@
         "twd":0,
         "type":"Master"
     },
+    "102363":{
+        "aka":"",
+        "artist":[
+            "Gin\u00e9s Qui\u00f1onero"
+        ],
+        "ascii":"Vozhd of Gravesend, The",
+        "banned":"",
+        "blood":0,
+        "burn":"",
+        "clan":"Tzimisce",
+        "conviction":0,
+        "discipline":"",
+        "id":102363,
+        "name":"Vozhd of Gravesend, The",
+        "path":"",
+        "pool":4,
+        "requirement":"",
+        "rulings":[],
+        "set":{
+            "NB3C":{
+                "PT":"1"
+            }
+        },
+        "text":"Unique ghoul with 5 life. 4 strength, 0 bleed.\nAfter this ally enters play, burn an ally or retainer you control. This ally can enter combat with a vampire as a (D) action. This ally can prevent 1 damage each round of combat. During combat, this ally can burn 1 life to cancel a strike card as it is played by the opposing minion, and its cost is not paid (the minion chooses a strike again).",
+        "twd":0,
+        "type":"Ally"
+    },
+    "102364":{
+        "aka":"",
+        "artist":[
+            "Peter Scholtz"
+        ],
+        "ascii":"Vozhd of Juiz de Fora, The",
+        "banned":"",
+        "blood":0,
+        "burn":"",
+        "clan":"Tzimisce",
+        "conviction":0,
+        "discipline":"",
+        "id":102364,
+        "name":"Vozhd of Juiz de Fora, The",
+        "path":"",
+        "pool":3,
+        "requirement":"",
+        "rulings":[],
+        "set":{
+            "NB3C":{
+                "PT":"1"
+            }
+        },
+        "text":"Unique ghoul with 5 life. 4 strength, 0 bleed.\nAfter this ally enters play, burn an ally or retainer you control. This ally can enter combat with a vampire as a (D) action. This ally can play cards requiring basic Animalism [ani] as a vampire with capacity 5. During your unlock phase, this ally can steal any amount of blood (becoming life) from a Tzimisce you control, not to exceed its starting life.",
+        "twd":0,
+        "type":"Ally"
+    },
     "102267":{
         "aka":"Vozhd of Sofia",
         "artist":[
@@ -103381,6 +103959,33 @@
         },
         "text":"Unique ghoul with 5 life. 3 strength, 0 bleed.\nAfter this ally enters play, burn an ally or retainer you control. It can strike: 3R damage. It can enter combat with a minion as a (D) action. During your unlock phase, you can discard an ally or retainer card to add 2 life to this ally.",
         "twd":7,
+        "type":"Ally"
+    },
+    "102365":{
+        "aka":"",
+        "artist":[
+            "Krasen Maximov"
+        ],
+        "ascii":"Vozhd of Szczecin, The",
+        "banned":"",
+        "blood":0,
+        "burn":"",
+        "clan":"Tzimisce",
+        "conviction":0,
+        "discipline":"",
+        "id":102365,
+        "name":"Vozhd of Szczecin, The",
+        "path":"",
+        "pool":4,
+        "requirement":"",
+        "rulings":[],
+        "set":{
+            "NB3C":{
+                "PT":"1"
+            }
+        },
+        "text":"Unique ghoul with 5 life. 4 strength, 0 bleed.\nAfter this ally enters play, burn an ally or retainer you control. This ally can enter combat with a vampire as a (D) action. Once each combat, this ally can discard a card requiring Protean [pro] to prevent 2 damage. During any other Methuselah's minion phase, a Tzimisce you control can burn 1 blood to unlock this ally.",
+        "twd":0,
         "type":"Ally"
     },
     "102134":{

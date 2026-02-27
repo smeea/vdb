@@ -98,6 +98,24 @@
       }
     }
   },
+  "NB3C": {
+    "name": "New Blood III (Companion)",
+    "date": "2026-02-28",
+    "precons": {
+      "PR": {
+        "name": "Ravnos",
+        "clan": "Ravnos"
+      },
+      "PS": {
+        "name": "Salubri",
+        "clan": "Salubri"
+      },
+      "PT": {
+        "name": "Tzimisce",
+        "clan": "Tzimisce"
+      }
+    }
+  },
   "SV5": {
     "name": "V5 Sabbat",
     "date": "2025-10-26",
