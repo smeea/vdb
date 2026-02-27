@@ -12,12 +12,14 @@ import {
   PLAYTEST,
   PRERELEASE,
 } from "@/constants";
+import { getLegality } from "@/utils";
 import { limitedStore, useApp } from "@/context";
 
 const ResultName = ({ card, isColored = true }) => {
   const { limitedMode } = useApp();
   const limitedState = useSnapshot(limitedStore)[card[ID] > 200000 ? CRYPT : LIBRARY];
   const isLimited = limitedMode && !limitedState[card[ID]];
+  const isReleasedPrerelease = card[LEGAL_RESTRICTIONS] && card[LEGAL_RESTRICTIONS] !== PLAYTEST && !getLegality(card)
 
   return (
     <div
@@ -47,7 +49,7 @@ const ResultName = ({ card, isColored = true }) => {
       )}
       {card[BANNED] && <ResultLegalIcon type={BANNED} value={card[BANNED]} />}
       {isLimited && <ResultLegalIcon title="Limited" />}
-      {card[LEGAL_RESTRICTIONS] && (
+      {card[LEGAL_RESTRICTIONS] && !isReleasedPrerelease && (
         <ResultLegalIcon
           type={card[LEGAL_RESTRICTIONS] === PLAYTEST ? PLAYTEST : PRERELEASE}
           value={card[LEGAL_RESTRICTIONS]}

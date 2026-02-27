@@ -9,7 +9,7 @@ export const getLegality = (card) => {
 
   const legalDate = setsAndPrecons[sets[0]][DATE];
 
-  if (differenceInDays(legalDate, new Date()) < 0) return false;
+  if (differenceInDays(legalDate, new Date()) <= 0) return false;
   return legalDate;
 };
 
