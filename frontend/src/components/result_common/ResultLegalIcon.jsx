@@ -2,17 +2,21 @@ import Exclamation from "@icons/exclamation-triangle.svg?react";
 import Hammer from "@icons/hammer.svg?react";
 import LightningChargeFill from "@icons/lightning-charge-fill.svg?react";
 import { twMerge } from "tailwind-merge";
-import { BANNED, DEFAULT, PLAYTEST } from "@/constants";
+import { PRERELEASE, BANNED, DEFAULT, PLAYTEST } from "@/constants";
 
 const ResultLegalIcon = ({ value, title, type = DEFAULT, className }) => {
   const titleOptions = {
     [PLAYTEST]: "Playtest",
+    [PRERELEASE]: `Not legal until ${value}`,
     [BANNED]: `Banned in ${value}`,
     [DEFAULT]: "",
   };
 
   const iconOptions = {
     [PLAYTEST]: (
+      <LightningChargeFill className="inline" width="15" height="15" viewBox="0 0 16 16" />
+    ),
+    [PRERELEASE]: (
       <LightningChargeFill className="inline" width="15" height="15" viewBox="0 0 16 16" />
     ),
     [BANNED]: <Hammer className="inline" width="15" height="15" viewBox="0 0 16 16" />,
