@@ -20,7 +20,6 @@ const LimitedModeSelect = () => {
           <LimitedSelect />
         </div>
         {limitedPreset === CUSTOM && (
-
           <div className="flex">
             <LimitedButton />
           </div>

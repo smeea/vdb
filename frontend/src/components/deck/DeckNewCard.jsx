@@ -8,7 +8,7 @@ const DeckNewCard = ({ target, cards, deckid, handleClose, cardChange, menuPlace
 
   const handleChange = (event) => {
     const cardid = event.value;
-    const currentQ = cards.find(c => c.c[ID] === cardid)?.q ?? 0
+    const currentQ = cards.find((c) => c.c[ID] === cardid)?.q ?? 0;
 
     const card = cardid > 200000 ? cryptCardBase[cardid] : libraryCardBase[cardid];
     changeAction(deckid, card, currentQ + 1);

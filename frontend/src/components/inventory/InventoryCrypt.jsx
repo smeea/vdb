@@ -1,11 +1,9 @@
 import { Header, InventoryCryptTable, InventoryFilterForm, SortButton } from "@/components";
 import {
-  ALL,
   CAPACITY_MAX_MIN,
   CAPACITY_MIN_MAX,
-  CLANx,
   CLAN,
-  CRYPT,
+  CLANx,
   GROUPx,
   NAME,
   QUANTITY,
@@ -34,11 +32,13 @@ const InventoryCrypt = ({
     [CAPACITY_MAX_MIN]: "C↓",
   };
 
-  const { cardsByClan,
-          cardsFilteredBy,
-          missing,
-          missingTotal,
-        } = useInventoryCrypt(cards, category, compact, clan, onlyNotes);
+  const { filteredCards, cardsFilteredBy, missing, missingTotal } = useInventoryCrypt(
+    cards,
+    category,
+    compact,
+    clan,
+    onlyNotes,
+  );
 
   return (
     <>
@@ -70,7 +70,7 @@ const InventoryCrypt = ({
         sortMethod={cryptInventorySort}
         compact={compact}
         withCompact={withCompact}
-        cards={compact ? Object.values(cardsByClan[ALL]) : Object.values(cardsByClan[clan])}
+        cards={Object.values(filteredCards)}
         newFocus={newFocus}
         inShared={inShared}
       />

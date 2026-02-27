@@ -1,11 +1,4 @@
-import {
-  HARD,
-  LOGIC,
-  SOFT,
-  SURPLUS_FIXED,
-  SURPLUS_USED,
-  VALUE,
-} from "@/constants";
+import { HARD, LOGIC, SOFT, SURPLUS_FIXED, SURPLUS_USED, VALUE } from "@/constants";
 import { getHardTotal, getSoftMax } from "@/utils";
 
 const getMissing = (cardid, usedBase, wishlist, currentQ = 0) => {
@@ -30,7 +23,7 @@ const getMissing = (cardid, usedBase, wishlist, currentQ = 0) => {
     }
   }
 
-  return miss
-}
+  return miss;
+};
 
 export default getMissing;

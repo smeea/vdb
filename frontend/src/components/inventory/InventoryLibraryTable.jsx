@@ -65,7 +65,7 @@ const InventoryLibraryTable = ({
                 ? "h-[calc(100dvh-207px)] sm:h-[calc(100dvh-236px)] lg:h-[calc(100dvh-246px)] xl:h-[calc(100dvh-256px)]"
                 : inMissing
                   ? "h-[calc(100dvh-219px)] sm:h-[calc(100dvh-238px)] lg:h-[calc(100dvh-258px)] xl:h-[calc(100dvh-278px)]"
-              : "h-[calc(100dvh-264px)] sm:h-[calc(100dvh-283px)] lg:h-[calc(100dvh-303px)] xl:h-[calc(100dvh-323px)]"
+                  : "h-[calc(100dvh-264px)] sm:h-[calc(100dvh-283px)] lg:h-[calc(100dvh-303px)] xl:h-[calc(100dvh-323px)]"
           }
         >
           <List

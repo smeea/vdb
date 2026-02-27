@@ -1,7 +1,6 @@
 import Plus from "@icons/plus.svg?react";
 import { useState } from "react";
 import { ButtonFloat, DeckNewCard } from "@/components";
-import { CRYPT } from "@/constants";
 
 const DeckNewCardFloating = ({ deckid, cards, cardChange, className }) => {
   const [showAdd, setShowAdd] = useState(false);
@@ -16,11 +15,7 @@ const DeckNewCardFloating = ({ deckid, cards, cardChange, className }) => {
 
   return (
     <>
-      <ButtonFloat
-        className={className}
-        onClick={handleClick}
-        position="middle"
-      >
+      <ButtonFloat className={className} onClick={handleClick} position="middle">
         <Plus width="47" height="47" viewBox="0 0 16 16" />
       </ButtonFloat>
       {showAdd && (

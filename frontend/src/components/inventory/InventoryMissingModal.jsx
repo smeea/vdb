@@ -11,7 +11,7 @@ import {
   InventoryLibraryTable,
   Modal,
 } from "@/components";
-import { MISSING, SURPLUS, CRYPT, ID, LIBRARY, NAME } from "@/constants";
+import { CRYPT, LIBRARY, MISSING, NAME, SURPLUS } from "@/constants";
 import { inventoryStore, useApp } from "@/context";
 import { useInventoryCrypt, useInventoryLibrary } from "@/hooks";
 import { cryptSort, getIsPlaytest, librarySort } from "@/utils";
@@ -31,28 +31,43 @@ const InventoryMissingModal = ({
   const { cryptCardBase, libraryCardBase, isMobile, setShowFloatingButtons, setShowMenuButtons } =
     useApp();
   const { [CRYPT]: inventoryCrypt, [LIBRARY]: inventoryLibrary } = useSnapshot(inventoryStore);
-  const { [SURPLUS]: surplusCrypt, [MISSING]: missingCrypt } = useInventoryCrypt(crypt, category, false, cryptClan, onlyNotes);
-  const { [SURPLUS]: surplusLiberary, [MISSING]: missingLibrary } = useInventoryLibrary(library, category, false, type, discipline, libraryClan, onlyNotes);
+  const { [SURPLUS]: surplusCrypt, [MISSING]: missingCrypt } = useInventoryCrypt(
+    crypt,
+    category,
+    false,
+    cryptClan,
+    onlyNotes,
+  );
+  const { [SURPLUS]: surplusLibrary, [MISSING]: missingLibrary } = useInventoryLibrary(
+    library,
+    category,
+    false,
+    type,
+    discipline,
+    libraryClan,
+    onlyNotes,
+  );
   const [showCryptOnMobile, setShowCryptOnMobile] = useState(true);
   const [showAll, setShowAll] = useState();
 
-  // TODO: refactor with new useInventory
-
   const cryptSorted = cryptSort(Object.values(isSurplus ? surplusCrypt : missingCrypt), NAME);
-  const librarySorted = librarySort(Object.values(isSurplus ? surplusLibrary : missingLibrary), NAME);
+  const librarySorted = librarySort(
+    Object.values(isSurplus ? surplusLibrary : missingLibrary),
+    NAME,
+  );
 
   const allVtesCryptSorted = cryptSort(
     Object.keys(cryptCardBase)
       .filter((cardid) => !getIsPlaytest(cardid) && !inventoryCrypt?.[cardid]?.q)
       .map((cardid) => ({ q: 1, c: cryptCardBase[cardid] })),
-    NAME
+    NAME,
   );
 
   const allVtesLibrarySorted = librarySort(
     Object.keys(libraryCardBase)
       .filter((cardid) => !getIsPlaytest(cardid) && !inventoryLibrary?.[cardid]?.q)
       .map((cardid) => ({ q: 1, c: libraryCardBase[cardid] })),
-    NAME
+    NAME,
   );
 
   const handleClose = () => {
@@ -76,10 +91,7 @@ const InventoryMissingModal = ({
               "basis-full flex-col sm:flex sm:basis-5/9 sm:gap-2 lg:gap-3 xl:gap-4",
             )}
           >
-            <InventoryCryptTable
-              inMissing
-              cards={showAll ? allVtesCryptSorted : cryptSorted}
-            />
+            <InventoryCryptTable inMissing cards={showAll ? allVtesCryptSorted : cryptSorted} />
           </div>
           <div
             className={twMerge(

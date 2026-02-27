@@ -12,8 +12,8 @@ import {
   LimitedModeSelect,
   LimitedOnlyDecksToggle,
 } from "@/components";
-import { useApp } from "@/context";
 import { TWO_P, V5 } from "@/constants";
+import { useApp } from "@/context";
 
 const Account = () => {
   const { username, limitedPreset } = useApp();
@@ -40,9 +40,7 @@ const Account = () => {
             <div className="flex flex-col gap-3 sm:gap-4">
               <AccountLegacyToggle />
               <LimitedModeSelect />
-              {[TWO_P, V5].includes(limitedPreset) && (
-                <LimitedOnlyDecksToggle />
-              )}
+              {[TWO_P, V5].includes(limitedPreset) && <LimitedOnlyDecksToggle />}
               <div className="flex gap-3 sm:gap-4">
                 <AccountDeleteButton />
                 <AccountLogoutButton />
@@ -57,9 +55,7 @@ const Account = () => {
           <div className="flex flex-col gap-3 sm:gap-4">
             <AccountLegacyToggle />
             <LimitedModeSelect />
-            {[TWO_P, V5].includes(limitedPreset) && (
-              <LimitedOnlyDecksToggle />
-            )}
+            {[TWO_P, V5].includes(limitedPreset) && <LimitedOnlyDecksToggle />}
           </div>
         </div>
       )}

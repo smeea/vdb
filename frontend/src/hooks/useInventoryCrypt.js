@@ -3,6 +3,7 @@ import imbuedClansList from "@/assets/data/imbuedClansList.json";
 import vampireClansList from "@/assets/data/vampireClansList.json";
 import {
   ALL,
+  CARDS,
   CLAN,
   CRYPT,
   HARD,
@@ -10,20 +11,19 @@ import {
   OK,
   SOFT,
   SURPLUS,
-  CARDS,
-  WISHLIST,
   TOTAL,
-  UNIQUE
+  UNIQUE,
+  WISHLIST,
 } from "@/constants";
 import { inventoryStore, useApp, usedStore } from "@/context";
-import { getMissing, getIsPlaytest } from "@/utils";
+import { getIsPlaytest, getMissing } from "@/utils";
 
 const getRequirements = (cardid, cardBase, requirements) => {
-  const clan = cardBase[cardid][CLAN]
+  const clan = cardBase[cardid][CLAN];
 
-  const hasGoodRequirements = !!(clan === requirements[CLAN] || requirements[CLAN] === ALL)
-  return { clan, hasGoodRequirements }
-}
+  const hasGoodRequirements = !!(clan === requirements[CLAN] || requirements[CLAN] === ALL);
+  return { clan, hasGoodRequirements };
+};
 
 const useInventoryCrypt = (crypt, category, compact, clan, onlyNotes) => {
   const usedCrypt = useSnapshot(usedStore)[CRYPT];
@@ -32,38 +32,35 @@ const useInventoryCrypt = (crypt, category, compact, clan, onlyNotes) => {
 
   const requirements = {
     [CLAN]: clan,
-  }
+  };
 
   const cards = crypt || {};
   const cardsByClan = {};
-  const filteredCards = {}
+  const filteredCards = compact ? cards : {};
   const missing = {};
-  let missingTotal = 0
+  let missingTotal = 0;
   const surplus = {};
 
   [ALL, ...vampireClansList, ...imbuedClansList].forEach((i) => {
     cardsByClan[i] = {};
   });
 
-  if (compact) {
-    filteredCards = cards
-  } else {
+  if (!compact) {
     Object.keys(cards)
       .filter((cardid) => (onlyNotes ? cards[cardid].t : true))
       .forEach((cardid) => {
-        const { clan, hasGoodRequirements } = getRequirements(cardid, cryptCardBase, requirements)
-        const miss = getMissing(cardid, usedCrypt, wishlist, cards[cardid].q)
+        const { clan, hasGoodRequirements } = getRequirements(cardid, cryptCardBase, requirements);
+        const miss = getMissing(cardid, usedCrypt, wishlist, cards[cardid].q);
 
         if (
           (category === NOK && miss > 0) ||
           (category === SURPLUS && miss < 0) ||
           [ALL, OK].includes(category)
         ) {
-
           if (hasGoodRequirements) {
             if (miss > 0) missing[cardid] = { q: miss, c: cryptCardBase[cardid] };
             if (miss < 0) surplus[cardid] = { q: -miss, c: cryptCardBase[cardid] };
-            filteredCards[cardid] = cards[cardid]
+            filteredCards[cardid] = cards[cardid];
           }
 
           cardsByClan[clan][cardid] = cards[cardid];
@@ -74,7 +71,7 @@ const useInventoryCrypt = (crypt, category, compact, clan, onlyNotes) => {
     [...Object.keys(usedCrypt[SOFT]), ...Object.keys(usedCrypt[HARD])]
       .filter((cardid) => !(getIsPlaytest(cardid) || cards[cardid]))
       .forEach((cardid) => {
-        const { clan, hasGoodRequirements } = getRequirements(cardid, cryptCardBase, requirements)
+        const { clan, hasGoodRequirements } = getRequirements(cardid, cryptCardBase, requirements);
 
         if (![OK, SURPLUS].includes(category) && !onlyNotes) {
           cardsByClan[clan][cardid] = {
@@ -88,8 +85,11 @@ const useInventoryCrypt = (crypt, category, compact, clan, onlyNotes) => {
         }
 
         if (hasGoodRequirements) {
-          missing[cardid] = { q: getMissing(cardid, usedCrypt, wishlist), c: cryptCardBase[cardid] };
-          filteredCards[cardid] = { q: 0, c: cryptCardBase[cardid]}
+          missing[cardid] = {
+            q: getMissing(cardid, usedCrypt, wishlist),
+            c: cryptCardBase[cardid],
+          };
+          filteredCards[cardid] = { q: 0, c: cryptCardBase[cardid] };
         }
       });
 
@@ -99,7 +99,7 @@ const useInventoryCrypt = (crypt, category, compact, clan, onlyNotes) => {
   }
 
   const cardsFilteredBy = {
-    [CLAN]: {}
+    [CLAN]: {},
   };
 
   if (!compact) {
@@ -107,16 +107,16 @@ const useInventoryCrypt = (crypt, category, compact, clan, onlyNotes) => {
       cardsFilteredBy[CLAN][i] = {
         [CARDS]: {},
         [TOTAL]: 0,
-        [UNIQUE]: 0
+        [UNIQUE]: 0,
       };
 
-      Object.keys(cardsByClan[i]).forEach(cardid => {
+      Object.keys(cardsByClan[i]).forEach((cardid) => {
         cardsFilteredBy[CLAN][i][CARDS][cardid] = cardsByClan[i][cardid];
         cardsFilteredBy[CLAN][i][TOTAL] += cardsByClan[i][cardid].q;
         if (cardsByClan[i][cardid].q) {
           cardsFilteredBy[CLAN][i][UNIQUE] += 1;
         }
-      })
+      });
     });
   }
 
@@ -126,7 +126,7 @@ const useInventoryCrypt = (crypt, category, compact, clan, onlyNotes) => {
     filteredCards,
     missing,
     missingTotal,
-    surplus
+    surplus,
   };
 };
 

@@ -40,11 +40,7 @@ const LimitedButton = () => {
 
   return (
     <>
-      <Button
-        className="min-h-[41px]"
-        onClick={() => setShowModal(true)}
-        title="Configure Format"
-      >
+      <Button className="min-h-[41px]" onClick={() => setShowModal(true)} title="Configure Format">
         Configure
       </Button>
       {showModal && <LimitedModal setShow={setShowModal} setFormat={setFormat} />}

@@ -1,5 +1,5 @@
 import { Header, InventoryFilterForm, InventoryLibraryTable, SortButton } from "@/components";
-import { ALL, CLAN, CLAN_DISCIPLINE, DISCIPLINE, ID, NAME, QUANTITY, TYPE } from "@/constants";
+import { CLAN, CLAN_DISCIPLINE, DISCIPLINE, NAME, QUANTITY, TYPE } from "@/constants";
 import { useApp } from "@/context";
 import { useInventoryLibrary } from "@/hooks";
 
@@ -26,15 +26,15 @@ const InventoryLibrary = ({
     [CLAN_DISCIPLINE]: "C/D",
   };
 
-  const {
-    cardsByType,
-    cardsByDiscipline,
-    cardsByClan,
-    cardsFilteredBy,
-    filteredCards,
-    missing,
-    missingTotal,
-  } = useInventoryLibrary(cards, category, compact, type, discipline, clan, onlyNotes);
+  const { cardsFilteredBy, filteredCards, missing, missingTotal } = useInventoryLibrary(
+    cards,
+    category,
+    compact,
+    type,
+    discipline,
+    clan,
+    onlyNotes,
+  );
 
   return (
     <>
@@ -80,11 +80,7 @@ const InventoryLibrary = ({
         sortMethod={libraryInventorySort}
         compact={compact}
         withCompact={withCompact}
-        cards={
-          compact
-            ? Object.values(cardsByType[ALL])
-            : Object.values(filteredCards)
-        }
+        cards={Object.values(filteredCards)}
         newFocus={newFocus}
         inShared={inShared}
       />
