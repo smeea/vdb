@@ -28,7 +28,7 @@ const InventoryFreezeButton = ({ isFrozen, className, roundedStyle, borderStyle 
           <UnlockFill width="18" height="23" viewBox="0 0 16 16" />
         )
       }
-      text={`Edit ${isFrozen ? "disabled" : "enabled"}`}
+      text={`Edit ${isFrozen ? "Disabled" : "Enabled"}`}
     />
   );
 };

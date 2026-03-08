@@ -28,7 +28,7 @@ const DeckFreezeButton = ({ deck, withText, className, roundedStyle, borderStyle
           <UnlockFill width="19" height="23" viewBox="0 0 16 16" />
         )
       }
-      text={withText && `Edit ${deck[IS_FROZEN] ? "enabled" : "disabled"}`}
+      text={withText && `Edit ${deck[IS_FROZEN] ? "Disabled" : "Enabled"}`}
     />
   );
 };
