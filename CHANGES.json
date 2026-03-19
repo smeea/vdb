@@ -1,6 +1,13 @@
 [
   {
-    "version": "2026-02-28/2",
+    "version": "2026-03-19",
+    "changes": [
+      "Update TWDA",
+      "Update Rulings"
+    ]
+  },
+  {
+    "version": "2026-02-28",
     "changes": [
       "Add New Blood III - Ravnos, Tzimisce, Salubri",
       "Add Clan library filter to Inventory",

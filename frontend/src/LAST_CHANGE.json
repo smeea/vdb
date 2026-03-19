@@ -1,9 +1,7 @@
 {
-  "version": "2026-02-28/2",
+  "version": "2026-03-19",
   "changes": [
-    "Add New Blood III - Ravnos, Tzimisce, Salubri",
-    "Add Clan library filter to Inventory",
-    "Merge floating Add Crypt/Library Card button in Decks on mobile",
-    "Small other fixes and improvements"
+    "Update TWDA",
+    "Update Rulings"
   ]
 }
