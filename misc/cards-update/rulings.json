@@ -1137,6 +1137,13 @@
             "refs":{
                 "ANK 20180623":"https://www.vekn.net/forum/rules-questions/76748-black-sunrise#88361"
             }
+        },
+        {
+            "text":"The cost for a canceled non-action-card is still paid, including additional and alternative cost (e.g. to play {Eagle's Sight} to block a Wraith or zombie while {Parijat, the Dark Oracle} is ready the top card of the Library must be burned, even if {Eagle's Sight} was canceled)",
+            "refs":{
+                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "ANK 20260216":"https://www.vekn.net/forum/rules-questions/82835-eagle-sight-cancelled-by-i-am-legion-while-tenebrous-form-is-in-play#116448"
+            }
         }
     ],
     "100121":[
@@ -1820,6 +1827,13 @@
                 "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
                 "TOM 19960225":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0LLTOfvyVbM/m/ih72_C-LriwJ"
             }
+        },
+        {
+            "text":"[val][REFLEX] The cost for a canceled non-action-card is still paid, including additional and alternative cost (e.g. to play {Eagle's Sight} to block a Wraith or zombie while {Parijat, the Dark Oracle} is ready the top card of the Library must be burned, even if {Eagle's Sight} was canceled)",
+            "refs":{
+                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "ANK 20260216":"https://www.vekn.net/forum/rules-questions/82835-eagle-sight-cancelled-by-i-am-legion-while-tenebrous-form-is-in-play#116448"
+            }
         }
     ],
     "100181":[
@@ -1937,6 +1951,13 @@
             "text":"[dom][pre][REACTION] Cancelation must be immediate: a wake can be used in the \"as played\" window, but a reaction to \"unlock and attempt to block\" cannot.",
             "refs":{
                 "LSJ 20021011":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9WWIzxek9Nc/m/PlIwI11sNpkJ"
+            }
+        },
+        {
+            "text":"[dom][pre] The cost for a canceled non-action-card is still paid, including additional and alternative cost (e.g. to play {Eagle's Sight} to block a Wraith or zombie while {Parijat, the Dark Oracle} is ready the top card of the Library must be burned, even if {Eagle's Sight} was canceled)",
+            "refs":{
+                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "ANK 20260216":"https://www.vekn.net/forum/rules-questions/82835-eagle-sight-cancelled-by-i-am-legion-while-tenebrous-form-is-in-play#116448"
             }
         }
     ],
@@ -7609,6 +7630,13 @@
             "refs":{
                 "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
             }
+        },
+        {
+            "text":"The cost for a canceled non-action-card is still paid, including additional and alternative cost (e.g. to play {Eagle's Sight} to block a Wraith or zombie while {Parijat, the Dark Oracle} is ready the top card of the Library must be burned, even if {Eagle's Sight} was canceled)",
+            "refs":{
+                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "ANK 20260216":"https://www.vekn.net/forum/rules-questions/82835-eagle-sight-cancelled-by-i-am-legion-while-tenebrous-form-is-in-play#116448"
+            }
         }
     ],
     "100863":[
@@ -8344,6 +8372,13 @@
             "refs":{
                 "LSJ 20030224":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/67261v339Ds/m/um8V7VVp2Y4J"
             }
+        },
+        {
+            "text":"[dai][obf] The cost for a canceled non-action-card is still paid, including additional and alternative cost (e.g. to play {Eagle's Sight} to block a Wraith or zombie while {Parijat, the Dark Oracle} is ready the top card of the Library must be burned, even if {Eagle's Sight} was canceled)",
+            "refs":{
+                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "ANK 20260216":"https://www.vekn.net/forum/rules-questions/82835-eagle-sight-cancelled-by-i-am-legion-while-tenebrous-form-is-in-play#116448"
+            }
         }
     ],
     "100949":[
@@ -9013,6 +9048,13 @@
             "text":"[abo] [REFLEX] Any frenzy card that targets/selects/chooses/affects the minion when played, is considered being played on the minion.",
             "refs":{
                 "LSJ 20051113":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/L-ctaLucuKU/m/dG0EKdSd4g0J"
+            }
+        },
+        {
+            "text":"[abo][REFLEX] The cost for a canceled non-action-card is still paid, including additional and alternative cost (e.g. to play {Eagle's Sight} to block a Wraith or zombie while {Parijat, the Dark Oracle} is ready the top card of the Library must be burned, even if {Eagle's Sight} was canceled)",
+            "refs":{
+                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "ANK 20260216":"https://www.vekn.net/forum/rules-questions/82835-eagle-sight-cancelled-by-i-am-legion-while-tenebrous-form-is-in-play#116448"
             }
         }
     ],
@@ -12656,6 +12698,13 @@
             "text":"[abo] [REFLEX] Any frenzy card that targets/selects/chooses/affects the minion when played, is considered being played on the minion.",
             "refs":{
                 "LSJ 20051113":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/L-ctaLucuKU/m/dG0EKdSd4g0J"
+            }
+        },
+        {
+            "text":"[abo][REFLEX] The cost for a canceled non-action-card is still paid, including additional and alternative cost (e.g. to play {Eagle's Sight} to block a Wraith or zombie while {Parijat, the Dark Oracle} is ready the top card of the Library must be burned, even if {Eagle's Sight} was canceled)",
+            "refs":{
+                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "ANK 20260216":"https://www.vekn.net/forum/rules-questions/82835-eagle-sight-cancelled-by-i-am-legion-while-tenebrous-form-is-in-play#116448"
             }
         }
     ],
@@ -16640,6 +16689,13 @@
             "refs":{
                 "LSJ 20051113":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/L-ctaLucuKU/m/dG0EKdSd4g0J"
             }
+        },
+        {
+            "text":"[abo][REFLEX] The cost for a canceled non-action-card is still paid, including additional and alternative cost (e.g. to play {Eagle's Sight} to block a Wraith or zombie while {Parijat, the Dark Oracle} is ready the top card of the Library must be burned, even if {Eagle's Sight} was canceled)",
+            "refs":{
+                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "ANK 20260216":"https://www.vekn.net/forum/rules-questions/82835-eagle-sight-cancelled-by-i-am-legion-while-tenebrous-form-is-in-play#116448"
+            }
         }
     ],
     "101930":[
@@ -16795,6 +16851,13 @@
             "text":"[abo] [REFLEX] Any frenzy card that targets/selects/chooses/affects the minion when played, is considered being played on the minion.",
             "refs":{
                 "LSJ 20051113":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/L-ctaLucuKU/m/dG0EKdSd4g0J"
+            }
+        },
+        {
+            "text":"[abo][REFLEX] The cost for a canceled non-action-card is still paid, including additional and alternative cost (e.g. to play {Eagle's Sight} to block a Wraith or zombie while {Parijat, the Dark Oracle} is ready the top card of the Library must be burned, even if {Eagle's Sight} was canceled)",
+            "refs":{
+                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "ANK 20260216":"https://www.vekn.net/forum/rules-questions/82835-eagle-sight-cancelled-by-i-am-legion-while-tenebrous-form-is-in-play#116448"
             }
         }
     ],
@@ -18072,6 +18135,13 @@
             "text":"[abo] [REFLEX] Any frenzy card that targets/selects/chooses/affects the minion when played, is considered being played on the minion.",
             "refs":{
                 "LSJ 20051113":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/L-ctaLucuKU/m/dG0EKdSd4g0J"
+            }
+        },
+        {
+            "text":"[abo][REFLEX] The cost for a canceled non-action-card is still paid, including additional and alternative cost (e.g. to play {Eagle's Sight} to block a Wraith or zombie while {Parijat, the Dark Oracle} is ready the top card of the Library must be burned, even if {Eagle's Sight} was canceled)",
+            "refs":{
+                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "ANK 20260216":"https://www.vekn.net/forum/rules-questions/82835-eagle-sight-cancelled-by-i-am-legion-while-tenebrous-form-is-in-play#116448"
             }
         }
     ],
@@ -22620,6 +22690,13 @@
             "refs":{
                 "LSJ 20030224":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/67261v339Ds/m/um8V7VVp2Y4J"
             }
+        },
+        {
+            "text":"The cost for a canceled non-action-card is still paid, including additional and alternative cost (e.g. to play {Eagle's Sight} to block a Wraith or zombie while {Parijat, the Dark Oracle} is ready the top card of the Library must be burned, even if {Eagle's Sight} was canceled)",
+            "refs":{
+                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "ANK 20260216":"https://www.vekn.net/forum/rules-questions/82835-eagle-sight-cancelled-by-i-am-legion-while-tenebrous-form-is-in-play#116448"
+            }
         }
     ],
     "201240":[
@@ -23703,15 +23780,15 @@
     ],
     "201726":[
         {
-            "text":"If a card forces a block attempt (eg,\u00a0{Second Tradition: Domain}) the blocking methuselah burns a card from the top of their library, before they redraw.",
+            "text":"If a card forces a block attempt (eg,\u00a0{Second Tradition: Domain}), burning the top of their library is part of the cost of playing the card. The cost is paid if the card is not cancelled and after the replacement card has been drawn.",
             "refs":{
-                "ANK 20260216":"https://www.vekn.net/forum/rules-questions/82837-parijat-special-order#116447"
+                "ANK 20260317":"https://www.vekn.net/forum/rules-questions/82837-parijat-special-order#116447"
             }
         },
         {
-            "text":"If you cannot burn a card from the top of your library (eg, your library is empty), you cannot attempt to block wraith or zombie allies while Parijat is ready.",
+            "text":"If you cannot burn a card from the top of your library (e.g., your library is empty), you cannot attempt to block wraith or zombie allies while Parijat is ready.",
             "refs":{
-                "ANK 20260216":"https://www.vekn.net/forum/rules-questions/82837-parijat-special-order#116447"
+                "ANK 20260317":"https://www.vekn.net/forum/rules-questions/82837-parijat-special-order#116447"
             }
         }
     ],
@@ -25391,6 +25468,15 @@
             }
         }
     ],
+    "G00155":[
+        {
+            "text":"The cost for a canceled non-action-card is still paid, including additional and alternative cost (e.g. to play {Eagle's Sight} to block a Wraith or zombie while {Parijat, the Dark Oracle} is ready the top card of the Library must be burned, even if {Eagle's Sight} was canceled)",
+            "refs":{
+                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "ANK 20260216":"https://www.vekn.net/forum/rules-questions/82835-eagle-sight-cancelled-by-i-am-legion-while-tenebrous-form-is-in-play#116448"
+            }
+        }
+    ],
     "101519":[
         {
             "text":"If one is ousted while having temporary control of a minion, the minion is removed from the game.  (Reversal of Previous Rulings)",
@@ -26924,6 +27010,71 @@
             "refs":{
                 "ANK 20200930":"https://www.vekn.net/forum/rules-questions/78800-off-turn-nocturn?start=6#100838",
                 "ANK 20200813-3":"https://www.vekn.net/forum/rules-questions/78800-off-turn-nocturn#100536"
+            }
+        }
+    ],
+    "102364":[
+        {
+            "text":"If they use their last life to play an action modifier, the action fails. If they use their last life to play a strike, combat ends before strike resolution.",
+            "refs":{
+                "ANK 20180928-1":"https://www.vekn.net/forum/rules-questions/77034-allies-and-vampire-disciplines-specifically-the-nocturn#90809"
+            }
+        },
+        {
+            "text":"If they takes aggravated damage from a card they plays as a vampire (eg. {Burst of Sunlight}), they lose one life but do not go to torpor.",
+            "refs":{
+                "LSJ 20060409":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gsFQXsCGTG4/m/q5H8FvuKksIJ"
+            }
+        },
+        {
+            "text":"If they use their last life to pay for an action, the action still resolves fully. If that leads to an oust, the oust is resolved before resolving effects triggered by the fact that they burn.",
+            "refs":{
+                "LSJ 20080512":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/z2DGSFph6sM/m/IjJB89nbtlsJ"
+            }
+        },
+        {
+            "text":"If a card they play as a vampire sends them to torpor (eg. {Reform Body}), they burn. REVERSAL of previous rulings.",
+            "refs":{
+                "LSJ 20060409":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gsFQXsCGTG4/m/q5H8FvuKksIJ"
+            }
+        },
+        {
+            "text":"They cannot use a card to commit diablerie (eg. {Amaranth})",
+            "refs":{
+                "RTR 19970630":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KireUeOYY3c/m/t6ifm9lur1kJ",
+                "LSJ 20080717":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/DMsE6V84GWI/m/af5Oggz9XlQJ"
+            }
+        },
+        {
+            "text":"Does not stack with similar effects (or another copy of itself) to provide superior version of the discipline(s) (e.g. {Leech} and {Putrescent Servitude} together does not provide superior [POT])",
+            "refs":{
+                "ANK 20180111":"https://www.vekn.net/forum/rules-questions/76364-leech-putrescent-servitude#84864"
+            }
+        },
+        {
+            "text":"Can be used to meet one (but not more than one) of the normal Discipline requirements of a multi-Discipline card.",
+            "refs":{
+                "LSJ 20011217":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/vZ13bh7FEvQ/m/KaZlbqc4LO0J",
+                "LSJ 20090508":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/B7dz3qoIITQ/m/0YV5PNQvijsJ"
+            }
+        },
+        {
+            "text":"While a minion has an effect that allows them to play cards that require Discipline(s), they do not actually have those Discipline(s).",
+            "refs":{
+                "LSJ 19980303":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Q_kKQiACZqk/m/Nu-cOlCq1cgJ"
+            }
+        },
+        {
+            "text":"Multiple similar effects (e.g. two {Infernal Familiar}, or {Ian Forestal} with an {Infernal Familiar}) cannot be used to meet the requirements of a multi-Discipline card that the minion is missing one or more Disciplines to play.",
+            "refs":{
+                "LSJ 20020218":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/o59KNX0R1Ls/m/QHnuE-mmSj0J"
+            }
+        },
+        {
+            "text":"While using their ability to meet a discipline requirement, they also meet that requirement for any other cards associated with the original effect (e.g. meeting the [ani] requirement for {Pack Alpha} or {Muricia's Call} also meets the [ani] requirement for the {Raven Spy} employed by that effect).",
+            "refs":{
+                "LSJ 20080205-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qkq18YMacnQ/m/i4gTLAr3IQcJ",
+                "LSJ 20060417":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/bW_XZDS-9iw/m/u_WVQXNXK0kJ"
             }
         }
     ],
@@ -28563,6 +28714,13 @@
                 "PIB 20150105":"https://www.vekn.net/forum/rules-questions/68465-voting-is-complicated#68493",
                 "LSJ 19980107":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aUUs4VCR_Ec/m/PLecvfrEqbgJ"
             }
+        },
+        {
+            "text":"Counts as requiring an Anarch (for eg. {Powerbase: Los Angeles}).",
+            "refs":{
+                "LSJ 20080603":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/LuT1iK1b4QIJ",
+                "LSJ 20050128":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HVy8iPUxNbI/m/ZHGTnprQjGUJ"
+            }
         }
     ],
     "100874":[
@@ -30119,6 +30277,33 @@
             }
         }
     ],
+    "102246":[
+        {
+            "text":"Counts as requiring an Anarch (for eg. {Powerbase: Los Angeles}).",
+            "refs":{
+                "LSJ 20080603":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/LuT1iK1b4QIJ",
+                "LSJ 20050128":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HVy8iPUxNbI/m/ZHGTnprQjGUJ"
+            }
+        },
+        {
+            "text":"Is not a vampire in the ash heap (eg. {Possession} cannot target it).",
+            "refs":{
+                "LSJ 20020115":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/wG_tDLgfZso/m/6mKkp7Rw3OcJ"
+            }
+        },
+        {
+            "text":"If moved to the uncontrolled region (eg. by {Banishment}), it stays a vampire and can be influenced.",
+            "refs":{
+                "RTR 19990712":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/x5k5Vw_hkI0/m/lCqkvlUz5yIJ"
+            }
+        },
+        {
+            "text":"If it would be put into the crypt for any reason, it is burned instead",
+            "refs":{
+                "LSJ 20041201-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/DY1OggZnMvs/m/7rSTvY34PRAJ"
+            }
+        }
+    ],
     "101448":[
         {
             "text":"The additional capacity is lost if the title is lost.",
@@ -31537,26 +31722,6 @@
             }
         }
     ],
-    "102246":[
-        {
-            "text":"Is not a vampire in the ash heap (eg. {Possession} cannot target it).",
-            "refs":{
-                "LSJ 20020115":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/wG_tDLgfZso/m/6mKkp7Rw3OcJ"
-            }
-        },
-        {
-            "text":"If moved to the uncontrolled region (eg. by {Banishment}), it stays a vampire and can be influenced.",
-            "refs":{
-                "RTR 19990712":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/x5k5Vw_hkI0/m/lCqkvlUz5yIJ"
-            }
-        },
-        {
-            "text":"If it would be put into the crypt for any reason, it is burned instead",
-            "refs":{
-                "LSJ 20041201-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/DY1OggZnMvs/m/7rSTvY34PRAJ"
-            }
-        }
-    ],
     "101527":[
         {
             "text":"If burned and shuffled into the library, other effects that apply when it is burned still apply (eg. {Set's Curse} puts an ally into play).",
@@ -31923,6 +32088,13 @@
             "refs":{
                 "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
             }
+        },
+        {
+            "text":"[abo][REFLEX] The cost for a canceled non-action-card is still paid, including additional and alternative cost (e.g. to play {Eagle's Sight} to block a Wraith or zombie while {Parijat, the Dark Oracle} is ready the top card of the Library must be burned, even if {Eagle's Sight} was canceled)",
+            "refs":{
+                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "ANK 20260216":"https://www.vekn.net/forum/rules-questions/82835-eagle-sight-cancelled-by-i-am-legion-while-tenebrous-form-is-in-play#116448"
+            }
         }
     ],
     "100538":[
@@ -31966,6 +32138,13 @@
             "refs":{
                 "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
             }
+        },
+        {
+            "text":"[abo][REFLEX] The cost for a canceled non-action-card is still paid, including additional and alternative cost (e.g. to play {Eagle's Sight} to block a Wraith or zombie while {Parijat, the Dark Oracle} is ready the top card of the Library must be burned, even if {Eagle's Sight} was canceled)",
+            "refs":{
+                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "ANK 20260216":"https://www.vekn.net/forum/rules-questions/82835-eagle-sight-cancelled-by-i-am-legion-while-tenebrous-form-is-in-play#116448"
+            }
         }
     ],
     "100539":[
@@ -32003,6 +32182,13 @@
             "refs":{
                 "LSJ 20051113":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/L-ctaLucuKU/m/dG0EKdSd4g0J"
             }
+        },
+        {
+            "text":"[abo][REFLEX] The cost for a canceled non-action-card is still paid, including additional and alternative cost (e.g. to play {Eagle's Sight} to block a Wraith or zombie while {Parijat, the Dark Oracle} is ready the top card of the Library must be burned, even if {Eagle's Sight} was canceled)",
+            "refs":{
+                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "ANK 20260216":"https://www.vekn.net/forum/rules-questions/82835-eagle-sight-cancelled-by-i-am-legion-while-tenebrous-form-is-in-play#116448"
+            }
         }
     ],
     "100540":[
@@ -32039,6 +32225,13 @@
             "text":"[abo] [REFLEX] Any frenzy card that targets/selects/chooses/affects the minion when played, is considered being played on the minion.",
             "refs":{
                 "LSJ 20051113":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/L-ctaLucuKU/m/dG0EKdSd4g0J"
+            }
+        },
+        {
+            "text":"[abo][REFLEX] The cost for a canceled non-action-card is still paid, including additional and alternative cost (e.g. to play {Eagle's Sight} to block a Wraith or zombie while {Parijat, the Dark Oracle} is ready the top card of the Library must be burned, even if {Eagle's Sight} was canceled)",
+            "refs":{
+                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "ANK 20260216":"https://www.vekn.net/forum/rules-questions/82835-eagle-sight-cancelled-by-i-am-legion-while-tenebrous-form-is-in-play#116448"
             }
         }
     ],
@@ -32163,6 +32356,13 @@
             "refs":{
                 "LSJ 20030224":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/67261v339Ds/m/um8V7VVp2Y4J"
             }
+        },
+        {
+            "text":"The cost for a canceled non-action-card is still paid, including additional and alternative cost (e.g. to play {Eagle's Sight} to block a Wraith or zombie while {Parijat, the Dark Oracle} is ready the top card of the Library must be burned, even if {Eagle's Sight} was canceled)",
+            "refs":{
+                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "ANK 20260216":"https://www.vekn.net/forum/rules-questions/82835-eagle-sight-cancelled-by-i-am-legion-while-tenebrous-form-is-in-play#116448"
+            }
         }
     ],
     "100663":[
@@ -32211,6 +32411,13 @@
             "text":"[POT][PRE] Can be used to cancel all action cards, including employ retainer, recruit ally and political action.",
             "refs":{
                 "ANK 20200813-2":"https://www.vekn.net/forum/rules-questions/78799-rewind-time-inf-and-action-cards#100526"
+            }
+        },
+        {
+            "text":"[POT][PRE] The cost for a canceled non-action-card is still paid, including additional and alternative cost (e.g. to play {Eagle's Sight} to block a Wraith or zombie while {Parijat, the Dark Oracle} is ready the top card of the Library must be burned, even if {Eagle's Sight} was canceled)",
+            "refs":{
+                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "ANK 20260216":"https://www.vekn.net/forum/rules-questions/82835-eagle-sight-cancelled-by-i-am-legion-while-tenebrous-form-is-in-play#116448"
             }
         }
     ],
@@ -32329,6 +32536,13 @@
             "text":"[abo] [REFLEX] Any frenzy card that targets/selects/chooses/affects the minion when played, is considered being played on the minion.",
             "refs":{
                 "LSJ 20051113":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/L-ctaLucuKU/m/dG0EKdSd4g0J"
+            }
+        },
+        {
+            "text":"[abo][REFLEX] The cost for a canceled non-action-card is still paid, including additional and alternative cost (e.g. to play {Eagle's Sight} to block a Wraith or zombie while {Parijat, the Dark Oracle} is ready the top card of the Library must be burned, even if {Eagle's Sight} was canceled)",
+            "refs":{
+                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "ANK 20260216":"https://www.vekn.net/forum/rules-questions/82835-eagle-sight-cancelled-by-i-am-legion-while-tenebrous-form-is-in-play#116448"
             }
         }
     ],
@@ -32553,6 +32767,13 @@
                 "TOM 19951007":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HUipqz0LFSw/m/pY6uEa3f8-gJ",
                 "LSJ 19991025":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/R94tyTGJ6VQ/m/KxvkGm1aon8J"
             }
+        },
+        {
+            "text":"The cost for a canceled non-action-card is still paid, including additional and alternative cost (e.g. to play {Eagle's Sight} to block a Wraith or zombie while {Parijat, the Dark Oracle} is ready the top card of the Library must be burned, even if {Eagle's Sight} was canceled)",
+            "refs":{
+                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "ANK 20260216":"https://www.vekn.net/forum/rules-questions/82835-eagle-sight-cancelled-by-i-am-legion-while-tenebrous-form-is-in-play#116448"
+            }
         }
     ],
     "101477":[
@@ -32589,6 +32810,13 @@
             "text":"[abo] [REFLEX] Any frenzy card that targets/selects/chooses/affects the minion when played, is considered being played on the minion.",
             "refs":{
                 "LSJ 20051113":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/L-ctaLucuKU/m/dG0EKdSd4g0J"
+            }
+        },
+        {
+            "text":"[abo][REFLEX] The cost for a canceled non-action-card is still paid, including additional and alternative cost (e.g. to play {Eagle's Sight} to block a Wraith or zombie while {Parijat, the Dark Oracle} is ready the top card of the Library must be burned, even if {Eagle's Sight} was canceled)",
+            "refs":{
+                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "ANK 20260216":"https://www.vekn.net/forum/rules-questions/82835-eagle-sight-cancelled-by-i-am-legion-while-tenebrous-form-is-in-play#116448"
             }
         }
     ],
@@ -32627,6 +32855,13 @@
             "refs":{
                 "LSJ 20051113":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/L-ctaLucuKU/m/dG0EKdSd4g0J"
             }
+        },
+        {
+            "text":"[abo][REFLEX] The cost for a canceled non-action-card is still paid, including additional and alternative cost (e.g. to play {Eagle's Sight} to block a Wraith or zombie while {Parijat, the Dark Oracle} is ready the top card of the Library must be burned, even if {Eagle's Sight} was canceled)",
+            "refs":{
+                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "ANK 20260216":"https://www.vekn.net/forum/rules-questions/82835-eagle-sight-cancelled-by-i-am-legion-while-tenebrous-form-is-in-play#116448"
+            }
         }
     ],
     "101506":[
@@ -32663,6 +32898,13 @@
             "text":"Cancelation must be immediate: a wake can be used in the \"as played\" window, but a reaction to \"unlock and attempt to block\" cannot.",
             "refs":{
                 "LSJ 20021011":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9WWIzxek9Nc/m/PlIwI11sNpkJ"
+            }
+        },
+        {
+            "text":"[chi] The cost for a canceled non-action-card is still paid, including additional and alternative cost (e.g. to play {Eagle's Sight} to block a Wraith or zombie while {Parijat, the Dark Oracle} is ready the top card of the Library must be burned, even if {Eagle's Sight} was canceled)",
+            "refs":{
+                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "ANK 20260216":"https://www.vekn.net/forum/rules-questions/82835-eagle-sight-cancelled-by-i-am-legion-while-tenebrous-form-is-in-play#116448"
             }
         }
     ],
@@ -32843,6 +33085,13 @@
             "refs":{
                 "LSJ 20051113":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/L-ctaLucuKU/m/dG0EKdSd4g0J"
             }
+        },
+        {
+            "text":"[abo][REFLEX] The cost for a canceled non-action-card is still paid, including additional and alternative cost (e.g. to play {Eagle's Sight} to block a Wraith or zombie while {Parijat, the Dark Oracle} is ready the top card of the Library must be burned, even if {Eagle's Sight} was canceled)",
+            "refs":{
+                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "ANK 20260216":"https://www.vekn.net/forum/rules-questions/82835-eagle-sight-cancelled-by-i-am-legion-while-tenebrous-form-is-in-play#116448"
+            }
         }
     ],
     "101959":[
@@ -32991,6 +33240,13 @@
                 "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
                 "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
             }
+        },
+        {
+            "text":"[OBE] The cost for a canceled non-action-card is still paid, including additional and alternative cost (e.g. to play {Eagle's Sight} to block a Wraith or zombie while {Parijat, the Dark Oracle} is ready the top card of the Library must be burned, even if {Eagle's Sight} was canceled)",
+            "refs":{
+                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "ANK 20260216":"https://www.vekn.net/forum/rules-questions/82835-eagle-sight-cancelled-by-i-am-legion-while-tenebrous-form-is-in-play#116448"
+            }
         }
     ],
     "102158":[
@@ -33021,6 +33277,13 @@
             "text":"If a limited effect is canceled (bleed, additional strike), then the limit is not triggered and another limited effect can be used.",
             "refs":{
                 "LSJ 20030224":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/67261v339Ds/m/um8V7VVp2Y4J"
+            }
+        },
+        {
+            "text":"The cost for a canceled non-action-card is still paid, including additional and alternative cost (e.g. to play {Eagle's Sight} to block a Wraith or zombie while {Parijat, the Dark Oracle} is ready the top card of the Library must be burned, even if {Eagle's Sight} was canceled)",
+            "refs":{
+                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "ANK 20260216":"https://www.vekn.net/forum/rules-questions/82835-eagle-sight-cancelled-by-i-am-legion-while-tenebrous-form-is-in-play#116448"
             }
         }
     ],
@@ -33058,6 +33321,13 @@
             "text":"[abo] [REFLEX] Any frenzy card that targets/selects/chooses/affects the minion when played, is considered being played on the minion.",
             "refs":{
                 "LSJ 20051113":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/L-ctaLucuKU/m/dG0EKdSd4g0J"
+            }
+        },
+        {
+            "text":"[abo][REFLEX] The cost for a canceled non-action-card is still paid, including additional and alternative cost (e.g. to play {Eagle's Sight} to block a Wraith or zombie while {Parijat, the Dark Oracle} is ready the top card of the Library must be burned, even if {Eagle's Sight} was canceled)",
+            "refs":{
+                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "ANK 20260216":"https://www.vekn.net/forum/rules-questions/82835-eagle-sight-cancelled-by-i-am-legion-while-tenebrous-form-is-in-play#116448"
             }
         }
     ],
@@ -33107,6 +33377,13 @@
             "text":"Can be used to cancel all action cards, including employ retainer, recruit ally and political action.",
             "refs":{
                 "ANK 20200813-2":"https://www.vekn.net/forum/rules-questions/78799-rewind-time-inf-and-action-cards#100526"
+            }
+        },
+        {
+            "text":"The cost for a canceled non-action-card is still paid, including additional and alternative cost (e.g. to play {Eagle's Sight} to block a Wraith or zombie while {Parijat, the Dark Oracle} is ready the top card of the Library must be burned, even if {Eagle's Sight} was canceled)",
+            "refs":{
+                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "ANK 20260216":"https://www.vekn.net/forum/rules-questions/82835-eagle-sight-cancelled-by-i-am-legion-while-tenebrous-form-is-in-play#116448"
             }
         }
     ],
@@ -34682,6 +34959,13 @@
                 "ANK 20210124":"https://www.vekn.net/forum/rules-questions/79001-the-question-of-the-month-action-fizzles#101492",
                 "LSJ 20070411":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/umdINigMKqs/m/l6GFRVKdkMsJ",
                 "LSJ 20090514":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
+            }
+        },
+        {
+            "text":"[THA] The cost for a canceled non-action-card is still paid, including additional and alternative cost (e.g. to play {Eagle's Sight} to block a Wraith or zombie while {Parijat, the Dark Oracle} is ready the top card of the Library must be burned, even if {Eagle's Sight} was canceled)",
+            "refs":{
+                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "ANK 20260216":"https://www.vekn.net/forum/rules-questions/82835-eagle-sight-cancelled-by-i-am-legion-while-tenebrous-form-is-in-play#116448"
             }
         }
     ],
@@ -36499,6 +36783,13 @@
             "text":"Cannot be used to direct a bleed to a Methuselah who would be an invalid target for a bleed.",
             "refs":{
                 "PIB 20130711":"https://www.vekn.net/forum/rules-questions/51279-big-boon-bounce?fbclid=IwAR3-kLQKFt415mAPpGL0sYpi4yx6ZzJbiyP57z3R6nkIW7V-g0F93z_ob-s#51307"
+            }
+        },
+        {
+            "text":"The cost for a canceled non-action-card is still paid, including additional and alternative cost (e.g. to play {Eagle's Sight} to block a Wraith or zombie while {Parijat, the Dark Oracle} is ready the top card of the Library must be burned, even if {Eagle's Sight} was canceled)",
+            "refs":{
+                "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
+                "ANK 20260216":"https://www.vekn.net/forum/rules-questions/82835-eagle-sight-cancelled-by-i-am-legion-while-tenebrous-form-is-in-play#116448"
             }
         }
     ],

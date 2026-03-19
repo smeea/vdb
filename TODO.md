@@ -1,4 +1,5 @@
 # FIX
+- Deleting decks from ADS (discord)
 
 # FIX ON HOLD
 

@@ -4272,10 +4272,11 @@
   - She can use her ability to pay for equipments that are locations while in play (eg. {Palatial Estate}). [LSJ 20080107]
     [LSJ 20080114]
 201726|Parijat, the Dark Oracle:
-  - 'If a card forces a block attempt (eg, {Second Tradition: Domain}) the blocking methuselah burns a card from the top of
-    their library, before they redraw. [ANK 20260216]'
-  - If you cannot burn a card from the top of your library (eg, your library is empty), you cannot attempt to block wraith
-    or zombie allies while Parijat is ready. [ANK 20260216]
+  - 'If a card forces a block attempt (eg, {Second Tradition: Domain}), burning the top of their library is part of the cost
+    of playing the card. The cost is paid if the card is not cancelled and after the replacement card has been drawn. [ANK
+    20260317]'
+  - If you cannot burn a card from the top of your library (e.g., your library is empty), you cannot attempt to block wraith
+    or zombie allies while Parijat is ready. [ANK 20260317]
 201776|Věnceslava, The Implacable:
   - Their ability is not applied if his controller is ousted by the referendum effects (reversal of previous rulings). [ANK
     20220808]
@@ -4756,3 +4757,7 @@ G00153|Prevents more than 1 damage:
   - Unused prevention points can't be carried over unless optional ('can/may prevent'). [ANK 20200318] [LSJ 20001114]
 G00154|Immideate damage prevention:
   - Cannot be used if there is no damage to prevent. [LSJ 20001114]
+G00155|Cancel, cost is still paid:
+  - The cost for a canceled non-action-card is still paid, including additional and alternative cost (e.g. to play {Eagle's
+    Sight} to block a Wraith or zombie while {Parijat, the Dark Oracle} is ready the top card of the Library must be burned,
+    even if {Eagle's Sight} was canceled) [RBK cancel-a-card] [ANK 20260216]
