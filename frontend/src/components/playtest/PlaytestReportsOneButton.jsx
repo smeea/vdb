@@ -7,12 +7,11 @@ import {
   FlexGapped,
   Modal,
   PlaytestReportEntry,
+  PlaytestScores,
 } from "@/components";
 import { CARDS, DECK, ID, NAME, PRECONS } from "@/constants";
 import { useApp } from "@/context";
 import { useFetch } from "@/hooks";
-
-const PlaytestScores = lazy(() => import("./PlaytestScores"));
 
 const PlaytestReportsOneButton = ({ value, isPrecon = false }) => {
   const { isMobile } = useApp();

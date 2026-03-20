@@ -3,6 +3,7 @@ import { createBrowserRouter, createRoutesFromElements, Navigate, Route } from "
 import { DECKID, DECKID_FROM, DECKID_TO, EVENT, ID } from "@/constants";
 import { useApp } from "@/context";
 import { deckServices, miscServices } from "@/services";
+import { PlaytestManage, PlaytestReportsAll } from "@/components";
 import About from "./pages/About.jsx";
 import Account from "./pages/Account.jsx";
 import Cards from "./pages/Cards.jsx";
@@ -17,8 +18,6 @@ const Documentation = lazy(() => import("./pages/Documentation.jsx"));
 const Inventory = lazy(() => import("./pages/Inventory.jsx"));
 const Pda = lazy(() => import("./pages/Pda.jsx"));
 const Playtest = lazy(() => import("./pages/Playtest.jsx"));
-const PlaytestManage = lazy(() => import("./components/playtest/PlaytestManage.jsx"));
-const PlaytestReportsAll = lazy(() => import("./components/playtest/PlaytestReportsAll.jsx"));
 const Review = lazy(() => import("./pages/Review.jsx"));
 const Tda = lazy(() => import("./pages/Tda.jsx"));
 const Twd = lazy(() => import("./pages/Twd.jsx"));
