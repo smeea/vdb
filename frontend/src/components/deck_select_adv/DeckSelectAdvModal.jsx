@@ -5,6 +5,8 @@ import TrashFill from "@icons/trash-fill.svg?react";
 import UnlockFill from "@icons/unlock-fill.svg?react";
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router";
+import { twMerge } from "tailwind-merge";
+import paths from "@/assets/data/paths.json";
 import {
   ButtonIconed,
   DeckSelectAdvTable,
@@ -15,11 +17,14 @@ import {
   MenuItems,
   Modal,
   ModalConfirmation,
+  ResultClanImage,
+  ResultPathImage,
 } from "@/components";
-import { DECKID, IS_FROZEN, JOL, LACKEY, NAME, TEXT, XLSX } from "@/constants";
+import { CRYPT, DECKID, IS_FROZEN, JOL, LACKEY, NAME, TEXT, XLSX } from "@/constants";
 import { deckUpdate, useApp } from "@/context";
 import { useDecksTagsAll } from "@/hooks";
 import { deckServices } from "@/services";
+import { getClan } from "@/utils";
 
 const DeckSelectAdvModal = ({ decks, onClick, setShow, short }) => {
   const { isMobile, decksAdvSort, changeDecksAdvSort, setShowMenuButtons, setShowFloatingButtons } =
@@ -56,7 +61,7 @@ const DeckSelectAdvModal = ({ decks, onClick, setShow, short }) => {
       .forEach((deckid) => {
         const deck = decks[deckid];
         deckServices.deckDelete(deck).then(() => {
-          setSelectedDecks({})
+          setSelectedDecks({});
           if (deckid === activeDeckid) navigate("/decks");
         });
       });
@@ -152,13 +157,27 @@ const DeckSelectAdvModal = ({ decks, onClick, setShow, short }) => {
           buttonVariant="danger"
           withWrittenConfirmation
         >
-          <div className="flex flex-col gap-1.5">
+          <div className="flex flex-col gap-3">
             {Object.keys(selectedDecks)
               .filter((deckid) => !!selectedDecks[deckid])
               .map((deckid) => {
+                const deck = decks[deckid];
+                const clan = getClan(deck[CRYPT]);
+
                 return (
-                  <div key={deckid} className="text-fgName dark:text-fgNameDark">
-                    {decks[deckid][NAME]}
+                  <div key={deckid} className="flex gap-1.5">
+                    {clan ? (
+                      <div className="flex w-[30px] items-center justify-center">
+                        {paths.includes(clan) ? (
+                          <ResultPathImage value={clan} />
+                        ) : (
+                          <ResultClanImage value={clan} />
+                        )}
+                      </div>
+                    ) : (
+                      <div className="w-[30px]" />
+                    )}
+                    {deck[NAME]}
                   </div>
                 );
               })}
