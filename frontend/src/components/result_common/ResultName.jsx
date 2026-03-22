@@ -12,14 +12,15 @@ import {
   PLAYTEST,
   PRERELEASE,
 } from "@/constants";
-import { getLegality } from "@/utils";
 import { limitedStore, useApp } from "@/context";
+import { getLegality } from "@/utils";
 
 const ResultName = ({ card, isColored = true }) => {
   const { limitedMode } = useApp();
   const limitedState = useSnapshot(limitedStore)[card[ID] > 200000 ? CRYPT : LIBRARY];
   const isLimited = limitedMode && !limitedState[card[ID]];
-  const isReleasedPrerelease = card[LEGAL_RESTRICTIONS] && card[LEGAL_RESTRICTIONS] !== PLAYTEST && !getLegality(card)
+  const isReleasedPrerelease =
+    card[LEGAL_RESTRICTIONS] && card[LEGAL_RESTRICTIONS] !== PLAYTEST && !getLegality(card);
 
   return (
     <div

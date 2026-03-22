@@ -1,9 +1,9 @@
 import { lazy, Suspense } from "react";
 import { createBrowserRouter, createRoutesFromElements, Navigate, Route } from "react-router";
+import { PlaytestManage, PlaytestReportsAll } from "@/components";
 import { DECKID, DECKID_FROM, DECKID_TO, EVENT, ID } from "@/constants";
 import { useApp } from "@/context";
 import { deckServices, miscServices } from "@/services";
-import { PlaytestManage, PlaytestReportsAll } from "@/components";
 import About from "./pages/About.jsx";
 import Account from "./pages/Account.jsx";
 import Cards from "./pages/Cards.jsx";

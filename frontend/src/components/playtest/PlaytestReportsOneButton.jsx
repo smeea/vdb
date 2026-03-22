@@ -1,5 +1,5 @@
 import InboxesFill from "@icons/inboxes-fill.svg?react";
-import { lazy, useState } from "react";
+import { useState } from "react";
 import {
   ButtonIconed,
   CardImage,

@@ -5,7 +5,6 @@ import TrashFill from "@icons/trash-fill.svg?react";
 import UnlockFill from "@icons/unlock-fill.svg?react";
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router";
-import { twMerge } from "tailwind-merge";
 import paths from "@/assets/data/paths.json";
 import {
   ButtonIconed,

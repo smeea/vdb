@@ -2,7 +2,7 @@ import Exclamation from "@icons/exclamation-triangle.svg?react";
 import Hammer from "@icons/hammer.svg?react";
 import LightningChargeFill from "@icons/lightning-charge-fill.svg?react";
 import { twMerge } from "tailwind-merge";
-import { PRERELEASE, BANNED, DEFAULT, PLAYTEST } from "@/constants";
+import { BANNED, DEFAULT, PLAYTEST, PRERELEASE } from "@/constants";
 
 const ResultLegalIcon = ({ value, title, type = DEFAULT, className }) => {
   const titleOptions = {
