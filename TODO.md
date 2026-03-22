@@ -1,5 +1,4 @@
 # FIX
-- Deleting decks from ADS (discord)
 
 # FIX ON HOLD
 
@@ -18,3 +17,4 @@
 - Refactor debounce with Tanstack Pacer
 - Refactor backend db with MutableDict
 - Refactor 'urplusFixed' typo, wishlist[VALUE] to q
+- Mobile images from avif to webp
