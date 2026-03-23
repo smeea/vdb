@@ -35,8 +35,8 @@ const CardImage = ({ card, set, className = "max-sm:w-full", size = "md", onClic
     <picture>
       <source
         media="(max-width: 576px)"
-        srcSet={`${set || lang !== EN ? otherUrl : url}.webp?v=${import.meta.env.VITE_IMAGE_VERSION}`}
-        type="image/webp"
+        srcSet={`${set || lang !== EN ? otherUrl : url}.avif?v=${import.meta.env.VITE_IMAGE_VERSION}`}
+        type="image/avif"
       />
       <img
         className={twMerge(sizeStyle[size], className)}
