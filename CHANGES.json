@@ -1,5 +1,11 @@
 [
   {
+    "version": "2026-04-05",
+    "changes": [
+      "Small fixes"
+    ]
+  },
+  {
     "version": "2026-03-19",
     "changes": [
       "Update TWDA",
