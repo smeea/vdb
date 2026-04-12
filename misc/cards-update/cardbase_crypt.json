@@ -18511,9 +18511,32 @@
         "path":"",
         "rulings":[
             {
-                "text":"His ability cannot be used if the action is blocked.",
+                "text":"Cannot be used while a block is being attempted, or has already been successful.",
                 "refs":{
+                    "ANK 20260316":"https://www.vekn.net/forum/rules-questions/82895-failing-action-before-block-attempts#116669",
                     "LSJ 20041022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gqhND6kd2wE/m/LDmEotxa_4kJ"
+                }
+            },
+            {
+                "text":"If the action fails, modifiers and reactions that can be used at the end/after an action can still be used afterwards (after combat, if any).",
+                "refs":{
+                    "ANK 20221205":"https://www.vekn.net/forum/rules-questions/80196-clarification-regarding-detect-authority#106923",
+                    "ANK 20220118":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#104506",
+                    "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
+                    "LSJ 20041022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gqhND6kd2wE/m/LDmEotxa_4kJ"
+                }
+            },
+            {
+                "text":"If the action fails, the action has reached resolution, so is subject to NRA (Non Repeatable Action) rules.",
+                "refs":{
+                    "ANK 20211015":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#103563",
+                    "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/"
+                }
+            },
+            {
+                "text":"If an action fails, it was not blocked. Cards/effects depending on a block (e.g. {Mirror Image}, [FOR] {Freak Drive}) cannot be played/used.",
+                "refs":{
+                    "LSJ 20070219":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HkKuwBe9LRk/m/RGUse0Ow8L4J"
                 }
             }
         ],

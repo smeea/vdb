@@ -4674,6 +4674,35 @@
                 "refs":{
                     "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
                 }
+            },
+            {
+                "text":"Cannot be used while a block is being attempted, or has already been successful.",
+                "refs":{
+                    "ANK 20260316":"https://www.vekn.net/forum/rules-questions/82895-failing-action-before-block-attempts#116669",
+                    "LSJ 20041022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gqhND6kd2wE/m/LDmEotxa_4kJ"
+                }
+            },
+            {
+                "text":"[CHI] If the action fails, modifiers and reactions that can be used at the end/after an action can still be used afterwards (after combat, if any).",
+                "refs":{
+                    "ANK 20221205":"https://www.vekn.net/forum/rules-questions/80196-clarification-regarding-detect-authority#106923",
+                    "ANK 20220118":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#104506",
+                    "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
+                    "LSJ 20041022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gqhND6kd2wE/m/LDmEotxa_4kJ"
+                }
+            },
+            {
+                "text":"[CHI] If the action fails, the action has reached resolution, so is subject to NRA (Non Repeatable Action) rules.",
+                "refs":{
+                    "ANK 20211015":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#103563",
+                    "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/"
+                }
+            },
+            {
+                "text":"[CHI] If an action fails, it was not blocked. Cards/effects depending on a block (e.g. {Mirror Image}, [FOR] {Freak Drive}) cannot be played/used.",
+                "refs":{
+                    "LSJ 20070219":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HkKuwBe9LRk/m/RGUse0Ow8L4J"
+                }
             }
         ],
         "set":{
@@ -11249,6 +11278,35 @@
                 "refs":{
                     "LSJ 20030607":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/DG7s60pwv1U/m/FPqlZYJ3upcJ"
                 }
+            },
+            {
+                "text":"Cannot be used while a block is being attempted, or has already been successful.",
+                "refs":{
+                    "ANK 20260316":"https://www.vekn.net/forum/rules-questions/82895-failing-action-before-block-attempts#116669",
+                    "LSJ 20041022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gqhND6kd2wE/m/LDmEotxa_4kJ"
+                }
+            },
+            {
+                "text":"If the action fails, modifiers and reactions that can be used at the end/after an action can still be used afterwards (after combat, if any).",
+                "refs":{
+                    "ANK 20221205":"https://www.vekn.net/forum/rules-questions/80196-clarification-regarding-detect-authority#106923",
+                    "ANK 20220118":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#104506",
+                    "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
+                    "LSJ 20041022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gqhND6kd2wE/m/LDmEotxa_4kJ"
+                }
+            },
+            {
+                "text":"If the action fails, the action has reached resolution, so is subject to NRA (Non Repeatable Action) rules.",
+                "refs":{
+                    "ANK 20211015":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#103563",
+                    "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/"
+                }
+            },
+            {
+                "text":"If an action fails, it was not blocked. Cards/effects depending on a block (e.g. {Mirror Image}, [FOR] {Freak Drive}) cannot be played/used.",
+                "refs":{
+                    "LSJ 20070219":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HkKuwBe9LRk/m/RGUse0Ow8L4J"
+                }
             }
         ],
         "set":{
@@ -14360,19 +14418,37 @@
                 }
             },
             {
-                "text":"If the action fails, modifiers and reactions that can be used at the end/after an action can still be used afterwards.    .",
+                "text":"The ability to fail an action must be used before action modifiers or reactions that are not explicitly played \"as the action is announced\".",
                 "refs":{
-                    "LSJ 20041022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gqhND6kd2wE/m/LDmEotxa_4kJ",
-                    "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
-                    "ANK 20220118":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#104506",
-                    "ANK 20221205":"https://www.vekn.net/forum/rules-questions/80196-clarification-regarding-detect-authority#106923"
+                    "ANK 20190425":"https://www.vekn.net/forum/rules-questions/77581-action-modifiers-played-at-beginning-and-end-of-an-action#94652"
                 }
             },
             {
-                "text":"The action has reached resolution, so is subject to NRA (Non Repeatable Action) rules.",
+                "text":"The acting player has the opportunity to play \"as announced\" effects first (eg. Seduction).",
                 "refs":{
+                    "LSJ 20081105":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/CYjOJtTBMGU/m/H8kQXN1w2ycJ"
+                }
+            },
+            {
+                "text":"If the action fails, modifiers and reactions that can be used at the end/after an action can still be used afterwards (after combat, if any).",
+                "refs":{
+                    "ANK 20221205":"https://www.vekn.net/forum/rules-questions/80196-clarification-regarding-detect-authority#106923",
+                    "ANK 20220118":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#104506",
                     "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
-                    "ANK 20211015":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#103563"
+                    "LSJ 20041022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gqhND6kd2wE/m/LDmEotxa_4kJ"
+                }
+            },
+            {
+                "text":"If the action fails, the action has reached resolution, so is subject to NRA (Non Repeatable Action) rules.",
+                "refs":{
+                    "ANK 20211015":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#103563",
+                    "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/"
+                }
+            },
+            {
+                "text":"If an action fails, it was not blocked. Cards/effects depending on a block (e.g. {Mirror Image}, [FOR] {Freak Drive}) cannot be played/used.",
+                "refs":{
+                    "LSJ 20070219":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HkKuwBe9LRk/m/RGUse0Ow8L4J"
                 }
             }
         ],
@@ -15722,24 +15798,32 @@
                 }
             },
             {
-                "text":"[REACTION] The action fails but was not blocked. Cards depending on a block (eg. {Mirror Image}, {Freak Drive}) cannot be played.",
+                "text":"Cannot be used while a block is being attempted, or has already been successful.",
+                "refs":{
+                    "ANK 20260316":"https://www.vekn.net/forum/rules-questions/82895-failing-action-before-block-attempts#116669",
+                    "LSJ 20041022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gqhND6kd2wE/m/LDmEotxa_4kJ"
+                }
+            },
+            {
+                "text":"[REACTION] If the action fails, modifiers and reactions that can be used at the end/after an action can still be used afterwards (after combat, if any).",
+                "refs":{
+                    "ANK 20221205":"https://www.vekn.net/forum/rules-questions/80196-clarification-regarding-detect-authority#106923",
+                    "ANK 20220118":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#104506",
+                    "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
+                    "LSJ 20041022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gqhND6kd2wE/m/LDmEotxa_4kJ"
+                }
+            },
+            {
+                "text":"[REACTION] If the action fails, the action has reached resolution, so is subject to NRA (Non Repeatable Action) rules.",
+                "refs":{
+                    "ANK 20211015":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#103563",
+                    "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/"
+                }
+            },
+            {
+                "text":"[REACTION] If an action fails, it was not blocked. Cards/effects depending on a block (e.g. {Mirror Image}, [FOR] {Freak Drive}) cannot be played/used.",
                 "refs":{
                     "LSJ 20070219":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HkKuwBe9LRk/m/RGUse0Ow8L4J"
-                }
-            },
-            {
-                "text":"[REACTION] Modifiers and reactions that can be used at the end/after an action can still be used afterwards.",
-                "refs":{
-                    "LSJ 20041022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gqhND6kd2wE/m/LDmEotxa_4kJ",
-                    "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
-                    "ANK 20221205":"https://www.vekn.net/forum/rules-questions/80196-clarification-regarding-detect-authority#106923"
-                }
-            },
-            {
-                "text":"[REACTION] The action fails, so has reached resolution: it is subject to NRA (Non Repeatable Action) rules.",
-                "refs":{
-                    "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
-                    "ANK 20211015":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#103563"
                 }
             }
         ],
@@ -15974,6 +16058,35 @@
                 "refs":{
                     "LSJ 20080809-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/1jW6GXrIRSU/m/6SpheeDqQeUJ",
                     "RTR 20081119":"https://www.vekn.net/card-lists/140-keepers-of-tradition"
+                }
+            },
+            {
+                "text":"Cannot be used while a block is being attempted, or has already been successful.",
+                "refs":{
+                    "ANK 20260316":"https://www.vekn.net/forum/rules-questions/82895-failing-action-before-block-attempts#116669",
+                    "LSJ 20041022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gqhND6kd2wE/m/LDmEotxa_4kJ"
+                }
+            },
+            {
+                "text":"If the action fails, modifiers and reactions that can be used at the end/after an action can still be used afterwards (after combat, if any).",
+                "refs":{
+                    "ANK 20221205":"https://www.vekn.net/forum/rules-questions/80196-clarification-regarding-detect-authority#106923",
+                    "ANK 20220118":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#104506",
+                    "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
+                    "LSJ 20041022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gqhND6kd2wE/m/LDmEotxa_4kJ"
+                }
+            },
+            {
+                "text":"If the action fails, the action has reached resolution, so is subject to NRA (Non Repeatable Action) rules.",
+                "refs":{
+                    "ANK 20211015":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#103563",
+                    "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/"
+                }
+            },
+            {
+                "text":"If an action fails, it was not blocked. Cards/effects depending on a block (e.g. {Mirror Image}, [FOR] {Freak Drive}) cannot be played/used.",
+                "refs":{
+                    "LSJ 20070219":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HkKuwBe9LRk/m/RGUse0Ow8L4J"
                 }
             }
         ],
@@ -20019,7 +20132,37 @@
         "path":"",
         "pool":0,
         "requirement":"archbishop,priscus,cardinal,regent,sabbat",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Cannot be used while a block is being attempted, or has already been successful.",
+                "refs":{
+                    "ANK 20260316":"https://www.vekn.net/forum/rules-questions/82895-failing-action-before-block-attempts#116669",
+                    "LSJ 20041022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gqhND6kd2wE/m/LDmEotxa_4kJ"
+                }
+            },
+            {
+                "text":"If the action fails, modifiers and reactions that can be used at the end/after an action can still be used afterwards (after combat, if any).",
+                "refs":{
+                    "ANK 20221205":"https://www.vekn.net/forum/rules-questions/80196-clarification-regarding-detect-authority#106923",
+                    "ANK 20220118":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#104506",
+                    "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
+                    "LSJ 20041022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gqhND6kd2wE/m/LDmEotxa_4kJ"
+                }
+            },
+            {
+                "text":"If the action fails, the action has reached resolution, so is subject to NRA (Non Repeatable Action) rules.",
+                "refs":{
+                    "ANK 20211015":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#103563",
+                    "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/"
+                }
+            },
+            {
+                "text":"If an action fails, it was not blocked. Cards/effects depending on a block (e.g. {Mirror Image}, [FOR] {Freak Drive}) cannot be played/used.",
+                "refs":{
+                    "LSJ 20070219":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HkKuwBe9LRk/m/RGUse0Ow8L4J"
+                }
+            }
+        ],
         "set":{
             "Sabbat":{
                 "U":true
@@ -25402,21 +25545,6 @@
         "requirement":"anarch",
         "rulings":[
             {
-                "text":"[ani] If the action fails, modifiers and reactions that can be used at the end/after an action can still be used afterwards.",
-                "refs":{
-                    "LSJ 20041022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gqhND6kd2wE/m/LDmEotxa_4kJ",
-                    "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
-                    "ANK 20221205":"https://www.vekn.net/forum/rules-questions/80196-clarification-regarding-detect-authority#106923"
-                }
-            },
-            {
-                "text":"[ani] If the action fails, it has reached resolution, so is subject to NRA (Non Repeatable Action) rules.",
-                "refs":{
-                    "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
-                    "ANK 20211015":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#103563"
-                }
-            },
-            {
                 "text":"[ani] Not usable against actions targeting an equipment or retainer, they do not target the minion.",
                 "refs":{
                     "LSJ 20090324":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Zc_ogoVhsug/m/tJ2VBYI7resJ"
@@ -25427,6 +25555,35 @@
                 "refs":{
                     "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
                     "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+                }
+            },
+            {
+                "text":"Cannot be used while a block is being attempted, or has already been successful.",
+                "refs":{
+                    "ANK 20260316":"https://www.vekn.net/forum/rules-questions/82895-failing-action-before-block-attempts#116669",
+                    "LSJ 20041022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gqhND6kd2wE/m/LDmEotxa_4kJ"
+                }
+            },
+            {
+                "text":"[ani] If the action fails, modifiers and reactions that can be used at the end/after an action can still be used afterwards (after combat, if any).",
+                "refs":{
+                    "ANK 20221205":"https://www.vekn.net/forum/rules-questions/80196-clarification-regarding-detect-authority#106923",
+                    "ANK 20220118":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#104506",
+                    "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
+                    "LSJ 20041022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gqhND6kd2wE/m/LDmEotxa_4kJ"
+                }
+            },
+            {
+                "text":"[ani] If the action fails, the action has reached resolution, so is subject to NRA (Non Repeatable Action) rules.",
+                "refs":{
+                    "ANK 20211015":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#103563",
+                    "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/"
+                }
+            },
+            {
+                "text":"[ani] If an action fails, it was not blocked. Cards/effects depending on a block (e.g. {Mirror Image}, [FOR] {Freak Drive}) cannot be played/used.",
+                "refs":{
+                    "LSJ 20070219":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HkKuwBe9LRk/m/RGUse0Ow8L4J"
                 }
             }
         ],
@@ -29741,6 +29898,12 @@
                 "refs":{
                     "RTR 20080808":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/1jW6GXrIRSU/m/8QTYL98kB0gJ"
                 }
+            },
+            {
+                "text":"[CHI] Targets each ready minion(s) of the chosen methuselah",
+                "refs":{
+                    "LSJ 20071024":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/zBOoZ0t_y5Q/m/Jf6HWo_t9HwJ"
+                }
             }
         ],
         "set":{
@@ -31418,18 +31581,38 @@
                 }
             },
             {
-                "text":"[VIS][REACTION] Modifiers and reactions that can be used at the end/after an action can still be used after combat.",
+                "text":"The action fails: it might be continued (eg. Form of Mist) but still fails anyway.",
                 "refs":{
-                    "LSJ 20041022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gqhND6kd2wE/m/LDmEotxa_4kJ",
-                    "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
-                    "ANK 20221205":"https://www.vekn.net/forum/rules-questions/80196-clarification-regarding-detect-authority#106923"
+                    "LSJ 20070214-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/C_QjWH6VIh4/m/LGMpWNyO_e4J"
                 }
             },
             {
-                "text":"[VIS][REACTION] The action has reached resolution, so is subject to NRA (Non Repeatable Action) rules.",
+                "text":"Cannot be used while a block is being attempted, or has already been successful.",
                 "refs":{
+                    "ANK 20260316":"https://www.vekn.net/forum/rules-questions/82895-failing-action-before-block-attempts#116669",
+                    "LSJ 20041022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gqhND6kd2wE/m/LDmEotxa_4kJ"
+                }
+            },
+            {
+                "text":"[VIS][REACTION] If the action fails, modifiers and reactions that can be used at the end/after an action can still be used afterwards (after combat, if any).",
+                "refs":{
+                    "ANK 20221205":"https://www.vekn.net/forum/rules-questions/80196-clarification-regarding-detect-authority#106923",
+                    "ANK 20220118":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#104506",
                     "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
-                    "ANK 20211015":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#103563"
+                    "LSJ 20041022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gqhND6kd2wE/m/LDmEotxa_4kJ"
+                }
+            },
+            {
+                "text":"[VIS][REACTION] If the action fails, the action has reached resolution, so is subject to NRA (Non Repeatable Action) rules.",
+                "refs":{
+                    "ANK 20211015":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#103563",
+                    "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/"
+                }
+            },
+            {
+                "text":"[VIS][REACTION] If an action fails, it was not blocked. Cards/effects depending on a block (e.g. {Mirror Image}, [FOR] {Freak Drive}) cannot be played/used.",
+                "refs":{
+                    "LSJ 20070219":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HkKuwBe9LRk/m/RGUse0Ow8L4J"
                 }
             }
         ],
@@ -33534,21 +33717,6 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"[myt], [MYT] Modifiers and reactions that can be used at the end/after an action can still be used afterwards.",
-                "refs":{
-                    "LSJ 20041022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gqhND6kd2wE/m/LDmEotxa_4kJ",
-                    "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
-                    "ANK 20221205":"https://www.vekn.net/forum/rules-questions/80196-clarification-regarding-detect-authority#106923"
-                }
-            },
-            {
-                "text":"[myt], [MYT] The action has reached resolution, so is subject to NRA (Non Repeatable Action) rules.",
-                "refs":{
-                    "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
-                    "ANK 20211015":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#103563"
-                }
-            },
-            {
                 "text":"[MYT] The \"does not unlock as normal\" effect is redundant with being infernal. If the minion is infernal, his controller can still pay a pool to unlock him.",
                 "refs":{
                     "LSJ 20050114":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JWiZmyC2Y6s/m/q6JHYrE1zKYJ"
@@ -33559,6 +33727,35 @@
                 "refs":{
                     "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
                     "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+                }
+            },
+            {
+                "text":"Cannot be used while a block is being attempted, or has already been successful.",
+                "refs":{
+                    "ANK 20260316":"https://www.vekn.net/forum/rules-questions/82895-failing-action-before-block-attempts#116669",
+                    "LSJ 20041022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gqhND6kd2wE/m/LDmEotxa_4kJ"
+                }
+            },
+            {
+                "text":"[myt] If the action fails, modifiers and reactions that can be used at the end/after an action can still be used afterwards (after combat, if any).",
+                "refs":{
+                    "ANK 20221205":"https://www.vekn.net/forum/rules-questions/80196-clarification-regarding-detect-authority#106923",
+                    "ANK 20220118":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#104506",
+                    "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
+                    "LSJ 20041022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gqhND6kd2wE/m/LDmEotxa_4kJ"
+                }
+            },
+            {
+                "text":"[myt] If the action fails, the action has reached resolution, so is subject to NRA (Non Repeatable Action) rules.",
+                "refs":{
+                    "ANK 20211015":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#103563",
+                    "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/"
+                }
+            },
+            {
+                "text":"[myt] If an action fails, it was not blocked. Cards/effects depending on a block (e.g. {Mirror Image}, [FOR] {Freak Drive}) cannot be played/used.",
+                "refs":{
+                    "LSJ 20070219":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HkKuwBe9LRk/m/RGUse0Ow8L4J"
                 }
             }
         ],
@@ -34064,6 +34261,28 @@
                 "text":"A locked vampire cannot use the \"lock to fight\" effect, even if he uses a wake effect.",
                 "refs":{
                     "PIB 20121107":"https://www.vekn.net/forum/rules-questions/40504-familial-bond#40540"
+                }
+            },
+            {
+                "text":"If the action fails, modifiers and reactions that can be used at the end/after an action can still be used afterwards (after combat, if any).",
+                "refs":{
+                    "ANK 20221205":"https://www.vekn.net/forum/rules-questions/80196-clarification-regarding-detect-authority#106923",
+                    "ANK 20220118":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#104506",
+                    "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
+                    "LSJ 20041022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gqhND6kd2wE/m/LDmEotxa_4kJ"
+                }
+            },
+            {
+                "text":"If the action fails, the action has reached resolution, so is subject to NRA (Non Repeatable Action) rules.",
+                "refs":{
+                    "ANK 20211015":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#103563",
+                    "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/"
+                }
+            },
+            {
+                "text":"If an action fails, it was not blocked. Cards/effects depending on a block (e.g. {Mirror Image}, [FOR] {Freak Drive}) cannot be played/used.",
+                "refs":{
+                    "LSJ 20070219":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HkKuwBe9LRk/m/RGUse0Ow8L4J"
                 }
             }
         ],
@@ -35547,25 +35766,39 @@
         "requirement":"anarch",
         "rulings":[
             {
-                "text":"[for] Modifiers and reactions that can be used at the end/after an action can still be used afterwards.",
-                "refs":{
-                    "LSJ 20041022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gqhND6kd2wE/m/LDmEotxa_4kJ",
-                    "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
-                    "ANK 20221205":"https://www.vekn.net/forum/rules-questions/80196-clarification-regarding-detect-authority#106923"
-                }
-            },
-            {
-                "text":"[for] The action has reached resolution, so is subject to NRA (Non Repeatable Action) rules.",
-                "refs":{
-                    "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
-                    "ANK 20211015":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#103563"
-                }
-            },
-            {
                 "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
                 "refs":{
                     "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
                     "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+                }
+            },
+            {
+                "text":"Cannot be used while a block is being attempted, or has already been successful.",
+                "refs":{
+                    "ANK 20260316":"https://www.vekn.net/forum/rules-questions/82895-failing-action-before-block-attempts#116669",
+                    "LSJ 20041022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gqhND6kd2wE/m/LDmEotxa_4kJ"
+                }
+            },
+            {
+                "text":"[for] If the action fails, modifiers and reactions that can be used at the end/after an action can still be used afterwards (after combat, if any).",
+                "refs":{
+                    "ANK 20221205":"https://www.vekn.net/forum/rules-questions/80196-clarification-regarding-detect-authority#106923",
+                    "ANK 20220118":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#104506",
+                    "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
+                    "LSJ 20041022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gqhND6kd2wE/m/LDmEotxa_4kJ"
+                }
+            },
+            {
+                "text":"[for] If the action fails, the action has reached resolution, so is subject to NRA (Non Repeatable Action) rules.",
+                "refs":{
+                    "ANK 20211015":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#103563",
+                    "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/"
+                }
+            },
+            {
+                "text":"[for] If an action fails, it was not blocked. Cards/effects depending on a block (e.g. {Mirror Image}, [FOR] {Freak Drive}) cannot be played/used.",
+                "refs":{
+                    "LSJ 20070219":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HkKuwBe9LRk/m/RGUse0Ow8L4J"
                 }
             }
         ],
@@ -43514,6 +43747,35 @@
                     "RBK who-may-attempt-to-block":"https://www.vekn.net/rulebook#who-may-attempt-to-block",
                     "LSJ 20090324":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Zc_ogoVhsug/m/tJ2VBYI7resJ"
                 }
+            },
+            {
+                "text":"[nec] Cannot be used while a block is being attempted, or has already been successful.",
+                "refs":{
+                    "ANK 20260316":"https://www.vekn.net/forum/rules-questions/82895-failing-action-before-block-attempts#116669",
+                    "LSJ 20041022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gqhND6kd2wE/m/LDmEotxa_4kJ"
+                }
+            },
+            {
+                "text":"[nec] If the action fails, modifiers and reactions that can be used at the end/after an action can still be used afterwards (after combat, if any).",
+                "refs":{
+                    "ANK 20221205":"https://www.vekn.net/forum/rules-questions/80196-clarification-regarding-detect-authority#106923",
+                    "ANK 20220118":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#104506",
+                    "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
+                    "LSJ 20041022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gqhND6kd2wE/m/LDmEotxa_4kJ"
+                }
+            },
+            {
+                "text":"[nec] If the action fails, the action has reached resolution, so is subject to NRA (Non Repeatable Action) rules.",
+                "refs":{
+                    "ANK 20211015":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#103563",
+                    "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/"
+                }
+            },
+            {
+                "text":"[nec] If an action fails, it was not blocked. Cards/effects depending on a block (e.g. {Mirror Image}, [FOR] {Freak Drive}) cannot be played/used.",
+                "refs":{
+                    "LSJ 20070219":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HkKuwBe9LRk/m/RGUse0Ow8L4J"
+                }
             }
         ],
         "set":{
@@ -44832,6 +45094,35 @@
                 "refs":{
                     "ANK 20190425":"https://www.vekn.net/forum/rules-questions/77581-action-modifiers-played-at-beginning-and-end-of-an-action#94652"
                 }
+            },
+            {
+                "text":"[REACTION] Cannot be used while a block is being attempted, or has already been successful.",
+                "refs":{
+                    "ANK 20260316":"https://www.vekn.net/forum/rules-questions/82895-failing-action-before-block-attempts#116669",
+                    "LSJ 20041022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gqhND6kd2wE/m/LDmEotxa_4kJ"
+                }
+            },
+            {
+                "text":"[REACTION] If the action fails, modifiers and reactions that can be used at the end/after an action can still be used afterwards (after combat, if any).",
+                "refs":{
+                    "ANK 20221205":"https://www.vekn.net/forum/rules-questions/80196-clarification-regarding-detect-authority#106923",
+                    "ANK 20220118":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#104506",
+                    "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
+                    "LSJ 20041022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gqhND6kd2wE/m/LDmEotxa_4kJ"
+                }
+            },
+            {
+                "text":"[REACTION] If the action fails, the action has reached resolution, so is subject to NRA (Non Repeatable Action) rules.",
+                "refs":{
+                    "ANK 20211015":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#103563",
+                    "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/"
+                }
+            },
+            {
+                "text":"[REACTION] If an action fails, it was not blocked. Cards/effects depending on a block (e.g. {Mirror Image}, [FOR] {Freak Drive}) cannot be played/used.",
+                "refs":{
+                    "LSJ 20070219":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HkKuwBe9LRk/m/RGUse0Ow8L4J"
+                }
             }
         ],
         "set":{
@@ -44863,21 +45154,6 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"[val] If the action fails, modifiers and reactions that can be used at the end/after an action can still be used afterwards.",
-                "refs":{
-                    "LSJ 20041022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gqhND6kd2wE/m/LDmEotxa_4kJ",
-                    "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
-                    "ANK 20221205":"https://www.vekn.net/forum/rules-questions/80196-clarification-regarding-detect-authority#106923"
-                }
-            },
-            {
-                "text":"[val] If the action fails, it has reached resolution, so is subject to NRA (Non Repeatable Action) rules.",
-                "refs":{
-                    "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
-                    "ANK 20211015":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#103563"
-                }
-            },
-            {
                 "text":"[val] An ally has life, not blood, he cannot pay.",
                 "refs":{
                     "LSJ 20050216":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/5_rUFgufFc4/m/7OVVD0KpnS4J",
@@ -44902,6 +45178,35 @@
                 "text":"[val],[VAL] Sequencing rules apply. You must gain the impulse to be able to use the reaction, or use the effect (whichever is applicable).  Other Methuselahs must declare block attempts (or not) and pass the impulse to you as normal.",
                 "refs":{
                     "ANK 20200607":"https://www.vekn.net/forum/rules-questions/78676-draba-timing#100043"
+                }
+            },
+            {
+                "text":"Cannot be used while a block is being attempted, or has already been successful.",
+                "refs":{
+                    "ANK 20260316":"https://www.vekn.net/forum/rules-questions/82895-failing-action-before-block-attempts#116669",
+                    "LSJ 20041022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gqhND6kd2wE/m/LDmEotxa_4kJ"
+                }
+            },
+            {
+                "text":"[val] If the action fails, modifiers and reactions that can be used at the end/after an action can still be used afterwards (after combat, if any).",
+                "refs":{
+                    "ANK 20221205":"https://www.vekn.net/forum/rules-questions/80196-clarification-regarding-detect-authority#106923",
+                    "ANK 20220118":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#104506",
+                    "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
+                    "LSJ 20041022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gqhND6kd2wE/m/LDmEotxa_4kJ"
+                }
+            },
+            {
+                "text":"[val] If the action fails, the action has reached resolution, so is subject to NRA (Non Repeatable Action) rules.",
+                "refs":{
+                    "ANK 20211015":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#103563",
+                    "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/"
+                }
+            },
+            {
+                "text":"[val] If an action fails, it was not blocked. Cards/effects depending on a block (e.g. {Mirror Image}, [FOR] {Freak Drive}) cannot be played/used.",
+                "refs":{
+                    "LSJ 20070219":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HkKuwBe9LRk/m/RGUse0Ow8L4J"
                 }
             }
         ],
@@ -51619,6 +51924,12 @@
         "requirement":"",
         "rulings":[
             {
+                "text":"[PRE] If the strike is dodged, the opposing minion is not stunned.",
+                "refs":{
+                    "LSJ 20070124":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/5YMceht1KTk/m/LhhbEr_dlU8J"
+                }
+            },
+            {
                 "text":"[OBF]/[PRE] If the combat continues or a new combat begins, the after combat effect does not happen/is not usable (e.g. {Psyche!}, {Telepathic Tracking}).\n(Partial reversal of RTR 20010711)",
                 "refs":{
                     "RTR 20020501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/M1snoR2msbQ/m/RFwCmX3anDkJ",
@@ -56074,18 +56385,25 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"If the action fails, modifiers and reactions that can be used at the end/after an action can still be used afterwards.   \"",
+                "text":"If the action fails, modifiers and reactions that can be used at the end/after an action can still be used afterwards (after combat, if any).",
                 "refs":{
-                    "LSJ 20041022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gqhND6kd2wE/m/LDmEotxa_4kJ",
+                    "ANK 20221205":"https://www.vekn.net/forum/rules-questions/80196-clarification-regarding-detect-authority#106923",
+                    "ANK 20220118":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#104506",
                     "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
-                    "ANK 20221205":"https://www.vekn.net/forum/rules-questions/80196-clarification-regarding-detect-authority#106923"
+                    "LSJ 20041022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gqhND6kd2wE/m/LDmEotxa_4kJ"
                 }
             },
             {
-                "text":"If the action fails, it has reached resolution, so is subject to NRA (Non Repeatable Action) rules.  \"",
+                "text":"If the action fails, the action has reached resolution, so is subject to NRA (Non Repeatable Action) rules.",
                 "refs":{
-                    "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
-                    "ANK 20211015":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#103563"
+                    "ANK 20211015":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#103563",
+                    "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/"
+                }
+            },
+            {
+                "text":"If an action fails, it was not blocked. Cards/effects depending on a block (e.g. {Mirror Image}, [FOR] {Freak Drive}) cannot be played/used.",
+                "refs":{
+                    "LSJ 20070219":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HkKuwBe9LRk/m/RGUse0Ow8L4J"
                 }
             }
         ],
@@ -59476,12 +59794,32 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"The action fails, modifiers and reactions that can be used at the end/after an action can still be used afterwards.    .",
+                "text":"Cannot be used while a block is being attempted, or has already been successful.",
                 "refs":{
-                    "LSJ 20041022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gqhND6kd2wE/m/LDmEotxa_4kJ",
-                    "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
+                    "ANK 20260316":"https://www.vekn.net/forum/rules-questions/82895-failing-action-before-block-attempts#116669",
+                    "LSJ 20041022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gqhND6kd2wE/m/LDmEotxa_4kJ"
+                }
+            },
+            {
+                "text":"If the action fails, modifiers and reactions that can be used at the end/after an action can still be used afterwards (after combat, if any).",
+                "refs":{
+                    "ANK 20221205":"https://www.vekn.net/forum/rules-questions/80196-clarification-regarding-detect-authority#106923",
                     "ANK 20220118":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#104506",
-                    "ANK 20221205":"https://www.vekn.net/forum/rules-questions/80196-clarification-regarding-detect-authority#106923"
+                    "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
+                    "LSJ 20041022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gqhND6kd2wE/m/LDmEotxa_4kJ"
+                }
+            },
+            {
+                "text":"If the action fails, the action has reached resolution, so is subject to NRA (Non Repeatable Action) rules.",
+                "refs":{
+                    "ANK 20211015":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#103563",
+                    "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/"
+                }
+            },
+            {
+                "text":"If an action fails, it was not blocked. Cards/effects depending on a block (e.g. {Mirror Image}, [FOR] {Freak Drive}) cannot be played/used.",
+                "refs":{
+                    "LSJ 20070219":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HkKuwBe9LRk/m/RGUse0Ow8L4J"
                 }
             }
         ],
@@ -59906,6 +60244,35 @@
                 "text":"[ani] Does not ignore the normal prey, predator or target restrictions.",
                 "refs":{
                     "ANK 20180623":"https://www.vekn.net/forum/rules-questions/76748-black-sunrise#88361"
+                }
+            },
+            {
+                "text":"[dom] Cannot be used while a block is being attempted, or has already been successful.",
+                "refs":{
+                    "ANK 20260316":"https://www.vekn.net/forum/rules-questions/82895-failing-action-before-block-attempts#116669",
+                    "LSJ 20041022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gqhND6kd2wE/m/LDmEotxa_4kJ"
+                }
+            },
+            {
+                "text":"[dom] If the action fails, modifiers and reactions that can be used at the end/after an action can still be used afterwards (after combat, if any).",
+                "refs":{
+                    "ANK 20221205":"https://www.vekn.net/forum/rules-questions/80196-clarification-regarding-detect-authority#106923",
+                    "ANK 20220118":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#104506",
+                    "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
+                    "LSJ 20041022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gqhND6kd2wE/m/LDmEotxa_4kJ"
+                }
+            },
+            {
+                "text":"[dom] If the action fails, the action has reached resolution, so is subject to NRA (Non Repeatable Action) rules.",
+                "refs":{
+                    "ANK 20211015":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#103563",
+                    "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/"
+                }
+            },
+            {
+                "text":"[dom] If an action fails, it was not blocked. Cards/effects depending on a block (e.g. {Mirror Image}, [FOR] {Freak Drive}) cannot be played/used.",
+                "refs":{
+                    "LSJ 20070219":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HkKuwBe9LRk/m/RGUse0Ow8L4J"
                 }
             }
         ],
@@ -73599,18 +73966,32 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"[QUI] Modifiers and reactions that can be used at the end/after an action can still be used afterwards.",
+                "text":"Cannot be used while a block is being attempted, or has already been successful.",
                 "refs":{
-                    "LSJ 20041022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gqhND6kd2wE/m/LDmEotxa_4kJ",
-                    "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
-                    "ANK 20221205":"https://www.vekn.net/forum/rules-questions/80196-clarification-regarding-detect-authority#106923"
+                    "ANK 20260316":"https://www.vekn.net/forum/rules-questions/82895-failing-action-before-block-attempts#116669",
+                    "LSJ 20041022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gqhND6kd2wE/m/LDmEotxa_4kJ"
                 }
             },
             {
-                "text":"[QUI] The action has reached resolution, so is subject to NRA (Non Repeatable Action) rules.",
+                "text":"[QUI][REACTION] If the action fails, modifiers and reactions that can be used at the end/after an action can still be used afterwards (after combat, if any).",
                 "refs":{
+                    "ANK 20221205":"https://www.vekn.net/forum/rules-questions/80196-clarification-regarding-detect-authority#106923",
+                    "ANK 20220118":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#104506",
                     "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
-                    "ANK 20211015":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#103563"
+                    "LSJ 20041022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gqhND6kd2wE/m/LDmEotxa_4kJ"
+                }
+            },
+            {
+                "text":"[QUI][REACTION] If the action fails, the action has reached resolution, so is subject to NRA (Non Repeatable Action) rules.",
+                "refs":{
+                    "ANK 20211015":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#103563",
+                    "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/"
+                }
+            },
+            {
+                "text":"[QUI][REACTION] If an action fails, it was not blocked. Cards/effects depending on a block (e.g. {Mirror Image}, [FOR] {Freak Drive}) cannot be played/used.",
+                "refs":{
+                    "LSJ 20070219":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HkKuwBe9LRk/m/RGUse0Ow8L4J"
                 }
             }
         ],
@@ -75433,12 +75814,6 @@
                 "text":"Can be used to cancel all action cards, including employ retainer, recruit ally and political action.",
                 "refs":{
                     "ANK 20200813-2":"https://www.vekn.net/forum/rules-questions/78799-rewind-time-inf-and-action-cards#100526"
-                }
-            },
-            {
-                "text":"The ability to fail an action must be used before action modifiers or reactions that are not explicitly played \"as the action is announced\".",
-                "refs":{
-                    "ANK 20190425":"https://www.vekn.net/forum/rules-questions/77581-action-modifiers-played-at-beginning-and-end-of-an-action#94652"
                 }
             }
         ],
@@ -81005,7 +81380,37 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Cannot be used while a block is being attempted, or has already been successful.",
+                "refs":{
+                    "ANK 20260316":"https://www.vekn.net/forum/rules-questions/82895-failing-action-before-block-attempts#116669",
+                    "LSJ 20041022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gqhND6kd2wE/m/LDmEotxa_4kJ"
+                }
+            },
+            {
+                "text":"If the action fails, modifiers and reactions that can be used at the end/after an action can still be used afterwards (after combat, if any).",
+                "refs":{
+                    "ANK 20221205":"https://www.vekn.net/forum/rules-questions/80196-clarification-regarding-detect-authority#106923",
+                    "ANK 20220118":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#104506",
+                    "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
+                    "LSJ 20041022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gqhND6kd2wE/m/LDmEotxa_4kJ"
+                }
+            },
+            {
+                "text":"If the action fails, the action has reached resolution, so is subject to NRA (Non Repeatable Action) rules.",
+                "refs":{
+                    "ANK 20211015":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#103563",
+                    "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/"
+                }
+            },
+            {
+                "text":"If an action fails, it was not blocked. Cards/effects depending on a block (e.g. {Mirror Image}, [FOR] {Freak Drive}) cannot be played/used.",
+                "refs":{
+                    "LSJ 20070219":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HkKuwBe9LRk/m/RGUse0Ow8L4J"
+                }
+            }
+        ],
         "set":{
             "Promo":{
                 "2009-04-01":true
@@ -81877,21 +82282,6 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"[STR] If the action fails, modifiers and reactions that can be used at the end/after an action can still be used afterwards.    .",
-                "refs":{
-                    "LSJ 20041022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gqhND6kd2wE/m/LDmEotxa_4kJ",
-                    "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
-                    "ANK 20220118":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#104506",
-                    "ANK 20221205":"https://www.vekn.net/forum/rules-questions/80196-clarification-regarding-detect-authority#106923"
-                }
-            },
-            {
-                "text":"[STR] If the action fails, it has reached resolution, so is subject to NRA (Non Repeatable Action) rules.",
-                "refs":{
-                    "ANK 20211015":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#103563"
-                }
-            },
-            {
                 "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
                 "refs":{
                     "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
@@ -81908,6 +82298,35 @@
                 "text":"[str]/[STR] Can be played/used any time during the action before resolution; a block attempt is not required.",
                 "refs":{
                     "LSJ 20020612":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/sC0pTtJJDj4/m/bD04Jy4pM_cJ"
+                }
+            },
+            {
+                "text":"[STR] Cannot be used while a block is being attempted, or has already been successful.",
+                "refs":{
+                    "ANK 20260316":"https://www.vekn.net/forum/rules-questions/82895-failing-action-before-block-attempts#116669",
+                    "LSJ 20041022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gqhND6kd2wE/m/LDmEotxa_4kJ"
+                }
+            },
+            {
+                "text":"[STR] If the action fails, modifiers and reactions that can be used at the end/after an action can still be used afterwards (after combat, if any).",
+                "refs":{
+                    "ANK 20221205":"https://www.vekn.net/forum/rules-questions/80196-clarification-regarding-detect-authority#106923",
+                    "ANK 20220118":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#104506",
+                    "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
+                    "LSJ 20041022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gqhND6kd2wE/m/LDmEotxa_4kJ"
+                }
+            },
+            {
+                "text":"[STR] If the action fails, the action has reached resolution, so is subject to NRA (Non Repeatable Action) rules.",
+                "refs":{
+                    "ANK 20211015":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#103563",
+                    "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/"
+                }
+            },
+            {
+                "text":"[STR] If an action fails, it was not blocked. Cards/effects depending on a block (e.g. {Mirror Image}, [FOR] {Freak Drive}) cannot be played/used.",
+                "refs":{
+                    "LSJ 20070219":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HkKuwBe9LRk/m/RGUse0Ow8L4J"
                 }
             }
         ],
@@ -82252,6 +82671,34 @@
                 "text":"The ability to fail an action must be used before action modifiers or reactions that are not explicitly played \"as the action is announced\".",
                 "refs":{
                     "ANK 20190425":"https://www.vekn.net/forum/rules-questions/77581-action-modifiers-played-at-beginning-and-end-of-an-action#94652"
+                }
+            },
+            {
+                "text":"The acting player has the opportunity to play \"as announced\" effects first (eg. Seduction).",
+                "refs":{
+                    "LSJ 20081105":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/CYjOJtTBMGU/m/H8kQXN1w2ycJ"
+                }
+            },
+            {
+                "text":"If the action fails, modifiers and reactions that can be used at the end/after an action can still be used afterwards (after combat, if any).",
+                "refs":{
+                    "ANK 20221205":"https://www.vekn.net/forum/rules-questions/80196-clarification-regarding-detect-authority#106923",
+                    "ANK 20220118":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#104506",
+                    "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
+                    "LSJ 20041022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gqhND6kd2wE/m/LDmEotxa_4kJ"
+                }
+            },
+            {
+                "text":"If the action fails, the action has reached resolution, so is subject to NRA (Non Repeatable Action) rules.",
+                "refs":{
+                    "ANK 20211015":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#103563",
+                    "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/"
+                }
+            },
+            {
+                "text":"If an action fails, it was not blocked. Cards/effects depending on a block (e.g. {Mirror Image}, [FOR] {Freak Drive}) cannot be played/used.",
+                "refs":{
+                    "LSJ 20070219":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HkKuwBe9LRk/m/RGUse0Ow8L4J"
                 }
             }
         ],
@@ -82860,6 +83307,35 @@
                 "text":"When burned to make an action fail, the action has reached resolution, so is subject to NRA (Non Repeatable Action) rules.",
                 "refs":{
                     "ANK 20211015":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#103563"
+                }
+            },
+            {
+                "text":"Cannot be used while a block is being attempted, or has already been successful.",
+                "refs":{
+                    "ANK 20260316":"https://www.vekn.net/forum/rules-questions/82895-failing-action-before-block-attempts#116669",
+                    "LSJ 20041022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gqhND6kd2wE/m/LDmEotxa_4kJ"
+                }
+            },
+            {
+                "text":"If the action fails, modifiers and reactions that can be used at the end/after an action can still be used afterwards (after combat, if any).",
+                "refs":{
+                    "ANK 20221205":"https://www.vekn.net/forum/rules-questions/80196-clarification-regarding-detect-authority#106923",
+                    "ANK 20220118":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#104506",
+                    "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
+                    "LSJ 20041022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gqhND6kd2wE/m/LDmEotxa_4kJ"
+                }
+            },
+            {
+                "text":"If the action fails, the action has reached resolution, so is subject to NRA (Non Repeatable Action) rules.",
+                "refs":{
+                    "ANK 20211015":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#103563",
+                    "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/"
+                }
+            },
+            {
+                "text":"If an action fails, it was not blocked. Cards/effects depending on a block (e.g. {Mirror Image}, [FOR] {Freak Drive}) cannot be played/used.",
+                "refs":{
+                    "LSJ 20070219":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HkKuwBe9LRk/m/RGUse0Ow8L4J"
                 }
             }
         ],
@@ -93592,7 +94068,37 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Cannot be used while a block is being attempted, or has already been successful.",
+                "refs":{
+                    "ANK 20260316":"https://www.vekn.net/forum/rules-questions/82895-failing-action-before-block-attempts#116669",
+                    "LSJ 20041022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gqhND6kd2wE/m/LDmEotxa_4kJ"
+                }
+            },
+            {
+                "text":"If the action fails, modifiers and reactions that can be used at the end/after an action can still be used afterwards (after combat, if any).",
+                "refs":{
+                    "ANK 20221205":"https://www.vekn.net/forum/rules-questions/80196-clarification-regarding-detect-authority#106923",
+                    "ANK 20220118":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#104506",
+                    "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
+                    "LSJ 20041022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gqhND6kd2wE/m/LDmEotxa_4kJ"
+                }
+            },
+            {
+                "text":"If the action fails, the action has reached resolution, so is subject to NRA (Non Repeatable Action) rules.",
+                "refs":{
+                    "ANK 20211015":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#103563",
+                    "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/"
+                }
+            },
+            {
+                "text":"If an action fails, it was not blocked. Cards/effects depending on a block (e.g. {Mirror Image}, [FOR] {Freak Drive}) cannot be played/used.",
+                "refs":{
+                    "LSJ 20070219":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HkKuwBe9LRk/m/RGUse0Ow8L4J"
+                }
+            }
+        ],
         "set":{
             "NB3C":{
                 "PT":"2"
@@ -101368,21 +101874,6 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"[abo] The action fails, modifiers and reactions that can be used at the end/after an action can still be used afterwards.    .",
-                "refs":{
-                    "LSJ 20041022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gqhND6kd2wE/m/LDmEotxa_4kJ",
-                    "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
-                    "ANK 20220118":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#104506",
-                    "ANK 20221205":"https://www.vekn.net/forum/rules-questions/80196-clarification-regarding-detect-authority#106923"
-                }
-            },
-            {
-                "text":"[abo] The action has reached resolution, so cannot be attempted again by the same minion this turn.",
-                "refs":{
-                    "ANK 20211015":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#103563"
-                }
-            },
-            {
                 "text":"[abo][REFLEX] Cards are not replaced during the \"as played\" window. The cancelation must be played immediately: no other effects can be used, except for wakes (eg. neither\u00a0{The Barrens}\u00a0nor {Dreams of the Sphinx}\u00a0can be used).",
                 "refs":{
                     "LSJ 20061207":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/nqcrJlhg4Ng/m/qQu7p-LLhfAJ",
@@ -101422,6 +101913,35 @@
                 "refs":{
                     "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
                     "ANK 20260216":"https://www.vekn.net/forum/rules-questions/82835-eagle-sight-cancelled-by-i-am-legion-while-tenebrous-form-is-in-play#116448"
+                }
+            },
+            {
+                "text":"Cannot be used while a block is being attempted, or has already been successful.",
+                "refs":{
+                    "ANK 20260316":"https://www.vekn.net/forum/rules-questions/82895-failing-action-before-block-attempts#116669",
+                    "LSJ 20041022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gqhND6kd2wE/m/LDmEotxa_4kJ"
+                }
+            },
+            {
+                "text":"[abo] If the action fails, modifiers and reactions that can be used at the end/after an action can still be used afterwards (after combat, if any).",
+                "refs":{
+                    "ANK 20221205":"https://www.vekn.net/forum/rules-questions/80196-clarification-regarding-detect-authority#106923",
+                    "ANK 20220118":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#104506",
+                    "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
+                    "LSJ 20041022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gqhND6kd2wE/m/LDmEotxa_4kJ"
+                }
+            },
+            {
+                "text":"[abo] If the action fails, the action has reached resolution, so is subject to NRA (Non Repeatable Action) rules.",
+                "refs":{
+                    "ANK 20211015":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#103563",
+                    "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/"
+                }
+            },
+            {
+                "text":"[abo] If an action fails, it was not blocked. Cards/effects depending on a block (e.g. {Mirror Image}, [FOR] {Freak Drive}) cannot be played/used.",
+                "refs":{
+                    "LSJ 20070219":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HkKuwBe9LRk/m/RGUse0Ow8L4J"
                 }
             }
         ],
@@ -107364,12 +107884,6 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"The acting player has the opportunity to play \"as announced\" effects first (eg. {Seduction}).",
-                "refs":{
-                    "LSJ 20081105":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/CYjOJtTBMGU/m/H8kQXN1w2ycJ"
-                }
-            },
-            {
                 "text":"Cannot be used during a referendum that is automatically passing.",
                 "refs":{
                     "PIB 20150105":"https://www.vekn.net/forum/rules-questions/68465-voting-is-complicated#68493",
@@ -107380,6 +107894,34 @@
                 "text":"The ability to fail an action must be used before action modifiers or reactions that are not explicitly played \"as the action is announced\".",
                 "refs":{
                     "ANK 20190425":"https://www.vekn.net/forum/rules-questions/77581-action-modifiers-played-at-beginning-and-end-of-an-action#94652"
+                }
+            },
+            {
+                "text":"The acting player has the opportunity to play \"as announced\" effects first (eg. Seduction).",
+                "refs":{
+                    "LSJ 20081105":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/CYjOJtTBMGU/m/H8kQXN1w2ycJ"
+                }
+            },
+            {
+                "text":"If the action fails, modifiers and reactions that can be used at the end/after an action can still be used afterwards (after combat, if any).",
+                "refs":{
+                    "ANK 20221205":"https://www.vekn.net/forum/rules-questions/80196-clarification-regarding-detect-authority#106923",
+                    "ANK 20220118":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#104506",
+                    "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
+                    "LSJ 20041022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gqhND6kd2wE/m/LDmEotxa_4kJ"
+                }
+            },
+            {
+                "text":"If the action fails, the action has reached resolution, so is subject to NRA (Non Repeatable Action) rules.",
+                "refs":{
+                    "ANK 20211015":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#103563",
+                    "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/"
+                }
+            },
+            {
+                "text":"If an action fails, it was not blocked. Cards/effects depending on a block (e.g. {Mirror Image}, [FOR] {Freak Drive}) cannot be played/used.",
+                "refs":{
+                    "LSJ 20070219":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HkKuwBe9LRk/m/RGUse0Ow8L4J"
                 }
             }
         ],
@@ -107486,6 +108028,34 @@
                 "text":"The ability to fail an action must be used before action modifiers or reactions that are not explicitly played \"as the action is announced\".",
                 "refs":{
                     "ANK 20190425":"https://www.vekn.net/forum/rules-questions/77581-action-modifiers-played-at-beginning-and-end-of-an-action#94652"
+                }
+            },
+            {
+                "text":"The acting player has the opportunity to play \"as announced\" effects first (eg. Seduction).",
+                "refs":{
+                    "LSJ 20081105":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/CYjOJtTBMGU/m/H8kQXN1w2ycJ"
+                }
+            },
+            {
+                "text":"If the action fails, modifiers and reactions that can be used at the end/after an action can still be used afterwards (after combat, if any).",
+                "refs":{
+                    "ANK 20221205":"https://www.vekn.net/forum/rules-questions/80196-clarification-regarding-detect-authority#106923",
+                    "ANK 20220118":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#104506",
+                    "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
+                    "LSJ 20041022":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gqhND6kd2wE/m/LDmEotxa_4kJ"
+                }
+            },
+            {
+                "text":"If the action fails, the action has reached resolution, so is subject to NRA (Non Repeatable Action) rules.",
+                "refs":{
+                    "ANK 20211015":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#103563",
+                    "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/"
+                }
+            },
+            {
+                "text":"If an action fails, it was not blocked. Cards/effects depending on a block (e.g. {Mirror Image}, [FOR] {Freak Drive}) cannot be played/used.",
+                "refs":{
+                    "LSJ 20070219":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HkKuwBe9LRk/m/RGUse0Ow8L4J"
                 }
             }
         ],

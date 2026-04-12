@@ -547,9 +547,6 @@
     20190113]
 100293|Car Bomb:
   - Is to be used when the action is announced. [PIB 20150820]
-  - If the action fails, modifiers and reactions that can be used at the end/after an action can still be used afterwards.
-    [LSJ 20041022] [RTR 20180719] [ANK 20220118] [ANK 20221205].
-  - The action has reached resolution, so is subject to NRA (Non Repeatable Action) rules. [RTR 20180719] [ANK 20211015]
 100298|Carlton Van Wyk:
   - He can use his ability to burn a vampire who has committed diablerie the turn he is recruited. [ANK 20180517]
 100303|Carver's Meat Packing and Storage:
@@ -581,12 +578,6 @@
   - '[REACTION] The action still continues until the end of combat. The acting minion stays the same, effects applied during
     the action still applies during combat. [LSJ 20070217]'
   - '[REACTION] The action fails: it might be continued (eg. {Form of Mist}) but still fails anyway. [LSJ 20070214-2]'
-  - '[REACTION] The action fails but was not blocked. Cards depending on a block (eg. {Mirror Image}, {Freak Drive}) cannot
-    be played. [LSJ 20070219]'
-  - '[REACTION] Modifiers and reactions that can be used at the end/after an action can still be used afterwards. [LSJ 20041022]
-    [RTR 20180719] [ANK 20221205]'
-  - '[REACTION] The action fails, so has reached resolution: it is subject to NRA (Non Repeatable Action) rules. [RTR 20180719]
-    [ANK 20211015]'
 100323|Change of Target:
   - The action has reached resolution, so is subject to NRA (Non Repeatable Action) rules. [LSJ 20070709]
   - Actions without card (provided by the rulebook) are not "the same" as actions provided by cards (played or in play). [LSJ
@@ -872,10 +863,6 @@
     19960211] [LSJ 20010809-2] [LSJ 20010809-3] [LSJ 20060908]
   - If any card on the vampire was contested, it goes out of the contest until the vampire comes back. [LSJ 20080816]
 100532|Detect Authority:
-  - '[ani] If the action fails, modifiers and reactions that can be used at the end/after an action can still be used afterwards.
-    [LSJ 20041022] [RTR 20180719] [ANK 20221205]'
-  - '[ani] If the action fails, it has reached resolution, so is subject to NRA (Non Repeatable Action) rules. [RTR 20180719]
-    [ANK 20211015]'
   - '[ani] Not usable against actions targeting an equipment or retainer, they do not target the minion. [LSJ 20090324]'
 100536|Deviki Prasanta:
   - Cannot put a Discipline card on a vampire if it could normally not be put on him (eg. because he already has the superior
@@ -1027,6 +1014,7 @@
 100615|Edged Illusion:
   - '[CHI] If some minions cannot be targeted because of another effect, the action will simply have no effect on the things
     it cannot target. [RTR 20080808]'
+  - '[CHI] Targets each ready minion(s) of the chosen methuselah [LSJ 20071024]'
 100618|Elder Intervention:
   - Can be used during any bleed attempt made against you, not just ones declared against you. [RTR 19960530]
 100620|Elder Library:
@@ -1063,10 +1051,7 @@
 100648|Ensconced:
   - '[VIS][REACTION] The action still continues until the end of combat. The acting minion stays the same, effects applied
     during the action still applies during combat. [LSJ 20070217]'
-  - '[VIS][REACTION] Modifiers and reactions that can be used at the end/after an action can still be used after combat. [LSJ
-    20041022] [RTR 20180719] [ANK 20221205]'
-  - '[VIS][REACTION] The action has reached resolution, so is subject to NRA (Non Repeatable Action) rules. [RTR 20180719]
-    [ANK 20211015]'
+  - 'The action fails: it might be continued (eg. Form of Mist) but still fails anyway. [LSJ 20070214-2]'
 100650|Enticement:
   - Is directed at your prey. [LSJ 20010807]
   - If the edge is lost during the action (eg. {High Priest Angra Mainyu}), the prey takes no damage but you still cannot
@@ -1123,11 +1108,6 @@
   - '[OBF] A minion that has attempted to block but failed before it was played is not affected. [ANK 20190509] [LSJ 20020101]'
   - '[OBF] The aspirant blocker is locked at resolution. He can play {Deflection} before that, and even attempt to block again
     if it is deflected back. He can play {Guard Dogs} before the lock, not after. [ANK 20171017] [ANK 20230305]'
-100690|Faerie Wards:
-  - '[myt], [MYT] Modifiers and reactions that can be used at the end/after an action can still be used afterwards. [LSJ 20041022]
-    [RTR 20180719] [ANK 20221205]'
-  - '[myt], [MYT] The action has reached resolution, so is subject to NRA (Non Repeatable Action) rules. [RTR 20180719] [ANK
-    20211015]'
 100694|Falcon's Eye:
   - '[SPI] Only affects the rule restricting who gets to block an action. The vampire must still meet all other requirements
     to block. In particular, {Blood Bond}, {Day Operation}, {Seduction} and prior decision not to block are not circumvented.
@@ -1195,10 +1175,6 @@
   - The acting vampire must have a superior discipline to choose from. [ANK 20180731-2]
 100728|Filchware's Pawn Shop:
   - Cannot be used to replay a card that can be played only once in a game. [LSJ 20040518]
-100730|Final Loosening:
-  - '[for] Modifiers and reactions that can be used at the end/after an action can still be used afterwards. [LSJ 20041022]
-    [RTR 20180719] [ANK 20221205]'
-  - '[for] The action has reached resolution, so is subject to NRA (Non Repeatable Action) rules. [RTR 20180719] [ANK 20211015]'
 100733|Fire Dance:
   - The target vampire is chosen when the action is announced. [RTR 19970425]
 '100737|First Tradition: The Masquerade':
@@ -1502,10 +1478,6 @@
   - '[ACTION MODIFIER] [1 CONVICTION] Effects that are used "as the action is announced" must be used before playing "regular"
     action modifier or reaction cards. [ANK 20190425]'
 100920|Hide the Heart:
-  - '[val] If the action fails, modifiers and reactions that can be used at the end/after an action can still be used afterwards.
-    [LSJ 20041022] [RTR 20180719] [ANK 20221205]'
-  - '[val] If the action fails, it has reached resolution, so is subject to NRA (Non Repeatable Action) rules. [RTR 20180719]
-    [ANK 20211015]'
   - '[val] An ally has life, not blood, he cannot pay. [LSJ 20050216] [ANK 20190701]'
   - '[VAL] To reduce a bleed against another Methuselah, you need to be unlocked. [RBK wording-templates] [ANK 20230817]'
 100921|Hide the Mind:
@@ -1899,11 +1871,6 @@
   - The effect ends at the start of the next unlock phase, before unlocking or deciding on contests. This cannot be ordered
     among other unlock effects, the Malkavian is not unlocked. [ANK 20200129] [LSJ 20091208] [RTR 19951017]
   - It makes no difference if the target changes clan afterwards. [ANK 20221208-2]
-'101151|Malkavian Derangement: Alternate Personality':
-  - If the action fails, modifiers and reactions that can be used at the end/after an action can still be used afterwards.
-    [LSJ 20041022] [RTR 20180719] [ANK 20221205]"
-  - If the action fails, it has reached resolution, so is subject to NRA (Non Repeatable Action) rules. [RTR 20180719] [ANK
-    20211015]"
 101156|Malkavian Rider Clause:
   - During the referendum that passes automatically, no "during a political action" and "during a referendum" effect can be
     played and effects that operate on the number of votes that the referendum passed by have no effect. [LSJ 19980107]
@@ -2015,9 +1982,6 @@
 101224|Mirror's Visage:
   - '[chi] The action ends unsuccessfully immediately, no other action modifier or reaction can be played afterwards. [RTR
     20180719] [ANK 20200207]'
-101227|Mistaken Identity:
-  - The action fails, modifiers and reactions that can be used at the end/after an action can still be used afterwards. [LSJ
-    20041022] [RTR 20180719] [ANK 20220118] [ANK 20221205].
 101230|Mob Rule:
   - Each Methuselah must decide how much blood to burn for it during the resolution. It does not give an ability for the rest
     of the political action. However, there can be some give and take during the resolution. For example, Methuselahs can
@@ -2365,10 +2329,6 @@
     {Telepathic Tracking}). Can be played before or after [CEL] {Psyche!} [LSJ 20021113] [ANK 20191219] [ANK 20180910-1]
   - 'A total of two actions must be performed (by whomever) to remove it. Vampires A and B can both take the action, then
     it is removed. [ANK 20170202-2] '
-101521|Purification:
-  - '[QUI] Modifiers and reactions that can be used at the end/after an action can still be used afterwards. [LSJ 20041022]
-    [RTR 20180719] [ANK 20221205]'
-  - '[QUI] The action has reached resolution, so is subject to NRA (Non Repeatable Action) rules. [RTR 20180719] [ANK 20211015]'
 101525|Putrefaction:
   - '[THN] Damage is environmental. [RTR 19970630]'
   - '[thn] [THN] It can still be burned if the vampire is already prevented from unlocking as normal by another effect. [RTR
@@ -2596,10 +2556,6 @@
   - '[nec] The card to retrieve must be announced when declaring the action. [LSJ 20010627]'
 101689|Scattershot:
   - Additional damage inherits all of the properties of the base damage. [TOM 19960225]
-101691|Scobax:
-  - '[STR] If the action fails, modifiers and reactions that can be used at the end/after an action can still be used afterwards.
-    [LSJ 20041022] [RTR 20180719] [ANK 20220118] [ANK 20221205].'
-  - '[STR] If the action fails, it has reached resolution, so is subject to NRA (Non Repeatable Action) rules. [ANK 20211015]'
 101692|Scorn of Adonis:
   - May be played at any time during the voting process and, when votes are tallied, will cause the loss of pool to Methuselahs
     voting 'no' before it is played, as well as to Methuselahs voting 'no' after it is played. [RTR 19951110]
@@ -3175,10 +3131,6 @@
 102078|Unlicensed Taxicab:
   - Offers the additional stealth on actions to equip it from another friendly minion as well, even with other equipment in
     the same action. [LSJ 20060222]
-102081|Unseen Hibernation:
-  - '[abo] The action fails, modifiers and reactions that can be used at the end/after an action can still be used afterwards.
-    [LSJ 20041022] [RTR 20180719] [ANK 20220118] [ANK 20221205].'
-  - '[abo] The action has reached resolution, so cannot be attempted again by the same minion this turn. [ANK 20211015]'
 102082|Unwholesome Bond:
   - Can be used by {Angelo} or {New Blood} on a uncontrolled vampire with no circle designation, even another {Angelo} or
     {New Blood}. Multiple uncontrolled Angelos or New Bloods are in distinct "circle of one" though, so you have to choose
@@ -3364,8 +3316,6 @@
     after all the combats if the acting vampire is still ready. [ANK 20180910-1] [LSJ 20060903]
 102200|Year of Fortune:
   - The bonus disappears if the card is burned (either burned by a referendum or if the controller is ousted). [PIB 20121028]
-102201|Yoruba Shrine:
-  - The acting player has the opportunity to play "as announced" effects first (eg. {Seduction}). [LSJ 20081105]
 102202|Young Bloods:
   - They may use their built-in action against a vampire with only 1 blood. If successful, that vampire burns his 1 blood.
     [LSJ 20070213]
@@ -3461,6 +3411,8 @@
 102329|Hunting the Quarry:
   - '[cel]/[tha] effects that are played when a combat "would end" (eg. {Telepathic Tracking}) cannot be play afterwards.
     [ANK 20191219]'
+102330|Kiss of Cathari:
+  - '[PRE] If the strike is dodged, the opposing minion is not stunned. [LSJ 20070124]'
 200011|Adana de Sforza:
   - Card with multiple types (eg. Combat/Action Modifier) are considered of the type they are played as, not both. [PIB 20150924-2]
 200017|Aeron:
@@ -3648,8 +3600,6 @@
   - Edith may burn a blood to give {Enid Blount} stealth multiple times each action. [LSJ 20040617]
 200402|Edward Neally:
   - Hand size can be increased more than once per turn (in case of multiple master phase actions). [LSJ 20020814]
-200403|Edward Vignes:
-  - His ability cannot be used if the action is blocked. [LSJ 20041022]
 200417|Ellison Humboldt:
   - Can use his ability only once per referendum. [ANK 20180307-2] [RBK wording-templates]
 200423|Enid Blount:
@@ -4737,6 +4687,7 @@ G00146|Vote reduction:
 G00147|Fail an action as announced:
   - The ability to fail an action must be used before action modifiers or reactions that are not explicitly played "as the
     action is announced". [ANK 20190425]
+  - The acting player has the opportunity to play "as announced" effects first (eg. Seduction). [LSJ 20081105]
 G00148|Adding damage to strikes:
   - Adding damage to a strike that does not deal damage has no effect, so the strike still will not do damage. [RTR 19960221]
   - Additional damage inherits all of the properties of the base damage. [RTR 19970630] [TOM 19960225]
@@ -4761,3 +4712,12 @@ G00155|Cancel, cost is still paid:
   - The cost for a canceled non-action-card is still paid, including additional and alternative cost (e.g. to play {Eagle's
     Sight} to block a Wraith or zombie while {Parijat, the Dark Oracle} is ready the top card of the Library must be burned,
     even if {Eagle's Sight} was canceled) [RBK cancel-a-card] [ANK 20260216]
+G00156|Fail an action (after 'as announced'):
+  - Cannot be used while a block is being attempted, or has already been successful. [ANK 20260316] [LSJ 20041022]
+G00157|Fail an Action:
+  - If the action fails, modifiers and reactions that can be used at the end/after an action can still be used afterwards
+    (after combat, if any). [ANK 20221205] [ANK 20220118] [RTR 20180719] [LSJ 20041022]
+  - If the action fails, the action has reached resolution, so is subject to NRA (Non Repeatable Action) rules. [ANK 20211015]
+    [RTR 20180719]
+  - If an action fails, it was not blocked. Cards/effects depending on a block (e.g. {Mirror Image}, [FOR] {Freak Drive})
+    cannot be played/used. [LSJ 20070219]
