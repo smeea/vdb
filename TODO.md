@@ -9,7 +9,6 @@
 - Inventory target documentation
 - Sect/titled cards breakdown to lib info
 - Show best precons for missing cards
-- Add Croatia event
 
 # FEATURES ON HOLD
 - Draft Cube support -> when draft cube info is available

@@ -1,5 +1,15 @@
 [
   {
+    "id": 12779,
+    "title": "Croatian Abuse of Power 2026",
+    "location": "Osijek, Croatia",
+    "date": "2026-01-24",
+    "isNC": true,
+    "players": 40,
+    "decks": 40,
+    "country": "HR"
+  },
+  {
     "id": "online2",
     "title": "Empires Fall",
     "location": "Online",
