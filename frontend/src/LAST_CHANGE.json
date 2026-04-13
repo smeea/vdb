@@ -1,6 +1,7 @@
 {
-  "version": "2026-04-05",
+  "version": "2026-04-13",
   "changes": [
-    "Small fixes"
+    "Update rulings",
+    "Add Croatian NC event"
   ]
 }
