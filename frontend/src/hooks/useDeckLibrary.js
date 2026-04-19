@@ -1,4 +1,5 @@
 import { useSnapshot } from "valtio";
+import sectsOpts from "@/assets/data/sectsList.json";
 import {
   ANY,
   BLOOD,
@@ -12,6 +13,8 @@ import {
   LIBRARY,
   PATH,
   POOL,
+  REQUIREMENT,
+  SECT,
   TRIFLE,
   TYPE,
   TYPE_MASTER,
@@ -24,6 +27,7 @@ import {
   getRestrictions,
   getTotalCardsGroupedBy,
   librarySort,
+  capitalize,
 } from "@/utils";
 
 const useDeckLibrary = (cardsList, cardsToList) => {
@@ -70,6 +74,7 @@ const useDeckLibrary = (cardsList, cardsToList) => {
     library.filter((card) => card.c[DISCIPLINE]),
     DISCIPLINE,
   );
+
   const libraryByClansTotal = getTotalCardsGroupedBy(
     library.filter((card) => card.c[CLAN] && card.c[TYPE] !== TYPE_MASTER),
     CLAN,
@@ -79,6 +84,14 @@ const useDeckLibrary = (cardsList, cardsToList) => {
     library.filter((card) => card.c[PATH] && card.c[TYPE] !== TYPE_MASTER),
     PATH,
   );
+
+  const libraryBySectsTotal = {}
+  library.forEach(card => {
+    const sectReq = card.c[REQUIREMENT].split(",").map(i => capitalize(i)).filter((i) => sectsOpts.includes(i));
+    sectReq.forEach((sect) => {
+      libraryBySectsTotal[sect] = (libraryBySectsTotal[sect] ?? 0) + 1;
+    })
+  })
 
   const anyDisciplines = countCards(
     library.filter((card) => !card.c[CLAN] && !card.c[DISCIPLINE] && card.c[TYPE] !== TYPE_MASTER),
@@ -107,6 +120,7 @@ const useDeckLibrary = (cardsList, cardsToList) => {
     libraryByTypeToTotal,
     libraryByClansTotal,
     libraryByPathsTotal,
+    libraryBySectsTotal,
     libraryByDisciplinesTotal,
   };
 };

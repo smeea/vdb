@@ -2,6 +2,7 @@ import {
   ResultLibraryClan,
   ResultLibraryDisciplines,
   ResultLibraryTypeImage,
+  ResultLibrarySectReq,
   ResultPathImage,
 } from "@/components";
 import { TYPE_MASTER } from "@/constants";
@@ -18,7 +19,7 @@ const IconTextPercents = ({ icon, text, percents }) => {
   );
 };
 
-const DeckLibraryTotalInfo = ({ byClans, byTypes, byPaths, byDisciplines }) => {
+const DeckLibraryTotalInfo = ({ bySects, byClans, byTypes, byPaths, byDisciplines }) => {
   const total = Object.values(byTypes).reduce((a, b) => a + b, 0);
   const totalExMasters = total - (byTypes[TYPE_MASTER] || 0);
 
@@ -37,6 +38,12 @@ const DeckLibraryTotalInfo = ({ byClans, byTypes, byPaths, byDisciplines }) => {
   const byClansSorted = byClans
     ? Object.keys(byClans).toSorted((a, b) => {
         return byClans[b] - byClans[a];
+      })
+    : [];
+
+  const bySectsSorted = bySects
+    ? Object.keys(bySects).toSorted((a, b) => {
+        return bySects[b] - bySects[a];
       })
     : [];
 
@@ -69,8 +76,8 @@ const DeckLibraryTotalInfo = ({ byClans, byTypes, byPaths, byDisciplines }) => {
           })}
         </div>
       </div>
-      {byClansSorted.length + byPathsSorted.length > 0 && (
-        <div>
+      {byClansSorted.length + byPathsSorted.length + bySectsSorted.length> 0 && (
+        <div className="flex items-center">
           {byClansSorted.map((i) => {
             return (
               <IconTextPercents
@@ -88,6 +95,16 @@ const DeckLibraryTotalInfo = ({ byClans, byTypes, byPaths, byDisciplines }) => {
                 icon={<ResultPathImage value={i} />}
                 text={byPaths[i]}
                 percents={Math.round((byPaths[i] / total) * 100)}
+              />
+            );
+          })}
+          {bySectsSorted.map((i) => {
+            return (
+              <IconTextPercents
+                key={i}
+                icon={<ResultLibrarySectReq value={[i]} />}
+                text={bySects[i]}
+                percents={Math.round((bySects[i] / total) * 100)}
               />
             );
           })}
