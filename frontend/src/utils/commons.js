@@ -238,3 +238,8 @@ export const getIsEditable = (deck) => {
 export const getIsPlaytest = (cardid) => {
   return cardid > 210000 || (cardid < 200000 && cardid > 110000);
 };
+
+export const getSortedKeysByValues = (obj) => {
+  if (!obj) return []
+  return Object.keys(obj).toSorted((a, b) => obj[b] - obj[a])
+}

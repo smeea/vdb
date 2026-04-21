@@ -280,6 +280,7 @@ export { default as ResultLibraryDisciplines } from "./result_library/ResultLibr
 export { default as ResultLibraryLayoutText } from "./result_library/ResultLibraryLayoutText.jsx";
 export { default as ResultLibraryRequirements } from "./result_library/ResultLibraryRequirements.jsx";
 export { default as ResultLibrarySectReq } from "./result_library/ResultLibrarySectReq.jsx";
+export { default as ResultLibraryTitlesReq } from "./result_library/ResultLibraryTitlesReq.jsx";
 export { default as ResultLibraryTable } from "./result_library/ResultLibraryTable.jsx";
 export { default as ResultLibraryTableRow } from "./result_library/ResultLibraryTableRow.jsx";
 export { default as ResultLibraryTableRowCommon } from "./result_library/ResultLibraryTableRowCommon.jsx";

@@ -14,10 +14,24 @@ import {
   PATH,
   POOL,
   REQUIREMENT,
-  SECT,
   TRIFLE,
   TYPE,
   TYPE_MASTER,
+  TITLE,
+  ARCHBISHOP,
+  BARON,
+  BISHOP,
+  CARDINAL,
+  INNER_CIRCLE,
+  JUSTICAR,
+  MAGAJI,
+  PRIMOGEN,
+  PRINCE,
+  PRISCUS,
+  REGENT,
+  TITLED,
+  VOTE_1,
+  VOTE_2,
 } from "@/constants";
 import { limitedStore } from "@/context";
 import {
@@ -29,6 +43,23 @@ import {
   librarySort,
   capitalize,
 } from "@/utils";
+
+const titlesOpts = [
+  PRIMOGEN,
+  PRINCE,
+  JUSTICAR,
+  INNER_CIRCLE,
+  BARON,
+  VOTE_1,
+  VOTE_2,
+  BISHOP,
+  ARCHBISHOP,
+  PRISCUS,
+  CARDINAL,
+  REGENT,
+  MAGAJI,
+  TITLED,
+];
 
 const useDeckLibrary = (cardsList, cardsToList) => {
   const limitedLibrary = useSnapshot(limitedStore)[LIBRARY];
@@ -85,13 +116,17 @@ const useDeckLibrary = (cardsList, cardsToList) => {
     PATH,
   );
 
+  const libraryByTitlesTotal = {};
   const libraryBySectsTotal = {};
   library.forEach((card) => {
-    const sectReq = card.c[REQUIREMENT]
-      .split(",")
-      .map((i) => capitalize(i))
-      .filter((i) => sectsOpts.includes(i));
+    const requirements = card.c[REQUIREMENT].split(",");
 
+    const titleReq = requirements.filter((i) => titlesOpts.includes(i));
+    if (titleReq.length !== 0) {
+      libraryByTitlesTotal[titleReq] = (libraryByTitlesTotal[titleReq] ?? 0) + card.q;
+    }
+
+    const sectReq = requirements.filter((i) => sectsOpts.includes(capitalize(i)));
     sectReq.forEach((sect) => {
       libraryBySectsTotal[sect] = (libraryBySectsTotal[sect] ?? 0) + card.q;
     });
@@ -125,6 +160,7 @@ const useDeckLibrary = (cardsList, cardsToList) => {
     libraryByClansTotal,
     libraryByPathsTotal,
     libraryBySectsTotal,
+    libraryByTitlesTotal,
     libraryByDisciplinesTotal,
   };
 };

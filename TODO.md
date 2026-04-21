@@ -7,7 +7,6 @@
 - TWD search with % V5-compatibility
 - Click on scan image to close modal on mobile (need refactor)
 - Inventory target documentation
-- Titled cards breakdown to lib info
 - Show best precons for missing cards
 
 # FEATURES ON HOLD

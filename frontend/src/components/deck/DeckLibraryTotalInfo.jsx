@@ -3,9 +3,11 @@ import {
   ResultLibraryDisciplines,
   ResultLibraryTypeImage,
   ResultLibrarySectReq,
+  ResultLibraryTitlesReq,
   ResultPathImage,
 } from "@/components";
 import { TYPE_MASTER } from "@/constants";
+import { getSortedKeysByValues } from "@/utils";
 
 const IconTextPercents = ({ icon, text, percents }) => {
   return (
@@ -19,33 +21,15 @@ const IconTextPercents = ({ icon, text, percents }) => {
   );
 };
 
-const DeckLibraryTotalInfo = ({ bySects, byClans, byTypes, byPaths, byDisciplines }) => {
+const DeckLibraryTotalInfo = ({ byTitles, bySects, byClans, byTypes, byPaths, byDisciplines }) => {
   const total = Object.values(byTypes).reduce((a, b) => a + b, 0);
   const totalExMasters = total - (byTypes[TYPE_MASTER] || 0);
 
-  const byDisciplinesSorted = byDisciplines
-    ? Object.keys(byDisciplines).toSorted((a, b) => {
-        return byDisciplines[b] - byDisciplines[a];
-      })
-    : [];
-
-  const byPathsSorted = byPaths
-    ? Object.keys(byPaths).toSorted((a, b) => {
-        return byPaths[b] - byPaths[a];
-      })
-    : [];
-
-  const byClansSorted = byClans
-    ? Object.keys(byClans).toSorted((a, b) => {
-        return byClans[b] - byClans[a];
-      })
-    : [];
-
-  const bySectsSorted = bySects
-    ? Object.keys(bySects).toSorted((a, b) => {
-        return bySects[b] - bySects[a];
-      })
-    : [];
+  const byDisciplinesSorted = getSortedKeysByValues(byDisciplines)
+  const byPathsSorted = getSortedKeysByValues(byPaths)
+  const byClansSorted = getSortedKeysByValues(byClans)
+  const bySectsSorted = getSortedKeysByValues(bySects)
+  const byTitlesSorted = getSortedKeysByValues(byTitles)
 
   return (
     <div className="flex flex-col gap-2 bg-bgSecondary p-2 dark:bg-bgSecondaryDark">
@@ -76,7 +60,8 @@ const DeckLibraryTotalInfo = ({ bySects, byClans, byTypes, byPaths, byDiscipline
           })}
         </div>
       </div>
-      {byClansSorted.length + byPathsSorted.length + bySectsSorted.length> 0 && (
+      {byClansSorted.length + byPathsSorted.length + bySectsSorted.length + byTitlesSorted.length >
+        0 && (
         <div className="flex items-center">
           {byClansSorted.map((i) => {
             return (
@@ -105,6 +90,16 @@ const DeckLibraryTotalInfo = ({ bySects, byClans, byTypes, byPaths, byDiscipline
                 icon={<ResultLibrarySectReq value={[i]} />}
                 text={bySects[i]}
                 percents={Math.round((bySects[i] / total) * 100)}
+              />
+            );
+          })}
+          {byTitlesSorted.map((i) => {
+            return (
+              <IconTextPercents
+                key={i}
+                icon={<ResultLibraryTitlesReq value={i.split(",")} />}
+                text={byTitles[i]}
+                percents={Math.round((byTitles[i] / total) * 100)}
               />
             );
           })}

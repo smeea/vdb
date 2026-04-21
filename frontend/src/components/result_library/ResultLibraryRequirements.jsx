@@ -1,5 +1,5 @@
 import sectsOpts from "@/assets/data/sectsList.json";
-import { ResultLibrarySectReq, ResultCryptTitle } from "@/components";
+import { ResultLibraryTitlesReq,ResultLibrarySectReq, ResultCryptTitle } from "@/components";
 import {
   ARCHBISHOP,
   BARON,
@@ -18,18 +18,6 @@ import {
   VOTE_2,
 } from "@/constants";
 import { capitalize } from "@/utils";
-
-const TitlesReq = ({ value }) => {
-  if (value.length === 0) return;
-  const htmlTitle = value.map((v) => capitalize(v)).join(" or ");
-
-  return (
-    <div title={htmlTitle} className="text-fg-fgSecondary dark:text-fgSecondaryDark">
-      <ResultCryptTitle value={value[0]} noTitle />
-      {value.length > 1 && "+"}
-    </div>
-  );
-};
 
 const CapacityReq = ({ value }) => {
   if (!value) return;
@@ -72,7 +60,7 @@ const ResultLibraryRequirements = ({ value }) => {
       {hasRequirements ? (
         <div className="flex gap-1">
           <CapacityReq value={capacityReq} />
-          <TitlesReq value={titleReq} />
+          <ResultLibraryTitlesReq value={titleReq} />
           {sectReq.length > 0 && (titleReq.length === 0 || titleReq[0] === TITLED) && (
             <ResultLibrarySectReq value={sectReq} />
           )}
