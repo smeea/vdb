@@ -85,13 +85,17 @@ const useDeckLibrary = (cardsList, cardsToList) => {
     PATH,
   );
 
-  const libraryBySectsTotal = {}
-  library.forEach(card => {
-    const sectReq = card.c[REQUIREMENT].split(",").map(i => capitalize(i)).filter((i) => sectsOpts.includes(i));
+  const libraryBySectsTotal = {};
+  library.forEach((card) => {
+    const sectReq = card.c[REQUIREMENT]
+      .split(",")
+      .map((i) => capitalize(i))
+      .filter((i) => sectsOpts.includes(i));
+
     sectReq.forEach((sect) => {
-      libraryBySectsTotal[sect] = (libraryBySectsTotal[sect] ?? 0) + 1;
-    })
-  })
+      libraryBySectsTotal[sect] = (libraryBySectsTotal[sect] ?? 0) + card.q;
+    });
+  });
 
   const anyDisciplines = countCards(
     library.filter((card) => !card.c[CLAN] && !card.c[DISCIPLINE] && card.c[TYPE] !== TYPE_MASTER),
