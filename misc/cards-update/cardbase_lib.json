@@ -1847,6 +1847,13 @@
                     "LSJ 20040518-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/4emymfUPwAM/m/JF_o7OOoCbkJ",
                     "LSJ 20100302-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jmmm0WRUPvs/m/ny5F1OnSUsEJ"
                 }
+            },
+            {
+                "text":"Cannot be used or played if the conditions for the terms of the referendum cannot be met (e.g. no legal selection, insufficient cards/players to choose from, prohibited by card text, uniqueness, etc).",
+                "refs":{
+                    "LSJ 20100129":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/X8Uu7Sk56P4/m/fgP7NfnDpCkJ",
+                    "ANK 20191228":"https://www.vekn.net/forum/rules-questions/78262-parity-shift-without-target#98358"
+                }
             }
         ],
         "set":{
@@ -5877,7 +5884,15 @@
         "path":"",
         "pool":0,
         "requirement":"cardinal,regent,inquisitor,sabbat",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Cannot be used or played if the conditions for the terms of the referendum cannot be met (e.g. no legal selection, insufficient cards/players to choose from, prohibited by card text, uniqueness, etc).",
+                "refs":{
+                    "LSJ 20100129":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/X8Uu7Sk56P4/m/fgP7NfnDpCkJ",
+                    "ANK 20191228":"https://www.vekn.net/forum/rules-questions/78262-parity-shift-without-target#98358"
+                }
+            }
+        ],
         "set":{
             "Third":{
                 "U":true
@@ -6081,7 +6096,7 @@
                 }
             },
             {
-                "text":"Can only cancel minion cards played from the hand in the normal fashion (eg. can't cancel allies played via\u00a0{Piper}).",
+                "text":"Cannot cancel cards that are not played from the hand in the normal fashion (e.g. can't cancel allies played via\u00a0{Piper}).",
                 "refs":{
                     "RTR 20001020":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GvxNYsYsWJ4/m/EY7NOjdsGCsJ"
                 }
@@ -6685,8 +6700,9 @@
                 }
             },
             {
-                "text":"Cannot be played if there is no legal target.",
+                "text":"Cannot be used or played if the conditions for the terms of the referendum cannot be met (e.g. no legal selection, insufficient cards/players to choose from, prohibited by card text, uniqueness, etc).",
                 "refs":{
+                    "LSJ 20100129":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/X8Uu7Sk56P4/m/fgP7NfnDpCkJ",
                     "ANK 20191228":"https://www.vekn.net/forum/rules-questions/78262-parity-shift-without-target#98358"
                 }
             }
@@ -6821,7 +6837,15 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Cannot be used or played if the conditions for the terms of the referendum cannot be met (e.g. no legal selection, insufficient cards/players to choose from, prohibited by card text, uniqueness, etc).",
+                "refs":{
+                    "LSJ 20100129":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/X8Uu7Sk56P4/m/fgP7NfnDpCkJ",
+                    "ANK 20191228":"https://www.vekn.net/forum/rules-questions/78262-parity-shift-without-target#98358"
+                }
+            }
+        ],
         "set":{
             "30th":{
                 "":"1"
@@ -9451,7 +9475,7 @@
                 }
             },
             {
-                "text":"[dom][pre][REACTION] Can only cancel minion cards played from the hand in the normal fashion (eg. can't cancel allies played via\u00a0{Piper}).",
+                "text":"[dom][pre][REACTION] Cannot cancel cards that are not played from the hand in the normal fashion (e.g. can't cancel allies played via\u00a0{Piper}).",
                 "refs":{
                     "RTR 20001020":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GvxNYsYsWJ4/m/EY7NOjdsGCsJ"
                 }
@@ -10534,7 +10558,15 @@
         "path":"",
         "pool":0,
         "requirement":"archbishop,priscus,cardinal,regent,sabbat",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Cannot be used or played if the conditions for the terms of the referendum cannot be met (e.g. no legal selection, insufficient cards/players to choose from, prohibited by card text, uniqueness, etc).",
+                "refs":{
+                    "LSJ 20100129":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/X8Uu7Sk56P4/m/fgP7NfnDpCkJ",
+                    "ANK 20191228":"https://www.vekn.net/forum/rules-questions/78262-parity-shift-without-target#98358"
+                }
+            }
+        ],
         "set":{
             "SW":{
                 "R":true
@@ -12942,6 +12974,13 @@
                 "refs":{
                     "LSJ 20041026":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/54Zr4RUuVx8/m/fJCT8qW_90EJ"
                 }
+            },
+            {
+                "text":"Cannot be used or played if the conditions for the terms of the referendum cannot be met (e.g. no legal selection, insufficient cards/players to choose from, prohibited by card text, uniqueness, etc).",
+                "refs":{
+                    "LSJ 20100129":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/X8Uu7Sk56P4/m/fgP7NfnDpCkJ",
+                    "ANK 20191228":"https://www.vekn.net/forum/rules-questions/78262-parity-shift-without-target#98358"
+                }
             }
         ],
         "set":{
@@ -14115,6 +14154,13 @@
                 "refs":{
                     "LSJ 20020819":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/WONdURITUdk/m/9EnfVPy0P-MJ"
                 }
+            },
+            {
+                "text":"Cannot be used or played if the conditions for the terms of the referendum cannot be met (e.g. no legal selection, insufficient cards/players to choose from, prohibited by card text, uniqueness, etc).",
+                "refs":{
+                    "LSJ 20100129":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/X8Uu7Sk56P4/m/fgP7NfnDpCkJ",
+                    "ANK 20191228":"https://www.vekn.net/forum/rules-questions/78262-parity-shift-without-target#98358"
+                }
             }
         ],
         "set":{
@@ -14478,7 +14524,15 @@
         "path":"",
         "pool":0,
         "requirement":"sabbat",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Cannot be used or played if the conditions for the terms of the referendum cannot be met (e.g. no legal selection, insufficient cards/players to choose from, prohibited by card text, uniqueness, etc).",
+                "refs":{
+                    "LSJ 20100129":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/X8Uu7Sk56P4/m/fgP7NfnDpCkJ",
+                    "ANK 20191228":"https://www.vekn.net/forum/rules-questions/78262-parity-shift-without-target#98358"
+                }
+            }
+        ],
         "set":{
             "Sabbat":{
                 "U":true
@@ -18235,7 +18289,15 @@
         "path":"",
         "pool":0,
         "requirement":"sabbat",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Cannot be used or played if the conditions for the terms of the referendum cannot be met (e.g. no legal selection, insufficient cards/players to choose from, prohibited by card text, uniqueness, etc).",
+                "refs":{
+                    "LSJ 20100129":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/X8Uu7Sk56P4/m/fgP7NfnDpCkJ",
+                    "ANK 20191228":"https://www.vekn.net/forum/rules-questions/78262-parity-shift-without-target#98358"
+                }
+            }
+        ],
         "set":{
             "Sabbat":{
                 "R":true
@@ -18713,7 +18775,15 @@
         "path":"",
         "pool":0,
         "requirement":"camarilla",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Cannot be used or played if the conditions for the terms of the referendum cannot be met (e.g. no legal selection, insufficient cards/players to choose from, prohibited by card text, uniqueness, etc).",
+                "refs":{
+                    "LSJ 20100129":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/X8Uu7Sk56P4/m/fgP7NfnDpCkJ",
+                    "ANK 20191228":"https://www.vekn.net/forum/rules-questions/78262-parity-shift-without-target#98358"
+                }
+            }
+        ],
         "set":{
             "DS":{
                 "U":true
@@ -19690,7 +19760,15 @@
         "path":"",
         "pool":0,
         "requirement":"titled",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Cannot be used or played if the conditions for the terms of the referendum cannot be met (e.g. no legal selection, insufficient cards/players to choose from, prohibited by card text, uniqueness, etc).",
+                "refs":{
+                    "LSJ 20100129":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/X8Uu7Sk56P4/m/fgP7NfnDpCkJ",
+                    "ANK 20191228":"https://www.vekn.net/forum/rules-questions/78262-parity-shift-without-target#98358"
+                }
+            }
+        ],
         "set":{
             "30th":{
                 "":"1"
@@ -20523,7 +20601,56 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The equipment or retainer must be announced by name, and in hand, when the card or effect is declared (before the card, if any, is replaced), but need not to be shown until the effect resolves.",
+                "refs":{
+                    "LSJ 20100130":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/X8Uu7Sk56P4/m/twUvR4ZnBBkJ",
+                    "ANK 20180925-2":"https://www.vekn.net/forum/rules-questions/77029-order-of-draw-and-replace-for-concealed-weapon-under-infernal-pursuit?start=6#90757",
+                    "LSJ 19991207":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aQaOTYwC-fg/m/vdyo09QZoicJ"
+                }
+            },
+            {
+                "text":"Cannot select cards that are \"playable as if in hand\" (e.g. from {The Erciyes Fragments})",
+                "refs":{
+                    "LSJ 20050913":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GpSAQnN6GnY/m/6EqRGDT3u08J"
+                }
+            },
+            {
+                "text":"Requirements apply but do not count as requirements for the action (eg. you cannot use CrimethInc. if the card requires an Anarch).",
+                "refs":{
+                    "LSJ 20100725":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9d1zMZfsfNo/m/l3fbDtbr9xwJ",
+                    "LSJ 20100303":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jmmm0WRUPvs/m/x9pv1OmWFS4J",
+                    "ANK 20180817":"https://www.vekn.net/forum/rules-questions/76933-cock-robin-jack-of-both-sides#90064"
+                }
+            },
+            {
+                "text":"This does not count as performing the action to employ/recruit/equip this retainer/ally/equipment in respect to section 3 of the rules. The same vampire can play the respective card in a normal fashion during their turn, if unlocked.",
+                "refs":{
+                    "LSJ 20080815":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/0_1JBbdwi74/m/c1GepnS4ylEJ"
+                }
+            },
+            {
+                "text":"This is not an action, so cost reductions referring to an action do not apply.  (e.g. {Charisma}, {Erichtho})",
+                "refs":{
+                    "LSJ 20090115-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/RQ3ARP9Kvfk/m/dBN_M7SnIHAJ",
+                    "ANK 20170309":"https://www.vekn.net/forum/rules-questions/75649-reduce-ally-cost-and-piper-combo#81049"
+                }
+            },
+            {
+                "text":"The card is not \"played\" by the minion (e.g. {Louhi}'s ability cannot cancel it).",
+                "refs":{
+                    "ANK 20201229":"https://www.vekn.net/forum/rules-questions/78959-louhi-and-piper#101325"
+                }
+            },
+            {
+                "text":"Cost reductions that are not referring to an action apply .",
+                "refs":{
+                    "ANK 20230824":"https://www.vekn.net/forum/news-and-announcements/80782-the-line-pack-alpha?start=6#109157",
+                    "RTR 20070707":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/vSOt2c1uRzQ/m/MsRAv47Cd4YJ"
+                }
+            }
+        ],
         "set":{
             "NB3C":{
                 "PR":"3"
@@ -23491,7 +23618,7 @@
                 }
             },
             {
-                "text":"Can only cancel minion cards played from the hand in the normal fashion (eg. can't cancel allies played via\u00a0{Piper}).",
+                "text":"Cannot cancel cards that are not played from the hand in the normal fashion (e.g. can't cancel allies played via\u00a0{Piper}).",
                 "refs":{
                     "RTR 20001020":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GvxNYsYsWJ4/m/EY7NOjdsGCsJ"
                 }
@@ -25131,7 +25258,7 @@
                 }
             },
             {
-                "text":"[dom][for] Can only cancel minion cards played from the hand in the normal fashion (eg. can't cancel allies played via\u00a0{Piper}).",
+                "text":"[dom][for] Cannot cancel cards that are not played from the hand in the normal fashion (e.g. can't cancel allies played via\u00a0{Piper}).",
                 "refs":{
                     "RTR 20001020":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GvxNYsYsWJ4/m/EY7NOjdsGCsJ"
                 }
@@ -25214,7 +25341,15 @@
         "path":"",
         "pool":0,
         "requirement":"archbishop,cardinal,regent,sabbat",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Cannot be used or played if the conditions for the terms of the referendum cannot be met (e.g. no legal selection, insufficient cards/players to choose from, prohibited by card text, uniqueness, etc).",
+                "refs":{
+                    "LSJ 20100129":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/X8Uu7Sk56P4/m/fgP7NfnDpCkJ",
+                    "ANK 20191228":"https://www.vekn.net/forum/rules-questions/78262-parity-shift-without-target#98358"
+                }
+            }
+        ],
         "set":{
             "BH":{
                 "C":true,
@@ -25691,7 +25826,7 @@
                 }
             },
             {
-                "text":"Can only cancel minion cards played from the hand in the normal fashion (eg. can't cancel allies played via\u00a0{Piper}).",
+                "text":"Cannot cancel cards that are not played from the hand in the normal fashion (e.g. can't cancel allies played via\u00a0{Piper}).",
                 "refs":{
                     "RTR 20001020":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GvxNYsYsWJ4/m/EY7NOjdsGCsJ"
                 }
@@ -26325,7 +26460,7 @@
                 }
             },
             {
-                "text":"Can only cancel minion cards played from the hand in the normal fashion (eg. can't cancel allies played via\u00a0{Piper}).",
+                "text":"Cannot cancel cards that are not played from the hand in the normal fashion (e.g. can't cancel allies played via\u00a0{Piper}).",
                 "refs":{
                     "RTR 20001020":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GvxNYsYsWJ4/m/EY7NOjdsGCsJ"
                 }
@@ -26945,6 +27080,13 @@
                 "text":"Changing the controller of a location has no other effect, unless specified by card text. Exception: A location \"on\" another controlled card is moved onto an appropriate card controlled by the new controller of the location.",
                 "refs":{
                     "RTR 19980623":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/tSpd9dtTElc/m/-CuHJF54_n0J"
+                }
+            },
+            {
+                "text":"Cannot be used or played if the conditions for the terms of the referendum cannot be met (e.g. no legal selection, insufficient cards/players to choose from, prohibited by card text, uniqueness, etc).",
+                "refs":{
+                    "LSJ 20100129":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/X8Uu7Sk56P4/m/fgP7NfnDpCkJ",
+                    "ANK 20191228":"https://www.vekn.net/forum/rules-questions/78262-parity-shift-without-target#98358"
                 }
             }
         ],
@@ -30297,6 +30439,13 @@
                 "refs":{
                     "LSJ 20081002":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/OUYG4nuy3Oo/m/MsxvJfM9vuQJ"
                 }
+            },
+            {
+                "text":"Cannot be used or played if the conditions for the terms of the referendum cannot be met (e.g. no legal selection, insufficient cards/players to choose from, prohibited by card text, uniqueness, etc).",
+                "refs":{
+                    "LSJ 20100129":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/X8Uu7Sk56P4/m/fgP7NfnDpCkJ",
+                    "ANK 20191228":"https://www.vekn.net/forum/rules-questions/78262-parity-shift-without-target#98358"
+                }
             }
         ],
         "set":{
@@ -32384,7 +32533,7 @@
                 }
             },
             {
-                "text":"[POT][PRE] Can only cancel minion cards played from the hand in the normal fashion (eg. can't cancel allies played via\u00a0{Piper}).",
+                "text":"[POT][PRE] Cannot cancel cards that are not played from the hand in the normal fashion (e.g. can't cancel allies played via\u00a0{Piper}).",
                 "refs":{
                     "RTR 20001020":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GvxNYsYsWJ4/m/EY7NOjdsGCsJ"
                 }
@@ -32678,7 +32827,7 @@
                 }
             },
             {
-                "text":"[MAL] Can only cancel minion cards played from the hand in the normal fashion (eg. can't cancel allies played via\u00a0{Piper}).",
+                "text":"[MAL] Cannot cancel cards that are not played from the hand in the normal fashion (e.g. can't cancel allies played via\u00a0{Piper}).",
                 "refs":{
                     "RTR 20001020":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GvxNYsYsWJ4/m/EY7NOjdsGCsJ"
                 }
@@ -32844,7 +32993,15 @@
         "path":"",
         "pool":0,
         "requirement":"sabbat",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Cannot be used or played if the conditions for the terms of the referendum cannot be met (e.g. no legal selection, insufficient cards/players to choose from, prohibited by card text, uniqueness, etc).",
+                "refs":{
+                    "LSJ 20100129":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/X8Uu7Sk56P4/m/fgP7NfnDpCkJ",
+                    "ANK 20191228":"https://www.vekn.net/forum/rules-questions/78262-parity-shift-without-target#98358"
+                }
+            }
+        ],
         "set":{
             "Sabbat":{
                 "U":true
@@ -36043,7 +36200,15 @@
         "path":"",
         "pool":0,
         "requirement":"anarch",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Cannot be used or played if the conditions for the terms of the referendum cannot be met (e.g. no legal selection, insufficient cards/players to choose from, prohibited by card text, uniqueness, etc).",
+                "refs":{
+                    "LSJ 20100129":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/X8Uu7Sk56P4/m/fgP7NfnDpCkJ",
+                    "ANK 20191228":"https://www.vekn.net/forum/rules-questions/78262-parity-shift-without-target#98358"
+                }
+            }
+        ],
         "set":{
             "Anarchs":{
                 "C":true,
@@ -38794,6 +38959,13 @@
                 "refs":{
                     "ANK 20180307-1":"https://www.vekn.net/forum/rules-questions/76452-ballot-vs-fee-stake#85610"
                 }
+            },
+            {
+                "text":"Cannot be used or played if the conditions for the terms of the referendum cannot be met (e.g. no legal selection, insufficient cards/players to choose from, prohibited by card text, uniqueness, etc).",
+                "refs":{
+                    "LSJ 20100129":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/X8Uu7Sk56P4/m/fgP7NfnDpCkJ",
+                    "ANK 20191228":"https://www.vekn.net/forum/rules-questions/78262-parity-shift-without-target#98358"
+                }
             }
         ],
         "set":{
@@ -39448,7 +39620,15 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Cannot be used or played if the conditions for the terms of the referendum cannot be met (e.g. no legal selection, insufficient cards/players to choose from, prohibited by card text, uniqueness, etc).",
+                "refs":{
+                    "LSJ 20100129":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/X8Uu7Sk56P4/m/fgP7NfnDpCkJ",
+                    "ANK 20191228":"https://www.vekn.net/forum/rules-questions/78262-parity-shift-without-target#98358"
+                }
+            }
+        ],
         "set":{
             "Jyhad":{
                 "R":true
@@ -43218,7 +43398,15 @@
         "path":"",
         "pool":0,
         "requirement":"sabbat,titled",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Cannot be used or played if the conditions for the terms of the referendum cannot be met (e.g. no legal selection, insufficient cards/players to choose from, prohibited by card text, uniqueness, etc).",
+                "refs":{
+                    "LSJ 20100129":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/X8Uu7Sk56P4/m/fgP7NfnDpCkJ",
+                    "ANK 20191228":"https://www.vekn.net/forum/rules-questions/78262-parity-shift-without-target#98358"
+                }
+            }
+        ],
         "set":{
             "BH":{
                 "C":true,
@@ -45306,7 +45494,15 @@
         "path":"",
         "pool":0,
         "requirement":"laibon",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Cannot be used or played if the conditions for the terms of the referendum cannot be met (e.g. no legal selection, insufficient cards/players to choose from, prohibited by card text, uniqueness, etc).",
+                "refs":{
+                    "LSJ 20100129":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/X8Uu7Sk56P4/m/fgP7NfnDpCkJ",
+                    "ANK 20191228":"https://www.vekn.net/forum/rules-questions/78262-parity-shift-without-target#98358"
+                }
+            }
+        ],
         "set":{
             "EK":{
                 "R":true
@@ -47206,7 +47402,15 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Cannot be used or played if the conditions for the terms of the referendum cannot be met (e.g. no legal selection, insufficient cards/players to choose from, prohibited by card text, uniqueness, etc).",
+                "refs":{
+                    "LSJ 20100129":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/X8Uu7Sk56P4/m/fgP7NfnDpCkJ",
+                    "ANK 20191228":"https://www.vekn.net/forum/rules-questions/78262-parity-shift-without-target#98358"
+                }
+            }
+        ],
         "set":{
             "Promo":{
                 "2009-04-01":true
@@ -52370,7 +52574,15 @@
         "path":"",
         "pool":0,
         "requirement":"laibon",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Cannot be used or played if the conditions for the terms of the referendum cannot be met (e.g. no legal selection, insufficient cards/players to choose from, prohibited by card text, uniqueness, etc).",
+                "refs":{
+                    "LSJ 20100129":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/X8Uu7Sk56P4/m/fgP7NfnDpCkJ",
+                    "ANK 20191228":"https://www.vekn.net/forum/rules-questions/78262-parity-shift-without-target#98358"
+                }
+            }
+        ],
         "set":{
             "EK":{
                 "C":true
@@ -52624,7 +52836,15 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Cannot be used or played if the conditions for the terms of the referendum cannot be met (e.g. no legal selection, insufficient cards/players to choose from, prohibited by card text, uniqueness, etc).",
+                "refs":{
+                    "LSJ 20100129":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/X8Uu7Sk56P4/m/fgP7NfnDpCkJ",
+                    "ANK 20191228":"https://www.vekn.net/forum/rules-questions/78262-parity-shift-without-target#98358"
+                }
+            }
+        ],
         "set":{
             "30th":{
                 "":"1"
@@ -53777,6 +53997,13 @@
                 "text":"\"Since your last turn\" means between the end of your last turn and now. Your last turn does not qualify, your current turn does.",
                 "refs":{
                     "LSJ 20020429":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/7ZfedGTVt9g/m/kQnfy7J_UYkJ"
+                }
+            },
+            {
+                "text":"Cannot be used or played if the conditions for the terms of the referendum cannot be met (e.g. no legal selection, insufficient cards/players to choose from, prohibited by card text, uniqueness, etc).",
+                "refs":{
+                    "LSJ 20100129":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/X8Uu7Sk56P4/m/fgP7NfnDpCkJ",
+                    "ANK 20191228":"https://www.vekn.net/forum/rules-questions/78262-parity-shift-without-target#98358"
                 }
             }
         ],
@@ -56503,7 +56730,15 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Cannot be used or played if the conditions for the terms of the referendum cannot be met (e.g. no legal selection, insufficient cards/players to choose from, prohibited by card text, uniqueness, etc).",
+                "refs":{
+                    "LSJ 20100129":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/X8Uu7Sk56P4/m/fgP7NfnDpCkJ",
+                    "ANK 20191228":"https://www.vekn.net/forum/rules-questions/78262-parity-shift-without-target#98358"
+                }
+            }
+        ],
         "set":{
             "Jyhad":{
                 "R":true
@@ -58293,7 +58528,7 @@
                 }
             },
             {
-                "text":"Can only cancel minion cards played from the hand in the normal fashion (eg. can't cancel allies played via\u00a0{Piper}).",
+                "text":"Cannot cancel cards that are not played from the hand in the normal fashion (e.g. can't cancel allies played via\u00a0{Piper}).",
                 "refs":{
                     "RTR 20001020":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GvxNYsYsWJ4/m/EY7NOjdsGCsJ"
                 }
@@ -60075,7 +60310,7 @@
                 }
             },
             {
-                "text":"Can only cancel minion cards played from the hand in the normal fashion (eg. can't cancel allies played via\u00a0{Piper}).",
+                "text":"Cannot cancel cards that are not played from the hand in the normal fashion (e.g. can't cancel allies played via\u00a0{Piper}).",
                 "refs":{
                     "RTR 20001020":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GvxNYsYsWJ4/m/EY7NOjdsGCsJ"
                 }
@@ -61319,7 +61554,7 @@
                 }
             },
             {
-                "text":"Can only cancel minion cards played from the hand in the normal fashion (eg. can't cancel allies played via\u00a0{Piper}).",
+                "text":"Cannot cancel cards that are not played from the hand in the normal fashion (e.g. can't cancel allies played via\u00a0{Piper}).",
                 "refs":{
                     "RTR 20001020":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GvxNYsYsWJ4/m/EY7NOjdsGCsJ"
                 }
@@ -63645,6 +63880,13 @@
                 "text":"Only a Camarilla vampire can be chosen, it cannot be played without a valid target.",
                 "refs":{
                     "LSJ 20041026":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/54Zr4RUuVx8/m/fJCT8qW_90EJ"
+                }
+            },
+            {
+                "text":"Cannot be used or played if the conditions for the terms of the referendum cannot be met (e.g. no legal selection, insufficient cards/players to choose from, prohibited by card text, uniqueness, etc).",
+                "refs":{
+                    "LSJ 20100129":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/X8Uu7Sk56P4/m/fgP7NfnDpCkJ",
+                    "ANK 20191228":"https://www.vekn.net/forum/rules-questions/78262-parity-shift-without-target#98358"
                 }
             }
         ],
@@ -66375,12 +66617,6 @@
         "requirement":"prince,justicar,camarilla",
         "rulings":[
             {
-                "text":"Cannot be played if there is no legal target (no other Methuselah with more pool than you).",
-                "refs":{
-                    "ANK 20191228":"https://www.vekn.net/forum/rules-questions/78262-parity-shift-without-target#98358"
-                }
-            },
-            {
                 "text":"The pool awarded can be used to play {Life Boon} to save the target from an oust.",
                 "refs":{
                     "LSJ 20100527":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Tr3X4DsZr-8/m/O06iXN6LtzsJ"
@@ -66396,6 +66632,13 @@
                 "text":"Changes in pool during the referendum (after terms are chosen) do not affect the outcome.",
                 "refs":{
                     "LSJ 20041004":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UZbyxuVsTJE/m/47dqvgl6t2QJ"
+                }
+            },
+            {
+                "text":"Cannot be used or played if the conditions for the terms of the referendum cannot be met (e.g. no legal selection, insufficient cards/players to choose from, prohibited by card text, uniqueness, etc).",
+                "refs":{
+                    "LSJ 20100129":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/X8Uu7Sk56P4/m/fgP7NfnDpCkJ",
+                    "ANK 20191228":"https://www.vekn.net/forum/rules-questions/78262-parity-shift-without-target#98358"
                 }
             }
         ],
@@ -67364,6 +67607,13 @@
                     "LSJ 20080603":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/LuT1iK1b4QIJ",
                     "LSJ 20050128":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/HVy8iPUxNbI/m/ZHGTnprQjGUJ"
                 }
+            },
+            {
+                "text":"Cannot be used or played if the conditions for the terms of the referendum cannot be met (e.g. no legal selection, insufficient cards/players to choose from, prohibited by card text, uniqueness, etc).",
+                "refs":{
+                    "LSJ 20100129":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/X8Uu7Sk56P4/m/fgP7NfnDpCkJ",
+                    "ANK 20191228":"https://www.vekn.net/forum/rules-questions/78262-parity-shift-without-target#98358"
+                }
             }
         ],
         "set":{
@@ -67425,7 +67675,15 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Cannot be used or played if the conditions for the terms of the referendum cannot be met (e.g. no legal selection, insufficient cards/players to choose from, prohibited by card text, uniqueness, etc).",
+                "refs":{
+                    "LSJ 20100129":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/X8Uu7Sk56P4/m/fgP7NfnDpCkJ",
+                    "ANK 20191228":"https://www.vekn.net/forum/rules-questions/78262-parity-shift-without-target#98358"
+                }
+            }
+        ],
         "set":{
             "AH":{
                 "C":true
@@ -67962,7 +68220,15 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Cannot be used or played if the conditions for the terms of the referendum cannot be met (e.g. no legal selection, insufficient cards/players to choose from, prohibited by card text, uniqueness, etc).",
+                "refs":{
+                    "LSJ 20100129":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/X8Uu7Sk56P4/m/fgP7NfnDpCkJ",
+                    "ANK 20191228":"https://www.vekn.net/forum/rules-questions/78262-parity-shift-without-target#98358"
+                }
+            }
+        ],
         "set":{
             "LotN":{
                 "R":true
@@ -68087,7 +68353,15 @@
         "path":"",
         "pool":0,
         "requirement":"titled",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Cannot be used or played if the conditions for the terms of the referendum cannot be met (e.g. no legal selection, insufficient cards/players to choose from, prohibited by card text, uniqueness, etc).",
+                "refs":{
+                    "LSJ 20100129":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/X8Uu7Sk56P4/m/fgP7NfnDpCkJ",
+                    "ANK 20191228":"https://www.vekn.net/forum/rules-questions/78262-parity-shift-without-target#98358"
+                }
+            }
+        ],
         "set":{
             "KoTR":{
                 "B":"1"
@@ -69734,7 +70008,7 @@
                 }
             },
             {
-                "text":"Can only cancel minion cards played from the hand in the normal fashion (eg. can't cancel allies played via\u00a0{Piper}).",
+                "text":"Cannot cancel cards that are not played from the hand in the normal fashion (e.g. can't cancel allies played via\u00a0{Piper}).",
                 "refs":{
                     "RTR 20001020":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GvxNYsYsWJ4/m/EY7NOjdsGCsJ"
                 }
@@ -72743,7 +73017,15 @@
         "path":"",
         "pool":0,
         "requirement":"justicar,inner circle,camarilla",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Cannot be used or played if the conditions for the terms of the referendum cannot be met (e.g. no legal selection, insufficient cards/players to choose from, prohibited by card text, uniqueness, etc).",
+                "refs":{
+                    "LSJ 20100129":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/X8Uu7Sk56P4/m/fgP7NfnDpCkJ",
+                    "ANK 20191228":"https://www.vekn.net/forum/rules-questions/78262-parity-shift-without-target#98358"
+                }
+            }
+        ],
         "set":{
             "AH":{
                 "R":true
@@ -73547,6 +73829,13 @@
                 "text":"If the target has less than 3 blood when referendum passes, the Methuselah calling the referendum chooses how to distribute within the bounds of the terms.",
                 "refs":{
                     "LSJ 20010606":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/2Dj_N6wtifI/m/j_bddYqDbOYJ"
+                }
+            },
+            {
+                "text":"Cannot be used or played if the conditions for the terms of the referendum cannot be met (e.g. no legal selection, insufficient cards/players to choose from, prohibited by card text, uniqueness, etc).",
+                "refs":{
+                    "LSJ 20100129":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/X8Uu7Sk56P4/m/fgP7NfnDpCkJ",
+                    "ANK 20191228":"https://www.vekn.net/forum/rules-questions/78262-parity-shift-without-target#98358"
                 }
             }
         ],
@@ -74911,7 +75200,15 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Cannot be used or played if the conditions for the terms of the referendum cannot be met (e.g. no legal selection, insufficient cards/players to choose from, prohibited by card text, uniqueness, etc).",
+                "refs":{
+                    "LSJ 20100129":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/X8Uu7Sk56P4/m/fgP7NfnDpCkJ",
+                    "ANK 20191228":"https://www.vekn.net/forum/rules-questions/78262-parity-shift-without-target#98358"
+                }
+            }
+        ],
         "set":{
             "NB3":{
                 "PL":"1"
@@ -76294,6 +76591,13 @@
                 "text":"Can allocate more points than a Methuselah has pool.",
                 "refs":{
                     "LSJ 20020819":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/WONdURITUdk/m/9EnfVPy0P-MJ"
+                }
+            },
+            {
+                "text":"Cannot be used or played if the conditions for the terms of the referendum cannot be met (e.g. no legal selection, insufficient cards/players to choose from, prohibited by card text, uniqueness, etc).",
+                "refs":{
+                    "LSJ 20100129":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/X8Uu7Sk56P4/m/fgP7NfnDpCkJ",
+                    "ANK 20191228":"https://www.vekn.net/forum/rules-questions/78262-parity-shift-without-target#98358"
                 }
             }
         ],
@@ -79214,7 +79518,7 @@
                 }
             },
             {
-                "text":"[tem] Can only cancel minion cards played from the hand in the normal fashion (eg. can't cancel allies played via\u00a0{Piper}).",
+                "text":"[tem] Cannot cancel cards that are not played from the hand in the normal fashion (e.g. can't cancel allies played via\u00a0{Piper}).",
                 "refs":{
                     "RTR 20001020":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GvxNYsYsWJ4/m/EY7NOjdsGCsJ"
                 }
@@ -81018,6 +81322,13 @@
                 "refs":{
                     "LSJ 20080604":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9usl4idp-pY/m/NMUFLXR3LZEJ"
                 }
+            },
+            {
+                "text":"Cannot be used or played if the conditions for the terms of the referendum cannot be met (e.g. no legal selection, insufficient cards/players to choose from, prohibited by card text, uniqueness, etc).",
+                "refs":{
+                    "LSJ 20100129":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/X8Uu7Sk56P4/m/fgP7NfnDpCkJ",
+                    "ANK 20191228":"https://www.vekn.net/forum/rules-questions/78262-parity-shift-without-target#98358"
+                }
             }
         ],
         "set":{
@@ -81112,6 +81423,13 @@
                 "text":"You can gain pool from the Edge before burning it to remove the threat counters, and loose no pool to the threat counters.",
                 "refs":{
                     "TOM 19951214-1":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/8Fr6gioYZDI/m/p1eW5eaUMO0J"
+                }
+            },
+            {
+                "text":"Cannot be used or played if the conditions for the terms of the referendum cannot be met (e.g. no legal selection, insufficient cards/players to choose from, prohibited by card text, uniqueness, etc).",
+                "refs":{
+                    "LSJ 20100129":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/X8Uu7Sk56P4/m/fgP7NfnDpCkJ",
+                    "ANK 20191228":"https://www.vekn.net/forum/rules-questions/78262-parity-shift-without-target#98358"
                 }
             }
         ],
@@ -81241,6 +81559,13 @@
                 "text":"Does not require a specific clan: vampires that can play cards as if they were of a required clan (eg. {Mata Hari}) cannot use their ability to match a target's clan.",
                 "refs":{
                     "LSJ 20100526":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ch0oKrlxX30/m/MiuMxqszAUgJ"
+                }
+            },
+            {
+                "text":"Cannot be used or played if the conditions for the terms of the referendum cannot be met (e.g. no legal selection, insufficient cards/players to choose from, prohibited by card text, uniqueness, etc).",
+                "refs":{
+                    "LSJ 20100129":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/X8Uu7Sk56P4/m/fgP7NfnDpCkJ",
+                    "ANK 20191228":"https://www.vekn.net/forum/rules-questions/78262-parity-shift-without-target#98358"
                 }
             }
         ],
@@ -82838,7 +83163,7 @@
                 }
             },
             {
-                "text":"[VIS] Can only cancel minion cards played from the hand in the normal fashion (eg. can't cancel allies played via\u00a0{Piper}).",
+                "text":"[VIS] Cannot cancel cards that are not played from the hand in the normal fashion (e.g. can't cancel allies played via\u00a0{Piper}).",
                 "refs":{
                     "RTR 20001020":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GvxNYsYsWJ4/m/EY7NOjdsGCsJ"
                 }
@@ -83275,7 +83600,15 @@
         "path":"",
         "pool":0,
         "requirement":"laibon",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Cannot be used or played if the conditions for the terms of the referendum cannot be met (e.g. no legal selection, insufficient cards/players to choose from, prohibited by card text, uniqueness, etc).",
+                "refs":{
+                    "LSJ 20100129":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/X8Uu7Sk56P4/m/fgP7NfnDpCkJ",
+                    "ANK 20191228":"https://www.vekn.net/forum/rules-questions/78262-parity-shift-without-target#98358"
+                }
+            }
+        ],
         "set":{
             "LoB":{
                 "R":true
@@ -84068,7 +84401,15 @@
         "path":"",
         "pool":0,
         "requirement":"black hand",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Cannot be used or played if the conditions for the terms of the referendum cannot be met (e.g. no legal selection, insufficient cards/players to choose from, prohibited by card text, uniqueness, etc).",
+                "refs":{
+                    "LSJ 20100129":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/X8Uu7Sk56P4/m/fgP7NfnDpCkJ",
+                    "ANK 20191228":"https://www.vekn.net/forum/rules-questions/78262-parity-shift-without-target#98358"
+                }
+            }
+        ],
         "set":{
             "BH":{
                 "U":true
@@ -93169,7 +93510,7 @@
                 }
             },
             {
-                "text":"Can only cancel minion cards played from the hand in the normal fashion (eg. can't cancel allies played via\u00a0{Piper}).",
+                "text":"Cannot cancel cards that are not played from the hand in the normal fashion (e.g. can't cancel allies played via\u00a0{Piper}).",
                 "refs":{
                     "RTR 20001020":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GvxNYsYsWJ4/m/EY7NOjdsGCsJ"
                 }
@@ -97609,6 +97950,13 @@
                 "refs":{
                     "LSJ 20041026":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/54Zr4RUuVx8/m/fJCT8qW_90EJ"
                 }
+            },
+            {
+                "text":"Cannot be used or played if the conditions for the terms of the referendum cannot be met (e.g. no legal selection, insufficient cards/players to choose from, prohibited by card text, uniqueness, etc).",
+                "refs":{
+                    "LSJ 20100129":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/X8Uu7Sk56P4/m/fgP7NfnDpCkJ",
+                    "ANK 20191228":"https://www.vekn.net/forum/rules-questions/78262-parity-shift-without-target#98358"
+                }
             }
         ],
         "set":{
@@ -98046,7 +98394,7 @@
                 }
             },
             {
-                "text":"Can only cancel minion cards played from the hand in the normal fashion (eg. can't cancel allies played via\u00a0{Piper}).",
+                "text":"Cannot cancel cards that are not played from the hand in the normal fashion (e.g. can't cancel allies played via\u00a0{Piper}).",
                 "refs":{
                     "RTR 20001020":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GvxNYsYsWJ4/m/EY7NOjdsGCsJ"
                 }
@@ -98360,7 +98708,15 @@
         "path":"",
         "pool":0,
         "requirement":"prince,justicar,inner circle,camarilla",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Cannot be used or played if the conditions for the terms of the referendum cannot be met (e.g. no legal selection, insufficient cards/players to choose from, prohibited by card text, uniqueness, etc).",
+                "refs":{
+                    "LSJ 20100129":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/X8Uu7Sk56P4/m/fgP7NfnDpCkJ",
+                    "ANK 20191228":"https://www.vekn.net/forum/rules-questions/78262-parity-shift-without-target#98358"
+                }
+            }
+        ],
         "set":{
             "DS":{
                 "C":true
@@ -98925,7 +99281,7 @@
                 }
             },
             {
-                "text":"[OBE] Can only cancel minion cards played from the hand in the normal fashion (eg. can't cancel allies played via\u00a0{Piper}).",
+                "text":"[OBE] Cannot cancel cards that are not played from the hand in the normal fashion (e.g. can't cancel allies played via\u00a0{Piper}).",
                 "refs":{
                     "RTR 20001020":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GvxNYsYsWJ4/m/EY7NOjdsGCsJ"
                 }
@@ -99160,6 +99516,13 @@
                 "refs":{
                     "LSJ 20041026":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/54Zr4RUuVx8/m/fJCT8qW_90EJ"
                 }
+            },
+            {
+                "text":"Cannot be used or played if the conditions for the terms of the referendum cannot be met (e.g. no legal selection, insufficient cards/players to choose from, prohibited by card text, uniqueness, etc).",
+                "refs":{
+                    "LSJ 20100129":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/X8Uu7Sk56P4/m/fgP7NfnDpCkJ",
+                    "ANK 20191228":"https://www.vekn.net/forum/rules-questions/78262-parity-shift-without-target#98358"
+                }
             }
         ],
         "set":{
@@ -99202,6 +99565,13 @@
                 "text":"\"Since your last turn\" means between the end of your last turn and now. Your last turn does not qualify, your current turn does.",
                 "refs":{
                     "LSJ 20020429":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/7ZfedGTVt9g/m/kQnfy7J_UYkJ"
+                }
+            },
+            {
+                "text":"Cannot be used or played if the conditions for the terms of the referendum cannot be met (e.g. no legal selection, insufficient cards/players to choose from, prohibited by card text, uniqueness, etc).",
+                "refs":{
+                    "LSJ 20100129":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/X8Uu7Sk56P4/m/fgP7NfnDpCkJ",
+                    "ANK 20191228":"https://www.vekn.net/forum/rules-questions/78262-parity-shift-without-target#98358"
                 }
             }
         ],
@@ -102790,6 +103160,13 @@
                 "refs":{
                     "LSJ 20081202-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/hlK89M1M9rk/m/k2mbokPTCccJ"
                 }
+            },
+            {
+                "text":"Cannot be used or played if the conditions for the terms of the referendum cannot be met (e.g. no legal selection, insufficient cards/players to choose from, prohibited by card text, uniqueness, etc).",
+                "refs":{
+                    "LSJ 20100129":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/X8Uu7Sk56P4/m/fgP7NfnDpCkJ",
+                    "ANK 20191228":"https://www.vekn.net/forum/rules-questions/78262-parity-shift-without-target#98358"
+                }
             }
         ],
         "set":{
@@ -103288,6 +103665,13 @@
                 "text":"Only a Camarilla vampire can be chosen, it cannot be played without a valid target.",
                 "refs":{
                     "LSJ 20041026":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/54Zr4RUuVx8/m/fJCT8qW_90EJ"
+                }
+            },
+            {
+                "text":"Cannot be used or played if the conditions for the terms of the referendum cannot be met (e.g. no legal selection, insufficient cards/players to choose from, prohibited by card text, uniqueness, etc).",
+                "refs":{
+                    "LSJ 20100129":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/X8Uu7Sk56P4/m/fgP7NfnDpCkJ",
+                    "ANK 20191228":"https://www.vekn.net/forum/rules-questions/78262-parity-shift-without-target#98358"
                 }
             }
         ],
@@ -105245,7 +105629,15 @@
         "path":"",
         "pool":0,
         "requirement":"sabbat,titled",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Cannot be used or played if the conditions for the terms of the referendum cannot be met (e.g. no legal selection, insufficient cards/players to choose from, prohibited by card text, uniqueness, etc).",
+                "refs":{
+                    "LSJ 20100129":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/X8Uu7Sk56P4/m/fgP7NfnDpCkJ",
+                    "ANK 20191228":"https://www.vekn.net/forum/rules-questions/78262-parity-shift-without-target#98358"
+                }
+            }
+        ],
         "set":{
             "SV5":{
                 "PPower":"2"
@@ -105385,7 +105777,15 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Cannot be used or played if the conditions for the terms of the referendum cannot be met (e.g. no legal selection, insufficient cards/players to choose from, prohibited by card text, uniqueness, etc).",
+                "refs":{
+                    "LSJ 20100129":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/X8Uu7Sk56P4/m/fgP7NfnDpCkJ",
+                    "ANK 20191228":"https://www.vekn.net/forum/rules-questions/78262-parity-shift-without-target#98358"
+                }
+            }
+        ],
         "set":{
             "LotN":{
                 "C":true,
@@ -107611,7 +108011,15 @@
         "path":"",
         "pool":0,
         "requirement":"inner circle,camarilla",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Cannot be used or played if the conditions for the terms of the referendum cannot be met (e.g. no legal selection, insufficient cards/players to choose from, prohibited by card text, uniqueness, etc).",
+                "refs":{
+                    "LSJ 20100129":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/X8Uu7Sk56P4/m/fgP7NfnDpCkJ",
+                    "ANK 20191228":"https://www.vekn.net/forum/rules-questions/78262-parity-shift-without-target#98358"
+                }
+            }
+        ],
         "set":{
             "DS":{
                 "U":true
@@ -107846,6 +108254,13 @@
                 "text":"The bonus disappears if the card is burned (either burned by a referendum or if the controller is ousted).",
                 "refs":{
                     "PIB 20121028":"https://www.vekn.net/forum/rules-questions/39816-ec-2012-can-you-answer-these?start=6#39843"
+                }
+            },
+            {
+                "text":"Cannot be used or played if the conditions for the terms of the referendum cannot be met (e.g. no legal selection, insufficient cards/players to choose from, prohibited by card text, uniqueness, etc).",
+                "refs":{
+                    "LSJ 20100129":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/X8Uu7Sk56P4/m/fgP7NfnDpCkJ",
+                    "ANK 20191228":"https://www.vekn.net/forum/rules-questions/78262-parity-shift-without-target#98358"
                 }
             }
         ],

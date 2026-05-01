@@ -247,7 +247,6 @@
     [LSJ 20060213] [LSJ 20060908]
   - "The vampire is placed in their last permanent controller's uncontrolled region: it might not be the card owner. It is\
     \ removed from the game when the controller is ousted. [ANK 20200408-2] [RTR 20000501]"
-  - Cannot be played if there is no legal target. [ANK 20191228]
 100133|Banshee Ironwail:
   - Triggering the burn blood effect does not force the minion to strike with the weapon. [LSJ 19971215]
   - If a block is successful, the blood is burned before any other effect can be used (eg. {Promise of 1528}). REVERSAL of
@@ -2158,7 +2157,6 @@
 101349|Pandora's Whisper:
   - The card to retrieve must be announced when declaring the action. [LSJ 20010627]
 101353|Parity Shift:
-  - Cannot be played if there is no legal target (no other Methuselah with more pool than you). [ANK 20191228]
   - The pool awarded can be used to play {Life Boon} to save the target from an oust. [LSJ 20100527]
   - If the target has less than 3 pool when referendum passes, the Methuselah calling the referendum chooses how to distribute
     within the bounds of the terms. [LSJ 20010606]
@@ -4385,7 +4383,7 @@ G00060|Reflex:
     on the minion. [LSJ 20051113]'
 G00061|Cancel an action:
   - If an action is canceled, it is not performed and the minion is free to attempt the same action again. [RBK cancel-a-card]
-  - Can only cancel minion cards played from the hand in the normal fashion (eg. can't cancel allies played via {Piper}).
+  - Cannot cancel cards that are not played from the hand in the normal fashion (e.g. can't cancel allies played via {Piper}).
     [RTR 20001020]
   - Can be used to cancel all action cards, including employ retainer, recruit ally and political action. [ANK 20200813-2]
 G00062|Cancel as a reaction:
@@ -4721,3 +4719,6 @@ G00157|Fail an Action:
     [RTR 20180719]
   - If an action fails, it was not blocked. Cards/effects depending on a block (e.g. {Mirror Image}, [FOR] {Freak Drive})
     cannot be played/used. [LSJ 20070219]
+G00158|Political action with illegal terms:
+  - Cannot be used or played if the conditions for the terms of the referendum cannot be met (e.g. no legal selection, insufficient
+    cards/players to choose from, prohibited by card text, uniqueness, etc). [LSJ 20100129] [ANK 20191228]

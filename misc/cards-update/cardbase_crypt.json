@@ -4250,7 +4250,7 @@
                 }
             },
             {
-                "text":"Can only cancel minion cards played from the hand in the normal fashion (eg. can't cancel allies played via\u00a0{Piper}).",
+                "text":"Cannot cancel cards that are not played from the hand in the normal fashion (e.g. can't cancel allies played via\u00a0{Piper}).",
                 "refs":{
                     "RTR 20001020":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GvxNYsYsWJ4/m/EY7NOjdsGCsJ"
                 }
@@ -9103,6 +9103,13 @@
                 "text":"When using his ability, modifiers and reactions can be played during and after the referendum (eg. {Voter Captivation}, {Delaying Tactics}).",
                 "refs":{
                     "LSJ 20081202-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/hlK89M1M9rk/m/k2mbokPTCccJ"
+                }
+            },
+            {
+                "text":"Cannot be used or played if the conditions for the terms of the referendum cannot be met (e.g. no legal selection, insufficient cards/players to choose from, prohibited by card text, uniqueness, etc).",
+                "refs":{
+                    "LSJ 20100129":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/X8Uu7Sk56P4/m/fgP7NfnDpCkJ",
+                    "ANK 20191228":"https://www.vekn.net/forum/rules-questions/78262-parity-shift-without-target#98358"
                 }
             }
         ],
@@ -38771,7 +38778,7 @@
                 }
             },
             {
-                "text":"Can only cancel minion cards played from the hand in the normal fashion (eg. can't cancel allies played via\u00a0{Piper}).",
+                "text":"Cannot cancel cards that are not played from the hand in the normal fashion (e.g. can't cancel allies played via\u00a0{Piper}).",
                 "refs":{
                     "RTR 20001020":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GvxNYsYsWJ4/m/EY7NOjdsGCsJ"
                 }
@@ -45707,7 +45714,15 @@
         "name":"Montecalme",
         "new":false,
         "path":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Cannot be used or played if the conditions for the terms of the referendum cannot be met (e.g. no legal selection, insufficient cards/players to choose from, prohibited by card text, uniqueness, etc).",
+                "refs":{
+                    "LSJ 20100129":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/X8Uu7Sk56P4/m/fgP7NfnDpCkJ",
+                    "ANK 20191228":"https://www.vekn.net/forum/rules-questions/78262-parity-shift-without-target#98358"
+                }
+            }
+        ],
         "sect":"Camarilla",
         "set":{
             "KoTR":{
@@ -63536,6 +63551,13 @@
                 "refs":{
                     "LSJ 20100917":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/4wTBzYsQOMM/m/kLWMz-JSlHIJ"
                 }
+            },
+            {
+                "text":"Cannot be used or played if the conditions for the terms of the referendum cannot be met (e.g. no legal selection, insufficient cards/players to choose from, prohibited by card text, uniqueness, etc).",
+                "refs":{
+                    "LSJ 20100129":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/X8Uu7Sk56P4/m/fgP7NfnDpCkJ",
+                    "ANK 20191228":"https://www.vekn.net/forum/rules-questions/78262-parity-shift-without-target#98358"
+                }
             }
         ],
         "sect":"Laibon",
@@ -67922,7 +67944,15 @@
         "name":"Zane",
         "new":false,
         "path":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Cannot be used or played if the conditions for the terms of the referendum cannot be met (e.g. no legal selection, insufficient cards/players to choose from, prohibited by card text, uniqueness, etc).",
+                "refs":{
+                    "LSJ 20100129":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/X8Uu7Sk56P4/m/fgP7NfnDpCkJ",
+                    "ANK 20191228":"https://www.vekn.net/forum/rules-questions/78262-parity-shift-without-target#98358"
+                }
+            }
+        ],
         "sect":"Camarilla",
         "set":{
             "KoTR":{
