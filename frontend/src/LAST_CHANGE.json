@@ -1,7 +1,8 @@
 {
-  "version": "2026-04-13",
+  "version": "2026-05-02",
   "changes": [
-    "Update rulings",
-    "Add Croatian NC event"
+    "Add sect and titles breakdown to deck library info",
+    "Update TWDA",
+    "Update rulings"
   ]
 }
