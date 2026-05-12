@@ -1,7 +1,17 @@
 [
   {
+    "id": 12818,
+    "title": "Finnish Nationals 2026",
+    "location": "Vantaa, Finland",
+    "date": "2026-04-25",
+    "isNC": true,
+    "players": 41,
+    "decks": 41,
+    "country": "FI"
+  },
+  {
     "id": 12779,
-    "title": "Croatian Abuse of Power 2026",
+    "title": "Croatian Nationals 2026 (Abuse of Power)",
     "location": "Osijek, Croatia",
     "date": "2026-01-24",
     "isNC": true,
