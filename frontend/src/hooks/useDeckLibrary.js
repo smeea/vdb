@@ -25,7 +25,6 @@ import {
   PRISCUS,
   REGENT,
   REQUIREMENT,
-  TITLE,
   TITLED,
   TRIFLE,
   TYPE,

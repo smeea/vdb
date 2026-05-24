@@ -1,21 +1,4 @@
 import { ResultCryptTitle } from "@/components";
-import {
-  ARCHBISHOP,
-  BARON,
-  BISHOP,
-  CAPACITY,
-  CARDINAL,
-  INNER_CIRCLE,
-  JUSTICAR,
-  MAGAJI,
-  PRIMOGEN,
-  PRINCE,
-  PRISCUS,
-  REGENT,
-  TITLED,
-  VOTE_1,
-  VOTE_2,
-} from "@/constants";
 import { capitalize } from "@/utils";
 
 const ResultLibraryTitlesReq = ({ value }) => {

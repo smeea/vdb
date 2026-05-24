@@ -1,5 +1,5 @@
 import sectsOpts from "@/assets/data/sectsList.json";
-import { ResultCryptTitle, ResultLibrarySectReq, ResultLibraryTitlesReq } from "@/components";
+import { ResultLibrarySectReq, ResultLibraryTitlesReq } from "@/components";
 import {
   ARCHBISHOP,
   BARON,

@@ -130,16 +130,14 @@ export const filterLibrary = (filter, cards = {}) => {
 const missingDisciplinesCrypt = (filter, card) => {
   return Object.keys(filter).some(
     (name) =>
-      filter[name] > 0 &&
-      (!card[DISCIPLINES] || !card[DISCIPLINES][name] || card[DISCIPLINES][name] < filter[name]),
+      filter[name] > 0 && (!card[DISCIPLINES]?.[name] || card[DISCIPLINES][name] < filter[name]),
   );
 };
 
 const missingDisciplinesOrCrypt = (filter, card) => {
   return filter.some((value) =>
     Object.keys(value).every(
-      (name) =>
-        !card[DISCIPLINES] || !card[DISCIPLINES][name] || card[DISCIPLINES][name] < value[name],
+      (name) => !card[DISCIPLINES]?.[name] || card[DISCIPLINES][name] < value[name],
     ),
   );
 };
