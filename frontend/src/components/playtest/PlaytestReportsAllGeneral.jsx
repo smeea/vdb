@@ -1,8 +1,9 @@
-import { FlexGapped, Hr } from "@/components";
+import { twMerge } from "tailwind-merge";
+import { FlexGapped, Hr, PlaytestReportFormGeneral } from "@/components";
 import { useApp } from "@/context";
 
 const PlaytestReportsAllGeneral = ({ reports }) => {
-  const { hidePlaytestNames } = useApp();
+  const { username, isPlaytestAdmin, hidePlaytestNames } = useApp();
 
   return (
     <FlexGapped className="max-sm:flex-col print:break-after-page print:p-8">
@@ -10,6 +11,15 @@ const PlaytestReportsAllGeneral = ({ reports }) => {
         General Opinions
       </div>
       <div className="flex basis-full flex-col gap-4">
+        <div
+          className={twMerge(
+            "flex print:hidden",
+            isPlaytestAdmin &&
+              "rounded-md border-[3px] border-fgSecondary border-dashed p-3 dark:border-fgSecondaryDark",
+          )}
+        >
+          <PlaytestReportFormGeneral />
+        </div>
         {reports &&
           Object.entries(reports)
             .filter((i) => i[1])
@@ -17,7 +27,13 @@ const PlaytestReportsAllGeneral = ({ reports }) => {
               const name = i[0];
               const text = i[1];
               return (
-                <div className="group flex flex-col gap-3" key={name}>
+                <div
+                  className={twMerge(
+                    "group flex flex-col gap-3",
+                    username === name && "hidden print:flex",
+                  )}
+                  key={name}
+                >
                   <div className="flex flex-col gap-3">
                     {!hidePlaytestNames && (
                       <div className="flex w-full items-center text-fgName dark:text-fgNameDark print:dark:text-fgName">

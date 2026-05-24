@@ -1,5 +1,6 @@
 import EyeFill from "@icons/eye-fill.svg?react";
 import EyeSlashFill from "@icons/eye-slash-fill.svg?react";
+import { twMerge } from "tailwind-merge";
 import { Hr, PlaytestScoresStars } from "@/components";
 import { SCORE, TEXT } from "@/constants";
 import { useApp } from "@/context";
@@ -44,6 +45,8 @@ const Report = ({ id, text, score, isPlayed }) => {
 };
 
 const PlaytestReportEntry = ({ value }) => {
+  const { username } = useApp();
+
   return (
     <div className="flex basis-full flex-col gap-4">
       {Object.keys(value)
@@ -51,7 +54,13 @@ const PlaytestReportEntry = ({ value }) => {
         .sort((a, b) => value[a][SCORE] < value[b][SCORE])
         .map((id) => {
           return (
-            <div key={id} className="group flex flex-col gap-2 sm:gap-3 print:break-inside-avoid">
+            <div
+              key={id}
+              className={twMerge(
+                "group flex flex-col gap-2 sm:gap-3 print:break-inside-avoid",
+                username === id && "hidden print:flex",
+              )}
+            >
               <Report
                 id={id}
                 text={value[id][TEXT]}

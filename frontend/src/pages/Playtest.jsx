@@ -19,8 +19,8 @@ const Playtest = () => {
         </div>
         <div className="flex flex-col gap-5 max-sm:p-2 sm:gap-6">
           <PlaytestUserCard />
-          {isPlaytestAdmin && (
-            <div className="flex gap-3 max-sm:flex-col sm:gap-4">
+          <div className="flex gap-3 max-sm:flex-col sm:gap-4">
+            {isPlaytestAdmin && (
               <Link to="/playtest/manage" className="w-full hover:no-underline">
                 <ButtonIconed
                   className="w-full"
@@ -29,16 +29,16 @@ const Playtest = () => {
                   text="Manage Playtesters"
                 />
               </Link>
-              <Link to="/playtest/reports" className="w-full hover:no-underline">
-                <ButtonIconed
-                  className="w-full"
-                  title="Show Playtest Reports"
-                  icon={<InboxesFill />}
-                  text="Reports"
-                />
-              </Link>
-            </div>
-          )}
+            )}
+            <Link to="/playtest/reports" className="w-full hover:no-underline">
+              <ButtonIconed
+                className="w-full"
+                title="Show Playtest Reports"
+                icon={<InboxesFill />}
+                text="Reports"
+              />
+            </Link>
+          </div>
         </div>
       </div>
     </div>

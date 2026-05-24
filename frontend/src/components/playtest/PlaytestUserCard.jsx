@@ -8,16 +8,15 @@ import {
   Input,
   ListEntry,
   PlaytestLanguageSelect,
+  PlaytestReportFormGeneral,
   Select,
-  Textarea,
 } from "@/components";
-import { GAMES, GENERAL, LIAISON, TIMESTAMP } from "@/constants";
+import { GAMES, LIAISON, TIMESTAMP } from "@/constants";
 import { useApp } from "@/context";
 
 const PlaytestUserCard = () => {
   const { isMobile, playtestProfile, updatePlaytestProfile } = useApp();
   const [liaison, setLiaison] = useState(playtestProfile?.[LIAISON] || "");
-  const [general, setGeneral] = useState(playtestProfile?.[GENERAL] || "");
 
   const gamesOptions = ["0", "1-3", "4-6", "7+"].map((i) => ({
     value: i,
@@ -36,20 +35,6 @@ const PlaytestUserCard = () => {
   };
   const handleLiaisonOnBlur = () => {
     if (liaison !== playtestProfile?.[LIAISON]) changeLiaison();
-  };
-
-  useEffect(() => {
-    if (general !== playtestProfile?.[GENERAL]) setGeneral(playtestProfile?.[GENERAL] ?? "");
-  }, [playtestProfile?.[GENERAL]]);
-
-  const handleGeneralChange = (e) => setGeneral(e.target.value);
-  const changeGeneral = () => updatePlaytestProfile(GENERAL, general);
-  const handleGeneralSubmit = (event) => {
-    event.preventDefault();
-    changeGeneral();
-  };
-  const handleGeneralOnBlur = () => {
-    if (general !== playtestProfile?.[GENERAL]) changeGeneral();
   };
 
   const handleGamesChange = (e) => updatePlaytestProfile(GAMES, e.value);
@@ -135,15 +120,7 @@ const PlaytestUserCard = () => {
         title="General Opinion about the Expansion"
         forceNewLine
       >
-        <form className="flex w-full" onSubmit={handleGeneralSubmit}>
-          <Textarea
-            rows={5}
-            onChange={handleGeneralChange}
-            onBlur={handleGeneralOnBlur}
-            value={general}
-            placeholder="Enter your general opinion about the Expansion"
-          />
-        </form>
+        <PlaytestReportFormGeneral />
       </ListEntry>
     </div>
   );

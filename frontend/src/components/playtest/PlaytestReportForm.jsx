@@ -1,13 +1,13 @@
-import ChatLeftQuoteFill from "@icons/chat-left-quote-fill.svg?react";
 import ChevronBarContract from "@icons/chevron-bar-contract.svg?react";
 import ChevronBarExpand from "@icons/chevron-bar-expand.svg?react";
+import EyeFill from "@icons/eye-fill.svg?react";
+import EyeSlashFill from "@icons/eye-slash-fill.svg?react";
 import { useEffect, useState } from "react";
+import { twMerge } from "tailwind-merge";
 import {
   Button,
-  Checkbox,
   ConditionalTooltipOrModal,
   Input,
-  InputLabel,
   PlaytestReportsOneButton,
   PlaytestScoresStars,
   Textarea,
@@ -59,9 +59,17 @@ const Title = ({ isPrecon }) => {
   );
 };
 
-const PlaytestReportForm = ({ id, deck, setIsHotkeysDisabled, isPrecon = false }) => {
+const PlaytestReportForm = ({
+  id,
+  deck,
+  setIsHotkeysDisabled,
+  inAllReports,
+  rows = 12,
+  isUnfolded,
+  isPrecon = false,
+}) => {
   const { isPlaytestAdmin } = useApp();
-  const [isFolded, setIsFolded] = useState(true);
+  const [isFolded, setIsFolded] = useState(!isUnfolded);
   const [report, setReport] = useState({
     [TEXT]: "",
     [SCORE]: 0,
@@ -102,10 +110,10 @@ const PlaytestReportForm = ({ id, deck, setIsHotkeysDisabled, isPrecon = false }
     if (report[TEXT] !== dataValue[TEXT]) submit();
   };
 
-  const handleIsPlayedChange = (event) => {
+  const handleIsPlayedChange = () => {
     setReport((prevState) => ({
       ...prevState,
-      [IS_PLAYED]: !event.currentTarget.value,
+      [IS_PLAYED]: !report[IS_PLAYED],
     }));
   };
 
@@ -121,28 +129,26 @@ const PlaytestReportForm = ({ id, deck, setIsHotkeysDisabled, isPrecon = false }
   };
 
   return (
-    <div className="flex flex-col gap-3">
-      <div className="flex justify-between">
-        <Title />
-        <Checkbox
-          className="sm:hidden"
-          label="seen in play"
-          value={report[IS_PLAYED]}
-          checked={report[IS_PLAYED]}
-          onChange={handleIsPlayedChange}
-        />
-      </div>
+    <div className="flex basis-full flex-col gap-3">
+      {!inAllReports && <Title />}
       <div className="flex w-full items-center justify-between gap-4">
         <PlaytestScoresStars value={report[SCORE]} handleClick={handleScoreChange} />
-        <div className="flex items-center justify-between gap-2">
-          <Checkbox
-            className="max-sm:hidden"
-            label="seen in play"
-            value={report[IS_PLAYED]}
-            checked={report[IS_PLAYED]}
-            onChange={handleIsPlayedChange}
-          />
-          {isPrecon && isPlaytestAdmin && (
+        <div className="flex items-center justify-between gap-3">
+          <div
+            className={twMerge(
+              "flex",
+              report[IS_PLAYED] ? "print:text-fgPrimary" : "text-fgRed dark:text-fgRedDark",
+            )}
+            title={`Was ${report[IS_PLAYED] ? "" : "not "}seen in play`}
+            onClick={handleIsPlayedChange}
+          >
+            {report[IS_PLAYED] ? (
+              <EyeFill width="24" height="24" viewBox="0 0 16 16" />
+            ) : (
+              <EyeSlashFill width="24" height="24" viewBox="0 0 16 16" />
+            )}
+          </div>
+          {!inAllReports && isPrecon && isPlaytestAdmin && (
             <PlaytestReportsOneButton
               value={{ [DECK]: deck, [NAME]: deck[NAME], [ID]: id }}
               isPrecon
@@ -151,30 +157,27 @@ const PlaytestReportForm = ({ id, deck, setIsHotkeysDisabled, isPrecon = false }
         </div>
       </div>
       <form className="flex" onSubmit={submit}>
-        <InputLabel title="Description">
-          <ChatLeftQuoteFill width="20" height="18" viewBox="0 0 16 16" />
-        </InputLabel>
         {isFolded ? (
           <Input
             placeholder="Write playtest report here"
             value={report[TEXT]}
             onChange={handleTextChange}
             onBlur={handleOnBlur}
-            borderStyle="border-y"
-            roundedStyle="rounded-none"
+            borderStyle="border-y border-l"
+            roundedStyle="rounded-l"
             onFocus={() => {
               if (setIsHotkeysDisabled) setIsHotkeysDisabled(true);
             }}
           />
         ) : (
           <Textarea
-            className="w-full"
-            rows={12}
+            className="w-full p-2"
+            rows={rows}
             value={report[TEXT]}
             onChange={handleTextChange}
             onBlur={handleOnBlur}
-            borderStyle="border-y"
-            roundedStyle="rounded-none"
+            borderStyle="border-y border-l"
+            roundedStyle="rounded-l"
             onFocus={() => {
               if (setIsHotkeysDisabled) setIsHotkeysDisabled(true);
             }}

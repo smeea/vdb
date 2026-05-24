@@ -122,9 +122,9 @@ const router = createBrowserRouter(
         path="playtest/reports"
         element={
           <Suspense fallback={<div />}>
-            <RequirePlaytestAdmin>
+            <RequirePlaytest>
               <PlaytestReportsAll />
-            </RequirePlaytestAdmin>
+            </RequirePlaytest>
           </Suspense>
         }
       />

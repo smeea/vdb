@@ -104,7 +104,7 @@ def playtesters_route():
 def report_export_route(target, id):
     if target not in ["crypt", "library", "cards", "precons", "general"]:
         abort(400)
-    if not current_user.playtest_admin:
+    if not current_user.playtester:
         abort(401)
 
     lang = (
@@ -114,7 +114,11 @@ def report_export_route(target, id):
     )
 
     reports = {}
-    playtesters = User.query.filter_by(playtester=True).all()
+    playtesters = (
+        User.query.filter_by(playtester=True).all()
+        if current_user.playtest_admin
+        else [current_user]
+    )
 
     for p in playtesters:
         # defaulting lang to English if not specified

@@ -240,6 +240,6 @@ export const getIsPlaytest = (cardid) => {
 };
 
 export const getSortedKeysByValues = (obj) => {
-  if (!obj) return []
-  return Object.keys(obj).toSorted((a, b) => obj[b] - obj[a])
-}
+  if (!obj) return [];
+  return Object.keys(obj).toSorted((a, b) => obj[b] - obj[a]);
+};

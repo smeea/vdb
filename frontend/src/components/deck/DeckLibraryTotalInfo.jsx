@@ -1,9 +1,9 @@
 import {
   ResultLibraryClan,
   ResultLibraryDisciplines,
-  ResultLibraryTypeImage,
   ResultLibrarySectReq,
   ResultLibraryTitlesReq,
+  ResultLibraryTypeImage,
   ResultPathImage,
 } from "@/components";
 import { TYPE_MASTER } from "@/constants";
@@ -25,11 +25,11 @@ const DeckLibraryTotalInfo = ({ byTitles, bySects, byClans, byTypes, byPaths, by
   const total = Object.values(byTypes).reduce((a, b) => a + b, 0);
   const totalExMasters = total - (byTypes[TYPE_MASTER] || 0);
 
-  const byDisciplinesSorted = getSortedKeysByValues(byDisciplines)
-  const byPathsSorted = getSortedKeysByValues(byPaths)
-  const byClansSorted = getSortedKeysByValues(byClans)
-  const bySectsSorted = getSortedKeysByValues(bySects)
-  const byTitlesSorted = getSortedKeysByValues(byTitles)
+  const byDisciplinesSorted = getSortedKeysByValues(byDisciplines);
+  const byPathsSorted = getSortedKeysByValues(byPaths);
+  const byClansSorted = getSortedKeysByValues(byClans);
+  const bySectsSorted = getSortedKeysByValues(bySects);
+  const byTitlesSorted = getSortedKeysByValues(byTitles);
 
   return (
     <div className="flex flex-col gap-2 bg-bgSecondary p-2 dark:bg-bgSecondaryDark">

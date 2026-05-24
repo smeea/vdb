@@ -5,13 +5,14 @@ import {
   FlexGapped,
   Hr,
   PlaytestReportEntry,
+  PlaytestReportForm,
   PlaytestScores,
 } from "@/components";
-import { NAME } from "@/constants";
+import { DECKID, ID, NAME, PLAYTEST } from "@/constants";
 import { useApp } from "@/context";
 
 const PlaytestReportsAllCardOrPrecon = ({ product, isPrecon, report, maxSameScore }) => {
-  const { isMobile } = useApp();
+  const { isPlaytestAdmin, isMobile } = useApp();
 
   return (
     <>
@@ -46,10 +47,28 @@ const PlaytestReportsAllCardOrPrecon = ({ product, isPrecon, report, maxSameScor
               </div>
             </FlexGapped>
           )}
-          <PlaytestScores report={report} maxSameScore={maxSameScore} />
+          {isPlaytestAdmin && <PlaytestScores report={report} maxSameScore={maxSameScore} />}
         </div>
-        <Hr isThick className="print:hidden" />
-        {report && <PlaytestReportEntry value={report} />}
+        {!isMobile && <Hr isThick className="print:hidden" />}
+        <div className="flex basis-full flex-col gap-3">
+          <div
+            className={twMerge(
+              "flex print:hidden",
+              isPlaytestAdmin &&
+                "rounded-md border-[3px] border-fgSecondary border-dashed p-2.5 dark:border-fgSecondaryDark",
+            )}
+          >
+            <PlaytestReportForm
+              isPrecon={isPrecon}
+              deck={product}
+              id={isPrecon ? product[DECKID].replace(`${PLAYTEST}:`, "") : product[ID]}
+              isUnfolded={!isPlaytestAdmin}
+              inAllReports
+              rows={isMobile ? 5 : 8}
+            />
+          </div>
+          {report && <PlaytestReportEntry value={report} />}
+        </div>
       </FlexGapped>
       <Hr isThick className="last:hidden print:hidden" />
     </>
