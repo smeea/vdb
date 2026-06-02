@@ -166,7 +166,9 @@ export const deckUpdate = (deckid, field, value) => {
     finalValue = cards;
   }
 
-  deckStore[DECKS][deckid][TIMESTAMP] = new Date().toISOString();
+  if (field !== IS_FROZEN) {
+    deckStore[DECKS][deckid][TIMESTAMP] = new Date().toISOString();
+  }
 
   return deckServices.update(deckid, field, finalValue).catch(() => {
     deckStore[DECK] = initialDeckState;
