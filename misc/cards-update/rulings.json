@@ -4052,6 +4052,32 @@
             }
         }
     ],
+    "100432":[
+        {
+            "text":"The vampire who ceases to block is still considered to have blocked the action (e.g. they can play {Cats' Guidance}).",
+            "refs":{
+                "LSJ 20090509":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GQDlD8UuQtI/m/RKFNGaT-OT4J"
+            }
+        },
+        {
+            "text":"Can be used by a vampire who is already attempting to block.",
+            "refs":{
+                "ANK 20181122-2":"https://www.vekn.net/forum/rules-questions/77176-eagle-s-sight-and-guardian-vigil#91965"
+            }
+        },
+        {
+            "text":"Cannot be used if the vampire cannot attempt to block the action (eg. {Daring the Dawn}).",
+            "refs":{
+                "LSJ 20010714-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9U-jt3p3R_Q/m/WxDJwkgc25kJ"
+            }
+        },
+        {
+            "text":"Does not ignore the normal prey, predator or target restrictions.",
+            "refs":{
+                "ANK 20180623":"https://www.vekn.net/forum/rules-questions/76748-black-sunrise#88361"
+            }
+        }
+    ],
     "100433":[
         {
             "text":"The burn option cannot be used if all your Seraph are in torpor.",
@@ -10251,21 +10277,6 @@
             }
         }
     ],
-    "101130":[
-        {
-            "text":"If the Loyalist vampire's votes are changed to be in favor, the votes granted by Loyalist are silenced (not cast).",
-            "refs":{
-                "LSJ 20031115":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/quF7butlINo/m/XVswJuKMke4J"
-            }
-        },
-        {
-            "text":"Cannot be used during a referendum that is automatically passing.",
-            "refs":{
-                "PIB 20150105":"https://www.vekn.net/forum/rules-questions/68465-voting-is-complicated#68493",
-                "LSJ 19980107":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aUUs4VCR_Ec/m/PLecvfrEqbgJ"
-            }
-        }
-    ],
     "101131":[
         {
             "text":"You cannot use another strike card as the hand strike for Lucky Blow.",
@@ -11015,6 +11026,12 @@
             "refs":{
                 "PIB 20130711":"https://www.vekn.net/forum/rules-questions/51279-big-boon-bounce?fbclid=IwAR3-kLQKFt415mAPpGL0sYpi4yx6ZzJbiyP57z3R6nkIW7V-g0F93z_ob-s#51307"
             }
+        },
+        {
+            "text":"Is played after the combat ends, keeping the vampire out of torpor.",
+            "refs":{
+                "RTR 19950509-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/f4hSj-B1QhQ/m/Mwt22VlymocJ"
+            }
         }
     ],
     "101220":[
@@ -11702,9 +11719,9 @@
     ],
     "101287":[
         {
-            "text":"Both strikes are only effective at close range.",
+            "text":"The prevent is effective at long range <REVERSAL>",
             "refs":{
-                "ANK 20220814-2":"https://www.vekn.net/forum/rules-questions/79960-nightstick-and-defensive-strikes?start=6#105963"
+                "ANK 20260522":"https://www.vekn.net/forum/rules-questions/83009-clarification-effective-strike#117087"
             }
         },
         {
@@ -25664,6 +25681,26 @@
             }
         }
     ],
+    "G00159":[
+        {
+            "text":"If a minion who has gained the votes provided against the referendum, is subsequently forced to vote in favor, the provided votes are not counted when votes are tallied until that minion is again forced to vote against the referendum.",
+            "refs":{
+                "LSJ 20031115":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/quF7butlINo/m/XVswJuKMke4J"
+            }
+        },
+        {
+            "text":"Cannot be used by a minion who is voting in favor of the referendum.",
+            "refs":{
+                "LSJ 20031115":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/quF7butlINo/m/XVswJuKMke4J"
+            }
+        },
+        {
+            "text":"Gaining the provided votes immediately forces the minion to vote against the referendum, if they are not already doing so.",
+            "refs":{
+                "LSJ 20031119":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/quF7butlINo/m/1f14MGJMP28J"
+            }
+        }
+    ],
     "101519":[
         {
             "text":"If one is ousted while having temporary control of a minion, the minion is removed from the game.  (Reversal of Previous Rulings)",
@@ -29102,6 +29139,33 @@
             }
         }
     ],
+    "101130":[
+        {
+            "text":"Cannot be used during a referendum that is automatically passing.",
+            "refs":{
+                "PIB 20150105":"https://www.vekn.net/forum/rules-questions/68465-voting-is-complicated#68493",
+                "LSJ 19980107":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aUUs4VCR_Ec/m/PLecvfrEqbgJ"
+            }
+        },
+        {
+            "text":"If a minion who has gained the votes provided against the referendum, is subsequently forced to vote in favor, the provided votes are not counted when votes are tallied until that minion is again forced to vote against the referendum.",
+            "refs":{
+                "LSJ 20031115":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/quF7butlINo/m/XVswJuKMke4J"
+            }
+        },
+        {
+            "text":"Cannot be used by a minion who is voting in favor of the referendum.",
+            "refs":{
+                "LSJ 20031115":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/quF7butlINo/m/XVswJuKMke4J"
+            }
+        },
+        {
+            "text":"Gaining the provided votes immediately forces the minion to vote against the referendum, if they are not already doing so.",
+            "refs":{
+                "LSJ 20031119":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/quF7butlINo/m/1f14MGJMP28J"
+            }
+        }
+    ],
     "101318":[
         {
             "text":"Cannot be used during a referendum that is automatically passing.",
@@ -29221,6 +29285,24 @@
             "refs":{
                 "PIB 20150105":"https://www.vekn.net/forum/rules-questions/68465-voting-is-complicated#68493",
                 "LSJ 19980107":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aUUs4VCR_Ec/m/PLecvfrEqbgJ"
+            }
+        },
+        {
+            "text":"[DEM] If a minion who has gained the votes provided against the referendum, is subsequently forced to vote in favor, the provided votes are not counted when votes are tallied until that minion is again forced to vote against the referendum.",
+            "refs":{
+                "LSJ 20031115":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/quF7butlINo/m/XVswJuKMke4J"
+            }
+        },
+        {
+            "text":"[DEM] Cannot be used by a minion who is voting in favor of the referendum.",
+            "refs":{
+                "LSJ 20031115":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/quF7butlINo/m/XVswJuKMke4J"
+            }
+        },
+        {
+            "text":"[DEM] Gaining the provided votes immediately forces the minion to vote against the referendum, if they are not already doing so.",
+            "refs":{
+                "LSJ 20031119":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/quF7butlINo/m/1f14MGJMP28J"
             }
         }
     ],
@@ -38193,26 +38275,6 @@
             }
         }
     ],
-    "100432":[
-        {
-            "text":"Can be used by a vampire who is already attempting to block.",
-            "refs":{
-                "ANK 20181122-2":"https://www.vekn.net/forum/rules-questions/77176-eagle-s-sight-and-guardian-vigil#91965"
-            }
-        },
-        {
-            "text":"Cannot be used if the vampire cannot attempt to block the action (eg. {Daring the Dawn}).",
-            "refs":{
-                "LSJ 20010714-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9U-jt3p3R_Q/m/WxDJwkgc25kJ"
-            }
-        },
-        {
-            "text":"Does not ignore the normal prey, predator or target restrictions.",
-            "refs":{
-                "ANK 20180623":"https://www.vekn.net/forum/rules-questions/76748-black-sunrise#88361"
-            }
-        }
-    ],
     "200245":[
         {
             "text":"Both the card in the ash heap and the card in hand have to be named when announcing the action or effect.",
@@ -40026,6 +40088,26 @@
             "refs":{
                 "LSJ 20100129":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/X8Uu7Sk56P4/m/fgP7NfnDpCkJ",
                 "ANK 20191228":"https://www.vekn.net/forum/rules-questions/78262-parity-shift-without-target#98358"
+            }
+        }
+    ],
+    "102214":[
+        {
+            "text":"If a minion who has gained the votes provided against the referendum, is subsequently forced to vote in favor, the provided votes are not counted when votes are tallied until that minion is again forced to vote against the referendum.",
+            "refs":{
+                "LSJ 20031115":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/quF7butlINo/m/XVswJuKMke4J"
+            }
+        },
+        {
+            "text":"Cannot be used by a minion who is voting in favor of the referendum.",
+            "refs":{
+                "LSJ 20031115":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/quF7butlINo/m/XVswJuKMke4J"
+            }
+        },
+        {
+            "text":"Gaining the provided votes immediately forces the minion to vote against the referendum, if they are not already doing so.",
+            "refs":{
+                "LSJ 20031119":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/quF7butlINo/m/1f14MGJMP28J"
             }
         }
     ]
