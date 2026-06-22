@@ -1,5 +1,3212 @@
 [
   {
+    "id": "13326",
+    "event": "VTES no Norte",
+    "event_link": "https://www.vekn.net/event-calendar/event/13326",
+    "place": "Vila do Conde, Portugal",
+    "date": "2026-06-13",
+    "tournament_format": "3R+F",
+    "players_count": 10,
+    "player": "Adriano Miranda",
+    "score": "2GW7+2",
+    "name": "Gangrel Thing",
+    "crypt": {
+      "count": 12,
+      "cards": [
+        { "id": 201521, "count": 2, "name": "Casey Snyder" },
+        { "id": 201574, "count": 2, "name": "Kuyén" },
+        { "id": 201602, "count": 1, "name": "Massimiliano" },
+        { "id": 200081, "count": 1, "name": "André the Manipulator" },
+        { "id": 201601, "count": 1, "name": "Martina Srnankova" },
+        { "id": 201597, "count": 1, "name": "Kamile Paukstys" },
+        { "id": 201590, "count": 1, "name": "Hanna Nokelainen" },
+        { "id": 201606, "count": 1, "name": "Nathan Turner" },
+        { "id": 201592, "count": 1, "name": "Indira" },
+        { "id": 201611, "count": 1, "name": "Ruslan Fedorenko" }
+      ]
+    },
+    "library": {
+      "count": 90,
+      "cards": [
+        {
+          "type": "Master",
+          "count": 17,
+          "cards": [
+            { "id": 100052, "count": 1, "name": "The Anarch Free Press" },
+            { "id": 100054, "count": 1, "name": "Anarch Railroad" },
+            { "id": 100126, "count": 1, "name": "Backways" },
+            { "id": 100297, "count": 1, "name": "Carfax Abbey" },
+            { "id": 100366, "count": 2, "name": "Club Illusion" },
+            { "id": 100609, "count": 1, "name": "Ecoterrorists" },
+            { "id": 100809, "count": 2, "name": "Garibaldi-Meucci Museum" },
+            { "id": 101350, "count": 1, "name": "Papillon" },
+            { "id": 101439, "count": 1, "name": "Powerbase: Montreal" },
+            { "id": 101536, "count": 1, "name": "The Rack" },
+            { "id": 102121, "count": 4, "name": "Villein" },
+            { "id": 102212, "count": 1, "name": "Zoo Hunting Ground" }
+          ]
+        },
+        {
+          "type": "Action",
+          "count": 15,
+          "cards": [
+            { "id": 100717, "count": 1, "name": "Fee Stake: Seattle" },
+            { "id": 101632, "count": 2, "name": "Rewilding" },
+            { "id": 101972, "count": 12, "name": "Thing" }
+          ]
+        },
+        {
+          "type": "Ally",
+          "count": 1,
+          "cards": [{ "id": 102220, "count": 1, "name": "Double Deuce" }]
+        },
+        {
+          "type": "Equipment",
+          "count": 1,
+          "cards": [{ "id": 100903, "count": 1, "name": "Heart of Nizchetus" }]
+        },
+        {
+          "type": "Political Action",
+          "count": 2,
+          "cards": [{ "id": 101631, "count": 2, "name": "Revolutionary Council" }]
+        },
+        {
+          "type": "Retainer",
+          "count": 3,
+          "cards": [
+            { "id": 101249, "count": 1, "name": "Mr. Winthrop" },
+            { "id": 101550, "count": 2, "name": "Raven Spy" }
+          ]
+        },
+        {
+          "type": "Action Modifier",
+          "count": 5,
+          "cards": [
+            { "id": 100492, "count": 1, "name": "Daring the Dawn" },
+            { "id": 100600, "count": 3, "name": "Earth Control" },
+            { "id": 101239, "count": 1, "name": "Monkey Wrench" }
+          ]
+        },
+        {
+          "type": "Action Modifier/Reaction",
+          "count": 4,
+          "cards": [{ "id": 102223, "count": 4, "name": "Form of the Bat" }]
+        },
+        {
+          "type": "Reaction",
+          "count": 24,
+          "cards": [
+            { "id": 102218, "count": 6, "name": "Bait and Switch" },
+            { "id": 102219, "count": 6, "name": "Deep Ecology" },
+            { "id": 100519, "count": 1, "name": "Delaying Tactics" },
+            { "id": 102222, "count": 2, "name": "Eyes of the Wild" },
+            { "id": 102230, "count": 9, "name": "Organized Resistance" }
+          ]
+        },
+        {
+          "type": "Combat",
+          "count": 18,
+          "cards": [
+            { "id": 100601, "count": 12, "name": "Earth Meld" },
+            { "id": 100771, "count": 6, "name": "Form of Mist" }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "13344",
+    "event": "Jogos de Guerra - A Sangria Junina",
+    "event_link": "https://www.vekn.net/event-calendar/event/13344",
+    "place": "São Paulo (SP), Brazil",
+    "date": "2026-06-13",
+    "tournament_format": "2R+F",
+    "players_count": 10,
+    "player": "Morgana Gomes",
+    "score": "2GW7+3",
+    "name": "Chatuba da louquinha",
+    "crypt": {
+      "count": 12,
+      "cards": [
+        { "id": 201698, "count": 4, "name": "Juliet Parr" },
+        { "id": 201530, "count": 3, "name": "Alexander Silverson" },
+        { "id": 201532, "count": 2, "name": "Andi Liu" },
+        { "id": 201628, "count": 1, "name": "Jason \"Son\" Newberry" },
+        { "id": 201537, "count": 1, "name": "Belinde" },
+        { "id": 201544, "count": 1, "name": "Donny Kowalczyk" }
+      ]
+    },
+    "library": {
+      "count": 90,
+      "cards": [
+        {
+          "type": "Master",
+          "count": 12,
+          "cards": [
+            { "id": 102269, "count": 2, "name": "Camarilla Conclave" },
+            { "id": 100435, "count": 1, "name": "The Coven" },
+            { "id": 100545, "count": 1, "name": "Direct Intervention" },
+            { "id": 100588, "count": 3, "name": "Dreams of the Sphinx" },
+            { "id": 100824, "count": 1, "name": "Giant's Blood" },
+            { "id": 101019, "count": 1, "name": "Jake Washington" },
+            { "id": 101384, "count": 2, "name": "Pentex™ Subversion" },
+            { "id": 102180, "count": 1, "name": "Wider View" }
+          ]
+        },
+        {
+          "type": "Action",
+          "count": 14,
+          "cards": [
+            { "id": 100845, "count": 13, "name": "Govern the Unaligned" },
+            { "id": 101028, "count": 1, "name": "Judgment: Camarilla Segregation" }
+          ]
+        },
+        {
+          "type": "Equipment",
+          "count": 2,
+          "cards": [
+            { "id": 100903, "count": 1, "name": "Heart of Nizchetus" },
+            { "id": 101014, "count": 1, "name": "Ivory Bow" }
+          ]
+        },
+        {
+          "type": "Political Action",
+          "count": 16,
+          "cards": [
+            { "id": 100059, "count": 1, "name": "Anarchist Uprising" },
+            { "id": 100065, "count": 1, "name": "Ancilla Empowerment" },
+            { "id": 102270, "count": 4, "name": "Camarilla's Iron Fist" },
+            { "id": 102276, "count": 1, "name": "Expulsion" },
+            { "id": 101056, "count": 5, "name": "Kine Resources Contested" },
+            { "id": 101353, "count": 4, "name": "Parity Shift" }
+          ]
+        },
+        {
+          "type": "Action Modifier",
+          "count": 24,
+          "cards": [
+            { "id": 100236, "count": 2, "name": "Bonding" },
+            { "id": 100401, "count": 3, "name": "Conditioning" },
+            { "id": 100617, "count": 5, "name": "Elder Impersonation" },
+            { "id": 100687, "count": 2, "name": "Faceless Night" },
+            { "id": 100765, "count": 1, "name": "Foreshadowing Destruction" },
+            { "id": 100769, "count": 4, "name": "Forgotten Labyrinth" },
+            { "id": 101125, "count": 5, "name": "Lost in Crowds" },
+            { "id": 101951, "count": 2, "name": "Telepathic Vote Counting" }
+          ]
+        },
+        {
+          "type": "Action Modifier/Combat",
+          "count": 1,
+          "cards": [{ "id": 100921, "count": 1, "name": "Hide the Mind" }]
+        },
+        {
+          "type": "Reaction",
+          "count": 21,
+          "cards": [
+            { "id": 100518, "count": 8, "name": "Deflection" },
+            { "id": 100680, "count": 2, "name": "Eyes of Argus" },
+            { "id": 101309, "count": 5, "name": "Obedience" },
+            { "id": 101321, "count": 2, "name": "On the Qui Vive" },
+            { "id": 101706, "count": 4, "name": "Second Tradition: Domain" }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "13348",
+    "event": "1ª Etapa do GP Sulamericano de VtES",
+    "event_link": "https://www.vekn.net/event-calendar/event/13348",
+    "place": "Rio de Janeiro, Brazil",
+    "date": "2026-06-07",
+    "tournament_format": "3R+F",
+    "players_count": 39,
+    "player": "Anderson Pinto Rodrigues",
+    "score": "2GW10+3",
+    "name": "Thing in the Tijuca Forest",
+    "comments": "Final Table:\nCristiano Vaz: Nosferatu V5 Primogen > Anderson “Panda”: Protean Barons > Alberto “Bacia”: Hecata swarm allies > Yuri Prange: Tzimisce V5 Living Manse > Gabriel Mattos: Power of Death swarm allies\n",
+    "crypt": {
+      "count": 12,
+      "cards": [
+        { "id": 201521, "count": 2, "name": "Casey Snyder" },
+        { "id": 201574, "count": 2, "name": "Kuyén" },
+        { "id": 201665, "count": 1, "name": "Ángel Guerrero" },
+        { "id": 201602, "count": 1, "name": "Massimiliano" },
+        { "id": 200081, "count": 1, "name": "André the Manipulator" },
+        { "id": 201667, "count": 1, "name": "Branimira" },
+        { "id": 201597, "count": 1, "name": "Kamile Paukstys" },
+        { "id": 201606, "count": 1, "name": "Nathan Turner" },
+        { "id": 201592, "count": 1, "name": "Indira" },
+        { "id": 201611, "count": 1, "name": "Ruslan Fedorenko" }
+      ]
+    },
+    "library": {
+      "count": 90,
+      "cards": [
+        {
+          "type": "Master",
+          "count": 23,
+          "cards": [
+            { "id": 100054, "count": 1, "name": "Anarch Railroad" },
+            { "id": 100085, "count": 2, "name": "Archon Investigation" },
+            { "id": 100126, "count": 1, "name": "Backways" },
+            { "id": 100297, "count": 1, "name": "Carfax Abbey" },
+            { "id": 100588, "count": 1, "name": "Dreams of the Sphinx" },
+            { "id": 100609, "count": 1, "name": "Ecoterrorists" },
+            { "id": 100616, "count": 4, "name": "Effective Management" },
+            { "id": 100646, "count": 1, "name": "Ennoia's Theater" },
+            { "id": 100809, "count": 1, "name": "Garibaldi-Meucci Museum" },
+            { "id": 100824, "count": 1, "name": "Giant's Blood" },
+            { "id": 100984, "count": 1, "name": "Information Highway" },
+            { "id": 101355, "count": 1, "name": "The Parthenon" },
+            { "id": 101439, "count": 1, "name": "Powerbase: Montreal" },
+            { "id": 102121, "count": 6, "name": "Villein" }
+          ]
+        },
+        {
+          "type": "Action",
+          "count": 14,
+          "cards": [
+            { "id": 101632, "count": 1, "name": "Rewilding" },
+            { "id": 101972, "count": 13, "name": "Thing" }
+          ]
+        },
+        {
+          "type": "Political Action",
+          "count": 6,
+          "cards": [
+            { "id": 100410, "count": 2, "name": "Consanguineous Boon" },
+            { "id": 100605, "count": 2, "name": "Eat the Rich" },
+            { "id": 101631, "count": 2, "name": "Revolutionary Council" }
+          ]
+        },
+        {
+          "type": "Action Modifier",
+          "count": 11,
+          "cards": [
+            { "id": 100600, "count": 4, "name": "Earth Control" },
+            { "id": 101239, "count": 2, "name": "Monkey Wrench" },
+            { "id": 101496, "count": 5, "name": "Propaganda of the Deed" }
+          ]
+        },
+        {
+          "type": "Action Modifier/Reaction",
+          "count": 4,
+          "cards": [{ "id": 102223, "count": 4, "name": "Form of the Bat" }]
+        },
+        {
+          "type": "Reaction",
+          "count": 17,
+          "cards": [
+            { "id": 102218, "count": 7, "name": "Bait and Switch" },
+            { "id": 102219, "count": 2, "name": "Deep Ecology" },
+            { "id": 100519, "count": 2, "name": "Delaying Tactics" },
+            { "id": 102230, "count": 6, "name": "Organized Resistance" }
+          ]
+        },
+        {
+          "type": "Combat",
+          "count": 15,
+          "cards": [
+            { "id": 100356, "count": 2, "name": "Claws of the Dead" },
+            { "id": 100601, "count": 9, "name": "Earth Meld" },
+            { "id": 100771, "count": 4, "name": "Form of Mist" }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "13122",
+    "event": "Path of Triple Deuce",
+    "event_link": "https://www.vekn.net/event-calendar/event/13122",
+    "place": "Stockholm, Sweden",
+    "date": "2026-06-07",
+    "tournament_format": "3R+F",
+    "players_count": 10,
+    "player": "Ivan Marin-Rivas",
+    "score": "2GW8+1.5",
+    "name": "Lucinde Shotgun grinder",
+    "comments": "Description: Played without really knowing whats in it. Looking at it after the fact I would make changes, but if it works, it works.\n",
+    "crypt": {
+      "count": 13,
+      "cards": [
+        { "id": 201700, "count": 5, "name": "Lucinde, Alastor (G7)" },
+        { "id": 201697, "count": 1, "name": "Ian Carfax" },
+        { "id": 201529, "count": 1, "name": "Alexa Draper" },
+        { "id": 201729, "count": 1, "name": "Dafina Hanganu" },
+        { "id": 201716, "count": 1, "name": "Yewon Ong" },
+        { "id": 201531, "count": 1, "name": "Alice Chen" },
+        { "id": 201629, "count": 1, "name": "Kevin Jackson" },
+        { "id": 201570, "count": 1, "name": "Sybren van Oosten" },
+        { "id": 201550, "count": 1, "name": "Horst von Brühl" }
+      ]
+    },
+    "library": {
+      "count": 90,
+      "cards": [
+        {
+          "type": "Master",
+          "count": 18,
+          "cards": [
+            { "id": 100135, "count": 1, "name": "The Barrens" },
+            { "id": 102236, "count": 4, "name": "The British Museum, London" },
+            { "id": 100545, "count": 1, "name": "Direct Intervention" },
+            { "id": 100824, "count": 1, "name": "Giant's Blood" },
+            { "id": 101013, "count": 1, "name": "Island of Yiaros" },
+            { "id": 101019, "count": 1, "name": "Jake Washington" },
+            { "id": 101110, "count": 1, "name": "The Line" },
+            { "id": 101207, "count": 1, "name": "Metro Underground" },
+            { "id": 101350, "count": 1, "name": "Papillon" },
+            { "id": 102084, "count": 1, "name": "Uptown Hunting Ground" },
+            { "id": 102109, "count": 1, "name": "Ventrue Headquarters" },
+            { "id": 102121, "count": 4, "name": "Villein" }
+          ]
+        },
+        {
+          "type": "Action",
+          "count": 8,
+          "cards": [
+            { "id": 100845, "count": 6, "name": "Govern the Unaligned" },
+            { "id": 101698, "count": 2, "name": "Scouting Mission" }
+          ]
+        },
+        {
+          "type": "Equipment",
+          "count": 13,
+          "cards": [
+            { "id": 100739, "count": 4, "name": "Flak Jacket" },
+            { "id": 100903, "count": 1, "name": "Heart of Nizchetus" },
+            { "id": 101040, "count": 1, "name": "Kevlar Vest" },
+            { "id": 101345, "count": 1, "name": "Palatial Estate" },
+            { "id": 101685, "count": 5, "name": "Sawed-Off Shotgun" },
+            { "id": 101781, "count": 1, "name": "The Signet of King Saul" }
+          ]
+        },
+        {
+          "type": "Political Action",
+          "count": 10,
+          "cards": [
+            { "id": 100131, "count": 2, "name": "Banishment" },
+            { "id": 102270, "count": 3, "name": "Camarilla's Iron Fist" },
+            { "id": 101353, "count": 5, "name": "Parity Shift" }
+          ]
+        },
+        {
+          "type": "Action Modifier",
+          "count": 17,
+          "cards": [
+            { "id": 100401, "count": 2, "name": "Conditioning" },
+            { "id": 100492, "count": 2, "name": "Daring the Dawn" },
+            { "id": 100645, "count": 2, "name": "Enkil Cog" },
+            { "id": 100765, "count": 1, "name": "Foreshadowing Destruction" },
+            { "id": 100788, "count": 10, "name": "Freak Drive" }
+          ]
+        },
+        {
+          "type": "Reaction",
+          "count": 13,
+          "cards": [
+            { "id": 100518, "count": 5, "name": "Deflection" },
+            { "id": 101321, "count": 1, "name": "On the Qui Vive" },
+            { "id": 101706, "count": 7, "name": "Second Tradition: Domain" }
+          ]
+        },
+        {
+          "type": "Combat",
+          "count": 11,
+          "cards": [
+            { "id": 100392, "count": 5, "name": "Concealed Weapon" },
+            { "id": 100918, "count": 2, "name": "Hidden Strength" },
+            { "id": 101649, "count": 2, "name": "Rolling with the Punches" },
+            { "id": 101817, "count": 2, "name": "Soak" }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "13328",
+    "event": "Torneio mensal Curitiba",
+    "event_link": "https://www.vekn.net/event-calendar/event/13328",
+    "place": "Curitiba (PR), Brazil",
+    "date": "2026-06-06",
+    "tournament_format": "2R+F",
+    "players_count": 14,
+    "player": "Rafael Tokarski Ribas",
+    "score": "1GW5+5",
+    "name": "Salubleed Kamikaze",
+    "crypt": {
+      "count": 12,
+      "cards": [
+        { "id": 201663, "count": 2, "name": "Abaddon" },
+        { "id": 201686, "count": 2, "name": "Seraphina" },
+        { "id": 201673, "count": 2, "name": "Ilonka" },
+        { "id": 201666, "count": 2, "name": "Aniel" },
+        { "id": 201676, "count": 2, "name": "Malachi" },
+        { "id": 201680, "count": 1, "name": "Opikun" },
+        { "id": 201691, "count": 1, "name": "Yael" }
+      ]
+    },
+    "library": {
+      "count": 90,
+      "cards": [
+        {
+          "type": "Master",
+          "count": 13,
+          "cards": [
+            { "id": 100135, "count": 1, "name": "The Barrens" },
+            { "id": 100588, "count": 1, "name": "Dreams of the Sphinx" },
+            { "id": 100620, "count": 1, "name": "Elder Library" },
+            { "id": 100785, "count": 1, "name": "Fragment of the Book of Nod" },
+            { "id": 100824, "count": 1, "name": "Giant's Blood" },
+            { "id": 100842, "count": 1, "name": "Golconda: Inner Peace" },
+            { "id": 100984, "count": 1, "name": "Information Highway" },
+            { "id": 101225, "count": 1, "name": "Misdirection" },
+            { "id": 101384, "count": 2, "name": "Pentex™ Subversion" },
+            { "id": 101896, "count": 2, "name": "Sudden Reversal" },
+            { "id": 102126, "count": 1, "name": "Visit from the Capuchin" }
+          ]
+        },
+        {
+          "type": "Action",
+          "count": 17,
+          "cards": [
+            { "id": 102248, "count": 11, "name": "Feast of the Soul's Secrets" },
+            { "id": 100845, "count": 6, "name": "Govern the Unaligned" }
+          ]
+        },
+        {
+          "type": "Action/Combat",
+          "count": 2,
+          "cards": [{ "id": 102262, "count": 2, "name": "Touch of Valeren" }]
+        },
+        {
+          "type": "Action Modifier",
+          "count": 40,
+          "cards": [
+            { "id": 100236, "count": 5, "name": "Bonding" },
+            { "id": 100401, "count": 5, "name": "Conditioning" },
+            { "id": 100492, "count": 1, "name": "Daring the Dawn" },
+            { "id": 102250, "count": 8, "name": "Forced Confessional" },
+            { "id": 100765, "count": 1, "name": "Foreshadowing Destruction" },
+            { "id": 100788, "count": 3, "name": "Freak Drive" },
+            { "id": 101712, "count": 10, "name": "Seduction" },
+            { "id": 101978, "count": 3, "name": "Threats" },
+            { "id": 102263, "count": 4, "name": "Unleashing the Bestial Soul" }
+          ]
+        },
+        {
+          "type": "Reaction",
+          "count": 16,
+          "cards": [
+            { "id": 100518, "count": 2, "name": "Deflection" },
+            { "id": 100519, "count": 1, "name": "Delaying Tactics" },
+            { "id": 100680, "count": 3, "name": "Eyes of Argus" },
+            { "id": 101259, "count": 3, "name": "My Enemy's Enemy" },
+            { "id": 101321, "count": 3, "name": "On the Qui Vive" },
+            { "id": 101578, "count": 4, "name": "Redirection" }
+          ]
+        },
+        {
+          "type": "Combat",
+          "count": 2,
+          "cards": [{ "id": 101649, "count": 2, "name": "Rolling with the Punches" }]
+        }
+      ]
+    }
+  },
+  {
+    "id": "13295",
+    "event": "Old Friends",
+    "event_link": "https://www.vekn.net/event-calendar/event/13295",
+    "place": "Barga, Italy",
+    "date": "2026-06-06",
+    "tournament_format": "2R+F",
+    "players_count": 12,
+    "player": "Alessandro Donati",
+    "score": "1GW4+4",
+    "name": "Blessing of Chaos",
+    "comments": "Description: Old school !Malk S&B revised and upgraded with cards from the Path of Cathari (multiactions and a very solid combat compartment) with some choises to make It a little bit solid instead of an allin bleed deck.\n",
+    "crypt": {
+      "count": 12,
+      "cards": [
+        { "id": 201196, "count": 3, "name": "Rodolfo" },
+        { "id": 200791, "count": 3, "name": "Korah" },
+        { "id": 200786, "count": 2, "name": "Kite" },
+        { "id": 200927, "count": 1, "name": "Marie Faucigny" },
+        { "id": 200355, "count": 1, "name": "Dolphin Black" },
+        { "id": 200500, "count": 1, "name": "General Perfidio Díos" },
+        { "id": 201408, "count": 1, "name": "Uncle George" }
+      ]
+    },
+    "library": {
+      "count": 90,
+      "cards": [
+        {
+          "type": "Master",
+          "count": 14,
+          "cards": [
+            { "id": 100178, "count": 1, "name": "Bleeding the Vine" },
+            { "id": 100493, "count": 1, "name": "Dark Influences" },
+            { "id": 100588, "count": 1, "name": "Dreams of the Sphinx" },
+            { "id": 100620, "count": 1, "name": "Elder Library" },
+            { "id": 102323, "count": 3, "name": "Forward Momentum" },
+            { "id": 100984, "count": 1, "name": "Information Highway" },
+            { "id": 102345, "count": 6, "name": "Unholy Sacrament" }
+          ]
+        },
+        {
+          "type": "Action",
+          "count": 22,
+          "cards": [
+            { "id": 100182, "count": 1, "name": "Blessing of Chaos" },
+            { "id": 100278, "count": 6, "name": "The Call" },
+            { "id": 101055, "count": 13, "name": "Kindred Spirits" },
+            { "id": 101138, "count": 1, "name": "Madman's Quill" },
+            { "id": 102063, "count": 1, "name": "Under Siege" }
+          ]
+        },
+        {
+          "type": "Action Modifier",
+          "count": 26,
+          "cards": [
+            { "id": 100405, "count": 8, "name": "Confusion" },
+            { "id": 100617, "count": 2, "name": "Elder Impersonation" },
+            { "id": 100682, "count": 4, "name": "Eyes of Chaos" },
+            { "id": 100687, "count": 4, "name": "Faceless Night" },
+            { "id": 101125, "count": 4, "name": "Lost in Crowds" },
+            { "id": 102338, "count": 2, "name": "Seeds of Terror" },
+            { "id": 101857, "count": 2, "name": "Spying Mission" }
+          ]
+        },
+        {
+          "type": "Action Modifier/Combat",
+          "count": 4,
+          "cards": [{ "id": 102342, "count": 4, "name": "Swift Cover" }]
+        },
+        {
+          "type": "Action Modifier/Reaction",
+          "count": 2,
+          "cards": [{ "id": 101998, "count": 2, "name": "Touch of Clarity" }]
+        },
+        {
+          "type": "Reaction",
+          "count": 14,
+          "cards": [
+            { "id": 100519, "count": 2, "name": "Delaying Tactics" },
+            { "id": 100680, "count": 4, "name": "Eyes of Argus" },
+            { "id": 101949, "count": 6, "name": "Telepathic Misdirection" },
+            { "id": 102197, "count": 2, "name": "Wrong and Crosswise" }
+          ]
+        },
+        {
+          "type": "Combat",
+          "count": 8,
+          "cards": [{ "id": 102330, "count": 8, "name": "Kiss of Cathari" }]
+        }
+      ]
+    }
+  },
+  {
+    "id": "13345",
+    "event": "Festa junina capixaba",
+    "event_link": "https://www.vekn.net/event-calendar/event/13345",
+    "place": "Vila Velha - ES, Brazil",
+    "date": "2026-06-06",
+    "tournament_format": "2R+F",
+    "players_count": 10,
+    "player": "Victor Pessotti",
+    "score": "1GW4+5",
+    "name": "O Vitin está podre",
+    "crypt": {
+      "count": 13,
+      "cards": [
+        { "id": 200908, "count": 5, "name": "Mambo Jeanne" },
+        { "id": 200685, "count": 3, "name": "Jean Lisle" },
+        { "id": 200169, "count": 2, "name": "Baroque" },
+        { "id": 200928, "count": 2, "name": "Marie-Pierre" },
+        { "id": 200089, "count": 1, "name": "Angel Chavarria" }
+      ]
+    },
+    "library": {
+      "count": 90,
+      "cards": [
+        {
+          "type": "Master",
+          "count": 15,
+          "cards": [
+            { "id": 100186, "count": 3, "name": "Blessings of the Loa" },
+            { "id": 100303, "count": 1, "name": "Carver's Meat Packing and Storage" },
+            { "id": 100546, "count": 2, "name": "Dirty Contract" },
+            { "id": 100588, "count": 1, "name": "Dreams of the Sphinx" },
+            { "id": 100698, "count": 1, "name": "Fame" },
+            { "id": 100940, "count": 1, "name": "Houngan" },
+            { "id": 101958, "count": 1, "name": "Tension in the Ranks" },
+            { "id": 102113, "count": 2, "name": "Vessel" },
+            { "id": 102121, "count": 3, "name": "Villein" }
+          ]
+        },
+        {
+          "type": "Action",
+          "count": 11,
+          "cards": [
+            { "id": 100046, "count": 2, "name": "Ambush" },
+            { "id": 100159, "count": 3, "name": "Big Game" },
+            { "id": 100266, "count": 3, "name": "Bum's Rush" },
+            { "id": 100330, "count": 1, "name": "Charge of the Buffalo" },
+            { "id": 100886, "count": 2, "name": "Harass" }
+          ]
+        },
+        {
+          "type": "Equipment",
+          "count": 1,
+          "cards": [{ "id": 100742, "count": 1, "name": "Flamethrower" }]
+        },
+        {
+          "type": "Action Modifier",
+          "count": 10,
+          "cards": [{ "id": 100788, "count": 10, "name": "Freak Drive" }]
+        },
+        {
+          "type": "Combat",
+          "count": 52,
+          "cards": [
+            { "id": 100859, "count": 12, "name": "Groaning Corpse" },
+            { "id": 101595, "count": 14, "name": "Relentless Reaper" },
+            { "id": 101636, "count": 3, "name": "Rigor Mortis" },
+            { "id": 101649, "count": 3, "name": "Rolling with the Punches" },
+            { "id": 101905, "count": 2, "name": "Superior Mettle" },
+            { "id": 101945, "count": 7, "name": "Taste of Vitae" },
+            { "id": 102071, "count": 5, "name": "Unflinching Persistence" },
+            { "id": 102188, "count": 6, "name": "Withering" }
+          ]
+        },
+        {
+          "type": "Event",
+          "count": 1,
+          "cards": [{ "id": 100581, "count": 1, "name": "Dragonbound" }]
+        }
+      ]
+    }
+  },
+  {
+    "id": "13350",
+    "event": "Polish NC 2026",
+    "event_link": "https://www.vekn.net/event-calendar/event/13350",
+    "place": "Gdansk, Poland",
+    "date": "2026-06-06",
+    "tournament_format": "3R+F",
+    "players_count": 40,
+    "player": "Nerijus Mikalajunas",
+    "score": "2GW8+1.5",
+    "name": "The  Kennel of Caine",
+    "comments": "Description: This deck, assembled by Nerijus, was inspired by Antti Penttilä's Kurshid PoC multi-rush deck and is heavily influenced by Bram van Stappen in many ways, with significant input from Marcin Zakrzewski.\n",
+    "crypt": {
+      "count": 12,
+      "cards": [
+        { "id": 201138, "count": 5, "name": "Qawiyya el-Ghaduba" },
+        { "id": 200080, "count": 3, "name": "Andre LeRoux" },
+        { "id": 201052, "count": 1, "name": "New Blood" },
+        { "id": 200076, "count": 1, "name": "Anarch Convert" },
+        { "id": 200365, "count": 1, "name": "Donald Cargill" },
+        { "id": 201462, "count": 1, "name": "Walker Grimes" }
+      ]
+    },
+    "library": {
+      "count": 72,
+      "cards": [
+        {
+          "type": "Master",
+          "count": 8,
+          "cards": [
+            { "id": 100106, "count": 6, "name": "Ashur Tablets" },
+            { "id": 101711, "count": 1, "name": "Secure Haven" },
+            { "id": 102180, "count": 1, "name": "Wider View" }
+          ]
+        },
+        {
+          "type": "Action",
+          "count": 11,
+          "cards": [
+            { "id": 102309, "count": 2, "name": "Abuse of Power" },
+            { "id": 102310, "count": 1, "name": "Augury of Doom" },
+            { "id": 100159, "count": 1, "name": "Big Game" },
+            { "id": 100266, "count": 1, "name": "Bum's Rush" },
+            { "id": 100913, "count": 1, "name": "Heroic Might" },
+            { "id": 101296, "count": 1, "name": "Nose of the Hound" },
+            { "id": 101483, "count": 1, "name": "Preternatural Strength" },
+            { "id": 101661, "count": 1, "name": "Rumble" },
+            { "id": 101716, "count": 2, "name": "Sense Death" }
+          ]
+        },
+        {
+          "type": "Equipment",
+          "count": 5,
+          "cards": [
+            { "id": 100239, "count": 1, "name": "The Book of Going Forth by Night" },
+            { "id": 100739, "count": 1, "name": "Flak Jacket" },
+            { "id": 101007, "count": 1, "name": "IR Goggles" },
+            { "id": 101040, "count": 1, "name": "Kevlar Vest" },
+            { "id": 101106, "count": 1, "name": "Light Intensifying Goggles" }
+          ]
+        },
+        {
+          "type": "Retainer",
+          "count": 3,
+          "cards": [{ "id": 102344, "count": 3, "name": "Twisted Bloodhound" }]
+        },
+        {
+          "type": "Action Modifier",
+          "count": 12,
+          "cards": [{ "id": 100788, "count": 12, "name": "Freak Drive" }]
+        },
+        {
+          "type": "Combat",
+          "count": 33,
+          "cards": [
+            { "id": 100510, "count": 3, "name": "Death Seeker" },
+            { "id": 100959, "count": 7, "name": "Immortal Grapple" },
+            { "id": 101515, "count": 3, "name": "Pulled Fangs" },
+            { "id": 102336, "count": 2, "name": "Rage of Apedemak" },
+            { "id": 101635, "count": 1, "name": "Righteous Aura" },
+            { "id": 101649, "count": 3, "name": "Rolling with the Punches" },
+            { "id": 102340, "count": 2, "name": "Soulgrinder" },
+            { "id": 101945, "count": 7, "name": "Taste of Vitae" },
+            { "id": 102071, "count": 5, "name": "Unflinching Persistence" }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "13333",
+    "event": "Liga JF de Junho",
+    "event_link": "https://www.vekn.net/event-calendar/event/13333",
+    "place": "Juiz de Fora, Brazil",
+    "date": "2026-06-04",
+    "tournament_format": "2R+F",
+    "players_count": 12,
+    "player": "Rafael Miranda",
+    "score": "1GW3+4",
+    "name": "Lá, lá, sombra",
+    "crypt": {
+      "count": 12,
+      "cards": [
+        { "id": 201712, "count": 2, "name": "Gnaeus Aemilius Augustinus" },
+        { "id": 201716, "count": 2, "name": "Yewon Ong" },
+        { "id": 201714, "count": 2, "name": "María del Toro" },
+        { "id": 201710, "count": 2, "name": "Azucena" },
+        { "id": 201750, "count": 1, "name": "Eulogio Sánchez de los Reyes" },
+        { "id": 201715, "count": 1, "name": "Rinaldo Albizzi" },
+        { "id": 201769, "count": 1, "name": "Rasha Tarabzouni" },
+        { "id": 201709, "count": 1, "name": "Araceli \"Celia\" Rivera" }
+      ]
+    },
+    "library": {
+      "count": 78,
+      "cards": [
+        {
+          "type": "Master",
+          "count": 11,
+          "cards": [
+            { "id": 100588, "count": 1, "name": "Dreams of the Sphinx" },
+            { "id": 100629, "count": 1, "name": "Elysian Fields" },
+            { "id": 101384, "count": 1, "name": "Pentex™ Subversion" },
+            { "id": 101415, "count": 1, "name": "Political Hunting Ground" },
+            { "id": 101896, "count": 2, "name": "Sudden Reversal" },
+            { "id": 102113, "count": 1, "name": "Vessel" },
+            { "id": 102121, "count": 3, "name": "Villein" },
+            { "id": 102180, "count": 1, "name": "Wider View" }
+          ]
+        },
+        {
+          "type": "Action",
+          "count": 14,
+          "cards": [
+            { "id": 100128, "count": 1, "name": "Baltimore Purge" },
+            { "id": 100845, "count": 7, "name": "Govern the Unaligned" },
+            { "id": 101698, "count": 6, "name": "Scouting Mission" }
+          ]
+        },
+        {
+          "type": "Political Action",
+          "count": 4,
+          "cards": [
+            { "id": 100131, "count": 2, "name": "Banishment" },
+            { "id": 101353, "count": 2, "name": "Parity Shift" }
+          ]
+        },
+        {
+          "type": "Action Modifier",
+          "count": 23,
+          "cards": [
+            { "id": 100236, "count": 3, "name": "Bonding" },
+            { "id": 102280, "count": 4, "name": "Shadow Cast" },
+            { "id": 102281, "count": 4, "name": "Shadow Cloak" },
+            { "id": 101805, "count": 2, "name": "The Sleeping Mind" },
+            { "id": 102282, "count": 5, "name": "Stygian Shroud" },
+            { "id": 102285, "count": 5, "name": "Where the Veil Thins" }
+          ]
+        },
+        {
+          "type": "Reaction",
+          "count": 18,
+          "cards": [
+            { "id": 100518, "count": 9, "name": "Deflection" },
+            { "id": 101706, "count": 2, "name": "Second Tradition: Domain" },
+            { "id": 102294, "count": 7, "name": "Shadow Sentinel" }
+          ]
+        },
+        {
+          "type": "Combat",
+          "count": 8,
+          "cards": [{ "id": 102279, "count": 8, "name": "Pass Through Shadow" }]
+        }
+      ]
+    }
+  },
+  {
+    "id": "13186",
+    "event": "French Petit Prix",
+    "event_link": "https://www.vekn.net/event-calendar/event/13186",
+    "place": "France, France",
+    "date": "2026-05-31",
+    "tournament_format": "3R+F",
+    "players_count": 10,
+    "player": "Paul Direktor",
+    "score": "1GW7+2.5",
+    "name": "Unnamed Beast 2026 [by Florian Koller]",
+    "comments": "Full credit of this deck list goes to Florian Koller. He has done a phenomenal job with it, fine tuning it for more than 3 years and it's so much fun to play. I only made minor adjustments, adding a claws of the dead and a second unleash cause that never hurts.\n\nAbombwe as a support discipline is amazing and should be played more.\nMulti act is amazing. I get blocked? Zepyhr unlock. I don't get blocked? Instantaneous Transformation unlock.\nWe're in combat? I will aggravate you. Maybe diablerize. Diablerizing vampires is great. Do you let me burn? I have a new Unnamed full of blood. Do you not let me burn? I still have an Unnamed but now he gets to bleed twice.\nYou want to do an action? Suddenly I have 3 intercept! What, the Unnamed? Yes, the Unnamed. It's full of fun and surprising moments for everyone.\n\nNotes from the creator: As every combo deck it's really hard to balance and to make it work but that makes it very rewarding once it flows. In some games you contest and sit around for an hour and do nothing until you die, in some games you just try to survive if you don't draw the combo pieces. But when it works, it's so much fun and a great deck.\n",
+    "crypt": { "count": 12, "cards": [{ "id": 201411, "count": 12, "name": "The unnamed" }] },
+    "library": {
+      "count": 90,
+      "cards": [
+        {
+          "type": "Master",
+          "count": 21,
+          "cards": [
+            { "id": 100009, "count": 6, "name": "Abombwe" },
+            { "id": 100073, "count": 1, "name": "Antediluvian Awakening" },
+            { "id": 100135, "count": 1, "name": "The Barrens" },
+            { "id": 100588, "count": 3, "name": "Dreams of the Sphinx" },
+            { "id": 100785, "count": 1, "name": "Fragment of the Book of Nod" },
+            { "id": 100824, "count": 1, "name": "Giant's Blood" },
+            { "id": 100842, "count": 1, "name": "Golconda: Inner Peace" },
+            { "id": 101103, "count": 1, "name": "Life Boon" },
+            { "id": 101238, "count": 1, "name": "Monastery of Shadows" },
+            { "id": 101577, "count": 1, "name": "Redeem the Lost Soul" },
+            { "id": 102121, "count": 4, "name": "Villein" }
+          ]
+        },
+        {
+          "type": "Action",
+          "count": 14,
+          "cards": [
+            { "id": 100280, "count": 5, "name": "Call the Great Beast" },
+            { "id": 100652, "count": 1, "name": "Entrancement" },
+            { "id": 100752, "count": 5, "name": "Flurry of Action" },
+            { "id": 101740, "count": 1, "name": "Shadow of the Beast" },
+            { "id": 102076, "count": 2, "name": "Unleash Hell's Fury" }
+          ]
+        },
+        {
+          "type": "Ally",
+          "count": 3,
+          "cards": [
+            { "id": 100912, "count": 1, "name": "Herald of Topheth" },
+            { "id": 101261, "count": 1, "name": "Mylan Horseed" },
+            { "id": 102103, "count": 1, "name": "Veneficti" }
+          ]
+        },
+        {
+          "type": "Equipment",
+          "count": 5,
+          "cards": [{ "id": 101832, "count": 5, "name": "Soul Gem of Etrius" }]
+        },
+        {
+          "type": "Action Modifier",
+          "count": 16,
+          "cards": [
+            { "id": 100540, "count": 2, "name": "Devil-Channel: Throat" },
+            { "id": 100600, "count": 3, "name": "Earth Control" },
+            { "id": 100645, "count": 2, "name": "Enkil Cog" },
+            { "id": 100994, "count": 6, "name": "Instantaneous Transformation" },
+            { "id": 101478, "count": 1, "name": "Predator's Mastery" },
+            { "id": 102205, "count": 2, "name": "Zephyr" }
+          ]
+        },
+        {
+          "type": "Action Modifier/Combat",
+          "count": 8,
+          "cards": [
+            { "id": 101479, "count": 4, "name": "Predator's Transformation" },
+            { "id": 101610, "count": 2, "name": "Resist Earth's Grasp" },
+            { "id": 101928, "count": 2, "name": "Taking the Skin: Minion" }
+          ]
+        },
+        {
+          "type": "Action Modifier/Reaction",
+          "count": 3,
+          "cards": [
+            { "id": 102223, "count": 2, "name": "Form of the Bat" },
+            { "id": 101718, "count": 1, "name": "Sense the Sin" }
+          ]
+        },
+        {
+          "type": "Reaction",
+          "count": 9,
+          "cards": [
+            { "id": 101477, "count": 5, "name": "Predator's Communion" },
+            { "id": 102265, "count": 4, "name": "Visions of Zapathasura" }
+          ]
+        },
+        {
+          "type": "Combat",
+          "count": 10,
+          "cards": [
+            { "id": 100043, "count": 1, "name": "Amaranth" },
+            { "id": 100356, "count": 1, "name": "Claws of the Dead" },
+            { "id": 100539, "count": 1, "name": "Devil-Channel: Hands" },
+            { "id": 100771, "count": 3, "name": "Form of Mist" },
+            { "id": 101523, "count": 4, "name": "Pursuit" }
+          ]
+        },
+        {
+          "type": "Event",
+          "count": 1,
+          "cards": [{ "id": 100970, "count": 1, "name": "Inconnu Tutelage" }]
+        }
+      ]
+    }
+  },
+  {
+    "id": "13322",
+    "event": "Anti Jogo",
+    "event_link": "https://www.vekn.net/event-calendar/event/13322",
+    "place": "São Paulo, Brazil",
+    "date": "2026-05-24",
+    "tournament_format": "2R+F",
+    "players_count": 18,
+    "player": "Dudu Correard",
+    "score": "1GW3+3",
+    "name": "!Ventrue G2 Voter Path of the Inner Voice",
+    "crypt": {
+      "count": 12,
+      "cards": [
+        { "id": 201140, "count": 4, "name": "Quentin" },
+        { "id": 200797, "count": 3, "name": "Kyle Strathcona, Cardinal of Canada" },
+        { "id": 200802, "count": 2, "name": "Lachlan, Noddist" },
+        { "id": 200823, "count": 1, "name": "Lazverinus, Thrall of Lambach" },
+        { "id": 200534, "count": 1, "name": "Gratiano" },
+        { "id": 200378, "count": 1, "name": "Dr. Julius Sutphen" }
+      ]
+    },
+    "library": {
+      "count": 74,
+      "cards": [
+        {
+          "type": "Master",
+          "count": 21,
+          "cards": [
+            { "id": 100444, "count": 1, "name": "Creepshow Casino" },
+            { "id": 100522, "count": 2, "name": "Demonstration" },
+            { "id": 100588, "count": 1, "name": "Dreams of the Sphinx" },
+            { "id": 100871, "count": 1, "name": "Gurchon Hall" },
+            { "id": 101238, "count": 1, "name": "Monastery of Shadows" },
+            { "id": 101350, "count": 1, "name": "Papillon" },
+            { "id": 102334, "count": 1, "name": "Privileged Position" },
+            { "id": 102345, "count": 6, "name": "Unholy Sacrament" },
+            { "id": 102121, "count": 5, "name": "Villein" },
+            { "id": 102180, "count": 2, "name": "Wider View" }
+          ]
+        },
+        {
+          "type": "Action",
+          "count": 6,
+          "cards": [{ "id": 100845, "count": 6, "name": "Govern the Unaligned" }]
+        },
+        {
+          "type": "Political Action",
+          "count": 10,
+          "cards": [
+            { "id": 100065, "count": 1, "name": "Ancilla Empowerment" },
+            { "id": 102312, "count": 3, "name": "Cold War" },
+            { "id": 102318, "count": 1, "name": "Empires Fall" },
+            { "id": 101056, "count": 5, "name": "Kine Resources Contested" }
+          ]
+        },
+        {
+          "type": "Action Modifier",
+          "count": 21,
+          "cards": [
+            { "id": 100236, "count": 3, "name": "Bonding" },
+            { "id": 102316, "count": 2, "name": "Dominant Personality" },
+            { "id": 100788, "count": 6, "name": "Freak Drive" },
+            { "id": 102337, "count": 4, "name": "Relentlessness" },
+            { "id": 101951, "count": 3, "name": "Telepathic Vote Counting" },
+            { "id": 102346, "count": 3, "name": "Unthinkable Humiliation" }
+          ]
+        },
+        {
+          "type": "Action Modifier/Reaction",
+          "count": 3,
+          "cards": [{ "id": 101256, "count": 3, "name": "Murmur of the False Will" }]
+        },
+        {
+          "type": "Reaction",
+          "count": 10,
+          "cards": [
+            { "id": 100518, "count": 5, "name": "Deflection" },
+            { "id": 100680, "count": 3, "name": "Eyes of Argus" },
+            { "id": 101321, "count": 2, "name": "On the Qui Vive" }
+          ]
+        },
+        {
+          "type": "Combat",
+          "count": 3,
+          "cards": [{ "id": 101905, "count": 3, "name": "Superior Mettle" }]
+        }
+      ]
+    }
+  },
+  {
+    "id": "13109",
+    "event": "The Vics Melbourne 2026",
+    "event_link": "https://www.vekn.net/event-calendar/event/13109",
+    "place": "Melbourne, Australia",
+    "date": "2026-05-24",
+    "tournament_format": "3R+F",
+    "players_count": 25,
+    "player": "Bert Perry",
+    "score": "1GW5+4",
+    "name": "Get to the choppa!",
+    "crypt": {
+      "count": 12,
+      "cards": [
+        { "id": 201410, "count": 5, "name": "Unmada" },
+        { "id": 200890, "count": 3, "name": "Lutz von Hohenzollern" },
+        { "id": 200720, "count": 2, "name": "Josef von Bauren" },
+        { "id": 200060, "count": 2, "name": "Alonso Petrodon" }
+      ]
+    },
+    "library": {
+      "count": 90,
+      "cards": [
+        {
+          "type": "Master",
+          "count": 27,
+          "cards": [
+            { "id": 102269, "count": 1, "name": "Camarilla Conclave" },
+            { "id": 100435, "count": 1, "name": "The Coven" },
+            { "id": 100444, "count": 1, "name": "Creepshow Casino" },
+            { "id": 100545, "count": 2, "name": "Direct Intervention" },
+            { "id": 100588, "count": 1, "name": "Dreams of the Sphinx" },
+            { "id": 100824, "count": 1, "name": "Giant's Blood" },
+            { "id": 100842, "count": 1, "name": "Golconda: Inner Peace" },
+            { "id": 100984, "count": 2, "name": "Information Highway" },
+            { "id": 101238, "count": 1, "name": "Monastery of Shadows" },
+            { "id": 101711, "count": 1, "name": "Secure Haven" },
+            { "id": 102121, "count": 5, "name": "Villein" },
+            { "id": 102149, "count": 1, "name": "Warsaw Station" },
+            { "id": 102180, "count": 1, "name": "Wider View" },
+            { "id": 102207, "count": 8, "name": "Zillah's Valley" }
+          ]
+        },
+        {
+          "type": "Action",
+          "count": 10,
+          "cards": [
+            { "id": 100191, "count": 1, "name": "Blithe Acceptance" },
+            { "id": 101028, "count": 2, "name": "Judgment: Camarilla Segregation" },
+            { "id": 101396, "count": 7, "name": "Petra Resonance" }
+          ]
+        },
+        {
+          "type": "Equipment",
+          "count": 5,
+          "cards": [
+            { "id": 100107, "count": 1, "name": "Assault Rifle" },
+            { "id": 100742, "count": 1, "name": "Flamethrower" },
+            { "id": 100903, "count": 1, "name": "Heart of Nizchetus" },
+            { "id": 100909, "count": 2, "name": "Helicopter" }
+          ]
+        },
+        {
+          "type": "Political Action",
+          "count": 12,
+          "cards": [
+            { "id": 100038, "count": 2, "name": "Alastor" },
+            { "id": 100059, "count": 1, "name": "Anarchist Uprising" },
+            { "id": 100065, "count": 1, "name": "Ancilla Empowerment" },
+            { "id": 100131, "count": 3, "name": "Banishment" },
+            { "id": 102270, "count": 2, "name": "Camarilla's Iron Fist" },
+            { "id": 101353, "count": 3, "name": "Parity Shift" }
+          ]
+        },
+        {
+          "type": "Action Modifier",
+          "count": 24,
+          "cards": [
+            { "id": 100364, "count": 2, "name": "Closed Session" },
+            { "id": 100617, "count": 2, "name": "Elder Impersonation" },
+            { "id": 100645, "count": 1, "name": "Enkil Cog" },
+            { "id": 100687, "count": 2, "name": "Faceless Night" },
+            { "id": 100761, "count": 4, "name": "Forced March" },
+            { "id": 100769, "count": 3, "name": "Forgotten Labyrinth" },
+            { "id": 100788, "count": 5, "name": "Freak Drive" },
+            { "id": 101001, "count": 2, "name": "Into Thin Air" },
+            { "id": 101125, "count": 3, "name": "Lost in Crowds" }
+          ]
+        },
+        {
+          "type": "Action Modifier/Combat",
+          "count": 1,
+          "cards": [{ "id": 101913, "count": 1, "name": "Swallowed by the Night" }]
+        },
+        {
+          "type": "Reaction",
+          "count": 6,
+          "cards": [
+            { "id": 100680, "count": 1, "name": "Eyes of Argus" },
+            { "id": 101321, "count": 2, "name": "On the Qui Vive" },
+            { "id": 101949, "count": 3, "name": "Telepathic Misdirection" }
+          ]
+        },
+        {
+          "type": "Combat",
+          "count": 5,
+          "cards": [{ "id": 101292, "count": 5, "name": "No Trace" }]
+        }
+      ]
+    }
+  },
+  {
+    "id": "13048",
+    "event": "PennyBridge - Charisma III",
+    "event_link": "https://www.vekn.net/event-calendar/event/13048",
+    "place": "Örebro, Sweden",
+    "date": "2026-05-23",
+    "tournament_format": "3R+F",
+    "players_count": 12,
+    "player": "Tim Karlsson",
+    "score": "0GW2+3",
+    "name": "Hecata swarm",
+    "comments": "About the deck in general:\nTry to get a vampire out on turn one, preferably with superior oblivion. Your first action should always be to recruit a Spectral Servitor and start bleeding – the deck can’t afford to fall behind on bleeds.\n9 times out of 10 you want to pay the upkeep for your Servitors and keep bleeding with them to maintain pressure. Try to avoid going down to 0 blood on your vampires, keep bringing out new vampires top to keep playing Servitors. Vampires on 1 blood can bleed like a servitor.\nNotes from the finals:\nKalle Blomgren (!Nosferatu Cathari bleed) -> Tim Karlsson (Hecata swarm bleed) -> Magnus Söder (Malkavian stealth bleed) -> Marcus Berg (Lasombra princes bleed & vote, top seed) -> Helena Löf (!Malkavian kindred spirits bleed)\nI drew Dreams of the Sphinx in my starting hand and could bring out Alek König on turn one. My early pressure forced my prey to bring out lower cap vampires in order to not fall behind. All decks went aggressively forward and Kalle was ousted on turn 5, then Magnus and Helena were ousted on turn 6. I had paid upkeep for every Servitor during the game and Marcus could not handle my swarm of minions in the heads up.\n",
+    "crypt": {
+      "count": 12,
+      "cards": [
+        { "id": 201723, "count": 2, "name": "Monica Giovanni" },
+        { "id": 201718, "count": 2, "name": "Gebeyehu Abdu" },
+        { "id": 201717, "count": 2, "name": "Alek König" },
+        { "id": 201737, "count": 1, "name": "Aitana, The Unholy" },
+        { "id": 201721, "count": 1, "name": "Lenelle, Mambo of Birmingham" },
+        { "id": 201720, "count": 1, "name": "Holliday \"Burgundy\" Hall" },
+        { "id": 201719, "count": 1, "name": "Hiromitsu Asano" },
+        { "id": 201765, "count": 1, "name": "Nadezhda" },
+        { "id": 201727, "count": 1, "name": "Peter St. John" }
+      ]
+    },
+    "library": {
+      "count": 63,
+      "cards": [
+        {
+          "type": "Master",
+          "count": 13,
+          "cards": [
+            { "id": 102298, "count": 1, "name": "Cappadocian Crypt" },
+            { "id": 100545, "count": 1, "name": "Direct Intervention" },
+            { "id": 100588, "count": 2, "name": "Dreams of the Sphinx" },
+            { "id": 102289, "count": 5, "name": "Family Gathering" },
+            { "id": 102301, "count": 1, "name": "Powerbase: Munich" },
+            { "id": 102121, "count": 3, "name": "Villein" }
+          ]
+        },
+        {
+          "type": "Action",
+          "count": 5,
+          "cards": [
+            { "id": 100390, "count": 2, "name": "Computer Hacking" },
+            { "id": 102295, "count": 3, "name": "Shroud of Decay" }
+          ]
+        },
+        {
+          "type": "Ally",
+          "count": 10,
+          "cards": [{ "id": 102296, "count": 10, "name": "Spectral Servitor" }]
+        },
+        {
+          "type": "Equipment",
+          "count": 1,
+          "cards": [{ "id": 100903, "count": 1, "name": "Heart of Nizchetus" }]
+        },
+        {
+          "type": "Action Modifier",
+          "count": 15,
+          "cards": [
+            { "id": 101098, "count": 2, "name": "Leverage" },
+            { "id": 102280, "count": 4, "name": "Shadow Cast" },
+            { "id": 102281, "count": 3, "name": "Shadow Cloak" },
+            { "id": 102282, "count": 3, "name": "Stygian Shroud" },
+            { "id": 102285, "count": 3, "name": "Where the Veil Thins" }
+          ]
+        },
+        {
+          "type": "Reaction",
+          "count": 14,
+          "cards": [
+            { "id": 100519, "count": 2, "name": "Delaying Tactics" },
+            { "id": 100680, "count": 2, "name": "Eyes of Argus" },
+            { "id": 101259, "count": 2, "name": "My Enemy's Enemy" },
+            { "id": 101321, "count": 2, "name": "On the Qui Vive" },
+            { "id": 102294, "count": 2, "name": "Shadow Sentinel" },
+            { "id": 101949, "count": 4, "name": "Telepathic Misdirection" }
+          ]
+        },
+        {
+          "type": "Combat",
+          "count": 4,
+          "cards": [{ "id": 102279, "count": 4, "name": "Pass Through Shadow" }]
+        },
+        {
+          "type": "Event",
+          "count": 1,
+          "cards": [{ "id": 102079, "count": 1, "name": "The Unmasking" }]
+        }
+      ]
+    }
+  },
+  {
+    "id": "12658",
+    "event": "Brazilian NC 2026",
+    "event_link": "https://www.vekn.net/event-calendar/event/12658",
+    "place": "Campina Grande (PB), Brazil",
+    "date": "2026-05-23",
+    "tournament_format": "3R+F",
+    "players_count": 59,
+    "player": "José Roberio Barbosa da Silva",
+    "score": "2GW8+3",
+    "name": "Lobisomem america em campina 2.0",
+    "crypt": {
+      "count": 13,
+      "cards": [
+        { "id": 201602, "count": 1, "name": "Massimiliano" },
+        { "id": 200081, "count": 1, "name": "André the Manipulator" },
+        { "id": 201521, "count": 1, "name": "Casey Snyder" },
+        { "id": 201574, "count": 1, "name": "Kuyén" },
+        { "id": 201601, "count": 1, "name": "Martina Srnankova" },
+        { "id": 200303, "count": 1, "name": "Crow" },
+        { "id": 201583, "count": 1, "name": "Dario Ziggler" },
+        { "id": 201597, "count": 1, "name": "Kamile Paukstys" },
+        { "id": 201590, "count": 1, "name": "Hanna Nokelainen" },
+        { "id": 201606, "count": 1, "name": "Nathan Turner" },
+        { "id": 201592, "count": 1, "name": "Indira" },
+        { "id": 201595, "count": 1, "name": "Joaquín de Cádiz" },
+        { "id": 201611, "count": 1, "name": "Ruslan Fedorenko" }
+      ]
+    },
+    "library": {
+      "count": 90,
+      "cards": [
+        {
+          "type": "Master",
+          "count": 22,
+          "cards": [
+            { "id": 100052, "count": 1, "name": "The Anarch Free Press" },
+            { "id": 100054, "count": 1, "name": "Anarch Railroad" },
+            { "id": 100126, "count": 1, "name": "Backways" },
+            { "id": 100297, "count": 1, "name": "Carfax Abbey" },
+            { "id": 100366, "count": 1, "name": "Club Illusion" },
+            { "id": 100545, "count": 2, "name": "Direct Intervention" },
+            { "id": 100609, "count": 1, "name": "Ecoterrorists" },
+            { "id": 100616, "count": 1, "name": "Effective Management" },
+            { "id": 101355, "count": 1, "name": "The Parthenon" },
+            { "id": 101439, "count": 1, "name": "Powerbase: Montreal" },
+            { "id": 101811, "count": 1, "name": "Smiling Jack, The Anarch" },
+            { "id": 102023, "count": 1, "name": "Tribute to the Master" },
+            { "id": 102113, "count": 2, "name": "Vessel" },
+            { "id": 102121, "count": 6, "name": "Villein" },
+            { "id": 102212, "count": 1, "name": "Zoo Hunting Ground" }
+          ]
+        },
+        {
+          "type": "Action",
+          "count": 17,
+          "cards": [
+            { "id": 100416, "count": 2, "name": "Constant Revolution" },
+            { "id": 101632, "count": 1, "name": "Rewilding" },
+            { "id": 101972, "count": 14, "name": "Thing" }
+          ]
+        },
+        {
+          "type": "Ally",
+          "count": 4,
+          "cards": [{ "id": 101602, "count": 4, "name": "Renegade Garou" }]
+        },
+        {
+          "type": "Equipment",
+          "count": 1,
+          "cards": [{ "id": 101733, "count": 1, "name": "Shackles of Enkidu" }]
+        },
+        {
+          "type": "Retainer",
+          "count": 4,
+          "cards": [{ "id": 101550, "count": 4, "name": "Raven Spy" }]
+        },
+        {
+          "type": "Action Modifier",
+          "count": 2,
+          "cards": [{ "id": 100600, "count": 2, "name": "Earth Control" }]
+        },
+        {
+          "type": "Action Modifier/Reaction",
+          "count": 3,
+          "cards": [{ "id": 102223, "count": 3, "name": "Form of the Bat" }]
+        },
+        {
+          "type": "Reaction",
+          "count": 25,
+          "cards": [
+            { "id": 102218, "count": 6, "name": "Bait and Switch" },
+            { "id": 102219, "count": 5, "name": "Deep Ecology" },
+            { "id": 100519, "count": 1, "name": "Delaying Tactics" },
+            { "id": 102222, "count": 8, "name": "Eyes of the Wild" },
+            { "id": 101501, "count": 5, "name": "Protection Racket" }
+          ]
+        },
+        {
+          "type": "Combat",
+          "count": 12,
+          "cards": [
+            { "id": 100601, "count": 11, "name": "Earth Meld" },
+            { "id": 100771, "count": 1, "name": "Form of Mist" }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "13108",
+    "event": "GP Melbourne 2026",
+    "event_link": "https://www.vekn.net/event-calendar/event/13108",
+    "place": "Melbourne, Australia",
+    "date": "2026-05-23",
+    "tournament_format": "3R+F",
+    "players_count": 25,
+    "player": "Ke Carlton",
+    "score": "1GW7.5+1.5",
+    "name": "Cultural Appropriation",
+    "comments": "Description: Mid to low cap tap and power bleed deck.\n\nAbombwe allows 7 caps to govern to 7 caps. Solid govern chain and quick to get minions out.\n\nDeep Song rush + Earth Meld to help the bleeds land. Would consider swapping 1x Wider View for NRA Pac.\n",
+    "crypt": {
+      "count": 12,
+      "cards": [
+        { "id": 201665, "count": 2, "name": "Ángel Guerrero" },
+        { "id": 201784, "count": 2, "name": "Máddji, Mistress of Szlachtas" },
+        { "id": 201786, "count": 2, "name": "Saankaláxt" },
+        { "id": 201678, "count": 1, "name": "Neserian" },
+        { "id": 201669, "count": 1, "name": "Clara Hjortshøj" },
+        { "id": 201677, "count": 1, "name": "Marialena" },
+        { "id": 201690, "count": 1, "name": "Whisper" },
+        { "id": 201682, "count": 1, "name": "Prentis Derby" },
+        { "id": 201688, "count": 1, "name": "Susie Kano" }
+      ]
+    },
+    "library": {
+      "count": 82,
+      "cards": [
+        {
+          "type": "Master",
+          "count": 22,
+          "cards": [
+            { "id": 100009, "count": 3, "name": "Abombwe" },
+            { "id": 100054, "count": 1, "name": "Anarch Railroad" },
+            { "id": 100058, "count": 1, "name": "Anarch Troublemaker" },
+            { "id": 102236, "count": 5, "name": "The British Museum, London" },
+            { "id": 100366, "count": 1, "name": "Club Illusion" },
+            { "id": 100435, "count": 1, "name": "The Coven" },
+            { "id": 100545, "count": 2, "name": "Direct Intervention" },
+            { "id": 100588, "count": 1, "name": "Dreams of the Sphinx" },
+            { "id": 100824, "count": 1, "name": "Giant's Blood" },
+            { "id": 102121, "count": 4, "name": "Villein" },
+            { "id": 102180, "count": 2, "name": "Wider View" }
+          ]
+        },
+        {
+          "type": "Action",
+          "count": 15,
+          "cards": [
+            { "id": 100515, "count": 3, "name": "Deep Song" },
+            { "id": 100845, "count": 12, "name": "Govern the Unaligned" }
+          ]
+        },
+        {
+          "type": "Ally",
+          "count": 1,
+          "cards": [{ "id": 101261, "count": 1, "name": "Mylan Horseed" }]
+        },
+        {
+          "type": "Equipment",
+          "count": 9,
+          "cards": [
+            { "id": 100374, "count": 1, "name": "Codex of the Edenic Groundskeepers" },
+            { "id": 100903, "count": 1, "name": "Heart of Nizchetus" },
+            { "id": 101114, "count": 6, "name": "Living Manse" },
+            { "id": 102243, "count": 1, "name": "Ritual Goblet" }
+          ]
+        },
+        {
+          "type": "Retainer",
+          "count": 1,
+          "cards": [{ "id": 100476, "count": 1, "name": "Crypt's Sons" }]
+        },
+        {
+          "type": "Action Modifier",
+          "count": 5,
+          "cards": [
+            { "id": 100401, "count": 1, "name": "Conditioning" },
+            { "id": 100600, "count": 2, "name": "Earth Control" },
+            { "id": 100765, "count": 2, "name": "Foreshadowing Destruction" }
+          ]
+        },
+        {
+          "type": "Action Modifier/Combat",
+          "count": 5,
+          "cards": [
+            { "id": 102224, "count": 3, "name": "Form of the Cobra" },
+            { "id": 101542, "count": 2, "name": "Rapid Change" }
+          ]
+        },
+        {
+          "type": "Action Modifier/Reaction",
+          "count": 2,
+          "cards": [{ "id": 102223, "count": 2, "name": "Form of the Bat" }]
+        },
+        {
+          "type": "Reaction",
+          "count": 13,
+          "cards": [
+            { "id": 102219, "count": 2, "name": "Deep Ecology" },
+            { "id": 100518, "count": 7, "name": "Deflection" },
+            { "id": 100519, "count": 1, "name": "Delaying Tactics" },
+            { "id": 101321, "count": 2, "name": "On the Qui Vive" },
+            { "id": 101578, "count": 1, "name": "Redirection" }
+          ]
+        },
+        {
+          "type": "Combat",
+          "count": 9,
+          "cards": [
+            { "id": 100601, "count": 4, "name": "Earth Meld" },
+            { "id": 100771, "count": 5, "name": "Form of Mist" }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "13321",
+    "event": "Coterie Tactics CG",
+    "event_link": "https://www.vekn.net/event-calendar/event/13321",
+    "place": "Campina Grande (PB), Brazil",
+    "date": "2026-05-22",
+    "tournament_format": "2R+F",
+    "players_count": 10,
+    "player": "Joab Rogerio Barbosa da Silva",
+    "score": "0GW2+3",
+    "name": "The Endless Dance [by Martin Weinmayer]",
+    "crypt": {
+      "count": 12,
+      "cards": [
+        { "id": 201694, "count": 5, "name": "Diana Iadanza" },
+        { "id": 201696, "count": 1, "name": "François Villon (G6)" },
+        { "id": 201540, "count": 1, "name": "Catalina Vega" },
+        { "id": 201702, "count": 1, "name": "Marcos Belegrad" },
+        { "id": 201703, "count": 1, "name": "Modius" },
+        { "id": 201547, "count": 1, "name": "Flávio Gonçalves" },
+        { "id": 201633, "count": 1, "name": "Maila" },
+        { "id": 201561, "count": 1, "name": "Mkhokheli" }
+      ]
+    },
+    "library": {
+      "count": 90,
+      "cards": [
+        {
+          "type": "Master",
+          "count": 18,
+          "cards": [
+            { "id": 102236, "count": 1, "name": "The British Museum, London" },
+            { "id": 102269, "count": 1, "name": "Camarilla Conclave" },
+            { "id": 100444, "count": 1, "name": "Creepshow Casino" },
+            { "id": 100545, "count": 1, "name": "Direct Intervention" },
+            { "id": 100588, "count": 2, "name": "Dreams of the Sphinx" },
+            { "id": 100620, "count": 1, "name": "Elder Library" },
+            { "id": 100632, "count": 1, "name": "Elysium: The Palace of Versailles" },
+            { "id": 100824, "count": 1, "name": "Giant's Blood" },
+            { "id": 101238, "count": 1, "name": "Monastery of Shadows" },
+            { "id": 101350, "count": 2, "name": "Papillon" },
+            { "id": 102121, "count": 6, "name": "Villein" }
+          ]
+        },
+        {
+          "type": "Equipment",
+          "count": 4,
+          "cards": [
+            { "id": 100243, "count": 1, "name": "Bowl of Convergence" },
+            { "id": 100903, "count": 1, "name": "Heart of Nizchetus" },
+            { "id": 101345, "count": 1, "name": "Palatial Estate" },
+            { "id": 101681, "count": 1, "name": "The Sargon Fragment" }
+          ]
+        },
+        {
+          "type": "Political Action",
+          "count": 17,
+          "cards": [
+            { "id": 100059, "count": 1, "name": "Anarchist Uprising" },
+            { "id": 100064, "count": 1, "name": "Ancient Influence" },
+            { "id": 100065, "count": 1, "name": "Ancilla Empowerment" },
+            { "id": 102270, "count": 5, "name": "Camarilla's Iron Fist" },
+            { "id": 101056, "count": 4, "name": "Kine Resources Contested" },
+            { "id": 101353, "count": 4, "name": "Parity Shift" },
+            { "id": 101417, "count": 1, "name": "Political Stranglehold" }
+          ]
+        },
+        {
+          "type": "Action Modifier",
+          "count": 22,
+          "cards": [
+            { "id": 100031, "count": 1, "name": "Aire of Elation" },
+            { "id": 100119, "count": 4, "name": "Awe" },
+            { "id": 100761, "count": 4, "name": "Forced March" },
+            { "id": 100788, "count": 1, "name": "Freak Drive" },
+            { "id": 102273, "count": 4, "name": "Loup" },
+            { "id": 101387, "count": 2, "name": "Perfect Paragon" },
+            { "id": 102131, "count": 6, "name": "Voter Captivation" }
+          ]
+        },
+        {
+          "type": "Action Modifier/Reaction",
+          "count": 2,
+          "cards": [{ "id": 101686, "count": 2, "name": "Scalpel Tongue" }]
+        },
+        {
+          "type": "Reaction",
+          "count": 13,
+          "cards": [
+            { "id": 100680, "count": 4, "name": "Eyes of Argus" },
+            { "id": 101706, "count": 4, "name": "Second Tradition: Domain" },
+            { "id": 101949, "count": 5, "name": "Telepathic Misdirection" }
+          ]
+        },
+        {
+          "type": "Combat",
+          "count": 14,
+          "cards": [
+            { "id": 100333, "count": 6, "name": "Charismatic Aura" },
+            { "id": 101144, "count": 8, "name": "Majesty" }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "13299",
+    "event": "Eluding the Arms of Morpheus CG",
+    "event_link": "https://www.vekn.net/event-calendar/event/13299",
+    "place": "Campina Grande (PB), Brazil",
+    "date": "2026-05-17",
+    "tournament_format": "2R+F",
+    "players_count": 10,
+    "player": "Matheus Dantas",
+    "score": "0GW3+3",
+    "name": "G Incrivel",
+    "crypt": {
+      "count": 12,
+      "cards": [
+        { "id": 201694, "count": 4, "name": "Diana Iadanza" },
+        { "id": 201540, "count": 1, "name": "Catalina Vega" },
+        { "id": 201702, "count": 1, "name": "Marcos Belegrad" },
+        { "id": 201547, "count": 1, "name": "Flávio Gonçalves" },
+        { "id": 201633, "count": 1, "name": "Maila" },
+        { "id": 201561, "count": 1, "name": "Mkhokheli" },
+        { "id": 201560, "count": 1, "name": "Min-seo" },
+        { "id": 201564, "count": 1, "name": "Nik Sikko" },
+        { "id": 201631, "count": 1, "name": "Mateo García" }
+      ]
+    },
+    "library": {
+      "count": 89,
+      "cards": [
+        {
+          "type": "Master",
+          "count": 17,
+          "cards": [
+            { "id": 102269, "count": 1, "name": "Camarilla Conclave" },
+            { "id": 100444, "count": 1, "name": "Creepshow Casino" },
+            { "id": 100545, "count": 1, "name": "Direct Intervention" },
+            { "id": 100588, "count": 2, "name": "Dreams of the Sphinx" },
+            { "id": 100632, "count": 1, "name": "Elysium: The Palace of Versailles" },
+            { "id": 101238, "count": 1, "name": "Monastery of Shadows" },
+            { "id": 101350, "count": 1, "name": "Papillon" },
+            { "id": 101989, "count": 4, "name": "Toreador Grand Ball" },
+            { "id": 102121, "count": 5, "name": "Villein" }
+          ]
+        },
+        {
+          "type": "Political Action",
+          "count": 16,
+          "cards": [
+            { "id": 100059, "count": 1, "name": "Anarchist Uprising" },
+            { "id": 100064, "count": 1, "name": "Ancient Influence" },
+            { "id": 100065, "count": 1, "name": "Ancilla Empowerment" },
+            { "id": 102270, "count": 6, "name": "Camarilla's Iron Fist" },
+            { "id": 101056, "count": 6, "name": "Kine Resources Contested" },
+            { "id": 101417, "count": 1, "name": "Political Stranglehold" }
+          ]
+        },
+        {
+          "type": "Action Modifier",
+          "count": 30,
+          "cards": [
+            { "id": 100031, "count": 3, "name": "Aire of Elation" },
+            { "id": 100119, "count": 5, "name": "Awe" },
+            { "id": 100157, "count": 2, "name": "Bewitching Oration" },
+            { "id": 100761, "count": 4, "name": "Forced March" },
+            { "id": 102273, "count": 5, "name": "Loup" },
+            { "id": 101387, "count": 3, "name": "Perfect Paragon" },
+            { "id": 102131, "count": 8, "name": "Voter Captivation" }
+          ]
+        },
+        {
+          "type": "Action Modifier/Reaction",
+          "count": 3,
+          "cards": [{ "id": 101686, "count": 3, "name": "Scalpel Tongue" }]
+        },
+        {
+          "type": "Reaction",
+          "count": 14,
+          "cards": [
+            { "id": 100680, "count": 4, "name": "Eyes of Argus" },
+            { "id": 101706, "count": 3, "name": "Second Tradition: Domain" },
+            { "id": 101949, "count": 7, "name": "Telepathic Misdirection" }
+          ]
+        },
+        { "type": "Combat", "count": 9, "cards": [{ "id": 101144, "count": 9, "name": "Majesty" }] }
+      ]
+    }
+  },
+  {
+    "id": "13315",
+    "event": "1º Campeonato Carioca V5 de VtES",
+    "event_link": "https://www.vekn.net/event-calendar/event/13315",
+    "place": "Rio de Janeiro, Brazil",
+    "date": "2026-05-17",
+    "tournament_format": "2R+F",
+    "players_count": 12,
+    "player": "José Fontenele",
+    "score": "1GW3+1.5",
+    "name": "OluwStar",
+    "crypt": {
+      "count": 12,
+      "cards": [
+        { "id": 201656, "count": 4, "name": "Oluwafunmilayo" },
+        { "id": 201587, "count": 2, "name": "Farah Sarroub" },
+        { "id": 201604, "count": 2, "name": "Kassandra Tassaki" },
+        { "id": 201594, "count": 2, "name": "Warmaksan" },
+        { "id": 201598, "count": 1, "name": "Kasim Bayar" },
+        { "id": 201599, "count": 1, "name": "Khadija Al-Kindi" }
+      ]
+    },
+    "library": {
+      "count": 90,
+      "cards": [
+        {
+          "type": "Master",
+          "count": 18,
+          "cards": [
+            { "id": 100085, "count": 1, "name": "Archon Investigation" },
+            { "id": 100698, "count": 1, "name": "Fame" },
+            { "id": 102226, "count": 3, "name": "Haqim's Law: Retribution" },
+            { "id": 101171, "count": 1, "name": "Market Square" },
+            { "id": 101242, "count": 1, "name": "Monster" },
+            { "id": 101350, "count": 1, "name": "Papillon" },
+            { "id": 101439, "count": 1, "name": "Powerbase: Montreal" },
+            { "id": 101487, "count": 3, "name": "Priority Contract" },
+            { "id": 102121, "count": 5, "name": "Villein" },
+            { "id": 102201, "count": 1, "name": "Yoruba Shrine" }
+          ]
+        },
+        {
+          "type": "Action",
+          "count": 10,
+          "cards": [
+            { "id": 102228, "count": 4, "name": "Hunter's Mark" },
+            { "id": 101143, "count": 6, "name": "Magic of the Smith" }
+          ]
+        },
+        {
+          "type": "Equipment",
+          "count": 6,
+          "cards": [
+            { "id": 100001, "count": 2, "name": ".44 Magnum" },
+            { "id": 100243, "count": 1, "name": "Bowl of Convergence" },
+            { "id": 100742, "count": 1, "name": "Flamethrower" },
+            { "id": 100903, "count": 1, "name": "Heart of Nizchetus" },
+            { "id": 101040, "count": 1, "name": "Kevlar Vest" }
+          ]
+        },
+        {
+          "type": "Reaction",
+          "count": 18,
+          "cards": [
+            { "id": 101706, "count": 14, "name": "Second Tradition: Domain" },
+            { "id": 101949, "count": 4, "name": "Telepathic Misdirection" }
+          ]
+        },
+        {
+          "type": "Combat",
+          "count": 38,
+          "cards": [
+            { "id": 100227, "count": 3, "name": "Blur" },
+            { "id": 102227, "count": 11, "name": "Hunger of Marduk" },
+            { "id": 101523, "count": 10, "name": "Pursuit" },
+            { "id": 101588, "count": 3, "name": "Rego Motum" },
+            { "id": 101778, "count": 2, "name": "Side Strike" },
+            { "id": 101950, "count": 9, "name": "Telepathic Tracking" }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "12893",
+    "event": "Molly MacDonald",
+    "event_link": "https://www.vekn.net/event-calendar/event/12893",
+    "place": "Fortaleza (CE), Brazil",
+    "date": "2026-05-17",
+    "tournament_format": "2R+F",
+    "players_count": 14,
+    "player": "Antônio Caio",
+    "score": "0GW3.5+2",
+    "name": "Ghedão",
+    "comments": "Description: Deck de Rush que usa Ghede e Typhonic Beast\n\n-- 2VP in final\n",
+    "crypt": {
+      "count": 12,
+      "cards": [
+        { "id": 200512, "count": 6, "name": "Ghede" },
+        { "id": 200005, "count": 2, "name": "Abdelsobek" },
+        { "id": 200076, "count": 2, "name": "Anarch Convert" },
+        { "id": 200641, "count": 1, "name": "Iris Bennett" },
+        { "id": 201462, "count": 1, "name": "Walker Grimes" }
+      ]
+    },
+    "library": {
+      "count": 90,
+      "cards": [
+        {
+          "type": "Master",
+          "count": 16,
+          "cards": [
+            { "id": 100106, "count": 6, "name": "Ashur Tablets" },
+            { "id": 100588, "count": 1, "name": "Dreams of the Sphinx" },
+            { "id": 100698, "count": 1, "name": "Fame" },
+            { "id": 100824, "count": 1, "name": "Giant's Blood" },
+            { "id": 100842, "count": 1, "name": "Golconda: Inner Peace" },
+            { "id": 100984, "count": 1, "name": "Information Highway" },
+            { "id": 101238, "count": 1, "name": "Monastery of Shadows" },
+            { "id": 101711, "count": 1, "name": "Secure Haven" },
+            { "id": 101958, "count": 1, "name": "Tension in the Ranks" },
+            { "id": 102121, "count": 2, "name": "Villein" }
+          ]
+        },
+        {
+          "type": "Action",
+          "count": 9,
+          "cards": [
+            { "id": 100046, "count": 2, "name": "Ambush" },
+            { "id": 100159, "count": 1, "name": "Big Game" },
+            { "id": 100266, "count": 1, "name": "Bum's Rush" },
+            { "id": 100886, "count": 3, "name": "Harass" },
+            { "id": 100904, "count": 1, "name": "Heart of the City" },
+            { "id": 101483, "count": 1, "name": "Preternatural Strength" }
+          ]
+        },
+        {
+          "type": "Ally",
+          "count": 1,
+          "cards": [{ "id": 100855, "count": 1, "name": "Gregory Winter" }]
+        },
+        {
+          "type": "Equipment",
+          "count": 1,
+          "cards": [{ "id": 101014, "count": 1, "name": "Ivory Bow" }]
+        },
+        {
+          "type": "Action Modifier",
+          "count": 9,
+          "cards": [{ "id": 100788, "count": 9, "name": "Freak Drive" }]
+        },
+        {
+          "type": "Combat",
+          "count": 54,
+          "cards": [
+            { "id": 100959, "count": 10, "name": "Immortal Grapple" },
+            { "id": 101649, "count": 8, "name": "Rolling with the Punches" },
+            { "id": 101888, "count": 1, "name": "Stunt Cycle" },
+            { "id": 101945, "count": 5, "name": "Taste of Vitae" },
+            { "id": 101982, "count": 1, "name": "Thrown Gate" },
+            { "id": 102054, "count": 26, "name": "Typhonic Beast" },
+            { "id": 102071, "count": 3, "name": "Unflinching Persistence" }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "13044",
+    "event": "Serbian NC 2026 - Reindoctrination in Belgrade",
+    "event_link": "https://www.vekn.net/event-calendar/event/13044",
+    "place": "Belgrade, Serbia",
+    "date": "2026-05-16",
+    "tournament_format": "3R+F",
+    "players_count": 19,
+    "player": "Nikica Novaković",
+    "score": "2GW6.5+2",
+    "author": "Nikica Novaković Otso Saariluoma",
+    "comments": "The Deck Name: Carthage Withering\nI read the report on GP Dallas where Brujah barons won and then NC in Finland’s winner’s shoutout to Otso, and it reminded me of a deck I tried a while ago, but did not enjoy that much in our weekly games. I also knew that I’ll face Gangrel barons, more likely than not, so let’s give them a taste of their own medicine by contesting everything and making that damned Earth Meld actually cost something!\nOff I went to do a bit of netdecking!\n",
+    "crypt": {
+      "count": 12,
+      "cards": [
+        { "id": 201658, "count": 3, "name": "Saku Pihlajamäki" },
+        { "id": 201576, "count": 2, "name": "Aline Gädeke" },
+        { "id": 201614, "count": 2, "name": "Valeriya Zinovieva" },
+        { "id": 201526, "count": 2, "name": "Leumeah" },
+        { "id": 201602, "count": 1, "name": "Massimiliano" },
+        { "id": 201579, "count": 1, "name": "Atiena" },
+        { "id": 201521, "count": 1, "name": "Casey Snyder" }
+      ]
+    },
+    "library": {
+      "count": 71,
+      "cards": [
+        {
+          "type": "Master",
+          "count": 33,
+          "cards": [
+            { "id": 100106, "count": 6, "name": "Ashur Tablets" },
+            { "id": 100297, "count": 2, "name": "Carfax Abbey" },
+            { "id": 100493, "count": 1, "name": "Dark Influences" },
+            { "id": 100588, "count": 2, "name": "Dreams of the Sphinx" },
+            { "id": 100620, "count": 1, "name": "Elder Library" },
+            { "id": 100775, "count": 1, "name": "Fortschritt Library" },
+            { "id": 100809, "count": 1, "name": "Garibaldi-Meucci Museum" },
+            { "id": 100824, "count": 1, "name": "Giant's Blood" },
+            { "id": 100984, "count": 1, "name": "Information Highway" },
+            { "id": 101277, "count": 2, "name": "New Carthage" },
+            { "id": 101355, "count": 3, "name": "The Parthenon" },
+            { "id": 101404, "count": 1, "name": "Poacher's Hunting Ground" },
+            { "id": 101439, "count": 1, "name": "Powerbase: Montreal" },
+            { "id": 102113, "count": 2, "name": "Vessel" },
+            { "id": 102121, "count": 6, "name": "Villein" },
+            { "id": 102180, "count": 2, "name": "Wider View" }
+          ]
+        },
+        {
+          "type": "Equipment",
+          "count": 6,
+          "cards": [
+            { "id": 100001, "count": 4, "name": ".44 Magnum" },
+            { "id": 100903, "count": 1, "name": "Heart of Nizchetus" },
+            { "id": 101856, "count": 1, "name": "Sport Bike" }
+          ]
+        },
+        {
+          "type": "Political Action",
+          "count": 2,
+          "cards": [
+            { "id": 101631, "count": 1, "name": "Revolutionary Council" },
+            { "id": 101663, "count": 1, "name": "Rumors of Gehenna" }
+          ]
+        },
+        {
+          "type": "Retainer",
+          "count": 1,
+          "cards": [{ "id": 101249, "count": 1, "name": "Mr. Winthrop" }]
+        },
+        {
+          "type": "Reaction",
+          "count": 16,
+          "cards": [
+            { "id": 102218, "count": 5, "name": "Bait and Switch" },
+            { "id": 101321, "count": 2, "name": "On the Qui Vive" },
+            { "id": 102230, "count": 9, "name": "Organized Resistance" }
+          ]
+        },
+        {
+          "type": "Combat",
+          "count": 9,
+          "cards": [
+            { "id": 100392, "count": 3, "name": "Concealed Weapon" },
+            { "id": 100563, "count": 4, "name": "Diversion" },
+            { "id": 100597, "count": 2, "name": "Dust Up" }
+          ]
+        },
+        {
+          "type": "Event",
+          "count": 4,
+          "cards": [
+            { "id": 100248, "count": 1, "name": "Break the Code" },
+            { "id": 101285, "count": 1, "name": "Nightmares upon Nightmares" },
+            { "id": 101807, "count": 1, "name": "The Slow Withering" },
+            { "id": 101974, "count": 1, "name": "Thirst" }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "13138",
+    "event": "Life Boon",
+    "event_link": "https://www.vekn.net/event-calendar/event/13138",
+    "place": "Bedford, United Kingdom",
+    "date": "2026-05-16",
+    "tournament_format": "3R+F",
+    "players_count": 15,
+    "player": "Niki Sehmi",
+    "score": "1GW4+4",
+    "name": "Venturing Dragons",
+    "comments": "Description: This was an attempt to combine the ousting ability of many mid/low cap dominate with the cheap efficiency of Dragon's Breath Rounds. The combination of range, fortitude, combat ends, intercept and bounce make it tough to break down compared to pure bleed decks. A few anti-ally cards were added for those who don't care much about the anti-vampire cards.\n",
+    "crypt": {
+      "count": 12,
+      "cards": [
+        { "id": 200913, "count": 3, "name": "Marciana Giovanni, Investigator" },
+        { "id": 200532, "count": 1, "name": "Gracis Nostinus" },
+        { "id": 200604, "count": 1, "name": "Horatio Ballard" },
+        { "id": 200403, "count": 1, "name": "Edward Vignes" },
+        { "id": 200256, "count": 1, "name": "Catherine du Bois" },
+        { "id": 200629, "count": 1, "name": "Ilyana Ravidovich" },
+        { "id": 201162, "count": 1, "name": "Ranjan Rishi, Camarilla Scholar" },
+        { "id": 200635, "count": 1, "name": "Ingrid Russo" },
+        { "id": 200812, "count": 1, "name": "Lana Butcher" },
+        { "id": 201208, "count": 1, "name": "Royce" }
+      ]
+    },
+    "library": {
+      "count": 90,
+      "cards": [
+        {
+          "type": "Master",
+          "count": 12,
+          "cards": [
+            { "id": 100058, "count": 1, "name": "Anarch Troublemaker" },
+            { "id": 100327, "count": 1, "name": "Channel 10" },
+            { "id": 100588, "count": 1, "name": "Dreams of the Sphinx" },
+            { "id": 100620, "count": 1, "name": "Elder Library" },
+            { "id": 101019, "count": 1, "name": "Jake Washington" },
+            { "id": 101067, "count": 1, "name": "KRCG News Radio" },
+            { "id": 101120, "count": 1, "name": "London Evening Star, Tabloid Newspaper" },
+            { "id": 101225, "count": 1, "name": "Misdirection" },
+            { "id": 101384, "count": 1, "name": "Pentex™ Subversion" },
+            { "id": 101877, "count": 1, "name": "Storage Annex" },
+            { "id": 102084, "count": 1, "name": "Uptown Hunting Ground" },
+            { "id": 102189, "count": 1, "name": "WMRH Talk Radio" }
+          ]
+        },
+        {
+          "type": "Action",
+          "count": 13,
+          "cards": [
+            { "id": 100079, "count": 1, "name": "Aranthebes, The Immortal" },
+            { "id": 100652, "count": 3, "name": "Entrancement" },
+            { "id": 100845, "count": 9, "name": "Govern the Unaligned" }
+          ]
+        },
+        {
+          "type": "Equipment",
+          "count": 11,
+          "cards": [
+            { "id": 100903, "count": 1, "name": "Heart of Nizchetus" },
+            { "id": 101682, "count": 9, "name": "Saturday-Night Special" },
+            { "id": 101856, "count": 1, "name": "Sport Bike" }
+          ]
+        },
+        {
+          "type": "Retainer",
+          "count": 1,
+          "cards": [{ "id": 101249, "count": 1, "name": "Mr. Winthrop" }]
+        },
+        {
+          "type": "Action Modifier",
+          "count": 17,
+          "cards": [
+            { "id": 100401, "count": 3, "name": "Conditioning" },
+            { "id": 100492, "count": 2, "name": "Daring the Dawn" },
+            { "id": 100765, "count": 2, "name": "Foreshadowing Destruction" },
+            { "id": 100788, "count": 5, "name": "Freak Drive" },
+            { "id": 101712, "count": 5, "name": "Seduction" }
+          ]
+        },
+        {
+          "type": "Action Modifier/Combat",
+          "count": 4,
+          "cards": [{ "id": 100758, "count": 4, "name": "Force of Personality" }]
+        },
+        {
+          "type": "Reaction",
+          "count": 14,
+          "cards": [
+            { "id": 100518, "count": 7, "name": "Deflection" },
+            { "id": 101321, "count": 5, "name": "On the Qui Vive" },
+            { "id": 102137, "count": 2, "name": "Wake with Evening's Freshness" }
+          ]
+        },
+        {
+          "type": "Combat",
+          "count": 18,
+          "cards": [
+            { "id": 100392, "count": 6, "name": "Concealed Weapon" },
+            { "id": 100580, "count": 5, "name": "Dragon's Breath Rounds" },
+            { "id": 100918, "count": 2, "name": "Hidden Strength" },
+            { "id": 101817, "count": 5, "name": "Soak" }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "13259",
+    "event": "5th Road to Pulled Fang #15",
+    "event_link": "https://www.vekn.net/event-calendar/event/13259",
+    "place": "Olomouc, Czech Republic",
+    "date": "2026-05-16",
+    "tournament_format": "3R+F",
+    "players_count": 20,
+    "player": "Lukáš Simandl",
+    "score": "1GW7+2.5",
+    "name": "Lasombra bleed & friends",
+    "crypt": {
+      "count": 12,
+      "cards": [
+        { "id": 201715, "count": 2, "name": "Rinaldo Albizzi" },
+        { "id": 201710, "count": 2, "name": "Azucena" },
+        { "id": 201749, "count": 2, "name": "El Monseñor" },
+        { "id": 201714, "count": 1, "name": "María del Toro" },
+        { "id": 201708, "count": 1, "name": "Aintzane Arriaga" },
+        { "id": 201713, "count": 1, "name": "Kamaluddin" },
+        { "id": 201780, "count": 1, "name": "Zbigniew, Hunter of Mekhet" },
+        { "id": 201711, "count": 1, "name": "Braden White" },
+        { "id": 201709, "count": 1, "name": "Araceli \"Celia\" Rivera" }
+      ]
+    },
+    "library": {
+      "count": 90,
+      "cards": [
+        {
+          "type": "Master",
+          "count": 15,
+          "cards": [
+            { "id": 100435, "count": 1, "name": "The Coven" },
+            { "id": 100545, "count": 3, "name": "Direct Intervention" },
+            { "id": 100588, "count": 2, "name": "Dreams of the Sphinx" },
+            { "id": 100629, "count": 1, "name": "Elysian Fields" },
+            { "id": 100824, "count": 1, "name": "Giant's Blood" },
+            { "id": 100984, "count": 1, "name": "Information Highway" },
+            { "id": 101019, "count": 1, "name": "Jake Washington" },
+            { "id": 101384, "count": 1, "name": "Pentex™ Subversion" },
+            { "id": 101388, "count": 2, "name": "Perfectionist" },
+            { "id": 102113, "count": 1, "name": "Vessel" },
+            { "id": 102180, "count": 1, "name": "Wider View" }
+          ]
+        },
+        {
+          "type": "Action",
+          "count": 12,
+          "cards": [{ "id": 100845, "count": 12, "name": "Govern the Unaligned" }]
+        },
+        {
+          "type": "Ally",
+          "count": 13,
+          "cards": [
+            { "id": 100298, "count": 1, "name": "Carlton Van Wyk" },
+            { "id": 102296, "count": 12, "name": "Spectral Servitor" }
+          ]
+        },
+        {
+          "type": "Action Modifier",
+          "count": 25,
+          "cards": [
+            { "id": 100236, "count": 2, "name": "Bonding" },
+            { "id": 100401, "count": 5, "name": "Conditioning" },
+            { "id": 102280, "count": 5, "name": "Shadow Cast" },
+            { "id": 102281, "count": 5, "name": "Shadow Cloak" },
+            { "id": 102282, "count": 4, "name": "Stygian Shroud" },
+            { "id": 102285, "count": 4, "name": "Where the Veil Thins" }
+          ]
+        },
+        {
+          "type": "Reaction",
+          "count": 15,
+          "cards": [
+            { "id": 100518, "count": 8, "name": "Deflection" },
+            { "id": 101321, "count": 1, "name": "On the Qui Vive" },
+            { "id": 102294, "count": 6, "name": "Shadow Sentinel" }
+          ]
+        },
+        {
+          "type": "Combat",
+          "count": 7,
+          "cards": [
+            { "id": 102279, "count": 3, "name": "Pass Through Shadow" },
+            { "id": 101942, "count": 4, "name": "Target Vitals" }
+          ]
+        },
+        {
+          "type": "Event",
+          "count": 3,
+          "cards": [
+            { "id": 100709, "count": 1, "name": "FBI Special Affairs Division" },
+            { "id": 102079, "count": 2, "name": "The Unmasking" }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "13231",
+    "event": "Fee Stake: Lublin 2026",
+    "event_link": "https://www.vekn.net/event-calendar/event/13231",
+    "place": "Lublin, Poland",
+    "date": "2026-05-16",
+    "tournament_format": "3R+F",
+    "players_count": 25,
+    "player": "Tomasz Pietkiewicz",
+    "score": "1GW5+1",
+    "name": "Gangrel No Council",
+    "comments": "Final won via Life Boon played 40 seconds before the end to steal 0.5 VP for 5-player time-out.\n",
+    "crypt": {
+      "count": 12,
+      "cards": [
+        { "id": 201602, "count": 2, "name": "Massimiliano" },
+        { "id": 201521, "count": 2, "name": "Casey Snyder" },
+        { "id": 201574, "count": 2, "name": "Kuyén" },
+        { "id": 200081, "count": 1, "name": "André the Manipulator" },
+        { "id": 201601, "count": 1, "name": "Martina Srnankova" },
+        { "id": 201597, "count": 1, "name": "Kamile Paukstys" },
+        { "id": 201606, "count": 1, "name": "Nathan Turner" },
+        { "id": 201592, "count": 1, "name": "Indira" },
+        { "id": 201611, "count": 1, "name": "Ruslan Fedorenko" }
+      ]
+    },
+    "library": {
+      "count": 80,
+      "cards": [
+        {
+          "type": "Master",
+          "count": 21,
+          "cards": [
+            { "id": 100052, "count": 1, "name": "The Anarch Free Press" },
+            { "id": 100054, "count": 1, "name": "Anarch Railroad" },
+            { "id": 100085, "count": 1, "name": "Archon Investigation" },
+            { "id": 100126, "count": 1, "name": "Backways" },
+            { "id": 100297, "count": 1, "name": "Carfax Abbey" },
+            { "id": 100366, "count": 2, "name": "Club Illusion" },
+            { "id": 100545, "count": 2, "name": "Direct Intervention" },
+            { "id": 100609, "count": 1, "name": "Ecoterrorists" },
+            { "id": 100809, "count": 1, "name": "Garibaldi-Meucci Museum" },
+            { "id": 101103, "count": 1, "name": "Life Boon" },
+            { "id": 102113, "count": 2, "name": "Vessel" },
+            { "id": 102121, "count": 5, "name": "Villein" },
+            { "id": 102180, "count": 1, "name": "Wider View" },
+            { "id": 102212, "count": 1, "name": "Zoo Hunting Ground" }
+          ]
+        },
+        { "type": "Action", "count": 8, "cards": [{ "id": 101972, "count": 8, "name": "Thing" }] },
+        {
+          "type": "Equipment",
+          "count": 3,
+          "cards": [
+            { "id": 100903, "count": 1, "name": "Heart of Nizchetus" },
+            { "id": 101816, "count": 2, "name": "Sniper Rifle" }
+          ]
+        },
+        {
+          "type": "Retainer",
+          "count": 4,
+          "cards": [
+            { "id": 101249, "count": 1, "name": "Mr. Winthrop" },
+            { "id": 101550, "count": 3, "name": "Raven Spy" }
+          ]
+        },
+        {
+          "type": "Action Modifier",
+          "count": 1,
+          "cards": [{ "id": 101239, "count": 1, "name": "Monkey Wrench" }]
+        },
+        {
+          "type": "Action Modifier/Reaction",
+          "count": 4,
+          "cards": [{ "id": 102223, "count": 4, "name": "Form of the Bat" }]
+        },
+        {
+          "type": "Reaction",
+          "count": 24,
+          "cards": [
+            { "id": 102218, "count": 8, "name": "Bait and Switch" },
+            { "id": 102219, "count": 5, "name": "Deep Ecology" },
+            { "id": 102230, "count": 9, "name": "Organized Resistance" },
+            { "id": 101501, "count": 2, "name": "Protection Racket" }
+          ]
+        },
+        {
+          "type": "Combat",
+          "count": 15,
+          "cards": [
+            { "id": 100576, "count": 1, "name": "Donnybrook" },
+            { "id": 100601, "count": 10, "name": "Earth Meld" },
+            { "id": 100771, "count": 4, "name": "Form of Mist" }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "13207",
+    "event": "Anticipation",
+    "event_link": "https://www.vekn.net/event-calendar/event/13207",
+    "place": "Pittsburgh (PA), USA",
+    "date": "2026-05-09",
+    "tournament_format": "2R+F",
+    "players_count": 15,
+    "player": "Erik Albenze",
+    "score": "1GW2.5+2",
+    "name": "Nephandus garbage",
+    "comments": "Description: Just another garbage nephandus deck but with only 12 unique cards!\n",
+    "crypt": {
+      "count": 12,
+      "cards": [
+        { "id": 200116, "count": 6, "name": "Antonio d'Erlette" },
+        { "id": 200767, "count": 6, "name": "Keith Moody" }
+      ]
+    },
+    "library": {
+      "count": 60,
+      "cards": [
+        {
+          "type": "Master",
+          "count": 13,
+          "cards": [
+            { "id": 100106, "count": 12, "name": "Ashur Tablets" },
+            { "id": 101112, "count": 1, "name": "Liquidation" }
+          ]
+        },
+        {
+          "type": "Action",
+          "count": 16,
+          "cards": [
+            { "id": 100046, "count": 2, "name": "Ambush" },
+            { "id": 100390, "count": 8, "name": "Computer Hacking" },
+            { "id": 100886, "count": 6, "name": "Harass" }
+          ]
+        },
+        {
+          "type": "Ally",
+          "count": 10,
+          "cards": [{ "id": 101272, "count": 10, "name": "Nephandus" }]
+        },
+        {
+          "type": "Reaction",
+          "count": 11,
+          "cards": [
+            { "id": 100518, "count": 8, "name": "Deflection" },
+            { "id": 100519, "count": 3, "name": "Delaying Tactics" }
+          ]
+        },
+        {
+          "type": "Combat",
+          "count": 8,
+          "cards": [{ "id": 101942, "count": 8, "name": "Target Vitals" }]
+        },
+        {
+          "type": "Event",
+          "count": 2,
+          "cards": [{ "id": 102079, "count": 2, "name": "The Unmasking" }]
+        }
+      ]
+    }
+  },
+  {
+    "id": "13121",
+    "event": "Burst of Solna",
+    "event_link": "https://www.vekn.net/event-calendar/event/13121",
+    "place": "Solna, Stockholm, Sweden",
+    "date": "2026-05-09",
+    "tournament_format": "3R+F",
+    "players_count": 18,
+    "player": "Nina Nilsson",
+    "score": "2GW7+3",
+    "name": "Its a g-thing",
+    "crypt": {
+      "count": 12,
+      "cards": [
+        { "id": 201602, "count": 2, "name": "Massimiliano" },
+        { "id": 201521, "count": 2, "name": "Casey Snyder" },
+        { "id": 201574, "count": 2, "name": "Kuyén" },
+        { "id": 201659, "count": 1, "name": "Keegan" },
+        { "id": 201660, "count": 1, "name": "Ragnar Nordstrom" },
+        { "id": 201597, "count": 1, "name": "Kamile Paukstys" },
+        { "id": 201644, "count": 1, "name": "Mickey Wheeler" },
+        { "id": 201590, "count": 1, "name": "Hanna Nokelainen" },
+        { "id": 201592, "count": 1, "name": "Indira" }
+      ]
+    },
+    "library": {
+      "count": 81,
+      "cards": [
+        {
+          "type": "Master",
+          "count": 20,
+          "cards": [
+            { "id": 100199, "count": 1, "name": "Blood Doll" },
+            { "id": 100297, "count": 2, "name": "Carfax Abbey" },
+            { "id": 100366, "count": 2, "name": "Club Illusion" },
+            { "id": 100609, "count": 1, "name": "Ecoterrorists" },
+            { "id": 100646, "count": 1, "name": "Ennoia's Theater" },
+            { "id": 100807, "count": 2, "name": "Gangrel Revel" },
+            { "id": 100809, "count": 1, "name": "Garibaldi-Meucci Museum" },
+            { "id": 101439, "count": 1, "name": "Powerbase: Montreal" },
+            { "id": 101536, "count": 1, "name": "The Rack" },
+            { "id": 101811, "count": 1, "name": "Smiling Jack, The Anarch" },
+            { "id": 102113, "count": 3, "name": "Vessel" },
+            { "id": 102121, "count": 4, "name": "Villein" }
+          ]
+        },
+        {
+          "type": "Action",
+          "count": 12,
+          "cards": [
+            { "id": 100093, "count": 1, "name": "Army of Rats" },
+            { "id": 100416, "count": 1, "name": "Constant Revolution" },
+            { "id": 100812, "count": 1, "name": "Gather" },
+            { "id": 101632, "count": 1, "name": "Rewilding" },
+            { "id": 101759, "count": 1, "name": "Shattering" },
+            { "id": 101972, "count": 7, "name": "Thing" }
+          ]
+        },
+        {
+          "type": "Ally",
+          "count": 1,
+          "cards": [{ "id": 102220, "count": 1, "name": "Double Deuce" }]
+        },
+        {
+          "type": "Equipment",
+          "count": 2,
+          "cards": [
+            { "id": 100903, "count": 1, "name": "Heart of Nizchetus" },
+            { "id": 101014, "count": 1, "name": "Ivory Bow" }
+          ]
+        },
+        {
+          "type": "Retainer",
+          "count": 3,
+          "cards": [{ "id": 101550, "count": 3, "name": "Raven Spy" }]
+        },
+        {
+          "type": "Action Modifier",
+          "count": 2,
+          "cards": [
+            { "id": 100600, "count": 1, "name": "Earth Control" },
+            { "id": 100761, "count": 1, "name": "Forced March" }
+          ]
+        },
+        {
+          "type": "Action Modifier/Reaction",
+          "count": 3,
+          "cards": [{ "id": 102223, "count": 3, "name": "Form of the Bat" }]
+        },
+        {
+          "type": "Reaction",
+          "count": 21,
+          "cards": [
+            { "id": 102218, "count": 4, "name": "Bait and Switch" },
+            { "id": 102219, "count": 5, "name": "Deep Ecology" },
+            { "id": 102222, "count": 4, "name": "Eyes of the Wild" },
+            { "id": 102230, "count": 6, "name": "Organized Resistance" },
+            { "id": 101501, "count": 2, "name": "Protection Racket" }
+          ]
+        },
+        {
+          "type": "Combat",
+          "count": 17,
+          "cards": [
+            { "id": 100356, "count": 3, "name": "Claws of the Dead" },
+            { "id": 100563, "count": 4, "name": "Diversion" },
+            { "id": 100576, "count": 3, "name": "Donnybrook" },
+            { "id": 100601, "count": 3, "name": "Earth Meld" },
+            { "id": 100771, "count": 2, "name": "Form of Mist" },
+            { "id": 100910, "count": 2, "name": "Hell-for-Leather" }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "13247",
+    "event": "FOOD & VTES IV",
+    "event_link": "https://www.vekn.net/event-calendar/event/13247",
+    "place": "Curitiba (PR), Brazil",
+    "date": "2026-05-09",
+    "tournament_format": "3R+F",
+    "players_count": 15,
+    "player": "Thiago Umbria de Miranda",
+    "score": "1GW6+4",
+    "name": "Ravnos by thithi",
+    "crypt": {
+      "count": 12,
+      "cards": [
+        { "id": 201672, "count": 2, "name": "Gathii" },
+        { "id": 201681, "count": 2, "name": "Phaibun" },
+        { "id": 201692, "count": 2, "name": "Zafira" },
+        { "id": 201687, "count": 1, "name": "Sreelekha" },
+        { "id": 201670, "count": 1, "name": "Doc Martina" },
+        { "id": 201675, "count": 1, "name": "Luciano Carvalho" },
+        { "id": 201683, "count": 1, "name": "Roberto Rivamonte" },
+        { "id": 201674, "count": 1, "name": "Jean-François" },
+        { "id": 201679, "count": 1, "name": "Oleg Kaprizov" }
+      ]
+    },
+    "library": {
+      "count": 90,
+      "cards": [
+        {
+          "type": "Master",
+          "count": 13,
+          "cards": [
+            { "id": 100058, "count": 1, "name": "Anarch Troublemaker" },
+            { "id": 100073, "count": 1, "name": "Antediluvian Awakening" },
+            { "id": 100085, "count": 1, "name": "Archon Investigation" },
+            { "id": 100135, "count": 1, "name": "The Barrens" },
+            { "id": 100366, "count": 1, "name": "Club Illusion" },
+            { "id": 100588, "count": 1, "name": "Dreams of the Sphinx" },
+            { "id": 100616, "count": 3, "name": "Effective Management" },
+            { "id": 100777, "count": 1, "name": "Fortune Teller Shop" },
+            { "id": 100809, "count": 1, "name": "Garibaldi-Meucci Museum" },
+            { "id": 102166, "count": 2, "name": "Week of Nightmares" }
+          ]
+        },
+        {
+          "type": "Action",
+          "count": 25,
+          "cards": [
+            { "id": 102247, "count": 16, "name": "Break the Bonds" },
+            { "id": 100652, "count": 1, "name": "Entrancement" },
+            { "id": 100999, "count": 4, "name": "Intimidation" },
+            { "id": 101089, "count": 1, "name": "Legal Manipulations" },
+            { "id": 101513, "count": 3, "name": "Public Trust" }
+          ]
+        },
+        {
+          "type": "Action Modifier",
+          "count": 41,
+          "cards": [
+            { "id": 100362, "count": 3, "name": "Cloak the Gathering" },
+            { "id": 100617, "count": 3, "name": "Elder Impersonation" },
+            { "id": 100687, "count": 5, "name": "Faceless Night" },
+            { "id": 101125, "count": 4, "name": "Lost in Crowds" },
+            { "id": 101199, "count": 10, "name": "Memory Rift" },
+            { "id": 101239, "count": 2, "name": "Monkey Wrench" },
+            { "id": 101429, "count": 4, "name": "Power of One" },
+            { "id": 101857, "count": 2, "name": "Spying Mission" },
+            { "id": 102264, "count": 8, "name": "Visions of Gehenna" }
+          ]
+        },
+        {
+          "type": "Action Modifier/Combat",
+          "count": 4,
+          "cards": [{ "id": 101913, "count": 4, "name": "Swallowed by the Night" }]
+        },
+        {
+          "type": "Combat",
+          "count": 5,
+          "cards": [{ "id": 101144, "count": 5, "name": "Majesty" }]
+        },
+        {
+          "type": "Event",
+          "count": 2,
+          "cards": [
+            { "id": 100163, "count": 1, "name": "The Bitter and Sweet Story" },
+            { "id": 101265, "count": 1, "name": "Narrow Minds" }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "13279",
+    "event": "Liga Powerbase JF 2026 Maio",
+    "event_link": "https://www.vekn.net/event-calendar/event/13279",
+    "place": "Juiz de Fora, Brazil",
+    "date": "2026-05-07",
+    "tournament_format": "2R+F",
+    "players_count": 14,
+    "player": "Guilherme Machado",
+    "score": "2GW8+5",
+    "name": "Salubri BleedDeny",
+    "crypt": {
+      "count": 12,
+      "cards": [
+        { "id": 201663, "count": 3, "name": "Abaddon" },
+        { "id": 201782, "count": 2, "name": "Djeneba" },
+        { "id": 201666, "count": 2, "name": "Aniel" },
+        { "id": 201676, "count": 2, "name": "Malachi" },
+        { "id": 201673, "count": 1, "name": "Ilonka" },
+        { "id": 201680, "count": 1, "name": "Opikun" },
+        { "id": 200076, "count": 1, "name": "Anarch Convert" }
+      ]
+    },
+    "library": {
+      "count": 90,
+      "cards": [
+        {
+          "type": "Master",
+          "count": 14,
+          "cards": [
+            { "id": 100058, "count": 1, "name": "Anarch Troublemaker" },
+            { "id": 100085, "count": 1, "name": "Archon Investigation" },
+            { "id": 100435, "count": 1, "name": "The Coven" },
+            { "id": 100493, "count": 1, "name": "Dark Influences" },
+            { "id": 100588, "count": 2, "name": "Dreams of the Sphinx" },
+            { "id": 100824, "count": 1, "name": "Giant's Blood" },
+            { "id": 102252, "count": 1, "name": "Meditative Grove" },
+            { "id": 101225, "count": 1, "name": "Misdirection" },
+            { "id": 101384, "count": 1, "name": "Pentex™ Subversion" },
+            { "id": 101388, "count": 2, "name": "Perfectionist" },
+            { "id": 102151, "count": 2, "name": "Wash" }
+          ]
+        },
+        {
+          "type": "Action",
+          "count": 14,
+          "cards": [
+            { "id": 102248, "count": 6, "name": "Feast of the Soul's Secrets" },
+            { "id": 100845, "count": 6, "name": "Govern the Unaligned" },
+            { "id": 101627, "count": 2, "name": "Revelations" }
+          ]
+        },
+        {
+          "type": "Action/Combat",
+          "count": 2,
+          "cards": [{ "id": 102262, "count": 2, "name": "Touch of Valeren" }]
+        },
+        {
+          "type": "Action Modifier",
+          "count": 36,
+          "cards": [
+            { "id": 100236, "count": 3, "name": "Bonding" },
+            { "id": 100401, "count": 4, "name": "Conditioning" },
+            { "id": 100492, "count": 1, "name": "Daring the Dawn" },
+            { "id": 102250, "count": 7, "name": "Forced Confessional" },
+            { "id": 100765, "count": 2, "name": "Foreshadowing Destruction" },
+            { "id": 100788, "count": 4, "name": "Freak Drive" },
+            { "id": 101062, "count": 1, "name": "The Kiss of Ra" },
+            { "id": 101712, "count": 6, "name": "Seduction" },
+            { "id": 101805, "count": 2, "name": "The Sleeping Mind" },
+            { "id": 102263, "count": 6, "name": "Unleashing the Bestial Soul" }
+          ]
+        },
+        {
+          "type": "Action Modifier/Reaction",
+          "count": 2,
+          "cards": [{ "id": 101256, "count": 2, "name": "Murmur of the False Will" }]
+        },
+        {
+          "type": "Reaction",
+          "count": 22,
+          "cards": [
+            { "id": 100518, "count": 4, "name": "Deflection" },
+            { "id": 100680, "count": 6, "name": "Eyes of Argus" },
+            { "id": 101259, "count": 2, "name": "My Enemy's Enemy" },
+            { "id": 101321, "count": 4, "name": "On the Qui Vive" },
+            { "id": 101949, "count": 6, "name": "Telepathic Misdirection" }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "13272",
+    "event": "Le due torri - Garisenda",
+    "event_link": "https://www.vekn.net/event-calendar/event/13272",
+    "place": "Bologna, Italy",
+    "date": "2026-05-03",
+    "tournament_format": "2R+F",
+    "players_count": 21,
+    "player": "Bram Van Stappen",
+    "score": "1GW4.5+3",
+    "name": "_TWEAK_Qawiyya MR CAINE",
+    "author": "gotcha",
+    "crypt": {
+      "count": 12,
+      "cards": [
+        { "id": 201138, "count": 5, "name": "Qawiyya el-Ghaduba" },
+        { "id": 200080, "count": 2, "name": "Andre LeRoux" },
+        { "id": 200463, "count": 1, "name": "Fergus Alexander" },
+        { "id": 200195, "count": 1, "name": "Bez Dunsirn" },
+        { "id": 201052, "count": 1, "name": "New Blood" },
+        { "id": 200076, "count": 1, "name": "Anarch Convert" },
+        { "id": 201462, "count": 1, "name": "Walker Grimes" }
+      ]
+    },
+    "library": {
+      "count": 72,
+      "cards": [
+        {
+          "type": "Master",
+          "count": 8,
+          "cards": [
+            { "id": 100106, "count": 6, "name": "Ashur Tablets" },
+            { "id": 100824, "count": 1, "name": "Giant's Blood" },
+            { "id": 102180, "count": 1, "name": "Wider View" }
+          ]
+        },
+        {
+          "type": "Action",
+          "count": 12,
+          "cards": [
+            { "id": 102309, "count": 1, "name": "Abuse of Power" },
+            { "id": 102310, "count": 1, "name": "Augury of Doom" },
+            { "id": 100159, "count": 1, "name": "Big Game" },
+            { "id": 100266, "count": 1, "name": "Bum's Rush" },
+            { "id": 100330, "count": 1, "name": "Charge of the Buffalo" },
+            { "id": 100886, "count": 1, "name": "Harass" },
+            { "id": 100913, "count": 1, "name": "Heroic Might" },
+            { "id": 101296, "count": 1, "name": "Nose of the Hound" },
+            { "id": 101483, "count": 1, "name": "Preternatural Strength" },
+            { "id": 101661, "count": 1, "name": "Rumble" },
+            { "id": 101716, "count": 2, "name": "Sense Death" }
+          ]
+        },
+        {
+          "type": "Equipment",
+          "count": 5,
+          "cards": [
+            { "id": 100239, "count": 1, "name": "The Book of Going Forth by Night" },
+            { "id": 100374, "count": 1, "name": "Codex of the Edenic Groundskeepers" },
+            { "id": 100739, "count": 1, "name": "Flak Jacket" },
+            { "id": 101007, "count": 1, "name": "IR Goggles" },
+            { "id": 101040, "count": 1, "name": "Kevlar Vest" }
+          ]
+        },
+        {
+          "type": "Retainer",
+          "count": 3,
+          "cards": [{ "id": 102344, "count": 3, "name": "Twisted Bloodhound" }]
+        },
+        {
+          "type": "Action Modifier",
+          "count": 13,
+          "cards": [{ "id": 100788, "count": 13, "name": "Freak Drive" }]
+        },
+        {
+          "type": "Combat",
+          "count": 31,
+          "cards": [
+            { "id": 100510, "count": 3, "name": "Death Seeker" },
+            { "id": 100959, "count": 7, "name": "Immortal Grapple" },
+            { "id": 101515, "count": 3, "name": "Pulled Fangs" },
+            { "id": 102336, "count": 2, "name": "Rage of Apedemak" },
+            { "id": 101635, "count": 1, "name": "Righteous Aura" },
+            { "id": 101649, "count": 4, "name": "Rolling with the Punches" },
+            { "id": 101945, "count": 6, "name": "Taste of Vitae" },
+            { "id": 102071, "count": 4, "name": "Unflinching Persistence" },
+            { "id": 102208, "count": 1, "name": "Zip Gun" }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "13153",
+    "event": "Le Due Torri - Asinelli",
+    "event_link": "https://www.vekn.net/event-calendar/event/13153",
+    "place": "Bologna, Italy",
+    "date": "2026-05-03",
+    "tournament_format": "2R+F",
+    "players_count": 20,
+    "player": "Giulio De Cicco",
+    "score": "2GW7+0.5",
+    "name": "Ministry noia",
+    "crypt": {
+      "count": 12,
+      "cards": [
+        { "id": 201608, "count": 2, "name": "Nonu Dis" },
+        { "id": 201615, "count": 2, "name": "Vivian VI" },
+        { "id": 201593, "count": 2, "name": "Jenny Silver" },
+        { "id": 201662, "count": 1, "name": "Sergio Bueno" },
+        { "id": 201591, "count": 1, "name": "Hesha Ruhadze (G6)" },
+        { "id": 201582, "count": 1, "name": "Crystal Lynn" },
+        { "id": 201577, "count": 1, "name": "Aluc Romas de Leon" },
+        { "id": 201584, "count": 1, "name": "Doctor Morocco" },
+        { "id": 201600, "count": 1, "name": "Marcel" }
+      ]
+    },
+    "library": {
+      "count": 89,
+      "cards": [
+        {
+          "type": "Master",
+          "count": 16,
+          "cards": [
+            { "id": 100054, "count": 1, "name": "Anarch Railroad" },
+            { "id": 100485, "count": 3, "name": "Dabbler" },
+            { "id": 100588, "count": 2, "name": "Dreams of the Sphinx" },
+            { "id": 100809, "count": 1, "name": "Garibaldi-Meucci Museum" },
+            { "id": 101326, "count": 1, "name": "Opium Den" },
+            { "id": 101435, "count": 1, "name": "Powerbase: Los Angeles" },
+            { "id": 102121, "count": 7, "name": "Villein" }
+          ]
+        },
+        {
+          "type": "Action",
+          "count": 21,
+          "cards": [
+            { "id": 100652, "count": 3, "name": "Entrancement" },
+            { "id": 100713, "count": 1, "name": "Fee Stake: Corte" },
+            { "id": 100716, "count": 1, "name": "Fee Stake: Perth" },
+            { "id": 101211, "count": 2, "name": "Mind Numb" },
+            { "id": 102232, "count": 14, "name": "The Platinum Protocol" }
+          ]
+        },
+        {
+          "type": "Ally",
+          "count": 1,
+          "cards": [{ "id": 101665, "count": 1, "name": "Saatet-ta" }]
+        },
+        {
+          "type": "Political Action",
+          "count": 1,
+          "cards": [{ "id": 101567, "count": 1, "name": "Reckless Agitation" }]
+        },
+        {
+          "type": "Action Modifier",
+          "count": 27,
+          "cards": [
+            { "id": 100446, "count": 6, "name": "CrimethInc." },
+            { "id": 102221, "count": 7, "name": "Enchanting Gaze" },
+            { "id": 101199, "count": 2, "name": "Memory Rift" },
+            { "id": 102233, "count": 12, "name": "Revelation of the Serpent" }
+          ]
+        },
+        {
+          "type": "Action Modifier/Combat",
+          "count": 2,
+          "cards": [{ "id": 102224, "count": 2, "name": "Form of the Cobra" }]
+        },
+        {
+          "type": "Action Modifier/Reaction",
+          "count": 1,
+          "cards": [{ "id": 102223, "count": 1, "name": "Form of the Bat" }]
+        },
+        {
+          "type": "Reaction",
+          "count": 12,
+          "cards": [
+            { "id": 102218, "count": 1, "name": "Bait and Switch" },
+            { "id": 101321, "count": 3, "name": "On the Qui Vive" },
+            { "id": 102231, "count": 8, "name": "Party Out Of Bounds" }
+          ]
+        },
+        {
+          "type": "Combat",
+          "count": 5,
+          "cards": [{ "id": 100771, "count": 5, "name": "Form of Mist" }]
+        },
+        {
+          "type": "Event",
+          "count": 3,
+          "cards": [
+            { "id": 100163, "count": 1, "name": "The Bitter and Sweet Story" },
+            { "id": 101265, "count": 2, "name": "Narrow Minds" }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "13041",
+    "event": "Paulistão réunion 2026",
+    "event_link": "https://www.vekn.net/event-calendar/event/13041",
+    "place": "São Paulo, Brazil",
+    "date": "2026-05-03",
+    "tournament_format": "3R+F",
+    "players_count": 54,
+    "player": "Filipe Bezerra",
+    "score": "2GW7.5+3",
+    "name": "Tzi Barões Toolbox",
+    "crypt": {
+      "count": 12,
+      "cards": [
+        { "id": 201664, "count": 3, "name": "Adrino Manauara" },
+        { "id": 201665, "count": 3, "name": "Ángel Guerrero" },
+        { "id": 201667, "count": 2, "name": "Branimira" },
+        { "id": 201521, "count": 1, "name": "Casey Snyder" },
+        { "id": 201574, "count": 1, "name": "Kuyén" },
+        { "id": 201669, "count": 1, "name": "Clara Hjortshøj" },
+        { "id": 200076, "count": 1, "name": "Anarch Convert" }
+      ]
+    },
+    "library": {
+      "count": 90,
+      "cards": [
+        {
+          "type": "Master",
+          "count": 17,
+          "cards": [
+            { "id": 100054, "count": 1, "name": "Anarch Railroad" },
+            { "id": 100297, "count": 2, "name": "Carfax Abbey" },
+            { "id": 100545, "count": 1, "name": "Direct Intervention" },
+            { "id": 100588, "count": 2, "name": "Dreams of the Sphinx" },
+            { "id": 100809, "count": 2, "name": "Garibaldi-Meucci Museum" },
+            { "id": 100824, "count": 1, "name": "Giant's Blood" },
+            { "id": 101350, "count": 1, "name": "Papillon" },
+            { "id": 101384, "count": 1, "name": "Pentex™ Subversion" },
+            { "id": 101435, "count": 1, "name": "Powerbase: Los Angeles" },
+            { "id": 102113, "count": 2, "name": "Vessel" },
+            { "id": 102121, "count": 2, "name": "Villein" },
+            { "id": 102180, "count": 1, "name": "Wider View" }
+          ]
+        },
+        {
+          "type": "Action",
+          "count": 16,
+          "cards": [
+            { "id": 100079, "count": 1, "name": "Aranthebes, The Immortal" },
+            { "id": 100515, "count": 3, "name": "Deep Song" },
+            { "id": 100845, "count": 12, "name": "Govern the Unaligned" }
+          ]
+        },
+        {
+          "type": "Equipment",
+          "count": 2,
+          "cards": [{ "id": 100903, "count": 2, "name": "Heart of Nizchetus" }]
+        },
+        {
+          "type": "Political Action",
+          "count": 1,
+          "cards": [{ "id": 100605, "count": 1, "name": "Eat the Rich" }]
+        },
+        {
+          "type": "Action Modifier",
+          "count": 10,
+          "cards": [
+            { "id": 100236, "count": 3, "name": "Bonding" },
+            { "id": 100401, "count": 2, "name": "Conditioning" },
+            { "id": 100600, "count": 4, "name": "Earth Control" },
+            { "id": 101239, "count": 1, "name": "Monkey Wrench" }
+          ]
+        },
+        {
+          "type": "Action Modifier/Reaction",
+          "count": 4,
+          "cards": [{ "id": 102223, "count": 4, "name": "Form of the Bat" }]
+        },
+        {
+          "type": "Reaction",
+          "count": 22,
+          "cards": [
+            { "id": 102218, "count": 8, "name": "Bait and Switch" },
+            { "id": 102219, "count": 3, "name": "Deep Ecology" },
+            { "id": 100519, "count": 2, "name": "Delaying Tactics" },
+            { "id": 102230, "count": 7, "name": "Organized Resistance" },
+            { "id": 101501, "count": 2, "name": "Protection Racket" }
+          ]
+        },
+        {
+          "type": "Combat",
+          "count": 18,
+          "cards": [
+            { "id": 100576, "count": 2, "name": "Donnybrook" },
+            { "id": 100601, "count": 8, "name": "Earth Meld" },
+            { "id": 100771, "count": 7, "name": "Form of Mist" },
+            { "id": 100861, "count": 1, "name": "Groundfighting" }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "13222",
+    "event": "Open Season: Kindred restructure. 2026 (MX)",
+    "event_link": "https://www.vekn.net/event-calendar/event/13222",
+    "place": "Mexico City, Mexico",
+    "date": "2026-05-02",
+    "tournament_format": "2R+F",
+    "players_count": 18,
+    "player": "Edgar David Caudillo Garrido",
+    "score": "1GW4+3",
+    "name": "saku y sus princesas",
+    "crypt": {
+      "count": 12,
+      "cards": [
+        { "id": 201658, "count": 4, "name": "Saku Pihlajamäki" },
+        { "id": 201526, "count": 4, "name": "Leumeah" },
+        { "id": 201576, "count": 1, "name": "Aline Gädeke" },
+        { "id": 201614, "count": 1, "name": "Valeriya Zinovieva" },
+        { "id": 201579, "count": 1, "name": "Atiena" },
+        { "id": 201612, "count": 1, "name": "Siarhei Levchenko" }
+      ]
+    },
+    "library": {
+      "count": 90,
+      "cards": [
+        {
+          "type": "Master",
+          "count": 17,
+          "cards": [
+            { "id": 100055, "count": 3, "name": "Anarch Revolt" },
+            { "id": 100297, "count": 1, "name": "Carfax Abbey" },
+            { "id": 100698, "count": 1, "name": "Fame" },
+            { "id": 100774, "count": 3, "name": "Fortitude" },
+            { "id": 100809, "count": 1, "name": "Garibaldi-Meucci Museum" },
+            { "id": 101100, "count": 2, "name": "Libertas" },
+            { "id": 101277, "count": 1, "name": "New Carthage" },
+            { "id": 102113, "count": 3, "name": "Vessel" },
+            { "id": 102121, "count": 2, "name": "Villein" }
+          ]
+        },
+        {
+          "type": "Action",
+          "count": 17,
+          "cards": [
+            { "id": 100952, "count": 6, "name": "Illegalism" },
+            { "id": 102229, "count": 4, "name": "Line Brawl" },
+            { "id": 101147, "count": 4, "name": "Make the Misere" },
+            { "id": 101483, "count": 3, "name": "Preternatural Strength" }
+          ]
+        },
+        {
+          "type": "Action Modifier",
+          "count": 2,
+          "cards": [{ "id": 101239, "count": 2, "name": "Monkey Wrench" }]
+        },
+        {
+          "type": "Reaction",
+          "count": 12,
+          "cards": [
+            { "id": 102218, "count": 5, "name": "Bait and Switch" },
+            { "id": 102230, "count": 7, "name": "Organized Resistance" }
+          ]
+        },
+        {
+          "type": "Combat",
+          "count": 42,
+          "cards": [
+            { "id": 100232, "count": 3, "name": "Bollix" },
+            { "id": 100549, "count": 8, "name": "Disarm" },
+            { "id": 100563, "count": 16, "name": "Diversion" },
+            { "id": 100597, "count": 3, "name": "Dust Up" },
+            { "id": 100959, "count": 8, "name": "Immortal Grapple" },
+            { "id": 101945, "count": 4, "name": "Taste of Vitae" }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "13183",
+    "event": "8th Tragic Love Affair",
+    "event_link": "https://www.vekn.net/event-calendar/event/13183",
+    "place": "Helsinki, Finland",
+    "date": "2026-04-26",
+    "tournament_format": "2R+F",
+    "players_count": 20,
+    "player": "Marko Oja",
+    "score": "0GW3+1.5",
+    "name": "Break the bonds",
+    "comments": "https://www.halfmoongamecafe.com/\nrecently opened in the very center of Helsinki, and of course we had to try it out for a tournament, for the side event of the Finnish Nationals. The experience was highly positive, so I'm sure we'll do more events there in the future. The venue had multiple simultaneous events on the day, limiting the tournament's maximum capacity to 20, which we reached exactly.\n\nThe final table:\n\nNerijus Mikalajunas (Xendil Hatch the Viper Caine rush) 0\nTommi Hakomaa (Gangrel Barons Thing) 0,5\nKarri Malm (Stanislava + Beckett gehennas) 0,5\nTero Aalto (Juliet Parr bleed/vote) 0,5\nMarko Oja (Ravnos anarch bleed + block) 1,5\n\n\nAfter a tough and very close fight, Marko emerged victorious in very competitive company including the current European champion and other highly decorated players, scoring his first tournament win after playing the game since 1994. Congratulations!\n",
+    "crypt": {
+      "count": 12,
+      "cards": [
+        { "id": 201783, "count": 2, "name": "Hafthor Thorsteinsson" },
+        { "id": 201683, "count": 2, "name": "Roberto Rivamonte" },
+        { "id": 201672, "count": 2, "name": "Gathii" },
+        { "id": 201681, "count": 2, "name": "Phaibun" },
+        { "id": 201674, "count": 2, "name": "Jean-François" },
+        { "id": 201679, "count": 1, "name": "Oleg Kaprizov" },
+        { "id": 201684, "count": 1, "name": "Roy" }
+      ]
+    },
+    "library": {
+      "count": 77,
+      "cards": [
+        {
+          "type": "Master",
+          "count": 17,
+          "cards": [
+            { "id": 100052, "count": 1, "name": "The Anarch Free Press" },
+            { "id": 100054, "count": 1, "name": "Anarch Railroad" },
+            { "id": 102351, "count": 1, "name": "Black Market Cache" },
+            { "id": 100485, "count": 3, "name": "Dabbler" },
+            { "id": 100777, "count": 1, "name": "Fortune Teller Shop" },
+            { "id": 100876, "count": 4, "name": "Hackerspace" },
+            { "id": 101068, "count": 1, "name": "Kumpania" },
+            { "id": 102121, "count": 4, "name": "Villein" },
+            { "id": 102166, "count": 1, "name": "Week of Nightmares" }
+          ]
+        },
+        {
+          "type": "Action",
+          "count": 13,
+          "cards": [{ "id": 102247, "count": 13, "name": "Break the Bonds" }]
+        },
+        {
+          "type": "Equipment",
+          "count": 8,
+          "cards": [{ "id": 100001, "count": 8, "name": ".44 Magnum" }]
+        },
+        {
+          "type": "Retainer",
+          "count": 1,
+          "cards": [{ "id": 102249, "count": 1, "name": "Feral Hound" }]
+        },
+        {
+          "type": "Action Modifier",
+          "count": 11,
+          "cards": [
+            { "id": 100362, "count": 2, "name": "Cloak the Gathering" },
+            { "id": 101125, "count": 2, "name": "Lost in Crowds" },
+            { "id": 101199, "count": 2, "name": "Memory Rift" },
+            { "id": 101239, "count": 1, "name": "Monkey Wrench" },
+            { "id": 101429, "count": 2, "name": "Power of One" },
+            { "id": 101857, "count": 1, "name": "Spying Mission" },
+            { "id": 102264, "count": 1, "name": "Visions of Gehenna" }
+          ]
+        },
+        {
+          "type": "Action Modifier/Combat",
+          "count": 2,
+          "cards": [{ "id": 101913, "count": 2, "name": "Swallowed by the Night" }]
+        },
+        {
+          "type": "Reaction",
+          "count": 15,
+          "cards": [
+            { "id": 100519, "count": 1, "name": "Delaying Tactics" },
+            { "id": 102353, "count": 5, "name": "Dogged Pursuit" },
+            { "id": 102254, "count": 2, "name": "Night Terrors" },
+            { "id": 101321, "count": 3, "name": "On the Qui Vive" },
+            { "id": 102231, "count": 2, "name": "Party Out Of Bounds" },
+            { "id": 101501, "count": 2, "name": "Protection Racket" }
+          ]
+        },
+        {
+          "type": "Combat",
+          "count": 10,
+          "cards": [
+            { "id": 102352, "count": 5, "name": "Contraband" },
+            { "id": 101945, "count": 4, "name": "Taste of Vitae" },
+            { "id": 101960, "count": 1, "name": "Terror Frenzy" }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "13129",
+    "event": "Extremis Boon",
+    "event_link": "https://www.vekn.net/event-calendar/event/13129",
+    "place": "Paris, France",
+    "date": "2026-04-26",
+    "tournament_format": "3R+F",
+    "players_count": 18,
+    "player": "Édouard Menneson",
+    "score": "3GW9+1.5",
+    "name": "Salut salut !",
+    "crypt": {
+      "count": 12,
+      "cards": [
+        { "id": 201663, "count": 4, "name": "Abaddon" },
+        { "id": 201781, "count": 4, "name": "Barachiel" },
+        { "id": 201668, "count": 1, "name": "Castellan" },
+        { "id": 201685, "count": 1, "name": "Sakhar" },
+        { "id": 201680, "count": 1, "name": "Opikun" },
+        { "id": 201671, "count": 1, "name": "Dominica" }
+      ]
+    },
+    "library": {
+      "count": 80,
+      "cards": [
+        {
+          "type": "Master",
+          "count": 15,
+          "cards": [
+            { "id": 100588, "count": 2, "name": "Dreams of the Sphinx" },
+            { "id": 100698, "count": 1, "name": "Fame" },
+            { "id": 100824, "count": 1, "name": "Giant's Blood" },
+            { "id": 100866, "count": 1, "name": "Guardian Angel" },
+            { "id": 102252, "count": 1, "name": "Meditative Grove" },
+            { "id": 102257, "count": 2, "name": "Saulot's Avenging Fist" },
+            { "id": 102259, "count": 1, "name": "Saulot's Healing Touch" },
+            { "id": 102121, "count": 5, "name": "Villein" },
+            { "id": 102180, "count": 1, "name": "Wider View" }
+          ]
+        },
+        {
+          "type": "Action",
+          "count": 10,
+          "cards": [{ "id": 102356, "count": 10, "name": "Hunting the Beast" }]
+        },
+        {
+          "type": "Action/Combat",
+          "count": 2,
+          "cards": [{ "id": 102262, "count": 2, "name": "Touch of Valeren" }]
+        },
+        {
+          "type": "Equipment",
+          "count": 6,
+          "cards": [
+            { "id": 102359, "count": 4, "name": "Righteous Blade" },
+            { "id": 102261, "count": 2, "name": "Sword of the Archangel" }
+          ]
+        },
+        {
+          "type": "Action Modifier",
+          "count": 3,
+          "cards": [
+            { "id": 100401, "count": 1, "name": "Conditioning" },
+            { "id": 100788, "count": 2, "name": "Freak Drive" }
+          ]
+        },
+        {
+          "type": "Reaction",
+          "count": 8,
+          "cards": [
+            { "id": 100680, "count": 3, "name": "Eyes of Argus" },
+            { "id": 101259, "count": 2, "name": "My Enemy's Enemy" },
+            { "id": 101949, "count": 3, "name": "Telepathic Misdirection" }
+          ]
+        },
+        {
+          "type": "Combat",
+          "count": 35,
+          "cards": [
+            { "id": 102349, "count": 6, "name": "Angel's Gift" },
+            { "id": 102350, "count": 13, "name": "Anticipation" },
+            { "id": 101330, "count": 1, "name": "Orgy of Blood" },
+            { "id": 101649, "count": 3, "name": "Rolling with the Punches" },
+            { "id": 101945, "count": 6, "name": "Taste of Vitae" },
+            { "id": 102362, "count": 4, "name": "Tranquility Shield" },
+            { "id": 102071, "count": 2, "name": "Unflinching Persistence" }
+          ]
+        },
+        {
+          "type": "Event",
+          "count": 1,
+          "cards": [{ "id": 100581, "count": 1, "name": "Dragonbound" }]
+        }
+      ]
+    }
+  },
+  {
     "id": "13230",
     "event": "No Joke with War Ghouls",
     "event_link": "https://www.vekn.net/event-calendar/event/13230",
@@ -91,6 +3298,188 @@
           "type": "Event",
           "count": 2,
           "cards": [{ "id": 102079, "count": 2, "name": "The Unmasking" }]
+        }
+      ]
+    }
+  },
+  {
+    "id": "13176",
+    "event": "Munduko Txapelketa 2026",
+    "event_link": "https://www.vekn.net/event-calendar/event/13176",
+    "place": "Bilbao, Spain",
+    "date": "2026-04-25",
+    "tournament_format": "3R+F",
+    "players_count": 16,
+    "player": "Iñaki Jiménez Alonso",
+    "score": "2GW6+4",
+    "name": "Juliet & friend",
+    "crypt": {
+      "count": 12,
+      "cards": [
+        { "id": 201698, "count": 5, "name": "Juliet Parr" },
+        { "id": 201530, "count": 2, "name": "Alexander Silverson" },
+        { "id": 201532, "count": 2, "name": "Andi Liu" },
+        { "id": 201544, "count": 2, "name": "Donny Kowalczyk" },
+        { "id": 201594, "count": 1, "name": "Warmaksan" }
+      ]
+    },
+    "library": {
+      "count": 67,
+      "cards": [
+        {
+          "type": "Master",
+          "count": 15,
+          "cards": [
+            { "id": 100106, "count": 6, "name": "Ashur Tablets" },
+            { "id": 102269, "count": 1, "name": "Camarilla Conclave" },
+            { "id": 100435, "count": 1, "name": "The Coven" },
+            { "id": 100588, "count": 3, "name": "Dreams of the Sphinx" },
+            { "id": 100824, "count": 1, "name": "Giant's Blood" },
+            { "id": 101238, "count": 1, "name": "Monastery of Shadows" },
+            { "id": 102121, "count": 2, "name": "Villein" }
+          ]
+        },
+        {
+          "type": "Action",
+          "count": 9,
+          "cards": [{ "id": 100845, "count": 9, "name": "Govern the Unaligned" }]
+        },
+        {
+          "type": "Political Action",
+          "count": 12,
+          "cards": [
+            { "id": 100059, "count": 1, "name": "Anarchist Uprising" },
+            { "id": 100065, "count": 1, "name": "Ancilla Empowerment" },
+            { "id": 102270, "count": 4, "name": "Camarilla's Iron Fist" },
+            { "id": 101056, "count": 2, "name": "Kine Resources Contested" },
+            { "id": 101353, "count": 4, "name": "Parity Shift" }
+          ]
+        },
+        {
+          "type": "Action Modifier",
+          "count": 16,
+          "cards": [
+            { "id": 100364, "count": 1, "name": "Closed Session" },
+            { "id": 100401, "count": 1, "name": "Conditioning" },
+            { "id": 100617, "count": 2, "name": "Elder Impersonation" },
+            { "id": 100765, "count": 1, "name": "Foreshadowing Destruction" },
+            { "id": 100769, "count": 2, "name": "Forgotten Labyrinth" },
+            { "id": 101125, "count": 6, "name": "Lost in Crowds" },
+            { "id": 101857, "count": 1, "name": "Spying Mission" },
+            { "id": 101951, "count": 2, "name": "Telepathic Vote Counting" }
+          ]
+        },
+        {
+          "type": "Action Modifier/Combat",
+          "count": 2,
+          "cards": [{ "id": 101913, "count": 2, "name": "Swallowed by the Night" }]
+        },
+        {
+          "type": "Reaction",
+          "count": 13,
+          "cards": [
+            { "id": 100518, "count": 6, "name": "Deflection" },
+            { "id": 100680, "count": 2, "name": "Eyes of Argus" },
+            { "id": 101309, "count": 4, "name": "Obedience" },
+            { "id": 101706, "count": 1, "name": "Second Tradition: Domain" }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "12818",
+    "event": "Finnish NC 2026",
+    "event_link": "https://www.vekn.net/event-calendar/event/12818",
+    "place": "Vantaa, Finland",
+    "date": "2026-04-25",
+    "tournament_format": "3R+F",
+    "players_count": 41,
+    "player": "Tommi Hakomaa",
+    "score": "2GW8.5+1.5",
+    "name": "(#) Juliet's Dream",
+    "author": "Otso Saariluoma",
+    "comments": "Description: Shout-out to Otso who is mastermind behind this deck. Honorable mention also goes to Ivan Marin-Rivas, who originally gave Otso the idea for the deck based on the collaboration between Juliett Parr and Modius.\n",
+    "crypt": {
+      "count": 12,
+      "cards": [
+        { "id": 201698, "count": 3, "name": "Juliet Parr" },
+        { "id": 201703, "count": 3, "name": "Modius" },
+        { "id": 201598, "count": 1, "name": "Kasim Bayar" },
+        { "id": 201530, "count": 1, "name": "Alexander Silverson" },
+        { "id": 201656, "count": 1, "name": "Oluwafunmilayo" },
+        { "id": 201537, "count": 1, "name": "Belinde" },
+        { "id": 201544, "count": 1, "name": "Donny Kowalczyk" },
+        { "id": 201594, "count": 1, "name": "Warmaksan" }
+      ]
+    },
+    "library": {
+      "count": 90,
+      "cards": [
+        {
+          "type": "Master",
+          "count": 48,
+          "cards": [
+            { "id": 100085, "count": 1, "name": "Archon Investigation" },
+            { "id": 100106, "count": 6, "name": "Ashur Tablets" },
+            { "id": 100178, "count": 1, "name": "Bleeding the Vine" },
+            { "id": 102269, "count": 2, "name": "Camarilla Conclave" },
+            { "id": 100435, "count": 1, "name": "The Coven" },
+            { "id": 100545, "count": 2, "name": "Direct Intervention" },
+            { "id": 100588, "count": 2, "name": "Dreams of the Sphinx" },
+            { "id": 100632, "count": 1, "name": "Elysium: The Palace of Versailles" },
+            { "id": 100824, "count": 1, "name": "Giant's Blood" },
+            { "id": 100984, "count": 3, "name": "Information Highway" },
+            { "id": 101036, "count": 1, "name": "Kaymakli Nightmares" },
+            { "id": 101238, "count": 2, "name": "Monastery of Shadows" },
+            { "id": 101350, "count": 2, "name": "Papillon" },
+            { "id": 101355, "count": 6, "name": "The Parthenon" },
+            { "id": 102121, "count": 7, "name": "Villein" },
+            { "id": 102180, "count": 2, "name": "Wider View" },
+            { "id": 102207, "count": 8, "name": "Zillah's Valley" }
+          ]
+        },
+        {
+          "type": "Equipment",
+          "count": 2,
+          "cards": [{ "id": 100903, "count": 2, "name": "Heart of Nizchetus" }]
+        },
+        {
+          "type": "Political Action",
+          "count": 21,
+          "cards": [
+            { "id": 100059, "count": 1, "name": "Anarchist Uprising" },
+            { "id": 100065, "count": 1, "name": "Ancilla Empowerment" },
+            { "id": 100131, "count": 2, "name": "Banishment" },
+            { "id": 102270, "count": 4, "name": "Camarilla's Iron Fist" },
+            { "id": 101056, "count": 4, "name": "Kine Resources Contested" },
+            { "id": 101353, "count": 7, "name": "Parity Shift" },
+            { "id": 101417, "count": 1, "name": "Political Stranglehold" },
+            { "id": 101663, "count": 1, "name": "Rumors of Gehenna" }
+          ]
+        },
+        {
+          "type": "Action Modifier",
+          "count": 11,
+          "cards": [
+            { "id": 100687, "count": 1, "name": "Faceless Night" },
+            { "id": 100769, "count": 5, "name": "Forgotten Labyrinth" },
+            { "id": 101125, "count": 5, "name": "Lost in Crowds" }
+          ]
+        },
+        {
+          "type": "Reaction",
+          "count": 7,
+          "cards": [
+            { "id": 100680, "count": 2, "name": "Eyes of Argus" },
+            { "id": 101706, "count": 1, "name": "Second Tradition: Domain" },
+            { "id": 101949, "count": 4, "name": "Telepathic Misdirection" }
+          ]
+        },
+        {
+          "type": "Event",
+          "count": 1,
+          "cards": [{ "id": 100163, "count": 1, "name": "The Bitter and Sweet Story" }]
         }
       ]
     }
@@ -309,6 +3698,117 @@
     }
   },
   {
+    "id": "12857",
+    "event": "Dance of the Dead",
+    "event_link": "https://www.vekn.net/event-calendar/event/12857",
+    "place": "Zagreb, Croatia",
+    "date": "2026-04-19",
+    "tournament_format": "2R+F",
+    "players_count": 20,
+    "player": "Predrag",
+    "score": "1GW4+1.5",
+    "name": "No name, no Mercy",
+    "comments": "Description: Unnamed bleed/toolbox\n",
+    "crypt": {
+      "count": 12,
+      "cards": [
+        { "id": 201411, "count": 6, "name": "The unnamed" },
+        { "id": 200136, "count": 3, "name": "Arishat" },
+        { "id": 200605, "count": 2, "name": "The Horde" },
+        { "id": 201593, "count": 1, "name": "Jenny Silver" }
+      ]
+    },
+    "library": {
+      "count": 78,
+      "cards": [
+        {
+          "type": "Master",
+          "count": 10,
+          "cards": [
+            { "id": 100199, "count": 1, "name": "Blood Doll" },
+            { "id": 100545, "count": 1, "name": "Direct Intervention" },
+            { "id": 100588, "count": 1, "name": "Dreams of the Sphinx" },
+            { "id": 100824, "count": 1, "name": "Giant's Blood" },
+            { "id": 100984, "count": 2, "name": "Information Highway" },
+            { "id": 101207, "count": 1, "name": "Metro Underground" },
+            { "id": 101238, "count": 1, "name": "Monastery of Shadows" },
+            { "id": 101361, "count": 1, "name": "Path of Evil Revelations" },
+            { "id": 102113, "count": 1, "name": "Vessel" }
+          ]
+        },
+        {
+          "type": "Action",
+          "count": 14,
+          "cards": [
+            { "id": 100400, "count": 1, "name": "Condemnation: Mute" },
+            { "id": 100418, "count": 1, "name": "Contagion" },
+            { "id": 100652, "count": 2, "name": "Entrancement" },
+            { "id": 100999, "count": 2, "name": "Intimidation" },
+            { "id": 101819, "count": 5, "name": "Social Charm" },
+            { "id": 102076, "count": 3, "name": "Unleash Hell's Fury" }
+          ]
+        },
+        {
+          "type": "Ally",
+          "count": 2,
+          "cards": [
+            { "id": 100981, "count": 1, "name": "Infernal Servitor" },
+            { "id": 102103, "count": 1, "name": "Veneficti" }
+          ]
+        },
+        {
+          "type": "Retainer",
+          "count": 2,
+          "cards": [{ "id": 100932, "count": 2, "name": "Homunculus" }]
+        },
+        {
+          "type": "Action Modifier",
+          "count": 27,
+          "cards": [
+            { "id": 100600, "count": 2, "name": "Earth Control" },
+            { "id": 100617, "count": 3, "name": "Elder Impersonation" },
+            { "id": 100645, "count": 3, "name": "Enkil Cog" },
+            { "id": 100994, "count": 7, "name": "Instantaneous Transformation" },
+            { "id": 101125, "count": 3, "name": "Lost in Crowds" },
+            { "id": 101511, "count": 2, "name": "Psychomachia" },
+            { "id": 102233, "count": 7, "name": "Revelation of the Serpent" }
+          ]
+        },
+        {
+          "type": "Action Modifier/Combat",
+          "count": 3,
+          "cards": [{ "id": 101913, "count": 3, "name": "Swallowed by the Night" }]
+        },
+        {
+          "type": "Action Modifier/Reaction",
+          "count": 6,
+          "cards": [
+            { "id": 102223, "count": 2, "name": "Form of the Bat" },
+            { "id": 101718, "count": 4, "name": "Sense the Sin" }
+          ]
+        },
+        {
+          "type": "Reaction",
+          "count": 7,
+          "cards": [{ "id": 102265, "count": 7, "name": "Visions of Zapathasura" }]
+        },
+        {
+          "type": "Combat",
+          "count": 6,
+          "cards": [
+            { "id": 100601, "count": 3, "name": "Earth Meld" },
+            { "id": 100771, "count": 3, "name": "Form of Mist" }
+          ]
+        },
+        {
+          "type": "Event",
+          "count": 1,
+          "cards": [{ "id": 101265, "count": 1, "name": "Narrow Minds" }]
+        }
+      ]
+    }
+  },
+  {
     "id": "12892",
     "event": "Marchesa Liliana",
     "event_link": "https://www.vekn.net/event-calendar/event/12892",
@@ -399,6 +3899,292 @@
           "type": "Event",
           "count": 1,
           "cards": [{ "id": 101265, "count": 1, "name": "Narrow Minds" }]
+        }
+      ]
+    }
+  },
+  {
+    "id": "13237",
+    "event": "Late April Fools'",
+    "event_link": "https://www.vekn.net/event-calendar/event/13237",
+    "place": "Vila Velha - ES, Brazil",
+    "date": "2026-04-18",
+    "tournament_format": "2R+F",
+    "players_count": 10,
+    "player": "André Afonso",
+    "score": "0GW2.5+5",
+    "name": "Brechó do Hesha",
+    "crypt": {
+      "count": 12,
+      "cards": [
+        { "id": 201591, "count": 6, "name": "Hesha Ruhadze (G6)" },
+        { "id": 200089, "count": 6, "name": "Angel Chavarria" }
+      ]
+    },
+    "library": {
+      "count": 84,
+      "cards": [
+        {
+          "type": "Master",
+          "count": 3,
+          "cards": [
+            { "id": 100545, "count": 1, "name": "Direct Intervention" },
+            { "id": 100908, "count": 1, "name": "Heidelberg Castle, Germany" },
+            { "id": 101295, "count": 1, "name": "Nod" }
+          ]
+        },
+        {
+          "type": "Action",
+          "count": 2,
+          "cards": [
+            { "id": 101474, "count": 1, "name": "Precision" },
+            { "id": 101627, "count": 1, "name": "Revelations" }
+          ]
+        },
+        {
+          "type": "Equipment",
+          "count": 40,
+          "cards": [
+            { "id": 100003, "count": 1, "name": "Aaron's Feeding Razor" },
+            { "id": 100048, "count": 1, "name": "Amulet of Temporal Perception" },
+            { "id": 100086, "count": 1, "name": "Argent Baton" },
+            { "id": 100176, "count": 1, "name": "Blade of Enoch" },
+            { "id": 100212, "count": 1, "name": "Blood Tears of Kephran" },
+            { "id": 100229, "count": 1, "name": "Body Bag" },
+            { "id": 100239, "count": 1, "name": "The Book of Going Forth by Night" },
+            { "id": 100243, "count": 1, "name": "Bowl of Convergence" },
+            { "id": 100325, "count": 1, "name": "Changeling Skin Mask" },
+            { "id": 100361, "count": 1, "name": "Cloak of the Abalone" },
+            { "id": 100373, "count": 1, "name": "Codex of the Damned" },
+            { "id": 100374, "count": 1, "name": "Codex of the Edenic Groundskeepers" },
+            { "id": 100394, "count": 1, "name": "Concoction of Vitality" },
+            { "id": 100591, "count": 1, "name": "Drum of Xipe Totec" },
+            { "id": 100847, "count": 1, "name": "Gran Madre di Dio, Italy" },
+            { "id": 100882, "count": 1, "name": "Hand of Conrad" },
+            { "id": 101014, "count": 1, "name": "Ivory Bow" },
+            { "id": 101025, "count": 1, "name": "Joumlon's Axe" },
+            { "id": 101035, "count": 1, "name": "Kaymakli Fragment" },
+            { "id": 101080, "count": 5, "name": "Learjet" },
+            { "id": 101174, "count": 1, "name": "Martinelli's Ring" },
+            { "id": 101240, "count": 1, "name": "Monocle of Clarity" },
+            { "id": 101252, "count": 1, "name": "Mummy's Tongue" },
+            { "id": 101328, "count": 1, "name": "Orb of Ulain" },
+            { "id": 102243, "count": 1, "name": "Ritual Goblet" },
+            { "id": 101655, "count": 1, "name": "Rowan Ring" },
+            { "id": 101681, "count": 1, "name": "The Sargon Fragment" },
+            { "id": 101703, "count": 1, "name": "Seal of Veddartha" },
+            { "id": 101715, "count": 1, "name": "Sengir Dagger" },
+            { "id": 101781, "count": 1, "name": "The Signet of King Saul" },
+            { "id": 101785, "count": 1, "name": "Sire's Index Finger" },
+            { "id": 101832, "count": 1, "name": "Soul Gem of Etrius" },
+            { "id": 101936, "count": 1, "name": "Tapestry of Blood" },
+            { "id": 101962, "count": 1, "name": "The Textbook Damnation" },
+            { "id": 102102, "count": 1, "name": "Veneficorum Artum Sanguis" },
+            { "id": 102162, "count": 1, "name": "Waxen Poetica" }
+          ]
+        },
+        {
+          "type": "Action Modifier",
+          "count": 35,
+          "cards": [
+            { "id": 100078, "count": 1, "name": "Approximation of Loyalty" },
+            { "id": 100877, "count": 27, "name": "Hag's Wrinkles" },
+            { "id": 100936, "count": 1, "name": "Horrific Countenance" },
+            { "id": 100947, "count": 2, "name": "I am Legion" },
+            { "id": 101386, "count": 2, "name": "Perfect Clarity" },
+            { "id": 102062, "count": 2, "name": "Under My Skin" }
+          ]
+        },
+        {
+          "type": "Action Modifier/Combat",
+          "count": 4,
+          "cards": [
+            { "id": 100758, "count": 2, "name": "Force of Personality" },
+            { "id": 100921, "count": 2, "name": "Hide the Mind" }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "12856",
+    "event": "Grand Prix Zagreb 2026",
+    "event_link": "https://www.vekn.net/event-calendar/event/12856",
+    "place": "Zagreb, Croatia",
+    "date": "2026-04-18",
+    "tournament_format": "3R+F",
+    "players_count": 54,
+    "player": "Milos Krstic",
+    "score": "2GW8.5+1",
+    "name": "Be like Gangrel",
+    "comments": "Description: “Be like Gangrel making its way through cards. Do not be assertive, but adjust to the opponent, and you shall find a way around or through it. If nothing within you stays rigid, outward things will disclose themselves.\n\nEmpty your deck, be formless. Shapeless, like Gangrel. If you put Gangrel into a bleed, it becomes the bleed. You put Gangrel into a wall and it becomes the wall. You put it in a toolbox, it becomes the toolbox. Now, Gangrel can flow or it can crash. Be Gangrel, my friend.”\n",
+    "crypt": {
+      "count": 12,
+      "cards": [
+        { "id": 201602, "count": 2, "name": "Massimiliano" },
+        { "id": 201521, "count": 2, "name": "Casey Snyder" },
+        { "id": 201574, "count": 2, "name": "Kuyén" },
+        { "id": 201597, "count": 1, "name": "Kamile Paukstys" },
+        { "id": 201590, "count": 1, "name": "Hanna Nokelainen" },
+        { "id": 201606, "count": 1, "name": "Nathan Turner" },
+        { "id": 201592, "count": 1, "name": "Indira" },
+        { "id": 201595, "count": 1, "name": "Joaquín de Cádiz" },
+        { "id": 201611, "count": 1, "name": "Ruslan Fedorenko" }
+      ]
+    },
+    "library": {
+      "count": 90,
+      "cards": [
+        {
+          "type": "Master",
+          "count": 27,
+          "cards": [
+            { "id": 100054, "count": 1, "name": "Anarch Railroad" },
+            { "id": 100126, "count": 1, "name": "Backways" },
+            { "id": 100135, "count": 1, "name": "The Barrens" },
+            { "id": 100297, "count": 1, "name": "Carfax Abbey" },
+            { "id": 100366, "count": 2, "name": "Club Illusion" },
+            { "id": 100545, "count": 3, "name": "Direct Intervention" },
+            { "id": 100609, "count": 1, "name": "Ecoterrorists" },
+            { "id": 100646, "count": 1, "name": "Ennoia's Theater" },
+            { "id": 100809, "count": 2, "name": "Garibaldi-Meucci Museum" },
+            { "id": 100984, "count": 1, "name": "Information Highway" },
+            { "id": 101350, "count": 1, "name": "Papillon" },
+            { "id": 101355, "count": 1, "name": "The Parthenon" },
+            { "id": 101435, "count": 1, "name": "Powerbase: Los Angeles" },
+            { "id": 101439, "count": 1, "name": "Powerbase: Montreal" },
+            { "id": 101442, "count": 2, "name": "Powerbase: Savannah" },
+            { "id": 101536, "count": 1, "name": "The Rack" },
+            { "id": 102113, "count": 3, "name": "Vessel" },
+            { "id": 102121, "count": 2, "name": "Villein" },
+            { "id": 102212, "count": 1, "name": "Zoo Hunting Ground" }
+          ]
+        },
+        { "type": "Action", "count": 9, "cards": [{ "id": 101972, "count": 9, "name": "Thing" }] },
+        {
+          "type": "Equipment",
+          "count": 2,
+          "cards": [{ "id": 100903, "count": 2, "name": "Heart of Nizchetus" }]
+        },
+        {
+          "type": "Retainer",
+          "count": 6,
+          "cards": [
+            { "id": 101249, "count": 1, "name": "Mr. Winthrop" },
+            { "id": 101550, "count": 5, "name": "Raven Spy" }
+          ]
+        },
+        {
+          "type": "Action Modifier",
+          "count": 3,
+          "cards": [{ "id": 100600, "count": 3, "name": "Earth Control" }]
+        },
+        {
+          "type": "Action Modifier/Reaction",
+          "count": 4,
+          "cards": [{ "id": 102223, "count": 4, "name": "Form of the Bat" }]
+        },
+        {
+          "type": "Reaction",
+          "count": 25,
+          "cards": [
+            { "id": 102218, "count": 7, "name": "Bait and Switch" },
+            { "id": 102219, "count": 5, "name": "Deep Ecology" },
+            { "id": 100519, "count": 4, "name": "Delaying Tactics" },
+            { "id": 102230, "count": 9, "name": "Organized Resistance" }
+          ]
+        },
+        {
+          "type": "Combat",
+          "count": 14,
+          "cards": [
+            { "id": 100601, "count": 10, "name": "Earth Meld" },
+            { "id": 100771, "count": 4, "name": "Form of Mist" }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "13243",
+    "event": "Perth Grand Prix 2026",
+    "event_link": "https://www.vekn.net/event-calendar/event/13243",
+    "place": "Perth, Australia",
+    "date": "2026-04-18",
+    "tournament_format": "3R+F",
+    "players_count": 17,
+    "player": "Rathpex",
+    "score": "2GW10+3",
+    "name": "Minister Lim",
+    "crypt": {
+      "count": 12,
+      "cards": [
+        { "id": 201615, "count": 3, "name": "Vivian VI" },
+        { "id": 201608, "count": 2, "name": "Nonu Dis" },
+        { "id": 201662, "count": 2, "name": "Sergio Bueno" },
+        { "id": 201586, "count": 2, "name": "Elisha Tucker" },
+        { "id": 201582, "count": 1, "name": "Crystal Lynn" },
+        { "id": 201593, "count": 1, "name": "Jenny Silver" },
+        { "id": 201600, "count": 1, "name": "Marcel" }
+      ]
+    },
+    "library": {
+      "count": 80,
+      "cards": [
+        {
+          "type": "Master",
+          "count": 13,
+          "cards": [
+            { "id": 100054, "count": 1, "name": "Anarch Railroad" },
+            { "id": 100297, "count": 1, "name": "Carfax Abbey" },
+            { "id": 100366, "count": 1, "name": "Club Illusion" },
+            { "id": 100485, "count": 4, "name": "Dabbler" },
+            { "id": 100809, "count": 1, "name": "Garibaldi-Meucci Museum" },
+            { "id": 101326, "count": 1, "name": "Opium Den" },
+            { "id": 102121, "count": 4, "name": "Villein" }
+          ]
+        },
+        {
+          "type": "Action",
+          "count": 16,
+          "cards": [{ "id": 102232, "count": 16, "name": "The Platinum Protocol" }]
+        },
+        {
+          "type": "Ally",
+          "count": 1,
+          "cards": [{ "id": 101665, "count": 1, "name": "Saatet-ta" }]
+        },
+        {
+          "type": "Action Modifier",
+          "count": 18,
+          "cards": [
+            { "id": 102221, "count": 6, "name": "Enchanting Gaze" },
+            { "id": 100687, "count": 2, "name": "Faceless Night" },
+            { "id": 102233, "count": 10, "name": "Revelation of the Serpent" }
+          ]
+        },
+        {
+          "type": "Action Modifier/Reaction",
+          "count": 4,
+          "cards": [{ "id": 102223, "count": 4, "name": "Form of the Bat" }]
+        },
+        {
+          "type": "Reaction",
+          "count": 18,
+          "cards": [
+            { "id": 102218, "count": 6, "name": "Bait and Switch" },
+            { "id": 101321, "count": 2, "name": "On the Qui Vive" },
+            { "id": 102230, "count": 4, "name": "Organized Resistance" },
+            { "id": 102231, "count": 6, "name": "Party Out Of Bounds" }
+          ]
+        },
+        {
+          "type": "Combat",
+          "count": 10,
+          "cards": [
+            { "id": 100601, "count": 4, "name": "Earth Meld" },
+            { "id": 100771, "count": 6, "name": "Form of Mist" }
+          ]
         }
       ]
     }
@@ -1993,6 +5779,94 @@
     }
   },
   {
+    "id": "13027",
+    "event": "Auckland ANZ GP 2026",
+    "event_link": "https://www.vekn.net/event-calendar/event/13027",
+    "place": "Auckland, New Zealand",
+    "date": "2026-03-21",
+    "tournament_format": "3R+F",
+    "players_count": 24,
+    "player": "Richard Aumann",
+    "score": "1GW6+2.5",
+    "name": "Bone Shambler",
+    "comments": "Full report available here:\n\nhttp://www.vekn.net/212-events/event-reports/749-riche-wins-grand-prix-auckland-2026\n",
+    "crypt": {
+      "count": 12,
+      "cards": [
+        { "id": 201757, "count": 3, "name": "Huldu, The Desecrator" },
+        { "id": 201728, "count": 3, "name": "Tommaso Sforza" },
+        { "id": 201717, "count": 3, "name": "Alek König" },
+        { "id": 201718, "count": 1, "name": "Gebeyehu Abdu" },
+        { "id": 201765, "count": 1, "name": "Nadezhda" },
+        { "id": 201727, "count": 1, "name": "Peter St. John" }
+      ]
+    },
+    "library": {
+      "count": 76,
+      "cards": [
+        {
+          "type": "Master",
+          "count": 22,
+          "cards": [
+            { "id": 102287, "count": 1, "name": "Biotech Company Hunting Ground" },
+            { "id": 102298, "count": 4, "name": "Cappadocian Crypt" },
+            { "id": 100435, "count": 1, "name": "The Coven" },
+            { "id": 102313, "count": 1, "name": "Cursed Abattoir" },
+            { "id": 100545, "count": 3, "name": "Direct Intervention" },
+            { "id": 102289, "count": 5, "name": "Family Gathering" },
+            { "id": 100824, "count": 1, "name": "Giant's Blood" },
+            { "id": 101110, "count": 1, "name": "The Line" },
+            { "id": 101384, "count": 2, "name": "Pentex™ Subversion" },
+            { "id": 102301, "count": 1, "name": "Powerbase: Munich" },
+            { "id": 102113, "count": 2, "name": "Vessel" }
+          ]
+        },
+        {
+          "type": "Ally",
+          "count": 16,
+          "cards": [
+            { "id": 102293, "count": 15, "name": "Bone Shambler" },
+            { "id": 102322, "count": 1, "name": "Fiorella, Empty One" }
+          ]
+        },
+        {
+          "type": "Action Modifier",
+          "count": 14,
+          "cards": [
+            { "id": 102280, "count": 2, "name": "Shadow Cast" },
+            { "id": 102281, "count": 2, "name": "Shadow Cloak" },
+            { "id": 102282, "count": 6, "name": "Stygian Shroud" },
+            { "id": 102285, "count": 4, "name": "Where the Veil Thins" }
+          ]
+        },
+        {
+          "type": "Reaction",
+          "count": 13,
+          "cards": [
+            { "id": 100680, "count": 4, "name": "Eyes of Argus" },
+            { "id": 101259, "count": 2, "name": "My Enemy's Enemy" },
+            { "id": 101321, "count": 2, "name": "On the Qui Vive" },
+            { "id": 102294, "count": 2, "name": "Shadow Sentinel" },
+            { "id": 101949, "count": 3, "name": "Telepathic Misdirection" }
+          ]
+        },
+        {
+          "type": "Combat",
+          "count": 8,
+          "cards": [
+            { "id": 100567, "count": 4, "name": "Dodge" },
+            { "id": 102279, "count": 4, "name": "Pass Through Shadow" }
+          ]
+        },
+        {
+          "type": "Event",
+          "count": 3,
+          "cards": [{ "id": 102079, "count": 3, "name": "The Unmasking" }]
+        }
+      ]
+    }
+  },
+  {
     "id": "13156",
     "event": "Taberneira, Traga o Bleed!",
     "event_link": "https://www.vekn.net/event-calendar/event/13156",
@@ -2380,6 +6254,96 @@
             { "id": 101966, "count": 4, "name": "Theft of Vitae" },
             { "id": 102071, "count": 6, "name": "Unflinching Persistence" }
           ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "13154",
+    "event": "Tribute to Heitor Bera",
+    "event_link": "https://www.vekn.net/event-calendar/event/13154",
+    "place": "Itaquaquecetuba, Brazil",
+    "date": "2026-03-15",
+    "tournament_format": "2R+F",
+    "players_count": 18,
+    "player": "DK Magaji",
+    "score": "1GW4.5+1.5",
+    "name": "BBB Lagos 2026",
+    "crypt": {
+      "count": 12,
+      "cards": [
+        { "id": 201656, "count": 4, "name": "Oluwafunmilayo" },
+        { "id": 201587, "count": 2, "name": "Farah Sarroub" },
+        { "id": 201604, "count": 2, "name": "Kassandra Tassaki" },
+        { "id": 201594, "count": 2, "name": "Warmaksan" },
+        { "id": 201598, "count": 1, "name": "Kasim Bayar" },
+        { "id": 201599, "count": 1, "name": "Khadija Al-Kindi" }
+      ]
+    },
+    "library": {
+      "count": 90,
+      "cards": [
+        {
+          "type": "Master",
+          "count": 16,
+          "cards": [
+            { "id": 100545, "count": 1, "name": "Direct Intervention" },
+            { "id": 102226, "count": 3, "name": "Haqim's Law: Retribution" },
+            { "id": 101171, "count": 1, "name": "Market Square" },
+            { "id": 101242, "count": 1, "name": "Monster" },
+            { "id": 101350, "count": 1, "name": "Papillon" },
+            { "id": 101439, "count": 1, "name": "Powerbase: Montreal" },
+            { "id": 101487, "count": 3, "name": "Priority Contract" },
+            { "id": 102121, "count": 4, "name": "Villein" },
+            { "id": 102201, "count": 1, "name": "Yoruba Shrine" }
+          ]
+        },
+        {
+          "type": "Action",
+          "count": 9,
+          "cards": [
+            { "id": 102228, "count": 3, "name": "Hunter's Mark" },
+            { "id": 101143, "count": 6, "name": "Magic of the Smith" }
+          ]
+        },
+        {
+          "type": "Equipment",
+          "count": 7,
+          "cards": [
+            { "id": 100001, "count": 1, "name": ".44 Magnum" },
+            { "id": 100239, "count": 1, "name": "The Book of Going Forth by Night" },
+            { "id": 100243, "count": 1, "name": "Bowl of Convergence" },
+            { "id": 100742, "count": 1, "name": "Flamethrower" },
+            { "id": 100847, "count": 1, "name": "Gran Madre di Dio, Italy" },
+            { "id": 100903, "count": 1, "name": "Heart of Nizchetus" },
+            { "id": 101040, "count": 1, "name": "Kevlar Vest" }
+          ]
+        },
+        {
+          "type": "Reaction",
+          "count": 18,
+          "cards": [
+            { "id": 101706, "count": 15, "name": "Second Tradition: Domain" },
+            { "id": 101949, "count": 3, "name": "Telepathic Misdirection" }
+          ]
+        },
+        {
+          "type": "Combat",
+          "count": 39,
+          "cards": [
+            { "id": 100227, "count": 3, "name": "Blur" },
+            { "id": 100704, "count": 1, "name": "Fast Hands" },
+            { "id": 102227, "count": 11, "name": "Hunger of Marduk" },
+            { "id": 101507, "count": 9, "name": "Psyche!" },
+            { "id": 101523, "count": 10, "name": "Pursuit" },
+            { "id": 101588, "count": 3, "name": "Rego Motum" },
+            { "id": 101778, "count": 2, "name": "Side Strike" }
+          ]
+        },
+        {
+          "type": "Event",
+          "count": 1,
+          "cards": [{ "id": 101697, "count": 1, "name": "Scourge of the Enochians" }]
         }
       ]
     }
@@ -3846,6 +7810,102 @@
           "count": 3,
           "cards": [{ "id": 100771, "count": 3, "name": "Form of Mist" }]
         }
+      ]
+    }
+  },
+  {
+    "id": "13101",
+    "event": "Vozhd of Szczecin",
+    "event_link": "https://www.vekn.net/event-calendar/event/13101",
+    "place": "Lafayette (LA), USA",
+    "date": "2026-03-06",
+    "tournament_format": "2R+F",
+    "players_count": 11,
+    "player": "Darby Keeney",
+    "score": "1GW5.5+4",
+    "name": "Y.A.F.T.P.D.  V4",
+    "comments": "Description: Yet Another F****ing Theftpost Deck\nCredits: Karl Schaefer and Kelly Schultz for consultations.  Antti Penttilä for a discussion on his similar TWD.\n\nSlightly modified from previous versions, still requires some backrushing because 9 Second 2nd Trads (plus some blucking from being unlocked) isn't really that much defense. And no, it doesn't need/want Ashur Tablets.  Could swap Lightning Reflex for Blur and Quickness and probably run a little better.\n\np.s. Feels REALLY strong in a Hecata ally meta, if you have one.  That was a huge part of why I played it that day....then didn't see allies.\n",
+    "crypt": {
+      "count": 12,
+      "cards": [
+        { "id": 201598, "count": 2, "name": "Kasim Bayar" },
+        { "id": 201656, "count": 2, "name": "Oluwafunmilayo" },
+        { "id": 201587, "count": 2, "name": "Farah Sarroub" },
+        { "id": 201604, "count": 2, "name": "Kassandra Tassaki" },
+        { "id": 201594, "count": 2, "name": "Warmaksan" },
+        { "id": 201599, "count": 1, "name": "Khadija Al-Kindi" },
+        { "id": 201589, "count": 1, "name": "Greg Mazouni" }
+      ]
+    },
+    "library": {
+      "count": 90,
+      "cards": [
+        {
+          "type": "Master",
+          "count": 17,
+          "cards": [
+            { "id": 100037, "count": 2, "name": "Alamut" },
+            { "id": 100545, "count": 1, "name": "Direct Intervention" },
+            { "id": 100824, "count": 1, "name": "Giant's Blood" },
+            { "id": 102226, "count": 3, "name": "Haqim's Law: Retribution" },
+            { "id": 101487, "count": 2, "name": "Priority Contract" },
+            { "id": 102121, "count": 8, "name": "Villein" }
+          ]
+        },
+        {
+          "type": "Action",
+          "count": 5,
+          "cards": [{ "id": 102228, "count": 5, "name": "Hunter's Mark" }]
+        },
+        {
+          "type": "Equipment",
+          "count": 2,
+          "cards": [
+            { "id": 100243, "count": 1, "name": "Bowl of Convergence" },
+            { "id": 101856, "count": 1, "name": "Sport Bike" }
+          ]
+        },
+        {
+          "type": "Political Action",
+          "count": 5,
+          "cards": [
+            { "id": 102270, "count": 4, "name": "Camarilla's Iron Fist" },
+            { "id": 100557, "count": 1, "name": "Disputed Territory" }
+          ]
+        },
+        {
+          "type": "Action Modifier",
+          "count": 3,
+          "cards": [{ "id": 100769, "count": 3, "name": "Forgotten Labyrinth" }]
+        },
+        {
+          "type": "Action Modifier/Combat",
+          "count": 10,
+          "cards": [
+            { "id": 101610, "count": 6, "name": "Resist Earth's Grasp" },
+            { "id": 101913, "count": 4, "name": "Swallowed by the Night" }
+          ]
+        },
+        {
+          "type": "Reaction",
+          "count": 9,
+          "cards": [{ "id": 101706, "count": 9, "name": "Second Tradition: Domain" }]
+        },
+        {
+          "type": "Combat",
+          "count": 38,
+          "cards": [
+            { "id": 100227, "count": 3, "name": "Blur" },
+            { "id": 102227, "count": 16, "name": "Hunger of Marduk" },
+            { "id": 101107, "count": 2, "name": "Lightning Reflexes" },
+            { "id": 101507, "count": 3, "name": "Psyche!" },
+            { "id": 101523, "count": 7, "name": "Pursuit" },
+            { "id": 101532, "count": 2, "name": "Quickness" },
+            { "id": 101588, "count": 3, "name": "Rego Motum" },
+            { "id": 102208, "count": 2, "name": "Zip Gun" }
+          ]
+        },
+        { "type": "Event", "count": 1, "cards": [{ "id": 101306, "count": 1, "name": "NSA Trio" }] }
       ]
     }
   },
@@ -10037,6 +14097,89 @@
           "type": "Event",
           "count": 1,
           "cards": [{ "id": 100163, "count": 1, "name": "The Bitter and Sweet Story" }]
+        }
+      ]
+    }
+  },
+  {
+    "id": "12851",
+    "event": "Rage of Apedemak (JOL)",
+    "event_link": "https://www.vekn.net/event-calendar/event/12851",
+    "place": "Online",
+    "date": "2025-12-15",
+    "tournament_format": "3R+F",
+    "players_count": 38,
+    "player": "Antonio Cobo Cuenca",
+    "score": "2GW6+4",
+    "comments": "Description: Heavily Inspired by Danilo's deck\n",
+    "crypt": {
+      "count": 28,
+      "cards": [
+        { "id": 201393, "count": 21, "name": "Tupdog" },
+        { "id": 200116, "count": 1, "name": "Antonio d'Erlette" },
+        { "id": 200437, "count": 1, "name": "Esoara" },
+        { "id": 200674, "count": 1, "name": "Janine" },
+        { "id": 201013, "count": 1, "name": "Mosfair" },
+        { "id": 200418, "count": 1, "name": "Ember Wright" },
+        { "id": 200767, "count": 1, "name": "Keith Moody" },
+        { "id": 201222, "count": 1, "name": "Saiz" }
+      ]
+    },
+    "library": {
+      "count": 90,
+      "cards": [
+        {
+          "type": "Master",
+          "count": 15,
+          "cards": [
+            { "id": 100106, "count": 6, "name": "Ashur Tablets" },
+            { "id": 100588, "count": 3, "name": "Dreams of the Sphinx" },
+            { "id": 100698, "count": 1, "name": "Fame" },
+            { "id": 100984, "count": 3, "name": "Information Highway" },
+            { "id": 101439, "count": 1, "name": "Powerbase: Montreal" },
+            { "id": 101711, "count": 1, "name": "Secure Haven" }
+          ]
+        },
+        {
+          "type": "Action",
+          "count": 8,
+          "cards": [{ "id": 100852, "count": 8, "name": "Graverobbing" }]
+        },
+        {
+          "type": "Ally",
+          "count": 10,
+          "cards": [{ "id": 101645, "count": 10, "name": "Rock Cat" }]
+        },
+        {
+          "type": "Equipment",
+          "count": 1,
+          "cards": [{ "id": 100882, "count": 1, "name": "Hand of Conrad" }]
+        },
+        {
+          "type": "Political Action",
+          "count": 7,
+          "cards": [{ "id": 100115, "count": 7, "name": "Autarkis Persecution" }]
+        },
+        {
+          "type": "Action Modifier",
+          "count": 6,
+          "cards": [{ "id": 100102, "count": 6, "name": "As the Crow" }]
+        },
+        {
+          "type": "Reaction",
+          "count": 6,
+          "cards": [{ "id": 100518, "count": 6, "name": "Deflection" }]
+        },
+        {
+          "type": "Combat",
+          "count": 37,
+          "cards": [
+            { "id": 100252, "count": 8, "name": "Brick by Brick" },
+            { "id": 100549, "count": 6, "name": "Disarm" },
+            { "id": 100959, "count": 10, "name": "Immortal Grapple" },
+            { "id": 101538, "count": 9, "name": "Raking Talons" },
+            { "id": 102215, "count": 4, "name": "Roundhouse" }
+          ]
         }
       ]
     }
@@ -85423,6 +89566,98 @@
           ]
         },
         { "type": "Combat", "count": 4, "cards": [{ "id": 100597, "count": 4, "name": "Dust Up" }] }
+      ]
+    }
+  },
+  {
+    "id": "10671",
+    "event": "Czech NC 2023 - Pulled fang #12",
+    "event_link": "https://www.vekn.net/event-calendar/event/10671",
+    "place": "Nový Rychnov, Czech Republic",
+    "date": "2023-09-02",
+    "tournament_format": "3R+F",
+    "players_count": 48,
+    "player": "Daniel Gargulák",
+    "score": "3GW12+2.5",
+    "name": "Wraits and hordes",
+    "crypt": {
+      "count": 12,
+      "cards": [
+        { "id": 200992, "count": 4, "name": "Mina Grotius" },
+        { "id": 201369, "count": 4, "name": "Thomasso Ghiberti" },
+        { "id": 201057, "count": 2, "name": "Nicomedes" },
+        { "id": 200834, "count": 1, "name": "Lia Milliner" },
+        { "id": 201068, "count": 1, "name": "Nunzio Giovanni" }
+      ]
+    },
+    "library": {
+      "count": 90,
+      "cards": [
+        {
+          "type": "Master",
+          "count": 20,
+          "cards": [
+            { "id": 100545, "count": 1, "name": "Direct Intervention" },
+            { "id": 101019, "count": 6, "name": "Jake Washington" },
+            { "id": 101112, "count": 9, "name": "Liquidation" },
+            { "id": 101384, "count": 2, "name": "Pentex™ Subversion" },
+            { "id": 102180, "count": 2, "name": "Wider View" }
+          ]
+        },
+        {
+          "type": "Ally",
+          "count": 40,
+          "cards": [
+            { "id": 100298, "count": 2, "name": "Carlton Van Wyk" },
+            { "id": 100579, "count": 11, "name": "Draeven Softfoot" },
+            { "id": 100634, "count": 10, "name": "Emerald Legionnaire" },
+            { "id": 100823, "count": 2, "name": "Gianna di Canneto" },
+            { "id": 101333, "count": 2, "name": "Ossian" },
+            { "id": 101751, "count": 10, "name": "Shambling Hordes" },
+            { "id": 102053, "count": 3, "name": "Tye Cooper" }
+          ]
+        },
+        {
+          "type": "Political Action",
+          "count": 1,
+          "cards": [{ "id": 100115, "count": 1, "name": "Autarkis Persecution" }]
+        },
+        {
+          "type": "Action Modifier",
+          "count": 12,
+          "cards": [
+            { "id": 100279, "count": 6, "name": "Call of the Hungry Dead" },
+            { "id": 100788, "count": 3, "name": "Freak Drive" },
+            { "id": 101773, "count": 3, "name": "Shroud Mastery" }
+          ]
+        },
+        {
+          "type": "Action Modifier/Combat",
+          "count": 3,
+          "cards": [{ "id": 100249, "count": 3, "name": "Breath of Thanatos" }]
+        },
+        {
+          "type": "Reaction",
+          "count": 6,
+          "cards": [
+            { "id": 100519, "count": 3, "name": "Delaying Tactics" },
+            { "id": 100797, "count": 2, "name": "Funeral Wake" },
+            { "id": 101321, "count": 1, "name": "On the Qui Vive" }
+          ]
+        },
+        {
+          "type": "Combat",
+          "count": 3,
+          "cards": [{ "id": 101942, "count": 3, "name": "Target Vitals" }]
+        },
+        {
+          "type": "Event",
+          "count": 5,
+          "cards": [
+            { "id": 100709, "count": 2, "name": "FBI Special Affairs Division" },
+            { "id": 102079, "count": 3, "name": "The Unmasking" }
+          ]
+        }
       ]
     }
   },
