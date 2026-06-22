@@ -1,5 +1,14 @@
 [
   {
+    "version": "2026-06-22",
+    "changes": [
+      "Add Dreams of the Sphinx, Finnish Nationals 2026, Fee Stake Lublin events",
+      "Update TWDA",
+      "Update rulings",
+      "Small other fixes and improvements"
+    ]
+  },
+  {
     "version": "2026-05-02",
     "changes": [
       "Add sect and titles breakdown to deck library info",
