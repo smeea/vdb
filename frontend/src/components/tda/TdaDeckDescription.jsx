@@ -11,7 +11,7 @@ import { useApp } from "@/context";
 import { getDeckInUrl } from "@/utils";
 
 const TdaDeckDescription = ({ deck }) => {
-  const { username, isMobile } = useApp();
+  const { username, isNarrow, isMobile } = useApp();
   const deckInUrl = getDeckInUrl(deck);
 
   return (
@@ -33,10 +33,8 @@ const TdaDeckDescription = ({ deck }) => {
             </TwdResultDescriptionTextTr>
           </tbody>
         </table>
-        {(deck[TAGS][SUPERIOR].length > 0 || deck[TAGS][BASE].length > 0) && (
-          <TwdResultTags tags={deck[TAGS]} />
-        )}
       </div>
+      {!isNarrow && <TwdResultTags tags={deck[TAGS]} />}
       <div className="flex justify-between gap-1 max-lg:flex-col max-lg:p-1 lg:basis-full">
         <div className="basis-full">
           <TwdOpenDeckButton url={deckInUrl} />

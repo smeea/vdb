@@ -9,7 +9,7 @@ import {
   TwdResultLibraryKeyCardsTable,
   TwdResultTags,
 } from "@/components";
-import { BASE, CARDS, CRYPT, LIBRARY, SUPERIOR, TAGS } from "@/constants";
+import { CARDS, CRYPT, LIBRARY, TAGS } from "@/constants";
 import { useApp } from "@/context";
 import { useDeckLibrary } from "@/hooks";
 import { parseDeck } from "@/utils";
@@ -25,8 +25,6 @@ const TwdDeck = ({ deck, inPda }) => {
   delete parsedDeck[CARDS];
   const { libraryByTypeTotal } = useDeckLibrary(library);
 
-  const hasTags = [...parsedDeck[TAGS][SUPERIOR], ...parsedDeck[TAGS][BASE]].length > 0;
-
   return (
     <div className="group flex flex-col gap-6">
       <div className="flex max-lg:flex-col sm:gap-2">
@@ -37,11 +35,9 @@ const TwdDeck = ({ deck, inPda }) => {
             <TwdResultDescription deck={parsedDeck} />
           )}
           <div className="flex px-2 sm:hidden">
-            {hasTags && (
-              <div className="basis-4/9">
-                <TwdResultTags tags={parsedDeck[TAGS]} />
-              </div>
-            )}
+            <div className="basis-4/9">
+              <TwdResultTags tags={parsedDeck[TAGS]} />
+            </div>
             <div className="basis-5/9">
               {cardtypeSortedFull
                 .filter((t) => libraryByTypeTotal[t])

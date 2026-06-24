@@ -1,4 +1,6 @@
 # FIX
+- Mobile card popup with sets to hide swap button
+- Deck info table in PDA on mobile
 
 # FIX ON HOLD
 
@@ -9,6 +11,7 @@
 - Inventory target documentation
 - Show best precons for missing cards
 - Show V5/2P compatibility on card detailed info
+- Library size in twd full view on mboile
 
 # FEATURES ON HOLD
 - Draft Cube support -> when draft cube info is available

@@ -7,22 +7,19 @@ import { Link, useNavigate } from "react-router";
 import { TwdResultDescriptionTextTr, TwdResultTags } from "@/components";
 import {
   AUTHOR,
-  BASE,
   CREATION_DATE,
   DECKID,
   EVENT,
   LOCATION,
   NAME,
-  SUPERIOR,
   TAGS,
   TWD,
 } from "@/constants";
 import { clearSearchForm, searchTwdForm, useApp } from "@/context";
 
 const TwdResultDescriptionText = ({ deck }) => {
-  const { isMobile } = useApp();
+  const { isNarrow, isMobile } = useApp();
   const navigate = useNavigate();
-  const hasTags = [...deck[TAGS][SUPERIOR], ...deck[TAGS][BASE]].length > 0;
 
   const handleClick = (target, value) => {
     clearSearchForm(TWD);
@@ -81,7 +78,7 @@ const TwdResultDescriptionText = ({ deck }) => {
           </TwdResultDescriptionTextTr>
         </tbody>
       </table>
-      {!isMobile && hasTags && <TwdResultTags tags={deck[TAGS]} />}
+      {!isNarrow && <TwdResultTags tags={deck[TAGS]} />}
     </>
   );
 };
