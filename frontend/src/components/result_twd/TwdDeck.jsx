@@ -25,6 +25,8 @@ const TwdDeck = ({ deck, inPda }) => {
   delete parsedDeck[CARDS];
   const { libraryByTypeTotal } = useDeckLibrary(library);
 
+  const hasTags = [...parsedDeck[TAGS][SUPERIOR], ...parsedDeck[TAGS][BASE]].length > 0;
+
   return (
     <div className="group flex flex-col gap-6">
       <div className="flex max-lg:flex-col sm:gap-2">
@@ -35,12 +37,11 @@ const TwdDeck = ({ deck, inPda }) => {
             <TwdResultDescription deck={parsedDeck} />
           )}
           <div className="flex px-2 sm:hidden">
-            {!inPda &&
-              (parsedDeck[TAGS][SUPERIOR].length > 0 || parsedDeck[TAGS][BASE].length > 0) && (
-                <div className="basis-4/9">
-                  <TwdResultTags tags={parsedDeck[TAGS]} />
-                </div>
-              )}
+            {hasTags && (
+              <div className="basis-4/9">
+                <TwdResultTags tags={parsedDeck[TAGS]} />
+              </div>
+            )}
             <div className="basis-5/9">
               {cardtypeSortedFull
                 .filter((t) => libraryByTypeTotal[t])
