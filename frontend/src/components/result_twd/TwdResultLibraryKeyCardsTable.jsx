@@ -1,5 +1,8 @@
+import ChevronBarContract from "@icons/chevron-bar-contract.svg?react";
+import ChevronBarExpand from "@icons/chevron-bar-expand.svg?react";
 import { useState } from "react";
 import {
+  Button,
   DeckLibrary,
   ResultLegalIcon,
   ResultLibraryCost,
@@ -42,22 +45,38 @@ const TwdResultLibraryKeyCardsTable = ({ library, withHeader }) => {
 
   return (
     <div>
-      <div className="flex h-[30px] items-center justify-between gap-1.5 px-1 font-bold text-fgSecondary dark:text-whiteDark">
+      <div className="h-[30px] font-bold px-1">
         {withHeader ? (
           <>
-            <div className="whitespace-nowrap">
-              {isMobile ? "L" : "Library"} [{libraryTotal}], Keys:
-            </div>
-            {hasBanned && <ResultLegalIcon type={BANNED} />}
-            <div className="flex gap-1.5 sm:gap-3">
-              <div className="flex items-center gap-1" title="Total Blood Cost">
-                <ResultLibraryCost card={{ [BLOOD]: X }} className="h-[30px] pb-1" />
-                <div>{bloodTotal}</div>
+            <div className="flex items-center justify-between gap-1.5">
+              <div className="flex basis-full items-center justify-between gap-1.5text-fgSecondary dark:text-whiteDark">
+                <div className="whitespace-nowrap">
+                  {isMobile ? "Lib" : "Library"} [{libraryTotal}]
+                </div>
+                {hasBanned && <ResultLegalIcon type={BANNED} />}
+                <div className="flex gap-1.5 sm:gap-3">
+                  <div className="flex items-center gap-1" title="Total Blood Cost">
+                    <ResultLibraryCost card={{ [BLOOD]: X }} className="h-[30px] pb-1" />
+                    <div>{bloodTotal}</div>
+                  </div>
+                  <div className="flex items-center gap-1" title="Total Pool Cost">
+                    <ResultLibraryCost card={{ [POOL]: X }} className="h-[30px]" />
+                    <div>{poolTotal}</div>
+                  </div>
+                </div>
               </div>
-              <div className="flex items-center gap-1" title="Total Pool Cost">
-                <ResultLibraryCost card={{ [POOL]: X }} className="h-[30px]" />
-                <div>{poolTotal}</div>
-              </div>
+              <Button
+                onClick={() => setShowFullLibrary(!showFullLibrary)}
+                title="Copy URL"
+                className="p-1"
+                noPadding
+              >
+                {showFullLibrary ? (
+                  <ChevronBarContract width="17" height="17" viewBox="0 0 16 16" />
+                ) : (
+                  <ChevronBarExpand width="17" height="17" viewBox="0 0 16 16" />
+                )}
+              </Button>
             </div>
           </>
         ) : (
