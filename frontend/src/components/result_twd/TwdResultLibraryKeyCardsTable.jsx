@@ -45,40 +45,38 @@ const TwdResultLibraryKeyCardsTable = ({ library, withHeader }) => {
 
   return (
     <div>
-      <div className="h-[30px] font-bold px-1">
+      <div className="h-[30px] px-1 font-bold">
         {withHeader ? (
-          <>
-            <div className="flex items-center justify-between gap-1.5">
-              <div className="flex basis-full items-center justify-between gap-1.5text-fgSecondary dark:text-whiteDark">
-                <div className="whitespace-nowrap">
-                  {isMobile ? "Lib" : "Library"} [{libraryTotal}]
+          <div className="flex items-center justify-between gap-1.5">
+            <div className="flex basis-full items-center justify-between gap-1.5text-fgSecondary dark:text-whiteDark">
+              <div className="whitespace-nowrap">
+                {isMobile ? "Lib" : "Library"} [{libraryTotal}]
+              </div>
+              {hasBanned && <ResultLegalIcon type={BANNED} />}
+              <div className="flex gap-1.5 sm:gap-3">
+                <div className="flex items-center gap-1" title="Total Blood Cost">
+                  <ResultLibraryCost card={{ [BLOOD]: X }} className="h-[30px] pb-1" />
+                  <div>{bloodTotal}</div>
                 </div>
-                {hasBanned && <ResultLegalIcon type={BANNED} />}
-                <div className="flex gap-1.5 sm:gap-3">
-                  <div className="flex items-center gap-1" title="Total Blood Cost">
-                    <ResultLibraryCost card={{ [BLOOD]: X }} className="h-[30px] pb-1" />
-                    <div>{bloodTotal}</div>
-                  </div>
-                  <div className="flex items-center gap-1" title="Total Pool Cost">
-                    <ResultLibraryCost card={{ [POOL]: X }} className="h-[30px]" />
-                    <div>{poolTotal}</div>
-                  </div>
+                <div className="flex items-center gap-1" title="Total Pool Cost">
+                  <ResultLibraryCost card={{ [POOL]: X }} className="h-[30px]" />
+                  <div>{poolTotal}</div>
                 </div>
               </div>
-              <Button
-                onClick={() => setShowFullLibrary(!showFullLibrary)}
-                title="Copy URL"
-                className="p-1"
-                noPadding
-              >
-                {showFullLibrary ? (
-                  <ChevronBarContract width="17" height="17" viewBox="0 0 16 16" />
-                ) : (
-                  <ChevronBarExpand width="17" height="17" viewBox="0 0 16 16" />
-                )}
-              </Button>
             </div>
-          </>
+            <Button
+              onClick={() => setShowFullLibrary(!showFullLibrary)}
+              title="Copy URL"
+              className="p-1"
+              noPadding
+            >
+              {showFullLibrary ? (
+                <ChevronBarContract width="17" height="17" viewBox="0 0 16 16" />
+              ) : (
+                <ChevronBarExpand width="17" height="17" viewBox="0 0 16 16" />
+              )}
+            </Button>
+          </div>
         ) : (
           <Toggle
             offValue="Key Cards"

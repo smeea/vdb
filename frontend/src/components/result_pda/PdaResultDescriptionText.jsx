@@ -4,14 +4,7 @@ import TagFill from "@icons/tag-fill.svg?react";
 import { format } from "date-fns";
 import { useNavigate } from "react-router";
 import { TwdResultDescriptionTextTr, TwdResultTags } from "@/components";
-import {
-  AUTHOR,
-  CREATION_DATE,
-  NAME,
-  PDA,
-  TAGS,
-  TIMESTAMP,
-} from "@/constants";
+import { AUTHOR, CREATION_DATE, NAME, PDA, TAGS, TIMESTAMP } from "@/constants";
 import { clearSearchForm, searchPdaForm, useApp } from "@/context";
 
 const PdaResultDescriptionText = ({ deck }) => {

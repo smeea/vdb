@@ -1,14 +1,14 @@
 import cardtypeSortedFull from "@/assets/data/cardtypeSortedFull.json";
 import {
   Hr,
+  ResultLibraryTypeImage,
   TdaDeckDescription,
   TwdResultCryptTable,
   TwdResultLibraryByTypeTable,
   TwdResultLibraryKeyCardsTable,
   TwdResultTags,
-  ResultLibraryTypeImage,
 } from "@/components";
-import { AUTHOR, CRYPT, LIBRARY, TAGS, BASE, SUPERIOR } from "@/constants";
+import { AUTHOR, CRYPT, LIBRARY, TAGS } from "@/constants";
 import { useDeckLibrary } from "@/hooks";
 
 const TdaDeck = ({ deck }) => {
@@ -21,9 +21,9 @@ const TdaDeck = ({ deck }) => {
           <TdaDeckDescription deck={deck} />
         </div>
         <div className="flex px-2 sm:hidden">
-            <div className="basis-4/9">
-              <TwdResultTags tags={deck[TAGS]} />
-            </div>
+          <div className="basis-4/9">
+            <TwdResultTags tags={deck[TAGS]} />
+          </div>
           <div className="basis-5/9">
             {cardtypeSortedFull
               .filter((t) => libraryByTypeTotal[t])

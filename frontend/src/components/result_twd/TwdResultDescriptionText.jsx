@@ -5,16 +5,7 @@ import TagFill from "@icons/tag-fill.svg?react";
 import TrophyFill from "@icons/trophy-fill.svg?react";
 import { Link, useNavigate } from "react-router";
 import { TwdResultDescriptionTextTr, TwdResultTags } from "@/components";
-import {
-  AUTHOR,
-  CREATION_DATE,
-  DECKID,
-  EVENT,
-  LOCATION,
-  NAME,
-  TAGS,
-  TWD,
-} from "@/constants";
+import { AUTHOR, CREATION_DATE, DECKID, EVENT, LOCATION, NAME, TAGS, TWD } from "@/constants";
 import { clearSearchForm, searchTwdForm, useApp } from "@/context";
 
 const TwdResultDescriptionText = ({ deck }) => {
