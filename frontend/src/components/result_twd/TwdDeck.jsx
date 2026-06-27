@@ -3,6 +3,7 @@ import {
   Hr,
   PdaResultDescription,
   ResultLibraryTypeImage,
+  TdaResultDescription,
   TwdResultCryptTable,
   TwdResultDescription,
   TwdResultLibraryByTypeTable,
@@ -14,13 +15,11 @@ import { useApp } from "@/context";
 import { useDeckLibrary } from "@/hooks";
 import { parseDeck } from "@/utils";
 
-const TwdDeck = ({ deck, inPda }) => {
+const TwdDeck = ({ deck, inPda, inTda }) => {
   const { cryptCardBase, libraryCardBase, isNarrow } = useApp();
-  const { [CRYPT]: crypt, [LIBRARY]: library } = parseDeck(
-    cryptCardBase,
-    libraryCardBase,
-    deck?.[CARDS],
-  );
+  const { [CRYPT]: crypt, [LIBRARY]: library } = inTda
+    ? deck
+    : parseDeck(cryptCardBase, libraryCardBase, deck?.[CARDS]);
   const parsedDeck = { ...deck, [CRYPT]: crypt, [LIBRARY]: library };
   delete parsedDeck[CARDS];
   const { libraryByTypeTotal } = useDeckLibrary(library);
@@ -31,6 +30,8 @@ const TwdDeck = ({ deck, inPda }) => {
         <div className="basis-full lg:basis-1/4">
           {inPda ? (
             <PdaResultDescription deck={parsedDeck} />
+          ) : inTda ? (
+            <TdaResultDescription deck={parsedDeck} />
           ) : (
             <TwdResultDescription deck={parsedDeck} />
           )}

@@ -1,4 +1,4 @@
-import { TdaDeck, TdaResultTotal } from "@/components";
+import { TdaResultTotal, TwdDeck } from "@/components";
 import { AUTHOR, RANK_HIGH_LOW, RANK_LOW_HIGH } from "@/constants";
 import { useApp } from "@/context";
 import { decksSort } from "@/utils";
@@ -23,7 +23,7 @@ const TdaResult = ({ decks }) => {
       />
       <div className="flex flex-col gap-4">
         {sortedDecks.map((deck) => (
-          <TdaDeck deck={deck} key={deck[AUTHOR]} />
+          <TwdDeck deck={deck} key={deck[AUTHOR]} inTda />
         ))}
       </div>
     </div>

@@ -1,6 +1,4 @@
 # FIX
-- Mobile card popup with sets to hide swap button
-- Expand library on mobile in TDA like in TWD
 
 # FIX ON HOLD
 

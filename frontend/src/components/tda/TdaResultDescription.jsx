@@ -10,7 +10,7 @@ import { BASE, GW, RANK, SCORE, SUPERIOR, TAGS, VP } from "@/constants";
 import { useApp } from "@/context";
 import { getDeckInUrl } from "@/utils";
 
-const TdaDeckDescription = ({ deck }) => {
+const TdaResultDescription = ({ deck }) => {
   const { username, isNarrow, isMobile } = useApp();
   const deckInUrl = getDeckInUrl(deck);
 
@@ -55,4 +55,4 @@ const TdaDeckDescription = ({ deck }) => {
   );
 };
 
-export default TdaDeckDescription;
+export default TdaResultDescription;
