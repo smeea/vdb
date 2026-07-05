@@ -87,8 +87,6 @@ export const getPreconDecks = async (cryptCardBase, libraryCardBase, secret) => 
   const preconPlaytestDecksData = secret ? await ky.get(urlPreconPlaytestDecks).json() : {};
   const preconData = { ...preconDecksData, ...preconPlaytestDecksData };
 
-  console.log('2', secret, urlPreconPlaytestDecks, preconPlaytestDecksData)
-
   const preconDecks = {};
   Object.keys(preconData).forEach((set) => {
     Object.keys(preconData[set]).forEach((precon) => {

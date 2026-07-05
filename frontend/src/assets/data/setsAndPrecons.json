@@ -5,11 +5,13 @@
     "precons": {
       "BbN": {
         "name": "Brazil By Night",
-        "clan": "Bundle"
+        "clan": "Bundle",
+        "playtest_old": true
       },
       "SoNY": {
         "name": "Shadows of New York",
-        "clan": "Bundle"
+        "clan": "Bundle",
+        "playtest_old": true
       },
       "ToDN": {
         "name": "Nosferatu",
