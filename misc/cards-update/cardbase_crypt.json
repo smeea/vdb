@@ -2348,6 +2348,9 @@
             "2P":{
                 "C":true,
                 "V":3
+            },
+            "playtest":{
+                "ToDV":1
             }
         },
         "text":"Camarilla Prince of Melbourne: During the polling step of any referendum, Alexa can discard a card requiring Dominate [dom] to get +1 vote.",
@@ -27621,6 +27624,9 @@
             "2P":{
                 "C":true,
                 "V":1
+            },
+            "playtest":{
+                "ToDV":1
             }
         },
         "text":"Camarilla Prince of Mannheim.",
@@ -34925,6 +34931,9 @@
             "2P":{
                 "C":true,
                 "V":1
+            },
+            "playtest":{
+                "ToDV":2
             }
         },
         "text":"Camarilla Prince of Chicago: Kevin gets +1 strength in combat with a Brujah. Brujah get +1 strength in combat with him.",
@@ -48205,6 +48214,9 @@
             "2P":{
                 "C":true,
                 "N":2
+            },
+            "playtest":{
+                "ToDN":2
             }
         },
         "text":"Camarilla Prince of Brussels: During your influence phase, you can burn the Edge to add 1 blood to a Nosferatu in your uncontrolled region.",

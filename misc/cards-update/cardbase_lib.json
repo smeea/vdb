@@ -11760,6 +11760,9 @@
                 "Sal":3,
                 "Tr":3,
                 "V":2
+            },
+            "playtest":{
+                "ToDV":2
             }
         },
         "text":"Only usable during a bleed action.\n[dom] +1 bleed (limited).\n[DOM] +1 stealth and +1 bleed (limited).",
@@ -13454,6 +13457,9 @@
             "Third":{
                 "U":true,
                 "PB":1
+            },
+            "playtest":{
+                "ToDN":1
             }
         },
         "text":"[pot] Strike: hand strike at +1 damage, aggravated.\n[POT] Strike: hand strike at +2 damage, aggravated.",
@@ -14845,6 +14851,9 @@
                 "G":4,
                 "N":4,
                 "Tz":5
+            },
+            "playtest":{
+                "ToDN":3
             }
         },
         "text":"Only usable before range is determined. A vampire can play only one Carrion Crows each combat.\n[ani] This combat, the opposing minion takes 1R environmental damage each round during normal strike resolution.\n[ANI] As above, but for 2R environmental damage.",
@@ -21632,6 +21641,9 @@
             "2P":{
                 "C":true,
                 "N":2
+            },
+            "playtest":{
+                "ToDN":2
             }
         },
         "text":"+1 stealth action.\nX is the number of copies of this card you control. Put this card in play. During your unlock phase, your prey burns 1 pool. Minions can burn this card as a (D) action.",
@@ -24781,6 +24793,9 @@
                 "G":4,
                 "N":4,
                 "Tz":4
+            },
+            "playtest":{
+                "ToDN":2
             }
         },
         "text":"[ani] (D) Bleed with +1 bleed.\n[ANI] Frenzy. (D) Enter combat with and lock a vampire. The target vampire is considered the acting minion during that combat.",
@@ -27956,6 +27971,9 @@
                 "Sal":2,
                 "Tr":2,
                 "V":1
+            },
+            "playtest":{
+                "ToDV":1
             }
         },
         "text":"[dom] +1 stealth action. (D) Bleed with +1 bleed.\n[DOM] (D) Steal a location.",
@@ -32118,6 +32136,9 @@
             },
             "KoT":{
                 "R":true
+            },
+            "playtest":{
+                "ToDV":1
             }
         },
         "text":"Unique.\nPut this card on a Ventrue with capacity 8 or more. This Ventrue gets +1 intercept and +1 vote. This Ventrue can force any vampire to yield a contested title as a +1 stealth (D) action.",
@@ -34390,6 +34411,9 @@
                 "B":1,
                 "N":1,
                 "Tz":1
+            },
+            "playtest":{
+                "ToDN":1
             }
         },
         "text":"Unique.\nPut this card on a ready vampire. After this vampire goes to torpor, their controller burns 3 pool. During each Methuselah's unlock phase, if this vampire is in torpor, that Methuselah burns 1 pool.",
@@ -42405,6 +42429,9 @@
                 "Sal":2,
                 "To":2,
                 "V":2
+            },
+            "playtest":{
+                "ToDN":2
             }
         },
         "text":"Move up to 3 blood from a ready vampire you control to a younger vampire of the same clan in your uncontrolled region.",
@@ -42638,6 +42665,9 @@
                 "N":2,
                 "R":2,
                 "Tz":2
+            },
+            "playtest":{
+                "ToDN":2
             }
         },
         "text":"Only usable by a locked vampire during a bleed action directed at you.\n[ani] Unlock this vampire.\n[ANI] As above, with 1 optional maneuver during the resulting combat if this vampire blocks.",
@@ -53252,6 +53282,9 @@
                 "PM":"2",
                 "SKB":"1",
                 "SKM":"2"
+            },
+            "playtest":{
+                "ToDV":1
             }
         },
         "text":"Equipment.\nIf the action to equip with the Leather Jacket is successful, unlock the acting minion at the end of the turn. Bearer may burn Leather Jacket to prevent all the damage from the opposing minion's strike. A minion may have only one Leather Jacket.",
@@ -54267,6 +54300,9 @@
                 "Sal":2,
                 "Tz":3,
                 "V":2
+            },
+            "playtest":{
+                "ToDV":2
             }
         },
         "text":"Trifle.\nAdd 1 blood to a ready vampire.",
@@ -66711,6 +66747,10 @@
                 "L":2,
                 "To":2,
                 "V":2
+            },
+            "playtest":{
+                "ToDN":2,
+                "ToDV":2
             }
         },
         "text":"Requires a prince or justicar.\nChoose a Methuselah who has more pool than you do and allocate 3 of their pool among 1 or more other Methuselahs (including you). Successful referendum means the pool is distributed as you chose.",
@@ -68122,6 +68162,9 @@
                 "C":true,
                 "To":4,
                 "V":3
+            },
+            "playtest":{
+                "ToDV":2
             }
         },
         "text":"[pre] Only usable during the polling step of a political action. This vampire gets +3 votes.\n[PRE] Allies and younger vampires get -1 intercept.",
@@ -70341,6 +70384,9 @@
             },
             "KoT":{
                 "U":true
+            },
+            "playtest":{
+                "ToDN":1
             }
         },
         "text":"Master: unique location.\nDuring your unlock phase, you may move 1 blood from the blood bank to this card or move all the blood on this card to your pool. A vampire controlled by another Methuselah can move all the blood on this card to his or her controller's pool as a (D) action.",
@@ -72912,6 +72958,9 @@
             "2P":{
                 "C":true,
                 "V":2
+            },
+            "playtest":{
+                "ToDV":1
             }
         },
         "text":"[pre] (D) Bleed with +1 bleed. Titled vampires cannot block this action.\n[PRE] As above, and the target Methuselah locks a ready unlocked minion they control.",
@@ -73109,6 +73158,9 @@
             "2P":{
                 "C":true,
                 "N":2
+            },
+            "playtest":{
+                "ToDV":4
             }
         },
         "text":"Requires a primogen. Only usable during a bleed action against you or during the polling step of a political action.\nReduce the bleed amount by 3 or this vampire gains +3 votes against the referendum.",
@@ -83011,6 +83063,9 @@
                 "Sal":5,
                 "Tr":5,
                 "Tz":4
+            },
+            "playtest":{
+                "ToDV":2
             }
         },
         "text":"[dom] (D) Bleed with +1 bleed.\n[DOM] +1 stealth action. Add 2 blood to a younger vampire in your uncontrolled region.",
@@ -83533,6 +83588,10 @@
                 "To":2,
                 "Tr":2,
                 "V":4
+            },
+            "playtest":{
+                "ToDN":2,
+                "ToDV":1
             }
         },
         "text":"Requires a prince or justicar.\n[REACTION] +2 intercept.\n[REACTION] Only usable by a locked prince or justicar. This vampire burns 1 blood to unlock and attempt to block with +2 intercept, even if intercept is not yet needed.",
@@ -83882,6 +83941,9 @@
                 "C":true,
                 "Sal":2,
                 "V":2
+            },
+            "playtest":{
+                "ToDV":1
             }
         },
         "text":"Only usable as the action is announced.\n[dom] Choose a younger vampire. The chosen vampire cannot block this action.\n[DOM] As above, but choose any vampire.",
@@ -84171,6 +84233,9 @@
             },
             "2P":{
                 "C":true
+            },
+            "playtest":{
+                "ToDN":2
             }
         },
         "text":"Requires a vampire with capacity 7 or more.\n[ani] +1 intercept.\n[ANI] Only usable by a locked vampire. This vampire unlocks and attempts to block.",
@@ -87922,6 +87987,9 @@
             },
             "LoB":{
                 "PA":"2"
+            },
+            "playtest":{
+                "ToDV":2
             }
         },
         "text":"[for] Prevent all damage from the opponent's strike.\n[FOR] As above, and prevent all damage from the opponent's strikes for the remainder of this round.",
@@ -89369,6 +89437,9 @@
             },
             "BH":{
                 "PN":1
+            },
+            "playtest":{
+                "ToDN":1
             }
         },
         "text":"[ani] Strike: 2 damage.\n[ANI] Strike: 2 aggravated damage.",
@@ -93882,6 +93953,9 @@
                 "Mi":3,
                 "N":3,
                 "R":2
+            },
+            "playtest":{
+                "ToDN":2
             }
         },
         "text":"[obf] [ACTION MODIFIER] +1 stealth.\n[OBF] [COMBAT] Maneuver.",
@@ -95760,6 +95834,9 @@
                 "C":true,
                 "B":2,
                 "N":2
+            },
+            "playtest":{
+                "ToDN":2
             }
         },
         "text":"Only usable at the end of a round of combat. Not usable by a vampire being burned or going to torpor. A vampire can play only one Taste of Vitae each round.\nThis vampire gains blood equal to the amount of blood lost by the opposing vampire to damage this round.",
@@ -101787,6 +101864,9 @@
             },
             "FB":{
                 "PV":"2"
+            },
+            "playtest":{
+                "ToDV":2
             }
         },
         "text":"[for] Prevent 1 damage.\n[FOR] Maneuver, and this vampire can prevent 1 damage later this round.",
@@ -104754,6 +104834,9 @@
                 "C":true,
                 "To":2,
                 "V":2
+            },
+            "playtest":{
+                "ToDV":1
             }
         },
         "text":"Only usable after resolution of a political action whose referendum passed.\n[pre] This vampire gains 1 blood for each vote by which the referendum passed.\n[PRE] As above, but move up to 2 of those blood to your pool instead of this vampire.",
@@ -105264,6 +105347,9 @@
                 "C":true,
                 "M":2,
                 "Mi":2
+            },
+            "playtest":{
+                "ToDV":1
             }
         },
         "text":"Only usable by a locked vampire. Do not replace until your next unlock phase.\nThis vampire wakes (they ignore the requirement to be unlocked for playing reaction cards and attempting to block until the end of the action).",

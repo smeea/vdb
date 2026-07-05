@@ -1,5 +1,11 @@
 [
   {
+    "version": "2026-07-05",
+    "changes": [
+      "Small fixes and improvements"
+    ]
+  },
+  {
     "version": "2026-06-25",
     "changes": [
       "Hotfix"

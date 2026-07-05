@@ -10,6 +10,14 @@
       "SoNY": {
         "name": "Shadows of New York",
         "clan": "Bundle"
+      },
+      "ToDN": {
+        "name": "Nosferatu",
+        "clan": "Nosferatu"
+      },
+      "ToDV": {
+        "name": "Ventrue",
+        "clan": "Ventrue"
       }
     }
   },
