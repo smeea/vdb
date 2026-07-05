@@ -264,20 +264,11 @@ const Decks = () => {
         </div>
       )}
       {isEditable && showFloatingButtons && (
-        <>
-          <DeckNewCardFloating
-            className="sm:hidden"
-            /* target={CRYPT} */
-            deckid={deckid}
-            cards={Object.values({ ...deck[CRYPT], ...deck[LIBRARY] })}
-          />
-          {/* <DeckNewCardFloating */}
-          {/*   className="sm:hidden" */}
-          {/*   target={LIBRARY} */}
-          {/*   deckid={deckid} */}
-          {/*   cards={Object.values(deck[LIBRARY])} */}
-          {/* /> */}
-        </>
+        <DeckNewCardFloating
+          className="sm:hidden"
+          deckid={deckid}
+          cards={Object.values({ ...deck[CRYPT], ...deck[LIBRARY] })}
+        />
       )}
       <div className="lg:hidden">
         <ButtonFloatMenu />

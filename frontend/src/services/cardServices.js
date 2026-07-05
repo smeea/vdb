@@ -29,14 +29,16 @@ export const getCardBase = async (secret) => {
   const urlCryptPlaytest = `${BASE_URL}/data/cardbase_crypt_playtest_${secret}.json?v=${CARD_VERSION}`;
   const urlLibraryPlaytest = `${BASE_URL}/data/cardbase_lib_playtest_${secret}.json?v=${CARD_VERSION}`;
 
+
   const crypt = await ky.get(urlCrypt).json();
   const library = await ky.get(urlLibrary).json();
+
   const cryptPlaytest = secret
-    ? await ky.get(urlCryptPlaytest, { throwHttpErrors: false }).json()
-    : {};
+        ? await ky.get(urlCryptPlaytest, { throwHttpErrors: false }).json()
+        : {};
   const libraryPlaytest = secret
-    ? await ky.get(urlLibraryPlaytest, { throwHttpErrors: false }).json()
-    : {};
+        ? await ky.get(urlLibraryPlaytest, { throwHttpErrors: false }).json()
+        : {};
 
   const nativeCrypt = {};
   const nativeLibrary = {};
@@ -84,6 +86,8 @@ export const getPreconDecks = async (cryptCardBase, libraryCardBase, secret) => 
   const preconDecksData = await ky.get(urlPreconDecks).json();
   const preconPlaytestDecksData = secret ? await ky.get(urlPreconPlaytestDecks).json() : {};
   const preconData = { ...preconDecksData, ...preconPlaytestDecksData };
+
+  console.log('2', secret, urlPreconPlaytestDecks, preconPlaytestDecksData)
 
   const preconDecks = {};
   Object.keys(preconData).forEach((set) => {
