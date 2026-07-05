@@ -1,14 +1,11 @@
 import { TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/react";
-import Arrow90DegLeft from "@icons/arrow-90deg-left.svg?react";
-import Download from "@icons/download.svg?react";
-import Printer from "@icons/printer.svg?react";
 import ky from "ky";
 import { useState } from "react";
-import { useNavigate } from "react-router";
 import {
-  ButtonIconed,
   FlexGapped,
   Hr,
+  PlaytestExportButtons,
+  PlaytestExportDropdown,
   PlaytestReportsAllCardsWrapper,
   PlaytestReportsAllGeneral,
   PlaytestReportsAllPreconsWrapper,
@@ -17,7 +14,6 @@ import {
   Toggle,
 } from "@/components";
 import {
-  ALL,
   CARDS,
   CLAN_DISCIPLINE,
   CRYPT,
@@ -37,9 +33,14 @@ import { playtestServices } from "@/services";
 import { capitalize, getIsPlaytest } from "@/utils";
 
 const PlaytestReportsAll = () => {
-  const { hidePlaytestNames, setHidePlaytestNames, preconDecks, cryptCardBase, libraryCardBase } =
-    useApp();
-  const navigate = useNavigate();
+  const {
+    hidePlaytestNames,
+    setHidePlaytestNames,
+    preconDecks,
+    cryptCardBase,
+    libraryCardBase,
+    isMobile,
+  } = useApp();
   const [sortMethod, setSortMethod] = useState(NAME);
   const sortMethods = {
     [NAME]: "N",
@@ -169,51 +170,15 @@ const PlaytestReportsAll = () => {
     <div className="playtest-reports-container mx-auto print:dark:bg-bgPrimary">
       <div className="flex flex-col gap-3 max-sm:p-2 sm:gap-4">
         <div className="flex justify-between gap-1 sm:gap-4 print:hidden">
-          <div className="flex gap-1 max-sm:w-full max-sm:flex-col">
-            <ButtonIconed
-              className="w-full whitespace-nowrap"
-              onClick={() => exportReports(CARDS)}
-              title="Cards - Text"
-              text="Cards - Text"
-              icon={<Download />}
-            />
-            <ButtonIconed
-              className="w-full whitespace-nowrap"
-              onClick={() => exportReports(PRECONS)}
-              title="Precons - Text"
-              text="Precons - Text"
-              icon={<Download />}
-            />
-            <ButtonIconed
-              className="w-full whitespace-nowrap"
-              onClick={() => exportReports(GENERAL)}
-              title="General - Text"
-              text="General - Text"
-              icon={<Download />}
-            />
-            <ButtonIconed
-              className="w-full whitespace-nowrap"
-              onClick={() => exportReports(ALL, XLSX)}
-              title="Excel"
-              text="Excel"
-              icon={<Download />}
-            />
-            <ButtonIconed
-              className="w-full whitespace-nowrap"
-              onClick={() => print()}
-              title="PDF"
-              text="PDF"
-              icon={<Printer width="18" height="18" viewBox="0 0 18 16" />}
-            />
+          <div className="flex gap-1 max-sm:w-full">
+            {isMobile ? (
+              <PlaytestExportDropdown exportReports={exportReports} />
+            ) : (
+              <PlaytestExportButtons exportReports={exportReports} />
+            )}
           </div>
-          <div className="flex gap-1 max-sm:flex-col max-sm:justify-between sm:gap-3">
+          <div className="flex gap-3">
             <div className="flex justify-between gap-1 max-sm:flex-col">
-              <ButtonIconed
-                onClick={() => navigate("/playtest")}
-                title="Back"
-                icon={<Arrow90DegLeft />}
-                text="Back"
-              />
               <SortButton
                 className="h-full min-w-[80px]"
                 sortMethods={sortMethods}

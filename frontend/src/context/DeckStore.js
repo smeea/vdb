@@ -40,7 +40,7 @@ export const deckStore = proxy({
 });
 
 export const setDeck = (v) => {
-  deckStore[DECK] = v ? deepClone(v) : undefined
+  deckStore[DECK] = v ? deepClone(v) : undefined;
   miscStore[CRYPT_TIMER] = !miscStore[CRYPT_TIMER];
 };
 

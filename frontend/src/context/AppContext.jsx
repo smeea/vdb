@@ -276,7 +276,6 @@ export const AppProvider = ({ children }) => {
   };
 
   useEffect(() => {
-
     getMany([
       CARD_VERSION_KEY,
       IS_PLAYTEST,

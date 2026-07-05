@@ -18,35 +18,29 @@ const PlaytestReportsAllCardOrPrecon = ({ product, isPrecon, report, maxSameScor
     <>
       <FlexGapped className="max-sm:flex-col print:break-after-page print:p-8">
         <div className="flex flex-col gap-2 sm:gap-4">
-          {isMobile ? (
-            <div className="flex font-bold text-fgSecondary dark:text-fgSecondaryDark">
-              {product[NAME]}
-            </div>
-          ) : (
-            <FlexGapped
-              className={twMerge(
-                "w-[320px] flex-col",
-                isPrecon ? "print:max-w-[320px]" : "print:max-w-[250px]",
-              )}
-            >
-              <div className="flex flex-col gap-1">
-                <div className="flex font-bold text-fgSecondary dark:text-fgSecondaryDark print:dark:text-fgSecondary">
-                  {product[NAME]}
-                </div>
-                {isPrecon ? (
-                  <div className="print:text-sm">
-                    <DeckCrypt deck={product} noDisciplines inMissing />
-                  </div>
-                ) : (
-                  <CardImage
-                    card={product}
-                    size="sm"
-                    className="print:min-w-[250px] print:max-w-[250px]"
-                  />
-                )}
+          <FlexGapped
+            className={twMerge(
+              "w-[320px] flex-col max-sm:w-full",
+              isPrecon ? "print:max-w-[320px]" : "print:max-w-[250px]",
+            )}
+          >
+            <div className="flex flex-col gap-1 max-sm:w-full">
+              <div className="flex font-bold text-fgSecondary dark:text-fgSecondaryDark print:dark:text-fgSecondary">
+                {product[NAME]}
               </div>
-            </FlexGapped>
-          )}
+              {isPrecon ? (
+                <div className="print:text-sm">
+                  <DeckCrypt deck={product} noDisciplines inMissing />
+                </div>
+              ) : (
+                <CardImage
+                  card={product}
+                  size="sm"
+                  className="max-sm:w-full sm:print:min-w-[250px] sm:print:max-w-[250px]"
+                />
+              )}
+            </div>
+          </FlexGapped>
           {isPlaytestAdmin && <PlaytestScores report={report} maxSameScore={maxSameScore} />}
         </div>
         {!isMobile && <Hr isThick className="print:hidden" />}
