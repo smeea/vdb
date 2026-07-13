@@ -805,6 +805,12 @@
             "refs":{
                 "LSJ 20030224":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/67261v339Ds/m/um8V7VVp2Y4J"
             }
+        },
+        {
+            "text":"[PRE] A card played \"as if from hand\" can be canceled \"as played\"",
+            "refs":{
+                "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
+            }
         }
     ],
     "100083":[
@@ -1107,6 +1113,12 @@
             "text":"If a limited effect is canceled (bleed, additional strike), then the limit is not triggered and another limited effect can be used.",
             "refs":{
                 "LSJ 20030224":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/67261v339Ds/m/um8V7VVp2Y4J"
+            }
+        },
+        {
+            "text":"A card played \"as if from hand\" can be canceled \"as played\"",
+            "refs":{
+                "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
             }
         },
         {
@@ -1824,6 +1836,12 @@
             }
         },
         {
+            "text":"[val][REFLEX] A card played \"as if from hand\" can be canceled \"as played\"",
+            "refs":{
+                "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
+            }
+        },
+        {
             "text":"Adding damage to a strike that does not deal damage has no effect, so the strike still will not do damage.",
             "refs":{
                 "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
@@ -1935,6 +1953,12 @@
             "text":"[pre][dom] If a limited effect is canceled (bleed, additional strike), then the limit is not triggered and another limited effect can be used.",
             "refs":{
                 "LSJ 20030224":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/67261v339Ds/m/um8V7VVp2Y4J"
+            }
+        },
+        {
+            "text":"[pre][dom] A card played \"as if from hand\" can be canceled \"as played\"",
+            "refs":{
+                "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
             }
         },
         {
@@ -2433,6 +2457,12 @@
             }
         },
         {
+            "text":"[pre] A card played \"as if from hand\" can be canceled \"as played\"",
+            "refs":{
+                "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
+            }
+        },
+        {
             "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
             "refs":{
                 "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
@@ -2815,6 +2845,12 @@
             "refs":{
                 "LSJ 20060815":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/nxExSHh-QjA/m/QFBqiTmg3scJ",
                 "LSJ 20011212":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/3jinbBVvqIE/m/9QaMi2N1VeoJ"
+            }
+        },
+        {
+            "text":"You cannot  play Call the Great Beast with an 11-capacity vampire if you already control a Call the Great Beast vampire.",
+            "refs":{
+                "LSJ 20101130":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/_AcH7GPTLJc/m/NNsA5ODSTl0J"
             }
         },
         {
@@ -4616,6 +4652,12 @@
             "refs":{
                 "LSJ 20030224":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/67261v339Ds/m/um8V7VVp2Y4J"
             }
+        },
+        {
+            "text":"A card played \"as if from hand\" can be canceled \"as played\"",
+            "refs":{
+                "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
+            }
         }
     ],
     "100513":[
@@ -6093,6 +6135,12 @@
             }
         },
         {
+            "text":"A card played \"as if from hand\" can be canceled \"as played\"",
+            "refs":{
+                "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
+            }
+        },
+        {
             "text":"[MAL] If an action is canceled, it is not performed and the minion is free to attempt the same action again.",
             "refs":{
                 "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card"
@@ -6342,6 +6390,12 @@
             "text":"If a limited effect is canceled (bleed, additional strike), then the limit is not triggered and another limited effect can be used.",
             "refs":{
                 "LSJ 20030224":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/67261v339Ds/m/um8V7VVp2Y4J"
+            }
+        },
+        {
+            "text":"A card played \"as if from hand\" can be canceled \"as played\"",
+            "refs":{
+                "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
             }
         },
         {
@@ -7767,6 +7821,12 @@
             }
         },
         {
+            "text":"A card played \"as if from hand\" can be canceled \"as played\"",
+            "refs":{
+                "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
+            }
+        },
+        {
             "text":"The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}).",
             "refs":{
                 "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
@@ -8445,6 +8505,12 @@
             "refs":{
                 "LSJ 20030224":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/67261v339Ds/m/um8V7VVp2Y4J"
             }
+        },
+        {
+            "text":"A card played \"as if from hand\" can be canceled \"as played\"",
+            "refs":{
+                "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
+            }
         }
     ],
     "100924":[
@@ -8590,6 +8656,12 @@
             "text":"[dai][obf],\u00a0[DAI][OBF] If a limited effect is canceled (bleed, additional strike), then the limit is not triggered and another limited effect can be used.",
             "refs":{
                 "LSJ 20030224":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/67261v339Ds/m/um8V7VVp2Y4J"
+            }
+        },
+        {
+            "text":"[dai][obf],\u00a0[DAI][OBF] A card played \"as if from hand\" can be canceled \"as played\"",
+            "refs":{
+                "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
             }
         },
         {
@@ -9264,6 +9336,12 @@
             }
         },
         {
+            "text":"[abo][REFLEX] A card played \"as if from hand\" can be canceled \"as played\"",
+            "refs":{
+                "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
+            }
+        },
+        {
             "text":"[abo] [REFLEX] Any frenzy card that targets/selects/chooses/affects the minion when played, is considered being played on the minion.",
             "refs":{
                 "LSJ 20051113":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/L-ctaLucuKU/m/dG0EKdSd4g0J"
@@ -9311,6 +9389,12 @@
             "text":"If a limited effect is canceled (bleed, additional strike), then the limit is not triggered and another limited effect can be used.",
             "refs":{
                 "LSJ 20030224":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/67261v339Ds/m/um8V7VVp2Y4J"
+            }
+        },
+        {
+            "text":"A card played \"as if from hand\" can be canceled \"as played\"",
+            "refs":{
+                "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
             }
         },
         {
@@ -12010,6 +12094,12 @@
             }
         },
         {
+            "text":"[PRE][SER] A card played \"as if from hand\" can be canceled \"as played\"",
+            "refs":{
+                "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
+            }
+        },
+        {
             "text":"[PRE][SER] Cancelation must be immediate: a wake can be used in the \"as played\" window, but a reaction to \"unlock and attempt to block\" cannot.",
             "refs":{
                 "LSJ 20021011":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9WWIzxek9Nc/m/PlIwI11sNpkJ"
@@ -12875,6 +12965,12 @@
             "text":"[abo][REFLEX] If a limited effect is canceled (bleed, additional strike), then the limit is not triggered and another limited effect can be used.",
             "refs":{
                 "LSJ 20030224":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/67261v339Ds/m/um8V7VVp2Y4J"
+            }
+        },
+        {
+            "text":"[abo][REFLEX] A card played \"as if from hand\" can be canceled \"as played\"",
+            "refs":{
+                "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
             }
         },
         {
@@ -14837,6 +14933,12 @@
             }
         },
         {
+            "text":"[VIS] A card played \"as if from hand\" can be canceled \"as played\"",
+            "refs":{
+                "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
+            }
+        },
+        {
             "text":"[VIS] If an action is canceled, it is not performed and the minion is free to attempt the same action again.",
             "refs":{
                 "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card"
@@ -16522,6 +16624,12 @@
             "refs":{
                 "LSJ 20030224":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/67261v339Ds/m/um8V7VVp2Y4J"
             }
+        },
+        {
+            "text":"A card played \"as if from hand\" can be canceled \"as played\"",
+            "refs":{
+                "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
+            }
         }
     ],
     "101897":[
@@ -16579,6 +16687,12 @@
             "text":"[PRE] The ally card itself cannot be cancelled (eg. {Louhi (G4)}'s ability cannot cancel it).",
             "refs":{
                 "ANK 20201229":"https://www.vekn.net/forum/rules-questions/78959-louhi-and-piper#101325"
+            }
+        },
+        {
+            "text":"[PRE]\u00a0Is not an action to recruit a specific type of ally (i.e.\u00a0{Paths in Two Worlds}\u00a0or\u00a0{Shroud Mastery}\u00a0cannot be played)",
+            "refs":{
+                "ANK 20250526":"https://www.vekn.net/forum/rules-questions/82317-the-summoning-paths-in-two-worlds-shroud-mastery#114520"
             }
         },
         {
@@ -16643,6 +16757,12 @@
             "text":"If a limited effect is canceled (bleed, additional strike), then the limit is not triggered and another limited effect can be used.",
             "refs":{
                 "LSJ 20030224":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/67261v339Ds/m/um8V7VVp2Y4J"
+            }
+        },
+        {
+            "text":"A card played \"as if from hand\" can be canceled \"as played\"",
+            "refs":{
+                "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
             }
         },
         {
@@ -16866,6 +16986,12 @@
             }
         },
         {
+            "text":"[abo][REFLEX] A card played \"as if from hand\" can be canceled \"as played\"",
+            "refs":{
+                "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
+            }
+        },
+        {
             "text":"[abo] [REFLEX] Any frenzy card that targets/selects/chooses/affects the minion when played, is considered being played on the minion.",
             "refs":{
                 "LSJ 20051113":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/L-ctaLucuKU/m/dG0EKdSd4g0J"
@@ -17026,6 +17152,12 @@
             "text":"[abo][REFLEX] If a limited effect is canceled (bleed, additional strike), then the limit is not triggered and another limited effect can be used.",
             "refs":{
                 "LSJ 20030224":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/67261v339Ds/m/um8V7VVp2Y4J"
+            }
+        },
+        {
+            "text":"[abo][REFLEX] A card played \"as if from hand\" can be canceled \"as played\"",
+            "refs":{
+                "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
             }
         },
         {
@@ -17648,6 +17780,12 @@
             "text":"If a limited effect is canceled (bleed, additional strike), then the limit is not triggered and another limited effect can be used.",
             "refs":{
                 "LSJ 20030224":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/67261v339Ds/m/um8V7VVp2Y4J"
+            }
+        },
+        {
+            "text":"A card played \"as if from hand\" can be canceled \"as played\"",
+            "refs":{
+                "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
             }
         },
         {
@@ -18872,6 +19010,12 @@
             "refs":{
                 "LSJ 20030224":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/67261v339Ds/m/um8V7VVp2Y4J"
             }
+        },
+        {
+            "text":"A card played \"as if from hand\" can be canceled \"as played\"",
+            "refs":{
+                "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
+            }
         }
     ],
     "102152":[
@@ -19459,6 +19603,12 @@
             "text":"If a limited effect is canceled (bleed, additional strike), then the limit is not triggered and another limited effect can be used.",
             "refs":{
                 "LSJ 20030224":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/67261v339Ds/m/um8V7VVp2Y4J"
+            }
+        },
+        {
+            "text":"A card played \"as if from hand\" can be canceled \"as played\"",
+            "refs":{
+                "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
             }
         },
         {
@@ -20132,6 +20282,12 @@
             "text":"If a limited effect is canceled (bleed, additional strike), then the limit is not triggered and another limited effect can be used.",
             "refs":{
                 "LSJ 20030224":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/67261v339Ds/m/um8V7VVp2Y4J"
+            }
+        },
+        {
+            "text":"A card played \"as if from hand\" can be canceled \"as played\"",
+            "refs":{
+                "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
             }
         },
         {
@@ -21311,6 +21467,12 @@
             "refs":{
                 "LSJ 20030224":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/67261v339Ds/m/um8V7VVp2Y4J"
             }
+        },
+        {
+            "text":"A card played \"as if from hand\" can be canceled \"as played\"",
+            "refs":{
+                "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
+            }
         }
     ],
     "200671":[
@@ -22235,6 +22397,12 @@
             "refs":{
                 "LSJ 20030224":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/67261v339Ds/m/um8V7VVp2Y4J"
             }
+        },
+        {
+            "text":"A card played \"as if from hand\" can be canceled \"as played\"",
+            "refs":{
+                "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
+            }
         }
     ],
     "200988":[
@@ -22838,6 +23006,12 @@
             "text":"If a limited effect is canceled (bleed, additional strike), then the limit is not triggered and another limited effect can be used.",
             "refs":{
                 "LSJ 20030224":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/67261v339Ds/m/um8V7VVp2Y4J"
+            }
+        },
+        {
+            "text":"A card played \"as if from hand\" can be canceled \"as played\"",
+            "refs":{
+                "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
             }
         },
         {
@@ -23597,6 +23771,12 @@
             "text":"If a limited effect is canceled (bleed, additional strike), then the limit is not triggered and another limited effect can be used.",
             "refs":{
                 "LSJ 20030224":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/67261v339Ds/m/um8V7VVp2Y4J"
+            }
+        },
+        {
+            "text":"A card played \"as if from hand\" can be canceled \"as played\"",
+            "refs":{
+                "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
             }
         }
     ],
@@ -24502,6 +24682,12 @@
             "text":"If a limited effect is canceled (bleed, additional strike), then the limit is not triggered and another limited effect can be used.",
             "refs":{
                 "LSJ 20030224":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/67261v339Ds/m/um8V7VVp2Y4J"
+            }
+        },
+        {
+            "text":"A card played \"as if from hand\" can be canceled \"as played\"",
+            "refs":{
+                "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
             }
         }
     ],
@@ -28081,6 +28267,12 @@
             }
         },
         {
+            "text":"A card played \"as if from hand\" can be canceled \"as played\"",
+            "refs":{
+                "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
+            }
+        },
+        {
             "text":"If an action is canceled, it is not performed and the minion is free to attempt the same action again.",
             "refs":{
                 "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card"
@@ -29081,6 +29273,12 @@
             }
         },
         {
+            "text":"[tem] A card played \"as if from hand\" can be canceled \"as played\"",
+            "refs":{
+                "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
+            }
+        },
+        {
             "text":"[tem][REACTION] Cancelation must be immediate: a wake can be used in the \"as played\" window, but a reaction to \"unlock and attempt to block\" cannot.",
             "refs":{
                 "LSJ 20021011":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9WWIzxek9Nc/m/PlIwI11sNpkJ"
@@ -29823,6 +30021,12 @@
             "text":"If a limited effect is canceled (bleed, additional strike), then the limit is not triggered and another limited effect can be used.",
             "refs":{
                 "LSJ 20030224":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/67261v339Ds/m/um8V7VVp2Y4J"
+            }
+        },
+        {
+            "text":"A card played \"as if from hand\" can be canceled \"as played\"",
+            "refs":{
+                "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
             }
         }
     ],
@@ -32282,6 +32486,12 @@
             "refs":{
                 "LSJ 20030224":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/67261v339Ds/m/um8V7VVp2Y4J"
             }
+        },
+        {
+            "text":"A card played \"as if from hand\" can be canceled \"as played\"",
+            "refs":{
+                "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
+            }
         }
     ],
     "100333":[
@@ -32312,6 +32522,12 @@
             "text":"[aus][pre] If a limited effect is canceled (bleed, additional strike), then the limit is not triggered and another limited effect can be used.",
             "refs":{
                 "LSJ 20030224":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/67261v339Ds/m/um8V7VVp2Y4J"
+            }
+        },
+        {
+            "text":"[aus][pre] A card played \"as if from hand\" can be canceled \"as played\"",
+            "refs":{
+                "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
             }
         },
         {
@@ -32356,6 +32572,12 @@
             "refs":{
                 "LSJ 20030224":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/67261v339Ds/m/um8V7VVp2Y4J"
             }
+        },
+        {
+            "text":"A card played \"as if from hand\" can be canceled \"as played\"",
+            "refs":{
+                "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
+            }
         }
     ],
     "100493":[
@@ -32386,6 +32608,12 @@
             "text":"If a limited effect is canceled (bleed, additional strike), then the limit is not triggered and another limited effect can be used.",
             "refs":{
                 "LSJ 20030224":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/67261v339Ds/m/um8V7VVp2Y4J"
+            }
+        },
+        {
+            "text":"A card played \"as if from hand\" can be canceled \"as played\"",
+            "refs":{
+                "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
             }
         },
         {
@@ -32435,6 +32663,12 @@
             "text":"If a limited effect is canceled (bleed, additional strike), then the limit is not triggered and another limited effect can be used.",
             "refs":{
                 "LSJ 20030224":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/67261v339Ds/m/um8V7VVp2Y4J"
+            }
+        },
+        {
+            "text":"A card played \"as if from hand\" can be canceled \"as played\"",
+            "refs":{
+                "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
             }
         },
         {
@@ -32493,6 +32727,12 @@
             }
         },
         {
+            "text":"A card played \"as if from hand\" can be canceled \"as played\"",
+            "refs":{
+                "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
+            }
+        },
+        {
             "text":"If an action is canceled, it is not performed and the minion is free to attempt the same action again.",
             "refs":{
                 "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card"
@@ -32545,6 +32785,12 @@
             "text":"[abo][REFLEX] If a limited effect is canceled (bleed, additional strike), then the limit is not triggered and another limited effect can be used.",
             "refs":{
                 "LSJ 20030224":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/67261v339Ds/m/um8V7VVp2Y4J"
+            }
+        },
+        {
+            "text":"[abo][REFLEX] A card played \"as if from hand\" can be canceled \"as played\"",
+            "refs":{
+                "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
             }
         },
         {
@@ -32604,6 +32850,12 @@
             }
         },
         {
+            "text":"[abo][REFLEX] A card played \"as if from hand\" can be canceled \"as played\"",
+            "refs":{
+                "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
+            }
+        },
+        {
             "text":"[abo] [REFLEX] Any frenzy card that targets/selects/chooses/affects the minion when played, is considered being played on the minion.",
             "refs":{
                 "LSJ 20051113":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/L-ctaLucuKU/m/dG0EKdSd4g0J"
@@ -32654,6 +32906,12 @@
             }
         },
         {
+            "text":"[abo][REFLEX] A card played \"as if from hand\" can be canceled \"as played\"",
+            "refs":{
+                "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
+            }
+        },
+        {
             "text":"[abo] [REFLEX] Any frenzy card that targets/selects/chooses/affects the minion when played, is considered being played on the minion.",
             "refs":{
                 "LSJ 20051113":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/L-ctaLucuKU/m/dG0EKdSd4g0J"
@@ -32698,6 +32956,12 @@
             }
         },
         {
+            "text":"[abo][REFLEX] A card played \"as if from hand\" can be canceled \"as played\"",
+            "refs":{
+                "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
+            }
+        },
+        {
             "text":"[abo] [REFLEX] Any frenzy card that targets/selects/chooses/affects the minion when played, is considered being played on the minion.",
             "refs":{
                 "LSJ 20051113":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/L-ctaLucuKU/m/dG0EKdSd4g0J"
@@ -32739,6 +33003,12 @@
             "text":"If a limited effect is canceled (bleed, additional strike), then the limit is not triggered and another limited effect can be used.",
             "refs":{
                 "LSJ 20030224":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/67261v339Ds/m/um8V7VVp2Y4J"
+            }
+        },
+        {
+            "text":"A card played \"as if from hand\" can be canceled \"as played\"",
+            "refs":{
+                "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
             }
         },
         {
@@ -32791,6 +33061,12 @@
             }
         },
         {
+            "text":"A card played \"as if from hand\" can be canceled \"as played\"",
+            "refs":{
+                "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
+            }
+        },
+        {
             "text":"The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}).",
             "refs":{
                 "ANK 20210226":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
@@ -32834,6 +33110,12 @@
             }
         },
         {
+            "text":"A card played \"as if from hand\" can be canceled \"as played\"",
+            "refs":{
+                "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
+            }
+        },
+        {
             "text":"The cost for a canceled non-action-card is still paid, including additional and alternative cost (e.g. to play {Eagle's Sight} to block a Wraith or zombie while {Parijat, the Dark Oracle} is ready the top card of the Library must be burned, even if {Eagle's Sight} was canceled)",
             "refs":{
                 "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
@@ -32869,6 +33151,12 @@
             "text":"[PRE][POT] If a limited effect is canceled (bleed, additional strike), then the limit is not triggered and another limited effect can be used.",
             "refs":{
                 "LSJ 20030224":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/67261v339Ds/m/um8V7VVp2Y4J"
+            }
+        },
+        {
+            "text":"[PRE][POT] A card played \"as if from hand\" can be canceled \"as played\"",
+            "refs":{
+                "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
             }
         },
         {
@@ -32928,6 +33216,12 @@
             }
         },
         {
+            "text":"[myt][REFLEX] A card played \"as if from hand\" can be canceled \"as played\"",
+            "refs":{
+                "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
+            }
+        },
+        {
             "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
             "refs":{
                 "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
@@ -32963,6 +33257,12 @@
             "text":"[CHI] If a limited effect is canceled (bleed, additional strike), then the limit is not triggered and another limited effect can be used.",
             "refs":{
                 "LSJ 20030224":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/67261v339Ds/m/um8V7VVp2Y4J"
+            }
+        },
+        {
+            "text":"[CHI] A card played \"as if from hand\" can be canceled \"as played\"",
+            "refs":{
+                "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
             }
         },
         {
@@ -33006,6 +33306,12 @@
             "text":"[abo] If a limited effect is canceled (bleed, additional strike), then the limit is not triggered and another limited effect can be used.",
             "refs":{
                 "LSJ 20030224":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/67261v339Ds/m/um8V7VVp2Y4J"
+            }
+        },
+        {
+            "text":"[abo] A card played \"as if from hand\" can be canceled \"as played\"",
+            "refs":{
+                "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
             }
         },
         {
@@ -33053,6 +33359,12 @@
             }
         },
         {
+            "text":"[SER] A card played \"as if from hand\" can be canceled \"as played\"",
+            "refs":{
+                "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
+            }
+        },
+        {
             "text":"[ser] The optional press can only be used during the current round.",
             "refs":{
                 "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
@@ -33088,6 +33400,12 @@
             "refs":{
                 "LSJ 20030224":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/67261v339Ds/m/um8V7VVp2Y4J"
             }
+        },
+        {
+            "text":"A card played \"as if from hand\" can be canceled \"as played\"",
+            "refs":{
+                "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
+            }
         }
     ],
     "101253":[
@@ -33118,6 +33436,12 @@
             "text":"If a limited effect is canceled (bleed, additional strike), then the limit is not triggered and another limited effect can be used.",
             "refs":{
                 "LSJ 20030224":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/67261v339Ds/m/um8V7VVp2Y4J"
+            }
+        },
+        {
+            "text":"A card played \"as if from hand\" can be canceled \"as played\"",
+            "refs":{
+                "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
             }
         },
         {
@@ -33168,6 +33492,12 @@
             "refs":{
                 "LSJ 20030224":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/67261v339Ds/m/um8V7VVp2Y4J"
             }
+        },
+        {
+            "text":"A card played \"as if from hand\" can be canceled \"as played\"",
+            "refs":{
+                "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
+            }
         }
     ],
     "101428":[
@@ -33198,6 +33528,12 @@
             "text":"If a limited effect is canceled (bleed, additional strike), then the limit is not triggered and another limited effect can be used.",
             "refs":{
                 "LSJ 20030224":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/67261v339Ds/m/um8V7VVp2Y4J"
+            }
+        },
+        {
+            "text":"A card played \"as if from hand\" can be canceled \"as played\"",
+            "refs":{
+                "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
             }
         },
         {
@@ -33283,6 +33619,12 @@
             }
         },
         {
+            "text":"[abo][REFLEX] A card played \"as if from hand\" can be canceled \"as played\"",
+            "refs":{
+                "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
+            }
+        },
+        {
             "text":"[abo] [REFLEX] Any frenzy card that targets/selects/chooses/affects the minion when played, is considered being played on the minion.",
             "refs":{
                 "LSJ 20051113":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/L-ctaLucuKU/m/dG0EKdSd4g0J"
@@ -33324,6 +33666,12 @@
             "text":"[abo][REFLEX] If a limited effect is canceled (bleed, additional strike), then the limit is not triggered and another limited effect can be used.",
             "refs":{
                 "LSJ 20030224":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/67261v339Ds/m/um8V7VVp2Y4J"
+            }
+        },
+        {
+            "text":"[abo][REFLEX] A card played \"as if from hand\" can be canceled \"as played\"",
+            "refs":{
+                "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
             }
         },
         {
@@ -33371,6 +33719,12 @@
             }
         },
         {
+            "text":"A card played \"as if from hand\" can be canceled \"as played\"",
+            "refs":{
+                "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
+            }
+        },
+        {
             "text":"Cancelation must be immediate: a wake can be used in the \"as played\" window, but a reaction to \"unlock and attempt to block\" cannot.",
             "refs":{
                 "LSJ 20021011":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9WWIzxek9Nc/m/PlIwI11sNpkJ"
@@ -33412,6 +33766,12 @@
             "text":"If a limited effect is canceled (bleed, additional strike), then the limit is not triggered and another limited effect can be used.",
             "refs":{
                 "LSJ 20030224":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/67261v339Ds/m/um8V7VVp2Y4J"
+            }
+        },
+        {
+            "text":"A card played \"as if from hand\" can be canceled \"as played\"",
+            "refs":{
+                "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
             }
         },
         {
@@ -33489,6 +33849,12 @@
             }
         },
         {
+            "text":"A card played \"as if from hand\" can be canceled \"as played\"",
+            "refs":{
+                "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
+            }
+        },
+        {
             "text":"[PRO][REACTION] Cancelation must be immediate: a wake can be used in the \"as played\" window, but a reaction to \"unlock and attempt to block\" cannot.",
             "refs":{
                 "LSJ 20021011":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9WWIzxek9Nc/m/PlIwI11sNpkJ"
@@ -33524,6 +33890,12 @@
             "refs":{
                 "LSJ 20030224":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/67261v339Ds/m/um8V7VVp2Y4J"
             }
+        },
+        {
+            "text":"[OBF][VIC] A card played \"as if from hand\" can be canceled \"as played\"",
+            "refs":{
+                "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
+            }
         }
     ],
     "101929":[
@@ -33554,6 +33926,12 @@
             "text":"[abo][REFLEX] If a limited effect is canceled (bleed, additional strike), then the limit is not triggered and another limited effect can be used.",
             "refs":{
                 "LSJ 20030224":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/67261v339Ds/m/um8V7VVp2Y4J"
+            }
+        },
+        {
+            "text":"[abo][REFLEX] A card played \"as if from hand\" can be canceled \"as played\"",
+            "refs":{
+                "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
             }
         },
         {
@@ -33601,6 +33979,12 @@
             }
         },
         {
+            "text":"A card played \"as if from hand\" can be canceled \"as played\"",
+            "refs":{
+                "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
+            }
+        },
+        {
             "text":"Cancelation must be immediate: a wake can be used in the \"as played\" window, but a reaction to \"unlock and attempt to block\" cannot.",
             "refs":{
                 "LSJ 20021011":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9WWIzxek9Nc/m/PlIwI11sNpkJ"
@@ -33638,6 +34022,12 @@
             }
         },
         {
+            "text":"A card played \"as if from hand\" can be canceled \"as played\"",
+            "refs":{
+                "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
+            }
+        },
+        {
             "text":"[DOM] The optional press can only be used during the current round.",
             "refs":{
                 "TOM 19960521":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/poYD3n0TKGo/m/xvU5HW7lBxMJ"
@@ -33672,6 +34062,12 @@
             "text":"[OBE][REACTION] If a limited effect is canceled (bleed, additional strike), then the limit is not triggered and another limited effect can be used.",
             "refs":{
                 "LSJ 20030224":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/67261v339Ds/m/um8V7VVp2Y4J"
+            }
+        },
+        {
+            "text":"[OBE][REACTION] A card played \"as if from hand\" can be canceled \"as played\"",
+            "refs":{
+                "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
             }
         },
         {
@@ -33756,6 +34152,12 @@
             }
         },
         {
+            "text":"[abo][REFLEX] A card played \"as if from hand\" can be canceled \"as played\"",
+            "refs":{
+                "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
+            }
+        },
+        {
             "text":"[abo] [REFLEX] Any frenzy card that targets/selects/chooses/affects the minion when played, is considered being played on the minion.",
             "refs":{
                 "LSJ 20051113":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/L-ctaLucuKU/m/dG0EKdSd4g0J"
@@ -33829,6 +34231,12 @@
             }
         },
         {
+            "text":"A card played \"as if from hand\" can be canceled \"as played\"",
+            "refs":{
+                "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
+            }
+        },
+        {
             "text":"The cost for a canceled non-action-card is still paid, including additional and alternative cost (e.g. to play {Eagle's Sight} to block a Wraith or zombie while {Parijat, the Dark Oracle} is ready the top card of the Library must be burned, even if {Eagle's Sight} was canceled)",
             "refs":{
                 "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
@@ -33864,6 +34272,12 @@
             "text":"[abo][REFLEX] If a limited effect is canceled (bleed, additional strike), then the limit is not triggered and another limited effect can be used.",
             "refs":{
                 "LSJ 20030224":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/67261v339Ds/m/um8V7VVp2Y4J"
+            }
+        },
+        {
+            "text":"[abo][REFLEX] A card played \"as if from hand\" can be canceled \"as played\"",
+            "refs":{
+                "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
             }
         },
         {
@@ -33908,6 +34322,12 @@
             "text":"If a limited effect is canceled (bleed, additional strike), then the limit is not triggered and another limited effect can be used.",
             "refs":{
                 "LSJ 20030224":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/67261v339Ds/m/um8V7VVp2Y4J"
+            }
+        },
+        {
+            "text":"A card played \"as if from hand\" can be canceled \"as played\"",
+            "refs":{
+                "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
             }
         },
         {
@@ -33965,6 +34385,12 @@
             "refs":{
                 "LSJ 20030224":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/67261v339Ds/m/um8V7VVp2Y4J"
             }
+        },
+        {
+            "text":"A card played \"as if from hand\" can be canceled \"as played\"",
+            "refs":{
+                "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
+            }
         }
     ],
     "200779":[
@@ -33995,6 +34421,12 @@
             "text":"If a limited effect is canceled (bleed, additional strike), then the limit is not triggered and another limited effect can be used.",
             "refs":{
                 "LSJ 20030224":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/67261v339Ds/m/um8V7VVp2Y4J"
+            }
+        },
+        {
+            "text":"A card played \"as if from hand\" can be canceled \"as played\"",
+            "refs":{
+                "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
             }
         }
     ],
@@ -34027,6 +34459,12 @@
             "refs":{
                 "LSJ 20030224":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/67261v339Ds/m/um8V7VVp2Y4J"
             }
+        },
+        {
+            "text":"A card played \"as if from hand\" can be canceled \"as played\"",
+            "refs":{
+                "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
+            }
         }
     ],
     "201694":[
@@ -34057,6 +34495,12 @@
             "text":"If a limited effect is canceled (bleed, additional strike), then the limit is not triggered and another limited effect can be used.",
             "refs":{
                 "LSJ 20030224":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/67261v339Ds/m/um8V7VVp2Y4J"
+            }
+        },
+        {
+            "text":"A card played \"as if from hand\" can be canceled \"as played\"",
+            "refs":{
+                "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
             }
         }
     ],

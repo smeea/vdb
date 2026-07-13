@@ -4247,6 +4247,12 @@
                 }
             },
             {
+                "text":"A card played \"as if from hand\" can be canceled \"as played\"",
+                "refs":{
+                    "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
+                }
+            },
+            {
                 "text":"If an action is canceled, it is not performed and the minion is free to attempt the same action again.",
                 "refs":{
                     "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card"
@@ -15873,6 +15879,12 @@
                 "text":"If a limited effect is canceled (bleed, additional strike), then the limit is not triggered and another limited effect can be used.",
                 "refs":{
                     "LSJ 20030224":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/67261v339Ds/m/um8V7VVp2Y4J"
+                }
+            },
+            {
+                "text":"A card played \"as if from hand\" can be canceled \"as played\"",
+                "refs":{
+                    "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
                 }
             }
         ],
@@ -30246,6 +30258,12 @@
                 "refs":{
                     "LSJ 20030224":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/67261v339Ds/m/um8V7VVp2Y4J"
                 }
+            },
+            {
+                "text":"A card played \"as if from hand\" can be canceled \"as played\"",
+                "refs":{
+                    "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
+                }
             }
         ],
         "sect":"Independent",
@@ -35134,6 +35152,12 @@
                 "refs":{
                     "LSJ 20030224":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/67261v339Ds/m/um8V7VVp2Y4J"
                 }
+            },
+            {
+                "text":"A card played \"as if from hand\" can be canceled \"as played\"",
+                "refs":{
+                    "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
+                }
             }
         ],
         "sect":"Laibon",
@@ -38781,6 +38805,12 @@
                 }
             },
             {
+                "text":"A card played \"as if from hand\" can be canceled \"as played\"",
+                "refs":{
+                    "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
+                }
+            },
+            {
                 "text":"If an action is canceled, it is not performed and the minion is free to attempt the same action again.",
                 "refs":{
                     "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card"
@@ -39592,6 +39622,12 @@
                 "text":"If a limited effect is canceled (bleed, additional strike), then the limit is not triggered and another limited effect can be used.",
                 "refs":{
                     "LSJ 20030224":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/67261v339Ds/m/um8V7VVp2Y4J"
+                }
+            },
+            {
+                "text":"A card played \"as if from hand\" can be canceled \"as played\"",
+                "refs":{
+                    "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
                 }
             }
         ],
@@ -44466,6 +44502,12 @@
                 "refs":{
                     "LSJ 20030224":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/67261v339Ds/m/um8V7VVp2Y4J"
                 }
+            },
+            {
+                "text":"A card played \"as if from hand\" can be canceled \"as played\"",
+                "refs":{
+                    "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
+                }
             }
         ],
         "sect":"Sabbat",
@@ -45297,6 +45339,12 @@
                 "text":"If a limited effect is canceled (bleed, additional strike), then the limit is not triggered and another limited effect can be used.",
                 "refs":{
                     "LSJ 20030224":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/67261v339Ds/m/um8V7VVp2Y4J"
+                }
+            },
+            {
+                "text":"A card played \"as if from hand\" can be canceled \"as played\"",
+                "refs":{
+                    "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
                 }
             }
         ],
@@ -56198,6 +56246,12 @@
                 }
             },
             {
+                "text":"A card played \"as if from hand\" can be canceled \"as played\"",
+                "refs":{
+                    "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
+                }
+            },
+            {
                 "text":"The cost for a canceled non-action-card is still paid, including additional and alternative cost (e.g. to play {Eagle's Sight} to block a Wraith or zombie while {Parijat, the Dark Oracle} is ready the top card of the Library must be burned, even if {Eagle's Sight} was canceled)",
                 "refs":{
                     "RBK cancel-a-card":"https://www.vekn.net/rulebook#cancel-a-card",
@@ -66212,6 +66266,12 @@
                 "text":"If a limited effect is canceled (bleed, additional strike), then the limit is not triggered and another limited effect can be used.",
                 "refs":{
                     "LSJ 20030224":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/67261v339Ds/m/um8V7VVp2Y4J"
+                }
+            },
+            {
+                "text":"A card played \"as if from hand\" can be canceled \"as played\"",
+                "refs":{
+                    "LSJ 20060106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NBX34nHwJdo/m/kkZcCy1VBC4J"
                 }
             }
         ],
