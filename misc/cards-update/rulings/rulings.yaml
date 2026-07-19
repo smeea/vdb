@@ -1,5 +1,5 @@
 ---
-# ## Design notes
+#  ## Design notes
 #
 # The core principle of this project is to provide a curated list of rulings
 # **in a format that can withstand the passing of time**.
@@ -12,11 +12,11 @@
 # Here, we have opted for YAML, because it offers a more flexible structure than CSV (multiple rulings per card),
 # and is more readable than JSON, if anyone has to pick the project up without context in the future.
 #
-# ### Design principle
+#  ### Design principle
 #
 # **The rulings reference is a single self-sufficient YAML file. It is usable with a text editor, without processing.**
 #
-# ### Design details
+#  ### Design details
 #
 # 1. The rulings can contain disciplines and card types symbols in brackets (eg. `[pot]`), see the list below
 # 2. The rulings can contain card names in braces (eg. `{Abbot}`)
@@ -26,7 +26,7 @@
 #    or to group of cards, using the `<id>|<name>` format, with an ID beginning with `G`. Cards groups are listed in
 #    the [groups.yaml](rulings/groups.yaml) file.
 #
-# #### List of symbols
+#  #### List of symbols
 #
 # - Inferior disciplines: abo, ani, aus, cel, chi, dai, dem, dom, for, mal, mel, myt, nec, obe, obf, obl, obt, pot, pre,
 #   pro, qui, san, ser, spi, str, tem, thn, tha, val, vic, vis
@@ -39,7 +39,7 @@
 #  Note the "Vision" virtue uses the `[vsn]` trigram, to avoid confusion with the "Visceratika" discipline `[vis]`.
 #  Some versions of the VEKN CSV do use `[vis]` for both indistinctively.
 #
-# ### Discarded options
+#  ### Discarded options
 #
 # We discarded some options after careful consideration:
 #
@@ -103,7 +103,7 @@
   - The pool loss occurs if the block would be successful, even if the action is ended (eg. {Change of Target} or {Obedience})
     or made unblockable ({Horrific Countenance}) at this point. [RTR 19991206] [LSJ 20091125]
   - Burn pool effects are cumulative. [LSJ 19980225]
-100023|Admonitions, The:
+100023|The Admonitions:
   - Cannot be used when a card is played, to draw a card that would cancel it "as it is played". [RTR 20040501]
   - If you are the only Methuselah to control a Sabbat vampire, you keep control of The Admonitions each turn. [LSJ 20031121]
 100024|Agate Talisman:
@@ -117,7 +117,7 @@
     Discipline provided by the Agent of Power and keeps it once the Agent of Power burns. [LSJ 20071005-1]
 100027|Ahriman's Demesne:
   - '[OBT] The opponent does not go to torpor, {Undead Persistence} cannot be played. [LSJ 20040608] '
-100030|Ailing Spirit, The:
+100030|The Ailing Spirit:
   - '[OBE] If one is ousted while having temporary control of a minion, the minion is removed from the game. [LSJ 20081105]'
 100038|Alastor:
   - If the weapon retrieved costs blood, that cost is paid by the vampire chosen by the terms. [LSJ 20040518]
@@ -131,7 +131,7 @@
   - All weapons that provide ranged strikes are considered "ranged weapons" (eg. {Kerrie}). [LSJ 20060825]
 100051|Ananasi Vampirephile:
   - Can use {Pack Alpha} to put a retainer requiring [ani] in play. [LSJ 20060417]
-100052|Anarch Free Press, The:
+100052|The Anarch Free Press:
   - A hunt is not successful if no blood is gained, even if the hunt action is still successful. [LSJ 20050720-2]
   - Using it for the hunt bonus does not make the hunt an action "requiring an Anarch". [ANK 20220317]
 100055|Anarch Revolt:
@@ -150,7 +150,7 @@
   - Multiple Anathemas don't multiply the pool gain. Once one Anathema resolves it burns the vampire and the others are burned
     before they get to resolve. [LSJ 20021117]
   - It is controlled by the controller of the minion it's on - it is not removed when another Methuselah is ousted. [PIB 20121028]
-100063|Ancestor's Talisman, The:
+100063|The Ancestor's Talisman:
   - The effect is not optional. [RTR 19980707] [LSJ 19980722]
 100064|Ancient Influence:
   - Applies a pool gain then a pool loss. {Poison Pill} register a 5 pool loss in all cases, a Methuselah cannot withdraw
@@ -164,7 +164,7 @@
 100068|Anima Gathering:
   - Anima Gathering does not burn if the vampire moves through the uncontrolled region (via {Banishment}, etc.) and returns
     to play unlocked. [LSJ 20060808-2] [LSJ 20060213]
-100071|Ankara Citadel, Turkey, The:
+100071|The Ankara Citadel, Turkey:
   - Concerning the cost of the cards, multiplications and divisions are applied first, followed by additions and subtractions.
     [RTR 20070707]
 100076|Apparition:
@@ -187,11 +187,11 @@
     [PIB 20131013]
 100088|Armor of Terra:
   - '[vis], [VIS] Can be used by a non-slave Gargoyle. [LSJ 20011204-2]'
-100096|Art of Love, The:
+100096|The Art of Love:
   - Requirements do not apply when taking control of a card already in play. [TOM 19960226-1]
   - Effects applied during the discard phase are applied before you return the ally. If you lose control of the ally before
     that, you do not return it. [ANK 20210313]
-100097|Art of Memory, The:
+100097|The Art of Memory:
   - The effect is applied after resolving the action, including after all combats. [LSJ 20031112]
   - Can be used to retrieve the action card itself (if any). [LSJ 20041115]
 100103|Asanbonsam Ghoul:
@@ -255,7 +255,7 @@
   - '[mal] is unaffected by {Orun}. [MAL] is affected by {Orun} (add and subtract before applying the minimum of 1). [ANK
     20180719-1]'
   - The burn option can be used if all your vampires with [mal] are in torpor. [LSJ 20091203]
-100135|Barrens, The:
+100135|The Barrens:
   - Cannot be used when a card is played to draw a card that would cancel it "as it is played". [RTR 20040501]
 100137|Baseball Bat:
   - If put into play in a special way (eg. using {Concealed Weapon}), it is replaced immediately. [LSJ 20080702-2]
@@ -278,7 +278,7 @@
   - '[ANI][PRO] Cards and effects that are played "as the action is announced" must be played before playing "regular" action
     modifier or reaction cards. [ANK 20190425]'
   - '[ANI][PRO] Replace the action card (if any) before playing it. [ANK 20181208]'
-100147|Becoming, The:
+100147|The Becoming:
   - Is a 1-capacity vampire if moved to the uncontrolled region (eg. {Banishment}). [LSJ 20090625]
 100153|Bestial Vengeance:
   - Damage is environmental. [RTR 19970630]
@@ -314,13 +314,13 @@
     20100725] [LSJ 20100303] [ANK 20180817]
   - When choosing a card whose effect depend on Discipline level, the chosen vampire decides in respect to his disciplines
     the normal way. [LSJ 20080803]
-100163|Bitter and Sweet Story, The:
+100163|The Bitter and Sweet Story:
   - When the controller is ousted, their predator does not draw cards. [ANK 20230527-2]
 100165|Black Forest Base:
   - Cannot be attempted twice even if the first attempted was blocked and failed. [LSJ 20091224]
 100166|Black Gloves:
   - Damage done to the bearer is environmental. [LSJ 19970801]
-100172|Black Throne, The:
+100172|The Black Throne:
   - The contract effect can be used even if the target is burned or if the contract is burned when the target leaves the ready
     region (eg. {Priority Contract}). [PIB 20150512]
   - The contract effect can be used if a minion with a contract leaves the ready region because his controller is ousted.
@@ -455,7 +455,7 @@
     both strikes have been chosen) [RTR 19960112]
 100238|Bonecraft:
   - The rest of the effect applies if the damage is prevented, it does not if it is dodged. [LSJ 19990106-2]
-100239|Book of Going Forth by Night, The:
+100239|The Book of Going Forth by Night:
   - Requirements do not apply when taking control of a card already in play. [TOM 19960226-1]
   - Does not apply to Imbued getting incapacitated. [ANK 20220816]
 100241|Botched Move:
@@ -739,7 +739,7 @@
   - Needs not be unlocked to let you look at a card. [LSJ 20001102]
   - Multiple Courier can look at and discard the top library card in succession. [LSJ 20001102]
   - One Courier only lets you look at the top library card once per bleed. [LSJ 20001102-2]
-100435|Coven, The:
+100435|The Coven:
   - Can be locked during damage resolution, but not while healing damage or preventing destruction (you cannot take 2, lock
     The Coven, then take the rest). [PIB 20121031]
   - The predator must take control of it when he gets the opportunity to play effects. If the controller declares his turn
@@ -754,9 +754,9 @@
 100446|CrimethInc.:
   - Can be played if the action is unblocked even if it has no effect due to lack of a suitable target. [LSJ 20070411]
   - An action requiring a Baron (eg. {Open War}) is an action requiring an Anarch. [LSJ 20080603] [LSJ 20050128]
-100449|Crocodile Temple, The:
+100449|The Crocodile Temple:
   - Cannot be used if the action ousted you. [ANK 20180326]
-100474|Crusader Sword, The:
+100474|The Crusader Sword:
   - Can be equipped by a minion who cannot use it. [LSJ 20030607]
 100475|Cry Wolf:
   - His ability continues to apply fully if he is not a werewolf (eg. {Pressing Flesh}). [LSJ 20100212]
@@ -787,7 +787,7 @@
   - The opponent is the one affected by frenzy (eg. for {Blade of Enoch}). [ANK 20220409]
   - Applies to environmental damage inflicted to the opposing minion. [ANK 20181128]
   - Applies to damage played in combat that are resolved after combat (eg. {Catatonic Fear}). [ANK 20170111] [LSJ 20071011]
-100490|Damned, The:
+100490|The Damned:
   - The acting player decides the order of (and can play other) "after resolving the action" effects. [ANK 20180206]
 100492|Daring the Dawn:
   - If the action is blocked, damage is applied after combat [RTR 19980623]
@@ -876,7 +876,7 @@
     played and effects that operate on the number of votes that the referendum passed by have no effect. [LSJ 19980107]
 100542|Diabolic Lure:
   - '[DAI] The opponent burns pool whether or not the pact counters reach capacity. [LSJ 20100205-2] [ANK 20221007]'
-100543|Diamond Thunderbolt, The:
+100543|The Diamond Thunderbolt:
   - If used to cancel a card that has a "Do Not Replace Until" clause on it, that clause is canceled as well and the card
     is replaced normally. [LSJ 20011023]
   - 'If used to cancel the change of control of a {Corruption} action, only the control change is prevented: the corruption
@@ -955,6 +955,7 @@
     be played before the Blood Hunt. [RTR 19991206]'
 100585|Drawing Out the Beast:
   - '[ANI] The additional damage done during the press step is environmental. [RTR 19970630]'
+  - Cannot be played against an ally. [PIB 20121028]
 100588|Dreams of the Sphinx:
   - Cannot move blood to Imbued in the uncontrolled region. [LSJ 20070516]
   - Cannot be used when a card is played to draw a card that would cancel it "as it is played". [RTR 20040501]
@@ -1023,7 +1024,7 @@
   - Can be used during any bleed attempt made against you, not just ones declared against you. [RTR 19960530]
 100620|Elder Library:
   - If there is another copy in play, it enters contest without modifying the hand size. [ANK 20221028]
-100623|Eldest Command Undeath, The:
+100623|The Eldest Command Undeath:
   - If you play {Voter Captivation} on the referendum, you can move up to 2 counters to your pool, and 0 to your vampire.
     [LSJ 20081002]
 100627|Elixir of Distillation:
@@ -1063,7 +1064,7 @@
 100651|Entombment:
   - Only effective at close range. [RBK resolve-strike] [LSJ 20000110]
   - '[OBT] The opponent is wounded (if they play {Undying Tenacity}, they go to torpor after combat). [LSJ 20090622-2]'
-100656|Erciyes Fragments, The:
+100656|The Erciyes Fragments:
   - Cannot be used when a card is played to draw a card that would cancel it "as it is played". [RTR 20040501]
   - If used to play a political action and {Delaying Tactics} is played, the political action card goes to its owner's hand.
     [LSJ 20050322]
@@ -1080,13 +1081,13 @@
     {Rötschreck} is played). [LSJ 20001127-2] [LSJ 20010627] [LSJ 20070508]'
   - If his strike resolves, he cannot be saved from burning (with eg. {Heaven's Gate} of {Left for Dead}). [LSJ 20070507]
     [LSJ 20021205]
-100665|Eternal Mask, The:
+100665|The Eternal Mask:
   - You cannot use the effect to burn the card and the vampire if the vampire is no longer in play to be burned. [LSJ 20070928-1]
   - You still cannot burn it if the vampire that was brought back was burned and later returned to play. [LSJ 20040726] [ANK
     20191031]
   - If The Eternal Mask is burned by something else than its own effect (including when the vampire it is on is burned), the
     vampire that has been brought back is unaffected. [LSJ 20071206] [LSJ 20090725]
-100667|Eternals of Sirius, The:
+100667|The Eternals of Sirius:
   - Pay the cost at the same time you gain pool from it, you do not get ousted in between (ie. can be played when at 4 pool).
     [LSJ 20020620] [LSJ 20080612]
   - You must be able to pay the cost to play it (ie. cannot be played when at 3 pool). [ANK 20210714-2]
@@ -1357,7 +1358,7 @@
   - '[DOM] You do not reveal the target vampire. [LSJ 20010108]'
 100847|Gran Madre di Dio, Italy:
   - Is a unique equipment while not in play. [RTR 20111202] [LSJ 20020726]
-100849|Grandest Trick, The:
+100849|The Grandest Trick:
   - The vampire as an ally has no "starting life" trait so {Vagabond Mystic} cannot give him life. [LSJ 20011214-1]
   - If the vampire has an ability to play Discipline-requiring cards "as if" he has that Discipline ({Ian Forestal}, for example),
     then the vampire may use that ability even while he is treated as an ally. In that case, he is treated just as an ally
@@ -1672,7 +1673,7 @@
   - '[obf] This counts as a Ⓓ action burning the ally (eg. for trophies). [LSJ 20080608]'
   - '[obf] The cost of an imbued is their starting life (cost to influence). Note this is not a cost to recruit (see {Kindred
     Segregation}). [ANK 20220528]'
-'101044|Khabar: Honor, The':
+'101044|The Khabar: Honor':
   - Additional damage inherits all of the properties of the base damage. [TOM 19960225]
 101046|Khazar's Diary (Endless Night):
   - Wraiths minions can act the turn they are put into play. [LSJ 20080426]
@@ -1704,7 +1705,7 @@
   - Cannot allocate 4 points to a single Methuselah, but you can allocate points to yourself. [LSJ 20000622]
 101057|King of the Mountain:
   - '[FOR] Damage dealt to the opponent is environmental. [RTR 19970630] [LSJ 19970801]'
-101062|Kiss of Ra, The:
+101062|The Kiss of Ra:
   - When used by an acting vampire in torpor, there is no opportunity to diablerize the acting vampire, as the action is ended
     without a successful block. [RBK leave-torpor] [LSJ 19970325]
   - 'No reaction or modifier can be played afterwards: the action ends immediately. [RTR 20180719]'
@@ -1784,7 +1785,7 @@
     point goes to the Mathusalah who played Life Boon and the target gets 6 pool. [LSJ 20021029]
   - If you played a Life Boon on your predator, you will not get the VP when you are ousted.  (Reversal of RTR 19990712) [RTR
     20000501] [LSJ 20020622]
-101110|Line, The:
+101110|The Line:
   - Can reduce the cost in blood (not in pool) of any action (ally, retainer, equipment, political). [ANK 20181007]
   - Cannot be used by an ally acting "as a vampire". [ANK 20200605]
 101112|Liquidation:
@@ -1808,7 +1809,7 @@
   - Must be played before action resolution, ie. before any modifier or reaction played "as the action/bleed would be successful"
     are played. It cannot be played after a {Spying Mission} on the vampire triggers. [LSJ 19980105]
   - 'Can be played when failing to block because of stealth: it is still declining to block. [ANK 20211003]'
-101127|Louvre, Paris, The:
+101127|The Louvre, Paris:
   - Can be used at any time, even between two actions, during another Methuselah's turn. [ANK 20210608]
 101128|Loving Agony:
   - '[ani] Additional damage inherits all of the properties of the base damage. [TOM 19960225]'
@@ -1931,7 +1932,7 @@
   - Does not affect merging (base with advanced vampire cards). [LSJ 20030527]
 101185|Mass Reality:
   - Multiple copies stack their bonuses. [LSJ 20020904]
-101192|Meddling of Semsith, The:
+101192|The Meddling of Semsith:
   - Stays in play and still reduces your handsize when the target is ousted. [LSJ 20021008]
   - Is removed from play and its effect cancelled if the Methuselah who played it is ousted. [LSJ 20021008]
   - The "do not replace" effect stacks with whatever "do not replace" clause the card itself has, so that the longest one
@@ -2036,7 +2037,7 @@
 101261|Mylan Horseed:
   - His action to unlock is undirected if the target is a vampire controlled by it's controller, directed otherwise. [PIB
     20121028]
-101263|Name Forgotten, The:
+101263|The Name Forgotten:
   - Each Methuselah must find as many copies of the vampire as possible when searching. [LSJ 20050611]
 101264|Nar-Sheptha:
   - If burned in combat, her effect ceases immediately and the acting minion returns to normal for the rest of the combat.
@@ -2063,7 +2064,7 @@
   - No other effect can be used to reset the range, but other pre-range effects can be played. [RTR 19970630] [ANK 20180720]
   - If another effect also sets the range, the first to resolve has priority (eg. {Squirrel Balance} and {Asanbonsam Ghoul}
     resolve before). [PIB 20120214]
-101279|New Inquisition, The:
+101279|The New Inquisition:
   - When a vampire goes to torpor, the card is replaced before any other effect (eg. before losing pool to {Fame}). [LSJ 20100527]
 101280|New Management:
   - Requirements do not apply when taking control of a card already in play. [TOM 19960226-1]
@@ -2216,7 +2217,7 @@
   - Priscus ballots are not taken into account. [ANK 20211009] [LSJ 20041025]
 101420|Port Authority:
   - 'The cards are replaced before unlocking cards: other unlock effects cannot be ordered before. [ANK 20200129] [LSJ 20091208]'
-101422|Portrait, The:
+101422|The Portrait:
   - If the revealed vampire is between 7 and 10 capacity and the acting vampire has bled this turn already, he simply unlocks
     and the remainder of the effect is lost. [LSJ 20021118]
 101423|Possession:
@@ -2346,7 +2347,7 @@
   - '[aus][tem] [ACTION MODIFIER][REACTION] Cannot be burned during a referendum that is automatically passing. [PIB 20150105]
     [LSJ 19980107]'
   - '[AUS][TEM] A limited bleed modifier can be played before or after. [LSJ 20100218] [RTR 20180511-2]'
-101536|Rack, The:
+101536|The Rack:
   - May not select a new target just for falling out of contention. [RTR 19960112]
   - Will not target a new copy of the same vampire if the original is burned or yielded. [TOM 19960122]
   - Can provide blood if the target is in torpor, not if it is not controlled (eg. after a {Banishment}). [PIB 20150522] [LSJ
@@ -2405,7 +2406,7 @@
     targets the equipments: if one equipment is the same, the action is the same. [RTR 19950509] [LSJ 20080710] [ANK 20200502]'
   - Actions provided by cards in play are not the same if the card is not the same, even if the cards have the same name.
     [LSJ 20080725]
-101575|Red Question, The:
+101575|The Red Question:
   - Is a change of the actual sect. A temporary effect overriding the sect has precedence and if it does, this card burns
     (eg. {Writ of Acceptance}). [LSJ 20100811]
   - Does not make the action an action that "makes this vampire anarch" (eg. {CrimethInc.} cannot be played). [ANK 20180125]
@@ -2478,7 +2479,7 @@
 101639|Rise of the Nephtali:
   - The title stays in play when the event is removed (eg {The Uncoiling}) but can't be claimed any more with the action.
     [LSJ 20070125]
-101640|Rising, The:
+101640|The Rising:
   - Anything that would increase the pool amount is considered "gaining pool". [ANK 20181105]
   - Methuselahs do not gain the pool granted by a bleed action (eg. {Kindred Spirits}) if they do not have the edge or a VP
     beforehand. [LSJ 20100206-2]
@@ -2542,7 +2543,7 @@
   - '[obe] The additional cost does not apply to reaction powers [POWER][REACTION]. [ANK 20180805]'
 101675|Samuel Haight:
   - He cannot "steal equipment as a strike" if there is no equipment to steal. [RTR 19980928]
-101681|Sargon Fragment, The:
+101681|The Sargon Fragment:
   - When using the provided action, the card to retrieve must be named when declaring the action. [LSJ 20010627]
   - Upon resolution, any copy of the named card in the ash heap can be fetched. [LSJ 20050228]
 101683|Savannah Runner:
@@ -2685,7 +2686,7 @@
   - '[NEC] Cards and effects that are played "as the action is announced" must be played before playing "regular" action modifier
     or reaction cards. [ANK 20190425]'
   - '[NEC] Replace the action card (if any) before playing it. [ANK 20181208]'
-101781|Signet of King Saul, The:
+101781|The Signet of King Saul:
   - "{Unleash Hell's Fury} cannot block the bearer. [ANK 20190501]"
 101783|Sins of the Cauchemar:
   - '[AUS] Can be played even if no block attempt is made, several minions can play it on the same action. [LSJ 19990611]'
@@ -2720,12 +2721,12 @@
 101803|Sleep of Reason:
   - If the action is not blocked and the target has 2 or more blood, the action "fizzles" (cost, if any, is paid, and it is
     considered successful, but has no effect). [LSJ 20090514] [LSJ 20070411]
-101805|Sleeping Mind, The:
+101805|The Sleeping Mind:
   - "[DOM] Does not prevent wake effects to be played (eg. {Wake with Evening's Freshness}), but does prevent unlock after\
     \ action resolution (eg. {Freak Drive} or [ani] {Cats' Guidance}). [PIB 20150703]"
 101806|Sleight of Hand:
   - This is an "equip action" [TOM 19960130]
-101807|Slow Withering, The:
+101807|The Slow Withering:
   - The additional cost is paid at the same time the normal cost is paid. [ANK 20190625]
 101809|Smash and Grab:
   - "[ani] If used on an ally and it burns as a result, this counts as a Ⓓ action burning an ally (eg. Trophies, {Predator's\
@@ -2847,7 +2848,7 @@
   - If another effect also sets the range, the first to resolve has priority. [PIB 20120214]
 101879|Strained Vitae Supply:
   - The effect only applies to the default hunt action provided by the rulebook. [PIB 20120204]
-101881|Stranger Among Us, The:
+101881|The Stranger Among Us:
   - Shuffle your crypt afterwards. [LSJ 20020304-1]
 101882|Street Cred:
   - Must be played after the presses are handled and can be played if the round ends prematurely. [RTR 20030519]
@@ -2887,7 +2888,7 @@
     paid for Summon History. [PIB 20111101]
 101898|Summon Soul:
   - '[NEC] Is removed from play as part of the resolution, it cannot be retrieved by {Shroudsight}. [ANK 20170331]'
-101902|Summoning, The:
+101902|The Summoning:
   - '[PRE] The ally cannot act this turn. [RBK recruit-ally]'
   - "[PRE] The ally card itself cannot be cancelled (eg. {Louhi (G4)}'s ability cannot cancel it). [ANK 20201229]"
   - '[PRE] Is not an action to recruit a specific type of ally (i.e. {Paths in Two Worlds} or {Shroud Mastery} cannot be played)
@@ -3056,7 +3057,7 @@
 102014|Treachery:
   - '[pre] The pool is burned after the referendum effects are applied, including any oust and pool gained from it. [LSJ 20090115-2]'
   - '[PRE] The pool is burned when the votes are tallied, before applying the referendum effects. [RTR 20010710]'
-102017|Treatment, The:
+102017|The Treatment:
   - Does nothing to the target Prince if the Prince is in Torpor with zero blood. [TOM 19960423]
   - Will cease functioning if the vampire it is on loses his Prince title. It will resume working if the vampire becomes a
     Prince again. [LSJ 19980209]
@@ -3346,13 +3347,13 @@
   - Can only be used by an acting bleeding minion. [ANK 20220502]
 102227|Hunger of Marduk:
   - The provided strike can be chosen and used more than once during the round. [ANK 20220207]
-102232|Platinum Protocol, The:
+102232|The Platinum Protocol:
   - '[pro] The minion getting the corruption counter is chosen at action resolution (not declaration). [ANK 20240706] [LSJ
     20080608]'
   - '[pro] Putting a corruption counter on a minion does not give you an opportunity to steal it. [ANK 20200925] [ANK 20211105]'
 102233|Revelation of the Serpent:
   - '[PRE][PRO] Cannot be used to unlock if the target is ousted by the bleed. [ANK 20220210]'
-102236|British Museum, London, The:
+102236|The British Museum, London:
   - Checks the card type in hand, reduction and unlock apply to equipments that are locations when in play. [ANK 20220824]
   - The reduction applies to all valid equipments, even without using the unlock or not equipping from hand. [ANK 20221026]
 102238|Enhanced Coagulant:
@@ -3361,7 +3362,7 @@
   - Once used, it becomes a typeless card and cannot be used as a weapon anymore. [ANK 20220818]
 102242|Mobile HQ, Operation Antigen:
   - The card is locked if used to enter combat, even if that action fails. [ANK 20221102]
-102244|Shard, London, The:
+102244|The Shard, London:
   - The cost reduction applies to minion cards, they are also played by the Methuselah. [ANK 20221102]
   - Can allow allies to play cards that otherwise cost blood (eg. {Procurer}), if they do not otherwise require a vampire
     (eg. clan or discipline). [ANK 20230621]
@@ -3517,7 +3518,7 @@
   - If her votes are canceled, the other Tremere votes are unaffected by her ability. [RTR 19960530]
 200157|Baba Yaga, the Iron Hag:
   - Her ability applies when she recruits or employs a retainer or ally in a non-normal way (eg. {Pack Alpha}). [PIB 20150105-2]
-200167|Baron, The:
+200167|The Baron:
   - Cannot play cards requiring a Baron. [PIB 20151116]
 200168|Baron Dieudonne:
   - Cannot play cards requiring a Baron. [PIB 20151116]
@@ -3548,7 +3549,7 @@
 200232|Cailean:
   - When setting the range for the round, no other effect can be used to reset the range, but other pre-range effects can
     be played afterwards. [RTR 19970630] [ANK 20180720]
-200242|Capuchin, The:
+200242|The Capuchin:
   - If he burns, he looses all cards and counters on him, all cards and effects lose track of him and he is considered a new
     vampire for all game purposes (eg. {The Rack} does not target him anymore). [ANK 20200417]
   - If his controller is not his original owner and he burns, he goes to his original owner ash heap, breaking all control
@@ -4216,7 +4217,7 @@
     20030214-2]
 201633|Maila:
   - Her ability can only be used once during each of your turns. [RBK wording-templates] [ANK 20230122]
-201641|Guardian, The:
+201641|The Guardian:
   - When using his ability, the opponent is the acting minion and play their combat effects first. [ANK 20221102]
 201643|Lady Scarlett Churchill:
   - Can be chosen as a target for {Toreador Grand Ball} to be locked, but unlocks normally in subsequent unlock phases. [ANK

@@ -5412,6 +5412,12 @@
             }
         },
         {
+            "text":"Cannot be played against an ally.",
+            "refs":{
+                "PIB 20121028":"https://www.vekn.net/forum/rules-questions/39816-ec-2012-can-you-answer-these?start=6#39843"
+            }
+        },
+        {
             "text":"[ANI] The effect in the press step does not happen if the combat ends prematurely (e.g. from torpor or \"strike: combat ends\").",
             "refs":{
                 "LSJ 20010312":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Mz0Rs9faJ9o/m/bgYwj4yw0G0J",
