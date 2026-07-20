@@ -50,22 +50,11 @@ def generate_twd(i):
             if id != 200076:
                 total_crypt_ex_ac += q
                 total_capacity_ex_ac += q * c["capacity"]
-
-                if (clan := c["clan"]) in clans:
-                    clans[clan] += q
-                else:
-                    clans[clan] = q
-
+                clans[c["clan"]] = clans.get(c["clan"], 0) + q
                 if path := c["path"]:
-                    if path in clans:
-                        clans[path] += q
-                    else:
-                        clans[path] = q
+                    clans[path] = clans.get(path, 0) + q
 
-            if (sect := c["sect"]) in sects:
-                sects[sect] += q
-            else:
-                sects[sect] = q
+            sects[c["sect"]] = sects.get(c["sect"], 0) + q
 
             if "star" not in deck["traits"] and id != 200076:
                 if c["adv"] and c["adv"][1] in crypt:
