@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
   "files": {
-    "maxSize": 20971520
+    "maxSize": 104857600
   },
   "formatter": {
     "enabled": true,
