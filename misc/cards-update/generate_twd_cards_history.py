@@ -1,9 +1,10 @@
 import json
 
-with open("twda.json", "r") as twda_input, open("cardbase_crypt.json", "r") as crypt_file, open(
-    "cardbase_lib.json", "r"
-) as library_file:
-
+with (
+    open("twda.json", "r") as twda_input,
+    open("cardbase_crypt.json", "r") as crypt_file,
+    open("cardbase_lib.json", "r") as library_file,
+):
     crypt_cardbase = json.load(crypt_file).values()
     library_cardbase = json.load(library_file).values()
     cards = {}
@@ -13,27 +14,22 @@ with open("twda.json", "r") as twda_input, open("cardbase_crypt.json", "r") as c
             "deckid": None,
         }
 
-    twda = json.load(twda_input)
+    twda = json.load(twda_input).values()
     total = len(twda)
 
     for i in twda:
         deckid = i["id"]
         player = i["player"]
-        date = i["date"]
+        date = i["event"]["date"]
 
-        for card in i["crypt"]["cards"]:
+        for card in i["cards"]:
             cards[card["id"]]["deckid"] = deckid
             cards[card["id"]]["twdDate"] = date
             cards[card["id"]]["player"] = player
 
-        for cardtype in i["library"]["cards"]:
-            for card in cardtype["cards"]:
-                cards[card["id"]]["deckid"] = deckid
-                cards[card["id"]]["twdDate"] = date
-                cards[card["id"]]["player"] = player
-
-with open("twd_cards_history.json", "w") as output_file, open(
-    "twd_cards_history.min.json", "w"
-) as output_file_min:
+with (
+    open("twd_cards_history.json", "w") as output_file,
+    open("twd_cards_history.min.json", "w") as output_file_min,
+):
     json.dump(cards, output_file_min, separators=(",", ":"))
     json.dump(cards, output_file, indent=4, separators=(",", ":"))

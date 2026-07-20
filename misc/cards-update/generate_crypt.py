@@ -12,7 +12,7 @@ with (
     open("twda.json", "r") as twda_input,
 ):
     rulings = json.load(rulings_file)
-    twda = json.load(twda_input)
+    twda = json.load(twda_input).values()
     disciplines_list = json.load(disciplines_file)
     virtues_list = json.load(virtues_file)
 
@@ -225,7 +225,7 @@ def generate_card(card):
     # Add twda info
     card["Twd"] = 0
     for i in twda:
-        for c in i["crypt"]["cards"]:
+        for c in i["cards"]:
             if c["id"] == card["Id"]:
                 card["Twd"] += 1
 

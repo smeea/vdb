@@ -23,12 +23,10 @@ def get_twd_deck(deckid):
                 deck["description"] += "\n" + comments
 
             del deck["disciplines"]
-            del deck["format"]
             del deck["event"]
             del deck["link"]
             del deck["location"]
             del deck["players"]
-            del deck["score"]
             del deck["traits"]
             del deck["clan"]
             del deck["capacity"]
@@ -368,9 +366,7 @@ def create_branch_route(deckid):
 
     for i, b in enumerate(new_branches):
         branch_name = (
-            f"#{len(master.branches) + 1}"
-            if master.branches
-            else f"#{len(new_branches) - i}"
+            f"#{len(master.branches) + 1}" if master.branches else f"#{len(new_branches) - i}"
         )
         new_deckid = non_secure_generate("1234567890abcdef", 9)
         while Deck.query.get(new_deckid):

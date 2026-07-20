@@ -10,24 +10,18 @@ with open("cardbase_lib.json", "r") as library_file:
 
 def generate_twd(i):
     deck = {
-        "author": i["player"] if "player" in i else "Unknown",
-        "capacity": None,
+        "author": i["player"] if i["player"] else "Unknown",
         "cards": {},
         "cardtypes_ratio": {},
         "clan": None,
-        "creation_date": i["date"],
-        "crypt_total": i["crypt"]["count"],
+        "creation_date": i["event"]["date"],
         "deckid": i["id"],
-        "description": i["comments"] if "comments" in i else "Unknown",
-        "disciplines": [],
-        "event": i["event"],
-        "format": i["tournament_format"] if "tournament_format" in i else "Unknown",
-        "library_total": i["library"]["count"],
-        "link": i["event_link"] if "event_link" in i else "",
-        "location": i["place"] if "place" in i else "Unknown",
-        "name": i["name"] if "name" in i else "Unknown",
-        "players": i["players_count"] if "players_count" in i else "Unknown",
-        "score": i["score"] if "score" in i else "Unknown",
+        "description": i["comment"] if i["comment"] else "Unknown",
+        "event": i["event"]["name"],
+        "link": i["event"]["url"] if i["event"]["url"] else "",
+        "location": i["event"]["place"] if i["event"]["place"] else "Unknown",
+        "name": i["name"] if i["name"] else "Unknown",
+        "players": i["event"]["players_count"] if i["event"]["players_count"] else "Unknown",
         "sect": None,
         "traits": [],
     }
@@ -36,49 +30,52 @@ def generate_twd(i):
     clans = {}
     sects = {}
     disciplines = set()
+    cardtypes = {}
+    crypt_total = 0
+    library_total = 0
     crypt_disciplines = set()
     total_capacity_ex_ac = 0
     total_crypt_ex_ac = 0
 
-    for card in i["crypt"]["cards"]:
-        crypt[card["id"]] = crypt_db[str(card["id"])]
-        crypt[card["id"]]["q"] = card["count"]
-        if card["id"] != 200076:
-            total_crypt_ex_ac += card["count"]
-
-    for id, c in crypt.items():
-        q = c["q"]
+    for card in i["cards"]:
+        id = card["id"]
+        q = card["count"]
         deck["cards"][id] = q
 
-        # Skip Anarch Convert
-        if id != 200076:
-            total_capacity_ex_ac += q * c["capacity"]
+        if id > 200000:
+            c = crypt_db[str(id)]
+            crypt_total += q
 
-            if (clan := c["clan"]) in clans:
-                clans[clan] += q
-            else:
-                clans[clan] = q
+            # Skip Anarch Convert
+            if id != 200076:
+                total_crypt_ex_ac += q
+                total_capacity_ex_ac += q * c["capacity"]
 
-            if path := c["path"]:
-                if path in clans:
-                    clans[path] += q
+                if (clan := c["clan"]) in clans:
+                    clans[clan] += q
                 else:
-                    clans[path] = q
+                    clans[clan] = q
 
-        if (sect := c["sect"]) in sects:
-            sects[sect] += q
-        else:
-            sects[sect] = q
+                if path := c["path"]:
+                    if path in clans:
+                        clans[path] += q
+                    else:
+                        clans[path] = q
 
-        if "star" not in deck["traits"] and id != 200076:
-            if c["adv"] and c["adv"][1] in crypt:
-                q += crypt[c["adv"][1]]["q"]
+            if (sect := c["sect"]) in sects:
+                sects[sect] += q
+            else:
+                sects[sect] = q
 
-            if q / total_crypt_ex_ac > 0.33:
-                deck["traits"].append("star")
+            if "star" not in deck["traits"] and id != 200076:
+                if c["adv"] and c["adv"][1] in crypt:
+                    q += crypt[c["adv"][1]]["q"]
 
-        for d in c["disciplines"].keys():
-            crypt_disciplines.add(d)
+                if q / total_crypt_ex_ac > 0.33:
+                    deck["traits"].append("star")
+
+            for d in c["disciplines"].keys():
+                crypt_disciplines.add(d)
 
     for clan, q in clans.items():
         if q / total_crypt_ex_ac > 0.5:
@@ -88,18 +85,24 @@ def generate_twd(i):
         deck["traits"].append("monoclan")
 
     for sect, q in sects.items():
-        if q / deck["crypt_total"] > 0.65:
+        if q / crypt_total > 0.65:
             deck["sect"] = sect
 
     deck["capacity"] = round(total_capacity_ex_ac / total_crypt_ex_ac, 1)
+    deck["disciplines"] = sorted(list(disciplines))
 
-    for ct in i["library"]["cards"]:
-        deck["cardtypes_ratio"][ct["type"].lower()] = round(ct["count"] / deck["library_total"], 2)
+    for card in i["cards"]:
+        id = card["id"]
+        q = card["count"]
 
-        for card in ct["cards"]:
-            deck["cards"][card["id"]] = card["count"]
+        if id < 200000:
+            c = library_db[str(id)]
+            library_total += q
 
-            discipline_entry = library_db[str(card["id"])]["discipline"]
+            ct = c["type"].lower()
+            cardtypes[ct] = cardtypes.get(ct, 0) + q
+
+            discipline_entry = c["discipline"]
             if "&" in discipline_entry:
                 for d in discipline_entry.split(" & "):
                     if d in [*crypt_disciplines, "Flight", "Maleficia", "Striga"]:
@@ -118,15 +121,25 @@ def generate_twd(i):
             ]:
                 disciplines.add(discipline_entry)
 
-    deck["disciplines"] = sorted(list(disciplines))
+    for ct, q in cardtypes.items():
+        deck["cardtypes_ratio"][ct] = round(q / library_total, 2)
+
+    deck["crypt_total"] = crypt_total
+    deck["library_total"] = library_total
+
     return deck
 
 
-with open("twda.json", "r") as twd_input, open("twd_decks.json", "w") as twd_decks_file:
+with (
+    open("twda.json", "r") as twd_input,
+    open("twd_decks.json", "w") as twd_decks_file,
+    open("twd_locations.json", "w") as twd_locations_file,
+    open("twd_players.json", "w") as twd_players_file,
+):
     decks = []
     decks_by_id = {}
 
-    twda = json.load(twd_input)
+    twda = json.load(twd_input).values()
     total = len(twda)
 
     pool = multiprocessing.Pool(processes=4)
@@ -140,20 +153,14 @@ with open("twda.json", "r") as twd_input, open("twd_decks.json", "w") as twd_dec
 
     json.dump(decks_by_id, twd_decks_file, indent=4, separators=(",", ":"))
 
-with (
-    open("twda.json", "r") as twd_input,
-    open("twd_locations.json", "w") as twd_locations_file,
-    open("twd_players.json", "w") as twd_players_file,
-):
-    twda = json.load(twd_input)
     cities = set(())
     countries = set(())
     players = set(())
-    total = len(twda)
 
     for i in twda:
-        if "place" in i:
-            place = i["place"].split(", ")
+        # TODO check if condition is required
+        if "place" in i["event"]:
+            place = i["event"]["place"].split(", ")
             countries.add(place[-1])
             if len(place) > 1:
                 cities.add(f"{place[-2]}, {place[-1]}")

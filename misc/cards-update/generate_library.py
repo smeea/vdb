@@ -11,7 +11,7 @@ with (
     open("vteslibmeta.csv", "r", encoding="utf-8-sig") as cardbase_meta_csv,
 ):
     rulings = json.load(rulings_file)
-    twda = json.load(twda_input)
+    twda = json.load(twda_input).values()
     reader_meta = csv.reader(cardbase_meta_csv)
     fieldnames_meta = next(reader_meta)
     csv_meta = csv.DictReader(cardbase_meta_csv, fieldnames_meta)
@@ -247,11 +247,11 @@ def generate_card(card):
 
     # Add twda info
     card["Twd"] = 0
+
     for i in twda:
-        for cardtype in i["library"]["cards"]:
-            for c in cardtype["cards"]:
-                if c["id"] == card["Id"]:
-                    card["Twd"] += 1
+        for c in i["cards"]:
+            if c["id"] == card["Id"]:
+                card["Twd"] += 1
 
     # Rename legacy clans and disciplines
     card["Clan"] = (

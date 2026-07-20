@@ -10,7 +10,7 @@ unzip -q -o vtescsv_utf8.fr-FR.zip
 unzip -q -o vtescsv_utf8.es-ES.zip
 rm vtescsv_utf8.fr-FR.zip vtescsv_utf8.es-ES.zip vtessets.fr-FR.csv vtessets.es-ES.csv
 
-wget https://static.krcg.org/data/twda.json -O twda.json
+wget https://static.krcg.org/data/v5/twda.json -O twda.json
 npx @biomejs/biome format --write twda.json
 wget https://raw.githubusercontent.com/vtes-biased/vtes-rulings/refs/heads/main/rulings/groups.yaml -O rulings/groups.yaml
 wget https://raw.githubusercontent.com/vtes-biased/vtes-rulings/refs/heads/main/rulings/references.yaml -O rulings/references.yaml
