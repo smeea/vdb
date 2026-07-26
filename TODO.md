@@ -1,5 +1,6 @@
 # FIX
 - Only owned inventory not working?
+- Add shared inventory indicator
 
 # FIX ON HOLD
 
@@ -10,7 +11,6 @@
 - Inventory target documentation
 - Show best precons for missing cards
 - Show V5/2P compatibility on card detailed info
-- Shared inventory global search
 
 # FEATURES ON HOLD
 - Draft Cube support -> when draft cube info is available
