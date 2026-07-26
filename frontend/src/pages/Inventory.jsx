@@ -1,4 +1,5 @@
 import { Activity, useEffect, useState } from "react";
+import { useSnapshot } from "valtio";
 import { useSearchParams } from "react-router";
 import { twMerge } from "tailwind-merge";
 import {
@@ -17,7 +18,7 @@ import {
   Modal,
 } from "@/components";
 import { ALL, CRYPT, LIBRARY } from "@/constants";
-import { useApp } from "@/context";
+import { sharedStore, useApp } from "@/context";
 import { inventoryServices, storageServices } from "@/services";
 
 const INVENTORY_CATEGORY = "inventoryCategory";
@@ -39,11 +40,10 @@ const Inventory = () => {
   const [inventoryError, setInventoryError] = useState();
   const [searchParams] = useSearchParams();
   const sharedKey = searchParams.get("key");
-  const [sharedCrypt, setSharedCrypt] = useState();
-  const [sharedLibrary, setSharedLibrary] = useState();
+  const { [CRYPT]: sharedCrypt, [LIBRARY]: sharedLibrary } = useSnapshot(sharedStore);
+
   const [showShareModal, setShowShareModal] = useState(false);
   const [showCryptOnMobile, setShowCryptOnMobile] = useState(true);
-  const isSharedInventory = sharedCrypt && sharedLibrary;
 
   useEffect(() => {
     if (!inventoryMode) setInventoryMode(true);
@@ -56,20 +56,21 @@ const Inventory = () => {
       response = await inventoryServices.getSharedInventory(key, cryptCardBase, libraryCardBase);
     } catch (e) {
       switch (e.response.status) {
-        case 401:
-          setInventoryError("NO INVENTORY WITH THIS KEY");
-          break;
-        default:
-          setInventoryError("CONNECTION PROBLEM");
+      case 401:
+        setInventoryError("NO INVENTORY WITH THIS KEY");
+        break;
+      default:
+        setInventoryError("CONNECTION PROBLEM");
       }
       return;
     }
-    setSharedCrypt(response[CRYPT]);
-    setSharedLibrary(response[LIBRARY]);
+
+    sharedStore[CRYPT] = response[CRYPT];
+    sharedStore[LIBRARY] = response[LIBRARY];
   };
 
   useEffect(() => {
-    if (sharedKey && !isSharedInventory && cryptCardBase && libraryCardBase) {
+    if (sharedKey && !(sharedCrypt && sharedLibrary) && cryptCardBase && libraryCardBase) {
       getInventory(sharedKey);
     }
   }, [sharedKey, cryptCardBase, libraryCardBase]);
@@ -109,7 +110,7 @@ const Inventory = () => {
 
   return (
     <div className="inventory-container mx-auto">
-      {(!sharedKey && username) || isSharedInventory ? (
+      {(!sharedKey && username) || (sharedCrypt && sharedLibrary) ? (
         <FlexGapped>
           <div
             className={twMerge(
@@ -118,7 +119,7 @@ const Inventory = () => {
             )}
           >
             <InventoryCryptWrapper
-              sharedCrypt={sharedCrypt}
+              inShared={!!sharedKey}
               category={category}
               onlyNotes={onlyNotes}
               clan={cryptClan}
@@ -132,7 +133,7 @@ const Inventory = () => {
             )}
           >
             <InventoryLibraryWrapper
-              sharedLibrary={sharedLibrary}
+              inShared={!!sharedKey}
               category={category}
               onlyNotes={onlyNotes}
               discipline={discipline}
@@ -149,17 +150,13 @@ const Inventory = () => {
               cryptClan={cryptClan}
               libraryClan={libraryClan}
               discipline={discipline}
-              isSharedInventory={isSharedInventory}
+              inShared={!!sharedKey}
               onlyNotes={onlyNotes}
               setCategory={handleSetCategory}
               setOnlyNotes={setOnlyNotes}
-              setSharedCrypt={setSharedCrypt}
-              setSharedLibrary={setSharedLibrary}
               setShowAddDeck={setShowAddDeck}
               setShowAddPrecon={setShowAddPrecon}
               setShowShareModal={setShowShareModal}
-              sharedCrypt={sharedCrypt}
-              sharedLibrary={sharedLibrary}
               type={type}
             />
           </div>
@@ -190,17 +187,13 @@ const Inventory = () => {
             cryptClan={cryptClan}
             libraryClan={libraryClan}
             discipline={discipline}
-            isSharedInventory={isSharedInventory}
+            inShared={!!sharedKey}
             onlyNotes={onlyNotes}
             setCategory={handleSetCategory}
             setOnlyNotes={setOnlyNotes}
-            setSharedCrypt={setSharedCrypt}
-            setSharedLibrary={setSharedLibrary}
             setShowAddDeck={setShowAddDeck}
             setShowAddPrecon={setShowAddPrecon}
             setShowShareModal={setShowShareModal}
-            sharedCrypt={sharedCrypt}
-            sharedLibrary={sharedLibrary}
             type={type}
           />
           <div className="lg:hidden">

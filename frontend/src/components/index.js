@@ -347,6 +347,7 @@ export { default as SearchFormButtonDel } from "./search_forms/components/Search
 export { default as SearchFormButtonLogicToggle } from "./search_forms/components/SearchFormButtonLogicToggle.jsx";
 export { default as SearchFormPrecon } from "./search_forms/components/SearchFormPrecon.jsx";
 export { default as SearchFormSet } from "./search_forms/components/SearchFormSet.jsx";
+export { default as SearchFormTarget } from "./search_forms/components/SearchFormTarget.jsx";
 export { default as SearchFormTextAndButtons } from "./search_forms/components/SearchFormTextAndButtons.jsx";
 export { default as TdaSearchFormRank } from "./search_forms/components/TdaSearchFormRank.jsx";
 export { default as TwdMoreButton } from "./search_forms/components/TwdMoreButton.jsx";

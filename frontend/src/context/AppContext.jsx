@@ -126,6 +126,8 @@ export const AppProvider = ({ children }) => {
   const [limitedOnlyDecks, setLimitedOnlyDecks] = useState(
     getLocalStorage(LIMITED_ONLY_DECKS) ?? false,
   );
+
+  const [searchSharedMode, setSearchSharedMode] = useState();
   const [searchInventoryMode, setSearchInventoryMode] = useState();
   const [searchMissingInventoryMode, setSearchMissingInventoryMode] = useState();
   const [cryptDeckSort, setCryptDeckSort] = useState(getLocalStorage(CRYPT_DECK_SORT) ?? QUANTITYx);
@@ -625,6 +627,8 @@ export const AppProvider = ({ children }) => {
         changeLang,
         playtestMode,
         togglePlaytestMode,
+        searchSharedMode,
+        setSearchSharedMode,
         searchInventoryMode,
         setSearchInventoryMode,
         searchMissingInventoryMode,

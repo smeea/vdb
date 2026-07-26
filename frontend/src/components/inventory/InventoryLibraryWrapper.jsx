@@ -2,10 +2,10 @@ import { useRef, useState } from "react";
 import { useSnapshot } from "valtio";
 import { InventoryLibrary, NewCardSelect } from "@/components";
 import { LIBRARY, OK } from "@/constants";
-import { inventoryStore, useApp } from "@/context";
+import { sharedStore, inventoryStore, useApp } from "@/context";
 
 const InventoryLibraryWrapper = ({
-  sharedLibrary,
+  inShared,
   category,
   onlyNotes,
   discipline,
@@ -16,6 +16,7 @@ const InventoryLibraryWrapper = ({
   setClan,
 }) => {
   const { libraryCardBase } = useApp();
+  const { [LIBRARY]: sharedLibrary } = useSnapshot(sharedStore);
   const inventoryLibrary = useSnapshot(inventoryStore)[LIBRARY];
   const [newCardId, setNewCardId] = useState();
   const newCardFocus = () => newCardRef.current.focus();
@@ -24,7 +25,7 @@ const InventoryLibraryWrapper = ({
 
   return (
     <>
-      {!sharedLibrary && (
+      {!inShared && (
         <>
           <div className="max-sm:p-2">
             <NewCardSelect onChange={handleClick} ref={newCardRef} target={LIBRARY} inInventory />
@@ -44,15 +45,15 @@ const InventoryLibraryWrapper = ({
       )}
       <div>
         <InventoryLibrary
-          cards={sharedLibrary ?? inventoryLibrary}
-          category={sharedLibrary ? OK : category}
+          cards={inShared ? sharedLibrary : inventoryLibrary}
+          category={inShared ? OK : category}
           discipline={discipline}
           setDiscipline={setDiscipline}
           type={type}
           setType={setType}
           clan={clan}
           setClan={setClan}
-          inShared={!!sharedLibrary}
+          inShared={inShared}
           onlyNotes={onlyNotes}
           withCompact={newCardId}
         />

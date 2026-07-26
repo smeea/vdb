@@ -9,10 +9,6 @@ import { OK } from "@/constants";
 import { inventoryStore } from "@/context";
 
 const InventoryMenu = ({
-  sharedCrypt,
-  sharedLibrary,
-  setSharedCrypt,
-  setSharedLibrary,
   setShowAddDeck,
   setShowAddPrecon,
   setShowShareModal,
@@ -24,17 +20,13 @@ const InventoryMenu = ({
   setOnlyNotes,
   category,
   setCategory,
+  inShared
 }) => {
   const { isFrozen } = useSnapshot(inventoryStore);
-  const isSharedInventory = sharedCrypt && sharedLibrary;
 
   return (
     <div className="flex flex-col gap-4">
       <InventoryButtons
-        sharedCrypt={sharedCrypt}
-        sharedLibrary={sharedLibrary}
-        setSharedCrypt={setSharedCrypt}
-        setSharedLibrary={setSharedLibrary}
         setShowAddDeck={setShowAddDeck}
         setShowAddPrecon={setShowAddPrecon}
         setShowShareModal={setShowShareModal}
@@ -42,12 +34,12 @@ const InventoryMenu = ({
         libraryClan={libraryClan}
         discipline={discipline}
         type={type}
-        category={isSharedInventory ? OK : category}
+        category={inShared ? OK : category}
         onlyNotes={onlyNotes}
-        isSharedInventory={isSharedInventory}
+        inShared={inShared}
       />
-      {!isSharedInventory && <InventoryFreezeButton isFrozen={isFrozen} />}
-      {!isSharedInventory && <InventoryShowSelect category={category} setCategory={setCategory} />}
+      {!inShared && <InventoryFreezeButton isFrozen={isFrozen} />}
+      {!inShared && <InventoryShowSelect category={category} setCategory={setCategory} />}
       <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
         <Checkbox
           label="Only with Notes"

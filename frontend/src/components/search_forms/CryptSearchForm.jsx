@@ -17,6 +17,7 @@ import {
   SearchFormArtist,
   SearchFormPrecon,
   SearchFormSet,
+  SearchFormTarget,
   SearchFormTextAndButtons,
 } from "@/components";
 import {
@@ -58,6 +59,7 @@ import {
   limitedStore,
   searchCryptForm,
   setCryptResults,
+  sharedStore,
   useApp,
   usedStore,
 } from "@/context";
@@ -67,6 +69,7 @@ import { filterCrypt, getIsPlaytest, sanitizeFormState } from "@/utils";
 const CryptSearchForm = () => {
   const {
     cryptCardBase,
+    searchSharedMode,
     searchInventoryMode,
     searchMissingInventoryMode,
     showFloatingButtons,
@@ -76,6 +79,7 @@ const CryptSearchForm = () => {
     limitedMode,
   } = useApp();
   const inventoryCrypt = useSnapshot(inventoryStore)[CRYPT];
+  const sharedCrypt = useSnapshot(sharedStore)[CRYPT];
   const usedCrypt = useSnapshot(usedStore)[CRYPT];
   const limitedCrypt = useSnapshot(limitedStore)[CRYPT];
   const cryptFormState = useSnapshot(searchCryptForm);
@@ -114,6 +118,7 @@ const CryptSearchForm = () => {
       cryptFormState[TITLES],
       cryptFormState[TRAITS],
       cryptFormState[VOTES],
+      searchSharedMode,
       searchInventoryMode,
       searchMissingInventoryMode,
       inventoryMode,
@@ -127,6 +132,7 @@ const CryptSearchForm = () => {
   useDebounce(() => textInputsAndSearch(), DISCIPLINES_DEBOUNCE_DELAY, [
     cryptFormState[DISCIPLINES],
     cryptFormState[DISCIPLINES_OR],
+    searchSharedMode,
     searchInventoryMode,
     searchMissingInventoryMode,
     inventoryMode,
@@ -242,6 +248,10 @@ const CryptSearchForm = () => {
           return inventoryCrypt[card[ID]] || usedCrypt[SOFT][card[ID]] || usedCrypt[HARD][card[ID]];
         }),
       );
+    } else if (searchSharedMode && inventoryMode) {
+      setResults(
+        filteredCards.filter((card) => sharedCrypt[card[ID]]?.q)
+      );
     } else if (searchMissingInventoryMode && inventoryMode) {
       setResults(filteredCards.filter((card) => !inventoryCrypt[card[ID]]?.q));
     } else {
@@ -276,6 +286,7 @@ const CryptSearchForm = () => {
         preresults={preresults?.length}
         showLimit={SHOW_LIMIT}
       />
+      {inventoryMode && <SearchFormTarget />}
       <CryptSearchFormDisciplines
         value={cryptFormState[DISCIPLINES]}
         onChange={handleDisciplinesChange}

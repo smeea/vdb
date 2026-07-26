@@ -2,10 +2,11 @@ import { useRef, useState } from "react";
 import { useSnapshot } from "valtio";
 import { InventoryCrypt, NewCardSelect } from "@/components";
 import { CRYPT, OK } from "@/constants";
-import { inventoryStore, useApp } from "@/context";
+import { sharedStore, inventoryStore, useApp } from "@/context";
 
-const InventoryCryptWrapper = ({ sharedCrypt, category, onlyNotes, clan, setClan }) => {
+const InventoryCryptWrapper = ({ inShared, category, onlyNotes, clan, setClan }) => {
   const { cryptCardBase } = useApp();
+  const { [CRYPT]: sharedCrypt } = useSnapshot(sharedStore);
   const inventoryCrypt = useSnapshot(inventoryStore)[CRYPT];
   const [newCardId, setNewCardId] = useState();
   const newCardFocus = () => newCardRef.current.focus();
@@ -14,7 +15,7 @@ const InventoryCryptWrapper = ({ sharedCrypt, category, onlyNotes, clan, setClan
 
   return (
     <>
-      {!sharedCrypt && (
+      {!inShared && (
         <>
           <div className="max-sm:p-2">
             <NewCardSelect onChange={handleClick} ref={newCardRef} target={CRYPT} inInventory />
@@ -34,11 +35,11 @@ const InventoryCryptWrapper = ({ sharedCrypt, category, onlyNotes, clan, setClan
       )}
       <div>
         <InventoryCrypt
-          cards={sharedCrypt ?? inventoryCrypt}
-          category={sharedCrypt ? OK : category}
+          cards={inShared ? sharedCrypt : inventoryCrypt}
+          category={inShared ? OK : category}
           clan={clan}
           setClan={setClan}
-          inShared={!!sharedCrypt}
+          inShared={inShared}
           onlyNotes={onlyNotes}
           withCompact={newCardId}
         />

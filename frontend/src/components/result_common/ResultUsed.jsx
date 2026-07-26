@@ -2,26 +2,29 @@ import { twMerge } from "tailwind-merge";
 import { useSnapshot } from "valtio";
 import { Tooltip, UsedPopover } from "@/components";
 import { CRYPT, ID, LIBRARY } from "@/constants";
-import { inventoryStore, useApp, usedStore } from "@/context";
+import { inventoryStore, sharedStore, useApp, usedStore } from "@/context";
 import { getHardTotal, getSoftMax } from "@/utils";
 
 const ResultUsed = ({ card }) => {
-  const { isDesktop } = useApp();
+  const { searchSharedMode, isDesktop } = useApp();
   const { [CRYPT]: inventoryCrypt, [LIBRARY]: inventoryLibrary } = useSnapshot(inventoryStore);
   const { [CRYPT]: usedCrypt, [LIBRARY]: usedLibrary } = useSnapshot(usedStore);
+  const { [CRYPT]: sharedCrypt, [LIBRARY]: sharedLibrary } = useSnapshot(sharedStore);
 
   const used = card[ID] > 200000 ? usedCrypt : usedLibrary;
   const inventory = card[ID] > 200000 ? inventoryCrypt : inventoryLibrary;
+  const shared = card[ID] > 200000 ? sharedCrypt : sharedLibrary;
 
   const softUsedMax = getSoftMax(used.soft[card[ID]]);
   const hardUsedTotal = getHardTotal(used.hard[card[ID]]);
   const inInventory = inventory[card[ID]]?.q || 0;
+  const inShared = shared[card[ID]]?.q || 0
 
   const isInventoryNote = inventory[card[ID]]?.t;
 
   return (
     <Tooltip placement={isDesktop ? "left" : "bottom"} overlay={<UsedPopover cardid={card[ID]} />}>
-      {(inInventory > 0 || softUsedMax + hardUsedTotal > 0) && (
+      {((searchSharedMode && inShared > 0) || inInventory > 0 || softUsedMax + hardUsedTotal > 0) && (
         <div
           className={twMerge(
             "mx-1 flex items-center px-0.5",
@@ -31,7 +34,7 @@ const ResultUsed = ({ card }) => {
         >
           <div className="flex basis-3/5 justify-center text-lg">
             {isInventoryNote && <div className="min-w-[4px]" />}
-            {inInventory}
+            {searchSharedMode ? inShared : inInventory}
             {isInventoryNote && <div className="max-w-[4px] text-sm">*</div>}
           </div>
           <div

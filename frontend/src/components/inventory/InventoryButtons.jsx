@@ -13,7 +13,7 @@ import {
   InventoryShareButton,
 } from "@/components";
 import { AUTHOR, CRYPT, DECKS, IS_FROZEN, LIBRARY, NAME } from "@/constants";
-import { deckStore, inventoryStore, useApp } from "@/context";
+import { deckStore, inventoryStore, sharedStore, useApp } from "@/context";
 
 const InventoryButtons = ({
   setShowAddDeck,
@@ -24,15 +24,13 @@ const InventoryButtons = ({
   discipline,
   category,
   onlyNotes,
-  isSharedInventory,
-  sharedCrypt,
-  sharedLibrary,
-  setSharedCrypt,
-  setSharedLibrary,
+  inShared,
   setShowShareModal,
 }) => {
-  const { preconDecks, setShowFloatingButtons, setShowMenuButtons, publicName, isDesktop } =
-    useApp();
+  const { preconDecks, setShowFloatingButtons, setShowMenuButtons, publicName, isDesktop, username} =
+        useApp();
+  const { [CRYPT]: sharedCrypt, [LIBRARY]: sharedLibrary } = useSnapshot(sharedStore)
+
 
   const {
     [IS_FROZEN]: isFrozen,
@@ -41,8 +39,8 @@ const InventoryButtons = ({
   } = useSnapshot(inventoryStore);
   const decks = useSnapshot(deckStore)[DECKS];
   const navigate = useNavigate();
-  const crypt = isSharedInventory ? sharedCrypt : inventoryCrypt;
-  const library = isSharedInventory ? sharedLibrary : inventoryLibrary;
+  const crypt = inShared ? sharedCrypt : inventoryCrypt;
+  const library = inShared ? sharedLibrary : inventoryLibrary;
 
   const handleClose = () => {
     setShowMenuButtons(false);
@@ -52,14 +50,12 @@ const InventoryButtons = ({
   return (
     <>
       <div className="flex flex-col gap-1">
-        {isSharedInventory && (
+        {username && inShared && (
           <ButtonIconed
             variant={isDesktop ? "secondary" : "primary"}
             onClick={() => {
               setShowMenuButtons(false);
               setShowFloatingButtons(true);
-              setSharedCrypt(null);
-              setSharedLibrary(null);
               navigate("/inventory");
             }}
             title="Back to My Inventory"
@@ -76,7 +72,7 @@ const InventoryButtons = ({
           }}
           inInventory
         />
-        {!isSharedInventory && (
+        {!inShared && (
           <>
             {!isFrozen && (
               <>

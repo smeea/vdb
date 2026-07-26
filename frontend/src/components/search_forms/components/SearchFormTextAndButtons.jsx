@@ -11,7 +11,6 @@ import {
   SearchFormButtonLogicToggle,
 } from "@/components";
 import { IN, LABEL, LOGIC, NAME, REGEX, TEXT, TYPE_DEBOUNCE_DELAY, VALUE } from "@/constants";
-import { useApp } from "@/context";
 import { useDebounce } from "@/hooks";
 
 const SearchFormTextAndButtons = ({
@@ -24,13 +23,7 @@ const SearchFormTextAndButtons = ({
   handleShowResults,
   handleClear,
 }) => {
-  const {
-    searchInventoryMode,
-    setSearchInventoryMode,
-    searchMissingInventoryMode,
-    setSearchMissingInventoryMode,
-    inventoryMode,
-  } = useApp();
+
   const [text, setText] = useState("");
 
   useEffect(() => {
@@ -125,30 +118,6 @@ const SearchFormTextAndButtons = ({
         onChangeOptions={onChangeOptions}
         searchForm={searchForm}
       />
-      {inventoryMode && (
-        <div className="flex justify-between gap-2">
-          <Checkbox
-            name={0}
-            value="searchInventoryMode"
-            label="Search In Inventory"
-            checked={!!searchInventoryMode}
-            onChange={() => {
-              setSearchInventoryMode(!searchInventoryMode);
-              if (searchMissingInventoryMode) setSearchMissingInventoryMode(false);
-            }}
-          />
-          <Checkbox
-            name={0}
-            value="missingInventoryMode"
-            label="Missing In Inventory"
-            checked={!!searchMissingInventoryMode}
-            onChange={() => {
-              setSearchMissingInventoryMode(!searchMissingInventoryMode);
-              if (searchInventoryMode) setSearchInventoryMode(false);
-            }}
-          />
-        </div>
-      )}
     </div>
   );
 };

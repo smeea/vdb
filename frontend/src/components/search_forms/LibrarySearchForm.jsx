@@ -16,6 +16,7 @@ import {
   SearchFormArtist,
   SearchFormPrecon,
   SearchFormSet,
+  SearchFormTarget,
   SearchFormTextAndButtons,
 } from "@/components";
 import {
@@ -55,6 +56,7 @@ import {
   clearSearchForm,
   inventoryStore,
   limitedStore,
+  sharedStore,
   searchLibraryForm,
   setLibraryResults,
   useApp,
@@ -65,6 +67,7 @@ import { filterLibrary, getIsPlaytest, sanitizeFormState } from "@/utils";
 const LibrarySearchForm = () => {
   const {
     libraryCardBase,
+    searchSharedMode,
     searchInventoryMode,
     searchMissingInventoryMode,
     showFloatingButtons,
@@ -74,6 +77,7 @@ const LibrarySearchForm = () => {
     limitedMode,
   } = useApp();
   const inventoryLibrary = useSnapshot(inventoryStore)[LIBRARY];
+  const sharedLibrary = useSnapshot(sharedStore)[LIBRARY];
   const usedLibrary = useSnapshot(usedStore)[LIBRARY];
   const limitedLibrary = useSnapshot(limitedStore)[LIBRARY];
   const libraryFormState = useSnapshot(searchLibraryForm);
@@ -104,6 +108,7 @@ const LibrarySearchForm = () => {
       searchInventoryMode,
       searchMissingInventoryMode,
       inventoryMode,
+      searchSharedMode,
       limitedMode,
       limitedLibrary,
       playtestMode,
@@ -208,6 +213,8 @@ const LibrarySearchForm = () => {
           );
         }),
       );
+    } else if (searchSharedMode && inventoryMode) {
+      setResults(filteredCards.filter((card) => sharedLibrary[card[ID]]?.q));
     } else if (searchMissingInventoryMode && inventoryMode) {
       setResults(filteredCards.filter((card) => !inventoryLibrary[card[ID]]?.q));
     } else {
@@ -242,6 +249,7 @@ const LibrarySearchForm = () => {
         preresults={preresults?.length}
         showLimit={SHOW_LIMIT}
       />
+      {inventoryMode && <SearchFormTarget />}
       <LibrarySearchFormType
         value={libraryFormState[TYPE]}
         onChange={handleMultiSelectChange}

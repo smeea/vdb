@@ -11,6 +11,12 @@ export const inventoryStore = proxy({
   [WISHLIST]: {},
 });
 
+
+export const sharedStore = proxy({
+  [CRYPT]: null,
+  [LIBRARY]: null,
+});
+
 export const usedStore = proxy({
   [CRYPT]: {
     [SOFT]: {},
