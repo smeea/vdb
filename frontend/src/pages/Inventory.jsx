@@ -35,15 +35,17 @@ const Inventory = () => {
     setShowFloatingButtons,
     cryptCardBase,
     libraryCardBase,
+    sharedKey,
+    setSharedKey,
   } = useApp();
 
   const [inventoryError, setInventoryError] = useState();
   const [searchParams] = useSearchParams();
-  const sharedKey = searchParams.get("key");
   const { [CRYPT]: sharedCrypt, [LIBRARY]: sharedLibrary } = useSnapshot(sharedStore);
 
   const [showShareModal, setShowShareModal] = useState(false);
   const [showCryptOnMobile, setShowCryptOnMobile] = useState(true);
+  const inShared = !!searchParams.get("key")
 
   useEffect(() => {
     if (!inventoryMode) setInventoryMode(true);
@@ -70,7 +72,9 @@ const Inventory = () => {
   };
 
   useEffect(() => {
-    if (sharedKey && !(sharedCrypt && sharedLibrary) && cryptCardBase && libraryCardBase) {
+    if (!sharedKey) {
+      setSharedKey(searchParams.get("key"))
+    } else if (!(sharedCrypt && sharedLibrary) && cryptCardBase && libraryCardBase) {
       getInventory(sharedKey);
     }
   }, [sharedKey, cryptCardBase, libraryCardBase]);
@@ -110,7 +114,7 @@ const Inventory = () => {
 
   return (
     <div className="inventory-container mx-auto">
-      {(!sharedKey && username) || (sharedCrypt && sharedLibrary) ? (
+      {(!inShared && username) || (sharedCrypt && sharedLibrary) ? (
         <FlexGapped>
           <div
             className={twMerge(
@@ -119,7 +123,7 @@ const Inventory = () => {
             )}
           >
             <InventoryCryptWrapper
-              inShared={!!sharedKey}
+              inShared={!!inShared}
               category={category}
               onlyNotes={onlyNotes}
               clan={cryptClan}
@@ -133,7 +137,7 @@ const Inventory = () => {
             )}
           >
             <InventoryLibraryWrapper
-              inShared={!!sharedKey}
+              inShared={!!inShared}
               category={category}
               onlyNotes={onlyNotes}
               discipline={discipline}
@@ -150,7 +154,7 @@ const Inventory = () => {
               cryptClan={cryptClan}
               libraryClan={libraryClan}
               discipline={discipline}
-              inShared={!!sharedKey}
+              inShared={!!inShared}
               onlyNotes={onlyNotes}
               setCategory={handleSetCategory}
               setOnlyNotes={setOnlyNotes}
@@ -187,7 +191,7 @@ const Inventory = () => {
             cryptClan={cryptClan}
             libraryClan={libraryClan}
             discipline={discipline}
-            inShared={!!sharedKey}
+            inShared={!!inShared}
             onlyNotes={onlyNotes}
             setCategory={handleSetCategory}
             setOnlyNotes={setOnlyNotes}

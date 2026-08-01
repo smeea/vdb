@@ -93,6 +93,7 @@ const PRECON_DECKS = "preconDecks";
 const IS_PLAYTEST = "isPlaytest";
 const IS_PLAYTESTER = "is_playtester";
 const IS_ADMIN = "is_admin";
+const SHARED_KEY = "sharedKey";
 
 export const AppContext = React.createContext();
 
@@ -126,6 +127,9 @@ export const AppProvider = ({ children }) => {
   const [limitedOnlyDecks, setLimitedOnlyDecks] = useState(
     getLocalStorage(LIMITED_ONLY_DECKS) ?? false,
   );
+  const [sharedKey, setSharedKey] = useState(
+    getLocalStorage(SHARED_KEY) ?? false,
+  )
 
   const [searchSharedMode, setSearchSharedMode] = useState();
   const [searchInventoryMode, setSearchInventoryMode] = useState();
@@ -655,6 +659,8 @@ export const AppProvider = ({ children }) => {
         showMenuButtons,
         setShowMenuButtons,
         isOnline,
+        sharedKey,
+        setSharedKey,
 
         // USER Context
         username,

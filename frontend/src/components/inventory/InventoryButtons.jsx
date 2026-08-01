@@ -27,7 +27,7 @@ const InventoryButtons = ({
   inShared,
   setShowShareModal,
 }) => {
-  const { preconDecks, setShowFloatingButtons, setShowMenuButtons, publicName, isDesktop, username} =
+  const { preconDecks, setShowFloatingButtons, setShowMenuButtons, publicName, isDesktop, username, sharedKey} =
         useApp();
   const { [CRYPT]: sharedCrypt, [LIBRARY]: sharedLibrary } = useSnapshot(sharedStore)
 
@@ -117,6 +117,19 @@ const InventoryButtons = ({
               discipline={discipline}
             />
             <InventoryShareButton setShow={setShowShareModal} />
+            {!inShared && sharedKey && (
+              <ButtonIconed
+                variant={isDesktop ? "secondary" : "primary"}
+                onClick={() => {
+                  setShowMenuButtons(false);
+                  setShowFloatingButtons(true);
+                  navigate(`/inventory?key=${sharedKey}`);
+                }}
+                title="Open Shared Inventory"
+                icon={<Folder2Open />}
+                text="Open Shared Inventory"
+              />
+            )}
           </>
         )}
       </div>
