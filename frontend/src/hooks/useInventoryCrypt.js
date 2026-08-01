@@ -53,9 +53,10 @@ const useInventoryCrypt = (crypt, category, compact, clan, onlyNotes) => {
         const miss = getMissing(cardid, usedCrypt, wishlist, cards[cardid].q);
 
         if (
+          (category === OK && cards[cardid].q > 0) ||
           (category === NOK && miss > 0) ||
           (category === SURPLUS && miss < 0) ||
-          [ALL, OK].includes(category)
+          category === ALL
         ) {
           if (hasGoodRequirements) {
             if (miss > 0) missing[cardid] = { q: miss, c: cryptCardBase[cardid] };
@@ -89,7 +90,10 @@ const useInventoryCrypt = (crypt, category, compact, clan, onlyNotes) => {
             q: getMissing(cardid, usedCrypt, wishlist),
             c: cryptCardBase[cardid],
           };
-          filteredCards[cardid] = { q: 0, c: cryptCardBase[cardid] };
+
+          if ([ALL, NOK].includes(category)) {
+            filteredCards[cardid] = { q: 0, c: cryptCardBase[cardid] };
+          }
         }
       });
 

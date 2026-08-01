@@ -104,9 +104,10 @@ const useInventoryLibrary = (library, category, compact, type, discipline, clan,
         const miss = getMissing(cardid, usedLibrary, wishlist, cards[cardid].q);
 
         if (
+          (category === OK && cards[cardid].q > 0) ||
           (category === NOK && miss > 0) ||
           (category === SURPLUS && miss < 0) ||
-          [ALL, OK].includes(category)
+          category === ALL
         ) {
           if (hasGoodRequirements) {
             if (miss > 0) missing[cardid] = { q: miss, c: libraryCardBase[cardid] };
@@ -176,7 +177,10 @@ const useInventoryLibrary = (library, category, compact, type, discipline, clan,
             q: getMissing(cardid, usedLibrary, wishlist),
             c: libraryCardBase[cardid],
           };
-          filteredCards[cardid] = { q: 0, c: libraryCardBase[cardid] };
+
+          if ([ALL, NOK].includes(category)) {
+            filteredCards[cardid] = { q: 0, c: libraryCardBase[cardid] };
+          }
         }
       });
 

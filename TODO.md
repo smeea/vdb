@@ -1,5 +1,4 @@
 # FIX
-- Only owned inventory not working?
 
 # FIX ON HOLD
 
