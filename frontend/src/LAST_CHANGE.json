@@ -1,6 +1,11 @@
 {
-  "version": "2026-07-05",
+  "version": "2026-08-02",
   "changes": [
-    "Small fixes and improvements"
+    "Add share inventory surplus to share inventory",
+    "Add search in shared inventory using Crypt/Library search (selector in Crypt/Library next to 'Search in Inventory' available after you opened shared inventory via url). Q-ty it shows is q-ty in shared inventory (but missing next to it calculated for your inventory, so you can see what you lack)",
+    "Shared inventory is now stored during your session (until you close the tab), you can go back to your inventory and back to shared (see new button in Inventory) and swap to other VDB sections without re-opening url",
+    "Few bugfixes for Inventory like displaying cards with problem when Only Owned is selected, export missing cards and some more (there were nothing compromising/damaging content of the inventory, don't worry)",
+    "Update TWDA",
+    "Update rulings"
   ]
 }
