@@ -1,5 +1,5 @@
 import ky from "ky";
-import { CRYPT, ID, LIBRARY } from "@/constants";
+import { CARDS, INVENTORY_KEY, SURPLUS_KEY, CRYPT, ID, LIBRARY } from "@/constants";
 import { inventoryStore } from "@/context";
 
 export const addCards = (cards) => {
@@ -50,9 +50,17 @@ export const getSharedInventory = (key, cryptCardBase, libraryCardBase) => {
     });
 };
 
-export const createSharedInventory = (key) => {
+export const shareFullInventory = (key) => {
   const url = `${import.meta.env.VITE_API_URL}/account`;
-  return ky.put(url, { json: { inventoryKey: key } });
+  return ky.put(url, { json: { [INVENTORY_KEY]: key } });
+};
+
+export const shareSurplusInventory = (key, cards) => {
+  const url = `${import.meta.env.VITE_API_URL}/account`;
+  return ky.put(url, { json: {
+    [SURPLUS_KEY]: key,
+    [CARDS]: cards,
+  }});
 };
 
 export const deleteInventory = () => {

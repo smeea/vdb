@@ -24,8 +24,10 @@ class User(UserMixin, db.Model):
     decks = db.relationship("Deck", backref="author", lazy="dynamic")
     favorites = db.Column(db.PickleType, default=[])
     inventory = db.Column(db.PickleType, default={})
-    inventory_wishlist = db.Column(db.PickleType, default={})
     inventory_key = db.Column(db.String(8), unique=True)
+    inventory_surplus = db.Column(db.PickleType, default={})
+    inventory_surplus_key = db.Column(db.String(8), unique=True)
+    inventory_wishlist = db.Column(db.PickleType, default={})
 
     def __repr__(self):
         return "<User {}>".format(self.username)

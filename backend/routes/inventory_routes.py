@@ -35,7 +35,14 @@ def unauthorized_handler():
 @app.route("/api/inventory/<string:key>", methods=["GET"])
 def get_shared_inventory(key):
     try:
-        inventory = User.query.filter_by(inventory_key=key).one().inventory
+        inventory = None
+        u = User.query.filter_by(inventory_key=key).first()
+        if u:
+            inventory = u.inventory
+        else:
+            u = User.query.filter_by(inventory_surplus_key=key).one()
+            inventory = u.inventory_surplus
+
         return jsonify(parse_user_inventory(inventory))
 
     except Exception:

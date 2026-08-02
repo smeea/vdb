@@ -46,6 +46,8 @@ import {
   TYPE,
   V5,
   WISHLIST,
+  SURPLUS_KEY,
+  INVENTORY_KEY,
 } from "@/constants";
 import {
   deckLocalize,
@@ -93,7 +95,7 @@ const PRECON_DECKS = "preconDecks";
 const IS_PLAYTEST = "isPlaytest";
 const IS_PLAYTESTER = "is_playtester";
 const IS_ADMIN = "is_admin";
-const SHARED_KEY = "sharedKey";
+const SHARED_KEY = "shared_key";
 
 export const AppContext = React.createContext();
 
@@ -109,6 +111,7 @@ export const AppProvider = ({ children }) => {
   const [publicName, setPublicName] = useState();
   const [email, setEmail] = useState();
   const [inventoryKey, setInventoryKey] = useState();
+  const [surplusKey, setSurplusKey] = useState();
   const [lang, setLang] = useState(getLocalStorage(LANG) ?? EN);
   const [isOnline, setIsOnline] = useState(navigator.onLine);
   const [isPlaytestAdmin, setIsPlaytestAdmin] = useState();
@@ -127,6 +130,7 @@ export const AppProvider = ({ children }) => {
   const [limitedOnlyDecks, setLimitedOnlyDecks] = useState(
     getLocalStorage(LIMITED_ONLY_DECKS) ?? false,
   );
+  // TODO save to localstorage?
   const [sharedKey, setSharedKey] = useState(
     getLocalStorage(SHARED_KEY) ?? false,
   )
@@ -348,6 +352,7 @@ export const AppProvider = ({ children }) => {
       setPublicName(data.public_name);
       setEmail(data.email);
       setInventoryKey(data.inventory_key);
+      setSurplusKey(data.surplus_key);
       setIsPlaytester(data[PLAYTEST][IS_PLAYTESTER]);
       setIsPlaytestAdmin(data[PLAYTEST][IS_ADMIN]);
       setPlaytestProfile(data[PLAYTEST].profile);
@@ -671,6 +676,8 @@ export const AppProvider = ({ children }) => {
         setEmail,
         inventoryKey,
         setInventoryKey,
+        surplusKey,
+        setSurplusKey,
         initializeUserData,
         initializeUnauthenticatedUser,
         isPlaytester,

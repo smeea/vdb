@@ -18,7 +18,7 @@ def unauthorized_handler():
 
 @app.route("/api/login", methods=["POST"])
 def login_route():
-    user = User.query.filter_by(username=request.json["username"].lower()).first()
+    user = User.query.filter_by(username=request.json["username"].lower()).one()
     if not user:
         abort(400)
 
@@ -56,6 +56,7 @@ def login_route():
             "decks": parse_user_decks(current_user.decks.all()),
             "inventory": parse_user_inventory(current_user.inventory),
             "inventory_key": current_user.inventory_key,
+            "surplus_key": current_user.inventory_surplus_key,
             "inventory_wishlist": current_user.inventory_wishlist,
         }
     )
@@ -103,6 +104,7 @@ def who_am_i_route():
             "inventory": parse_user_inventory(current_user.inventory),
             "inventory_wishlist": current_user.inventory_wishlist,
             "inventory_key": current_user.inventory_key,
+            "surplus_key": current_user.inventory_surplus_key,
         }
     )
 
@@ -150,6 +152,15 @@ def account_update_route():
 
             case "inventoryKey":
                 current_user.inventory_key = request.json["inventoryKey"]
+                db.session.commit()
+                return jsonify(success=True)
+
+            case "surplusKey":
+                cards = {}
+                for k, v in request.json["cards"].items():
+                    cards[k] = { 'q': v }
+                current_user.inventory_surplus = cards
+                current_user.inventory_surplus_key = request.json["surplusKey"]
                 db.session.commit()
                 return jsonify(success=True)
 

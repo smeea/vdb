@@ -9,7 +9,6 @@
 - Inventory target documentation
 - Show best precons for missing cards
 - Show V5/2P compatibility on card detailed info
-- Share surplus url
 
 # FEATURES ON HOLD
 - Draft Cube support -> when draft cube info is available

@@ -292,3 +292,5 @@ export const WISHLIST = "wishlist";
 export const X = "X";
 export const XLSX = "xlsx";
 export const YES = "YES";
+export const INVENTORY_KEY = "inventoryKey";
+export const SURPLUS_KEY = "surplusKey";
