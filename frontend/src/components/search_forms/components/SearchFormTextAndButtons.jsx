@@ -23,7 +23,6 @@ const SearchFormTextAndButtons = ({
   handleShowResults,
   handleClear,
 }) => {
-
   const [text, setText] = useState("");
 
   useEffect(() => {

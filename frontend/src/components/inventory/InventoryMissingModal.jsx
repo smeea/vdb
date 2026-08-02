@@ -56,7 +56,7 @@ const InventoryMissingModal = ({
     NAME,
   );
 
-  const allVtesCrypt = {}
+  const allVtesCrypt = {};
   const allVtesCryptSorted = cryptSort(
     Object.keys(cryptCardBase)
       .filter((cardid) => !getIsPlaytest(cardid) && !inventoryCrypt?.[cardid]?.q)
@@ -68,15 +68,15 @@ const InventoryMissingModal = ({
     NAME,
   );
 
-const allVtesLibrary = {}
-const allVtesLibrarySorted = librarySort(
-  Object.keys(libraryCardBase)
-    .filter((cardid) => !getIsPlaytest(cardid) && !inventoryLibrary?.[cardid]?.q)
-    .map((cardid) => {
-      const c = { q: 1, c: libraryCardBase[cardid] };
-      allVtesLibrary[cardid] = c;
-      return c;
-    }),
+  const allVtesLibrary = {};
+  const allVtesLibrarySorted = librarySort(
+    Object.keys(libraryCardBase)
+      .filter((cardid) => !getIsPlaytest(cardid) && !inventoryLibrary?.[cardid]?.q)
+      .map((cardid) => {
+        const c = { q: 1, c: libraryCardBase[cardid] };
+        allVtesLibrary[cardid] = c;
+        return c;
+      }),
     NAME,
   );
 
@@ -126,16 +126,8 @@ const allVtesLibrarySorted = librarySort(
           <DeckExportButton
             deck={{
               [NAME]: `${isSurplus ? "Surplus" : "Missing"} Inventory Cards`,
-              [CRYPT]: showAll
-                ? allVtesCrypt
-                : isSurplus
-                  ? surplusCrypt
-                  : missingCrypt,
-              [LIBRARY]: showAll
-                ? allVtesLibrary
-                : isSurplus
-                  ? surplusLibrary
-                  : missingLibrary,
+              [CRYPT]: showAll ? allVtesCrypt : isSurplus ? surplusCrypt : missingCrypt,
+              [LIBRARY]: showAll ? allVtesLibrary : isSurplus ? surplusLibrary : missingLibrary,
             }}
             inMissing
           />

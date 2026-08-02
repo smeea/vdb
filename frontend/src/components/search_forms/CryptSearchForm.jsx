@@ -249,9 +249,7 @@ const CryptSearchForm = () => {
         }),
       );
     } else if (searchSharedMode && inventoryMode) {
-      setResults(
-        filteredCards.filter((card) => sharedCrypt[card[ID]]?.q)
-      );
+      setResults(filteredCards.filter((card) => sharedCrypt[card[ID]]?.q));
     } else if (searchMissingInventoryMode && inventoryMode) {
       setResults(filteredCards.filter((card) => !inventoryCrypt[card[ID]]?.q));
     } else {

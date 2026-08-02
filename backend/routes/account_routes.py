@@ -150,17 +150,17 @@ def account_update_route():
                 db.session.commit()
                 return jsonify(success=True)
 
-            case "inventoryKey":
-                current_user.inventory_key = request.json["inventoryKey"]
+            case "inventory_key":
+                current_user.inventory_key = request.json["inventory_key"]
                 db.session.commit()
                 return jsonify(success=True)
 
-            case "surplusKey":
+            case "surplus_key":
                 cards = {}
                 for k, v in request.json["cards"].items():
                     cards[k] = { 'q': v }
                 current_user.inventory_surplus = cards
-                current_user.inventory_surplus_key = request.json["surplusKey"]
+                current_user.inventory_surplus_key = request.json["surplus_key"]
                 db.session.commit()
                 return jsonify(success=True)
 

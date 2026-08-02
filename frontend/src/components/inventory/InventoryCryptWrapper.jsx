@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import { useSnapshot } from "valtio";
 import { InventoryCrypt, NewCardSelect } from "@/components";
 import { CRYPT, OK } from "@/constants";
-import { sharedStore, inventoryStore, useApp } from "@/context";
+import { inventoryStore, sharedStore, useApp } from "@/context";
 
 const InventoryCryptWrapper = ({ inShared, category, onlyNotes, clan, setClan }) => {
   const { cryptCardBase } = useApp();

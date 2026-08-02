@@ -20,7 +20,7 @@ const InventoryMenu = ({
   setOnlyNotes,
   category,
   setCategory,
-  inShared
+  inShared,
 }) => {
   const { isFrozen } = useSnapshot(inventoryStore);
 

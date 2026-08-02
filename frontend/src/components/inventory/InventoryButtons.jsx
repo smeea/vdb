@@ -27,10 +27,16 @@ const InventoryButtons = ({
   inShared,
   setShowShareModal,
 }) => {
-  const { preconDecks, setShowFloatingButtons, setShowMenuButtons, publicName, isDesktop, username, sharedKey} =
-        useApp();
-  const { [CRYPT]: sharedCrypt, [LIBRARY]: sharedLibrary } = useSnapshot(sharedStore)
-
+  const {
+    preconDecks,
+    setShowFloatingButtons,
+    setShowMenuButtons,
+    publicName,
+    isDesktop,
+    username,
+    sharedKey,
+  } = useApp();
+  const { [CRYPT]: sharedCrypt, [LIBRARY]: sharedLibrary } = useSnapshot(sharedStore);
 
   const {
     [IS_FROZEN]: isFrozen,

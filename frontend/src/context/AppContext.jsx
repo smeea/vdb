@@ -17,6 +17,7 @@ import {
   DECKS,
   EN,
   ID,
+  INVENTORY_KEY,
   IS_AUTHOR,
   IS_BRANCHES,
   IS_FROZEN,
@@ -40,14 +41,13 @@ import {
   RANK_HIGH_LOW,
   SETS,
   SRC,
+  SURPLUS_KEY,
   TEXT,
   TWD,
   TWO_P,
   TYPE,
   V5,
   WISHLIST,
-  SURPLUS_KEY,
-  INVENTORY_KEY,
 } from "@/constants";
 import {
   deckLocalize,
@@ -131,9 +131,7 @@ export const AppProvider = ({ children }) => {
     getLocalStorage(LIMITED_ONLY_DECKS) ?? false,
   );
   // TODO save to localstorage?
-  const [sharedKey, setSharedKey] = useState(
-    getLocalStorage(SHARED_KEY) ?? false,
-  )
+  const [sharedKey, setSharedKey] = useState(getLocalStorage(SHARED_KEY) ?? false);
 
   const [searchSharedMode, setSearchSharedMode] = useState();
   const [searchInventoryMode, setSearchInventoryMode] = useState();
@@ -351,8 +349,8 @@ export const AppProvider = ({ children }) => {
       setUsername(data.username);
       setPublicName(data.public_name);
       setEmail(data.email);
-      setInventoryKey(data.inventory_key);
-      setSurplusKey(data.surplus_key);
+      setInventoryKey(data[INVENTORY_KEY]);
+      setSurplusKey(data[SURPLUS_KEY]);
       setIsPlaytester(data[PLAYTEST][IS_PLAYTESTER]);
       setIsPlaytestAdmin(data[PLAYTEST][IS_ADMIN]);
       setPlaytestProfile(data[PLAYTEST].profile);

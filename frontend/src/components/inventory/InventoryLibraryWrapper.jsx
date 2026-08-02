@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import { useSnapshot } from "valtio";
 import { InventoryLibrary, NewCardSelect } from "@/components";
 import { LIBRARY, OK } from "@/constants";
-import { sharedStore, inventoryStore, useApp } from "@/context";
+import { inventoryStore, sharedStore, useApp } from "@/context";
 
 const InventoryLibraryWrapper = ({
   inShared,

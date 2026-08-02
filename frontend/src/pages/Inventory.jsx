@@ -1,7 +1,7 @@
 import { Activity, useEffect, useState } from "react";
-import { useSnapshot } from "valtio";
 import { useSearchParams } from "react-router";
 import { twMerge } from "tailwind-merge";
+import { useSnapshot } from "valtio";
 import {
   ButtonFloat,
   ButtonFloatClose,
@@ -45,7 +45,7 @@ const Inventory = () => {
 
   const [showShareModal, setShowShareModal] = useState(false);
   const [showCryptOnMobile, setShowCryptOnMobile] = useState(true);
-  const inShared = !!searchParams.get("key")
+  const inShared = !!searchParams.get("key");
 
   useEffect(() => {
     if (!inventoryMode) setInventoryMode(true);
@@ -58,11 +58,11 @@ const Inventory = () => {
       response = await inventoryServices.getSharedInventory(key, cryptCardBase, libraryCardBase);
     } catch (e) {
       switch (e.response.status) {
-      case 401:
-        setInventoryError("NO INVENTORY WITH THIS KEY");
-        break;
-      default:
-        setInventoryError("CONNECTION PROBLEM");
+        case 401:
+          setInventoryError("NO INVENTORY WITH THIS KEY");
+          break;
+        default:
+          setInventoryError("CONNECTION PROBLEM");
       }
       return;
     }
@@ -73,7 +73,7 @@ const Inventory = () => {
 
   useEffect(() => {
     if (!sharedKey) {
-      setSharedKey(searchParams.get("key"))
+      setSharedKey(searchParams.get("key"));
     } else if (!(sharedCrypt && sharedLibrary) && cryptCardBase && libraryCardBase) {
       getInventory(sharedKey);
     }
