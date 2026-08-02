@@ -2348,9 +2348,6 @@
             "2P":{
                 "C":true,
                 "V":3
-            },
-            "playtest":{
-                "ToDV":1
             }
         },
         "text":"Camarilla Prince of Melbourne: During the polling step of any referendum, Alexa can discard a card requiring Dominate [dom] to get +1 vote.",
@@ -3759,6 +3756,12 @@
                 "text":"Can \"convert\" an already anarch vampire if he is not titled.",
                 "refs":{
                     "PIB 20121031":"https://www.vekn.net/forum/rules-questions/39816-ec-2012-can-you-answer-these?start=18#39908"
+                }
+            },
+            {
+                "text":"You can draw more cards than are in the library or crypt (even from an empty library or crypt); draw as much as you can.",
+                "refs":{
+                    "LSJ 20060620":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aqascblOZmk/m/dBI1vw69ikQJ"
                 }
             }
         ],
@@ -8718,7 +8721,14 @@
         "name":"Beckett",
         "new":false,
         "path":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"You can draw more cards than are in the library or crypt (even from an empty library or crypt); draw as much as you can.",
+                "refs":{
+                    "LSJ 20060620":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aqascblOZmk/m/dBI1vw69ikQJ"
+                }
+            }
+        ],
         "sect":"Independent",
         "set":{
             "Anarchs":{
@@ -27636,9 +27646,6 @@
             "2P":{
                 "C":true,
                 "V":1
-            },
-            "playtest":{
-                "ToDV":1
             }
         },
         "text":"Camarilla Prince of Mannheim.",
@@ -34949,9 +34956,6 @@
             "2P":{
                 "C":true,
                 "V":1
-            },
-            "playtest":{
-                "ToDV":2
             }
         },
         "text":"Camarilla Prince of Chicago: Kevin gets +1 strength in combat with a Brujah. Brujah get +1 strength in combat with him.",
@@ -47879,6 +47883,12 @@
                 "refs":{
                     "ANK 20190117-2":"https://www.vekn.net/forum/rules-questions/77306-new-blood-is-overpowered#92966"
                 }
+            },
+            {
+                "text":"You can draw more cards than are in the library or crypt (even from an empty library or crypt); draw as much as you can.",
+                "refs":{
+                    "LSJ 20060620":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aqascblOZmk/m/dBI1vw69ikQJ"
+                }
             }
         ],
         "sect":"Sabbat",
@@ -48259,9 +48269,6 @@
             "2P":{
                 "C":true,
                 "N":2
-            },
-            "playtest":{
-                "ToDN":2
             }
         },
         "text":"Camarilla Prince of Brussels: During your influence phase, you can burn the Edge to add 1 blood to a Nosferatu in your uncontrolled region.",
@@ -48905,7 +48912,14 @@
         "name":"Okulos",
         "new":false,
         "path":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"You can draw more cards than are in the library or crypt (even from an empty library or crypt); draw as much as you can.",
+                "refs":{
+                    "LSJ 20060620":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aqascblOZmk/m/dBI1vw69ikQJ"
+                }
+            }
+        ],
         "sect":"Independent",
         "set":{
             "Promo":{
@@ -61798,7 +61812,7 @@
         "path":"",
         "rulings":[
             {
-                "text":"Can be merged with {Theo Bell (ADV)} if you get to control one (eg. {Graverobbing}).",
+                "text":"Can be merged with {Theo Bell (G2 ADV)} if you get to control one (eg. {Graverobbing}).",
                 "refs":{
                     "ANK 20220805-2":"https://www.vekn.net/forum/rules-questions/79934-merging-group-2-theo-bell-and-group-6-theo-bell-and-similar-cases#105886"
                 }

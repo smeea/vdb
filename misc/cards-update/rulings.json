@@ -266,6 +266,12 @@
             "refs":{
                 "LSJ 20031121":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JQO1RBmvV_o/m/jrmvVW9GH8oJ"
             }
+        },
+        {
+            "text":"You can draw more cards than are in the library or crypt (even from an empty library or crypt); draw as much as you can.",
+            "refs":{
+                "LSJ 20060620":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aqascblOZmk/m/dBI1vw69ikQJ"
+            }
         }
     ],
     "100024":[
@@ -6939,6 +6945,12 @@
             "refs":{
                 "ANK 20200616":"https://www.vekn.net/forum/rules-questions/78687-the-erciyes-fragments-fragment-of-the-book-of-nod-barrens-impulse#100110"
             }
+        },
+        {
+            "text":"You can draw more cards than are in the library or crypt (even from an empty library or crypt); draw as much as you can.",
+            "refs":{
+                "LSJ 20060620":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aqascblOZmk/m/dBI1vw69ikQJ"
+            }
         }
     ],
     "100788":[
@@ -7715,7 +7727,7 @@
             }
         },
         {
-            "text":"Is not Anarch (eg. does not benefit from {Anarch Manifesto, An}).",
+            "text":"Is not Anarch (eg. does not benefit from {An Anarch Manifesto}).",
             "refs":{
                 "RBK allies":"https://www.vekn.net/rulebook#allies",
                 "ANK 20230417":"https://www.vekn.net/forum/rules-questions/80399-an-anarch-manifesto-grey-thorne-vivienne-geroux#107686"
@@ -8776,7 +8788,7 @@
             }
         },
         {
-            "text":"Even if they have the same name as a vampire in play, the illusionary vampire is considered different for all purposes (eg. {Jimmy Dunn (G2)}'s ability does not trigger).",
+            "text":"Even if they have the same name as a vampire in play, the illusionary vampire is considered different for all purposes (eg. {Jimmy Dunn}'s ability does not trigger).",
             "refs":{
                 "LSJ 20100213":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/vXDkYrTmkws/m/sKy3jXz7AB4J",
                 "LSJ 19991110":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/5hDqAMewLtg/m/fib2UDF58CUJ"
@@ -8943,6 +8955,12 @@
             "refs":{
                 "LSJ 20010312":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Mz0Rs9faJ9o/m/bgYwj4yw0G0J",
                 "LSJ 20001027":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/zUs5JBhRLgE/m/oyaUCsWe-EgJ"
+            }
+        },
+        {
+            "text":"[aus] You can draw more cards than are in the library or crypt (even from an empty library or crypt); draw as much as you can.",
+            "refs":{
+                "LSJ 20060620":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aqascblOZmk/m/dBI1vw69ikQJ"
             }
         }
     ],
@@ -9143,6 +9161,12 @@
             "text":"[CEL]\u00a0When played multiple times, each time you replace a card, draw all additional cards at once then discard down to hand size.",
             "refs":{
                 "TOM 19950921-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/yejj-744_zc/m/IVkIvqGQdGUJ"
+            }
+        },
+        {
+            "text":"[CEL] You can draw more cards than are in the library or crypt (even from an empty library or crypt); draw as much as you can.",
+            "refs":{
+                "LSJ 20060620":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aqascblOZmk/m/dBI1vw69ikQJ"
             }
         }
     ],
@@ -9559,6 +9583,12 @@
             "text":"The action provided by the equipment to the attached minion fizzles (resolves successfully for no effect) if the equipment is not attached to the acting minion when the action resolves unblocked.",
             "refs":{
                 "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
+            }
+        },
+        {
+            "text":"You can draw more cards than are in the library or crypt (even from an empty library or crypt); draw as much as you can.",
+            "refs":{
+                "LSJ 20060620":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aqascblOZmk/m/dBI1vw69ikQJ"
             }
         }
     ],
@@ -11467,6 +11497,12 @@
                 "LSJ 20070411-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-B6BlRIT0Rg/m/VOYol5mcbO8J",
                 "RTR 20000501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/MKrA0hBXuaU/m/1M5LOLftKWAJ"
             }
+        },
+        {
+            "text":"You can draw more cards than are in the library or crypt (even from an empty library or crypt); draw as much as you can.",
+            "refs":{
+                "LSJ 20060620":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aqascblOZmk/m/dBI1vw69ikQJ"
+            }
         }
     ],
     "101251":[
@@ -12354,6 +12390,12 @@
             "refs":{
                 "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
                 "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+            }
+        },
+        {
+            "text":"[myt] You can draw more cards than are in the library or crypt (even from an empty library or crypt); draw as much as you can.",
+            "refs":{
+                "LSJ 20060620":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aqascblOZmk/m/dBI1vw69ikQJ"
             }
         }
     ],
@@ -16063,6 +16105,12 @@
             "refs":{
                 "LSJ 20100527":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Tr3X4DsZr-8/m/O06iXN6LtzsJ"
             }
+        },
+        {
+            "text":"You can draw more cards than are in the library or crypt (even from an empty library or crypt); draw as much as you can.",
+            "refs":{
+                "LSJ 20060620":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aqascblOZmk/m/dBI1vw69ikQJ"
+            }
         }
     ],
     "101833":[
@@ -16690,7 +16738,7 @@
             }
         },
         {
-            "text":"[PRE] The ally card itself cannot be cancelled (eg. {Louhi (G4)}'s ability cannot cancel it).",
+            "text":"[PRE] The ally card itself cannot be cancelled (eg. {Louhi}'s ability cannot cancel it).",
             "refs":{
                 "ANK 20201229":"https://www.vekn.net/forum/rules-questions/78959-louhi-and-piper#101325"
             }
@@ -18735,7 +18783,7 @@
     ],
     "102128":[
         {
-            "text":"Is not Anarch (eg. does not benefit from {Anarch Manifesto, An}).",
+            "text":"Is not Anarch (eg. does not benefit from {An Anarch Manifesto}).",
             "refs":{
                 "RBK allies":"https://www.vekn.net/rulebook#allies",
                 "ANK 20230417":"https://www.vekn.net/forum/rules-questions/80399-an-anarch-manifesto-grey-thorne-vivienne-geroux#107686"
@@ -19687,6 +19735,18 @@
             }
         },
         {
+            "text":"[pre] There must be an uncontrolled vampire, and it is chosen upon declaration.",
+            "refs":{
+                "ANK 20240706":"https://www.vekn.net/forum/rules-questions/81563-break-the-bonds-presence-target?start=18#111945"
+            }
+        },
+        {
+            "text":"[obf] The prey needs not control a minion, the target is chosen upon resolution.",
+            "refs":{
+                "ANK 20240706":"https://www.vekn.net/forum/rules-questions/81563-break-the-bonds-presence-target?start=18#111945"
+            }
+        },
+        {
             "text":"[pre] Is affected by {Blood Cult Awareness Network}",
             "refs":{
                 "ANK 20240118-2":"https://www.vekn.net/forum/rules-questions/81154-blood-cult-awareness-network-and-feast-of-the-soul-s-secrets#110399",
@@ -20218,6 +20278,12 @@
             "text":"Can \"convert\" an already anarch vampire if he is not titled.",
             "refs":{
                 "PIB 20121031":"https://www.vekn.net/forum/rules-questions/39816-ec-2012-can-you-answer-these?start=18#39908"
+            }
+        },
+        {
+            "text":"You can draw more cards than are in the library or crypt (even from an empty library or crypt); draw as much as you can.",
+            "refs":{
+                "LSJ 20060620":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aqascblOZmk/m/dBI1vw69ikQJ"
             }
         }
     ],
@@ -22594,6 +22660,12 @@
             "refs":{
                 "ANK 20190117-2":"https://www.vekn.net/forum/rules-questions/77306-new-blood-is-overpowered#92966"
             }
+        },
+        {
+            "text":"You can draw more cards than are in the library or crypt (even from an empty library or crypt); draw as much as you can.",
+            "refs":{
+                "LSJ 20060620":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aqascblOZmk/m/dBI1vw69ikQJ"
+            }
         }
     ],
     "201067":[
@@ -24001,7 +24073,7 @@
     ],
     "201613":[
         {
-            "text":"Can be merged with {Theo Bell (ADV)} if you get to control one (eg. {Graverobbing}).",
+            "text":"Can be merged with {Theo Bell (G2 ADV)} if you get to control one (eg. {Graverobbing}).",
             "refs":{
                 "ANK 20220805-2":"https://www.vekn.net/forum/rules-questions/79934-merging-group-2-theo-bell-and-group-6-theo-bell-and-similar-cases#105886"
             }
@@ -25890,6 +25962,14 @@
             "text":"Gaining the provided votes immediately forces the minion to vote against the referendum, if they are not already doing so.",
             "refs":{
                 "LSJ 20031119":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/quF7butlINo/m/1f14MGJMP28J"
+            }
+        }
+    ],
+    "G00160":[
+        {
+            "text":"You can draw more cards than are in the library or crypt (even from an empty library or crypt); draw as much as you can.",
+            "refs":{
+                "LSJ 20060620":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aqascblOZmk/m/dBI1vw69ikQJ"
             }
         }
     ],
@@ -36352,10 +36432,9 @@
             }
         },
         {
-            "text":"[obf] Cannot be played when the target crypt is empty.",
+            "text":"[obf] You can draw more cards than are in the library or crypt (even from an empty library or crypt); draw as much as you can.",
             "refs":{
-                "RTR 20000501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/MKrA0hBXuaU/m/1M5LOLftKWAJ",
-                "LSJ 20070411-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-B6BlRIT0Rg/m/VOYol5mcbO8J"
+                "LSJ 20060620":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aqascblOZmk/m/dBI1vw69ikQJ"
             }
         }
     ],
@@ -36569,6 +36648,12 @@
             "refs":{
                 "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
                 "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+            }
+        },
+        {
+            "text":"[pot],[tem] You can draw more cards than are in the library or crypt (even from an empty library or crypt); draw as much as you can.",
+            "refs":{
+                "LSJ 20060620":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aqascblOZmk/m/dBI1vw69ikQJ"
             }
         }
     ],
@@ -37063,6 +37148,12 @@
             "refs":{
                 "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
                 "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+            }
+        },
+        {
+            "text":"[OBF]/[PRE] You can draw more cards than are in the library or crypt (even from an empty library or crypt); draw as much as you can.",
+            "refs":{
+                "LSJ 20060620":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aqascblOZmk/m/dBI1vw69ikQJ"
             }
         }
     ],
@@ -38780,15 +38871,6 @@
         }
     ],
     "101396":[
-        {
-            "text":"Cannot be played when the target crypt is empty.",
-            "refs":{
-                "RTR 20000501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/MKrA0hBXuaU/m/1M5LOLftKWAJ",
-                "LSJ 20070411-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-B6BlRIT0Rg/m/VOYol5mcbO8J"
-            }
-        }
-    ],
-    "101570":[
         {
             "text":"Cannot be played when the target crypt is empty.",
             "refs":{
@@ -40558,6 +40640,70 @@
             "text":"Gaining the provided votes immediately forces the minion to vote against the referendum, if they are not already doing so.",
             "refs":{
                 "LSJ 20031119":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/quF7butlINo/m/1f14MGJMP28J"
+            }
+        }
+    ],
+    "100506":[
+        {
+            "text":"You can draw more cards than are in the library or crypt (even from an empty library or crypt); draw as much as you can.",
+            "refs":{
+                "LSJ 20060620":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aqascblOZmk/m/dBI1vw69ikQJ"
+            }
+        }
+    ],
+    "100560":[
+        {
+            "text":"[cel] You can draw more cards than are in the library or crypt (even from an empty library or crypt); draw as much as you can.",
+            "refs":{
+                "LSJ 20060620":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aqascblOZmk/m/dBI1vw69ikQJ"
+            }
+        }
+    ],
+    "100752":[
+        {
+            "text":"[cel] You can draw more cards than are in the library or crypt (even from an empty library or crypt); draw as much as you can.",
+            "refs":{
+                "LSJ 20060620":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aqascblOZmk/m/dBI1vw69ikQJ"
+            }
+        }
+    ],
+    "101570":[
+        {
+            "text":"You can draw more cards than are in the library or crypt (even from an empty library or crypt); draw as much as you can.",
+            "refs":{
+                "LSJ 20060620":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aqascblOZmk/m/dBI1vw69ikQJ"
+            }
+        }
+    ],
+    "101729":[
+        {
+            "text":"You can draw more cards than are in the library or crypt (even from an empty library or crypt); draw as much as you can.",
+            "refs":{
+                "LSJ 20060620":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aqascblOZmk/m/dBI1vw69ikQJ"
+            }
+        }
+    ],
+    "102155":[
+        {
+            "text":"You can draw more cards than are in the library or crypt (even from an empty library or crypt); draw as much as you can.",
+            "refs":{
+                "LSJ 20060620":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aqascblOZmk/m/dBI1vw69ikQJ"
+            }
+        }
+    ],
+    "200183":[
+        {
+            "text":"You can draw more cards than are in the library or crypt (even from an empty library or crypt); draw as much as you can.",
+            "refs":{
+                "LSJ 20060620":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aqascblOZmk/m/dBI1vw69ikQJ"
+            }
+        }
+    ],
+    "201618":[
+        {
+            "text":"You can draw more cards than are in the library or crypt (even from an empty library or crypt); draw as much as you can.",
+            "refs":{
+                "LSJ 20060620":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aqascblOZmk/m/dBI1vw69ikQJ"
             }
         }
     ]

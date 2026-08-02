@@ -4737,3 +4737,6 @@ G00159|Gains votes against:
   - Cannot be used by a minion who is voting in favor of the referendum. [LSJ 20031115]
   - Gaining the provided votes immediately forces the minion to vote against the referendum, if they are not already doing
     so. [LSJ 20031119]
+G00160|Can draw from empty:
+  - You can draw more cards than are in the library or crypt (even from an empty library or crypt); draw as much as you can.
+    [LSJ 20060620]

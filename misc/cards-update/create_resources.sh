@@ -3,6 +3,7 @@ if [ -f ../../backend/.env ]; then source ../../backend/.env; fi
 
 # Check playtest files
 mkdir -p playtest/images
+mkdir -p ../../frontend/public/images/cards/playtest
 if [ ! -f playtest/vtescrypt_playtest.csv ]; then touch playtest/vtescrypt_playtest.csv; fi
 if [ ! -f playtest/vteslib_playtest.csv ]; then touch playtest/vteslib_playtest.csv; fi
 if [ ! -f playtest/precons.json ]; then echo '{}' > playtest/precons.json; fi

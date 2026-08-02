@@ -1135,6 +1135,12 @@
                 "refs":{
                     "LSJ 20031121":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JQO1RBmvV_o/m/jrmvVW9GH8oJ"
                 }
+            },
+            {
+                "text":"You can draw more cards than are in the library or crypt (even from an empty library or crypt); draw as much as you can.",
+                "refs":{
+                    "LSJ 20060620":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aqascblOZmk/m/dBI1vw69ikQJ"
+                }
             }
         ],
         "set":{
@@ -11796,9 +11802,6 @@
                 "Sal":3,
                 "Tr":3,
                 "V":2
-            },
-            "playtest":{
-                "ToDV":2
             }
         },
         "text":"Only usable during a bleed action.\n[dom] +1 bleed (limited).\n[DOM] +1 stealth and +1 bleed (limited).",
@@ -12329,6 +12332,18 @@
             },
             {
                 "text":"[obf]\u00a0The prey need not control a minion, the target is chosen upon resolution.",
+                "refs":{
+                    "ANK 20240706":"https://www.vekn.net/forum/rules-questions/81563-break-the-bonds-presence-target?start=18#111945"
+                }
+            },
+            {
+                "text":"[pre] There must be an uncontrolled vampire, and it is chosen upon declaration.",
+                "refs":{
+                    "ANK 20240706":"https://www.vekn.net/forum/rules-questions/81563-break-the-bonds-presence-target?start=18#111945"
+                }
+            },
+            {
+                "text":"[obf] The prey needs not control a minion, the target is chosen upon resolution.",
                 "refs":{
                     "ANK 20240706":"https://www.vekn.net/forum/rules-questions/81563-break-the-bonds-presence-target?start=18#111945"
                 }
@@ -13493,9 +13508,6 @@
             "Third":{
                 "U":true,
                 "PB":1
-            },
-            "playtest":{
-                "ToDN":1
             }
         },
         "text":"[pot] Strike: hand strike at +1 damage, aggravated.\n[POT] Strike: hand strike at +2 damage, aggravated.",
@@ -14893,9 +14905,6 @@
                 "G":4,
                 "N":4,
                 "Tz":5
-            },
-            "playtest":{
-                "ToDN":3
             }
         },
         "text":"Only usable before range is determined. A vampire can play only one Carrion Crows each combat.\n[ani] This combat, the opposing minion takes 1R environmental damage each round during normal strike resolution.\n[ANI] As above, but for 2R environmental damage.",
@@ -18121,10 +18130,9 @@
                 }
             },
             {
-                "text":"[obf] Cannot be played when the target crypt is empty.",
+                "text":"[obf] You can draw more cards than are in the library or crypt (even from an empty library or crypt); draw as much as you can.",
                 "refs":{
-                    "RTR 20000501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/MKrA0hBXuaU/m/1M5LOLftKWAJ",
-                    "LSJ 20070411-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-B6BlRIT0Rg/m/VOYol5mcbO8J"
+                    "LSJ 20060620":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aqascblOZmk/m/dBI1vw69ikQJ"
                 }
             }
         ],
@@ -21695,9 +21703,6 @@
             "2P":{
                 "C":true,
                 "N":2
-            },
-            "playtest":{
-                "ToDN":2
             }
         },
         "text":"+1 stealth action.\nX is the number of copies of this card you control. Put this card in play. During your unlock phase, your prey burns 1 pool. Minions can burn this card as a (D) action.",
@@ -24344,7 +24349,14 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"You can draw more cards than are in the library or crypt (even from an empty library or crypt); draw as much as you can.",
+                "refs":{
+                    "LSJ 20060620":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aqascblOZmk/m/dBI1vw69ikQJ"
+                }
+            }
+        ],
         "set":{
             "Jyhad":{
                 "C":true
@@ -24859,9 +24871,6 @@
                 "G":4,
                 "N":4,
                 "Tz":4
-            },
-            "playtest":{
-                "ToDN":2
             }
         },
         "text":"[ani] (D) Bleed with +1 bleed.\n[ANI] Frenzy. (D) Enter combat with and lock a vampire. The target vampire is considered the acting minion during that combat.",
@@ -27363,7 +27372,14 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"[cel] You can draw more cards than are in the library or crypt (even from an empty library or crypt); draw as much as you can.",
+                "refs":{
+                    "LSJ 20060620":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aqascblOZmk/m/dBI1vw69ikQJ"
+                }
+            }
+        ],
         "set":{
             "Jyhad":{
                 "R":true
@@ -28085,9 +28101,6 @@
                 "Sal":2,
                 "Tr":2,
                 "V":1
-            },
-            "playtest":{
-                "ToDV":1
             }
         },
         "text":"[dom] +1 stealth action. (D) Bleed with +1 bleed.\n[DOM] (D) Steal a location.",
@@ -32028,6 +32041,12 @@
                     "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
                     "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
                 }
+            },
+            {
+                "text":"[OBF]/[PRE] You can draw more cards than are in the library or crypt (even from an empty library or crypt); draw as much as you can.",
+                "refs":{
+                    "LSJ 20060620":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aqascblOZmk/m/dBI1vw69ikQJ"
+                }
             }
         ],
         "set":{
@@ -32262,9 +32281,6 @@
             },
             "KoT":{
                 "R":true
-            },
-            "playtest":{
-                "ToDV":1
             }
         },
         "text":"Unique.\nPut this card on a Ventrue with capacity 8 or more. This Ventrue gets +1 intercept and +1 vote. This Ventrue can force any vampire to yield a contested title as a +1 stealth (D) action.",
@@ -34561,9 +34577,6 @@
                 "B":1,
                 "N":1,
                 "Tz":1
-            },
-            "playtest":{
-                "ToDN":1
             }
         },
         "text":"Unique.\nPut this card on a ready vampire. After this vampire goes to torpor, their controller burns 3 pool. During each Methuselah's unlock phase, if this vampire is in torpor, that Methuselah burns 1 pool.",
@@ -37161,7 +37174,14 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"[cel] You can draw more cards than are in the library or crypt (even from an empty library or crypt); draw as much as you can.",
+                "refs":{
+                    "LSJ 20060620":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aqascblOZmk/m/dBI1vw69ikQJ"
+                }
+            }
+        ],
         "set":{
             "Gehenna":{
                 "C":true
@@ -38851,6 +38871,12 @@
                 "text":"Can be used during an action, when the controller has the opportunity to play an effect.",
                 "refs":{
                     "ANK 20200616":"https://www.vekn.net/forum/rules-questions/78687-the-erciyes-fragments-fragment-of-the-book-of-nod-barrens-impulse#100110"
+                }
+            },
+            {
+                "text":"You can draw more cards than are in the library or crypt (even from an empty library or crypt); draw as much as you can.",
+                "refs":{
+                    "LSJ 20060620":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aqascblOZmk/m/dBI1vw69ikQJ"
                 }
             }
         ],
@@ -42447,7 +42473,7 @@
                 }
             },
             {
-                "text":"Is not Anarch (eg. does not benefit from {Anarch Manifesto, An}).",
+                "text":"Is not Anarch (eg. does not benefit from {An Anarch Manifesto}).",
                 "refs":{
                     "RBK allies":"https://www.vekn.net/rulebook#allies",
                     "ANK 20230417":"https://www.vekn.net/forum/rules-questions/80399-an-anarch-manifesto-grey-thorne-vivienne-geroux#107686"
@@ -42579,9 +42605,6 @@
                 "Sal":2,
                 "To":2,
                 "V":2
-            },
-            "playtest":{
-                "ToDN":2
             }
         },
         "text":"Move up to 3 blood from a ready vampire you control to a younger vampire of the same clan in your uncontrolled region.",
@@ -42821,9 +42844,6 @@
                 "N":2,
                 "R":2,
                 "Tz":2
-            },
-            "playtest":{
-                "ToDN":2
             }
         },
         "text":"Only usable by a locked vampire during a bleed action directed at you.\n[ani] Unlock this vampire.\n[ANI] As above, with 1 optional maneuver during the resulting combat if this vampire blocks.",
@@ -46517,6 +46537,12 @@
                     "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
                     "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
                 }
+            },
+            {
+                "text":"[pot],[tem] You can draw more cards than are in the library or crypt (even from an empty library or crypt); draw as much as you can.",
+                "refs":{
+                    "LSJ 20060620":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aqascblOZmk/m/dBI1vw69ikQJ"
+                }
             }
         ],
         "set":{
@@ -47280,7 +47306,7 @@
                 }
             },
             {
-                "text":"Even if they have the same name as a vampire in play, the illusionary vampire is considered different for all purposes (eg. {Jimmy Dunn (G2)}'s ability does not trigger).",
+                "text":"Even if they have the same name as a vampire in play, the illusionary vampire is considered different for all purposes (eg. {Jimmy Dunn}'s ability does not trigger).",
                 "refs":{
                     "LSJ 20100213":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/vXDkYrTmkws/m/sKy3jXz7AB4J",
                     "LSJ 19991110":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/5hDqAMewLtg/m/fib2UDF58CUJ"
@@ -47857,6 +47883,12 @@
                 "refs":{
                     "LSJ 20010312":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Mz0Rs9faJ9o/m/bgYwj4yw0G0J",
                     "LSJ 20001027":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/zUs5JBhRLgE/m/oyaUCsWe-EgJ"
+                }
+            },
+            {
+                "text":"[aus] You can draw more cards than are in the library or crypt (even from an empty library or crypt); draw as much as you can.",
+                "refs":{
+                    "LSJ 20060620":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aqascblOZmk/m/dBI1vw69ikQJ"
                 }
             }
         ],
@@ -48548,6 +48580,12 @@
                 "text":"[CEL]\u00a0When played multiple times, each time you replace a card, draw all additional cards at once then discard down to hand size.",
                 "refs":{
                     "TOM 19950921-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/yejj-744_zc/m/IVkIvqGQdGUJ"
+                }
+            },
+            {
+                "text":"[CEL] You can draw more cards than are in the library or crypt (even from an empty library or crypt); draw as much as you can.",
+                "refs":{
+                    "LSJ 20060620":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aqascblOZmk/m/dBI1vw69ikQJ"
                 }
             }
         ],
@@ -51153,6 +51191,12 @@
                 "refs":{
                     "RTR 19960221":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UdU535eVm0Y/m/AQGxbaznHL0J"
                 }
+            },
+            {
+                "text":"You can draw more cards than are in the library or crypt (even from an empty library or crypt); draw as much as you can.",
+                "refs":{
+                    "LSJ 20060620":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aqascblOZmk/m/dBI1vw69ikQJ"
+                }
             }
         ],
         "set":{
@@ -53492,9 +53536,6 @@
                 "PM":"2",
                 "SKB":"1",
                 "SKM":"2"
-            },
-            "playtest":{
-                "ToDV":1
             }
         },
         "text":"Equipment.\nIf the action to equip with the Leather Jacket is successful, unlock the acting minion at the end of the turn. Bearer may burn Leather Jacket to prevent all the damage from the opposing minion's strike. A minion may have only one Leather Jacket.",
@@ -54510,9 +54551,6 @@
                 "Sal":2,
                 "Tz":3,
                 "V":2
-            },
-            "playtest":{
-                "ToDV":2
             }
         },
         "text":"Trifle.\nAdd 1 blood to a ready vampire.",
@@ -61593,6 +61631,12 @@
                     "LSJ 20070411-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-B6BlRIT0Rg/m/VOYol5mcbO8J",
                     "RTR 20000501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/MKrA0hBXuaU/m/1M5LOLftKWAJ"
                 }
+            },
+            {
+                "text":"You can draw more cards than are in the library or crypt (even from an empty library or crypt); draw as much as you can.",
+                "refs":{
+                    "LSJ 20060620":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aqascblOZmk/m/dBI1vw69ikQJ"
+                }
             }
         ],
         "set":{
@@ -66780,6 +66824,12 @@
                     "LSJ 20011204-3":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/JhBwcZjDlaQ/m/Cz-jcHF3e0cJ",
                     "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
                 }
+            },
+            {
+                "text":"[myt] You can draw more cards than are in the library or crypt (even from an empty library or crypt); draw as much as you can.",
+                "refs":{
+                    "LSJ 20060620":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aqascblOZmk/m/dBI1vw69ikQJ"
+                }
             }
         ],
         "set":{
@@ -66987,10 +67037,6 @@
                 "L":2,
                 "To":2,
                 "V":2
-            },
-            "playtest":{
-                "ToDN":2,
-                "ToDV":2
             }
         },
         "text":"Requires a prince or justicar.\nChoose a Methuselah who has more pool than you do and allocate 3 of their pool among 1 or more other Methuselahs (including you). Successful referendum means the pool is distributed as you chose.",
@@ -68402,9 +68448,6 @@
                 "C":true,
                 "To":4,
                 "V":3
-            },
-            "playtest":{
-                "ToDV":2
             }
         },
         "text":"[pre] Only usable during the polling step of a political action. This vampire gets +3 votes.\n[PRE] Allies and younger vampires get -1 intercept.",
@@ -70630,9 +70673,6 @@
             },
             "KoT":{
                 "U":true
-            },
-            "playtest":{
-                "ToDN":1
             }
         },
         "text":"Master: unique location.\nDuring your unlock phase, you may move 1 blood from the blood bank to this card or move all the blood on this card to your pool. A vampire controlled by another Methuselah can move all the blood on this card to his or her controller's pool as a (D) action.",
@@ -73222,9 +73262,6 @@
             "2P":{
                 "C":true,
                 "V":2
-            },
-            "playtest":{
-                "ToDV":1
             }
         },
         "text":"[pre] (D) Bleed with +1 bleed. Titled vampires cannot block this action.\n[PRE] As above, and the target Methuselah locks a ready unlocked minion they control.",
@@ -73422,9 +73459,6 @@
             "2P":{
                 "C":true,
                 "N":2
-            },
-            "playtest":{
-                "ToDV":4
             }
         },
         "text":"Requires a primogen. Only usable during a bleed action against you or during the polling step of a political action.\nReduce the bleed amount by 3 or this vampire gains +3 votes against the referendum.",
@@ -77065,10 +77099,9 @@
         "requirement":"black hand",
         "rulings":[
             {
-                "text":"Cannot be played when the target crypt is empty.",
+                "text":"You can draw more cards than are in the library or crypt (even from an empty library or crypt); draw as much as you can.",
                 "refs":{
-                    "RTR 20000501":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/MKrA0hBXuaU/m/1M5LOLftKWAJ",
-                    "LSJ 20070411-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-B6BlRIT0Rg/m/VOYol5mcbO8J"
+                    "LSJ 20060620":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aqascblOZmk/m/dBI1vw69ikQJ"
                 }
             }
         ],
@@ -83339,9 +83372,6 @@
                 "Sal":5,
                 "Tr":5,
                 "Tz":4
-            },
-            "playtest":{
-                "ToDV":2
             }
         },
         "text":"[dom] (D) Bleed with +1 bleed.\n[DOM] +1 stealth action. Add 2 blood to a younger vampire in your uncontrolled region.",
@@ -83870,10 +83900,6 @@
                 "To":2,
                 "Tr":2,
                 "V":4
-            },
-            "playtest":{
-                "ToDN":2,
-                "ToDV":1
             }
         },
         "text":"Requires a prince or justicar.\n[REACTION] +2 intercept.\n[REACTION] Only usable by a locked prince or justicar. This vampire burns 1 blood to unlock and attempt to block with +2 intercept, even if intercept is not yet needed.",
@@ -84223,9 +84249,6 @@
                 "C":true,
                 "Sal":2,
                 "V":2
-            },
-            "playtest":{
-                "ToDV":1
             }
         },
         "text":"Only usable as the action is announced.\n[dom] Choose a younger vampire. The chosen vampire cannot block this action.\n[DOM] As above, but choose any vampire.",
@@ -84515,9 +84538,6 @@
             },
             "2P":{
                 "C":true
-            },
-            "playtest":{
-                "ToDN":2
             }
         },
         "text":"Requires a vampire with capacity 7 or more.\n[ani] +1 intercept.\n[ANI] Only usable by a locked vampire. This vampire unlocks and attempts to block.",
@@ -85075,7 +85095,14 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"You can draw more cards than are in the library or crypt (even from an empty library or crypt); draw as much as you can.",
+                "refs":{
+                    "LSJ 20060620":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aqascblOZmk/m/dBI1vw69ikQJ"
+                }
+            }
+        ],
         "set":{
             "Gehenna":{
                 "R":true
@@ -88275,9 +88302,6 @@
             },
             "LoB":{
                 "PA":"2"
-            },
-            "playtest":{
-                "ToDV":2
             }
         },
         "text":"[for] Prevent all damage from the opponent's strike.\n[FOR] As above, and prevent all damage from the opponent's strikes for the remainder of this round.",
@@ -89725,9 +89749,6 @@
             },
             "BH":{
                 "PN":1
-            },
-            "playtest":{
-                "ToDN":1
             }
         },
         "text":"[ani] Strike: 2 damage.\n[ANI] Strike: 2 aggravated damage.",
@@ -90085,6 +90106,12 @@
                 "text":"Still produces its full effect if the new younger vampire cannot use equipment (eg. {Beast, The Leatherface of Detroit}).",
                 "refs":{
                     "LSJ 20100527":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Tr3X4DsZr-8/m/O06iXN6LtzsJ"
+                }
+            },
+            {
+                "text":"You can draw more cards than are in the library or crypt (even from an empty library or crypt); draw as much as you can.",
+                "refs":{
+                    "LSJ 20060620":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aqascblOZmk/m/dBI1vw69ikQJ"
                 }
             }
         ],
@@ -93666,7 +93693,7 @@
                 }
             },
             {
-                "text":"[PRE] The ally card itself cannot be cancelled (eg. {Louhi (G4)}'s ability cannot cancel it).",
+                "text":"[PRE] The ally card itself cannot be cancelled (eg. {Louhi}'s ability cannot cancel it).",
                 "refs":{
                     "ANK 20201229":"https://www.vekn.net/forum/rules-questions/78959-louhi-and-piper#101325"
                 }
@@ -94265,9 +94292,6 @@
                 "Mi":3,
                 "N":3,
                 "R":2
-            },
-            "playtest":{
-                "ToDN":2
             }
         },
         "text":"[obf] [ACTION MODIFIER] +1 stealth.\n[OBF] [COMBAT] Maneuver.",
@@ -96170,9 +96194,6 @@
                 "C":true,
                 "B":2,
                 "N":2
-            },
-            "playtest":{
-                "ToDN":2
             }
         },
         "text":"Only usable at the end of a round of combat. Not usable by a vampire being burned or going to torpor. A vampire can play only one Taste of Vitae each round.\nThis vampire gains blood equal to the amount of blood lost by the opposing vampire to damage this round.",
@@ -102224,9 +102245,6 @@
             },
             "FB":{
                 "PV":"2"
-            },
-            "playtest":{
-                "ToDV":2
             }
         },
         "text":"[for] Prevent 1 damage.\n[FOR] Maneuver, and this vampire can prevent 1 damage later this round.",
@@ -104929,7 +104947,7 @@
         "requirement":"anarch",
         "rulings":[
             {
-                "text":"Is not Anarch (eg. does not benefit from {Anarch Manifesto, An}).",
+                "text":"Is not Anarch (eg. does not benefit from {An Anarch Manifesto}).",
                 "refs":{
                     "RBK allies":"https://www.vekn.net/rulebook#allies",
                     "ANK 20230417":"https://www.vekn.net/forum/rules-questions/80399-an-anarch-manifesto-grey-thorne-vivienne-geroux#107686"
@@ -105200,9 +105218,6 @@
                 "C":true,
                 "To":2,
                 "V":2
-            },
-            "playtest":{
-                "ToDV":1
             }
         },
         "text":"Only usable after resolution of a political action whose referendum passed.\n[pre] This vampire gains 1 blood for each vote by which the referendum passed.\n[PRE] As above, but move up to 2 of those blood to your pool instead of this vampire.",
@@ -105713,9 +105728,6 @@
                 "C":true,
                 "M":2,
                 "Mi":2
-            },
-            "playtest":{
-                "ToDV":1
             }
         },
         "text":"Only usable by a locked vampire. Do not replace until your next unlock phase.\nThis vampire wakes (they ignore the requirement to be unlocked for playing reaction cards and attempting to block until the end of the action).",
@@ -106670,7 +106682,14 @@
         "path":"",
         "pool":1,
         "requirement":"seraph",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"You can draw more cards than are in the library or crypt (even from an empty library or crypt); draw as much as you can.",
+                "refs":{
+                    "LSJ 20060620":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/aqascblOZmk/m/dBI1vw69ikQJ"
+                }
+            }
+        ],
         "set":{
             "BH":{
                 "R":true
