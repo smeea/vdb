@@ -35,11 +35,12 @@ const InventoryShareModal = ({ setShow }) => {
 
   const [successFull, setSuccessFull] = useState();
   const [successSurplus, setSuccessSurplus] = useState();
+  const [successSurplusUpdate, setSuccessSurplusUpdate] = useState();
 
   const fullUrl = `${import.meta.env.VITE_BASE_URL}/inventory?key=${inventoryKey}`
   const surplusUrl = `${import.meta.env.VITE_BASE_URL}/inventory?key=${surplusKey}`
 
-  const handleClick = (target) => {
+  const handleCreate = (target) => {
     const key = Math.random().toString(36).substring(2, 10);
     const createUrl = target == INVENTORY_KEY ? inventoryServices.shareFullInventory : inventoryServices.shareSurplusInventory
 
@@ -52,6 +53,19 @@ const InventoryShareModal = ({ setShow }) => {
         target === INVENTORY_KEY ? setSuccessFull(true) : setSuccessSurplus(true)
         setTimeout(() => {
           target === INVENTORY_KEY ? setSuccessFull(false) : setSuccessSurplus(false)
+        }, 1000);
+      });
+  };
+
+  const handleUpdateSurplus = () => {
+    inventoryServices.shareSurplusInventory(surplusKey, surplus)
+      .then(() => {
+        navigator.clipboard.writeText(`${import.meta.env.VITE_BASE_URL}/inventory?key=${surplusKey}`);
+      })
+      .then(() => {
+        setSuccessSurplusUpdate(true)
+        setTimeout(() => {
+          setSuccessSurplusUpdate(false)
         }, 1000);
       });
   };
@@ -81,7 +95,7 @@ const InventoryShareModal = ({ setShow }) => {
                </div>
              </div>
             }
-            <div>
+            <div className="flex flex-col gap-1">
               <p>
                 Shows all cards from you inventory.
               </p>
@@ -92,7 +106,7 @@ const InventoryShareModal = ({ setShow }) => {
             <ButtonIconed
               className="w-full"
               variant={successFull ? "success" : "primary"}
-              onClick={() => handleClick(INVENTORY_KEY)}
+              onClick={() => handleCreate(INVENTORY_KEY)}
               title="Create Inventory URL"
               icon={<Link45Deg width="19" height="19" viewBox="0 0 14 14" />}
               text="Create Inventory URL"
@@ -115,25 +129,40 @@ const InventoryShareModal = ({ setShow }) => {
                </div>
              </div>
             }
-            <div>
+            <div className="flex flex-col gap-1">
               <p>
                 Shows surplus cards <b><i>as they were at the moment of URL creation</i></b>, or when you click UPDATE button.
+              </p>
+              <p>
+                Update button will update shared surplus to current state without changing URL.
               </p>
               <p>
                 Will not follow changes in your inventory.
               </p>
             </div>
-            <ButtonIconed
-              className="w-full"
-              variant={successSurplus ? "success" : "primary"}
-              onClick={() => handleClick(SURPLUS_KEY)}
-              title="Create Surplus URL"
-              icon={<Link45Deg width="19" height="19" viewBox="0 0 14 14" />}
-              text="Create Surplus URL"
-            />
+            <div className="flex gap-2 max-sm:flex-col">
+              <ButtonIconed
+                className="w-full"
+                variant={successSurplus ? "success" : "primary"}
+                onClick={() => handleCreate(SURPLUS_KEY)}
+                title="Create Surplus URL"
+                icon={<Link45Deg width="19" height="19" viewBox="0 0 14 14" />}
+                text="Create Surplus URL"
+              />
+              {surplusKey &&
+               <ButtonIconed
+                 className="w-full"
+                 variant={successSurplusUpdate ? "success" : "primary"}
+                 onClick={handleUpdateSurplus}
+                 title="Update surplus"
+                 icon={<Link45Deg width="19" height="19" viewBox="0 0 14 14" />}
+                 text="Update surplus"
+               />
+              }
+            </div>
           </div>
         </div>
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-1">
           <div>
             People with URL can only view (not edit!) your inventory.
           </div>
