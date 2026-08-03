@@ -1,18 +1,18 @@
 # FIX
+- Inventory missing capacity alignment
+- Tournament appearance
 
 # FIX ON HOLD
 
 # FEATURES
-- Limited in TWD/PDA search
-- TWD search with % V5-compatibility
-- Click on scan image to close modal on mobile (need refactor)
 - Inventory target documentation
-- Show best precons for missing cards
-- Show V5/2P compatibility on card detailed info
 
 # FEATURES ON HOLD
 - Draft Cube support -> when draft cube info is available
 - Update cards translation -> BCP updated translation files
+- Limited in TWD/PDA search -> until V5-V6 is clear
+- TWD search with % V5-compatibility -> until V5-V6 is clear
+- Show V5/2P compatibility on card detailed info -> until V5-V6 is clear
 
 # TECH IMPROVEMENTS
 - Refactor with useEffectEvent https://react.dev/learn/separating-events-from-effects#extracting-non-reactive-logic-out-of-effects

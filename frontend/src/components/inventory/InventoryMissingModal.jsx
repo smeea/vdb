@@ -10,6 +10,7 @@ import {
   InventoryCryptTable,
   InventoryLibraryTable,
   Modal,
+  InventoryMissingPrecons,
 } from "@/components";
 import { CRYPT, LIBRARY, MISSING, NAME, SURPLUS } from "@/constants";
 import { inventoryStore, useApp } from "@/context";
@@ -49,6 +50,13 @@ const InventoryMissingModal = ({
   );
   const [showCryptOnMobile, setShowCryptOnMobile] = useState(true);
   const [showAll, setShowAll] = useState();
+  const [showPrecons, setShowPrecons] = useState()
+
+  const handleClose = () => {
+    setShow(false);
+    setShowMenuButtons(false);
+    setShowFloatingButtons(true);
+  };
 
   const cryptSorted = cryptSort(Object.values(isSurplus ? surplusCrypt : missingCrypt), NAME);
   const librarySorted = librarySort(
@@ -79,12 +87,6 @@ const InventoryMissingModal = ({
       }),
     NAME,
   );
-
-  const handleClose = () => {
-    setShow(false);
-    setShowMenuButtons(false);
-    setShowFloatingButtons(true);
-  };
 
   return (
     <Modal
@@ -117,11 +119,14 @@ const InventoryMissingModal = ({
         </FlexGapped>
         <div className="flex justify-end gap-2 max-sm:flex-col max-sm:p-2 max-sm:pt-0">
           {!isSurplus && (
+            <>
+            <ButtonIconed onClick={() => setShowPrecons(!showPrecons)} text="Show Precons with Missing Cards" icon={null}/>
             <ButtonIconed
               onClick={() => setShowAll(!showAll)}
               text={showAll ? "Show Missing for Decks" : "Show Missing for Complete Collection"}
               icon={<Gem />}
             />
+            </>
           )}
           <DeckExportButton
             deck={{
@@ -140,6 +145,7 @@ const InventoryMissingModal = ({
       >
         <div className="text-2xl">{showCryptOnMobile ? "LIB" : "CR"}</div>
       </ButtonFloat>
+      {showPrecons && <InventoryMissingPrecons setShow={setShowPrecons} crypt={missingCrypt} library={missingLibrary} />}
     </Modal>
   );
 };
