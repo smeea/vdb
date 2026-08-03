@@ -90,7 +90,7 @@ const InventoryCryptTableRow = ({
           <InventoryCardQuantityDiff card={card} surplus={surplus} isWishlist={wishlistLogic} />
         </div>
       )}
-      <div className="flex min-w-[32px]" onClick={onClick}>
+      <div className={twMerge("flex min-w-[32px]", inMissing && 'min-w-[40px] justify-center')} onClick={onClick}>
         <ResultCryptCapacity card={card.c} />
       </div>
       <div className="flex min-w-[180px] max-lg:hidden" onClick={onClick}>

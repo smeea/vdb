@@ -1,5 +1,4 @@
 # FIX
-- Inventory missing capacity alignment
 - Tournament appearance
 
 # FIX ON HOLD
