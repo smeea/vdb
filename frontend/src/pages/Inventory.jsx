@@ -39,7 +39,7 @@ const Inventory = () => {
     setSharedKey,
   } = useApp();
 
-  const [inventoryError, setInventoryError] = useState();
+  const [error, setError] = useState();
   const [searchParams] = useSearchParams();
   const { [CRYPT]: sharedCrypt, [LIBRARY]: sharedLibrary } = useSnapshot(sharedStore);
 
@@ -52,21 +52,21 @@ const Inventory = () => {
   }, [inventoryMode]);
 
   const getInventory = async (key) => {
-    setInventoryError(false);
     let response;
     try {
       response = await inventoryServices.getSharedInventory(key, cryptCardBase, libraryCardBase);
     } catch (e) {
       switch (e.response.status) {
-        case 401:
-          setInventoryError("NO INVENTORY WITH THIS KEY");
-          break;
-        default:
-          setInventoryError("CONNECTION PROBLEM");
+      case 401:
+        setError("NO INVENTORY WITH THIS KEY");
+        break;
+      default:
+        setError("CONNECTION PROBLEM");
       }
       return;
     }
 
+    setError(false);
     sharedStore[CRYPT] = response[CRYPT];
     sharedStore[LIBRARY] = response[LIBRARY];
   };
@@ -114,7 +114,7 @@ const Inventory = () => {
 
   return (
     <div className="inventory-container mx-auto">
-      {(!inShared && username) || (sharedCrypt && sharedLibrary) ? (
+      {((!inShared && username) || (sharedCrypt && sharedLibrary)) && (
         <FlexGapped>
           <div
             className={twMerge(
@@ -174,9 +174,9 @@ const Inventory = () => {
             </ButtonFloat>
           )}
         </FlexGapped>
-      ) : inventoryError ? (
-        <ErrorMessage>{inventoryError}</ErrorMessage>
-      ) : (
+      )}
+      {error && <ErrorMessage>{error}</ErrorMessage>}
+      {username === null && (
         <div className="flex min-h-[80vh] place-items-center max-sm:px-2">
           <LoginBlock>Login to manage your inventory</LoginBlock>
         </div>
