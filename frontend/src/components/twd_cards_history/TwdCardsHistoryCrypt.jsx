@@ -22,6 +22,8 @@ import {
   NAME,
   PLAYER,
   VALUE,
+  CARDS,
+  TOTAL,
 } from "@/constants";
 import { useApp } from "@/context";
 import { useModalCardController } from "@/hooks";
@@ -43,22 +45,29 @@ const TwdCardsHistoryCrypt = ({ cards, players }) => {
   };
 
   const cardsByClan = {};
+
   const cardsByClanTotal = {};
   [ALL, ...vampireClansList, ...imbuedClansList].forEach((i) => {
-    cardsByClan[i] = {};
-    cardsByClanTotal[i] = 0;
+    cardsByClan[i] = {
+      [CARDS]: {},
+      [TOTAL]: 0
+    };
   });
 
-  cards.forEach((card) => {
-    cardsByClan[card[CLAN]][card[ID]] = card;
-    cardsByClan[ALL][card[ID]] = card;
+  Object.values(cards).forEach((card) => {
+    cardsByClan[card[CLAN]][CARDS][card[ID]] = card;
+    cardsByClan[ALL][CARDS][card[ID]] = card;
   });
 
-  Object.keys(cardsByClan).forEach((c) => {
-    cardsByClanTotal[c] = Object.keys(cardsByClan[c]).length;
+  Object.keys(cardsByClan).forEach((clan) => {
+    cardsByClan[clan][TOTAL] = Object.keys(cardsByClan[clan][CARDS]).length;
   });
 
-  const sortedCards = cryptSort(Object.values(cardsByClan[clan]), sortMethod);
+  const cardsFilteredBy = {
+    [CLAN]: cardsByClan
+  };
+
+  const sortedCards = cryptSort(Object.values(cardsByClan[clan][CARDS]), sortMethod);
 
   const {
     currentModalCard,
@@ -88,11 +97,8 @@ const TwdCardsHistoryCrypt = ({ cards, players }) => {
           <InventoryFilterForm
             value={clan}
             setValue={setClan}
-            values={Object.keys(cardsByClan).filter((i) => {
-              return Object.keys(cardsByClan[i]).length;
-            })}
-            byTotal={cardsByClanTotal}
-            target={CRYPT}
+            values={cardsFilteredBy}
+            target={CLAN}
           />
         </div>
         <SortButton

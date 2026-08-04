@@ -249,9 +249,6 @@ const useInventoryLibrary = (library, category, compact, type, discipline, clan,
   }
 
   return {
-    cardsByType,
-    cardsByDiscipline,
-    cardsByClan,
     cardsFilteredBy,
     filteredCards,
     missing,

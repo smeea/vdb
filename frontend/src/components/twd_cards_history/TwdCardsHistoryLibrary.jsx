@@ -25,6 +25,8 @@ import {
   PLAYER,
   TYPE,
   VALUE,
+  CARDS,
+  TOTAL,
 } from "@/constants";
 import { useApp } from "@/context";
 import { useModalCardController } from "@/hooks";
@@ -49,25 +51,27 @@ const TwdCardsHistoryLibrary = ({ cards, players }) => {
   };
 
   const cardsByType = {};
-  const cardsByTypeTotal = {};
   [ALL, ...cardtypeSorted].forEach((i) => {
-    cardsByType[i] = {};
-    cardsByTypeTotal[i] = 0;
+    cardsByType[i] = {
+      [CARDS]: {},
+      [TOTAL]: 0,
+    };
   });
 
   const cardsByDiscipline = {};
-  const cardsByDisciplineTotal = {};
   [
     ALL,
     NONE,
     ...[...Object.keys(disciplinesList), ...disciplinesExtraList].toSorted(),
     ...Object.keys(virtuesList),
   ].forEach((i) => {
-    cardsByDiscipline[i] = {};
-    cardsByDisciplineTotal[i] = 0;
+    cardsByDiscipline[i] = {
+      [CARDS]: {},
+      [TOTAL]: 0,
+    };
   });
 
-  cards.forEach((card) => {
+  Object.values(cards).forEach((card) => {
     const types = card[TYPE].split("/");
     const d = card[DISCIPLINE];
     let disciplines = [NONE];
@@ -80,66 +84,47 @@ const TwdCardsHistoryLibrary = ({ cards, players }) => {
     }
 
     types.forEach((t) => {
-      cardsByTypeTotal[t] += 1;
+      cardsByType[t][CARDS][card[ID]] = card;
     });
-    cardsByTypeTotal[ALL] += 1;
-    cardsByDisciplineTotal[ALL] += 1;
+    cardsByType[ALL][CARDS][card[ID]] = card;
+    cardsByDiscipline[ALL][CARDS][card[ID]] = card;
 
     if (disciplines) {
       disciplines.forEach((i) => {
-        cardsByDisciplineTotal[i] += 1;
+        cardsByDiscipline[i][CARDS][card[ID]] = card;
       });
     } else {
-      cardsByDisciplineTotal[NONE] += 1;
-    }
-
-    types.forEach((t) => {
-      cardsByType[t][card[ID]] = card;
-    });
-    cardsByType[ALL][card[ID]] = card;
-    cardsByDiscipline[ALL][card[ID]] = card;
-
-    if (disciplines) {
-      disciplines.forEach((i) => {
-        cardsByDiscipline[i][card[ID]] = card;
-      });
-    } else {
-      cardsByDiscipline[NONE][card[ID]] = card;
+      cardsByDiscipline[NONE][CARDS][card[ID]] = card;
     }
   });
 
-  const cardsFilteredByType = {};
-  const cardsFilteredByTypeTotal = {};
-  const cardsFilteredByDiscipline = {};
-  const cardsFilteredByDisciplineTotal = {};
+  // TODO fix
+  // const cardsFilteredByType = {};
+  // const cardsFilteredByDiscipline = {};
 
-  Object.keys(cardsByDiscipline).forEach((d) => {
-    cardsFilteredByType[d] = {};
-    cardsFilteredByTypeTotal[d] = 0;
-  });
+  // Object.keys(cardsByDiscipline).forEach((d) => {
+  //   cardsFilteredByType[d] = {};
+  // });
 
-  Object.keys(cardsByType[type]).forEach((cardid) => {
-    Object.keys(cardsByDiscipline).forEach((d) => {
-      if (cardsByDiscipline[d][cardid]) {
-        cardsFilteredByType[d][cardid] = cardsByDiscipline[d][cardid];
-        cardsFilteredByTypeTotal[d] += 1;
-      }
-    });
-  });
+  // Object.keys(cardsByType[type]).forEach((cardid) => {
+  //   Object.keys(cardsByDiscipline).forEach((d) => {
+  //     if (cardsByDiscipline[d][cardid]) {
+  //       cardsFilteredByType[d][cardid] = cardsByDiscipline[d][cardid];
+  //     }
+  //   });
+  // });
 
-  Object.keys(cardsByType).forEach((t) => {
-    cardsFilteredByDiscipline[t] = {};
-    cardsFilteredByDisciplineTotal[t] = 0;
-  });
+  // Object.keys(cardsByType).forEach((t) => {
+  //   cardsFilteredByDiscipline[t] = {};
+  // });
 
-  Object.keys(cardsByDiscipline[discipline]).forEach((cardid) => {
-    Object.keys(cardsByType).forEach((t) => {
-      if (cardsByType[t][cardid]) {
-        cardsFilteredByDiscipline[t][cardid] = cardsByType[t][cardid];
-        cardsFilteredByDisciplineTotal[t] += 1;
-      }
-    });
-  });
+  // Object.keys(cardsByDiscipline[discipline]).forEach((cardid) => {
+  //   Object.keys(cardsByType).forEach((t) => {
+  //     if (cardsByType[t][cardid]) {
+  //       cardsFilteredByDiscipline[t][cardid] = cardsByType[t][cardid];
+  //     }
+  //   });
+  // });
 
   const sortedCards = librarySort(
     Object.values(cardsByType[type]).filter((i) => {
@@ -174,24 +159,23 @@ const TwdCardsHistoryLibrary = ({ cards, players }) => {
       <div className="flex items-center justify-between bg-bgSecondary dark:bg-bgSecondaryDark">
         <div className="w-3/4">
           <div className="flex flex-col gap-1">
-            <InventoryFilterForm
-              value={type}
-              setValue={setType}
-              values={Object.keys(cardsByType).filter((i) => {
-                return Object.keys(cardsFilteredByDiscipline[i]).length;
-              })}
-              byTotal={cardsFilteredByDisciplineTotal}
-              target={TYPE}
-            />
-            <InventoryFilterForm
-              value={discipline}
-              setValue={setDiscipline}
-              values={Object.keys(cardsByDiscipline).filter((i) => {
-                return Object.keys(cardsFilteredByType[i]).length;
-              })}
-              byTotal={cardsFilteredByTypeTotal}
-              target={DISCIPLINE}
-            />
+            {/* TODO fix */}
+            {/* <InventoryFilterForm */}
+            {/*   value={type} */}
+            {/*   setValue={setType} */}
+            {/*   values={Object.keys(cardsByType).filter((i) => { */}
+            {/*     return Object.keys(cardsFilteredByDiscipline[i]).length; */}
+            {/*   })} */}
+            {/*   target={TYPE} */}
+            {/* /> */}
+            {/* <InventoryFilterForm */}
+            {/*   value={discipline} */}
+            {/*   setValue={setDiscipline} */}
+            {/*   values={Object.keys(cardsByDiscipline).filter((i) => { */}
+            {/*     return Object.keys(cardsFilteredByType[i]).length; */}
+            {/*   })} */}
+            {/*   target={DISCIPLINE} */}
+            {/* /> */}
           </div>
         </div>
         <SortButton

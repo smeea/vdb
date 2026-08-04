@@ -125,7 +125,6 @@ const useInventoryCrypt = (crypt, category, compact, clan, onlyNotes) => {
   }
 
   return {
-    cardsByClan,
     cardsFilteredBy,
     filteredCards,
     missing,

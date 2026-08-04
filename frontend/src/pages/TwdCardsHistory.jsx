@@ -23,16 +23,13 @@ const TwdCardsHistory = () => {
 
   const url = `${import.meta.env.VITE_BASE_URL}/data/twd_cards_history.json`;
   const { value } = useFetch(url, {});
-  let crypt;
-  let library;
+  const crypt = {};
+  const library = {};
   const players = {};
 
   if (value && cryptCardBase && libraryCardBase) {
-    const c = {};
-    const l = {};
-
     Object.keys(value).forEach((cardid) => {
-      const target = cardid > 200000 ? c : l;
+      const target = cardid > 200000 ? crypt : library
       const cardBase = cardid > 200000 ? cryptCardBase : libraryCardBase;
       target[cardid] = { ...value[cardid], ...cardBase[cardid] };
 
@@ -58,9 +55,6 @@ const TwdCardsHistory = () => {
         }
       }
     });
-
-    crypt = Object.values(c).toSorted(byCardName);
-    library = Object.values(l).toSorted(byCardName);
   }
 
   return (
