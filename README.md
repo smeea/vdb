@@ -110,9 +110,6 @@ To toggle Admin status for account:
     uv run change_playtest_admin.py $ACCOUNT_NAME
 ```
 
-## SUPPORT / HELP
-If you need support/help don't hesitate to fill Issue or send me an email to smeea@riseup.net.
-
 ## CONTRIBUTION
 Contributions in both frontend and backend parts are welcome, but please create an issue first to discuss if the feature/fix (and its particular implementation) are confirmed before spending any resources.
 
