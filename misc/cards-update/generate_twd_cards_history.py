@@ -14,7 +14,8 @@ with (
             "deckid": None,
         }
 
-    twda = json.load(twda_input).values()
+    twda = list(json.load(twda_input).values())
+    twda.sort(key=lambda x: x["event"]["date"], reverse=True)
     total = len(twda)
 
     for i in twda:

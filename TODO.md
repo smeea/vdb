@@ -1,5 +1,4 @@
 # FIX
-- Tournament appearance
 
 # FIX ON HOLD
 
