@@ -180,28 +180,33 @@ const TwdCardsHistoryLibrary = ({ cards, players }) => {
 
   return (
     <div className="h-[calc(100dvh-212px)] sm:h-[calc(100dvh-270px)]">
-      <div className="flex items-center justify-between bg-bgSecondary dark:bg-bgSecondaryDark">
-        <div className="w-3/4">
-          <div className="flex flex-col gap-1">
-            {/* TODO fix */}
-            <InventoryFilterForm
-              value={type}
-              setValue={setType}
-              values={cardsFilteredBy}
-              target={TYPE}
-            />
-            <InventoryFilterForm
-              value={discipline}
-              setValue={setDiscipline}
-              values={cardsFilteredBy}
-              target={DISCIPLINE}
-            />
-            <InventoryFilterForm
-              value={clan}
-              setValue={setClan}
-              values={cardsFilteredBy}
-              target={CLAN}
-            />
+      <div className="flex items-center justify-between bg-bgSecondary dark:bg-bgSecondaryDark gap-2">
+        <div className="w-full gap">
+          <div className="flex max-sm:flex-col gap-1 p-1">
+            <div className="w-1/3">
+              <InventoryFilterForm
+                value={type}
+                setValue={setType}
+                values={cardsFilteredBy}
+                target={TYPE}
+              />
+            </div>
+            <div className="w-1/3">
+              <InventoryFilterForm
+                value={discipline}
+                setValue={setDiscipline}
+                values={cardsFilteredBy}
+                target={DISCIPLINE}
+              />
+            </div>
+            <div className="w-1/3">
+                <InventoryFilterForm
+                  value={clan}
+                  setValue={setClan}
+                  values={cardsFilteredBy}
+                  target={CLAN}
+                />
+            </div>
           </div>
         </div>
         <SortButton

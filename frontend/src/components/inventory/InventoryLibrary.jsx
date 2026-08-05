@@ -40,7 +40,7 @@ const InventoryLibrary = ({
     <>
       {!compact && (
         <Header>
-          <div className="w-3/4 p-1">
+          <div className="w-full lg:w-2/3 p-1">
             <div className="flex flex-col gap-1">
               <InventoryFilterForm
                 value={type}

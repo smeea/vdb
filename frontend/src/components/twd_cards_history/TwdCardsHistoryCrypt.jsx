@@ -89,8 +89,8 @@ const TwdCardsHistoryCrypt = ({ cards, players }) => {
 
   return (
     <div className="h-[calc(100dvh-166px)] sm:h-[calc(100dvh-225px)]">
-      <div className="flex items-center justify-between bg-bgSecondary dark:bg-bgSecondaryDark">
-        <div className="w-3/4">
+      <div className="flex items-center justify-between bg-bgSecondary dark:bg-bgSecondaryDark gap-2">
+        <div className="w-full sm:w-1/2 md:w-1/3 p-1">
           <InventoryFilterForm
             value={clan}
             setValue={setClan}
