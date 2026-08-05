@@ -23,37 +23,7 @@ import {
   WISHLIST,
 } from "@/constants";
 import { inventoryStore, useApp, usedStore } from "@/context";
-import { getIsPlaytest, getMissing } from "@/utils";
-
-const getRequirements = (cardid, cardBase, requirements) => {
-  const types = cardBase[cardid][TYPE].split("/");
-
-  let disciplines = [NONE];
-  const d = cardBase[cardid][DISCIPLINE];
-  if (d.includes("/")) {
-    disciplines = d.split("/");
-  } else if (d.includes(" & ")) {
-    disciplines = d.split(" & ");
-  } else if (d) {
-    disciplines = [d];
-  }
-
-  let clans = [NONE];
-  const c = cardBase[cardid][CLAN];
-  if (c.includes("/")) {
-    clans = c.split("/");
-  } else if (c) {
-    clans = [c];
-  }
-
-  const hasGoodRequirements = !!(
-    (clans.includes(requirements[CLAN]) || requirements[CLAN] === ALL) &&
-    (disciplines.includes(requirements[DISCIPLINE]) || requirements[DISCIPLINE] === ALL) &&
-    (types.includes(requirements[TYPE]) || requirements[TYPE] === ALL)
-  );
-
-  return { disciplines, clans, types, hasGoodRequirements };
-};
+import { getRequirements, getIsPlaytest, getMissing } from "@/utils";
 
 const useInventoryLibrary = (library, category, compact, type, discipline, clan, onlyNotes) => {
   const usedLibrary = useSnapshot(usedStore)[LIBRARY];
