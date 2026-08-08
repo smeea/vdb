@@ -4,6 +4,7 @@
 
 # FEATURES
 - Inventory target documentation
+- Switch images to card text for pt report page
 
 # FEATURES ON HOLD
 - Draft Cube support -> when draft cube info is available
