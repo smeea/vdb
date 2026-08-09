@@ -15,6 +15,8 @@ import {
 } from "@/components";
 import {
   ALL,
+  CARDS,
+  CLAN,
   CLAN_DISCIPLINE,
   COST_MAX_MIN,
   COST_MIN_MAX,
@@ -25,11 +27,9 @@ import {
   NAME,
   NONE,
   PLAYER,
+  TOTAL,
   TYPE,
   VALUE,
-  CARDS,
-  TOTAL,
-  CLAN,
 } from "@/constants";
 import { useApp } from "@/context";
 import { useModalCardController } from "@/hooks";
@@ -143,12 +143,10 @@ const TwdCardsHistoryLibrary = ({ cards, players }) => {
   });
 
   Object.keys(cardsFilteredBy).forEach((i) => {
-    Object.keys(cardsFilteredBy[i]).forEach(j => {
+    Object.keys(cardsFilteredBy[i]).forEach((j) => {
       cardsFilteredBy[i][j][TOTAL] = Object.keys(cardsFilteredBy[i][j][CARDS]).length;
-    })
-
+    });
   });
-
 
   const sortedCards = librarySort(
     Object.values(cardsByType[type]).filter((i) => {
@@ -180,9 +178,9 @@ const TwdCardsHistoryLibrary = ({ cards, players }) => {
 
   return (
     <div className="h-[calc(100dvh-212px)] sm:h-[calc(100dvh-270px)]">
-      <div className="flex items-center justify-between bg-bgSecondary dark:bg-bgSecondaryDark gap-2">
-        <div className="w-full gap">
-          <div className="flex max-sm:flex-col gap-1 p-1">
+      <div className="flex items-center justify-between gap-2 bg-bgSecondary dark:bg-bgSecondaryDark">
+        <div className="gap w-full">
+          <div className="flex gap-1 p-1 max-sm:flex-col">
             <div className="w-1/3">
               <InventoryFilterForm
                 value={type}
@@ -200,12 +198,12 @@ const TwdCardsHistoryLibrary = ({ cards, players }) => {
               />
             </div>
             <div className="w-1/3">
-                <InventoryFilterForm
-                  value={clan}
-                  setValue={setClan}
-                  values={cardsFilteredBy}
-                  target={CLAN}
-                />
+              <InventoryFilterForm
+                value={clan}
+                setValue={setClan}
+                values={cardsFilteredBy}
+                target={CLAN}
+              />
             </div>
           </div>
         </div>

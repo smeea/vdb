@@ -23,7 +23,7 @@ import {
   WISHLIST,
 } from "@/constants";
 import { inventoryStore, useApp, usedStore } from "@/context";
-import { getRequirements, getIsPlaytest, getMissing } from "@/utils";
+import { getIsPlaytest, getMissing, getRequirements } from "@/utils";
 
 const useInventoryLibrary = (library, category, compact, type, discipline, clan, onlyNotes) => {
   const usedLibrary = useSnapshot(usedStore)[LIBRARY];

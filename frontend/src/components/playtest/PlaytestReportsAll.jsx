@@ -189,7 +189,7 @@ const PlaytestReportsAll = () => {
               />
             </div>
             <div className="flex flex-col">
-              <div className="flex whitespace-nowrap justify-end print:hide">
+              <div className="print:hide flex justify-end whitespace-nowrap">
                 <Toggle
                   isOn={showPlaytestImages}
                   handleClick={() => setShowPlaytestImages(!showPlaytestImages)}
@@ -197,33 +197,33 @@ const PlaytestReportsAll = () => {
                   Card Images
                 </Toggle>
               </div>
-              <div className="flex whitespace-nowrap justify-end print:hide">
-                  <Toggle
-                    isOn={hidePlaytestNames}
-                    handleClick={() => setHidePlaytestNames(!hidePlaytestNames)}
-                  >
-                    Hide Usernames
-                  </Toggle>
-                </div>
+              <div className="print:hide flex justify-end whitespace-nowrap">
+                <Toggle
+                  isOn={hidePlaytestNames}
+                  handleClick={() => setHidePlaytestNames(!hidePlaytestNames)}
+                >
+                  Hide Usernames
+                </Toggle>
               </div>
             </div>
           </div>
-          <TabGroup manual className="flex flex-col gap-3 sm:gap-4">
-            <TabList className="flex gap-1.5 print:hidden">
-              <TabButton>Crypt</TabButton>
-              <TabButton>Library</TabButton>
-              <TabButton>General / Precons</TabButton>
-            </TabList>
-            <TabPanels>
-              <TabPanel>
-                <PlaytestReportsAllCardsWrapper
-                  maxSameScore={maxReportsSameScoreCrypt}
-                  reports={reportsCrypt}
-                  target={CRYPT}
-                  sortMethod={sortMethod}
-                />
-              </TabPanel>
-              <TabPanel>
+        </div>
+        <TabGroup manual className="flex flex-col gap-3 sm:gap-4">
+          <TabList className="flex gap-1.5 print:hidden">
+            <TabButton>Crypt</TabButton>
+            <TabButton>Library</TabButton>
+            <TabButton>General / Precons</TabButton>
+          </TabList>
+          <TabPanels>
+            <TabPanel>
+              <PlaytestReportsAllCardsWrapper
+                maxSameScore={maxReportsSameScoreCrypt}
+                reports={reportsCrypt}
+                target={CRYPT}
+                sortMethod={sortMethod}
+              />
+            </TabPanel>
+            <TabPanel>
               <PlaytestReportsAllCardsWrapper
                 maxSameScore={maxReportsSameScoreLibrary}
                 reports={reportsLibrary}

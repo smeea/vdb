@@ -14,9 +14,9 @@ export { default as getLegality } from "./getLegality.js";
 export { default as getLibraryRequirements } from "./getLibraryRequirements.js";
 export { default as getMissing } from "./getMissing.js";
 export { default as getMissingPrecons } from "./getMissingPrecons.js";
-export { default as getRestrictions } from "./getRestrictions.js";
 export { default as getRequirements } from "./getRequirements.js";
-export { default as getTags } from "./getTags.js"
+export { default as getRestrictions } from "./getRestrictions.js";
+export { default as getTags } from "./getTags.js";
 export { default as importDeck } from "./importDeck.js";
 export { default as librarySort } from "./librarySort.js";
 export { default as parseArchon } from "./parseArchon.js";

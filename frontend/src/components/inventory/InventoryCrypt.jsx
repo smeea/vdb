@@ -44,7 +44,7 @@ const InventoryCrypt = ({
     <>
       {!compact && (
         <Header>
-          <div className="w-full md:w-5/9 lg:w-1/2 p-1">
+          <div className="w-full p-1 md:w-5/9 lg:w-1/2">
             <InventoryFilterForm
               value={clan}
               setValue={setClan}

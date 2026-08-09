@@ -13,17 +13,16 @@ import {
   ALL,
   CAPACITY_MAX_MIN,
   CAPACITY_MIN_MAX,
+  CARDS,
   CLAN,
-  CRYPT,
   DATE_PRINT,
   DATE_WIN,
   GROUP,
   ID,
   NAME,
   PLAYER,
-  VALUE,
-  CARDS,
   TOTAL,
+  VALUE,
 } from "@/constants";
 import { useApp } from "@/context";
 import { useModalCardController } from "@/hooks";
@@ -45,12 +44,10 @@ const TwdCardsHistoryCrypt = ({ cards, players }) => {
   };
 
   const cardsByClan = {};
-
-  const cardsByClanTotal = {};
   [ALL, ...vampireClansList, ...imbuedClansList].forEach((i) => {
     cardsByClan[i] = {
       [CARDS]: {},
-      [TOTAL]: 0
+      [TOTAL]: 0,
     };
   });
 
@@ -63,7 +60,7 @@ const TwdCardsHistoryCrypt = ({ cards, players }) => {
     cardsByClan[clan][TOTAL] = Object.keys(cardsByClan[clan][CARDS]).length;
   });
 
-  const cardsFilteredBy = { [CLAN]: cardsByClan }
+  const cardsFilteredBy = { [CLAN]: cardsByClan };
   const sortedCards = cryptSort(Object.values(cardsByClan[clan][CARDS]), sortMethod);
 
   const {
@@ -89,8 +86,8 @@ const TwdCardsHistoryCrypt = ({ cards, players }) => {
 
   return (
     <div className="h-[calc(100dvh-166px)] sm:h-[calc(100dvh-225px)]">
-      <div className="flex items-center justify-between bg-bgSecondary dark:bg-bgSecondaryDark gap-2">
-        <div className="w-full sm:w-1/2 md:w-1/3 p-1">
+      <div className="flex items-center justify-between gap-2 bg-bgSecondary dark:bg-bgSecondaryDark">
+        <div className="w-full p-1 sm:w-1/2 md:w-1/3">
           <InventoryFilterForm
             value={clan}
             setValue={setClan}

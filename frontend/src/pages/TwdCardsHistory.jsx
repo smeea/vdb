@@ -16,7 +16,6 @@ import {
 } from "@/constants";
 import { useApp } from "@/context";
 import { useFetch } from "@/hooks";
-import { byCardName } from "@/utils";
 
 const TwdCardsHistory = () => {
   const { cryptCardBase, libraryCardBase } = useApp();
@@ -29,7 +28,7 @@ const TwdCardsHistory = () => {
 
   if (value && cryptCardBase && libraryCardBase) {
     Object.keys(value).forEach((cardid) => {
-      const target = cardid > 200000 ? crypt : library
+      const target = cardid > 200000 ? crypt : library;
       const cardBase = cardid > 200000 ? cryptCardBase : libraryCardBase;
       target[cardid] = { ...value[cardid], ...cardBase[cardid] };
 

@@ -1,10 +1,4 @@
-import {
-  ALL,
-  NONE,
-  DISCIPLINE,
-  TYPE,
-  CLAN,
-} from "@/constants";
+import { ALL, CLAN, DISCIPLINE, NONE, TYPE } from "@/constants";
 
 const getRequirements = (cardid, cardBase, requirements) => {
   const types = cardBase[cardid][TYPE].split("/");
