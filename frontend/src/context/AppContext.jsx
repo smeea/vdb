@@ -117,6 +117,7 @@ export const AppProvider = ({ children }) => {
   const [isPlaytestAdmin, setIsPlaytestAdmin] = useState();
   const [isPlaytester, setIsPlaytester] = useState();
   const [hidePlaytestNames, setHidePlaytestNames] = useState(false);
+  const [showPlaytestImages, setShowPlaytestImages] = useState(true);
   const [playtestProfile, setPlaytestProfile] = useState();
   const [playtestMode, setPlaytestMode] = useState(getLocalStorage(PLAYTEST_MODE) ?? false);
   const [showImage, setShowImage] = useState(getLocalStorage(SHOW_IMAGE) ?? true);
@@ -657,6 +658,8 @@ export const AppProvider = ({ children }) => {
         toggleShowLegacyImage,
         hidePlaytestNames,
         setHidePlaytestNames,
+        showPlaytestImages,
+        setShowPlaytestImages,
         showFloatingButtons,
         setShowFloatingButtons,
         showMenuButtons,

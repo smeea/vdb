@@ -7,12 +7,14 @@ import {
   PlaytestReportEntry,
   PlaytestReportForm,
   PlaytestScores,
+  ResultLibraryLayoutText,
+  ResultCryptLayoutText,
 } from "@/components";
 import { DECKID, ID, NAME, PLAYTEST } from "@/constants";
 import { useApp } from "@/context";
 
 const PlaytestReportsAllCardOrPrecon = ({ product, isPrecon, report, maxSameScore }) => {
-  const { isPlaytestAdmin, isMobile } = useApp();
+  const { showPlaytestImages, isPlaytestAdmin, isMobile } = useApp();
 
   return (
     <>
@@ -25,19 +27,37 @@ const PlaytestReportsAllCardOrPrecon = ({ product, isPrecon, report, maxSameScor
             )}
           >
             <div className="flex flex-col gap-1 max-sm:w-full">
-              <div className="flex font-bold text-fgSecondary dark:text-fgSecondaryDark print:dark:text-fgSecondary">
-                {product[NAME]}
-              </div>
+              {isPrecon || showPlaytestImages && (
+                <div className="flex font-bold text-fgSecondary dark:text-fgSecondaryDark print:dark:text-fgSecondary">
+                  {product[NAME]}
+                </div>
+              )}
               {isPrecon ? (
                 <div className="print:text-sm">
                   <DeckCrypt deck={product} noDisciplines inMissing />
                 </div>
               ) : (
-                <CardImage
-                  card={product}
-                  size="sm"
-                  className="max-sm:w-full sm:print:min-w-[250px] sm:print:max-w-[250px]"
-                />
+                <>
+                  {showPlaytestImages ? (
+                    <CardImage
+                      card={product}
+                      size="sm"
+                      className="max-sm:w-full sm:print:min-w-[250px] sm:print:max-w-[250px]"
+                    />
+                  ) : (
+                    <>
+                      {product[ID] > 200000 ? (
+                        <ResultCryptLayoutText
+                          card={product}
+                        />
+                      ) : (
+                        <ResultLibraryLayoutText
+                          card={product}
+                        />
+                      )}
+                    </>
+                  )}
+                </>
               )}
             </div>
           </FlexGapped>
