@@ -6,14 +6,14 @@ import { useFormStatus } from "react-dom";
 import { Button, Input, Spinner } from "@/components";
 import { NEW_PASSWORD, PASSWORD } from "@/constants";
 
-const AccountPasswordForm = ({ defaultValue, success, isOld, isNew }) => {
+const AccountPasswordForm = ({ defaultValue, success, isNew }) => {
   const [hidePassword, setHidePassword] = useState(true);
   const { pending } = useFormStatus();
 
   return (
     <>
       <Input
-        roundedStyle={`rounded-sm ${isOld ? "" : "rounded-r-none"}`}
+        roundedStyle="rounded-sm rounded-r-none"
         placeholder={isNew ? "New Password" : "Password"}
         type={hidePassword ? "password" : "text"}
         autoComplete={isNew ? NEW_PASSWORD : PASSWORD}
@@ -21,27 +21,23 @@ const AccountPasswordForm = ({ defaultValue, success, isOld, isNew }) => {
         defaultValue={defaultValue}
         required={true}
       />
-      {!isOld && (
-        <>
-          <Button
-            roundedStyle="rounded-none"
-            borderStyle="border-r border-y"
-            tabIndex="-1"
-            onClick={() => setHidePassword(!hidePassword)}
-          >
-            {hidePassword ? <EyeFill /> : <EyeSlashFill />}
-          </Button>
-          <Button
-            disabled={pending}
-            roundedStyle="rounded-r"
-            borderStyle="border-r border-y"
-            variant={success ? "success" : "primary"}
-            type="submit"
-          >
-            {pending ? <Spinner /> : <Check2 />}
-          </Button>
-        </>
-      )}
+      <Button
+        roundedStyle="rounded-none"
+        borderStyle="border-r border-y"
+        tabIndex="-1"
+        onClick={() => setHidePassword(!hidePassword)}
+      >
+        {hidePassword ? <EyeFill /> : <EyeSlashFill />}
+      </Button>
+      <Button
+        disabled={pending}
+        roundedStyle="rounded-r"
+        borderStyle="border-r border-y"
+        variant={success ? "success" : "primary"}
+        type="submit"
+      >
+        {pending ? <Spinner /> : <Check2 />}
+      </Button>
     </>
   );
 };

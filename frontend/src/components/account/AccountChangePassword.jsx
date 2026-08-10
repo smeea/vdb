@@ -28,7 +28,7 @@ const AccountChangePassword = () => {
         setError("CONNECTION PROBLEM");
     }
 
-    return { [PASSWORD]: "", [NEW_PASSWORD]: formData.get(NEW_PASSWORD) };
+    return { [PASSWORD]: formData.get(PASSWORD), [NEW_PASSWORD]: formData.get(NEW_PASSWORD) };
   };
 
   const [data, action] = useActionState(changePassword);
@@ -43,7 +43,7 @@ const AccountChangePassword = () => {
       </div>
       <form className="flex flex-col gap-2" action={action}>
         <div className="relative flex w-full">
-          <AccountPasswordForm defaultValue={data?.[PASSWORD]} isOld />
+          <AccountPasswordForm defaultValue={data?.[PASSWORD]} />
         </div>
         <div className="relative flex w-full">
           <AccountPasswordForm defaultValue={data?.[NEW_PASSWORD]} success={success} isNew />
