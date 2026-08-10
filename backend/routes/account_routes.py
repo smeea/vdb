@@ -18,7 +18,7 @@ def unauthorized_handler():
 
 @app.route("/api/login", methods=["POST"])
 def login_route():
-    user = User.query.filter_by(username=request.json["username"].lower()).one()
+    user = User.query.filter_by(username=request.json["username"].lower()).first()
     if not user:
         abort(400)
 

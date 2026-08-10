@@ -1,4 +1,6 @@
-# FIX
+ FIX
+- Change password show both on show
+- Dont clear entered new on wrong
 
 # FIX ON HOLD
 

@@ -7,7 +7,10 @@ if len(argv) <= 1:
 
 q = argv[1].lower()
 with app.app_context():
-    user = User.query.filter_by(username=q).one()
+    user = User.query.filter_by(username=q).first()
+    if not user:
+        print(f"Wrong username: '{username}'")
+
     if len(argv) == 3:
         user.playtest_admin = False if argv[2] == "0" else True
         db.session.commit()
