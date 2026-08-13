@@ -1,7 +1,4 @@
 #!/bin/bash
-export PS4='+ $(date "+%s.%N")\011 '
-set -x
-
 if [ -f ../../backend/.env ]; then source ../../backend/.env; fi
 
 # Check playtest files
