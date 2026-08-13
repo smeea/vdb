@@ -4,7 +4,7 @@ import { useApp } from "@/context";
 import { decksSort } from "@/utils";
 
 const TdaResult = ({ decks }) => {
-  const { tdaSearchSort, changeTdaSearchSort } = useApp();
+  const { tdaSearchSort, setTdaSearchSort } = useApp();
 
   const sortMethods = {
     [RANK_HIGH_LOW]: "R↓",
@@ -19,7 +19,7 @@ const TdaResult = ({ decks }) => {
         results={decks}
         sortMethods={sortMethods}
         sortMethod={tdaSearchSort}
-        setSortMethod={changeTdaSearchSort}
+        setSortMethod={setTdaSearchSort}
       />
       <div className="flex flex-col gap-4">
         {sortedDecks.map((deck) => (

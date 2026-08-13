@@ -13,7 +13,7 @@ import { useDeckCrypt, useModalCardController } from "@/hooks";
 import { getIsEditable, getKeyDisciplines } from "@/utils";
 
 const DiffCrypt = ({ cardsTo, deck }) => {
-  const { isMobile, cryptDeckSort, changeCryptDeckSort, setShowFloatingButtons } = useApp();
+  const { isMobile, cryptDeckSort, setCryptDeckSort, setShowFloatingButtons } = useApp();
   const [showInfo, setShowInfo] = useState(false);
   const cardsFrom = deck[CRYPT];
   const isEditable = getIsEditable(deck);
@@ -72,7 +72,7 @@ const DiffCrypt = ({ cardsTo, deck }) => {
           cards={crypt}
           deck={deck}
           setShowInfo={setShowInfo}
-          setSortMethod={changeCryptDeckSort}
+          setSortMethod={setCryptDeckSort}
           showInfo={showInfo}
           sortMethod={cryptDeckSort}
           sortMethods={sortMethods}

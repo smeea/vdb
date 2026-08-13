@@ -3,7 +3,7 @@ import { CLAN_DISCIPLINE, COST_MAX_MIN, COST_MIN_MAX, LIBRARY, NAME, TYPE } from
 import { useApp } from "@/context";
 
 const ResultLibrary = ({ cards = [], inCompare }) => {
-  const { librarySearchSort, changeLibrarySearchSort } = useApp();
+  const { librarySearchSort, setLibrarySearchSort } = useApp();
 
   const sortMethods = {
     [CLAN_DISCIPLINE]: "C/D",
@@ -26,7 +26,7 @@ const ResultLibrary = ({ cards = [], inCompare }) => {
             cards={cards}
             sortMethods={sortMethods}
             sortMethod={librarySearchSort}
-            setSortMethod={changeLibrarySearchSort}
+            setSortMethod={setLibrarySearchSort}
           />
           <ResultTable cards={cards} target={LIBRARY} />
         </>

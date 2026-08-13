@@ -13,6 +13,8 @@ const SeatingSelectRandom = ({
   withCustom,
   withStandard,
 }) => {
+  console.log(customDecks);
+
   return (
     <div className="flex flex-col gap-4">
       <Hr />

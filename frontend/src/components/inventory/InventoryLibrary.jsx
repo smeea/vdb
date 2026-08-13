@@ -18,7 +18,7 @@ const InventoryLibrary = ({
   inShared,
   onlyNotes,
 }) => {
-  const { libraryInventorySort, changeLibraryInventorySort } = useApp();
+  const { libraryInventorySort, setLibraryInventorySort } = useApp();
   const sortMethods = {
     [NAME]: "N",
     [QUANTITY]: "Q",
@@ -72,7 +72,7 @@ const InventoryLibrary = ({
           <SortButton
             sortMethods={sortMethods}
             sortMethod={libraryInventorySort}
-            setSortMethod={changeLibraryInventorySort}
+            setSortMethod={setLibraryInventorySort}
           />
         </Header>
       )}

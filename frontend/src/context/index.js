@@ -5,5 +5,6 @@ export * from "./InventoryStore.js";
 export * from "./LimitedStore.js";
 export * from "./MiscStore.js";
 export * from "./SearchStore.js";
+export * from "./SettingsStore.js";
 export * from "./TdaStore.js";
 export * from "./ThemeContext.jsx";

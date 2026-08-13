@@ -22,7 +22,7 @@ const InventoryCrypt = ({
   inShared,
   onlyNotes,
 }) => {
-  const { cryptInventorySort, changeCryptInventorySort } = useApp();
+  const { cryptInventorySort, setCryptInventorySort } = useApp();
   const sortMethods = {
     [NAME]: "N",
     [QUANTITY]: "Q",
@@ -62,7 +62,7 @@ const InventoryCrypt = ({
           <SortButton
             sortMethods={sortMethods}
             sortMethod={cryptInventorySort}
-            setSortMethod={changeCryptInventorySort}
+            setSortMethod={setCryptInventorySort}
           />
         </Header>
       )}

@@ -5,7 +5,7 @@ import { useApp } from "@/context";
 import { decksSort } from "@/utils";
 
 const PdaResult = ({ results = [] }) => {
-  const { pdaSearchSort, changePdaSearchSort } = useApp();
+  const { pdaSearchSort, setPdaSearchSort } = useApp();
   const SHOW_COUNTER_STEP = 10;
   const [showCounter, setShowCounter] = useState(SHOW_COUNTER_STEP);
   const sortedDecks = decksSort(results, pdaSearchSort);
@@ -23,7 +23,7 @@ const PdaResult = ({ results = [] }) => {
           results={results}
           sortMethods={sortMethods}
           sortMethod={pdaSearchSort}
-          setSortMethod={changePdaSearchSort}
+          setSortMethod={setPdaSearchSort}
         />
         <div className="flex flex-col gap-4">
           {sortedDecks

@@ -4,7 +4,7 @@ import { CAPACITY_MAX_MIN, CAPACITY_MIN_MAX, CLAN, CRYPT, GROUP, NAME, SECT } fr
 import { useApp } from "@/context";
 
 const ResultCrypt = ({ cards = [], inCompare }) => {
-  const { cryptSearchSort, changeCryptSearchSort } = useApp();
+  const { cryptSearchSort, setCryptSearchSort } = useApp();
   const [showInfo, setShowInfo] = useState(false);
   const toggleShowInfo = () => setShowInfo(!showInfo);
 
@@ -31,7 +31,7 @@ const ResultCrypt = ({ cards = [], inCompare }) => {
             toggleShowInfo={toggleShowInfo}
             sortMethods={sortMethods}
             sortMethod={cryptSearchSort}
-            setSortMethod={changeCryptSearchSort}
+            setSortMethod={setCryptSearchSort}
           />
           {showInfo && (
             <div className="bg-bgSecondary p-2 dark:bg-bgSecondaryDark">

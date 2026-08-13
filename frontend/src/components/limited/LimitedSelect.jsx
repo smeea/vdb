@@ -3,9 +3,9 @@ import { CUSTOM, NO_BANNED, TWO_P, V5 } from "@/constants";
 import { useApp } from "@/context";
 
 const LimitedSelect = ({ withoutDisabled }) => {
-  const { limitedMode, limitedPreset, changeLimitedPreset } = useApp();
+  const { limitedMode, limitedPreset, setLimitedPreset } = useApp();
 
-  const handleSelect = (e) => changeLimitedPreset(e.value);
+  const handleSelect = (e) => setLimitedPreset(e.value);
   const options = [
     { value: TWO_P, label: withoutDisabled ? "2P" : "Two Players" },
     { value: V5, label: "V5" },

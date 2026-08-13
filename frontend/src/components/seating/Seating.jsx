@@ -1,16 +1,18 @@
-import { useEffect, useState } from "react";
-import { useImmer } from "use-immer";
-import standardDecksData from "@/assets/data/standardDecks.json";
+import { useState } from "react";
+import { useSnapshot } from "valtio";
 import { SeatingModal } from "@/components";
-import { DECKID, NAME, RANDOM, STATE } from "@/constants";
-import { useApp } from "@/context";
-import { getLocalStorage, setLocalStorage } from "@/services/storageServices";
-
-const CUSTOM_DECKS = "seatingCustomDecks";
-const STANDARD_DECKS = "seatingStandardDecks";
-const WITH_CUSTOM = "seatingWithCustom";
-const WITH_STANDARD = "seatingWithStandard";
-const PLAYERS = "seatingPlayers";
+import {
+  SEATING_WITH_CUSTOM,
+  SEATING_WITH_STANDARD,
+  SEATING_CUSTOM_DECKS,
+  SEATING_STANDARD_DECKS,
+  DECKID,
+  NAME,
+  RANDOM,
+  STATE,
+} from "@/constants";
+import { settings, useApp } from "@/context";
+import { SEATING_PLAYERS } from "../../constants";
 
 const getRandomDeck = (players) => {
   return players[Math.floor(Math.random() * Math.floor(players.length))];
@@ -25,51 +27,30 @@ const randomizeArray = (array) => {
 };
 
 const Seating = ({ setShow }) => {
-  const { setShowFloatingButtons } = useApp();
+  const {
+    [SEATING_STANDARD_DECKS]: standardDecks,
+    [SEATING_CUSTOM_DECKS]: customDecks,
+    [SEATING_WITH_CUSTOM]: withCustom,
+    [SEATING_WITH_STANDARD]: withStandard,
+    [SEATING_PLAYERS]: players,
+  } = useSnapshot(settings);
+  const { setShowFloatingButtons } = useApp()
+
   const [seating, setSeating] = useState();
-  const [withCustom, setWithCustom] = useState(getLocalStorage(WITH_CUSTOM) ?? true);
-  const [withStandard, setWithStandard] = useState(getLocalStorage(WITH_STANDARD) ?? true);
-  const [customDecks, setCustomDecks] = useImmer(getLocalStorage(CUSTOM_DECKS) ?? []);
-  const [standardDecks, setStandardDecks] = useImmer(
-    getLocalStorage(STANDARD_DECKS) ??
-      Object.keys(standardDecksData)
-        .toSorted((a, b) => standardDecksData[a].localeCompare(standardDecksData[b], "en"))
-        .map((deckid) => ({
-          [DECKID]: deckid,
-          [NAME]: standardDecksData[deckid],
-          [STATE]: true,
-        })),
-  );
-  const [players, setPlayers] = useImmer(
-    getLocalStorage(PLAYERS) ?? [
-      { [NAME]: "Player 1", [RANDOM]: false, [STATE]: true },
-      { [NAME]: "Player 2", [RANDOM]: false, [STATE]: true },
-      { [NAME]: "Player 3", [RANDOM]: false, [STATE]: true },
-      { [NAME]: "Player 4", [RANDOM]: false, [STATE]: true },
-      { [NAME]: "Player 5", [RANDOM]: false, [STATE]: true },
-    ],
-  );
+  const setWithCustom = (value) => settings[SEATING_WITH_CUSTOM] = value;
+  const setWithStandard = (value) => (settings[SEATING_WITH_STANDARD] = value);
 
-  const setPlayer = (i, value) => {
-    setPlayers((draft) => {
-      draft[i] = value;
-    });
-  };
-
+  const setPlayer = (i, value) => (settings[SEATING_PLAYERS][i] = value);
+  const delPlayer = (i) => settings[SEATING_PLAYERS].splice(i, 1)
   const addPlayer = () => {
-    setPlayers((draft) => {
-      draft.push({
-        [NAME]: `Player ${draft.length + 1}`,
+    settings[SEATING_PLAYERS] = [
+      ...players,
+      {
+        [NAME]: `Player ${players.length + 1}`,
         [RANDOM]: false,
         [STATE]: true,
-      });
-    });
-  };
-
-  const delPlayer = (i) => {
-    setPlayers((draft) => {
-      draft.splice(i, 1);
-    });
+      },
+    ];
   };
 
   const handleCloseModal = () => {
@@ -143,37 +124,17 @@ const Seating = ({ setShow }) => {
     return tables;
   };
 
-  const toggleCustom = (i) => {
-    setCustomDecks((draft) => {
-      draft[i][STATE] = !draft[i][STATE];
-    });
-  };
-
-  const toggleStandard = (i) => {
-    setStandardDecks((draft) => {
-      draft[i][STATE] = !draft[i][STATE];
-    });
-  };
+  const toggleCustom = (i) => settings[SEATING_CUSTOM_DECKS][i][STATE] = !customDecks[i][STATE];
+  const toggleStandard = (i) => settings[SEATING_STANDARD_DECKS][i][STATE] = !standardDecks[i][STATE];
 
   const addCustomDeck = (name) => {
-    setCustomDecks((draft) => {
-      draft.unshift({ [DECKID]: null, [NAME]: name, [STATE]: true });
-    });
+    settings[SEATING_CUSTOM_DECKS] = [
+      ...customDecks,
+      { [DECKID]: null, [NAME]: name, [STATE]: true },
+    ];
   };
 
-  const removeCustomDeck = (i) => {
-    setCustomDecks((draft) => {
-      draft.splice(i, 1);
-    });
-  };
-
-  useEffect(() => {
-    setLocalStorage(CUSTOM_DECKS, customDecks);
-    setLocalStorage(PLAYERS, players);
-    setLocalStorage(STANDARD_DECKS, standardDecks);
-    setLocalStorage(WITH_CUSTOM, withCustom);
-    setLocalStorage(WITH_STANDARD, withStandard);
-  }, [customDecks, standardDecks, withCustom, withStandard, players]);
+  const removeCustomDeck = (i) => settings[SEATING_CUSTOM_DECKS].splice(i, 1)
 
   return (
     <SeatingModal

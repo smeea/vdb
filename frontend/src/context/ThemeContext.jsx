@@ -1,17 +1,12 @@
-import React, { useEffect, useState } from "react";
-import { AUTO, DARK, LIGHT } from "@/constants";
-import { getLocalStorage, setLocalStorage } from "@/services/storageServices";
+import React, { useEffect } from "react";
+import { AUTO, DARK, LIGHT, THEME } from "@/constants";
+import { useSnapshot } from "valtio";
+import { settings } from "@/context";
 
-const THEME = "theme";
-const TOGGLE_THEME = "toggleTheme";
-
-export const ThemeContext = React.createContext({
-  [THEME]: AUTO,
-  [TOGGLE_THEME]: () => {},
-});
+export const ThemeContext = React.createContext();
 
 export const ThemeProvider = (props) => {
-  const [theme, setTheme] = useState(getLocalStorage(THEME) ?? AUTO);
+  const { [THEME]: theme } = useSnapshot(settings);
 
   useEffect(() => {
     const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? DARK : LIGHT;
@@ -31,8 +26,7 @@ export const ThemeProvider = (props) => {
       }
     };
     const nextTheme = getNextTheme();
-    setTheme(nextTheme);
-    setLocalStorage(THEME, nextTheme);
+    settings[THEME] = nextTheme;
   };
 
   return (

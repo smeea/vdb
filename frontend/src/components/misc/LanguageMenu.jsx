@@ -4,11 +4,11 @@ import { EN, ES, FR, PT } from "@/constants";
 import { useApp } from "@/context";
 
 const LanguageMenu = ({ handleClose }) => {
-  const { lang, changeLang } = useApp();
+  const { lang, setLang } = useApp();
   const languages = [EN, ES, FR, PT];
 
   const handleClick = (l) => {
-    changeLang(l);
+    setLang(l);
     handleClose();
   };
 

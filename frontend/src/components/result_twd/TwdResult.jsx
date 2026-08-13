@@ -5,7 +5,7 @@ import { useApp } from "@/context";
 import { decksSort } from "@/utils";
 
 const TwdResult = ({ results = [] }) => {
-  const { twdSearchSort, changeTwdSearchSort } = useApp();
+  const { twdSearchSort, setTwdSearchSort } = useApp();
   const SHOW_COUNTER_STEP = 10;
   const [showCounter, setShowCounter] = useState(SHOW_COUNTER_STEP);
   const sortedDecks = decksSort(results, twdSearchSort);
@@ -23,7 +23,7 @@ const TwdResult = ({ results = [] }) => {
           results={results}
           sortMethods={sortMethods}
           sortMethod={twdSearchSort}
-          setSortMethod={changeTwdSearchSort}
+          setSortMethod={setTwdSearchSort}
         />
         <div className="flex flex-col gap-4">
           {sortedDecks

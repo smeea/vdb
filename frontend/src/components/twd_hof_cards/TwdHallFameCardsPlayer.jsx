@@ -27,9 +27,9 @@ import { cryptSort, librarySort } from "@/utils";
 const TwdHallFameCardsPlayer = ({ name, cards }) => {
   const {
     cryptSearchSort,
-    changeCryptSearchSort,
+    setCryptSearchSort,
     librarySearchSort,
-    changeLibrarySearchSort,
+    setLibrarySearchSort,
     isMobile,
   } = useApp();
 
@@ -109,7 +109,7 @@ const TwdHallFameCardsPlayer = ({ name, cards }) => {
           cards={cryptSorted}
           sortMethods={cryptSortMethods}
           sortMethod={cryptSearchSort}
-          setSortMethod={changeCryptSearchSort}
+          setSortMethod={setCryptSearchSort}
           inHoF={true}
         />
         <table className="border-bgSecondary sm:border dark:border-bgSecondaryDark">
@@ -151,7 +151,7 @@ const TwdHallFameCardsPlayer = ({ name, cards }) => {
           cards={librarySorted}
           sortMethods={librarySortMethods}
           sortMethod={librarySearchSort}
-          setSortMethod={changeLibrarySearchSort}
+          setSortMethod={setLibrarySearchSort}
           inHoF
         />
         <table className="w-full border-bgSecondary sm:border dark:border-bgSecondaryDark">

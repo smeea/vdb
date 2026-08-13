@@ -26,7 +26,7 @@ import { deckServices } from "@/services";
 import { getClan } from "@/utils";
 
 const DeckSelectAdvModal = ({ decks, onClick, setShow, short }) => {
-  const { isMobile, decksAdvSort, changeDecksAdvSort, setShowMenuButtons, setShowFloatingButtons } =
+  const { isMobile, decksAdvSort, setDecksAdvSort, setShowMenuButtons, setShowFloatingButtons } =
     useApp();
   const [isLocked, setIsLocked] = useState();
   const [showDeleteConfirmation, setShowDeleteConfirmation] = useState(false);
@@ -93,7 +93,7 @@ const DeckSelectAdvModal = ({ decks, onClick, setShow, short }) => {
               tagsFilter={tagsFilter}
               setTagsFilter={setTagsFilter}
               sortMethod={decksAdvSort}
-              setSortMethod={changeDecksAdvSort}
+              setSortMethod={setDecksAdvSort}
             />
           )}
           <DeckSelectAdvTable
