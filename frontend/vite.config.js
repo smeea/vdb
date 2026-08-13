@@ -58,8 +58,8 @@ export default defineConfig({
 	],
 	resolve: {
 		alias: [
-			{ find: "@", replacement: resolve(__dirname, "src") },
-			{ find: "@icons", replacement: resolve(__dirname, "node_modules/bootstrap-icons/icons") },
+			{ find: "@", replacement: resolve(import.meta.dirname, "src") },
+      { find: "@icons", replacement: resolve(import.meta.dirname, "node_modules/bootstrap-icons/icons") },
 		],
 	},
 	build: {
