@@ -30,11 +30,10 @@ export const update = (field, value) => {
   return ky.put(url, { json: { [field]: value } });
 };
 
-export const getSharedInventory = (key, cryptCardBase, libraryCardBase) => {
-  // TODO check for async refactor
+export const getSharedInventory = async (key, cryptCardBase, libraryCardBase) => {
   const url = `${import.meta.env.VITE_API_URL}/inventory/${key}`;
 
-  return ky
+  const { crypt, library } = await ky
     .get(url)
     .json()
     .then((data) => {
@@ -48,6 +47,8 @@ export const getSharedInventory = (key, cryptCardBase, libraryCardBase) => {
       });
       return { crypt, library };
     });
+
+  return { crypt, library }
 };
 
 export const shareFullInventory = (key) => {

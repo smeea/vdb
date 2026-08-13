@@ -147,12 +147,10 @@ with (
     players = set(())
 
     for i in twda:
-        # TODO check if condition is required
-        if "place" in i["event"]:
-            place = i["event"]["place"].split(", ")
-            countries.add(place[-1])
-            if len(place) > 1:
-                cities.add(f"{place[-2]}, {place[-1]}")
+        place = i["event"]["place"].split(", ")
+        countries.add(place[-1])
+        if len(place) > 1:
+            cities.add(f"{place[-2]}, {place[-1]}")
 
         players.add(i["player"])
 
