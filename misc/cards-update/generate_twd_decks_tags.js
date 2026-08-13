@@ -21,6 +21,6 @@ Object.values(twdDecks).forEach((d) => {
   d.tags = getTags(crypt, library);
 });
 
-const twdDecksJson = JSON.stringify(twdDecks);
+const twdDecksJson = JSON.stringify(twdDecks, null, 4);
 
 fs.writeFile("twd_decks.json", twdDecksJson, "utf8", () => {});
