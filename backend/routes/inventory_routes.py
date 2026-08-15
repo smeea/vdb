@@ -49,6 +49,7 @@ def get_shared_inventory(key):
 @login_required
 def delete_inventory_route():
     current_user.inventory = {}
+    current_user.inventory_wishlist = {}
     db.session.commit()
     return jsonify(success=True)
 
