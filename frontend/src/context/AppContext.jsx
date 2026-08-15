@@ -357,6 +357,9 @@ export const AppProvider = ({ children }) => {
       setEmail(data.email);
       setInventoryKey(data[INVENTORY_KEY]);
       setSurplusKey(data[SURPLUS_KEY]);
+      if ([data[INVENTORY_KEY], data[SURPLUS_KEY]].includes(sharedKey)) {
+        setSharedKey(null)
+      }
       setIsPlaytester(data[PLAYTEST][IS_PLAYTESTER]);
       setIsPlaytestAdmin(data[PLAYTEST][IS_ADMIN]);
       setPlaytestProfile(data[PLAYTEST].profile);
