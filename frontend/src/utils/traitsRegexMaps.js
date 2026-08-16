@@ -68,5 +68,5 @@ export const LibraryTraitsRegexMap = {
   [AGGRAVATED]: () => /(?:[^non-])aggravated/i,
   [PREVENT]: () => /(?:[^un])prevent(?:[^able])/i,
   [PUT_BLOOD]: () =>
-    /(move|add) .* blood (from the blood bank )?to .* in your uncontrolled region/i,
+  /(move|add) .* blood( | .* )to .* in your uncontrolled region/i,
 };
