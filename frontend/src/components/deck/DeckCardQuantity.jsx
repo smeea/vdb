@@ -9,7 +9,6 @@ import {
   LOGIC,
   SOFT,
   SURPLUS_USED,
-  VALUE,
   WARNING,
   WISHLIST,
 } from "@/constants";
@@ -45,7 +44,7 @@ const DeckCardQuantity = ({
   const wishlistLogic = wishlist?.[card[ID]]?.[LOGIC];
   const surplus =
     wishlistLogic === SURPLUS_USED
-      ? inInventory - (softUsedMax + hardUsedTotal + (wishlist[card[ID]]?.[VALUE] || 0))
+      ? inInventory - (softUsedMax + hardUsedTotal + (wishlist[card[ID]]?.q || 0))
       : inInventory - (softUsedMax + hardUsedTotal);
 
   const inventoryColor =

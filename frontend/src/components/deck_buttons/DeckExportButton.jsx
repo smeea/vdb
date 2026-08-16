@@ -83,7 +83,7 @@ const DeckExportButton = ({ deck, inMissing, inInventory }) => {
           const softUsedMax = getSoftMax(usedTarget[SOFT][card.c[ID]]);
           const hardUsedTotal = getHardTotal(usedTarget[HARD][card.c[ID]]);
           const wishlistLogic = wishlist?.[card.c[ID]]?.[LOGIC];
-          const value = wishlist?.[card.c[ID]]?.[VALUE];
+          const value = wishlist?.[card.c[ID]]?.q;
           const surplus = wishlistLogic
             ? wishlistLogic === SURPLUS_USED
               ? card.q - (softUsedMax + hardUsedTotal + (value || 0))
@@ -92,7 +92,7 @@ const DeckExportButton = ({ deck, inMissing, inInventory }) => {
 
           const target = card.c[ID] > 200000 ? d[CRYPT] : d[LIBRARY];
           target[card.c[ID]][WISHLIST] = {
-            [VALUE]: value,
+            q: value,
             [LOGIC]: wishlistLogic,
             [SURPLUS]: surplus,
           };

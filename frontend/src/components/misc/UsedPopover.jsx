@@ -14,7 +14,6 @@ import {
   SOFT,
   SURPLUS_FIXED,
   SURPLUS_USED,
-  VALUE,
   WISHLIST,
 } from "@/constants";
 import { deckStore, inventoryStore, usedStore } from "@/context";
@@ -40,9 +39,9 @@ const UsedPopover = ({ cardid }) => {
 
   const surplus =
     wishlistLogic === SURPLUS_USED
-      ? inInventory - (softUsedMax + hardUsedTotal + (wishlist[cardid]?.[VALUE] || 0))
+      ? inInventory - (softUsedMax + hardUsedTotal + (wishlist[cardid]?.q || 0))
       : wishlistLogic === SURPLUS_FIXED
-        ? inInventory - (wishlist[cardid]?.[VALUE] || 0)
+        ? inInventory - (wishlist[cardid]?.q || 0)
         : inInventory - (softUsedMax + hardUsedTotal);
 
   const colorStyle =
@@ -74,13 +73,13 @@ const UsedPopover = ({ cardid }) => {
         </div>
         <div>- Total Used</div>
       </div>
-      {!!wishlist[cardid]?.[VALUE] && wishlist[cardid]?.[LOGIC] && (
+      {!!wishlist[cardid]?.q && wishlist[cardid]?.[LOGIC] && (
         <div className="flex items-center gap-1.5">
           <div className="flex min-w-[16px] justify-center opacity-40">
             <Bullseye width="14" height="14" viewBox="0 0 16 16" />
           </div>
           <div className="flex min-w-[18px] justify-center font-bold">
-            {wishlist[cardid]?.[VALUE] || 0}
+            {wishlist[cardid]?.q || 0}
           </div>
           <div>- Target ({wishlist[cardid]?.[LOGIC] === SURPLUS_USED ? "Over Used" : "Fixed"})</div>
         </div>

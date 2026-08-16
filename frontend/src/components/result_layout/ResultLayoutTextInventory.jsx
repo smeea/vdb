@@ -22,7 +22,6 @@ import {
   SOFT,
   SURPLUS_FIXED,
   SURPLUS_USED,
-  VALUE,
   WISHLIST,
 } from "@/constants";
 import { deckStore, inventoryStore, usedStore } from "@/context";
@@ -50,9 +49,9 @@ const ResultLayoutTextInventory = ({ card, setIsHotkeysDisabled }) => {
   const wishlistLogic = wishlist?.[card[ID]]?.[LOGIC];
   const surplus =
     wishlistLogic === SURPLUS_USED
-      ? inInventory - (softUsedMax + hardUsedTotal + (wishlist[card[ID]]?.[VALUE] || 0))
+      ? inInventory - (softUsedMax + hardUsedTotal + (wishlist[card[ID]]?.q || 0))
       : wishlistLogic === SURPLUS_FIXED
-        ? inInventory - (wishlist[card[ID]]?.[VALUE] || 0)
+        ? inInventory - (wishlist[card[ID]]?.q || 0)
         : inInventory - (softUsedMax + hardUsedTotal);
 
   const colorStyle =

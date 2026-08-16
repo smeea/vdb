@@ -24,8 +24,8 @@ const ResultUsed = ({ card }) => {
   const wishlistLogic = wishlist?.[card[ID]]?.[LOGIC];
   const surplus = wishlistLogic
     ? wishlistLogic === SURPLUS_USED
-      ? inInventory - (softUsedMax + hardUsedTotal + (wishlist[card[ID]]?.[VALUE] || 0))
-      : inInventory - (wishlist[card[ID]]?.[VALUE] || 0)
+      ? inInventory - (softUsedMax + hardUsedTotal + (wishlist[card[ID]]?.q || 0))
+      : inInventory - (wishlist[card[ID]]?.q || 0)
     : inInventory - (softUsedMax + hardUsedTotal);
 
   return (

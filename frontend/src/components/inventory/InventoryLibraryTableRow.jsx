@@ -28,7 +28,6 @@ import {
   SURPLUS_USED,
   TRIFLE,
   TYPE,
-  VALUE,
   WISHLIST,
 } from "@/constants";
 import { inventoryCardChange, inventoryStore, useApp, usedStore } from "@/context";
@@ -54,8 +53,8 @@ const InventoryLibraryTableRow = ({
   const wishlistLogic = wishlist?.[card.c[ID]]?.[LOGIC];
   const surplus = wishlistLogic
     ? wishlistLogic === SURPLUS_USED
-      ? card.q - (softUsedMax + hardUsedTotal + (wishlist[card.c[ID]]?.[VALUE] || 0))
-      : card.q - (wishlist[card.c[ID]]?.[VALUE] || 0)
+      ? card.q - (softUsedMax + hardUsedTotal + (wishlist[card.c[ID]]?.q || 0))
+      : card.q - (wishlist[card.c[ID]]?.q || 0)
     : card.q - (softUsedMax + hardUsedTotal);
 
   const onClick = () => handleClick(card.c);

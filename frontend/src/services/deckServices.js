@@ -42,7 +42,6 @@ import {
   TEXT,
   TIMESTAMP,
   TYPE,
-  VALUE,
   WISHLIST,
   XLSX,
 } from "@/constants";
@@ -357,7 +356,7 @@ export const exportXlsx = async (deck) => {
     };
 
     if (card[WISHLIST]) {
-      value.Target = card[WISHLIST][VALUE] || "";
+      value.Target = card[WISHLIST].q || "";
       switch (card[WISHLIST][LOGIC]) {
         case SURPLUS_USED:
           value.Logic = "Surplus over used";
@@ -388,7 +387,7 @@ export const exportXlsx = async (deck) => {
     };
 
     if (card[WISHLIST]) {
-      value.Target = card[WISHLIST][VALUE] || "";
+      value.Target = card[WISHLIST].q || "";
       switch (card[WISHLIST][LOGIC]) {
         case SURPLUS_USED:
           value.Logic = "Surplus over used";

@@ -9,7 +9,7 @@ import {
   Tr,
   UsedPopover,
 } from "@/components";
-import { HARD, ID, LIBRARY, LOGIC, SURPLUS_USED, TYPE, VALUE, WISHLIST } from "@/constants";
+import { HARD, ID, LIBRARY, LOGIC, SURPLUS_USED, TYPE, WISHLIST } from "@/constants";
 import { inventoryStore, useApp, usedStore } from "@/context";
 import { getHardTotal } from "@/utils";
 
@@ -23,7 +23,7 @@ const TwdResultLibraryKeyCardsTableRow = ({ card, handleClick, shouldShowModal }
   const wishlistLogic = wishlist?.[card.c[ID]]?.[LOGIC];
   const surplus =
     wishlistLogic === SURPLUS_USED
-      ? inInventory - (hardUsedTotal + (wishlist[card.c[ID]]?.[VALUE] || 0))
+      ? inInventory - (hardUsedTotal + (wishlist[card.c[ID]]?.q || 0))
       : inInventory - hardUsedTotal;
 
   const colorStyle =

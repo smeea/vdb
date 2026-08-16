@@ -9,7 +9,7 @@ import {
   Tr,
   UsedPopover,
 } from "@/components";
-import { CLAN, CRYPT, HARD, ID, LOGIC, SURPLUS_USED, VALUE, WISHLIST } from "@/constants";
+import { CLAN, CRYPT, HARD, ID, LOGIC, SURPLUS_USED, WISHLIST } from "@/constants";
 import { inventoryStore, useApp, usedStore } from "@/context";
 import { getHardTotal } from "@/utils";
 
@@ -23,7 +23,7 @@ const TwdResultCryptTableRow = ({ card, handleClick, shouldShowModal }) => {
   const wishlistLogic = wishlist?.[card.c[ID]]?.[LOGIC];
   const surplus =
     wishlistLogic === SURPLUS_USED
-      ? inInventory - (hardUsedTotal + (wishlist[card.c[ID]]?.[VALUE] || 0))
+      ? inInventory - (hardUsedTotal + (wishlist[card.c[ID]]?.q || 0))
       : inInventory - hardUsedTotal;
 
   const colorStyle =
