@@ -88369,7 +88369,7 @@
                 "PA":"2"
             },
             "playtest":{
-                "ToDV":2
+                "ToDV":1
             }
         },
         "text":"[for] Prevent all damage from the opponent's strike.\n[FOR] As above, and prevent all damage from the opponent's strikes for the remainder of this round.",
@@ -89517,6 +89517,9 @@
                 "G":2,
                 "Sal":2,
                 "V":2
+            },
+            "playtest":{
+                "ToDV":1
             }
         },
         "text":"A vampire can play only one Soak each round.\n[for] Prevent 2 non-aggravated damage.\n[FOR] Prevent 4 non-aggravated damage.",
