@@ -1,10 +1,11 @@
 # FIX
-- Apply update wishlist script
 
 # FIX ON HOLD
 
 # FEATURES
 - Inventory target documentation
+- Show total missed cards to get from selected precons in precons with missing feature
+- Remove added precons in precons with missing feature
 
 # FEATURES ON HOLD
 - Draft Cube support -> when draft cube info is available

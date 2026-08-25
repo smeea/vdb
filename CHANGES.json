@@ -1,5 +1,14 @@
 [
   {
+    "version": "2026-08-25",
+    "changes": [
+      "Add Precons with Missing cards feature (Inventory -> Missing Cards -> Precons with Missing Cards), that will help you to see what precons have most of the cards your inventory miss, and virtually add precons too find best combined set",
+      "Add Russian National 2026 events to TDA",
+      "Update rulings",
+      "Many other fixes and small improvements"
+    ]
+  },
+  {
     "version": "2026-08-02",
     "changes": [
       "Add share inventory surplus to share inventory",
