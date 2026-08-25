@@ -1,7 +1,8 @@
 import PeopleFill from "@icons/people-fill.svg?react";
 import TrophyFill from "@icons/trophy-fill.svg?react";
-import { Select } from "@/components";
-import { DECK, DECKID, DECKS, NAME, PDA, TWD } from "@/constants";
+import paths from "@/assets/data/paths.json";
+import { ResultPathImage, ResultPreconClan, Select } from "@/components";
+import { CLAN, DECK, DECKID, DECKS, NAME, PDA, TWD } from "@/constants";
 import { useApp } from "@/context";
 
 const DeckSelectRecent = ({ deckid, handleSelect }) => {
@@ -21,8 +22,20 @@ const DeckSelectRecent = ({ deckid, handleSelect }) => {
       value: i[DECKID],
       name: DECK,
       label: (
-        <div className="flex justify-between">
-          {i[NAME]}
+        <div className="flex items-center justify-between">
+          <div className="flex items-center">
+            <div className="flex w-[35px] items-center justify-center pr-1">
+              {i[CLAN] &&
+                (paths.includes(i[CLAN]) ? (
+                  <ResultPathImage value={i[CLAN]} />
+                ) : (
+                  <ResultPreconClan clan={i[CLAN]} />
+                ))}
+            </div>
+            <div className="inline">
+              {i[NAME].slice(0, 32)}
+            </div>
+          </div>
           <div className="flex w-[20px] items-center justify-center text-midGray dark:text-midGrayDark">
             {getIcon(i.src)}
           </div>

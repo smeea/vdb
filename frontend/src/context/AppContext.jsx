@@ -10,6 +10,7 @@ import {
   BRANCHES,
   CARDS,
   CARD_VERSION_KEY,
+  CLAN,
   CRYPT,
   CRYPT_CARDBASE,
   CRYPT_DECK_SORT,
@@ -89,7 +90,7 @@ import {
 } from "@/context";
 import { useWindowSize } from "@/hooks";
 import { cardServices, playtestServices, userServices } from "@/services";
-import { byTimestamp, deepClone, getLegality, parseDeck } from "@/utils";
+import { getClan, byTimestamp, deepClone, getLegality, parseDeck } from "@/utils";
 
 export const AppContext = React.createContext();
 
@@ -465,21 +466,19 @@ export const AppProvider = ({ children }) => {
     }
   }, [deckStore[DECK]?.[DECKID], lang, localizedCrypt, localizedLibrary]);
 
-  // APP DATA
-
-
   const addRecentDeck = (recentDeck) => {
-    const src = recentDeck[DECKID].length !== 9 ? TWD : recentDeck[PUBLIC_PARENT] ? PDA : "shared";
-    let d = [...recentDecks];
+    let decks = [...recentDecks];
     const idx = recentDecks.map((v) => v[DECKID]).indexOf(recentDeck[DECKID]);
-    if (idx !== -1) d.splice(idx, 1);
-    d.unshift({
+    if (idx !== -1) decks.splice(idx, 1);
+    decks.unshift({
       [DECKID]: recentDeck[DECKID],
       [NAME]: recentDeck[NAME],
-      [SRC]: src,
+      [SRC]: recentDeck[DECKID].length !== 9 ? TWD : recentDeck[PUBLIC_PARENT] ? PDA : "shared",
+      [CLAN]: getClan(recentDeck[CRYPT]),
     });
-    if (d.length > 10) d = d.slice(0, 10);
-    setRecentDecks(d);
+    if (decks.length > 10) decks = decks.slice(0, 10);
+
+    setRecentDecks(decks);
   };
 
   useEffect(() => {
@@ -492,7 +491,6 @@ export const AppProvider = ({ children }) => {
     };
   }, []);
 
-  // DECKS
   const parseDecksData = (decksData) => {
     const parsedDecks = {};
     Object.keys(decksData).forEach((deckid) => {
