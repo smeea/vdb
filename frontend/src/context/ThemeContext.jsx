@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
-import { AUTO, DARK, LIGHT, THEME } from "@/constants";
 import { useSnapshot } from "valtio";
+import { AUTO, DARK, LIGHT, THEME } from "@/constants";
 import { settings } from "@/context";
 
 export const ThemeContext = React.createContext();

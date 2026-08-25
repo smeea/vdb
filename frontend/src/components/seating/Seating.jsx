@@ -2,13 +2,13 @@ import { useState } from "react";
 import { useSnapshot } from "valtio";
 import { SeatingModal } from "@/components";
 import {
-  SEATING_WITH_CUSTOM,
-  SEATING_WITH_STANDARD,
-  SEATING_CUSTOM_DECKS,
-  SEATING_STANDARD_DECKS,
   DECKID,
   NAME,
   RANDOM,
+  SEATING_CUSTOM_DECKS,
+  SEATING_STANDARD_DECKS,
+  SEATING_WITH_CUSTOM,
+  SEATING_WITH_STANDARD,
   STATE,
 } from "@/constants";
 import { settings, useApp } from "@/context";
@@ -34,14 +34,14 @@ const Seating = ({ setShow }) => {
     [SEATING_WITH_STANDARD]: withStandard,
     [SEATING_PLAYERS]: players,
   } = useSnapshot(settings);
-  const { setShowFloatingButtons } = useApp()
+  const { setShowFloatingButtons } = useApp();
 
   const [seating, setSeating] = useState();
-  const setWithCustom = (value) => settings[SEATING_WITH_CUSTOM] = value;
+  const setWithCustom = (value) => (settings[SEATING_WITH_CUSTOM] = value);
   const setWithStandard = (value) => (settings[SEATING_WITH_STANDARD] = value);
 
   const setPlayer = (i, value) => (settings[SEATING_PLAYERS][i] = value);
-  const delPlayer = (i) => settings[SEATING_PLAYERS].splice(i, 1)
+  const delPlayer = (i) => settings[SEATING_PLAYERS].splice(i, 1);
   const addPlayer = () => {
     settings[SEATING_PLAYERS] = [
       ...players,
@@ -124,8 +124,9 @@ const Seating = ({ setShow }) => {
     return tables;
   };
 
-  const toggleCustom = (i) => settings[SEATING_CUSTOM_DECKS][i][STATE] = !customDecks[i][STATE];
-  const toggleStandard = (i) => settings[SEATING_STANDARD_DECKS][i][STATE] = !standardDecks[i][STATE];
+  const toggleCustom = (i) => (settings[SEATING_CUSTOM_DECKS][i][STATE] = !customDecks[i][STATE]);
+  const toggleStandard = (i) =>
+    (settings[SEATING_STANDARD_DECKS][i][STATE] = !standardDecks[i][STATE]);
 
   const addCustomDeck = (name) => {
     settings[SEATING_CUSTOM_DECKS] = [
@@ -134,7 +135,7 @@ const Seating = ({ setShow }) => {
     ];
   };
 
-  const removeCustomDeck = (i) => settings[SEATING_CUSTOM_DECKS].splice(i, 1)
+  const removeCustomDeck = (i) => settings[SEATING_CUSTOM_DECKS].splice(i, 1);
 
   return (
     <SeatingModal

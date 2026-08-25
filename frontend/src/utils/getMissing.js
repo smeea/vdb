@@ -1,9 +1,9 @@
-import { HARD, LOGIC, SOFT, SURPLUS_FIXED, SURPLUS_USED, VALUE } from "@/constants";
+import { HARD, LOGIC, SOFT, SURPLUS_FIXED, SURPLUS_USED } from "@/constants";
 import { getHardTotal, getSoftMax } from "@/utils";
 
 const getMissing = (cardid, usedBase, wishlist, currentQ = 0) => {
   const wishlistLogic = wishlist[cardid]?.[LOGIC];
-  const wishlistQ = wishlist[cardid]?.q
+  const wishlistQ = wishlist[cardid]?.q;
   let miss;
 
   switch (wishlistLogic) {

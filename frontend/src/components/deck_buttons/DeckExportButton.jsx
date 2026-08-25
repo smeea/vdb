@@ -22,7 +22,6 @@ import {
   TEXT,
   TWD,
   TWD_HINTS,
-  VALUE,
   WISHLIST,
   XLSX,
 } from "@/constants";

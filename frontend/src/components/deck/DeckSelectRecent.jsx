@@ -32,9 +32,7 @@ const DeckSelectRecent = ({ deckid, handleSelect }) => {
                   <ResultPreconClan clan={i[CLAN]} />
                 ))}
             </div>
-            <div className="inline">
-              {i[NAME].slice(0, 32)}
-            </div>
+            <div className="inline">{i[NAME].slice(0, 32)}</div>
           </div>
           <div className="flex w-[20px] items-center justify-center text-midGray dark:text-midGrayDark">
             {getIcon(i.src)}

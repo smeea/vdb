@@ -8,8 +8,8 @@ import {
   ALLOWED,
   BANNED,
   BRANCHES,
-  CARDS,
   CARD_VERSION_KEY,
+  CARDS,
   CLAN,
   CRYPT,
   CRYPT_CARDBASE,
@@ -85,12 +85,12 @@ import {
   setLimitedBannedCrypt,
   setLimitedBannedLibrary,
   setLimitedSets,
-  setupUsedInventory,
   settings,
+  setupUsedInventory,
 } from "@/context";
 import { useWindowSize } from "@/hooks";
 import { cardServices, playtestServices, userServices } from "@/services";
-import { getClan, byTimestamp, deepClone, getLegality, parseDeck } from "@/utils";
+import { byTimestamp, deepClone, getClan, getLegality, parseDeck } from "@/utils";
 
 export const AppContext = React.createContext();
 
@@ -142,8 +142,8 @@ export const AppProvider = ({ children }) => {
   const toggleAddMode = () => (settings[ADD_MODE] = !addMode);
   const toggleShowLegacyImage = () => (settings[SHOW_LEGACY_IMAGE] = !showLegacyImage);
   const toggleInventoryMode = () => (settings[INVENTORY_MODE] = !inventoryMode);
-  const toggleLimitedMode = () => settings[LIMITED_MODE] = !limitedMode;
-  const toggleLimitedOnlyDecks = () => settings[LIMITED_ONLY_DECKS] = !limitedOnlyDecks;
+  const toggleLimitedMode = () => (settings[LIMITED_MODE] = !limitedMode);
+  const toggleLimitedOnlyDecks = () => (settings[LIMITED_ONLY_DECKS] = !limitedOnlyDecks);
 
   const setCryptSearchSort = (value) => (settings[CRYPT_SEARCH_SORT] = value);
   const setCryptDeckSort = (value) => (settings[CRYPT_DECK_SORT] = value);
@@ -157,7 +157,7 @@ export const AppProvider = ({ children }) => {
   const setAddMode = (value) => (settings[ADD_MODE] = value);
   const setInventoryMode = (value) => (settings[INVENTORY_MODE] = value);
   const setLimitedMode = (value) => (settings[LIMITED_MODE] = value);
-  const setLimitedPreset = (value) => settings[LIMITED_PRESET] = value
+  const setLimitedPreset = (value) => (settings[LIMITED_PRESET] = value);
   const setLimitedOnlyDecks = (value) => (settings[LIMITED_ONLY_DECKS] = value);
   const setPlaytestMode = (value) => (settings[PLAYTEST_MODE] = value);
   const setSharedKey = (value) => (settings[SHARED_KEY] = value);
@@ -359,7 +359,7 @@ export const AppProvider = ({ children }) => {
       setInventoryKey(data[INVENTORY_KEY]);
       setSurplusKey(data[SURPLUS_KEY]);
       if ([data[INVENTORY_KEY], data[SURPLUS_KEY]].includes(sharedKey)) {
-        setSharedKey(null)
+        setSharedKey(null);
       }
       setIsPlaytester(data[PLAYTEST][IS_PLAYTESTER]);
       setIsPlaytestAdmin(data[PLAYTEST][IS_ADMIN]);

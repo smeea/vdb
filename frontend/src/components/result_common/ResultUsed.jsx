@@ -1,7 +1,7 @@
 import { twMerge } from "tailwind-merge";
 import { useSnapshot } from "valtio";
 import { Tooltip, UsedPopover } from "@/components";
-import { CRYPT, ID, LIBRARY, LOGIC, SURPLUS_USED, VALUE, WISHLIST } from "@/constants";
+import { CRYPT, ID, LIBRARY, LOGIC, SURPLUS_USED, WISHLIST } from "@/constants";
 import { inventoryStore, sharedStore, useApp, usedStore } from "@/context";
 import { getHardTotal, getSoftMax } from "@/utils";
 

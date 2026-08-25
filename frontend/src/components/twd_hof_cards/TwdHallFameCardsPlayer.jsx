@@ -25,13 +25,8 @@ import { useModalCardController } from "@/hooks";
 import { cryptSort, librarySort } from "@/utils";
 
 const TwdHallFameCardsPlayer = ({ name, cards }) => {
-  const {
-    cryptSearchSort,
-    setCryptSearchSort,
-    librarySearchSort,
-    setLibrarySearchSort,
-    isMobile,
-  } = useApp();
+  const { cryptSearchSort, setCryptSearchSort, librarySearchSort, setLibrarySearchSort, isMobile } =
+    useApp();
 
   const cryptSorted = cryptSort(
     Object.values(cards).filter((card) => card[ID] > 200000),

@@ -17,7 +17,7 @@ import {
   LoginBlock,
   Modal,
 } from "@/components";
-import { ALL, CRYPT, LIBRARY, INVENTORY_CATEGORY } from "@/constants";
+import { ALL, CRYPT, INVENTORY_CATEGORY, LIBRARY } from "@/constants";
 import { settings, sharedStore, useApp } from "@/context";
 import { inventoryServices } from "@/services";
 
@@ -77,7 +77,7 @@ const Inventory = () => {
     }
   }, [sharedKey, cryptCardBase, libraryCardBase]);
 
-  const { [INVENTORY_CATEGORY]: category } = useSnapshot(settings)
+  const { [INVENTORY_CATEGORY]: category } = useSnapshot(settings);
   const [showAddDeck, setShowAddDeck] = useState(false);
   const [showAddPrecon, setShowAddPrecon] = useState(false);
   const [cryptClan, setCryptClan] = useState(ALL);
@@ -103,7 +103,7 @@ const Inventory = () => {
     setShowFloatingButtons(true);
   };
 
-  const handleSetCategory = (value) => settings[INVENTORY_CATEGORY] = value
+  const handleSetCategory = (value) => (settings[INVENTORY_CATEGORY] = value);
 
   return (
     <div className="inventory-container mx-auto">

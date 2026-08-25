@@ -48,7 +48,7 @@ export const getSharedInventory = async (key, cryptCardBase, libraryCardBase) =>
       return { crypt, library };
     });
 
-  return { crypt, library }
+  return { crypt, library };
 };
 
 export const shareFullInventory = (key) => {

@@ -87,4 +87,4 @@ export const { store: settings } = await persist(
   "settings",
 );
 
-export default settings
+export default settings;
