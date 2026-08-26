@@ -35,7 +35,7 @@ const Text = ({ text }) => {
   });
 
   return reactStringReplace(textWithIcons, /{(.*?)}/g, (match, idx) => {
-    const cardid = match.split('|')[0]
+    const cardid = match.split("|")[0];
     const card = cardid > 200000 ? cryptCardBase[cardid] : libraryCardBase[cardid];
 
     if (card) {
