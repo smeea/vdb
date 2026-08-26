@@ -6,6 +6,8 @@
 - Inventory target documentation
 - Show total missed cards to get from selected precons in precons with missing feature
 - Remove added precons in precons with missing feature
+- Store playtest show image or text in reports
+- Missing precons for deck
 
 # FEATURES ON HOLD
 - Draft Cube support -> when draft cube info is available

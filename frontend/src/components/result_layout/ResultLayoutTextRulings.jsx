@@ -1,7 +1,7 @@
 import React from "react";
 import reactStringReplace from "react-string-replace";
 import { CardPopover, ConditionalTooltip, ResultMiscImage, ResultName } from "@/components";
-import { ADV, NAME, TEXT } from "@/constants";
+import { TEXT } from "@/constants";
 import { useApp } from "@/context";
 
 const Refs = ({ refs }) => {
@@ -21,7 +21,7 @@ const Refs = ({ refs }) => {
 };
 
 const Text = ({ text }) => {
-  const { nativeCrypt, nativeLibrary, cryptCardBase, libraryCardBase, isMobile } = useApp();
+  const { cryptCardBase, libraryCardBase, isMobile } = useApp();
 
   const textWithIcons = reactStringReplace(text, /\[(\w+ ?\w+)\]/g, (match, idx) => {
     return (
@@ -35,22 +35,13 @@ const Text = ({ text }) => {
   });
 
   return reactStringReplace(textWithIcons, /{(.*?)}/g, (match, idx) => {
-    const cardBase = { ...nativeCrypt, ...nativeLibrary };
-    let cardMatch = match;
-    const cardid = Object.keys(cardBase).find((j) => {
-      if (cardMatch.startsWith("The ")) {
-        cardMatch = `${cardMatch.replace(/^The /, "")}, The`;
-      }
-      const cardName = cardBase[j][ADV] ? `${cardBase[j][NAME]} (ADV)` : cardBase[j][NAME];
-      return cardName === cardMatch;
-    });
-
+    const cardid = match.split('|')[0]
     const card = cardid > 200000 ? cryptCardBase[cardid] : libraryCardBase[cardid];
 
     if (card) {
       return (
         <ConditionalTooltip
-          key={`${cardMatch}-${idx}`}
+          key={`${match}-${idx}`}
           overlay={<CardPopover card={card} />}
           disabled={isMobile}
           noPadding
@@ -59,7 +50,7 @@ const Text = ({ text }) => {
         </ConditionalTooltip>
       );
     }
-    return <React.Fragment key={idx}>&#123;{cardMatch}&#125;</React.Fragment>;
+    return <React.Fragment key={idx}>&#123;{match}&#125;</React.Fragment>;
   });
 };
 
