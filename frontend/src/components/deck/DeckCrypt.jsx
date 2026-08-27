@@ -7,7 +7,7 @@ import { useDeckCrypt, useModalCardController } from "@/hooks";
 import { getKeyDisciplines } from "@/utils";
 
 const DeckCrypt = ({ inSearch, inPreview, inMissing, noDisciplines, deck }) => {
-  const { setShowFloatingButtons, cryptDeckSort, changeCryptDeckSort, isDesktop, isMobile } =
+  const { setShowFloatingButtons, cryptDeckSort, setCryptDeckSort, isDesktop, isMobile } =
     useApp();
   const [showInfo, setShowInfo] = useState(false);
 
@@ -72,7 +72,7 @@ const DeckCrypt = ({ inSearch, inPreview, inMissing, noDisciplines, deck }) => {
           deck={deck}
           inMissing={inMissing}
           setShowInfo={setShowInfo}
-          setSortMethod={changeCryptDeckSort}
+          setSortMethod={setCryptDeckSort}
           showInfo={showInfo}
           sortMethod={cryptDeckSort}
           sortMethods={sortMethods}
