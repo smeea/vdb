@@ -22,7 +22,7 @@ const PlaytestReportsAllCardOrPrecon = ({ product, isPrecon, report, maxSameScor
         <div className="flex flex-col gap-2 sm:gap-4">
           <FlexGapped
             className={twMerge(
-              "w-[320px] flex-col max-sm:w-full",
+              "w-[320px] sticky top-12 flex-col max-sm:w-full",
               isPrecon ? "print:max-w-[320px]" : "print:max-w-[250px]",
             )}
           >
@@ -49,8 +49,8 @@ const PlaytestReportsAllCardOrPrecon = ({ product, isPrecon, report, maxSameScor
                 <ResultLibraryLayoutText card={product} />
               )}
             </div>
+            {isPlaytestAdmin && <PlaytestScores report={report} maxSameScore={maxSameScore} />}
           </FlexGapped>
-          {isPlaytestAdmin && <PlaytestScores report={report} maxSameScore={maxSameScore} />}
         </div>
         {!isMobile && <Hr isThick className="print:hidden" />}
         <div className="flex basis-full flex-col gap-3">
