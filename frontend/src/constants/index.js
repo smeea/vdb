@@ -331,3 +331,5 @@ export const SEATING_CUSTOM_DECKS = "seatingCustomDecks";
 export const SEATING_STANDARD_DECKS = "seatingStandardDecks";
 export const SEATING_PLAYERS = "seatingPlayers";
 export const INVENTORY_CATEGORY = "inventoryCategory";
+export const SHOW_PLAYTEST_NAMES = "showPlaytestNames";
+export const SHOW_PLAYTEST_IMAGES = "showPlaytestImages";

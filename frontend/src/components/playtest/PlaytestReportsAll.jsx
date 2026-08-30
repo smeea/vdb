@@ -34,10 +34,10 @@ import { capitalize, getIsPlaytest } from "@/utils";
 
 const PlaytestReportsAll = () => {
   const {
-    hidePlaytestNames,
-    setHidePlaytestNames,
+    showPlaytestNames,
+    toggleShowPlaytestNames,
     showPlaytestImages,
-    setShowPlaytestImages,
+    toggleShowPlaytestImages,
     preconDecks,
     cryptCardBase,
     libraryCardBase,
@@ -191,16 +191,16 @@ const PlaytestReportsAll = () => {
             <div className="flex flex-col">
               <div className="print:hide flex justify-end whitespace-nowrap">
                 <Toggle
-                  isOn={showPlaytestImages}
-                  handleClick={() => setShowPlaytestImages(!showPlaytestImages)}
+                  isOn={!showPlaytestImages}
+                  handleClick={toggleShowPlaytestImages}
                 >
-                  Card Images
+                  Card Text
                 </Toggle>
               </div>
               <div className="print:hide flex justify-end whitespace-nowrap">
                 <Toggle
-                  isOn={hidePlaytestNames}
-                  handleClick={() => setHidePlaytestNames(!hidePlaytestNames)}
+                  isOn={!showPlaytestNames}
+                  handleClick={toggleShowPlaytestNames}
                 >
                   Hide Usernames
                 </Toggle>

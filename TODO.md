@@ -5,7 +5,6 @@
 
 # FEATURES
 - Inventory target documentation
-- Store playtest show image or text in reports
 
 # FEATURES ON HOLD
 - Draft Cube support -> when draft cube info is available

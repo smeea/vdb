@@ -6,7 +6,7 @@ import { SCORE, TEXT } from "@/constants";
 import { useApp } from "@/context";
 
 const Report = ({ id, text, score, isPlayed }) => {
-  const { hidePlaytestNames, isMobile } = useApp();
+  const { showPlaytestNames, isMobile } = useApp();
   const maxLength = isMobile ? 15 : 30;
 
   return (
@@ -16,7 +16,7 @@ const Report = ({ id, text, score, isPlayed }) => {
           title={id}
           className="text-fgName dark:text-fgNameDark print:max-w-[150px] print:overflow-hidden print:text-ellipsis print:dark:text-fgName"
         >
-          {!hidePlaytestNames && (
+          {showPlaytestNames && (
             <>
               {id.substring(0, maxLength)}
               {id.length > maxLength && "…"}

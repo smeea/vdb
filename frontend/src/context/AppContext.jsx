@@ -74,6 +74,8 @@ import {
   TWO_P,
   V5,
   WISHLIST,
+  SHOW_PLAYTEST_NAMES,
+  SHOW_PLAYTEST_IMAGES
 } from "@/constants";
 import {
   deckLocalize,
@@ -110,8 +112,8 @@ export const AppProvider = ({ children }) => {
   const [isOnline, setIsOnline] = useState(navigator.onLine);
   const [isPlaytestAdmin, setIsPlaytestAdmin] = useState();
   const [isPlaytester, setIsPlaytester] = useState();
-  const [hidePlaytestNames, setHidePlaytestNames] = useState(false);
-  const [showPlaytestImages, setShowPlaytestImages] = useState(true);
+  // const [hidePlaytestNames, setHidePlaytestNames] = useState(false);
+  // const [showPlaytestImages, setShowPlaytestImages] = useState(true);
   const [playtestProfile, setPlaytestProfile] = useState();
 
   const {
@@ -135,6 +137,8 @@ export const AppProvider = ({ children }) => {
     [DECKS_ADV_SORT]: decksAdvSort,
     [LANG]: lang,
     [RECENT_DECKS]: recentDecks,
+    [SHOW_PLAYTEST_NAMES]: showPlaytestNames,
+    [SHOW_PLAYTEST_IMAGES]: showPlaytestImages,
   } = useSnapshot(settings);
 
   const toggleShowImage = () => (settings[SHOW_IMAGE] = !showImage);
@@ -144,6 +148,8 @@ export const AppProvider = ({ children }) => {
   const toggleInventoryMode = () => (settings[INVENTORY_MODE] = !inventoryMode);
   const toggleLimitedMode = () => (settings[LIMITED_MODE] = !limitedMode);
   const toggleLimitedOnlyDecks = () => (settings[LIMITED_ONLY_DECKS] = !limitedOnlyDecks);
+  const toggleShowPlaytestNames = () => (settings[SHOW_PLAYTEST_NAMES] = !showPlaytestNames);
+  const toggleShowPlaytestImages = () => (settings[SHOW_PLAYTEST_IMAGES] = !showPlaytestImages);
 
   const setCryptSearchSort = (value) => (settings[CRYPT_SEARCH_SORT] = value);
   const setCryptDeckSort = (value) => (settings[CRYPT_DECK_SORT] = value);
@@ -567,10 +573,10 @@ export const AppProvider = ({ children }) => {
         toggleShowImage,
         showLegacyImage,
         toggleShowLegacyImage,
-        hidePlaytestNames,
-        setHidePlaytestNames,
+        showPlaytestNames,
+        toggleShowPlaytestNames,
         showPlaytestImages,
-        setShowPlaytestImages,
+        toggleShowPlaytestImages,
         showFloatingButtons,
         setShowFloatingButtons,
         showMenuButtons,
