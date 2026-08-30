@@ -1,5 +1,15 @@
 import { twMerge } from "tailwind-merge";
-import { DeckCrypt, DeckExportButton, DeckLibrary, FlexGapped, Modal } from "@/components";
+import Cart from "@icons/cart.svg?react";
+import { useState } from "react";
+import {
+  InventoryMissingPrecons,
+  ButtonIconed,
+  DeckCrypt,
+  DeckExportButton,
+  DeckLibrary,
+  FlexGapped,
+  Modal,
+} from "@/components";
 import { CRYPT, LIBRARY, NAME } from "@/constants";
 import { useApp } from "@/context";
 
@@ -11,6 +21,8 @@ const DeckMissingModal = ({ setShow, deck }) => {
     setShowMenuButtons(false);
     setShowFloatingButtons(true);
   };
+
+  const [showPrecons, setShowPrecons] = useState();
 
   return (
     <Modal handleClose={handleClose} size="lg" title={deck[NAME]} noPadding={isMobile}>
@@ -38,6 +50,11 @@ const DeckMissingModal = ({ setShow, deck }) => {
           </div>
         </FlexGapped>
         <div className="flex justify-end gap-2 max-sm:flex-col max-sm:p-2 max-sm:pt-0">
+          <ButtonIconed
+            onClick={() => setShowPrecons(!showPrecons)}
+            text="Precons with Missing Cards"
+            icon={<Cart />}
+          />
           <DeckExportButton
             deck={{
               [NAME]: deck[NAME],
@@ -48,6 +65,13 @@ const DeckMissingModal = ({ setShow, deck }) => {
           />
         </div>
       </FlexGapped>
+      {showPrecons && (
+        <InventoryMissingPrecons
+          setShow={setShowPrecons}
+          crypt={deck[CRYPT]}
+          library={deck[LIBRARY]}
+        />
+      )}
     </Modal>
   );
 };

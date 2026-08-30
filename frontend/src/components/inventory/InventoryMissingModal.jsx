@@ -1,4 +1,5 @@
 import Gem from "@icons/gem.svg?react";
+import Cart from "@icons/cart.svg?react";
 import { useState } from "react";
 import { twMerge } from "tailwind-merge";
 import { useSnapshot } from "valtio";
@@ -122,12 +123,12 @@ const InventoryMissingModal = ({
             <>
               <ButtonIconed
                 onClick={() => setShowPrecons(!showPrecons)}
-                text="Show Precons with Missing Cards"
-                icon={null}
+                text="Precons with Missing Cards"
+                icon={<Cart />}
               />
               <ButtonIconed
                 onClick={() => setShowAll(!showAll)}
-                text={showAll ? "Show Missing for Decks" : "Show Missing for Complete Collection"}
+                text={showAll ? "Missing for Decks" : "Missing for Complete Collection"}
                 icon={<Gem />}
               />
             </>

@@ -6,7 +6,6 @@
 # FEATURES
 - Inventory target documentation
 - Store playtest show image or text in reports
-- Missing precons for deck
 
 # FEATURES ON HOLD
 - Draft Cube support -> when draft cube info is available
