@@ -44,9 +44,9 @@ const PlaytestReportsAllCardOrPrecon = ({ product, isPrecon, report, maxSameScor
                   className="max-sm:w-full sm:print:min-w-[250px] sm:print:max-w-[250px]"
                 />
               ) : product[ID] > 200000 ? (
-                <ResultCryptLayoutText card={product} />
+                <ResultCryptLayoutText card={product} noClose />
               ) : (
-                <ResultLibraryLayoutText card={product} />
+                <ResultLibraryLayoutText card={product} noClose />
               )}
             </div>
             {isPlaytestAdmin && <PlaytestScores report={report} maxSameScore={maxSameScore} />}
