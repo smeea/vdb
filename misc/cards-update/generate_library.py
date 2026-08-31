@@ -56,6 +56,7 @@ def generate_artists(csv_cards, artists_file):
                 artists.add(artist)
 
     json.dump(sorted(artists), artists_file, indent=2, separators=(",", ":"))
+    artists_file.write("\n")
 
 
 def generate_card(card):

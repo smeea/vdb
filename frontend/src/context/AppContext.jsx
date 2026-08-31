@@ -65,6 +65,8 @@ import {
   SHARED_KEY,
   SHOW_IMAGE,
   SHOW_LEGACY_IMAGE,
+  SHOW_PLAYTEST_IMAGES,
+  SHOW_PLAYTEST_NAMES,
   SRC,
   SURPLUS_KEY,
   TDA_SEARCH_SORT,
@@ -74,8 +76,6 @@ import {
   TWO_P,
   V5,
   WISHLIST,
-  SHOW_PLAYTEST_NAMES,
-  SHOW_PLAYTEST_IMAGES
 } from "@/constants";
 import {
   deckLocalize,

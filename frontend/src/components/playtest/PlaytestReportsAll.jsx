@@ -190,18 +190,12 @@ const PlaytestReportsAll = () => {
             </div>
             <div className="flex flex-col">
               <div className="print:hide flex justify-end whitespace-nowrap">
-                <Toggle
-                  isOn={!showPlaytestImages}
-                  handleClick={toggleShowPlaytestImages}
-                >
+                <Toggle isOn={!showPlaytestImages} handleClick={toggleShowPlaytestImages}>
                   Card Text
                 </Toggle>
               </div>
               <div className="print:hide flex justify-end whitespace-nowrap">
-                <Toggle
-                  isOn={!showPlaytestNames}
-                  handleClick={toggleShowPlaytestNames}
-                >
+                <Toggle isOn={!showPlaytestNames} handleClick={toggleShowPlaytestNames}>
                   Hide Usernames
                 </Toggle>
               </div>
