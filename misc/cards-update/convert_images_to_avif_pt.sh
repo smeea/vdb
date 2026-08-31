@@ -3,7 +3,7 @@
 
 cd ../../frontend/public/images/cards/
 
-for folder in legacy set en-EN es-ES fr-FR pt-PT
+for folder in playtest
 do
     cd "$folder"
     for image in $(find . -type f -name '*.jpg' -print)
