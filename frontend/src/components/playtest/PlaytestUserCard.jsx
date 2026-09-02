@@ -2,7 +2,7 @@ import EightCircleFill from "@icons/8-circle-fill.svg?react";
 import Calendar2EventFill from "@icons/calendar2-event-fill.svg?react";
 import PersonFillExclamation from "@icons/person-fill-exclamation.svg?react";
 import PostcardHeartFill from "@icons/postcard-heart-fill.svg?react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import {
   ConditionalTooltipOrModal,
   Input,
@@ -22,10 +22,6 @@ const PlaytestUserCard = () => {
     value: i,
     label: i,
   }));
-
-  useEffect(() => {
-    if (liaison !== playtestProfile?.[LIAISON]) setLiaison(playtestProfile?.[LIAISON] ?? "");
-  }, [playtestProfile?.[LIAISON]]);
 
   const handleLiaisonChange = (e) => setLiaison(e.target.value);
   const changeLiaison = () => updatePlaytestProfile(LIAISON, liaison);

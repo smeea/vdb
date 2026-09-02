@@ -2,7 +2,7 @@ import PeopleFill from "@icons/people-fill.svg?react";
 import Snow from "@icons/snow.svg?react";
 import TagFill from "@icons/tag-fill.svg?react";
 import TrophyFill from "@icons/trophy-fill.svg?react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { DeckFreezeButton, Input, InputLabel } from "@/components";
 import { DECK, DECKID, IS_AUTHOR, IS_NON_EDITABLE, IS_PUBLIC, NAME } from "@/constants";
 import { deckUpdate } from "@/context";
@@ -12,10 +12,6 @@ const DeckChangeName = ({ deck }) => {
   const [value, setValue] = useState(deck[NAME] || "");
   const isEditable = getIsEditable(deck);
   const isTwd = deck[DECKID] !== DECK && deck[DECKID].length !== 9 && !deck[DECKID].includes(":");
-
-  useEffect(() => {
-    if (value !== deck[NAME]) setValue(deck[NAME] ?? "");
-  }, [deck[NAME]]);
 
   const handleChange = (event) => {
     setValue(event.target.value);

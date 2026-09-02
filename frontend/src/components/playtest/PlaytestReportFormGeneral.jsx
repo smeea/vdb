@@ -1,33 +1,29 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Textarea } from "@/components";
 import { GENERAL } from "@/constants";
 import { useApp } from "@/context";
 
 const PlaytestReportFormGeneral = () => {
   const { playtestProfile, updatePlaytestProfile } = useApp();
-  const [general, setGeneral] = useState(playtestProfile?.[GENERAL] || "");
+  const [value, setValue] = useState(playtestProfile?.[GENERAL] || "");
 
-  useEffect(() => {
-    if (general !== playtestProfile?.[GENERAL]) setGeneral(playtestProfile?.[GENERAL] ?? "");
-  }, [playtestProfile?.[GENERAL]]);
-
-  const handleGeneralChange = (e) => setGeneral(e.target.value);
-  const changeGeneral = () => updatePlaytestProfile(GENERAL, general);
-  const handleGeneralSubmit = (event) => {
+  const handleChange = (e) => setValue(e.target.value);
+  const submit = () => updatePlaytestProfile(GENERAL, value);
+  const handleSubmit = (event) => {
     event.preventDefault();
-    changeGeneral();
+    submit();
   };
-  const handleGeneralOnBlur = () => {
-    if (general !== playtestProfile?.[GENERAL]) changeGeneral();
+  const handleOnBlur = () => {
+    if (value !== playtestProfile?.[GENERAL]) submit();
   };
 
   return (
-    <form className="flex w-full" onSubmit={handleGeneralSubmit}>
+    <form className="flex w-full" onSubmit={handleSubmit}>
       <Textarea
         rows={8}
-        onChange={handleGeneralChange}
-        onBlur={handleGeneralOnBlur}
-        value={general}
+        onChange={handleChange}
+        onBlur={handleOnBlur}
+        value={value}
         placeholder="Enter your general opinion about the Expansion"
       />
     </form>

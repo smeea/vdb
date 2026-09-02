@@ -1,7 +1,7 @@
 import ChatLeftQuoteFill from "@icons/chat-left-quote-fill.svg?react";
 import ChevronBarContract from "@icons/chevron-bar-contract.svg?react";
 import ChevronBarExpand from "@icons/chevron-bar-expand.svg?react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Button, Input, InputLabel, Textarea } from "@/components";
 import { DECKID, DESCRIPTION } from "@/constants";
 import { deckUpdate } from "@/context";
@@ -10,10 +10,6 @@ import { getIsEditable } from "@/utils";
 const DeckDescription = ({ deck, isFolded, setIsFolded }) => {
   const [value, setValue] = useState(deck[DESCRIPTION] || "");
   const isEditable = getIsEditable(deck);
-
-  useEffect(() => {
-    if (value !== deck[DESCRIPTION]) setValue(deck[DESCRIPTION] ?? "");
-  }, [deck[DESCRIPTION]]);
 
   const handleChange = (event) => {
     setValue(isFolded ? value.replace(/.*/, event.target.value) : event.target.value);

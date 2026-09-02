@@ -1,5 +1,5 @@
 import PaletteFill from "@icons/palette-fill.svg?react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Input, InputLabel } from "@/components";
 import { BRANCH_NAME, DECKID } from "@/constants";
 import { deckUpdate } from "@/context";
@@ -8,10 +8,6 @@ import { getIsEditable } from "@/utils";
 const DeckChangeBranchName = ({ deck }) => {
   const [value, setValue] = useState(deck[BRANCH_NAME] || "");
   const isEditable = getIsEditable(deck);
-
-  useEffect(() => {
-    if (value !== deck[BRANCH_NAME]) setValue(deck[BRANCH_NAME] ?? "");
-  }, [deck[BRANCH_NAME]]);
 
   const handleChange = (event) => {
     setValue(event.target.value);
