@@ -1,9 +1,11 @@
 # FIX
+- Limited after update
 
 # FIX ON HOLD
 
 # FEATURES
 - Inventory target documentation
+- New legacy images
 
 # FEATURES ON HOLD
 - Draft Cube support -> when draft cube info is available
