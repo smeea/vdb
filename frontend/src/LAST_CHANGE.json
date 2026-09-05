@@ -1,9 +1,8 @@
 {
-  "version": "2026-08-25",
+  "version": "2026-09-05",
   "changes": [
-    "Add Precons with Missing cards feature (Inventory -> Missing Cards -> Precons with Missing Cards), that will help you to see what precons have most of the cards your inventory miss, and virtually add precons too find best combined set",
-    "Add Russian National 2026 events to TDA",
+    "Precons with missing cards feature for Decks",
     "Update rulings",
-    "Many other fixes and small improvements"
+    "Many fixes including crypt sort and card references in rulings"
   ]
 }
