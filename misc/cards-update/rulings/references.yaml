@@ -19,8 +19,10 @@
 # Rulings from the rec.games.trading-cards.jyhad newsgroup point to https://usenet.krcg.org/, a preserved copy of it,
 # rather than to Google Groups: `/t/<ThreadId>/` is the thread, `#m0` the first message, `#m1` the second, and so on.
 # Those anchors are positional, so the message order in the archive is part of the contract.
-# A link with no anchor means the thread survives but the cited reply does not; a handful of references Google's own
-# copy lost entirely still point at Google Groups, where they are unlikely to resolve.
+# The archive also holds threads copied from a forum: `/t/bgg-<ThreadId>/` for BoardGameGeek, `/t/vekn-<TopicId>/` for
+# the VEKN forum. Those answer to the number their own forum gave each post as well, but are cited by position like
+# every other thread here.
+# A link with no anchor means the thread survives but the cited reply does not.
 ANK 20170105: https://www.vekn.net/forum/rules-questions/75512-raptor-obedience#80020
 ANK 20170111: https://www.vekn.net/forum/rules-questions/72635-dam-the-heart-s-river-and-catatonic-fear?start=6#80117
 ANK 20170124: https://www.vekn.net/forum/rules-questions/75556-vessel-wash-and-mpa#80362
@@ -265,7 +267,7 @@ ANK 20210322-2: https://www.vekn.net/forum/rules-questions/79080-nightmares-upon
 ANK 20210410: https://www.vekn.net/forum/rules-questions/74696-hackerspace-question?start=6#102019
 ANK 20210422: https://www.vekn.net/forum/rules-questions/79111-vampiric-disease-and-dodge#102098
 ANK 20210424: https://www.vekn.net/forum/rules-questions/79121-burning-byzar-during-combat#102140
-ANK 20210529: https://www.vekn.net/forum/technical-matters/79155-baltimore-purge#102348
+ANK 20210529: https://usenet.krcg.org/t/vekn-79155/#m1
 ANK 20210608: https://www.vekn.net/forum/rules-questions/79166-correct-time-to-use-heidelberg-castle-germany-for-non-acting-player?start=12#102425
 ANK 20210612: https://www.vekn.net/forum/rules-questions/79173-confirmation-needed-about-garrote?start=6#102470
 ANK 20210614: https://www.vekn.net/forum/rules-questions/79177-ossian-vs-charismatic-aura#102483
@@ -420,8 +422,8 @@ ANK 20260317: https://www.vekn.net/forum/rules-questions/82837-parijat-special-o
 ANK 20260522: https://www.vekn.net/forum/rules-questions/83009-clarification-effective-strike#117087
 LSJ 19970224: https://usenet.krcg.org/t/80KRDjVFkyg/#m1
 LSJ 19970225: https://usenet.krcg.org/t/xcp3faFaHZ8/#m7
-LSJ 19970325: https://groups.google.com/g/rec.games.trading-cards.jyhad/c/R-t138q8688/m/Zj1Y_jlq29AJ
-LSJ 19970331: https://groups.google.com/g/rec.games.trading-cards.jyhad/c/WXd9ALw9Xig/m/_REMI5bEeggJ
+LSJ 19970325: https://usenet.krcg.org/t/R-t138q8688/#m3
+LSJ 19970331: https://usenet.krcg.org/t/WXd9ALw9Xig/#m1
 LSJ 19970414: https://usenet.krcg.org/t/GK6zEhZb9oI/#m1
 LSJ 19970516: https://usenet.krcg.org/t/8Vzkc74MvCs/#m0
 LSJ 19970707: https://usenet.krcg.org/t/KWekwiRSa2I/#m1
@@ -470,9 +472,9 @@ LSJ 19981006: https://usenet.krcg.org/t/RU5yM2Ov5Mg/#m0
 LSJ 19981007: https://usenet.krcg.org/t/qFIy6-nWOKA/#m1
 LSJ 19981028: https://usenet.krcg.org/t/JZHY1bTCAa0/#m1
 LSJ 19981102: https://usenet.krcg.org/t/Bz_7HWIe-6Y/#m0
-LSJ 19990104: https://groups.google.com/g/rec.games.trading-cards.jyhad/c/QUUjL3FdUx0/m/9GAnSiNxOwEJ
-LSJ 19990106: https://groups.google.com/g/rec.games.trading-cards.jyhad/c/tJR6Hw6CmBQ/m/1Jgm5AT7rNMJ
-LSJ 19990106-2: https://groups.google.com/g/rec.games.trading-cards.jyhad/c/6dDhJmBlpXY/m/4b0RVRiwmXAJ
+LSJ 19990104: https://usenet.krcg.org/t/QUUjL3FdUx0/#m1
+LSJ 19990106: https://usenet.krcg.org/t/tJR6Hw6CmBQ/#m1
+LSJ 19990106-2: https://usenet.krcg.org/t/6dDhJmBlpXY/#m0
 LSJ 19990119: https://usenet.krcg.org/t/Iez0G178MRM/#m1
 LSJ 19990215: https://usenet.krcg.org/t/_izcAo43T4Q/#m2
 LSJ 19990216: https://usenet.krcg.org/t/klb6OQYtdzE/#m1
@@ -493,7 +495,7 @@ LSJ 19991207: https://usenet.krcg.org/t/aQaOTYwC-fg/#m3
 LSJ 20000110: https://usenet.krcg.org/t/e8-mp_OMsjw/#m1
 LSJ 20000113: https://usenet.krcg.org/t/-qvB4bbD-rE/#m3
 LSJ 20000215: https://usenet.krcg.org/t/8to3EBsk-iY/#m0
-LSJ 20000222: https://groups.google.com/g/rec.games.trading-cards.jyhad/c/MkZPpcvlChQ/m/1l5f7ItJcS4J
+LSJ 20000222: https://usenet.krcg.org/t/MkZPpcvlChQ/#m2
 LSJ 20000309: https://usenet.krcg.org/t/ykAzsCzPkvg/#m2
 LSJ 20000424: https://usenet.krcg.org/t/6pK4rFvqmmg/#m1
 LSJ 20000507: https://usenet.krcg.org/t/6-sMg4Wo7KE/#m3
@@ -518,8 +520,7 @@ LSJ 20001206: https://usenet.krcg.org/t/kFIO74LxqFQ/#m4
 LSJ 20010108: https://usenet.krcg.org/t/0gIA9tBZgIU/#m2
 LSJ 20010110: https://usenet.krcg.org/t/Vtm465mblX4/#m21
 LSJ 20010111: https://usenet.krcg.org/t/d3WSV1UXBV0/#m5
-LSJ 20010119: https://groups.google.com/g/rec.games.trading-cards.jyhad/c/XB0IvK7I6PQ/m/foA7igsB8EEJ
-LSJ 20010121: https://boardgamegeek.com/thread/609699/article/6142361#6142361
+LSJ 20010119: https://usenet.krcg.org/t/XB0IvK7I6PQ/#m2
 LSJ 20010209: https://usenet.krcg.org/t/wYp61ffInqs/#m1
 LSJ 20010210: https://usenet.krcg.org/t/NtMa5w_NVOE/#m21
 LSJ 20010211: https://usenet.krcg.org/t/Fd9tcsKTzjE/#m1
@@ -563,7 +564,7 @@ LSJ 20010814-2: https://usenet.krcg.org/t/8MR4bq0Cxj4/#m3
 LSJ 20010814-3: https://usenet.krcg.org/t/4U6VYR9kBTA/#m1
 LSJ 20010814-4: https://usenet.krcg.org/t/8C05aiy4bdg/#m16
 LSJ 20010817: https://usenet.krcg.org/t/wDLAn-jfdC8/#m1
-LSJ 20010819: https://groups.google.com/g/rec.games.trading-cards.jyhad/c/2dXfHhG98Rs/m/RMqiA8RXDncJ
+LSJ 20010819: https://usenet.krcg.org/t/2dXfHhG98Rs/#m2
 LSJ 20010819-2: https://usenet.krcg.org/t/8MR4bq0Cxj4/#m14
 LSJ 20010828: https://usenet.krcg.org/t/KoP_nqv-feM/#m1
 LSJ 20010828-2: https://usenet.krcg.org/t/KoP_nqv-feM/#m7
@@ -575,7 +576,7 @@ LSJ 20011022: https://usenet.krcg.org/t/KMg4MwD-Jn0/#m1
 LSJ 20011023: https://usenet.krcg.org/t/2GOLIrXAF8M/#m1
 LSJ 20011023-2: https://usenet.krcg.org/t/47-PhTMiAOU/#m1
 LSJ 20011202: https://usenet.krcg.org/t/gyzUP4TCq6M/#m41
-LSJ 20011202-2: https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qnVBhys6loo/m/5IuE9b3iTyoJ
+LSJ 20011202-2: https://usenet.krcg.org/t/qnVBhys6loo/#m4
 LSJ 20011204: https://usenet.krcg.org/t/LFm6fYzoUhA/#m2
 LSJ 20011204-2: https://usenet.krcg.org/t/0gKrr9ChclY/#m1
 LSJ 20011204-3: https://usenet.krcg.org/t/JhBwcZjDlaQ/#m1
@@ -617,7 +618,7 @@ LSJ 20020402: https://usenet.krcg.org/t/eQCXHND3j5o/#m1
 LSJ 20020408: https://usenet.krcg.org/t/4LXlqwmGQGc/#m1
 LSJ 20020416: https://usenet.krcg.org/t/XS0Z0P5qaew/#m4
 LSJ 20020416-2: https://usenet.krcg.org/t/tEC5uN8yqUE/#m4
-LSJ 20020425: https://groups.google.com/g/rec.games.trading-cards.jyhad/c/_Rh8P34zTZo/m/u-WavRjp5uYJ
+LSJ 20020425: https://usenet.krcg.org/t/_Rh8P34zTZo/#m2
 LSJ 20020426: https://usenet.krcg.org/t/xFGNrTa9CPk/#m1
 LSJ 20020429: https://usenet.krcg.org/t/7ZfedGTVt9g/#m1
 LSJ 20020503: https://usenet.krcg.org/t/1DbOr3g3vP8/#m16
@@ -631,7 +632,7 @@ LSJ 20020620: https://usenet.krcg.org/t/WoXWzLYaFSY/#m1
 LSJ 20020620-2: https://usenet.krcg.org/t/cFcic4gkJmM/#m4
 LSJ 20020624: https://usenet.krcg.org/t/IRtX9C5t0ZQ/#m1
 LSJ 20020708: https://usenet.krcg.org/t/KK_YwtQwA_A/#m1
-LSJ 20020715: https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-FBxPz-oms0/m/OV6b9Cc6nl4J
+LSJ 20020715: https://usenet.krcg.org/t/-FBxPz-oms0/#m1
 LSJ 20020718: https://usenet.krcg.org/t/H0ZTfiyxrbg/#m2
 LSJ 20020725: https://usenet.krcg.org/t/wCPFIH_g5ZE/#m4
 LSJ 20020726: https://usenet.krcg.org/t/1tTqTZp3bi0/#m1
@@ -642,6 +643,7 @@ LSJ 20020821: https://usenet.krcg.org/t/o_nBNZraMvE/#m1
 LSJ 20020904: https://usenet.krcg.org/t/Qmi4hFk6QqE/#m2
 LSJ 20020904-2: https://usenet.krcg.org/t/ObuKimgcCpI/#m10
 LSJ 20020911: https://usenet.krcg.org/t/_lLSO5aevoM/#m1
+LSJ 20020915: https://usenet.krcg.org/t/5DHHwmBYkUo/#m1
 LSJ 20020926: https://usenet.krcg.org/t/C7vgb-0Mcbo/#m1
 LSJ 20020927: https://usenet.krcg.org/t/wg3PH7vOs1s/#m1
 LSJ 20021001: https://usenet.krcg.org/t/FW-bmZpIM68/#m1
@@ -1082,7 +1084,6 @@ LSJ 20090205: https://usenet.krcg.org/t/l5bUtHOejmc/#m2
 LSJ 20090207: https://usenet.krcg.org/t/0UGI9W2sSpk/#m1
 LSJ 20090208: https://usenet.krcg.org/t/07gUFmSeIxU/#m1
 LSJ 20090213: https://usenet.krcg.org/t/hkTPcLPgZk4/#m1
-LSJ 20090215: http://groups.google.com/group/rec.games.trading-cards.jyhad/msg/945f61ee4b1581c0?hl=fr&lr=&ie=UTF-8
 LSJ 20090216: https://usenet.krcg.org/t/wU4YAwE6wlI/#m2
 LSJ 20090220: https://usenet.krcg.org/t/JMgZa9jdrc4/#m1
 LSJ 20090226: https://usenet.krcg.org/t/f7pLAO9n--U/
@@ -1250,9 +1251,10 @@ LSJ 20101013: https://usenet.krcg.org/t/hpFRDAmtSbA/#m4
 LSJ 20101021: https://usenet.krcg.org/t/g3CuP9Eqffg/#m3
 LSJ 20101130: https://usenet.krcg.org/t/_AcH7GPTLJc/#m15
 LSJ 20101210: https://usenet.krcg.org/t/QTAA0y6cANI/#m11
-LSJ 20110502: https://boardgamegeek.com/thread/648695/article/6701545
-LSJ 20110611: https://boardgamegeek.com/thread/662413/article/6920306
-LSJ 20110611-2: https://boardgamegeek.com/thread/662413/article/6919607
+LSJ 20110121: https://usenet.krcg.org/t/bgg-609699/#m1
+LSJ 20110502: https://usenet.krcg.org/t/bgg-648695/#m1
+LSJ 20110611: https://usenet.krcg.org/t/bgg-662413/#m7
+LSJ 20110611-2: https://usenet.krcg.org/t/bgg-662413/#m3
 PIB 20110712-1: https://www.vekn.net/forum/rules-questions/6182-counters-question#6188
 PIB 20110712-2: https://www.vekn.net/forum/rules-questions/6199-shilmulo-question#6200
 PIB 20110718: https://www.vekn.net/forum/rules-questions/6435-learjet-question#6436

@@ -921,7 +921,7 @@
         {
             "text":"The stolen minion returns to his previous controller even if he is in torpor/incapacitated (but stays in torpor/incapacitated).",
             "refs":{
-                "LSJ 20010119":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/XB0IvK7I6PQ/m/foA7igsB8EEJ"
+                "LSJ 20010119":"https://usenet.krcg.org/t/XB0IvK7I6PQ/#m2"
             }
         }
     ],
@@ -1190,7 +1190,7 @@
         {
             "text":"Cannot be played on an opponent's weapon.",
             "refs":{
-                "LSJ 20020425":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/_Rh8P34zTZo/m/u-WavRjp5uYJ"
+                "LSJ 20020425":"https://usenet.krcg.org/t/_Rh8P34zTZo/#m2"
             }
         },
         {
@@ -1233,7 +1233,7 @@
         {
             "text":"If you control a ready Lasombra, the chosen vampires may not be older than the acting vampire.",
             "refs":{
-                "ANK 20210529":"https://www.vekn.net/forum/technical-matters/79155-baltimore-purge#102348"
+                "ANK 20210529":"https://usenet.krcg.org/t/vekn-79155/#m1"
             }
         }
     ],
@@ -2589,7 +2589,7 @@
         {
             "text":"The rest of the effect applies if the damage is prevented, it does not if it is dodged.",
             "refs":{
-                "LSJ 19990106-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/6dDhJmBlpXY/m/4b0RVRiwmXAJ"
+                "LSJ 19990106-2":"https://usenet.krcg.org/t/6dDhJmBlpXY/#m0"
             }
         }
     ],
@@ -5377,7 +5377,7 @@
         {
             "text":"Cannot be played on an opponent's weapon.",
             "refs":{
-                "LSJ 20020425":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/_Rh8P34zTZo/m/u-WavRjp5uYJ"
+                "LSJ 20020425":"https://usenet.krcg.org/t/_Rh8P34zTZo/#m2"
             }
         }
     ],
@@ -6186,12 +6186,6 @@
             }
         },
         {
-            "text":"Any effect that would give more blood to the vampire is a gain of blood, so does not apply (eg. {100908|Heidelberg Castle, Germany}).",
-            "refs":{
-                "ANK 20221019-2":"https://www.vekn.net/forum/rules-questions/80101-blood-moved-by-heidelberg-castle-is-considered-a-gain-for-ex-nihilo-purposes#106607"
-            }
-        },
-        {
             "text":"If the owner treats aggravated damage as normal, he is immune to them too.",
             "refs":{
                 "LSJ 20040120":"https://usenet.krcg.org/t/5zBRtwg6lpU/#m9"
@@ -6203,6 +6197,12 @@
                 "LSJ 20010627":"https://usenet.krcg.org/t/NhNCVCCDyU0/#m5",
                 "LSJ 20010629":"https://usenet.krcg.org/t/MhHKBY7II78/#m1",
                 "LSJ 20090304-1":"https://usenet.krcg.org/t/B7EQiAVOr1Q/#m1"
+            }
+        },
+        {
+            "text":"Any effect that gives a vampire more blood counts as gaining blood (e.g. moving blood with {100908|Heidelberg Castle, Germany}, stealing blood with {101966|Theft of Vitae}, etc.) and the blood is moved to the blood bank instead.",
+            "refs":{
+                "ANK 20221019-2":"https://www.vekn.net/forum/rules-questions/80101-blood-moved-by-heidelberg-castle-is-considered-a-gain-for-ex-nihilo-purposes#106607"
             }
         }
     ],
@@ -6422,7 +6422,7 @@
         {
             "text":"Paying a pool during the unlock phase can be ordered with other unlock effects by the acting Methuselah, but must be handled before another Methuselah has the opportunity to use an unlock effect.",
             "refs":{
-                "LSJ 20010121":"https://boardgamegeek.com/thread/609699/article/6142361#6142361"
+                "LSJ 20110121":"https://usenet.krcg.org/t/bgg-609699/#m1"
             }
         }
     ],
@@ -6752,7 +6752,7 @@
         {
             "text":"The rest of the effect applies if the damage is prevented, it does not if it is dodged.",
             "refs":{
-                "LSJ 19990106-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/6dDhJmBlpXY/m/4b0RVRiwmXAJ"
+                "LSJ 19990106-2":"https://usenet.krcg.org/t/6dDhJmBlpXY/#m0"
             }
         }
     ],
@@ -7138,7 +7138,7 @@
         {
             "text":"Both the card in the ash heap and the card in hand have to be named when announcing the action or effect.",
             "refs":{
-                "LSJ 20000222":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/MkZPpcvlChQ/m/1l5f7ItJcS4J",
+                "LSJ 20000222":"https://usenet.krcg.org/t/MkZPpcvlChQ/#m2",
                 "LSJ 20011023":"https://usenet.krcg.org/t/2GOLIrXAF8M/#m1"
             }
         }
@@ -7479,7 +7479,7 @@
         {
             "text":"Cannot be played on an opponent's weapon.",
             "refs":{
-                "LSJ 20020425":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/_Rh8P34zTZo/m/u-WavRjp5uYJ"
+                "LSJ 20020425":"https://usenet.krcg.org/t/_Rh8P34zTZo/#m2"
             }
         }
     ],
@@ -8623,7 +8623,7 @@
         {
             "text":"The bidding is conducted in an open format, similar to a referendum. The player who played the card conducts the auction.",
             "refs":{
-                "LSJ 19990104":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/QUUjL3FdUx0/m/9GAnSiNxOwEJ"
+                "LSJ 19990104":"https://usenet.krcg.org/t/QUUjL3FdUx0/#m1"
             }
         },
         {
@@ -9839,7 +9839,7 @@
             "text":"When used by an acting vampire in torpor, there is no opportunity to diablerize the acting vampire, as the action is ended without a successful block.",
             "refs":{
                 "RBK leave-torpor":"https://www.vekn.net/rulebook#leave-torpor",
-                "LSJ 19970325":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/R-t138q8688/m/Zj1Y_jlq29AJ"
+                "LSJ 19970325":"https://usenet.krcg.org/t/R-t138q8688/#m3"
             }
         },
         {
@@ -10073,7 +10073,7 @@
         {
             "text":"Multiple copies in play give only 1 vote in total to non-titled Panders.",
             "refs":{
-                "LSJ 20010819":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/2dXfHhG98Rs/m/RMqiA8RXDncJ",
+                "LSJ 20010819":"https://usenet.krcg.org/t/2dXfHhG98Rs/#m2",
                 "PIB 20130723":"https://www.vekn.net/forum/rules-questions/52017-legacy-of-pander#52055"
             }
         },
@@ -10678,7 +10678,7 @@
         {
             "text":"The stolen minion returns to his previous controller even if he is in torpor/incapacitated (but stays in torpor/incapacitated).",
             "refs":{
-                "LSJ 20010119":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/XB0IvK7I6PQ/m/foA7igsB8EEJ"
+                "LSJ 20010119":"https://usenet.krcg.org/t/XB0IvK7I6PQ/#m2"
             }
         }
     ],
@@ -10748,7 +10748,7 @@
         {
             "text":"Cannot be played on an opponent's weapon.",
             "refs":{
-                "LSJ 20020425":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/_Rh8P34zTZo/m/u-WavRjp5uYJ"
+                "LSJ 20020425":"https://usenet.krcg.org/t/_Rh8P34zTZo/#m2"
             }
         }
     ],
@@ -10868,7 +10868,7 @@
         {
             "text":"A minion attempting to block before is still attempting to block after.",
             "refs":{
-                "LSJ 19990106":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/tJR6Hw6CmBQ/m/1Jgm5AT7rNMJ"
+                "LSJ 19990106":"https://usenet.krcg.org/t/tJR6Hw6CmBQ/#m1"
             }
         },
         {
@@ -11087,7 +11087,7 @@
         {
             "text":"[DOM] The stolen minion returns to his previous controller even if he is in torpor/incapacitated (but stays in torpor/incapacitated).",
             "refs":{
-                "LSJ 20010119":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/XB0IvK7I6PQ/m/foA7igsB8EEJ"
+                "LSJ 20010119":"https://usenet.krcg.org/t/XB0IvK7I6PQ/#m2"
             }
         },
         {
@@ -12295,12 +12295,6 @@
             }
         },
         {
-            "text":"Both minions can play prevention and non-prevention pre-range effects before mending the damage. If another pre-range damaging effect is played then, all damages are prevented and mended together.",
-            "refs":{
-                "ANK 20170930":"https://www.vekn.net/forum/rules-questions/76197-still-confused-about-multiple-outside-the-hourglasses#83682"
-            }
-        },
-        {
             "text":"The damage is applied even if the combat ends prematurely (eg. {100954|Illusions of the Kindred})",
             "refs":{
                 "ANK 20180104":"https://www.vekn.net/forum/rules-questions/76356-illusions-of-the-kindred-vs-outside-the-hourglass#84724",
@@ -12312,6 +12306,12 @@
             "refs":{
                 "LSJ 20011204-3":"https://usenet.krcg.org/t/JhBwcZjDlaQ/#m1",
                 "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+            }
+        },
+        {
+            "text":"Both minions can play prevention and non-prevention pre-range effects before mending the damage. If another pre-range damaging effect is played then, all damages are prevented and mended together.",
+            "refs":{
+                "ANK 20170930":"https://www.vekn.net/forum/rules-questions/76197-still-confused-about-multiple-outside-the-hourglasses#83682"
             }
         }
     ],
@@ -14549,7 +14549,7 @@
             "text":"Combat ends immediately, strikes are not resolved (including strike: combat ends), damage prevention cannot be played, and a second R\u00f6tschreck cannot be played.",
             "refs":{
                 "LSJ 19990217":"https://usenet.krcg.org/t/9Bsf2LC1274/#m1",
-                "LSJ 20020715":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/-FBxPz-oms0/m/OV6b9Cc6nl4J",
+                "LSJ 20020715":"https://usenet.krcg.org/t/-FBxPz-oms0/#m1",
                 "LSJ 20060803":"https://usenet.krcg.org/t/z8Nd8EFQsKc/#m1"
             }
         },
@@ -14898,7 +14898,7 @@
         {
             "text":"Cannot be played on an opponent's weapon.",
             "refs":{
-                "LSJ 20020425":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/_Rh8P34zTZo/m/u-WavRjp5uYJ"
+                "LSJ 20020425":"https://usenet.krcg.org/t/_Rh8P34zTZo/#m2"
             }
         }
     ],
@@ -15532,7 +15532,7 @@
         {
             "text":"The +1 damage only applies to the additional strike.",
             "refs":{
-                "LSJ 19970331":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/WXd9ALw9Xig/m/_REMI5bEeggJ"
+                "LSJ 19970331":"https://usenet.krcg.org/t/WXd9ALw9Xig/#m1"
             }
         },
         {
@@ -16275,7 +16275,7 @@
         {
             "text":"[OBE] The stolen minion returns to his previous controller even if he is in torpor/incapacitated (but stays in torpor/incapacitated).",
             "refs":{
-                "LSJ 20010119":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/XB0IvK7I6PQ/m/foA7igsB8EEJ"
+                "LSJ 20010119":"https://usenet.krcg.org/t/XB0IvK7I6PQ/#m2"
             }
         },
         {
@@ -16342,7 +16342,7 @@
             "text":"[OBF] Is played when a bleed is about to be successful, just before its resolution. Other modifiers and reactions cannot be played until after action resolution.",
             "refs":{
                 "LSJ 19980105":"https://usenet.krcg.org/t/PzVC-AeFuUQ/#m1",
-                "LSJ 20110502":"https://boardgamegeek.com/thread/648695/article/6701545"
+                "LSJ 20110502":"https://usenet.krcg.org/t/bgg-648695/#m1"
             }
         },
         {
@@ -17581,7 +17581,7 @@
         {
             "text":"The stolen minion returns to his previous controller even if he is in torpor/incapacitated (but stays in torpor/incapacitated).",
             "refs":{
-                "LSJ 20010119":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/XB0IvK7I6PQ/m/foA7igsB8EEJ"
+                "LSJ 20010119":"https://usenet.krcg.org/t/XB0IvK7I6PQ/#m2"
             }
         },
         {
@@ -17914,7 +17914,7 @@
         {
             "text":"The burn option can only be used if there is no Laibon with at least three Aye and three Orun.",
             "refs":{
-                "LSJ 20110611-2":"https://boardgamegeek.com/thread/662413/article/6919607"
+                "LSJ 20110611-2":"https://usenet.krcg.org/t/bgg-662413/#m3"
             }
         },
         {
@@ -19209,6 +19209,12 @@
             "refs":{
                 "ANK 20170930":"https://www.vekn.net/forum/rules-questions/76197-still-confused-about-multiple-outside-the-hourglasses#83682"
             }
+        },
+        {
+            "text":"Both minions can play prevention and non-prevention pre-range effects before mending the damage. If another pre-range damaging effect is played then, all damages are prevented and mended together.",
+            "refs":{
+                "ANK 20170930":"https://www.vekn.net/forum/rules-questions/76197-still-confused-about-multiple-outside-the-hourglasses#83682"
+            }
         }
     ],
     "102165":[
@@ -20225,6 +20231,12 @@
             "text":"If a card transforms the damage he inflicts to aggravated (eg. {102040|True Faith}), this includes the damage from his ability.",
             "refs":{
                 "ANK 20210620":"https://www.vekn.net/forum/rules-questions/79186-alejandro-aguirre-true-faith#102522"
+            }
+        },
+        {
+            "text":"Both minions can play prevention and non-prevention pre-range effects before mending the damage. If another pre-range damaging effect is played then, all damages are prevented and mended together.",
+            "refs":{
+                "ANK 20170930":"https://www.vekn.net/forum/rules-questions/76197-still-confused-about-multiple-outside-the-hourglasses#83682"
             }
         }
     ],
@@ -21867,7 +21879,7 @@
         {
             "text":"When he cancels an action, it has reached resolution, so is subject to NRA (Non Repeatable Action) rules.",
             "refs":{
-                "LSJ 20011202-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qnVBhys6loo/m/5IuE9b3iTyoJ"
+                "LSJ 20011202-2":"https://usenet.krcg.org/t/qnVBhys6loo/#m4"
             }
         },
         {
@@ -22361,7 +22373,7 @@
         {
             "text":"Orun and Aye cards cannot be placed on her as long as she's not a Laibon.",
             "refs":{
-                "LSJ 20110611":"https://boardgamegeek.com/thread/662413/article/6920306"
+                "LSJ 20110611":"https://usenet.krcg.org/t/bgg-662413/#m7"
             }
         },
         {
@@ -22847,6 +22859,12 @@
             "text":"Additional damage done before range by her ability is environmental.",
             "refs":{
                 "RTR 19970630":"https://usenet.krcg.org/t/KireUeOYY3c/#m1"
+            }
+        },
+        {
+            "text":"Both minions can play prevention and non-prevention pre-range effects before mending the damage. If another pre-range damaging effect is played then, all damages are prevented and mended together.",
+            "refs":{
+                "ANK 20170930":"https://www.vekn.net/forum/rules-questions/76197-still-confused-about-multiple-outside-the-hourglasses#83682"
             }
         }
     ],
@@ -23665,7 +23683,7 @@
         {
             "text":"Orun and Aye cards cannot be placed on him as long as he's not a Laibon.",
             "refs":{
-                "LSJ 20110611":"https://boardgamegeek.com/thread/662413/article/6920306"
+                "LSJ 20110611":"https://usenet.krcg.org/t/bgg-662413/#m7"
             }
         },
         {
@@ -23704,7 +23722,7 @@
         {
             "text":"Capacity reduction happens at end of combat even if {101507|Psyche!} Is used",
             "refs":{
-                "LSJ 20090215":"http://groups.google.com/group/rec.games.trading-cards.jyhad/msg/945f61ee4b1581c0?hl=fr&lr=&ie=UTF-8"
+                "LSJ 20020915":"https://usenet.krcg.org/t/5DHHwmBYkUo/#m1"
             }
         },
         {
@@ -24269,7 +24287,7 @@
         {
             "text":"The stolen minion returns to his previous controller even if he is in torpor/incapacitated (but stays in torpor/incapacitated).",
             "refs":{
-                "LSJ 20010119":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/XB0IvK7I6PQ/m/foA7igsB8EEJ"
+                "LSJ 20010119":"https://usenet.krcg.org/t/XB0IvK7I6PQ/#m2"
             }
         }
     ],
@@ -30300,7 +30318,7 @@
         {
             "text":"Cannot be played on an opponent's weapon.",
             "refs":{
-                "LSJ 20020425":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/_Rh8P34zTZo/m/u-WavRjp5uYJ"
+                "LSJ 20020425":"https://usenet.krcg.org/t/_Rh8P34zTZo/#m2"
             }
         }
     ],
@@ -30314,7 +30332,7 @@
         {
             "text":"Cannot be played on an opponent's weapon.",
             "refs":{
-                "LSJ 20020425":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/_Rh8P34zTZo/m/u-WavRjp5uYJ"
+                "LSJ 20020425":"https://usenet.krcg.org/t/_Rh8P34zTZo/#m2"
             }
         },
         {
@@ -34727,7 +34745,7 @@
         {
             "text":"[tem] Both the card in the ash heap and the card in hand have to be named when announcing the action or effect.",
             "refs":{
-                "LSJ 20000222":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/MkZPpcvlChQ/m/1l5f7ItJcS4J",
+                "LSJ 20000222":"https://usenet.krcg.org/t/MkZPpcvlChQ/#m2",
                 "LSJ 20011023":"https://usenet.krcg.org/t/2GOLIrXAF8M/#m1"
             }
         }
@@ -37293,7 +37311,7 @@
         {
             "text":"Both the card in the ash heap and the card in hand have to be named when announcing the action or effect.",
             "refs":{
-                "LSJ 20000222":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/MkZPpcvlChQ/m/1l5f7ItJcS4J",
+                "LSJ 20000222":"https://usenet.krcg.org/t/MkZPpcvlChQ/#m2",
                 "LSJ 20011023":"https://usenet.krcg.org/t/2GOLIrXAF8M/#m1"
             }
         }
@@ -37302,7 +37320,7 @@
         {
             "text":"Both the card in the ash heap and the card in hand have to be named when announcing the action or effect.",
             "refs":{
-                "LSJ 20000222":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/MkZPpcvlChQ/m/1l5f7ItJcS4J",
+                "LSJ 20000222":"https://usenet.krcg.org/t/MkZPpcvlChQ/#m2",
                 "LSJ 20011023":"https://usenet.krcg.org/t/2GOLIrXAF8M/#m1"
             }
         }
@@ -39187,6 +39205,30 @@
             "text":"The vampire's controller chooses to use the effect of the card or not.",
             "refs":{
                 "ANK 20210309-3":"https://www.vekn.net/forum/rules-questions/79065-master-cards-attached-to-a-stolen-minion#101806"
+            }
+        }
+    ],
+    "100197":[
+        {
+            "text":"Any effect that gives a vampire more blood counts as gaining blood (e.g. moving blood with {100908|Heidelberg Castle, Germany}, stealing blood with {101966|Theft of Vitae}, etc.) and the blood is moved to the blood bank instead.",
+            "refs":{
+                "ANK 20221019-2":"https://www.vekn.net/forum/rules-questions/80101-blood-moved-by-heidelberg-castle-is-considered-a-gain-for-ex-nihilo-purposes#106607"
+            }
+        }
+    ],
+    "101518":[
+        {
+            "text":"Any effect that gives a vampire more blood counts as gaining blood (e.g. moving blood with {100908|Heidelberg Castle, Germany}, stealing blood with {101966|Theft of Vitae}, etc.) and the blood is moved to the blood bank instead.",
+            "refs":{
+                "ANK 20221019-2":"https://www.vekn.net/forum/rules-questions/80101-blood-moved-by-heidelberg-castle-is-considered-a-gain-for-ex-nihilo-purposes#106607"
+            }
+        }
+    ],
+    "201131":[
+        {
+            "text":"Both minions can play prevention and non-prevention pre-range effects before mending the damage. If another pre-range damaging effect is played then, all damages are prevented and mended together.",
+            "refs":{
+                "ANK 20170930":"https://www.vekn.net/forum/rules-questions/76197-still-confused-about-multiple-outside-the-hourglasses#83682"
             }
         }
     ]

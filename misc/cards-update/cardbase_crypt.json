@@ -2112,6 +2112,12 @@
                 "refs":{
                     "ANK 20210620":"https://www.vekn.net/forum/rules-questions/79186-alejandro-aguirre-true-faith#102522"
                 }
+            },
+            {
+                "text":"Both minions can play prevention and non-prevention pre-range effects before mending the damage. If another pre-range damaging effect is played then, all damages are prevented and mended together.",
+                "refs":{
+                    "ANK 20170930":"https://www.vekn.net/forum/rules-questions/76197-still-confused-about-multiple-outside-the-hourglasses#83682"
+                }
             }
         ],
         "sect":"Sabbat",
@@ -11412,7 +11418,7 @@
             {
                 "text":"Both the card in the ash heap and the card in hand have to be named when announcing the action or effect.",
                 "refs":{
-                    "LSJ 20000222":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/MkZPpcvlChQ/m/1l5f7ItJcS4J",
+                    "LSJ 20000222":"https://usenet.krcg.org/t/MkZPpcvlChQ/#m2",
                     "LSJ 20011023":"https://usenet.krcg.org/t/2GOLIrXAF8M/#m1"
                 }
             }
@@ -35715,7 +35721,7 @@
             {
                 "text":"When he cancels an action, it has reached resolution, so is subject to NRA (Non Repeatable Action) rules.",
                 "refs":{
-                    "LSJ 20011202-2":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qnVBhys6loo/m/5IuE9b3iTyoJ"
+                    "LSJ 20011202-2":"https://usenet.krcg.org/t/qnVBhys6loo/#m4"
                 }
             },
             {
@@ -37459,7 +37465,7 @@
             {
                 "text":"Both the card in the ash heap and the card in hand have to be named when announcing the action or effect.",
                 "refs":{
-                    "LSJ 20000222":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/MkZPpcvlChQ/m/1l5f7ItJcS4J",
+                    "LSJ 20000222":"https://usenet.krcg.org/t/MkZPpcvlChQ/#m2",
                     "LSJ 20011023":"https://usenet.krcg.org/t/2GOLIrXAF8M/#m1"
                 }
             }
@@ -43226,7 +43232,7 @@
             {
                 "text":"Orun and Aye cards cannot be placed on her as long as she's not a Laibon.",
                 "refs":{
-                    "LSJ 20110611":"https://boardgamegeek.com/thread/662413/article/6920306"
+                    "LSJ 20110611":"https://usenet.krcg.org/t/bgg-662413/#m7"
                 }
             },
             {
@@ -50781,6 +50787,12 @@
                 "refs":{
                     "RTR 19970630":"https://usenet.krcg.org/t/KireUeOYY3c/#m1"
                 }
+            },
+            {
+                "text":"Both minions can play prevention and non-prevention pre-range effects before mending the damage. If another pre-range damaging effect is played then, all damages are prevented and mended together.",
+                "refs":{
+                    "ANK 20170930":"https://www.vekn.net/forum/rules-questions/76197-still-confused-about-multiple-outside-the-hourglasses#83682"
+                }
             }
         ],
         "sect":"Camarilla",
@@ -51604,7 +51616,14 @@
         "name":"Portia",
         "new":false,
         "path":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Both minions can play prevention and non-prevention pre-range effects before mending the damage. If another pre-range damaging effect is played then, all damages are prevented and mended together.",
+                "refs":{
+                    "ANK 20170930":"https://www.vekn.net/forum/rules-questions/76197-still-confused-about-multiple-outside-the-hourglasses#83682"
+                }
+            }
+        ],
         "sect":"Camarilla",
         "set":{
             "KoTR":{
@@ -65335,7 +65354,7 @@
             {
                 "text":"Orun and Aye cards cannot be placed on him as long as he's not a Laibon.",
                 "refs":{
-                    "LSJ 20110611":"https://boardgamegeek.com/thread/662413/article/6920306"
+                    "LSJ 20110611":"https://usenet.krcg.org/t/bgg-662413/#m7"
                 }
             },
             {
@@ -65474,7 +65493,7 @@
             {
                 "text":"Capacity reduction happens at end of combat even if {101507|Psyche!} Is used",
                 "refs":{
-                    "LSJ 20090215":"http://groups.google.com/group/rec.games.trading-cards.jyhad/msg/945f61ee4b1581c0?hl=fr&lr=&ie=UTF-8"
+                    "LSJ 20020915":"https://usenet.krcg.org/t/5DHHwmBYkUo/#m1"
                 }
             },
             {
