@@ -1,5 +1,5 @@
 import ChatLeftQuoteFill from "@icons/chat-left-quote-fill.svg?react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Textarea } from "@/components";
 import { inventoryCardTextChange } from "@/context";
 
@@ -7,6 +7,10 @@ const InventoryText = ({ card, text, setIsHotkeysDisabled }) => {
   const [newText, setNewText] = useState(text || "");
   const handleChange = (event) => setNewText(event.target.value);
   const lines = newText.split("\n").length;
+
+  useEffect(() => {
+    if (newText !== text) setNewText(text ?? "");
+  }, [text]);
 
   const handleOnBlur = () => {
     if (setIsHotkeysDisabled) setIsHotkeysDisabled(false);
