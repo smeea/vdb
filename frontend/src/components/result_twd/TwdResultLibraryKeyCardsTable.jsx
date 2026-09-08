@@ -78,13 +78,15 @@ const TwdResultLibraryKeyCardsTable = ({ library, withHeader }) => {
             </Button>
           </div>
         ) : (
-          <Toggle
-            offValue="Key Cards"
-            isOn={showFullLibrary}
-            handleClick={() => setShowFullLibrary(!showFullLibrary)}
-          >
-            Full Library
-          </Toggle>
+          <div className="text-fgSecondary dark:text-whiteDark">
+            <Toggle
+              offValue="Key Cards"
+              isOn={showFullLibrary}
+              handleClick={() => setShowFullLibrary(!showFullLibrary)}
+            >
+              Full Library
+            </Toggle>
+          </div>
         )}
       </div>
       {showFullLibrary ? (
