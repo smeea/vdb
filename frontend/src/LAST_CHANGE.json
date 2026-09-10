@@ -1,8 +1,6 @@
 {
-  "version": "2026-09-05",
+  "version": "2026-09-10",
   "changes": [
-    "Precons with missing cards feature for Decks",
-    "Update rulings",
-    "Many fixes including crypt sort and card references in rulings"
+    "Fix deck change not to change deck info, fix inventory wishlist not changing"
   ]
 }

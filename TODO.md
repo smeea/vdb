@@ -1,5 +1,4 @@
 # FIX
-- Limited after update
 
 # FIX ON HOLD
 
@@ -15,3 +14,4 @@
 
 # TECH IMPROVEMENTS
 - Refactor with useEffectEvent https://react.dev/learn/separating-events-from-effects#extracting-non-reactive-logic-out-of-effects
+- Update to React 19.3

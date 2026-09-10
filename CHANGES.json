@@ -1,5 +1,11 @@
 [
   {
+    "version": "2026-09-10",
+    "changes": [
+      "Fix deck change not to change deck info, fix inventory wishlist not changing"
+    ]
+  },
+  {
     "version": "2026-09-05",
     "changes": [
       "Precons with missing cards feature for Decks",
