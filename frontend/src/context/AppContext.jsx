@@ -112,8 +112,6 @@ export const AppProvider = ({ children }) => {
   const [isOnline, setIsOnline] = useState(navigator.onLine);
   const [isPlaytestAdmin, setIsPlaytestAdmin] = useState();
   const [isPlaytester, setIsPlaytester] = useState();
-  // const [hidePlaytestNames, setHidePlaytestNames] = useState(false);
-  // const [showPlaytestImages, setShowPlaytestImages] = useState(true);
   const [playtestProfile, setPlaytestProfile] = useState();
 
   const {

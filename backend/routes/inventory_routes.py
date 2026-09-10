@@ -45,6 +45,7 @@ def get_shared_inventory(key):
 
     return jsonify(parse_user_inventory(inventory))
 
+
 @app.route("/api/inventory", methods=["DELETE"])
 @login_required
 def delete_inventory_route():
@@ -128,8 +129,8 @@ def inventory_wishlist_update_route():
             k = int(k)
             payload = {}
             target = merged_cards[k] if k in merged_cards else payload
-            if "value" in v:
-                target["value"] = v["value"]
+            if "q" in v:
+                target["q"] = v["q"]
             if "logic" in v:
                 target["logic"] = v["logic"]
 
