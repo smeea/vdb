@@ -61,5 +61,9 @@
     "library": "any",
     "scaling": "0"
   },
+  "matchV5": {
+    "crypt": "any",
+    "library": "any"
+  },
   "src": "any"
 }

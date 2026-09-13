@@ -69,6 +69,8 @@ class Deck(db.Model):
     library_total = db.Column(db.Integer)
     traits = db.Column(db.PickleType, default=[])
     favorited = db.Column(db.PickleType, default=[])
+    v5_crypt = db.Column(db.Numeric(3, 2), default=0)
+    v5_library = db.Column(db.Numeric(3, 2), default=0)
 
     def __repr__(self):
         return "<Deck {}>".format(self.name)

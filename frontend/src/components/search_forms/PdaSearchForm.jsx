@@ -42,14 +42,24 @@ import {
   STAR,
   TAGS,
   TRAITS,
+  V5,
+  MATCH_V5,
 } from "@/constants";
 import { clearSearchForm, searchPdaForm, setPdaResults, useApp } from "@/context";
 import { archiveServices } from "@/services";
 import { sanitizeFormState } from "@/utils";
 
 const PdaSearchForm = ({ error, setError }) => {
-  const { username, cryptCardBase, libraryCardBase, showFloatingButtons, inventoryMode, isMobile } =
-    useApp();
+  const {
+    username,
+    cryptCardBase,
+    libraryCardBase,
+    showFloatingButtons,
+    inventoryMode,
+    isMobile,
+    limitedMode,
+    limitedPreset,
+  } = useApp();
   const pdaFormState = useSnapshot(searchPdaForm);
   const [isLoading, setIsLoading] = useState(false);
   const [searchParams, setSearchParams] = useSearchParams();
@@ -222,6 +232,24 @@ const PdaSearchForm = ({ error, setError }) => {
               onChange={handleMatchInventoryScalingChange}
             />
           </div>
+        </>
+      )}
+      {limitedMode && limitedPreset === V5 && (
+        <>
+          <TwdSearchFormMatchInventory
+            value={pdaFormState[MATCH_V5][CRYPT]}
+            target={CRYPT}
+            onChange={handleChangeWithOpt}
+            name={MATCH_V5}
+            text="V5 by"
+          />
+          <TwdSearchFormMatchInventory
+            value={pdaFormState[MATCH_V5][LIBRARY]}
+            target={LIBRARY}
+            onChange={handleChangeWithOpt}
+            name={MATCH_V5}
+            text="V5 by"
+          />
         </>
       )}
       <TwdSearchFormDate value={pdaFormState[DATE]} onChange={handleChangeWithOpt} inPda />

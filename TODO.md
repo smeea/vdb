@@ -1,11 +1,10 @@
 # FIX
+- Generate V5 data for existing public decks
 
 # FIX ON HOLD
 
 # FEATURES
 - Inventory target documentation
-- Limited in TWD/PDA search
-- TWD search with % V5-compatibility
 
 # FEATURES ON HOLD
 - Draft Cube support -> when draft cube info is available

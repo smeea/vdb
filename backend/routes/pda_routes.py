@@ -44,12 +44,17 @@ def get_missing_fields(source):
     crypt_disciplines = set()
     total_capacity = 0
     total_crypt_ex_ac = 0
+    crypt_v5_total = 0
+    library_v5_total = 0
 
     for id, q in source.cards.items():
         if id > 200000:
             crypt[id] = crypt_db[str(id)]
             crypt[id]["q"] = q
             deck["crypt_total"] += q
+            if crypt[id]["v5"]:
+                crypt_v5_total += q
+
             if id != 200076:
                 total_crypt_ex_ac += q
 
@@ -57,6 +62,8 @@ def get_missing_fields(source):
             library[id] = library_db[str(id)]
             library[id]["q"] = q
             deck["library_total"] += q
+            if library[id]["v5"]:
+                library_v5_total += q
 
     for id, c in crypt.items():
         # Skip Anarch Convert
@@ -123,6 +130,8 @@ def get_missing_fields(source):
         deck["cardtypes_ratio"][ct.lower()] = q / deck["library_total"]
 
     deck["disciplines"] = sorted(list(disciplines))
+    deck["v5_crypt"] = round(crypt_v5_total / deck["crypt_total"], 2)
+    deck["v5_library"] = round(library_v5_total / deck["library_total"], 2)
 
     return deck
 
@@ -212,16 +221,12 @@ def search_pda_route():
     decks = []
     if request.json.get("src") in ["my-nonpublic", "my"]:
         decks = (
-            Deck.query.filter(Deck.author == current_user)
-            .order_by(Deck.creation_date.desc())
-            .all()
+            Deck.query.filter(Deck.author == current_user).order_by(Deck.creation_date.desc()).all()
         )
 
     else:
         decks = (
-            Deck.query.filter(Deck.public_parent != None)
-            .order_by(Deck.creation_date.desc())
-            .all()
+            Deck.query.filter(Deck.public_parent != None).order_by(Deck.creation_date.desc()).all()
         )
 
     for d in decks:
@@ -244,6 +249,8 @@ def search_pda_route():
             "traits": d.traits,
             "public_parent": d.public_parent,
             "owner": d.author,
+            "v5_crypt": d.v5_crypt,
+            "v5_library": d.v5_library,
         }
 
         for id, q in d.cards.items():
@@ -270,20 +277,15 @@ def search_pda_route():
         "disciplines",
         "cardtypes",
         "similar",
+        "matchV5",
     ]
 
-    queries = [
-        {"option": q, "value": request.json[q]}
-        for q in query_priority
-        if q in request.json
-    ]
+    queries = [{"option": q, "value": request.json[q]} for q in query_priority if q in request.json]
     result = search_decks(queries, pda_decks)
 
     matchInventory = request.json.get("matchInventory")
     if matchInventory:
-        result = match_inventory(
-            matchInventory, current_user.inventory, result or pda_decks
-        )
+        result = match_inventory(matchInventory, current_user.inventory, result or pda_decks)
 
     if not result:
         abort(400)
@@ -329,6 +331,8 @@ def new_public_deck_route(parent_id):
         sect=m["sect"],
         disciplines=m["disciplines"],
         traits=m["traits"],
+        v5_crypt=m["v5_crypt"],
+        v5_library=m["v5_library"],
     )
 
     parent.public_child = new_child_id
@@ -368,6 +372,8 @@ def update_public_deck(child_id):
     child.sect = m["sect"]
     child.disciplines = m["disciplines"]
     child.traits = m["traits"]
+    child.v5_crypt = m["v5_crypt"]
+    child.v5_library = m["v5_library"]
 
     db.session.commit()
     return jsonify(success=True)
@@ -395,9 +401,7 @@ def get_new_pda_route(quantity):
 
     counter = 0
     for d in (
-        Deck.query.filter(Deck.public_parent != None)
-        .order_by(Deck.creation_date.desc())
-        .all()
+        Deck.query.filter(Deck.public_parent != None).order_by(Deck.creation_date.desc()).all()
     ):
         if counter == quantity:
             break
@@ -421,9 +425,7 @@ def get_random_pda_route(quantity):
             decks_id.append(id)
 
     for idx, id in enumerate(decks_id):
-        decks.append(
-            minify_pda(all_decks[id]) if idx > 9 else sanitize_pda(all_decks[id])
-        )
+        decks.append(minify_pda(all_decks[id]) if idx > 9 else sanitize_pda(all_decks[id]))
 
     return jsonify(decks)
 

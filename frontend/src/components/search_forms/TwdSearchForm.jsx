@@ -226,7 +226,6 @@ const TwdSearchForm = ({ error, setError }) => {
           </div>
         </>
       )}
-
       {limitedMode && limitedPreset === V5 && (
         <>
           <TwdSearchFormMatchInventory
