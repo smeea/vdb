@@ -14,6 +14,7 @@ import {
   LIBRARY_TOTAL,
   LOCATION,
   MATCH_INVENTORY,
+  MATCH_V5,
   PDA,
   PLAYERS,
   POOL,
@@ -100,7 +101,7 @@ const sanitizeFormState = (target, state) => {
   switch (target) {
     case PDA:
     case TWD:
-      forms = [MATCH_INVENTORY];
+    forms = [MATCH_INVENTORY, MATCH_V5];
       break;
     default:
       forms = [];

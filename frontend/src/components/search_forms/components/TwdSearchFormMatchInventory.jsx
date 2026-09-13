@@ -2,14 +2,19 @@ import { Select } from "@/components";
 import { ANY, MATCH_INVENTORY } from "@/constants";
 import { capitalize } from "@/utils";
 
-const TwdSearchFormMatchInventory = ({ value = ANY, target, onChange }) => {
-  const name = MATCH_INVENTORY;
-
+const TwdSearchFormMatchInventory = ({
+  value = ANY,
+  target,
+  onChange,
+  name = MATCH_INVENTORY,
+  text = "In Inventory by",
+}) => {
   const options = [
     [ANY, "ANY"],
     ["0.7", "70%+"],
     ["0.8", "80%+"],
     ["0.9", "90%+"],
+    ["0.95", "95%+"],
     ["1.0", "100%"],
   ].map((i) => ({
     value: i[0],
@@ -21,7 +26,7 @@ const TwdSearchFormMatchInventory = ({ value = ANY, target, onChange }) => {
     <div className="flex items-center">
       <div className="w-full">
         <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
-          In Inventory by {capitalize(target)}:
+          {text} {capitalize(target)}:
         </div>
       </div>
       <div className="w-full">

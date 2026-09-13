@@ -37,11 +37,7 @@ def get_decks_by_crypt(crypt_request, decks):
                         counter += 1
 
             elif m == "lt0":
-                if (
-                    card in deck["crypt"]
-                    and deck["crypt"][card] <= q
-                    or card not in deck["crypt"]
-                ):
+                if card in deck["crypt"] and deck["crypt"][card] <= q or card not in deck["crypt"]:
                     counter += 1
 
         if counter == cards_counter:
@@ -139,10 +135,7 @@ def get_decks_by_players(request, decks):
     match_decks = []
 
     for deck in decks:
-        if (
-            deck["players"] != "Unknown"
-            and players_from <= deck["players"] <= players_to
-        ):
+        if deck["players"] != "Unknown" and players_from <= deck["players"] <= players_to:
             match_decks.append(deck)
 
     return match_decks
@@ -192,10 +185,7 @@ def get_decks_by_tags(value, decks):
     for deck in decks:
         tags = [*deck["tags"]["superior"], *deck["tags"]["base"]]
 
-        if (
-            set(positive_tags).issubset(tags)
-            and len(list(set(negative_tags) & set(tags))) == 0
-        ):
+        if set(positive_tags).issubset(tags) and len(list(set(negative_tags) & set(tags))) == 0:
             match_decks.append(deck)
 
     return match_decks
@@ -339,9 +329,7 @@ def match_inventory(request, inventory, decks):
             counter = 0
             scaling_factor = deck["library_total"] / scaling if scaling else None
             min_counter = (
-                scaling * library_ratio
-                if scaling
-                else deck["library_total"] * library_ratio
+                scaling * library_ratio if scaling else deck["library_total"] * library_ratio
             )
 
             for card, q in deck["library"].items():
@@ -354,6 +342,26 @@ def match_inventory(request, inventory, decks):
                         counter += q
 
             if counter < min_counter:
+                continue
+
+        match_decks.append(deck)
+
+    return match_decks
+
+
+def get_decks_by_matchV5(request, decks):
+    crypt_ratio = float(request.get("crypt") or 0)
+    library_ratio = float(request.get("library") or 0)
+
+    match_decks = []
+
+    for deck in decks:
+        if crypt_ratio:
+            if deck["v5_crypt"] < crypt_ratio:
+                continue
+
+        if library_ratio:
+            if deck["v5_library"] < library_ratio:
                 continue
 
         match_decks.append(deck)
@@ -391,12 +399,8 @@ def get_decks_by_similar(deckid, decks):
             query_library_total += q
 
     for deck in decks:
-        crypt_ratio = (
-            deck["crypt_total"] / query_crypt_total if query_crypt_total else 0
-        )
-        library_ratio = (
-            deck["library_total"] / query_library_total if query_library_total else 0
-        )
+        crypt_ratio = deck["crypt_total"] / query_crypt_total if query_crypt_total else 0
+        library_ratio = deck["library_total"] / query_library_total if query_library_total else 0
 
         matches_crypt = 0
         matches_library = 0
@@ -414,9 +418,7 @@ def get_decks_by_similar(deckid, decks):
             elif cardid in deck["library"]:
                 matches_library += min(q, deck["library"][cardid])
 
-        similarity = (
-            matches_crypt * crypt_ratio * CRYPT_COEF + matches_library * library_ratio
-        )
+        similarity = matches_crypt * crypt_ratio * CRYPT_COEF + matches_library * library_ratio
 
         if similarity > SIMILARITY_THRESHOLD:
             match_decks.append(deck)

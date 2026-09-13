@@ -36,6 +36,8 @@ def generate_twd(i):
     crypt_disciplines = set()
     total_capacity_ex_ac = 0
     total_crypt_ex_ac = 0
+    crypt_v5_total = 0
+    library_v5_total = 0
 
     for card in i["cards"]:
         id = card["id"]
@@ -45,6 +47,8 @@ def generate_twd(i):
         if id > 200000:
             c = crypt_db[str(id)]
             crypt_total += q
+            if c["v5"]:
+                crypt_v5_total += q
 
             # Skip Anarch Convert
             if id != 200076:
@@ -87,6 +91,8 @@ def generate_twd(i):
         if id < 200000:
             c = library_db[str(id)]
             library_total += q
+            if c["v5"]:
+                library_v5_total += q
 
             ct = c["type"].lower()
             cardtypes[ct] = cardtypes.get(ct, 0) + q
@@ -115,6 +121,9 @@ def generate_twd(i):
 
     deck["crypt_total"] = crypt_total
     deck["library_total"] = library_total
+
+    deck["v5_crypt"] = round(crypt_v5_total / crypt_total, 2)
+    deck["v5_library"] = round(library_v5_total / library_total, 2)
 
     return deck
 

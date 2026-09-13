@@ -149,6 +149,7 @@ export const MAGAJI = "magaji";
 export const MANEUVER = "maneuver";
 export const MASTER = "master";
 export const MATCH_INVENTORY = "matchInventory";
+export const MATCH_V5 = "matchV5";
 export const MISSING = "missing";
 export const MMPA = "mmpa";
 export const MONOCLAN = "monoclan";
