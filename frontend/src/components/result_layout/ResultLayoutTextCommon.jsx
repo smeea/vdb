@@ -6,8 +6,9 @@ import {
   ResultLayoutTextInventory,
   ResultLayoutTextRulings,
   ResultLayoutTextSets,
+  DeckTags,
 } from "@/components";
-import { ARTIST, ID, PLAYTEST_OLD, RULINGS } from "@/constants";
+import { TAGS, V5, ARTIST, ID, PLAYTEST_OLD, RULINGS } from "@/constants";
 import { useApp } from "@/context";
 import { getIsPlaytest } from "@/utils";
 
@@ -15,21 +16,13 @@ const ResultLayoutTextCommon = ({ handleClose, card, inPopover, setIsHotkeysDisa
   const { isPlaytester, inventoryMode } = useApp();
   const isPlaytest = getIsPlaytest(card[ID]);
 
+  console.log(card)
+
   return (
     <div className="flex flex-col gap-3">
       <div className="flex gap-2">
         <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Sets:</div>
         <ResultLayoutTextSets card={card} />
-      </div>
-      <div className="flex gap-2">
-        <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Artist:</div>
-        <div className="flex flex-wrap gap-x-2.5 gap-y-0.5">
-          <ResultLayoutTextArtist
-            handleClose={handleClose}
-            inCrypt={card[ID] > 200000}
-            artists={card[ARTIST]}
-          />
-        </div>
       </div>
       {Object.keys(card[RULINGS]).length > 0 && (
         <div className="flex flex-col gap-1">
@@ -46,6 +39,25 @@ const ResultLayoutTextCommon = ({ handleClose, card, inPopover, setIsHotkeysDisa
           <ResultLayoutTextRulings rulings={card[RULINGS]} />
         </div>
       )}
+      <div className="flex gap-2 justify-between">
+        <div className="flex gap-2">
+          <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Artist:</div>
+          <div className="flex flex-wrap gap-x-2.5 gap-y-0.5">
+            <ResultLayoutTextArtist
+              handleClose={handleClose}
+              inCrypt={card[ID] > 200000}
+              artists={card[ARTIST]}
+            />
+          </div>
+        </div>
+        {card[V5] && (
+          <div className="flex items-end">
+            <div className="font-bold text-sm px-1.5 py-1 bg-bgButton dark:bg-bgButtonDark rounded-sm max-h-[26px]">
+              V5
+            </div>
+          </div>
+        )}
+      </div>
       {!isPlaytest && !inPopover && inventoryMode && (
         <>
           <Hr />

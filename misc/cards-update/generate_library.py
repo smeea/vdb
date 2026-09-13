@@ -6,12 +6,14 @@ import multiprocessing
 
 
 with (
+    open("../../frontend/src/assets/data/limitedV5.json", "r") as limited_v5_file,
     open("twda.json", "r") as twda_input,
     open("rulings.json", "r") as rulings_file,
     open("vteslibmeta.csv", "r", encoding="utf-8-sig") as cardbase_meta_csv,
 ):
     rulings = json.load(rulings_file)
     twda = json.load(twda_input).values()
+    limited_v5 = json.load(limited_v5_file)
     reader_meta = csv.reader(cardbase_meta_csv)
     fieldnames_meta = next(reader_meta)
     csv_meta = csv.DictReader(cardbase_meta_csv, fieldnames_meta)
@@ -237,6 +239,12 @@ def generate_card(card):
                             date = f"{precon[0:4]}-{precon[4:6]}-{precon[6:8]}"
                             card["Set"][set[0]][date] = True
 
+    is_v5 = True if card["Id"] in limited_v5["allowed"]["crypt"].keys() else False
+    for i in card["Set"].keys():
+        if i in limited_v5["sets"].keys():
+            is_v5 = True
+            break
+
     artists = []
     for artist in re.split("; | & ", card["Artist"]):
         if artist in artist_fixes.keys():
@@ -314,6 +322,7 @@ def generate_card(card):
         "text": card["Card Text"],
         "twd": card["Twd"],
         "type": card["Type"],
+        "v5": is_v5,
     }
 
     if card["Type"] == "Master" and ("trifle" in card["Card Text"].lower()):

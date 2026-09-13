@@ -6,6 +6,7 @@ import multiprocessing
 
 
 with (
+    open("../../frontend/src/assets/data/limitedV5.json", "r") as limited_v5_file,
     open("../../frontend/src/assets/data/disciplinesList.json", "r") as disciplines_file,
     open("../../frontend/src/assets/data/virtuesList.json", "r") as virtues_file,
     open("rulings.json", "r") as rulings_file,
@@ -13,6 +14,7 @@ with (
 ):
     rulings = json.load(rulings_file)
     twda = json.load(twda_input).values()
+    limited_v5 = json.load(limited_v5_file)
     disciplines_list = json.load(disciplines_file)
     virtues_list = json.load(virtues_file)
 
@@ -185,6 +187,12 @@ def generate_card(card):
                             date = f"{precon[0:4]}-{precon[4:6]}-{precon[6:8]}"
                             card["Set"][set[0]][date] = True
 
+    is_v5 = True if card["Id"] in limited_v5["allowed"]["crypt"].keys() else False
+    for i in card["Set"].keys():
+        if i in limited_v5["sets"].keys():
+            is_v5 = True
+            break
+
     # Add Sect
     if card["Type"] == "Imbued":
         card["Sect"] = "Imbued"
@@ -280,6 +288,7 @@ def generate_card(card):
         "text": card["Card Text"],
         "title": card["Title"].lower(),
         "twd": card["Twd"],
+        "v5": is_v5,
     }
 
     if "Playtest Old" in card and card["Playtest Old"]:
