@@ -10237,7 +10237,7 @@
         "text":"Anarch: During an action he performs, Boles\u0142aw can burn 1 blood to reveal the top card of your crypt, then shuffle your crypt. If it is a copy of Boles\u0142aw, he gets +1 stealth; otherwise, he gets +1 strength.",
         "title":"",
         "twd":0,
-        "v5":false
+        "v5":true
     },
     "200212":{
         "adv":[
@@ -21955,7 +21955,7 @@
         "text":"Camarilla: If you burn the Edge for a vote, you get +1 vote. If you burn a political action card for a vote, you get +1 vote.",
         "title":"",
         "twd":1,
-        "v5":false
+        "v5":true
     },
     "200468":{
         "adv":"",
@@ -22898,7 +22898,7 @@
         "text":"Anarch: Once each combat, Gabriel can discard a card requiring an Anarch to get +1 strength that combat. -1 stealth.",
         "title":"",
         "twd":2,
-        "v5":false
+        "v5":true
     },
     "200489":{
         "adv":"",
@@ -24207,7 +24207,7 @@
         "text":"Anarch Baron of Miami: During your influence phase, Gilbert can burn 1 blood to reveal and remove the top card of your crypt from the game. If it is a Malkavian, a non-titled vampire you control becomes Anarch.",
         "title":"baron",
         "twd":27,
-        "v5":false
+        "v5":true
     },
     "200518":{
         "adv":"",
@@ -34808,7 +34808,7 @@
         "text":"Camarilla. 2 votes (titled): Karl can play cards requiring a justicar as if he were a justicar. +1 intercept.",
         "title":"2 votes",
         "twd":8,
-        "v5":false
+        "v5":true
     },
     "200756":{
         "adv":"",
@@ -41740,7 +41740,7 @@
         "text":"Camarilla primogen: If Maila is ready during your turn, you can discard a political action card [POLITICAL ACTION] to give a minion you control +1 stealth for the current action.",
         "title":"primogen",
         "twd":33,
-        "v5":false
+        "v5":true
     },
     "200899":{
         "adv":"",
@@ -50219,7 +50219,7 @@
         "text":"Independent: Once each turn, Okulos can burn 1 blood to draw 1 card (discard down afterward).",
         "title":"",
         "twd":2,
-        "v5":false
+        "v5":true
     },
     "201074":{
         "adv":"",
@@ -63026,7 +63026,7 @@
         "text":"Camarilla. 2 votes (titled): While /Victoria Ash/ is in your ready region, Tegyrius gets +2 votes. +1 strength.",
         "title":"2 votes",
         "twd":2,
-        "v5":false
+        "v5":true
     },
     "201354":{
         "adv":"",
@@ -66952,7 +66952,7 @@
         "text":"Camarilla: While Victoria is ready, you can discard 1 card during a bleed action to give an acting Banu Haqim +1 bleed. +1 bleed.",
         "title":"",
         "twd":6,
-        "v5":false
+        "v5":true
     },
     "201445":{
         "adv":"",

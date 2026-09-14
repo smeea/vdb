@@ -964,7 +964,7 @@
         "text":"Put this card on a Toreador. If this Toreador is blocked, the blocking minion's controller burns 1 pool before block resolution.",
         "twd":40,
         "type":"Master",
-        "v5":false
+        "v5":true
     },
     "100019":{
         "aka":"",
@@ -2376,7 +2376,7 @@
         "text":"(D) Enter combat with a locked minion. This acting minion gets 1 optional maneuver during that combat.",
         "twd":118,
         "type":"Action",
-        "v5":false
+        "v5":true
     },
     "102274":{
         "aka":"",
@@ -3862,7 +3862,7 @@
         "text":"Unique.\nPut this card in play. During each Methuselah's unlock phase, that Methuselah burns 1 pool unless they burn a vampire they control with capacity 4 or more to burn this card.",
         "twd":76,
         "type":"Master",
-        "v5":false
+        "v5":true
     },
     "100074":{
         "aka":"",
@@ -13577,7 +13577,7 @@
         "text":"Do not replace until after this action.\n(D) Enter combat with a minion. This acting minion gets 1 optional maneuver during that combat.",
         "twd":320,
         "type":"Action",
-        "v5":false
+        "v5":true
     },
     "100267":{
         "aka":"",
@@ -20550,7 +20550,7 @@
         "text":"Only usable before range is determined during the first round.\n[ani] Put this card in play with 3 counters. This vampire cannot use equipment this combat. Each time a card is played this combat, reset the number of counters on this card to 3. During the press step of each round this combat, this card automatically burns 1 of those counters to give this vampire 1 mandatory press to continue combat. Burn this card at the end of combat.\n[ANI] As above, but the presses are optional.",
         "twd":11,
         "type":"Combat",
-        "v5":false
+        "v5":true
     },
     "100409":{
         "aka":"",
@@ -51367,7 +51367,7 @@
         "text":"Unique location.\nLock to give a striking vampire you control +X strength for that strike (usable after both combatants have chosen their strike), where X is the number of votes the vampire has (e.g., a prince gets +2 strength).",
         "twd":17,
         "type":"Master",
-        "v5":false
+        "v5":true
     },
     "101014":{
         "aka":"",
@@ -51677,7 +51677,7 @@
         "text":"Unique.\nPut this card in play; it becomes a unique mortal ally with 1 life, 0 strength and 0 bleed. During your unlock phase, you can burn Jake to add up to 4 blood to a ready vampire with no blood.",
         "twd":661,
         "type":"Master",
-        "v5":false
+        "v5":true
     },
     "101020":{
         "aka":"",
@@ -58518,7 +58518,7 @@
         "text":"Only usable during the polling step of a political action before votes and ballots are cast.\nIf the referendum passes, the next referendum a vampire you control calls passes automatically (skip the polling step).",
         "twd":10,
         "type":"Reaction",
-        "v5":false
+        "v5":true
     },
     "101157":{
         "aka":"",
@@ -60145,7 +60145,7 @@
         "text":"Choose another Methuselah. Successful referendum means this card is put in play. You get -1 hand size. The chosen Methuselah does not replace cards during any Methuselah's minion phase. Vampires can call a referendum to burn this card as a +1 stealth political action.",
         "twd":39,
         "type":"Political Action",
-        "v5":false
+        "v5":true
     },
     "101193":{
         "aka":"",
@@ -61204,7 +61204,7 @@
         "text":"[ani][aus] If this action is blocked, this vampire gets 1 optional maneuver during the first round of the resulting combat and the blocking minion cannot strike: combat ends.\n[ANI][AUS] As above, with +1 stealth.",
         "twd":37,
         "type":"Action Modifier",
-        "v5":false
+        "v5":true
     },
     "101216":{
         "aka":"",
@@ -65707,7 +65707,7 @@
         "text":"+1 stealth action. Unique.\nPut this card in play; it becomes a 2-capacity unique Nosferatu of the same sect as the acting Nosferatu with basic Animalism [ani]. Nosferatu Bestial cannot perform non-hunt actions, cast votes or ballots, or have or use equipment. During your unlock phase, Nosferatu Bestial can employ a retainer requiring Animalism from your hand (requirements and cost apply as normal; this is not an action and cannot be blocked).",
         "twd":5,
         "type":"Action",
-        "v5":false
+        "v5":true
     },
     "101298":{
         "aka":"",
@@ -102421,7 +102421,7 @@
         "text":"Unique.\nPut this card in play. Tremere get +1 stealth during actions requiring Blood Sorcery [tha]. Vampires with basic Blood Sorcery can play combat cards requiring Blood Sorcery as if they had superior Blood Sorcery [THA]. Any minion can burn this card as a (D) action; Malkavians get -1 stealth during that action.",
         "twd":9,
         "type":"Master",
-        "v5":false
+        "v5":true
     },
     "102021":{
         "aka":"",
@@ -102562,7 +102562,7 @@
         "text":"Move 1 blood from each ready vampire you control to your pool.",
         "twd":169,
         "type":"Master",
-        "v5":false
+        "v5":true
     },
     "102024":{
         "aka":"",

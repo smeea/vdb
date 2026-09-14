@@ -187,7 +187,7 @@ def generate_card(card):
                             date = f"{precon[0:4]}-{precon[4:6]}-{precon[6:8]}"
                             card["Set"][set[0]][date] = True
 
-    is_v5 = True if card["Id"] in limited_v5["allowed"]["crypt"].keys() else False
+    is_v5 = True if str(card["Id"]) in limited_v5["allowed"]["crypt"].keys() else False
     for i in card["Set"].keys():
         if i in limited_v5["sets"].keys():
             is_v5 = True
