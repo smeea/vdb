@@ -2,7 +2,6 @@ import ArrowRepeat from "@icons/arrow-repeat.svg?react";
 import ChevronCompactLeft from "@icons/chevron-compact-left.svg?react";
 import ChevronCompactRight from "@icons/chevron-compact-right.svg?react";
 import { useEffect, useState } from "react";
-import { twMerge } from "tailwind-merge";
 import { ButtonFloat, CardImage, Modal, ResultLayoutText } from "@/components";
 import { useApp } from "@/context";
 import { useSwipe } from "@/hooks";
@@ -85,19 +84,13 @@ const ResultModal = ({ card, handleModalCardChange, handleClose }) => {
         </div>
         <div
           onClick={handleModalCardMinus}
-          className={twMerge(
-            "absolute bottom-1/2 left-[-40px] text-darkGray/50 sm:text-white dark:text-midGray/50 sm:dark:text-whiteDark",
-            showImage ? "h-[50px] max-sm:left-[0px]" : "h-[48px] max-sm:left-[-20px]",
-          )}
+          className="max-sm:fixed absolute left-[-15px] top-1/2 -translate-1/2 text-darkGray/50 sm:text-white dark:text-midGray/50 sm:dark:text-whiteDark h-[50px] max-sm:left-[27px]"
         >
           <ChevronCompactLeft width="48" height="64" viewBox="4 0 12 16" />
         </div>
         <div
           onClick={handleModalCardPlus}
-          className={twMerge(
-            "absolute right-[-40px] bottom-1/2 text-darkGray/50 sm:text-white dark:text-midGray/50 sm:dark:text-whiteDark",
-            showImage ? "h-[50px] max-sm:right-[0px]" : "h-[48px] max-sm:right-[-20px]",
-          )}
+          className="max-sm:fixed absolute right-[-65px] max-sm:right-[-21px] top-1/2 -translate-1/2 text-darkGray/50 sm:text-white dark:text-midGray/50 sm:dark:text-whiteDark h-[50px]"
         >
           <ChevronCompactRight width="48" height="64" viewBox="0 0 12 16" />
         </div>
