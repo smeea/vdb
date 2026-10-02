@@ -7571,9 +7571,6 @@
             },
             "V5A":{
                 "PG":"2"
-            },
-            "2P":{
-                "C":true
             }
         },
         "text":"Only usable before range is determined. A vampire can play only one Bear's Skin each combat.\n[ani][pro] This round, this vampire gets +1 strength and can prevent 1 damage.\n[ANI][PRO] This combat, this vampire gets +1 strength and can prevent 1 damage each round.",

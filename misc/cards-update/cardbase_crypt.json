@@ -27829,9 +27829,6 @@
             },
             "POD":{
                 "DTC":true
-            },
-            "2P":{
-                "C":true
             }
         },
         "text":"Independent: Hesha gets +1 stealth when hunting. +1 hunt.",
@@ -34251,9 +34248,6 @@
             },
             "POD":{
                 "DTC":true
-            },
-            "2P":{
-                "C":true
             }
         },
         "text":"Independent: Kalinda can bleed with +1 bleed as a +1 stealth (D) action that costs 2 blood. Blood cursed.",
@@ -40628,9 +40622,6 @@
             },
             "BSC":{
                 "X":1
-            },
-            "2P":{
-                "C":true
             }
         },
         "text":"Camarilla Ventrue Justicar: Lucinde can enter combat with any ready non-Camarilla vampire controlled by another Methuselah as a (D) action. During your unlock phase, you can burn the Edge to give Lucinde 1 blood from the blood bank.",
@@ -53512,9 +53503,6 @@
             },
             "CE":{
                 "PV":1
-            },
-            "2P":{
-                "C":true
             }
         },
         "text":"Camarilla Prince of London: Anne gets an additional +1 bleed when bleeding a Methuselah who controls a ready Tremere. +1 bleed.",
@@ -63138,9 +63126,6 @@
             },
             "POD":{
                 "DTC":true
-            },
-            "2P":{
-                "C":true
             }
         },
         "text":"Camarilla: If Tegyrius is ready, any Banu Haqim can put 1 allegiance counter on themselves as a +1 stealth action. Any Banu Haqim with any allegiance counters is considered Camarilla. Blood cursed. +1 strength.",
@@ -63231,6 +63216,9 @@
             "Promo":{
                 "2023-05-01":true,
                 "2024-04-23":true
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Camarilla. 2 votes (titled): While /Victoria Ash/ is in your ready region, Tegyrius gets +2 votes. +1 strength.",
