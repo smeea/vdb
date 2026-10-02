@@ -18,7 +18,6 @@
 1 Ayelech
 1 Azucena
 1 Barrens, The
-1 Bear’s Skin
 1 Belinde
 1 Bewitching Oration
 1 Blood Fury
@@ -26,6 +25,7 @@
 1 Bonding
 1 Bone Shambler
 1 Branimira
+1 Break the Bonds
 1 Bum's Rush
 1 Carmelita Neillson
 1 Carrion Crows
@@ -35,6 +35,7 @@
 1 Change of Target
 1 Chantry
 1 Chrysanthemum
+1 City Star Taxi
 1 Clara Hjortshøj
 1 Cloak the Gathering
 1 Creeping Sabotage
@@ -45,6 +46,7 @@
 1 Diana Iadanza
 1 Disputed Territory
 1 Diversion
+1 Doc Martina
 1 Domain Challenge
 1 Dominate
 1 Dominate Kine
@@ -55,7 +57,7 @@
 1 Dust Up
 1 Earth Control
 1 Elder Intervention
-1 Elder 	Library
+1 Elder Library
 1 Elisha Tucker
 1 Enchant Kindred
 1 Enhanced Coagulant
@@ -73,17 +75,19 @@
 1 Fiorenza Savona
 1 Fleetness
 1 Forced Awakening
+1 Forced Confessional
 1 Form of the Bat
 1 Form of the Cobra
-1 Fourth Tradition: The Accounting
+1 Fourth Tradition: Accounting
 1 Fragment of the Book of Nod
+1 Gathii
 1 Gebeyehu Abdu
 1 Gelasia Fotiou
 1 Gnaeus Aemilius Augustinus
 1 Grooming the Protégé
 1 Guard Dogs
 1 Hel-Blá
-1 Hesha Ruhadze
+1 Hesha Ruhadze (G6)
 1 Holliday "Burgundy" Hall
 1 Horace Radcliffe
 1 Horst von Brühl
@@ -93,7 +97,7 @@
 1 Instinctive Reaction
 1 Jenny Silver
 1 Juliet Parr
-1 Kalinda
+1 Kalinda (G6)
 1 Kamaluddin
 1 Karl Schrekt
 1 Kasim Bayar
@@ -110,7 +114,8 @@
 1 Lloyd Brooks
 1 Lost in Crowds
 1 Loup
-1 Lucinde, Alastor
+1 Luciano Carvalho
+1 Lucinde, Alastor (G7)
 1 Madison
 1 Maila
 1 Malachi
@@ -146,22 +151,26 @@
 1 Parity Shift
 1 Party Out Of Bounds
 1 Perfect Paragon
+1 Perfectionist
+1 Phaibun
 1 Platinum Protocol, The
 1 Political Ally
 1 Potence
 1 Powerbase: Munich
 1 Precognition
+1 Propaganda
 1 Protean
 1 Protected District
 1 Protection Racket
 1 Pulled Fangs
 1 Pursuit
-1 Queen Anne
+1 Queen Anne (G6)
 1 Ragnar Nordstrom
 1 Rego Motum
 1 Restoration
 1 Revolutionary Council
 1 Rewilding
+1 Roberto Rivamonte
 1 Roger de Camden
 1 Rolling with the Punches
 1 Rumor Mill, Tabloid Newspaper, The
@@ -178,18 +187,21 @@
 1 Shadow Cloak
 1 Shadow Sentinel
 1 Shadow Shift
+1 Shilmulo Tarot
 1 Shroud of Decay
 1 Siarhei Levchenko
 1 Side Strike
 1 Slam
+1 Sleeping Mind, The
 1 Soak
 1 Social Charm
 1 Soul Burn
-1 Spirit’s Touch
+1 Spirit's Touch
 1 Spying Mission
+1 Sreelekha
 1 Swallowed by the Night
 1 Taste of Vitae
-1 Tegyrius, Vizier
+1 Tegyrius, Vizier (G6)
 1 Telepathic Counter
 1 Telepathic Vote Counting
 1 Tension in the Ranks
