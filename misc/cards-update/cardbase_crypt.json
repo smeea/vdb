@@ -1535,6 +1535,13 @@
         "path":"",
         "rulings":[
             {
+                "text":"Cannot be used during a referendum that is automatically passing.",
+                "refs":{
+                    "PIB 20150105":"https://www.vekn.net/forum/rules-questions/68465-voting-is-complicated#68493",
+                    "LSJ 19980107":"https://usenet.krcg.org/t/aUUs4VCR_Ec/#m1"
+                }
+            },
+            {
                 "text":"The ability can be used while locked, only once per referendum.",
                 "refs":{
                     "ANK 20220705":"https://www.vekn.net/forum/rules-questions/79895-question-regarding-using-a-minion-card-text-ability-when-locked#105630"
@@ -2390,6 +2397,13 @@
         "path":"",
         "rulings":[
             {
+                "text":"Cannot be used during a referendum that is automatically passing.",
+                "refs":{
+                    "PIB 20150105":"https://www.vekn.net/forum/rules-questions/68465-voting-is-complicated#68493",
+                    "LSJ 19980107":"https://usenet.krcg.org/t/aUUs4VCR_Ec/#m1"
+                }
+            },
+            {
                 "text":"The ability can be used while locked, only once per referendum.",
                 "refs":{
                     "ANK 20220705":"https://www.vekn.net/forum/rules-questions/79895-question-regarding-using-a-minion-card-text-ability-when-locked#105630"
@@ -2620,7 +2634,15 @@
         "name":"Alfred Benezri",
         "new":false,
         "path":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"[MERGED] Cannot be used during a referendum that is automatically passing.",
+                "refs":{
+                    "PIB 20150105":"https://www.vekn.net/forum/rules-questions/68465-voting-is-complicated#68493",
+                    "LSJ 19980107":"https://usenet.krcg.org/t/aUUs4VCR_Ec/#m1"
+                }
+            }
+        ],
         "sect":"Sabbat",
         "set":{
             "Anarchs":{
@@ -3315,6 +3337,13 @@
         "new":false,
         "path":"",
         "rulings":[
+            {
+                "text":"Cannot be used during a referendum that is automatically passing.",
+                "refs":{
+                    "PIB 20150105":"https://www.vekn.net/forum/rules-questions/68465-voting-is-complicated#68493",
+                    "LSJ 19980107":"https://usenet.krcg.org/t/aUUs4VCR_Ec/#m1"
+                }
+            },
             {
                 "text":"The ability can be used while locked or in torpor, only once per referendum.",
                 "refs":{
@@ -6654,6 +6683,13 @@
                 }
             },
             {
+                "text":"Cannot be used during a referendum that is automatically passing.",
+                "refs":{
+                    "PIB 20150105":"https://www.vekn.net/forum/rules-questions/68465-voting-is-complicated#68493",
+                    "LSJ 19980107":"https://usenet.krcg.org/t/aUUs4VCR_Ec/#m1"
+                }
+            },
+            {
                 "text":"The ability can be used while locked or in torpor, only once per referendum.",
                 "refs":{
                     "ANK 20220705":"https://www.vekn.net/forum/rules-questions/79895-question-regarding-using-a-minion-card-text-ability-when-locked#105630",
@@ -9103,6 +9139,13 @@
         "new":false,
         "path":"",
         "rulings":[
+            {
+                "text":"Cannot be used during a referendum that is automatically passing.",
+                "refs":{
+                    "PIB 20150105":"https://www.vekn.net/forum/rules-questions/68465-voting-is-complicated#68493",
+                    "LSJ 19980107":"https://usenet.krcg.org/t/aUUs4VCR_Ec/#m1"
+                }
+            },
             {
                 "text":"The ability can be used while locked, only once per referendum.",
                 "refs":{
@@ -15170,6 +15213,13 @@
         "path":"",
         "rulings":[
             {
+                "text":"Cannot be used during a referendum that is automatically passing.",
+                "refs":{
+                    "PIB 20150105":"https://www.vekn.net/forum/rules-questions/68465-voting-is-complicated#68493",
+                    "LSJ 19980107":"https://usenet.krcg.org/t/aUUs4VCR_Ec/#m1"
+                }
+            },
+            {
                 "text":"The ability can be used while locked, only once per referendum.",
                 "refs":{
                     "ANK 20220705":"https://www.vekn.net/forum/rules-questions/79895-question-regarding-using-a-minion-card-text-ability-when-locked#105630"
@@ -19751,6 +19801,13 @@
                 }
             },
             {
+                "text":"Cannot be used during a referendum that is automatically passing.",
+                "refs":{
+                    "PIB 20150105":"https://www.vekn.net/forum/rules-questions/68465-voting-is-complicated#68493",
+                    "LSJ 19980107":"https://usenet.krcg.org/t/aUUs4VCR_Ec/#m1"
+                }
+            },
+            {
                 "text":"The ability can be used while locked or in torpor, only once per referendum.",
                 "refs":{
                     "ANK 20220705":"https://www.vekn.net/forum/rules-questions/79895-question-regarding-using-a-minion-card-text-ability-when-locked#105630",
@@ -20121,6 +20178,13 @@
         "new":false,
         "path":"",
         "rulings":[
+            {
+                "text":"Cannot be used during a referendum that is automatically passing.",
+                "refs":{
+                    "PIB 20150105":"https://www.vekn.net/forum/rules-questions/68465-voting-is-complicated#68493",
+                    "LSJ 19980107":"https://usenet.krcg.org/t/aUUs4VCR_Ec/#m1"
+                }
+            },
             {
                 "text":"The ability can be used while locked, only once per referendum.",
                 "refs":{
@@ -21328,6 +21392,13 @@
         "new":false,
         "path":"",
         "rulings":[
+            {
+                "text":"Cannot be used during a referendum that is automatically passing.",
+                "refs":{
+                    "PIB 20150105":"https://www.vekn.net/forum/rules-questions/68465-voting-is-complicated#68493",
+                    "LSJ 19980107":"https://usenet.krcg.org/t/aUUs4VCR_Ec/#m1"
+                }
+            },
             {
                 "text":"The ability can be used while locked or in torpor, only once per referendum.",
                 "refs":{
@@ -25049,6 +25120,13 @@
         "path":"",
         "rulings":[
             {
+                "text":"Cannot be used during a referendum that is automatically passing.",
+                "refs":{
+                    "PIB 20150105":"https://www.vekn.net/forum/rules-questions/68465-voting-is-complicated#68493",
+                    "LSJ 19980107":"https://usenet.krcg.org/t/aUUs4VCR_Ec/#m1"
+                }
+            },
+            {
                 "text":"The ability can be used while locked, only once per referendum.",
                 "refs":{
                     "ANK 20220705":"https://www.vekn.net/forum/rules-questions/79895-question-regarding-using-a-minion-card-text-ability-when-locked#105630"
@@ -25809,7 +25887,15 @@
         "name":"Gustav Breidenstein",
         "new":false,
         "path":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Cannot be used during a referendum that is automatically passing.",
+                "refs":{
+                    "PIB 20150105":"https://www.vekn.net/forum/rules-questions/68465-voting-is-complicated#68493",
+                    "LSJ 19980107":"https://usenet.krcg.org/t/aUUs4VCR_Ec/#m1"
+                }
+            }
+        ],
         "sect":"Camarilla",
         "set":{
             "KoTR":{
@@ -33291,6 +33377,13 @@
         "path":"",
         "rulings":[
             {
+                "text":"Cannot be used during a referendum that is automatically passing.",
+                "refs":{
+                    "PIB 20150105":"https://www.vekn.net/forum/rules-questions/68465-voting-is-complicated#68493",
+                    "LSJ 19980107":"https://usenet.krcg.org/t/aUUs4VCR_Ec/#m1"
+                }
+            },
+            {
                 "text":"The ability can be used while locked, only once per referendum.",
                 "refs":{
                     "ANK 20220705":"https://www.vekn.net/forum/rules-questions/79895-question-regarding-using-a-minion-card-text-ability-when-locked#105630"
@@ -35197,6 +35290,13 @@
                 }
             },
             {
+                "text":"Cannot be used during a referendum that is automatically passing.",
+                "refs":{
+                    "PIB 20150105":"https://www.vekn.net/forum/rules-questions/68465-voting-is-complicated#68493",
+                    "LSJ 19980107":"https://usenet.krcg.org/t/aUUs4VCR_Ec/#m1"
+                }
+            },
+            {
                 "text":"The ability can be used while locked or in torpor, only once per referendum.",
                 "refs":{
                     "ANK 20220705":"https://www.vekn.net/forum/rules-questions/79895-question-regarding-using-a-minion-card-text-ability-when-locked#105630",
@@ -36679,6 +36779,13 @@
                 "text":"The scarce penalty considers the apparent clan while controlled (in case of {100353|Clan Impersonation} and {100131|Banishment}).",
                 "refs":{
                     "LSJ 20011015":"https://usenet.krcg.org/t/ZXW0ScxTsBA/#m24"
+                }
+            },
+            {
+                "text":"The action ends unsuccessfully immediately, no other action modifier or reaction can be played afterwards.",
+                "refs":{
+                    "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
+                    "ANK 20200207":"https://www.vekn.net/forum/rules-questions/78423-mental-maze-and-obedience#98906"
                 }
             }
         ],
@@ -41058,6 +41165,13 @@
                 }
             },
             {
+                "text":"Cannot be used during a referendum that is automatically passing.",
+                "refs":{
+                    "PIB 20150105":"https://www.vekn.net/forum/rules-questions/68465-voting-is-complicated#68493",
+                    "LSJ 19980107":"https://usenet.krcg.org/t/aUUs4VCR_Ec/#m1"
+                }
+            },
+            {
                 "text":"The ability can be used while locked, only once per referendum.",
                 "refs":{
                     "ANK 20220705":"https://www.vekn.net/forum/rules-questions/79895-question-regarding-using-a-minion-card-text-ability-when-locked#105630"
@@ -42081,7 +42195,15 @@
         "name":"Maman Boumba",
         "new":false,
         "path":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Cannot be used during a referendum that is automatically passing.",
+                "refs":{
+                    "PIB 20150105":"https://www.vekn.net/forum/rules-questions/68465-voting-is-complicated#68493",
+                    "LSJ 19980107":"https://usenet.krcg.org/t/aUUs4VCR_Ec/#m1"
+                }
+            }
+        ],
         "sect":"Imbued",
         "set":{
             "NoR":{
@@ -45605,6 +45727,13 @@
                 }
             },
             {
+                "text":"Cannot be used during a referendum that is automatically passing.",
+                "refs":{
+                    "PIB 20150105":"https://www.vekn.net/forum/rules-questions/68465-voting-is-complicated#68493",
+                    "LSJ 19980107":"https://usenet.krcg.org/t/aUUs4VCR_Ec/#m1"
+                }
+            },
+            {
                 "text":"The ability can be used when in torpor.",
                 "refs":{
                     "LSJ 20011022":"https://usenet.krcg.org/t/KMg4MwD-Jn0/#m1"
@@ -46698,6 +46827,13 @@
         "path":"",
         "rulings":[
             {
+                "text":"Cannot be used during a referendum that is automatically passing.",
+                "refs":{
+                    "PIB 20150105":"https://www.vekn.net/forum/rules-questions/68465-voting-is-complicated#68493",
+                    "LSJ 19980107":"https://usenet.krcg.org/t/aUUs4VCR_Ec/#m1"
+                }
+            },
+            {
                 "text":"The ability can be used when in torpor.",
                 "refs":{
                     "LSJ 20011022":"https://usenet.krcg.org/t/KMg4MwD-Jn0/#m1"
@@ -47779,6 +47915,13 @@
                 "refs":{
                     "LSJ 20090304-2":"https://usenet.krcg.org/t/PcbRGxbYQUY/#m3"
                 }
+            },
+            {
+                "text":"Cannot be used during a referendum that is automatically passing.",
+                "refs":{
+                    "PIB 20150105":"https://www.vekn.net/forum/rules-questions/68465-voting-is-complicated#68493",
+                    "LSJ 19980107":"https://usenet.krcg.org/t/aUUs4VCR_Ec/#m1"
+                }
             }
         ],
         "sect":"Camarilla",
@@ -48670,6 +48813,13 @@
                 "text":"Cannot use her ability to force an abstaining vampire to vote.",
                 "refs":{
                     "ANK 20190731":"https://www.vekn.net/forum/rules-questions/77812-abstain-from-voting?start=6#96048"
+                }
+            },
+            {
+                "text":"Cannot be used during a referendum that is automatically passing.",
+                "refs":{
+                    "PIB 20150105":"https://www.vekn.net/forum/rules-questions/68465-voting-is-complicated#68493",
+                    "LSJ 19980107":"https://usenet.krcg.org/t/aUUs4VCR_Ec/#m1"
                 }
             },
             {
@@ -53394,7 +53544,15 @@
         "name":"Queen Anne",
         "new":true,
         "path":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Cannot be used during a referendum that is automatically passing.",
+                "refs":{
+                    "PIB 20150105":"https://www.vekn.net/forum/rules-questions/68465-voting-is-complicated#68493",
+                    "LSJ 19980107":"https://usenet.krcg.org/t/aUUs4VCR_Ec/#m1"
+                }
+            }
+        ],
         "sect":"Camarilla",
         "set":{
             "FoL":{
@@ -54681,6 +54839,13 @@
         "new":false,
         "path":"",
         "rulings":[
+            {
+                "text":"Cannot be used during a referendum that is automatically passing.",
+                "refs":{
+                    "PIB 20150105":"https://www.vekn.net/forum/rules-questions/68465-voting-is-complicated#68493",
+                    "LSJ 19980107":"https://usenet.krcg.org/t/aUUs4VCR_Ec/#m1"
+                }
+            },
             {
                 "text":"The ability can be used while locked, only once per referendum.",
                 "refs":{
@@ -58393,7 +58558,15 @@
         "name":"Sayshila",
         "new":false,
         "path":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Cannot be used during a referendum that is automatically passing.",
+                "refs":{
+                    "PIB 20150105":"https://www.vekn.net/forum/rules-questions/68465-voting-is-complicated#68493",
+                    "LSJ 19980107":"https://usenet.krcg.org/t/aUUs4VCR_Ec/#m1"
+                }
+            }
+        ],
         "sect":"Independent",
         "set":{
             "LoB":{
@@ -58580,7 +58753,15 @@
         "name":"Sean Rycek",
         "new":false,
         "path":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Cannot be used during a referendum that is automatically passing.",
+                "refs":{
+                    "PIB 20150105":"https://www.vekn.net/forum/rules-questions/68465-voting-is-complicated#68493",
+                    "LSJ 19980107":"https://usenet.krcg.org/t/aUUs4VCR_Ec/#m1"
+                }
+            }
+        ],
         "sect":"Camarilla",
         "set":{
             "TR":{
@@ -61168,6 +61349,13 @@
         "path":"",
         "rulings":[
             {
+                "text":"Cannot be used during a referendum that is automatically passing.",
+                "refs":{
+                    "PIB 20150105":"https://www.vekn.net/forum/rules-questions/68465-voting-is-complicated#68493",
+                    "LSJ 19980107":"https://usenet.krcg.org/t/aUUs4VCR_Ec/#m1"
+                }
+            },
+            {
                 "text":"The ability can be used while locked, only once per referendum.",
                 "refs":{
                     "ANK 20220705":"https://www.vekn.net/forum/rules-questions/79895-question-regarding-using-a-minion-card-text-ability-when-locked#105630"
@@ -61609,6 +61797,13 @@
         "path":"",
         "rulings":[
             {
+                "text":"Cannot be used during a referendum that is automatically passing.",
+                "refs":{
+                    "PIB 20150105":"https://www.vekn.net/forum/rules-questions/68465-voting-is-complicated#68493",
+                    "LSJ 19980107":"https://usenet.krcg.org/t/aUUs4VCR_Ec/#m1"
+                }
+            },
+            {
                 "text":"The ability can be used while locked, only once per referendum.",
                 "refs":{
                     "ANK 20220705":"https://www.vekn.net/forum/rules-questions/79895-question-regarding-using-a-minion-card-text-ability-when-locked#105630"
@@ -61673,6 +61868,13 @@
                 "text":"[MERGED] Can use his ability while locked.",
                 "refs":{
                     "ANK 20220705":"https://www.vekn.net/forum/rules-questions/79895-question-regarding-using-a-minion-card-text-ability-when-locked#105630"
+                }
+            },
+            {
+                "text":"[MERGED] Cannot be used during a referendum that is automatically passing.",
+                "refs":{
+                    "PIB 20150105":"https://www.vekn.net/forum/rules-questions/68465-voting-is-complicated#68493",
+                    "LSJ 19980107":"https://usenet.krcg.org/t/aUUs4VCR_Ec/#m1"
                 }
             }
         ],
@@ -62971,7 +63173,15 @@
         "name":"Tegyrius, Vizier",
         "new":false,
         "path":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"Cannot be used during a referendum that is automatically passing.",
+                "refs":{
+                    "PIB 20150105":"https://www.vekn.net/forum/rules-questions/68465-voting-is-complicated#68493",
+                    "LSJ 19980107":"https://usenet.krcg.org/t/aUUs4VCR_Ec/#m1"
+                }
+            }
+        ],
         "sect":"Camarilla",
         "set":{
             "Anarchs":{
@@ -69174,6 +69384,13 @@
         "new":false,
         "path":"",
         "rulings":[
+            {
+                "text":"Cannot be used during a referendum that is automatically passing.",
+                "refs":{
+                    "PIB 20150105":"https://www.vekn.net/forum/rules-questions/68465-voting-is-complicated#68493",
+                    "LSJ 19980107":"https://usenet.krcg.org/t/aUUs4VCR_Ec/#m1"
+                }
+            },
             {
                 "text":"The ability can be used when in torpor.",
                 "refs":{

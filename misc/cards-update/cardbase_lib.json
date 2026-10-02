@@ -17915,16 +17915,16 @@
         "requirement":"same circle",
         "rulings":[
             {
+                "text":"A vampire with no circle designation is in his own unique circle. Vampires with the same name (eg. {100633|The Embrace}, non-unique vampires) do not share a circle by default, each has his own circle of one by default.",
+                "refs":{
+                    "LSJ 20020609":"https://usenet.krcg.org/t/Q_Lk0DPHqC8/#m1"
+                }
+            },
+            {
                 "text":"The action ends unsuccessfully immediately, no other action modifier or reaction can be played afterwards.",
                 "refs":{
                     "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
                     "ANK 20200207":"https://www.vekn.net/forum/rules-questions/78423-mental-maze-and-obedience#98906"
-                }
-            },
-            {
-                "text":"A vampire with no circle designation is in his own unique circle. Vampires with the same name (eg. {100633|The Embrace}, non-unique vampires) do not share a circle by default, each has his own circle of one by default.",
-                "refs":{
-                    "LSJ 20020609":"https://usenet.krcg.org/t/Q_Lk0DPHqC8/#m1"
                 }
             }
         ],
@@ -41994,17 +41994,17 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"[obe] [ACTION MODIFIER][REACTION] The action ends unsuccessfully immediately, no other action modifier or reaction can be played afterwards.",
-                "refs":{
-                    "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
-                    "ANK 20200207":"https://www.vekn.net/forum/rules-questions/78423-mental-maze-and-obedience#98906"
-                }
-            },
-            {
                 "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
                 "refs":{
                     "LSJ 20011204-3":"https://usenet.krcg.org/t/JhBwcZjDlaQ/#m1",
                     "PIB 20130704":"https://www.vekn.net/forum/rules-questions/50982-iron-heart-vs-virtuosa#50984"
+                }
+            },
+            {
+                "text":"[obe] The action ends unsuccessfully immediately, no other action modifier or reaction can be played afterwards.",
+                "refs":{
+                    "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
+                    "ANK 20200207":"https://www.vekn.net/forum/rules-questions/78423-mental-maze-and-obedience#98906"
                 }
             }
         ],
@@ -53798,12 +53798,6 @@
                 }
             },
             {
-                "text":"No reaction or modifier can be played afterwards: the action ends immediately.",
-                "refs":{
-                    "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/"
-                }
-            },
-            {
                 "text":"The action has not reached resolution, it is effectively canceled. The same vampire can undertake the same action again, but not if it was blocked then continued before (eg. [PRO] {100771|Form of Mist}).",
                 "refs":{
                     "ANK 20211015":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#103563",
@@ -53817,6 +53811,10 @@
                 "refs":{
                     "ANK 20210124":"https://www.vekn.net/forum/rules-questions/79001-the-question-of-the-month-action-fizzles#101492"
                 }
+            },
+            {
+                "text":"The action ends immediately, no other action modifier or reaction can be played afterwards.",
+                "refs":{}
             }
         ],
         "set":{
@@ -58046,13 +58044,6 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"The action ends unsuccessfully immediately, no other action modifier or reaction can be played afterwards.",
-                "refs":{
-                    "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
-                    "ANK 20200207":"https://www.vekn.net/forum/rules-questions/78423-mental-maze-and-obedience#98906"
-                }
-            },
-            {
                 "text":"Can be used by a locked vampire.",
                 "refs":{
                     "PIB 20150720":"https://www.vekn.net/forum/rules-questions/72088-action-modifiers#72124",
@@ -58064,6 +58055,13 @@
                 "refs":{
                     "PIB 20150720":"https://www.vekn.net/forum/rules-questions/72088-action-modifiers#72124",
                     "RTR 19970306":"https://usenet.krcg.org/t/1dlmpgX6t14/#m0"
+                }
+            },
+            {
+                "text":"The action ends unsuccessfully immediately, no other action modifier or reaction can be played afterwards.",
+                "refs":{
+                    "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
+                    "ANK 20200207":"https://www.vekn.net/forum/rules-questions/78423-mental-maze-and-obedience#98906"
                 }
             }
         ],
@@ -60598,16 +60596,16 @@
         "requirement":"",
         "rulings":[
             {
+                "text":"Can be played if the requirement was met at the time of block, even if an older slave replaced the acting vampire since.",
+                "refs":{
+                    "ANK 20171212":"https://www.vekn.net/forum/rules-questions/76334-slave-mental-maze-interaction?start=12#84553"
+                }
+            },
+            {
                 "text":"The action ends unsuccessfully immediately, no other action modifier or reaction can be played afterwards.",
                 "refs":{
                     "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
                     "ANK 20200207":"https://www.vekn.net/forum/rules-questions/78423-mental-maze-and-obedience#98906"
-                }
-            },
-            {
-                "text":"Can be played if the requirement was met at the time of block, even if an older slave replaced the acting vampire since.",
-                "refs":{
-                    "ANK 20171212":"https://www.vekn.net/forum/rules-questions/76334-slave-mental-maze-interaction?start=12#84553"
                 }
             }
         ],
@@ -61565,14 +61563,6 @@
                 }
             },
             {
-                "text":"[THA] If the action is blocked, it ends unsuccessfully immediately, no other action modifier or reaction can be played afterwards (eg. {100788|Freak Drive}, slave rule, {101838|Sowing Dissension}).",
-                "refs":{
-                    "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
-                    "ANK 20200207":"https://www.vekn.net/forum/rules-questions/78423-mental-maze-and-obedience#98906",
-                    "ANK 20210627":"https://www.vekn.net/forum/rules-questions/79192-mirror-walk-and-slave?start=12#102578"
-                }
-            },
-            {
                 "text":"[THA] If the action is blocked and it was leaving torpor, the blocker does not get an opportunity to diablerize.",
                 "refs":{
                     "PIB 20121216":"https://www.vekn.net/forum/rules-questions/42974-leave-from-torpor-question#43002"
@@ -61586,6 +61576,13 @@
                     "ANK 20210627":"https://www.vekn.net/forum/rules-questions/79192-mirror-walk-and-slave?start=12#102578",
                     "RTR 19991206":"https://usenet.krcg.org/t/N7iEmqgP9WU/#m0",
                     "LSJ 20091125":"https://usenet.krcg.org/t/1dYtrdRjRI8/#m1"
+                }
+            },
+            {
+                "text":"[THA] The action ends unsuccessfully immediately, no other action modifier or reaction can be played afterwards.",
+                "refs":{
+                    "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
+                    "ANK 20200207":"https://www.vekn.net/forum/rules-questions/78423-mental-maze-and-obedience#98906"
                 }
             }
         ],
@@ -66214,17 +66211,16 @@
                 }
             },
             {
-                "text":"The action ends unsuccessfully immediately, combat does not happen, no other action modifier or reaction can be played afterwards.",
-                "refs":{
-                    "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
-                    "ANK 20170105":"https://www.vekn.net/forum/rules-questions/75512-raptor-obedience#80020",
-                    "ANK 20200207":"https://www.vekn.net/forum/rules-questions/78423-mental-maze-and-obedience#98906"
-                }
-            },
-            {
                 "text":"Cannot be played if the opponent is not the acting vampire, for example if a slave took his place.",
                 "refs":{
                     "ANK 20171212":"https://www.vekn.net/forum/rules-questions/76334-slave-mental-maze-interaction?start=12#84553"
+                }
+            },
+            {
+                "text":"The action ends unsuccessfully immediately, no other action modifier or reaction can be played afterwards.",
+                "refs":{
+                    "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
+                    "ANK 20200207":"https://www.vekn.net/forum/rules-questions/78423-mental-maze-and-obedience#98906"
                 }
             }
         ],
@@ -70492,6 +70488,16 @@
                 "refs":{
                     "RTR 20000501":"https://usenet.krcg.org/t/MKrA0hBXuaU/#m0",
                     "LSJ 20070411-2":"https://usenet.krcg.org/t/-B6BlRIT0Rg/#m8"
+                }
+            },
+            {
+                "text":"Is a Directed Action against all (other) Methuselah.\n(Actions which target another player's hand, uncontrolled region, crypt, or library (or cards therein) are directed at that player. Actions which target another player's ash heap are undirected by default)",
+                "refs":{
+                    "LSJ 20010925":"https://usenet.krcg.org/t/rZcOI3IZOJw/#m2",
+                    "LSJ 20100713":"https://usenet.krcg.org/t/sWt7HVuu4Hs/#m3",
+                    "PIB 20121230":"https://www.vekn.net/forum/rules-questions/43471-petra-resonance-is-a-d-action-right?start=0#43477",
+                    "PIB 20150821":"https://www.vekn.net/forum/rules-questions/72609-sowing-dissension?start=6#72632",
+                    "RTR 20080808":"https://usenet.krcg.org/t/1jW6GXrIRSU/#m0"
                 }
             }
         ],
@@ -74981,17 +74987,17 @@
         "requirement":"",
         "rulings":[
             {
-                "text":"The action ends unsuccessfully immediately, no other action modifier or reaction can be played afterwards.",
-                "refs":{
-                    "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
-                    "ANK 20200207":"https://www.vekn.net/forum/rules-questions/78423-mental-maze-and-obedience#98906"
-                }
-            },
-            {
                 "text":"Cannot be used during a referendum that is automatically passing.",
                 "refs":{
                     "PIB 20150105":"https://www.vekn.net/forum/rules-questions/68465-voting-is-complicated#68493",
                     "LSJ 19980107":"https://usenet.krcg.org/t/aUUs4VCR_Ec/#m1"
+                }
+            },
+            {
+                "text":"The action ends unsuccessfully immediately, no other action modifier or reaction can be played afterwards.",
+                "refs":{
+                    "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
+                    "ANK 20200207":"https://www.vekn.net/forum/rules-questions/78423-mental-maze-and-obedience#98906"
                 }
             }
         ],
@@ -79153,6 +79159,13 @@
                 "text":"Actions provided by cards in play are not the same if the card is not the same, even if the cards have the same name.",
                 "refs":{
                     "LSJ 20080725":"https://usenet.krcg.org/t/jWWCwKnran0/#m1"
+                }
+            },
+            {
+                "text":"The action ends unsuccessfully immediately, no other action modifier or reaction can be played afterwards.",
+                "refs":{
+                    "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
+                    "ANK 20200207":"https://www.vekn.net/forum/rules-questions/78423-mental-maze-and-obedience#98906"
                 }
             }
         ],
@@ -92582,8 +92595,11 @@
         "requirement":"anarch",
         "rulings":[
             {
-                "text":"Is an action directed at all other Methuselahs",
+                "text":"Is a Directed Action against all (other) Methuselah.\n(Actions which target another player's hand, uncontrolled region, crypt, or library (or cards therein) are directed at that player. Actions which target another player's ash heap are undirected by default)",
                 "refs":{
+                    "LSJ 20010925":"https://usenet.krcg.org/t/rZcOI3IZOJw/#m2",
+                    "LSJ 20100713":"https://usenet.krcg.org/t/sWt7HVuu4Hs/#m3",
+                    "PIB 20121230":"https://www.vekn.net/forum/rules-questions/43471-petra-resonance-is-a-d-action-right?start=0#43477",
                     "PIB 20150821":"https://www.vekn.net/forum/rules-questions/72609-sowing-dissension?start=6#72632",
                     "RTR 20080808":"https://usenet.krcg.org/t/1jW6GXrIRSU/#m0"
                 }
@@ -107622,7 +107638,15 @@
         "path":"",
         "pool":0,
         "requirement":"",
-        "rulings":[],
+        "rulings":[
+            {
+                "text":"The action ends unsuccessfully immediately, no other action modifier or reaction can be played afterwards.",
+                "refs":{
+                    "RTR 20180719":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
+                    "ANK 20200207":"https://www.vekn.net/forum/rules-questions/78423-mental-maze-and-obedience#98906"
+                }
+            }
+        ],
         "set":{
             "SW":{
                 "U":true

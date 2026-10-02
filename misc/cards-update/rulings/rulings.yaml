@@ -648,9 +648,6 @@
   - '[tha] This is an equip action. [TOM 19960130]'
 100347|Church of the Order of St. Blaise:
   - Can put counters on locations that use "blood" or "pool" counters. [PIB 20110712-1] [LSJ 20040518-2]
-100352|Claiming the Body:
-  - The action ends unsuccessfully immediately, no other action modifier or reaction can be played afterwards. [RTR 20180719]
-    [ANK 20200207]
 100353|Clan Impersonation:
   - Does not remove any slave status. [LSJ 20030511]
   - Does not changes the sect. [RTR 20201130]
@@ -1343,9 +1340,6 @@
     for this card. [PIB 20150428]
   - At action resolution, the number of cards declared must be put on the card. If there are less cards available (eg. {100771|Form
     of Mist} was played to continue the action), then all of them are put on the Gift. [PIB 20150428]
-100828|Gift of Sleep:
-  - '[obe] [ACTION MODIFIER][REACTION] The action ends unsuccessfully immediately, no other action modifier or reaction can
-    be played afterwards. [RTR 20180719] [ANK 20200207]'
 100836|Glaser Rounds:
   - Must wait until the second time a given gun is used in a given combat to play it. [RTR 19941109]
   - Additional damage inherits all of the properties of the base damage. [TOM 19960225]
@@ -1721,7 +1715,6 @@
 101062|The Kiss of Ra:
   - When used by an acting vampire in torpor, there is no opportunity to diablerize the acting vampire, as the action is ended
     without a successful block. [RBK leave-torpor] [LSJ 19970325]
-  - 'No reaction or modifier can be played afterwards: the action ends immediately. [RTR 20180719]'
   - The action has not reached resolution, it is effectively canceled. The same vampire can undertake the same action again,
     but not if it was blocked then continued before (eg. [PRO] {100771|Form of Mist}). [ANK 20211015] [ANK 20210124] [LSJ
     20090220] [LSJ 20070709]
@@ -1879,8 +1872,6 @@
   - Multiple Major Boons in play cannot be burned on the same bleed action - after the first is burned, "you" are no longer
     the Methuselah burning pool. [LSJ 19990218]
 101146|Make an Example:
-  - The action ends unsuccessfully immediately, no other action modifier or reaction can be played afterwards. [RTR 20180719]
-    [ANK 20200207]
   - Can be used by a locked vampire. [PIB 20150720] [RTR 19941109]
   - Cannot be used by a vampire in torpor. [PIB 20150720] [RTR 19970306]
 101150|Malkavian Dementia:
@@ -1964,8 +1955,6 @@
 101200|Memory's Fading Glimpse:
   - Any cards on the target minion are burned. [SFC 19960919]
 101201|Mental Maze:
-  - The action ends unsuccessfully immediately, no other action modifier or reaction can be played afterwards. [RTR 20180719]
-    [ANK 20200207]
   - Can be played if the requirement was met at the time of block, even if an older slave replaced the acting vampire since.
     [ANK 20171212]
 101204|Mercy for the Weak:
@@ -1993,13 +1982,8 @@
 101223|Mirror Walk:
   - "[THA] The would be blocker is locked even if he benefits from an effect that prevents him to lock when he blocks. He\
     \ is not locked from the block, but from Mirror Walk's effect. [ANK 20191204]"
-  - '[THA] If the action is blocked, it ends unsuccessfully immediately, no other action modifier or reaction can be played
-    afterwards (eg. {100788|Freak Drive}, slave rule, {101838|Sowing Dissension}). [RTR 20180719] [ANK 20200207] [ANK 20210627]'
   - '[THA] If the action is blocked and it was leaving torpor, the blocker does not get an opportunity to diablerize. [PIB
     20121216]'
-101224|Mirror's Visage:
-  - '[chi] The action ends unsuccessfully immediately, no other action modifier or reaction can be played afterwards. [RTR
-    20180719] [ANK 20200207]'
 101230|Mob Rule:
   - Each Methuselah must decide how much blood to burn for it during the resolution. It does not give an ability for the rest
     of the political action. However, there can be some give and take during the resolution. For example, Methuselahs can
@@ -2125,8 +2109,6 @@
     [LSJ 20080725]
   - Can be played by an unlocked older vampire to avoid a new combat queued after a preceding combat, if the opponent is still
     the acting vampire. [LSJ 19991025]
-  - The action ends unsuccessfully immediately, combat does not happen, no other action modifier or reaction can be played
-    afterwards. [RTR 20180719] [ANK 20170105] [ANK 20200207]
   - Cannot be played if the opponent is not the acting vampire, for example if a slave took his place. [ANK 20171212]
 101315|Of Noble Blood:
   - Is a directed action if a vampire controlled by another Methuselah is chosen. [ANK 20190606]
@@ -2297,9 +2279,6 @@
   - A minion who maneuvers with a gun may still use Projectile to shoot with that gun as his initial strike that round. [LSJ
     20050304]
   - Cannot be used to strike with a weapon whose strike isn't ranged. [LSJ 20050224-3]
-101494|Promise of 1528:
-  - The action ends unsuccessfully immediately, no other action modifier or reaction can be played afterwards. [RTR 20180719]
-    [ANK 20200207]
 101500|Protected Resources:
   - All cards which modify the bleed amount are applied before Protected Resources's effect. [TOM 19960413]
   - 'Does not alter the bleed amount: it merely limits the maximum amount of pool the target of the bleed burns for the successful
@@ -2682,9 +2661,6 @@
   - Damage is environmental. [RTR 19970630]
 101757|Shatter the Gate:
   - The counters stay active after the acting Methuselah is ousted. [LSJ 20100206-2]
-101758|Shattered Mirror:
-  - The action ends unsuccessfully immediately, no other action modifier or reaction can be played afterwards. [RTR 20180719]
-    [ANK 20200207]
 101760|Shattering Blow:
   - Cannot be used if there is no equipment to destroy. [RTR 19980928]
 101761|Shattering Crescendo:
@@ -2807,8 +2783,6 @@
     \ {200749|Kamiri wa Itherero}'s ability). [RTR 19960124] [LSJ 20090922] [ANK 20181022]"
   - '[ACTION MODIFIER] If played on a diablerie, can be played before or after getting a Discipline card (if any), but must
     be played before the Blood Hunt. [RTR 19991206]'
-101838|Sowing Dissension:
-  - Is an action directed at all other Methuselahs [PIB 20150821] [RTR 20080808]
 101845|Spell of Life:
   - The copies you burn need not be ones you control. [LSJ 20090428]
   - The mummies put into play are unique by card name. The name is "in play" for anything that cares. They contest unique
@@ -4811,3 +4785,12 @@ G00163|Cannot gain blood:
 G00164|Damage before range is determined:
   - Both minions can play prevention and non-prevention pre-range effects before mending the damage. If another pre-range
     damaging effect is played then, all damages are prevented and mended together. [ANK 20170930]
+G00165|Action directed at all methuselah:
+  - "Is a Directed Action against all (other) Methuselah.\n(Actions which target another player's hand, uncontrolled region,\
+    \ crypt, or library (or cards therein) are directed at that player. Actions which target another player's ash heap are\
+    \ undirected by default) [LSJ 20010925] [LSJ 20100713] [PIB 20121230] [PIB 20150821] [RTR 20080808]"
+G00166|Action ended by an effect:
+  - overrides:
+      101062|The Kiss of Ra: The action ends immediately, no other action modifier or reaction can be played afterwards.
+    text: The action ends unsuccessfully immediately, no other action modifier or reaction can be played afterwards. [RTR
+      20180719] [ANK 20200207]
