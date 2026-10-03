@@ -92,8 +92,11 @@
     color: var(--color-fgPrimary);
     background: var(--color-bgPrimary);
     @variant dark {
-      color: var(--color-fgPrimaryDark);
-      background: var(--color-bgPrimaryDark);
+        color: var(--color-fgPrimaryDark);
+        background: var(--color-bgPrimaryDark);
+    }
+    @media print {
+        background: var(--color-white);
     }
   }
   a {

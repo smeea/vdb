@@ -8,6 +8,7 @@ const Hr = ({ isThick, isLight, className }) => {
           ? "text-borderPrimary dark:text-borderPrimaryDark"
           : "text-bgSecondary dark:text-bgSecondaryDark",
         isThick && "border-2",
+        "print:dark:text-lightGray print:text-lightGray",
         className,
       )}
     />

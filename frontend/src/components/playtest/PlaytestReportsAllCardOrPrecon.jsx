@@ -18,7 +18,7 @@ const PlaytestReportsAllCardOrPrecon = ({ product, isPrecon, report, maxSameScor
 
   return (
     <>
-      <FlexGapped className="max-sm:flex-col print:break-after-page print:p-8">
+      <FlexGapped className="max-sm:flex-col print:break-after-page print:flex-row print:gap-8">
         <div className="flex flex-col gap-2 sm:gap-4">
           <FlexGapped
             className={twMerge(
@@ -26,7 +26,7 @@ const PlaytestReportsAllCardOrPrecon = ({ product, isPrecon, report, maxSameScor
               isPrecon ? "print:max-w-[320px]" : "print:max-w-[250px]",
             )}
           >
-            <div className="flex flex-col gap-1 max-sm:w-full">
+            <div className="flex flex-col gap-1 max-sm:w-full print:dark:text-fgPrimary">
               {isPrecon ||
                 (showPlaytestImages && (
                   <div className="flex font-bold text-fgSecondary dark:text-fgSecondaryDark print:dark:text-fgSecondary">

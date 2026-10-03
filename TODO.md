@@ -3,7 +3,6 @@
 - Thadius discors
 - Inventory mode for pdf sets
 - Names in pt reports general
-- Default margins in pdf pt export
 - Pt text-image switch
 
 # FIX ON HOLD
