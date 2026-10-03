@@ -6,6 +6,32 @@ import json
 from deck_recommendation import deck_recommendation
 from api import app, db, login
 from models import Deck
+from search_decks_components import precon_decks
+
+
+with open("../frontend/src/assets/data/setsAndPrecons.json", "r") as sets_file:
+    sets_and_precons = json.load(sets_file)
+
+
+def get_precon_deck(deckid):
+    # same deckid format and fields as getPreconDecks in the frontend
+    set, _, precon = deckid.replace("_", " ").partition(":")
+    # playtest precons are restricted to playtesters
+    if set == "playtest" or precon not in precon_decks.get(set, {}):
+        return None
+
+    set_info = sets_and_precons.get(set, {})
+    description = f'Preconstructed from "{set_info.get("name", set)}"'
+    if set_info.get("date"):
+        description += f' [{set_info["date"]}]'
+
+    return {
+        "author": "VTES Team",
+        "cards": precon_decks[set][precon],
+        "deckid": f"{set}:{precon}",
+        "description": description,
+        "name": set_info.get("precons", {}).get(precon, {}).get("name", deckid),
+    }
 
 
 def get_twd_deck(deckid):
@@ -148,13 +174,16 @@ def new_deck_route():
 def get_deck_route(deckid):
     d = Deck.query.get(deckid)
     if not d:
-        # fallback for old twd urls length of 0
-        # now twd deckids of length 9 have trailing 0 to avoid collision with user deck ids
-        d = get_twd_deck(deckid)
-        if not d:
-            d = get_twd_deck(f"{deckid}0")
+        if ":" in deckid:
+            d = get_precon_deck(deckid)
+        else:
+            # fallback for old twd urls length of 0
+            # now twd deckids of length 9 have trailing 0 to avoid collision with user deck ids
+            d = get_twd_deck(deckid)
             if not d:
-                abort(400)
+                d = get_twd_deck(f"{deckid}0")
+        if not d:
+            abort(400)
 
         return jsonify(d)
 
