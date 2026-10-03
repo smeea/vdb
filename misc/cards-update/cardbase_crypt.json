@@ -68,6 +68,9 @@
         "set":{
             "SV5":{
                 "PPower":"1"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Sabbat cardinal: Aaradhya can unlock after performing a successful political action (even if the referendum failed). +1 bleed.",
@@ -923,6 +926,9 @@
         "set":{
             "SV5":{
                 "PCathari":"1"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Sabbat cardinal: If Aelswith is blocked, the blocking minion's controller burns 1 pool before block resolution.",
@@ -1623,6 +1629,9 @@
         "set":{
             "SV5":{
                 "PDeath":"1"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Sabbat.",
@@ -2696,6 +2705,9 @@
         "set":{
             "SV5":{
                 "PCaine":"1"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Sabbat bishop: Strike cards cost opposing younger vampires +1 blood.",
@@ -6023,6 +6035,9 @@
         "set":{
             "SV5":{
                 "PDeath":"1"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Sabbat: While you have the Edge, Anxo gets +1 strength.",
@@ -7250,6 +7265,9 @@
         "set":{
             "SV5":{
                 "PDeath":"1"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Sabbat cardinal: While Ashur-uballit is ready, zombies (allies and retainers) you recruit or employ get +1 starting life. +1 bleed.",
@@ -9369,6 +9387,9 @@
         "set":{
             "SV5":{
                 "PCaine":"1"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Sabbat.",
@@ -13919,6 +13940,9 @@
         "set":{
             "SV5":{
                 "PPower":"1"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Sabbat bishop.",
@@ -16233,6 +16257,9 @@
         "set":{
             "SV5":{
                 "PCathari":"1"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Sabbat: While you have 5 or fewer pool, Devorah gets +1 stealth.",
@@ -16629,6 +16656,9 @@
         "set":{
             "NB3C":{
                 "PS":"1"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Independent: In combat, strike cards cost the opposing minion +1 blood or life. +1 stealth.",
@@ -22275,6 +22305,9 @@
         "set":{
             "SV5":{
                 "PCathari":"1"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Sabbat: After Fotini successfully bleeds (for 1 or more), you get +1 hand size until your next discard phase.",
@@ -22670,6 +22703,9 @@
         "set":{
             "SV5":{
                 "PDeath":"1"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Sabbat: Frau Sch\u00e4del gets +1 stealth during recruit and employ actions.",
@@ -24573,6 +24609,9 @@
         "set":{
             "SV5":{
                 "PCathari":"1"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Sabbat.",
@@ -24866,6 +24905,9 @@
         "set":{
             "SV5":{
                 "PCathari":"1"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Sabbat: After Gostoso successfully bleeds your prey (for 1 or more), he can gain 1 blood.",
@@ -25172,6 +25214,9 @@
         "set":{
             "SV5":{
                 "PCaine":"1"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Sabbat bishop.",
@@ -27290,6 +27335,9 @@
         "set":{
             "SV5":{
                 "PCaine":"1"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Sabbat.",
@@ -28753,6 +28801,9 @@
         "set":{
             "SV5":{
                 "PDeath":"1"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Sabbat: Once each combat involving another minion you control, if Huldu is ready, she can burn 1 blood to prevent 1 damage to that minion. +1 bleed.",
@@ -33975,6 +34026,9 @@
         "set":{
             "SV5":{
                 "PCathari":"1"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Sabbat Archbishop of Mannheim: Minions must burn 1 blood or life to attempt to block J\u00fcrgen.",
@@ -36285,6 +36339,9 @@
         "set":{
             "SV5":{
                 "PPower":"1"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Sabbat priscus: While your predator controls more ready minions than you, you get +1 hand size.",
@@ -41538,6 +41595,9 @@
         "set":{
             "SV5":{
                 "PPower":"1"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Sabbat.",
@@ -41685,6 +41745,9 @@
         "set":{
             "NB3C":{
                 "PT":"2"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Anarch: Allies and retainers requiring a Tzimisce cost M\u00e1ddji -1 blood or pool.",
@@ -49875,6 +49938,10 @@
         "set":{
             "NB3C":{
                 "PR":"1"
+            },
+            "2P":{
+                "C":true,
+                "R":2
             }
         },
         "text":"Anarch: Noluthando inflicts +1 damage with ranged strikes (even at close range).",
@@ -51066,6 +51133,9 @@
         "set":{
             "SV5":{
                 "PCathari":"1"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Sabbat: Osvaldo gets +1 bleed against a Methuselah controlling a Toreador or Ventrue.",
@@ -52620,10 +52690,6 @@
         "set":{
             "V5C":{
                 "PR":"1"
-            },
-            "2P":{
-                "C":true,
-                "R":2
             }
         },
         "text":"Anarch: Once each combat, Phaibun can discard a card at random to strike: dodge.",
@@ -53304,6 +53370,9 @@
         "set":{
             "SV5":{
                 "PCaine":"1"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Sabbat bishop.",
@@ -54624,6 +54693,9 @@
         "set":{
             "SV5":{
                 "PPower":"1"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Sabbat bishop.",
@@ -65755,6 +65827,9 @@
         "set":{
             "SV5":{
                 "PPower":"1"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Sabbat Archbishop of Budapest: While your prey has 10 or fewer pool, \u00dcress\u00e9g gets +1 vote and +1 bleed.",
@@ -66676,6 +66751,9 @@
         "set":{
             "SV5":{
                 "PPower":"1"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Sabbat Archbishop of Ostrava: Once each turn, after resolution of an action performed by V\u011bnceslava during which your prey burned 1 or more pool, you can gain 1 pool.",
@@ -70132,6 +70210,9 @@
         "set":{
             "SV5":{
                 "PDeath":"1"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Sabbat.",

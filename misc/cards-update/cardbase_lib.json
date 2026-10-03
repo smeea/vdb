@@ -620,6 +620,9 @@
         "set":{
             "SV5":{
                 "PPower":"3"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Only usable during the polling step of a political action.\n[pot][pre] This vampire gets +3 votes.\n[POT][PRE] Vampires who do not follow the Path of Power and the Inner Voice get -1 vote.",
@@ -733,6 +736,9 @@
         "set":{
             "SV5":{
                 "PCaine":"3"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"+1 stealth action.\n(D) Enter combat with a minion. At the end of that combat, if only one combatant is ready, the controller of the opposing minion burns 1 pool.",
@@ -5748,6 +5754,9 @@
         "set":{
             "SV5":{
                 "PCaine":"2"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"+1 stealth action.\nPut this card in play. During your prey's unlock phase, for each vampire in torpor they control, they burn 1 pool. If your prey controls no vampires in torpor or after they are ousted, burn this card. A Methuselah can have only one Augury of Doom.",
@@ -7631,6 +7640,9 @@
             },
             "NB3C":{
                 "PT":"2"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"[ani][pro] +1 stealth. If this vampire is blocked, they can prevent 1 damage during the resulting combat.\n[ANI][PRO] Only usable as a non-bleed action is announced. Vampires cannot block this action.",
@@ -14943,6 +14955,9 @@
             },
             "SV5":{
                 "PPower":"1"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Title. Requires a Sabbat vampire.\nChoose a Sabbat vampire with capacity 7 or more. Successful referendum means this card is put on the chosen vampire to represent the Sabbat title of cardinal. During this referendum, non-Sabbat vampires cannot cast votes or ballots.",
@@ -16878,6 +16893,9 @@
             },
             "NB3C":{
                 "PT":"1"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Unique.\nPut this card on a ready vampire. Recruit ally actions cost this vampire -1 blood or pool.",
@@ -19023,6 +19041,9 @@
         "set":{
             "SV5":{
                 "PPower":"2"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Requires a titled Sabbat vampire.\nChoose a Methuselah or a location. If this acting vampire is a cardinal or regent, you can choose both instead. Successful referendum means the chosen Methuselah burns 3 pool and the chosen location is burned.",
@@ -21217,6 +21238,9 @@
         "set":{
             "NB3C":{
                 "PR":"3"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Only usable before range is determined. A vampire can play only one Contraband each combat.\n[obf] Equip this vampire with a non-unique equipment from your hand (requirements and cost apply as normal).\n[OBF] As above, and this vampire can pay up to half the cost rounded down of that equipment with their blood.",
@@ -23663,6 +23687,9 @@
         "set":{
             "SV5":{
                 "PDeath":"1"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Unique location.\nAfter a zombie (ally or retainer) you control is burned, you can add 1 counter to this location. During a bleed action, you can burn 1 counter from this location to give a zombie ally you control +1 bleed.",
@@ -24116,6 +24143,9 @@
         "set":{
             "SV5":{
                 "PCaine":"4"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"[obf] or [tha] Maneuver, only usable to get to close range.\n[OBF] or [THA] As above, and once this round, this vampire can burn 1 blood to get 1 additional maneuver, only usable to get to close range.",
@@ -24720,6 +24750,9 @@
             },
             "NB3C":{
                 "PS":"1"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"[for] If this action is blocked, all damage inflicted on vampires during the resulting combat is aggravated. If a vampire is currently attempting to block, they can cancel their block attempt.\n[FOR] As above, but without the option to cancel their block attempt.",
@@ -28448,6 +28481,9 @@
         "set":{
             "NB3C":{
                 "PR":"3"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Only usable by a locked vampire.\n[ani] This vampire unlocks and attempts to block. If this vampire does not block this action, lock them after action resolution.\n[ANI] As above, and if this vampire does not block this action, put this card on them after action resolution. This vampire can burn this card to get +1 intercept. A vampire can have only one Dogged Pursuit.",
@@ -28655,6 +28691,9 @@
         "set":{
             "SV5":{
                 "PPower":"4"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"[pot] or [pre] Only usable if a minion attempts to block. The blocking minion gets -1 intercept.\n[POT] or [PRE] Only usable as the action is announced. Choose a vampire. The chosen vampire cannot block this action.",
@@ -32081,6 +32120,9 @@
         "set":{
             "SV5":{
                 "PPower":"3"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Requires a Sabbat vampire.\nChoose one or more Methuselahs. Successful referendum means each chosen Methuselah burns 1 pool, plus 3 additional pool if they control a ready vampire with capacity 8 or more.",
@@ -32788,6 +32830,9 @@
         "set":{
             "SV5":{
                 "PCaine":"4"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"[ani] or [cel] +1 intercept.\n[ANI] or [CEL] As above, and strike cards cost the acting minion +1 blood or life during the resulting combat if this vampire blocks.",
@@ -32830,6 +32875,9 @@
         "set":{
             "SV5":{
                 "PCathari":"8"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"[obf] or [pre] (D) Bleed with +1 bleed.\n[OBF] or [PRE] As above, and if the bleed is successful (for 1 or more), this vampire can burn 1 blood to draw 1 card from your crypt.",
@@ -32992,6 +33040,9 @@
             },
             "SV5":{
                 "PCathari":"2"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"[pre] (D) Bleed with +1 bleed.\n[PRE] +1 stealth action. (D) Steal an ally controlled by another Methuselah.",
@@ -35672,6 +35723,9 @@
             },
             "NB3C":{
                 "PT":"1"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"+1 stealth action.\n[dom] (D) Steal a retainer controlled by another vampire.\n[DOM] (D) Steal an ally controlled by another Methuselah.",
@@ -36758,6 +36812,9 @@
         "set":{
             "SV5":{
                 "PCathari":"4"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"[for] or [pre] +1 bleed (limited).\n[FOR] or [PRE] As above, and if the bleed is successful (for 1 or more), you can put this card on this vampire after action resolution. This vampire can burn this card during a bleed action they perform to have a block attempt fail; the blocking minion cannot attempt to block this action again. A vampire can have only one Fever Pitch.",
@@ -36846,6 +36903,9 @@
             },
             "SV5":{
                 "PCaine":"2"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Requires a Sabbat vampire.\n(D) Bleed with +1 bleed. Anarchs get -1 intercept during this action. If this vampire is Tzimisce and the bleed is successful, this Tzimisce can burn 1 blood during your next discard phase to unlock.",
@@ -37974,6 +38034,9 @@
         "set":{
             "NB3C":{
                 "PT":"1"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Unique location.\nDuring your master phase, you can put a ghoul (ally or retainer) from your hand on this location, face up and out of play. Tzimisce you control can play cards from this location as if from your hand (requirements and cost apply as normal).",
@@ -38651,6 +38714,9 @@
             },
             "NB3C":{
                 "PS":"2"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"[for] Only usable by a locked vampire who has blocked, after block resolution. Unlock this vampire.\n[FOR] Only usable by a locked vampire during an action directed at you (or a card you control). Unlock this vampire.",
@@ -39492,6 +39558,9 @@
         "set":{
             "SV5":{
                 "PCathari":"1"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Unique.\nPut this card in play. After a vampire who follows the Path of Cathari you control bleeds, if the bleed is successful (for 1 or more), add 1 counter to this card; otherwise, burn 1 counter from this card. After a vampire who follows the Path of Cathari you control performs an action, you can burn 2 counters from this card to unlock them.",
@@ -42287,6 +42356,9 @@
             },
             "SV5":{
                 "PDeath":"3"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Do not replace until your next unlock phase.\nPrevent 1 damage from the opposing minion's strike.",
@@ -42552,6 +42624,9 @@
         "set":{
             "NB3C":{
                 "PR":"4"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Not usable during a bleed action.\n[obf] +1 stealth.\n[OBF] Only usable after resolution of a blocked action. This vampire burns 1 blood to continue the action as if unblocked.",
@@ -42646,6 +42721,9 @@
             },
             "NB3C":{
                 "PS":"1"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Remove a vampire with capacity 8 or more from the game. Their controller gains pool equal to the vampire's capacity. Their controller can burn 2 pool to cancel this card as it is played.",
@@ -45827,6 +45905,9 @@
         "set":{
             "SV5":{
                 "PDeath":"1"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Unique wraith with 1 life. 1 strength, 1 bleed.\nThe Heartrender can remove itself from the game to burn a non-wraith non-zombie ally or retainer as a +1 stealth (D) action.",
@@ -45938,6 +46019,9 @@
         "set":{
             "SV5":{
                 "PCathari":"5"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Only usable by a ready unlocked vampire other than the acting minion if a minion attempts to block.\n[for] or [pre] That attempt fails and the blocking minion cannot attempt to block this action again. Lock this vampire and the blocking minion, and queue a combat between them.\n[FOR] or [PRE] As above, but queue no combat.",
@@ -47946,6 +48030,9 @@
         "set":{
             "NB3C":{
                 "PS":"4"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"+1 stealth action.\n[aus] (D) Enter combat with a vampire.\n[AUS] As above, and at the end of that combat, if this vampire is ready and the opposing vampire is not, add 2 blood to a Salubri in your uncontrolled region.",
@@ -51142,6 +51229,9 @@
             },
             "SV5":{
                 "PPower":"2"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"[pot][pre] Only usable during the polling step of a political action. This vampire gets +2 votes.\n[POT][PRE] Only usable during a bleed action. +2 bleed (limited).",
@@ -57868,6 +57958,9 @@
         "set":{
             "SV5":{
                 "PPower":"2"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Only usable after resolution of a political action whose referendum passed.\n[dom] or [pot] Add 2 blood to a Sabbat vampire in your uncontrolled region.\n[DOM] or [POT] Add 1 blood to each Sabbat vampire in your uncontrolled region.",
@@ -62713,6 +62806,9 @@
             },
             "SV5":{
                 "PCaine":"1"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Archetype.\nPut this card on a ready vampire you control. Once each turn after a combat involving this vampire ends, this vampire can burn 1 blood to unlock if the opposing minion is not ready. A vampire can have only one archetype.",
@@ -62777,6 +62873,9 @@
         "set":{
             "SV5":{
                 "PDeath":"3"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Only usable before range is determined in combat with a vampire. A vampire can play only one Morbidity each round.\n[obl] or [tha] Put this card in play and move up to 2 blood from the opposing vampire to this card. After combat ends, move all the blood from this card to the opposing vampire and burn this card.\n[OBL] or [THA] As above, and combat cards cost the opposing vampire +1 blood.",
@@ -70537,6 +70636,9 @@
         "set":{
             "NB3C":{
                 "PR":"2"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"+1 stealth action.\n[pre] (D) Put this card on a minion; you still control this card. The attached minion gets -1 stealth. Minions can burn this card as a (D) action.\n[PRE] As above, and if the attached minion is blocked, they burn 1 blood or life before block resolution.",
@@ -70740,6 +70842,9 @@
         "set":{
             "SV5":{
                 "PCaine":"3"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"(D) Enter combat with a vampire; at the end of that combat, if the opposing vampire is not ready, you can put this card on this acting vampire. This vampire gets +1 bleed. A vampire can have only one Pillars Fall.",
@@ -76841,6 +76946,9 @@
         "set":{
             "SV5":{
                 "PDeath":"3"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"+1 stealth action.\n[obl] or [tha] Remove an ally in an ash heap from the game to gain 2 blood or to add 2 life to a zombie ally you control.\n[OBL] or [THA] As above, but for 3 blood or life.",
@@ -77425,6 +77533,9 @@
         "set":{
             "SV5":{
                 "PCaine":"8"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Frenzy. Only usable before range is determined. A vampire can play only one Rage of Apedemak each combat.\n[ani] or [pot] This combat, you get +1 hand size and this vampire's hand strikes inflict +1 damage.\n[ANI] or [POT] As above, but this vampire's hand strikes inflict +2 damage.",
@@ -78111,6 +78222,9 @@
             },
             "NB3C":{
                 "PR":"1"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Unique location.\nDuring your master phase, you can move 1 counter from your pool to this location and add 1 counter (from the blood bank) to it. Minions you control can lock this location to use those counters to pay some or all of the blood or pool cost of equipment they equip.",
@@ -78172,6 +78286,9 @@
             },
             "NB3C":{
                 "PR":"1"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Unique location.\nThis location comes into play with 1 counter for each Ravnos you control. Ravnos you control can use those counters to pay some or all of the blood cost of action cards they play. If this location has no counters, burn it.",
@@ -80172,6 +80289,9 @@
         "set":{
             "SV5":{
                 "PPower":"4"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"[cel] or [for] +1 stealth.\n[CEL] or [FOR] Only usable if a minion attempts to block. That attempt fails and the blocking minion cannot attempt to block this action again.",
@@ -86399,6 +86519,9 @@
         "set":{
             "SV5":{
                 "PCathari":"6"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Only usable as the action is announced.\n[obf] or [pre] Minions must burn 1 blood to attempt to block this action.\n[OBF] or [PRE] As above, and choose a vampire. The chosen vampire cannot block this action.",
@@ -86868,6 +86991,9 @@
         "set":{
             "SV5":{
                 "PCaine":"4"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"[ani] or [tha] Only usable by a locked vampire. This vampire unlocks and attempts to block.\n[ANI] or [THA] Reduce a bleed against you by 3.",
@@ -95391,6 +95517,9 @@
         "set":{
             "SV5":{
                 "PCathari":"5"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"[cel] or [pre] +1 stealth.\n[CEL] or [PRE] +1 bleed (limited), or +1 stealth and +1 bleed (limited).",
@@ -96728,6 +96857,9 @@
         "set":{
             "SV5":{
                 "PCathari":"5"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"[cel] or [obf] Strike: dodge.\n[CEL] or [OBF] +1 stealth.",
@@ -97158,6 +97290,9 @@
         "set":{
             "NB3C":{
                 "PT":"4"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Ghoul with 2 life.\nThe employer can burn this retainer to reduce the cost of a ghoul ally requiring a Tzimisce they recruit by 2 blood or pool.",
@@ -97216,6 +97351,9 @@
         "set":{
             "NB3C":{
                 "PT":"2"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Ghoul with 2 life.\nThe employer can lock this retainer to prevent 1 damage in combat. You can burn this retainer to have an action directed at a minion you control fail.",
@@ -101821,6 +101959,9 @@
         "set":{
             "NB3C":{
                 "PS":"3"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Only usable before range is determined during the first round.\n[for] This combat, this vampire can prevent 1 damage each round. This combat, frenzy cards cannot be used on this vampire; cancel the effects of frenzy cards that have already been used on this vampire this combat.\n[FOR] As above, but this vampire can prevent 2 damage each round.",
@@ -105179,6 +105320,9 @@
             },
             "NB3C":{
                 "PT":"1"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Vehicle. The action to equip with this vehicle is with an additional +1 stealth.\nThis minion gets +1 stealth during hunt, recruit and employ actions. If this minion is blocked by a prince or an archbishop (during any action), burn this vehicle. A minion can have only one vehicle.",
@@ -105417,6 +105561,9 @@
         "set":{
             "SV5":{
                 "PPower":"2"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"[pot] or [pre] Minions must burn 1 blood or life to attempt to block this action.\n[POT] or [PRE] As above, and minions get -1 intercept.",
@@ -105647,6 +105794,9 @@
             },
             "NB3C":{
                 "PT":"1"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Unique mortal with 2 life. 0 strength, 0 bleed.\nVagabond Mystic can lock to add 1 life to an ally you control who has fewer life than its starting life. Vagabond Mystic cannot block vampires.",
@@ -108039,6 +108189,9 @@
         "set":{
             "NB3C":{
                 "PT":"1"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Unique ghoul with 5 life. 4 strength, 0 bleed.\nAfter this ally enters play, burn an ally or retainer you control. This ally can enter combat with a vampire as a (D) action. This ally can play cards requiring basic Animalism [ani] as a vampire with capacity 5. During your unlock phase, this ally can steal any amount of blood (becoming life) from a Tzimisce you control, not to exceed its starting life.",
@@ -108093,6 +108246,9 @@
         "set":{
             "V5C":{
                 "PTz":"1"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Unique ghoul with 5 life. 3 strength, 0 bleed.\nAfter this ally enters play, burn an ally or retainer you control. It can strike: 3R damage. It can enter combat with a minion as a (D) action. During your unlock phase, you can discard an ally or retainer card to add 2 life to this ally.",
@@ -108596,6 +108752,9 @@
         "set":{
             "SV5":{
                 "PCaine":"6"
+            },
+            "2P":{
+                "C":true
             }
         },
         "text":"Only usable before range is determined.\n[pro] or [tha] Put this card on this vampire. This vampire can burn this card to prevent 2 non-aggravated damage in combat. A vampire can have only one Wall of Filth.\n[PRO] or [THA] As above, but to prevent 2 damage in combat.",
