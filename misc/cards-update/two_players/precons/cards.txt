@@ -1,8 +1,14 @@
 1 47th Street Royals
+1 Aaradhya, The Callous Tyrant
 1 Abraham Mellon
+1 Absolute Tyranny
+1 Abuse of Power
+1 Aelswith, The Irresistible
 1 Aintzane Arriaga
+1 Aitana, The Unholy
 1 Alexa Draper
 1 Alexander Silverson
+1 Algirdas, The Solar Prophet
 1 Alice Chen
 1 Ambush
 1 Amici Noctis
@@ -11,14 +17,19 @@
 1 André the Manipulator
 1 Ángel Guerrero
 1 Aniel
+1 Anxo Vilela
 1 Arms of Ahriman
 1 Army of Rats
+1 Ashur-uballit, Son of the Abyss
 1 Atiena
+1 Augury of Doom
 1 Auspex
 1 Ayelech
 1 Azucena
 1 Barrens, The
+1 Beast Meld
 1 Belinde
+1 Berenguela, The Vicious
 1 Bewitching Oration
 1 Blood Fury
 1 Body Flare
@@ -27,6 +38,7 @@
 1 Branimira
 1 Break the Bonds
 1 Bum's Rush
+1 Cardinal Benediction
 1 Carmelita Neillson
 1 Carrion Crows
 1 Casey Snyder
@@ -34,20 +46,31 @@
 1 Celerity
 1 Change of Target
 1 Chantry
+1 Charisma
 1 Chrysanthemum
 1 City Star Taxi
 1 Clara Hjortshøj
 1 Cloak the Gathering
+1 Cold War
+1 Concordia
+1 Contraband
 1 Creeping Sabotage
 1 Crystal Lynn
+1 Cursed Abattoir
+1 Dance with the Devil
 1 Dario Ziggler
+1 Dawn Operation
 1 Deep Ecology
 1 Deep Song
+1 Devorah
 1 Diana Iadanza
 1 Disputed Territory
 1 Diversion
+1 Djeneba
 1 Doc Martina
+1 Dogged Pursuit
 1 Domain Challenge
+1 Dominant Personality
 1 Dominate
 1 Dominate Kine
 1 Donny Kowalczyk
@@ -59,44 +82,69 @@
 1 Elder Intervention
 1 Elder Library
 1 Elisha Tucker
+1 Empires Fall
 1 Enchant Kindred
 1 Enhanced Coagulant
 1 Enhanced Senses
+1 Ensnare a Beast
+1 Enthrall
+1 Entrancement
 1 Eyes of Argus
 1 Eyes of the Wild
 1 Faceless Night
 1 Fame
 1 Family Gathering
+1 Far Mastery
 1 Farah Sarroub
 1 Fee Stake: Corte
 1 Fee Stake: Los Angeles
 1 Fee Stake: Perth
+1 Fever Pitch
+1 Fiendish Tongue
 1 Fifth Tradition: Hospitality
 1 Fiorenza Savona
 1 Fleetness
+1 Fleshforge Chamber
 1 Forced Awakening
 1 Forced Confessional
+1 Forced Vigilance
 1 Form of the Bat
 1 Form of the Cobra
+1 Forward Momentum
+1 Fotini Katsikaris
 1 Fourth Tradition: The Accounting
 1 Fragment of the Book of Nod
+1 Frau Schädel
 1 Gathii
 1 Gebeyehu Abdu
 1 Gelasia Fotiou
+1 Glancing Blow
+1 Glissando
 1 Gnaeus Aemilius Augustinus
+1 Go-getter
+1 Golconda: Inner Peace
+1 Gostoso
+1 Grażyna "Butcher" Olesińska
 1 Grooming the Protégé
 1 Guard Dogs
+1 Heartrender
+1 Hedonism
+1 Hekla "Bonecrusher" Jónasdóttir
 1 Hel-Blá
 1 Hesha Ruhadze (G6)
 1 Holliday "Burgundy" Hall
 1 Horace Radcliffe
 1 Horst von Brühl
+1 Huldu, The Desecrator
 1 Hunger of Marduk
+1 Hunting the Beast
 1 Ian Carfax
 1 Inês Tristão
 1 Instinctive Reaction
+1 Iron Glare
 1 Jenny Silver
 1 Juliet Parr
+1 Jürgen, The Libertine
 1 Kalinda (G6)
 1 Kamaluddin
 1 Karl Schrekt
@@ -104,6 +152,7 @@
 1 Kassandra Tassaki
 1 Kevin Jackson
 1 Khadija Al-Kindi
+1 Khin Aye
 1 Kine Resources Contested
 1 Kuyén
 1 Larissa Moreira
@@ -116,13 +165,16 @@
 1 Loup
 1 Luciano Carvalho
 1 Lucinde, Alastor (G7)
+1 Lyyli Yösydän
+1 Máddji, Mistress of Szlachtas
 1 Madison
+1 Magnetic Authority
 1 Maila
 1 Malachi
 1 Malkavian Rider Clause
 1 Marcos Belegrad
 1 María del Toro
-1 Martyr’s Resilience
+1 Martyr's Resilience
 1 Massimiliano
 1 Melange
 1 Mirror Walk
@@ -131,9 +183,12 @@
 1 Modius
 1 Molly MacDonald
 1 Monica Giovanni
+1 Monster
+1 Morbidity
 1 Mythic Form
 1 Neserian
 1 Nikolaus Vermeulen (G6)
+1 Noluthando
 1 Obedient Flesh
 1 Obfuscate
 1 Oblivion
@@ -145,6 +200,7 @@
 1 One With the Land
 1 Opikun
 1 Organized Resistance
+1 Osvaldo Kühnemann
 1 Owl Companion
 1 Oxford University, England
 1 Parijat, The Dark Oracle
@@ -152,7 +208,8 @@
 1 Party Out Of Bounds
 1 Perfect Paragon
 1 Perfectionist
-1 Phaibun
+1 Phantasmagoria
+1 Pillars Fall
 1 Platinum Protocol, The
 1 Political Ally
 1 Potence
@@ -162,11 +219,18 @@
 1 Protean
 1 Protected District
 1 Protection Racket
+1 Przemysław, War Beast
 1 Pulled Fangs
 1 Pursuit
+1 Putrescent Sustenance
 1 Queen Anne (G6)
+1 Rage of Apedemak
 1 Ragnar Nordstrom
+1 Rasha Tarabzouni
+1 Ravnos Cache
+1 Ravnos Carnival
 1 Rego Motum
+1 Relentlessness
 1 Restoration
 1 Revolutionary Council
 1 Rewilding
@@ -180,7 +244,9 @@
 1 Scouting Mission
 1 Second Tradition: Domain
 1 Seduction
+1 Seeds of Terror
 1 Sense the Savage Way
+1 Sentry Signal
 1 Seraphina
 1 Sergio Bueno
 1 Shadow Cast
@@ -199,7 +265,11 @@
 1 Spirit's Touch
 1 Spying Mission
 1 Sreelekha
+1 Subversion
 1 Swallowed by the Night
+1 Swift Cover
+1 Szlachta Assistant
+1 Szlachta Bodyguard
 1 Taste of Vitae
 1 Tegyrius, Vizier (G6)
 1 Telepathic Counter
@@ -210,15 +280,24 @@
 1 Threats
 1 Tier of Souls
 1 Touch of Valeren
+1 Tranquility Shield
 1 True Love's Face
 1 Truth in Darkness
 1 Umbrous Clutch
+1 Unlicensed Taxicab
+1 Unthinkable Humiliation
+1 Üresség
+1 Vagabond Mystic
 1 Valeriya Zinovieva
+1 Věnceslava, The Implacable
 1 Visions of Zapathasura
 1 Vivian VI
 1 Voracious Vermin
 1 Voter Captivation
-1 Wake with Evening’s Freshness
+1 Vozhd of Juiz de Fora, The
+1 Vozhd of Sofia, The
+1 Wake with Evening's Freshness
+1 Wall of Filth
 1 Warmaksan
 1 Warrens, The
 1 Wasserschloss Anif, Austria
@@ -229,3 +308,4 @@
 1 Wind Dance
 1 WMRH Talk Radio
 1 Yewon Ong
+1 Zbigniew, Hunter of Mekhet
