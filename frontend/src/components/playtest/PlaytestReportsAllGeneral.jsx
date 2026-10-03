@@ -3,7 +3,7 @@ import { FlexGapped, Hr, PlaytestReportFormGeneral } from "@/components";
 import { useApp } from "@/context";
 
 const PlaytestReportsAllGeneral = ({ reports }) => {
-  const { username, isPlaytestAdmin, hidePlaytestNames } = useApp();
+  const { username, isPlaytestAdmin, showPlaytestNames } = useApp();
 
   return (
     <FlexGapped className="max-sm:flex-col print:break-after-page print:p-8">
@@ -35,7 +35,7 @@ const PlaytestReportsAllGeneral = ({ reports }) => {
                   key={name}
                 >
                   <div className="flex flex-col gap-3">
-                    {!hidePlaytestNames && (
+                    {showPlaytestNames && (
                       <div className="flex w-full items-center text-fgName dark:text-fgNameDark print:dark:text-fgName">
                         &lt;{name}&gt;
                       </div>

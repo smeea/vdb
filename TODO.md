@@ -2,8 +2,6 @@
 - Generate V5 data for existing public decks
 - Thadius discors
 - Inventory mode for pdf sets
-- Names in pt reports general
-- Pt text-image switch
 
 # FIX ON HOLD
 
