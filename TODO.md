@@ -1,7 +1,6 @@
 # FIX
 - Generate V5 data for existing public decks
-- Thadius discors
-- Inventory mode for pdf sets
+- Inventory mode coloring for non-your decks or proxy print
 
 # FIX ON HOLD
 
