@@ -138,6 +138,7 @@ const Decks = () => {
         [DESCRIPTION]: searchParams.get(DESCRIPTION) ?? "",
         [CRYPT]: crypt,
         [LIBRARY]: library,
+        [TAGS]: []
       });
     }
   }, [hash, cryptCardBase, libraryCardBase]);
