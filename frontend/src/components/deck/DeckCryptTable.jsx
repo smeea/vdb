@@ -14,7 +14,6 @@ const DeckCryptTable = ({
   inMissing,
   noDisciplines,
   shouldShowModal,
-  inSide,
 }) => {
   const isEditable = getIsEditable(deck);
 
@@ -35,7 +34,6 @@ const DeckCryptTable = ({
               noDisciplines={noDisciplines}
               inMissing={inMissing}
               shouldShowModal={shouldShowModal}
-              inSide={inSide}
               isEditable={isEditable}
               deckid={deck[DECKID]}
               inventoryType={deck[INVENTORY_TYPE]}

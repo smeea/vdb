@@ -27,7 +27,6 @@ const DeckCardQuantity = ({
   inMissing,
 }) => {
   const { inventoryMode } = useApp();
-
   const { [CRYPT]: usedCrypt, [LIBRARY]: usedLibrary } = useSnapshot(usedStore);
   const {
     [CRYPT]: inventoryCrypt,
@@ -48,15 +47,24 @@ const DeckCardQuantity = ({
       : inInventory - (softUsedMax + hardUsedTotal);
 
   const inventoryColor =
-    inventoryType && inProxy
-      ? surplus + (isSelected ? q : 0) >= 0
-        ? null
-        : ERROR
-      : surplus >= 0
-        ? null
-        : inInventory >= q
-          ? WARNING
-          : ERROR;
+    inProxy
+      ? inventoryType
+        ? surplus + (isSelected ? q : 0) >= 0
+          ? null
+          : ERROR
+        : null
+      : inventoryType
+        ? surplus >= 0
+          ? null
+          : inInventory >= q
+            ? WARNING
+            : ERROR
+        : surplus >= q
+          ? null
+          : inInventory >= q
+            ? WARNING
+            : ERROR
+
 
   const handleChange = (qty) => cardChange(deckid, card, qty);
 

@@ -16,8 +16,6 @@ const ResultLayoutTextCommon = ({ handleClose, card, inPopover, setIsHotkeysDisa
   const { isPlaytester, inventoryMode } = useApp();
   const isPlaytest = getIsPlaytest(card[ID]);
 
-  console.log(card)
-
   return (
     <div className="flex flex-col gap-3">
       <div className="flex gap-2">

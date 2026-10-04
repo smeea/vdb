@@ -106,7 +106,6 @@ const DeckCrypt = ({ inSearch, inPreview, inMissing, noDisciplines, deck }) => {
             inSearch={inSearch}
             inMissing={inMissing}
             shouldShowModal={shouldShowModal}
-            inSide
           />
         </div>
       )}
