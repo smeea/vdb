@@ -1,6 +1,5 @@
 # FIX
 - Generate V5 data for existing public decks
-- Inventory mode coloring for non-your decks or proxy print
 
 # FIX ON HOLD
 
