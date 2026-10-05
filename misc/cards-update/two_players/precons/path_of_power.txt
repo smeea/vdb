@@ -1,0 +1,47 @@
+Crypt(12 cards, min=24, max=34, avg=7.29)
+
+3x Aaradhya, The Callous Tyrant  10  ANI DOM FOR POT PRE  cardinal    Ventrue:6
+2x Věnceslava, The Implacable     9  DOM FOR POT PRE cel  archbishop  Brujah:6
+2x Üresség                        8  CEL POT PRE dom for  archbishop  Brujah:6
+2x Khin Aye                       7  POT PRE dom for      priscus     Ventrue:6
+1x Concordia                      6  DOM PRE for pot      bishop      Ventrue:6
+1x Rasha Tarabzouni               6  DOM POT obl pre      bishop      Lasombra:6
+1x Lyyli Yösydän                  5  POT dom for obl                  Lasombra:6
+
+Library (42 cards)
+Master (5; 1 trifle)
+1x Dummy Corporation
+1x Golconda: Inner Peace
+1x Misdirection
+1x Perfectionist
+1x Wider View
+
+Action (3)
+3x Enchant Kindred
+
+Action Modifier (12)
+2x Iron Glare
+2x Voter Captivation
+2x Dominant Personality
+2x Relentlessness
+2x Unthinkable Humiliation
+1x Perfect Paragon
+1x Magnetic Authority
+
+Action Modifier/Reaction (2)
+2x Absolute Tyranny
+
+Combat (7)
+3x Slam
+3x Soak
+1x Weighted Walking Stick
+
+Political Action (6)
+4x Cold War
+1x Domain Challenge
+1x Empires Fall
+
+Reaction (7)
+3x Elder Intervention
+3x On the Qui Vive
+1x Wake with Evening's Freshness

@@ -1,0 +1,31 @@
+Crypt (12 cards)
+4x Algirdas, The Solar Prophet      7  ANI CEL THA pot  bishop  Banu Haqim:6
+2x Berenguela, The Vicious          6  ANI OBF POT              Nosferatu:6
+2x Przemysław, War Beast            6  ANI PRO cel tha  bishop  Tzimisce:6
+2x Grażyna "Butcher" Olesińska      5  ANI THA pro      bishop  Tzimisce:6
+2x Hekla "Bonecrusher" Jónasdóttir  5  POT THA cel              Banu Haqim:6
+
+Library (42 cards)
+Master (5; 1 trifle)
+1x Fame
+1x Monster
+1x Rumor Mill, Tabloid Newspaper, The
+1x Tension in the Ranks
+1x Wider View
+
+Action (8)
+3x Abuse of Power
+2x Fiendish Tongue
+2x Pillars Fall
+1x Augury of Doom
+
+Combat (20)
+6x Rage of Apedemak
+4x Slam
+4x Wall of Filth
+3x Taste of Vitae
+3x Dance with the Devil
+
+Reaction (9)
+6x Sentry Signal
+3x Ensnare a Beast

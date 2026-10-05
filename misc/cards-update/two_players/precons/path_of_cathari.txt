@@ -1,0 +1,41 @@
+Crypt(12 cards)
+3x Aelswith, The Irresistible 9 AUS DOM FOR OBF pot cardinal Malkavian:6
+3x Jürgen, The Libertine 8 AUS CEL PRE obf archbishop Toreador:6
+2x Fotini Katsikaris 7 AUS DOM OBF for pot Malkavian:6
+1x Glissando 6 AUS CEL obf pre Toreador:6
+1x Osvaldo Kühnemann 6 CEL PRE for pot Brujah:6
+1x Devorah 5 PRE cel for pot Brujah:6
+1x Gostoso 5 PRE for obf pot Ministry:6
+
+Library (42 cards)
+Master (5; 2 trifle)
+2x Life in the City
+1x Golconda: Inner Peace
+1x Wider View
+1x Forward Momentum
+
+Action (8)
+3x Enthrall
+2x Enchant Kindred
+2x Social Charm
+1x Entrancement
+
+Action Modifier (14)
+3x Seeds of Terror
+3x Subversion
+2x Change of Target
+2x Cloak the Gathering
+2x Fever Pitch
+2x Hedonism
+
+Combat (2)
+2x Soak
+
+Reaction (9)
+3x Telepathic Counter
+2x Eyes of Argus
+2x On the Qui Vive
+2x Visions of Zapathasura
+
+Action Modifier/Combat (4)
+4x Swift Cover
