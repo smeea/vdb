@@ -211,11 +211,6 @@ with (
             crypt = crypt + list(json.load(crypt_playtest_file).values())
             library = library + list(json.load(library_playtest_file).values())
 
-            bundles = {
-                **playtest_bundles,
-                **bundles,
-            }
-
     except Exception as e:
         print(e)
 
