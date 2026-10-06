@@ -16667,7 +16667,7 @@
                 "PS":"1"
             },
             "2P":{
-                "C":false
+                "C":true
             }
         },
         "text":"Independent: In combat, strike cards cost the opposing minion +1 blood or life. +1 stealth.",
@@ -41766,7 +41766,7 @@
                 "PT":"2"
             },
             "2P":{
-                "C":false
+                "C":true
             }
         },
         "text":"Anarch: Allies and retainers requiring a Tzimisce cost M\u00e1ddji -1 blood or pool.",
@@ -63312,7 +63312,7 @@
                 "2024-04-23":true
             },
             "2P":{
-                "C":false
+                "C":true
             }
         },
         "text":"Camarilla. 2 votes (titled): While /Victoria Ash/ is in your ready region, Tegyrius gets +2 votes. +1 strength.",

@@ -21,13 +21,14 @@ for file, precon in precons.items():
         for cardid, q in precon_cards.items():
             cardid = str(cardid)
 
-            if "C" in two_players_cards.get(cardid, {}):
+            if cardid in two_players_cards:
                 two_players_cards[cardid]["C"] = True
+                if precon != "C":
+                    two_players_cards[cardid][precon] = q
             else:
-                two_players_cards[cardid] = {"C": False}
-
-            if precon != "C":
-                two_players_cards[cardid][precon] = q
+                two_players_cards[cardid] = {"C": True}
+                if precon != "C":
+                    two_players_cards[cardid][precon] = q
 
 
 with (
