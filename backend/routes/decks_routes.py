@@ -8,6 +8,43 @@ from api import app, db, login
 from models import Deck
 
 
+def get_precon_deck(deckid):
+    with (
+        open("../frontend/public/data/precon_decks.json", "r") as precon_decks_file,
+        open("../frontend/src/assets/data/setsAndPrecons.json", "r") as sets_and_precons_file,
+    ):
+        precon_decks = json.load(precon_decks_file)
+        sets_and_precons = json.load(sets_and_precons_file)
+        set, precon = deckid.split(":")
+        set = set.replace("_", " ")
+        precon = precon.replace("_", " ")
+
+        if not precon_decks.get(set, {}).get(precon):
+            abort(400)
+
+        set_name = sets_and_precons[set]["name"]
+        set_date = sets_and_precons[set]["date"]
+        precon_name = sets_and_precons[set]["precons"][precon]["name"]
+
+        cards = precon_decks[set][precon]
+        deck = {
+            "author": "VTES Team",
+            "cards": cards,
+            "deckid": deckid,
+            "description": f'Preconstructed from "{set_name} ({precon_name}) [{set_date}]"',
+            "favorited": [],
+            "isAuthor": False,
+            "isNonEditable": True,
+            "name": precon_name,
+            "publicChild": False,
+            "publicParent": False,
+            "tags": [],
+            "timestamp": datetime.fromisoformat(set_date),
+        }
+
+        return deck
+
+
 def get_twd_deck(deckid):
     with open("twd_decks.json", "r") as twd_decks_file:
         twd_decks = json.load(twd_decks_file)
@@ -146,6 +183,12 @@ def new_deck_route():
 
 @app.route("/api/deck/<string:deckid>", methods=["GET"])
 def get_deck_route(deckid):
+    if ":" in deckid:
+        d = get_precon_deck(deckid)
+        if not d:
+            abort(400)
+        return jsonify(d)
+
     d = Deck.query.get(deckid)
     if not d:
         # fallback for old twd urls length of 0
