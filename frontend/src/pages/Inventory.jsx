@@ -107,7 +107,7 @@ const Inventory = () => {
 
   return (
     <div className="inventory-container mx-auto">
-      {((!inShared && username) || (sharedCrypt && sharedLibrary)) && (
+      {(username || (inShared && sharedCrypt && sharedLibrary)) && (
         <FlexGapped>
           <div
             className={twMerge(
@@ -169,7 +169,7 @@ const Inventory = () => {
         </FlexGapped>
       )}
       {error && <ErrorMessage>{error}</ErrorMessage>}
-      {username === null && (
+      {!inShared && username === null && (
         <div className="flex min-h-[80vh] place-items-center max-sm:px-2">
           <LoginBlock>Login to manage your inventory</LoginBlock>
         </div>
