@@ -1,6 +1,11 @@
 {
-  "version": "2026-09-10",
+  "version": "2026-10-10",
   "changes": [
-    "Fix deck change not to change deck info, fix inventory wishlist not changing"
+    "Add search by V5 compatibility to TWD/PDA",
+    "Add V5 indicator in card view and on mouse hover (if card text layout is active)",
+    "Improved (or changed if you don't like new behavior...) inventory highlighing for cards. For your inventory decks (non-@) no color is all fine, YELLOW is enough cards for this deck but will conflict with other decks, RED is not enough. For other decks (@ and not yours) no color is you have enough surplus for it, YELLOW and RED is same as above.",
+    "Update 2P card list",
+    "Update rulings",
+    "Small fixes and improvements"
   ]
 }
