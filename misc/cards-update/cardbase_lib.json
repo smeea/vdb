@@ -106871,6 +106871,9 @@
             },
             "CE":{
                 "PV":1
+            },
+            "playtest":{
+                "ToDV":1
             }
         },
         "text":"Master.\nPut this card in play. Each ready Ventrue gets an additional vote during political actions. This card may be burned by any minion as a (D) action; Brujah get +1 stealth when attempting that action.",
