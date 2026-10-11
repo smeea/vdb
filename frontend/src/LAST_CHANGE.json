@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-10",
+  "version": "2026-10-11",
   "changes": [
     "Add search by V5 compatibility to TWD/PDA",
     "Add V5 indicator in card view and on mouse hover (if card text layout is active)",

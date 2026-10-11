@@ -70,12 +70,12 @@ const Inventory = () => {
   };
 
   useEffect(() => {
-    if (!sharedKey) {
+    if (inShared && sharedKey !== searchParams.get("key")) {
       setSharedKey(searchParams.get("key"));
-    } else if (!(sharedCrypt && sharedLibrary) && cryptCardBase && libraryCardBase) {
+    } else if (inShared && !(sharedCrypt && sharedLibrary) && cryptCardBase && libraryCardBase) {
       getInventory(sharedKey);
     }
-  }, [sharedKey, cryptCardBase, libraryCardBase]);
+  }, [inShared, sharedKey, cryptCardBase, libraryCardBase]);
 
   const { [INVENTORY_CATEGORY]: category } = useSnapshot(settings);
   const [showAddDeck, setShowAddDeck] = useState(false);
@@ -107,7 +107,7 @@ const Inventory = () => {
 
   return (
     <div className="inventory-container mx-auto">
-      {(username || (inShared && sharedCrypt && sharedLibrary)) && (
+      {((!inShared && username) || (inShared && sharedCrypt && sharedLibrary)) && (
         <FlexGapped>
           <div
             className={twMerge(

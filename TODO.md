@@ -1,10 +1,10 @@
 # FIX
-- Generate V5 data for existing public decks
 
 # FIX ON HOLD
 
 # FEATURES
 - Inventory target documentation
+- Grab TWD data from archon, including decklists
 
 # FEATURES ON HOLD
 - Draft Cube support -> when draft cube info is available
