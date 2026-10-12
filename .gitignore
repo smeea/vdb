@@ -9,3 +9,4 @@ frontend/dist/
 frontend/public/data/*_playtest_*.json
 frontend/public/images/cards/playtest/
 misc/cards-update/playtest/
+misc/cards-update/.env

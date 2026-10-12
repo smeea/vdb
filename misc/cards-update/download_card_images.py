@@ -1,44 +1,66 @@
 import json
 import multiprocessing
 import os
-import requests
-from requests.adapters import HTTPAdapter
-from urllib3.util.retry import Retry
+import subprocess
+
+MAX_ATTEMPTS = 5
 
 
-def url_response(value):
+def download_file(value):
     filename, url = value
 
     image_path = f"../../frontend/public/images/cards/en-EN/{filename}"
-    image_meta = f"./images_meta/{filename}.meta"
+    meta_path = f"./images_meta/{filename}.meta"
+    image_tmp = image_path + ".part"
+    meta_tmp = meta_path + ".part"
 
-    session = requests.Session()
-    adapter = HTTPAdapter(max_retries=Retry(total=5, backoff_factor=1))
-    session.mount("https://", adapter)
+    cmd = [
+        "curl",
+        "-fsSL",
+        "--retry",
+        "5",
+        "--retry-delay",
+        "1",
+        "--retry-connrefused",
+        "--remove-on-error",
+        "--etag-save",
+        meta_tmp,
+        "--etag-compare",
+        meta_path,
+        "-w",
+        "%{http_code}",
+        "-o",
+        image_tmp,
+        "--",
+        url,
+    ]
 
-    headers = {}
-    if os.path.exists(image_meta):
-        with open(image_meta) as f:
-            etag, last_modified = f.read().split("\n")
-        if etag:
-            headers["If-None-Match"] = etag
-        elif last_modified:
-            headers["If-Modified-Since"] = last_modified
+    print(filename)
+    try:
+        proc = subprocess.run(cmd, check=True, timeout=60, capture_output=True, text=True)
+        http_code = proc.stdout.strip()
 
-    resp = session.get(url, headers=headers, timeout=(10, 60), stream=True)
+        if http_code == "304":
+            # Server says our copy is current: keep image_path and meta_path untouched.
+            return
 
-    if resp.status_code == 304:
-        print(f"{url} not modified, skipping download")
-    elif resp.ok:
-        with open(image_path, "wb") as f:
-            for chunk in resp.iter_content(1 << 16):
-                f.write(chunk)
-        etag = resp.headers.get("ETag", "")
-        last_mod = resp.headers.get("Last-Modified", "")
-        with open(image_path, "w") as f:
-            f.write(f"{etag}\n{last_mod}")
-    else:
-        resp.raise_for_status()
+        # Any other success code means a body was written to image_tmp.
+        if not os.path.exists(image_tmp) or os.path.getsize(image_tmp) == 0:
+            raise RuntimeError(f"empty download for {url}")
+
+        os.replace(image_tmp, image_path)
+
+        if os.path.exists(meta_tmp) and os.path.getsize(meta_tmp) > 0:
+            os.replace(meta_tmp, meta_path)
+        elif os.path.exists(meta_path):
+            # Server sent no ETag: drop the stale one so the next run re-downloads.
+            os.remove(meta_path)
+
+    finally:
+        # Always clean temp files, whether we succeeded, got a 304, or raised.
+        for tmp in (image_tmp, meta_tmp):
+            if os.path.exists(tmp):
+                os.remove(tmp)
 
 
 with open("vtes.json", "r", encoding="utf8") as krcg_file:
@@ -53,4 +75,4 @@ with open("vtes.json", "r", encoding="utf8") as krcg_file:
         cards.append((filename, card["url"]))
 
     pool = multiprocessing.Pool(processes=8)
-    pool.map(url_response, cards)
+    pool.map(download_file, cards)
