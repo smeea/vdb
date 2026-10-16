@@ -8,7 +8,7 @@ const ResultLegalIcon = ({ value, title, type = DEFAULT, className }) => {
   const titleOptions = {
     [PLAYTEST]: "Playtest",
     [PRERELEASE]: `Not legal until ${value}`,
-    [BANNED]: `Banned in ${value}`,
+    [BANNED]: `Banned${ value ? ` in ${value}` : ''}`,
     [DEFAULT]: "",
   };
 
