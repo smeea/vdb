@@ -9,7 +9,7 @@ from search_decks_components import match_inventory
 from api import app, db, login
 from models import Deck
 
-CRYPT_LIMIT = 35
+CRYPT_LIMIT = 40
 LIBRARY_LIMIT = 90
 
 with open("../frontend/public/data/cardbase_crypt.json", "r") as crypt_file:

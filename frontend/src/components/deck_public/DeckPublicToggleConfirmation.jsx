@@ -7,7 +7,7 @@ const DeckPublicToggleConfirmation = ({ deck, handleConfirmation, setShow }) => 
   const { hasPlaytest } = getRestrictions(deck);
 
   const isWrongQtyCards =
-    countCards(Object.values(deck[CRYPT])) > 35 ||
+    countCards(Object.values(deck[CRYPT])) > 40 ||
     countCards(Object.values(deck[CRYPT])) < 12 ||
     countCards(Object.values(deck[LIBRARY])) < 60 ||
     countCards(Object.values(deck[LIBRARY])) > 90;
@@ -26,7 +26,7 @@ const DeckPublicToggleConfirmation = ({ deck, handleConfirmation, setShow }) => 
     >
       {isWrongQtyCards ? (
         <div className="text-fgRed dark:text-fgRedDark">
-          Public Deck must have 12-35 crypt and 60-90 library cards
+          Public Deck must have 12-40 crypt and 60-90 library cards
         </div>
       ) : hasPlaytest ? (
         "Public Deck cannot have playtest cards"
