@@ -624,6 +624,9 @@
             "2P":{
                 "C":true,
                 "PPower":2
+            },
+            "playtest":{
+                "NB4PPower":2
             }
         },
         "text":"Only usable during the polling step of a political action.\n[pot][pre] This vampire gets +3 votes.\n[POT][PRE] Vampires who do not follow the Path of Power and the Inner Voice get -1 vote.",
@@ -10352,6 +10355,10 @@
             "SV5":{
                 "PCathari":"3",
                 "PDeath":"3"
+            },
+            "playtest":{
+                "NB4PCaine":2,
+                "NB4PDeath":2
             }
         },
         "text":"Put this card on a vampire you control. During their master phase, this vampire's controller can move 1 blood from this vampire to their pool or from their pool to this vampire.",
@@ -12430,6 +12437,9 @@
             },
             "V5C":{
                 "PSal":"1"
+            },
+            "playtest":{
+                "NB4PCaine":1
             }
         },
         "text":"Unique.\nThe bearer with Auspex [aus] gets +1 intercept. The bearer with superior Auspex [AUS] can burn 1 blood during an action to get an additional +1 intercept.",
@@ -16660,6 +16670,9 @@
             },
             "V5H":{
                 "PH":"1"
+            },
+            "playtest":{
+                "NB4PCathari":1
             }
         },
         "text":"Unique location.\nYou can lock this card to give a minion you control +2 intercept. Not usable during the first action in a minion phase.",
@@ -19433,6 +19446,9 @@
             },
             "Third":{
                 "U":true
+            },
+            "playtest":{
+                "NB4PPower":1
             }
         },
         "text":"Master: location.\nYou may lock this card during your master phase to transfer equipment and/or move blood between any two ready Sabbat vampires you control.",
@@ -24156,6 +24172,9 @@
             "2P":{
                 "C":true,
                 "PCaine":3
+            },
+            "playtest":{
+                "NB4PCaine":2
             }
         },
         "text":"[obf] or [tha] Maneuver, only usable to get to close range.\n[OBF] or [THA] As above, and once this round, this vampire can burn 1 blood to get 1 additional maneuver, only usable to get to close range.",
@@ -24763,6 +24782,9 @@
             },
             "2P":{
                 "C":true
+            },
+            "playtest":{
+                "NB4PPower":2
             }
         },
         "text":"[for] If this action is blocked, all damage inflicted on vampires during the resulting combat is aggravated. If a vampire is currently attempting to block, they can cancel their block attempt.\n[FOR] As above, but without the option to cancel their block attempt.",
@@ -25730,6 +25752,9 @@
             },
             "SV5":{
                 "PPower":"5"
+            },
+            "playtest":{
+                "NB4PPower":2
             }
         },
         "text":"Only usable if a minion is bleeding you, after blocks are declined.\n[dom] Lock this reacting vampire. Change the target of the bleed to another Methuselah other than the acting minion's controller (that Methuselah can attempt to block).\n[DOM] As above, but do not lock this vampire.",
@@ -26188,6 +26213,9 @@
             },
             "SV5":{
                 "PCaine":"1"
+            },
+            "playtest":{
+                "NB4PCathari":1
             }
         },
         "text":"Unique.\nPut this card on a ready vampire you control. This vampire gets +1 strength. This vampire gets +1 stealth during diablerie actions. This vampire cannot recruit allies or employ retainers.",
@@ -34447,6 +34475,9 @@
                 "PDeath":2,
                 "Sal":2,
                 "Tr":2
+            },
+            "playtest":{
+                "NB4PDeath":3
             }
         },
         "text":"[aus] Only usable during an action directed at you (or a card you control). +2 intercept.\n[AUS] Only usable by a locked vampire. This vampire wakes (they ignore the requirement to be unlocked for playing reaction cards and attempting to block until the end of the action).",
@@ -35486,7 +35517,8 @@
                 "Tz":1
             },
             "playtest":{
-                "ToDN":1
+                "ToDN":1,
+                "NB4PCaine":1
             }
         },
         "text":"Unique.\nPut this card on a ready vampire. After this vampire goes to torpor, their controller burns 3 pool. During each Methuselah's unlock phase, if this vampire is in torpor, that Methuselah burns 1 pool.",
@@ -41068,6 +41100,9 @@
             },
             "LotN":{
                 "PA":"2"
+            },
+            "playtest":{
+                "NB4PCaine":1
             }
         },
         "text":"Melee weapon.\nStrike: strength damage, only usable at close range. If the opposing vampire would go to torpor during the strike resolution step of this strike and the bearer remains ready, the bearer may burn this card to burn the opposing vampire instead. This is not considered diablerie.",
@@ -44120,6 +44155,10 @@
             },
             "NB3C":{
                 "PS":"1"
+            },
+            "playtest":{
+                "NB4PCaine":1,
+                "NB4PDeath":1
             }
         },
         "text":"Put this card on a ready vampire you control. This vampire gets +1 intercept during bleed actions directed at you. This vampire can prevent 1 damage each combat. If this vampire is in torpor, burn this card.",
@@ -46055,6 +46094,9 @@
             "2P":{
                 "C":true,
                 "PCathari":2
+            },
+            "playtest":{
+                "NB4PCathari":2
             }
         },
         "text":"Only usable by a ready unlocked vampire other than the acting minion if a minion attempts to block.\n[for] or [pre] That attempt fails and the blocking minion cannot attempt to block this action again. Lock this vampire and the blocking minion, and queue a combat between them.\n[FOR] or [PRE] As above, but queue no combat.",
@@ -46662,6 +46704,9 @@
             },
             "V5C":{
                 "PSal":"3"
+            },
+            "playtest":{
+                "NB4PDeath":3
             }
         },
         "text":"[for] Prevent X+1 damage.\n[FOR] As above, with 1 optional press.",
@@ -52737,6 +52782,9 @@
             },
             "V5":{
                 "PTr":"1"
+            },
+            "playtest":{
+                "NB4PPower":3
             }
         },
         "text":"Once each combat, the bearer can prevent 2 damage from gun strikes or 1 damage from any other source. A minion can have only one Kevlar Vest.",
@@ -66517,6 +66565,9 @@
             },
             "2P":{
                 "C":true
+            },
+            "playtest":{
+                "NB4PDeath":1
             }
         },
         "text":"Discipline.\nPut this card on a vampire. This vampire gets +1 level of Oblivion [obl] and +1 capacity. Cannot be put on a vampire with superior Oblivion [OBL].",
@@ -67070,6 +67121,11 @@
                 "Sal":2,
                 "To":2,
                 "Tz":2
+            },
+            "playtest":{
+                "NB4PCaine":2,
+                "NB4PCathari":3,
+                "NB4PPower":2
             }
         },
         "text":"Only usable by a locked minion. A minion can play only one On the Qui Vive between their unlock phases.\nThis minion wakes (they ignore the requirement to be unlocked for playing reaction cards and attempting to block until the end of the action). If this minion is an ally, they do not unlock as normal during their next unlock phase.",
@@ -78653,6 +78709,9 @@
             },
             "SP":{
                 "DoF":"4"
+            },
+            "playtest":{
+                "NB4PCaine":2
             }
         },
         "text":"Do not replace until after this action.\n[ani][aus] +1 intercept. This vampire does not lock for the block.\n[ANI][AUS] Only usable by a locked vampire. This vampire unlocks and attempts to block with +1 intercept, even if intercept is not yet needed.",
@@ -83660,6 +83719,9 @@
             },
             "HttB":{
                 "PSal":"2"
+            },
+            "playtest":{
+                "NB4PPower":2
             }
         },
         "text":"Requires a Sabbat vampire.\n(D) Enter combat with a ready minion controlled by another Methuselah. In that combat, your hand size is increased by one. If this acting vampire is not ready at the end of the action, you burn 1 pool.",
@@ -86577,6 +86639,9 @@
             "2P":{
                 "C":true,
                 "PCathari":3
+            },
+            "playtest":{
+                "NB4PCathari":2
             }
         },
         "text":"Only usable as the action is announced.\n[obf] or [pre] Minions must burn 1 blood to attempt to block this action.\n[OBF] or [PRE] As above, and choose a vampire. The chosen vampire cannot block this action.",
@@ -87050,6 +87115,9 @@
             "2P":{
                 "C":true,
                 "PCaine":6
+            },
+            "playtest":{
+                "NB4PCaine":2
             }
         },
         "text":"[ani] or [tha] Only usable by a locked vampire. This vampire unlocks and attempts to block.\n[ANI] or [THA] Reduce a bleed against you by 3.",
@@ -87857,6 +87925,9 @@
                 "H":3,
                 "L":3,
                 "PDeath":2
+            },
+            "playtest":{
+                "NB4PDeath":3
             }
         },
         "text":"[obl] +1 stealth.\n[OBL] Only usable after resolution of a successful directed action. Put this card on this vampire. During an action directed at the same Methuselah or same set of Methuselahs, this vampire can burn this card to get +1 stealth.",
@@ -87909,6 +87980,9 @@
                 "H":3,
                 "L":3,
                 "PDeath":2
+            },
+            "playtest":{
+                "NB4PDeath":3
             }
         },
         "text":"[obl] +1 stealth.\n[OBL] Only usable after resolution of a successful action. Put this card on this vampire. Minions without Auspex [aus] cannot perform actions directed at this vampire. During your unlock phase, burn this card.",
@@ -89681,6 +89755,9 @@
             },
             "V5A":{
                 "PB":"2"
+            },
+            "playtest":{
+                "NB4PPower":2
             }
         },
         "text":"[pot][pre] (D) Bleed with +1 bleed. If this action is blocked, before range is determined during the first round of the resulting combat, this vampire can gain +1 strength that combat.\n[POT][PRE] As above, but at +2 bleed and this vampire can gain +2 strength.",
@@ -90646,7 +90723,9 @@
                 "PA":"2"
             },
             "playtest":{
-                "ToDV":1
+                "ToDV":1,
+                "NB4PCaine":2,
+                "NB4PDeath":3
             }
         },
         "text":"[for] Prevent all damage from the opponent's strike.\n[FOR] As above, and prevent all damage from the opponent's strikes for the remainder of this round.",
@@ -92216,6 +92295,9 @@
             },
             "Third":{
                 "C":true
+            },
+            "playtest":{
+                "NB4PCaine":2
             }
         },
         "text":"Only usable before range is chosen.\n[ani] The opposing minion gets -1 strength this round. A vampire may play only one Song of Serenity each combat.\n[ANI] As above, but for the remainder of combat.",
@@ -93130,6 +93212,9 @@
         "set":{
             "V5H":{
                 "PH":"4"
+            },
+            "playtest":{
+                "NB4PDeath":3
             }
         },
         "text":"Wraith with 1 life. 1 strength, 1 bleed.\n[obl] This ally can perform actions the turn it is recruited. Unlock this vampire if this is their first successful recruit ally action this turn. This ally can play non-action cards requiring basic Oblivion [obl] as a vampire. During your unlock phase, burn this ally.\n[OBL] As above, but during your unlock phase, you can burn 1 pool instead of burning this ally.",
@@ -93536,6 +93621,9 @@
                 "C":true,
                 "Sal":1,
                 "Tr":2
+            },
+            "playtest":{
+                "NB4PCaine":2
             }
         },
         "text":"[aus] +1 intercept.\n[AUS] As above, with 1 optional maneuver during the resulting combat if this vampire blocks.",
@@ -95586,6 +95674,9 @@
             "2P":{
                 "C":true,
                 "PCathari":3
+            },
+            "playtest":{
+                "NB4PCathari":2
             }
         },
         "text":"[cel] or [pre] +1 stealth.\n[CEL] or [PRE] +1 bleed (limited), or +1 stealth and +1 bleed (limited).",
@@ -96784,7 +96875,8 @@
                 "R":2
             },
             "playtest":{
-                "ToDN":2
+                "ToDN":2,
+                "NB4PCaine":2
             }
         },
         "text":"[obf] [ACTION MODIFIER] +1 stealth.\n[OBF] [COMBAT] Maneuver.",
@@ -98738,7 +98830,8 @@
                 "PCaine":3
             },
             "playtest":{
-                "ToDN":2
+                "ToDN":2,
+                "NB4PCaine":2
             }
         },
         "text":"Only usable at the end of a round of combat. Not usable by a vampire being burned or going to torpor. A vampire can play only one Taste of Vitae each round.\nThis vampire gains blood equal to the amount of blood lost by the opposing vampire to damage this round.",
@@ -99010,6 +99103,11 @@
             "SV5":{
                 "PCathari":"6",
                 "PDeath":"2"
+            },
+            "playtest":{
+                "NB4PCaine":2,
+                "NB4PCathari":3,
+                "NB4PDeath":3
             }
         },
         "text":"[aus] +1 intercept.\n[AUS] Only usable if a minion is bleeding you, after blocks are declined. Lock this reacting vampire. Change the target of the bleed to another Methuselah other than the acting minion's controller (that Methuselah can attempt to block).",
@@ -99540,6 +99638,9 @@
             "2P":{
                 "C":true,
                 "PCaine":1
+            },
+            "playtest":{
+                "NB4PCaine":1
             }
         },
         "text":"Unique.\nPut this card in play. After a ready minion is burned or sent to torpor, their controller burns 1 pool. Methuselahs can use a master phase action and discard two master cards to burn this card.",
@@ -105020,6 +105121,9 @@
             "LotN":{
                 "C":true,
                 "PS":"3"
+            },
+            "playtest":{
+                "NB4PCathari":3
             }
         },
         "text":"[pre] Strike: combat ends.\n[PRE] As above, and put this card on the opposing minion (ranged). The striking vampire gets +1 bleed against this minion's controller. This minion may burn this card as a +1 stealth action. A minion can have only one Unholy Penance.",
@@ -105086,6 +105190,9 @@
             "SV5":{
                 "PCaine":"3",
                 "PPower":"3"
+            },
+            "playtest":{
+                "NB4PPower":2
             }
         },
         "text":"Add 3 blood to a titled Sabbat vampire in your uncontrolled region.",
@@ -105637,6 +105744,9 @@
             "2P":{
                 "C":true,
                 "PPower":2
+            },
+            "playtest":{
+                "NB4PPower":2
             }
         },
         "text":"[pot] or [pre] Minions must burn 1 blood or life to attempt to block this action.\n[POT] or [PRE] As above, and minions get -1 intercept.",
@@ -107107,6 +107217,10 @@
             "NB3C":{
                 "PR":"2",
                 "PS":"2"
+            },
+            "playtest":{
+                "NB4PCathari":2,
+                "NB4PPower":2
             }
         },
         "text":"Trifle.\nPut this card on a vampire and you can burn a card named /Blood Doll/ (if any). During their unlock phase, this vampire's controller can move 1 blood from this vampire to their pool or from their pool to this vampire.",
@@ -109438,6 +109552,12 @@
             },
             "SP":{
                 "LB":"1"
+            },
+            "playtest":{
+                "NB4PCaine":1,
+                "NB4PCathari":1,
+                "NB4PDeath":1,
+                "NB4PPower":1
             }
         },
         "text":"Out-of-turn. Trifle. Do not replace until your unlock phase.\nCancel a master card played by your predator or prey as it is played, and its cost is not paid. That Methuselah gets +1 master phase action immediately, or at the start of their next master phase if the canceled card is an out-of-turn master.",
@@ -110278,6 +110398,9 @@
                 "Sal":2,
                 "To":3,
                 "V":2
+            },
+            "playtest":{
+                "NB4PCaine":2
             }
         },
         "text":"Only usable before range is determined during the first round.\nPut this card with 5 counters on it on this minion; it becomes a melee weapon equipment that can strike: strength+1 damage. For each damage inflicted by this strike (even if prevented), burn 1 counter from this card. Burn this card if it has no counters. A minion can have only one Weighted Walking Stick.",

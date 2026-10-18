@@ -3,6 +3,30 @@
     "name": "PLAYTEST",
     "date": "",
     "precons": {
+      "NB4PCaine": {
+        "name": "Path of Caine",
+        "clan": "Caine"
+      },
+      "NB4PCathari": {
+        "name": "Path of Cathari",
+        "clan": "Cathari"
+      },
+      "NB4PDeath": {
+        "name": "Path of Death",
+        "clan": "Death and the Soul"
+      },
+      "NB4PPower": {
+        "name": "Path of Power",
+        "clan": "Power and the Inner Voice"
+      },
+      "ToDN": {
+        "name": "Nosferatu",
+        "clan": "Nosferatu"
+      },
+      "ToDV": {
+        "name": "Ventrue",
+        "clan": "Ventrue"
+      },
       "BbN": {
         "name": "Brazil By Night",
         "clan": "Bundle",
@@ -12,14 +36,6 @@
         "name": "Shadows of New York",
         "clan": "Bundle",
         "playtest_old": true
-      },
-      "ToDN": {
-        "name": "Nosferatu",
-        "clan": "Nosferatu"
-      },
-      "ToDV": {
-        "name": "Ventrue",
-        "clan": "Ventrue"
       }
     }
   },
