@@ -1,5 +1,12 @@
 [
   {
+    "version": "2026-10-18",
+    "changes": [
+      "Increase PDA crypt limit to 40 cards",
+      "Small fixes"
+    ]
+  },
+  {
     "version": "2026-10-11",
     "changes": [
       "Add search by V5 compatibility to TWD/PDA",
