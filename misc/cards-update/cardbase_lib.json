@@ -73089,6 +73089,9 @@
         "set":{
             "LotN":{
                 "R":true
+            },
+            "playtest":{
+                "NB4PPower":1
             }
         },
         "text":"Master: unique location.\nWhile you have the Edge, any vampire you control may add 2 blood from the blood bank to a younger vampire in your uncontrolled region as a +1 stealth action. If that action is blocked, burn the Edge (before combat, if any). Any Methuselah may burn the Edge during his or her master phase to steal this card.",
