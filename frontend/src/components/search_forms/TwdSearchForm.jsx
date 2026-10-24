@@ -131,7 +131,7 @@ const TwdSearchForm = ({ error, setError }) => {
   };
 
   const handleError = (e) => {
-    switch (e.response.status) {
+    switch (e?.response.status) {
       case 400:
         setError("NO DECKS FOUND");
         break;

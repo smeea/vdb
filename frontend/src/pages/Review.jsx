@@ -58,7 +58,7 @@ const Review = () => {
 
   const getDeck = async () => {
     const deckData = await loaderData[DECK].catch((e) => {
-      switch (e.response.status) {
+      switch (e?.response.status) {
         case 400:
           setError("NO DECK WITH THIS ID");
           break;

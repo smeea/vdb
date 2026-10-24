@@ -54,7 +54,7 @@ const Inventory = () => {
     try {
       response = await inventoryServices.getSharedInventory(key, cryptCardBase, libraryCardBase);
     } catch (e) {
-      switch (e.response.status) {
+      switch (e?.response.status) {
         case 401:
           setError("NO INVENTORY WITH THIS KEY");
           break;

@@ -62,7 +62,7 @@ const Diff = () => {
     try {
       deckData = await deckServices.getDeck(id);
     } catch (e) {
-      switch (e.response.status) {
+      switch (e?.response.status) {
         case 400:
           setE("NO DECK WITH THIS ID");
           break;
