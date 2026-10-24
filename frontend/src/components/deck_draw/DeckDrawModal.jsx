@@ -16,7 +16,6 @@ import {
 import { BLOOD, CAPACITY, POOL, X } from "@/constants";
 import { useApp } from "@/context";
 import { useModalCardController } from "@/hooks";
-import { countCards } from "@/utils";
 
 const DeckDrawModal = ({
   burnedCrypt,
@@ -36,8 +35,8 @@ const DeckDrawModal = ({
 }) => {
   const { isMobile, isNarrow } = useApp();
 
-  const cryptTotal = countCards([...drawedCrypt, ...restCrypt, ...burnedCrypt]);
-  const libraryTotal = countCards([...drawedLibrary, ...restLibrary, ...burnedLibrary]);
+  const cryptTotal = [...drawedCrypt, ...restCrypt, ...burnedCrypt].length;
+  const libraryTotal = [...drawedLibrary, ...restLibrary, ...burnedLibrary].length;
 
   let burnedCapacityTotal = 0;
   burnedCrypt.forEach((card) => {
@@ -65,8 +64,8 @@ const DeckDrawModal = ({
   } = useModalCardController(burnedCrypt, burnedLibrary);
 
   const handleRedrawAll = () => {
-    handleReDrawCrypt();
-    handleReDrawLibrary();
+    cryptTotal >= 4 && handleReDrawCrypt();
+    libraryTotal >= 7 && handleReDrawLibrary();
   };
 
   return (
