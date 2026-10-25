@@ -3000,6 +3000,8 @@
   - The blood comes from the blood bank. [ANK 20190311]
 101958|Tension in the Ranks:
   - Pool is not paid when an imbued is incapacitated. [LSJ 20060409-2]
+  - When several minions burn or enter Torpor simultaneously, the acting Methuselah sets the order in wich the pool is burned.
+    [LSJ 20090208-2]
 101960|Terror Frenzy:
   - '[ANI] Also affects the cost of combat cards played at then of a round or combat (eg. {100549|Disarm}, {101950|Telepathic
     Tracking}, {101507|Psyche!}, {101945|Taste of Vitae}). [ANK 20180910-3]'
@@ -4227,9 +4229,6 @@
   - Her ability can only be used once during each of your turns. [RBK wording-templates] [ANK 20230122]
 201641|The Guardian:
   - When using his ability, the opponent is the acting minion and play their combat effects first. [ANK 20221102]
-201643|Lady Scarlett Churchill:
-  - Can be chosen as a target for {101989|Toreador Grand Ball} to be locked, but unlocks normally in subsequent unlock phases.
-    [ANK 20220816-2]
 201648|Regina Blake:
   - She can use her ability to pay for equipments that are locations while in play (eg. {101345|Palatial Estate}). [LSJ 20080107]
     [LSJ 20080114]
@@ -4434,9 +4433,11 @@ G00072|Impersonating requirements for cards not played normally:
   - The ability ability cannot be used to fulfill card requirements if they are not played normally, like when using {100392|Concealed
     Weapon} for an equipment or {101401|Piper} or {101902|The Summoning} for an ally. [LSJ 20050119]
 G00073|Impersonating requirements to play cards:
-  - When meeting a requirement to play a card, the vampire is treated as such for all the effects of the card, and only them,
-    including duration effects. The vampire is not treated as meeting the requirements for effects the card has from being
-    in play. [LSJ 20101013] [ANK 20190228] [ANK 20200705-2] [LSJ 20070708] [RTR 20070707]
+  - 'When meeting a requirement to play a card, the vampire is treated as such for all the effects of that card, and only
+    that card, including duration effects. The vampire is not treated as meeting the requirements for effects the card has
+    from being in play. For example, playing  {101989|Toreador Grand Ball} as a Toreador: if chosen as the locked Toreador,
+    they unlock as normal, if chosen as the other, they do not benefit from being unblockable. [LSJ 20101013] [ANK 20190228]
+    [ANK 20200705-2] [LSJ 20070708] [RTR 20070707]'
 G00074|Adding costs to a strike or strike card:
   - If an opponent then plays an effect that grants a strike (e.g, {100029|Aid from Bats}), they pay the additional cost.
     [LSJ 20090529]

@@ -467,7 +467,7 @@
                 }
             },
             {
-                "text":"When meeting a requirement to play a card, the vampire is treated as such for all the effects of the card, and only them, including duration effects. The vampire is not treated as meeting the requirements for effects the card has from being in play.",
+                "text":"When meeting a requirement to play a card, the vampire is treated as such for all the effects of that card, and only that card, including duration effects. The vampire is not treated as meeting the requirements for effects the card has from being in play. For example, playing  {101989|Toreador Grand Ball} as a Toreador: if chosen as the locked Toreador, they unlock as normal, if chosen as the other, they do not benefit from being unblockable.",
                 "refs":{
                     "LSJ 20101013":"https://usenet.krcg.org/t/hpFRDAmtSbA/#m4",
                     "ANK 20190228":"https://www.vekn.net/forum/rules-questions/77427-mata-hari-and-hakim-s-law-leadership?start=42#93785",
@@ -4801,7 +4801,7 @@
                 }
             },
             {
-                "text":"When meeting a requirement to play a card, the vampire is treated as such for all the effects of the card, and only them, including duration effects. The vampire is not treated as meeting the requirements for effects the card has from being in play.",
+                "text":"When meeting a requirement to play a card, the vampire is treated as such for all the effects of that card, and only that card, including duration effects. The vampire is not treated as meeting the requirements for effects the card has from being in play. For example, playing  {101989|Toreador Grand Ball} as a Toreador: if chosen as the locked Toreador, they unlock as normal, if chosen as the other, they do not benefit from being unblockable.",
                 "refs":{
                     "LSJ 20101013":"https://usenet.krcg.org/t/hpFRDAmtSbA/#m4",
                     "ANK 20190228":"https://www.vekn.net/forum/rules-questions/77427-mata-hari-and-hakim-s-law-leadership?start=42#93785",
@@ -23506,7 +23506,7 @@
                 }
             },
             {
-                "text":"When meeting a requirement to play a card, the vampire is treated as such for all the effects of the card, and only them, including duration effects. The vampire is not treated as meeting the requirements for effects the card has from being in play.",
+                "text":"When meeting a requirement to play a card, the vampire is treated as such for all the effects of that card, and only that card, including duration effects. The vampire is not treated as meeting the requirements for effects the card has from being in play. For example, playing  {101989|Toreador Grand Ball} as a Toreador: if chosen as the locked Toreador, they unlock as normal, if chosen as the other, they do not benefit from being unblockable.",
                 "refs":{
                     "LSJ 20101013":"https://usenet.krcg.org/t/hpFRDAmtSbA/#m4",
                     "ANK 20190228":"https://www.vekn.net/forum/rules-questions/77427-mata-hari-and-hakim-s-law-leadership?start=42#93785",
@@ -34943,7 +34943,7 @@
                 }
             },
             {
-                "text":"When meeting a requirement to play a card, the vampire is treated as such for all the effects of the card, and only them, including duration effects. The vampire is not treated as meeting the requirements for effects the card has from being in play.",
+                "text":"When meeting a requirement to play a card, the vampire is treated as such for all the effects of that card, and only that card, including duration effects. The vampire is not treated as meeting the requirements for effects the card has from being in play. For example, playing  {101989|Toreador Grand Ball} as a Toreador: if chosen as the locked Toreador, they unlock as normal, if chosen as the other, they do not benefit from being unblockable.",
                 "refs":{
                     "LSJ 20101013":"https://usenet.krcg.org/t/hpFRDAmtSbA/#m4",
                     "ANK 20190228":"https://www.vekn.net/forum/rules-questions/77427-mata-hari-and-hakim-s-law-leadership?start=42#93785",
@@ -35803,7 +35803,7 @@
                 }
             },
             {
-                "text":"[MERGED] When meeting a requirement to play a card, the vampire is treated as such for all the effects of the card, and only them, including duration effects. The vampire is not treated as meeting the requirements for effects the card has from being in play.",
+                "text":"[MERGED] When meeting a requirement to play a card, the vampire is treated as such for all the effects of that card, and only that card, including duration effects. The vampire is not treated as meeting the requirements for effects the card has from being in play. For example, playing  {101989|Toreador Grand Ball} as a Toreador: if chosen as the locked Toreador, they unlock as normal, if chosen as the other, they do not benefit from being unblockable.",
                 "refs":{
                     "LSJ 20101013":"https://usenet.krcg.org/t/hpFRDAmtSbA/#m4",
                     "ANK 20190228":"https://www.vekn.net/forum/rules-questions/77427-mata-hari-and-hakim-s-law-leadership?start=42#93785",
@@ -37382,19 +37382,13 @@
         "path":"",
         "rulings":[
             {
-                "text":"Can be chosen as a target for {101989|Toreador Grand Ball} to be locked, but unlocks normally in subsequent unlock phases.",
-                "refs":{
-                    "ANK 20220816-2":"https://www.vekn.net/forum/rules-questions/79968-interaction-between-lady-scarlet-churchill-and-toreador-grand-ball#106003"
-                }
-            },
-            {
                 "text":"The ability ability cannot be used to fulfill card requirements if they are not played normally, like when using {100392|Concealed Weapon} for an equipment or {101401|Piper} or {101902|The Summoning} for an ally.",
                 "refs":{
                     "LSJ 20050119":"https://usenet.krcg.org/t/NKWhBnp7uP4/#m11"
                 }
             },
             {
-                "text":"When meeting a requirement to play a card, the vampire is treated as such for all the effects of the card, and only them, including duration effects. The vampire is not treated as meeting the requirements for effects the card has from being in play.",
+                "text":"When meeting a requirement to play a card, the vampire is treated as such for all the effects of that card, and only that card, including duration effects. The vampire is not treated as meeting the requirements for effects the card has from being in play. For example, playing  {101989|Toreador Grand Ball} as a Toreador: if chosen as the locked Toreador, they unlock as normal, if chosen as the other, they do not benefit from being unblockable.",
                 "refs":{
                     "LSJ 20101013":"https://usenet.krcg.org/t/hpFRDAmtSbA/#m4",
                     "ANK 20190228":"https://www.vekn.net/forum/rules-questions/77427-mata-hari-and-hakim-s-law-leadership?start=42#93785",
@@ -39095,7 +39089,7 @@
                 }
             },
             {
-                "text":"When meeting a requirement to play a card, the vampire is treated as such for all the effects of the card, and only them, including duration effects. The vampire is not treated as meeting the requirements for effects the card has from being in play.",
+                "text":"When meeting a requirement to play a card, the vampire is treated as such for all the effects of that card, and only that card, including duration effects. The vampire is not treated as meeting the requirements for effects the card has from being in play. For example, playing  {101989|Toreador Grand Ball} as a Toreador: if chosen as the locked Toreador, they unlock as normal, if chosen as the other, they do not benefit from being unblockable.",
                 "refs":{
                     "LSJ 20101013":"https://usenet.krcg.org/t/hpFRDAmtSbA/#m4",
                     "ANK 20190228":"https://www.vekn.net/forum/rules-questions/77427-mata-hari-and-hakim-s-law-leadership?start=42#93785",
@@ -44586,7 +44580,7 @@
                 }
             },
             {
-                "text":"When meeting a requirement to play a card, the vampire is treated as such for all the effects of the card, and only them, including duration effects. The vampire is not treated as meeting the requirements for effects the card has from being in play.",
+                "text":"When meeting a requirement to play a card, the vampire is treated as such for all the effects of that card, and only that card, including duration effects. The vampire is not treated as meeting the requirements for effects the card has from being in play. For example, playing  {101989|Toreador Grand Ball} as a Toreador: if chosen as the locked Toreador, they unlock as normal, if chosen as the other, they do not benefit from being unblockable.",
                 "refs":{
                     "LSJ 20101013":"https://usenet.krcg.org/t/hpFRDAmtSbA/#m4",
                     "ANK 20190228":"https://www.vekn.net/forum/rules-questions/77427-mata-hari-and-hakim-s-law-leadership?start=42#93785",
@@ -52412,13 +52406,7 @@
                 }
             },
             {
-                "text":"The ability ability cannot be used to fulfill card requirements if they are not played normally, like when using {100392|Concealed Weapon} for an equipment or {101401|Piper} or {101902|The Summoning} for an ally.",
-                "refs":{
-                    "LSJ 20050119":"https://usenet.krcg.org/t/NKWhBnp7uP4/#m11"
-                }
-            },
-            {
-                "text":"When meeting a requirement to play a card, the vampire is treated as such for all the effects of the card, and only them, including duration effects. The vampire is not treated as meeting the requirements for effects the card has from being in play.",
+                "text":"When meeting a requirement to play a card, the vampire is treated as such for all the effects of that card, and only that card, including duration effects. The vampire is not treated as meeting the requirements for effects the card has from being in play. For example, playing  {101989|Toreador Grand Ball} as a Toreador: if chosen as the locked Toreador, they unlock as normal, if chosen as the other, they do not benefit from being unblockable.",
                 "refs":{
                     "LSJ 20101013":"https://usenet.krcg.org/t/hpFRDAmtSbA/#m4",
                     "ANK 20190228":"https://www.vekn.net/forum/rules-questions/77427-mata-hari-and-hakim-s-law-leadership?start=42#93785",
@@ -52784,7 +52772,7 @@
                 }
             },
             {
-                "text":"When meeting a requirement to play a card, the vampire is treated as such for all the effects of the card, and only them, including duration effects. The vampire is not treated as meeting the requirements for effects the card has from being in play.",
+                "text":"When meeting a requirement to play a card, the vampire is treated as such for all the effects of that card, and only that card, including duration effects. The vampire is not treated as meeting the requirements for effects the card has from being in play. For example, playing  {101989|Toreador Grand Ball} as a Toreador: if chosen as the locked Toreador, they unlock as normal, if chosen as the other, they do not benefit from being unblockable.",
                 "refs":{
                     "LSJ 20101013":"https://usenet.krcg.org/t/hpFRDAmtSbA/#m4",
                     "ANK 20190228":"https://www.vekn.net/forum/rules-questions/77427-mata-hari-and-hakim-s-law-leadership?start=42#93785",
@@ -63041,7 +63029,7 @@
                 }
             },
             {
-                "text":"When meeting a requirement to play a card, the vampire is treated as such for all the effects of the card, and only them, including duration effects. The vampire is not treated as meeting the requirements for effects the card has from being in play.",
+                "text":"When meeting a requirement to play a card, the vampire is treated as such for all the effects of that card, and only that card, including duration effects. The vampire is not treated as meeting the requirements for effects the card has from being in play. For example, playing  {101989|Toreador Grand Ball} as a Toreador: if chosen as the locked Toreador, they unlock as normal, if chosen as the other, they do not benefit from being unblockable.",
                 "refs":{
                     "LSJ 20101013":"https://usenet.krcg.org/t/hpFRDAmtSbA/#m4",
                     "ANK 20190228":"https://www.vekn.net/forum/rules-questions/77427-mata-hari-and-hakim-s-law-leadership?start=42#93785",
@@ -67010,7 +66998,7 @@
                 }
             },
             {
-                "text":"When meeting a requirement to play a card, the vampire is treated as such for all the effects of the card, and only them, including duration effects. The vampire is not treated as meeting the requirements for effects the card has from being in play.",
+                "text":"When meeting a requirement to play a card, the vampire is treated as such for all the effects of that card, and only that card, including duration effects. The vampire is not treated as meeting the requirements for effects the card has from being in play. For example, playing  {101989|Toreador Grand Ball} as a Toreador: if chosen as the locked Toreador, they unlock as normal, if chosen as the other, they do not benefit from being unblockable.",
                 "refs":{
                     "LSJ 20101013":"https://usenet.krcg.org/t/hpFRDAmtSbA/#m4",
                     "ANK 20190228":"https://www.vekn.net/forum/rules-questions/77427-mata-hari-and-hakim-s-law-leadership?start=42#93785",
@@ -68745,13 +68733,7 @@
                 }
             },
             {
-                "text":"The ability ability cannot be used to fulfill card requirements if they are not played normally, like when using {100392|Concealed Weapon} for an equipment or {101401|Piper} or {101902|The Summoning} for an ally.",
-                "refs":{
-                    "LSJ 20050119":"https://usenet.krcg.org/t/NKWhBnp7uP4/#m11"
-                }
-            },
-            {
-                "text":"When meeting a requirement to play a card, the vampire is treated as such for all the effects of the card, and only them, including duration effects. The vampire is not treated as meeting the requirements for effects the card has from being in play.",
+                "text":"When meeting a requirement to play a card, the vampire is treated as such for all the effects of that card, and only that card, including duration effects. The vampire is not treated as meeting the requirements for effects the card has from being in play. For example, playing  {101989|Toreador Grand Ball} as a Toreador: if chosen as the locked Toreador, they unlock as normal, if chosen as the other, they do not benefit from being unblockable.",
                 "refs":{
                     "LSJ 20101013":"https://usenet.krcg.org/t/hpFRDAmtSbA/#m4",
                     "ANK 20190228":"https://www.vekn.net/forum/rules-questions/77427-mata-hari-and-hakim-s-law-leadership?start=42#93785",
