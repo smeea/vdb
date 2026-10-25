@@ -1,5 +1,13 @@
 [
   {
+    "version": "2026-10-25",
+    "changes": [
+      "Update TWDA",
+      "Update rulings",
+      "Fix Inventory filters"
+    ]
+  },
+  {
     "version": "2026-10-18",
     "changes": [
       "Increase PDA crypt limit to 40 cards",
