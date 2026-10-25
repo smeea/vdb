@@ -62,7 +62,7 @@
     "201634":{
         "deckid":"10587",
         "twdDate":"2023-03-04",
-        "player":"Rahma Sinien"
+        "player":"Jonathan Sinien Rahma"
     },
     "200009":{
         "deckid":"2k9419ithaca",
@@ -150,8 +150,8 @@
         "player":"Ivan Chebunin"
     },
     "201736":{
-        "deckid":"13019",
-        "twdDate":"2026-06-16",
+        "deckid":"13163",
+        "twdDate":"2026-03-17",
         "player":"Martin Weinmayer"
     },
     "200022":{
@@ -200,7 +200,9 @@
         "player":"Jared Strait"
     },
     "200030":{
-        "deckid":null
+        "deckid":"13403",
+        "twdDate":"2026-07-12",
+        "player":"Lech Ivanov"
     },
     "200031":{
         "deckid":"shadowtwin2k1",
@@ -1936,7 +1938,7 @@
     "201640":{
         "deckid":"10587",
         "twdDate":"2023-03-04",
-        "player":"Rahma Sinien"
+        "player":"Jonathan Sinien Rahma"
     },
     "200320":{
         "deckid":null
@@ -2147,7 +2149,7 @@
     "201671":{
         "deckid":"11460",
         "twdDate":"2024-07-21",
-        "player":"Axel Huet"
+        "player":"Axel Winkelmann"
     },
     "200357":{
         "deckid":"2k3cchqssiphilippines",
@@ -2621,7 +2623,7 @@
     "201627":{
         "deckid":"10291",
         "twdDate":"2022-07-24",
-        "player":"Javier Naranjo"
+        "player":"Javier Naranjo Ortiz"
     },
     "200445":{
         "deckid":"2k8flsmilan",
@@ -2835,9 +2837,9 @@
         "player":"Sergio Nascimento"
     },
     "201752":{
-        "deckid":"12746",
+        "deckid":"12966",
         "twdDate":"2026-01-24",
-        "player":"Kleber Bertazzo"
+        "player":"Luis Sancho"
     },
     "200482":{
         "deckid":"2012eotdhf",
@@ -3791,7 +3793,9 @@
         "player":"David Wilson"
     },
     "200649":{
-        "deckid":null
+        "deckid":"13615",
+        "twdDate":"2026-09-29",
+        "player":"Daniel Motta"
     },
     "200650":{
         "deckid":"2k9governos",
@@ -3951,7 +3955,7 @@
     "201628":{
         "deckid":"10291",
         "twdDate":"2022-07-24",
-        "player":"Javier Naranjo"
+        "player":"Javier Naranjo Ortiz"
     },
     "200680":{
         "deckid":"dog",
@@ -3997,9 +4001,9 @@
         "player":"Beno\u00eet Olivieri"
     },
     "200688":{
-        "deckid":"20188hnvf",
-        "twdDate":"2018-10-13",
-        "player":"Tuomas Nyberg"
+        "deckid":"8808",
+        "twdDate":"2017-12-23",
+        "player":"H\u00e9ctor Javier Ord\u00f3\u00f1ez Garc\u00eda"
     },
     "200689":{
         "deckid":"2k6slcqual",
@@ -4263,7 +4267,9 @@
         "player":"Marcin Szybkowski"
     },
     "201758":{
-        "deckid":null
+        "deckid":"13377",
+        "twdDate":"2026-08-02",
+        "player":"Gustavo Alfonso Gonz\u00e1lez Ortiz"
     },
     "200739":{
         "deckid":"danny",
@@ -4501,7 +4507,7 @@
     "201629":{
         "deckid":"10602",
         "twdDate":"2022-07-31",
-        "player":"Javier Naranjo"
+        "player":"Javier Naranjo Ortiz"
     },
     "201599":{
         "deckid":"9980",
@@ -4669,7 +4675,7 @@
     "201516":{
         "deckid":"2021ccrdjb",
         "twdDate":"2021-01-17",
-        "player":"Alan Bastos"
+        "player":"Alanmut Bastos"
     },
     "200805":{
         "deckid":"2k7stutter-stepBA",
@@ -4745,7 +4751,9 @@
         "player":"Danny McGrul"
     },
     "201761":{
-        "deckid":null
+        "deckid":"13622",
+        "twdDate":"2026-10-24",
+        "player":"Tommaso Chiodi"
     },
     "200818":{
         "deckid":"2k8flsmilan",
@@ -4851,7 +4859,9 @@
         "player":"Ben Peal"
     },
     "201762":{
-        "deckid":null
+        "deckid":"13503",
+        "twdDate":"2026-08-30",
+        "player":"Joab Rogerio Barbosa da Silva"
     },
     "200835":{
         "deckid":"2k4mummifyithaca",
@@ -5528,7 +5538,9 @@
         "player":"Gianluca Bianco"
     },
     "201558":{
-        "deckid":null
+        "deckid":"13382",
+        "twdDate":"2026-07-25",
+        "player":"Bram Van Stappen"
     },
     "200955":{
         "deckid":"2k5ottawacq",
@@ -6024,7 +6036,7 @@
     "201632":{
         "deckid":"10271",
         "twdDate":"2022-10-22",
-        "player":"Javier Naranjo"
+        "player":"Javier Naranjo Ortiz"
     },
     "201039":{
         "deckid":"gfaustin2k",
@@ -6180,7 +6192,9 @@
         "player":"Matthew Hirsch"
     },
     "201785":{
-        "deckid":null
+        "deckid":"12755",
+        "twdDate":"2026-09-14",
+        "player":"Norbert Flasko"
     },
     "201608":{
         "deckid":"9997",
@@ -6301,7 +6315,9 @@
         "player":"Hugh Angseesing"
     },
     "201766":{
-        "deckid":null
+        "deckid":"13503",
+        "twdDate":"2026-08-30",
+        "player":"Joab Rogerio Barbosa da Silva"
     },
     "201680":{
         "deckid":"11271",
@@ -6397,7 +6413,7 @@
     "201566":{
         "deckid":"10346",
         "twdDate":"2022-09-11",
-        "player":"Alysson Sanches Paulini"
+        "player":"Alyson Sanches Paulini"
     },
     "201098":{
         "deckid":"2k9ecminiqsabadell",
@@ -7010,7 +7026,9 @@
         "player":"St\u00e9phane Lavrut"
     },
     "201650":{
-        "deckid":null
+        "deckid":"13382",
+        "twdDate":"2026-07-25",
+        "player":"Bram Van Stappen"
     },
     "201206":{
         "deckid":"2011lsdbbdvs",
@@ -7058,7 +7076,9 @@
         "player":"Joab Rogerio Barbosa da Silva"
     },
     "201211":{
-        "deckid":null
+        "deckid":"13609",
+        "twdDate":"2026-10-10",
+        "player":"\u00d3scar Caballero"
     },
     "201212":{
         "deckid":"2k3gothenburgblizzard",
@@ -7687,7 +7707,9 @@
         "player":"Darby Keeney"
     },
     "201773":{
-        "deckid":null
+        "deckid":"SMVG5T",
+        "twdDate":"2026-08-29",
+        "player":"Axel Winkelmann"
     },
     "201688":{
         "deckid":"11332",
@@ -7700,7 +7722,9 @@
         "player":"Kleber Souza"
     },
     "201774":{
-        "deckid":null
+        "deckid":"13503",
+        "twdDate":"2026-08-30",
+        "player":"Joab Rogerio Barbosa da Silva"
     },
     "201328":{
         "deckid":"2k2shadowslengthen",
@@ -8298,8 +8322,8 @@
         "player":"Joselmo Soares"
     },
     "201777":{
-        "deckid":"13019",
-        "twdDate":"2026-06-16",
+        "deckid":"13163",
+        "twdDate":"2026-03-17",
         "player":"Martin Weinmayer"
     },
     "201437":{
@@ -8545,7 +8569,9 @@
         "player":"Alex Harmon"
     },
     "201778":{
-        "deckid":null
+        "deckid":"13377",
+        "twdDate":"2026-08-02",
+        "player":"Gustavo Alfonso Gonz\u00e1lez Ortiz"
     },
     "201482":{
         "deckid":"2019rmdc",
@@ -9750,7 +9776,9 @@
         "player":"Jari Vulli"
     },
     "100205":{
-        "deckid":null
+        "deckid":"13635",
+        "twdDate":"2026-10-18",
+        "player":"Joab Rogerio Barbosa da Silva"
     },
     "100206":{
         "deckid":"dragoncon2k1-ethan",
@@ -10063,7 +10091,9 @@
         "player":"Josh Duffin"
     },
     "100267":{
-        "deckid":null
+        "deckid":"13615",
+        "twdDate":"2026-09-29",
+        "player":"Daniel Motta"
     },
     "100268":{
         "deckid":"2012ft13no",
@@ -11192,7 +11222,9 @@
         "player":"Nicola Lonardi"
     },
     "102315":{
-        "deckid":null
+        "deckid":"13567",
+        "twdDate":"2026-10-17",
+        "player":"Timo Tahvanainen"
     },
     "100491":{
         "deckid":"2k7nsftmmallorca",
@@ -11685,7 +11717,9 @@
         "player":"Michael W. Jones"
     },
     "102317":{
-        "deckid":null
+        "deckid":"13567",
+        "twdDate":"2026-10-17",
+        "player":"Timo Tahvanainen"
     },
     "100587":{
         "deckid":"2k7tvwdc",
@@ -12003,7 +12037,9 @@
         "deckid":null
     },
     "102319":{
-        "deckid":null
+        "deckid":"13316",
+        "twdDate":"2026-10-23",
+        "player":"Devin Villegas"
     },
     "102320":{
         "deckid":"12800",
@@ -12390,7 +12426,7 @@
     "100725":{
         "deckid":"2016sncss",
         "twdDate":"2016-10-08",
-        "player":"Kim Nilsson"
+        "player":"Nina Nilsson"
     },
     "100726":{
         "deckid":"2k4gothenburgjune",
@@ -13900,7 +13936,7 @@
     "101027":{
         "deckid":"2016jpmb",
         "twdDate":"2016-07-16",
-        "player":"Regina Ara\u00fajo"
+        "player":"Helen Regina"
     },
     "101028":{
         "deckid":"lsj12000",
@@ -16290,7 +16326,7 @@
     "101501":{
         "deckid":"2016sncss",
         "twdDate":"2016-10-08",
-        "player":"Kim Nilsson"
+        "player":"Nina Nilsson"
     },
     "101502":{
         "deckid":"2k8texasqual",
@@ -17246,7 +17282,9 @@
         "player":"Brad Cashdollar"
     },
     "101689":{
-        "deckid":null
+        "deckid":"8808",
+        "twdDate":"2017-12-23",
+        "player":"H\u00e9ctor Javier Ord\u00f3\u00f1ez Garc\u00eda"
     },
     "101690":{
         "deckid":"2k9foindi",
@@ -18620,7 +18658,9 @@
         "player":"Matthew Hirsch"
     },
     "102343":{
-        "deckid":null
+        "deckid":"13377",
+        "twdDate":"2026-08-02",
+        "player":"Gustavo Alfonso Gonz\u00e1lez Ortiz"
     },
     "101960":{
         "deckid":"will-lee",
