@@ -1,10 +1,12 @@
-import tailwindcss from "@tailwindcss/vite";
-import react, { reactCompilerPreset } from '@vitejs/plugin-react'
 import babel from '@rolldown/plugin-babel'
-import { resolve } from "path";
-import { defineConfig } from "vite";
-import { VitePWA } from "vite-plugin-pwa";
+import compression from 'vite-plugin-compression'
+import react, { reactCompilerPreset } from '@vitejs/plugin-react'
 import svgr from "vite-plugin-svgr";
+import tailwindcss from "@tailwindcss/vite";
+import { VitePWA } from "vite-plugin-pwa";
+import { defineConfig } from "vite";
+import { resolve } from "path";
+
 
 export default defineConfig({
 	server: {
@@ -14,6 +16,7 @@ export default defineConfig({
 	},
 	plugins: [
 		tailwindcss(),
+    compression({ algorithm: 'brotliCompress', ext: '.br', threshold: 1024 }),
 		svgr(),
 		react(),
     babel({
@@ -64,5 +67,10 @@ export default defineConfig({
 	},
 	build: {
 		chunkSizeWarningLimit: Infinity,
+    rolldownOptions: {
+      checks: {
+        bundlerTimings: false,
+      },
+    },
 	},
 });
