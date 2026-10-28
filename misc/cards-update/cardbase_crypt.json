@@ -880,7 +880,7 @@
         },
         "text":"Anarch Baron of Manaus: Adrino gets 1 press (mandatory) each combat, only usable to continue combat.",
         "title":"baron",
-        "twd":91,
+        "twd":92,
         "v5":true
     },
     "201735":{
@@ -4575,7 +4575,7 @@
         },
         "text":"Anarch Baron of Ciudad Ju\u00e1rez.",
         "title":"baron",
-        "twd":109,
+        "twd":110,
         "v5":true
     },
     "200090":{
@@ -10589,7 +10589,7 @@
         },
         "text":"Anarch Baron of Sofia: While you have 9 or fewer pool, Branimira gets +1 intercept.",
         "title":"baron",
-        "twd":98,
+        "twd":99,
         "v5":true
     },
     "200217":{
@@ -41765,7 +41765,7 @@
         },
         "text":"Anarch: Allies and retainers requiring a Tzimisce cost M\u00e1ddji -1 blood or pool.",
         "title":"",
-        "twd":15,
+        "twd":16,
         "v5":true
     },
     "200897":{
@@ -43132,7 +43132,7 @@
         },
         "text":"Anarch: If Marialena is blocked, she burns 1 blood before block resolution.",
         "title":"",
-        "twd":60,
+        "twd":61,
         "v5":true
     },
     "200924":{
@@ -49254,7 +49254,7 @@
         },
         "text":"Anarch: While you control no locations, Neserian gets -1 bleed. While you control 1 or more locations, Neserian gets +1 vote.",
         "title":"",
-        "twd":38,
+        "twd":39,
         "v5":true
     },
     "201050":{
@@ -57156,7 +57156,7 @@
         },
         "text":"Anarch: Saankal\u00e1xt can steal an equipment as a (D) action that costs 1 blood.",
         "title":"",
-        "twd":13,
+        "twd":14,
         "v5":true
     },
     "201217":{
@@ -68486,7 +68486,7 @@
         },
         "text":"Anarch.",
         "title":"",
-        "twd":59,
+        "twd":60,
         "v5":true
     },
     "201467":{

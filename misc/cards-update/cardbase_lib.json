@@ -13056,7 +13056,7 @@
             }
         },
         "text":"Unique location.\n+1 hand size. Minions you control can unlock after resolution of a successful action to equip with a non-electronic, non-vehicle, non-weapon equipment card from your hand; a minion can unlock only once this way each turn. Non-electronic, non-vehicle, non-weapon equipment cards cost minions you control -1 blood or pool to equip.",
-        "twd":58,
+        "twd":59,
         "type":"Master",
         "v5":true
     },
@@ -15086,7 +15086,7 @@
             }
         },
         "text":"Requires a ready Anarch. Unique location. Hunting ground.\nDuring your unlock phase, a ready Anarch you control can gain 1 blood, and, if you control a ready baron, another ready Anarch you control can gain 1 blood as well. A vampire can gain blood from only one hunting ground each turn.",
-        "twd":348,
+        "twd":349,
         "type":"Master",
         "v5":true
     },
@@ -16918,7 +16918,7 @@
             }
         },
         "text":"Unique.\nPut this card on a ready vampire. Recruit ally actions cost this vampire -1 blood or pool.",
-        "twd":170,
+        "twd":171,
         "type":"Master",
         "v5":true
     },
@@ -18947,7 +18947,7 @@
             }
         },
         "text":"Unique.\nThe bearer gets -2 stealth during bleed actions. This vampire can bleed as a (D) action that costs 1 blood; this action gets +3 bleed if the target Methuselah controls no ready unlocked minions.",
-        "twd":77,
+        "twd":78,
         "type":"Equipment",
         "v5":true
     },
@@ -25758,7 +25758,7 @@
             }
         },
         "text":"Only usable if a minion is bleeding you, after blocks are declined.\n[dom] Lock this reacting vampire. Change the target of the bleed to another Methuselah other than the acting minion's controller (that Methuselah can attempt to block).\n[DOM] As above, but do not lock this vampire.",
-        "twd":1736,
+        "twd":1737,
         "type":"Reaction",
         "v5":true
     },
@@ -29713,7 +29713,7 @@
             }
         },
         "text":"Unique.\nPut this card in play. Add 1 counter to this card each time you lock it. You can lock this card to get +2 hand size until the end of the turn. You can lock this card during your unlock phase to gain 1 pool if you have the Edge. You can lock this card to add 1 blood to a vampire in your uncontrolled region. Burn this card if it has 3 counters.",
-        "twd":2359,
+        "twd":2360,
         "type":"Master",
         "v5":true
     },
@@ -30341,7 +30341,7 @@
             }
         },
         "text":"[pro] +1 stealth.\n[PRO] +2 stealth.",
-        "twd":386,
+        "twd":387,
         "type":"Action Modifier",
         "v5":true
     },
@@ -30392,7 +30392,7 @@
             }
         },
         "text":"[pro] Strike: combat ends.\n[PRO] As above, and unlock this vampire before combat ends.",
-        "twd":537,
+        "twd":538,
         "type":"Combat",
         "v5":true
     },
@@ -35150,7 +35150,7 @@
             }
         },
         "text":"Do not replace until after combat.\nManeuver.",
-        "twd":124,
+        "twd":125,
         "type":"Combat",
         "v5":false
     },
@@ -35786,7 +35786,7 @@
             }
         },
         "text":"+1 stealth action.\n[dom] (D) Steal a retainer controlled by another vampire.\n[DOM] (D) Steal an ally controlled by another Methuselah.",
-        "twd":212,
+        "twd":213,
         "type":"Action",
         "v5":true
     },
@@ -38099,7 +38099,7 @@
             }
         },
         "text":"Unique location.\nDuring your master phase, you can put a ghoul (ally or retainer) from your hand on this location, face up and out of play. Tzimisce you control can play cards from this location as if from your hand (requirements and cost apply as normal).",
-        "twd":3,
+        "twd":4,
         "type":"Master",
         "v5":true
     },
@@ -39243,7 +39243,7 @@
             }
         },
         "text":"[pro] Strike: dodge.\n[PRO] Strike: combat ends. After combat ends, if this vampire was blocked, they can burn 1 blood to continue the action with +1 stealth as if unblocked, even if stealth is not yet needed. A vampire can play only one Form of Mist at superior each action.",
-        "twd":532,
+        "twd":533,
         "type":"Combat",
         "v5":true
     },
@@ -39299,7 +39299,7 @@
             }
         },
         "text":"[pro] [ACTION MODIFIER] Only usable if a minion attempts to block. The blocking minion gets -1 intercept. If this action is blocked, this vampire gets 1 optional maneuver and cannot use equipment during the resulting combat.\n[PRO] [REACTION] +1 intercept. If this vampire blocks, they get 1 optional maneuver and cannot use equipment during the resulting combat.",
-        "twd":277,
+        "twd":278,
         "type":"Action Modifier/Reaction",
         "v5":true
     },
@@ -42968,7 +42968,7 @@
             }
         },
         "text":"[dom] (D) Bleed with +2 bleed.\n[DOM] +1 stealth action. Add 3 blood to a younger vampire in your uncontrolled region.",
-        "twd":1261,
+        "twd":1262,
         "type":"Action",
         "v5":true
     },
@@ -45850,7 +45850,7 @@
             }
         },
         "text":"Unique.\nIf the bearer is ready during your unlock phase, you can draw up to 3 cards without discarding and then move the same number of cards from your hand to the bottom of your library.",
-        "twd":1121,
+        "twd":1122,
         "type":"Equipment",
         "v5":true
     },
@@ -51841,7 +51841,7 @@
             }
         },
         "text":"Unique.\nPut this card in play; it becomes a unique mortal ally with 1 life, 0 strength and 0 bleed. During your unlock phase, you can burn Jake to add up to 4 blood to a ready vampire with no blood.",
-        "twd":691,
+        "twd":692,
         "type":"Master",
         "v5":true
     },
@@ -52788,7 +52788,7 @@
             }
         },
         "text":"Once each combat, the bearer can prevent 2 damage from gun strikes or 1 damage from any other source. A minion can have only one Kevlar Vest.",
-        "twd":165,
+        "twd":166,
         "type":"Equipment",
         "v5":true
     },
@@ -54978,7 +54978,7 @@
             }
         },
         "text":"Equipment.\nIf the action to equip with the Leather Jacket is successful, unlock the acting minion at the end of the turn. Bearer may burn Leather Jacket to prevent all the damage from the opposing minion's strike. A minion may have only one Leather Jacket.",
-        "twd":173,
+        "twd":174,
         "type":"Equipment",
         "v5":false
     },
@@ -56517,7 +56517,7 @@
             }
         },
         "text":"Location. While in play, this card does not count as equipment.\nThis vampire gets +1 bleed. They can burn this card before range is determined to end combat. A vampire can have only one Living Manse.",
-        "twd":69,
+        "twd":70,
         "type":"Equipment",
         "v5":true
     },
@@ -67129,7 +67129,7 @@
             }
         },
         "text":"Only usable by a locked minion. A minion can play only one On the Qui Vive between their unlock phases.\nThis minion wakes (they ignore the requirement to be unlocked for playing reaction cards and attempting to block until the end of the action). If this minion is an ally, they do not unlock as normal during their next unlock phase.",
-        "twd":2220,
+        "twd":2221,
         "type":"Reaction",
         "v5":true
     },
@@ -67657,7 +67657,7 @@
             }
         },
         "text":"Requires a baron. Usable by a locked baron.\nAn Anarch you control gets +1 intercept. Also usable to unlock a locked Anarch you control; that Anarch attempts to block with +1 intercept, even if intercept is not yet needed.",
-        "twd":307,
+        "twd":308,
         "type":"Reaction",
         "v5":true
     },
@@ -68459,7 +68459,7 @@
             }
         },
         "text":"This equipment card represents a location and does not count as equipment while in play. Unique.\nDuring your master phase, the vampire with this location gains 1 blood.",
-        "twd":176,
+        "twd":177,
         "type":"Equipment",
         "v5":false
     },
@@ -79118,7 +79118,7 @@
             }
         },
         "text":"Requires an Independent or Anarch vampire with capacity 5 or more.\nAllocate 6 points among two or more other Methuselahs. Successful referendum means each Methuselah burns 1 pool for each point allocated.",
-        "twd":143,
+        "twd":144,
         "type":"Political Action",
         "v5":true
     },
@@ -97458,7 +97458,7 @@
             }
         },
         "text":"Ghoul with 2 life.\nThe employer can burn this retainer to reduce the cost of a ghoul ally requiring a Tzimisce they recruit by 2 blood or pool.",
-        "twd":3,
+        "twd":4,
         "type":"Retainer",
         "v5":true
     },
@@ -98638,7 +98638,7 @@
             }
         },
         "text":"Aim. Only usable as this minion chooses a strike. A minion can play only one aim each strike.\nIf any damage from this strike is successfully inflicted on the opposing minion, they take +2 damage from this strike, and they cannot press this round. They can discard two combat cards to cancel this card as it is played.",
-        "twd":417,
+        "twd":418,
         "type":"Combat",
         "v5":true
     },
@@ -105556,7 +105556,7 @@
             }
         },
         "text":"Gehenna. Do not replace until your next discard phase.\nAllies get +1 intercept against vampires.",
-        "twd":582,
+        "twd":583,
         "type":"Event",
         "v5":false
     },
@@ -107575,7 +107575,7 @@
             }
         },
         "text":"Trifle.\nPut this card on a vampire you control who has any amount of blood and move 2 to 5 blood from that vampire to your pool. Cards named /Minion Tap/ cost you +1 pool to play. Villein costs +1 pool to play on this vampire.",
-        "twd":1787,
+        "twd":1788,
         "type":"Master",
         "v5":true,
         "trifle":true
@@ -108302,7 +108302,7 @@
             }
         },
         "text":"Unique ghoul with 5 life. 4 strength, 0 bleed.\nAfter this ally enters play, burn an ally or retainer you control. This ally can enter combat with a vampire as a (D) action. This ally can prevent 1 damage each round of combat. During combat, this ally can burn 1 life to cancel a strike card as it is played by the opposing minion, and its cost is not paid (the minion chooses a strike again).",
-        "twd":6,
+        "twd":7,
         "type":"Ally",
         "v5":true
     },
@@ -108397,7 +108397,7 @@
             }
         },
         "text":"Unique ghoul with 5 life. 4 strength, 0 bleed.\nAfter this ally enters play, burn an ally or retainer you control. This ally can enter combat with a vampire as a (D) action. This ally can play cards requiring basic Animalism [ani] as a vampire with capacity 5. During your unlock phase, this ally can steal any amount of blood (becoming life) from a Tzimisce you control, not to exceed its starting life.",
-        "twd":3,
+        "twd":4,
         "type":"Ally",
         "v5":true
     },
@@ -108454,7 +108454,7 @@
             }
         },
         "text":"Unique ghoul with 5 life. 3 strength, 0 bleed.\nAfter this ally enters play, burn an ally or retainer you control. It can strike: 3R damage. It can enter combat with a minion as a (D) action. During your unlock phase, you can discard an ally or retainer card to add 2 life to this ally.",
-        "twd":14,
+        "twd":15,
         "type":"Ally",
         "v5":true
     },
@@ -108482,7 +108482,7 @@
             }
         },
         "text":"Unique ghoul with 5 life. 4 strength, 0 bleed.\nAfter this ally enters play, burn an ally or retainer you control. This ally can enter combat with a vampire as a (D) action. Once each combat, this ally can discard a card requiring Protean [pro] to prevent 2 damage. During any other Methuselah's minion phase, a Tzimisce you control can burn 1 blood to unlock this ally.",
-        "twd":3,
+        "twd":4,
         "type":"Ally",
         "v5":true
     },
@@ -109128,7 +109128,7 @@
             }
         },
         "text":"Ghoul with 5 life. 4 strength, 0 bleed.\nAfter this ally enters play, burn an ally or retainer you control. It can prevent 1 damage each round of combat. It can enter combat with a vampire as a (D) action. It can lock and burn itself to burn a location, except during combat.",
-        "twd":95,
+        "twd":96,
         "type":"Ally",
         "v5":true
     },
@@ -110952,7 +110952,7 @@
             }
         },
         "text":"Trifle.\nPut this card in play. You can use 1 transfer to draw 1 card from your crypt and then remove a crypt card in your uncontrolled region from the game. You can use 4 transfers to burn this card and gain 2 pool.",
-        "twd":1083,
+        "twd":1084,
         "type":"Master",
         "v5":true,
         "trifle":true

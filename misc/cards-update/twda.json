@@ -60622,13 +60622,13 @@
       "format": "Standard",
       "players_count": 13,
       "rounds": 2,
-      "finals": false,
+      "finals": true,
       "place": "Curitiba, Brazil",
       "country": { "name": "Brazil", "code": "BR", "flag": "🇧🇷", "continent": "SA" },
       "url": "https://www.vekn.net/event-calendar/event/10417"
     },
     "player": "Adriano Tavares de Souza",
-    "score": { "round_gw": 2, "round_vp": 7.0, "finals_vp": 0.0, "win": true },
+    "score": { "round_gw": 2, "round_vp": 7.0, "finals_vp": 4.0, "win": true },
     "raven": 0
   },
   "10418": {
@@ -63495,7 +63495,7 @@
       "country": { "name": "Hungary", "code": "HU", "flag": "🇭🇺", "continent": "EU" },
       "url": "https://www.vekn.net/event-calendar/event/10435"
     },
-    "player": "Sebestyen Balazs",
+    "player": "Sebestyén Balázs",
     "score": { "round_gw": 0, "round_vp": 0.0, "finals_vp": 3.0, "win": true },
     "raven": 0
   },
@@ -80403,7 +80403,7 @@
       "country": { "name": "Hungary", "code": "HU", "flag": "🇭🇺", "continent": "EU" },
       "url": "https://www.vekn.net/event-calendar/event/10585"
     },
-    "player": "Sebestyen Balazs",
+    "player": "Sebestyén Balázs",
     "score": { "round_gw": 0, "round_vp": 0.0, "finals_vp": 4.0, "win": true },
     "raven": 0
   },
@@ -142569,7 +142569,7 @@
       "country": { "name": "Hungary", "code": "HU", "flag": "🇭🇺", "continent": "EU" },
       "url": "https://www.vekn.net/event-calendar/event/10975"
     },
-    "player": "Sebestyen Balazs",
+    "player": "Sebestyén Balázs",
     "score": { "round_gw": 0, "round_vp": 0.0, "finals_vp": 3.0, "win": true },
     "raven": 0
   },
@@ -396309,7 +396309,7 @@
       "country": { "name": "Denmark", "code": "DK", "flag": "🇩🇰", "continent": "EU" },
       "url": "https://www.vekn.net/event-calendar/event/12519"
     },
-    "player": "Sebestyen Balazs",
+    "player": "Sebestyén Balázs",
     "score": { "round_gw": 2, "round_vp": 6.0, "finals_vp": 5.0, "win": true },
     "raven": 0
   },
@@ -451313,7 +451313,7 @@
   },
   "12933": {
     "id": "12933",
-    "name": "Lasombat Fortitunado",
+    "name": "Lasombra Fortitunado",
     "cards": [
       {
         "id": 201729,
@@ -480204,16 +480204,6 @@
     "name": "Lasombra 16",
     "cards": [
       {
-        "id": 101256,
-        "printed_name": "Murmur of the False Will",
-        "unicity_suffix": "",
-        "suffix": "",
-        "count": 4,
-        "kind": "Library",
-        "types": ["Action Modifier", "Reaction"],
-        "comment": ""
-      },
-      {
         "id": 102280,
         "printed_name": "Shadow Cast",
         "unicity_suffix": "",
@@ -480241,6 +480231,16 @@
         "count": 5,
         "kind": "Library",
         "types": ["Action Modifier"],
+        "comment": ""
+      },
+      {
+        "id": 101256,
+        "printed_name": "Murmur of the False Will",
+        "unicity_suffix": "",
+        "suffix": "",
+        "count": 4,
+        "kind": "Library",
+        "types": ["Action Modifier", "Reaction"],
         "comment": ""
       },
       {
@@ -480454,8 +480454,8 @@
         "comment": ""
       },
       {
-        "id": 201709,
-        "printed_name": "Araceli \"Celia\" Rivera",
+        "id": 201710,
+        "printed_name": "Azucena",
         "unicity_suffix": "",
         "suffix": "G6",
         "count": 1,
@@ -480464,8 +480464,8 @@
         "comment": ""
       },
       {
-        "id": 201710,
-        "printed_name": "Azucena",
+        "id": 201709,
+        "printed_name": "Araceli \"Celia\" Rivera",
         "unicity_suffix": "",
         "suffix": "G6",
         "count": 1,
@@ -484942,16 +484942,6 @@
         "comment": ""
       },
       {
-        "id": 102223,
-        "printed_name": "Form of the Bat",
-        "unicity_suffix": "",
-        "suffix": "",
-        "count": 1,
-        "kind": "Library",
-        "types": ["Action Modifier", "Reaction"],
-        "comment": ""
-      },
-      {
         "id": 101199,
         "printed_name": "Memory Rift",
         "unicity_suffix": "",
@@ -484959,6 +484949,16 @@
         "count": 4,
         "kind": "Library",
         "types": ["Action Modifier"],
+        "comment": ""
+      },
+      {
+        "id": 102223,
+        "printed_name": "Form of the Bat",
+        "unicity_suffix": "",
+        "suffix": "",
+        "count": 1,
+        "kind": "Library",
+        "types": ["Action Modifier", "Reaction"],
         "comment": ""
       },
       {
@@ -502132,8 +502132,8 @@
         "comment": ""
       },
       {
-        "id": 100444,
-        "printed_name": "Creepshow Casino",
+        "id": 102236,
+        "printed_name": "The British Museum, London",
         "unicity_suffix": "",
         "suffix": "",
         "count": 1,
@@ -502142,8 +502142,8 @@
         "comment": ""
       },
       {
-        "id": 102236,
-        "printed_name": "The British Museum, London",
+        "id": 100444,
+        "printed_name": "Creepshow Casino",
         "unicity_suffix": "",
         "suffix": "",
         "count": 1,
@@ -503915,6 +503915,440 @@
     },
     "player": "Devin Villegas",
     "score": { "round_gw": 1, "round_vp": 2.5, "finals_vp": 4.0, "win": true },
+    "raven": 0
+  },
+  "13317": {
+    "id": "13317",
+    "name": "Tzimise nac",
+    "cards": [
+      {
+        "id": 102144,
+        "printed_name": "War Ghoul",
+        "unicity_suffix": "",
+        "suffix": "",
+        "count": 4,
+        "kind": "Library",
+        "types": ["Ally"],
+        "comment": ""
+      },
+      {
+        "id": 100374,
+        "printed_name": "Codex of the Edenic Groundskeepers",
+        "unicity_suffix": "",
+        "suffix": "",
+        "count": 1,
+        "kind": "Library",
+        "types": ["Equipment"],
+        "comment": ""
+      },
+      {
+        "id": 101019,
+        "printed_name": "Jake Washington",
+        "unicity_suffix": "",
+        "suffix": "",
+        "count": 4,
+        "kind": "Library",
+        "types": ["Master"],
+        "comment": ""
+      },
+      {
+        "id": 100771,
+        "printed_name": "Form of Mist",
+        "unicity_suffix": "",
+        "suffix": "",
+        "count": 8,
+        "kind": "Library",
+        "types": ["Combat"],
+        "comment": ""
+      },
+      {
+        "id": 102180,
+        "printed_name": "Wider View",
+        "unicity_suffix": "",
+        "suffix": "",
+        "count": 1,
+        "kind": "Library",
+        "types": ["Master"],
+        "comment": ""
+      },
+      {
+        "id": 100518,
+        "printed_name": "Deflection",
+        "unicity_suffix": "",
+        "suffix": "",
+        "count": 8,
+        "kind": "Library",
+        "types": ["Reaction"],
+        "comment": ""
+      },
+      {
+        "id": 100903,
+        "printed_name": "Heart of Nizchetus",
+        "unicity_suffix": "",
+        "suffix": "",
+        "count": 1,
+        "kind": "Library",
+        "types": ["Equipment"],
+        "comment": ""
+      },
+      {
+        "id": 101040,
+        "printed_name": "Kevlar Vest",
+        "unicity_suffix": "",
+        "suffix": "",
+        "count": 2,
+        "kind": "Library",
+        "types": ["Equipment"],
+        "comment": ""
+      },
+      {
+        "id": 101942,
+        "printed_name": "Target Vitals",
+        "unicity_suffix": "",
+        "suffix": "",
+        "count": 6,
+        "kind": "Library",
+        "types": ["Combat"],
+        "comment": ""
+      },
+      {
+        "id": 201784,
+        "printed_name": "Máddji, Mistress of Szlachtas",
+        "unicity_suffix": "",
+        "suffix": "G6",
+        "count": 3,
+        "kind": "Crypt",
+        "types": ["Vampire"],
+        "comment": ""
+      },
+      {
+        "id": 201786,
+        "printed_name": "Saankaláxt",
+        "unicity_suffix": "",
+        "suffix": "G6",
+        "count": 1,
+        "kind": "Crypt",
+        "types": ["Vampire"],
+        "comment": ""
+      },
+      {
+        "id": 101567,
+        "printed_name": "Reckless Agitation",
+        "unicity_suffix": "",
+        "suffix": "",
+        "count": 1,
+        "kind": "Library",
+        "types": ["Political Action"],
+        "comment": ""
+      },
+      {
+        "id": 201664,
+        "printed_name": "Adrino Manauara",
+        "unicity_suffix": "",
+        "suffix": "G6",
+        "count": 2,
+        "kind": "Crypt",
+        "types": ["Vampire"],
+        "comment": ""
+      },
+      {
+        "id": 201665,
+        "printed_name": "Ángel Guerrero",
+        "unicity_suffix": "",
+        "suffix": "G6",
+        "count": 2,
+        "kind": "Crypt",
+        "types": ["Vampire"],
+        "comment": ""
+      },
+      {
+        "id": 102079,
+        "printed_name": "The Unmasking",
+        "unicity_suffix": "",
+        "suffix": "",
+        "count": 1,
+        "kind": "Library",
+        "types": ["Event"],
+        "comment": ""
+      },
+      {
+        "id": 201667,
+        "printed_name": "Branimira",
+        "unicity_suffix": "",
+        "suffix": "G6",
+        "count": 1,
+        "kind": "Crypt",
+        "types": ["Vampire"],
+        "comment": ""
+      },
+      {
+        "id": 100297,
+        "printed_name": "Carfax Abbey",
+        "unicity_suffix": "",
+        "suffix": "",
+        "count": 1,
+        "kind": "Library",
+        "types": ["Master"],
+        "comment": ""
+      },
+      {
+        "id": 101321,
+        "printed_name": "On the Qui Vive",
+        "unicity_suffix": "",
+        "suffix": "",
+        "count": 4,
+        "kind": "Library",
+        "types": ["Reaction"],
+        "comment": ""
+      },
+      {
+        "id": 201677,
+        "printed_name": "Marialena",
+        "unicity_suffix": "",
+        "suffix": "G6",
+        "count": 1,
+        "kind": "Crypt",
+        "types": ["Vampire"],
+        "comment": ""
+      },
+      {
+        "id": 201678,
+        "printed_name": "Neserian",
+        "unicity_suffix": "",
+        "suffix": "G6",
+        "count": 1,
+        "kind": "Crypt",
+        "types": ["Vampire"],
+        "comment": ""
+      },
+      {
+        "id": 102223,
+        "printed_name": "Form of the Bat",
+        "unicity_suffix": "",
+        "suffix": "",
+        "count": 3,
+        "kind": "Library",
+        "types": ["Action Modifier", "Reaction"],
+        "comment": ""
+      },
+      {
+        "id": 102354,
+        "printed_name": "Fleshforge Chamber",
+        "unicity_suffix": "",
+        "suffix": "",
+        "count": 1,
+        "kind": "Library",
+        "types": ["Master"],
+        "comment": ""
+      },
+      {
+        "id": 100693,
+        "printed_name": "Fake Out",
+        "unicity_suffix": "",
+        "suffix": "",
+        "count": 2,
+        "kind": "Library",
+        "types": ["Combat"],
+        "comment": ""
+      },
+      {
+        "id": 102230,
+        "printed_name": "Organized Resistance",
+        "unicity_suffix": "",
+        "suffix": "",
+        "count": 4,
+        "kind": "Library",
+        "types": ["Reaction"],
+        "comment": ""
+      },
+      {
+        "id": 102360,
+        "printed_name": "Szlachta Assistant",
+        "unicity_suffix": "",
+        "suffix": "",
+        "count": 3,
+        "kind": "Library",
+        "types": ["Retainer"],
+        "comment": ""
+      },
+      {
+        "id": 101081,
+        "printed_name": "Leather Jacket",
+        "unicity_suffix": "",
+        "suffix": "",
+        "count": 2,
+        "kind": "Library",
+        "types": ["Equipment"],
+        "comment": ""
+      },
+      {
+        "id": 201690,
+        "printed_name": "Whisper",
+        "unicity_suffix": "",
+        "suffix": "G6",
+        "count": 1,
+        "kind": "Crypt",
+        "types": ["Vampire"],
+        "comment": ""
+      },
+      {
+        "id": 102363,
+        "printed_name": "The Vozhd of Gravesend",
+        "unicity_suffix": "",
+        "suffix": "",
+        "count": 1,
+        "kind": "Library",
+        "types": ["Ally"],
+        "comment": ""
+      },
+      {
+        "id": 102236,
+        "printed_name": "The British Museum, London",
+        "unicity_suffix": "",
+        "suffix": "",
+        "count": 4,
+        "kind": "Library",
+        "types": ["Master"],
+        "comment": ""
+      },
+      {
+        "id": 102364,
+        "printed_name": "The Vozhd of Juiz de Fora",
+        "unicity_suffix": "",
+        "suffix": "",
+        "count": 1,
+        "kind": "Library",
+        "types": ["Ally"],
+        "comment": ""
+      },
+      {
+        "id": 102365,
+        "printed_name": "The Vozhd of Szczecin",
+        "unicity_suffix": "",
+        "suffix": "",
+        "count": 1,
+        "kind": "Library",
+        "types": ["Ally"],
+        "comment": ""
+      },
+      {
+        "id": 100703,
+        "printed_name": "Far Mastery",
+        "unicity_suffix": "",
+        "suffix": "",
+        "count": 1,
+        "kind": "Library",
+        "types": ["Action"],
+        "comment": ""
+      },
+      {
+        "id": 101345,
+        "printed_name": "Palatial Estate",
+        "unicity_suffix": "",
+        "suffix": "",
+        "count": 1,
+        "kind": "Library",
+        "types": ["Equipment"],
+        "comment": ""
+      },
+      {
+        "id": 102121,
+        "printed_name": "Villein",
+        "unicity_suffix": "",
+        "suffix": "",
+        "count": 6,
+        "kind": "Library",
+        "types": ["Master"],
+        "comment": ""
+      },
+      {
+        "id": 100332,
+        "printed_name": "Charisma",
+        "unicity_suffix": "",
+        "suffix": "",
+        "count": 1,
+        "kind": "Library",
+        "types": ["Master"],
+        "comment": ""
+      },
+      {
+        "id": 100588,
+        "printed_name": "Dreams of the Sphinx",
+        "unicity_suffix": "",
+        "suffix": "",
+        "count": 1,
+        "kind": "Library",
+        "types": ["Master"],
+        "comment": ""
+      },
+      {
+        "id": 100845,
+        "printed_name": "Govern the Unaligned",
+        "unicity_suffix": "",
+        "suffix": "",
+        "count": 6,
+        "kind": "Library",
+        "types": ["Action"],
+        "comment": ""
+      },
+      {
+        "id": 100600,
+        "printed_name": "Earth Control",
+        "unicity_suffix": "",
+        "suffix": "",
+        "count": 3,
+        "kind": "Library",
+        "types": ["Action Modifier"],
+        "comment": ""
+      },
+      {
+        "id": 100601,
+        "printed_name": "Earth Meld",
+        "unicity_suffix": "",
+        "suffix": "",
+        "count": 4,
+        "kind": "Library",
+        "types": ["Combat"],
+        "comment": ""
+      },
+      {
+        "id": 101114,
+        "printed_name": "Living Manse",
+        "unicity_suffix": "",
+        "suffix": "",
+        "count": 2,
+        "kind": "Library",
+        "types": ["Equipment"],
+        "comment": ""
+      },
+      {
+        "id": 102267,
+        "printed_name": "The Vozhd of Sofia",
+        "unicity_suffix": "",
+        "suffix": "",
+        "count": 1,
+        "kind": "Library",
+        "types": ["Ally"],
+        "comment": ""
+      }
+    ],
+    "comment": "",
+    "author": "",
+    "event": {
+      "name": "Cleansing Ritual",
+      "date": "2026-10-25",
+      "end_date": null,
+      "online": false,
+      "format": "Standard",
+      "players_count": 14,
+      "rounds": 2,
+      "finals": true,
+      "place": "Metairie, United States",
+      "country": { "name": "United States", "code": "US", "flag": "🇺🇸", "continent": "NA" },
+      "url": "https://archon.vekn.net/t/13317"
+    },
+    "player": "Mark Figuerola",
+    "score": { "round_gw": 1, "round_vp": 3.0, "finals_vp": 1.5, "win": true },
     "raven": 0
   },
   "13319": {
@@ -514462,8 +514896,8 @@
         "comment": ""
       }
     ],
-    "comment": "Somewhat inspired by an old Izaak Havelaar black hand deck that I watched in action in my early VTES days.\n\nThis version is more combat oriented though, using the new Haqim's law:Retribution for a little extra bleeding power and card cycling.\n\nIt is quite fun transforming the deck during the game from a slow bloat deck into a consistent stealth bleeder late game.\n\nPool gain is quite amazing if there are only casual blockers. In the finals my prey burned Karif, but with villeins and Reunion Kamut I still had him back eventually, plus the 7 and 9 cap seraphs all tooled up with Tattoo Signals.\n",
-    "author": "",
+    "comment": "Description: Somewhat inspired by an old Izaak Havelaar black hand deck that I watched in action in my early VTES days.\nThis version is more combat oriented though, using the new Haqim's law:Retribution for a little extra bleeding power and card cycling.\nIt is quite fun transforming the deck during the game from a slow bloat deck into a consistent stealth bleeder late game.\nPool gain is quite amazing if there are only casual blockers. In the finals my prey burned Karif, but with villeins and Reunion Kamut I still had him back eventually, plus the 7 and 9 cap seraphs all tooled up with Tattoo Signals.\n",
+    "author": "borrelstein",
     "event": {
       "name": "Year of the Sabbat Paths III: I Want Your Blood",
       "date": "2026-08-01",
@@ -514475,7 +514909,7 @@
       "finals": true,
       "place": "Herne, Germany",
       "country": { "name": "Germany", "code": "DE", "flag": "🇩🇪", "continent": "EU" },
-      "url": "https://archon.vekn.net/t/13374"
+      "url": "https://www.vekn.net/event-calendar/event/13374"
     },
     "player": "Bart Jansen",
     "score": { "round_gw": 1, "round_vp": 4.5, "finals_vp": 1.5, "win": true },
@@ -519340,7 +519774,7 @@
         "comment": ""
       }
     ],
-    "comment": "",
+    "comment": "This deck was created by Otso and brought into the TWD by Tommi Hakomaa. Minor changes were made compared to Otso's version. I added 2x Carrion Crows for 2x Pursuits, since I could not find 2 more pursuits while building the deck. Also 1x Yawp Court that I did not draw a single time.\nIt's a very well built deck, that is hard to navigate but very fun to play.\nCould maybe use 1x Dragonbound/1x Augury of Doomor/1x Tension in the Ranks to help ousting.\nPillar's Fall might also work.\nIn the prelim rounds, i got destroyed by FOR prevention, so Soulgrinder could also find its way in here.\nCross Table rescues must be punished.\n",
     "author": "Otso Saariluoma",
     "event": {
       "name": "TCG Webshop Vampire League 2026 Round V",
@@ -519353,7 +519787,7 @@
       "finals": true,
       "place": "Kecskemét, Hungary",
       "country": { "name": "Hungary", "code": "HU", "flag": "🇭🇺", "continent": "EU" },
-      "url": "https://archon.vekn.net/t/13404"
+      "url": "https://www.vekn.net/event-calendar/event/13404"
     },
     "player": "Paul Direktor",
     "score": { "round_gw": 1, "round_vp": 5.5, "finals_vp": 1.5, "win": true },
@@ -538157,7 +538591,7 @@
       "country": { "name": "Hungary", "code": "HU", "flag": "🇭🇺", "continent": "EU" },
       "url": "https://archon.vekn.net/t/13555"
     },
-    "player": "Sebestyen Balazs",
+    "player": "Sebestyén Balázs",
     "score": { "round_gw": 2, "round_vp": 7.5, "finals_vp": 1.5, "win": true },
     "raven": 0
   },
@@ -545238,16 +545672,6 @@
         "comment": ""
       },
       {
-        "id": 100193,
-        "printed_name": "Blood Awakening",
-        "unicity_suffix": "",
-        "suffix": "",
-        "count": 3,
-        "kind": "Library",
-        "types": ["Action Modifier", "Reaction"],
-        "comment": ""
-      },
-      {
         "id": 101857,
         "printed_name": "Spying Mission",
         "unicity_suffix": "",
@@ -545255,6 +545679,16 @@
         "count": 2,
         "kind": "Library",
         "types": ["Action Modifier"],
+        "comment": ""
+      },
+      {
+        "id": 100193,
+        "printed_name": "Blood Awakening",
+        "unicity_suffix": "",
+        "suffix": "",
+        "count": 3,
+        "kind": "Library",
+        "types": ["Action Modifier", "Reaction"],
         "comment": ""
       },
       {
@@ -546066,16 +546500,6 @@
         "comment": ""
       },
       {
-        "id": 102224,
-        "printed_name": "Form of the Cobra",
-        "unicity_suffix": "",
-        "suffix": "",
-        "count": 3,
-        "kind": "Library",
-        "types": ["Action Modifier", "Combat"],
-        "comment": ""
-      },
-      {
         "id": 101712,
         "printed_name": "Seduction",
         "unicity_suffix": "",
@@ -546083,6 +546507,16 @@
         "count": 2,
         "kind": "Library",
         "types": ["Action Modifier"],
+        "comment": ""
+      },
+      {
+        "id": 102224,
+        "printed_name": "Form of the Cobra",
+        "unicity_suffix": "",
+        "suffix": "",
+        "count": 3,
+        "kind": "Library",
+        "types": ["Action Modifier", "Combat"],
         "comment": ""
       },
       {
@@ -582669,7 +583103,7 @@
       }
     ],
     "comment": "",
-    "author": "Gyula Erdõs & Ádám Horváth",
+    "author": "Gyula Erdős & Ádám Horváth",
     "event": {
       "name": "Hungarian ECQ",
       "date": "2010-05-29",
@@ -586039,7 +586473,7 @@
       "country": { "name": "Hungary", "code": "HU", "flag": "🇭🇺", "continent": "EU" },
       "url": ""
     },
-    "player": "Gyula Erdõs",
+    "player": "Gyula Erdős",
     "score": { "round_gw": 0, "round_vp": 0.0, "finals_vp": 4.0, "win": true },
     "raven": 0
   },
@@ -599561,7 +599995,7 @@
       "country": { "name": "Hungary", "code": "HU", "flag": "🇭🇺", "continent": "EU" },
       "url": ""
     },
-    "player": "Gyula Erdõs",
+    "player": "Gyula Erdős",
     "score": null,
     "raven": 0
   },
@@ -661511,7 +661945,7 @@
       "country": { "name": "Poland", "code": "PL", "flag": "🇵🇱", "continent": "EU" },
       "url": ""
     },
-    "player": "Gyula Erdõs",
+    "player": "Gyula Erdős",
     "score": null,
     "raven": 0
   },
@@ -662853,7 +663287,7 @@
       "country": { "name": "Serbia", "code": "RS", "flag": "🇷🇸", "continent": "EU" },
       "url": ""
     },
-    "player": "Gyula Erdõs",
+    "player": "Gyula Erdős",
     "score": null,
     "raven": 0
   },
@@ -779077,7 +779511,7 @@
       }
     ],
     "comment": "",
-    "author": "Gyula Erdõs, based on Hugh Angseesing's deck",
+    "author": "Gyula Erdős, based on Hugh Angseesing's deck",
     "event": {
       "name": "Jyhad to the Maxxx",
       "date": "2012-10-06",
@@ -779091,7 +779525,7 @@
       "country": { "name": "Hungary", "code": "HU", "flag": "🇭🇺", "continent": "EU" },
       "url": ""
     },
-    "player": "Gyula Erdõs",
+    "player": "Gyula Erdős",
     "score": null,
     "raven": 0
   },
@@ -838123,7 +838557,7 @@
       "country": { "name": "Hungary", "code": "HU", "flag": "🇭🇺", "continent": "EU" },
       "url": ""
     },
-    "player": "Gyula Erdõs",
+    "player": "Gyula Erdős",
     "score": { "round_gw": 0, "round_vp": 0.0, "finals_vp": 3.0, "win": true },
     "raven": 0
   },
@@ -873303,7 +873737,7 @@
       "country": { "name": "Hungary", "code": "HU", "flag": "🇭🇺", "continent": "EU" },
       "url": ""
     },
-    "player": "Gyula Erdõs",
+    "player": "Gyula Erdős",
     "score": null,
     "raven": 0
   },
@@ -884095,7 +884529,7 @@
       "country": { "name": "Hungary", "code": "HU", "flag": "🇭🇺", "continent": "EU" },
       "url": ""
     },
-    "player": "Gyula Erdõs",
+    "player": "Gyula Erdős",
     "score": { "round_gw": 0, "round_vp": 0.0, "finals_vp": 3.5, "win": true },
     "raven": 0
   },
@@ -885526,7 +885960,7 @@
         "comment": ""
       }
     ],
-    "comment": "Description: Props to Gyula Erdõs for the ancestor of this deck\n",
+    "comment": "Description: Props to Gyula Erdős for the ancestor of this deck\n",
     "author": "",
     "event": {
       "name": "Hungarian NCQ",
@@ -885975,7 +886409,7 @@
       "country": { "name": "Hungary", "code": "HU", "flag": "🇭🇺", "continent": "EU" },
       "url": ""
     },
-    "player": "Gyula Erdõs",
+    "player": "Gyula Erdős",
     "score": null,
     "raven": 0
   },
@@ -1490259,7 +1490693,7 @@
       "country": { "name": "Hungary", "code": "HU", "flag": "🇭🇺", "continent": "EU" },
       "url": ""
     },
-    "player": "Gyula Erdõs",
+    "player": "Gyula Erdős",
     "score": null,
     "raven": 0
   },
@@ -1549735,7 +1550169,7 @@
       }
     ],
     "comment": "Deck: Provisions of Thetmes\n",
-    "author": "Gyula Erdõs",
+    "author": "Gyula Erdős",
     "event": {
       "name": "RPG.HU V:tES Tournament",
       "date": "2007-11-03",
@@ -1553995,7 +1554429,7 @@
       }
     ],
     "comment": "",
-    "author": "Gyula Erdõs",
+    "author": "Gyula Erdős",
     "event": {
       "name": "Sixth Tradition: Destruction",
       "date": "2007-09-23",
@@ -1588443,7 +1588877,7 @@
       "country": { "name": "Czech Republic", "code": "CZ", "flag": "🇨🇿", "continent": "EU" },
       "url": ""
     },
-    "player": "Gyula Erdõs",
+    "player": "Gyula Erdős",
     "score": { "round_gw": 0, "round_vp": 0.0, "finals_vp": 3.0, "win": true },
     "raven": 0
   },
@@ -1686954,7 +1687388,7 @@
         "comment": ""
       }
     ],
-    "comment": "Description: I wanted to build this deck the moment\nI've seen Nana Buruku on the white-wolf website\n(before the release). Since I didn't have the time\nand energy to trade for or the money to buy 15 deep\nsongs, 9 Ashurs and 4 Target Vitals it took me until\nnow to get all the cards together (big thanks to\nGyula Erdõs who borrowed me 11 Deep Songs, 3 Ashurs\nand 3 Vitals). After playing some friendly games and\nthis tournament I will replace two cards for another\ncats guidance and on the qui vive. Otherwise I am\nhappy with all my choices.\n\nI made it to the finals with 1GW3.5 as the fifth\nfinalist. The seating in the finals was actually really\ncool for me. With some luck I made 4vp in final\n",
+    "comment": "Description: I wanted to build this deck the moment\nI've seen Nana Buruku on the white-wolf website\n(before the release). Since I didn't have the time\nand energy to trade for or the money to buy 15 deep\nsongs, 9 Ashurs and 4 Target Vitals it took me until\nnow to get all the cards together (big thanks to\nGyula Erdős who borrowed me 11 Deep Songs, 3 Ashurs\nand 3 Vitals). After playing some friendly games and\nthis tournament I will replace two cards for another\ncats guidance and on the qui vive. Otherwise I am\nhappy with all my choices.\n\nI made it to the finals with 1GW3.5 as the fifth\nfinalist. The seating in the finals was actually really\ncool for me. With some luck I made 4vp in final\n",
     "author": "",
     "event": {
       "name": "Austrian ECQ",
@@ -1704451,7 +1704885,7 @@
       "country": { "name": "Hungary", "code": "HU", "flag": "🇭🇺", "continent": "EU" },
       "url": ""
     },
-    "player": "Gyula Erdõs",
+    "player": "Gyula Erdős",
     "score": null,
     "raven": 0
   },
@@ -1704801,7 +1705235,7 @@
       }
     ],
     "comment": "Description: Thanks goes to Stefan Ferenci for the idea\n",
-    "author": "By Gyula Erdõs",
+    "author": "By Gyula Erdős",
     "event": {
       "name": "Hungarian NB",
       "date": "2009-10-03",
@@ -1704815,7 +1705249,7 @@
       "country": { "name": "Hungary", "code": "HU", "flag": "🇭🇺", "continent": "EU" },
       "url": ""
     },
-    "player": "Gyula Erdõs",
+    "player": "Gyula Erdős",
     "score": null,
     "raven": 0
   },
@@ -1705215,7 +1705649,7 @@
       }
     ],
     "comment": "",
-    "author": "Gyula Erdõs, based on Hugh Angseesing's deck",
+    "author": "Gyula Erdős, based on Hugh Angseesing's deck",
     "event": {
       "name": "Hungarian NC 2009",
       "date": "2009-10-24",
@@ -1705229,7 +1705663,7 @@
       "country": { "name": "Hungary", "code": "HU", "flag": "🇭🇺", "continent": "EU" },
       "url": ""
     },
-    "player": "Gyula Erdõs",
+    "player": "Gyula Erdős",
     "score": { "round_gw": 0, "round_vp": 0.0, "finals_vp": 2.5, "win": true },
     "raven": 0
   },

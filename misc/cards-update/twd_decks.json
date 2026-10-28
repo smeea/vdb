@@ -19568,7 +19568,7 @@
         }
     },
     "10435": {
-        "author": "Sebestyen Balazs",
+        "author": "Sebestyén Balázs",
         "cards": {
             "100054": 1,
             "100058": 1,
@@ -22917,7 +22917,7 @@
         }
     },
     "10585": {
-        "author": "Sebestyen Balazs",
+        "author": "Sebestyén Balázs",
         "cards": {
             "100052": 1,
             "100054": 1,
@@ -35299,7 +35299,7 @@
         }
     },
     "10975": {
-        "author": "Sebestyen Balazs",
+        "author": "Sebestyén Balázs",
         "cards": {
             "100079": 1,
             "100085": 1,
@@ -86618,7 +86618,7 @@
         }
     },
     "12519": {
-        "author": "Sebestyen Balazs",
+        "author": "Sebestyén Balázs",
         "cards": {
             "100001": 1,
             "100303": 1,
@@ -97875,7 +97875,7 @@
         "event": "Liga Powerbase JF 2026 Janeiro",
         "link": "https://www.vekn.net/event-calendar/event/12933",
         "location": "Juiz de Fora, Brazil",
-        "name": "Lasombat Fortitunado",
+        "name": "Lasombra Fortitunado",
         "players": 14,
         "sect": "Camarilla",
         "traits": [
@@ -103615,8 +103615,8 @@
             "201716": 1
         },
         "cardtypes_ratio": {
-            "action modifier/reaction": 0.04,
             "action modifier": 0.29,
+            "action modifier/reaction": 0.04,
             "master": 0.2,
             "reaction": 0.24,
             "ally": 0.09,
@@ -108403,6 +108403,93 @@
             "base": []
         }
     },
+    "13317": {
+        "author": "Mark Figuerola",
+        "cards": {
+            "100297": 1,
+            "100332": 1,
+            "100374": 1,
+            "100518": 8,
+            "100588": 1,
+            "100600": 3,
+            "100601": 4,
+            "100693": 2,
+            "100703": 1,
+            "100771": 8,
+            "100845": 6,
+            "100903": 1,
+            "101019": 4,
+            "101040": 2,
+            "101081": 2,
+            "101114": 2,
+            "101321": 4,
+            "101345": 1,
+            "101567": 1,
+            "101942": 6,
+            "102079": 1,
+            "102121": 6,
+            "102144": 4,
+            "102180": 1,
+            "102223": 3,
+            "102230": 4,
+            "102236": 4,
+            "102267": 1,
+            "102354": 1,
+            "102360": 3,
+            "102363": 1,
+            "102364": 1,
+            "102365": 1,
+            "201664": 2,
+            "201665": 2,
+            "201667": 1,
+            "201677": 1,
+            "201678": 1,
+            "201690": 1,
+            "201784": 3,
+            "201786": 1
+        },
+        "cardtypes_ratio": {
+            "ally": 0.09,
+            "equipment": 0.1,
+            "master": 0.21,
+            "combat": 0.22,
+            "reaction": 0.18,
+            "political action": 0.01,
+            "event": 0.01,
+            "action modifier/reaction": 0.03,
+            "retainer": 0.03,
+            "action": 0.08,
+            "action modifier": 0.03
+        },
+        "clan": "Tzimisce",
+        "creation_date": "2026-10-25",
+        "deckid": "13317",
+        "description": "Unknown",
+        "event": "Cleansing Ritual",
+        "link": "https://archon.vekn.net/t/13317",
+        "location": "Metairie, United States",
+        "name": "Tzimise nac",
+        "players": 14,
+        "sect": "Anarch",
+        "traits": [
+            "star",
+            "monoclan"
+        ],
+        "capacity": 6.7,
+        "disciplines": [],
+        "crypt_total": 12,
+        "library_total": 90,
+        "v5_crypt": 1,
+        "v5_library": 0.93,
+        "tags": {
+            "superior": [
+                "ally"
+            ],
+            "base": [
+                "rush"
+            ]
+        }
+    },
     "13319": {
         "author": "Zoltán Panyik",
         "cards": {
@@ -110469,9 +110556,9 @@
         "clan": "Banu Haqim",
         "creation_date": "2026-08-01",
         "deckid": "13374",
-        "description": "Somewhat inspired by an old Izaak Havelaar black hand deck that I watched in action in my early VTES days.\n\nThis version is more combat oriented though, using the new Haqim's law:Retribution for a little extra bleeding power and card cycling.\n\nIt is quite fun transforming the deck during the game from a slow bloat deck into a consistent stealth bleeder late game.\n\nPool gain is quite amazing if there are only casual blockers. In the finals my prey burned Karif, but with villeins and Reunion Kamut I still had him back eventually, plus the 7 and 9 cap seraphs all tooled up with Tattoo Signals.\n",
+        "description": "Description: Somewhat inspired by an old Izaak Havelaar black hand deck that I watched in action in my early VTES days.\nThis version is more combat oriented though, using the new Haqim's law:Retribution for a little extra bleeding power and card cycling.\nIt is quite fun transforming the deck during the game from a slow bloat deck into a consistent stealth bleeder late game.\nPool gain is quite amazing if there are only casual blockers. In the finals my prey burned Karif, but with villeins and Reunion Kamut I still had him back eventually, plus the 7 and 9 cap seraphs all tooled up with Tattoo Signals.\n",
         "event": "Year of the Sabbat Paths III: I Want Your Blood",
-        "link": "https://archon.vekn.net/t/13374",
+        "link": "https://www.vekn.net/event-calendar/event/13374",
         "location": "Herne, Germany",
         "name": "Recruitment Exercise Retribution",
         "players": 20,
@@ -111425,9 +111512,9 @@
         "clan": "Gangrel antitribu",
         "creation_date": "2026-07-04",
         "deckid": "13404",
-        "description": "Unknown",
+        "description": "This deck was created by Otso and brought into the TWD by Tommi Hakomaa. Minor changes were made compared to Otso's version. I added 2x Carrion Crows for 2x Pursuits, since I could not find 2 more pursuits while building the deck. Also 1x Yawp Court that I did not draw a single time.\nIt's a very well built deck, that is hard to navigate but very fun to play.\nCould maybe use 1x Dragonbound/1x Augury of Doomor/1x Tension in the Ranks to help ousting.\nPillar's Fall might also work.\nIn the prelim rounds, i got destroyed by FOR prevention, so Soulgrinder could also find its way in here.\nCross Table rescues must be punished.\n",
         "event": "TCG Webshop Vampire League 2026 Round V",
-        "link": "https://archon.vekn.net/t/13404",
+        "link": "https://www.vekn.net/event-calendar/event/13404",
         "location": "Kecskemét, Hungary",
         "name": "Beauty and the Beast",
         "players": 25,
@@ -115135,7 +115222,7 @@
         }
     },
     "13555": {
-        "author": "Sebestyen Balazs",
+        "author": "Sebestyén Balázs",
         "cards": {
             "100006": 1,
             "100085": 1,
@@ -124835,7 +124922,7 @@
         }
     },
     "2010lcmhj0": {
-        "author": "Gyula Erdõs",
+        "author": "Gyula Erdős",
         "cards": {
             "100001": 1,
             "100058": 2,
@@ -127507,7 +127594,7 @@
         }
     },
     "2010nmrnh0": {
-        "author": "Gyula Erdõs",
+        "author": "Gyula Erdős",
         "cards": {
             "100001": 1,
             "100058": 2,
@@ -139771,7 +139858,7 @@
         }
     },
     "2011eclcq0": {
-        "author": "Gyula Erdõs",
+        "author": "Gyula Erdős",
         "cards": {
             "100029": 15,
             "100070": 3,
@@ -139999,7 +140086,7 @@
         }
     },
     "2011ecqserbia": {
-        "author": "Gyula Erdõs",
+        "author": "Gyula Erdős",
         "cards": {
             "100001": 2,
             "100067": 6,
@@ -163250,7 +163337,7 @@
         }
     },
     "2012jttmbh": {
-        "author": "Gyula Erdõs",
+        "author": "Gyula Erdős",
         "cards": {
             "100001": 1,
             "100058": 2,
@@ -175005,7 +175092,7 @@
         }
     },
     "2013cicbh0": {
-        "author": "Gyula Erdõs",
+        "author": "Gyula Erdős",
         "cards": {
             "100079": 1,
             "100093": 1,
@@ -182070,7 +182157,7 @@
         }
     },
     "2013jcicbh": {
-        "author": "Gyula Erdõs",
+        "author": "Gyula Erdős",
         "cards": {
             "100009": 2,
             "100085": 1,
@@ -184238,7 +184325,7 @@
         }
     },
     "2013ncqbh0": {
-        "author": "Gyula Erdõs",
+        "author": "Gyula Erdős",
         "cards": {
             "100093": 1,
             "100243": 1,
@@ -184587,7 +184674,7 @@
         "clan": "Nosferatu",
         "creation_date": "2013-04-13",
         "deckid": "2013nqhhh0",
-        "description": "Description: Props to Gyula Erdõs for the ancestor of this deck\n",
+        "description": "Description: Props to Gyula Erdős for the ancestor of this deck\n",
         "event": "Hungarian NCQ",
         "link": "",
         "location": "Hatvan, Hungary",
@@ -184614,7 +184701,7 @@
         }
     },
     "2013nqhhhs": {
-        "author": "Gyula Erdõs",
+        "author": "Gyula Erdős",
         "cards": {
             "100093": 1,
             "100243": 1,
@@ -305137,7 +305224,7 @@
         }
     },
     "2k7HungaryKismaros": {
-        "author": "Gyula Erdõs",
+        "author": "Gyula Erdős",
         "cards": {
             "100067": 6,
             "100074": 1,
@@ -324567,7 +324654,7 @@
         }
     },
     "2k8czechnational": {
-        "author": "Gyula Erdõs",
+        "author": "Gyula Erdős",
         "cards": {
             "100060": 2,
             "100085": 1,
@@ -344089,7 +344176,7 @@
         "clan": null,
         "creation_date": "2009-09-20",
         "deckid": "2k9ecqautstria",
-        "description": "Description: I wanted to build this deck the moment\nI've seen Nana Buruku on the white-wolf website\n(before the release). Since I didn't have the time\nand energy to trade for or the money to buy 15 deep\nsongs, 9 Ashurs and 4 Target Vitals it took me until\nnow to get all the cards together (big thanks to\nGyula Erdõs who borrowed me 11 Deep Songs, 3 Ashurs\nand 3 Vitals). After playing some friendly games and\nthis tournament I will replace two cards for another\ncats guidance and on the qui vive. Otherwise I am\nhappy with all my choices.\n\nI made it to the finals with 1GW3.5 as the fifth\nfinalist. The seating in the finals was actually really\ncool for me. With some luck I made 4vp in final\n",
+        "description": "Description: I wanted to build this deck the moment\nI've seen Nana Buruku on the white-wolf website\n(before the release). Since I didn't have the time\nand energy to trade for or the money to buy 15 deep\nsongs, 9 Ashurs and 4 Target Vitals it took me until\nnow to get all the cards together (big thanks to\nGyula Erdős who borrowed me 11 Deep Songs, 3 Ashurs\nand 3 Vitals). After playing some friendly games and\nthis tournament I will replace two cards for another\ncats guidance and on the qui vive. Otherwise I am\nhappy with all my choices.\n\nI made it to the finals with 1GW3.5 as the fifth\nfinalist. The seating in the finals was actually really\ncool for me. With some luck I made 4vp in final\n",
         "event": "Austrian ECQ",
         "link": "",
         "location": "Vienna, Austria",
@@ -347486,7 +347573,7 @@
         }
     },
     "2k9hungarianecq": {
-        "author": "Gyula Erdõs",
+        "author": "Gyula Erdős",
         "cards": {
             "100001": 7,
             "100106": 6,
@@ -347550,7 +347637,7 @@
         }
     },
     "2k9hungariannb": {
-        "author": "Gyula Erdõs",
+        "author": "Gyula Erdős",
         "cards": {
             "100093": 1,
             "100250": 7,
@@ -347623,7 +347710,7 @@
         }
     },
     "2k9hungariannc": {
-        "author": "Gyula Erdõs",
+        "author": "Gyula Erdős",
         "cards": {
             "100001": 1,
             "100058": 2,
