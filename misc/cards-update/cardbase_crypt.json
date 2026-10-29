@@ -631,9 +631,6 @@
         "set":{
             "V5SN":{
                 "SoNY":"2"
-            },
-            "playtest":{
-                "SoNY":2
             }
         },
         "text":"Camarilla primogen: Addison can play cards requiring a prince as if he were a prince.",
@@ -11101,9 +11098,6 @@
         "set":{
             "V5SN":{
                 "NBr":"1"
-            },
-            "playtest":{
-                "BbN":2
             }
         },
         "text":"Independent: Once each turn, Bruxa Branca can get +1 intercept for the current action.",
@@ -11393,9 +11387,6 @@
         "set":{
             "V5SN":{
                 "NBr":"2"
-            },
-            "playtest":{
-                "BbN":2
             }
         },
         "text":"Sabbat Archbishop of Belo Horizonte.",
@@ -11511,9 +11502,6 @@
         "set":{
             "V5SN":{
                 "NBr":"1"
-            },
-            "playtest":{
-                "BbN":2
             }
         },
         "text":"Anarch: After Caique enters combat, discard 1 card at random.",
@@ -12351,9 +12339,6 @@
         "set":{
             "V5SN":{
                 "SoNY":"2"
-            },
-            "playtest":{
-                "SoNY":2
             }
         },
         "text":"Camarilla primogen: During referendums he calls, Carter gets +1 vote for each other primogen you control.",
@@ -17997,9 +17982,6 @@
         "set":{
             "V5SN":{
                 "NBr":"1"
-            },
-            "playtest":{
-                "BbN":2
             }
         },
         "text":"Anarch: Action cards cost Dorinha +1 blood.",
@@ -19099,9 +19081,6 @@
         "set":{
             "V5SN":{
                 "NBr":"2"
-            },
-            "playtest":{
-                "BbN":2
             }
         },
         "text":"Anarch: Durok gets +1 intercept during actions directed at a card you control.",
@@ -19434,9 +19413,6 @@
         "set":{
             "V5SN":{
                 "NBr":"2"
-            },
-            "playtest":{
-                "BbN":2
             }
         },
         "text":"Camarilla primogen: During the polling step of any referendum, if Eduardo is ready, he can discard 1 card at random to get +2 votes.",
@@ -19863,9 +19839,6 @@
         "set":{
             "V5SN":{
                 "SoNY":"1"
-            },
-            "playtest":{
-                "SoNY":2
             }
         },
         "text":"Anarch: Once each combat, after Elie successfully inflicts any damage on the opposing minion, put 1 corruption counter on that minion.",
@@ -24680,9 +24653,6 @@
         "set":{
             "V5SN":{
                 "SoNY":"1"
-            },
-            "playtest":{
-                "SoNY":2
             }
         },
         "text":"Camarilla: Once each turn, Gianni can burn 1 blood to give another Camarilla vampire you control +1 intercept.",
@@ -28143,9 +28113,6 @@
         "set":{
             "V5SN":{
                 "SoNY":"2"
-            },
-            "playtest":{
-                "SoNY":2
             }
         },
         "text":"Camarilla Prince of New York: After a referendum called by Hellene fails, stun her.",
@@ -28825,9 +28792,6 @@
         "set":{
             "V5SN":{
                 "SoNY":"1"
-            },
-            "playtest":{
-                "SoNY":2
             }
         },
         "text":"Camarilla: During a bleed action, Hope can burn 1 blood to get +1 stealth or +1 bleed.",
@@ -34418,9 +34382,6 @@
         "set":{
             "V5SN":{
                 "SoNY":"2"
-            },
-            "playtest":{
-                "SoNY":2
             }
         },
         "text":"Camarilla primogen: If Julia successfully bleeds, you get +1 transfer this turn.",
@@ -34884,9 +34845,6 @@
         "set":{
             "V5SN":{
                 "SoNY":"2"
-            },
-            "playtest":{
-                "SoNY":2
             }
         },
         "text":"Camarilla: Once each action, if Kaiser is ready, he can discard a card requiring 1 or more Disciplines to reduce a bleed against you by 1.",
@@ -34919,9 +34877,6 @@
         "set":{
             "V5SN":{
                 "SoNY":"1"
-            },
-            "playtest":{
-                "SoNY":2
             }
         },
         "text":"Independent: Once each turn, if Kali is ready, you can discard 1 card at random to reduce the cost of a location card or equipment card you play by 1 pool.",
@@ -36130,9 +36085,6 @@
         "set":{
             "V5SN":{
                 "SoNY":"1"
-            },
-            "playtest":{
-                "SoNY":2
             }
         },
         "text":"Camarilla: Once each turn, Katherine can burn 2 blood as she announces a directed action to lock a younger vampire controlled by the target Methuselah. +1 bleed.",
@@ -40947,7 +40899,6 @@
                 "NBr":"2"
             },
             "playtest":{
-                "BbN":2,
                 "ToDN":2
             }
         },
@@ -41807,9 +41758,6 @@
         "set":{
             "V5SN":{
                 "NBr":"1"
-            },
-            "playtest":{
-                "BbN":2
             }
         },
         "text":"Independent.",
@@ -43209,9 +43157,6 @@
         "set":{
             "V5SN":{
                 "NBr":"2"
-            },
-            "playtest":{
-                "BbN":2
             }
         },
         "text":"Sabbat Archbishop of S\u00e3o Jos\u00e9.",
@@ -43867,9 +43812,6 @@
         "set":{
             "V5SN":{
                 "NBr":"2"
-            },
-            "playtest":{
-                "BbN":2
             }
         },
         "text":"Sabbat: Maria gets 1 optional additional strike (limited) each combat.",
@@ -46092,9 +46034,6 @@
         "set":{
             "V5SN":{
                 "NBr":"2"
-            },
-            "playtest":{
-                "BbN":2
             }
         },
         "text":"Camarilla Prince of Campina Grande: Mel cannot block vampires with a city title.",
@@ -51146,9 +51085,6 @@
         "set":{
             "V5SN":{
                 "NBr":"2"
-            },
-            "playtest":{
-                "BbN":2
             }
         },
         "text":"Camarilla primogen: O Encourado can prevent 1 aggravated damage each round.",
@@ -51182,9 +51118,6 @@
         "set":{
             "V5SN":{
                 "NBr":"2"
-            },
-            "playtest":{
-                "BbN":2
             }
         },
         "text":"Sabbat: Once each turn, after O Grande Arquiteto performs a successful directed action, he can put 1 corruption counter on a minion controlled by the target Methuselah.",
@@ -52307,9 +52240,6 @@
         "set":{
             "V5SN":{
                 "SoNY":"1"
-            },
-            "playtest":{
-                "SoNY":2
             }
         },
         "text":"Anarch: If Padraic blocks an older vampire, discard 1 card at random before range is determined during the first round of the resulting combat.",
@@ -54505,9 +54435,6 @@
         "set":{
             "V5SN":{
                 "SoNY":"1"
-            },
-            "playtest":{
-                "SoNY":2
             }
         },
         "text":"Camarilla: Once each game, during your unlock phase, Qadir can equip with a weapon card from your hand.",
@@ -56618,9 +56545,6 @@
         "set":{
             "V5SN":{
                 "NBr":"2"
-            },
-            "playtest":{
-                "BbN":2
             }
         },
         "text":"Camarilla Prince of Juiz de Fora: +1 strength.",
@@ -58880,9 +58804,6 @@
         "set":{
             "V5SN":{
                 "SoNY":"1"
-            },
-            "playtest":{
-                "SoNY":2
             }
         },
         "text":"Camarilla primogen: Samira cannot cast votes or ballots against referendums called by a prince.",
@@ -63345,9 +63266,6 @@
         "set":{
             "V5SN":{
                 "NBr":"2"
-            },
-            "playtest":{
-                "BbN":2
             }
         },
         "text":"Camarilla Prince of S\u00e3o Jo\u00e3o de Meriti: If Sydnelson is ready, he can lock before range is determined to end a combat involving two vampires controlled by other Methuselahs.",
@@ -64793,9 +64711,6 @@
         "set":{
             "V5SN":{
                 "SoNY":"1"
-            },
-            "playtest":{
-                "SoNY":2
             }
         },
         "text":"Independent: Once each combat, Tharmas can burn 1 blood to get 1 optional maneuver.",
@@ -65111,9 +65026,6 @@
         "set":{
             "V5SN":{
                 "SoNY":"2"
-            },
-            "playtest":{
-                "SoNY":2
             }
         },
         "text":"Camarilla primogen: Thomas can lock a titled vampire controlled by another Methuselah as a +1 stealth (D) action that costs 1 blood.",
@@ -65874,9 +65786,6 @@
         "set":{
             "V5SN":{
                 "SoNY":"2"
-            },
-            "playtest":{
-                "SoNY":2
             }
         },
         "text":"Anarch Baron of New York: Torque gets 1 optional additional strike (limited) each combat. Titled vampires can enter combat with him as a (D) action.",
@@ -66318,9 +66227,6 @@
         "set":{
             "V5SN":{
                 "NBr":"2"
-            },
-            "playtest":{
-                "BbN":2
             }
         },
         "text":"Anarch Baron of Recife: During the polling step of any referendum, you can reveal the top card of your crypt, then move it to the bottom; if it is an older vampire, Tubar\u00e3o gets +1 vote.",
@@ -67488,9 +67394,6 @@
         "set":{
             "V5SN":{
                 "SoNY":"2"
-            },
-            "playtest":{
-                "SoNY":2
             }
         },
         "text":"Camarilla: Valerie can enter combat with a younger non-Camarilla vampire as a (D) action.",
@@ -69438,9 +69341,6 @@
         "set":{
             "V5SN":{
                 "SoNY":"2"
-            },
-            "playtest":{
-                "SoNY":2
             }
         },
         "text":"Independent: If a Methuselah controls more locations than you do, Vritra can steal one of those locations as a (D) action that costs 1 blood. +1 strength.",

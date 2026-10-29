@@ -6558,6 +6558,9 @@
         "set":{
             "V5SN":{
                 "SoNY":"4"
+            },
+            "playtest":{
+                "ToDV":2
             }
         },
         "text":"Requires a ready primogen. Only one Backroom Deal can be played each action.\n[ACTION MODIFIER] +1 stealth.\n[ACTION MODIFIER] Only usable by a ready primogen other than the acting Camarilla vampire. The acting Camarilla vampire gets +1 stealth.",
@@ -25288,6 +25291,9 @@
         "set":{
             "V5SN":{
                 "SoNY":"4"
+            },
+            "playtest":{
+                "ToDN":4
             }
         },
         "text":"[obf] Only usable during a bleed action. +1 bleed (limited).\n[OBF] Only usable during the polling step of a political action. Force another vampire to abstain. After action resolution, if the referendum was successful, you can draw 1 card.",
@@ -32216,6 +32222,9 @@
         "set":{
             "V5SN":{
                 "SoNY":"4"
+            },
+            "playtest":{
+                "ToDV":2
             }
         },
         "text":"Requires a primogen.\n[REACTION] +1 intercept.\n[REACTION] Only usable by a locked primogen. This primogen unlocks and attempts to block.",
