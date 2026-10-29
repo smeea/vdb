@@ -129,6 +129,34 @@
         "type":"Ally",
         "v5":true
     },
+    "102367":{
+        "aka":"",
+        "artist":[
+            "Krzysztof Bieniawskir"
+        ],
+        "ascii":"Aaron Fletcher, Silent Investor",
+        "banned":"",
+        "blood":0,
+        "burn":"",
+        "clan":"",
+        "conviction":0,
+        "discipline":"",
+        "id":102367,
+        "name":"Aaron Fletcher, Silent Investor",
+        "path":"",
+        "pool":2,
+        "requirement":"",
+        "rulings":[],
+        "set":{
+            "V5SN":{
+                "SoNY":"1"
+            }
+        },
+        "text":"Unique mortal with 1 life. 1 strength, 1 bleed.\nPut up to three equipment cards from your hand and/or ash heap on Aaron, face down and out of play (you can look at the cards at any time). Minions you control can equip with one of those cards (face up) as a +1 stealth equip action.",
+        "twd":0,
+        "type":"Ally",
+        "v5":false
+    },
     "100003":{
         "aka":"",
         "artist":[
@@ -793,6 +821,34 @@
         "text":"Demon with 4 life. 3 strength, 0 bleed.\nAbyssal Hunter can inflict 1 damage on any minion as a (D) action. During your unlock phase, Abyssal Hunter inflicts 1 damage on a ready vampire you control. Burn Abyssal Hunter if any ranged aggravated damage is inflicted on it (even if prevented).",
         "twd":1,
         "type":"Ally",
+        "v5":false
+    },
+    "102368":{
+        "aka":"",
+        "artist":[
+            "Carlos D\u00edaz"
+        ],
+        "ascii":"Academia de Campeoes, Sao Paulo",
+        "banned":"",
+        "blood":0,
+        "burn":"",
+        "clan":"Brujah",
+        "conviction":0,
+        "discipline":"",
+        "id":102368,
+        "name":"Academia de Campe\u00f5es, S\u00e3o Paulo",
+        "path":"",
+        "pool":0,
+        "requirement":"",
+        "rulings":[],
+        "set":{
+            "V5SN":{
+                "NBr":"1"
+            }
+        },
+        "text":"Unique location.\nDuring your discard phase, you can lock this location to move up to two combat cards requiring Potence [pot] from your ash heap to the bottom of your library in any order.",
+        "twd":0,
+        "type":"Master",
         "v5":false
     },
     "100015":{
@@ -2593,9 +2649,12 @@
             "Third":{
                 "PB":1,
                 "SKB":"1"
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Master: unique location. Hunting ground.\nDuring your unlock phase, you may move 1 blood from the blood bank to a ready vampire you control. A vampire can gain blood from only one hunting ground card each turn.",
+        "text":"Unique location. Hunting ground.\nDuring your unlock phase, a ready vampire you control can gain 1 blood. A vampire can gain blood from only one hunting ground each turn.",
         "twd":24,
         "type":"Master",
         "v5":false
@@ -4983,6 +5042,34 @@
         "type":"Action",
         "v5":false
     },
+    "102369":{
+        "aka":"",
+        "artist":[
+            "Camille D\u00e9farge"
+        ],
+        "ascii":"Art Hole, New York, The",
+        "banned":"",
+        "blood":0,
+        "burn":"",
+        "clan":"",
+        "conviction":0,
+        "discipline":"",
+        "id":102369,
+        "name":"Art Hole, New York, The",
+        "path":"",
+        "pool":1,
+        "requirement":"",
+        "rulings":[],
+        "set":{
+            "V5SN":{
+                "SoNY":"2"
+            }
+        },
+        "text":"Unique location. Requires a ready primogen.\nAfter a primogen you control performs a successful action, you can lock this location to unlock that primogen. Titled Camarilla vampires can steal this location as a (D) action.",
+        "twd":0,
+        "type":"Master",
+        "v5":false
+    },
     "100095":{
         "aka":"",
         "artist":[
@@ -6450,6 +6537,34 @@
         "type":"Combat",
         "v5":false
     },
+    "102370":{
+        "aka":"",
+        "artist":[
+            "Camille D\u00e9farge"
+        ],
+        "ascii":"Backroom Deal",
+        "banned":"",
+        "blood":0,
+        "burn":"",
+        "clan":"",
+        "conviction":0,
+        "discipline":"",
+        "id":102370,
+        "name":"Backroom Deal",
+        "path":"",
+        "pool":0,
+        "requirement":"",
+        "rulings":[],
+        "set":{
+            "V5SN":{
+                "SoNY":"4"
+            }
+        },
+        "text":"Requires a ready primogen. Only one Backroom Deal can be played each action.\n[ACTION MODIFIER] +1 stealth.\n[ACTION MODIFIER] Only usable by a ready primogen other than the acting Camarilla vampire. The acting Camarilla vampire gets +1 stealth.",
+        "twd":0,
+        "type":"Action Modifier",
+        "v5":false
+    },
     "100124":{
         "aka":"",
         "artist":[
@@ -7051,6 +7166,34 @@
         "twd":5,
         "type":"Political Action",
         "v5":true
+    },
+    "102371":{
+        "aka":"",
+        "artist":[
+            "Paolo Puggioni"
+        ],
+        "ascii":"Bar Ultimo Trago, Campina Grande",
+        "banned":"",
+        "blood":0,
+        "burn":"",
+        "clan":"",
+        "conviction":0,
+        "discipline":"",
+        "id":102371,
+        "name":"Bar \u00daltimo Trago, Campina Grande",
+        "path":"",
+        "pool":0,
+        "requirement":"",
+        "rulings":[],
+        "set":{
+            "V5SN":{
+                "NBr":"1"
+            }
+        },
+        "text":"Unique location.\nYou can lock this location if a minion you control successfully blocks; during the resulting combat, neither combatant can use equipment and during the first round of that combat, both combatants take 1R environmental damage during normal strike resolution.",
+        "twd":0,
+        "type":"Master",
+        "v5":false
     },
     "100134":{
         "aka":"",
@@ -9086,9 +9229,12 @@
             },
             "KoT":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Unique melee weapon.\nStrike: strength+1 damage, only usable by a vampire with capacity above 5. Damage inflicted by this weapon on a Brujah or Brujah antitribu is aggravated. This vampire with capacity above 5 is immune to the effects of Frenzy cards.",
+        "text":"Unique melee weapon. Only usable by a vampire with capacity 6 or more.\nDamage this weapon inflicts on Brujah or Brujah antitribu is aggravated. Frenzy cards cannot be used on this vampire with capacity 6 or more.\nStrike: strength+1 damage.",
         "twd":16,
         "type":"Equipment",
         "v5":false
@@ -10115,9 +10261,12 @@
             "SW":{
                 "R":true,
                 "PB":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Only usable when an action is blocked.\nCombat does not occur. Put this card into play. While in play, this card represents an ally with 3 life and 2 strength who can strike for 2R damage; this ally enters combat with the blocking minion. Blood Brother Ambush may play cards requiring basic Potence [pot] as a vampire with a capacity of 3. If a card would give them blood, give them life instead. Burn this card at the end of combat or if the combat is canceled.",
+        "text":"Only usable if this vampire is blocked, before block resolution.\nInstead of resolving the block, put this card in play (the action is still blocked); it becomes an ally with 3 life and 2 strength who can strike: 2R damage; this ally and the blocking minion enter combat. This ally can play cards requiring basic Potence [pot] as a 3-capacity vampire. If this combat is canceled or at the end of this combat, burn this card.",
         "twd":1,
         "type":"Action Modifier",
         "v5":false
@@ -13211,9 +13360,12 @@
         "set":{
             "Sabbat":{
                 "U":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Unique mortal with 2 life. 2 strength, 0 bleed.\nThe Bruisers may take a (D) action to burn a location controlled by your prey.",
+        "text":"Unique mortal with 2 life. 2 strength, 0 bleed.\nThis ally can burn a location controlled by your prey as a (D) action.",
         "twd":0,
         "type":"Ally",
         "v5":false
@@ -14795,6 +14947,34 @@
         "text":"[ser] Choose a ready minion. The bearer gets +1 intercept against the chosen minion. If the bearer blocks the chosen minion, the bearer can burn this equipment before block resolution to cancel combat and unlock.\n[SER] As above, and the chosen minion burns 1 blood or life after this equipment is burned.",
         "twd":0,
         "type":"Equipment",
+        "v5":false
+    },
+    "102372":{
+        "aka":"",
+        "artist":[
+            "Ludovic Salvador"
+        ],
+        "ascii":"Caoera",
+        "banned":"",
+        "blood":0,
+        "burn":"",
+        "clan":"Nosferatu",
+        "conviction":0,
+        "discipline":"",
+        "id":102372,
+        "name":"C\u00e3oera",
+        "path":"",
+        "pool":2,
+        "requirement":"",
+        "rulings":[],
+        "set":{
+            "V5SN":{
+                "NBr":"1"
+            }
+        },
+        "text":"Unique animal with 2 life. 2 strength, 0 bleed.\nThis ally can steal 1 blood or life from a minion controlled by another Methuselah as a +1 stealth (D) action. This ally gets +1 bleed for each life above 2 it has. This ally gets 1 optional maneuver each combat.",
+        "twd":0,
+        "type":"Ally",
         "v5":false
     },
     "100292":{
@@ -17218,6 +17398,34 @@
         "type":"Retainer",
         "v5":false
     },
+    "102373":{
+        "aka":"",
+        "artist":[
+            "Carlos D\u00edaz"
+        ],
+        "ascii":"Chave de Braco",
+        "banned":"",
+        "blood":0,
+        "burn":"",
+        "clan":"",
+        "conviction":0,
+        "discipline":"Potence",
+        "id":102373,
+        "name":"Chave de Bra\u00e7o",
+        "path":"",
+        "pool":0,
+        "requirement":"",
+        "rulings":[],
+        "set":{
+            "V5SN":{
+                "NBr":"3"
+            }
+        },
+        "text":"Grapple.\n[pot] Strike: hand strike at +2 damage.\n[POT] As above, and at the end of the round, if the range is close and this vampire has successfully inflicted more damage than the opposing minion, put this card on the opposing minion. The attached minion gets -2 strength. They can burn 2 blood or 1 life to burn this card.",
+        "twd":0,
+        "type":"Combat",
+        "v5":false
+    },
     "100336":{
         "aka":"",
         "artist":[
@@ -17826,6 +18034,34 @@
         "text":"Requires a ready minion with flight.\nPress. If another round of combat occurs, this minion gets an optional maneuver during that round.",
         "twd":0,
         "type":"Combat",
+        "v5":false
+    },
+    "102374":{
+        "aka":"",
+        "artist":[
+            "Kim Aldau"
+        ],
+        "ascii":"Circulatory System Outlet",
+        "banned":"",
+        "blood":0,
+        "burn":"",
+        "clan":"",
+        "conviction":0,
+        "discipline":"",
+        "id":102374,
+        "name":"Circulatory System Outlet",
+        "path":"",
+        "pool":0,
+        "requirement":"",
+        "rulings":[],
+        "set":{
+            "V5SN":{
+                "SoNY":"1"
+            }
+        },
+        "text":"Unique location. Hunting ground.\nDuring your unlock phase, a ready vampire you control with no blood can gain 1 blood. A vampire can gain blood from only one hunting ground each turn. Vampires can steal this location as a (D) action.",
+        "twd":0,
+        "type":"Master",
         "v5":false
     },
     "100350":{
@@ -21313,6 +21549,34 @@
         "type":"Master",
         "v5":false
     },
+    "102375":{
+        "aka":"",
+        "artist":[
+            "Felipe Headley"
+        ],
+        "ascii":"Convento da Penha, Vila Velha",
+        "banned":"",
+        "blood":0,
+        "burn":"",
+        "clan":"",
+        "conviction":0,
+        "discipline":"",
+        "id":102375,
+        "name":"Convento da Penha, Vila Velha",
+        "path":"",
+        "pool":1,
+        "requirement":"",
+        "rulings":[],
+        "set":{
+            "V5SN":{
+                "NBr":"1"
+            }
+        },
+        "text":"Unique location.\nDuring a political action, any Methuselah can lock this location to give an acting vampire they control +1 stealth; other Methuselahs must give you 1 pool to use this effect.",
+        "twd":0,
+        "type":"Master",
+        "v5":false
+    },
     "100421":{
         "aka":"",
         "artist":[
@@ -23184,9 +23448,12 @@
             },
             "Third":{
                 "PB":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Requires a Sabbat vampire. Title.\nIf this referendum is successful, put this card on the acting vampire to represent the unique Sabbat title of Archbishop of Rome. This could lead to a contested title. If this vampire is Brujah antitribu, he or she unlocks during your next discard phase.",
+        "text":"Title. Requires a Sabbat vampire.\nSuccessful referendum means this card is put on this vampire to represent the unique Sabbat title of Archbishop of Rome. If this vampire is Brujah antitribu, they can unlock during your next discard phase.",
         "twd":10,
         "type":"Political Action",
         "v5":false
@@ -25000,6 +25267,34 @@
         "type":"Reaction",
         "v5":false
     },
+    "102376":{
+        "aka":"",
+        "artist":[
+            "Camille D\u00e9farge"
+        ],
+        "ascii":"Deadly Secrets",
+        "banned":"",
+        "blood":0,
+        "burn":"",
+        "clan":"Nosferatu",
+        "conviction":0,
+        "discipline":"Obfuscate",
+        "id":102376,
+        "name":"Deadly Secrets",
+        "path":"",
+        "pool":0,
+        "requirement":"",
+        "rulings":[],
+        "set":{
+            "V5SN":{
+                "SoNY":"4"
+            }
+        },
+        "text":"[obf] Only usable during a bleed action. +1 bleed (limited).\n[OBF] Only usable during the polling step of a political action. Force another vampire to abstain. After action resolution, if the referendum was successful, you can draw 1 card.",
+        "twd":0,
+        "type":"Action Modifier",
+        "v5":false
+    },
     "100506":{
         "aka":"",
         "artist":[
@@ -26449,6 +26744,34 @@
         "text":"+1 stealth action.\nPut this card on this Ishtarri and put 1 counter on this card. This Ishtarri gets +X bleed, where X is the number of counters on this card. This Ishtarri can add a counter to this card as a +1 stealth action that costs X blood.",
         "twd":3,
         "type":"Action",
+        "v5":false
+    },
+    "102377":{
+        "aka":"",
+        "artist":[
+            "Ludovic Salvador"
+        ],
+        "ascii":"Destilaria Estrela da Paraiba",
+        "banned":"",
+        "blood":0,
+        "burn":"",
+        "clan":"Nosferatu",
+        "conviction":0,
+        "discipline":"",
+        "id":102377,
+        "name":"Destilaria Estrela da Para\u00edba",
+        "path":"",
+        "pool":1,
+        "requirement":"",
+        "rulings":[],
+        "set":{
+            "V5SN":{
+                "NBr":"1"
+            }
+        },
+        "text":"Unique location.\nDuring an action directed at you (or a card you control), you can lock this location to give a Nosferatu you control +1 intercept; if that Nosferatu blocks, you get +1 hand size during the resulting combat.",
+        "twd":0,
+        "type":"Master",
         "v5":false
     },
     "100531":{
@@ -28564,9 +28887,12 @@
             "Third":{
                 "U":true,
                 "PB":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"If this referendum passes, put this card in play. Any Brujah antitribu may enter combat with a ready minion as a (D) action. You may burn this card to cancel a blood hunt called on a Brujah antitribu. Any vampire may call a referendum to burn this card as a +1 stealth political action.",
+        "text":"Successful referendum means this card is put in play. Brujah antitribu can enter combat with a minion as a (D) action. You can burn this card to cancel a blood hunt called on a Brujah antitribu. Vampires can call a referendum to burn this card as a +1 stealth political action.",
         "twd":9,
         "type":"Political Action",
         "v5":false
@@ -29030,6 +29356,34 @@
         "twd":35,
         "type":"Ally",
         "v5":true
+    },
+    "102378":{
+        "aka":"",
+        "artist":[
+            "Yanis Cardin"
+        ],
+        "ascii":"Double Spiral Corporation",
+        "banned":"",
+        "blood":0,
+        "burn":"",
+        "clan":"",
+        "conviction":0,
+        "discipline":"",
+        "id":102378,
+        "name":"Double Spiral Corporation",
+        "path":"",
+        "pool":0,
+        "requirement":"",
+        "rulings":[],
+        "set":{
+            "V5SN":{
+                "SoNY":"1"
+            }
+        },
+        "text":"Unique location.\nYou can lock this location to discard a card. During your influence phase, you can lock this location to get +1 transfer. Vampires can steal this location as a (D) action.",
+        "twd":0,
+        "type":"Master",
+        "v5":false
     },
     "100577":{
         "aka":"",
@@ -31840,6 +32194,34 @@
         "twd":83,
         "type":"Master",
         "v5":true
+    },
+    "102379":{
+        "aka":"",
+        "artist":[
+            "Raquel Cornejo"
+        ],
+        "ascii":"Emboldened Councilor",
+        "banned":"",
+        "blood":0,
+        "burn":"",
+        "clan":"",
+        "conviction":0,
+        "discipline":"",
+        "id":102379,
+        "name":"Emboldened Councilor",
+        "path":"",
+        "pool":0,
+        "requirement":"",
+        "rulings":[],
+        "set":{
+            "V5SN":{
+                "SoNY":"4"
+            }
+        },
+        "text":"Requires a primogen.\n[REACTION] +1 intercept.\n[REACTION] Only usable by a locked primogen. This primogen unlocks and attempts to block.",
+        "twd":0,
+        "type":"Reaction",
+        "v5":false
     },
     "100633":{
         "aka":"",
@@ -36013,6 +36395,34 @@
         "text":"[chi] +1 stealth.\n[CHI] Only usable during a bleed action. +1 bleed (limited), or +1 stealth and +1 bleed (limited).",
         "twd":39,
         "type":"Action Modifier",
+        "v5":false
+    },
+    "102380":{
+        "aka":"",
+        "artist":[
+            "Noora Hirvonen"
+        ],
+        "ascii":"Father Anthony",
+        "banned":"",
+        "blood":0,
+        "burn":"",
+        "clan":"",
+        "conviction":0,
+        "discipline":"",
+        "id":102380,
+        "name":"Father Anthony",
+        "path":"",
+        "pool":1,
+        "requirement":"",
+        "rulings":[],
+        "set":{
+            "V5SN":{
+                "SoNY":"1"
+            }
+        },
+        "text":"Unique mortal with 2 life. 1 strength, 0 bleed.\nWhile Father Anthony is in combat with a vampire, cards requiring 1 or more Disciplines cost that vampire +1 blood. Once each combat, Father Anthony can strike: dodge or strike: stun the opposing minion.",
+        "twd":0,
+        "type":"Ally",
         "v5":false
     },
     "100708":{
@@ -40814,9 +41224,12 @@
             },
             "Third":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Master: unique location.\nDuring your influence phase, lock to move 1 blood from the blood bank to a Brujah antitribu in your uncontrolled region.",
+        "text":"Unique location.\nDuring your influence phase, you can lock this location to add 1 blood to a Brujah antitribu in your uncontrolled region.",
         "twd":28,
         "type":"Master",
         "v5":false
@@ -44607,6 +45020,34 @@
         "type":"Action Modifier",
         "v5":false
     },
+    "102381":{
+        "aka":"",
+        "artist":[
+            "Anastasiia Horbunova"
+        ],
+        "ascii":"Halito Negro",
+        "banned":"",
+        "blood":1,
+        "burn":"",
+        "clan":"",
+        "conviction":0,
+        "discipline":"Oblivion/Blood Sorcery",
+        "id":102381,
+        "name":"H\u00e1lito Negro",
+        "path":"Death and the Soul",
+        "pool":0,
+        "requirement":"",
+        "rulings":[],
+        "set":{
+            "V5SN":{
+                "NBr":"3"
+            }
+        },
+        "text":"[obl] or [tha] Strike: 2R damage on the opposing minion and 1R damage on all retainers on the opposing minion.\n[OBL] or [THA] Strike: 3R damage on the opposing minion and 2R damage on all retainers on the opposing minion.",
+        "twd":0,
+        "type":"Combat",
+        "v5":false
+    },
     "100878":{
         "aka":"",
         "artist":[
@@ -48270,6 +48711,34 @@
         "type":"Action Modifier",
         "v5":false
     },
+    "102382":{
+        "aka":"",
+        "artist":[
+            "Krzysztof Bieniawski"
+        ],
+        "ascii":"Iara",
+        "banned":"",
+        "blood":0,
+        "burn":"",
+        "clan":"Malkavian",
+        "conviction":0,
+        "discipline":"",
+        "id":102382,
+        "name":"Iara",
+        "path":"",
+        "pool":2,
+        "requirement":"",
+        "rulings":[],
+        "set":{
+            "V5SN":{
+                "NBr":"1"
+            }
+        },
+        "text":"Unique changeling with 3 life. 1 strength, 1 bleed.\nDuring an action performed by a minion you control, you can lock Iara to give a blocking minion -1 intercept; if that action is blocked, instead of resolving the block, Iara enters combat with and locks the blocking minion.",
+        "twd":0,
+        "type":"Ally",
+        "v5":false
+    },
     "100948":{
         "aka":"",
         "artist":[
@@ -50095,6 +50564,34 @@
         "text":"Mortal with 1 life. 0 strength, 0 bleed.\nThe Informant cannot act or block. During your unlock phase, any Methuselah who controls a ready Ishtarri may look at your hand. During your discard phase, your predator takes control of the Informant.",
         "twd":5,
         "type":"Ally",
+        "v5":false
+    },
+    "102383":{
+        "aka":"",
+        "artist":[
+            "Sami Rytk\u00f6nen"
+        ],
+        "ascii":"Information Exchange",
+        "banned":"",
+        "blood":0,
+        "burn":"",
+        "clan":"Nosferatu",
+        "conviction":0,
+        "discipline":"",
+        "id":102383,
+        "name":"Information Exchange",
+        "path":"",
+        "pool":0,
+        "requirement":"",
+        "rulings":[],
+        "set":{
+            "V5SN":{
+                "SoNY":"2"
+            }
+        },
+        "text":"Allocate 3 points among one or more Methuselahs and choose one of those Methuselahs. Successful referendum means you look at the chosen Methuselah's hand and discard up to one card of your choice from it, and for each point allocated, each Methuselah burns 1 pool.",
+        "twd":0,
+        "type":"Political Action",
         "v5":false
     },
     "100984":{
@@ -54428,6 +54925,34 @@
         "text":"Requires an Anarch. Do not replace until after combat. Strike: hand strike or use a melee weapon strike.\n[for] This strike is at +1 damage, with 1 optional maneuver.\n[pot] This strike is at +2 damage.\n[vic] This strike is at +1 damage, with 1 optional press. If another round of combat occurs, that round is at close range (skip the determine range step for that round).",
         "twd":11,
         "type":"Combat",
+        "v5":false
+    },
+    "102384":{
+        "aka":"",
+        "artist":[
+            "Felipe Headley"
+        ],
+        "ascii":"Lambreta",
+        "banned":"",
+        "blood":0,
+        "burn":"",
+        "clan":"",
+        "conviction":0,
+        "discipline":"",
+        "id":102384,
+        "name":"Lambreta",
+        "path":"",
+        "pool":0,
+        "requirement":"",
+        "rulings":[],
+        "set":{
+            "V5SN":{
+                "NBr":"3"
+            }
+        },
+        "text":"Vehicle.\nIf the bearer is acting, you can lock this vehicle to give a blocking minion -1 intercept for the current action. A minion can have only one vehicle.",
+        "twd":0,
+        "type":"Equipment",
         "v5":false
     },
     "101072":{
@@ -60474,6 +60999,34 @@
         "type":"Ally",
         "v5":false
     },
+    "102385":{
+        "aka":"",
+        "artist":[
+            "Krzysztof Bieniawski"
+        ],
+        "ascii":"Meia Lua",
+        "banned":"",
+        "blood":0,
+        "burn":"",
+        "clan":"",
+        "conviction":0,
+        "discipline":"Celerity & Potence",
+        "id":102385,
+        "name":"Meia Lua",
+        "path":"",
+        "pool":0,
+        "requirement":"",
+        "rulings":[],
+        "set":{
+            "V5SN":{
+                "NBr":"4"
+            }
+        },
+        "text":"[cel][pot] Strike: dodge or strike: hand strike at +1 damage.\n[CEL][POT] Strike: dodge, with 1 additional strike: hand strike at +2 damage (limited).",
+        "twd":0,
+        "type":"Combat",
+        "v5":false
+    },
     "101195":{
         "aka":"",
         "artist":[
@@ -63385,6 +63938,34 @@
         },
         "text":"Unique mortal with 1 life. 4 strength, 0 bleed.\nThe Muddled Vampire Hunter strikes with first strike. He may enter combat with a ready vampire controlled by another Methuselah as a (D) action.",
         "twd":99,
+        "type":"Ally",
+        "v5":false
+    },
+    "102386":{
+        "aka":"",
+        "artist":[
+            "Anastasiia Horbunova"
+        ],
+        "ascii":"Mulher de Branco",
+        "banned":"",
+        "blood":0,
+        "burn":"",
+        "clan":"Hecata ",
+        "conviction":0,
+        "discipline":"",
+        "id":102386,
+        "name":"Mulher de Branco",
+        "path":"",
+        "pool":0,
+        "requirement":"",
+        "rulings":[],
+        "set":{
+            "V5SN":{
+                "NBr":"1"
+            }
+        },
+        "text":"Unique wraith with 1 life. 0 strength, 0 bleed.\nBurn this ally unless you remove three cards in your ash heap from the game. After a minion successfully bleeds you (for 1 or more), you can shuffle this ally into your library to inflict 2 damage on the acting minion.",
+        "twd":0,
         "type":"Ally",
         "v5":false
     },
@@ -67697,7 +68278,7 @@
                 "2026-01-01":true
             }
         },
-        "text":"Only usable if a minion you control burns an ally controlled by another Methuselah.\nEach vampire you control gains X blood, where X is the cost to recruit the ally.",
+        "text":"Only usable if the opposing ally is being burned.\nEach vampire you control gains X blood, where X is the cost to recruit the ally.",
         "twd":8,
         "type":"Combat",
         "v5":false
@@ -67965,9 +68546,12 @@
             "SW":{
                 "R":true,
                 "PV":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Master.\nBurn a Brujah antitribu with capacity below 6. Only one Out of Control can be played during a game.",
+        "text":"Only one Out of Control can be played in a game.\nBurn a Brujah antitribu with capacity 5 or less.",
         "twd":0,
         "type":"Master",
         "v5":false
@@ -68461,6 +69045,34 @@
         "text":"This equipment card represents a location and does not count as equipment while in play. Unique.\nDuring your master phase, the vampire with this location gains 1 blood.",
         "twd":177,
         "type":"Equipment",
+        "v5":false
+    },
+    "102387":{
+        "aka":"",
+        "artist":[
+            "Carlos D\u00edaz"
+        ],
+        "ascii":"Palavra Sagrada, Rio de Janeiro",
+        "banned":"",
+        "blood":0,
+        "burn":"",
+        "clan":"Caitiff",
+        "conviction":0,
+        "discipline":"",
+        "id":102387,
+        "name":"Palavra Sagrada, Rio de Janeiro",
+        "path":"",
+        "pool":1,
+        "requirement":"",
+        "rulings":[],
+        "set":{
+            "V5SN":{
+                "NBr":"1"
+            }
+        },
+        "text":"Unique location.\nDuring an action, you can lock a ready Caitiff you control to give another vampire you control +1 stealth or +1 intercept.",
+        "twd":0,
+        "type":"Master",
         "v5":false
     },
     "101346":{
@@ -71922,6 +72534,37 @@
         },
         "text":"Master: unique location. Hunting ground.\nDuring your unlock phase, you may move 1 blood from the blood bank to a ready vampire you control. A vampire can gain blood from only one hunting ground card each turn.",
         "twd":11,
+        "type":"Master",
+        "v5":false
+    },
+    "102366":{
+        "aka":"",
+        "artist":[
+            "Felipe Headley"
+        ],
+        "ascii":"Porto de Santos",
+        "banned":"",
+        "blood":0,
+        "burn":"",
+        "clan":"",
+        "conviction":0,
+        "discipline":"",
+        "id":102366,
+        "name":"Porto de Santos",
+        "path":"",
+        "pool":0,
+        "requirement":"",
+        "rulings":[],
+        "set":{
+            "P":{
+                "R":true
+            },
+            "V5SN":{
+                "NBr":"1"
+            }
+        },
+        "text":"Each Methuselah can play only one Porto de Santos in a game.\nGain 1 pool. Each Methuselah looks at up to 3 cards from the top of their crypt and moves one of those cards to their uncontrolled region and the others to the bottom of their crypt.",
+        "twd":0,
         "type":"Master",
         "v5":false
     },
@@ -81037,6 +81680,34 @@
         "type":"Action Modifier/Combat",
         "v5":true
     },
+    "102388":{
+        "aka":"",
+        "artist":[
+            "Raquel Cornejo"
+        ],
+        "ascii":"Respected Representative",
+        "banned":"",
+        "blood":0,
+        "burn":"",
+        "clan":"",
+        "conviction":0,
+        "discipline":"",
+        "id":102388,
+        "name":"Respected Representative",
+        "path":"",
+        "pool":0,
+        "requirement":"",
+        "rulings":[],
+        "set":{
+            "V5SN":{
+                "SoNY":"2"
+            }
+        },
+        "text":"Title.\nAdd 1 blood to a non-titled non-Caitiff Camarilla vampire with capacity 4 or more you control and put this card on them to represent the Camarilla title of primogen.",
+        "twd":0,
+        "type":"Master",
+        "v5":false
+    },
     "101611":{
         "aka":"",
         "artist":[
@@ -83096,6 +83767,34 @@
         },
         "text":"Mortal with 2 life. 0 strength, 0 bleed.\nRom Gypsy may strike for 1R damage. Rom Gypsy gets one optional maneuver each combat. Lock to give a Ravnos you control +1 stealth.",
         "twd":15,
+        "type":"Ally",
+        "v5":false
+    },
+    "102389":{
+        "aka":"",
+        "artist":[
+            "Matheus Calza"
+        ],
+        "ascii":"Ron Zertnert, S.A.D. Agent",
+        "banned":"",
+        "blood":0,
+        "burn":"",
+        "clan":"",
+        "conviction":0,
+        "discipline":"",
+        "id":102389,
+        "name":"Ron Zertnert, S.A.D. Agent",
+        "path":"",
+        "pool":2,
+        "requirement":"",
+        "rulings":[],
+        "set":{
+            "V5SN":{
+                "SoNY":"1"
+            }
+        },
+        "text":"Unique mortal with 2 life. 1 strength, 1 bleed. Government.\nRon can prevent 1 damage each combat. He can strike: 1R damage. If another minion you control is in combat, he can lock during the press step to inflict 1 unpreventable damage on the opposing minion.",
+        "twd":0,
         "type":"Ally",
         "v5":false
     },
@@ -93831,6 +94530,9 @@
             },
             "KSU":{
                 "DM":"4"
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "text":"Only usable after resolution of a successful directed action.\nThis vampire gains 1 blood and you gain 1 pool.",
@@ -94089,6 +94791,34 @@
         "text":"[cel] Only usable when the action is announced. If blocked, range in the first round of the resulting combat is automatically set to long.\n[spi] Minions without flight [FLIGHT] or Spiritus [spi] get -1 intercept when attempting to block this action.\n[SPI] As [spi] above, but those minions get -2 intercept.",
         "twd":17,
         "type":"Action Modifier",
+        "v5":false
+    },
+    "102390":{
+        "aka":"",
+        "artist":[
+            "Krasen Maximov"
+        ],
+        "ascii":"St. Patrick's Cathedral, New York",
+        "banned":"",
+        "blood":0,
+        "burn":"",
+        "clan":"Lasombra",
+        "conviction":0,
+        "discipline":"",
+        "id":102390,
+        "name":"St. Patrick's Cathedral, New York",
+        "path":"",
+        "pool":1,
+        "requirement":"",
+        "rulings":[],
+        "set":{
+            "V5SN":{
+                "SoNY":"1"
+            }
+        },
+        "text":"Unique location.\nDuring your unlock phase, you can lock this location to look at and reorder the top 3 cards of your library. You can then move them to the bottom of your library (in the same order).",
+        "twd":0,
+        "type":"Master",
         "v5":false
     },
     "101859":{
@@ -96733,9 +97463,12 @@
             },
             "Third":{
                 "U":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Mortal with 1 life. 0 strength, 0 bleed.\nSurvivalist may strike for 2R damage. He may lock to give a Brujah antitribu you control a maneuver.",
+        "text":"Mortal with 1 life. 0 strength, 0 bleed.\nThis ally can strike: 2R damage. He can lock to give a Brujah antitribu you control 1 maneuver.",
         "twd":0,
         "type":"Ally",
         "v5":false
@@ -97171,9 +97904,12 @@
             },
             "Third":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Unique melee weapon.\nStrength+1 damage each strike, with an optional additional strike (limited) each round. Only usable by Brujah antitribu.",
+        "text":"Unique melee weapon. Only usable by a Brujah antitribu.\nThe bearer gets 1 optional additional strike (limited) each round.\nStrike: strength+1 damage.",
         "twd":3,
         "type":"Equipment",
         "v5":false
@@ -105027,9 +105763,12 @@
         "set":{
             "SoC":{
                 "C":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Only usable during a referendum.\nEach ready Brujah antitribu gets an additional vote this referendum. When tallying results, if any Brujah antitribu cast any votes or ballots in opposition to this Brujah antitribu's votes or ballots (or if this Brujah antitribu abstains), none of the additional votes from this card are counted.",
+        "text":"Only usable during the polling step of a political action.\nEach Brujah antitribu gets +1 vote. When tallying results, if this Brujah antitribu abstains or 1 or more Brujah antitribu cast 1 or more votes or ballots in opposition to this Brujah antitribu, none of the additional votes from this card are counted.",
         "twd":7,
         "type":"Action Modifier/Reaction",
         "v5":false
@@ -106682,9 +107421,12 @@
             "Third":{
                 "R":true,
                 "PB":"1"
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Only usable when you are successfully bled for more than 2 pool.\nPut this card on the acting minion. Brujah antitribu get +1 strength in combat with the minion with this card. Any ready Brujah antitribu may enter combat with this vampire as a (D) action. Burn this card if this minion goes to torpor.",
+        "text":"Only usable after a minion successfully bleeds you for 3 or more.\nPut this card on the acting minion. Brujah antitribu get +1 strength in combat with the attached minion. Brujah antitribu can enter combat with the attached minion as a (D) action. If the attached minion is in torpor, burn this card.",
         "twd":2,
         "type":"Reaction",
         "v5":false
@@ -107299,6 +108041,34 @@
             }
         },
         "text":"Equipment.\nThe vampire with this Vial may burn it before range is chosen in a round of combat to get +1 strength and an additional strike (limited) each round for the remainder of combat. If he or she does so, he or she cannot use other equipment cards for the remainder of combat.",
+        "twd":0,
+        "type":"Equipment",
+        "v5":false
+    },
+    "102391":{
+        "aka":"",
+        "artist":[
+            "Gin\u00e9s Qui\u00f1onero"
+        ],
+        "ascii":"Vial of Zapathasura's Vitae",
+        "banned":"",
+        "blood":0,
+        "burn":"",
+        "clan":"Ravnos",
+        "conviction":0,
+        "discipline":"",
+        "id":102391,
+        "name":"Vial of Zapathasura's Vitae",
+        "path":"",
+        "pool":1,
+        "requirement":"",
+        "rulings":[],
+        "set":{
+            "V5SN":{
+                "SoNY":"1"
+            }
+        },
+        "text":"Unique.\nChoose Animalism [ani], Obfuscate [obf] or Presence [pre]. This Ravnos gets +1 strength and +1 level of the chosen Discipline. This equipment cannot be moved or stolen. If this equipment is burned, send this vampire to torpor.",
         "twd":0,
         "type":"Equipment",
         "v5":false
@@ -109661,9 +110431,12 @@
             },
             "Third":{
                 "U":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Master: unique location.\nLock during your discard phase to move a card from your ash heap to the bottom of your library.",
+        "text":"Unique location.\nDuring your discard phase, you can lock this location to move a card from your ash heap to the bottom of your library.",
         "twd":45,
         "type":"Master",
         "v5":false

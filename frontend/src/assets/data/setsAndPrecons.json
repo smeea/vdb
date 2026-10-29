@@ -26,16 +26,6 @@
       "ToDV": {
         "name": "Ventrue",
         "clan": "Ventrue"
-      },
-      "BbN": {
-        "name": "Brazil By Night",
-        "clan": "Bundle",
-        "playtest_old": true
-      },
-      "SoNY": {
-        "name": "Shadows of New York",
-        "clan": "Bundle",
-        "playtest_old": true
       }
     }
   },
@@ -109,6 +99,20 @@
       }
     }
   },
+  "V5SN": {
+    "name": "Fifth Edition (SoNY & NBr)",
+    "date": "2026-10-31",
+    "precons": {
+      "SoNY": {
+        "name": "Secrets of New York",
+        "clan": "Bundle"
+      },
+      "NBr": {
+        "name": "Noites Brasileiras",
+        "clan": "Bundle"
+      }
+    }
+  },
   "NB3C": {
     "name": "New Blood III (Companion)",
     "date": "2026-02-28",
@@ -128,7 +132,7 @@
     }
   },
   "SV5": {
-    "name": "V5 Sabbat",
+    "name": "Fifth Edition (Sabbat)",
     "date": "2025-10-26",
     "precons": {
       "PCaine": {

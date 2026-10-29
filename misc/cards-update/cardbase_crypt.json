@@ -604,6 +604,43 @@
         "twd":93,
         "v5":false
     },
+    "201787":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Francisco T\u00e9bar"
+        ],
+        "ascii":"Addison Payne",
+        "banned":"",
+        "capacity":8,
+        "clan":"Ventrue",
+        "disciplines":{
+            "Obfuscate":1,
+            "Potence":1,
+            "Dominate":2,
+            "Fortitude":2,
+            "Presence":2
+        },
+        "group":"6",
+        "id":201787,
+        "name":"Addison Payne",
+        "new":false,
+        "path":"",
+        "rulings":[],
+        "sect":"Camarilla",
+        "set":{
+            "V5SN":{
+                "SoNY":"2"
+            },
+            "playtest":{
+                "SoNY":2
+            }
+        },
+        "text":"Camarilla primogen: Addison can play cards requiring a prince as if he were a prince.",
+        "title":"primogen",
+        "twd":0,
+        "v5":false
+    },
     "200012":{
         "adv":"",
         "aka":"",
@@ -1605,6 +1642,40 @@
         "twd":80,
         "v5":false
     },
+    "201788":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Anastasiia Horbunova"
+        ],
+        "ascii":"Aisling Sturbridge",
+        "banned":"",
+        "capacity":7,
+        "clan":"Tremere",
+        "disciplines":{
+            "Celerity":1,
+            "Dominate":1,
+            "Obfuscate":1,
+            "Auspex":2,
+            "Blood Sorcery":2
+        },
+        "group":"6",
+        "id":201788,
+        "name":"Aisling Sturbridge",
+        "new":true,
+        "path":"",
+        "rulings":[],
+        "sect":"Camarilla",
+        "set":{
+            "V5SN":{
+                "SoNY":"2"
+            }
+        },
+        "text":"Camarilla primogen: Once each turn, after Aisling performs a successful action, she can discard a card requiring Blood Sorcery [tha] to unlock.",
+        "title":"primogen",
+        "twd":0,
+        "v5":false
+    },
     "201737":{
         "adv":"",
         "aka":"",
@@ -2304,6 +2375,9 @@
             "Third":{
                 "PB":1,
                 "SKB":"1"
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "text":"Sabbat: Alessandro gets +1 strength in combat with a Lasombra.",
@@ -3612,9 +3686,12 @@
         "set":{
             "SW":{
                 "PB":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Sabbat bishop: Amelia can enter combat with any vampire of capacity below 4 controlled by another Methuselah as a +1 stealth (D) action.",
+        "text":"Sabbat bishop: Amelia can enter combat with a vampire with capacity 3 or less as a +1 stealth (D) action.",
         "title":"bishop",
         "twd":11,
         "v5":false
@@ -5875,9 +5952,12 @@
             },
             "BSC":{
                 "X":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Sabbat bishop: Antonio gets +1 stealth when equipping with a weapon. During your discard phase, Antonio may burn 1 blood to unlock.",
+        "text":"Sabbat bishop: Antonio gets +1 stealth during actions to equip with a weapon. During your discard phase, he can burn 1 blood to unlock.",
         "title":"bishop",
         "twd":4,
         "v5":false
@@ -6618,6 +6698,39 @@
         "twd":1,
         "v5":false
     },
+    "201789":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Gin\u00e9s Qui\u00f1onero"
+        ],
+        "ascii":"Ariete",
+        "banned":"",
+        "capacity":8,
+        "clan":"Tzimisce",
+        "disciplines":{
+            "Animalism":2,
+            "Celerity":2,
+            "Protean":2,
+            "Blood Sorcery":2
+        },
+        "group":"6",
+        "id":201789,
+        "name":"Ar\u00edete",
+        "new":false,
+        "path":"Caine",
+        "rulings":[],
+        "sect":"Sabbat",
+        "set":{
+            "V5SN":{
+                "NBr":"2"
+            }
+        },
+        "text":"Sabbat bishop: Ar\u00edete can enter combat with a non-Sabbat vampire as a (D) action.",
+        "title":"bishop",
+        "twd":0,
+        "v5":false
+    },
     "200135":{
         "adv":"",
         "aka":"",
@@ -6849,9 +6962,12 @@
             "Third":{
                 "PB":"2",
                 "SKB":"1"
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Sabbat Archbishop of Washington, D.C.: When a referendum Armin calls passes, you gain 1 pool after resolving the referendum.",
+        "text":"Sabbat Archbishop of Washington, D.C.: After a referendum called by Armin passes, you can gain 1 pool.",
         "title":"archbishop",
         "twd":25,
         "v5":false
@@ -7583,6 +7699,9 @@
         "set":{
             "Third":{
                 "V":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "text":"Sabbat.",
@@ -9181,9 +9300,12 @@
         "set":{
             "Third":{
                 "V":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Sabbat: During a referendum, Bela may burn X blood to get X additional votes.",
+        "text":"Sabbat: During the polling step of any referendum, Bela can burn X blood to get +X votes.",
         "title":"",
         "twd":1,
         "v5":false
@@ -10790,9 +10912,12 @@
             },
             "SW":{
                 "PB":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Sabbat priscus: Once each combat, Bronwen may dodge as a strike.",
+        "text":"Sabbat priscus: Once each combat, Bronwen can strike: dodge.",
         "title":"priscus",
         "twd":6,
         "v5":false
@@ -10950,6 +11075,40 @@
         "text":"Anarch Baron of Stockholm: The action to become Anarch costs vampires you control 0 blood.\n[MERGED] Brunhilde can enter combat with a non-Anarch vampire as a (D) action.",
         "title":"baron",
         "twd":9,
+        "v5":false
+    },
+    "201790":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Daniel Argudo"
+        ],
+        "ascii":"Bruxa Branca",
+        "banned":"",
+        "capacity":5,
+        "clan":"Salubri",
+        "disciplines":{
+            "Auspex":2,
+            "Fortitude":2
+        },
+        "group":"7",
+        "id":201790,
+        "name":"Bruxa Branca",
+        "new":false,
+        "path":"",
+        "rulings":[],
+        "sect":"Independent",
+        "set":{
+            "V5SN":{
+                "NBr":"1"
+            },
+            "playtest":{
+                "BbN":2
+            }
+        },
+        "text":"Independent: Once each turn, Bruxa Branca can get +1 intercept for the current action.",
+        "title":"",
+        "twd":0,
         "v5":false
     },
     "200225":{
@@ -11209,6 +11368,41 @@
         "twd":3,
         "v5":false
     },
+    "201791":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Gin\u00e9s Qui\u00f1onero"
+        ],
+        "ascii":"Cacador de Raposas",
+        "banned":"",
+        "capacity":7,
+        "clan":"Banu Haqim",
+        "disciplines":{
+            "Animalism":2,
+            "Obfuscate":2,
+            "Blood Sorcery":2
+        },
+        "group":"7",
+        "id":201791,
+        "name":"Ca\u00e7ador de Raposas",
+        "new":false,
+        "path":"Caine",
+        "rulings":[],
+        "sect":"Sabbat",
+        "set":{
+            "V5SN":{
+                "NBr":"2"
+            },
+            "playtest":{
+                "BbN":2
+            }
+        },
+        "text":"Sabbat Archbishop of Belo Horizonte.",
+        "title":"archbishop",
+        "twd":0,
+        "v5":false
+    },
     "200231":{
         "adv":"",
         "aka":"",
@@ -11292,6 +11486,39 @@
         "text":"Sabbat Archbishop of Detroit: Each round of combat, before range is determined, Cailean can set the range for that round. If he does so, skip the Determine Range step for that round.",
         "title":"archbishop",
         "twd":23,
+        "v5":false
+    },
+    "201792":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Krzysztof Bieniawski"
+        ],
+        "ascii":"Caique",
+        "banned":"",
+        "capacity":1,
+        "clan":"Caitiff",
+        "disciplines":{
+            "Dominate":1
+        },
+        "group":"7",
+        "id":201792,
+        "name":"Caique",
+        "new":false,
+        "path":"",
+        "rulings":[],
+        "sect":"Anarch",
+        "set":{
+            "V5SN":{
+                "NBr":"1"
+            },
+            "playtest":{
+                "BbN":2
+            }
+        },
+        "text":"Anarch: After Caique enters combat, discard 1 card at random.",
+        "title":"",
+        "twd":0,
         "v5":false
     },
     "200233":{
@@ -12096,6 +12323,42 @@
         "text":"Sabbat.",
         "title":"",
         "twd":39,
+        "v5":false
+    },
+    "201793":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Lucas Viera"
+        ],
+        "ascii":"Carter Vanderweyden",
+        "banned":"",
+        "capacity":7,
+        "clan":"Malkavian",
+        "disciplines":{
+            "Protean":1,
+            "Auspex":2,
+            "Dominate":2,
+            "Obfuscate":2
+        },
+        "group":"6",
+        "id":201793,
+        "name":"Carter Vanderweyden",
+        "new":false,
+        "path":"",
+        "rulings":[],
+        "sect":"Camarilla",
+        "set":{
+            "V5SN":{
+                "SoNY":"2"
+            },
+            "playtest":{
+                "SoNY":2
+            }
+        },
+        "text":"Camarilla primogen: During referendums he calls, Carter gets +1 vote for each other primogen you control.",
+        "title":"primogen",
+        "twd":0,
         "v5":false
     },
     "201521":{
@@ -15543,6 +15806,9 @@
             },
             "Anthology I":{
                 "":"1"
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "text":"Sabbat cardinal: Selina gets +1 stealth during political actions.",
@@ -16143,9 +16409,12 @@
         "set":{
             "Third":{
                 "V":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Sabbat: When DeSalle is acting, a Sabbat vampire may burn 1 blood to get +1 intercept once that action. +1 stealth.",
+        "text":"Sabbat: During an action, each Sabbat vampire attempting to block DeSalle can burn 1 blood to get +1 intercept. +1 stealth.",
         "title":"",
         "twd":4,
         "v5":false
@@ -16902,9 +17171,12 @@
         "set":{
             "BH":{
                 "U":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Sabbat: When Streck bleeds successfully, the target Methuselah discards one card at random from his or her hand.",
+        "text":"Sabbat: After Doctor Streck successfully bleeds, the target Methuselah discards 1 card at random.",
         "title":"",
         "twd":2,
         "v5":false
@@ -16938,6 +17210,9 @@
             },
             "SW":{
                 "PB":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "text":"Sabbat.",
@@ -17697,6 +17972,39 @@
         "text":"Camarilla.",
         "title":"",
         "twd":51,
+        "v5":false
+    },
+    "201794":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Chris Chung"
+        ],
+        "ascii":"Dorinha, a Confusa",
+        "banned":"",
+        "capacity":1,
+        "clan":"Caitiff",
+        "disciplines":{
+            "Oblivion":1
+        },
+        "group":"7",
+        "id":201794,
+        "name":"Dorinha, a Confusa",
+        "new":false,
+        "path":"",
+        "rulings":[],
+        "sect":"Anarch",
+        "set":{
+            "V5SN":{
+                "NBr":"1"
+            },
+            "playtest":{
+                "BbN":2
+            }
+        },
+        "text":"Anarch: Action cards cost Dorinha +1 blood.",
+        "title":"",
+        "twd":0,
         "v5":false
     },
     "200369":{
@@ -18764,6 +19072,43 @@
         "twd":0,
         "v5":false
     },
+    "201795":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Mark Kelly"
+        ],
+        "ascii":"Durok",
+        "banned":"",
+        "capacity":7,
+        "clan":"Tzimisce",
+        "disciplines":{
+            "Auspex":1,
+            "Dominate":1,
+            "Animalism":2,
+            "Celerity":2,
+            "Protean":2
+        },
+        "group":"6",
+        "id":201795,
+        "name":"Durok",
+        "new":false,
+        "path":"",
+        "rulings":[],
+        "sect":"Anarch",
+        "set":{
+            "V5SN":{
+                "NBr":"2"
+            },
+            "playtest":{
+                "BbN":2
+            }
+        },
+        "text":"Anarch: Durok gets +1 intercept during actions directed at a card you control.",
+        "title":"",
+        "twd":0,
+        "v5":false
+    },
     "200394":{
         "adv":[
             false,
@@ -19062,6 +19407,42 @@
         "twd":0,
         "v5":false,
         "Card Text":"Camarilla: If /Enid Blount/ is in your ready region, Edith gets an optional maneuver and an optional press each combat."
+    },
+    "201796":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Gin\u00e9s Qui\u00f1onero"
+        ],
+        "ascii":"Eduardo, o Oraculo Mascarado",
+        "banned":"",
+        "capacity":8,
+        "clan":"Malkavian",
+        "disciplines":{
+            "Auspex":2,
+            "Dominate":2,
+            "Fortitude":2,
+            "Obfuscate":2
+        },
+        "group":"7",
+        "id":201796,
+        "name":"Eduardo, o Or\u00e1culo Mascarado",
+        "new":false,
+        "path":"",
+        "rulings":[],
+        "sect":"Camarilla",
+        "set":{
+            "V5SN":{
+                "NBr":"2"
+            },
+            "playtest":{
+                "BbN":2
+            }
+        },
+        "text":"Camarilla primogen: During the polling step of any referendum, if Eduardo is ready, he can discard 1 card at random to get +2 votes.",
+        "title":"primogen",
+        "twd":0,
+        "v5":false
     },
     "200402":{
         "adv":"",
@@ -19453,6 +19834,43 @@
         "text":"Sabbat.",
         "title":"",
         "twd":20,
+        "v5":false
+    },
+    "201797":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Mark Kelly"
+        ],
+        "ascii":"Elie Sansaricq",
+        "banned":"",
+        "capacity":7,
+        "clan":"Ministry",
+        "disciplines":{
+            "Dominate":1,
+            "Blood Sorcery":1,
+            "Obfuscate":2,
+            "Presence":2,
+            "Protean":2
+        },
+        "group":"6",
+        "id":201797,
+        "name":"Elie Sansaricq",
+        "new":false,
+        "path":"",
+        "rulings":[],
+        "sect":"Anarch",
+        "set":{
+            "V5SN":{
+                "SoNY":"1"
+            },
+            "playtest":{
+                "SoNY":2
+            }
+        },
+        "text":"Anarch: Once each combat, after Elie successfully inflicts any damage on the opposing minion, put 1 corruption counter on that minion.",
+        "title":"",
+        "twd":0,
         "v5":false
     },
     "200409":{
@@ -21079,6 +21497,9 @@
         "set":{
             "SW":{
                 "C":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "text":"Sabbat.",
@@ -21400,9 +21821,12 @@
         "set":{
             "SoC":{
                 "V":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Sabbat: Fairuza may burn 1 blood or life from a minion controlled by your prey as a (D) action. She gets -1 bleed when bleeding a Methuselah who controls a ready minion.",
+        "text":"Sabbat: Fairuza can burn 1 blood or life from a minion controlled by your prey as a (D) action. She gets -1 bleed against Methuselahs controlling a ready minion.",
         "title":"",
         "twd":6,
         "v5":false
@@ -21637,9 +22061,12 @@
             "Third":{
                 "PB":"2",
                 "SKB":"1"
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Sabbat: During a bleed action, Father Juan may burn a blood to get -1 bleed and +1 stealth.",
+        "text":"Sabbat: During a bleed action, Father Juan Carlos can burn 1 blood to get -1 bleed and +1 stealth.",
         "title":"",
         "twd":4,
         "v5":false
@@ -22784,6 +23211,9 @@
             "SW":{
                 "U":true,
                 "PB":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "text":"Sabbat.",
@@ -23360,9 +23790,12 @@
         "set":{
             "SoC":{
                 "V":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Sabbat. Black Hand.",
+        "text":"Sabbat: Black Hand.",
         "title":"",
         "twd":3,
         "v5":false
@@ -24221,6 +24654,42 @@
         "twd":12,
         "v5":false
     },
+    "201798":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Krzysztof Bieniawski"
+        ],
+        "ascii":"Gianni D'Angelo",
+        "banned":"",
+        "capacity":5,
+        "clan":"Nosferatu",
+        "disciplines":{
+            "Dominate":1,
+            "Obfuscate":1,
+            "Potence":1,
+            "Animalism":2
+        },
+        "group":"7",
+        "id":201798,
+        "name":"Gianni D'Angelo",
+        "new":false,
+        "path":"",
+        "rulings":[],
+        "sect":"Camarilla",
+        "set":{
+            "V5SN":{
+                "SoNY":"1"
+            },
+            "playtest":{
+                "SoNY":2
+            }
+        },
+        "text":"Camarilla: Once each turn, Gianni can burn 1 blood to give another Camarilla vampire you control +1 intercept.",
+        "title":"",
+        "twd":0,
+        "v5":false
+    },
     "200516":{
         "adv":"",
         "aka":"",
@@ -24796,9 +25265,12 @@
             },
             "Anthology I":{
                 "":"1"
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Sabbat: Once each turn after combat involving Dan ends, Dan can burn 1 blood to unlock if the opposing minion is not ready.",
+        "text":"Sabbat: Once each turn, after a combat involving Dan ends, if the opposing minion is not ready, Dan can burn 1 blood to unlock.",
         "title":"",
         "twd":4,
         "v5":false
@@ -27388,9 +27860,12 @@
             "Third":{
                 "PB":"2",
                 "SKB":"1"
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Sabbat priscus: Damage from Hektor's hand strikes is aggravated. Baali get +1 bleed when bleeding you.",
+        "text":"Sabbat priscus: Damage from Hektor's hand strikes is aggravated. Baali get +1 bleed against you.",
         "title":"priscus",
         "twd":21,
         "v5":false
@@ -27642,6 +28117,42 @@
         "twd":2,
         "v5":false
     },
+    "201799":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Anastasiia Horbunova"
+        ],
+        "ascii":"Hellene Panhard",
+        "banned":"",
+        "capacity":7,
+        "clan":"Ventrue",
+        "disciplines":{
+            "Auspex":2,
+            "Dominate":2,
+            "Fortitude":2,
+            "Presence":2
+        },
+        "group":"7",
+        "id":201799,
+        "name":"Hellene Panhard",
+        "new":false,
+        "path":"",
+        "rulings":[],
+        "sect":"Camarilla",
+        "set":{
+            "V5SN":{
+                "SoNY":"2"
+            },
+            "playtest":{
+                "SoNY":2
+            }
+        },
+        "text":"Camarilla Prince of New York: After a referendum called by Hellene fails, stun her.",
+        "title":"prince",
+        "twd":0,
+        "v5":false
+    },
     "200589":{
         "adv":"",
         "aka":"",
@@ -27719,9 +28230,12 @@
         "set":{
             "BH":{
                 "U":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Sabbat: After an action, you may move a combat card Henry played during that action from your ash heap to the top of your library.",
+        "text":"Sabbat: After resolution of an action, you can move a combat card Henry played during that action from your ash heap to the top of your library.",
         "title":"",
         "twd":15,
         "v5":false
@@ -28287,6 +28801,40 @@
         "twd":10,
         "v5":false
     },
+    "201800":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Mar\u00eda Lor\u00e9n"
+        ],
+        "ascii":"Hope",
+        "banned":"",
+        "capacity":4,
+        "clan":"Malkavian",
+        "disciplines":{
+            "Auspex":1,
+            "Dominate":1
+        },
+        "group":"7",
+        "id":201800,
+        "name":"Hope",
+        "new":false,
+        "path":"",
+        "rulings":[],
+        "sect":"Camarilla",
+        "set":{
+            "V5SN":{
+                "SoNY":"1"
+            },
+            "playtest":{
+                "SoNY":2
+            }
+        },
+        "text":"Camarilla: During a bleed action, Hope can burn 1 blood to get +1 stealth or +1 bleed.",
+        "title":"",
+        "twd":0,
+        "v5":false
+    },
     "201549":{
         "adv":"",
         "aka":"",
@@ -28702,6 +29250,9 @@
             },
             "SW":{
                 "PB":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "text":"Sabbat: Hugo gets -1 intercept against Lasombra and Tzimisce.",
@@ -30739,9 +31290,12 @@
             },
             "SW":{
                 "U":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Sabbat: During the first round of combat, Jacko gets 1 optional additional strike that does not count against the limit.",
+        "text":"Sabbat: During the first round of each combat, Jacko gets 1 optional additional strike not counting against the limit.",
         "title":"",
         "twd":10,
         "v5":false
@@ -30836,6 +31390,9 @@
             },
             "SW":{
                 "PB":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "text":"Sabbat.",
@@ -30902,9 +31459,12 @@
         "set":{
             "Third":{
                 "V":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Sabbat: Jacques may enter combat with an ally or younger vampire as a (D) action. +1 strength.",
+        "text":"Sabbat: Jacques can enter combat with an ally or younger vampire as a (D) action. +1 strength.",
         "title":"",
         "twd":1,
         "v5":false
@@ -31814,13 +32374,15 @@
         "set":{
             "KMW":{
                 "PAn":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Sabbat. Red List: Jayne gets an additional +1 stealth when hunting, but -1 stealth on any other actions. If Jayne is ready during your unlock phase and the Society of Leopold is in play, you may move the Society to any ready vampire.",
+        "text":"Sabbat: Jayne gets +1 stealth during hunt actions and -1 stealth during other actions. During your unlock phase, if he is ready, you can move the card named /Society of Leopold/ (if any) to a ready vampire. Red List.",
         "title":"",
         "twd":15,
-        "v5":false,
-        "Card Text":"Sabbat. Red List: Jayne gets an additional +1 stealth when hunting, but -1 stealth on any other actions. If Jayne is ready during your unlock phase and the /Society of Leopold/ is in play, you may move the Society to any ready vampire."
+        "v5":false
     },
     "200684":{
         "adv":"",
@@ -32201,6 +32763,9 @@
         "set":{
             "Anarchs":{
                 "U":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "text":"Sabbat.",
@@ -33828,6 +34393,41 @@
         "twd":16,
         "v5":false
     },
+    "201801":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Anastasiia Horbunova"
+        ],
+        "ascii":"Julia Sowinski",
+        "banned":"",
+        "capacity":5,
+        "clan":"Lasombra",
+        "disciplines":{
+            "Oblivion":1,
+            "Potence":1,
+            "Dominate":2
+        },
+        "group":"6",
+        "id":201801,
+        "name":"Julia Sowinski",
+        "new":false,
+        "path":"",
+        "rulings":[],
+        "sect":"Camarilla",
+        "set":{
+            "V5SN":{
+                "SoNY":"2"
+            },
+            "playtest":{
+                "SoNY":2
+            }
+        },
+        "text":"Camarilla primogen: If Julia successfully bleeds, you get +1 transfer this turn.",
+        "title":"primogen",
+        "twd":0,
+        "v5":false
+    },
     "200735":{
         "adv":"",
         "aka":"",
@@ -33853,9 +34453,12 @@
         "set":{
             "FN":{
                 "U":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Sabbat: Julian gets one optional press each combat.",
+        "text":"Sabbat: Julian gets 1 optional press each combat.",
         "title":"",
         "twd":6,
         "v5":false
@@ -34252,6 +34855,78 @@
         "text":"Sabbat: Titled Sabbat vampires controlled by other Methuselahs can call a referendum to steal Kai as a +1 stealth political action.",
         "title":"",
         "twd":4,
+        "v5":false
+    },
+    "201802":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Uncle Frank"
+        ],
+        "ascii":"Kaiser",
+        "banned":"",
+        "capacity":8,
+        "clan":"Nosferatu",
+        "disciplines":{
+            "Fortitude":1,
+            "Protean":1,
+            "Animalism":2,
+            "Obfuscate":2,
+            "Potence":2
+        },
+        "group":"6",
+        "id":201802,
+        "name":"Kaiser",
+        "new":false,
+        "path":"",
+        "rulings":[],
+        "sect":"Camarilla",
+        "set":{
+            "V5SN":{
+                "SoNY":"2"
+            },
+            "playtest":{
+                "SoNY":2
+            }
+        },
+        "text":"Camarilla: Once each action, if Kaiser is ready, he can discard a card requiring 1 or more Disciplines to reduce a bleed against you by 1.",
+        "title":"",
+        "twd":0,
+        "v5":false
+    },
+    "201803":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Heather V. Kreiter"
+        ],
+        "ascii":"Kali",
+        "banned":"",
+        "capacity":5,
+        "clan":"Ravnos",
+        "disciplines":{
+            "Animalism":1,
+            "Obfuscate":1,
+            "Presence":2
+        },
+        "group":"6",
+        "id":201803,
+        "name":"Kali",
+        "new":false,
+        "path":"",
+        "rulings":[],
+        "sect":"Independent",
+        "set":{
+            "V5SN":{
+                "SoNY":"1"
+            },
+            "playtest":{
+                "SoNY":2
+            }
+        },
+        "text":"Independent: Once each turn, if Kali is ready, you can discard 1 card at random to reduce the cost of a location card or equipment card you play by 1 pool.",
+        "title":"",
+        "twd":0,
         "v5":false
     },
     "200744":{
@@ -35427,6 +36102,42 @@
         "text":"Sabbat. Black Hand: Once during your turn, if Katherine is ready, you may discard a card that requires Auspex [aus] from your hand. Draw back up to your hand size afterward.",
         "title":"",
         "twd":40,
+        "v5":false
+    },
+    "201804":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Raquel Cornejo"
+        ],
+        "ascii":"Katherine Wiese",
+        "banned":"",
+        "capacity":8,
+        "clan":"Brujah",
+        "disciplines":{
+            "Celerity":2,
+            "Fortitude":2,
+            "Potence":2,
+            "Presence":2
+        },
+        "group":"7",
+        "id":201804,
+        "name":"Katherine Wiese",
+        "new":false,
+        "path":"",
+        "rulings":[],
+        "sect":"Camarilla",
+        "set":{
+            "V5SN":{
+                "SoNY":"1"
+            },
+            "playtest":{
+                "SoNY":2
+            }
+        },
+        "text":"Camarilla: Once each turn, Katherine can burn 2 blood as she announces a directed action to lock a younger vampire controlled by the target Methuselah. +1 bleed.",
+        "title":"",
+        "twd":0,
         "v5":false
     },
     "201552":{
@@ -39599,9 +40310,12 @@
         "set":{
             "Third":{
                 "V":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Sabbat. Black Hand: Frenzy cards played on Aaron cost an additional blood or pool.",
+        "text":"Sabbat: Frenzy cards played on Aaron cost +1 blood or pool. Black Hand.",
         "title":"",
         "twd":0,
         "v5":false
@@ -40205,6 +40919,42 @@
         "title":"",
         "twd":0,
         "v5":true
+    },
+    "201805":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Anastasiia Horbunoval"
+        ],
+        "ascii":"Luana do Lago",
+        "banned":"",
+        "capacity":7,
+        "clan":"Nosferatu",
+        "disciplines":{
+            "Potence":1,
+            "Animalism":2,
+            "Obfuscate":2
+        },
+        "group":"7",
+        "id":201805,
+        "name":"Luana do Lago",
+        "new":false,
+        "path":"",
+        "rulings":[],
+        "sect":"Camarilla",
+        "set":{
+            "V5SN":{
+                "NBr":"2"
+            },
+            "playtest":{
+                "BbN":2,
+                "ToDN":2
+            }
+        },
+        "text":"Camarilla Prince of Bras\u00edlia: +1 hand size.",
+        "title":"prince",
+        "twd":0,
+        "v5":false
     },
     "200864":{
         "adv":"",
@@ -41031,6 +41781,40 @@
         "text":"Sabbat bishop: Cards requiring Animalism [ani] cost Ludmijla -1 blood.",
         "title":"bishop",
         "twd":11,
+        "v5":false
+    },
+    "201806":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Krzysztof Bieniawski"
+        ],
+        "ascii":"Luiza",
+        "banned":"",
+        "capacity":4,
+        "clan":"Hecata",
+        "disciplines":{
+            "Oblivion":1,
+            "Auspex":2
+        },
+        "group":"6",
+        "id":201806,
+        "name":"Lu\u00edza",
+        "new":false,
+        "path":"",
+        "rulings":[],
+        "sect":"Independent",
+        "set":{
+            "V5SN":{
+                "NBr":"1"
+            },
+            "playtest":{
+                "BbN":2
+            }
+        },
+        "text":"Independent.",
+        "title":"",
+        "twd":0,
         "v5":false
     },
     "200880":{
@@ -42390,11 +43174,49 @@
             },
             "Third":{
                 "PB":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Sabbat Archbishop of Paris: If you have the Edge, you gain a pool when any Methuselah plays a Gehenna card. +1 bleed.",
+        "text":"Sabbat Archbishop of Paris: After a Gehenna event is played, if you have the Edge, you can gain 1 pool. +1 bleed.",
         "title":"archbishop",
         "twd":5,
+        "v5":false
+    },
+    "201807":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Tanya Podolskaia"
+        ],
+        "ascii":"Marcela",
+        "banned":"",
+        "capacity":7,
+        "clan":"Gangrel",
+        "disciplines":{
+            "Animalism":2,
+            "Celerity":2,
+            "Protean":2
+        },
+        "group":"6",
+        "id":201807,
+        "name":"Marcela",
+        "new":false,
+        "path":"Caine",
+        "rulings":[],
+        "sect":"Sabbat",
+        "set":{
+            "V5SN":{
+                "NBr":"2"
+            },
+            "playtest":{
+                "BbN":2
+            }
+        },
+        "text":"Sabbat Archbishop of S\u00e3o Jos\u00e9.",
+        "title":"archbishop",
+        "twd":0,
         "v5":false
     },
     "200910":{
@@ -43019,6 +43841,42 @@
         "twd":25,
         "v5":true
     },
+    "201808":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Chris Marras"
+        ],
+        "ascii":"Maria Quiteria",
+        "banned":"",
+        "capacity":7,
+        "clan":"Toreador",
+        "disciplines":{
+            "Auspex":2,
+            "Celerity":2,
+            "Potence":2,
+            "Presence":2
+        },
+        "group":"6",
+        "id":201808,
+        "name":"Maria Quit\u00e9ria",
+        "new":false,
+        "path":"Cathari",
+        "rulings":[],
+        "sect":"Sabbat",
+        "set":{
+            "V5SN":{
+                "NBr":"2"
+            },
+            "playtest":{
+                "BbN":2
+            }
+        },
+        "text":"Sabbat: Maria gets 1 optional additional strike (limited) each combat.",
+        "title":"",
+        "twd":0,
+        "v5":false
+    },
     "200922":{
         "adv":[
             false,
@@ -43236,9 +44094,12 @@
         "set":{
             "BH":{
                 "U":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Sabbat. Black Hand.",
+        "text":"Sabbat: Black Hand.",
         "title":"",
         "twd":18,
         "v5":false
@@ -45205,6 +46066,42 @@
         "twd":3,
         "v5":false
     },
+    "201809":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Anastasiia Horbunova"
+        ],
+        "ascii":"Mel, a Guerreira Vibrante",
+        "banned":"",
+        "capacity":7,
+        "clan":"Brujah",
+        "disciplines":{
+            "Celerity":2,
+            "Dominate":2,
+            "Potence":2,
+            "Presence":2
+        },
+        "group":"6",
+        "id":201809,
+        "name":"Mel, a Guerreira Vibrante",
+        "new":false,
+        "path":"",
+        "rulings":[],
+        "sect":"Camarilla",
+        "set":{
+            "V5SN":{
+                "NBr":"2"
+            },
+            "playtest":{
+                "BbN":2
+            }
+        },
+        "text":"Camarilla Prince of Campina Grande: Mel cannot block vampires with a city title.",
+        "title":"prince",
+        "twd":0,
+        "v5":false
+    },
     "201603":{
         "adv":"",
         "aka":"",
@@ -46079,9 +46976,12 @@
         "set":{
             "BH":{
                 "U":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Sabbat: During a bleed action, Miguel can burn 1 blood to give any other acting Sabbat vampire you control +1 bleed.",
+        "text":"Sabbat: During a bleed action, Miguel can burn 1 blood to give another acting Sabbat vampire you control +1 bleed.",
         "title":"",
         "twd":14,
         "v5":false
@@ -50220,6 +51120,78 @@
         "twd":5,
         "v5":false
     },
+    "201810":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Daniel Argudo"
+        ],
+        "ascii":"O Encourado",
+        "banned":"",
+        "capacity":7,
+        "clan":"Nosferatu",
+        "disciplines":{
+            "Fortitude":1,
+            "Animalism":2,
+            "Obfuscate":2,
+            "Potence":2
+        },
+        "group":"7",
+        "id":201810,
+        "name":"O Encourado",
+        "new":false,
+        "path":"",
+        "rulings":[],
+        "sect":"Camarilla",
+        "set":{
+            "V5SN":{
+                "NBr":"2"
+            },
+            "playtest":{
+                "BbN":2
+            }
+        },
+        "text":"Camarilla primogen: O Encourado can prevent 1 aggravated damage each round.",
+        "title":"primogen",
+        "twd":0,
+        "v5":false
+    },
+    "201811":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Gin\u00e9s Qui\u00f1onero"
+        ],
+        "ascii":"O Grande Arquiteto",
+        "banned":"",
+        "capacity":7,
+        "clan":"Ministry",
+        "disciplines":{
+            "Celerity":2,
+            "Fortitude":2,
+            "Presence":2,
+            "Protean":2
+        },
+        "group":"7",
+        "id":201811,
+        "name":"O Grande Arquiteto",
+        "new":false,
+        "path":"Cathari",
+        "rulings":[],
+        "sect":"Sabbat",
+        "set":{
+            "V5SN":{
+                "NBr":"2"
+            },
+            "playtest":{
+                "BbN":2
+            }
+        },
+        "text":"Sabbat: Once each turn, after O Grande Arquiteto performs a successful directed action, he can put 1 corruption counter on a minion controlled by the target Methuselah.",
+        "title":"",
+        "twd":0,
+        "v5":false
+    },
     "201070":{
         "adv":"",
         "aka":"",
@@ -51310,6 +52282,41 @@
         "twd":44,
         "v5":false
     },
+    "201812":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Sami Rytk\u00f6nen"
+        ],
+        "ascii":"Padraic Conroy",
+        "banned":"",
+        "capacity":4,
+        "clan":"Malkavian",
+        "disciplines":{
+            "Dominate":1,
+            "Obfuscate":1,
+            "Auspex":2
+        },
+        "group":"7",
+        "id":201812,
+        "name":"Padraic Conroy",
+        "new":false,
+        "path":"",
+        "rulings":[],
+        "sect":"Anarch",
+        "set":{
+            "V5SN":{
+                "SoNY":"1"
+            },
+            "playtest":{
+                "SoNY":2
+            }
+        },
+        "text":"Anarch: If Padraic blocks an older vampire, discard 1 card at random before range is determined during the first round of the resulting combat.",
+        "title":"",
+        "twd":0,
+        "v5":false
+    },
     "201090":{
         "adv":"",
         "aka":"",
@@ -51675,6 +52682,9 @@
         "set":{
             "Third":{
                 "V":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "text":"Sabbat.",
@@ -53467,6 +54477,42 @@
         "text":"Sabbat Tremere antitribu Slave: Pugfar can burn one blood to give a Tremere antitribu you control a press. Flight [FLIGHT].",
         "title":"",
         "twd":4,
+        "v5":false
+    },
+    "201813":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Uncle Frank"
+        ],
+        "ascii":"Qadir al-Asmai",
+        "banned":"",
+        "capacity":6,
+        "clan":"Toreador",
+        "disciplines":{
+            "Auspex":1,
+            "Potence":1,
+            "Celerity":2,
+            "Presence":2
+        },
+        "group":"7",
+        "id":201813,
+        "name":"Qadir al-Asmai",
+        "new":false,
+        "path":"",
+        "rulings":[],
+        "sect":"Camarilla",
+        "set":{
+            "V5SN":{
+                "SoNY":"1"
+            },
+            "playtest":{
+                "SoNY":2
+            }
+        },
+        "text":"Camarilla: Once each game, during your unlock phase, Qadir can equip with a weapon card from your hand.",
+        "title":"",
+        "twd":0,
         "v5":false
     },
     "201137":{
@@ -55548,6 +56594,40 @@
         "twd":14,
         "v5":true
     },
+    "201814":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Gin\u00e9s Qui\u00f1onero"
+        ],
+        "ascii":"Rey, o Mentor",
+        "banned":"",
+        "capacity":6,
+        "clan":"Brujah",
+        "disciplines":{
+            "Celerity":2,
+            "Potence":2
+        },
+        "group":"6",
+        "id":201814,
+        "name":"Rey, o Mentor",
+        "new":false,
+        "path":"",
+        "rulings":[],
+        "sect":"Camarilla",
+        "set":{
+            "V5SN":{
+                "NBr":"2"
+            },
+            "playtest":{
+                "BbN":2
+            }
+        },
+        "text":"Camarilla Prince of Juiz de Fora: +1 strength.",
+        "title":"prince",
+        "twd":0,
+        "v5":false
+    },
     "201185":{
         "adv":"",
         "aka":"",
@@ -55689,6 +56769,9 @@
             "SW":{
                 "U":true,
                 "PB":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "text":"Sabbat: +1 strength.",
@@ -55808,9 +56891,12 @@
             "SW":{
                 "U":true,
                 "PB":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Sabbat: If Rigby attempts to block a Sabbat vampire and fails, and any of your predator's bishops are not at full capacity, move 1 blood from Rigby to one of those bishops.",
+        "text":"Sabbat: If Rigby attempts to block a Sabbat vampire and fails, move 1 blood from Rigby to one of your predator's bishops who is not at full capacity (if any).",
         "title":"",
         "twd":15,
         "v5":false
@@ -56129,6 +57215,9 @@
         "set":{
             "Third":{
                 "V":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "text":"Sabbat.",
@@ -57591,9 +58680,12 @@
             "SW":{
                 "U":true,
                 "PB":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Sabbat Archbishop of Philadelphia: As a (D) action, Salinger may enter combat with any ready Lasombra or Tzimisce controlled by another Methuselah. +1 bleed.",
+        "text":"Sabbat Archbishop of Philadelphia: Salinger can enter combat with a Lasombra or Tzimisce as a (D) action. +1 bleed.",
         "title":"archbishop",
         "twd":4,
         "v5":false
@@ -57760,6 +58852,42 @@
         "text":"Camarilla: Blood hunts cannot be called on Samat.",
         "title":"",
         "twd":9,
+        "v5":false
+    },
+    "201815":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Francisco T\u00e9bar"
+        ],
+        "ascii":"Samira",
+        "banned":"",
+        "capacity":5,
+        "clan":"Banu Haqim",
+        "disciplines":{
+            "Celerity":1,
+            "Presence":1,
+            "Blood Sorcery":1,
+            "Obfuscate":2
+        },
+        "group":"7",
+        "id":201815,
+        "name":"Samira",
+        "new":false,
+        "path":"",
+        "rulings":[],
+        "sect":"Camarilla",
+        "set":{
+            "V5SN":{
+                "SoNY":"1"
+            },
+            "playtest":{
+                "SoNY":2
+            }
+        },
+        "text":"Camarilla primogen: Samira cannot cast votes or ballots against referendums called by a prince.",
+        "title":"primogen",
+        "twd":0,
         "v5":false
     },
     "201230":{
@@ -58092,9 +59220,12 @@
             },
             "SW":{
                 "PB":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Sabbat: Sarah gets -1 stealth during actions directed at a Methuselah who controls a ready bishop or archbishop.",
+        "text":"Sabbat: Sarah gets -1 stealth during actions directed at a Methuselah (or a card they control) controlling a ready bishop or archbishop.",
         "title":"",
         "twd":39,
         "v5":false
@@ -59006,9 +60137,12 @@
             },
             "SW":{
                 "PB":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Sabbat bishop: If Sela becomes an archbishop, each ready bishop controlled by your prey burns 1 blood. +1 bleed.",
+        "text":"Sabbat bishop: After Sela becomes an archbishop, each ready bishop controlled by your prey burns 1 blood. +1 bleed.",
         "title":"bishop",
         "twd":10,
         "v5":false
@@ -59049,9 +60183,12 @@
         "set":{
             "BH":{
                 "U":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Advanced, Sabbat Archbishop of Rome: Sela gets +1 stealth on actions directed at a Methuselah who controls a ready bishop.",
+        "text":"Sabbat Archbishop of Rome: Sela gets +1 stealth during actions directed at a Methuselah (or a card they control) controlling a ready bishop.",
         "title":"archbishop",
         "twd":4,
         "v5":false
@@ -59910,6 +61047,9 @@
             },
             "Third":{
                 "PB":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "text":"Sabbat priscus.",
@@ -60822,6 +61962,9 @@
             "Third":{
                 "PB":1,
                 "SKB":"1"
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "text":"Sabbat.",
@@ -62177,6 +63320,41 @@
         "twd":14,
         "v5":true
     },
+    "201816":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Gin\u00e9s Qui\u00f1onero"
+        ],
+        "ascii":"Sydnelson",
+        "banned":"",
+        "capacity":6,
+        "clan":"Ventrue",
+        "disciplines":{
+            "Dominate":1,
+            "Fortitude":2,
+            "Presence":2
+        },
+        "group":"7",
+        "id":201816,
+        "name":"Sydnelson",
+        "new":false,
+        "path":"",
+        "rulings":[],
+        "sect":"Camarilla",
+        "set":{
+            "V5SN":{
+                "NBr":"2"
+            },
+            "playtest":{
+                "BbN":2
+            }
+        },
+        "text":"Camarilla Prince of S\u00e3o Jo\u00e3o de Meriti: If Sydnelson is ready, he can lock before range is determined to end a combat involving two vampires controlled by other Methuselahs.",
+        "title":"prince",
+        "twd":0,
+        "v5":false
+    },
     "201329":{
         "adv":"",
         "aka":"",
@@ -63356,6 +64534,39 @@
         "twd":20,
         "v5":false
     },
+    "201817":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Raquel Cornejo"
+        ],
+        "ascii":"Tereza Rossi",
+        "banned":"",
+        "capacity":8,
+        "clan":"Ventrue",
+        "disciplines":{
+            "Fortitude":1,
+            "Dominate":2,
+            "Potence":2,
+            "Presence":2
+        },
+        "group":"6",
+        "id":201817,
+        "name":"Tereza Rossi",
+        "new":false,
+        "path":"Power and the Inner Voice",
+        "rulings":[],
+        "sect":"Sabbat",
+        "set":{
+            "V5SN":{
+                "NBr":"2"
+            }
+        },
+        "text":"Sabbat Archbishop of Curitiba: +1 strength.",
+        "title":"archbishop",
+        "twd":0,
+        "v5":false
+    },
     "201355":{
         "adv":"",
         "aka":"",
@@ -63554,6 +64765,42 @@
         "text":"Sabbat. Chicago Circle: Once each combat, Terry can burn 1 blood to get a press. Sterile.",
         "title":"",
         "twd":8,
+        "v5":false
+    },
+    "201818":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Raquel Cornejo"
+        ],
+        "ascii":"Tharmas",
+        "banned":"",
+        "capacity":6,
+        "clan":"Lasombra",
+        "disciplines":{
+            "Animalism":1,
+            "Dominate":1,
+            "Oblivion":2,
+            "Potence":2
+        },
+        "group":"6",
+        "id":201818,
+        "name":"Tharmas",
+        "new":false,
+        "path":"",
+        "rulings":[],
+        "sect":"Independent",
+        "set":{
+            "V5SN":{
+                "SoNY":"1"
+            },
+            "playtest":{
+                "SoNY":2
+            }
+        },
+        "text":"Independent: Once each combat, Tharmas can burn 1 blood to get 1 optional maneuver.",
+        "title":"",
+        "twd":0,
         "v5":false
     },
     "201360":{
@@ -63837,6 +65084,41 @@
         "text":"Independent. 2 votes (titled): Damage from Thetmes's hand strikes is aggravated. Blood cursed.",
         "title":"2 votes",
         "twd":5,
+        "v5":false
+    },
+    "201819":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Mar\u00eda Lor\u00e9n"
+        ],
+        "ascii":"Thomas Arturo",
+        "banned":"",
+        "capacity":6,
+        "clan":"Toreador",
+        "disciplines":{
+            "Celerity":1,
+            "Auspex":2,
+            "Presence":2
+        },
+        "group":"6",
+        "id":201819,
+        "name":"Thomas Arturo",
+        "new":false,
+        "path":"",
+        "rulings":[],
+        "sect":"Camarilla",
+        "set":{
+            "V5SN":{
+                "SoNY":"2"
+            },
+            "playtest":{
+                "SoNY":2
+            }
+        },
+        "text":"Camarilla primogen: Thomas can lock a titled vampire controlled by another Methuselah as a +1 stealth (D) action that costs 1 blood.",
+        "title":"primogen",
+        "twd":0,
         "v5":false
     },
     "201366":{
@@ -64567,6 +65849,41 @@
         "twd":1,
         "v5":false
     },
+    "201820":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Mark Kelly"
+        ],
+        "ascii":"Torque",
+        "banned":"",
+        "capacity":7,
+        "clan":"Brujah",
+        "disciplines":{
+            "Presence":1,
+            "Celerity":2,
+            "Potence":2
+        },
+        "group":"7",
+        "id":201820,
+        "name":"Torque",
+        "new":false,
+        "path":"",
+        "rulings":[],
+        "sect":"Anarch",
+        "set":{
+            "V5SN":{
+                "SoNY":"2"
+            },
+            "playtest":{
+                "SoNY":2
+            }
+        },
+        "text":"Anarch Baron of New York: Torque gets 1 optional additional strike (limited) each combat. Titled vampires can enter combat with him as a (D) action.",
+        "title":"baron",
+        "twd":0,
+        "v5":false
+    },
     "201384":{
         "adv":"",
         "aka":"",
@@ -64974,6 +66291,41 @@
         "text":"Laibon magaji.",
         "title":"magaji",
         "twd":13,
+        "v5":false
+    },
+    "201821":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Gin\u00e9s Qui\u00f1onero"
+        ],
+        "ascii":"Tubarao",
+        "banned":"",
+        "capacity":7,
+        "clan":"Malkavian",
+        "disciplines":{
+            "Dominate":1,
+            "Auspex":2,
+            "Obfuscate":2
+        },
+        "group":"7",
+        "id":201821,
+        "name":"Tubar\u00e3o",
+        "new":false,
+        "path":"",
+        "rulings":[],
+        "sect":"Anarch",
+        "set":{
+            "V5SN":{
+                "NBr":"2"
+            },
+            "playtest":{
+                "BbN":2
+            }
+        },
+        "text":"Anarch Baron of Recife: During the polling step of any referendum, you can reveal the top card of your crypt, then move it to the bottom; if it is an older vampire, Tubar\u00e3o gets +1 vote.",
+        "title":"baron",
+        "twd":0,
         "v5":false
     },
     "201393":{
@@ -65963,9 +67315,12 @@
             "Third":{
                 "PB":"2",
                 "SKB":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Sabbat bishop: While you control the Edge, Urraca gets +1 bleed.",
+        "text":"Sabbat bishop: While you have the Edge, Urraca gets +1 bleed.",
         "title":"bishop",
         "twd":4,
         "v5":false
@@ -66106,6 +67461,42 @@
         "title":"",
         "twd":14,
         "v5":true
+    },
+    "201822":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Daniel Argudo"
+        ],
+        "ascii":"Valerie Duval",
+        "banned":"",
+        "capacity":7,
+        "clan":"Ventrue",
+        "disciplines":{
+            "Dominate":2,
+            "Fortitude":2,
+            "Potence":2,
+            "Presence":2
+        },
+        "group":"7",
+        "id":201822,
+        "name":"Valerie Duval",
+        "new":false,
+        "path":"",
+        "rulings":[],
+        "sect":"Camarilla",
+        "set":{
+            "V5SN":{
+                "SoNY":"2"
+            },
+            "playtest":{
+                "SoNY":2
+            }
+        },
+        "text":"Camarilla: Valerie can enter combat with a younger non-Camarilla vampire as a (D) action.",
+        "title":"",
+        "twd":0,
+        "v5":false
     },
     "201653":{
         "adv":"",
@@ -67123,6 +68514,9 @@
         "set":{
             "SW":{
                 "PB":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "text":"Sabbat.",
@@ -68018,6 +69412,42 @@
         "twd":7,
         "v5":false
     },
+    "201823":{
+        "adv":"",
+        "aka":"",
+        "artist":[
+            "Heather V. Kreiter"
+        ],
+        "ascii":"Vritra",
+        "banned":"",
+        "capacity":7,
+        "clan":"Tzimisce",
+        "disciplines":{
+            "Auspex":1,
+            "Animalism":2,
+            "Dominate":2,
+            "Protean":2
+        },
+        "group":"6",
+        "id":201823,
+        "name":"Vritra",
+        "new":false,
+        "path":"",
+        "rulings":[],
+        "sect":"Independent",
+        "set":{
+            "V5SN":{
+                "SoNY":"2"
+            },
+            "playtest":{
+                "SoNY":2
+            }
+        },
+        "text":"Independent: If a Methuselah controls more locations than you do, Vritra can steal one of those locations as a (D) action that costs 1 blood. +1 strength.",
+        "title":"",
+        "twd":0,
+        "v5":false
+    },
     "201460":{
         "adv":"",
         "aka":"",
@@ -68102,9 +69532,12 @@
         "set":{
             "BH":{
                 "U":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
-        "text":"Sabbat. Black Hand.",
+        "text":"Sabbat: Black Hand.",
         "title":"",
         "twd":14,
         "v5":false

@@ -79,6 +79,9 @@
         "twdDate":"2008-12-20",
         "player":"Milos Krstic"
     },
+    "201787":{
+        "deckid":null
+    },
     "200012":{
         "deckid":"2k2australiachamp",
         "twdDate":"2002-12-08",
@@ -208,6 +211,9 @@
         "deckid":"shadowtwin2k1",
         "twdDate":"2001-08-04",
         "player":"Christian Herro"
+    },
+    "201788":{
+        "deckid":null
     },
     "201737":{
         "deckid":"12368",
@@ -809,6 +815,9 @@
         "twdDate":"2024-09-07",
         "player":"Alexander T\u00fcschen"
     },
+    "201789":{
+        "deckid":null
+    },
     "200135":{
         "deckid":"ori97",
         "twdDate":"1997-07-20",
@@ -1366,6 +1375,9 @@
         "twdDate":"2015-05-23",
         "player":"Peter Ducai"
     },
+    "201790":{
+        "deckid":null
+    },
     "200225":{
         "deckid":"2k2ducosim",
         "twdDate":"2002-12-14",
@@ -1392,6 +1404,9 @@
         "twdDate":"2021-09-13",
         "player":"Desso Alastor"
     },
+    "201791":{
+        "deckid":null
+    },
     "200231":{
         "deckid":"2k5gothenburgsept",
         "twdDate":"2005-09-10",
@@ -1401,6 +1416,9 @@
         "deckid":"grasp2k1",
         "twdDate":"2001-09-15",
         "player":"Will Kristoff"
+    },
+    "201792":{
+        "deckid":null
     },
     "200233":{
         "deckid":"lsj",
@@ -1499,6 +1517,9 @@
         "deckid":"dragoncon2k1-ethan",
         "twdDate":"2001-08-31",
         "player":"Ethan Burrow"
+    },
+    "201793":{
+        "deckid":null
     },
     "201521":{
         "deckid":"10008",
@@ -2219,6 +2240,9 @@
         "twdDate":"1998-03-14",
         "player":"Dallas Card"
     },
+    "201794":{
+        "deckid":null
+    },
     "200369":{
         "deckid":"2k2oakland",
         "twdDate":"2002-05-25",
@@ -2348,6 +2372,9 @@
     "200393":{
         "deckid":null
     },
+    "201795":{
+        "deckid":null
+    },
     "200394":{
         "deckid":"rob2",
         "twdDate":"1998-09-07",
@@ -2380,6 +2407,9 @@
         "player":"Jo Herroelen"
     },
     "200401":{
+        "deckid":null
+    },
+    "201796":{
         "deckid":null
     },
     "200402":{
@@ -2431,6 +2461,9 @@
         "deckid":"2k4majorboon",
         "twdDate":"2004-01-17",
         "player":"Jordan Beall"
+    },
+    "201797":{
+        "deckid":null
     },
     "200409":{
         "deckid":null
@@ -3029,6 +3062,9 @@
         "twdDate":"2010-05-02",
         "player":"Alfred Behrends"
     },
+    "201798":{
+        "deckid":null
+    },
     "200516":{
         "deckid":"stevewampler",
         "twdDate":"1998-03-01",
@@ -3448,6 +3484,9 @@
         "twdDate":"2009-02-08",
         "player":"Luciano Mariucci"
     },
+    "201799":{
+        "deckid":null
+    },
     "200589":{
         "deckid":"2k5snocon",
         "twdDate":"2005-01-07",
@@ -3530,6 +3569,9 @@
         "deckid":"2k6gothfeb",
         "twdDate":"2006-02-11",
         "player":"Alex Ek"
+    },
+    "201800":{
+        "deckid":null
     },
     "201549":{
         "deckid":"2021fswp",
@@ -4241,6 +4283,9 @@
         "twdDate":"2002-02-16",
         "player":"Niki Stewart"
     },
+    "201801":{
+        "deckid":null
+    },
     "200735":{
         "deckid":"2k2dawning",
         "twdDate":"2002-05-04",
@@ -4295,6 +4340,12 @@
         "deckid":"2k7templecon",
         "twdDate":"2007-02-16",
         "player":"Ben Peal"
+    },
+    "201802":{
+        "deckid":null
+    },
+    "201803":{
+        "deckid":null
     },
     "200744":{
         "deckid":"2011fmnoa",
@@ -4433,6 +4484,9 @@
         "deckid":"2k5barcelonafeb26",
         "twdDate":"2005-02-26",
         "player":"Aldo Bosmn"
+    },
+    "201804":{
+        "deckid":null
     },
     "201552":{
         "deckid":"10347",
@@ -5015,6 +5069,9 @@
     "201763":{
         "deckid":null
     },
+    "201805":{
+        "deckid":null
+    },
     "200864":{
         "deckid":"2013encle",
         "twdDate":"2013-12-14",
@@ -5104,6 +5161,9 @@
         "deckid":"2014cfhspb",
         "twdDate":"2014-03-23",
         "player":"Roberto Mautone Junior"
+    },
+    "201806":{
+        "deckid":null
     },
     "200880":{
         "deckid":"2k7rumble",
@@ -5281,6 +5341,9 @@
         "twdDate":"2005-09-24",
         "player":"Ravel Zorzal"
     },
+    "201807":{
+        "deckid":null
+    },
     "200910":{
         "deckid":"normbsl",
         "twdDate":"2001-03-10",
@@ -5353,6 +5416,9 @@
         "deckid":"11895",
         "twdDate":"2024-12-07",
         "player":"Joab Rogerio Barbosa da Silva"
+    },
+    "201808":{
+        "deckid":null
     },
     "200922":{
         "deckid":"2k4esgrimaboston",
@@ -5621,6 +5687,9 @@
         "deckid":"2019won2co",
         "twdDate":"2019-06-10",
         "player":"Hugh Angseesing"
+    },
+    "201809":{
+        "deckid":null
     },
     "201603":{
         "deckid":"10312",
@@ -6226,6 +6295,12 @@
         "twdDate":"2018-10-20",
         "player":"Miguel Angel Vasquez"
     },
+    "201810":{
+        "deckid":null
+    },
+    "201811":{
+        "deckid":null
+    },
     "201070":{
         "deckid":null
     },
@@ -6364,6 +6439,9 @@
         "deckid":"anklebiter",
         "twdDate":"1999-06-06",
         "player":"Michael McClellan"
+    },
+    "201812":{
+        "deckid":null
     },
     "201090":{
         "deckid":"dd",
@@ -6631,6 +6709,9 @@
         "twdDate":"2006-03-25",
         "player":"Fran\u00e7ois de Champlain"
     },
+    "201813":{
+        "deckid":null
+    },
     "201137":{
         "deckid":"2k5eudemoniajuly",
         "twdDate":"2005-07-09",
@@ -6894,6 +6975,9 @@
         "deckid":"12806",
         "twdDate":"2025-11-08",
         "player":"Wolney Andr\u00e9 Sampaio Alves de Oliveira"
+    },
+    "201814":{
+        "deckid":null
     },
     "201185":{
         "deckid":"2k7lordslegal",
@@ -7194,6 +7278,9 @@
         "deckid":"2k2sydney",
         "twdDate":"2002-08-18",
         "player":"Chris Arthur"
+    },
+    "201815":{
+        "deckid":null
     },
     "201230":{
         "deckid":"olivier2k",
@@ -7736,6 +7823,9 @@
         "twdDate":"2021-04-25",
         "player":"Mois\u00e9s Ferrer Gallegos"
     },
+    "201816":{
+        "deckid":null
+    },
     "201329":{
         "deckid":"anklebiter",
         "twdDate":"1999-06-06",
@@ -7870,6 +7960,9 @@
         "twdDate":"2004-01-25",
         "player":"John Flournoy"
     },
+    "201817":{
+        "deckid":null
+    },
     "201355":{
         "deckid":"2k2castrovalley",
         "twdDate":"2002-03-30",
@@ -7894,6 +7987,9 @@
         "deckid":"2k2sbbphilippines",
         "twdDate":"2002-10-19",
         "player":"Kevin Alforja"
+    },
+    "201818":{
+        "deckid":null
     },
     "201360":{
         "deckid":"adelaide",
@@ -7929,6 +8025,9 @@
         "deckid":"kuster2k1",
         "twdDate":"2001-03-04",
         "player":"Thomas Kuster"
+    },
+    "201819":{
+        "deckid":null
     },
     "201366":{
         "deckid":"2010nyctj",
@@ -8023,6 +8122,9 @@
         "twdDate":"2025-02-22",
         "player":"Erik Procopio"
     },
+    "201820":{
+        "deckid":null
+    },
     "201384":{
         "deckid":"2k7crusadeseattle",
         "twdDate":"2007-07-21",
@@ -8077,6 +8179,9 @@
         "deckid":"2k6glq",
         "twdDate":"2006-03-04",
         "player":"Jay Kristoff"
+    },
+    "201821":{
+        "deckid":null
     },
     "201393":{
         "deckid":"2k6eudemoniajan",
@@ -8227,6 +8332,9 @@
         "deckid":"11650",
         "twdDate":"2024-08-31",
         "player":"Patrik Spjut"
+    },
+    "201822":{
+        "deckid":null
     },
     "201653":{
         "deckid":null
@@ -8448,6 +8556,9 @@
         "deckid":"2010germanecq",
         "twdDate":"2010-05-02",
         "player":"Alfred Behrends"
+    },
+    "201823":{
+        "deckid":null
     },
     "201460":{
         "deckid":"10914",
@@ -8757,6 +8868,9 @@
         "twdDate":"2023-06-04",
         "player":"Petrus Makkonen"
     },
+    "102367":{
+        "deckid":null
+    },
     "100003":{
         "deckid":"stunov99",
         "twdDate":"1999-11-20",
@@ -8824,6 +8938,9 @@
         "deckid":"2019ddmcnfb",
         "twdDate":"2019-04-19",
         "player":"Mailton Silva"
+    },
+    "102368":{
+        "deckid":null
     },
     "100015":{
         "deckid":"danny",
@@ -9236,6 +9353,9 @@
         "twdDate":"1998-08-01",
         "player":"Todd Banister"
     },
+    "102369":{
+        "deckid":null
+    },
     "100095":{
         "deckid":"dallas",
         "twdDate":"1998-03-14",
@@ -9380,6 +9500,9 @@
         "twdDate":"2014-02-22",
         "player":"Erik Mossberg"
     },
+    "102370":{
+        "deckid":null
+    },
     "100124":{
         "deckid":"2k6vitoriajune",
         "twdDate":"2006-06-10",
@@ -9437,6 +9560,9 @@
         "deckid":"11840",
         "twdDate":"2024-11-01",
         "player":"Alanmut Bastos"
+    },
+    "102371":{
+        "deckid":null
     },
     "100134":{
         "deckid":"2013hnqbhj",
@@ -10224,6 +10350,9 @@
     "100291":{
         "deckid":null
     },
+    "102372":{
+        "deckid":null
+    },
     "100292":{
         "deckid":"2k4bloodworktotalcon",
         "twdDate":"2004-02-20",
@@ -10439,6 +10568,9 @@
         "twdDate":"2002-01-05",
         "player":"Martin Weinmayer"
     },
+    "102373":{
+        "deckid":null
+    },
     "100336":{
         "deckid":null
     },
@@ -10504,6 +10636,9 @@
         "player":"Alex Harmon"
     },
     "100349":{
+        "deckid":null
+    },
+    "102374":{
         "deckid":null
     },
     "100350":{
@@ -10865,6 +11000,9 @@
         "deckid":"2k2conflagration",
         "twdDate":"2002-10-06",
         "player":"Jeff Kuta"
+    },
+    "102375":{
+        "deckid":null
     },
     "100421":{
         "deckid":null
@@ -11309,6 +11447,9 @@
         "twdDate":"2000-01-13",
         "player":"Rob Treasure"
     },
+    "102376":{
+        "deckid":null
+    },
     "100506":{
         "deckid":"dom",
         "twdDate":"1998-05-01",
@@ -11434,6 +11575,9 @@
         "deckid":"2k9419ithaca",
         "twdDate":"2009-07-31",
         "player":"Dave Clooney"
+    },
+    "102377":{
+        "deckid":null
     },
     "100531":{
         "deckid":"2k4dragoncon1",
@@ -11665,6 +11809,9 @@
         "deckid":"10008",
         "twdDate":"2021-12-13",
         "player":"Joab Rogerio Barbosa da Silva"
+    },
+    "102378":{
+        "deckid":null
     },
     "100577":{
         "deckid":"2k5genconday1",
@@ -11941,6 +12088,9 @@
         "deckid":"todd",
         "twdDate":"1998-08-01",
         "player":"Todd Banister"
+    },
+    "102379":{
+        "deckid":null
     },
     "100633":{
         "deckid":"norm98",
@@ -12326,6 +12476,9 @@
         "deckid":"2k2castrovalley",
         "twdDate":"2002-03-30",
         "player":"Ian Lee"
+    },
+    "102380":{
+        "deckid":null
     },
     "100708":{
         "deckid":"2k6glq",
@@ -13208,6 +13361,9 @@
         "twdDate":"2006-10-08",
         "player":"Fletcher Gibson"
     },
+    "102381":{
+        "deckid":null
+    },
     "100878":{
         "deckid":"2k7ricolocokarlsruhe",
         "twdDate":"2007-06-10",
@@ -13569,6 +13725,9 @@
         "twdDate":"2010-05-02",
         "player":"Tony Wedd"
     },
+    "102382":{
+        "deckid":null
+    },
     "100948":{
         "deckid":"2k2castrovalley",
         "twdDate":"2002-03-30",
@@ -13730,6 +13889,9 @@
         "deckid":"2k6gothfeb",
         "twdDate":"2006-02-11",
         "player":"Alex Ek"
+    },
+    "102383":{
+        "deckid":null
     },
     "100984":{
         "deckid":"danny",
@@ -14154,6 +14316,9 @@
         "deckid":"2k9origins1",
         "twdDate":"2009-06-25",
         "player":"Robyn Tatu"
+    },
+    "102384":{
+        "deckid":null
     },
     "101072":{
         "deckid":"2k3watfordmarch",
@@ -14755,6 +14920,9 @@
         "twdDate":"2017-06-11",
         "player":"Mark Loughman"
     },
+    "102385":{
+        "deckid":null
+    },
     "101195":{
         "deckid":"will-lee",
         "twdDate":"1999-04-01",
@@ -15049,6 +15217,9 @@
         "deckid":"memorial",
         "twdDate":"1999-08-15",
         "player":"R. David Zopf"
+    },
+    "102386":{
+        "deckid":null
     },
     "101251":{
         "deckid":"2k9rotesbc",
@@ -15525,6 +15696,9 @@
         "twdDate":"1999-02-28",
         "player":"Stuart Pieloch"
     },
+    "102387":{
+        "deckid":null
+    },
     "101346":{
         "deckid":"alexhbfla",
         "twdDate":"2000-12-02",
@@ -15917,6 +16091,9 @@
         "deckid":"2k6gothfeb",
         "twdDate":"2006-02-11",
         "player":"Alex Ek"
+    },
+    "102366":{
+        "deckid":null
     },
     "101422":{
         "deckid":null
@@ -16875,6 +17052,9 @@
         "twdDate":"2007-11-10",
         "player":"Miguel Cortes"
     },
+    "102388":{
+        "deckid":null
+    },
     "101611":{
         "deckid":"2k6originsthu3",
         "twdDate":"2006-06-29",
@@ -17083,6 +17263,9 @@
         "deckid":"2k2castrovalley",
         "twdDate":"2002-03-30",
         "player":"Ian Lee"
+    },
+    "102389":{
+        "deckid":null
     },
     "101651":{
         "deckid":"2k4esgrimaboston",
@@ -18153,6 +18336,9 @@
         "deckid":"2k7praxispalma",
         "twdDate":"2007-04-29",
         "player":"David Qui\u00f1onero-Santiago"
+    },
+    "102390":{
+        "deckid":null
     },
     "101859":{
         "deckid":"ethan2k",
@@ -19428,6 +19614,9 @@
         "player":"Orian Gissler"
     },
     "102115":{
+        "deckid":null
+    },
+    "102391":{
         "deckid":null
     },
     "102116":{

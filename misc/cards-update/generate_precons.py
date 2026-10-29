@@ -17,6 +17,7 @@ bundles = {
         "Tz": {},
         "V": {},
     },
+    "V5SN": {"SoNY": {}, "NBr": {}},
     "NB3C": {"PR": {}, "PS": {}, "PT": {}},
     "SV5": {"PCaine": {}, "PCathari": {}, "PDeath": {}, "PPower": {}},
     "NB3": {"PH": {}, "PL": {}},
