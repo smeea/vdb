@@ -21,6 +21,20 @@ with (
     for c in csv_meta:
         requirements.append(c)
 
+unfuck_sets = {
+    "V5": {
+        "SoNY": "V5SN",
+        "NBr": "V5SN",
+        "PL": "V5L",
+        "PH": "V5H",
+    },
+    "NB3": {
+        "PR": "NB3C",
+        "PS": "NB3C",
+        "PT": "NB3C",
+    },
+}
+
 artist_fixes = {
     "Alejandro Collucci": "Alejandro Colucci",
     "Chet Masterz": "Chet Masters",
@@ -167,14 +181,13 @@ def generate_card(card):
                         card["Set"]["Anthology"] = {}
                         card["Set"]["Anthology I"] = {}
 
-            elif set[0] == "V5":
+            elif set[0] in unfuck_sets:
                 for precon in precons:
-                    if "PL" in precon:
-                        card["Set"]["V5L"] = {}
-                    elif "PH" in precon:
-                        card["Set"]["V5H"] = {}
+                    m = re.match(r"^(\D+)([0-9]+)?", precon)
+                    if s := unfuck_sets[set[0]].get(m.group(1)):
+                        card["Set"][s] = {}
                     else:
-                        card["Set"]["V5"] = {}
+                        card["Set"][set[0]] = {}
 
             elif set[0] not in ["AU", "DM", "TU"] and set[0] not in card["Set"]:
                 card["Set"][set[0]] = {}
@@ -203,18 +216,16 @@ def generate_card(card):
                         card["Set"]["Anthology I"][""] = precon
                         card["Set"]["Anthology"][""] = precon
 
-            # Split Hecata & Lasombra from V5 (2020) set
-            elif set[0] == "V5":
+            elif set[0] in unfuck_sets:
                 for precon in precons:
                     set_name = None
-                    if "PL" in precon:
-                        set_name = "V5L"
-                    elif "PH" in precon:
-                        set_name = "V5H"
+                    m = re.match(r"^(\D+)([0-9]+)?", precon)
+                    if s := unfuck_sets[set[0]].get(m.group(1)):
+                        set_name = s
                     else:
-                        set_name = "V5"
-                    if m := re.match(r"^(\D+)([0-9]+)?", precon):
-                        card["Set"][set_name][m.group(1)] = m.group(2)
+                        set_name = set[0]
+
+                    card["Set"][set_name][m.group(1)] = m.group(2)
 
             else:
                 for precon in precons:
