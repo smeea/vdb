@@ -1336,8 +1336,8 @@ Put this card on a vampire with a capacity below 5. The vampire with this card b
 Put this card in play with 4 counters. Once each combat, you can burn 1 counter from this card to give a wraith or zombie ally you control 1 maneuver or press. If this card has no counters, burn it.","","SV5:PDeath2","","Carlos Díaz",""
 "102315","Dance with the Devil","","Combat","","Caine","Obfuscate/Thaumaturgy","","","","","[obf] or [tha] Maneuver, only usable to get to close range.
 [OBF] or [THA] As above, and once this round, this vampire can burn 1 blood to get 1 additional maneuver, only usable to get to close range.","The Devil pulls the strings which make us dance,
-We find delight in the most loathsome things, 
-Some furtherance of Hell each new day brings, 
+We find delight in the most loathsome things,
+Some furtherance of Hell each new day brings,
 And yet we feel no horror in that rank advance.
 Charles Baudelaire, ""To the Reader""","SV5:PCaine4","","Carlos Díaz",""
 "100491","Danse Macabre","","Master","","","","","","","","Master.
@@ -3872,7 +3872,7 @@ When a Methuselah uses a discard phase action to discard a card, he or she doesn
 "101421","Port Hunting Ground","","Master","Ishtarri","","","2","","","","Master: unique location. Hunting ground.
 During your unlock phase, you may move 1 blood from the blood bank to a ready vampire you control. A vampire can gain blood from only one hunting ground card each turn.","","LoB:PI","","James Stowe",""
 "102366","Porto de Santos","","Master","","","","","","","","Each Methuselah can play only one Porto de Santos in a game.
-Gain 1 pool. Each Methuselah looks at up to 3 cards from the top of their crypt and moves one of those cards to their uncontrolled region and the others to the bottom of their crypt.","","PROMO, V5:NBr1","","Felipe Headley",""
+Gain 1 pool. Each Methuselah looks at up to 3 cards from the top of their crypt and moves one of those cards to their uncontrolled region and the others to the bottom of their crypt.","","V5:NBr1","","Felipe Headley",""
 "101422","Portrait, The","","Action","Toreador","","","","1","","","(D) Show the top card of your prey's crypt to all players. If it is a Nosferatu, this vampire burns 2 blood. If its cost is below 7, this vampire gains 2 blood (ignore excess blood); if it is from 7 to 10, this vampire unlocks and bleeds your prey with +1 bleed as a +1 stealth (D) action; if it is above 10, this vampire burns 1 blood.","","AH:R2, CE:R","","Pete Venters",""
 "101423","Possession","","Action","","","Necromancy","","2","","","[nec] Move a vampire from your ash heap to your uncontrolled region.
 [NEC] Move a vampire from your ash heap to your ready region with 1 blood.","My name is Legion; for we are many.

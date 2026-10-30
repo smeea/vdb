@@ -72565,9 +72565,6 @@
         "requirement":"",
         "rulings":[],
         "set":{
-            "P":{
-                "R":true
-            },
             "V5SN":{
                 "NBr":"1"
             }
