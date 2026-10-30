@@ -1,8 +1,7 @@
 {
-  "version": "2026-10-25",
+  "version": "2026-10-30",
   "changes": [
-    "Update TWDA",
-    "Update rulings",
-    "Fix Inventory filters"
+    "Add V5 Secrets of New York and Noites Brasileiras",
+    "Update TWDA"
   ]
 }
