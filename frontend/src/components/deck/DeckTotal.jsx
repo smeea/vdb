@@ -27,13 +27,13 @@ const DeckSelectAdvTotal = ({ tagsFilter, setTagsFilter }) => {
   });
 
   return (
-    <div className="flex items-center justify-between bg-bgSecondary dark:bg-bgSecondaryDark">
-      <div className="whitespace-nowrap font-bold">TOTAL: {total}</div>
+    <div className="bg-bgSecondary dark:bg-bgSecondaryDark flex items-center justify-between">
+      <div className="font-bold whitespace-nowrap">TOTAL: {total}</div>
       <div>
         {Object.keys(byTags).map((k) => {
           return (
             <span key={k} onClick={() => handleClick(k)} className="inline-block whitespace-nowrap">
-              <span className="font-bold text-fgSecondary dark:text-fgSecondaryDark">{k}:</span>
+              <span className="text-fgSecondary dark:text-fgSecondaryDark font-bold">{k}:</span>
               {byTags[k]}
             </span>
           );

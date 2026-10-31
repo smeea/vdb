@@ -23,7 +23,7 @@ const Input = ({
   return (
     <input
       className={twMerge(
-        "min-h-[42px] w-full border-borderSecondary bg-bgPrimary px-2 outline-bgCheckboxSelected placeholder:text-midGray focus:outline dark:border-borderSecondaryDark dark:bg-bgPrimaryDark dark:outline-bgCheckboxSelectedDark dark:placeholder:text-midGrayDark",
+        "border-borderSecondary bg-bgPrimary outline-bgCheckboxSelected placeholder:text-midGray dark:border-borderSecondaryDark dark:bg-bgPrimaryDark dark:outline-bgCheckboxSelectedDark dark:placeholder:text-midGrayDark min-h-[42px] w-full px-2 focus:outline",
         borderStyle,
         roundedStyle,
         className,

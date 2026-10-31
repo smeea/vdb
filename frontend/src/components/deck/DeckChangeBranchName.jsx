@@ -9,9 +9,9 @@ const DeckChangeBranchName = ({ deck }) => {
   const [value, setValue] = useState(deck[BRANCH_NAME] || "");
   const isEditable = getIsEditable(deck);
 
-    useEffect(() => {
-      if (value !== deck[BRANCH_NAME]) setValue(deck[BRANCH_NAME] ?? "");
-    }, [deck[BRANCH_NAME]]);
+  useEffect(() => {
+    if (value !== deck[BRANCH_NAME]) setValue(deck[BRANCH_NAME] ?? "");
+  }, [deck[BRANCH_NAME]]);
 
   const handleChange = (event) => {
     setValue(event.target.value);

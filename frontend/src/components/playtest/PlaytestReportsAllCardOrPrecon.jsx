@@ -26,10 +26,10 @@ const PlaytestReportsAllCardOrPrecon = ({ product, isPrecon, report, maxSameScor
               isPrecon ? "print:max-w-[320px]" : "print:max-w-[250px]",
             )}
           >
-            <div className="flex flex-col gap-1 max-sm:w-full print:dark:text-fgPrimary">
+            <div className="print:dark:text-fgPrimary flex flex-col gap-1 max-sm:w-full">
               {isPrecon ||
                 (showPlaytestImages && (
-                  <div className="flex font-bold text-fgSecondary dark:text-fgSecondaryDark print:dark:text-fgSecondary">
+                  <div className="text-fgSecondary dark:text-fgSecondaryDark print:dark:text-fgSecondary flex font-bold">
                     {product[NAME]}
                   </div>
                 ))}
@@ -41,7 +41,7 @@ const PlaytestReportsAllCardOrPrecon = ({ product, isPrecon, report, maxSameScor
                 <CardImage
                   card={product}
                   size="sm"
-                  className="max-sm:w-full sm:print:min-w-[250px] sm:print:max-w-[250px]"
+                  className="max-sm:w-full sm:print:max-w-[250px] sm:print:min-w-[250px]"
                 />
               ) : product[ID] > 200000 ? (
                 <ResultCryptLayoutText card={product} noClose />
@@ -58,7 +58,7 @@ const PlaytestReportsAllCardOrPrecon = ({ product, isPrecon, report, maxSameScor
             className={twMerge(
               "flex print:hidden",
               isPlaytestAdmin &&
-                "rounded-md border-[3px] border-fgSecondary border-dashed p-2.5 dark:border-fgSecondaryDark",
+                "border-fgSecondary dark:border-fgSecondaryDark rounded-md border-[3px] border-dashed p-2.5",
             )}
           >
             <PlaytestReportForm

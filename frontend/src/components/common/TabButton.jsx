@@ -6,7 +6,7 @@ const TabButton = ({ children }) => {
     <Tab
       className={({ selected }) =>
         twMerge(
-          "w-full cursor-pointer rounded-sm border border-borderPrimary px-3 py-1.5 dark:border-borderPrimaryDark",
+          "border-borderPrimary dark:border-borderPrimaryDark w-full cursor-pointer rounded-sm border px-3 py-1.5",
           selected && "bg-bgSecondary dark:bg-bgSecondaryDark",
         )
       }

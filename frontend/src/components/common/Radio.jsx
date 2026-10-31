@@ -12,13 +12,13 @@ const Radio = ({ value, label }) => {
           <span
             className={twMerge(
               checked &&
-                "size-0.5 rounded-full ring-[5px] ring-bgCheckboxSelected ring-offset-2 dark:ring-bgCheckboxSelectedDark",
+                "ring-bgCheckboxSelected dark:ring-bgCheckboxSelectedDark size-0.5 rounded-full ring-[5px] ring-offset-2",
               disabled && "opacity-60",
             )}
           />
         )}
       </RadioHUI>
-      <Label className="cursor-pointer font-bold text-fgSecondary dark:text-fgSecondaryDark">
+      <Label className="text-fgSecondary dark:text-fgSecondaryDark cursor-pointer font-bold">
         {label}
       </Label>
     </Field>

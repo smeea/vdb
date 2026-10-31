@@ -40,7 +40,7 @@ const DeckSelectAdvTotal = ({
         isMobile && Object.keys(byTags).length > 10 ? "block" : "flex",
       )}
     >
-      <div className="whitespace-nowrap p-1 p-2 font-bold max-sm:hidden">
+      <div className="p-1 p-2 font-bold whitespace-nowrap max-sm:hidden">
         TOTAL: {Object.keys(decks).length}
       </div>
       <div>
@@ -51,9 +51,9 @@ const DeckSelectAdvTotal = ({
               <div
                 key={i}
                 onClick={() => handleClick(i)}
-                className="inline-block cursor-pointer whitespace-nowrap px-2"
+                className="inline-block cursor-pointer px-2 whitespace-nowrap"
               >
-                <div className="inline pr-0.5 font-bold text-fgSecondary dark:text-fgSecondaryDark">
+                <div className="text-fgSecondary dark:text-fgSecondaryDark inline pr-0.5 font-bold">
                   {i}:
                 </div>
                 {byTags[i]}
@@ -62,7 +62,7 @@ const DeckSelectAdvTotal = ({
           })}
       </div>
       <div className="flex justify-between sm:justify-end">
-        <div className="whitespace-nowrap p-1 p-2 font-bold sm:hidden">
+        <div className="p-1 p-2 font-bold whitespace-nowrap sm:hidden">
           TOTAL: {Object.keys(decks).length}
         </div>
         <DeckSortButton sortMethod={sortMethod} onChange={setSortMethod} />

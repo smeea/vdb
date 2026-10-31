@@ -71,9 +71,9 @@ const TwdHallFameCardsPlayer = ({ name, cards }) => {
   });
 
   return (
-    <div className="rounded-sm border border-borderPrimary bg-bgThird dark:border-borderPrimaryDark dark:bg-bgThirdDark">
+    <div className="border-borderPrimary bg-bgThird dark:border-borderPrimaryDark dark:bg-bgThirdDark rounded-sm border">
       <DisclosureButton className="w-full cursor-pointer p-3">
-        <div className="flex items-center gap-4 px-2 text-fgName dark:text-fgNameDark">
+        <div className="text-fgName dark:text-fgNameDark flex items-center gap-4 px-2">
           <div className="flex items-center gap-1">
             <div>{Object.keys(cards).length}</div>
             <LightbulbFill height="13" width="13" viewBox="0 0 18 18" />
@@ -107,8 +107,8 @@ const TwdHallFameCardsPlayer = ({ name, cards }) => {
           setSortMethod={setCryptSearchSort}
           inHoF={true}
         />
-        <table className="border-bgSecondary sm:border dark:border-bgSecondaryDark">
-          <thead className="bg-bgSecondary font-bold text-fgSecondary dark:bg-bgSecondaryDark dark:text-fgSecondaryDark">
+        <table className="border-bgSecondary dark:border-bgSecondaryDark sm:border">
+          <thead className="bg-bgSecondary text-fgSecondary dark:bg-bgSecondaryDark dark:text-fgSecondaryDark font-bold">
             <tr>
               <th />
               <th className="max-sm:hidden" />
@@ -149,7 +149,7 @@ const TwdHallFameCardsPlayer = ({ name, cards }) => {
           setSortMethod={setLibrarySearchSort}
           inHoF
         />
-        <table className="w-full border-bgSecondary sm:border dark:border-bgSecondaryDark">
+        <table className="border-bgSecondary dark:border-bgSecondaryDark w-full sm:border">
           <thead className="bg-bgSecondary text-fgSecondary dark:bg-bgSecondaryDark dark:text-fgSecondaryDark">
             <tr>
               <th />

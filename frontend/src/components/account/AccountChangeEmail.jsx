@@ -37,7 +37,7 @@ const AccountChangeEmail = () => {
 
   return (
     <div className="flex flex-col gap-2">
-      <div className="flex items-center gap-2 font-bold text-fgSecondary text-lg dark:text-fgSecondaryDark">
+      <div className="text-fgSecondary dark:text-fgSecondaryDark flex items-center gap-2 text-lg font-bold">
         <div className="flex min-w-[23px] justify-center">
           <EnvelopeFill />
         </div>

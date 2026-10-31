@@ -40,7 +40,7 @@ const TdaSearchFormRank = ({ value, onChange }) => {
   return (
     <div className="flex basis-full items-center gap-1">
       <div className="w-1/4">
-        <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Place:</div>
+        <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">Place:</div>
       </div>
       <div className="flex w-3/4 items-center gap-1">
         <div className="w-full">

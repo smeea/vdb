@@ -35,7 +35,7 @@ const DeckLibraryTableRow = ({
     <tr
       {...swipeHandlers}
       className={twMerge(
-        "mx-2 h-[38px] border-bgSecondary border-y dark:border-bgSecondaryDark",
+        "border-bgSecondary dark:border-bgSecondaryDark mx-2 h-[38px] border-y",
         getSwipedBg(isSwiped),
       )}
     >

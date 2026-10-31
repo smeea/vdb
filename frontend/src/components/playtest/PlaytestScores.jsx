@@ -19,13 +19,13 @@ const PlaytestScores = ({ report, maxSameScore }) => {
               <PlaytestScoresChart value={report} maxSameScore={maxSameScore} />
             </div>
             <div className="flex justify-between">
-              <div className="min-w-[80px] font-bold text-fgSecondary dark:text-fgSecondaryDark print:dark:text-fgSecondary">
+              <div className="text-fgSecondary dark:text-fgSecondaryDark print:dark:text-fgSecondary min-w-[80px] font-bold">
                 Avg. score:
               </div>
               <div className="print:dark:text-fgPrimary">{scoreRounded}</div>
             </div>
             <div className="flex justify-between">
-              <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark print:dark:text-fgSecondary">
+              <div className="text-fgSecondary dark:text-fgSecondaryDark print:dark:text-fgSecondary font-bold">
                 Reports:
               </div>
               <div className="print:dark:text-fgPrimary">{q}</div>

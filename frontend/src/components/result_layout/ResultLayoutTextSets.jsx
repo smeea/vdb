@@ -58,9 +58,9 @@ const PreconsList = ({ value }) => {
         const q = value[i];
         return (
           <div key={i} className="group inline">
-            <div className="inline text-midGray dark:text-midGrayDark">{i}</div>
-            <div className="inline font-bold text-midGrayDark dark:text-lightGrayDark">{q}</div>
-            <div className="inline text-midGray group-last:hidden dark:text-midGrayDark">/</div>
+            <div className="text-midGray dark:text-midGrayDark inline">{i}</div>
+            <div className="text-midGrayDark dark:text-lightGrayDark inline font-bold">{q}</div>
+            <div className="text-midGray dark:text-midGrayDark inline group-last:hidden">/</div>
           </div>
         );
       })}
@@ -89,14 +89,14 @@ const ResultLayoutTextSets = ({ card }) => {
                 size="lg"
                 noPadding
               >
-                <div className="flex text-fgSecondary dark:text-fgPrimaryDark">
+                <div className="text-fgSecondary dark:text-fgPrimaryDark flex">
                   {set === PLAYTEST ? "PLAYTEST" : set}
-                  <div className="flex items-start text-fgFourth text-sm dark:text-fgFourthDark">
+                  <div className="text-fgFourth dark:text-fgFourthDark flex items-start text-sm">
                     {year ? `'${year}` : null}
                   </div>
                   {isPrecons && (
                     <div className="flex">
-                      <div className="flex text-midGray dark:text-midGrayDark">:</div>
+                      <div className="text-midGray dark:text-midGrayDark flex">:</div>
                       <PreconsList value={card[SET][set]} />
                     </div>
                   )}

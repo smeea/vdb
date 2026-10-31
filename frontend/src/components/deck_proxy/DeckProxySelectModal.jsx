@@ -185,7 +185,7 @@ const DeckProxySelectModal = ({ deck, setShow }) => {
         <div className="flex gap-5 max-md:flex-col">
           <div className="basis-full sm:basis-5/9">
             {deck[CRYPT] && (
-              <div className="sm:top-[22px] sm:z-10 sm:bg-bgPrimary sm:dark:bg-bgPrimaryDark">
+              <div className="sm:bg-bgPrimary sm:dark:bg-bgPrimaryDark sm:top-[22px] sm:z-10">
                 <DeckProxyCrypt
                   deck={deck}
                   handleProxySelector={handleProxySelector}

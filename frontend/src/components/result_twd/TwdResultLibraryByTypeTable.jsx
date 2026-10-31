@@ -50,13 +50,13 @@ const TwdResultLibraryByTypeTable = ({ library }) => {
 
   return (
     <div>
-      <div className="flex h-[30px] items-center justify-between gap-2 px-1 font-bold text-fgSecondary dark:text-whiteDark">
+      <div className="text-fgSecondary dark:text-whiteDark flex h-[30px] items-center justify-between gap-2 px-1 font-bold">
         <div className="flex items-center gap-1.5 whitespace-nowrap">Library [{libraryTotal}]</div>
         <div className="flex gap-2">
           {hasBanned && <ResultLegalIcon type={BANNED} />}
           {limitedMode && hasLimited && (
             <div
-              className="flex gap-0.5 font-normal text-fgRed dark:text-fgRedDark"
+              className="text-fgRed dark:text-fgRedDark flex gap-0.5 font-normal"
               title="Restricted Cards"
             >
               <ResultLegalIcon />
@@ -75,7 +75,7 @@ const TwdResultLibraryByTypeTable = ({ library }) => {
           </div>
         </div>
       </div>
-      <table className="border-bgSecondary border-x dark:border-bgSecondaryDark">
+      <table className="border-bgSecondary dark:border-bgSecondaryDark border-x">
         <tbody>
           {cardtypeSortedFull
             .filter((cardtype) => libraryByType[cardtype] !== undefined)
@@ -100,7 +100,7 @@ const TwdResultLibraryByTypeTable = ({ library }) => {
                         </div>
                       }
                     >
-                      <div className="cursor-pointer text-balance text-fgName dark:text-fgNameDark">
+                      <div className="text-fgName dark:text-fgNameDark cursor-pointer text-balance">
                         {cardtype} [{libraryByTypeTotal[cardtype]}]
                         {cardtype === TYPE_MASTER && trifleTotal > 0 && (
                           <> - {trifleTotal} trifle</>

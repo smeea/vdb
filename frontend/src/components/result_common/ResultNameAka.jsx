@@ -2,7 +2,7 @@ import { AKA } from "@/constants";
 
 const ResultNameAka = ({ card }) => {
   return (
-    <div className="flex whitespace-normal text-midGray dark:text-midGrayDark">aka {card[AKA]}</div>
+    <div className="text-midGray dark:text-midGrayDark flex whitespace-normal">aka {card[AKA]}</div>
   );
 };
 

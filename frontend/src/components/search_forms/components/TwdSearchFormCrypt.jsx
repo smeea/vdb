@@ -39,7 +39,7 @@ const TwdSearchFormCrypt = ({ value, form }) => {
 
   return (
     <div className="flex flex-col gap-2">
-      <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Crypt:</div>
+      <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">Crypt:</div>
       <NewCardSelect target={CRYPT} onChange={handleAdd} />
       <div className="flex flex-col gap-1">
         {Object.keys(value)

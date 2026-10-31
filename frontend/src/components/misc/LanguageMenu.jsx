@@ -23,7 +23,7 @@ const LanguageMenu = ({ handleClose }) => {
               className={twMerge(
                 "cursor-pointer",
                 lang === l &&
-                  "rounded-full border-4 border-fgSecondary border-double dark:border-fgSecondaryDark",
+                  "border-fgSecondary dark:border-fgSecondaryDark rounded-full border-4 border-double",
               )}
               onClick={() => handleClick(l)}
             >

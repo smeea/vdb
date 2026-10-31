@@ -25,7 +25,7 @@ const CardsDesktop = ({ card, openRandomCard, handleChange, handleSetCard }) => 
         )}
         {card &&
           (playtestMode || !getIsPlaytest(card[ID]) ? (
-            <div className="flex border-bgSecondary dark:border-bgSecondaryDark">
+            <div className="border-bgSecondary dark:border-bgSecondaryDark flex">
               <div>
                 <CardImage card={card} />
               </div>
@@ -40,7 +40,7 @@ const CardsDesktop = ({ card, openRandomCard, handleChange, handleSetCard }) => 
           ))}
       </FlexGapped>
       <div className="min-w-[175px] max-sm:hidden">
-        <div className="sticky z-30 flex w-full flex-col gap-1 bg-bgPrimary lg:top-10 dark:bg-bgPrimaryDark">
+        <div className="bg-bgPrimary dark:bg-bgPrimaryDark sticky z-30 flex w-full flex-col gap-1 lg:top-10">
           <ButtonIconed
             variant="secondary"
             onClick={() => openRandomCard(true)}

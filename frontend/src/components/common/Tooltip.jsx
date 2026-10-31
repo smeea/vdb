@@ -80,7 +80,7 @@ const Tooltip = ({
         {(show || open) && (
           <div
             className={twMerge(
-              "z-50 rounded-md border border-borderPrimary bg-bgPrimary text-fgPrimary dark:border-borderPrimaryDark dark:bg-bgPrimaryDark dark:text-fgPrimaryDark",
+              "border-borderPrimary bg-bgPrimary text-fgPrimary dark:border-borderPrimaryDark dark:bg-bgPrimaryDark dark:text-fgPrimaryDark z-50 rounded-md border",
               !noPadding && "p-3",
               widthClass[size],
             )}
@@ -96,7 +96,7 @@ const Tooltip = ({
             <div
               ref={arrowRef}
               className={twMerge(
-                "absolute z-[-1] h-[12px] w-[12px] border-borderPrimary border-b border-l bg-bgPrimary dark:border-borderPrimaryDark dark:bg-bgPrimaryDark",
+                "border-borderPrimary bg-bgPrimary dark:border-borderPrimaryDark dark:bg-bgPrimaryDark absolute z-[-1] h-[12px] w-[12px] border-b border-l",
                 arrowOffset,
                 arrowRotate,
               )}

@@ -19,7 +19,7 @@ const DeckNewCardFloating = ({ deckid, cards, cardChange, className }) => {
         <Plus width="47" height="47" viewBox="0 0 16 16" />
       </ButtonFloat>
       {showAdd && (
-        <div className="fixed bottom-[40px] z-20 flex w-full bg-bgPrimary p-2 dark:bg-bgPrimaryDark">
+        <div className="bg-bgPrimary dark:bg-bgPrimaryDark fixed bottom-[40px] z-20 flex w-full p-2">
           <div className="w-full" onBlur={handleClose}>
             <DeckNewCard
               handleClose={handleClose}

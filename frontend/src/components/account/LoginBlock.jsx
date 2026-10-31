@@ -5,7 +5,7 @@ const LoginBlock = ({ children }) => {
     <div className="account-container mx-auto w-full">
       <div className="flex w-full flex-col gap-16">
         <div className="flex flex-col gap-6">
-          <div className="flex justify-center text-center font-bold text-fgSecondary text-xl dark:text-fgSecondaryDark">
+          <div className="text-fgSecondary dark:text-fgSecondaryDark flex justify-center text-center text-xl font-bold">
             {children}
           </div>
           <AccountLogin />

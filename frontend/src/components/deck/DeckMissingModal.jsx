@@ -30,7 +30,7 @@ const DeckMissingModal = ({ setShow, deck }) => {
         <FlexGapped className="max-sm:flex-col">
           <div className="basis-full md:basis-5/9">
             <div
-              className={twMerge(!isMobile && "top-[22px] z-10 bg-bgPrimary dark:bg-bgPrimaryDark")}
+              className={twMerge(!isMobile && "bg-bgPrimary dark:bg-bgPrimaryDark top-[22px] z-10")}
             >
               <DeckCrypt
                 deck={{

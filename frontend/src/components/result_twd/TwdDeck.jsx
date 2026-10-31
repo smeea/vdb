@@ -43,7 +43,7 @@ const TwdDeck = ({ deck, inPda, inTda }) => {
               {cardtypeSortedFull
                 .filter((t) => libraryByTypeTotal[t])
                 .map((i) => (
-                  <div key={i} className="inline-block whitespace-nowrap pr-2.5">
+                  <div key={i} className="inline-block pr-2.5 whitespace-nowrap">
                     <div className="flex items-center gap-0.5">
                       <ResultLibraryTypeImage value={i} />
                       <div className="flex">{libraryByTypeTotal[i]}</div>

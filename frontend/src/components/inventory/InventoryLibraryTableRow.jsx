@@ -74,7 +74,7 @@ const InventoryLibraryTableRow = ({
           "flex h-full items-center justify-center",
           isEditable
             ? "min-w-[84px]"
-            : "min-w-[42px] border-bgSecondary border-r bg-blue/5 sm:min-w-[48px] dark:border-bgSecondaryDark",
+            : "border-bgSecondary bg-blue/5 dark:border-bgSecondaryDark min-w-[42px] border-r sm:min-w-[48px]",
         )}
       >
         <InventoryCardQuantity

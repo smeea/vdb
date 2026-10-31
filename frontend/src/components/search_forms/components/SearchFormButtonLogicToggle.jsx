@@ -55,7 +55,7 @@ const SearchFormButtonLogicToggle = ({ name, i, value, searchForm, withAnd, with
 
   return (
     <Button
-      className="h-[18px] w-[18px] text-2xs"
+      className="text-2xs h-[18px] w-[18px]"
       onClick={handleToggleForm}
       title={title}
       noPadding

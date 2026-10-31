@@ -84,8 +84,8 @@ const InventoryShareModal = ({ setShow }) => {
   return (
     <Modal handleClose={handleClose} centered={isMobile} size="xs" title="Share Inventory">
       <FlexGapped className="flex-col">
-        <div className="flex flex-col gap-0.5 rounded-sm border border-borderPrimary dark:border-borderSecondaryDark">
-          <Header className="px-2 font-bold text-fgSecondary dark:text-fgSecondaryDark">
+        <div className="border-borderPrimary dark:border-borderSecondaryDark flex flex-col gap-0.5 rounded-sm border">
+          <Header className="text-fgSecondary dark:text-fgSecondaryDark px-2 font-bold">
             Full Inventory
           </Header>
           <div className="flex flex-col gap-2 p-2">
@@ -93,7 +93,7 @@ const InventoryShareModal = ({ setShow }) => {
               <div>
                 <a href={fullUrl}>{fullUrl}</a>
                 <div
-                  className="inline pl-1 text-fgSecondary hover:text-fgPrimary dark:text-fgSecondaryDark dark:hover:text-fgPrimaryDark"
+                  className="text-fgSecondary hover:text-fgPrimary dark:text-fgSecondaryDark dark:hover:text-fgPrimaryDark inline pl-1"
                   onClick={() => navigator.clipboard.writeText(fullUrl)}
                 >
                   <ClipboardFill className="inline" viewBox="0 0 18 18" />
@@ -114,8 +114,8 @@ const InventoryShareModal = ({ setShow }) => {
             />
           </div>
         </div>
-        <div className="flex flex-col gap-0.5 rounded-sm border border-borderPrimary dark:border-borderSecondaryDark">
-          <Header className="px-2 font-bold text-fgSecondary dark:text-fgSecondaryDark">
+        <div className="border-borderPrimary dark:border-borderSecondaryDark flex flex-col gap-0.5 rounded-sm border">
+          <Header className="text-fgSecondary dark:text-fgSecondaryDark px-2 font-bold">
             Surplus
           </Header>
           <div className="flex flex-col gap-2 p-2">
@@ -123,7 +123,7 @@ const InventoryShareModal = ({ setShow }) => {
               <div>
                 <a href={surplusUrl}>{surplusUrl}</a>
                 <div
-                  className="inline pl-1 text-fgSecondary hover:text-fgPrimary dark:text-fgSecondaryDark dark:hover:text-fgPrimaryDark"
+                  className="text-fgSecondary hover:text-fgPrimary dark:text-fgSecondaryDark dark:hover:text-fgPrimaryDark inline pl-1"
                   onClick={() => navigator.clipboard.writeText(surplusUrl)}
                 >
                   <ClipboardFill className="inline" viewBox="0 0 18 18" />

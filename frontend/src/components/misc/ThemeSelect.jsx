@@ -45,7 +45,7 @@ const ThemeSelect = () => {
     <>
       {isNarrow ? (
         <div
-          className="flex items-center gap-2 px-3 py-1.5 text-fgThird dark:text-fgPrimaryDark"
+          className="text-fgThird dark:text-fgPrimaryDark flex items-center gap-2 px-3 py-1.5"
           onClick={toggleTheme}
         >
           <div className="flex min-w-[30px] justify-center">{themeVisual[theme]?.[ICON]}</div>

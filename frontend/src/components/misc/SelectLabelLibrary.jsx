@@ -25,7 +25,7 @@ const SelectLabelLibrary = ({ cardid, inInventory }) => {
             className={twMerge(
               "inline w-7 text-center text-lg",
               inventoryLibrary[cardid] &&
-                "rounded-md border-2 border-midGray dark:border-midGrayDark",
+                "border-midGray dark:border-midGrayDark rounded-md border-2",
             )}
           >
             {inventoryLibrary[cardid]?.q}

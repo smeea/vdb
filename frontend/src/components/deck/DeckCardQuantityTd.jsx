@@ -16,7 +16,7 @@ const DeckCardQuantityTd = ({
       className={
         isEditable
           ? "min-w-[75px]"
-          : "min-w-[28px] border-bgSecondary border-r bg-blue/5 sm:min-w-[35px] dark:border-bgSecondaryDark print:dark:text-fgPrimary"
+          : "border-bgSecondary bg-blue/5 dark:border-bgSecondaryDark print:dark:text-fgPrimary min-w-[28px] border-r sm:min-w-[35px]"
       }
     >
       <DeckCardQuantity

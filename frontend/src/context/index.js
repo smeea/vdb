@@ -12,8 +12,8 @@ export {
 } from "./DeckStore.js";
 export {
   inventoryCardChange,
-  inventoryCardTextChange,
   inventoryCardsAdd,
+  inventoryCardTextChange,
   inventoryStore,
   inventoryUpdate,
   setupUsedInventory,

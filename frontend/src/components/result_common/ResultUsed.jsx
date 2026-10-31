@@ -36,7 +36,7 @@ const ResultUsed = ({ card }) => {
         <div
           className={twMerge(
             "mx-1 flex items-center px-0.5",
-            surplus < 0 && "bg-bgError text-white dark:bg-bgErrorDark dark:text-whiteDark",
+            surplus < 0 && "bg-bgError dark:bg-bgErrorDark dark:text-whiteDark text-white",
           )}
         >
           <div className="flex basis-3/5 justify-center text-lg">

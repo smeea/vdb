@@ -46,7 +46,7 @@ const CryptSearchFormClan = ({ value, searchForm, onChange, withoutNoPath }) => 
     <>
       <div className="flex items-center">
         <div className="flex w-1/4 items-center justify-between">
-          <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Clan / Path:</div>
+          <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">Clan / Path:</div>
           {value.value[0] !== ANY && (
             <div className="flex justify-end gap-1 px-1">
               <SearchFormButtonLogicToggle

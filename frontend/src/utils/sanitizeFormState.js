@@ -101,7 +101,7 @@ const sanitizeFormState = (target, state) => {
   switch (target) {
     case PDA:
     case TWD:
-    forms = [MATCH_INVENTORY, MATCH_V5];
+      forms = [MATCH_INVENTORY, MATCH_V5];
       break;
     default:
       forms = [];

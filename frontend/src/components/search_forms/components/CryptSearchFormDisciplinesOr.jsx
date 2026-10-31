@@ -10,7 +10,7 @@ const Box = ({ onClick }) => {
   return (
     <div
       onClick={onClick}
-      className="mx-1.5 my-1.5 h-[27px] w-[27px] cursor-pointer border border-darkGray dark:border-darkGrayDark"
+      className="border-darkGray dark:border-darkGrayDark mx-1.5 my-1.5 h-[27px] w-[27px] cursor-pointer border"
     />
   );
 };
@@ -61,7 +61,7 @@ const CryptSearchFormDisciplinesOr = ({ value, setValue }) => {
             key={idx}
             className={twMerge(
               "flex min-w-[55px] items-center justify-center",
-              idx === activeForm && "border-borderPrimary border-b dark:border-borderPrimaryDark",
+              idx === activeForm && "border-borderPrimary dark:border-borderPrimaryDark border-b",
             )}
           >
             {Object.keys(i).map((d, index) => (

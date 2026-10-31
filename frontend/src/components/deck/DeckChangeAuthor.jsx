@@ -9,9 +9,9 @@ const DeckChangeAuthor = ({ deck }) => {
   const [value, setValue] = useState(deck[AUTHOR] || "");
   const isEditable = getIsEditable(deck);
 
-    useEffect(() => {
-      if (value !== deck[AUTHOR]) setValue(deck[AUTHOR] ?? "");
-    }, [deck[AUTHOR]]);
+  useEffect(() => {
+    if (value !== deck[AUTHOR]) setValue(deck[AUTHOR] ?? "");
+  }, [deck[AUTHOR]]);
 
   const handleChange = (event) => {
     setValue(event.target.value);

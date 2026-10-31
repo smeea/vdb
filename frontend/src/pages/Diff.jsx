@@ -178,7 +178,7 @@ const Diff = () => {
           )}
         </FlexGapped>
         <div className="basis-2/12 max-lg:hidden">
-          <div className="top-[77px] z-20 bg-bgPrimary dark:bg-bgPrimaryDark">
+          <div className="bg-bgPrimary dark:bg-bgPrimaryDark top-[77px] z-20">
             <DiffButtons
               deckFrom={deck}
               deckTo={deckTo}

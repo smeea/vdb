@@ -25,7 +25,7 @@ const ResultName = ({ card, isColored = true }) => {
   return (
     <div
       className={twMerge(
-        "inline-flex items-center gap-1 whitespace-nowrap print:dark:text-fgName",
+        "print:dark:text-fgName inline-flex items-center gap-1 whitespace-nowrap",
         isColored && "text-fgName dark:text-fgNameDark",
       )}
     >

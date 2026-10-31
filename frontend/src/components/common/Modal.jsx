@@ -39,7 +39,7 @@ const Modal = ({
         >
           <DialogPanel
             className={twMerge(
-              "flex flex-col gap-1 rounded-sm border-bgSecondary bg-bgPrimary dark:border-bgSecondaryDark dark:bg-bgPrimaryDark",
+              "border-bgSecondary bg-bgPrimary dark:border-bgSecondaryDark dark:bg-bgPrimaryDark flex flex-col gap-1 rounded-sm",
               widthClass[size],
               !noBorder && "border",
               !noPadding && "px-5 pt-4 pb-5 max-sm:px-3 max-sm:pt-2 max-sm:pb-3",
@@ -50,7 +50,7 @@ const Modal = ({
               <DialogTitle className="flex items-center justify-between border-none">
                 <div
                   className={twMerge(
-                    "font-bold text-fgSecondary text-lg dark:text-fgSecondaryDark",
+                    "text-fgSecondary dark:text-fgSecondaryDark text-lg font-bold",
                     noPadding && "px-2 pt-2",
                   )}
                 >

@@ -16,7 +16,7 @@ const SeatingDeck = ({ toggle, i, deck, disabled, remove }) => {
         </Link>
       ) : (
         <div
-          className="cursor-pointer p-0.5 text-fgRed dark:text-fgRedDark"
+          className="text-fgRed dark:text-fgRedDark cursor-pointer p-0.5"
           onClick={() => remove(i)}
         >
           <X width="22" height="22" viewBox="0 0 16 16" />

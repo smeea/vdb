@@ -110,7 +110,7 @@ const TwdCheckInput = ({ deckData, setDeckData }) => {
             <pre className="font-mono text-sm">{fieldNames}</pre>
           </div>
           <div className="flex justify-end">
-            <pre className="font-mono text-midGray text-sm dark:text-midGrayDark">
+            <pre className="text-midGray dark:text-midGrayDark font-mono text-sm">
               {descriptionInfo}
             </pre>
           </div>
@@ -124,7 +124,7 @@ const TwdCheckInput = ({ deckData, setDeckData }) => {
             onChange={handleChange}
             autoFocus
           />
-          <pre className="mb-0 ml-1 font-mono text-midGray text-sm dark:text-midGrayDark">
+          <pre className="text-midGray dark:text-midGrayDark mb-0 ml-1 font-mono text-sm">
             {lengthMarker}
           </pre>
         </div>

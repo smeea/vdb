@@ -14,7 +14,7 @@ const ResultCryptClanGroupTitle = ({ card }) => {
         {card[PATH] && <ResultPathImage size="xs" value={card[PATH]} />}
         <ResultClanImage value={card[CLAN]} />
       </div>
-      <div className="flex justify-between gap-1 font-bold text-sm">
+      <div className="flex justify-between gap-1 text-sm font-bold">
         <div className="flex w-[22px] justify-center">
           {card[TITLE] ? (
             <ResultCryptTitle value={card[TITLE]} />

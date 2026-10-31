@@ -34,7 +34,7 @@ const DeckSelectRecent = ({ deckid, handleSelect }) => {
             </div>
             <div className="inline">{i[NAME].slice(0, 32)}</div>
           </div>
-          <div className="flex w-[20px] items-center justify-center text-midGray dark:text-midGrayDark">
+          <div className="text-midGray dark:text-midGrayDark flex w-[20px] items-center justify-center">
             {getIcon(i.src)}
           </div>
         </div>

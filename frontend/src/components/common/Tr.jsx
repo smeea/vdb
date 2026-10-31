@@ -4,7 +4,7 @@ const Tr = ({ children, className }) => {
   return (
     <tr
       className={twMerge(
-        "h-[38px] border-bgSecondary border-y odd:bg-bgPrimary even:bg-bgThird dark:border-bgSecondaryDark even:dark:bg-bgThirdDark odd:dark:bg-bgPrimaryDark",
+        "border-bgSecondary odd:bg-bgPrimary even:bg-bgThird dark:border-bgSecondaryDark even:dark:bg-bgThirdDark odd:dark:bg-bgPrimaryDark h-[38px] border-y",
         className,
       )}
     >

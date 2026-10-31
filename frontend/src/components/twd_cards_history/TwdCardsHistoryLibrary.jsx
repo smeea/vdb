@@ -178,7 +178,7 @@ const TwdCardsHistoryLibrary = ({ cards, players }) => {
 
   return (
     <div className="h-[calc(100dvh-212px)] sm:h-[calc(100dvh-270px)]">
-      <div className="flex items-center justify-between gap-2 bg-bgSecondary dark:bg-bgSecondaryDark">
+      <div className="bg-bgSecondary dark:bg-bgSecondaryDark flex items-center justify-between gap-2">
         <div className="gap w-full">
           <div className="flex gap-1 p-1 max-sm:flex-col">
             <div className="w-1/3">
@@ -213,7 +213,7 @@ const TwdCardsHistoryLibrary = ({ cards, players }) => {
           setSortMethod={setSortMethod}
         />
       </div>
-      <div className="flex min-h-[38px] w-full bg-bgSecondary font-bold text-fgSecondary dark:bg-bgSecondaryDark dark:text-fgSecondaryDark">
+      <div className="bg-bgSecondary text-fgSecondary dark:bg-bgSecondaryDark dark:text-fgSecondaryDark flex min-h-[38px] w-full font-bold">
         <div className="flex min-w-[30px] max-sm:hidden" />
         <div className="flex min-w-[40px] max-sm:hidden" />
         <div className="flex w-full" />
@@ -247,7 +247,7 @@ const TwdCardsHistoryLibrary = ({ cards, players }) => {
         </div>
       </div>
       <List
-        className="border-bgSecondary sm:border dark:border-bgSecondaryDark"
+        className="border-bgSecondary dark:border-bgSecondaryDark sm:border"
         rowComponent={WindowRows}
         rowCount={cardRows.length}
         rowHeight={45}

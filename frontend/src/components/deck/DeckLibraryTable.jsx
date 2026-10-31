@@ -17,7 +17,7 @@ const DeckLibraryTable = ({
   const isEditable = getIsEditable(deck);
 
   return (
-    <table className="w-full border-bgSecondary sm:border dark:border-bgSecondaryDark">
+    <table className="border-bgSecondary dark:border-bgSecondaryDark w-full sm:border">
       <tbody>
         {sortedCards.map((card) => {
           return (

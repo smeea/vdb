@@ -10,7 +10,7 @@ const LimitedSetSelection = () => {
 
   return (
     <div className="flex flex-col gap-2">
-      <div className="font-bold text-fgSecondary text-lg underline dark:text-fgSecondaryDark">
+      <div className="text-fgSecondary dark:text-fgSecondaryDark text-lg font-bold underline">
         Sets:
       </div>
       <div className="flex gap-2 max-sm:flex-col sm:gap-8">

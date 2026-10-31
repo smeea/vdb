@@ -46,25 +46,23 @@ const DeckCardQuantity = ({
       ? inInventory - (softUsedMax + hardUsedTotal + (wishlist[card[ID]]?.q || 0))
       : inInventory - (softUsedMax + hardUsedTotal);
 
-  const inventoryColor =
-    inProxy
-      ? inventoryType
-        ? surplus + (isSelected ? q : 0) >= 0
-          ? null
+  const inventoryColor = inProxy
+    ? inventoryType
+      ? surplus + (isSelected ? q : 0) >= 0
+        ? null
+        : ERROR
+      : null
+    : inventoryType
+      ? surplus >= 0
+        ? null
+        : inInventory >= q
+          ? WARNING
           : ERROR
-        : null
-      : inventoryType
-        ? surplus >= 0
-          ? null
-          : inInventory >= q
-            ? WARNING
-            : ERROR
-        : surplus >= q
-          ? null
-          : inInventory >= q
-            ? WARNING
-            : ERROR
-
+      : surplus >= q
+        ? null
+        : inInventory >= q
+          ? WARNING
+          : ERROR;
 
   const handleChange = (qty) => cardChange(deckid, card, qty);
 

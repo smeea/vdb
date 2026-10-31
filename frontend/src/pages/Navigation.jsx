@@ -37,7 +37,7 @@ const Link = ({ to, end, icon, text, title, className }) => {
           "flex h-full w-full items-center justify-center no-underline outline-hidden",
           icon ? "md:px-3" : "pb-[2px] md:px-2",
           isActive
-            ? "bg-borderNestModal text-white dark:bg-borderNestModalDark dark:text-whiteDark"
+            ? "bg-borderNestModal dark:bg-borderNestModalDark dark:text-whiteDark text-white"
             : "text-lightGray dark:text-lightGrayDark",
           className,
         )
@@ -94,7 +94,7 @@ const Navigation = () => {
   const cardsUrl = `/cards${quickCard ? `/${quickCard[ID]}` : ""}`;
 
   return (
-    <nav className="z-50 bg-bgNav max-md:fixed max-md:bottom-0 max-md:w-full md:sticky md:top-0 dark:bg-bgNavDark print:hidden">
+    <nav className="bg-bgNav dark:bg-bgNavDark z-50 max-md:fixed max-md:bottom-0 max-md:w-full md:sticky md:top-0 print:hidden">
       <div className="navbar-container mx-auto flex h-10 justify-between md:gap-3">
         <div className="flex items-center gap-6 max-md:hidden">
           <LanguageSelectButton />
@@ -152,7 +152,7 @@ const Navigation = () => {
               twMerge(
                 "flex h-full items-center justify-center px-2 outline-hidden hover:no-underline md:px-3",
                 isActive
-                  ? "bg-borderNestModal text-white dark:bg-borderNestModalDark dark:text-whiteDark"
+                  ? "bg-borderNestModal dark:bg-borderNestModalDark dark:text-whiteDark text-white"
                   : "text-lightGray dark:text-lightGrayDark",
               )
             }

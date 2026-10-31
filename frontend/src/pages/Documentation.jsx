@@ -7,7 +7,7 @@ import { Link } from "react-router";
 import { Banner, Title } from "@/components";
 
 const SubTitle = ({ children }) => {
-  return <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">{children}</div>;
+  return <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">{children}</div>;
 };
 
 const Documentation = () => {

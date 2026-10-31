@@ -68,7 +68,7 @@ const InventoryAddDeckModal = ({ handleClose }) => {
           defaultTagsOptions={defaultTagsOptions}
           sortMethod={sortMethod}
         />
-        <tbody className="border-bgSecondary sm:border-x dark:border-bgSecondaryDark">
+        <tbody className="border-bgSecondary dark:border-bgSecondaryDark sm:border-x">
           {sortedDecks.map((deck) => {
             return (
               <InventoryAddDeckRow

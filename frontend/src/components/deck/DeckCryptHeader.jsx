@@ -46,7 +46,7 @@ const DeckCryptHeader = ({
                     <div className="flex gap-1">
                       <Warning type={LIMITED} />
                       <div
-                        className="flex font-normal text-fgRed dark:text-fgRedDark"
+                        className="text-fgRed dark:text-fgRedDark flex font-normal"
                         title="Restricted Cards"
                       >
                         [{Math.round((hasLimited / cryptTotal) * 100)}%]

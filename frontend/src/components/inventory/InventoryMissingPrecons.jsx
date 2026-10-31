@@ -82,9 +82,9 @@ const InventoryMissingPrecons = ({ crypt, library, setShow }) => {
     >
       <FlexGapped className="flex-col">
         {Object.values(addedPrecons).filter((i) => i > 0).length > 0 && (
-          <div className="rounded-md border border-borderPrimary dark:border-borderPrimaryDark">
+          <div className="border-borderPrimary dark:border-borderPrimaryDark rounded-md border">
             <Header>
-              <div className="p-2 font-bold text-fgSecondary dark:text-fgSecondaryDark">
+              <div className="text-fgSecondary dark:text-fgSecondaryDark p-2 font-bold">
                 Virtual Cart
               </div>
             </Header>
@@ -105,7 +105,7 @@ const InventoryMissingPrecons = ({ crypt, library, setShow }) => {
                   return (
                     <div
                       key={k}
-                      className="my-1.5 mr-3 inline-block whitespace-nowrap rounded-sm border border-borderPrimary dark:border-borderPrimaryDark"
+                      className="border-borderPrimary dark:border-borderPrimaryDark my-1.5 mr-3 inline-block rounded-sm border whitespace-nowrap"
                     >
                       <div className="inline-block">
                         <div className="flex h-[45px] w-[85px] items-center justify-center px-2">
@@ -124,9 +124,9 @@ const InventoryMissingPrecons = ({ crypt, library, setShow }) => {
                           to={`/decks/${set}:${i}`}
                         >
                           {setsAndPrecons[set][PRECONS][i][NAME]}
-                          <div className="flex text-fgPrimary dark:text-fgPrimaryDark">
+                          <div className="text-fgPrimary dark:text-fgPrimaryDark flex">
                             ({set}
-                            <div className="text-fgFourth text-sm dark:text-fgFourthDark">
+                            <div className="text-fgFourth dark:text-fgFourthDark text-sm">
                               '{setsAndPrecons[set][DATE].slice(2, 4)}
                             </div>
                             )
@@ -141,8 +141,8 @@ const InventoryMissingPrecons = ({ crypt, library, setShow }) => {
               {Object.keys(addedDeck[CRYPT]).length + Object.keys(addedDeck[LIBRARY]).length >
                 0 && (
                 <Disclosure>
-                  <div className="w-full rounded-b border-borderPrimary border-t bg-bgThird dark:border-borderPrimaryDark dark:bg-bgThirdDark">
-                    <DisclosureButton className="flex w-full cursor-pointer items-center justify-between p-3 dark:text-fgSecondaryDark">
+                  <div className="border-borderPrimary bg-bgThird dark:border-borderPrimaryDark dark:bg-bgThirdDark w-full rounded-b border-t">
+                    <DisclosureButton className="dark:text-fgSecondaryDark flex w-full cursor-pointer items-center justify-between p-3">
                       Missing Cards in the Virtual Cart
                       <div className="flex items-center justify-between gap-8">
                         <div className="justify-width flex gap-2">
@@ -187,13 +187,13 @@ const InventoryMissingPrecons = ({ crypt, library, setShow }) => {
             return (
               <div key={k} className="flex w-full gap-3">
                 <Disclosure>
-                  <div className="w-full rounded-sm border border-borderPrimary bg-bgThird dark:border-borderPrimaryDark dark:bg-bgThirdDark">
+                  <div className="border-borderPrimary bg-bgThird dark:border-borderPrimaryDark dark:bg-bgThirdDark w-full rounded-sm border">
                     <DisclosureButton className="flex w-full cursor-pointer justify-between p-3">
-                      <div className="flex gap-1 text-fgName dark:text-fgNameDark">
+                      <div className="text-fgName dark:text-fgNameDark flex gap-1">
                         {setsAndPrecons[set][PRECONS][i][NAME]}
-                        <div className="flex text-fgPrimary dark:text-fgPrimaryDark">
+                        <div className="text-fgPrimary dark:text-fgPrimaryDark flex">
                           ({set}
-                          <div className="text-fgFourth text-sm dark:text-fgFourthDark">
+                          <div className="text-fgFourth dark:text-fgFourthDark text-sm">
                             '{setsAndPrecons[set][DATE].slice(2, 4)}
                           </div>
                           )

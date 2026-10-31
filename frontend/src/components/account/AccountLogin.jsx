@@ -75,7 +75,7 @@ const AccountLogin = () => {
 
   return (
     <div className="flex flex-col gap-2">
-      <div className="flex items-center gap-2 font-bold text-fgSecondary text-xl dark:text-fgSecondaryDark">
+      <div className="text-fgSecondary dark:text-fgSecondaryDark flex items-center gap-2 text-xl font-bold">
         <div className="flex min-w-[23px] justify-center">
           <DoorOpenFill width="20" height="20" viewBox="0 0 16 16" />
         </div>
@@ -99,7 +99,7 @@ const AccountLogin = () => {
             overlay={<PasswordTooltipText />}
             title="Password reset"
           >
-            <div className="text-fgSecondary text-sm italic hover:underline dark:text-fgSecondaryDark">
+            <div className="text-fgSecondary dark:text-fgSecondaryDark text-sm italic hover:underline">
               Forgot password
             </div>
           </ConditionalTooltipOrModal>

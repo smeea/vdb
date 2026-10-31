@@ -37,7 +37,7 @@ const ResultCryptTitle = ({ value, noTitle }) => {
 
   return (
     <div
-      className="inline text-fg-fgSecondary dark:text-fgSecondaryDark print:dark:text-fgPrimary"
+      className="text-fg-fgSecondary dark:text-fgSecondaryDark print:dark:text-fgPrimary inline"
       title={noTitle ? null : titles[value][0]}
     >
       {titles[value][1]}

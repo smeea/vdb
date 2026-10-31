@@ -5,7 +5,7 @@ const ResultLibrarySectReq = ({ value }) => {
   const htmlTitle = value.map((v) => capitalize(v)).join(" or ");
 
   return (
-    <div title={htmlTitle} className="inline text-fgGreen dark:text-fgGreenDark">
+    <div title={htmlTitle} className="text-fgGreen dark:text-fgGreenDark inline">
       {value.map((v) => v[0].charAt(0).toUpperCase()).join("-")}
     </div>
   );

@@ -30,7 +30,7 @@ const PlaytestManagePlayer = ({ value }) => {
             <div
               className={twMerge(
                 "flex items-center gap-2",
-                is_admin && "font-bold text-fgSecondary dark:text-fgSecondaryDark",
+                is_admin && "text-fgSecondary dark:text-fgSecondaryDark font-bold",
               )}
             >
               {username}

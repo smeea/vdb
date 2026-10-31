@@ -95,13 +95,13 @@ const Select = ({
             ? "max-w-0 max-h-0"
             : "px-2 text-borderSecondary dark:text-borderSecondaryDark",
         indicatorsContainer: () =>
-          twMerge("cursor-pointer rounded-sm", noDropdown ? "max-h-0 max-w-0" : "py-1.5 "),
+          twMerge("cursor-pointer rounded-sm", noDropdown ? "max-h-0 max-w-0" : "py-1.5"),
         indicatorSeparator: () => "bg-borderSecondary dark:bg-borderSecondaryDark",
         menu: () => "my-2 rounded-sm border border-borderThird dark:border-borderThirdDark",
         menuList: () => "rounded-sm bg-bgPrimary dark:bg-bgPrimaryDark",
         option: (state) =>
           twMerge(
-            "p-2 text-fgPrimary dark:text-fgPrimaryDark",
+            "text-fgPrimary dark:text-fgPrimaryDark p-2",
             state.isFocused
               ? "bg-borderPrimary dark:bg-bgCheckboxSelectedDark"
               : state.isSelected && "bg-borderSecondary dark:bg-borderPrimaryDark",
@@ -130,10 +130,10 @@ const Select = ({
         multiValue: () => "bg-bgButton dark:bg-bgButtonDark rounded-sm",
         multiValueLabel: () =>
           twMerge(
-            "text-sm px-1.5 py-1 border-borderSecondary dark:border-borderSecondaryDark",
+            "border-borderSecondary dark:border-borderSecondaryDark px-1.5 py-1 text-sm",
             noRemove
-              ? "border rounded-sm"
-              : "border-l border-y border-borderSecondary dark:border-borderSecondaryDark rounded-l rounded-y",
+              ? "rounded-sm border"
+              : "border-borderSecondary dark:border-borderSecondaryDark rounded-y rounded-l border-y border-l",
           ),
         multiValueRemove: () =>
           noRemove

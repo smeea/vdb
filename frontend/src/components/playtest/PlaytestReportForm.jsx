@@ -21,7 +21,7 @@ const IS_PLAYED = "isPlayed";
 
 const Title = ({ isPrecon }) => {
   return (
-    <div className="flex gap-3 whitespace-nowrap font-bold text-fgSecondary dark:text-fgSecondaryDark">
+    <div className="text-fgSecondary dark:text-fgSecondaryDark flex gap-3 font-bold whitespace-nowrap">
       Playtest Report:
       <ConditionalTooltipOrModal
         title="Playtest Report"
@@ -53,7 +53,7 @@ const Title = ({ isPrecon }) => {
           </div>
         }
       >
-        <div className="font-bold text-fgThird dark:text-fgThirdDark">[?]</div>
+        <div className="text-fgThird dark:text-fgThirdDark font-bold">[?]</div>
       </ConditionalTooltipOrModal>
     </div>
   );

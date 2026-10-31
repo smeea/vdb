@@ -22,7 +22,7 @@ const LibrarySearchFormBloodCost = ({ value, onChange }) => {
   return (
     <div className="flex items-center">
       <div className="w-1/4">
-        <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Blood Cost:</div>
+        <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">Blood Cost:</div>
       </div>
       <div className="flex w-3/4 gap-1">
         <div className="w-1/2">

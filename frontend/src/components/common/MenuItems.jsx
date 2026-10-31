@@ -6,8 +6,8 @@ const MenuItems = ({ divided, anchor = { to: "bottom end", gap: "2px" }, classNa
     <Menu.Items
       anchor={anchor}
       className={twMerge(
-        "z-20 rounded-sm border border-borderThird bg-bgButton py-1 dark:border-borderThirdDark dark:bg-bgButtonDark",
-        divided && "divide-y divide-borderPrimary dark:divide-borderPrimaryDark",
+        "border-borderThird bg-bgButton dark:border-borderThirdDark dark:bg-bgButtonDark z-20 rounded-sm border py-1",
+        divided && "divide-borderPrimary dark:divide-borderPrimaryDark divide-y",
         className,
       )}
     >

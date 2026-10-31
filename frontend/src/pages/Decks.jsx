@@ -138,7 +138,7 @@ const Decks = () => {
         [DESCRIPTION]: searchParams.get(DESCRIPTION) ?? "",
         [CRYPT]: crypt,
         [LIBRARY]: library,
-        [TAGS]: []
+        [TAGS]: [],
       });
     }
   }, [hash, cryptCardBase, libraryCardBase]);
@@ -226,7 +226,7 @@ const Decks = () => {
           )}
         </FlexGapped>
         <div className="min-w-[175px] max-lg:hidden">
-          <div className="sticky z-20 w-full bg-bgPrimary lg:top-10 dark:bg-bgPrimaryDark">
+          <div className="bg-bgPrimary dark:bg-bgPrimaryDark sticky z-20 w-full lg:top-10">
             <DeckButtons
               deck={deck}
               setQrUrl={setQrUrl}
@@ -251,7 +251,7 @@ const Decks = () => {
       {username && Object.keys(decks).length === 0 && !deck && (
         <div className="flex min-h-[70vh] place-items-center justify-center max-sm:px-2">
           <div className="flex flex-col items-center justify-center gap-6 sm:basis-1/2">
-            <div className="flex flex-col gap-4 text-balance text-center text-lg">
+            <div className="flex flex-col gap-4 text-center text-lg text-balance">
               You do not have any decks in your collection yet Start by creating new one, import
               from Lackey / Amaranth / Text or browse official preconstructed decks
             </div>

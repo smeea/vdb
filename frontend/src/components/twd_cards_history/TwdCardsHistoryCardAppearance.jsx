@@ -27,7 +27,7 @@ const TwdCardsHistoryCardAppearance = ({ card, byPlayer }) => {
       <div
         className={twMerge(
           "flex min-w-[60px] items-center justify-center max-sm:hidden",
-          !card[DECKID] && "font-bold text-fgSecondary dark:text-fgSecondaryDark",
+          !card[DECKID] && "text-fgSecondary dark:text-fgSecondaryDark font-bold",
         )}
       >
         {card[RELEASE_DATE].slice(0, 4)}
@@ -38,14 +38,14 @@ const TwdCardsHistoryCardAppearance = ({ card, byPlayer }) => {
       <div
         className={twMerge(
           "flex min-w-[25px] items-center justify-center sm:min-w-[60px]",
-          !card[DECKID] && "font-bold text-fgSecondary dark:text-fgSecondaryDark",
+          !card[DECKID] && "text-fgSecondary dark:text-fgSecondaryDark font-bold",
         )}
       >
         {yearsToWin}
       </div>
       <div className="flex min-w-[90px] items-center justify-between sm:min-w-[250px]">
         <div
-          className="inline text-fgSecondary hover:underline max-sm:text-sm dark:text-fgSecondaryDark"
+          className="text-fgSecondary dark:text-fgSecondaryDark inline hover:underline max-sm:text-sm"
           onClick={handleClick}
         >
           {card[PLAYER]}

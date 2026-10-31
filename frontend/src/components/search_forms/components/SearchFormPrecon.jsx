@@ -85,7 +85,7 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
                   </div>
                   {fullName}
                 </div>
-                <div className="whitespace-nowrap text-sm">
+                <div className="text-sm whitespace-nowrap">
                   {set === PLAYTEST ? "PLAYTEST" : set} {year && `'${year}`}
                 </div>
               </div>
@@ -110,7 +110,7 @@ const SearchFormPrecon = ({ value, searchForm, onChange, onChangeOptions }) => {
     <div className="flex flex-col gap-1">
       <div className="flex items-center">
         <div className="flex w-1/4 items-center justify-between">
-          <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Precon:</div>
+          <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">Precon:</div>
           {value.value[0] !== ANY && (
             <div className="flex justify-end gap-1 px-1">
               {value.value.length === 1 ? (

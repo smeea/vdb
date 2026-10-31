@@ -1,14 +1,14 @@
 import PencilSquare from "@icons/pencil-square.svg?react";
 import {
+  DeckTags,
   Hr,
   PlaytestReportForm,
   ResultLayoutTextArtist,
   ResultLayoutTextInventory,
   ResultLayoutTextRulings,
   ResultLayoutTextSets,
-  DeckTags,
 } from "@/components";
-import { TAGS, V5, ARTIST, ID, PLAYTEST_OLD, RULINGS } from "@/constants";
+import { ARTIST, ID, PLAYTEST_OLD, RULINGS, TAGS, V5 } from "@/constants";
 import { useApp } from "@/context";
 import { getIsPlaytest } from "@/utils";
 
@@ -19,12 +19,12 @@ const ResultLayoutTextCommon = ({ handleClose, card, inPopover, setIsHotkeysDisa
   return (
     <div className="flex flex-col gap-3">
       <div className="flex gap-2">
-        <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Sets:</div>
+        <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">Sets:</div>
         <ResultLayoutTextSets card={card} />
       </div>
       {Object.keys(card[RULINGS]).length > 0 && (
         <div className="flex flex-col gap-1">
-          <div className="flex items-center justify-between gap-2 text-fgSecondary dark:text-fgSecondaryDark">
+          <div className="text-fgSecondary dark:text-fgSecondaryDark flex items-center justify-between gap-2">
             <div className="font-bold">Rulings:</div>
             <a
               target="_blank"
@@ -37,9 +37,9 @@ const ResultLayoutTextCommon = ({ handleClose, card, inPopover, setIsHotkeysDisa
           <ResultLayoutTextRulings rulings={card[RULINGS]} />
         </div>
       )}
-      <div className="flex gap-2 justify-between">
+      <div className="flex justify-between gap-2">
         <div className="flex gap-2">
-          <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Artist:</div>
+          <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">Artist:</div>
           <div className="flex flex-wrap gap-x-2.5 gap-y-0.5">
             <ResultLayoutTextArtist
               handleClose={handleClose}
@@ -50,7 +50,7 @@ const ResultLayoutTextCommon = ({ handleClose, card, inPopover, setIsHotkeysDisa
         </div>
         {card[V5] && (
           <div className="flex items-end">
-            <div className="font-bold text-sm px-1.5 py-1 bg-bgButton dark:bg-bgButtonDark rounded-sm max-h-[26px]">
+            <div className="bg-bgButton dark:bg-bgButtonDark max-h-[26px] rounded-sm px-1.5 py-1 text-sm font-bold">
               V5
             </div>
           </div>
@@ -60,7 +60,7 @@ const ResultLayoutTextCommon = ({ handleClose, card, inPopover, setIsHotkeysDisa
         <>
           <Hr />
           <div className="flex flex-col gap-1">
-            <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Inventory:</div>
+            <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">Inventory:</div>
             <ResultLayoutTextInventory card={card} setIsHotkeysDisabled={setIsHotkeysDisabled} />
           </div>
         </>

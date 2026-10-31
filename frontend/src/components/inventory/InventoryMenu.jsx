@@ -40,7 +40,7 @@ const InventoryMenu = ({
       />
       {!inShared && <InventoryFreezeButton isFrozen={isFrozen} />}
       {!inShared && <InventoryShowSelect category={category} setCategory={setCategory} />}
-      <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
+      <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">
         <Checkbox
           label="Only with Notes"
           checked={onlyNotes}

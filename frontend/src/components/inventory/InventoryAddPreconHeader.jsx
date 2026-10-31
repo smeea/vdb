@@ -61,7 +61,7 @@ const InventoryAddPreconHeader = ({
               title="Precon Quantity"
               overlay={<TooltipText />}
             >
-              <div className="flex justify-center text-fgThird dark:text-fgThirdDark">[?]</div>
+              <div className="text-fgThird dark:text-fgThirdDark flex justify-center">[?]</div>
             </ConditionalTooltipOrModal>
             <DeckSortButton sortMethod={sortMethod} onChange={setSortMethod} />
           </div>

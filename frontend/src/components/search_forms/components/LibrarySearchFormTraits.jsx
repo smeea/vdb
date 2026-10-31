@@ -38,7 +38,7 @@ const LibrarySearchFormTraits = ({ value, onChange }) => {
 
   return (
     <div className="flex flex-col gap-1">
-      <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Traits:</div>
+      <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">Traits:</div>
       <div className="flex">
         <div className="flex basis-5/9 flex-col gap-0.5">
           {[

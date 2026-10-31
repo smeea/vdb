@@ -90,7 +90,7 @@ const DeckCopyUrlButton = ({ deck, noText, setQrUrl, className }) => {
         )}
         {(deck[DECKID].length === 9 || deck[DECKID] === DECK) && (
           <div>
-            <div className="px-3 pt-2 text-midGray text-sm dark:text-midGrayDark">
+            <div className="text-midGray dark:text-midGrayDark px-3 pt-2 text-sm">
               Non-modifiable:
             </div>
             <MenuItem

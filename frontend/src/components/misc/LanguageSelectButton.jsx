@@ -15,7 +15,7 @@ const LanguageSelectButton = () => {
       </PopoverButton>
       <PopoverPanel anchor={{ to: "bottom", gap: "15px", padding: "4px" }} className="z-50">
         {({ close }) => (
-          <div className="rounded-sm border border-borderPrimary bg-bgPrimary p-3 dark:border-borderPrimaryDark dark:bg-bgPrimaryDark">
+          <div className="border-borderPrimary bg-bgPrimary dark:border-borderPrimaryDark dark:bg-bgPrimaryDark rounded-sm border p-3">
             <LanguageMenu handleClose={close} />
           </div>
         )}

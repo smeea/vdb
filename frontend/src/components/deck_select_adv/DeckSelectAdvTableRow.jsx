@@ -138,7 +138,7 @@ const DeckSelectAdvTableRow = ({
       >
         <div className="flex w-full items-center justify-between gap-1">
           <div
-            className="flex justify-between gap-2 text-fgName dark:text-fgNameDark"
+            className="text-fgName dark:text-fgNameDark flex justify-between gap-2"
             title={deck[NAME]}
           >
             <div
@@ -195,7 +195,7 @@ const DeckSelectAdvTableRow = ({
         </td>
       )}
       <td
-        className="min-w-[100px] cursor-pointer whitespace-nowrap text-center max-md:hidden sm:min-w-[105px]"
+        className="min-w-[100px] cursor-pointer text-center whitespace-nowrap max-md:hidden sm:min-w-[105px]"
         onClick={handleClick}
       >
         {format(deck[TIMESTAMP], "yyyy-MM-dd")}

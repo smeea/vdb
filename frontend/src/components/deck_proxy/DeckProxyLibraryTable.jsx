@@ -11,7 +11,7 @@ const DeckProxyLibraryTable = ({
   handleSetSelector,
 }) => {
   return (
-    <table className="w-full border-bgSecondary sm:border dark:border-bgSecondaryDark">
+    <table className="border-bgSecondary dark:border-bgSecondaryDark w-full sm:border">
       <tbody>
         {cards.map((card) => {
           return (

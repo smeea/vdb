@@ -58,7 +58,7 @@ const InventoryAddDeckRow = ({ deck, allTagsOptions }) => {
       </td>
       <td className="max-sm:w-full sm:min-w-[250px] lg:min-w-[400px]">
         <div
-          className="flex justify-between truncate text-fgName dark:text-fgNameDark"
+          className="text-fgName dark:text-fgNameDark flex justify-between truncate"
           title={deck[NAME]}
         >
           {deck[NAME]}
@@ -76,7 +76,7 @@ const InventoryAddDeckRow = ({ deck, allTagsOptions }) => {
           </ConditionalTooltip>
         </div>
       </td>
-      <td className="min-w-[100px] whitespace-nowrap text-center max-sm:hidden">
+      <td className="min-w-[100px] text-center whitespace-nowrap max-sm:hidden">
         {format(deck[TIMESTAMP], "yyyy-MM-dd")}
       </td>
       <td className="w-full px-1 max-sm:hidden">

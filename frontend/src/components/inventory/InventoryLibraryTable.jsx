@@ -53,7 +53,7 @@ const InventoryLibraryTable = ({
   return (
     <>
       {compact ? (
-        <div className="flex h-[45px] border border-bgSecondary bg-bgPrimary dark:border-bgSecondaryDark dark:bg-bgPrimaryDark">
+        <div className="border-bgSecondary bg-bgPrimary dark:border-bgSecondaryDark dark:bg-bgPrimaryDark flex h-[45px] border">
           {cardRows[0]}
         </div>
       ) : (
@@ -69,7 +69,7 @@ const InventoryLibraryTable = ({
           }
         >
           <List
-            className="border-bgSecondary sm:border dark:border-bgSecondaryDark"
+            className="border-bgSecondary dark:border-bgSecondaryDark sm:border"
             rowComponent={WindowRows}
             rowCount={cardRows.length}
             rowHeight={45}

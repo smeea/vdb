@@ -104,8 +104,8 @@ const PlaytestManage = () => {
             text="Back"
           />
         </div>
-        <table className="w-full border-bgSecondary sm:border dark:border-bgSecondaryDark">
-          <thead className="h-9 bg-bgSecondary text-fgSecondary dark:bg-bgSecondaryDark dark:text-fgPrimaryDark">
+        <table className="border-bgSecondary dark:border-bgSecondaryDark w-full sm:border">
+          <thead className="bg-bgSecondary text-fgSecondary dark:bg-bgSecondaryDark dark:text-fgPrimaryDark h-9">
             <tr>
               <th className="text-center font-bold sm:w-[320px]">Username</th>
               <th className="text-center sm:w-[88px]">

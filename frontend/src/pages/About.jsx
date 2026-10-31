@@ -10,7 +10,7 @@ import lastChange from "@/LAST_CHANGE.json";
 const ContactLi = ({ icon, children }) => {
   return (
     <li className="flex gap-2.5 px-0.5">
-      <div className="flex items-center text-fgThird dark:text-fgThirdDark">{icon}</div>
+      <div className="text-fgThird dark:text-fgThirdDark flex items-center">{icon}</div>
       {children}
     </li>
   );
@@ -87,7 +87,7 @@ const About = () => {
             Card text based on <a href="https:www.vekn.net/card-lists">VEKN official card list</a>
           </div>
           <div className="flex flex-col gap-1.5 py-2">
-            <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
+            <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">
               Last update [{lastChange.version}]:
             </div>
             <ul className="flex flex-col gap-1.5">
@@ -219,7 +219,7 @@ const About = () => {
               }
             >
               <div className="flex gap-0.5">
-                [<div className="flex text-fgThird dark:text-fgThirdDark">MacOS/iOS warning</div>]
+                [<div className="text-fgThird dark:text-fgThirdDark flex">MacOS/iOS warning</div>]
               </div>
             </ConditionalTooltipOrModal>
           </div>

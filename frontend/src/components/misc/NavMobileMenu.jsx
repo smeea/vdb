@@ -49,7 +49,7 @@ const NavMobileMenu = () => {
       </PopoverButton>
       <PopoverPanel anchor={{ to: "top", gap: "9px", padding: "4px" }} className="z-50">
         {({ close }) => (
-          <div className="flex flex-col rounded-lg border border-borderPrimary bg-bgPrimary text-fgPrimary text-lg dark:border-borderPrimaryDark dark:bg-bgPrimaryDark dark:text-fgPrimaryDark">
+          <div className="border-borderPrimary bg-bgPrimary text-fgPrimary dark:border-borderPrimaryDark dark:bg-bgPrimaryDark dark:text-fgPrimaryDark flex flex-col rounded-lg border text-lg">
             <LinkItem
               target="/account"
               text={username ? "Account" : "Login"}

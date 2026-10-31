@@ -8,7 +8,7 @@ const ResultLegalIcon = ({ value, title, type = DEFAULT, className }) => {
   const titleOptions = {
     [PLAYTEST]: "Playtest",
     [PRERELEASE]: `Not legal until ${value}`,
-    [BANNED]: `Banned${ value ? ` in ${value}` : ''}`,
+    [BANNED]: `Banned${value ? ` in ${value}` : ""}`,
     [DEFAULT]: "",
   };
 
@@ -26,7 +26,7 @@ const ResultLegalIcon = ({ value, title, type = DEFAULT, className }) => {
   return (
     <div
       className={twMerge(
-        "inline-flex items-center whitespace-nowrap text-fgRed dark:text-fgRedDark",
+        "text-fgRed dark:text-fgRedDark inline-flex items-center whitespace-nowrap",
         className,
       )}
       title={title ?? titleOptions[type]}

@@ -35,7 +35,7 @@ const TwdResultCryptTableRow = ({ card, handleClick, shouldShowModal }) => {
 
   return (
     <Tr key={card.c[ID]}>
-      <td className="min-w-[28px] border-bgSecondary border-r bg-blue/5 sm:min-w-[35px] dark:border-bgSecondaryDark">
+      <td className="border-bgSecondary bg-blue/5 dark:border-bgSecondaryDark min-w-[28px] border-r sm:min-w-[35px]">
         {inventoryMode ? (
           <ConditionalTooltip overlay={<UsedPopover cardid={card.c[ID]} />} disabled={isMobile}>
             <div className={twMerge("mx-1 flex justify-center text-lg", colorStyle)}>{card.q}</div>

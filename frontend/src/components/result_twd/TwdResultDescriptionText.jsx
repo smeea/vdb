@@ -47,7 +47,7 @@ const TwdResultDescriptionText = ({ deck }) => {
             title={isMobile ? <GeoAltFill /> : "Place:"}
           >
             <div
-              className="text-fgSecondary hover:underline dark:text-fgSecondaryDark"
+              className="text-fgSecondary dark:text-fgSecondaryDark hover:underline"
               onClick={() => handleClick(LOCATION, deck[LOCATION])}
             >
               {deck[LOCATION]}
@@ -58,7 +58,7 @@ const TwdResultDescriptionText = ({ deck }) => {
             title={isMobile ? <PersonFill /> : "Player:"}
           >
             <div
-              className="text-fgSecondary hover:underline dark:text-fgSecondaryDark"
+              className="text-fgSecondary dark:text-fgSecondaryDark hover:underline"
               onClick={() => handleClick(AUTHOR, deck[AUTHOR])}
             >
               {deck[AUTHOR]}

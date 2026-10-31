@@ -36,7 +36,7 @@ const InventoryAddPreconRow = ({ deck }) => {
       </td>
       <td className="max-sm:w-full">
         <div
-          className="flex justify-between text-fgName text-overflow sm:whitespace-nowrap dark:text-fgNameDark"
+          className="text-fgName text-overflow dark:text-fgNameDark flex justify-between sm:whitespace-nowrap"
           title={deck[NAME]}
         >
           {deck[NAME]}
@@ -49,7 +49,7 @@ const InventoryAddPreconRow = ({ deck }) => {
           </ConditionalTooltip>
         </div>
       </td>
-      <td className="w-full text-fgThird dark:text-fgThirdDark">
+      <td className="text-fgThird dark:text-fgThirdDark w-full">
         {isMobile ? (
           <>
             <div>{setsAndPrecons[set][NAME]}</div>

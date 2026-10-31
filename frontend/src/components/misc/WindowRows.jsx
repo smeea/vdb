@@ -6,7 +6,7 @@ const WindowRows = ({ index, style, value }) => {
       style={style}
       className={twMerge(
         index % 2 ? "bg-bgThird dark:bg-bgThirdDark" : "bg-bgPrimary dark:bg-bgPrimaryDark",
-        "flex border-bgSecondary border-b dark:border-bgSecondaryDark",
+        "border-bgSecondary dark:border-bgSecondaryDark flex border-b",
       )}
     >
       {value[index]}

@@ -50,7 +50,7 @@ const TwdSearchFormLocation = ({ value, form }) => {
     <div className="flex flex-col gap-2">
       <div className="flex items-center">
         <div className="w-1/4">
-          <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Location:</div>
+          <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">Location:</div>
         </div>
         <div className="w-3/4">
           <Select

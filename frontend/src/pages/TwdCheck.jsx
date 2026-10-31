@@ -7,7 +7,7 @@ const TwdCheck = () => {
 
   return (
     <div className="search-container mx-auto">
-      <div className="flex w-9/12 justify-center font-bold text-fgSecondary text-lg dark:text-fgSecondaryDark">
+      <div className="text-fgSecondary dark:text-fgSecondaryDark flex w-9/12 justify-center text-lg font-bold">
         Check TWD {deckData?.[ID] ? ` - Event #${deckData[ID]}` : ""}
       </div>
       <div className="flex justify-center gap-2">

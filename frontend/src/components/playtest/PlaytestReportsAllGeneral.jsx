@@ -7,7 +7,7 @@ const PlaytestReportsAllGeneral = ({ reports }) => {
 
   return (
     <FlexGapped className="max-sm:flex-col print:break-after-page print:p-8">
-      <div className="flex font-bold text-fgSecondary sm:min-w-[320px] dark:text-fgSecondaryDark print:dark:text-fgSecondary">
+      <div className="text-fgSecondary dark:text-fgSecondaryDark print:dark:text-fgSecondary flex font-bold sm:min-w-[320px]">
         General Opinions
       </div>
       <div className="flex basis-full flex-col gap-4">
@@ -15,7 +15,7 @@ const PlaytestReportsAllGeneral = ({ reports }) => {
           className={twMerge(
             "flex print:hidden",
             isPlaytestAdmin &&
-              "rounded-md border-[3px] border-fgSecondary border-dashed p-3 dark:border-fgSecondaryDark",
+              "border-fgSecondary dark:border-fgSecondaryDark rounded-md border-[3px] border-dashed p-3",
           )}
         >
           <PlaytestReportFormGeneral />
@@ -36,7 +36,7 @@ const PlaytestReportsAllGeneral = ({ reports }) => {
                 >
                   <div className="flex flex-col gap-3">
                     {showPlaytestNames && (
-                      <div className="flex w-full items-center text-fgName dark:text-fgNameDark print:dark:text-fgName">
+                      <div className="text-fgName dark:text-fgNameDark print:dark:text-fgName flex w-full items-center">
                         &lt;{name}&gt;
                       </div>
                     )}

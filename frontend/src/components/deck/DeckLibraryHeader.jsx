@@ -69,7 +69,7 @@ const DeckLibraryHeader = ({
                     <div className="flex gap-1">
                       <Warning type={LIMITED} />
                       <div
-                        className="flex font-normal text-fgRed dark:text-fgRedDark"
+                        className="text-fgRed dark:text-fgRedDark flex font-normal"
                         title="Restricted Cards"
                       >
                         [{Math.round((hasLimited / libraryTotal) * 100)}%]
@@ -87,11 +87,11 @@ const DeckLibraryHeader = ({
                   <b>{bloodTotalDiff ?? bloodTotal}</b>
                   {showInfo && !bloodTotalDiff && libraryTotal < 90 && (
                     <div
-                      className="flex items-end text-midGray dark:text-midGrayDark"
+                      className="text-midGray dark:text-midGrayDark flex items-end"
                       title="Rescaled for 90 cards library"
                     >
                       ({rescaledBloodTotal}
-                      <div className="font-normal text-2xs">90</div>)
+                      <div className="text-2xs font-normal">90</div>)
                     </div>
                   )}
                 </div>
@@ -100,11 +100,11 @@ const DeckLibraryHeader = ({
                   <b>{poolTotalDiff ?? poolTotal}</b>
                   {showInfo && !poolTotalDiff && libraryTotal < 90 && (
                     <div
-                      className="flex items-end text-midGray dark:text-midGrayDark"
+                      className="text-midGray dark:text-midGrayDark flex items-end"
                       title="Rescaled for 90 cards library"
                     >
                       ({rescaledPoolTotal}
-                      <div className="font-normal text-2xs">90</div>)
+                      <div className="text-2xs font-normal">90</div>)
                     </div>
                   )}
                 </div>

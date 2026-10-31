@@ -49,7 +49,7 @@ const TagCheckbox = ({ i, value, onChange }) => {
 const TwdSearchFormTags = ({ value, onChange }) => {
   return (
     <div className="flex flex-col gap-1">
-      <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">Tags:</div>
+      <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">Tags:</div>
       <div className="flex gap-4">
         <div className="flex basis-1/3 flex-col gap-0.5">
           {[

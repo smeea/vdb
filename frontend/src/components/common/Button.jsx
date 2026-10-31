@@ -39,7 +39,7 @@ const Button = ({
         mainStyle[variant],
         !noPadding && "px-3 py-1.5",
         !noOutline &&
-          "outline-bgCheckboxSelected focus:outline dark:outline-bgCheckboxSelectedDark",
+          "outline-bgCheckboxSelected dark:outline-bgCheckboxSelectedDark focus:outline",
         roundedStyle,
         borderStyle,
         className,

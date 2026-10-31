@@ -30,7 +30,7 @@ const PdaResultDescriptionText = ({ deck }) => {
             title={isMobile ? <PersonFill /> : "Author:"}
           >
             <div
-              className="text-fgSecondary hover:underline dark:text-fgSecondaryDark"
+              className="text-fgSecondary dark:text-fgSecondaryDark hover:underline"
               onClick={() => handleClick(deck[AUTHOR])}
             >
               {deck[AUTHOR]}

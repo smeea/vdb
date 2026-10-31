@@ -55,7 +55,7 @@ const ReviewCrypt = ({ cardChange, deckFrom, cardsTo }) => {
     <FlexGapped
       className={twMerge(
         "flex-col",
-        !isMobile && "sticky top-10 bg-bgPrimary max-md:top-0 dark:bg-bgPrimaryDark",
+        !isMobile && "bg-bgPrimary dark:bg-bgPrimaryDark sticky top-10 max-md:top-0",
       )}
     >
       <div>

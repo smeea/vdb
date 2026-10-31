@@ -31,7 +31,7 @@ const DeckImportButton = ({
             <MenuItemDivider />
           </>
         )}
-        <div className="flex px-3 py-1 text-midGray text-sm dark:text-midGrayDark">
+        <div className="text-midGray dark:text-midGrayDark flex px-3 py-1 text-sm">
           Anonymous (non-editable), useful only to share URL:
         </div>
         <MenuItem onClick={() => handleFileInputClick(true)}>Import w/o Acc. from File</MenuItem>

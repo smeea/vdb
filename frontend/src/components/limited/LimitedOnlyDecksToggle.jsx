@@ -19,7 +19,7 @@ const LimitedOnlyDecksToggle = () => {
       <div className="flex items-center gap-2">
         <div>Only show Limited decks in Deck Selector</div>
         <ConditionalTooltipOrModal title="Only Show Limited Decks" overlay={<TooltipText />}>
-          <div className="font-bold text-fgThird dark:text-fgThirdDark">[?]</div>
+          <div className="text-fgThird dark:text-fgThirdDark font-bold">[?]</div>
         </ConditionalTooltipOrModal>
       </div>
     </Toggle>

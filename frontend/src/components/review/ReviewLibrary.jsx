@@ -52,7 +52,7 @@ const ReviewLibrary = ({ cardChange, deckFrom, cardsTo }) => {
   return (
     <FlexGapped className="flex-col">
       <div className="flex flex-col gap-2">
-        <div className="max-md:top-0 sm:sticky md:top-10 md:z-10 md:bg-bgPrimary md:dark:bg-bgPrimaryDark">
+        <div className="md:bg-bgPrimary md:dark:bg-bgPrimaryDark max-md:top-0 sm:sticky md:top-10 md:z-10">
           <DeckLibraryHeader
             deck={deckFrom}
             showInfo={showInfo}
@@ -99,7 +99,7 @@ const ReviewLibrary = ({ cardChange, deckFrom, cardsTo }) => {
       </div>
       {Object.keys(librarySide).length > 0 && (
         <div className="flex flex-col gap-2 opacity-60 dark:opacity-50">
-          <div className="flex h-[42px] items-center bg-bgSecondary p-2 font-bold dark:bg-bgSecondaryDark">
+          <div className="bg-bgSecondary dark:bg-bgSecondaryDark flex h-[42px] items-center p-2 font-bold">
             Side Library
           </div>
           <div className="flex flex-col gap-2">

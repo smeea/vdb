@@ -48,7 +48,7 @@ const InventoryAddPreconModal = ({ handleClose }) => {
           setFilter={setFilter}
           handleChangeSetFilter={handleChangeSetFilter}
         />
-        <tbody className="border-bgSecondary sm:border-x dark:border-bgSecondaryDark">
+        <tbody className="border-bgSecondary dark:border-bgSecondaryDark sm:border-x">
           {sortedDecks.map((deck) => {
             return <InventoryAddPreconRow key={deck[DECKID]} deck={deck} />;
           })}

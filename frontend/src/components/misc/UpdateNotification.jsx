@@ -39,7 +39,7 @@ const UpdateNotification = () => {
         >
           <div className="flex flex-col gap-4 sm:gap-5">
             <div className="flex flex-col gap-1.5">
-              <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">
+              <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">
                 Changes [{update.version}]:
               </div>
               <ul className="flex flex-col gap-1.5">

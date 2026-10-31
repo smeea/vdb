@@ -48,7 +48,7 @@ const TwdResultLibraryKeyCardsTable = ({ library, withHeader }) => {
       <div className="h-[30px] px-1 font-bold">
         {withHeader ? (
           <div className="flex items-center justify-between gap-1.5">
-            <div className="flex basis-full items-center justify-between gap-1.5text-fgSecondary dark:text-whiteDark">
+            <div className="gap-1.5text-fgSecondary dark:text-whiteDark flex basis-full items-center justify-between">
               <div className="whitespace-nowrap">
                 {isMobile ? "Lib" : "Library"} [{libraryTotal}]
               </div>
@@ -92,7 +92,7 @@ const TwdResultLibraryKeyCardsTable = ({ library, withHeader }) => {
       {showFullLibrary ? (
         <DeckLibrary deck={{ [LIBRARY]: library }} handleClick={handleClick} inTwd />
       ) : (
-        <table className="border-bgSecondary border-x dark:border-bgSecondaryDark">
+        <table className="border-bgSecondary dark:border-bgSecondaryDark border-x">
           <tbody>
             {keyCards.map((card) => (
               <TwdResultLibraryKeyCardsTableRow

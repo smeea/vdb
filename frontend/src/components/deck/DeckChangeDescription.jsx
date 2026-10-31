@@ -11,7 +11,7 @@ const DeckDescription = ({ deck, isFolded, setIsFolded }) => {
   const [value, setValue] = useState(deck[DESCRIPTION] || "");
   const isEditable = getIsEditable(deck);
 
-   useEffect(() => {
+  useEffect(() => {
     if (value !== deck[DESCRIPTION]) setValue(deck[DESCRIPTION] ?? "");
   }, [deck[DESCRIPTION]]);
 

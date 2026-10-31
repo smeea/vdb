@@ -57,7 +57,7 @@ const DiffSelectDeck = ({ decks, deck, deckidFrom, deckidTo, target, title }) =>
 
   return (
     <div className="flex flex-col gap-1 sm:gap-2">
-      <div className="font-bold text-fgSecondary dark:text-fgSecondaryDark">{title}</div>
+      <div className="text-fgSecondary dark:text-fgSecondaryDark font-bold">{title}</div>
       {source === `${target}-${URL}` ? (
         <form name={target} onSubmit={handleUrlSubmit} className="min-w-[270px]">
           <div className="flex">

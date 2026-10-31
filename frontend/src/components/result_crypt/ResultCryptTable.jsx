@@ -25,7 +25,7 @@ const ResultCryptTable = ({ resultCards, inRecommendation, inLimited }) => {
 
   return (
     <>
-      <table className="w-full border-bgSecondary sm:border dark:border-bgSecondaryDark">
+      <table className="border-bgSecondary dark:border-bgSecondaryDark w-full sm:border">
         <tbody>
           {resultCards.map((card) => {
             return (

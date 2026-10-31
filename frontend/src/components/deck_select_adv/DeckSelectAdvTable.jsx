@@ -131,7 +131,7 @@ const DeckSelectAdvTable = ({
 
   return (
     <div className="flex flex-col gap-4">
-      <table className="border-bgSecondary sm:border dark:border-bgSecondaryDark">
+      <table className="border-bgSecondary dark:border-bgSecondaryDark sm:border">
         <DeckSelectAdvTableHeader
           allTagsOptions={allTagsOptions}
           clanOptions={clanOptions}

@@ -25,7 +25,7 @@ const AccountLegacyToggle = () => {
       <div className="flex items-center gap-2">
         <div>Legacy Images</div>
         <ConditionalTooltipOrModal title="Legacy Images" overlay={<TooltipText />}>
-          <div className="font-bold text-fgThird dark:text-fgThirdDark">[?]</div>
+          <div className="text-fgThird dark:text-fgThirdDark font-bold">[?]</div>
         </ConditionalTooltipOrModal>
       </div>
     </Toggle>

@@ -14,7 +14,7 @@ const Report = ({ id, text, score, isPlayed }) => {
       <div className="flex h-6 w-full items-center justify-between">
         <div
           title={id}
-          className="text-fgName dark:text-fgNameDark print:max-w-[150px] print:overflow-hidden print:text-ellipsis print:dark:text-fgName"
+          className="text-fgName dark:text-fgNameDark print:dark:text-fgName print:max-w-[150px] print:overflow-hidden print:text-ellipsis"
         >
           {showPlaytestNames && (
             <>

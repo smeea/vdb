@@ -61,7 +61,7 @@ const InventoryLibrary = ({
                 target={CLAN}
               />
             </div>
-            <div className="flex justify-end font-bold text-midGray dark:text-midGrayDark">
+            <div className="text-midGray dark:text-midGrayDark flex justify-end font-bold">
               {missingTotal ? (
                 <>
                   {missingTotal} ({Object.values(missing).length} uniq) miss

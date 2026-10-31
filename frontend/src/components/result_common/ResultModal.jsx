@@ -70,10 +70,10 @@ const ResultModal = ({ card, handleModalCardChange, handleClose }) => {
           )}
         </div>
         <div className="flex max-sm:hidden">
-          <div className="cursor-pointer border-bgSecondaryDark border-y border-l bg-black dark:border-bgSecondaryDark">
+          <div className="border-bgSecondaryDark dark:border-bgSecondaryDark cursor-pointer border-y border-l bg-black">
             <CardImage card={activeCard} onClick={handleClose} />
           </div>
-          <div className="w-full rounded-r border-bgSecondary border-y border-r p-5 dark:border-bgSecondaryDark">
+          <div className="border-bgSecondary dark:border-bgSecondaryDark w-full rounded-r border-y border-r p-5">
             <ResultLayoutText
               card={activeCard}
               setCard={setActiveCard}
@@ -84,13 +84,13 @@ const ResultModal = ({ card, handleModalCardChange, handleClose }) => {
         </div>
         <div
           onClick={handleModalCardMinus}
-          className="max-sm:fixed absolute left-[-15px] top-1/2 -translate-1/2 text-darkGray/50 sm:text-white dark:text-midGray/50 sm:dark:text-whiteDark h-[50px] max-sm:left-[27px]"
+          className="text-darkGray/50 dark:text-midGray/50 sm:dark:text-whiteDark absolute top-1/2 left-[-15px] h-[50px] -translate-1/2 max-sm:fixed max-sm:left-[27px] sm:text-white"
         >
           <ChevronCompactLeft width="48" height="64" viewBox="4 0 12 16" />
         </div>
         <div
           onClick={handleModalCardPlus}
-          className="max-sm:fixed absolute right-[-65px] max-sm:right-[-21px] top-1/2 -translate-1/2 text-darkGray/50 sm:text-white dark:text-midGray/50 sm:dark:text-whiteDark h-[50px]"
+          className="text-darkGray/50 dark:text-midGray/50 sm:dark:text-whiteDark absolute top-1/2 right-[-65px] h-[50px] -translate-1/2 max-sm:fixed max-sm:right-[-21px] sm:text-white"
         >
           <ChevronCompactRight width="48" height="64" viewBox="0 0 12 16" />
         </div>

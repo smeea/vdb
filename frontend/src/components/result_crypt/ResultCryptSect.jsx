@@ -1,6 +1,6 @@
 const ResultCryptSect = ({ value }) => {
   return (
-    <div title={value} className="flex text-fgGreen dark:text-fgGreenDark">
+    <div title={value} className="text-fgGreen dark:text-fgGreenDark flex">
       {value.charAt(0).toUpperCase()}
     </div>
   );
