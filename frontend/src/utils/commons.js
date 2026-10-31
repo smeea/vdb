@@ -51,11 +51,11 @@ export const countTotalCost = (cardsList, type) => {
 export const getGroups = (cards) => {
   const cryptGroupMin = cards
     .filter((card) => card.c[GROUP] !== ANY)
-    .reduce((acc, card) => (card.c[GROUP] < acc ? card.c[GROUP] : acc), 10);
+    .reduce((acc, card) => Math.min(card.c[GROUP], acc), 10);
 
   const cryptGroupMax = cards
     .filter((card) => card.c[GROUP] !== ANY)
-    .reduce((acc, card) => (card.c[GROUP] > acc ? card.c[GROUP] : acc), 0);
+    .reduce((acc, card) => Math.max(card.c[GROUP], acc), 0);
 
   if (cryptGroupMax - cryptGroupMin === 1) {
     return { cryptGroups: `${cryptGroupMin}-${cryptGroupMax}` };
@@ -95,7 +95,7 @@ export const getHardTotal = (hardList) => {
 export const getSoftMax = (softList) => {
   if (!softList) return 0;
 
-  return Object.values(softList).reduce((acc, q) => (q > acc ? q : acc));
+  return Object.values(softList).reduce((acc, q) => Math.max(q, acc));
 };
 
 export const getCardsArray = (cardsList) => {

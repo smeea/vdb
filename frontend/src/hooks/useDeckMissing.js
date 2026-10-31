@@ -18,7 +18,7 @@ const getMissing = (cards, inventoryType, used, inventory) => {
 
     if (miss > 0) {
       missingCards[cardid] = { ...cards[cardid] };
-      missingCards[cardid].q = miss > q ? q : miss;
+      missingCards[cardid].q = Math.min(miss, q);
     }
   });
 

@@ -1,6 +1,5 @@
 import PencilSquare from "@icons/pencil-square.svg?react";
 import {
-  DeckTags,
   Hr,
   PlaytestReportForm,
   ResultLayoutTextArtist,
@@ -8,7 +7,7 @@ import {
   ResultLayoutTextRulings,
   ResultLayoutTextSets,
 } from "@/components";
-import { ARTIST, ID, PLAYTEST_OLD, RULINGS, TAGS, V5 } from "@/constants";
+import { ARTIST, ID, PLAYTEST_OLD, RULINGS, V5 } from "@/constants";
 import { useApp } from "@/context";
 import { getIsPlaytest } from "@/utils";
 

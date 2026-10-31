@@ -160,7 +160,7 @@ const PlaytestReportsAll = () => {
       }, Array(10).fill(0));
 
       const maxSameScore = Math.max.apply(Math, scoresDistribution);
-      return maxSameScore > acc ? maxSameScore : acc;
+      return Math.max(maxSameScore, acc);
     }, 0);
   };
 

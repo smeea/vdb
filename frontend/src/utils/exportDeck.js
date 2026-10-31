@@ -41,7 +41,7 @@ const getCryptTitle = (crypt) => {
   let cryptMin = 0;
   let cryptMax = 0;
 
-  const counter = capacityList.length >= 4 ? 4 : capacityList.length;
+  const counter = Math.min(capacityList.length, 4);
   for (let i = 0; i < counter; i++) {
     cryptMin += capacityList[i];
     cryptMax += capacityList.at(-1 - i);
