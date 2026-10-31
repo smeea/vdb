@@ -5058,7 +5058,7 @@
         "name":"Art Hole, New York, The",
         "path":"",
         "pool":1,
-        "requirement":"",
+        "requirement":"primogen,camarilla",
         "rulings":[],
         "set":{
             "V5SN":{
