@@ -6,7 +6,7 @@ import multiprocessing
 
 
 with (
-    open("../../frontend/src/assets/data/limitedV5.json", "r") as limited_v5_file,
+    open("../frontend/src/assets/data/limitedV5.json", "r") as limited_v5_file,
     open("twda.json", "r") as twda_input,
     open("rulings.json", "r") as rulings_file,
     open("vteslibmeta.csv", "r", encoding="utf-8-sig") as cardbase_meta_csv,

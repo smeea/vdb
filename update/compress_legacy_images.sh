@@ -1,6 +1,6 @@
 #!/bin/sh
 
-target_path="../../frontend/public/images/cards/legacy"
+target_path="../frontend/public/images/cards/legacy"
 
 for dir in crypt library
 do

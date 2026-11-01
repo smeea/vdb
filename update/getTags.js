@@ -52,7 +52,7 @@ import {
   UNLOCK,
   VOTE,
   VOTES_TITLE,
-} from "../../frontend/src/constants/index.js";
+} from "../frontend/src/constants/index.js";
 
 const missingTrait = (trait, card, traitsRegexMap) => {
   switch (trait) {

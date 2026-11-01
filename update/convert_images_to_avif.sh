@@ -1,9 +1,9 @@
 #!/bin/sh
 
 
-cd ../../frontend/public/images/cards/
+cd ../frontend/public/images/cards/
 
-for folder in playtest
+for folder in legacy set en-EN es-ES fr-FR pt-PT
 do
     cd "$folder"
     for image in $(find . -type f -name '*.jpg' -print)

@@ -6,9 +6,9 @@ import multiprocessing
 
 
 with (
-    open("../../frontend/src/assets/data/limitedV5.json", "r") as limited_v5_file,
-    open("../../frontend/src/assets/data/disciplinesList.json", "r") as disciplines_file,
-    open("../../frontend/src/assets/data/virtuesList.json", "r") as virtues_file,
+    open("../frontend/src/assets/data/limitedV5.json", "r") as limited_v5_file,
+    open("../frontend/src/assets/data/disciplinesList.json", "r") as disciplines_file,
+    open("../frontend/src/assets/data/virtuesList.json", "r") as virtues_file,
     open("rulings.json", "r") as rulings_file,
     open("twda.json", "r") as twda_input,
 ):

@@ -1,13 +1,12 @@
 import json
 import multiprocessing
 
-with open("cardbase_crypt.json", "r+") as crypt_file, open(
-    "cardbase_lib.json", "r+"
-) as lib_file, open(
-    "../../frontend/src/assets/data/disciplinesList.json", "r"
-) as disciplines_list, open(
-    "../../frontend/src/assets/data/virtuesList.json", "r"
-) as virtues_list:
+with (
+    open("cardbase_crypt.json", "r+") as crypt_file,
+    open("cardbase_lib.json", "r+") as lib_file,
+    open("../frontend/src/assets/data/disciplinesList.json", "r") as disciplines_list,
+    open("../frontend/src/assets/data/virtuesList.json", "r") as virtues_list,
+):
     crypt = json.load(crypt_file)
     library = json.load(lib_file)
     cards = {**crypt, **library}

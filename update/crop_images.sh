@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DIR="../../frontend/public/images/cards/en-EN/*.jpg"
+DIR="../frontend/public/images/cards/en-EN/*.jpg"
 
 for i in $DIR; do
     h=$(identify -format "%h" "$i")
