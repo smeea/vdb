@@ -65,7 +65,7 @@ with open("vtes.json", "r", encoding="utf8") as krcg_file:
     cards = []
     for card in krcg_cards:
         filename = card["url"].removeprefix(prefix)
-        if card["group"] == "ANY":
+        if card.get("group") == "ANY":
             filename = filename.replace("any.jpg", "gany.jpg")
 
         cards.append((filename, card["url"]))

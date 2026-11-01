@@ -1,5 +1,5 @@
 #!/bin/bash
-if [ -f ../backend/.env ]; then source ../../backend/.env; fi
+if [ -f ../backend/.env ]; then source ../backend/.env; fi
 
 # Check playtest files
 mkdir -p playtest/images
