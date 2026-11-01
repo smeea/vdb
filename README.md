@@ -77,20 +77,20 @@ Public instance at https://vdb.im runs from master branch without any changes us
 
 To update with new Set/Precons edit the following files:
 ```
-    vim misc/cards-update/generate_precons.py            # ADD SET/PRECONS
+    vim update/generate_precons.py            # ADD SET/PRECONS
     vim frontend/src/assets/data/setsAndPrecons.json     # ADD SET/PRECONS
 ```
 
 To update with new Playtest add resources and edit the following files:
 ```
-    cp $NEW_PRECONS misc/cards-update/playtest/precons/
-    cp $NEW_CRYPT_FILE.csv $NEW_LIB_FILE.csv misc/cards-update/playtest
-    vim misc/cards-update/generate_playtest_precons.py   # ADD PLAYTEST PRECONS
+    cp $NEW_PRECONS update/playtest/precons/
+    cp $NEW_CRYPT_FILE.csv $NEW_LIB_FILE.csv update/playtest
+    vim update/generate_playtest_precons.py   # ADD PLAYTEST PRECONS
 ```
 
 Download source files from upstream and create new resources (it will copy files where necessary):
 ```
-    cd misc/cards-update
+    cd update
     ./download_resources.sh
     ./create_resources.sh
     uv run download_card_images.py                       # ONLY ENGLISH
