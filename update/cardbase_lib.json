@@ -32217,7 +32217,7 @@
         "name":"Emboldened Councilor",
         "path":"",
         "pool":0,
-        "requirement":"",
+        "requirement":"primogen,camarilla",
         "rulings":[],
         "set":{
             "V5SN":{
