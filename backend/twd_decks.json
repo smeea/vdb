@@ -107084,6 +107084,81 @@
             ]
         }
     },
+    "13262": {
+        "author": "Norbert Flasko",
+        "cards": {
+            "100059": 1,
+            "100065": 1,
+            "100131": 2,
+            "100444": 1,
+            "100518": 8,
+            "100588": 2,
+            "100824": 1,
+            "100845": 8,
+            "100984": 1,
+            "101008": 4,
+            "101056": 6,
+            "101144": 6,
+            "101238": 2,
+            "101271": 2,
+            "101350": 1,
+            "101387": 4,
+            "101591": 1,
+            "102109": 2,
+            "102121": 7,
+            "102131": 6,
+            "102312": 4,
+            "102316": 4,
+            "102337": 5,
+            "102346": 6,
+            "200249": 1,
+            "200321": 1,
+            "200327": 1,
+            "201733": 4,
+            "201747": 1,
+            "201760": 1,
+            "201770": 1,
+            "201775": 1,
+            "201776": 1
+        },
+        "cardtypes_ratio": {
+            "action modifier": 0.34,
+            "political action": 0.2,
+            "combat": 0.07,
+            "reaction": 0.09,
+            "master": 0.2,
+            "action": 0.09
+        },
+        "clan": "Power and the Inner Voice",
+        "creation_date": "2026-04-25",
+        "deckid": "13262",
+        "description": "Unknown",
+        "event": "Irish NC 2026",
+        "link": "https://archon.vekn.net/t/13262",
+        "location": "Dublin, Ireland",
+        "name": "Life is hard",
+        "players": 17,
+        "sect": "Sabbat",
+        "traits": [
+            "star"
+        ],
+        "capacity": 8.9,
+        "disciplines": [],
+        "crypt_total": 12,
+        "library_total": 85,
+        "v5_crypt": 0.75,
+        "v5_library": 0.98,
+        "tags": {
+            "superior": [
+                "stealth",
+                "vote"
+            ],
+            "base": [
+                "accel",
+                "bleed"
+            ]
+        }
+    },
     "13267": {
         "author": "Peitsa Suominen",
         "cards": {

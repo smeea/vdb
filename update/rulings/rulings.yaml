@@ -1954,6 +1954,8 @@
   - '[vic] The opponent still unlocks if an effect continues the combat or begins a new combat. [RTR 20020501] [LSJ 20030717]'
 101200|Memory's Fading Glimpse:
   - Any cards on the target minion are burned. [SFC 19960919]
+  - When played on a merged vamprie that was banished (see {100131|Banishment}), move both copies to the bottom of your crypt
+    (advanced copy on the bottom). They are then treated as separate vampire cards once again. [LSJ 20030422]
 101201|Mental Maze:
   - Can be played if the requirement was met at the time of block, even if an older slave replaced the acting vampire since.
     [ANK 20171212]
@@ -4458,8 +4460,11 @@ G00079|Action only usable by vampire in torpor:
   - When the acting vampire leaves torpor before the action resolves (e.g. {102149|Warsaw Station}) the action immediately
     "fizzles" (cost, if any, is paid, and it is considered successful, but has no effect). [ANK 20220218]
 G00080|Action targeting vampire in torpor:
-  - If the action is unblocked when it resolves and the target is no longer in torpor, the action "fizzles" (cost, if any,
-    is paid, and it is considered successful, but has no effect). [ANK 20210124] [LSJ 20070411] [LSJ 20090514]
+  - overrides:
+      101123|Lord of Serenity: '[for] If the action is unblocked when it resolves and all targets are no longer in torpor,
+        the action "fizzles" (cost, if any, is paid, and it is considered successful, but has no effect).'
+    text: If the action is unblocked when it resolves and the target is no longer in torpor, the action "fizzles" (cost, if
+      any, is paid, and it is considered successful, but has no effect). [ANK 20210124] [LSJ 20070411] [LSJ 20090514]
 G00081|Action targeting unlocked minion:
   - If the action is unblocked when it resolves and the target is locked, the action "fizzles" (cost, if any, is paid, and
     it is considered successful, but has no effect). [ANK 20210124] [LSJ 20070411] [LSJ 20090514]

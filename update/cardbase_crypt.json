@@ -76,7 +76,7 @@
         },
         "text":"Sabbat cardinal: Aaradhya can unlock after performing a successful political action (even if the referendum failed). +1 bleed.",
         "title":"cardinal",
-        "twd":18,
+        "twd":19,
         "v5":true
     },
     "200002":{
@@ -12242,7 +12242,7 @@
         },
         "text":"Sabbat Archbishop of Montreal: Carolina is immune to damage from allies and retainers.",
         "title":"archbishop",
-        "twd":15,
+        "twd":16,
         "v5":false
     },
     "200250":{
@@ -15266,7 +15266,7 @@
         },
         "text":"Sabbat Archbishop of Pittsburgh: While you control a ready cardinal, Damian gets +1 bleed.",
         "title":"archbishop",
-        "twd":7,
+        "twd":8,
         "v5":true
     },
     "200312":{
@@ -15798,7 +15798,7 @@
         },
         "text":"Sabbat cardinal: Selina gets +1 stealth during political actions.",
         "title":"cardinal",
-        "twd":24,
+        "twd":25,
         "v5":false
     },
     "200322":{
@@ -16026,7 +16026,7 @@
         },
         "text":"Sabbat Archbishop of Paris: Vampires must burn 1 blood to cast votes and ballots against referendums called by De Sade.",
         "title":"archbishop",
-        "twd":6,
+        "twd":7,
         "v5":false
     },
     "200328":{
@@ -37027,7 +37027,7 @@
         },
         "text":"Sabbat priscus: While your predator controls more ready minions than you, you get +1 hand size.",
         "title":"priscus",
-        "twd":17,
+        "twd":18,
         "v5":true
     },
     "200781":{
@@ -56518,7 +56518,7 @@
         },
         "text":"Sabbat Archbishop of Geneva: Allies and vampires with capacity 3 or less cannot block Rexton.",
         "title":"archbishop",
-        "twd":14,
+        "twd":15,
         "v5":true
     },
     "201814":{
@@ -67103,7 +67103,7 @@
         },
         "text":"Sabbat Archbishop of Budapest: While your prey has 10 or fewer pool, \u00dcress\u00e9g gets +1 vote and +1 bleed.",
         "title":"archbishop",
-        "twd":17,
+        "twd":18,
         "v5":true
     },
     "201415":{
@@ -68064,7 +68064,7 @@
         },
         "text":"Sabbat Archbishop of Ostrava: Once each turn, after resolution of an action performed by V\u011bnceslava during which your prey burned 1 or more pool, you can gain 1 pool.",
         "title":"archbishop",
-        "twd":16,
+        "twd":17,
         "v5":true
     },
     "201435":{

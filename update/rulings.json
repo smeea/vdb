@@ -10245,12 +10245,8 @@
             }
         },
         {
-            "text":"[for] If the action is unblocked when it resolves and the target is no longer in torpor, the action \"fizzles\" (cost, if any, is paid, and it is considered successful, but has no effect).",
-            "refs":{
-                "ANK 20210124":"https://www.vekn.net/forum/rules-questions/79001-the-question-of-the-month-action-fizzles#101492",
-                "LSJ 20070411":"https://usenet.krcg.org/t/umdINigMKqs/#m1",
-                "LSJ 20090514":"https://usenet.krcg.org/t/PKQ6lQUBUOI/#m1"
-            }
+            "text":"[for] [for] If the action is unblocked when it resolves and all targets are no longer in torpor, the action \"fizzles\" (cost, if any, is paid, and it is considered successful, but has no effect).",
+            "refs":{}
         },
         {
             "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
@@ -10977,6 +10973,12 @@
             "text":"Any cards on the target minion are burned.",
             "refs":{
                 "SFC 19960919":"https://usenet.krcg.org/t/_UxVq0Lrg2U/#m3"
+            }
+        },
+        {
+            "text":"When played on a merged vamprie that was banished (see {100131|Banishment}), move both copies to the bottom of your crypt (advanced copy on the bottom). They are then treated as separate vampire cards once again.",
+            "refs":{
+                "LSJ 20030422":"https://usenet.krcg.org/t/b88kmSp3YS0/#m1"
             }
         },
         {

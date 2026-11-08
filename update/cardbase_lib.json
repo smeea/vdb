@@ -3161,7 +3161,7 @@
             }
         },
         "text":"Successful referendum means each Methuselah burns 1 pool for each minion they control.",
-        "twd":451,
+        "twd":452,
         "type":"Political Action",
         "v5":true
     },
@@ -3477,7 +3477,7 @@
             }
         },
         "text":"Successful referendum means each Methuselah burns 1 pool for each minion they control.",
-        "twd":468,
+        "twd":469,
         "type":"Political Action",
         "v5":true
     },
@@ -6553,7 +6553,7 @@
         "name":"Backroom Deal",
         "path":"",
         "pool":0,
-        "requirement":"",
+        "requirement":"primogen,camarilla",
         "rulings":[],
         "set":{
             "V5SN":{
@@ -7052,7 +7052,7 @@
             }
         },
         "text":"Choose a ready younger vampire. Successful referendum means the chosen vampire is moved to the uncontrolled region (breaking any temporary control effects); any cards and counters on the chosen vampire stay with them but are out of play as long as the chosen vampire remains uncontrolled.",
-        "twd":646,
+        "twd":647,
         "type":"Political Action",
         "v5":true
     },
@@ -19307,7 +19307,7 @@
             }
         },
         "text":"Requires a titled Sabbat vampire.\nChoose a Methuselah or a location. If this acting vampire is a cardinal or regent, you can choose both instead. Successful referendum means the chosen Methuselah burns 3 pool and the chosen location is burned.",
-        "twd":26,
+        "twd":27,
         "type":"Political Action",
         "v5":true
     },
@@ -22591,7 +22591,7 @@
             }
         },
         "text":"Unique location.\nYou can lock this card as a vampire you control announces an undirected action to give that vampire +1 stealth, even if stealth is not yet needed.",
-        "twd":311,
+        "twd":312,
         "type":"Master",
         "v5":true
     },
@@ -26059,7 +26059,7 @@
             }
         },
         "text":"Only usable if a minion is bleeding you, after blocks are declined.\n[dom] Lock this reacting vampire. Change the target of the bleed to another Methuselah other than the acting minion's controller (that Methuselah can attempt to block).\n[DOM] As above, but do not lock this vampire.",
-        "twd":1737,
+        "twd":1738,
         "type":"Reaction",
         "v5":true
     },
@@ -29069,7 +29069,7 @@
             }
         },
         "text":"[pot] or [pre] Only usable if a minion attempts to block. The blocking minion gets -1 intercept.\n[POT] or [PRE] Only usable as the action is announced. Choose a vampire. The chosen vampire cannot block this action.",
-        "twd":21,
+        "twd":22,
         "type":"Action Modifier",
         "v5":true
     },
@@ -30073,7 +30073,7 @@
             }
         },
         "text":"Unique.\nPut this card in play. Add 1 counter to this card each time you lock it. You can lock this card to get +2 hand size until the end of the turn. You can lock this card during your unlock phase to gain 1 pool if you have the Edge. You can lock this card to add 1 blood to a vampire in your uncontrolled region. Burn this card if it has 3 counters.",
-        "twd":2360,
+        "twd":2361,
         "type":"Master",
         "v5":true
     },
@@ -42353,7 +42353,7 @@
             }
         },
         "text":"Only one Giant's Blood can be played in a game.\nChoose a vampire. The chosen vampire gains enough blood to reach full capacity.",
-        "twd":1885,
+        "twd":1886,
         "type":"Master",
         "v5":true
     },
@@ -43390,7 +43390,7 @@
             }
         },
         "text":"[dom] (D) Bleed with +2 bleed.\n[DOM] +1 stealth action. Add 3 blood to a younger vampire in your uncontrolled region.",
-        "twd":1262,
+        "twd":1263,
         "type":"Action",
         "v5":true
     },
@@ -50666,7 +50666,7 @@
             }
         },
         "text":"Unique location.\n+2 transfers.",
-        "twd":1209,
+        "twd":1210,
         "type":"Master",
         "v5":true
     },
@@ -51820,7 +51820,7 @@
             }
         },
         "text":"[pot][pre] Only usable during the polling step of a political action. This vampire gets +2 votes.\n[POT][PRE] Only usable during a bleed action. +2 bleed (limited).",
-        "twd":90,
+        "twd":91,
         "type":"Action Modifier",
         "v5":true
     },
@@ -54180,7 +54180,7 @@
             }
         },
         "text":"Allocate 4 points among two or more Methuselahs. Successful referendum means each Methuselah burns 1 pool for each point allocated.",
-        "twd":876,
+        "twd":877,
         "type":"Political Action",
         "v5":true
     },
@@ -57424,12 +57424,8 @@
                 }
             },
             {
-                "text":"[for] If the action is unblocked when it resolves and the target is no longer in torpor, the action \"fizzles\" (cost, if any, is paid, and it is considered successful, but has no effect).",
-                "refs":{
-                    "ANK 20210124":"https://www.vekn.net/forum/rules-questions/79001-the-question-of-the-month-action-fizzles#101492",
-                    "LSJ 20070411":"https://usenet.krcg.org/t/umdINigMKqs/#m1",
-                    "LSJ 20090514":"https://usenet.krcg.org/t/PKQ6lQUBUOI/#m1"
-                }
+                "text":"[for] [for] If the action is unblocked when it resolves and all targets are no longer in torpor, the action \"fizzles\" (cost, if any, is paid, and it is considered successful, but has no effect).",
+                "refs":{}
             },
             {
                 "text":"When played, a multi-Disciplines card counts as requiring the Discipline(s) being used. In the hand, library, or ash heap, the card is considered to require any and/or all Disciplines listed on it.",
@@ -58662,7 +58658,7 @@
             }
         },
         "text":"[pre] Strike: combat ends.\n[PRE] As above, and unlock this vampire before combat ends.",
-        "twd":835,
+        "twd":836,
         "type":"Combat",
         "v5":true
     },
@@ -61295,6 +61291,12 @@
                 }
             },
             {
+                "text":"When played on a merged vamprie that was banished (see {100131|Banishment}), move both copies to the bottom of your crypt (advanced copy on the bottom). They are then treated as separate vampire cards once again.",
+                "refs":{
+                    "LSJ 20030422":"https://usenet.krcg.org/t/b88kmSp3YS0/#m1"
+                }
+            },
+            {
                 "text":"Crypt cards cannot be put in the library and library cards cannot be put in the crypt.",
                 "refs":{
                     "LSJ 20041201":"https://usenet.krcg.org/t/DY1OggZnMvs/#m5"
@@ -63263,7 +63265,7 @@
             }
         },
         "text":"Unique location.\n+1 hand size. Lock to give a vampire with capacity 8 or more +1 stealth.",
-        "twd":611,
+        "twd":612,
         "type":"Master",
         "v5":false
     },
@@ -65012,7 +65014,7 @@
             }
         },
         "text":"Choose one or more Methuselahs. Successful referendum means each chosen Methuselah burns 1 pool, plus 3 additional pool if they control a ready vampire with capacity 4 or less.",
-        "twd":191,
+        "twd":192,
         "type":"Political Action",
         "v5":true
     },
@@ -69293,7 +69295,7 @@
             }
         },
         "text":"Unique location. Hunting ground. Requires a ready vampire with a city title.\nDuring your unlock phase, a ready titled vampire you control can gain 2 blood. A vampire can gain blood from only one hunting ground each turn.",
-        "twd":312,
+        "twd":313,
         "type":"Master",
         "v5":true
     },
@@ -70915,7 +70917,7 @@
             }
         },
         "text":"[pre] Only usable during the polling step of a political action. This vampire gets +3 votes.\n[PRE] Allies and younger vampires get -1 intercept.",
-        "twd":265,
+        "twd":266,
         "type":"Action Modifier",
         "v5":true
     },
@@ -74689,7 +74691,7 @@
         "name":"Praxis Seizure: York",
         "path":"",
         "pool":0,
-        "requirement":"camarilla",
+        "requirement":"",
         "rulings":[],
         "set":{
             "Promo":{
@@ -80849,7 +80851,7 @@
             }
         },
         "text":"Only one Reins of Power can be played or called in a game.\nSuccessful referendum means each Methuselah can choose a ready vampire they control. Each Methuselah gains 6 pool, then burns pool equal to the capacity of their predator's chosen vampire.",
-        "twd":462,
+        "twd":463,
         "type":"Political Action",
         "v5":true
     },
@@ -81057,7 +81059,7 @@
             }
         },
         "text":"[cel] or [for] +1 stealth.\n[CEL] or [FOR] Only usable if a minion attempts to block. That attempt fails and the blocking minion cannot attempt to block this action again.",
-        "twd":18,
+        "twd":19,
         "type":"Action Modifier",
         "v5":true
     },
@@ -106504,7 +106506,7 @@
             }
         },
         "text":"[pot] or [pre] Minions must burn 1 blood or life to attempt to block this action.\n[POT] or [PRE] As above, and minions get -1 intercept.",
-        "twd":22,
+        "twd":23,
         "type":"Action Modifier",
         "v5":true
     },
@@ -107791,7 +107793,7 @@
             }
         },
         "text":"Unique location.\nYou can lock this card during the polling step of any referendum to get +3 votes.",
-        "twd":171,
+        "twd":172,
         "type":"Master",
         "v5":true
     },
@@ -108351,7 +108353,7 @@
             }
         },
         "text":"Trifle.\nPut this card on a vampire you control who has any amount of blood and move 2 to 5 blood from that vampire to your pool. Cards named /Minion Tap/ cost you +1 pool to play. Villein costs +1 pool to play on this vampire.",
-        "twd":1788,
+        "twd":1789,
         "type":"Master",
         "v5":true,
         "trifle":true
@@ -108977,7 +108979,7 @@
             }
         },
         "text":"Only usable after resolution of a political action whose referendum passed.\n[pre] This vampire gains 1 blood for each vote by which the referendum passed.\n[PRE] As above, but move up to 2 of those blood to your pool instead of this vampire.",
-        "twd":576,
+        "twd":577,
         "type":"Action Modifier",
         "v5":true
     },

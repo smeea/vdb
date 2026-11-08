@@ -497479,6 +497479,360 @@
     "score": { "round_gw": 2, "round_vp": 7.5, "finals_vp": 3.0, "win": true },
     "raven": 0
   },
+  "13262": {
+    "id": "13262",
+    "name": "Life is hard",
+    "cards": [
+      {
+        "id": 200321,
+        "printed_name": "Dark Selina",
+        "unicity_suffix": "",
+        "suffix": "G5",
+        "count": 1,
+        "kind": "Crypt",
+        "types": ["Vampire"],
+        "comment": ""
+      },
+      {
+        "id": 201733,
+        "printed_name": "Aaradhya, The Callous Tyrant",
+        "unicity_suffix": "",
+        "suffix": "G6",
+        "count": 4,
+        "kind": "Crypt",
+        "types": ["Vampire"],
+        "comment": ""
+      },
+      {
+        "id": 200327,
+        "printed_name": "De Sade",
+        "unicity_suffix": "",
+        "suffix": "G5",
+        "count": 1,
+        "kind": "Crypt",
+        "types": ["Vampire"],
+        "comment": ""
+      },
+      {
+        "id": 101387,
+        "printed_name": "Perfect Paragon",
+        "unicity_suffix": "",
+        "suffix": "",
+        "count": 4,
+        "kind": "Library",
+        "types": ["Action Modifier"],
+        "comment": ""
+      },
+      {
+        "id": 101008,
+        "printed_name": "Iron Glare",
+        "unicity_suffix": "",
+        "suffix": "",
+        "count": 4,
+        "kind": "Library",
+        "types": ["Action Modifier"],
+        "comment": ""
+      },
+      {
+        "id": 201747,
+        "printed_name": "Damian",
+        "unicity_suffix": "",
+        "suffix": "G6",
+        "count": 1,
+        "kind": "Crypt",
+        "types": ["Vampire"],
+        "comment": ""
+      },
+      {
+        "id": 101271,
+        "printed_name": "Neonate Breach",
+        "unicity_suffix": "",
+        "suffix": "",
+        "count": 2,
+        "kind": "Library",
+        "types": ["Political Action"],
+        "comment": ""
+      },
+      {
+        "id": 101144,
+        "printed_name": "Majesty",
+        "unicity_suffix": "",
+        "suffix": "",
+        "count": 6,
+        "kind": "Library",
+        "types": ["Combat"],
+        "comment": ""
+      },
+      {
+        "id": 201760,
+        "printed_name": "Khin Aye",
+        "unicity_suffix": "",
+        "suffix": "G6",
+        "count": 1,
+        "kind": "Crypt",
+        "types": ["Vampire"],
+        "comment": ""
+      },
+      {
+        "id": 100131,
+        "printed_name": "Banishment",
+        "unicity_suffix": "",
+        "suffix": "",
+        "count": 2,
+        "kind": "Library",
+        "types": ["Political Action"],
+        "comment": ""
+      },
+      {
+        "id": 100518,
+        "printed_name": "Deflection",
+        "unicity_suffix": "",
+        "suffix": "",
+        "count": 8,
+        "kind": "Library",
+        "types": ["Reaction"],
+        "comment": ""
+      },
+      {
+        "id": 102312,
+        "printed_name": "Cold War",
+        "unicity_suffix": "",
+        "suffix": "",
+        "count": 4,
+        "kind": "Library",
+        "types": ["Political Action"],
+        "comment": ""
+      },
+      {
+        "id": 201770,
+        "printed_name": "Rexton \"Savage\" Abernathy",
+        "unicity_suffix": "",
+        "suffix": "G6",
+        "count": 1,
+        "kind": "Crypt",
+        "types": ["Vampire"],
+        "comment": ""
+      },
+      {
+        "id": 102316,
+        "printed_name": "Dominant Personality",
+        "unicity_suffix": "",
+        "suffix": "",
+        "count": 4,
+        "kind": "Library",
+        "types": ["Action Modifier"],
+        "comment": ""
+      },
+      {
+        "id": 201775,
+        "printed_name": "Üresség",
+        "unicity_suffix": "",
+        "suffix": "G6",
+        "count": 1,
+        "kind": "Crypt",
+        "types": ["Vampire"],
+        "comment": ""
+      },
+      {
+        "id": 201776,
+        "printed_name": "Věnceslava, The Implacable",
+        "unicity_suffix": "",
+        "suffix": "G6",
+        "count": 1,
+        "kind": "Crypt",
+        "types": ["Vampire"],
+        "comment": ""
+      },
+      {
+        "id": 200249,
+        "printed_name": "Carolina Vález",
+        "unicity_suffix": "",
+        "suffix": "G5",
+        "count": 1,
+        "kind": "Crypt",
+        "types": ["Vampire"],
+        "comment": ""
+      },
+      {
+        "id": 101056,
+        "printed_name": "Kine Resources Contested",
+        "unicity_suffix": "",
+        "suffix": "",
+        "count": 6,
+        "kind": "Library",
+        "types": ["Political Action"],
+        "comment": ""
+      },
+      {
+        "id": 102337,
+        "printed_name": "Relentlessness",
+        "unicity_suffix": "",
+        "suffix": "",
+        "count": 5,
+        "kind": "Library",
+        "types": ["Action Modifier"],
+        "comment": ""
+      },
+      {
+        "id": 102346,
+        "printed_name": "Unthinkable Humiliation",
+        "unicity_suffix": "",
+        "suffix": "",
+        "count": 6,
+        "kind": "Library",
+        "types": ["Action Modifier"],
+        "comment": ""
+      },
+      {
+        "id": 101591,
+        "printed_name": "Reins of Power",
+        "unicity_suffix": "",
+        "suffix": "",
+        "count": 1,
+        "kind": "Library",
+        "types": ["Political Action"],
+        "comment": ""
+      },
+      {
+        "id": 100824,
+        "printed_name": "Giant's Blood",
+        "unicity_suffix": "",
+        "suffix": "",
+        "count": 1,
+        "kind": "Library",
+        "types": ["Master"],
+        "comment": ""
+      },
+      {
+        "id": 100059,
+        "printed_name": "Anarchist Uprising",
+        "unicity_suffix": "",
+        "suffix": "",
+        "count": 1,
+        "kind": "Library",
+        "types": ["Political Action"],
+        "comment": ""
+      },
+      {
+        "id": 100444,
+        "printed_name": "Creepshow Casino",
+        "unicity_suffix": "",
+        "suffix": "",
+        "count": 1,
+        "kind": "Library",
+        "types": ["Master"],
+        "comment": ""
+      },
+      {
+        "id": 102109,
+        "printed_name": "Ventrue Headquarters",
+        "unicity_suffix": "",
+        "suffix": "",
+        "count": 2,
+        "kind": "Library",
+        "types": ["Master"],
+        "comment": ""
+      },
+      {
+        "id": 100065,
+        "printed_name": "Ancilla Empowerment",
+        "unicity_suffix": "",
+        "suffix": "",
+        "count": 1,
+        "kind": "Library",
+        "types": ["Political Action"],
+        "comment": ""
+      },
+      {
+        "id": 101350,
+        "printed_name": "Papillon",
+        "unicity_suffix": "",
+        "suffix": "",
+        "count": 1,
+        "kind": "Library",
+        "types": ["Master"],
+        "comment": ""
+      },
+      {
+        "id": 102121,
+        "printed_name": "Villein",
+        "unicity_suffix": "",
+        "suffix": "",
+        "count": 7,
+        "kind": "Library",
+        "types": ["Master"],
+        "comment": ""
+      },
+      {
+        "id": 100588,
+        "printed_name": "Dreams of the Sphinx",
+        "unicity_suffix": "",
+        "suffix": "",
+        "count": 2,
+        "kind": "Library",
+        "types": ["Master"],
+        "comment": ""
+      },
+      {
+        "id": 100845,
+        "printed_name": "Govern the Unaligned",
+        "unicity_suffix": "",
+        "suffix": "",
+        "count": 8,
+        "kind": "Library",
+        "types": ["Action"],
+        "comment": ""
+      },
+      {
+        "id": 102131,
+        "printed_name": "Voter Captivation",
+        "unicity_suffix": "",
+        "suffix": "",
+        "count": 6,
+        "kind": "Library",
+        "types": ["Action Modifier"],
+        "comment": ""
+      },
+      {
+        "id": 101238,
+        "printed_name": "Monastery of Shadows",
+        "unicity_suffix": "",
+        "suffix": "",
+        "count": 2,
+        "kind": "Library",
+        "types": ["Master"],
+        "comment": ""
+      },
+      {
+        "id": 100984,
+        "printed_name": "Information Highway",
+        "unicity_suffix": "",
+        "suffix": "",
+        "count": 1,
+        "kind": "Library",
+        "types": ["Master"],
+        "comment": ""
+      }
+    ],
+    "comment": "",
+    "author": "",
+    "event": {
+      "name": "Irish NC 2026",
+      "date": "2026-04-25",
+      "end_date": null,
+      "online": false,
+      "format": "Standard",
+      "players_count": 17,
+      "rounds": 3,
+      "finals": true,
+      "place": "Dublin, Ireland",
+      "country": { "name": "Ireland", "code": "IE", "flag": "🇮🇪", "continent": "EU" },
+      "url": "https://archon.vekn.net/t/13262"
+    },
+    "player": "Norbert Flasko",
+    "score": null,
+    "raven": 0
+  },
   "13267": {
     "id": "13267",
     "name": "Kalinda loves fisting",
