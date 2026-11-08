@@ -1,9 +1,8 @@
 import json
 import multiprocessing
 import os
+import string
 import subprocess
-
-MAX_ATTEMPTS = 5
 
 
 def download_file(value):
@@ -59,16 +58,28 @@ def download_file(value):
                 os.remove(tmp)
 
 
-with open("vtes.json", "r", encoding="utf8") as krcg_file:
-    prefix = "https://static.krcg.org/card/"
-    krcg_cards = json.load(krcg_file)
-    cards = []
-    for card in krcg_cards:
-        filename = card["url"].removeprefix(prefix)
-        if card.get("group") == "ANY":
-            filename = filename.replace("any.jpg", "gany.jpg")
+with open("cardbase_crypt.json", "r") as crypt_file, open("cardbase_lib.json", "r") as library_file:
+    url_prefix = "https://static.krcg.org/card"
+    cards = {
+        **json.load(crypt_file),
+        **json.load(library_file),
+    }
+    image_list = []
+    for card in cards.values():
+        filename = (
+            card["ascii"]
+            .lower()
+            .translate(str.maketrans("", "", string.punctuation + string.whitespace))
+        )
+        if card["id"] > 200000:
+            filename += f"g{card['group']}"
+            if card["adv"] and card["adv"][0]:
+                filename += "adv"
 
-        cards.append((filename, card["url"]))
+        filename += ".jpg"
+        url = f"{url_prefix}/{filename.replace('gany.jpg', 'any.jpg')}"
+
+        image_list.append((filename, url))
 
     pool = multiprocessing.Pool(processes=8)
-    pool.map(download_file, cards)
+    pool.map(download_file, image_list)
