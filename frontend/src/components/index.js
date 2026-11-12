@@ -391,6 +391,7 @@ export { default as TdaChartsRankingClan } from "./tda/TdaChartsRankingClan.jsx"
 export { default as TdaChartsRankingStyle } from "./tda/TdaChartsRankingStyle.jsx";
 export { default as TdaChartsStyle } from "./tda/TdaChartsStyle.jsx";
 export { default as TdaInfo } from "./tda/TdaInfo.jsx";
+export { default as TdaList } from "./tda/TdaList.jsx";
 export { default as TdaLoadCustomButtons } from "./tda/TdaLoadCustomButtons.jsx";
 export { default as TdaLoadPreparedButtons } from "./tda/TdaLoadPreparedButtons.jsx";
 export { default as TdaResult } from "./tda/TdaResult.jsx";

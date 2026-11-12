@@ -243,3 +243,7 @@ export const getSortedKeysByValues = (obj) => {
   if (!obj) return [];
   return Object.keys(obj).toSorted((a, b) => obj[b] - obj[a]);
 };
+
+export const getCountryName = (code, locale = "en", style = "long") => {
+  return new Intl.DisplayNames([locale], { type: "region", style }).of(code.toUpperCase());
+}

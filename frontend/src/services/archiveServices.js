@@ -30,3 +30,13 @@ export const getRandomDecks = (q, inPda = false) => {
     .json()
     .then((data) => setResults(data));
 };
+
+export const getAllTdaDecks = () => {
+  const url = `${import.meta.env.VITE_API_URL}/tda/decks`;
+  // const setResults = setTwdResults;
+
+  return ky
+    .get(url)
+    .json()
+    // .then((data) => setResults(data));
+};

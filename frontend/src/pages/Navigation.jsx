@@ -139,6 +139,7 @@ const Navigation = () => {
             <Link className="max-md:hidden" to="/" text="About" end />
             <Link to={pdaUrl} text="PDA" />
             <Link to="/tda" text="TDA" />
+            <Link to="/tdaa" text="TDA+" />
             <Link to={twdUrl} text="TWD" />
             <Link to="/inventory" text={isMobile ? "INV" : "Inventory"} />
             <Link to={decksUrl} text={isMobile ? "DKS" : "Decks"} />

@@ -33,6 +33,7 @@ export const BOUNCE_BLEED = "bounce bleed";
 export const BRANCHES = "branches";
 export const BRANCH_NAME = "branchName";
 export const BURN = "burn";
+export const CITY = "city";
 export const CAPACITY = "capacity";
 export const CAPACITY_MAX_MIN = "Capacity - Max to Min";
 export const CAPACITY_MIN_MAX = "Capacity - Min to Max";

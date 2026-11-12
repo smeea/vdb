@@ -10,4 +10,4 @@ frontend/public/data/*_playtest_*.json
 frontend/public/images/cards/playtest/
 update/playtest/
 update/.env
-update/archon.json
+update/archon.jsonl

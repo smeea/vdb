@@ -44,5 +44,6 @@ uv run generate_twd_decks.py
 node generate_twd_decks_tags.js
 uv run generate_twd_cards_compatibility.py
 uv run generate_twd_cards_history.py
-cp twd_decks.json twd_locations.json twd_players.json cards_compatibility.json ../backend/
+uv run generate_tda_from_archon.py
+cp twd_decks.json twd_locations.json twd_players.json cards_compatibility.json tda.json ../backend/
 mv twd_cards_history.min.json ../frontend/public/data/twd_cards_history.json

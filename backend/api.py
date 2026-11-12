@@ -27,5 +27,6 @@ from routes import (
     misc_routes,
     pda_routes,
     playtest_routes,
+    tda_routes,
     twd_routes,
 )

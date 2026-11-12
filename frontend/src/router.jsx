@@ -20,6 +20,7 @@ const Pda = lazy(() => import("./pages/Pda.jsx"));
 const Playtest = lazy(() => import("./pages/Playtest.jsx"));
 const Review = lazy(() => import("./pages/Review.jsx"));
 const Tda = lazy(() => import("./pages/Tda.jsx"));
+const Tdaa = lazy(() => import("./pages/Tdaa.jsx"));
 const Twd = lazy(() => import("./pages/Twd.jsx"));
 const TwdCardsHistory = lazy(() => import("./pages/TwdCardsHistory.jsx"));
 const TwdCheck = lazy(() => import("./pages/TwdCheck.jsx"));
@@ -198,6 +199,23 @@ const router = createBrowserRouter(
           element={
             <Suspense fallback={<div />}>
               <Tda />
+            </Suspense>
+          }
+        />
+      </Route>
+      <Route
+        path="tdaa"
+        element={
+          <Suspense fallback={<div />}>
+            <Tdaa />
+          </Suspense>
+        }
+      >
+        <Route
+          path={`:${EVENT}`}
+          element={
+            <Suspense fallback={<div />}>
+              <Tdaa />
             </Suspense>
           }
         />
