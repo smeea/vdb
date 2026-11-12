@@ -7,7 +7,7 @@ DECKS_THRESHOLD = 5
 DECKS_RATIO_THRESHOLD = 0.25
 
 with (
-    open("archon.jsonl", "rt", encoding="utf-8") as archon_file,
+    gzip.open("archon.jsonl.gz", "rt", encoding="utf-8") as archon_file,
     open("tda.json", "w") as tda_file,
 ):
     tournaments = {}

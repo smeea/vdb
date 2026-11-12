@@ -23,4 +23,3 @@ if [ -f .env ]; then source .env; fi
 TOKEN=$(curl -s -X POST https://api.archon.vekn.net/oauth/token -d grant_type=client_credentials -d client_id=$CLIENT -d client_secret=$SECRET | jq '.access_token')
 HEADER="Authorization: Bearer ${TOKEN//\"/}"
 curl https://api.archon.vekn.net/v1/export --header "$HEADER" > archon.jsonl.gz
-gunzip -f archon.jsonl.gz
