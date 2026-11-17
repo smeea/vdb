@@ -5,8 +5,6 @@
 
 # FEATURES
 - Inventory target documentation
-- Grab TWD data from archon, including decklists
-- Translated card text
 - Translated card images
 
 # FEATURES ON HOLD
