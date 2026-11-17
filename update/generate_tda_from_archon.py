@@ -97,14 +97,14 @@ with (
             "isNC": t["rank"] in ["National Championship", "Continental Championship"],
         }
 
-        if e["info"]["date"] is None:
-            print("WRONG DATE: ", tuid)
+        # if e["info"]["date"] is None:
+        #     print("WRONG DATE: ", tuid)
 
     for tuid, dks in decks.items():
         for uuid, deck in dks.items():
             idx = next((i for i, d in enumerate(data[tuid]["players"]) if d["uuid"] == uuid), None)
             if idx == None:
-                print("WRONG EVENT, TWD: ", tuid, uuid)
+                # print("WRONG EVENT, TWD: ", tuid, uuid)
                 continue
             data[tuid]["players"][idx]["deck"] = deck["cards"]
             data[tuid]["players"][idx]["name"] = deck["name"]
